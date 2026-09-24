@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
-"""MAP02 4.36.0i: laberinto reproducible, tres llaves y catálogo completo.
-No reescribe otros WAD. Geometría UDMF nativa; parámetros de trampas existentes.
+"""Generate deterministic MAP02 geometry and the complete recipient-sized T1 catalogue.
+The accepted 4.36.0i geometry and random sequence remain unchanged.
 """
 from pathlib import Path
 from collections import deque,Counter
@@ -28,10 +28,23 @@ def distances(graph,start):
   for b in graph[a]:
    if b not in out:out[b]=out[a]+1;q.append(b)
  return out
-# Un vestíbulo separado permite llegar desde el Limbo sin activar peligros.
+# A separate entrance allows arrival from Limbo without triggering hazards.
 room(-1536,-256,-768,256,group=0)
 room(-1216,256,-1088,512,group=0)
 thing(1,-1152,0)
+# One copy of each T1 entry; 26 chests have two entries, 13 have one.
+loot=[];tier=1
+for armor in range(4):
+ for slot in range(4):loot.append(dict(cls='CaelumArmorPickup',args=[slot,armor,tier,0,0],category='armor',type=armor,slot=slot,tier=tier))
+for weapon in range(20):
+ for essence in (range(5) if weapon in (1,17,18,19) else [0]):
+  loot.append(dict(cls='CaelumWeaponPickup',args=[weapon,tier,0,0,essence+1],category='weapon',type=weapon,essence=essence,tier=tier))
+for shield in range(4):loot.append(dict(cls='CaelumShieldPickup',args=[shield,tier,0,0,0],category='shield',type=shield,tier=tier))
+for amulet in range(4):loot.append(dict(cls='CaelumAmuletPickup',args=[amulet,tier,0,0,0],category='amulet',type=amulet,tier=tier))
+for seal in range(5):loot.append(dict(cls='CaelumSealPickup',args=[seal,tier,0,0,0],category='seal',type=seal,tier=tier))
+assert len(loot)==65
+for item in loot:
+ item["size_policy"]="CHARACTER_DEFAULT" if item["category"] in ("armor","weapon","shield") else "NOT_APPLICABLE"
 for z in range(3):
  nodes=[(x,y) for y in range(7) for x in range(7)];graph={n:set() for n in nodes}
  stack=[(0,0)];seen={(0,0)}
@@ -40,7 +53,7 @@ for z in range(3):
   near=[b for b in near if b in graph and b not in seen]
   if not near:stack.pop();continue
   b=rng.choice(near);graph[a].add(b);graph[b].add(a);seen.add(b);stack.append(b)
- # Ramales ciegos y algunos bucles para flanquear enemigos y esquivar trampas.
+ # Dead ends and loops allow flanking enemies and avoiding traps.
  closed=[(a,(a[0]+dx,a[1]+dy)) for a in nodes for dx,dy in ((1,0),(0,1)) if (a[0]+dx,a[1]+dy) in graph and (a[0]+dx,a[1]+dy) not in graph[a]]
  rng.shuffle(closed)
  for a,b in closed[:8]:graph[a].add(b);graph[b].add(a)
@@ -56,26 +69,16 @@ for z in range(3):
  kx,ky=coord(z,keynode);thing(30970+z,kx,ky,tid=43710+z)
  keyinfo=dict(zone=z,key=z+1,node=list(keynode),position=[kx,ky],distance=dist[keynode])
  zones.append(dict(**keyinfo,edges=[[list(a),list(b)] for a in nodes for b in graph[a] if a<b]))
- # Trece cofres por tier, cinco piezas por cofre: 65 objetos distintos.
- loot=[];tier=z+1
- for armor in range(4):
-  for slot in range(4):loot.append(dict(cls='CaelumArmorPickup',args=[slot,armor,tier,3,0],category='armor',type=armor,slot=slot,tier=tier))
- for weapon in range(20):
-  for essence in (range(5) if weapon in (1,17,18,19) else [0]):
-   loot.append(dict(cls='CaelumWeaponPickup',args=[weapon,tier,3,0,essence+1],category='weapon',type=weapon,essence=essence,tier=tier))
- for shield in range(4):loot.append(dict(cls='CaelumShieldPickup',args=[shield,tier,3,0,0],category='shield',type=shield,tier=tier))
- for amulet in range(4):loot.append(dict(cls='CaelumAmuletPickup',args=[amulet,tier,0,0,0],category='amulet',type=amulet,tier=tier))
- for seal in range(5):loot.append(dict(cls='CaelumSealPickup',args=[seal,tier,0,0,0],category='seal',type=seal,tier=tier))
- assert len(loot)==65
  candidates=[n for n in nodes if n not in [(0,0),(6,6),keynode]];rng.shuffle(candidates)
  chestnodes=candidates[:13]
  for c,n in enumerate(chestnodes):
   x,y=coord(z,n);index=z*13+c;thing(30973,x-64,y+64,angle=270,args=[index],tid=43800+index)
-  for item in loot[c*5:(c+1)*5]:item.update(chest=index,position=[x-64,y+64]);contents.append(item)
- # Ocho pilas de cinco unidades por sección, por cada necesidad.
+  for catalogue_index in range(index,len(loot),39):
+   item=dict(loot[catalogue_index]);item.update(catalogue_index=catalogue_index,chest=index,chest_slot=catalogue_index//39,position=[x-64,y+64]);contents.append(item)
+ # Eight stacks of five units per section for each provision.
  for n in candidates[13:21]:
   x,y=coord(z,n);thing(30978,x-64,y+64);thing(30979,x+64,y+64)
- # Trampas: minas, transporte, techos, rocas rodantes/verticales y pozos.
+ # Traps: mines, teleporters, crushers, rolling/falling rocks and pits.
  trapnodes=candidates[21:36]
  for k,n in enumerate(trapnodes):
   x,y=coord(z,n);tid=43900+z*100+k
@@ -94,17 +97,17 @@ for z in range(3):
    thing(30961,x,y+48,z=192,tid=tid+50)
    thing(30975,x,y+48,z=.5,tid=tid,args=[tid+50]);kind='falling_rock'
   else:
-   # Pozo de 96 MU con una salida de seis peldaños de 16 MU, caminable.
+   # A 96-MU pit with a walkable exit of six 16-MU steps.
    room(x-128,y-96,x,y+32,floor=-96,group=tid,water=True)
    room(x,y-96,x+64,y-64,floor=-96,group=tid)
    for step in range(6):room(x,y-64+step*32,x+64,y-32+step*32,floor=-96+(step+1)*16,group=tid)
    thing(30976,x-64,y-32,z=88,tid=tid);kind='pit'
   features.append(dict(zone=z,type=kind,position=[x,y],tid=tid))
- # 32 Mandingas por sección. Los recursos y las llaves no ocupan su cilindro.
+ # 32 Mandingas per section; resources and keys avoid their collision cylinders.
  enemy_nodes=[n for n in candidates if n!=keynode][:32]
  for n in enemy_nodes:
   x,y=coord(z,n);thing(18037,x+64,y-64,angle=270)
- # La única conexión hacia la sección siguiente atraviesa su puerta con llave.
+ # The only connection to the next section passes through its keyed door.
  endy=2816+z*3072;gatey=3072+z*3072;tag=43701+z
  if z<2:
   bridgey=3264+z*3072;room(1088,endy,1216,bridgey+64,group=z+1)
@@ -114,12 +117,12 @@ for z in range(3):
   room(1088,endy,1216,9408,group=3)
  room(1088,gatey-32,1216,gatey+32,ceiling=0,group=tag,tag=tag)
  locks[tag]=203+z
-# Cámara final: espacio para el Zupay y pasos libres hacia los accesos.
+# Final chamber: space for Zupay with unobstructed approaches.
 room(640,9344,1664,10368,ceiling=448,group=4)
 thing(18038,1152,9728,angle=270,tid=43799)
 thing(30974,1152,10112,z=32,tid=43798)
 thing(1,864,9472,args=[1])
-# Geometría: unir celdas idénticas evita miles de sectores/líneas superfluos.
+# Merge identical cells to avoid thousands of redundant sectors and lines.
 sectors=[];sector_ids={};vertices=[];vertex_ids={};sides=[];lines=[];edges={}
 def sector(v):
  if v not in sector_ids:
@@ -153,17 +156,18 @@ body=bytearray();directory=bytearray()
 for name,data in [('MAP02',b''),('TEXTMAP','\n'.join(text).encode()),('ENDMAP',b'')]:
  directory+=struct.pack('<ii8s',12+len(body),len(data),name.encode().ljust(8,b'\0'));body+=data
 (ROOT/'src/maps/MAP02.wad').write_bytes(struct.pack('<4sii',b'PWAD',3,12+len(body))+body+directory)
-# El mismo catálogo alimenta los cofres reales y el registro de cobertura.
-zs=['// Generado por generate_map02_maze.py. Cada cofre tiene cinco objetos únicos.\nclass CaelumMazeLootCatalogue : Object play\n{\n    static Inventory Create(int index, vector3 position)\n    {\n        switch(index / 20)\n        {']
-for batch in range((len(contents)+19)//20):
+# Stable catalogue indices are independent of chest positions and future sections.
+zs=['// Generado por generate_map02_maze.py. 65 piezas T1, sin duplicados.\nclass CaelumMazeLootCatalogue : Object play\n{\n    const REVISION = 1;\n    const ENTRY_COUNT = 65;\n    const CHEST_COUNT = 39;\n\n    static int ChestEntry(int chest, int slot)\n    {\n        int index=chest+slot*CHEST_COUNT;\n        return chest>=0 && chest<CHEST_COUNT && slot>=0 && index<ENTRY_COUNT?index:-1;\n    }\n\n    static Inventory Create(int index, vector3 position)\n    {\n        if(index<0 || index>=ENTRY_COUNT)return null;\n        switch(index / 20)\n        {']
+for batch in range((len(loot)+19)//20):
  zs.append(f'        case {batch}: return Create{batch}(index,position);')
 zs.append('        }\n        return null;\n    }')
-for batch in range((len(contents)+19)//20):
+for batch in range((len(loot)+19)//20):
  zs.append(f'    static Inventory Create{batch}(int index, vector3 position)\n    {{\n        Inventory item;\n        switch(index)\n        {{')
- for i in range(batch*20,min((batch+1)*20,len(contents))):
-  item=contents[i];args=item['args'];zs.append(f'        case {i}:\n            item=Inventory(Actor.Spawn("{item["cls"]}",position,NO_REPLACE));\n            if(item!=null) {{ '+''.join(f'item.args[{k}]={v};' for k,v in enumerate(args))+' }\n            break;')
+ for i in range(batch*20,min((batch+1)*20,len(loot))):
+  item=loot[i];args=item['args'];policy=f'{item["cls"]}(item).SizePolicy=CaelumEquipmentRules.CHARACTER_DEFAULT;' if item['size_policy']=='CHARACTER_DEFAULT' else ''
+  zs.append(f'        case {i}:\n            item=Inventory(Actor.Spawn("{item["cls"]}",position,NO_REPLACE));\n            if(item!=null) {{ '+''.join(f'item.args[{k}]={v};' for k,v in enumerate(args))+policy+' }\n            break;')
  zs.append('        }\n        return item;\n    }')
-zs.append('}\n');(ROOT/'src/caelum/world/CaelumMazeLootCatalogue.zs').write_text('\n'.join(zs))
-manifest=dict(version='4.36.0i',seed=436009,zones=zones,rooms=rooms,locks=locks,loot=contents,traps=features,things=things,counts=dict(rooms=len(rooms),mandingas=96,zupays=1,chests=39,equipment=len(contents),food_rations=120,water_rations=120,traps=len(features)),geometry=dict(sectors=len(sectors),lines=len(lines),vertices=len(vertices)),cells=[list(k)+list(v) for k,v in cells.items()])
-(OUT/'MAP02_MANIFEST.json').write_text(json.dumps(manifest,indent=2)+'\n')
+zs.append('}\n');(ROOT/'src/caelum/world/CaelumMazeLootCatalogue.zs').write_text('\n'.join(zs),encoding='utf-8')
+manifest=dict(version='4.36.4',catalogue_revision=1,size_policy='CHARACTER_DEFAULT: resolve once for the successful recipient; no size on accessories',distribution='One unique catalogue of 65 T1 entries across 39 chests: index = chest + slot * 39. Preserve this catalogue in future map layouts.',seed=436009,zones=zones,rooms=rooms,locks=locks,loot=contents,traps=features,things=things,counts=dict(rooms=len(rooms),mandingas=96,zupays=1,chests=39,equipment=len(contents),food_rations=120,water_rations=120,traps=len(features)),geometry=dict(sectors=len(sectors),lines=len(lines),vertices=len(vertices)),cells=[list(k)+list(v) for k,v in cells.items()])
+(OUT/'MAP02_MANIFEST.json').write_text(json.dumps(manifest,indent=2)+'\n',encoding='utf-8')
 print(manifest['counts']);print(manifest['geometry'])

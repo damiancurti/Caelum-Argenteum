@@ -52,7 +52,7 @@ class CaelumHazardResetSwitch : CaelumHazardReleaseSwitch
             || (user.player.cheats & CF_PREDICTING) || !CaelumUseGeometry.AimedAt(user,self)
             || !user.CheckSight(self,SF_IGNOREVISIBILITY))return false;
         String reason=BlockReason();
-        if(reason!=""){user.A_Print(StringTable.Localize(reason,false));return true;}
+        if(reason!=""){CaelumNotifications.Notify(user,StringTable.Localize(reason,false));return true;}
         let covers=ThinkerIterator.Create("CaelumTrapdoor");CaelumTrapdoor trap;
         while((trap=CaelumTrapdoor(covers.Next()))!=null)
         {
@@ -76,7 +76,7 @@ class CaelumHazardResetSwitch : CaelumHazardReleaseSwitch
         {lever.Spent=false;if(lever.LeverVisual!=null)lever.LeverVisual.frame=0;}
         ResetCount++;Spent=true;FaceTics=TICRATE;
         A_StartSound("caelum/world/lever_activate",CHAN_BODY);
-        user.A_Print(StringTable.Localize("CA_TRAPS_RESET_DONE",false));return true;
+        CaelumNotifications.Notify(user,StringTable.Localize("CA_TRAPS_RESET_DONE",false));return true;
     }
 
     override void Tick()

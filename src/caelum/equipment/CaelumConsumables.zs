@@ -17,6 +17,8 @@ class CaelumConsumableItem : PowerupGiver
         +INVENTORY.INVBAR
     }
 
+    override String PickupMessage() { return ""; }
+
     virtual int GetConsumableType() { return -1; }
 
     Name GetPowerClassName()
@@ -110,8 +112,15 @@ class CaelumConsumableItem : PowerupGiver
         {
             return false;
         }
+        int before = CaelumNotifications.OwnedQuantity(caelumPlayer, self);
+        String received = CaelumNotifications.Describe(caelumPlayer, self, 0);
         bool pickedUp = Super.TryPickup(toucher);
-        if (pickedUp) { caelumPlayer.OnNativeInventoryChanged(); }
+        if (pickedUp)
+        {
+            int gained = CaelumNotifications.OwnedQuantity(caelumPlayer, self) - before;
+            CaelumNotifications.AcquiredDescription(caelumPlayer, received, gained);
+            caelumPlayer.OnNativeInventoryChanged();
+        }
         return pickedUp;
     }
 

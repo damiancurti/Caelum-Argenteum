@@ -140,9 +140,167 @@ class CaelumEquipmentItem : Inventory
     bool Equipped;
     bool InMagicBox;
     bool PickupDataInitialized;
+    int SizePolicy;
+    int SizePolicyRevision;
+    bool AcquisitionResolved;
+    // Editor/DECORATE: CaelumEquipmentItem.SizePolicy 1 = CHARACTER_DEFAULT,
+    // 2 = FIXED_SIZE. Los args de talle conservan 0=M y 1..5=XS..XL.
+    property SizePolicy: SizePolicy;
+
+    override String PickupMessage() { return ""; }
+
+    bool HasAcquiredIdentity()
+    {
+        // Los cofres son dueños nativos de su contenido, pero no receptores.
+        if (!AcquisitionResolved && Owner!=null && !(Owner is "CaelumPlayer")) return false;
+        // Un intento antiguo fallido podía reservar ItemId antes de comprobar
+        // la carga. El ID solo no prueba adquisición de contenido sin recoger.
+        return AcquisitionResolved || Owner is "CaelumPlayer"
+            || (bDROPPED && (PickupDataInitialized || ItemId > 0));
+    }
+
+    int PreviewEquipmentKind()
+    {
+        if (PickupDataInitialized || HasAcquiredIdentity()) return EquipmentKind;
+        if (self is "CaelumArmorPickup") return CaelumConstants.EQUIPMENT_KIND_ARMOR;
+        if (self is "CaelumShieldPickup") return CaelumConstants.EQUIPMENT_KIND_SHIELD;
+        if (self is "CaelumWeaponPickup") return CaelumConstants.EQUIPMENT_KIND_WEAPON;
+        if (self is "CaelumAmuletPickup") return CaelumConstants.EQUIPMENT_KIND_AMULET;
+        return CaelumConstants.EQUIPMENT_KIND_SEAL;
+    }
+
+    int PreviewItemType()
+    {
+        if (PickupDataInitialized || HasAcquiredIdentity()) return ItemType;
+        int kind=PreviewEquipmentKind();
+        if (kind==CaelumConstants.EQUIPMENT_KIND_ARMOR) return args[1];
+        int count=kind==CaelumConstants.EQUIPMENT_KIND_WEAPON ? CaelumConstants.WEAPON_TYPE_COUNT
+            : kind==CaelumConstants.EQUIPMENT_KIND_SHIELD ? CaelumConstants.SHIELD_TYPE_COUNT
+            : kind==CaelumConstants.EQUIPMENT_KIND_AMULET ? CaelumConstants.AMULET_TYPE_COUNT
+            : CaelumConstants.SEAL_TYPE_COUNT;
+        return Clamp(args[0],0,count-1);
+    }
+
+    int PreviewArmorSlot()
+    {
+        if (PickupDataInitialized || HasAcquiredIdentity()) return ArmorSlot;
+        return PreviewEquipmentKind() == CaelumConstants.EQUIPMENT_KIND_ARMOR
+            ? Clamp(args[0], 0, CaelumConstants.ARMOR_SLOT_COUNT - 1) : -1;
+    }
+
+    int PreviewTier()
+    {
+        if (HasAcquiredIdentity()) return Tier;
+        if (level.MapName == "MAP02") return 1;
+        return PickupDataInitialized ? Tier
+            : Clamp(args[PreviewEquipmentKind() == CaelumConstants.EQUIPMENT_KIND_ARMOR ? 2 : 1], 1, 3);
+    }
+
+    int PreviewEssenceType()
+    {
+        if (PickupDataInitialized || HasAcquiredIdentity()) return EssenceType;
+        if (PreviewEquipmentKind() == CaelumConstants.EQUIPMENT_KIND_SEAL) return PreviewItemType();
+        return args[4] > 0 ? Clamp(args[4] - 1, 0, CaelumConstants.ESSENCE_TYPE_COUNT - 1)
+            : CaelumConstants.ESSENCE_FIRE;
+    }
+
+    bool HasEquipmentSize()
+    {
+        int kind = PreviewEquipmentKind();
+        return kind == CaelumConstants.EQUIPMENT_KIND_ARMOR
+            || kind == CaelumConstants.EQUIPMENT_KIND_SHIELD
+            || kind == CaelumConstants.EQUIPMENT_KIND_WEAPON;
+    }
+
+    int PreviewEquipmentSize(CaelumPlayer user)
+    {
+        if (HasAcquiredIdentity()) return EquipmentSize;
+        if (!HasEquipmentSize()) return PickupDataInitialized ? EquipmentSize : CaelumConstants.EQUIPMENT_SIZE_M;
+        int encoded = args[PreviewEquipmentKind() == CaelumConstants.EQUIPMENT_KIND_ARMOR ? 3 : 2];
+        int fixedSize = PickupDataInitialized ? EquipmentSize
+            : encoded <= 0 ? CaelumConstants.EQUIPMENT_SIZE_M
+            : Clamp(encoded - 1, 0, CaelumConstants.EQUIPMENT_SIZE_COUNT - 1);
+        int policy = SizePolicy == CaelumEquipmentRules.FIXED_SIZE
+            ? CaelumEquipmentRules.FIXED_SIZE : CaelumEquipmentRules.CHARACTER_DEFAULT;
+        return CaelumEquipmentRules.ResolveAcquisitionSize(user, policy, fixedSize);
+    }
+
+    double PreviewUnitWeight(CaelumPlayer user)
+    {
+        if (HasAcquiredIdentity() || user==null) return UnitWeight;
+        int kind=PreviewEquipmentKind(), type=PreviewItemType(), tier=PreviewTier();
+        int size=PreviewEquipmentSize(user);
+        if (kind==CaelumConstants.EQUIPMENT_KIND_ARMOR && user.ArmorModel!=null)
+            return user.ArmorModel.GetWeightFor(PreviewArmorSlot(),type,tier,size);
+        if (kind==CaelumConstants.EQUIPMENT_KIND_SHIELD && user.ShieldModel!=null)
+            return user.ShieldModel.GetWeightFor(type,tier,size);
+        if (kind==CaelumConstants.EQUIPMENT_KIND_WEAPON && user.WeaponModel!=null)
+            return user.WeaponModel.GetWeightFor(type,tier,size);
+        return double(tier);
+    }
+
+    int PreviewMaximumDurability(CaelumPlayer user)
+    {
+        if (user==null) return 0;
+        int kind=PreviewEquipmentKind(), type=PreviewItemType(), tier=PreviewTier();
+        int size=PreviewEquipmentSize(user);
+        if (kind==CaelumConstants.EQUIPMENT_KIND_ARMOR && user.ArmorModel!=null)
+            return user.ArmorModel.GetMaximumDurabilityFor(type,tier,size);
+        if (kind==CaelumConstants.EQUIPMENT_KIND_SHIELD && user.ShieldModel!=null)
+            return user.ShieldModel.GetMaximumDurabilityFor(type,tier,size);
+        if (kind==CaelumConstants.EQUIPMENT_KIND_WEAPON && user.WeaponModel!=null)
+            return user.WeaponModel.GetMaximumDurabilityFor(type,tier,size);
+        return 0;
+    }
+
+    int PreviewDurability(CaelumPlayer user)
+    {
+        if (HasAcquiredIdentity()) return Durability;
+        int maximum=PreviewMaximumDurability(user);
+        int encoded=args[PreviewEquipmentKind()==CaelumConstants.EQUIPMENT_KIND_ARMOR ? 4 : 3];
+        return encoded>0 ? Min(maximum,encoded-1) : maximum;
+    }
+
+    double PreviewBaseValue(CaelumPlayer user)
+    {
+        if ((ItemFlags & CaelumConstants.CA_ITEMFLAG_LIMBO_TEMP)!=0
+            || (level.MapName=="MAP01" && (ItemFlags & CaelumConstants.CA_ITEMFLAG_LIMBO_PRESERVABLE)!=0)) return 0;
+        return CaelumEconomyRules.GetEquipmentBaseValueFor(PreviewEquipmentKind(),PreviewItemType(),
+            PreviewArmorSlot(),PreviewTier(),PreviewEssenceType(),PreviewUnitWeight(user));
+    }
+
+    bool TryEquipmentPickup(in out Actor toucher)
+    {
+        let user = CaelumPlayer(toucher);
+        if (user == null) return false;
+        if (HasAcquiredIdentity()) return TryCaelumPickup(toucher);
+        if (HasEquipmentSize() && (user.CharacterProfile == null || user.ArmorModel == null
+            || user.ShieldModel == null || user.WeaponModel == null)) return false;
+
+        // Vista transaccional: ningún fallo reserva talle, tier, vida ni peso.
+        int oldKind=EquipmentKind, oldType=ItemType, oldSlot=ArmorSlot, oldTier=Tier;
+        int oldSize=EquipmentSize, oldDurability=Durability, oldEssence=EssenceType;
+        double oldWeight=UnitWeight;
+        bool oldInitialized=PickupDataInitialized;
+        int incomingKind=PreviewEquipmentKind(), incomingType=PreviewItemType();
+        int incomingSlot=PreviewArmorSlot(), incomingTier=PreviewTier();
+        int incomingSize=PreviewEquipmentSize(user), incomingEssence=PreviewEssenceType();
+        double incomingWeight=PreviewUnitWeight(user);
+        int incomingDurability=PreviewDurability(user);
+        EquipmentKind=incomingKind; ItemType=incomingType; ArmorSlot=incomingSlot;
+        Tier=incomingTier; EquipmentSize=incomingSize; EssenceType=incomingEssence;
+        UnitWeight=incomingWeight; Durability=incomingDurability;
+        PickupDataInitialized=true;
+        if (TryCaelumPickup(toucher)) return true;
+        EquipmentKind=oldKind; ItemType=oldType; ArmorSlot=oldSlot; Tier=oldTier;
+        EquipmentSize=oldSize; Durability=oldDurability; EssenceType=oldEssence;
+        UnitWeight=oldWeight; PickupDataInitialized=oldInitialized;
+        return false;
+    }
 
     Default
     {
+        CaelumEquipmentItem.SizePolicy 1;
         Radius 12;
         Height 8;
         // Escala visual del pickup en el mundo. Inventory.Icon no se altera.
@@ -219,6 +377,9 @@ class CaelumEquipmentItem : Inventory
             copy.Equipped = Equipped;
             copy.InMagicBox = InMagicBox;
             copy.PickupDataInitialized = PickupDataInitialized;
+            copy.SizePolicy = SizePolicy;
+            copy.SizePolicyRevision = SizePolicyRevision;
+            copy.AcquisitionResolved = HasAcquiredIdentity();
         }
         return copy;
     }
@@ -244,6 +405,9 @@ class CaelumEquipmentItem : Inventory
             copy.Equipped = false;
             copy.InMagicBox = false;
             copy.PickupDataInitialized = PickupDataInitialized;
+            copy.SizePolicy = SizePolicy;
+            copy.SizePolicyRevision = SizePolicyRevision;
+            copy.AcquisitionResolved = HasAcquiredIdentity();
         }
         return copy;
     }
@@ -261,11 +425,18 @@ class CaelumEquipmentItem : Inventory
     protected bool TryCaelumPickup(in out Actor toucher)
     {
         CaelumPlayer caelumPlayer = CaelumPlayer(toucher);
-        if (caelumPlayer == null
-            || !caelumPlayer.PrepareNativeEquipmentPickup(self))
+        if (caelumPlayer == null) return false;
+        int oldId=ItemId, oldRevision=SizePolicyRevision;
+        bool oldResolved=AcquisitionResolved, oldEquipped=Equipped, oldBox=InMagicBox;
+        bool oldPickupNew=caelumPlayer.LastEquipmentPickupWasNew;
+        bool oldPickupBox=caelumPlayer.LastEquipmentPickupWentToMagicBox;
+        if (!caelumPlayer.PrepareNativeEquipmentPickup(self))
         {
+            ItemId=oldId; Equipped=oldEquipped; InMagicBox=oldBox;
             return false;
         }
+        AcquisitionResolved=true;
+        SizePolicyRevision=CaelumEquipmentRules.SIZE_POLICY_REVISION;
         // Super.TryPickup puede adjuntar una copia y destruir el actor del
         // mundo. Conservamos la identidad antes de entregarlo para que el
         // jugador pueda activar la configuración del arma recién recogida.
@@ -289,6 +460,15 @@ class CaelumEquipmentItem : Inventory
                 pickedEssence,
                 pickedIntoMagicBox
             );
+            CaelumNotifications.Acquired(caelumPlayer,
+                caelumPlayer.FindNativeEquipmentItemById(pickedItemId), 1);
+        }
+        else
+        {
+            ItemId=oldId; Equipped=oldEquipped; InMagicBox=oldBox;
+            AcquisitionResolved=oldResolved; SizePolicyRevision=oldRevision;
+            caelumPlayer.LastEquipmentPickupWasNew=oldPickupNew;
+            caelumPlayer.LastEquipmentPickupWentToMagicBox=oldPickupBox;
         }
         return pickedUp;
     }
@@ -303,9 +483,8 @@ class CaelumArmorPickup : CaelumEquipmentItem
         // vuelve al mundo desde el inventario conserva sus campos persistentes.
         // No usamos EquipmentKind como centinela porque ARMOR vale 0 y ese
         // mismo valor es también el inicial de un int sin configurar.
-        int slot = PickupDataInitialized
-            ? ArmorSlot : Clamp(args[0], 0, CaelumConstants.ARMOR_SLOT_COUNT - 1);
-        int armorType = PickupDataInitialized ? ItemType : args[1];
+        int slot = PreviewArmorSlot();
+        int armorType = PreviewItemType();
         String visual = "CALI";
         if (armorType == CaelumConstants.ARMOR_TYPE_LIGHT)
         {
@@ -348,31 +527,7 @@ class CaelumArmorPickup : CaelumEquipmentItem
 
     override bool TryPickup(in out Actor toucher)
     {
-        CaelumPlayer caelumPlayer = CaelumPlayer(toucher);
-        if (caelumPlayer == null || caelumPlayer.ArmorModel == null) { return false; }
-        if (!PickupDataInitialized)
-        {
-            // Inicializa una sola vez los datos provenientes del actor del mundo.
-            // Al volver a soltar una pieza, CreateCopy conserva estos valores y
-            // evita reconstruirla desde args[] vacíos.
-            EquipmentKind = CaelumConstants.EQUIPMENT_KIND_ARMOR;
-            ArmorSlot = Clamp(args[0], 0, CaelumConstants.ARMOR_SLOT_COUNT - 1);
-            ItemType = args[1];
-            Tier = Clamp(args[2], 1, 3);
-            EquipmentSize = args[3] <= 0
-                ? CaelumConstants.EQUIPMENT_SIZE_M
-                : Clamp(args[3] - 1, 0, CaelumConstants.EQUIPMENT_SIZE_COUNT - 1);
-            Durability = args[4] > 0 ? args[4] - 1
-                : caelumPlayer.ArmorModel.GetMaximumDurabilityFor(
-                    ItemType, Tier, EquipmentSize
-                );
-            UnitWeight = caelumPlayer.ArmorModel.GetWeightFor(
-                ArmorSlot, ItemType, Tier, EquipmentSize
-            );
-            Equipped = false;
-            PickupDataInitialized = true;
-        }
-        return TryCaelumPickup(toucher);
+        return TryEquipmentPickup(toucher);
     }
 }
 
@@ -400,24 +555,7 @@ class CaelumShieldPickup : CaelumEquipmentItem
 
     override bool TryPickup(in out Actor toucher)
     {
-        CaelumPlayer caelumPlayer = CaelumPlayer(toucher);
-        if (caelumPlayer == null || caelumPlayer.ShieldModel == null) { return false; }
-        EquipmentKind = CaelumConstants.EQUIPMENT_KIND_SHIELD;
-        ArmorSlot = -1;
-        ItemType = Clamp(args[0], 0, CaelumConstants.SHIELD_TYPE_COUNT - 1);
-        Tier = Clamp(args[1], 1, 3);
-        EquipmentSize = args[2] <= 0
-            ? CaelumConstants.EQUIPMENT_SIZE_M
-            : Clamp(args[2] - 1, 0, CaelumConstants.EQUIPMENT_SIZE_COUNT - 1);
-        Durability = args[3] > 0 ? args[3] - 1
-            : caelumPlayer.ShieldModel.GetMaximumDurabilityFor(
-                ItemType, Tier, EquipmentSize
-            );
-        UnitWeight = caelumPlayer.ShieldModel.GetWeightFor(
-            ItemType, Tier, EquipmentSize
-        );
-        Equipped = false;
-        return TryCaelumPickup(toucher);
+        return TryEquipmentPickup(toucher);
     }
 }
 
@@ -470,27 +608,7 @@ class CaelumWeaponPickup : CaelumEquipmentItem
 
     override bool TryPickup(in out Actor toucher)
     {
-        CaelumPlayer caelumPlayer = CaelumPlayer(toucher);
-        if (caelumPlayer == null || caelumPlayer.WeaponModel == null) { return false; }
-        EquipmentKind = CaelumConstants.EQUIPMENT_KIND_WEAPON;
-        ArmorSlot = -1;
-        ItemType = Clamp(args[0], 0, CaelumConstants.WEAPON_TYPE_COUNT - 1);
-        Tier = Clamp(args[1], 1, 3);
-        EquipmentSize = args[2] <= 0
-            ? CaelumConstants.EQUIPMENT_SIZE_M
-            : Clamp(args[2] - 1, 0, CaelumConstants.EQUIPMENT_SIZE_COUNT - 1);
-        Durability = args[3] > 0 ? args[3] - 1
-            : caelumPlayer.WeaponModel.GetMaximumDurabilityFor(
-                ItemType, Tier, EquipmentSize
-            );
-        EssenceType = args[4] > 0
-            ? Clamp(args[4] - 1, 0, CaelumConstants.ESSENCE_TYPE_COUNT - 1)
-            : CaelumConstants.ESSENCE_FIRE;
-        UnitWeight = caelumPlayer.WeaponModel.GetWeightFor(
-            ItemType, Tier, EquipmentSize
-        );
-        Equipped = false;
-        return TryCaelumPickup(toucher);
+        return TryEquipmentPickup(toucher);
     }
 }
 
@@ -507,15 +625,15 @@ class CaelumAmuletPickup : CaelumEquipmentItem
     }
     String GetJewelryIconPath()
     {
-        int t = PickupDataInitialized ? ItemType : Clamp(args[0], 0, CaelumConstants.AMULET_TYPE_COUNT - 1);
-        int tier = PickupDataInitialized ? Tier : Clamp(args[1], 1, 3);
+        int t = PreviewItemType();
+        int tier = PreviewTier();
         return CaelumIconResolver.ResolveTierPath(
             CaelumIconResolver.GetAmuletBasePath(t), tier
         );
     }
     String GetJewelrySpriteName()
     {
-        int t = PickupDataInitialized ? ItemType : Clamp(args[0], 0, CaelumConstants.AMULET_TYPE_COUNT - 1);
+        int t = PreviewItemType();
         if (t == CaelumConstants.AMULET_SAPPHIRE) return "AMSA";
         if (t == CaelumConstants.AMULET_EMERALD) return "AMEM";
         if (t == CaelumConstants.AMULET_TOPAZ) return "AMTO";
@@ -540,15 +658,7 @@ class CaelumAmuletPickup : CaelumEquipmentItem
     }
     override bool TryPickup(in out Actor toucher)
     {
-        if (CaelumPlayer(toucher) == null) return false;
-        if (!PickupDataInitialized)
-        {
-            EquipmentKind = CaelumConstants.EQUIPMENT_KIND_AMULET; ArmorSlot = -1;
-            ItemType = Clamp(args[0],0,CaelumConstants.AMULET_TYPE_COUNT-1);
-            Tier = Clamp(args[1],1,3); EquipmentSize = CaelumConstants.EQUIPMENT_SIZE_M;
-            Durability = 0; UnitWeight = double(Tier); Equipped = false; PickupDataInitialized = true;
-        }
-        UpdateWorldSprite(); return TryCaelumPickup(toucher);
+        return TryEquipmentPickup(toucher);
     }
 }
 
@@ -565,15 +675,15 @@ class CaelumSealPickup : CaelumEquipmentItem
     }
     String GetJewelryIconPath()
     {
-        int t = PickupDataInitialized ? ItemType : Clamp(args[0],0,CaelumConstants.SEAL_TYPE_COUNT-1);
-        int tier = PickupDataInitialized ? Tier : Clamp(args[1], 1, 3);
+        int t = PreviewItemType();
+        int tier = PreviewTier();
         return CaelumIconResolver.ResolveTierPath(
             CaelumIconResolver.GetSealBasePath(t), tier
         );
     }
     String GetJewelrySpriteName()
     {
-        int t = PickupDataInitialized ? ItemType : Clamp(args[0],0,CaelumConstants.SEAL_TYPE_COUNT-1);
+        int t = PreviewItemType();
         if (t == CaelumConstants.SEAL_WATER) return "SLWA";
         if (t == CaelumConstants.SEAL_EARTH) return "SLEA";
         if (t == CaelumConstants.SEAL_AIR) return "SLAI";
@@ -600,16 +710,7 @@ class CaelumSealPickup : CaelumEquipmentItem
     }
     override bool TryPickup(in out Actor toucher)
     {
-        if (CaelumPlayer(toucher) == null) return false;
-        if (!PickupDataInitialized)
-        {
-            EquipmentKind = CaelumConstants.EQUIPMENT_KIND_SEAL; ArmorSlot = -1;
-            ItemType = Clamp(args[0],0,CaelumConstants.SEAL_TYPE_COUNT-1);
-            Tier = Clamp(args[1],1,3); EquipmentSize = CaelumConstants.EQUIPMENT_SIZE_M;
-            Durability = 0; EssenceType = ItemType; UnitWeight = double(Tier);
-            Equipped = false; PickupDataInitialized = true;
-        }
-        UpdateWorldSprite(); return TryCaelumPickup(toucher);
+        return TryEquipmentPickup(toucher);
     }
 }
 
@@ -618,6 +719,7 @@ class CaelumSealPickup : CaelumEquipmentItem
 class CaelumCarbineAmmo : Ammo
 {
     bool InMagicBox;
+    override String PickupMessage() { return ""; }
 
     Default
     {
@@ -689,8 +791,17 @@ class CaelumCarbineAmmo : Ammo
         {
             return false;
         }
+        Name itemClass=GetClassName();
+        let previousStack=caelumPlayer.FindInventory(itemClass);
+        int previous=previousStack==null ? 0 : previousStack.Amount;
         bool pickedUp = Super.TryPickup(toucher);
-        if (pickedUp) { caelumPlayer.OnNativeInventoryChanged(); }
+        if (pickedUp)
+        {
+            caelumPlayer.OnNativeInventoryChanged();
+            let received=caelumPlayer.FindInventory(itemClass);
+            CaelumNotifications.Acquired(caelumPlayer,received,
+                received==null ? 0 : received.Amount-previous);
+        }
         return pickedUp;
     }
 
@@ -711,6 +822,24 @@ class CaelumCarbineAmmo : Ammo
 
 class CaelumArrowAmmo : Ammo
 {
+    override String PickupMessage() { return ""; }
+
+    override bool TryPickup(in out Actor toucher)
+    {
+        let user=CaelumPlayer(toucher);
+        if (user==null) return false;
+        Name itemClass=GetClassName();
+        let previousStack=user.FindInventory(itemClass);
+        int previous=previousStack==null ? 0 : previousStack.Amount;
+        bool received=Super.TryPickup(toucher);
+        if (received)
+        {
+            let acquired=user.FindInventory(itemClass);
+            CaelumNotifications.Acquired(user,acquired,acquired==null ? 0 : acquired.Amount-previous);
+        }
+        return received;
+    }
+
     Default
     {
         Inventory.Icon "graphics/caelum/icons/ca_arrow_ammo.png";
@@ -728,6 +857,24 @@ class CaelumArrowAmmo : Ammo
 
 class CaelumBoltAmmo : Ammo
 {
+    override String PickupMessage() { return ""; }
+
+    override bool TryPickup(in out Actor toucher)
+    {
+        let user=CaelumPlayer(toucher);
+        if (user==null) return false;
+        Name itemClass=GetClassName();
+        let previousStack=user.FindInventory(itemClass);
+        int previous=previousStack==null ? 0 : previousStack.Amount;
+        bool received=Super.TryPickup(toucher);
+        if (received)
+        {
+            let acquired=user.FindInventory(itemClass);
+            CaelumNotifications.Acquired(user,acquired,acquired==null ? 0 : acquired.Amount-previous);
+        }
+        return received;
+    }
+
     Default
     {
         Inventory.Icon "graphics/caelum/icons/ca_bolt_ammo.png";

@@ -58,13 +58,11 @@ class CaelumM01SwordPickup : CaelumWeaponPickup
     override bool TryPickup(in out Actor toucher)
     {
         CaelumPlayer caelumPlayer = CaelumPlayer(toucher);
-        if (caelumPlayer != null && caelumPlayer.CharacterProfile != null)
+        if (caelumPlayer != null && !HasAcquiredIdentity())
         {
             args[0] = CaelumConstants.WEAPON_TYPE_SWORD;
             args[1] = 1;
-            args[2] = CaelumEquipmentRules.GetDefaultSizeForCharacterTier(
-                caelumPlayer.CharacterProfile.GetSizeTier()
-            ) + 1;
+            SizePolicy = CaelumEquipmentRules.CHARACTER_DEFAULT;
             args[3] = 0;
             args[4] = 0;
         }

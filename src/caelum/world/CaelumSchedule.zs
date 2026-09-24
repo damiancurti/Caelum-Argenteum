@@ -207,7 +207,7 @@ class CaelumScheduleState : Inventory
             agenda.Revision = agenda.Revision == 2147483647 ? 1 : agenda.Revision + 1;
             agenda.Notices = Min(2147483646 - updated, agenda.Notices) + updated;
             user.RefreshSocialJournalSnapshot();
-            if (user.health > 0) user.A_Print(String.Format(StringTable.Localize("CA_EVENT_UPDATED", false), updated));
+            if (user.health > 0) CaelumNotifications.Notify(user,String.Format(StringTable.Localize("CA_EVENT_UPDATED", false), updated));
             // El asedio detiene el descanso/fabricación acelerados. El viaje
             // ya confirmado se resuelve antes de presentar el estado del destino.
             let journey = CaelumJourneyState.Get(user);
@@ -263,9 +263,13 @@ class CaelumScheduleState : Inventory
         for (int currency = 0; currency < CaelumConstants.CURRENCY_TYPE_COUNT; currency++)
         {
             let item = user.FindNativeCurrency(currency);
+            int previousAmount = item == null ? 0 : item.Amount;
             if (created[currency] != null) { item = created[currency]; item.AttachToOwner(user); }
             if (item == null) continue;
             item.Amount = user.PalomoCurrencyPlanAmount[currency]; item.InMagicBox = user.PalomoCurrencyPlanInMagicBox[currency];
+            // Sólo el cambio realmente recibido genera una adquisición.
+            if (item.Amount > previousAmount)
+                CaelumNotifications.Acquired(user, item, item.Amount - previousAmount);
             if (item.Amount <= 0) item.Destroy();
         }
         entry.PaidPeriods = entry.Processed; Get(user).Changed(); user.OnNativeInventoryChanged(); return true;
@@ -309,7 +313,7 @@ class CaelumScheduleState : Inventory
         Sync(user); let agenda = Get(user); if (agenda == null) return false;
         let entry = agenda.FindId(id); if (entry == null || !entry.Visible) return false;
         bool success = entry.Kind == CaelumScheduleRules.RENT ? Pay(user, entry) : CollectCargo(user, entry);
-        user.A_Print(StringTable.Localize(success ? "CA_EVENT_ACTION_OK" : "CA_EVENT_ACTION_FAILED", false));
+        CaelumNotifications.Notify(user,StringTable.Localize(success ? "CA_EVENT_ACTION_OK" : "CA_EVENT_ACTION_FAILED", false));
         return success;
     }
     static void Report(CaelumPlayer user)

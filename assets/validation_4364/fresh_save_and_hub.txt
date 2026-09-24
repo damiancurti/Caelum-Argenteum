@@ -1,0 +1,196 @@
+QA_CHEST_LOAD map=MAP02 save=1 reopen=0 preview_handler=1
+QA_CHEST PASS persistence chest 0 exists
+QA_CHEST PASS persistence chest 0 exact remaining slots
+QA_CHEST PASS persistence chest 1 exists
+QA_CHEST PASS persistence chest 1 exact remaining slots
+QA_CHEST PASS persistence chest 2 exists
+QA_CHEST PASS persistence chest 2 exact remaining slots
+QA_CHEST PASS persistence chest 3 exists
+QA_CHEST PASS persistence chest 3 exact remaining slots
+QA_CHEST PASS persistence chest 4 exists
+QA_CHEST PASS persistence chest 4 exact remaining slots
+QA_CHEST PASS persistence chest 5 exists
+QA_CHEST PASS persistence chest 5 exact remaining slots
+QA_CHEST PASS persistence chest 6 exists
+QA_CHEST PASS persistence chest 6 exact remaining slots
+QA_CHEST PASS persistence chest 7 exists
+QA_CHEST PASS persistence chest 7 exact remaining slots
+QA_CHEST PASS persistence chest 8 exists
+QA_CHEST PASS persistence chest 8 exact remaining slots
+QA_CHEST PASS persistence chest 9 exists
+QA_CHEST PASS persistence chest 9 exact remaining slots
+QA_CHEST PASS persistence chest 10 exists
+QA_CHEST PASS persistence chest 10 exact remaining slots
+QA_CHEST PASS persistence chest 11 exists
+QA_CHEST PASS persistence chest 11 exact remaining slots
+QA_CHEST PASS persistence chest 12 exists
+QA_CHEST PASS persistence chest 12 exact remaining slots
+QA_CHEST PASS persistence chest 13 exists
+QA_CHEST PASS persistence chest 13 exact remaining slots
+QA_CHEST PASS persistence chest 14 exists
+QA_CHEST PASS persistence chest 14 exact remaining slots
+QA_CHEST PASS persistence chest 15 exists
+QA_CHEST PASS persistence chest 15 exact remaining slots
+QA_CHEST PASS persistence chest 16 exists
+QA_CHEST PASS persistence chest 16 exact remaining slots
+QA_CHEST PASS persistence chest 17 exists
+QA_CHEST PASS persistence chest 17 exact remaining slots
+QA_CHEST PASS persistence chest 18 exists
+QA_CHEST PASS persistence chest 18 exact remaining slots
+QA_CHEST PASS persistence chest 19 exists
+QA_CHEST PASS persistence chest 19 exact remaining slots
+QA_CHEST PASS persistence chest 20 exists
+QA_CHEST PASS persistence chest 20 exact remaining slots
+QA_CHEST PASS persistence chest 21 exists
+QA_CHEST PASS persistence chest 21 exact remaining slots
+QA_CHEST PASS persistence chest 22 exists
+QA_CHEST PASS persistence chest 22 exact remaining slots
+QA_CHEST PASS persistence chest 23 exists
+QA_CHEST PASS persistence chest 23 exact remaining slots
+QA_CHEST PASS persistence chest 24 exists
+QA_CHEST PASS persistence chest 24 exact remaining slots
+QA_CHEST PASS persistence chest 25 exists
+QA_CHEST PASS persistence chest 25 exact remaining slots
+QA_CHEST PASS persistence chest 26 exists
+QA_CHEST PASS persistence chest 26 exact remaining slots
+QA_CHEST PASS persistence chest 27 exists
+QA_CHEST PASS persistence chest 27 exact remaining slots
+QA_CHEST PASS persistence chest 28 exists
+QA_CHEST PASS persistence chest 28 exact remaining slots
+QA_CHEST PASS persistence chest 29 exists
+QA_CHEST PASS persistence chest 29 exact remaining slots
+QA_CHEST PASS persistence chest 30 exists
+QA_CHEST PASS persistence chest 30 exact remaining slots
+QA_CHEST PASS persistence chest 31 exists
+QA_CHEST PASS persistence chest 31 exact remaining slots
+QA_CHEST PASS persistence chest 32 exists
+QA_CHEST PASS persistence chest 32 exact remaining slots
+QA_CHEST PASS persistence chest 33 exists
+QA_CHEST PASS persistence chest 33 exact remaining slots
+QA_CHEST PASS persistence chest 34 exists
+QA_CHEST PASS persistence chest 34 exact remaining slots
+QA_CHEST PASS persistence chest 35 exists
+QA_CHEST PASS persistence chest 35 exact remaining slots
+QA_CHEST PASS persistence chest 36 exists
+QA_CHEST PASS persistence chest 36 exact remaining slots
+QA_CHEST PASS persistence chest 37 exists
+QA_CHEST PASS persistence chest 37 exact remaining slots
+QA_CHEST PASS persistence chest 38 exists
+QA_CHEST PASS persistence chest 38 exact remaining slots
+QA_CHEST PASS save/travel remaining total
+QA_CHEST PASS save/travel retired total
+QA_CHEST PASS save/travel owned T3 preserved
+QA_CHEST_PERSISTENCE loaded_save=1 remaining=63 retired=0 failures=0
+QA_DONE chest_persistence failures=0 duration_ms=0.503
+QA_CHEST_CAPTURE Used returned=1 native_player=0
+QA_CHEST_CAPTURE immediate map=MAP02 chest=1 remaining=2 can_inspect=1 aimed=1 sight=1 open=1 count=2 handler=1 position=(-1152.0,0.0,-0.0) chestpos=(-1088.0,0.0,0.0) angle=0.00 pitch=9.75 viewheight=41.00
+QA_CHEST_PREVIEW_LINE 0 1 × armadura mágica · cuerpo · T1 · M
+Peso: 2.00 | Durabilidad: 20/20 | Valor base: 9843.75
+QA_CHEST_PREVIEW_LINE 1 1 × campana · T1 · M · esencia de viento
+Peso: 5.00 | Durabilidad: 800/800 | Valor base: 445556.64
+QA_CHEST_CAPTURE after_1_tics map=MAP02 chest=1 remaining=2 can_inspect=1 aimed=1 sight=1 open=1 count=2 handler=1 position=(-1152.0,0.0,-0.0) chestpos=(-1088.0,0.0,0.0) angle=0.00 pitch=9.75 viewheight=41.00
+QA_CHEST_CAPTURE after_3_tics map=MAP02 chest=1 remaining=2 can_inspect=1 aimed=1 sight=1 open=1 count=2 handler=1 position=(-1152.0,0.0,-0.0) chestpos=(-1088.0,0.0,0.0) angle=0.00 pitch=9.75 viewheight=41.00
+QA_CHEST_CAPTURE after_20_tics map=MAP02 chest=1 remaining=2 can_inspect=1 aimed=1 sight=1 open=1 count=2 handler=1 position=(-1152.0,0.0,-0.0) chestpos=(-1088.0,0.0,0.0) angle=0.00 pitch=9.75 viewheight=41.00
+QA_CHEST_CAPTURE after_30_tics map=MAP02 chest=1 remaining=2 can_inspect=1 aimed=1 sight=1 open=1 count=2 handler=1 position=(-1152.0,0.0,-0.0) chestpos=(-1088.0,0.0,0.0) angle=0.00 pitch=9.75 viewheight=41.00
+QA_CHEST_TRAVEL leaving MAP02 -> MAP03 after capture window
+QA_CHEST_LOAD map=MAP03 save=0 reopen=0 preview_handler=1
+QA_CHEST_TRAVEL arrived MAP03 record=1
+QA_CHEST_TRAVEL returning MAP03 -> MAP02
+QA_CHEST_LOAD map=MAP02 save=0 reopen=1 preview_handler=1
+QA_CHEST PASS persistence chest 0 exists
+QA_CHEST PASS persistence chest 0 exact remaining slots
+QA_CHEST PASS persistence chest 1 exists
+QA_CHEST PASS persistence chest 1 exact remaining slots
+QA_CHEST PASS persistence chest 2 exists
+QA_CHEST PASS persistence chest 2 exact remaining slots
+QA_CHEST PASS persistence chest 3 exists
+QA_CHEST PASS persistence chest 3 exact remaining slots
+QA_CHEST PASS persistence chest 4 exists
+QA_CHEST PASS persistence chest 4 exact remaining slots
+QA_CHEST PASS persistence chest 5 exists
+QA_CHEST PASS persistence chest 5 exact remaining slots
+QA_CHEST PASS persistence chest 6 exists
+QA_CHEST PASS persistence chest 6 exact remaining slots
+QA_CHEST PASS persistence chest 7 exists
+QA_CHEST PASS persistence chest 7 exact remaining slots
+QA_CHEST PASS persistence chest 8 exists
+QA_CHEST PASS persistence chest 8 exact remaining slots
+QA_CHEST PASS persistence chest 9 exists
+QA_CHEST PASS persistence chest 9 exact remaining slots
+QA_CHEST PASS persistence chest 10 exists
+QA_CHEST PASS persistence chest 10 exact remaining slots
+QA_CHEST PASS persistence chest 11 exists
+QA_CHEST PASS persistence chest 11 exact remaining slots
+QA_CHEST PASS persistence chest 12 exists
+QA_CHEST PASS persistence chest 12 exact remaining slots
+QA_CHEST PASS persistence chest 13 exists
+QA_CHEST PASS persistence chest 13 exact remaining slots
+QA_CHEST PASS persistence chest 14 exists
+QA_CHEST PASS persistence chest 14 exact remaining slots
+QA_CHEST PASS persistence chest 15 exists
+QA_CHEST PASS persistence chest 15 exact remaining slots
+QA_CHEST PASS persistence chest 16 exists
+QA_CHEST PASS persistence chest 16 exact remaining slots
+QA_CHEST PASS persistence chest 17 exists
+QA_CHEST PASS persistence chest 17 exact remaining slots
+QA_CHEST PASS persistence chest 18 exists
+QA_CHEST PASS persistence chest 18 exact remaining slots
+QA_CHEST PASS persistence chest 19 exists
+QA_CHEST PASS persistence chest 19 exact remaining slots
+QA_CHEST PASS persistence chest 20 exists
+QA_CHEST PASS persistence chest 20 exact remaining slots
+QA_CHEST PASS persistence chest 21 exists
+QA_CHEST PASS persistence chest 21 exact remaining slots
+QA_CHEST PASS persistence chest 22 exists
+QA_CHEST PASS persistence chest 22 exact remaining slots
+QA_CHEST PASS persistence chest 23 exists
+QA_CHEST PASS persistence chest 23 exact remaining slots
+QA_CHEST PASS persistence chest 24 exists
+QA_CHEST PASS persistence chest 24 exact remaining slots
+QA_CHEST PASS persistence chest 25 exists
+QA_CHEST PASS persistence chest 25 exact remaining slots
+QA_CHEST PASS persistence chest 26 exists
+QA_CHEST PASS persistence chest 26 exact remaining slots
+QA_CHEST PASS persistence chest 27 exists
+QA_CHEST PASS persistence chest 27 exact remaining slots
+QA_CHEST PASS persistence chest 28 exists
+QA_CHEST PASS persistence chest 28 exact remaining slots
+QA_CHEST PASS persistence chest 29 exists
+QA_CHEST PASS persistence chest 29 exact remaining slots
+QA_CHEST PASS persistence chest 30 exists
+QA_CHEST PASS persistence chest 30 exact remaining slots
+QA_CHEST PASS persistence chest 31 exists
+QA_CHEST PASS persistence chest 31 exact remaining slots
+QA_CHEST PASS persistence chest 32 exists
+QA_CHEST PASS persistence chest 32 exact remaining slots
+QA_CHEST PASS persistence chest 33 exists
+QA_CHEST PASS persistence chest 33 exact remaining slots
+QA_CHEST PASS persistence chest 34 exists
+QA_CHEST PASS persistence chest 34 exact remaining slots
+QA_CHEST PASS persistence chest 35 exists
+QA_CHEST PASS persistence chest 35 exact remaining slots
+QA_CHEST PASS persistence chest 36 exists
+QA_CHEST PASS persistence chest 36 exact remaining slots
+QA_CHEST PASS persistence chest 37 exists
+QA_CHEST PASS persistence chest 37 exact remaining slots
+QA_CHEST PASS persistence chest 38 exists
+QA_CHEST PASS persistence chest 38 exact remaining slots
+QA_CHEST PASS save/travel remaining total
+QA_CHEST PASS save/travel retired total
+QA_CHEST PASS save/travel owned T3 preserved
+QA_CHEST_PERSISTENCE loaded_save=0 remaining=63 retired=0 failures=0
+QA_DONE chest_persistence failures=0 duration_ms=0.533
+QA_CHEST_CAPTURE Used returned=1 native_player=0
+QA_CHEST_CAPTURE immediate map=MAP02 chest=1 remaining=2 can_inspect=1 aimed=1 sight=1 open=1 count=2 handler=1 position=(-1152.0,0.0,-0.0) chestpos=(-1088.0,0.0,0.0) angle=0.00 pitch=9.75 viewheight=41.00
+QA_CHEST_PREVIEW_LINE 0 1 × armadura mágica · cuerpo · T1 · M
+Peso: 2.00 | Durabilidad: 20/20 | Valor base: 9843.75
+QA_CHEST_PREVIEW_LINE 1 1 × campana · T1 · M · esencia de viento
+Peso: 5.00 | Durabilidad: 800/800 | Valor base: 445556.64
+QA_CHEST PASS native hub returns to reopened MAP02
+QA_CHEST PASS native hub retains QA inventory snapshot
+QA_DONE chest_hub_travel failures=0 reopen=1 phase=3
+QA_CHEST_PROBE_STOP_READY native verification complete; owning process may be stopped
+QA_CHEST_CAPTURE after_1_tics map=MAP02 chest=1 remaining=2 can_inspect=1 aimed=1 sight=1 open=1 count=2 handler=1 position=(-1152.0,0.0,-0.0) chestpos=(-1088.0,0.0,0.0) angle=0.00 pitch=9.75 viewheight=41.00
+QA_CHEST_CAPTURE after_3_tics map=MAP02 chest=1 remaining=2 can_inspect=1 aimed=1 sight=1 open=1 count=2 handler=1 position=(-1152.0,0.0,-0.0) chestpos=(-1088.0,0.0,0.0) angle=0.00 pitch=9.75 viewheight=41.00
+QA_CHEST_CAPTURE after_20_tics map=MAP02 chest=1 remaining=2 can_inspect=1 aimed=1 sight=1 open=1 count=2 handler=1 position=(-1152.0,0.0,-0.0) chestpos=(-1088.0,0.0,0.0) angle=0.00 pitch=9.75 viewheight=41.00
+QA_CHEST_CAPTURE after_30_tics map=MAP02 chest=1 remaining=2 can_inspect=1 aimed=1 sight=1 open=1 count=2 handler=1 position=(-1152.0,0.0,-0.0) chestpos=(-1088.0,0.0,0.0) angle=0.00 pitch=9.75 viewheight=41.00

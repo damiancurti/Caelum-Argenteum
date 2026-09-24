@@ -4,8 +4,12 @@ An independent dark fantasy FPS-RPG inspired by nineteenth-century Argentina.
 Author and game designer: **Damian Curti**. Development target: **GZDoom 4.14.2**
 on Windows 11. The final game is intended to be independent of Doom assets.
 
-**Current release: 4.36.3.** Obtain and update the complete repository, validate
+**Current release: 4.36.4.** Obtain and update the complete repository, validate
 it, then rebuild with `run_dev.bat` as described below. Issue
+[#10](https://github.com/damiancurti/Caelum-Argenteum/issues/10) supplies the
+complete 65-item T1 MAP02 catalogue, recipient-sized natural equipment/rewards,
+chest previews with explicit collection and a recent acquisition/gameplay
+message feed. Author acceptance is tracked in CA-4364-T1-LOOT-01. Issue
 [#9](https://github.com/damiancurti/Caelum-Argenteum/issues/9) adds 10 degrees
 of counterclockwise flail-handle rotation across T1–T3, preserving the grip and
 independent chain animation. Native comparisons are in
@@ -47,7 +51,10 @@ transmit their real mass and share it among supports. Fractional damage is
 preserved. Native ceiling damage remains a percentage per engine pulse.
 
 MAP02 is a three-section maze with 147 rooms, 96 Mandingas, 45 traps, three
-keys, 39 chests and 195 distinct equipment pieces spanning all three tiers.
+keys and 39 chests containing 65 distinct Tier 1 equipment pieces. Newly
+acquired size-bearing equipment fits the recipient; owned equipment retains
+its resolved size. Old saved chests retain the original T1 distribution and
+do not replenish looted slots; unclaimed T2/T3 are retired reversibly.
 It contains 120 food and 120 water rations. The final chamber holds a Zupay,
 the Ace of Cups and the coast exit. The Ace uses the existing Tarot back
 artwork and its own name/reward: +1 to the three social attributes and +1%
@@ -70,7 +77,7 @@ recorded in HISTORY.
 Engine binaries, IWADs and development automation are not included.
 
 `netevent ca_debug_hazards_report` and `netevent ca_debug_maze_report` identify
-**4.36.3**. Use the repository instructions below and the root pending-test queue
+**4.36.4**. Use the repository instructions below and the root pending-test queue
 for focused checks; no external patch-test upload is required.
 The author's acceptance of the carriage, transitions and other 0h tests is
 preserved. The broader unfinished 4.36 physics roadmap remains in PROJECT.md.
@@ -714,9 +721,8 @@ Peregrino uses Amparo: 50% less environmental damage for the player and nearby
 allies for 10 seconds, with 60 seconds of reuse and a trial base cost of 1000 anima.
 Future class area abilities use the shared 1280-MU seal-channel base radius.
 Automatic conversation cancellation on damage was suggested and remains pending.
-Four new prisoner affiliations, +10 own-faction reputation and coins worth twice
-the mean normal purchase price of T1 weapons at the rewarded character's
-equipment size per successful rescue are defined in the roadmap. SYSTEMS records
+Four new prisoner affiliations, +10 own-faction reputation and a fixed 25 gold
+coins per rescued prisoner, independent of character size per successful rescue are defined in the roadmap. SYSTEMS records
 the purchase-price formula; rank thresholds and cross-faction relations still
 require authored design.
 The attribute audit is deferred by the author; the current rules stay accepted.
@@ -758,7 +764,8 @@ The playtest export is a separate milestone from the final independent release.
 ## Pending validation
 
 The author confirmed CA-4360I-VISUAL-01 passed after the 4.36.3 correction on
-2026-09-23. [pending_test.txt](pending_test.txt) is now empty. The 4.36.2 bow
+2026-09-23. [pending_test.txt](pending_test.txt) now contains only the focused
+4.36.4 T1-loot, sizing, chest-preview and acquisition-message check. The 4.36.2 bow
 check also passed on the author's confirmation. On 2026-09-23 the
 author confirmed zero validator errors, successful rebuild/launch and both
 4.36.1 diagnostic headers. That completed
@@ -851,7 +858,7 @@ documentation, structure, Caella translations, station models and audio referenc
 test observers and archives are not part of the playable PK3 or source delivery.
 
 Patch versions use MAJOR.MINOR.PATCH with an optional lowercase letter for
-author-requested documentation/hotfix patches: 4.36.0i -> 4.36.1 -> 4.36.1b -> 4.36.2 -> 4.36.3.
+author-requested documentation/hotfix patches: 4.36.0i -> 4.36.1 -> 4.36.1b -> 4.36.2 -> 4.36.3 -> 4.36.4.
 Implementation commits and later acceptance do not each create a new patch.
 Historical labels stay intact; PROJECT records the current roadmap and the
 author-approved three-map playtest requirement. All seven docs and AGENTS declare

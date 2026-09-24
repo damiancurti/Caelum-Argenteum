@@ -1,6 +1,29 @@
 # Caelum Argenteum — Project, status and roadmap
 
-Documentation version: **4.36.3** — 2026-09-23.
+Documentation version: **4.36.4** — 2026-09-23.
+
+## 4.36.4 — T1 acquisition, recipient sizes and feedback
+
+Issue [#10](https://github.com/damiancurti/Caelum-Argenteum/issues/10) replaces
+the former all-tier MAP02 acquisition catalogue with 65 unique T1 combinations:
+16 armor pieces/types, 36 weapon/essence variants, four shields, four amulets
+and five seals. Fresh maps distribute these across the existing 39 chests.
+The three-section geometry, enemies, traps and 120 rations of each kind remain.
+
+Natural world/reward weapons, armor and shields use an explicit reusable
+character-default size policy; actual acquisition resolves the recipient's
+existing body-to-equipment mapping before capacity checks. Fixed-size authoring
+remains possible, and already acquired equipment retains its size and condition.
+Opening a chest previews its actual remaining contents in Spanish without
+transferring or binding them; collection is explicit and revalidates the recipient.
+A bounded feed retains up to 20 recent gameplay/acquisition entries with separate
+expiry, initially eight seconds through one configurable project parameter.
+
+SYSTEMS defines the contract and migration details; HISTORY records actual
+verification separately from pending author check CA-4364-T1-LOOT-01. The next
+implementation is #11 / 4.36.5 after this patch is reviewed and integrated.
+The updated #10/#14 author decisions also supersede the former price-average
+rescue reward with a fixed 25 gold; #14 still owns its future implementation.
 
 ## 4.36.3 — Additional first-person flail rotation
 
@@ -12,7 +35,7 @@ schema changes. Native before/after evidence is recorded in HISTORY and
 `assets/validation_4363/`; CA-4360I-VISUAL-01 retains its original provenance
 and passed on the author's explicit confirmation on 2026-09-23. Its pending
 entry is removed; no new release number or gameplay change accompanies this
-acceptance. The next implementation is #10 / 4.36.4 after integration of PR #26.
+acceptance. PR #26 was integrated before the 4.36.4 implementation above.
 
 ## 4.36.2 — Bow first-use stall and environmental scope
 
@@ -47,7 +70,7 @@ only the root queue defines outstanding actionable author checks. Old test
 references do not reopen already accepted work. Implementation evidence and
 remaining acceptance are recorded in [HISTORY](HISTORY.md).
 
-Current releases use MAJOR.MINOR.PATCH: 4.36.0i -> 4.36.1 -> 4.36.1b -> 4.36.2 -> 4.36.3.
+Current releases use MAJOR.MINOR.PATCH: 4.36.0i -> 4.36.1 -> 4.36.1b -> 4.36.2 -> 4.36.3 -> 4.36.4.
 Intermediate commits and later acceptance retain the originating patch version.
 The larger roadmap remains in force. Proper names, identifiers, literal game
 dialogue, formulas and original external source material retain their spelling;
@@ -63,7 +86,7 @@ word counts in sync. It also reconciles the prisoner coin reward in SYSTEMS to
 the confirmed T1/recipient-size rule. This is documentation and tooling only:
 no game rule, balance, asset, map geometry, localization or save schema changes.
 
-## Author roadmap update — 2026-09-23 (planned, not implemented)
+## Author roadmap update — 2026-09-23
 
 The author requires **three complete campaign maps**, covering the prologue,
 El Loco / the Fool (0) and two Minor Arcana, before the external V4 playtest.
@@ -71,7 +94,9 @@ This small campaign slice is now an explicit exception to deferring new
 campaign content to V5. It does not waive the existing 4.36 physics or 4.37
 Tarot/Trucazo gates. Test arenas and travel stubs do not count as complete maps.
 
-| Planned patch / stage | Issue | Scope |
+The release sections above record completed implementations; later stages remain planned.
+
+| Patch / stage | Issue | Scope |
 | --- | --- | --- |
 | 4.36.2 | [#8](https://github.com/damiancurti/Caelum-Argenteum/issues/8) | Empty-bow equip stall. |
 | 4.36.3 | [#9](https://github.com/damiancurti/Caelum-Argenteum/issues/9) | Additional flail rotation. |
@@ -79,7 +104,7 @@ Tarot/Trucazo gates. Test arenas and travel stubs do not count as complete maps.
 | 4.36.5 | [#11](https://github.com/damiancurti/Caelum-Argenteum/issues/11) | Four keyed sewer sections, endpoint cells with beds, repair refuges, channels/decor and the northern locked Zupay chamber. |
 | 4.36.6 | [#12](https://github.com/damiancurti/Caelum-Argenteum/issues/12) | Two hostile rats per Mandinga in each section: preserve 96 Mandingas, add 192 rats. |
 | 4.36.7 | [#13](https://github.com/damiancurti/Caelum-Argenteum/issues/13) | Four prisoner palette variants reusing the mansion characters. |
-| 4.36.8 | [#14](https://github.com/damiancurti/Caelum-Argenteum/issues/14) | Following/fighting prisoners, living extraction before the MAP02 boss, port arrivals, one-time +10 own-faction reputation and coins worth twice the mean normal purchase price of T1 weapons at the rewarded character's equipment size per rescue. |
+| 4.36.8 | [#14](https://github.com/damiancurti/Caelum-Argenteum/issues/14) | Following/fighting prisoners, living extraction before the MAP02 boss, port arrivals, one-time +10 own-faction reputation and a fixed 25 gold coins independent of character size per rescue. |
 | 4.36.9 | [#15](https://github.com/damiancurti/Caelum-Argenteum/issues/15) | Integrate approved Tarot fronts, including the Ace of Cups; no new powers. |
 | 4.36.10 | [#18](https://github.com/damiancurti/Caelum-Argenteum/issues/18) | Catapult, ram and breakable-gate assets with documented states/attachments. |
 | 4.36.11 | [#19](https://github.com/damiancurti/Caelum-Argenteum/issues/19) | Damageable actor gates and persistent passage opening on destruction. |
@@ -106,12 +131,10 @@ physical exit alive, before the northern MAP02 Zupay fight, to be extracted
 to the port; they do not participate in that boss encounter. This NPC exit
 must not bypass the player's boss/card progression. Persist each outcome.
 At the port, thanks grant **+10 reputation with that prisoner's own faction
-and coins worth twice the mean normal purchase price of T1 weapons at the
-rewarded character's equipment size, once per successful rescue**.
-Use the arithmetic mean of normal purchase prices from the existing economy,
-including recipe/material quantities and tier costs. The formula and reference-set
-rules are in SYSTEMS, Economy, "Prisoner coin reward": the reference set S is
-T1-only and uses weapons that fit the rewarded character's equipment size.
+and 25 gold coins, once per successful rescue**, independent of character size.
+The latest #10/#14 author decision replaces the old weapon-price average;
+SYSTEMS, Economy, "Prisoner coin reward" records the fixed payout. Implementation
+remains in #14, not this loot-policy patch.
 Unrescued NPCs must not appear there; benefits cannot duplicate on retry,
 save/load or travel. Broad companion formations remain outside this patch.
 

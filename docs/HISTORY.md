@@ -1,6 +1,67 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **4.36.3** — 2026-09-23.
+Documentation version: **4.36.4** — 2026-09-23.
+
+## 4.36.4 — MAP02 T1 loot, recipient sizing and acquisition feedback (#10)
+
+Baseline: integrated 4.36.3, `149f648` (PR #26). Fresh MAP02 offers all 65
+unique T1 combinations through its existing 39 chests. MAP02 geometry is
+byte-identical; enemies, traps and 120 food/120 water are preserved. Existing
+owned/imported T2/T3 remains intact. Revision 1 migration retains looted gaps
+and stashes unclaimed higher-tier items reversibly without replenishment.
+
+Natural world/reward weapons, armor and shields use explicit CHARACTER_DEFAULT,
+resolved for the actual recipient before capacity checks. Fixed authoring,
+crafting and merchant rules remain distinct. Pure previews do not bind shared
+loot; confirmed transfers retain size, identity and condition thereafter. Chest
+Use previews actual contents and derived properties; Enter collects and cancel
+leaves them intact. Current contents and recipient are revalidated on collection.
+Successful ground, chest and reward acquisitions report actual names/quantities.
+Gameplay notices use a recipient-local, chronological 20-entry feed with separate
+eight-second lifetimes (`ca_notification_seconds`). Debug/NPC dialogue is excluded.
+
+Native evidence: Windows 11, GZDoom g4.14.2, Vulkan, RTX 3070 Ti, installed
+development Doom II; isolated configuration, fixtures and saves only. The shared
+size transaction passed 232 checks, all seven body tiers, three sized item kinds,
+derived fit/weight/durability/value/capacity, fixed override, failed retry, owned
+drop/re-pick, and non-MAP02 T2/T3. Chest probes cover complete catalogue, preview,
+cancel, partial capacity, retry, empty/repeated Use and old rejected-pickup state.
+An actual two-client run verifies small/large recipients, intervening collection,
+stale confirmation and recipient-only notices. A 24-message burst retains exactly
+20, with independent expiry; ground stacks/materials and first Magic Box grant
+produce one notice each, rejected/repeated grants none. Native 16:9/4:3 captures
+and persistence results are retained in `assets/validation_4364/RESULTS.json`.
+The final native UI network-event probe confirms collection/cancellation, visible
+receipts after modal closure and reopening the actual empty state, with zero failures.
+The deterministic generator and 642 static content checks pass. Project validation,
+normal build and final review results accompany that evidence.
+
+Implementation review corrected two legacy identity edges, remaining schedule
+notices and the initially silent first Magic Box grant. Old-save verification
+also exposed the missing serialized UI handler and static/map render ordering;
+the controller is now static and draws through the final HUD hook. CA-KP-002
+and CA-KP-007 record the reusable causes and safeguards. This is isolated native and
+static evidence, not a complete campaign playthrough or author acceptance.
+**CA-4364-T1-LOOT-01**, originating 4.36.4 / #10, remains pending in the root queue.
+No author pass confirmation has been received for this patch.
+
+Superseded reward design preserved: #22 specified
+`P_i = GetPriceChargedByMerchant(V_i, 1)` and
+`reward_copper = RoundCopperUp(2 * sum(P_i) / N)` over unique saleable T1 weapon
+entries fitted to the recipient, with canonical 100% material efficiency and
+normal 150% merchant margin applied once; no discounts, buyback, duplicate
+weighting, ammunition, shields or unsellable Limbo items. Later #10/#14 author
+instructions replace it with fixed 25 gold and 10 own-faction reputation per
+successful rescue. Current references now agree; rescue implementation stays #14.
+
+Usage evidence is recorded with the linked PR: desktop #10 interval starts
+2026-09-24 01:26:23 UTC, separately from previous issues in this continued thread.
+The historical allowance baseline is 75% weekly remaining; reset time, current
+allowance and exact token/cache/latency counters are unavailable. No percentage
+is converted into tokens. Work planning/review usage is unavailable and separate.
+Implementation and peer agents inherited the same generic GPT-6 identity; exact
+model/reasoning/speed settings are unavailable, so no cross-model review is claimed.
+Tarot sources and historical source/evidence files are preserved.
 
 ## 4.36.3 — Additional counterclockwise flail rotation (issue #9)
 

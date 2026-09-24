@@ -44,6 +44,8 @@ class CaelumInteractionHint : Object play
     static String Find(CaelumPlayer user)
     {
         if(user==null || user.player==null || user.health<=0 || !user.CharacterCreationComplete)return "";
+        let preview=CaelumChestPreviewState.Get(user);
+        if(preview!=null && preview.Chest!=null)return "";
         let nearby=BlockThingsIterator.Create(user,user.UseRange+128);
         double best=1000000;String result="";
         while(nearby.Next())

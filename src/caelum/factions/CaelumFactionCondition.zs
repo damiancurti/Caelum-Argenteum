@@ -61,7 +61,7 @@ class CaelumFactionCondition : Object
                     CaelumFactionRules.GetNameKey(condition.FactionId), false));
                 text.Replace("%VALUE%", String.Format("%d", condition.MinimumReputation));
             }
-            user.A_Print(text);
+            CaelumNotifications.Notify(user,text);
         }
         return false;
     }

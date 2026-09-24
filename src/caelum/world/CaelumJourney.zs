@@ -136,13 +136,13 @@ class CaelumTravelService : Object play
             || user.CraftingTaskActive || user.EquipmentMenuOpen || user.CombatChannelModeActive
             || CaelumRestState.IsActive(user)
             || (user.player.cheats & CF_TOTALLYFROZEN))
-        { user.A_Print(StringTable.Localize("CA_SEWER_TRAVEL_BUSY", false)); return false; }
+        { CaelumNotifications.Notify(user,StringTable.Localize("CA_SEWER_TRAVEL_BUSY", false)); return false; }
         for (int i = 0; i < MAXPLAYERS; i++)
             if (playeringame[i] && players[i].mo != user)
-            { user.A_Print(StringTable.Localize("CA_M01_RETURN_SOLO", false)); return false; }
+            { CaelumNotifications.Notify(user,StringTable.Localize("CA_M01_RETURN_SOLO", false)); return false; }
         String destination = CaelumWorldCatalogue.MapForLocation(CaelumWorldCatalogue.ConnectionDestination(id));
         if (destination == "MAP01" || !LevelInfo.MapExists(destination))
-        { user.A_Print(StringTable.Localize("CA_SEWER_TRAVEL_MISSING", false)); return false; }
+        { CaelumNotifications.Notify(user,StringTable.Localize("CA_SEWER_TRAVEL_MISSING", false)); return false; }
         let record = user.GetPersistentCharacterState(false);
         let journey = CaelumJourneyState.Get(user);
         return record != null && record.ProfileCommitted && record.WorldPendingConnection == 0

@@ -1,6 +1,17 @@
 # Caelum Argenteum — Audio and art
 
-Documentation version: **4.36.3** — 2026-09-23.
+Documentation version: **4.36.4** — 2026-09-23.
+
+## 4.36.4 — T1 maze catalogue
+
+Issue #10 updates the deterministic MAP02 generator, generated loot catalogue
+and manifest together. The new 65-entry T1 catalogue declares recipient-based
+size policy for size-bearing equipment; it is not a conversion of 195 entries
+into duplicate T1 pieces. All existing chest locations, map geometry, traps,
+enemies and provision quantities remain unchanged. No artwork is regenerated.
+The expanded runtime chest preview and feedback use existing UI/font assets.
+The original 0i evidence remains historical; current coverage and verification
+belong to `assets/validation_4364/` and HISTORY.
 
 ## 4.36.3 — Additional flail-handle rotation
 

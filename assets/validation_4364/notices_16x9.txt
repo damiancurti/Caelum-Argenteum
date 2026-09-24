@@ -1,0 +1,37 @@
+QA_PASS tick=35 ground five-ration transfer
+QA_PASS tick=35 one ground success notification
+QA_ACQUIRED Recibido: 5 × ración de comida
+QA_PASS tick=35 one material grant notification
+QA_ACQUIRED Recibido: 3 × lingote de hierro · T1
+QA_PASS tick=35 overweight ground pickup rejected
+QA_PASS tick=35 rejection adds no success notice
+QA_PASS tick=50 first Magic Box grant succeeds
+QA_PASS tick=50 Magic Box has one named acquisition notice
+QA_PASS tick=50 repeated Magic Box grant rejected
+QA_PASS tick=50 repeat and ownership restoration do not duplicate notice
+QA_PASS tick=100 24-message burst retains exactly 20 entries
+QA_PASS tick=100 oldest evicted and chronological order retained
+QA_QUEUE index=0 remaining=280 text=Aviso 05: recibido equipo de prueba, Tier 1, talle del personaje
+QA_QUEUE index=1 remaining=280 text=Aviso 06: recibido equipo de prueba, Tier 1, talle del personaje
+QA_QUEUE index=2 remaining=280 text=Aviso 07: recibido equipo de prueba, Tier 1, talle del personaje
+QA_QUEUE index=3 remaining=280 text=Aviso 08: recibido equipo de prueba, Tier 1, talle del personaje
+QA_QUEUE index=4 remaining=280 text=Aviso 09: recibido equipo de prueba, Tier 1, talle del personaje
+QA_QUEUE index=5 remaining=280 text=Aviso 10: recibido equipo de prueba, Tier 1, talle del personaje
+QA_QUEUE index=6 remaining=280 text=Aviso 11: recibido equipo de prueba, Tier 1, talle del personaje
+QA_QUEUE index=7 remaining=280 text=Aviso 12: recibido equipo de prueba, Tier 1, talle del personaje
+QA_QUEUE index=8 remaining=280 text=Aviso 13: recibido equipo de prueba, Tier 1, talle del personaje
+QA_QUEUE index=9 remaining=280 text=Aviso 14: recibido equipo de prueba, Tier 1, talle del personaje
+QA_QUEUE index=10 remaining=280 text=Aviso 15: recibido equipo de prueba, Tier 1, talle del personaje
+QA_QUEUE index=11 remaining=280 text=Aviso 16: recibido equipo de prueba, Tier 1, talle del personaje
+QA_QUEUE index=12 remaining=280 text=Aviso 17: recibido equipo de prueba, Tier 1, talle del personaje
+QA_QUEUE index=13 remaining=280 text=Aviso 18: recibido equipo de prueba, Tier 1, talle del personaje
+QA_QUEUE index=14 remaining=280 text=Aviso 19: recibido equipo de prueba, Tier 1, talle del personaje
+QA_QUEUE index=15 remaining=280 text=Aviso 20: recibido equipo de prueba, Tier 1, talle del personaje
+QA_QUEUE index=16 remaining=280 text=Aviso 21: recibido equipo de prueba, Tier 1, talle del personaje
+QA_QUEUE index=17 remaining=280 text=Aviso 22: recibido equipo de prueba, Tier 1, talle del personaje
+QA_QUEUE index=18 remaining=280 text=Aviso 23: recibido equipo de prueba, Tier 1, talle del personaje
+QA_QUEUE index=19 remaining=280 text=Aviso 24: recibido equipo de prueba, Tier 1, talle del personaje
+QA_PASS tick=200 new notice does not restart previous lifetimes
+QA_PASS tick=382 old entries expire independently while newer remains
+QA_PASS tick=482 all entries expire after their own duration
+QA_DONE notice failures=0

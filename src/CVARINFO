@@ -86,3 +86,6 @@ user int ca_calendar_open = 0;
 user int ca_calendar_day = 0;
 user int ca_calendar_event = 0;
 user int ca_calendar_detail = 0;
+
+// Cada entrada conserva su propia vida restante en segundos.
+user float ca_notification_seconds = 8.0;

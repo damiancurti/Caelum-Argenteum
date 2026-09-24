@@ -2737,7 +2737,7 @@ class CaelumJournalOverlay : EventHandler
         else if (e.Name == "ca_table_eat" || e.Name == "ca_table_drink")
         {
             if (!CaelumDiningSession.Toggle(requestingPlayer, e.Name == "ca_table_drink"))
-                requestingPlayer.A_Print(StringTable.Localize("CA_TABLE_CANNOT_EAT", false));
+                CaelumNotifications.Notify(requestingPlayer,StringTable.Localize("CA_TABLE_CANNOT_EAT", false));
         }
         else if (e.Name == "ca_debug_dining")
         { CaelumDiningWorld.Prepare(); }

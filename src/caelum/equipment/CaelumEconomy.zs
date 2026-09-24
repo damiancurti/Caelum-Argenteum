@@ -48,26 +48,6 @@ class CaelumCurrencyItem : CaelumSpecialInventoryItem
         return CaelumEconomyRules.GetCurrencyMetalType(GetCurrencyType());
     }
 
-    override String PickupMessage()
-    {
-        String messageKey = "CA_PICKUP_CURRENCY_COPPER";
-        if (GetCurrencyMetalType() == CaelumConstants.CURRENCY_METAL_SILVER)
-        {
-            messageKey = "CA_PICKUP_CURRENCY_SILVER";
-        }
-        else if (GetCurrencyMetalType()
-            == CaelumConstants.CURRENCY_METAL_GOLD)
-        {
-            messageKey = "CA_PICKUP_CURRENCY_GOLD";
-        }
-        return String.Format(
-            StringTable.Localize(messageKey, false),
-            Amount, GetNominalDenomination()
-        );
-    }
-
-    // Cada denominación conserva una pila independiente. La suma sigue la
-    // misma protección contra overflow que los materiales apilables.
     override bool HandlePickup(Inventory incoming)
     {
         CaelumCurrencyItem currency = CaelumCurrencyItem(incoming);
@@ -708,42 +688,50 @@ class CaelumEconomyRules : Object
     play static double GetEquipmentItemBaseValue(CaelumEquipmentItem item)
     {
         if (item == null || item.IsLimboTemporary() || item.IsLimboFirstWeapon()) { return 0.0; }
-        int tier = Clamp(item.Tier, 1, 3);
-        double finalWeight = Max(0.0, item.UnitWeight);
-        if (item.EquipmentKind == CaelumConstants.EQUIPMENT_KIND_WEAPON)
+        return GetEquipmentBaseValueFor(item.EquipmentKind, item.ItemType,
+            item.ArmorSlot, item.Tier, item.EssenceType, item.UnitWeight);
+    }
+
+    // Valor proyectado desde datos: la vista previa no modifica el equipo.
+    static clearscope double GetEquipmentBaseValueFor(int kind, int type,
+        int slot, int requestedTier, int essence, double weight)
+    {
+        int tier = Clamp(requestedTier, 1, 3);
+        double finalWeight = Max(0.0, weight);
+        if (kind == CaelumConstants.EQUIPMENT_KIND_WEAPON)
         {
-            if (IsEssenceWeaponType(item.ItemType))
+            if (IsEssenceWeaponType(type))
             {
                 return GetEssenceWeaponBaseValue(
-                    item.ItemType, item.EssenceType, tier, finalWeight
+                    type, essence, tier, finalWeight
                 );
             }
             return GetPhysicalWeaponBaseValue(
-                item.ItemType, tier, finalWeight
+                type, tier, finalWeight
             );
         }
-        if (item.EquipmentKind == CaelumConstants.EQUIPMENT_KIND_ARMOR)
+        if (kind == CaelumConstants.EQUIPMENT_KIND_ARMOR)
         {
             return GetArmorBaseValue(
-                item.ItemType, item.ArmorSlot, tier, finalWeight
+                type, slot, tier, finalWeight
             );
         }
-        if (item.EquipmentKind == CaelumConstants.EQUIPMENT_KIND_SHIELD)
+        if (kind == CaelumConstants.EQUIPMENT_KIND_SHIELD)
         {
             return GetShieldBaseValue(
-                item.ItemType, tier, finalWeight
+                type, tier, finalWeight
             );
         }
-        if (item.EquipmentKind == CaelumConstants.EQUIPMENT_KIND_AMULET)
+        if (kind == CaelumConstants.EQUIPMENT_KIND_AMULET)
         {
             return GetAmuletBaseValue(
-                item.ItemType, tier, finalWeight
+                type, tier, finalWeight
             );
         }
-        if (item.EquipmentKind == CaelumConstants.EQUIPMENT_KIND_SEAL)
+        if (kind == CaelumConstants.EQUIPMENT_KIND_SEAL)
         {
             return GetSealBaseValue(
-                item.ItemType, tier, finalWeight
+                type, tier, finalWeight
             );
         }
         return 0.0;

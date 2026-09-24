@@ -1,0 +1,19 @@
+{
+  "passed": true,
+  "repeated_outputs_sha256": {
+    "src/maps/MAP02.wad": "9095bda962f5410ba869b3780dff2a58c11ff0a011e35d451a43052b851406d2",
+    "src/caelum/world/CaelumMazeLootCatalogue.zs": "e1927619b91f004dda3399bd97f233c5888d04a8a4e7f7bb16f0d8f55f706213",
+    "assets/map02_maze/MAP02_MANIFEST.json": "c1a04c60f07ef31899163de05097b7c7d9191eb8f05b5953f6598c7c52f0f99f"
+  },
+  "unchanged_baseline_fields": [
+    "seed",
+    "zones",
+    "rooms",
+    "locks",
+    "traps",
+    "things",
+    "geometry",
+    "cells"
+  ],
+  "map02_byte_identical_to_baseline": true
+}

@@ -1075,6 +1075,7 @@ class CaelumPlayer : DoomPlayer
                 StringTable.Localize("CA_PALOMO_MAGIC_BOX_RECEIVED", false)
             );
         }
+        CaelumNotifications.Acquired(self, FindInventory("CaelumMagicBox"), 1);
         return true;
     }
 
@@ -2478,6 +2479,7 @@ class CaelumPlayer : DoomPlayer
         LastEquipmentPickupWasNew = createdNewStack;
         LastEquipmentPickupWentToMagicBox = storeInMagicBox;
         OnNativeInventoryChanged();
+        CaelumNotifications.Acquired(self, result, incomingAmount);
         return true;
     }
 
@@ -2851,6 +2853,7 @@ class CaelumPlayer : DoomPlayer
             currencyType < CaelumConstants.CURRENCY_TYPE_COUNT; currencyType++)
         {
             CaelumCurrencyItem existing = FindNativeCurrency(currencyType);
+            int previousAmount=existing==null ? 0 : existing.Amount;
             int finalAmount = PalomoCurrencyPlanAmount[currencyType];
             if (finalAmount <= 0)
             {
@@ -2872,6 +2875,7 @@ class CaelumPlayer : DoomPlayer
                 existing.Amount = finalAmount;
                 existing.InMagicBox = PalomoCurrencyPlanInMagicBox[currencyType];
             }
+            CaelumNotifications.Acquired(self, existing, finalAmount-previousAmount);
         }
         return true;
     }
@@ -2888,6 +2892,7 @@ class CaelumPlayer : DoomPlayer
             CaelumSpecialInventoryItem special = CaelumSpecialInventoryItem(existing);
             if (special != null)
             { special.InMagicBox = PalomoIncomingItemInMagicBox; }
+            CaelumNotifications.Acquired(self, existing, quantity);
             return true;
         }
         int consumableType = GetPalomoMerchantConsumableType(merchantItem);
@@ -2899,6 +2904,7 @@ class CaelumPlayer : DoomPlayer
             created.Amount = quantity;
             created.InMagicBox = PalomoIncomingItemInMagicBox;
             created.AttachToOwner(self);
+            CaelumNotifications.Acquired(self, created, quantity);
             return true;
         }
         int materialType = GetPalomoMerchantMaterialType(merchantItem);
@@ -2911,6 +2917,7 @@ class CaelumPlayer : DoomPlayer
         material.Amount = quantity;
         material.InMagicBox = PalomoIncomingItemInMagicBox;
         material.AttachToOwner(self);
+        CaelumNotifications.Acquired(self, material, quantity);
         return true;
     }
 
@@ -3250,7 +3257,6 @@ class CaelumPlayer : DoomPlayer
     bool PrepareNativeEquipmentPickup(CaelumEquipmentItem item)
     {
         if (item == null || DerivedStats == null) { return false; }
-        if (EnsureEquipmentItemId(item) <= 0) { return false; }
         RefreshCarriedInventorySummary();
         item.Equipped = false;
         item.InMagicBox = false;
@@ -3263,6 +3269,8 @@ class CaelumPlayer : DoomPlayer
             }
             item.InMagicBox = true;
         }
+        // Sólo una transferencia con capacidad disponible reserva identidad.
+        if (EnsureEquipmentItemId(item) <= 0) { return false; }
         LastEquipmentPickupWasNew = true;
         LastEquipmentPickupWentToMagicBox = item.InMagicBox;
         return true;
@@ -8451,6 +8459,9 @@ class CaelumPlayer : DoomPlayer
             detachedOutput.InMagicBox = sendOutputToMagicBox;
             detachedOutput.AttachToOwner(self);
         }
+        if (existingOutput!=null)
+            CaelumNotifications.Acquired(self,existingOutput,CraftingOutputAmount);
+        else CaelumNotifications.Acquired(self,detachedOutput,CraftingOutputAmount);
         LastCraftingAction = CaelumConstants.CRAFTING_ACTION_PROCESSED;
         ApplyCharacterProfile();
         PersistCharacterState();
@@ -8528,6 +8539,7 @@ class CaelumPlayer : DoomPlayer
         result.PickupDataInitialized = true;
         result.AttachToOwner(self);
         EnsureEquipmentItemId(result);
+        CaelumNotifications.Acquired(self, result, 1);
 
         CaelumPersistentCharacterState persistentState =
             GetPersistentCharacterState(true);
@@ -8639,6 +8651,7 @@ class CaelumPlayer : DoomPlayer
         result.PickupDataInitialized = true;
         result.AttachToOwner(self);
         EnsureEquipmentItemId(result);
+        CaelumNotifications.Acquired(self, result, 1);
 
         CaelumPersistentCharacterState persistentState =
             GetPersistentCharacterState(true);
@@ -8734,6 +8747,7 @@ class CaelumPlayer : DoomPlayer
         result.PickupDataInitialized = true;
         result.AttachToOwner(self);
         EnsureEquipmentItemId(result);
+        CaelumNotifications.Acquired(self, result, 1);
 
         CaelumPersistentCharacterState persistentState =
             GetPersistentCharacterState(true);
@@ -8815,6 +8829,7 @@ class CaelumPlayer : DoomPlayer
         result.UnitWeight=CaelumCraftingRules.GetJewelryWeight(CraftingSelectionTier);
         result.Equipped=false; result.InMagicBox=!personalOutput; result.PickupDataInitialized=true; result.AttachToOwner(self);
         EnsureEquipmentItemId(result);
+        CaelumNotifications.Acquired(self, result, 1);
         CaelumMainM00SealCrafting.RecordCraft(self, result);
         LastCraftingAction=CaelumConstants.CRAFTING_ACTION_CREATED;
         ApplyCharacterProfile();
@@ -8852,6 +8867,7 @@ class CaelumPlayer : DoomPlayer
         }
         ammunition.Amount = oldAmount + batch;
         if (created) ammunition.AttachToOwner(self);
+        CaelumNotifications.Acquired(self, ammunition, batch);
         // Munición no cuenta como primera arma ni sustituye su ItemId.
         LastCraftingAction = CaelumConstants.CRAFTING_ACTION_CREATED;
         OnNativeInventoryChanged();
@@ -8998,6 +9014,7 @@ class CaelumPlayer : DoomPlayer
         result.PickupDataInitialized = true;
         result.AttachToOwner(self);
         EnsureEquipmentItemId(result);
+        CaelumNotifications.Acquired(self, result, 1);
 
         CaelumPersistentCharacterState persistentState =
             GetPersistentCharacterState(true);
@@ -10293,6 +10310,9 @@ class CaelumPlayer : DoomPlayer
                 pickup.args[3] = EquipmentSelectionSize + 1;
             }
         }
+        let authoredEquipment=CaelumEquipmentItem(pickup);
+        if (authoredEquipment!=null)
+            authoredEquipment.SizePolicy=CaelumEquipmentRules.FIXED_SIZE;
         LastEquipmentAction = pickup != null
             ? CaelumConstants.EQUIPMENT_ACTION_SPAWNED_ON_FLOOR
             : CaelumConstants.EQUIPMENT_ACTION_FAILED_NOT_OWNED;
@@ -11094,11 +11114,13 @@ class CaelumPlayer : DoomPlayer
             existing.Amount += recoveredAmount;
             if (sendToMagicBox) { existing.InMagicBox = true; }
             if (detached != null) { detached.Destroy(); }
+            CaelumNotifications.Acquired(self, existing, recoveredAmount);
             return;
         }
         if (detached == null) { return; }
         detached.InMagicBox = sendToMagicBox;
         detached.AttachToOwner(self);
+        CaelumNotifications.Acquired(self, detached, detached.Amount);
     }
 
     void DismantleSelectedNativeWeapon()

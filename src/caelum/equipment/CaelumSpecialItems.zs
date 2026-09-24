@@ -76,6 +76,8 @@ class CaelumSpecialInventoryItem : Inventory
         -INVENTORY.INVBAR
     }
 
+    override String PickupMessage() { return ""; }
+
     virtual int GetSpecialCategory() { return -1; }
     virtual int GetSpecialType() { return -1; }
     virtual int GetSpecialTier() { return 0; }
@@ -99,8 +101,15 @@ class CaelumSpecialInventoryItem : Inventory
         {
             return false;
         }
+        int before = CaelumNotifications.OwnedQuantity(caelumPlayer, self);
+        String received = CaelumNotifications.Describe(caelumPlayer, self, 0);
         bool pickedUp = Super.TryPickup(toucher);
-        if (pickedUp) { caelumPlayer.OnNativeInventoryChanged(); }
+        if (pickedUp)
+        {
+            int gained = CaelumNotifications.OwnedQuantity(caelumPlayer, self) - before;
+            CaelumNotifications.AcquiredDescription(caelumPlayer, received, gained);
+            caelumPlayer.OnNativeInventoryChanged();
+        }
         return pickedUp;
     }
 
@@ -230,24 +239,6 @@ class CaelumMaterialPickup : CaelumSpecialInventoryItem
     override int GetSpecialTier()
     {
         return CaelumMaterialRules.ResolveTier(GetSpecialType(), args[1]);
-    }
-
-    // GZDoom consulta este método en el actor original después de completar
-    // TryPickup, por lo que Amount conserva la cantidad exacta de la pila.
-    override String PickupMessage()
-    {
-        String materialName = StringTable.Localize(
-            CaelumDisplayNames.GetSpecialItemKey(
-                CaelumConstants.EQUIPMENT_KIND_MATERIAL,
-                GetSpecialType()
-            ),
-            false
-        );
-        return String.Format(
-            StringTable.Localize("CA_PICKUP_MATERIAL_DETAILED", false),
-            materialName,
-            Amount
-        );
     }
 
     override void PostBeginPlay()
@@ -640,6 +631,7 @@ class CaelumProcessingManual : CaelumSpecialInventoryItem
 class CaelumWeightedKey : Key
 {
     Default { Inventory.Icon "graphics/caelum/icons/ca_key.png"; }
+    override String PickupMessage() { return ""; }
     virtual int GetKeyType() { return -1; }
 
     double GetCarriedWeight()
@@ -655,8 +647,15 @@ class CaelumWeightedKey : Key
         {
             return false;
         }
+        int before = CaelumNotifications.OwnedQuantity(caelumPlayer, self);
+        String received = CaelumNotifications.Describe(caelumPlayer, self, 0);
         bool pickedUp = Super.TryPickup(toucher);
-        if (pickedUp) { caelumPlayer.OnNativeInventoryChanged(); }
+        if (pickedUp)
+        {
+            int gained = CaelumNotifications.OwnedQuantity(caelumPlayer, self) - before;
+            CaelumNotifications.AcquiredDescription(caelumPlayer, received, gained);
+            caelumPlayer.OnNativeInventoryChanged();
+        }
         return pickedUp;
     }
 }

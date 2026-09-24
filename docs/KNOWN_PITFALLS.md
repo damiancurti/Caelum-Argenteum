@@ -35,13 +35,25 @@ Author acceptance: recorded separately for the 4.36.1b documentation patch; this
 
 ## CA-KP-002 — Default equipment size is not the character's raw body tier
 
-Status/evidence: CODE-VERIFIED. Scope: baseline src/caelum/equipment/CaelumEquipmentRules.zs, GetDefaultSizeForCharacterTier; real callers in CaelumMainM00RonnieTrial.zs and CaelumMainM00MagicTrial.zs.
+Status/evidence: ENGINE-VERIFIED in 4.36.4 (#10), GZDoom g4.14.2. Scope: shared recipient-size policy, native equipment acquisition and legacy MAP02 chest migration; author acceptance remains pending.
 
 Observation: a shared mapping converts character tiers into equipment-size constants; its current default selection does not select every possible equipment size. Do not infer a linear or one-to-one mapping, or change it as incidental cleanup.
 
-Prevention: reuse the helper for the actual recipient and inspect fit, weight and durability consumers. Preserve acquired-item identity and size. Issue #10 defines the new MAP02 acquisition behavior; it is not already proven merely by finding the helper.
+Cause/fix: the former pickup path could initialize size and reserve ItemId before
+capacity rejection. Treating those fields as proof of acquisition bound rejected
+shared loot to its first viewer. Resolve a nonmutating projection, check capacity
+before allocating identity, and commit only on transfer. Preserve genuine owned
+or dropped equipment. A container's temporary BecomePickup/bDROPPED flag is not
+evidence of previous ownership. Revisioned migration retains unclaimed higher-tier
+objects separately without refilling looted slots; RestoreLegacyLootForMigration
+reverses that storage change. Explicit CHARACTER_DEFAULT is distinct from legacy
+editor argument 0 (M) and resolved size enum 0 (XS).
 
-Verification: representative small, medium and large characters, actual recipient, capacity failure/retry, save/load and drop/re-pick. Record values through the actual APIs rather than a manually duplicated mapping.
+Prevention: reuse the mapping for the actual recipient, including multiplayer;
+inspect fit, weight, durability, value and capacity. Preview and cancellation must
+never assign identity or change size, wear, loot counts or stock state.
+
+Verification: 232 native sizing checks passed across all seven body tiers; actual two-client small/large collection and stale confirmation passed. Fresh and baseline-save chest probes cover rejected legacy pickups, preservation of acquired T3 and looted holes, and reversible/idempotent migration. See assets/validation_4364/RESULTS.json for persistence and presentation evidence. These isolated checks do not constitute author acceptance.
 
 ## CA-KP-003 — Nested bow crop composition stalls on first presentation
 
@@ -121,7 +133,30 @@ At the inspected PR #7 commit, its reward clarification still describes size-M p
 
 Prevention: compare the exact commit and dirty-tree status, distinguish author-approved design from shipped implementation, and reconcile the current canonical sections during formal integration. Do not silently revert a later author decision because an older document says otherwise.
 
-Acceptance: issue #22 reconciles SYSTEMS, PROJECT, CONTEXT and TASKS to the confirmed T1/recipient-size rule; historical fixed-M discussions remain historical.
+Acceptance: issue #22 reconciled the then-confirmed T1/recipient-size rule. The later #10/#14 author decision supersedes that reward formula with fixed 25 gold plus 10 own-faction reputation, implemented in future #14. Issue #10 reconciles current references and preserves the displaced formula in HISTORY. Historical fixed-M and price-average discussions remain historical.
+
+## CA-KP-007 — New serialized event handlers are absent from older saves
+
+Status/evidence: ENGINE-VERIFIED in 4.36.4 (#10), GZDoom g4.14.2.
+
+Symptom/cause: a pre-4.36.4 MAP02 save restored its saved EventHandler list.
+The new chest preview inventory correctly contained five real entries, but the
+new map handler was absent (`open=1`, `count=5`, `handler=0`), so neither its
+input nor its renderer was available. A fresh game did not expose the problem.
+
+Fix/prevention: the stateless input/network controller is a StaticEventHandler,
+independent of the saved map-handler list. Serializable preview state stays on
+the recipient's inventory. Static render events precede map render events even
+with a larger SetOrder value; draw the modal through the end of the existing HUD
+instead, so bars and gameplay notices cannot cover its contents or actions.
+Call EventHandler.SendNetworkEvent explicitly from the static controller.
+Collection confirmation closes the modal so actual receipts/capacity notices are
+visible before they expire; reopening reads the current remaining inventory.
+
+Verification: the same old save, its migrated reload and five-entry 1024x768
+native capture; fresh-save and hub-return probes. See validation_4364 evidence.
+Author acceptance remains pending. Preserve this separation when adding another
+UI to an established save schema.
 
 ## Rules for adding and updating entries
 

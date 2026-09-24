@@ -69,7 +69,7 @@ class CaelumSleepRules : Object play
         }
         user.CurrentAnima -= cost;
         user.ClassSleepCooldownRemaining = REUSE_SECONDS;
-        user.A_Print(String.Format(StringTable.Localize("CA_SLEEP_CAST", false), count));
+        CaelumNotifications.Notify(user,String.Format(StringTable.Localize("CA_SLEEP_CAST", false), count));
         user.PersistCharacterState();
         return true;
     }

@@ -105,6 +105,7 @@ class CaelumSewerTrialSupport : Object play
             seal.PickupDataInitialized = true;
             seal.AttachToOwner(user);
             user.EnsureEquipmentItemId(seal);
+            CaelumNotifications.Acquired(user, seal, 1);
         }
         user.ApplyFormalInventorySelection(seal);
         user.EquipSelectedNativeEquipment();

@@ -183,7 +183,11 @@ class CaelumMainM00RuloTrial : Object play
                     if (ammo != null) { ammo.Amount = needed; ammo.AttachToOwner(user); }
                 }
                 else ammo.Amount += needed;
-                if (ammo != null) { r.MainM00AmmoLoanType = kind; r.MainM00AmmoLoanRemaining += needed; }
+                if (ammo != null)
+                {
+                    r.MainM00AmmoLoanType = kind; r.MainM00AmmoLoanRemaining += needed;
+                    CaelumNotifications.Acquired(user, ammo, needed);
+                }
             }
             else if (needed > 0) CaelumMainM00MagicTrial.Feedback(user, "CA_M01_RULO_AMMO_WEIGHT", true);
         }
