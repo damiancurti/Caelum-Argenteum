@@ -214,7 +214,7 @@ class CaelumMainM00RonnieTrial : Object play
 
     static void Feedback(CaelumPlayer user, String key)
     {
-        if (user != null) user.A_Print(StringTable.Localize(key, false));
+        if (user != null) CaelumNotifications.Notify(user,StringTable.Localize(key, false));
     }
 
     static CaelumEquipmentItem FindLoan(CaelumPlayer user)
@@ -256,7 +256,9 @@ class CaelumMainM00RonnieTrial : Object play
                 loan.EquipmentKind = CaelumConstants.EQUIPMENT_KIND_WEAPON;
                 loan.ItemType = CaelumConstants.WEAPON_TYPE_SWORD;
                 loan.Tier = 1;
-                loan.EquipmentSize = record.MainM00StarterSize;
+                loan.SizePolicy = CaelumEquipmentRules.CHARACTER_DEFAULT;
+                loan.EquipmentSize = CaelumEquipmentRules.ResolveAcquisitionSize(
+                    user, loan.SizePolicy, record.MainM00StarterSize);
                 loan.ArmorSlot = -1;
                 loan.EssenceType = CaelumConstants.ESSENCE_FIRE;
                 loan.UnitWeight = user.WeaponModel.GetWeightFor(loan.ItemType, 1, loan.EquipmentSize);
@@ -265,6 +267,7 @@ class CaelumMainM00RonnieTrial : Object play
                 { loan.Destroy(); Feedback(user, "CA_M01_REPAIR_LOAN_NO_ROOM"); return false; }
                 loan.AttachToOwner(user);
                 user.EnsureEquipmentItemId(loan);
+                CaelumNotifications.Acquired(user, loan, 1);
             }
             loan.ItemFlags |= CaelumConstants.CA_ITEMFLAG_LIMBO_TEMP;
             record.MainM00RonnieSwordId = loan.ItemId;
@@ -434,6 +437,7 @@ class CaelumMainM00RonnieTrial : Object play
             item.LimboQuestUnits += amount;
             item.LimboSupplyUnits += amount;
             CaelumMainM00SupplyRules.Issue(user, material, amount);
+            CaelumNotifications.Acquired(user, item, amount);
         }
         CaelumMainM00SupplyRules.RefreshChest(user);
         user.OnNativeInventoryChanged();

@@ -1,0 +1,25 @@
+QA_CHEST PASS 39 native chests
+QA_CHEST PASS complete remaining T1 count
+QA_CHEST PASS every acquirable item is T1
+QA_CHEST PASS expected retired T2/T3 count
+QA_CHEST PASS all expected size-bearing entries retained
+QA_CHEST_BASELINE legacy=0 chests=39 remaining=65 retired=0 sized=56 owned_t3=0
+QA_CHEST PASS native aim and sight permit interaction
+QA_CHEST PASS first Use opens preview
+QA_CHEST PASS preview matches actual remaining entries
+QA_CHEST PASS preview transfers nothing
+QA_CHEST PASS cancel transfers nothing
+QA_CHEST PASS repeated Use transfers nothing
+QA_CHEST PASS small recipient preview never binds shared loot
+QA_CHEST PASS capacity failure retains every item
+QA_CHEST PASS capacity failure restores size weight durability identity
+QA_CHEST PASS later recipient profile resolves its own size
+QA_CHEST PASS partial collection ballast fits fixture
+QA_CHEST PASS partial capacity accepts exactly first entry
+QA_CHEST PASS partial preview shows only unreceived items
+QA_CHEST PASS retry collects all remaining real items
+QA_CHEST PASS actual successful transfer resolves the final recipient size
+QA_CHEST PASS empty chest has explicit empty preview state
+QA_CHEST PASS repeated Use collect and EnsureLoot never replenish
+QA_CHEST multiplayer recipient test unavailable in single-player run; no simulated player used
+QA_DONE chest_initial legacy=0 failures=0 remaining=63 retired=0 duration_ms=0.501

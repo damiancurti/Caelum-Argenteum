@@ -1,6 +1,21 @@
 // Reglas compartidas de talle y tier para todo objeto equipable.
 class CaelumEquipmentRules : Object
 {
+    // Política separada del talle: args de talle 0 sigue significando M;
+    // EquipmentSize conserva sus índices históricos XS=0, S=1, M=2, L=3, XL=4.
+    // LEGACY migra sólo fuentes sin dueño; FIXED_SIZE es la excepción explícita.
+    const LEGACY_SIZE_POLICY = 0;
+    const CHARACTER_DEFAULT = 1;
+    const FIXED_SIZE = 2;
+    const SIZE_POLICY_REVISION = 1;
+
+    static play int ResolveAcquisitionSize(CaelumPlayer user, int policy, int fixedSize)
+    {
+        if (policy == CHARACTER_DEFAULT && user != null && user.CharacterProfile != null)
+            return GetDefaultSizeForCharacterTier(user.CharacterProfile.GetSizeTier());
+        return Clamp(fixedSize, 0, CaelumConstants.EQUIPMENT_SIZE_COUNT - 1);
+    }
+
     static double GetTierWeightMultiplier(int tier)
     {
         if (tier <= 1) { return 1.0; }

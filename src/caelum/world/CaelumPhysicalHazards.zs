@@ -331,7 +331,7 @@ class CaelumHazardReleaseSwitch : Actor
         Spent = true;
         if (LeverVisual != null) LeverVisual.frame = 1;
         A_StartSound("caelum/world/lever_activate", CHAN_BODY);
-        user.A_Print(StringTable.Localize("CA_HAZARD_RELEASED", false));
+        CaelumNotifications.Notify(user,StringTable.Localize("CA_HAZARD_RELEASED", false));
         return true;
     }
     Default
@@ -367,7 +367,7 @@ class CaelumHazardDiagnostics : Object play
 {
     static void Report()
     {
-        Console.Printf("[Caelum 4.36.3] Peligros físicos y mágicos: mapa=%s", level.MapName);
+        Console.Printf("[Caelum 4.36.4] Peligros físicos y mágicos: mapa=%s", level.MapName);
         Console.Printf("Techos: args[0] expresa porcentaje de vida máxima por pulso nativo; masa estática: Hmax x 0.10 x max(0, (masa encima+carga)/capacidad-1) por segundo.");
         let it = ThinkerIterator.Create("CaelumTrapdoor"); CaelumTrapdoor trap;
         int count = 0;

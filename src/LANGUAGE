@@ -3926,13 +3926,13 @@ CA_MAZE_KEY_3 = "Sanctum key";
 CA_MAZE_LOCK_1 = "You need the sluice key.";
 CA_MAZE_LOCK_2 = "You need the crypt key.";
 CA_MAZE_LOCK_3 = "You need the sanctum key.";
-CA_MAZE_CHEST_OPEN = "Chest open. Use again to take its contents.";
+CA_MAZE_CHEST_OPEN = "Chest open. Preview the contents before confirming collection.";
 CA_MAZE_CHEST_TAKEN = "Taken: %d. Remaining: %d (check carrying capacity).";
 CA_MAZE_ZUPAY_GUARD = "Defeat the Zupay to free the passage and the card.";
 CA_MAZE_CARD_GUARD = "Capture the Ace of Cups before leaving.";
 CA_MAZE_CUPS_ACE = "Ace of Cups";
 CA_MAZE_CUPS_CAPTURED = "Ace of Cups captured: +1 to the three social attributes and +1% collection bonus.";
-CA_MAZE_USE_CHEST = "Use: open / take loot";
+CA_MAZE_USE_CHEST = "Use: preview chest contents";
 CA_MAZE_USE_CARD = "Use: capture the Ace of Cups";
 CA_MAZE_USE_GATE = "Use: travel";
 CA_MAZE_HINT_ROCK = "Loose pressure slab";
@@ -3945,13 +3945,42 @@ CA_MAZE_KEY_3 = "Llave del santuario";
 CA_MAZE_LOCK_1 = "Necesitas la llave de las compuertas.";
 CA_MAZE_LOCK_2 = "Necesitas la llave de las criptas.";
 CA_MAZE_LOCK_3 = "Necesitas la llave del santuario.";
-CA_MAZE_CHEST_OPEN = "Cofre abierto. Usa otra vez para retirar su contenido.";
+CA_MAZE_CHEST_OPEN = "Cofre abierto. Revisa su contenido antes de confirmar la recogida.";
 CA_MAZE_CHEST_TAKEN = "Retirados: %d. Quedan: %d (revisa tu capacidad de carga).";
 CA_MAZE_ZUPAY_GUARD = "Derrota al Zupay para liberar el paso y la carta.";
 CA_MAZE_CARD_GUARD = "Captura el 1 de Copas antes de salir.";
 CA_MAZE_CUPS_ACE = "1 de Copas (Ancho)";
 CA_MAZE_CUPS_CAPTURED = "1 de Copas capturado: +1 a los tres atributos sociales y +1% por colección.";
-CA_MAZE_USE_CHEST = "Usar: abrir / retirar botín";
+CA_MAZE_USE_CHEST = "Usar: ver contenido del cofre";
 CA_MAZE_USE_CARD = "Usar: capturar el 1 de Copas";
 CA_MAZE_USE_GATE = "Usar: viajar";
 CA_MAZE_HINT_ROCK = "Losa de presión suelta";
+
+[enu default]
+// Chest preview, issue #10.
+CA_CHEST_PREVIEW_TITLE = "Chest contents";
+CA_CHEST_PREVIEW_UNCLAIMED = "Preview: the items remain in the chest.";
+CA_CHEST_PREVIEW_EMPTY = "The chest is empty.";
+CA_CHEST_PREVIEW_COLLECT = "Enter / A: collect as much as you can carry";
+CA_CHEST_PREVIEW_CANCEL = "Esc / Q / B: close without collecting";
+CA_CHEST_PREVIEW_CAPACITY = "%d items remain in the chest: you cannot carry them.";
+
+[es]
+CA_CHEST_PREVIEW_TITLE = "Contenido del cofre";
+CA_CHEST_PREVIEW_UNCLAIMED = "Vista previa: los objetos siguen en el cofre.";
+CA_CHEST_PREVIEW_EMPTY = "El cofre está vacío.";
+CA_CHEST_PREVIEW_COLLECT = "Entrar / A: recoger todo lo que puedas cargar";
+CA_CHEST_PREVIEW_CANCEL = "Esc / Q / B: cerrar sin recoger";
+CA_CHEST_PREVIEW_CAPACITY = "Quedan %d objetos en el cofre: no tienes capacidad para recogerlos.";
+
+[enu default]
+CA_CHEST_PREVIEW_PROPERTIES = "Weight: %.2f | Durability: %d/%d | Base value: %.2f";
+
+[es]
+CA_CHEST_PREVIEW_PROPERTIES = "Peso: %.2f | Durabilidad: %d/%d | Valor base: %.2f";
+
+[enu default]
+CA_CHEST_PREVIEW_ACCESSORY_PROPERTIES = "Weight: %.2f | Base value: %.2f";
+
+[es]
+CA_CHEST_PREVIEW_ACCESSORY_PROPERTIES = "Peso: %.2f | Valor base: %.2f";

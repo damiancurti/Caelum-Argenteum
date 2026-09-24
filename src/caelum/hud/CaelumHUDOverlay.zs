@@ -1151,5 +1151,7 @@ class CaelumHUDOverlay : EventHandler
             DTA_KEEPRATIO, true,
             DTA_SHADOW, true
         );
+        CaelumNotifications.Draw(localPlayer, HUDFont);
+        CaelumChestPreview.Draw();
     }
 }

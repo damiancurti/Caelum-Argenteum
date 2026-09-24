@@ -1,6 +1,21 @@
 # TASKS.md — Active tasks
 
-Documentation version: **4.36.3** — 2026-09-23.
+Documentation version: **4.36.4** — 2026-09-23.
+
+## Issue #10 — T1 loot, default sizing and pickup feedback (4.36.4)
+
+- **Issue:** https://github.com/damiancurti/Caelum-Argenteum/issues/10
+- **Scope:** complete 65-entry T1 MAP02 catalogue, reusable recipient sizing for
+  natural/reward weapons/armor/shields, nonmutating chest previews with explicit
+  collection, and actual acquisition names in a bounded 20-entry message feed.
+- **Compatibility:** preserve owned/imported gear, old looted slots, existing
+  size mapping and balance; revisioned unclaimed-loot migration, no replenishment.
+- **Evidence:** HISTORY and `assets/validation_4364/` separate static/native
+  results from author acceptance. The author confirmed CA-4364-T1-LOOT-01 passed
+  on 2026-09-23; its entry is removed and the author-test queue is empty.
+- **Status:** implemented and author-accepted; delivered through PR #27.
+- **Next:** #11 / 4.36.5; no unrelated MAP01
+  replay or implementation of the future rescue rewards belongs to this patch.
 
 List of the project's active tasks. It is updated with every task.
 
@@ -84,11 +99,11 @@ documentation update does not implement these features or reset accepted tests.
 
 | Patch / stage | Issue | Work and current blocker |
 | --- | --- | --- |
-| 4.36.4 | [#10](https://github.com/damiancurti/Caelum-Argenteum/issues/10) | Restrict maze equipment to T1, preserving the complete starter catalogue. After #9. |
+| 4.36.4 | [#10](https://github.com/damiancurti/Caelum-Argenteum/issues/10) | Implemented and author-accepted on 2026-09-23. Complete T1 catalogue, recipient sizing, chest preview and feedback. |
 | 4.36.5 | [#11](https://github.com/damiancurti/Caelum-Argenteum/issues/11) | Four sections, keys/cells/beds, functional repair refuges, sewer channels/decor, northern locked boss room. After #10. |
 | 4.36.6 | [#12](https://github.com/damiancurti/Caelum-Argenteum/issues/12) | Existing hostile rats at 2:1 per section: 192 rats/96 Mandingas. After #11. |
 | 4.36.7 | [#13](https://github.com/damiancurti/Caelum-Argenteum/issues/13) | Four reused NPC appearances with distinct palettes. After #12. |
-| 4.36.8 | [#14](https://github.com/damiancurti/Caelum-Argenteum/issues/14) | Follow/fight with source-character stats; extract alive before MAP02 boss; port thanks, +10 own-faction reputation and coins worth twice the mean normal purchase price of T1 weapons at the rewarded character's equipment size once per rescue. |
+| 4.36.8 | [#14](https://github.com/damiancurti/Caelum-Argenteum/issues/14) | Follow/fight with source-character stats; extract alive before MAP02 boss; port thanks, +10 own-faction reputation and a fixed 25 gold coins independent of character size once per rescue. |
 | 4.36.9 | [#15](https://github.com/damiancurti/Caelum-Argenteum/issues/15) | Tarot fronts and correct collection bindings. Blocked on approved downloadable source pack/manifest. |
 | 4.36.10 | [#18](https://github.com/damiancurti/Caelum-Argenteum/issues/18) | Siege assets: catapult, ram and breakable gate. After #15. |
 | 4.36.11 | [#19](https://github.com/damiancurti/Caelum-Argenteum/issues/19) | Damageable actor gates. Structural parameter table needs approval. After #18. |
@@ -160,7 +175,7 @@ integration before extracting Impact Physics.
 
 - **Status:** Covered by the existing crushing ceiling and native elevator,
   per the author's 2026-09-23 confirmation in #8. No longer a 4.36 blocker.
-- **Reference documents:** `docs/PROJECT.md` (current 4.36.3 scope).
+- **Reference documents:** `docs/PROJECT.md` (current 4.36.4 scope).
 - **Acceptance:** Scope confirmation only; no new engine test or replay is
   claimed. No rotating/translating rooms or additional platforms are requested.
 

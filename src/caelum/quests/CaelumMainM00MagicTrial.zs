@@ -15,7 +15,7 @@ class CaelumMainM00MagicTrial : Object play
     static void Feedback(CaelumPlayer user, String key, bool error = false)
     {
         if (user == null) return;
-        user.A_Print(StringTable.Localize(key, false));
+        CaelumNotifications.Notify(user,StringTable.Localize(key, false));
         user.A_StartSound(error ? "caelum/ui/menu_move" : "caelum/ui/menu_select",
             CHAN_7, CHANF_LOCAL | CHANF_UI, 0.65, ATTN_NONE);
     }
@@ -53,15 +53,16 @@ class CaelumMainM00MagicTrial : Object play
                 implement.ItemType = CaelumConstants.WEAPON_TYPE_STAFF;
                 implement.ArmorSlot = -1;
                 implement.Tier = 1;
-                implement.EquipmentSize = user.CharacterProfile != null
-                    ? CaelumEquipmentRules.GetDefaultSizeForCharacterTier(user.CharacterProfile.GetSizeTier())
-                    : user.WeaponModel.Size;
+                implement.SizePolicy = CaelumEquipmentRules.CHARACTER_DEFAULT;
+                implement.EquipmentSize = CaelumEquipmentRules.ResolveAcquisitionSize(
+                    user, implement.SizePolicy, user.WeaponModel.Size);
                 implement.EssenceType = CaelumConstants.ESSENCE_FIRE;
                 implement.UnitWeight = user.WeaponModel.GetWeightFor(implement.ItemType, 1, implement.EquipmentSize);
                 implement.PickupDataInitialized = true;
                 implement.ItemFlags = CaelumConstants.CA_ITEMFLAG_LIMBO_TEMP;
                 implement.AttachToOwner(user);
                 user.EnsureEquipmentItemId(implement);
+                CaelumNotifications.Acquired(user, implement, 1);
                 record.SetMainM00Flag(CaelumConstants.MAIN_M00_FLAG_MAGIC_IMPLEMENT_GIVEN);
             }
             // El préstamo roto se repone sobre la MISMA instancia e ItemId.
@@ -98,6 +99,7 @@ class CaelumMainM00MagicTrial : Object play
             seal.ItemFlags = CaelumConstants.CA_ITEMFLAG_LIMBO_TEMP;
             seal.AttachToOwner(user);
             user.EnsureEquipmentItemId(seal);
+            CaelumNotifications.Acquired(user, seal, 1);
             record.SetMainM00Flag(CaelumConstants.MAIN_M00_FLAG_MAGIC_SEAL_GIVEN);
         }
         seal.Equipped = true;

@@ -1,5 +1,8 @@
 {
-  "version": "4.36.0i",
+  "version": "4.36.4",
+  "catalogue_revision": 1,
+  "size_policy": "CHARACTER_DEFAULT: resolve once for the successful recipient; no size on accessories",
+  "distribution": "One unique catalogue of 65 T1 entries across 39 chests: index = chest + slot * 39. Preserve this catalogue in future map layouts.",
   "seed": 436009,
   "zones": [
     {
@@ -3359,14 +3362,39 @@
         0,
         0,
         1,
-        3,
+        0,
         0
       ],
       "category": "armor",
       "type": 0,
       "slot": 0,
       "tier": 1,
+      "size_policy": "CHARACTER_DEFAULT",
+      "catalogue_index": 0,
       "chest": 0,
+      "chest_slot": 0,
+      "position": [
+        -832,
+        576
+      ]
+    },
+    {
+      "cls": "CaelumWeaponPickup",
+      "args": [
+        17,
+        1,
+        0,
+        0,
+        3
+      ],
+      "category": "weapon",
+      "type": 17,
+      "essence": 2,
+      "tier": 1,
+      "size_policy": "CHARACTER_DEFAULT",
+      "catalogue_index": 39,
+      "chest": 0,
+      "chest_slot": 1,
       "position": [
         -832,
         576
@@ -3378,17 +3406,42 @@
         1,
         0,
         1,
-        3,
+        0,
         0
       ],
       "category": "armor",
       "type": 0,
       "slot": 1,
       "tier": 1,
-      "chest": 0,
+      "size_policy": "CHARACTER_DEFAULT",
+      "catalogue_index": 1,
+      "chest": 1,
+      "chest_slot": 0,
       "position": [
-        -832,
-        576
+        -64,
+        1728
+      ]
+    },
+    {
+      "cls": "CaelumWeaponPickup",
+      "args": [
+        17,
+        1,
+        0,
+        0,
+        4
+      ],
+      "category": "weapon",
+      "type": 17,
+      "essence": 3,
+      "tier": 1,
+      "size_policy": "CHARACTER_DEFAULT",
+      "catalogue_index": 40,
+      "chest": 1,
+      "chest_slot": 1,
+      "position": [
+        -64,
+        1728
       ]
     },
     {
@@ -3397,17 +3450,42 @@
         2,
         0,
         1,
-        3,
+        0,
         0
       ],
       "category": "armor",
       "type": 0,
       "slot": 2,
       "tier": 1,
-      "chest": 0,
+      "size_policy": "CHARACTER_DEFAULT",
+      "catalogue_index": 2,
+      "chest": 2,
+      "chest_slot": 0,
       "position": [
-        -832,
-        576
+        1088,
+        1344
+      ]
+    },
+    {
+      "cls": "CaelumWeaponPickup",
+      "args": [
+        17,
+        1,
+        0,
+        0,
+        5
+      ],
+      "category": "weapon",
+      "type": 17,
+      "essence": 4,
+      "tier": 1,
+      "size_policy": "CHARACTER_DEFAULT",
+      "catalogue_index": 41,
+      "chest": 2,
+      "chest_slot": 1,
+      "position": [
+        1088,
+        1344
       ]
     },
     {
@@ -3416,242 +3494,17 @@
         3,
         0,
         1,
-        3,
+        0,
         0
       ],
       "category": "armor",
       "type": 0,
       "slot": 3,
       "tier": 1,
-      "chest": 0,
-      "position": [
-        -832,
-        576
-      ]
-    },
-    {
-      "cls": "CaelumArmorPickup",
-      "args": [
-        0,
-        1,
-        1,
-        3,
-        0
-      ],
-      "category": "armor",
-      "type": 1,
-      "slot": 0,
-      "tier": 1,
-      "chest": 0,
-      "position": [
-        -832,
-        576
-      ]
-    },
-    {
-      "cls": "CaelumArmorPickup",
-      "args": [
-        1,
-        1,
-        1,
-        3,
-        0
-      ],
-      "category": "armor",
-      "type": 1,
-      "slot": 1,
-      "tier": 1,
-      "chest": 1,
-      "position": [
-        -64,
-        1728
-      ]
-    },
-    {
-      "cls": "CaelumArmorPickup",
-      "args": [
-        2,
-        1,
-        1,
-        3,
-        0
-      ],
-      "category": "armor",
-      "type": 1,
-      "slot": 2,
-      "tier": 1,
-      "chest": 1,
-      "position": [
-        -64,
-        1728
-      ]
-    },
-    {
-      "cls": "CaelumArmorPickup",
-      "args": [
-        3,
-        1,
-        1,
-        3,
-        0
-      ],
-      "category": "armor",
-      "type": 1,
-      "slot": 3,
-      "tier": 1,
-      "chest": 1,
-      "position": [
-        -64,
-        1728
-      ]
-    },
-    {
-      "cls": "CaelumArmorPickup",
-      "args": [
-        0,
-        2,
-        1,
-        3,
-        0
-      ],
-      "category": "armor",
-      "type": 2,
-      "slot": 0,
-      "tier": 1,
-      "chest": 1,
-      "position": [
-        -64,
-        1728
-      ]
-    },
-    {
-      "cls": "CaelumArmorPickup",
-      "args": [
-        1,
-        2,
-        1,
-        3,
-        0
-      ],
-      "category": "armor",
-      "type": 2,
-      "slot": 1,
-      "tier": 1,
-      "chest": 1,
-      "position": [
-        -64,
-        1728
-      ]
-    },
-    {
-      "cls": "CaelumArmorPickup",
-      "args": [
-        2,
-        2,
-        1,
-        3,
-        0
-      ],
-      "category": "armor",
-      "type": 2,
-      "slot": 2,
-      "tier": 1,
-      "chest": 2,
-      "position": [
-        1088,
-        1344
-      ]
-    },
-    {
-      "cls": "CaelumArmorPickup",
-      "args": [
-        3,
-        2,
-        1,
-        3,
-        0
-      ],
-      "category": "armor",
-      "type": 2,
-      "slot": 3,
-      "tier": 1,
-      "chest": 2,
-      "position": [
-        1088,
-        1344
-      ]
-    },
-    {
-      "cls": "CaelumArmorPickup",
-      "args": [
-        0,
-        3,
-        1,
-        3,
-        0
-      ],
-      "category": "armor",
-      "type": 3,
-      "slot": 0,
-      "tier": 1,
-      "chest": 2,
-      "position": [
-        1088,
-        1344
-      ]
-    },
-    {
-      "cls": "CaelumArmorPickup",
-      "args": [
-        1,
-        3,
-        1,
-        3,
-        0
-      ],
-      "category": "armor",
-      "type": 3,
-      "slot": 1,
-      "tier": 1,
-      "chest": 2,
-      "position": [
-        1088,
-        1344
-      ]
-    },
-    {
-      "cls": "CaelumArmorPickup",
-      "args": [
-        2,
-        3,
-        1,
-        3,
-        0
-      ],
-      "category": "armor",
-      "type": 3,
-      "slot": 2,
-      "tier": 1,
-      "chest": 2,
-      "position": [
-        1088,
-        1344
-      ]
-    },
-    {
-      "cls": "CaelumArmorPickup",
-      "args": [
-        3,
-        3,
-        1,
-        3,
-        0
-      ],
-      "category": "armor",
-      "type": 3,
-      "slot": 3,
-      "tier": 1,
+      "size_policy": "CHARACTER_DEFAULT",
+      "catalogue_index": 3,
       "chest": 3,
+      "chest_slot": 0,
       "position": [
         704,
         1728
@@ -3660,9 +3513,556 @@
     {
       "cls": "CaelumWeaponPickup",
       "args": [
+        18,
+        1,
+        0,
+        0,
+        1
+      ],
+      "category": "weapon",
+      "type": 18,
+      "essence": 0,
+      "tier": 1,
+      "size_policy": "CHARACTER_DEFAULT",
+      "catalogue_index": 42,
+      "chest": 3,
+      "chest_slot": 1,
+      "position": [
+        704,
+        1728
+      ]
+    },
+    {
+      "cls": "CaelumArmorPickup",
+      "args": [
         0,
         1,
+        1,
+        0,
+        0
+      ],
+      "category": "armor",
+      "type": 1,
+      "slot": 0,
+      "tier": 1,
+      "size_policy": "CHARACTER_DEFAULT",
+      "catalogue_index": 4,
+      "chest": 4,
+      "chest_slot": 0,
+      "position": [
+        320,
+        2496
+      ]
+    },
+    {
+      "cls": "CaelumWeaponPickup",
+      "args": [
+        18,
+        1,
+        0,
+        0,
+        2
+      ],
+      "category": "weapon",
+      "type": 18,
+      "essence": 1,
+      "tier": 1,
+      "size_policy": "CHARACTER_DEFAULT",
+      "catalogue_index": 43,
+      "chest": 4,
+      "chest_slot": 1,
+      "position": [
+        320,
+        2496
+      ]
+    },
+    {
+      "cls": "CaelumArmorPickup",
+      "args": [
+        1,
+        1,
+        1,
+        0,
+        0
+      ],
+      "category": "armor",
+      "type": 1,
+      "slot": 1,
+      "tier": 1,
+      "size_policy": "CHARACTER_DEFAULT",
+      "catalogue_index": 5,
+      "chest": 5,
+      "chest_slot": 0,
+      "position": [
+        -1216,
+        1728
+      ]
+    },
+    {
+      "cls": "CaelumWeaponPickup",
+      "args": [
+        18,
+        1,
+        0,
+        0,
+        3
+      ],
+      "category": "weapon",
+      "type": 18,
+      "essence": 2,
+      "tier": 1,
+      "size_policy": "CHARACTER_DEFAULT",
+      "catalogue_index": 44,
+      "chest": 5,
+      "chest_slot": 1,
+      "position": [
+        -1216,
+        1728
+      ]
+    },
+    {
+      "cls": "CaelumArmorPickup",
+      "args": [
+        2,
+        1,
+        1,
+        0,
+        0
+      ],
+      "category": "armor",
+      "type": 1,
+      "slot": 2,
+      "tier": 1,
+      "size_policy": "CHARACTER_DEFAULT",
+      "catalogue_index": 6,
+      "chest": 6,
+      "chest_slot": 0,
+      "position": [
+        -448,
+        1344
+      ]
+    },
+    {
+      "cls": "CaelumWeaponPickup",
+      "args": [
+        18,
+        1,
+        0,
+        0,
+        4
+      ],
+      "category": "weapon",
+      "type": 18,
+      "essence": 3,
+      "tier": 1,
+      "size_policy": "CHARACTER_DEFAULT",
+      "catalogue_index": 45,
+      "chest": 6,
+      "chest_slot": 1,
+      "position": [
+        -448,
+        1344
+      ]
+    },
+    {
+      "cls": "CaelumArmorPickup",
+      "args": [
         3,
+        1,
+        1,
+        0,
+        0
+      ],
+      "category": "armor",
+      "type": 1,
+      "slot": 3,
+      "tier": 1,
+      "size_policy": "CHARACTER_DEFAULT",
+      "catalogue_index": 7,
+      "chest": 7,
+      "chest_slot": 0,
+      "position": [
+        1088,
+        2112
+      ]
+    },
+    {
+      "cls": "CaelumWeaponPickup",
+      "args": [
+        18,
+        1,
+        0,
+        0,
+        5
+      ],
+      "category": "weapon",
+      "type": 18,
+      "essence": 4,
+      "tier": 1,
+      "size_policy": "CHARACTER_DEFAULT",
+      "catalogue_index": 46,
+      "chest": 7,
+      "chest_slot": 1,
+      "position": [
+        1088,
+        2112
+      ]
+    },
+    {
+      "cls": "CaelumArmorPickup",
+      "args": [
+        0,
+        2,
+        1,
+        0,
+        0
+      ],
+      "category": "armor",
+      "type": 2,
+      "slot": 0,
+      "tier": 1,
+      "size_policy": "CHARACTER_DEFAULT",
+      "catalogue_index": 8,
+      "chest": 8,
+      "chest_slot": 0,
+      "position": [
+        -1216,
+        1344
+      ]
+    },
+    {
+      "cls": "CaelumWeaponPickup",
+      "args": [
+        19,
+        1,
+        0,
+        0,
+        1
+      ],
+      "category": "weapon",
+      "type": 19,
+      "essence": 0,
+      "tier": 1,
+      "size_policy": "CHARACTER_DEFAULT",
+      "catalogue_index": 47,
+      "chest": 8,
+      "chest_slot": 1,
+      "position": [
+        -1216,
+        1344
+      ]
+    },
+    {
+      "cls": "CaelumArmorPickup",
+      "args": [
+        1,
+        2,
+        1,
+        0,
+        0
+      ],
+      "category": "armor",
+      "type": 2,
+      "slot": 1,
+      "tier": 1,
+      "size_policy": "CHARACTER_DEFAULT",
+      "catalogue_index": 9,
+      "chest": 9,
+      "chest_slot": 0,
+      "position": [
+        704,
+        576
+      ]
+    },
+    {
+      "cls": "CaelumWeaponPickup",
+      "args": [
+        19,
+        1,
+        0,
+        0,
+        2
+      ],
+      "category": "weapon",
+      "type": 19,
+      "essence": 1,
+      "tier": 1,
+      "size_policy": "CHARACTER_DEFAULT",
+      "catalogue_index": 48,
+      "chest": 9,
+      "chest_slot": 1,
+      "position": [
+        704,
+        576
+      ]
+    },
+    {
+      "cls": "CaelumArmorPickup",
+      "args": [
+        2,
+        2,
+        1,
+        0,
+        0
+      ],
+      "category": "armor",
+      "type": 2,
+      "slot": 2,
+      "tier": 1,
+      "size_policy": "CHARACTER_DEFAULT",
+      "catalogue_index": 10,
+      "chest": 10,
+      "chest_slot": 0,
+      "position": [
+        320,
+        576
+      ]
+    },
+    {
+      "cls": "CaelumWeaponPickup",
+      "args": [
+        19,
+        1,
+        0,
+        0,
+        3
+      ],
+      "category": "weapon",
+      "type": 19,
+      "essence": 2,
+      "tier": 1,
+      "size_policy": "CHARACTER_DEFAULT",
+      "catalogue_index": 49,
+      "chest": 10,
+      "chest_slot": 1,
+      "position": [
+        320,
+        576
+      ]
+    },
+    {
+      "cls": "CaelumArmorPickup",
+      "args": [
+        3,
+        2,
+        1,
+        0,
+        0
+      ],
+      "category": "armor",
+      "type": 2,
+      "slot": 3,
+      "tier": 1,
+      "size_policy": "CHARACTER_DEFAULT",
+      "catalogue_index": 11,
+      "chest": 11,
+      "chest_slot": 0,
+      "position": [
+        320,
+        2112
+      ]
+    },
+    {
+      "cls": "CaelumWeaponPickup",
+      "args": [
+        19,
+        1,
+        0,
+        0,
+        4
+      ],
+      "category": "weapon",
+      "type": 19,
+      "essence": 3,
+      "tier": 1,
+      "size_policy": "CHARACTER_DEFAULT",
+      "catalogue_index": 50,
+      "chest": 11,
+      "chest_slot": 1,
+      "position": [
+        320,
+        2112
+      ]
+    },
+    {
+      "cls": "CaelumArmorPickup",
+      "args": [
+        0,
+        3,
+        1,
+        0,
+        0
+      ],
+      "category": "armor",
+      "type": 3,
+      "slot": 0,
+      "tier": 1,
+      "size_policy": "CHARACTER_DEFAULT",
+      "catalogue_index": 12,
+      "chest": 12,
+      "chest_slot": 0,
+      "position": [
+        704,
+        2880
+      ]
+    },
+    {
+      "cls": "CaelumWeaponPickup",
+      "args": [
+        19,
+        1,
+        0,
+        0,
+        5
+      ],
+      "category": "weapon",
+      "type": 19,
+      "essence": 4,
+      "tier": 1,
+      "size_policy": "CHARACTER_DEFAULT",
+      "catalogue_index": 51,
+      "chest": 12,
+      "chest_slot": 1,
+      "position": [
+        704,
+        2880
+      ]
+    },
+    {
+      "cls": "CaelumArmorPickup",
+      "args": [
+        1,
+        3,
+        1,
+        0,
+        0
+      ],
+      "category": "armor",
+      "type": 3,
+      "slot": 1,
+      "tier": 1,
+      "size_policy": "CHARACTER_DEFAULT",
+      "catalogue_index": 13,
+      "chest": 13,
+      "chest_slot": 0,
+      "position": [
+        704,
+        5952
+      ]
+    },
+    {
+      "cls": "CaelumShieldPickup",
+      "args": [
+        0,
+        1,
+        0,
+        0,
+        0
+      ],
+      "category": "shield",
+      "type": 0,
+      "tier": 1,
+      "size_policy": "CHARACTER_DEFAULT",
+      "catalogue_index": 52,
+      "chest": 13,
+      "chest_slot": 1,
+      "position": [
+        704,
+        5952
+      ]
+    },
+    {
+      "cls": "CaelumArmorPickup",
+      "args": [
+        2,
+        3,
+        1,
+        0,
+        0
+      ],
+      "category": "armor",
+      "type": 3,
+      "slot": 2,
+      "tier": 1,
+      "size_policy": "CHARACTER_DEFAULT",
+      "catalogue_index": 14,
+      "chest": 14,
+      "chest_slot": 0,
+      "position": [
+        -832,
+        5184
+      ]
+    },
+    {
+      "cls": "CaelumShieldPickup",
+      "args": [
+        1,
+        1,
+        0,
+        0,
+        0
+      ],
+      "category": "shield",
+      "type": 1,
+      "tier": 1,
+      "size_policy": "CHARACTER_DEFAULT",
+      "catalogue_index": 53,
+      "chest": 14,
+      "chest_slot": 1,
+      "position": [
+        -832,
+        5184
+      ]
+    },
+    {
+      "cls": "CaelumArmorPickup",
+      "args": [
+        3,
+        3,
+        1,
+        0,
+        0
+      ],
+      "category": "armor",
+      "type": 3,
+      "slot": 3,
+      "tier": 1,
+      "size_policy": "CHARACTER_DEFAULT",
+      "catalogue_index": 15,
+      "chest": 15,
+      "chest_slot": 0,
+      "position": [
+        1088,
+        5184
+      ]
+    },
+    {
+      "cls": "CaelumShieldPickup",
+      "args": [
+        2,
+        1,
+        0,
+        0,
+        0
+      ],
+      "category": "shield",
+      "type": 2,
+      "tier": 1,
+      "size_policy": "CHARACTER_DEFAULT",
+      "catalogue_index": 54,
+      "chest": 15,
+      "chest_slot": 1,
+      "position": [
+        1088,
+        5184
+      ]
+    },
+    {
+      "cls": "CaelumWeaponPickup",
+      "args": [
+        0,
+        1,
+        0,
         0,
         1
       ],
@@ -3670,10 +4070,34 @@
       "type": 0,
       "essence": 0,
       "tier": 1,
-      "chest": 3,
+      "size_policy": "CHARACTER_DEFAULT",
+      "catalogue_index": 16,
+      "chest": 16,
+      "chest_slot": 0,
       "position": [
         704,
-        1728
+        4800
+      ]
+    },
+    {
+      "cls": "CaelumShieldPickup",
+      "args": [
+        3,
+        1,
+        0,
+        0,
+        0
+      ],
+      "category": "shield",
+      "type": 3,
+      "tier": 1,
+      "size_policy": "CHARACTER_DEFAULT",
+      "catalogue_index": 55,
+      "chest": 16,
+      "chest_slot": 1,
+      "position": [
+        704,
+        4800
       ]
     },
     {
@@ -3681,7 +4105,7 @@
       "args": [
         1,
         1,
-        3,
+        0,
         0,
         1
       ],
@@ -3689,10 +4113,34 @@
       "type": 1,
       "essence": 0,
       "tier": 1,
-      "chest": 3,
+      "size_policy": "CHARACTER_DEFAULT",
+      "catalogue_index": 17,
+      "chest": 17,
+      "chest_slot": 0,
       "position": [
-        704,
-        1728
+        320,
+        5568
+      ]
+    },
+    {
+      "cls": "CaelumAmuletPickup",
+      "args": [
+        0,
+        1,
+        0,
+        0,
+        0
+      ],
+      "category": "amulet",
+      "type": 0,
+      "tier": 1,
+      "size_policy": "NOT_APPLICABLE",
+      "catalogue_index": 56,
+      "chest": 17,
+      "chest_slot": 1,
+      "position": [
+        320,
+        5568
       ]
     },
     {
@@ -3700,7 +4148,7 @@
       "args": [
         1,
         1,
-        3,
+        0,
         0,
         2
       ],
@@ -3708,10 +4156,34 @@
       "type": 1,
       "essence": 1,
       "tier": 1,
-      "chest": 3,
+      "size_policy": "CHARACTER_DEFAULT",
+      "catalogue_index": 18,
+      "chest": 18,
+      "chest_slot": 0,
       "position": [
-        704,
-        1728
+        320,
+        4800
+      ]
+    },
+    {
+      "cls": "CaelumAmuletPickup",
+      "args": [
+        1,
+        1,
+        0,
+        0,
+        0
+      ],
+      "category": "amulet",
+      "type": 1,
+      "tier": 1,
+      "size_policy": "NOT_APPLICABLE",
+      "catalogue_index": 57,
+      "chest": 18,
+      "chest_slot": 1,
+      "position": [
+        320,
+        4800
       ]
     },
     {
@@ -3719,7 +4191,7 @@
       "args": [
         1,
         1,
-        3,
+        0,
         0,
         3
       ],
@@ -3727,10 +4199,34 @@
       "type": 1,
       "essence": 2,
       "tier": 1,
-      "chest": 3,
+      "size_policy": "CHARACTER_DEFAULT",
+      "catalogue_index": 19,
+      "chest": 19,
+      "chest_slot": 0,
       "position": [
-        704,
-        1728
+        -1216,
+        4032
+      ]
+    },
+    {
+      "cls": "CaelumAmuletPickup",
+      "args": [
+        2,
+        1,
+        0,
+        0,
+        0
+      ],
+      "category": "amulet",
+      "type": 2,
+      "tier": 1,
+      "size_policy": "NOT_APPLICABLE",
+      "catalogue_index": 58,
+      "chest": 19,
+      "chest_slot": 1,
+      "position": [
+        -1216,
+        4032
       ]
     },
     {
@@ -3738,7 +4234,7 @@
       "args": [
         1,
         1,
-        3,
+        0,
         0,
         4
       ],
@@ -3746,10 +4242,34 @@
       "type": 1,
       "essence": 3,
       "tier": 1,
-      "chest": 4,
+      "size_policy": "CHARACTER_DEFAULT",
+      "catalogue_index": 20,
+      "chest": 20,
+      "chest_slot": 0,
       "position": [
-        320,
-        2496
+        -64,
+        5568
+      ]
+    },
+    {
+      "cls": "CaelumAmuletPickup",
+      "args": [
+        3,
+        1,
+        0,
+        0,
+        0
+      ],
+      "category": "amulet",
+      "type": 3,
+      "tier": 1,
+      "size_policy": "NOT_APPLICABLE",
+      "catalogue_index": 59,
+      "chest": 20,
+      "chest_slot": 1,
+      "position": [
+        -64,
+        5568
       ]
     },
     {
@@ -3757,7 +4277,7 @@
       "args": [
         1,
         1,
-        3,
+        0,
         0,
         5
       ],
@@ -3765,10 +4285,34 @@
       "type": 1,
       "essence": 4,
       "tier": 1,
-      "chest": 4,
+      "size_policy": "CHARACTER_DEFAULT",
+      "catalogue_index": 21,
+      "chest": 21,
+      "chest_slot": 0,
       "position": [
-        320,
-        2496
+        -1216,
+        4416
+      ]
+    },
+    {
+      "cls": "CaelumSealPickup",
+      "args": [
+        0,
+        1,
+        0,
+        0,
+        0
+      ],
+      "category": "seal",
+      "type": 0,
+      "tier": 1,
+      "size_policy": "NOT_APPLICABLE",
+      "catalogue_index": 60,
+      "chest": 21,
+      "chest_slot": 1,
+      "position": [
+        -1216,
+        4416
       ]
     },
     {
@@ -3776,7 +4320,7 @@
       "args": [
         2,
         1,
-        3,
+        0,
         0,
         1
       ],
@@ -3784,10 +4328,34 @@
       "type": 2,
       "essence": 0,
       "tier": 1,
-      "chest": 4,
+      "size_policy": "CHARACTER_DEFAULT",
+      "catalogue_index": 22,
+      "chest": 22,
+      "chest_slot": 0,
       "position": [
-        320,
-        2496
+        -64,
+        5952
+      ]
+    },
+    {
+      "cls": "CaelumSealPickup",
+      "args": [
+        1,
+        1,
+        0,
+        0,
+        0
+      ],
+      "category": "seal",
+      "type": 1,
+      "tier": 1,
+      "size_policy": "NOT_APPLICABLE",
+      "catalogue_index": 61,
+      "chest": 22,
+      "chest_slot": 1,
+      "position": [
+        -64,
+        5952
       ]
     },
     {
@@ -3795,7 +4363,7 @@
       "args": [
         3,
         1,
-        3,
+        0,
         0,
         1
       ],
@@ -3803,10 +4371,34 @@
       "type": 3,
       "essence": 0,
       "tier": 1,
-      "chest": 4,
+      "size_policy": "CHARACTER_DEFAULT",
+      "catalogue_index": 23,
+      "chest": 23,
+      "chest_slot": 0,
       "position": [
-        320,
-        2496
+        -64,
+        5184
+      ]
+    },
+    {
+      "cls": "CaelumSealPickup",
+      "args": [
+        2,
+        1,
+        0,
+        0,
+        0
+      ],
+      "category": "seal",
+      "type": 2,
+      "tier": 1,
+      "size_policy": "NOT_APPLICABLE",
+      "catalogue_index": 62,
+      "chest": 23,
+      "chest_slot": 1,
+      "position": [
+        -64,
+        5184
       ]
     },
     {
@@ -3814,7 +4406,7 @@
       "args": [
         4,
         1,
-        3,
+        0,
         0,
         1
       ],
@@ -3822,10 +4414,34 @@
       "type": 4,
       "essence": 0,
       "tier": 1,
-      "chest": 4,
+      "size_policy": "CHARACTER_DEFAULT",
+      "catalogue_index": 24,
+      "chest": 24,
+      "chest_slot": 0,
       "position": [
-        320,
-        2496
+        -448,
+        5952
+      ]
+    },
+    {
+      "cls": "CaelumSealPickup",
+      "args": [
+        3,
+        1,
+        0,
+        0,
+        0
+      ],
+      "category": "seal",
+      "type": 3,
+      "tier": 1,
+      "size_policy": "NOT_APPLICABLE",
+      "catalogue_index": 63,
+      "chest": 24,
+      "chest_slot": 1,
+      "position": [
+        -448,
+        5952
       ]
     },
     {
@@ -3833,7 +4449,7 @@
       "args": [
         5,
         1,
-        3,
+        0,
         0,
         1
       ],
@@ -3841,10 +4457,34 @@
       "type": 5,
       "essence": 0,
       "tier": 1,
-      "chest": 5,
+      "size_policy": "CHARACTER_DEFAULT",
+      "catalogue_index": 25,
+      "chest": 25,
+      "chest_slot": 0,
       "position": [
-        -1216,
-        1728
+        -448,
+        3648
+      ]
+    },
+    {
+      "cls": "CaelumSealPickup",
+      "args": [
+        4,
+        1,
+        0,
+        0,
+        0
+      ],
+      "category": "seal",
+      "type": 4,
+      "tier": 1,
+      "size_policy": "NOT_APPLICABLE",
+      "catalogue_index": 64,
+      "chest": 25,
+      "chest_slot": 1,
+      "position": [
+        -448,
+        3648
       ]
     },
     {
@@ -3852,7 +4492,7 @@
       "args": [
         6,
         1,
-        3,
+        0,
         0,
         1
       ],
@@ -3860,10 +4500,13 @@
       "type": 6,
       "essence": 0,
       "tier": 1,
-      "chest": 5,
+      "size_policy": "CHARACTER_DEFAULT",
+      "catalogue_index": 26,
+      "chest": 26,
+      "chest_slot": 0,
       "position": [
-        -1216,
-        1728
+        -448,
+        7104
       ]
     },
     {
@@ -3871,7 +4514,7 @@
       "args": [
         7,
         1,
-        3,
+        0,
         0,
         1
       ],
@@ -3879,10 +4522,13 @@
       "type": 7,
       "essence": 0,
       "tier": 1,
-      "chest": 5,
+      "size_policy": "CHARACTER_DEFAULT",
+      "catalogue_index": 27,
+      "chest": 27,
+      "chest_slot": 0,
       "position": [
-        -1216,
-        1728
+        -448,
+        8256
       ]
     },
     {
@@ -3890,7 +4536,7 @@
       "args": [
         8,
         1,
-        3,
+        0,
         0,
         1
       ],
@@ -3898,10 +4544,13 @@
       "type": 8,
       "essence": 0,
       "tier": 1,
-      "chest": 5,
+      "size_policy": "CHARACTER_DEFAULT",
+      "catalogue_index": 28,
+      "chest": 28,
+      "chest_slot": 0,
       "position": [
-        -1216,
-        1728
+        -448,
+        7488
       ]
     },
     {
@@ -3909,7 +4558,7 @@
       "args": [
         9,
         1,
-        3,
+        0,
         0,
         1
       ],
@@ -3917,10 +4566,13 @@
       "type": 9,
       "essence": 0,
       "tier": 1,
-      "chest": 5,
+      "size_policy": "CHARACTER_DEFAULT",
+      "catalogue_index": 29,
+      "chest": 29,
+      "chest_slot": 0,
       "position": [
-        -1216,
-        1728
+        320,
+        7104
       ]
     },
     {
@@ -3928,7 +4580,7 @@
       "args": [
         10,
         1,
-        3,
+        0,
         0,
         1
       ],
@@ -3936,10 +4588,13 @@
       "type": 10,
       "essence": 0,
       "tier": 1,
-      "chest": 6,
+      "size_policy": "CHARACTER_DEFAULT",
+      "catalogue_index": 30,
+      "chest": 30,
+      "chest_slot": 0,
       "position": [
-        -448,
-        1344
+        1088,
+        6720
       ]
     },
     {
@@ -3947,7 +4602,7 @@
       "args": [
         11,
         1,
-        3,
+        0,
         0,
         1
       ],
@@ -3955,10 +4610,13 @@
       "type": 11,
       "essence": 0,
       "tier": 1,
-      "chest": 6,
+      "size_policy": "CHARACTER_DEFAULT",
+      "catalogue_index": 31,
+      "chest": 31,
+      "chest_slot": 0,
       "position": [
-        -448,
-        1344
+        704,
+        9024
       ]
     },
     {
@@ -3966,7 +4624,7 @@
       "args": [
         12,
         1,
-        3,
+        0,
         0,
         1
       ],
@@ -3974,2451 +4632,10 @@
       "type": 12,
       "essence": 0,
       "tier": 1,
-      "chest": 6,
-      "position": [
-        -448,
-        1344
-      ]
-    },
-    {
-      "cls": "CaelumWeaponPickup",
-      "args": [
-        13,
-        1,
-        3,
-        0,
-        1
-      ],
-      "category": "weapon",
-      "type": 13,
-      "essence": 0,
-      "tier": 1,
-      "chest": 6,
-      "position": [
-        -448,
-        1344
-      ]
-    },
-    {
-      "cls": "CaelumWeaponPickup",
-      "args": [
-        14,
-        1,
-        3,
-        0,
-        1
-      ],
-      "category": "weapon",
-      "type": 14,
-      "essence": 0,
-      "tier": 1,
-      "chest": 6,
-      "position": [
-        -448,
-        1344
-      ]
-    },
-    {
-      "cls": "CaelumWeaponPickup",
-      "args": [
-        15,
-        1,
-        3,
-        0,
-        1
-      ],
-      "category": "weapon",
-      "type": 15,
-      "essence": 0,
-      "tier": 1,
-      "chest": 7,
-      "position": [
-        1088,
-        2112
-      ]
-    },
-    {
-      "cls": "CaelumWeaponPickup",
-      "args": [
-        16,
-        1,
-        3,
-        0,
-        1
-      ],
-      "category": "weapon",
-      "type": 16,
-      "essence": 0,
-      "tier": 1,
-      "chest": 7,
-      "position": [
-        1088,
-        2112
-      ]
-    },
-    {
-      "cls": "CaelumWeaponPickup",
-      "args": [
-        17,
-        1,
-        3,
-        0,
-        1
-      ],
-      "category": "weapon",
-      "type": 17,
-      "essence": 0,
-      "tier": 1,
-      "chest": 7,
-      "position": [
-        1088,
-        2112
-      ]
-    },
-    {
-      "cls": "CaelumWeaponPickup",
-      "args": [
-        17,
-        1,
-        3,
-        0,
-        2
-      ],
-      "category": "weapon",
-      "type": 17,
-      "essence": 1,
-      "tier": 1,
-      "chest": 7,
-      "position": [
-        1088,
-        2112
-      ]
-    },
-    {
-      "cls": "CaelumWeaponPickup",
-      "args": [
-        17,
-        1,
-        3,
-        0,
-        3
-      ],
-      "category": "weapon",
-      "type": 17,
-      "essence": 2,
-      "tier": 1,
-      "chest": 7,
-      "position": [
-        1088,
-        2112
-      ]
-    },
-    {
-      "cls": "CaelumWeaponPickup",
-      "args": [
-        17,
-        1,
-        3,
-        0,
-        4
-      ],
-      "category": "weapon",
-      "type": 17,
-      "essence": 3,
-      "tier": 1,
-      "chest": 8,
-      "position": [
-        -1216,
-        1344
-      ]
-    },
-    {
-      "cls": "CaelumWeaponPickup",
-      "args": [
-        17,
-        1,
-        3,
-        0,
-        5
-      ],
-      "category": "weapon",
-      "type": 17,
-      "essence": 4,
-      "tier": 1,
-      "chest": 8,
-      "position": [
-        -1216,
-        1344
-      ]
-    },
-    {
-      "cls": "CaelumWeaponPickup",
-      "args": [
-        18,
-        1,
-        3,
-        0,
-        1
-      ],
-      "category": "weapon",
-      "type": 18,
-      "essence": 0,
-      "tier": 1,
-      "chest": 8,
-      "position": [
-        -1216,
-        1344
-      ]
-    },
-    {
-      "cls": "CaelumWeaponPickup",
-      "args": [
-        18,
-        1,
-        3,
-        0,
-        2
-      ],
-      "category": "weapon",
-      "type": 18,
-      "essence": 1,
-      "tier": 1,
-      "chest": 8,
-      "position": [
-        -1216,
-        1344
-      ]
-    },
-    {
-      "cls": "CaelumWeaponPickup",
-      "args": [
-        18,
-        1,
-        3,
-        0,
-        3
-      ],
-      "category": "weapon",
-      "type": 18,
-      "essence": 2,
-      "tier": 1,
-      "chest": 8,
-      "position": [
-        -1216,
-        1344
-      ]
-    },
-    {
-      "cls": "CaelumWeaponPickup",
-      "args": [
-        18,
-        1,
-        3,
-        0,
-        4
-      ],
-      "category": "weapon",
-      "type": 18,
-      "essence": 3,
-      "tier": 1,
-      "chest": 9,
-      "position": [
-        704,
-        576
-      ]
-    },
-    {
-      "cls": "CaelumWeaponPickup",
-      "args": [
-        18,
-        1,
-        3,
-        0,
-        5
-      ],
-      "category": "weapon",
-      "type": 18,
-      "essence": 4,
-      "tier": 1,
-      "chest": 9,
-      "position": [
-        704,
-        576
-      ]
-    },
-    {
-      "cls": "CaelumWeaponPickup",
-      "args": [
-        19,
-        1,
-        3,
-        0,
-        1
-      ],
-      "category": "weapon",
-      "type": 19,
-      "essence": 0,
-      "tier": 1,
-      "chest": 9,
-      "position": [
-        704,
-        576
-      ]
-    },
-    {
-      "cls": "CaelumWeaponPickup",
-      "args": [
-        19,
-        1,
-        3,
-        0,
-        2
-      ],
-      "category": "weapon",
-      "type": 19,
-      "essence": 1,
-      "tier": 1,
-      "chest": 9,
-      "position": [
-        704,
-        576
-      ]
-    },
-    {
-      "cls": "CaelumWeaponPickup",
-      "args": [
-        19,
-        1,
-        3,
-        0,
-        3
-      ],
-      "category": "weapon",
-      "type": 19,
-      "essence": 2,
-      "tier": 1,
-      "chest": 9,
-      "position": [
-        704,
-        576
-      ]
-    },
-    {
-      "cls": "CaelumWeaponPickup",
-      "args": [
-        19,
-        1,
-        3,
-        0,
-        4
-      ],
-      "category": "weapon",
-      "type": 19,
-      "essence": 3,
-      "tier": 1,
-      "chest": 10,
-      "position": [
-        320,
-        576
-      ]
-    },
-    {
-      "cls": "CaelumWeaponPickup",
-      "args": [
-        19,
-        1,
-        3,
-        0,
-        5
-      ],
-      "category": "weapon",
-      "type": 19,
-      "essence": 4,
-      "tier": 1,
-      "chest": 10,
-      "position": [
-        320,
-        576
-      ]
-    },
-    {
-      "cls": "CaelumShieldPickup",
-      "args": [
-        0,
-        1,
-        3,
-        0,
-        0
-      ],
-      "category": "shield",
-      "type": 0,
-      "tier": 1,
-      "chest": 10,
-      "position": [
-        320,
-        576
-      ]
-    },
-    {
-      "cls": "CaelumShieldPickup",
-      "args": [
-        1,
-        1,
-        3,
-        0,
-        0
-      ],
-      "category": "shield",
-      "type": 1,
-      "tier": 1,
-      "chest": 10,
-      "position": [
-        320,
-        576
-      ]
-    },
-    {
-      "cls": "CaelumShieldPickup",
-      "args": [
-        2,
-        1,
-        3,
-        0,
-        0
-      ],
-      "category": "shield",
-      "type": 2,
-      "tier": 1,
-      "chest": 10,
-      "position": [
-        320,
-        576
-      ]
-    },
-    {
-      "cls": "CaelumShieldPickup",
-      "args": [
-        3,
-        1,
-        3,
-        0,
-        0
-      ],
-      "category": "shield",
-      "type": 3,
-      "tier": 1,
-      "chest": 11,
-      "position": [
-        320,
-        2112
-      ]
-    },
-    {
-      "cls": "CaelumAmuletPickup",
-      "args": [
-        0,
-        1,
-        0,
-        0,
-        0
-      ],
-      "category": "amulet",
-      "type": 0,
-      "tier": 1,
-      "chest": 11,
-      "position": [
-        320,
-        2112
-      ]
-    },
-    {
-      "cls": "CaelumAmuletPickup",
-      "args": [
-        1,
-        1,
-        0,
-        0,
-        0
-      ],
-      "category": "amulet",
-      "type": 1,
-      "tier": 1,
-      "chest": 11,
-      "position": [
-        320,
-        2112
-      ]
-    },
-    {
-      "cls": "CaelumAmuletPickup",
-      "args": [
-        2,
-        1,
-        0,
-        0,
-        0
-      ],
-      "category": "amulet",
-      "type": 2,
-      "tier": 1,
-      "chest": 11,
-      "position": [
-        320,
-        2112
-      ]
-    },
-    {
-      "cls": "CaelumAmuletPickup",
-      "args": [
-        3,
-        1,
-        0,
-        0,
-        0
-      ],
-      "category": "amulet",
-      "type": 3,
-      "tier": 1,
-      "chest": 11,
-      "position": [
-        320,
-        2112
-      ]
-    },
-    {
-      "cls": "CaelumSealPickup",
-      "args": [
-        0,
-        1,
-        0,
-        0,
-        0
-      ],
-      "category": "seal",
-      "type": 0,
-      "tier": 1,
-      "chest": 12,
-      "position": [
-        704,
-        2880
-      ]
-    },
-    {
-      "cls": "CaelumSealPickup",
-      "args": [
-        1,
-        1,
-        0,
-        0,
-        0
-      ],
-      "category": "seal",
-      "type": 1,
-      "tier": 1,
-      "chest": 12,
-      "position": [
-        704,
-        2880
-      ]
-    },
-    {
-      "cls": "CaelumSealPickup",
-      "args": [
-        2,
-        1,
-        0,
-        0,
-        0
-      ],
-      "category": "seal",
-      "type": 2,
-      "tier": 1,
-      "chest": 12,
-      "position": [
-        704,
-        2880
-      ]
-    },
-    {
-      "cls": "CaelumSealPickup",
-      "args": [
-        3,
-        1,
-        0,
-        0,
-        0
-      ],
-      "category": "seal",
-      "type": 3,
-      "tier": 1,
-      "chest": 12,
-      "position": [
-        704,
-        2880
-      ]
-    },
-    {
-      "cls": "CaelumSealPickup",
-      "args": [
-        4,
-        1,
-        0,
-        0,
-        0
-      ],
-      "category": "seal",
-      "type": 4,
-      "tier": 1,
-      "chest": 12,
-      "position": [
-        704,
-        2880
-      ]
-    },
-    {
-      "cls": "CaelumArmorPickup",
-      "args": [
-        0,
-        0,
-        2,
-        3,
-        0
-      ],
-      "category": "armor",
-      "type": 0,
-      "slot": 0,
-      "tier": 2,
-      "chest": 13,
-      "position": [
-        704,
-        5952
-      ]
-    },
-    {
-      "cls": "CaelumArmorPickup",
-      "args": [
-        1,
-        0,
-        2,
-        3,
-        0
-      ],
-      "category": "armor",
-      "type": 0,
-      "slot": 1,
-      "tier": 2,
-      "chest": 13,
-      "position": [
-        704,
-        5952
-      ]
-    },
-    {
-      "cls": "CaelumArmorPickup",
-      "args": [
-        2,
-        0,
-        2,
-        3,
-        0
-      ],
-      "category": "armor",
-      "type": 0,
-      "slot": 2,
-      "tier": 2,
-      "chest": 13,
-      "position": [
-        704,
-        5952
-      ]
-    },
-    {
-      "cls": "CaelumArmorPickup",
-      "args": [
-        3,
-        0,
-        2,
-        3,
-        0
-      ],
-      "category": "armor",
-      "type": 0,
-      "slot": 3,
-      "tier": 2,
-      "chest": 13,
-      "position": [
-        704,
-        5952
-      ]
-    },
-    {
-      "cls": "CaelumArmorPickup",
-      "args": [
-        0,
-        1,
-        2,
-        3,
-        0
-      ],
-      "category": "armor",
-      "type": 1,
-      "slot": 0,
-      "tier": 2,
-      "chest": 13,
-      "position": [
-        704,
-        5952
-      ]
-    },
-    {
-      "cls": "CaelumArmorPickup",
-      "args": [
-        1,
-        1,
-        2,
-        3,
-        0
-      ],
-      "category": "armor",
-      "type": 1,
-      "slot": 1,
-      "tier": 2,
-      "chest": 14,
-      "position": [
-        -832,
-        5184
-      ]
-    },
-    {
-      "cls": "CaelumArmorPickup",
-      "args": [
-        2,
-        1,
-        2,
-        3,
-        0
-      ],
-      "category": "armor",
-      "type": 1,
-      "slot": 2,
-      "tier": 2,
-      "chest": 14,
-      "position": [
-        -832,
-        5184
-      ]
-    },
-    {
-      "cls": "CaelumArmorPickup",
-      "args": [
-        3,
-        1,
-        2,
-        3,
-        0
-      ],
-      "category": "armor",
-      "type": 1,
-      "slot": 3,
-      "tier": 2,
-      "chest": 14,
-      "position": [
-        -832,
-        5184
-      ]
-    },
-    {
-      "cls": "CaelumArmorPickup",
-      "args": [
-        0,
-        2,
-        2,
-        3,
-        0
-      ],
-      "category": "armor",
-      "type": 2,
-      "slot": 0,
-      "tier": 2,
-      "chest": 14,
-      "position": [
-        -832,
-        5184
-      ]
-    },
-    {
-      "cls": "CaelumArmorPickup",
-      "args": [
-        1,
-        2,
-        2,
-        3,
-        0
-      ],
-      "category": "armor",
-      "type": 2,
-      "slot": 1,
-      "tier": 2,
-      "chest": 14,
-      "position": [
-        -832,
-        5184
-      ]
-    },
-    {
-      "cls": "CaelumArmorPickup",
-      "args": [
-        2,
-        2,
-        2,
-        3,
-        0
-      ],
-      "category": "armor",
-      "type": 2,
-      "slot": 2,
-      "tier": 2,
-      "chest": 15,
-      "position": [
-        1088,
-        5184
-      ]
-    },
-    {
-      "cls": "CaelumArmorPickup",
-      "args": [
-        3,
-        2,
-        2,
-        3,
-        0
-      ],
-      "category": "armor",
-      "type": 2,
-      "slot": 3,
-      "tier": 2,
-      "chest": 15,
-      "position": [
-        1088,
-        5184
-      ]
-    },
-    {
-      "cls": "CaelumArmorPickup",
-      "args": [
-        0,
-        3,
-        2,
-        3,
-        0
-      ],
-      "category": "armor",
-      "type": 3,
-      "slot": 0,
-      "tier": 2,
-      "chest": 15,
-      "position": [
-        1088,
-        5184
-      ]
-    },
-    {
-      "cls": "CaelumArmorPickup",
-      "args": [
-        1,
-        3,
-        2,
-        3,
-        0
-      ],
-      "category": "armor",
-      "type": 3,
-      "slot": 1,
-      "tier": 2,
-      "chest": 15,
-      "position": [
-        1088,
-        5184
-      ]
-    },
-    {
-      "cls": "CaelumArmorPickup",
-      "args": [
-        2,
-        3,
-        2,
-        3,
-        0
-      ],
-      "category": "armor",
-      "type": 3,
-      "slot": 2,
-      "tier": 2,
-      "chest": 15,
-      "position": [
-        1088,
-        5184
-      ]
-    },
-    {
-      "cls": "CaelumArmorPickup",
-      "args": [
-        3,
-        3,
-        2,
-        3,
-        0
-      ],
-      "category": "armor",
-      "type": 3,
-      "slot": 3,
-      "tier": 2,
-      "chest": 16,
-      "position": [
-        704,
-        4800
-      ]
-    },
-    {
-      "cls": "CaelumWeaponPickup",
-      "args": [
-        0,
-        2,
-        3,
-        0,
-        1
-      ],
-      "category": "weapon",
-      "type": 0,
-      "essence": 0,
-      "tier": 2,
-      "chest": 16,
-      "position": [
-        704,
-        4800
-      ]
-    },
-    {
-      "cls": "CaelumWeaponPickup",
-      "args": [
-        1,
-        2,
-        3,
-        0,
-        1
-      ],
-      "category": "weapon",
-      "type": 1,
-      "essence": 0,
-      "tier": 2,
-      "chest": 16,
-      "position": [
-        704,
-        4800
-      ]
-    },
-    {
-      "cls": "CaelumWeaponPickup",
-      "args": [
-        1,
-        2,
-        3,
-        0,
-        2
-      ],
-      "category": "weapon",
-      "type": 1,
-      "essence": 1,
-      "tier": 2,
-      "chest": 16,
-      "position": [
-        704,
-        4800
-      ]
-    },
-    {
-      "cls": "CaelumWeaponPickup",
-      "args": [
-        1,
-        2,
-        3,
-        0,
-        3
-      ],
-      "category": "weapon",
-      "type": 1,
-      "essence": 2,
-      "tier": 2,
-      "chest": 16,
-      "position": [
-        704,
-        4800
-      ]
-    },
-    {
-      "cls": "CaelumWeaponPickup",
-      "args": [
-        1,
-        2,
-        3,
-        0,
-        4
-      ],
-      "category": "weapon",
-      "type": 1,
-      "essence": 3,
-      "tier": 2,
-      "chest": 17,
-      "position": [
-        320,
-        5568
-      ]
-    },
-    {
-      "cls": "CaelumWeaponPickup",
-      "args": [
-        1,
-        2,
-        3,
-        0,
-        5
-      ],
-      "category": "weapon",
-      "type": 1,
-      "essence": 4,
-      "tier": 2,
-      "chest": 17,
-      "position": [
-        320,
-        5568
-      ]
-    },
-    {
-      "cls": "CaelumWeaponPickup",
-      "args": [
-        2,
-        2,
-        3,
-        0,
-        1
-      ],
-      "category": "weapon",
-      "type": 2,
-      "essence": 0,
-      "tier": 2,
-      "chest": 17,
-      "position": [
-        320,
-        5568
-      ]
-    },
-    {
-      "cls": "CaelumWeaponPickup",
-      "args": [
-        3,
-        2,
-        3,
-        0,
-        1
-      ],
-      "category": "weapon",
-      "type": 3,
-      "essence": 0,
-      "tier": 2,
-      "chest": 17,
-      "position": [
-        320,
-        5568
-      ]
-    },
-    {
-      "cls": "CaelumWeaponPickup",
-      "args": [
-        4,
-        2,
-        3,
-        0,
-        1
-      ],
-      "category": "weapon",
-      "type": 4,
-      "essence": 0,
-      "tier": 2,
-      "chest": 17,
-      "position": [
-        320,
-        5568
-      ]
-    },
-    {
-      "cls": "CaelumWeaponPickup",
-      "args": [
-        5,
-        2,
-        3,
-        0,
-        1
-      ],
-      "category": "weapon",
-      "type": 5,
-      "essence": 0,
-      "tier": 2,
-      "chest": 18,
-      "position": [
-        320,
-        4800
-      ]
-    },
-    {
-      "cls": "CaelumWeaponPickup",
-      "args": [
-        6,
-        2,
-        3,
-        0,
-        1
-      ],
-      "category": "weapon",
-      "type": 6,
-      "essence": 0,
-      "tier": 2,
-      "chest": 18,
-      "position": [
-        320,
-        4800
-      ]
-    },
-    {
-      "cls": "CaelumWeaponPickup",
-      "args": [
-        7,
-        2,
-        3,
-        0,
-        1
-      ],
-      "category": "weapon",
-      "type": 7,
-      "essence": 0,
-      "tier": 2,
-      "chest": 18,
-      "position": [
-        320,
-        4800
-      ]
-    },
-    {
-      "cls": "CaelumWeaponPickup",
-      "args": [
-        8,
-        2,
-        3,
-        0,
-        1
-      ],
-      "category": "weapon",
-      "type": 8,
-      "essence": 0,
-      "tier": 2,
-      "chest": 18,
-      "position": [
-        320,
-        4800
-      ]
-    },
-    {
-      "cls": "CaelumWeaponPickup",
-      "args": [
-        9,
-        2,
-        3,
-        0,
-        1
-      ],
-      "category": "weapon",
-      "type": 9,
-      "essence": 0,
-      "tier": 2,
-      "chest": 18,
-      "position": [
-        320,
-        4800
-      ]
-    },
-    {
-      "cls": "CaelumWeaponPickup",
-      "args": [
-        10,
-        2,
-        3,
-        0,
-        1
-      ],
-      "category": "weapon",
-      "type": 10,
-      "essence": 0,
-      "tier": 2,
-      "chest": 19,
-      "position": [
-        -1216,
-        4032
-      ]
-    },
-    {
-      "cls": "CaelumWeaponPickup",
-      "args": [
-        11,
-        2,
-        3,
-        0,
-        1
-      ],
-      "category": "weapon",
-      "type": 11,
-      "essence": 0,
-      "tier": 2,
-      "chest": 19,
-      "position": [
-        -1216,
-        4032
-      ]
-    },
-    {
-      "cls": "CaelumWeaponPickup",
-      "args": [
-        12,
-        2,
-        3,
-        0,
-        1
-      ],
-      "category": "weapon",
-      "type": 12,
-      "essence": 0,
-      "tier": 2,
-      "chest": 19,
-      "position": [
-        -1216,
-        4032
-      ]
-    },
-    {
-      "cls": "CaelumWeaponPickup",
-      "args": [
-        13,
-        2,
-        3,
-        0,
-        1
-      ],
-      "category": "weapon",
-      "type": 13,
-      "essence": 0,
-      "tier": 2,
-      "chest": 19,
-      "position": [
-        -1216,
-        4032
-      ]
-    },
-    {
-      "cls": "CaelumWeaponPickup",
-      "args": [
-        14,
-        2,
-        3,
-        0,
-        1
-      ],
-      "category": "weapon",
-      "type": 14,
-      "essence": 0,
-      "tier": 2,
-      "chest": 19,
-      "position": [
-        -1216,
-        4032
-      ]
-    },
-    {
-      "cls": "CaelumWeaponPickup",
-      "args": [
-        15,
-        2,
-        3,
-        0,
-        1
-      ],
-      "category": "weapon",
-      "type": 15,
-      "essence": 0,
-      "tier": 2,
-      "chest": 20,
-      "position": [
-        -64,
-        5568
-      ]
-    },
-    {
-      "cls": "CaelumWeaponPickup",
-      "args": [
-        16,
-        2,
-        3,
-        0,
-        1
-      ],
-      "category": "weapon",
-      "type": 16,
-      "essence": 0,
-      "tier": 2,
-      "chest": 20,
-      "position": [
-        -64,
-        5568
-      ]
-    },
-    {
-      "cls": "CaelumWeaponPickup",
-      "args": [
-        17,
-        2,
-        3,
-        0,
-        1
-      ],
-      "category": "weapon",
-      "type": 17,
-      "essence": 0,
-      "tier": 2,
-      "chest": 20,
-      "position": [
-        -64,
-        5568
-      ]
-    },
-    {
-      "cls": "CaelumWeaponPickup",
-      "args": [
-        17,
-        2,
-        3,
-        0,
-        2
-      ],
-      "category": "weapon",
-      "type": 17,
-      "essence": 1,
-      "tier": 2,
-      "chest": 20,
-      "position": [
-        -64,
-        5568
-      ]
-    },
-    {
-      "cls": "CaelumWeaponPickup",
-      "args": [
-        17,
-        2,
-        3,
-        0,
-        3
-      ],
-      "category": "weapon",
-      "type": 17,
-      "essence": 2,
-      "tier": 2,
-      "chest": 20,
-      "position": [
-        -64,
-        5568
-      ]
-    },
-    {
-      "cls": "CaelumWeaponPickup",
-      "args": [
-        17,
-        2,
-        3,
-        0,
-        4
-      ],
-      "category": "weapon",
-      "type": 17,
-      "essence": 3,
-      "tier": 2,
-      "chest": 21,
-      "position": [
-        -1216,
-        4416
-      ]
-    },
-    {
-      "cls": "CaelumWeaponPickup",
-      "args": [
-        17,
-        2,
-        3,
-        0,
-        5
-      ],
-      "category": "weapon",
-      "type": 17,
-      "essence": 4,
-      "tier": 2,
-      "chest": 21,
-      "position": [
-        -1216,
-        4416
-      ]
-    },
-    {
-      "cls": "CaelumWeaponPickup",
-      "args": [
-        18,
-        2,
-        3,
-        0,
-        1
-      ],
-      "category": "weapon",
-      "type": 18,
-      "essence": 0,
-      "tier": 2,
-      "chest": 21,
-      "position": [
-        -1216,
-        4416
-      ]
-    },
-    {
-      "cls": "CaelumWeaponPickup",
-      "args": [
-        18,
-        2,
-        3,
-        0,
-        2
-      ],
-      "category": "weapon",
-      "type": 18,
-      "essence": 1,
-      "tier": 2,
-      "chest": 21,
-      "position": [
-        -1216,
-        4416
-      ]
-    },
-    {
-      "cls": "CaelumWeaponPickup",
-      "args": [
-        18,
-        2,
-        3,
-        0,
-        3
-      ],
-      "category": "weapon",
-      "type": 18,
-      "essence": 2,
-      "tier": 2,
-      "chest": 21,
-      "position": [
-        -1216,
-        4416
-      ]
-    },
-    {
-      "cls": "CaelumWeaponPickup",
-      "args": [
-        18,
-        2,
-        3,
-        0,
-        4
-      ],
-      "category": "weapon",
-      "type": 18,
-      "essence": 3,
-      "tier": 2,
-      "chest": 22,
-      "position": [
-        -64,
-        5952
-      ]
-    },
-    {
-      "cls": "CaelumWeaponPickup",
-      "args": [
-        18,
-        2,
-        3,
-        0,
-        5
-      ],
-      "category": "weapon",
-      "type": 18,
-      "essence": 4,
-      "tier": 2,
-      "chest": 22,
-      "position": [
-        -64,
-        5952
-      ]
-    },
-    {
-      "cls": "CaelumWeaponPickup",
-      "args": [
-        19,
-        2,
-        3,
-        0,
-        1
-      ],
-      "category": "weapon",
-      "type": 19,
-      "essence": 0,
-      "tier": 2,
-      "chest": 22,
-      "position": [
-        -64,
-        5952
-      ]
-    },
-    {
-      "cls": "CaelumWeaponPickup",
-      "args": [
-        19,
-        2,
-        3,
-        0,
-        2
-      ],
-      "category": "weapon",
-      "type": 19,
-      "essence": 1,
-      "tier": 2,
-      "chest": 22,
-      "position": [
-        -64,
-        5952
-      ]
-    },
-    {
-      "cls": "CaelumWeaponPickup",
-      "args": [
-        19,
-        2,
-        3,
-        0,
-        3
-      ],
-      "category": "weapon",
-      "type": 19,
-      "essence": 2,
-      "tier": 2,
-      "chest": 22,
-      "position": [
-        -64,
-        5952
-      ]
-    },
-    {
-      "cls": "CaelumWeaponPickup",
-      "args": [
-        19,
-        2,
-        3,
-        0,
-        4
-      ],
-      "category": "weapon",
-      "type": 19,
-      "essence": 3,
-      "tier": 2,
-      "chest": 23,
-      "position": [
-        -64,
-        5184
-      ]
-    },
-    {
-      "cls": "CaelumWeaponPickup",
-      "args": [
-        19,
-        2,
-        3,
-        0,
-        5
-      ],
-      "category": "weapon",
-      "type": 19,
-      "essence": 4,
-      "tier": 2,
-      "chest": 23,
-      "position": [
-        -64,
-        5184
-      ]
-    },
-    {
-      "cls": "CaelumShieldPickup",
-      "args": [
-        0,
-        2,
-        3,
-        0,
-        0
-      ],
-      "category": "shield",
-      "type": 0,
-      "tier": 2,
-      "chest": 23,
-      "position": [
-        -64,
-        5184
-      ]
-    },
-    {
-      "cls": "CaelumShieldPickup",
-      "args": [
-        1,
-        2,
-        3,
-        0,
-        0
-      ],
-      "category": "shield",
-      "type": 1,
-      "tier": 2,
-      "chest": 23,
-      "position": [
-        -64,
-        5184
-      ]
-    },
-    {
-      "cls": "CaelumShieldPickup",
-      "args": [
-        2,
-        2,
-        3,
-        0,
-        0
-      ],
-      "category": "shield",
-      "type": 2,
-      "tier": 2,
-      "chest": 23,
-      "position": [
-        -64,
-        5184
-      ]
-    },
-    {
-      "cls": "CaelumShieldPickup",
-      "args": [
-        3,
-        2,
-        3,
-        0,
-        0
-      ],
-      "category": "shield",
-      "type": 3,
-      "tier": 2,
-      "chest": 24,
-      "position": [
-        -448,
-        5952
-      ]
-    },
-    {
-      "cls": "CaelumAmuletPickup",
-      "args": [
-        0,
-        2,
-        0,
-        0,
-        0
-      ],
-      "category": "amulet",
-      "type": 0,
-      "tier": 2,
-      "chest": 24,
-      "position": [
-        -448,
-        5952
-      ]
-    },
-    {
-      "cls": "CaelumAmuletPickup",
-      "args": [
-        1,
-        2,
-        0,
-        0,
-        0
-      ],
-      "category": "amulet",
-      "type": 1,
-      "tier": 2,
-      "chest": 24,
-      "position": [
-        -448,
-        5952
-      ]
-    },
-    {
-      "cls": "CaelumAmuletPickup",
-      "args": [
-        2,
-        2,
-        0,
-        0,
-        0
-      ],
-      "category": "amulet",
-      "type": 2,
-      "tier": 2,
-      "chest": 24,
-      "position": [
-        -448,
-        5952
-      ]
-    },
-    {
-      "cls": "CaelumAmuletPickup",
-      "args": [
-        3,
-        2,
-        0,
-        0,
-        0
-      ],
-      "category": "amulet",
-      "type": 3,
-      "tier": 2,
-      "chest": 24,
-      "position": [
-        -448,
-        5952
-      ]
-    },
-    {
-      "cls": "CaelumSealPickup",
-      "args": [
-        0,
-        2,
-        0,
-        0,
-        0
-      ],
-      "category": "seal",
-      "type": 0,
-      "tier": 2,
-      "chest": 25,
-      "position": [
-        -448,
-        3648
-      ]
-    },
-    {
-      "cls": "CaelumSealPickup",
-      "args": [
-        1,
-        2,
-        0,
-        0,
-        0
-      ],
-      "category": "seal",
-      "type": 1,
-      "tier": 2,
-      "chest": 25,
-      "position": [
-        -448,
-        3648
-      ]
-    },
-    {
-      "cls": "CaelumSealPickup",
-      "args": [
-        2,
-        2,
-        0,
-        0,
-        0
-      ],
-      "category": "seal",
-      "type": 2,
-      "tier": 2,
-      "chest": 25,
-      "position": [
-        -448,
-        3648
-      ]
-    },
-    {
-      "cls": "CaelumSealPickup",
-      "args": [
-        3,
-        2,
-        0,
-        0,
-        0
-      ],
-      "category": "seal",
-      "type": 3,
-      "tier": 2,
-      "chest": 25,
-      "position": [
-        -448,
-        3648
-      ]
-    },
-    {
-      "cls": "CaelumSealPickup",
-      "args": [
-        4,
-        2,
-        0,
-        0,
-        0
-      ],
-      "category": "seal",
-      "type": 4,
-      "tier": 2,
-      "chest": 25,
-      "position": [
-        -448,
-        3648
-      ]
-    },
-    {
-      "cls": "CaelumArmorPickup",
-      "args": [
-        0,
-        0,
-        3,
-        3,
-        0
-      ],
-      "category": "armor",
-      "type": 0,
-      "slot": 0,
-      "tier": 3,
-      "chest": 26,
-      "position": [
-        -448,
-        7104
-      ]
-    },
-    {
-      "cls": "CaelumArmorPickup",
-      "args": [
-        1,
-        0,
-        3,
-        3,
-        0
-      ],
-      "category": "armor",
-      "type": 0,
-      "slot": 1,
-      "tier": 3,
-      "chest": 26,
-      "position": [
-        -448,
-        7104
-      ]
-    },
-    {
-      "cls": "CaelumArmorPickup",
-      "args": [
-        2,
-        0,
-        3,
-        3,
-        0
-      ],
-      "category": "armor",
-      "type": 0,
-      "slot": 2,
-      "tier": 3,
-      "chest": 26,
-      "position": [
-        -448,
-        7104
-      ]
-    },
-    {
-      "cls": "CaelumArmorPickup",
-      "args": [
-        3,
-        0,
-        3,
-        3,
-        0
-      ],
-      "category": "armor",
-      "type": 0,
-      "slot": 3,
-      "tier": 3,
-      "chest": 26,
-      "position": [
-        -448,
-        7104
-      ]
-    },
-    {
-      "cls": "CaelumArmorPickup",
-      "args": [
-        0,
-        1,
-        3,
-        3,
-        0
-      ],
-      "category": "armor",
-      "type": 1,
-      "slot": 0,
-      "tier": 3,
-      "chest": 26,
-      "position": [
-        -448,
-        7104
-      ]
-    },
-    {
-      "cls": "CaelumArmorPickup",
-      "args": [
-        1,
-        1,
-        3,
-        3,
-        0
-      ],
-      "category": "armor",
-      "type": 1,
-      "slot": 1,
-      "tier": 3,
-      "chest": 27,
-      "position": [
-        -448,
-        8256
-      ]
-    },
-    {
-      "cls": "CaelumArmorPickup",
-      "args": [
-        2,
-        1,
-        3,
-        3,
-        0
-      ],
-      "category": "armor",
-      "type": 1,
-      "slot": 2,
-      "tier": 3,
-      "chest": 27,
-      "position": [
-        -448,
-        8256
-      ]
-    },
-    {
-      "cls": "CaelumArmorPickup",
-      "args": [
-        3,
-        1,
-        3,
-        3,
-        0
-      ],
-      "category": "armor",
-      "type": 1,
-      "slot": 3,
-      "tier": 3,
-      "chest": 27,
-      "position": [
-        -448,
-        8256
-      ]
-    },
-    {
-      "cls": "CaelumArmorPickup",
-      "args": [
-        0,
-        2,
-        3,
-        3,
-        0
-      ],
-      "category": "armor",
-      "type": 2,
-      "slot": 0,
-      "tier": 3,
-      "chest": 27,
-      "position": [
-        -448,
-        8256
-      ]
-    },
-    {
-      "cls": "CaelumArmorPickup",
-      "args": [
-        1,
-        2,
-        3,
-        3,
-        0
-      ],
-      "category": "armor",
-      "type": 2,
-      "slot": 1,
-      "tier": 3,
-      "chest": 27,
-      "position": [
-        -448,
-        8256
-      ]
-    },
-    {
-      "cls": "CaelumArmorPickup",
-      "args": [
-        2,
-        2,
-        3,
-        3,
-        0
-      ],
-      "category": "armor",
-      "type": 2,
-      "slot": 2,
-      "tier": 3,
-      "chest": 28,
-      "position": [
-        -448,
-        7488
-      ]
-    },
-    {
-      "cls": "CaelumArmorPickup",
-      "args": [
-        3,
-        2,
-        3,
-        3,
-        0
-      ],
-      "category": "armor",
-      "type": 2,
-      "slot": 3,
-      "tier": 3,
-      "chest": 28,
-      "position": [
-        -448,
-        7488
-      ]
-    },
-    {
-      "cls": "CaelumArmorPickup",
-      "args": [
-        0,
-        3,
-        3,
-        3,
-        0
-      ],
-      "category": "armor",
-      "type": 3,
-      "slot": 0,
-      "tier": 3,
-      "chest": 28,
-      "position": [
-        -448,
-        7488
-      ]
-    },
-    {
-      "cls": "CaelumArmorPickup",
-      "args": [
-        1,
-        3,
-        3,
-        3,
-        0
-      ],
-      "category": "armor",
-      "type": 3,
-      "slot": 1,
-      "tier": 3,
-      "chest": 28,
-      "position": [
-        -448,
-        7488
-      ]
-    },
-    {
-      "cls": "CaelumArmorPickup",
-      "args": [
-        2,
-        3,
-        3,
-        3,
-        0
-      ],
-      "category": "armor",
-      "type": 3,
-      "slot": 2,
-      "tier": 3,
-      "chest": 28,
-      "position": [
-        -448,
-        7488
-      ]
-    },
-    {
-      "cls": "CaelumArmorPickup",
-      "args": [
-        3,
-        3,
-        3,
-        3,
-        0
-      ],
-      "category": "armor",
-      "type": 3,
-      "slot": 3,
-      "tier": 3,
-      "chest": 29,
-      "position": [
-        320,
-        7104
-      ]
-    },
-    {
-      "cls": "CaelumWeaponPickup",
-      "args": [
-        0,
-        3,
-        3,
-        0,
-        1
-      ],
-      "category": "weapon",
-      "type": 0,
-      "essence": 0,
-      "tier": 3,
-      "chest": 29,
-      "position": [
-        320,
-        7104
-      ]
-    },
-    {
-      "cls": "CaelumWeaponPickup",
-      "args": [
-        1,
-        3,
-        3,
-        0,
-        1
-      ],
-      "category": "weapon",
-      "type": 1,
-      "essence": 0,
-      "tier": 3,
-      "chest": 29,
-      "position": [
-        320,
-        7104
-      ]
-    },
-    {
-      "cls": "CaelumWeaponPickup",
-      "args": [
-        1,
-        3,
-        3,
-        0,
-        2
-      ],
-      "category": "weapon",
-      "type": 1,
-      "essence": 1,
-      "tier": 3,
-      "chest": 29,
-      "position": [
-        320,
-        7104
-      ]
-    },
-    {
-      "cls": "CaelumWeaponPickup",
-      "args": [
-        1,
-        3,
-        3,
-        0,
-        3
-      ],
-      "category": "weapon",
-      "type": 1,
-      "essence": 2,
-      "tier": 3,
-      "chest": 29,
-      "position": [
-        320,
-        7104
-      ]
-    },
-    {
-      "cls": "CaelumWeaponPickup",
-      "args": [
-        1,
-        3,
-        3,
-        0,
-        4
-      ],
-      "category": "weapon",
-      "type": 1,
-      "essence": 3,
-      "tier": 3,
-      "chest": 30,
-      "position": [
-        1088,
-        6720
-      ]
-    },
-    {
-      "cls": "CaelumWeaponPickup",
-      "args": [
-        1,
-        3,
-        3,
-        0,
-        5
-      ],
-      "category": "weapon",
-      "type": 1,
-      "essence": 4,
-      "tier": 3,
-      "chest": 30,
-      "position": [
-        1088,
-        6720
-      ]
-    },
-    {
-      "cls": "CaelumWeaponPickup",
-      "args": [
-        2,
-        3,
-        3,
-        0,
-        1
-      ],
-      "category": "weapon",
-      "type": 2,
-      "essence": 0,
-      "tier": 3,
-      "chest": 30,
-      "position": [
-        1088,
-        6720
-      ]
-    },
-    {
-      "cls": "CaelumWeaponPickup",
-      "args": [
-        3,
-        3,
-        3,
-        0,
-        1
-      ],
-      "category": "weapon",
-      "type": 3,
-      "essence": 0,
-      "tier": 3,
-      "chest": 30,
-      "position": [
-        1088,
-        6720
-      ]
-    },
-    {
-      "cls": "CaelumWeaponPickup",
-      "args": [
-        4,
-        3,
-        3,
-        0,
-        1
-      ],
-      "category": "weapon",
-      "type": 4,
-      "essence": 0,
-      "tier": 3,
-      "chest": 30,
-      "position": [
-        1088,
-        6720
-      ]
-    },
-    {
-      "cls": "CaelumWeaponPickup",
-      "args": [
-        5,
-        3,
-        3,
-        0,
-        1
-      ],
-      "category": "weapon",
-      "type": 5,
-      "essence": 0,
-      "tier": 3,
-      "chest": 31,
-      "position": [
-        704,
-        9024
-      ]
-    },
-    {
-      "cls": "CaelumWeaponPickup",
-      "args": [
-        6,
-        3,
-        3,
-        0,
-        1
-      ],
-      "category": "weapon",
-      "type": 6,
-      "essence": 0,
-      "tier": 3,
-      "chest": 31,
-      "position": [
-        704,
-        9024
-      ]
-    },
-    {
-      "cls": "CaelumWeaponPickup",
-      "args": [
-        7,
-        3,
-        3,
-        0,
-        1
-      ],
-      "category": "weapon",
-      "type": 7,
-      "essence": 0,
-      "tier": 3,
-      "chest": 31,
-      "position": [
-        704,
-        9024
-      ]
-    },
-    {
-      "cls": "CaelumWeaponPickup",
-      "args": [
-        8,
-        3,
-        3,
-        0,
-        1
-      ],
-      "category": "weapon",
-      "type": 8,
-      "essence": 0,
-      "tier": 3,
-      "chest": 31,
-      "position": [
-        704,
-        9024
-      ]
-    },
-    {
-      "cls": "CaelumWeaponPickup",
-      "args": [
-        9,
-        3,
-        3,
-        0,
-        1
-      ],
-      "category": "weapon",
-      "type": 9,
-      "essence": 0,
-      "tier": 3,
-      "chest": 31,
-      "position": [
-        704,
-        9024
-      ]
-    },
-    {
-      "cls": "CaelumWeaponPickup",
-      "args": [
-        10,
-        3,
-        3,
-        0,
-        1
-      ],
-      "category": "weapon",
-      "type": 10,
-      "essence": 0,
-      "tier": 3,
+      "size_policy": "CHARACTER_DEFAULT",
+      "catalogue_index": 32,
       "chest": 32,
-      "position": [
-        -832,
-        6720
-      ]
-    },
-    {
-      "cls": "CaelumWeaponPickup",
-      "args": [
-        11,
-        3,
-        3,
-        0,
-        1
-      ],
-      "category": "weapon",
-      "type": 11,
-      "essence": 0,
-      "tier": 3,
-      "chest": 32,
-      "position": [
-        -832,
-        6720
-      ]
-    },
-    {
-      "cls": "CaelumWeaponPickup",
-      "args": [
-        12,
-        3,
-        3,
-        0,
-        1
-      ],
-      "category": "weapon",
-      "type": 12,
-      "essence": 0,
-      "tier": 3,
-      "chest": 32,
+      "chest_slot": 0,
       "position": [
         -832,
         6720
@@ -6428,592 +4645,129 @@
       "cls": "CaelumWeaponPickup",
       "args": [
         13,
-        3,
-        3,
+        1,
+        0,
         0,
         1
       ],
       "category": "weapon",
       "type": 13,
       "essence": 0,
-      "tier": 3,
-      "chest": 32,
+      "tier": 1,
+      "size_policy": "CHARACTER_DEFAULT",
+      "catalogue_index": 33,
+      "chest": 33,
+      "chest_slot": 0,
       "position": [
-        -832,
-        6720
+        704,
+        7872
       ]
     },
     {
       "cls": "CaelumWeaponPickup",
       "args": [
         14,
-        3,
-        3,
+        1,
+        0,
         0,
         1
       ],
       "category": "weapon",
       "type": 14,
       "essence": 0,
-      "tier": 3,
-      "chest": 32,
+      "tier": 1,
+      "size_policy": "CHARACTER_DEFAULT",
+      "catalogue_index": 34,
+      "chest": 34,
+      "chest_slot": 0,
       "position": [
         -832,
-        6720
+        7104
       ]
     },
     {
       "cls": "CaelumWeaponPickup",
       "args": [
         15,
-        3,
-        3,
+        1,
+        0,
         0,
         1
       ],
       "category": "weapon",
       "type": 15,
       "essence": 0,
-      "tier": 3,
-      "chest": 33,
+      "tier": 1,
+      "size_policy": "CHARACTER_DEFAULT",
+      "catalogue_index": 35,
+      "chest": 35,
+      "chest_slot": 0,
       "position": [
-        704,
-        7872
+        320,
+        9024
       ]
     },
     {
       "cls": "CaelumWeaponPickup",
       "args": [
         16,
-        3,
-        3,
+        1,
+        0,
         0,
         1
       ],
       "category": "weapon",
       "type": 16,
       "essence": 0,
-      "tier": 3,
-      "chest": 33,
+      "tier": 1,
+      "size_policy": "CHARACTER_DEFAULT",
+      "catalogue_index": 36,
+      "chest": 36,
+      "chest_slot": 0,
       "position": [
-        704,
-        7872
+        -64,
+        7488
       ]
     },
     {
       "cls": "CaelumWeaponPickup",
       "args": [
         17,
-        3,
-        3,
+        1,
+        0,
         0,
         1
       ],
       "category": "weapon",
       "type": 17,
       "essence": 0,
-      "tier": 3,
-      "chest": 33,
+      "tier": 1,
+      "size_policy": "CHARACTER_DEFAULT",
+      "catalogue_index": 37,
+      "chest": 37,
+      "chest_slot": 0,
       "position": [
-        704,
-        7872
+        1088,
+        7488
       ]
     },
     {
       "cls": "CaelumWeaponPickup",
       "args": [
         17,
-        3,
-        3,
+        1,
+        0,
         0,
         2
       ],
       "category": "weapon",
       "type": 17,
       "essence": 1,
-      "tier": 3,
-      "chest": 33,
-      "position": [
-        704,
-        7872
-      ]
-    },
-    {
-      "cls": "CaelumWeaponPickup",
-      "args": [
-        17,
-        3,
-        3,
-        0,
-        3
-      ],
-      "category": "weapon",
-      "type": 17,
-      "essence": 2,
-      "tier": 3,
-      "chest": 33,
-      "position": [
-        704,
-        7872
-      ]
-    },
-    {
-      "cls": "CaelumWeaponPickup",
-      "args": [
-        17,
-        3,
-        3,
-        0,
-        4
-      ],
-      "category": "weapon",
-      "type": 17,
-      "essence": 3,
-      "tier": 3,
-      "chest": 34,
-      "position": [
-        -832,
-        7104
-      ]
-    },
-    {
-      "cls": "CaelumWeaponPickup",
-      "args": [
-        17,
-        3,
-        3,
-        0,
-        5
-      ],
-      "category": "weapon",
-      "type": 17,
-      "essence": 4,
-      "tier": 3,
-      "chest": 34,
-      "position": [
-        -832,
-        7104
-      ]
-    },
-    {
-      "cls": "CaelumWeaponPickup",
-      "args": [
-        18,
-        3,
-        3,
-        0,
-        1
-      ],
-      "category": "weapon",
-      "type": 18,
-      "essence": 0,
-      "tier": 3,
-      "chest": 34,
-      "position": [
-        -832,
-        7104
-      ]
-    },
-    {
-      "cls": "CaelumWeaponPickup",
-      "args": [
-        18,
-        3,
-        3,
-        0,
-        2
-      ],
-      "category": "weapon",
-      "type": 18,
-      "essence": 1,
-      "tier": 3,
-      "chest": 34,
-      "position": [
-        -832,
-        7104
-      ]
-    },
-    {
-      "cls": "CaelumWeaponPickup",
-      "args": [
-        18,
-        3,
-        3,
-        0,
-        3
-      ],
-      "category": "weapon",
-      "type": 18,
-      "essence": 2,
-      "tier": 3,
-      "chest": 34,
-      "position": [
-        -832,
-        7104
-      ]
-    },
-    {
-      "cls": "CaelumWeaponPickup",
-      "args": [
-        18,
-        3,
-        3,
-        0,
-        4
-      ],
-      "category": "weapon",
-      "type": 18,
-      "essence": 3,
-      "tier": 3,
-      "chest": 35,
-      "position": [
-        320,
-        9024
-      ]
-    },
-    {
-      "cls": "CaelumWeaponPickup",
-      "args": [
-        18,
-        3,
-        3,
-        0,
-        5
-      ],
-      "category": "weapon",
-      "type": 18,
-      "essence": 4,
-      "tier": 3,
-      "chest": 35,
-      "position": [
-        320,
-        9024
-      ]
-    },
-    {
-      "cls": "CaelumWeaponPickup",
-      "args": [
-        19,
-        3,
-        3,
-        0,
-        1
-      ],
-      "category": "weapon",
-      "type": 19,
-      "essence": 0,
-      "tier": 3,
-      "chest": 35,
-      "position": [
-        320,
-        9024
-      ]
-    },
-    {
-      "cls": "CaelumWeaponPickup",
-      "args": [
-        19,
-        3,
-        3,
-        0,
-        2
-      ],
-      "category": "weapon",
-      "type": 19,
-      "essence": 1,
-      "tier": 3,
-      "chest": 35,
-      "position": [
-        320,
-        9024
-      ]
-    },
-    {
-      "cls": "CaelumWeaponPickup",
-      "args": [
-        19,
-        3,
-        3,
-        0,
-        3
-      ],
-      "category": "weapon",
-      "type": 19,
-      "essence": 2,
-      "tier": 3,
-      "chest": 35,
-      "position": [
-        320,
-        9024
-      ]
-    },
-    {
-      "cls": "CaelumWeaponPickup",
-      "args": [
-        19,
-        3,
-        3,
-        0,
-        4
-      ],
-      "category": "weapon",
-      "type": 19,
-      "essence": 3,
-      "tier": 3,
-      "chest": 36,
-      "position": [
-        -64,
-        7488
-      ]
-    },
-    {
-      "cls": "CaelumWeaponPickup",
-      "args": [
-        19,
-        3,
-        3,
-        0,
-        5
-      ],
-      "category": "weapon",
-      "type": 19,
-      "essence": 4,
-      "tier": 3,
-      "chest": 36,
-      "position": [
-        -64,
-        7488
-      ]
-    },
-    {
-      "cls": "CaelumShieldPickup",
-      "args": [
-        0,
-        3,
-        3,
-        0,
-        0
-      ],
-      "category": "shield",
-      "type": 0,
-      "tier": 3,
-      "chest": 36,
-      "position": [
-        -64,
-        7488
-      ]
-    },
-    {
-      "cls": "CaelumShieldPickup",
-      "args": [
-        1,
-        3,
-        3,
-        0,
-        0
-      ],
-      "category": "shield",
-      "type": 1,
-      "tier": 3,
-      "chest": 36,
-      "position": [
-        -64,
-        7488
-      ]
-    },
-    {
-      "cls": "CaelumShieldPickup",
-      "args": [
-        2,
-        3,
-        3,
-        0,
-        0
-      ],
-      "category": "shield",
-      "type": 2,
-      "tier": 3,
-      "chest": 36,
-      "position": [
-        -64,
-        7488
-      ]
-    },
-    {
-      "cls": "CaelumShieldPickup",
-      "args": [
-        3,
-        3,
-        3,
-        0,
-        0
-      ],
-      "category": "shield",
-      "type": 3,
-      "tier": 3,
-      "chest": 37,
-      "position": [
-        1088,
-        7488
-      ]
-    },
-    {
-      "cls": "CaelumAmuletPickup",
-      "args": [
-        0,
-        3,
-        0,
-        0,
-        0
-      ],
-      "category": "amulet",
-      "type": 0,
-      "tier": 3,
-      "chest": 37,
-      "position": [
-        1088,
-        7488
-      ]
-    },
-    {
-      "cls": "CaelumAmuletPickup",
-      "args": [
-        1,
-        3,
-        0,
-        0,
-        0
-      ],
-      "category": "amulet",
-      "type": 1,
-      "tier": 3,
-      "chest": 37,
-      "position": [
-        1088,
-        7488
-      ]
-    },
-    {
-      "cls": "CaelumAmuletPickup",
-      "args": [
-        2,
-        3,
-        0,
-        0,
-        0
-      ],
-      "category": "amulet",
-      "type": 2,
-      "tier": 3,
-      "chest": 37,
-      "position": [
-        1088,
-        7488
-      ]
-    },
-    {
-      "cls": "CaelumAmuletPickup",
-      "args": [
-        3,
-        3,
-        0,
-        0,
-        0
-      ],
-      "category": "amulet",
-      "type": 3,
-      "tier": 3,
-      "chest": 37,
-      "position": [
-        1088,
-        7488
-      ]
-    },
-    {
-      "cls": "CaelumSealPickup",
-      "args": [
-        0,
-        3,
-        0,
-        0,
-        0
-      ],
-      "category": "seal",
-      "type": 0,
-      "tier": 3,
+      "tier": 1,
+      "size_policy": "CHARACTER_DEFAULT",
+      "catalogue_index": 38,
       "chest": 38,
-      "position": [
-        -64,
-        6720
-      ]
-    },
-    {
-      "cls": "CaelumSealPickup",
-      "args": [
-        1,
-        3,
-        0,
-        0,
-        0
-      ],
-      "category": "seal",
-      "type": 1,
-      "tier": 3,
-      "chest": 38,
-      "position": [
-        -64,
-        6720
-      ]
-    },
-    {
-      "cls": "CaelumSealPickup",
-      "args": [
-        2,
-        3,
-        0,
-        0,
-        0
-      ],
-      "category": "seal",
-      "type": 2,
-      "tier": 3,
-      "chest": 38,
-      "position": [
-        -64,
-        6720
-      ]
-    },
-    {
-      "cls": "CaelumSealPickup",
-      "args": [
-        3,
-        3,
-        0,
-        0,
-        0
-      ],
-      "category": "seal",
-      "type": 3,
-      "tier": 3,
-      "chest": 38,
-      "position": [
-        -64,
-        6720
-      ]
-    },
-    {
-      "cls": "CaelumSealPickup",
-      "args": [
-        4,
-        3,
-        0,
-        0,
-        0
-      ],
-      "category": "seal",
-      "type": 4,
-      "tier": 3,
-      "chest": 38,
+      "chest_slot": 0,
       "position": [
         -64,
         6720
@@ -11198,7 +8952,7 @@
     "mandingas": 96,
     "zupays": 1,
     "chests": 39,
-    "equipment": 195,
+    "equipment": 65,
     "food_rations": 120,
     "water_rations": 120,
     "traps": 45

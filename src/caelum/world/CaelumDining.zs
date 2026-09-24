@@ -261,7 +261,7 @@ class CaelumDiningTable : Actor
             if(bottle!=null){bottles++;liters+=bottle.WaterLiters;}
             else if(IsDrink(item))water++;else food++;
         }
-        user.A_Print(String.Format(StringTable.Localize("CA_TABLE_CONTENTS",false),SeatCount(),food+water+bottles,Capacity(),food,water,bottles,liters));
+        CaelumNotifications.Notify(user,String.Format(StringTable.Localize("CA_TABLE_CONTENTS",false),SeatCount(),food+water+bottles,Capacity(),food,water,bottles,liters));
     }
 
     override bool Used(Actor activator)
@@ -356,7 +356,7 @@ class CaelumDiningGuide : Actor
         bool done=false;
         if(Choice==1 || Choice==2)done=Table.PlaceItem(Subject,Choice==2);
         if(Choice==3 || Choice==4)done=Table.Withdraw(Subject,Choice==4);
-        if(Choice!=0){Table.Report(Subject);if(!done && Choice!=5)Subject.A_Print(StringTable.Localize("CA_TABLE_FAILED",false));}
+        if(Choice!=0){Table.Report(Subject);if(!done && Choice!=5)CaelumNotifications.Notify(Subject,StringTable.Localize("CA_TABLE_FAILED",false));}
         Destroy();
     }
     Default { Radius 1;Height 1;+NOBLOCKMAP +NOGRAVITY +INVULNERABLE +NOTARGET RenderStyle "None"; }
@@ -473,7 +473,7 @@ class CaelumDiningSession : Object play
         let rest=CaelumRestState.Get(user);
         if(rest==null || rest.Status!=CaelumRestRules.STATUS_ACTIVE)return false;
         if(drink?rest.AutoDrinking:rest.AutoEating)
-        {Sated(user,drink);user.A_Print(StringTable.Localize("CA_TABLE_AUTO_STOP",false));return true;}
+        {Sated(user,drink);CaelumNotifications.Notify(user,StringTable.Localize("CA_TABLE_AUTO_STOP",false));return true;}
         let table=CaelumDiningTable.Nearby(user);
         if(table==null || (drink?user.CurrentThirst:user.CurrentHunger)>=100)return false;
         Name power=drink?'CaelumThirstRegeneration':'CaelumHungerRegeneration';

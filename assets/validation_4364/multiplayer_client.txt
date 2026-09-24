@@ -1,0 +1,19 @@
+QA_MP PASS two distinct native player recipients
+QA_MP PASS both recipients aim at the same shared chest
+QA_MP PASS actual body profiles resolve different equipment sizes
+QA_MP PASS one physical two-entry chest for both players
+QA_MP PASS player0 preview opens real shared contents
+QA_MP PASS player1 preview opens same contents
+QA_MP PASS preview size uses actual viewer
+QA_MP PASS neither preview reserves or duplicates items
+QA_MP PASS previews announce no acquisitions to either player
+QA_MP PASS one recipient cancellation leaves shared contents intact
+QA_MP PASS player0 capacity failure leaves shared item unbound
+QA_MP PASS failed recipient never receives a success message
+QA_MP PASS player1 collects each shared item once
+QA_MP PASS actual collector owns large-sized resolved item
+QA_MP PASS only player1 receives two distinct acquisition messages
+QA_MP PASS stale confirmation revalidates empty shared contents
+QA_MP PASS stale collector cannot duplicate acquisitions or messages
+QA_MP PASS repeated shared Use never replenishes
+QA_DONE multiplayer failures=0 p0_body=1 p0_size=0 p1_body=6 p1_size=3 p0_acquired=0 p1_acquired=2 local_consoleplayer=1 duration_ms=0.387

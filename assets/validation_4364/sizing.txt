@@ -1,0 +1,256 @@
+QA_SIZE_PASS outside_MAP02_fixture
+QA_SIZE_PASS reachable_profile_1
+QA_SIZE_PASS preview_pure body=1 kind=0
+QA_SIZE_PASS collect body=1 kind=0 tier=1
+QA_SIZE_PASS recipient_mapping_and_fit
+QA_SIZE_PASS MAP03_tier_preserved
+QA_SIZE_PASS weight_and_durability
+QA_SIZE_PASS derived_price
+QA_SIZE_PASS capacity_actual_delta
+QA_SIZE_PASS acquisition_revision
+QA_SIZE_PASS one_named_equipment_notice
+QA_SIZE_VALUES body=1 kind=0 tier=1 size=0 weight=1.000000 durability=20 value=5390.625000
+QA_SIZE_PASS preview_pure body=1 kind=1
+QA_SIZE_PASS collect body=1 kind=1 tier=1
+QA_SIZE_PASS recipient_mapping_and_fit
+QA_SIZE_PASS MAP03_tier_preserved
+QA_SIZE_PASS weight_and_durability
+QA_SIZE_PASS derived_price
+QA_SIZE_PASS capacity_actual_delta
+QA_SIZE_PASS acquisition_revision
+QA_SIZE_PASS one_named_equipment_notice
+QA_SIZE_VALUES body=1 kind=1 tier=1 size=0 weight=4.000000 durability=40 value=41210.937500
+QA_SIZE_PASS preview_pure body=1 kind=2
+QA_SIZE_PASS collect body=1 kind=2 tier=1
+QA_SIZE_PASS recipient_mapping_and_fit
+QA_SIZE_PASS MAP03_tier_preserved
+QA_SIZE_PASS weight_and_durability
+QA_SIZE_PASS derived_price
+QA_SIZE_PASS capacity_actual_delta
+QA_SIZE_PASS acquisition_revision
+QA_SIZE_PASS one_named_equipment_notice
+QA_SIZE_VALUES body=1 kind=2 tier=1 size=0 weight=1.000000 durability=500 value=9482.421875
+QA_SIZE_PASS reachable_profile_2
+QA_SIZE_PASS preview_pure body=2 kind=0
+QA_SIZE_PASS collect body=2 kind=0 tier=1
+QA_SIZE_PASS recipient_mapping_and_fit
+QA_SIZE_PASS MAP03_tier_preserved
+QA_SIZE_PASS weight_and_durability
+QA_SIZE_PASS derived_price
+QA_SIZE_PASS capacity_actual_delta
+QA_SIZE_PASS acquisition_revision
+QA_SIZE_PASS one_named_equipment_notice
+QA_SIZE_VALUES body=2 kind=0 tier=1 size=0 weight=1.000000 durability=20 value=5390.625000
+QA_SIZE_PASS preview_pure body=2 kind=1
+QA_SIZE_PASS collect body=2 kind=1 tier=1
+QA_SIZE_PASS recipient_mapping_and_fit
+QA_SIZE_PASS MAP03_tier_preserved
+QA_SIZE_PASS weight_and_durability
+QA_SIZE_PASS derived_price
+QA_SIZE_PASS capacity_actual_delta
+QA_SIZE_PASS acquisition_revision
+QA_SIZE_PASS one_named_equipment_notice
+QA_SIZE_VALUES body=2 kind=1 tier=1 size=0 weight=4.000000 durability=40 value=41210.937500
+QA_SIZE_PASS preview_pure body=2 kind=2
+QA_SIZE_PASS collect body=2 kind=2 tier=1
+QA_SIZE_PASS recipient_mapping_and_fit
+QA_SIZE_PASS MAP03_tier_preserved
+QA_SIZE_PASS weight_and_durability
+QA_SIZE_PASS derived_price
+QA_SIZE_PASS capacity_actual_delta
+QA_SIZE_PASS acquisition_revision
+QA_SIZE_PASS one_named_equipment_notice
+QA_SIZE_VALUES body=2 kind=2 tier=1 size=0 weight=1.000000 durability=500 value=9482.421875
+QA_SIZE_PASS reachable_profile_3
+QA_SIZE_PASS preview_pure body=3 kind=0
+QA_SIZE_PASS collect body=3 kind=0 tier=1
+QA_SIZE_PASS recipient_mapping_and_fit
+QA_SIZE_PASS MAP03_tier_preserved
+QA_SIZE_PASS weight_and_durability
+QA_SIZE_PASS derived_price
+QA_SIZE_PASS capacity_actual_delta
+QA_SIZE_PASS acquisition_revision
+QA_SIZE_PASS one_named_equipment_notice
+QA_SIZE_VALUES body=3 kind=0 tier=1 size=2 weight=2.000000 durability=40 value=10781.250000
+QA_SIZE_PASS preview_pure body=3 kind=1
+QA_SIZE_PASS collect body=3 kind=1 tier=1
+QA_SIZE_PASS recipient_mapping_and_fit
+QA_SIZE_PASS MAP03_tier_preserved
+QA_SIZE_PASS weight_and_durability
+QA_SIZE_PASS derived_price
+QA_SIZE_PASS capacity_actual_delta
+QA_SIZE_PASS acquisition_revision
+QA_SIZE_PASS one_named_equipment_notice
+QA_SIZE_VALUES body=3 kind=1 tier=1 size=2 weight=8.000000 durability=80 value=82421.875000
+QA_SIZE_PASS preview_pure body=3 kind=2
+QA_SIZE_PASS collect body=3 kind=2 tier=1
+QA_SIZE_PASS recipient_mapping_and_fit
+QA_SIZE_PASS MAP03_tier_preserved
+QA_SIZE_PASS weight_and_durability
+QA_SIZE_PASS derived_price
+QA_SIZE_PASS capacity_actual_delta
+QA_SIZE_PASS acquisition_revision
+QA_SIZE_PASS one_named_equipment_notice
+QA_SIZE_VALUES body=3 kind=2 tier=1 size=2 weight=2.000000 durability=1000 value=18964.843750
+QA_SIZE_PASS reachable_profile_4
+QA_SIZE_PASS preview_pure body=4 kind=0
+QA_SIZE_PASS collect body=4 kind=0 tier=1
+QA_SIZE_PASS recipient_mapping_and_fit
+QA_SIZE_PASS MAP03_tier_preserved
+QA_SIZE_PASS weight_and_durability
+QA_SIZE_PASS derived_price
+QA_SIZE_PASS capacity_actual_delta
+QA_SIZE_PASS acquisition_revision
+QA_SIZE_PASS one_named_equipment_notice
+QA_SIZE_VALUES body=4 kind=0 tier=1 size=2 weight=2.000000 durability=40 value=10781.250000
+QA_SIZE_PASS preview_pure body=4 kind=1
+QA_SIZE_PASS collect body=4 kind=1 tier=1
+QA_SIZE_PASS recipient_mapping_and_fit
+QA_SIZE_PASS MAP03_tier_preserved
+QA_SIZE_PASS weight_and_durability
+QA_SIZE_PASS derived_price
+QA_SIZE_PASS capacity_actual_delta
+QA_SIZE_PASS acquisition_revision
+QA_SIZE_PASS one_named_equipment_notice
+QA_SIZE_VALUES body=4 kind=1 tier=1 size=2 weight=8.000000 durability=80 value=82421.875000
+QA_SIZE_PASS preview_pure body=4 kind=2
+QA_SIZE_PASS collect body=4 kind=2 tier=1
+QA_SIZE_PASS recipient_mapping_and_fit
+QA_SIZE_PASS MAP03_tier_preserved
+QA_SIZE_PASS weight_and_durability
+QA_SIZE_PASS derived_price
+QA_SIZE_PASS capacity_actual_delta
+QA_SIZE_PASS acquisition_revision
+QA_SIZE_PASS one_named_equipment_notice
+QA_SIZE_VALUES body=4 kind=2 tier=1 size=2 weight=2.000000 durability=1000 value=18964.843750
+QA_SIZE_PASS reachable_profile_5
+QA_SIZE_PASS preview_pure body=5 kind=0
+QA_SIZE_PASS collect body=5 kind=0 tier=1
+QA_SIZE_PASS recipient_mapping_and_fit
+QA_SIZE_PASS MAP03_tier_preserved
+QA_SIZE_PASS weight_and_durability
+QA_SIZE_PASS derived_price
+QA_SIZE_PASS capacity_actual_delta
+QA_SIZE_PASS acquisition_revision
+QA_SIZE_PASS one_named_equipment_notice
+QA_SIZE_VALUES body=5 kind=0 tier=1 size=2 weight=2.000000 durability=40 value=10781.250000
+QA_SIZE_PASS preview_pure body=5 kind=1
+QA_SIZE_PASS collect body=5 kind=1 tier=1
+QA_SIZE_PASS recipient_mapping_and_fit
+QA_SIZE_PASS MAP03_tier_preserved
+QA_SIZE_PASS weight_and_durability
+QA_SIZE_PASS derived_price
+QA_SIZE_PASS capacity_actual_delta
+QA_SIZE_PASS acquisition_revision
+QA_SIZE_PASS one_named_equipment_notice
+QA_SIZE_VALUES body=5 kind=1 tier=1 size=2 weight=8.000000 durability=80 value=82421.875000
+QA_SIZE_PASS preview_pure body=5 kind=2
+QA_SIZE_PASS collect body=5 kind=2 tier=1
+QA_SIZE_PASS recipient_mapping_and_fit
+QA_SIZE_PASS MAP03_tier_preserved
+QA_SIZE_PASS weight_and_durability
+QA_SIZE_PASS derived_price
+QA_SIZE_PASS capacity_actual_delta
+QA_SIZE_PASS acquisition_revision
+QA_SIZE_PASS one_named_equipment_notice
+QA_SIZE_VALUES body=5 kind=2 tier=1 size=2 weight=2.000000 durability=1000 value=18964.843750
+QA_SIZE_PASS reachable_profile_6
+QA_SIZE_PASS preview_pure body=6 kind=0
+QA_SIZE_PASS collect body=6 kind=0 tier=1
+QA_SIZE_PASS recipient_mapping_and_fit
+QA_SIZE_PASS MAP03_tier_preserved
+QA_SIZE_PASS weight_and_durability
+QA_SIZE_PASS derived_price
+QA_SIZE_PASS capacity_actual_delta
+QA_SIZE_PASS acquisition_revision
+QA_SIZE_PASS one_named_equipment_notice
+QA_SIZE_VALUES body=6 kind=0 tier=1 size=3 weight=2.500000 durability=50 value=13476.562500
+QA_SIZE_PASS preview_pure body=6 kind=1
+QA_SIZE_PASS collect body=6 kind=1 tier=1
+QA_SIZE_PASS recipient_mapping_and_fit
+QA_SIZE_PASS MAP03_tier_preserved
+QA_SIZE_PASS weight_and_durability
+QA_SIZE_PASS derived_price
+QA_SIZE_PASS capacity_actual_delta
+QA_SIZE_PASS acquisition_revision
+QA_SIZE_PASS one_named_equipment_notice
+QA_SIZE_VALUES body=6 kind=1 tier=1 size=3 weight=10.000000 durability=100 value=103027.343750
+QA_SIZE_PASS preview_pure body=6 kind=2
+QA_SIZE_PASS collect body=6 kind=2 tier=1
+QA_SIZE_PASS recipient_mapping_and_fit
+QA_SIZE_PASS MAP03_tier_preserved
+QA_SIZE_PASS weight_and_durability
+QA_SIZE_PASS derived_price
+QA_SIZE_PASS capacity_actual_delta
+QA_SIZE_PASS acquisition_revision
+QA_SIZE_PASS one_named_equipment_notice
+QA_SIZE_VALUES body=6 kind=2 tier=1 size=3 weight=2.500000 durability=1250 value=23706.054688
+QA_SIZE_PASS reachable_profile_7
+QA_SIZE_PASS preview_pure body=7 kind=0
+QA_SIZE_PASS collect body=7 kind=0 tier=1
+QA_SIZE_PASS recipient_mapping_and_fit
+QA_SIZE_PASS MAP03_tier_preserved
+QA_SIZE_PASS weight_and_durability
+QA_SIZE_PASS derived_price
+QA_SIZE_PASS capacity_actual_delta
+QA_SIZE_PASS acquisition_revision
+QA_SIZE_PASS one_named_equipment_notice
+QA_SIZE_VALUES body=7 kind=0 tier=1 size=4 weight=3.000000 durability=60 value=16171.875000
+QA_SIZE_PASS preview_pure body=7 kind=1
+QA_SIZE_PASS collect body=7 kind=1 tier=1
+QA_SIZE_PASS recipient_mapping_and_fit
+QA_SIZE_PASS MAP03_tier_preserved
+QA_SIZE_PASS weight_and_durability
+QA_SIZE_PASS derived_price
+QA_SIZE_PASS capacity_actual_delta
+QA_SIZE_PASS acquisition_revision
+QA_SIZE_PASS one_named_equipment_notice
+QA_SIZE_VALUES body=7 kind=1 tier=1 size=4 weight=12.000000 durability=120 value=123632.812500
+QA_SIZE_PASS preview_pure body=7 kind=2
+QA_SIZE_PASS collect body=7 kind=2 tier=1
+QA_SIZE_PASS recipient_mapping_and_fit
+QA_SIZE_PASS MAP03_tier_preserved
+QA_SIZE_PASS weight_and_durability
+QA_SIZE_PASS derived_price
+QA_SIZE_PASS capacity_actual_delta
+QA_SIZE_PASS acquisition_revision
+QA_SIZE_PASS one_named_equipment_notice
+QA_SIZE_VALUES body=7 kind=2 tier=1 size=4 weight=3.000000 durability=1500 value=28447.265625
+QA_SIZE_PASS preview_pure body=7 kind=2
+QA_SIZE_PASS collect body=7 kind=2 tier=2
+QA_SIZE_PASS recipient_mapping_and_fit
+QA_SIZE_PASS MAP03_tier_preserved
+QA_SIZE_PASS weight_and_durability
+QA_SIZE_PASS derived_price
+QA_SIZE_PASS capacity_actual_delta
+QA_SIZE_PASS acquisition_revision
+QA_SIZE_PASS one_named_equipment_notice
+QA_SIZE_VALUES body=7 kind=2 tier=2 size=4 weight=4.500000 durability=4500 value=151453.125000
+QA_SIZE_PASS preview_pure body=7 kind=2
+QA_SIZE_PASS collect body=7 kind=2 tier=3
+QA_SIZE_PASS recipient_mapping_and_fit
+QA_SIZE_PASS MAP03_tier_preserved
+QA_SIZE_PASS weight_and_durability
+QA_SIZE_PASS derived_price
+QA_SIZE_PASS capacity_actual_delta
+QA_SIZE_PASS acquisition_revision
+QA_SIZE_PASS one_named_equipment_notice
+QA_SIZE_VALUES body=7 kind=2 tier=3 size=4 weight=6.000000 durability=13500 value=1992277.500000
+QA_SIZE_PASS fixed_zero_argument_still_M
+QA_SIZE_PASS explicit_fixed_override
+QA_SIZE_PASS capacity_failure_no_binding
+QA_SIZE_PASS capacity_failure_no_success_notice
+QA_SIZE_PASS later_recipient_profile_changes_projection
+QA_SIZE_PASS retry_resolves_actual_recipient_profile
+QA_SIZE_PASS native_create_tossable
+QA_SIZE_PASS drop_preview_keeps_acquired_size
+QA_SIZE_PASS drop_repickup_preserves_size_wear_weight
+QA_SIZE_PASS legacy_reserved_ID_not_acquisition
+QA_SIZE_PASS legacy_container_not_recipient_even_dropped
+QA_SIZE_PASS ground_quantity_one_notice
+QA_SIZE_PASS ground_actual_quantity_named
+QA_SIZE_PASS reward_material_quantity_one_notice
+QA_SIZE_PASS reward_increment_notice_not_stack_total
+QA_SIZE_PASS reward_actual_delta_named
+QA_SIZE_PASS javelin_shared_grant_one_notice
+QA_SIZE_DONE checks=232 failures=0

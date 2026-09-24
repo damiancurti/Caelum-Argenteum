@@ -4,13 +4,50 @@ class CaelumMazeChest : CaelumStashChest
     Inventory Loot[5];
     bool Stocked;
     int Seeded;
+    int LootRevision;
+    Inventory LegacyLoot[5];
+    bool LegacyLayout;
+    bool LegacyStocked;
+    int LegacySeeded;
+
+    // Una partida anterior conserva sus huecos vaciados y su distribución.
+    // Se retiran sólo T2/T3 aún en el cofre; no se recrea ninguna pieza.
+    void MigrateLegacyLoot()
+    {
+        if(LootRevision>=CaelumMazeLootCatalogue.REVISION)return;
+        LegacyLayout=Stocked || Seeded>0;
+        LegacyStocked=Stocked;LegacySeeded=Seeded;
+        if((Stocked || Seeded>0) && args[0]>=13)
+        {
+            for(int i=0;i<5;i++)
+                if(Loot[i]!=null && Loot[i].Owner==self)
+                {LegacyLoot[i]=Loot[i];Loot[i]=null;}
+        }
+        if(Stocked || Seeded>0)Stocked=true;
+        LootRevision=CaelumMazeLootCatalogue.REVISION;
+    }
+
+    // Herramienta reversible de migración; nunca se invoca desde el juego.
+    void RestoreLegacyLootForMigration()
+    {
+        if(!LegacyLayout)return;
+        for(int i=0;i<5;i++)
+            if(LegacyLoot[i]!=null && LegacyLoot[i].Owner==self && Loot[i]==null)
+            {Loot[i]=LegacyLoot[i];LegacyLoot[i]=null;}
+        LootRevision=0;
+        Stocked=LegacyStocked;Seeded=LegacySeeded;
+        LegacyLayout=false;
+    }
 
     void EnsureLoot()
     {
+        MigrateLegacyLoot();
         if(Stocked)return;
         while(Seeded<5)
         {
-            let item=CaelumMazeLootCatalogue.Create(args[0]*5+Seeded,Pos);
+            int index=CaelumMazeLootCatalogue.ChestEntry(args[0],Seeded);
+            if(index<0){Seeded++;continue;}
+            let item=CaelumMazeLootCatalogue.Create(index,Pos);
             if(item==null)return;
             item.AttachToOwner(self);Loot[Seeded]=item;Seeded++;
         }
@@ -19,37 +56,61 @@ class CaelumMazeChest : CaelumStashChest
 
     override void Tick() { Super.Tick();EnsureLoot(); }
 
+    bool CanInspect(CaelumPlayer user)
+    {
+        return user!=null && user.player!=null && user.health>0 && user.CharacterCreationComplete
+            && !user.CreationWizardOpen && !(user.player.cheats & CF_PREDICTING)
+            && CaelumUseGeometry.AimedAt(user,self) && user.CheckSight(self);
+    }
+
     override bool Used(Actor activator)
     {
         let user=CaelumPlayer(activator);
-        if(user==null || user.player==null || user.health<=0 || !user.CharacterCreationComplete
-            || user.CreationWizardOpen || (user.player.cheats & CF_PREDICTING)
-            || !CaelumUseGeometry.AimedAt(user,self) || !user.CheckSight(self))return false;
+        if(!CanInspect(user))return false;
         if(UseLatched && LastChestUser==user)return true;
-        UseLatched=true;LastChestUser=user;EnsureLoot();
+        UseLatched=true;LastChestUser=user;
         if(!ChestOpen)
         {
             ChestOpen=true;RefreshChestVisual();A_StartSound("caelum/world/door_open",CHAN_BODY);
-            user.A_Print(StringTable.Localize("CA_MAZE_CHEST_OPEN",false));return true;
         }
+        let preview=CaelumChestPreviewState.Get(user,true);
+        if(preview!=null){preview.Chest=self;preview.Refresh();}
+        return true;
+    }
+
+    void Collect(CaelumPlayer user)
+    {
+        // Confirmar vuelve a consultar el receptor y las existencias reales.
+        if(!CanInspect(user))return;
         int taken=0,remaining=0;
         for(int i=0;i<5;i++)
         {
             let item=Loot[i];if(item==null || item.Owner!=self)continue;
+            let equipment=CaelumEquipmentItem(item);
+            bool unclaimed=equipment!=null && !equipment.AcquisitionResolved;
+            bool oldDropped=item.bDROPPED;
             item.BecomePickup();item.bSpecial=false;
+            // BecomePickup pierde el contexto del dueño. Un intento antiguo
+            // fallido no debe hacerse pasar por equipo adquirido y soltado.
+            if(unclaimed)item.bDROPPED=false;
             Actor receiver=user;
-            // La ruta nativa conserva identidad, peso, Caja y durabilidad.
             if(item.CallTryPickup(receiver)){Loot[i]=null;taken++;}
-            else {item.AttachToOwner(self);remaining++;}
+            else {item.bDROPPED=oldDropped;item.AttachToOwner(self);remaining++;}
         }
-        user.A_Print(String.Format(StringTable.Localize("CA_MAZE_CHEST_TAKEN",false),taken,remaining));
-        return true;
+        if(remaining>0)CaelumNotifications.Notify(user,
+            String.Format(StringTable.Localize("CA_CHEST_PREVIEW_CAPACITY",false),remaining));
     }
 
     override void OnDestroy()
     {
         for(int i=0;i<5;i++) if(Loot[i]!=null && Loot[i].Owner==self)
-        {Loot[i].BecomePickup();Loot[i].SetOrigin(Pos+(0,0,32),false);}
+        {
+            let equipment=CaelumEquipmentItem(Loot[i]);
+            bool unclaimed=equipment!=null && !equipment.AcquisitionResolved;
+            Loot[i].BecomePickup();
+            if(unclaimed)Loot[i].bDROPPED=false;
+            Loot[i].SetOrigin(Pos+(0,0,32),false);
+        }
         if(ChestVisual!=null)ChestVisual.Destroy();
         Super.OnDestroy();
     }
@@ -112,10 +173,10 @@ class CaelumSewerMaze : Object play
     static bool CanLeave(CaelumPlayer user)
     {
         if(level.MapName!="MAP02")return true;
-        if(BossAlive()) {user.A_Print(StringTable.Localize("CA_MAZE_ZUPAY_GUARD",false));return false;}
+        if(BossAlive()) {CaelumNotifications.Notify(user,StringTable.Localize("CA_MAZE_ZUPAY_GUARD",false));return false;}
         let record=user.GetPersistentCharacterState(false);
         if(record==null || !record.HasTarotCard(CUPS_ACE))
-        {user.A_Print(StringTable.Localize("CA_MAZE_CARD_GUARD",false));return false;}
+        {CaelumNotifications.Notify(user,StringTable.Localize("CA_MAZE_CARD_GUARD",false));return false;}
         return true;
     }
 
@@ -130,8 +191,8 @@ class CaelumSewerMaze : Object play
         }
         let enemies=ThinkerIterator.Create("CaelumMandinga");Actor enemy;
         while((enemy=Actor(enemies.Next()))!=null)if(enemy.health>0)mandingas++;
-        Console.Printf("[Caelum 4.36.3] Laberinto MAP02: cofres=%d objetos restantes=%d Mandingas vivos=%d Zupay vivo=%d",chests,objects,mandingas,BossAlive());
-        Console.Printf("Contenido inicial: 39 cofres, 195 piezas, 96 Mandingas, 45 trampas, 120 raciones de comida y 120 de agua. Carta: índice %d.",CUPS_ACE);
+        Console.Printf("[Caelum 4.36.4] Laberinto MAP02: cofres=%d objetos restantes=%d Mandingas vivos=%d Zupay vivo=%d",chests,objects,mandingas,BossAlive());
+        Console.Printf("Contenido inicial: 39 cofres, 65 piezas T1, 96 Mandingas, 45 trampas, 120 raciones de comida y 120 de agua. Carta: índice %d.",CUPS_ACE);
         for(int i=0;i<MAXPLAYERS;i++)if(playeringame[i])
         {
             let user=CaelumPlayer(players[i].mo);if(user==null)continue;
@@ -164,7 +225,7 @@ class CaelumCupsAceEssence : Actor
             if(user==null || user.player==null || user.health<=0 || !user.CharacterCreationComplete
                 || user.CreationWizardOpen || user.Distance2D(self)>256 || !user.CheckSight(self))continue;
             RevealedTo|=1<<i;EventHandler.SendInterfaceEvent(i,"ca_tarot_reveal");
-            user.A_Print(StringTable.Localize("CA_MAZE_CUPS_ACE",false));
+            CaelumNotifications.Notify(user,StringTable.Localize("CA_MAZE_CUPS_ACE",false));
         }
     }
     override bool Used(Actor activator)
@@ -174,14 +235,14 @@ class CaelumCupsAceEssence : Actor
             || user.CreationWizardOpen || (user.player.cheats & CF_PREDICTING)
             || !CaelumUseGeometry.AimedAt(user,self) || !user.CheckSight(self))return false;
         if(CaelumSewerMaze.BossAlive())
-        {user.A_Print(StringTable.Localize("CA_MAZE_ZUPAY_GUARD",false));return true;}
+        {CaelumNotifications.Notify(user,StringTable.Localize("CA_MAZE_ZUPAY_GUARD",false));return true;}
         let record=user.GetPersistentCharacterState(true);if(record==null)return false;
         if(record.HasTarotCard(CaelumSewerMaze.CUPS_ACE))return true;
         record.TarotOwned[CaelumSewerMaze.CUPS_ACE]=true;
         user.ApplyCharacterProfile();user.RefreshSocialJournalSnapshot();
         user.RefreshFormalInventorySnapshot();user.PersistCharacterState();
         EventHandler.SendInterfaceEvent(user.PlayerNumber(),"ca_tarot_capture");
-        user.A_Print(StringTable.Localize("CA_MAZE_CUPS_CAPTURED",false));
+        CaelumNotifications.Notify(user,StringTable.Localize("CA_MAZE_CUPS_CAPTURED",false));
         // La esencia queda accesible para otros jugadores sin duplicar la colección.
         return true;
     }

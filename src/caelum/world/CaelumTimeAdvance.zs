@@ -98,13 +98,13 @@ class CaelumTimeAdvanceState : Inventory
     static bool Toggle(CaelumPlayer user)
     {
         let advance=Get(user,true); if(advance==null)return false;
-        if(advance.Active) { Halt(user); user.A_Print(StringTable.Localize("CA_FAST_OFF",false)); return true; }
+        if(advance.Active) { Halt(user); CaelumNotifications.Notify(user,StringTable.Localize("CA_FAST_OFF",false)); return true; }
         String reason=BlockReason(user);
-        if(reason.Length()!=0) { advance.LastReason=reason; user.A_Print(StringTable.Localize(reason,false)); return false; }
+        if(reason.Length()!=0) { advance.LastReason=reason; CaelumNotifications.Notify(user,StringTable.Localize(reason,false)); return false; }
         advance.Active=true;advance.Pumping=false;advance.LastPumpTic=-1;advance.SimulatedTics=0;
         advance.OriginMap=level.MapName;advance.Session=CaelumRestState.IsActive(user)?CaelumRestState.Get(user):null;
         advance.Station=advance.Session==null?user.ActiveCraftingStationActor:null;advance.LastReason="";
-        user.A_Print(StringTable.Localize("CA_FAST_ON",false));return true;
+        CaelumNotifications.Notify(user,StringTable.Localize("CA_FAST_ON",false));return true;
     }
 
     static void AdvancePowers(CaelumPlayer user)
@@ -126,7 +126,7 @@ class CaelumTimeAdvanceState : Inventory
         advance.LastPumpTic=level.maptime;
         String reason=advance.OriginMap!=level.MapName?"CA_REST_MOVED":BlockReason(user);
         if(reason.Length()!=0)
-        { advance.LastReason=reason;Halt(user);user.A_Print(StringTable.Localize(reason,false));return; }
+        { advance.LastReason=reason;Halt(user);CaelumNotifications.Notify(user,StringTable.Localize(reason,false));return; }
         let clock=CaelumWorldClock.Get(user);if(clock==null){Halt(user);return;}
         let calendar=CaelumCalendarState.Get(user);
         advance.Pumping=true;

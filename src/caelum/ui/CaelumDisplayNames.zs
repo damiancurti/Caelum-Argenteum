@@ -7,7 +7,7 @@ class CaelumDisplayNames : Object
     const GRAMMAR_MASCULINE_PLURAL = 2;
     const GRAMMAR_FEMININE_PLURAL = 3;
 
-    static ui String GetWeaponKey(int weaponType)
+    static clearscope String GetWeaponKey(int weaponType)
     {
         switch (weaponType)
         {
@@ -34,7 +34,7 @@ class CaelumDisplayNames : Object
         }
     }
 
-    static ui String GetEquipmentSizeKey(int equipmentSize)
+    static clearscope String GetEquipmentSizeKey(int equipmentSize)
     {
         switch (equipmentSize)
         {
@@ -50,7 +50,7 @@ class CaelumDisplayNames : Object
         }
     }
 
-    static ui String GetArmorSlotKey(int armorSlot)
+    static clearscope String GetArmorSlotKey(int armorSlot)
     {
         switch (armorSlot)
         {
@@ -61,7 +61,7 @@ class CaelumDisplayNames : Object
         }
     }
 
-    static ui String GetConsumableKey(int consumableType)
+    static clearscope String GetConsumableKey(int consumableType)
     {
         if (consumableType == 5) return "CA_WATER_BOTTLE_SMALL";
         if (consumableType == 6) return "CA_WATER_BOTTLE_NORMAL";
@@ -83,7 +83,7 @@ class CaelumDisplayNames : Object
         }
     }
 
-    static ui String GetAmmunitionKey(int ammunitionType)
+    static clearscope String GetAmmunitionKey(int ammunitionType)
     {
         switch (ammunitionType)
         {
@@ -234,7 +234,7 @@ class CaelumDisplayNames : Object
         }
     }
 
-    static ui int GetWeaponGrammar(int weaponType)
+    static clearscope int GetWeaponGrammar(int weaponType)
     {
         switch (weaponType)
         {
@@ -257,7 +257,7 @@ class CaelumDisplayNames : Object
         }
     }
 
-    static ui String GetArmorTypeKey(int armorType)
+    static clearscope String GetArmorTypeKey(int armorType)
     {
         switch (armorType)
         {
@@ -271,7 +271,7 @@ class CaelumDisplayNames : Object
         }
     }
 
-    static ui String GetShieldKey(int shieldType)
+    static clearscope String GetShieldKey(int shieldType)
     {
         switch (shieldType)
         {
@@ -282,7 +282,7 @@ class CaelumDisplayNames : Object
         }
     }
 
-    static ui String GetAmuletKey(int amuletType)
+    static clearscope String GetAmuletKey(int amuletType)
     {
         switch (amuletType)
         {
@@ -293,7 +293,7 @@ class CaelumDisplayNames : Object
         }
     }
 
-    static ui String GetSealKey(int sealType)
+    static clearscope String GetSealKey(int sealType)
     {
         switch (sealType)
         {
@@ -305,7 +305,7 @@ class CaelumDisplayNames : Object
         }
     }
 
-    static ui String GetFinishFormatKey(int tier, int grammar)
+    static clearscope String GetFinishFormatKey(int tier, int grammar)
     {
         bool silver = tier == 2;
         if (grammar == GRAMMAR_FEMININE)
@@ -331,7 +331,7 @@ class CaelumDisplayNames : Object
             : "CA_EQUIPMENT_FINISH_GOLD_MASCULINE";
     }
 
-    static ui String FormatLocalizedKey(String baseKey, int tier, int grammar)
+    static clearscope String FormatLocalizedKey(String baseKey, int tier, int grammar)
     {
         String baseName = StringTable.Localize(baseKey, false);
         if (tier <= 1) { return baseName; }
@@ -343,42 +343,42 @@ class CaelumDisplayNames : Object
         );
     }
 
-    static ui String FormatWeaponName(int weaponType, int tier)
+    static clearscope String FormatWeaponName(int weaponType, int tier)
     {
         return FormatLocalizedKey(
             GetWeaponKey(weaponType), tier, GetWeaponGrammar(weaponType)
         );
     }
 
-    static ui String FormatArmorTypeName(int armorType, int tier)
+    static clearscope String FormatArmorTypeName(int armorType, int tier)
     {
         return FormatLocalizedKey(
             GetArmorTypeKey(armorType), tier, GRAMMAR_FEMININE
         );
     }
 
-    static ui String FormatShieldName(int shieldType, int tier)
+    static clearscope String FormatShieldName(int shieldType, int tier)
     {
         return FormatLocalizedKey(
             GetShieldKey(shieldType), tier, GRAMMAR_MASCULINE
         );
     }
 
-    static ui String FormatAmuletName(int amuletType, int tier)
+    static clearscope String FormatAmuletName(int amuletType, int tier)
     {
         return FormatLocalizedKey(
             GetAmuletKey(amuletType), tier, GRAMMAR_MASCULINE
         );
     }
 
-    static ui String FormatSealName(int sealType, int tier)
+    static clearscope String FormatSealName(int sealType, int tier)
     {
         return FormatLocalizedKey(
             GetSealKey(sealType), tier, GRAMMAR_MASCULINE
         );
     }
 
-    static ui int GetCatalogueWeaponType(int weaponId)
+    static clearscope int GetCatalogueWeaponType(int weaponId)
     {
         switch (weaponId)
         {
@@ -401,7 +401,7 @@ class CaelumDisplayNames : Object
         }
     }
 
-    static ui String FormatCatalogueWeaponName(int weaponId, int tier)
+    static clearscope String FormatCatalogueWeaponName(int weaponId, int tier)
     {
         return FormatWeaponName(GetCatalogueWeaponType(weaponId), tier);
     }

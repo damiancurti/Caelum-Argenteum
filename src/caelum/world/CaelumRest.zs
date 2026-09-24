@@ -166,18 +166,18 @@ class CaelumRestState : Inventory
         String reason = BlockReason(user,untimed);
         if (reason.Length() != 0)
         {
-            if (user != null) user.A_Print(StringTable.Localize(reason, false));
+            if (user != null) CaelumNotifications.Notify(user,StringTable.Localize(reason, false));
             return false;
         }
         if (furniture != null && (furniture.RestMode() != mode || !furniture.CanReach(user)))
-        { user.A_Print(StringTable.Localize("CA_REST_FURNITURE_UNAVAILABLE", false)); return false; }
+        { CaelumNotifications.Notify(user,StringTable.Localize("CA_REST_FURNITURE_UNAVAILABLE", false)); return false; }
         let rest = Get(user, true);
         if (rest == null) return false;
         vector3 entry = user.Pos;
         double entryAngle = user.Angle;
         double entryPitch = user.Pitch;
         if (furniture != null && !furniture.Seat(user))
-        { user.A_Print(StringTable.Localize("CA_REST_FURNITURE_SPACE", false)); return false; }
+        { CaelumNotifications.Notify(user,StringTable.Localize("CA_REST_FURNITURE_SPACE", false)); return false; }
         rest.Furniture = furniture;
         rest.UsesFurniture = furniture != null;
         rest.EntryPosition = entry;
@@ -239,7 +239,7 @@ class CaelumRestState : Inventory
             || user.InStateSequence(user.CurState, user.FindState("RestSeated"))))
             user.SetState(user.SpawnState);
         user.PersistCharacterState();
-        if (key.Length() != 0) user.A_Print(StringTable.Localize(key, false));
+        if (key.Length() != 0) CaelumNotifications.Notify(user,StringTable.Localize(key, false));
     }
 
     static void Interrupt(CaelumPlayer user, String key)

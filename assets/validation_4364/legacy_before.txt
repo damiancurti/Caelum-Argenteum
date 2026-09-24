@@ -1,0 +1,4 @@
+QA_LEGACY_COLLECT chest=0 success=1
+QA_LEGACY_COLLECT chest=26 success=1
+QA_LEGACY_READY chests=39 initial_items=195
+QA_LEGACY_FAILED success=0 item_id=3 initialized=1 size=2

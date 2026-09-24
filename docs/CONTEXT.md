@@ -1,6 +1,6 @@
 # CONTEXT.md — Ultra-condensed summary of Caelum Argenteum
 
-Documentation version: **4.36.3** — 2026-09-23.
+Documentation version: **4.36.4** — 2026-09-23.
 
 Summary so an AI or a contributor can understand the project without reading
 the five full canonical documents. Source: `docs/PROJECT.md`,
@@ -57,14 +57,18 @@ the gauchos and rural culture, and the humans the urban porteño society.
 - **MAP01 (mansion/tutorial):** prologue, Unknown Voice, Palomo, Argento,
   Caella, Ronnie, and Rulo; first weapon, Box, and exit to MAP02.
 - **MAP02 (maze):** three sections, 147 rooms, 96 Mandingas, 45 traps, three
-  keys, 39 chests, 195 equipment pieces, final Zupay, Ace of Cups, and the
+  keys, 39 chests, 65 unique T1 equipment pieces, final Zupay, Ace of Cups, and the
   coast exit.
 - **Presentation:** modular first-person view, event audio, Spanish/English
   localization, project typography, and hub transitions.
 
 ## Current status
 
-Current release **4.36.3** adds the issue #9 flail-handle rotation: 10 degrees
+Current release **4.36.4** implements #10: the complete T1 maze catalogue,
+recipient-sized natural equipment/rewards, explicit chest previews/collection
+and a bounded recent-message feed. The author confirmed CA-4364-T1-LOOT-01 passed
+on 2026-09-23; the author-test queue is empty.
+The retained 4.36.3 issue #9 flail-handle rotation adds 10 degrees
 further counterclockwise across T1–T3. Native before/after, full spin, return
 and re-equip checks passed; the author confirmed CA-4360I-VISUAL-01 passed
 on 2026-09-23. The
@@ -81,11 +85,10 @@ rations, and MAP01 tables at full capacity.
 
 Pending:
 
-- Author-requested patches 4.36.4–4.36.9 (#10–#15): T1-only MAP02 equipment;
-  four keyed sewer sections with cells/beds, repair refuges and northern Zupay;
+- Author-requested patches 4.36.5–4.36.9 (#11–#15): four keyed sewer sections with cells/beds, repair refuges and northern Zupay;
   192 enemy rats alongside 96 Mandingas; four recolored prisoners; persistent
   rescues/port faction rewards; approved Tarot images. These are planned,
-  not present in the accepted three-section 0i baseline.
+  not present in the current three-section map.
 - Planned 4.36.10–4.36.13 (#18–#21): siege-machine assets, breakable actor
   gates, physical ram strikes and native catapult projectiles for the port.
 - Closing 4.36: rams/catapults and remaining integration/save/reset validation
@@ -107,10 +110,8 @@ its separate commanding Zupay holds the second Minor (identity pending).
 Prisoners match their source character's combat stats, follow/fight alongside
 the player and extract alive through an exit before the MAP02 boss; they do
 not fight that boss. At the port, each grants +10 reputation with its own
-faction and coins worth twice the mean normal purchase price of T1 weapons at
-the rewarded character's equipment size once. Use normal purchase prices from
-the existing economy (SYSTEMS), restricted to T1 weapons that fit the rewarded
-character's equipment size; detailed siege balance/conditions and the definitive
+faction and a fixed 25 gold coins once, independent of character size.
+The latest #10/#14 author decision supersedes the former weapon-price formula; detailed siege balance/conditions and the definitive
 Tarot package remain pending.
 Prisoner source/faction mapping: Caella/Unitarians, Ronnie/Federals,
 Rulo/Wild Beast Men, Argento/Cult of the Tarot; do not reassign mansion NPCs.

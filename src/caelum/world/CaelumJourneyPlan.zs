@@ -304,7 +304,7 @@ class CaelumJourneyPlan : Inventory
         double speed = CaelumJourneyRules.SpeedForMode(user,mode);
         double hours = speed > 0 ? CaelumJourneyRules.DistanceKm(id) / speed : 0;
         if (speed <= 0 || hours <= 0 || hours > CaelumJourneyRules.MAX_WALK_HOURS)
-        { user.A_Print(StringTable.Localize("CA_JOURNEY_PACE", false)); return false; }
+        { CaelumNotifications.Notify(user,StringTable.Localize("CA_JOURNEY_PACE", false)); return false; }
         ConnectionId = id; TravelMode = mode; SpeedKmh = speed; OriginMap = level.MapName;
         OriginPosition = user.Pos;
         PlannedWalkTics = Max(1, int(Ceil(hours * CaelumWorldClock.TicsPerHour() - 0.0000001)));
@@ -318,7 +318,7 @@ class CaelumJourneyPlan : Inventory
     static bool Preview(CaelumPlayer user, int id, int mode)
     {
         String reason = CaelumJourneyRules.BlockReason(user);
-        if (reason.Length() != 0) { user.A_Print(StringTable.Localize(reason, false)); return false; }
+        if (reason.Length() != 0) { CaelumNotifications.Notify(user,StringTable.Localize(reason, false)); return false; }
         let plan = Get(user, true);
         if (plan == null || !plan.Calculate(user, id, mode)) return false;
         plan.SourceVehicle = null; plan.Open = true;
@@ -337,7 +337,7 @@ class CaelumJourneyPlan : Inventory
             || !plan.VehicleAvailable(user)
             || !CaelumTravelService.CanDepart(user, plan.ConnectionId)) { Cancel(user); return false; }
         String reason = CaelumJourneyRules.BlockReason(user);
-        if (reason.Length() != 0) { user.A_Print(StringTable.Localize(reason, false)); Cancel(user); return false; }
+        if (reason.Length() != 0) { CaelumNotifications.Notify(user,StringTable.Localize(reason, false)); Cancel(user); return false; }
         // Ni un guardado ni el tiempo dedicado a leer permiten confirmar una
         // previsión obsoleta. Cambios materiales exigen ver los nuevos valores.
         let fresh = CaelumJourneyPlan(Actor.Spawn("CaelumJourneyPlan", user.Pos, NO_REPLACE));
@@ -353,7 +353,7 @@ class CaelumJourneyPlan : Inventory
             || Abs(fresh.Available.ContainerStock - plan.Available.ContainerStock) > 0.000001;
         plan.SpeedKmh = fresh.SpeedKmh; plan.PlannedWalkTics = fresh.PlannedWalkTics; plan.PlannedSleepTics = fresh.PlannedSleepTics;
         plan.Needed = fresh.Needed; plan.Available = fresh.Available; fresh.Destroy();
-        if (changed) { user.A_Print(StringTable.Localize("CA_JOURNEY_REVISED", false)); return false; }
+        if (changed) { CaelumNotifications.Notify(user,StringTable.Localize("CA_JOURNEY_REVISED", false)); return false; }
         return CaelumTravelService.Commit(user, plan.ConnectionId, plan.TravelMode, plan);
     }
 

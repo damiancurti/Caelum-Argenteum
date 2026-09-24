@@ -21,9 +21,9 @@ class CaelumSleepingBag : CaelumSpecialInventoryItem
         if (!AvailableTo(user) || CaelumRestState.IsActive(user)) return false;
         String reason = CaelumRestState.BlockReason(user);
         if (reason.Length() != 0)
-        { user.A_Print(StringTable.Localize(reason, false)); return false; }
+        { CaelumNotifications.Notify(user,StringTable.Localize(reason, false)); return false; }
         if (!CaelumRestBag.HasRoom(user))
-        { user.A_Print(StringTable.Localize("CA_SLEEPING_BAG_SPACE", false)); return false; }
+        { CaelumNotifications.Notify(user,StringTable.Localize("CA_SLEEPING_BAG_SPACE", false)); return false; }
         let mat = CaelumRestBag(Actor.Spawn("CaelumRestBag", user.Pos, NO_REPLACE));
         if (mat == null) return false;
         mat.Bag = self;
@@ -49,14 +49,14 @@ class CaelumSleepingBag : CaelumSpecialInventoryItem
         String reason = CaelumRestState.BlockReason(user);
         if (reason.Length() != 0 && reason != "CA_REST_NEEDS") return;
         if (user.FindInventory("CaelumSleepingBag") != null)
-        { user.A_Print(StringTable.Localize("CA_SLEEPING_BAG_OWNED", false)); return; }
+        { CaelumNotifications.Notify(user,StringTable.Localize("CA_SLEEPING_BAG_OWNED", false)); return; }
         let bag = CaelumSleepingBag(Actor.Spawn("CaelumSleepingBag", user.Pos, NO_REPLACE));
         if (bag == null) return;
         Actor receiver = user;
         if (!bag.TryPickup(receiver))
         {
             bag.Destroy();
-            user.A_Print(StringTable.Localize("CA_SLEEPING_BAG_CARRY", false));
+            CaelumNotifications.Notify(user,StringTable.Localize("CA_SLEEPING_BAG_CARRY", false));
         }
         user.PersistCharacterState();
     }

@@ -1,6 +1,52 @@
 # Caelum Argenteum — Current systems and rules
 
-Documentation version: **4.36.3** — 2026-09-23.
+Documentation version: **4.36.4** — 2026-09-23.
+
+## 4.36.4 — Acquisition and chest contract (issue #10)
+
+MAP02 supplies only Tier 1 equipment: exactly 65 distinct combinations, retaining
+all four armor types in all four slots, all 20 weapon families and their existing
+essence variants (36 weapon entries), four shields, four amulets and five seals.
+Fresh maps distribute 26 two-item and 13 one-item chests over the existing 39
+locations. The accepted 120 food/120 water rations, repair rules and other map
+contents remain unchanged. The historical 0i table below describes that release.
+
+New natural world equipment and equipment rewards use CHARACTER_DEFAULT for
+weapons, armor and shields. The recipient's CharacterProfile is mapped by
+GetDefaultSizeForCharacterTier: body tiers 1–2 -> XS, 3–5 -> M, 6 -> L, 7 -> XL.
+The existing mapping intentionally has no default S branch. Amulets, seals,
+provisions, keys and money retain their existing nonsized rules. The policy is
+separate from resolved EquipmentSize: editor size argument zero still defaults
+to M; the resolved EquipmentSize enum is unchanged (its zero value means XS).
+Weight, maximum durability and economy valuation use the existing rules for
+the resolved tier/size; no balance formula or crafting/merchant sizing changes.
+
+Resolution commits only with successful transfer. A preview or capacity failure
+cannot reserve a shared item for one character. The actual recipient is checked
+again at collection. Once acquired, identity, size and condition persist through
+drop/re-pickup, transfer, saves and travel; imported/owned T2/T3 remain intact.
+Migration is revisioned and idempotent. Old saved chests retain their original
+T1 slots and looted gaps, without replenishment; unclaimed T2/T3 are retained in
+a separate migration backup rather than offered as loot. Fresh-map distribution
+does not retroactively fill an existing map.
+
+First Use opens a Spanish preview of actual remaining chest entries, including
+names/quantities and applicable tier, recipient size and essence. Explicit
+collection uses the same inventory references, revalidates current contents and
+capacity, and shows what remains; cancel transfers nothing. Empty chests say so.
+Concurrent users share one stock and do not receive per-player duplicates.
+Confirming collection returns to the HUD so acquisition/capacity notices remain
+readable; Use again previews the current remaining contents or explicit empty state.
+
+Successful acquisition notices identify the actual item and received quantity.
+Failed transfers announce no success; a chest identifies each successful item.
+The top-left gameplay feed holds at most 20 entries in chronological order;
+the 21st evicts the oldest. Each expires independently. The initial duration is
+eight seconds, configurable through one project CVar for author adjustment.
+Debug reports and full NPC conversations remain outside this feed.
+Native evidence and the exact authoring API are recorded with this delivery;
+The author confirmed CA-4364-T1-LOOT-01 passed on 2026-09-23; HISTORY records
+the acceptance separately from native/static verification.
 
 ## 4.36.2 — Bow presentation performance
 
@@ -3652,50 +3698,21 @@ world.
 
 ### 6. Prisoner coin reward
 
-[AUTHOR-CONFIRMED DESIGN, NOT IMPLEMENTED] Issue #14, planned 4.36.8; reference
-rule reconciled in issue #22 (patch 4.36.1b).
-At the port, each successfully rescued prisoner grants coins sufficient for
-two weapons at the arithmetic mean purchase price of the T1 catalogue entries
-that fit the rewarded character's equipment size, in addition to +10 reputation
-with that prisoner's own faction. This replaces the earlier unspecified material
-reward; both benefits are claimable once.
+[AUTHOR-CONFIRMED DESIGN, NOT IMPLEMENTED] Issue #14, planned 4.36.8. The
+latest author decision, explicitly referenced by #10 and verified against #14,
+supersedes the former average-weapon-price formula reconciled in #22.
 
-For the approved reference set S containing N priced weapon entries:
+Each successfully rescued prisoner grants **25 gold coins plus +10 reputation
+with that prisoner's own faction**, once per entitled character at the port.
+The payout is independent of size, weapon tier, prices, margins or discounts.
+Use the existing physical currency helpers and denomination rules: 40,000
+copper per gold, hence 1,000,000 copper per rescue; four rescues total 100 gold.
+Preserve independent claims across saves/travel. Failed coin delivery remains
+retryable without duplicate money or reputation. Keep one shared reward
+definition; do not implement a price-averaging table for this reward.
 
-```text
-P_i = CaelumEconomyRules.GetPriceChargedByMerchant(V_i, 1)
-reward_copper = CaelumEconomyRules.RoundCopperUp(2 * sum(P_i) / N)
-```
-
-S includes T1 weapons only, at the rewarded character's equipment size. V_i uses
-the existing recursive recipe valuation at reference 100% material efficiency,
-with the weapon's canonical tier, essence and size weight. The normal merchant
-purchase margin is currently 150%; apply it once, with no extra invented rarity
-multiplier. Player discounts and merchant buyback prices do not define this
-reference.
-
-Enumerate each distinct purchasable T1 weapon catalogue entry once that fits the
-rewarded character's equipment size, including physical and essence weapons;
-exclude fists, ammunition, shields, other equipment and unsellable Limbo items.
-Duplicate instances and map spawn counts do not weight the mean. The
-implementation PR must list the entries, N, copper prices, sum, mean and rounded
-payout.
-
-One rescue pays R; four pay 4R, with +10 for each respective faction. Use
-existing physical coin denominations and conversion, preserve independent claim
-state across saves and travel, and leave failed coin delivery retryable without
-duplicated coins or reputation. Keep one authoritative reward definition for all
-four NPCs.
-
-## Magic Box
-
-V4.32.0a-r4 remains the accepted weight and storage base. V4.32.0b changes the
-acquisition: a new character no longer has the Magic Box at the beginning. V4.32
-revisions used Palomo to validate the gift; that route was a test environment and
-V4.33.0b removes it from the canonical dialogue. V4.33.0s implements the delivery after
-the four branches, accepting Palomo on the second floor; moving from 75 phase to 80. The
-previous test also confirmed that the normal exit preserves the Box; `map MAP02` creates
-a new character and does not constitute a character's journey.
+The superseded 4.36.1b reference-set/price formula is preserved in HISTORY.
+This documentation correction does not implement escort or reward gameplay.
 
 ### 1. Nature and Own Weight
 

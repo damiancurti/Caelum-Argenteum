@@ -86,11 +86,22 @@ The inspected helper is CaelumEquipmentRules.GetDefaultSizeForCharacterTier(int)
 
 The baseline helper clamps body tiers to 1–7 and maps 1–2 to XS, 3–5 to M, 6 to L and 7 to XL. This is a code observation, not permission to rebalance the mapping or add a missing S branch. Recheck the helper when implementing a later revision. Fit eligibility and default selection are separate operations.
 
-For new recipient-sized MAP02 loot, consult issue #10 for the confirmed acquisition policy. Do not resize already-owned items on drop/re-pick or load. This requirement is planned; the helper's existence does not prove that all MAP02 loot already uses it.
+Issue #10 implements `CaelumEquipmentItem.SizePolicy`: `CHARACTER_DEFAULT=1`
+is the default for natural world/reward equipment; `FIXED_SIZE=2` is an explicit
+authoring override. This policy is separate from editor `args[0]` (0 still
+defaults to M) and resolved EquipmentSize (enum 0 is XS). Use the nonmutating
+Preview methods for inspection and the shared native pickup transaction for
+collection. Resolve size-dependent capacity before assigning identity. An old
+failed pickup can have ItemId/PickupDataInitialized without ever being acquired;
+neither alone proves ownership. Temporary BecomePickup flags on container loot
+must not turn that state into acquired equipment. Revision 1 preserves acquired
+size/wear and serializes retired unclaimed MAP02 T2/T3 for reversible migration.
+Crafting, merchant stock and explicit debug selection keep their own rules.
+See CA-KP-002 and the 4.36.4 native evidence for tested boundaries.
 
 ### Economy has shared helpers
 
-CaelumEconomy.zs contains RoundCopperUp and GetPriceChargedByMerchant. Inspect signatures and their callers before reuse. Do not confuse the merchant's selling price with buyback value or add a second markup. The rescue reward's T1/recipient-size rule belongs to issue #14 and SYSTEMS; this guide deliberately does not introduce a fixed reward amount.
+CaelumEconomy.zs contains RoundCopperUp and GetPriceChargedByMerchant. Inspect signatures and their callers before reuse. Do not confuse the merchant's selling price with buyback value or add a second markup. The rescue reward belongs to issue #14 and SYSTEMS; the latest author decision is a fixed 25 gold, independent of this equipment-sizing policy. The former weapon-price average is superseded.
 
 ### Visual reuse is not story-identity reuse
 

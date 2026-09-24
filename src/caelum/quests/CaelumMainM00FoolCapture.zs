@@ -121,7 +121,7 @@ class CaelumMainM00FoolCapture : Object play
         user.SyncPalomoDialogueTokens();
         user.PersistCharacterState();
         EventHandler.SendInterfaceEvent(user.PlayerNumber(), "ca_tarot_capture");
-        user.A_Print(StringTable.Localize("CA_M01_FOOL_OBTAINED", false));
+        CaelumNotifications.Notify(user,StringTable.Localize("CA_M01_FOOL_OBTAINED", false));
         return true;
     }
 }

@@ -34,7 +34,7 @@ class CaelumMainM00Return : Object play
 
     static void Feedback(CaelumPlayer user, String key)
     {
-        if (user != null) user.A_Print(StringTable.Localize(key, false));
+        if (user != null) CaelumNotifications.Notify(user,StringTable.Localize(key, false));
     }
 
     static bool Begin(CaelumPlayer user)
@@ -122,6 +122,8 @@ class CaelumMainM00Return : Object play
             : user.WeaponModel.GetMaximumDurabilityFor(item.ItemType, 1, item.EquipmentSize);
         item.UnitWeight = user.WeaponModel.GetWeightFor(item.ItemType, 1, item.EquipmentSize);
         item.PickupDataInitialized = true; item.ItemId = r.MainM00StarterWeaponId;
+        item.AcquisitionResolved = true;
+        item.SizePolicyRevision = CaelumEquipmentRules.SIZE_POLICY_REVISION;
         item.ItemFlags = CaelumConstants.CA_ITEMFLAG_LIMBO_PRESERVABLE;
         return item;
     }
@@ -143,7 +145,11 @@ class CaelumMainM00Return : Object play
         if (first == null) return false;
         // Todas las comprobaciones fallables preceden a la limpieza. Desde
         // aquí no se cede ejecución hasta tener el registro completo.
-        if (first.Owner == null) first.AttachToOwner(user);
+        if (first.Owner == null)
+        {
+            first.AttachToOwner(user);
+            CaelumNotifications.Acquired(user, first, 1);
+        }
         first.Equipped = false; first.InMagicBox = true;
         first.ItemFlags &= ~CaelumConstants.CA_ITEMFLAG_LIMBO_TEMP;
         first.ItemFlags |= CaelumConstants.CA_ITEMFLAG_LIMBO_PRESERVABLE;

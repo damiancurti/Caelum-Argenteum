@@ -1,0 +1,11 @@
+QA_UIEVENT PASS native Use opens before UI network collection
+QA_UIEVENT PASS preview exposes two real items without transfer
+QA_UIEVENT PASS UI network collect transferred actual contents
+QA_UIEVENT PASS successful confirmation closes modal immediately
+QA_UIEVENT PASS two actual acquisition messages are available on HUD
+QA_UIEVENT PASS Use reopens actual empty state
+QA_UIEVENT PASS cancel test opens another stocked chest
+QA_UIEVENT PASS UI network cancel closes modal
+QA_UIEVENT PASS UI network cancel leaves actual contents untouched
+QA_UIEVENT PASS UI network cancel emits no acquisition messages
+QA_DONE uievent failures=0 collected_messages=2 cancel_remaining=2

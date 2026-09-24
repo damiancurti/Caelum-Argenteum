@@ -154,7 +154,7 @@ class CaelumTeleportTrap : CaelumPressureTrap
         if (user != null)
         {
             user.A_SetBlend("80c8ff",0.35,12);
-            user.A_Print(StringTable.Localize("CA_TRAP_TELEPORTED",false));
+            CaelumNotifications.Notify(user,StringTable.Localize("CA_TRAP_TELEPORTED",false));
             user.LastImpactFallingVelocityZ = 0;
             user.ImpactGroundTrackingInitialized = false;
         }
