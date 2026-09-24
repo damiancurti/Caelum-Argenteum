@@ -1,6 +1,16 @@
 # Caelum Argenteum — Project, status and roadmap
 
-Documentation version: **4.36.5** — 2026-09-24.
+Documentation version: **4.36.5a** — 2026-09-24.
+
+## 4.36.5a — Selective file reading for agents (#29)
+
+Issue [#29](https://github.com/damiancurti/Caelum-Argenteum/issues/29) is a
+documentation patch that extends `AGENTS.md` and the engineering guide with an
+explicit selective-reading workflow: search names, symbols and indexed
+headings before opening large files, read relevant ranges and their required
+dependencies, treat `build/` as targeted test evidence, and review PRs from
+the diff outward. The practical examples live in `GZDOOM_DEVELOPMENT.md`. No
+gameplay, balance, map, asset, localization or save change is introduced.
 
 ## 4.36.5 — Four-section sewer layout (issue #11)
 

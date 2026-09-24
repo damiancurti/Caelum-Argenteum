@@ -1,6 +1,6 @@
 # Caelum Argenteum — Current systems and rules
 
-Documentation version: **4.36.5** — 2026-09-24.
+Documentation version: **4.36.5a** — 2026-09-24.
 
 ## 4.36.5 — Sewer gates, refuges and known-recipe repair (#11)
 

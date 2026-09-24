@@ -4,8 +4,11 @@ An independent dark fantasy FPS-RPG inspired by nineteenth-century Argentina.
 Author and game designer: **Damian Curti**. Development target: **GZDoom 4.14.2**
 on Windows 11. The final game is intended to be independent of Doom assets.
 
-**Current release: 4.36.5.** Obtain and update the complete repository, validate
-it, then rebuild with `run_dev.bat` as described below. Issue
+**Current release: 4.36.5a.** Obtain and update the complete repository, validate
+it, then rebuild with `run_dev.bat` as described below. This documentation
+patch records the selective file-reading workflow for agents
+([#29](https://github.com/damiancurti/Caelum-Argenteum/issues/29)) without
+changing gameplay, balance, maps, saves or assets. Issue
 [#11](https://github.com/damiancurti/Caelum-Argenteum/issues/11) rebuilds MAP02
 into four wider sewer sections with keyed cells, beds, repair refuges and a
 pre-boss prisoner extraction reservation. Ground ammunition totals are 240
