@@ -722,8 +722,8 @@ allies for 10 seconds, with 60 seconds of reuse and a trial base cost of 1000 an
 Future class area abilities use the shared 1280-MU seal-channel base radius.
 Automatic conversation cancellation on damage was suggested and remains pending.
 Four new prisoner affiliations, +10 own-faction reputation and a fixed 25 gold
-coins per rescued prisoner, independent of character size per successful rescue are defined in the roadmap. SYSTEMS records
-the purchase-price formula; rank thresholds and cross-faction relations still
+coins per successful rescue, independent of character size, are defined in the
+roadmap. SYSTEMS records the reward rule; rank thresholds and cross-faction relations still
 require authored design.
 The attribute audit is deferred by the author; the current rules stay accepted.
 Follow PROJECT.md for the remaining scope. Potable-water collection is implemented. Treatment of unsafe water remains undefined. Bullet crafting still needs its material composition and process
