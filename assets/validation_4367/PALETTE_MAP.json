@@ -1,0 +1,206 @@
+[
+  {
+    "faction": "unitario",
+    "display_name": "Leonor Benitez",
+    "source_char": "caella",
+    "source_prefix": "CAID",
+    "sprite_prefix": "PUNI",
+    "prefix_map": {
+      "idle": "PUNI",
+      "chase": "PUNC",
+      "combat": "PUNL",
+      "rest": "PUNR"
+    },
+    "palette": {
+      "name": "muted celeste (light blue)",
+      "stops": [
+        [
+          0.0,
+          [
+            10,
+            12,
+            18
+          ]
+        ],
+        [
+          0.3,
+          [
+            40,
+            78,
+            104
+          ]
+        ],
+        [
+          0.62,
+          [
+            110,
+            156,
+            180
+          ]
+        ],
+        [
+          1.0,
+          [
+            200,
+            226,
+            236
+          ]
+        ]
+      ]
+    },
+    "frames_generated": 158
+  },
+  {
+    "faction": "federal",
+    "display_name": "Rufino Acosta",
+    "source_char": "ronnie",
+    "source_prefix": "ROID",
+    "sprite_prefix": "PFED",
+    "prefix_map": {
+      "idle": "PFED",
+      "chase": "PFEC",
+      "combat": "PFEL",
+      "rest": "PFER"
+    },
+    "palette": {
+      "name": "muted punzo crimson",
+      "stops": [
+        [
+          0.0,
+          [
+            18,
+            9,
+            9
+          ]
+        ],
+        [
+          0.3,
+          [
+            96,
+            24,
+            26
+          ]
+        ],
+        [
+          0.62,
+          [
+            168,
+            50,
+            52
+          ]
+        ],
+        [
+          1.0,
+          [
+            224,
+            104,
+            102
+          ]
+        ]
+      ]
+    },
+    "frames_generated": 158
+  },
+  {
+    "faction": "bestia",
+    "display_name": "Santos Barrera",
+    "source_char": "rulo",
+    "source_prefix": "RUID",
+    "sprite_prefix": "PBES",
+    "prefix_map": {
+      "idle": "PBES",
+      "chase": "PBRN",
+      "combat": "PBEL",
+      "rest": "PBER"
+    },
+    "palette": {
+      "name": "muted black/brown/green",
+      "stops": [
+        [
+          0.0,
+          [
+            8,
+            8,
+            6
+          ]
+        ],
+        [
+          0.3,
+          [
+            56,
+            42,
+            26
+          ]
+        ],
+        [
+          0.62,
+          [
+            72,
+            94,
+            50
+          ]
+        ],
+        [
+          1.0,
+          [
+            128,
+            146,
+            88
+          ]
+        ]
+      ]
+    },
+    "frames_generated": 158
+  },
+  {
+    "faction": "tarot",
+    "display_name": "Leandro Farias",
+    "source_char": "argento",
+    "source_prefix": "ARID",
+    "sprite_prefix": "PTAR",
+    "prefix_map": {
+      "idle": "PTAR",
+      "chase": "PTRN",
+      "combat": "PTEL",
+      "rest": "PTER"
+    },
+    "palette": {
+      "name": "muted gold/silver over black",
+      "stops": [
+        [
+          0.0,
+          [
+            10,
+            10,
+            10
+          ]
+        ],
+        [
+          0.3,
+          [
+            92,
+            70,
+            24
+          ]
+        ],
+        [
+          0.62,
+          [
+            188,
+            150,
+            60
+          ]
+        ],
+        [
+          1.0,
+          [
+            214,
+            218,
+            222
+          ]
+        ]
+      ]
+    },
+    "frames_generated": 158
+  }
+]

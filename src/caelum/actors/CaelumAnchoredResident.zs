@@ -37,6 +37,21 @@ class CaelumAnchoredResident : CaelumCombatActor abstract
         if (!speaking) bInConversation = false;
     }
 
+    void BecomeInertPrisoner()
+    {
+        // Aparición visual de MAP02: la identidad es estable, pero el prisionero
+        // no hereda anclaje, conversación, inventario ni protección narrativa.
+        // #14 implementará escolta/combate; aquí queda amistoso e invulnerable
+        // y no cuenta como baja.
+        StoryAnchored = false;
+        bFriendly = true;
+        bInvulnerable = true;
+        bCountKill = false;
+        Target = null;
+        LastEnemy = null;
+        Vel = (0,0,0);
+    }
+
     void DownRuloPartyMember()
     {
         health = 1; RuloPartyDowned = true; Target = null; Vel = (0,0,0);

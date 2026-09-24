@@ -1,0 +1,19 @@
+CA-4367-PRISONER-ART-01 — originating 4.36.7 / issue #13.
+Prerequisites: build the normal dev package with build_dev.ps1, launch MAP02,
+and reach the four keyed prisoner cells without legacy MAP02 mode.
+Steps:
+1. Inspect each reserved cell and read its prisoner display name.
+2. Compare the recolored idle/chase/combat/rest poses and directions with the
+   source mansion characters Caella, Ronnie, Rulo and Argento.
+3. Confirm the palette mapping in assets/validation_4367/PALETTE_MAP.json and
+   the before/after sheet in assets/validation_4367/before_after.png.
+4. Confirm the original MAP01 mansion characters are visually unchanged.
+Expected results:
+- Four distinct inert, friendly, invulnerable prisoners are present, and none
+  counts as a kill.
+- Caella -> Leonor Benítez (Unitarians, celeste); Ronnie -> Rufino Acosta
+  (Federals, punzó red); Rulo -> Santos Barrera (Wild Beast Men,
+  black/brown/green); Argento -> Leandro Farías (Cult of the Tarot,
+  gold/silver over black).
+- Each recolored pose preserves the source silhouette and shading; original
+  mansion NPCs remain unchanged.

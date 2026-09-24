@@ -1,6 +1,22 @@
 # Caelum Argenteum — Audio and art
 
-Documentation version: **4.36.6** — 2026-09-24.
+Documentation version: **4.36.7** — 2026-09-24.
+
+## 4.36.7 — Recolored prisoner sprites (#13)
+
+`assets/generators/generate_prisoner_sprites.py` deterministically reuses every
+accepted mansion actor pose (idle, chase, combat and rest) for Caella, Ronnie,
+Rulo and Argento. It writes the four muted faction palettes to
+`src/sprites/caelum/prisoners/{unitario,federal,bestia,tarot}/` and appends one
+guarded `CAELUM_PRISONERS_V2` block to `src/TEXTURES`. No source artwork is
+changed; every output preserves source alpha and shading while replacing RGB
+through the chosen ramp.
+
+The palette mapping and representative before/after sheet are in
+`assets/validation_4367/` (`PALETTE_MAP.json`, `RESULTS.json`,
+`before_after.png`). Original Caella/Ronnie/Rulo/Argento sprite and TEXTURES
+definitions remain untouched. Native GZDoom before/after views and the author
+visual check remain separate.
 
 ## 4.36.5 — Wider sewer and barred gates (#11)
 

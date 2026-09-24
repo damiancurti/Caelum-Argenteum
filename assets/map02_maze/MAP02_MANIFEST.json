@@ -1,5 +1,5 @@
 {
-  "version": "4.36.6",
+  "version": "4.36.7",
   "layout_revision": 2,
   "catalogue_revision": 1,
   "size_policy": "CHARACTER_DEFAULT",
@@ -2793,7 +2793,9 @@
         2656,
         3936
       ],
-      "lock": 207
+      "lock": 207,
+      "actor": "CaelumPrisonerUnitario",
+      "doomednum": 30988
     },
     {
       "zone": 1,
@@ -2809,7 +2811,9 @@
         2656,
         8032
       ],
-      "lock": 208
+      "lock": 208,
+      "actor": "CaelumPrisonerFederal",
+      "doomednum": 30989
     },
     {
       "zone": 2,
@@ -2825,7 +2829,9 @@
         2656,
         12128
       ],
-      "lock": 209
+      "lock": 209,
+      "actor": "CaelumPrisonerBestia",
+      "doomednum": 30990
     },
     {
       "zone": 3,
@@ -2841,7 +2847,9 @@
         2656,
         16224
       ],
-      "lock": 210
+      "lock": 210,
+      "actor": "CaelumPrisonerTarot",
+      "doomednum": 30991
     }
   ],
   "rats": [
@@ -8774,7 +8782,7 @@
       "y": 3936,
       "height": 0,
       "angle": 90,
-      "type": 30981,
+      "type": 30988,
       "skill1": true,
       "skill2": true,
       "skill3": true,
@@ -8783,7 +8791,7 @@
       "single": true,
       "coop": true,
       "id": 44820,
-      "arg0": 10
+      "arg0": 0
     },
     {
       "x": 1536,
@@ -10607,7 +10615,7 @@
       "y": 8032,
       "height": 0,
       "angle": 90,
-      "type": 30981,
+      "type": 30989,
       "skill1": true,
       "skill2": true,
       "skill3": true,
@@ -10616,7 +10624,7 @@
       "single": true,
       "coop": true,
       "id": 44821,
-      "arg0": 11
+      "arg0": 0
     },
     {
       "x": 1536,
@@ -12419,7 +12427,7 @@
       "y": 12128,
       "height": 0,
       "angle": 90,
-      "type": 30981,
+      "type": 30990,
       "skill1": true,
       "skill2": true,
       "skill3": true,
@@ -12428,7 +12436,7 @@
       "single": true,
       "coop": true,
       "id": 44822,
-      "arg0": 12
+      "arg0": 0
     },
     {
       "x": 1536,
@@ -14267,7 +14275,7 @@
       "y": 16224,
       "height": 0,
       "angle": 90,
-      "type": 30981,
+      "type": 30991,
       "skill1": true,
       "skill2": true,
       "skill3": true,
@@ -14276,7 +14284,7 @@
       "single": true,
       "coop": true,
       "id": 44823,
-      "arg0": 13
+      "arg0": 0
     },
     {
       "x": 896,

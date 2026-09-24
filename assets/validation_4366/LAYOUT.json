@@ -1,5 +1,5 @@
 {
-  "version": "4.36.6",
+  "version": "4.36.7",
   "evidence": "static analysis",
   "checks": 206,
   "failures": 0,
@@ -1065,8 +1065,8 @@
     }
   ],
   "hashes": {
-    "src/maps/MAP02.wad": "134074de224807215ce0a908168e042a617a356d401d3f4d606f74d120f58bf6",
-    "assets/map02_maze/MAP02_MANIFEST.json": "1a240458b5ff4c2b0c042900873088c9dbe5b2dfdf74df97761d9523adbe917e",
+    "src/maps/MAP02.wad": "6d65b52abbf9f892e345069ff87bdd2a4987ecf4196b4a8866e9944a7d88afa7",
+    "assets/map02_maze/MAP02_MANIFEST.json": "f7d70b492aea30bd5dd4200c4f38799f1253d40d71100c43ae7c6a0c899b1a09",
     "assets/map02_maze/LAYOUT.json": "0c9400776f32b50df2e2d2e4939bea1c953f3d042795be50c5b7bd273ec52863",
     "assets/map02_maze/legacy_4364/MAP02.wad": "9095bda962f5410ba869b3780dff2a58c11ff0a011e35d451a43052b851406d2"
   }

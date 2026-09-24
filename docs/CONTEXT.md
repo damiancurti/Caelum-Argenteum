@@ -1,6 +1,6 @@
 # CONTEXT.md — Ultra-condensed summary of Caelum Argenteum
 
-Documentation version: **4.36.6** — 2026-09-24.
+Documentation version: **4.36.7** — 2026-09-24.
 
 Summary so an AI or a contributor can understand the project without reading
 the five full canonical documents. Source: `docs/PROJECT.md`,
@@ -64,7 +64,16 @@ the gauchos and rural culture, and the humans the urban porteño society.
 
 ## Current status
 
-Current release **4.36.6** implements #12: 192 hostile sewer rats (two per
+Current release **4.36.7** implements #13: four recolored prisoner appearances
+that reuse the mansion characters without new models. Caella -> Unitarians
+(Leonor Benítez, celeste), Ronnie -> Federals (Rufino Acosta, punzó), Rulo ->
+Wild Beast Men (Santos Barrera, black/brown/green) and Argento -> Cult of the
+Tarot (Leandro Farías, gold/silver over black). One inert, friendly,
+invulnerable variant is instantiated in each reserved MAP02 cell; original
+mansion NPCs and their accepted combat profiles remain unchanged. The visual
+author check CA-4367-PRISONER-ART-01 remains pending in `pending_test.txt`.
+
+The preceding **4.36.6** implements #12: 192 hostile sewer rats (two per
 Mandinga, 192/96 across the four sections), reusing the accepted CaelumGiantRat
 actor and RATG sprites with no new art, damage, health or AI. Deterministic
 initial placements preserve the ratio without respawn. The author confirmed
@@ -98,9 +107,9 @@ rations, and MAP01 tables at full capacity.
 
 Pending:
 
-- Author-requested patches 4.36.7–4.36.9 (#13–#15): four recolored prisoners;
-  persistent rescues/port faction rewards; approved Tarot images. These are
-  planned, not present in the current four-section map.
+- Author-requested patches 4.36.8–4.36.9 (#14–#15): persistent rescues/port
+  faction rewards; approved Tarot images. These are planned, not present in the
+  current four-section map.
 - Planned 4.36.10–4.36.13 (#18–#21): siege-machine assets, breakable actor
   gates, physical ram strikes and native catapult projectiles for the port.
 - Closing 4.36: rams/catapults and remaining integration/save/reset validation

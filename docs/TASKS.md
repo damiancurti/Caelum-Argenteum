@@ -1,6 +1,22 @@
 # TASKS.md — Active tasks
 
-Documentation version: **4.36.6** — 2026-09-24.
+Documentation version: **4.36.7** — 2026-09-24.
+
+## Issue #13 — Recolored prisoner appearances (4.36.7)
+
+- **Issue:** https://github.com/damiancurti/Caelum-Argenteum/issues/13
+- **Scope:** add four distinct prisoner appearances that reuse Caella, Ronnie,
+  Rulo and Argento with deterministic muted palettes; place one inert variant
+  in each reserved MAP02 endpoint cell; keep the source combat profile and the
+  original mansion NPCs unchanged.
+- **Author contract:** provisional display names Leonor Benítez (Unitarians),
+  Rufino Acosta (Federals), Santos Barrera (Wild Beast Men) and Leandro Farías
+  (Cult of the Tarot); stable persistent IDs independent of names; no inherited
+  anchoring, quest, inventory or story-protection logic; no rescue/reward logic
+  in this visual patch.
+- **Acceptance:** CA-4367-PRISONER-ART-01 is queued in `pending_test.txt` until
+  the author confirms the four variants and visual-source/faction mapping.
+- **Next:** #14 / 4.36.8 owns escort, combat, dialogue and rewards.
 
 ## Issue #12 — Hostile sewer rats (4.36.6)
 
@@ -135,7 +151,7 @@ documentation update does not implement these features or reset accepted tests.
 | 4.36.4 | [#10](https://github.com/damiancurti/Caelum-Argenteum/issues/10) | Implemented and author-accepted on 2026-09-23. Complete T1 catalogue, recipient sizing, chest preview and feedback. |
 | 4.36.5 | [#11](https://github.com/damiancurti/Caelum-Argenteum/issues/11) | Implemented and author-accepted on 2026-09-24; CA-4365-MAZE-01 passed (PR #28). Four sections, keys/cells/beds, recipe-gated repair refuges, widened channels and northern boss room. |
 | 4.36.6 | [#12](https://github.com/damiancurti/Caelum-Argenteum/issues/12) | Implemented on 2026-09-24; static passed, native and author check CA-4366-RATS-01 pending. 192 fixed rats/96 Mandingas at 2:1, no respawn. |
-| 4.36.7 | [#13](https://github.com/damiancurti/Caelum-Argenteum/issues/13) | Four reused NPC appearances with distinct palettes. After #12. |
+| 4.36.7 | [#13](https://github.com/damiancurti/Caelum-Argenteum/issues/13) | Implemented on 2026-09-24; static/build verification runs, author visual check CA-4367-PRISONER-ART-01 pending. Four reused NPC palettes placed in the reserved cells. |
 | 4.36.8 | [#14](https://github.com/damiancurti/Caelum-Argenteum/issues/14) | Follow/fight with source-character stats; extract alive before MAP02 boss; port thanks, +10 own-faction reputation and a fixed 25 gold coins independent of character size once per rescue. |
 | 4.36.9 | [#15](https://github.com/damiancurti/Caelum-Argenteum/issues/15) | Tarot fronts and correct collection bindings. Blocked on approved downloadable source pack/manifest. |
 | 4.36.10 | [#18](https://github.com/damiancurti/Caelum-Argenteum/issues/18) | Siege assets: catapult, ram and breakable gate. After #15. |

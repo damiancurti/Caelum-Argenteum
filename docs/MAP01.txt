@@ -1,6 +1,35 @@
 CAELUM ARGENTEUM — STORY AND MAP01
 
-Documentation version: **4.36.6** — 2026-09-24.
+Documentation version: **4.36.7** — 2026-09-24.
+
+## 4.36.7 — Prisoner identities and shared ambush history (#13)
+
+The four MAP02 prisoners are distinct characters from the MAP01 mansion
+residents, despite reusing their visuals and combat profiles. The author
+defines them as army leaders who accompanied the protagonist when the
+protagonist was ambushed and died. Their common presence is confirmed; the
+gathering was a diplomatic meeting to negotiate peace, organized by Leandro
+Farías. Negotiations do not establish that peace was signed or that the
+factions were already allies.
+
+Provisional period-inspired working names are fictional, not representations
+of historical people: Leonor Benítez (Caella -> Unitarians), Rufino Acosta
+(Ronnie -> Federals), Santos Barrera (Rulo -> Wild Beast Men) and Leandro
+Farías (Argento -> Cult of the Tarot). No military rank, army size, combat
+bonus, formal alliance, betrayal, ambush location/perpetrator or capture
+sequence is invented.
+
+Leandro Farías is the fictional local ruler of Barracas al Sud, the settlement
+where the game's sewer is located. In 1889 the partido of Barracas al Sud
+already existed (created 1852, separated from Quilmes; renamed Avellaneda in
+1904), and the settlement was formally declared a city only in 1895, so
+current descriptions use Barracas al Sud or town/settlement. After capture,
+Leandro is tempted to join the Cult of the Tarot: he feels less rejection
+toward demons and shows genuine fascination with them. This is temptation, not
+confirmed membership, and does not prove he belonged to the Cult before the
+meeting. The protagonist's amnesia is preserved; the prisoners are not asserted
+to have died or passed through Limbo merely because the protagonist did.
+Recognition/rescue/port dialogue, escort and rewards belong to #14.
 
 ## 4.36.1 — Documentation scope
 

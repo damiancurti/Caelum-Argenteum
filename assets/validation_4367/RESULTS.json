@@ -1,0 +1,14 @@
+{
+  "version": "4.36.7",
+  "issue": 13,
+  "sprites_generated": 632,
+  "frames_by_faction": {
+    "unitario": 158,
+    "federal": 158,
+    "bestia": 158,
+    "tarot": 158
+  },
+  "palette_map": "PALETTE_MAP.json",
+  "before_after": "before_after.png",
+  "textures_marker": "// CAELUM_PRISONERS_V2"
+}

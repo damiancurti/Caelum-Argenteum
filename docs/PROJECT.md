@@ -1,6 +1,27 @@
 # Caelum Argenteum — Project, status and roadmap
 
-Documentation version: **4.36.6** — 2026-09-24.
+Documentation version: **4.36.7** — 2026-09-24.
+
+## 4.36.7 — Recolored prisoner appearances (issue #13)
+
+MAP02 places one inert, friendly, invulnerable prisoner in each of its four
+reserved endpoint cells. The appearances reuse the accepted mansion actor
+sprites and combat profiles, recolored deterministically with muted per-faction
+ramps; no new character model or replacement illustration is created.
+
+| Visual/profile source | Gameplay faction | Provisional display name | Recolor |
+| --- | --- | --- | --- |
+| Caella | Unitarians | Leonor Benítez | Celeste |
+| Ronnie | Federals | Rufino Acosta | Punzó red |
+| Rulo | Wild Beast Men | Santos Barrera | Black/brown/green |
+| Argento | Cult of the Tarot | Leandro Farías | Gold/silver over black |
+
+Each prisoner is a distinct identity: persistent map IDs and class names do not
+depend on the provisional display names. Appearance reuse does not inherit
+mansion anchoring, prologue quest identity, trade inventory, faction assignment
+or story-protection behavior. The cells keep their stable lock/route geometry;
+rescue, escort, combat and rewards remain #14. Original mansion NPCs are
+unchanged. The author visual check CA-4367-PRISONER-ART-01 remains pending.
 
 ## 4.36.6 — Hostile sewer rats (issue #12)
 

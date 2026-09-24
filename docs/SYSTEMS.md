@@ -1,6 +1,22 @@
 # Caelum Argenteum — Current systems and rules
 
-Documentation version: **4.36.6** — 2026-09-24.
+Documentation version: **4.36.7** — 2026-09-24.
+
+## 4.36.7 — Inert prisoner appearances (#13)
+
+The four reserved MAP02 cells now contain one prisoner actor each. These actors
+are visual/identity placeholders for #14: they use the source character's exact
+combat profile and recolored poses, but in the cell they are friendly,
+invulnerable, do not count as kills and do not chase or inherit mansion
+anchoring/quest behavior. Their persistent identity is the map thing/class,
+not the provisional display name.
+
+The display names are author-authorized working names: Leonor Benítez
+(Caella/Unitarians), Rufino Acosta (Ronnie/Federals), Santos Barrera
+(Rulo/Wild Beast Men) and Leandro Farías (Argento/Cult of the Tarot). These are
+fictional names, not historical people; no military rank, army size, combat
+bonus, formal alliance, betrayal detail or capture sequence is established here.
+Rescue, escort, dialogue and rewards remain #14.
 
 ## 4.36.6 — Hostile sewer rats (#12)
 

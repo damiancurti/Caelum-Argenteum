@@ -4,13 +4,21 @@ An independent dark fantasy FPS-RPG inspired by nineteenth-century Argentina.
 Author and game designer: **Damian Curti**. Development target: **GZDoom 4.14.2**
 on Windows 11. The final game is intended to be independent of Doom assets.
 
-**Current release: 4.36.6.** Obtain and update the complete repository, validate
+**Current release: 4.36.7.** Obtain and update the complete repository, validate
 it, then rebuild with `run_dev.bat` as described below. Issue
+[#13](https://github.com/damiancurti/Caelum-Argenteum/issues/13) adds four
+recolored prisoner appearances that reuse the mansion characters without new
+models: Caella -> Unitarians, Ronnie -> Federals, Rulo -> Wild Beast Men and
+Argento -> Cult of the Tarot. One inert, friendly, invulnerable variant is
+placed in each reserved MAP02 cell; original mansion NPCs are unchanged.
+Issue [#12](https://github.com/damiancurti/Caelum-Argenteum/issues/12) added
+192 hostile sewer rats (two per Mandinga) and was author-confirmed on
+2026-09-24. Issue
 [#11](https://github.com/damiancurti/Caelum-Argenteum/issues/11) rebuilds MAP02
 into four wider sewer sections with keyed cells, beds, repair refuges and a
 pre-boss prisoner extraction reservation. Ground ammunition totals are 240
 arrows, 120 bolts and 120 bullets. Repairs require the weapon's known recipe;
-no new recipe/material allowance is granted. The author confirmed CA-4365-MAZE-01 passed on 2026-09-24.
+no new recipe/material allowance is granted.
 
 **Existing saves that already visited the three-section MAP02:** launch
 `run_dev.bat --legacy-map02` (or build with `build_dev.ps1 -LegacyMap02`). This
@@ -94,7 +102,7 @@ recorded in HISTORY.
 Engine binaries, IWADs and development automation are not included.
 
 `netevent ca_debug_hazards_report` and `netevent ca_debug_maze_report` identify
-**4.36.6**. Use the repository instructions below and the root pending-test queue
+**4.36.7**. Use the repository instructions below and the root pending-test queue
 for focused checks; no external patch-test upload is required.
 The author's acceptance of the carriage, transitions and other 0h tests is
 preserved. The broader unfinished 4.36 physics roadmap remains in PROJECT.md.

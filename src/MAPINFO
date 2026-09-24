@@ -488,4 +488,8 @@ DoomEdNums
     30985 = CaelumMazeEastCellKey
     30986 = CaelumMazeNorthCellKey
     30987 = CaelumRestBed
+    30988 = CaelumPrisonerUnitario
+    30989 = CaelumPrisonerFederal
+    30990 = CaelumPrisonerBestia
+    30991 = CaelumPrisonerTarot
 }
