@@ -21,10 +21,12 @@ Each prisoner is a distinct identity: persistent map IDs and class names do not
 depend on the provisional display names. Appearance reuse does not inherit
 mansion anchoring, prologue quest identity, trade inventory, faction assignment
 or story-protection behavior. The cells keep their stable lock/route geometry;
-rescue, escort, combat and rewards remain #14. Original mansion NPCs are
-unchanged. While inert, each prisoner keeps the accepted A/B idle breathing
-poses and never enters the walking/chase animation. The author visual check
-CA-4367-PRISONER-ART-01 passed on 2026-09-24.
+rescue, escort, combat and rewards remain #14. Original mansion NPC art is
+unchanged; in the same release their MAP01 idle cycle is corrected to the
+static monster idle A frame instead of the v4 A/B rest pose whose lower-hem
+motion read as walking. While inert, each prisoner keeps the accepted A/B idle
+breathing poses and never enters the walking/chase animation. The author visual
+check CA-4367-PRISONER-ART-01 passed on 2026-09-24.
 
 ## 4.36.6 — Hostile sewer rats (issue #12)
 

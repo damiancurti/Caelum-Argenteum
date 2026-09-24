@@ -78,9 +78,8 @@ class CaelumRonnie : CaelumAnchoredResident
 
     // Estados nuevos al final: conservan los índices de partidas anteriores.
     IdleBreathing:
-        ROID AAA 10 A_CaelumResidentLook;
-        ROID BBBB 10 A_CaelumResidentLook;
-        Goto Spawn;
+        ROID A 10 A_CaelumResidentLook;
+        Loop;
     Run:
         Goto See;
     }

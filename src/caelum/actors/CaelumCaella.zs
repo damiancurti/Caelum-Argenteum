@@ -78,9 +78,8 @@ class CaelumCaella : CaelumAnchoredResident
 
     // Estados nuevos al final: conservan los índices de partidas anteriores.
     IdleBreathing:
-        CAID AAA 10 A_CaelumResidentLook;
-        CAID BBBB 10 A_CaelumResidentLook;
-        Goto Spawn;
+        CAID A 10 A_CaelumResidentLook;
+        Loop;
     Run:
         Goto See;
     }

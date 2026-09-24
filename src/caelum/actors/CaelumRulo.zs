@@ -89,9 +89,8 @@ class CaelumRulo : CaelumAnchoredResident
 
     // Estados nuevos al final: conservan los índices de partidas anteriores.
     IdleBreathing:
-        RUID AAA 10 A_CaelumResidentLook;
-        RUID BBBB 10 A_CaelumResidentLook;
-        Goto Spawn;
+        RUID A 10 A_CaelumResidentLook;
+        Loop;
     Run:
         Goto See;
     }

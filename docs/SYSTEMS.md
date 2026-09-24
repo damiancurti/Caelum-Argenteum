@@ -12,6 +12,10 @@ poses without entering the walking/chase animation, and do not chase or
 inherit mansion anchoring/quest behavior. Their persistent identity is the map thing/class,
 not the provisional display name.
 
+The MAP01 mansion residents and Palomo keep their story anchoring and separate
+walk/run states, but their idle now loops the static accepted monster idle A
+frame instead of the v4 A/B rest pose, whose lower-hem motion read as walking.
+
 The display names are author-authorized working names: Leonor Benítez
 (Caella/Unitarians), Rufino Acosta (Ronnie/Federals), Santos Barrera
 (Rulo/Wild Beast Men) and Leandro Farías (Argento/Cult of the Tarot). These are

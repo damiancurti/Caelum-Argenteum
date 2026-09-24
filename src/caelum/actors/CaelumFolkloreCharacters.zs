@@ -426,7 +426,7 @@ class CaelumPalomo : CaelumInteractiveFolkloreActor
 
     // Los estados anteriores mantienen su índice para guardar/cargar.
     IdleBreathing:
-        PAID AAAABBBB 10;
+        PAID A 10;
         Loop;
     Run:
         PARN ABCD 3;
