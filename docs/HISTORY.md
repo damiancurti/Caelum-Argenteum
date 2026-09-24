@@ -40,12 +40,19 @@ independent agent review found no actionable issue; its model identity beyond
 the inherited generic GPT-6 label was unavailable, so it is not claimed as a
 cross-provider review.
 
-CA-4360I-VISUAL-01 remains pending with its 4.36.0i origin and updated 4.36.3
-steps. Its accepted bow/other visual portions remain recorded under the original
-release below; only final flail-pose approval is outstanding. The shared native
-rotation lesson is updated in CA-KP-004. The next patch is #10 / 4.36.4 after
-review/merge. Usage boundaries, unavailable counters and review configuration
-are reported separately in the linked PR; no token usage is estimated.
+Author acceptance on 2026-09-23 (America/Buenos_Aires): Damián explicitly
+confirmed the test passed and the corrected pose was satisfactory, with no
+reported exceptions, and requested issue #9 closure. CA-4360I-VISUAL-01 is
+passed; its 4.36.0i provenance and the earlier partial/accepted portions remain
+recorded under the original release below. The pending entry is removed in the
+same update, leaving the tracked queue empty. This is the author's aggregate
+confirmation, not an independently supplied per-tier log or a new agent run.
+Version remains 4.36.3; no code or asset change accompanies acceptance.
+
+CA-KP-004 records the verified rotation and author acceptance. PR #26 carries
+the implementation and acceptance record. The next patch is #10 / 4.36.4 after
+integration. Usage boundaries, unavailable counters and review configuration
+are reported separately in that PR; no token usage is estimated.
 
 ## 4.36.2 — Bow first-use composition stall (issue #8)
 
@@ -385,9 +392,18 @@ flail check; issue [#9](https://github.com/damiancurti/Caelum-Argenteum/issues/9
 plans that additional rotation from the current pose, preserving the grip,
 rear chain layer, vertical rest and counterclockwise full attack revolution.
 
-Implementation follow-up: 4.36.3 / #9 now implements and engine-verifies that
-additional rotation (see its entry above). This does not alter the 2026-09-23
-PARTIAL result: final author approval remains outstanding under the same ID.
+Implementation follow-up: 4.36.3 / #9 implements and engine-verifies that
+additional rotation (see its entry above). The earlier PARTIAL result is
+preserved as history. Later on 2026-09-23 (America/Buenos_Aires), the author
+explicitly confirmed the corrected flail test passed and requested #9 closure.
+
+| Test ID | Originating version / issue | Final result | Confirmation date | Scope and qualification |
+| --- | --- | --- | --- | --- |
+| CA-4360I-VISUAL-01 | 4.36.0i; legacy release carried by #6, correction #9 / 4.36.3 | PASS | 2026-09-23 | Final corrected flail pose accepted; author's aggregate confirmation, no reported exceptions. Earlier bow/other visual acceptance is retained. |
+
+The completed entry is removed from pending_test.txt in this acceptance update;
+the tracked file remains empty. No accepted test is reopened and no new agent
+engine run is implied by this author confirmation.
 
 Separate author-reported defect: equipping a bow with no arrows froze the game
 for several seconds; after obtaining an arrow it worked normally. The exact

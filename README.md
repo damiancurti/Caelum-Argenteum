@@ -9,8 +9,8 @@ it, then rebuild with `run_dev.bat` as described below. Issue
 [#9](https://github.com/damiancurti/Caelum-Argenteum/issues/9) adds 10 degrees
 of counterclockwise flail-handle rotation across T1–T3, preserving the grip and
 independent chain animation. Native comparisons are in
-[4.36.3 evidence](assets/validation_4363/RESULTS.json); final author pose approval
-remains pending. Issue
+[4.36.3 evidence](assets/validation_4363/RESULTS.json); the author confirmed the final pose
+passed on 2026-09-23. Issue
 [#8](https://github.com/damiancurti/Caelum-Argenteum/issues/8) caches the existing
 bow-stave crops to remove first-use texture-composition stalls, preserving
 native palette effects, geometry, controls, ammunition and saves. Issue
@@ -62,8 +62,8 @@ flail rotation were exercised in **GZDoom g4.14.2 on Linux**, using Freedoom
 On 2026-09-23 the author accepted the 4.36.0i maze, save/load and table checks.
 Bow appearance is accepted. The additional 10-degree counterclockwise flail
 rotation is implemented and engine-verified in 4.36.3
-([#9](https://github.com/damiancurti/Caelum-Argenteum/issues/9)); author pose
-approval remains in CA-4360I-VISUAL-01.
+([#9](https://github.com/damiancurti/Caelum-Argenteum/issues/9)); the author confirmed
+CA-4360I-VISUAL-01 passed on 2026-09-23.
 The empty-bow stall is corrected in 4.36.2 (#8); focused native Windows evidence
 and the author's 2026-09-23 pass confirmation for CA-4362-BOW-EMPTY-01 are
 recorded in HISTORY.
@@ -757,8 +757,9 @@ The playtest export is a separate milestone from the final independent release.
 
 ## Pending validation
 
-See [pending_test.txt](pending_test.txt) for final flail-pose acceptance of
-the implemented 4.36.3 correction. The 4.36.2 bow check passed on the author's confirmation. On 2026-09-23 the
+The author confirmed CA-4360I-VISUAL-01 passed after the 4.36.3 correction on
+2026-09-23. [pending_test.txt](pending_test.txt) is now empty. The 4.36.2 bow
+check also passed on the author's confirmation. On 2026-09-23 the
 author confirmed zero validator errors, successful rebuild/launch and both
 4.36.1 diagnostic headers. That completed
 test and the accepted maze/save-load/table tests are recorded in HISTORY.

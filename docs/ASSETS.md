@@ -18,7 +18,7 @@ The -39.5-degree manifest in `assets/first_person_v7/COMPOSITION.json`, its
 describe 4.36.0i and remain historical evidence, not the current handle offset.
 Current native comparisons and conditions are in
 `assets/validation_4363/RESULTS.json`; HISTORY records verification separately
-from pending author acceptance CA-4360I-VISUAL-01.
+from the author's 2026-09-23 pass confirmation for CA-4360I-VISUAL-01.
 
 ## 4.36.2 — Deterministic bow crop caches
 
@@ -72,10 +72,11 @@ the factors used. ENGINE_FLAIL_SPIN.txt retains the native angles of the attack.
 aesthetic acceptance corresponds to the author. On 2026-09-23 the author
 accepted the bow appearance and requested approximately 10 degrees more
 counterclockwise flail rotation from this pose (#9, planned 4.36.3).
-CA-4360I-VISUAL-01 remains partial for that flail correction. The separate
+CA-4360I-VISUAL-01 was partial pending that flail correction. The separate
 empty-bow equip stall (#8) is a runtime defect, not a rejection of the
 accepted bow art; its 4.36.2 correction and evidence are described above.
-The correction is implemented in 4.36.3 above; final author approval remains pending.
+The correction is implemented in 4.36.3 above and passed on the author's
+explicit confirmation on 2026-09-23; the original partial result is in HISTORY.
 
 MAP02.wad is generated with generate_map02_maze.py, only Python standard library.
 MAP02_MANIFEST.json describes geometry, keys, traps, enemies and all the loot. It reuses

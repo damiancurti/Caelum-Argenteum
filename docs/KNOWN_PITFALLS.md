@@ -76,7 +76,9 @@ or establish results on untested renderers.
 ## CA-KP-004 — Flail rotation must be judged around the rendered grip
 
 Status/evidence: ENGINE-VERIFIED transform correction in 4.36.3 (#9).
-Author acceptance: PENDING, CA-4360I-VISUAL-01 (origin 4.36.0i).
+Author acceptance: CA-4360I-VISUAL-01 (origin 4.36.0i) passed after the
+4.36.3 correction, explicitly confirmed on 2026-09-23 (America/Buenos_Aires),
+with no reported exceptions; see HISTORY.
 Source: https://github.com/damiancurti/Caelum-Argenteum/issues/9
 
 Baseline: merged 4.36.2 (`772f622`) used `handleAngle=rotation-39.5` in

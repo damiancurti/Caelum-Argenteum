@@ -160,7 +160,7 @@
     "source_artwork_generators_saves_combat": "unchanged",
     "native_package_qualification": "After capture package predates the two required diagnostic string updates from 4.36.2 to 4.36.3; its flail source is byte-identical to delivery. Final normal build is verified separately.",
     "initial_baseline": "An initial HUD-enabled run also passed; captures repeated with HUD suppressed because it obscured the chain.",
-    "author_acceptance": "PENDING: CA-4360I-VISUAL-01; original 4.36.0i provenance retained",
+    "author_acceptance": "PASSED: CA-4360I-VISUAL-01; author explicitly confirmed the corrected pose and requested issue closure on 2026-09-23 (America/Buenos_Aires). Original 4.36.0i provenance retained; aggregate confirmation with no reported exceptions, separate from native automation. See HISTORY.",
     "limitations": "Native callback automation and inspected captures do not substitute for final author aesthetic approval, physical binding/normal inventory-route checks, other renderers or a complete campaign playthrough."
   },
   "delivery_checks": {

@@ -10,8 +10,9 @@ shared T1–T3 transform. Grip insertion, rear chain/ball, vertical rest and the
 full attack revolution remain intact. No gameplay rule, source artwork or save
 schema changes. Native before/after evidence is recorded in HISTORY and
 `assets/validation_4363/`; CA-4360I-VISUAL-01 retains its original provenance
-and awaits final author pose approval. The next implementation is #10 / 4.36.4
-after this patch is reviewed and merged.
+and passed on the author's explicit confirmation on 2026-09-23. Its pending
+entry is removed; no new release number or gameplay change accompanies this
+acceptance. The next implementation is #10 / 4.36.4 after integration of PR #26.
 
 ## 4.36.2 — Bow first-use stall and environmental scope
 

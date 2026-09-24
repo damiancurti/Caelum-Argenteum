@@ -68,8 +68,9 @@ remain tracked. Backlog tasks below are not executable author tests.
   Implemented: shared handle offset -39.5 -> -29.5 degrees. Native Windows
   before/after T1–T3 captures and grip/joint, rest, full spin, return and re-equip
   checks passed; evidence is in HISTORY and `assets/validation_4363/`.
-  PR review/merge and author pose approval remain pending. Retain
-  CA-4360I-VISUAL-01 until the author accepts the corrected pose.
+  The author confirmed CA-4360I-VISUAL-01 passed on 2026-09-23, with no
+  reported exceptions, and requested issue closure. The pending entry is
+  removed; PR #26 includes the implementation and acceptance record.
 - Start each patch from the preceding merged version. These two issues are not
   implemented by the 4.36.1 acceptance-record update. Accepted maze, save/load,
   table and bow-art checks are recorded in HISTORY and are not reopened.
