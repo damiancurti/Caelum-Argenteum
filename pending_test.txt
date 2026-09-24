@@ -1,5 +1,0 @@
-CA-4366-RATS-01
-Originating version/issue: 4.36.6 / #12
-Prerequisites: normal fresh build of MAP02 (no --legacy-map02), GZDoom 4.14.2 on Windows 11.
-Steps: start a fresh MAP02; enter each of the four sections and confirm two rats per Mandinga junction and 192 total; trigger detection, pursuit, melee and death; pass through narrow channels and traps; save/load inside MAP02; verify no duplicated or resurrected rats.
-Expected: enemies function; the 192/96 ratio is preserved; the four-section run remains responsive on the author machine; no duplicates after save/load.

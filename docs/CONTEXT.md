@@ -67,9 +67,8 @@ the gauchos and rural culture, and the humans the urban porteño society.
 Current release **4.36.6** implements #12: 192 hostile sewer rats (two per
 Mandinga, 192/96 across the four sections), reusing the accepted CaelumGiantRat
 actor and RATG sprites with no new art, damage, health or AI. Deterministic
-initial placements preserve the ratio without respawn; static layout validation
-passes. Native detection/pursuit/melee/death, narrow-channel/trap and save/load
-checks, plus author check CA-4366-RATS-01, remain pending.
+initial placements preserve the ratio without respawn. The author confirmed
+CA-4366-RATS-01 passed on 2026-09-24, leaving the author-test queue empty.
 
 The preceding **4.36.5** implements #11: wider four-section sewers, keyed
 barred gates/cells, beds, repair refuges, pre-boss extraction reservation and

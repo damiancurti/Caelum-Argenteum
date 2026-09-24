@@ -13,10 +13,10 @@ Documentation version: **4.36.6** — 2026-09-24.
 - **Determinism:** the MAP02 generator and layout validator are updated
   together; rats are initial placements only (no death respawn/resurrection),
   preserving the 2:1 ratio per section (24 Mandingas / 48 rats each).
-- **Acceptance:** static layout validation passes 206 checks (192/96 ratio,
-  unique/reachable positions). Native detection/pursuit/melee/death, narrow
-  channel/trap and save/load duplicate checks are separate; author check
-  CA-4366-RATS-01 remains pending in pending_test.txt.
+- **Acceptance:** CA-4366-RATS-01 passed, explicitly confirmed by the author on
+  2026-09-24 without qualifications; the confirmed entry is removed and the
+  author-test queue is empty. Static/native evidence remains separate from that
+  confirmation.
 - **Next:** #13 / 4.36.7 after this delivery; #14 owns live escort AI.
 
 ## Issue #11 — Four-section sewer, cells and repair refuges (4.36.5)

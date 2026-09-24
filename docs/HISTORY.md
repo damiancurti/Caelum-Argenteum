@@ -22,9 +22,16 @@ is in `assets/validation_4366/LAYOUT.json`. Native detection/pursuit/melee/death
 narrow-channel/trap and save/load duplicate checks remain separate from author
 acceptance and are not claimed here.
 
-Author check CA-4366-RATS-01 (192/96 ratio, combat behaviour and no duplicates
-after save/load) remains pending in pending_test.txt. It is removed only on the
-author's explicit pass confirmation.
+Author acceptance, 2026-09-24 (America/Buenos_Aires): the author explicitly
+confirmed that all tests passed and requested closure of issue #12. Result:
+**PASS**, **CA-4366-RATS-01**, originating 4.36.6 / issue #12, delivered on the
+focused `issue-12-4.36.6` branch (`a986f93`). This covers the queued 192/96
+ratio, detection/pursuit/melee/death, narrow channels and traps, save/load
+without duplicated or resurrected rats, and a responsive four-section run.
+No failures, partial results or qualifications were reported. The confirmed
+entry is removed from pending_test.txt; the tracked queue is empty. Release
+4.36.6 is unchanged. Author evidence is separate from the static/native results
+above.
 
 ## 4.36.5 — Four-section sewer, keyed cells and repair refuges (#11)
 
