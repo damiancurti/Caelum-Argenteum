@@ -1,6 +1,6 @@
 # Caelum Argenteum — Current systems and rules
 
-Documentation version: **4.36.1** — 2026-09-23.
+Documentation version: **4.36.1b** — 2026-09-23.
 
 ## 4.36.1 — Documentation scope
 
@@ -3640,13 +3640,15 @@ and are distinguished by their localized name and face value. Copies registered 
 `CCOP`, `CSIL` and `CGOL` also allow each coin to exist as a visible pickup in the
 world.
 
-### 6. Planned prisoner coin reward
+### 6. Prisoner coin reward
 
-[AUTHOR-CONFIRMED DESIGN, NOT IMPLEMENTED] Issue #14, planned 4.36.8.
+[AUTHOR-CONFIRMED DESIGN, NOT IMPLEMENTED] Issue #14, planned 4.36.8; reference
+rule reconciled in issue #22 (patch 4.36.1b).
 At the port, each successfully rescued prisoner grants coins sufficient for
-two weapons at the arithmetic mean purchase price of the size-M catalogue,
-in addition to +10 reputation with that prisoner's own faction. This replaces
-the earlier unspecified material reward; both benefits are claimable once.
+two weapons at the arithmetic mean purchase price of the T1 catalogue entries
+that fit the rewarded character's equipment size, in addition to +10 reputation
+with that prisoner's own faction. This replaces the earlier unspecified material
+reward; both benefits are claimable once.
 
 For the approved reference set S containing N priced weapon entries:
 
@@ -3655,25 +3657,25 @@ P_i = CaelumEconomyRules.GetPriceChargedByMerchant(V_i, 1)
 reward_copper = CaelumEconomyRules.RoundCopperUp(2 * sum(P_i) / N)
 ```
 
-V_i uses the existing recursive recipe valuation at reference 100% material
-efficiency, with the weapon's canonical tier, essence and size-M weight
-(`CaelumConstants.EQUIPMENT_SIZE_M`). The normal merchant purchase margin
-is currently 150%; apply it once, with no extra invented rarity multiplier.
-Player discounts and merchant buyback prices do not define this reference.
+S includes T1 weapons only, at the rewarded character's equipment size. V_i uses
+the existing recursive recipe valuation at reference 100% material efficiency,
+with the weapon's canonical tier, essence and size weight. The normal merchant
+purchase margin is currently 150%; apply it once, with no extra invented rarity
+multiplier. Player discounts and merchant buyback prices do not define this
+reference.
 
-Enumerate each distinct purchasable weapon catalogue entry once in the
-eligible tiers, including physical and essence weapons; exclude fists,
-ammunition, shields, other equipment and unsellable Limbo items. Duplicate
-instances and map spawn counts do not weight the mean. The implementation PR
-must list the entries, N, copper prices, sum, mean and rounded payout.
+Enumerate each distinct purchasable T1 weapon catalogue entry once that fits the
+rewarded character's equipment size, including physical and essence weapons;
+exclude fists, ammunition, shields, other equipment and unsellable Limbo items.
+Duplicate instances and map spawn counts do not weight the mean. The
+implementation PR must list the entries, N, copper prices, sum, mean and rounded
+payout.
 
-**PENDING:** author confirmation of T1 only versus all T1–T3 in S. The map's
-T1-only loot rule does not implicitly resolve the reward's reference tiers.
-Do not publish a numerical payout before that decision. One rescue pays R;
-four pay 4R, with +10 for each respective faction. Use existing physical coin
-denominations and conversion, preserve independent claim state across saves
-and travel, and leave failed coin delivery retryable without duplicated coins
-or reputation. Keep one authoritative reward definition for all four NPCs.
+One rescue pays R; four pay 4R, with +10 for each respective faction. Use
+existing physical coin denominations and conversion, preserve independent claim
+state across saves and travel, and leave failed coin delivery retryable without
+duplicated coins or reputation. Keep one authoritative reward definition for all
+four NPCs.
 
 ## Magic Box
 

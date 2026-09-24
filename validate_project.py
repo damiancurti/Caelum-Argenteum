@@ -6,11 +6,23 @@ import json
 import re
 import struct
 
+from build_document_index import (
+    INDEX_NAME as DOC_INDEX_NAME,
+    THRESHOLD_WORDS,
+    inventory_docs,
+    parse_index_meta,
+    read_utf8 as read_doc,
+    sha256 as doc_sha256,
+    word_count as doc_word_count,
+)
+
 CANONICAL = {'PROJECT.md', 'SYSTEMS.md', 'MAP01.txt', 'ASSETS.md', 'HISTORY.md'}
 WORKING = {'CONTEXT.md', 'TASKS.md'}
 DOCUMENTS = CANONICAL | WORKING
+ANCILLARY = {'GZDOOM_DEVELOPMENT.md', 'KNOWN_PITFALLS.md'}
+ALLOWED_DOCS = DOCUMENTS | ANCILLARY | {DOC_INDEX_NAME}
 
-NUMERIC_VERSION_RE = re.compile(r'(?:0|[1-9][0-9]*)\.(?:0|[1-9][0-9]*)\.(?:0|[1-9][0-9]*)\Z')
+NUMERIC_VERSION_RE = re.compile(r'(?:0|[1-9][0-9]*)\.(?:0|[1-9][0-9]*)\.(?:0|[1-9][0-9]*)[a-z]?\Z')
 DIAGNOSTICS = ('src/caelum/world/CaelumPhysicalHazards.zs',
                'src/caelum/world/CaelumSewerMaze.zs')
 
@@ -18,6 +30,35 @@ AUDIO_INVENTORY_RE = re.compile(
     r'(?:contiene\s+(\d+)\s+archivos de runtime'
     r'|contains\s+(\d+)\s+runtime(?: audio)? files)'
 )
+
+def index_problems(root):
+    """Report stale or missing coverage for the generated document index."""
+    index_path = root / 'docs' / DOC_INDEX_NAME
+    if not index_path.is_file():
+        return ['docs/DOCUMENT_INDEX.md: missing generated index; run python build_document_index.py']
+    try:
+        meta = parse_index_meta(index_path.read_text(encoding='utf-8-sig'))
+    except (OSError, UnicodeError) as exc:
+        return [f'docs/DOCUMENT_INDEX.md: cannot read UTF-8 file: {exc}']
+    if not meta:
+        return ['docs/DOCUMENT_INDEX.md: missing or invalid DOCUMENT_INDEX_META block']
+    indexed = {entry['path']: entry for entry in meta.get('documents', [])}
+    current = {}
+    for path in inventory_docs(root):
+        relative = path.relative_to(root / 'docs').as_posix()
+        words = doc_word_count(read_doc(path))
+        if words > THRESHOLD_WORDS:
+            current[relative] = {'words': words, 'sha256': doc_sha256(path)}
+    if set(indexed) != set(current):
+        return ['DOCUMENT_INDEX.md: coverage mismatch; indexed ' + ', '.join(sorted(indexed)) +
+                ' but expected ' + ', '.join(sorted(current)) + '; run python build_document_index.py']
+    problems = []
+    for relative in current:
+        if indexed[relative]['sha256'] != current[relative]['sha256']:
+            problems.append(f'DOCUMENT_INDEX.md: stale SHA-256 for {relative}; run python build_document_index.py')
+        elif indexed[relative]['words'] != current[relative]['words']:
+            problems.append(f'DOCUMENT_INDEX.md: stale word count for {relative}; run python build_document_index.py')
+    return problems
 
 def validate(root):
     errors = []
@@ -55,7 +96,7 @@ def validate(root):
     readme = read('README.md')
     version = current_version(readme, 'Current release:', 'README.md')
     actual_docs = {p.relative_to(root/'docs').as_posix() for p in (root/'docs').rglob('*') if p.is_file()}
-    check(actual_docs == DOCUMENTS, f'docs must contain exactly {sorted(DOCUMENTS)}; found {sorted(actual_docs)}')
+    check(actual_docs == ALLOWED_DOCS, f'docs must contain exactly {sorted(ALLOWED_DOCS)}; found {sorted(actual_docs)}')
     for heading in ('## Implemented', '## Planned', '## Pending validation'):
         check(heading in readme, f'README: missing {heading}')
     # Every canonical/working document and AGENTS declares a version. Ancillary
@@ -67,6 +108,14 @@ def validate(root):
         check('VALIDATION_RESULT_PLACEHOLDER' not in text, f'{relative}: unfinished validation placeholder')
         if relative != 'docs/HISTORY.md':
             links(text, root / relative)
+    # Ancillary engineering guides and the generated index inherit README's
+    # release. Validate their existence, UTF-8 readability and local links.
+    for name in sorted(ANCILLARY):
+        links(read('docs/' + name), root / ('docs/' + name))
+    index_text = read('docs/' + DOC_INDEX_NAME)
+    links(index_text, root / ('docs/' + DOC_INDEX_NAME))
+    for problem in index_problems(root):
+        check(False, problem)
     for relative in DIAGNOSTICS:
         markers = re.findall(r'\[Caelum ([^\]]+)\]', read(relative))
         check(bool(markers) and all(v == version for v in markers),
@@ -105,6 +154,7 @@ def validate(root):
     check('PlayDialogueOpenSound' not in code, 'Duplicate manual harp call remains')
     check('tools\\build_pk3.ps1' not in (root/'run_dev.bat').read_text(), 'run_dev still depends on the retired tools directory')
     check((root/'build_dev.ps1').is_file(), 'Missing root build_dev.ps1')
+    check((root/'build_document_index.py').is_file(), 'Missing root build_document_index.py')
     for name in ('generate_environment_models.py', 'generate_mineral_veins.py', 'generate_stash_models.py', 'generate_station_models.py'):
         check((root/'assets/generators'/name).is_file(), 'Missing source generator: '+name)
     # An incorrect locale can compile while leaving a conversation in English.

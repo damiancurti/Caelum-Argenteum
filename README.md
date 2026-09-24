@@ -4,13 +4,15 @@ An independent dark fantasy FPS-RPG inspired by nineteenth-century Argentina.
 Author and game designer: **Damian Curti**. Development target: **GZDoom 4.14.2**
 on Windows 11. The final game is intended to be independent of Doom assets.
 
-**Current release: 4.36.1.** Obtain and update the complete repository, validate
+**Current release: 4.36.1b.** Obtain and update the complete repository, validate
 it, then rebuild with `run_dev.bat` as described below. Issue
-[#6](https://github.com/damiancurti/Caelum-Argenteum/issues/6) standardizes English
+[#22](https://github.com/damiancurti/Caelum-Argenteum/issues/22) integrates the
+engineering guides and the long-document index; issue
+[#6](https://github.com/damiancurti/Caelum-Argenteum/issues/6) standardized English
 documentation, numeric patch versions and the author-test workflow.
-This patch preserves gameplay and save behavior from 4.36.0i. When upgrading
-from a version before 4.36.0i, start a new game or use `map MAP02`: that earlier
-release replaced MAP02 with the author's authorization.
+The gameplay baseline remains 4.36.1. When upgrading from a version before
+4.36.0i, start a new game or use `map MAP02`: that earlier release replaced
+MAP02 with the author's authorization.
 
 Outstanding author checks are in [pending_test.txt](pending_test.txt); changes,
 performed validation and confirmed results are in [HISTORY.md](docs/HISTORY.md).
@@ -52,11 +54,11 @@ On 2026-09-23 the author accepted the 4.36.0i maze, save/load and table checks.
 Bow appearance is accepted; the flail still needs approximately 10 degrees more
 counterclockwise rotation ([#9](https://github.com/damiancurti/Caelum-Argenteum/issues/9)).
 A reported stall when equipping a bow without arrows is tracked separately in
-[#8](https://github.com/damiancurti/Caelum-Argenteum/issues/8). Neither fix is included in 4.36.1.
+[#8](https://github.com/damiancurti/Caelum-Argenteum/issues/8). Neither fix is included in 4.36.1b.
 Engine binaries, IWADs and development automation are not included.
 
 `netevent ca_debug_hazards_report` and `netevent ca_debug_maze_report` identify
-**4.36.1**. Use the repository instructions below and the root pending-test queue
+**4.36.1b**. Use the repository instructions below and the root pending-test queue
 for focused checks; no external patch-test upload is required.
 The author's acceptance of the carriage, transitions and other 0h tests is
 preserved. The broader unfinished 4.36 physics roadmap remains in PROJECT.md.
@@ -178,8 +180,9 @@ preserved. The broader unfinished 4.36 physics roadmap remains in PROJECT.md.
   visual update; the selected lying/seated poses are unchanged.
 - The catalogue identifies MAP01 as Limbo with a 1:1 local clock; every other
   map keeps the accepted rate of one game hour per 180 simulation seconds.
-- Historical validation accepted hotfix labels such as 4.35.0d1. Since 4.36.1,
-  current headers require numeric MAJOR.MINOR.PATCH; historical labels remain valid.
+- Historical validation accepted hotfix labels such as 4.35.0d1. Current headers
+  require MAJOR.MINOR.PATCH with an optional lowercase letter for author-requested
+  documentation/hotfix patches (for example 4.36.1b); historical labels remain valid.
   Resource, documentation and localization checks are retained.
 
 - Hidden native Inventory stores the rest mode, duration, elapsed tics, origin,
@@ -694,10 +697,11 @@ Peregrino uses Amparo: 50% less environmental damage for the player and nearby
 allies for 10 seconds, with 60 seconds of reuse and a trial base cost of 1000 anima.
 Future class area abilities use the shared 1280-MU seal-channel base radius.
 Automatic conversation cancellation on damage was suggested and remains pending.
-Four new prisoner affiliations, +10 own-faction reputation and coins worth two
-average size-M weapons per successful rescue are defined in the roadmap.
-SYSTEMS records the purchase-price formula; reward reference tiers (T1 or
-T1–T3), rank thresholds and cross-faction relations still require authored design.
+Four new prisoner affiliations, +10 own-faction reputation and coins worth twice
+the mean normal purchase price of T1 weapons at the rewarded character's
+equipment size per successful rescue are defined in the roadmap. SYSTEMS records
+the purchase-price formula; rank thresholds and cross-faction relations still
+require authored design.
 The attribute audit is deferred by the author; the current rules stay accepted.
 Follow PROJECT.md for the remaining scope. Potable-water collection is implemented. Treatment of unsafe water remains undefined. Bullet crafting still needs its material composition and process
 defined; the existing 3 g bullet mass is unchanged. Bolt crafting is implemented. Food/water, Air/movement, load management and pool breathing are now
@@ -718,7 +722,7 @@ repair refuges, 192 rats alongside 96 Mandingas, four recolored prisoners,
 persistent escorts/port rewards and Tarot fronts. Issues #18–#21 add siege
 assets, breakable actor gates, rams and catapults. See [TASKS](docs/TASKS.md)
 and the current author-roadmap section of [PROJECT](docs/PROJECT.md). These
-features are not included in the current 4.36.1 gameplay baseline.
+features are not included in the current 4.36.1b release (same 4.36.1 gameplay baseline).
 
 After V4.37, complete and accept three campaign maps covering the prologue,
 El Loco and two distinct Minors, then verify the exported
@@ -738,7 +742,7 @@ The playtest export is a separate milestone from the final independent release.
 
 See [pending_test.txt](pending_test.txt) for final flail-pose acceptance after
 its correction. On 2026-09-23 the author confirmed zero validator errors,
-successful rebuild/launch and both 4.36.1 diagnostic headers. That completed
+successful rebuild/launch and both 4.36.1b diagnostic headers. That completed
 test and the accepted maze/save-load/table tests are recorded in HISTORY.
 The empty-bow stall is a separate open correction in #8, not an accepted result.
 Long-term encounter/provision balance and unfinished 4.36 systems are development
@@ -764,17 +768,21 @@ From the repository root, using the author's installed Python:
 python validate_project.py
 ```
 
-Success prints JSON with `"version": "4.36.1"`, `"documents": 7`, and
+Success prints JSON with `"version": "4.36.1b"`, `"documents": 10`, and
 `"errors": []`, returning exit code 0 (`$LASTEXITCODE` in PowerShell or
 `echo %ERRORLEVEL%` in Command Prompt). On failure, report the full output,
 command, Python version (`python --version`) and current commit (`git rev-parse
 HEAD`) in the issue. If `python` is not recognized, make the installed interpreter
 available on PATH or invoke its full path; do not regenerate assets to fix a
 documentation error. The validator is read-only and uses Python's standard library.
+For maintained docs longer than 5,000 words, query
+[DOCUMENT_INDEX.md](docs/DOCUMENT_INDEX.md) first (see
+[GZDOOM_DEVELOPMENT.md](docs/GZDOOM_DEVELOPMENT.md)); regenerate it with
+`python build_document_index.py` after an indexed source changes.
 
 Rebuild the PK3 after updating; launching an old PK3 keeps old code. The commands
 `netevent ca_debug_hazards_report` and `netevent ca_debug_maze_report` must identify
-**4.36.1**. The 4.36.1 documentation patch requires no new campaign or save migration.
+**4.36.1b**. The 4.36.1b documentation patch requires no new campaign or save migration.
 
 Double-click **run_dev.bat** to build and play with the supplied machine's
 existing engine/IWAD paths. Check `GZDOOM_EXE` and `DOOM2_IWAD` in that file on
@@ -804,6 +812,9 @@ history and keep patch-specific utilities out of the active project.
 | [MAP01.txt](docs/MAP01.txt) | Full authorial story/specification and implementation boundaries. |
 | [ASSETS.md](docs/ASSETS.md) | Audio/art inventory, provenance, source generators and accepted framing. |
 | [HISTORY.md](docs/HISTORY.md) | Consolidated previous records and superseded decisions. |
+| [GZDOOM_DEVELOPMENT.md](docs/GZDOOM_DEVELOPMENT.md) | Engineering orientation, build/launch, reusable patterns and verification discipline. |
+| [KNOWN_PITFALLS.md](docs/KNOWN_PITFALLS.md) | Compact register of verified lessons and unresolved defects with stable IDs. |
+| [DOCUMENT_INDEX.md](docs/DOCUMENT_INDEX.md) | Generated section/line locator for docs over 5,000 words; search before reading long files. |
 
 Use English code, identifiers and maintained documentation. Gameplay explanatory
 comments remain Spanish; modified tooling uses English help, diagnostics,
@@ -820,12 +831,13 @@ Run `python validate_project.py` before preparing a release to check version,
 documentation, structure, Caella translations, station models and audio references. Development engine/IWAD files,
 test observers and archives are not part of the playable PK3 or source delivery.
 
-Patch versions are numeric MAJOR.MINOR.PATCH: 4.36.0i -> 4.36.1 -> 4.36.2.
+Patch versions use MAJOR.MINOR.PATCH with an optional lowercase letter for
+author-requested documentation/hotfix patches: 4.36.0i -> 4.36.1 -> 4.36.1b -> 4.36.2.
 Implementation commits and later acceptance do not each create a new patch.
 Historical labels stay intact; PROJECT records the current roadmap and the
-author-approved three-map playtest requirement. All
-seven docs and AGENTS declare a current version; ancillary guides without a
-header inherit this README's release.
+author-approved three-map playtest requirement. All seven docs and AGENTS declare
+a current version; the two engineering guides and the generated index inherit
+this README's release.
 
 Carry author checks forward in `pending_test.txt`. After explicit author pass
 confirmation, record the stable test ID, originating version/issue, result,

@@ -1,12 +1,30 @@
 # TASKS.md — Active tasks
 
-Documentation version: **4.36.1** — 2026-09-23.
+Documentation version: **4.36.1b** — 2026-09-23.
 
 List of the project's active tasks. It is updated with every task.
 
 Format of each entry: ID, title, status, reference documents, and acceptance
 criteria. If a datum is not defined in the canonical documents, write
 `PENDING`; do not invent it.
+
+## Issue #22 — Engineering guides and document index (4.36.1b)
+
+- **Issue:** https://github.com/damiancurti/Caelum-Argenteum/issues/22
+- **Status:** Implemented; verification pending. Documentation/tooling only.
+- **References:** AGENTS, README, the canonical documents,
+  `GZDOOM_DEVELOPMENT.md`, `KNOWN_PITFALLS.md`, `build_document_index.py` and the
+  generated `DOCUMENT_INDEX.md`.
+- **Scope:** integrate the two development handoff guides into `docs/`, generate a
+  deterministic index for every maintained document over 5,000 words, extend the
+  validator to cover guide/index metadata, hashes, links and word counts, and
+  reconcile the prisoner coin reward to the confirmed T1/recipient-size rule.
+- **Acceptance:** `python validate_project.py` exits 0 with version `4.36.1b`,
+  ten documents and no errors; `python build_document_index.py` regenerates
+  `docs/DOCUMENT_INDEX.md` byte-for-byte; `git diff --check` passes. No gameplay,
+  balance, asset, map, localization or save change is introduced.
+- **Regenerate/verify:** from the repo root run `python build_document_index.py`,
+  then `python validate_project.py`.
 
 ## Issue #6 — Documentation and validation workflow (4.36.1)
 
@@ -64,7 +82,7 @@ documentation update does not implement these features or reset accepted tests.
 | 4.36.5 | [#11](https://github.com/damiancurti/Caelum-Argenteum/issues/11) | Four sections, keys/cells/beds, functional repair refuges, sewer channels/decor, northern locked boss room. After #10. |
 | 4.36.6 | [#12](https://github.com/damiancurti/Caelum-Argenteum/issues/12) | Existing hostile rats at 2:1 per section: 192 rats/96 Mandingas. After #11. |
 | 4.36.7 | [#13](https://github.com/damiancurti/Caelum-Argenteum/issues/13) | Four reused NPC appearances with distinct palettes. After #12. |
-| 4.36.8 | [#14](https://github.com/damiancurti/Caelum-Argenteum/issues/14) | Follow/fight with source-character stats; extract alive before MAP02 boss; port thanks, +10 own-faction reputation and coins worth two average size-M weapons once per rescue. Reward reference tiers (T1 or T1–T3) pending. |
+| 4.36.8 | [#14](https://github.com/damiancurti/Caelum-Argenteum/issues/14) | Follow/fight with source-character stats; extract alive before MAP02 boss; port thanks, +10 own-faction reputation and coins worth twice the mean normal purchase price of T1 weapons at the rewarded character's equipment size once per rescue. |
 | 4.36.9 | [#15](https://github.com/damiancurti/Caelum-Argenteum/issues/15) | Tarot fronts and correct collection bindings. Blocked on approved downloadable source pack/manifest. |
 | 4.36.10 | [#18](https://github.com/damiancurti/Caelum-Argenteum/issues/18) | Siege assets: catapult, ram and breakable gate. After #15. |
 | 4.36.11 | [#19](https://github.com/damiancurti/Caelum-Argenteum/issues/19) | Damageable actor gates. Structural parameter table needs approval. After #18. |
