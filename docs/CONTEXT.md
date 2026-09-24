@@ -66,7 +66,8 @@ the gauchos and rural culture, and the humans the urban porteño society.
 
 Current release **4.36.4** implements #10: the complete T1 maze catalogue,
 recipient-sized natural equipment/rewards, explicit chest previews/collection
-and a bounded recent-message feed. CA-4364-T1-LOOT-01 awaits author acceptance.
+and a bounded recent-message feed. The author confirmed CA-4364-T1-LOOT-01 passed
+on 2026-09-23; the author-test queue is empty.
 The retained 4.36.3 issue #9 flail-handle rotation adds 10 degrees
 further counterclockwise across T1–T3. Native before/after, full spin, return
 and re-equip checks passed; the author confirmed CA-4360I-VISUAL-01 passed
@@ -84,7 +85,6 @@ rations, and MAP01 tables at full capacity.
 
 Pending:
 
-- Author acceptance of #10 / 4.36.4 (CA-4364-T1-LOOT-01).
 - Author-requested patches 4.36.5–4.36.9 (#11–#15): four keyed sewer sections with cells/beds, repair refuges and northern Zupay;
   192 enemy rats alongside 96 Mandingas; four recolored prisoners; persistent
   rescues/port faction rewards; approved Tarot images. These are planned,

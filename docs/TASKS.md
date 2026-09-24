@@ -11,8 +11,10 @@ Documentation version: **4.36.4** — 2026-09-23.
 - **Compatibility:** preserve owned/imported gear, old looted slots, existing
   size mapping and balance; revisioned unclaimed-loot migration, no replenishment.
 - **Evidence:** HISTORY and `assets/validation_4364/` separate static/native
-  results from author acceptance. CA-4364-T1-LOOT-01 is the only new author check.
-- **Next:** review/integrate this patch before #11 / 4.36.5; no unrelated MAP01
+  results from author acceptance. The author confirmed CA-4364-T1-LOOT-01 passed
+  on 2026-09-23; its entry is removed and the author-test queue is empty.
+- **Status:** implemented and author-accepted; delivered through PR #27.
+- **Next:** #11 / 4.36.5; no unrelated MAP01
   replay or implementation of the future rescue rewards belongs to this patch.
 
 List of the project's active tasks. It is updated with every task.
@@ -97,7 +99,7 @@ documentation update does not implement these features or reset accepted tests.
 
 | Patch / stage | Issue | Work and current blocker |
 | --- | --- | --- |
-| 4.36.4 | [#10](https://github.com/damiancurti/Caelum-Argenteum/issues/10) | Implemented in this patch; author acceptance pending. Complete T1 catalogue, recipient sizing, chest preview and feedback. |
+| 4.36.4 | [#10](https://github.com/damiancurti/Caelum-Argenteum/issues/10) | Implemented and author-accepted on 2026-09-23. Complete T1 catalogue, recipient sizing, chest preview and feedback. |
 | 4.36.5 | [#11](https://github.com/damiancurti/Caelum-Argenteum/issues/11) | Four sections, keys/cells/beds, functional repair refuges, sewer channels/decor, northern locked boss room. After #10. |
 | 4.36.6 | [#12](https://github.com/damiancurti/Caelum-Argenteum/issues/12) | Existing hostile rats at 2:1 per section: 192 rats/96 Mandingas. After #11. |
 | 4.36.7 | [#13](https://github.com/damiancurti/Caelum-Argenteum/issues/13) | Four reused NPC appearances with distinct palettes. After #12. |

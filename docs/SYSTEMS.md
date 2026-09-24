@@ -45,7 +45,8 @@ the 21st evicts the oldest. Each expires independently. The initial duration is
 eight seconds, configurable through one project CVar for author adjustment.
 Debug reports and full NPC conversations remain outside this feed.
 Native evidence and the exact authoring API are recorded with this delivery;
-CA-4364-T1-LOOT-01 remains the focused author acceptance check.
+The author confirmed CA-4364-T1-LOOT-01 passed on 2026-09-23; HISTORY records
+the acceptance separately from native/static verification.
 
 ## 4.36.2 — Bow presentation performance
 

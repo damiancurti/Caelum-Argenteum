@@ -35,7 +35,7 @@ Author acceptance: recorded separately for the 4.36.1b documentation patch; this
 
 ## CA-KP-002 — Default equipment size is not the character's raw body tier
 
-Status/evidence: ENGINE-VERIFIED in 4.36.4 (#10), GZDoom g4.14.2. Scope: shared recipient-size policy, native equipment acquisition and legacy MAP02 chest migration; author acceptance remains pending.
+Status/evidence: ENGINE-VERIFIED in 4.36.4 (#10), GZDoom g4.14.2. Scope: shared recipient-size policy, native equipment acquisition and legacy MAP02 chest migration; author acceptance: CA-4364-T1-LOOT-01 passed on 2026-09-23.
 
 Observation: a shared mapping converts character tiers into equipment-size constants; its current default selection does not select every possible equipment size. Do not infer a linear or one-to-one mapping, or change it as incidental cleanup.
 
@@ -155,7 +155,7 @@ visible before they expire; reopening reads the current remaining inventory.
 
 Verification: the same old save, its migrated reload and five-entry 1024x768
 native capture; fresh-save and hub-return probes. See validation_4364 evidence.
-Author acceptance remains pending. Preserve this separation when adding another
+Author acceptance: CA-4364-T1-LOOT-01 passed on 2026-09-23. Preserve this separation when adding another
 UI to an established save schema.
 
 ## Rules for adding and updating entries

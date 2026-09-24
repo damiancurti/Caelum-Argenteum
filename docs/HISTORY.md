@@ -42,8 +42,15 @@ also exposed the missing serialized UI handler and static/map render ordering;
 the controller is now static and draws through the final HUD hook. CA-KP-002
 and CA-KP-007 record the reusable causes and safeguards. This is isolated native and
 static evidence, not a complete campaign playthrough or author acceptance.
-**CA-4364-T1-LOOT-01**, originating 4.36.4 / #10, remains pending in the root queue.
-No author pass confirmation has been received for this patch.
+Author acceptance, 2026-09-23 (America/Buenos_Aires): the author explicitly
+confirmed that all tests passed and requested closure of #10. Result: **PASS**
+for **CA-4364-T1-LOOT-01**, originating 4.36.4 / issue #10, delivered in PR #27.
+This covers the queued loot, recipient sizing, chest preview/collection,
+capacity/retry, persistence and message checks. No failures, partial results or
+qualifications were reported. The confirmation is author evidence, separate
+from the native/static results above; no new engine run is claimed.
+The confirmed entry is removed from pending_test.txt, which remains tracked
+and empty. This acceptance update changes no gameplay and retains version 4.36.4.
 
 Superseded reward design preserved: #22 specified
 `P_i = GetPriceChargedByMerchant(V_i, 1)` and

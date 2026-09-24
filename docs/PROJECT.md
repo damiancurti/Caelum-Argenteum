@@ -20,8 +20,8 @@ A bounded feed retains up to 20 recent gameplay/acquisition entries with separat
 expiry, initially eight seconds through one configurable project parameter.
 
 SYSTEMS defines the contract and migration details; HISTORY records actual
-verification separately from pending author check CA-4364-T1-LOOT-01. The next
-implementation is #11 / 4.36.5 after this patch is reviewed and integrated.
+verification separately from author check CA-4364-T1-LOOT-01, confirmed passed
+on 2026-09-23. The next implementation is #11 / 4.36.5.
 The updated #10/#14 author decisions also supersede the former price-average
 rescue reward with a fixed 25 gold; #14 still owns its future implementation.
 

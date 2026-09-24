@@ -9,7 +9,7 @@ it, then rebuild with `run_dev.bat` as described below. Issue
 [#10](https://github.com/damiancurti/Caelum-Argenteum/issues/10) supplies the
 complete 65-item T1 MAP02 catalogue, recipient-sized natural equipment/rewards,
 chest previews with explicit collection and a recent acquisition/gameplay
-message feed. Author acceptance is tracked in CA-4364-T1-LOOT-01. Issue
+message feed. The author confirmed CA-4364-T1-LOOT-01 passed on 2026-09-23. Issue
 [#9](https://github.com/damiancurti/Caelum-Argenteum/issues/9) adds 10 degrees
 of counterclockwise flail-handle rotation across T1–T3, preserving the grip and
 independent chain animation. Native comparisons are in
@@ -764,8 +764,8 @@ The playtest export is a separate milestone from the final independent release.
 ## Pending validation
 
 The author confirmed CA-4360I-VISUAL-01 passed after the 4.36.3 correction on
-2026-09-23. [pending_test.txt](pending_test.txt) now contains only the focused
-4.36.4 T1-loot, sizing, chest-preview and acquisition-message check. The 4.36.2 bow
+2026-09-23. The author confirmed all 4.36.4 checks passed on 2026-09-23;
+[pending_test.txt](pending_test.txt) is now empty. HISTORY records CA-4364-T1-LOOT-01. The 4.36.2 bow
 check also passed on the author's confirmation. On 2026-09-23 the
 author confirmed zero validator errors, successful rebuild/launch and both
 4.36.1 diagnostic headers. That completed
