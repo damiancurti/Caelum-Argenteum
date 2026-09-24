@@ -22,10 +22,20 @@ writes 632 recolored PNGs and the guarded `CAELUM_PRISONERS_V2` block in
 four reserved `reserved_actor` positions, preserving the existing locks/routes.
 Palette mapping and before/after evidence are in `assets/validation_4367/`.
 
-Static/native verification remains separate from author acceptance. The
-author visual check **CA-4367-PRISONER-ART-01** is queued in
-[pending_test.txt](../pending_test.txt) and will be moved here only after
-explicit confirmation. #14 owns rescue, escort, dialogue and rewards.
+Static/native verification remains separate from author acceptance.
+
+Author acceptance, 2026-09-24 (America/Buenos_Aires): the author confirmed
+the four recolored prisoner variants and requested closure of issue #13.
+Result: **PASS**, **CA-4367-PRISONER-ART-01**, originating 4.36.7 / issue #13,
+delivered on the focused `issue-13-4.36.7` branch. This covers the four
+distinct inert, friendly, invulnerable prisoners, the source/faction mapping,
+per-material recolors that keep skin and metallic accessories, and the A/B
+idle breathing poses without entering the walking/chase animation. The author
+clarified that the earlier idle-sprite concern referred to the MAP01 mansion
+NPCs, not the prisoners, and that concern is tracked separately. No failures,
+partial results or qualifications were reported. The confirmed entry is removed
+from pending_test.txt; the tracked queue is empty. #14 owns rescue, escort,
+dialogue and rewards.
 
 ## 4.36.6 — Hostile sewer rats (#12)
 

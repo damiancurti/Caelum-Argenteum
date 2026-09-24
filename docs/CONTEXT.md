@@ -70,8 +70,9 @@ that reuse the mansion characters without new models. Caella -> Unitarians
 Wild Beast Men (Santos Barrera, black/brown/green) and Argento -> Cult of the
 Tarot (Leandro Farías, gold/silver over black). One inert, friendly,
 invulnerable variant is instantiated in each reserved MAP02 cell; original
-mansion NPCs and their accepted combat profiles remain unchanged. The visual
-author check CA-4367-PRISONER-ART-01 remains pending in `pending_test.txt`.
+mansion NPCs and their accepted combat profiles remain unchanged. The author
+visual check CA-4367-PRISONER-ART-01 passed on 2026-09-24; the author-test
+queue is empty.
 
 The preceding **4.36.6** implements #12: 192 hostile sewer rats (two per
 Mandinga, 192/96 across the four sections), reusing the accepted CaelumGiantRat
