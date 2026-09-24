@@ -130,7 +130,7 @@ class CaelumSewerMaze : Object play
         }
         let enemies=ThinkerIterator.Create("CaelumMandinga");Actor enemy;
         while((enemy=Actor(enemies.Next()))!=null)if(enemy.health>0)mandingas++;
-        Console.Printf("[Caelum 4.36.2] Laberinto MAP02: cofres=%d objetos restantes=%d Mandingas vivos=%d Zupay vivo=%d",chests,objects,mandingas,BossAlive());
+        Console.Printf("[Caelum 4.36.3] Laberinto MAP02: cofres=%d objetos restantes=%d Mandingas vivos=%d Zupay vivo=%d",chests,objects,mandingas,BossAlive());
         Console.Printf("Contenido inicial: 39 cofres, 195 piezas, 96 Mandingas, 45 trampas, 120 raciones de comida y 120 de agua. Carta: índice %d.",CUPS_ACE);
         for(int i=0;i<MAXPLAYERS;i++)if(playeringame[i])
         {

@@ -75,14 +75,31 @@ or establish results on untested renderers.
 
 ## CA-KP-004 — Flail rotation must be judged around the rendered grip
 
-Status/evidence: CODE-VERIFIED presentation structure plus AUTHOR-REPORTED visual correction; issue #9 remains open.
+Status/evidence: ENGINE-VERIFIED transform correction in 4.36.3 (#9).
+Author acceptance: PENDING, CA-4360I-VISUAL-01 (origin 4.36.0i).
 Source: https://github.com/damiancurti/Caelum-Argenteum/issues/9
 
-Baseline: src/caelum/equipment/CaelumFirstPersonLayers.zs uses handleAngle=rotation-39.5 and derives handle/chain positions through transformed joint coordinates. The author requests another approximately 10 degrees counterclockwise.
+Baseline: merged 4.36.2 (`772f622`) used `handleAngle=rotation-39.5` in
+`src/caelum/equipment/CaelumFirstPersonLayers.zs`. The author requested another
+approximately 10 degrees counterclockwise. Native before/after captures verify
+that increasing the offset to -29.5 produces this direction. The shared
+`FLAIL_HANDLE_ANGLE` is the current source for both references; historical 0i
+composition manifests and their generator output retain -39.5 as provenance.
 
-Prevention: preserve the grip reference and connected layers. A numerically plausible angle is not proof of the screen-space direction or a correct chain attachment. Do not rotate a flattened screenshot and call the engine change complete.
+Prevention: preserve the grip reference and connected layers. The handle still
+hides half of its exposed shaft under the glove; the chain's position follows
+the transformed joint, but its resting angle must not inherit the handle's
+angle. Keep layer 46 behind handle 50 and hand 52. A plausible numeric sign or
+a rotated screenshot is not proof of native screen-space direction.
 
-Verification: native before/after views at rest and relevant animation states, same configuration, grip/chain continuity and unchanged accepted behavior. Candidate offsets in the issue are proposals until engine-verified.
+Verification: GZDoom g4.14.2 / Windows 11 / Vulkan / RTX 3070 Ti / development
+Doom II, fresh isolated MAP03 games. T1–T3 native before/after rest captures,
+grip/joint checks, 45-degree attack increments through 360 degrees, return and
+holster/re-equip passed with zero failures. The chain's 17.424612-degree native
+rest offset stayed unchanged. [Evidence and conditions](../assets/validation_4363/RESULTS.json)
+include filtered native logs; capture-only HUD suppression reveals the layers.
+Automated native callbacks do not replace final author aesthetic approval or
+prove untested renderers. No save field/state schema or combat timing changes.
 
 ## CA-KP-005 — A green validator or a built PK3 is not a gameplay pass
 

@@ -1,6 +1,6 @@
 # TASKS.md — Active tasks
 
-Documentation version: **4.36.2** — 2026-09-23.
+Documentation version: **4.36.3** — 2026-09-23.
 
 List of the project's active tasks. It is updated with every task.
 
@@ -64,10 +64,12 @@ remain tracked. Backlog tasks below are not executable author tests.
   native evidence is in HISTORY. The author confirmed CA-4362-BOW-EMPTY-01
   passed on 2026-09-23; its entry is removed from the pending queue. Bow
   appearance, ammunition rules and save compatibility are retained.
-- **Issue #9 / planned 4.36.3:** [Additional flail rotation](https://github.com/damiancurti/Caelum-Argenteum/issues/9).
-  Rotate the current first-person handle approximately 10 degrees further
-  counterclockwise while preserving grip, rear chain, vertical rest and attack spin.
-  Retain CA-4360I-VISUAL-01 until the author accepts the corrected pose.
+- **Issue #9 / 4.36.3:** [Additional flail rotation](https://github.com/damiancurti/Caelum-Argenteum/issues/9).
+  Implemented: shared handle offset -39.5 -> -29.5 degrees. Native Windows
+  before/after T1–T3 captures and grip/joint, rest, full spin, return and re-equip
+  checks passed; evidence is in HISTORY and `assets/validation_4363/`.
+  PR review/merge and author pose approval remain pending. Retain
+  CA-4360I-VISUAL-01 until the author accepts the corrected pose.
 - Start each patch from the preceding merged version. These two issues are not
   implemented by the 4.36.1 acceptance-record update. Accepted maze, save/load,
   table and bow-art checks are recorded in HISTORY and are not reopened.
@@ -157,7 +159,7 @@ integration before extracting Impact Physics.
 
 - **Status:** Covered by the existing crushing ceiling and native elevator,
   per the author's 2026-09-23 confirmation in #8. No longer a 4.36 blocker.
-- **Reference documents:** `docs/PROJECT.md` (current 4.36.2 scope).
+- **Reference documents:** `docs/PROJECT.md` (current 4.36.3 scope).
 - **Acceptance:** Scope confirmation only; no new engine test or replay is
   claimed. No rotating/translating rooms or additional platforms are requested.
 

@@ -1,6 +1,17 @@
 # Caelum Argenteum — Project, status and roadmap
 
-Documentation version: **4.36.2** — 2026-09-23.
+Documentation version: **4.36.3** — 2026-09-23.
+
+## 4.36.3 — Additional first-person flail rotation
+
+Issue [#9](https://github.com/damiancurti/Caelum-Argenteum/issues/9) adds the
+author-requested 10 degrees counterclockwise to the 0i handle pose through the
+shared T1–T3 transform. Grip insertion, rear chain/ball, vertical rest and the
+full attack revolution remain intact. No gameplay rule, source artwork or save
+schema changes. Native before/after evidence is recorded in HISTORY and
+`assets/validation_4363/`; CA-4360I-VISUAL-01 retains its original provenance
+and awaits final author pose approval. The next implementation is #10 / 4.36.4
+after this patch is reviewed and merged.
 
 ## 4.36.2 — Bow first-use stall and environmental scope
 
@@ -35,7 +46,7 @@ only the root queue defines outstanding actionable author checks. Old test
 references do not reopen already accepted work. Implementation evidence and
 remaining acceptance are recorded in [HISTORY](HISTORY.md).
 
-Current releases use MAJOR.MINOR.PATCH: 4.36.0i -> 4.36.1 -> 4.36.1b -> 4.36.2.
+Current releases use MAJOR.MINOR.PATCH: 4.36.0i -> 4.36.1 -> 4.36.1b -> 4.36.2 -> 4.36.3.
 Intermediate commits and later acceptance retain the originating patch version.
 The larger roadmap remains in force. Proper names, identifiers, literal game
 dialogue, formulas and original external source material retain their spelling;

@@ -1,0 +1,188 @@
+{
+  "issue": 9,
+  "release": "4.36.3",
+  "local_date": "2026-09-23",
+  "timezone": "America/Buenos_Aires",
+  "baseline_commit": "772f622c6b2d064b872d5b0ffa00314e2725d1e8",
+  "environment": {
+    "engine": "GZDoom g4.14.2",
+    "os": "Windows 11",
+    "renderer": "Vulkan",
+    "gpu": "NVIDIA GeForce RTX 3070 Ti",
+    "iwad": "author-installed development Doom II",
+    "engine_support": [
+      "gzdoom.pk3",
+      "game_support.pk3",
+      "game_widescreen_gfx.pk3",
+      "installed id24res.wad"
+    ],
+    "map": "MAP03",
+    "save": "fresh isolated game per run; no existing save loaded",
+    "config": "same isolated config; no autoload; no sound; native captures 1920x1080",
+    "fixture": "disposable EventHandler invokes native pickup/equip/primary/fists/re-equip callbacks; no replacement weapon drawing",
+    "capture_adjustment": "HUD font disabled only in disposable fixture; console notifications hidden to reveal native weapon layers; source HUD unchanged"
+  },
+  "reproduction": [
+    "Load each package plus the isolated fixture into MAP03.",
+    "For each tier T1-T3 in a 400-tic interval: native pickup/equip at tick 35; inspect settled PSprite layers at tick 100; native screenshot after 140 console waits.",
+    "Invoke actual primary attack at tick 200; record chain rotation through tick 240 and check return at tick 260.",
+    "Switch to fists at tick 300; check holster at 325; re-equip at 335; check settled pose at 375."
+  ],
+  "result": {
+    "handle_offset_before": -39.5,
+    "handle_offset_after": -29.5,
+    "additional_counterclockwise_degrees": 10.0,
+    "rest_chain_angle_degrees": 17.424612,
+    "grip_anchor": [
+      200,
+      158
+    ],
+    "joint_and_half_insertion_residuals": "0.000000000 in all logged settled poses",
+    "attack_rotation_degrees": [
+      45,
+      90,
+      135,
+      180,
+      225,
+      270,
+      315,
+      360
+    ],
+    "grip_chain_return_reequip": "passed for all three tiers before and after",
+    "visual_direction": "native before/after rest captures inspected for each tier; handle tip moves up/left around unchanged glove"
+  },
+  "runs": {
+    "before": {
+      "failures": 0,
+      "tiers": [
+        1,
+        2,
+        3
+      ],
+      "log": "before.log",
+      "poses": [
+        "QA_POSE tier=1 phase=rest handle_angle=-39.500000 handle_xy=(171.468119,201.254507) chain_angle=17.424612 chain_xy=(228.531881,114.745493) hand_xy=(200.000000,158.000000) joint_error=0.000000000 grip_error=0.000000000",
+        "QA_POSE tier=1 phase=after_attack handle_angle=-39.500000 handle_xy=(171.468119,201.254507) chain_angle=17.424612 chain_xy=(228.531881,114.745493) hand_xy=(200.000000,158.000000) joint_error=0.000000000 grip_error=0.000000000",
+        "QA_POSE tier=1 phase=re_equipped handle_angle=-39.500000 handle_xy=(171.468119,201.254507) chain_angle=17.424612 chain_xy=(228.531881,114.745493) hand_xy=(200.000000,158.000000) joint_error=0.000000000 grip_error=0.000000000",
+        "QA_POSE tier=2 phase=rest handle_angle=-39.500000 handle_xy=(171.468119,201.254507) chain_angle=17.424612 chain_xy=(228.531881,114.745493) hand_xy=(200.000000,158.000000) joint_error=0.000000000 grip_error=0.000000000",
+        "QA_POSE tier=2 phase=after_attack handle_angle=-39.500000 handle_xy=(171.468119,201.254507) chain_angle=17.424612 chain_xy=(228.531881,114.745493) hand_xy=(200.000000,158.000000) joint_error=0.000000000 grip_error=0.000000000",
+        "QA_POSE tier=2 phase=re_equipped handle_angle=-39.500000 handle_xy=(171.468119,201.254507) chain_angle=17.424612 chain_xy=(228.531881,114.745493) hand_xy=(200.000000,158.000000) joint_error=0.000000000 grip_error=0.000000000",
+        "QA_POSE tier=3 phase=rest handle_angle=-39.500000 handle_xy=(171.468119,201.254507) chain_angle=17.424612 chain_xy=(228.531881,114.745493) hand_xy=(200.000000,158.000000) joint_error=0.000000000 grip_error=0.000000000",
+        "QA_POSE tier=3 phase=after_attack handle_angle=-39.500000 handle_xy=(171.468119,201.254507) chain_angle=17.424612 chain_xy=(228.531881,114.745493) hand_xy=(200.000000,158.000000) joint_error=0.000000000 grip_error=0.000000000",
+        "QA_POSE tier=3 phase=re_equipped handle_angle=-39.500000 handle_xy=(171.468119,201.254507) chain_angle=17.424612 chain_xy=(228.531881,114.745493) hand_xy=(200.000000,158.000000) joint_error=0.000000000 grip_error=0.000000000"
+      ],
+      "captures": [
+        {
+          "tier": 1,
+          "file": "before_t1.png",
+          "dimensions": [
+            1920,
+            1080
+          ],
+          "sha256": "ad0c09c8ffb4bc857c9f51393997ec6bc3d08e10aa4972ca8b08a183117d7c7e"
+        },
+        {
+          "tier": 2,
+          "file": "before_t2.png",
+          "dimensions": [
+            1920,
+            1080
+          ],
+          "sha256": "f919f36ed9cb26f36d448f83a013e81c8297200a00bc4b237bd45739a92105ff"
+        },
+        {
+          "tier": 3,
+          "file": "before_t3.png",
+          "dimensions": [
+            1920,
+            1080
+          ],
+          "sha256": "59bb0768e731ba53e58617f73a0f90b63d68efd9e52e628402c11f500c3b3724"
+        }
+      ],
+      "package_sha256": "282d523ab60c7963219fd2e669f62d9a23fb658067d7705d0d9dcaa06045ce0d",
+      "flail_source_sha256": "8ecb01ab49170b3a074d5f50385c1fc65d1c212a0b24e8fa432d268f765eadef"
+    },
+    "after": {
+      "failures": 0,
+      "tiers": [
+        1,
+        2,
+        3
+      ],
+      "log": "after.log",
+      "poses": [
+        "QA_POSE tier=1 phase=rest handle_angle=-29.500000 handle_xy=(180.914862,204.726132) chain_angle=17.424612 chain_xy=(219.085138,111.273868) hand_xy=(200.000000,158.000000) joint_error=0.000000000 grip_error=0.000000000",
+        "QA_POSE tier=1 phase=after_attack handle_angle=-29.500000 handle_xy=(180.914862,204.726132) chain_angle=17.424612 chain_xy=(219.085138,111.273868) hand_xy=(200.000000,158.000000) joint_error=0.000000000 grip_error=0.000000000",
+        "QA_POSE tier=1 phase=re_equipped handle_angle=-29.500000 handle_xy=(180.914862,204.726132) chain_angle=17.424612 chain_xy=(219.085138,111.273868) hand_xy=(200.000000,158.000000) joint_error=0.000000000 grip_error=0.000000000",
+        "QA_POSE tier=2 phase=rest handle_angle=-29.500000 handle_xy=(180.914862,204.726132) chain_angle=17.424612 chain_xy=(219.085138,111.273868) hand_xy=(200.000000,158.000000) joint_error=0.000000000 grip_error=0.000000000",
+        "QA_POSE tier=2 phase=after_attack handle_angle=-29.500000 handle_xy=(180.914862,204.726132) chain_angle=17.424612 chain_xy=(219.085138,111.273868) hand_xy=(200.000000,158.000000) joint_error=0.000000000 grip_error=0.000000000",
+        "QA_POSE tier=2 phase=re_equipped handle_angle=-29.500000 handle_xy=(180.914862,204.726132) chain_angle=17.424612 chain_xy=(219.085138,111.273868) hand_xy=(200.000000,158.000000) joint_error=0.000000000 grip_error=0.000000000",
+        "QA_POSE tier=3 phase=rest handle_angle=-29.500000 handle_xy=(180.914862,204.726132) chain_angle=17.424612 chain_xy=(219.085138,111.273868) hand_xy=(200.000000,158.000000) joint_error=0.000000000 grip_error=0.000000000",
+        "QA_POSE tier=3 phase=after_attack handle_angle=-29.500000 handle_xy=(180.914862,204.726132) chain_angle=17.424612 chain_xy=(219.085138,111.273868) hand_xy=(200.000000,158.000000) joint_error=0.000000000 grip_error=0.000000000",
+        "QA_POSE tier=3 phase=re_equipped handle_angle=-29.500000 handle_xy=(180.914862,204.726132) chain_angle=17.424612 chain_xy=(219.085138,111.273868) hand_xy=(200.000000,158.000000) joint_error=0.000000000 grip_error=0.000000000"
+      ],
+      "captures": [
+        {
+          "tier": 1,
+          "file": "after_t1.png",
+          "dimensions": [
+            1920,
+            1080
+          ],
+          "sha256": "11f7ce7af795db845ade6fa77e8e2a9b17cea31cb003320d40a7b10f2bbc885d"
+        },
+        {
+          "tier": 2,
+          "file": "after_t2.png",
+          "dimensions": [
+            1920,
+            1080
+          ],
+          "sha256": "7a11283f5783753deed7eb81add1c9657b49c5ba395600d68892c98b578bb85a"
+        },
+        {
+          "tier": 3,
+          "file": "after_t3.png",
+          "dimensions": [
+            1920,
+            1080
+          ],
+          "sha256": "c777700fcae7cfdf30ee941d092aab026c93741ba2efa7d006dea59cd5b63eac"
+        }
+      ],
+      "package_sha256": "5888f80d90928498709ca4be458f1808052e5d2e4a46d7eb2af137df71909306",
+      "flail_source_sha256": "ee2e3a2f27493579af7879d041abee38364d27407d8ea2ad662a62e806006ed5"
+    }
+  },
+  "scope": {
+    "runtime_change": "shared handle offset and required diagnostic release labels only",
+    "source_artwork_generators_saves_combat": "unchanged",
+    "native_package_qualification": "After capture package predates the two required diagnostic string updates from 4.36.2 to 4.36.3; its flail source is byte-identical to delivery. Final normal build is verified separately.",
+    "initial_baseline": "An initial HUD-enabled run also passed; captures repeated with HUD suppressed because it obscured the chain.",
+    "author_acceptance": "PENDING: CA-4360I-VISUAL-01; original 4.36.0i provenance retained",
+    "limitations": "Native callback automation and inspected captures do not substitute for final author aesthetic approval, physical binding/normal inventory-route checks, other renderers or a complete campaign playthrough."
+  },
+  "delivery_checks": {
+    "validate_project.py": {
+      "exit_code": 0,
+      "version": "4.36.3",
+      "documents": 10,
+      "errors": []
+    },
+    "build_dev.ps1": {
+      "exit_code": 0,
+      "packaged_files": 5321,
+      "package_sha256": "eccd8d0ec7e015d810ae52f458f71605a863dafdddca223949a99c348761a6f4"
+    },
+    "tested_vs_delivery_package": {
+      "changed_entries": [
+        "caelum/world/CaelumPhysicalHazards.zs",
+        "caelum/world/CaelumSewerMaze.zs"
+      ],
+      "only_difference": "4.36.2 -> 4.36.3 diagnostic release strings; every other packaged entry byte-identical"
+    },
+    "git_diff_check": "passed",
+    "focused_independent_review": "no actionable findings in code/docs and inspected native logs; same inherited model configuration; reviewer did not edit files or run tests"
+  }
+}

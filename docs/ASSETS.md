@@ -1,6 +1,24 @@
 # Caelum Argenteum — Audio and art
 
-Documentation version: **4.36.2** — 2026-09-23.
+Documentation version: **4.36.3** — 2026-09-23.
+
+## 4.36.3 — Additional flail-handle rotation
+
+Issue #9 changes the shared native first-person handle offset from -39.5 to
+-29.5 degrees: another 10 degrees counterclockwise, verified in GZDoom g4.14.2
+on Windows 11 for T1–T3. `FLAIL_HANDLE_ANGLE` in `CaelumFirstPersonLayers.zs`
+is the single current offset. The grip (235,158), joint (213,61), half-shaft
+insertion, handle/chain/hand layers 50/46/52, scales and palette are unchanged.
+The joint follows the handle transform; the chain retains its own vertical
+rest orientation and 360-degree counterclockwise attack revolution.
+
+No artwork, native crop declaration or generator output needs regeneration.
+The -39.5-degree manifest in `assets/first_person_v7/COMPOSITION.json`, its
+`generate_fp_native_0i.py` provenance output and the original native captures
+describe 4.36.0i and remain historical evidence, not the current handle offset.
+Current native comparisons and conditions are in
+`assets/validation_4363/RESULTS.json`; HISTORY records verification separately
+from pending author acceptance CA-4360I-VISUAL-01.
 
 ## 4.36.2 — Deterministic bow crop caches
 
@@ -57,7 +75,7 @@ counterclockwise flail rotation from this pose (#9, planned 4.36.3).
 CA-4360I-VISUAL-01 remains partial for that flail correction. The separate
 empty-bow equip stall (#8) is a runtime defect, not a rejection of the
 accepted bow art; its 4.36.2 correction and evidence are described above.
-The flail correction remains pending in #9.
+The correction is implemented in 4.36.3 above; final author approval remains pending.
 
 MAP02.wad is generated with generate_map02_maze.py, only Python standard library.
 MAP02_MANIFEST.json describes geometry, keys, traps, enemies and all the loot. It reuses
