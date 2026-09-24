@@ -6,15 +6,17 @@ Documentation version: **4.36.7** — 2026-09-24.
 
 `assets/generators/generate_prisoner_sprites.py` deterministically reuses every
 accepted mansion actor pose (idle, chase, combat and rest) for Caella, Ronnie,
-Rulo and Argento. It writes the four muted faction palettes to
+Rulo and Argento. It recolours only the assigned hair/fur/cloak/cloth
+materials and writes the four muted per-faction ramps to
 `src/sprites/caelum/prisoners/{unitario,federal,bestia,tarot}/` and appends one
 guarded `CAELUM_PRISONERS_V2` block to `src/TEXTURES`. No source artwork is
-changed; every output preserves source alpha and shading while replacing RGB
-through the chosen ramp.
+changed; every output preserves source alpha and shading while skin, metallic
+accessories and explicitly kept cloth retain their RGB and only the assigned
+materials map through the per-material ramps
 
 The palette mapping and representative before/after sheet are in
 `assets/validation_4367/` (`PALETTE_MAP.json`, `RESULTS.json`,
-`before_after.png`). Original Caella/Ronnie/Rulo/Argento sprite and TEXTURES
+`before_after.png`); `PALETTE_MAP.json` records each faction's `material_policy` and `primary`/`secondary` ramps. Original Caella/Ronnie/Rulo/Argento sprite and TEXTURES
 definitions remain untouched. Native GZDoom before/after views and the author
 visual check remain separate.
 

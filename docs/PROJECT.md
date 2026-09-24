@@ -6,8 +6,9 @@ Documentation version: **4.36.7** — 2026-09-24.
 
 MAP02 places one inert, friendly, invulnerable prisoner in each of its four
 reserved endpoint cells. The appearances reuse the accepted mansion actor
-sprites and combat profiles, recolored deterministically with muted per-faction
-ramps; no new character model or replacement illustration is created.
+sprites and combat profiles, recolored deterministically per material
+(hair/fur/cloak/cloth) with muted per-faction ramps; skin and metallic
+accessories keep the accepted RGB, and no new character model or replacement illustration is created.
 
 | Visual/profile source | Gameplay faction | Provisional display name | Recolor |
 | --- | --- | --- | --- |
@@ -21,7 +22,9 @@ depend on the provisional display names. Appearance reuse does not inherit
 mansion anchoring, prologue quest identity, trade inventory, faction assignment
 or story-protection behavior. The cells keep their stable lock/route geometry;
 rescue, escort, combat and rewards remain #14. Original mansion NPCs are
-unchanged. The author visual check CA-4367-PRISONER-ART-01 remains pending.
+unchanged. While inert, each prisoner keeps the accepted A/B idle breathing
+poses and never enters the walking/chase animation. The author visual check
+CA-4367-PRISONER-ART-01 remains pending.
 
 ## 4.36.6 — Hostile sewer rats (issue #12)
 

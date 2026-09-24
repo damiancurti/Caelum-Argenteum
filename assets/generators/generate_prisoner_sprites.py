@@ -3,10 +3,12 @@
 
 Reuses every accepted mansion actor pose (idle, chase, combat and rest) for
 Caella, Ronnie, Rulo and Argento and produces four distinguishable prisoner
-appearances using a muted, per-faction luminance ramp. No new character model or
-replacement illustration is created: every output pixel keeps the source alpha
-and only the RGB value is mapped through the chosen faction palette, so the
-silhouette, poses and shading detail of the accepted art are preserved.
+appearances by recolouring only the materials assigned per faction (hair/fur,
+cloak or cloth) through muted luminance ramps. No new character model or
+replacement illustration is created: every output pixel keeps the source alpha,
+unassigned materials such as skin and metallic accessories keep their accepted
+RGB value, and assigned materials preserve the source silhouette, poses and
+shading detail.
 
 Outputs are byte-for-byte deterministic for the same committed source files and
 palette data. The script also appends the matching Sprite block to src/TEXTURES
@@ -14,6 +16,7 @@ exactly once (guarded by a marker comment, replacing an older prisoner block)
 and writes review evidence under assets/validation_4367/.
 """
 from pathlib import Path
+import colorsys
 import json
 import shutil
 
@@ -45,10 +48,11 @@ OUTPUT_PREFIXES = {
     "tarot": {"idle": "PTAR", "chase": "PTRN", "combat": "PTEL", "rest": "PTER"},
 }
 
-# Faction ramp data. Each stop is (luminance 0..1, (R, G, B)). Luminance uses the
-# Rec. 601 luma weights so the accepted shading is preserved while the hue is
-# replaced by the muted faction palette. Values below are the chosen palette
-# mapping shown to the author; they are data, not gameplay constants.
+# Faction material palettes. Each stop is (luminance 0..1, (R, G, B)). Luminance
+# uses the Rec. 601 luma weights so accepted shading is preserved while the hue
+# is replaced only on the recoloured materials. Skin, metallic accessories and
+# explicitly kept cloth are left untouched. Values are author-facing data, not
+# gameplay constants.
 PRISONERS = [
     {
         "faction": "unitario",
@@ -56,8 +60,9 @@ PRISONERS = [
         "source_char": "caella",
         "source_prefix": "CAID",
         "sprite_prefix": "PUNI",
-        "palette": {
-            "name": "muted celeste (light blue)",
+        "material_policy": "Recolour black hair and navy cloak to muted celeste; keep olive skin, cream sleeves/skirt and brown leather.",
+        "primary": {
+            "name": "muted celeste",
             "stops": [
                 (0.00, (10, 12, 18)),
                 (0.30, (40, 78, 104)),
@@ -65,6 +70,7 @@ PRISONERS = [
                 (1.00, (200, 226, 236)),
             ],
         },
+        "secondary": None,
     },
     {
         "faction": "federal",
@@ -72,8 +78,9 @@ PRISONERS = [
         "source_char": "ronnie",
         "source_prefix": "ROID",
         "sprite_prefix": "PFED",
-        "palette": {
-            "name": "muted punzo crimson",
+        "material_policy": "Recolour silver-white hair and navy coat to muted punzo red; keep lavender skin, cream sleeves and brown leather.",
+        "primary": {
+            "name": "muted punzo red",
             "stops": [
                 (0.00, (18, 9, 9)),
                 (0.30, (96, 24, 26)),
@@ -81,6 +88,7 @@ PRISONERS = [
                 (1.00, (224, 104, 102)),
             ],
         },
+        "secondary": None,
     },
     {
         "faction": "bestia",
@@ -88,13 +96,24 @@ PRISONERS = [
         "source_char": "rulo",
         "source_prefix": "RUID",
         "sprite_prefix": "PBES",
-        "palette": {
-            "name": "muted black/brown/green",
+        "material_policy": "Recolour shaggy fur toward black and brown, olive waist cloth toward green; keep iron armor and the dark red front panel.",
+        "primary": {
+            "name": "muted black/brown fur",
             "stops": [
                 (0.00, (8, 8, 6)),
-                (0.30, (56, 42, 26)),
-                (0.62, (72, 94, 50)),
-                (1.00, (128, 146, 88)),
+                (0.25, (34, 26, 18)),
+                (0.55, (78, 54, 30)),
+                (0.80, (124, 88, 52)),
+                (1.00, (168, 126, 82)),
+            ],
+        },
+        "secondary": {
+            "name": "muted green cloth",
+            "stops": [
+                (0.00, (10, 12, 8)),
+                (0.35, (40, 58, 28)),
+                (0.70, (70, 94, 50)),
+                (1.00, (112, 142, 84)),
             ],
         },
     },
@@ -104,13 +123,24 @@ PRISONERS = [
         "source_char": "argento",
         "source_prefix": "ARID",
         "sprite_prefix": "PTAR",
-        "palette": {
-            "name": "muted gold/silver over black",
+        "material_policy": "Recolour navy coat toward black with silver highlights and gray hair toward silver; keep gold motifs, cream tabard and brown leather.",
+        "primary": {
+            "name": "black coat with silver highlights",
             "stops": [
-                (0.00, (10, 10, 10)),
-                (0.30, (92, 70, 24)),
-                (0.62, (188, 150, 60)),
-                (1.00, (214, 218, 222)),
+                (0.00, (8, 8, 10)),
+                (0.30, (20, 22, 26)),
+                (0.60, (58, 64, 70)),
+                (0.85, (128, 136, 140)),
+                (1.00, (190, 198, 202)),
+            ],
+        },
+        "secondary": {
+            "name": "silver hair",
+            "stops": [
+                (0.00, (52, 54, 56)),
+                (0.40, (118, 122, 126)),
+                (0.75, (176, 180, 184)),
+                (1.00, (224, 228, 232)),
             ],
         },
     },
@@ -150,14 +180,86 @@ def build_lut(stops):
     return lut
 
 
-def recolor_image(source_path, lut):
+def classify_material(source_char, rgb):
+    """Return "keep", "primary" or "secondary" for one opaque source pixel.
+
+    The ranges are intentionally conservative: only the main hair/fur/cloth
+    surfaces are recoloured, while skin, cream/leather accessories and metallic
+    details retain the accepted mansion artwork. Antialiased edge pixels that do
+    not match a range are kept, preserving the source silhouette.
+    """
+    h, s, v = colorsys.rgb_to_hsv(*(channel / 255.0 for channel in rgb))
+    hue = h * 360.0
+
+    if source_char == "caella":
+        if 15.0 <= hue <= 75.0 and 0.12 <= s <= 0.75 and v >= 0.40:
+            return "keep"
+        if 5.0 <= hue <= 55.0 and s >= 0.35 and 0.12 <= v <= 0.65:
+            return "keep"
+        if 190.0 <= hue <= 280.0 and s >= 0.18 and v < 0.85:
+            return "primary"
+        if v < 0.24:
+            return "primary"
+        return "keep"
+
+    if source_char == "ronnie":
+        if 220.0 <= hue <= 330.0 and v >= 0.45 and s <= 0.70:
+            return "keep"
+        if 15.0 <= hue <= 70.0 and s <= 0.55 and v >= 0.55:
+            return "keep"
+        if 5.0 <= hue <= 55.0 and s >= 0.30 and v < 0.65:
+            return "keep"
+        if s < 0.18 and v >= 0.70:
+            return "primary"
+        if 195.0 <= hue <= 280.0 and v < 0.45:
+            return "primary"
+        return "keep"
+
+    if source_char == "rulo":
+        if s < 0.18 and 0.30 <= v <= 0.80:
+            return "keep"
+        if (hue < 18.0 or hue >= 345.0) and s >= 0.45 and v < 0.55:
+            return "keep"
+        if 55.0 <= hue <= 120.0 and s >= 0.18 and v < 0.80:
+            return "secondary"
+        if 5.0 <= hue <= 55.0 and s >= 0.20:
+            return "primary"
+        return "keep"
+
+    if source_char == "argento":
+        if 35.0 <= hue <= 75.0 and s >= 0.45 and v >= 0.40:
+            return "keep"
+        if 15.0 <= hue <= 75.0 and s <= 0.45 and v >= 0.55:
+            return "keep"
+        if 5.0 <= hue <= 55.0 and s >= 0.28 and v < 0.62:
+            return "keep"
+        if 5.0 <= hue <= 50.0 and 0.25 <= s <= 0.70 and 0.35 <= v <= 0.75:
+            return "keep"
+        if s < 0.20 and v >= 0.50:
+            return "secondary"
+        if 195.0 <= hue <= 280.0 and v < 0.45:
+            return "primary"
+        return "keep"
+
+    return "keep"
+
+
+def recolor_image(source_path, prisoner):
     image = Image.open(source_path).convert("RGBA")
+    primary_lut = build_lut(prisoner["primary"]["stops"])
+    secondary = prisoner.get("secondary")
+    secondary_lut = build_lut(secondary["stops"]) if secondary else primary_lut
     pixels = list(image.getdata())
     recolored = []
     for r, g, b, a in pixels:
         if a == 0:
             recolored.append((0, 0, 0, 0))
             continue
+        material = classify_material(prisoner["source_char"], (r, g, b))
+        if material == "keep":
+            recolored.append((r, g, b, a))
+            continue
+        lut = primary_lut if material == "primary" else secondary_lut
         index = max(0, min(255, int(round(_luma((r, g, b))))))
         color = lut[index]
         recolored.append((color[0], color[1], color[2], a))
@@ -236,7 +338,9 @@ def write_evidence(generated_by_faction):
                 "source_prefix": prisoner["source_prefix"],
                 "sprite_prefix": prisoner["sprite_prefix"],
                 "prefix_map": OUTPUT_PREFIXES[prisoner["faction"]],
-                "palette": prisoner["palette"],
+                "material_policy": prisoner["material_policy"],
+                "primary": prisoner["primary"],
+                "secondary": prisoner.get("secondary"),
                 "frames_generated": len(generated_by_faction[prisoner["faction"]]),
             }
         )
@@ -303,13 +407,12 @@ def main():
         output_dir = SPRITE_ROOT / "prisoners" / prisoner["faction"]
         shutil.rmtree(output_dir, ignore_errors=True)
         output_dir.mkdir(parents=True, exist_ok=True)
-        lut = build_lut(prisoner["palette"]["stops"])
         names = []
         for role, source_prefix, source_filename in collect_source_files(prisoner):
             sprite_name = output_name(prisoner, role, source_prefix, source_filename)
             recolored = recolor_image(
                 source_path_for(prisoner, role, source_filename),
-                lut,
+                prisoner,
             )
             recolored.save(output_dir / f"{sprite_name}.png")
             names.append(sprite_name)

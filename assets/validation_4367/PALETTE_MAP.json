@@ -11,8 +11,9 @@
       "combat": "PUNL",
       "rest": "PUNR"
     },
-    "palette": {
-      "name": "muted celeste (light blue)",
+    "material_policy": "Recolour black hair and navy cloak to muted celeste; keep olive skin, cream sleeves/skirt and brown leather.",
+    "primary": {
+      "name": "muted celeste",
       "stops": [
         [
           0.0,
@@ -48,6 +49,7 @@
         ]
       ]
     },
+    "secondary": null,
     "frames_generated": 158
   },
   {
@@ -62,8 +64,9 @@
       "combat": "PFEL",
       "rest": "PFER"
     },
-    "palette": {
-      "name": "muted punzo crimson",
+    "material_policy": "Recolour silver-white hair and navy coat to muted punzo red; keep lavender skin, cream sleeves and brown leather.",
+    "primary": {
+      "name": "muted punzo red",
       "stops": [
         [
           0.0,
@@ -99,6 +102,7 @@
         ]
       ]
     },
+    "secondary": null,
     "frames_generated": 158
   },
   {
@@ -113,8 +117,9 @@
       "combat": "PBEL",
       "rest": "PBER"
     },
-    "palette": {
-      "name": "muted black/brown/green",
+    "material_policy": "Recolour shaggy fur toward black and brown, olive waist cloth toward green; keep iron armor and the dark red front panel.",
+    "primary": {
+      "name": "muted black/brown fur",
       "stops": [
         [
           0.0,
@@ -125,17 +130,62 @@
           ]
         ],
         [
-          0.3,
+          0.25,
           [
-            56,
-            42,
-            26
+            34,
+            26,
+            18
           ]
         ],
         [
-          0.62,
+          0.55,
           [
-            72,
+            78,
+            54,
+            30
+          ]
+        ],
+        [
+          0.8,
+          [
+            124,
+            88,
+            52
+          ]
+        ],
+        [
+          1.0,
+          [
+            168,
+            126,
+            82
+          ]
+        ]
+      ]
+    },
+    "secondary": {
+      "name": "muted green cloth",
+      "stops": [
+        [
+          0.0,
+          [
+            10,
+            12,
+            8
+          ]
+        ],
+        [
+          0.35,
+          [
+            40,
+            58,
+            28
+          ]
+        ],
+        [
+          0.7,
+          [
+            70,
             94,
             50
           ]
@@ -143,9 +193,9 @@
         [
           1.0,
           [
-            128,
-            146,
-            88
+            112,
+            142,
+            84
           ]
         ]
       ]
@@ -164,39 +214,85 @@
       "combat": "PTEL",
       "rest": "PTER"
     },
-    "palette": {
-      "name": "muted gold/silver over black",
+    "material_policy": "Recolour navy coat toward black with silver highlights and gray hair toward silver; keep gold motifs, cream tabard and brown leather.",
+    "primary": {
+      "name": "black coat with silver highlights",
       "stops": [
         [
           0.0,
           [
-            10,
-            10,
+            8,
+            8,
             10
           ]
         ],
         [
           0.3,
           [
-            92,
-            70,
-            24
+            20,
+            22,
+            26
           ]
         ],
         [
-          0.62,
+          0.6,
           [
-            188,
-            150,
-            60
+            58,
+            64,
+            70
+          ]
+        ],
+        [
+          0.85,
+          [
+            128,
+            136,
+            140
           ]
         ],
         [
           1.0,
           [
-            214,
-            218,
-            222
+            190,
+            198,
+            202
+          ]
+        ]
+      ]
+    },
+    "secondary": {
+      "name": "silver hair",
+      "stops": [
+        [
+          0.0,
+          [
+            52,
+            54,
+            56
+          ]
+        ],
+        [
+          0.4,
+          [
+            118,
+            122,
+            126
+          ]
+        ],
+        [
+          0.75,
+          [
+            176,
+            180,
+            184
+          ]
+        ],
+        [
+          1.0,
+          [
+            224,
+            228,
+            232
           ]
         ]
       ]

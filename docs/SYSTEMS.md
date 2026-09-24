@@ -7,8 +7,9 @@ Documentation version: **4.36.7** — 2026-09-24.
 The four reserved MAP02 cells now contain one prisoner actor each. These actors
 are visual/identity placeholders for #14: they use the source character's exact
 combat profile and recolored poses, but in the cell they are friendly,
-invulnerable, do not count as kills and do not chase or inherit mansion
-anchoring/quest behavior. Their persistent identity is the map thing/class,
+invulnerable, do not count as kills, keep the accepted A/B idle breathing
+poses without entering the walking/chase animation, and do not chase or
+inherit mansion anchoring/quest behavior. Their persistent identity is the map thing/class,
 not the provisional display name.
 
 The display names are author-authorized working names: Leonor Benítez

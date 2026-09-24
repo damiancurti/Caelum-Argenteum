@@ -7,11 +7,14 @@ Documentation version: **4.36.7** — 2026-09-24.
 Baseline: integrated 4.36.6, `63b2bce` (author acceptance of #12). MAP02 now
 places one inert, friendly, invulnerable prisoner in each reserved endpoint
 cell. The four appearances reuse the accepted mansion actor sprites and combat
-profiles, recolored deterministically with muted faction ramps: Caella ->
+profiles, recolored deterministically per material (hair/fur/cloak/cloth) with
+muted faction ramps while skin and metallic accessories keep their RGB: Caella ->
 Leonor Benítez (Unitarians, celeste), Ronnie -> Rufino Acosta (Federals,
 punzó), Rulo -> Santos Barrera (Wild Beast Men, black/brown/green) and Argento
 -> Leandro Farías (Cult of the Tarot, gold/silver over black). No new model or
-replacement illustration is added; original mansion NPCs are unchanged.
+replacement illustration is added; original mansion NPCs are unchanged. The
+inert idle keeps the accepted A/B breathing poses and never enters the
+walking/chase animation.
 
 The maintained generator `assets/generators/generate_prisoner_sprites.py`
 writes 632 recolored PNGs and the guarded `CAELUM_PRISONERS_V2` block in

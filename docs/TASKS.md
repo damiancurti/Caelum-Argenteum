@@ -6,7 +6,8 @@ Documentation version: **4.36.7** — 2026-09-24.
 
 - **Issue:** https://github.com/damiancurti/Caelum-Argenteum/issues/13
 - **Scope:** add four distinct prisoner appearances that reuse Caella, Ronnie,
-  Rulo and Argento with deterministic muted palettes; place one inert variant
+  Rulo and Argento with deterministic per-material muted palettes (hair/fur/cloak/cloth
+  changed, skin and accessories kept); place one inert variant
   in each reserved MAP02 endpoint cell; keep the source combat profile and the
   original mansion NPCs unchanged.
 - **Author contract:** provisional display names Leonor Benítez (Unitarians),

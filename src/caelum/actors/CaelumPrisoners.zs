@@ -20,7 +20,7 @@ class CaelumPrisonerUnitario : CaelumCaella
     States
     {
     Spawn:
-        PUNI A 10 A_CaelumResidentLook;
+        PUNI A 10;
         Goto IdleBreathing;
     See:
         TNT1 A 0 A_JumpIf(CombatLucidityPhysicalStunRemaining > 0.0, "LucidityStun");
@@ -66,8 +66,8 @@ class CaelumPrisonerUnitario : CaelumCaella
         Loop;
 
     IdleBreathing:
-        PUNI AAA 10 A_CaelumResidentLook;
-        PUNI BBBB 10 A_CaelumResidentLook;
+        PUNI AAA 10;
+        PUNI BBBB 10;
         Goto Spawn;
     Run:
         Goto See;
@@ -93,7 +93,7 @@ class CaelumPrisonerFederal : CaelumRonnie
     States
     {
     Spawn:
-        PFED A 10 A_CaelumResidentLook;
+        PFED A 10;
         Goto IdleBreathing;
     See:
         TNT1 A 0 A_JumpIf(CombatLucidityPhysicalStunRemaining > 0.0, "LucidityStun");
@@ -139,8 +139,8 @@ class CaelumPrisonerFederal : CaelumRonnie
         Loop;
 
     IdleBreathing:
-        PFED AAA 10 A_CaelumResidentLook;
-        PFED BBBB 10 A_CaelumResidentLook;
+        PFED AAA 10;
+        PFED BBBB 10;
         Goto Spawn;
     Run:
         Goto See;
@@ -166,7 +166,7 @@ class CaelumPrisonerBestia : CaelumRulo
     States
     {
     Spawn:
-        PBES A 10 A_CaelumResidentLook;
+        PBES A 10;
         Goto IdleBreathing;
     See:
         TNT1 A 0 A_JumpIf(CombatLucidityPhysicalStunRemaining > 0.0, "LucidityStun");
@@ -212,8 +212,8 @@ class CaelumPrisonerBestia : CaelumRulo
         Loop;
 
     IdleBreathing:
-        PBES AAA 10 A_CaelumResidentLook;
-        PBES BBBB 10 A_CaelumResidentLook;
+        PBES AAA 10;
+        PBES BBBB 10;
         Goto Spawn;
     Run:
         Goto See;
@@ -239,7 +239,7 @@ class CaelumPrisonerTarot : CaelumArgento
     States
     {
     Spawn:
-        PTAR A 10 A_CaelumResidentLook;
+        PTAR A 10;
         Goto IdleBreathing;
     See:
         TNT1 A 0 A_JumpIf(CombatLucidityPhysicalStunRemaining > 0.0, "LucidityStun");
@@ -285,8 +285,8 @@ class CaelumPrisonerTarot : CaelumArgento
         Loop;
 
     IdleBreathing:
-        PTAR AAA 10 A_CaelumResidentLook;
-        PTAR BBBB 10 A_CaelumResidentLook;
+        PTAR AAA 10;
+        PTAR BBBB 10;
         Goto Spawn;
     Run:
         Goto See;
