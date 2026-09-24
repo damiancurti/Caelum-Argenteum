@@ -1,6 +1,21 @@
 # Caelum Argenteum — Audio and art
 
-Documentation version: **4.36.1b** — 2026-09-23.
+Documentation version: **4.36.2** — 2026-09-23.
+
+## 4.36.2 — Deterministic bow crop caches
+
+Issue #8 derives six 512 x 1024 RGBA caches in
+`src/graphics/caelum/first_person/bow_cache/` from the existing original
+`v3/standard_bow.png` and `v3/longbow.png`. The maintained generator is
+`assets/generators/generate_fp_native_0i.py` (Pillow required only to regenerate).
+It applies the same column clipping, alpha-derived row shifts and integer
+crops as 0i, copying alpha without multiplying it. Source artwork is unchanged;
+the caches inherit its provenance and attribution. TEXTURES retains native
+desaturation and tint, all sprite names, scales and offsets. Flail output and
+other resources are unchanged. The generator is not needed at runtime.
+
+Native before/after evidence is in HISTORY and `assets/validation_4362/`.
+The original 0i captures and composition manifest remain historical evidence.
 
 ## 4.36.1 — Documentation and provenance
 
@@ -40,8 +55,9 @@ aesthetic acceptance corresponds to the author. On 2026-09-23 the author
 accepted the bow appearance and requested approximately 10 degrees more
 counterclockwise flail rotation from this pose (#9, planned 4.36.3).
 CA-4360I-VISUAL-01 remains partial for that flail correction. The separate
-empty-bow equip stall (#8, planned 4.36.2) is a runtime report, not a rejection
-of the accepted bow art. These corrections are not yet implemented.
+empty-bow equip stall (#8) is a runtime defect, not a rejection of the
+accepted bow art; its 4.36.2 correction and evidence are described above.
+The flail correction remains pending in #9.
 
 MAP02.wad is generated with generate_map02_maze.py, only Python standard library.
 MAP02_MANIFEST.json describes geometry, keys, traps, enemies and all the loot. It reuses

@@ -1,0 +1,16 @@
+{
+  "deterministic_regeneration": true,
+  "unchanged_non_bow_texture_definitions": true,
+  "unchanged_18_bow_sprite_definitions": true,
+  "unchanged_gameplay_and_save_schema": true,
+  "sha256": {
+    "src\\TEXTURES": "b7f9cb46f5ccf13bbd553ed7af6831d05d11ff4e69e6299ac79e9f3ccb35111e",
+    "assets\\first_person_v7\\COMPOSITION.json": "cb8abebb83db08d8b263e2fec11dcffcd40adb10a0f73ee9ec1bcd8140508f76",
+    "src\\graphics\\caelum\\first_person\\bow_cache\\longbow_t1.png": "5aa28f3b410999e6307ad472f548a38cc1642f04435ab239e30f400509c5d7cd",
+    "src\\graphics\\caelum\\first_person\\bow_cache\\longbow_t2.png": "78bd0d15812e1d251df6787cc68306a204aaf67cd14c6e915db7b20066dbefbf",
+    "src\\graphics\\caelum\\first_person\\bow_cache\\longbow_t3.png": "71d23d93257049ebbfac4ab71042f9d883f90a0e457395c59034c81a0e735d35",
+    "src\\graphics\\caelum\\first_person\\bow_cache\\standard_bow_t1.png": "4368de2f81d1b6e2738bdbcf3ceb6773d0e4d642ee628ad0670274aaa9317b49",
+    "src\\graphics\\caelum\\first_person\\bow_cache\\standard_bow_t2.png": "77748a56334f14d874631972c1c0b75f991dd940718706cfa658db9fbb67c7fe",
+    "src\\graphics\\caelum\\first_person\\bow_cache\\standard_bow_t3.png": "3a8e5563dd94a5a253fea21743cf1e1d5fef37204adfadf5d87898e56337cf2b"
+  }
+}

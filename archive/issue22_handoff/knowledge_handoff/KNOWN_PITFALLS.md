@@ -1,6 +1,6 @@
 # Known pitfalls and verified lessons — Caelum Argenteum
 
-Status: integrated engineering register (issue #22, patch 4.36.1b).
+Status: author-requested handoff draft; formal repository integration pending.
 Prepared: 2026-09-23. Inherits the project's release after integration.
 Inspected baseline: `1dc390576fa330d37ff543526fc7e69a397fc28f` (PR #7).
 
@@ -16,22 +16,21 @@ Evidence labels:
 - HYPOTHESIS: an unconfirmed explanation, explicitly not a verified lesson.
 - SUPERSEDED: retained reference to advice no longer applicable.
 
-CA-KP-003 records the focused 4.36.2 native runtime verification. CA-KP-001
-is a resolved tooling contract. Author acceptance remains explicitly separate.
+None of the open defects below is labelled RESOLVED-VERIFIED. This handoff performed source inspection, not a new engine run.
 
 ## CA-KP-001 — Adding a guide to docs breaks the current exact-file check
 
-Status/evidence: RESOLVED-VERIFIED tooling contract (issue #22, patch 4.36.1b).
+Status/evidence: CODE-VERIFIED. Scope: baseline validate_project.py, validate(), CANONICAL/WORKING/DOCUMENTS.
 
-Observation: the validator used to require exactly the five canonical plus two working documents under docs/ and current-version headers in those registered documents. Copying these two guides into docs/ therefore failed that exact-set check.
+Observation: the validator recursively enumerates every file in docs/ and requires equality with exactly five canonical plus two working documents. It also requires current-version headers in those registered documents. Simply copying these two guides into docs/ therefore fails that check.
 
 Cause: an explicit exact-set validation contract, not invalid Markdown.
 
-Resolution: issue #22 registers `GZDOOM_DEVELOPMENT.md`, `KNOWN_PITFALLS.md` and the generated `DOCUMENT_INDEX.md` as the explicit allowed docs set. The seven canonical/working documents and AGENTS remain subject to current-version checks; the ancillary guides inherit README's release. The unexpected-doc-file check stays active against the extended allowed set, and the guides' existence, UTF-8 readability and repository-relative links are validated.
+Action for the future integration issue: deliberately register both ancillary guides and decide their header policy; preserve validation of the existing seven versioned documents. Update AGENTS/CONTEXT navigation and the guide's links together. Do not disable the exact-set, version, localization or resource checks wholesale to obtain a green result.
 
-Verification: before the patch, a disposable copy with the two guides failed the exact-set check; after the patch, `python validate_project.py` exits 0 with ten docs and an empty error list. Disposable negative cases still fail for a missing guide, a broken guide link, an unexpected docs file and a version mismatch.
+Verification to add: clean integrated tree passes; missing required guide and broken guide link fail; an unrelated unexpected docs file still follows the explicitly selected policy; existing version mismatch still fails. Test negative cases in disposable copies.
 
-Author acceptance: recorded separately for the 4.36.1b documentation patch; this entry describes the tooling fix, not a runtime defect.
+Until integration: keep the supplied knowledge_handoff folder outside docs/ and src/. Formal fix: not implemented by this delivery.
 
 ## CA-KP-002 — Default equipment size is not the character's raw body tier
 
@@ -43,33 +42,18 @@ Prevention: reuse the helper for the actual recipient and inspect fit, weight an
 
 Verification: representative small, medium and large characters, actual recipient, capacity failure/retry, save/load and drop/re-pick. Record values through the actual APIs rather than a manually duplicated mapping.
 
-## CA-KP-003 — Nested bow crop composition stalls on first presentation
+## CA-KP-003 — An empty bow equip can stall; root cause remains unconfirmed
 
-Status/evidence: RESOLVED-VERIFIED in 4.36.2 (#8); author acceptance pending
-CA-4362-BOW-EMPTY-01. Baseline: merged main `3b75054`.
+Status/evidence: AUTHOR-REPORTED; investigation open in issue #8.
 Source: https://github.com/damiancurti/Caelum-Argenteum/issues/8
 
-Native GZDoom g4.14.2 / Windows 11 / Vulkan / RTX 3070 Ti / development Doom II
-reproduced a 10,442.647 ms inter-tick gap on first empty standard-bow presentation
-and 5,210.706 ms when its loaded pose was first shown. Repeated equips were
-responsive; the equip callback itself returned in 0.055 ms. The original
-author's exact bow/tier remains unknown.
+Symptom: the author reported a multi-second freeze equipping a bow without arrows; it worked when an arrow was available. Exact bow variant, timing and repeatability were not established by this handoff.
 
-Cause: TEXTURES nested 167–173 row crops per tier through a full recolored
-sheet. This is first-use resource work, not evidence of an infinite state loop.
-The generator now writes six deterministic crop-only RGBA caches, retaining
-native palette operations and the existing sprite declarations. No gameplay,
-state table, save schema or original art changes. Do not reintroduce the nested
-crop graph or hide the cost by delaying it to another gameplay action.
+Candidate inspection points: CaelumFirstPersonView.zs, CaelumFirstPersonLayers.zs/BowPresentation, CaelumPlayableWeapons.zs and player equip/ammunition handling. These paths are not a diagnosis.
 
-Evidence: [4.36.2 native results](../assets/validation_4362/RESULTS.json), adjacent
-filtered logs and six native original/optimized captures; zero differing RGB
-pixels on black, independently verified original crop/alpha equivalence, and
-byte-identical repeated generation. HISTORY gives the cause/fix and scope.
-Regression: cold and repeated empty/loaded equips for both bows, real one-arrow
-reload/fire, arrow overlay visibility, aim and switch-away/back. Callback
-automation does not replace physical-binding/normal-route author acceptance
-or establish results on untested renderers.
+Do not record an infinite loop, texture loading or an ammunition bug as the cause without evidence. Compare fresh-engine and repeated equips, no magazine/reserve ammunition, an ammunition-present control and return to empty after firing. Check normal bow and longbow, relevant controls and timings.
+
+Resolution field: pending. Promote only after a cause-based fix and retained before/after engine evidence; author Windows acceptance remains separate.
 
 ## CA-KP-004 — Flail rotation must be judged around the rendered grip
 
@@ -100,7 +84,7 @@ At the inspected PR #7 commit, its reward clarification still describes size-M p
 
 Prevention: compare the exact commit and dirty-tree status, distinguish author-approved design from shipped implementation, and reconcile the current canonical sections during formal integration. Do not silently revert a later author decision because an older document says otherwise.
 
-Acceptance: issue #22 reconciles SYSTEMS, PROJECT, CONTEXT and TASKS to the confirmed T1/recipient-size rule; historical fixed-M discussions remain historical.
+Acceptance: issues and canonical current rules agree; historical fixed-M discussions remain historical. This delivery records the discrepancy but does not edit the repository or claim it has been resolved there.
 
 ## Rules for adding and updating entries
 

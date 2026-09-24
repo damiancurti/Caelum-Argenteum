@@ -15,3 +15,25 @@ its 4.36.0i/4.36.1 pose, retaining its insertion into the glove. Chain/ball rema
 behind the handle, hang vertically at rest, make a full counterclockwise attack
 revolution and return to rest. Report final visual acceptance or objections
 under this stable ID; do not repeat accepted bow-art or unrelated gameplay tests.
+
+ID: CA-4362-BOW-EMPTY-01
+Originating patch: 4.36.2
+Issue: #8 (https://github.com/damiancurti/Caelum-Argenteum/issues/8).
+Test: Accept responsive empty-bow equips and unchanged presentation/ammunition.
+Prerequisites: Windows 11/GZDoom 4.14.2; rebuilt 4.36.2; disposable save with
+a standard bow and longbow. Keep the author's real saves untouched.
+Steps:
+1. Quit/relaunch the engine. Equip a standard bow with magazine and reserve
+   empty; note any pause. Repeat equip and switch away/back. Try Fire, Aim
+   (Zoom and AltFire) and Reload while empty. Repeat in a fresh engine for longbow.
+2. Obtain one arrow through normal inventory/pickup, reload, aim and fire it.
+   Verify one arrow consumed, return to empty and switch away/back again.
+3. In separate fresh sessions compare an ammunition-present/loaded control
+   for each family; check tiers 1-3 and record bow/tier, renderer, first-use
+   versus repeated timings and any remaining delay.
+4. Compare accepted thickness, palette, grip, string, arrow ordering and
+   empty/loaded/aim poses. Empty bows must show no arrow.
+Expected: No multi-second stall; controls remain responsive; load/fire consumes
+exactly one arrow with the existing reload timing and unchanged appearance.
+Report pass or the failing step/environment under this ID. Automated native
+checks do not replace this explicit author acceptance.

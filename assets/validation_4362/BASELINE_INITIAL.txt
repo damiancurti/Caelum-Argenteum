@@ -1,0 +1,12 @@
+GZDoom version g4.14.2
+Vulkan device: NVIDIA GeForce RTX 3070 Ti
+Vulkan version: 1.4.303 (api) 576.352.0 (driver)
+PROBE pickup=1 item=1
+PROBE gap tic=52 ms=10442.647
+PROBE equip empty start
+PROBE equip return ok=1 ms=0.055
+PROBE holster
+PROBE repeat equip
+PROBE reload
+PROBE gap tic=383 ms=5210.706
+PROBE done magazine=1
