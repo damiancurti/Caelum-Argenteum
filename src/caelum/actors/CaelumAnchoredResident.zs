@@ -167,7 +167,15 @@ class CaelumAnchoredResident : CaelumCombatActor abstract
         Actor marker = ActorIterator.Create(
             CaelumConstants.PRISONER_EXTRACTION_TID,
             "CaelumMazeLayoutMarker").Next();
-        return marker != null && Distance2D(marker)
+        if (marker != null && Distance2D(marker)
+            <= CaelumConstants.PRISONER_EXTRACTION_RADIUS)
+        {
+            return true;
+        }
+        Actor bossGate = ActorIterator.Create(
+            CaelumConstants.PRISONER_BOSS_GATE_TID,
+            "CaelumMazeBarredGate").Next();
+        return bossGate != null && Distance2D(bossGate)
             <= CaelumConstants.PRISONER_EXTRACTION_RADIUS;
     }
 
@@ -219,6 +227,26 @@ class CaelumAnchoredResident : CaelumCombatActor abstract
     {
         if (health <= 0 || EscortPrisonerPort) return;
 
+        CaelumPlayer owner = GetEscortOwnerPlayer();
+        int rescueState = owner == null
+            ? CaelumConstants.PRISONER_STATE_CAPTIVE
+            : owner.GetPrisonerRescueState(EscortPrisonerId);
+        if (rescueState != CaelumConstants.PRISONER_STATE_FOLLOWING)
+        {
+            Vel = (0,0,0);
+            Target = null;
+            bInvulnerable = true;
+            ClearStoryCombatState();
+            State spawnState = FindState("Spawn");
+            State idleState = FindState("IdleBreathing");
+            if (!InStateSequence(CurState, spawnState)
+                && !InStateSequence(CurState, idleState))
+            {
+                SetState(spawnState);
+            }
+            return;
+        }
+
         if (bInConversation)
         {
             Actor threat = FindEscortThreat();
@@ -235,7 +263,6 @@ class CaelumAnchoredResident : CaelumCombatActor abstract
             }
         }
 
-        CaelumPlayer owner = GetEscortOwnerPlayer();
         if (owner == null || owner.health <= 0)
         {
             Vel = (0,0,0);
@@ -244,17 +271,17 @@ class CaelumAnchoredResident : CaelumCombatActor abstract
             return;
         }
 
+        if (AtPrisonerExtraction())
+        {
+            MarkEscortPrisonerExtracted(owner);
+            return;
+        }
+
         if (IsNearMap02Boss())
         {
             Target = null;
             ClearStoryCombatState();
             FleeEscortBoss();
-            return;
-        }
-
-        if (AtPrisonerExtraction())
-        {
-            MarkEscortPrisonerExtracted(owner);
             return;
         }
 
@@ -547,6 +574,21 @@ class CaelumAnchoredResident : CaelumCombatActor abstract
                 leader.Pos.X - resident.Pos.X,
                 leader.Pos.Y - resident.Pos.Y
             );
+            if (resident.Target == null || resident.Target == leader
+                || resident.IsFriend(resident.Target))
+            {
+                resident.A_CaelumResidentLook();
+                if (resident.Target != null && resident.Target != leader
+                    && resident.Target.health > 0
+                    && !resident.IsFriend(resident.Target))
+                {
+                    State seeState = resident.FindState("See");
+                    if (!resident.InStateSequence(resident.CurState, seeState))
+                    {
+                        resident.SetState(seeState);
+                    }
+                }
+            }
             return;
         }
 

@@ -24,6 +24,20 @@ errors; `python validate_project.py` passes with no errors. Author acceptance is
 pending: `CA-4368-RESCUE-01` remains in the author queue until the author confirms
 the full release/follow/extraction/port-reward route.
 
+Correction, 2026-09-24: author playtesting reported four defects on the
+issue #14 route. Captive prisoners entered the follow state before release,
+freed prisoners did not acquire combat targets, extraction never fired on the
+pre-boss route (the follower fled the northern Zupay before the extraction
+check), and the Spanish prisoner strings were overridden by duplicated English
+keys. The escort tick now gates the follow/combat/extraction machine on the
+persistent FOLLOWING state so captives stay inert in their accepted idle;
+freed followers scan with their native look when near the leader and switch to
+See; extraction is evaluated before the boss stay-back and also accepts the
+pre-boss barred gate as an extraction anchor; and LANGUAGE keeps only English
+values under [enu default] and Spanish values under [es]. GZDoom 4.14.2
+compiles the updated PK3 and loads MAP02 and MAP06 without script errors, and
+validate_project.py passes with no errors. Author acceptance remains pending.
+
 ## 4.36.7 — Recolored prisoner appearances (#13)
 
 Baseline: integrated 4.36.6, `63b2bce` (author acceptance of #12). MAP02 now
