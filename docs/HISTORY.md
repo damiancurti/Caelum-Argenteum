@@ -1,6 +1,43 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **4.36.1** — 2026-09-23.
+Documentation version: **4.36.1b** — 2026-09-23.
+
+## 4.36.1b — Engineering guides and long-document index
+
+Issue [#22](https://github.com/damiancurti/Caelum-Argenteum/issues/22).
+Implementation and verification date: 2026-09-23.
+Baseline: branch `issue-6-4.36.1` merge `4fb26b2`.
+
+### Implemented scope and decisions
+
+- Integrated `knowledge_handoff/GZDOOM_DEVELOPMENT.md` and
+  `knowledge_handoff/KNOWN_PITFALLS.md` into `docs/` as maintained engineering
+  guides; both carry the current 4.36.1b status and refer readers to the
+  generated document index for long-document navigation.
+- Added `build_document_index.py`, a deterministic generator whose output is
+  `docs/DOCUMENT_INDEX.md`. It indexes every maintained document over 5,000 words
+  (ASSETS, HISTORY, MAP01, PROJECT, SYSTEMS), records per-file word counts and
+  heading anchors, and provides regeneration, listing and reading commands.
+- Extended `validate_project.py` to recognize the two new guides and the index,
+  verify guide/index metadata, hashes, link coverage and word counts, and accept
+  an optional lowercase patch letter in current version markers.
+- Updated README, AGENTS, PROJECT, CONTEXT, TASKS and the two current-version
+  ZScript diagnostic labels to 4.36.1b. The maintained docs count is now ten.
+- Reconciled the prisoner coin reward in SYSTEMS and related summaries to the
+  confirmed rule: the reference set S is T1-only and uses weapons at the rewarded
+  character's equipment size; the reward remains
+  `RoundCopperUp(2 * sum(P_i) / N)` plus one-time +10 own-faction reputation.
+
+### Executed verification
+
+- `python validate_project.py`: exit 0; version `4.36.1b`, ten documents and
+  `errors: []`.
+- `python build_document_index.py`: regenerated `docs/DOCUMENT_INDEX.md`;
+  deterministic output confirmed by a second run with an identical SHA-256.
+- `git diff --check`: no whitespace errors.
+
+This patch is documentation and tooling only. No engine run is claimed; gameplay
+and author acceptance remain separate and are not changed by this issue.
 
 ## 4.36.1 — English documentation and repository-owned acceptance workflow
 

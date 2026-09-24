@@ -1,6 +1,6 @@
 # CONTEXT.md — Ultra-condensed summary of Caelum Argenteum
 
-Documentation version: **4.36.1** — 2026-09-23.
+Documentation version: **4.36.1b** — 2026-09-23.
 
 Summary so an AI or a contributor can understand the project without reading
 the five full canonical documents. Source: `docs/PROJECT.md`,
@@ -64,9 +64,12 @@ the gauchos and rural culture, and the humans the urban porteño society.
 
 ## Current status
 
-Current release **4.36.1** implements issue #6: English documentation, numeric
-patches, repository-first delivery and the root author-test queue. Its static
-checks are recorded separately in HISTORY; no new gameplay is introduced.
+Current release **4.36.1b** implements issue #22: integrated engineering guides,
+a deterministic long-document index, validator coverage and reconciliation of
+the prisoner coin reference. It follows 4.36.1 (#6), whose English documentation,
+numeric patches, repository-first delivery and root author-test queue remain in
+force. Its static checks are recorded separately in HISTORY; no new gameplay is
+introduced.
 
 The **4.36.0i gameplay baseline** was compiled and tested on GZDoom g4.14.2
 on Linux with development Freedoom. Working: the 4.36 base (trapdoor, rocks,
@@ -101,9 +104,11 @@ its separate commanding Zupay holds the second Minor (identity pending).
 Prisoners match their source character's combat stats, follow/fight alongside
 the player and extract alive through an exit before the MAP02 boss; they do
 not fight that boss. At the port, each grants +10 reputation with its own
-faction and coins worth two average size-M weapons once. Use normal purchase
-prices from the existing economy (SYSTEMS); reference tiers (T1 or T1–T3),
-detailed siege balance/conditions and the definitive Tarot package remain pending.
+faction and coins worth twice the mean normal purchase price of T1 weapons at
+the rewarded character's equipment size once. Use normal purchase prices from
+the existing economy (SYSTEMS), restricted to T1 weapons that fit the rewarded
+character's equipment size; detailed siege balance/conditions and the definitive
+Tarot package remain pending.
 Prisoner source/faction mapping: Caella/Unitarians, Ronnie/Federals,
 Rulo/Wild Beast Men, Argento/Cult of the Tarot; do not reassign mansion NPCs.
 PROJECT contains the authoritative scope, dependency order and usage protocol.
@@ -114,12 +119,19 @@ unknown. Collect measured per-patch data rather than estimating.
 
 - `src/`: everything packaged into the PK3 (maps, ZScript, sprites, models,
   fonts, sounds, music, graphics, licenses).
-- `docs/`: the five canonical documents plus `CONTEXT.md` and `TASKS.md`.
+- `docs/`: the five canonical documents plus `CONTEXT.md` and `TASKS.md`, the
+  engineering guides `GZDOOM_DEVELOPMENT.md` and `KNOWN_PITFALLS.md`, and the
+  generated `DOCUMENT_INDEX.md`.
 - `assets/`: art/audio sources, climate, first-person views, optional
   generators, and manifests; not packaged at runtime.
 - `build/`: regenerable PK3.
 - `archive/`: backups of previous versions.
-- Root: `README.md`, `build_dev.ps1`, `run_dev.bat`, `validate_project.py`.
+- Root: `README.md`, `build_dev.ps1`, `run_dev.bat`, `validate_project.py`,
+  `build_document_index.py`.
+
+For long-document questions, search `docs/DOCUMENT_INDEX.md` first and follow
+the engineering guides before creating a new document or changing this
+repository's structure.
 
 ## Critical premises (summary of the 20)
 

@@ -1,6 +1,6 @@
 # Caelum Argenteum — Project, status and roadmap
 
-Documentation version: **4.36.1** — 2026-09-23.
+Documentation version: **4.36.1b** — 2026-09-23.
 
 ## 4.36.1 — Documentation and contribution workflow
 
@@ -18,11 +18,21 @@ only the root queue defines outstanding actionable author checks. Old test
 references do not reopen already accepted work. Implementation evidence and
 remaining acceptance are recorded in [HISTORY](HISTORY.md).
 
-Current releases use MAJOR.MINOR.PATCH: 4.36.0i -> 4.36.1 -> 4.36.2.
+Current releases use MAJOR.MINOR.PATCH: 4.36.0i -> 4.36.1 -> 4.36.1b -> 4.36.2.
 Intermediate commits and later acceptance retain the originating patch version.
 The larger roadmap remains in force. Proper names, identifiers, literal game
 dialogue, formulas and original external source material retain their spelling;
 English explanatory text does not change the bilingual game localization.
+
+## 4.36.1b — Engineering guides and long-document index
+
+Issue [#22](https://github.com/damiancurti/Caelum-Argenteum/issues/22) integrates
+the development handoff into the maintained documentation, adds a deterministic
+[document index](DOCUMENT_INDEX.md) for every maintained document over 5,000
+words, and extends the validator to keep guide/index metadata, hashes, links and
+word counts in sync. It also reconciles the prisoner coin reward in SYSTEMS to
+the confirmed T1/recipient-size rule. This is documentation and tooling only:
+no game rule, balance, asset, map geometry, localization or save schema changes.
 
 ## Author roadmap update — 2026-09-23 (planned, not implemented)
 
@@ -40,7 +50,7 @@ Tarot/Trucazo gates. Test arenas and travel stubs do not count as complete maps.
 | 4.36.5 | [#11](https://github.com/damiancurti/Caelum-Argenteum/issues/11) | Four keyed sewer sections, endpoint cells with beds, repair refuges, channels/decor and the northern locked Zupay chamber. |
 | 4.36.6 | [#12](https://github.com/damiancurti/Caelum-Argenteum/issues/12) | Two hostile rats per Mandinga in each section: preserve 96 Mandingas, add 192 rats. |
 | 4.36.7 | [#13](https://github.com/damiancurti/Caelum-Argenteum/issues/13) | Four prisoner palette variants reusing the mansion characters. |
-| 4.36.8 | [#14](https://github.com/damiancurti/Caelum-Argenteum/issues/14) | Following/fighting prisoners, living extraction before the MAP02 boss, port arrivals, one-time +10 own-faction reputation and coins worth two average size-M weapons per rescue. |
+| 4.36.8 | [#14](https://github.com/damiancurti/Caelum-Argenteum/issues/14) | Following/fighting prisoners, living extraction before the MAP02 boss, port arrivals, one-time +10 own-faction reputation and coins worth twice the mean normal purchase price of T1 weapons at the rewarded character's equipment size per rescue. |
 | 4.36.9 | [#15](https://github.com/damiancurti/Caelum-Argenteum/issues/15) | Integrate approved Tarot fronts, including the Ace of Cups; no new powers. |
 | 4.36.10 | [#18](https://github.com/damiancurti/Caelum-Argenteum/issues/18) | Catapult, ram and breakable-gate assets with documented states/attachments. |
 | 4.36.11 | [#19](https://github.com/damiancurti/Caelum-Argenteum/issues/19) | Damageable actor gates and persistent passage opening on destruction. |
@@ -67,11 +77,12 @@ physical exit alive, before the northern MAP02 Zupay fight, to be extracted
 to the port; they do not participate in that boss encounter. This NPC exit
 must not bypass the player's boss/card progression. Persist each outcome.
 At the port, thanks grant **+10 reputation with that prisoner's own faction
-and coins worth two average size-M weapons, once per successful rescue**.
+and coins worth twice the mean normal purchase price of T1 weapons at the
+rewarded character's equipment size, once per successful rescue**.
 Use the arithmetic mean of normal purchase prices from the existing economy,
-including recipe/material quantities and tier costs. The formula and reference
-set rules are in SYSTEMS, Economy, "Planned prisoner coin reward". Whether the
-reference includes only T1 or all T1–T3 remains PENDING; do not invent a payout.
+including recipe/material quantities and tier costs. The formula and reference-set
+rules are in SYSTEMS, Economy, "Prisoner coin reward": the reference set S is
+T1-only and uses weapons that fit the rewarded character's equipment size.
 Unrescued NPCs must not appear there; benefits cannot duplicate on retry,
 save/load or travel. Broad companion formations remain outside this patch.
 
@@ -1963,8 +1974,9 @@ V5 will rearrange the programming code.
    another file. A new permanent document is justified only if the author
    requires it.
 8. Every delivery updates version, real status, decisions, next steps, and test
-   results in the same change. Use numeric MAJOR.MINOR.PATCH releases:
-   4.36.0i -> 4.36.1 -> 4.36.2 -> 4.36.3. Intermediate commits and later
+   results in the same change. Use numeric MAJOR.MINOR.PATCH releases, with an
+   optional lowercase letter suffix where the author specifies one:
+   4.36.0i -> 4.36.1 -> 4.36.1b -> 4.36.2 -> 4.36.3. Intermediate commits and later
    acceptance of the same patch do not increment its version. Keep historical
    labels unchanged. The larger-version roadmap remains in force. Do not duplicate
    state between a per-patch README and thematic reports. Keep temporary export

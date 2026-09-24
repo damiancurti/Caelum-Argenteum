@@ -1,6 +1,6 @@
 # AGENTS.md — Caelum Argenteum
 
-Documentation version: **4.36.1** — 2026-09-23.
+Documentation version: **4.36.1b** — 2026-09-23.
 
 Startup guide for AI agents and human contributors. This file describes **how
 to work** on the project, not what balance or design it contains. Balance
@@ -21,11 +21,11 @@ values, recipes, and design decisions live in the canonical documents in
 | Path | Contents |
 | --- | --- |
 | `src/` | Everything packaged into the PK3: maps (`maps/`), ZScript code (`caelum/`, `impactphysics/`, `crafting/`), sprites, models, fonts, sounds, music, graphics, and license notices. |
-| `docs/` | Canonical documentation: `PROJECT.md`, `SYSTEMS.md`, `MAP01.txt`, `ASSETS.md`, `HISTORY.md`, plus the working documents (`CONTEXT.md`, `TASKS.md`). |
+| `docs/` | Canonical documentation: `PROJECT.md`, `SYSTEMS.md`, `MAP01.txt`, `ASSETS.md`, `HISTORY.md`; working documents `CONTEXT.md` and `TASKS.md`; engineering guides `GZDOOM_DEVELOPMENT.md` and `KNOWN_PITFALLS.md`; generated `DOCUMENT_INDEX.md`. |
 | `assets/` | Art and audio sources, climate data, first-person views, optional generators (`generators/`), manifests, and validation records. Not packaged at runtime. |
 | `build/` | Regenerable PK3 (`caelum_argenteum_dev.pk3`), rebuilt with `build_dev.ps1`. |
 | `archive/` | Known backups of previous versions, kept for recovery. |
-| Root | `README.md`, `build_dev.ps1`, `run_dev.bat`, `validate_project.py`. |
+| Root | `README.md`, `build_dev.ps1`, `run_dev.bat`, `validate_project.py`, `build_document_index.py`. |
 
 Only `src/` goes into `build/caelum_argenteum_dev.pk3`. `assets/generators/`
 are optional editing utilities; their outputs are already in `src/`.
@@ -42,6 +42,9 @@ are optional editing utilities; their outputs are already in `src/`.
 | Installation, build, and summarized status | `README.md` |
 | Quick summary before reading the rest | `docs/CONTEXT.md` |
 | Active tasks and acceptance criteria | `docs/TASKS.md` |
+| Engineering orientation, build/launch and reusable patterns | `docs/GZDOOM_DEVELOPMENT.md` |
+| Verified lessons and unresolved defects | `docs/KNOWN_PITFALLS.md` |
+| Locate sections in long docs (over 5,000 words) | `docs/DOCUMENT_INDEX.md` |
 
 ## Conventions
 
@@ -80,8 +83,9 @@ Premises 11 to 20 were added on request by the author.
    another file. A new permanent document is justified only if the author
    requires it.
 8. Every delivery updates version, real status, decisions, next steps, and test
-   results in the same change. Use numeric MAJOR.MINOR.PATCH releases:
-   4.36.0i -> 4.36.1 -> 4.36.2 -> 4.36.3. Intermediate commits and later
+   results in the same change. Use MAJOR.MINOR.PATCH releases with an optional
+   lowercase letter for author-requested documentation/hotfix patches:
+   4.36.0i -> 4.36.1 -> 4.36.1b -> 4.36.2 -> 4.36.3. Intermediate commits and later
    acceptance of the same patch do not increment its version. Keep historical
    labels unchanged. The larger-version roadmap remains in force. Do not duplicate
    state between a per-patch README and thematic reports. Keep temporary export
@@ -146,10 +150,32 @@ Premises 11 to 20 were added on request by the author.
 README declares `Current release:`. AGENTS and all seven documents in `docs/`
 declare `Documentation version:` within their opening 1,000 characters, with
 optional Markdown bold formatting. All current markers must agree and use
-numeric MAJOR.MINOR.PATCH. Ancillary guides, templates and pending tests without
-a current-version header inherit README's release; versions in their provenance
-or individual test entries identify the original release. Historical labels and
-original archived snapshots remain evidence, not current instructions.
+MAJOR.MINOR.PATCH with an optional lowercase letter for author-requested
+documentation/hotfix patches. Ancillary guides, templates, the generated
+`DOCUMENT_INDEX.md` and pending tests without a current-version header inherit
+README's release; versions in their provenance or individual test entries
+identify the original release. Historical labels and original archived
+snapshots remain evidence, not current instructions.
+
+## Engineering guides and document index
+
+- [docs/GZDOOM_DEVELOPMENT.md](docs/GZDOOM_DEVELOPMENT.md) gives technical
+  orientation: navigation, Windows build/launch, reusable patterns, evidence
+  levels and minimal test selection. [docs/KNOWN_PITFALLS.md](docs/KNOWN_PITFALLS.md)
+  keeps stable CA-KP lessons with the required evidence labels and template.
+- Consult the relevant guide sections for engineering tasks; do not require
+  every task to read both guides in full. Update a reusable lesson in the same
+  patch that establishes it, following the maintenance rules in each guide.
+- [docs/DOCUMENT_INDEX.md](docs/DOCUMENT_INDEX.md) is a generated locator for
+  maintained docs with strictly more than 5,000 words. For qualifying
+  documents, search the index first and read only the relevant source ranges
+  and necessary dependencies; small documents may be read directly. Regenerate
+  with `python build_document_index.py` after an indexed source changes, is
+  renamed or crosses the threshold. Stale line numbers must never be used
+  silently: check hashes and regenerate before extraction, or fail clearly.
+- These three files are ancillary/generated. They inherit README's current
+  release and do not carry duplicate current-version headers. The validator
+  checks their existence, readability, links and index freshness read-only.
 
 ## Pending author tests
 
