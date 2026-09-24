@@ -1,6 +1,6 @@
 # AGENTS.md — Caelum Argenteum
 
-Documentation version: **4.36.5** — 2026-09-24.
+Documentation version: **4.36.5a** — 2026-09-24.
 
 Startup guide for AI agents and human contributors. This file describes **how
 to work** on the project, not what balance or design it contains. Balance
@@ -129,7 +129,8 @@ Premises 11 to 20 were added on request by the author.
 ## Expected workflow
 
 1. **Read context.** Start with `docs/CONTEXT.md`, then the canonical document
-   for the task per the table above.
+   for the task per the table above, using selective reading to open only the
+   relevant sections.
 2. **Review impact.** Check whether the change affects already-accepted
    systems; do not reopen what was approved without reason and do not invent
    pending values.
@@ -144,6 +145,51 @@ Premises 11 to 20 were added on request by the author.
    desktop Codex implements the issue and runs relevant tests. Review the linked
    PR and test evidence, then obtain author acceptance where required. A merged
    PR or closed issue does not confirm a manual test.
+
+## Selective file reading
+
+Prefer targeted reads over whole-file or whole-repository dumps. These rules
+reduce unnecessary context consumption; they are workflow instructions, not
+technical access controls, and they do not promise a measured token or quota
+saving. Files present on disk do not consume context until their contents are
+read or a large tool output is returned.
+
+1. Read applicable agent instructions, the brief project context and the
+   current issue first. Use the task/document mapping to select only the
+   relevant sources.
+2. Before opening a large file, search filenames, symbols, terms or indexed
+   headings. Prefer `rg --files` for file discovery and `rg -n` for scoped
+   text searches when available.
+3. Read the relevant functions, sections or line ranges with enough
+   surrounding context to understand them. Expand to callers, shared rules,
+   initialization, persistence or other dependencies when correctness
+   requires it. Whole-file reads remain appropriate for short files or
+   genuinely broad changes.
+4. Use `docs/DOCUMENT_INDEX.md` as a locator, not as a reason to load every
+   indexed document. Preserve the existing hash/freshness and regeneration
+   requirements; never rely silently on stale line ranges.
+5. Scope initial searches to likely source directories. Avoid recursive dumps
+   of the whole repository, full documentation, historical archives, binary
+   assets or accumulated QA output without a concrete task-related reason.
+   Expand searches when initial results are insufficient.
+6. Treat `build/` as generated packages and local test evidence. Read only
+   the current task's logs, captures and reports, or older evidence directly
+   relevant to a reproduced failure. Begin with a targeted filename search or
+   bounded listing, then relevant excerpts. Inspect full logs or images when
+   necessary to understand the result; never hide unresolved errors through
+   output truncation.
+7. During PR review, start with the diff and submitted test evidence, then
+   inspect affected dependencies. Reuse evidence only when it applies to the
+   final changes and tested build. Repeat tests for changed behavior,
+   unresolved risks or required validation gates.
+8. Reuse already-read information within a session while it remains current.
+   Reread after relevant changes or when needed content is missing. Keep tool
+   output bounded and focused; report concise evidence without dumping large
+   logs.
+
+See the search and range-reading examples in
+`docs/GZDOOM_DEVELOPMENT.md`; this list remains the single authoritative
+policy.
 
 ## Current-version convention
 
