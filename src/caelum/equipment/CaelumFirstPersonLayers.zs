@@ -335,6 +335,8 @@ class CaelumFirstPersonLayerFrames : Actor
 
 class CaelumFirstPersonLayers : Object play
 {
+    const FLAIL_HANDLE_ANGLE = -29.5;
+
     static bool Handles(int kind)
     {
         return kind==0 || kind==2 || kind==4 || kind==5 || kind==7 || kind==8
@@ -546,7 +548,7 @@ class CaelumFirstPersonLayers : Object play
     static void Flail(CaelumPlayer user,int tier,Vector2 grip,double rotation,double chainTurn)
     {
         tier=Clamp(tier,1,3);
-        double handleAngle=rotation-39.5;
+        double handleAngle=rotation+FLAIL_HANDLE_ANGLE;
         vector2 joint=(213,61), originalGrip=(235,158);
         // Hundir medio tramo expuesto bajo el guante por el eje del mango.
         vector2 handlePosition=grip-Turn((joint-originalGrip)*0.50,handleAngle);
@@ -604,9 +606,9 @@ class CaelumFirstPersonLayers : Object play
         }
         // Signo comprobado en hw_weapon.cpp de GZDoom 4.14.2: negativo
         // lleva la punta hacia la derecha; positivo, hacia la izquierda.
-        // Mangual: -62° + 22,5° = -39,5°; su cadena va en una capa aparte.
+        // Mangual: -62° + 22,5° + 10° = -29,5°; su cadena va en una capa aparte.
         // Su agarre se centra para mantener toda la cadena dentro del encuadre.
-        double weaponRotation=rotation+(rightLeaning?-28.0:kind==8?-39.5:0.0);
+        double weaponRotation=rotation+(rightLeaning?-28.0:kind==8?FLAIL_HANDLE_ANGLE:0.0);
         vector2 weaponGrip=grip;
         if(rightLeaning)weaponGrip+=(4,3);
         if(kind==8)Flail(user,tier,grip,rotation,chainTurn);

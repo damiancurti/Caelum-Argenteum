@@ -1,6 +1,6 @@
 # CONTEXT.md — Ultra-condensed summary of Caelum Argenteum
 
-Documentation version: **4.36.2** — 2026-09-23.
+Documentation version: **4.36.3** — 2026-09-23.
 
 Summary so an AI or a contributor can understand the project without reading
 the five full canonical documents. Source: `docs/PROJECT.md`,
@@ -64,8 +64,11 @@ the gauchos and rural culture, and the humans the urban porteño society.
 
 ## Current status
 
-Current release **4.36.2** implements the issue #8 bow crop cache and the
-author-approved environmental scope clarification. Native Windows evidence is
+Current release **4.36.3** adds the issue #9 flail-handle rotation: 10 degrees
+further counterclockwise across T1–T3. Native before/after, full spin, return
+and re-equip checks passed; the author confirmed CA-4360I-VISUAL-01 passed
+on 2026-09-23. The
+4.36.2 bow crop cache and author-approved environmental scope are retained. Native Windows evidence is
 recorded in HISTORY; the author confirmed CA-4362-BOW-EMPTY-01 passed on
 2026-09-23. Gameplay
 rules, accepted bow art and saves are unchanged. The engineering guides/index
@@ -78,7 +81,6 @@ rations, and MAP01 tables at full capacity.
 
 Pending:
 
-- Final flail pose: approximately 10 degrees more counterclockwise (#9, planned 4.36.3).
 - Author-requested patches 4.36.4–4.36.9 (#10–#15): T1-only MAP02 equipment;
   four keyed sewer sections with cells/beds, repair refuges and northern Zupay;
   192 enemy rats alongside 96 Mandingas; four recolored prisoners; persistent
@@ -94,7 +96,7 @@ Pending:
 
 On 2026-09-23 the author accepted the 4.36.0i maze, save/load and table checks
 and bow appearance. The author also confirmed the complete 4.36.1 Windows
-validator/launcher/header check. The weapon exceptions above remain open;
+validator/launcher/header check. The bow stall and final flail pose are now accepted;
 detailed results are in HISTORY. PR #7 and the #22 integration PR #23 are merged.
 
 After 4.36 comes 4.37 (Tarot/Trucazo), then the V4 playtest export, and only

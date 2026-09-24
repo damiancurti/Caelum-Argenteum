@@ -1,6 +1,58 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **4.36.2** — 2026-09-23.
+Documentation version: **4.36.3** — 2026-09-23.
+
+## 4.36.3 — Additional counterclockwise flail rotation (issue #9)
+
+Starting point: merged 4.36.2, `772f622` (including the #8 author acceptance).
+The author-requested additional 10-degree rotation is implemented through the
+shared `FLAIL_HANDLE_ANGLE = -29.5`, replacing the former -39.5 offset for
+T1–T3. The duplicated current reference and arithmetic comment use the same
+constant/result. Half-shaft insertion about the grip, transformed chain joint,
+rear chain/ball layer, vertical rest and full attack spin are retained. Combat
+rules/timing, state tables, save schemas and source artwork are unchanged;
+no generator was run. Historical 0i manifests/captures retain their old angle.
+
+Native verification on 2026-09-23 (America/Buenos_Aires): GZDoom g4.14.2,
+Windows 11, Vulkan, RTX 3070 Ti, author's installed development Doom II.
+Before/after packages were tested in isolated fresh MAP03 games using the same
+configuration. Actual native pickups/selectors equipped each tier, performed
+primary attacks, switched to fists and re-equipped. All three tiers passed
+with zero failures on both versions. Rest handle angles were -39.5 and -29.5;
+the glove anchor remained (200,158), joint/insertion residuals were zero to
+nine logged decimal places, and the chain rested at 17.424612 degrees on both
+versions. Each attack traversed 45, 90, 135, 180, 225, 270, 315 and 360 degrees
+before returning to rest. Native captures confirm the counterclockwise change.
+
+Evidence: [conditions and results](../assets/validation_4363/RESULTS.json),
+adjacent before/after filtered logs and six unmodified native 1920x1080 rest
+captures. The HUD was suppressed in the disposable capture fixture because
+it obscured the chain; the weapon renderer and production HUD are unchanged.
+An initial baseline run with HUD also passed. Only isolated development files
+were used; no existing save, engine binary, IWAD or fixture is distributed.
+This verifies the affected presentation under those conditions, not a complete
+campaign playthrough or author acceptance. `python validate_project.py` passed
+with version 4.36.3, ten documents and zero errors; the normal `build_dev.ps1`
+build included 5,321 files, and `git diff --check` passed. The final package
+differs from the native-tested package only in the two required diagnostic
+release strings (4.36.2 -> 4.36.3); every other entry is byte-identical. A focused
+independent agent review found no actionable issue; its model identity beyond
+the inherited generic GPT-6 label was unavailable, so it is not claimed as a
+cross-provider review.
+
+Author acceptance on 2026-09-23 (America/Buenos_Aires): Damián explicitly
+confirmed the test passed and the corrected pose was satisfactory, with no
+reported exceptions, and requested issue #9 closure. CA-4360I-VISUAL-01 is
+passed; its 4.36.0i provenance and the earlier partial/accepted portions remain
+recorded under the original release below. The pending entry is removed in the
+same update, leaving the tracked queue empty. This is the author's aggregate
+confirmation, not an independently supplied per-tier log or a new agent run.
+Version remains 4.36.3; no code or asset change accompanies acceptance.
+
+CA-KP-004 records the verified rotation and author acceptance. PR #26 carries
+the implementation and acceptance record. The next patch is #10 / 4.36.4 after
+integration. Usage boundaries, unavailable counters and review configuration
+are reported separately in that PR; no token usage is estimated.
 
 ## 4.36.2 — Bow first-use composition stall (issue #8)
 
@@ -339,6 +391,19 @@ CA-4360I-VISUAL-01 keeps its ID and original provenance, with only the remaining
 flail check; issue [#9](https://github.com/damiancurti/Caelum-Argenteum/issues/9)
 plans that additional rotation from the current pose, preserving the grip,
 rear chain layer, vertical rest and counterclockwise full attack revolution.
+
+Implementation follow-up: 4.36.3 / #9 implements and engine-verifies that
+additional rotation (see its entry above). The earlier PARTIAL result is
+preserved as history. Later on 2026-09-23 (America/Buenos_Aires), the author
+explicitly confirmed the corrected flail test passed and requested #9 closure.
+
+| Test ID | Originating version / issue | Final result | Confirmation date | Scope and qualification |
+| --- | --- | --- | --- | --- |
+| CA-4360I-VISUAL-01 | 4.36.0i; legacy release carried by #6, correction #9 / 4.36.3 | PASS | 2026-09-23 | Final corrected flail pose accepted; author's aggregate confirmation, no reported exceptions. Earlier bow/other visual acceptance is retained. |
+
+The completed entry is removed from pending_test.txt in this acceptance update;
+the tracked file remains empty. No accepted test is reopened and no new agent
+engine run is implied by this author confirmation.
 
 Separate author-reported defect: equipping a bow with no arrows froze the game
 for several seconds; after obtaining an arrow it worked normally. The exact

@@ -1,6 +1,6 @@
 # Caelum Argenteum — Current systems and rules
 
-Documentation version: **4.36.2** — 2026-09-23.
+Documentation version: **4.36.3** — 2026-09-23.
 
 ## 4.36.2 — Bow presentation performance
 

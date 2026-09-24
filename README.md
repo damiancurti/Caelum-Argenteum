@@ -4,8 +4,13 @@ An independent dark fantasy FPS-RPG inspired by nineteenth-century Argentina.
 Author and game designer: **Damian Curti**. Development target: **GZDoom 4.14.2**
 on Windows 11. The final game is intended to be independent of Doom assets.
 
-**Current release: 4.36.2.** Obtain and update the complete repository, validate
+**Current release: 4.36.3.** Obtain and update the complete repository, validate
 it, then rebuild with `run_dev.bat` as described below. Issue
+[#9](https://github.com/damiancurti/Caelum-Argenteum/issues/9) adds 10 degrees
+of counterclockwise flail-handle rotation across T1–T3, preserving the grip and
+independent chain animation. Native comparisons are in
+[4.36.3 evidence](assets/validation_4363/RESULTS.json); the author confirmed the final pose
+passed on 2026-09-23. Issue
 [#8](https://github.com/damiancurti/Caelum-Argenteum/issues/8) caches the existing
 bow-stave crops to remove first-use texture-composition stalls, preserving
 native palette effects, geometry, controls, ammunition and saves. Issue
@@ -19,9 +24,10 @@ MAP02 with the author's authorization.
 
 Outstanding author checks are in [pending_test.txt](pending_test.txt); changes,
 performed validation and confirmed results are in [HISTORY.md](docs/HISTORY.md).
-The following gameplay details describe the retained 4.36.0i baseline.
+The following gameplay details retain the 4.36.0i baseline with the #9 pose adjustment.
 
-The flail handle rotates 22.5 degrees counterclockwise from 0h and half of its
+The flail handle rotates another 10 degrees counterclockwise from 0i (32.5
+degrees total from 0h), and half of its
 previously exposed shaft moves into the glove. Its chain and ball are a
 separate rear layer, hanging vertically at rest and making a full counterclockwise
 revolution during an accepted attack. Both bows have twice their former stave
@@ -54,15 +60,17 @@ flail rotation were exercised in **GZDoom g4.14.2 on Linux**, using Freedoom
 0.13.0 solely as a development IWAD. Native screenshots are in
 `assets/first_person_v7/`; validation records are in `assets/validation_0i/`.
 On 2026-09-23 the author accepted the 4.36.0i maze, save/load and table checks.
-Bow appearance is accepted; the flail still needs approximately 10 degrees more
-counterclockwise rotation ([#9](https://github.com/damiancurti/Caelum-Argenteum/issues/9)).
+Bow appearance is accepted. The additional 10-degree counterclockwise flail
+rotation is implemented and engine-verified in 4.36.3
+([#9](https://github.com/damiancurti/Caelum-Argenteum/issues/9)); the author confirmed
+CA-4360I-VISUAL-01 passed on 2026-09-23.
 The empty-bow stall is corrected in 4.36.2 (#8); focused native Windows evidence
 and the author's 2026-09-23 pass confirmation for CA-4362-BOW-EMPTY-01 are
-recorded in HISTORY. The flail correction remains separate.
+recorded in HISTORY.
 Engine binaries, IWADs and development automation are not included.
 
 `netevent ca_debug_hazards_report` and `netevent ca_debug_maze_report` identify
-**4.36.2**. Use the repository instructions below and the root pending-test queue
+**4.36.3**. Use the repository instructions below and the root pending-test queue
 for focused checks; no external patch-test upload is required.
 The author's acceptance of the carriage, transitions and other 0h tests is
 preserved. The broader unfinished 4.36 physics roadmap remains in PROJECT.md.
@@ -749,8 +757,9 @@ The playtest export is a separate milestone from the final independent release.
 
 ## Pending validation
 
-See [pending_test.txt](pending_test.txt) for final flail-pose acceptance after
-its separate correction. The 4.36.2 bow check passed on the author's confirmation. On 2026-09-23 the
+The author confirmed CA-4360I-VISUAL-01 passed after the 4.36.3 correction on
+2026-09-23. [pending_test.txt](pending_test.txt) is now empty. The 4.36.2 bow
+check also passed on the author's confirmation. On 2026-09-23 the
 author confirmed zero validator errors, successful rebuild/launch and both
 4.36.1 diagnostic headers. That completed
 test and the accepted maze/save-load/table tests are recorded in HISTORY.
@@ -842,7 +851,7 @@ documentation, structure, Caella translations, station models and audio referenc
 test observers and archives are not part of the playable PK3 or source delivery.
 
 Patch versions use MAJOR.MINOR.PATCH with an optional lowercase letter for
-author-requested documentation/hotfix patches: 4.36.0i -> 4.36.1 -> 4.36.1b -> 4.36.2.
+author-requested documentation/hotfix patches: 4.36.0i -> 4.36.1 -> 4.36.1b -> 4.36.2 -> 4.36.3.
 Implementation commits and later acceptance do not each create a new patch.
 Historical labels stay intact; PROJECT records the current roadmap and the
 author-approved three-map playtest requirement. All seven docs and AGENTS declare

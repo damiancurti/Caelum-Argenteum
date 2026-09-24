@@ -1,0 +1,100 @@
+GZDoom version g4.14.2
+Vulkan device: NVIDIA GeForce RTX 3070 Ti
+Vulkan version: 1.4.303 (api) 576.352.0 (driver)
+QA_PASS tier=1 tick=35 native flail pickup
+QA_PASS tier=1 tick=35 flail inventory item
+QA_PASS tier=1 tick=35 equip native flail
+QA_PASS tier=1 tick=100 correct tier selector
+QA_PASS tier=1 tick=100 separate handle/chain/hand layers
+QA_PASS tier=1 tick=100 chain follows transformed joint
+QA_PASS tier=1 tick=100 half insertion anchored at glove
+QA_PASS tier=1 tick=100 vertical resting chain axis
+QA_POSE tier=1 phase=rest handle_angle=-29.500000 handle_xy=(180.914862,204.726132) chain_angle=17.424612 chain_xy=(219.085138,111.273868) hand_xy=(200.000000,158.000000) joint_error=0.000000000 grip_error=0.000000000
+Captured issue9_after_t1.png
+QA_SPIN tier=1 tick=201 degrees=45.000000
+QA_SPIN tier=1 tick=202 degrees=90.000000
+QA_SPIN tier=1 tick=203 degrees=135.000000
+QA_SPIN tier=1 tick=204 degrees=180.000000
+QA_SPIN tier=1 tick=205 degrees=225.000000
+QA_SPIN tier=1 tick=206 degrees=270.000000
+QA_SPIN tier=1 tick=207 degrees=315.000000
+QA_SPIN tier=1 tick=208 degrees=360.000000
+QA_PASS tier=1 tick=260 complete positive 360-degree attack spin
+QA_PASS tier=1 tick=260 separate handle/chain/hand layers
+QA_PASS tier=1 tick=260 chain follows transformed joint
+QA_PASS tier=1 tick=260 half insertion anchored at glove
+QA_PASS tier=1 tick=260 vertical resting chain axis
+QA_POSE tier=1 phase=after_attack handle_angle=-29.500000 handle_xy=(180.914862,204.726132) chain_angle=17.424612 chain_xy=(219.085138,111.273868) hand_xy=(200.000000,158.000000) joint_error=0.000000000 grip_error=0.000000000
+QA_PASS tier=1 tick=325 holster to fists
+QA_PASS tier=1 tick=335 re-equip flail
+QA_PASS tier=1 tick=375 re-equipped tier selector
+QA_PASS tier=1 tick=375 separate handle/chain/hand layers
+QA_PASS tier=1 tick=375 chain follows transformed joint
+QA_PASS tier=1 tick=375 half insertion anchored at glove
+QA_PASS tier=1 tick=375 vertical resting chain axis
+QA_POSE tier=1 phase=re_equipped handle_angle=-29.500000 handle_xy=(180.914862,204.726132) chain_angle=17.424612 chain_xy=(219.085138,111.273868) hand_xy=(200.000000,158.000000) joint_error=0.000000000 grip_error=0.000000000
+QA_PASS tier=2 tick=435 native flail pickup
+QA_PASS tier=2 tick=435 flail inventory item
+QA_PASS tier=2 tick=435 equip native flail
+QA_PASS tier=2 tick=500 correct tier selector
+QA_PASS tier=2 tick=500 separate handle/chain/hand layers
+QA_PASS tier=2 tick=500 chain follows transformed joint
+QA_PASS tier=2 tick=500 half insertion anchored at glove
+QA_PASS tier=2 tick=500 vertical resting chain axis
+QA_POSE tier=2 phase=rest handle_angle=-29.500000 handle_xy=(180.914862,204.726132) chain_angle=17.424612 chain_xy=(219.085138,111.273868) hand_xy=(200.000000,158.000000) joint_error=0.000000000 grip_error=0.000000000
+Captured issue9_after_t2.png
+QA_SPIN tier=2 tick=601 degrees=45.000000
+QA_SPIN tier=2 tick=602 degrees=90.000000
+QA_SPIN tier=2 tick=603 degrees=135.000000
+QA_SPIN tier=2 tick=604 degrees=180.000000
+QA_SPIN tier=2 tick=605 degrees=225.000000
+QA_SPIN tier=2 tick=606 degrees=270.000000
+QA_SPIN tier=2 tick=607 degrees=315.000000
+QA_SPIN tier=2 tick=608 degrees=360.000000
+QA_PASS tier=2 tick=660 complete positive 360-degree attack spin
+QA_PASS tier=2 tick=660 separate handle/chain/hand layers
+QA_PASS tier=2 tick=660 chain follows transformed joint
+QA_PASS tier=2 tick=660 half insertion anchored at glove
+QA_PASS tier=2 tick=660 vertical resting chain axis
+QA_POSE tier=2 phase=after_attack handle_angle=-29.500000 handle_xy=(180.914862,204.726132) chain_angle=17.424612 chain_xy=(219.085138,111.273868) hand_xy=(200.000000,158.000000) joint_error=0.000000000 grip_error=0.000000000
+QA_PASS tier=2 tick=725 holster to fists
+QA_PASS tier=2 tick=735 re-equip flail
+QA_PASS tier=2 tick=775 re-equipped tier selector
+QA_PASS tier=2 tick=775 separate handle/chain/hand layers
+QA_PASS tier=2 tick=775 chain follows transformed joint
+QA_PASS tier=2 tick=775 half insertion anchored at glove
+QA_PASS tier=2 tick=775 vertical resting chain axis
+QA_POSE tier=2 phase=re_equipped handle_angle=-29.500000 handle_xy=(180.914862,204.726132) chain_angle=17.424612 chain_xy=(219.085138,111.273868) hand_xy=(200.000000,158.000000) joint_error=0.000000000 grip_error=0.000000000
+QA_PASS tier=3 tick=835 native flail pickup
+QA_PASS tier=3 tick=835 flail inventory item
+QA_PASS tier=3 tick=835 equip native flail
+QA_PASS tier=3 tick=900 correct tier selector
+QA_PASS tier=3 tick=900 separate handle/chain/hand layers
+QA_PASS tier=3 tick=900 chain follows transformed joint
+QA_PASS tier=3 tick=900 half insertion anchored at glove
+QA_PASS tier=3 tick=900 vertical resting chain axis
+QA_POSE tier=3 phase=rest handle_angle=-29.500000 handle_xy=(180.914862,204.726132) chain_angle=17.424612 chain_xy=(219.085138,111.273868) hand_xy=(200.000000,158.000000) joint_error=0.000000000 grip_error=0.000000000
+Captured issue9_after_t3.png
+QA_SPIN tier=3 tick=1001 degrees=45.000000
+QA_SPIN tier=3 tick=1002 degrees=90.000000
+QA_SPIN tier=3 tick=1003 degrees=135.000000
+QA_SPIN tier=3 tick=1004 degrees=180.000000
+QA_SPIN tier=3 tick=1005 degrees=225.000000
+QA_SPIN tier=3 tick=1006 degrees=270.000000
+QA_SPIN tier=3 tick=1007 degrees=315.000000
+QA_SPIN tier=3 tick=1008 degrees=360.000000
+QA_PASS tier=3 tick=1060 complete positive 360-degree attack spin
+QA_PASS tier=3 tick=1060 separate handle/chain/hand layers
+QA_PASS tier=3 tick=1060 chain follows transformed joint
+QA_PASS tier=3 tick=1060 half insertion anchored at glove
+QA_PASS tier=3 tick=1060 vertical resting chain axis
+QA_POSE tier=3 phase=after_attack handle_angle=-29.500000 handle_xy=(180.914862,204.726132) chain_angle=17.424612 chain_xy=(219.085138,111.273868) hand_xy=(200.000000,158.000000) joint_error=0.000000000 grip_error=0.000000000
+QA_PASS tier=3 tick=1125 holster to fists
+QA_PASS tier=3 tick=1135 re-equip flail
+QA_PASS tier=3 tick=1175 re-equipped tier selector
+QA_PASS tier=3 tick=1175 separate handle/chain/hand layers
+QA_PASS tier=3 tick=1175 chain follows transformed joint
+QA_PASS tier=3 tick=1175 half insertion anchored at glove
+QA_PASS tier=3 tick=1175 vertical resting chain axis
+QA_POSE tier=3 phase=re_equipped handle_angle=-29.500000 handle_xy=(180.914862,204.726132) chain_angle=17.424612 chain_xy=(219.085138,111.273868) hand_xy=(200.000000,158.000000) joint_error=0.000000000 grip_error=0.000000000
+QA_DONE failures=0
