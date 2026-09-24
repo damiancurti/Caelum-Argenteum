@@ -20,6 +20,7 @@ class CaelumAnchoredResident : CaelumCombatActor abstract
     bool EscortPrisonerPort;
     CaelumPlayer EscortPrisonerLeader;
     int EscortPrisonerThreatScanTics;
+    double EscortPrisonerHealthRegenAccumulator;
 
     bool IsProtectedStoryResident()
     {
@@ -184,8 +185,45 @@ class CaelumAnchoredResident : CaelumCombatActor abstract
         if (level.MapName != "MAP02") return false;
         Actor boss = ActorIterator.Create(43799, "CaelumZupayColossus").Next();
         if (boss == null || boss.health <= 0) return false;
+        // Mientras la reja del norte sigue cerrada, el Zupay no puede
+        // hostigar a la escolta; alejarse antes de abrirla impedía que los
+        // prisioneros llegaran al punto de extracción previo al jefe.
+        CaelumMazeBarredGate gate = CaelumMazeBarredGate(
+            ActorIterator.Create(
+                CaelumConstants.PRISONER_BOSS_GATE_TID,
+                "CaelumMazeBarredGate"
+            ).Next()
+        );
+        if (gate == null || !gate.Opened) return false;
         return Distance2D(boss)
             <= CaelumConstants.PRISONER_BOSS_STAYBACK_RADIUS;
+    }
+
+    bool InEscortCombatState()
+    {
+        State seeState = FindState("See");
+        State meleeState = FindState("Melee");
+        State missileState = FindState("Missile");
+        State painState = FindState("Pain");
+        return (seeState != null && InStateSequence(CurState, seeState))
+            || (meleeState != null && InStateSequence(CurState, meleeState))
+            || (missileState != null && InStateSequence(CurState, missileState))
+            || (painState != null && InStateSequence(CurState, painState));
+    }
+
+    void RegenerateEscortPrisonerHealth()
+    {
+        if (health <= 0 || health >= CombatMaximumHealth) return;
+        // La recuperación base de los seguidores reutiliza la tasa natural del
+        // jugador: vida máxima por hora real, escalada por Resiliencia Tipo 4.
+        double regenPerSecond = Max(0.0, double(CombatMaximumHealth))
+            / CaelumConstants.HEALTH_BASE_RECOVERY_REAL_SECONDS
+            * CalculateActorType4Percent(CombatResilience) / 100.0;
+        EscortPrisonerHealthRegenAccumulator += regenPerSecond / TICRATE;
+        int wholeHealth = int(EscortPrisonerHealthRegenAccumulator);
+        if (wholeHealth <= 0) return;
+        EscortPrisonerHealthRegenAccumulator -= wholeHealth;
+        health = Min(CombatMaximumHealth, health + wholeHealth);
     }
 
     Actor FindEscortThreat()
@@ -292,10 +330,13 @@ class CaelumAnchoredResident : CaelumCombatActor abstract
             Target = threat;
             bInvulnerable = false;
             State seeState = FindState("See");
-            if (!InStateSequence(CurState, seeState)) { SetState(seeState); }
+            // No reiniciar See cada tic: interrumpiría las secuencias Melee,
+            // Missile o Pain antes de que ejecuten su ataque o conjuro.
+            if (!InEscortCombatState()) { SetState(seeState); }
             return;
         }
 
+        RegenerateEscortPrisonerHealth();
         EscortPrisonerLeader = owner;
         Target = null;
         ClearStoryCombatState();

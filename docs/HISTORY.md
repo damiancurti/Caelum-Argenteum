@@ -38,6 +38,20 @@ values under [enu default] and Spanish values under [es]. GZDoom 4.14.2
 compiles the updated PK3 and loads MAP02 and MAP06 without script errors, and
 validate_project.py passes with no errors. Author acceptance remains pending.
 
+Correction, 2026-09-24 (second round): author playtesting confirmed three
+remaining escort defects. The per-tick escort controller was switching a
+follower back to See even while it was already in Melee, Missile or Pain, so
+the attack frames never ran: melee connected for no damage and magic was never
+cast. The controller now preserves active combat states, letting native chase
+reach Melee/Missile and letting those actions finish. Follower health now
+regenerates while safe and following, reusing the player's natural base rate
+(maximum health per real hour, scaled by Resilience type 4); damage taken
+between fights is no longer permanent. The pre-boss Zupay stay-back only
+activates after the barred northern gate is open, so the closed boss cell no
+longer scares followers away from the extraction reservation. GZDoom 4.14.2
+compiles the updated PK3 and loads MAP02 without script errors, and
+validate_project.py passes with no errors. Author acceptance remains pending.
+
 ## 4.36.7 — Recolored prisoner appearances (#13)
 
 Baseline: integrated 4.36.6, `63b2bce` (author acceptance of #12). MAP02 now
