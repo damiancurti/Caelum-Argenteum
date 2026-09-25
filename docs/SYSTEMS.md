@@ -13,9 +13,9 @@ before extraction is not rescued. Persistent per-prisoner state survives save,
 load and travel; extracted prisoners appear once at the MAP06 port, where their
 own-faction thanks grant +10 reputation and 25 gold coins (1,000,000 copper)
 exactly once, independent of character size. A failed coin delivery is retryable
-without duplicate money or reputation. Four new faction domains (Unitarians,
-Federals, Wild Beast Men, Cult of the Tarot) use new IDs 4-7 and do not relabel
-accepted IDs 0-3.
+without duplicate money or reputation. The six canonical factions replace the
+former provisional domains: Unitarians=0, Federals=1, Free Peoples=2,
+Caelith=3, Cult of the Tarot=4 and Sun Warriors=5.
 
 ## 4.36.7 — Inert prisoner appearances (#13)
 
@@ -35,7 +35,7 @@ of `ConversationMenu.Ticker`.
 
 The display names are author-authorized working names: Leonor Benítez
 (Caella/Unitarians), Rufino Acosta (Ronnie/Federals), Santos Barrera
-(Rulo/Wild Beast Men) and Leandro Farías (Argento/Cult of the Tarot). These are
+(Rulo/Free Peoples) and Leandro Farías (Argento/Cult of the Tarot). These are
 fictional names, not historical people; no military rank, army size, combat
 bonus, formal alliance, betrayal detail or capture sequence is established here.
 Rescue, escort, dialogue and rewards remain #14.
@@ -2125,8 +2125,9 @@ policy or create missions automatically.
 CaelumFactionCondition is a serializable Object with Configured, FactionId,
 MinimumReputation and RequireMembership. Create retains even an invalid configuration
 for it to fail closed; does not convert it to null. null means the service does not
-declare requirement and maintains previous behavior. Valid ids are Gendarmerie=0,
-Settlements=1, Caravans=2 and Political Actors=3. A minimum outside -1000..1000 or an
+declare requirement and maintains previous behavior. Valid ids are Unitarians=0,
+Federals=1, Free Peoples=2, Caelith=3, Cult of the Tarot=4 and Sun Warriors=5.
+A minimum outside -1000..1000 or an
 unconfigured condition is invalid.
 
 Check consults the persistent registration of the applicant player, alive and created,
@@ -2163,8 +2164,8 @@ by giving CaelumDebugReputationTrial. Activation does not change reputation. Jou
 Reputation > F/Y only opens it if it is already enabled. The USDF 43322 menu provides
 information (43323), door, trade and five explicit states. Actions are supported only
 from the active dialogue of your own guide; they are executed when you close it. Presets
-Gendarmerie: 0/no, 25/no, 25/yes, -25/yes, 0/yes. The other factions are preserved and
-the changes are saved by the existing APIs.
+Unitarians: 0/no, 25/no, 25/yes, -25/yes, 0/yes. The other factions are preserved
+and the changes are saved by the existing APIs.
 
 Information requires 25; door requires 25 and membership; trade requires 0 plus the
 usual own Box; reduction requires 25. They are diagnostic conditions. They are not assigned to residents and do not create ranks, relationships or campaign benefits. The door

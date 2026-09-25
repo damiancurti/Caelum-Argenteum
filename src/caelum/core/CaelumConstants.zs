@@ -180,19 +180,18 @@ class CaelumConstants : Object
     const PALOMO_PLACEMENT_MANSION = PALOMO_PLACEMENT_MANSION_FOYER;
     const PALOMO_PLACEMENT_COUNT = 3;
 
-    // Cuatro dominios sociales baratos y estables. Son identificadores de
-    // infraestructura, no nombres definitivos de partidos o asentamientos.
-    const FACTION_GENDARMERIA = 0;
-    const FACTION_SETTLEMENTS = 1;
-    const FACTION_CARAVANS = 2;
-    const FACTION_POLITICAL_ACTORS = 3;
-    // Nuevos dominios narrativos de los prisioneros de MAP02. No se
-    // reetiquetan los Ã­ndices 0-3 ya aceptados por la GendarmerÃ­a.
-    const FACTION_UNITARIOS = 4;
-    const FACTION_FEDERALS = 5;
-    const FACTION_WILD_BEAST_MEN = 6;
-    const FACTION_CULT_TAROT = 7;
-    const FACTION_COUNT = 8;
+    // Seis facciones narrativas definitivas. Los dominios 0-3 anteriores eran
+    // infraestructura provisional y dejan de existir.
+    const FACTION_UNITARIOS = 0;
+    const FACTION_FEDERALS = 1;
+    const FACTION_PUEBLOS_LIBRES = 2;
+    const FACTION_CAELITH = 3;
+    const FACTION_CULT_TAROT = 4;
+    const FACTION_SUN_WARRIORS = 5;
+    const FACTION_COUNT = 6;
+    // El almacenamiento serializado conserva ocho ranuras para no cambiar el
+    // tamaÃ±o de los arreglos de partidas existentes. Solo 0..5 son vÃ¡lidas.
+    const FACTION_SAVE_SLOTS = 8;
     const FACTION_REPUTATION_MINIMUM = -1000;
     const FACTION_REPUTATION_MAXIMUM = 1000;
     const FACTION_RELATION_HOSTILE = -1;

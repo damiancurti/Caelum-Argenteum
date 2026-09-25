@@ -66,7 +66,7 @@ class CaelumPrisonerRescue : Object play
             case CaelumConstants.PRISONER_FEDERAL:
                 return CaelumConstants.FACTION_FEDERALS;
             case CaelumConstants.PRISONER_BESTIA:
-                return CaelumConstants.FACTION_WILD_BEAST_MEN;
+                return CaelumConstants.FACTION_PUEBLOS_LIBRES;
             case CaelumConstants.PRISONER_TAROT:
                 return CaelumConstants.FACTION_CULT_TAROT;
         }

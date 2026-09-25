@@ -71,15 +71,16 @@ only by reaching the pre-boss reservation alive before that fight (killing the
 boss is not required); a follower that dies earlier is not rescued. At the
 MAP06 port, each extracted prisoner grants +10 reputation with its own faction
 and 25 gold coins (1,000,000 copper) once, independent of character size, with
-no duplicate payout across retry, save/load or travel. Four new faction domains
-are added without relabeling accepted IDs 0-3. GZDoom 4.14.2 compiles the
+no duplicate payout across retry, save/load or travel. The provisional social
+domains are replaced by six canonical factions: Unitarians, Federals, Free
+Peoples, Caelith, Cult of the Tarot and Sun Warriors. GZDoom 4.14.2 compiles the
 complete package and loads MAP01/MAP02/MAP06 without script errors; author
 acceptance CA-4368-RESCUE-01 remains pending.
 
 The preceding **4.36.8** implements #13: four recolored prisoner appearances
 reusing the mansion characters without new models: Caella -> Unitarians
 (Leonor Benítez, celeste), Ronnie -> Federals (Rufino Acosta, punzó), Rulo ->
-Wild Beast Men (Santos Barrera, black/brown/green) and Argento -> Cult of the
+Free Peoples (Santos Barrera, black/brown/green) and Argento -> Cult of the
 Tarot (Leandro Farías, gold/silver over black). The author visual check
 CA-4367-PRISONER-ART-01 passed on 2026-09-24.
 
@@ -145,7 +146,7 @@ faction and a fixed 25 gold coins once, independent of character size.
 The latest #10/#14 author decision supersedes the former weapon-price formula; detailed siege balance/conditions and the definitive
 Tarot package remain pending.
 Prisoner source/faction mapping: Caella/Unitarians, Ronnie/Federals,
-Rulo/Wild Beast Men, Argento/Cult of the Tarot; do not reassign mansion NPCs.
+Rulo/Free Peoples, Argento/Cult of the Tarot; do not reassign mansion NPCs.
 PROJECT contains the authoritative scope, dependency order and usage protocol.
 The author confirms a 75% weekly-allowance-remaining baseline; reset time is
 unknown. Collect measured per-patch data rather than estimating.

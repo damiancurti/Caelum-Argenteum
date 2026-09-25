@@ -12,7 +12,9 @@ Documentation version: **4.36.8** — 2026-09-24.
   spawn rescued prisoners once at the MAP06 port, granting +10 own-faction
   reputation and 25 gold coins (1,000,000 copper) once per rescued prisoner,
   independent of character size, with no duplicate payout and retryable coin
-  delivery. Add faction domains 4-7 without relabeling accepted IDs 0-3.
+  delivery. Replace the provisional social domains with six canonical factions:
+  Unitarians=0, Federals=1, Free Peoples=2, Caelith=3, Cult of the Tarot=4 and
+  Sun Warriors=5.
 - **Author contract:** a follower that dies before extraction is not rescued;
   zero, one or four rescues are valid; no death respawn; do not reopen other
   cells; no broad companion formations. The Tarot remains the next issue.
@@ -28,7 +30,7 @@ Documentation version: **4.36.8** — 2026-09-24.
   in each reserved MAP02 endpoint cell; keep the source combat profile and the
   original mansion NPCs unchanged.
 - **Author contract:** provisional display names Leonor Benítez (Unitarians),
-  Rufino Acosta (Federals), Santos Barrera (Wild Beast Men) and Leandro Farías
+  Rufino Acosta (Federals), Santos Barrera (Free Peoples) and Leandro Farías
   (Cult of the Tarot); stable persistent IDs independent of names; no inherited
   anchoring, quest, inventory or story-protection logic; no rescue/reward logic
   in this visual patch.
@@ -180,8 +182,8 @@ documentation update does not implement these features or reset accepted tests.
 | V4 export | [#17](https://github.com/damiancurti/Caelum-Argenteum/issues/17) | Three-map acceptance, reproducible package and batch usage report. Requires #16 and retained 4.36/4.37 gates. |
 
 The source/faction mapping is Caella/Unitarians, Ronnie/Federals,
-Rulo/Wild Beast Men and Argento/Cult of the Tarot. These are new prisoners;
-do not alter the mansion residents or reuse unrelated saved faction IDs.
+Rulo/Free Peoples (Pueblos Libres) and Argento/Cult of the Tarot. These are new
+prisoners; do not alter the mansion residents or reuse unrelated saved faction IDs.
 The confirmed three-map route uses MAP06 for the existing port, not a
 renumbered MAP03. Issue #16 must replace the current player exit to MAP07
 with the approved route. El Loco is the first Major; Ace of Cups remains MAP02.

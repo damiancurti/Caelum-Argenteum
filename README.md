@@ -13,8 +13,10 @@ prisoner a one-time +10 own-faction reputation and 25 gold coins (1,000,000
 copper) at the MAP06 port, independent of character size. Issue
 [#13](https://github.com/damiancurti/Caelum-Argenteum/issues/13) adds four
 recolored prisoner appearances reusing the mansion characters: Caella ->
-Unitarians, Ronnie -> Federals, Rulo -> Wild Beast Men and Argento -> Cult of
-the Tarot.
+Unitarians, Ronnie -> Federals, Rulo -> Free Peoples and Argento -> Cult of
+the Tarot. The provisional social domains are replaced by six canonical
+factions: Unitarians, Federals, Free Peoples, Caelith, Cult of the Tarot and
+Sun Warriors.
 Issue [#12](https://github.com/damiancurti/Caelum-Argenteum/issues/12) added
 192 hostile sewer rats (two per Mandinga) and was author-confirmed on
 2026-09-24. Issue
@@ -387,7 +389,7 @@ preserved. The broader unfinished 4.36 physics roadmap remains in PROJECT.md.
 - A separate reputation discount uses the existing 140% buy / 60% sell margins
   instead of normal 150% / 50%. It is recalculated from the active service's
   condition, never becomes the saved negotiated discount, and does not stack.
-- The explicitly enabled trial uses Gendarmeria only: information needs 25,
+- The explicitly enabled trial uses Unitarians only: information needs 25,
   the door needs membership and 25, trade needs 0, and its discount needs 25.
   These are test settings, not narrative ranks or global faction thresholds.
   Existing Limbo residents retain their neutral, unassigned faction behavior.
@@ -750,9 +752,11 @@ Peregrino uses Amparo: 50% less environmental damage for the player and nearby
 allies for 10 seconds, with 60 seconds of reuse and a trial base cost of 1000 anima.
 Future class area abilities use the shared 1280-MU seal-channel base radius.
 Automatic conversation cancellation on damage was suggested and remains pending.
-Four new prisoner affiliations, +10 own-faction reputation and a fixed 25 gold
-coins per successful rescue, independent of character size, are defined in the
-roadmap. SYSTEMS records the reward rule; rank thresholds and cross-faction relations still
+Six canonical factions replace the provisional social domains: Unitarians,
+Federals, Free Peoples, Caelith, Cult of the Tarot and Sun Warriors. Prisoner
+affiliations, +10 own-faction reputation and a fixed 25 gold coins per
+successful rescue, independent of character size, are defined in the roadmap.
+SYSTEMS records the reward rule; rank thresholds and cross-faction relations still
 require authored design.
 The attribute audit is deferred by the author; the current rules stay accepted.
 Follow PROJECT.md for the remaining scope. Potable-water collection is implemented. Treatment of unsafe water remains undefined. Bullet crafting still needs its material composition and process

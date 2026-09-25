@@ -143,8 +143,8 @@ class CaelumPersistentCharacterState : Inventory
     // Membresía y reputación pertenecen al personaje. Las relaciones entre
     // dominios son una tabla de reglas compartida, no estado duplicado por NPC.
     int FactionStateVersion;
-    bool FactionMember[CaelumConstants.FACTION_COUNT];
-    int FactionReputation[CaelumConstants.FACTION_COUNT];
+    bool FactionMember[CaelumConstants.FACTION_SAVE_SLOTS];
+    int FactionReputation[CaelumConstants.FACTION_SAVE_SLOTS];
     int PrisonerRescueStateVersion;
     int PrisonerRescueState[CaelumConstants.PRISONER_COUNT];
     bool PrisonerRewardClaimed[CaelumConstants.PRISONER_COUNT];
@@ -1057,31 +1057,41 @@ class CaelumPersistentCharacterState : Inventory
     void InitializeNewFactionState()
     {
         for (int factionId = 0;
-            factionId < CaelumConstants.FACTION_COUNT; factionId++)
+            factionId < CaelumConstants.FACTION_SAVE_SLOTS; factionId++)
         {
             FactionMember[factionId] = false;
             FactionReputation[factionId] = 0;
         }
-        FactionStateVersion = 2;
+        FactionStateVersion = 3;
     }
 
     void EnsureFactionStateInitialized()
     {
-        if (FactionStateVersion >= 2) { return; }
+        if (FactionStateVersion >= 3) { return; }
         if (FactionStateVersion < 1)
         {
             InitializeNewFactionState();
             return;
         }
-        // Las partidas guardadas con cuatro facciones conservan los
-        // Ã­ndices 0-3; sÃ³lo se rellenan los cuatro dominios nuevos.
-        for (int factionId = 4;
-            factionId < CaelumConstants.FACTION_COUNT; factionId++)
-        {
-            FactionMember[factionId] = false;
-            FactionReputation[factionId] = 0;
-        }
-        FactionStateVersion = 2;
+        // Las partidas anteriores conservan la reputacion de las cuatro
+        // facciones de prisioneros; los dominios provisionales se descartan.
+        bool unitMember = FactionMember[4];
+        int unitReputation = FactionReputation[4];
+        bool federalMember = FactionMember[5];
+        int federalReputation = FactionReputation[5];
+        bool pueblosMember = FactionMember[6];
+        int pueblosReputation = FactionReputation[6];
+        bool tarotMember = FactionMember[7];
+        int tarotReputation = FactionReputation[7];
+        InitializeNewFactionState();
+        FactionMember[CaelumConstants.FACTION_UNITARIOS] = unitMember;
+        FactionReputation[CaelumConstants.FACTION_UNITARIOS] = unitReputation;
+        FactionMember[CaelumConstants.FACTION_FEDERALS] = federalMember;
+        FactionReputation[CaelumConstants.FACTION_FEDERALS] = federalReputation;
+        FactionMember[CaelumConstants.FACTION_PUEBLOS_LIBRES] = pueblosMember;
+        FactionReputation[CaelumConstants.FACTION_PUEBLOS_LIBRES] = pueblosReputation;
+        FactionMember[CaelumConstants.FACTION_CULT_TAROT] = tarotMember;
+        FactionReputation[CaelumConstants.FACTION_CULT_TAROT] = tarotReputation;
     }
 
     bool SetFactionMembership(int factionId, bool isMember)

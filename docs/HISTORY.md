@@ -69,6 +69,18 @@ the sight-block flag with the other block flags. GZDoom 4.14.2 compiles the
 updated PK3 and loads MAP02 without script errors, and validate_project.py
 passes with no errors. Author acceptance remains pending.
 
+Correction, 2026-09-24 (faction consolidation): the provisional social domains
+(Gendarmerie, settlements, caravans and political actors) are replaced by six
+canonical factions with final ids: Unitarians=0, Federals=1, Free Peoples=2,
+Caelith=3, Cult of the Tarot=4 and Sun Warriors=5. The former Wild Beast Men id
+is now the Free Peoples faction, and the reputation trial/debug actions now use
+Unitarians instead of Gendarmerie. Serialized faction arrays keep eight save
+slots while only ids 0-5 are valid; `FactionStateVersion` advances to 3 with an
+idempotent migration that discards provisional 0-3 and re-maps saved prisoner
+reputation from old ids 4, 5, 6 and 7 to new ids 0, 1, 2 and 4, preserving the
+author-accepted reward values across save/load. GZDoom 4.14.2 compiles the
+updated PK3 and `validate_project.py` passes with no errors.
+
 ## 4.36.7 — Recolored prisoner appearances (#13)
 
 Baseline: integrated 4.36.6, `63b2bce` (author acceptance of #12). MAP02 now

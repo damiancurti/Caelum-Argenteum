@@ -10,6 +10,12 @@ confirmed Cult membership is introduced; Leandro Farías remains tempted, not
 a confirmed member, and the protagonist's amnesia is preserved. The port thanks
 reuse the existing provisional display names without asserting new biography.
 
+The provisional social domains (Gendarmerie, settlements, caravans and
+political actors) are replaced by six canonical factions: Unitarians, Federals,
+Free Peoples (Pueblos Libres), Caelith, Cult of the Tarot and Sun Warriors.
+Prisoner reward affiliations use these final ids; the former Wild Beast Men
+label is now the Free Peoples faction.
+
 ## 4.36.7 — Prisoner identities and shared ambush history (#13)
 
 The four MAP02 prisoners are distinct characters from the MAP01 mansion
