@@ -75,7 +75,8 @@ no duplicate payout across retry, save/load or travel. The provisional social
 domains are replaced by six canonical factions: Unitarians, Federals, Free
 Peoples, Caelith, Cult of the Tarot and Sun Warriors. GZDoom 4.14.2 compiles the
 complete package and loads MAP01/MAP02/MAP06 without script errors; author
-acceptance CA-4368-RESCUE-01 remains pending.
+confirmed CA-4368-RESCUE-01 passed on 2026-09-25, leaving the author-test queue
+empty.
 
 The preceding **4.36.8** implements #13: four recolored prisoner appearances
 reusing the mansion characters without new models: Caella -> Unitarians
@@ -118,9 +119,8 @@ rations, and MAP01 tables at full capacity.
 
 Pending:
 
-- Author-requested patches 4.36.8–4.36.9 (#14–#15): persistent rescues/port
-  faction rewards; approved Tarot images. These are planned, not present in the
-  current four-section map.
+- Author-requested patch 4.36.9 (#15): approved Tarot images. This is planned,
+  not present in the current four-section map.
 - Planned 4.36.10–4.36.13 (#18–#21): siege-machine assets, breakable actor
   gates, physical ram strikes and native catapult projectiles for the port.
 - Closing 4.36: rams/catapults and remaining integration/save/reset validation

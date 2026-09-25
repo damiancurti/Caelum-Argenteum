@@ -13,8 +13,14 @@ dies earlier is not rescued. Zero, one or four rescues are valid. Each outcome
 persists across save/load/travel, and each rescued prisoner appears once at the
 MAP06 port, granting +10 reputation with that prisoner's own faction and 25 gold
 coins (1,000,000 copper) once, independent of character size, with retryable
-coin delivery and no duplicate payout. Four new faction domains are added without
-relabeling accepted IDs 0-3; broad companion formations remain out of scope.
+coin delivery and no duplicate payout. Six canonical factions (Unitarians,
+Federals, Free Peoples, Caelith, Cult of the Tarot and Sun Warriors) replace
+the provisional social domains without relabeling accepted IDs 0-3; broad
+companion formations remain out of scope.
+
+The author confirmed CA-4368-RESCUE-01 passed on 2026-09-25, covering release,
+follow, combat, extraction, persistence, the one-time port rewards and the six
+canonical factions, and requested closure of issue #14.
 
 ## 4.36.7 — Recolored prisoner appearances (issue #13)
 
@@ -55,7 +61,7 @@ positions per Mandinga junction and records each rat in the per-section
 manifest. Rats are initial placements only and never respawn or resurrect, so
 the exact ratio holds for the whole map. Static layout validation records are
 in `assets/validation_4366/`; native combat and save/load evidence are separate
-from author acceptance. The author check CA-4366-RATS-01 remains pending.
+from author acceptance. The author check CA-4366-RATS-01 passed on 2026-09-24.
 
 ## 4.36.5 — Four-section sewer layout (issue #11)
 

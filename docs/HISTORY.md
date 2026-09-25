@@ -94,6 +94,18 @@ without the project PK3, so the freeze observed during playtesting is the
 engine crash reporter rather than a ZScript regression. The author's GZDoom
 installation must be resolved before the route can be re-verified.
 
+Author acceptance, 2026-09-25 (America/Buenos_Aires): the author confirmed
+the full prisoner release, follow, combat, extraction, persistence and port
+reward route and requested closure of issue #14. Result: **PASS**,
+**CA-4368-RESCUE-01**, originating 4.36.8 / issue #14, delivered on the
+focused `issue-14-4.36.8` branch. This covers the release dialogue, source
+combat profile, stay-back from the northern Zupay, pre-boss extraction without
+killing the boss, save/load/travel persistence, the one-time +10 own-faction
+reputation and 25 gold coins (1,000,000 copper) per rescued prisoner at the
+MAP06 port, and the six canonical faction domains. No failures, partial
+results or qualifications were reported. The confirmed entry is removed from
+pending_test.txt; the tracked queue is empty. #15 owns the Tarot package next.
+
 ## 4.36.7 — Recolored prisoner appearances (#13)
 
 Baseline: integrated 4.36.6, `63b2bce` (author acceptance of #12). MAP02 now

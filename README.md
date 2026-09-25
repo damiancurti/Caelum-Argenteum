@@ -798,7 +798,9 @@ The playtest export is a separate milestone from the final independent release.
 
 The author confirmed CA-4360I-VISUAL-01 passed after the 4.36.3 correction on
 2026-09-23. The author confirmed all 4.36.4 checks passed on 2026-09-23;
-[pending_test.txt](pending_test.txt) is empty; CA-4365-MAZE-01 passed on 2026-09-24.
+CA-4365-MAZE-01 passed on 2026-09-24, CA-4366-RATS-01 and
+CA-4367-PRISONER-ART-01 passed on 2026-09-24, and CA-4368-RESCUE-01 passed on
+2026-09-25; [pending_test.txt](pending_test.txt) is empty.
 HISTORY records the accepted CA-4364-T1-LOOT-01. The 4.36.2 bow
 check also passed on the author's confirmation. On 2026-09-23 the
 author confirmed zero validator errors, successful rebuild/launch and both

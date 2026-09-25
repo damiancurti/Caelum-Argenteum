@@ -18,7 +18,9 @@ Documentation version: **4.36.8** — 2026-09-24.
 - **Author contract:** a follower that dies before extraction is not rescued;
   zero, one or four rescues are valid; no death respawn; do not reopen other
   cells; no broad companion formations. The Tarot remains the next issue.
-- **Acceptance:** CA-4368-RESCUE-01 pending author confirmation.
+- **Acceptance:** CA-4368-RESCUE-01 passed on 2026-09-25; the author confirmed
+  the full release/follow/extraction/port-reward route and requested closure of
+  issue #14. The pending entry is removed and the author-test queue is empty.
 - **Next:** #15 / 4.36.9 owns the Tarot package after this delivery.
 
 ## Issue #13 — Recolored prisoner appearances (4.36.7)
@@ -170,9 +172,9 @@ documentation update does not implement these features or reset accepted tests.
 | --- | --- | --- |
 | 4.36.4 | [#10](https://github.com/damiancurti/Caelum-Argenteum/issues/10) | Implemented and author-accepted on 2026-09-23. Complete T1 catalogue, recipient sizing, chest preview and feedback. |
 | 4.36.5 | [#11](https://github.com/damiancurti/Caelum-Argenteum/issues/11) | Implemented and author-accepted on 2026-09-24; CA-4365-MAZE-01 passed (PR #28). Four sections, keys/cells/beds, recipe-gated repair refuges, widened channels and northern boss room. |
-| 4.36.6 | [#12](https://github.com/damiancurti/Caelum-Argenteum/issues/12) | Implemented on 2026-09-24; static passed, native and author check CA-4366-RATS-01 pending. 192 fixed rats/96 Mandingas at 2:1, no respawn. |
+| 4.36.6 | [#12](https://github.com/damiancurti/Caelum-Argenteum/issues/12) | Implemented and author-accepted on 2026-09-24; CA-4366-RATS-01 passed. 192 fixed rats/96 Mandingas at 2:1, no respawn. |
 | 4.36.7 | [#13](https://github.com/damiancurti/Caelum-Argenteum/issues/13) | Implemented and author-accepted on 2026-09-24; CA-4367-PRISONER-ART-01 passed. Four per-material recolored prisoner appearances in the reserved cells. |
-| 4.36.8 | [#14](https://github.com/damiancurti/Caelum-Argenteum/issues/14) | Follow/fight with source-character stats; extract alive before MAP02 boss; port thanks, +10 own-faction reputation and a fixed 25 gold coins independent of character size once per rescue. |
+| 4.36.8 | [#14](https://github.com/damiancurti/Caelum-Argenteum/issues/14) | Implemented and author-accepted on 2026-09-25; CA-4368-RESCUE-01 passed. Follow/fight with source-character stats; extract alive before MAP02 boss; port thanks, +10 own-faction reputation and a fixed 25 gold coins independent of character size once per rescue. |
 | 4.36.9 | [#15](https://github.com/damiancurti/Caelum-Argenteum/issues/15) | Tarot fronts and correct collection bindings. Blocked on approved downloadable source pack/manifest. |
 | 4.36.10 | [#18](https://github.com/damiancurti/Caelum-Argenteum/issues/18) | Siege assets: catapult, ram and breakable gate. After #15. |
 | 4.36.11 | [#19](https://github.com/damiancurti/Caelum-Argenteum/issues/19) | Damageable actor gates. Structural parameter table needs approval. After #18. |
