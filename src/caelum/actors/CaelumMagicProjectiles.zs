@@ -10,7 +10,6 @@ class CaelumActorSimpleElementalProjectile : CaelumActorProjectile
         Radius 4;
         Height 4;
         Speed 20;
-        Scale 0.20;
         Damage 1;
         DamageType "CaelumMagicTest";
         Projectile;
@@ -85,7 +84,6 @@ class CaelumActorExplosiveElementalProjectile : CaelumActorProjectile
         Radius 4;
         Height 4;
         Speed 20;
-        Scale 0.20;
         Damage 1;
         DamageType "CaelumMagicTest";
         Projectile;

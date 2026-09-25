@@ -81,6 +81,19 @@ reputation from old ids 4, 5, 6 and 7 to new ids 0, 1, 2 and 4, preserving the
 author-accepted reward values across save/load. GZDoom 4.14.2 compiles the
 updated PK3 and `validate_project.py` passes with no errors.
 
+Correction, 2026-09-25 (fourth round): the author clarified that only one of
+the two Ronnie-appearance projectiles was the oversized rock; the wind variant
+became invisible under the shared `Scale 0.20`. Both elemental projectile
+defaults therefore revert to their original sizes, removing the two `Scale
+0.20` lines added in the third round. No other issue #14 code changed.
+`validate_project.py` passes with no errors. The native GZDoom smoke test is
+currently blocked by an engine crash outside the repository: GZDoom 4.14.2 on
+this Windows 11 build (26200) aborts at startup with an access violation
+(`C0000005`, address `00007ff6180c8c85`) even when loading bare `DOOM2.WAD`
+without the project PK3, so the freeze observed during playtesting is the
+engine crash reporter rather than a ZScript regression. The author's GZDoom
+installation must be resolved before the route can be re-verified.
+
 ## 4.36.7 — Recolored prisoner appearances (#13)
 
 Baseline: integrated 4.36.6, `63b2bce` (author acceptance of #12). MAP02 now
