@@ -1,7 +1,263 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **4.36.5a** — 2026-09-24.
+Documentation version: **4.36.14** — 2026-09-25.
 
+## 4.36.14 — Pain sounds, dialogue cue, map music and story intermissions (#31)
+
+Baseline: integrated 4.36.9, `7a01ff00` (author acceptance of #15). Issue #31
+integrates the author-selected combat-pain sounds and local music without
+inventing replacements. Mandinga uses
+`sounds/caelum/enemies/mandinga/ca_mandinga_pain.ogg`; Zupay uses
+`sounds/caelum/enemies/zupay/ca_zupay_pain.ogg`; Argento, Ronnie and a male
+player profile use `sounds/caelum/player/pain/ca_player_pain_male.ogg`; Caella
+and a female player profile use
+`sounds/caelum/player/pain/ca_player_pain_female.ogg`; the Bull exposes twelve
+separate bellow variants under `caelum/enemies/bull_pain` through the existing
+`$random` mechanism. Rulo remains silent. The new `GetCombatPainSound()` hook
+resolves one spatial sound per actual pain event after the existing custom
+pain roll, so death/chase/attack states are unchanged and no duplicate
+playback is introduced.
+
+The supplied Suno dialogue-opening WAV replaces the prior harp excerpt in
+`sounds/caelum/ui/ca_dialogue_open.ogg` (stereo 48 kHz, 134 400 samples,
+2.8 s). `GameInfo.ChatSound`, `$limit 1` and `$singular` are unchanged, so a
+conversation opening plays once rather than on every line/redraw. MAP01 now
+uses `CA_MUS02`; MAP02 uses the local `CA_MUS03_SEWER`; MAP06 uses the local
+`CA_MUS04_PORT`; MAP07 uses the local `CA_MUS05_COAST`. `CA_MUS01` is reserved
+for future chapter-end story intermissions and is not played when MAP01 starts;
+`CaelumStoryIntermission` remains registered as the placeholder for those
+intermissions.
+
+All MP3 backups in `assets/audio_stock/music/`, the unused local tracks and the
+source files in `assets/audio_stock/sounds/` are preserved and remain unbound.
+The source-to-runtime manifest and the author-verified credit names are in
+`src/licenses/AUDIO_ISSUE_31_CREDITS.md`. Displayed CC0 labels for Snaginneb,
+freesman and Brorsan Beppe are retained; Pixabay page terms for PhatPhrogStudio
+and `53439420` remain to be confirmed before final public redistribution.
+
+Agent checks: `python validate_project.py` reports 99 runtime audio files
+(97 OGG + 2 MP3) and no errors after `python build_document_index.py`.
+`build_dev.ps1` packages 6,058 files, and GZDoom 4.14.2 compiles the complete
+PK3 and loads MAP01 without script errors. The author confirmed the issue on
+2026-09-25 after MAP01 was corrected to start directly with `CA_MUS02`;
+`CA-43614-AUDIO-01` is recorded as PASS and removed from `pending_test.txt`,
+leaving the author-test queue empty.
+
+## 4.36.9 — Approved Tarot fronts and collection bindings (#15)
+
+Baseline: integrated 4.36.8, `2f69fdc` (author acceptance of #14). The
+author-approved Tarot package is imported from the verified local archive
+`assets/source/Tarot/Tarot.zip` (SHA-256
+`e693bcadb13f093c25529c33587312f50188155e225db3f0069da491127f09aa`, 253,626,293
+bytes, 78 PNGs). All 78 fronts are added under `src/graphics/caelum/tarot`
+while the shared card back is preserved. `CaelumTarotArt` resolves runtime
+fronts by persistent card ID, and `DrawTarotPage` now draws the selected owned
+front instead of showing a back when the Ace of Cups is owned. Owned cards can
+be selected with left/right, and `ca_journal_tarot_preview` inspects any
+imported front without granting the card or campaign progress.
+
+The source filenames propose Sota before Caballero in each suit, but the
+accepted deck catalogue orders Knight (Caballero) before Page (Sota). Persistent
+IDs are preserved: for example, Cups source `46 - Sota de copa.png` binds to
+card 47 and `47 - Caballero de copa.png` binds to card 46. The Ace of Cups
+remains card 36. The Knight of Wands (`Tarot/61 - Caballero de basto.png`)
+is bound to its catalogue ID; the campaign reward itself remains #16.
+The versioned manifest `assets/manifests/tarot_78_v4369.json` records each
+source path, source SHA-256, persistent card ID, runtime path, runtime SHA-256
+and dimensions. The oversized source archive is not committed to normal Git.
+
+Static validation passes: `python validate_project.py` reports no errors and
+`build_dev.ps1` packages 6,037 files including all 78 Tarot fronts. The local
+launcher was updated to use the installed GZDoom executable and a writable
+`-config` under `build`, and the author confirmed all #15 checks passed on
+2026-09-25. `CA-4369-TAROT-ART-01` is recorded as PASS and removed from
+`pending_test.txt`; the author-test queue is empty.
+
+Usage: the author confirms the initial 2026-09-23 baseline was 75% weekly
+allowance remaining and the reset time is still unknown. This patch does not
+convert that percentage into a token measurement.
+
+## 4.36.8 — Prisoner rescue, escort and port rewards (#14)
+
+Baseline: integrated 4.36.7, `660d18b` (author acceptance of #13). The four
+MAP02 prisoners are now live companions. Opening a reserved cell offers release,
+and a freed prisoner follows and fights alongside the player using its source
+character's combat profile, stays back from the northern Zupay, and is extracted
+alive only when it reaches the pre-boss reservation before that fight. Extraction
+does not require killing the boss; a follower that dies before extraction is not
+rescued. Each rescued prisoner persists across save/load/travel and appears once
+at the MAP06 port, where its own-faction thanks grant +10 reputation and 25 gold
+coins (1,000,000 copper) exactly once, independent of character size; a failed
+coin delivery stays retryable without duplicate money or reputation. Four new
+faction domains (Unitarians, Federals, Wild Beast Men, Cult of the Tarot) are
+added without relabeling accepted IDs 0-3. No new runtime art is introduced: the
+prisoner actors reuse the #13 recolored sprites and accepted combat profiles.
+
+Static and native verification remain separate from author acceptance. GZDoom
+4.14.2 compiles the complete PK3 and loads MAP01, MAP02 and MAP06 without script
+errors; `python validate_project.py` passes with no errors. Author acceptance is
+pending: `CA-4368-RESCUE-01` remains in the author queue until the author confirms
+the full release/follow/extraction/port-reward route.
+
+Correction, 2026-09-24: author playtesting reported four defects on the
+issue #14 route. Captive prisoners entered the follow state before release,
+freed prisoners did not acquire combat targets, extraction never fired on the
+pre-boss route (the follower fled the northern Zupay before the extraction
+check), and the Spanish prisoner strings were overridden by duplicated English
+keys. The escort tick now gates the follow/combat/extraction machine on the
+persistent FOLLOWING state so captives stay inert in their accepted idle;
+freed followers scan with their native look when near the leader and switch to
+See; extraction is evaluated before the boss stay-back and also accepts the
+pre-boss barred gate as an extraction anchor; and LANGUAGE keeps only English
+values under [enu default] and Spanish values under [es]. GZDoom 4.14.2
+compiles the updated PK3 and loads MAP02 and MAP06 without script errors, and
+validate_project.py passes with no errors. Author acceptance remains pending.
+
+Correction, 2026-09-24 (second round): author playtesting confirmed three
+remaining escort defects. The per-tick escort controller was switching a
+follower back to See even while it was already in Melee, Missile or Pain, so
+the attack frames never ran: melee connected for no damage and magic was never
+cast. The controller now preserves active combat states, letting native chase
+reach Melee/Missile and letting those actions finish. Follower health now
+regenerates while safe and following, reusing the player's natural base rate
+(maximum health per real hour, scaled by Resilience type 4); damage taken
+between fights is no longer permanent. The pre-boss Zupay stay-back only
+activates after the barred northern gate is open, so the closed boss cell no
+longer scares followers away from the extraction reservation. GZDoom 4.14.2
+compiles the updated PK3 and loads MAP02 without script errors, and
+validate_project.py passes with no errors. Author acceptance remains pending.
+
+Correction, 2026-09-24 (third round): author playtesting reported the escort
+still stalled and the elemental missile read as a giant rock. Escort followers
+no longer use native chase wandering toward the leader; they steer directly at
+the leader with the same run-speed ratio used by the boss flee and stop at the
+follow distance. A follower that falls farther than
+`PRISONER_FOLLOW_TELEPORT_DISTANCE` (1024) while unengaged is teleported to an
+open ring around the leader, preventing maze stalls. The threat branch also
+stops wiping `bInCombat`/`bJustHit`/`bJustAttacked`/`LastEnemy` every tic; the
+story-combat state is cleared only on transition back to following. The simple
+and explosive elemental projectiles are scaled to `0.20`, restoring a compact
+missile instead of an oversized elemental sprite. While the northern barred
+gate is closed its lines now set `Line.ML_BLOCKSIGHT`, so the caged Zupay can
+no longer see and scare the escort through the bars; opening the gate clears
+the sight-block flag with the other block flags. GZDoom 4.14.2 compiles the
+updated PK3 and loads MAP02 without script errors, and validate_project.py
+passes with no errors. Author acceptance remains pending.
+
+Correction, 2026-09-24 (faction consolidation): the provisional social domains
+(Gendarmerie, settlements, caravans and political actors) are replaced by six
+canonical factions with final ids: Unitarians=0, Federals=1, Free Peoples=2,
+Caelith=3, Cult of the Tarot=4 and Sun Warriors=5. The former Wild Beast Men id
+is now the Free Peoples faction, and the reputation trial/debug actions now use
+Unitarians instead of Gendarmerie. Serialized faction arrays keep eight save
+slots while only ids 0-5 are valid; `FactionStateVersion` advances to 3 with an
+idempotent migration that discards provisional 0-3 and re-maps saved prisoner
+reputation from old ids 4, 5, 6 and 7 to new ids 0, 1, 2 and 4, preserving the
+author-accepted reward values across save/load. GZDoom 4.14.2 compiles the
+updated PK3 and `validate_project.py` passes with no errors.
+
+Correction, 2026-09-25 (fourth round): the author clarified that only one of
+the two Ronnie-appearance projectiles was the oversized rock; the wind variant
+became invisible under the shared `Scale 0.20`. Both elemental projectile
+defaults therefore revert to their original sizes, removing the two `Scale
+0.20` lines added in the third round. No other issue #14 code changed.
+`validate_project.py` passes with no errors. The native GZDoom smoke test is
+currently blocked by an engine crash outside the repository: GZDoom 4.14.2 on
+this Windows 11 build (26200) aborts at startup with an access violation
+(`C0000005`, address `00007ff6180c8c85`) even when loading bare `DOOM2.WAD`
+without the project PK3, so the freeze observed during playtesting is the
+engine crash reporter rather than a ZScript regression. The author's GZDoom
+installation must be resolved before the route can be re-verified.
+
+Author acceptance, 2026-09-25 (America/Buenos_Aires): the author confirmed
+the full prisoner release, follow, combat, extraction, persistence and port
+reward route and requested closure of issue #14. Result: **PASS**,
+**CA-4368-RESCUE-01**, originating 4.36.8 / issue #14, delivered on the
+focused `issue-14-4.36.8` branch. This covers the release dialogue, source
+combat profile, stay-back from the northern Zupay, pre-boss extraction without
+killing the boss, save/load/travel persistence, the one-time +10 own-faction
+reputation and 25 gold coins (1,000,000 copper) per rescued prisoner at the
+MAP06 port, and the six canonical faction domains. No failures, partial
+results or qualifications were reported. The confirmed entry is removed from
+pending_test.txt; the tracked queue is empty. #15 owns the Tarot package next.
+
+## 4.36.7 — Recolored prisoner appearances (#13)
+
+Baseline: integrated 4.36.6, `63b2bce` (author acceptance of #12). MAP02 now
+places one inert, friendly, invulnerable prisoner in each reserved endpoint
+cell. The four appearances reuse the accepted mansion actor sprites and combat
+profiles, recolored deterministically per material (hair/fur/cloak/cloth) with
+muted faction ramps while skin and metallic accessories keep their RGB: Caella ->
+Leonor Benítez (Unitarians, celeste), Ronnie -> Rufino Acosta (Federals,
+punzó), Rulo -> Santos Barrera (Wild Beast Men, black/brown/green) and Argento
+-> Leandro Farías (Cult of the Tarot, gold/silver over black). No new model or
+replacement illustration is added; original mansion NPC art is unchanged. The
+inert prisoner idle keeps the accepted A/B breathing poses and never enters the
+walking/chase animation. A separate correction in the same release restores the
+MAP01 mansion NPC idle to the accepted A/B breathing poses (see below).
+
+The maintained generator `assets/generators/generate_prisoner_sprites.py`
+writes 632 recolored PNGs and the guarded `CAELUM_PRISONERS_V2` block in
+`src/TEXTURES`. The map generator instantiates the new actor classes at the
+four reserved `reserved_actor` positions, preserving the existing locks/routes.
+Palette mapping and before/after evidence are in `assets/validation_4367/`.
+
+Static/native verification remains separate from author acceptance.
+
+Author acceptance, 2026-09-24 (America/Buenos_Aires): the author confirmed
+the four recolored prisoner variants and requested closure of issue #13.
+Result: **PASS**, **CA-4367-PRISONER-ART-01**, originating 4.36.7 / issue #13,
+delivered on the focused `issue-13-4.36.7` branch. This covers the four
+distinct inert, friendly, invulnerable prisoners, the source/faction mapping,
+per-material recolors that keep skin and metallic accessories, and the A/B
+idle breathing poses without entering the walking/chase animation. The author
+clarified that the earlier idle-sprite concern referred to the MAP01 mansion
+NPCs, not the prisoners, and that concern is tracked separately. No failures,
+partial results or qualifications were reported. The confirmed entry is removed
+from pending_test.txt; the tracked queue is empty. #14 owns rescue, escort,
+dialogue and rewards.
+
+Author correction, 2026-09-24: the author clarified that the earlier
+idle-sprite concern referred to the MAP01 mansion NPCs, not the prisoners. An
+intermediate change looped the static `ARID/CAID/ROID/RUID A` frame (and `PAID
+A` for Palomo) because the v4 A/B rest pose's lower-hem motion read as walking;
+a final author correction supersedes that. The mansion NPC idle must alternate
+between the accepted monster idle A and B poses instead of staying frozen, and
+conversations must keep the simulation active without pause. Argento, Caella,
+Ronnie and Rulo therefore alternate the `ARID/CAID/ROID/RUID` A and B breathing
+frames, and Palomo alternates `PAID` A and B. The inert prisoner recolored A/B
+poses remain unchanged. Delivered on `issue-13-4.36.7`.
+
+## 4.36.6 — Hostile sewer rats (#12)
+
+Baseline: integrated 4.36.5, `c65a4ba` (PR #28 merge). MAP02 adds two hostile
+sewer rats per Mandinga, reusing the existing accepted `CaelumGiantRat` actor
+(DoomEdNum 18029) and its RATG sprite/combat profile. The retained population
+is 96 Mandingas and one Zupay; exactly 192 rats are placed at two fixed
+dry-walkway positions per Mandinga junction, recorded in the per-section
+manifest. No new art, damage, health, AI or balance value is introduced.
+
+Placement is deterministic through the updated MAP02 generator and layout
+validator. Rats are initial placements only: they never respawn or resurrect,
+so the exact 192/96 ratio holds for the whole map. Every other accepted #10/#11
+content count is unchanged.
+
+Static validation passes 206 checks, including the 192 rat count, the 2:1
+per-section ratio, unique positions and reachable open-cell starts; the report
+is in `assets/validation_4366/LAYOUT.json`. Native detection/pursuit/melee/death,
+narrow-channel/trap and save/load duplicate checks remain separate from author
+acceptance and are not claimed here.
+
+Author acceptance, 2026-09-24 (America/Buenos_Aires): the author explicitly
+confirmed that all tests passed and requested closure of issue #12. Result:
+**PASS**, **CA-4366-RATS-01**, originating 4.36.6 / issue #12, delivered on the
+focused `issue-12-4.36.6` branch (`a986f93`). This covers the queued 192/96
+ratio, detection/pursuit/melee/death, narrow channels and traps, save/load
+without duplicated or resurrected rats, and a responsive four-section run.
+No failures, partial results or qualifications were reported. The confirmed
+entry is removed from pending_test.txt; the tracked queue is empty. Release
+4.36.6 is unchanged. Author evidence is separate from the static/native results
+above.
 ## 4.36.5a — Selective file reading for agents (#29)
 
 Issue [#29](https://github.com/damiancurti/Caelum-Argenteum/issues/29).

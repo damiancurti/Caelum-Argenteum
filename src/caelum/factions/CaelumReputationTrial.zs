@@ -68,7 +68,7 @@ class CaelumReputationTrialState : Inventory
         Door = replacement;
         Door.args[0] = group+1; Door.args[1] = 1; Door.args[2] = slideY ? 1 : 0;
         Door.Angle = slideY ? 0 : 90;
-        Door.AccessCondition = CaelumFactionCondition.Create(CaelumConstants.FACTION_GENDARMERIA, 25, true);
+        Door.AccessCondition = CaelumFactionCondition.Create(CaelumConstants.FACTION_UNITARIOS, 25, true);
         return true;
     }
 
@@ -119,7 +119,7 @@ class CaelumReputationTrialGuide : Actor
         if (Subject.health <= 0) return;
         if (requestedAction == 1)
         {
-            let condition = CaelumFactionCondition.Create(CaelumConstants.FACTION_GENDARMERIA, 25);
+            let condition = CaelumFactionCondition.Create(CaelumConstants.FACTION_UNITARIOS, 25);
             CaelumFactionCondition.OpenDialogue(Subject, self, 43323, condition, SF_IGNOREVISIBILITY);
         }
         else if (requestedAction == 2)
@@ -132,8 +132,8 @@ class CaelumReputationTrialGuide : Actor
             if (!CaelumMainM00FoolCapture.HasOwnedBox(Subject))
             { Subject.A_Print(StringTable.Localize("CA_REP_TRIAL_BOX", false)); return; }
             Subject.OpenPalomoMerchant(self,
-                CaelumFactionCondition.Create(CaelumConstants.FACTION_GENDARMERIA, 0),
-                CaelumFactionCondition.Create(CaelumConstants.FACTION_GENDARMERIA, 25),
+                CaelumFactionCondition.Create(CaelumConstants.FACTION_UNITARIOS, 0),
+                CaelumFactionCondition.Create(CaelumConstants.FACTION_UNITARIOS, 25),
                 "CA_REP_TRIAL_TRADE_TITLE");
         }
         else if (requestedAction >= 10 && requestedAction <= 14)
@@ -142,9 +142,9 @@ class CaelumReputationTrialGuide : Actor
             bool member = requestedAction >= 12;
             let record = Subject.GetPersistentCharacterState(false);
             if (record == null) return;
-            Subject.ChangePlayerFactionReputation(CaelumConstants.FACTION_GENDARMERIA,
-                reputation-record.FactionReputation[CaelumConstants.FACTION_GENDARMERIA]);
-            Subject.SetPlayerFactionMembership(CaelumConstants.FACTION_GENDARMERIA, member);
+            Subject.ChangePlayerFactionReputation(CaelumConstants.FACTION_UNITARIOS,
+                reputation-record.FactionReputation[CaelumConstants.FACTION_UNITARIOS]);
+            Subject.SetPlayerFactionMembership(CaelumConstants.FACTION_UNITARIOS, member);
             CaelumFactionCondition.OpenDialogue(Subject, self, 43322, null, SF_IGNOREVISIBILITY);
         }
     }
@@ -196,8 +196,8 @@ class CaelumReputationConversationMenu : CaelumPalomoConversationMenu
         String text = StringTable.Localize(mCurNode.Dialogue);
         if (user != null)
         {
-            text.Replace("%REP%", String.Format("%d", user.JournalFactionReputation[CaelumConstants.FACTION_GENDARMERIA]));
-            text.Replace("%MEMBER%", StringTable.Localize(user.JournalFactionMember[CaelumConstants.FACTION_GENDARMERIA]
+            text.Replace("%REP%", String.Format("%d", user.JournalFactionReputation[CaelumConstants.FACTION_UNITARIOS]));
+            text.Replace("%MEMBER%", StringTable.Localize(user.JournalFactionMember[CaelumConstants.FACTION_UNITARIOS]
                 ? "CA_FACTION_MEMBER_YES" : "CA_FACTION_MEMBER_NO", false));
         }
         mDialogueLines = displayFont.BreakLines(text, SpeechWidth);

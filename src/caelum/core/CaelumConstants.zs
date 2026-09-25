@@ -20,6 +20,7 @@ class CaelumConstants : Object
     // Menores: Espadas, Copas, Bastos, Oros. Cada palo conserva 14 índices:
     // Ancho, 2..10, Caballero, Sota, Reina, Rey.
     const TAROT_MINOR_RANK_COUNT = 14;
+    const TAROT_CUPS_ACE = TAROT_MAJOR_COUNT + TAROT_MINOR_RANK_COUNT;
     const TAROT_SUIT_SWORDS = 0;
     const TAROT_SUIT_CUPS = 1;
     const TAROT_SUIT_WANDS = 2;
@@ -180,18 +181,48 @@ class CaelumConstants : Object
     const PALOMO_PLACEMENT_MANSION = PALOMO_PLACEMENT_MANSION_FOYER;
     const PALOMO_PLACEMENT_COUNT = 3;
 
-    // Cuatro dominios sociales baratos y estables. Son identificadores de
-    // infraestructura, no nombres definitivos de partidos o asentamientos.
-    const FACTION_GENDARMERIA = 0;
-    const FACTION_SETTLEMENTS = 1;
-    const FACTION_CARAVANS = 2;
-    const FACTION_POLITICAL_ACTORS = 3;
-    const FACTION_COUNT = 4;
+    // Seis facciones narrativas definitivas. Los dominios 0-3 anteriores eran
+    // infraestructura provisional y dejan de existir.
+    const FACTION_UNITARIOS = 0;
+    const FACTION_FEDERALS = 1;
+    const FACTION_PUEBLOS_LIBRES = 2;
+    const FACTION_CAELITH = 3;
+    const FACTION_CULT_TAROT = 4;
+    const FACTION_SUN_WARRIORS = 5;
+    const FACTION_COUNT = 6;
+    // El almacenamiento serializado conserva ocho ranuras para no cambiar el
+    // tamaÃ±o de los arreglos de partidas existentes. Solo 0..5 son vÃ¡lidas.
+    const FACTION_SAVE_SLOTS = 8;
     const FACTION_REPUTATION_MINIMUM = -1000;
     const FACTION_REPUTATION_MAXIMUM = 1000;
     const FACTION_RELATION_HOSTILE = -1;
     const FACTION_RELATION_NEUTRAL = 0;
     const FACTION_RELATION_FRIENDLY = 1;
+
+    // Rescate y escolta de los cuatro prisioneros de MAP02. El orden es el
+    // mismo que usan las celdas reservadas y la tabla de apariciones de #13.
+    const PRISONER_UNITARIO = 0;
+    const PRISONER_FEDERAL = 1;
+    const PRISONER_BESTIA = 2;
+    const PRISONER_TAROT = 3;
+    const PRISONER_COUNT = 4;
+    const PRISONER_STATE_CAPTIVE = 0;
+    const PRISONER_STATE_FOLLOWING = 1;
+    const PRISONER_STATE_EXTRACTED = 2;
+    const PRISONER_STATE_DEAD = -1;
+    const PRISONER_TID_BASE = 44820;
+    const PRISONER_EXTRACTION_TID = 44830;
+    const PRISONER_BOSS_GATE_TID = 44703;
+    const PRISONER_PORT_TID_BASE = 44900;
+    const PRISONER_RESCUE_COPPER_REWARD = 1000000;
+    const PRISONER_RESCUE_REPUTATION_GAIN = 10;
+    const PRISONER_CONVERSATION_BASE = 43420;
+    const PRISONER_PORT_CONVERSATION_BASE = 43424;
+    const PRISONER_FOLLOW_DISTANCE = 96.0;
+    const PRISONER_FOLLOW_TELEPORT_DISTANCE = 1024.0;
+    const PRISONER_EXTRACTION_RADIUS = 96.0;
+    const PRISONER_THREAT_RADIUS = 512.0;
+    const PRISONER_BOSS_STAYBACK_RADIUS = 1400.0;
 
     // Character creation allocation limits from the design document.
     const FREE_LAYER_POINTS = 4;

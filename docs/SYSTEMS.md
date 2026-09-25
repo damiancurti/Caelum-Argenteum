@@ -1,6 +1,58 @@
 # Caelum Argenteum — Current systems and rules
 
-Documentation version: **4.36.5a** — 2026-09-24.
+Documentation version: **4.36.14** — 2026-09-25.
+
+## 4.36.8 — Prisoner rescue, escort and port rewards (#14)
+
+Each reserved MAP02 cell now offers release through a prisoner conversation; the
+freed actor becomes friendly, stops counting as a kill, follows the player and
+fights using the source mansion character's exact combat profile. It stays back
+from the northern Zupay and is extracted alive only at the pre-boss reservation
+before that fight; killing the boss is not required, and a follower that dies
+before extraction is not rescued. Persistent per-prisoner state survives save,
+load and travel; extracted prisoners appear once at the MAP06 port, where their
+own-faction thanks grant +10 reputation and 25 gold coins (1,000,000 copper)
+exactly once, independent of character size. A failed coin delivery is retryable
+without duplicate money or reputation. The six canonical factions replace the
+former provisional domains: Unitarians=0, Federals=1, Free Peoples=2,
+Caelith=3, Cult of the Tarot=4 and Sun Warriors=5.
+
+## 4.36.7 — Inert prisoner appearances (#13)
+
+The four reserved MAP02 cells now contain one prisoner actor each. These actors
+are visual/identity placeholders for #14: they use the source character's exact
+combat profile and recolored poses, but in the cell they are friendly,
+invulnerable, do not count as kills, keep the accepted A/B idle breathing
+poses without entering the walking/chase animation, and do not chase or
+inherit mansion anchoring/quest behavior. Their persistent identity is the map thing/class,
+not the provisional display name.
+
+The MAP01 mansion residents and Palomo keep their story anchoring and separate
+walk/run states, and their idle alternates the accepted monster idle A and B
+poses. Conversations remain unpaused: MAPINFO keeps
+`UnFreezeSinglePlayerConversations` and the common menu omits the delayed pause
+of `ConversationMenu.Ticker`.
+
+The display names are author-authorized working names: Leonor Benítez
+(Caella/Unitarians), Rufino Acosta (Ronnie/Federals), Santos Barrera
+(Rulo/Free Peoples) and Leandro Farías (Argento/Cult of the Tarot). These are
+fictional names, not historical people; no military rank, army size, combat
+bonus, formal alliance, betrayal detail or capture sequence is established here.
+Rescue, escort, dialogue and rewards remain #14.
+
+## 4.36.6 — Hostile sewer rats (#12)
+
+Revision-2 MAP02 keeps its four keyed sections and existing contents, and adds
+two hostile rats per Mandinga: 192 rats against the retained 96 Mandingas and
+one Zupay (a fixed 2:1 ratio, 24 Mandingas / 48 rats per section). Rats reuse
+the accepted `CaelumGiantRat` actor (DoomEdNum 18029) and RATG sprites; no new
+damage, health, AI, art or balance value is introduced.
+
+Each Mandinga junction gains two fixed dry-walkway placements, written
+deterministically by the generator and recorded per section in the manifest.
+Rats are initial placements only and never respawn or resurrect, preserving the
+ratio throughout the map. The historical 0i `MAP02 and rewards` table below is
+unchanged and continues to describe that release.
 
 ## 4.36.5 — Sewer gates, refuges and known-recipe repair (#11)
 
@@ -2073,8 +2125,9 @@ policy or create missions automatically.
 CaelumFactionCondition is a serializable Object with Configured, FactionId,
 MinimumReputation and RequireMembership. Create retains even an invalid configuration
 for it to fail closed; does not convert it to null. null means the service does not
-declare requirement and maintains previous behavior. Valid ids are Gendarmerie=0,
-Settlements=1, Caravans=2 and Political Actors=3. A minimum outside -1000..1000 or an
+declare requirement and maintains previous behavior. Valid ids are Unitarians=0,
+Federals=1, Free Peoples=2, Caelith=3, Cult of the Tarot=4 and Sun Warriors=5.
+A minimum outside -1000..1000 or an
 unconfigured condition is invalid.
 
 Check consults the persistent registration of the applicant player, alive and created,
@@ -2111,8 +2164,8 @@ by giving CaelumDebugReputationTrial. Activation does not change reputation. Jou
 Reputation > F/Y only opens it if it is already enabled. The USDF 43322 menu provides
 information (43323), door, trade and five explicit states. Actions are supported only
 from the active dialogue of your own guide; they are executed when you close it. Presets
-Gendarmerie: 0/no, 25/no, 25/yes, -25/yes, 0/yes. The other factions are preserved and
-the changes are saved by the existing APIs.
+Unitarians: 0/no, 25/no, 25/yes, -25/yes, 0/yes. The other factions are preserved
+and the changes are saved by the existing APIs.
 
 Information requires 25; door requires 25 and membership; trade requires 0 plus the
 usual own Box; reduction requires 25. They are diagnostic conditions. They are not assigned to residents and do not create ranks, relationships or campaign benefits. The door
@@ -3758,7 +3811,7 @@ world.
 
 ### 6. Prisoner coin reward
 
-[AUTHOR-CONFIRMED DESIGN, NOT IMPLEMENTED] Issue #14, planned 4.36.8. The
+[IMPLEMENTED, AUTHOR ACCEPTANCE PENDING] Issue #14, 4.36.8. The
 latest author decision, explicitly referenced by #10 and verified against #14,
 supersedes the former average-weapon-price formula reconciled in #22.
 

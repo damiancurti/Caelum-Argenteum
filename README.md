@@ -4,16 +4,39 @@ An independent dark fantasy FPS-RPG inspired by nineteenth-century Argentina.
 Author and game designer: **Damian Curti**. Development target: **GZDoom 4.14.2**
 on Windows 11. The final game is intended to be independent of Doom assets.
 
-**Current release: 4.36.5a.** Obtain and update the complete repository, validate
-it, then rebuild with `run_dev.bat` as described below. This documentation
-patch records the selective file-reading workflow for agents
-([#29](https://github.com/damiancurti/Caelum-Argenteum/issues/29)) without
-changing gameplay, balance, maps, saves or assets. Issue
+**Current release: 4.36.14.** Obtain and update the complete repository, validate
+it, then rebuild with `run_dev.bat` as described below. Issue
+[#31](https://github.com/damiancurti/Caelum-Argenteum/issues/31) integrates the
+author-selected pain sounds, the supplied Suno dialogue-opening cue and the local
+sewer/port/coast music; the former MAP01 music is reserved for chapter-end story
+intermissions. The merged documentation patch
+[#29](https://github.com/damiancurti/Caelum-Argenteum/issues/29) records the
+selective file-reading workflow for agents without changing gameplay, balance,
+maps, saves or assets. Issue
+[#15](https://github.com/damiancurti/Caelum-Argenteum/issues/15) integrates the
+author-approved 78-card Tarot fronts from the supplied package, preserves the
+shared card back, and binds every runtime front to its persistent card ID so
+the Journal shows the Ace of Cups front instead of a back once it is owned.
+Development preview remains separate from granting campaign progress. Issue
+[#14](https://github.com/damiancurti/Caelum-Argenteum/issues/14) makes the four
+MAP02 prisoners follow and fight alongside the player, extracts them alive at
+the pre-boss reservation before the northern Zupay, and grants each rescued
+prisoner a one-time +10 own-faction reputation and 25 gold coins (1,000,000
+copper) at the MAP06 port, independent of character size. Issue
+[#13](https://github.com/damiancurti/Caelum-Argenteum/issues/13) adds four
+recolored prisoner appearances reusing the mansion characters: Caella ->
+Unitarians, Ronnie -> Federals, Rulo -> Free Peoples and Argento -> Cult of
+the Tarot. The provisional social domains are replaced by six canonical
+factions: Unitarians, Federals, Free Peoples, Caelith, Cult of the Tarot and
+Sun Warriors.
+Issue [#12](https://github.com/damiancurti/Caelum-Argenteum/issues/12) added
+192 hostile sewer rats (two per Mandinga) and was author-confirmed on
+2026-09-24. Issue
 [#11](https://github.com/damiancurti/Caelum-Argenteum/issues/11) rebuilds MAP02
 into four wider sewer sections with keyed cells, beds, repair refuges and a
 pre-boss prisoner extraction reservation. Ground ammunition totals are 240
 arrows, 120 bolts and 120 bullets. Repairs require the weapon's known recipe;
-no new recipe/material allowance is granted. The author confirmed CA-4365-MAZE-01 passed on 2026-09-24.
+no new recipe/material allowance is granted.
 
 **Existing saves that already visited the three-section MAP02:** launch
 `run_dev.bat --legacy-map02` (or build with `build_dev.ps1 -LegacyMap02`). This
@@ -69,7 +92,7 @@ Native resting support is required; suspended objects do not count. Stacks
 transmit their real mass and share it among supports. Fractional damage is
 preserved. Native ceiling damage remains a percentage per engine pulse.
 
-MAP02 is a four-section sewer with 100 junction rooms, 96 Mandingas, 45 traps,
+MAP02 is a four-section sewer with 100 junction rooms, 96 Mandingas, 192 hostile rats, 45 traps,
 four progression/arena keys, four cell keys and 39 chests containing 65 distinct
 Tier 1 equipment pieces. Newly
 acquired size-bearing equipment fits the recipient; owned equipment retains
@@ -97,17 +120,23 @@ recorded in HISTORY.
 Engine binaries, IWADs and development automation are not included.
 
 `netevent ca_debug_hazards_report` and `netevent ca_debug_maze_report` identify
-**4.36.5**. Use the repository instructions below and the root pending-test queue
+**4.36.7**. Use the repository instructions below and the root pending-test queue
 for focused checks; no external patch-test upload is required.
 The author's acceptance of the carriage, transitions and other 0h tests is
 preserved. The broader unfinished 4.36 physics roadmap remains in PROJECT.md.
 
 ## Implemented
 
+- Approved 78-card Tarot fronts with the shared back and persistent-ID bindings;
+  the Journal shows owned fronts and a separate development preview.
 - Revised first-person grips, two-handed heavy weapons and shared holstering.
 - Original fallback fists, a dorsal left bow grip and smaller ground bullets.
 - Aimed Use hints and a repeatable, occupancy-checked gallery reset lever.
 - Visible native hub travel transitions with captured departure views.
+- Author-selected combat-pain sounds for Mandinga, Zupay, Bull, Argento,
+  Ronnie, Caella and the applicable player profile.
+- Local sewer/port/coast music plus the reserved chapter-end story-intermission
+  music and the supplied dialogue-opening cue.
 
 - Original two-state column/wall lever, larger bull and spherical hazard rocks.
 - Single-use explosive mines, safe local teleport traps and native ceiling crushers.
@@ -378,7 +407,7 @@ preserved. The broader unfinished 4.36 physics roadmap remains in PROJECT.md.
 - A separate reputation discount uses the existing 140% buy / 60% sell margins
   instead of normal 150% / 50%. It is recalculated from the active service's
   condition, never becomes the saved negotiated discount, and does not stack.
-- The explicitly enabled trial uses Gendarmeria only: information needs 25,
+- The explicitly enabled trial uses Unitarians only: information needs 25,
   the door needs membership and 25, trade needs 0, and its discount needs 25.
   These are test settings, not narrative ranks or global faction thresholds.
   Existing Limbo residents retain their neutral, unassigned faction behavior.
@@ -741,9 +770,11 @@ Peregrino uses Amparo: 50% less environmental damage for the player and nearby
 allies for 10 seconds, with 60 seconds of reuse and a trial base cost of 1000 anima.
 Future class area abilities use the shared 1280-MU seal-channel base radius.
 Automatic conversation cancellation on damage was suggested and remains pending.
-Four new prisoner affiliations, +10 own-faction reputation and a fixed 25 gold
-coins per successful rescue, independent of character size, are defined in the
-roadmap. SYSTEMS records the reward rule; rank thresholds and cross-faction relations still
+Six canonical factions replace the provisional social domains: Unitarians,
+Federals, Free Peoples, Caelith, Cult of the Tarot and Sun Warriors. Prisoner
+affiliations, +10 own-faction reputation and a fixed 25 gold coins per
+successful rescue, independent of character size, are defined in the roadmap.
+SYSTEMS records the reward rule; rank thresholds and cross-faction relations still
 require authored design.
 The attribute audit is deferred by the author; the current rules stay accepted.
 Follow PROJECT.md for the remaining scope. Potable-water collection is implemented. Treatment of unsafe water remains undefined. Bullet crafting still needs its material composition and process
@@ -760,12 +791,11 @@ crafted weapon only, inside the Box.
 
 The established sequence continues through V4.34 world/travel foundations,
 V4.35 calendar/weather/events, V4.36 physical hazards and V4.37 Tarot/Trucazo.
-New issues #10–#15 plan T1-only loot, a four-section sewer with cells/beds and
-repair refuges, 192 rats alongside 96 Mandingas, four recolored prisoners,
-persistent escorts/port rewards and Tarot fronts. Issues #18–#21 add siege
+Issues #10–#15 implement the T1-only loot catalogue, the four-section sewer
+with cells/beds and repair refuges, the four recolored prisoners, persistent
+escorts/port rewards and the approved Tarot fronts. Issues #18–#21 add siege
 assets, breakable actor gates, rams and catapults. See [TASKS](docs/TASKS.md)
-and the current author-roadmap section of [PROJECT](docs/PROJECT.md). These
-features are not included in the current 4.36.1b release (same 4.36.1 gameplay baseline).
+and the current author-roadmap section of [PROJECT](docs/PROJECT.md).
 
 After V4.37, complete and accept three campaign maps covering the prologue,
 El Loco and two distinct Minors, then verify the exported
@@ -785,7 +815,14 @@ The playtest export is a separate milestone from the final independent release.
 
 The author confirmed CA-4360I-VISUAL-01 passed after the 4.36.3 correction on
 2026-09-23. The author confirmed all 4.36.4 checks passed on 2026-09-23;
-[pending_test.txt](pending_test.txt) is empty; CA-4365-MAZE-01 passed on 2026-09-24.
+CA-4365-MAZE-01 passed on 2026-09-24, CA-4366-RATS-01 and
+CA-4367-PRISONER-ART-01 passed on 2026-09-24, and CA-4368-RESCUE-01 passed on
+2026-09-25. The 4.36.9 author check `CA-4369-TAROT-ART-01` passed on 2026-09-25
+and was removed from [pending_test.txt](pending_test.txt); it covered the actual
+in-game Tarot imagery.
+The 4.36.14 audio integration passed static validation, packaging and a native
+ZScript compile; the in-game pain, music, dialogue cue and opening flow await
+the author's focused check, recorded in [pending_test.txt](pending_test.txt).
 HISTORY records the accepted CA-4364-T1-LOOT-01. The 4.36.2 bow
 check also passed on the author's confirmation. On 2026-09-23 the
 author confirmed zero validator errors, successful rebuild/launch and both

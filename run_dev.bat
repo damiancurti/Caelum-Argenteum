@@ -12,7 +12,7 @@ set "BUILD_MAP_OPTION=-LegacyMap02"
 :arguments_ready
 
 REM Engine path in the installation supplied by the author.
-set "GZDOOM_EXE=C:\Users\dcc70\OneDrive\Documentos\GZDooM\gzdoom.exe"
+set "GZDOOM_EXE=C:\Program Files (x86)\GZDoom\gzdoom.exe"
 
 REM Development IWAD installed by the author.
 set "DOOM2_IWAD=C:\Program Files (x86)\Steam\steamapps\common\ultimate doom\base\doom2\DOOM2.WAD"
@@ -53,8 +53,8 @@ if not "!BUILD_EXIT!"=="0" (
     exit /b 1
 )
 
-REM Start GZDoom with the newly rebuilt PK3.
-"!GZDOOM_EXE!" -iwad "!DOOM2_IWAD!" -file "!PROJECT_PK3!"
+REM Start GZDoom with the newly rebuilt PK3. The -config below avoids the GZDoom 4.14.2 startup crash on this Windows build and keeps the INI writable.
+"!GZDOOM_EXE!" -iwad "!DOOM2_IWAD!" -file "!PROJECT_PK3!" -config "!PROJECT_ROOT!build\gzdoom.ini"
 
 endlocal
 exit /b

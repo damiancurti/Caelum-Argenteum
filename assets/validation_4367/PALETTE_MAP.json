@@ -1,0 +1,302 @@
+[
+  {
+    "faction": "unitario",
+    "display_name": "Leonor Benitez",
+    "source_char": "caella",
+    "source_prefix": "CAID",
+    "sprite_prefix": "PUNI",
+    "prefix_map": {
+      "idle": "PUNI",
+      "chase": "PUNC",
+      "combat": "PUNL",
+      "rest": "PUNR"
+    },
+    "material_policy": "Recolour black hair and navy cloak to muted celeste; keep olive skin, cream sleeves/skirt and brown leather.",
+    "primary": {
+      "name": "muted celeste",
+      "stops": [
+        [
+          0.0,
+          [
+            10,
+            12,
+            18
+          ]
+        ],
+        [
+          0.3,
+          [
+            40,
+            78,
+            104
+          ]
+        ],
+        [
+          0.62,
+          [
+            110,
+            156,
+            180
+          ]
+        ],
+        [
+          1.0,
+          [
+            200,
+            226,
+            236
+          ]
+        ]
+      ]
+    },
+    "secondary": null,
+    "frames_generated": 158
+  },
+  {
+    "faction": "federal",
+    "display_name": "Rufino Acosta",
+    "source_char": "ronnie",
+    "source_prefix": "ROID",
+    "sprite_prefix": "PFED",
+    "prefix_map": {
+      "idle": "PFED",
+      "chase": "PFEC",
+      "combat": "PFEL",
+      "rest": "PFER"
+    },
+    "material_policy": "Recolour silver-white hair and navy coat to muted punzo red; keep lavender skin, cream sleeves and brown leather.",
+    "primary": {
+      "name": "muted punzo red",
+      "stops": [
+        [
+          0.0,
+          [
+            18,
+            9,
+            9
+          ]
+        ],
+        [
+          0.3,
+          [
+            96,
+            24,
+            26
+          ]
+        ],
+        [
+          0.62,
+          [
+            168,
+            50,
+            52
+          ]
+        ],
+        [
+          1.0,
+          [
+            224,
+            104,
+            102
+          ]
+        ]
+      ]
+    },
+    "secondary": null,
+    "frames_generated": 158
+  },
+  {
+    "faction": "bestia",
+    "display_name": "Santos Barrera",
+    "source_char": "rulo",
+    "source_prefix": "RUID",
+    "sprite_prefix": "PBES",
+    "prefix_map": {
+      "idle": "PBES",
+      "chase": "PBRN",
+      "combat": "PBEL",
+      "rest": "PBER"
+    },
+    "material_policy": "Recolour shaggy fur toward black and brown, olive waist cloth toward green; keep iron armor and the dark red front panel.",
+    "primary": {
+      "name": "muted black/brown fur",
+      "stops": [
+        [
+          0.0,
+          [
+            8,
+            8,
+            6
+          ]
+        ],
+        [
+          0.25,
+          [
+            34,
+            26,
+            18
+          ]
+        ],
+        [
+          0.55,
+          [
+            78,
+            54,
+            30
+          ]
+        ],
+        [
+          0.8,
+          [
+            124,
+            88,
+            52
+          ]
+        ],
+        [
+          1.0,
+          [
+            168,
+            126,
+            82
+          ]
+        ]
+      ]
+    },
+    "secondary": {
+      "name": "muted green cloth",
+      "stops": [
+        [
+          0.0,
+          [
+            10,
+            12,
+            8
+          ]
+        ],
+        [
+          0.35,
+          [
+            40,
+            58,
+            28
+          ]
+        ],
+        [
+          0.7,
+          [
+            70,
+            94,
+            50
+          ]
+        ],
+        [
+          1.0,
+          [
+            112,
+            142,
+            84
+          ]
+        ]
+      ]
+    },
+    "frames_generated": 158
+  },
+  {
+    "faction": "tarot",
+    "display_name": "Leandro Farias",
+    "source_char": "argento",
+    "source_prefix": "ARID",
+    "sprite_prefix": "PTAR",
+    "prefix_map": {
+      "idle": "PTAR",
+      "chase": "PTRN",
+      "combat": "PTEL",
+      "rest": "PTER"
+    },
+    "material_policy": "Recolour navy coat toward black with silver highlights and gray hair toward silver; keep gold motifs, cream tabard and brown leather.",
+    "primary": {
+      "name": "black coat with silver highlights",
+      "stops": [
+        [
+          0.0,
+          [
+            8,
+            8,
+            10
+          ]
+        ],
+        [
+          0.3,
+          [
+            20,
+            22,
+            26
+          ]
+        ],
+        [
+          0.6,
+          [
+            58,
+            64,
+            70
+          ]
+        ],
+        [
+          0.85,
+          [
+            128,
+            136,
+            140
+          ]
+        ],
+        [
+          1.0,
+          [
+            190,
+            198,
+            202
+          ]
+        ]
+      ]
+    },
+    "secondary": {
+      "name": "silver hair",
+      "stops": [
+        [
+          0.0,
+          [
+            52,
+            54,
+            56
+          ]
+        ],
+        [
+          0.4,
+          [
+            118,
+            122,
+            126
+          ]
+        ],
+        [
+          0.75,
+          [
+            176,
+            180,
+            184
+          ]
+        ],
+        [
+          1.0,
+          [
+            224,
+            228,
+            232
+          ]
+        ]
+      ]
+    },
+    "frames_generated": 158
+  }
+]

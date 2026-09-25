@@ -1,7 +1,96 @@
 # TASKS.md — Active tasks
 
-Documentation version: **4.36.5a** — 2026-09-24.
+Documentation version: **4.36.14** — 2026-09-25.
 
+## Issue #31 — Pain sounds, dialogue cue, map music and story intermissions (4.36.14)
+
+- **Issue:** https://github.com/damiancurti/Caelum-Argenteum/issues/31
+- **Scope:** integrate the author-selected pain sounds for Mandinga, Zupay,
+  Bull, Argento, Ronnie, Caella and the applicable player voice profile;
+  replace the dialogue-opening cue with the supplied Suno WAV; reassign MAP01
+  to the former MAP02 music, MAP02 to the local sewer track, MAP06 to the local
+  port track and MAP07 to the local coast track; reserve the former MAP01 music
+  for future chapter-end intermissions.
+- **Author contract:** no new Suno generation, no death/chase assignments, no
+  activation of unused stock or MP3 backups, no invented lore or chapter text.
+  Rulo remains silent for combat pain. External pain-source licenses remain to
+  be verified; source URLs and local files are preserved.
+- **Status:** implemented on the focused branch; static validation, build and
+  native ZScript compile pass. Author-accepted on 2026-09-25
+  (CA-43614-AUDIO-01 passed).
+- **Next:** #18 / 4.36.10 owns siege assets after this delivery.
+
+## Issue #15 — Approved Tarot fronts and collection bindings (4.36.9)
+
+- **Issue:** https://github.com/damiancurti/Caelum-Argenteum/issues/15
+- **Scope:** integrate the author-supplied 78 PNG Tarot fronts under
+  `src/graphics/caelum/tarot`, preserve the shared card back, map every source
+  filename to its persistent card ID, and bind the Ace of Cups front in the
+  Journal instead of showing a back. The Marseille court order is preserved:
+  within each suit, Ace, 2–10, Knight, Page, Queen, King.
+- **Author contract:** no new powers, rewards or campaign grants; unobtained
+  cards are not granted by importing art; the Ace of Cups remains card 36; the
+  Knight of Wands (`Tarot/61 - Caballero de basto.png`) is bound but its
+  campaign reward stays in #16.
+- **Acceptance:** CA-4369-TAROT-ART-01 passed on 2026-09-25; the author confirmed
+  the imported fronts, persistent-ID bindings and Journal preview. The pending
+  entry is removed and the author-test queue is empty.
+- **Next:** #18 / 4.36.10 owns siege assets after this delivery.
+
+## Issue #14 — Prisoner rescue, escort and port rewards (4.36.8)
+
+- **Issue:** https://github.com/damiancurti/Caelum-Argenteum/issues/14
+- **Scope:** release the four MAP02 prisoners through cell dialogue; freed
+  prisoners follow and fight with the source character's stats while staying
+  back from the northern Zupay; extract each alive at the pre-boss reservation
+  before that fight (killing the boss is not required); persist outcomes and
+  spawn rescued prisoners once at the MAP06 port, granting +10 own-faction
+  reputation and 25 gold coins (1,000,000 copper) once per rescued prisoner,
+  independent of character size, with no duplicate payout and retryable coin
+  delivery. Replace the provisional social domains with six canonical factions:
+  Unitarians=0, Federals=1, Free Peoples=2, Caelith=3, Cult of the Tarot=4 and
+  Sun Warriors=5.
+- **Author contract:** a follower that dies before extraction is not rescued;
+  zero, one or four rescues are valid; no death respawn; do not reopen other
+  cells; no broad companion formations. The Tarot remains the next issue.
+- **Acceptance:** CA-4368-RESCUE-01 passed on 2026-09-25; the author confirmed
+  the full release/follow/extraction/port-reward route and requested closure of
+  issue #14. The pending entry is removed and the author-test queue is empty.
+- **Next:** delivered through #15 / 4.36.9.
+
+## Issue #13 — Recolored prisoner appearances (4.36.7)
+
+- **Issue:** https://github.com/damiancurti/Caelum-Argenteum/issues/13
+- **Scope:** add four distinct prisoner appearances that reuse Caella, Ronnie,
+  Rulo and Argento with deterministic per-material muted palettes (hair/fur/cloak/cloth
+  changed, skin and accessories kept); place one inert variant
+  in each reserved MAP02 endpoint cell; keep the source combat profile and the
+  original mansion NPCs unchanged.
+- **Author contract:** provisional display names Leonor Benítez (Unitarians),
+  Rufino Acosta (Federals), Santos Barrera (Free Peoples) and Leandro Farías
+  (Cult of the Tarot); stable persistent IDs independent of names; no inherited
+  anchoring, quest, inventory or story-protection logic; no rescue/reward logic
+  in this visual patch.
+- **Acceptance:** CA-4367-PRISONER-ART-01 passed on 2026-09-24; the author confirmed
+  the four variants, visual-source/faction mapping and per-material recolors.
+- **Next:** #14 / 4.36.8 owns escort, combat, dialogue and rewards.
+
+## Issue #12 — Hostile sewer rats (4.36.6)
+
+- **Issue:** https://github.com/damiancurti/Caelum-Argenteum/issues/12
+- **Scope:** add two hostile sewer rats per Mandinga across the four MAP02
+  sections, reusing the existing accepted `CaelumGiantRat` actor (DoomEdNum
+  18029, RATG sprites) with no new art, damage, health or AI. Preserve 96
+  Mandingas and one Zupay; place exactly 192 rats at fixed dry-walkway
+  positions (two per Mandinga junction), recorded in the per-section manifest.
+- **Determinism:** the MAP02 generator and layout validator are updated
+  together; rats are initial placements only (no death respawn/resurrection),
+  preserving the 2:1 ratio per section (24 Mandingas / 48 rats each).
+- **Acceptance:** CA-4366-RATS-01 passed, explicitly confirmed by the author on
+  2026-09-24 without qualifications; the confirmed entry is removed and the
+  author-test queue is empty. Static/native evidence remains separate from that
+  confirmation.
+- **Next:** #13 / 4.36.7 after this delivery; #14 owns live escort AI.
 ## Issue #29 — Selective file reading for agents (4.36.5a)
 
 - **Issue:** https://github.com/damiancurti/Caelum-Argenteum/issues/29
@@ -133,10 +222,11 @@ documentation update does not implement these features or reset accepted tests.
 | --- | --- | --- |
 | 4.36.4 | [#10](https://github.com/damiancurti/Caelum-Argenteum/issues/10) | Implemented and author-accepted on 2026-09-23. Complete T1 catalogue, recipient sizing, chest preview and feedback. |
 | 4.36.5 | [#11](https://github.com/damiancurti/Caelum-Argenteum/issues/11) | Implemented and author-accepted on 2026-09-24; CA-4365-MAZE-01 passed (PR #28). Four sections, keys/cells/beds, recipe-gated repair refuges, widened channels and northern boss room. |
-| 4.36.6 | [#12](https://github.com/damiancurti/Caelum-Argenteum/issues/12) | Existing hostile rats at 2:1 per section: 192 rats/96 Mandingas. After #11. |
-| 4.36.7 | [#13](https://github.com/damiancurti/Caelum-Argenteum/issues/13) | Four reused NPC appearances with distinct palettes. After #12. |
-| 4.36.8 | [#14](https://github.com/damiancurti/Caelum-Argenteum/issues/14) | Follow/fight with source-character stats; extract alive before MAP02 boss; port thanks, +10 own-faction reputation and a fixed 25 gold coins independent of character size once per rescue. |
-| 4.36.9 | [#15](https://github.com/damiancurti/Caelum-Argenteum/issues/15) | Tarot fronts and correct collection bindings. Blocked on approved downloadable source pack/manifest. |
+| 4.36.6 | [#12](https://github.com/damiancurti/Caelum-Argenteum/issues/12) | Implemented and author-accepted on 2026-09-24; CA-4366-RATS-01 passed. 192 fixed rats/96 Mandingas at 2:1, no respawn. |
+| 4.36.7 | [#13](https://github.com/damiancurti/Caelum-Argenteum/issues/13) | Implemented and author-accepted on 2026-09-24; CA-4367-PRISONER-ART-01 passed. Four per-material recolored prisoner appearances in the reserved cells. |
+| 4.36.8 | [#14](https://github.com/damiancurti/Caelum-Argenteum/issues/14) | Implemented and author-accepted on 2026-09-25; CA-4368-RESCUE-01 passed. Follow/fight with source-character stats; extract alive before MAP02 boss; port thanks, +10 own-faction reputation and a fixed 25 gold coins independent of character size once per rescue. |
+| 4.36.9 | [#15](https://github.com/damiancurti/Caelum-Argenteum/issues/15) | Tarot fronts and correct collection bindings. Implemented from the verified local source archive; author-accepted on 2026-09-25 (CA-4369-TAROT-ART-01 passed). |
+| 4.36.14 | [#31](https://github.com/damiancurti/Caelum-Argenteum/issues/31) | Author-selected pain sounds, supplied dialogue-opening cue, local sewer/port/coast music and the reserved chapter-end story intermission. Implemented and author-accepted on 2026-09-25 (CA-43614-AUDIO-01 passed). |
 | 4.36.10 | [#18](https://github.com/damiancurti/Caelum-Argenteum/issues/18) | Siege assets: catapult, ram and breakable gate. After #15. |
 | 4.36.11 | [#19](https://github.com/damiancurti/Caelum-Argenteum/issues/19) | Damageable actor gates. Structural parameter table needs approval. After #18. |
 | 4.36.12 | [#20](https://github.com/damiancurti/Caelum-Argenteum/issues/20) | Physical ram strikes; approved parameter table and native evidence required. After #19. |
@@ -145,8 +235,8 @@ documentation update does not implement these features or reset accepted tests.
 | V4 export | [#17](https://github.com/damiancurti/Caelum-Argenteum/issues/17) | Three-map acceptance, reproducible package and batch usage report. Requires #16 and retained 4.36/4.37 gates. |
 
 The source/faction mapping is Caella/Unitarians, Ronnie/Federals,
-Rulo/Wild Beast Men and Argento/Cult of the Tarot. These are new prisoners;
-do not alter the mansion residents or reuse unrelated saved faction IDs.
+Rulo/Free Peoples (Pueblos Libres) and Argento/Cult of the Tarot. These are new
+prisoners; do not alter the mansion residents or reuse unrelated saved faction IDs.
 The confirmed three-map route uses MAP06 for the existing port, not a
 renumbered MAP03. Issue #16 must replace the current player exit to MAP07
 with the approved route. El Loco is the first Major; Ace of Cups remains MAP02.

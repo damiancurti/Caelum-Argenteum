@@ -1,6 +1,6 @@
 # CONTEXT.md — Ultra-condensed summary of Caelum Argenteum
 
-Documentation version: **4.36.5a** — 2026-09-24.
+Documentation version: **4.36.14** — 2026-09-25.
 
 Summary so an AI or a contributor can understand the project without reading
 the five full canonical documents. Source: `docs/PROJECT.md`,
@@ -64,13 +64,60 @@ the gauchos and rural culture, and the humans the urban porteño society.
 
 ## Current status
 
-Current release **4.36.5a** is a documentation patch (#29) adding the selective
-file-reading workflow for agents. The retained 4.36.5 gameplay release
-implements #11: wider four-section sewers, keyed barred gates/cells, beds,
-repair refuges, pre-boss extraction reservation and 240 arrows/120 bolts/120
-bullets. Only known weapon recipes permit repair; no materials or recipes are
-added. The author confirmed CA-4365-MAZE-01 passed on 2026-09-24; no author
-checks remain pending.
+Current release **4.36.14** implements #31: the author-selected combat-pain
+sounds, the supplied Suno dialogue-opening cue and the local sewer/port/coast
+music are integrated while all unused stock and MP3 backups remain preserved
+and unbound. The former MAP01 music is reserved for future chapter-end story
+intermissions; MAP01 now uses the former MAP02 music directly, MAP02 uses the
+new sewer track, MAP06 uses the new port track and MAP07 uses the new coast
+track. GZDoom 4.14.2 compiles the package and `validate_project.py` passes; the
+author confirmed `CA-43614-AUDIO-01` passed on 2026-09-25.
+
+The preceding **4.36.9** implements #15: the author-approved 78-card Tarot
+front package is integrated under `src/graphics/caelum/tarot`, the shared card
+back is preserved, and each front is bound to its persistent card ID. The
+Journal now shows the correct owned front (El Loco and the Ace of Cups) with
+left/right selection among owned cards, and a separate development preview can
+inspect any imported front without granting the card or campaign progress. The
+Ace of Cups remains card 36 and no new powers or rewards are added.
+GZDoom 4.14.2 compiles the package and `validate_project.py` passes; the
+author confirmed `CA-4369-TAROT-ART-01` passed on 2026-09-25.
+
+The preceding **4.36.8** implements #14: the four MAP02 prisoners can be
+released, then follow and fight alongside the player with their source combat
+profiles while staying back from the northern Zupay. Each prisoner is extracted
+only by reaching the pre-boss reservation alive before that fight (killing the
+boss is not required); a follower that dies earlier is not rescued. At the
+MAP06 port, each extracted prisoner grants +10 reputation with its own faction
+and 25 gold coins (1,000,000 copper) once, independent of character size, with
+no duplicate payout across retry, save/load or travel. The provisional social
+domains are replaced by six canonical factions: Unitarians, Federals, Free
+Peoples, Caelith, Cult of the Tarot and Sun Warriors. GZDoom 4.14.2 compiles the
+complete package and loads MAP01/MAP02/MAP06 without script errors; author
+confirmed CA-4368-RESCUE-01 passed on 2026-09-25.
+
+The preceding **4.36.7** implements #13: four recolored prisoner appearances
+reusing the mansion characters without new models: Caella -> Unitarians
+(Leonor Benítez, celeste), Ronnie -> Federals (Rufino Acosta, punzó), Rulo ->
+Free Peoples (Santos Barrera, black/brown/green) and Argento -> Cult of the
+Tarot (Leandro Farías, gold/silver over black). The author visual check
+CA-4367-PRISONER-ART-01 passed on 2026-09-24.
+
+The preceding **4.36.6** implements #12: 192 hostile sewer rats (two per
+Mandinga, 192/96 across the four sections), reusing the accepted CaelumGiantRat
+actor and RATG sprites with no new art, damage, health or AI. Deterministic
+initial placements preserve the ratio without respawn. The author confirmed
+CA-4366-RATS-01 passed on 2026-09-24, leaving the author-test queue empty.
+
+The preceding **4.36.5** implements #11: wider four-section sewers, keyed
+barred gates/cells, beds, repair refuges, pre-boss extraction reservation and
+240 arrows/120 bolts/120 bullets. Only known weapon recipes permit repair;
+no materials or recipes are added. The author confirmed CA-4365-MAZE-01 passed
+on 2026-09-24.
+
+The merged **4.36.5a** documentation patch records the selective file-reading
+workflow for agents (#29) without changing gameplay, balance, maps, saves or
+assets.
 Saved campaigns that visited old MAP02 use `run_dev.bat --legacy-map02` to
 continue byte-identical legacy geometry; normal builds use the new layout.
 The accepted **4.36.4** implements #10: the complete T1 maze catalogue,
@@ -94,10 +141,6 @@ rations, and MAP01 tables at full capacity.
 
 Pending:
 
-- Author-requested patches 4.36.6–4.36.9 (#12–#15): 192 enemy rats alongside
-  96 Mandingas; four recolored prisoners; persistent
-  rescues/port faction rewards; approved Tarot images. These are planned,
-  not present in the current four-section map.
 - Planned 4.36.10–4.36.13 (#18–#21): siege-machine assets, breakable actor
   gates, physical ram strikes and native catapult projectiles for the port.
 - Closing 4.36: rams/catapults and remaining integration/save/reset validation
@@ -120,10 +163,11 @@ Prisoners match their source character's combat stats, follow/fight alongside
 the player and extract alive through an exit before the MAP02 boss; they do
 not fight that boss. At the port, each grants +10 reputation with its own
 faction and a fixed 25 gold coins once, independent of character size.
-The latest #10/#14 author decision supersedes the former weapon-price formula; detailed siege balance/conditions and the definitive
-Tarot package remain pending.
+The latest #10/#14 author decision supersedes the former weapon-price formula.
+The #15 approved Tarot fronts are integrated; activation/powers and the
+remaining detailed siege balance/conditions stay pending.
 Prisoner source/faction mapping: Caella/Unitarians, Ronnie/Federals,
-Rulo/Wild Beast Men, Argento/Cult of the Tarot; do not reassign mansion NPCs.
+Rulo/Free Peoples, Argento/Cult of the Tarot; do not reassign mansion NPCs.
 PROJECT contains the authoritative scope, dependency order and usage protocol.
 The author confirms a 75% weekly-allowance-remaining baseline; reset time is
 unknown. Collect measured per-patch data rather than estimating.

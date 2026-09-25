@@ -14,6 +14,14 @@ class CaelumAnchoredResident : CaelumCombatActor abstract
     CaelumPlayer RuloPartyTraveler;
     CaelumM00Bull RuloPartyBull;
 
+    // Estado de escolta de los prisioneros de MAP02. Los residentes de la
+    // mansiÃ³n conservan -1 y nunca entran en esta mÃ¡quina.
+    int EscortPrisonerId;
+    bool EscortPrisonerPort;
+    CaelumPlayer EscortPrisonerLeader;
+    int EscortPrisonerThreatScanTics;
+    double EscortPrisonerHealthRegenAccumulator;
+
     bool IsProtectedStoryResident()
     {
         return StoryAnchored && level.MapName == "MAP01";
@@ -37,6 +45,378 @@ class CaelumAnchoredResident : CaelumCombatActor abstract
         if (!speaking) bInConversation = false;
     }
 
+    void BecomeInertPrisoner()
+    {
+        // Aparición visual de MAP02: la identidad es estable, pero el prisionero
+        // no hereda anclaje, conversación, inventario ni protección narrativa.
+        // #14 implementará escolta/combate; aquí queda amistoso e invulnerable
+        // y no cuenta como baja.
+        StoryAnchored = false;
+        bFriendly = true;
+        bInvulnerable = true;
+        bCountKill = false;
+        Target = null;
+        LastEnemy = null;
+        Vel = (0,0,0);
+    }
+
+    bool IsEscortPrisoner()
+    {
+        return EscortPrisonerId >= 0;
+    }
+
+    CaelumPlayer GetEscortOwnerPlayer()
+    {
+        for (int n = 0; n < MAXPLAYERS; n++)
+            if (playeringame[n] && players[n].mo != null)
+                return CaelumPlayer(players[n].mo);
+        return null;
+    }
+
+    void BecomePrisoner(int prisonerId)
+    {
+        EscortPrisonerId = prisonerId;
+        StoryAnchored = false;
+        StoryReturningHome = false;
+        RuloPartyMode = 0; RuloPartyBull = null; RuloPartyTraveler = null;
+        bFriendly = true;
+        bCountKill = false;
+        bShootable = true;
+        bSolid = true;
+        Target = null; LastEnemy = null; Vel = (0,0,0);
+
+        CaelumPlayer owner = GetEscortOwnerPlayer();
+        int rescueState = owner == null
+            ? CaelumConstants.PRISONER_STATE_CAPTIVE
+            : owner.GetPrisonerRescueState(prisonerId);
+
+        if (level.MapName == "MAP06")
+        {
+            if (rescueState != CaelumConstants.PRISONER_STATE_EXTRACTED)
+            {
+                Destroy();
+                return;
+            }
+            EscortPrisonerPort = true;
+            bInvulnerable = true;
+            SetStateLabel("Spawn");
+            return;
+        }
+
+        if (rescueState == CaelumConstants.PRISONER_STATE_EXTRACTED
+            || rescueState == CaelumConstants.PRISONER_STATE_DEAD)
+        {
+            Destroy();
+            return;
+        }
+        if (rescueState == CaelumConstants.PRISONER_STATE_FOLLOWING)
+        {
+            BeginEscortFollow();
+            return;
+        }
+        bInvulnerable = true;
+        SetStateLabel("Spawn");
+    }
+
+    void BeginEscortFollow()
+    {
+        EscortPrisonerPort = false;
+        bFriendly = true;
+        bInvulnerable = false;
+        bShootable = true;
+        bSolid = true;
+        bCountKill = false;
+        Target = null; LastEnemy = null;
+        ClearStoryCombatState();
+        EscortPrisonerLeader = GetEscortOwnerPlayer();
+        SetStateLabel("EscortFollow");
+    }
+
+    void ReleaseEscortPrisoner(CaelumPlayer user)
+    {
+        if (!IsEscortPrisoner() || user == null || EscortPrisonerPort)
+            return;
+        CaelumPlayer owner = GetEscortOwnerPlayer();
+        int state = owner == null
+            ? CaelumConstants.PRISONER_STATE_CAPTIVE
+            : owner.GetPrisonerRescueState(EscortPrisonerId);
+        if (state == CaelumConstants.PRISONER_STATE_CAPTIVE && owner != null)
+            owner.SetPlayerPrisonerRescueState(
+                EscortPrisonerId, CaelumConstants.PRISONER_STATE_FOLLOWING);
+        EscortPrisonerLeader = user;
+        BeginEscortFollow();
+        CaelumNotifications.Notify(user,
+            StringTable.Localize("CA_PRISONER_FREED", false));
+    }
+
+    void MarkEscortPrisonerExtracted(CaelumPlayer owner)
+    {
+        if (!IsEscortPrisoner() || EscortPrisonerPort || owner == null) return;
+        if (owner.GetPrisonerRescueState(EscortPrisonerId)
+            == CaelumConstants.PRISONER_STATE_FOLLOWING)
+        {
+            owner.SetPlayerPrisonerRescueState(
+                EscortPrisonerId, CaelumConstants.PRISONER_STATE_EXTRACTED);
+        }
+        CaelumNotifications.Notify(owner,
+            StringTable.Localize("CA_PRISONER_EXTRACTED", false));
+        Destroy();
+    }
+
+    bool AtPrisonerExtraction()
+    {
+        Actor marker = ActorIterator.Create(
+            CaelumConstants.PRISONER_EXTRACTION_TID,
+            "CaelumMazeLayoutMarker").Next();
+        if (marker != null && Distance2D(marker)
+            <= CaelumConstants.PRISONER_EXTRACTION_RADIUS)
+        {
+            return true;
+        }
+        Actor bossGate = ActorIterator.Create(
+            CaelumConstants.PRISONER_BOSS_GATE_TID,
+            "CaelumMazeBarredGate").Next();
+        return bossGate != null && Distance2D(bossGate)
+            <= CaelumConstants.PRISONER_EXTRACTION_RADIUS;
+    }
+
+    bool IsNearMap02Boss()
+    {
+        if (level.MapName != "MAP02") return false;
+        Actor boss = ActorIterator.Create(43799, "CaelumZupayColossus").Next();
+        if (boss == null || boss.health <= 0) return false;
+        // Mientras la reja del norte sigue cerrada, el Zupay no puede
+        // hostigar a la escolta; alejarse antes de abrirla impedía que los
+        // prisioneros llegaran al punto de extracción previo al jefe.
+        CaelumMazeBarredGate gate = CaelumMazeBarredGate(
+            ActorIterator.Create(
+                CaelumConstants.PRISONER_BOSS_GATE_TID,
+                "CaelumMazeBarredGate"
+            ).Next()
+        );
+        if (gate == null || !gate.Opened) return false;
+        return Distance2D(boss)
+            <= CaelumConstants.PRISONER_BOSS_STAYBACK_RADIUS;
+    }
+
+    bool InEscortCombatState()
+    {
+        State seeState = FindState("See");
+        State meleeState = FindState("Melee");
+        State missileState = FindState("Missile");
+        State painState = FindState("Pain");
+        return (seeState != null && InStateSequence(CurState, seeState))
+            || (meleeState != null && InStateSequence(CurState, meleeState))
+            || (missileState != null && InStateSequence(CurState, missileState))
+            || (painState != null && InStateSequence(CurState, painState));
+    }
+
+    void RegenerateEscortPrisonerHealth()
+    {
+        if (health <= 0 || health >= CombatMaximumHealth) return;
+        // La recuperación base de los seguidores reutiliza la tasa natural del
+        // jugador: vida máxima por hora real, escalada por Resiliencia Tipo 4.
+        double regenPerSecond = Max(0.0, double(CombatMaximumHealth))
+            / CaelumConstants.HEALTH_BASE_RECOVERY_REAL_SECONDS
+            * CalculateActorType4Percent(CombatResilience) / 100.0;
+        EscortPrisonerHealthRegenAccumulator += regenPerSecond / TICRATE;
+        int wholeHealth = int(EscortPrisonerHealthRegenAccumulator);
+        if (wholeHealth <= 0) return;
+        EscortPrisonerHealthRegenAccumulator -= wholeHealth;
+        health = Min(CombatMaximumHealth, health + wholeHealth);
+    }
+
+    Actor FindEscortThreat()
+    {
+        BlockThingsIterator iterator = BlockThingsIterator.Create(
+            self, CaelumConstants.PRISONER_THREAT_RADIUS);
+        while (iterator.Next())
+        {
+            Actor candidate = iterator.thing;
+            if (candidate == null || candidate == self
+                || candidate.health <= 0 || !candidate.bShootable
+                || !candidate.bIsMonster || IsFriend(candidate)
+                || candidate is "CaelumZupayColossus")
+            { continue; }
+            if (candidate.Distance2D(self)
+                > CaelumConstants.PRISONER_THREAT_RADIUS
+                || !CheckSight(candidate))
+            { continue; }
+            return candidate;
+        }
+        return null;
+    }
+
+    void InterruptEscortConversation()
+    {
+        bool speaking = false;
+        for (int n = 0; n < MAXPLAYERS; n++)
+        {
+            if (playeringame[n] && players[n].ConversationNPC == self)
+            {
+                players[n].ConversationNPC = null;
+                speaking = true;
+            }
+        }
+        if (!speaking) bInConversation = false;
+    }
+
+    void UpdateEscortPrisoner()
+    {
+        if (health <= 0 || EscortPrisonerPort) return;
+
+        CaelumPlayer owner = GetEscortOwnerPlayer();
+        int rescueState = owner == null
+            ? CaelumConstants.PRISONER_STATE_CAPTIVE
+            : owner.GetPrisonerRescueState(EscortPrisonerId);
+        if (rescueState != CaelumConstants.PRISONER_STATE_FOLLOWING)
+        {
+            Vel = (0,0,0);
+            Target = null;
+            bInvulnerable = true;
+            ClearStoryCombatState();
+            State spawnState = FindState("Spawn");
+            State idleState = FindState("IdleBreathing");
+            if (!InStateSequence(CurState, spawnState)
+                && !InStateSequence(CurState, idleState))
+            {
+                SetState(spawnState);
+            }
+            return;
+        }
+
+        if (bInConversation)
+        {
+            Actor threat = FindEscortThreat();
+            if (threat != null)
+            {
+                InterruptEscortConversation();
+            }
+            else
+            {
+                Vel = (0,0,0);
+                Target = null;
+                ClearStoryCombatState();
+                return;
+            }
+        }
+
+        if (owner == null || owner.health <= 0)
+        {
+            Vel = (0,0,0);
+            Target = null;
+            ClearStoryCombatState();
+            return;
+        }
+
+        if (AtPrisonerExtraction())
+        {
+            MarkEscortPrisonerExtracted(owner);
+            return;
+        }
+
+        if (IsNearMap02Boss())
+        {
+            Target = null;
+            ClearStoryCombatState();
+            FleeEscortBoss();
+            return;
+        }
+
+        Actor threat = FindEscortThreat();
+        if (threat != null)
+        {
+            Target = threat;
+            bInvulnerable = false;
+            State seeState = FindState("See");
+            // No reiniciar See cada tic: interrumpiría las secuencias Melee,
+            // Missile o Pain antes de que ejecuten su ataque o conjuro.
+            if (!InEscortCombatState()) { SetState(seeState); }
+            return;
+        }
+
+        if (Distance2D(owner) > CaelumConstants.PRISONER_FOLLOW_TELEPORT_DISTANCE)
+        {
+            TeleportEscortPrisonerToLeader(owner);
+            return;
+        }
+
+        RegenerateEscortPrisonerHealth();
+        EscortPrisonerLeader = owner;
+        Target = null;
+        ClearStoryCombatState();
+        State followState = FindState("EscortFollow");
+        if (!InStateSequence(CurState, followState)) { SetState(followState); }
+    }
+
+    void FleeEscortBoss()
+    {
+        Actor boss = ActorIterator.Create(
+            43799, "CaelumZupayColossus").Next();
+        if (boss == null) { Vel = (0,0,0); return; }
+        Vector2 away = Pos.XY - boss.Pos.XY;
+        double awayDistance = away.Length();
+        if (awayDistance <= 0.001) { Vel = (0,0,0); return; }
+        Angle = VectorAngle(away.X, away.Y);
+        double speed = Max(0.0, CombatBaseSpeed
+            * CaelumConstants.GZDOOM_BASE_MAX_RUN_SPEED
+            / CaelumConstants.GZDOOM_BASE_MAX_WALK_SPEED);
+        Vel.X = Cos(Angle) * speed;
+        Vel.Y = Sin(Angle) * speed;
+    }
+
+    void MoveEscortPrisonerTowardLeader(CaelumPlayer leader)
+    {
+        if (leader == null) { Vel = (0,0,0); return; }
+        Vector2 offset = leader.Pos.XY - Pos.XY;
+        double distance = offset.Length();
+        if (distance <= 0.001) { Vel = (0,0,0); return; }
+        Angle = VectorAngle(offset.X, offset.Y);
+        double speed = Max(0.0, CombatBaseSpeed
+            * CaelumConstants.GZDOOM_BASE_MAX_RUN_SPEED
+            / CaelumConstants.GZDOOM_BASE_MAX_WALK_SPEED);
+        double resolvedSpeed = Min(speed, Max(0.0,
+            distance - CaelumConstants.PRISONER_FOLLOW_DISTANCE));
+        Vel.X = Cos(Angle) * resolvedSpeed;
+        Vel.Y = Sin(Angle) * resolvedSpeed;
+    }
+
+    void TeleportEscortPrisonerToLeader(CaelumPlayer leader)
+    {
+        if (leader == null) return;
+        double spacing = Radius + 24.0;
+        double baseAngle = leader.Angle + 180.0;
+        for (int attempt = 0; attempt < 12; attempt++)
+        {
+            int ring = attempt / 8;
+            double angle = baseAngle + (attempt % 8) * 45.0;
+            double distance = spacing + ring * spacing;
+            Vector3 candidate = (
+                leader.Pos.X + Cos(angle) * distance,
+                leader.Pos.Y + Sin(angle) * distance,
+                leader.Pos.Z
+            );
+            if (TeleportMove(candidate, false))
+            {
+                Vel = (0,0,0);
+                Angle = leader.Angle;
+                ClearInterpolation();
+                return;
+            }
+        }
+        if (TeleportMove(leader.Pos, false))
+        {
+            Vel = (0,0,0);
+            Angle = leader.Angle;
+            ClearInterpolation();
+        }
+    }
+
+    bool UseEscortPrisoner(CaelumPlayer user)
+    {
+        if (user == null || user.player == null) { return false; }
+        return CaelumPrisonerRescue.OpenDialogue(user, self);
+    }
     void DownRuloPartyMember()
     {
         health = 1; RuloPartyDowned = true; Target = null; Vel = (0,0,0);
@@ -133,6 +513,16 @@ class CaelumAnchoredResident : CaelumCombatActor abstract
             }
             return;
         }
+        if (IsEscortPrisoner() && !EscortPrisonerPort)
+        {
+            CaelumPlayer owner = GetEscortOwnerPlayer();
+            if (owner != null && owner.GetPrisonerRescueState(EscortPrisonerId)
+                == CaelumConstants.PRISONER_STATE_FOLLOWING)
+            {
+                owner.SetPlayerPrisonerRescueState(
+                    EscortPrisonerId, CaelumConstants.PRISONER_STATE_DEAD);
+            }
+        }
         Super.Die(source, inflictor, dmgflags, MeansOfDeath);
     }
 
@@ -171,6 +561,7 @@ class CaelumAnchoredResident : CaelumCombatActor abstract
     override void PostBeginPlay()
     {
         Super.PostBeginPlay();
+        EscortPrisonerId = -1;
         StoryHome = Pos;
         StoryHomeAngle = Angle;
         StoryAnchored = args[0] == CaelumConstants.STORY_NPC_ANCHORED;
@@ -190,6 +581,10 @@ class CaelumAnchoredResident : CaelumCombatActor abstract
 
     override bool Used(Actor user)
     {
+        if (IsEscortPrisoner())
+        {
+            return UseEscortPrisoner(CaelumPlayer(user));
+        }
         if (!StoryAnchored || level.MapName != "MAP01") { return Super.Used(user); }
         CaelumPlayer traveler = CaelumPlayer(user);
         if (traveler == null || traveler.player == null
@@ -238,9 +633,78 @@ class CaelumAnchoredResident : CaelumCombatActor abstract
         A_CaelumBudgetedChase();
     }
 
+    action void A_CaelumPrisonerFollow()
+    {
+        CaelumAnchoredResident resident = CaelumAnchoredResident(self);
+        if (resident == null || resident.EscortPrisonerPort) { return; }
+        if (resident.bInConversation)
+        {
+            resident.Vel = (0,0,0);
+            return;
+        }
+        if (resident.IsNearMap02Boss())
+        {
+            resident.FleeEscortBoss();
+            return;
+        }
+
+        CaelumPlayer leader = resident.EscortPrisonerLeader;
+        if (leader == null || leader.health <= 0)
+        {
+            leader = resident.GetEscortOwnerPlayer();
+        }
+        if (leader == null || leader.health <= 0)
+        {
+            resident.Vel = (0,0,0);
+            return;
+        }
+        resident.EscortPrisonerLeader = leader;
+
+        if (resident.Distance2D(leader)
+            > CaelumConstants.PRISONER_FOLLOW_TELEPORT_DISTANCE)
+        {
+            resident.TeleportEscortPrisonerToLeader(leader);
+            return;
+        }
+
+        if (resident.Distance2D(leader)
+            <= CaelumConstants.PRISONER_FOLLOW_DISTANCE)
+        {
+            resident.Vel = (0,0,0);
+            resident.Angle = VectorAngle(
+                leader.Pos.X - resident.Pos.X,
+                leader.Pos.Y - resident.Pos.Y
+            );
+            if (resident.Target == null || resident.Target == leader
+                || resident.IsFriend(resident.Target))
+            {
+                resident.A_CaelumResidentLook();
+                if (resident.Target != null && resident.Target != leader
+                    && resident.Target.health > 0
+                    && !resident.IsFriend(resident.Target))
+                {
+                    State seeState = resident.FindState("See");
+                    if (!resident.InStateSequence(resident.CurState, seeState))
+                    {
+                        resident.SetState(seeState);
+                    }
+                }
+            }
+            return;
+        }
+
+        resident.Target = leader;
+        resident.MoveEscortPrisonerTowardLeader(leader);
+    }
     override void Tick()
     {
         EnsureStorySurvival();
+        if (IsEscortPrisoner())
+        {
+            UpdateEscortPrisoner();
+            Super.Tick();
+            return;
+        }
         if (RuloPartyMode != 0)
         {
             UpdateRuloParty();

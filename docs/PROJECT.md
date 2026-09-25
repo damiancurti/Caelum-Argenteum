@@ -1,7 +1,67 @@
 # Caelum Argenteum — Project, status and roadmap
 
-Documentation version: **4.36.5a** — 2026-09-24.
+Documentation version: **4.36.14** — 2026-09-25.
 
+## 4.36.8 — Prisoner rescue, escort and port rewards (issue #14)
+
+The four MAP02 prisoners become optional live companions: a cell dialogue
+releases each captive, and a freed prisoner follows and fights with the source
+character's accepted combat statistics while staying back from the northern
+Zupay. A follower is extracted only by reaching the pre-boss reservation alive
+before that boss fight; killing the boss is not required, and a follower that
+dies earlier is not rescued. Zero, one or four rescues are valid. Each outcome
+persists across save/load/travel, and each rescued prisoner appears once at the
+MAP06 port, granting +10 reputation with that prisoner's own faction and 25 gold
+coins (1,000,000 copper) once, independent of character size, with retryable
+coin delivery and no duplicate payout. Six canonical factions (Unitarians,
+Federals, Free Peoples, Caelith, Cult of the Tarot and Sun Warriors) replace
+the provisional social domains without relabeling accepted IDs 0-3; broad
+companion formations remain out of scope.
+
+The author confirmed CA-4368-RESCUE-01 passed on 2026-09-25, covering release,
+follow, combat, extraction, persistence, the one-time port rewards and the six
+canonical factions, and requested closure of issue #14.
+
+## 4.36.7 — Recolored prisoner appearances (issue #13)
+
+MAP02 places one inert, friendly, invulnerable prisoner in each of its four
+reserved endpoint cells. The appearances reuse the accepted mansion actor
+sprites and combat profiles, recolored deterministically per material
+(hair/fur/cloak/cloth) with muted per-faction ramps; skin and metallic
+accessories keep the accepted RGB, and no new character model or replacement illustration is created.
+
+| Visual/profile source | Gameplay faction | Provisional display name | Recolor |
+| --- | --- | --- | --- |
+| Caella | Unitarians | Leonor Benítez | Celeste |
+| Ronnie | Federals | Rufino Acosta | Punzó red |
+| Rulo | Free Peoples | Santos Barrera | Black/brown/green |
+| Argento | Cult of the Tarot | Leandro Farías | Gold/silver over black |
+
+Each prisoner is a distinct identity: persistent map IDs and class names do not
+depend on the provisional display names. Appearance reuse does not inherit
+mansion anchoring, prologue quest identity, trade inventory, faction assignment
+or story-protection behavior. The cells keep their stable lock/route geometry;
+rescue, escort, combat and rewards remain #14. Original mansion NPC art is
+unchanged; in the same release their MAP01 idle cycle alternates the accepted
+monster idle A and B breathing poses. While inert, each prisoner keeps the
+accepted A/B idle breathing poses and never enters the walking/chase animation.
+The author visual check CA-4367-PRISONER-ART-01 passed on 2026-09-24.
+
+## 4.36.6 — Hostile sewer rats (issue #12)
+
+MAP02 keeps its four keyed sections and all accepted #10/#11 contents, and adds
+two hostile sewer rats per Mandinga: 192 rats against the retained 96 Mandingas
+and one Zupay (a fixed 2:1 ratio, 24 Mandingas / 48 rats per section). Rats
+reuse the existing accepted `CaelumGiantRat` actor (DoomEdNum 18029) and RATG
+sprite/combat profile. No new art, damage, health, AI or balance value is
+introduced.
+
+Placement is deterministic: the MAP02 generator writes two fixed dry-walkway
+positions per Mandinga junction and records each rat in the per-section
+manifest. Rats are initial placements only and never respawn or resurrect, so
+the exact ratio holds for the whole map. Static layout validation records are
+in `assets/validation_4366/`; native combat and save/load evidence are separate
+from author acceptance. The author check CA-4366-RATS-01 passed on 2026-09-24.
 ## 4.36.5a — Selective file reading for agents (#29)
 
 Issue [#29](https://github.com/damiancurti/Caelum-Argenteum/issues/29) is a
@@ -148,6 +208,7 @@ The release sections above record completed implementations; later stages remain
 | 4.36.7 | [#13](https://github.com/damiancurti/Caelum-Argenteum/issues/13) | Four prisoner palette variants reusing the mansion characters. |
 | 4.36.8 | [#14](https://github.com/damiancurti/Caelum-Argenteum/issues/14) | Following/fighting prisoners, living extraction before the MAP02 boss, port arrivals, one-time +10 own-faction reputation and a fixed 25 gold coins independent of character size per rescue. |
 | 4.36.9 | [#15](https://github.com/damiancurti/Caelum-Argenteum/issues/15) | Integrate approved Tarot fronts, including the Ace of Cups; no new powers. |
+| 4.36.14 | [#31](https://github.com/damiancurti/Caelum-Argenteum/issues/31) | Integrate selected pain sounds, the supplied dialogue-opening cue, local sewer/port/coast music and the reserved chapter-end story intermission. |
 | 4.36.10 | [#18](https://github.com/damiancurti/Caelum-Argenteum/issues/18) | Catapult, ram and breakable-gate assets with documented states/attachments. |
 | 4.36.11 | [#19](https://github.com/damiancurti/Caelum-Argenteum/issues/19) | Damageable actor gates and persistent passage opening on destruction. |
 | 4.36.12 | [#20](https://github.com/damiancurti/Caelum-Argenteum/issues/20) | Ram strikes using the approved physical-impact foundation. |
@@ -163,9 +224,10 @@ repair stations and audit existing recipes/material access rather than making
 repairs free. Keys must admit a complete route without circular locks.
 
 The prisoner appearances/factions are author-defined: Caella -> Unitarians;
-Ronnie -> Federals; Rulo -> Wild Beast Men; Argento -> Cult of the Tarot.
-These are new identities, not changes to the mansion residents. Existing
-technical faction IDs must not be relabeled to create them. Each prisoner
+Ronnie -> Federals; Rulo -> Free Peoples; Argento -> Cult of the Tarot.
+These are new identities, not changes to the mansion residents. The six
+canonical factions replace the former provisional IDs: Unitarians=0, Federals=1,
+Free Peoples=2, Caelith=3, Cult of the Tarot=4 and Sun Warriors=5. Each prisoner
 has the same initialized combat statistics as the source mansion character,
 with separate identity and no inherited mansion-only anchoring/quest logic.
 Freed prisoners follow and fight alongside the player. They must reach a
@@ -189,8 +251,9 @@ Catapults, rams and damageable actor gates are required, with separate
 asset/mechanic issues #18–#21. This bounded port encounter is now part of
 the playtest; a general world-siege director remains V5. Encounter counts,
 machine/gate parameter tables and detailed win/fail rules need authored data.
-The Tarot source ZIP and definitive card manifest are also pending; do not
-regenerate approved art or pretend an inaccessible attachment exists.
+The Tarot source ZIP was verified locally; its definitive manifest is committed
+as `assets/manifests/tarot_78_v4369.json` while the oversized archive is not
+stored in normal Git. Do not regenerate approved art.
 
 The remaining mechanism gates are rams and catapults (#20/#21), followed by
 integration/save/reset validation before extracting Impact Physics. The
@@ -1529,7 +1592,7 @@ discount is temporary and separate from persistent negotiated discount.
 
 Save before and run `give CaelumDebugReputationTrial`. The test opens immediately; then
 TAB > Reputation > F/Y reopens it. It offers five selectable states and three real
-services. Use Gendarmerie as technical id:
+services. Use Unitarians as technical id:
 
 | Test service | Requirement |
 | --- | --- |
@@ -1539,14 +1602,14 @@ services. Use Gendarmerie as technical id:
 | Trade discount | Reputation >= 25; existing margins 140%/60% |
 
 The five states are 0 without membership, 25 without membership, 25 member, -25 member and 0
-member. They modify the actual register of Gendarmerie; they retain the other factions.
+member. They modify the actual register of Unitarians; they retain the other factions.
 The test uses inventory, coins and actual stocks, without delivering Box, resources or
 rewards. Close trade with Q/B; Esc retains the engine pause menu. To remove the test,
 close your menus and use `give CaelumDebugReputationTrialOff`: removes guide and door,
 without reversing reputation. Loading the previous save restores the pre-test status.
 
-The current four ids, -1000..1000 scale and existing relationships are preserved. The
-eight narrative factions, seven ranks and future relationships are still pending
+The current six ids, -1000..1000 scale and existing relationships are preserved. The
+seven ranks and future relationships are still pending
 thresholds and author matrix. The values of this test do not set that design. Maps,
 missions, campaign reputation gains, regional price formulas or attribute bonuses are not
 added.
@@ -2187,7 +2250,7 @@ content extensions and the pending previous versions are returned to V5.
 | V4.29–V4.31: crafting and equipment cycle | Basis of recipes, reserves, lots, independent efficiencies, repair and disassembly accepted. Narrative distribution of knowledge, rewards/sheets/shops/discoveries and efficiency bonuses without authorized values pass to V5. |
 | V4.31: resources, loot and containers | Physical sources and caches are based; in V5, complete loot tables by plant/animal/monster, contents/capacity/ownership/theft/replenishment containers and systematic acquisition of materials. Persistent expansion of biomes goes in V5. |
 | V4.32: NPC, trade and first person | Use/USDF, transactions, coins and Box accepted. Later canonical merchant, store content and first person of the other weapons with own art pass to V5. |
-| V4.33: missions, reputation and factions | MAP01, assignment base and reusable conditions approved up to 0an. 0ao checks the final integration and recovers the menu from active conversations when loading. Broad narrative chains and rewards, composite conditions, ranges and concrete relationships pass to V5; the four technical ids do not equal the eight narrative factions. |
+| V4.33: missions, reputation and factions | MAP01, assignment base and reusable conditions approved up to 0an. 0ao checks the final integration and recovers the menu from active conversations when loading. Broad narrative chains and rewards, composite conditions, ranges and concrete relationships pass to V5; the six canonical ids define the narrative factions, while ranks and relationships remain pending. |
 | V4.34: world architecture and travel | 0a–0c approved: catalog, Journal, return, group doors and connected sewers. 0d implements caravans and shared registry; 0e adds test stations and supplies. The author now approves all 0e tests, including seals/crafting blocking and recovery of Use. MAP01 does not support return. Timetables, durations and events are integrated with the 4.35 clock. Code refactor is still in V5.0. |
 | V4.35: calendar, weather and events | 0a–0g approved: clock/calendar, Limbo, rest, furniture/camera, sleeping bag and comfort. 0g implements safe acceleration, tables/seated meals and sleep Lucidity. 0h adds digestion, repeated servings and MAP01 furniture/workshops; native tests performed. 0i–0j correct access/Use, adjust stations/meals and establish Limbo 1:1; 0j and 0k approved by the author. 0l corrects chairs/water and adds regional SMN weather and geometric shelter. 0m scales food by mass, confirms Buenos Aires and adds author-approved port/coast test maps. 0n adds measured travel with provisions; 0o integrates the monthly agenda and persistent author-defined events. 0n/0o approved except for observations resolved in 0p, which adds reservations, Q and coastal vehicles. 0p and 0q approved; visual pack v4 and 1/3 eating rate accepted. 4.35 closed. Body thermal model in V5.1. |
 | V4.36: mobile environment and physical hazards | The 0i weight formula, maze, tables, saves and bow art are accepted; #8 is corrected and author-accepted; #9 retains the flail correction. Author-requested #10–#15 add the T1 four-section sewer, rats, prisoner escorts/port rewards and Tarot artwork; #18–#21 supply siege assets, breakable actor gates, rams and catapults. Rams/catapults remain pending. Per the author's #8 clarification, the existing ceiling/elevator cover moving sectors; avalanches are deferred until additional maps and damaging surfaces until temperature effects, so those three are not release blockers. Validate integration/save/reset before extracting Impact Physics; neither assets nor a closed issue substitutes for acceptance. |
@@ -2216,7 +2279,7 @@ the independent distribution.
 | --- | --- |
 | Campaign and World | Target: 78 cards (22 Major and 56 Minor Arcana) and at least 78 maps; geography inspired by Argentina, coasts/Antarctica/deep sea, aerial cities and supernatural regions. Chapters, encounters, political outcomes and revelations follow canon. The first release remains focused on MAP01. |
 | Quests | Main/side, requirements, objectives, chains/dependencies, failure and abandonment; item/money/reputation/unlock rewards The record has 32 slots and eight objectives per mission; 0aj adds offer and abandonment to the four original states, with unique requirements and rewards. The broad content, composite conditions and other types of rewards require development. Majors for main quests, Minors for side quests; assignments/events/rumors/contracts are not automatically another card. Do not introduce combat XP: Canonic progression depends on the Tarot. |
-| Factions and secrecy | Capital, Free Peoples, Natives, Pure Caelith, Hybrids, Gendarmerie, Tarot Cult and Hell. Seven ranks of reputation, changing relationships and consequences in prices, access, missions, hostility and sieges; membership/secrecy of Cult as future content. |
+| Factions and secrecy | Unitarians, Federals, Free Peoples, Caelith, Cult of the Tarot and Sun Warriors. Seven ranks of reputation, changing relationships and consequences in prices, access, missions, hostility and sieges; membership/secrecy of Cult as future content. |
 | Social dialogue | Reputation applied to rolls and thresholds, private emotions, combat/events interruption and conversations with multiple NPCs in sequence. MAP01 only uses the approved values for your tutorial; do not assign new factions or difficulties by default. |
 | Travel | Carriage, ship, archaic submarine, aircraft, magic ship and portals; encounters, attacks, storms and mechanical failures. Global time, locations, routes and permanent changes of the world are dependencies. |
 | Survival and rest | Action Rest with food/drink and time advance; camps/properties/shelters, recovery and quality of rest. Integrate thermal exposure; oxygen limits, height, water and future breathing capabilities according to cards. |

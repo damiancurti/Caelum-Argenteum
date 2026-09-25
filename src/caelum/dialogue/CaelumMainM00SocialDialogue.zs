@@ -50,7 +50,7 @@ class CaelumMainM00SocialDialogue : Object play
         }
         else { return 0; }
         // Los residentes aún no tienen una facción asignada: reputación neutra,
-        // sin reutilizar por accidente la reputación de la Gendarmería.
+        // sin reutilizar por accidente la reputación de los Unitarios.
         double ability = user.DerivedStats.CalculateType4Percent(attribute);
         return Clamp(int(Floor(ability * 100.0 / difficulty + 0.5)), 0, 100);
     }

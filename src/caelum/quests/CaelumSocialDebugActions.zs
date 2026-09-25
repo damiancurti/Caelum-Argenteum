@@ -18,53 +18,53 @@ class CaelumSocialDebugAction : Inventory abstract
     }
 }
 
-class CaelumDebugJoinGendarmeria : CaelumSocialDebugAction
+class CaelumDebugJoinUnitarios : CaelumSocialDebugAction
 {
     override bool Use(bool pickup)
     {
         CaelumPlayer caelumPlayer = CaelumPlayer(Owner);
         if (caelumPlayer == null) { return false; }
         caelumPlayer.SetPlayerFactionMembership(
-            CaelumConstants.FACTION_GENDARMERIA, true
+            CaelumConstants.FACTION_UNITARIOS, true
         );
         return true;
     }
 }
 
-class CaelumDebugLeaveGendarmeria : CaelumSocialDebugAction
+class CaelumDebugLeaveUnitarios : CaelumSocialDebugAction
 {
     override bool Use(bool pickup)
     {
         CaelumPlayer caelumPlayer = CaelumPlayer(Owner);
         if (caelumPlayer == null) { return false; }
         caelumPlayer.SetPlayerFactionMembership(
-            CaelumConstants.FACTION_GENDARMERIA, false
+            CaelumConstants.FACTION_UNITARIOS, false
         );
         return true;
     }
 }
 
-class CaelumDebugGendarmeriaReputationPlus25 : CaelumSocialDebugAction
+class CaelumDebugUnitariosReputationPlus25 : CaelumSocialDebugAction
 {
     override bool Use(bool pickup)
     {
         CaelumPlayer caelumPlayer = CaelumPlayer(Owner);
         if (caelumPlayer == null) { return false; }
         caelumPlayer.ChangePlayerFactionReputation(
-            CaelumConstants.FACTION_GENDARMERIA, 25
+            CaelumConstants.FACTION_UNITARIOS, 25
         );
         return true;
     }
 }
 
-class CaelumDebugGendarmeriaReputationMinus50 : CaelumSocialDebugAction
+class CaelumDebugUnitariosReputationMinus50 : CaelumSocialDebugAction
 {
     override bool Use(bool pickup)
     {
         CaelumPlayer caelumPlayer = CaelumPlayer(Owner);
         if (caelumPlayer == null) { return false; }
         caelumPlayer.ChangePlayerFactionReputation(
-            CaelumConstants.FACTION_GENDARMERIA, -50
+            CaelumConstants.FACTION_UNITARIOS, -50
         );
         return true;
     }

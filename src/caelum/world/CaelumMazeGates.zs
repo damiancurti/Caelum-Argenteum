@@ -11,6 +11,20 @@ class CaelumMazeBarredGate : Actor
     bool Opened;
     int Revision;
 
+    override void PostBeginPlay()
+    {
+        Super.PostBeginPlay();
+        if (level.MapName != "MAP02") return;
+        // Mientras la reja permanece cerrada tambien bloquea la vista: el
+        // Zupay no puede alertarse ni hostigar la escolta a traves de los barrotes.
+        for (int i = 0; i < level.lines.Size(); i++)
+        {
+            let barrier = level.lines[i];
+            if (barrier.special != 13 || barrier.args[0] != args[0]) continue;
+            barrier.flags |= Line.ML_BLOCKSIGHT;
+        }
+    }
+
     bool Open(CaelumPlayer user)
     {
         if(user==null || user.player==null || user.health<=0)return false;
@@ -28,7 +42,7 @@ class CaelumMazeBarredGate : Actor
             let barrier=level.lines[i];
             if(barrier.special!=13 || barrier.args[0]!=args[0])continue;
             barrier.flags &= ~(Line.ML_BLOCKING | Line.ML_BLOCKPROJECTILE
-                | Line.ML_BLOCKHITSCAN | Line.ML_BLOCKUSE);
+                | Line.ML_BLOCKHITSCAN | Line.ML_BLOCKUSE | Line.ML_BLOCKSIGHT);
             for(int sideIndex=0;sideIndex<2;sideIndex++)
                 if(barrier.sidedef[sideIndex]!=null)
                     barrier.sidedef[sideIndex].SetTexture(Side.mid,TexMan.CheckForTexture("-",TexMan.Type_Wall));

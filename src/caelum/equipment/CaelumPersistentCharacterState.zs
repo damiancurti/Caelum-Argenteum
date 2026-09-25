@@ -143,8 +143,11 @@ class CaelumPersistentCharacterState : Inventory
     // Membresía y reputación pertenecen al personaje. Las relaciones entre
     // dominios son una tabla de reglas compartida, no estado duplicado por NPC.
     int FactionStateVersion;
-    bool FactionMember[CaelumConstants.FACTION_COUNT];
-    int FactionReputation[CaelumConstants.FACTION_COUNT];
+    bool FactionMember[CaelumConstants.FACTION_SAVE_SLOTS];
+    int FactionReputation[CaelumConstants.FACTION_SAVE_SLOTS];
+    int PrisonerRescueStateVersion;
+    int PrisonerRescueState[CaelumConstants.PRISONER_COUNT];
+    bool PrisonerRewardClaimed[CaelumConstants.PRISONER_COUNT];
     int Race;
     int FirstClass;
     int SecondClass;
@@ -1054,18 +1057,41 @@ class CaelumPersistentCharacterState : Inventory
     void InitializeNewFactionState()
     {
         for (int factionId = 0;
-            factionId < CaelumConstants.FACTION_COUNT; factionId++)
+            factionId < CaelumConstants.FACTION_SAVE_SLOTS; factionId++)
         {
             FactionMember[factionId] = false;
             FactionReputation[factionId] = 0;
         }
-        FactionStateVersion = 1;
+        FactionStateVersion = 3;
     }
 
     void EnsureFactionStateInitialized()
     {
-        if (FactionStateVersion >= 1) { return; }
+        if (FactionStateVersion >= 3) { return; }
+        if (FactionStateVersion < 1)
+        {
+            InitializeNewFactionState();
+            return;
+        }
+        // Las partidas anteriores conservan la reputacion de las cuatro
+        // facciones de prisioneros; los dominios provisionales se descartan.
+        bool unitMember = FactionMember[4];
+        int unitReputation = FactionReputation[4];
+        bool federalMember = FactionMember[5];
+        int federalReputation = FactionReputation[5];
+        bool pueblosMember = FactionMember[6];
+        int pueblosReputation = FactionReputation[6];
+        bool tarotMember = FactionMember[7];
+        int tarotReputation = FactionReputation[7];
         InitializeNewFactionState();
+        FactionMember[CaelumConstants.FACTION_UNITARIOS] = unitMember;
+        FactionReputation[CaelumConstants.FACTION_UNITARIOS] = unitReputation;
+        FactionMember[CaelumConstants.FACTION_FEDERALS] = federalMember;
+        FactionReputation[CaelumConstants.FACTION_FEDERALS] = federalReputation;
+        FactionMember[CaelumConstants.FACTION_PUEBLOS_LIBRES] = pueblosMember;
+        FactionReputation[CaelumConstants.FACTION_PUEBLOS_LIBRES] = pueblosReputation;
+        FactionMember[CaelumConstants.FACTION_CULT_TAROT] = tarotMember;
+        FactionReputation[CaelumConstants.FACTION_CULT_TAROT] = tarotReputation;
     }
 
     bool SetFactionMembership(int factionId, bool isMember)
@@ -1106,6 +1132,90 @@ class CaelumPersistentCharacterState : Inventory
 
     // Consulta O(1): una facción siempre se reconoce como propia y las
     // relaciones cruzadas quedan neutrales hasta que el autor defina la tabla.
+    bool IsValidPrisonerId(int prisonerId)
+    {
+        return prisonerId >= 0
+            && prisonerId < CaelumConstants.PRISONER_COUNT;
+    }
+
+    void InitializeNewPrisonerRescueState()
+    {
+        for (int prisonerId = 0;
+            prisonerId < CaelumConstants.PRISONER_COUNT; prisonerId++)
+        {
+            PrisonerRescueState[prisonerId] =
+                CaelumConstants.PRISONER_STATE_CAPTIVE;
+            PrisonerRewardClaimed[prisonerId] = false;
+        }
+        PrisonerRescueStateVersion = 1;
+    }
+
+    void EnsurePrisonerRescueStateInitialized()
+    {
+        if (PrisonerRescueStateVersion >= 1) { return; }
+        InitializeNewPrisonerRescueState();
+    }
+
+    int GetPrisonerRescueState(int prisonerId)
+    {
+        EnsurePrisonerRescueStateInitialized();
+        if (!IsValidPrisonerId(prisonerId))
+        {
+            return CaelumConstants.PRISONER_STATE_CAPTIVE;
+        }
+        return PrisonerRescueState[prisonerId];
+    }
+
+    bool SetPrisonerRescueState(int prisonerId, int nextState)
+    {
+        EnsurePrisonerRescueStateInitialized();
+        if (!IsValidPrisonerId(prisonerId)
+            || PrisonerRescueState[prisonerId] == nextState)
+        {
+            return false;
+        }
+        if (nextState == CaelumConstants.PRISONER_STATE_DEAD)
+        {
+            if (PrisonerRescueState[prisonerId]
+                != CaelumConstants.PRISONER_STATE_FOLLOWING)
+            {
+                return false;
+            }
+            PrisonerRescueState[prisonerId] =
+                CaelumConstants.PRISONER_STATE_DEAD;
+            return true;
+        }
+        if (nextState < CaelumConstants.PRISONER_STATE_CAPTIVE
+            || nextState > CaelumConstants.PRISONER_STATE_EXTRACTED
+            || PrisonerRescueState[prisonerId]
+                == CaelumConstants.PRISONER_STATE_DEAD
+            || nextState < PrisonerRescueState[prisonerId])
+        {
+            return false;
+        }
+        PrisonerRescueState[prisonerId] = nextState;
+        return true;
+    }
+
+    bool IsPrisonerRewardClaimed(int prisonerId)
+    {
+        EnsurePrisonerRescueStateInitialized();
+        return IsValidPrisonerId(prisonerId)
+            && PrisonerRewardClaimed[prisonerId];
+    }
+
+    bool MarkPrisonerRewardClaimed(int prisonerId)
+    {
+        EnsurePrisonerRescueStateInitialized();
+        if (!IsValidPrisonerId(prisonerId)
+            || PrisonerRewardClaimed[prisonerId])
+        {
+            return false;
+        }
+        PrisonerRewardClaimed[prisonerId] = true;
+        return true;
+    }
+
     int GetFactionRelation(int sourceFactionId, int targetFactionId)
     {
         return CaelumFactionRules.GetRelation(

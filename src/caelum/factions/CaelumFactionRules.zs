@@ -6,10 +6,12 @@ class CaelumFactionRules : Object
     {
         switch (factionId)
         {
-            case CaelumConstants.FACTION_GENDARMERIA: return "CA_FACTION_GENDARMERIA";
-            case CaelumConstants.FACTION_SETTLEMENTS: return "CA_FACTION_SETTLEMENTS";
-            case CaelumConstants.FACTION_CARAVANS: return "CA_FACTION_CARAVANS";
-            case CaelumConstants.FACTION_POLITICAL_ACTORS: return "CA_FACTION_POLITICAL_ACTORS";
+            case CaelumConstants.FACTION_UNITARIOS: return "CA_FACTION_UNITARIOS";
+            case CaelumConstants.FACTION_FEDERALS: return "CA_FACTION_FEDERALS";
+            case CaelumConstants.FACTION_PUEBLOS_LIBRES: return "CA_FACTION_PUEBLOS_LIBRES";
+            case CaelumConstants.FACTION_CAELITH: return "CA_FACTION_CAELITH";
+            case CaelumConstants.FACTION_CULT_TAROT: return "CA_FACTION_CULT_TAROT";
+            case CaelumConstants.FACTION_SUN_WARRIORS: return "CA_FACTION_SUN_WARRIORS";
         }
         return "CA_REP_UNKNOWN_FACTION";
     }

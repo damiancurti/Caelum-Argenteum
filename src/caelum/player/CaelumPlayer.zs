@@ -470,6 +470,7 @@ class CaelumPlayer : DoomPlayer
     double TarotMinorBaseSnapshot[CaelumConstants.PRIMARY_ATTRIBUTE_COUNT];
     bool TarotFoolOwnedSnapshot;
     bool TarotCupsAceOwnedSnapshot;
+    bool TarotOwnedSnapshot[CaelumConstants.TAROT_CARD_COUNT];
     bool MainM00FoolRevealedSnapshot;
     bool CombatClassAbilityInputReserved;
     double HUDAbilitySuccessRemaining;
@@ -734,6 +735,9 @@ class CaelumPlayer : DoomPlayer
         // Caelum performs one custom pain roll after engine mitigation. This
         // disables DoomPlayer's independent native roll and prevents duplicates.
         PainChance 0;
+        // The selected pain cue is emitted once by the custom roll; silence
+        // DoomPlayer's inherited gender sound so the two never overlap.
+        PainSound "";
 
     }
 
@@ -864,6 +868,8 @@ class CaelumPlayer : DoomPlayer
         TarotAttributeBonusSnapshot = persistentState.GetTarotAttributeBonusPercent();
         for (int attribute = 0; attribute < CaelumConstants.PRIMARY_ATTRIBUTE_COUNT; attribute++)
             TarotMinorBaseSnapshot[attribute] = persistentState.GetTarotMinorBaseBonus(attribute);
+        for (int card = 0; card < CaelumConstants.TAROT_CARD_COUNT; card++)
+            TarotOwnedSnapshot[card] = persistentState.HasTarotCard(card);
         TarotFoolOwnedSnapshot = persistentState.HasTarotCard(CaelumConstants.TAROT_THE_FOOL);
         TarotCupsAceOwnedSnapshot = persistentState.HasTarotCard(CaelumSewerMaze.CUPS_ACE);
         MainM00FoolRevealedSnapshot = persistentState.MainM00FoolRevealed;
@@ -993,6 +999,81 @@ class CaelumPlayer : DoomPlayer
         RefreshSocialJournalSnapshot();
         if (changed) { PersistCharacterState(); }
         return changed;
+    }
+
+    int GetPrisonerRescueState(int prisonerId)
+    {
+        CaelumPersistentCharacterState persistentState =
+            GetPersistentCharacterState(true);
+        if (persistentState == null) { return CaelumConstants.PRISONER_STATE_CAPTIVE; }
+        return persistentState.GetPrisonerRescueState(prisonerId);
+    }
+
+    bool SetPlayerPrisonerRescueState(int prisonerId, int nextState)
+    {
+        CaelumPersistentCharacterState persistentState =
+            GetPersistentCharacterState(true);
+        if (persistentState == null) { return false; }
+        bool changed = persistentState.SetPrisonerRescueState(
+            prisonerId, nextState
+        );
+        if (changed) { PersistCharacterState(); }
+        return changed;
+    }
+
+    bool IsPlayerPrisonerRewardClaimed(int prisonerId)
+    {
+        CaelumPersistentCharacterState persistentState =
+            GetPersistentCharacterState(true);
+        if (persistentState == null) { return false; }
+        return persistentState.IsPrisonerRewardClaimed(prisonerId);
+    }
+
+    bool ClaimPrisonerPortReward(int prisonerId, int factionId)
+    {
+        CaelumPersistentCharacterState persistentState =
+            GetPersistentCharacterState(true);
+        if (persistentState == null || player == null || health <= 0
+            || persistentState.GetPrisonerRescueState(prisonerId)
+                != CaelumConstants.PRISONER_STATE_EXTRACTED
+            || persistentState.IsPrisonerRewardClaimed(prisonerId))
+        {
+            return false;
+        }
+
+        for (int currencyRoute = 0; currencyRoute < 2; currencyRoute++)
+        {
+            if (!BuildPalomoCurrencyCreditPlan(
+                CaelumConstants.PRISONER_RESCUE_COPPER_REWARD))
+            {
+                return false;
+            }
+            if (currencyRoute == 1)
+            {
+                if (!MagicBoxOwned) { continue; }
+                RoutePalomoCurrencyGainsToMagicBox();
+            }
+            double personalDelta = GetPalomoCurrencyPlanPersonalWeightDelta();
+            double boxRawDelta = GetPalomoCurrencyPlanBoxRawWeightDelta();
+            int boxSlotDelta = GetPalomoCurrencyPlanBoxSlotDelta();
+            if (!PalomoTransactionCapacityFits(
+                personalDelta, boxRawDelta, boxSlotDelta))
+            {
+                continue;
+            }
+            if (!ApplyPalomoCurrencyPlan()) { return false; }
+            persistentState.MarkPrisonerRewardClaimed(prisonerId);
+            persistentState.ChangeFactionReputation(
+                factionId, CaelumConstants.PRISONER_RESCUE_REPUTATION_GAIN);
+            RefreshSocialJournalSnapshot();
+            PersistCharacterState();
+            CaelumNotifications.Notify(self,
+                StringTable.Localize("CA_PRISONER_REWARD_RECEIVED", false));
+            return true;
+        }
+        CaelumNotifications.Notify(self,
+            StringTable.Localize("CA_PRISONER_REWARD_CAPACITY_FAIL", false));
+        return false;
     }
 
     void ResetPlayerFactionStateForDebug()
@@ -14229,6 +14310,7 @@ class CaelumPlayer : DoomPlayer
                 );
                 SetState(painState);
                 LastPainTriggered = true;
+                A_StartSound(ResolvePlayerPainSound(), CHAN_VOICE);
                 CancelWeaponCharge();
                 if (PendingStaffChargedAttack)
                 {
@@ -14245,6 +14327,18 @@ class CaelumPlayer : DoomPlayer
                 }
             }
         }
+    }
+
+    // The applicable player voice follows the created character profile:
+    // male uses the human/Caelith grunt, female uses its selected counterpart.
+    Sound ResolvePlayerPainSound()
+    {
+        if (CharacterProfile != null
+            && CharacterProfile.Sex == CaelumConstants.SEX_FEMALE)
+        {
+            return "caelum/player/pain_female";
+        }
+        return "caelum/player/pain_male";
     }
 
     // Sum the finite states from Pain until the sequence returns to Spawn.

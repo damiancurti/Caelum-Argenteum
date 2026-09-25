@@ -1,5 +1,5 @@
 {
-  "version": "4.36.5",
+  "version": "4.36.7",
   "layout_revision": 2,
   "catalogue_revision": 1,
   "size_policy": "CHARACTER_DEFAULT",
@@ -67,6 +67,7 @@
       24,
       24
     ],
+    "rats_per_mandinga": 2,
     "food_bundles_per_section": [
       6,
       6,
@@ -2792,7 +2793,9 @@
         2656,
         3936
       ],
-      "lock": 207
+      "lock": 207,
+      "actor": "CaelumPrisonerUnitario",
+      "doomednum": 30988
     },
     {
       "zone": 1,
@@ -2808,7 +2811,9 @@
         2656,
         8032
       ],
-      "lock": 208
+      "lock": 208,
+      "actor": "CaelumPrisonerFederal",
+      "doomednum": 30989
     },
     {
       "zone": 2,
@@ -2824,7 +2829,9 @@
         2656,
         12128
       ],
-      "lock": 209
+      "lock": 209,
+      "actor": "CaelumPrisonerBestia",
+      "doomednum": 30990
     },
     {
       "zone": 3,
@@ -2840,7 +2847,2123 @@
         2656,
         16224
       ],
-      "lock": 210
+      "lock": 210,
+      "actor": "CaelumPrisonerTarot",
+      "doomednum": 30991
+    }
+  ],
+  "rats": [
+    {
+      "zone": 0,
+      "node": [
+        1,
+        0
+      ],
+      "position": [
+        -960,
+        704
+      ]
+    },
+    {
+      "zone": 0,
+      "node": [
+        1,
+        0
+      ],
+      "position": [
+        -576,
+        832
+      ]
+    },
+    {
+      "zone": 0,
+      "node": [
+        2,
+        0
+      ],
+      "position": [
+        -192,
+        704
+      ]
+    },
+    {
+      "zone": 0,
+      "node": [
+        2,
+        0
+      ],
+      "position": [
+        192,
+        832
+      ]
+    },
+    {
+      "zone": 0,
+      "node": [
+        3,
+        0
+      ],
+      "position": [
+        576,
+        704
+      ]
+    },
+    {
+      "zone": 0,
+      "node": [
+        3,
+        0
+      ],
+      "position": [
+        960,
+        832
+      ]
+    },
+    {
+      "zone": 0,
+      "node": [
+        4,
+        0
+      ],
+      "position": [
+        1344,
+        704
+      ]
+    },
+    {
+      "zone": 0,
+      "node": [
+        4,
+        0
+      ],
+      "position": [
+        1728,
+        832
+      ]
+    },
+    {
+      "zone": 0,
+      "node": [
+        0,
+        1
+      ],
+      "position": [
+        -1728,
+        1472
+      ]
+    },
+    {
+      "zone": 0,
+      "node": [
+        0,
+        1
+      ],
+      "position": [
+        -1344,
+        1600
+      ]
+    },
+    {
+      "zone": 0,
+      "node": [
+        1,
+        1
+      ],
+      "position": [
+        -960,
+        1472
+      ]
+    },
+    {
+      "zone": 0,
+      "node": [
+        1,
+        1
+      ],
+      "position": [
+        -576,
+        1600
+      ]
+    },
+    {
+      "zone": 0,
+      "node": [
+        2,
+        1
+      ],
+      "position": [
+        -192,
+        1472
+      ]
+    },
+    {
+      "zone": 0,
+      "node": [
+        2,
+        1
+      ],
+      "position": [
+        192,
+        1600
+      ]
+    },
+    {
+      "zone": 0,
+      "node": [
+        3,
+        1
+      ],
+      "position": [
+        576,
+        1472
+      ]
+    },
+    {
+      "zone": 0,
+      "node": [
+        3,
+        1
+      ],
+      "position": [
+        960,
+        1600
+      ]
+    },
+    {
+      "zone": 0,
+      "node": [
+        4,
+        1
+      ],
+      "position": [
+        1344,
+        1472
+      ]
+    },
+    {
+      "zone": 0,
+      "node": [
+        4,
+        1
+      ],
+      "position": [
+        1728,
+        1600
+      ]
+    },
+    {
+      "zone": 0,
+      "node": [
+        0,
+        2
+      ],
+      "position": [
+        -1728,
+        2240
+      ]
+    },
+    {
+      "zone": 0,
+      "node": [
+        0,
+        2
+      ],
+      "position": [
+        -1344,
+        2368
+      ]
+    },
+    {
+      "zone": 0,
+      "node": [
+        1,
+        2
+      ],
+      "position": [
+        -960,
+        2240
+      ]
+    },
+    {
+      "zone": 0,
+      "node": [
+        1,
+        2
+      ],
+      "position": [
+        -576,
+        2368
+      ]
+    },
+    {
+      "zone": 0,
+      "node": [
+        2,
+        2
+      ],
+      "position": [
+        -192,
+        2240
+      ]
+    },
+    {
+      "zone": 0,
+      "node": [
+        2,
+        2
+      ],
+      "position": [
+        192,
+        2368
+      ]
+    },
+    {
+      "zone": 0,
+      "node": [
+        3,
+        2
+      ],
+      "position": [
+        576,
+        2240
+      ]
+    },
+    {
+      "zone": 0,
+      "node": [
+        3,
+        2
+      ],
+      "position": [
+        960,
+        2368
+      ]
+    },
+    {
+      "zone": 0,
+      "node": [
+        4,
+        2
+      ],
+      "position": [
+        1344,
+        2240
+      ]
+    },
+    {
+      "zone": 0,
+      "node": [
+        4,
+        2
+      ],
+      "position": [
+        1728,
+        2368
+      ]
+    },
+    {
+      "zone": 0,
+      "node": [
+        0,
+        3
+      ],
+      "position": [
+        -1728,
+        3008
+      ]
+    },
+    {
+      "zone": 0,
+      "node": [
+        0,
+        3
+      ],
+      "position": [
+        -1344,
+        3136
+      ]
+    },
+    {
+      "zone": 0,
+      "node": [
+        1,
+        3
+      ],
+      "position": [
+        -960,
+        3008
+      ]
+    },
+    {
+      "zone": 0,
+      "node": [
+        1,
+        3
+      ],
+      "position": [
+        -576,
+        3136
+      ]
+    },
+    {
+      "zone": 0,
+      "node": [
+        2,
+        3
+      ],
+      "position": [
+        -192,
+        3008
+      ]
+    },
+    {
+      "zone": 0,
+      "node": [
+        2,
+        3
+      ],
+      "position": [
+        192,
+        3136
+      ]
+    },
+    {
+      "zone": 0,
+      "node": [
+        3,
+        3
+      ],
+      "position": [
+        576,
+        3008
+      ]
+    },
+    {
+      "zone": 0,
+      "node": [
+        3,
+        3
+      ],
+      "position": [
+        960,
+        3136
+      ]
+    },
+    {
+      "zone": 0,
+      "node": [
+        4,
+        3
+      ],
+      "position": [
+        1344,
+        3008
+      ]
+    },
+    {
+      "zone": 0,
+      "node": [
+        4,
+        3
+      ],
+      "position": [
+        1728,
+        3136
+      ]
+    },
+    {
+      "zone": 0,
+      "node": [
+        0,
+        4
+      ],
+      "position": [
+        -1728,
+        3776
+      ]
+    },
+    {
+      "zone": 0,
+      "node": [
+        0,
+        4
+      ],
+      "position": [
+        -1344,
+        3904
+      ]
+    },
+    {
+      "zone": 0,
+      "node": [
+        1,
+        4
+      ],
+      "position": [
+        -960,
+        3776
+      ]
+    },
+    {
+      "zone": 0,
+      "node": [
+        1,
+        4
+      ],
+      "position": [
+        -576,
+        3904
+      ]
+    },
+    {
+      "zone": 0,
+      "node": [
+        2,
+        4
+      ],
+      "position": [
+        -192,
+        3776
+      ]
+    },
+    {
+      "zone": 0,
+      "node": [
+        2,
+        4
+      ],
+      "position": [
+        192,
+        3904
+      ]
+    },
+    {
+      "zone": 0,
+      "node": [
+        3,
+        4
+      ],
+      "position": [
+        576,
+        3776
+      ]
+    },
+    {
+      "zone": 0,
+      "node": [
+        3,
+        4
+      ],
+      "position": [
+        960,
+        3904
+      ]
+    },
+    {
+      "zone": 0,
+      "node": [
+        4,
+        4
+      ],
+      "position": [
+        1344,
+        3776
+      ]
+    },
+    {
+      "zone": 0,
+      "node": [
+        4,
+        4
+      ],
+      "position": [
+        1728,
+        3904
+      ]
+    },
+    {
+      "zone": 1,
+      "node": [
+        1,
+        0
+      ],
+      "position": [
+        -960,
+        4800
+      ]
+    },
+    {
+      "zone": 1,
+      "node": [
+        1,
+        0
+      ],
+      "position": [
+        -576,
+        4928
+      ]
+    },
+    {
+      "zone": 1,
+      "node": [
+        2,
+        0
+      ],
+      "position": [
+        -192,
+        4800
+      ]
+    },
+    {
+      "zone": 1,
+      "node": [
+        2,
+        0
+      ],
+      "position": [
+        192,
+        4928
+      ]
+    },
+    {
+      "zone": 1,
+      "node": [
+        3,
+        0
+      ],
+      "position": [
+        576,
+        4800
+      ]
+    },
+    {
+      "zone": 1,
+      "node": [
+        3,
+        0
+      ],
+      "position": [
+        960,
+        4928
+      ]
+    },
+    {
+      "zone": 1,
+      "node": [
+        4,
+        0
+      ],
+      "position": [
+        1344,
+        4800
+      ]
+    },
+    {
+      "zone": 1,
+      "node": [
+        4,
+        0
+      ],
+      "position": [
+        1728,
+        4928
+      ]
+    },
+    {
+      "zone": 1,
+      "node": [
+        0,
+        1
+      ],
+      "position": [
+        -1728,
+        5568
+      ]
+    },
+    {
+      "zone": 1,
+      "node": [
+        0,
+        1
+      ],
+      "position": [
+        -1344,
+        5696
+      ]
+    },
+    {
+      "zone": 1,
+      "node": [
+        1,
+        1
+      ],
+      "position": [
+        -960,
+        5568
+      ]
+    },
+    {
+      "zone": 1,
+      "node": [
+        1,
+        1
+      ],
+      "position": [
+        -576,
+        5696
+      ]
+    },
+    {
+      "zone": 1,
+      "node": [
+        2,
+        1
+      ],
+      "position": [
+        -192,
+        5568
+      ]
+    },
+    {
+      "zone": 1,
+      "node": [
+        2,
+        1
+      ],
+      "position": [
+        192,
+        5696
+      ]
+    },
+    {
+      "zone": 1,
+      "node": [
+        3,
+        1
+      ],
+      "position": [
+        576,
+        5568
+      ]
+    },
+    {
+      "zone": 1,
+      "node": [
+        3,
+        1
+      ],
+      "position": [
+        960,
+        5696
+      ]
+    },
+    {
+      "zone": 1,
+      "node": [
+        4,
+        1
+      ],
+      "position": [
+        1344,
+        5568
+      ]
+    },
+    {
+      "zone": 1,
+      "node": [
+        4,
+        1
+      ],
+      "position": [
+        1728,
+        5696
+      ]
+    },
+    {
+      "zone": 1,
+      "node": [
+        0,
+        2
+      ],
+      "position": [
+        -1728,
+        6336
+      ]
+    },
+    {
+      "zone": 1,
+      "node": [
+        0,
+        2
+      ],
+      "position": [
+        -1344,
+        6464
+      ]
+    },
+    {
+      "zone": 1,
+      "node": [
+        1,
+        2
+      ],
+      "position": [
+        -960,
+        6336
+      ]
+    },
+    {
+      "zone": 1,
+      "node": [
+        1,
+        2
+      ],
+      "position": [
+        -576,
+        6464
+      ]
+    },
+    {
+      "zone": 1,
+      "node": [
+        2,
+        2
+      ],
+      "position": [
+        -192,
+        6336
+      ]
+    },
+    {
+      "zone": 1,
+      "node": [
+        2,
+        2
+      ],
+      "position": [
+        192,
+        6464
+      ]
+    },
+    {
+      "zone": 1,
+      "node": [
+        3,
+        2
+      ],
+      "position": [
+        576,
+        6336
+      ]
+    },
+    {
+      "zone": 1,
+      "node": [
+        3,
+        2
+      ],
+      "position": [
+        960,
+        6464
+      ]
+    },
+    {
+      "zone": 1,
+      "node": [
+        4,
+        2
+      ],
+      "position": [
+        1344,
+        6336
+      ]
+    },
+    {
+      "zone": 1,
+      "node": [
+        4,
+        2
+      ],
+      "position": [
+        1728,
+        6464
+      ]
+    },
+    {
+      "zone": 1,
+      "node": [
+        0,
+        3
+      ],
+      "position": [
+        -1728,
+        7104
+      ]
+    },
+    {
+      "zone": 1,
+      "node": [
+        0,
+        3
+      ],
+      "position": [
+        -1344,
+        7232
+      ]
+    },
+    {
+      "zone": 1,
+      "node": [
+        1,
+        3
+      ],
+      "position": [
+        -960,
+        7104
+      ]
+    },
+    {
+      "zone": 1,
+      "node": [
+        1,
+        3
+      ],
+      "position": [
+        -576,
+        7232
+      ]
+    },
+    {
+      "zone": 1,
+      "node": [
+        2,
+        3
+      ],
+      "position": [
+        -192,
+        7104
+      ]
+    },
+    {
+      "zone": 1,
+      "node": [
+        2,
+        3
+      ],
+      "position": [
+        192,
+        7232
+      ]
+    },
+    {
+      "zone": 1,
+      "node": [
+        3,
+        3
+      ],
+      "position": [
+        576,
+        7104
+      ]
+    },
+    {
+      "zone": 1,
+      "node": [
+        3,
+        3
+      ],
+      "position": [
+        960,
+        7232
+      ]
+    },
+    {
+      "zone": 1,
+      "node": [
+        4,
+        3
+      ],
+      "position": [
+        1344,
+        7104
+      ]
+    },
+    {
+      "zone": 1,
+      "node": [
+        4,
+        3
+      ],
+      "position": [
+        1728,
+        7232
+      ]
+    },
+    {
+      "zone": 1,
+      "node": [
+        0,
+        4
+      ],
+      "position": [
+        -1728,
+        7872
+      ]
+    },
+    {
+      "zone": 1,
+      "node": [
+        0,
+        4
+      ],
+      "position": [
+        -1344,
+        8000
+      ]
+    },
+    {
+      "zone": 1,
+      "node": [
+        1,
+        4
+      ],
+      "position": [
+        -960,
+        7872
+      ]
+    },
+    {
+      "zone": 1,
+      "node": [
+        1,
+        4
+      ],
+      "position": [
+        -576,
+        8000
+      ]
+    },
+    {
+      "zone": 1,
+      "node": [
+        2,
+        4
+      ],
+      "position": [
+        -192,
+        7872
+      ]
+    },
+    {
+      "zone": 1,
+      "node": [
+        2,
+        4
+      ],
+      "position": [
+        192,
+        8000
+      ]
+    },
+    {
+      "zone": 1,
+      "node": [
+        3,
+        4
+      ],
+      "position": [
+        576,
+        7872
+      ]
+    },
+    {
+      "zone": 1,
+      "node": [
+        3,
+        4
+      ],
+      "position": [
+        960,
+        8000
+      ]
+    },
+    {
+      "zone": 1,
+      "node": [
+        4,
+        4
+      ],
+      "position": [
+        1344,
+        7872
+      ]
+    },
+    {
+      "zone": 1,
+      "node": [
+        4,
+        4
+      ],
+      "position": [
+        1728,
+        8000
+      ]
+    },
+    {
+      "zone": 2,
+      "node": [
+        1,
+        0
+      ],
+      "position": [
+        -960,
+        8896
+      ]
+    },
+    {
+      "zone": 2,
+      "node": [
+        1,
+        0
+      ],
+      "position": [
+        -576,
+        9024
+      ]
+    },
+    {
+      "zone": 2,
+      "node": [
+        2,
+        0
+      ],
+      "position": [
+        -192,
+        8896
+      ]
+    },
+    {
+      "zone": 2,
+      "node": [
+        2,
+        0
+      ],
+      "position": [
+        192,
+        9024
+      ]
+    },
+    {
+      "zone": 2,
+      "node": [
+        3,
+        0
+      ],
+      "position": [
+        576,
+        8896
+      ]
+    },
+    {
+      "zone": 2,
+      "node": [
+        3,
+        0
+      ],
+      "position": [
+        960,
+        9024
+      ]
+    },
+    {
+      "zone": 2,
+      "node": [
+        4,
+        0
+      ],
+      "position": [
+        1344,
+        8896
+      ]
+    },
+    {
+      "zone": 2,
+      "node": [
+        4,
+        0
+      ],
+      "position": [
+        1728,
+        9024
+      ]
+    },
+    {
+      "zone": 2,
+      "node": [
+        0,
+        1
+      ],
+      "position": [
+        -1728,
+        9664
+      ]
+    },
+    {
+      "zone": 2,
+      "node": [
+        0,
+        1
+      ],
+      "position": [
+        -1344,
+        9792
+      ]
+    },
+    {
+      "zone": 2,
+      "node": [
+        1,
+        1
+      ],
+      "position": [
+        -960,
+        9664
+      ]
+    },
+    {
+      "zone": 2,
+      "node": [
+        1,
+        1
+      ],
+      "position": [
+        -576,
+        9792
+      ]
+    },
+    {
+      "zone": 2,
+      "node": [
+        2,
+        1
+      ],
+      "position": [
+        -192,
+        9664
+      ]
+    },
+    {
+      "zone": 2,
+      "node": [
+        2,
+        1
+      ],
+      "position": [
+        192,
+        9792
+      ]
+    },
+    {
+      "zone": 2,
+      "node": [
+        3,
+        1
+      ],
+      "position": [
+        576,
+        9664
+      ]
+    },
+    {
+      "zone": 2,
+      "node": [
+        3,
+        1
+      ],
+      "position": [
+        960,
+        9792
+      ]
+    },
+    {
+      "zone": 2,
+      "node": [
+        4,
+        1
+      ],
+      "position": [
+        1344,
+        9664
+      ]
+    },
+    {
+      "zone": 2,
+      "node": [
+        4,
+        1
+      ],
+      "position": [
+        1728,
+        9792
+      ]
+    },
+    {
+      "zone": 2,
+      "node": [
+        0,
+        2
+      ],
+      "position": [
+        -1728,
+        10432
+      ]
+    },
+    {
+      "zone": 2,
+      "node": [
+        0,
+        2
+      ],
+      "position": [
+        -1344,
+        10560
+      ]
+    },
+    {
+      "zone": 2,
+      "node": [
+        1,
+        2
+      ],
+      "position": [
+        -960,
+        10432
+      ]
+    },
+    {
+      "zone": 2,
+      "node": [
+        1,
+        2
+      ],
+      "position": [
+        -576,
+        10560
+      ]
+    },
+    {
+      "zone": 2,
+      "node": [
+        2,
+        2
+      ],
+      "position": [
+        -192,
+        10432
+      ]
+    },
+    {
+      "zone": 2,
+      "node": [
+        2,
+        2
+      ],
+      "position": [
+        192,
+        10560
+      ]
+    },
+    {
+      "zone": 2,
+      "node": [
+        3,
+        2
+      ],
+      "position": [
+        576,
+        10432
+      ]
+    },
+    {
+      "zone": 2,
+      "node": [
+        3,
+        2
+      ],
+      "position": [
+        960,
+        10560
+      ]
+    },
+    {
+      "zone": 2,
+      "node": [
+        4,
+        2
+      ],
+      "position": [
+        1344,
+        10432
+      ]
+    },
+    {
+      "zone": 2,
+      "node": [
+        4,
+        2
+      ],
+      "position": [
+        1728,
+        10560
+      ]
+    },
+    {
+      "zone": 2,
+      "node": [
+        0,
+        3
+      ],
+      "position": [
+        -1728,
+        11200
+      ]
+    },
+    {
+      "zone": 2,
+      "node": [
+        0,
+        3
+      ],
+      "position": [
+        -1344,
+        11328
+      ]
+    },
+    {
+      "zone": 2,
+      "node": [
+        1,
+        3
+      ],
+      "position": [
+        -960,
+        11200
+      ]
+    },
+    {
+      "zone": 2,
+      "node": [
+        1,
+        3
+      ],
+      "position": [
+        -576,
+        11328
+      ]
+    },
+    {
+      "zone": 2,
+      "node": [
+        2,
+        3
+      ],
+      "position": [
+        -192,
+        11200
+      ]
+    },
+    {
+      "zone": 2,
+      "node": [
+        2,
+        3
+      ],
+      "position": [
+        192,
+        11328
+      ]
+    },
+    {
+      "zone": 2,
+      "node": [
+        3,
+        3
+      ],
+      "position": [
+        576,
+        11200
+      ]
+    },
+    {
+      "zone": 2,
+      "node": [
+        3,
+        3
+      ],
+      "position": [
+        960,
+        11328
+      ]
+    },
+    {
+      "zone": 2,
+      "node": [
+        4,
+        3
+      ],
+      "position": [
+        1344,
+        11200
+      ]
+    },
+    {
+      "zone": 2,
+      "node": [
+        4,
+        3
+      ],
+      "position": [
+        1728,
+        11328
+      ]
+    },
+    {
+      "zone": 2,
+      "node": [
+        0,
+        4
+      ],
+      "position": [
+        -1728,
+        11968
+      ]
+    },
+    {
+      "zone": 2,
+      "node": [
+        0,
+        4
+      ],
+      "position": [
+        -1344,
+        12096
+      ]
+    },
+    {
+      "zone": 2,
+      "node": [
+        1,
+        4
+      ],
+      "position": [
+        -960,
+        11968
+      ]
+    },
+    {
+      "zone": 2,
+      "node": [
+        1,
+        4
+      ],
+      "position": [
+        -576,
+        12096
+      ]
+    },
+    {
+      "zone": 2,
+      "node": [
+        2,
+        4
+      ],
+      "position": [
+        -192,
+        11968
+      ]
+    },
+    {
+      "zone": 2,
+      "node": [
+        2,
+        4
+      ],
+      "position": [
+        192,
+        12096
+      ]
+    },
+    {
+      "zone": 2,
+      "node": [
+        3,
+        4
+      ],
+      "position": [
+        576,
+        11968
+      ]
+    },
+    {
+      "zone": 2,
+      "node": [
+        3,
+        4
+      ],
+      "position": [
+        960,
+        12096
+      ]
+    },
+    {
+      "zone": 2,
+      "node": [
+        4,
+        4
+      ],
+      "position": [
+        1344,
+        11968
+      ]
+    },
+    {
+      "zone": 2,
+      "node": [
+        4,
+        4
+      ],
+      "position": [
+        1728,
+        12096
+      ]
+    },
+    {
+      "zone": 3,
+      "node": [
+        1,
+        0
+      ],
+      "position": [
+        -960,
+        12992
+      ]
+    },
+    {
+      "zone": 3,
+      "node": [
+        1,
+        0
+      ],
+      "position": [
+        -576,
+        13120
+      ]
+    },
+    {
+      "zone": 3,
+      "node": [
+        2,
+        0
+      ],
+      "position": [
+        -192,
+        12992
+      ]
+    },
+    {
+      "zone": 3,
+      "node": [
+        2,
+        0
+      ],
+      "position": [
+        192,
+        13120
+      ]
+    },
+    {
+      "zone": 3,
+      "node": [
+        3,
+        0
+      ],
+      "position": [
+        576,
+        12992
+      ]
+    },
+    {
+      "zone": 3,
+      "node": [
+        3,
+        0
+      ],
+      "position": [
+        960,
+        13120
+      ]
+    },
+    {
+      "zone": 3,
+      "node": [
+        4,
+        0
+      ],
+      "position": [
+        1344,
+        12992
+      ]
+    },
+    {
+      "zone": 3,
+      "node": [
+        4,
+        0
+      ],
+      "position": [
+        1728,
+        13120
+      ]
+    },
+    {
+      "zone": 3,
+      "node": [
+        0,
+        1
+      ],
+      "position": [
+        -1728,
+        13760
+      ]
+    },
+    {
+      "zone": 3,
+      "node": [
+        0,
+        1
+      ],
+      "position": [
+        -1344,
+        13888
+      ]
+    },
+    {
+      "zone": 3,
+      "node": [
+        1,
+        1
+      ],
+      "position": [
+        -960,
+        13760
+      ]
+    },
+    {
+      "zone": 3,
+      "node": [
+        1,
+        1
+      ],
+      "position": [
+        -576,
+        13888
+      ]
+    },
+    {
+      "zone": 3,
+      "node": [
+        2,
+        1
+      ],
+      "position": [
+        -192,
+        13760
+      ]
+    },
+    {
+      "zone": 3,
+      "node": [
+        2,
+        1
+      ],
+      "position": [
+        192,
+        13888
+      ]
+    },
+    {
+      "zone": 3,
+      "node": [
+        3,
+        1
+      ],
+      "position": [
+        576,
+        13760
+      ]
+    },
+    {
+      "zone": 3,
+      "node": [
+        3,
+        1
+      ],
+      "position": [
+        960,
+        13888
+      ]
+    },
+    {
+      "zone": 3,
+      "node": [
+        4,
+        1
+      ],
+      "position": [
+        1344,
+        13760
+      ]
+    },
+    {
+      "zone": 3,
+      "node": [
+        4,
+        1
+      ],
+      "position": [
+        1728,
+        13888
+      ]
+    },
+    {
+      "zone": 3,
+      "node": [
+        0,
+        2
+      ],
+      "position": [
+        -1728,
+        14528
+      ]
+    },
+    {
+      "zone": 3,
+      "node": [
+        0,
+        2
+      ],
+      "position": [
+        -1344,
+        14656
+      ]
+    },
+    {
+      "zone": 3,
+      "node": [
+        1,
+        2
+      ],
+      "position": [
+        -960,
+        14528
+      ]
+    },
+    {
+      "zone": 3,
+      "node": [
+        1,
+        2
+      ],
+      "position": [
+        -576,
+        14656
+      ]
+    },
+    {
+      "zone": 3,
+      "node": [
+        2,
+        2
+      ],
+      "position": [
+        -192,
+        14528
+      ]
+    },
+    {
+      "zone": 3,
+      "node": [
+        2,
+        2
+      ],
+      "position": [
+        192,
+        14656
+      ]
+    },
+    {
+      "zone": 3,
+      "node": [
+        3,
+        2
+      ],
+      "position": [
+        576,
+        14528
+      ]
+    },
+    {
+      "zone": 3,
+      "node": [
+        3,
+        2
+      ],
+      "position": [
+        960,
+        14656
+      ]
+    },
+    {
+      "zone": 3,
+      "node": [
+        4,
+        2
+      ],
+      "position": [
+        1344,
+        14528
+      ]
+    },
+    {
+      "zone": 3,
+      "node": [
+        4,
+        2
+      ],
+      "position": [
+        1728,
+        14656
+      ]
+    },
+    {
+      "zone": 3,
+      "node": [
+        0,
+        3
+      ],
+      "position": [
+        -1728,
+        15296
+      ]
+    },
+    {
+      "zone": 3,
+      "node": [
+        0,
+        3
+      ],
+      "position": [
+        -1344,
+        15424
+      ]
+    },
+    {
+      "zone": 3,
+      "node": [
+        1,
+        3
+      ],
+      "position": [
+        -960,
+        15296
+      ]
+    },
+    {
+      "zone": 3,
+      "node": [
+        1,
+        3
+      ],
+      "position": [
+        -576,
+        15424
+      ]
+    },
+    {
+      "zone": 3,
+      "node": [
+        2,
+        3
+      ],
+      "position": [
+        -192,
+        15296
+      ]
+    },
+    {
+      "zone": 3,
+      "node": [
+        2,
+        3
+      ],
+      "position": [
+        192,
+        15424
+      ]
+    },
+    {
+      "zone": 3,
+      "node": [
+        3,
+        3
+      ],
+      "position": [
+        576,
+        15296
+      ]
+    },
+    {
+      "zone": 3,
+      "node": [
+        3,
+        3
+      ],
+      "position": [
+        960,
+        15424
+      ]
+    },
+    {
+      "zone": 3,
+      "node": [
+        4,
+        3
+      ],
+      "position": [
+        1344,
+        15296
+      ]
+    },
+    {
+      "zone": 3,
+      "node": [
+        4,
+        3
+      ],
+      "position": [
+        1728,
+        15424
+      ]
+    },
+    {
+      "zone": 3,
+      "node": [
+        0,
+        4
+      ],
+      "position": [
+        -1728,
+        16064
+      ]
+    },
+    {
+      "zone": 3,
+      "node": [
+        0,
+        4
+      ],
+      "position": [
+        -1344,
+        16192
+      ]
+    },
+    {
+      "zone": 3,
+      "node": [
+        1,
+        4
+      ],
+      "position": [
+        -960,
+        16064
+      ]
+    },
+    {
+      "zone": 3,
+      "node": [
+        1,
+        4
+      ],
+      "position": [
+        -576,
+        16192
+      ]
+    },
+    {
+      "zone": 3,
+      "node": [
+        2,
+        4
+      ],
+      "position": [
+        -192,
+        16064
+      ]
+    },
+    {
+      "zone": 3,
+      "node": [
+        2,
+        4
+      ],
+      "position": [
+        192,
+        16192
+      ]
+    },
+    {
+      "zone": 3,
+      "node": [
+        3,
+        4
+      ],
+      "position": [
+        576,
+        16064
+      ]
+    },
+    {
+      "zone": 3,
+      "node": [
+        3,
+        4
+      ],
+      "position": [
+        960,
+        16192
+      ]
+    },
+    {
+      "zone": 3,
+      "node": [
+        4,
+        4
+      ],
+      "position": [
+        1344,
+        16064
+      ]
+    },
+    {
+      "zone": 3,
+      "node": [
+        4,
+        4
+      ],
+      "position": [
+        1728,
+        16192
+      ]
     }
   ],
   "time_advance_zones": [
@@ -5556,6 +7679,34 @@
       "coop": true
     },
     {
+      "x": -960,
+      "y": 704,
+      "height": 0,
+      "angle": 90,
+      "type": 18029,
+      "skill1": true,
+      "skill2": true,
+      "skill3": true,
+      "skill4": true,
+      "skill5": true,
+      "single": true,
+      "coop": true
+    },
+    {
+      "x": -576,
+      "y": 832,
+      "height": 0,
+      "angle": 270,
+      "type": 18029,
+      "skill1": true,
+      "skill2": true,
+      "skill3": true,
+      "skill4": true,
+      "skill5": true,
+      "single": true,
+      "coop": true
+    },
+    {
       "x": 192,
       "y": 576,
       "height": 0,
@@ -5570,6 +7721,34 @@
       "coop": true
     },
     {
+      "x": -192,
+      "y": 704,
+      "height": 0,
+      "angle": 90,
+      "type": 18029,
+      "skill1": true,
+      "skill2": true,
+      "skill3": true,
+      "skill4": true,
+      "skill5": true,
+      "single": true,
+      "coop": true
+    },
+    {
+      "x": 192,
+      "y": 832,
+      "height": 0,
+      "angle": 270,
+      "type": 18029,
+      "skill1": true,
+      "skill2": true,
+      "skill3": true,
+      "skill4": true,
+      "skill5": true,
+      "single": true,
+      "coop": true
+    },
+    {
       "x": 960,
       "y": 576,
       "height": 0,
@@ -5584,6 +7763,34 @@
       "coop": true
     },
     {
+      "x": 576,
+      "y": 704,
+      "height": 0,
+      "angle": 90,
+      "type": 18029,
+      "skill1": true,
+      "skill2": true,
+      "skill3": true,
+      "skill4": true,
+      "skill5": true,
+      "single": true,
+      "coop": true
+    },
+    {
+      "x": 960,
+      "y": 832,
+      "height": 0,
+      "angle": 270,
+      "type": 18029,
+      "skill1": true,
+      "skill2": true,
+      "skill3": true,
+      "skill4": true,
+      "skill5": true,
+      "single": true,
+      "coop": true
+    },
+    {
       "x": 1728,
       "y": 576,
       "height": 0,
@@ -5598,11 +7805,67 @@
       "coop": true
     },
     {
+      "x": 1344,
+      "y": 704,
+      "height": 0,
+      "angle": 90,
+      "type": 18029,
+      "skill1": true,
+      "skill2": true,
+      "skill3": true,
+      "skill4": true,
+      "skill5": true,
+      "single": true,
+      "coop": true
+    },
+    {
+      "x": 1728,
+      "y": 832,
+      "height": 0,
+      "angle": 270,
+      "type": 18029,
+      "skill1": true,
+      "skill2": true,
+      "skill3": true,
+      "skill4": true,
+      "skill5": true,
+      "single": true,
+      "coop": true
+    },
+    {
       "x": -1344,
       "y": 1344,
       "height": 0,
       "angle": 270,
       "type": 18037,
+      "skill1": true,
+      "skill2": true,
+      "skill3": true,
+      "skill4": true,
+      "skill5": true,
+      "single": true,
+      "coop": true
+    },
+    {
+      "x": -1728,
+      "y": 1472,
+      "height": 0,
+      "angle": 90,
+      "type": 18029,
+      "skill1": true,
+      "skill2": true,
+      "skill3": true,
+      "skill4": true,
+      "skill5": true,
+      "single": true,
+      "coop": true
+    },
+    {
+      "x": -1344,
+      "y": 1600,
+      "height": 0,
+      "angle": 270,
+      "type": 18029,
       "skill1": true,
       "skill2": true,
       "skill3": true,
@@ -5626,11 +7889,67 @@
       "coop": true
     },
     {
+      "x": -960,
+      "y": 1472,
+      "height": 0,
+      "angle": 90,
+      "type": 18029,
+      "skill1": true,
+      "skill2": true,
+      "skill3": true,
+      "skill4": true,
+      "skill5": true,
+      "single": true,
+      "coop": true
+    },
+    {
+      "x": -576,
+      "y": 1600,
+      "height": 0,
+      "angle": 270,
+      "type": 18029,
+      "skill1": true,
+      "skill2": true,
+      "skill3": true,
+      "skill4": true,
+      "skill5": true,
+      "single": true,
+      "coop": true
+    },
+    {
       "x": 192,
       "y": 1344,
       "height": 0,
       "angle": 270,
       "type": 18037,
+      "skill1": true,
+      "skill2": true,
+      "skill3": true,
+      "skill4": true,
+      "skill5": true,
+      "single": true,
+      "coop": true
+    },
+    {
+      "x": -192,
+      "y": 1472,
+      "height": 0,
+      "angle": 90,
+      "type": 18029,
+      "skill1": true,
+      "skill2": true,
+      "skill3": true,
+      "skill4": true,
+      "skill5": true,
+      "single": true,
+      "coop": true
+    },
+    {
+      "x": 192,
+      "y": 1600,
+      "height": 0,
+      "angle": 270,
+      "type": 18029,
       "skill1": true,
       "skill2": true,
       "skill3": true,
@@ -5654,11 +7973,67 @@
       "coop": true
     },
     {
+      "x": 576,
+      "y": 1472,
+      "height": 0,
+      "angle": 90,
+      "type": 18029,
+      "skill1": true,
+      "skill2": true,
+      "skill3": true,
+      "skill4": true,
+      "skill5": true,
+      "single": true,
+      "coop": true
+    },
+    {
+      "x": 960,
+      "y": 1600,
+      "height": 0,
+      "angle": 270,
+      "type": 18029,
+      "skill1": true,
+      "skill2": true,
+      "skill3": true,
+      "skill4": true,
+      "skill5": true,
+      "single": true,
+      "coop": true
+    },
+    {
       "x": 1728,
       "y": 1344,
       "height": 0,
       "angle": 270,
       "type": 18037,
+      "skill1": true,
+      "skill2": true,
+      "skill3": true,
+      "skill4": true,
+      "skill5": true,
+      "single": true,
+      "coop": true
+    },
+    {
+      "x": 1344,
+      "y": 1472,
+      "height": 0,
+      "angle": 90,
+      "type": 18029,
+      "skill1": true,
+      "skill2": true,
+      "skill3": true,
+      "skill4": true,
+      "skill5": true,
+      "single": true,
+      "coop": true
+    },
+    {
+      "x": 1728,
+      "y": 1600,
+      "height": 0,
+      "angle": 270,
+      "type": 18029,
       "skill1": true,
       "skill2": true,
       "skill3": true,
@@ -5682,11 +8057,67 @@
       "coop": true
     },
     {
+      "x": -1728,
+      "y": 2240,
+      "height": 0,
+      "angle": 90,
+      "type": 18029,
+      "skill1": true,
+      "skill2": true,
+      "skill3": true,
+      "skill4": true,
+      "skill5": true,
+      "single": true,
+      "coop": true
+    },
+    {
+      "x": -1344,
+      "y": 2368,
+      "height": 0,
+      "angle": 270,
+      "type": 18029,
+      "skill1": true,
+      "skill2": true,
+      "skill3": true,
+      "skill4": true,
+      "skill5": true,
+      "single": true,
+      "coop": true
+    },
+    {
       "x": -576,
       "y": 2112,
       "height": 0,
       "angle": 270,
       "type": 18037,
+      "skill1": true,
+      "skill2": true,
+      "skill3": true,
+      "skill4": true,
+      "skill5": true,
+      "single": true,
+      "coop": true
+    },
+    {
+      "x": -960,
+      "y": 2240,
+      "height": 0,
+      "angle": 90,
+      "type": 18029,
+      "skill1": true,
+      "skill2": true,
+      "skill3": true,
+      "skill4": true,
+      "skill5": true,
+      "single": true,
+      "coop": true
+    },
+    {
+      "x": -576,
+      "y": 2368,
+      "height": 0,
+      "angle": 270,
+      "type": 18029,
       "skill1": true,
       "skill2": true,
       "skill3": true,
@@ -5710,6 +8141,34 @@
       "coop": true
     },
     {
+      "x": -192,
+      "y": 2240,
+      "height": 0,
+      "angle": 90,
+      "type": 18029,
+      "skill1": true,
+      "skill2": true,
+      "skill3": true,
+      "skill4": true,
+      "skill5": true,
+      "single": true,
+      "coop": true
+    },
+    {
+      "x": 192,
+      "y": 2368,
+      "height": 0,
+      "angle": 270,
+      "type": 18029,
+      "skill1": true,
+      "skill2": true,
+      "skill3": true,
+      "skill4": true,
+      "skill5": true,
+      "single": true,
+      "coop": true
+    },
+    {
       "x": 960,
       "y": 2112,
       "height": 0,
@@ -5724,11 +8183,67 @@
       "coop": true
     },
     {
+      "x": 576,
+      "y": 2240,
+      "height": 0,
+      "angle": 90,
+      "type": 18029,
+      "skill1": true,
+      "skill2": true,
+      "skill3": true,
+      "skill4": true,
+      "skill5": true,
+      "single": true,
+      "coop": true
+    },
+    {
+      "x": 960,
+      "y": 2368,
+      "height": 0,
+      "angle": 270,
+      "type": 18029,
+      "skill1": true,
+      "skill2": true,
+      "skill3": true,
+      "skill4": true,
+      "skill5": true,
+      "single": true,
+      "coop": true
+    },
+    {
       "x": 1728,
       "y": 2112,
       "height": 0,
       "angle": 270,
       "type": 18037,
+      "skill1": true,
+      "skill2": true,
+      "skill3": true,
+      "skill4": true,
+      "skill5": true,
+      "single": true,
+      "coop": true
+    },
+    {
+      "x": 1344,
+      "y": 2240,
+      "height": 0,
+      "angle": 90,
+      "type": 18029,
+      "skill1": true,
+      "skill2": true,
+      "skill3": true,
+      "skill4": true,
+      "skill5": true,
+      "single": true,
+      "coop": true
+    },
+    {
+      "x": 1728,
+      "y": 2368,
+      "height": 0,
+      "angle": 270,
+      "type": 18029,
       "skill1": true,
       "skill2": true,
       "skill3": true,
@@ -5752,11 +8267,67 @@
       "coop": true
     },
     {
+      "x": -1728,
+      "y": 3008,
+      "height": 0,
+      "angle": 90,
+      "type": 18029,
+      "skill1": true,
+      "skill2": true,
+      "skill3": true,
+      "skill4": true,
+      "skill5": true,
+      "single": true,
+      "coop": true
+    },
+    {
+      "x": -1344,
+      "y": 3136,
+      "height": 0,
+      "angle": 270,
+      "type": 18029,
+      "skill1": true,
+      "skill2": true,
+      "skill3": true,
+      "skill4": true,
+      "skill5": true,
+      "single": true,
+      "coop": true
+    },
+    {
       "x": -576,
       "y": 2880,
       "height": 0,
       "angle": 270,
       "type": 18037,
+      "skill1": true,
+      "skill2": true,
+      "skill3": true,
+      "skill4": true,
+      "skill5": true,
+      "single": true,
+      "coop": true
+    },
+    {
+      "x": -960,
+      "y": 3008,
+      "height": 0,
+      "angle": 90,
+      "type": 18029,
+      "skill1": true,
+      "skill2": true,
+      "skill3": true,
+      "skill4": true,
+      "skill5": true,
+      "single": true,
+      "coop": true
+    },
+    {
+      "x": -576,
+      "y": 3136,
+      "height": 0,
+      "angle": 270,
+      "type": 18029,
       "skill1": true,
       "skill2": true,
       "skill3": true,
@@ -5780,6 +8351,34 @@
       "coop": true
     },
     {
+      "x": -192,
+      "y": 3008,
+      "height": 0,
+      "angle": 90,
+      "type": 18029,
+      "skill1": true,
+      "skill2": true,
+      "skill3": true,
+      "skill4": true,
+      "skill5": true,
+      "single": true,
+      "coop": true
+    },
+    {
+      "x": 192,
+      "y": 3136,
+      "height": 0,
+      "angle": 270,
+      "type": 18029,
+      "skill1": true,
+      "skill2": true,
+      "skill3": true,
+      "skill4": true,
+      "skill5": true,
+      "single": true,
+      "coop": true
+    },
+    {
       "x": 960,
       "y": 2880,
       "height": 0,
@@ -5794,11 +8393,67 @@
       "coop": true
     },
     {
+      "x": 576,
+      "y": 3008,
+      "height": 0,
+      "angle": 90,
+      "type": 18029,
+      "skill1": true,
+      "skill2": true,
+      "skill3": true,
+      "skill4": true,
+      "skill5": true,
+      "single": true,
+      "coop": true
+    },
+    {
+      "x": 960,
+      "y": 3136,
+      "height": 0,
+      "angle": 270,
+      "type": 18029,
+      "skill1": true,
+      "skill2": true,
+      "skill3": true,
+      "skill4": true,
+      "skill5": true,
+      "single": true,
+      "coop": true
+    },
+    {
       "x": 1728,
       "y": 2880,
       "height": 0,
       "angle": 270,
       "type": 18037,
+      "skill1": true,
+      "skill2": true,
+      "skill3": true,
+      "skill4": true,
+      "skill5": true,
+      "single": true,
+      "coop": true
+    },
+    {
+      "x": 1344,
+      "y": 3008,
+      "height": 0,
+      "angle": 90,
+      "type": 18029,
+      "skill1": true,
+      "skill2": true,
+      "skill3": true,
+      "skill4": true,
+      "skill5": true,
+      "single": true,
+      "coop": true
+    },
+    {
+      "x": 1728,
+      "y": 3136,
+      "height": 0,
+      "angle": 270,
+      "type": 18029,
       "skill1": true,
       "skill2": true,
       "skill3": true,
@@ -5822,11 +8477,67 @@
       "coop": true
     },
     {
+      "x": -1728,
+      "y": 3776,
+      "height": 0,
+      "angle": 90,
+      "type": 18029,
+      "skill1": true,
+      "skill2": true,
+      "skill3": true,
+      "skill4": true,
+      "skill5": true,
+      "single": true,
+      "coop": true
+    },
+    {
+      "x": -1344,
+      "y": 3904,
+      "height": 0,
+      "angle": 270,
+      "type": 18029,
+      "skill1": true,
+      "skill2": true,
+      "skill3": true,
+      "skill4": true,
+      "skill5": true,
+      "single": true,
+      "coop": true
+    },
+    {
       "x": -576,
       "y": 3648,
       "height": 0,
       "angle": 270,
       "type": 18037,
+      "skill1": true,
+      "skill2": true,
+      "skill3": true,
+      "skill4": true,
+      "skill5": true,
+      "single": true,
+      "coop": true
+    },
+    {
+      "x": -960,
+      "y": 3776,
+      "height": 0,
+      "angle": 90,
+      "type": 18029,
+      "skill1": true,
+      "skill2": true,
+      "skill3": true,
+      "skill4": true,
+      "skill5": true,
+      "single": true,
+      "coop": true
+    },
+    {
+      "x": -576,
+      "y": 3904,
+      "height": 0,
+      "angle": 270,
+      "type": 18029,
       "skill1": true,
       "skill2": true,
       "skill3": true,
@@ -5850,6 +8561,34 @@
       "coop": true
     },
     {
+      "x": -192,
+      "y": 3776,
+      "height": 0,
+      "angle": 90,
+      "type": 18029,
+      "skill1": true,
+      "skill2": true,
+      "skill3": true,
+      "skill4": true,
+      "skill5": true,
+      "single": true,
+      "coop": true
+    },
+    {
+      "x": 192,
+      "y": 3904,
+      "height": 0,
+      "angle": 270,
+      "type": 18029,
+      "skill1": true,
+      "skill2": true,
+      "skill3": true,
+      "skill4": true,
+      "skill5": true,
+      "single": true,
+      "coop": true
+    },
+    {
       "x": 960,
       "y": 3648,
       "height": 0,
@@ -5864,11 +8603,67 @@
       "coop": true
     },
     {
+      "x": 576,
+      "y": 3776,
+      "height": 0,
+      "angle": 90,
+      "type": 18029,
+      "skill1": true,
+      "skill2": true,
+      "skill3": true,
+      "skill4": true,
+      "skill5": true,
+      "single": true,
+      "coop": true
+    },
+    {
+      "x": 960,
+      "y": 3904,
+      "height": 0,
+      "angle": 270,
+      "type": 18029,
+      "skill1": true,
+      "skill2": true,
+      "skill3": true,
+      "skill4": true,
+      "skill5": true,
+      "single": true,
+      "coop": true
+    },
+    {
       "x": 1728,
       "y": 3648,
       "height": 0,
       "angle": 270,
       "type": 18037,
+      "skill1": true,
+      "skill2": true,
+      "skill3": true,
+      "skill4": true,
+      "skill5": true,
+      "single": true,
+      "coop": true
+    },
+    {
+      "x": 1344,
+      "y": 3776,
+      "height": 0,
+      "angle": 90,
+      "type": 18029,
+      "skill1": true,
+      "skill2": true,
+      "skill3": true,
+      "skill4": true,
+      "skill5": true,
+      "single": true,
+      "coop": true
+    },
+    {
+      "x": 1728,
+      "y": 3904,
+      "height": 0,
+      "angle": 270,
+      "type": 18029,
       "skill1": true,
       "skill2": true,
       "skill3": true,
@@ -5987,7 +8782,7 @@
       "y": 3936,
       "height": 0,
       "angle": 90,
-      "type": 30981,
+      "type": 30988,
       "skill1": true,
       "skill2": true,
       "skill3": true,
@@ -5996,7 +8791,7 @@
       "single": true,
       "coop": true,
       "id": 44820,
-      "arg0": 10
+      "arg0": 0
     },
     {
       "x": 1536,
@@ -6717,6 +9512,34 @@
       "coop": true
     },
     {
+      "x": -960,
+      "y": 4800,
+      "height": 0,
+      "angle": 90,
+      "type": 18029,
+      "skill1": true,
+      "skill2": true,
+      "skill3": true,
+      "skill4": true,
+      "skill5": true,
+      "single": true,
+      "coop": true
+    },
+    {
+      "x": -576,
+      "y": 4928,
+      "height": 0,
+      "angle": 270,
+      "type": 18029,
+      "skill1": true,
+      "skill2": true,
+      "skill3": true,
+      "skill4": true,
+      "skill5": true,
+      "single": true,
+      "coop": true
+    },
+    {
       "x": 192,
       "y": 4672,
       "height": 0,
@@ -6731,6 +9554,34 @@
       "coop": true
     },
     {
+      "x": -192,
+      "y": 4800,
+      "height": 0,
+      "angle": 90,
+      "type": 18029,
+      "skill1": true,
+      "skill2": true,
+      "skill3": true,
+      "skill4": true,
+      "skill5": true,
+      "single": true,
+      "coop": true
+    },
+    {
+      "x": 192,
+      "y": 4928,
+      "height": 0,
+      "angle": 270,
+      "type": 18029,
+      "skill1": true,
+      "skill2": true,
+      "skill3": true,
+      "skill4": true,
+      "skill5": true,
+      "single": true,
+      "coop": true
+    },
+    {
       "x": 960,
       "y": 4672,
       "height": 0,
@@ -6745,6 +9596,34 @@
       "coop": true
     },
     {
+      "x": 576,
+      "y": 4800,
+      "height": 0,
+      "angle": 90,
+      "type": 18029,
+      "skill1": true,
+      "skill2": true,
+      "skill3": true,
+      "skill4": true,
+      "skill5": true,
+      "single": true,
+      "coop": true
+    },
+    {
+      "x": 960,
+      "y": 4928,
+      "height": 0,
+      "angle": 270,
+      "type": 18029,
+      "skill1": true,
+      "skill2": true,
+      "skill3": true,
+      "skill4": true,
+      "skill5": true,
+      "single": true,
+      "coop": true
+    },
+    {
       "x": 1728,
       "y": 4672,
       "height": 0,
@@ -6759,11 +9638,67 @@
       "coop": true
     },
     {
+      "x": 1344,
+      "y": 4800,
+      "height": 0,
+      "angle": 90,
+      "type": 18029,
+      "skill1": true,
+      "skill2": true,
+      "skill3": true,
+      "skill4": true,
+      "skill5": true,
+      "single": true,
+      "coop": true
+    },
+    {
+      "x": 1728,
+      "y": 4928,
+      "height": 0,
+      "angle": 270,
+      "type": 18029,
+      "skill1": true,
+      "skill2": true,
+      "skill3": true,
+      "skill4": true,
+      "skill5": true,
+      "single": true,
+      "coop": true
+    },
+    {
       "x": -1344,
       "y": 5440,
       "height": 0,
       "angle": 270,
       "type": 18037,
+      "skill1": true,
+      "skill2": true,
+      "skill3": true,
+      "skill4": true,
+      "skill5": true,
+      "single": true,
+      "coop": true
+    },
+    {
+      "x": -1728,
+      "y": 5568,
+      "height": 0,
+      "angle": 90,
+      "type": 18029,
+      "skill1": true,
+      "skill2": true,
+      "skill3": true,
+      "skill4": true,
+      "skill5": true,
+      "single": true,
+      "coop": true
+    },
+    {
+      "x": -1344,
+      "y": 5696,
+      "height": 0,
+      "angle": 270,
+      "type": 18029,
       "skill1": true,
       "skill2": true,
       "skill3": true,
@@ -6787,11 +9722,67 @@
       "coop": true
     },
     {
+      "x": -960,
+      "y": 5568,
+      "height": 0,
+      "angle": 90,
+      "type": 18029,
+      "skill1": true,
+      "skill2": true,
+      "skill3": true,
+      "skill4": true,
+      "skill5": true,
+      "single": true,
+      "coop": true
+    },
+    {
+      "x": -576,
+      "y": 5696,
+      "height": 0,
+      "angle": 270,
+      "type": 18029,
+      "skill1": true,
+      "skill2": true,
+      "skill3": true,
+      "skill4": true,
+      "skill5": true,
+      "single": true,
+      "coop": true
+    },
+    {
       "x": 192,
       "y": 5440,
       "height": 0,
       "angle": 270,
       "type": 18037,
+      "skill1": true,
+      "skill2": true,
+      "skill3": true,
+      "skill4": true,
+      "skill5": true,
+      "single": true,
+      "coop": true
+    },
+    {
+      "x": -192,
+      "y": 5568,
+      "height": 0,
+      "angle": 90,
+      "type": 18029,
+      "skill1": true,
+      "skill2": true,
+      "skill3": true,
+      "skill4": true,
+      "skill5": true,
+      "single": true,
+      "coop": true
+    },
+    {
+      "x": 192,
+      "y": 5696,
+      "height": 0,
+      "angle": 270,
+      "type": 18029,
       "skill1": true,
       "skill2": true,
       "skill3": true,
@@ -6815,11 +9806,67 @@
       "coop": true
     },
     {
+      "x": 576,
+      "y": 5568,
+      "height": 0,
+      "angle": 90,
+      "type": 18029,
+      "skill1": true,
+      "skill2": true,
+      "skill3": true,
+      "skill4": true,
+      "skill5": true,
+      "single": true,
+      "coop": true
+    },
+    {
+      "x": 960,
+      "y": 5696,
+      "height": 0,
+      "angle": 270,
+      "type": 18029,
+      "skill1": true,
+      "skill2": true,
+      "skill3": true,
+      "skill4": true,
+      "skill5": true,
+      "single": true,
+      "coop": true
+    },
+    {
       "x": 1728,
       "y": 5440,
       "height": 0,
       "angle": 270,
       "type": 18037,
+      "skill1": true,
+      "skill2": true,
+      "skill3": true,
+      "skill4": true,
+      "skill5": true,
+      "single": true,
+      "coop": true
+    },
+    {
+      "x": 1344,
+      "y": 5568,
+      "height": 0,
+      "angle": 90,
+      "type": 18029,
+      "skill1": true,
+      "skill2": true,
+      "skill3": true,
+      "skill4": true,
+      "skill5": true,
+      "single": true,
+      "coop": true
+    },
+    {
+      "x": 1728,
+      "y": 5696,
+      "height": 0,
+      "angle": 270,
+      "type": 18029,
       "skill1": true,
       "skill2": true,
       "skill3": true,
@@ -6843,11 +9890,67 @@
       "coop": true
     },
     {
+      "x": -1728,
+      "y": 6336,
+      "height": 0,
+      "angle": 90,
+      "type": 18029,
+      "skill1": true,
+      "skill2": true,
+      "skill3": true,
+      "skill4": true,
+      "skill5": true,
+      "single": true,
+      "coop": true
+    },
+    {
+      "x": -1344,
+      "y": 6464,
+      "height": 0,
+      "angle": 270,
+      "type": 18029,
+      "skill1": true,
+      "skill2": true,
+      "skill3": true,
+      "skill4": true,
+      "skill5": true,
+      "single": true,
+      "coop": true
+    },
+    {
       "x": -576,
       "y": 6208,
       "height": 0,
       "angle": 270,
       "type": 18037,
+      "skill1": true,
+      "skill2": true,
+      "skill3": true,
+      "skill4": true,
+      "skill5": true,
+      "single": true,
+      "coop": true
+    },
+    {
+      "x": -960,
+      "y": 6336,
+      "height": 0,
+      "angle": 90,
+      "type": 18029,
+      "skill1": true,
+      "skill2": true,
+      "skill3": true,
+      "skill4": true,
+      "skill5": true,
+      "single": true,
+      "coop": true
+    },
+    {
+      "x": -576,
+      "y": 6464,
+      "height": 0,
+      "angle": 270,
+      "type": 18029,
       "skill1": true,
       "skill2": true,
       "skill3": true,
@@ -6871,6 +9974,34 @@
       "coop": true
     },
     {
+      "x": -192,
+      "y": 6336,
+      "height": 0,
+      "angle": 90,
+      "type": 18029,
+      "skill1": true,
+      "skill2": true,
+      "skill3": true,
+      "skill4": true,
+      "skill5": true,
+      "single": true,
+      "coop": true
+    },
+    {
+      "x": 192,
+      "y": 6464,
+      "height": 0,
+      "angle": 270,
+      "type": 18029,
+      "skill1": true,
+      "skill2": true,
+      "skill3": true,
+      "skill4": true,
+      "skill5": true,
+      "single": true,
+      "coop": true
+    },
+    {
       "x": 960,
       "y": 6208,
       "height": 0,
@@ -6885,11 +10016,67 @@
       "coop": true
     },
     {
+      "x": 576,
+      "y": 6336,
+      "height": 0,
+      "angle": 90,
+      "type": 18029,
+      "skill1": true,
+      "skill2": true,
+      "skill3": true,
+      "skill4": true,
+      "skill5": true,
+      "single": true,
+      "coop": true
+    },
+    {
+      "x": 960,
+      "y": 6464,
+      "height": 0,
+      "angle": 270,
+      "type": 18029,
+      "skill1": true,
+      "skill2": true,
+      "skill3": true,
+      "skill4": true,
+      "skill5": true,
+      "single": true,
+      "coop": true
+    },
+    {
       "x": 1728,
       "y": 6208,
       "height": 0,
       "angle": 270,
       "type": 18037,
+      "skill1": true,
+      "skill2": true,
+      "skill3": true,
+      "skill4": true,
+      "skill5": true,
+      "single": true,
+      "coop": true
+    },
+    {
+      "x": 1344,
+      "y": 6336,
+      "height": 0,
+      "angle": 90,
+      "type": 18029,
+      "skill1": true,
+      "skill2": true,
+      "skill3": true,
+      "skill4": true,
+      "skill5": true,
+      "single": true,
+      "coop": true
+    },
+    {
+      "x": 1728,
+      "y": 6464,
+      "height": 0,
+      "angle": 270,
+      "type": 18029,
       "skill1": true,
       "skill2": true,
       "skill3": true,
@@ -6913,11 +10100,67 @@
       "coop": true
     },
     {
+      "x": -1728,
+      "y": 7104,
+      "height": 0,
+      "angle": 90,
+      "type": 18029,
+      "skill1": true,
+      "skill2": true,
+      "skill3": true,
+      "skill4": true,
+      "skill5": true,
+      "single": true,
+      "coop": true
+    },
+    {
+      "x": -1344,
+      "y": 7232,
+      "height": 0,
+      "angle": 270,
+      "type": 18029,
+      "skill1": true,
+      "skill2": true,
+      "skill3": true,
+      "skill4": true,
+      "skill5": true,
+      "single": true,
+      "coop": true
+    },
+    {
       "x": -576,
       "y": 6976,
       "height": 0,
       "angle": 270,
       "type": 18037,
+      "skill1": true,
+      "skill2": true,
+      "skill3": true,
+      "skill4": true,
+      "skill5": true,
+      "single": true,
+      "coop": true
+    },
+    {
+      "x": -960,
+      "y": 7104,
+      "height": 0,
+      "angle": 90,
+      "type": 18029,
+      "skill1": true,
+      "skill2": true,
+      "skill3": true,
+      "skill4": true,
+      "skill5": true,
+      "single": true,
+      "coop": true
+    },
+    {
+      "x": -576,
+      "y": 7232,
+      "height": 0,
+      "angle": 270,
+      "type": 18029,
       "skill1": true,
       "skill2": true,
       "skill3": true,
@@ -6941,6 +10184,34 @@
       "coop": true
     },
     {
+      "x": -192,
+      "y": 7104,
+      "height": 0,
+      "angle": 90,
+      "type": 18029,
+      "skill1": true,
+      "skill2": true,
+      "skill3": true,
+      "skill4": true,
+      "skill5": true,
+      "single": true,
+      "coop": true
+    },
+    {
+      "x": 192,
+      "y": 7232,
+      "height": 0,
+      "angle": 270,
+      "type": 18029,
+      "skill1": true,
+      "skill2": true,
+      "skill3": true,
+      "skill4": true,
+      "skill5": true,
+      "single": true,
+      "coop": true
+    },
+    {
       "x": 960,
       "y": 6976,
       "height": 0,
@@ -6955,11 +10226,67 @@
       "coop": true
     },
     {
+      "x": 576,
+      "y": 7104,
+      "height": 0,
+      "angle": 90,
+      "type": 18029,
+      "skill1": true,
+      "skill2": true,
+      "skill3": true,
+      "skill4": true,
+      "skill5": true,
+      "single": true,
+      "coop": true
+    },
+    {
+      "x": 960,
+      "y": 7232,
+      "height": 0,
+      "angle": 270,
+      "type": 18029,
+      "skill1": true,
+      "skill2": true,
+      "skill3": true,
+      "skill4": true,
+      "skill5": true,
+      "single": true,
+      "coop": true
+    },
+    {
       "x": 1728,
       "y": 6976,
       "height": 0,
       "angle": 270,
       "type": 18037,
+      "skill1": true,
+      "skill2": true,
+      "skill3": true,
+      "skill4": true,
+      "skill5": true,
+      "single": true,
+      "coop": true
+    },
+    {
+      "x": 1344,
+      "y": 7104,
+      "height": 0,
+      "angle": 90,
+      "type": 18029,
+      "skill1": true,
+      "skill2": true,
+      "skill3": true,
+      "skill4": true,
+      "skill5": true,
+      "single": true,
+      "coop": true
+    },
+    {
+      "x": 1728,
+      "y": 7232,
+      "height": 0,
+      "angle": 270,
+      "type": 18029,
       "skill1": true,
       "skill2": true,
       "skill3": true,
@@ -6983,11 +10310,67 @@
       "coop": true
     },
     {
+      "x": -1728,
+      "y": 7872,
+      "height": 0,
+      "angle": 90,
+      "type": 18029,
+      "skill1": true,
+      "skill2": true,
+      "skill3": true,
+      "skill4": true,
+      "skill5": true,
+      "single": true,
+      "coop": true
+    },
+    {
+      "x": -1344,
+      "y": 8000,
+      "height": 0,
+      "angle": 270,
+      "type": 18029,
+      "skill1": true,
+      "skill2": true,
+      "skill3": true,
+      "skill4": true,
+      "skill5": true,
+      "single": true,
+      "coop": true
+    },
+    {
       "x": -576,
       "y": 7744,
       "height": 0,
       "angle": 270,
       "type": 18037,
+      "skill1": true,
+      "skill2": true,
+      "skill3": true,
+      "skill4": true,
+      "skill5": true,
+      "single": true,
+      "coop": true
+    },
+    {
+      "x": -960,
+      "y": 7872,
+      "height": 0,
+      "angle": 90,
+      "type": 18029,
+      "skill1": true,
+      "skill2": true,
+      "skill3": true,
+      "skill4": true,
+      "skill5": true,
+      "single": true,
+      "coop": true
+    },
+    {
+      "x": -576,
+      "y": 8000,
+      "height": 0,
+      "angle": 270,
+      "type": 18029,
       "skill1": true,
       "skill2": true,
       "skill3": true,
@@ -7011,6 +10394,34 @@
       "coop": true
     },
     {
+      "x": -192,
+      "y": 7872,
+      "height": 0,
+      "angle": 90,
+      "type": 18029,
+      "skill1": true,
+      "skill2": true,
+      "skill3": true,
+      "skill4": true,
+      "skill5": true,
+      "single": true,
+      "coop": true
+    },
+    {
+      "x": 192,
+      "y": 8000,
+      "height": 0,
+      "angle": 270,
+      "type": 18029,
+      "skill1": true,
+      "skill2": true,
+      "skill3": true,
+      "skill4": true,
+      "skill5": true,
+      "single": true,
+      "coop": true
+    },
+    {
       "x": 960,
       "y": 7744,
       "height": 0,
@@ -7025,11 +10436,67 @@
       "coop": true
     },
     {
+      "x": 576,
+      "y": 7872,
+      "height": 0,
+      "angle": 90,
+      "type": 18029,
+      "skill1": true,
+      "skill2": true,
+      "skill3": true,
+      "skill4": true,
+      "skill5": true,
+      "single": true,
+      "coop": true
+    },
+    {
+      "x": 960,
+      "y": 8000,
+      "height": 0,
+      "angle": 270,
+      "type": 18029,
+      "skill1": true,
+      "skill2": true,
+      "skill3": true,
+      "skill4": true,
+      "skill5": true,
+      "single": true,
+      "coop": true
+    },
+    {
       "x": 1728,
       "y": 7744,
       "height": 0,
       "angle": 270,
       "type": 18037,
+      "skill1": true,
+      "skill2": true,
+      "skill3": true,
+      "skill4": true,
+      "skill5": true,
+      "single": true,
+      "coop": true
+    },
+    {
+      "x": 1344,
+      "y": 7872,
+      "height": 0,
+      "angle": 90,
+      "type": 18029,
+      "skill1": true,
+      "skill2": true,
+      "skill3": true,
+      "skill4": true,
+      "skill5": true,
+      "single": true,
+      "coop": true
+    },
+    {
+      "x": 1728,
+      "y": 8000,
+      "height": 0,
+      "angle": 270,
+      "type": 18029,
       "skill1": true,
       "skill2": true,
       "skill3": true,
@@ -7148,7 +10615,7 @@
       "y": 8032,
       "height": 0,
       "angle": 90,
-      "type": 30981,
+      "type": 30989,
       "skill1": true,
       "skill2": true,
       "skill3": true,
@@ -7157,7 +10624,7 @@
       "single": true,
       "coop": true,
       "id": 44821,
-      "arg0": 11
+      "arg0": 0
     },
     {
       "x": 1536,
@@ -7857,6 +11324,34 @@
       "coop": true
     },
     {
+      "x": -960,
+      "y": 8896,
+      "height": 0,
+      "angle": 90,
+      "type": 18029,
+      "skill1": true,
+      "skill2": true,
+      "skill3": true,
+      "skill4": true,
+      "skill5": true,
+      "single": true,
+      "coop": true
+    },
+    {
+      "x": -576,
+      "y": 9024,
+      "height": 0,
+      "angle": 270,
+      "type": 18029,
+      "skill1": true,
+      "skill2": true,
+      "skill3": true,
+      "skill4": true,
+      "skill5": true,
+      "single": true,
+      "coop": true
+    },
+    {
       "x": 192,
       "y": 8768,
       "height": 0,
@@ -7871,6 +11366,34 @@
       "coop": true
     },
     {
+      "x": -192,
+      "y": 8896,
+      "height": 0,
+      "angle": 90,
+      "type": 18029,
+      "skill1": true,
+      "skill2": true,
+      "skill3": true,
+      "skill4": true,
+      "skill5": true,
+      "single": true,
+      "coop": true
+    },
+    {
+      "x": 192,
+      "y": 9024,
+      "height": 0,
+      "angle": 270,
+      "type": 18029,
+      "skill1": true,
+      "skill2": true,
+      "skill3": true,
+      "skill4": true,
+      "skill5": true,
+      "single": true,
+      "coop": true
+    },
+    {
       "x": 960,
       "y": 8768,
       "height": 0,
@@ -7885,6 +11408,34 @@
       "coop": true
     },
     {
+      "x": 576,
+      "y": 8896,
+      "height": 0,
+      "angle": 90,
+      "type": 18029,
+      "skill1": true,
+      "skill2": true,
+      "skill3": true,
+      "skill4": true,
+      "skill5": true,
+      "single": true,
+      "coop": true
+    },
+    {
+      "x": 960,
+      "y": 9024,
+      "height": 0,
+      "angle": 270,
+      "type": 18029,
+      "skill1": true,
+      "skill2": true,
+      "skill3": true,
+      "skill4": true,
+      "skill5": true,
+      "single": true,
+      "coop": true
+    },
+    {
       "x": 1728,
       "y": 8768,
       "height": 0,
@@ -7899,11 +11450,67 @@
       "coop": true
     },
     {
+      "x": 1344,
+      "y": 8896,
+      "height": 0,
+      "angle": 90,
+      "type": 18029,
+      "skill1": true,
+      "skill2": true,
+      "skill3": true,
+      "skill4": true,
+      "skill5": true,
+      "single": true,
+      "coop": true
+    },
+    {
+      "x": 1728,
+      "y": 9024,
+      "height": 0,
+      "angle": 270,
+      "type": 18029,
+      "skill1": true,
+      "skill2": true,
+      "skill3": true,
+      "skill4": true,
+      "skill5": true,
+      "single": true,
+      "coop": true
+    },
+    {
       "x": -1344,
       "y": 9536,
       "height": 0,
       "angle": 270,
       "type": 18037,
+      "skill1": true,
+      "skill2": true,
+      "skill3": true,
+      "skill4": true,
+      "skill5": true,
+      "single": true,
+      "coop": true
+    },
+    {
+      "x": -1728,
+      "y": 9664,
+      "height": 0,
+      "angle": 90,
+      "type": 18029,
+      "skill1": true,
+      "skill2": true,
+      "skill3": true,
+      "skill4": true,
+      "skill5": true,
+      "single": true,
+      "coop": true
+    },
+    {
+      "x": -1344,
+      "y": 9792,
+      "height": 0,
+      "angle": 270,
+      "type": 18029,
       "skill1": true,
       "skill2": true,
       "skill3": true,
@@ -7927,11 +11534,67 @@
       "coop": true
     },
     {
+      "x": -960,
+      "y": 9664,
+      "height": 0,
+      "angle": 90,
+      "type": 18029,
+      "skill1": true,
+      "skill2": true,
+      "skill3": true,
+      "skill4": true,
+      "skill5": true,
+      "single": true,
+      "coop": true
+    },
+    {
+      "x": -576,
+      "y": 9792,
+      "height": 0,
+      "angle": 270,
+      "type": 18029,
+      "skill1": true,
+      "skill2": true,
+      "skill3": true,
+      "skill4": true,
+      "skill5": true,
+      "single": true,
+      "coop": true
+    },
+    {
       "x": 192,
       "y": 9536,
       "height": 0,
       "angle": 270,
       "type": 18037,
+      "skill1": true,
+      "skill2": true,
+      "skill3": true,
+      "skill4": true,
+      "skill5": true,
+      "single": true,
+      "coop": true
+    },
+    {
+      "x": -192,
+      "y": 9664,
+      "height": 0,
+      "angle": 90,
+      "type": 18029,
+      "skill1": true,
+      "skill2": true,
+      "skill3": true,
+      "skill4": true,
+      "skill5": true,
+      "single": true,
+      "coop": true
+    },
+    {
+      "x": 192,
+      "y": 9792,
+      "height": 0,
+      "angle": 270,
+      "type": 18029,
       "skill1": true,
       "skill2": true,
       "skill3": true,
@@ -7955,11 +11618,67 @@
       "coop": true
     },
     {
+      "x": 576,
+      "y": 9664,
+      "height": 0,
+      "angle": 90,
+      "type": 18029,
+      "skill1": true,
+      "skill2": true,
+      "skill3": true,
+      "skill4": true,
+      "skill5": true,
+      "single": true,
+      "coop": true
+    },
+    {
+      "x": 960,
+      "y": 9792,
+      "height": 0,
+      "angle": 270,
+      "type": 18029,
+      "skill1": true,
+      "skill2": true,
+      "skill3": true,
+      "skill4": true,
+      "skill5": true,
+      "single": true,
+      "coop": true
+    },
+    {
       "x": 1728,
       "y": 9536,
       "height": 0,
       "angle": 270,
       "type": 18037,
+      "skill1": true,
+      "skill2": true,
+      "skill3": true,
+      "skill4": true,
+      "skill5": true,
+      "single": true,
+      "coop": true
+    },
+    {
+      "x": 1344,
+      "y": 9664,
+      "height": 0,
+      "angle": 90,
+      "type": 18029,
+      "skill1": true,
+      "skill2": true,
+      "skill3": true,
+      "skill4": true,
+      "skill5": true,
+      "single": true,
+      "coop": true
+    },
+    {
+      "x": 1728,
+      "y": 9792,
+      "height": 0,
+      "angle": 270,
+      "type": 18029,
       "skill1": true,
       "skill2": true,
       "skill3": true,
@@ -7983,11 +11702,67 @@
       "coop": true
     },
     {
+      "x": -1728,
+      "y": 10432,
+      "height": 0,
+      "angle": 90,
+      "type": 18029,
+      "skill1": true,
+      "skill2": true,
+      "skill3": true,
+      "skill4": true,
+      "skill5": true,
+      "single": true,
+      "coop": true
+    },
+    {
+      "x": -1344,
+      "y": 10560,
+      "height": 0,
+      "angle": 270,
+      "type": 18029,
+      "skill1": true,
+      "skill2": true,
+      "skill3": true,
+      "skill4": true,
+      "skill5": true,
+      "single": true,
+      "coop": true
+    },
+    {
       "x": -576,
       "y": 10304,
       "height": 0,
       "angle": 270,
       "type": 18037,
+      "skill1": true,
+      "skill2": true,
+      "skill3": true,
+      "skill4": true,
+      "skill5": true,
+      "single": true,
+      "coop": true
+    },
+    {
+      "x": -960,
+      "y": 10432,
+      "height": 0,
+      "angle": 90,
+      "type": 18029,
+      "skill1": true,
+      "skill2": true,
+      "skill3": true,
+      "skill4": true,
+      "skill5": true,
+      "single": true,
+      "coop": true
+    },
+    {
+      "x": -576,
+      "y": 10560,
+      "height": 0,
+      "angle": 270,
+      "type": 18029,
       "skill1": true,
       "skill2": true,
       "skill3": true,
@@ -8011,6 +11786,34 @@
       "coop": true
     },
     {
+      "x": -192,
+      "y": 10432,
+      "height": 0,
+      "angle": 90,
+      "type": 18029,
+      "skill1": true,
+      "skill2": true,
+      "skill3": true,
+      "skill4": true,
+      "skill5": true,
+      "single": true,
+      "coop": true
+    },
+    {
+      "x": 192,
+      "y": 10560,
+      "height": 0,
+      "angle": 270,
+      "type": 18029,
+      "skill1": true,
+      "skill2": true,
+      "skill3": true,
+      "skill4": true,
+      "skill5": true,
+      "single": true,
+      "coop": true
+    },
+    {
       "x": 960,
       "y": 10304,
       "height": 0,
@@ -8025,11 +11828,67 @@
       "coop": true
     },
     {
+      "x": 576,
+      "y": 10432,
+      "height": 0,
+      "angle": 90,
+      "type": 18029,
+      "skill1": true,
+      "skill2": true,
+      "skill3": true,
+      "skill4": true,
+      "skill5": true,
+      "single": true,
+      "coop": true
+    },
+    {
+      "x": 960,
+      "y": 10560,
+      "height": 0,
+      "angle": 270,
+      "type": 18029,
+      "skill1": true,
+      "skill2": true,
+      "skill3": true,
+      "skill4": true,
+      "skill5": true,
+      "single": true,
+      "coop": true
+    },
+    {
       "x": 1728,
       "y": 10304,
       "height": 0,
       "angle": 270,
       "type": 18037,
+      "skill1": true,
+      "skill2": true,
+      "skill3": true,
+      "skill4": true,
+      "skill5": true,
+      "single": true,
+      "coop": true
+    },
+    {
+      "x": 1344,
+      "y": 10432,
+      "height": 0,
+      "angle": 90,
+      "type": 18029,
+      "skill1": true,
+      "skill2": true,
+      "skill3": true,
+      "skill4": true,
+      "skill5": true,
+      "single": true,
+      "coop": true
+    },
+    {
+      "x": 1728,
+      "y": 10560,
+      "height": 0,
+      "angle": 270,
+      "type": 18029,
       "skill1": true,
       "skill2": true,
       "skill3": true,
@@ -8053,11 +11912,67 @@
       "coop": true
     },
     {
+      "x": -1728,
+      "y": 11200,
+      "height": 0,
+      "angle": 90,
+      "type": 18029,
+      "skill1": true,
+      "skill2": true,
+      "skill3": true,
+      "skill4": true,
+      "skill5": true,
+      "single": true,
+      "coop": true
+    },
+    {
+      "x": -1344,
+      "y": 11328,
+      "height": 0,
+      "angle": 270,
+      "type": 18029,
+      "skill1": true,
+      "skill2": true,
+      "skill3": true,
+      "skill4": true,
+      "skill5": true,
+      "single": true,
+      "coop": true
+    },
+    {
       "x": -576,
       "y": 11072,
       "height": 0,
       "angle": 270,
       "type": 18037,
+      "skill1": true,
+      "skill2": true,
+      "skill3": true,
+      "skill4": true,
+      "skill5": true,
+      "single": true,
+      "coop": true
+    },
+    {
+      "x": -960,
+      "y": 11200,
+      "height": 0,
+      "angle": 90,
+      "type": 18029,
+      "skill1": true,
+      "skill2": true,
+      "skill3": true,
+      "skill4": true,
+      "skill5": true,
+      "single": true,
+      "coop": true
+    },
+    {
+      "x": -576,
+      "y": 11328,
+      "height": 0,
+      "angle": 270,
+      "type": 18029,
       "skill1": true,
       "skill2": true,
       "skill3": true,
@@ -8081,6 +11996,34 @@
       "coop": true
     },
     {
+      "x": -192,
+      "y": 11200,
+      "height": 0,
+      "angle": 90,
+      "type": 18029,
+      "skill1": true,
+      "skill2": true,
+      "skill3": true,
+      "skill4": true,
+      "skill5": true,
+      "single": true,
+      "coop": true
+    },
+    {
+      "x": 192,
+      "y": 11328,
+      "height": 0,
+      "angle": 270,
+      "type": 18029,
+      "skill1": true,
+      "skill2": true,
+      "skill3": true,
+      "skill4": true,
+      "skill5": true,
+      "single": true,
+      "coop": true
+    },
+    {
       "x": 960,
       "y": 11072,
       "height": 0,
@@ -8095,11 +12038,67 @@
       "coop": true
     },
     {
+      "x": 576,
+      "y": 11200,
+      "height": 0,
+      "angle": 90,
+      "type": 18029,
+      "skill1": true,
+      "skill2": true,
+      "skill3": true,
+      "skill4": true,
+      "skill5": true,
+      "single": true,
+      "coop": true
+    },
+    {
+      "x": 960,
+      "y": 11328,
+      "height": 0,
+      "angle": 270,
+      "type": 18029,
+      "skill1": true,
+      "skill2": true,
+      "skill3": true,
+      "skill4": true,
+      "skill5": true,
+      "single": true,
+      "coop": true
+    },
+    {
       "x": 1728,
       "y": 11072,
       "height": 0,
       "angle": 270,
       "type": 18037,
+      "skill1": true,
+      "skill2": true,
+      "skill3": true,
+      "skill4": true,
+      "skill5": true,
+      "single": true,
+      "coop": true
+    },
+    {
+      "x": 1344,
+      "y": 11200,
+      "height": 0,
+      "angle": 90,
+      "type": 18029,
+      "skill1": true,
+      "skill2": true,
+      "skill3": true,
+      "skill4": true,
+      "skill5": true,
+      "single": true,
+      "coop": true
+    },
+    {
+      "x": 1728,
+      "y": 11328,
+      "height": 0,
+      "angle": 270,
+      "type": 18029,
       "skill1": true,
       "skill2": true,
       "skill3": true,
@@ -8123,11 +12122,67 @@
       "coop": true
     },
     {
+      "x": -1728,
+      "y": 11968,
+      "height": 0,
+      "angle": 90,
+      "type": 18029,
+      "skill1": true,
+      "skill2": true,
+      "skill3": true,
+      "skill4": true,
+      "skill5": true,
+      "single": true,
+      "coop": true
+    },
+    {
+      "x": -1344,
+      "y": 12096,
+      "height": 0,
+      "angle": 270,
+      "type": 18029,
+      "skill1": true,
+      "skill2": true,
+      "skill3": true,
+      "skill4": true,
+      "skill5": true,
+      "single": true,
+      "coop": true
+    },
+    {
       "x": -576,
       "y": 11840,
       "height": 0,
       "angle": 270,
       "type": 18037,
+      "skill1": true,
+      "skill2": true,
+      "skill3": true,
+      "skill4": true,
+      "skill5": true,
+      "single": true,
+      "coop": true
+    },
+    {
+      "x": -960,
+      "y": 11968,
+      "height": 0,
+      "angle": 90,
+      "type": 18029,
+      "skill1": true,
+      "skill2": true,
+      "skill3": true,
+      "skill4": true,
+      "skill5": true,
+      "single": true,
+      "coop": true
+    },
+    {
+      "x": -576,
+      "y": 12096,
+      "height": 0,
+      "angle": 270,
+      "type": 18029,
       "skill1": true,
       "skill2": true,
       "skill3": true,
@@ -8151,6 +12206,34 @@
       "coop": true
     },
     {
+      "x": -192,
+      "y": 11968,
+      "height": 0,
+      "angle": 90,
+      "type": 18029,
+      "skill1": true,
+      "skill2": true,
+      "skill3": true,
+      "skill4": true,
+      "skill5": true,
+      "single": true,
+      "coop": true
+    },
+    {
+      "x": 192,
+      "y": 12096,
+      "height": 0,
+      "angle": 270,
+      "type": 18029,
+      "skill1": true,
+      "skill2": true,
+      "skill3": true,
+      "skill4": true,
+      "skill5": true,
+      "single": true,
+      "coop": true
+    },
+    {
       "x": 960,
       "y": 11840,
       "height": 0,
@@ -8165,11 +12248,67 @@
       "coop": true
     },
     {
+      "x": 576,
+      "y": 11968,
+      "height": 0,
+      "angle": 90,
+      "type": 18029,
+      "skill1": true,
+      "skill2": true,
+      "skill3": true,
+      "skill4": true,
+      "skill5": true,
+      "single": true,
+      "coop": true
+    },
+    {
+      "x": 960,
+      "y": 12096,
+      "height": 0,
+      "angle": 270,
+      "type": 18029,
+      "skill1": true,
+      "skill2": true,
+      "skill3": true,
+      "skill4": true,
+      "skill5": true,
+      "single": true,
+      "coop": true
+    },
+    {
       "x": 1728,
       "y": 11840,
       "height": 0,
       "angle": 270,
       "type": 18037,
+      "skill1": true,
+      "skill2": true,
+      "skill3": true,
+      "skill4": true,
+      "skill5": true,
+      "single": true,
+      "coop": true
+    },
+    {
+      "x": 1344,
+      "y": 11968,
+      "height": 0,
+      "angle": 90,
+      "type": 18029,
+      "skill1": true,
+      "skill2": true,
+      "skill3": true,
+      "skill4": true,
+      "skill5": true,
+      "single": true,
+      "coop": true
+    },
+    {
+      "x": 1728,
+      "y": 12096,
+      "height": 0,
+      "angle": 270,
+      "type": 18029,
       "skill1": true,
       "skill2": true,
       "skill3": true,
@@ -8288,7 +12427,7 @@
       "y": 12128,
       "height": 0,
       "angle": 90,
-      "type": 30981,
+      "type": 30990,
       "skill1": true,
       "skill2": true,
       "skill3": true,
@@ -8297,7 +12436,7 @@
       "single": true,
       "coop": true,
       "id": 44822,
-      "arg0": 12
+      "arg0": 0
     },
     {
       "x": 1536,
@@ -9033,6 +13172,34 @@
       "coop": true
     },
     {
+      "x": -960,
+      "y": 12992,
+      "height": 0,
+      "angle": 90,
+      "type": 18029,
+      "skill1": true,
+      "skill2": true,
+      "skill3": true,
+      "skill4": true,
+      "skill5": true,
+      "single": true,
+      "coop": true
+    },
+    {
+      "x": -576,
+      "y": 13120,
+      "height": 0,
+      "angle": 270,
+      "type": 18029,
+      "skill1": true,
+      "skill2": true,
+      "skill3": true,
+      "skill4": true,
+      "skill5": true,
+      "single": true,
+      "coop": true
+    },
+    {
       "x": 192,
       "y": 12864,
       "height": 0,
@@ -9047,6 +13214,34 @@
       "coop": true
     },
     {
+      "x": -192,
+      "y": 12992,
+      "height": 0,
+      "angle": 90,
+      "type": 18029,
+      "skill1": true,
+      "skill2": true,
+      "skill3": true,
+      "skill4": true,
+      "skill5": true,
+      "single": true,
+      "coop": true
+    },
+    {
+      "x": 192,
+      "y": 13120,
+      "height": 0,
+      "angle": 270,
+      "type": 18029,
+      "skill1": true,
+      "skill2": true,
+      "skill3": true,
+      "skill4": true,
+      "skill5": true,
+      "single": true,
+      "coop": true
+    },
+    {
       "x": 960,
       "y": 12864,
       "height": 0,
@@ -9061,6 +13256,34 @@
       "coop": true
     },
     {
+      "x": 576,
+      "y": 12992,
+      "height": 0,
+      "angle": 90,
+      "type": 18029,
+      "skill1": true,
+      "skill2": true,
+      "skill3": true,
+      "skill4": true,
+      "skill5": true,
+      "single": true,
+      "coop": true
+    },
+    {
+      "x": 960,
+      "y": 13120,
+      "height": 0,
+      "angle": 270,
+      "type": 18029,
+      "skill1": true,
+      "skill2": true,
+      "skill3": true,
+      "skill4": true,
+      "skill5": true,
+      "single": true,
+      "coop": true
+    },
+    {
       "x": 1728,
       "y": 12864,
       "height": 0,
@@ -9075,11 +13298,67 @@
       "coop": true
     },
     {
+      "x": 1344,
+      "y": 12992,
+      "height": 0,
+      "angle": 90,
+      "type": 18029,
+      "skill1": true,
+      "skill2": true,
+      "skill3": true,
+      "skill4": true,
+      "skill5": true,
+      "single": true,
+      "coop": true
+    },
+    {
+      "x": 1728,
+      "y": 13120,
+      "height": 0,
+      "angle": 270,
+      "type": 18029,
+      "skill1": true,
+      "skill2": true,
+      "skill3": true,
+      "skill4": true,
+      "skill5": true,
+      "single": true,
+      "coop": true
+    },
+    {
       "x": -1344,
       "y": 13632,
       "height": 0,
       "angle": 270,
       "type": 18037,
+      "skill1": true,
+      "skill2": true,
+      "skill3": true,
+      "skill4": true,
+      "skill5": true,
+      "single": true,
+      "coop": true
+    },
+    {
+      "x": -1728,
+      "y": 13760,
+      "height": 0,
+      "angle": 90,
+      "type": 18029,
+      "skill1": true,
+      "skill2": true,
+      "skill3": true,
+      "skill4": true,
+      "skill5": true,
+      "single": true,
+      "coop": true
+    },
+    {
+      "x": -1344,
+      "y": 13888,
+      "height": 0,
+      "angle": 270,
+      "type": 18029,
       "skill1": true,
       "skill2": true,
       "skill3": true,
@@ -9103,11 +13382,67 @@
       "coop": true
     },
     {
+      "x": -960,
+      "y": 13760,
+      "height": 0,
+      "angle": 90,
+      "type": 18029,
+      "skill1": true,
+      "skill2": true,
+      "skill3": true,
+      "skill4": true,
+      "skill5": true,
+      "single": true,
+      "coop": true
+    },
+    {
+      "x": -576,
+      "y": 13888,
+      "height": 0,
+      "angle": 270,
+      "type": 18029,
+      "skill1": true,
+      "skill2": true,
+      "skill3": true,
+      "skill4": true,
+      "skill5": true,
+      "single": true,
+      "coop": true
+    },
+    {
       "x": 192,
       "y": 13632,
       "height": 0,
       "angle": 270,
       "type": 18037,
+      "skill1": true,
+      "skill2": true,
+      "skill3": true,
+      "skill4": true,
+      "skill5": true,
+      "single": true,
+      "coop": true
+    },
+    {
+      "x": -192,
+      "y": 13760,
+      "height": 0,
+      "angle": 90,
+      "type": 18029,
+      "skill1": true,
+      "skill2": true,
+      "skill3": true,
+      "skill4": true,
+      "skill5": true,
+      "single": true,
+      "coop": true
+    },
+    {
+      "x": 192,
+      "y": 13888,
+      "height": 0,
+      "angle": 270,
+      "type": 18029,
       "skill1": true,
       "skill2": true,
       "skill3": true,
@@ -9131,11 +13466,67 @@
       "coop": true
     },
     {
+      "x": 576,
+      "y": 13760,
+      "height": 0,
+      "angle": 90,
+      "type": 18029,
+      "skill1": true,
+      "skill2": true,
+      "skill3": true,
+      "skill4": true,
+      "skill5": true,
+      "single": true,
+      "coop": true
+    },
+    {
+      "x": 960,
+      "y": 13888,
+      "height": 0,
+      "angle": 270,
+      "type": 18029,
+      "skill1": true,
+      "skill2": true,
+      "skill3": true,
+      "skill4": true,
+      "skill5": true,
+      "single": true,
+      "coop": true
+    },
+    {
       "x": 1728,
       "y": 13632,
       "height": 0,
       "angle": 270,
       "type": 18037,
+      "skill1": true,
+      "skill2": true,
+      "skill3": true,
+      "skill4": true,
+      "skill5": true,
+      "single": true,
+      "coop": true
+    },
+    {
+      "x": 1344,
+      "y": 13760,
+      "height": 0,
+      "angle": 90,
+      "type": 18029,
+      "skill1": true,
+      "skill2": true,
+      "skill3": true,
+      "skill4": true,
+      "skill5": true,
+      "single": true,
+      "coop": true
+    },
+    {
+      "x": 1728,
+      "y": 13888,
+      "height": 0,
+      "angle": 270,
+      "type": 18029,
       "skill1": true,
       "skill2": true,
       "skill3": true,
@@ -9159,11 +13550,67 @@
       "coop": true
     },
     {
+      "x": -1728,
+      "y": 14528,
+      "height": 0,
+      "angle": 90,
+      "type": 18029,
+      "skill1": true,
+      "skill2": true,
+      "skill3": true,
+      "skill4": true,
+      "skill5": true,
+      "single": true,
+      "coop": true
+    },
+    {
+      "x": -1344,
+      "y": 14656,
+      "height": 0,
+      "angle": 270,
+      "type": 18029,
+      "skill1": true,
+      "skill2": true,
+      "skill3": true,
+      "skill4": true,
+      "skill5": true,
+      "single": true,
+      "coop": true
+    },
+    {
       "x": -576,
       "y": 14400,
       "height": 0,
       "angle": 270,
       "type": 18037,
+      "skill1": true,
+      "skill2": true,
+      "skill3": true,
+      "skill4": true,
+      "skill5": true,
+      "single": true,
+      "coop": true
+    },
+    {
+      "x": -960,
+      "y": 14528,
+      "height": 0,
+      "angle": 90,
+      "type": 18029,
+      "skill1": true,
+      "skill2": true,
+      "skill3": true,
+      "skill4": true,
+      "skill5": true,
+      "single": true,
+      "coop": true
+    },
+    {
+      "x": -576,
+      "y": 14656,
+      "height": 0,
+      "angle": 270,
+      "type": 18029,
       "skill1": true,
       "skill2": true,
       "skill3": true,
@@ -9187,6 +13634,34 @@
       "coop": true
     },
     {
+      "x": -192,
+      "y": 14528,
+      "height": 0,
+      "angle": 90,
+      "type": 18029,
+      "skill1": true,
+      "skill2": true,
+      "skill3": true,
+      "skill4": true,
+      "skill5": true,
+      "single": true,
+      "coop": true
+    },
+    {
+      "x": 192,
+      "y": 14656,
+      "height": 0,
+      "angle": 270,
+      "type": 18029,
+      "skill1": true,
+      "skill2": true,
+      "skill3": true,
+      "skill4": true,
+      "skill5": true,
+      "single": true,
+      "coop": true
+    },
+    {
       "x": 960,
       "y": 14400,
       "height": 0,
@@ -9201,11 +13676,67 @@
       "coop": true
     },
     {
+      "x": 576,
+      "y": 14528,
+      "height": 0,
+      "angle": 90,
+      "type": 18029,
+      "skill1": true,
+      "skill2": true,
+      "skill3": true,
+      "skill4": true,
+      "skill5": true,
+      "single": true,
+      "coop": true
+    },
+    {
+      "x": 960,
+      "y": 14656,
+      "height": 0,
+      "angle": 270,
+      "type": 18029,
+      "skill1": true,
+      "skill2": true,
+      "skill3": true,
+      "skill4": true,
+      "skill5": true,
+      "single": true,
+      "coop": true
+    },
+    {
       "x": 1728,
       "y": 14400,
       "height": 0,
       "angle": 270,
       "type": 18037,
+      "skill1": true,
+      "skill2": true,
+      "skill3": true,
+      "skill4": true,
+      "skill5": true,
+      "single": true,
+      "coop": true
+    },
+    {
+      "x": 1344,
+      "y": 14528,
+      "height": 0,
+      "angle": 90,
+      "type": 18029,
+      "skill1": true,
+      "skill2": true,
+      "skill3": true,
+      "skill4": true,
+      "skill5": true,
+      "single": true,
+      "coop": true
+    },
+    {
+      "x": 1728,
+      "y": 14656,
+      "height": 0,
+      "angle": 270,
+      "type": 18029,
       "skill1": true,
       "skill2": true,
       "skill3": true,
@@ -9229,11 +13760,67 @@
       "coop": true
     },
     {
+      "x": -1728,
+      "y": 15296,
+      "height": 0,
+      "angle": 90,
+      "type": 18029,
+      "skill1": true,
+      "skill2": true,
+      "skill3": true,
+      "skill4": true,
+      "skill5": true,
+      "single": true,
+      "coop": true
+    },
+    {
+      "x": -1344,
+      "y": 15424,
+      "height": 0,
+      "angle": 270,
+      "type": 18029,
+      "skill1": true,
+      "skill2": true,
+      "skill3": true,
+      "skill4": true,
+      "skill5": true,
+      "single": true,
+      "coop": true
+    },
+    {
       "x": -576,
       "y": 15168,
       "height": 0,
       "angle": 270,
       "type": 18037,
+      "skill1": true,
+      "skill2": true,
+      "skill3": true,
+      "skill4": true,
+      "skill5": true,
+      "single": true,
+      "coop": true
+    },
+    {
+      "x": -960,
+      "y": 15296,
+      "height": 0,
+      "angle": 90,
+      "type": 18029,
+      "skill1": true,
+      "skill2": true,
+      "skill3": true,
+      "skill4": true,
+      "skill5": true,
+      "single": true,
+      "coop": true
+    },
+    {
+      "x": -576,
+      "y": 15424,
+      "height": 0,
+      "angle": 270,
+      "type": 18029,
       "skill1": true,
       "skill2": true,
       "skill3": true,
@@ -9257,6 +13844,34 @@
       "coop": true
     },
     {
+      "x": -192,
+      "y": 15296,
+      "height": 0,
+      "angle": 90,
+      "type": 18029,
+      "skill1": true,
+      "skill2": true,
+      "skill3": true,
+      "skill4": true,
+      "skill5": true,
+      "single": true,
+      "coop": true
+    },
+    {
+      "x": 192,
+      "y": 15424,
+      "height": 0,
+      "angle": 270,
+      "type": 18029,
+      "skill1": true,
+      "skill2": true,
+      "skill3": true,
+      "skill4": true,
+      "skill5": true,
+      "single": true,
+      "coop": true
+    },
+    {
       "x": 960,
       "y": 15168,
       "height": 0,
@@ -9271,11 +13886,67 @@
       "coop": true
     },
     {
+      "x": 576,
+      "y": 15296,
+      "height": 0,
+      "angle": 90,
+      "type": 18029,
+      "skill1": true,
+      "skill2": true,
+      "skill3": true,
+      "skill4": true,
+      "skill5": true,
+      "single": true,
+      "coop": true
+    },
+    {
+      "x": 960,
+      "y": 15424,
+      "height": 0,
+      "angle": 270,
+      "type": 18029,
+      "skill1": true,
+      "skill2": true,
+      "skill3": true,
+      "skill4": true,
+      "skill5": true,
+      "single": true,
+      "coop": true
+    },
+    {
       "x": 1728,
       "y": 15168,
       "height": 0,
       "angle": 270,
       "type": 18037,
+      "skill1": true,
+      "skill2": true,
+      "skill3": true,
+      "skill4": true,
+      "skill5": true,
+      "single": true,
+      "coop": true
+    },
+    {
+      "x": 1344,
+      "y": 15296,
+      "height": 0,
+      "angle": 90,
+      "type": 18029,
+      "skill1": true,
+      "skill2": true,
+      "skill3": true,
+      "skill4": true,
+      "skill5": true,
+      "single": true,
+      "coop": true
+    },
+    {
+      "x": 1728,
+      "y": 15424,
+      "height": 0,
+      "angle": 270,
+      "type": 18029,
       "skill1": true,
       "skill2": true,
       "skill3": true,
@@ -9299,11 +13970,67 @@
       "coop": true
     },
     {
+      "x": -1728,
+      "y": 16064,
+      "height": 0,
+      "angle": 90,
+      "type": 18029,
+      "skill1": true,
+      "skill2": true,
+      "skill3": true,
+      "skill4": true,
+      "skill5": true,
+      "single": true,
+      "coop": true
+    },
+    {
+      "x": -1344,
+      "y": 16192,
+      "height": 0,
+      "angle": 270,
+      "type": 18029,
+      "skill1": true,
+      "skill2": true,
+      "skill3": true,
+      "skill4": true,
+      "skill5": true,
+      "single": true,
+      "coop": true
+    },
+    {
       "x": -576,
       "y": 15936,
       "height": 0,
       "angle": 270,
       "type": 18037,
+      "skill1": true,
+      "skill2": true,
+      "skill3": true,
+      "skill4": true,
+      "skill5": true,
+      "single": true,
+      "coop": true
+    },
+    {
+      "x": -960,
+      "y": 16064,
+      "height": 0,
+      "angle": 90,
+      "type": 18029,
+      "skill1": true,
+      "skill2": true,
+      "skill3": true,
+      "skill4": true,
+      "skill5": true,
+      "single": true,
+      "coop": true
+    },
+    {
+      "x": -576,
+      "y": 16192,
+      "height": 0,
+      "angle": 270,
+      "type": 18029,
       "skill1": true,
       "skill2": true,
       "skill3": true,
@@ -9327,6 +14054,34 @@
       "coop": true
     },
     {
+      "x": -192,
+      "y": 16064,
+      "height": 0,
+      "angle": 90,
+      "type": 18029,
+      "skill1": true,
+      "skill2": true,
+      "skill3": true,
+      "skill4": true,
+      "skill5": true,
+      "single": true,
+      "coop": true
+    },
+    {
+      "x": 192,
+      "y": 16192,
+      "height": 0,
+      "angle": 270,
+      "type": 18029,
+      "skill1": true,
+      "skill2": true,
+      "skill3": true,
+      "skill4": true,
+      "skill5": true,
+      "single": true,
+      "coop": true
+    },
+    {
       "x": 960,
       "y": 15936,
       "height": 0,
@@ -9341,11 +14096,67 @@
       "coop": true
     },
     {
+      "x": 576,
+      "y": 16064,
+      "height": 0,
+      "angle": 90,
+      "type": 18029,
+      "skill1": true,
+      "skill2": true,
+      "skill3": true,
+      "skill4": true,
+      "skill5": true,
+      "single": true,
+      "coop": true
+    },
+    {
+      "x": 960,
+      "y": 16192,
+      "height": 0,
+      "angle": 270,
+      "type": 18029,
+      "skill1": true,
+      "skill2": true,
+      "skill3": true,
+      "skill4": true,
+      "skill5": true,
+      "single": true,
+      "coop": true
+    },
+    {
       "x": 1728,
       "y": 15936,
       "height": 0,
       "angle": 270,
       "type": 18037,
+      "skill1": true,
+      "skill2": true,
+      "skill3": true,
+      "skill4": true,
+      "skill5": true,
+      "single": true,
+      "coop": true
+    },
+    {
+      "x": 1344,
+      "y": 16064,
+      "height": 0,
+      "angle": 90,
+      "type": 18029,
+      "skill1": true,
+      "skill2": true,
+      "skill3": true,
+      "skill4": true,
+      "skill5": true,
+      "single": true,
+      "coop": true
+    },
+    {
+      "x": 1728,
+      "y": 16192,
+      "height": 0,
+      "angle": 270,
+      "type": 18029,
       "skill1": true,
       "skill2": true,
       "skill3": true,
@@ -9464,7 +14275,7 @@
       "y": 16224,
       "height": 0,
       "angle": 90,
-      "type": 30981,
+      "type": 30991,
       "skill1": true,
       "skill2": true,
       "skill3": true,
@@ -9473,7 +14284,7 @@
       "single": true,
       "coop": true,
       "id": 44823,
-      "arg0": 13
+      "arg0": 0
     },
     {
       "x": 896,
@@ -9557,6 +14368,7 @@
   "counts": {
     "rooms": 100,
     "mandingas": 96,
+    "rats": 192,
     "zupays": 1,
     "chests": 39,
     "equipment": 65,

@@ -25,9 +25,14 @@ class CoastalMap:
     def volume(self, tag, bottom, top, flat, wall, water=False):
         self.volumes[tag] = (bottom, top, flat, wall, water)
 
-    def prop(self, kind, x, y, angle=0):
-        self.things.append(dict(type=kind, x=x, y=y, angle=angle, skill1=True, skill2=True,
-                               skill3=True, skill4=True, skill5=True, single=True, coop=True))
+    def prop(self, kind, x, y, angle=0, tid=0, args=()):
+        entry = dict(type=kind, x=x, y=y, angle=angle, skill1=True, skill2=True,
+                     skill3=True, skill4=True, skill5=True, single=True, coop=True)
+        if tid:
+            entry['id'] = tid
+        for index, value in enumerate(args):
+            entry['arg' + str(index)] = value
+        self.things.append(entry)
 
     def building(self, x1, y1, x2, y2, door_y, tag, plaster, flat):
         # Muros con volumen físico y cubierta de 24 MU; puerta oriental de 128 MU.
@@ -140,6 +145,11 @@ def generate(folder):
         port.room(x,y,x+64,y+64,floor=h,flat=mat,wall=mat,light=168 if tag else 208,volume=tag)
     port.room(-960,1344,-896,1408,floor=48,flat='CVCI06',wall='CVCI06',volume=202)
     port.prop(18063,-1056,192)
+    # Presencias persistentes de los cuatro prisioneros rescatados. MAP06 las
+    # conserva solo si el registro persistente las tiene extraidas; el actor
+    # se destruye en PostBeginPlay en cualquier otro caso.
+    for index in range(4):
+        port.prop(30988 + index, 128 + index * 64, 640, 90, tid=44900 + index)
     port.write(folder)
 
     coast=CoastalMap('MAP07')

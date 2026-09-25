@@ -46,6 +46,29 @@ caelum/enemies/zupay_walk = "sounds/caelum/enemies/zupay/ca_zupay_walk.ogg"
 caelum/enemies/mandinga_alert = "sounds/caelum/enemies/mandinga/ca_mandinga_alert.ogg"
 caelum/npcs/rulo_alert = "sounds/caelum/npcs/rulo/ca_rulo_alert.ogg"
 
+// Dolor seleccionado por el autor (issue #31). Efectos espaciales mono,
+// normalizados a -6 dBFS para no recortar ni cambiar la identidad de la fuente.
+caelum/enemies/mandinga_pain = "sounds/caelum/enemies/mandinga/ca_mandinga_pain.ogg"
+caelum/enemies/zupay_pain = "sounds/caelum/enemies/zupay/ca_zupay_pain.ogg"
+caelum/player/pain_male = "sounds/caelum/player/pain/ca_player_pain_male.ogg"
+caelum/player/pain_female = "sounds/caelum/player/pain/ca_player_pain_female.ogg"
+
+// El toro conserva sus variantes individuales; el alias aleatorio usa el
+// mecanismo existente en lugar de reproducir la secuencia completa.
+caelum/enemies/bull_pain_01 = "sounds/caelum/enemies/bull/ca_bull_pain_01.ogg"
+caelum/enemies/bull_pain_02 = "sounds/caelum/enemies/bull/ca_bull_pain_02.ogg"
+caelum/enemies/bull_pain_03 = "sounds/caelum/enemies/bull/ca_bull_pain_03.ogg"
+caelum/enemies/bull_pain_04 = "sounds/caelum/enemies/bull/ca_bull_pain_04.ogg"
+caelum/enemies/bull_pain_05 = "sounds/caelum/enemies/bull/ca_bull_pain_05.ogg"
+caelum/enemies/bull_pain_06 = "sounds/caelum/enemies/bull/ca_bull_pain_06.ogg"
+caelum/enemies/bull_pain_07 = "sounds/caelum/enemies/bull/ca_bull_pain_07.ogg"
+caelum/enemies/bull_pain_08 = "sounds/caelum/enemies/bull/ca_bull_pain_08.ogg"
+caelum/enemies/bull_pain_09 = "sounds/caelum/enemies/bull/ca_bull_pain_09.ogg"
+caelum/enemies/bull_pain_10 = "sounds/caelum/enemies/bull/ca_bull_pain_10.ogg"
+caelum/enemies/bull_pain_11 = "sounds/caelum/enemies/bull/ca_bull_pain_11.ogg"
+caelum/enemies/bull_pain_12 = "sounds/caelum/enemies/bull/ca_bull_pain_12.ogg"
+$random caelum/enemies/bull_pain { caelum/enemies/bull_pain_01 caelum/enemies/bull_pain_02 caelum/enemies/bull_pain_03 caelum/enemies/bull_pain_04 caelum/enemies/bull_pain_05 caelum/enemies/bull_pain_06 caelum/enemies/bull_pain_07 caelum/enemies/bull_pain_08 caelum/enemies/bull_pain_09 caelum/enemies/bull_pain_10 caelum/enemies/bull_pain_11 caelum/enemies/bull_pain_12 }
+
 // Stock reutilizable; iron_gate también acompaña las palancas desde 4.36.0b.
 caelum/stock/cricket = "sounds/caelum/stock/ambient/ca_stock_cricket.ogg"
 caelum/stock/iron_gate = "sounds/caelum/stock/world/ca_stock_iron_gate.ogg"

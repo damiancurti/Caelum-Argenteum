@@ -147,11 +147,11 @@ def validate(root):
     quit_sound = re.search(r'QuitSound\s*=\s*"([^"]+)"', mapinfo)
     check(quit_sound is not None and quit_sound.group(1) in definitions, 'QuitSound: alias has no project definition')
     chat = re.search(r'ChatSound\s*=\s*"([^"]+)"', mapinfo)
-    check(chat is not None and chat.group(1) == 'caelum/ui/dialogue_open', 'ChatSound: must use one native harp phrase')
+    check(chat is not None and chat.group(1) == 'caelum/ui/dialogue_open', 'ChatSound: must use the selected dialogue-opening cue')
     check('$singular caelum/ui/dialogue_open' in sndinfo, 'Missing protection against overlapping dialogue phrases')
     check('CaelumMenuAudio' in mapinfo and (root/'src/caelum/ui/CaelumMenuAudio.zs').is_file(), 'Missing title-screen audio observer')
     code = '\n'.join(p.read_text(encoding='utf-8-sig') for p in (root/'src/caelum').rglob('*.zs'))
-    check('PlayDialogueOpenSound' not in code, 'Duplicate manual harp call remains')
+    check('PlayDialogueOpenSound' not in code, 'Duplicate manual dialogue-opening call remains')
     check('tools\\build_pk3.ps1' not in (root/'run_dev.bat').read_text(), 'run_dev still depends on the retired tools directory')
     check((root/'build_dev.ps1').is_file(), 'Missing root build_dev.ps1')
     check((root/'build_document_index.py').is_file(), 'Missing root build_document_index.py')
@@ -208,7 +208,7 @@ def validate(root):
             offset += 27 + segments + sum(data[offset+27:offset+27+segments])
         ident = data.find(b'\x01vorbis')
         sample_rate = struct.unpack_from('<I', data, ident+12)[0] if ident >= 0 else 0
-        check(sample_rate == 44100 and last_granule == 113400, 'The harp phrase must retain 113400 samples at 44100 Hz')
+        check(sample_rate == 48000 and last_granule == 134400, 'The dialogue-opening cue must retain 134400 samples at 48000 Hz')
     else:
         errors.append('Missing dialogue cue')
     audio_count = sum(p.suffix.lower() in ('.ogg','.mp3') for p in (root/'src').rglob('*') if p.is_file())
