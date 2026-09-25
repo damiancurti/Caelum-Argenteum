@@ -38,8 +38,10 @@ and `53439420` remain to be confirmed before final public redistribution.
 Agent checks: `python validate_project.py` reports 99 runtime audio files
 (97 OGG + 2 MP3) and no errors after `python build_document_index.py`.
 `build_dev.ps1` packages 6,058 files, and GZDoom 4.14.2 compiles the complete
-PK3 and loads MAP01 without script errors. Author acceptance of the in-game
-pain, music and dialogue cue is pending.
+PK3 and loads MAP01 without script errors. The author confirmed the issue on
+2026-09-25 after MAP01 was corrected to start directly with `CA_MUS02`;
+`CA-43614-AUDIO-01` is recorded as PASS and removed from `pending_test.txt`,
+leaving the author-test queue empty.
 
 ## 4.36.9 — Approved Tarot fronts and collection bindings (#15)
 

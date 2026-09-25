@@ -70,7 +70,8 @@ music are integrated while all unused stock and MP3 backups remain preserved
 and unbound. The former MAP01 music is reserved for future chapter-end story
 intermissions; MAP01 now uses the former MAP02 music directly, MAP02 uses the
 new sewer track, MAP06 uses the new port track and MAP07 uses the new coast
-track.
+track. GZDoom 4.14.2 compiles the package and `validate_project.py` passes; the
+author confirmed `CA-43614-AUDIO-01` passed on 2026-09-25.
 
 The preceding **4.36.9** implements #15: the author-approved 78-card Tarot
 front package is integrated under `src/graphics/caelum/tarot`, the shared card
