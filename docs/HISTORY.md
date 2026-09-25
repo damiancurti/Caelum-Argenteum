@@ -23,11 +23,10 @@ The supplied Suno dialogue-opening WAV replaces the prior harp excerpt in
 2.8 s). `GameInfo.ChatSound`, `$limit 1` and `$singular` are unchanged, so a
 conversation opening plays once rather than on every line/redraw. MAP01 now
 uses `CA_MUS02`; MAP02 uses the local `CA_MUS03_SEWER`; MAP06 uses the local
-`CA_MUS04_PORT`; MAP07 uses the local `CA_MUS05_COAST`. `CA_MUS01` is the
-opening story-intermission music and is reserved for future chapter-end
-intermissions. `CaelumStoryIntermission` starts `CA_MUS01` on a non-save
-MAP01 `WorldLoaded` after character creation, and returns to `CA_MUS02` when
-the opening conversation closes or after the safety timeout.
+`CA_MUS04_PORT`; MAP07 uses the local `CA_MUS05_COAST`. `CA_MUS01` is reserved
+for future chapter-end story intermissions and is not played when MAP01 starts;
+`CaelumStoryIntermission` remains registered as the placeholder for those
+intermissions.
 
 All MP3 backups in `assets/audio_stock/music/`, the unused local tracks and the
 source files in `assets/audio_stock/sounds/` are preserved and remain unbound.
@@ -40,7 +39,7 @@ Agent checks: `python validate_project.py` reports 99 runtime audio files
 (97 OGG + 2 MP3) and no errors after `python build_document_index.py`.
 `build_dev.ps1` packages 6,058 files, and GZDoom 4.14.2 compiles the complete
 PK3 and loads MAP01 without script errors. Author acceptance of the in-game
-pain, music, dialogue cue and opening flow is pending.
+pain, music and dialogue cue is pending.
 
 ## 4.36.9 — Approved Tarot fronts and collection bindings (#15)
 

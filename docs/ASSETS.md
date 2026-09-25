@@ -1157,7 +1157,7 @@ file does not imply that there is already a climate or scene emitter.
 
 | File | Allocation |
 | --- | --- |
-| `music/CA_MUS01.mp3` | Story opening and reserved chapter intermissions. |
+| `music/CA_MUS01.mp3` | Reserved chapter-end story intermissions. |
 | `music/CA_MUS02.mp3` | MAP01 music. |
 | `music/CA_MUS03_SEWER.ogg` | MAP02 sewer music. |
 | `music/CA_MUS04_PORT.ogg` | MAP06 port music. |

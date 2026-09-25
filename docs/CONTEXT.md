@@ -65,12 +65,12 @@ the gauchos and rural culture, and the humans the urban porteño society.
 ## Current status
 
 Current release **4.36.14** implements #31: the author-selected combat-pain
-sounds, the supplied Suno dialogue-opening cue, the local sewer/port/coast
-music and the opening story-intermission presentation are integrated while all
-unused stock and MP3 backups remain preserved and unbound. The former MAP01
-music becomes the opening/reserved chapter-intermission track; MAP01 now uses
-the former MAP02 music, MAP02 uses the new sewer track, MAP06 uses the new port
-track and MAP07 uses the new coast track.
+sounds, the supplied Suno dialogue-opening cue and the local sewer/port/coast
+music are integrated while all unused stock and MP3 backups remain preserved
+and unbound. The former MAP01 music is reserved for future chapter-end story
+intermissions; MAP01 now uses the former MAP02 music directly, MAP02 uses the
+new sewer track, MAP06 uses the new port track and MAP07 uses the new coast
+track.
 
 The preceding **4.36.9** implements #15: the author-approved 78-card Tarot
 front package is integrated under `src/graphics/caelum/tarot`, the shared card

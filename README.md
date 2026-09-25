@@ -7,8 +7,9 @@ on Windows 11. The final game is intended to be independent of Doom assets.
 **Current release: 4.36.14.** Obtain and update the complete repository, validate
 it, then rebuild with `run_dev.bat` as described below. Issue
 [#31](https://github.com/damiancurti/Caelum-Argenteum/issues/31) integrates the
-author-selected pain sounds, the supplied Suno dialogue-opening cue, the local
-sewer/port/coast music and the opening story-intermission music. Issue
+author-selected pain sounds, the supplied Suno dialogue-opening cue and the local
+sewer/port/coast music; the former MAP01 music is reserved for chapter-end story
+intermissions. Issue
 [#15](https://github.com/damiancurti/Caelum-Argenteum/issues/15) integrates the
 author-approved 78-card Tarot fronts from the supplied package, preserves the
 shared card back, and binds every runtime front to its persistent card ID so
@@ -131,8 +132,8 @@ preserved. The broader unfinished 4.36 physics roadmap remains in PROJECT.md.
 - Visible native hub travel transitions with captured departure views.
 - Author-selected combat-pain sounds for Mandinga, Zupay, Bull, Argento,
   Ronnie, Caella and the applicable player profile.
-- Local sewer/port/coast music and the opening/reserved chapter-intermission
-  music, plus the supplied dialogue-opening cue.
+- Local sewer/port/coast music plus the reserved chapter-end story-intermission
+  music and the supplied dialogue-opening cue.
 
 - Original two-state column/wall lever, larger bull and spherical hazard rocks.
 - Single-use explosive mines, safe local teleport traps and native ceiling crushers.

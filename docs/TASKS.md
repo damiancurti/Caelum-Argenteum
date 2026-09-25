@@ -9,9 +9,8 @@ Documentation version: **4.36.14** — 2026-09-25.
   Bull, Argento, Ronnie, Caella and the applicable player voice profile;
   replace the dialogue-opening cue with the supplied Suno WAV; reassign MAP01
   to the former MAP02 music, MAP02 to the local sewer track, MAP06 to the local
-  port track and MAP07 to the local coast track; present the former MAP01 music
-  for the brief canonical opening and reserve it for future chapter
-  intermissions.
+  port track and MAP07 to the local coast track; reserve the former MAP01 music
+  for future chapter-end intermissions.
 - **Author contract:** no new Suno generation, no death/chase assignments, no
   activation of unused stock or MP3 backups, no invented lore or chapter text.
   Rulo remains silent for combat pain. External pain-source licenses remain to
@@ -211,7 +210,7 @@ documentation update does not implement these features or reset accepted tests.
 | 4.36.7 | [#13](https://github.com/damiancurti/Caelum-Argenteum/issues/13) | Implemented and author-accepted on 2026-09-24; CA-4367-PRISONER-ART-01 passed. Four per-material recolored prisoner appearances in the reserved cells. |
 | 4.36.8 | [#14](https://github.com/damiancurti/Caelum-Argenteum/issues/14) | Implemented and author-accepted on 2026-09-25; CA-4368-RESCUE-01 passed. Follow/fight with source-character stats; extract alive before MAP02 boss; port thanks, +10 own-faction reputation and a fixed 25 gold coins independent of character size once per rescue. |
 | 4.36.9 | [#15](https://github.com/damiancurti/Caelum-Argenteum/issues/15) | Tarot fronts and correct collection bindings. Implemented from the verified local source archive; author-accepted on 2026-09-25 (CA-4369-TAROT-ART-01 passed). |
-| 4.36.14 | [#31](https://github.com/damiancurti/Caelum-Argenteum/issues/31) | Author-selected pain sounds, supplied dialogue-opening cue, local sewer/port/coast music and the opening/reserved story intermission. Implemented; author acceptance pending. |
+| 4.36.14 | [#31](https://github.com/damiancurti/Caelum-Argenteum/issues/31) | Author-selected pain sounds, supplied dialogue-opening cue, local sewer/port/coast music and the reserved chapter-end story intermission. Implemented; author acceptance pending. |
 | 4.36.10 | [#18](https://github.com/damiancurti/Caelum-Argenteum/issues/18) | Siege assets: catapult, ram and breakable gate. After #15. |
 | 4.36.11 | [#19](https://github.com/damiancurti/Caelum-Argenteum/issues/19) | Damageable actor gates. Structural parameter table needs approval. After #18. |
 | 4.36.12 | [#20](https://github.com/damiancurti/Caelum-Argenteum/issues/20) | Physical ram strikes; approved parameter table and native evidence required. After #19. |

@@ -9,7 +9,7 @@ project has not verified.
 
 | Runtime alias | Source local file | Assignment | Processing |
 | --- | --- | --- | --- |
-| `CA_MUS01` | Existing `music/CA_MUS01.mp3` | Story opening and reserved chapter intermissions | No re-encoding; existing rights and credits remain valid. |
+| `CA_MUS01` | Existing `music/CA_MUS01.mp3` | Reserved chapter-end story intermissions | No re-encoding; existing rights and credits remain valid. |
 | `CA_MUS02` | Existing `music/CA_MUS02.mp3` | New MAP01 background music | No re-encoding; existing rights and credits remain valid. |
 | `CA_MUS03_SEWER` | `assets/audio_stock/music/Alcantarillado - Caelum Argenteum.wav` | MAP02 sewer background music | WAV converted to stereo 48 kHz Ogg Vorbis. |
 | `CA_MUS04_PORT` | `assets/audio_stock/music/Puerto - Caelum Argenteum.wav` | MAP06 port background music | WAV converted to stereo 48 kHz Ogg Vorbis. |
