@@ -5,6 +5,7 @@ version "4.14"
 // Keeping each system in a separate file will make the project easier to learn,
 // test, and maintain as it grows.
 #include "caelum/core/CaelumConstants.zs"
+#include "caelum/core/CaelumTarotArt.zs"
 #include "caelum/factions/CaelumFactionRules.zs"
 #include "caelum/factions/CaelumFactionCondition.zs"
 #include "caelum/ui/CaelumMenuAudio.zs"

@@ -1,6 +1,23 @@
 # TASKS.md — Active tasks
 
-Documentation version: **4.36.8** — 2026-09-24.
+Documentation version: **4.36.9** — 2026-09-25.
+
+## Issue #15 — Approved Tarot fronts and collection bindings (4.36.9)
+
+- **Issue:** https://github.com/damiancurti/Caelum-Argenteum/issues/15
+- **Scope:** integrate the author-supplied 78 PNG Tarot fronts under
+  `src/graphics/caelum/tarot`, preserve the shared card back, map every source
+  filename to its persistent card ID, and bind the Ace of Cups front in the
+  Journal instead of showing a back. The Marseille court order is preserved:
+  within each suit, Ace, 2–10, Knight, Page, Queen, King.
+- **Author contract:** no new powers, rewards or campaign grants; unobtained
+  cards are not granted by importing art; the Ace of Cups remains card 36; the
+  Knight of Wands (`Tarot/61 - Caballero de basto.png`) is bound but its
+  campaign reward stays in #16.
+- **Acceptance:** CA-4369-TAROT-ART-01 queued in `pending_test.txt`. Static
+  validation, PK3 inclusion and a development preview cover the imported
+  fronts; author visual acceptance remains pending.
+- **Next:** #18 / 4.36.10 owns siege assets after this delivery.
 
 ## Issue #14 — Prisoner rescue, escort and port rewards (4.36.8)
 
@@ -21,7 +38,7 @@ Documentation version: **4.36.8** — 2026-09-24.
 - **Acceptance:** CA-4368-RESCUE-01 passed on 2026-09-25; the author confirmed
   the full release/follow/extraction/port-reward route and requested closure of
   issue #14. The pending entry is removed and the author-test queue is empty.
-- **Next:** #15 / 4.36.9 owns the Tarot package after this delivery.
+- **Next:** delivered through #15 / 4.36.9.
 
 ## Issue #13 — Recolored prisoner appearances (4.36.7)
 
@@ -175,7 +192,7 @@ documentation update does not implement these features or reset accepted tests.
 | 4.36.6 | [#12](https://github.com/damiancurti/Caelum-Argenteum/issues/12) | Implemented and author-accepted on 2026-09-24; CA-4366-RATS-01 passed. 192 fixed rats/96 Mandingas at 2:1, no respawn. |
 | 4.36.7 | [#13](https://github.com/damiancurti/Caelum-Argenteum/issues/13) | Implemented and author-accepted on 2026-09-24; CA-4367-PRISONER-ART-01 passed. Four per-material recolored prisoner appearances in the reserved cells. |
 | 4.36.8 | [#14](https://github.com/damiancurti/Caelum-Argenteum/issues/14) | Implemented and author-accepted on 2026-09-25; CA-4368-RESCUE-01 passed. Follow/fight with source-character stats; extract alive before MAP02 boss; port thanks, +10 own-faction reputation and a fixed 25 gold coins independent of character size once per rescue. |
-| 4.36.9 | [#15](https://github.com/damiancurti/Caelum-Argenteum/issues/15) | Tarot fronts and correct collection bindings. Blocked on approved downloadable source pack/manifest. |
+| 4.36.9 | [#15](https://github.com/damiancurti/Caelum-Argenteum/issues/15) | Tarot fronts and correct collection bindings. Implemented from the verified local source archive; author visual acceptance pending. |
 | 4.36.10 | [#18](https://github.com/damiancurti/Caelum-Argenteum/issues/18) | Siege assets: catapult, ram and breakable gate. After #15. |
 | 4.36.11 | [#19](https://github.com/damiancurti/Caelum-Argenteum/issues/19) | Damageable actor gates. Structural parameter table needs approval. After #18. |
 | 4.36.12 | [#20](https://github.com/damiancurti/Caelum-Argenteum/issues/20) | Physical ram strikes; approved parameter table and native evidence required. After #19. |

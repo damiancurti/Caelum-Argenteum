@@ -73,6 +73,84 @@ class CaelumJournalOverlay : EventHandler
         }
     }
 
+    ui int GetTarotPreview()
+    {
+        if (consoleplayer < 0) { return -1; }
+        let preview = CVar.GetCVar("ca_journal_tarot_preview", players[consoleplayer]);
+        int selected = preview == null ? -1 : preview.GetInt();
+        return selected >= 0 && selected < CaelumConstants.TAROT_CARD_COUNT
+            ? selected : -1;
+    }
+
+    ui void SetTarotPreview(int card)
+    {
+        if (consoleplayer < 0) { return; }
+        let preview = CVar.GetCVar("ca_journal_tarot_preview", players[consoleplayer]);
+        if (preview != null)
+        {
+            preview.SetInt(card < 0
+                ? -1 : Clamp(card, 0, CaelumConstants.TAROT_CARD_COUNT - 1));
+        }
+    }
+
+    ui int GetTarotSelection(CaelumPlayer localPlayer)
+    {
+        int preview = GetTarotPreview();
+        if (preview >= 0) { return preview; }
+        if (localPlayer == null) { return -1; }
+        let selection = CVar.GetCVar("ca_journal_tarot_selected", players[consoleplayer]);
+        int chosen = selection == null ? -1 : selection.GetInt();
+        if (chosen >= 0 && chosen < CaelumConstants.TAROT_CARD_COUNT
+            && localPlayer.TarotOwnedSnapshot[chosen])
+            return chosen;
+        for (int card = CaelumConstants.TAROT_CARD_COUNT - 1; card >= 0; card--)
+            if (localPlayer.TarotOwnedSnapshot[card]) return card;
+        return -1;
+    }
+
+    ui bool CycleTarot(CaelumPlayer user, int direction, bool leaveAtEdge = false)
+    {
+        int current = GetTarotSelection(user);
+        if (current < 0)
+        {
+            if (leaveAtEdge) CycleJournalPage(direction);
+            return false;
+        }
+        let selection = CVar.GetCVar("ca_journal_tarot_selected", players[consoleplayer]);
+        if (selection == null) return false;
+        for (int step = 1; step <= CaelumConstants.TAROT_CARD_COUNT; step++)
+        {
+            int card = current + direction * step;
+            if (leaveAtEdge && (card < 0 || card >= CaelumConstants.TAROT_CARD_COUNT))
+            {
+                CycleJournalPage(direction);
+                return false;
+            }
+            card = (card + CaelumConstants.TAROT_CARD_COUNT * 2)
+                % CaelumConstants.TAROT_CARD_COUNT;
+            if (!user.TarotOwnedSnapshot[card]) continue;
+            selection.SetInt(card);
+            return true;
+        }
+        return false;
+    }
+
+    ui bool CycleTarotPreview(int direction)
+    {
+        int current = GetTarotPreview();
+        if (current < 0)
+        {
+            current = direction > 0 ? 0 : CaelumConstants.TAROT_CARD_COUNT - 1;
+        }
+        else
+        {
+            current = (current + direction + CaelumConstants.TAROT_CARD_COUNT)
+                % CaelumConstants.TAROT_CARD_COUNT;
+        }
+        SetTarotPreview(current);
+        return true;
+    }
+
     ui bool IsQuestDetailOpen()
     {
         if (consoleplayer < 0) return false;
@@ -176,6 +254,16 @@ class CaelumJournalOverlay : EventHandler
         else if (GetJournalPage() == 4)
         {
             if (CycleQuest(user, next ? 1 : -1, true))
+                SendNetworkEvent("ca_journal_menu_move_sound");
+        }
+        else if (GetJournalPage() == 6)
+        {
+            if (GetTarotPreview() >= 0)
+            {
+                if (CycleTarotPreview(next ? 1 : -1))
+                    SendNetworkEvent("ca_journal_menu_move_sound");
+            }
+            else if (CycleTarot(user, next ? 1 : -1, true))
                 SendNetworkEvent("ca_journal_menu_move_sound");
         }
         else CycleJournalPage(next ? 1 : -1);
@@ -1241,13 +1329,14 @@ class CaelumJournalOverlay : EventHandler
 
     ui void DrawTarotPage(CaelumPlayer localPlayer)
     {
-        bool owned = localPlayer.TarotFoolOwnedSnapshot;
         DrawTextLine(SmallFont, Font.CR_GOLD, 56, 130,
             String.Format(StringTable.Localize("CA_TAROT_COLLECTION_COUNT", false),
                 localPlayer.TarotOwnedCountSnapshot, CaelumConstants.TAROT_CARD_COUNT));
-        if (localPlayer.TarotOwnedCountSnapshot <= 0)
+        int preview = GetTarotPreview();
+        int selected = preview >= 0 ? preview : GetTarotSelection(localPlayer);
+        if (selected < 0)
         {
-            DrawTexture("graphics/caelum/icons/ca_tarot_back.png", 78, 166, 100, 100);
+            DrawTexture(CaelumTarotArt.BackPath(), 78, 166, 100, 100);
             DrawParagraph(TextFont, Font.CR_WHITE, 226, 170, 330,
                 StringTable.Localize("CA_TAROT_COLLECTION_EMPTY", false));
             return;
@@ -1257,11 +1346,19 @@ class CaelumJournalOverlay : EventHandler
         double ratio = (double(Screen.GetWidth()) / Screen.GetHeight()) / (640.0 / 360.0);
         double cardWidth = 104 / Max(1.0, ratio);
         double cardHeight = 156 * Min(1.0, ratio);
-        DrawTexture(owned && !localPlayer.TarotCupsAceOwnedSnapshot ? "graphics/caelum/tarot/ca_tarot_fool.png"
-            : "graphics/caelum/icons/ca_tarot_back.png",
+        DrawTexture(CaelumTarotArt.FrontPath(selected),
             76 + (104-cardWidth)*0.5, 151 + (156-cardHeight)*0.5, cardWidth, cardHeight);
-        DrawTextLine(TextFont, Font.CR_GOLD, 210, 157,
-            StringTable.Localize(localPlayer.TarotCupsAceOwnedSnapshot ? "CA_MAZE_CUPS_ACE" : owned ? "CA_TAROT_FOOL_NAME" : "CA_TAROT_COLLECTION_LABEL", false));
+        if (preview >= 0)
+        {
+            DrawTextLine(TextFont, Font.CR_GOLD, 210, 157,
+                String.Format(StringTable.Localize("CA_TAROT_PREVIEW_LABEL", false), selected));
+        }
+        else
+        {
+            String nameKey = CaelumTarotArt.NameKey(selected);
+            DrawTextLine(TextFont, Font.CR_GOLD, 210, 157,
+                StringTable.Localize(nameKey != "" ? nameKey : "CA_TAROT_COLLECTION_LABEL", false));
+        }
         bool hasMinorBonus = false;
         for (int attribute = 0; attribute < CaelumConstants.PRIMARY_ATTRIBUTE_COUNT; attribute++)
             if (localPlayer.TarotMinorBaseSnapshot[attribute] > 0.0) hasMinorBonus = true;
@@ -1286,8 +1383,15 @@ class CaelumJournalOverlay : EventHandler
                     localPlayer.TarotAttributeBonusSnapshot));
             return;
         }
+        if (preview >= 0)
+        {
+            DrawParagraph(SmallFont, Font.CR_WHITE, 210, 183, 352,
+                StringTable.Localize("CA_TAROT_PREVIEW_HINT", false));
+            return;
+        }
         DrawParagraph(SmallFont, Font.CR_WHITE, 210, 183, 352,
-            StringTable.Localize(owned ? "CA_TAROT_FOOL_DESCRIPTION" : "CA_TAROT_COLLECTION_RULE", false));
+            StringTable.Localize(selected == CaelumConstants.TAROT_THE_FOOL
+                ? "CA_TAROT_FOOL_DESCRIPTION" : "CA_TAROT_COLLECTION_RULE", false));
         DrawParagraph(SmallFont, Font.CR_GOLD, 210, 244, 352,
             String.Format(StringTable.Localize("CA_TAROT_BONUS", false), localPlayer.TarotAttributeBonusSnapshot));
     }

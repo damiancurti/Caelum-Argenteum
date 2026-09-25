@@ -1,6 +1,6 @@
 # CONTEXT.md — Ultra-condensed summary of Caelum Argenteum
 
-Documentation version: **4.36.8** — 2026-09-24.
+Documentation version: **4.36.9** — 2026-09-25.
 
 Summary so an AI or a contributor can understand the project without reading
 the five full canonical documents. Source: `docs/PROJECT.md`,
@@ -64,7 +64,17 @@ the gauchos and rural culture, and the humans the urban porteño society.
 
 ## Current status
 
-Current release **4.36.8** implements #14: the four MAP02 prisoners can be
+Current release **4.36.9** implements #15: the author-approved 78-card Tarot
+front package is integrated under `src/graphics/caelum/tarot`, the shared card
+back is preserved, and each front is bound to its persistent card ID. The
+Journal now shows the correct owned front (El Loco and the Ace of Cups) with
+left/right selection among owned cards, and a separate development preview can
+inspect any imported front without granting the card or campaign progress. The
+Ace of Cups remains card 36 and no new powers or rewards are added.
+GZDoom 4.14.2 compiles the package and `validate_project.py` passes; author
+acceptance `CA-4369-TAROT-ART-01` is pending.
+
+The preceding **4.36.8** implements #14: the four MAP02 prisoners can be
 released, then follow and fight alongside the player with their source combat
 profiles while staying back from the northern Zupay. Each prisoner is extracted
 only by reaching the pre-boss reservation alive before that fight (killing the
@@ -75,10 +85,9 @@ no duplicate payout across retry, save/load or travel. The provisional social
 domains are replaced by six canonical factions: Unitarians, Federals, Free
 Peoples, Caelith, Cult of the Tarot and Sun Warriors. GZDoom 4.14.2 compiles the
 complete package and loads MAP01/MAP02/MAP06 without script errors; author
-confirmed CA-4368-RESCUE-01 passed on 2026-09-25, leaving the author-test queue
-empty.
+confirmed CA-4368-RESCUE-01 passed on 2026-09-25.
 
-The preceding **4.36.8** implements #13: four recolored prisoner appearances
+The preceding **4.36.7** implements #13: four recolored prisoner appearances
 reusing the mansion characters without new models: Caella -> Unitarians
 (Leonor Benítez, celeste), Ronnie -> Federals (Rufino Acosta, punzó), Rulo ->
 Free Peoples (Santos Barrera, black/brown/green) and Argento -> Cult of the
@@ -119,8 +128,8 @@ rations, and MAP01 tables at full capacity.
 
 Pending:
 
-- Author-requested patch 4.36.9 (#15): approved Tarot images. This is planned,
-  not present in the current four-section map.
+- Author-requested patch 4.36.9 (#15): approved Tarot fronts are integrated;
+  only the author's visual acceptance `CA-4369-TAROT-ART-01` remains pending.
 - Planned 4.36.10–4.36.13 (#18–#21): siege-machine assets, breakable actor
   gates, physical ram strikes and native catapult projectiles for the port.
 - Closing 4.36: rams/catapults and remaining integration/save/reset validation
@@ -143,8 +152,9 @@ Prisoners match their source character's combat stats, follow/fight alongside
 the player and extract alive through an exit before the MAP02 boss; they do
 not fight that boss. At the port, each grants +10 reputation with its own
 faction and a fixed 25 gold coins once, independent of character size.
-The latest #10/#14 author decision supersedes the former weapon-price formula; detailed siege balance/conditions and the definitive
-Tarot package remain pending.
+The latest #10/#14 author decision supersedes the former weapon-price formula.
+The #15 approved Tarot fronts are integrated; activation/powers and the
+remaining detailed siege balance/conditions stay pending.
 Prisoner source/faction mapping: Caella/Unitarians, Ronnie/Federals,
 Rulo/Free Peoples, Argento/Cult of the Tarot; do not reassign mansion NPCs.
 PROJECT contains the authoritative scope, dependency order and usage protocol.

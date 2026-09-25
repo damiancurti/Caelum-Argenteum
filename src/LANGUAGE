@@ -2924,12 +2924,16 @@ CA_TAROT_COLLECTION_LABEL = "Tarot collection";
 CA_TAROT_COLLECTION_RULE = "Each Major adds 2% and each Minor 1% to all attributes. Minor base passives apply first.";
 CA_TAROT_MINOR_ORDER = "Minor base: 1st / 2nd / 3rd attribute";
 CA_TAROT_COLLECTION_FACTOR = "Then collection: +%d%% to all attributes";
+CA_TAROT_PREVIEW_LABEL = "Card %d (development preview)";
+CA_TAROT_PREVIEW_HINT = "Development preview: this shows the approved front without granting the card or campaign progress.";
 
 [es]
 CA_TAROT_COLLECTION_LABEL = "Colección de Tarot";
 CA_TAROT_COLLECTION_RULE = "Cada Mayor suma 2% y cada Menor 1% a todos los atributos. Las pasivas base de los Menores se suman primero.";
 CA_TAROT_MINOR_ORDER = "Base menor: 1.er / 2.º / 3.er atributo";
 CA_TAROT_COLLECTION_FACTOR = "Después, colección: +%d%% a todos los atributos";
+CA_TAROT_PREVIEW_LABEL = "Carta %d (vista previa de desarrollo)";
+CA_TAROT_PREVIEW_HINT = "Vista previa de desarrollo: muestra el frente aprobado sin otorgar la carta ni progreso de campaña.";
 
 // 4.33.0ab: respiración en la piscina, con gasto y devolución nativos.
 [enu default]

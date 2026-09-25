@@ -470,6 +470,7 @@ class CaelumPlayer : DoomPlayer
     double TarotMinorBaseSnapshot[CaelumConstants.PRIMARY_ATTRIBUTE_COUNT];
     bool TarotFoolOwnedSnapshot;
     bool TarotCupsAceOwnedSnapshot;
+    bool TarotOwnedSnapshot[CaelumConstants.TAROT_CARD_COUNT];
     bool MainM00FoolRevealedSnapshot;
     bool CombatClassAbilityInputReserved;
     double HUDAbilitySuccessRemaining;
@@ -864,6 +865,8 @@ class CaelumPlayer : DoomPlayer
         TarotAttributeBonusSnapshot = persistentState.GetTarotAttributeBonusPercent();
         for (int attribute = 0; attribute < CaelumConstants.PRIMARY_ATTRIBUTE_COUNT; attribute++)
             TarotMinorBaseSnapshot[attribute] = persistentState.GetTarotMinorBaseBonus(attribute);
+        for (int card = 0; card < CaelumConstants.TAROT_CARD_COUNT; card++)
+            TarotOwnedSnapshot[card] = persistentState.HasTarotCard(card);
         TarotFoolOwnedSnapshot = persistentState.HasTarotCard(CaelumConstants.TAROT_THE_FOOL);
         TarotCupsAceOwnedSnapshot = persistentState.HasTarotCard(CaelumSewerMaze.CUPS_ACE);
         MainM00FoolRevealedSnapshot = persistentState.MainM00FoolRevealed;

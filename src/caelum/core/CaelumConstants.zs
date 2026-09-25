@@ -20,6 +20,7 @@ class CaelumConstants : Object
     // Menores: Espadas, Copas, Bastos, Oros. Cada palo conserva 14 índices:
     // Ancho, 2..10, Caballero, Sota, Reina, Rey.
     const TAROT_MINOR_RANK_COUNT = 14;
+    const TAROT_CUPS_ACE = TAROT_MAJOR_COUNT + TAROT_MINOR_RANK_COUNT;
     const TAROT_SUIT_SWORDS = 0;
     const TAROT_SUIT_CUPS = 1;
     const TAROT_SUIT_WANDS = 2;

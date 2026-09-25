@@ -1,6 +1,40 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **4.36.8** — 2026-09-24.
+Documentation version: **4.36.9** — 2026-09-25.
+
+## 4.36.9 — Approved Tarot fronts and collection bindings (#15)
+
+Baseline: integrated 4.36.8, `2f69fdc` (author acceptance of #14). The
+author-approved Tarot package is imported from the verified local archive
+`assets/source/Tarot/Tarot.zip` (SHA-256
+`e693bcadb13f093c25529c33587312f50188155e225db3f0069da491127f09aa`, 253,626,293
+bytes, 78 PNGs). All 78 fronts are added under `src/graphics/caelum/tarot`
+while the shared card back is preserved. `CaelumTarotArt` resolves runtime
+fronts by persistent card ID, and `DrawTarotPage` now draws the selected owned
+front instead of showing a back when the Ace of Cups is owned. Owned cards can
+be selected with left/right, and `ca_journal_tarot_preview` inspects any
+imported front without granting the card or campaign progress.
+
+The source filenames propose Sota before Caballero in each suit, but the
+accepted deck catalogue orders Knight (Caballero) before Page (Sota). Persistent
+IDs are preserved: for example, Cups source `46 - Sota de copa.png` binds to
+card 47 and `47 - Caballero de copa.png` binds to card 46. The Ace of Cups
+remains card 36. The Knight of Wands (`Tarot/61 - Caballero de basto.png`)
+is bound to its catalogue ID; the campaign reward itself remains #16.
+The versioned manifest `assets/manifests/tarot_78_v4369.json` records each
+source path, source SHA-256, persistent card ID, runtime path, runtime SHA-256
+and dimensions. The oversized source archive is not committed to normal Git.
+
+Static validation passes: `python validate_project.py` reports no errors and
+`build_dev.ps1` packages 6,037 files including all 78 Tarot fronts. A GZDoom
+4.14.2 launch was attempted locally but stopped before map load with the
+environmental fatal error `Unable to retrieve known folder`; this is not a
+ZScript result. Author acceptance remains pending:
+`CA-4369-TAROT-ART-01` is queued in `pending_test.txt`.
+
+Usage: the author confirms the initial 2026-09-23 baseline was 75% weekly
+allowance remaining and the reset time is still unknown. This patch does not
+convert that percentage into a token measurement.
 
 ## 4.36.8 — Prisoner rescue, escort and port rewards (#14)
 

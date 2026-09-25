@@ -1,6 +1,6 @@
 # Caelum Argenteum — Project, status and roadmap
 
-Documentation version: **4.36.8** — 2026-09-24.
+Documentation version: **4.36.9** — 2026-09-25.
 
 ## 4.36.8 — Prisoner rescue, escort and port rewards (issue #14)
 

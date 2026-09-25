@@ -4,8 +4,13 @@ An independent dark fantasy FPS-RPG inspired by nineteenth-century Argentina.
 Author and game designer: **Damian Curti**. Development target: **GZDoom 4.14.2**
 on Windows 11. The final game is intended to be independent of Doom assets.
 
-**Current release: 4.36.8.** Obtain and update the complete repository, validate
+**Current release: 4.36.9.** Obtain and update the complete repository, validate
 it, then rebuild with `run_dev.bat` as described below. Issue
+[#15](https://github.com/damiancurti/Caelum-Argenteum/issues/15) integrates the
+author-approved 78-card Tarot fronts from the supplied package, preserves the
+shared card back, and binds every runtime front to its persistent card ID so
+the Journal shows the Ace of Cups front instead of a back once it is owned.
+Development preview remains separate from granting campaign progress. Issue
 [#14](https://github.com/damiancurti/Caelum-Argenteum/issues/14) makes the four
 MAP02 prisoners follow and fight alongside the player, extracts them alive at
 the pre-boss reservation before the northern Zupay, and grants each rescued
@@ -115,6 +120,8 @@ preserved. The broader unfinished 4.36 physics roadmap remains in PROJECT.md.
 
 ## Implemented
 
+- Approved 78-card Tarot fronts with the shared back and persistent-ID bindings;
+  the Journal shows owned fronts and a separate development preview.
 - Revised first-person grips, two-handed heavy weapons and shared holstering.
 - Original fallback fists, a dorsal left bow grip and smaller ground bullets.
 - Aimed Use hints and a repeatable, occupancy-checked gallery reset lever.
@@ -773,12 +780,11 @@ crafted weapon only, inside the Box.
 
 The established sequence continues through V4.34 world/travel foundations,
 V4.35 calendar/weather/events, V4.36 physical hazards and V4.37 Tarot/Trucazo.
-New issues #10–#15 plan T1-only loot, a four-section sewer with cells/beds and
-repair refuges, four recolored prisoners,
-persistent escorts/port rewards and Tarot fronts. Issues #18–#21 add siege
+Issues #10–#15 implement the T1-only loot catalogue, the four-section sewer
+with cells/beds and repair refuges, the four recolored prisoners, persistent
+escorts/port rewards and the approved Tarot fronts. Issues #18–#21 add siege
 assets, breakable actor gates, rams and catapults. See [TASKS](docs/TASKS.md)
-and the current author-roadmap section of [PROJECT](docs/PROJECT.md). These
-features are not included in the current 4.36.1b release (same 4.36.1 gameplay baseline).
+and the current author-roadmap section of [PROJECT](docs/PROJECT.md).
 
 After V4.37, complete and accept three campaign maps covering the prologue,
 El Loco and two distinct Minors, then verify the exported
@@ -800,7 +806,8 @@ The author confirmed CA-4360I-VISUAL-01 passed after the 4.36.3 correction on
 2026-09-23. The author confirmed all 4.36.4 checks passed on 2026-09-23;
 CA-4365-MAZE-01 passed on 2026-09-24, CA-4366-RATS-01 and
 CA-4367-PRISONER-ART-01 passed on 2026-09-24, and CA-4368-RESCUE-01 passed on
-2026-09-25; [pending_test.txt](pending_test.txt) is empty.
+2026-09-25. The 4.36.9 author check `CA-4369-TAROT-ART-01` is queued in
+[pending_test.txt](pending_test.txt); it covers the actual in-game Tarot imagery.
 HISTORY records the accepted CA-4364-T1-LOOT-01. The 4.36.2 bow
 check also passed on the author's confirmation. On 2026-09-23 the
 author confirmed zero validator errors, successful rebuild/launch and both

@@ -1,6 +1,6 @@
 # Caelum Argenteum — Audio and art
 
-Documentation version: **4.36.8** — 2026-09-24.
+Documentation version: **4.36.9** — 2026-09-25.
 
 ## 4.36.8 — No new runtime assets (#14)
 
