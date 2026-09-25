@@ -258,6 +258,42 @@ No failures, partial results or qualifications were reported. The confirmed
 entry is removed from pending_test.txt; the tracked queue is empty. Release
 4.36.6 is unchanged. Author evidence is separate from the static/native results
 above.
+## 4.36.5a — Selective file reading for agents (#29)
+
+Issue [#29](https://github.com/damiancurti/Caelum-Argenteum/issues/29).
+Implementation and verification date: 2026-09-24.
+Baseline: branch `issue-11-4.36.5`, commit `c65a4ba`.
+
+### Implemented scope and decisions
+
+- Added the single selective-reading policy to `AGENTS.md`: read the
+  applicable instructions, brief context and current issue first; search
+  names, symbols and indexed headings before opening large files; read only
+  the relevant functions, sections or ranges and expand to required
+  dependencies; use the document index as a locator; scope initial searches
+  to likely source directories; consult `build/` as targeted test evidence;
+  start PR review from the diff and submitted evidence; reuse current
+  in-session context.
+- Added short, executable search and range-reading examples to
+  `GZDOOM_DEVELOPMENT.md` for a code issue, a long-document lookup and a
+  failed test log. One authoritative policy remains in `AGENTS.md`.
+- Updated README, AGENTS, PROJECT, CONTEXT, TASKS and the two current-version
+  ZScript diagnostic labels to 4.36.5a. SYSTEMS, MAP01 and ASSETS keep their
+  content and only their current-version markers change.
+- No gameplay, balance, map, asset, localization or save change is introduced;
+  `build/` is not deleted or cleaned.
+
+### Executed verification
+
+- `python validate_project.py`: exit 0; version `4.36.5a`, ten documents and
+  `errors: []`.
+- `python build_document_index.py`: regenerated `docs/DOCUMENT_INDEX.md`
+  after PROJECT, HISTORY and related indexed sources changed; a second run
+  confirmed byte-for-byte deterministic output.
+- `git diff --check`: no whitespace errors.
+
+This patch is documentation only. No engine run is claimed; gameplay and
+author acceptance remain separate and are unchanged by this issue.
 
 ## 4.36.5 — Four-section sewer, keyed cells and repair refuges (#11)
 

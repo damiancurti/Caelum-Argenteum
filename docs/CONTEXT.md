@@ -114,6 +114,10 @@ barred gates/cells, beds, repair refuges, pre-boss extraction reservation and
 240 arrows/120 bolts/120 bullets. Only known weapon recipes permit repair;
 no materials or recipes are added. The author confirmed CA-4365-MAZE-01 passed
 on 2026-09-24.
+
+The merged **4.36.5a** documentation patch records the selective file-reading
+workflow for agents (#29) without changing gameplay, balance, maps, saves or
+assets.
 Saved campaigns that visited old MAP02 use `run_dev.bat --legacy-map02` to
 continue byte-identical legacy geometry; normal builds use the new layout.
 The accepted **4.36.4** implements #10: the complete T1 maze catalogue,

@@ -9,7 +9,10 @@ it, then rebuild with `run_dev.bat` as described below. Issue
 [#31](https://github.com/damiancurti/Caelum-Argenteum/issues/31) integrates the
 author-selected pain sounds, the supplied Suno dialogue-opening cue and the local
 sewer/port/coast music; the former MAP01 music is reserved for chapter-end story
-intermissions. Issue
+intermissions. The merged documentation patch
+[#29](https://github.com/damiancurti/Caelum-Argenteum/issues/29) records the
+selective file-reading workflow for agents without changing gameplay, balance,
+maps, saves or assets. Issue
 [#15](https://github.com/damiancurti/Caelum-Argenteum/issues/15) integrates the
 author-approved 78-card Tarot fronts from the supplied package, preserves the
 shared card back, and binds every runtime front to its persistent card ID so

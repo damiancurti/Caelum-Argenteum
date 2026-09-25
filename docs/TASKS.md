@@ -91,6 +91,21 @@ Documentation version: **4.36.14** — 2026-09-25.
   author-test queue is empty. Static/native evidence remains separate from that
   confirmation.
 - **Next:** #13 / 4.36.7 after this delivery; #14 owns live escort AI.
+## Issue #29 — Selective file reading for agents (4.36.5a)
+
+- **Issue:** https://github.com/damiancurti/Caelum-Argenteum/issues/29
+- **Status:** Implemented and statically verified; documentation/workflow only.
+- **References:** `AGENTS.md`, `README.md`, `docs/CONTEXT.md`,
+  `docs/GZDOOM_DEVELOPMENT.md`, `docs/DOCUMENT_INDEX.md` and
+  `validate_project.py`.
+- **Scope:** make selective file reading explicit in the agent workflow,
+  reconcile it with the existing task/document mapping and index rules, and
+  add practical search and range-reading examples in the engineering guide.
+- **Acceptance:** `python validate_project.py` exits 0 with version `4.36.5a`,
+  ten documents and no errors; `python build_document_index.py` regenerates
+  `docs/DOCUMENT_INDEX.md` byte-for-byte; `git diff --check` passes. No
+  gameplay, balance, asset, map, localization or save change is introduced.
+- **Next:** #12 / 4.36.6 remains the next gameplay delivery.
 
 ## Issue #11 — Four-section sewer, cells and repair refuges (4.36.5)
 
