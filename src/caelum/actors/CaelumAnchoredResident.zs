@@ -326,13 +326,18 @@ class CaelumAnchoredResident : CaelumCombatActor abstract
         Actor threat = FindEscortThreat();
         if (threat != null)
         {
-            ClearStoryCombatState();
             Target = threat;
             bInvulnerable = false;
             State seeState = FindState("See");
             // No reiniciar See cada tic: interrumpiría las secuencias Melee,
             // Missile o Pain antes de que ejecuten su ataque o conjuro.
             if (!InEscortCombatState()) { SetState(seeState); }
+            return;
+        }
+
+        if (Distance2D(owner) > CaelumConstants.PRISONER_FOLLOW_TELEPORT_DISTANCE)
+        {
+            TeleportEscortPrisonerToLeader(owner);
             return;
         }
 
@@ -359,6 +364,54 @@ class CaelumAnchoredResident : CaelumCombatActor abstract
         Vel.X = Cos(Angle) * speed;
         Vel.Y = Sin(Angle) * speed;
     }
+
+    void MoveEscortPrisonerTowardLeader(CaelumPlayer leader)
+    {
+        if (leader == null) { Vel = (0,0,0); return; }
+        Vector2 offset = leader.Pos.XY - Pos.XY;
+        double distance = offset.Length();
+        if (distance <= 0.001) { Vel = (0,0,0); return; }
+        Angle = VectorAngle(offset.X, offset.Y);
+        double speed = Max(0.0, CombatBaseSpeed
+            * CaelumConstants.GZDOOM_BASE_MAX_RUN_SPEED
+            / CaelumConstants.GZDOOM_BASE_MAX_WALK_SPEED);
+        double resolvedSpeed = Min(speed, Max(0.0,
+            distance - CaelumConstants.PRISONER_FOLLOW_DISTANCE));
+        Vel.X = Cos(Angle) * resolvedSpeed;
+        Vel.Y = Sin(Angle) * resolvedSpeed;
+    }
+
+    void TeleportEscortPrisonerToLeader(CaelumPlayer leader)
+    {
+        if (leader == null) return;
+        double spacing = Radius + 24.0;
+        double baseAngle = leader.Angle + 180.0;
+        for (int attempt = 0; attempt < 12; attempt++)
+        {
+            int ring = attempt / 8;
+            double angle = baseAngle + (attempt % 8) * 45.0;
+            double distance = spacing + ring * spacing;
+            Vector3 candidate = (
+                leader.Pos.X + Cos(angle) * distance,
+                leader.Pos.Y + Sin(angle) * distance,
+                leader.Pos.Z
+            );
+            if (TeleportMove(candidate, false))
+            {
+                Vel = (0,0,0);
+                Angle = leader.Angle;
+                ClearInterpolation();
+                return;
+            }
+        }
+        if (TeleportMove(leader.Pos, false))
+        {
+            Vel = (0,0,0);
+            Angle = leader.Angle;
+            ClearInterpolation();
+        }
+    }
+
     bool UseEscortPrisoner(CaelumPlayer user)
     {
         if (user == null || user.player == null) { return false; }
@@ -608,6 +661,13 @@ class CaelumAnchoredResident : CaelumCombatActor abstract
         resident.EscortPrisonerLeader = leader;
 
         if (resident.Distance2D(leader)
+            > CaelumConstants.PRISONER_FOLLOW_TELEPORT_DISTANCE)
+        {
+            resident.TeleportEscortPrisonerToLeader(leader);
+            return;
+        }
+
+        if (resident.Distance2D(leader)
             <= CaelumConstants.PRISONER_FOLLOW_DISTANCE)
         {
             resident.Vel = (0,0,0);
@@ -634,7 +694,7 @@ class CaelumAnchoredResident : CaelumCombatActor abstract
         }
 
         resident.Target = leader;
-        resident.A_Chase(null, null);
+        resident.MoveEscortPrisonerTowardLeader(leader);
     }
     override void Tick()
     {

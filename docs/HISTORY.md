@@ -52,6 +52,23 @@ longer scares followers away from the extraction reservation. GZDoom 4.14.2
 compiles the updated PK3 and loads MAP02 without script errors, and
 validate_project.py passes with no errors. Author acceptance remains pending.
 
+Correction, 2026-09-24 (third round): author playtesting reported the escort
+still stalled and the elemental missile read as a giant rock. Escort followers
+no longer use native chase wandering toward the leader; they steer directly at
+the leader with the same run-speed ratio used by the boss flee and stop at the
+follow distance. A follower that falls farther than
+`PRISONER_FOLLOW_TELEPORT_DISTANCE` (1024) while unengaged is teleported to an
+open ring around the leader, preventing maze stalls. The threat branch also
+stops wiping `bInCombat`/`bJustHit`/`bJustAttacked`/`LastEnemy` every tic; the
+story-combat state is cleared only on transition back to following. The simple
+and explosive elemental projectiles are scaled to `0.20`, restoring a compact
+missile instead of an oversized elemental sprite. While the northern barred
+gate is closed its lines now set `Line.ML_BLOCKSIGHT`, so the caged Zupay can
+no longer see and scare the escort through the bars; opening the gate clears
+the sight-block flag with the other block flags. GZDoom 4.14.2 compiles the
+updated PK3 and loads MAP02 without script errors, and validate_project.py
+passes with no errors. Author acceptance remains pending.
+
 ## 4.36.7 — Recolored prisoner appearances (#13)
 
 Baseline: integrated 4.36.6, `63b2bce` (author acceptance of #12). MAP02 now
