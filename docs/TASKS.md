@@ -14,9 +14,9 @@ Documentation version: **4.36.9** — 2026-09-25.
   cards are not granted by importing art; the Ace of Cups remains card 36; the
   Knight of Wands (`Tarot/61 - Caballero de basto.png`) is bound but its
   campaign reward stays in #16.
-- **Acceptance:** CA-4369-TAROT-ART-01 queued in `pending_test.txt`. Static
-  validation, PK3 inclusion and a development preview cover the imported
-  fronts; author visual acceptance remains pending.
+- **Acceptance:** CA-4369-TAROT-ART-01 passed on 2026-09-25; the author confirmed
+  the imported fronts, persistent-ID bindings and Journal preview. The pending
+  entry is removed and the author-test queue is empty.
 - **Next:** #18 / 4.36.10 owns siege assets after this delivery.
 
 ## Issue #14 — Prisoner rescue, escort and port rewards (4.36.8)
@@ -192,7 +192,7 @@ documentation update does not implement these features or reset accepted tests.
 | 4.36.6 | [#12](https://github.com/damiancurti/Caelum-Argenteum/issues/12) | Implemented and author-accepted on 2026-09-24; CA-4366-RATS-01 passed. 192 fixed rats/96 Mandingas at 2:1, no respawn. |
 | 4.36.7 | [#13](https://github.com/damiancurti/Caelum-Argenteum/issues/13) | Implemented and author-accepted on 2026-09-24; CA-4367-PRISONER-ART-01 passed. Four per-material recolored prisoner appearances in the reserved cells. |
 | 4.36.8 | [#14](https://github.com/damiancurti/Caelum-Argenteum/issues/14) | Implemented and author-accepted on 2026-09-25; CA-4368-RESCUE-01 passed. Follow/fight with source-character stats; extract alive before MAP02 boss; port thanks, +10 own-faction reputation and a fixed 25 gold coins independent of character size once per rescue. |
-| 4.36.9 | [#15](https://github.com/damiancurti/Caelum-Argenteum/issues/15) | Tarot fronts and correct collection bindings. Implemented from the verified local source archive; author visual acceptance pending. |
+| 4.36.9 | [#15](https://github.com/damiancurti/Caelum-Argenteum/issues/15) | Tarot fronts and correct collection bindings. Implemented from the verified local source archive; author-accepted on 2026-09-25 (CA-4369-TAROT-ART-01 passed). |
 | 4.36.10 | [#18](https://github.com/damiancurti/Caelum-Argenteum/issues/18) | Siege assets: catapult, ram and breakable gate. After #15. |
 | 4.36.11 | [#19](https://github.com/damiancurti/Caelum-Argenteum/issues/19) | Damageable actor gates. Structural parameter table needs approval. After #18. |
 | 4.36.12 | [#20](https://github.com/damiancurti/Caelum-Argenteum/issues/20) | Physical ram strikes; approved parameter table and native evidence required. After #19. |

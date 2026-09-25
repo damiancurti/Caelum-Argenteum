@@ -71,8 +71,8 @@ Journal now shows the correct owned front (El Loco and the Ace of Cups) with
 left/right selection among owned cards, and a separate development preview can
 inspect any imported front without granting the card or campaign progress. The
 Ace of Cups remains card 36 and no new powers or rewards are added.
-GZDoom 4.14.2 compiles the package and `validate_project.py` passes; author
-acceptance `CA-4369-TAROT-ART-01` is pending.
+GZDoom 4.14.2 compiles the package and `validate_project.py` passes; the
+author confirmed `CA-4369-TAROT-ART-01` passed on 2026-09-25.
 
 The preceding **4.36.8** implements #14: the four MAP02 prisoners can be
 released, then follow and fight alongside the player with their source combat
@@ -128,8 +128,6 @@ rations, and MAP01 tables at full capacity.
 
 Pending:
 
-- Author-requested patch 4.36.9 (#15): approved Tarot fronts are integrated;
-  only the author's visual acceptance `CA-4369-TAROT-ART-01` remains pending.
 - Planned 4.36.10–4.36.13 (#18–#21): siege-machine assets, breakable actor
   gates, physical ram strikes and native catapult projectiles for the port.
 - Closing 4.36: rams/catapults and remaining integration/save/reset validation

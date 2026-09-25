@@ -241,8 +241,9 @@ Catapults, rams and damageable actor gates are required, with separate
 asset/mechanic issues #18–#21. This bounded port encounter is now part of
 the playtest; a general world-siege director remains V5. Encounter counts,
 machine/gate parameter tables and detailed win/fail rules need authored data.
-The Tarot source ZIP and definitive card manifest are also pending; do not
-regenerate approved art or pretend an inaccessible attachment exists.
+The Tarot source ZIP was verified locally; its definitive manifest is committed
+as `assets/manifests/tarot_78_v4369.json` while the oversized archive is not
+stored in normal Git. Do not regenerate approved art.
 
 The remaining mechanism gates are rams and catapults (#20/#21), followed by
 integration/save/reset validation before extracting Impact Physics. The
