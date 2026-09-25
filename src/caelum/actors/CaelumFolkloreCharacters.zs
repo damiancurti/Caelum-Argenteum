@@ -470,6 +470,11 @@ class CaelumMandinga : CaelumFolkloreCombatActor
         return "caelum/enemies/mandinga_alert";
     }
 
+    override Sound GetCombatPainSound()
+    {
+        return "caelum/enemies/mandinga_pain";
+    }
+
     States
     {
     Spawn:
@@ -565,6 +570,11 @@ class CaelumZupayColossus : CaelumFolkloreCombatActor
     override String GetCaelumRecognitionSound()
     {
         return "caelum/enemies/zupay_alert";
+    }
+
+    override Sound GetCombatPainSound()
+    {
+        return "caelum/enemies/zupay_pain";
     }
 
     States

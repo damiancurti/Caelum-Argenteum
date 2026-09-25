@@ -1,6 +1,44 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **4.36.9** — 2026-09-25.
+Documentation version: **4.36.14** — 2026-09-25.
+
+## 4.36.14 — Pain sounds, dialogue cue, map music and story intermissions (#31)
+
+Baseline: integrated 4.36.9, `7a01ff00` (author acceptance of #15). Issue #31
+integrates the author-selected combat-pain sounds and local music without
+inventing replacements. Mandinga uses
+`sounds/caelum/enemies/mandinga/ca_mandinga_pain.ogg`; Zupay uses
+`sounds/caelum/enemies/zupay/ca_zupay_pain.ogg`; Argento, Ronnie and a male
+player profile use `sounds/caelum/player/pain/ca_player_pain_male.ogg`; Caella
+and a female player profile use
+`sounds/caelum/player/pain/ca_player_pain_female.ogg`; the Bull exposes twelve
+separate bellow variants under `caelum/enemies/bull_pain` through the existing
+`$random` mechanism. Rulo remains silent. The new `GetCombatPainSound()` hook
+resolves one spatial sound per actual pain event after the existing custom
+pain roll, so death/chase/attack states are unchanged and no duplicate
+playback is introduced.
+
+The supplied Suno dialogue-opening WAV replaces the prior harp excerpt in
+`sounds/caelum/ui/ca_dialogue_open.ogg` (stereo 48 kHz, 134 400 samples,
+2.8 s). `GameInfo.ChatSound`, `$limit 1` and `$singular` are unchanged, so a
+conversation opening plays once rather than on every line/redraw. MAP01 now
+uses `CA_MUS02`; MAP02 uses the local `CA_MUS03_SEWER`; MAP06 uses the local
+`CA_MUS04_PORT`; MAP07 uses the local `CA_MUS05_COAST`. `CA_MUS01` is the
+opening story-intermission music and is reserved for future chapter-end
+intermissions. `CaelumStoryIntermission` starts `CA_MUS01` on a non-save
+MAP01 `WorldLoaded` after character creation, and returns to `CA_MUS02` when
+the opening conversation closes or after the safety timeout.
+
+All MP3 backups in `assets/audio_stock/music/`, the unused local tracks and the
+source files in `assets/audio_stock/sounds/` are preserved and remain unbound.
+The source-to-runtime manifest and pending external-license verification are in
+`src/licenses/AUDIO_ISSUE_31_CREDITS.md`.
+
+Agent checks: `python validate_project.py` reports 99 runtime audio files
+(97 OGG + 2 MP3) and no errors after `python build_document_index.py`.
+`build_dev.ps1` packages 6,058 files, and GZDoom 4.14.2 compiles the complete
+PK3 and loads MAP01 without script errors. Author acceptance of the in-game
+pain, music, dialogue cue and opening flow is pending.
 
 ## 4.36.9 — Approved Tarot fronts and collection bindings (#15)
 

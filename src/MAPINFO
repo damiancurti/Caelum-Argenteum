@@ -21,7 +21,7 @@ GameInfo
 
     // El controlador de prólogo reconstruye MAP01 desde el estado viajero; los
     // demás EventHandlers observan el motor sin convertirse en actores del mapa.
-    EventHandlers = "CaelumMenuAudio", "CaelumConversationResume", "CaelumWorldClockTicker", "CaelumVehicleWorld", "CaelumMassAIScheduler", "CaelumMainM00QuestController", "CaelumHUDOverlay", "CaelumJournalOverlay", "CaelumDebugOverlay", "CaelumChestPreview", "CaelumMazeGateEvents"
+    EventHandlers = "CaelumMenuAudio", "CaelumStoryIntermission", "CaelumConversationResume", "CaelumWorldClockTicker", "CaelumVehicleWorld", "CaelumMassAIScheduler", "CaelumMainM00QuestController", "CaelumHUDOverlay", "CaelumJournalOverlay", "CaelumDebugOverlay", "CaelumChestPreview", "CaelumMazeGateEvents"
 
     // USDF nativo cargado de forma aditiva en todos los mapas. Esto permite
     // trasladar o recrear a Palomo durante futuras etapas de misión sin
@@ -47,7 +47,7 @@ skill Caelum
 map MAP01 "$CA_MAP01_NAME"
 {
     UnFreezeSinglePlayerConversations
-    music = "CA_MUS01"
+    music = "CA_MUS02"
 
     // La puerta de retorno valida inventario y progreso antes de ChangeLevel.
     nointermission
@@ -59,7 +59,7 @@ map MAP01 "$CA_MAP01_NAME"
 map MAP02 "$CA_MAP02_SEWER_NAME"
 {
     UnFreezeSinglePlayerConversations
-    music = "CA_MUS02"
+    music = "CA_MUS03_SEWER"
     nointermission
     cluster = 434
 }
@@ -97,7 +97,7 @@ map MAP05 "$CA_MAP05_NAME"
 map MAP06 "$CA_MAP06_NAME"
 {
     UnFreezeSinglePlayerConversations
-    music = "CA_MUS02"
+    music = "CA_MUS04_PORT"
     sky1 = "CABASKY", 0
     nointermission
     cluster = 434
@@ -106,7 +106,7 @@ map MAP06 "$CA_MAP06_NAME"
 map MAP07 "$CA_MAP07_NAME"
 {
     UnFreezeSinglePlayerConversations
-    music = "CA_MUS02"
+    music = "CA_MUS05_COAST"
     sky1 = "CABASKY", 0
     nointermission
     cluster = 434

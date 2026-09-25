@@ -1,6 +1,6 @@
 # CONTEXT.md — Ultra-condensed summary of Caelum Argenteum
 
-Documentation version: **4.36.9** — 2026-09-25.
+Documentation version: **4.36.14** — 2026-09-25.
 
 Summary so an AI or a contributor can understand the project without reading
 the five full canonical documents. Source: `docs/PROJECT.md`,
@@ -64,7 +64,15 @@ the gauchos and rural culture, and the humans the urban porteño society.
 
 ## Current status
 
-Current release **4.36.9** implements #15: the author-approved 78-card Tarot
+Current release **4.36.14** implements #31: the author-selected combat-pain
+sounds, the supplied Suno dialogue-opening cue, the local sewer/port/coast
+music and the opening story-intermission presentation are integrated while all
+unused stock and MP3 backups remain preserved and unbound. The former MAP01
+music becomes the opening/reserved chapter-intermission track; MAP01 now uses
+the former MAP02 music, MAP02 uses the new sewer track, MAP06 uses the new port
+track and MAP07 uses the new coast track.
+
+The preceding **4.36.9** implements #15: the author-approved 78-card Tarot
 front package is integrated under `src/graphics/caelum/tarot`, the shared card
 back is preserved, and each front is bound to its persistent card ID. The
 Journal now shows the correct owned front (El Loco and the Ace of Cups) with

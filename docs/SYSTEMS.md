@@ -1,6 +1,6 @@
 # Caelum Argenteum — Current systems and rules
 
-Documentation version: **4.36.9** — 2026-09-25.
+Documentation version: **4.36.14** — 2026-09-25.
 
 ## 4.36.8 — Prisoner rescue, escort and port rewards (#14)
 

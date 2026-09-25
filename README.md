@@ -4,8 +4,11 @@ An independent dark fantasy FPS-RPG inspired by nineteenth-century Argentina.
 Author and game designer: **Damian Curti**. Development target: **GZDoom 4.14.2**
 on Windows 11. The final game is intended to be independent of Doom assets.
 
-**Current release: 4.36.9.** Obtain and update the complete repository, validate
+**Current release: 4.36.14.** Obtain and update the complete repository, validate
 it, then rebuild with `run_dev.bat` as described below. Issue
+[#31](https://github.com/damiancurti/Caelum-Argenteum/issues/31) integrates the
+author-selected pain sounds, the supplied Suno dialogue-opening cue, the local
+sewer/port/coast music and the opening story-intermission music. Issue
 [#15](https://github.com/damiancurti/Caelum-Argenteum/issues/15) integrates the
 author-approved 78-card Tarot fronts from the supplied package, preserves the
 shared card back, and binds every runtime front to its persistent card ID so
@@ -126,6 +129,10 @@ preserved. The broader unfinished 4.36 physics roadmap remains in PROJECT.md.
 - Original fallback fists, a dorsal left bow grip and smaller ground bullets.
 - Aimed Use hints and a repeatable, occupancy-checked gallery reset lever.
 - Visible native hub travel transitions with captured departure views.
+- Author-selected combat-pain sounds for Mandinga, Zupay, Bull, Argento,
+  Ronnie, Caella and the applicable player profile.
+- Local sewer/port/coast music and the opening/reserved chapter-intermission
+  music, plus the supplied dialogue-opening cue.
 
 - Original two-state column/wall lever, larger bull and spherical hazard rocks.
 - Single-use explosive mines, safe local teleport traps and native ceiling crushers.
@@ -809,6 +816,9 @@ CA-4367-PRISONER-ART-01 passed on 2026-09-24, and CA-4368-RESCUE-01 passed on
 2026-09-25. The 4.36.9 author check `CA-4369-TAROT-ART-01` passed on 2026-09-25
 and was removed from [pending_test.txt](pending_test.txt); it covered the actual
 in-game Tarot imagery.
+The 4.36.14 audio integration passed static validation, packaging and a native
+ZScript compile; the in-game pain, music, dialogue cue and opening flow await
+the author's focused check, recorded in [pending_test.txt](pending_test.txt).
 HISTORY records the accepted CA-4364-T1-LOOT-01. The 4.36.2 bow
 check also passed on the author's confirmation. On 2026-09-23 the
 author confirmed zero validator errors, successful rebuild/launch and both
