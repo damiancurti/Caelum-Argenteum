@@ -37,13 +37,13 @@ The existing MAP01/MAP02 tracks remain **The Argentine Omen** by `marjaja197`
 
 ## Pain-state mapping
 
-| Actor / voice profile | Runtime file | Author-selected source URL | Local source |
-| --- | --- | --- | --- |
-| Mandinga | `sounds/caelum/enemies/mandinga/ca_mandinga_pain.ogg` | https://pixabay.com/sound-effects/horror-demon-voice-damage-grunt-503867/ | `assets/audio_stock/sounds/phatphrogstudio-demon-voice-damage-grunt-503867.mp3` |
-| Male human / male Caelith, Argento, Ronnie | `sounds/caelum/player/pain/ca_player_pain_male.ogg` | https://dev.creazilla.com/media/audio/15427820/gruntsound | `assets/audio_stock/sounds/gruntsound-sound.flac` |
-| Female human / female Caelith, Caella | `sounds/caelum/player/pain/ca_player_pain_female.ogg` | https://directory.audio/es/efectos-de-sonido/gente/36688-mujer-gritos-de-dolor | `assets/audio_stock/sounds/woman-screaming-of-joy.mp3` |
-| Bull | `sounds/caelum/enemies/bull/ca_bull_pain_01.ogg` through `ca_bull_pain_12.ogg` | https://pixabay.com/sound-effects/people-weird-bull-bellow-451598/ | `assets/audio_stock/sounds/53439420-weird-bull-bellow-451598.mp3` |
-| Zupay | `sounds/caelum/enemies/zupay/ca_zupay_pain.ogg` | https://www.summerengine.com/asset-store/sfx-deep-monstrous-demon-boss-roar-433fab20 | `assets/audio_stock/sounds/sfx_deep_monstrous_demon_boss_roar_.mp3` |
+| Actor / voice profile | Runtime file | Verified credited creator | Source URL | Displayed terms |
+| --- | --- | --- | --- | --- |
+| Mandinga | `sounds/caelum/enemies/mandinga/ca_mandinga_pain.ogg` | **PhatPhrogStudio** | https://pixabay.com/sound-effects/horror-demon-voice-damage-grunt-503867/ | Pixabay asset 503867; displayed license/terms not recorded in the author's update. |
+| Male human / male Caelith, Argento, Ronnie | `sounds/caelum/player/pain/ca_player_pain_male.ogg` | **Snaginneb** | https://dev.creazilla.com/media/audio/15427820/gruntsound | Author-supplied screenshot: Author Snaginneb, Source Freesound.org, Public Domain (CC0). Original Freesound URL not yet verified. |
+| Female human / female Caelith, Caella | `sounds/caelum/player/pain/ca_player_pain_female.ogg` | **freesman** | https://directory.audio/es/efectos-de-sonido/gente/36688-mujer-gritos-de-dolor | Directory.audio asset 36688 displayed as CC0. |
+| Bull | `sounds/caelum/enemies/bull/ca_bull_pain_01.ogg` through `ca_bull_pain_12.ogg` | **53439420** | https://pixabay.com/sound-effects/people-weird-bull-bellow-451598/ | Pixabay asset 451598; displayed account name retained for all variants. Displayed license/terms not recorded in the author's update. |
+| Zupay | `sounds/caelum/enemies/zupay/ca_zupay_pain.ogg` | **Brorsan Beppe** | https://www.summerengine.com/asset-store/sfx-deep-monstrous-demon-boss-roar-433fab20 | Author-supplied screenshot: Creator Brorsan Beppe, License CC0, Generated via ElevenLabs sound_effects, source Summerengine. |
 
 Rulo remains silent for combat pain; it is not assigned the human profile.
 
@@ -78,11 +78,14 @@ mechanism; the full sequence is never played for one injury.
   content. It is the supplied stereo 48 kHz WAV, 134 400 samples (2.8 s), and
   remains the only `GameInfo.ChatSound` emitter with `$limit 1` and `$singular`.
 - Music tracks are stereo 48 kHz Ogg Vorbis from the supplied WAV masters.
-- The external creator names and applicable license/usage terms for the five
-  selected pain sources were not retrievable during implementation from the
-  URLs above. The exact source files and URLs are preserved here; license
-  verification and any required notices remain pending and must be resolved
-  before final public redistribution.
+- The 2026-09-25 issue update records the verified credited names above from
+  author-inspected source pages/screenshots. The project does not credit the
+  hosting platforms or ElevenLabs as human creators; ElevenLabs is disclosed
+  as the generation tool for the Zupay sound.
+- The displayed CC0 labels are retained for Snaginneb, freesman and Brorsan
+  Beppe. Pixabay asset-page license/usage terms for PhatPhrogStudio and
+  `53439420` still need to be confirmed and recorded before final public
+  redistribution.
 
 ## Existing credits
 

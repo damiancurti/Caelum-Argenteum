@@ -11,10 +11,10 @@
 // the existing prologue exit already owns its confirmed notice and transfer.
 class CaelumStoryIntermission : StaticEventHandler
 {
-    ui bool OpeningPending;
-    ui bool OpeningMusicStarted;
-    ui bool OpeningConversationSeen;
-    ui int OpeningTicks;
+    bool OpeningPending;
+    bool OpeningMusicStarted;
+    bool OpeningConversationSeen;
+    int OpeningTicks;
 
     override void WorldLoaded(WorldEvent e)
     {

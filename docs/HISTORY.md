@@ -31,8 +31,10 @@ the opening conversation closes or after the safety timeout.
 
 All MP3 backups in `assets/audio_stock/music/`, the unused local tracks and the
 source files in `assets/audio_stock/sounds/` are preserved and remain unbound.
-The source-to-runtime manifest and pending external-license verification are in
-`src/licenses/AUDIO_ISSUE_31_CREDITS.md`.
+The source-to-runtime manifest and the author-verified credit names are in
+`src/licenses/AUDIO_ISSUE_31_CREDITS.md`. Displayed CC0 labels for Snaginneb,
+freesman and Brorsan Beppe are retained; Pixabay page terms for PhatPhrogStudio
+and `53439420` remain to be confirmed before final public redistribution.
 
 Agent checks: `python validate_project.py` reports 99 runtime audio files
 (97 OGG + 2 MP3) and no errors after `python build_document_index.py`.
