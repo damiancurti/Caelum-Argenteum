@@ -65,10 +65,10 @@ split into two framed leaves for a clearer door silhouette.
 
 Static validation: `build_dev.ps1` packages the new source tree and the
 generator is deterministic and idempotent. Native GZDoom 4.14.2 screenshots are
-captured under `assets/validation_43610` for the MAP03 gallery; the author
-visual check remains separate. `CA-43610-SIEGE-ART-01` is recorded as pending
-in `pending_test.txt` until the author confirms the cannon, ram and gate states
-and their clearances in the MAP03 gallery.
+captured under `assets/validation_43610` for the MAP03 gallery. The author
+confirmed the cannon, ram and gate states and their clearances on 2026-09-26;
+`CA-43610-SIEGE-ART-01` is recorded as PASS and removed from `pending_test.txt`,
+leaving the author-test queue empty.
 
 ## 4.36.9 — Approved Tarot fronts and collection bindings (#15)
 

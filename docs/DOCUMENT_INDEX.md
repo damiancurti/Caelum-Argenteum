@@ -115,9 +115,9 @@ SHA-256: `992b6502428e151d13e0b51b7db840fe5fea283ecaff863e79fcba8cc9bac9b1`
 - Lines 1491-1500 - [`assets/first_person_v3/`](ASSETS.md#assetsfirst_person_v3) - context: Caelum Argenteum — Audio and art > Historical source material
 - Lines 1501-1522 - [Sources and generators after the 4.33.0h audit](ASSETS.md#sources-and-generators-after-the-4330h-audit) - context: Caelum Argenteum — Audio and art
 
-## [HISTORY.md](HISTORY.md) - 163055 words
+## [HISTORY.md](HISTORY.md) - 163053 words
 
-SHA-256: `027303d8f6699d58da23e85c97f61364f945ff25bd89fafe0f8aeb9def4e15fc`
+SHA-256: `10dc1d11a45706659214d3723fa999f48222c76f3061c1af39e33509363f749d`
 
 - Lines 1-4 - [Caelum Argenteum — Consolidated history](HISTORY.md#caelum-argenteum--consolidated-history) - context: -
 - Lines 5-45 - [4.36.14 — Pain sounds, dialogue cue, map music and story intermissions (#31)](HISTORY.md#43614--pain-sounds-dialogue-cue-map-music-and-story-intermissions-31) - context: Caelum Argenteum — Consolidated history
@@ -613,6 +613,6 @@ SHA-256: `6bb1f669558492ce2901d940259c43fb7cff49e644fccac2928268b8605a8292`
 - Lines 3947-3975 - [Native dialogues and audio](SYSTEMS.md#native-dialogues-and-audio) - context: Caelum Argenteum — Current systems and rules
 
 <!-- DOCUMENT_INDEX_META
-{"documents": [{"path": "ASSETS.md", "sha256": "992b6502428e151d13e0b51b7db840fe5fea283ecaff863e79fcba8cc9bac9b1", "words": 13259}, {"path": "HISTORY.md", "sha256": "027303d8f6699d58da23e85c97f61364f945ff25bd89fafe0f8aeb9def4e15fc", "words": 163055}, {"path": "MAP01.txt", "sha256": "7235e096797f666c0861c740181d3898a5f5de3e801105d4ee688288068b19d4", "words": 25136}, {"path": "PROJECT.md", "sha256": "4c6ee7c55de5097f6c315774eca63ab29a4ec80235494c35d05ccd9a5fb21ae2", "words": 30439}, {"path": "SYSTEMS.md", "sha256": "6bb1f669558492ce2901d940259c43fb7cff49e644fccac2928268b8605a8292", "words": 38282}], "generated_by": "build_document_index.py", "threshold_words": 5000}
+{"documents": [{"path": "ASSETS.md", "sha256": "992b6502428e151d13e0b51b7db840fe5fea283ecaff863e79fcba8cc9bac9b1", "words": 13259}, {"path": "HISTORY.md", "sha256": "10dc1d11a45706659214d3723fa999f48222c76f3061c1af39e33509363f749d", "words": 163053}, {"path": "MAP01.txt", "sha256": "7235e096797f666c0861c740181d3898a5f5de3e801105d4ee688288068b19d4", "words": 25136}, {"path": "PROJECT.md", "sha256": "4c6ee7c55de5097f6c315774eca63ab29a4ec80235494c35d05ccd9a5fb21ae2", "words": 30439}, {"path": "SYSTEMS.md", "sha256": "6bb1f669558492ce2901d940259c43fb7cff49e644fccac2928268b8605a8292", "words": 38282}], "generated_by": "build_document_index.py", "threshold_words": 5000}
 DOCUMENT_INDEX_META -->
 
