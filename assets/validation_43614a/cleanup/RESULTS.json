@@ -1,0 +1,46 @@
+{
+  "issue": 18,
+  "version": "4.36.14a",
+  "date": "2026-09-26",
+  "baseline": "67533196",
+  "request": "Author passed all visual tests and requested removal of remaining MAP03 furniture and workstations.",
+  "author_art_acceptance": "CA-43614A-SIEGE-ART-01 PASS, 2026-09-26. Historical-scale and mechanics qualifications retained.",
+  "cleanup_evidence": "Agent native verification, Windows GZDoom 4.14.2, Vulkan, disposable MAP03.",
+  "baseline_fixtures": 56,
+  "baseline_saved_fixtures_with_probe": 61,
+  "fresh_and_saved_MAP03": {
+    "remaining_fixtures": 0,
+    "preserved_table_stack": 7,
+    "stack_owner": null,
+    "cannons": 4,
+    "rams": 3,
+    "gates": 9
+  },
+  "repeated_initializers_and_save_reload": "PASS; no respawn or duplicated stack",
+  "other_maps": {
+    "MAP02": {
+      "fixtures": 25,
+      "crafting_stations": 19
+    },
+    "MAP06": {
+      "fixtures": 3
+    }
+  },
+  "static": "validate_project.py PASS; regenerated mixed source/binding file, then two byte-identical generator runs PASS.",
+  "save_scope": "Existing controller handles saved preparation flags; no new persistent fields or WAD changes. Original save kept locally for rollback.",
+  "reproduction": [
+    "Load qa alongside baseline PK3 with original package basename; map MAP03; wait 140; save siege_cleanup_before; wait 5; quit.",
+    "Load qa with corrected PK3; map MAP03; wait 340; quit. Clock 80 seeds a late table/stack/chair/bed/station; clocks 220/300 verify cleanup.",
+    "Use the same savedir and -loadgame siege_cleanup_before.zds; wait 190; save siege_cleanup_after; wait 5; quit.",
+    "Load siege_cleanup_after.zds; wait 100; quit. Clock 400 verifies idempotence.",
+    "Load MAP02 and MAP06 separately with qa; wait 315; quit to verify retained facilities."
+  ],
+  "harness_notes": "Two initial load attempts passed a path redundantly with -savedir and failed before loading. Passing only the save filename succeeded; not a save-format failure.",
+  "source_sha256": {
+    "src/caelum/quests/CaelumMainM00QuestController.zs": "45206447d7b0098a224ca336e678fa6f00d07870a02e46fcf1fbbaa4e668fe86",
+    "src/caelum/world/CaelumDining.zs": "ab1c56755b2995dcb96a4c5fe860fb5fa8a4a32dcaac9e9894cbe11e592a98be",
+    "src/caelum/world/CaelumRestFurniture.zs": "3eba71f60960d9ad12c0cd3297d2dd0cb4f3cf0b26fe6da7b843edc3c4e9b304",
+    "src/caelum/world/CaelumSewerTrialSupport.zs": "46c2e3753cac0f5562aef342a5a5ad7f45a0e2865ef52a46e119f5789d618b26",
+    "src/caelum/world/CaelumSiegeAssets.zs": "e5f7ade3bb2674ff3ba6591161d2c4b31a31f090a88b4789b6df943bec8d7314"
+  }
+}

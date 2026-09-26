@@ -187,6 +187,36 @@ previous package. See [validation evidence](../assets/validation_4365/RESULTS.js
 Keep compatibility mode for that campaign; normal builds provide the rebuilt
 map for new campaigns. No external save rewriting is required.
 
+## CA-KP-009 — MODELDEF slots overlay state meshes
+
+Status/evidence: ENGINE-VERIFIED, 2026-09-26; #18 follow-up, 4.36.14a.
+Affected baseline: `95d8f111` MODELDEF bindings; reproduced with remeshed
+working-tree assets before correcting those bindings. Environment: Windows,
+GZDoom 4.14.2, Vulkan, disposable fresh MAP03 and a local development IWAD.
+
+Symptom: intact/damaged/open gate meshes appear together, leaving a visible
+closed leaf across an open doorway. Cannon and ram states also overlap.
+The actors themselves have no SOLID flag; this is not proof of a collider bug.
+
+Cause: model slots describe simultaneous components. Defining three models in
+slots 0/1/2 and assigning a different slot to each sprite frame does not exclude
+the other components. Fix: generate a separate single-slot MODELDEF block for
+each actor/frame. Preserve actor names and state labels.
+
+Reproduction: fresh MAP03, inspect a gate's Intact and Broken gallery poses.
+The old bindings overlay the panels; corrected bindings show one closed pair
+or one open pair. Retained [evidence](../assets/validation_43614a/RESULTS.json)
+contains the before screenshot, all final native views and the reproducible
+QA addon. Native TryMove checks cross each open preview without noclip.
+The failed intermediate north-wall placement is recorded separately; a clear
+mesh does not imply clear map geometry behind it.
+
+Regression: `python assets/validation_43614a/check_siege.py` checks exclusive
+state bindings, valid OBJ/material references and two byte-identical generator
+runs. Render affected states in the target engine after binding changes.
+Author acceptance: `CA-43614A-SIEGE-ART-01` passed on 2026-09-26. This verifies visual
+previews, not future breakable-gate physics or historical machinery dimensions.
+
 ## Rules for adding and updating entries
 
 1. Add an entry only for reusable engineering knowledge: a recurring failure, a non-obvious project constraint, or a verified cause/fix likely to prevent future work. Ordinary progress belongs in the issue.

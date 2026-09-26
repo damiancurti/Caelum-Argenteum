@@ -9,19 +9,21 @@ generator does not invent balance values, mass, damage or reload timing.
 
 from __future__ import annotations
 
+import json
 import math
 from pathlib import Path
 from typing import List, Sequence, Tuple
 
 from PIL import Image
 
-from generate_environment_models import Mesh
+from generate_environment_models import Mesh, add, subtract, multiply, normalize, cross
 
 
 Point = Tuple[float, float, float]
 
 # One map unit (MU) is 1/32 of a metre in this project's physics convention.
-MAP_UNITS_PER_METER = 32.0
+SPEC = json.loads(Path(__file__).with_name("siege_visuals.json").read_text(encoding="utf-8"))
+MAP_UNITS_PER_METER = SPEC["map_units_per_metre"]
 
 WOOD = "models/caelum/props/stations/ca_station_wood.png"
 IRON = "models/caelum/props/stations/ca_station_iron.png"
@@ -100,112 +102,208 @@ def add_box_rot_y(
         mesh.add_quad(material, face)
 
 
+def add_beam(mesh: Mesh, material: str, start: Point, end: Point,
+             width: float, depth: float) -> None:
+    axis = normalize(subtract(end, start))
+    reference = (0, 0, 1) if abs(axis[2]) < 0.85 else (0, 1, 0)
+    a = multiply(normalize(cross(axis, reference)), width / 2)
+    b = multiply(normalize(cross(axis, a)), depth / 2)
+    rings = [[add(p, add(multiply(a, i), multiply(b, j)))
+              for i, j in ((-1, -1), (1, -1), (1, 1), (-1, 1))]
+             for p in (start, end)]
+    mesh.add_quad(material, tuple(reversed(rings[0])))
+    mesh.add_quad(material, rings[1])
+    for i in range(4):
+        j = (i + 1) % 4
+        mesh.add_quad(material, (rings[0][i], rings[0][j], rings[1][j], rings[1][i]))
+
+
+def add_tube(mesh: Mesh, material: str, start: Point, end: Point,
+             outer: float, inner: float, sides: int = 24) -> None:
+    # Annular ends and inner walls: never cap a wheel rim or muzzle with a disk.
+    axis = normalize(subtract(end, start))
+    ref = (0, 1, 0) if abs(axis[1]) < 0.85 else (1, 0, 0)
+    a = normalize(cross(axis, ref))
+    b = normalize(cross(axis, a))
+    def ring(p, radius):
+        return [add(p, add(multiply(a, radius * math.cos(math.tau * i / sides)),
+                           multiply(b, radius * math.sin(math.tau * i / sides))))
+                for i in range(sides)]
+    os, oe, ins, ine = ring(start, outer), ring(end, outer), ring(start, inner), ring(end, inner)
+    for i in range(sides):
+        j = (i + 1) % sides
+        for face in ((os[i], os[j], oe[j], oe[i]), (ins[j], ins[i], ine[i], ine[j]),
+                     (os[j], os[i], ins[i], ins[j]), (oe[i], oe[j], ine[j], ine[i])):
+            mesh.add_quad(material, face)
+
+
 def add_wheel(mesh: Mesh, center: Point, radius: float, width: float) -> None:
     cx, cy, cz = center
-    mesh.add_frustum(IRON, (cx, cy, cz - width / 2.0), (cx, cy, cz + width / 2.0),
-                     radius, radius, 12, True, True, 0.0)
-    mesh.add_frustum(WOOD, (cx, cy, cz - width * 0.38), (cx, cy, cz + width * 0.38),
-                     radius * 0.84, radius * 0.84, 12, True, True, 0.0)
-    mesh.add_frustum(IRON, (cx, cy, cz - width * 0.25), (cx, cy, cz + width * 0.25),
-                     radius * 0.18, radius * 0.18, 8, True, True, 0.0)
-    for spoke in range(6):
-        angle = math.tau * spoke / 6.0
-        end = (cx + math.cos(angle) * radius * 0.78, cy + math.sin(angle) * radius * 0.78, cz)
-        add_box(mesh, WOOD, end, (radius * 0.22, radius * 0.22, width * 0.42))
+    for material, outer, inner, thickness in (
+        (IRON, radius, radius * 0.92, width),
+        (WOOD, radius * 0.925, radius * 0.77, width * 0.86),
+    ):
+        add_tube(mesh, material, (cx, cy, cz - thickness / 2),
+                 (cx, cy, cz + thickness / 2), outer, inner)
+    for i in range(12):
+        angle = math.tau * i / 12
+        direction = (math.cos(angle), math.sin(angle), 0)
+        add_beam(mesh, WOOD, add(center, multiply(direction, radius * 0.16)),
+                 add(center, multiply(direction, radius * 0.82)), radius * 0.10, width * 0.48)
+    mesh.add_frustum(WOOD, (cx, cy, cz - width * 0.8), (cx, cy, cz + width * 0.8),
+                     radius * 0.23, radius * 0.23, 16)
+    for side in (-1, 1):
+        mesh.add_frustum(IRON, (cx, cy, cz + side * width * 0.65),
+                         (cx, cy, cz + side * width * 0.87), radius * 0.17, radius * 0.17, 16)
 
 
-def build_cannon_carriage(mesh: Mesh, barrel_offset: float) -> None:
-    # Two wooden trail cheeks, an iron axle and two spoked wheels.
-    for z in (-18.0, 18.0):
-        add_box(mesh, WOOD, (-14.0, 14.0, z), (72.0, 8.0, 6.0))
-    add_box(mesh, IRON, (4.0, 18.0, 0.0), (8.0, 6.0, 44.0))
-    add_wheel(mesh, (4.0, 18.0, -24.0), 17.0, 8.0)
-    add_wheel(mesh, (4.0, 18.0, 24.0), 17.0, 8.0)
-    add_box(mesh, IRON, (20.0, 10.0, 0.0), (6.0, 5.0, 30.0))
-
-
-def build_cannon(mesh: Mesh, barrel_end: Point, muzzle: Point, breech_z: float) -> None:
-    build_cannon_carriage(mesh, 0.0)
-    # Barrel along X: breech at barrel_end, muzzle at muzzle. Raised/loading
-    # states tilt the line by moving the muzzle vertically.
-    mesh.add_frustum(IRON, barrel_end, muzzle, 8.0, 5.5, 12, True, True, 0.0)
-    mesh.add_frustum(BRASS, muzzle, (muzzle[0] + 3.0, muzzle[1], muzzle[2]),
-                     6.2, 7.0, 12, True, True, 0.0)
-    add_box(mesh, IRON, (barrel_end[0] - 8.0, barrel_end[1], barrel_end[2]),
-            (14.0, 16.0, breech_z))
-    # Trunnion caps on each side of the carriage.
-    for z in (-15.0, 15.0):
-        add_box(mesh, BRASS, (2.0, 26.0, z), (5.0, 9.0, 4.0))
-
-
-def cannon_state(name: str, muzzle_y: float, recoil: float, breech_open: bool) -> None:
+def cannon_state(name: str, recoil: float, breech_open: bool) -> Mesh:
     mesh = Mesh(name)
-    muzzle = (58.0 + recoil, muzzle_y, 0.0)
-    breech = (-20.0 + recoil, 32.0, 0.0)
-    build_cannon(mesh, breech, muzzle, 12.0 if breech_open else 14.0)
+    spec = SPEC['cannon']
+    # A rigid field carriage recoils as a whole; no modern sliding recoil cradle.
+    for side in (-1, 1):
+        add_beam(mesh, IRON, (-50, 6, side * 6), (4, 24, side * 13), 7, 5)
+        add_box(mesh, IRON, (2, 26, side * 12), (22, 12, 4))
+        add_box(mesh, IRON, (-48, 4, side * 6), (12, 4, 8))
+    add_box(mesh, IRON, (-18, 14, 0), (6, 5, 21))
+    mesh.add_frustum(IRON, (4, 18, -29), (4, 18, 29), 2.4, 2.4, 12)
+    cx, cy, cz = spec['wheel_center']
+    for side in (-1, 1):
+        add_wheel(mesh, (cx, cy, side * cz), spec['wheel_radius'], spec['wheel_width'])
+    breech, muzzle = tuple(spec['breech']), tuple(spec['muzzle'])
+    # Stepped steel tube, trunnions and an actual recessed 75 mm bore.
+    shoulder = (-4, 32, 0)
+    muzzle_base = (muzzle[0] - 4, muzzle[1], 0)
+    mesh.add_frustum(IRON, breech, shoulder, 7.8, 7.2, 24, True, False)
+    mesh.add_frustum(IRON, shoulder, muzzle_base, 7.2, 3.4, 24, False, False)
+    bore = spec['calibre_metres'] * MAP_UNITS_PER_METER / 2
+    add_tube(mesh, IRON, muzzle_base, muzzle, 3.7, bore)
+    mesh.add_frustum(INSIDE, (muzzle[0] - 12, 32, 0), muzzle, bore, bore, 24, True, False)
+    mesh.add_frustum(IRON, (2, 32, -17), (2, 32, 17), 3, 3, 16)
+    # Sliding wedge and fixed receiver outline. Open state reveals the recess.
+    add_box(mesh, IRON, (-23, 32, 0), (8, 15, 16))
+    add_box(mesh, INSIDE, (-27.1, 32, 0), (0.2, 9, 10))
+    slide = 11 if breech_open else 0
+    add_box(mesh, IRON, (-28, 32, slide), (3, 10, 12))
+    add_beam(mesh, IRON, (-30, 32, slide + 5), (-30, 24, slide + 9), 1.5, 1.5)
+    add_box(mesh, WOOD, (-30, 24, slide + 11), (2, 2, 6))
+    add_beam(mesh, IRON, (-17, 17, 0), (-17, 25, 0), 2, 2)
+    mesh.vertices = [(x + recoil, y, z) for x, y, z in mesh.vertices]
     return mesh
 
 
-def build_ram(mesh: Mesh, log_end: Point, head_center: Point) -> None:
-    # Frame rails, cross beams and four wheels.
-    for z in (-30.0, 30.0):
-        add_box(mesh, WOOD, (-16.0, 16.0, z), (150.0, 8.0, 8.0))
-    for x in (-64.0, 64.0):
-        add_box(mesh, WOOD, (x, 28.0, 0.0), (8.0, 8.0, 68.0))
-    for x in (-48.0, 48.0):
-        add_wheel(mesh, (x, 18.0, -38.0), 15.0, 7.0)
-        add_wheel(mesh, (x, 18.0, 38.0), 15.0, 7.0)
-    # Striking assembly: the moving log and its iron head.
-    mesh.add_frustum(WOOD, (-92.0, 44.0, 0.0), log_end, 11.0, 11.0, 10, True, True, 0.0)
-    mesh.add_frustum(IRON, log_end, head_center, 11.0, 15.0, 10, True, True, 0.0)
-    mesh.add_frustum(BRASS, head_center, (head_center[0] + 3.0, head_center[1], head_center[2]),
-                     15.2, 16.0, 10, True, True, 0.0)
+def ram_state(name: str, travel: float) -> Mesh:
+    mesh = Mesh(name)
+    spec = SPEC['ram']
+    for z in (-30, 30):
+        add_box(mesh, WOOD, (-16, 16, z), (150, 8, 8))
+    for x in (-48, 48):
+        add_box(mesh, WOOD, (x, 18, 0), (8, 8, 70))
+        mesh.add_frustum(IRON, (x, 15, -42), (x, 15, 42), 2, 2, 12)
+        for side in (-1, 1):
+            add_wheel(mesh, (x, 15, side * 38), 15, 7)
+    top = spec['suspension_top_y']
+    for x in spec['suspension_x']:
+        for side in (-1, 1):
+            add_beam(mesh, WOOD, (x, 20, side * 30), (x, top, side * 13), 6, 6)
+            add_box(mesh, IRON, (x, 24, side * 29), (7, 8, 7))
+        add_box(mesh, WOOD, (x, top, 0), (9, 7, 38))
+    for side in (-1, 1):
+        add_beam(mesh, WOOD, (-72, 20, side * 30), (12, top - 2, side * 13), 4, 4)
+    # Rigid moving assembly; all states preserve the same log length and head.
+    moving = Mesh(name + '_moving')
+    start, end = tuple(spec['log_start']), tuple(spec['log_end'])
+    radius = spec['log_radius']
+    moving.add_frustum(WOOD, start, end, radius, radius, 16)
+    for x in (-72, -18, 15):
+        add_tube(moving, IRON, (x - 2, 44, 0), (x + 2, 44, 0), radius + 0.7, radius)
+    moving.add_frustum(IRON, end, (30, 44, 0), radius + 1, 14, 16)
+    add_box(moving, IRON, (32, 44, 0), (4, 25, 25))
+    for side in (-1, 1):
+        for x in (-72, -42, -12):
+            add_box(moving, WOOD, (x, 41, side * 16), (4, 4, 17))
+    for x in spec['suspension_x']:
+        for side in (-1, 1):
+            # Paired iron suspension rods stay attached in every displayed pose.
+            mesh.add_frustum(IRON, (x, top - 3, side * 9),
+                             (x + travel, 49, side * 9), 0.9, 0.9, 8)
+    offset = len(mesh.vertices)
+    mesh.vertices.extend((x + travel, y, z) for x, y, z in moving.vertices)
+    mesh.uvs.extend(moving.uvs)
+    mesh.faces.extend((mat, tuple(i + offset for i in face)) for mat, face in moving.faces)
+    return mesh
 
 
-def build_gate_frame(mesh: Mesh) -> None:
-    # Stone door frame: side jambs, lintel and threshold.
-    for z in (-16.0, 16.0):
-        add_box(mesh, STONE, (-86.0, 118.0, z), (14.0, 220.0, 12.0))
-    add_box(mesh, STONE, (0.0, 228.0, 0.0), (172.0, 16.0, 12.0))
-    add_box(mesh, STONE, (0.0, 8.0, 0.0), (172.0, 16.0, 12.0))
-
-
-def build_gate_intact(mesh: Mesh) -> None:
-    build_gate_frame(mesh)
-    # Two wooden leaves with a visible central seam and iron rails/pulls.
-    for x in (-70.0, -50.0, -30.0, -10.0, 10.0, 30.0, 50.0, 70.0):
-        add_box(mesh, WOOD, (x, 116.0, 0.0), (15.0, 208.0, 10.0))
-    for y in (32.0, 116.0, 200.0):
-        add_box(mesh, IRON, (-40.0, y, 0.0), (76.0, 7.0, 10.0))
-        add_box(mesh, IRON, (40.0, y, 0.0), (76.0, 7.0, 10.0))
-    add_box(mesh, IRON, (-8.0, 116.0, 8.0), (6.0, 24.0, 4.0))
-    add_box(mesh, IRON, (8.0, 116.0, 8.0), (6.0, 24.0, 4.0))
-
-
-def build_gate_damaged(mesh: Mesh) -> None:
-    build_gate_frame(mesh)
-    # Two intact outer planks, then a forced central gap.
-    for x in (-70.0, -10.0, 10.0, 70.0):
-        add_box(mesh, WOOD, (x, 116.0, 0.0), (15.0, 208.0, 10.0))
-    for x in (-40.0, 40.0):
-        add_box(mesh, WOOD, (x, 116.0, 0.0), (15.0, 140.0, 10.0))
-    for y in (32.0, 200.0):
-        add_box(mesh, IRON, (-44.0, y, 0.0), (104.0, 7.0, 10.0))
-        add_box(mesh, IRON, (44.0, y, 0.0), (104.0, 7.0, 10.0))
-    # A fallen plank leaning against the lower gap.
-    add_box_rot_y(mesh, WOOD, (0.0, 40.0, 10.0), (15.0, 74.0, 4.0), 18.0, (-80.0, 0.0))
-
-
-def build_gate_broken(mesh: Mesh) -> None:
-    build_gate_frame(mesh)
-    # Both halves folded open around their outer hinges.
-    for side in (-1.0, 1.0):
-        hinge = (side * 86.0, 0.0)
-        angle = -42.0 if side < 0 else 42.0
-        for offset in (-24.0, 0.0, 24.0):
-            add_box_rot_y(mesh, WOOD, (side * (42.0 + offset), 116.0, 0.0),
-                          (15.0, 208.0, 10.0), angle, hinge)
-        add_box_rot_y(mesh, IRON, (side * 42.0, 116.0, 0.0), (76.0, 7.0, 10.0), angle, hinge)
+def gate_state(name: str, material: str, state: str) -> Mesh:
+    mesh = Mesh(name)
+    spec = SPEC['gate']
+    width, height = [m * MAP_UNITS_PER_METER for m in spec['opening_metres']]
+    half = width / 2
+    thickness = spec['wood_thickness_metres'] * MAP_UNITS_PER_METER
+    jamb, depth, seam = spec['jamb_width'], spec['frame_depth'], spec['seam']
+    for side in (-1, 1):
+        add_box(mesh, STONE, (side * (half + jamb / 2), height / 2, 0), (jamb, height, depth))
+    add_box(mesh, STONE, (0, height + jamb / 2, 0), (width + 2 * jamb, jamb, depth))
+    # Flush sill: the open passage has no raised wooden/stone trip block.
+    add_box(mesh, STONE, (0, -1, 0), (width + 2 * jamb, 2, depth))
+    for side in (-1, 1):
+        leaf = Mesh(name + '_leaf')
+        center = side * half / 2
+        leaf_width = half - seam
+        # Solid panel backing with shallow plank grooves, never a picket fence.
+        add_box(leaf, WOOD, (center, height / 2, 0), (leaf_width, height, thickness))
+        face = thickness / 2
+        for i in range(1, 6):
+            x = center - leaf_width / 2 + i * leaf_width / 6
+            for front in (-1, 1):
+                add_box(leaf, INSIDE, (x, height / 2, front * (face + 0.12)), (0.13, height, 0.08))
+        rail_material = WOOD if material == 'wood' else IRON
+        for y in (height * 0.16, height * 0.5, height * 0.84):
+            for front in (-1, 1):
+                add_box(leaf, rail_material, (center, y, front * (face + 0.55)),
+                        (leaf_width - 1, 4, 1.1))
+                if material != 'wood':
+                    for i in range(6):
+                        x = center - leaf_width / 2 + (i + 0.5) * leaf_width / 6
+                        leaf.add_frustum(IRON, (x, y, front * (face + 1.1)),
+                                         (x, y, front * (face + 1.6)), 0.65, 0.45, 8)
+        for front in (-1, 1):
+            z = front * (face + 0.6)
+            add_beam(leaf, rail_material, (center - side * 20, 18, z),
+                     (center + side * 20, height - 18, z), 3.2, 1)
+        if material == 'armored':
+            # Exterior iron cladding; rear construction remains visible.
+            clad = spec['outer_cladding_metres'] * MAP_UNITS_PER_METER
+            for row in range(3):
+                add_box(leaf, IRON, (center, (row + 0.5) * height / 3, face + 2),
+                        (leaf_width - 0.3, height / 3 - 0.35, clad))
+                for x in (center - 19, center, center + 19):
+                    for y in (row * height / 3 + 2, (row + 1) * height / 3 - 2):
+                        leaf.add_frustum(IRON, (x, y, face + 2.1), (x, y, face + 2.6), 0.7, 0.5, 8)
+        for y in (height * 0.16, height * 0.84):
+            leaf.add_frustum(IRON, (side * (half - 1.3), y - 3, 0),
+                             (side * (half - 1.3), y + 3, 0), 1.3, 1.3, 12)
+        for front in (-1, 1):
+            z = front * (face + (3 if material == 'armored' and front == 1 else 1.9))
+            x = side * 5
+            for y in (43, 52):
+                add_box(leaf, IRON, (x, y, z), (3, 2, 3))
+            add_box(leaf, IRON, (x, 47.5, z + front * 1.5), (1.5, 10, 1.5))
+        if state == 'damaged':
+            # Surface scars retain the closed silhouette and leaf dimensions.
+            for front in (-1, 1):
+                z = front * (face + (2.3 if material == 'armored' and front == 1 else 0.25))
+                for dx, y, dy in ((-9, 35, 18), (7, 61, -13), (-3, 75, -20)):
+                    add_beam(leaf, INSIDE, (center + dx, y, z),
+                             (center + dx + side * 5, y + dy, z), 0.75, 0.08)
+        if state == 'broken':
+            leaf.vertices = [rot_y(p, (side * half, 0), side * spec['open_degrees'])
+                             for p in leaf.vertices]
+        offset = len(mesh.vertices)
+        mesh.vertices.extend(leaf.vertices)
+        mesh.uvs.extend(leaf.uvs)
+        mesh.faces.extend((mat, tuple(i + offset for i in face)) for mat, face in leaf.faces)
+    return mesh
 
 
 def make_transparent_sprite(path: Path) -> None:
@@ -219,37 +317,37 @@ def generate() -> None:
     model_dir.mkdir(parents=True, exist_ok=True)
     sprite_dir.mkdir(parents=True, exist_ok=True)
 
-    cannon_state("ca_siege_cannon_ready", 32.0, 0.0, False).write(model_dir / "ca_siege_cannon_ready.obj")
-    cannon_state("ca_siege_cannon_loading", 38.0, 0.0, True).write(model_dir / "ca_siege_cannon_loading.obj")
-    cannon_state("ca_siege_cannon_firing", 32.0, -10.0, False).write(model_dir / "ca_siege_cannon_firing.obj")
-    cannon_state("ca_siege_cannon_recovery", 32.0, -4.0, False).write(model_dir / "ca_siege_cannon_recovery.obj")
+    for state, recoil, opened in SPEC['cannon']['states']:
+        name = f'ca_siege_cannon_{state}'
+        cannon_state(name, recoil, opened).write(model_dir / f'{name}.obj')
+    for state, travel in SPEC['ram']['states']:
+        name = f'ca_siege_ram_{state}'
+        ram_state(name, travel).write(model_dir / f'{name}.obj')
+    for variant in SPEC['gate']['variants']:
+        for state in ('intact', 'damaged', 'broken'):
+            name = f"{variant['stem']}_{state}"
+            gate_state(name, variant['material'], state).write(model_dir / f'{name}.obj')
+    frames = [('CSGN', 'ABCD'), ('CRAM', 'ABC')]
+    frames.extend((variant['sprite'], 'ABC') for variant in SPEC['gate']['variants'])
+    for prefix, letters in frames:
+        for frame in letters:
+            make_transparent_sprite(sprite_dir / f'{prefix}{frame}0.png')
+    write_model_definitions(root / 'src/MODELDEF')
+    write_gate_gallery(root / 'src/caelum/world/CaelumSiegeAssets.zs')
+    print('Generated 16 siege meshes and 16 sprite frames.')
 
-    ram_ready = Mesh("ca_siege_ram_ready")
-    build_ram(ram_ready, (20.0, 44.0, 0.0), (30.0, 44.0, 0.0))
-    ram_ready.write(model_dir / "ca_siege_ram_ready.obj")
-    ram_strike = Mesh("ca_siege_ram_strike")
-    build_ram(ram_strike, (48.0, 44.0, 0.0), (58.0, 44.0, 0.0))
-    ram_strike.write(model_dir / "ca_siege_ram_strike.obj")
-    ram_recovery = Mesh("ca_siege_ram_recovery")
-    build_ram(ram_recovery, (4.0, 44.0, 0.0), (14.0, 44.0, 0.0))
-    ram_recovery.write(model_dir / "ca_siege_ram_recovery.obj")
 
-    gate_intact = Mesh("ca_siege_gate_intact")
-    build_gate_intact(gate_intact)
-    gate_intact.write(model_dir / "ca_siege_gate_intact.obj")
-    gate_damaged = Mesh("ca_siege_gate_damaged")
-    build_gate_damaged(gate_damaged)
-    gate_damaged.write(model_dir / "ca_siege_gate_damaged.obj")
-    gate_broken = Mesh("ca_siege_gate_broken")
-    build_gate_broken(gate_broken)
-    gate_broken.write(model_dir / "ca_siege_gate_broken.obj")
-
-    for prefix, frames in (("CSGN", "ABCD"), ("CRAM", "ABC"), ("CAGT", "ABC")):
-        for frame in frames:
-            make_transparent_sprite(sprite_dir / f"{prefix}{frame}0.png")
-
-    write_model_definitions(root / "src/MODELDEF")
-    print("Generated 10 siege meshes and 10 sprite frames.")
+def write_gate_gallery(path: Path) -> None:
+    text = path.read_text(encoding='utf-8')
+    begin = '        // BEGIN GENERATED SIEGE GATE GALLERY'
+    end = '        // END GENERATED SIEGE GATE GALLERY'
+    prefix, rest = text.split(begin, 1)
+    _, suffix = rest.split(end, 1)
+    lines = []
+    for variant, x in zip(SPEC['gate']['variants'], SPEC['gallery']['gate_material_x']):
+        for state, y in zip(('Intact', 'Damaged', 'Broken'), SPEC['gallery']['gate_state_y']):
+            lines.append(f'        SpawnState("{variant["actor"]}", ({x}, {y}, 0), "{state}");')
+    path.write_text(prefix + begin + '\n' + '\n'.join(lines) + '\n' + end + suffix, encoding='utf-8')
 
 
 MODEL_BEGIN = "// --- BEGIN GENERATED CAELUM SIEGE MODELS ---"
@@ -261,36 +359,30 @@ def write_model_definitions(path: Path) -> None:
     if MODEL_BEGIN in text and MODEL_END in text:
         prefix, rest = text.split(MODEL_BEGIN, 1)
         _, suffix = rest.split(MODEL_END, 1)
-        suffix = "\n" + suffix.lstrip("\n")
+        suffix = suffix.strip("\n")
     else:
         prefix, suffix = text, ""
-    models = (
+    models = [
         ("CaelumSiegeCannon", "ca_siege_cannon_ready.obj", "ca_siege_cannon_loading.obj",
          "ca_siege_cannon_firing.obj", "ca_siege_cannon_recovery.obj", "CSGN", "ABCD"),
         ("CaelumSiegeRam", "ca_siege_ram_ready.obj", "ca_siege_ram_strike.obj",
          "ca_siege_ram_recovery.obj", None, "CRAM", "ABC"),
-        ("CaelumSiegeGate", "ca_siege_gate_intact.obj", "ca_siege_gate_damaged.obj",
-         "ca_siege_gate_broken.obj", None, "CAGT", "ABC"),
-    )
+    ]
+    for variant in SPEC['gate']['variants']:
+        stem = variant['stem']
+        models.append((variant['actor'], f'{stem}_intact.obj', f'{stem}_damaged.obj',
+                       f'{stem}_broken.obj', None, variant['sprite'], 'ABC'))
     lines = [MODEL_BEGIN, "// Reusable siege preview meshes; states only, no mechanics."]
     for actor, m0, m1, m2, m3, sprite_prefix, frames in models:
-        lines.append(f"Model {actor}")
-        lines.append("{")
-        lines.append('    Path "models/caelum/siege"')
-        lines.append(f'    Model 0 "{m0}"')
-        lines.append(f'    Model 1 "{m1}"')
-        lines.append(f'    Model 2 "{m2}"')
-        if m3:
-            lines.append(f'    Model 3 "{m3}"')
-        lines.append("    Scale 1.0 1.0 1.0")
-        lines.append("    CorrectPixelStretch")
-        lines.append("    DontCullBackFaces")
-        for index, frame in enumerate(frames):
-            lines.append(f"    FrameIndex {sprite_prefix} {frame} {index} 0")
-        lines.append("}")
-        lines.append("")
+        # Slots are simultaneous model parts, not alternative visual states.
+        # Each frame gets an independent definition containing only slot zero.
+        for model, frame in zip((m0, m1, m2, m3), frames):
+            lines.extend((f"Model {actor}", "{", '    Path "models/caelum/siege"',
+                          f'    Model 0 "{model}"', "    Scale 1.0 1.0 1.0",
+                          "    CorrectPixelStretch", "    DontCullBackFaces",
+                          f"    FrameIndex {sprite_prefix} {frame} 0 0", "}", ""))
     lines.append(MODEL_END)
-    path.write_text(prefix.rstrip("\n") + "\n\n" + "\n".join(lines) + suffix + "\n", encoding="utf-8")
+    path.write_text(prefix.rstrip("\n") + "\n\n" + "\n".join(lines) + ("\n" + suffix if suffix else "") + "\n", encoding="utf-8")
 
 
 if __name__ == "__main__":

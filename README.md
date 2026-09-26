@@ -4,7 +4,7 @@ An independent dark fantasy FPS-RPG inspired by nineteenth-century Argentina.
 Author and game designer: **Damian Curti**. Development target: **GZDoom 4.14.2**
 on Windows 11. The final game is intended to be independent of Doom assets.
 
-**Current release: 4.36.14.** Obtain and update the complete repository, validate
+**Current release: 4.36.14a.** Obtain and update the complete repository, validate
 it, then rebuild with `run_dev.bat` as described below. Issue
 [#31](https://github.com/damiancurti/Caelum-Argenteum/issues/31) integrates the
 author-selected pain sounds, the supplied Suno dialogue-opening cue and the local
@@ -14,7 +14,14 @@ intermissions. Issue
 reusable cannon, battering-ram and destructible-gate assets as verified-rendering
 content. A deterministic generator produces the meshes, state frames and
 `MODELDEF` bindings, and the MAP03 workshop/tank shows a visual-only preview
-gallery after retiring its trial chairs, tables and cots. No siege mechanics,
+gallery. The 4.36.14a correction
+gives the gate two continuous leaves and wood/reinforced/armored variants,
+refines cannon/ram forms, and fixes overlapping state meshes. Fresh MAP03 shows
+all 16 poses; the author approved all visual checks on 2026-09-26. MAP03
+now removes remaining tables, chairs, beds and crafting stations, including
+those in existing saves, and prevents their trial initializers from respawning
+them. Exact historical
+cannon scale remains unverified. No siege mechanics,
 mass, damage, reload time or gate hardness is added here. Issue
 [#29](https://github.com/damiancurti/Caelum-Argenteum/issues/29) records the
 selective file-reading workflow for agents without changing gameplay, balance,

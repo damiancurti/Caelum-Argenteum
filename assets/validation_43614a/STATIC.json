@@ -1,0 +1,267 @@
+{
+  "result": "PASS",
+  "deterministic_runs": 2,
+  "exclusive_states": 16,
+  "hashes": {
+    "src/caelum/world/CaelumSiegeAssets.zs": "e5f7ade3bb2674ff3ba6591161d2c4b31a31f090a88b4789b6df943bec8d7314",
+    "src/MODELDEF": "93dae274f846b9c7e549c41997a04dbfc4772da366f4b7a6eade62785ea596cf",
+    "src/models/caelum/siege/ca_siege_cannon_firing.obj": "9a3d1e64136d9cd2d9486a1d06464b94096dd91fba6d81be2aedaa8479deedd4",
+    "src/models/caelum/siege/ca_siege_cannon_loading.obj": "965740b7f6f191dd0db5c858c256791f364c156173d90853a14ce2a03c5c9adf",
+    "src/models/caelum/siege/ca_siege_cannon_ready.obj": "5573aa3643cbe1e114664f401275a21e13caf7a83d04833f332ea24e0c71f88f",
+    "src/models/caelum/siege/ca_siege_cannon_recovery.obj": "ce1fd454a978fa76973e7c8786dffdebbda00a34edd21ea4da21b9cff0448a37",
+    "src/models/caelum/siege/ca_siege_gate_armored_broken.obj": "679e3d89754599e96d2a24e87d7f254a88fe2f2ba7e21e03d1a62757f57f94b3",
+    "src/models/caelum/siege/ca_siege_gate_armored_damaged.obj": "10cf828bb6ebe501c1eb965474c6018270465b3568612e735453372bf86b87fe",
+    "src/models/caelum/siege/ca_siege_gate_armored_intact.obj": "ab6c6a77d40de0c1f26ce9dc5ee18ef4baf0a85f2de09eb0785fbe7c89ee41a4",
+    "src/models/caelum/siege/ca_siege_gate_broken.obj": "ed1b6608953e9dae0c83c06c0e1c7bc66c6c75a8e24c817f25ba62776d0aaa39",
+    "src/models/caelum/siege/ca_siege_gate_damaged.obj": "5fec0c12b981af85adcca2ff1fc6f8ae48fa90175614305cfde62d8711defa55",
+    "src/models/caelum/siege/ca_siege_gate_intact.obj": "14d877b2afdef04a52bb5a50b90e4cfdddc11885e7f4bd9ff245b964554de0fb",
+    "src/models/caelum/siege/ca_siege_gate_reinforced_broken.obj": "b6926270b27004f94af367f395d33bb68dc128680f26810afd1df1f7f44eec3c",
+    "src/models/caelum/siege/ca_siege_gate_reinforced_damaged.obj": "7b9656e18ac4c94a48a9b0b31bc584d742161feffae7ea2e68cfb9e332044737",
+    "src/models/caelum/siege/ca_siege_gate_reinforced_intact.obj": "9007c0970b167e778bc5156e12798855117de9580470d5c0399b4f64e349feb7",
+    "src/models/caelum/siege/ca_siege_ram_ready.obj": "e723f77abf753104713244c09f8bd0b5e47e8bf5fac6289f7bf3a48856d4bf57",
+    "src/models/caelum/siege/ca_siege_ram_recovery.obj": "3d36040411ebbaa7bd88ef0ef6d6e6082231d9a4b6b074a975b9832a6bc098f5",
+    "src/models/caelum/siege/ca_siege_ram_strike.obj": "a7076c6a6eee5f9d14e69bad6175b774fc25276f50a512090aa8f2d183c5ff01",
+    "src/sprites/CAGAA0.png": "f2bb5bbaca678ecad746b1fa5ecfa2c8a81dd18817be19f0187c036d25326317",
+    "src/sprites/CAGAB0.png": "f2bb5bbaca678ecad746b1fa5ecfa2c8a81dd18817be19f0187c036d25326317",
+    "src/sprites/CAGAC0.png": "f2bb5bbaca678ecad746b1fa5ecfa2c8a81dd18817be19f0187c036d25326317",
+    "src/sprites/CAGRA0.png": "f2bb5bbaca678ecad746b1fa5ecfa2c8a81dd18817be19f0187c036d25326317",
+    "src/sprites/CAGRB0.png": "f2bb5bbaca678ecad746b1fa5ecfa2c8a81dd18817be19f0187c036d25326317",
+    "src/sprites/CAGRC0.png": "f2bb5bbaca678ecad746b1fa5ecfa2c8a81dd18817be19f0187c036d25326317",
+    "src/sprites/CAGTA0.png": "f2bb5bbaca678ecad746b1fa5ecfa2c8a81dd18817be19f0187c036d25326317",
+    "src/sprites/CAGTB0.png": "f2bb5bbaca678ecad746b1fa5ecfa2c8a81dd18817be19f0187c036d25326317",
+    "src/sprites/CAGTC0.png": "f2bb5bbaca678ecad746b1fa5ecfa2c8a81dd18817be19f0187c036d25326317",
+    "src/sprites/CRAMA0.png": "f2bb5bbaca678ecad746b1fa5ecfa2c8a81dd18817be19f0187c036d25326317",
+    "src/sprites/CRAMB0.png": "f2bb5bbaca678ecad746b1fa5ecfa2c8a81dd18817be19f0187c036d25326317",
+    "src/sprites/CRAMC0.png": "f2bb5bbaca678ecad746b1fa5ecfa2c8a81dd18817be19f0187c036d25326317",
+    "src/sprites/CSGNA0.png": "f2bb5bbaca678ecad746b1fa5ecfa2c8a81dd18817be19f0187c036d25326317",
+    "src/sprites/CSGNB0.png": "f2bb5bbaca678ecad746b1fa5ecfa2c8a81dd18817be19f0187c036d25326317",
+    "src/sprites/CSGNC0.png": "f2bb5bbaca678ecad746b1fa5ecfa2c8a81dd18817be19f0187c036d25326317",
+    "src/sprites/CSGND0.png": "f2bb5bbaca678ecad746b1fa5ecfa2c8a81dd18817be19f0187c036d25326317"
+  },
+  "meshes": {
+    "ca_siege_cannon_ready.obj": {
+      "vertices": 4480,
+      "faces": 1194,
+      "min": [
+        -54.0,
+        1.0,
+        -29.22
+      ],
+      "max": [
+        58.0,
+        39.8,
+        29.22
+      ]
+    },
+    "ca_siege_cannon_loading.obj": {
+      "vertices": 4480,
+      "faces": 1194,
+      "min": [
+        -54.0,
+        1.0,
+        -29.22
+      ],
+      "max": [
+        58.0,
+        39.8,
+        29.22
+      ]
+    },
+    "ca_siege_cannon_firing.obj": {
+      "vertices": 4480,
+      "faces": 1194,
+      "min": [
+        -64.0,
+        1.0,
+        -29.22
+      ],
+      "max": [
+        48.0,
+        39.8,
+        29.22
+      ]
+    },
+    "ca_siege_cannon_recovery.obj": {
+      "vertices": 4480,
+      "faces": 1194,
+      "min": [
+        -58.0,
+        1.0,
+        -29.22
+      ],
+      "max": [
+        54.0,
+        39.8,
+        29.22
+      ]
+    },
+    "ca_siege_ram_ready.obj": {
+      "vertices": 8728,
+      "faces": 2322,
+      "min": [
+        -92.0,
+        0.0,
+        -44.09
+      ],
+      "max": [
+        63.0,
+        91.5,
+        44.09
+      ]
+    },
+    "ca_siege_ram_strike.obj": {
+      "vertices": 8728,
+      "faces": 2322,
+      "min": [
+        -91.0,
+        0.0,
+        -44.09
+      ],
+      "max": [
+        63.0,
+        91.5,
+        44.09
+      ]
+    },
+    "ca_siege_ram_recovery.obj": {
+      "vertices": 8728,
+      "faces": 2322,
+      "min": [
+        -108.0,
+        0.0,
+        -44.09
+      ],
+      "max": [
+        63.0,
+        91.5,
+        44.09
+      ]
+    },
+    "ca_siege_gate_intact.obj": {
+      "vertices": 1776,
+      "faces": 468,
+      "min": [
+        -56.0,
+        -2.0,
+        -6.0
+      ],
+      "max": [
+        56.0,
+        104.0,
+        6.0
+      ]
+    },
+    "ca_siege_gate_damaged.obj": {
+      "vertices": 2064,
+      "faces": 540,
+      "min": [
+        -56.0,
+        -2.0,
+        -6.0
+      ],
+      "max": [
+        56.0,
+        104.0,
+        6.0
+      ]
+    },
+    "ca_siege_gate_broken.obj": {
+      "vertices": 1776,
+      "faces": 468,
+      "min": [
+        -56.0,
+        -2.0,
+        -6.0
+      ],
+      "max": [
+        56.0,
+        104.0,
+        47.587225
+      ]
+    },
+    "ca_siege_gate_reinforced_intact.obj": {
+      "vertices": 7536,
+      "faces": 2196,
+      "min": [
+        -56.0,
+        -2.0,
+        -6.0
+      ],
+      "max": [
+        56.0,
+        104.0,
+        6.0
+      ]
+    },
+    "ca_siege_gate_reinforced_damaged.obj": {
+      "vertices": 7824,
+      "faces": 2268,
+      "min": [
+        -56.0,
+        -2.0,
+        -6.0
+      ],
+      "max": [
+        56.0,
+        104.0,
+        6.0
+      ]
+    },
+    "ca_siege_gate_reinforced_broken.obj": {
+      "vertices": 7536,
+      "faces": 2196,
+      "min": [
+        -56.0,
+        -2.0,
+        -6.0
+      ],
+      "max": [
+        56.0,
+        104.0,
+        47.587225
+      ]
+    },
+    "ca_siege_gate_armored_intact.obj": {
+      "vertices": 10560,
+      "faces": 3096,
+      "min": [
+        -56.0,
+        -2.0,
+        -6.0
+      ],
+      "max": [
+        56.0,
+        104.0,
+        6.53
+      ]
+    },
+    "ca_siege_gate_armored_damaged.obj": {
+      "vertices": 10848,
+      "faces": 3168,
+      "min": [
+        -56.0,
+        -2.0,
+        -6.0
+      ],
+      "max": [
+        56.0,
+        104.0,
+        6.53
+      ]
+    },
+    "ca_siege_gate_armored_broken.obj": {
+      "vertices": 10560,
+      "faces": 3096,
+      "min": [
+        -56.0,
+        -2.0,
+        -6.0
+      ],
+      "max": [
+        56.0,
+        104.0,
+        47.730392
+      ]
+    }
+  }
+}

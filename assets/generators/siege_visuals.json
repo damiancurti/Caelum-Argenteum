@@ -1,0 +1,42 @@
+{
+  "provenance": "Original project geometry; issue #18 author correction, 2026-09-26. Visual dimensions only; no mass, damage or timing.",
+  "map_units_per_metre": 32,
+  "gate": {
+    "opening_metres": [3, 3],
+    "wood_thickness_metres": 0.08,
+    "outer_cladding_metres": 0.006,
+    "reference": "Issue #18 proposed two-leaf reference geometry, not measured historical dimensions or final campaign geometry.",
+    "jamb_width": 8,
+    "frame_depth": 12,
+    "seam": 0.25,
+    "open_degrees": 82,
+    "variants": [
+      {"material": "wood", "actor": "CaelumSiegeGate", "stem": "ca_siege_gate", "sprite": "CAGT"},
+      {"material": "reinforced", "actor": "CaelumSiegeGateReinforced", "stem": "ca_siege_gate_reinforced", "sprite": "CAGR"},
+      {"material": "armored", "actor": "CaelumSiegeGateArmored", "stem": "ca_siege_gate_armored", "sprite": "CAGA"}
+    ]
+  },
+  "cannon": {
+    "reference": "Retains provisional #18 overall envelope; exact Argentine 1884 Krupp carriage/barrel dimensions remain unverified.",
+    "wheel_center": [4, 18, 24],
+    "wheel_radius": 17,
+    "wheel_width": 6,
+    "breech": [-20, 32, 0],
+    "muzzle": [58, 32, 0],
+    "calibre_metres": 0.075,
+    "states": [["ready", 0, false], ["loading", 0, true], ["firing", -10, false], ["recovery", -4, false]]
+  },
+  "ram": {
+    "reference": "Provisional #18 small preview envelope, not a new crew or physical-mass definition.",
+    "log_start": [-92, 44, 0],
+    "log_end": [20, 44, 0],
+    "log_radius": 11,
+    "suspension_top_y": 88,
+    "suspension_x": [-62, 12],
+    "states": [["ready", 0], ["strike", 28], ["recovery", -16]]
+  },
+  "gallery": {
+    "gate_material_x": [-1200, 0, 1200],
+    "gate_state_y": [2600, 2900, 3200]
+  }
+}

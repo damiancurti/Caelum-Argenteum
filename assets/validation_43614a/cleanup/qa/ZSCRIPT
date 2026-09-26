@@ -1,0 +1,72 @@
+version "4.14"
+class SiegeCleanupQA : EventHandler
+{
+    int Clock;
+    CaelumConsumableItem Payload;
+    CaelumDiningTable Table;
+    int CountFixtures()
+    {
+        int count = 0;
+        let it = ThinkerIterator.Create("Actor");
+        Actor a;
+        while ((a = Actor(it.Next())) != null)
+            if (a is "CaelumDiningTable" || a is "CaelumRestChair"
+                || a is "CaelumRestBed" || a is "CaelumCraftingStation"
+                || a is "CaelumDiningBlock" || a is "CaelumDiningDisplay") count++;
+        return count;
+    }
+    int CountClass(class<Actor> kind)
+    {
+        int count = 0;
+        let it = ThinkerIterator.Create(kind);
+        while (it.Next() != null) count++;
+        return count;
+    }
+    override void WorldTick()
+    {
+        Clock++;
+        if (Clock == 80 && level.MapName == "MAP03")
+        {
+            Console.Printf("QA_CLEANUP initial=%d", CountFixtures());
+            // A saved table-owned stack must survive removal exactly once.
+            Table = CaelumDiningTable(Actor.Spawn("CaelumDiningTableSmall", (-500,2400,0), NO_REPLACE));
+            Payload = CaelumConsumableItem(Actor.Spawn("CaelumFoodRation", Table.Pos, NO_REPLACE));
+            Payload.Amount = 7;
+            Payload.AttachToOwner(Table);
+            Table.Items[0] = Payload;
+            Table.RefreshDisplays();
+            Actor.Spawn("CaelumRestChair", (-300,2400,0), NO_REPLACE);
+            Actor.Spawn("CaelumRestBed", (-100,2400,0), NO_REPLACE);
+            Actor.Spawn("CaelumMasterBenchStation", (100,2400,0), NO_REPLACE);
+        }
+        if (Clock == 120)
+            Console.Printf("QA_CLEANUP before_save fixtures=%d owner=%d amount=%d", CountFixtures(),
+                           Payload != null && Payload.Owner != null, Payload == null ? 0 : Payload.Amount);
+        if (Clock == 180 && level.MapName == "MAP03")
+        {
+            CaelumDiningWorld.Prepare();
+            CaelumRestFurnitureTrial.PrepareWorld();
+            CaelumSewerTrialSupport.PrepareWorld();
+        }
+        if (Clock == 220 || Clock == 300 || Clock == 400)
+        {
+            if (level.MapName == "MAP03")
+            {
+                bool okay = CountFixtures() == 0 && Table == null && Payload != null
+                    && Payload.Owner == null && Payload.Amount == 7;
+                Console.Printf("QA_CLEANUP %s clock=%d fixtures=%d payload=%d owner=%d cannons=%d rams=%d gates=%d",
+                    okay ? "PASS" : "FAIL", Clock, CountFixtures(), Payload == null ? 0 : Payload.Amount,
+                    Payload != null && Payload.Owner != null, CountClass("CaelumSiegeCannon"),
+                    CountClass("CaelumSiegeRam"), CountClass("CaelumSiegeGate"));
+            }
+            else Console.Printf("QA_OTHER map=%s fixtures=%d stations=%d", level.MapName,
+                                CountFixtures(), CountClass("CaelumCraftingStation"));
+        }
+        if (Clock == 225 && level.MapName == "MAP03")
+        {
+            let camera = Actor.Spawn("MapSpot", (900,2310,160), NO_REPLACE);
+            camera.Angle = 105; camera.Pitch = 20;
+            players[0].camera = camera;
+        }
+    }
+}

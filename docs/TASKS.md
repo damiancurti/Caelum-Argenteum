@@ -1,6 +1,22 @@
 # TASKS.md — Active tasks
 
-Documentation version: **4.36.14** — 2026-09-25.
+Documentation version: **4.36.14a** — 2026-09-26.
+
+## Issue #18 follow-up — Siege art correction (4.36.14a)
+
+- **Request:** author correction on 2026-09-26; linked to closed issue #18.
+- **Scope:** defined cannon/ram forms, continuous two-leaf doors, wood/metal
+  material variants and one visible model per state; fresh MAP03 preview.
+- **Validation:** native state views and open-passage checks; deterministic
+  generation, resource references, validator and normal package build.
+- **Acceptance:** author confirmed all visual tests passed on 2026-09-26
+  (`CA-43614A-SIEGE-ART-01`); transferred to HISTORY and removed from the queue.
+- **Follow-up:** remove all remaining MAP03 tables, chairs, beds and crafting
+  stations, prevent respawn and cover existing saves; native evidence in
+  `assets/validation_43614a/cleanup`. Historical cannon scale/breech verification
+  remains separate from this visual correction.
+- **Next:** #19 damageable gates, #20 ram physics and #21 cannon physics;
+  retain the authored hardness values in #18 without inventing new data.
 
 ## Issue #31 — Pain sounds, dialogue cue, map music and story intermissions (4.36.14)
 
@@ -32,9 +48,8 @@ Documentation version: **4.36.14** — 2026-09-25.
 - **Author contract:** no siege mechanics, mass, damage, reload time or gate
   hardness in this patch; those values remain #19-#21. Scale/orientation are
   provisional until the live preview is accepted.
-- **Acceptance:** author visual check `CA-43610-SIEGE-ART-01` pending; native
-  GZDoom screenshots are captured under `assets/validation_43610` and the
-  author pass remains outstanding.
+- **Acceptance:** `CA-43610-SIEGE-ART-01` passed on 2026-09-26, as
+  recorded in HISTORY. The 4.36.14a follow-up has its own pending author check.
 - **Next:** #19 / 4.36.11 owns damageable gates and persistent opening.
 
 ## Issue #15 — Approved Tarot fronts and collection bindings (4.36.9)

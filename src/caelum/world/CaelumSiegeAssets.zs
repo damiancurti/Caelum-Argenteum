@@ -1,7 +1,5 @@
-// Issue #18: reusable cannon, battering ram and destructible gate assets.
-// Visual preview only. The meshes and their state frames come from the
-// deterministic generator assets/generators/generate_siege_models.py; this
-// file does not invent mass, damage, reload time or gate hardness.
+// Issue #18: recursos visuales de asedio. La galería no implementa combate.
+// Las mallas y los cuadros se generan con generate_siege_models.py.
 
 class CaelumSiegeCannon : Actor
 {
@@ -66,8 +64,8 @@ class CaelumSiegeGate : Actor
 {
     Default
     {
-        Radius 96;
-        Height 224;
+        Radius 56;
+        Height 104;
         +NOGRAVITY
         +NOBLOCKMAP
         +DONTSPLASH
@@ -90,32 +88,77 @@ class CaelumSiegeGate : Actor
     }
 }
 
-// Test gallery for MAP03. It retires the trial chairs, dining tables and cots
-// that previously occupied the tank, then shows every siege state in the open
-// reservoir so the author can check appearance and clearances in one pass.
+class CaelumSiegeGateReinforced : CaelumSiegeGate
+{
+    States
+    {
+    Spawn:
+    Intact:
+        CAGR A -1;
+        Loop;
+    Damaged:
+        CAGR B -1;
+        Loop;
+    Broken:
+        CAGR C -1;
+        Loop;
+    }
+}
+
+class CaelumSiegeGateArmored : CaelumSiegeGate
+{
+    States
+    {
+    Spawn:
+    Intact:
+        CAGA A -1;
+        Loop;
+    Damaged:
+        CAGA B -1;
+        Loop;
+    Broken:
+        CAGA C -1;
+        Loop;
+    }
+}
+
+// Galería de MAP03: retira los muebles de prueba y muestra todos los estados.
+// Los tres materiales ocupan columnas; intacto, dañado y abierto, filas.
 class CaelumSiegePreviewWorld : Object play
 {
     static void RemoveTrialFurniture()
     {
+        if (level.MapName != "MAP03") return;
+        // Primero reunir las instancias: destruir una mesa también retira
+        // sus actores auxiliares y no debe alterar la búsqueda en curso.
+        Array<Actor> retired;
         let furniture = ThinkerIterator.Create("Actor");
         Actor actor;
         while ((actor = Actor(furniture.Next())) != null)
         {
-            let table = CaelumDiningTable(actor);
-            if (table != null)
+            if (actor is "CaelumDiningTable" || actor is "CaelumRestChair"
+                || actor is "CaelumRestBed" || actor is "CaelumCraftingStation")
+                retired.Push(actor);
+        }
+        for (int i = 0; i < retired.Size(); i++)
+        {
+            actor = retired[i];
+            if (actor == null) continue;
+            let seat = CaelumRestFurniture(actor);
+            if (seat != null && seat.Occupant != null)
+                CaelumRestState.Cancel(seat.Occupant);
+            // OnDestroy de la mesa conserva sus pertenencias como pickups y
+            // elimina platos y bloques; no se pierde el contenido del save.
+            actor.Destroy();
+        }
+        if (retired.Size() > 0)
+        {
+            for (int i = 0; i < MAXPLAYERS; i++)
             {
-                table.Destroy();
-                continue;
+                if (!playeringame[i]) continue;
+                let user = CaelumPlayer(players[i].mo);
+                if (user != null) user.RefreshActiveCraftingStationSession();
             }
-            let chair = CaelumRestChair(actor);
-            if (chair != null)
-            {
-                chair.Destroy();
-                continue;
-            }
-            let bed = CaelumRestBed(actor);
-            if (bed != null)
-                bed.Destroy();
         }
     }
 
@@ -142,9 +185,17 @@ class CaelumSiegePreviewWorld : Object play
         SpawnState("CaelumSiegeRam", (0, 2200, 0), "Strike");
         SpawnState("CaelumSiegeRam", (900, 2200, 0), "Recovery");
 
-        SpawnState("CaelumSiegeGate", (-900, 3000, 0), "Intact");
-        SpawnState("CaelumSiegeGate", (0, 3000, 0), "Damaged");
-        SpawnState("CaelumSiegeGate", (900, 3000, 0), "Broken");
+        // BEGIN GENERATED SIEGE GATE GALLERY
+        SpawnState("CaelumSiegeGate", (-1200, 2600, 0), "Intact");
+        SpawnState("CaelumSiegeGate", (-1200, 2900, 0), "Damaged");
+        SpawnState("CaelumSiegeGate", (-1200, 3200, 0), "Broken");
+        SpawnState("CaelumSiegeGateReinforced", (0, 2600, 0), "Intact");
+        SpawnState("CaelumSiegeGateReinforced", (0, 2900, 0), "Damaged");
+        SpawnState("CaelumSiegeGateReinforced", (0, 3200, 0), "Broken");
+        SpawnState("CaelumSiegeGateArmored", (1200, 2600, 0), "Intact");
+        SpawnState("CaelumSiegeGateArmored", (1200, 2900, 0), "Damaged");
+        SpawnState("CaelumSiegeGateArmored", (1200, 3200, 0), "Broken");
+        // END GENERATED SIEGE GATE GALLERY
         return true;
     }
 }
