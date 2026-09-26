@@ -11,7 +11,10 @@ Documentation version: **4.36.15** — 2026-09-26.
   accepted positions. MAP01/MAP02 doors and existing save schemas are unchanged.
 - **Validation:** native fresh suite and actual save/load/hub-return chain pass;
   legacy 4.36.14a save and repeat trial activation pass. See assets/validation_43615.
-- **Acceptance:** CA-43611-GATES-01 is pending in the single author queue.
+- **Acceptance:** author confirmed the other checks on 2026-09-26 but reported
+  missing reciprocal damage when running into gates. That native contact path
+  is corrected; 13 focused assertions and the 37-check gate regression pass.
+  CA-43611-GATES-01 now contains only the pending body-collision retest.
 - **Next:** #20 ram strikes, #21 cannon ballistics/contact at approved speed,
   #16/#17 authored port placements and complete encounter. No provisional cannon
   projectile mass or forced gate destruction is introduced.

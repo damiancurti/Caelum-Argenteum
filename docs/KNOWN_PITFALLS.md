@@ -245,6 +245,33 @@ Regression: fire a fixed-DoSpecialDamage projectile at a multi-block gate and
 check one correctly reduced health loss. Recheck callback order if the target
 engine changes. Author acceptance remains CA-43611-GATES-01, pending.
 
+## CA-KP-011 — A solid damageable actor is not automatically an Impact Physics body
+
+Status/evidence: RESOLVED-VERIFIED in the #19 correction; author retest pending.
+First recorded / last checked: 2026-09-26 / 2026-09-26.
+Affected baseline: bab1c776, CaelumGateBlocker / CaelumBreakableGate.
+Environment: GZDoom 4.14.2, Windows 11/Vulkan, isolated MAP03.
+
+The author reported zero damage to player and gate on a fast bodily collision.
+Native TryMove reproduced both zeros. The finite blocks stopped movement and
+forwarded weapon damage, but their collision callbacks were not connected to
+Impact Physics; testing the siege-impact API alone did not cover that route.
+
+Forward CollidedWith to the owning gate and resolve both bodies through the
+shared core. Use whole-gate mass/contact identity and the gate plane, not each
+tiny block's position as a separate impact. Reuse the character's receiver and
+existing separation/rearm state, including serialization. Keep neutral gate
+surface resistance separate from the canonical hardness subtraction.
+
+Regression: actual native movement into a closed gate, health changes on both
+sides above threshold, repeated block callbacks, separation, active-contact
+save/reload, rotated geometry and open-passage safety. Before/after evidence and
+tested hashes: [body collision evidence](../assets/validation_43615/body_collision/engine_evidence.txt).
+The 13-check body suite and original 37-check suite pass. CA-43611-GATES-01
+remains partially accepted, pending the author's collision retest. Test-only
+speed/health reserves are not gameplay tuning. Low-energy collisions can still
+correctly cause zero damage under the existing formulas.
+
 ## Rules for adding and updating entries
 
 1. Add an entry only for reusable engineering knowledge: a recurring failure, a non-obvious project constraint, or a verified cause/fix likely to prevent future work. Ordinary progress belongs in the issue.

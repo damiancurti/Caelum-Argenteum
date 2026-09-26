@@ -218,9 +218,76 @@ class CaelumBreakableGate : Actor
         if (!result.Valid) return 0;
         if (entry < 0) { ImpactSources.Push(movingSource); ImpactSerials.Push(serial); }
         else ImpactSerials[entry] = serial;
-        double percent = Max(0.0, result.TargetEnergyPercent - Toughness);
+        return ReceiveStructuralImpact(movingSource, movingSource.target, result.TargetEnergyPercent, 1.0);
+    }
+
+    int ReceiveStructuralImpact(Actor source, Actor instigator, double energyPercent, double surfaceMultiplier)
+    {
+        double percent = Max(0.0, energyPercent * surfaceMultiplier - Toughness);
         int damage = int(StructuralMaximum * percent / 100.0 + 0.5);
-        return DamageMobj(movingSource, movingSource.target, damage, 'CaelumImpact', DMG_NO_ARMOR, Angle);
+        return DamageMobj(source, instigator, damage, 'CaelumImpact', DMG_NO_ARMOR, Angle);
+    }
+
+    // La colisión nativa llega por muchas cajas, pero el contacto pertenece al
+    // portón completo. Jugador y NPC conservan sus defensas/masa corporales.
+    void ResolveBodyImpact(Actor movingBody, Actor contactSurface)
+    {
+        InitializeGate();
+        if (Broken || Opened || movingBody == null || movingBody.health <= 0) return;
+        let user = CaelumPlayer(movingBody);
+        let npc = CaelumCombatActor(movingBody);
+        if (user == null && (npc == null || npc.DisableCaelumImpactContacts)) return;
+        if (movingBody.Pos.Z >= Pos.Z + CaelumGateData.HEIGHT
+            || movingBody.Pos.Z + movingBody.Height <= Pos.Z) return;
+
+        ImpactContactState contact = user != null ? user.GetImpactContactState(self)
+            : npc.GetImpactContactState(self);
+        if (contact != null)
+        {
+            contact.RegisterCollision(level.time);
+            return;
+        }
+        // Normal del plano: no usar el centro de la caja diminuta golpeada,
+        // que cambia con cada hoja y produce impactos laterales ficticios.
+        vector3 normal = (-Sin(Angle), Cos(Angle), 0);
+        vector2 offset = movingBody.Pos.XY - Pos.XY;
+        double side = offset.X * normal.X + offset.Y * normal.Y;
+        if (side > 0) normal = -normal;
+        let sourceBody = user != null ? user.BuildImpactPhysicsBody() : npc.BuildImpactPhysicsBody();
+        let gateBody = new("ImpactBody");
+        gateBody.Mass = Mass; gateBody.Height = CaelumGateData.HEIGHT;
+        gateBody.Position = Pos; gateBody.Velocity = (0, 0, 0);
+        gateBody.Restitution = CaelumConstants.IMPACT_RESTITUTION;
+        gateBody.SurfaceMultiplier = 1.0;
+        let result = new("ImpactResult");
+        ImpactPhysics.ResolveBodies(sourceBody, gateBody, normal, result);
+        if (!result.Valid) return;
+
+        contact = user != null ? user.LatchImpactContact(self) : npc.LatchImpactContact(self);
+        if (contact == null) return;
+        // El radio técnico del controlador es 1: el rearme debe abarcar toda
+        // la anchura real, incluso contactos en el extremo de ambas hojas.
+        contact.ReleaseDistance = movingBody.Radius
+            + Sqrt(CaelumGateData.WIDTH * CaelumGateData.WIDTH
+                + CaelumGateData.THICKNESS * CaelumGateData.THICKNESS) / 2.0
+            + Min(movingBody.Height, CaelumGateData.HEIGHT)
+                * CaelumConstants.IMPACT_CONTACT_REARM_HEIGHT_FRACTION
+            + CaelumConstants.IMPACT_CONTACT_RELEASE_MARGIN;
+        contact.BeginResolutionTick(level.time);
+        contact.LastClosingSpeed = result.ClosingSpeed;
+        contact.LastTransmittedImpulse = result.Impulse;
+        movingBody.Vel.X -= result.Normal.X * result.SourceDeltaSpeed;
+        movingBody.Vel.Y -= result.Normal.Y * result.SourceDeltaSpeed;
+        ReceiveStructuralImpact(movingBody, movingBody, result.TargetEnergyPercent, sourceBody.SurfaceMultiplier);
+        // El proxy ya declara NODAMAGETHRUST: no sumar empuje nativo al impulso.
+        if (user != null)
+            user.ReceiveCaelumImpact(result.SourceDeltaSpeed, CaelumConstants.IMPACT_KIND_ACTOR,
+                contactSurface, 1.0, sourceBody.Mass, gateBody.Mass, result.ClosingSpeed, result.Impulse,
+                result.SourceContactMinimumHeightRatio, result.SourceContactMaximumHeightRatio);
+        else
+            npc.ReceiveCaelumImpact(result.SourceDeltaSpeed, CaelumConstants.IMPACT_KIND_ACTOR,
+                contactSurface, 1.0, sourceBody.Mass, gateBody.Mass, result.ClosingSpeed, result.Impulse,
+                result.SourceContactMinimumHeightRatio, result.SourceContactMaximumHeightRatio);
     }
 
     override void Tick()
@@ -267,6 +334,12 @@ class CaelumGateBlocker : Actor
 {
     int ContactFlags;
     double ContactAngle;
+    override void CollidedWith(Actor other, bool passive)
+    {
+        Super.CollidedWith(other, passive);
+        let gate = CaelumBreakableGate(master);
+        if (gate != null) gate.ResolveBodyImpact(other, self);
+    }
     override void Tick()
     {
         // El marco está anclado incluso si otro script intenta dar impulso.

@@ -36,6 +36,18 @@ or older serials cannot deal damage again. Neither frame mass nor a fixed
 damage/forced-destruction shortcut replaces that calculation. #20/#21 still
 own actual ram/cannon operation and high-speed projectile contact detection.
 
+The author's 2026-09-26 follow-up identified a missing native body-collision
+connection. CaelumGateBlocker.CollidedWith now forwards player/NPC contact to
+the whole gate. ResolveBodies uses the character's effective mass and actual
+velocity, the complete gate mass, and the gate plane normal. The character
+receives SourceDeltaSpeed through its existing ReceiveCaelumImpact defenses;
+the gate receives TargetEnergyPercent through the same structural conversion
+used by siege impacts, including the existing body surface multiplier. The gate
+remains anchored. A shared whole-gate ImpactContactState rejects repeated block
+callbacks until canonical separation/rearm, and survives save/load. Opening or
+destruction disables this route. Low-energy contact can still cause zero damage;
+no new damage floor, mass, resistance, speed or threshold was introduced.
+
 CaelumBreakableGate is explicitly opted into by spawning it; no old door is
 converted. args[0] is a positive linked group (zero means independent),
 args[1] selects material 0/1/2, args[2] enables ordinary Use, and args[3]

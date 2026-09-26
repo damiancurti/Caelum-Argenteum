@@ -12,7 +12,9 @@ breakable actor gates with the author's approved hardness/Constitution and
 masses. Use/key/faction access, finite collision and permanent group destruction
 retain their state through save/load and hub return. In a disposable MAP03
 session, `give CaelumDebugGateTrial` activates the three intact gallery gates.
-GZDoom 4.14.2 native checks pass; author test `CA-43611-GATES-01` remains pending.
+GZDoom 4.14.2 native checks pass. The author accepted the other gate checks and
+reported missing body-impact damage; that connection is now corrected using
+existing physics. Only the collision retest remains in `CA-43611-GATES-01`.
 The full port encounter and ram/cannon operation remain in their linked issues.
 Existing progression doors, maps and save schemas are unchanged.
 

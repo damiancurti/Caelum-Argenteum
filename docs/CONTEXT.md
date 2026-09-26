@@ -71,7 +71,11 @@ derived from approved 30%/50%/70% weapon reductions, with approved moving masses
 checks, partial damage and broken state persist across save/load and hub return.
 Native checks and an old 4.36.14a save pass. `give CaelumDebugGateTrial` activates
 the three intact MAP03 examples; existing campaign doors/maps remain unchanged.
-CA-43611-GATES-01 is pending. #20/#21 and full port integration remain separate.
+The author confirmed the other gate checks on 2026-09-26 but reported no damage
+when running into a gate. Native body contacts now resolve damage to both bodies
+using existing physics; 13 focused checks and the 37-check gate regression pass.
+Only the collision retest remains in CA-43611-GATES-01. #20/#21 and full port
+integration remain separate.
 
 The preceding **4.36.14a** corrects #18 after the author's 2026-09-26
 feedback: two solid gate leaves in three materials, refined cannon/ram forms,

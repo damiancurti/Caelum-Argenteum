@@ -1,0 +1,20 @@
+{
+  "issue": 19,
+  "version": "4.36.15",
+  "base_commit": "bab1c776",
+  "change": "Connect native body contacts to reciprocal gate/player/NPC impact physics",
+  "runtime_sha256": {
+    "src/caelum/world/CaelumBreakableGate.zs": "7e28d62c5503a95c94b56300e49e615f97c7a1f060a485a6c267eab1203a4c84"
+  },
+  "local_probe_sha256": "721692fe96fdb66d7c3f80f9d7c1041f211b5115bb2d526c29bf35a15b67967d",
+  "pk3_sha256": "6332c96122b3f15c47ce07d6ae04ff8fec6c1122f6f840ae59072514ee4de313",
+  "body_contact_chain": {
+    "checks_including_saved_counters": 13,
+    "failures": 0
+  },
+  "gate_regression": {
+    "checks": 37,
+    "failures": 0
+  },
+  "author_acceptance": "Original gate checks accepted except body collision; corrected collision retest pending."
+}

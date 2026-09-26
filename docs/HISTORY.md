@@ -13,6 +13,31 @@ blocks, reuse #18 visuals and ordinary key/faction access, and open every linked
 passage exactly once on destruction. No WAD, previous save schema, campaign
 door class, siege-machine operation or full port encounter was changed.
 
+Author follow-up on 2026-09-26: the author confirmed the other gate checks were
+correct but reported no damage to either player or gate when running into it at
+full speed. This is qualified/partial acceptance of CA-43611-GATES-01; only the
+body-collision correction remains in the author queue. The test ID is retained.
+
+Native reproduction on bab1c776 confirmed zero damage to both bodies. The finite
+blocks were not connected to Impact Physics. The follow-up adds reciprocal body
+collision through the existing mass/velocity/energy rules, with one shared gate
+contact regardless of how many blocks are touched. Gate-plane normals and a
+release distance covering the whole opening prevent fragment-based responses.
+No serialized fields, map geometry, balance or existing gate state is changed.
+The version remains 4.36.15 as a correction in the same open issue/PR.
+
+Correction validation: 13 native body-contact assertions pass across actual
+save/reload (including saved counters); the previous 37-check gate suite also
+passes. Coverage includes player damage, gate damage above the canonical
+threshold, whole-gate mass, anchoring, duplicate callbacks, reverse-side rearm,
+subthreshold/open-gate safety, rotated/end-of-leaf contact, NPCs and a saved
+active contact that must not apply damage twice. The native probe used isolated
+test velocities and synchronized player health reserves, not new gameplay data.
+Evidence/hashes: assets/validation_43615/body_collision. Manual confirmation of
+this correction remains pending; previous full-speed body collision was not
+covered by the initial native suite. Desktop correction work remains in the same
+session; usage counters/allowance/reset information are still unavailable.
+
 Validation levels:
 - Static: validate_project.py passes with an empty errors list; the normal
   build_dev.ps1 build passes (6,093 files, no directory entries).
