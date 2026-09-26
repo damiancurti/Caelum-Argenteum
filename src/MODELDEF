@@ -3304,3 +3304,52 @@ Model CaelumLeverColumn
     DontCullBackFaces
     FrameIndex CARK A 0 0
 }
+
+// --- BEGIN GENERATED CAELUM SIEGE MODELS ---
+// Reusable siege preview meshes; states only, no mechanics.
+Model CaelumSiegeCannon
+{
+    Path "models/caelum/siege"
+    Model 0 "ca_siege_cannon_ready.obj"
+    Model 1 "ca_siege_cannon_loading.obj"
+    Model 2 "ca_siege_cannon_firing.obj"
+    Model 3 "ca_siege_cannon_recovery.obj"
+    Scale 1.0 1.0 1.0
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CSGN A 0 0
+    FrameIndex CSGN B 1 0
+    FrameIndex CSGN C 2 0
+    FrameIndex CSGN D 3 0
+}
+
+Model CaelumSiegeRam
+{
+    Path "models/caelum/siege"
+    Model 0 "ca_siege_ram_ready.obj"
+    Model 1 "ca_siege_ram_strike.obj"
+    Model 2 "ca_siege_ram_recovery.obj"
+    Scale 1.0 1.0 1.0
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CRAM A 0 0
+    FrameIndex CRAM B 1 0
+    FrameIndex CRAM C 2 0
+}
+
+Model CaelumSiegeGate
+{
+    Path "models/caelum/siege"
+    Model 0 "ca_siege_gate_intact.obj"
+    Model 1 "ca_siege_gate_damaged.obj"
+    Model 2 "ca_siege_gate_broken.obj"
+    Scale 1.0 1.0 1.0
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CAGT A 0 0
+    FrameIndex CAGT B 1 0
+    FrameIndex CAGT C 2 0
+}
+
+// --- END GENERATED CAELUM SIEGE MODELS ---
+

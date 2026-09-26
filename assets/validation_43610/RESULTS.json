@@ -1,0 +1,15 @@
+{
+  "version": "4.36.14",
+  "issue": 18,
+  "evidence": "agent-captured native GZDoom 4.14.2 render previews",
+  "map": "MAP03",
+  "renderer": "Vulkan",
+  "resolution": "1920x1080",
+  "shots": {
+    "overview": ["issue18_overview_a.png", "issue18_overview_b.png"],
+    "cannons": ["issue18_cannons_a.png", "issue18_cannons_b.png"],
+    "rams": ["issue18_rams_a.png", "issue18_rams_b.png"],
+    "gates": ["issue18_gates_a.png", "issue18_gates_b.png"]
+  },
+  "author_check": "CA-43610-SIEGE-ART-01 pending"
+}

@@ -20,6 +20,23 @@ Documentation version: **4.36.14** — 2026-09-25.
   (CA-43614-AUDIO-01 passed).
 - **Next:** #18 / 4.36.10 owns siege assets after this delivery.
 
+## Issue #18 — Reusable siege preview assets (4.36.10)
+
+- **Issue:** https://github.com/damiancurti/Caelum-Argenteum/issues/18
+- **Scope:** add reusable cannon, battering-ram and destructible-gate assets as
+  verified-rendering content. Generate deterministic OBJ meshes under
+  `src/models/caelum/siege`, transparent `CSGN A-D`/`CRAM A-C`/`CAGT A-C`
+  frames, guarded `MODELDEF` bindings and the three runtime actor classes. On
+  MAP03, retire the trial chairs, dining tables and cots and show every state
+  in the open tank for author review.
+- **Author contract:** no siege mechanics, mass, damage, reload time or gate
+  hardness in this patch; those values remain #19-#21. Scale/orientation are
+  provisional until the live preview is accepted.
+- **Acceptance:** author visual check `CA-43610-SIEGE-ART-01` pending; native
+  GZDoom screenshots are captured under `assets/validation_43610` and the
+  author pass remains outstanding.
+- **Next:** #19 / 4.36.11 owns damageable gates and persistent opening.
+
 ## Issue #15 — Approved Tarot fronts and collection bindings (4.36.9)
 
 - **Issue:** https://github.com/damiancurti/Caelum-Argenteum/issues/15

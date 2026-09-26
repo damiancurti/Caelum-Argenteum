@@ -119,6 +119,7 @@ version "4.14"
 #include "caelum/world/CaelumTimeAdvance.zs"
 #include "caelum/world/CaelumDining.zs"
 #include "caelum/world/CaelumMansionFurniture.zs"
+#include "caelum/world/CaelumSiegeAssets.zs"
 
 #include "caelum/world/CaelumSchedule.zs"
 #include "caelum/world/CaelumScheduleTrial.zs"

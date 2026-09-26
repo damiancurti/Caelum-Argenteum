@@ -28,6 +28,7 @@ class CaelumMainM00QuestController : EventHandler
     bool SewerSupportPrepared;
     bool RestFurniturePrepared;
     bool DiningPrepared;
+    bool SiegePreviewPrepared;
     bool TravelVehiclesPrepared;
     bool ExpandedStationsPrepared;
     bool MansionFurniturePrepared;
@@ -500,6 +501,11 @@ class CaelumMainM00QuestController : EventHandler
         {
             CaelumSewerTrialSupport.PrepareWorld();
             SewerSupportPrepared = true;
+        }
+        if (!SiegePreviewPrepared && DiningPrepared && RestFurniturePrepared
+            && SewerSupportPrepared)
+        {
+            SiegePreviewPrepared = CaelumSiegePreviewWorld.Prepare();
         }
         if (!SewerNetworkPrepared || SewerNetworkRevision < 3)
         {

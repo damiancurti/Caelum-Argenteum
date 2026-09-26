@@ -2,6 +2,23 @@
 
 Documentation version: **4.36.14** — 2026-09-25.
 
+## 4.36.10 — Reusable siege preview assets (issue #18)
+
+Issue #18 is a visual-assets delivery, not a gameplay change. A deterministic
+generator produces the reusable cannon, battering ram and destructible gate
+meshes plus their per-state sprite frames and `MODELDEF` bindings. The MAP03
+workshop/tank shows a visual-only preview gallery: its trial chairs, dining
+tables and cots are retired, and every cannon/ram/gate state is laid out in the
+open reservoir for the author to check appearance, orientation, attachment
+points, collision envelopes and clearances before the siege mechanics land in
+#19-#21. Mass, damage, reload time and gate hardness remain unverified and are
+not invented here.
+
+The preview does not alter MAP01/MAP02, recipes, economy, save schema or the
+accepted station/rest systems. The only persistent addition is the static
+gallery actor data in `src/caelum/world/CaelumSiegeAssets.zs` and its
+`src/ZSCRIPT` include, plus the generated `src/models/caelum/siege` and sprite
+files.
 ## 4.36.8 — Prisoner rescue, escort and port rewards (issue #14)
 
 The four MAP02 prisoners become optional live companions: a cell dialogue

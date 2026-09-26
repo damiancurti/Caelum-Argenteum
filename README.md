@@ -9,7 +9,13 @@ it, then rebuild with `run_dev.bat` as described below. Issue
 [#31](https://github.com/damiancurti/Caelum-Argenteum/issues/31) integrates the
 author-selected pain sounds, the supplied Suno dialogue-opening cue and the local
 sewer/port/coast music; the former MAP01 music is reserved for chapter-end story
-intermissions. The merged documentation patch
+intermissions. Issue
+[#18](https://github.com/damiancurti/Caelum-Argenteum/issues/18) adds the
+reusable cannon, battering-ram and destructible-gate assets as verified-rendering
+content. A deterministic generator produces the meshes, state frames and
+`MODELDEF` bindings, and the MAP03 workshop/tank shows a visual-only preview
+gallery after retiring its trial chairs, tables and cots. No siege mechanics,
+mass, damage, reload time or gate hardness is added here. Issue
 [#29](https://github.com/damiancurti/Caelum-Argenteum/issues/29) records the
 selective file-reading workflow for agents without changing gameplay, balance,
 maps, saves or assets. Issue
