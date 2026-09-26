@@ -4,8 +4,19 @@ An independent dark fantasy FPS-RPG inspired by nineteenth-century Argentina.
 Author and game designer: **Damian Curti**. Development target: **GZDoom 4.14.2**
 on Windows 11. The final game is intended to be independent of Doom assets.
 
-**Current release: 4.36.14a.** Obtain and update the complete repository, validate
-it, then rebuild with `run_dev.bat` as described below. Issue
+**Current release: 4.36.15.** Obtain and update the complete repository, validate
+it, then rebuild with `run_dev.bat` as described below.
+
+Issue [#19](https://github.com/damiancurti/Caelum-Argenteum/issues/19) adds
+breakable actor gates with the author's approved hardness/Constitution and
+masses. Use/key/faction access, finite collision and permanent group destruction
+retain their state through save/load and hub return. In a disposable MAP03
+session, `give CaelumDebugGateTrial` activates the three intact gallery gates.
+GZDoom 4.14.2 native checks pass; author test `CA-43611-GATES-01` remains pending.
+The full port encounter and ram/cannon operation remain in their linked issues.
+Existing progression doors, maps and save schemas are unchanged.
+
+Earlier deliveries: issue
 [#31](https://github.com/damiancurti/Caelum-Argenteum/issues/31) integrates the
 author-selected pain sounds, the supplied Suno dialogue-opening cue and the local
 sewer/port/coast music; the former MAP01 music is reserved for chapter-end story
@@ -21,8 +32,8 @@ all 16 poses; the author approved all visual checks on 2026-09-26. MAP03
 now removes remaining tables, chairs, beds and crafting stations, including
 those in existing saves, and prevents their trial initializers from respawning
 them. Exact historical
-cannon scale remains unverified. No siege mechanics,
-mass, damage, reload time or gate hardness is added here. Issue
+cannon scale remains unverified. Those #18 art patches added no siege mechanics,
+mass, damage, reload time or gate hardness; #19 now supplies gate mechanics. Issue
 [#29](https://github.com/damiancurti/Caelum-Argenteum/issues/29) records the
 selective file-reading workflow for agents without changing gameplay, balance,
 maps, saves or assets. Issue

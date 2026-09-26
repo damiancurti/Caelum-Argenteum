@@ -17731,7 +17731,8 @@ class CaelumPlayer : DoomPlayer
             || candidate.bFRIENDLY || candidate.player != null
             || candidate is "CaelumAnchoredResident") return false;
         // El blanco es una excepción de entrenamiento, no un objeto extraíble.
-        return candidate.bISMONSTER || candidate is "CaelumTrainingDummy";
+        return candidate.bISMONSTER || candidate is "CaelumTrainingDummy"
+            || candidate is "CaelumGateBlocker";
     }
 
     // Filtro espacial nativo y un trazado geométrico por enemigo. Atravesar
@@ -17747,11 +17748,12 @@ class CaelumPlayer : DoomPlayer
         {
             Actor candidate = search.thing;
             if (!IsLargeSweepEnemy(candidate)) continue;
+            // Las muchas cajas de una puerta representan un solo blanco.
+            Actor identity = candidate is "CaelumGateBlocker" ? candidate.master : candidate;
             bool duplicate = false;
             for (int index = 0; index < visited.Size(); index++)
-                if (visited[index] == candidate) { duplicate = true; break; }
+                if (visited[index] == identity) { duplicate = true; break; }
             if (duplicate) continue;
-            visited.Push(candidate);
             Vector2 delta = candidate.Pos.XY - Pos.XY;
             double horizontal = delta.Length();
             double contactDistance = Max(0.0, horizontal - candidate.Radius);
@@ -17765,6 +17767,7 @@ class CaelumPlayer : DoomPlayer
             FLineTraceData trace;
             if (LineTrace(attackAngle, distance + 0.05, attackPitch,
                 TRF_THRUACTORS | TRF_ABSPOSITION, originZ, Pos.X, Pos.Y, trace)) continue;
+            visited.Push(identity);
 
             LastMeleeHit = true;
             LastMeleeSweepHitCount++;
@@ -17852,6 +17855,7 @@ class CaelumPlayer : DoomPlayer
     double GetTargetKnockbackMultiplier(Actor target)
     {
         if (target == null) { return 0.0; }
+        if (target is "CaelumGateBlocker") { return 0.0; }
         CaelumPlayer playerTarget = CaelumPlayer(target);
         if (playerTarget != null && playerTarget.DerivedStats != null)
         {
@@ -17910,7 +17914,13 @@ class CaelumPlayer : DoomPlayer
 
         double lateralRatio = Clamp(sideOffset / radius, 0.0, 1.0);
         CaelumCombatActor combatTarget = CaelumCombatActor(target);
-        if (combatTarget != null)
+        if (target is "CaelumGateBlocker")
+        {
+            // Una estructura no tiene cabeza ni puntos anatómicos débiles.
+            LastMeleeHitLocation = CaelumConstants.HIT_LOCATION_TORSO;
+            LastMeleeVulnerabilityGrade = CaelumConstants.VULNERABILITY_NEUTRAL_POINT;
+        }
+        else if (combatTarget != null)
         {
             LastMeleeVulnerabilityGrade =
                 combatTarget.RegisterDirectionalAnatomyImpact(

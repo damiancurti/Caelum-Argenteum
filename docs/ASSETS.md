@@ -1,6 +1,16 @@
 # Caelum Argenteum — Audio and art
 
-Documentation version: **4.36.14a** — 2026-09-26.
+Documentation version: **4.36.15** — 2026-09-26.
+
+## 4.36.15 — Gate mechanics reuse accepted art (#19)
+
+CaelumBreakableGate owns a separate CaelumSiegeGate/Reinforced/Armored visual
+and finite hidden collision blocks. Existing meshes, textures, sprite frames,
+MODELDEF mappings and provenance are unchanged. Intact, first-damage and broken
+states select the accepted #18 models; temporary Use opening reuses the open
+Broken pose. The optional MAP03 trial activates only the three intact gallery
+examples. No new art, debris, sound or historical cannon-scale claim is added.
+The author-approved gate masses and derived attributes are documented in SYSTEMS.
 
 ## 4.36.14a — Siege silhouettes and gate materials (#18 correction)
 

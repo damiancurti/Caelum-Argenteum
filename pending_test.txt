@@ -1,0 +1,24 @@
+CA-43611-GATES-01
+Origin: issue #19, implemented in 4.36.15; retains the issue's planned 4.36.11 ID.
+Prerequisites: current normal build, GZDoom 4.14.2, disposable MAP03 session
+with a created character and an existing melee/ranged weapon. Preserve real saves.
+1. In the console: map MAP03. After the gallery appears, enter
+   give CaelumDebugGateTrial. Go to the intact row at Y 2600:
+   wood X -1200, reinforced X 0, armored X 1200.
+2. Try walking through each closed gate from both sides. Use opens both leaves;
+   standing in the opening must keep it open. Leave the opening and wait for it
+   to close. The damaged/open gallery rows farther north remain only previews.
+3. Attack an active gate with ordinary melee/projectile attacks. The first
+   health loss shows its damaged state. Save, reload, and verify that state.
+   These large gates have 65,017 / 170,625 / 659,083 HP; use existing character
+   equipment and stats, not a forced-destruction command, to assess durability.
+4. Continue until destruction. Walk through from both sides; further attacks
+   must not restore collision or create duplicate effects. Save and reload.
+5. In this disposable session, enter changemap MAP06, then changemap MAP03.
+   The broken gate stays broken and partially damaged gates retain damage.
+   Repeat give CaelumDebugGateTrial: it must not duplicate or reset active gates.
+Expected: correct material states, usable intact doors, persistent damage,
+clear destroyed passages, no invisible wall or closure trapping a character.
+Report separately if any step cannot be completed. Group/key/faction guards
+and impact-API math have native agent evidence; complete ram/cannon operation
+and the full port encounter are outside this check.

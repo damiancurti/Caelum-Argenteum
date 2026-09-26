@@ -1,6 +1,24 @@
 # Caelum Argenteum — Project, status and roadmap
 
-Documentation version: **4.36.14a** — 2026-09-26.
+Documentation version: **4.36.15** — 2026-09-26.
+
+## 4.36.15 — Breakable actor gates (issue #19)
+
+Implements the issue retaining its planned [4.36.11] PR label, on top of the
+merged 4.36.14a baseline. Opt-in gates reuse #18 visuals, finite collision
+blocks, group/key/faction access, canonical health/impact rules and persistent
+destruction. The author approved the Type 4 interpretation and Constitution
+matching Toughness, plus 550/650/1,100 kg moving masses on 2026-09-26; SYSTEMS
+contains the authoritative formulas and resulting values.
+
+Native GZDoom 4.14.2 checks passed: fresh gate collision/combat, group access,
+real partial/broken save-load, MAP03-MAP06-MAP03 hub return and an existing
+4.36.14a save. The optional MAP03 trial is executable with
+`give CaelumDebugGateTrial`; normal galleries and existing progression doors
+remain unchanged. This is the reusable port-gate foundation, not the complete
+MAP06 encounter or authored port placements. #20/#21 own ram/cannon operation;
+#16/#17 own encounter integration. Author test CA-43611-GATES-01 is pending.
+Evidence and tested source hashes: assets/validation_43615.
 
 ## 4.36.14a — Author-requested siege asset correction (#18)
 

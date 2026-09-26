@@ -1,0 +1,204 @@
+Issue #19 native evidence, 2026-09-26
+GZDoom 4.14.2; Windows 11; Vulkan; local development Doom II IWAD.
+No autoload or sound; isolated config/save directory; no IWAD, engine, saves or fixtures distributed.
+Runtime source hashes identify the tested working tree; base commit 1f43bf65.
+Fresh final_collision: 37 passing assertions. Actual partial/broken save/load/hub chain: 35 passing assertions.
+The fresh-run hub-labelled assertions inspect state only; actual travel is shown in final_return.
+Legacy counts and unchanged map checksum are recorded in manifest.json.
+Raw local logs remain in build/. Relevant diagnostics below omit GPU capabilities and local installation paths.
+
+diagnostic
+MAP03 - Alcantarillas: depósito
+QA19 PASS canonical health and approved masses
+QA19 PASS constitution equals unrounded toughness, including above 100
+QA19 PASS finite closed blockers
+QA19 PASS exact approved 30 50 70 percent weapon reductions
+QA19 PASS first health loss shows damaged state
+QA19 VALUES wood=46.024571081/65017 reinforced=70.565110990/170625 armored=108.052214779/659083
+QA19 PASS one explosion across all blockers
+QA19 PASS different simultaneous explosions remain distinct
+QA19 PASS impact uses actual assembly mass velocity and subtractive toughness once
+QA19 PASS same physical contact serial is idempotent
+QA19 PASS slow impact cannot break gate despite frame mass
+QA19 PASS separating velocity cannot damage gate
+QA19 PASS legacy doors remain non-destructible
+QA19 PASS peer key cannot be bypassed
+QA19 KEY health=1780 keys=1 item=1 sight=0 z=0.000000
+QA19 FAIL Use key opens complete linked group
+QA19 FAIL Use opens real passage
+QA19 FAIL solid NPC prevents group closing
+QA19 PASS group closes after passage clears
+QA19 PASS ordinary opening preserves damage state
+QA19 PROJECTILE delta=400
+QA19 FAIL native projectile collision deals damage once
+QA19 PASS native player hitscan damages gate
+QA19 PASS native attack from reverse side
+QA19 SAVE_READY partial=64807 armored=659053
+QA19 PASS partial damage preserved through save load
+QA19 PASS group destruction and repeated events exactly once
+QA19 PASS unlinked gate remains intact
+QA19 PASS all collision removed and broken visual retained
+QA19 PASS player traverses broken gate forward
+QA19 PASS player traverses broken gate backward
+QA19 BROKEN_SAVE_READY
+QA19 PASS broken state preserved through save load
+QA19 DONE checks=28 failures=4
+
+final_partial
+MAP03 - Alcantarillas: depósito
+QA19 PASS canonical health and approved masses
+QA19 PASS constitution equals unrounded toughness, including above 100
+QA19 PASS finite closed blockers
+QA19 PASS native maximum-health accessor uses structural health
+QA19 PASS exact approved 30 50 70 percent weapon reductions
+QA19 PASS first health loss shows damaged state
+QA19 VALUES wood=46.024571081/65017 reinforced=70.565110990/170625 armored=108.052214779/659083
+QA19 PASS one explosion across all blockers
+QA19 PASS different simultaneous explosions remain distinct
+QA19 PASS impact uses actual assembly mass velocity and subtractive toughness once
+QA19 PASS same physical contact serial is idempotent
+QA19 PASS changing stationary frame mass does not change assembly impact damage
+QA19 PASS slow impact cannot break gate despite frame mass
+QA19 PASS separating velocity cannot damage gate
+QA19 PASS legacy doors remain non-destructible
+QA19 PASS peer key cannot be bypassed
+QA19 PASS peer faction condition cannot be bypassed
+QA19 KEY health=1780 keys=1 item=1 sight=0 z=0.000000
+QA19 PASS native Use key opens complete linked group
+QA19 PASS Use opens real passage
+QA19 PASS solid NPC prevents group closing
+QA19 PASS group closes after passage clears
+QA19 PASS ordinary opening preserves damage state
+QA19 PROJECTILE delta=50
+QA19 PASS native projectile collision deals damage once
+QA19 PASS native player hitscan damages gate
+QA19 PASS native attack from reverse side
+QA19 SAVE_READY partial=64807 armored=659053
+QA19 PASS large player weapon sweep hits gate once across all blockers
+QA19 PASS anchored collision resists weapon thrust
+Partida guardada.
+
+final_broken
+MAP03 - Alcantarillas: depósito
+QA19 PASS partial health state matches saved expectation
+QA19 PASS group destruction and repeated events exactly once
+QA19 PASS unlinked gate remains intact
+QA19 PASS all collision removed and broken visual retained
+QA19 PASS player traverses broken gate forward
+QA19 PASS player traverses broken gate backward
+QA19 BROKEN_SAVE_READY
+Partida guardada.
+
+final_return
+MAP03 - Alcantarillas: depósito
+QA19 PASS broken state matches saved expectation
+QA19 DONE checks=33 failures=0
+MAP06 - Puerto ribereño
+Partida guardada.
+MAP03 - Alcantarillas: depósito
+Partida guardada.
+QA19 PASS hub return preserves destruction without respawn
+QA19 PASS hub return preserves partial damage
+QA19 RETURN_DONE checks=35 failures=0
+
+final_collision
+MAP03 - Alcantarillas: depósito
+QA19 PASS native closed passage blocks forward movement
+QA19 PASS native closed passage blocks reverse movement
+QA19 PASS canonical health and approved masses
+QA19 PASS constitution equals unrounded toughness, including above 100
+QA19 PASS finite closed blockers
+QA19 PASS native maximum-health accessor uses structural health
+QA19 PASS exact approved 30 50 70 percent weapon reductions
+QA19 PASS first health loss shows damaged state
+QA19 VALUES wood=46.024571081/65017 reinforced=70.565110990/170625 armored=108.052214779/659083
+QA19 PASS one explosion across all blockers
+QA19 PASS different simultaneous explosions remain distinct
+QA19 PASS impact uses actual assembly mass velocity and subtractive toughness once
+QA19 PASS same physical contact serial is idempotent
+QA19 PASS changing stationary frame mass does not change assembly impact damage
+QA19 PASS slow impact cannot break gate despite frame mass
+QA19 PASS separating velocity cannot damage gate
+QA19 PASS legacy doors remain non-destructible
+QA19 PASS peer key cannot be bypassed
+QA19 PASS peer faction condition cannot be bypassed
+QA19 KEY health=1780 keys=1 item=1 sight=0 z=0.000000
+QA19 PASS native Use key opens complete linked group
+QA19 PASS Use opens real passage
+QA19 PASS solid NPC prevents group closing
+QA19 PASS group closes after passage clears
+QA19 PASS ordinary opening preserves damage state
+QA19 PROJECTILE delta=50
+QA19 PASS native projectile collision deals damage once
+QA19 PASS native player hitscan damages gate
+QA19 PASS native attack from reverse side
+QA19 SAVE_READY partial=64807 armored=659053
+QA19 PASS large player weapon sweep hits gate once across all blockers
+QA19 PASS anchored collision resists weapon thrust
+QA19 PASS partial health state matches saved expectation
+QA19 PASS group destruction and repeated events exactly once
+QA19 PASS unlinked gate remains intact
+QA19 PASS all collision removed and broken visual retained
+QA19 PASS player traverses broken gate forward
+QA19 PASS player traverses broken gate backward
+QA19 BROKEN_SAVE_READY
+QA19 PASS broken state matches saved expectation
+QA19 DONE checks=35 failures=0
+QA19 PASS hub return preserves destruction without respawn
+QA19 PASS hub return preserves partial damage
+QA19 RETURN_DONE checks=37 failures=0
+
+legacy
+MAP03 - Alcantarillas: depósito
+Partida guardada.
+
+legacy_repeat
+MAP03 - Alcantarillas: depósito
+Partida guardada.
+
+final_release (normal final build; release-label-only updates after persistence chain)
+MAP03 - Alcantarillas: depósito
+QA19 PASS native closed passage blocks forward movement
+QA19 PASS native closed passage blocks reverse movement
+QA19 PASS canonical health and approved masses
+QA19 PASS constitution equals unrounded toughness, including above 100
+QA19 PASS finite closed blockers
+QA19 PASS native maximum-health accessor uses structural health
+QA19 PASS exact approved 30 50 70 percent weapon reductions
+QA19 PASS first health loss shows damaged state
+QA19 VALUES wood=46.024571081/65017 reinforced=70.565110990/170625 armored=108.052214779/659083
+QA19 PASS one explosion across all blockers
+QA19 PASS different simultaneous explosions remain distinct
+QA19 PASS impact uses actual assembly mass velocity and subtractive toughness once
+QA19 PASS same physical contact serial is idempotent
+QA19 PASS changing stationary frame mass does not change assembly impact damage
+QA19 PASS slow impact cannot break gate despite frame mass
+QA19 PASS separating velocity cannot damage gate
+QA19 PASS legacy doors remain non-destructible
+QA19 PASS peer key cannot be bypassed
+QA19 PASS peer faction condition cannot be bypassed
+QA19 KEY health=1780 keys=1 item=1 sight=0 z=0.000000
+QA19 PASS native Use key opens complete linked group
+QA19 PASS Use opens real passage
+QA19 PASS solid NPC prevents group closing
+QA19 PASS group closes after passage clears
+QA19 PASS ordinary opening preserves damage state
+QA19 PROJECTILE delta=50
+QA19 PASS native projectile collision deals damage once
+QA19 PASS native player hitscan damages gate
+QA19 PASS native attack from reverse side
+QA19 SAVE_READY partial=64807 armored=659053
+QA19 PASS large player weapon sweep hits gate once across all blockers
+QA19 PASS anchored collision resists weapon thrust
+QA19 PASS partial health state matches saved expectation
+QA19 PASS group destruction and repeated events exactly once
+QA19 PASS unlinked gate remains intact
+QA19 PASS all collision removed and broken visual retained
+QA19 PASS player traverses broken gate forward
+QA19 PASS player traverses broken gate backward
+QA19 BROKEN_SAVE_READY
+QA19 PASS broken state matches saved expectation
+QA19 DONE checks=35 failures=0
+QA19 PASS hub return preserves destruction without respawn
+QA19 PASS hub return preserves partial damage
+QA19 RETURN_DONE checks=37 failures=0

@@ -1,6 +1,49 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **4.36.14a** — 2026-09-26.
+Documentation version: **4.36.15** — 2026-09-26.
+
+## 4.36.15 — Breakable actor gates (#19; planned label 4.36.11)
+
+Implemented on 2026-09-26 from merged baseline 1f43bf65. The author clarified
+that 0.3/0.5/0.7 mean ordinary damage reductions of 30%/50%/70%, approved the
+unrounded inverse-Type-4 attributes with Constitution equal to Toughness, and
+approved moving masses of 550/650/1,100 kg. SYSTEMS records the derived health.
+New explicitly configured gate controllers share health across their finite
+blocks, reuse #18 visuals and ordinary key/faction access, and open every linked
+passage exactly once on destruction. No WAD, previous save schema, campaign
+door class, siege-machine operation or full port encounter was changed.
+
+Validation levels:
+- Static: validate_project.py passes with an empty errors list; the normal
+  build_dev.ps1 build passes (6,093 files, no directory entries).
+- Isolated engine: GZDoom 4.14.2 on Windows 11/Vulkan, local development Doom II,
+  no autoload. Fresh suite: 37 passing assertions. Actual partial-save reload,
+  destruction-save reload and MAP03-MAP06-MAP03 return chain: 35 passing assertions
+  including saved counters, not 35 additional checks per reload. Native hitscan,
+  projectile and weapon-sweep damage, exact reductions, closed/broken traversal
+  from both sides, group/key/faction prevalidation, NPC occupancy, repeated
+  damage/death, actual assembly inputs and unchanged legacy-door flags pass.
+  A copied 4.36.14a save loads; optional activation and repeat activation retain
+  three controllers/225 blocks and the original map checksum. Final source
+  hashes, focused engine output and legacy inspection: assets/validation_43615.
+- Author acceptance: CA-43611-GATES-01 remains pending. Passing engine tests do
+  not constitute author acceptance or validate #21 cannon tunneling at 400 m/s.
+
+Corrections during implementation: resolved two initial ZScript API/type errors,
+invisible-controller sight filtering and a projectile damage dispatch bypass.
+The native proxy now runs DoSpecialDamage before forwarding reduced damage via
+TakeSpecialDamage. An override declaration and local save-path invocation were
+also corrected before final persistence tests. Before/after damage diagnostics
+are retained; no unresolved failures remain in the final gate suites.
+
+Usage evidence (#8): the author's 2026-09-23 baseline was 75% weekly allowance
+remaining; reset time is unknown. Work planning usage is not exposed. Desktop
+implementation, native-test correction rounds and documentation occurred in this
+Codex session. Input/output/cached/reasoning token counts, effort/speed metadata
+and final allowance are not exposed; no token or allowance estimate is inferred
+from diff size. Resets and concurrent unrelated use cannot be determined. No
+independent DeepSeek review was available. Next: author gate check, #20/#21 and
+port encounter integration through #16/#17.
 
 ## 4.36.14a — Refine siege models and separate gate materials (#18 follow-up)
 

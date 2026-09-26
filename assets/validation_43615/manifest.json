@@ -1,0 +1,111 @@
+{
+  "issue": 19,
+  "version": "4.36.15",
+  "date": "2026-09-26",
+  "base_commit": "1f43bf65",
+  "runtime_sha256": {
+    "src/ZSCRIPT": "8507086ef3af2a5d0af0076c7b3b37ae51a6968cb79aa98f92866283388aed4c",
+    "src/caelum/world/CaelumGateData.zs": "9f3816a48fe70274013fbce6de7f1412b522a53d4ea86be27a857b2cd5768fb9",
+    "src/caelum/world/CaelumBreakableGate.zs": "4eee4a2abc57e4a9934792aa1f52f864ec927e8e5959e2d29280f93db0fba1a6",
+    "src/caelum/player/CaelumPlayer.zs": "dabdfed2c9a169271efef651d09f44c0d44521cf935ab7c2e6998bfb11a779e6",
+    "src/caelum/world/CaelumPhysicalHazards.zs": "50620325291f540979a26cc9b59ee4d3aee63d4c8c1fd5ebf6eb5f06b7c18aeb",
+    "src/caelum/world/CaelumSewerMaze.zs": "7116b951bcd7671c79c7020a3ec9b9a2901299d9fd6f2d8b9e55edd5fd384f02"
+  },
+  "legacy_save_inspection": {
+    "input": {
+      "CaelumBreakableGate": 0,
+      "CaelumGateBlocker": 0,
+      "CaelumSiegeGate": 3,
+      "CaelumSiegeGateReinforced": 3,
+      "CaelumSiegeGateArmored": 3,
+      "map_checksum": [
+        79,
+        75,
+        71,
+        213,
+        42,
+        195,
+        132,
+        209,
+        194,
+        42,
+        51,
+        45,
+        217,
+        225,
+        202,
+        166
+      ]
+    },
+    "output": {
+      "CaelumBreakableGate": 3,
+      "CaelumGateBlocker": 225,
+      "CaelumSiegeGate": 3,
+      "CaelumSiegeGateReinforced": 3,
+      "CaelumSiegeGateArmored": 3,
+      "map_checksum": [
+        79,
+        75,
+        71,
+        213,
+        42,
+        195,
+        132,
+        209,
+        194,
+        42,
+        51,
+        45,
+        217,
+        225,
+        202,
+        166
+      ]
+    },
+    "repeat": {
+      "CaelumBreakableGate": 3,
+      "CaelumGateBlocker": 225,
+      "CaelumSiegeGate": 3,
+      "CaelumSiegeGateReinforced": 3,
+      "CaelumSiegeGateArmored": 3,
+      "map_checksum": [
+        79,
+        75,
+        71,
+        213,
+        42,
+        195,
+        132,
+        209,
+        194,
+        42,
+        51,
+        45,
+        217,
+        225,
+        202,
+        166
+      ]
+    }
+  },
+  "local_probe_sha256": "fa133475d5b8808e103b76f999a04df5709c74a1a0a9e451a3ce2c407192c7a4",
+  "final_pk3_sha256": "e08a3dfdffec6ddb012d434ee7b14949bd9f053a10b4414e9d18edf9ac5f9dd9",
+  "normal_build": {
+    "exit_code": 0,
+    "files": 6093,
+    "directory_entries": 0
+  },
+  "final_release_suite": {
+    "assertions": 37,
+    "failures": 0
+  },
+  "persistence_chain": {
+    "assertions_including_saved_counters": 35,
+    "failures": 0,
+    "route": "MAP03 -> MAP06 -> MAP03",
+    "save_stages": [
+      "partial",
+      "broken"
+    ]
+  }
+}
