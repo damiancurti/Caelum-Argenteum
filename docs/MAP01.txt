@@ -1,6 +1,18 @@
 CAELUM ARGENTEUM — STORY AND MAP01
 
-Documentation version: **4.36.14a** — 2026-09-26.
+Documentation version: **4.36.15** — 2026-09-26.
+
+## 4.36.15 — Optional executable gate trial (#19)
+
+In a disposable MAP03 session, `give CaelumDebugGateTrial` activates the intact
+row of the accepted gate gallery (Y 2600; X -1200/0/1200), retaining its material
+order and placement. Use opens the gates temporarily; attacks damage and can
+permanently break them. Repeating the command does not duplicate active gates.
+The damaged/open preview rows remain visual-only. Saved trial gates preserve
+their health and destruction across reload and hub return.
+MAP01/MAP02 progression doors, narrative, MAP06 geometry and campaign placements
+are unchanged. #16/#17 will author the port encounter using the new gate class.
+CA-43611-GATES-01 passed on 2026-09-26; its acceptance is recorded in HISTORY.
 
 ## 4.36.14a — MAP03 material/state gallery (#18 correction)
 

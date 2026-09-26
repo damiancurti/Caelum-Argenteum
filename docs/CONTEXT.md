@@ -1,6 +1,6 @@
 # CONTEXT.md — Ultra-condensed summary of Caelum Argenteum
 
-Documentation version: **4.36.14a** — 2026-09-26.
+Documentation version: **4.36.15** — 2026-09-26.
 
 Summary so an AI or a contributor can understand the project without reading
 the five full canonical documents. Source: `docs/PROJECT.md`,
@@ -64,7 +64,21 @@ the gauchos and rural culture, and the humans the urban porteño society.
 
 ## Current status
 
-Current release **4.36.14a** corrects #18 after the author's 2026-09-26
+Current release **4.36.15** implements #19 breakable actor gates, retaining
+the issue's planned [4.36.11] label. Gate Constitution equals unrounded Toughness
+derived from approved 30%/50%/70% weapon reductions, with approved moving masses
+550/650/1,100 kg. Finite grouped blockers open on Use or destruction; key/faction
+checks, partial damage and broken state persist across save/load and hub return.
+Native checks and an old 4.36.14a save pass. `give CaelumDebugGateTrial` activates
+the three intact MAP03 examples; existing campaign doors/maps remain unchanged.
+The author confirmed the other gate checks on 2026-09-26 but reported no damage
+when running into a gate. Native body contacts now resolve damage to both bodies
+using existing physics; 13 focused checks and the 37-check gate regression pass.
+The author then confirmed all tests passed on 2026-09-26, including the collision
+retest (CA-43611-GATES-01). Acceptance is recorded in HISTORY; the pending queue
+is empty. #20/#21 and full port integration remain separate.
+
+The preceding **4.36.14a** corrects #18 after the author's 2026-09-26
 feedback: two solid gate leaves in three materials, refined cannon/ram forms,
 and independent MODELDEF states instead of overlapping open/closed meshes.
 Fresh MAP03 shows all 16 states. The author passed all visual checks on
@@ -160,8 +174,8 @@ rations, and MAP01 tables at full capacity.
 
 Pending:
 
-- Planned 4.36.10–4.36.13 (#18–#21): siege-machine assets, breakable actor
-  gates, physical ram strikes and native catapult projectiles for the port.
+- #18 siege assets and #19 gates are author-accepted. #20 physical ram strikes
+  and #21 cannon ballistics remain to implement.
 - Closing 4.36: rams/catapults and remaining integration/save/reset validation
   before extracting Impact Physics. Per the author's 2026-09-23 #8 decision,
   existing ceiling/elevator cover moving sectors; avalanches await additional

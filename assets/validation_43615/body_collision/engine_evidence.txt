@@ -1,0 +1,108 @@
+Issue #19 body-collision correction, 2026-09-26; base bab1c776.
+GZDoom 4.14.2; Windows 11; Vulkan; development Doom II; no autoload.
+Normal build passed: 6,093 files, no directory entries.
+Test-only native movement velocity and health reserves are not gameplay values.
+Before-probe health was later synchronized with player.health to survive multiple controlled crashes.
+The NPC fixture waits for normal PostBeginPlay before measuring body mass.
+Raw logs and fixtures remain local; no IWAD, executable, save or fixture distributed.
+
+body_before_final
+MAP03 - Alcantarillas: depósito
+QA19_COLLISION MEASURE player_loss=0 gate_loss=0 mass=100.000000 delta=0.000000 gate_health=65017
+QA19_COLLISION PASS native movement reaches a closed gate
+QA19_COLLISION FAIL native player collision applies bodily damage
+QA19_COLLISION FAIL same collision damages the gate above canonical threshold
+QA19_COLLISION PASS all block callbacks share one contact
+QA19_COLLISION FAIL opposite-side crash rearms after separation
+QA19_COLLISION PASS subthreshold contact does not invent minimum damage
+QA19_COLLISION PASS open gate has no phantom impact
+QA19_COLLISION DONE checks=7 failures=3
+
+body_final
+MAP03 - Alcantarillas: depósito
+QA19_COLLISION MEASURE player_loss=64720 gate_loss=25467 mass=100.000000 delta=142.153846 gate_health=39550
+QA19_COLLISION PASS native movement reaches a closed gate
+QA19_COLLISION PASS native player collision applies bodily damage
+QA19_COLLISION PASS same collision damages the gate above canonical threshold
+QA19_COLLISION PASS player delta speed uses whole-gate mass, not a collision fragment
+QA19_COLLISION PASS gate remains anchored after reciprocal impact
+QA19_COLLISION PASS all block callbacks share one contact
+QA19_COLLISION PASS opposite-side crash rearms after separation
+QA19_COLLISION PASS subthreshold contact does not invent minimum damage
+QA19_COLLISION PASS open gate has no phantom impact
+QA19_COLLISION PASS rotated gate and leaf-end contact use the gate plane
+QA19_COLLISION NPC native_loss=31775 gate_loss=30221 delta=141.068702 mass=105.000000 disabled=0
+QA19_COLLISION PASS native NPC collision uses the same reciprocal path
+QA19_COLLISION DONE checks=11 failures=0
+
+body_contact_save
+MAP03 - Alcantarillas: depósito
+QA19_COLLISION MEASURE player_loss=64720 gate_loss=25467 mass=100.000000 delta=142.153846 gate_health=39550
+QA19_COLLISION PASS native movement reaches a closed gate
+QA19_COLLISION PASS native player collision applies bodily damage
+QA19_COLLISION PASS same collision damages the gate above canonical threshold
+QA19_COLLISION PASS player delta speed uses whole-gate mass, not a collision fragment
+QA19_COLLISION PASS gate remains anchored after reciprocal impact
+QA19_COLLISION PASS all block callbacks share one contact
+Partida guardada.
+QA19_COLLISION PASS saved whole-gate contact identity survives reload
+QA19_COLLISION PASS saved contact cannot apply the crash twice
+
+body_contact_reload
+MAP03 - Alcantarillas: depósito
+QA19_COLLISION PASS saved whole-gate contact identity survives reload
+QA19_COLLISION PASS saved contact cannot apply the crash twice
+QA19_COLLISION PASS opposite-side crash rearms after separation
+QA19_COLLISION PASS subthreshold contact does not invent minimum damage
+QA19_COLLISION PASS open gate has no phantom impact
+QA19_COLLISION PASS rotated gate and leaf-end contact use the gate plane
+QA19_COLLISION NPC native_loss=31775 gate_loss=30221 delta=141.068702 mass=105.000000 disabled=0
+QA19_COLLISION PASS native NPC collision uses the same reciprocal path
+QA19_COLLISION DONE checks=13 failures=0
+
+body_regression
+MAP03 - Alcantarillas: depósito
+QA19 PASS native closed passage blocks forward movement
+QA19 PASS native closed passage blocks reverse movement
+QA19 PASS canonical health and approved masses
+QA19 PASS constitution equals unrounded toughness, including above 100
+QA19 PASS finite closed blockers
+QA19 PASS native maximum-health accessor uses structural health
+QA19 PASS exact approved 30 50 70 percent weapon reductions
+QA19 PASS first health loss shows damaged state
+QA19 VALUES wood=46.024571081/65017 reinforced=70.565110990/170625 armored=108.052214779/659083
+QA19 PASS one explosion across all blockers
+QA19 PASS different simultaneous explosions remain distinct
+QA19 PASS impact uses actual assembly mass velocity and subtractive toughness once
+QA19 PASS same physical contact serial is idempotent
+QA19 PASS changing stationary frame mass does not change assembly impact damage
+QA19 PASS slow impact cannot break gate despite frame mass
+QA19 PASS separating velocity cannot damage gate
+QA19 PASS legacy doors remain non-destructible
+QA19 PASS peer key cannot be bypassed
+QA19 PASS peer faction condition cannot be bypassed
+QA19 KEY health=1780 keys=1 item=1 sight=0 z=0.000000
+QA19 PASS native Use key opens complete linked group
+QA19 PASS Use opens real passage
+QA19 PASS solid NPC prevents group closing
+QA19 PASS group closes after passage clears
+QA19 PASS ordinary opening preserves damage state
+QA19 PROJECTILE delta=50
+QA19 PASS native projectile collision deals damage once
+QA19 PASS native player hitscan damages gate
+QA19 PASS native attack from reverse side
+QA19 SAVE_READY partial=64807 armored=659053
+QA19 PASS large player weapon sweep hits gate once across all blockers
+QA19 PASS anchored collision resists weapon thrust
+QA19 PASS partial health state matches saved expectation
+QA19 PASS group destruction and repeated events exactly once
+QA19 PASS unlinked gate remains intact
+QA19 PASS all collision removed and broken visual retained
+QA19 PASS player traverses broken gate forward
+QA19 PASS player traverses broken gate backward
+QA19 BROKEN_SAVE_READY
+QA19 PASS broken state matches saved expectation
+QA19 DONE checks=35 failures=0
+QA19 PASS hub return preserves destruction without respawn
+QA19 PASS hub return preserves partial damage
+QA19 RETURN_DONE checks=37 failures=0

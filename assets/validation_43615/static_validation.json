@@ -1,0 +1,31 @@
+{
+  "version": "4.36.15",
+  "documents": 10,
+  "audio_files": 99,
+  "station_models": 12,
+  "spanish_caella_keys": 24,
+  "premise_numbers": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20
+  ],
+  "context_words": 2231,
+  "errors": []
+}

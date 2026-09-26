@@ -1,6 +1,70 @@
 # Caelum Argenteum — Current systems and rules
 
-Documentation version: **4.36.14a** — 2026-09-26.
+Documentation version: **4.36.15** — 2026-09-26.
+
+## 4.36.15 — Breakable actor gates (#19; planned label 4.36.11)
+
+The author's 2026-09-26 clarification defines the issue's 0.3/0.5/0.7 as
+ordinary weapon damage reductions of 30%/50%/70%. Invert the existing Type 4
+curve rather than assigning attributes 30/50/70. Constitution equals the
+resulting Toughness, including fractional levels and the armored value above
+100. The author approved the proposed moving masses; each health pool covers
+both leaves together. The accepted 3 x 3 m visual opening remains 96 x 96 MU,
+with an 80 mm wood core (2.56 MU); this is the #18 reference geometry.
+
+| Material | Reduction | Toughness = Constitution (approximate) | Moving mass, both leaves | Maximum health |
+| --- | --- | --- | --- | --- |
+| Plain wood | 30% | 46.024571081 | 550 kg | 65,017 |
+| Reinforced wood | 50% | 70.565110990 | 650 kg | 170,625 |
+| Armored wood | 70% | 108.052214779 | 1,100 kg | 659,083 |
+
+The attributes are computed without rounding: D = (sqrt(1 + 20200*r/(1-r))-1)/2.
+Health reuses floor(10 * [100 + C*(C+1)/2] * mass/100), with the existing
+minimum of 1. Weapon hits round retained damage using the existing minimum
+positive damage rule. Native projectile DoSpecialDamage runs before this
+reduction. Gate blockers represent one shared health pool; large weapon
+sweeps hit that pool once, and one explosion uses its strongest blocker
+sample rather than summing samples. Gates have no humanoid anatomical weak
+points, armor layers, regeneration, loot or additional material multipliers.
+
+Physical siege impacts retain the separate canonical Impact Physics path:
+ResolveExternal uses moving-assembly mass, actual contact velocity in MU/tic
+and the contact normal. Damage is round(Hmax * max(0, E - D)/100), with neutral
+surface/contact factors. Type 4 is not applied again. The caller supplies a
+nonnegative monotonically increasing impact serial per moving source; repeated
+or older serials cannot deal damage again. Neither frame mass nor a fixed
+damage/forced-destruction shortcut replaces that calculation. #20/#21 still
+own actual ram/cannon operation and high-speed projectile contact detection.
+
+The author's 2026-09-26 follow-up identified a missing native body-collision
+connection. CaelumGateBlocker.CollidedWith now forwards player/NPC contact to
+the whole gate. ResolveBodies uses the character's effective mass and actual
+velocity, the complete gate mass, and the gate plane normal. The character
+receives SourceDeltaSpeed through its existing ReceiveCaelumImpact defenses;
+the gate receives TargetEnergyPercent through the same structural conversion
+used by siege impacts, including the existing body surface multiplier. The gate
+remains anchored. A shared whole-gate ImpactContactState rejects repeated block
+callbacks until canonical separation/rearm, and survives save/load. Opening or
+destruction disables this route. Low-energy contact can still cause zero damage;
+no new damage floor, mass, resistance, speed or threshold was introduced.
+
+CaelumBreakableGate is explicitly opted into by spawning it; no old door is
+converted. args[0] is a positive linked group (zero means independent),
+args[1] selects material 0/1/2, args[2] enables ordinary Use, and args[3]
+selects an existing LOCKDEFS key. AccessCondition reuses faction requirements.
+Every group member must allow access. Use opens both visible leaves and all
+linked blockers; the existing 105-tic door hold is reused. A solid actor in
+any member's passage prevents group closure. The first actual health loss
+selects Damaged; zero health selects Broken and clears every linked blocker
+once. Repeated damage/death is inert. The open visual is the accepted Broken
+pose, reused for temporary opening; closing restores intact/damaged appearance.
+
+Health, group state, counters, blocker references and impact identities use
+native actor serialization and hub snapshots. Existing schemas and WADs are
+unchanged; an old 4.36.14a save loaded and activated the optional trial without
+duplication. Native evidence: assets/validation_43615. The author confirmed all tests passed
+on 2026-09-26 (CA-43611-GATES-01), including the corrected body-collision path.
+HISTORY records acceptance; the historical test ID is intentionally preserved.
 
 ## 4.36.14a — Distinct siege materials and visual states (#18 correction)
 

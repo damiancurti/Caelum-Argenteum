@@ -1,6 +1,86 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **4.36.14a** — 2026-09-26.
+Documentation version: **4.36.15** — 2026-09-26.
+
+## 4.36.15 — Breakable actor gates (#19; planned label 4.36.11)
+
+Author acceptance completed on 2026-09-26: Damián Curti explicitly confirmed
+that all tests passed after the body-collision correction df4c668b and requested
+closure of issue #19. CA-43611-GATES-01 (origin: issue #19, implementation release
+4.36.15, stable planned-label ID 4.36.11) is PASSED, including the previously
+outstanding reciprocal high-speed collision, contact rearm and persistence
+checks. Its entry was removed from pending_test.txt; the tracked queue is empty.
+This acceptance is limited to #19 and does not accept the future #20/#21 siege
+machines or #16/#17 full port encounter. The release remains 4.36.15.
+The documentation-only acceptance update passes validate_project.py; runtime
+code is unchanged and the existing native evidence remains applicable.
+
+Implemented on 2026-09-26 from merged baseline 1f43bf65. The author clarified
+that 0.3/0.5/0.7 mean ordinary damage reductions of 30%/50%/70%, approved the
+unrounded inverse-Type-4 attributes with Constitution equal to Toughness, and
+approved moving masses of 550/650/1,100 kg. SYSTEMS records the derived health.
+New explicitly configured gate controllers share health across their finite
+blocks, reuse #18 visuals and ordinary key/faction access, and open every linked
+passage exactly once on destruction. No WAD, previous save schema, campaign
+door class, siege-machine operation or full port encounter was changed.
+
+Author follow-up on 2026-09-26: the author confirmed the other gate checks were
+correct but reported no damage to either player or gate when running into it at
+full speed. This was initially qualified/partial acceptance of CA-43611-GATES-01;
+the body-collision correction remained pending until the later full confirmation
+recorded above. The historical test ID is retained.
+
+Native reproduction on bab1c776 confirmed zero damage to both bodies. The finite
+blocks were not connected to Impact Physics. The follow-up adds reciprocal body
+collision through the existing mass/velocity/energy rules, with one shared gate
+contact regardless of how many blocks are touched. Gate-plane normals and a
+release distance covering the whole opening prevent fragment-based responses.
+No serialized fields, map geometry, balance or existing gate state is changed.
+The version remains 4.36.15 as a correction in the same open issue/PR.
+
+Correction validation: 13 native body-contact assertions pass across actual
+save/reload (including saved counters); the previous 37-check gate suite also
+passes. Coverage includes player damage, gate damage above the canonical
+threshold, whole-gate mass, anchoring, duplicate callbacks, reverse-side rearm,
+subthreshold/open-gate safety, rotated/end-of-leaf contact, NPCs and a saved
+active contact that must not apply damage twice. The native probe used isolated
+test velocities and synchronized player health reserves, not new gameplay data.
+Evidence/hashes: assets/validation_43615/body_collision. The author subsequently
+confirmed this correction passed on 2026-09-26; the original full-speed body
+collision was not covered by the initial native suite. Desktop correction work remains in the same
+session; usage counters/allowance/reset information are still unavailable.
+
+Validation levels:
+- Static: validate_project.py passes with an empty errors list; the normal
+  build_dev.ps1 build passes (6,093 files, no directory entries).
+- Isolated engine: GZDoom 4.14.2 on Windows 11/Vulkan, local development Doom II,
+  no autoload. Fresh suite: 37 passing assertions. Actual partial-save reload,
+  destruction-save reload and MAP03-MAP06-MAP03 return chain: 35 passing assertions
+  including saved counters, not 35 additional checks per reload. Native hitscan,
+  projectile and weapon-sweep damage, exact reductions, closed/broken traversal
+  from both sides, group/key/faction prevalidation, NPC occupancy, repeated
+  damage/death, actual assembly inputs and unchanged legacy-door flags pass.
+  A copied 4.36.14a save loads; optional activation and repeat activation retain
+  three controllers/225 blocks and the original map checksum. Final source
+  hashes, focused engine output and legacy inspection: assets/validation_43615.
+- Author acceptance: CA-43611-GATES-01 passed, explicitly confirmed on
+  2026-09-26 after df4c668b. This does not validate #21 cannon tunneling at 400 m/s.
+
+Corrections during implementation: resolved two initial ZScript API/type errors,
+invisible-controller sight filtering and a projectile damage dispatch bypass.
+The native proxy now runs DoSpecialDamage before forwarding reduced damage via
+TakeSpecialDamage. An override declaration and local save-path invocation were
+also corrected before final persistence tests. Before/after damage diagnostics
+are retained; no unresolved failures remain in the final gate suites.
+
+Usage evidence (#8): the author's 2026-09-23 baseline was 75% weekly allowance
+remaining; reset time is unknown. Work planning usage is not exposed. Desktop
+implementation, native-test correction rounds and documentation occurred in this
+Codex session. Input/output/cached/reasoning token counts, effort/speed metadata
+and final allowance are not exposed; no token or allowance estimate is inferred
+from diff size. Resets and concurrent unrelated use cannot be determined. No
+independent DeepSeek review was available. Next: #20/#21 and
+port encounter integration through #16/#17.
 
 ## 4.36.14a — Refine siege models and separate gate materials (#18 follow-up)
 

@@ -217,6 +217,61 @@ runs. Render affected states in the target engine after binding changes.
 Author acceptance: `CA-43614A-SIEGE-ART-01` passed on 2026-09-26. This verifies visual
 previews, not future breakable-gate physics or historical machinery dimensions.
 
+## CA-KP-010 — Damage proxies must preserve native projectile damage callbacks
+
+Status/evidence: RESOLVED-VERIFIED in the #19 working tree (runtime hashes in evidence).
+First recorded / last checked: 2026-09-26 / 2026-09-26.
+Issue: [#19](https://github.com/damiancurti/Caelum-Argenteum/issues/19).
+Environment: GZDoom 4.14.2, Windows 11/Vulkan, development Doom II, isolated MAP03.
+Scope: CaelumGateBlocker.DamageMobj / TakeSpecialDamage.
+
+A proxy that overrides DamageMobj and forwards its raw damage directly to a
+controller can bypass the projectile's native DoSpecialDamage. A test projectile
+whose callback returns exactly 100 caused 400 health loss on a 50%-resistant gate
+in the failing run, instead of 50. The random native projectile roll had reached
+the gate before that callback resolved it.
+
+Keep Super.DamageMobj on the contact proxy and forward from TakeSpecialDamage,
+after native projectile preparation. The controller applies resistance once;
+the auxiliary proxy keeps enough health not to die independently. In the fixed
+native test, the same collision removes 50 health once. Hitscan, explosions,
+sweeps and idempotent group destruction also pass. API signatures were checked
+in the installed target engine's zscript/actors/actor.zs.
+
+Evidence: [before/after native diagnostics](../assets/validation_43615/engine_evidence.txt)
+and [tested source hashes](../assets/validation_43615/manifest.json). The local
+test fixture remains development-only; neither it nor the IWAD is distributed.
+Regression: fire a fixed-DoSpecialDamage projectile at a multi-block gate and
+check one correctly reduced health loss. Recheck callback order if the target
+engine changes. Author acceptance: CA-43611-GATES-01 passed on 2026-09-26.
+
+## CA-KP-011 — A solid damageable actor is not automatically an Impact Physics body
+
+Status/evidence: RESOLVED-VERIFIED in the #19 correction; author-accepted on 2026-09-26.
+First recorded / last checked: 2026-09-26 / 2026-09-26.
+Affected baseline: bab1c776, CaelumGateBlocker / CaelumBreakableGate.
+Environment: GZDoom 4.14.2, Windows 11/Vulkan, isolated MAP03.
+
+The author reported zero damage to player and gate on a fast bodily collision.
+Native TryMove reproduced both zeros. The finite blocks stopped movement and
+forwarded weapon damage, but their collision callbacks were not connected to
+Impact Physics; testing the siege-impact API alone did not cover that route.
+
+Forward CollidedWith to the owning gate and resolve both bodies through the
+shared core. Use whole-gate mass/contact identity and the gate plane, not each
+tiny block's position as a separate impact. Reuse the character's receiver and
+existing separation/rearm state, including serialization. Keep neutral gate
+surface resistance separate from the canonical hardness subtraction.
+
+Regression: actual native movement into a closed gate, health changes on both
+sides above threshold, repeated block callbacks, separation, active-contact
+save/reload, rotated geometry and open-passage safety. Before/after evidence and
+tested hashes: [body collision evidence](../assets/validation_43615/body_collision/engine_evidence.txt).
+The 13-check body suite and original 37-check suite pass. The author confirmed
+CA-43611-GATES-01 fully passed on 2026-09-26, including the collision retest. Test-only
+speed/health reserves are not gameplay tuning. Low-energy collisions can still
+correctly cause zero damage under the existing formulas.
+
 ## Rules for adding and updating entries
 
 1. Add an entry only for reusable engineering knowledge: a recurring failure, a non-obvious project constraint, or a verified cause/fix likely to prevent future work. Ordinary progress belongs in the issue.
