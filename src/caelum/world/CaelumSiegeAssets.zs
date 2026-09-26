@@ -97,20 +97,26 @@ class CaelumSiegePreviewWorld : Object play
 {
     static void RemoveTrialFurniture()
     {
-        let tables = ThinkerIterator.Create("CaelumDiningTable");
-        CaelumDiningTable table;
-        while ((table = CaelumDiningTable(tables.Next())) != null)
-            table.Destroy();
-
-        let chairs = ThinkerIterator.Create("CaelumRestChair");
-        CaelumRestChair chair;
-        while ((chair = CaelumRestChair(chairs.Next())) != null)
-            chair.Destroy();
-
-        let beds = ThinkerIterator.Create("CaelumRestBed");
-        CaelumRestBed bed;
-        while ((bed = CaelumRestBed(beds.Next())) != null)
-            bed.Destroy();
+        let furniture = ThinkerIterator.Create("Actor");
+        Actor actor;
+        while ((actor = Actor(furniture.Next())) != null)
+        {
+            let table = CaelumDiningTable(actor);
+            if (table != null)
+            {
+                table.Destroy();
+                continue;
+            }
+            let chair = CaelumRestChair(actor);
+            if (chair != null)
+            {
+                chair.Destroy();
+                continue;
+            }
+            let bed = CaelumRestBed(actor);
+            if (bed != null)
+                bed.Destroy();
+        }
     }
 
     static Actor SpawnState(class<Actor> kind, vector3 position, StateLabel label)

@@ -1,5 +1,5 @@
 {
-  "version": "4.36.10",
+  "version": "4.36.14",
   "issue": 18,
   "evidence": "agent-captured native GZDoom 4.14.2 render previews",
   "map": "MAP03",

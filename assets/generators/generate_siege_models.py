@@ -162,22 +162,32 @@ def build_ram(mesh: Mesh, log_end: Point, head_center: Point) -> None:
                      15.2, 16.0, 10, True, True, 0.0)
 
 
-def build_gate_intact(mesh: Mesh) -> None:
+def build_gate_frame(mesh: Mesh) -> None:
+    # Stone door frame: side jambs, lintel and threshold.
     for z in (-16.0, 16.0):
         add_box(mesh, STONE, (-86.0, 118.0, z), (14.0, 220.0, 12.0))
-    for x in range(-80, 81, 20):
+    add_box(mesh, STONE, (0.0, 228.0, 0.0), (172.0, 16.0, 12.0))
+    add_box(mesh, STONE, (0.0, 8.0, 0.0), (172.0, 16.0, 12.0))
+
+
+def build_gate_intact(mesh: Mesh) -> None:
+    build_gate_frame(mesh)
+    # Two wooden leaves with a visible central seam and iron rails/pulls.
+    for x in (-70.0, -50.0, -30.0, -10.0, 10.0, 30.0, 50.0, 70.0):
         add_box(mesh, WOOD, (x, 116.0, 0.0), (15.0, 208.0, 10.0))
     for y in (32.0, 116.0, 200.0):
-        add_box(mesh, IRON, (0.0, y, 0.0), (172.0, 7.0, 10.0))
+        add_box(mesh, IRON, (-40.0, y, 0.0), (76.0, 7.0, 10.0))
+        add_box(mesh, IRON, (40.0, y, 0.0), (76.0, 7.0, 10.0))
+    add_box(mesh, IRON, (-8.0, 116.0, 8.0), (6.0, 24.0, 4.0))
+    add_box(mesh, IRON, (8.0, 116.0, 8.0), (6.0, 24.0, 4.0))
 
 
 def build_gate_damaged(mesh: Mesh) -> None:
-    for z in (-16.0, 16.0):
-        add_box(mesh, STONE, (-86.0, 118.0, z), (14.0, 220.0, 12.0))
+    build_gate_frame(mesh)
     # Two intact outer planks, then a forced central gap.
-    for x in (-80, -60, 60, 80):
+    for x in (-70.0, -10.0, 10.0, 70.0):
         add_box(mesh, WOOD, (x, 116.0, 0.0), (15.0, 208.0, 10.0))
-    for x in (-40, 40):
+    for x in (-40.0, 40.0):
         add_box(mesh, WOOD, (x, 116.0, 0.0), (15.0, 140.0, 10.0))
     for y in (32.0, 200.0):
         add_box(mesh, IRON, (-44.0, y, 0.0), (104.0, 7.0, 10.0))
@@ -187,8 +197,7 @@ def build_gate_damaged(mesh: Mesh) -> None:
 
 
 def build_gate_broken(mesh: Mesh) -> None:
-    for z in (-16.0, 16.0):
-        add_box(mesh, STONE, (-86.0, 118.0, z), (14.0, 220.0, 12.0))
+    build_gate_frame(mesh)
     # Both halves folded open around their outer hinges.
     for side in (-1.0, 1.0):
         hinge = (side * 86.0, 0.0)

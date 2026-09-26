@@ -58,6 +58,11 @@ tables and cots and lays out the full state gallery in the open tank for the
 author's live review. Scale, orientation, attachment points and collision
 envelopes are provisional until issues #19-#21 provide the physical data.
 
+The final preview pass removes the trial furniture by scanning the base
+`Actor` class, so the small and large dining-table subclasses are retired with
+the standard table. The gate meshes gain a stone lintel and threshold and
+split into two framed leaves for a clearer door silhouette.
+
 Static validation: `build_dev.ps1` packages the new source tree and the
 generator is deterministic and idempotent. Native GZDoom 4.14.2 screenshots are
 captured under `assets/validation_43610` for the MAP03 gallery; the author
