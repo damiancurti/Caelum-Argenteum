@@ -1,6 +1,16 @@
 # Caelum Argenteum — Current systems and rules
 
-Documentation version: **4.36.9** — 2026-09-25.
+Documentation version: **4.36.10** — 2026-09-25.
+
+## 4.36.10 — Siege assets are visual-only (#18)
+
+Issue #18 introduces reusable cannon, battering-ram and destructible-gate
+models and their MAP03 preview gallery. These are rendering assets only: no
+cannon damage, ram strike, gate hardness, mass, reload time, ammunition, recipe,
+economy rule or player interaction is added. The preview actors do not block the
+player and cannot be used, damaged or opened. The future siege rules remain
+owned by issues #19-#21 and will be documented here when their values are
+defined.
 
 ## 4.36.8 — Prisoner rescue, escort and port rewards (#14)
 

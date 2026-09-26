@@ -1,6 +1,17 @@
 CAELUM ARGENTEUM — STORY AND MAP01
 
-Documentation version: **4.36.9** — 2026-09-25.
+Documentation version: **4.36.10** — 2026-09-25.
+
+## 4.36.10 — MAP03 siege preview gallery (#18)
+
+Issue #18 adds no new story or campaign fact. The MAP03 workshop/tank (the map
+reached after the sewer junction) becomes a visual preview gallery: its trial
+chairs, dining tables and cots are retired on preparation, and the reusable
+cannon, battering-ram and destructible-gate assets are laid out in the open
+reservoir with every state visible at once. The gallery is a development view
+only; it does not change MAP03's accepted travel, stations, gates, storage or
+the future massive-test purpose of the tank. No siege mechanic, mass, damage,
+reload time or gate hardness is defined here; those remain in #19-#21.
 
 ## 4.36.8 — Prisoner rescue dialogue and port thanks (#14)
 

@@ -1,6 +1,29 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **4.36.9** — 2026-09-25.
+Documentation version: **4.36.10** — 2026-09-25.
+
+## 4.36.10 — Reusable siege preview assets (#18)
+
+Baseline: integrated 4.36.9, `7a01ff00` (author acceptance of #15). Issue #18
+adds the reusable cannon, battering-ram and destructible-gate assets as
+verified-rendering content only, with no siege gameplay or invented balance
+values. The deterministic generator
+`assets/generators/generate_siege_models.py` writes ten OBJ meshes under
+`src/models/caelum/siege`, the transparent `CSGN A-D`, `CRAM A-C` and
+`CAGT A-C` frames in `src/sprites`, and a guarded `CAELUM SIEGE MODELS` block
+in `src/MODELDEF`. Three actor classes
+(`CaelumSiegeCannon`, `CaelumSiegeRam`, `CaelumSiegeGate`) expose the named
+state labels; `CaelumSiegePreviewWorld` retires the MAP03 trial chairs, dining
+tables and cots and lays out the full state gallery in the open tank for the
+author's live review. Scale, orientation, attachment points and collision
+envelopes are provisional until issues #19-#21 provide the physical data.
+
+Static validation: `build_dev.ps1` packages the new source tree and the
+generator is deterministic and idempotent. Native GZDoom 4.14.2 screenshots are
+captured under `assets/validation_43610` for the MAP03 gallery; the author
+visual check remains separate. `CA-43610-SIEGE-ART-01` is recorded as pending
+in `pending_test.txt` until the author confirms the cannon, ram and gate states
+and their clearances in the MAP03 gallery.
 
 ## 4.36.9 — Approved Tarot fronts and collection bindings (#15)
 

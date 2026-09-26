@@ -1,6 +1,6 @@
 # CONTEXT.md — Ultra-condensed summary of Caelum Argenteum
 
-Documentation version: **4.36.9** — 2026-09-25.
+Documentation version: **4.36.10** — 2026-09-25.
 
 Summary so an AI or a contributor can understand the project without reading
 the five full canonical documents. Source: `docs/PROJECT.md`,
@@ -64,7 +64,16 @@ the gauchos and rural culture, and the humans the urban porteño society.
 
 ## Current status
 
-Current release **4.36.9** implements #15: the author-approved 78-card Tarot
+Current release **4.36.10** implements #18: reusable cannon, battering-ram and
+destructible-gate assets are generated deterministically under
+`src/models/caelum/siege` with transparent `CSGN`/`CRAM`/`CAGT` state frames
+and matching `MODELDEF` entries. The MAP03 workshop/tank shows a visual-only
+preview gallery that retires its trial chairs, dining tables and cots and lays
+out all four cannon states, all three ram states and all three gate states in
+the open reservoir for author review. No mass, damage, reload time or gate
+hardness is invented in this patch; those values remain in #19-#21.
+
+The preceding **4.36.9** implements #15: the author-approved 78-card Tarot
 front package is integrated under `src/graphics/caelum/tarot`, the shared card
 back is preserved, and each front is bound to its persistent card ID. The
 Journal now shows the correct owned front (El Loco and the Ace of Cups) with

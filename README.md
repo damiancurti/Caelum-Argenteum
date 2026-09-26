@@ -4,8 +4,14 @@ An independent dark fantasy FPS-RPG inspired by nineteenth-century Argentina.
 Author and game designer: **Damian Curti**. Development target: **GZDoom 4.14.2**
 on Windows 11. The final game is intended to be independent of Doom assets.
 
-**Current release: 4.36.9.** Obtain and update the complete repository, validate
+**Current release: 4.36.10.** Obtain and update the complete repository, validate
 it, then rebuild with `run_dev.bat` as described below. Issue
+[#18](https://github.com/damiancurti/Caelum-Argenteum/issues/18) adds the
+reusable cannon, battering-ram and destructible-gate assets as verified-rendering
+content. A deterministic generator produces the meshes, state frames and
+`MODELDEF` bindings, and the MAP03 workshop/tank shows a visual-only preview
+gallery after retiring its trial chairs, tables and cots. No siege mechanics,
+mass, damage, reload time or gate hardness is added here. Issue
 [#15](https://github.com/damiancurti/Caelum-Argenteum/issues/15) integrates the
 author-approved 78-card Tarot fronts from the supplied package, preserves the
 shared card back, and binds every runtime front to its persistent card ID so
