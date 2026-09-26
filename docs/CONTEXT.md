@@ -1,6 +1,6 @@
 # CONTEXT.md — Ultra-condensed summary of Caelum Argenteum
 
-Documentation version: **4.36.14** — 2026-09-25.
+Documentation version: **4.36.14a** — 2026-09-26.
 
 Summary so an AI or a contributor can understand the project without reading
 the five full canonical documents. Source: `docs/PROJECT.md`,
@@ -64,7 +64,13 @@ the gauchos and rural culture, and the humans the urban porteño society.
 
 ## Current status
 
-Current release **4.36.14** implements #31: the author-selected combat-pain
+Current release **4.36.14a** corrects #18 after the author's 2026-09-26
+feedback: two solid gate leaves in three materials, refined cannon/ram forms,
+and independent MODELDEF states instead of overlapping open/closed meshes.
+Fresh MAP03 shows all 16 states. Author reinspection is pending; exact cannon
+historical scale remains unverified. Saves and campaign mechanics are unchanged.
+
+The preceding **4.36.14** implements #31: the author-selected combat-pain
 sounds, the supplied Suno dialogue-opening cue and the local sewer/port/coast
 music are integrated while all unused stock and MP3 backups remain preserved
 and unbound. The former MAP01 music is reserved for future chapter-end story

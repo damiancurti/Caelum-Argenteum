@@ -1,6 +1,35 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **4.36.14** — 2026-09-25.
+Documentation version: **4.36.14a** — 2026-09-26.
+
+## 4.36.14a — Refine siege models and separate gate materials (#18 follow-up)
+
+Requested by the author on 2026-09-26 after #18/PR #38 closed; baseline
+`95d8f111`. The author reported log-like door leaves and an open-but-obstructed
+appearance, and requested wood, reinforced wood and metal-clad variants plus
+clearer cannon/ram forms. This is a focused correction, not withdrawal of the
+original `CA-43610-SIEGE-ART-01` acceptance.
+
+The generator now produces continuous leaves, symmetric stone jambs, three
+gate materials and independent damage/open states. Native reproduction found
+that MODELDEF slots were incorrectly used as alternatives: all state meshes
+rendered together. Each frame now uses its own single-slot definition. Cannon
+wheels, bore, breech and carriage and the ram's support/suspension/striking
+assembly are refined. The ram retains its log length in every pose. The gate gallery is kept inside
+the north wall and its side columns avoid the surviving dining display. The
+older claim that MAP03 furniture was fully retired is not borne out by the
+native view; furniture cleanup is not broadened in this asset correction. Visual
+inputs and gallery positions live in siege_visuals.json; existing identifiers
+remain compatible and no persistent fields or campaign map lumps change.
+
+Verification is recorded in `assets/validation_43614a/RESULTS.json`: repeated
+generation and resource checks, the normal validator/build, native GZDoom
+4.14.2 views of all 16 states and passage checks for the three open gates.
+Author acceptance of these revisions is pending as `CA-43614A-SIEGE-ART-01`.
+Exact historical cannon scale remains unresolved; no mass/balance is inferred.
+Usage: desktop correction of #18; no Work session or cross-model review in this
+delivery. Token categories, current weekly allowance, reset time and concurrent
+usage are unavailable and are not estimated from diff size or the old baseline.
 
 ## 4.36.14 — Pain sounds, dialogue cue, map music and story intermissions (#31)
 

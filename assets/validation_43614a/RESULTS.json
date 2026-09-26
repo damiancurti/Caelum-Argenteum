@@ -1,0 +1,69 @@
+{
+  "version": "4.36.14a",
+  "issue": 18,
+  "date": "2026-09-26",
+  "baseline": "95d8f111",
+  "evidence": "Agent checks; author acceptance pending",
+  "static": "STATIC.json: 16 exclusive states, valid resources, two identical generations",
+  "build": {
+    "normal_build": "PASS",
+    "files": 6091,
+    "byte_matching_sources": 6091,
+    "sha256": "86ffedd9cac46b99ab14ab71c42e7ed3351d4e761806d0e1643d9885edc75d5f"
+  },
+  "engine": {
+    "version": "GZDoom 4.14.2",
+    "map": "MAP03",
+    "renderer": "Vulkan",
+    "compile": "PASS",
+    "captured_views": 32,
+    "retained_views": 20,
+    "nonblocking_gate_actors": 9,
+    "open_passage_trymove": "3/3 PASS, no noclip",
+    "log": "engine.txt",
+    "addon": "qa",
+    "capture_commands": "capture.cfg",
+    "final_package_compile": "PASS, process exit 0; final_compile.txt",
+    "capture_reproduction": "Load normal PK3 plus assets/validation_43614a/qa; map MAP03; exec assets/validation_43614a/capture.cfg. Screenshots write to build/."
+  },
+  "images": {
+    "gate_wood_intact": "gate_wood_intact.png",
+    "gate_reinforced_intact": "gate_reinforced_intact.png",
+    "gate_armored_intact": "gate_armored_intact.png",
+    "gate_wood_damaged": "gate_wood_damaged.png",
+    "gate_reinforced_damaged": "gate_reinforced_damaged.png",
+    "gate_armored_damaged": "gate_armored_damaged.png",
+    "gate_wood_open": "gate_wood_open.png",
+    "gate_reinforced_open": "gate_reinforced_open.png",
+    "gate_armored_open": "gate_armored_open.png",
+    "cannon_ready": "cannon_ready.png",
+    "cannon_loading": "cannon_loading.png",
+    "cannon_firing": "cannon_firing.png",
+    "cannon_recovery": "cannon_recovery.png",
+    "ram_ready": "ram_ready.png",
+    "ram_strike": "ram_strike.png",
+    "ram_recovery": "ram_recovery.png",
+    "gate_armored_intact_reverse": "gate_armored_intact_reverse.png",
+    "gate_armored_open_reverse": "gate_armored_open_reverse.png",
+    "cannon_loading_reverse": "cannon_loading_reverse.png",
+    "ram_ready_reverse": "ram_ready_reverse.png"
+  },
+  "before": {
+    "image": "before_state_overlap.png",
+    "qualification": "Legacy MODELDEF slot layout on intermediate remeshed assets; three gate poses overlaid."
+  },
+  "iteration": "Intermediate Y=3600 placement failed TryMove at the north wall. Final Y=3200 passes; X +/-1200 avoids surviving furniture.",
+  "scope_limits": [
+    "Visual preview only; closed preview gates also remain nonblocking.",
+    "Exact historical cannon dimensions/breech and physical masses remain unverified.",
+    "No save schema or campaign WAD changes; old saved galleries retain existing layout.",
+    "Existing furniture retirement is incomplete; unrelated furniture code was not expanded."
+  ],
+  "author_check": "CA-43614A-SIEGE-ART-01 pending",
+  "usage": "Desktop correction; token categories, current allowance, resets and concurrent usage unavailable. No estimates.",
+  "validator": {
+    "version": "4.36.14a",
+    "errors": [],
+    "exit_code": 0
+  }
+}

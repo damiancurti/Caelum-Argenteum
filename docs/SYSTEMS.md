@@ -1,6 +1,15 @@
 # Caelum Argenteum — Current systems and rules
 
-Documentation version: **4.36.14** — 2026-09-25.
+Documentation version: **4.36.14a** — 2026-09-26.
+
+## 4.36.14a — Distinct siege materials and visual states (#18 correction)
+
+Gate material and gate state are independent: wood, reinforced wood and
+iron-clad armor each have intact, damaged and open previews. MODELDEF no longer
+overlays the closed model on the open pose. Preview actors remain nonblocking
+in every state; usable/damageable campaign doors remain #19. The issue already
+specifies hardness 0.3/0.5/0.7; this art correction does not assign those values,
+infer health or invent mass, damage, reload timing or resistance multipliers.
 
 ## 4.36.10 — Siege assets are visual-only (#18)
 

@@ -1,6 +1,16 @@
 # Caelum Argenteum — Project, status and roadmap
 
-Documentation version: **4.36.14** — 2026-09-25.
+Documentation version: **4.36.14a** — 2026-09-26.
+
+## 4.36.14a — Author-requested siege asset correction (#18)
+
+The closed #18 receives a focused visual follow-up: continuous two-leaf gates
+in wood, reinforced wood and iron-clad armor; clearer cannon and ram geometry;
+and independent per-state rendering. MAP03 displays nine gate previews plus
+the four cannon and three ram states. No balance, campaign geometry or save
+schema changes. The original author acceptance remains historical; the revised
+appearance awaits `CA-43614A-SIEGE-ART-01`. Exact historical cannon dimensions
+remain unverified. See ASSETS for reference geometry and evidence limits.
 
 ## 4.36.10 — Reusable siege preview assets (issue #18)
 

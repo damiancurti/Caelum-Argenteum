@@ -3311,45 +3311,160 @@ Model CaelumSiegeCannon
 {
     Path "models/caelum/siege"
     Model 0 "ca_siege_cannon_ready.obj"
-    Model 1 "ca_siege_cannon_loading.obj"
-    Model 2 "ca_siege_cannon_firing.obj"
-    Model 3 "ca_siege_cannon_recovery.obj"
     Scale 1.0 1.0 1.0
     CorrectPixelStretch
     DontCullBackFaces
     FrameIndex CSGN A 0 0
-    FrameIndex CSGN B 1 0
-    FrameIndex CSGN C 2 0
-    FrameIndex CSGN D 3 0
+}
+
+Model CaelumSiegeCannon
+{
+    Path "models/caelum/siege"
+    Model 0 "ca_siege_cannon_loading.obj"
+    Scale 1.0 1.0 1.0
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CSGN B 0 0
+}
+
+Model CaelumSiegeCannon
+{
+    Path "models/caelum/siege"
+    Model 0 "ca_siege_cannon_firing.obj"
+    Scale 1.0 1.0 1.0
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CSGN C 0 0
+}
+
+Model CaelumSiegeCannon
+{
+    Path "models/caelum/siege"
+    Model 0 "ca_siege_cannon_recovery.obj"
+    Scale 1.0 1.0 1.0
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CSGN D 0 0
 }
 
 Model CaelumSiegeRam
 {
     Path "models/caelum/siege"
     Model 0 "ca_siege_ram_ready.obj"
-    Model 1 "ca_siege_ram_strike.obj"
-    Model 2 "ca_siege_ram_recovery.obj"
     Scale 1.0 1.0 1.0
     CorrectPixelStretch
     DontCullBackFaces
     FrameIndex CRAM A 0 0
-    FrameIndex CRAM B 1 0
-    FrameIndex CRAM C 2 0
+}
+
+Model CaelumSiegeRam
+{
+    Path "models/caelum/siege"
+    Model 0 "ca_siege_ram_strike.obj"
+    Scale 1.0 1.0 1.0
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CRAM B 0 0
+}
+
+Model CaelumSiegeRam
+{
+    Path "models/caelum/siege"
+    Model 0 "ca_siege_ram_recovery.obj"
+    Scale 1.0 1.0 1.0
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CRAM C 0 0
 }
 
 Model CaelumSiegeGate
 {
     Path "models/caelum/siege"
     Model 0 "ca_siege_gate_intact.obj"
-    Model 1 "ca_siege_gate_damaged.obj"
-    Model 2 "ca_siege_gate_broken.obj"
     Scale 1.0 1.0 1.0
     CorrectPixelStretch
     DontCullBackFaces
     FrameIndex CAGT A 0 0
-    FrameIndex CAGT B 1 0
-    FrameIndex CAGT C 2 0
+}
+
+Model CaelumSiegeGate
+{
+    Path "models/caelum/siege"
+    Model 0 "ca_siege_gate_damaged.obj"
+    Scale 1.0 1.0 1.0
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CAGT B 0 0
+}
+
+Model CaelumSiegeGate
+{
+    Path "models/caelum/siege"
+    Model 0 "ca_siege_gate_broken.obj"
+    Scale 1.0 1.0 1.0
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CAGT C 0 0
+}
+
+Model CaelumSiegeGateReinforced
+{
+    Path "models/caelum/siege"
+    Model 0 "ca_siege_gate_reinforced_intact.obj"
+    Scale 1.0 1.0 1.0
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CAGR A 0 0
+}
+
+Model CaelumSiegeGateReinforced
+{
+    Path "models/caelum/siege"
+    Model 0 "ca_siege_gate_reinforced_damaged.obj"
+    Scale 1.0 1.0 1.0
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CAGR B 0 0
+}
+
+Model CaelumSiegeGateReinforced
+{
+    Path "models/caelum/siege"
+    Model 0 "ca_siege_gate_reinforced_broken.obj"
+    Scale 1.0 1.0 1.0
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CAGR C 0 0
+}
+
+Model CaelumSiegeGateArmored
+{
+    Path "models/caelum/siege"
+    Model 0 "ca_siege_gate_armored_intact.obj"
+    Scale 1.0 1.0 1.0
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CAGA A 0 0
+}
+
+Model CaelumSiegeGateArmored
+{
+    Path "models/caelum/siege"
+    Model 0 "ca_siege_gate_armored_damaged.obj"
+    Scale 1.0 1.0 1.0
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CAGA B 0 0
+}
+
+Model CaelumSiegeGateArmored
+{
+    Path "models/caelum/siege"
+    Model 0 "ca_siege_gate_armored_broken.obj"
+    Scale 1.0 1.0 1.0
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CAGA C 0 0
 }
 
 // --- END GENERATED CAELUM SIEGE MODELS ---
-

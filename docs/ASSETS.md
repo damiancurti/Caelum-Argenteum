@@ -1,6 +1,53 @@
 # Caelum Argenteum — Audio and art
 
-Documentation version: **4.36.14** — 2026-09-25.
+Documentation version: **4.36.14a** — 2026-09-26.
+
+## 4.36.14a — Siege silhouettes and gate materials (#18 correction)
+
+The author's 2026-09-26 correction replaces the fence-like gate with two solid
+leaves, fixes the duplicated left jamb, and separates plain wood, iron-strapped
+wood and exterior iron-clad armor. Every material has Intact/Damaged/Broken
+states; Broken presents the two leaves open at 82 degrees. Damage is shown as
+surface scars, retaining the closed silhouette. Opening remains a visual pose.
+
+`assets/generators/siege_visuals.json` is the visual input manifest for
+`generate_siege_models.py`. Outputs are 16 OBJ files, 16 transparent state
+frames, the guarded MODELDEF block and the nine gate gallery placements.
+The legacy `CaelumSiegeGate`/`CAGT` names remain plain wood; additions are
+`CaelumSiegeGateReinforced`/`CAGR` and `CaelumSiegeGateArmored`/`CAGA`.
+One independent MODELDEF block per frame binds one model slot: slots represent
+simultaneous parts, so the old multiple-slot layout incorrectly overlaid states.
+
+The gate opening uses #18's explicit proposed 3 m × 3 m reference, at 32 MU/m:
+96 × 96 MU, two 48 MU leaves, 2.56 MU wood, and 0.192 MU outer iron cladding.
+It is reference geometry, not a new final campaign dimension or mass approval.
+OBJ X is width/forward, Y is up, Z is depth/lateral; actor angle zero retains
+that placement with OBJ Y mapped to world Z. Gate hinges are (±48, 0, 0)
+in OBJ coordinates; the frame bounds are X ±56, Y -2..104, Z ±6 MU. The sill
+is flush with the floor. Open leaves swing toward positive OBJ Z and leave
+the central passage clear. The solid actor collision for future mechanics is
+not implemented; all gallery actors remain nonblocking, including intact ones.
+
+The cannon gains hollow 75 mm bore geometry, a stepped steel barrel, trunnions,
+open spoked wheels, a tapered trail and a visible sliding breech wedge. Recoil
+translates the entire carriage, avoiding a modern sliding-barrel appearance.
+The inherited overall cannon dimensions remain provisional: exact dimensions
+for the selected Argentine 1884 Krupp are still unverified. A 75 mm bore does
+not verify carriage scale, historical breech details, mass or ammunition type.
+
+The ram gains A-frame supports, diagonal braces, paired iron suspension rods,
+spoked wheels, log bands, handles and a broad iron striking face. Its log/head
+assembly translates rigidly in the three poses instead of changing length.
+OBJ contact center is (34 + travel, 44, 0) MU; travel is a preview pose offset,
+not a physical velocity or gameplay reach. Suspension anchors and provisional
+dimensions live in the manifest. This remains the small preview resource;
+large-machine engineering and historical cannon verification belong to #20/#21.
+
+All mesh work is original project geometry and reuses the existing station/stash
+textures; no new raster art or external resources were imported. Existing class
+names, state labels and sprite frames are retained for saved actors. New gallery
+placements appear on fresh MAP03; an existing saved gallery is not respawned.
+Author reinspection is `CA-43614A-SIEGE-ART-01`; original acceptance is retained.
 
 ## 4.36.10 — Reusable siege preview assets (#18)
 

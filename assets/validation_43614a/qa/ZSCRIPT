@@ -1,0 +1,70 @@
+version "4.14"
+class SiegeRefineQA : EventHandler
+{
+    int Clock;
+    Actor View;
+    override void WorldTick()
+    {
+        Clock++;
+        let p = players[0].mo;
+        if (p == null) return;
+        if (Clock == 5)
+        {
+            View = Actor.Spawn("MapSpot", (0,0,0), NO_REPLACE);
+            players[0].camera = View;
+        }
+        if (View == null) return;
+        // Front view of the gate plane, with a small offset to show thickness.
+        int shot = (Clock - 5) / 100;
+        bool reverse = shot >= 16;
+        shot = shot % 16;
+        vector3 target;
+        vector3 offset;
+        if (shot < 9)
+        {
+            int material = shot % 3;
+            int state = shot / 3;
+            target = (-1200 + material * 1200, 2600 + state * 300, 45);
+            offset = (30, -170, 24);
+        }
+        else if (shot < 13)
+        {
+            target = (-1500 + (shot - 9) * 600, 1500, 24);
+            offset = (85, -125, 45);
+        }
+        else
+        {
+            target = (-900 + (shot - 13) * 900, 2200, 45);
+            offset = (125, -155, 65);
+        }
+        if (reverse) offset.XY = -offset.XY;
+        View.SetOrigin(target + offset, false);
+        View.Angle = VectorAngle(-offset.X, -offset.Y);
+        View.Pitch = 15;
+        if (Clock == 25)
+        {
+            int count = 0;
+            let iterator = ThinkerIterator.Create("CaelumSiegeGate");
+            Actor gate;
+            while ((gate = Actor(iterator.Next())) != null)
+            {
+                count++;
+                Console.Printf("QA_GATE %s solid=%d blockmap=%d", gate.GetClassName(), gate.bSOLID, !gate.bNOBLOCKMAP);
+            }
+            Console.Printf("QA_GATE_COUNT %d", count);
+        }
+        if (Clock == 650)
+        {
+            for (int material = 0; material < 3; material++)
+            {
+                p.SetOrigin((-1200 + material * 1200, 3070, 0), false);
+                p.Vel = (0,0,0);
+                bool okay = true;
+                for (int step = 0; step < 65; step++)
+                    if (!p.TryMove((p.Pos.X, p.Pos.Y + 4), false)) okay = false;
+                Console.Printf("QA_PASSAGE %s material=%d y=%.1f", okay ? "PASS" : "FAIL", material, p.Pos.Y);
+            }
+            p.SetOrigin((0, 1100, 0), false);
+        }
+    }
+}

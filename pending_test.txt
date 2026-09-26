@@ -1,0 +1,17 @@
+ID: CA-43614A-SIEGE-ART-01
+Origin: 4.36.14a, issue #18 author-requested visual correction (2026-09-26).
+Prerequisites: rebuild with run_dev.bat; use a disposable fresh MAP03 session
+(console: map MAP03), not a campaign save with the old gallery already stored.
+Steps:
+1. Inspect the four cannon poses at Y=1500 and three ram poses at Y=2200.
+   Check open spoked wheels, cannon bore/breech/trail, ram frame/suspension and
+   fixed-length log/head across ready/strike/recovery. Look from both sides.
+2. Inspect gates at X=-1200/0/1200 (wood/reinforced wood/armored). Each column
+   has intact/damaged/open poses at Y=2600/2900/3200. Inspect front and back.
+3. Check two continuous leaves, central seam, symmetric jambs, recognizable
+   material and damage, and absence of overlapping closed/open meshes.
+4. Walk through the central passage of each open gate. Preview actors are
+   nonblocking in all states; damage/opening mechanics are outside this test.
+Expected: clear silhouettes and material/state differences, no closed panel
+across an open passage, no physical block when crossing the open previews.
+Historical cannon scale is still provisional and is not accepted by this check.
