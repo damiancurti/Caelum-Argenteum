@@ -17,7 +17,10 @@ content. A deterministic generator produces the meshes, state frames and
 gallery. The 4.36.14a correction
 gives the gate two continuous leaves and wood/reinforced/armored variants,
 refines cannon/ram forms, and fixes overlapping state meshes. Fresh MAP03 shows
-all 16 poses; revised appearance awaits author inspection. Exact historical
+all 16 poses; the author approved all visual checks on 2026-09-26. MAP03
+now removes remaining tables, chairs, beds and crafting stations, including
+those in existing saves, and prevents their trial initializers from respawning
+them. Exact historical
 cannon scale remains unverified. No siege mechanics,
 mass, damage, reload time or gate hardness is added here. Issue
 [#29](https://github.com/damiancurti/Caelum-Argenteum/issues/29) records the

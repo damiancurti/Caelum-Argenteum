@@ -3,7 +3,7 @@
   "deterministic_runs": 2,
   "exclusive_states": 16,
   "hashes": {
-    "src/caelum/world/CaelumSiegeAssets.zs": "d6de4a9825b7321555d5ac3c0c60f2c3d581a541dca98a5449f79be89b30fd33",
+    "src/caelum/world/CaelumSiegeAssets.zs": "e5f7ade3bb2674ff3ba6591161d2c4b31a31f090a88b4789b6df943bec8d7314",
     "src/MODELDEF": "93dae274f846b9c7e549c41997a04dbfc4772da366f4b7a6eade62785ea596cf",
     "src/models/caelum/siege/ca_siege_cannon_firing.obj": "9a3d1e64136d9cd2d9486a1d06464b94096dd91fba6d81be2aedaa8479deedd4",
     "src/models/caelum/siege/ca_siege_cannon_loading.obj": "965740b7f6f191dd0db5c858c256791f364c156173d90853a14ce2a03c5c9adf",

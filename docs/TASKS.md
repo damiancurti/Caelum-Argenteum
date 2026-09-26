@@ -9,8 +9,12 @@ Documentation version: **4.36.14a** — 2026-09-26.
   material variants and one visible model per state; fresh MAP03 preview.
 - **Validation:** native state views and open-passage checks; deterministic
   generation, resource references, validator and normal package build.
-- **Pending:** author inspection `CA-43614A-SIEGE-ART-01`; historical cannon
-  scale/breech verification remains separate from this visual correction.
+- **Acceptance:** author confirmed all visual tests passed on 2026-09-26
+  (`CA-43614A-SIEGE-ART-01`); transferred to HISTORY and removed from the queue.
+- **Follow-up:** remove all remaining MAP03 tables, chairs, beds and crafting
+  stations, prevent respawn and cover existing saves; native evidence in
+  `assets/validation_43614a/cleanup`. Historical cannon scale/breech verification
+  remains separate from this visual correction.
 - **Next:** #19 damageable gates, #20 ram physics and #21 cannon physics;
   retain the authored hardness values in #18 without inventing new data.
 

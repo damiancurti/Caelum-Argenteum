@@ -214,7 +214,7 @@ mesh does not imply clear map geometry behind it.
 Regression: `python assets/validation_43614a/check_siege.py` checks exclusive
 state bindings, valid OBJ/material references and two byte-identical generator
 runs. Render affected states in the target engine after binding changes.
-Author acceptance: pending `CA-43614A-SIEGE-ART-01`. This verifies visual
+Author acceptance: `CA-43614A-SIEGE-ART-01` passed on 2026-09-26. This verifies visual
 previews, not future breakable-gate physics or historical machinery dimensions.
 
 ## Rules for adding and updating entries

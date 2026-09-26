@@ -47,7 +47,10 @@ All mesh work is original project geometry and reuses the existing station/stash
 textures; no new raster art or external resources were imported. Existing class
 names, state labels and sprite frames are retained for saved actors. New gallery
 placements appear on fresh MAP03; an existing saved gallery is not respawned.
-Author reinspection is `CA-43614A-SIEGE-ART-01`; original acceptance is retained.
+The author confirmed `CA-43614A-SIEGE-ART-01` passed on 2026-09-26; original
+acceptance is retained. The same follow-up removes remaining MAP03 furniture
+and crafting stations at runtime without deleting models or changing the
+approved siege meshes. Existing saved galleries retain their siege layout.
 
 ## 4.36.10 — Reusable siege preview assets (#18)
 

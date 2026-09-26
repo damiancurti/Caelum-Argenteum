@@ -9,7 +9,10 @@ reinforced wood, armored) and condition in rows (Y 2600/2900/3200: intact,
 damaged, open). These data are maintained in siege_visuals.json and generated
 into the existing preview initializer. The original four cannon and three ram
 placements remain. The open pose has a clear passage; this is a visual gallery,
-not a playable siege. Saved galleries keep their existing actors and layout.
+not a playable siege. Saved galleries keep their siege actors and layout;
+remaining tables, chairs, beds and crafting stations are now removed at runtime
+and their MAP03 trial initializers are disabled, as requested on 2026-09-26.
+The same message confirms all siege visual tests passed. No WAD geometry changes.
 
 ## 4.36.10 — MAP03 siege preview gallery (#18)
 

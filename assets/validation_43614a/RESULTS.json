@@ -3,7 +3,7 @@
   "issue": 18,
   "date": "2026-09-26",
   "baseline": "95d8f111",
-  "evidence": "Agent checks; author acceptance pending",
+  "evidence": "Agent checks; author accepted all visual tests on 2026-09-26. Cleanup follow-up has separate native evidence.",
   "static": "STATIC.json: 16 exclusive states, valid resources, two identical generations",
   "build": {
     "normal_build": "PASS",
@@ -57,13 +57,14 @@
     "Visual preview only; closed preview gates also remain nonblocking.",
     "Exact historical cannon dimensions/breech and physical masses remain unverified.",
     "No save schema or campaign WAD changes; old saved galleries retain existing layout.",
-    "Existing furniture retirement is incomplete; unrelated furniture code was not expanded."
+    "At the initial art review furniture retirement was incomplete; the subsequent author-requested cleanup is verified separately in cleanup/RESULTS.json."
   ],
-  "author_check": "CA-43614A-SIEGE-ART-01 pending",
+  "author_check": "CA-43614A-SIEGE-ART-01 PASS, author confirmed all visual tests on 2026-09-26; historical-scale/mechanics qualifications retained.",
   "usage": "Desktop correction; token categories, current allowance, resets and concurrent usage unavailable. No estimates.",
   "validator": {
     "version": "4.36.14a",
     "errors": [],
     "exit_code": 0
-  }
+  },
+  "cleanup_followup": "Same author request: retire remaining MAP03 furniture/stations. Separate evidence in cleanup/RESULTS.json; initial screenshots remain historical."
 }

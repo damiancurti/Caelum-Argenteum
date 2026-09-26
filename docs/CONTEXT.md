@@ -67,8 +67,12 @@ the gauchos and rural culture, and the humans the urban porteño society.
 Current release **4.36.14a** corrects #18 after the author's 2026-09-26
 feedback: two solid gate leaves in three materials, refined cannon/ram forms,
 and independent MODELDEF states instead of overlapping open/closed meshes.
-Fresh MAP03 shows all 16 states. Author reinspection is pending; exact cannon
-historical scale remains unverified. Saves and campaign mechanics are unchanged.
+Fresh MAP03 shows all 16 states. The author passed all visual checks on
+2026-09-26 (CA-43614A-SIEGE-ART-01). The same correction now removes MAP03
+tables, chairs, beds and crafting stations, including existing saved actors,
+and prevents their automatic respawn. Table contents become pickups through
+the existing destructor. Other maps and save schemas remain unchanged; exact
+historical cannon scale remains unverified.
 
 The preceding **4.36.14** implements #31: the author-selected combat-pain
 sounds, the supplied Suno dialogue-opening cue and the local sewer/port/coast

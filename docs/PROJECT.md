@@ -9,7 +9,10 @@ in wood, reinforced wood and iron-clad armor; clearer cannon and ram geometry;
 and independent per-state rendering. MAP03 displays nine gate previews plus
 the four cannon and three ram states. No balance, campaign geometry or save
 schema changes. The original author acceptance remains historical; the revised
-appearance awaits `CA-43614A-SIEGE-ART-01`. Exact historical cannon dimensions
+appearance passed `CA-43614A-SIEGE-ART-01` on 2026-09-26. MAP03 now retires
+remaining furniture and crafting stations and suppresses their automatic
+placement, including cleanup when loading an existing save. Other maps retain
+their facilities. Exact historical cannon dimensions
 remain unverified. See ASSETS for reference geometry and evidence limits.
 
 ## 4.36.10 — Reusable siege preview assets (issue #18)

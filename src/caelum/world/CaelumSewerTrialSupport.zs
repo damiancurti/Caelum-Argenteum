@@ -43,6 +43,7 @@ class CaelumSewerTrialSupport : Object play
 
     static void PrepareWorld()
     {
+        if (level.MapName == "MAP03") return;
         if (!IsTrialMap() && !CaelumMazeLayout.IsCurrent()) return;
         vector3 position = BenchPosition();
         PlaceStation("CaelumWorkbenchStation", CaelumConstants.CRAFTING_STATION_WORKBENCH, position);

@@ -162,6 +162,7 @@ class CaelumRestFurnitureTrial : Object play
 
     static bool PrepareWorld()
     {
+        if (level.MapName == "MAP03") return true;
         if (!CaelumSewerTrialSupport.IsTrialMap() && !CaelumMazeLayout.IsCurrent()) return true;
         vector3 chair = level.MapName == "MAP02" ? (-160,64,0) : (144,224,0);
         vector3 bed = level.MapName == "MAP02" ? (-144,232,0) : (144,400,0);

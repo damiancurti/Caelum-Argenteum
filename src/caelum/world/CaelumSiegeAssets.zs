@@ -128,25 +128,37 @@ class CaelumSiegePreviewWorld : Object play
 {
     static void RemoveTrialFurniture()
     {
+        if (level.MapName != "MAP03") return;
+        // Primero reunir las instancias: destruir una mesa también retira
+        // sus actores auxiliares y no debe alterar la búsqueda en curso.
+        Array<Actor> retired;
         let furniture = ThinkerIterator.Create("Actor");
         Actor actor;
         while ((actor = Actor(furniture.Next())) != null)
         {
-            let table = CaelumDiningTable(actor);
-            if (table != null)
+            if (actor is "CaelumDiningTable" || actor is "CaelumRestChair"
+                || actor is "CaelumRestBed" || actor is "CaelumCraftingStation")
+                retired.Push(actor);
+        }
+        for (int i = 0; i < retired.Size(); i++)
+        {
+            actor = retired[i];
+            if (actor == null) continue;
+            let seat = CaelumRestFurniture(actor);
+            if (seat != null && seat.Occupant != null)
+                CaelumRestState.Cancel(seat.Occupant);
+            // OnDestroy de la mesa conserva sus pertenencias como pickups y
+            // elimina platos y bloques; no se pierde el contenido del save.
+            actor.Destroy();
+        }
+        if (retired.Size() > 0)
+        {
+            for (int i = 0; i < MAXPLAYERS; i++)
             {
-                table.Destroy();
-                continue;
+                if (!playeringame[i]) continue;
+                let user = CaelumPlayer(players[i].mo);
+                if (user != null) user.RefreshActiveCraftingStationSession();
             }
-            let chair = CaelumRestChair(actor);
-            if (chair != null)
-            {
-                chair.Destroy();
-                continue;
-            }
-            let bed = CaelumRestBed(actor);
-            if (bed != null)
-                bed.Destroy();
         }
     }
 

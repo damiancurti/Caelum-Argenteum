@@ -10,6 +10,11 @@ overlays the closed model on the open pose. Preview actors remain nonblocking
 in every state; usable/damageable campaign doors remain #19. The issue already
 specifies hardness 0.3/0.5/0.7; this art correction does not assign those values,
 infer health or invent mass, damage, reload timing or resistance multipliers.
+The author-approved gallery cleanup disables table/chair/bed/station trial
+placement only in MAP03 and removes saved instances there. Tables release their
+stored consumables as pickups; portable sleeping bags and unrelated travel,
+storage and hazard actors are outside this cleanup. MAP02/MAP06 facilities are
+preserved. No crafting recipe or siege combat rule changes.
 
 ## 4.36.10 — Siege assets are visual-only (#18)
 
