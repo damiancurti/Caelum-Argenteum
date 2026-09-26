@@ -26,6 +26,49 @@ Do not read all of HISTORY.md by default. Search its relevant headings or issue/
 
 For any maintained doc under docs/ with strictly more than 5,000 words, query [DOCUMENT_INDEX.md](DOCUMENT_INDEX.md) first and extract only the relevant source ranges (see its header and `build_document_index.py`). Small documents may be read directly; full-document review remains appropriate when the task requires it.
 
+## Selective reading examples
+
+These examples apply the policy from `AGENTS.md`; they are illustrative and are
+not claimed as executed evidence. Commands are PowerShell. `rg --files` lists
+paths without printing contents, `rg -n` prints matching lines with line
+numbers, and `-B`/`-A` add neighboring context. Angle-bracketed values are
+placeholders: substitute the real path or range for the current task.
+
+Code issue: find a repair rule and read only the affected code.
+
+```powershell
+rg --files src/caelum/equipment
+rg -n "repair" src/caelum/equipment
+rg -n -B 2 -A 30 "CaelumRepairRules" src/caelum/equipment/CaelumCraftingRules.zs
+```
+
+Read the reported ranges first; follow callers, initialization, persistence or
+shared rules only when the change requires them.
+
+Long document: locate the current repair contract without loading all of
+`docs/SYSTEMS.md`.
+
+```powershell
+python build_document_index.py list "repair"
+python build_document_index.py read SYSTEMS.md <start> <end>
+```
+
+Replace `<start>` and `<end>` with the returned inclusive range, and confirm
+the index is fresh first (`python validate_project.py` reports stale hashes or
+line numbers).
+
+Failed test log: start with a targeted filename search, then read the relevant
+excerpt before the whole artifact.
+
+```powershell
+rg --files build | rg "validation|RESULTS|log"
+rg -n "FAIL|ERROR|unresolved" build/<current-task-log>
+```
+
+Inspect the surrounding lines, then open the full log or captures only when
+that excerpt does not explain the failure. Report the offending lines instead
+of pasting the whole artifact.
+
 ## Repository navigation
 
 All paths in this section are relative to the repository root and were inspected at the baseline.

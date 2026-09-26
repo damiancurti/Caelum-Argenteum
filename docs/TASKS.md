@@ -1,6 +1,24 @@
 # TASKS.md — Active tasks
 
-Documentation version: **4.36.10** — 2026-09-25.
+Documentation version: **4.36.14** — 2026-09-25.
+
+## Issue #31 — Pain sounds, dialogue cue, map music and story intermissions (4.36.14)
+
+- **Issue:** https://github.com/damiancurti/Caelum-Argenteum/issues/31
+- **Scope:** integrate the author-selected pain sounds for Mandinga, Zupay,
+  Bull, Argento, Ronnie, Caella and the applicable player voice profile;
+  replace the dialogue-opening cue with the supplied Suno WAV; reassign MAP01
+  to the former MAP02 music, MAP02 to the local sewer track, MAP06 to the local
+  port track and MAP07 to the local coast track; reserve the former MAP01 music
+  for future chapter-end intermissions.
+- **Author contract:** no new Suno generation, no death/chase assignments, no
+  activation of unused stock or MP3 backups, no invented lore or chapter text.
+  Rulo remains silent for combat pain. External pain-source licenses remain to
+  be verified; source URLs and local files are preserved.
+- **Status:** implemented on the focused branch; static validation, build and
+  native ZScript compile pass. Author-accepted on 2026-09-25
+  (CA-43614-AUDIO-01 passed).
+- **Next:** #18 / 4.36.10 owns siege assets after this delivery.
 
 ## Issue #18 — Reusable siege preview assets (4.36.10)
 
@@ -90,6 +108,21 @@ Documentation version: **4.36.10** — 2026-09-25.
   author-test queue is empty. Static/native evidence remains separate from that
   confirmation.
 - **Next:** #13 / 4.36.7 after this delivery; #14 owns live escort AI.
+## Issue #29 — Selective file reading for agents (4.36.5a)
+
+- **Issue:** https://github.com/damiancurti/Caelum-Argenteum/issues/29
+- **Status:** Implemented and statically verified; documentation/workflow only.
+- **References:** `AGENTS.md`, `README.md`, `docs/CONTEXT.md`,
+  `docs/GZDOOM_DEVELOPMENT.md`, `docs/DOCUMENT_INDEX.md` and
+  `validate_project.py`.
+- **Scope:** make selective file reading explicit in the agent workflow,
+  reconcile it with the existing task/document mapping and index rules, and
+  add practical search and range-reading examples in the engineering guide.
+- **Acceptance:** `python validate_project.py` exits 0 with version `4.36.5a`,
+  ten documents and no errors; `python build_document_index.py` regenerates
+  `docs/DOCUMENT_INDEX.md` byte-for-byte; `git diff --check` passes. No
+  gameplay, balance, asset, map, localization or save change is introduced.
+- **Next:** #12 / 4.36.6 remains the next gameplay delivery.
 
 ## Issue #11 — Four-section sewer, cells and repair refuges (4.36.5)
 
@@ -210,6 +243,7 @@ documentation update does not implement these features or reset accepted tests.
 | 4.36.7 | [#13](https://github.com/damiancurti/Caelum-Argenteum/issues/13) | Implemented and author-accepted on 2026-09-24; CA-4367-PRISONER-ART-01 passed. Four per-material recolored prisoner appearances in the reserved cells. |
 | 4.36.8 | [#14](https://github.com/damiancurti/Caelum-Argenteum/issues/14) | Implemented and author-accepted on 2026-09-25; CA-4368-RESCUE-01 passed. Follow/fight with source-character stats; extract alive before MAP02 boss; port thanks, +10 own-faction reputation and a fixed 25 gold coins independent of character size once per rescue. |
 | 4.36.9 | [#15](https://github.com/damiancurti/Caelum-Argenteum/issues/15) | Tarot fronts and correct collection bindings. Implemented from the verified local source archive; author-accepted on 2026-09-25 (CA-4369-TAROT-ART-01 passed). |
+| 4.36.14 | [#31](https://github.com/damiancurti/Caelum-Argenteum/issues/31) | Author-selected pain sounds, supplied dialogue-opening cue, local sewer/port/coast music and the reserved chapter-end story intermission. Implemented and author-accepted on 2026-09-25 (CA-43614-AUDIO-01 passed). |
 | 4.36.10 | [#18](https://github.com/damiancurti/Caelum-Argenteum/issues/18) | Siege assets: catapult, ram and breakable gate. After #15. |
 | 4.36.11 | [#19](https://github.com/damiancurti/Caelum-Argenteum/issues/19) | Damageable actor gates. Structural parameter table needs approval. After #18. |
 | 4.36.12 | [#20](https://github.com/damiancurti/Caelum-Argenteum/issues/20) | Physical ram strikes; approved parameter table and native evidence required. After #19. |

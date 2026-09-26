@@ -1,6 +1,6 @@
 CAELUM ARGENTEUM — STORY AND MAP01
 
-Documentation version: **4.36.10** — 2026-09-25.
+Documentation version: **4.36.14** — 2026-09-25.
 
 ## 4.36.10 — MAP03 siege preview gallery (#18)
 
@@ -12,7 +12,6 @@ reservoir with every state visible at once. The gallery is a development view
 only; it does not change MAP03's accepted travel, stations, gates, storage or
 the future massive-test purpose of the tank. No siege mechanic, mass, damage,
 reload time or gate hardness is defined here; those remain in #19-#21.
-
 ## 4.36.8 — Prisoner rescue dialogue and port thanks (#14)
 
 Issue #14 implements the cell release/recognition dialogue, escort and port

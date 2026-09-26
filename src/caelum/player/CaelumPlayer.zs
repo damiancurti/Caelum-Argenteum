@@ -735,6 +735,9 @@ class CaelumPlayer : DoomPlayer
         // Caelum performs one custom pain roll after engine mitigation. This
         // disables DoomPlayer's independent native roll and prevents duplicates.
         PainChance 0;
+        // The selected pain cue is emitted once by the custom roll; silence
+        // DoomPlayer's inherited gender sound so the two never overlap.
+        PainSound "";
 
     }
 
@@ -14307,6 +14310,7 @@ class CaelumPlayer : DoomPlayer
                 );
                 SetState(painState);
                 LastPainTriggered = true;
+                A_StartSound(ResolvePlayerPainSound(), CHAN_VOICE);
                 CancelWeaponCharge();
                 if (PendingStaffChargedAttack)
                 {
@@ -14323,6 +14327,18 @@ class CaelumPlayer : DoomPlayer
                 }
             }
         }
+    }
+
+    // The applicable player voice follows the created character profile:
+    // male uses the human/Caelith grunt, female uses its selected counterpart.
+    Sound ResolvePlayerPainSound()
+    {
+        if (CharacterProfile != null
+            && CharacterProfile.Sex == CaelumConstants.SEX_FEMALE)
+        {
+            return "caelum/player/pain_female";
+        }
+        return "caelum/player/pain_male";
     }
 
     // Sum the finite states from Pain until the sequence returns to Spawn.

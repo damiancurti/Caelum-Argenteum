@@ -83,6 +83,11 @@ class CaelumBull : CaelumCombatActor
         +FLOORCLIP
     }
 
+    override Sound GetCombatPainSound()
+    {
+        return "caelum/enemies/bull_pain";
+    }
+
     override void PostBeginPlay()
     {
         Super.PostBeginPlay();

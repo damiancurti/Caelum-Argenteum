@@ -18,6 +18,11 @@ class CaelumArgento : CaelumAnchoredResident
         +FLOORCLIP
     }
 
+    override Sound GetCombatPainSound()
+    {
+        return "caelum/player/pain_male";
+    }
+
     override void PostBeginPlay()
     {
         Super.PostBeginPlay();

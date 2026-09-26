@@ -18,6 +18,11 @@ class CaelumCaella : CaelumAnchoredResident
         +FLOORCLIP
     }
 
+    override Sound GetCombatPainSound()
+    {
+        return "caelum/player/pain_female";
+    }
+
     override void PostBeginPlay()
     {
         Super.PostBeginPlay();

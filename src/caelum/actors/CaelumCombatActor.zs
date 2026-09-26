@@ -3125,6 +3125,11 @@ class CaelumCombatActor : Actor
             {
                 SetState(painState);
                 LastCombatPainTriggered = true;
+                Sound painSound = GetCombatPainSound();
+                if (painSound != 0)
+                {
+                    A_StartSound(painSound, CHAN_VOICE);
+                }
                 if (grantPainAdrenaline)
                 {
                     AddActorCombatAdrenaline(
@@ -3134,6 +3139,10 @@ class CaelumCombatActor : Actor
             }
         }
     }
+
+    // El sonido espacial de dolor se resuelve por clase. El valor nulo
+    // conserva el dolor silencioso para actores sin perfil seleccionado.
+    virtual Sound GetCombatPainSound() { return 0; }
 
     double GetCombatAdrenalineRatio()
     {

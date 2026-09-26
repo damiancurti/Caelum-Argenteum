@@ -1,6 +1,6 @@
 # CONTEXT.md — Ultra-condensed summary of Caelum Argenteum
 
-Documentation version: **4.36.10** — 2026-09-25.
+Documentation version: **4.36.14** — 2026-09-25.
 
 Summary so an AI or a contributor can understand the project without reading
 the five full canonical documents. Source: `docs/PROJECT.md`,
@@ -64,14 +64,23 @@ the gauchos and rural culture, and the humans the urban porteño society.
 
 ## Current status
 
-Current release **4.36.10** implements #18: reusable cannon, battering-ram and
-destructible-gate assets are generated deterministically under
-`src/models/caelum/siege` with transparent `CSGN`/`CRAM`/`CAGT` state frames
-and matching `MODELDEF` entries. The MAP03 workshop/tank shows a visual-only
-preview gallery that retires its trial chairs, dining tables and cots and lays
-out all four cannon states, all three ram states and all three gate states in
-the open reservoir for author review. No mass, damage, reload time or gate
-hardness is invented in this patch; those values remain in #19-#21.
+Current release **4.36.14** implements #31: the author-selected combat-pain
+sounds, the supplied Suno dialogue-opening cue and the local sewer/port/coast
+music are integrated while all unused stock and MP3 backups remain preserved
+and unbound. The former MAP01 music is reserved for future chapter-end story
+intermissions; MAP01 now uses the former MAP02 music directly, MAP02 uses the
+new sewer track, MAP06 uses the new port track and MAP07 uses the new coast
+track. GZDoom 4.14.2 compiles the package and `validate_project.py` passes; the
+author confirmed `CA-43614-AUDIO-01` passed on 2026-09-25.
+
+Issue **#18** adds reusable cannon, battering-ram and destructible-gate assets
+generated deterministically under `src/models/caelum/siege` with transparent
+`CSGN`/`CRAM`/`CAGT` state frames and matching `MODELDEF` entries. The MAP03
+workshop/tank shows a visual-only preview gallery that retires its trial
+chairs, dining tables and cots and lays out all four cannon states, all three
+ram states and all three gate states in the open reservoir for author review.
+No mass, damage, reload time or gate hardness is invented in this patch; those
+values remain in #19-#21.
 
 The preceding **4.36.9** implements #15: the author-approved 78-card Tarot
 front package is integrated under `src/graphics/caelum/tarot`, the shared card
@@ -114,6 +123,10 @@ barred gates/cells, beds, repair refuges, pre-boss extraction reservation and
 240 arrows/120 bolts/120 bullets. Only known weapon recipes permit repair;
 no materials or recipes are added. The author confirmed CA-4365-MAZE-01 passed
 on 2026-09-24.
+
+The merged **4.36.5a** documentation patch records the selective file-reading
+workflow for agents (#29) without changing gameplay, balance, maps, saves or
+assets.
 Saved campaigns that visited old MAP02 use `run_dev.bat --legacy-map02` to
 continue byte-identical legacy geometry; normal builds use the new layout.
 The accepted **4.36.4** implements #10: the complete T1 maze catalogue,

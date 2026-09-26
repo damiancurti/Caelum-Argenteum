@@ -1,13 +1,53 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **4.36.10** — 2026-09-25.
+Documentation version: **4.36.14** — 2026-09-25.
+
+## 4.36.14 — Pain sounds, dialogue cue, map music and story intermissions (#31)
+
+Baseline: integrated 4.36.9, `7a01ff00` (author acceptance of #15). Issue #31
+integrates the author-selected combat-pain sounds and local music without
+inventing replacements. Mandinga uses
+`sounds/caelum/enemies/mandinga/ca_mandinga_pain.ogg`; Zupay uses
+`sounds/caelum/enemies/zupay/ca_zupay_pain.ogg`; Argento, Ronnie and a male
+player profile use `sounds/caelum/player/pain/ca_player_pain_male.ogg`; Caella
+and a female player profile use
+`sounds/caelum/player/pain/ca_player_pain_female.ogg`; the Bull exposes twelve
+separate bellow variants under `caelum/enemies/bull_pain` through the existing
+`$random` mechanism. Rulo remains silent. The new `GetCombatPainSound()` hook
+resolves one spatial sound per actual pain event after the existing custom
+pain roll, so death/chase/attack states are unchanged and no duplicate
+playback is introduced.
+
+The supplied Suno dialogue-opening WAV replaces the prior harp excerpt in
+`sounds/caelum/ui/ca_dialogue_open.ogg` (stereo 48 kHz, 134 400 samples,
+2.8 s). `GameInfo.ChatSound`, `$limit 1` and `$singular` are unchanged, so a
+conversation opening plays once rather than on every line/redraw. MAP01 now
+uses `CA_MUS02`; MAP02 uses the local `CA_MUS03_SEWER`; MAP06 uses the local
+`CA_MUS04_PORT`; MAP07 uses the local `CA_MUS05_COAST`. `CA_MUS01` is reserved
+for future chapter-end story intermissions and is not played when MAP01 starts;
+`CaelumStoryIntermission` remains registered as the placeholder for those
+intermissions.
+
+All MP3 backups in `assets/audio_stock/music/`, the unused local tracks and the
+source files in `assets/audio_stock/sounds/` are preserved and remain unbound.
+The source-to-runtime manifest and the author-verified credit names are in
+`src/licenses/AUDIO_ISSUE_31_CREDITS.md`. Displayed CC0 labels for Snaginneb,
+freesman and Brorsan Beppe are retained; Pixabay page terms for PhatPhrogStudio
+and `53439420` remain to be confirmed before final public redistribution.
+
+Agent checks: `python validate_project.py` reports 99 runtime audio files
+(97 OGG + 2 MP3) and no errors after `python build_document_index.py`.
+`build_dev.ps1` packages 6,058 files, and GZDoom 4.14.2 compiles the complete
+PK3 and loads MAP01 without script errors. The author confirmed the issue on
+2026-09-25 after MAP01 was corrected to start directly with `CA_MUS02`;
+`CA-43614-AUDIO-01` is recorded as PASS and removed from `pending_test.txt`,
+leaving the author-test queue empty.
 
 ## 4.36.10 — Reusable siege preview assets (#18)
 
-Baseline: integrated 4.36.9, `7a01ff00` (author acceptance of #15). Issue #18
-adds the reusable cannon, battering-ram and destructible-gate assets as
-verified-rendering content only, with no siege gameplay or invented balance
-values. The deterministic generator
+This delivery adds the reusable cannon, battering-ram and destructible-gate
+assets as verified-rendering content only, with no siege gameplay or invented
+balance values. The deterministic generator
 `assets/generators/generate_siege_models.py` writes ten OBJ meshes under
 `src/models/caelum/siege`, the transparent `CSGN A-D`, `CRAM A-C` and
 `CAGT A-C` frames in `src/sprites`, and a guarded `CAELUM SIEGE MODELS` block
@@ -240,6 +280,42 @@ No failures, partial results or qualifications were reported. The confirmed
 entry is removed from pending_test.txt; the tracked queue is empty. Release
 4.36.6 is unchanged. Author evidence is separate from the static/native results
 above.
+## 4.36.5a — Selective file reading for agents (#29)
+
+Issue [#29](https://github.com/damiancurti/Caelum-Argenteum/issues/29).
+Implementation and verification date: 2026-09-24.
+Baseline: branch `issue-11-4.36.5`, commit `c65a4ba`.
+
+### Implemented scope and decisions
+
+- Added the single selective-reading policy to `AGENTS.md`: read the
+  applicable instructions, brief context and current issue first; search
+  names, symbols and indexed headings before opening large files; read only
+  the relevant functions, sections or ranges and expand to required
+  dependencies; use the document index as a locator; scope initial searches
+  to likely source directories; consult `build/` as targeted test evidence;
+  start PR review from the diff and submitted evidence; reuse current
+  in-session context.
+- Added short, executable search and range-reading examples to
+  `GZDOOM_DEVELOPMENT.md` for a code issue, a long-document lookup and a
+  failed test log. One authoritative policy remains in `AGENTS.md`.
+- Updated README, AGENTS, PROJECT, CONTEXT, TASKS and the two current-version
+  ZScript diagnostic labels to 4.36.5a. SYSTEMS, MAP01 and ASSETS keep their
+  content and only their current-version markers change.
+- No gameplay, balance, map, asset, localization or save change is introduced;
+  `build/` is not deleted or cleaned.
+
+### Executed verification
+
+- `python validate_project.py`: exit 0; version `4.36.5a`, ten documents and
+  `errors: []`.
+- `python build_document_index.py`: regenerated `docs/DOCUMENT_INDEX.md`
+  after PROJECT, HISTORY and related indexed sources changed; a second run
+  confirmed byte-for-byte deterministic output.
+- `git diff --check`: no whitespace errors.
+
+This patch is documentation only. No engine run is claimed; gameplay and
+author acceptance remain separate and are unchanged by this issue.
 
 ## 4.36.5 — Four-section sewer, keyed cells and repair refuges (#11)
 

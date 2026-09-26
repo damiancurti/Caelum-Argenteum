@@ -1,6 +1,6 @@
 # Caelum Argenteum — Project, status and roadmap
 
-Documentation version: **4.36.10** — 2026-09-25.
+Documentation version: **4.36.14** — 2026-09-25.
 
 ## 4.36.10 — Reusable siege preview assets (issue #18)
 
@@ -19,7 +19,6 @@ accepted station/rest systems. The only persistent addition is the static
 gallery actor data in `src/caelum/world/CaelumSiegeAssets.zs` and its
 `src/ZSCRIPT` include, plus the generated `src/models/caelum/siege` and sprite
 files.
-
 ## 4.36.8 — Prisoner rescue, escort and port rewards (issue #14)
 
 The four MAP02 prisoners become optional live companions: a cell dialogue
@@ -80,6 +79,15 @@ manifest. Rats are initial placements only and never respawn or resurrect, so
 the exact ratio holds for the whole map. Static layout validation records are
 in `assets/validation_4366/`; native combat and save/load evidence are separate
 from author acceptance. The author check CA-4366-RATS-01 passed on 2026-09-24.
+## 4.36.5a — Selective file reading for agents (#29)
+
+Issue [#29](https://github.com/damiancurti/Caelum-Argenteum/issues/29) is a
+documentation patch that extends `AGENTS.md` and the engineering guide with an
+explicit selective-reading workflow: search names, symbols and indexed
+headings before opening large files, read relevant ranges and their required
+dependencies, treat `build/` as targeted test evidence, and review PRs from
+the diff outward. The practical examples live in `GZDOOM_DEVELOPMENT.md`. No
+gameplay, balance, map, asset, localization or save change is introduced.
 
 ## 4.36.5 — Four-section sewer layout (issue #11)
 
@@ -217,6 +225,7 @@ The release sections above record completed implementations; later stages remain
 | 4.36.7 | [#13](https://github.com/damiancurti/Caelum-Argenteum/issues/13) | Four prisoner palette variants reusing the mansion characters. |
 | 4.36.8 | [#14](https://github.com/damiancurti/Caelum-Argenteum/issues/14) | Following/fighting prisoners, living extraction before the MAP02 boss, port arrivals, one-time +10 own-faction reputation and a fixed 25 gold coins independent of character size per rescue. |
 | 4.36.9 | [#15](https://github.com/damiancurti/Caelum-Argenteum/issues/15) | Integrate approved Tarot fronts, including the Ace of Cups; no new powers. |
+| 4.36.14 | [#31](https://github.com/damiancurti/Caelum-Argenteum/issues/31) | Integrate selected pain sounds, the supplied dialogue-opening cue, local sewer/port/coast music and the reserved chapter-end story intermission. |
 | 4.36.10 | [#18](https://github.com/damiancurti/Caelum-Argenteum/issues/18) | Catapult, ram and breakable-gate assets with documented states/attachments. |
 | 4.36.11 | [#19](https://github.com/damiancurti/Caelum-Argenteum/issues/19) | Damageable actor gates and persistent passage opening on destruction. |
 | 4.36.12 | [#20](https://github.com/damiancurti/Caelum-Argenteum/issues/20) | Ram strikes using the approved physical-impact foundation. |

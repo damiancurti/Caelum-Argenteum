@@ -1,6 +1,6 @@
 # Caelum Argenteum — Current systems and rules
 
-Documentation version: **4.36.10** — 2026-09-25.
+Documentation version: **4.36.14** — 2026-09-25.
 
 ## 4.36.10 — Siege assets are visual-only (#18)
 
@@ -11,7 +11,6 @@ economy rule or player interaction is added. The preview actors do not block the
 player and cannot be used, damaged or opened. The future siege rules remain
 owned by issues #19-#21 and will be documented here when their values are
 defined.
-
 ## 4.36.8 — Prisoner rescue, escort and port rewards (#14)
 
 Each reserved MAP02 cell now offers release through a prisoner conversation; the
