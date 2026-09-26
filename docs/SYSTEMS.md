@@ -62,8 +62,9 @@ pose, reused for temporary opening; closing restores intact/damaged appearance.
 Health, group state, counters, blocker references and impact identities use
 native actor serialization and hub snapshots. Existing schemas and WADs are
 unchanged; an old 4.36.14a save loaded and activated the optional trial without
-duplication. Native evidence: assets/validation_43615. Author acceptance remains
-pending under CA-43611-GATES-01; the historical ID is intentionally preserved.
+duplication. Native evidence: assets/validation_43615. The author confirmed all tests passed
+on 2026-09-26 (CA-43611-GATES-01), including the corrected body-collision path.
+HISTORY records acceptance; the historical test ID is intentionally preserved.
 
 ## 4.36.14a — Distinct siege materials and visual states (#18 correction)
 

@@ -12,7 +12,7 @@ The damaged/open preview rows remain visual-only. Saved trial gates preserve
 their health and destruction across reload and hub return.
 MAP01/MAP02 progression doors, narrative, MAP06 geometry and campaign placements
 are unchanged. #16/#17 will author the port encounter using the new gate class.
-CA-43611-GATES-01 is the executable author check in pending_test.txt.
+CA-43611-GATES-01 passed on 2026-09-26; its acceptance is recorded in HISTORY.
 
 ## 4.36.14a — MAP03 material/state gallery (#18 correction)
 

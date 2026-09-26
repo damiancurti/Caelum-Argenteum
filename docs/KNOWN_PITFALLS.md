@@ -243,11 +243,11 @@ and [tested source hashes](../assets/validation_43615/manifest.json). The local
 test fixture remains development-only; neither it nor the IWAD is distributed.
 Regression: fire a fixed-DoSpecialDamage projectile at a multi-block gate and
 check one correctly reduced health loss. Recheck callback order if the target
-engine changes. Author acceptance remains CA-43611-GATES-01, pending.
+engine changes. Author acceptance: CA-43611-GATES-01 passed on 2026-09-26.
 
 ## CA-KP-011 — A solid damageable actor is not automatically an Impact Physics body
 
-Status/evidence: RESOLVED-VERIFIED in the #19 correction; author retest pending.
+Status/evidence: RESOLVED-VERIFIED in the #19 correction; author-accepted on 2026-09-26.
 First recorded / last checked: 2026-09-26 / 2026-09-26.
 Affected baseline: bab1c776, CaelumGateBlocker / CaelumBreakableGate.
 Environment: GZDoom 4.14.2, Windows 11/Vulkan, isolated MAP03.
@@ -267,8 +267,8 @@ Regression: actual native movement into a closed gate, health changes on both
 sides above threshold, repeated block callbacks, separation, active-contact
 save/reload, rotated geometry and open-passage safety. Before/after evidence and
 tested hashes: [body collision evidence](../assets/validation_43615/body_collision/engine_evidence.txt).
-The 13-check body suite and original 37-check suite pass. CA-43611-GATES-01
-remains partially accepted, pending the author's collision retest. Test-only
+The 13-check body suite and original 37-check suite pass. The author confirmed
+CA-43611-GATES-01 fully passed on 2026-09-26, including the collision retest. Test-only
 speed/health reserves are not gameplay tuning. Low-energy collisions can still
 correctly cause zero damage under the existing formulas.
 

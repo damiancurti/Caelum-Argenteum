@@ -74,8 +74,9 @@ the three intact MAP03 examples; existing campaign doors/maps remain unchanged.
 The author confirmed the other gate checks on 2026-09-26 but reported no damage
 when running into a gate. Native body contacts now resolve damage to both bodies
 using existing physics; 13 focused checks and the 37-check gate regression pass.
-Only the collision retest remains in CA-43611-GATES-01. #20/#21 and full port
-integration remain separate.
+The author then confirmed all tests passed on 2026-09-26, including the collision
+retest (CA-43611-GATES-01). Acceptance is recorded in HISTORY; the pending queue
+is empty. #20/#21 and full port integration remain separate.
 
 The preceding **4.36.14a** corrects #18 after the author's 2026-09-26
 feedback: two solid gate leaves in three materials, refined cannon/ram forms,
@@ -173,8 +174,8 @@ rations, and MAP01 tables at full capacity.
 
 Pending:
 
-- #18 siege assets are accepted; #19 gates are implemented with author acceptance
-  pending. #20 physical ram strikes and #21 cannon ballistics remain to implement.
+- #18 siege assets and #19 gates are author-accepted. #20 physical ram strikes
+  and #21 cannon ballistics remain to implement.
 - Closing 4.36: rams/catapults and remaining integration/save/reset validation
   before extracting Impact Physics. Per the author's 2026-09-23 #8 decision,
   existing ceiling/elevator cover moving sectors; avalanches await additional

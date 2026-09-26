@@ -17,12 +17,13 @@ real partial/broken save-load, MAP03-MAP06-MAP03 hub return and an existing
 `give CaelumDebugGateTrial`; normal galleries and existing progression doors
 remain unchanged. This is the reusable port-gate foundation, not the complete
 MAP06 encounter or authored port placements. #20/#21 own ram/cannon operation;
-#16/#17 own encounter integration. Author test CA-43611-GATES-01 is pending.
+#16/#17 own encounter integration. Author test CA-43611-GATES-01 passed on 2026-09-26.
 Evidence and tested source hashes: assets/validation_43615. The author confirmed
 the other checks on 2026-09-26 but found that body collisions did no damage. The
 same-patch correction connects native player/NPC contacts to reciprocal Impact
 Physics with whole-gate identity and canonical rearm; 13 focused assertions and
-37 gate regression checks pass. Only this collision retest remains pending.
+37 gate regression checks pass. The author subsequently confirmed all tests
+passed on 2026-09-26; the collision retest is accepted and #19 is complete.
 
 ## 4.36.14a — Author-requested siege asset correction (#18)
 
