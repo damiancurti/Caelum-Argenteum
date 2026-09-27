@@ -45,8 +45,14 @@ the completed save/load run verified the actual in-flight projectile state.
 The old rock example's rounded damage 0/347/1,071/2,085 is superseded by
 138/558/1,257/2,236 under Type 4, at unchanged example inputs.
 CA-43613-CATAPULT-01 remains confirmed for the original delivered trial.
-Approval of the new balance and merge is not an unperformed manual test:
-CA-43618-WALK-01 remains pending, and CA-43619-BALANCE-01 originates here.
+On 2026-09-27 the author confirmed: "Todas las pruebas manuales dieron correcto."
+CA-43619-BALANCE-01 (origin 4.36.19 /issue #21) therefore passed: final cannon
+and ram damage, crew timing, defender contacts, gate save/load and proportional
+old-save migration. No failures or qualifications were reported. Its entry was
+removed from pending_test.txt; CA-43618-WALK-01 acceptance is recorded below.
+Both changes are merged and #21/#43 closed. The tracked manual-test queue is
+empty; full port integration remains #16/#17. This acceptance-only update keeps
+version 4.36.19, preserves native evidence and passes static validation.
 No independent AI review or token counters are available.
 
 ## 4.36.18 — Walking wall-impact absorption (#43)
@@ -71,7 +77,11 @@ changing their authoritative creation profile; normal recalculation restored
 1,780 health before takeoff. A persistent 80 kg/all-20 fixture corrected this;
 the observed mismatch was not fall damage or a gameplay fix. Evidence preserves
 this correction separately from final results. Static validation and normal build
-passed. Manual CA-43618-WALK-01 originates in 4.36.18 /#43 and remains pending.
+passed. On 2026-09-27 the author confirmed all remaining manual tests passed,
+including CA-43618-WALK-01 (origin 4.36.18 /issue #43): walking/running/crouched
+wall contacts under both Always Run settings and the same-height loaded jump.
+No failures or qualifications were reported. Its entry was removed from
+pending_test.txt; this manual acceptance is separate from the native checks.
 No independent AI review or token counters are available for this session.
 
 ## 4.36.17 — Cannon firing and physical contacts (#21; planned label 4.36.13)

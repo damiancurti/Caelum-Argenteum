@@ -52,9 +52,9 @@ are validated. Previously released projectiles retain saved velocity/ownership;
 500 m/s applies to new launches.
 
 The 80 kg body plus 20 kg equipment calculation and walking-only wall
-amortization remain as documented below. The balance is approved and merge/
-closure authorized; new manual observations are tracked separately as
-CA-43619-BALANCE-01, alongside the unconfirmed CA-43618-WALK-01.
+amortization remain as documented below. The changes are merged and #21/#43
+closed. On 2026-09-27 the author confirmed CA-43619-BALANCE-01 and
+CA-43618-WALK-01 passed; HISTORY records acceptance separately from native checks.
 
 ## 4.36.18 — Walking wall-impact absorption (#43)
 

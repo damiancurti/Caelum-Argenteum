@@ -67,9 +67,10 @@ new cannon shots 500 m/s; gate Toughness/Constitution 50/100/200; Type 4 divisio
 for player/NPC/gate collisions. SYSTEMS holds the damage matrix. Versioned
 gate migration preserves remaining-health ratio and passage state with explicit
 rollback; saved projectiles retain velocity. Evidence: assets/validation_43619.
-Merge/closure is authorized; CA-43619-BALANCE-01 remains a separate manual check.
+Merged; #21 closed. Author confirmed CA-43619-BALANCE-01 passed 2026-09-27.
 
-4.36.18 (#43) adds walking-only wall absorption; CA-43618-WALK-01 is pending.
+4.36.18 (#43, closed) adds walking-only wall absorption;
+author confirmed CA-43618-WALK-01 passed 2026-09-27. No manual checks remain pending.
 Native traversal and loaded self-jump pass. 4.36.17 implemented #21 controlled
 cannons, approximate 4.3 kg ammunition, 30/60-second crews and bounded saved
 projectiles; its original CA-43613-CATAPULT-01 passed 2026-09-27. Those native

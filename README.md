@@ -12,7 +12,9 @@ biological wall-impact absorption to walking, using the existing crouched
 Agility fraction and cap. Native effective run state distinguishes walking
 from running; idle/airborne input does not qualify. The benefit applies only
 to walls. Native checks and an 80 kg /20 kg equipment self-jump test passed;
-manual acceptance CA-43618-WALK-01 remains in [pending_test.txt](pending_test.txt).
+the author confirmed CA-43618-WALK-01 and final siege check CA-43619-BALANCE-01
+passed on 2026-09-27. Acceptance is recorded in [HISTORY](docs/HISTORY.md);
+[pending_test.txt](pending_test.txt) is empty.
 
 Issue [#21](https://github.com/damiancurti/Caelum-Argenteum/issues/21) adds
 controlled cannon loading, firing and recovery, with inert 4.3 kg projectiles

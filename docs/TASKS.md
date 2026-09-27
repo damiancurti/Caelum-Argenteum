@@ -9,8 +9,8 @@ Documentation version: **4.36.19** — 2026-09-27.
   directional walking, using native effective run state. Walls only, no new balance.
 - **Evidence:** 24 isolated native checks, including real wall traversal and a
   same-height jump with 80 kg body /20 kg equipment; assets/validation_43618.
-- **Pending:** author check CA-43618-WALK-01. Final cannon/collision balancing
-  is implemented separately in 4.36.19 under #21.
+- **Accepted:** author confirmed CA-43618-WALK-01 passed on 2026-09-27;
+  merged and #43 closed. Final collision balancing is in 4.36.19 under #21.
 
 ## Issue #21 — Controlled cannon ballistics (4.36.17, final balance 4.36.19)
 
@@ -20,11 +20,12 @@ Documentation version: **4.36.19** — 2026-09-27.
   faction ownership and persistent hostile-machine neutralization.
 - **Decisions:** approximate reconstruction approved; 4.3 kg /75 x 185 mm inert
   rounds; 30/60-second cycles; Type 4 collision mitigation and 50/100/200 gate
-  Toughness/Constitution. Final matrix approved 2026-09-27; merge/closure authorized.
+  Toughness/Constitution. Final matrix approved 2026-09-27; merged and #21 closed.
 - **Evidence:** assets/validation_43617; 41 cannon and 53 ram/shared-siege checks,
   plus save/hub/legacy checks passed. Manual CA-43613-CATAPULT-01 passed by author confirmation on 2026-09-27.
 - **Final evidence:** assets/validation_43619; reversible gate balance migration,
-  native damage matrix and affected regressions. CA-43619-BALANCE-01 pending.
+  native damage matrix and affected regressions. The author confirmed
+  CA-43619-BALANCE-01 passed on 2026-09-27; no manual checks remain pending.
 - **Next:** #16 authors campaign placement, operators, ammunition/aim and rewards;
   #17 verifies the complete encounter. No full army is instantiated by #21.
 
