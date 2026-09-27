@@ -1,0 +1,16 @@
+{
+  "issue": 21,
+  "release": "4.36.19",
+  "cause": "Git Windows checkout changed raw document bytes from LF to CRLF",
+  "fix": ".gitattributes pins maintained docs to LF; strict index hash checks retained",
+  "isolated_checkout": "git -c core.autocrlf=true checkout-index",
+  "files_byte_identical_to_indexed_sources": {
+    "HISTORY.md": "ec9676a4d6c39704f72783039363988c02f604fe7015065f6933eca5b868e4e8",
+    "SYSTEMS.md": "afdf81a8ab16d0b763fc4330868e42c6158f117a60d6d0ec0ea3766b031a3e47",
+    "ASSETS.md": "2fd4ffe2c096eeef404d272d1815ff23ad73056701eb901d53c816677a5afbae",
+    "PROJECT.md": "f85fe1fb202e059c0a4fc31d30faebbd3c91e409b64ea05b47eb00c7802fa584",
+    "MAP01.txt": "070e2d53f602599b8ff9af8cea522f3c02c81ffe83b7b79d16ba84dbb158d8c3"
+  },
+  "lf_only": true,
+  "gameplay_unchanged": true
+}
