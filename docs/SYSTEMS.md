@@ -1,6 +1,30 @@
 # Caelum Argenteum — Current systems and rules
 
-Documentation version: **4.36.20** — 2026-09-27.
+Documentation version: **4.36.21** — 2026-09-27.
+
+## 4.36.21 — Environmental collisions and running absorption (#49)
+
+The author's 2026-09-27 instruction supersedes the wall-only and walking-only
+limits of 4.36.18. Grounded directional running now shares walking's existing
+biological fraction: clamp(max(0, JumpZ /8 -1), 0, 0.5). Crouching retains its
+existing eligibility, and immobilization still disables absorption. Active
+acrobatic shield defense remains the maximum of its fraction and this movement
+fraction; neither stacks. Existing landing/crushing absorption is unchanged.
+
+The author explicitly includes walls, rooted trees and rocks at rest. A movable
+rock's complete velocity must be zero before the collision solver transmits
+impulse; the newly imparted velocity must not revoke that contact's benefit.
+Rocks already rolling or falling do not qualify for this locomotion fraction.
+Idle/airborne movement and genuine character/projectile collisions do not
+gain the new benefit. Mass, material, contact geometry, energy severity and
+the Type 4 damage divisor remain unchanged.
+
+Tree/rock actor collisions now carry environmental provenance, using the
+existing environmental damage path without extra native thrust. They grant
+neither damage nor pain adrenaline, and do not start or refresh combat time.
+Damage, pain, cast interruption and rest interruption still occur. Genuine
+combat-body hits retain their adrenaline/activity behavior. No serialized
+fields or state indices change; the extra contact classification is ephemeral.
 
 ## 4.36.20 — Arcana availability and sewer retreat (#33)
 

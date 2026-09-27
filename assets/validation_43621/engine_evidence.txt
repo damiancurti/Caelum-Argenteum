@@ -1,0 +1,186 @@
+=== before ===
+CANQA - Environment and running impact QA
+QA49W PASS directional grounded non-run input is walking
+QA49W PASS walking wall uses existing Agility fraction
+QA49W PASS walking does not absorb actor hits
+QA49W PASS walking does not absorb ram or cannon hits
+QA49W PASS walking fraction retains fifty percent cap
+QA49W FAIL effective run flag receives same capped absorption
+QA49W PASS idle does not count as walking
+QA49W PASS strafe walking is eligible
+QA49W PASS airborne input does not count as walking
+QA49W PASS immobilization disables absorption
+QA49W PASS existing crouched wall benefit remains
+QA49W PASS active buckler still absorbs environmental hits
+QA49W PASS active buckler retains doubled landing absorption
+QA49W PASS ordinary landing absorption remains JumpZ
+QA49W TRACE t=49 hp=2480 php=2480 max=2480.000000000 attr=20.0 z=0.000000000 vz=0.000000000 impact=0 final=0 jump=10.834469023
+QA49W PASS medium T1 size M full set weighs twenty kg
+QA49W PASS eighty kg body plus equipment has hundred kg impact mass
+QA49W PASS persistent profile retains twenty attributes and 2480 health
+QA49W PROFILE hp=2480 mass=100.000000 capacity=86.653465347 load=0.230804388 jump=10.834469023 absorb=10.834469023
+QA49W TRACE t=66 hp=2480 php=2480 max=2480.000000000 attr=20.0 z=0.000000000 vz=10.834469023 impact=0 final=0 jump=10.834469023
+QA49W PASS native jump lands at original floor height
+QA49W PASS native self jump causes zero health loss with equipment load
+QA49W JUMP launch=10.834469023 peak=64.179159254 fall=11.165530977 absorption=10.834469023 health=2480 tics=22
+QA49W TRACE t=90 hp=2480 php=2480 max=2480.000000000 attr=20.0 z=-0.000000000 vz=0.000000000 impact=3 final=0 jump=10.834469023
+QA49W PASS native walking contacts wall
+QA49W PASS native walking wall contact receives biological absorption
+QA49W WALL walking=1 raw=2.336335788 bio=0.827783927 trauma=1.508551860
+QA49W PASS native running contacts wall
+QA49W FAIL native running wall contact receives biological absorption
+QA49W WALL walking=0 raw=3.266590045 bio=0.000000000 trauma=3.266590045
+QA49W PASS native jump completed rather than skipped
+QA49W DONE checks=24 failures=2
+QA49 CONTACT CaelumTreeDesertChurqui moving=0 passive=0 air=0 immobilized=0 idle=0 hpLoss=411 raw=10.000000 bio=0.000000 adrenaline=30.000000 combat=30.00 pain=1
+QA49 PASS CaelumTreeDesertChurqui moving=0 passive=0 air=0 immobilized=0 idle=0 causes nonfatal damage
+QA49 FAIL CaelumTreeDesertChurqui moving=0 passive=0 air=0 immobilized=0 idle=0 grants no adrenaline or combat refresh
+QA49 FAIL CaelumTreeDesertChurqui moving=0 passive=0 air=0 immobilized=0 idle=0 has environmental provenance
+QA49 FAIL CaelumTreeDesertChurqui moving=0 passive=0 air=0 immobilized=0 idle=0 correct stationary-only absorption
+QA49 PASS CaelumTreeDesertChurqui moving=0 passive=0 air=0 immobilized=0 idle=0 exercises pain without reward
+QA49 CONTACT CaelumRockGranite moving=0 passive=0 air=0 immobilized=0 idle=0 hpLoss=364 raw=9.884045 bio=0.000000 adrenaline=30.000000 combat=30.00 pain=1
+QA49 PASS CaelumRockGranite moving=0 passive=0 air=0 immobilized=0 idle=0 causes nonfatal damage
+QA49 FAIL CaelumRockGranite moving=0 passive=0 air=0 immobilized=0 idle=0 grants no adrenaline or combat refresh
+QA49 FAIL CaelumRockGranite moving=0 passive=0 air=0 immobilized=0 idle=0 has environmental provenance
+QA49 FAIL CaelumRockGranite moving=0 passive=0 air=0 immobilized=0 idle=0 correct stationary-only absorption
+QA49 PASS CaelumRockGranite moving=0 passive=0 air=0 immobilized=0 idle=0 exercises pain without reward
+QA49 CONTACT CaelumRockGranite moving=1 passive=0 air=0 immobilized=0 idle=0 hpLoss=716 raw=13.837662 bio=0.000000 adrenaline=30.000000 combat=30.00 pain=1
+QA49 PASS CaelumRockGranite moving=1 passive=0 air=0 immobilized=0 idle=0 causes nonfatal damage
+QA49 FAIL CaelumRockGranite moving=1 passive=0 air=0 immobilized=0 idle=0 grants no adrenaline or combat refresh
+QA49 FAIL CaelumRockGranite moving=1 passive=0 air=0 immobilized=0 idle=0 has environmental provenance
+QA49 PASS CaelumRockGranite moving=1 passive=0 air=0 immobilized=0 idle=0 correct stationary-only absorption
+QA49 PASS CaelumRockGranite moving=1 passive=0 air=0 immobilized=0 idle=0 exercises pain without reward
+QA49 CONTACT CaelumRockGranite moving=1 passive=1 air=0 immobilized=0 idle=0 hpLoss=716 raw=13.837662 bio=0.000000 adrenaline=30.000000 combat=30.00 pain=1
+QA49 PASS CaelumRockGranite moving=1 passive=1 air=0 immobilized=0 idle=0 causes nonfatal damage
+QA49 FAIL CaelumRockGranite moving=1 passive=1 air=0 immobilized=0 idle=0 grants no adrenaline or combat refresh
+QA49 FAIL CaelumRockGranite moving=1 passive=1 air=0 immobilized=0 idle=0 has environmental provenance
+QA49 PASS CaelumRockGranite moving=1 passive=1 air=0 immobilized=0 idle=0 correct stationary-only absorption
+QA49 PASS CaelumRockGranite moving=1 passive=1 air=0 immobilized=0 idle=0 exercises pain without reward
+QA49 CONTACT CaelumRockGranite moving=0 passive=0 air=1 immobilized=0 idle=0 hpLoss=364 raw=9.884045 bio=0.000000 adrenaline=30.000000 combat=30.00 pain=1
+QA49 PASS CaelumRockGranite moving=0 passive=0 air=1 immobilized=0 idle=0 causes nonfatal damage
+QA49 FAIL CaelumRockGranite moving=0 passive=0 air=1 immobilized=0 idle=0 grants no adrenaline or combat refresh
+QA49 FAIL CaelumRockGranite moving=0 passive=0 air=1 immobilized=0 idle=0 has environmental provenance
+QA49 PASS CaelumRockGranite moving=0 passive=0 air=1 immobilized=0 idle=0 correct stationary-only absorption
+QA49 PASS CaelumRockGranite moving=0 passive=0 air=1 immobilized=0 idle=0 exercises pain without reward
+QA49 CONTACT CaelumTreeDesertChurqui moving=0 passive=0 air=0 immobilized=1 idle=0 hpLoss=411 raw=10.000000 bio=0.000000 adrenaline=30.000000 combat=30.00 pain=1
+QA49 PASS CaelumTreeDesertChurqui moving=0 passive=0 air=0 immobilized=1 idle=0 causes nonfatal damage
+QA49 FAIL CaelumTreeDesertChurqui moving=0 passive=0 air=0 immobilized=1 idle=0 grants no adrenaline or combat refresh
+QA49 FAIL CaelumTreeDesertChurqui moving=0 passive=0 air=0 immobilized=1 idle=0 has environmental provenance
+QA49 PASS CaelumTreeDesertChurqui moving=0 passive=0 air=0 immobilized=1 idle=0 correct stationary-only absorption
+QA49 CONTACT CaelumTreeDesertChurqui moving=0 passive=0 air=0 immobilized=0 idle=1 hpLoss=411 raw=10.000000 bio=0.000000 adrenaline=30.000000 combat=30.00 pain=1
+QA49 PASS CaelumTreeDesertChurqui moving=0 passive=0 air=0 immobilized=0 idle=1 causes nonfatal damage
+QA49 FAIL CaelumTreeDesertChurqui moving=0 passive=0 air=0 immobilized=0 idle=1 grants no adrenaline or combat refresh
+QA49 FAIL CaelumTreeDesertChurqui moving=0 passive=0 air=0 immobilized=0 idle=1 has environmental provenance
+QA49 PASS CaelumTreeDesertChurqui moving=0 passive=0 air=0 immobilized=0 idle=1 correct stationary-only absorption
+QA49 PASS CaelumTreeDesertChurqui moving=0 passive=0 air=0 immobilized=0 idle=1 exercises pain without reward
+QA49 PASS combat body damage retains adrenaline and activity
+QA49 PASS running does not absorb combat body hits without buckler
+QA49 PASS crushing retains landing-style absorption
+QA49 DONE checks=37 failures=16
+Partida guardada.
+
+=== final ===
+CANQA - Environment and running impact QA
+QA49W PASS directional grounded non-run input is walking
+QA49W PASS walking wall uses existing Agility fraction
+QA49W PASS walking does not absorb actor hits
+QA49W PASS walking does not absorb ram or cannon hits
+QA49W PASS walking fraction retains fifty percent cap
+QA49W PASS effective run flag receives same capped absorption
+QA49W PASS idle does not count as walking
+QA49W PASS strafe walking is eligible
+QA49W PASS airborne input does not count as walking
+QA49W PASS immobilization disables absorption
+QA49W PASS existing crouched wall benefit remains
+QA49W PASS active buckler still absorbs environmental hits
+QA49W PASS active buckler retains doubled landing absorption
+QA49W PASS ordinary landing absorption remains JumpZ
+QA49W TRACE t=49 hp=2480 php=2480 max=2480.000000000 attr=20.0 z=0.000000000 vz=0.000000000 impact=0 final=0 jump=10.834469023
+QA49W PASS medium T1 size M full set weighs twenty kg
+QA49W PASS eighty kg body plus equipment has hundred kg impact mass
+QA49W PASS persistent profile retains twenty attributes and 2480 health
+QA49W PROFILE hp=2480 mass=100.000000 capacity=86.653465347 load=0.230804388 jump=10.834469023 absorb=10.834469023
+QA49W TRACE t=66 hp=2480 php=2480 max=2480.000000000 attr=20.0 z=0.000000000 vz=10.834469023 impact=0 final=0 jump=10.834469023
+QA49W PASS native jump lands at original floor height
+QA49W PASS native self jump causes zero health loss with equipment load
+QA49W JUMP launch=10.834469023 peak=64.179159254 fall=11.165530977 absorption=10.834469023 health=2480 tics=22
+QA49W TRACE t=90 hp=2480 php=2480 max=2480.000000000 attr=20.0 z=-0.000000000 vz=0.000000000 impact=3 final=0 jump=10.834469023
+QA49W PASS native walking contacts wall
+QA49W PASS native walking wall contact receives biological absorption
+QA49W WALL walking=1 raw=2.336335788 bio=0.827783927 trauma=1.508551860
+QA49W PASS native running contacts wall
+QA49W PASS native running wall contact receives biological absorption
+QA49W WALL walking=0 raw=3.266590045 bio=1.157381037 trauma=2.109209008
+QA49W PASS native jump completed rather than skipped
+QA49W DONE checks=24 failures=0
+QA49 CONTACT CaelumTreeDesertChurqui moving=0 passive=0 air=0 immobilized=0 idle=0 hpLoss=230 raw=10.000000 bio=2.500000 adrenaline=0.000000 combat=7.00 pain=1
+QA49 PASS CaelumTreeDesertChurqui moving=0 passive=0 air=0 immobilized=0 idle=0 causes nonfatal damage
+QA49 PASS CaelumTreeDesertChurqui moving=0 passive=0 air=0 immobilized=0 idle=0 grants no adrenaline or combat refresh
+QA49 PASS CaelumTreeDesertChurqui moving=0 passive=0 air=0 immobilized=0 idle=0 has environmental provenance
+QA49 PASS CaelumTreeDesertChurqui moving=0 passive=0 air=0 immobilized=0 idle=0 correct stationary-only absorption
+QA49 PASS CaelumTreeDesertChurqui moving=0 passive=0 air=0 immobilized=0 idle=0 exercises pain without reward
+QA49 CONTACT CaelumRockGranite moving=0 passive=0 air=0 immobilized=0 idle=0 hpLoss=204 raw=9.884045 bio=2.471011 adrenaline=0.000000 combat=7.00 pain=1
+QA49 PASS CaelumRockGranite moving=0 passive=0 air=0 immobilized=0 idle=0 causes nonfatal damage
+QA49 PASS CaelumRockGranite moving=0 passive=0 air=0 immobilized=0 idle=0 grants no adrenaline or combat refresh
+QA49 PASS CaelumRockGranite moving=0 passive=0 air=0 immobilized=0 idle=0 has environmental provenance
+QA49 PASS CaelumRockGranite moving=0 passive=0 air=0 immobilized=0 idle=0 correct stationary-only absorption
+QA49 PASS CaelumRockGranite moving=0 passive=0 air=0 immobilized=0 idle=0 exercises pain without reward
+QA49 CONTACT CaelumRockGranite moving=1 passive=0 air=0 immobilized=0 idle=0 hpLoss=716 raw=13.837662 bio=0.000000 adrenaline=0.000000 combat=7.00 pain=1
+QA49 PASS CaelumRockGranite moving=1 passive=0 air=0 immobilized=0 idle=0 causes nonfatal damage
+QA49 PASS CaelumRockGranite moving=1 passive=0 air=0 immobilized=0 idle=0 grants no adrenaline or combat refresh
+QA49 PASS CaelumRockGranite moving=1 passive=0 air=0 immobilized=0 idle=0 has environmental provenance
+QA49 PASS CaelumRockGranite moving=1 passive=0 air=0 immobilized=0 idle=0 correct stationary-only absorption
+QA49 PASS CaelumRockGranite moving=1 passive=0 air=0 immobilized=0 idle=0 exercises pain without reward
+QA49 CONTACT CaelumRockGranite moving=1 passive=1 air=0 immobilized=0 idle=0 hpLoss=716 raw=13.837662 bio=0.000000 adrenaline=0.000000 combat=7.00 pain=1
+QA49 PASS CaelumRockGranite moving=1 passive=1 air=0 immobilized=0 idle=0 causes nonfatal damage
+QA49 PASS CaelumRockGranite moving=1 passive=1 air=0 immobilized=0 idle=0 grants no adrenaline or combat refresh
+QA49 PASS CaelumRockGranite moving=1 passive=1 air=0 immobilized=0 idle=0 has environmental provenance
+QA49 PASS CaelumRockGranite moving=1 passive=1 air=0 immobilized=0 idle=0 correct stationary-only absorption
+QA49 PASS CaelumRockGranite moving=1 passive=1 air=0 immobilized=0 idle=0 exercises pain without reward
+QA49 CONTACT CaelumRockGranite moving=0 passive=0 air=1 immobilized=0 idle=0 hpLoss=364 raw=9.884045 bio=0.000000 adrenaline=0.000000 combat=7.00 pain=1
+QA49 PASS CaelumRockGranite moving=0 passive=0 air=1 immobilized=0 idle=0 causes nonfatal damage
+QA49 PASS CaelumRockGranite moving=0 passive=0 air=1 immobilized=0 idle=0 grants no adrenaline or combat refresh
+QA49 PASS CaelumRockGranite moving=0 passive=0 air=1 immobilized=0 idle=0 has environmental provenance
+QA49 PASS CaelumRockGranite moving=0 passive=0 air=1 immobilized=0 idle=0 correct stationary-only absorption
+QA49 PASS CaelumRockGranite moving=0 passive=0 air=1 immobilized=0 idle=0 exercises pain without reward
+QA49 CONTACT CaelumTreeDesertChurqui moving=0 passive=0 air=0 immobilized=1 idle=0 hpLoss=411 raw=10.000000 bio=0.000000 adrenaline=0.000000 combat=7.00 pain=1
+QA49 PASS CaelumTreeDesertChurqui moving=0 passive=0 air=0 immobilized=1 idle=0 causes nonfatal damage
+QA49 PASS CaelumTreeDesertChurqui moving=0 passive=0 air=0 immobilized=1 idle=0 grants no adrenaline or combat refresh
+QA49 PASS CaelumTreeDesertChurqui moving=0 passive=0 air=0 immobilized=1 idle=0 has environmental provenance
+QA49 PASS CaelumTreeDesertChurqui moving=0 passive=0 air=0 immobilized=1 idle=0 correct stationary-only absorption
+QA49 CONTACT CaelumTreeDesertChurqui moving=0 passive=0 air=0 immobilized=0 idle=1 hpLoss=411 raw=10.000000 bio=0.000000 adrenaline=0.000000 combat=7.00 pain=1
+QA49 PASS CaelumTreeDesertChurqui moving=0 passive=0 air=0 immobilized=0 idle=1 causes nonfatal damage
+QA49 PASS CaelumTreeDesertChurqui moving=0 passive=0 air=0 immobilized=0 idle=1 grants no adrenaline or combat refresh
+QA49 PASS CaelumTreeDesertChurqui moving=0 passive=0 air=0 immobilized=0 idle=1 has environmental provenance
+QA49 PASS CaelumTreeDesertChurqui moving=0 passive=0 air=0 immobilized=0 idle=1 correct stationary-only absorption
+QA49 PASS CaelumTreeDesertChurqui moving=0 passive=0 air=0 immobilized=0 idle=1 exercises pain without reward
+QA49 PASS combat body damage retains adrenaline and activity
+QA49 PASS running does not absorb combat body hits without buckler
+QA49 PASS crushing retains landing-style absorption
+QA49 DONE checks=37 failures=0
+Partida guardada.
+
+=== load_before ===
+CANQA - Environment and running impact QA
+QA49 PASS pre-patch native save retains adrenaline
+QA49 LOAD compatible native save loaded=1
+QA49W PASS directional grounded non-run input is walking
+QA49W PASS walking wall uses existing Agility fraction
+QA49W PASS walking does not absorb actor hits
+QA49W PASS walking does not absorb ram or cannon hits
+QA49W PASS walking fraction retains fifty percent cap
+QA49W PASS effective run flag receives same capped absorption
+QA49W PASS idle does not count as walking
+QA49W PASS strafe walking is eligible
+QA49W PASS airborne input does not count as walking
+QA49W PASS immobilization disables absorption
+QA49W PASS existing crouched wall benefit remains
+QA49W PASS active buckler still absorbs environmental hits
+QA49W PASS active buckler retains doubled landing absorption
+QA49W PASS ordinary landing absorption remains JumpZ
+QA49W TRACE t=49 hp=2480 php=2480 max=2480.000000000 attr=20.0 z=0.000000000 vz=0.000000000 impact=4 final=14 jump=10.834469023
+QA49W PASS medium T1 size M full set weighs twenty kg
+QA49W PASS eighty kg body plus equipment has hundred kg impact mass
+QA49W PASS persistent profile retains twenty attributes and 2480 health
+QA49W PROFILE hp=2480 mass=100.000000 capacity=86.653465347 load=0.230804388 jump=10.834469023 absorb=10.834469023
+QA49W TRACE t=66 hp=2480 php=2480 max=2480.000000000 attr=20.0 z=0.000000000 vz=0.000000000 impact=4 final=14 jump=10.834469023

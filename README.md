@@ -4,8 +4,16 @@ An independent dark fantasy FPS-RPG inspired by nineteenth-century Argentina.
 Author and game designer: **Damian Curti**. Development target: **GZDoom 4.14.2**
 on Windows 11. The final game is intended to be independent of Doom assets.
 
-**Current release: 4.36.20.** Obtain and update the complete repository, validate
+**Current release: 4.36.21.** Obtain and update the complete repository, validate
 it, then rebuild with `run_dev.bat` as described below.
+
+Issue [#49](https://github.com/damiancurti/Caelum-Argenteum/issues/49) removes
+combat adrenaline from tree/rock collision damage and pain. Walking, running
+and crouching use the existing biological absorption against walls, rooted
+trees and rocks at rest before contact. Incoming moving rocks retain their
+prior absorption rules. Native/static evidence is in
+[validation_43621](assets/validation_43621/RESULTS.json); the new author check
+is in [pending_test.txt](pending_test.txt). #33 tests are author-approved.
 
 Issue [#33](https://github.com/damiancurti/Caelum-Argenteum/issues/33) unifies
 the Box capture of El loco, Ace of Cups and Knight of Wands. The sewer Zupay
@@ -27,7 +35,7 @@ from running; idle/airborne input does not qualify. The benefit applies only
 to walls. Native checks and an 80 kg /20 kg equipment self-jump test passed;
 the author confirmed CA-43618-WALK-01 and final siege check CA-43619-BALANCE-01
 passed on 2026-09-27. Acceptance is recorded in [HISTORY](docs/HISTORY.md);
-#33 acceptance is also recorded there; [pending_test.txt](pending_test.txt) is empty.
+#33 acceptance is also recorded there; only the new #49 check remains pending.
 
 Issue [#21](https://github.com/damiancurti/Caelum-Argenteum/issues/21) adds
 controlled cannon loading, firing and recovery, with inert 4.3 kg projectiles

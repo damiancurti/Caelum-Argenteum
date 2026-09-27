@@ -1,0 +1,42 @@
+{
+  "issue": 49,
+  "version": "4.36.21",
+  "date": "2026-09-27",
+  "baseline": "f064f92f97aa1b6907f0acb4dc3ee1e03f2cff4a",
+  "engine": "GZDoom 4.14.2, Windows 11, Vulkan, NVIDIA GeForce RTX 3070 Ti; author-installed Doom II development IWAD; isolated no-autoload/no-sound fixture.",
+  "scope": "Native walking/running wall traversal and self-jump; scripted real CollidedWith callbacks and ReceiveCaelumImpact for controlled scenery/body/crush cases. Pain multiplier is forced in the fixture to exercise the pain branch; it is not a production balance change.",
+  "baseline_result": "18 expected failures reproduce running exclusion and scenery adrenaline/provenance errors (including stationary-scenery absorption).",
+  "final_result": "61 full-scenario assertions pass; pre-patch native save loads and retains adrenaline, followed by 17 eligibility/shield/profile checks.",
+  "checks": {
+    "before": {
+      "pass": 43,
+      "fail": 18,
+      "log_sha256": "ebbb2067e89d161c835cca42e74a2ce8879ba97fc34429ddf4550e6633815f14"
+    },
+    "final": {
+      "pass": 61,
+      "fail": 0,
+      "log_sha256": "2a3c9580e00a9d188ff9fd6f9b2a99b54fed93852e982f4ef137c8f50696bbb5"
+    },
+    "load_before": {
+      "pass": 18,
+      "fail": 0,
+      "log_sha256": "dad6c3c2a917fb455f4bb80a0868882c0e5165e7b9d8b7fe42359bf2e8049133"
+    }
+  },
+  "package": {
+    "sha256": "656cd3b5d6f4182d62a6e189448083505d7c2801fd7b1a3f0621483e5ea30b3b",
+    "files": 6118,
+    "all_entries_match_source": true
+  },
+  "runtime_changed": {
+    "caelum/player/CaelumPlayer.zs": "d6ba2608c5cbc2de03ce2b1d9f6979d685eae3abf18ff5b7afcdb2a05bd22a65",
+    "caelum/world/CaelumPhysicalHazards.zs": "ededc999cfd5d04d1c93b317cfc34ee3db35b4b5e7c8db7abf71addb5c8ab16a",
+    "caelum/world/CaelumSewerMaze.zs": "d9bd5a011512f824458162376ce36b8a4f86988bafbb556dd3a399176d9280a5"
+  },
+  "maps_art_balance_constants_unchanged": true,
+  "save_compatibility": "No serialized field/state changes. Transient optional contact parameter. A 4.36.20 native save created before the code change loads under the current PK3; original author saves were not altered.",
+  "review": "Independent static agent review found no pending defects; checked provenance, pre-impulse velocity, movement fraction and save compatibility.",
+  "author_acceptance": "CA-43621-IMPACT-01 pending. Earlier #33 checks confirmed passed on 2026-09-27 and recorded separately.",
+  "local_only": "Fixtures, raw logs, CANQA test map, saves, engine/IWAD and baseline package remain outside tracked delivery. Source-after first attempt paused in background and timed out; isolated config then explicitly allowed background progress. Only completed final runs count as passing."
+}

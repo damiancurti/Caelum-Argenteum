@@ -12206,7 +12206,7 @@ class CaelumPlayer : DoomPlayer
                         == CaelumConstants.SHIELD_TYPE_BUCKLER));
     }
 
-    double GetImpactAgilityAbsorptionSpeed(int impactKind)
+    double GetImpactAgilityAbsorptionSpeed(int impactKind, bool stationarySceneryContact = false)
     {
         if (IsPhysicallyImmobilized()) { return 0.0; }
 
@@ -12229,12 +12229,14 @@ class CaelumPlayer : DoomPlayer
             baseAbsorption / Max(0.0001, baseJump) - 1.0
         );
 
-        // Caminar o agacharse permite ceder ante paredes. La marcha exige
-        // entrada direccional, suelo y ausencia del estado nativo de carrera.
-        // No concede esta amortiguación a cuerpos ni proyectiles.
+        // Caminar, correr o agacharse permite ceder ante paredes y escenario
+        // quieto. El contacto guarda el reposo previo a transmitir impulso;
+        // no concede este beneficio a cuerpos ni rocas que ya venían moviéndose.
         double carefulMovementFraction = 0.0;
-        if ((IsCrouching || IsWalkingOnGround())
-            && impactKind == CaelumConstants.IMPACT_KIND_WALL)
+        if ((IsCrouching || IsWalkingOnGround() || IsRunningOnGround())
+            && (impactKind == CaelumConstants.IMPACT_KIND_WALL
+                || (impactKind == CaelumConstants.IMPACT_KIND_ENVIRONMENT
+                    && stationarySceneryContact)))
         {
             carefulMovementFraction = Clamp(
                 agilityBonusRatio,
@@ -12429,11 +12431,15 @@ class CaelumPlayer : DoomPlayer
         double closingSpeed,
         double impulse,
         double contactMinimumHeightRatio,
-        double contactMaximumHeightRatio
+        double contactMaximumHeightRatio,
+        bool stationarySceneryContact = false
     )
     {
-        // Procedencia explícita: una roca del mecanismo es daño ambiental.
-        if (CaelumHazardRock(sourceActor) != null)
+        // El escenario y las rocas del mecanismo son daño ambiental, aunque
+        // GZDoom los represente con actores: ni daño ni dolor dan adrenalina.
+        if (CaelumHazardRock(sourceActor) != null
+            || (impactKind == CaelumConstants.IMPACT_KIND_ACTOR
+                && CaelumEnvironmentProp(sourceActor) != null))
             impactKind = CaelumConstants.IMPACT_KIND_ENVIRONMENT;
         LastImpactKind = impactKind;
         LastImpactRawDeltaSpeed = Max(0.0, deltaSpeed);
@@ -12453,7 +12459,7 @@ class CaelumPlayer : DoomPlayer
         else if (impactKind != CaelumConstants.IMPACT_KIND_FLOOR)
         {
             double horizontalAbsorptionFraction =
-                GetImpactAgilityAbsorptionSpeed(impactKind);
+                GetImpactAgilityAbsorptionSpeed(impactKind, stationarySceneryContact);
             LastImpactBiologicalAbsorptionSpeed =
                 LastImpactRawDeltaSpeed * horizontalAbsorptionFraction;
             LastImpactDeltaSpeed = Max(
@@ -13117,7 +13123,8 @@ class CaelumPlayer : DoomPlayer
             impact.ClosingSpeed,
             impact.Impulse,
             contactMinimum,
-            contactMaximum
+            contactMaximum,
+            true
         );
     }
 
@@ -13210,6 +13217,10 @@ class CaelumPlayer : DoomPlayer
             contactState.LastTransmittedImpulse = impact.Impulse;
         }
 
+        // La roca puede empezar a moverse por este mismo choque. Determinar
+        // antes del impulso si el jugador encontró un obstáculo en reposo.
+        bool stationarySceneryContact = environment != null
+            && other.Vel.LengthSquared() == 0.0;
         Vel.X -= impact.Normal.X * impact.SourceDeltaSpeed;
         Vel.Y -= impact.Normal.Y * impact.SourceDeltaSpeed;
         other.Vel.X += impact.Normal.X * impact.TargetDeltaSpeed;
@@ -13225,7 +13236,8 @@ class CaelumPlayer : DoomPlayer
             impact.ClosingSpeed,
             impact.Impulse,
             impact.SourceContactMinimumHeightRatio,
-            impact.SourceContactMaximumHeightRatio
+            impact.SourceContactMaximumHeightRatio,
+            stationarySceneryContact
         );
         DeliverImpactToOther(
             other,

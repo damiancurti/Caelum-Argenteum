@@ -1,0 +1,19 @@
+CA-43621-IMPACT-01 | Origin: 4.36.21 / issue #49
+Prerequisites: rebuilt current PK3, GZDoom 4.14.2; copy an existing campaign
+save with access to a wall, rooted tree and stationary rock. Use a character
+whose current Agility/load gives a positive absorption fraction; no active
+shield defense, and health high enough to survive repeated contacts.
+Steps:
+1. From outside combat, collide hard enough with a tree and a rock to take
+   damage, including a pain response. Check health, adrenaline and combat time.
+2. With unchanged equipment/load and movement condition, walk then run into
+   a wall; repeat with a tree and a rock initially at rest. Check absorption
+   through the existing physical diagnostics (compare fractions, not raw damage).
+3. Check that a moving rock does not receive the new stationary-obstacle
+   fraction; repeat idle/airborne and immobilized cases, then ordinary combat.
+4. Save/reload the copied campaign and repeat a stationary scenery collision.
+Expected: scenery damage/pain give no adrenaline or combat refresh. Running
+and walking use the same existing fraction against walls/stationary scenery;
+running can still cause more damage because speed differs. Moving rocks and
+combat retain prior absorption rules, ordinary combat still gives adrenaline,
+and saved progression remains intact. Author acceptance remains pending.

@@ -1,6 +1,16 @@
 # Caelum Argenteum — Project, status and roadmap
 
-Documentation version: **4.36.20** — 2026-09-27.
+Documentation version: **4.36.21** — 2026-09-27.
+
+## 4.36.21 — Scenery impact correction (#49)
+
+Trees and rocks no longer turn collision damage/pain into combat adrenaline.
+The author extended the existing wall absorption to grounded running and
+explicitly included stationary scenery. Moving rocks, combat contacts,
+landings and existing shield behavior retain their prior rules.
+This focused patch is based on the accepted #33 implementation in PR #48;
+its separate PR is stacked until #48 merges. Evidence is in
+assets/validation_43621; CA-43621-IMPACT-01 awaits author acceptance.
 
 ## 4.36.20 — Shared Arcana capture and the playable route (#33)
 
