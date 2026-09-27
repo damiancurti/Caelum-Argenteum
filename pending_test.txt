@@ -1,0 +1,34 @@
+CA-43620-ARCANA-01 | Origin: 4.36.20 / issue #33
+Prerequisites: GZDoom 4.14.2 and rebuilt current PK3; use disposable copies of
+campaign saves. Keep the original saves for rollback. Own the Magic Box.
+Steps:
+1. In MAP01 inspect El loco; confirm its Spanish name and unchanged capture.
+2. Before the sewer boss is defeated, check that the Ace is absent. After
+   defeat, examine it, leave the dialogue, return and confirm capture.
+3. Walk away during the animation, retry, then save/load during a capture.
+4. Visit the port with zero, one and four extracted prisoners on separate
+   copied campaigns. With survivors, claim their rewards separately; also try
+   a claim with insufficient capacity, free capacity and retry.
+5. Examine the Knight beside the survivors and capture it. Save/load before
+   and after availability, revelation and capture; revisit the collection.
+Expected: the three cards use the same Box dialogue and animation with their
+own fronts/identity. No early Ace, premature Knight, repeated capture or
+duplicate payment. Zero survivors reveals the Knight on arrival; otherwise
+all actual owed deliveries must complete. Existing owned cards remain owned.
+Status: outstanding author acceptance; isolated agent checks are in PR evidence.
+
+CA-43620-ROUTE-01 | Origin: 4.36.20 / issue #33
+Prerequisites: same runtime and copied campaign, sewer keys and Box; keep
+food/water for the existing measured MAP03-to-port journey.
+Steps:
+1. Extract a freed prisoner alive before the boss and confirm this still works.
+2. Fight the sewer Zupay. At 50% health watch it stop attacking, run toward
+   the sole outgoing gate at triple speed, disappear and reveal the Ace.
+3. Repeat after luring it toward the arena entrance; save/load during retreat.
+4. Capture the Ace and use the remaining lair exit. In the existing MAP03
+   workshop, inspect the cleared floor and take its only onward exit to port.
+5. On an older copied save, check that former MAP02/MAP03 alternate gates no
+   longer block or travel; owned cards, rescue rewards and history remain.
+Expected: MAP02 -> MAP03 -> MAP06, no working bypass, no tables returning in
+MAP03, no early defeat during retreat, and no repeated or lost progression.
+Status: outstanding author acceptance; isolated agent checks are in PR evidence.

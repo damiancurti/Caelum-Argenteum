@@ -4,8 +4,19 @@ An independent dark fantasy FPS-RPG inspired by nineteenth-century Argentina.
 Author and game designer: **Damian Curti**. Development target: **GZDoom 4.14.2**
 on Windows 11. The final game is intended to be independent of Doom assets.
 
-**Current release: 4.36.19.** Obtain and update the complete repository, validate
+**Current release: 4.36.20.** Obtain and update the complete repository, validate
 it, then rebuild with `run_dev.bat` as described below.
+
+Issue [#33](https://github.com/damiancurti/Caelum-Argenteum/issues/33) unifies
+the Box capture of El loco, Ace of Cups and Knight of Wands. The sewer Zupay
+flees at 50% health with triple base speed and counts as defeated when it
+disappears near the exit. Defeat reveals the Ace; the Knight appears beside
+the port survivors after every owed rescue reward is delivered (immediately
+if none survived). Its condition remains provisional until the port siege.
+The forward route is lair MAP02 -> cleared workshop MAP03 -> port MAP06.
+Existing saves, card identities/effects and prisoner rewards are preserved.
+See [validation evidence](assets/validation_43620/RESULTS.json);
+[author checks](pending_test.txt) remain pending for this release.
 
 Issue [#43](https://github.com/damiancurti/Caelum-Argenteum/issues/43) extends
 biological wall-impact absorption to walking, using the existing crouched
@@ -14,7 +25,7 @@ from running; idle/airborne input does not qualify. The benefit applies only
 to walls. Native checks and an 80 kg /20 kg equipment self-jump test passed;
 the author confirmed CA-43618-WALK-01 and final siege check CA-43619-BALANCE-01
 passed on 2026-09-27. Acceptance is recorded in [HISTORY](docs/HISTORY.md);
-[pending_test.txt](pending_test.txt) is empty.
+the remaining #33 author checks are in [pending_test.txt](pending_test.txt).
 
 Issue [#21](https://github.com/damiancurti/Caelum-Argenteum/issues/21) adds
 controlled cannon loading, firing and recovery, with inert 4.3 kg projectiles

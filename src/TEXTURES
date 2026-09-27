@@ -5370,3 +5370,21 @@ Sprite "PTERG5", 256, 256 { Offset 128, 244 Patch "sprites/caelum/prisoners/taro
 Sprite "PTERG6", 256, 256 { Offset 128, 244 Patch "sprites/caelum/prisoners/tarot/PTERG6.png", 0, 0 }
 Sprite "PTERG7", 256, 256 { Offset 128, 244 Patch "sprites/caelum/prisoners/tarot/PTERG7.png", 0, 0 }
 Sprite "PTERG8", 256, 256 { Offset 128, 244 Patch "sprites/caelum/prisoners/tarot/PTERG8.png", 0, 0 }
+
+// #33: arte aprobado, misma presentación que El loco.
+Sprite "CACUA0", 1024, 1536
+{
+    XScale 8
+    YScale 8
+    Offset 512, 1536
+    Patch "graphics/caelum/tarot/ca_tarot_36.png", 0, 0
+}
+
+// #33: arte aprobado, misma presentación que El loco.
+Sprite "CAWKA0", 1024, 1536
+{
+    XScale 8
+    YScale 8
+    Offset 512, 1536
+    Patch "graphics/caelum/tarot/ca_tarot_60.png", 0, 0
+}

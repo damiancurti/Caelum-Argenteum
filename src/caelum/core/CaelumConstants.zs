@@ -21,6 +21,10 @@ class CaelumConstants : Object
     // Ancho, 2..10, Caballero, Sota, Reina, Rey.
     const TAROT_MINOR_RANK_COUNT = 14;
     const TAROT_CUPS_ACE = TAROT_MAJOR_COUNT + TAROT_MINOR_RANK_COUNT;
+    const TAROT_WANDS_KNIGHT = TAROT_MAJOR_COUNT + 2 * TAROT_MINOR_RANK_COUNT + 10;
+    const SEWER_ZUPAY_FLEE_SPEED_MULTIPLIER = 3.0;
+    const ARCANA_CUPS_CONVERSATION_ID = 43620;
+    const ARCANA_WANDS_CONVERSATION_ID = 43621;
     const TAROT_SUIT_SWORDS = 0;
     const TAROT_SUIT_CUPS = 1;
     const TAROT_SUIT_WANDS = 2;

@@ -8,8 +8,8 @@ class CaelumMainM00FoolCapture : Object play
     {
         if (user == null || user.player == null || user.health <= 0
             || !user.CharacterCreationComplete || user.CreationWizardOpen
-            || level.MapName != "MAP01" || (user.player.cheats & CF_PREDICTING)
-            || essence == null || !essence.StoryPlaced) return false;
+            || (user.player.cheats & CF_PREDICTING)
+            || essence == null || !essence.IsAvailable(user)) return false;
         return user.Distance2D(essence) <= 128 && Abs(user.Pos.Z-essence.Pos.Z) <= 48
             && user.CheckSight(essence);
     }
@@ -94,7 +94,7 @@ class CaelumMainM00FoolCapture : Object play
         if (!CanApproach(user, essence) || !essence.bInConversation
             || essence.CaptureUser != null || !HasOwnedBox(user)) return false;
         let record = user.GetPersistentCharacterState(false);
-        if (record == null || !record.CanCaptureMainM00Fool() || !record.MainM00FoolRevealed) return false;
+        if (record == null || !essence.IsAvailable(user) || !essence.IsRevealedFor(record)) return false;
         let image = CaelumM00FoolCaptureImage(Actor.Spawn("CaelumM00FoolCaptureImage", essence.Pos, NO_REPLACE));
         if (image == null) return false;
         essence.CaptureUser = user;
@@ -102,6 +102,7 @@ class CaelumMainM00FoolCapture : Object play
         essence.CaptureTics = 0;
         essence.CaptureBoxId = record.MagicBoxItemId;
         image.Anchor = essence;
+        image.sprite = Actor.GetSpriteIndex(CaelumTarotArt.FrontSprite(essence.CardId()));
         // La identidad no se consume al comenzar. Alejarse, morir o perder la
         // Caja interrumpe sin recompensa y permite volver a intentarlo.
         return true;
@@ -114,14 +115,15 @@ class CaelumMainM00FoolCapture : Object play
             || essence.CaptureImage == null || !HasOwnedBox(user)) return false;
         let record = user.GetPersistentCharacterState(false);
         if (record == null || record.MagicBoxItemId != essence.CaptureBoxId
-            || !record.RecordMainM00FoolCapture()) return false;
+            || !essence.RecordCapture(record)) return false;
         user.ApplyCharacterProfile();
         user.RefreshSocialJournalSnapshot();
         user.RefreshFormalInventorySnapshot();
         user.SyncPalomoDialogueTokens();
         user.PersistCharacterState();
         EventHandler.SendInterfaceEvent(user.PlayerNumber(), "ca_tarot_capture");
-        CaelumNotifications.Notify(user,StringTable.Localize("CA_M01_FOOL_OBTAINED", false));
+        CaelumNotifications.Notify(user, String.Format(StringTable.Localize("CA_ARCANA_OBTAINED", false),
+            StringTable.Localize(CaelumTarotArt.NameKey(essence.CardId()), false)));
         return true;
     }
 }
@@ -135,10 +137,37 @@ class CaelumM00FoolEssence : Actor
     int CaptureTics;
     int CaptureBoxId;
 
+    virtual int CardId() { return CaelumConstants.TAROT_THE_FOOL; }
+
+    bool IsAvailable(CaelumPlayer user)
+    {
+        if (user == null) return false;
+        let record = user.GetPersistentCharacterState(false);
+        if (record == null || record.HasTarotCard(CardId())) return false;
+        if (CardId() == CaelumConstants.TAROT_THE_FOOL)
+            return level.MapName == "MAP01" && StoryPlaced && record.CanCaptureMainM00Fool();
+        return CaelumArcanaProgress.CanCapture(record, CardId());
+    }
+
+    bool IsRevealedFor(CaelumPersistentCharacterState record)
+    {
+        return CardId() == CaelumConstants.TAROT_THE_FOOL
+            ? record.MainM00FoolRevealed : record.ArcanaRevealed[CardId()];
+    }
+
+    bool RecordCapture(CaelumPersistentCharacterState record)
+    {
+        if (!IsRevealedFor(record)) return false;
+        if (CardId() == CaelumConstants.TAROT_THE_FOOL) return record.RecordMainM00FoolCapture();
+        if (!CaelumArcanaProgress.CanCapture(record, CardId())) return false;
+        record.TarotOwned[CardId()] = true;
+        return true;
+    }
+
     void SetRevealed(bool value)
     {
         Revealed = value;
-        sprite = GetSpriteIndex(value ? "CFLF" : "CTAR");
+        sprite = GetSpriteIndex(value ? CaelumTarotArt.FrontSprite(CardId()) : "CTAR");
         frame = 0;
         Scale = value ? (0.25, 0.25) : (0.65, 0.65);
         Alpha = 0.90;
@@ -150,18 +179,19 @@ class CaelumM00FoolEssence : Actor
         if (!CaelumMainM00FoolCapture.CanApproach(user, self) || bInConversation
             || CaptureUser != null || user.HasActiveConversation()) return false;
         let record = user.GetPersistentCharacterState(false);
-        if (record == null || !record.CanCaptureMainM00Fool()
+        if (record == null || !IsAvailable(user)
             || !CaelumMainM00FoolCapture.HasOwnedBox(user)) return false;
         if (user.StaffCastPending) user.CancelPendingStaffCast(false);
         user.CloseCraftingStationSession();
         user.SetCraftingJournalState(false);
         user.EquipmentMenuOpen = false;
         Level.ExecuteSpecial(CaelumConstants.GZDOOM_THING_SET_CONVERSATION_SPECIAL,
-            self, null, false, 0, CaelumConstants.MAIN_M00_FOOL_CONVERSATION_ID);
+            self, null, false, 0, CaelumTarotArt.ConversationId(CardId()));
         if (!HasConversation() || !StartConversation(user, true, true)) return false;
-        if (!record.MainM00FoolRevealed)
+        if (!IsRevealedFor(record))
         {
-            record.MainM00FoolRevealed = true;
+            if (CardId() == CaelumConstants.TAROT_THE_FOOL) record.MainM00FoolRevealed = true;
+            else record.ArcanaRevealed[CardId()] = true;
             user.RefreshSocialJournalSnapshot();
             user.PersistCharacterState();
             // El acorde acompaña la primera revelación, no la recompensa.
@@ -191,7 +221,7 @@ class CaelumM00FoolEssence : Actor
         let record = CaptureUser.GetPersistentCharacterState(false);
         if (!CaelumMainM00FoolCapture.CanApproach(CaptureUser, self)
             || !CaelumMainM00FoolCapture.HasOwnedBox(CaptureUser) || record == null
-            || !record.CanCaptureMainM00Fool() || record.MagicBoxItemId != CaptureBoxId
+            || !IsAvailable(CaptureUser) || record.MagicBoxItemId != CaptureBoxId
             || CaptureImage == null)
         { CancelCapture(); return; }
         // USDF debe soltar el diálogo antes de que empiece la animación.

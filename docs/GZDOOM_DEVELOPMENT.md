@@ -170,6 +170,12 @@ Identify the generator and input manifest before changing generated maps, catalo
 - For an unfamiliar API, verify its declaration/signature against target-version engine sources or authoritative documentation and record the source. Do not label a remembered API as verified.
 - Adding a class requires checking actual inclusion through src/ZSCRIPT and its dependency order, then compiling in the engine. Python validation alone is insufficient.
 - Trace state transitions, actor ownership and save behavior before changing shared lifecycle code. Preserve existing schemas or implement the explicit migration required by AGENTS.
+- For a retreat toward a solid travel gate, validate both the approach volume
+  and a start outside the arena. In #33 (4.36.20 over baseline `245d3bb5`),
+  `CaelumZupayColossus` uses native attack-free `A_Chase` at the existing
+  cadence and completes within one step of gate contact, with sight and height
+  checks. Arena/corridor and saved-retreat evidence is in
+  `assets/validation_43620/RESULTS.json`; author acceptance remains separate.
 - For visual changes, verify in-engine transforms, pivot, layering and viewing scale. A guessed sign convention or an external mockup is not final evidence.
 - For stalls, separate cold startup from repeated activation, loaded from empty state, and resource cost from repeated logic. Measure before naming a root cause.
 - For physics, use the existing approved units and formulas. Animation, contact detection and damage application must be checked together; a moving mesh alone does not prove a functional mechanism.

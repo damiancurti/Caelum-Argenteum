@@ -1,0 +1,397 @@
+=== retreat_save_final ===
+MAP02 - Alcantarillas — el laberinto
+QA33 TRACE loaded save=0
+QA33 TRACE worldtick=1 active=0
+QA33 TRACE worldtick=20 active=0
+QA33 TRACE worldtick=40 active=0
+QA33 PASS owned Box identity is valid
+QA33 PASS native MAP02 boss and placed Ace found
+QA33 PASS exactly one active outgoing lair/workshop destination
+QA33 PASS exactly one physical travel gate remains visible
+QA33 PASS Ace hidden and uncollectible before confirmed defeat
+QA33 PASS above fifty percent boss does not flee
+QA33 PASS at fifty percent boss flees at exactly triple base speed
+QA33 PASS starting escape is not yet defeat
+QA33 TRACE worldtick=60 active=0
+Partida guardada.
+QA33 PASS escaping boss physically moves
+QA33 PASS boss reaches exit, disappears and records defeat
+QA33 PASS defeat reveals Ace without granting it
+QA33 BEGIN card=36 available=1 approach=1 box=1 revealed=1 dist=64.0 dz=0.0 sight=1 health=1780 defeat=1
+QA33 PASS shared capture begins after confirmation
+QA33 PASS capture image uses correct approved front
+QA33 PASS partial animation does not grant ownership
+QA33 PASS distance interruption cancels without consuming card
+QA33 BEGIN card=36 available=1 approach=1 box=1 revealed=1 dist=64.0 dz=0.0 sight=1 health=1780 defeat=1
+QA33 PASS shared capture begins after confirmation
+QA33 PASS capture image uses correct approved front
+QA33 PASS full shared animation grants exactly one card
+QA33 PASS repeat Use and commit cannot duplicate capture
+QA33 PASS owned Ace no longer appears
+QA33 PASS defeat and captured Ace unlock forward route
+QA33 DONE sewer checks=21 failures=0
+Partida guardada.
+
+=== retreat_load_final ===
+MAP02 - Alcantarillas — el laberinto
+QA33 TRACE loaded save=0
+QA33 TRACE worldtick=1 active=0
+QA33 TRACE worldtick=20 active=0
+MAP02 - Alcantarillas — el laberinto
+QA33 TRACE loaded save=1
+QA33 TRACE worldtick=1 active=0
+QA33 TRACE worldtick=20 active=0
+QA33 TRACE worldtick=40 active=0
+QA33 TRACE worldtick=60 active=0
+QA33 PASS escaping boss physically moves
+QA33 PASS boss reaches exit, disappears and records defeat
+QA33 PASS defeat reveals Ace without granting it
+QA33 BEGIN card=36 available=1 approach=1 box=1 revealed=1 dist=64.0 dz=0.0 sight=1 health=1780 defeat=1
+QA33 PASS shared capture begins after confirmation
+QA33 PASS capture image uses correct approved front
+QA33 PASS partial animation does not grant ownership
+QA33 PASS distance interruption cancels without consuming card
+QA33 BEGIN card=36 available=1 approach=1 box=1 revealed=1 dist=64.0 dz=0.0 sight=1 health=1780 defeat=1
+QA33 PASS shared capture begins after confirmation
+QA33 PASS capture image uses correct approved front
+QA33 PASS full shared animation grants exactly one card
+QA33 PASS repeat Use and commit cannot duplicate capture
+QA33 PASS owned Ace no longer appears
+QA33 PASS defeat and captured Ace unlock forward route
+QA33 DONE sewer checks=21 failures=0
+
+=== port_final ===
+MAP06 - Puerto ribereño
+QA33 TRACE loaded save=0
+QA33 TRACE worldtick=1 active=0
+QA33 TRACE worldtick=20 active=0
+QA33 TRACE worldtick=40 active=0
+QA33 PASS owned Box identity is valid
+QA33 PASS 0 survivors: correct initial availability
+QA33 PASS 1 survivors: correct initial availability
+QA33 PASS capacity failure rejects actual reward transaction
+QA33 PASS failed delivery remains claimable and blocks Knight
+QA33 PASS actual reward retry succeeds
+QA33 PASS unchanged once-only coin and reputation reward
+QA33 PASS duplicate claim cannot pay again
+QA33 PASS Knight waits for every actual owed delivery
+QA33 PASS 4 survivors: correct initial availability
+QA33 PASS capacity failure rejects actual reward transaction
+QA33 PASS failed delivery remains claimable and blocks Knight
+QA33 PASS actual reward retry succeeds
+QA33 PASS unchanged once-only coin and reputation reward
+QA33 PASS duplicate claim cannot pay again
+QA33 PASS Knight waits for every actual owed delivery
+QA33 PASS actual reward retry succeeds
+QA33 PASS unchanged once-only coin and reputation reward
+QA33 PASS duplicate claim cannot pay again
+QA33 PASS Knight waits for every actual owed delivery
+QA33 PASS actual reward retry succeeds
+QA33 PASS unchanged once-only coin and reputation reward
+QA33 PASS duplicate claim cannot pay again
+QA33 PASS Knight waits for every actual owed delivery
+QA33 PASS actual reward retry succeeds
+QA33 PASS unchanged once-only coin and reputation reward
+QA33 PASS duplicate claim cannot pay again
+QA33 PASS Knight waits for every actual owed delivery
+QA33 PASS Knight has stable card identity 60
+QA33 BEGIN card=60 available=1 approach=1 box=1 revealed=1 dist=64.0 dz=0.0 sight=1 health=1780 defeat=0
+QA33 PASS shared capture begins after confirmation
+QA33 PASS capture image uses correct approved front
+QA33 PASS partial animation does not grant ownership
+QA33 PASS distance interruption cancels without consuming card
+QA33 BEGIN card=60 available=1 approach=1 box=1 revealed=1 dist=64.0 dz=0.0 sight=1 health=1780 defeat=0
+QA33 PASS shared capture begins after confirmation
+QA33 PASS capture image uses correct approved front
+QA33 PASS full shared animation grants exactly one card
+QA33 PASS repeat Use and commit cannot duplicate capture
+QA33 PASS owned Knight stays hidden on revisit reconciliation
+QA33 DONE port checks=38 failures=0
+QA33 TRACE worldtick=60 active=0
+Partida guardada.
+
+=== load_autocheck ===
+MAP02 - Alcantarillas — el laberinto
+QA33 TRACE loaded save=0
+QA33 TRACE worldtick=1 active=0
+QA33 TRACE worldtick=20 active=0
+MAP02 - Alcantarillas — el laberinto
+QA33 TRACE loaded save=1
+QA33 TRACE worldtick=1 active=1
+QA33 TRACE worldtick=20 active=1
+QA33 TRACE worldtick=40 active=1
+QA33 TRACE worldtick=60 active=1
+QA33 PASS capture resumes from native mid-animation save and commits
+QA33 PASS saved Box identity is retained
+QA33 PASS loaded captured card has no visible duplicate
+QA33 DONE capture-save checks=3 failures=0
+
+=== fool_pkg_load ===
+MAP01 - La mansión
+QA33 TRACE loaded save=0
+QA33 TRACE worldtick=1 active=0
+QA33 TRACE worldtick=20 active=0
+MAP01 - La mansión
+QA33 TRACE loaded save=1
+QA33 TRACE worldtick=1 active=1
+QA33 TRACE worldtick=20 active=1
+QA33 TRACE worldtick=40 active=1
+QA33 TRACE worldtick=60 active=1
+QA33 PASS capture resumes from native mid-animation save and commits
+QA33 PASS saved Box identity is retained
+QA33 PASS Fool retains original quest exit reward
+QA33 PASS loaded captured card has no visible duplicate
+QA33 DONE capture-save checks=4 failures=0
+
+=== knight_load_final ===
+MAP06 - Puerto ribereño
+QA33 TRACE loaded save=0
+QA33 TRACE worldtick=1 active=0
+QA33 TRACE worldtick=20 active=0
+MAP06 - Puerto ribereño
+QA33 TRACE loaded save=1
+QA33 TRACE worldtick=1 active=1
+QA33 TRACE worldtick=20 active=1
+QA33 TRACE worldtick=40 active=1
+QA33 TRACE worldtick=60 active=1
+QA33 PASS capture resumes from native mid-animation save and commits
+QA33 PASS saved Box identity is retained
+QA33 PASS loaded captured card has no visible duplicate
+QA33 DONE capture-save checks=3 failures=0
+
+=== legacy_migrate_before ===
+MAP02 - Alcantarillas — el laberinto
+MAP02 - Alcantarillas — el laberinto
+QA33 PASS 4.36.19 snapshot loads under current runtime
+QA33 PASS migration retains owned cards and adds none
+QA33 PASS migration retains stable Box identity
+QA33 PASS partial rewards and money retain exact old state
+QA33 PASS extraction and prisoner death survive migration
+QA33 PASS old bypass history retained but departure rejected
+QA33 PASS revision applied to existing traveler
+QA33 PASS living old boss keeps Ace locked
+QA33 PASS explicit additive rollback preserves prior ownership and rewards
+QA33 PASS reapplying migration is idempotent
+QA33 PASS exactly one active outgoing lair/workshop destination
+QA33 PASS retired saved gate cannot block or travel
+QA33 PASS retired saved gate cannot block or travel
+QA33 PASS retired saved gate cannot block or travel
+QA33 PASS exactly one physical travel gate remains visible
+QA33 DONE legacy checks=15 failures=0
+
+=== legacy_migrate_dead ===
+MAP02 - Alcantarillas — el laberinto
+QA33 TRACE loaded save=0
+QA33 TRACE worldtick=1
+QA33 TRACE worldtick=20
+MAP02 - Alcantarillas — el laberinto
+QA33 TRACE loaded save=1
+QA33 TRACE worldtick=1
+QA33 TRACE worldtick=20
+QA33 PASS 4.36.19 snapshot loads under current runtime
+QA33 PASS migration retains owned cards and adds none
+QA33 PASS migration retains stable Box identity
+QA33 PASS partial rewards and money retain exact old state
+QA33 PASS extraction and prisoner death survive migration
+QA33 PASS old bypass history retained but departure rejected
+QA33 PASS revision applied to existing traveler
+QA33 PASS old corpse supplies positive defeat evidence
+QA33 PASS explicit additive rollback preserves prior ownership and rewards
+QA33 PASS reapplying migration is idempotent
+QA33 PASS exactly one active outgoing lair/workshop destination
+QA33 PASS retired saved gate cannot block or travel
+QA33 PASS retired saved gate cannot block or travel
+QA33 PASS retired saved gate cannot block or travel
+QA33 PASS exactly one physical travel gate remains visible
+QA33 DONE legacy checks=15 failures=0
+
+=== legacy_migrate_owned ===
+MAP02 - Alcantarillas — el laberinto
+QA33 TRACE loaded save=0
+QA33 TRACE worldtick=1 active=0
+QA33 TRACE worldtick=20 active=0
+MAP02 - Alcantarillas — el laberinto
+QA33 TRACE loaded save=1
+QA33 TRACE worldtick=1 active=0
+QA33 TRACE worldtick=20 active=0
+QA33 TRACE worldtick=40 active=0
+QA33 PASS 4.36.19 snapshot loads under current runtime
+QA33 PASS migration retains owned cards and adds none
+QA33 PASS migration retains stable Box identity
+QA33 PASS partial rewards and money retain exact old state
+QA33 PASS extraction and prisoner death survive migration
+QA33 PASS old bypass history retained but departure rejected
+QA33 PASS revision applied to existing traveler
+QA33 PASS owned old Ace cannot respawn or be recaptured
+QA33 PASS explicit additive rollback preserves prior ownership and rewards
+QA33 PASS reapplying migration is idempotent
+QA33 PASS exactly one active outgoing lair/workshop destination
+QA33 PASS retired saved gate cannot block or travel
+QA33 PASS retired saved gate cannot block or travel
+QA33 PASS retired saved gate cannot block or travel
+QA33 PASS exactly one physical travel gate remains visible
+QA33 DONE legacy checks=15 failures=0
+
+=== legacy_migrate_port ===
+MAP06 - Puerto ribereño
+QA33 TRACE loaded save=0
+QA33 TRACE worldtick=1 active=0
+QA33 TRACE worldtick=20 active=0
+MAP06 - Puerto ribereño
+QA33 TRACE loaded save=1
+QA33 TRACE worldtick=1 active=0
+QA33 TRACE worldtick=20 active=0
+QA33 TRACE worldtick=40 active=0
+QA33 PASS 4.36.19 snapshot loads under current runtime
+QA33 PASS migration retains owned cards and adds none
+QA33 PASS migration retains stable Box identity
+QA33 PASS partial rewards and money retain exact old state
+QA33 PASS extraction and prisoner death survive migration
+QA33 PASS old bypass history retained but departure rejected
+QA33 PASS revision applied to existing traveler
+QA33 PASS old unpaid survivor still blocks Knight
+QA33 PASS explicit additive rollback preserves prior ownership and rewards
+QA33 PASS reapplying migration is idempotent
+QA33 DONE legacy checks=10 failures=0
+
+=== route_final ===
+MAP02 - Alcantarillas — el laberinto
+QA33 TRACE loaded save=0
+QA33 TRACE worldtick=1 active=0
+QA33 TRACE worldtick=20 active=0
+MAP02 - Alcantarillas — el laberinto
+QA33 TRACE loaded save=1
+QA33 TRACE worldtick=1 active=0
+QA33 TRACE worldtick=20 active=0
+QA33 TRACE worldtick=40 active=0
+QA33 PASS capture resumes from native mid-animation save and commits
+QA33 PASS saved Box identity is retained
+QA33 PASS loaded captured card has no visible duplicate
+QA33 DONE capture-save checks=3 failures=0
+QA33 PASS native gate departure id=2
+MAP03 - Alcantarillas: depósito
+QA33 TRACE loaded save=0
+QA33 TRACE worldtick=1 active=0
+Partida guardada.
+QA33 TRACE worldtick=20 active=0
+QA33 TRACE worldtick=40 active=0
+QA33 PASS arrived through native connection=2 map=MAP03 Ace=1
+QA33 PASS owned Box identity is valid
+QA33 PASS exactly one active outgoing lair/workshop destination
+QA33 PASS exactly one physical travel gate remains visible
+QA33 PASS native gate departure id=8
+QA33 PASS measured journey confirmation
+MAP06 - Puerto ribereño
+QA33 TRACE loaded save=0
+QA33 TRACE worldtick=1 active=0
+Partida guardada.
+QA33 TRACE worldtick=20 active=0
+QA33 TRACE worldtick=40 active=0
+QA33 TRACE worldtick=60 active=0
+
+=== corridor_final ===
+MAP02 - Alcantarillas — el laberinto
+QA33 TRACE loaded save=0
+QA33 TRACE worldtick=1 active=0
+QA33 TRACE worldtick=20 active=0
+QA33 TRACE worldtick=40 active=0
+QA33 PASS owned Box identity is valid
+QA33 PASS native MAP02 boss and placed Ace found
+QA33 PASS exactly one active outgoing lair/workshop destination
+QA33 PASS exactly one physical travel gate remains visible
+QA33 PASS Ace hidden and uncollectible before confirmed defeat
+QA33 PASS above fifty percent boss does not flee
+QA33 PASS at fifty percent boss flees at exactly triple base speed
+QA33 PASS starting escape is not yet defeat
+QA33 TRACE worldtick=60 active=0
+QA33 PASS escaping boss physically moves
+QA33 PASS boss reaches exit, disappears and records defeat
+QA33 PASS defeat reveals Ace without granting it
+QA33 BEGIN card=36 available=1 approach=1 box=1 revealed=1 dist=64.0 dz=0.0 sight=1 health=1780 defeat=1
+QA33 PASS shared capture begins after confirmation
+QA33 PASS capture image uses correct approved front
+QA33 PASS partial animation does not grant ownership
+QA33 PASS distance interruption cancels without consuming card
+QA33 BEGIN card=36 available=1 approach=1 box=1 revealed=1 dist=64.0 dz=0.0 sight=1 health=1780 defeat=1
+QA33 PASS shared capture begins after confirmation
+QA33 PASS capture image uses correct approved front
+QA33 PASS full shared animation grants exactly one card
+QA33 PASS repeat Use and commit cannot duplicate capture
+QA33 PASS owned Ace no longer appears
+QA33 PASS defeat and captured Ace unlock forward route
+QA33 DONE sewer checks=21 failures=0
+
+=== legacy_floatbob_final ===
+MAP02 - Alcantarillas — el laberinto
+QA33 TRACE loaded save=0
+QA33 TRACE worldtick=1 active=0
+QA33 TRACE worldtick=20 active=0
+MAP02 - Alcantarillas — el laberinto
+QA33 TRACE loaded save=1
+QA33 TRACE worldtick=1 active=0
+QA33 TRACE worldtick=20 active=0
+QA33 TRACE worldtick=40 active=0
+QA33 PASS 4.36.19 snapshot loads under current runtime
+QA33 PASS migration retains owned cards and adds none
+QA33 PASS migration retains stable Box identity
+QA33 PASS partial rewards and money retain exact old state
+QA33 PASS extraction and prisoner death survive migration
+QA33 PASS old bypass history retained but departure rejected
+QA33 PASS revision applied to existing traveler
+QA33 PASS living old boss keeps Ace locked
+QA33 PASS explicit additive rollback preserves prior ownership and rewards
+QA33 PASS reapplying migration is idempotent
+QA33 PASS exactly one active outgoing lair/workshop destination
+QA33 PASS retired saved gate cannot block or travel
+QA33 PASS retired saved gate cannot block or travel
+QA33 PASS retired saved gate cannot block or travel
+QA33 PASS exactly one physical travel gate remains visible
+QA33 DONE legacy checks=15 failures=0
+
+=== route_arrival_final ===
+MAP02 - Alcantarillas — el laberinto
+QA33 TRACE loaded save=0
+QA33 TRACE worldtick=1 active=0
+QA33 TRACE worldtick=20 active=0
+MAP02 - Alcantarillas — el laberinto
+QA33 TRACE loaded save=1
+QA33 TRACE worldtick=1 active=0
+QA33 TRACE worldtick=20 active=0
+QA33 TRACE worldtick=40 active=0
+QA33 PASS native gate departure id=2
+MAP03 - Alcantarillas: depósito
+QA33 TRACE loaded save=0
+QA33 TRACE worldtick=1 active=0
+Partida guardada.
+QA33 TRACE worldtick=20 active=0
+QA33 TRACE worldtick=40 active=0
+QA33 PASS arrived through native connection=2 map=MAP03 Ace=1
+QA33 PASS native gate departure id=8
+QA33 PASS measured journey confirmation
+MAP06 - Puerto ribereño
+QA33 TRACE loaded save=0
+QA33 TRACE worldtick=1 active=0
+Partida guardada.
+QA33 TRACE worldtick=20 active=0
+QA33 TRACE worldtick=40 active=0
+QA33 TRACE worldtick=60 active=0
+QA33 PASS native route arrival retains connections 2/8 and Ace=1
+
+=== port_saved_final ===
+MAP06 - Puerto ribereño
+QA33 TRACE loaded save=0
+QA33 TRACE worldtick=1 active=0
+QA33 TRACE worldtick=20 active=0
+MAP06 - Puerto ribereño
+QA33 TRACE loaded save=1
+QA33 TRACE worldtick=1 active=0
+QA33 TRACE worldtick=20 active=0
+QA33 TRACE worldtick=40 active=0
+QA33 PASS native saved completed Knight ownership retained
+QA33 PASS saved completed survivor cannot pay twice
+QA33 PASS saved completed survivor cannot pay twice
+QA33 PASS saved completed survivor cannot pay twice
+QA33 PASS saved completed survivor cannot pay twice
+QA33 PASS loaded repeated claims preserve exact coins
+QA33 PASS owned saved apparition remains hidden and uncollectible
+QA33 DONE port-saved checks=7 failures=0

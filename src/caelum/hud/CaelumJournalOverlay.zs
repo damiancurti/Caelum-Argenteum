@@ -2123,6 +2123,7 @@ class CaelumJournalOverlay : EventHandler
         for (int id = 1; id < CaelumWorldCatalogue.CONNECTION_DEFINED_COUNT; id++)
         {
             if (record == null || !record.WorldConnectionKnown[id]
+                || (id != CaelumWorldCatalogue.CONNECTION_RETURN && !CaelumWorldCatalogue.IsSewerConnection(id))
                 || CaelumWorldCatalogue.ConnectionOrigin(id) != locationId) continue;
             DrawTextLine(SmallFont, Font.CR_WHITE, 318, 220+row*22,
                 StringTable.Localize(CaelumWorldCatalogue.ConnectionNameKey(id), false));

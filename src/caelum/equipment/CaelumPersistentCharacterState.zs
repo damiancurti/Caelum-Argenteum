@@ -14,6 +14,10 @@ class CaelumPersistentCharacterState : Inventory
     // Índices estables: Mayores 0–21 (Marsella), Menores 22–77.
     // Una bandera por carta es la autoridad; contar/recalcular no la concede.
     bool TarotOwned[CaelumConstants.TAROT_CARD_COUNT];
+    int ArcanaStateRevision;
+    bool SewerZupayDefeated;
+    bool ArcanaRevealed[CaelumConstants.TAROT_CARD_COUNT];
+    bool ArcanaAvailable[CaelumConstants.TAROT_CARD_COUNT];
     bool MainM00FoolRevealed;
     // V4.34.0a: autoridad del Diario de mundo. El catálogo conserva ids
     // estables; 0 es desconocido. Los guardados anteriores nacen en versión 0.

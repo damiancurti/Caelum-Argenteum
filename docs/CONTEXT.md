@@ -1,6 +1,6 @@
 # CONTEXT.md — Ultra-condensed summary of Caelum Argenteum
 
-Documentation version: **4.36.19** — 2026-09-27.
+Documentation version: **4.36.20** — 2026-09-27.
 
 Summary of `PROJECT.md`, `SYSTEMS.md`, `MAP01.txt`, `ASSETS.md`, `HISTORY.md`
 and the repository README.
@@ -42,7 +42,7 @@ the gauchos and rural culture, and the humans the urban porteño society.
   Box with weight reduction and restricted contents.
 - **Quests, reputation, and factions:** optional quest base, states, reusable
   dialogue/access/trade conditions, and faction conditions.
-- **Tarot:** persistent collection and capture of El Loco and the Ace of Cups; base passives for
+- **Tarot:** persistent collection and shared capture of El loco, Ace of Cups and Knight of Wands; base passives for
   the 56 Minor Arcana by suit; card rewards.
 - **World and travel:** world Journal, visited locations, connections, grouped
   doors, caravans, coastal vehicles (carriage and merchant ship), and measured
@@ -56,13 +56,24 @@ the gauchos and rural culture, and the humans the urban porteño society.
   Caella, Ronnie, and Rulo; first weapon, Box, and exit to MAP02.
 - **MAP02 (maze):** four sections, 100 junction rooms, 96 Mandingas, 45 traps,
   four progression/arena and four cell keys, 39 chests, 65 unique T1 pieces,
-  four cell beds/refuges, final Zupay, Ace of Cups and the retained coast exit.
+  four cell beds/refuges, final Zupay retreat, Ace of Cups and the workshop exit.
 - **Presentation:** modular first-person view, event audio, Spanish/English
   localization, project typography, and hub transitions.
 
 ## Current status
 
-Current release **4.36.19** applies the author-approved final #21 balance:
+Current release **4.36.20** implements #33: shared Box capture for El loco,
+Ace of Cups and Knight of Wands; confirmed sewer defeat gates the Ace; actual
+delivery of all extracted survivors' port rewards gates the Knight (zero
+survivors: immediate arrival reveal). The Knight appears beside the survivors.
+At <=50% health the sewer Zupay flees at triple base speed, disappears near
+the remaining exit and counts as defeated. The forward route is MAP02 ->
+existing MAP03 workshop/test room -> MAP06. Geometry, prior collection and
+prisoner extraction/rewards are preserved. The Knight's condition is provisional
+until #16/#17. See assets/validation_43620 for isolated evidence; author checks
+CA-43620-ARCANA-01 and CA-43620-ROUTE-01 remain pending.
+
+The preceding **4.36.19** applies the author-approved final #21 balance:
 new cannon shots 500 m/s; gate Toughness/Constitution 50/100/200; Type 4 division
 for player/NPC/gate collisions. SYSTEMS holds the damage matrix. Versioned
 gate migration preserves remaining-health ratio and passage state with explicit
@@ -121,14 +132,9 @@ new sewer track, MAP06 uses the new port track and MAP07 uses the new coast
 track. GZDoom 4.14.2 compiles the package and `validate_project.py` passes; the
 author confirmed `CA-43614-AUDIO-01` passed on 2026-09-25.
 
-Issue **#18** adds reusable cannon, battering-ram and destructible-gate assets
-generated deterministically under `src/models/caelum/siege` with transparent
-`CSGN`/`CRAM`/`CAGT` state frames and matching `MODELDEF` entries. The MAP03
-workshop/tank shows a visual-only preview gallery that retires its trial
-chairs, dining tables and cots and lays out all four cannon states, all three
-ram states and all three gate states in the open reservoir for author review.
-No mass, damage, reload time or gate hardness is invented in this patch; those
-values remain in #19-#21.
+Issue **#18** supplies the accepted deterministic siege art and cleared MAP03
+gallery. ASSETS retains its models, sprite/state bindings and generator details;
+#19-#21 own the subsequent mechanics and balance.
 
 The preceding **4.36.9** implements #15: the author-approved 78-card Tarot
 front package is integrated under `src/graphics/caelum/tarot`, the shared card
@@ -198,9 +204,8 @@ rations, and MAP01 tables at full capacity.
 
 Pending:
 
-- #18 siege assets and #19 gates are author-accepted. #20 ram mechanics have native evidence with author acceptance pending;
-  #21 cannon ballistics remain to implement.
-- Closing 4.36: ram author acceptance, cannons and remaining integration/save/reset validation
+- #18/#19/#20/#21 and #43 are author-accepted. #33 awaits author campaign/presentation acceptance; full port integration remains #16/#17.
+- Closing 4.36: #33 author acceptance and remaining integration/save/reset validation
   before extracting Impact Physics. Per the author's 2026-09-23 #8 decision,
   existing ceiling/elevator cover moving sectors; avalanches await additional
   maps and damaging surfaces await temperature effects (no acid/lava requested).
@@ -214,8 +219,8 @@ detailed results are in HISTORY. PR #7 and the #22 integration PR #23 are merged
 After 4.36 comes 4.37 (Tarot/Trucazo), then the V4 playtest export, and only
 then V5. The 2026-09-23 author decision requires three complete maps with the
 prologue, confirmed El Loco and two Minors before export (#16/#17). Confirmed
-route: mansion MAP01 -> maze MAP02 -> port MAP06. Stop the port's demon siege;
-its separate commanding Zupay holds the second Minor (identity pending).
+route: mansion MAP01 -> maze MAP02 -> workshop MAP03 -> port MAP06. The future
+port siege will replace the Knight of Wands' provisional #33 appearance condition.
 Prisoners match their source character's combat stats, follow/fight alongside
 the player and extract alive through an exit before the MAP02 boss; they do
 not fight that boss. At the port, each grants +10 reputation with its own
@@ -226,8 +231,7 @@ remaining detailed siege balance/conditions stay pending.
 Prisoner source/faction mapping: Caella/Unitarians, Ronnie/Federals,
 Rulo/Free Peoples, Argento/Cult of the Tarot; do not reassign mansion NPCs.
 PROJECT contains the authoritative scope, dependency order and usage protocol.
-The author confirms a 75% weekly-allowance-remaining baseline; reset time is
-unknown. Collect measured per-patch data rather than estimating.
+PROJECT retains the author's allowance baseline and measurement protocol.
 
 ## Repository structure (summarized)
 
@@ -243,9 +247,7 @@ unknown. Collect measured per-patch data rather than estimating.
 - Root: `README.md`, `build_dev.ps1`, `run_dev.bat`, `validate_project.py`,
   `build_document_index.py`.
 
-For long-document questions, search `docs/DOCUMENT_INDEX.md` first and follow
-the engineering guides before creating a new document or changing this
-repository's structure.
+Use DOCUMENT_INDEX for long documents; follow the engineering guides.
 
 ## Critical premises (summary of the 20)
 
@@ -282,10 +284,8 @@ repository's structure.
 
 The full verbatim list is in `AGENTS.md` and `docs/PROJECT.md`.
 
-Work plans a concrete issue; desktop Codex implements and tests it; PR review
-checks the evidence; the author confirms manual acceptance where required.
-Keep implementation, static verification, engine verification and author
-acceptance separate. The issue number does not determine the patch version.
+Work plans issues; Codex implements/tests; the author confirms manual acceptance.
+Keep implementation, static/native evidence and author acceptance distinct.
 
 [pending_test.txt](../pending_test.txt) is the single author-test queue. Preserve
 outstanding tests across versions. Only an explicit pass confirmed by the author
