@@ -4,6 +4,13 @@ Documentation version: **4.36.19** — 2026-09-27.
 
 ## 4.36.19 — Final author-approved siege balance (#21)
 
+After the authorized merges, switching to main exposed stale document hashes:
+Windows checkout converted HISTORY/SYSTEMS from LF to CRLF. The index hashes
+exact bytes. The same-patch delivery correction pins maintained docs to LF in
+.gitattributes and regenerates the index, preserving strict freshness checks.
+An isolated checkout with core.autocrlf=true and static validation verify the
+fix. Gameplay and release number remain unchanged; see CA-KP-015.
+
 On 2026-09-27 the author approved the calculated gate levels 50/100/200 for
 both Toughness and Constitution, and requested implementation, PR, merge
 and issue closure. The accepted matrix assumes the previously discussed

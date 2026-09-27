@@ -4,6 +4,17 @@ Status: integrated engineering register (issue #22, patch 4.36.1b).
 Prepared: 2026-09-23. Inherits the project's release after integration.
 Inspected baseline: `1dc390576fa330d37ff543526fc7e69a397fc28f` (PR #7).
 
+## CA-KP-015 — Git checkout can invalidate raw document hashes
+
+Status/evidence: RESOLVED-VERIFIED tooling contract, #21 /4.36.19.
+Observation: after merge 8e8b5d3f and Windows checkout, validation reported stale
+HISTORY/SYSTEMS SHA-256 although Git showed no content changes.
+Cause: the index hashes raw bytes; core.autocrlf converted newly edited LF
+sources to CRLF. Resolution: .gitattributes pins maintained docs to LF and the
+index is regenerated from LF sources. An isolated core.autocrlf=true checkout
+matches the source hashes; static validation passes. Keep exact-byte freshness
+checks and UTF-8 sources. This is tooling evidence, not gameplay acceptance.
+
 ## How to read this register
 
 This is a compact engineering memory, not a second bug tracker or a claim that every historical fix has been independently reproduced. Use the current issue for active scope and HISTORY for release chronology and author acceptance.
