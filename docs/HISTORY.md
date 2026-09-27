@@ -1,6 +1,39 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **4.36.21** — 2026-09-27.
+Documentation version: **4.36.22** — 2026-09-27.
+
+## 4.36.22 — Palomo, Selene and port narrative (#34)
+
+- Author request, 2026-09-27: implement #34, preserve each personality, author
+  coherent dialogue freely, include Selene after the sewer Zupay dies or escapes,
+  and commit/push. No additional story revelations or balance changes authorized.
+- Palomo now activates quest 1 and offers optional survival practices and exclusive
+  material-location guidance. Ronnie retains crafting, loan/repair progression and
+  calendar instruction. Existing saved practices, supplies and rewards persist.
+- Each mansion companion's Bull damage records peak authoritative health state,
+  with seated-at-1-HP incapacitation taking precedence and healing unable to erase it.
+- Four release and four actual reward-delivery lines plus the sewer boss line are
+  queued, rendered and acknowledged once through existing non-pausing USDF.
+- Port quest ID 3 and two brief voice lines observe the existing registered MAP06
+  siege controller. Both objective orders and zero companions pass in isolation.
+  Full campaign deployment remains #16; no second physics/AI implementation or
+  duplicate Knight trigger. #33's provisional availability is retained until a
+  real encounter is registered, then that same card follows victory.
+- Static: normal validator, deterministic document-index regeneration, bilingual
+  coverage and native dialogue-link graph pass; normal PK3 build passes.
+- Engine: GZDoom 4.14.2 on Windows; focused mansion, four release/payment events,
+  sewer death/escape, two siege orders, old-save migration/rollback/idempotence,
+  new-save queue restoration and native hub travel pass. Eleven queued dialogues
+  were also drawn for at least twenty frames each and closed through MenuEvent;
+  no direct fake cleanup was used in that separate rendering check.
+- Independent same-model agent review found an overlooked Ronnie repair-location
+  sentence; corrected, together with the corresponding journal references.
+  DeepSeek cross-model review was not available in this session.
+- Evidence: assets/validation_43622/RESULTS.json and STATIC.json. Disposable test
+  fixtures, engine/IWAD files and saves remain local, outside delivery.
+- Author acceptance: pending CA-43622-NARRATIVE-01. Writing authorization and
+  automated/native checks do not assert final dialogue approval. #16 owns the
+  full port playthrough before #17 export.
 
 ## 4.36.21 — Scenery adrenaline and running absorption (#49)
 

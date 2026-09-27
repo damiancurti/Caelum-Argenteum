@@ -164,6 +164,19 @@ NPC visual sources and actor behavior are separate concerns. A recolored mansion
 
 Identify the generator and input manifest before changing generated maps, catalogues or art. Commit the intentional source/output changes together. Re-run the affected deterministic generator and compare outputs. Do not regenerate unrelated accepted assets or execute every generator as a routine build step.
 
+### Persistent narrative observes completed gameplay events
+
+`CaelumDemoNarrative` (#34 / 4.36.22) keeps pending/delivered events in the
+travelling character Inventory. Observe successful state transitions, especially
+reward delivery, and let the current native conversation finish before opening
+another. `ConversationNPC` can remain non-null after closure: use
+`HasActiveConversation()` to distinguish a live dialogue from that retained pointer.
+UI formatting reads snapshots; gameplay state changes remain in play scope.
+For encounter reactions, latch authoritative health states before healing, and
+clear only on a new attempt. Older saves cannot supply damage history they never
+recorded. Validate both state/queue logic and rendered native menu closures;
+directly invoking an action does not exercise the complete presentation path.
+
 ## ZScript and engine investigation discipline
 
 - Prefer the project's working patterns and the target engine's supported API. Similarity to C++, C# or another scripting language is not evidence that a method, field or overload exists in ZScript.

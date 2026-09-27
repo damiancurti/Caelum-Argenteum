@@ -48,7 +48,7 @@ conversation
 conversation
 {
     id = 43200;
-    class = "CaelumPalomoConversationMenu";
+    class = "CaelumMainM00ConversationMenu";
 
     page
     {
@@ -207,6 +207,7 @@ conversation
             text = "$CA_DLG_M01_CONTINUE";
             closedialog = true;
         }
+        choice { text = "$CA_DEMO_PALOMO_LESSONS_ASK"; nextpage = "palomo_lessons"; closedialog = false; }
     }
 
     page
@@ -215,8 +216,123 @@ conversation
         name = "$CA_PALOMO_NAME";
         dialog = "$CA_DLG_M01_PALOMO_WAITING_ARGENTO";
         goodbye = "$CA_DLG_M01_PALOMO_LEAVE";
+        choice { text = "$CA_DEMO_PALOMO_LESSONS_ASK"; nextpage = "palomo_lessons"; closedialog = false; }
+    }
+    page
+    {
+        pagename = "palomo_lessons";
+        name = "$CA_PALOMO_NAME";
+        dialog = "$CA_DEMO_PALOMO_LESSONS";
+        goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+        choice { text = "$CA_M01_NEEDS_ASK"; nextpage = "ronnie_needs"; }
+        choice { text = "$CA_DEMO_SLEEP_ASK"; nextpage = "palomo_sleep"; giveitem = "CaelumPalomoSleepLessonAction"; }
+        choice { text = "$CA_M01_AIR_ASK"; nextpage = "ronnie_air"; }
+        choice { text = "$CA_M01_LOAD_ASK"; nextpage = "ronnie_load"; }
+        choice { text = "$CA_M01_SWIM_ASK"; nextpage = "ronnie_swim"; }
+        choice { text = "$CA_WATER_ASK"; nextpage = "ronnie_water"; }
+        choice { text = "$CA_DLG_M01_GARDEN_ASK"; nextpage = "palomo_materials"; }
+    }
+    page
+    {
+        pagename = "palomo_sleep"; userstring = "palomo_sleep";
+        name = "$CA_PALOMO_NAME"; dialog = "$CA_DEMO_SLEEP";
+        goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+    }
+    page
+    {
+        pagename = "palomo_materials";
+        name = "$CA_PALOMO_NAME"; dialog = "$CA_DEMO_MATERIALS";
+        goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+    }
+    page
+    {
+        pagename = "ronnie_needs";
+        userstring = "ronnie_needs";
+        name = "$CA_PALOMO_NAME";
+        dialog = "$CA_M01_NEEDS_INTRO";
+        goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+        choice { text = "$CA_M01_NEEDS_START"; nextpage = "ronnie_needs_practice"; giveitem = "CaelumM00NeedsLessonAction"; }
+        choice { text = "$CA_M01_NEEDS_SAFE_ASK"; nextpage = "ronnie_needs_safe"; }
+    }
+    page
+    {
+        pagename = "ronnie_needs_practice";
+        userstring = "ronnie_needs_practice";
+        name = "$CA_PALOMO_NAME";
+        dialog = "$CA_M01_NEEDS_PRACTICE";
+        goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+        choice { text = "$CA_M01_NEEDS_SAFE_ASK"; nextpage = "ronnie_needs_safe"; }
+        choice { text = "$CA_M01_NEEDS_RETRY"; nextpage = "ronnie_needs_practice"; giveitem = "CaelumM00NeedsLessonAction"; }
+    }
+    page
+    {
+        pagename = "ronnie_needs_safe";
+        userstring = "ronnie_needs_safe";
+        name = "$CA_PALOMO_NAME";
+        dialog = "$CA_M01_NEEDS_SAFE";
+        goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+        choice { text = "$CA_M01_NEEDS_BACK"; nextpage = "ronnie_needs"; }
+    }
+    page
+    {
+        pagename = "ronnie_air";
+        userstring = "ronnie_air";
+        name = "$CA_PALOMO_NAME";
+        dialog = "$CA_M01_AIR_INTRO";
+        goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+        choice { text = "$CA_M01_AIR_START"; nextpage = "ronnie_air_practice"; giveitem = "CaelumM00AirLessonAction"; }
+    }
+    page
+    {
+        pagename = "ronnie_air_practice";
+        userstring = "ronnie_air_practice";
+        name = "$CA_PALOMO_NAME";
+        dialog = "$CA_M01_AIR_PRACTICE";
+        goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+    }
+    page
+    {
+        pagename = "ronnie_load";
+        userstring = "ronnie_load";
+        name = "$CA_PALOMO_NAME";
+        dialog = "$CA_M01_LOAD_INTRO";
+        goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+        choice { text = "$CA_M01_LOAD_START"; nextpage = "ronnie_load_practice"; giveitem = "CaelumM00LoadLessonAction"; }
+    }
+    page
+    {
+        pagename = "ronnie_load_practice";
+        userstring = "ronnie_load_practice";
+        name = "$CA_PALOMO_NAME";
+        dialog = "$CA_M01_LOAD_PRACTICE";
+        goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+    }
+    page
+    {
+        pagename = "ronnie_swim";
+        userstring = "ronnie_swim";
+        name = "$CA_PALOMO_NAME";
+        dialog = "$CA_M01_SWIM_INTRO";
+        goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+        choice { text = "$CA_M01_SWIM_START"; nextpage = "ronnie_swim_practice"; giveitem = "CaelumM00SwimLessonAction"; }
+    }
+    page
+    {
+        pagename = "ronnie_swim_practice";
+        userstring = "ronnie_swim_practice";
+        name = "$CA_PALOMO_NAME";
+        dialog = "$CA_M01_SWIM_PRACTICE";
+        goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+    }
+    page
+    {
+        pagename = "ronnie_water"; userstring = "ronnie_water";
+        name = "$CA_PALOMO_NAME"; dialog = "$CA_WATER_RONNIE";
+        goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+        choice { text = "$CA_WATER_ACCEPT"; giveitem = "CaelumM00WaterContainerAction"; closedialog = true; }
     }
 }
+
 
 // V4.33.0f: prueba social de Argento.
 conversation
@@ -2017,10 +2133,6 @@ conversation
         name = "$CA_RONNIE_NAME";
         dialog = "$CA_M01_RONNIE_FINISHED";
         goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
-        choice { text = "$CA_M01_SWIM_ASK"; nextpage = "ronnie_swim"; }
-        choice { text = "$CA_M01_LOAD_ASK"; nextpage = "ronnie_load"; }
-        choice { text = "$CA_M01_AIR_ASK"; nextpage = "ronnie_air"; }
-        choice { text = "$CA_M01_NEEDS_ASK"; nextpage = "ronnie_needs"; }
         choice { text = "$CA_M01_REPAIR_ASK"; nextpage = "ronnie_repair"; giveitem = "CaelumM00RepairLessonAction"; }
         choice { text = "$CA_DLG_M01_WORKSHOPS_ASK"; nextpage = "ronnie_workshop"; }
     }
@@ -2056,16 +2168,22 @@ conversation
     page
     {
         pagename = "ronnie_workshop";
+        choice { text = "$CA_DEMO_CALENDAR_ASK"; nextpage = "ronnie_calendar"; }
         userstring = "ronnie_workshop";
         name = "$CA_RONNIE_NAME";
         dialog = "$CA_DLG_M01_WORKSHOP_RONNIE";
         goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
-        choice { text = "$CA_WATER_ASK"; nextpage = "ronnie_water"; }
         choice { text = "$CA_M01_ARMOR_ASK"; nextpage = "ronnie_armor"; }
         choice { text = "$CA_M01_AMMO_ASK"; nextpage = "ronnie_ammo"; }
         choice { text = "$CA_DLG_M01_GARDEN_ASK"; nextpage = "ronnie_resources"; }
         choice { text = "$CA_M01_SEALS_GATHER_ASK"; nextpage = "ronnie_seals_gather";
             require { item = "CaelumM00SealGatherPracticeToken"; amount = 1; } }
+    }
+    page
+    {
+        pagename = "ronnie_calendar";
+        name = "$CA_RONNIE_NAME"; dialog = "$CA_DEMO_CALENDAR";
+        goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
     }
     page
     {
@@ -2076,91 +2194,20 @@ conversation
         goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
     }
 
-    page
-    {
-        pagename = "ronnie_needs";
-        userstring = "ronnie_needs";
-        name = "$CA_RONNIE_NAME";
-        dialog = "$CA_M01_NEEDS_INTRO";
-        goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
-        choice { text = "$CA_M01_NEEDS_START"; nextpage = "ronnie_needs_practice"; giveitem = "CaelumM00NeedsLessonAction"; }
-        choice { text = "$CA_M01_NEEDS_SAFE_ASK"; nextpage = "ronnie_needs_safe"; }
-    }
 
-    page
-    {
-        pagename = "ronnie_needs_practice";
-        userstring = "ronnie_needs_practice";
-        name = "$CA_RONNIE_NAME";
-        dialog = "$CA_M01_NEEDS_PRACTICE";
-        goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
-        choice { text = "$CA_M01_NEEDS_SAFE_ASK"; nextpage = "ronnie_needs_safe"; }
-        choice { text = "$CA_M01_NEEDS_RETRY"; nextpage = "ronnie_needs_practice"; giveitem = "CaelumM00NeedsLessonAction"; }
-    }
 
-    page
-    {
-        pagename = "ronnie_needs_safe";
-        userstring = "ronnie_needs_safe";
-        name = "$CA_RONNIE_NAME";
-        dialog = "$CA_M01_NEEDS_SAFE";
-        goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
-        choice { text = "$CA_M01_NEEDS_BACK"; nextpage = "ronnie_needs"; }
-    }
 
-    page
-    {
-        pagename = "ronnie_air";
-        userstring = "ronnie_air";
-        name = "$CA_RONNIE_NAME";
-        dialog = "$CA_M01_AIR_INTRO";
-        goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
-        choice { text = "$CA_M01_AIR_START"; nextpage = "ronnie_air_practice"; giveitem = "CaelumM00AirLessonAction"; }
-    }
-    page
-    {
-        pagename = "ronnie_air_practice";
-        userstring = "ronnie_air_practice";
-        name = "$CA_RONNIE_NAME";
-        dialog = "$CA_M01_AIR_PRACTICE";
-        goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
-    }
 
-    page
-    {
-        pagename = "ronnie_load";
-        userstring = "ronnie_load";
-        name = "$CA_RONNIE_NAME";
-        dialog = "$CA_M01_LOAD_INTRO";
-        goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
-        choice { text = "$CA_M01_LOAD_START"; nextpage = "ronnie_load_practice"; giveitem = "CaelumM00LoadLessonAction"; }
-    }
-    page
-    {
-        pagename = "ronnie_load_practice";
-        userstring = "ronnie_load_practice";
-        name = "$CA_RONNIE_NAME";
-        dialog = "$CA_M01_LOAD_PRACTICE";
-        goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
-    }
 
-    page
-    {
-        pagename = "ronnie_swim";
-        userstring = "ronnie_swim";
-        name = "$CA_RONNIE_NAME";
-        dialog = "$CA_M01_SWIM_INTRO";
-        goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
-        choice { text = "$CA_M01_SWIM_START"; nextpage = "ronnie_swim_practice"; giveitem = "CaelumM00SwimLessonAction"; }
-    }
-    page
-    {
-        pagename = "ronnie_swim_practice";
-        userstring = "ronnie_swim_practice";
-        name = "$CA_RONNIE_NAME";
-        dialog = "$CA_M01_SWIM_PRACTICE";
-        goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
-    }
+
+
+
+
+
+
+
+
+
     page
     {
         pagename = "ronnie_ammo";
@@ -2233,13 +2280,7 @@ conversation
         choice { text = "$CA_M01_REPAIR_LOAN_RETURN"; closedialog = true; giveitem = "CaelumM00ReturnRepairSwordAction";
             require { item = "CaelumM00GatheringLoanHeldToken"; amount = 1; } }
     }
-    page
-    {
-        pagename = "ronnie_water"; userstring = "ronnie_water";
-        name = "$CA_RONNIE_NAME"; dialog = "$CA_WATER_RONNIE";
-        goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
-        choice { text = "$CA_WATER_ACCEPT"; giveitem = "CaelumM00WaterContainerAction"; closedialog = true; }
-    }
+
 
 }
 
@@ -2741,7 +2782,7 @@ conversation
 conversation
 {
     id = 43316;
-    class = "CaelumPalomoConversationMenu";
+    class = "CaelumMainM00ConversationMenu";
     page
     {
         pagename = "palomo_final"; userstring = "palomo_final";
@@ -2754,6 +2795,7 @@ conversation
         choice { text = "$CA_M01_PALOMO_EXIT_ASK"; nextpage = "palomo_final_exit"; closedialog = false; }
         choice { text = "$CA_M01_PALOMO_WHERE_ASK"; nextpage = "palomo_final_where"; closedialog = false; }
         choice { text = "$CA_M01_PALOMO_VOICE_ASK"; nextpage = "palomo_final_voice"; closedialog = false; }
+        choice { text = "$CA_DEMO_PALOMO_LESSONS_ASK"; nextpage = "palomo_lessons"; closedialog = false; }
     }
     page
     {
@@ -2824,6 +2866,7 @@ conversation
         goodbye = "$CA_DLG_M01_PALOMO_LEAVE";
         choice { text = "$CA_M01_PALOMO_USE_ASK"; nextpage = "palomo_box_use"; closedialog = false; }
         choice { text = "$CA_M01_PALOMO_CAVE_ASK"; nextpage = "palomo_box_cave"; closedialog = false; }
+        choice { text = "$CA_DEMO_PALOMO_LESSONS_ASK"; nextpage = "palomo_lessons"; closedialog = false; }
     }
     page
     {
@@ -2839,19 +2882,248 @@ conversation
         goodbye = "$CA_DLG_M01_PALOMO_LEAVE";
         choice { text = "$CA_M01_PALOMO_BACK"; nextpage = "palomo_box_received"; closedialog = false; }
     }
+    page
+    {
+        pagename = "palomo_lessons";
+        name = "$CA_PALOMO_NAME";
+        dialog = "$CA_DEMO_PALOMO_LESSONS";
+        goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+        choice { text = "$CA_M01_NEEDS_ASK"; nextpage = "ronnie_needs"; }
+        choice { text = "$CA_DEMO_SLEEP_ASK"; nextpage = "palomo_sleep"; giveitem = "CaelumPalomoSleepLessonAction"; }
+        choice { text = "$CA_M01_AIR_ASK"; nextpage = "ronnie_air"; }
+        choice { text = "$CA_M01_LOAD_ASK"; nextpage = "ronnie_load"; }
+        choice { text = "$CA_M01_SWIM_ASK"; nextpage = "ronnie_swim"; }
+        choice { text = "$CA_WATER_ASK"; nextpage = "ronnie_water"; }
+        choice { text = "$CA_DLG_M01_GARDEN_ASK"; nextpage = "palomo_materials"; }
+    }
+    page
+    {
+        pagename = "palomo_sleep"; userstring = "palomo_sleep";
+        name = "$CA_PALOMO_NAME"; dialog = "$CA_DEMO_SLEEP";
+        goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+    }
+    page
+    {
+        pagename = "palomo_materials";
+        name = "$CA_PALOMO_NAME"; dialog = "$CA_DEMO_MATERIALS";
+        goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+    }
+    page
+    {
+        pagename = "ronnie_needs";
+        userstring = "ronnie_needs";
+        name = "$CA_PALOMO_NAME";
+        dialog = "$CA_M01_NEEDS_INTRO";
+        goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+        choice { text = "$CA_M01_NEEDS_START"; nextpage = "ronnie_needs_practice"; giveitem = "CaelumM00NeedsLessonAction"; }
+        choice { text = "$CA_M01_NEEDS_SAFE_ASK"; nextpage = "ronnie_needs_safe"; }
+    }
+    page
+    {
+        pagename = "ronnie_needs_practice";
+        userstring = "ronnie_needs_practice";
+        name = "$CA_PALOMO_NAME";
+        dialog = "$CA_M01_NEEDS_PRACTICE";
+        goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+        choice { text = "$CA_M01_NEEDS_SAFE_ASK"; nextpage = "ronnie_needs_safe"; }
+        choice { text = "$CA_M01_NEEDS_RETRY"; nextpage = "ronnie_needs_practice"; giveitem = "CaelumM00NeedsLessonAction"; }
+    }
+    page
+    {
+        pagename = "ronnie_needs_safe";
+        userstring = "ronnie_needs_safe";
+        name = "$CA_PALOMO_NAME";
+        dialog = "$CA_M01_NEEDS_SAFE";
+        goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+        choice { text = "$CA_M01_NEEDS_BACK"; nextpage = "ronnie_needs"; }
+    }
+    page
+    {
+        pagename = "ronnie_air";
+        userstring = "ronnie_air";
+        name = "$CA_PALOMO_NAME";
+        dialog = "$CA_M01_AIR_INTRO";
+        goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+        choice { text = "$CA_M01_AIR_START"; nextpage = "ronnie_air_practice"; giveitem = "CaelumM00AirLessonAction"; }
+    }
+    page
+    {
+        pagename = "ronnie_air_practice";
+        userstring = "ronnie_air_practice";
+        name = "$CA_PALOMO_NAME";
+        dialog = "$CA_M01_AIR_PRACTICE";
+        goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+    }
+    page
+    {
+        pagename = "ronnie_load";
+        userstring = "ronnie_load";
+        name = "$CA_PALOMO_NAME";
+        dialog = "$CA_M01_LOAD_INTRO";
+        goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+        choice { text = "$CA_M01_LOAD_START"; nextpage = "ronnie_load_practice"; giveitem = "CaelumM00LoadLessonAction"; }
+    }
+    page
+    {
+        pagename = "ronnie_load_practice";
+        userstring = "ronnie_load_practice";
+        name = "$CA_PALOMO_NAME";
+        dialog = "$CA_M01_LOAD_PRACTICE";
+        goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+    }
+    page
+    {
+        pagename = "ronnie_swim";
+        userstring = "ronnie_swim";
+        name = "$CA_PALOMO_NAME";
+        dialog = "$CA_M01_SWIM_INTRO";
+        goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+        choice { text = "$CA_M01_SWIM_START"; nextpage = "ronnie_swim_practice"; giveitem = "CaelumM00SwimLessonAction"; }
+    }
+    page
+    {
+        pagename = "ronnie_swim_practice";
+        userstring = "ronnie_swim_practice";
+        name = "$CA_PALOMO_NAME";
+        dialog = "$CA_M01_SWIM_PRACTICE";
+        goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+    }
+    page
+    {
+        pagename = "ronnie_water"; userstring = "ronnie_water";
+        name = "$CA_PALOMO_NAME"; dialog = "$CA_WATER_RONNIE";
+        goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+        choice { text = "$CA_WATER_ACCEPT"; giveitem = "CaelumM00WaterContainerAction"; closedialog = true; }
+    }
 }
+
 
 conversation
 {
     id = 43317;
-    class = "CaelumPalomoConversationMenu";
+    class = "CaelumMainM00ConversationMenu";
     page
     {
         pagename = "palomo_upstairs_wait"; userstring = "palomo_upstairs_wait";
         name = "$CA_PALOMO_NAME"; dialog = "$CA_M01_PALOMO_WAIT";
         goodbye = "$CA_DLG_M01_PALOMO_LEAVE";
+        choice { text = "$CA_DEMO_PALOMO_LESSONS_ASK"; nextpage = "palomo_lessons"; closedialog = false; }
+    }
+    page
+    {
+        pagename = "palomo_lessons";
+        name = "$CA_PALOMO_NAME";
+        dialog = "$CA_DEMO_PALOMO_LESSONS";
+        goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+        choice { text = "$CA_M01_NEEDS_ASK"; nextpage = "ronnie_needs"; }
+        choice { text = "$CA_DEMO_SLEEP_ASK"; nextpage = "palomo_sleep"; giveitem = "CaelumPalomoSleepLessonAction"; }
+        choice { text = "$CA_M01_AIR_ASK"; nextpage = "ronnie_air"; }
+        choice { text = "$CA_M01_LOAD_ASK"; nextpage = "ronnie_load"; }
+        choice { text = "$CA_M01_SWIM_ASK"; nextpage = "ronnie_swim"; }
+        choice { text = "$CA_WATER_ASK"; nextpage = "ronnie_water"; }
+        choice { text = "$CA_DLG_M01_GARDEN_ASK"; nextpage = "palomo_materials"; }
+    }
+    page
+    {
+        pagename = "palomo_sleep"; userstring = "palomo_sleep";
+        name = "$CA_PALOMO_NAME"; dialog = "$CA_DEMO_SLEEP";
+        goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+    }
+    page
+    {
+        pagename = "palomo_materials";
+        name = "$CA_PALOMO_NAME"; dialog = "$CA_DEMO_MATERIALS";
+        goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+    }
+    page
+    {
+        pagename = "ronnie_needs";
+        userstring = "ronnie_needs";
+        name = "$CA_PALOMO_NAME";
+        dialog = "$CA_M01_NEEDS_INTRO";
+        goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+        choice { text = "$CA_M01_NEEDS_START"; nextpage = "ronnie_needs_practice"; giveitem = "CaelumM00NeedsLessonAction"; }
+        choice { text = "$CA_M01_NEEDS_SAFE_ASK"; nextpage = "ronnie_needs_safe"; }
+    }
+    page
+    {
+        pagename = "ronnie_needs_practice";
+        userstring = "ronnie_needs_practice";
+        name = "$CA_PALOMO_NAME";
+        dialog = "$CA_M01_NEEDS_PRACTICE";
+        goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+        choice { text = "$CA_M01_NEEDS_SAFE_ASK"; nextpage = "ronnie_needs_safe"; }
+        choice { text = "$CA_M01_NEEDS_RETRY"; nextpage = "ronnie_needs_practice"; giveitem = "CaelumM00NeedsLessonAction"; }
+    }
+    page
+    {
+        pagename = "ronnie_needs_safe";
+        userstring = "ronnie_needs_safe";
+        name = "$CA_PALOMO_NAME";
+        dialog = "$CA_M01_NEEDS_SAFE";
+        goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+        choice { text = "$CA_M01_NEEDS_BACK"; nextpage = "ronnie_needs"; }
+    }
+    page
+    {
+        pagename = "ronnie_air";
+        userstring = "ronnie_air";
+        name = "$CA_PALOMO_NAME";
+        dialog = "$CA_M01_AIR_INTRO";
+        goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+        choice { text = "$CA_M01_AIR_START"; nextpage = "ronnie_air_practice"; giveitem = "CaelumM00AirLessonAction"; }
+    }
+    page
+    {
+        pagename = "ronnie_air_practice";
+        userstring = "ronnie_air_practice";
+        name = "$CA_PALOMO_NAME";
+        dialog = "$CA_M01_AIR_PRACTICE";
+        goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+    }
+    page
+    {
+        pagename = "ronnie_load";
+        userstring = "ronnie_load";
+        name = "$CA_PALOMO_NAME";
+        dialog = "$CA_M01_LOAD_INTRO";
+        goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+        choice { text = "$CA_M01_LOAD_START"; nextpage = "ronnie_load_practice"; giveitem = "CaelumM00LoadLessonAction"; }
+    }
+    page
+    {
+        pagename = "ronnie_load_practice";
+        userstring = "ronnie_load_practice";
+        name = "$CA_PALOMO_NAME";
+        dialog = "$CA_M01_LOAD_PRACTICE";
+        goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+    }
+    page
+    {
+        pagename = "ronnie_swim";
+        userstring = "ronnie_swim";
+        name = "$CA_PALOMO_NAME";
+        dialog = "$CA_M01_SWIM_INTRO";
+        goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+        choice { text = "$CA_M01_SWIM_START"; nextpage = "ronnie_swim_practice"; giveitem = "CaelumM00SwimLessonAction"; }
+    }
+    page
+    {
+        pagename = "ronnie_swim_practice";
+        userstring = "ronnie_swim_practice";
+        name = "$CA_PALOMO_NAME";
+        dialog = "$CA_M01_SWIM_PRACTICE";
+        goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+    }
+    page
+    {
+        pagename = "ronnie_water"; userstring = "ronnie_water";
+        name = "$CA_PALOMO_NAME"; dialog = "$CA_WATER_RONNIE";
+        goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+        choice { text = "$CA_WATER_ACCEPT"; giveitem = "CaelumM00WaterContainerAction"; closedialog = true; }
     }
 }
+
 
 // 4.33.0t: observación de la esencia y diálogo posterior a la captura.
 conversation
@@ -2869,7 +3141,7 @@ conversation
 conversation
 {
     id = 43319;
-    class = "CaelumPalomoConversationMenu";
+    class = "CaelumMainM00ConversationMenu";
     page
     {
         pagename = "palomo_fool_received"; userstring = "palomo_fool_received";
@@ -2878,6 +3150,7 @@ conversation
         choice { text = "$CA_M01_RETURN_ASK"; nextpage = "palomo_return_door"; closedialog = false; }
         choice { text = "$CA_M01_FOOL_COLLECTION_ASK"; nextpage = "palomo_fool_collection"; closedialog = false; }
         choice { text = "$CA_M01_PALOMO_USE_ASK"; nextpage = "palomo_fool_box_use"; closedialog = false; }
+        choice { text = "$CA_DEMO_PALOMO_LESSONS_ASK"; nextpage = "palomo_lessons"; closedialog = false; }
     }
     page
     {
@@ -2901,7 +3174,121 @@ conversation
         choice { text = "$CA_M01_PALOMO_BACK"; nextpage = "palomo_fool_received"; closedialog = false; }
     }
 
+    page
+    {
+        pagename = "palomo_lessons";
+        name = "$CA_PALOMO_NAME";
+        dialog = "$CA_DEMO_PALOMO_LESSONS";
+        goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+        choice { text = "$CA_M01_NEEDS_ASK"; nextpage = "ronnie_needs"; }
+        choice { text = "$CA_DEMO_SLEEP_ASK"; nextpage = "palomo_sleep"; giveitem = "CaelumPalomoSleepLessonAction"; }
+        choice { text = "$CA_M01_AIR_ASK"; nextpage = "ronnie_air"; }
+        choice { text = "$CA_M01_LOAD_ASK"; nextpage = "ronnie_load"; }
+        choice { text = "$CA_M01_SWIM_ASK"; nextpage = "ronnie_swim"; }
+        choice { text = "$CA_WATER_ASK"; nextpage = "ronnie_water"; }
+        choice { text = "$CA_DLG_M01_GARDEN_ASK"; nextpage = "palomo_materials"; }
+    }
+    page
+    {
+        pagename = "palomo_sleep"; userstring = "palomo_sleep";
+        name = "$CA_PALOMO_NAME"; dialog = "$CA_DEMO_SLEEP";
+        goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+    }
+    page
+    {
+        pagename = "palomo_materials";
+        name = "$CA_PALOMO_NAME"; dialog = "$CA_DEMO_MATERIALS";
+        goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+    }
+    page
+    {
+        pagename = "ronnie_needs";
+        userstring = "ronnie_needs";
+        name = "$CA_PALOMO_NAME";
+        dialog = "$CA_M01_NEEDS_INTRO";
+        goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+        choice { text = "$CA_M01_NEEDS_START"; nextpage = "ronnie_needs_practice"; giveitem = "CaelumM00NeedsLessonAction"; }
+        choice { text = "$CA_M01_NEEDS_SAFE_ASK"; nextpage = "ronnie_needs_safe"; }
+    }
+    page
+    {
+        pagename = "ronnie_needs_practice";
+        userstring = "ronnie_needs_practice";
+        name = "$CA_PALOMO_NAME";
+        dialog = "$CA_M01_NEEDS_PRACTICE";
+        goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+        choice { text = "$CA_M01_NEEDS_SAFE_ASK"; nextpage = "ronnie_needs_safe"; }
+        choice { text = "$CA_M01_NEEDS_RETRY"; nextpage = "ronnie_needs_practice"; giveitem = "CaelumM00NeedsLessonAction"; }
+    }
+    page
+    {
+        pagename = "ronnie_needs_safe";
+        userstring = "ronnie_needs_safe";
+        name = "$CA_PALOMO_NAME";
+        dialog = "$CA_M01_NEEDS_SAFE";
+        goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+        choice { text = "$CA_M01_NEEDS_BACK"; nextpage = "ronnie_needs"; }
+    }
+    page
+    {
+        pagename = "ronnie_air";
+        userstring = "ronnie_air";
+        name = "$CA_PALOMO_NAME";
+        dialog = "$CA_M01_AIR_INTRO";
+        goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+        choice { text = "$CA_M01_AIR_START"; nextpage = "ronnie_air_practice"; giveitem = "CaelumM00AirLessonAction"; }
+    }
+    page
+    {
+        pagename = "ronnie_air_practice";
+        userstring = "ronnie_air_practice";
+        name = "$CA_PALOMO_NAME";
+        dialog = "$CA_M01_AIR_PRACTICE";
+        goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+    }
+    page
+    {
+        pagename = "ronnie_load";
+        userstring = "ronnie_load";
+        name = "$CA_PALOMO_NAME";
+        dialog = "$CA_M01_LOAD_INTRO";
+        goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+        choice { text = "$CA_M01_LOAD_START"; nextpage = "ronnie_load_practice"; giveitem = "CaelumM00LoadLessonAction"; }
+    }
+    page
+    {
+        pagename = "ronnie_load_practice";
+        userstring = "ronnie_load_practice";
+        name = "$CA_PALOMO_NAME";
+        dialog = "$CA_M01_LOAD_PRACTICE";
+        goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+    }
+    page
+    {
+        pagename = "ronnie_swim";
+        userstring = "ronnie_swim";
+        name = "$CA_PALOMO_NAME";
+        dialog = "$CA_M01_SWIM_INTRO";
+        goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+        choice { text = "$CA_M01_SWIM_START"; nextpage = "ronnie_swim_practice"; giveitem = "CaelumM00SwimLessonAction"; }
+    }
+    page
+    {
+        pagename = "ronnie_swim_practice";
+        userstring = "ronnie_swim_practice";
+        name = "$CA_PALOMO_NAME";
+        dialog = "$CA_M01_SWIM_PRACTICE";
+        goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+    }
+    page
+    {
+        pagename = "ronnie_water"; userstring = "ronnie_water";
+        name = "$CA_PALOMO_NAME"; dialog = "$CA_WATER_RONNIE";
+        goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+        choice { text = "$CA_WATER_ACCEPT"; giveitem = "CaelumM00WaterContainerAction"; closedialog = true; }
+    }
 }
+
 
 // 4.33.0v: confirmación del umbral y Voz al llegar a MAP02.
 conversation
@@ -3575,5 +3962,137 @@ conversation
         name = "$CA_TAROT_WANDS_KNIGHT_NAME"; dialog = "$CA_ARCANA_WANDS_REVEAL";
         goodbye = "$CA_M01_FOOL_LATER";
         choice { text = "$CA_M01_FOOL_CAPTURE"; giveitem = "CaelumM00CaptureFoolAction"; closedialog = true; }
+    }
+}
+
+conversation
+{
+    id = 43480;
+    class = "CaelumPalomoConversationMenu";
+    page
+    {
+        name = "$CA_SPEAKER_UNKNOWN_VOICE";
+        dialog = "$CA_DEMO_VOICE_0";
+        goodbye = "$CA_DLG_M01_CONTINUE";
+    }
+}
+
+conversation
+{
+    id = 43481;
+    class = "CaelumPalomoConversationMenu";
+    page
+    {
+        name = "$CA_SPEAKER_UNKNOWN_VOICE";
+        dialog = "$CA_DEMO_VOICE_1";
+        goodbye = "$CA_DLG_M01_CONTINUE";
+    }
+}
+
+conversation
+{
+    id = 43482;
+    class = "CaelumPalomoConversationMenu";
+    page
+    {
+        name = "$CA_SPEAKER_UNKNOWN_VOICE";
+        dialog = "$CA_DEMO_VOICE_2";
+        goodbye = "$CA_DLG_M01_CONTINUE";
+    }
+}
+
+conversation
+{
+    id = 43483;
+    class = "CaelumPalomoConversationMenu";
+    page
+    {
+        name = "$CA_SPEAKER_UNKNOWN_VOICE";
+        dialog = "$CA_DEMO_VOICE_3";
+        goodbye = "$CA_DLG_M01_CONTINUE";
+    }
+}
+
+conversation
+{
+    id = 43484;
+    class = "CaelumPalomoConversationMenu";
+    page
+    {
+        name = "$CA_SPEAKER_UNKNOWN_VOICE";
+        dialog = "$CA_DEMO_VOICE_4";
+        goodbye = "$CA_DLG_M01_CONTINUE";
+    }
+}
+
+conversation
+{
+    id = 43485;
+    class = "CaelumPalomoConversationMenu";
+    page
+    {
+        name = "$CA_SPEAKER_UNKNOWN_VOICE";
+        dialog = "$CA_DEMO_VOICE_5";
+        goodbye = "$CA_DLG_M01_CONTINUE";
+    }
+}
+
+conversation
+{
+    id = 43486;
+    class = "CaelumPalomoConversationMenu";
+    page
+    {
+        name = "$CA_SPEAKER_UNKNOWN_VOICE";
+        dialog = "$CA_DEMO_VOICE_6";
+        goodbye = "$CA_DLG_M01_CONTINUE";
+    }
+}
+
+conversation
+{
+    id = 43487;
+    class = "CaelumPalomoConversationMenu";
+    page
+    {
+        name = "$CA_SPEAKER_UNKNOWN_VOICE";
+        dialog = "$CA_DEMO_VOICE_7";
+        goodbye = "$CA_DLG_M01_CONTINUE";
+    }
+}
+
+conversation
+{
+    id = 43488;
+    class = "CaelumPalomoConversationMenu";
+    page
+    {
+        name = "$CA_SPEAKER_UNKNOWN_VOICE";
+        dialog = "$CA_DEMO_VOICE_8";
+        goodbye = "$CA_DLG_M01_CONTINUE";
+    }
+}
+
+conversation
+{
+    id = 43489;
+    class = "CaelumPalomoConversationMenu";
+    page
+    {
+        name = "$CA_SPEAKER_UNKNOWN_VOICE";
+        dialog = "$CA_DEMO_VOICE_9";
+        goodbye = "$CA_DLG_M01_CONTINUE";
+    }
+}
+
+conversation
+{
+    id = 43490;
+    class = "CaelumPalomoConversationMenu";
+    page
+    {
+        name = "$CA_SPEAKER_UNKNOWN_VOICE";
+        dialog = "$CA_DEMO_VOICE_10";
+        goodbye = "$CA_DLG_M01_CONTINUE";
     }
 }

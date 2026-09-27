@@ -261,6 +261,7 @@ class CaelumMainM00RuloTrial : Object play
     {
         let r = user.GetPersistentCharacterState(true);
         r.MainM00BullResetPending = false;
+        for (int i = 0; i < 4; i++) r.BullEncounterSeverity[i] = 0;
         // Retirar proyectiles del intento evita impactos tardíos y botín al
         // reiniciar. El arma nativa permanece en el inventario del personaje.
         let missiles = ThinkerIterator.Create("CaelumActorProjectile"); CaelumActorProjectile missile;

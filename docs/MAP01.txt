@@ -1,6 +1,54 @@
 CAELUM ARGENTEUM — STORY AND MAP01
 
-Documentation version: **4.36.21** — 2026-09-27.
+Documentation version: **4.36.22** — 2026-09-27.
+
+## 4.36.22 — Demo dialogue and quest roles (#34)
+
+Author direction, 2026-09-27: original dialogue may be written freely while
+respecting story and personalities. Selene intervenes when the sewer Zupay is
+defeated or finishes fleeing. This authorizes writing, not an unrecorded manual
+acceptance of the resulting script. New English/Spanish wording lives in the
+single runtime `src/LANGUAGE` catalogue (`CA_DEMO_*` plus revised mentor lines).
+
+Palomo initiates quest 1 through his guidance to Argento. He remains kind,
+philosophical and gently mocking: "A fine weapon is useful. So is remembering
+to eat before you fall on it." His practical menu covers needs, sleep, Air,
+load, swimming, the canteen and material locations. He remains accessible
+upstairs as the main trial progresses. He does not reveal Limbo or Selene.
+Ronnie remains an exiled Caelith with a practical concern for preparation;
+he teaches crafting, repair and the calendar, referring acquisition questions
+to Palomo. This revision supersedes the older survival-mentor assignment in
+the narrative source below, while preserving Ronnie's background and equipment trial.
+Argento's social trial, Caella's magic trial and Rulo's combat trial retain their roles.
+
+After the Bull, each companion comments on their own worst encounter health
+state. Rulo is blunt about blows and responsibility; Ronnie evaluates the gap
+left in the group's plan; Caella describes breath, concentration and the sound
+of hooves; Argento acknowledges dependence on others without moral punishment.
+The twelve injury branches are `CA_DEMO_BULL_<resident>_<severity>`: residents
+0 Rulo, 1 Ronnie, 2 Caella, 3 Argento; severity 1 Herido, 2 Malherido, 3 seated
+incapacitation. With no recorded state, the ordinary closing remains. Old saves
+without encounter evidence also retain that ordinary closing.
+
+The rescue interventions use approved prisoner histories only: Leonor's failed
+meeting, Rufino's offer to cover the player, Santos's interrupted peace talk,
+and Leandro's questions. Release comments stress keeping companions alive;
+payment comments acknowledge only benefits actually delivered at the port.
+The sewer boss line is deliberately valid for death and escape: "The Zupay no
+longer bars the way. Breathe. You do not have to remember how you reached these
+sewers to choose how to leave them." No recovered memory, betrayal, new agenda
+or explanation of the voice's identity is introduced.
+
+For #16's real port encounter, the brief voice introduction names both objectives:
+neutralize the twelve attacking machines and defeat the distinct Zupay commander.
+The defending cannons are distinguished from attackers. Completion acknowledges
+both objectives and tells the player to let withdrawing survivors leave. These
+lines and the port Journal quest are implemented against the existing encounter
+controller and verified with an isolated registered encounter in MAP06. This
+patch does not claim that #16's campaign army/placement is already deployed.
+
+Review of the actual wording and a normal campaign playthrough remains author
+acceptance in pending_test.txt; full port presentation acceptance follows #16.
 
 ## 4.36.20 — Lair, siege test room and port (#33)
 

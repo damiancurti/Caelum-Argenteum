@@ -1,0 +1,9 @@
+Log started: 2026-09-27 11:39:32
+GZDoom version g4.14.2
+QA34 PASS old save preserves tutorial flags and equipment identity
+QA34 PASS old save preserves completed main quest and reward
+QA34 PASS migration idempotently baselines historical narration
+QA34 PASS old save does not fabricate unknown historical bull damage
+QA34 PASS explicit rollback preserves accepted pre-patch progress
+QA34 PASS reapplied migration does not replay old rewards
+QA34 DONE legacy checks=6 failures=0

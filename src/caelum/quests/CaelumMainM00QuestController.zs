@@ -481,6 +481,7 @@ class CaelumMainM00QuestController : EventHandler
     override void WorldTick()
     {
         CaelumWeightPressure.WorldTick();
+        CaelumDemoNarrative.WorldTick();
         CaelumArcanaProgress.WorldTick();
         // También limpia MAP03 ya guardado y actores que aún eran nuevos al
         // preparar la galería. No depende de reiniciar sus banderas guardadas.

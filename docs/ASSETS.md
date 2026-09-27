@@ -1,6 +1,16 @@
 # Caelum Argenteum — Audio and art
 
-Documentation version: **4.36.21** — 2026-09-27.
+Documentation version: **4.36.22** — 2026-09-27.
+
+## 4.36.22 — Existing dialogue presentation (#34)
+
+No new art, models, music or voice recording. The bilingual original script is
+maintained in `src/LANGUAGE`, with native USDF pages in `src/CAPALOMO`. Existing
+dialogue-opening audio, fonts and non-pausing menus are reused. Selene keeps
+the established Unknown Voice label and has no visible actor representation.
+The approved Tarot art and single capture/presentation path are unchanged.
+An isolated native screenshot and rendered-menu evidence are retained in
+assets/validation_43622; engine/IWAD binaries and disposable saves are not shipped.
 
 ## 4.36.20 — Shared Arcana presentation (#33)
 

@@ -419,6 +419,7 @@ class CaelumAnchoredResident : CaelumCombatActor abstract
     }
     void DownRuloPartyMember()
     {
+        RecordBullNarrativeSeverity(3);
         health = 1; RuloPartyDowned = true; Target = null; Vel = (0,0,0);
         bInvulnerable = true; bShootable = false; bSolid = false;
         SetStateLabel("CrouchIdle");
@@ -469,6 +470,16 @@ class CaelumAnchoredResident : CaelumCombatActor abstract
         UpdateCombatHealthEffects();
     }
 
+    void RecordBullNarrativeSeverity(int severity)
+    {
+        if (RuloPartyMode != 2 || RuloPartyTraveler == null || RuloPartyBull == null
+            || RuloPartyBull.health <= 0 || RuloPartyBull.TrialGraceTicks > 0) return;
+        int resident = CaelumMainM00SocialDialogue.GetResidentId(self);
+        let record = RuloPartyTraveler.GetPersistentCharacterState(false);
+        if (record != null && resident >= 0 && resident < 4)
+            record.BullEncounterSeverity[resident] = Max(record.BullEncounterSeverity[resident], severity);
+    }
+
     void JoinRuloParty(CaelumPlayer traveler, CaelumM00Bull bull)
     {
         RuloPartyTraveler = traveler; RuloPartyBull = bull;
@@ -492,6 +503,11 @@ class CaelumAnchoredResident : CaelumCombatActor abstract
         if (RuloPartyMode != 0 && (!IsRuloPartyFighting()
             || (source != RuloPartyBull && inflictor != RuloPartyBull))) return 0;
         int received = Super.DamageMobj(inflictor, source, damage, mod, flags, angle);
+        if (received > 0 && RuloPartyMode == 2 && (source == RuloPartyBull || inflictor == RuloPartyBull))
+        {
+            UpdateCombatHealthEffects();
+            RecordBullNarrativeSeverity(health <= 1 ? 3 : CombatHealthState);
+        }
         if (IsProtectedStoryResident() && RuloPartyMode == 2 && health <= 1)
             DownRuloPartyMember();
         return received;

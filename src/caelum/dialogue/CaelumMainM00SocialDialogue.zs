@@ -146,6 +146,7 @@ class CaelumMainM00SocialDialogue : Object play
         CaelumMainM00MagicTrial.Sync(user);
         CaelumMainM00RonnieTrial.Sync(user);
         CaelumMainM00RuloTrial.Sync(user);
+        CaelumDemoNarrative.Sync(user);
         if (user.StaffCastPending) { user.CancelPendingStaffCast(false); }
         user.EquipmentMenuOpen = false;
         user.CloseCraftingStationSession();
@@ -280,10 +281,14 @@ class CaelumMainM00ConversationMenu : CaelumPalomoConversationMenu
 
     override void FormatSpeakerMessage()
     {
+        if (mCurNode.UserData ~== "palomo_upstairs_wait")
+        { Super.FormatSpeakerMessage(); return; }
         String text = StringTable.Localize(mCurNode.Dialogue);
         CaelumPlayer user = mPlayer == null ? null : CaelumPlayer(mPlayer.mo);
         if (user != null)
         {
+            if (mCurNode.UserData ~== "palomo_sleep")
+                text = StringTable.Localize(user.PalomoSleepLessonCompleteSnapshot ? "CA_DEMO_SLEEP_DONE" : "CA_DEMO_SLEEP", false);
             if (mCurNode.UserData ~== "ronnie_ammo")
                 text = StringTable.Localize(user.MainM00StarterOptionSnapshot == 15 ? "CA_M01_BOLTS_HELP"
                     : (user.MainM00StarterOptionSnapshot == 12 || user.MainM00StarterOptionSnapshot == 14)
@@ -313,6 +318,16 @@ class CaelumMainM00ConversationMenu : CaelumPalomoConversationMenu
                 else if (mCurNode.UserData ~== "ronnie_finished") reaction = "CA_M01_FOOL_RONNIE";
                 else if (mCurNode.UserData ~== "rulo_trial_done") reaction = "CA_M01_FOOL_RULO";
                 if (reaction != "") text = StringTable.Localize(reaction, false);
+            }
+            if (user.MainM00BullDefeatedSnapshot)
+            {
+                int resident = mCurNode.UserData ~== "rulo_trial_done" ? 0
+                    : mCurNode.UserData ~== "ronnie_finished" ? 1
+                    : mCurNode.UserData ~== "caella_magic_done" ? 2
+                    : mCurNode.UserData ~== "argento_complete" ? 3 : -1;
+                if (resident >= 0 && user.BullNarrativeSeveritySnapshot[resident] > 0)
+                    text = StringTable.Localize(String.Format("CA_DEMO_BULL_%d_%d", resident,
+                        user.BullNarrativeSeveritySnapshot[resident]), false) .. "\n\n" .. text;
             }
             if (mCurNode.UserData ~== "argento_next")
             {

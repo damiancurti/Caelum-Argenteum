@@ -1,6 +1,21 @@
 # TASKS.md — Active tasks
 
-Documentation version: **4.36.21** — 2026-09-27.
+Documentation version: **4.36.22** — 2026-09-27.
+
+## Issue #34 — Demo quest narrative (4.36.22)
+
+- **Implemented:** Palomo quest activation/survival/material guidance, Ronnie
+  crafting/calendar, per-NPC peak Bull injury reactions, persistent queued rescue
+  and paid-reward guidance, sewer death/escape line, actual-controller port quest.
+- **Preserved:** main quest and item IDs, saved survival progress, crafting supplies,
+  payouts, factions, combat balance, world pause rules and the single Tarot path.
+- **Validation:** assets/validation_43622/RESULTS.json and STATIC.json; static,
+  focused native behavior, old-save migration and rendered-menu checks pass.
+- **Author acceptance:** CA-43622-NARRATIVE-01 remains outstanding.
+- **Dependency boundary:** #16 must deploy the complete MAP06 army/routes. The
+  port quest stays hidden in the present pre-siege port; registered encounter
+  integration is tested in isolation. After deployment, accept the full port
+  narrative and retreat in campaign before #17 export. No fake victory is inferred.
 
 ## Issue #49 — Scenery collisions and running (4.36.21)
 

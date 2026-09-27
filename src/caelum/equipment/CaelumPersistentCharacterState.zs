@@ -14,6 +14,15 @@ class CaelumPersistentCharacterState : Inventory
     // Índices estables: Mayores 0–21 (Marsella), Menores 22–77.
     // Una bandera por carta es la autoridad; contar/recalcular no la concede.
     bool TarotOwned[CaelumConstants.TAROT_CARD_COUNT];
+    // #34: registro aditivo; nunca sustituye progreso ni recompensas anteriores.
+    int DemoNarrativeRevision;
+    int DemoNarrativePending;
+    int DemoNarrativeDelivered;
+    int BullEncounterSeverity[4];
+    bool PalomoSleepLessonStarted;
+    bool PalomoSleepLessonComplete;
+    bool PortSiegeNarrativeStarted;
+    bool PortSiegeNarrativeComplete;
     int ArcanaStateRevision;
     bool SewerZupayDefeated;
     bool ArcanaRevealed[CaelumConstants.TAROT_CARD_COUNT];
@@ -499,11 +508,6 @@ class CaelumPersistentCharacterState : Inventory
         }
 
         bool changed = false;
-        if (QuestState[questId] == CaelumConstants.QUEST_STATE_UNDISCOVERED)
-        {
-            QuestState[questId] = CaelumConstants.QUEST_STATE_ACTIVE;
-            changed = true;
-        }
         if (QuestStage[questId]
             == CaelumConstants.MAIN_M00_STATE_INITIALIZE)
         {
@@ -566,13 +570,12 @@ class CaelumPersistentCharacterState : Inventory
         {
             return false;
         }
-        if (!TryAdvanceMainM00State(
-                CaelumConstants.MAIN_M00_STATE_AWAKENED,
-                CaelumConstants.MAIN_M00_STATE_MET_PALOMO
-            ))
+        if (QuestStage[CaelumConstants.QUEST_MAIN_M00_THE_FOOL]
+            != CaelumConstants.MAIN_M00_STATE_AWAKENED)
         {
             return false;
         }
+        QuestStage[CaelumConstants.QUEST_MAIN_M00_THE_FOOL] = CaelumConstants.MAIN_M00_STATE_MET_PALOMO;
         MainM00Flag[
             CaelumConstants.MAIN_M00_FLAG_UNKNOWN_VOICE_HEARD
         ] = true;
@@ -592,7 +595,8 @@ class CaelumPersistentCharacterState : Inventory
             || flagId
                 == CaelumConstants.MAIN_M00_FLAG_NOTICED_MEMORY_GAP;
         if (!supportedFlag
-            || QuestState[questId] != CaelumConstants.QUEST_STATE_ACTIVE
+            || (QuestState[questId] != CaelumConstants.QUEST_STATE_ACTIVE
+                && QuestState[questId] != CaelumConstants.QUEST_STATE_UNDISCOVERED)
             || QuestStage[questId] < CaelumConstants.MAIN_M00_STATE_MET_PALOMO
             || QuestStage[questId]
                 >= CaelumConstants.MAIN_M00_STATE_ARGENTO_ACTIVE)
@@ -621,6 +625,10 @@ class CaelumPersistentCharacterState : Inventory
         {
             return false;
         }
+        int questId = CaelumConstants.QUEST_MAIN_M00_THE_FOOL;
+        if (QuestStage[questId] != CaelumConstants.MAIN_M00_STATE_MET_PALOMO) return false;
+        if (QuestState[questId] == CaelumConstants.QUEST_STATE_UNDISCOVERED)
+            QuestState[questId] = CaelumConstants.QUEST_STATE_ACTIVE;
         if (!TryAdvanceMainM00State(
                 CaelumConstants.MAIN_M00_STATE_MET_PALOMO,
                 CaelumConstants.MAIN_M00_STATE_ARGENTO_ACTIVE
@@ -1034,21 +1042,14 @@ class CaelumPersistentCharacterState : Inventory
     {
         EnsureQuestStateInitialized();
         int questId = CaelumConstants.QUEST_MAIN_M00_THE_FOOL;
-        if (QuestState[questId] == CaelumConstants.QUEST_STATE_UNDISCOVERED
-            || QuestStage[questId]
-                < CaelumConstants.MAIN_M00_STATE_MET_PALOMO)
+        if (QuestStage[questId] < CaelumConstants.MAIN_M00_STATE_MET_PALOMO)
         {
             return CaelumConstants.PALOMO_PLACEMENT_HIDDEN;
         }
         if (QuestStage[questId]
-                >= CaelumConstants.MAIN_M00_STATE_RULO_COMPLETE)
+                >= CaelumConstants.MAIN_M00_STATE_ARGENTO_ACTIVE)
         {
             return CaelumConstants.PALOMO_PLACEMENT_MANSION_UPSTAIRS;
-        }
-        if (QuestStage[questId]
-            >= CaelumConstants.MAIN_M00_STATE_ARGENTO_ACTIVE)
-        {
-            return CaelumConstants.PALOMO_PLACEMENT_HIDDEN;
         }
         return CaelumConstants.PALOMO_PLACEMENT_MANSION_FOYER;
     }
