@@ -1,6 +1,58 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **4.36.19** — 2026-09-27.
+Documentation version: **4.36.20** — 2026-09-27.
+
+## 4.36.20 — Shared Arcana capture and sewer escape (#33)
+
+Author decisions: issue #33 unifies appearance/capture, names the second Minor
+Knight of Wands, and routes the lair through the existing MAP03 test room to
+the port. On 2026-09-27 the author added the sewer Zupay's wounded escape:
+at 50% health, triple speed toward the exit, disappearance and confirmed
+defeat. The author selected appearance beside the rescued port survivors.
+
+Implemented one common Box/confirmation/animation path for Fool, Ace and
+Knight, preserving IDs 0/36/60 and existing passives. The Ace requires confirmed
+defeat. The Knight waits for actual rewards owed to extracted survivors;
+zero survivors allows immediate appearance. This is explicitly provisional
+until #16/#17. Spanish current naming is El loco; historical records remain.
+
+The only lair exit leads to MAP03; MAP03 leads only to MAP06. Old conflicting
+gates are disabled without deleting saved actor/history data or rebuilding
+maps. The already accepted table cleanup and pre-boss extraction remain.
+New progress fields carry revision 1 and an additive rollback hook. Existing
+owned cards, Box IDs, prisoner states and payments are preserved.
+
+Validation evidence: assets/validation_43620/RESULTS.json records static,
+isolated GZDoom 4.14.2 and migration results separately. Cross-review found
+that direct retreat could stall at diagonal gate contact or a corridor wall;
+the final implementation uses native attack-free chase and a contact approach
+threshold, including an isolated corridor escape check. Early failed fixtures
+and source-directory load attempts remain local development evidence in build/.
+Only the final supported PK3 scenarios are reported as passing validation.
+Author acceptance: both checks passed on 2026-09-27 after the correction below.
+
+On 2026-09-27 the author reported CA-43620-ARCANA-01 step 2 failed: pressing
+Use on the Ace froze the game before confirmation or animation, with Escape
+and console unresponsive. Windows recorded AppHangB1; the original process
+ended before a diagnostic dump could be collected. An isolated reproduction
+at baseline c24589ca stopped at the first rendered dialogue frame. Its local
+dump and official 4.14.2 symbols located the renderer worker in
+FTexture::TrimBorders, while the main thread waited in HWDrawInfo::RenderBSP.
+
+Both Minor fronts were assigned dynamically without appearing in actor state
+definitions. Appending RevealedFront states registers CACU/CAWK during actor
+loading, before rendering. Existing Spawn states, saved fields, artwork and
+capture rules are unchanged. Repeated native Ace/Knight tests now render the
+dialogue, submit its native confirmation, advance the animation, grant the
+card and continue ticking. A copy of the author's autosave also loads and
+passes the isolated interaction setup; original saves are untouched. Evidence:
+assets/validation_43620/capture_render_fix.json. The prior tests checked the
+opening call and scripted animation separately, which missed this rendering
+failure. On 2026-09-27 the author confirmed all tests passed after the fix:
+CA-43620-ARCANA-01 and CA-43620-ROUTE-01 (both originating in 4.36.20 / #33)
+are PASSED. This includes the corrected Ace interaction and the route/retreat
+checks. Their pending entries are removed under the author-confirmed lifecycle;
+the earlier failure and native evidence above remain historical evidence.
 
 ## 4.36.19 — Final author-approved siege balance (#21)
 

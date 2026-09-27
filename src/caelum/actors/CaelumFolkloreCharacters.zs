@@ -547,6 +547,68 @@ class CaelumMandinga : CaelumFolkloreCombatActor
 
 class CaelumZupayColossus : CaelumFolkloreCombatActor
 {
+    bool SewerFleeing;
+    Actor SewerEscapeTarget;
+
+    bool IsSewerBoss() { return level.MapName == "MAP02" && tid == 43799; }
+
+    override void Die(Actor source, Actor inflictor, int dmgflags, Name meansOfDeath)
+    {
+        Super.Die(source, inflictor, dmgflags, meansOfDeath);
+        if (IsSewerBoss() && health <= 0) CaelumArcanaProgress.ConfirmSewerDefeat();
+        if (health <= 0 && SewerEscapeTarget != null)
+        { SewerEscapeTarget.Destroy(); SewerEscapeTarget = null; }
+    }
+
+    override void Tick()
+    {
+        if (IsSewerBoss() && health > 0 && CombatMaximumHealth > 0
+            && double(health) / CombatMaximumHealth <= CaelumConstants.HEALTH_WOUNDED_THRESHOLD)
+            SewerFleeing = true;
+        if (SewerFleeing && IsSewerBoss() && health > 0)
+        {
+            Vector3 exitPos = CaelumSewerTravel.GatePosition(CaelumWorldCatalogue.CONNECTION_TO_RESERVOIR);
+            if (SewerEscapeTarget == null)
+                SewerEscapeTarget = Spawn("CaelumSewerEscapeTarget", exitPos, NO_REPLACE);
+            target = SewerEscapeTarget; LastEnemy = null;
+            Speed = CombatBaseSpeed * CaelumConstants.SEWER_ZUPAY_FLEE_SPEED_MULTIPLIER;
+            Vector2 delta = exitPos.XY - Pos.XY;
+            double reach = Radius + GetDefaultByType("CaelumSewerTravelGate").Radius;
+            // A_Chase avanza por pasos y la puerta colisiona en XY. Llegar a
+            // un paso del contacto evita exigir penetrar su volumen sólido.
+            if (delta.Length() <= reach + Speed && Abs(Pos.Z - exitPos.Z) <= MaxStepHeight
+                && SewerEscapeTarget != null && CheckSight(SewerEscapeTarget))
+            {
+                CaelumArcanaProgress.ConfirmSewerDefeat();
+                // La retirada concluye sin muerte ficticia ni duplicar botín.
+                A_StopSound(CHAN_7);
+                Destroy();
+                return;
+            }
+            Vel.X = 0; Vel.Y = 0;
+            if (!InStateSequence(CurState, FindState("SewerEscape"))) SetStateLabel("SewerEscape");
+        }
+        Super.Tick();
+        if (SewerFleeing && health > 0)
+            Speed = CombatBaseSpeed * CaelumConstants.SEWER_ZUPAY_FLEE_SPEED_MULTIPLIER;
+    }
+
+    action void A_CaelumSewerEscapeMove()
+    {
+        let boss = CaelumZupayColossus(self);
+        if (boss == null || boss.SewerEscapeTarget == null) return;
+        boss.target = boss.SewerEscapeTarget;
+        boss.Speed = boss.CombatBaseSpeed * CaelumConstants.SEWER_ZUPAY_FLEE_SPEED_MULTIPLIER;
+        // Navegación nativa sin ataques; misma cadencia que la carrera normal.
+        boss.A_Chase(null, null, CHF_DONTLOOKALLAROUND);
+    }
+
+    override void OnDestroy()
+    {
+        if (SewerEscapeTarget != null) SewerEscapeTarget.Destroy();
+        Super.OnDestroy();
+    }
+
     Default
     {
         Tag "$CA_ZUPAY_COLOSSUS_NAME";
@@ -669,5 +731,15 @@ class CaelumZupayColossus : CaelumFolkloreCombatActor
         ZUWK A 0 A_StartSoundIfNotSame("caelum/enemies/zupay_walk", "caelum/enemies/zupay_walk", CHAN_7);
         ZUWK AB 4 A_CaelumBudgetedChase;
         Loop;
+    SewerEscape:
+        ZURN ABCD 4 A_CaelumSewerEscapeMove;
+        Loop;
     }
+}
+
+// Blanco invisible de navegación, sin colisión, daño, botín ni misión propia.
+class CaelumSewerEscapeTarget : Actor
+{
+    Default { Radius 1; Height 1; +SHOOTABLE +INVULNERABLE +NOBLOCKMAP +NOGRAVITY +NOTARGET }
+    States { Spawn: TNT1 A -1; Stop; }
 }

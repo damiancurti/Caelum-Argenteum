@@ -1,6 +1,48 @@
 # Caelum Argenteum — Current systems and rules
 
-Documentation version: **4.36.19** — 2026-09-27.
+Documentation version: **4.36.20** — 2026-09-27.
+
+## 4.36.20 — Arcana availability and sewer retreat (#33)
+
+The author on 2026-09-27 specified that the sewer Zupay starts fleeing at
+health <= 50% of CombatMaximumHealth (the existing wounded threshold). Only
+MAP02's boss, TID 43799, receives this behavior. Its movement Speed becomes
+three times its uninjured CombatBaseSpeed, using the normal four-tic chase
+cadence and native navigation without attacks. Retreat remains latched if
+health later increases. Reaching within one native movement step of the
+workshop gate's contact volume, with sight and matching floor height, removes
+the boss and confirms defeat. Starting retreat alone does not confirm defeat.
+A lethal hit also confirms defeat. Other Zupays and siege rules are unchanged.
+
+The Ace of Cups (persistent ID 36) is invisible, nonblocking and unusable
+until confirmed sewer-boss defeat. Defeat makes the apparition available; it
+does not grant ownership. Absence of an actor is never sufficient evidence.
+The Spanish Fool name is **El loco**; its ID 0, quest flags and effects remain.
+
+The Knight of Wands (**Caballero de basto**, ID 60) appears at MAP06 beside
+the survivors after all extracted prisoners' rewards have actually been
+delivered. Zero extracted survivors permits immediate appearance on arrival;
+dead or unrescued prisoners do not block it. The existing transaction's
+PrisonerRewardClaimed flag is the authority: dialogue entry/exit, partial
+claims and a failed capacity check do not count as delivery. The existing
+25 gold and +10 own-faction reputation rewards remain once-only. **This is
+the provisional pre-siege condition; #16/#17 will define its replacement.**
+
+All three cards share the original Fool's Use/Box identity checks, native
+confirmation dialogue, 35-tic image-to-player animation, cancellation and
+commit. Each supplies its own approved front, localized name and ID. Leaving
+range, dying or losing/changing the Box cancels without granting or consuming
+the card. Capture and revelation persist; owned cards cannot be captured
+again. Existing Minor passives and collection percentages apply; no new power
+is introduced.
+
+Additive Arcana revision 1 preserves TarotOwned, MainM00FoolRevealed, quests,
+Box IDs and prisoner rewards. An already owned Ace or a retained dead sewer
+boss supplies legacy defeat evidence. New serialized fields retain defeat,
+Minor revelation and port availability. RestoreLegacyProgress clears only
+the added traveler fields for recovery on a copied save; reapplication is
+idempotent and never revokes owned cards. Keep the original pre-upgrade save
+for full rollback. WAD geometry and original actor state indexes are retained.
 
 ## 4.36.19 — Final siege impact balance (#21)
 

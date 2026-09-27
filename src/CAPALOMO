@@ -2986,8 +2986,6 @@ conversation
         name = "$CA_CARAVAN_TITLE"; dialog = "$CA_CARAVAN_OFFER";
         goodbye = "$CA_CARAVAN_CANCEL";
         choice { text = "$CA_MAP03_NAME"; nextpage = "caravan_2"; closedialog = false; }
-        choice { text = "$CA_MAP04_NAME"; nextpage = "caravan_4"; closedialog = false; }
-        choice { text = "$CA_MAP05_NAME"; nextpage = "caravan_6"; closedialog = false; }
         choice { text = "$CA_SEWER_SUPPORT_SEAL"; giveitem = "CaelumSewerPrepareSealAction"; closedialog = true; }
         choice { text = "$CA_SEWER_SUPPORT_CRAFT"; giveitem = "CaelumSewerPrepareCraftAction"; closedialog = true; }
     }
@@ -3026,7 +3024,6 @@ conversation
         name = "$CA_CARAVAN_TITLE"; dialog = "$CA_CARAVAN_OFFER";
         goodbye = "$CA_CARAVAN_CANCEL";
         choice { text = "$CA_MAP06_NAME"; nextpage = "caravan_8"; closedialog = false; }
-        choice { text = "$CA_MAP02_SEWER_NAME"; nextpage = "caravan_3"; closedialog = false; }
         choice { text = "$CA_SEWER_SUPPORT_SEAL"; giveitem = "CaelumSewerPrepareSealAction"; closedialog = true; }
         choice { text = "$CA_SEWER_SUPPORT_CRAFT"; giveitem = "CaelumSewerPrepareCraftAction"; closedialog = true; }
     }
@@ -3553,5 +3550,30 @@ conversation
         name = "$CA_PRISONER_TAROT_NAME";
         dialog = "$CA_PRISONER_PORT_REWARD_GRANTED";
         goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+    }
+}
+// #33: datos de carta; captura y animación compartidas.
+conversation
+{
+    id = 43620;
+    class = "CaelumFoolConversationMenu";
+    page
+    {
+        name = "$CA_MAZE_CUPS_ACE"; dialog = "$CA_ARCANA_CUPS_REVEAL";
+        goodbye = "$CA_M01_FOOL_LATER";
+        choice { text = "$CA_M01_FOOL_CAPTURE"; giveitem = "CaelumM00CaptureFoolAction"; closedialog = true; }
+    }
+}
+
+// #33: datos de carta; captura y animación compartidas.
+conversation
+{
+    id = 43621;
+    class = "CaelumFoolConversationMenu";
+    page
+    {
+        name = "$CA_TAROT_WANDS_KNIGHT_NAME"; dialog = "$CA_ARCANA_WANDS_REVEAL";
+        goodbye = "$CA_M01_FOOL_LATER";
+        choice { text = "$CA_M01_FOOL_CAPTURE"; giveitem = "CaelumM00CaptureFoolAction"; closedialog = true; }
     }
 }

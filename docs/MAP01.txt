@@ -1,6 +1,30 @@
 CAELUM ARGENTEUM — STORY AND MAP01
 
-Documentation version: **4.36.19** — 2026-09-27.
+Documentation version: **4.36.20** — 2026-09-27.
+
+## 4.36.20 — Lair, siege test room and port (#33)
+
+The existing large workshop/tank is MAP03, LOCATION_RESERVOIR, authored by
+assets/generators/generate_sewer_trials.py: its main room extends from
+(-2048,512) to (2048,3584). It was already cleared of tables, chairs, beds and
+stations by the accepted 4.36.14a correction; that saved-world cleanup remains.
+
+The player's only outgoing lair connection is 2, MAP02 -> MAP03. MAP03's only
+outgoing connection is 8, MAP03 -> MAP06. Connections 3, 4, 6 and 14 are retired
+from active gates, the local Journal list, caravan choices and departure
+validation. Old gate actors remain hidden and nonblocking for reversible save
+recovery; their stable IDs, positions and known/traversed history are retained.
+Unlinked USDF pages remain in place to preserve saved dialogue node indexes.
+The maps themselves are byte-identical. Existing port/coast travel remains.
+Prisoner extraction before the boss is separate and unchanged.
+
+The wounded sewer Zupay navigates toward the remaining workshop gate at three
+times its base speed, disappears on arrival and counts as defeated; SYSTEMS
+specifies the exact trigger and capture rules. The Ace remains at its existing
+map-authored position. The author selected the Knight's appearance beside
+the rescued survivors: (0,640,14), west of their existing row at Y=640,
+X=128/192/256/320. These placement data live in CaelumArcanaPlacement.
+The Knight's current reward-delivery condition is provisional until #16/#17.
 
 ## 4.36.17 — Opt-in cannon lanes (#21)
 

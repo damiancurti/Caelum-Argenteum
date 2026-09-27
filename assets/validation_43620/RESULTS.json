@@ -1,0 +1,152 @@
+{
+  "issue": 33,
+  "release": "4.36.20",
+  "date": "2026-09-27",
+  "base_commit": "245d3bb5311c448c1946b412d383b1150b5b60b6",
+  "runtime_sha256": {
+    "src/ZSCRIPT": "8ea7b1b730c2e58ed3dc20e60eb454e73c3eb6a35e47fd1990efb519ddead1ff",
+    "src/CAPALOMO": "61cc211c71a949f4033568e851a79402722d028bd8b6b42bbf7f5b9a309fd848",
+    "src/LANGUAGE": "15a186ee542cc4ca93a44e6ac498057eb1d6c2ac4c9bc6d0e21baea629057224",
+    "src/TEXTURES": "bd3f94a447d82e2c39ef6406a29b9ad7c6fe11cf19e4459da4674fd47c696c18",
+    "src/caelum/actors/CaelumFolkloreCharacters.zs": "180e2dcb870027a78328c118e08373b0ac61ab7c0a2d1bca6241a138941be3fb",
+    "src/caelum/core/CaelumConstants.zs": "da6f7ee949da654d8452c03234bf2d0e2521a50f6dd577d65190dd2a2151f90b",
+    "src/caelum/core/CaelumTarotArt.zs": "4b47fe8b2cb86e9dc499ed5995fab0d8a7257ade1f47d9918ea4f0fec9fa729a",
+    "src/caelum/equipment/CaelumPersistentCharacterState.zs": "21e1b3baa91725e2d1fca408ae8359673f0d02fc3a744f5331e5c06fa1c5e225",
+    "src/caelum/hud/CaelumJournalOverlay.zs": "74c0e595de7f2c959cab43ff169fd816f1fab3960942d2eece1dd9421462800b",
+    "src/caelum/quests/CaelumMainM00FoolCapture.zs": "e45d84f9a46e4672f12aed06f66a8a6ac46a9ae06579c63bee0731751fbeaf74",
+    "src/caelum/quests/CaelumArcanaProgress.zs": "b07a42fe1e236e51eec9475394e2b0ad67f1690f9d05f7f0a693eda16b0d14a4",
+    "src/caelum/quests/CaelumMainM00QuestController.zs": "bb6b26020e28c794891b7e0c54cc526d32e5b90098dc2164ee19a31240f5d2da",
+    "src/caelum/world/CaelumArcanaPlacement.zs": "670dafe0091dec7dcc274bbc0a6f34ba5b7df6505489175e066750e1ac8bcbb6",
+    "src/caelum/world/CaelumSewerMaze.zs": "68280bfa2f411bbc615cf370fab29172a8328e4c969b5be7c6638d36783229bd",
+    "src/caelum/world/CaelumSewerTravel.zs": "e3b4f94fff68e5dd2ac3eac0ec92734392a3745506b3f9709ef3c189ea199cb3",
+    "src/caelum/world/CaelumWorldCatalogue.zs": "494591ceceb2f8827cddfdcb3187440cfe59f7c9cbb56ba06d3af67a5be96a0f",
+    "src/caelum/world/CaelumPhysicalHazards.zs": "4b947d4bb548ff93214868156666421aa181cbc565cce5de01d1defa35f6f712"
+  },
+  "unchanged_map_sha256": {
+    "MAP01": "c3c01999f2cd427ce0f618da82dd18148e6544c5f00ec14b5e066174edc0859c",
+    "MAP02": "6d65b52abbf9f892e345069ff87bdd2a4987ecf4196b4a8866e9944a7d88afa7",
+    "MAP03": "1af7849f7dc78fd5ff9d89995dd7cf89f0d4a59cb0c40dc01c062c999b3493f9",
+    "MAP06": "5ae44d61f8d29342c16c6ef8a98308be98b92c02643e585c14cb986106d453b8"
+  },
+  "approved_fronts_byte_identical": true,
+  "engine": "GZDoom g4.14.2, Windows 11, Vulkan, NVIDIA GeForce RTX 3070 Ti",
+  "development_iwad": "Author-installed Doom II; not distributed",
+  "scope": "Isolated instrumented single-player native scenarios; does not constitute author campaign acceptance.",
+  "review": "Independent agent static cross-review completed; diagonal contact and corridor retreat findings corrected with native attack-free chase.",
+  "author_acceptance": "CA-43620-ARCANA-01 and CA-43620-ROUTE-01 passed; author confirmed all tests on 2026-09-27 after the rendering correction.",
+  "reproduction": "Build current PK3 with build_dev.ps1. Use copied campaign saves and pending_test.txt. Native automation locally used unshipped QA Inventory/Actor fixtures to initialize scenarios, call the real reward transaction, shared capture and travel services, and inspect serialized records. Saves, engine binaries, IWAD and QA fixtures remain outside tracked delivery.",
+  "capture_test_boundary": "Animation tests invoke the common confirmation action programmatically and release conversation references; a separate native Use check opens the actual dialogue. Visual timing/audio and full manual playthrough require author acceptance.",
+  "save_migration": "4.36.19 package generated four native saves: live boss, dead boss, owned Ace and partially paid port. Current PK3 loaded each and verified additive revision, exact existing ownership/Box/reward state, retired route rejection, rollback and idempotent reapplication.",
+  "native_scenarios": {
+    "retreat_save_final": {
+      "raw_log_sha256": "d25ce6fe25c45e84fd30f6a276337a0392f8e1c28c02489f767f872d0a3be002",
+      "pass_assertions": 21,
+      "completion": [
+        "QA33 DONE sewer checks=21 failures=0"
+      ]
+    },
+    "retreat_load_final": {
+      "raw_log_sha256": "4cc792b2d8dd949d2eb49631f2ea1bfb28aa53c5ac56e1dfa754eb141d7c53df",
+      "pass_assertions": 13,
+      "completion": [
+        "QA33 DONE sewer checks=21 failures=0"
+      ]
+    },
+    "port_final": {
+      "raw_log_sha256": "3df283d0f0f49314e8b5c8f54efcd80f15deae0af822e194c6e13524a4f192c8",
+      "pass_assertions": 38,
+      "completion": [
+        "QA33 DONE port checks=38 failures=0"
+      ]
+    },
+    "load_autocheck": {
+      "raw_log_sha256": "021ce3f403a972738dcde605012b2a9d191c43b1b2d9982d03db30048b58e7b7",
+      "pass_assertions": 3,
+      "completion": [
+        "QA33 DONE capture-save checks=3 failures=0"
+      ]
+    },
+    "fool_pkg_load": {
+      "raw_log_sha256": "695f4a2baac5aa64c43689051d9551468b6308db6e34ef34618adc27785a62b8",
+      "pass_assertions": 4,
+      "completion": [
+        "QA33 DONE capture-save checks=4 failures=0"
+      ]
+    },
+    "knight_load_final": {
+      "raw_log_sha256": "13458bdff68e52565c853a8003219f51bde40bc16060f9abdafcc2bf8caa310d",
+      "pass_assertions": 3,
+      "completion": [
+        "QA33 DONE capture-save checks=3 failures=0"
+      ]
+    },
+    "legacy_migrate_before": {
+      "raw_log_sha256": "96b7b1133e2060512278e2ec0bdc3eb04d81f3dd3e4334ee0e152fd1cffed2b9",
+      "pass_assertions": 15,
+      "completion": [
+        "QA33 DONE legacy checks=15 failures=0"
+      ]
+    },
+    "legacy_migrate_dead": {
+      "raw_log_sha256": "976e9cd2ac0231e808c553a5d94aae6599ec4cd2ab7123fd3cb59d444a7bfdec",
+      "pass_assertions": 15,
+      "completion": [
+        "QA33 DONE legacy checks=15 failures=0"
+      ]
+    },
+    "legacy_migrate_owned": {
+      "raw_log_sha256": "5931c2dc2ad14176c7e64efc637dbc953be26dc775d6a4d2306868d8a3c5d3ed",
+      "pass_assertions": 15,
+      "completion": [
+        "QA33 DONE legacy checks=15 failures=0"
+      ]
+    },
+    "legacy_migrate_port": {
+      "raw_log_sha256": "40645c4828d2f24c4b5c8c0681af4875281687e0766ed96f45f8a1726c15514b",
+      "pass_assertions": 10,
+      "completion": [
+        "QA33 DONE legacy checks=10 failures=0"
+      ]
+    },
+    "route_final": {
+      "raw_log_sha256": "a6eba5f5233a1363d90272a9acbdd3d50d7493ea3a7eceda24cd201790f1877c",
+      "pass_assertions": 10,
+      "completion": [
+        "QA33 DONE capture-save checks=3 failures=0"
+      ]
+    },
+    "corridor_final": {
+      "raw_log_sha256": "8983e9002b821e69cac9ad1e84a9d5fdf0543435fdd47dce5e39a2248a506eed",
+      "pass_assertions": 21,
+      "completion": [
+        "QA33 DONE sewer checks=21 failures=0"
+      ]
+    },
+    "legacy_floatbob_final": {
+      "raw_log_sha256": "29f0fdc7520a7a384084cdcaea14f4720328ff78a701ab8841301bc6ac83bba9",
+      "pass_assertions": 15,
+      "completion": [
+        "QA33 DONE legacy checks=15 failures=0"
+      ]
+    },
+    "route_arrival_final": {
+      "raw_log_sha256": "979e7edfbfc0d4b00395432edd74c050dee69a525d0b7f414aafcb2f6a989a70",
+      "pass_assertions": 5,
+      "completion": []
+    },
+    "port_saved_final": {
+      "raw_log_sha256": "f10c58a492bbb6259bf804115dd744aa480dd24cf97f2a13aa91696afdeefe69",
+      "pass_assertions": 7,
+      "completion": [
+        "QA33 DONE port-saved checks=7 failures=0"
+      ]
+    }
+  },
+  "native_pass_assertions": 195,
+  "package": {
+    "files": 6118,
+    "sha256": "c3a4f792914c6ebaabadd44da194ee25aec74e3c8786503fdc6db2e2f4180004",
+    "all_entries_match_source": true
+  },
+  "follow_up": "Author reported Ace Use freeze. Original scenario evidence below predates the correction; see capture_render_fix.json for current package hashes and end-to-end rendered capture retests."
+}

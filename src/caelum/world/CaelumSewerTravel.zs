@@ -27,7 +27,8 @@ class CaelumSewerTravel : Object play
         int location = CaelumWorldCatalogue.LocationForMap(level.MapName);
         for (int id = 2; id < CaelumWorldCatalogue.CONNECTION_DEFINED_COUNT; id++)
         {
-            if (CaelumWorldCatalogue.ConnectionOrigin(id) != location) continue;
+            if (!CaelumWorldCatalogue.IsSewerConnection(id)
+                || CaelumWorldCatalogue.ConnectionOrigin(id) != location) continue;
             // El hub conserva las instancias; crear sólo accesos ausentes.
             bool found = false;
             let existing = ThinkerIterator.Create("CaelumSewerTravelGate");
@@ -72,7 +73,11 @@ class CaelumSewerTravelGate : Actor
     override void Tick()
     {
         Super.Tick();
+        bool active = CaelumWorldCatalogue.IsSewerConnection(ConnectionId);
+        bInvisible = !active;
+        bSolid = active;
         VisibleToPlayers = 0;
+        if (!active) return;
         for (int i = 0; i < MAXPLAYERS; i++)
         {
             if (!playeringame[i] || players[i].mo == null) continue;

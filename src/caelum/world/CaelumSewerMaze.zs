@@ -173,7 +173,8 @@ class CaelumSewerMaze : Object play
     static bool CanLeave(CaelumPlayer user)
     {
         if(level.MapName!="MAP02")return true;
-        if(BossAlive()) {CaelumNotifications.Notify(user,StringTable.Localize("CA_MAZE_ZUPAY_GUARD",false));return false;}
+        let progress=user.GetPersistentCharacterState(false);
+        if(progress==null || !progress.SewerZupayDefeated) {CaelumNotifications.Notify(user,StringTable.Localize("CA_MAZE_ZUPAY_GUARD",false));return false;}
         let record=user.GetPersistentCharacterState(false);
         if(record==null || !record.HasTarotCard(CUPS_ACE))
         {CaelumNotifications.Notify(user,StringTable.Localize("CA_MAZE_CARD_GUARD",false));return false;}
@@ -193,7 +194,7 @@ class CaelumSewerMaze : Object play
         while((enemy=Actor(enemies.Next()))!=null)if(enemy.health>0)mandingas++;
         let ratIt=ThinkerIterator.Create("CaelumGiantRat");Actor rat;
         while((rat=Actor(ratIt.Next()))!=null)if(rat.health>0)rats++;
-        Console.Printf("[Caelum 4.36.19] Laberinto MAP02: cofres=%d objetos restantes=%d Mandingas vivos=%d ratas vivas=%d Zupay vivo=%d",chests,objects,mandingas,rats,BossAlive());
+        Console.Printf("[Caelum 4.36.20] Laberinto MAP02: cofres=%d objetos restantes=%d Mandingas vivos=%d ratas vivas=%d Zupay vivo=%d",chests,objects,mandingas,rats,BossAlive());
         Console.Printf("Contenido inicial: 39 cofres, 65 piezas T1, 96 Mandingas, 192 ratas, 45 trampas, 120 raciones de comida y 120 de agua. Carta: índice %d.",CUPS_ACE);
         for(int i=0;i<MAXPLAYERS;i++)if(playeringame[i])
         {
@@ -206,48 +207,42 @@ class CaelumSewerMaze : Object play
     }
 }
 
-class CaelumCupsAceEssence : Actor
+class CaelumCupsAceEssence : CaelumM00FoolEssence
 {
-    int RevealedTo;
+    int RevealedTo; // Campo antiguo conservado; la revelación ahora pertenece al viajero.
+    override int CardId() { return CaelumConstants.TAROT_CUPS_ACE; }
     override void Tick()
     {
+        CaelumArcanaProgress.UpdateEssence(self);
         Super.Tick();
-        // En solitario la esencia desaparece al incorporarse a la colección.
-        if(!multiplayer && players[0].mo != null)
-        {
-            let owner = CaelumPlayer(players[0].mo);
-            let record = owner != null ? owner.GetPersistentCharacterState(false) : null;
-            if(record != null && record.HasTarotCard(CaelumSewerMaze.CUPS_ACE))
-            { Destroy(); return; }
-        }
-        for(int i=0;i<MAXPLAYERS;i++)
-        {
-            if(!playeringame[i] || (RevealedTo & (1<<i)))continue;
-            let user=CaelumPlayer(players[i].mo);
-            if(user==null || user.player==null || user.health<=0 || !user.CharacterCreationComplete
-                || user.CreationWizardOpen || user.Distance2D(self)>256 || !user.CheckSight(self))continue;
-            RevealedTo|=1<<i;EventHandler.SendInterfaceEvent(i,"ca_tarot_reveal");
-            CaelumNotifications.Notify(user,StringTable.Localize("CA_MAZE_CUPS_ACE",false));
-        }
     }
-    override bool Used(Actor activator)
+    Default { Tag "$CA_MAZE_CUPS_ACE"; +INVISIBLE -SOLID }
+    States
     {
-        let user=CaelumPlayer(activator);
-        if(user==null || user.player==null || user.health<=0 || !user.CharacterCreationComplete
-            || user.CreationWizardOpen || (user.player.cheats & CF_PREDICTING)
-            || !CaelumUseGeometry.AimedAt(user,self) || !user.CheckSight(self))return false;
-        if(CaelumSewerMaze.BossAlive())
-        {CaelumNotifications.Notify(user,StringTable.Localize("CA_MAZE_ZUPAY_GUARD",false));return true;}
-        let record=user.GetPersistentCharacterState(true);if(record==null)return false;
-        if(record.HasTarotCard(CaelumSewerMaze.CUPS_ACE))return true;
-        record.TarotOwned[CaelumSewerMaze.CUPS_ACE]=true;
-        user.ApplyCharacterProfile();user.RefreshSocialJournalSnapshot();
-        user.RefreshFormalInventorySnapshot();user.PersistCharacterState();
-        EventHandler.SendInterfaceEvent(user.PlayerNumber(),"ca_tarot_capture");
-        CaelumNotifications.Notify(user,StringTable.Localize("CA_MAZE_CUPS_CAPTURED",false));
-        // La esencia queda accesible para otros jugadores sin duplicar la colección.
-        return true;
+    Spawn:
+        CTAR A -1 Bright;
+        Stop;
+    // Registrar el frente al cargar actores evita inicializarlo por primera
+    // vez desde el hilo de renderizado al cambiar sprite en SetRevealed.
+    RevealedFront:
+        CACU A -1 Bright;
+        Stop;
     }
-    Default { Tag "$CA_MAZE_CUPS_ACE"; Radius 20; Height 48; Scale 0.65; +NOGRAVITY +FLOATBOB +SOLID }
-    States { Spawn: CTAR A -1 Bright; Stop; }
+}
+
+class CaelumWandsKnightEssence : CaelumM00FoolEssence
+{
+    override int CardId() { return CaelumConstants.TAROT_WANDS_KNIGHT; }
+    override void Tick()
+    {
+        CaelumArcanaProgress.UpdateEssence(self);
+        Super.Tick();
+    }
+    Default { Tag "$CA_TAROT_WANDS_KNIGHT_NAME"; +INVISIBLE -SOLID }
+    States
+    {
+    RevealedFront:
+        CAWK A -1 Bright;
+        Stop;
+    }
 }

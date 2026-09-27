@@ -1,6 +1,26 @@
 # Caelum Argenteum — Project, status and roadmap
 
-Documentation version: **4.36.19** — 2026-09-27.
+Documentation version: **4.36.20** — 2026-09-27.
+
+## 4.36.20 — Shared Arcana capture and the playable route (#33)
+
+Implemented the author's #33 instruction and 2026-09-27 clarification:
+MAP01/Fool -> MAP02/Ace of Cups -> existing MAP03 workshop/test room -> MAP06/
+Knight of Wands. The sewer Zupay retreats at 50% health with triple base speed,
+then disappears and counts as defeated. Both Minors now use the Fool's common
+Box capture procedure; availability never silently grants a card.
+
+At the port, the Knight appears beside the survivors once every extracted
+survivor's actual reward delivery is complete, or on arrival if none were
+extracted. This pre-siege condition is provisional. #16/#17 must replace it
+with an authored siege condition when the full encounter is implemented;
+this patch does not activate that future requirement. The second Minor's
+identity is now Knight of Wands, ID 60. Accepted prisoner rewards, extraction,
+siege assets and table cleanup remain in force.
+
+Static and isolated native evidence belongs in assets/validation_43620.
+Author campaign/presentation acceptance passed on 2026-09-27; see HISTORY.
+The linked PR is for review; this delivery does not imply merge or acceptance.
 
 ## 4.36.19 — Approved final cannon/gate balance (#21)
 
@@ -366,11 +386,11 @@ remains in #14, not this loot-policy patch.
 Unrescued NPCs must not appear there; benefits cannot duplicate on retry,
 save/load or travel. Broad companion formations remain outside this patch.
 
-Confirmed three-map route: MAP01 mansion/Fool -> MAP02 sewer/Ace of Cups ->
-existing MAP06 port/second Minor. Preserve map IDs. The current MAP02 exit
-targets MAP07, so #16 must update that player connection explicitly.
-The third map's objective is to stop a demon siege; its separate commanding
-Zupay holds the second Minor, whose exact identity is still PENDING.
+Confirmed route, updated by #33: MAP01 mansion/Fool -> MAP02 sewer/Ace of
+Cups -> existing MAP03 workshop/test room -> MAP06 port/Knight of Wands.
+Map IDs are preserved. The port's future objective is to stop a demon siege;
+#16/#17 will replace the provisional #33 reward-delivery appearance condition.
+The second Minor's identity is Knight of Wands (60).
 Catapults, rams and damageable actor gates are required, with separate
 asset/mechanic issues #18–#21. This bounded port encounter is now part of
 the playtest; a general world-siege director remains V5. Encounter counts,

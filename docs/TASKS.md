@@ -1,6 +1,23 @@
 # TASKS.md — Active tasks
 
-Documentation version: **4.36.19** — 2026-09-27.
+Documentation version: **4.36.20** — 2026-09-27.
+
+## Issue #33 — Arcana capture, wounded Zupay and forward route (4.36.20)
+
+- **Issue:** https://github.com/damiancurti/Caelum-Argenteum/issues/33
+- **Implemented:** shared capture for IDs 0/36/60, El loco naming, confirmed
+  boss-defeat reveal, provisional actual-reward gate for the Knight, wounded
+  sewer-boss retreat at triple speed, MAP02 -> MAP03 -> MAP06 only forward route.
+- **Preserved:** accepted extraction/rewards, siege test room cleanup, artwork,
+  card effects, map geometry and old ownership/IDs.
+- **Evidence:** assets/validation_43620 distinguishes static checks, native
+  scenarios, saved-game migration and review from author acceptance.
+- **Author acceptance:** CA-43620-ARCANA-01 and CA-43620-ROUTE-01 passed on 2026-09-27.
+- **Author-reported failure corrected:** Ace Use froze before confirmation.
+  Registered both Minor front sprites; native rendered dialogue/capture
+  retests pass. Author retest passed; see capture_render_fix.json and HISTORY.
+- **Next:** review the linked PR; #16/#17 replace the Knight's provisional
+  appearance rule when the complete port siege is implemented.
 
 ## Issue #43 — Walking wall-impact absorption (4.36.18)
 

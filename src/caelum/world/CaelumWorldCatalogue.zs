@@ -134,6 +134,8 @@ class CaelumWorldCatalogue : Object
 
     static clearscope bool IsSewerConnection(int id)
     {
-        return id >= CONNECTION_TO_RESERVOIR && id < CONNECTION_DEFINED_COUNT;
+        return id >= CONNECTION_TO_RESERVOIR && id < CONNECTION_DEFINED_COUNT
+            && id != CONNECTION_FROM_RESERVOIR && id != CONNECTION_TO_TAROT
+            && id != CONNECTION_TO_MAINTENANCE && id != CONNECTION_MAZE_TO_COAST;
     }
 }

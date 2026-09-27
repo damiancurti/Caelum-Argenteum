@@ -1,6 +1,18 @@
 # Caelum Argenteum — Audio and art
 
-Documentation version: **4.36.19** — 2026-09-27.
+Documentation version: **4.36.20** — 2026-09-27.
+
+## 4.36.20 — Shared Arcana presentation (#33)
+
+The accepted #15 artwork is reused without raster edits: Fool ID 0 keeps
+graphics/caelum/tarot/ca_tarot_fool.png, Ace ID 36 uses ca_tarot_36.png and
+Knight ID 60 uses ca_tarot_60.png in that same directory. TEXTURES binds CACU
+and CAWK using the existing CFLF front dimensions, offsets and scale.
+Their essence actors also register those fronts in appended RevealedFront
+states so the engine prepares the sprites before their first rendered use.
+CaelumTarotArt supplies each front/name; the existing CTAR back and the Fool's
+single animation, reveal cue and capture cue are shared. Attribution and the
+78-card manifest remain intact. No new powers, art or siege assets are added.
 
 ## 4.36.17 — Approximate Argentine 1884 cannon reconstruction (#21)
 
