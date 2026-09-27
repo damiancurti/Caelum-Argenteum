@@ -1,6 +1,6 @@
 # Caelum Argenteum — Audio and art
 
-Documentation version: **4.36.18** — 2026-09-27.
+Documentation version: **4.36.19** — 2026-09-27.
 
 ## 4.36.17 — Approximate Argentine 1884 cannon reconstruction (#21)
 
@@ -43,7 +43,7 @@ Reconstruction input table (32 MU/m):
 | Trunnion height | 1.05 m = 33.6 MU | Approximate reconstruction |
 | Axle-to-trail/muzzle | 1.6 /1.25 m = 51.2 /40 MU | Approximate reconstruction |
 | Machine/tube/carriage mass | 850 /300 /550 kg | Comparison-based estimates; excluded from projectile damage |
-| Muzzle velocity | 400 m/s | Author game decision, not historical measurement |
+| Muzzle velocity | 500 m/s | Author final decision 2026-09-27, superseding 400 m/s; not historical measurement |
 | Complete cycle | 30 s (two operators), 60 s (one) | Author game decision, not sourced historical cadence |
 
 The carriage is iron with wooden wheels and a steel tube/wedge; precise alloy,

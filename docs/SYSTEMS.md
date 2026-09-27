@@ -1,6 +1,60 @@
 # Caelum Argenteum — Current systems and rules
 
-Documentation version: **4.36.18** — 2026-09-27.
+Documentation version: **4.36.19** — 2026-09-27.
+
+## 4.36.19 — Final siege impact balance (#21)
+
+Author-approved on 2026-09-27 after the numerical comparison: cannon muzzle
+speed is 500 m/s (457.142857143 MU/tic), inert projectile mass remains 4.3 kg,
+and gate Toughness and Constitution are 50/100/200. All Caelum physical
+collision reception (player, combat NPC and gate) now divides severity by
+Type 4 rather than subtracting Toughness points:
+D(T)=1+T*(T+1)/5050; P=max(0,S*E)/D(T).
+Biological absorption precedes E; anatomy and armor follow P on biological
+targets. The player preserves the existing active buckler/giant-gauntlet
+effective-Toughness bonus. No second Type 4 or native armor pass is added.
+Ordinary weapon reduction uses the same divisor. Pain/Lucidity curves,
+native crusher damage, restitution, contact normals and momentum stay unchanged.
+
+| Gate | Mass kg | Toughness / Constitution | Maximum resistance | Divisor |
+| --- | --- | --- | --- | --- |
+| Normal wood | 550 | 50 /50 | 75,625 | 1.504950495 |
+| Reinforced | 650 | 100 /100 | 334,750 | 3 |
+| Armored | 1,100 | 200 /200 | 2,222,000 | 8.960396040 |
+
+Frontal stationary-target impacts; small/large ram moving masses remain
+2,874.990701 /15,333.283739 kg and contact speed remains 37.780229 m/s.
+Each cell is damage /percent maximum /hits to break an intact independent gate.
+Integer hit counts include the existing nearest-integer damage rounding.
+
+| Attack | Normal | Reinforced | Armored |
+| --- | --- | --- | --- |
+| Small ram | 53,889 /71.2579% /2 | 112,963 /33.7456% /3 | 197,380 /8.8830% /12 |
+| Large ram | 71,288 /94.2647% /2 | 156,321 /46.6977% /3 | 328,626 /14.7897% /7 |
+| Cannon 500 m/s | 766 /1.0125% /99 | 1,194 /0.3568% /281 | 800 /0.0360% /2,778 |
+
+This supersedes the original small-ram immunity of armored gates and the
+initial cannon zero-gate-damage result. The retained whole-body impulse rule
+still makes the cannon weak against heavy gates. No penetration or explosion
+is introduced. Kinetic energy at release is 537,500 J; the ideal same-height
+vacuum range under default native gravity is 6,530.612 m, not a historical claim.
+
+Gate save balance revision 1 reconciles initialized old gates on Tick or first
+use/contact. It retains the fraction of resistance remaining, rounds to the
+nearest health point, keeps a positive intact remainder at least 1, and preserves
+opened/broken state, components, timers and contact serials. New intact gates
+start at their new maximum. SetLegacyBalanceForRecovery(true) is an explicit
+recovery hook that restores the old attribute/maximum-health scale proportionally;
+its saved flag prevents automatic reapplication. Passing false reapplies revision 1.
+It does not revert the global collision formula. Intact/partial/open/broken
+old saves, repeated reconciliation, reverse/forward conversion and save/load
+are validated. Previously released projectiles retain saved velocity/ownership;
+500 m/s applies to new launches.
+
+The 80 kg body plus 20 kg equipment calculation and walking-only wall
+amortization remain as documented below. The balance is approved and merge/
+closure authorized; new manual observations are tracked separately as
+CA-43619-BALANCE-01, alongside the unconfirmed CA-43618-WALK-01.
 
 ## 4.36.18 — Walking wall-impact absorption (#43)
 
@@ -29,11 +83,13 @@ registered 11.165531 MU/tic downward before landing. Subtracting JumpZ leaves
 0.331062 MU/tic, below the canonical 0.8 MU/tic severity threshold: zero damage,
 with 2,480 health retained. The prediction assumes unchanged load/state through
 flight and the same floor height; falling to a lower floor is a different test.
-The preceding proposal of 500 m/s cannons and Type 4 collision Toughness is
-calculation-only. Runtime cannon speed remains 400 m/s and collision Toughness
-still subtracts from severity.
+The 500 m/s cannon and Type 4 collision proposal was subsequently approved
+and implemented in 4.36.19 above.
 
 ## 4.36.17 — Controlled cannon fire (#21; planned label 4.36.13)
+
+Historical delivery baseline: speed, attributes and impact mitigation below
+are superseded by the 4.36.19 balance above; other mechanics remain current.
 
 The author confirmed an approximate documented reconstruction, an inert
 elongated 75 mm /185 mm /4.3 kg round, two operators (load/fire), and a 30-second
@@ -111,6 +167,9 @@ or historical range measurements. Pre-feature saves opt in only when a cannon
 is explicitly created; no saved actor or map is replaced.
 
 ## 4.36.16 — Mobile demonic rams (#20; planned label 4.36.12)
+
+Historical balance: the armored immunity and subtractive mitigation below are
+superseded by 4.36.19. Moving masses, contact speed and operation are retained.
 
 The author confirmed on 2026-09-26 that operation requires all 6 small-ram or
 32 large-ram operators. Partial staffing stops advance, striking and recovery;
@@ -214,6 +273,9 @@ after native Die through the same idempotent receiver. This preserves old-save
 neutralization without polling health or treating missing actors as deaths.
 
 ## 4.36.15 — Breakable actor gates (#19; planned label 4.36.11)
+
+Historical delivery baseline: speed, attributes and impact mitigation below
+are superseded by the 4.36.19 balance above; other mechanics remain current.
 
 The author's 2026-09-26 clarification defines the issue's 0.3/0.5/0.7 as
 ordinary weapon damage reductions of 30%/50%/70%. Invert the existing Type 4
@@ -739,11 +801,11 @@ E is a reference percentage, not physical energy in joules. Its undamaged thresh
 u≤0,8 MU/tic; u=28 produces E=100%. It is not limited to 100%. The height of the
 character no longer alters the reference of 28 MU.
 
-    P = max(0, S·E − T)
+    P = max(0, S·E) / (1 + T*(T+1)/5050)  [updated in 4.36.19]
     W = suma_i [ wi · Vi · (1−Ai) ]
     Daño = floor(Hmax · P · W / 100 + 0,5)
 
-S is the surface multiplier (rock: 1); T is effective Hardness in percentage points;
+S is the surface multiplier (rock: 1); T is the effective Toughness attribute level;
 Hmax is maximum health, not remaining health. wi weights anatomical overlap; Vi is
 vulnerability after reinforcement and Ai is the defense of the corresponding piece,
 between 0 and 1. Vi can be 2, 1,6, 1,3, 1, 0,8, 0,6 or 0,4. The vertical impact of the
@@ -755,10 +817,10 @@ W=1, without damping. The receiver is initially stationary.
 
 | Closing speed (MU/tic) | Received Δv | E (%) | Rounded damage |
 | --- | --- | --- | --- |
-| 8 | 7.984 | 8.06 | 0 |
-| 16 | 15.969 | 32.47 | 347 |
-| 24 | 23.953 | 73.16 | 1071 |
-| 32 | 31.937 | 130.13 | 2085 |
+| 8 | 7.984 | 8.06 | 138 |
+| 16 | 15.969 | 32.47 | 558 |
+| 24 | 23.953 | 73.16 | 1257 |
+| 32 | 31.937 | 130.13 | 2236 |
 
 Actual health, armor, anatomy, relative motion, and acrobatic defense can change the
 result. It is not guaranteed to kill any character.
@@ -2679,7 +2741,7 @@ lucidity, Dialogue skill and durations do not share a single curve today.
 | Attribute / family | Implemented combat use | Implemented noncombat use | Differences from the table |
 | --- | --- | --- | --- |
 | Strength / Physical | Melee damage and physical thrust Type 1, with body mass. | Load Type 4; object thrust and launch power use Strength. | It matches the main thing. "Physical power" is not another independent universal effect: it is expressed in the routes of damage, thrust and launch. |
-| Hardness / Physical | Ordinary physical/magic damage after armor divided by Type 4. Pain and loss of Lucidity use Type 3. | The kinematic impacts retain their subtraction of percentage damage points per Hardness. | Scales must be updated and the scope of “environmental damage” must be narrowed: it is not universal resistance to drowning, drainage for needs or any damage outside the classified system. |
+| Hardness / Physical | Ordinary physical/magic damage after armor divided by Type 4. Pain and loss of Lucidity use Type 3. | Since 4.36.19, kinematic impacts also divide by Type 4, after biological absorption and before anatomy/armor. | Scales must be updated and the scope of “environmental damage” must be narrowed: it is not universal resistance to drowning, drainage for needs or any damage outside the classified system. |
 | Constitution / Physical | Maximum health Type 1, with body mass. | Passive Hunger/Thirst and natural health regeneration costs/Air divided by Type 4. | It is not connected to shortening debuffs or incoming poisons. There is no disease system implemented that applies that duration. |
 | Dexterity / Technical | Attack speed Type 4, physical precision Type 1 and physical critical chance Type 2. It also reduces the ranged-weapon reload time by Type 4. | Type 1 reduces the working time of materials in manufacture. | The ammunition reload belongs here; it is appropriate to distinguish it from the cooldown of skills when updating the table. Crafting covers a specific manual use, not a general system of accuracy rolls. |
 | Resilience / Technical | Maximum Adrenaline, Health Regeneration Factor and Air Capacity Type 4. | Sleep loss divided by Type 4, restored to 0ai. | Matches in association. Explain the Sleep divider; health regeneration is calculated over its maximum. |

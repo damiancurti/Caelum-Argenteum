@@ -15,6 +15,8 @@ class CaelumBreakableGate : Actor
     bool Initialized;
     bool Broken;
     bool Opened;
+    int BalanceRevision;
+    bool LegacyBalanceForRecovery;
     // Una explosión puede alcanzar muchos bloques. Guardar el máximo de cada
     // explosión, no sumar sus muestras ni perder otra explosión del mismo tic.
     Array<Actor> ExplosionSources;
@@ -31,18 +33,10 @@ class CaelumBreakableGate : Actor
 
     void InitializeGate()
     {
-        if (Initialized) return;
+        if (Initialized) { EnsureGateBalance(); return; }
         Initialized = true;
         Mass = CaelumGateData.MovingMass(args[1]);
-        // Invertir exactamente Tipo 4; conservar fracciones y permitir >100.
-        double reduction = CaelumGateData.Reduction(args[1]);
-        Toughness = (Sqrt(1.0 + 20200.0 * reduction / (1.0 - reduction)) - 1.0) / 2.0;
-        Constitution = Toughness;
-        let stats = new("CaelumDerivedStats");
-        RetainedDamage = 100.0 / stats.CalculateType4Percent(Toughness);
-        StructuralMaximum = Max(1, int(CaelumConstants.HEALTH_ANIMA_DAMAGE_SCALE
-            * stats.CalculateType1Percent(Constitution) * (Mass / 100.0)));
-        health = StructuralMaximum;
+        EnsureGateBalance();
         GateVisual = Spawn(CaelumGateData.VisualClass(args[1]), Pos, NO_REPLACE);
         if (GateVisual != null) { GateVisual.master = self; GateVisual.Angle = Angle; }
         // Espaciado menor que el diámetro: cobertura continua aun en diagonal.
@@ -60,6 +54,38 @@ class CaelumBreakableGate : Actor
             block.A_SetSize(radius, CaelumGateData.HEIGHT);
             Blocks.Push(block);
         }
+    }
+
+    void EnsureGateBalance()
+    {
+        int desiredRevision = LegacyBalanceForRecovery ? 0 : CaelumGateData.BALANCE_REVISION;
+        if (StructuralMaximum > 0 && BalanceRevision == desiredRevision) return;
+        // Migrar resistencia proporcional sin reparar, cerrar ni resucitar.
+        double remaining = StructuralMaximum > 0
+            ? Clamp(double(health) / StructuralMaximum, 0.0, 1.0) : 1.0;
+        double levelValue = CaelumGateData.AttributeLevel(args[1]);
+        if (LegacyBalanceForRecovery)
+        {
+            double reduction = CaelumGateData.LegacyReduction(args[1]);
+            levelValue = (Sqrt(1.0 + 20200.0 * reduction / (1.0 - reduction)) - 1.0) / 2.0;
+        }
+        Toughness = levelValue; Constitution = levelValue;
+        let stats = new("CaelumDerivedStats");
+        RetainedDamage = 100.0 / stats.CalculateType4Percent(Toughness);
+        StructuralMaximum = Max(1, int(CaelumConstants.HEALTH_ANIMA_DAMAGE_SCALE
+            * stats.CalculateType1Percent(Constitution) * (Mass / 100.0)));
+        health = Broken || remaining <= 0 ? 0
+            : Max(1, int(StructuralMaximum * remaining + 0.5));
+        BalanceRevision = desiredRevision;
+    }
+
+    // Herramienta de recuperación explícita; no la invoca el juego normal.
+    // La elección se guarda para que Tick no rehaga una reversión solicitada.
+    void SetLegacyBalanceForRecovery(bool legacy)
+    {
+        InitializeGate();
+        LegacyBalanceForRecovery = legacy;
+        EnsureGateBalance();
     }
 
     bool IsPeer(CaelumBreakableGate other)
@@ -223,7 +249,8 @@ class CaelumBreakableGate : Actor
 
     int ReceiveStructuralImpact(Actor source, Actor instigator, double energyPercent, double surfaceMultiplier)
     {
-        double percent = Max(0.0, energyPercent * surfaceMultiplier - Toughness);
+        InitializeGate();
+        double percent = Max(0.0, energyPercent * surfaceMultiplier) * RetainedDamage;
         int damage = int(StructuralMaximum * percent / 100.0 + 0.5);
         return DamageMobj(source, instigator, damage, 'CaelumImpact', DMG_NO_ARMOR, Angle);
     }

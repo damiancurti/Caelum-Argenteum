@@ -1455,11 +1455,7 @@ class CaelumCombatActor : Actor
 
     double GetImpactToughnessMultiplier()
     {
-        return Clamp(
-            1.0 - CombatToughness * (CombatToughness + 1) / 10100.0,
-            0.0,
-            1.0
-        );
+        return 100.0 / CalculateActorType4Percent(Max(0, CombatToughness));
     }
 
     double GetImpactArmorDefensePercent()
@@ -1694,10 +1690,9 @@ class CaelumCombatActor : Actor
         double surfacedDamagePercent =
             LastImpactDamagePercent
                 * Max(0.0, sourceSurfaceMultiplier);
-        LastImpactPostToughnessPercent = Max(
-            0.0,
-            surfacedDamagePercent - LastImpactToughnessPercent
-        );
+        LastImpactToughnessMultiplier = GetImpactToughnessMultiplier();
+        LastImpactPostToughnessPercent =
+            surfacedDamagePercent * LastImpactToughnessMultiplier;
 
         if (AnatomyProfile == null)
         {

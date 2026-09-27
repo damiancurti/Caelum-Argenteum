@@ -2,7 +2,7 @@
   "provenance": "Issue #21; author-approved approximate reconstruction and gameplay decisions, 2026-09-26. Not a verified Argentine 1884 technical specification.",
   "map_units_per_metre": 32,
   "native_tics_per_second": 35,
-  "muzzle_speed_m_s": 400,
+  "muzzle_speed_m_s": 500,
   "projectile_mass_kg": 4.3,
   "projectile_diameter_m": 0.075,
   "projectile_length_m": 0.185,
@@ -24,7 +24,7 @@
   "flight_lifetime_seconds": 120,
   "trial": {"lanes": 5, "first_x": -1200, "spacing_x": 600, "gun_y": 2280, "target_y": 2850, "operator_side": 90, "rounds": 4},
   "notes": [
-    "400 m/s, inert 75 x 185 mm /4.3 kg ammunition, two operators and 30/60 second cycles are author decisions.",
+    "500 m/s approved 2026-09-27, superseding the initial 400 m/s; inert 75 x 185 mm /4.3 kg ammunition, two operators and 30/60 second cycles remain author decisions.",
     "850/300/550 kg and 1.528 m track are comparison-based reconstruction estimates from a DIFFERENT Krupp M1886, explicitly not Argentine 1884 measurements.",
     "Other dimensions reconstruct a wedge-breech iron carriage with wooden wheels; they remain approximate.",
     "Recoil is presentation only; recovery is included in the approved full cycle. Lifetime is a resource bound, not a claimed historical range.",

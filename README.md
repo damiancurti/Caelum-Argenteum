@@ -4,7 +4,7 @@ An independent dark fantasy FPS-RPG inspired by nineteenth-century Argentina.
 Author and game designer: **Damian Curti**. Development target: **GZDoom 4.14.2**
 on Windows 11. The final game is intended to be independent of Doom assets.
 
-**Current release: 4.36.18.** Obtain and update the complete repository, validate
+**Current release: 4.36.19.** Obtain and update the complete repository, validate
 it, then rebuild with `run_dev.bat` as described below.
 
 Issue [#43](https://github.com/damiancurti/Caelum-Argenteum/issues/43) extends
@@ -16,12 +16,14 @@ manual acceptance CA-43618-WALK-01 remains in [pending_test.txt](pending_test.tx
 
 Issue [#21](https://github.com/damiancurti/Caelum-Argenteum/issues/21) adds
 controlled cannon loading, firing and recovery, with inert 4.3 kg projectiles
-launched at 400 m/s through native fast collision and gravity. Two operators
+launched at 500 m/s through native fast collision and gravity. Two operators
 complete a cycle in 30 seconds; one takes 60 seconds; none pauses it. Both
 factions retain projectile ownership and only attackers count as objectives.
 The author authorized an approximate documented reconstruction of the selected
-Argentine 1884 gun. Shared collision rules remain unchanged: these projectiles
-cause zero structural gate damage at the approved speed, but can injure characters.
+Argentine 1884 gun. The final 4.36.19 balance applies Type 4 Toughness division to
+collisions and sets gate Toughness/Constitution to 50/100/200. A frontal shot
+now inflicts 766/1,194/800 points on normal/reinforced/armored gates; existing
+saves migrate proportionally with an explicit recovery hook.
 In disposable MAP03, use `give CaelumDebugCannonTrial` and
 `give CaelumDebugCannonStatus`. Native evidence is in
 [validation_43617](assets/validation_43617/manifest.json).
@@ -615,7 +617,7 @@ preserved. The broader unfinished 4.36 physics roadmap remains in PROJECT.md.
   Giant gauntlets retain Block. Charged sweeps consume the existing charge.
 - General incoming damage after armor divides by Type 4 Toughness; magical
   Anima cost divides by Type 4 Eloquence. At 100 the divisor is 3. Physical
-  collisions keep their subtractive Toughness rule; pain and Lucidity retain
+  collisions also use Type 4 since 4.36.19; pain and Lucidity retain
   their previous curves. Existing saved character statistics are refreshed.
 
 - Ronnie now shows current carried kilograms, capacity and the load-only Air

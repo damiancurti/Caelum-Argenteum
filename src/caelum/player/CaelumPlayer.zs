@@ -12172,9 +12172,11 @@ class CaelumPlayer : DoomPlayer
     double GetImpactToughnessMultiplier()
     {
         if (DerivedStats == null) { return 1.0; }
-        // Consulta heredada: no adopta el divisor de daño general. La ruta
-        // de colisión vigente resta Toughness al porcentaje de impacto.
-        return Clamp(DerivedStats.PainChanceMultiplier, 0.0, 1.0);
+        double toughness = Attributes != null ? Max(0.0, Attributes.Toughness) : 0.0;
+        if (IsBucklerAcrobaticDefenseActive())
+            toughness *= CaelumConstants.SHIELD_BUCKLER_IMPACT_TOUGHNESS_MULTIPLIER;
+        // Mismo divisor Tipo 4 que las armas; se aplica una sola vez.
+        return 100.0 / DerivedStats.CalculateType4Percent(toughness);
     }
 
     double GetImpactArmorDefensePercent()
@@ -12501,10 +12503,9 @@ class CaelumPlayer : DoomPlayer
         double surfaceMultiplier = Max(0.0, sourceSurfaceMultiplier);
         double surfacedDamagePercent =
             LastImpactDamagePercent * surfaceMultiplier;
-        LastImpactPostToughnessPercent = Max(
-            0.0,
-            surfacedDamagePercent - LastImpactToughnessPercent
-        );
+        LastImpactToughnessMultiplier = GetImpactToughnessMultiplier();
+        LastImpactPostToughnessPercent =
+            surfacedDamagePercent * LastImpactToughnessMultiplier;
 
         if (AnatomyProfile == null)
         {

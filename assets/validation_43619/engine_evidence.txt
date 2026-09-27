@@ -1,0 +1,358 @@
+=== balance21_final_matrix ===
+QA21B PASS approved gate attributes and maximum
+QA21B PASS approved per-hit integer damage
+QA21B PASS duplicate impact serial is ignored
+QA21B PASS approved hit count breaks gate exactly once
+QA21B MATRIX weapon=0 material=0 maximum=75625 damage=53889 hits=2
+QA21B PASS approved gate attributes and maximum
+QA21B PASS approved per-hit integer damage
+QA21B PASS duplicate impact serial is ignored
+QA21B PASS approved hit count breaks gate exactly once
+QA21B MATRIX weapon=0 material=1 maximum=334750 damage=112963 hits=3
+QA21B PASS approved gate attributes and maximum
+QA21B PASS approved per-hit integer damage
+QA21B PASS duplicate impact serial is ignored
+QA21B PASS approved hit count breaks gate exactly once
+QA21B MATRIX weapon=0 material=2 maximum=2222000 damage=197380 hits=12
+QA21B PASS approved gate attributes and maximum
+QA21B PASS approved per-hit integer damage
+QA21B PASS duplicate impact serial is ignored
+QA21B PASS approved hit count breaks gate exactly once
+QA21B MATRIX weapon=1 material=0 maximum=75625 damage=71288 hits=2
+QA21B PASS approved gate attributes and maximum
+QA21B PASS approved per-hit integer damage
+QA21B PASS duplicate impact serial is ignored
+QA21B PASS approved hit count breaks gate exactly once
+QA21B MATRIX weapon=1 material=1 maximum=334750 damage=156321 hits=3
+QA21B PASS approved gate attributes and maximum
+QA21B PASS approved per-hit integer damage
+QA21B PASS duplicate impact serial is ignored
+QA21B PASS approved hit count breaks gate exactly once
+QA21B MATRIX weapon=1 material=2 maximum=2222000 damage=328626 hits=7
+QA21B PASS approved gate attributes and maximum
+QA21B PASS approved per-hit integer damage
+QA21B PASS duplicate impact serial is ignored
+QA21B PASS approved hit count breaks gate exactly once
+QA21B MATRIX weapon=2 material=0 maximum=75625 damage=766 hits=99
+QA21B PASS approved gate attributes and maximum
+QA21B PASS approved per-hit integer damage
+QA21B PASS duplicate impact serial is ignored
+QA21B PASS approved hit count breaks gate exactly once
+QA21B MATRIX weapon=2 material=1 maximum=334750 damage=1194 hits=281
+QA21B PASS approved gate attributes and maximum
+QA21B PASS approved per-hit integer damage
+QA21B PASS duplicate impact serial is ignored
+QA21B PASS approved hit count breaks gate exactly once
+QA21B MATRIX weapon=2 material=2 maximum=2222000 damage=800 hits=2778
+QA21B PASS player applies Type4 Toughness exactly once at neutral unarmored contact
+QA21B PASS NPC applies same Type4 Toughness exactly once
+QA21B BODY toughness=0 expected=10000 player=10000 npc=10000
+QA21B PASS player applies Type4 Toughness exactly once at neutral unarmored contact
+QA21B PASS NPC applies same Type4 Toughness exactly once
+QA21B BODY toughness=20 expected=9232 player=9232 npc=9232
+QA21B PASS player applies Type4 Toughness exactly once at neutral unarmored contact
+QA21B PASS NPC applies same Type4 Toughness exactly once
+QA21B BODY toughness=50 expected=6645 player=6645 npc=6645
+QA21B PASS player applies Type4 Toughness exactly once at neutral unarmored contact
+QA21B PASS NPC applies same Type4 Toughness exactly once
+QA21B BODY toughness=100 expected=3333 player=3333 npc=3333
+QA21B PASS player crushing subtracts biological speed before Type4 division
+QA21B PASS floor impact retains biological subtraction before Type4 division
+QA21B PASS NPC crushing uses the same ordered physical response
+QA21B PASS player applies Type4 Toughness exactly once at neutral unarmored contact
+QA21B PASS NPC applies same Type4 Toughness exactly once
+QA21B BODY toughness=200 expected=1116 player=1116 npc=1116
+QA21B PASS torso reinforcement and twenty percent armor follow Type4 exactly once
+QA21B DONE checks=50 failures=0
+
+=== balance21_final_advanced ===
+QA21A INPUT speed=457.142857143 mass=4.300000 gravity=1.000000000 E=537500.000
+QA21A PASS six attacking and twelve defending guns fire once together
+QA21A PASS all eighteen projectiles retain launcher and side
+QA21A PASS only attackers are objective machines
+QA21A PASS muzzle sweep detects wall inside barrel path
+QA21A PASS native ceiling and floor stop vertical shots
+QA21A PASS native round stops with approved per-material damage
+QA21A PASS native round stops with approved per-material damage
+QA21A PASS native round stops with approved per-material damage
+QA21A PASS player receives canonical projectile-mass collision
+QA21A PASS same-side body blocks projectile without friendly damage
+QA21A PASS neutralization preserves already released projectile
+QA21A PASS fast shot cannot tunnel through thin native wall
+QA21A PASS overlapping callback cannot count another impact
+QA21A PASS native unobstructed arc matches gravity per physical tic
+QA21A PASS velocity changes during flight instead of forced constant speed
+QA21A ARC t=10 pos=-7498.022109 8000.000000 1738.820187 vz=69.382018730
+QA21A PASS all eighteen opposing targets receive one legitimate contact
+QA21A PASS simultaneous salvo leaves no spent projectile accumulation
+QA21A PASS million-kg stationary carriage does not increase projectile damage
+QA21A PASS neutralized gun preserves impact and cannot reactivate
+QA21A PASS temporarily absent operators pause without neutralization
+QA21A PASS one returning operator resumes half-rate work
+QA21A PASS two returning operators resume full-rate work
+QA21A PASS crew cannot be assigned to two guns
+QA21A DONE checks=23 failures=0
+
+=== balance21_final_ram ===
+QA20 PASS assigned existing operator
+QA20 PASS assigned existing operator
+QA20 PASS assigned existing operator
+QA20 PASS assigned existing operator
+QA20 PASS assigned existing operator
+QA20 PASS assigned existing operator
+QA20 PASS seal twelve hostile machines with boss
+QA20 PASS explicit activation hook
+QA20 PASS six living nearby operators
+QA20 INPUT mass=2874.990701 speed=34.541924 transport=5125 radius=300.000
+QA20M PASS million-kg frame does not increase native assembly damage
+QA20M PASS small ram damages armored gate at approved final balance
+QA20M PASS large ram damages armored gate through shared physics
+QA20M PASS approved exact crew sizes
+QA20M PASS missing operator stops operation without neutralization
+QA20M PASS same operator cannot crew two machines
+QA20M PASS full staffing resumes and small ram damages reinforced gate
+QA20M VALUES wood=53889 reinforced=112963 small_armored=197380 large_armored=328626 mass=15333.283739 speed=34.541924
+QA20M PASS visible plate contacts gate within half-map-unit sweep tolerance
+QA20M PASS spent native contact cannot be applied twice
+QA20M PASS chassis respects native gate obstruction
+QA20M PASS failed chassis sweep rolls back all components
+QA20M PASS stroke contacts real NPC obstruction once
+QA20M PASS NPC receives existing physical-impact damage
+QA20M PASS NPC receives canonical transmitted impulse
+QA20M PASS native player obstruction consumes one contact
+QA20M PASS player retains biological impact-damage path
+QA20 STATE tic=100 x=0.000 y=2241.143 phase=1 stroke=-16.000 hit=0 damage=0 health=75625 blocked=0 crew=1
+QA20M PASS native gradual alignment reaches requested angle with matching components
+QA20M DONE checks=17 failures=0
+QA20 STATE tic=200 x=0.000 y=2286.857 phase=1 stroke=-16.000 hit=0 damage=0 health=75625 blocked=0 crew=1
+QA20 STATE tic=300 x=0.000 y=2332.571 phase=1 stroke=-16.000 hit=0 damage=0 health=75625 blocked=0 crew=1
+QA20 PASS native approach reaches authored endpoint
+QA20 PASS one contact in first strike/recovery
+QA20 PASS real moving assembly damages wooden gate
+QA20 PASS explicit recovery phase
+QA20 STATE tic=400 x=0.000 y=2338.000 phase=4 stroke=23.139 hit=2 damage=21736 health=0 blocked=0 crew=1
+QA20 PASS recovery permits reuse
+QA20 DONE checks=14 failures=0
+QA20 STATE tic=500 x=0.000 y=2338.000 phase=4 stroke=0.450 hit=2 damage=21736 health=0 blocked=0 crew=1
+QA20P PASS re-register same attacker is idempotent
+QA20P PASS cannot arm before explicit roster seal
+QA20P PASS empty initial placement not neutralized
+QA20P PASS overlapping areas track same real guards
+QA20P PASS mobile area follows machine and remembers previous guards
+QA20P PASS native death event records confirmed elimination
+QA20P PASS temporarily absent living guard prevents neutralization
+QA20P PASS unloaded or destroyed living reference is not a kill
+QA20P PASS boss first does not grant victory
+QA20P PASS last remembered guard death neutralizes once
+QA20P PASS neutralized machine cannot reactivate
+QA20P PASS repeated scans do not duplicate objective
+QA20P PASS unproven empty and missing cases remain pending
+QA20P PASS twelve cleared plus earlier boss starts victory once
+QA20P PASS distant survivor withdraws without kill requirement
+QA20P PASS machines first still requires living boss defeated
+QA20P PASS boss last also completes victory once
+QA20P PASS withdrawal obstruction prevents disappearance
+QA20P PASS survivor visibly approaches route before obstruction
+QA20 STATE tic=600 x=0.000 y=2338.000 phase=4 stroke=0.450 hit=2 damage=21736 health=0 blocked=0 crew=1
+QA20 STATE tic=700 x=0.000 y=2338.000 phase=4 stroke=0.450 hit=2 damage=21736 health=0 blocked=0 crew=1
+QA20 STATE tic=800 x=0.000 y=2338.000 phase=4 stroke=0.450 hit=2 damage=21736 health=0 blocked=0 crew=1
+QA20P PASS survivor exits only after reaching boundary
+QA20P PASS evacuation awards no kill
+QA20P PASS evacuation never blocks victory or repeats reward hook
+QA20P DONE checks=22 failures=0
+
+=== issue43_balance_final ===
+QA43 PASS directional grounded non-run input is walking
+QA43 PASS walking wall uses existing Agility fraction
+QA43 PASS walking does not absorb actor hits
+QA43 PASS walking does not absorb ram or cannon hits
+QA43 PASS walking fraction retains fifty percent cap
+QA43 PASS effective run flag disables walking benefit
+QA43 PASS idle does not count as walking
+QA43 PASS strafe walking is eligible
+QA43 PASS airborne input does not count as walking
+QA43 PASS immobilization disables absorption
+QA43 PASS existing crouched wall benefit remains
+QA43 PASS active buckler still absorbs environmental hits
+QA43 PASS active buckler retains doubled landing absorption
+QA43 PASS ordinary landing absorption remains JumpZ
+QA43 TRACE t=49 hp=2480 php=2480 max=2480.000000000 attr=20.0 z=0.000000000 vz=0.000000000 impact=0 final=0 jump=10.834469023
+QA43 PASS medium T1 size M full set weighs twenty kg
+QA43 PASS eighty kg body plus equipment has hundred kg impact mass
+QA43 PASS persistent profile retains twenty attributes and 2480 health
+QA43 PROFILE hp=2480 mass=100.000000 capacity=86.653465347 load=0.230804388 jump=10.834469023 absorb=10.834469023
+QA43 TRACE t=66 hp=2480 php=2480 max=2480.000000000 attr=20.0 z=0.000000000 vz=10.834469023 impact=0 final=0 jump=10.834469023
+QA43 PASS native jump lands at original floor height
+QA43 PASS native self jump causes zero health loss with equipment load
+QA43 JUMP launch=10.834469023 peak=64.179159254 fall=11.165530977 absorption=10.834469023 health=2480 tics=22
+QA43 TRACE t=90 hp=2480 php=2480 max=2480.000000000 attr=20.0 z=-0.000000000 vz=0.000000000 impact=3 final=0 jump=10.834469023
+QA43 PASS native walking contacts wall
+QA43 PASS native walking wall contact receives biological absorption
+QA43 WALL walking=1 raw=2.336335788 bio=0.827783927 trauma=1.508551860
+QA43 PASS native running contacts wall
+QA43 PASS native running wall contact receives no walking absorption
+QA43 WALL walking=0 raw=3.266590045 bio=0.000000000 trauma=3.266590045
+QA43 PASS native jump completed rather than skipped
+QA43 DONE checks=24 failures=0
+
+=== balance21_final_migration ===
+QA21M PASS old save retains six gate records
+QA21M PASS legacy balance migrates proportionally once
+QA21M PASS passage components and collision serials survive migration
+QA21M PASS repeated reconciliation never refills
+QA21M PASS explicit rollback restores exact original gate attributes and health
+QA21M PASS reapplying migration preserves remaining resistance and broken state
+QA21M PASS legacy balance migrates proportionally once
+QA21M PASS passage components and collision serials survive migration
+QA21M PASS repeated reconciliation never refills
+QA21M PASS explicit rollback restores exact original gate attributes and health
+QA21M PASS reapplying migration preserves remaining resistance and broken state
+QA21M PASS legacy balance migrates proportionally once
+QA21M PASS passage components and collision serials survive migration
+QA21M PASS repeated reconciliation never refills
+QA21M PASS explicit rollback restores exact original gate attributes and health
+QA21M PASS reapplying migration preserves remaining resistance and broken state
+QA21M PASS legacy balance migrates proportionally once
+QA21M PASS passage components and collision serials survive migration
+QA21M PASS repeated reconciliation never refills
+QA21M PASS explicit rollback restores exact original gate attributes and health
+QA21M PASS reapplying migration preserves remaining resistance and broken state
+QA21M PASS legacy balance migrates proportionally once
+QA21M PASS passage components and collision serials survive migration
+QA21M PASS repeated reconciliation never refills
+QA21M PASS explicit rollback restores exact original gate attributes and health
+QA21M PASS reapplying migration preserves remaining resistance and broken state
+QA21M PASS legacy balance migrates proportionally once
+QA21M PASS passage components and collision serials survive migration
+QA21M PASS repeated reconciliation never refills
+QA21M PASS explicit rollback restores exact original gate attributes and health
+QA21M PASS reapplying migration preserves remaining resistance and broken state
+QA21M DONE checks=31 failures=0
+
+=== balance21_migration_repeat ===
+QA21M PASS old save retains six gate records
+QA21M PASS legacy balance migrates proportionally once
+QA21M PASS passage components and collision serials survive migration
+QA21M PASS repeated reconciliation never refills
+QA21M PASS explicit rollback restores exact original gate attributes and health
+QA21M PASS reapplying migration preserves remaining resistance and broken state
+QA21M PASS legacy balance migrates proportionally once
+QA21M PASS passage components and collision serials survive migration
+QA21M PASS repeated reconciliation never refills
+QA21M PASS explicit rollback restores exact original gate attributes and health
+QA21M PASS reapplying migration preserves remaining resistance and broken state
+QA21M PASS legacy balance migrates proportionally once
+QA21M PASS passage components and collision serials survive migration
+QA21M PASS repeated reconciliation never refills
+QA21M PASS explicit rollback restores exact original gate attributes and health
+QA21M PASS reapplying migration preserves remaining resistance and broken state
+QA21M PASS legacy balance migrates proportionally once
+QA21M PASS passage components and collision serials survive migration
+QA21M PASS repeated reconciliation never refills
+QA21M PASS explicit rollback restores exact original gate attributes and health
+QA21M PASS reapplying migration preserves remaining resistance and broken state
+QA21M PASS legacy balance migrates proportionally once
+QA21M PASS passage components and collision serials survive migration
+QA21M PASS repeated reconciliation never refills
+QA21M PASS explicit rollback restores exact original gate attributes and health
+QA21M PASS reapplying migration preserves remaining resistance and broken state
+QA21M PASS legacy balance migrates proportionally once
+QA21M PASS passage components and collision serials survive migration
+QA21M PASS repeated reconciliation never refills
+QA21M PASS explicit rollback restores exact original gate attributes and health
+QA21M PASS reapplying migration preserves remaining resistance and broken state
+QA21M DONE checks=31 failures=0
+
+=== balance21_final_recovery ===
+QA21R PASS rollback survives save load and normal ticks
+QA21R PASS rollback survives save load and normal ticks
+QA21R PASS rollback survives save load and normal ticks
+QA21R PASS rollback survives save load and normal ticks
+QA21R PASS rollback survives save load and normal ticks
+QA21R PASS rollback survives save load and normal ticks
+QA21R DONE checks=6 failures=0
+QA21M PASS old save retains six gate records
+QA21M PASS legacy balance migrates proportionally once
+QA21M PASS passage components and collision serials survive migration
+QA21M PASS repeated reconciliation never refills
+QA21M PASS explicit rollback restores exact original gate attributes and health
+QA21M PASS reapplying migration preserves remaining resistance and broken state
+QA21M PASS legacy balance migrates proportionally once
+QA21M PASS passage components and collision serials survive migration
+QA21M PASS repeated reconciliation never refills
+QA21M PASS explicit rollback restores exact original gate attributes and health
+QA21M PASS reapplying migration preserves remaining resistance and broken state
+QA21M PASS legacy balance migrates proportionally once
+QA21M PASS passage components and collision serials survive migration
+QA21M PASS repeated reconciliation never refills
+QA21M PASS explicit rollback restores exact original gate attributes and health
+QA21M PASS reapplying migration preserves remaining resistance and broken state
+QA21M PASS legacy balance migrates proportionally once
+QA21M PASS passage components and collision serials survive migration
+QA21M PASS repeated reconciliation never refills
+QA21M PASS explicit rollback restores exact original gate attributes and health
+QA21M PASS reapplying migration preserves remaining resistance and broken state
+QA21M PASS legacy balance migrates proportionally once
+QA21M PASS passage components and collision serials survive migration
+QA21M PASS repeated reconciliation never refills
+QA21M PASS explicit rollback restores exact original gate attributes and health
+QA21M PASS reapplying migration preserves remaining resistance and broken state
+QA21M PASS legacy balance migrates proportionally once
+QA21M PASS passage components and collision serials survive migration
+QA21M PASS repeated reconciliation never refills
+QA21M PASS explicit rollback restores exact original gate attributes and health
+QA21M PASS reapplying migration preserves remaining resistance and broken state
+QA21M DONE checks=31 failures=0
+
+=== balance21_final_save500_flight ===
+QA21A INPUT speed=457.142857143 mass=4.300000 gravity=1.000000000 E=537500.000
+QA21A PASS six attacking and twelve defending guns fire once together
+QA21A PASS all eighteen projectiles retain launcher and side
+QA21A PASS only attackers are objective machines
+QA21A PASS muzzle sweep detects wall inside barrel path
+QA21A PASS native ceiling and floor stop vertical shots
+QA21A PASS native round stops with approved per-material damage
+QA21A PASS native round stops with approved per-material damage
+QA21A PASS native round stops with approved per-material damage
+QA21A PASS same-side body blocks projectile without friendly damage
+QA21A PASS neutralization preserves already released projectile
+QA21A PASS fast shot cannot tunnel through thin native wall
+QA21A PASS overlapping callback cannot count another impact
+QA21A PASS native unobstructed arc matches gravity per physical tic
+QA21A PASS velocity changes during flight instead of forced constant speed
+QA21A ARC t=10 pos=-7498.022109 8000.000000 1738.820187 vz=69.382018730
+
+=== balance21_final_load500_flight ===
+QA21A PASS native round stops with approved per-material damage
+QA21A PASS native round stops with approved per-material damage
+QA21A PASS native round stops with approved per-material damage
+QA21A PASS same-side body blocks projectile without friendly damage
+QA21A PASS neutralization preserves already released projectile
+QA21A PASS fast shot cannot tunnel through thin native wall
+QA21A PASS overlapping callback cannot count another impact
+QA21A PASS native unobstructed arc matches gravity per physical tic
+QA21A PASS velocity changes during flight instead of forced constant speed
+QA21A ARC t=10 pos=-7498.022109 8000.000000 1738.820187 vz=69.382018730
+QA21A PASS all eighteen opposing targets receive one legitimate contact
+QA21A PASS simultaneous salvo leaves no spent projectile accumulation
+QA21A PASS million-kg stationary carriage does not increase projectile damage
+QA21A PASS neutralized gun preserves impact and cannot reactivate
+QA21A PASS temporarily absent operators pause without neutralization
+QA21A PASS one returning operator resumes half-rate work
+QA21A PASS two returning operators resume full-rate work
+QA21A PASS crew cannot be assigned to two guns
+QA21A DONE checks=22 failures=0
+
+=== balance21_final_load400 ===
+QA21A PASS native unobstructed arc matches gravity per physical tic
+QA21A PASS velocity changes during flight instead of forced constant speed
+QA21A ARC t=10 pos=-8398.417687 8000.000000 1580.056150 vz=53.505614984
+QA21A PASS all eighteen opposing targets receive one legitimate contact
+QA21A PASS simultaneous salvo leaves no spent projectile accumulation
+QA21A PASS million-kg stationary carriage does not increase projectile damage
+QA21A PASS neutralized gun preserves impact and cannot reactivate
+QA21A PASS temporarily absent operators pause without neutralization
+QA21A PASS one returning operator resumes half-rate work
+QA21A PASS two returning operators resume full-rate work
+QA21A PASS crew cannot be assigned to two guns
+QA21A DONE checks=22 failures=0

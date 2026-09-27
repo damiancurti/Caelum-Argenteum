@@ -1,7 +1,7 @@
 // Generado desde cannon_physics.json; aproximación aprobada, no ficha histórica.
 class CaelumCannonData : Object
 {
-    const SPEED = 365.714285714;
+    const SPEED = 457.142857143;
     const PROJECTILE_MASS = 4.3;
     const RADIUS = 1.2;
     const LENGTH = 5.92;

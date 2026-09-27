@@ -1,6 +1,6 @@
 # CONTEXT.md — Ultra-condensed summary of Caelum Argenteum
 
-Documentation version: **4.36.18** — 2026-09-27.
+Documentation version: **4.36.19** — 2026-09-27.
 
 Summary of `PROJECT.md`, `SYSTEMS.md`, `MAP01.txt`, `ASSETS.md`, `HISTORY.md`
 and the repository README.
@@ -62,22 +62,19 @@ the gauchos and rural culture, and the humans the urban porteño society.
 
 ## Current status
 
-Current release **4.36.18** adds grounded walking to crouched wall absorption
-(#43), preserving the fraction/cap. Running/idle/airborne input and bodies/shots
-do not gain this benefit. All 24 native checks passed, including the loaded
-self-jump (SYSTEMS); evidence: assets/validation_43618. CA-43618-WALK-01 is pending.
-The 500 m/s cannon/Type 4 collision proposal remains calculation-only.
+Current release **4.36.19** applies the author-approved final #21 balance:
+new cannon shots 500 m/s; gate Toughness/Constitution 50/100/200; Type 4 division
+for player/NPC/gate collisions. SYSTEMS holds the damage matrix. Versioned
+gate migration preserves remaining-health ratio and passage state with explicit
+rollback; saved projectiles retain velocity. Evidence: assets/validation_43619.
+Merge/closure is authorized; CA-43619-BALANCE-01 remains a separate manual check.
 
-The preceding **4.36.17** implements #21 cannon loading/fire/recovery at
-400 m/s with approved inert 4.3 kg rounds and a documented approximate
-reconstruction. Two/one operators give 30/60-second cycles; none pauses work.
-Both factions keep projectile ownership; only attackers are objectives.
-Native gravity and fast collision preserve single impacts and saved flight.
-Shared collision rules give zero gate damage at these inputs; biological
-targets retain existing defenses. `give CaelumDebugCannonTrial` creates five
-disposable MAP03 lanes. Evidence: assets/validation_43617. Author acceptance
-CA-43613-CATAPULT-01 passed by author confirmation on 2026-09-27; full port
-deployment remains #16/#17.
+4.36.18 (#43) adds walking-only wall absorption; CA-43618-WALK-01 is pending.
+Native traversal and loaded self-jump pass. 4.36.17 implemented #21 controlled
+cannons, approximate 4.3 kg ammunition, 30/60-second crews and bounded saved
+projectiles; its original CA-43613-CATAPULT-01 passed 2026-09-27. Those native
+mechanics and sources remain in assets/validation_43617; final balance supersedes
+the original 400 m/s /zero-gate-damage result. Full port integration remains #16/#17.
 
 The preceding **4.36.16** implements #20 operational rams, retaining the
 planned [4.36.12] label. Full 6/32 staffing and author-authorized demonic
