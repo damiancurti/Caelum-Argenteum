@@ -26,7 +26,9 @@ checks. On 2026-09-27 the author confirmed all tests passed:
 CA-43621-IMPACT-01 (origin 4.36.21 / #49) is PASSED, including scenery
 adrenaline, running/stationary-scene absorption and save/reload checks. Its
 pending entry is removed under the author-confirmed lifecycle. No gameplay
-or version change accompanies this acceptance.
+or version change accompanies this acceptance. The author subsequently
+authorized closure and merge of both issues. PR #48 merged on 2026-09-27
+(2c685aac); PR #50 was then retargeted to main for its authorized delivery.
 
 ## 4.36.20 — Shared Arcana capture and sewer escape (#33)
 
