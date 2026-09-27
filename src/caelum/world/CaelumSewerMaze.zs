@@ -217,7 +217,17 @@ class CaelumCupsAceEssence : CaelumM00FoolEssence
         Super.Tick();
     }
     Default { Tag "$CA_MAZE_CUPS_ACE"; +INVISIBLE -SOLID }
-    States { Spawn: CTAR A -1 Bright; Stop; }
+    States
+    {
+    Spawn:
+        CTAR A -1 Bright;
+        Stop;
+    // Registrar el frente al cargar actores evita inicializarlo por primera
+    // vez desde el hilo de renderizado al cambiar sprite en SetRevealed.
+    RevealedFront:
+        CACU A -1 Bright;
+        Stop;
+    }
 }
 
 class CaelumWandsKnightEssence : CaelumM00FoolEssence
@@ -229,4 +239,10 @@ class CaelumWandsKnightEssence : CaelumM00FoolEssence
         Super.Tick();
     }
     Default { Tag "$CA_TAROT_WANDS_KNIGHT_NAME"; +INVISIBLE -SOLID }
+    States
+    {
+    RevealedFront:
+        CAWK A -1 Bright;
+        Stop;
+    }
 }

@@ -1,0 +1,55 @@
+{
+  "issue": 33,
+  "release": "4.36.20",
+  "date": "2026-09-27",
+  "baseline": "c24589ca",
+  "author_report": "CA-43620-ARCANA-01 failed at Ace Use before dialogue/animation; Escape/console unresponsive.",
+  "original_session": "Windows AppHangB1 observed. Process ended before dump capture. Original save files untouched.",
+  "reproduction": "Baseline PK3 stalled after first actual dialogue frame; 45-second timeout. Separate local stalled run supplied the diagnostic dump.",
+  "cause_and_fix": "CACU/CAWK were only dynamically selected by GetSpriteIndex. Appended essence state frames register them before rendering and prevent the reproduced TrimBorders/RenderBSP stall.",
+  "engine": "GZDoom 4.14.2, Windows 11, Vulkan, NVIDIA GeForce RTX 3070 Ti, gl_multithread=true; audio enabled.",
+  "iwad": "Author-installed Doom II development dependency, not distributed.",
+  "test_setup": "Local QA fixture prepares Box/defeat and positions the player. Real Used opens USDF; RenderOverlay observes 20 frames; UI MenuEvent submits native confirmation; actor ticks and persistent ownership are observed. No manual fake conversation cleanup or direct CommitCapture in these tests. Autosave copy uses this isolated setup, not a complete campaign replay.",
+  "source_sha256": "015d8719c41ef3fb7096c19157d91e2852e4a72c903e45a2d9e1a5943c528bc3",
+  "package": {
+    "sha256": "25b4e35e57ca3a629d4473376c9c72acf3f130c194afa3d92a496d8f8ca728ca",
+    "files": 6118,
+    "all_entries_match_source": true
+  },
+  "baseline_package_sha256": "c3a4f792914c6ebaabadd44da194ee25aec74e3c8786503fdc6db2e2f4180004",
+  "scenarios": {
+    "render_fixed": {
+      "log_sha256": "115004097983ca62dcd7a4b6c4bf3321db532e7328d3130ac4f1ff7f2ec0b55d",
+      "result": "PASS"
+    },
+    "render_ace_repeat1": {
+      "log_sha256": "9fa2edda017ae1ac1ba7a5fc04462e63639ac63c363fa3d3621b5e42c921b6eb",
+      "result": "PASS"
+    },
+    "render_ace_repeat2": {
+      "log_sha256": "184f717f14d68578aac6126f9d625ccfa6d3ffe69213a45c3411d403cff95ba6",
+      "result": "PASS"
+    },
+    "render_knight1": {
+      "log_sha256": "8e95f5699deef4b0a2636cc3c34ff734fb1264663ccc848b2066f80a097447e2",
+      "result": "PASS"
+    },
+    "render_knight2": {
+      "log_sha256": "a41cdcb7c9d9b97b78404e294b78ad68df70b2d3ed67a4b8f03bd11f4b203d91",
+      "result": "PASS"
+    },
+    "render_user_save": {
+      "log_sha256": "42fd390ca22d323325374ba60e78a5d4907614910c091bdcda3018c8b6503a40",
+      "result": "PASS"
+    },
+    "render_capture_frames": {
+      "log_sha256": "36f9bc87e3691083ab7d2e77a3fb86d00929d2470880c4b3d32fa2768e3adf73",
+      "result": "PASS"
+    }
+  },
+  "artwork_unchanged": true,
+  "saves": "Existing Spawn states and persistent fields unchanged; new registration states appended. Copied author autosave loads and captures the Ace.",
+  "local_only": "User save, diagnostic dump, official engine symbols, fixtures and raw logs remain in ignored build/. No private dump or save uploaded.",
+  "author_acceptance": "Reported failure retained; corrected-build author retest pending.",
+  "cross_review": "Additional agent inspected the diff, save-state offsets and native logs; no remaining findings. Static review is separate from author acceptance."
+}

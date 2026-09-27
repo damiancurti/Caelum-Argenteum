@@ -17,6 +17,8 @@ The forward route is lair MAP02 -> cleared workshop MAP03 -> port MAP06.
 Existing saves, card identities/effects and prisoner rewards are preserved.
 See [validation evidence](assets/validation_43620/RESULTS.json);
 [author checks](pending_test.txt) remain pending for this release.
+The reported freeze when using the Ace is corrected by registering both Minor
+front sprites before rendering; full native dialogue/capture retests pass.
 
 Issue [#43](https://github.com/damiancurti/Caelum-Argenteum/issues/43) extends
 biological wall-impact absorption to walking, using the existing crouched

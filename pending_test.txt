@@ -15,7 +15,10 @@ Expected: the three cards use the same Box dialogue and animation with their
 own fronts/identity. No early Ace, premature Knight, repeated capture or
 duplicate payment. Zero survivors reveals the Knight on arrival; otherwise
 all actual owed deliveries must complete. Existing owned cards remain owned.
-Status: outstanding author acceptance; isolated agent checks are in PR evidence.
+Status: author reported step 2 FAILED on 2026-09-27: Use froze before the
+dialogue/animation; Escape and console did not respond. Sprite registration
+is corrected and native retests pass. Repeat these steps on the rebuilt PK3;
+author acceptance remains outstanding.
 
 CA-43620-ROUTE-01 | Origin: 4.36.20 / issue #33
 Prerequisites: same runtime and copied campaign, sewer keys and Box; keep

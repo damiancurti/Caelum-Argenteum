@@ -15,6 +15,32 @@ index is regenerated from LF sources. An isolated core.autocrlf=true checkout
 matches the source hashes; static validation passes. Keep exact-byte freshness
 checks and UTF-8 sources. This is tooling evidence, not gameplay acceptance.
 
+## CA-KP-016 — Register dynamically selected Arcana front sprites
+
+Status/evidence: AUTHOR-REPORTED / ENGINE-VERIFIED correction.
+First recorded / last checked: 2026-09-27 / 2026-09-27.
+Issue: #33, release 4.36.20; failing baseline c24589ca.
+Environment: GZDoom 4.14.2, Windows 11, Vulkan, gl_multithread=true,
+author-installed Doom II development IWAD.
+
+Assigning CACU/CAWK only through Actor.GetSpriteIndex, without any actor state
+using those frames, left their first rendering on an unsafe initialization
+path. The author observed a complete freeze on Ace Use. An isolated baseline
+also stopped after the first dialogue frame: a local dump, resolved with the
+matching official PDB, showed the renderer worker in FTexture::TrimBorders
+and the main thread waiting in HWDrawInfo::RenderBSP. Appending RevealedFront
+states to the two essence classes registers their fronts when actors load.
+Preserve old state offsets when adding these registrations for saved actors.
+
+The corrected native tests draw at least 20 dialogue frames, submit through
+ConversationMenu.MenuEvent, observe nonzero capture tics and ownership, then
+continue ticking. Repeated Ace/Knight and a copied autosave pass. This is
+scoped to these sprites and this engine; it is not a blanket guarantee about
+all dynamic sprites. Checking Used's return value or manually invoking Tick
+does not validate the rendered dialogue/capture path. See
+[render correction evidence](../assets/validation_43620/capture_render_fix.json).
+Author acceptance remains pending after the reported failure.
+
 ## How to read this register
 
 This is a compact engineering memory, not a second bug tracker or a claim that every historical fix has been independently reproduced. Use the current issue for active scope and HISTORY for release chronology and author acceptance.

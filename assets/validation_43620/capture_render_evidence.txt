@@ -1,0 +1,85 @@
+Baseline c24589ca: rendered first frame, then stalled; isolated process stopped after 45 seconds.
+Local dump (separate stalled reproduction) + official g4.14.2 PDB:
+worker: FTexture::TrimBorders -> FGameTexture sprite setup -> HWSprite::Process -> HWDrawInfo::WorkerThread
+main: condition variable wait -> HWDrawInfo::RenderBSP -> DrawScene -> RenderView -> D_Display
+
+=== render_fixed ===
+QA33 TRACE loaded save=0
+QA33_RENDER dialogue frame=1
+QA33_RENDER dialogue frame=20
+QA33_RENDER submit native confirmation=1
+QA33_RENDER animation advanced card=36 tics=1
+QA33_RENDER PASS owned after native menu card=36 animation=1
+QA33_RENDER heartbeat=100 owned=1
+QA33_RENDER heartbeat=200 owned=1
+Captured issue33_render_fixed.png
+
+=== render_ace_repeat1 ===
+QA33 TRACE loaded save=0
+QA33_RENDER before Use created=1 wizard=0 health=1780 active=0 inconversation=0 capture=0 available=1 revealed=0 approach=1
+QA33_RENDER dialogue frame=1
+QA33_RENDER dialogue frame=20
+QA33_RENDER submit native confirmation=1
+QA33_RENDER animation advanced card=36 tics=1
+QA33_RENDER PASS owned after native menu card=36 animation=1
+QA33_RENDER heartbeat=100 owned=1
+QA33_RENDER heartbeat=200 owned=1
+
+=== render_ace_repeat2 ===
+QA33 TRACE loaded save=0
+QA33_RENDER before Use created=1 wizard=0 health=1780 active=0 inconversation=0 capture=0 available=1 revealed=0 approach=1
+QA33_RENDER dialogue frame=1
+QA33_RENDER dialogue frame=20
+QA33_RENDER submit native confirmation=1
+QA33_RENDER animation advanced card=36 tics=1
+QA33_RENDER PASS owned after native menu card=36 animation=1
+QA33_RENDER heartbeat=100 owned=1
+QA33_RENDER heartbeat=200 owned=1
+
+=== render_knight1 ===
+QA33 TRACE loaded save=0
+QA33_RENDER before Use created=1 wizard=0 health=1780 active=0 inconversation=0 capture=0 available=1 revealed=0 approach=1
+QA33_RENDER dialogue frame=1
+QA33_RENDER dialogue frame=20
+QA33_RENDER submit native confirmation=1
+QA33_RENDER animation advanced card=60 tics=1
+QA33_RENDER PASS owned after native menu card=60 animation=1
+QA33_RENDER heartbeat=100 owned=1
+QA33_RENDER heartbeat=200 owned=1
+
+=== render_knight2 ===
+QA33 TRACE loaded save=0
+QA33_RENDER before Use created=1 wizard=0 health=1780 active=0 inconversation=0 capture=0 available=1 revealed=0 approach=1
+QA33_RENDER dialogue frame=1
+QA33_RENDER dialogue frame=20
+QA33_RENDER submit native confirmation=1
+QA33_RENDER animation advanced card=60 tics=1
+QA33_RENDER PASS owned after native menu card=60 animation=1
+QA33_RENDER heartbeat=100 owned=1
+QA33_RENDER heartbeat=200 owned=1
+
+=== render_user_save ===
+QA33 TRACE loaded save=0
+QA33 TRACE loaded save=1
+QA33_RENDER heartbeat=100 owned=0
+QA33_RENDER before Use created=1 wizard=0 health=105041 active=0 inconversation=0 capture=0 available=1 revealed=0 approach=1
+QA33_RENDER dialogue frame=1
+QA33_RENDER dialogue frame=20
+QA33_RENDER submit native confirmation=1
+QA33_RENDER animation advanced card=36 tics=1
+QA33_RENDER PASS owned after native menu card=36 animation=1
+QA33_RENDER heartbeat=200 owned=1
+QA33_RENDER heartbeat=300 owned=1
+Captured issue33_user_render_fixed.png
+
+=== render_capture_frames ===
+QA33 TRACE loaded save=0
+QA33_RENDER before Use created=1 wizard=0 health=1780 active=0 inconversation=0 capture=0 available=1 revealed=0 approach=1
+QA33_RENDER dialogue frame=1
+QA33_RENDER dialogue frame=20
+Captured issue33_dialogue_frame.png
+QA33_RENDER submit native confirmation=1
+QA33_RENDER animation advanced card=36 tics=1
+Captured issue33_animation_frame.png
+QA33_RENDER heartbeat=100 owned=0
+QA33_RENDER PASS owned after native menu card=36 animation=1

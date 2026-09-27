@@ -147,5 +147,6 @@
     "files": 6118,
     "sha256": "c3a4f792914c6ebaabadd44da194ee25aec74e3c8786503fdc6db2e2f4180004",
     "all_entries_match_source": true
-  }
+  },
+  "follow_up": "Author reported Ace Use freeze. Original scenario evidence below predates the correction; see capture_render_fix.json for current package hashes and end-to-end rendered capture retests."
 }

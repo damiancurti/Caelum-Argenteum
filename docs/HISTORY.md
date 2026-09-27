@@ -31,6 +31,25 @@ and source-directory load attempts remain local development evidence in build/.
 Only the final supported PK3 scenarios are reported as passing validation.
 Author acceptance is pending: CA-43620-ARCANA-01 and CA-43620-ROUTE-01.
 
+On 2026-09-27 the author reported CA-43620-ARCANA-01 step 2 failed: pressing
+Use on the Ace froze the game before confirmation or animation, with Escape
+and console unresponsive. Windows recorded AppHangB1; the original process
+ended before a diagnostic dump could be collected. An isolated reproduction
+at baseline c24589ca stopped at the first rendered dialogue frame. Its local
+dump and official 4.14.2 symbols located the renderer worker in
+FTexture::TrimBorders, while the main thread waited in HWDrawInfo::RenderBSP.
+
+Both Minor fronts were assigned dynamically without appearing in actor state
+definitions. Appending RevealedFront states registers CACU/CAWK during actor
+loading, before rendering. Existing Spawn states, saved fields, artwork and
+capture rules are unchanged. Repeated native Ace/Knight tests now render the
+dialogue, submit its native confirmation, advance the animation, grant the
+card and continue ticking. A copy of the author's autosave also loads and
+passes the isolated interaction setup; original saves are untouched. Evidence:
+assets/validation_43620/capture_render_fix.json. The prior tests checked the
+opening call and scripted animation separately, which missed this rendering
+failure. Author retest remains outstanding; no acceptance is inferred.
+
 ## 4.36.19 — Final author-approved siege balance (#21)
 
 After the authorized merges, switching to main exposed stale document hashes:
