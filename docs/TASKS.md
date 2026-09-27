@@ -12,10 +12,10 @@ Documentation version: **4.36.20** — 2026-09-27.
   card effects, map geometry and old ownership/IDs.
 - **Evidence:** assets/validation_43620 distinguishes static checks, native
   scenarios, saved-game migration and review from author acceptance.
-- **Pending author acceptance:** CA-43620-ARCANA-01 and CA-43620-ROUTE-01.
+- **Author acceptance:** CA-43620-ARCANA-01 and CA-43620-ROUTE-01 passed on 2026-09-27.
 - **Author-reported failure corrected:** Ace Use froze before confirmation.
   Registered both Minor front sprites; native rendered dialogue/capture
-  retests pass. Repeat CA-43620-ARCANA-01; see capture_render_fix.json.
+  retests pass. Author retest passed; see capture_render_fix.json and HISTORY.
 - **Next:** review the linked PR; #16/#17 replace the Knight's provisional
   appearance rule when the complete port siege is implemented.
 

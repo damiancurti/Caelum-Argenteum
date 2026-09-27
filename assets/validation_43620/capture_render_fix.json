@@ -50,6 +50,6 @@
   "artwork_unchanged": true,
   "saves": "Existing Spawn states and persistent fields unchanged; new registration states appended. Copied author autosave loads and captures the Ace.",
   "local_only": "User save, diagnostic dump, official engine symbols, fixtures and raw logs remain in ignored build/. No private dump or save uploaded.",
-  "author_acceptance": "Reported failure retained; corrected-build author retest pending.",
+  "author_acceptance": "CA-43620-ARCANA-01 and CA-43620-ROUTE-01 passed; author confirmed all tests on 2026-09-27 after the rendering correction.",
   "cross_review": "Additional agent inspected the diff, save-state offsets and native logs; no remaining findings. Static review is separate from author acceptance."
 }

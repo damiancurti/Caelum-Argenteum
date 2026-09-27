@@ -33,7 +33,7 @@
   "development_iwad": "Author-installed Doom II; not distributed",
   "scope": "Isolated instrumented single-player native scenarios; does not constitute author campaign acceptance.",
   "review": "Independent agent static cross-review completed; diagonal contact and corridor retreat findings corrected with native attack-free chase.",
-  "author_acceptance": "Pending CA-43620-ARCANA-01 and CA-43620-ROUTE-01",
+  "author_acceptance": "CA-43620-ARCANA-01 and CA-43620-ROUTE-01 passed; author confirmed all tests on 2026-09-27 after the rendering correction.",
   "reproduction": "Build current PK3 with build_dev.ps1. Use copied campaign saves and pending_test.txt. Native automation locally used unshipped QA Inventory/Actor fixtures to initialize scenarios, call the real reward transaction, shared capture and travel services, and inspect serialized records. Saves, engine binaries, IWAD and QA fixtures remain outside tracked delivery.",
   "capture_test_boundary": "Animation tests invoke the common confirmation action programmatically and release conversation references; a separate native Use check opens the actual dialogue. Visual timing/audio and full manual playthrough require author acceptance.",
   "save_migration": "4.36.19 package generated four native saves: live boss, dead boss, owned Ace and partially paid port. Current PK3 loaded each and verified additive revision, exact existing ownership/Box/reward state, retired route rejection, rollback and idempotent reapplication.",

@@ -39,7 +39,7 @@ scoped to these sprites and this engine; it is not a blanket guarantee about
 all dynamic sprites. Checking Used's return value or manually invoking Tick
 does not validate the rendered dialogue/capture path. See
 [render correction evidence](../assets/validation_43620/capture_render_fix.json).
-Author acceptance remains pending after the reported failure.
+The author confirmed CA-43620-ARCANA-01 passed after the fix on 2026-09-27.
 
 ## How to read this register
 

@@ -71,7 +71,7 @@ the remaining exit and counts as defeated. The forward route is MAP02 ->
 existing MAP03 workshop/test room -> MAP06. Geometry, prior collection and
 prisoner extraction/rewards are preserved. The Knight's condition is provisional
 until #16/#17. See assets/validation_43620 for isolated evidence; author checks
-CA-43620-ARCANA-01 and CA-43620-ROUTE-01 remain pending.
+CA-43620-ARCANA-01 and CA-43620-ROUTE-01 passed, author-confirmed 2026-09-27.
 The reported Ace-use freeze is corrected by registering both Minor fronts before rendering.
 
 The preceding **4.36.19** applies the author-approved final #21 balance:

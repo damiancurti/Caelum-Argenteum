@@ -19,7 +19,7 @@ identity is now Knight of Wands, ID 60. Accepted prisoner rewards, extraction,
 siege assets and table cleanup remain in force.
 
 Static and isolated native evidence belongs in assets/validation_43620.
-Author campaign/presentation acceptance remains pending in pending_test.txt.
+Author campaign/presentation acceptance passed on 2026-09-27; see HISTORY.
 The linked PR is for review; this delivery does not imply merge or acceptance.
 
 ## 4.36.19 — Approved final cannon/gate balance (#21)

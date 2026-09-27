@@ -16,7 +16,7 @@ if none survived). Its condition remains provisional until the port siege.
 The forward route is lair MAP02 -> cleared workshop MAP03 -> port MAP06.
 Existing saves, card identities/effects and prisoner rewards are preserved.
 See [validation evidence](assets/validation_43620/RESULTS.json);
-[author checks](pending_test.txt) remain pending for this release.
+the author confirmed all #33 checks passed on 2026-09-27.
 The reported freeze when using the Ace is corrected by registering both Minor
 front sprites before rendering; full native dialogue/capture retests pass.
 
@@ -27,7 +27,7 @@ from running; idle/airborne input does not qualify. The benefit applies only
 to walls. Native checks and an 80 kg /20 kg equipment self-jump test passed;
 the author confirmed CA-43618-WALK-01 and final siege check CA-43619-BALANCE-01
 passed on 2026-09-27. Acceptance is recorded in [HISTORY](docs/HISTORY.md);
-the remaining #33 author checks are in [pending_test.txt](pending_test.txt).
+#33 acceptance is also recorded there; [pending_test.txt](pending_test.txt) is empty.
 
 Issue [#21](https://github.com/damiancurti/Caelum-Argenteum/issues/21) adds
 controlled cannon loading, firing and recovery, with inert 4.3 kg projectiles

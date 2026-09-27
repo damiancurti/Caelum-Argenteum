@@ -29,7 +29,7 @@ the final implementation uses native attack-free chase and a contact approach
 threshold, including an isolated corridor escape check. Early failed fixtures
 and source-directory load attempts remain local development evidence in build/.
 Only the final supported PK3 scenarios are reported as passing validation.
-Author acceptance is pending: CA-43620-ARCANA-01 and CA-43620-ROUTE-01.
+Author acceptance: both checks passed on 2026-09-27 after the correction below.
 
 On 2026-09-27 the author reported CA-43620-ARCANA-01 step 2 failed: pressing
 Use on the Ace froze the game before confirmation or animation, with Escape
@@ -48,7 +48,11 @@ card and continue ticking. A copy of the author's autosave also loads and
 passes the isolated interaction setup; original saves are untouched. Evidence:
 assets/validation_43620/capture_render_fix.json. The prior tests checked the
 opening call and scripted animation separately, which missed this rendering
-failure. Author retest remains outstanding; no acceptance is inferred.
+failure. On 2026-09-27 the author confirmed all tests passed after the fix:
+CA-43620-ARCANA-01 and CA-43620-ROUTE-01 (both originating in 4.36.20 / #33)
+are PASSED. This includes the corrected Ace interaction and the route/retreat
+checks. Their pending entries are removed under the author-confirmed lifecycle;
+the earlier failure and native evidence above remain historical evidence.
 
 ## 4.36.19 — Final author-approved siege balance (#21)
 
