@@ -3501,3 +3501,56 @@ Model CaelumRamSuspension
     FrameIndex CRSP A 0 0
 }
 // END GENERATED RAM COMPONENTS
+
+// BEGIN GENERATED CANNON COMPONENTS
+Model CaelumCannonFrame
+{
+    Path "models/caelum/siege"
+    Model 0 "ca_cannon_frame.obj"
+    Scale 1 1 1
+    CorrectPixelStretch
+    DontCullBackFaces
+    InheritActorPitch
+    FrameIndex CCFR A 0 0
+}
+Model CaelumCannonBarrel
+{
+    Path "models/caelum/siege"
+    Model 0 "ca_cannon_closed.obj"
+    Scale 1 1 1
+    CorrectPixelStretch
+    DontCullBackFaces
+    InheritActorPitch
+    FrameIndex CCBR A 0 0
+}
+Model CaelumCannonBarrel
+{
+    Path "models/caelum/siege"
+    Model 0 "ca_cannon_open.obj"
+    Scale 1 1 1
+    CorrectPixelStretch
+    DontCullBackFaces
+    InheritActorPitch
+    FrameIndex CCBR B 0 0
+}
+Model CaelumCannonProjectile
+{
+    Path "models/caelum/siege"
+    Model 0 "ca_cannon_round.obj"
+    Scale 1 1 1
+    CorrectPixelStretch
+    DontCullBackFaces
+    InheritActorPitch
+    FrameIndex CCSH A 0 0
+}
+Model CaelumCannonFlash
+{
+    Path "models/caelum/siege"
+    Model 0 "ca_cannon_flash.obj"
+    Scale 1 1 1
+    CorrectPixelStretch
+    DontCullBackFaces
+    InheritActorPitch
+    FrameIndex CCFL A 0 0
+}
+// END GENERATED CANNON COMPONENTS

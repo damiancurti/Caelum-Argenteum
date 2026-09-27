@@ -1,0 +1,579 @@
+{
+  "hub_before": [
+    {
+      "position": [
+        -1200.0,
+        2280.0,
+        0.0
+      ],
+      "phase": 3,
+      "Work": 20,
+      "ammunition": 3,
+      "Shots": 1,
+      "Contacts": 1,
+      "ShotSerial": 1,
+      "LastDamage": 0,
+      "Defending": 0,
+      "AimPoint": {
+        "X": -1200.0,
+        "Y": 2850.0,
+        "Z": 33.6
+      },
+      "Armed": 0,
+      "Neutralized": 0,
+      "NeutralizationCount": 0,
+      "GuardRadius": 182.4,
+      "blocks": 18,
+      "operators": 2,
+      "frame_class": "CaelumCannonFrame",
+      "barrel_class": "CaelumCannonBarrel"
+    },
+    {
+      "position": [
+        -600.0,
+        2280.0,
+        0.0
+      ],
+      "phase": 0,
+      "Work": 60,
+      "ammunition": 4,
+      "Shots": 0,
+      "Contacts": 0,
+      "ShotSerial": 0,
+      "LastDamage": 0,
+      "Defending": 0,
+      "AimPoint": {
+        "X": -600.0,
+        "Y": 2850.0,
+        "Z": 33.6
+      },
+      "Armed": 0,
+      "Neutralized": 0,
+      "NeutralizationCount": 0,
+      "GuardRadius": 182.4,
+      "blocks": 18,
+      "operators": 2,
+      "frame_class": "CaelumCannonFrame",
+      "barrel_class": "CaelumCannonBarrel"
+    },
+    {
+      "position": [
+        0.0,
+        2280.0,
+        0.0
+      ],
+      "phase": 0,
+      "Work": 60,
+      "ammunition": 4,
+      "Shots": 0,
+      "Contacts": 0,
+      "ShotSerial": 0,
+      "LastDamage": 0,
+      "Defending": 0,
+      "AimPoint": {
+        "X": 0.0,
+        "Y": 2850.0,
+        "Z": 33.6
+      },
+      "Armed": 0,
+      "Neutralized": 0,
+      "NeutralizationCount": 0,
+      "GuardRadius": 182.4,
+      "blocks": 18,
+      "operators": 2,
+      "frame_class": "CaelumCannonFrame",
+      "barrel_class": "CaelumCannonBarrel"
+    },
+    {
+      "position": [
+        600.0,
+        2280.0,
+        0.0
+      ],
+      "phase": 0,
+      "Work": 60,
+      "ammunition": 4,
+      "Shots": 0,
+      "Contacts": 0,
+      "ShotSerial": 0,
+      "LastDamage": 0,
+      "Defending": 1,
+      "AimPoint": {
+        "X": 600.0,
+        "Y": 2850.0,
+        "Z": 33.6
+      },
+      "Armed": 0,
+      "Neutralized": 0,
+      "NeutralizationCount": 0,
+      "GuardRadius": 182.4,
+      "blocks": 18,
+      "operators": 2,
+      "frame_class": "CaelumCannonFrame",
+      "barrel_class": "CaelumCannonBarrel"
+    },
+    {
+      "position": [
+        1200.0,
+        2280.0,
+        0.0
+      ],
+      "phase": 0,
+      "Work": 60,
+      "ammunition": 4,
+      "Shots": 0,
+      "Contacts": 0,
+      "ShotSerial": 0,
+      "LastDamage": 0,
+      "Defending": 1,
+      "AimPoint": {
+        "X": 1200.0,
+        "Y": 2850.0,
+        "Z": 33.6
+      },
+      "Armed": 0,
+      "Neutralized": 0,
+      "NeutralizationCount": 0,
+      "GuardRadius": 182.4,
+      "blocks": 18,
+      "operators": 2,
+      "frame_class": "CaelumCannonFrame",
+      "barrel_class": "CaelumCannonBarrel"
+    }
+  ],
+  "hub_after": [
+    {
+      "position": [
+        -1200.0,
+        2280.0,
+        0.0
+      ],
+      "phase": 3,
+      "Work": 20,
+      "ammunition": 3,
+      "Shots": 1,
+      "Contacts": 1,
+      "ShotSerial": 1,
+      "LastDamage": 0,
+      "Defending": 0,
+      "AimPoint": {
+        "X": -1200.0,
+        "Y": 2850.0,
+        "Z": 33.6
+      },
+      "Armed": 0,
+      "Neutralized": 0,
+      "NeutralizationCount": 0,
+      "GuardRadius": 182.4,
+      "blocks": 18,
+      "operators": 2,
+      "frame_class": "CaelumCannonFrame",
+      "barrel_class": "CaelumCannonBarrel"
+    },
+    {
+      "position": [
+        -600.0,
+        2280.0,
+        0.0
+      ],
+      "phase": 0,
+      "Work": 60,
+      "ammunition": 4,
+      "Shots": 0,
+      "Contacts": 0,
+      "ShotSerial": 0,
+      "LastDamage": 0,
+      "Defending": 0,
+      "AimPoint": {
+        "X": -600.0,
+        "Y": 2850.0,
+        "Z": 33.6
+      },
+      "Armed": 0,
+      "Neutralized": 0,
+      "NeutralizationCount": 0,
+      "GuardRadius": 182.4,
+      "blocks": 18,
+      "operators": 2,
+      "frame_class": "CaelumCannonFrame",
+      "barrel_class": "CaelumCannonBarrel"
+    },
+    {
+      "position": [
+        0.0,
+        2280.0,
+        0.0
+      ],
+      "phase": 0,
+      "Work": 60,
+      "ammunition": 4,
+      "Shots": 0,
+      "Contacts": 0,
+      "ShotSerial": 0,
+      "LastDamage": 0,
+      "Defending": 0,
+      "AimPoint": {
+        "X": 0.0,
+        "Y": 2850.0,
+        "Z": 33.6
+      },
+      "Armed": 0,
+      "Neutralized": 0,
+      "NeutralizationCount": 0,
+      "GuardRadius": 182.4,
+      "blocks": 18,
+      "operators": 2,
+      "frame_class": "CaelumCannonFrame",
+      "barrel_class": "CaelumCannonBarrel"
+    },
+    {
+      "position": [
+        600.0,
+        2280.0,
+        0.0
+      ],
+      "phase": 0,
+      "Work": 60,
+      "ammunition": 4,
+      "Shots": 0,
+      "Contacts": 0,
+      "ShotSerial": 0,
+      "LastDamage": 0,
+      "Defending": 1,
+      "AimPoint": {
+        "X": 600.0,
+        "Y": 2850.0,
+        "Z": 33.6
+      },
+      "Armed": 0,
+      "Neutralized": 0,
+      "NeutralizationCount": 0,
+      "GuardRadius": 182.4,
+      "blocks": 18,
+      "operators": 2,
+      "frame_class": "CaelumCannonFrame",
+      "barrel_class": "CaelumCannonBarrel"
+    },
+    {
+      "position": [
+        1200.0,
+        2280.0,
+        0.0
+      ],
+      "phase": 0,
+      "Work": 60,
+      "ammunition": 4,
+      "Shots": 0,
+      "Contacts": 0,
+      "ShotSerial": 0,
+      "LastDamage": 0,
+      "Defending": 1,
+      "AimPoint": {
+        "X": 1200.0,
+        "Y": 2850.0,
+        "Z": 33.6
+      },
+      "Armed": 0,
+      "Neutralized": 0,
+      "NeutralizationCount": 0,
+      "GuardRadius": 182.4,
+      "blocks": 18,
+      "operators": 2,
+      "frame_class": "CaelumCannonFrame",
+      "barrel_class": "CaelumCannonBarrel"
+    }
+  ],
+  "hub_identical": true,
+  "legacy_after": [
+    {
+      "position": [
+        -1200.0,
+        2280.0,
+        0.0
+      ],
+      "phase": 0,
+      "Work": 20,
+      "ammunition": 4,
+      "Shots": 0,
+      "Contacts": 0,
+      "ShotSerial": 0,
+      "LastDamage": 0,
+      "Defending": 0,
+      "AimPoint": {
+        "X": -1200.0,
+        "Y": 2850.0,
+        "Z": 33.6
+      },
+      "Armed": 1,
+      "Neutralized": 1,
+      "NeutralizationCount": 1,
+      "GuardRadius": 182.4,
+      "blocks": 18,
+      "operators": 2,
+      "frame_class": "CaelumCannonFrame",
+      "barrel_class": "CaelumCannonBarrel"
+    },
+    {
+      "position": [
+        -600.0,
+        2280.0,
+        0.0
+      ],
+      "phase": 0,
+      "Work": 20,
+      "ammunition": 4,
+      "Shots": 0,
+      "Contacts": 0,
+      "ShotSerial": 0,
+      "LastDamage": 0,
+      "Defending": 0,
+      "AimPoint": {
+        "X": -600.0,
+        "Y": 2850.0,
+        "Z": 33.6
+      },
+      "Armed": 1,
+      "Neutralized": 1,
+      "NeutralizationCount": 1,
+      "GuardRadius": 182.4,
+      "blocks": 18,
+      "operators": 2,
+      "frame_class": "CaelumCannonFrame",
+      "barrel_class": "CaelumCannonBarrel"
+    },
+    {
+      "position": [
+        0.0,
+        2280.0,
+        0.0
+      ],
+      "phase": 0,
+      "Work": 20,
+      "ammunition": 4,
+      "Shots": 0,
+      "Contacts": 0,
+      "ShotSerial": 0,
+      "LastDamage": 0,
+      "Defending": 0,
+      "AimPoint": {
+        "X": 0.0,
+        "Y": 2850.0,
+        "Z": 33.6
+      },
+      "Armed": 1,
+      "Neutralized": 1,
+      "NeutralizationCount": 1,
+      "GuardRadius": 182.4,
+      "blocks": 18,
+      "operators": 2,
+      "frame_class": "CaelumCannonFrame",
+      "barrel_class": "CaelumCannonBarrel"
+    },
+    {
+      "position": [
+        600.0,
+        2280.0,
+        0.0
+      ],
+      "phase": 0,
+      "Work": 20,
+      "ammunition": 4,
+      "Shots": 0,
+      "Contacts": 0,
+      "ShotSerial": 0,
+      "LastDamage": 0,
+      "Defending": 1,
+      "AimPoint": {
+        "X": 600.0,
+        "Y": 2850.0,
+        "Z": 33.6
+      },
+      "Armed": 1,
+      "Neutralized": 0,
+      "NeutralizationCount": 0,
+      "GuardRadius": 182.4,
+      "blocks": 18,
+      "operators": 2,
+      "frame_class": "CaelumCannonFrame",
+      "barrel_class": "CaelumCannonBarrel"
+    },
+    {
+      "position": [
+        1200.0,
+        2280.0,
+        0.0
+      ],
+      "phase": 0,
+      "Work": 20,
+      "ammunition": 4,
+      "Shots": 0,
+      "Contacts": 0,
+      "ShotSerial": 0,
+      "LastDamage": 0,
+      "Defending": 1,
+      "AimPoint": {
+        "X": 1200.0,
+        "Y": 2850.0,
+        "Z": 33.6
+      },
+      "Armed": 1,
+      "Neutralized": 0,
+      "NeutralizationCount": 0,
+      "GuardRadius": 182.4,
+      "blocks": 18,
+      "operators": 2,
+      "frame_class": "CaelumCannonFrame",
+      "barrel_class": "CaelumCannonBarrel"
+    }
+  ],
+  "legacy_repeat": [
+    {
+      "position": [
+        -1200.0,
+        2280.0,
+        0.0
+      ],
+      "phase": 0,
+      "Work": 20,
+      "ammunition": 4,
+      "Shots": 0,
+      "Contacts": 0,
+      "ShotSerial": 0,
+      "LastDamage": 0,
+      "Defending": 0,
+      "AimPoint": {
+        "X": -1200.0,
+        "Y": 2850.0,
+        "Z": 33.6
+      },
+      "Armed": 1,
+      "Neutralized": 1,
+      "NeutralizationCount": 1,
+      "GuardRadius": 182.4,
+      "blocks": 18,
+      "operators": 2,
+      "frame_class": "CaelumCannonFrame",
+      "barrel_class": "CaelumCannonBarrel"
+    },
+    {
+      "position": [
+        -600.0,
+        2280.0,
+        0.0
+      ],
+      "phase": 0,
+      "Work": 20,
+      "ammunition": 4,
+      "Shots": 0,
+      "Contacts": 0,
+      "ShotSerial": 0,
+      "LastDamage": 0,
+      "Defending": 0,
+      "AimPoint": {
+        "X": -600.0,
+        "Y": 2850.0,
+        "Z": 33.6
+      },
+      "Armed": 1,
+      "Neutralized": 1,
+      "NeutralizationCount": 1,
+      "GuardRadius": 182.4,
+      "blocks": 18,
+      "operators": 2,
+      "frame_class": "CaelumCannonFrame",
+      "barrel_class": "CaelumCannonBarrel"
+    },
+    {
+      "position": [
+        0.0,
+        2280.0,
+        0.0
+      ],
+      "phase": 0,
+      "Work": 20,
+      "ammunition": 4,
+      "Shots": 0,
+      "Contacts": 0,
+      "ShotSerial": 0,
+      "LastDamage": 0,
+      "Defending": 0,
+      "AimPoint": {
+        "X": 0.0,
+        "Y": 2850.0,
+        "Z": 33.6
+      },
+      "Armed": 1,
+      "Neutralized": 1,
+      "NeutralizationCount": 1,
+      "GuardRadius": 182.4,
+      "blocks": 18,
+      "operators": 2,
+      "frame_class": "CaelumCannonFrame",
+      "barrel_class": "CaelumCannonBarrel"
+    },
+    {
+      "position": [
+        600.0,
+        2280.0,
+        0.0
+      ],
+      "phase": 0,
+      "Work": 20,
+      "ammunition": 4,
+      "Shots": 0,
+      "Contacts": 0,
+      "ShotSerial": 0,
+      "LastDamage": 0,
+      "Defending": 1,
+      "AimPoint": {
+        "X": 600.0,
+        "Y": 2850.0,
+        "Z": 33.6
+      },
+      "Armed": 1,
+      "Neutralized": 0,
+      "NeutralizationCount": 0,
+      "GuardRadius": 182.4,
+      "blocks": 18,
+      "operators": 2,
+      "frame_class": "CaelumCannonFrame",
+      "barrel_class": "CaelumCannonBarrel"
+    },
+    {
+      "position": [
+        1200.0,
+        2280.0,
+        0.0
+      ],
+      "phase": 0,
+      "Work": 20,
+      "ammunition": 4,
+      "Shots": 0,
+      "Contacts": 0,
+      "ShotSerial": 0,
+      "LastDamage": 0,
+      "Defending": 1,
+      "AimPoint": {
+        "X": 1200.0,
+        "Y": 2850.0,
+        "Z": 33.6
+      },
+      "Armed": 1,
+      "Neutralized": 0,
+      "NeutralizationCount": 0,
+      "GuardRadius": 182.4,
+      "blocks": 18,
+      "operators": 2,
+      "frame_class": "CaelumCannonFrame",
+      "barrel_class": "CaelumCannonBarrel"
+    }
+  ],
+  "legacy_identical": true,
+  "unpaused_save_live_projectiles": 18,
+  "unpaused_save_owner_side_and_velocity_verified": true,
+  "spent_contact_checkpoint": {
+    "projectiles": 18,
+    "native_death_tics_remaining": 2
+  },
+  "note": "Hub work was paused through an explicit test hook for exact state comparison. The unpaused ballistic and spent-contact checkpoints use ordinary native saves without modifying projectile velocities/states."
+}

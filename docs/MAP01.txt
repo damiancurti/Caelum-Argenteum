@@ -1,6 +1,23 @@
 CAELUM ARGENTEUM — STORY AND MAP01
 
-Documentation version: **4.36.16** — 2026-09-26.
+Documentation version: **4.36.17** — 2026-09-26.
+
+## 4.36.17 — Opt-in cannon lanes (#21)
+
+In a fresh disposable MAP03 session, `give CaelumDebugCannonTrial` creates five
+lanes at X=-1200/-600/0/600/1200, cannon Y=2280 and target Y=2850. The first
+three are attacking cannons aimed at wood/reinforced/armored gates; the last
+two are defenders aimed at attacking figurants. Each has two stationary
+operators and four trial-only rounds. All figurants reuse the Mandinga model;
+friendly flags distinguish defensive operators, not campaign identities.
+`give CaelumDebugCannonStatus` reports staffing, phase/work, ammunition, contacts
+and neutralization. First loading takes 30 seconds with both operators.
+
+The unchanged collision rule yields zero gate damage for the approved round.
+Defender hits can injure/kill their targets. Repeat activation is idempotent;
+save/load and hub return retain the trial. There is no port victory or extra
+campaign force in these five lanes. #16 owns full deployment and routes.
+The author confirmed manual acceptance CA-43613-CATAPULT-01 on 2026-09-27.
 
 ## 4.36.16 — Optional operational ram lanes (#20)
 

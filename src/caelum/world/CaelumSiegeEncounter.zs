@@ -90,7 +90,7 @@ class CaelumSiegeEncounter : Actor
 
     bool RegisterMachine(CaelumHostileMachine machine)
     {
-        if (machine == null) return false;
+        if (machine == null || !machine.CountsAsHostileObjective()) return false;
         for (int i = 0; i < Machines.Size(); i++)
             if (Machines[i] == machine) return true;
         if (RosterSealed || Machines.Size()>=12
@@ -141,6 +141,7 @@ class CaelumSiegeEncounter : Actor
 // Base reutilizable por los seis arietes y los seis cañones atacantes (#21).
 class CaelumHostileMachine : Actor
 {
+    virtual bool CountsAsHostileObjective() { return true; }
     CaelumSiegeEncounter Encounter;
     Array<CaelumSiegeCombatant> LocalGuards;
     Array<CaelumSiegeCombatant> Crew;

@@ -1,6 +1,83 @@
 # Caelum Argenteum — Current systems and rules
 
-Documentation version: **4.36.16** — 2026-09-26.
+Documentation version: **4.36.17** — 2026-09-26.
+
+## 4.36.17 — Controlled cannon fire (#21; planned label 4.36.13)
+
+The author confirmed an approximate documented reconstruction, an inert
+elongated 75 mm /185 mm /4.3 kg round, two operators (load/fire), and a 30-second
+complete cycle with both present, 60 seconds with one, stopped with none.
+Loading and recovery accumulate work at the current staffing rate; losing an
+operator preserves partial progress. Nearby crew availability is separate from
+the accepted death-backed neutralization policy. Attacking operators must come
+from the existing registered force; defenders use living friendly combatants.
+One actor cannot serve two machines. In the eventual 18-cannon deployment,
+#16 allocates 12 attacking operators from the existing 1,000 Mandingas and
+24 defensive operators from its authored defending force.
+
+`cannon_physics.json` is the authoritative input to `generate_cannon_runtime.py`.
+400 m/s *32 MU/m /35 native tics/s = **365.714285714 MU/tic** for both sides.
+Initial kinetic energy is 344,000 J for the approved 4.3 kg round. Calendar
+acceleration does not enter ballistics. The projectile changes velocity under
+native level/sector/actor gravity. GZDoom's FastProjectile supplies adaptive
+collision substeps but no gravity integration; this subclass subtracts native
+`GetGravity()` once per tic before native movement. At default native gravity
+1 MU/tic², this is 38.28125 m/s², not Earth's standard gravity. Ideal same-height
+vacuum maximum range is v²/g = 4,179.592 m at 45 degrees under that default;
+actual level gravity, obstacles and firing elevation govern travel. No drag or
+historical range claim is implied. The scenario supplies aim points; this is
+not an autonomous target selector or automatic ballistic firing solution.
+
+The native collision cylinder has the true 75 mm diameter (radius 1.2 MU,
+height 2.4 MU); the 185 mm visual body trails its contact nose. No enlargement
+or speed reduction makes the projectile easier to see. A swept bore-to-muzzle
+check prevents spawning beyond an obstructing wall. At clear release, one
+projectile and one brief muzzle flash appear at the pitched tube's muzzle.
+The rigid carriage has a brief recoil presentation, followed by recovery and
+an open sliding wedge while loading; there is no modern sliding recoil cradle.
+
+The author initially requested defining penetration, then explicitly directed
+using the same implemented collisions as characters and confirmed structural
+damage with the projectile stopping. Therefore no new penetration, explosion,
+energy-deposition multiplier or damage constant was introduced. Actual contact
+velocity and **projectile** mass enter ImpactPhysics.ResolveBodies or the gate's
+ApplySiegeImpact; neither the 850 kg approximate machine nor its carriage mass
+enters impact damage. The shared solver retains its horizontal contact normal
+and existing Toughness/armor/anatomy behavior. Vertical flight is native, while
+character damage retains the canonical horizontal impulse semantics; this
+patch does not replace the general impact or crushing solver.
+
+For a stationary gate and a frontal 400 m/s shot, the unchanged impulse rule
+produces 0.945772/0.655705/0.177173% severity for wood/reinforced/armored,
+below their 46.024571/70.565111/108.052215 Toughness. Thus all three receive
+**zero damage**, despite a real contact and a consumed round. Characters use
+their own effective mass, Toughness, armor and contacted anatomical region.
+Native missile damage is suppressed after the shared callback; one spent
+flag and the gate's existing impact serial prevent duplicate contact damage.
+Allied bodies obstruct a shot without taking friendly damage.
+
+Integration API: spawn CaelumCannon and call InitializeCannon(defending) once;
+register only attackers in CaelumSiegeEncounter, assign two existing actors
+with AssignOperator, seal the roster, then ActivateCannon(rounds). Ammunition
+is explicitly supplied by the scenario, never auto-refilled on load. Queue a
+shot with RequestShot(point, intendedActor); reissuing while queued does not
+overwrite the accepted aim. CancelShot clears that request before retargeting.
+Defenders reject players/friendly bodies/gates as
+targets; attackers reject their own combatants. Direct aim points are available
+for authored scenarios. Immutable per-shot side and launcher ownership survive
+operator death. Defenders cannot register as hostile objectives. Attackers
+reuse #20 proximity/death tracking, victory and withdrawal unchanged.
+
+The provisional guard radius is twice the reconstructed trail-to-muzzle span,
+182.4 MU = 5.7 m, configurable per gun for playtesting. Initial empty areas,
+temporary departure and missing actors do not imply enemy deaths. Neutralized
+guns stop permanently without deleting released projectiles. Loaded, launch,
+recovery, partial loading, staffing, ammunition, shot serial, references and
+spent contacts serialize natively. One live projectile per launcher, four
+spent-state tics with no debris and a 120-second abnormal-flight lifetime
+bound accumulation. These are implementation bounds, not ammunition grants
+or historical range measurements. Pre-feature saves opt in only when a cannon
+is explicitly created; no saved actor or map is replaced.
 
 ## 4.36.16 — Mobile demonic rams (#20; planned label 4.36.12)
 
