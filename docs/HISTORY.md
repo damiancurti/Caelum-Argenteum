@@ -1,6 +1,31 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **4.36.17** — 2026-09-26.
+Documentation version: **4.36.18** — 2026-09-27.
+
+## 4.36.18 — Walking wall-impact absorption (#43)
+
+On 2026-09-27, after accepting #21, the author requested walking absorption and
+explicitly limited it to walls. Added IsWalkingOnGround using live/grounded,
+directional input and native BT_RUN state; the shared reception uses the existing
+Agility fraction/cap for walking or crouching against walls only. No saved data,
+damage formula or cannon input changed. Branch starts at #21 acceptance 3e5e0a5e.
+
+The author corrected the calculation to 80 kg body mass, all attributes 20 and
+equipment weighing medium T1 armor. Size M totals 20 kg, making collision mass
+100 kg and maximum health 2,480. SYSTEMS records the loaded jump calculation.
+Native self-jump at the original floor height retained all 2,480 health; the
+post-absorption velocity residue was below the existing severity threshold.
+
+24 isolated GZDoom 4.14.2 checks passed, including actual walking/running wall
+contacts, native jump input/flight/landing, idle/airborne/immobilized exclusions,
+sideways walking, retained crouch/buckler response and unchanged actor/projectile
+eligibility. Initial fixture runs incorrectly overwrote derived stats without
+changing their authoritative creation profile; normal recalculation restored
+1,780 health before takeoff. A persistent 80 kg/all-20 fixture corrected this;
+the observed mismatch was not fall damage or a gameplay fix. Evidence preserves
+this correction separately from final results. Static validation and normal build
+passed. Manual CA-43618-WALK-01 originates in 4.36.18 /#43 and remains pending.
+No independent AI review or token counters are available for this session.
 
 ## 4.36.17 — Cannon firing and physical contacts (#21; planned label 4.36.13)
 

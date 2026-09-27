@@ -4,8 +4,15 @@ An independent dark fantasy FPS-RPG inspired by nineteenth-century Argentina.
 Author and game designer: **Damian Curti**. Development target: **GZDoom 4.14.2**
 on Windows 11. The final game is intended to be independent of Doom assets.
 
-**Current release: 4.36.17.** Obtain and update the complete repository, validate
+**Current release: 4.36.18.** Obtain and update the complete repository, validate
 it, then rebuild with `run_dev.bat` as described below.
+
+Issue [#43](https://github.com/damiancurti/Caelum-Argenteum/issues/43) extends
+biological wall-impact absorption to walking, using the existing crouched
+Agility fraction and cap. Native effective run state distinguishes walking
+from running; idle/airborne input does not qualify. The benefit applies only
+to walls. Native checks and an 80 kg /20 kg equipment self-jump test passed;
+manual acceptance CA-43618-WALK-01 remains in [pending_test.txt](pending_test.txt).
 
 Issue [#21](https://github.com/damiancurti/Caelum-Argenteum/issues/21) adds
 controlled cannon loading, firing and recovery, with inert 4.3 kg projectiles

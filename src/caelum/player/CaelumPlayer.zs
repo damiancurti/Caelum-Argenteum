@@ -12227,10 +12227,11 @@ class CaelumPlayer : DoomPlayer
             baseAbsorption / Max(0.0001, baseJump) - 1.0
         );
 
-        // Agacharse permite amortiguar choques contra geometría: el personaje
-        // se mueve deliberadamente con cuidado y cede ante el contacto.
+        // Caminar o agacharse permite ceder ante paredes. La marcha exige
+        // entrada direccional, suelo y ausencia del estado nativo de carrera.
+        // No concede esta amortiguación a cuerpos ni proyectiles.
         double carefulMovementFraction = 0.0;
-        if (IsCrouching
+        if ((IsCrouching || IsWalkingOnGround())
             && impactKind == CaelumConstants.IMPACT_KIND_WALL)
         {
             carefulMovementFraction = Clamp(
@@ -14717,6 +14718,19 @@ class CaelumPlayer : DoomPlayer
         bool runIsActive = (player.cmd.buttons & BT_RUN) != 0;
 
         return hasMovementInput && runIsActive;
+    }
+
+    bool IsWalkingOnGround()
+    {
+        if (player == null
+            || player.playerstate != PST_LIVE
+            || !player.onground
+            || IsPhysicallyImmobilized())
+        {
+            return false;
+        }
+        return (player.cmd.forwardmove != 0 || player.cmd.sidemove != 0)
+            && (player.cmd.buttons & BT_RUN) == 0;
     }
 
     // Sólo sustituye la locomoción mundial; no interrumpe ataques, dolor,

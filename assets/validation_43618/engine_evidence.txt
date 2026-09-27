@@ -1,0 +1,32 @@
+QA43 PASS directional grounded non-run input is walking
+QA43 PASS walking wall uses existing Agility fraction
+QA43 PASS walking does not absorb actor hits
+QA43 PASS walking does not absorb ram or cannon hits
+QA43 PASS walking fraction retains fifty percent cap
+QA43 PASS effective run flag disables walking benefit
+QA43 PASS idle does not count as walking
+QA43 PASS strafe walking is eligible
+QA43 PASS airborne input does not count as walking
+QA43 PASS immobilization disables absorption
+QA43 PASS existing crouched wall benefit remains
+QA43 PASS active buckler still absorbs environmental hits
+QA43 PASS active buckler retains doubled landing absorption
+QA43 PASS ordinary landing absorption remains JumpZ
+QA43 TRACE t=49 hp=2480 php=2480 max=2480.000000000 attr=20.0 z=0.000000000 vz=0.000000000 impact=0 final=0 jump=10.834469023
+QA43 PASS medium T1 size M full set weighs twenty kg
+QA43 PASS eighty kg body plus equipment has hundred kg impact mass
+QA43 PASS persistent profile retains twenty attributes and 2480 health
+QA43 PROFILE hp=2480 mass=100.000000 capacity=86.653465347 load=0.230804388 jump=10.834469023 absorb=10.834469023
+QA43 TRACE t=66 hp=2480 php=2480 max=2480.000000000 attr=20.0 z=0.000000000 vz=10.834469023 impact=0 final=0 jump=10.834469023
+QA43 PASS native jump lands at original floor height
+QA43 PASS native self jump causes zero health loss with equipment load
+QA43 JUMP launch=10.834469023 peak=64.179159254 fall=11.165530977 absorption=10.834469023 health=2480 tics=22
+QA43 TRACE t=90 hp=2480 php=2480 max=2480.000000000 attr=20.0 z=-0.000000000 vz=0.000000000 impact=3 final=0 jump=10.834469023
+QA43 PASS native walking contacts wall
+QA43 PASS native walking wall contact receives biological absorption
+QA43 WALL walking=1 raw=2.336335788 bio=0.827783927 trauma=1.508551860
+QA43 PASS native running contacts wall
+QA43 PASS native running wall contact receives no walking absorption
+QA43 WALL walking=0 raw=3.266590045 bio=0.000000000 trauma=3.266590045
+QA43 PASS native jump completed rather than skipped
+QA43 DONE checks=24 failures=0

@@ -1,6 +1,16 @@
 # Caelum Argenteum — Project, status and roadmap
 
-Documentation version: **4.36.17** — 2026-09-26.
+Documentation version: **4.36.18** — 2026-09-27.
+
+## 4.36.18 — Walking wall-impact absorption (issue #43)
+
+Extends careful wall-contact absorption to actual grounded walking. The author
+confirmed walls only; running/idle/airborne movement and actor/projectile
+contacts do not gain the walking benefit. Existing crouch and acrobatic defense
+remain. Native eligibility/traversal and a loaded self-jump pass; evidence is
+in assets/validation_43618. CA-43618-WALK-01 author acceptance remains pending.
+Based on accepted #21 /PR #42; this focused follow-up does not implement the
+proposed 500 m/s cannon speed or Type 4 collision-damage divisor.
 
 ## 4.36.17 — Controlled cannon firing (issue #21)
 

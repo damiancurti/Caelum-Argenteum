@@ -1,0 +1,63 @@
+{
+  "issue": 43,
+  "release": "4.36.18",
+  "date": "2026-09-27",
+  "base_commit": "3e5e0a5ef76949a9ea625deac943442d8cb48875",
+  "status": "implemented; isolated native verification complete; author acceptance pending",
+  "runtime_sha256": "9d828d58ad5dacfb9230db19d124ad4da0cca2cbd9b860581e2e3325851bccef",
+  "pk3_sha256": "e6370a3b50302736f5041a15f1fa07acae1723176b70bd2e97446b78d9554e84",
+  "packaged_files": 6116,
+  "packaged_bytes_match_source": true,
+  "engine": "GZDoom g4.14.2 Windows",
+  "engine_checks": 24,
+  "engine_failures": 0,
+  "engine_log_sha256": "d0750e95eba84300fe87a4484fbd1905309f920fcbc814742c2e9c443d16bd3b",
+  "fixture_scope": "Disposable native map and EventHandler; no fixture, IWAD, executable or saves distributed.",
+  "fixture_correction": "Initial direct stat overwrites were replaced each tick by authoritative character recalculation, clamping health to 1780 before takeoff. Corrected fixture uses persistent 80 kg creation profile with all attributes 20 and 20 kg equivalent equipment load; final native launch, flight, landing and health verified.",
+  "save_compatibility": "No fields added or removed; stateless helper reads current player input. No schema migration required.",
+  "author_acceptance": {
+    "id": "CA-43618-WALK-01",
+    "status": "pending"
+  },
+  "calculation": {
+    "body_mass_kg": 80,
+    "equipment_mass_kg": 20,
+    "equipment_weight_reference": "Full medium T1 size M: head4 torso10 arms2 legs4",
+    "collision_mass_kg": 100,
+    "attributes": 20,
+    "maximum_health": 2480,
+    "carry_capacity_kg": 86.65346534653466,
+    "load_fraction": 0.23080438756855573,
+    "jump_mu_per_tic": 10.834469023097665,
+    "absorption_m_s": 11.850200494013071,
+    "walking_wall_fraction": 0.35430862788720807,
+    "native_landing_speed_mu_per_tic": 11.165530977,
+    "native_peak_mu": 64.179159254,
+    "native_fall_damage": 0,
+    "comparison_assumptions": "Calculation only: proposed Type4 collision Toughness and 500 m/s cannon, frontal stationary target, armor20percent without anatomical reinforcement. Runtime formula/speed unchanged.",
+    "proposed_siege_damage": [
+      {
+        "weapon": "small ram",
+        "proposed_neutral_percent": 104.99722952008739,
+        "neutral_damage": 2604,
+        "torso_damage": 4166,
+        "head_damage": 5208
+      },
+      {
+        "weapon": "large ram",
+        "proposed_neutral_percent": 110.9796334203499,
+        "neutral_damage": 2752,
+        "torso_damage": 4404,
+        "head_damage": 5505
+      },
+      {
+        "weapon": "cannon 500 m/s",
+        "proposed_neutral_percent": 33.42886243774796,
+        "neutral_damage": 829,
+        "torso_damage": 1326,
+        "head_damage": 1658
+      }
+    ]
+  },
+  "static_validation_sha256": "676ad900e2f876a4ea30182639c5896b91189189682815351cce5e2484fc6035"
+}
