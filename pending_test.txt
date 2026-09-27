@@ -19,6 +19,11 @@ Steps:
 4. In MAP02, release different prisoners and finish their dialogues. The Voice
    should speak once for each release, after the current dialogue. Repeat Use,
    save/load and continue: already delivered lines must not repeat.
+   Reported failure (2026-09-27): after releasing the Federal (Ronnie appearance),
+   returning to the first prisoner froze the game; Mandingas had been killed by
+   command and rats remained. Rebuild the corrected PK3, reload the earlier save,
+   repeat this route and allow the Federal to fight rats/use secondary wind.
+   Expected: the discharge renders and play continues, with each Voice line once.
 5. Let the sewer Zupay flee, then reload the pre-boss save and defeat it directly
    if possible. In either completed outcome, the Voice should acknowledge that
    the way is clear without revealing her identity or restoring your memory.

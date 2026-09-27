@@ -67,6 +67,11 @@ class CaelumActorSimpleElementalProjectile : CaelumActorProjectile
     Death:
         TNT1 A 1 A_CaelumRecordDiagnosticProjectileImpact;
         Stop;
+    // GetSpriteIndex necesita un registro nativo para el rayo secundario.
+    // Se agrega al final para conservar los índices de estados de guardados.
+    SecondaryWindFrames:
+        CELH ABCDEFGHIJKL 1 Bright;
+        Stop;
     }
 }
 

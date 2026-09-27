@@ -35,6 +35,30 @@ Documentation version: **4.36.22** — 2026-09-27.
   automated/native checks do not assert final dialogue approval. #16 owns the
   full port playthrough before #17 export.
 
+### Same-patch MAP02 freeze correction, 2026-09-27
+
+The author reported a freeze after freeing the second (Federal/Ronnie-looking)
+prisoner and returning to the first. Mandingas had been killed by console command;
+remaining combat could involve rats. This is a failed/partial author test, not
+acceptance of CA-43622-NARRATIVE-01.
+
+The original native exception, recovered using the matching 4.14.2 PDB, was
+C0000005 in FindModelFrameRaw at RVA 0x397986: sprite index -1, frame 9. GZDoom's
+secondary-thread exception handler parks that worker while the main renderer
+waits for it, leaving a frozen window. CELH A-L assets existed, but neither NPC
+projectile class registered them; secondary wind selected CELH dynamically.
+An isolated discharge from a copy of the author's autosave reproduced sprite=-1
+and a rendering hang on the delivered 7ffc1ff build. A generic two-prisoner
+teleport/follow test alone did not reproduce it and is not proof of its absence.
+
+Appending an unreachable CELH A-L registration after the simple projectile's
+existing states makes the global sprite lookup valid for simple and explosive
+variants. No asset, balance, schema or old state offset changes. Post-fix native
+rendering passes for both variants, including all twelve explosive frames;
+an older save loads. Same-model independent review found no blocker. Detailed
+evidence: assets/validation_43622/wind_render_fix.json. Private dumps and author
+saves remain in ignored build/. Author playthrough confirmation remains pending.
+
 ## 4.36.21 — Scenery adrenaline and running absorption (#49)
 
 On 2026-09-27 the author confirmed all #33 tests passed, then reported that

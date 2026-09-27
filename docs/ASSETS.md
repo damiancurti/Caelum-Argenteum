@@ -12,6 +12,11 @@ The approved Tarot art and single capture/presentation path are unchanged.
 An isolated native screenshot and rendered-menu evidence are retained in
 assets/validation_43622; engine/IWAD binaries and disposable saves are not shipped.
 
+The same-patch MAP02 correction registers existing elemental CELHA0 through
+CELHL0 PNGs via appended native projectile states. There is no new art or changed
+provenance: runtime lookup of an otherwise unregistered CELH returned -1.
+Both NPC projectile variants share the resulting global registration.
+
 ## 4.36.20 — Shared Arcana presentation (#33)
 
 The accepted #15 artwork is reused without raster edits: Fool ID 0 keeps

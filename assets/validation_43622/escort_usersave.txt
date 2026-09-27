@@ -1,0 +1,15 @@
+GZDoom version g4.14.2
+ESCORT released first
+ESCORT tick=100 first=CaelumPrisonerUnitario second=CaelumPrisonerFederal
+ESCORT released second
+ESCORT tick=200 first=CaelumPrisonerUnitario second=CaelumPrisonerFederal
+ESCORT returned to first
+ESCORT tick=300 first=CaelumPrisonerUnitario second=CaelumPrisonerFederal
+ESCORT tick=400 first=CaelumPrisonerUnitario second=CaelumPrisonerFederal
+ESCORT tick=500 first=CaelumPrisonerUnitario second=CaelumPrisonerFederal
+ESCORT tick=600 first=CaelumPrisonerUnitario second=CaelumPrisonerFederal
+ESCORT tick=700 first=CaelumPrisonerUnitario second=CaelumPrisonerFederal
+ESCORT tick=800 first=CaelumPrisonerUnitario second=CaelumPrisonerFederal
+ESCORT tick=900 first=CaelumPrisonerUnitario second=CaelumPrisonerFederal
+ESCORT tick=1000 first=CaelumPrisonerUnitario second=CaelumPrisonerFederal
+ESCORT DONE two prisoner follow/render

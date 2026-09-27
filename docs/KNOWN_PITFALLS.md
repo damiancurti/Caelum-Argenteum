@@ -41,6 +41,29 @@ does not validate the rendered dialogue/capture path. See
 [render correction evidence](../assets/validation_43620/capture_render_fix.json).
 The author confirmed CA-43620-ARCANA-01 passed after the fix on 2026-09-27.
 
+## CA-KP-017 — Unregistered NPC secondary-wind sprite freezes rendering
+
+Status/evidence: AUTHOR-REPORTED / ENGINE-VERIFIED correction, #34 / 4.36.22.
+First recorded / last checked: 2026-09-27 / 2026-09-27.
+Environment: GZDoom 4.14.2, Windows 11, Vulkan, gl_multithread=true, development IWAD.
+
+CELH existed as twelve PNG frames but had no native actor state. NPC simple and
+explosive wind projectiles used GetSpriteIndex("CELH"), which returned -1.
+The author's frozen MAP02 process retained C0000005 in FindModelFrameRaw
+(RVA 0x397986), sprite -1/frame 9. The engine exception handler redirects the
+worker to SleepForever and queues cleanup on the main thread; the latter is
+waiting for that worker in RenderBSP. Ordinary post-hang stacks obscure the
+original exception: recover CrashPointers/CrashAddress with matching symbols.
+Do not mistake raw stack-address scans for an unwound call chain.
+
+Append CELH A-L states after existing states so sprite registration is global
+and old saved state offsets stay intact. A baseline secondary-wind discharge
+reproduces the hang; corrected simple/explosive rendering and all twelve frames
+pass. Recheck both consumers and pre-change saves when altering registrations.
+This is related to CA-KP-016 but has a distinct measured invalid-index exception.
+Author rescue/rats retest is pending in CA-43622-NARRATIVE-01. See
+[evidence](../assets/validation_43622/wind_render_fix.json).
+
 ## How to read this register
 
 This is a compact engineering memory, not a second bug tracker or a claim that every historical fix has been independently reproduced. Use the current issue for active scope and HISTORY for release chronology and author acceptance.

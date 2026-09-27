@@ -1,0 +1,61 @@
+{
+  "issue": 34,
+  "version": "4.36.22",
+  "date": "2026-09-27",
+  "baseline_commit": "7ffc1ff460b68dd676b35ea1da802c3b1443bfa1",
+  "author_report": "After releasing the second (Federal/Ronnie-looking) prisoner, returning to the first froze MAP02. Mandingas killed by command; rats remained. No author suspension.",
+  "native_diagnostic": {
+    "engine": "GZDoom 4.14.2 Windows x64",
+    "pdb_guid": "462c6982-3181-40a6-b91a-f0ac822874c2",
+    "pdb_age": 1,
+    "exception": "C0000005",
+    "function": "FindModelFrameRaw",
+    "rva": "0x397986",
+    "sprite_index": -1,
+    "frame": 9,
+    "recovery": "Read stored CrashPointers and CrashAddress; worker redirected to SleepForever by native exception handler while main thread waits in RenderBSP. Windows later started a hang report. Raw stack scans alone were inconclusive."
+  },
+  "cause": "NPC secondary-wind lookup CELH had no native state registration, despite twelve existing PNG frames. Actor.GetSpriteIndex returned -1.",
+  "fix": "Append SecondaryWindFrames CELH A-L after simple projectile existing states; global registration covers simple and explosive consumers; no prior state offsets, serialized fields, assets or balance changed.",
+  "engine_tests": {
+    "baseline": "Exact secondary-wind setup from copied author autosave printed sprite=-1 then hung; launcher stopped only its own process after 45 seconds.",
+    "fixed": "Same setup resumes and exits 0; explosive secondary wind renders A-L with all twelve frame bits observed; exits 0.",
+    "save_compatibility": "Copied author autosave loads; separate pre-fix save with both existing projectile states loads and validates Spawn states after fix.",
+    "control": "Generic two-prisoner release/follow/return control ran 1000 ticks from copied author save without reproducing the specific discharge; not proof of campaign acceptance."
+  },
+  "baseline_pk3_sha256": "cb3bc5c8fc88917e17cfb0f06ad92d97b95fc37f8fccfb69b6f65520a39f1b16",
+  "fixed_pk3_sha256": "1f8235903a95bf59dc0f19023efc5a10bf50c393bc7019ae9225cf09501f1f9e",
+  "fixed_source_sha256": "9d12500f74ed2f375af892bc6150b371193ee44275d6dd43d57a00a10beb7eab",
+  "logs": {
+    "wind_baseline": {
+      "raw_log_sha256": "e72e882935ff6c95b24e958b2ead75b6cf96135e92b739360c06b64f793afefd",
+      "excerpt": "wind_baseline.txt"
+    },
+    "wind_fixed": {
+      "raw_log_sha256": "92cc597410e249d3fd2237a110da90f8db8d174d9a3f2efe5e711cbfc2894f8f",
+      "excerpt": "wind_fixed.txt"
+    },
+    "wind_save_before": {
+      "raw_log_sha256": "743f7de4342dbfc0a9eb8efd6c9f774c76b0397cafb3085a0b7e9f65e92d1475",
+      "excerpt": "wind_save_before.txt"
+    },
+    "wind_save_after": {
+      "raw_log_sha256": "39587ceb1168494c2590a6ce579199b6cb1ee05609df078ad68612ae9f092b22",
+      "excerpt": "wind_save_after.txt"
+    },
+    "escort_usersave": {
+      "raw_log_sha256": "a874b8e2c85a7d4836c232b8ce692585a1f1cd14cebf2d8125cda06993cc997f",
+      "excerpt": "escort_usersave.txt"
+    }
+  },
+  "review": "Independent same-model read-only review found no blocker; requested both variants/all frames and pre-change saved states, now exercised.",
+  "author_acceptance": "Pending CA-43622-NARRATIVE-01, including Federal/rats return route. No passed author tests removed.",
+  "private_evidence": "Dumps, author saves, runtime fixtures and installed engine/PDB remain local under ignored build; not distributed.",
+  "delivered_pk3_sha256": "7b7be9fec22d936a54f2bf9cbfa612632224c68a789dcd1ad09f97afc3068f6c",
+  "delivered_package_check": "All 6119 named entries byte-identical to the tested fixed package; ZIP container metadata may differ.",
+  "static_validation": {
+    "validate_project.py": "PASS, no errors; CONTEXT 2493 words",
+    "git diff --check": "PASS",
+    "document_index": "Regenerated and validator confirms freshness"
+  }
+}

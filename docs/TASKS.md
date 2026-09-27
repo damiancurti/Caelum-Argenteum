@@ -11,6 +11,10 @@ Documentation version: **4.36.22** — 2026-09-27.
   payouts, factions, combat balance, world pause rules and the single Tarot path.
 - **Validation:** assets/validation_43622/RESULTS.json and STATIC.json; static,
   focused native behavior, old-save migration and rendered-menu checks pass.
+- **MAP02 followup:** secondary-wind CELH sprite registration fixes the reproduced
+  native rendering hang; both projectile variants/older-save checks pass.
+  Author retest of the second rescue and rats remains pending; see wind_render_fix.json
+  in assets/validation_43622.
 - **Author acceptance:** CA-43622-NARRATIVE-01 remains outstanding.
 - **Dependency boundary:** #16 must deploy the complete MAP06 army/routes. The
   port quest stays hidden in the present pre-siege port; registered encounter

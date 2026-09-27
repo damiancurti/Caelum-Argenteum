@@ -24,6 +24,12 @@ queue save/load/travel and rendered USDF checks pass. See
 assets/validation_43622/RESULTS.json. These are agent checks, not author acceptance.
 Next: author dialogue/campaign review, then #16/#17 integration and export gates.
 
+The author subsequently reported a MAP02 freeze during the second rescue.
+Its invalid secondary-wind sprite was reproduced and corrected through native
+CELH A-L registration; isolated rendering and older-save checks pass. The author
+must repeat the Federal/prisoner/rats scene before campaign acceptance.
+Evidence: assets/validation_43622/wind_render_fix.json.
+
 ## 4.36.21 — Scenery impact correction (#49)
 
 Trees and rocks no longer turn collision damage/pain into combat adrenaline.

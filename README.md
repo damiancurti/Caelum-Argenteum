@@ -18,6 +18,12 @@ controller; full MAP06 deployment remains #16. Evidence is in
 [validation_43622](assets/validation_43622/RESULTS.json). Author review and
 campaign checks remain in [pending_test.txt](pending_test.txt).
 
+The MAP02 freeze reported during #34 tests is corrected: the NPC secondary-wind
+animation now registers its existing twelve frames before rendering. The failing
+discharge was reproduced; both projectile variants and an older save pass after
+the fix. See [freeze evidence](assets/validation_43622/wind_render_fix.json).
+The author's two-prisoner/rats playthrough still needs confirmation.
+
 Issue [#49](https://github.com/damiancurti/Caelum-Argenteum/issues/49) removes
 combat adrenaline from tree/rock collision damage and pain. Walking, running
 and crouching use the existing biological absorption against walls, rooted

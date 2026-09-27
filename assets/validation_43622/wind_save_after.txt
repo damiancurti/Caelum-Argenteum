@@ -1,0 +1,3 @@
+GZDoom version g4.14.2
+WIND_SAVE PASS restored both prior projectile states
+WIND_SAVE_DONE
