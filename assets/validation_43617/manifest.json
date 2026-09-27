@@ -1,0 +1,182 @@
+{
+  "issue": 21,
+  "release": "4.36.17",
+  "planned_pr_label": "4.36.13",
+  "date": "2026-09-26",
+  "base_commit": "9676ec0de01c31dcaa8821cdd9bf1d805ccb947d",
+  "status": "implemented; native/static verification complete; author acceptance pending",
+  "runtime_sha256": {
+    "src/MODELDEF": "7bd000856ade2268c99646aa35b1b948c027152b29014bd5ec7500f3942c450d",
+    "src/ZSCRIPT": "d559c6b1835d2778efa4a563c8262569a2f80091763b1af0beb9f180c38b4cc8",
+    "src/caelum/world/CaelumBreakableGate.zs": "7e28d62c5503a95c94b56300e49e615f97c7a1f060a485a6c267eab1203a4c84",
+    "src/caelum/world/CaelumCannon.zs": "d4e5025397261adee3de6572b24329145633c1be0b9d192537d4b639590678ea",
+    "src/caelum/world/CaelumCannonData.zs": "fa6930462d75392dad76470be36abf95c600e4f72f4ca3257b74e746c13614a2",
+    "src/caelum/world/CaelumCannonTrial.zs": "4fb8361c5727c257775009aac95e30b35d2f73e14da187a379a47f77088a61aa",
+    "src/caelum/world/CaelumGateData.zs": "9f3816a48fe70274013fbce6de7f1412b522a53d4ea86be27a857b2cd5768fb9",
+    "src/caelum/world/CaelumPhysicalHazards.zs": "09ec13594ce0eaf3e3e6612db97198c63390072d8420b889bd1af6637ca3ad16",
+    "src/caelum/world/CaelumSewerMaze.zs": "1ad21c3991732d62ec09bbc79b273cd85c893b0101d620abef87fed9fc0b1040",
+    "src/caelum/world/CaelumSiegeEncounter.zs": "5bc908d00565e0840fe9ee6a98dea1f956ffbf58c005b63b66af51bb54ea31ce",
+    "src/impactphysics/ImpactPhysics.zs": "414c51e69482d225d7b281d2756493c662e63dcac19eb0ff778a2408753033d4",
+    "src/models/caelum/siege/ca_cannon_closed.obj": "2c84c3f2fad5a15b111660e349383897db9120bbcfbb2ec2216f3442bf14343a",
+    "src/models/caelum/siege/ca_cannon_flash.obj": "ad166071b5b55dab12f3c54d1de901c10bc1df1771bcd223329e56f8ef4f5059",
+    "src/models/caelum/siege/ca_cannon_frame.obj": "8440d9f44a90aa3934f12e5a4e8f6942bfaa9d302d79206cf02cd94b0b887cf2",
+    "src/models/caelum/siege/ca_cannon_open.obj": "9405c35ef413ae748cf2070cd38aa69e7ea3af08cde9043af46ca796a4d96170",
+    "src/models/caelum/siege/ca_cannon_round.obj": "d0d7ae4b17ba87764293bd221d0bf4e859fc25f251ee4b0f70374cca08489ab9",
+    "src/sprites/CCBRA0.png": "f2bb5bbaca678ecad746b1fa5ecfa2c8a81dd18817be19f0187c036d25326317",
+    "src/sprites/CCBRB0.png": "f2bb5bbaca678ecad746b1fa5ecfa2c8a81dd18817be19f0187c036d25326317",
+    "src/sprites/CCFLA0.png": "f2bb5bbaca678ecad746b1fa5ecfa2c8a81dd18817be19f0187c036d25326317",
+    "src/sprites/CCFRA0.png": "f2bb5bbaca678ecad746b1fa5ecfa2c8a81dd18817be19f0187c036d25326317",
+    "src/sprites/CCSHA0.png": "f2bb5bbaca678ecad746b1fa5ecfa2c8a81dd18817be19f0187c036d25326317"
+  },
+  "input_sha256": {
+    "assets/generators/cannon_physics.json": "c264dc17806417cc53fa8eb4474ad87dd070aed0de5bbc2f0641813d1aec8dab",
+    "assets/generators/generate_cannon_runtime.py": "e83d3b4291604d89a0357524063c81e17071551e9e672b8447640fea1a5f6333"
+  },
+  "normal_build": {
+    "exit_code": 0,
+    "files": 6116,
+    "all_packaged_bytes_match_src": true,
+    "pk3_sha256": "254a30aac7de9c97081decf91084a7fa31b93c38d1601961a90d2f885d16446b"
+  },
+  "generation": {
+    "two_repeat_runs_byte_identical": true,
+    "legacy_siege_meshes_unchanged": true
+  },
+  "native": {
+    "engine": "GZDoom g4.14.2",
+    "cannon_checks": 41,
+    "ram_shared_siege_regression_checks": 53,
+    "logs": {
+      "cadence_final": {
+        "sha256": "a6bc5166f30113bc7c70400011352ffff8bc83ae28cc10855088c7568d8a523c",
+        "selected_lines": 22
+      },
+      "advanced_pk3_final": {
+        "sha256": "5876d143095b7d6e87166bf57f11fb7281f4038dc7eaf99b2d99dc8f667c6266",
+        "selected_lines": 26
+      },
+      "ram_regression_final": {
+        "sha256": "d61221fb6ca149af2673c525f42eac5d5185b5a3985ca5b538e8da41de0802ee",
+        "selected_lines": 67
+      },
+      "save_flight_final": {
+        "sha256": "08648d56489bfaab2399ac6470fee22ef37c7e5175a9263648fb0876d12b6889",
+        "selected_lines": 7
+      },
+      "load_flight_final": {
+        "sha256": "eda92cd14e7f43117796d6ff93c664ae2e59dbf65c4dc06ee9e6fc597e01086b",
+        "selected_lines": 60
+      },
+      "save_loaded_final": {
+        "sha256": "908ea40a1ad2113ae9435ccfed4a1b122da6dfb62b86c0afd06d9584dda729bd",
+        "selected_lines": 26
+      },
+      "load_loaded_final": {
+        "sha256": "7ad39086e816e29a775f34689fe29a88706b5bb1b8851c53a499194701a3aa81",
+        "selected_lines": 41
+      },
+      "save_loading_final": {
+        "sha256": "3100d9a7ad53535334a0dda3b311b7cb42fa7fcfc48370200f019aed67317ffe",
+        "selected_lines": 26
+      },
+      "load_loading_final": {
+        "sha256": "1764a83e3fadda8c72b15060f8bf88212782ec9ea1c78f943cc50f6ffbd03a5c",
+        "selected_lines": 41
+      },
+      "save_live_flight": {
+        "sha256": "af62d9f39a3cf798de6eb7943ac1031659c77da32c27a035e9d474fd8c0c2990",
+        "selected_lines": 13
+      },
+      "load_live_flight": {
+        "sha256": "b3fe710dcccd16aecf0104b14385de235e397314999ab6ac43d5e02419de4863",
+        "selected_lines": 12
+      },
+      "save_contact_final": {
+        "sha256": "f66d0d3601a7c050bf422a54d1ad6eaf663f5c994fde6c1cd4d654b89bafdb08",
+        "selected_lines": 16
+      },
+      "load_contact_final": {
+        "sha256": "aad4cd75c06561cc47c846334e9b1bce0fdfa84da936b31273db3f8e562d472c",
+        "selected_lines": 12
+      },
+      "hub_final": {
+        "sha256": "a64c90ec306edf7dfb857fe3b1ca6a02cf95c86e8f708dbc2ed15db0feb3fb1a",
+        "selected_lines": 18
+      },
+      "legacy": {
+        "sha256": "db4c7cc4d460fc7956c493c5428c1e416a4063d3b2f6b48d7876a7c54dca7c7e",
+        "selected_lines": 6
+      },
+      "legacy_repeat": {
+        "sha256": "f197fdcdc43afe798e0466c381a01d6c04bbd4c339278a2690b5bae6296599de",
+        "selected_lines": 6
+      },
+      "visual_hub": {
+        "sha256": "fe04f951be248c72292f7d71af272747230967684e3330d247eb15685e261b88",
+        "selected_lines": 9
+      }
+    },
+    "persistence": "persistence.json",
+    "actual_live_save_projectiles": 18,
+    "actual_spent_save_projectiles": 18,
+    "exact_field_snapshots": [
+      "loaded",
+      "loading",
+      "flight"
+    ],
+    "legacy_input_sha256": "42845394349e82847a836c368e056d9777111dc3870efca1773aae10edb8ffdb",
+    "player_and_npc_collision": true,
+    "all_three_gate_materials_zero_damage": true,
+    "muzzle_wall_floor_ceiling_and_arc": true,
+    "simultaneous_attackers": 6,
+    "simultaneous_defenders": 12
+  },
+  "visuals": {
+    "loading.png": "109b2ac489aeb40103122bf10b34936fec0b95749415fda3228c566c0b6f11af",
+    "firing.png": "5735fe661b986e9ed490a12363724c6b02c341056207bd6f6826241537d02a09"
+  },
+  "visual_review": "Native dimensions, separate open wedge/tube and synchronized discharge inspected. The firing camera forces readiness in a disposable scene; cadence is verified separately at native 30/60 seconds.",
+  "decisions": [
+    "Author approved approximate reconstruction instead of an unverified exact Argentine 1884 specification.",
+    "Author approved inert 75 x185 mm /4.3 kg round, 400 m/s launch, two operators and 30/60-second cycles.",
+    "Author specified structural contact with projectile stopping, then directed use of the same implemented collisions as characters. Zero gate damage under that rule was explicitly reported. No new penetration rule was added."
+  ],
+  "correction_rounds": [
+    "Native syntax/API corrections: enum name, state-label branch, missile stop return, action self cast, A_SetSize.",
+    "Fixture corrections: operators moved within guard radius, targets within low-elevation ballistic path, actual native death used.",
+    "Added native gravity to FastProjectile, swept muzzle check, own-part exclusions, spent callback guard and final Fire preconditions.",
+    "Hub transition fixture required waits after native save commands; completed hub_final replaces the incomplete visual-run transition.",
+    "One older regression launcher stalled at map startup without a logged gameplay error. Its verified owned process was stopped; the supervised rerun passed all53 checks. Cause not established."
+  ],
+  "usage": {
+    "work_session": "not used",
+    "desktop_sessions": 1,
+    "model": "inherited session model",
+    "independent_ai_review": "not available",
+    "input_tokens": null,
+    "output_tokens": null,
+    "cached_tokens": null,
+    "reasoning_tokens": null,
+    "allowance_baseline": "author-reported 75% weekly remaining on 2026-09-23",
+    "current_allowance": null,
+    "reset_time": "unknown",
+    "concurrent_activity": "unknown",
+    "note": "Task resumed after user interruption. Unavailable counters are not estimated from time, quota or diff size."
+  },
+  "author_acceptance": {
+    "id": "CA-43613-CATAPULT-01",
+    "status": "pending",
+    "queue": "pending_test.txt"
+  },
+  "limitations": [
+    "Approximate reconstruction is not a verified original Argentine 1884 technical drawing.",
+    "No air drag, explosive ammunition or new penetration/structural damage rule.",
+    "General collision solver retains accepted horizontal impulse semantics; native flight is three-dimensional.",
+    "Campaign deployment, crew/ammunition allocation, aiming/routes/rewards and full encounter performance remain #16/#17."
+  ],
+  "static_validation": {
+    "exit_code": 0,
+    "errors": [],
+    "report_sha256": "aec03c7a7ba59b4cf40292e8fe4a06118a3cba0413832d84ce9f9b679f42b9c9"
+  }
+}

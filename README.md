@@ -4,8 +4,21 @@ An independent dark fantasy FPS-RPG inspired by nineteenth-century Argentina.
 Author and game designer: **Damian Curti**. Development target: **GZDoom 4.14.2**
 on Windows 11. The final game is intended to be independent of Doom assets.
 
-**Current release: 4.36.16.** Obtain and update the complete repository, validate
+**Current release: 4.36.17.** Obtain and update the complete repository, validate
 it, then rebuild with `run_dev.bat` as described below.
+
+Issue [#21](https://github.com/damiancurti/Caelum-Argenteum/issues/21) adds
+controlled cannon loading, firing and recovery, with inert 4.3 kg projectiles
+launched at 400 m/s through native fast collision and gravity. Two operators
+complete a cycle in 30 seconds; one takes 60 seconds; none pauses it. Both
+factions retain projectile ownership and only attackers count as objectives.
+The author authorized an approximate documented reconstruction of the selected
+Argentine 1884 gun. Shared collision rules remain unchanged: these projectiles
+cause zero structural gate damage at the approved speed, but can injure characters.
+In disposable MAP03, use `give CaelumDebugCannonTrial` and
+`give CaelumDebugCannonStatus`. Native evidence is in
+[validation_43617](assets/validation_43617/manifest.json).
+Author check CA-43613-CATAPULT-01 remains [pending](pending_test.txt).
 
 Issue [#20](https://github.com/damiancurti/Caelum-Argenteum/issues/20) adds
 mobile demonic rams with native single-impact strikes, recovery, full 6/32
@@ -14,8 +27,8 @@ The author approved demonic speeds while retaining the accepted gate/impact
 rules. In disposable MAP03, `give CaelumDebugRamTrial` creates five small and
 one large ram with their crews; `give CaelumDebugRamStatus` prints their state.
 Native evidence is in [validation_43616](assets/validation_43616/manifest.json).
-Author check CA-43612-RAM-01 passed on 2026-09-26; see [history](docs/HISTORY.md). Cannon mechanics
-and final port integration remain #21 and #16/#17.
+Author check CA-43612-RAM-01 passed on 2026-09-26; see [history](docs/HISTORY.md).
+Cannon mechanics are delivered in #21 above; final port integration remains #16/#17.
 
 Issue [#19](https://github.com/damiancurti/Caelum-Argenteum/issues/19) adds
 breakable actor gates with the author's approved hardness/Constitution and

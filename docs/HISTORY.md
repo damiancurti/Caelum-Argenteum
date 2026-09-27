@@ -1,6 +1,47 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **4.36.16** — 2026-09-26.
+Documentation version: **4.36.17** — 2026-09-26.
+
+## 4.36.17 — Cannon firing and physical contacts (#21; planned label 4.36.13)
+
+The author requested implementation, local tests, commit and push after merging
+#20 as 9676ec0d. On 2026-09-26 the author authorized an approximate documented
+reconstruction when an exact Argentine 1884 specification could not be found;
+approved an inert 75 mm /185 mm /4.3 kg round; specified two operators, one
+loading and one firing, with one operator taking twice as long; and approved
+30/60-second cycles. The issue already fixed 400 m/s for both factions.
+
+The author initially chose to define penetration after the whole-gate impulse
+calculation returned zero damage, then specified that damage must use the same
+implemented collisions as characters and that the round stops on structural
+contact. Code comparison confirmed the same impulse/Toughness path. The zero
+wood/reinforced/armored damage results were reported explicitly. No alternative
+penetration rule or arbitrary structural-damage multiplier was introduced.
+
+Added native fast projectiles with explicit native gravity integration,
+single-contact physical damage, muzzle-path obstruction checks, separate
+carriage/tube/loading/recoil/discharge presentation and controlled aim/fire
+hooks. Two factions retain saved projectile ownership; only attackers register
+as objectives. Staffing, work, finite ammunition and live-projectile references
+persist. #20 neutralization/victory/withdrawal and accepted crushing remain.
+
+Validation evidence and final hashes: assets/validation_43617. All 41 cannon
+checks and 53 ram/shared-siege regression checks passed. Unpaused saves retained
+18 projectiles in flight and 18 spent contacts; resumed trajectories/contacts,
+loaded/partial-reload snapshots, hub return and a copied 4.36.16 save passed.
+Native isolated
+tests cover the unobstructed arc, blocked muzzle/wall/floor/ceiling, both-side
+salvos, staffing rates, one contact, bounded projectiles and save/load. Static
+analysis, native results and author acceptance are distinct. Manual test
+CA-43613-CATAPULT-01 originates in 4.36.17 /#21, preserving the planned-version
+and historical catapult ID. It remains in pending_test.txt; no author pass
+or full-port encounter acceptance is claimed.
+
+Usage (#8): one desktop implementation session; no separate Work session or
+independent model review. Correction rounds are recorded in the evidence
+manifest. Token categories/current quota are unavailable, not inferred from
+diff size or time. The author-reported 75% weekly allowance on 2026-09-23 is
+retained as a baseline; reset time and concurrent activity remain unknown.
 
 ## 4.36.16 — Operational demonic rams (#20; planned label 4.36.12)
 

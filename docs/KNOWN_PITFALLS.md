@@ -321,7 +321,34 @@ trial machines; subsequent save/reload must retain that result.
 Evidence: before/after legacy runs and source hashes in
 [4.36.16 evidence](../assets/validation_43616/manifest.json). This finding is
 scoped to the tested EventHandler/save lifecycle, not every GZDoom callback.
-Author acceptance remains pending under CA-43612-RAM-01.
+The author confirmed CA-43612-RAM-01 passed on 2026-09-26 (HISTORY).
+
+## CA-KP-014 — FastProjectile collision does not integrate gravity
+
+Status/evidence: CODE-VERIFIED / ENGINE-VERIFIED.
+First recorded / last checked: 2026-09-26 / 2026-09-26.
+Issue: [#21](https://github.com/damiancurti/Caelum-Argenteum/issues/21).
+Baseline: 9676ec0d plus the #21 working tree; GZDoom 4.14.2, Windows/Vulkan.
+
+The installed engine's `zscript/actors/shared/fastprojectile.zs` subdivides
+movement according to radius and height and checks native actor, line and
+plane collisions, but its Tick override never applies gravity. Merely clearing
+NOGRAVITY does not produce a ballistic arc. CaelumCannonProjectile applies
+native GetGravity() once per physical tic before calling Super.Tick, respecting
+native freeze. Calendar acceleration is unrelated. Its 400 m/s converts to
+365.714286 MU/tic, not a raw speed of 400 and not a slowed visual surrogate.
+
+Native evidence: [#21 manifest](../assets/validation_43617/manifest.json).
+In the isolated default-gravity map, a 10-tic unobstructed flight matched
+z=z0+v0z*n-g*n*(n+1)/2 and vz=v0z-g*n; native g was 1 MU/tic². Thin wall,
+blocked muzzle, floor/ceiling and actor contacts were tested separately. A
+subclass that adds gravity should not also run ordinary Actor movement, which
+would advance the projectile twice. Default engine gravity here corresponds
+to 38.28125 m/s² at project units, not Earth's 9.80665 m/s².
+
+This finding is scoped to GZDoom 4.14.2 FastProjectile, not all actors. The
+game's accepted general collision damage/crushing formulas remain unchanged.
+Author acceptance CA-43613-CATAPULT-01 is pending.
 
 ## Rules for adding and updating entries
 

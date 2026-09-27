@@ -1,6 +1,6 @@
 # CONTEXT.md — Ultra-condensed summary of Caelum Argenteum
 
-Documentation version: **4.36.16** — 2026-09-26.
+Documentation version: **4.36.17** — 2026-09-26.
 
 Summary so an AI or a contributor can understand the project without reading
 the five full canonical documents. Source: `docs/PROJECT.md`,
@@ -64,7 +64,17 @@ the gauchos and rural culture, and the humans the urban porteño society.
 
 ## Current status
 
-Current release **4.36.16** implements #20 operational rams, retaining the
+Current release **4.36.17** implements #21 cannon loading/fire/recovery at
+400 m/s with approved inert 4.3 kg rounds and a documented approximate
+reconstruction. Two/one operators give 30/60-second cycles; none pauses work.
+Both factions keep projectile ownership; only attackers are objectives.
+Native gravity and fast collision preserve single impacts and saved flight.
+Shared collision rules give zero gate damage at these inputs; biological
+targets retain existing defenses. `give CaelumDebugCannonTrial` creates five
+disposable MAP03 lanes. Evidence: assets/validation_43617. Author acceptance
+CA-43613-CATAPULT-01 is pending; full port deployment remains #16/#17.
+
+The preceding **4.36.16** implements #20 operational rams, retaining the
 planned [4.36.12] label. Full 6/32 staffing and author-authorized demonic
 velocities preserve the agreed small-versus-reinforced/large-versus-armored
 behavior through unchanged physics. Native approach, single physical strikes,

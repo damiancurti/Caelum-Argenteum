@@ -1,6 +1,26 @@
 # Caelum Argenteum — Project, status and roadmap
 
-Documentation version: **4.36.16** — 2026-09-26.
+Documentation version: **4.36.17** — 2026-09-26.
+
+## 4.36.17 — Controlled cannon firing (issue #21)
+
+Implements #21 on merged #20 (9676ec0d), retaining the planned [4.36.13] PR label.
+Cannons load, discharge one native physical round, recover and reload through
+explicit scenario hooks. The author approved the approximate reconstruction,
+inert 4.3 kg /75 x 185 mm ammunition, 400 m/s speed and 30/60-second cycles for
+two/one operators. No operators pauses work. Shared collisions remain unchanged;
+the real gate contact causes zero damage at these inputs, while characters
+retain their mass, Toughness, armor and anatomy responses.
+
+Six attacking and twelve defending cannons are supported with persistent
+ownership; only attackers count toward the twelve-machine objective inherited
+from #20. Neutralization never deletes an already released round. Campaign
+placement, operator allocation, ammunition and aiming remain #16, with complete
+encounter acceptance in #17. CA-436-04 now has isolated implementation evidence;
+CA-43613-CATAPULT-01 retains its historical ID but tests cannons, not catapults.
+Evidence is in assets/validation_43617: 41 cannon and 53 ram/shared-siege
+regression checks passed, along with save/hub/legacy persistence checks.
+Author acceptance remains pending.
 
 ## 4.36.16 — Usable battering rams (issue #20)
 
@@ -2329,7 +2349,7 @@ content extensions and the pending previous versions are returned to V5.
 | V4.33: missions, reputation and factions | MAP01, assignment base and reusable conditions approved up to 0an. 0ao checks the final integration and recovers the menu from active conversations when loading. Broad narrative chains and rewards, composite conditions, ranges and concrete relationships pass to V5; the six canonical ids define the narrative factions, while ranks and relationships remain pending. |
 | V4.34: world architecture and travel | 0a–0c approved: catalog, Journal, return, group doors and connected sewers. 0d implements caravans and shared registry; 0e adds test stations and supplies. The author now approves all 0e tests, including seals/crafting blocking and recovery of Use. MAP01 does not support return. Timetables, durations and events are integrated with the 4.35 clock. Code refactor is still in V5.0. |
 | V4.35: calendar, weather and events | 0a–0g approved: clock/calendar, Limbo, rest, furniture/camera, sleeping bag and comfort. 0g implements safe acceleration, tables/seated meals and sleep Lucidity. 0h adds digestion, repeated servings and MAP01 furniture/workshops; native tests performed. 0i–0j correct access/Use, adjust stations/meals and establish Limbo 1:1; 0j and 0k approved by the author. 0l corrects chairs/water and adds regional SMN weather and geometric shelter. 0m scales food by mass, confirms Buenos Aires and adds author-approved port/coast test maps. 0n adds measured travel with provisions; 0o integrates the monthly agenda and persistent author-defined events. 0n/0o approved except for observations resolved in 0p, which adds reservations, Q and coastal vehicles. 0p and 0q approved; visual pack v4 and 1/3 eating rate accepted. 4.35 closed. Body thermal model in V5.1. |
-| V4.36: mobile environment and physical hazards | The 0i weight formula, maze, tables, saves and bow art are accepted; #8 is corrected and author-accepted; #9 retains the flail correction. Author-requested #10–#15 add the T1 four-section sewer, rats, prisoner escorts/port rewards and Tarot artwork; #18–#21 supply siege assets, breakable actor gates, rams and cannons (historical catapult task CA-436-04). Rams now have native #20 evidence (4.36.16), with CA-43612-RAM-01 author acceptance confirmed on 2026-09-26; cannon operation remains #21. Per the author's #8 clarification, the existing ceiling/elevator cover moving sectors; avalanches are deferred until additional maps and damaging surfaces until temperature effects, so those three are not release blockers. Validate integration/save/reset before extracting Impact Physics; neither assets nor a closed issue substitutes for acceptance. |
+| V4.36: mobile environment and physical hazards | The 0i weight formula, maze, tables, saves and bow art are accepted; #8 is corrected and author-accepted; #9 retains the flail correction. Author-requested #10–#15 add the T1 four-section sewer, rats, prisoner escorts/port rewards and Tarot artwork; #18–#21 supply siege assets, breakable actor gates, rams and cannons (historical catapult task CA-436-04). Rams now have native #20 evidence (4.36.16), with CA-43612-RAM-01 author acceptance confirmed on 2026-09-26; cannon operation now has #21 evidence (4.36.17), with CA-43613-CATAPULT-01 author acceptance pending. Per the author's #8 clarification, the existing ceiling/elevator cover moving sectors; avalanches are deferred until additional maps and damaging surfaces until temperature effects, so those three are not release blockers. Validate integration/save/reset before extracting Impact Physics; neither assets nor a closed issue substitutes for acceptance. |
 | V4.37: Tarot and Trucazo | Collection initiated in 0t and passive base of the Minor 56 implemented in 0aa; activation of owned/selected cards with User3 and costs/cooldowns; then card content and Trucazo minigame on stable inventory/NPC/events. |
 | **V4 test export** | After 4.37 and before V5: complete and accept three campaign maps covering the prologue, the approved first Major and two distinct Minors (#16), including the sewer/rescue/art batch; then freeze an identifiable build and verify installation, controls, route, saves and issue reporting from the exported package (#17). Other V5 content is not required; this is not final standalone distribution. |
 | **V5.0: modular code architecture** | First block of V5, after closing V4 and exporting the trial version. Separate responsibilities, reduce CaelumPlayer to coordination and migrate with small adapters. One implementation of inventory/player/Tarot; cross-player authority. Preserve saves, inputs and selectors. |

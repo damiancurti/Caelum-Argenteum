@@ -1,0 +1,37 @@
+{
+  "provenance": "Issue #21; author-approved approximate reconstruction and gameplay decisions, 2026-09-26. Not a verified Argentine 1884 technical specification.",
+  "map_units_per_metre": 32,
+  "native_tics_per_second": 35,
+  "muzzle_speed_m_s": 400,
+  "projectile_mass_kg": 4.3,
+  "projectile_diameter_m": 0.075,
+  "projectile_length_m": 0.185,
+  "crew": 2,
+  "cycle_seconds": 30,
+  "machine_mass_kg_estimate": 850,
+  "tube_mass_kg_estimate": 300,
+  "carriage_mass_kg_estimate": 550,
+  "barrel_length_m_estimate": 1.8,
+  "wheel_diameter_m_estimate": 1.35,
+  "track_m_estimate": 1.528,
+  "trunnion_height_m_estimate": 1.05,
+  "trail_length_m_estimate": 1.6,
+  "muzzle_forward_m_estimate": 1.25,
+  "guard_radius_machine_lengths": 2,
+  "recoil_presentation_m": 0.1,
+  "recovery_seconds": 1,
+  "spent_tics": 4,
+  "flight_lifetime_seconds": 120,
+  "trial": {"lanes": 5, "first_x": -1200, "spacing_x": 600, "gun_y": 2280, "target_y": 2850, "operator_side": 90, "rounds": 4},
+  "notes": [
+    "400 m/s, inert 75 x 185 mm /4.3 kg ammunition, two operators and 30/60 second cycles are author decisions.",
+    "850/300/550 kg and 1.528 m track are comparison-based reconstruction estimates from a DIFFERENT Krupp M1886, explicitly not Argentine 1884 measurements.",
+    "Other dimensions reconstruct a wedge-breech iron carriage with wooden wheels; they remain approximate.",
+    "Recoil is presentation only; recovery is included in the approved full cycle. Lifetime is a resource bound, not a claimed historical range.",
+    "Native level/sector gravity governs flight. No air drag, explosive payload or armor-penetration rule is added."
+  ],
+  "sources": [
+    "https://landships.activeboard.com/t45639328/krupp-75mm-guns-in-argentina-and-other-ww1-pieces/?page=1",
+    "https://www.bulgarianartillery.it/Bulgarian%20Artillery%201/Krupp%2075mm%201886.htm"
+  ]
+}
