@@ -60,9 +60,9 @@ class CaelumMainM00RonnieTrial : Object play
     // estados previos bajos ni vuelve a reducir necesidades al reabrir.
     static bool StartNeedsLesson(CaelumPlayer user)
     {
-        if (!IsRonnie(user)) return false;
+        if (!CaelumDemoNarrative.IsPalomo(user)) return false;
         let r = user.GetPersistentCharacterState(false);
-        if (r == null || !r.HasMainM00Flag(CaelumConstants.MAIN_M00_FLAG_RONNIE_COMPLETE)
+        if (r == null || !r.HasMainM00Flag(CaelumConstants.MAIN_M00_FLAG_PALOMO_MET)
             || r.QuestStage[0] >= CaelumConstants.MAIN_M00_STATE_EXIT_CONFIRMED) return false;
         if (!r.MainM00NeedsLessonStarted)
         {
@@ -99,9 +99,9 @@ class CaelumMainM00RonnieTrial : Object play
 
     static bool StartAirLesson(CaelumPlayer user)
     {
-        if (!IsRonnie(user) || user.DerivedStats == null) return false;
+        if (!CaelumDemoNarrative.IsPalomo(user) || user.DerivedStats == null) return false;
         let r = user.GetPersistentCharacterState(false);
-        if (r == null || !r.HasMainM00Flag(CaelumConstants.MAIN_M00_FLAG_RONNIE_COMPLETE)
+        if (r == null || !r.HasMainM00Flag(CaelumConstants.MAIN_M00_FLAG_PALOMO_MET)
             || r.QuestStage[0] >= CaelumConstants.MAIN_M00_STATE_EXIT_CONFIRMED
             || user.DerivedStats.MaximumAir <= 0) return false;
         if (!r.MainM00AirLessonStarted)
@@ -117,7 +117,7 @@ class CaelumMainM00RonnieTrial : Object play
     // El registro Inventory se serializa con la partida; no duplica el reloj.
     static void RecordAirLesson(CaelumPlayer user, double amount, bool running)
     {
-        if (!CanInteract(user) || amount <= 0 || user.player.ConversationNPC != null) return;
+        if (!CanInteract(user) || amount <= 0 || user.HasActiveConversation()) return;
         let r = user.GetPersistentCharacterState(false);
         if (r == null || !r.MainM00AirLessonStarted || r.MainM00AirLessonComplete
             || r.MainM00AirLessonTarget <= 0
@@ -146,9 +146,9 @@ class CaelumMainM00RonnieTrial : Object play
 
     static bool StartLoadLesson(CaelumPlayer user)
     {
-        if (!IsRonnie(user)) return false;
+        if (!CaelumDemoNarrative.IsPalomo(user)) return false;
         let r = user.GetPersistentCharacterState(false);
-        if (r == null || !r.HasMainM00Flag(CaelumConstants.MAIN_M00_FLAG_RONNIE_COMPLETE)
+        if (r == null || !r.HasMainM00Flag(CaelumConstants.MAIN_M00_FLAG_PALOMO_MET)
             || r.QuestStage[0] >= CaelumConstants.MAIN_M00_STATE_EXIT_CONFIRMED) return false;
         r.MainM00LoadLessonStarted = true;
         user.RefreshCarriedInventorySummary();
@@ -175,9 +175,9 @@ class CaelumMainM00RonnieTrial : Object play
 
     static bool StartSwimLesson(CaelumPlayer user)
     {
-        if (!IsRonnie(user) || user.DerivedStats == null || user.WaterLevel >= 3) return false;
+        if (!CaelumDemoNarrative.IsPalomo(user) || user.DerivedStats == null || user.WaterLevel >= 3) return false;
         let r = user.GetPersistentCharacterState(false);
-        if (r == null || !r.HasMainM00Flag(CaelumConstants.MAIN_M00_FLAG_RONNIE_COMPLETE)
+        if (r == null || !r.HasMainM00Flag(CaelumConstants.MAIN_M00_FLAG_PALOMO_MET)
             || r.QuestStage[0] >= CaelumConstants.MAIN_M00_STATE_EXIT_CONFIRMED
             || user.DerivedStats.MaximumAir <= 0) return false;
         r.MainM00SwimLessonStarted = true;
@@ -189,7 +189,7 @@ class CaelumMainM00RonnieTrial : Object play
     // ni modifica costes. Sólo la piscina de MAP01 acredita la inmersión.
     static void RecordSwimLesson(CaelumPlayer user, double amount, bool submerged)
     {
-        if (!CanInteract(user) || amount <= 0 || user.player.ConversationNPC != null) return;
+        if (!CanInteract(user) || amount <= 0 || user.HasActiveConversation()) return;
         let r = user.GetPersistentCharacterState(false);
         if (r == null || !r.MainM00SwimLessonStarted || r.MainM00SwimLessonComplete
             || r.QuestStage[0] >= CaelumConstants.MAIN_M00_STATE_EXIT_CONFIRMED) return;
@@ -704,9 +704,9 @@ class CaelumM00WaterContainerAction : CaelumPalomoDialogueAction
     override bool Use(bool pickup)
     {
         let user = CaelumPlayer(Owner);
-        if (!CaelumMainM00RonnieTrial.IsRonnie(user)) return false;
+        if (!CaelumDemoNarrative.IsPalomo(user)) return false;
         let r = user.GetPersistentCharacterState(false);
-        if (r == null || !r.HasMainM00Flag(CaelumConstants.MAIN_M00_FLAG_RONNIE_COMPLETE)
+        if (r == null || !r.HasMainM00Flag(CaelumConstants.MAIN_M00_FLAG_PALOMO_MET)
             || r.QuestStage[0] >= CaelumConstants.MAIN_M00_STATE_EXIT_CONFIRMED) return false;
         if (r.MainM00WaterContainerGiven) return true;
         if (user.FindInventory("CaelumCanteenNormal") != null) return false;

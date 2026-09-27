@@ -1,0 +1,5 @@
+GZDoom version g4.14.2
+RESUME loaded map=MAP02 save=0
+RESUME opened native sewer voice
+RESUME node=178 page=sewer_voice dialog=$CA_M01_RETURN_VOICE
+Partida guardada.

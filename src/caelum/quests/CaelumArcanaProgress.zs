@@ -44,7 +44,11 @@ class CaelumArcanaProgress : Object play
             let user = CaelumPlayer(players[i].mo);
             if (user == null) continue;
             let record = user.GetPersistentCharacterState(false);
-            if (record != null) record.SewerZupayDefeated = true;
+            if (record != null)
+            {
+                CaelumDemoNarrative.EnsureRevision(record);
+                record.SewerZupayDefeated = true;
+            }
         }
     }
 
@@ -55,7 +59,7 @@ class CaelumArcanaProgress : Object play
             return level.MapName == "MAP02" && record.SewerZupayDefeated;
         if (card == CaelumConstants.TAROT_WANDS_KNIGHT)
             return level.MapName == "MAP06" && record.ArcanaAvailable[card]
-                && PortRewardsComplete(record);
+                && CaelumDemoNarrative.PortCardReady(record);
         return false;
     }
 
@@ -101,7 +105,7 @@ class CaelumArcanaProgress : Object play
             if (level.MapName == "MAP02" && controller != null && controller.SewerBossDefeated)
                 record.SewerZupayDefeated = true;
             if (level.MapName == "MAP06" && user.CharacterCreationComplete
-                && !user.CreationWizardOpen && record.ProfileCommitted && PortRewardsComplete(record))
+                && !user.CreationWizardOpen && record.ProfileCommitted && CaelumDemoNarrative.PortCardReady(record))
                 record.ArcanaAvailable[CaelumConstants.TAROT_WANDS_KNIGHT] = true;
             knightNeeded = knightNeeded || CanCapture(record, CaelumConstants.TAROT_WANDS_KNIGHT);
         }

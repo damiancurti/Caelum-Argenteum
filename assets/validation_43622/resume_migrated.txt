@@ -1,0 +1,8 @@
+GZDoom version g4.14.2
+RESUME loaded map=MAP02 save=0
+RESUME loaded map=MAP02 save=1
+RESUME node=221 page=sewer_voice dialog=$CA_M01_RETURN_VOICE
+Partida guardada.
+Player se ha matado a sí mismo.
+RESUME loaded map=MAP02 save=1
+RESUME node=221 page=sewer_voice dialog=$CA_M01_RETURN_VOICE

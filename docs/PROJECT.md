@@ -1,6 +1,42 @@
 # Caelum Argenteum — Project, status and roadmap
 
-Documentation version: **4.36.21** — 2026-09-27.
+Documentation version: **4.36.22** — 2026-09-27.
+
+## 4.36.22 — Demo quest narrative (#34)
+
+Palomo starts quest 1 and owns optional eating/drinking, bed, Air, load,
+swimming and water-container practice, plus material-acquisition directions.
+Ronnie retains weapon/armor/component crafting, loans, repair and calendar
+explanation. Existing progress, allowances and one-time supplies remain valid.
+The author authorized original dialogue consistent with established personalities
+on 2026-09-27 and explicitly included the sewer Zupay's confirmed escape.
+
+The four mansion companions retain their own peak Bull-encounter state, using
+the authoritative Herido/Malherido thresholds and seated-at-1-HP incapacitation.
+The Unknown Voice's release, boss and paid-reward events persist in a queue.
+The port quest observes the existing twelve-machine-plus-commander contract;
+it does not create a battle. MAP06 still needs #16's deployment/routes. Until a
+real sealed port encounter exists, #33's provisional Knight availability remains
+in force; a registered siege gates that same card on victory, with no extra reward.
+
+Static validation/build, isolated native behavior, real old-save migration,
+queue save/load/travel and rendered USDF checks pass. See
+assets/validation_43622/RESULTS.json. Separately, the author confirmed all
+CA-43622-NARRATIVE-01 tests passed on 2026-09-27 and authorized merge/closure.
+Next: #16/#17 integration and export gates.
+
+The author subsequently reported a MAP02 freeze during the second rescue.
+Its invalid secondary-wind sprite was reproduced and corrected through native
+CELH A-L registration; isolated rendering and older-save checks pass. The author
+confirmed the Federal/prisoner/rats retest passed on 2026-09-27.
+Evidence: assets/validation_43622/wind_render_fix.json.
+
+Pre-#34 open conversations also receive a compatibility correction: the old
+sewer Voice restores its established ID instead of a shifted Palomo page; other
+old conversations close safely and reopen through normal interaction. New saves
+retain exact pages. Native load/death/reload and original-save rollback pass;
+the author confirmed the retest passed 2026-09-27. Evidence: dialogue_resume_fix.json in
+assets/validation_43622.
 
 ## 4.36.21 — Scenery impact correction (#49)
 

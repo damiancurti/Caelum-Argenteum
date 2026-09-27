@@ -1,0 +1,10 @@
+Log started: 2026-09-27 11:40:53
+GZDoom version g4.14.2
+QA34 PASS native save/load or hub travel preserves pending and consumed events
+QA34 PASS native persistence preserves all per-NPC peaks and sleep practice
+QA34 PASS saved pending event opens once
+QA34 PASS saved pending event opens once
+QA34 PASS saved pending event opens once
+QA34 PASS saved pending event opens once
+QA34 PASS draining restored queue neither repeats consumed line nor loses pending line
+QA34 DONE persistence checks=7 failures=0

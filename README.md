@@ -4,8 +4,31 @@ An independent dark fantasy FPS-RPG inspired by nineteenth-century Argentina.
 Author and game designer: **Damian Curti**. Development target: **GZDoom 4.14.2**
 on Windows 11. The final game is intended to be independent of Doom assets.
 
-**Current release: 4.36.21.** Obtain and update the complete repository, validate
+**Current release: 4.36.22.** Obtain and update the complete repository, validate
 it, then rebuild with `run_dev.bat` as described below.
+
+Issue [#34](https://github.com/damiancurti/Caelum-Argenteum/issues/34) gives
+Palomo quest 1, optional survival practices and exclusive material-location
+guidance; Ronnie keeps crafting, maintenance and calendar instruction. Each
+companion remembers their worst health state during the Bull encounter.
+The Unknown Voice comments once on each release, the sewer Zupay's defeat or
+escape, and each successful port reward. Native dialogue queues survive
+save/load and hub travel. A port journal quest observes the existing siege
+controller; full MAP06 deployment remains #16. Evidence is in
+[validation_43622](assets/validation_43622/RESULTS.json). The author confirmed all
+#34 tests passed on 2026-09-27 (CA-43622-NARRATIVE-01).
+
+The MAP02 freeze reported during #34 tests is corrected: the NPC secondary-wind
+animation now registers its existing twelve frames before rendering. The failing
+discharge was reproduced; both projectile variants and an older save pass after
+the fix. See [freeze evidence](assets/validation_43622/wind_render_fix.json).
+The author confirmed the two-prisoner/rats retest passed on 2026-09-27.
+
+Loading a pre-#34 save now migrates an open Unknown Voice conversation instead
+of restoring shifted USDF page numbers as Palomo's food/water lesson. Other
+open pre-#34 conversations close once without choosing an option; interact again
+to resume normally. Existing quest progress and rewards remain intact.
+See [dialogue migration evidence](assets/validation_43622/dialogue_resume_fix.json).
 
 Issue [#49](https://github.com/damiancurti/Caelum-Argenteum/issues/49) removes
 combat adrenaline from tree/rock collision damage and pain. Walking, running

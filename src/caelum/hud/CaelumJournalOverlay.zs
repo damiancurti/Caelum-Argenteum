@@ -341,6 +341,9 @@ class CaelumJournalOverlay : EventHandler
 
     ui String GetQuestDetailText(CaelumPlayer localPlayer, int questId)
     {
+        if (questId == CaelumConstants.QUEST_PORT_SIEGE)
+            return StringTable.Localize(localPlayer.JournalQuestState[questId] == CaelumConstants.QUEST_STATE_COMPLETED
+                ? "CA_DEMO_VOICE_10" : "CA_DEMO_VOICE_9", false);
         if (CaelumSideQuestRules.IsDefined(questId))
         {
             int state = localPlayer.JournalQuestState[questId];
@@ -460,6 +463,9 @@ class CaelumJournalOverlay : EventHandler
             text = text .. "\n\n" .. StringTable.Localize(localPlayer.MainM00RepairLessonCompleteSnapshot
                 ? "CA_M01_REPAIR_DETAIL_DONE" : "CA_M01_REPAIR_DETAIL", false);
         }
+        if (questId == CaelumConstants.QUEST_MAIN_M00_THE_FOOL && localPlayer.PalomoSleepLessonStartedSnapshot)
+            text = text .. "\n\n" .. StringTable.Localize(localPlayer.PalomoSleepLessonCompleteSnapshot
+                ? "CA_DEMO_SLEEP_DONE" : "CA_DEMO_SLEEP", false);
         if (questId == CaelumConstants.QUEST_MAIN_M00_THE_FOOL
             && localPlayer.MainM00NeedsLessonStartedSnapshot
             && (stage < CaelumConstants.MAIN_M00_STATE_EXIT_CONFIRMED
@@ -558,6 +564,7 @@ class CaelumJournalOverlay : EventHandler
 
     ui String GetQuestNameKey(int questId)
     {
+        if (questId == CaelumConstants.QUEST_PORT_SIEGE) return "CA_DEMO_PORT_TITLE";
         switch (questId)
         {
             case CaelumConstants.QUEST_MAIN_M00_THE_FOOL:
@@ -584,6 +591,8 @@ class CaelumJournalOverlay : EventHandler
 
     ui String GetQuestStageKey(int questId, int questStage, bool argentoStarted, int residents)
     {
+        if (questId == CaelumConstants.QUEST_PORT_SIEGE)
+            return questStage >= 2 ? "CA_DEMO_PORT_DONE" : "CA_DEMO_PORT_ACTIVE";
         if (questId != CaelumConstants.QUEST_MAIN_M00_THE_FOOL)
         {
             return "CA_Q_SIDE_STAGE";
@@ -626,6 +635,8 @@ class CaelumJournalOverlay : EventHandler
 
     ui String GetQuestObjectiveKey(int questId, int objectiveId)
     {
+        if (questId == CaelumConstants.QUEST_PORT_SIEGE)
+            return objectiveId == 0 ? "CA_DEMO_PORT_MACHINES" : "CA_DEMO_PORT_COMMANDER";
         if (questId != CaelumConstants.QUEST_MAIN_M00_THE_FOOL)
         {
             return questId == CaelumConstants.QUEST_TRIAL_ROUTE

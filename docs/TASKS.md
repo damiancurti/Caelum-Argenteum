@@ -1,6 +1,30 @@
 # TASKS.md — Active tasks
 
-Documentation version: **4.36.21** — 2026-09-27.
+Documentation version: **4.36.22** — 2026-09-27.
+
+## Issue #34 — Demo quest narrative (4.36.22)
+
+- **Implemented:** Palomo quest activation/survival/material guidance, Ronnie
+  crafting/calendar, per-NPC peak Bull injury reactions, persistent queued rescue
+  and paid-reward guidance, sewer death/escape line, actual-controller port quest.
+- **Preserved:** main quest and item IDs, saved survival progress, crafting supplies,
+  payouts, factions, combat balance, world pause rules and the single Tarot path.
+- **Validation:** assets/validation_43622/RESULTS.json and STATIC.json; static,
+  focused native behavior, old-save migration and rendered-menu checks pass.
+- **MAP02 followup:** secondary-wind CELH sprite registration fixes the reproduced
+  native rendering hang; both projectile variants/older-save checks pass.
+  Author retest of the second rescue and rats passed 2026-09-27; see wind_render_fix.json
+  in assets/validation_43622.
+- **Legacy dialogue followup:** reproduced Palomo needs after old MAP02 reload;
+  versioned Voice rebinding and safe closure/reopen of other old dialogues pass
+  native checks. New saves preserve their exact page; original saves permit
+  rollback. Author death/reload retest passed 2026-09-27.
+- **Author acceptance:** CA-43622-NARRATIVE-01 passed on 2026-09-27; the author
+  confirmed all tests and authorized merge/issue closure.
+- **Dependency boundary:** #16 must deploy the complete MAP06 army/routes. The
+  port quest stays hidden in the present pre-siege port; registered encounter
+  integration is tested in isolation. After deployment, accept the full port
+  narrative and retreat in campaign before #17 export. No fake victory is inferred.
 
 ## Issue #49 — Scenery collisions and running (4.36.21)
 

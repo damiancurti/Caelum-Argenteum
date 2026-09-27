@@ -1,0 +1,2 @@
+GZDoom version g4.14.2
+WIND_SAVE prepared both existing projectile states

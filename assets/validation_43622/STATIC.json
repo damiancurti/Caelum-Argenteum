@@ -1,0 +1,54 @@
+{
+  "issue": 34,
+  "checks": [
+    {
+      "check": "all native conversation IDs are unique",
+      "passed": true
+    },
+    {
+      "check": "all USDF links resolve within their own conversation: []",
+      "passed": true
+    },
+    {
+      "check": "all conversation localization keys exist",
+      "passed": true
+    },
+    {
+      "check": "every new dialogue has English and Spanish entries",
+      "passed": true
+    },
+    {
+      "check": "Palomo tree 43200 has all survival topics",
+      "passed": true
+    },
+    {
+      "check": "Ronnie no longer offers transferred survival pages",
+      "passed": true
+    },
+    {
+      "check": "Ronnie retains crafting, loan completion, repair and calendar",
+      "passed": true
+    },
+    {
+      "check": "Palomo tree 43316 has all survival topics",
+      "passed": true
+    },
+    {
+      "check": "Palomo tree 43317 has all survival topics",
+      "passed": true
+    },
+    {
+      "check": "Palomo tree 43319 has all survival topics",
+      "passed": true
+    },
+    {
+      "check": "all 11 queued narrative events have native dialogue",
+      "passed": true
+    },
+    {
+      "check": "all four characters have all three approved damage branches",
+      "passed": true
+    }
+  ],
+  "passed": true
+}

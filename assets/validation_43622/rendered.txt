@@ -1,0 +1,26 @@
+Log started: 2026-09-27 11:43:22
+GZDoom version g4.14.2
+QA34_RENDER READY eleven queued dialogues
+QA34_RENDER PASS event=0 rendered twenty frames
+QA34_RENDER native close event=0 accepted=1
+QA34_RENDER PASS event=1 rendered twenty frames
+QA34_RENDER native close event=1 accepted=1
+QA34_RENDER PASS event=2 rendered twenty frames
+QA34_RENDER native close event=2 accepted=1
+QA34_RENDER PASS event=3 rendered twenty frames
+QA34_RENDER native close event=3 accepted=1
+QA34_RENDER PASS event=4 rendered twenty frames
+QA34_RENDER native close event=4 accepted=1
+QA34_RENDER PASS event=5 rendered twenty frames
+QA34_RENDER native close event=5 accepted=1
+QA34_RENDER PASS event=6 rendered twenty frames
+QA34_RENDER native close event=6 accepted=1
+QA34_RENDER PASS event=7 rendered twenty frames
+QA34_RENDER native close event=7 accepted=1
+QA34_RENDER PASS event=8 rendered twenty frames
+QA34_RENDER native close event=8 accepted=1
+QA34_RENDER PASS event=9 rendered twenty frames
+QA34_RENDER native close event=9 accepted=1
+QA34_RENDER PASS event=10 rendered twenty frames
+QA34_RENDER native close event=10 accepted=1
+QA34_RENDER PASS all eleven events consumed after rendered native menu closures

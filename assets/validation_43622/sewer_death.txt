@@ -1,0 +1,17 @@
+Log started: 2026-09-27 11:36:06
+GZDoom version g4.14.2
+QA34 PASS four actual releases queue behind existing conversation
+QA34 PASS repeated cell interaction does not duplicate release events
+QA34 PASS actual sewer death queues defeat line
+QA34 PASS native USDF event 0 opens in deterministic order
+QA34 PASS opening alone does not consume event
+QA34 PASS native USDF event 1 opens in deterministic order
+QA34 PASS opening alone does not consume event
+QA34 PASS native USDF event 2 opens in deterministic order
+QA34 PASS opening alone does not consume event
+QA34 PASS native USDF event 3 opens in deterministic order
+QA34 PASS opening alone does not consume event
+QA34 PASS native USDF event 4 opens in deterministic order
+QA34 PASS opening alone does not consume event
+QA34 PASS all five lines consumed once without loss
+QA34 DONE sewer-death checks=14 failures=0

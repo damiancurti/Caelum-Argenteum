@@ -116,6 +116,11 @@ class CaelumPlayer : DoomPlayer
     int JournalPalomoPlacement;
     // Estado transitorio de presentación. El progreso autoritativo vive en
     // CaelumPersistentCharacterState y el controlador lo reconstruye al cargar.
+    CaelumDemoVoiceSpeaker DemoVoiceSpeaker;
+    String DemoVoiceMap;
+    int BullNarrativeSeveritySnapshot[4];
+    bool PalomoSleepLessonCompleteSnapshot;
+    bool PalomoSleepLessonStartedSnapshot;
     Actor MainM00UnknownVoiceSpeaker;
     int MainM00UnknownVoiceDelayTics;
     bool MainM00AwakeningVisualStarted;
@@ -1014,6 +1019,7 @@ class CaelumPlayer : DoomPlayer
         CaelumPersistentCharacterState persistentState =
             GetPersistentCharacterState(true);
         if (persistentState == null) { return false; }
+        CaelumDemoNarrative.EnsureRevision(persistentState);
         bool changed = persistentState.SetPrisonerRescueState(
             prisonerId, nextState
         );
@@ -1062,6 +1068,7 @@ class CaelumPlayer : DoomPlayer
                 continue;
             }
             if (!ApplyPalomoCurrencyPlan()) { return false; }
+            CaelumDemoNarrative.EnsureRevision(persistentState);
             persistentState.MarkPrisonerRewardClaimed(prisonerId);
             persistentState.ChangeFactionReputation(
                 factionId, CaelumConstants.PRISONER_RESCUE_REPUTATION_GAIN);
@@ -1396,6 +1403,8 @@ class CaelumPlayer : DoomPlayer
                     : CaelumConstants.MAIN_M00_PALOMO_WAIT_CONVERSATION_ID;
         }
         SyncPalomoDialogueTokens();
+        CaelumMainM00RonnieTrial.Sync(self);
+        CaelumDemoNarrative.Sync(self);
         if (StaffCastPending) { CancelPendingStaffCast(false); }
         EquipmentMenuOpen = false;
         CloseCraftingStationSession();

@@ -1,0 +1,43 @@
+Log started: 2026-09-27 11:52:59
+GZDoom version g4.14.2
+QA34 PASS awakening does not start quest 1
+QA34 PASS voice still advances prologue
+QA34 PASS quest undiscovered does not hide Palomo foyer guidance
+QA34 PASS Palomo questions work before quest activation
+QA34 PASS Palomo activates quest 1
+QA34 PASS journal directs survival students upstairs throughout mentor trials
+QA34 PASS quest start is idempotent
+QA34 PASS Ronnie cannot start Palomo survival lesson
+QA34 PASS Palomo starts needs before Ronnie crafting
+QA34 PASS repeated needs offer cannot duplicate rations
+QA34 PASS Palomo starts air practice
+QA34 PASS closed conversation pointer does not block air recovery credit
+QA34 PASS Palomo starts load practice
+QA34 PASS Palomo starts swim practice
+QA34 PASS Palomo can give the existing one-time canteen
+QA34 PASS Palomo sleep action records optional practice
+QA34 PASS existing consumption hooks complete transferred needs practice
+QA34 PASS native mansion bed begins untimed rest
+QA34 PASS native bed credits Palomo sleep practice
+QA34 PASS resident 3 native wounded peak
+QA34 PASS resident 3 ignores unrelated source and healing
+QA34 PASS resident 3 native badly wounded peak
+QA34 PASS resident 3 incapacitation has precedence
+QA34 PASS resident 3 full healing preserves encounter outcome
+QA34 PASS resident 2 native wounded peak
+QA34 PASS resident 2 ignores unrelated source and healing
+QA34 PASS resident 2 native badly wounded peak
+QA34 PASS resident 2 incapacitation has precedence
+QA34 PASS resident 2 full healing preserves encounter outcome
+QA34 PASS resident 0 native wounded peak
+QA34 PASS resident 0 ignores unrelated source and healing
+QA34 PASS resident 0 native badly wounded peak
+QA34 PASS resident 0 incapacitation has precedence
+QA34 PASS resident 0 full healing preserves encounter outcome
+QA34 PASS resident 1 native wounded peak
+QA34 PASS resident 1 ignores unrelated source and healing
+QA34 PASS resident 1 native badly wounded peak
+QA34 PASS resident 1 incapacitation has precedence
+QA34 PASS resident 1 full healing preserves encounter outcome
+QA34 PASS retry resets only the new encounter peaks
+QA34 DONE mansion checks=40 failures=0

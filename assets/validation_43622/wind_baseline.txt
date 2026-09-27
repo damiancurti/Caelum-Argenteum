@@ -1,0 +1,2 @@
+GZDoom version g4.14.2
+WIND prepared sprite=-1 frame=3 CELH=-1

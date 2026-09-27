@@ -1,0 +1,6 @@
+GZDoom version g4.14.2
+RESUME loaded map=MAP02 save=0
+RESUME loaded map=MAP02 save=1
+RESUME PASS legacy non-voice closed without response
+RESUME prisoner opened=1
+RESUME node=252 page= dialog=$CA_PRISONER_DLG_UNITARIO_CELL

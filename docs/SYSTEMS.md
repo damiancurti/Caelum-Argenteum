@@ -1,6 +1,68 @@
 # Caelum Argenteum — Current systems and rules
 
-Documentation version: **4.36.21** — 2026-09-27.
+Documentation version: **4.36.22** — 2026-09-27.
+
+## 4.36.22 — Quest ownership and persistent narrative events (#34)
+
+Save compatibility for #34's USDF layout: saves store global page indices.
+An open legacy Unknown Voice (speaker layout revision 0) rebinds the established
+MAP01/MAP02 conversation ID, restarts that brief conversation once, and records
+revision 1. New saves preserve the exact page. Other conversations open in a
+pre-#34 save close once without executing a reply; interact again to reopen
+through the speaker's canonical ID. Quest progress, items and rewards persist.
+Loading never invokes Use or a reply as part of this presentation migration.
+Keep original saves for rollback to the pre-#34 dialogue layout.
+
+The awakening/Unknown Voice remains the prologue. In new games quest 1 stays
+undiscovered until Palomo's existing guidance choice activates it. Its stage,
+flags, objective IDs and rewards retain their existing identities; an already
+active/completed old quest is not reset. Palomo offers the existing optional
+needs, Air, load, swimming and canteen actions after his introductory guidance.
+Legacy `MainM00*` fields and action names are retained for compatibility, even
+where they contain `Ronnie`. Crafting, gathering-sword loans and repair remain
+with Ronnie. He directs material-location questions to Palomo and explains the
+calendar through his workshop menu. This supersedes older current-role wording.
+
+Palomo's optional bed practice observes a real active MAP01 bed/rest session.
+The mansion's existing untimed rest is preserved: no invented waiting interval,
+Sleep drain, reward or main-quest gate. Food/water grants remain individually
+idempotent. Air/swimming observations now test `HasActiveConversation()` rather
+than a possibly stale `ConversationNPC` pointer after closing USDF.
+
+Each of Rulo, Ronnie, Caella and Argento stores the worst state reached from
+Bull damage during the active attempt: normal (0), the existing Herido (1),
+Malherido (2), or incapacitated/seated at 1 HP (3). Incapacitation wins over
+the others. A retry clears that attempt's peaks; healing and the end-of-fight
+restoration do not. Unrelated damage and player health never select the branch.
+Existing ordinary closing text and later Tarot reactions remain, with the
+character-specific injury reaction when applicable. No reputation/stat changes.
+
+Eleven event slots use native non-pausing USDF: four distinct releases, sewer
+Zupay defeat (death or completed escape), four actual successful reward deliveries,
+port siege start and port siege completion. Each character's persistent Inventory
+owns pending/delivered masks. A failed or capacity-blocked payment does not queue
+a completion. Events wait for the current conversation, inventory/crafting/merchant
+menu and rest session; a line is acknowledged after its native conversation closes.
+Several close events are drained in deterministic slot order, one conversation at
+a time. Pending/delivered bits survive saves and travel; opening alone does not
+consume a line. Selene remains labelled Unknown Voice.
+
+Port quest ID 3 uses previously unused persistent quest storage. It becomes
+visible only for a sealed MAP06 `CaelumSiegeEncounter` with twelve registered
+hostile machines and its own commander. Its two objectives mirror the existing
+neutralized count and confirmed commander defeat, in either order. Completion
+mirrors `Victory`; surviving attackers remain the controller's retreat responsibility.
+No all-Mandinga requirement, failure condition, new payout or separate card spawn
+is added. The single #33 Knight path switches from provisional rescue-payment
+readiness to actual siege victory when that encounter is registered. Existing owned
+cards and rewards are never revoked. Zero rescued companions remain valid.
+
+Additive narrative revision 1 baselines historical release/payment/boss events as
+already delivered; it never invents past Bull injuries. It leaves existing quest,
+survival, item, faction and Tarot state intact. `RestoreLegacyProgress` clears only
+the new narrative fields and unused-before-#34 port quest slot; reapplying the
+migration is idempotent. A native pre-patch PK3 save, same-version queue save/load
+and hub travel have been checked. Keep a recovery copy before rollback.
 
 ## 4.36.21 — Environmental collisions and running absorption (#49)
 

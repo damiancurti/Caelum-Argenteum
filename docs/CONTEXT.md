@@ -1,6 +1,6 @@
 # CONTEXT.md — Ultra-condensed summary of Caelum Argenteum
 
-Documentation version: **4.36.21** — 2026-09-27.
+Documentation version: **4.36.22** — 2026-09-27.
 
 Summary of `PROJECT.md`, `SYSTEMS.md`, `MAP01.txt`, `ASSETS.md`, `HISTORY.md`
 and the repository README.
@@ -62,7 +62,18 @@ the gauchos and rural culture, and the humans the urban porteño society.
 
 ## Current status
 
-Current release **4.36.21** implements #49: tree/rock collision damage and
+**4.36.22 / #34:** Palomo starts quest 1 and teaches survival/material locations;
+Ronnie retains crafting, repair and calendar instruction. Companions remember
+their worst Bull injury. The Voice queues releases, Zupay death/escape and paid
+rewards. Native dialogue/save/travel checks pass. Port siege deployment remains
+#16; #33's provisional Knight rule lasts until a real siege is registered.
+The reported MAP02 freeze was reproduced: NPC secondary wind used an unregistered
+CELH sprite. Appended A-L registration fixes rendering while preserving saved
+states. Dialogue migration fixes Palomo on MAP02 reload.
+CA-43622-NARRATIVE-01 passed 2026-09-27.
+Evidence: assets/validation_43622.
+
+The preceding **4.36.21** implements #49: tree/rock collision damage and
 pain no longer grant adrenaline or refresh combat. Walking, running and
 crouching use the existing absorption fraction against walls, rooted trees
 and rocks at rest before contact. Moving rocks and combat contacts retain
@@ -102,19 +113,7 @@ Evidence: assets/validation_43616. The author confirmed CA-43612-RAM-01 passed
 on 2026-09-26 and requested merge/closure; #21 cannon
 mechanics and #16/#17 complete port integration remain separate.
 
-The preceding **4.36.15** implements #19 breakable actor gates, retaining
-the issue's planned [4.36.11] label. Gate Constitution equals unrounded Toughness
-derived from approved 30%/50%/70% weapon reductions, with approved moving masses
-550/650/1,100 kg. Finite grouped blockers open on Use or destruction; key/faction
-checks, partial damage and broken state persist across save/load and hub return.
-Native checks and an old 4.36.14a save pass. `give CaelumDebugGateTrial` activates
-the three intact MAP03 examples; existing campaign doors/maps remain unchanged.
-The author confirmed the other gate checks on 2026-09-26 but reported no damage
-when running into a gate. Native body contacts now resolve damage to both bodies
-using existing physics; 13 focused checks and the 37-check gate regression pass.
-The author then confirmed all tests passed on 2026-09-26, including the collision
-retest (CA-43611-GATES-01). Acceptance is recorded in HISTORY; the pending queue
-is empty. #20/#21 and full port integration remain separate.
+The accepted **4.36.15** (#19) implements breakable actor gates, using approved 30%/50%/70% reductions and 550/650/1,100 kg moving masses. Intact, damaged and broken states persist across save/load and hub travel; old-save and native body-contact tests pass. CA-43611-GATES-01 passed on 2026-09-26. Full implementation and acceptance details remain in HISTORY; subsequent #21 balance supersedes original gate Constitution.
 
 The preceding **4.36.14a** corrects #18 after the author's 2026-09-26
 feedback: two solid gate leaves in three materials, refined cannon/ram forms,
@@ -207,8 +206,8 @@ rations, and MAP01 tables at full capacity.
 
 Pending:
 
-- #18/#19/#20/#21 and #43 are author-accepted. #33 awaits author campaign/presentation acceptance; full port integration remains #16/#17.
-- Closing 4.36: #33 author acceptance and remaining integration/save/reset validation
+- #18/#19/#20/#21 and #43 are author-accepted. #33 and #49 are also author-accepted. #34 narrative acceptance and full port integration remain #16/#17 prerequisites.
+- Closing 4.36: #34 author acceptance and remaining integration/save/reset validation
   before extracting Impact Physics. Per the author's 2026-09-23 #8 decision,
   existing ceiling/elevator cover moving sectors; avalanches await additional
   maps and damaging surfaces await temperature effects (no acid/lava requested).

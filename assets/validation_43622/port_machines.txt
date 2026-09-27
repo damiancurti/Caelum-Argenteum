@@ -1,0 +1,31 @@
+Log started: 2026-09-27 11:38:01
+GZDoom version g4.14.2
+QA34 PASS zero rescues preserve provisional card rule before siege exists
+QA34 PASS captive cannot deliver premature reward
+QA34 PASS actual reward 0 delivered
+QA34 PASS reward cannot be paid twice
+QA34 PASS reward guidance waits for reward dialogue
+QA34 PASS captive cannot deliver premature reward
+QA34 PASS actual reward 1 delivered
+QA34 PASS reward cannot be paid twice
+QA34 PASS reward guidance waits for reward dialogue
+QA34 PASS captive cannot deliver premature reward
+QA34 PASS actual reward 2 delivered
+QA34 PASS reward cannot be paid twice
+QA34 PASS reward guidance waits for reward dialogue
+QA34 PASS captive cannot deliver premature reward
+QA34 PASS actual reward 3 delivered
+QA34 PASS reward cannot be paid twice
+QA34 PASS reward guidance waits for reward dialogue
+QA34 PASS reward intervention 5 opens once
+QA34 PASS reward intervention 6 opens once
+QA34 PASS reward intervention 7 opens once
+QA34 PASS reward intervention 8 opens once
+QA34 PASS real sealed port encounter starts journal quest
+QA34 PASS registered siege supersedes provisional card availability
+QA34 PASS one objective alone does not complete siege
+QA34 PASS both objective orders finish with zero companions
+QA34 PASS single card gate follows actual siege victory
+QA34 PASS port journal completion follows encounter
+QA34 PASS completion line queues behind start line
+QA34 DONE port-machines-first checks=28 failures=0

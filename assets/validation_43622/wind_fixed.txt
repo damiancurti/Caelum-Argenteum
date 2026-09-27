@@ -1,0 +1,6 @@
+GZDoom version g4.14.2
+WIND prepared sprite=1094 frame=3 CELH=1094
+WIND_SIMPLE_DONE
+WIND explosive sprite=1094 frame=5
+WIND PASS rendered all twelve explosive secondary wind frames
+WIND_RENDER_DONE

@@ -1,6 +1,103 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **4.36.21** — 2026-09-27.
+Documentation version: **4.36.22** — 2026-09-27.
+
+## 4.36.22 — Palomo, Selene and port narrative (#34)
+
+- Author request, 2026-09-27: implement #34, preserve each personality, author
+  coherent dialogue freely, include Selene after the sewer Zupay dies or escapes,
+  and commit/push. No additional story revelations or balance changes authorized.
+- Palomo now activates quest 1 and offers optional survival practices and exclusive
+  material-location guidance. Ronnie retains crafting, loan/repair progression and
+  calendar instruction. Existing saved practices, supplies and rewards persist.
+- Each mansion companion's Bull damage records peak authoritative health state,
+  with seated-at-1-HP incapacitation taking precedence and healing unable to erase it.
+- Four release and four actual reward-delivery lines plus the sewer boss line are
+  queued, rendered and acknowledged once through existing non-pausing USDF.
+- Port quest ID 3 and two brief voice lines observe the existing registered MAP06
+  siege controller. Both objective orders and zero companions pass in isolation.
+  Full campaign deployment remains #16; no second physics/AI implementation or
+  duplicate Knight trigger. #33's provisional availability is retained until a
+  real encounter is registered, then that same card follows victory.
+- Static: normal validator, deterministic document-index regeneration, bilingual
+  coverage and native dialogue-link graph pass; normal PK3 build passes.
+- Engine: GZDoom 4.14.2 on Windows; focused mansion, four release/payment events,
+  sewer death/escape, two siege orders, old-save migration/rollback/idempotence,
+  new-save queue restoration and native hub travel pass. Eleven queued dialogues
+  were also drawn for at least twenty frames each and closed through MenuEvent;
+  no direct fake cleanup was used in that separate rendering check.
+- Independent same-model agent review found an overlooked Ronnie repair-location
+  sentence; corrected, together with the corresponding journal references.
+  DeepSeek cross-model review was not available in this session.
+- Evidence: assets/validation_43622/RESULTS.json and STATIC.json. Disposable test
+  fixtures, engine/IWAD files and saves remain local, outside delivery.
+- Author acceptance: CA-43622-NARRATIVE-01 passed on 2026-09-27, following
+  both MAP02 corrections below. The author confirmed all tests and authorized
+  merge/closure. #16 still owns the full port deployment/playthrough before #17.
+
+### Same-patch MAP02 freeze correction, 2026-09-27
+
+The author reported a freeze after freeing the second (Federal/Ronnie-looking)
+prisoner and returning to the first. Mandingas had been killed by console command;
+remaining combat could involve rats. This is a failed/partial author test, not
+acceptance of CA-43622-NARRATIVE-01.
+
+The original native exception, recovered using the matching 4.14.2 PDB, was
+C0000005 in FindModelFrameRaw at RVA 0x397986: sprite index -1, frame 9. GZDoom's
+secondary-thread exception handler parks that worker while the main renderer
+waits for it, leaving a frozen window. CELH A-L assets existed, but neither NPC
+projectile class registered them; secondary wind selected CELH dynamically.
+An isolated discharge from a copy of the author's autosave reproduced sprite=-1
+and a rendering hang on the delivered 7ffc1ff build. A generic two-prisoner
+teleport/follow test alone did not reproduce it and is not proof of its absence.
+
+Appending an unreachable CELH A-L registration after the simple projectile's
+existing states makes the global sprite lookup valid for simple and explosive
+variants. No asset, balance, schema or old state offset changes. Post-fix native
+rendering passes for both variants, including all twelve explosive frames;
+an older save loads. Same-model independent review found no blocker. Detailed
+evidence: assets/validation_43622/wind_render_fix.json. Private dumps and author
+saves remain in ignored build/. The author subsequently confirmed the retest
+passed on 2026-09-27; see the acceptance record below.
+
+### Same-patch legacy dialogue restoration, 2026-09-27
+
+The author reported Palomo's food/water choices after dying and reappearing in
+MAP02, specifically while continuing an older campaign on the corrected build.
+The exact baseline was reproduced: pre-#34 sewer pages 178/179 now resolve to
+Palomo's needs introduction/practice. Native saves serialize global USDF node
+indices; retaining the conversation ID alone does not preserve an open page
+after CAPALOMO changes. The current-release autosave control restored the
+correct arrival page, so the first generic death/reload test did not expose it.
+
+CaelumUnknownVoiceSpeaker now records SavedDialogueLayoutRevision=1. Legacy
+revision 0 speakers rebind their map's established conversation ID before
+resume; the short old Voice conversation restarts at its correct root once.
+New voice saves retain their exact page. The static resume handler snapshots
+the pre-#34 narrative revision in WorldLoaded, before normal quest migration.
+Other open pre-#34 dialogues close without selecting a reply; the existing Use
+path rebinds their canonical ID when the author interacts again. This also
+covers mentors/prisoners instead of restoring their shifted page numbers.
+No quest reset, reward replay, balance change or previous actor-state offset
+change. Original saves remain untouched; rollback uses those originals.
+
+Native 4.14.2 checks: wrong-page reproduction; corrected old-voice load and
+death/reload; new arrival-page save/load; old Ronnie/prisoner close and canonical
+reopen; new Ronnie exact-page resume; original save restored on pre-#34 build.
+See assets/validation_43622/dialogue_resume_fix.json. Independent same-model
+review identified the non-voice compatibility gap, addressed before delivery.
+The author subsequently confirmed CA-43622-NARRATIVE-01 passed; see below.
+
+### Author acceptance, 2026-09-27
+
+CA-43622-NARRATIVE-01 (origin: 4.36.22, issue #34) PASSED. After the freeze and
+legacy-dialogue corrections, the author explicitly confirmed "Todas las pruebas
+dieron correcto" and requested issue closure and merge. This confirms the queued
+narrative/gameplay tests, including the Federal/rats scene and old-campaign
+death/reload. The completed entry was removed from pending_test.txt; the tracked
+file remains empty. Acceptance of the same patch does not increment 4.36.22.
+Full MAP06 army/routes and its campaign siege remain #16's separate scope; no
+unimplemented siege deployment is implied by this confirmation.
 
 ## 4.36.21 — Scenery adrenaline and running absorption (#49)
 
