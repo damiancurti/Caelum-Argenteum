@@ -272,6 +272,57 @@ CA-43611-GATES-01 fully passed on 2026-09-26, including the collision retest. Te
 speed/health reserves are not gameplay tuning. Low-energy collisions can still
 correctly cause zero damage under the existing formulas.
 
+## CA-KP-012 — A composite mover must query collision with a solid active proxy
+
+Status/evidence: ENGINE-VERIFIED. Recorded/checked 2026-09-26, issue #20,
+4.36.16 worktree based on 40ca8919. Environment: Windows GZDoom 4.14.2,
+development Doom II IWAD, Vulkan; fixture assets/IWAD are not distributed.
+Scope: CaelumBatteringRam.MoveFrame / MoveHead and owned collision proxies.
+
+Disabling all owned proxies avoids self-collision, but leaving the currently
+queried proxy non-solid also bypasses actor blocking in the native TryMove
+path. The first thin-head probe traversed its gate with zero registered
+contacts. Conversely, enabling all overlapping proxies makes a composite
+machine collide with itself. Query each proxy with its own SOLID flag enabled
+and its siblings disabled; restore the group afterward. On a failed group
+move, restore every component to the last committed pose, not only the final
+proxy. The ram's head must use the thin visible striking plate: an enclosing
+14-MU radius produced contact in front of the rendered plate.
+
+Regression: actual chassis obstruction, rollback, <=0.5-MU plate/gate gap,
+one native strike, frame-mass independence and NPC/player contact. The final
+ram suite exercises those paths; hashes/results are in
+[4.36.16 evidence](../assets/validation_43616/manifest.json). Flat-lane tests
+also reject floor-height changes rather than floating over a step or ditch.
+This does not establish support for ramps or rotating sectors. Author visual
+acceptance CA-43612-RAM-01 remains pending.
+
+## CA-KP-013 — Old map saves can retain the pre-feature EventHandler list
+
+Status/evidence: ENGINE-VERIFIED. Recorded/checked 2026-09-26, issue #20,
+4.36.16 worktree based on 40ca8919. Windows GZDoom 4.14.2, existing 4.36.15
+MAP03 save copied for testing; originals are preserved.
+
+Adding CaelumSiegeEvents to GameInfo worked on fresh maps but did not supply
+the death observer to that old saved map. New rams loaded and advanced, then
+stopped for missing crew after native `kill monsters`, but remained
+neutralized=0 because their confirmed-death records never received an event.
+Do not resolve this by interpreting a missing actor or zero nearby count as
+a kill: unloading and temporary absence must remain distinct.
+
+CaelumCombatActor.Die now forwards registered siege deaths after Super.Die
+to the same idempotent ConfirmDeath receiver used by WorldThingDied. Ordinary
+actors with no siege record retain their existing path. On fresh maps, the
+second notification is harmless; on pre-feature saved maps, the native Die
+bridge supplies the missing notification. No file rewrite or destructive
+save migration is required. The same legacy input then neutralized all six
+trial machines; subsequent save/reload must retain that result.
+
+Evidence: before/after legacy runs and source hashes in
+[4.36.16 evidence](../assets/validation_43616/manifest.json). This finding is
+scoped to the tested EventHandler/save lifecycle, not every GZDoom callback.
+Author acceptance remains pending under CA-43612-RAM-01.
+
 ## Rules for adding and updating entries
 
 1. Add an entry only for reusable engineering knowledge: a recurring failure, a non-obvious project constraint, or a verified cause/fix likely to prevent future work. Ordinary progress belongs in the issue.

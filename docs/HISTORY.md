@@ -1,6 +1,48 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **4.36.15** — 2026-09-26.
+Documentation version: **4.36.16** — 2026-09-26.
+
+## 4.36.16 — Operational demonic rams (#20; planned label 4.36.12)
+
+Based on merged #19 (40ca8919). The author requested implementation, local
+tests, commit and push on 2026-09-26. In this session the author confirmed:
+full 6/32 staffing is required without a partial-crew penalty curve; small
+rams must not damage armored gates; demonic contact velocities may be derived
+to damage wood/reinforced gates with small rams and all three with the large.
+The 4.36.15 gate response and shared biological impact/crushing formulas remain.
+
+A copied 4.36.15 save exposed the retained pre-feature EventHandler list: new machines could stop for dead crew without receiving confirmed-death notifications. The same idempotent receiver is now also called after registered actors' native Die. The identical legacy input then neutralized all six machines and retained that state after save/reload/repeated activation, without rewriting the original save.
+
+The implementation adds native moving-frame/striking-member components,
+serialized ready/approach/strike/contact/recovery, contact serial/spent state,
+reference-derived assembly mass, and an opt-in local encounter registry.
+Confirmed death records prevent empty areas, temporarily absent enemies and
+unloaded live actors from granting neutralization. Victory requires twelve
+neutralized hostile machines and the registered Zupay, in either order;
+survivors physically withdraw along supplied exit nodes without awarding kills.
+MAP03 has an explicit six-ram/62-operator disposable trial. Campaign maps,
+the 1,000-Mandinga force and cannon ballistics are not instantiated here.
+
+Evidence and final source/build hashes: assets/validation_43616. Static
+validation and the normal build passed; all 6,103 packaged files match source.
+The native suite passed 53 ram checks plus 37 gate and 13 biological-impact
+regression checks, with no failures. All five saved phases, mid-withdrawal,
+MAP03/MAP06 hub return and the copied 4.36.15 save passed persistence checks.
+The suite checks approach/alignment, collision, material response, frame-mass independence,
+crew availability, local neutralization, both victory orders and obstructed
+withdrawal. Physical inputs and uncertainty are preserved in ram_inputs.json;
+ASSETS identifies the construction/density references. Remaining author test
+CA-43612-RAM-01 (origin 4.36.16 / issue #20; historical planned-version ID kept)
+is in pending_test.txt. No author pass is claimed. CA-436-03 has native
+implementation evidence; #16/#17 own complete-port acceptance.
+
+Usage evidence (#8): one desktop Codex implementation session; no separate Work
+session or independent AI review was available in this run. Local correction
+rounds and native reruns are represented by the evidence manifest, not estimated
+tokens. Input/output/cached/reasoning token categories and current allowance
+were not exposed. Retain the author's 2026-09-23 75% weekly-remaining baseline;
+reset time and concurrent activity are unknown, so no quota delta or token
+estimate is inferred. The runtime/model setting was inherited from the session.
 
 ## 4.36.15 — Breakable actor gates (#19; planned label 4.36.11)
 

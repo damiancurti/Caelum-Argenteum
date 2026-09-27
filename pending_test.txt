@@ -1,0 +1,32 @@
+CA-43612-RAM-01 — Operational battering rams
+Origin: 4.36.16 / issue #20 (retains planned-version test ID 4.36.12).
+Prerequisites: build current source; GZDoom 4.14.2; disposable MAP03 session.
+Do not overwrite a real campaign save.
+
+1. Enter `map MAP03`, then `give CaelumDebugRamTrial`. Walk north to the six
+   lanes (gates at Y=2500, X=-1500/-930/-360/210/780/1350). The last ram is large.
+   Expected: five small rams with six operators each, one large with 32.
+2. Observe approach, alignment, visible plate contact, withdrawal of the log
+   and reuse. Run `give CaelumDebugRamStatus` between observations.
+   Expected: small rams damage wood/reinforced gates; the small armored lane
+   (X=-360) strikes but causes zero damage; the large armored lane causes damage.
+   The plate meets the gate, the chassis does not pass through it, and each
+   strike increments hits once. No new hit occurs during recovery.
+3. Stand in a lane's approach path, then move clear. Expected: it waits for
+   the obstruction and resumes. Avoid the striking head unless deliberately
+   testing physical injury in this disposable session.
+4. Kill one operator of a small ram. Expected: it stops without neutralizing.
+   Kill the remaining nearby attacking operators; overlapping areas can also
+   remember operators from a neighboring lane. Expected: it neutralizes once
+   and stays stopped. Other living lanes continue; distant enemies do not block
+   local completion. Status exposes crew presence/neutralized state.
+5. Save under a new name during approach or recovery; reload. Expected:
+   positions, gate damage, crew and neutralization persist; no duplicate strike.
+   Repeat `give CaelumDebugRamTrial`; expect no duplicate machinery/operators.
+6. `changemap MAP06`, then `changemap MAP03`. Expected: retained trial state
+   and no duplicates. The isolated six-machine trial awards no port victory.
+
+Report visual/behavioral failures or explicitly confirm this test passed.
+Native automated evidence separately covers exact mid-strike/contact saves,
+12-objective victory orders and obstructed/no-kill retreat. Full authored port
+routes, battle rewards and cannon operation remain #16/#21.

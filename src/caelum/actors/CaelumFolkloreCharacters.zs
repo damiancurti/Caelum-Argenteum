@@ -477,6 +477,9 @@ class CaelumMandinga : CaelumFolkloreCombatActor
 
     States
     {
+    SiegeWithdrawal:
+        MIRN ABCD 4;
+        Loop;
     Spawn:
         MIID A 10 A_CaelumBudgetedLook;
         Goto IdleBreathing;

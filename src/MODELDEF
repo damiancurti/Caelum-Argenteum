@@ -3468,3 +3468,36 @@ Model CaelumSiegeGateArmored
 }
 
 // --- END GENERATED CAELUM SIEGE MODELS ---
+
+// BEGIN GENERATED RAM COMPONENTS
+Model CaelumRamFrameVisual
+{
+    Path "models/caelum/siege"
+    Model 0 "ca_ram_frame.obj"
+    Scale 1 1 1
+    CorrectPixelStretch
+    DontCullBackFaces
+    InheritActorPitch
+    FrameIndex CRFR A 0 0
+}
+Model CaelumRamHead
+{
+    Path "models/caelum/siege"
+    Model 0 "ca_ram_moving.obj"
+    Scale 1 1 1
+    CorrectPixelStretch
+    DontCullBackFaces
+    InheritActorPitch
+    FrameIndex CRHD A 0 0
+}
+Model CaelumRamSuspension
+{
+    Path "models/caelum/siege"
+    Model 0 "ca_ram_suspension.obj"
+    Scale 1 1 1
+    CorrectPixelStretch
+    DontCullBackFaces
+    InheritActorPitch
+    FrameIndex CRSP A 0 0
+}
+// END GENERATED RAM COMPONENTS

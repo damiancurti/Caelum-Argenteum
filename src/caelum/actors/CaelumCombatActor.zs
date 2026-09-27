@@ -3,6 +3,8 @@
 // evasion, dolor, adrenalina y efectos de los estados de salud.
 class CaelumCombatActor : Actor
 {
+    // Nulo en campañas anteriores y fuera del encuentro optativo de #20.
+    CaelumSiegeCombatant SiegeCombatant;
     bool NextRangedSecondaryElement;
     Actor CaelumRecognitionTarget;
 
@@ -3282,8 +3284,24 @@ class CaelumCombatActor : Actor
         return total;
     }
 
+    override void Die(Actor source, Actor inflictor, int dmgflags, Name MeansOfDeath)
+    {
+        Super.Die(source,inflictor,dmgflags,MeansOfDeath);
+        // Los saves previos retienen sus EventHandlers. La misma confirmación
+        // idempotente cubre su muerte nativa sin convertir ausencia en muerte.
+        if(SiegeCombatant!=null)CaelumSiegeCombatant.ConfirmDeath(self);
+    }
+
     override void Tick()
     {
+        if (SiegeCombatant != null && SiegeCombatant.Withdrawing && health > 0)
+        {
+            if (!InStateSequence(CurState,FindState("SiegeWithdrawal")))
+                SetStateLabel("SiegeWithdrawal");
+            SiegeCombatant.WithdrawTick();
+            if (!SiegeCombatant.Exited) Super.Tick();
+            return;
+        }
         Vector3 prePhysicsVelocity = Vel;
         bool sleeping = ForcedSleepTics > 0;
         if (sleeping) { tics = -1; Vel = (0,0,0); }
@@ -3420,5 +3438,12 @@ class CaelumCombatActor : Actor
                     - CaelumConstants.ADRENALINE_DECAY_PER_SECOND / TICRATE
             );
         }
+    }
+
+    States
+    {
+    SiegeWithdrawal:
+        "####" "#" 4;
+        Loop;
     }
 }

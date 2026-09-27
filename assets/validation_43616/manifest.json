@@ -1,0 +1,183 @@
+{
+  "issue": 20,
+  "release": "4.36.16",
+  "planned_pr_label": "4.36.12",
+  "date": "2026-09-26",
+  "base_commit": "40ca8919e83a21eed163878feb7c15f829e2db35",
+  "status": "implemented; native/static verification complete; author acceptance pending",
+  "runtime_sha256": {
+    "src/MAPINFO": "23bd68a1ce08e90dd1ff02a0ca703fdb1ae04976d2a36e2864b74a1e92b3f12c",
+    "src/MODELDEF": "c2291cd95a284a033305a18d642db7f8019d302cec6685e75cd9d0edc55f6de5",
+    "src/ZSCRIPT": "eb4c3fe20100218472ac825ab13ad904afd3fd574903b57227b6d8ed3a28e24f",
+    "src/caelum/actors/CaelumCombatActor.zs": "7ac3fa7950d0014036c0e7413b42ae38b608551a5eac5d9ba46c96ea2d410242",
+    "src/caelum/actors/CaelumFolkloreCharacters.zs": "8d5b6adc09d26b9d3223133f15f387d4942bedcb9c4f459c42a98de924a06be9",
+    "src/caelum/core/CaelumConstants.zs": "143c9da8220961bcafed4974c98260a660236cebd0c0c1dd0ed7ea78f0afb5cb",
+    "src/caelum/world/CaelumBatteringRam.zs": "4d517362727504ac913b18ad002bc25ad18742dc9335ca427bf07d8e8de838ac",
+    "src/caelum/world/CaelumBreakableGate.zs": "7e28d62c5503a95c94b56300e49e615f97c7a1f060a485a6c267eab1203a4c84",
+    "src/caelum/world/CaelumGateData.zs": "9f3816a48fe70274013fbce6de7f1412b522a53d4ea86be27a857b2cd5768fb9",
+    "src/caelum/world/CaelumPhysicalHazards.zs": "1d8f3c5df13d71a3578f84ed5feff96006617390feb5683d2840c852b2e69a40",
+    "src/caelum/world/CaelumRamData.zs": "c197b892b46c8163b9fa1bff27219a7848c5c07bd29157f1cc1a40ba64387d82",
+    "src/caelum/world/CaelumRamTrial.zs": "5f3c7e72e7acb31c0493284b5a14f39447793eb01cbe7702fdc1fdfb3e9dc402",
+    "src/caelum/world/CaelumSewerMaze.zs": "d33111c1332a4c3033f1dc2c4741d0fff0a0e83644205b4a92e0b01bd49c6f64",
+    "src/caelum/world/CaelumSiegeEncounter.zs": "9f3408ca3368df295f8f61cd6a844b4ba0d711db343b4cf3bece085fb06f3f8c",
+    "src/impactphysics/ImpactPhysics.zs": "414c51e69482d225d7b281d2756493c662e63dcac19eb0ff778a2408753033d4",
+    "src/models/caelum/siege/ca_ram_frame.obj": "c4892d6774f8bfdc1da8051bbd77e42e672095236fe32991e48c718402752d9c",
+    "src/models/caelum/siege/ca_ram_moving.obj": "4ebaca052b8cb12da8aed2ea7604134792c85aa9286cffaecdd2c654ecf21969",
+    "src/models/caelum/siege/ca_ram_suspension.obj": "57f72d33b5c528fd1161dc8a8e3ea61b2c4bea205ffcb7cdd12233fac5bd35eb",
+    "src/sprites/CRFRA0.png": "f2bb5bbaca678ecad746b1fa5ecfa2c8a81dd18817be19f0187c036d25326317",
+    "src/sprites/CRHDA0.png": "f2bb5bbaca678ecad746b1fa5ecfa2c8a81dd18817be19f0187c036d25326317",
+    "src/sprites/CRSPA0.png": "f2bb5bbaca678ecad746b1fa5ecfa2c8a81dd18817be19f0187c036d25326317"
+  },
+  "input_sha256": {
+    "assets/generators/ram_physics.json": "d496d873ff463ca19f54ef058816e64e074f2e6ff47c90f46c40915fb3503388",
+    "assets/generators/siege_visuals.json": "3feeefc820393441ebbb2b3067de901a149e20cb8a65fa5045c3924ca05d3f62",
+    "assets/generators/generate_ram_runtime.py": "8b02415db1fb0ec0821ef7fe94124b764e8e5478ae2e8d5fffa6bdcb58981820",
+    "assets/generators/generate_siege_models.py": "030b0fe1683b90fc25246af0770ab29e1a0e9205f50a620fa434bd2ff1448316"
+  },
+  "normal_build": {
+    "exit_code": 0,
+    "files": 6103,
+    "all_packaged_bytes_match_src": true,
+    "pk3_sha256": "6fcb0e26e42540cfc5ab3247704483851caba537abf1dfcc406bba10c5eb5ed8"
+  },
+  "native": {
+    "engine": "GZDoom g4.14.2",
+    "ram_checks": 53,
+    "gate_regression_checks": 37,
+    "body_regression_checks": 13,
+    "logs": {
+      "final_suite4": {
+        "full_local_log_sha256": "37f770477782eb1e599b9e17504db97048ec2dcf4c69c99f43ec83a53a5c7406",
+        "selected_lines": 66
+      },
+      "final_gate_regression": {
+        "full_local_log_sha256": "2e0980bd81ec4cdeae7429dd0536ab9fa980b0aaf26b207151455215f17b9a25",
+        "selected_lines": 44
+      },
+      "final_body_regression": {
+        "full_local_log_sha256": "a4aa704a035ea2469418472d1305d1ed077987913a8d2bfa39f6500a0f124959",
+        "selected_lines": 16
+      },
+      "final_recheck_moving": {
+        "full_local_log_sha256": "e82bbd1a14a679e86269e5d10cb0ab0a1a58ea174fa20203ee5eaade57a63ebb",
+        "selected_lines": 19
+      },
+      "final_recheck_strike": {
+        "full_local_log_sha256": "d51a26fb1fc4cc4b4953019e8fcc5b8ad08b623140bf9389a14ebeb4bc47311a",
+        "selected_lines": 22
+      },
+      "final_recheck_contact": {
+        "full_local_log_sha256": "f5108ddffdf816751d6a0697367e7a0b2ccbf7f6efa4d847c60b67f5c797db59",
+        "selected_lines": 23
+      },
+      "final_recheck_recovery": {
+        "full_local_log_sha256": "b8737e931411a9840a11ed5b7ac02a5dfc134f99be20192318b675b04cb49c21",
+        "selected_lines": 23
+      },
+      "final_load_ready": {
+        "full_local_log_sha256": "ac5286a0ead80c485bfe9537e36b0e2198838982aa4a50d7acf718bd4d725b59",
+        "selected_lines": 27
+      },
+      "final_load_retreat": {
+        "full_local_log_sha256": "be7beb5d2f0ea708a19b40a6b5ce443fafad46519b25145bad2c3520b5b309c8",
+        "selected_lines": 10
+      },
+      "legacy_fixed_pk3": {
+        "full_local_log_sha256": "9ab20dc09b56f59509eaf9a348f95ac9b00bb77b1764f2a622ea61af52c818be",
+        "selected_lines": 15
+      },
+      "legacy_repeat": {
+        "full_local_log_sha256": "07a7c4780ce570613e1b0e83f5d5c2dc07aa0a383e5bc08afedc97fba0baccc2",
+        "selected_lines": 6
+      },
+      "hub": {
+        "full_local_log_sha256": "34191b584ba29086da497749453aae545040c828c6b7b9212147da450d0e0647",
+        "selected_lines": 18
+      },
+      "final_views": {
+        "full_local_log_sha256": "942c21f0b9cce466a6250a7394a7c851311f8cf3cf5e14675561a889627fdd98",
+        "selected_lines": 26
+      },
+      "final_large_elevated": {
+        "full_local_log_sha256": "61c0716e38215b18c25adfdf52eca8e67b42dd19690568cfb5ec3559e3b80a60",
+        "selected_lines": 26
+      }
+    },
+    "save_phases": [
+      "ready",
+      "moving",
+      "mid-strike",
+      "spent contact",
+      "mid-recovery"
+    ],
+    "mid_retreat_reload": true,
+    "both_victory_orders": true,
+    "obstructed_no_kill_withdrawal": true,
+    "hub_state_and_counts": "hub_persistence.json",
+    "legacy_43615_input_sha256": "ec4955eaf456f56ad202ad57f64d2024c26d490eb272babe1e11a331d38b9abf",
+    "legacy_neutralization_before": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "legacy_neutralization_after": [
+      1,
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "legacy_repeat_activation_preserves_six_machines": true
+  },
+  "generation": {
+    "ram_outputs_byte_identical_on_repeat": true,
+    "all_three_legacy_ram_meshes_byte_identical_to_default_generator_output": true
+  },
+  "visuals": {
+    "small_contact.png": "83c1e3dc71c4f09ea13e9e642d04f5ba88c535b882705661b2d4ae9c9a50fd90",
+    "large_contact.png": "3a2e0ab230267ee4791d67931fd2619544aaa5fb9b76e1636b919edeb44383e4",
+    "review": "Native plate/gate contact and independent frame/head/suspension inspected; large capture uses an elevated test camera. Author acceptance pending."
+  },
+  "correction_rounds": [
+    "Target-version reserved identifiers/object scope/vector-array restrictions corrected at native compile.",
+    "Active proxy stays solid during each collision query; siblings are temporarily disabled. Thin plate replaces oversized enclosing contact radius.",
+    "Native transmitted impulse reaches NPC/player; destructive player check isolated from persistence fixtures.",
+    "Large manual lane moved inside the level platform; height discontinuities remain real obstructions.",
+    "Old save retained its original EventHandler list. Idempotent native Die bridge verified against identical old save, reload and repeat activation."
+  ],
+  "usage": {
+    "work_session": "not used in this implementation turn",
+    "desktop_sessions": 1,
+    "model": "inherited session model",
+    "independent_ai_review": "not available in this run",
+    "input_tokens": null,
+    "output_tokens": null,
+    "cached_tokens": null,
+    "reasoning_tokens": null,
+    "allowance_baseline": "author-reported 75% weekly remaining on 2026-09-23",
+    "current_allowance": null,
+    "reset_time": "unknown",
+    "concurrent_activity": "unknown",
+    "note": "Unavailable counters are not inferred from quota, elapsed time or diff size."
+  },
+  "author_acceptance": {
+    "id": "CA-43612-RAM-01",
+    "status": "pending",
+    "queue": "pending_test.txt"
+  },
+  "limitations": [
+    "Final port placement, route/crew choreography and rewards belong to #16.",
+    "Cannon operation belongs to #21; no artillery speed or projectile values changed.",
+    "Transport supports authored level lanes; ramps/height transitions are rejected.",
+    "Machine masses/dimensions are reconstruction estimates; demonic speed is explicitly a game decision."
+  ],
+  "static_validation": {
+    "exit_code": 0,
+    "errors": [],
+    "report_sha256": "d8a7282604e437df4afc21fe21b2cbfce3edce87c88b546c79734cc1f169632f"
+  }
+}

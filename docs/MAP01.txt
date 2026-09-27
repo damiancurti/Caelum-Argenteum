@@ -1,6 +1,23 @@
 CAELUM ARGENTEUM — STORY AND MAP01
 
-Documentation version: **4.36.15** — 2026-09-26.
+Documentation version: **4.36.16** — 2026-09-26.
+
+## 4.36.16 — Optional operational ram lanes (#20)
+
+In a disposable MAP03 session, `give CaelumDebugRamTrial` creates five small
+and one large ram with 6/32 operators (62 trial Mandingas total), plus six
+gates at Y=2500. From west to east X=-1500/-930/-360/210/780/1350, gate materials
+are wood/reinforced/armored/wood/reinforced/armored; the last ram is large.
+Rams begin at Y=2280 and approach their own gate. Trial operators stay at their
+stations and can be killed to test staffing/neutralization. The small armored
+lane intentionally deals zero damage. `give CaelumDebugRamStatus` prints
+positions, phase, staffing, contact count, last damage and gate health.
+
+Repeated activation, saved return and hub re-entry reuse the same trial
+encounter. The six-machine isolated roster has no boss and cannot award port
+victory. It is independent of MAP06 and does not add actors to its planned
+1,000-Mandinga force. Existing MAP01/MAP02/MAP06 geometry and narrative remain
+unchanged. #16 owns campaign placement/routes; CA-43612-RAM-01 is pending.
 
 ## 4.36.15 — Optional executable gate trial (#19)
 

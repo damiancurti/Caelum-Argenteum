@@ -1,0 +1,19 @@
+{
+  "provenance": "Issue #20 reconstruction of the wheeled, suspended, iron-capped timber ram described by Vitruvius (via Battering ram). Not a measured surviving machine. Small external dimensions retain the accepted #18 model. Large dimensions are a geometric estimate at equal moving mass per assigned operator (32/6); no historical claim for demon staffing or strike speed.",
+  "sources": [
+    {"url": "https://en.wikipedia.org/wiki/Battering_ram", "use": "Historical construction: wheeled wooden frame, suspended timber, metal cap and bands; consulted 2026-09-26."},
+    {"url": "https://www.wood-database.com/english-oak/", "use": "English oak average dried density 675 kg/m3; moisture/species variation is not represented; consulted 2026-09-26."},
+    {"url": "https://en.wikipedia.org/wiki/Iron", "use": "Iron near-room-temperature density 7874 kg/m3, used as an approximation for historical fittings; consulted 2026-09-26."}
+  ],
+  "oak_kg_m3": 675,
+  "iron_kg_m3": 7874,
+  "small_crew": 6,
+  "large_crew": 32,
+  "gravity_m_s2": 9.80665,
+  "proximity_machine_lengths": 2,
+  "approach_m_s": 0.5,
+  "trial": {"first_x": -1500, "spacing_x": 570, "start_y": 2280, "gate_y": 2500, "lanes": 6, "view": [0, 1800, 0]},
+  "approach_note": "Provisional slow operator-controlled playtest movement, not measured historical performance. Configurable per machine.",
+  "speed_note": "Author decision 2026-09-26: demonic velocity derived halfway between the small ram's reinforced and armored zero-damage thresholds; large ram uses the same contact speed. Shared Impact Physics and gate response stay unchanged.",
+  "cadence_note": "Recovery lasts one gravity-pendulum period from the accepted model's 36 MU suspension span. This is a reconstruction estimate, not historical cadence data. Demonic power supplies strike acceleration."
+}
