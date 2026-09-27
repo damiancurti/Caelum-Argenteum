@@ -14,8 +14,9 @@ SYSTEMS contains the complete approved matrix.
 Gate balance revision 1 preserves remaining resistance proportion and all
 passage/contact state, with tested explicit rollback/reapply support. Saved
 projectiles keep their velocity. Evidence is in assets/validation_43619;
-native/static checks are distinct from outstanding manual entries in
-pending_test.txt. Full port deployment remains #16/#17.
+native/static checks are separate from CA-43619-BALANCE-01, confirmed passed
+by the author on 2026-09-27. Merged and #21 closed; pending_test.txt is empty.
+Full port deployment remains #16/#17.
 
 ## 4.36.18 — Walking wall-impact absorption (issue #43)
 
@@ -23,7 +24,8 @@ Extends careful wall-contact absorption to actual grounded walking. The author
 confirmed walls only; running/idle/airborne movement and actor/projectile
 contacts do not gain the walking benefit. Existing crouch and acrobatic defense
 remain. Native eligibility/traversal and a loaded self-jump pass; evidence is
-in assets/validation_43618. CA-43618-WALK-01 author acceptance remains pending.
+in assets/validation_43618. The author confirmed CA-43618-WALK-01 passed on
+2026-09-27; merged and #43 closed.
 Based on accepted #21 /PR #42; this focused follow-up does not implement the
 then-proposed 500 m/s cannon speed or Type 4 collision-damage divisor;
 those changes were subsequently approved and implemented in 4.36.19.
