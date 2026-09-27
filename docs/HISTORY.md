@@ -1,6 +1,34 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **4.36.20** — 2026-09-27.
+Documentation version: **4.36.21** — 2026-09-27.
+
+## 4.36.21 — Scenery adrenaline and running absorption (#49)
+
+On 2026-09-27 the author confirmed all #33 tests passed, then reported that
+tree/rock collision damage granted adrenaline and requested absorption while
+running. They explicitly selected walls, trees and stationary rocks as the
+scope. #33 acceptance remains recorded in its originating entry below.
+
+Baseline f064f92, stacked on PR #48. Scenery had been classified as actor
+impact, triggering damage/pain adrenaline and combat activity. Its reception
+now classifies scenery actor contacts as environmental. The current Agility
+fraction/cap applies to running and stationary scenery, with rock rest sampled
+before impulse. Existing formulas, saved fields, states, geometry and artwork
+are preserved. The new optional contact argument is transient, so no save
+migration or schema revision is needed.
+
+Native before/after evidence covers damaging tree/rock contacts, deterministic
+pain, active/passive moving rocks, grounded/airborne/idle/immobilized cases,
+real walking/running wall traversal, loaded self-jump, shield/crush regressions
+and loading a pre-patch native save. Static validation/build and evidence are
+recorded in assets/validation_43621/RESULTS.json. These are isolated engine
+checks. On 2026-09-27 the author confirmed all tests passed:
+CA-43621-IMPACT-01 (origin 4.36.21 / #49) is PASSED, including scenery
+adrenaline, running/stationary-scene absorption and save/reload checks. Its
+pending entry is removed under the author-confirmed lifecycle. No gameplay
+or version change accompanies this acceptance. The author subsequently
+authorized closure and merge of both issues. PR #48 merged on 2026-09-27
+(2c685aac); PR #50 was then retargeted to main for its authorized delivery.
 
 ## 4.36.20 — Shared Arcana capture and sewer escape (#33)
 

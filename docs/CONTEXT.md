@@ -1,6 +1,6 @@
 # CONTEXT.md — Ultra-condensed summary of Caelum Argenteum
 
-Documentation version: **4.36.20** — 2026-09-27.
+Documentation version: **4.36.21** — 2026-09-27.
 
 Summary of `PROJECT.md`, `SYSTEMS.md`, `MAP01.txt`, `ASSETS.md`, `HISTORY.md`
 and the repository README.
@@ -62,17 +62,19 @@ the gauchos and rural culture, and the humans the urban porteño society.
 
 ## Current status
 
-Current release **4.36.20** implements #33: shared Box capture for El loco,
-Ace of Cups and Knight of Wands; confirmed sewer defeat gates the Ace; actual
-delivery of all extracted survivors' port rewards gates the Knight (zero
-survivors: immediate arrival reveal). The Knight appears beside the survivors.
-At <=50% health the sewer Zupay flees at triple base speed, disappears near
-the remaining exit and counts as defeated. The forward route is MAP02 ->
-existing MAP03 workshop/test room -> MAP06. Geometry, prior collection and
-prisoner extraction/rewards are preserved. The Knight's condition is provisional
-until #16/#17. See assets/validation_43620 for isolated evidence; author checks
-CA-43620-ARCANA-01 and CA-43620-ROUTE-01 passed, author-confirmed 2026-09-27.
-The reported Ace-use freeze is corrected by registering both Minor fronts before rendering.
+Current release **4.36.21** implements #49: tree/rock collision damage and
+pain no longer grant adrenaline or refresh combat. Walking, running and
+crouching use the existing absorption fraction against walls, rooted trees
+and rocks at rest before contact. Moving rocks and combat contacts retain
+their prior absorption; landing, crushing, shield rules and saves are preserved.
+Evidence: assets/validation_43621. The author confirmed CA-43621-IMPACT-01
+passed on 2026-09-27. PR #50 targets main.
+
+4.36.20 (#33) unifies Arcana capture and routes MAP02 through MAP03 to MAP06.
+The Zupay flees at 50% health at triple speed; escape confirms defeat and unlocks
+the Ace. Actual rescue payments unlock the Knight beside survivors, provisionally
+until #16/#17. The Ace rendering freeze was corrected.
+The author confirmed CA-43620-ARCANA-01 and CA-43620-ROUTE-01 passed 2026-09-27.
 
 The preceding **4.36.19** applies the author-approved final #21 balance:
 new cannon shots 500 m/s; gate Toughness/Constitution 50/100/200; Type 4 division

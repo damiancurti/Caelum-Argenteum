@@ -1,6 +1,18 @@
 # TASKS.md — Active tasks
 
-Documentation version: **4.36.20** — 2026-09-27.
+Documentation version: **4.36.21** — 2026-09-27.
+
+## Issue #49 — Scenery collisions and running (4.36.21)
+
+- **Issue:** https://github.com/damiancurti/Caelum-Argenteum/issues/49
+- **Implemented:** environmental collision provenance without adrenaline or
+  combat refresh; existing absorption extended to running and stationary scenery.
+- **Preserved:** impact formulas, shield/landing/crush rules, genuine combat,
+  saved fields, states and approved artwork/geometry.
+- **Validation:** isolated native before/after and save checks plus static
+  validation; assets/validation_43621/RESULTS.json.
+- **Author acceptance:** CA-43621-IMPACT-01 passed on 2026-09-27.
+- **Delivery:** PR #50 targets main after #48 merged; author approved merge on 2026-09-27.
 
 ## Issue #33 — Arcana capture, wounded Zupay and forward route (4.36.20)
 

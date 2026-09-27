@@ -170,6 +170,10 @@ Identify the generator and input manifest before changing generated maps, catalo
 - For an unfamiliar API, verify its declaration/signature against target-version engine sources or authoritative documentation and record the source. Do not label a remembered API as verified.
 - Adding a class requires checking actual inclusion through src/ZSCRIPT and its dependency order, then compiling in the engine. Python validation alone is insufficient.
 - Trace state transitions, actor ownership and save behavior before changing shared lifecycle code. Preserve existing schemas or implement the explicit migration required by AGENTS.
+- Scenery represented by an Actor is not combat provenance. In #49 over
+  f064f92, CaelumPlayer classifies scenery actor impacts as environmental;
+  stationary-rock eligibility is sampled before impulse changes its velocity.
+  Isolated callback, native wall and save evidence is in assets/validation_43621.
 - For a retreat toward a solid travel gate, validate both the approach volume
   and a start outside the arena. In #33 (4.36.20 over baseline `245d3bb5`),
   `CaelumZupayColossus` uses native attack-free `A_Chase` at the existing
