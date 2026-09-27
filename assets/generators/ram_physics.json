@@ -14,6 +14,6 @@
   "approach_m_s": 0.5,
   "trial": {"first_x": -1500, "spacing_x": 570, "start_y": 2280, "gate_y": 2500, "lanes": 6, "view": [0, 1800, 0]},
   "approach_note": "Provisional slow operator-controlled playtest movement, not measured historical performance. Configurable per machine.",
-  "speed_note": "Author decision 2026-09-26: demonic velocity derived halfway between the small ram's reinforced and armored zero-damage thresholds; large ram uses the same contact speed. Shared Impact Physics and gate response stay unchanged.",
+  "speed_note": "Author decision 2026-09-26: demonic velocity derived halfway between the small ram's reinforced and armored zero-damage thresholds; large ram uses the same contact speed. Shared Impact Physics and gate response stay unchanged. Final balance approved 2026-09-27 retains this exact velocity; the historical subtraction thresholds no longer govern gate immunity.",
   "cadence_note": "Recovery lasts one gravity-pendulum period from the accepted model's 36 MU suspension span. This is a reconstruction estimate, not historical cadence data. Demonic power supplies strike acceleration."
 }

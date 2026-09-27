@@ -1,0 +1,195 @@
+{
+  "issue": 21,
+  "release": "4.36.19",
+  "date": "2026-09-27",
+  "base_commit": "7934fd7bd6bdcf70a67c3818db00d42b00566102",
+  "status": "approved balance implemented; merge and closure authorized; manual observations tracked separately",
+  "runtime_sha256": {
+    "src/caelum/player/CaelumPlayer.zs": "7a42b0ad3c92f69e746d92e257e159e84f9f504eccea98d3024fcb5ec870a9b7",
+    "src/caelum/actors/CaelumCombatActor.zs": "57aaa45148037f9883deed41975e741a00f42ed582b22b32be4589f69819acca",
+    "src/caelum/world/CaelumGateData.zs": "8929edd4f276fadf26e5470665a819e930712f6d97d9fa5f212707144f58448a",
+    "src/caelum/world/CaelumBreakableGate.zs": "fec48f429002746697fac06b2830b03dc09fc5e7220d2c8533125afee4c87619",
+    "src/caelum/world/CaelumCannonData.zs": "0dd7a3d86dba4cabf027c41aa57cdc9b383a6a801a1ef2f4d7afe1b227688abb",
+    "src/caelum/world/CaelumCannon.zs": "d4e5025397261adee3de6572b24329145633c1be0b9d192537d4b639590678ea",
+    "src/impactphysics/ImpactPhysics.zs": "414c51e69482d225d7b281d2756493c662e63dcac19eb0ff778a2408753033d4"
+  },
+  "input_sha256": {
+    "assets/generators/cannon_physics.json": "19400d39f77ea683e5fa73e7dac6406f6c65255a77c298d0cbea6f6e09493f9b",
+    "assets/generators/ram_physics.json": "4a9b209e0378d75868fa58aa8a0ca4e0ae3b72bb51fba89d922592fbfaefabed"
+  },
+  "normal_build": {
+    "files": 6116,
+    "packaged_bytes_match_source": true,
+    "sha256": "0ffb5668873460dad504f7ef82336c7c0d5f1920064c3af3246879e32b255a71"
+  },
+  "cannon_generation_two_repeats_identical": true,
+  "engine": "GZDoom g4.14.2 Windows",
+  "primary_native_checks": 150,
+  "logs": {
+    "balance21_final_matrix": {
+      "sha256": "64b71b8233b36c4ff53a78d99a7c6afd7c76fbb21a7b14e1f93ad1d272b8e0af",
+      "completion": [
+        "QA21B DONE checks=50 failures=0"
+      ],
+      "selected_lines": 65
+    },
+    "balance21_final_advanced": {
+      "sha256": "4c6665cf0b080072e7ba9791a5b9fa3ce5ff68432cab7aca2f4e24e3b7fc111b",
+      "completion": [
+        "QA21A DONE checks=23 failures=0"
+      ],
+      "selected_lines": 26
+    },
+    "balance21_final_ram": {
+      "sha256": "03a95bf3bdfead32ec530e9be05509b328ad1591c52aee9bd257a1450bdf33a0",
+      "completion": [
+        "QA20 DONE checks=14 failures=0",
+        "QA20M DONE checks=17 failures=0",
+        "QA20P DONE checks=22 failures=0"
+      ],
+      "selected_lines": 66
+    },
+    "issue43_balance_final": {
+      "sha256": "5fdd69f3b35856387b812f5fdfc3a23aefb602d175cff1bd659b7ca0fb1c5244",
+      "completion": [
+        "QA43 DONE checks=24 failures=0"
+      ],
+      "selected_lines": 32
+    },
+    "balance21_final_migration": {
+      "sha256": "41383debdf9321c5fc0e3c747d4161799d6809c22d079d993cc0998da189618c",
+      "completion": [
+        "QA21M DONE checks=31 failures=0"
+      ],
+      "selected_lines": 32
+    },
+    "balance21_migration_repeat": {
+      "sha256": "25c7ccb36f5c682377f7a9f2538fe4b3593796a68884d23ee543b5f68789241d",
+      "completion": [
+        "QA21M DONE checks=31 failures=0"
+      ],
+      "selected_lines": 32
+    },
+    "balance21_final_recovery": {
+      "sha256": "b9669359a548a404f62836f4f827ad38076dcae3f65b310b85027578c104d169",
+      "completion": [
+        "QA21R DONE checks=6 failures=0",
+        "QA21M DONE checks=31 failures=0"
+      ],
+      "selected_lines": 39
+    },
+    "balance21_final_save500_flight": {
+      "sha256": "0a988f14264cd17d7860baae96d2c0c81e78d53932c6788a2cdf5a94ecca4f8d",
+      "completion": [],
+      "selected_lines": 16
+    },
+    "balance21_final_load500_flight": {
+      "sha256": "19dfaf131eb28e603dc8ec5af1d5fd18ccfe743bb1a115a4e8d519c020a7450d",
+      "completion": [
+        "QA21A DONE checks=22 failures=0"
+      ],
+      "selected_lines": 19
+    },
+    "balance21_final_load400": {
+      "sha256": "d9b81ebf631501d38ace68b34223bf456ff3958f730b3ca1a68542680ef96ac2",
+      "completion": [
+        "QA21A DONE checks=22 failures=0"
+      ],
+      "selected_lines": 12
+    }
+  },
+  "persisted_flight": [
+    {
+      "file": "issue21_live_flight",
+      "sha256": "21493a28bb987872895dd6ddd91d3c4966db50b806429a0e01ec8c4f624ccfd1",
+      "owned_unspent_projectiles": 18,
+      "horizontal_m_s": 400
+    },
+    {
+      "file": "balance21_live500_early",
+      "sha256": "b4f026fedf410576fcca899c767347fe8a1f9b246d82879da4c964df6614142e",
+      "owned_unspent_projectiles": 18,
+      "horizontal_m_s": 500
+    }
+  ],
+  "gate_migration": {
+    "revision": 1,
+    "old_gates": 6,
+    "states": [
+      "intact",
+      "partially damaged",
+      "opened",
+      "broken"
+    ],
+    "preserves_remaining_health_ratio": true,
+    "preserves_components_serials_passage": true,
+    "idempotent": true,
+    "rollback_save_load_and_reapply": true,
+    "legacy_input_sha256": "d426c68919b620d69741bf2def52047cd9ed84f39e1459ce9c145de1b47fc4e3"
+  },
+  "static_validation_sha256": "5045a612c5ac38897d7dde96f33d7e1b549a4634190f6a44f5ac32aff6aab86d",
+  "approved": {
+    "gate_toughness_constitution": [
+      50,
+      100,
+      200
+    ],
+    "gate_health": [
+      75625,
+      334750,
+      2222000
+    ],
+    "cannon_speed_m_s": 500,
+    "projectile_mass_kg": 4.3,
+    "damage_small_ram": [
+      53889,
+      112963,
+      197380
+    ],
+    "damage_large_ram": [
+      71288,
+      156321,
+      328626
+    ],
+    "damage_cannon": [
+      766,
+      1194,
+      800
+    ],
+    "hits_small_ram": [
+      2,
+      3,
+      12
+    ],
+    "hits_large_ram": [
+      2,
+      3,
+      7
+    ],
+    "hits_cannon": [
+      99,
+      281,
+      2778
+    ]
+  },
+  "corrections": [
+    "Legacy flight first attempt lacked the original fixture path required by the save; repeated with that path and passed.",
+    "Initial ram run stopped before the last three policy checks; completed final run passed all53.",
+    "First500 m/s save quit before deferred write; next captured after the owned salvo had arrived. Final earlier capture contains18 owned unspent500 m/s rounds and passes resumed trajectory/contact checks."
+  ],
+  "acceptance": {
+    "original_trial": "CA-43613-CATAPULT-01 confirmed2026-09-27",
+    "balance": "explicitly approved by author2026-09-27",
+    "manual_pending": [
+      "CA-43618-WALK-01",
+      "CA-43619-BALANCE-01"
+    ]
+  },
+  "limitations": [
+    "Whole-body horizontal impulse retained; no penetration or explosion.",
+    "Recovery hook restores gate attribute/health scale, not global prior collision semantics.",
+    "Full port deployment remains#16/#17."
+  ],
+  "independent_ai_review": "not available",
+  "token_counts": null
+}

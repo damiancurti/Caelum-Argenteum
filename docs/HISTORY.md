@@ -1,6 +1,46 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **4.36.18** — 2026-09-27.
+Documentation version: **4.36.19** — 2026-09-27.
+
+## 4.36.19 — Final author-approved siege balance (#21)
+
+On 2026-09-27 the author approved the calculated gate levels 50/100/200 for
+both Toughness and Constitution, and requested implementation, PR, merge
+and issue closure. The accepted matrix assumes the previously discussed
+500 m/s cannon and Type 4 collision divisor. It intentionally supersedes
+the small-ram armored immunity accepted for #20 and initial zero gate damage
+in #21. Masses and ram speed remain unchanged. Player/NPC/gate collision
+reception now uses the same Type 4 curve as weapons, exactly once, after
+biological absorption and before biological anatomy/armor. Ordinary weapon
+resistance, pain/Lucidity and the native crushing channel are not rebalanced.
+
+Added saved gate BalanceRevision and LegacyBalanceForRecovery fields.
+Revision 1 preserves remaining-health ratio with nearest-integer rounding
+without repairing broken gates or changing passage, ownership, components,
+timers or serials. Explicit recovery restores the old attribute scale and
+persists through save/load; false reapplies the current scale. Existing flying
+projectiles retain saved velocity; new rounds launch at 500 m/s. The normal
+self-jump and walking-wall changes from #43 remain.
+
+Native evidence checks the nine approved damage/hit-count combinations,
+player/NPC division at Toughness 0/20/50/100/200, armor/reinforcement ordering,
+floor/crushing absorption, six old intact/partial/open/broken gates with
+idempotent migration and rollback/reapply, saved old 400 m/s flight, 500 m/s
+salvos and ram/shared-siege and walking regressions. Static validation, normal
+build and deterministic cannon generation passed; assets/validation_43619
+records exact runs/hashes. One legacy-flight attempt omitted the original
+fixture path required by the save and did not load; rerunning with that path
+completed normally. An initial ram run ended before the last three policy
+checks; the completed final run supplies the regression evidence.
+An initial 500 m/s save attempt quit before the deferred write completed;
+the completed save/load run verified the actual in-flight projectile state.
+
+The old rock example's rounded damage 0/347/1,071/2,085 is superseded by
+138/558/1,257/2,236 under Type 4, at unchanged example inputs.
+CA-43613-CATAPULT-01 remains confirmed for the original delivered trial.
+Approval of the new balance and merge is not an unperformed manual test:
+CA-43618-WALK-01 remains pending, and CA-43619-BALANCE-01 originates here.
+No independent AI review or token counters are available.
 
 ## 4.36.18 — Walking wall-impact absorption (#43)
 
