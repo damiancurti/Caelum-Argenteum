@@ -4,7 +4,7 @@
   "planned_pr_label": "4.36.12",
   "date": "2026-09-26",
   "base_commit": "40ca8919e83a21eed163878feb7c15f829e2db35",
-  "status": "implemented; native/static verification complete; author acceptance pending",
+  "status": "implemented; native/static verification complete; author acceptance passed",
   "runtime_sha256": {
     "src/MAPINFO": "23bd68a1ce08e90dd1ff02a0ca703fdb1ae04976d2a36e2864b74a1e92b3f12c",
     "src/MODELDEF": "c2291cd95a284a033305a18d642db7f8019d302cec6685e75cd9d0edc55f6de5",
@@ -140,7 +140,7 @@
   "visuals": {
     "small_contact.png": "83c1e3dc71c4f09ea13e9e642d04f5ba88c535b882705661b2d4ae9c9a50fd90",
     "large_contact.png": "3a2e0ab230267ee4791d67931fd2619544aaa5fb9b76e1636b919edeb44383e4",
-    "review": "Native plate/gate contact and independent frame/head/suspension inspected; large capture uses an elevated test camera. Author acceptance pending."
+    "review": "Native plate/gate contact and independent frame/head/suspension inspected; large capture uses an elevated test camera. Author confirmed all tests passed on 2026-09-26."
   },
   "correction_rounds": [
     "Target-version reserved identifiers/object scope/vector-array restrictions corrected at native compile.",
@@ -166,8 +166,13 @@
   },
   "author_acceptance": {
     "id": "CA-43612-RAM-01",
-    "status": "pending",
-    "queue": "pending_test.txt"
+    "status": "passed",
+    "queue": "pending_test.txt",
+    "confirmed_on": "2026-09-26",
+    "origin_release": "4.36.16",
+    "issue": 20,
+    "result": "Author explicitly confirmed all tests passed and requested PR merge and issue closure.",
+    "history": "docs/HISTORY.md"
   },
   "limitations": [
     "Final port placement, route/crew choreography and rewards belong to #16.",
@@ -178,6 +183,6 @@
   "static_validation": {
     "exit_code": 0,
     "errors": [],
-    "report_sha256": "d8a7282604e437df4afc21fe21b2cbfce3edce87c88b546c79734cc1f169632f"
+    "report_sha256": "39087120ebc48f7bff5926d7635fbf377277dcf9237754e40f896e60a590f2e8"
   }
 }

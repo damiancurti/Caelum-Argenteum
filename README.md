@@ -14,7 +14,7 @@ The author approved demonic speeds while retaining the accepted gate/impact
 rules. In disposable MAP03, `give CaelumDebugRamTrial` creates five small and
 one large ram with their crews; `give CaelumDebugRamStatus` prints their state.
 Native evidence is in [validation_43616](assets/validation_43616/manifest.json).
-Author check CA-43612-RAM-01 remains [pending](pending_test.txt). Cannon mechanics
+Author check CA-43612-RAM-01 passed on 2026-09-26; see [history](docs/HISTORY.md). Cannon mechanics
 and final port integration remain #21 and #16/#17.
 
 Issue [#19](https://github.com/damiancurti/Caelum-Argenteum/issues/19) adds

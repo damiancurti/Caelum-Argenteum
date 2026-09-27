@@ -17,7 +17,8 @@ Repeated activation, saved return and hub re-entry reuse the same trial
 encounter. The six-machine isolated roster has no boss and cannot award port
 victory. It is independent of MAP06 and does not add actors to its planned
 1,000-Mandinga force. Existing MAP01/MAP02/MAP06 geometry and narrative remain
-unchanged. #16 owns campaign placement/routes; CA-43612-RAM-01 is pending.
+unchanged. #16 owns campaign placement/routes; CA-43612-RAM-01 passed with
+explicit author confirmation on 2026-09-26.
 
 ## 4.36.15 — Optional executable gate trial (#19)
 

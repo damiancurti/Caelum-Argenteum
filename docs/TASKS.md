@@ -13,8 +13,8 @@ Documentation version: **4.36.16** — 2026-09-26.
   and reinforced gates, large also armored; demonic contact velocity permitted.
 - **Evidence:** assets/validation_43616. Static validation/build passed; 53
   native ram checks, 50 gate/body regression checks and save/hub/legacy
-  persistence checks passed. CA-43612-RAM-01 author acceptance remains
-  outstanding in pending_test.txt.
+  persistence checks passed. The author confirmed CA-43612-RAM-01 passed on
+  2026-09-26 and requested merge/closure; its result is recorded in HISTORY.
 - **Next:** #21 cannon operation; #16 authors port routes/operator choreography,
   placements and victory rewards; #17 verifies complete encounter integration.
 
@@ -342,7 +342,7 @@ integration before extracting Impact Physics.
 
 ### CA-436-03 — Rams
 
-- **Status:** Implemented in #20 / 4.36.16 (planned label 4.36.12), with native evidence in assets/validation_43616. Author acceptance CA-43612-RAM-01 remains pending.
+- **Status:** Implemented in #20 / 4.36.16 (planned label 4.36.12), with native evidence in assets/validation_43616. Author acceptance CA-43612-RAM-01 passed on 2026-09-26.
 - **Reference documents:** `docs/PROJECT.md` (V4.36 roadmap).
 - **Acceptance criteria:** Native visible strike/contact/recovery with one
   physical impact per strike, gate interaction and save/reset persistence.

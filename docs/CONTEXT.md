@@ -71,7 +71,8 @@ behavior through unchanged physics. Native approach, single physical strikes,
 recovery, local death-backed neutralization and victory-triggered withdrawal
 are implemented as opt-in hooks. `give CaelumDebugRamTrial` creates six MAP03
 lanes for disposable checks; `give CaelumDebugRamStatus` reports state.
-Evidence: assets/validation_43616. CA-43612-RAM-01 remains pending; #21 cannon
+Evidence: assets/validation_43616. The author confirmed CA-43612-RAM-01 passed
+on 2026-09-26 and requested merge/closure; #21 cannon
 mechanics and #16/#17 complete port integration remain separate.
 
 The preceding **4.36.15** implements #19 breakable actor gates, retaining

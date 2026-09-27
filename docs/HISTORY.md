@@ -31,10 +31,14 @@ MAP03/MAP06 hub return and the copied 4.36.15 save passed persistence checks.
 The suite checks approach/alignment, collision, material response, frame-mass independence,
 crew availability, local neutralization, both victory orders and obstructed
 withdrawal. Physical inputs and uncertainty are preserved in ram_inputs.json;
-ASSETS identifies the construction/density references. Remaining author test
+ASSETS identifies the construction/density references. Author test
 CA-43612-RAM-01 (origin 4.36.16 / issue #20; historical planned-version ID kept)
-is in pending_test.txt. No author pass is claimed. CA-436-03 has native
-implementation evidence; #16/#17 own complete-port acceptance.
+passed on 2026-09-26: Damián Curti explicitly confirmed that all tests passed
+and requested merging PR #41 and closing issue #20. Its completed entry was
+removed from pending_test.txt, leaving that queue empty. CA-436-03 now has
+native implementation evidence and author acceptance of the operational rams;
+#16/#17 still own complete-port acceptance. This acceptance does not change
+runtime code or increment the 4.36.16 release.
 
 Usage evidence (#8): one desktop Codex implementation session; no separate Work
 session or independent AI review was available in this run. Local correction
