@@ -72,7 +72,8 @@ Native gravity and fast collision preserve single impacts and saved flight.
 Shared collision rules give zero gate damage at these inputs; biological
 targets retain existing defenses. `give CaelumDebugCannonTrial` creates five
 disposable MAP03 lanes. Evidence: assets/validation_43617. Author acceptance
-CA-43613-CATAPULT-01 is pending; full port deployment remains #16/#17.
+CA-43613-CATAPULT-01 passed by author confirmation on 2026-09-27; full port
+deployment remains #16/#17.
 
 The preceding **4.36.16** implements #20 operational rams, retaining the
 planned [4.36.12] label. Full 6/32 staffing and author-authorized demonic

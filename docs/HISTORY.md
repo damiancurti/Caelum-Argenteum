@@ -34,8 +34,13 @@ tests cover the unobstructed arc, blocked muzzle/wall/floor/ceiling, both-side
 salvos, staffing rates, one contact, bounded projectiles and save/load. Static
 analysis, native results and author acceptance are distinct. Manual test
 CA-43613-CATAPULT-01 originates in 4.36.17 /#21, preserving the planned-version
-and historical catapult ID. It remains in pending_test.txt; no author pass
-or full-port encounter acceptance is claimed.
+and historical catapult ID. On 2026-09-27 the author confirmed "Todo correcto":
+CA-43613-CATAPULT-01 passed and its entry was removed from pending_test.txt.
+This confirms the delivered 400 m/s implementation, not full-port acceptance.
+In the same message the author requested a calculation of 500 m/s cannon
+impacts and Type 4 Toughness division for gates and players. That proposed
+change is not implemented or covered by this acceptance; current collisions
+still subtract Toughness from impact percentage, including for players.
 
 Usage (#8): one desktop implementation session; no separate Work session or
 independent model review. Correction rounds are recorded in the evidence

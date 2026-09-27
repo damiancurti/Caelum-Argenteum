@@ -12,7 +12,7 @@ Documentation version: **4.36.17** — 2026-09-26.
   rounds; 30/60-second cycles; shared collision damage, with zero gate damage
   at approved inputs. SYSTEMS/ASSETS distinguish game decisions from references.
 - **Evidence:** assets/validation_43617; 41 cannon and 53 ram/shared-siege checks,
-  plus save/hub/legacy checks passed. Manual CA-43613-CATAPULT-01 pending.
+  plus save/hub/legacy checks passed. Manual CA-43613-CATAPULT-01 passed by author confirmation on 2026-09-27.
 - **Next:** #16 authors campaign placement, operators, ammunition/aim and rewards;
   #17 verifies the complete encounter. No full army is instantiated by #21.
 
@@ -331,7 +331,7 @@ missing design/assets belong here and in issues, not in that queue.
 
 The author's 2026-09-23 clarification in #8 distinguishes covered, deferred
 and still-pending mechanisms. Covered/deferred entries below are not 4.36
-release blockers; cannon author acceptance and remaining integration checks still are.
+release blockers; remaining integration checks still are.
 According to `docs/PROJECT.md`, 4.36 already includes the trapdoor, the pit,
 the rocks, the approved traps, the ceiling crusher, and the resting-weight
 formula; what remains is to complete the planned bases and validate their
@@ -365,7 +365,7 @@ integration before extracting Impact Physics.
 
 ### CA-436-04 — Cannons (historical catapult task ID)
 
-- **Status:** Implemented in #21 /4.36.17 (planned 4.36.13); native evidence in assets/validation_43617. CA-43613-CATAPULT-01 author acceptance remains pending.
+- **Status:** Implemented in #21 /4.36.17 (planned 4.36.13); native evidence in assets/validation_43617. CA-43613-CATAPULT-01 author acceptance passed on 2026-09-27.
 - **Reference documents:** `docs/PROJECT.md` (V4.36 roadmap).
 - **Acceptance criteria:** One physical projectile per synchronized launch,
   native trajectory/collision, approved impact rules and loaded/in-flight

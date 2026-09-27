@@ -18,7 +18,7 @@ cause zero structural gate damage at the approved speed, but can injure characte
 In disposable MAP03, use `give CaelumDebugCannonTrial` and
 `give CaelumDebugCannonStatus`. Native evidence is in
 [validation_43617](assets/validation_43617/manifest.json).
-Author check CA-43613-CATAPULT-01 remains [pending](pending_test.txt).
+The author confirmed CA-43613-CATAPULT-01 passed on 2026-09-27; see HISTORY.
 
 Issue [#20](https://github.com/damiancurti/Caelum-Argenteum/issues/20) adds
 mobile demonic rams with native single-impact strikes, recovery, full 6/32

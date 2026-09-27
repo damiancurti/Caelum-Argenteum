@@ -17,7 +17,7 @@ The unchanged collision rule yields zero gate damage for the approved round.
 Defender hits can injure/kill their targets. Repeat activation is idempotent;
 save/load and hub return retain the trial. There is no port victory or extra
 campaign force in these five lanes. #16 owns full deployment and routes.
-Manual acceptance CA-43613-CATAPULT-01 remains pending.
+The author confirmed manual acceptance CA-43613-CATAPULT-01 on 2026-09-27.
 
 ## 4.36.16 — Optional operational ram lanes (#20)
 
