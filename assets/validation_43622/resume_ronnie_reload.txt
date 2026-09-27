@@ -1,0 +1,4 @@
+GZDoom version g4.14.2
+RESUME loaded map=MAP01 save=0
+RESUME loaded map=MAP01 save=1
+RESUME node=56 page=ronnie_gate dialog=$CA_DLG_M01_RONNIE_EARLY

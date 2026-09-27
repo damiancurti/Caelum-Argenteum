@@ -1,0 +1,160 @@
+{
+  "issue": 34,
+  "version": "4.36.22",
+  "date": "2026-09-27",
+  "author_report": "Old campaign continued on new build: dying/reappearing in MAP02 opens Palomo food/water dialogue; attempting supplies is refused.",
+  "cause": "Pre-#34 global USDF pages 178/179 (sewer Voice/arrival) shifted to Palomo needs introduction/practice. Native saves store global indices, not stable dialogue IDs.",
+  "migration": {
+    "voice_revision": 1,
+    "legacy_voice": "Rebind established map-specific ID before native resume. The short old voice conversation restarts once without replaying arrival/quest/reward actions.",
+    "other_legacy_dialogues": "Snapshot pre-#34 DemoNarrativeRevision on WorldLoaded; clear active presentation, native node and player pointers without replies; next interaction binds canonical ID.",
+    "new_saves": "Preserve exact saved page.",
+    "rollback": "Original save remains untouched and was loaded successfully on the pre-#34 package; do not downgrade a migrated save in place."
+  },
+  "engine": "GZDoom 4.14.2, Windows 11, isolated copied saves and configurations",
+  "preserved_persistent_fields": [
+    "TarotOwned",
+    "MainM00FoolRevealed",
+    "QuestStateVersion",
+    "QuestRewardClaimed",
+    "QuestTrialEnabled",
+    "QuestTrialOrigin",
+    "QuestTrialWaitTics",
+    "QuestTrialLastHealth",
+    "QuestState",
+    "QuestStage",
+    "QuestObjectiveKnown",
+    "QuestObjectiveProgress",
+    "QuestObjectiveTarget",
+    "MainM00Flag",
+    "MainM00SocialVersion",
+    "MainM00RuneSequenceIndex",
+    "MainM00RuneErrors",
+    "MainM00AnimaAfterCast",
+    "MainM00PracticeLastAir",
+    "MainM00PracticeLowestAir",
+    "MainM00PracticeLastPosition",
+    "MainM00PracticeSideDistance",
+    "MainM00AmmoLoanType",
+    "MainM00AmmoLoanRemaining",
+    "MainM00BullFailures",
+    "MainM00SealRecipesLearned",
+    "MainM00SealChoice",
+    "MainM00AccessoryLimitsUpdated",
+    "MainM00LegacySealTaskRecipe",
+    "MainM00AmuletChoice",
+    "MainM00AmuletPrepared",
+    "MainM00AmuletOwnedAtLearning",
+    "MainM00SealOwnedAtLearning",
+    "MainM00SealsPrepared",
+    "MainM00ArmorChosen",
+    "MainM00ArmorType",
+    "MainM00ArmorSize",
+    "MainM00ArmorCrafted",
+    "MainM00SupplyQuotaReady",
+    "MainM00RepairSupply",
+    "MainM00SupplyLimit",
+    "MainM00SupplyIssued",
+    "MainM00StarterChosen",
+    "MainM00StarterOption",
+    "MainM00StarterSize",
+    "MainM00RonnieSwordId",
+    "MainM00StarterWeaponId",
+    "MainM00SwimLessonStarted",
+    "MainM00SwimLessonSubmerged",
+    "MainM00SwimLessonComplete",
+    "MainM00LoadLessonStarted",
+    "MainM00LoadLessonComplete",
+    "MainM00AirLessonStarted",
+    "MainM00AirLessonRan",
+    "MainM00AirLessonComplete",
+    "MainM00AirLessonTarget",
+    "MainM00AirLessonSpent",
+    "MainM00AirLessonRecovered",
+    "MainM00NeedsLessonStarted",
+    "MainM00NeedsFoodUsed",
+    "MainM00NeedsWaterUsed",
+    "MainM00NeedsFoodGiven",
+    "MainM00NeedsWaterGiven",
+    "MainM00RepairLessonOffered",
+    "MainM00RepairLessonComplete",
+    "MainM00StarterConditionKnown",
+    "MainM00StarterDurability",
+    "MainM00ReturnTics",
+    "MainM00ReturnOwnsFreeze",
+    "MainM00SewerVoiceHeard",
+    "MainM00SuppliesInitialized",
+    "MainM00StarterRequired",
+    "MainM00SupplyInitial",
+    "MainM00SupplyRemaining",
+    "MainM00ResidentMet",
+    "MainM00SocialAdvice",
+    "MainM00SocialResult",
+    "MainM00SocialRoll",
+    "MainM00SocialChance",
+    "PrisonerRescueStateVersion",
+    "PrisonerRescueState",
+    "PrisonerRewardClaimed",
+    "MainM00LeatherSuppliesPrepared",
+    "MainM00WaterContainerGiven",
+    "MainM00WaterDrank",
+    "MainM00WaterFilled",
+    "MainM00PreviousSealId",
+    "MainM00PreviousWeaponId",
+    "MainM00BullResetPending",
+    "QuestTrialMap"
+  ],
+  "voice_saved_node": 222,
+  "logs": {
+    "resume_old_save": {
+      "excerpt": "resume_old_save.txt",
+      "raw_log_sha256": "ef555e83ee257f36f7372da4ceebf1b203fe421eedba48d165660222dab36b5c"
+    },
+    "resume_wrong_page": {
+      "excerpt": "resume_wrong_page.txt",
+      "raw_log_sha256": "fc12e3da8d96d6a0b05ca538a5b864a4b2e81a303a4c2261327ca293194e6e8e"
+    },
+    "resume_migrated": {
+      "excerpt": "resume_migrated.txt",
+      "raw_log_sha256": "c894ff11251bb777f7547cdb9c53a06d9c2d68ff97a187c3291fcc283535f4ad"
+    },
+    "resume_page_save": {
+      "excerpt": "resume_page_save.txt",
+      "raw_log_sha256": "1e0aecd38907cdf7b7e5bcc6c83b65ae80072da8bfdf0d914b06545ef7246184"
+    },
+    "resume_page_reload": {
+      "excerpt": "resume_page_reload.txt",
+      "raw_log_sha256": "ccabcb02fca14cee697117ebf9da63372d8044f660c913dcd2a6d5240fb1c4a3"
+    },
+    "resume_ronnie_fixed": {
+      "excerpt": "resume_ronnie_fixed.txt",
+      "raw_log_sha256": "59c7b4847d1b242a299e46aad04ab73fc3909bf0b1392e76930837568ba8ece4"
+    },
+    "resume_prisoner_fixed": {
+      "excerpt": "resume_prisoner_fixed.txt",
+      "raw_log_sha256": "360a75c7ebef6736f320e3351927d712b9a6aaa2dbb81ed83d70b4c5d6a14f96"
+    },
+    "resume_ronnie_reload": {
+      "excerpt": "resume_ronnie_reload.txt",
+      "raw_log_sha256": "3433834ea2e4f12b96700e1dd365bb17cfb470cc1f1416e63a5a9afa8a393d27"
+    },
+    "resume_old_rollback": {
+      "excerpt": "resume_old_rollback.txt",
+      "raw_log_sha256": "9b5e0771cbe9c8923d953babb7e5aa2bb1f17527cc73e48657150dea44fdabe3"
+    },
+    "resume_door_fixed": {
+      "excerpt": "resume_door_fixed.txt",
+      "raw_log_sha256": "6ff675bfcece7ed6eee632d3811941d25191299190c0b3d5ba9215124dcb5cb6"
+    }
+  },
+  "review": "Independent same-model review requested non-voice recovery and clearing the old native node; both implemented and tested.",
+  "author_acceptance": "Pending CA-43622-NARRATIVE-01; no outstanding checks removed.",
+  "privacy": "Author saves, runtime fixtures, engine binaries and raw logs remain local under ignored build; excerpts contain test markers only.",
+  "delivered_pk3_sha256": "9e847dcd901e5a74b2b59215a52fcbb860fd0d50a8b875db5c3920bfb8360f08",
+  "delivered_package_check": "All 6119 entries byte-identical to final tested migration package.",
+  "static_validation": "validate_project.py PASS, no errors; document index fresh; CONTEXT 2498 words; git diff --check PASS.",
+  "source_sha256": {
+    "src/caelum/dialogue/CaelumPalomoDialogue.zs": "054d16353abe472dc096cdea30f1bde85995d5d12125ec7d515858962926e65e",
+    "src/caelum/ui/CaelumConversationResume.zs": "970b5e2d725f9e08d278336b94f25d9e35eb31af422e768d8af9ceec2017a614"
+  }
+}

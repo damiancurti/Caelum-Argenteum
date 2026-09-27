@@ -64,6 +64,31 @@ This is related to CA-KP-016 but has a distinct measured invalid-index exception
 Author rescue/rats retest is pending in CA-43622-NARRATIVE-01. See
 [evidence](../assets/validation_43622/wind_render_fix.json).
 
+## CA-KP-018 — USDF page insertion shifts saved conversations
+
+Status/evidence: AUTHOR-REPORTED / ENGINE-VERIFIED correction, #34 / 4.36.22.
+First recorded / last checked: 2026-09-27 / 2026-09-27.
+Environment: GZDoom 4.14.2, Windows 11; pre-#34 save on the new CAPALOMO layout.
+
+Native actor saves persist global conversationroot/conversation node numbers.
+An unchanged public dialogue ID does not protect an already open saved page.
+Old MAP02 Voice nodes 178/179 became Palomo food/water nodes in #34; death loading
+the old save reproducibly restored the wrong menu. Current-release save/load
+tests alone cannot validate this compatibility boundary.
+
+Version the transient Voice speaker's layout and rebind its canonical ID before
+resume; revision 0 restarts the brief conversation once, revision 1 preserves the
+saved page. Snapshot the pre-#34 narrative revision in WorldLoaded before normal
+migration. Other open old dialogues close without selecting any reply; normal
+interaction supplies their canonical ID. Never migrate by executing Use/replies
+automatically: that can replay rewards or actions. Retain original saves for
+rollback, and recheck this boundary whenever USDF pages move.
+
+Regression evidence includes old Voice wrong-page reproduction, death/reload,
+old mentor/prisoner close/reopen, new exact-page saves and original-save rollback.
+Author confirmation remains pending. See
+[evidence](../assets/validation_43622/dialogue_resume_fix.json).
+
 ## How to read this register
 
 This is a compact engineering memory, not a second bug tracker or a claim that every historical fix has been independently reproduced. Use the current issue for active scope and HISTORY for release chronology and author acceptance.

@@ -59,6 +59,34 @@ an older save loads. Same-model independent review found no blocker. Detailed
 evidence: assets/validation_43622/wind_render_fix.json. Private dumps and author
 saves remain in ignored build/. Author playthrough confirmation remains pending.
 
+### Same-patch legacy dialogue restoration, 2026-09-27
+
+The author reported Palomo's food/water choices after dying and reappearing in
+MAP02, specifically while continuing an older campaign on the corrected build.
+The exact baseline was reproduced: pre-#34 sewer pages 178/179 now resolve to
+Palomo's needs introduction/practice. Native saves serialize global USDF node
+indices; retaining the conversation ID alone does not preserve an open page
+after CAPALOMO changes. The current-release autosave control restored the
+correct arrival page, so the first generic death/reload test did not expose it.
+
+CaelumUnknownVoiceSpeaker now records SavedDialogueLayoutRevision=1. Legacy
+revision 0 speakers rebind their map's established conversation ID before
+resume; the short old Voice conversation restarts at its correct root once.
+New voice saves retain their exact page. The static resume handler snapshots
+the pre-#34 narrative revision in WorldLoaded, before normal quest migration.
+Other open pre-#34 dialogues close without selecting a reply; the existing Use
+path rebinds their canonical ID when the author interacts again. This also
+covers mentors/prisoners instead of restoring their shifted page numbers.
+No quest reset, reward replay, balance change or previous actor-state offset
+change. Original saves remain untouched; rollback uses those originals.
+
+Native 4.14.2 checks: wrong-page reproduction; corrected old-voice load and
+death/reload; new arrival-page save/load; old Ronnie/prisoner close and canonical
+reopen; new Ronnie exact-page resume; original save restored on pre-#34 build.
+See assets/validation_43622/dialogue_resume_fix.json. Independent same-model
+review identified the non-voice compatibility gap, addressed before delivery.
+Author confirmation remains pending in CA-43622-NARRATIVE-01.
+
 ## 4.36.21 — Scenery adrenaline and running absorption (#49)
 
 On 2026-09-27 the author confirmed all #33 tests passed, then reported that

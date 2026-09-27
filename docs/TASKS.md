@@ -15,6 +15,10 @@ Documentation version: **4.36.22** — 2026-09-27.
   native rendering hang; both projectile variants/older-save checks pass.
   Author retest of the second rescue and rats remains pending; see wind_render_fix.json
   in assets/validation_43622.
+- **Legacy dialogue followup:** reproduced Palomo needs after old MAP02 reload;
+  versioned Voice rebinding and safe closure/reopen of other old dialogues pass
+  native checks. New saves preserve their exact page; original saves permit
+  rollback. Author death/reload confirmation remains pending.
 - **Author acceptance:** CA-43622-NARRATIVE-01 remains outstanding.
 - **Dependency boundary:** #16 must deploy the complete MAP06 army/routes. The
   port quest stays hidden in the present pre-siege port; registered encounter

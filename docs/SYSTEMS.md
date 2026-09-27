@@ -4,6 +4,15 @@ Documentation version: **4.36.22** — 2026-09-27.
 
 ## 4.36.22 — Quest ownership and persistent narrative events (#34)
 
+Save compatibility for #34's USDF layout: saves store global page indices.
+An open legacy Unknown Voice (speaker layout revision 0) rebinds the established
+MAP01/MAP02 conversation ID, restarts that brief conversation once, and records
+revision 1. New saves preserve the exact page. Other conversations open in a
+pre-#34 save close once without executing a reply; interact again to reopen
+through the speaker's canonical ID. Quest progress, items and rewards persist.
+Loading never invokes Use or a reply as part of this presentation migration.
+Keep original saves for rollback to the pre-#34 dialogue layout.
+
 The awakening/Unknown Voice remains the prologue. In new games quest 1 stays
 undiscovered until Palomo's existing guidance choice activates it. Its stage,
 flags, objective IDs and rewards retain their existing identities; an already

@@ -24,6 +24,12 @@ Steps:
    command and rats remained. Rebuild the corrected PK3, reload the earlier save,
    repeat this route and allow the Federal to fight rats/use secondary wind.
    Expected: the discharge renders and play continues, with each Voice line once.
+   Legacy-save failure (2026-09-27): old MAP02 death/reload opened Palomo's
+   food/water menu. Keep the original save, rebuild, load it and die/reload again.
+   Expected: the old Voice resumes its correct short conversation once; no
+   Palomo lesson in MAP02 and no repeated quest/item rewards. Save on its arrival
+   page and reload: retain that page. Other open pre-#34 mentor/prisoner dialogues
+   close once; interact again and verify the appropriate conversation/progress.
 5. Let the sewer Zupay flee, then reload the pre-boss save and defeat it directly
    if possible. In either completed outcome, the Voice should acknowledge that
    the way is clear without revealing her identity or restoring your memory.

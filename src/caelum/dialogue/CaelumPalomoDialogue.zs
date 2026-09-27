@@ -206,11 +206,28 @@ class CaelumUnknownVoiceSpeaker : Actor
 {
     bool ConversationOpened;
     int CleanupGraceTics;
+    int SavedDialogueLayoutRevision;
 
     void MarkConversationOpened()
     {
         ConversationOpened = true;
         CleanupGraceTics = 2;
+        SavedDialogueLayoutRevision = 1;
+    }
+
+    void RestoreSavedDialogueLayout()
+    {
+        if (SavedDialogueLayoutRevision >= 1) return;
+        // USDF guarda índices de página, no IDs: #34 movió esas páginas.
+        // Una Voz antigua reanuda su breve charla desde el inicio correcto,
+        // sin volver a ejecutar la llegada ni sus recompensas persistentes.
+        int conversationId = level.MapName == "MAP01"
+            ? CaelumConstants.MAIN_M00_UNKNOWN_VOICE_CONVERSATION_ID
+            : level.MapName == "MAP02" ? CaelumMainM00Return.SEWER_CONVERSATION : 0;
+        if (conversationId == 0) return;
+        Level.ExecuteSpecial(CaelumConstants.GZDOOM_THING_SET_CONVERSATION_SPECIAL,
+            self, null, false, 0, conversationId);
+        SavedDialogueLayoutRevision = 1;
     }
 
     override void Tick()

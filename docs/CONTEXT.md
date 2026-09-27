@@ -69,7 +69,8 @@ rewards. Native dialogue/save/travel checks pass. Port siege deployment remains
 #16; #33's provisional Knight rule lasts until a real siege is registered.
 The reported MAP02 freeze was reproduced: NPC secondary wind used an unregistered
 CELH sprite. Appended A-L registration fixes rendering while preserving saved
-states. Author dialogue/rescue/rats acceptance remains CA-43622-NARRATIVE-01.
+states. Dialogue migration fixes Palomo on MAP02 reload.
+Author acceptance: CA-43622-NARRATIVE-01.
 Evidence: assets/validation_43622.
 
 The preceding **4.36.21** implements #49: tree/rock collision damage and

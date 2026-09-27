@@ -30,6 +30,13 @@ CELH A-L registration; isolated rendering and older-save checks pass. The author
 must repeat the Federal/prisoner/rats scene before campaign acceptance.
 Evidence: assets/validation_43622/wind_render_fix.json.
 
+Pre-#34 open conversations also receive a compatibility correction: the old
+sewer Voice restores its established ID instead of a shifted Palomo page; other
+old conversations close safely and reopen through normal interaction. New saves
+retain exact pages. Native load/death/reload and original-save rollback pass;
+author confirmation remains pending. Evidence: dialogue_resume_fix.json in
+assets/validation_43622.
+
 ## 4.36.21 — Scenery impact correction (#49)
 
 Trees and rocks no longer turn collision damage/pain into combat adrenaline.

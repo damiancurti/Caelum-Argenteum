@@ -24,6 +24,12 @@ discharge was reproduced; both projectile variants and an older save pass after
 the fix. See [freeze evidence](assets/validation_43622/wind_render_fix.json).
 The author's two-prisoner/rats playthrough still needs confirmation.
 
+Loading a pre-#34 save now migrates an open Unknown Voice conversation instead
+of restoring shifted USDF page numbers as Palomo's food/water lesson. Other
+open pre-#34 conversations close once without choosing an option; interact again
+to resume normally. Existing quest progress and rewards remain intact.
+See [dialogue migration evidence](assets/validation_43622/dialogue_resume_fix.json).
+
 Issue [#49](https://github.com/damiancurti/Caelum-Argenteum/issues/49) removes
 combat adrenaline from tree/rock collision damage and pain. Walking, running
 and crouching use the existing biological absorption against walls, rooted
