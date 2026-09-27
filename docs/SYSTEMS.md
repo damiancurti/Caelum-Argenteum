@@ -1,6 +1,37 @@
 # Caelum Argenteum — Current systems and rules
 
-Documentation version: **4.36.17** — 2026-09-26.
+Documentation version: **4.36.18** — 2026-09-27.
+
+## 4.36.18 — Walking wall-impact absorption (#43)
+
+The author explicitly limited the new walking benefit to walls. Grounded,
+live, non-immobilized players with directional input and no native BT_RUN flag
+now receive the existing careful-movement fraction, just like crouched wall
+contacts: clamp(max(0, JumpZ /8 -1), 0, 0.5). Always Run is already folded into
+BT_RUN by GZDoom. No input or airborne movement is not walking; existing
+crouched eligibility and active buckler/giant-gauntlet behavior are preserved.
+This fraction reduces impact delta-speed before energy severity. It does not
+extend walking absorption to characters, rams or cannon rounds. Landing and
+crushing absorption still use JumpZ, doubled by active acrobatic shield defense,
+and zero when physically immobilized. No persistent fields or save schema change.
+
+Requested calculation: 80 kg body, all attributes 20, and equipment weighing
+the full medium T1 size M set (head 4 + torso 10 + arms 2 + legs 4 =20 kg).
+Collision mass is 100 kg; maximum health is 2,480 because health uses body mass.
+Capacity is 86.653465 kg and load ratio 0.230804388. With normal health, air and
+survival states, JumpZ =8*sqrt(3.1)*(1-load ratio) =10.834469 MU/tic
+(11.850200 m/s at 32 MU/m and 35 tics/s). Ordinary walking-wall absorption is
+35.430863% of delta-speed at this load. These weights do not silently replace
+the earlier comparison's 20% armor defense/no-reinforcement assumptions.
+
+An isolated native same-height jump reached 64.179159 MU above its floor and
+registered 11.165531 MU/tic downward before landing. Subtracting JumpZ leaves
+0.331062 MU/tic, below the canonical 0.8 MU/tic severity threshold: zero damage,
+with 2,480 health retained. The prediction assumes unchanged load/state through
+flight and the same floor height; falling to a lower floor is a different test.
+The preceding proposal of 500 m/s cannons and Type 4 collision Toughness is
+calculation-only. Runtime cannon speed remains 400 m/s and collision Toughness
+still subtracts from severity.
 
 ## 4.36.17 — Controlled cannon fire (#21; planned label 4.36.13)
 

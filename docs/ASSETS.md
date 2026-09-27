@@ -1,6 +1,6 @@
 # Caelum Argenteum — Audio and art
 
-Documentation version: **4.36.17** — 2026-09-26.
+Documentation version: **4.36.18** — 2026-09-27.
 
 ## 4.36.17 — Approximate Argentine 1884 cannon reconstruction (#21)
 

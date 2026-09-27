@@ -1,6 +1,16 @@
 # TASKS.md — Active tasks
 
-Documentation version: **4.36.17** — 2026-09-26.
+Documentation version: **4.36.18** — 2026-09-27.
+
+## Issue #43 — Walking wall-impact absorption (4.36.18)
+
+- **Issue:** https://github.com/damiancurti/Caelum-Argenteum/issues/43
+- **Implemented:** existing crouched wall fraction also applies to grounded
+  directional walking, using native effective run state. Walls only, no new balance.
+- **Evidence:** 24 isolated native checks, including real wall traversal and a
+  same-height jump with 80 kg body /20 kg equipment; assets/validation_43618.
+- **Pending:** author check CA-43618-WALK-01. Cannon 500 m/s and Type 4 collision
+  mitigation remain calculations, outside this implementation.
 
 ## Issue #21 — Controlled cannon ballistics (4.36.17; planned label 4.36.13)
 

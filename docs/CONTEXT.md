@@ -1,11 +1,9 @@
 # CONTEXT.md — Ultra-condensed summary of Caelum Argenteum
 
-Documentation version: **4.36.17** — 2026-09-26.
+Documentation version: **4.36.18** — 2026-09-27.
 
-Summary so an AI or a contributor can understand the project without reading
-the five full canonical documents. Source: `docs/PROJECT.md`,
-`docs/SYSTEMS.md`, `docs/MAP01.txt`, `docs/ASSETS.md`, `docs/HISTORY.md`, and
-`README.md`.
+Summary of `PROJECT.md`, `SYSTEMS.md`, `MAP01.txt`, `ASSETS.md`, `HISTORY.md`
+and the repository README.
 
 ## The game's premise
 
@@ -64,7 +62,13 @@ the gauchos and rural culture, and the humans the urban porteño society.
 
 ## Current status
 
-Current release **4.36.17** implements #21 cannon loading/fire/recovery at
+Current release **4.36.18** adds grounded walking to crouched wall absorption
+(#43), preserving the fraction/cap. Running/idle/airborne input and bodies/shots
+do not gain this benefit. All 24 native checks passed, including the loaded
+self-jump (SYSTEMS); evidence: assets/validation_43618. CA-43618-WALK-01 is pending.
+The 500 m/s cannon/Type 4 collision proposal remains calculation-only.
+
+The preceding **4.36.17** implements #21 cannon loading/fire/recovery at
 400 m/s with approved inert 4.3 kg rounds and a documented approximate
 reconstruction. Two/one operators give 30/60-second cycles; none pauses work.
 Both factions keep projectile ownership; only attackers are objectives.

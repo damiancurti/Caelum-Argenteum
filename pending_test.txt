@@ -1,0 +1,20 @@
+CA-43618-WALK-01 — Walking wall absorption
+Origin: 4.36.18 /issue #43.
+Prerequisites: current normal build, GZDoom 4.14.2, disposable MAP03 or a
+copied save with a clear wall. No active buckler/giant-gauntlet defense;
+Agility above zero, normal health/air and low enough load that JumpZ exceeds 8.
+
+1. Enable the diagnostic panel with ca_debug_attributes true; use
+   ca_debug_next_page until the physics readout shows RawDV, TraumaDV and Bio.
+2. Walk into a wall with directional input and effective running off.
+   Expected: a new wall contact has Bio >0 and TraumaDV <RawDV. Damage may
+   remain zero because Toughness still applies after absorption.
+3. Step away to rearm the contact and repeat while running, then crouched.
+   Expected: running has Bio=0; crouched contact retains its prior absorption.
+   Check both Always Run settings using the speed key to select effective walking.
+4. Jump from a flat floor and land at the same height with unchanged load and
+   normal state. Expected: an ordinary self-jump causes no health loss.
+
+Native evidence separately covers the exact 80 kg /20 kg /all-20 profile and
+excludes walking benefits for actors/projectiles, idle and airborne states.
+Report failures or explicitly confirm this check passed.
