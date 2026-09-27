@@ -10,7 +10,7 @@ explicitly included stationary scenery. Moving rocks, combat contacts,
 landings and existing shield behavior retain their prior rules.
 This focused patch is based on the accepted #33 implementation in PR #48;
 its separate PR is stacked until #48 merges. Evidence is in
-assets/validation_43621; CA-43621-IMPACT-01 awaits author acceptance.
+assets/validation_43621; CA-43621-IMPACT-01 passed, author-confirmed 2026-09-27.
 
 ## 4.36.20 — Shared Arcana capture and the playable route (#33)
 

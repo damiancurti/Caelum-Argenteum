@@ -37,6 +37,6 @@
   "maps_art_balance_constants_unchanged": true,
   "save_compatibility": "No serialized field/state changes. Transient optional contact parameter. A 4.36.20 native save created before the code change loads under the current PK3; original author saves were not altered.",
   "review": "Independent static agent review found no pending defects; checked provenance, pre-impulse velocity, movement fraction and save compatibility.",
-  "author_acceptance": "CA-43621-IMPACT-01 pending. Earlier #33 checks confirmed passed on 2026-09-27 and recorded separately.",
+  "author_acceptance": "CA-43621-IMPACT-01 (4.36.21 / #49) PASSED; author confirmed all tests on 2026-09-27. Original native evidence remains unchanged.",
   "local_only": "Fixtures, raw logs, CANQA test map, saves, engine/IWAD and baseline package remain outside tracked delivery. Source-after first attempt paused in background and timed out; isolated config then explicitly allowed background progress. Only completed final runs count as passing."
 }

@@ -67,8 +67,8 @@ pain no longer grant adrenaline or refresh combat. Walking, running and
 crouching use the existing absorption fraction against walls, rooted trees
 and rocks at rest before contact. Moving rocks and combat contacts retain
 their prior absorption; landing, crushing, shield rules and saves are preserved.
-Native/static evidence is in assets/validation_43621; CA-43621-IMPACT-01 awaits
-author acceptance. The PR is stacked on #48.
+Evidence: assets/validation_43621. The author confirmed CA-43621-IMPACT-01
+passed on 2026-09-27. The PR is stacked on #48.
 
 4.36.20 (#33) unifies Arcana capture and routes MAP02 through MAP03 to MAP06.
 The Zupay flees at 50% health at triple speed; escape confirms defeat and unlocks

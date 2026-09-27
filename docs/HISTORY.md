@@ -22,7 +22,11 @@ pain, active/passive moving rocks, grounded/airborne/idle/immobilized cases,
 real walking/running wall traversal, loaded self-jump, shield/crush regressions
 and loading a pre-patch native save. Static validation/build and evidence are
 recorded in assets/validation_43621/RESULTS.json. These are isolated engine
-checks; author acceptance CA-43621-IMPACT-01 remains pending.
+checks. On 2026-09-27 the author confirmed all tests passed:
+CA-43621-IMPACT-01 (origin 4.36.21 / #49) is PASSED, including scenery
+adrenaline, running/stationary-scene absorption and save/reload checks. Its
+pending entry is removed under the author-confirmed lifecycle. No gameplay
+or version change accompanies this acceptance.
 
 ## 4.36.20 — Shared Arcana capture and sewer escape (#33)
 

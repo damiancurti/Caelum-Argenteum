@@ -11,7 +11,7 @@ Documentation version: **4.36.21** — 2026-09-27.
   saved fields, states and approved artwork/geometry.
 - **Validation:** isolated native before/after and save checks plus static
   validation; assets/validation_43621/RESULTS.json.
-- **Pending author acceptance:** CA-43621-IMPACT-01.
+- **Author acceptance:** CA-43621-IMPACT-01 passed on 2026-09-27.
 - **Delivery:** focused PR stacked on #48; retarget after #48 merges.
 
 ## Issue #33 — Arcana capture, wounded Zupay and forward route (4.36.20)

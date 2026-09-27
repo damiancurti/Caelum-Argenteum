@@ -12,8 +12,8 @@ combat adrenaline from tree/rock collision damage and pain. Walking, running
 and crouching use the existing biological absorption against walls, rooted
 trees and rocks at rest before contact. Incoming moving rocks retain their
 prior absorption rules. Native/static evidence is in
-[validation_43621](assets/validation_43621/RESULTS.json); the new author check
-is in [pending_test.txt](pending_test.txt). #33 tests are author-approved.
+[validation_43621](assets/validation_43621/RESULTS.json). The author confirmed
+all #49 checks passed on 2026-09-27; #33 tests are also author-approved.
 
 Issue [#33](https://github.com/damiancurti/Caelum-Argenteum/issues/33) unifies
 the Box capture of El loco, Ace of Cups and Knight of Wands. The sewer Zupay
@@ -35,7 +35,7 @@ from running; idle/airborne input does not qualify. The benefit applies only
 to walls. Native checks and an 80 kg /20 kg equipment self-jump test passed;
 the author confirmed CA-43618-WALK-01 and final siege check CA-43619-BALANCE-01
 passed on 2026-09-27. Acceptance is recorded in [HISTORY](docs/HISTORY.md);
-#33 acceptance is also recorded there; only the new #49 check remains pending.
+#33/#49 acceptance is also recorded there; [pending_test.txt](pending_test.txt) is empty.
 
 Issue [#21](https://github.com/damiancurti/Caelum-Argenteum/issues/21) adds
 controlled cannon loading, firing and recovery, with inert 4.3 kg projectiles
