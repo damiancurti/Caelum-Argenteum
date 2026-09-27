@@ -83,10 +83,14 @@
     "Loaded legacy save with matching PK3 package identity after build completed; source-folder launch cannot satisfy its original package dependency."
   ],
   "author_acceptance": {
-    "status": "pending",
+    "status": "passed",
     "id": "CA-43622-NARRATIVE-01",
-    "queue": "pending_test.txt",
-    "full_port_campaign_acceptance_dependency": "#16"
+    "origin_version": "4.36.22",
+    "issue": 34,
+    "confirmation_date": "2026-09-27",
+    "confirmation": "Todas las pruebas dieron correcto, cierra el issue y haz el merge.",
+    "scope": "All pending #34 tests, including both MAP02 followups; full port siege deployment remains #16.",
+    "record": "docs/HISTORY.md"
   },
   "local_only": "Engine/IWAD binaries, save files and disposable runtime test fixtures are excluded from delivery.",
   "runtime_sources_sha256": "0cf4a8791c031a36aef2a4549ea0b0a0ec5d5bf3c5fb764b74edba1ab6052aed"

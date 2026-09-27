@@ -70,7 +70,7 @@ rewards. Native dialogue/save/travel checks pass. Port siege deployment remains
 The reported MAP02 freeze was reproduced: NPC secondary wind used an unregistered
 CELH sprite. Appended A-L registration fixes rendering while preserving saved
 states. Dialogue migration fixes Palomo on MAP02 reload.
-Author acceptance: CA-43622-NARRATIVE-01.
+CA-43622-NARRATIVE-01 passed 2026-09-27.
 Evidence: assets/validation_43622.
 
 The preceding **4.36.21** implements #49: tree/rock collision damage and

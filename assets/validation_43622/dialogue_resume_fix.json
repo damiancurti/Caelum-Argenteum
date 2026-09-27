@@ -148,7 +148,16 @@
     }
   },
   "review": "Independent same-model review requested non-voice recovery and clearing the old native node; both implemented and tested.",
-  "author_acceptance": "Pending CA-43622-NARRATIVE-01; no outstanding checks removed.",
+  "author_acceptance": {
+    "status": "passed",
+    "id": "CA-43622-NARRATIVE-01",
+    "origin_version": "4.36.22",
+    "issue": 34,
+    "confirmation_date": "2026-09-27",
+    "confirmation": "Todas las pruebas dieron correcto, cierra el issue y haz el merge.",
+    "scope": "All pending #34 tests, including both MAP02 followups; full port siege deployment remains #16.",
+    "record": "docs/HISTORY.md"
+  },
   "privacy": "Author saves, runtime fixtures, engine binaries and raw logs remain local under ignored build; excerpts contain test markers only.",
   "delivered_pk3_sha256": "9e847dcd901e5a74b2b59215a52fcbb860fd0d50a8b875db5c3920bfb8360f08",
   "delivered_package_check": "All 6119 entries byte-identical to final tested migration package.",

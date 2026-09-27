@@ -49,7 +49,16 @@
     }
   },
   "review": "Independent same-model read-only review found no blocker; requested both variants/all frames and pre-change saved states, now exercised.",
-  "author_acceptance": "Pending CA-43622-NARRATIVE-01, including Federal/rats return route. No passed author tests removed.",
+  "author_acceptance": {
+    "status": "passed",
+    "id": "CA-43622-NARRATIVE-01",
+    "origin_version": "4.36.22",
+    "issue": 34,
+    "confirmation_date": "2026-09-27",
+    "confirmation": "Todas las pruebas dieron correcto, cierra el issue y haz el merge.",
+    "scope": "All pending #34 tests, including both MAP02 followups; full port siege deployment remains #16.",
+    "record": "docs/HISTORY.md"
+  },
   "private_evidence": "Dumps, author saves, runtime fixtures and installed engine/PDB remain local under ignored build; not distributed.",
   "delivered_pk3_sha256": "7b7be9fec22d936a54f2bf9cbfa612632224c68a789dcd1ad09f97afc3068f6c",
   "delivered_package_check": "All 6119 named entries byte-identical to the tested fixed package; ZIP container metadata may differ.",

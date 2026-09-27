@@ -21,20 +21,21 @@ in force; a registered siege gates that same card on victory, with no extra rewa
 
 Static validation/build, isolated native behavior, real old-save migration,
 queue save/load/travel and rendered USDF checks pass. See
-assets/validation_43622/RESULTS.json. These are agent checks, not author acceptance.
-Next: author dialogue/campaign review, then #16/#17 integration and export gates.
+assets/validation_43622/RESULTS.json. Separately, the author confirmed all
+CA-43622-NARRATIVE-01 tests passed on 2026-09-27 and authorized merge/closure.
+Next: #16/#17 integration and export gates.
 
 The author subsequently reported a MAP02 freeze during the second rescue.
 Its invalid secondary-wind sprite was reproduced and corrected through native
 CELH A-L registration; isolated rendering and older-save checks pass. The author
-must repeat the Federal/prisoner/rats scene before campaign acceptance.
+confirmed the Federal/prisoner/rats retest passed on 2026-09-27.
 Evidence: assets/validation_43622/wind_render_fix.json.
 
 Pre-#34 open conversations also receive a compatibility correction: the old
 sewer Voice restores its established ID instead of a shifted Palomo page; other
 old conversations close safely and reopen through normal interaction. New saves
 retain exact pages. Native load/death/reload and original-save rollback pass;
-author confirmation remains pending. Evidence: dialogue_resume_fix.json in
+the author confirmed the retest passed 2026-09-27. Evidence: dialogue_resume_fix.json in
 assets/validation_43622.
 
 ## 4.36.21 — Scenery impact correction (#49)

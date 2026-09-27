@@ -15,14 +15,14 @@ The Unknown Voice comments once on each release, the sewer Zupay's defeat or
 escape, and each successful port reward. Native dialogue queues survive
 save/load and hub travel. A port journal quest observes the existing siege
 controller; full MAP06 deployment remains #16. Evidence is in
-[validation_43622](assets/validation_43622/RESULTS.json). Author review and
-campaign checks remain in [pending_test.txt](pending_test.txt).
+[validation_43622](assets/validation_43622/RESULTS.json). The author confirmed all
+#34 tests passed on 2026-09-27 (CA-43622-NARRATIVE-01).
 
 The MAP02 freeze reported during #34 tests is corrected: the NPC secondary-wind
 animation now registers its existing twelve frames before rendering. The failing
 discharge was reproduced; both projectile variants and an older save pass after
 the fix. See [freeze evidence](assets/validation_43622/wind_render_fix.json).
-The author's two-prisoner/rats playthrough still needs confirmation.
+The author confirmed the two-prisoner/rats retest passed on 2026-09-27.
 
 Loading a pre-#34 save now migrates an open Unknown Voice conversation instead
 of restoring shifted USDF page numbers as Palomo's food/water lesson. Other

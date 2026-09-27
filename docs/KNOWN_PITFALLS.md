@@ -61,7 +61,7 @@ and old saved state offsets stay intact. A baseline secondary-wind discharge
 reproduces the hang; corrected simple/explosive rendering and all twelve frames
 pass. Recheck both consumers and pre-change saves when altering registrations.
 This is related to CA-KP-016 but has a distinct measured invalid-index exception.
-Author rescue/rats retest is pending in CA-43622-NARRATIVE-01. See
+Author rescue/rats retest passed 2026-09-27 (CA-43622-NARRATIVE-01). See
 [evidence](../assets/validation_43622/wind_render_fix.json).
 
 ## CA-KP-018 — USDF page insertion shifts saved conversations
@@ -86,7 +86,7 @@ rollback, and recheck this boundary whenever USDF pages move.
 
 Regression evidence includes old Voice wrong-page reproduction, death/reload,
 old mentor/prisoner close/reopen, new exact-page saves and original-save rollback.
-Author confirmation remains pending. See
+Author confirmation: CA-43622-NARRATIVE-01 passed 2026-09-27. See
 [evidence](../assets/validation_43622/dialogue_resume_fix.json).
 
 ## How to read this register

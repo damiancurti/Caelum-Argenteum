@@ -31,9 +31,9 @@ Documentation version: **4.36.22** — 2026-09-27.
   DeepSeek cross-model review was not available in this session.
 - Evidence: assets/validation_43622/RESULTS.json and STATIC.json. Disposable test
   fixtures, engine/IWAD files and saves remain local, outside delivery.
-- Author acceptance: pending CA-43622-NARRATIVE-01. Writing authorization and
-  automated/native checks do not assert final dialogue approval. #16 owns the
-  full port playthrough before #17 export.
+- Author acceptance: CA-43622-NARRATIVE-01 passed on 2026-09-27, following
+  both MAP02 corrections below. The author confirmed all tests and authorized
+  merge/closure. #16 still owns the full port deployment/playthrough before #17.
 
 ### Same-patch MAP02 freeze correction, 2026-09-27
 
@@ -57,7 +57,8 @@ variants. No asset, balance, schema or old state offset changes. Post-fix native
 rendering passes for both variants, including all twelve explosive frames;
 an older save loads. Same-model independent review found no blocker. Detailed
 evidence: assets/validation_43622/wind_render_fix.json. Private dumps and author
-saves remain in ignored build/. Author playthrough confirmation remains pending.
+saves remain in ignored build/. The author subsequently confirmed the retest
+passed on 2026-09-27; see the acceptance record below.
 
 ### Same-patch legacy dialogue restoration, 2026-09-27
 
@@ -85,7 +86,18 @@ death/reload; new arrival-page save/load; old Ronnie/prisoner close and canonica
 reopen; new Ronnie exact-page resume; original save restored on pre-#34 build.
 See assets/validation_43622/dialogue_resume_fix.json. Independent same-model
 review identified the non-voice compatibility gap, addressed before delivery.
-Author confirmation remains pending in CA-43622-NARRATIVE-01.
+The author subsequently confirmed CA-43622-NARRATIVE-01 passed; see below.
+
+### Author acceptance, 2026-09-27
+
+CA-43622-NARRATIVE-01 (origin: 4.36.22, issue #34) PASSED. After the freeze and
+legacy-dialogue corrections, the author explicitly confirmed "Todas las pruebas
+dieron correcto" and requested issue closure and merge. This confirms the queued
+narrative/gameplay tests, including the Federal/rats scene and old-campaign
+death/reload. The completed entry was removed from pending_test.txt; the tracked
+file remains empty. Acceptance of the same patch does not increment 4.36.22.
+Full MAP06 army/routes and its campaign siege remain #16's separate scope; no
+unimplemented siege deployment is implied by this confirmation.
 
 ## 4.36.21 — Scenery adrenaline and running absorption (#49)
 
