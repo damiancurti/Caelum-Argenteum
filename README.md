@@ -4,8 +4,18 @@ An independent dark fantasy FPS-RPG inspired by nineteenth-century Argentina.
 Author and game designer: **Damian Curti**. Development target: **GZDoom 4.14.2**
 on Windows 11. The final game is intended to be independent of Doom assets.
 
-**Current release: 4.36.15.** Obtain and update the complete repository, validate
+**Current release: 4.36.16.** Obtain and update the complete repository, validate
 it, then rebuild with `run_dev.bat` as described below.
+
+Issue [#20](https://github.com/damiancurti/Caelum-Argenteum/issues/20) adds
+mobile demonic rams with native single-impact strikes, recovery, full 6/32
+staffing, persistent local neutralization and a route-based withdrawal hook.
+The author approved demonic speeds while retaining the accepted gate/impact
+rules. In disposable MAP03, `give CaelumDebugRamTrial` creates five small and
+one large ram with their crews; `give CaelumDebugRamStatus` prints their state.
+Native evidence is in [validation_43616](assets/validation_43616/manifest.json).
+Author check CA-43612-RAM-01 passed on 2026-09-26; see [history](docs/HISTORY.md). Cannon mechanics
+and final port integration remain #21 and #16/#17.
 
 Issue [#19](https://github.com/damiancurti/Caelum-Argenteum/issues/19) adds
 breakable actor gates with the author's approved hardness/Constitution and
@@ -15,7 +25,7 @@ session, `give CaelumDebugGateTrial` activates the three intact gallery gates.
 GZDoom 4.14.2 native checks pass. The author confirmed all gate tests passed on
 2026-09-26, including corrected body-impact damage (`CA-43611-GATES-01`).
 The completed test is recorded in HISTORY and removed from the pending queue.
-The full port encounter and ram/cannon operation remain in their linked issues.
+The full port encounter and cannon operation remain in their linked issues.
 Existing progression doors, maps and save schemas are unchanged.
 
 Earlier deliveries: issue

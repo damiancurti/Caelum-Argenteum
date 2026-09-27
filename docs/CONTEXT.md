@@ -1,6 +1,6 @@
 # CONTEXT.md — Ultra-condensed summary of Caelum Argenteum
 
-Documentation version: **4.36.15** — 2026-09-26.
+Documentation version: **4.36.16** — 2026-09-26.
 
 Summary so an AI or a contributor can understand the project without reading
 the five full canonical documents. Source: `docs/PROJECT.md`,
@@ -64,7 +64,18 @@ the gauchos and rural culture, and the humans the urban porteño society.
 
 ## Current status
 
-Current release **4.36.15** implements #19 breakable actor gates, retaining
+Current release **4.36.16** implements #20 operational rams, retaining the
+planned [4.36.12] label. Full 6/32 staffing and author-authorized demonic
+velocities preserve the agreed small-versus-reinforced/large-versus-armored
+behavior through unchanged physics. Native approach, single physical strikes,
+recovery, local death-backed neutralization and victory-triggered withdrawal
+are implemented as opt-in hooks. `give CaelumDebugRamTrial` creates six MAP03
+lanes for disposable checks; `give CaelumDebugRamStatus` reports state.
+Evidence: assets/validation_43616. The author confirmed CA-43612-RAM-01 passed
+on 2026-09-26 and requested merge/closure; #21 cannon
+mechanics and #16/#17 complete port integration remain separate.
+
+The preceding **4.36.15** implements #19 breakable actor gates, retaining
 the issue's planned [4.36.11] label. Gate Constitution equals unrounded Toughness
 derived from approved 30%/50%/70% weapon reductions, with approved moving masses
 550/650/1,100 kg. Finite grouped blockers open on Use or destruction; key/faction
@@ -174,9 +185,9 @@ rations, and MAP01 tables at full capacity.
 
 Pending:
 
-- #18 siege assets and #19 gates are author-accepted. #20 physical ram strikes
-  and #21 cannon ballistics remain to implement.
-- Closing 4.36: rams/catapults and remaining integration/save/reset validation
+- #18 siege assets and #19 gates are author-accepted. #20 ram mechanics have native evidence with author acceptance pending;
+  #21 cannon ballistics remain to implement.
+- Closing 4.36: ram author acceptance, cannons and remaining integration/save/reset validation
   before extracting Impact Physics. Per the author's 2026-09-23 #8 decision,
   existing ceiling/elevator cover moving sectors; avalanches await additional
   maps and damaging surfaces await temperature effects (no acid/lava requested).

@@ -1,6 +1,53 @@
 # Caelum Argenteum — Audio and art
 
-Documentation version: **4.36.15** — 2026-09-26.
+Documentation version: **4.36.16** — 2026-09-26.
+
+## 4.36.16 — Ram components and reference-based estimates (#20)
+
+The operational ram splits the accepted #18 construction into independent
+frame, moving member and suspension meshes. `generate_ram_runtime.py` imports
+the original generator without regenerating its gallery; `ram_state` retains
+its previous complete-output default. New CRFR/CRHD/CRSP bindings move with
+their native actors. Original preview meshes, sprites, materials and provenance
+remain available, including old saves. The larger ram scales render and native
+collision together; no cannon art is changed.
+
+References consulted 2026-09-26:
+
+- [Battering ram](https://en.wikipedia.org/wiki/Battering_ram): the historical
+  wheeled wooden superstructure, suspended timber, metal head and bands;
+  Vitruvius is cited there for the wheeled suspended construction. This is a
+  secondary construction reference, not a measurement of a particular machine.
+- [English oak, The Wood Database](https://www.wood-database.com/english-oak/):
+  average dried weight 42 lb/ft³, reported as 675 kg/m³. The supplied SI value
+  is used directly; moisture and species variation remain uncertainty.
+- [Iron](https://en.wikipedia.org/wiki/Iron): density near room temperature
+  7.874 g/cm³ = 7,874 kg/m³, approximating the historical iron fittings.
+
+The small reconstruction retains #18's 112 MU (3.5 m) log, radius 11 MU
+(0.34375 m), and sixteen-sided geometry. Its head is represented as a solid
+iron frustum, a solid striking plate and three hollow strengthening bands;
+the six handles are wood. This particular solid-head interpretation is a
+reconstruction estimate, not a verified surviving ram. Polygon/frustum/box
+volumes times the listed densities yield 888.265373 kg wood plus
+1,986.725328 kg iron = 2,874.990701 kg moving mass. It is deliberately kept
+distinct from the frame, wheels, suspension supports and operators.
+
+The large machine scales lengths by (32/6)^(1/3), giving equal moving mass per
+assigned operator; this is an explicit geometric estimate for the fictional
+32-demon machine, not a historical crew-to-size law. Small frame envelope is
+150 x 84 x 91.5 MU (4.6875 x 2.625 x 2.859375 m). Transport mass is a coarse
+beam/wheel/axle estimate with overlapping members and filled wheel voids; it
+is not an exact mesh integral and never affects strike damage. Suspension
+inertia, timber moisture and joinery are not simulated. The demonic strike
+speed is an author-approved game decision, separated from the real material
+densities and historical construction reference. No historical cadence or
+37.78 m/s mechanical performance is claimed.
+
+`assets/generators/ram_physics.json` preserves assumptions/source URLs;
+`assets/validation_43616/ram_inputs.json` records generated inputs, units and
+estimates. Runtime constants are generated into CaelumRamData, shared by
+render/collision/operation. SYSTEMS defines control, impact and proximity rules.
 
 ## 4.36.15 — Gate mechanics reuse accepted art (#19)
 

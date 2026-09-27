@@ -1,6 +1,22 @@
 # TASKS.md — Active tasks
 
-Documentation version: **4.36.15** — 2026-09-26.
+Documentation version: **4.36.16** — 2026-09-26.
+
+## Issue #20 — Operational demonic rams (4.36.16; planned label 4.36.12)
+
+- **Issue:** https://github.com/damiancurti/Caelum-Argenteum/issues/20
+- **Implemented:** native approach/alignment, separate moving assembly,
+  single-contact strike/recovery, full 6/32 staffing, persistent local death
+  records, one-time neutralization, twelve-objective-plus-boss victory hook
+  and authored-route withdrawal without kill rewards.
+- **Author decisions:** 2026-09-26 full crew required; small rams affect wood
+  and reinforced gates, large also armored; demonic contact velocity permitted.
+- **Evidence:** assets/validation_43616. Static validation/build passed; 53
+  native ram checks, 50 gate/body regression checks and save/hub/legacy
+  persistence checks passed. The author confirmed CA-43612-RAM-01 passed on
+  2026-09-26 and requested merge/closure; its result is recorded in HISTORY.
+- **Next:** #21 cannon operation; #16 authors port routes/operator choreography,
+  placements and victory rewards; #17 verifies complete encounter integration.
 
 ## Issue #19 — Breakable actor gates (4.36.15; planned label 4.36.11)
 
@@ -276,10 +292,10 @@ documentation update does not implement these features or reset accepted tests.
 | 4.36.8 | [#14](https://github.com/damiancurti/Caelum-Argenteum/issues/14) | Implemented and author-accepted on 2026-09-25; CA-4368-RESCUE-01 passed. Follow/fight with source-character stats; extract alive before MAP02 boss; port thanks, +10 own-faction reputation and a fixed 25 gold coins independent of character size once per rescue. |
 | 4.36.9 | [#15](https://github.com/damiancurti/Caelum-Argenteum/issues/15) | Tarot fronts and correct collection bindings. Implemented from the verified local source archive; author-accepted on 2026-09-25 (CA-4369-TAROT-ART-01 passed). |
 | 4.36.14 | [#31](https://github.com/damiancurti/Caelum-Argenteum/issues/31) | Author-selected pain sounds, supplied dialogue-opening cue, local sewer/port/coast music and the reserved chapter-end story intermission. Implemented and author-accepted on 2026-09-25 (CA-43614-AUDIO-01 passed). |
-| 4.36.10 | [#18](https://github.com/damiancurti/Caelum-Argenteum/issues/18) | Siege assets: catapult, ram and breakable gate. After #15. |
+| 4.36.10 | [#18](https://github.com/damiancurti/Caelum-Argenteum/issues/18) | Siege assets: cannon (replacing catapult), ram and breakable gate. After #15. |
 | 4.36.11 | [#19](https://github.com/damiancurti/Caelum-Argenteum/issues/19) | Damageable actor gates. Structural parameter table needs approval. After #18. |
 | 4.36.12 | [#20](https://github.com/damiancurti/Caelum-Argenteum/issues/20) | Physical ram strikes; approved parameter table and native evidence required. After #19. |
-| 4.36.13 | [#21](https://github.com/damiancurti/Caelum-Argenteum/issues/21) | Native catapult launch/impact; approved parameter table and native evidence required. After #20. |
+| 4.36.13 | [#21](https://github.com/damiancurti/Caelum-Argenteum/issues/21) | Native cannon launch/impact at approved 400 m/s; approved parameter table and native evidence required. After #20. |
 | V4 content | [#16](https://github.com/damiancurti/Caelum-Argenteum/issues/16) | Third map is MAP06 port: stop demon siege; its Zupay holds second Minor. Card identity and detailed encounter conditions/balance pending. Requires siege foundations; numeric patch assigned when scheduled. |
 | V4 export | [#17](https://github.com/damiancurti/Caelum-Argenteum/issues/17) | Three-map acceptance, reproducible package and batch usage report. Requires #16 and retained 4.36/4.37 gates. |
 
@@ -301,7 +317,7 @@ missing design/assets belong here and in issues, not in that queue.
 
 The author's 2026-09-23 clarification in #8 distinguishes covered, deferred
 and still-pending mechanisms. Covered/deferred entries below are not 4.36
-release blockers; rams/catapults and remaining integration checks still are.
+release blockers; ram author acceptance, cannons and remaining integration checks still are.
 According to `docs/PROJECT.md`, 4.36 already includes the trapdoor, the pit,
 the rocks, the approved traps, the ceiling crusher, and the resting-weight
 formula; what remains is to complete the planned bases and validate their
@@ -326,14 +342,14 @@ integration before extracting Impact Physics.
 
 ### CA-436-03 — Rams
 
-- **Status:** Pending implementation in [#20](https://github.com/damiancurti/Caelum-Argenteum/issues/20), planned 4.36.12.
+- **Status:** Implemented in #20 / 4.36.16 (planned label 4.36.12), with native evidence in assets/validation_43616. Author acceptance CA-43612-RAM-01 passed on 2026-09-26.
 - **Reference documents:** `docs/PROJECT.md` (V4.36 roadmap).
 - **Acceptance criteria:** Native visible strike/contact/recovery with one
   physical impact per strike, gate interaction and save/reset persistence.
   Mass/speed/cadence parameters require canonical reuse or author approval;
   render-only assets do not close this gate.
 
-### CA-436-04 — Catapults
+### CA-436-04 — Cannons (historical catapult task ID)
 
 - **Status:** Pending implementation in [#21](https://github.com/damiancurti/Caelum-Argenteum/issues/21), planned 4.36.13.
 - **Reference documents:** `docs/PROJECT.md` (V4.36 roadmap).

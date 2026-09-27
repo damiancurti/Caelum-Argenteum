@@ -1,0 +1,214 @@
+{
+  "before": {
+    "rams": [
+      {
+        "position": [
+          -1500.0,
+          2438.0,
+          0.0
+        ],
+        "phase": 4,
+        "stroke": -14.298323048855998,
+        "serial": 2,
+        "hits": 2,
+        "neutralized": 1,
+        "neutralization_count": 1,
+        "crew": 6,
+        "gate_health": 0
+      },
+      {
+        "position": [
+          -930.0,
+          2438.0,
+          0.0
+        ],
+        "phase": 4,
+        "stroke": -14.298323048855998,
+        "serial": 2,
+        "hits": 2,
+        "neutralized": 1,
+        "neutralization_count": 1,
+        "crew": 6,
+        "gate_health": 65957
+      },
+      {
+        "position": [
+          -360.0,
+          2438.0,
+          0.0
+        ],
+        "phase": 4,
+        "stroke": -14.298323048855998,
+        "serial": 2,
+        "hits": 2,
+        "neutralized": 1,
+        "neutralization_count": 1,
+        "crew": 6,
+        "gate_health": 659083
+      },
+      {
+        "position": [
+          210.0,
+          2438.0,
+          0.0
+        ],
+        "phase": 4,
+        "stroke": -14.298323048855998,
+        "serial": 2,
+        "hits": 2,
+        "neutralized": 1,
+        "neutralization_count": 1,
+        "crew": 6,
+        "gate_health": 0
+      },
+      {
+        "position": [
+          780.0,
+          2438.0,
+          0.0
+        ],
+        "phase": 4,
+        "stroke": -14.298323048855998,
+        "serial": 2,
+        "hits": 2,
+        "neutralized": 1,
+        "neutralization_count": 1,
+        "crew": 6,
+        "gate_health": 65957
+      },
+      {
+        "position": [
+          1350.0,
+          2391.676022372674,
+          0.0
+        ],
+        "phase": 4,
+        "stroke": 19.76238814635056,
+        "serial": 4,
+        "hits": 4,
+        "neutralized": 1,
+        "neutralization_count": 1,
+        "crew": 32,
+        "gate_health": 13999
+      }
+    ],
+    "counts": {
+      "CaelumRamTrialEncounter": 1,
+      "CaelumBreakableGate": 6,
+      "CaelumBatteringRam": 6,
+      "CaelumRamFrameVisual": 6,
+      "CaelumRamHead": 6,
+      "CaelumRamBlock": 288,
+      "CaelumRamSuspension": 24,
+      "CaelumRamTrialOperator": 62,
+      "CaelumSiegeCombatant": 62,
+      "CaelumRamPoint": 246
+    }
+  },
+  "after": {
+    "rams": [
+      {
+        "position": [
+          -1500.0,
+          2438.0,
+          0.0
+        ],
+        "phase": 4,
+        "stroke": -14.298323048855998,
+        "serial": 2,
+        "hits": 2,
+        "neutralized": 1,
+        "neutralization_count": 1,
+        "crew": 6,
+        "gate_health": 0
+      },
+      {
+        "position": [
+          -930.0,
+          2438.0,
+          0.0
+        ],
+        "phase": 4,
+        "stroke": -14.298323048855998,
+        "serial": 2,
+        "hits": 2,
+        "neutralized": 1,
+        "neutralization_count": 1,
+        "crew": 6,
+        "gate_health": 65957
+      },
+      {
+        "position": [
+          -360.0,
+          2438.0,
+          0.0
+        ],
+        "phase": 4,
+        "stroke": -14.298323048855998,
+        "serial": 2,
+        "hits": 2,
+        "neutralized": 1,
+        "neutralization_count": 1,
+        "crew": 6,
+        "gate_health": 659083
+      },
+      {
+        "position": [
+          210.0,
+          2438.0,
+          0.0
+        ],
+        "phase": 4,
+        "stroke": -14.298323048855998,
+        "serial": 2,
+        "hits": 2,
+        "neutralized": 1,
+        "neutralization_count": 1,
+        "crew": 6,
+        "gate_health": 0
+      },
+      {
+        "position": [
+          780.0,
+          2438.0,
+          0.0
+        ],
+        "phase": 4,
+        "stroke": -14.298323048855998,
+        "serial": 2,
+        "hits": 2,
+        "neutralized": 1,
+        "neutralization_count": 1,
+        "crew": 6,
+        "gate_health": 65957
+      },
+      {
+        "position": [
+          1350.0,
+          2391.676022372674,
+          0.0
+        ],
+        "phase": 4,
+        "stroke": 19.76238814635056,
+        "serial": 4,
+        "hits": 4,
+        "neutralized": 1,
+        "neutralization_count": 1,
+        "crew": 32,
+        "gate_health": 13999
+      }
+    ],
+    "counts": {
+      "CaelumRamTrialEncounter": 1,
+      "CaelumBreakableGate": 6,
+      "CaelumBatteringRam": 6,
+      "CaelumRamFrameVisual": 6,
+      "CaelumRamHead": 6,
+      "CaelumRamBlock": 288,
+      "CaelumRamSuspension": 24,
+      "CaelumRamTrialOperator": 62,
+      "CaelumSiegeCombatant": 62,
+      "CaelumRamPoint": 246
+    }
+  }
+}

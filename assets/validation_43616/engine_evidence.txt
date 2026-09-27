@@ -1,0 +1,382 @@
+Issue #20 / 4.36.16 — native GZDoom 4.14.2 evidence
+Windows, Vulkan, local development Doom II IWAD. No IWAD, executable, probe or save fixture is distributed.
+Functional suite: 53 checks; existing gate/body regression: 37 + 13 checks.
+The player-impact case intentionally permits a lethal physical hit; persistence uses separate live-player sessions.
+Native evidence is not author acceptance. CA-43612-RAM-01 remains pending.
+
+[final_suite4]
+QA20 PASS assigned existing operator
+QA20 PASS assigned existing operator
+QA20 PASS assigned existing operator
+QA20 PASS assigned existing operator
+QA20 PASS assigned existing operator
+QA20 PASS assigned existing operator
+QA20 PASS seal twelve hostile machines with boss
+QA20 PASS explicit activation hook
+QA20 PASS six living nearby operators
+QA20 INPUT mass=2874.990701 speed=34.541924 transport=5125 radius=300.000
+QA20M PASS million-kg frame does not increase native assembly damage
+QA20M PASS small ram cannot damage armored gate
+QA20M PASS large ram damages armored gate through shared physics
+QA20M PASS approved exact crew sizes
+QA20M PASS missing operator stops operation without neutralization
+QA20M PASS same operator cannot crew two machines
+QA20M PASS full staffing resumes and small ram damages reinforced gate
+QA20M VALUES wood=39800 reinforced=52334 small_armored=0 large_armored=161271 mass=15333.283739 speed=34.541924
+QA20M PASS visible plate contacts gate within half-map-unit sweep tolerance
+QA20M PASS spent native contact cannot be applied twice
+QA20M PASS chassis respects native gate obstruction
+QA20M PASS failed chassis sweep rolls back all components
+QA20M PASS stroke contacts real NPC obstruction once
+QA20M PASS NPC receives existing physical-impact damage
+QA20M PASS NPC receives canonical transmitted impulse
+QA20M PASS native player obstruction consumes one contact
+QA20M PASS player retains biological impact-damage path
+QA20 STATE tic=100 x=0.000 y=2241.143 phase=1 stroke=-16.000 hit=0 damage=0 health=65017 blocked=0 crew=1
+QA20M PASS native gradual alignment reaches requested angle with matching components
+QA20M DONE checks=17 failures=0
+QA20 STATE tic=200 x=0.000 y=2286.857 phase=1 stroke=-16.000 hit=0 damage=0 health=65017 blocked=0 crew=1
+QA20 STATE tic=300 x=0.000 y=2332.571 phase=1 stroke=-16.000 hit=0 damage=0 health=65017 blocked=0 crew=1
+QA20 PASS native approach reaches authored endpoint
+QA20 PASS one contact in first strike/recovery
+QA20 PASS real moving assembly damages wooden gate
+QA20 PASS explicit recovery phase
+QA20 STATE tic=400 x=0.000 y=2338.000 phase=4 stroke=23.139 hit=2 damage=25217 health=0 blocked=0 crew=1
+QA20 PASS recovery permits reuse
+QA20 DONE checks=14 failures=0
+QA20 STATE tic=500 x=0.000 y=2338.000 phase=4 stroke=0.450 hit=2 damage=25217 health=0 blocked=0 crew=1
+QA20P PASS re-register same attacker is idempotent
+QA20P PASS cannot arm before explicit roster seal
+QA20P PASS empty initial placement not neutralized
+QA20P PASS overlapping areas track same real guards
+QA20P PASS mobile area follows machine and remembers previous guards
+QA20P PASS native death event records confirmed elimination
+QA20P PASS temporarily absent living guard prevents neutralization
+QA20P PASS unloaded or destroyed living reference is not a kill
+QA20P PASS boss first does not grant victory
+QA20P PASS last remembered guard death neutralizes once
+QA20P PASS neutralized machine cannot reactivate
+QA20P PASS repeated scans do not duplicate objective
+QA20P PASS unproven empty and missing cases remain pending
+QA20P PASS twelve cleared plus earlier boss starts victory once
+QA20P PASS distant survivor withdraws without kill requirement
+QA20P PASS machines first still requires living boss defeated
+QA20P PASS boss last also completes victory once
+QA20P PASS withdrawal obstruction prevents disappearance
+QA20P PASS survivor visibly approaches route before obstruction
+QA20 STATE tic=600 x=0.000 y=2338.000 phase=4 stroke=0.450 hit=2 damage=25217 health=0 blocked=0 crew=1
+QA20 STATE tic=700 x=0.000 y=2338.000 phase=4 stroke=0.450 hit=2 damage=25217 health=0 blocked=0 crew=1
+QA20 STATE tic=800 x=0.000 y=2338.000 phase=4 stroke=0.450 hit=2 damage=25217 health=0 blocked=0 crew=1
+QA20P PASS survivor exits only after reaching boundary
+QA20P PASS evacuation awards no kill
+QA20P PASS evacuation never blocks victory or repeats reward hook
+QA20P DONE checks=22 failures=0
+
+[final_gate_regression]
+QA19 PASS native closed passage blocks forward movement
+QA19 PASS native closed passage blocks reverse movement
+QA19 PASS canonical health and approved masses
+QA19 PASS constitution equals unrounded toughness, including above 100
+QA19 PASS finite closed blockers
+QA19 PASS native maximum-health accessor uses structural health
+QA19 PASS exact approved 30 50 70 percent weapon reductions
+QA19 PASS first health loss shows damaged state
+QA19 VALUES wood=46.024571081/65017 reinforced=70.565110990/170625 armored=108.052214779/659083
+QA19 PASS one explosion across all blockers
+QA19 PASS different simultaneous explosions remain distinct
+QA19 PASS impact uses actual assembly mass velocity and subtractive toughness once
+QA19 PASS same physical contact serial is idempotent
+QA19 PASS changing stationary frame mass does not change assembly impact damage
+QA19 PASS slow impact cannot break gate despite frame mass
+QA19 PASS separating velocity cannot damage gate
+QA19 PASS legacy doors remain non-destructible
+QA19 PASS peer key cannot be bypassed
+QA19 PASS peer faction condition cannot be bypassed
+QA19 KEY health=1780 keys=1 item=1 sight=0 z=0.000000
+QA19 PASS native Use key opens complete linked group
+QA19 PASS Use opens real passage
+QA19 PASS solid NPC prevents group closing
+QA19 PASS group closes after passage clears
+QA19 PASS ordinary opening preserves damage state
+QA19 PROJECTILE delta=50
+QA19 PASS native projectile collision deals damage once
+QA19 PASS native player hitscan damages gate
+QA19 PASS native attack from reverse side
+QA19 SAVE_READY partial=64807 armored=659053
+QA19 PASS large player weapon sweep hits gate once across all blockers
+QA19 PASS anchored collision resists weapon thrust
+QA19 PASS partial health state matches saved expectation
+QA19 PASS group destruction and repeated events exactly once
+QA19 PASS unlinked gate remains intact
+QA19 PASS all collision removed and broken visual retained
+QA19 PASS player traverses broken gate forward
+QA19 PASS player traverses broken gate backward
+QA19 BROKEN_SAVE_READY
+QA19 PASS broken state matches saved expectation
+QA19 DONE checks=35 failures=0
+QA19 PASS hub return preserves destruction without respawn
+QA19 PASS hub return preserves partial damage
+QA19 RETURN_DONE checks=37 failures=0
+
+[final_body_regression]
+QA19_COLLISION MEASURE player_loss=64720 gate_loss=25467 mass=100.000000 delta=142.153846 gate_health=39550
+QA19_COLLISION PASS native movement reaches a closed gate
+QA19_COLLISION PASS native player collision applies bodily damage
+QA19_COLLISION PASS same collision damages the gate above canonical threshold
+QA19_COLLISION PASS player delta speed uses whole-gate mass, not a collision fragment
+QA19_COLLISION PASS gate remains anchored after reciprocal impact
+QA19_COLLISION PASS all block callbacks share one contact
+QA19_COLLISION PASS saved whole-gate contact identity survives reload
+QA19_COLLISION PASS saved contact cannot apply the crash twice
+QA19_COLLISION PASS opposite-side crash rearms after separation
+QA19_COLLISION PASS subthreshold contact does not invent minimum damage
+QA19_COLLISION PASS open gate has no phantom impact
+QA19_COLLISION PASS rotated gate and leaf-end contact use the gate plane
+QA19_COLLISION NPC native_loss=31775 gate_loss=30221 delta=141.068702 mass=105.000000 disabled=0
+QA19_COLLISION PASS native NPC collision uses the same reciprocal path
+QA19_COLLISION DONE checks=13 failures=0
+
+[final_recheck_moving]
+QA20S PASS exact persistent phase positions stroke serial damage
+QA20S PASS unique component ownership after reload
+QA20P PASS re-register same attacker is idempotent
+QA20P PASS cannot arm before explicit roster seal
+QA20P PASS empty initial placement not neutralized
+QA20P PASS overlapping areas track same real guards
+QA20P PASS mobile area follows machine and remembers previous guards
+QA20P PASS native death event records confirmed elimination
+QA20P PASS temporarily absent living guard prevents neutralization
+QA20P PASS unloaded or destroyed living reference is not a kill
+QA20P PASS boss first does not grant victory
+QA20P PASS last remembered guard death neutralizes once
+QA20P PASS neutralized machine cannot reactivate
+QA20P PASS repeated scans do not duplicate objective
+QA20P PASS unproven empty and missing cases remain pending
+QA20P PASS twelve cleared plus earlier boss starts victory once
+QA20P PASS distant survivor withdraws without kill requirement
+QA20P PASS machines first still requires living boss defeated
+QA20S PASS resumed motion completes exactly two contacts and breaks wood
+
+[final_recheck_strike]
+QA20S PASS exact persistent phase positions stroke serial damage
+QA20S PASS unique component ownership after reload
+QA20P PASS re-register same attacker is idempotent
+QA20P PASS cannot arm before explicit roster seal
+QA20P PASS empty initial placement not neutralized
+QA20P PASS overlapping areas track same real guards
+QA20P PASS mobile area follows machine and remembers previous guards
+QA20P PASS native death event records confirmed elimination
+QA20P PASS temporarily absent living guard prevents neutralization
+QA20P PASS unloaded or destroyed living reference is not a kill
+QA20P PASS boss first does not grant victory
+QA20P PASS last remembered guard death neutralizes once
+QA20P PASS neutralized machine cannot reactivate
+QA20P PASS repeated scans do not duplicate objective
+QA20P PASS unproven empty and missing cases remain pending
+QA20P PASS twelve cleared plus earlier boss starts victory once
+QA20P PASS distant survivor withdraws without kill requirement
+QA20P PASS machines first still requires living boss defeated
+QA20P PASS boss last also completes victory once
+QA20P PASS withdrawal obstruction prevents disappearance
+QA20P PASS survivor visibly approaches route before obstruction
+QA20S PASS resumed motion completes exactly two contacts and breaks wood
+
+[final_recheck_contact]
+QA20S PASS exact persistent phase positions stroke serial damage
+QA20S PASS unique component ownership after reload
+QA20S PASS saved spent contact stays spent
+QA20P PASS re-register same attacker is idempotent
+QA20P PASS cannot arm before explicit roster seal
+QA20P PASS empty initial placement not neutralized
+QA20P PASS overlapping areas track same real guards
+QA20P PASS mobile area follows machine and remembers previous guards
+QA20P PASS native death event records confirmed elimination
+QA20P PASS temporarily absent living guard prevents neutralization
+QA20P PASS unloaded or destroyed living reference is not a kill
+QA20P PASS boss first does not grant victory
+QA20P PASS last remembered guard death neutralizes once
+QA20P PASS neutralized machine cannot reactivate
+QA20P PASS repeated scans do not duplicate objective
+QA20P PASS unproven empty and missing cases remain pending
+QA20P PASS twelve cleared plus earlier boss starts victory once
+QA20P PASS distant survivor withdraws without kill requirement
+QA20P PASS machines first still requires living boss defeated
+QA20P PASS boss last also completes victory once
+QA20P PASS withdrawal obstruction prevents disappearance
+QA20P PASS survivor visibly approaches route before obstruction
+QA20S PASS resumed motion completes exactly two contacts and breaks wood
+
+[final_recheck_recovery]
+QA20S PASS exact persistent phase positions stroke serial damage
+QA20S PASS unique component ownership after reload
+QA20S PASS saved spent contact stays spent
+QA20P PASS re-register same attacker is idempotent
+QA20P PASS cannot arm before explicit roster seal
+QA20P PASS empty initial placement not neutralized
+QA20P PASS overlapping areas track same real guards
+QA20P PASS mobile area follows machine and remembers previous guards
+QA20P PASS native death event records confirmed elimination
+QA20P PASS temporarily absent living guard prevents neutralization
+QA20P PASS unloaded or destroyed living reference is not a kill
+QA20P PASS boss first does not grant victory
+QA20P PASS last remembered guard death neutralizes once
+QA20P PASS neutralized machine cannot reactivate
+QA20P PASS repeated scans do not duplicate objective
+QA20P PASS unproven empty and missing cases remain pending
+QA20P PASS twelve cleared plus earlier boss starts victory once
+QA20P PASS distant survivor withdraws without kill requirement
+QA20P PASS machines first still requires living boss defeated
+QA20P PASS boss last also completes victory once
+QA20P PASS withdrawal obstruction prevents disappearance
+QA20P PASS survivor visibly approaches route before obstruction
+QA20S PASS resumed motion completes exactly two contacts and breaks wood
+
+[final_load_ready]
+QA20S PASS exact persistent phase positions stroke serial damage
+QA20S PASS unique component ownership after reload
+QA20S PASS saved spent contact stays spent
+QA20P PASS re-register same attacker is idempotent
+QA20P PASS cannot arm before explicit roster seal
+QA20P PASS empty initial placement not neutralized
+QA20P PASS overlapping areas track same real guards
+QA20P PASS mobile area follows machine and remembers previous guards
+QA20P PASS native death event records confirmed elimination
+QA20P PASS temporarily absent living guard prevents neutralization
+QA20P PASS unloaded or destroyed living reference is not a kill
+QA20P PASS boss first does not grant victory
+QA20P PASS last remembered guard death neutralizes once
+QA20P PASS neutralized machine cannot reactivate
+QA20P PASS repeated scans do not duplicate objective
+QA20P PASS unproven empty and missing cases remain pending
+QA20P PASS twelve cleared plus earlier boss starts victory once
+QA20P PASS distant survivor withdraws without kill requirement
+QA20P PASS machines first still requires living boss defeated
+QA20P PASS boss last also completes victory once
+QA20P PASS withdrawal obstruction prevents disappearance
+QA20P PASS survivor visibly approaches route before obstruction
+QA20P PASS survivor exits only after reaching boundary
+QA20P PASS evacuation awards no kill
+QA20P PASS evacuation never blocks victory or repeats reward hook
+QA20P DONE checks=22 failures=0
+QA20S PASS resumed motion completes exactly two contacts and breaks wood
+
+[final_load_retreat]
+QA20R PASS native mid-retreat save preserves position objectives and one-time victory
+QA20P PASS withdrawal obstruction prevents disappearance
+QA20P PASS survivor visibly approaches route before obstruction
+QA20 STATE tic=600 x=0.000 y=2338.000 phase=4 stroke=0.450 hit=2 damage=25217 health=0 blocked=0 crew=1
+QA20 STATE tic=700 x=0.000 y=2338.000 phase=4 stroke=0.450 hit=2 damage=25217 health=0 blocked=0 crew=1
+QA20 STATE tic=800 x=0.000 y=2338.000 phase=4 stroke=0.450 hit=2 damage=25217 health=0 blocked=0 crew=1
+QA20P PASS survivor exits only after reaching boundary
+QA20P PASS evacuation awards no kill
+QA20P PASS evacuation never blocks victory or repeats reward hook
+QA20P DONE checks=22 failures=0
+
+[legacy_fixed_pk3]
+QA19_COLLISION PASS saved whole-gate contact identity survives reload
+QA19_COLLISION PASS saved contact cannot apply the crash twice
+QA19_COLLISION PASS opposite-side crash rearms after separation
+QA19_COLLISION PASS subthreshold contact does not invent minimum damage
+QA19_COLLISION PASS open gate has no phantom impact
+QA19_COLLISION PASS rotated gate and leaf-end contact use the gate plane
+QA19_COLLISION NPC native_loss=31775 gate_loss=30221 delta=141.068702 mass=105.000000 disabled=0
+QA19_COLLISION PASS native NPC collision uses the same reciprocal path
+QA19_COLLISION DONE checks=13 failures=0
+Ram x=-1500 y=2302.857 blocked=0 large=0 phase=1 crew=6/6 present=0 neutralized=1 hits=0 damage=0 gate=65017
+Ram x=-930 y=2302.857 blocked=0 large=0 phase=1 crew=6/6 present=0 neutralized=1 hits=0 damage=0 gate=170625
+Ram x=-360 y=2302.857 blocked=0 large=0 phase=1 crew=6/6 present=0 neutralized=1 hits=0 damage=0 gate=659083
+Ram x=210 y=2302.857 blocked=0 large=0 phase=1 crew=6/6 present=0 neutralized=1 hits=0 damage=0 gate=65017
+Ram x=780 y=2302.857 blocked=0 large=0 phase=1 crew=6/6 present=0 neutralized=1 hits=0 damage=0 gate=170625
+Ram x=1350 y=2302.857 blocked=0 large=1 phase=1 crew=32/32 present=0 neutralized=1 hits=0 damage=0 gate=659083
+
+[legacy_repeat]
+Ram x=-1500 y=2302.857 blocked=0 large=0 phase=1 crew=6/6 present=0 neutralized=1 hits=0 damage=0 gate=65017
+Ram x=-930 y=2302.857 blocked=0 large=0 phase=1 crew=6/6 present=0 neutralized=1 hits=0 damage=0 gate=170625
+Ram x=-360 y=2302.857 blocked=0 large=0 phase=1 crew=6/6 present=0 neutralized=1 hits=0 damage=0 gate=659083
+Ram x=210 y=2302.857 blocked=0 large=0 phase=1 crew=6/6 present=0 neutralized=1 hits=0 damage=0 gate=65017
+Ram x=780 y=2302.857 blocked=0 large=0 phase=1 crew=6/6 present=0 neutralized=1 hits=0 damage=0 gate=170625
+Ram x=1350 y=2302.857 blocked=0 large=1 phase=1 crew=32/32 present=0 neutralized=1 hits=0 damage=0 gate=659083
+
+[hub]
+Ram x=-1500 y=2438.000 blocked=0 large=0 phase=4 crew=6/6 present=0 neutralized=1 hits=2 damage=25217 gate=0
+Ram x=-930 y=2438.000 blocked=0 large=0 phase=4 crew=6/6 present=0 neutralized=1 hits=2 damage=52334 gate=65957
+Ram x=-360 y=2438.000 blocked=0 large=0 phase=4 crew=6/6 present=0 neutralized=1 hits=2 damage=0 gate=659083
+Ram x=210 y=2438.000 blocked=0 large=0 phase=4 crew=6/6 present=0 neutralized=1 hits=2 damage=25217 gate=0
+Ram x=780 y=2438.000 blocked=0 large=0 phase=4 crew=6/6 present=0 neutralized=1 hits=2 damage=52334 gate=65957
+Ram x=1350 y=2391.676 blocked=0 large=1 phase=4 crew=32/32 present=0 neutralized=1 hits=4 damage=161271 gate=13999
+Ram x=-1500 y=2438.000 blocked=0 large=0 phase=4 crew=6/6 present=0 neutralized=1 hits=2 damage=25217 gate=0
+Ram x=-930 y=2438.000 blocked=0 large=0 phase=4 crew=6/6 present=0 neutralized=1 hits=2 damage=52334 gate=65957
+Ram x=-360 y=2438.000 blocked=0 large=0 phase=4 crew=6/6 present=0 neutralized=1 hits=2 damage=0 gate=659083
+Ram x=210 y=2438.000 blocked=0 large=0 phase=4 crew=6/6 present=0 neutralized=1 hits=2 damage=25217 gate=0
+Ram x=780 y=2438.000 blocked=0 large=0 phase=4 crew=6/6 present=0 neutralized=1 hits=2 damage=52334 gate=65957
+Ram x=1350 y=2391.676 blocked=0 large=1 phase=4 crew=32/32 present=0 neutralized=1 hits=4 damage=161271 gate=13999
+Ram x=-1500 y=2438.000 blocked=0 large=0 phase=4 crew=6/6 present=0 neutralized=1 hits=2 damage=25217 gate=0
+Ram x=-930 y=2438.000 blocked=0 large=0 phase=4 crew=6/6 present=0 neutralized=1 hits=2 damage=52334 gate=65957
+Ram x=-360 y=2438.000 blocked=0 large=0 phase=4 crew=6/6 present=0 neutralized=1 hits=2 damage=0 gate=659083
+Ram x=210 y=2438.000 blocked=0 large=0 phase=4 crew=6/6 present=0 neutralized=1 hits=2 damage=25217 gate=0
+Ram x=780 y=2438.000 blocked=0 large=0 phase=4 crew=6/6 present=0 neutralized=1 hits=2 damage=52334 gate=65957
+Ram x=1350 y=2391.676 blocked=0 large=1 phase=4 crew=32/32 present=0 neutralized=1 hits=4 damage=161271 gate=13999
+
+[final_views]
+QA20 PASS assigned existing operator
+QA20 PASS assigned existing operator
+QA20 PASS assigned existing operator
+QA20 PASS assigned existing operator
+QA20 PASS assigned existing operator
+QA20 PASS assigned existing operator
+QA20 PASS seal twelve hostile machines with boss
+QA20 PASS explicit activation hook
+QA20 PASS six living nearby operators
+QA20 INPUT mass=2874.990701 speed=34.541924 transport=5125 radius=300.000
+QA20M PASS million-kg frame does not increase native assembly damage
+QA20M PASS small ram cannot damage armored gate
+QA20M PASS large ram damages armored gate through shared physics
+QA20M PASS approved exact crew sizes
+QA20M PASS missing operator stops operation without neutralization
+QA20M PASS same operator cannot crew two machines
+QA20M PASS full staffing resumes and small ram damages reinforced gate
+QA20M VALUES wood=39800 reinforced=52334 small_armored=0 large_armored=161271 mass=15333.283739 speed=34.541924
+QA20M PASS visible plate contacts gate within half-map-unit sweep tolerance
+QA20M PASS spent native contact cannot be applied twice
+QA20M PASS chassis respects native gate obstruction
+QA20M PASS failed chassis sweep rolls back all components
+QA20M PASS stroke contacts real NPC obstruction once
+QA20M PASS NPC receives existing physical-impact damage
+QA20M PASS NPC receives canonical transmitted impulse
+QA20M DONE checks=14 failures=0
+
+[final_large_elevated]
+QA20 PASS assigned existing operator
+QA20 PASS assigned existing operator
+QA20 PASS assigned existing operator
+QA20 PASS assigned existing operator
+QA20 PASS assigned existing operator
+QA20 PASS assigned existing operator
+QA20 PASS seal twelve hostile machines with boss
+QA20 PASS explicit activation hook
+QA20 PASS six living nearby operators
+QA20 INPUT mass=2874.990701 speed=34.541924 transport=5125 radius=300.000
+QA20M PASS million-kg frame does not increase native assembly damage
+QA20M PASS small ram cannot damage armored gate
+QA20M PASS large ram damages armored gate through shared physics
+QA20M PASS approved exact crew sizes
+QA20M PASS missing operator stops operation without neutralization
+QA20M PASS same operator cannot crew two machines
+QA20M PASS full staffing resumes and small ram damages reinforced gate
+QA20M VALUES wood=39800 reinforced=52334 small_armored=0 large_armored=161271 mass=15333.283739 speed=34.541924
+QA20M PASS visible plate contacts gate within half-map-unit sweep tolerance
+QA20M PASS spent native contact cannot be applied twice
+QA20M PASS chassis respects native gate obstruction
+QA20M PASS failed chassis sweep rolls back all components
+QA20M PASS stroke contacts real NPC obstruction once
+QA20M PASS NPC receives existing physical-impact damage
+QA20M PASS NPC receives canonical transmitted impulse
+QA20M DONE checks=14 failures=0
+
+[legacy_before_fix — reproduced failure, corrected in legacy_fixed_pk3]
+Ram x=-1500 y=2302.857 blocked=0 large=0 phase=1 crew=6/6 present=0 neutralized=0 hits=0 damage=0 gate=65017
+Ram x=-930 y=2302.857 blocked=0 large=0 phase=1 crew=6/6 present=0 neutralized=0 hits=0 damage=0 gate=170625
+Ram x=-360 y=2302.857 blocked=0 large=0 phase=1 crew=6/6 present=0 neutralized=0 hits=0 damage=0 gate=659083
+Ram x=210 y=2302.857 blocked=0 large=0 phase=1 crew=6/6 present=0 neutralized=0 hits=0 damage=0 gate=65017
+Ram x=780 y=2302.857 blocked=0 large=0 phase=1 crew=6/6 present=0 neutralized=0 hits=0 damage=0 gate=170625
+Ram x=1350 y=2302.857 blocked=0 large=1 phase=1 crew=32/32 present=0 neutralized=0 hits=0 damage=0 gate=659083

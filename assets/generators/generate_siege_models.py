@@ -192,7 +192,7 @@ def cannon_state(name: str, recoil: float, breech_open: bool) -> Mesh:
     return mesh
 
 
-def ram_state(name: str, travel: float) -> Mesh:
+def ram_state(name: str, travel: float, component: str = 'complete') -> Mesh:
     mesh = Mesh(name)
     spec = SPEC['ram']
     for z in (-30, 30):
@@ -222,6 +222,12 @@ def ram_state(name: str, travel: float) -> Mesh:
     for side in (-1, 1):
         for x in (-72, -42, -12):
             add_box(moving, WOOD, (x, 41, side * 16), (4, 4, 17))
+    if component == 'frame':
+        return mesh
+    if component == 'moving':
+        # Native moving actor is centered on the striking plate, at its bottom.
+        moving.vertices = [(x - 32, y - 30, z) for x, y, z in moving.vertices]
+        return moving
     for x in spec['suspension_x']:
         for side in (-1, 1):
             # Paired iron suspension rods stay attached in every displayed pose.
