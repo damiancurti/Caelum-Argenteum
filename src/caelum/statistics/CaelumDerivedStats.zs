@@ -254,7 +254,8 @@ class CaelumDerivedStats : Object
         PainChanceMultiplier = Clamp(1.0
             - attributes.Toughness * (attributes.Toughness + 1) / 10100.0,
             0.0, 1.0);
-        // El daño divide por Tipo 4. Dolor y Lucidez conservan su curva.
+        // Campo legado para saves: el daño actual usa la resta por golpe de
+        // CaelumArmorRules; este cociente ya no interviene en la recepción.
         DamageResistanceMultiplier = 100.0
             / CalculateType4Percent(Max(0.0, attributes.Toughness));
         LucidityLossMultiplier = PainChanceMultiplier;

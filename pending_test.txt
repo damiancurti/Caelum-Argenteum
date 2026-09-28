@@ -19,3 +19,15 @@ quest/inventory progress; save to a NEW slot and reload; travel to another map.
 Expected: only obsolete magical-armor bonuses disappear, exactly once. Base
 attributes, other bonuses, equipment identity/wear and progress remain. Any
 previously damaged/open/broken gate keeps its state. No loading or combat hang.
+
+CA-43623-TOUGHNESS-01 — 4.36.23 / issue #52, author revision 2026-09-28
+Prerequisites: rebuilt current PK3 and a disposable campaign save; retain copies
+of original saves. Read the restored threshold formula in SYSTEMS.
+Steps: test physical/magical combat and collisions with your character; repeat
+some comparable hits while wounded. Check campaign progression with the restored
+damage threshold. If testing siege trials, compare common/reinforced gates.
+Expected: Toughness removes percentage points of maximum health; lower current
+health does not weaken it. Hits under the threshold can cause zero damage and
+zero armor wear; stronger hits pass the excess before armor. Current cannons
+cannot damage gates and neither ram damages armored gates. Confirm whether these
+intended formula consequences are acceptable in campaign before merge.

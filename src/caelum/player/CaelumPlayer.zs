@@ -12178,14 +12178,12 @@ class CaelumPlayer : DoomPlayer
         return Max(1.0, Height);
     }
 
-    double GetImpactToughnessMultiplier()
+    double GetImpactToughnessMultiplier(double incomingPercent = 100.0)
     {
-        if (DerivedStats == null) { return 1.0; }
         double toughness = Attributes != null ? Max(0.0, Attributes.Toughness) : 0.0;
         if (IsBucklerAcrobaticDefenseActive())
             toughness *= CaelumConstants.SHIELD_BUCKLER_IMPACT_TOUGHNESS_MULTIPLIER;
-        // Mismo divisor Tipo 4 que las armas; se aplica una sola vez.
-        return 100.0 / DerivedStats.CalculateType4Percent(toughness);
+        return CaelumArmorRules.ToughnessMultiplier(incomingPercent, 100.0, toughness);
     }
 
     double GetArmorDefensePercent(int slot, bool magical = false)
@@ -12522,9 +12520,9 @@ class CaelumPlayer : DoomPlayer
         double surfaceMultiplier = Max(0.0, sourceSurfaceMultiplier);
         double surfacedDamagePercent =
             LastImpactDamagePercent * surfaceMultiplier;
-        LastImpactToughnessMultiplier = GetImpactToughnessMultiplier();
-        LastImpactPostToughnessPercent =
-            surfacedDamagePercent * LastImpactToughnessMultiplier;
+        LastImpactToughnessMultiplier = GetImpactToughnessMultiplier(surfacedDamagePercent);
+        LastImpactPostToughnessPercent = CaelumArmorRules.AfterToughnessPercent(
+            surfacedDamagePercent, LastImpactToughnessPercent);
 
         if (AnatomyProfile == null)
         {
@@ -13687,9 +13685,9 @@ class CaelumPlayer : DoomPlayer
         LastArmorDurabilityRollPercent = 0.0;
         LastArmorHitWasCritical = criticalHit;
         LastLocalizedLucidityLoss = 0.0;
-        LastToughnessDamageMultiplier = DerivedStats != null
-            ? Clamp(DerivedStats.DamageResistanceMultiplier, 0.0, 1.0)
-            : 1.0;
+        LastToughnessDamageMultiplier = 1.0;
+        double totalPostAnatomyDamage = 0.0;
+        double toughness = Attributes != null ? Attributes.Toughness : 0.0;
 
         int totalHealthDamage = 0;
         bool armorPieceBroken = false;
@@ -13718,8 +13716,10 @@ class CaelumPlayer : DoomPlayer
                 effectiveGrade,
                 criticalHit
             );
-            double preDefenseDamage = incomingDamage * vulnerabilityMultiplier
-                * LastToughnessDamageMultiplier;
+            double postAnatomyDamage = incomingDamage * vulnerabilityMultiplier;
+            totalPostAnatomyDamage += postAnatomyDamage;
+            double preDefenseDamage = CaelumArmorRules.AfterToughnessDamage(
+                postAnatomyDamage, GetImpactMaximumHealth(), toughness);
             double defenseRatio = Clamp(GetArmorDefensePercent(slot, magical) / 100.0, 0.0, 1.0);
             double absorbedDamage = preDefenseDamage * defenseRatio;
             double postDefenseDamage = Max(
@@ -13779,6 +13779,8 @@ class CaelumPlayer : DoomPlayer
             }
         }
 
+        LastToughnessDamageMultiplier = totalPostAnatomyDamage > 0.0
+            ? LastArmorPreDefenseDamage / totalPostAnatomyDamage : 1.0;
         LastArmorHealthDamage = totalHealthDamage;
         if (totalHealthDamage <= 0)
         {
@@ -14203,10 +14205,12 @@ class CaelumPlayer : DoomPlayer
             LastArmorVulnerabilityGrade,
             criticalHit
         );
-        LastToughnessDamageMultiplier = DerivedStats != null
-            ? Clamp(DerivedStats.DamageResistanceMultiplier, 0.0, 1.0) : 1.0;
-        LastArmorPreDefenseDamage = incomingDamage
-            * LastArmorVulnerabilityMultiplier * LastToughnessDamageMultiplier;
+        double postAnatomyDamage = incomingDamage * LastArmorVulnerabilityMultiplier;
+        double toughness = Attributes != null ? Attributes.Toughness : 0.0;
+        LastToughnessDamageMultiplier = CaelumArmorRules.ToughnessMultiplier(
+            postAnatomyDamage, GetImpactMaximumHealth(), toughness);
+        LastArmorPreDefenseDamage = CaelumArmorRules.AfterToughnessDamage(
+            postAnatomyDamage, GetImpactMaximumHealth(), toughness);
         double defenseRatio = Clamp(
             GetArmorDefensePercent(slot, magical) / 100.0,
             0.0,
@@ -14217,9 +14221,6 @@ class CaelumPlayer : DoomPlayer
             0.0,
             LastArmorPreDefenseDamage - LastArmorAbsorbedDamage
         );
-        LastToughnessDamageMultiplier = DerivedStats != null
-            ? Clamp(DerivedStats.DamageResistanceMultiplier, 0.0, 1.0)
-            : 1.0;
         LastArmorHealthDamage = Max(
             0,
             int(LastArmorPostDefenseDamage + 0.5)
@@ -18116,8 +18117,7 @@ class CaelumPlayer : DoomPlayer
         LastArmorPreDefenseDamage = 0.0;
         LastArmorAbsorbedDamage = 0.0;
         LastArmorPostDefenseDamage = 0.0;
-        LastToughnessDamageMultiplier = DerivedStats != null
-            ? DerivedStats.DamageResistanceMultiplier : 1.0;
+        LastToughnessDamageMultiplier = 1.0;
         LastArmorHealthDamage = 0;
         LastArmorDurabilityLoss = 0;
         LastArmorDurabilityChancePercent = 0.0;
@@ -18138,8 +18138,12 @@ class CaelumPlayer : DoomPlayer
             LastArmorVulnerabilityGrade,
             DebugArmorCriticalHit
         );
-        LastArmorPreDefenseDamage = incomingDamage
-            * LastArmorVulnerabilityMultiplier * LastToughnessDamageMultiplier;
+        double postAnatomyDamage = incomingDamage * LastArmorVulnerabilityMultiplier;
+        double toughness = Attributes != null ? Attributes.Toughness : 0.0;
+        LastToughnessDamageMultiplier = CaelumArmorRules.ToughnessMultiplier(
+            postAnatomyDamage, GetImpactMaximumHealth(), toughness);
+        LastArmorPreDefenseDamage = CaelumArmorRules.AfterToughnessDamage(
+            postAnatomyDamage, GetImpactMaximumHealth(), toughness);
 
         double defenseRatio = Clamp(GetArmorDefensePercent(slot) / 100.0, 0.0, 1.0);
         LastArmorAbsorbedDamage = LastArmorPreDefenseDamage * defenseRatio;
@@ -18147,9 +18151,6 @@ class CaelumPlayer : DoomPlayer
             0.0,
             LastArmorPreDefenseDamage - LastArmorAbsorbedDamage
         );
-        LastToughnessDamageMultiplier = DerivedStats != null
-            ? Clamp(DerivedStats.DamageResistanceMultiplier, 0.0, 1.0)
-            : 1.0;
         int calculatedHealthDamage = Max(
             0,
             int(LastArmorPostDefenseDamage + 0.5)

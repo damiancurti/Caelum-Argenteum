@@ -1455,9 +1455,9 @@ class CaelumCombatActor : Actor
         return Max(1.0, Height);
     }
 
-    double GetImpactToughnessMultiplier()
+    double GetImpactToughnessMultiplier(double incomingPercent = 100.0)
     {
-        return 100.0 / CalculateActorType4Percent(Max(0, CombatToughness));
+        return CaelumArmorRules.ToughnessMultiplier(incomingPercent, 100.0, CombatToughness);
     }
 
     virtual int GetArmorRace() { return CaelumConstants.RACE_HUMAN; }
@@ -1702,9 +1702,9 @@ class CaelumCombatActor : Actor
         double surfacedDamagePercent =
             LastImpactDamagePercent
                 * Max(0.0, sourceSurfaceMultiplier);
-        LastImpactToughnessMultiplier = GetImpactToughnessMultiplier();
-        LastImpactPostToughnessPercent =
-            surfacedDamagePercent * LastImpactToughnessMultiplier;
+        LastImpactToughnessMultiplier = GetImpactToughnessMultiplier(surfacedDamagePercent);
+        LastImpactPostToughnessPercent = CaelumArmorRules.AfterToughnessPercent(
+            surfacedDamagePercent, LastImpactToughnessPercent);
 
         if (AnatomyProfile == null)
         {
@@ -2616,8 +2616,6 @@ class CaelumCombatActor : Actor
         bool localizedCriticalHit = PendingLocalizedCriticalHit;
         ResolveActorArmorImpact(damage, CaelumArmorRules.IsMagical(inflictor, mod));
         PendingLocalizedCriticalHit = false;
-        LastCombatToughnessDamageMultiplier = 100.0
-            / CalculateActorType4Percent(Max(0, CombatToughness));
         int retainedDamage = Max(
             0,
             int(LastCombatArmorPostDefenseDamage + 0.5)
@@ -2745,8 +2743,8 @@ class CaelumCombatActor : Actor
         LastCombatArmorDurabilityLoss = 0;
         LastCombatArmorDurabilityChancePercent = 0.0;
         LastCombatArmorDurabilityRollPercent = 0.0;
-        LastCombatToughnessDamageMultiplier = 100.0
-            / CalculateActorType4Percent(Max(0, CombatToughness));
+        LastCombatToughnessDamageMultiplier = 1.0;
+        double totalPostAnatomyDamage = 0.0;
 
         bool magical = CaelumArmorRules.IsMagical(inflictor, mod);
         int totalHealthDamage = 0;
@@ -2772,8 +2770,10 @@ class CaelumCombatActor : Actor
             {
                 vulnerabilityMultiplier *= vulnerabilityMultiplier + 1.0;
             }
-            double preDefenseDamage = incomingDamage
-                * vulnerabilityMultiplier * LastCombatToughnessDamageMultiplier;
+            double postAnatomyDamage = incomingDamage * vulnerabilityMultiplier;
+            totalPostAnatomyDamage += postAnatomyDamage;
+            double preDefenseDamage = CaelumArmorRules.AfterToughnessDamage(
+                postAnatomyDamage, GetImpactMaximumHealth(), CombatToughness);
             double defensePercent = GetArmorDefensePercent(slot, magical);
             double defenseRatio = Clamp(defensePercent / 100.0, 0.0, 1.0);
             double absorbedDamage = preDefenseDamage * defenseRatio;
@@ -2836,6 +2836,8 @@ class CaelumCombatActor : Actor
             }
         }
 
+        LastCombatToughnessDamageMultiplier = totalPostAnatomyDamage > 0.0
+            ? LastCombatArmorIncomingDamage / totalPostAnatomyDamage : 1.0;
         if (totalHealthDamage <= 0) { return 0; }
         int healthBeforeDamage = health;
         double adrenalineRatioBeforeDamage = GetCombatAdrenalineRatio();
@@ -3003,9 +3005,10 @@ class CaelumCombatActor : Actor
         }
 
         LastCombatArmorSlot = GetArmorSlotForLocation(LastAnatomyLocation);
-        LastCombatToughnessDamageMultiplier = 100.0
-            / CalculateActorType4Percent(Max(0, CombatToughness));
-        LastCombatArmorIncomingDamage *= LastCombatToughnessDamageMultiplier;
+        LastCombatToughnessDamageMultiplier = CaelumArmorRules.ToughnessMultiplier(
+            LastCombatArmorIncomingDamage, GetImpactMaximumHealth(), CombatToughness);
+        LastCombatArmorIncomingDamage = CaelumArmorRules.AfterToughnessDamage(
+            LastCombatArmorIncomingDamage, GetImpactMaximumHealth(), CombatToughness);
         LastCombatArmorDefenseExactPercent = GetArmorDefensePercent(LastCombatArmorSlot, magical);
         LastCombatArmorDefensePercent = int(LastCombatArmorDefenseExactPercent);
         double defenseRatio = Clamp(

@@ -1,21 +1,29 @@
 # Caelum Argenteum — Project, status and roadmap
 
-Documentation version: **4.36.23** — 2026-09-27.
+Documentation version: **4.36.23** — 2026-09-28.
 
 ## 4.36.23 — Final armor absorption (#52)
+
+Author revision, 2026-09-28: attacks and collisions now subtract Toughness
+as percentage points of maximum health, with no minimum-damage floor. An
+incoming 101% at Toughness 100 leaves 1% before armor; <=100% is still negated.
+Gate/cannon/ram outcomes follow the same rule: cannons cannot damage any gate,
+and neither ram damages armored gates with the unchanged inputs. See SYSTEMS.
+Current native evidence supersedes the initial divisor matrix, which is retained
+in assets/validation_43623/DIVISOR_RESULTS.json. Release remains 4.36.23 because
+this is an author revision of the same open issue/PR before acceptance.
 
 Ordinary damage now resolves shield, anatomy/critical, Toughness, then armor.
 Innate body defense adds to the struck piece's physical/magical percentage.
 New equipment values and the removed magical-armor attribute bonuses share one
 data source; shields and anatomical reinforcement retain their existing rules.
 Common/reinforced/armored gates absorb 10/20/30% after Toughness, including siege
-impacts. Native checks reproduce all nine approved siege damage/hit counts.
+impacts. Native checks reproduce all nine calculated siege damage/hit counts.
 Palomo's author-specified innate absorption is 77% physical and magical.
 Player attribute revision 2 and NPC armor revision 1 rebuild derived values
 once on old-save load, without subtracting bonuses from base attributes.
 Evidence: `assets/validation_43623/RESULTS.json`. Static and isolated native
-checks are separate from author acceptance; CA-43623-ARMOR-01 and
-CA-43623-SAVE-01 remain in `pending_test.txt`.
+checks are separate from author acceptance; CA-43623-ARMOR-01, CA-43623-SAVE-01 and CA-43623-TOUGHNESS-01 remain in `pending_test.txt`.
 
 ## 4.36.22 — Demo quest narrative (#34)
 

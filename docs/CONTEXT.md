@@ -1,6 +1,6 @@
 # CONTEXT.md — Ultra-condensed summary of Caelum Argenteum
 
-Documentation version: **4.36.23** — 2026-09-27.
+Documentation version: **4.36.23** — 2026-09-28.
 
 Summary of `PROJECT.md`, `SYSTEMS.md`, `MAP01.txt`, `ASSETS.md`, `HISTORY.md`
 and the repository README.
@@ -62,7 +62,7 @@ the gauchos and rural culture, and the humans the urban porteño society.
 
 ## Current status
 
-**4.36.23 / #52:** Toughness precedes additive body/equipment armor absorption.
+**4.36.23 / #52:** Toughness subtracts maximum-health percentage points before final armor.
 Magical armor loses mental bonuses; shields stay unchanged. Palomo absorbs 77%;
 gates 10/20/30%. Native combat/siege and idempotent old-save checks pass.
 Tables: SYSTEMS. Evidence: assets/validation_43623. Author checks

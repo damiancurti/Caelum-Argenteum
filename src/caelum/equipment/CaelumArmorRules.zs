@@ -2,6 +2,24 @@
 class CaelumArmorRules : Object
 {
     const PALOMO_DEFENSE = 77.0;
+
+    // Dureza resta puntos porcentuales de la vida máxima, sin piso de daño.
+    static clearscope double AfterToughnessPercent(double incomingPercent, double toughness)
+    {
+        return Max(0.0, incomingPercent - Max(0.0, toughness));
+    }
+
+    static clearscope double AfterToughnessDamage(double incomingDamage, double maximumHealth, double toughness)
+    {
+        return Max(0.0, incomingDamage - Max(1.0, maximumHealth) * Max(0.0, toughness) / 100.0);
+    }
+
+    // Sólo diagnóstico: la fracción conservada depende de este impacto concreto.
+    static clearscope double ToughnessMultiplier(double incomingDamage, double maximumHealth, double toughness)
+    {
+        return incomingDamage > 0.0
+            ? AfterToughnessDamage(incomingDamage, maximumHealth, toughness) / incomingDamage : 1.0;
+    }
     static clearscope double TierMultiplier(int tier)
     {
         return tier >= 3 ? 2.0 : tier == 2 ? 1.5 : 1.0;

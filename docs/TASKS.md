@@ -1,8 +1,17 @@
 # TASKS.md — Active tasks
 
-Documentation version: **4.36.23** — 2026-09-27.
+Documentation version: **4.36.23** — 2026-09-28.
 
 ## Issue #52 — Final armor absorption (4.36.23)
+
+Author revision, 2026-09-28: attacks and collisions now subtract Toughness
+as percentage points of maximum health, with no minimum-damage floor. An
+incoming 101% at Toughness 100 leaves 1% before armor; <=100% is still negated.
+Gate/cannon/ram outcomes follow the same rule: cannons cannot damage any gate,
+and neither ram damages armored gates with the unchanged inputs. See SYSTEMS.
+Current native evidence supersedes the initial divisor matrix, which is retained
+in assets/validation_43623/DIVISOR_RESULTS.json. Release remains 4.36.23 because
+this is an author revision of the same open issue/PR before acceptance.
 
 - Implemented: shield/anatomy/Toughness/armor order; additive racial and equipped
   physical/magical defenses; approved tier values; Palomo 77%; gate 10/20/30%.
@@ -12,7 +21,7 @@ Documentation version: **4.36.23** — 2026-09-27.
   equipment are preserved. Original saves permit rollback with the previous build.
 - Validation: native numerical/combat/impact/siege checks and save migration;
   evidence in assets/validation_43623/RESULTS.json. Author acceptance remains
-  CA-43623-ARMOR-01 and CA-43623-SAVE-01 in pending_test.txt.
+  CA-43623-ARMOR-01, CA-43623-SAVE-01 and CA-43623-TOUGHNESS-01 in pending_test.txt.
 - Scope: no siege penetration/explosion, new recipes, shield rebalance, map
   geometry or redesign of the existing player/NPC elemental-DOT asymmetry.
 

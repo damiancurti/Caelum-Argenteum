@@ -1,8 +1,17 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **4.36.23** — 2026-09-27.
+Documentation version: **4.36.23** — 2026-09-28.
 
 ## 4.36.23 — Additive body/equipment armor after Toughness (#52)
+
+Author revision, 2026-09-28: attacks and collisions now subtract Toughness
+as percentage points of maximum health, with no minimum-damage floor. An
+incoming 101% at Toughness 100 leaves 1% before armor; <=100% is still negated.
+Gate/cannon/ram outcomes follow the same rule: cannons cannot damage any gate,
+and neither ram damages armored gates with the unchanged inputs. See SYSTEMS.
+Current native evidence supersedes the initial divisor matrix, which is retained
+in assets/validation_43623/DIVISOR_RESULTS.json. Release remains 4.36.23 because
+this is an author revision of the same open issue/PR before acceptance.
 
 - Author requested the third/fourth stage swap, all racial/armor tier values,
   triple magical absorption for magical armor, removal of its mental bonuses,
@@ -22,7 +31,7 @@ Documentation version: **4.36.23** — 2026-09-27.
   without an unrelated behavior redesign.
 - Static checks and isolated engine/save results are recorded in
   assets/validation_43623/RESULTS.json. They are not author acceptance.
-- Pending author tests: CA-43623-ARMOR-01 and CA-43623-SAVE-01, originating
+- Pending author tests: CA-43623-ARMOR-01, CA-43623-SAVE-01 and CA-43623-TOUGHNESS-01, originating
   in this release/issue. No confirmation date or passed result is claimed.
 
 ## 4.36.22 — Palomo, Selene and port narrative (#34)
