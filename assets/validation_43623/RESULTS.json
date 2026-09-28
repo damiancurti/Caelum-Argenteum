@@ -122,16 +122,33 @@
     "reason": "Prior divisor/direct-level damage matrices retained as history. curve_revision/ records the final historical growth curve without cap."
   },
   "limitations": [
-    "Author campaign acceptance remains pending.",
     "Reduction is uncapped; damage remainder has minimum zero, with no minimum-damage floor.",
     "Cannons retain Toughness reduction and cannot damage current gates. No penetration or explosion is added.",
     "Pain/lucidity retain their separate capped curves; existing elemental DOT asymmetry unchanged.",
     "No test fixtures, saves, IWAD or executable are distributed."
   ],
   "author_acceptance": {
-    "CA-43623-ARMOR-01": "pending",
-    "CA-43623-SAVE-01": "pending",
-    "CA-43623-TOUGHNESS-01": "pending"
+    "CA-43623-ARMOR-01": {
+      "result": "passed",
+      "confirmation_date": "2026-09-28",
+      "originating_version": "4.36.23",
+      "issue": 52,
+      "qualification": "Author confirmed all outstanding tests passed; no exceptions reported."
+    },
+    "CA-43623-SAVE-01": {
+      "result": "passed",
+      "confirmation_date": "2026-09-28",
+      "originating_version": "4.36.23",
+      "issue": 52,
+      "qualification": "Author confirmed all outstanding tests passed; no exceptions reported."
+    },
+    "CA-43623-TOUGHNESS-01": {
+      "result": "passed",
+      "confirmation_date": "2026-09-28",
+      "originating_version": "4.36.23",
+      "issue": 52,
+      "qualification": "Author confirmed all outstanding tests passed; no exceptions reported."
+    }
   },
   "static_validation": {
     "errors": [],
@@ -182,5 +199,6 @@
   },
   "qa_notes": [
     "All final runtime matrix and save tests passed on first execution."
-  ]
+  ],
+  "author_confirmation": "Todas las prueba dieron correcto, haz el pr y merge."
 }

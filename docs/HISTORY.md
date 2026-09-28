@@ -18,7 +18,7 @@ and contact serials; repeated loads are idempotent. See SYSTEMS.
 Current native evidence supersedes the previous matrices, retained as
 DIVISOR_RESULTS.json, TOUGHNESS_RESULTS.json and GATE_RESULTS.json in
 assets/validation_43623. The curve revision changes no saved levels or maxima. Release remains 4.36.23 because
-this is an author revision of the same open issue/PR before acceptance.
+all author revisions and acceptance belong to the same issue/PR patch.
 
 - Author requested the third/fourth stage swap, all racial/armor tier values,
   triple magical absorption for magical armor, removal of its mental bonuses,
@@ -38,8 +38,12 @@ this is an author revision of the same open issue/PR before acceptance.
   without an unrelated behavior redesign.
 - Static checks and isolated engine/save results are recorded in
   assets/validation_43623/RESULTS.json. They are not author acceptance.
-- Pending author tests: CA-43623-ARMOR-01, CA-43623-SAVE-01 and CA-43623-TOUGHNESS-01, originating
-  in this release/issue. No confirmation date or passed result is claimed.
+- Author acceptance, confirmed 2026-09-28: CA-43623-ARMOR-01,
+  CA-43623-SAVE-01 and CA-43623-TOUGHNESS-01 (all originating in 4.36.23,
+  issue #52) passed. The author reported all tests successful and authorized
+  PR #53 merge. No exceptions or partial results were reported. This is author
+  confirmation, separate from the 820 native checks and static validation.
+  Confirmed entries were removed from pending_test.txt; no checks remain pending.
 
 ## 4.36.22 — Palomo, Selene and port narrative (#34)
 

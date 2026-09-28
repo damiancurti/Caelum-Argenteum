@@ -66,7 +66,7 @@ the gauchos and rural culture, and the humans the urban porteño society.
 Magical armor loses mental bonuses; shields stay unchanged. Palomo absorbs 77%;
 gates absorb 10/20/30%, with Constitution 0 and Toughness 25/50/75.
 Native combat/siege and save migration pass. Tables: SYSTEMS; evidence:
-assets/validation_43623. All three author checks remain in pending_test.txt.
+assets/validation_43623. Author confirmed all three checks passed 2026-09-28; merge authorized.
 
 **4.36.22 / #34:** revised Palomo/Voice/companion narrative, secondary-wind
 sprite freeze fix and legacy dialogue migration passed author acceptance

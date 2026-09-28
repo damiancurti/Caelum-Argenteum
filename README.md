@@ -18,7 +18,8 @@ Gates now have Constitution 0 and Toughness 25/50/75, with maximum resistance
 5,500/6,500/11,000. Small/large rams need 2/2/7 and 1/2/2 hits respectively;
 cannons still apply Toughness and cannot damage gates. Saved gate resistance
 migrates proportionally, preserving open/broken states. See [validation evidence](assets/validation_43623/RESULTS.json) and
-[pending author checks](pending_test.txt). Full balance tables are in SYSTEMS.
+[author acceptance](docs/HISTORY.md), confirmed 2026-09-28. No author checks
+remain pending. Full balance tables are in SYSTEMS.
 
 Issue [#34](https://github.com/damiancurti/Caelum-Argenteum/issues/34) gives
 Palomo quest 1, optional survival practices and exclusive material-location

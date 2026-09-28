@@ -18,7 +18,7 @@ and contact serials; repeated loads are idempotent. See SYSTEMS.
 Current native evidence supersedes the previous matrices, retained as
 DIVISOR_RESULTS.json, TOUGHNESS_RESULTS.json and GATE_RESULTS.json in
 assets/validation_43623. The curve revision changes no saved levels or maxima. Release remains 4.36.23 because
-this is an author revision of the same open issue/PR before acceptance.
+all author revisions and acceptance belong to the same issue/PR patch.
 
 - Implemented: shield/anatomy/Toughness/armor order; additive racial and equipped
   physical/magical defenses; approved tier values; Palomo 77%; gate 10/20/30%.
@@ -27,8 +27,9 @@ this is an author revision of the same open issue/PR before acceptance.
 - Legacy player/NPC derived statistics migrate idempotently; gate state and
   equipment are preserved. Original saves permit rollback with the previous build.
 - Validation: native numerical/combat/impact/siege checks and save migration;
-  evidence in assets/validation_43623/RESULTS.json. Author acceptance remains
-  CA-43623-ARMOR-01, CA-43623-SAVE-01 and CA-43623-TOUGHNESS-01 in pending_test.txt.
+  evidence in assets/validation_43623/RESULTS.json. The author confirmed
+  CA-43623-ARMOR-01, CA-43623-SAVE-01 and CA-43623-TOUGHNESS-01 passed on
+  2026-09-28 and authorized PR #53 merge. No author checks remain pending.
 - Scope: no siege penetration/explosion, new recipes, shield rebalance, map
   geometry or redesign of the existing player/NPC elemental-DOT asymmetry.
 

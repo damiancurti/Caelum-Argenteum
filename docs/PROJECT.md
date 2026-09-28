@@ -18,7 +18,7 @@ and contact serials; repeated loads are idempotent. See SYSTEMS.
 Current native evidence supersedes the previous matrices, retained as
 DIVISOR_RESULTS.json, TOUGHNESS_RESULTS.json and GATE_RESULTS.json in
 assets/validation_43623. The curve revision changes no saved levels or maxima. Release remains 4.36.23 because
-this is an author revision of the same open issue/PR before acceptance.
+all author revisions and acceptance belong to the same issue/PR patch.
 
 Ordinary damage now resolves shield, anatomy/critical, Toughness, then armor.
 Innate body defense adds to the struck piece's physical/magical percentage.
@@ -30,7 +30,9 @@ Palomo's author-specified innate absorption is 77% physical and magical.
 Player attribute revision 2 and NPC armor revision 1 rebuild derived values
 once on old-save load, without subtracting bonuses from base attributes.
 Evidence: `assets/validation_43623/RESULTS.json`. Static and isolated native
-checks are separate from author acceptance; CA-43623-ARMOR-01, CA-43623-SAVE-01 and CA-43623-TOUGHNESS-01 remain in `pending_test.txt`.
+checks are separate from author acceptance. On 2026-09-28 the author confirmed
+CA-43623-ARMOR-01, CA-43623-SAVE-01 and CA-43623-TOUGHNESS-01 passed and
+authorized PR #53 merge. No author checks remain pending; details are in HISTORY.
 
 ## 4.36.22 — Demo quest narrative (#34)
 
