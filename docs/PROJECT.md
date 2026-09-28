@@ -1,6 +1,22 @@
 # Caelum Argenteum — Project, status and roadmap
 
-Documentation version: **4.36.23** — 2026-09-28.
+Documentation version: **4.36.24** — 2026-09-28.
+
+## 4.36.24 — Quest journal categories and history (#35)
+
+The Journal now filters main/side and active/completed independently, retains
+completed records and projects the demo's existing sewer and four rescue records.
+The author confirmed mansion = main; sewers and port siege = side; each rescue
+is optional, completed by live extraction with payment recorded separately.
+SYSTEMS documents stable IDs, controls, discovery and legacy evidence limits.
+No reward, balance, narrative gate, map or authoritative save schema changes.
+
+Static validator/build and focused Windows GZDoom 4.14.2 evidence are recorded
+in `assets/validation_43624/RESULTS.json`. Old-save load, new-save reload, hub
+travel, actual quest APIs, port encounter/payment checks and English/Spanish
+journal navigation/layout are covered. This is isolated engine evidence, not
+an ordinary campaign acceptance. CA-43624-JOURNAL-01 remains pending; #16's
+full port deployment and #17's playtest export remain separate gates.
 
 ## 4.36.23 — Final armor absorption (#52)
 

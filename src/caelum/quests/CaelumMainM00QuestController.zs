@@ -562,6 +562,7 @@ class CaelumMainM00QuestController : EventHandler
             CaelumMainM00RuloTrial.Update(caelumPlayer);
             CaelumMainM00FoolCapture.Sync(caelumPlayer);
             CaelumMainM00Return.Update(caelumPlayer);
+            CaelumQuestCatalogue.RefreshObserved(caelumPlayer);
             if (level.MapName != "MAP01") continue;
             let record = caelumPlayer.GetPersistentCharacterState(false);
             if (record == null) continue;

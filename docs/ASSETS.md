@@ -1,6 +1,15 @@
 # Caelum Argenteum — Audio and art
 
-Documentation version: **4.36.23** — 2026-09-28.
+Documentation version: **4.36.24** — 2026-09-28.
+
+## 4.36.24 — Quest journal labels (#35)
+
+No new art, audio, maps, fonts or generators. The existing Journal panel and
+navigation present type/status filters and persistent completed records.
+`src/LANGUAGE` adds English/Spanish category, empty-state, sewer and rescue
+labels; `CaelumQuestCatalogue` supplies stable title keys and classifications.
+Native 1280×720 and 1024×768 captures in assets/validation_43624 show the
+existing fonts and layout. These are development evidence, not author acceptance.
 
 ## 4.36.23 — Armor presentation (#52)
 

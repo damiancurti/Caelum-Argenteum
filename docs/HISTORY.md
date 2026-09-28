@@ -1,6 +1,28 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **4.36.23** — 2026-09-28.
+Documentation version: **4.36.24** — 2026-09-28.
+
+## 4.36.24 — Active and completed quest journal (#35)
+
+2026-09-28: the author confirmed mansion/El Loco as main, sewers/As de Copas
+and port/Caballero de Bastos as side, and four independent optional rescues
+completed on live extraction, with payment recorded separately. Added bilingual
+independent type/status filters, completed-record access, safe empty categories
+and direct presentation of existing sewer/rescue facts. Retained IDs 0–3;
+read-only catalogue IDs 4–8 add no authoritative progress storage or rewards.
+
+Validation: static validator and PK3 build; focused native GZDoom 4.14.2 on
+Windows 11/Vulkan with the author's development Doom II IWAD. Quest activation,
+completion, four extractions, opt-in side trials, legacy PK3 load, same-version
+save/load, hub travel, filtered navigation and bilingual standard/widescreen
+presentation pass. Reused #34 port probe verifies actual sealed encounter,
+objective completion and idempotent payments against this code. Detailed logs,
+source/package hashes and captures are in assets/validation_43624.
+
+No migration fabricates unrecorded history; UI snapshots rebuild from accepted
+state. No unrelated gameplay acceptance is reopened. Author acceptance is still
+pending under CA-43624-JOURNAL-01; full port/campaign/export acceptance follows
+#16/#17. No manual pass is inferred from agent tests or delivery.
 
 ## 4.36.23 — Additive body/equipment armor after Toughness (#52)
 

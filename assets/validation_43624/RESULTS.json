@@ -1,0 +1,84 @@
+{
+  "issue": 35,
+  "release": "4.36.24",
+  "date": "2026-09-28",
+  "log_export": "Trailing whitespace removed from exported logs; original raw output remains in build.",
+  "engine": "GZDoom 4.14.2",
+  "platform": "Windows 11, Vulkan",
+  "iwad": "Author-installed Doom II, development only; not distributed",
+  "author_classification": "Mansion main; sewers, port and four independent rescues side; live extraction completes rescue independently of payment. Confirmed 2026-09-28.",
+  "native": {
+    "transitions": {
+      "checks": 17,
+      "failures": 0,
+      "log": "transitions.txt",
+      "scope": "Fresh hidden catalogue; Palomo activation; main completion; sewer visit/defeat; four releases and extractions; opt-in side trial offer/completion."
+    },
+    "legacy": {
+      "checks": 7,
+      "failures": 0,
+      "log": "legacy_en2.txt",
+      "scope": "Actual pre-#35 PK3 save loaded in new PK3; authoritative main, siege, sewer, rescue, reward and equipment records preserved. Final recheck: final_es.txt."
+    },
+    "reload_and_hub": {
+      "checks": 14,
+      "failures": 0,
+      "log": "final_en.txt",
+      "scope": "Current save reload and MAP01 to MAP03 changemap; six unique records and unchanged authoritative slots/payments."
+    },
+    "ui_english": {
+      "checks": 11,
+      "failures": 0,
+      "log": "final_en.txt",
+      "resolution": "1280x720"
+    },
+    "ui_spanish": {
+      "checks": 11,
+      "failures": 0,
+      "log": "final_es.txt",
+      "resolution": "1024x768"
+    },
+    "port": {
+      "checks": 30,
+      "failures": 0,
+      "log": "port2.txt",
+      "scope": "Reused #34 isolated port probe on current source: actual sealed encounter, one objective insufficient, both complete, zero companions valid, repeated rewards rejected."
+    }
+  },
+  "visual_review": "Native captures inspected: English widescreen and Spanish 4:3; rescue completed/payment, main completed and empty main-active filter. No overlap or clipped new text.",
+  "compatibility": "No new authoritative fields, schema or migration writes. IDs 4-8 are read-only projections; saved UI arrays reconstruct through existing refresh/controller. Original source/package baseline hashes are in BASELINE.json.",
+  "legacy_limits": [
+    "No invented missing visit/defeat/rescue history.",
+    "Owned Ace is accepted #33 historical defeat evidence.",
+    "Later map presence or provisional Knight does not prove a completed siege."
+  ],
+  "harness_notes": [
+    "Initial source-directory load was rejected by native PK3 identity checking; corrected to the rebuilt package before claiming legacy results.",
+    "UI test handler was made static to operate on older saves.",
+    "Distinct fixture include names avoided cross-package test-only include collisions.",
+    "Fixtures, saves, old PK3 and engine files remain local in build and are not distributed."
+  ],
+  "pending_author_test": "CA-43624-JOURNAL-01; ordinary campaign route remains author acceptance. Full port deployment/export belong to #16/#17.",
+  "pk3_sha256": "8e63893278e30eb5e3af16b181dc53800c16342f32109133894cf4d41aa5b15e",
+  "tested_sources_sha256": {
+    "src/CVARINFO": "ad84ae82ba670705da0e18ae9ab3ba8b424f8ae2e765bccf396389cd0fbdf34a",
+    "src/LANGUAGE": "6e544bcf5a2eecae5e1abf24a90baa78062a0151f6694fe6c9778046c90ed168",
+    "src/ZSCRIPT": "47a17c6729b41a5d209d272a57fec7d525c5b09739b1b3d4a70083e41bc6a77c",
+    "src/caelum/core/CaelumConstants.zs": "7714e4ab22f1da01a2afd1a3bc57f14847fe19ea076f2c80252d276a23c2e830",
+    "src/caelum/hud/CaelumJournalOverlay.zs": "33e9372434f0a974776dfbc592608f5b70b3ce4a029437d249fb49e09ea53b96",
+    "src/caelum/player/CaelumPlayer.zs": "48d309f9863c5df9485872d06a84c982977754d2675aa88f5fb82f08c14c103d",
+    "src/caelum/quests/CaelumMainM00QuestController.zs": "8d9a5454cb0b8ce2896a386814f0d47c8bb410dde37362cca891c1ec8d8be745",
+    "src/caelum/quests/CaelumQuestCatalogue.zs": "c48dbb23da7924aab1bd756091b92b14c25eda2388f2f2141559ae42ab10fea6",
+    "src/caelum/world/CaelumPhysicalHazards.zs": "8dd5248925d26904c4145f7b66f9db48da375d166579505b19e8a587a078ea3e",
+    "src/caelum/world/CaelumSewerMaze.zs": "3ff94a0818915eb57110ccd73803f26530cec772e01465b7568b8a32e4e4981c"
+  },
+  "final_package": {
+    "files": 6121,
+    "directory_entries": 0,
+    "native_exit": 0,
+    "log": "final_package.txt",
+    "transition_checks": 17,
+    "failures": 0
+  },
+  "evidence_reuse": "Earlier final UI/save/port checks use identical behavioral code. Later changes only update two diagnostic version labels and shorten the active sewer text to avoid premature mention of prisoners. Final PK3 recompiles and repeats all 17 transitions."
+}

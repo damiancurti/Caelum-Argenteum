@@ -1,6 +1,53 @@
 # Caelum Argenteum — Current systems and rules
 
-Documentation version: **4.36.23** — 2026-09-28.
+Documentation version: **4.36.24** — 2026-09-28.
+
+## 4.36.24 — Persistent quest journal (#35)
+
+Author classification confirmed 2026-09-28: the mansion/El Loco quest is main;
+the sewers/As de Copas and port/Caballero de Bastos quests are side quests.
+Each prisoner rescue is a separate optional side quest, completed on live
+extraction before the boss; collection of its existing port reward is separate.
+This follows the Major/main and Minor/side rule, without making rescues mandatory.
+
+The single `CaelumQuestCatalogue` identifies presentation records by stable ID:
+
+| ID | Record | Classification and authoritative source |
+| --- | --- | --- |
+| 0 | Mansion / Where the Lost Awaken | Main; existing `QuestState[0]` and stage/objectives. |
+| 1–2 | Development route/wait trials | Side; existing opt-in quest slots; never offered automatically. |
+| 3 | The port under siege | Side; existing #34 `QuestState[3]`, driven by the registered #16 encounter. |
+| 4 | Through the sewers | Side; recorded sewer visit starts it; confirmed Zupay defeat/escape completes it. An owned Ace is existing #33 legacy evidence of defeat. |
+| 5–8 | Leonor, Rufino, Santos, Leandro rescues | Side; following = active, extracted alive = completed. Existing successful payment also proves historical rescue. Captive = hidden. |
+
+IDs 4–8 are read-only catalogue identities over existing world/rescue fields,
+not new mutable quest slots. No rewards, mechanics, objectives or map markers
+are introduced. The already-recorded death before extraction uses the existing
+Failed display under Other, with explanatory text; no new failure rule runs.
+A completed rescue states whether its port payment was actually collected.
+Optional mentor practices stay in the existing mansion detail, not duplicated
+as independently rewarded quests. The provisional Knight capture is not evidence
+of siege victory: quest 3 stays hidden until a real registered port encounter.
+
+C/right trigger cycles All/Main/Side. V/left trigger independently cycles
+All/Active/Completed/Other. Other preserves existing offered/failed/abandoned
+entries. Arrows select only matching records; Left/Right still crosses journal
+sections at a boundary, including an empty category. PgUp/PgDn and shoulders
+always change sections; F/Y opens detail, Up/Down reads it, Tab/B returns/closes.
+The title, classification and actual status remain visible; counters count only
+matching records. Filter changes reset detail scrolling and abandonment prompts.
+Completed entries stay selectable. No undiscovered title appears in empty views.
+The completed mansion summary no longer prompts further Palomo/Fool actions.
+
+Compatibility: the authoritative save schema and all stored IDs remain unchanged.
+Existing snapshot refresh reconstructs the larger disposable UI arrays from
+recorded facts; the existing saved controller also refreshes changed observations.
+No migration writes, new progress flags or revision are necessary. Repeated
+refresh, load and travel cannot grant rewards or reset tasks. Old saves without
+visit/defeat/card/rescue evidence do not gain invented historical entries; later
+maps or the provisional Knight alone do not prove sewer/siege completion.
+Native pre-#35 PK3 load, same-version reload and hub travel pass. Keep original
+saves as recovery copies. Full author acceptance remains CA-43624-JOURNAL-01.
 
 ## 4.36.23 — Armor last, body absorption and gate defense (#52)
 
