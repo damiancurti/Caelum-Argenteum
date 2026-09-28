@@ -20,9 +20,14 @@ objective completion and idempotent payments against this code. Detailed logs,
 source/package hashes and captures are in assets/validation_43624.
 
 No migration fabricates unrecorded history; UI snapshots rebuild from accepted
-state. No unrelated gameplay acceptance is reopened. Author acceptance is still
-pending under CA-43624-JOURNAL-01; full port/campaign/export acceptance follows
-#16/#17. No manual pass is inferred from agent tests or delivery.
+state. No unrelated gameplay acceptance is reopened.
+
+Author acceptance — 2026-09-28: Damián Curti explicitly confirmed that all
+CA-43624-JOURNAL-01 tests passed (origin 4.36.24, issue #35), and authorized
+merging PR #54 and closing #35. This confirms the ordinary journal/campaign
+checks, independently of the native evidence above. The entry was removed
+from pending_test.txt in this update; no author checks remain pending.
+Full port deployment and export acceptance remain separate under #16/#17.
 
 ## 4.36.23 — Additive body/equipment armor after Toughness (#52)
 

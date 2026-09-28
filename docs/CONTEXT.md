@@ -67,8 +67,9 @@ main/side records. Author confirmed mansion = main; sewers/port = side; four
 optional rescues complete on live extraction, with payment shown separately.
 The catalogue reads existing authoritative state without duplicating progress
 or rewards. Legacy/reload/hub and focused UI/engine checks pass; evidence:
-assets/validation_43624. CA-43624-JOURNAL-01 awaits author acceptance; full port
-integration/export remain #16/#17. Controls and legacy limits: SYSTEMS.
+assets/validation_43624. The author confirmed CA-43624-JOURNAL-01 passed on
+2026-09-28 and authorized merge/closure. Full port integration/export remain
+#16/#17. Controls and legacy limits: SYSTEMS.
 
 **4.36.23 / #52:** Toughness subtracts uncapped L*(L+1)/101 maximum-health percentage points before armor.
 Magical armor loses mental bonuses; shields stay unchanged. Palomo absorbs 77%;

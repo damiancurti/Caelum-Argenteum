@@ -16,7 +16,9 @@ Mansion is main; sewers, port siege and rescues are side quests. Live extraction
 completes a rescue; its port reward remains separate. Existing saves retain
 recorded progress without duplicate flags or rewards. See
 [validation evidence](assets/validation_43624/RESULTS.json) and
-[pending author check](pending_test.txt). Full port deployment remains #16.
+[author acceptance](docs/HISTORY.md), confirmed 2026-09-28 for
+CA-43624-JOURNAL-01. No author checks remain pending. Full port deployment
+remains #16.
 
 Issue [#52](https://github.com/damiancurti/Caelum-Argenteum/issues/52) applies
 armor absorption after Toughness, whose historical curve L*(L+1)/101 subtracts

@@ -15,8 +15,10 @@ Static validator/build and focused Windows GZDoom 4.14.2 evidence are recorded
 in `assets/validation_43624/RESULTS.json`. Old-save load, new-save reload, hub
 travel, actual quest APIs, port encounter/payment checks and English/Spanish
 journal navigation/layout are covered. This is isolated engine evidence, not
-an ordinary campaign acceptance. CA-43624-JOURNAL-01 remains pending; #16's
-full port deployment and #17's playtest export remain separate gates.
+an ordinary campaign acceptance. Separately, the author confirmed all
+CA-43624-JOURNAL-01 checks passed on 2026-09-28 and authorized PR #54 merge
+and #35 closure. Full port deployment (#16) and playtest export (#17) remain
+separate gates.
 
 ## 4.36.23 — Final armor absorption (#52)
 

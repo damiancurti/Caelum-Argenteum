@@ -47,7 +47,8 @@ refresh, load and travel cannot grant rewards or reset tasks. Old saves without
 visit/defeat/card/rescue evidence do not gain invented historical entries; later
 maps or the provisional Knight alone do not prove sewer/siege completion.
 Native pre-#35 PK3 load, same-version reload and hub travel pass. Keep original
-saves as recovery copies. Full author acceptance remains CA-43624-JOURNAL-01.
+saves as recovery copies. The author confirmed CA-43624-JOURNAL-01 passed
+on 2026-09-28; its result is recorded in HISTORY.
 
 ## 4.36.23 — Armor last, body absorption and gate defense (#52)
 

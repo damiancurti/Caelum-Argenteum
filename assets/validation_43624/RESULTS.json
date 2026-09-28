@@ -58,7 +58,6 @@
     "Distinct fixture include names avoided cross-package test-only include collisions.",
     "Fixtures, saves, old PK3 and engine files remain local in build and are not distributed."
   ],
-  "pending_author_test": "CA-43624-JOURNAL-01; ordinary campaign route remains author acceptance. Full port deployment/export belong to #16/#17.",
   "pk3_sha256": "8e63893278e30eb5e3af16b181dc53800c16342f32109133894cf4d41aa5b15e",
   "tested_sources_sha256": {
     "src/CVARINFO": "ad84ae82ba670705da0e18ae9ab3ba8b424f8ae2e765bccf396389cd0fbdf34a",
@@ -80,5 +79,15 @@
     "transition_checks": 17,
     "failures": 0
   },
-  "evidence_reuse": "Earlier final UI/save/port checks use identical behavioral code. Later changes only update two diagnostic version labels and shorten the active sewer text to avoid premature mention of prisoners. Final PK3 recompiles and repeats all 17 transitions."
+  "evidence_reuse": "Earlier final UI/save/port checks use identical behavioral code. Later changes only update two diagnostic version labels and shorten the active sewer text to avoid premature mention of prisoners. Final PK3 recompiles and repeats all 17 transitions.",
+  "author_acceptance": {
+    "id": "CA-43624-JOURNAL-01",
+    "origin_release": "4.36.24",
+    "issue": 35,
+    "result": "passed",
+    "confirmed_by": "Damián Curti",
+    "date": "2026-09-28",
+    "confirmation": "All tests passed; close the issue and merge.",
+    "qualification": "Full port deployment and playtest export remain separate under #16/#17."
+  }
 }
