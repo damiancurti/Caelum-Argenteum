@@ -1,4 +1,4 @@
-// Masas de #19 y atributos finales de #21 aprobados el 2026-09-27.
+// Masas de #19 y atributos de portones aprobados en #52 el 2026-09-28.
 class CaelumGateData : Object
 {
     const WOOD = 0;
@@ -9,7 +9,8 @@ class CaelumGateData : Object
     const THICKNESS = 2.56; // Madera de 80 mm.
     const HOLD_TICS = 105; // Mismo tiempo de CaelumSlidingDoorLeaf.
 
-    const BALANCE_REVISION = 1;
+    const BALANCE_REVISION = 2;
+    const CONSTITUTION = 0.0;
 
     static double ArmorDefense(int material)
     {
@@ -21,13 +22,13 @@ class CaelumGateData : Object
         }
     }
 
-    static double AttributeLevel(int material)
+    static double ToughnessLevel(int material)
     {
         switch (material)
         {
-            case REINFORCED: return 100;
-            case ARMORED: return 200;
-            default: return 50;
+            case REINFORCED: return 50;
+            case ARMORED: return 75;
+            default: return 25;
         }
     }
 

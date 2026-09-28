@@ -64,9 +64,9 @@ the gauchos and rural culture, and the humans the urban porteño society.
 
 **4.36.23 / #52:** Toughness subtracts maximum-health percentage points before final armor.
 Magical armor loses mental bonuses; shields stay unchanged. Palomo absorbs 77%;
-gates 10/20/30%. Native combat/siege and idempotent old-save checks pass.
-Tables: SYSTEMS. Evidence: assets/validation_43623. Author checks
-CA-43623-ARMOR-01 and CA-43623-SAVE-01 remain in pending_test.txt.
+gates absorb 10/20/30%, with Constitution 0 and Toughness 25/50/75.
+Native combat/siege and save migration pass. Tables: SYSTEMS; evidence:
+assets/validation_43623. All three author checks remain in pending_test.txt.
 
 **4.36.22 / #34:** revised Palomo/Voice/companion narrative, secondary-wind
 sprite freeze fix and legacy dialogue migration passed author acceptance

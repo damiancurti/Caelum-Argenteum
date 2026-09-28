@@ -76,25 +76,33 @@ ordinary defense path; NPC DOT enters that path as physical. This patch does
 not claim universal DOT parity or redesign that separate rule.
 
 Gate defense is structural, not racial: common/reinforced/armored gates absorb
-10/20/30% after Toughness. Their masses remain 550/650/1100 kg, Toughness and
-Constitution 50/100/200, and maximum resistance 75,625/334,750/2,222,000.
+10/20/30% after Toughness. Final author revision on 2026-09-28 sets Constitution
+to 0 for every material and Toughness to 25/50/75. Masses remain 550/650/1100 kg.
+Maximum resistance is therefore 5,500/6,500/11,000, using
+`H = int(10 * (100 + Constitution*(Constitution+1)/2) * mass/100)`.
+The proposed cannon bypass of Toughness was explicitly excluded.
 For frontal stationary contacts at existing ram speed 37.780229 m/s and cannon
 contact speed 500 m/s, each cell is final damage / hits to break an intact gate:
 
 | Attack | Common | Reinforced | Armored |
 | --- | ---: | ---: | ---: |
-| Small ram | 38,959 / 2 | 3,312 / 102 | 0 / cannot break |
-| Large ram | 62,525 / 2 | 107,369 / 4 | 0 / cannot break |
+| Small ram | 4,071 / 2 | 2,664 / 3 | 354 / 32 |
+| Large ram | 5,500 / 1 | 4,685 / 2 | 4,429 / 3 |
 | Cannon (4.3 kg inert round) | 0 / cannot break | 0 / cannot break | 0 / cannot break |
 
 Absorption multiplies the unrounded post-Toughness damage; round once at the
 end. The whole-gate impulse model remains, without penetration or explosion.
-These values supersede the initial #52 divisor table as well as the historical
-4.36.19 damage/hit counts. The cannon does not exceed any gate threshold; neither
-ram exceeds armored-gate Toughness 200. These are consequences of restoring the
-requested rule with unchanged masses, speeds and attributes, not an additional
-siege rebalance. Gate maximum resistance, state and duplicate-contact
-serials survive loading; defense is read from data, not stored in each gate.
+The large ram calculates 5,785 damage against common gates, but actual health
+loss is capped at their remaining 5,500. All other listed first-hit values are
+below the intact maximum. Repeated hit counts use the same contact conditions.
+These values supersede both previous #52 tables and historical 4.36.19 damage.
+The cannon does not exceed any gate threshold; masses and speeds remain unchanged.
+Gate `BalanceRevision=2` migrates remaining-health ratio to the lower maximum,
+rounded once with minimum 1 for living gates, without closing opened gates,
+reviving broken gates, or resetting timers and duplicate-contact serials.
+Repeated refresh/load does not rescale again. Explicit legacy-recovery revision
+0 keeps its former attributes; original saves and the previous PK3 permit rollback.
+Defense is read from data, not stored in each gate.
 
 Player `AttributeBalanceVersion=2` and NPC `ArmorBalanceRevision=1` recalculate
 derived values from preserved base data once on load. Attribute bonuses are
@@ -106,9 +114,11 @@ and original-save rollback are distinct checks in validation_43623.
 This formula revision introduces no new serialized fields or reset: legacy
 `DamageResistanceMultiplier` and gate `RetainedDamage` remain for compatibility
 but no receiving path reads them. Existing 4.36.22 and initial 4.36.23 saves
-use the new rule immediately without changing maximum health, equipment or gates.
-Initial divisor evidence is preserved in DIVISOR_RESULTS.json; current results
-are in RESULTS.json and toughness_revision/.
+use the new rule immediately; the final gate revision separately migrates gate
+maximum/remaining health as described above. Character maxima and equipment are
+unchanged by the gate revision. Initial evidence is preserved in
+DIVISOR_RESULTS.json and TOUGHNESS_RESULTS.json; current results are in
+RESULTS.json and gate_revision/.
 
 ## 4.36.22 — Quest ownership and persistent narrative events (#34)
 

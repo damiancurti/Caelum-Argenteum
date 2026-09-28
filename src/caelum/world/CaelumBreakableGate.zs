@@ -63,13 +63,14 @@ class CaelumBreakableGate : Actor
         // Migrar resistencia proporcional sin reparar, cerrar ni resucitar.
         double remaining = StructuralMaximum > 0
             ? Clamp(double(health) / StructuralMaximum, 0.0, 1.0) : 1.0;
-        double levelValue = CaelumGateData.AttributeLevel(args[1]);
+        Toughness = CaelumGateData.ToughnessLevel(args[1]);
+        Constitution = CaelumGateData.CONSTITUTION;
         if (LegacyBalanceForRecovery)
         {
             double reduction = CaelumGateData.LegacyReduction(args[1]);
-            levelValue = (Sqrt(1.0 + 20200.0 * reduction / (1.0 - reduction)) - 1.0) / 2.0;
+            Toughness = (Sqrt(1.0 + 20200.0 * reduction / (1.0 - reduction)) - 1.0) / 2.0;
+            Constitution = Toughness;
         }
-        Toughness = levelValue; Constitution = levelValue;
         let stats = new("CaelumDerivedStats");
         RetainedDamage = 100.0 / stats.CalculateType4Percent(Toughness);
         StructuralMaximum = Max(1, int(CaelumConstants.HEALTH_ANIMA_DAMAGE_SCALE
@@ -222,7 +223,7 @@ class CaelumBreakableGate : Actor
 
     // Contrato para #20/#21: masa de la pieza móvil, velocidad real MU/tic y
     // normal de contacto. El emisor incrementa serial una vez por golpe/disparo.
-    // No usar masa de chasis ni velocidad nominal; no volver a aplicar Tipo 4.
+    // No usar masa de chasis ni velocidad nominal; no volver a aplicar Dureza.
     int ApplySiegeImpact(Actor movingSource, int serial, double movingMass,
         vector3 contactVelocity, vector3 normal)
     {

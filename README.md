@@ -14,8 +14,10 @@ rebalances all armor tiers and removes magical armor's mental attribute bonuses.
 Palomo absorbs 77% of either damage category; gates gain 10/20/30% defense.
 Shields retain their rules. Older saves rebuild derived attributes once while
 preserving equipment and gate state; keep original saves for rollback.
-With current siege inputs, cannons cannot damage gates and neither ram damages
-armored gates. See [validation evidence](assets/validation_43623/RESULTS.json) and
+Gates now have Constitution 0 and Toughness 25/50/75, with maximum resistance
+5,500/6,500/11,000. Small/large rams need 2/3/32 and 1/2/3 hits respectively;
+cannons still apply Toughness and cannot damage gates. Saved gate resistance
+migrates proportionally, preserving open/broken states. See [validation evidence](assets/validation_43623/RESULTS.json) and
 [pending author checks](pending_test.txt). Full balance tables are in SYSTEMS.
 
 Issue [#34](https://github.com/damiancurti/Caelum-Argenteum/issues/34) gives
