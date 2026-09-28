@@ -1,6 +1,6 @@
 CAELUM ARGENTEUM — STORY AND MAP01
 
-Documentation version: **4.36.24** — 2026-09-28.
+Documentation version: **4.36.24a** — 2026-09-28.
 
 ## 4.36.24 — Journal classification (#35)
 
@@ -3588,3 +3588,4 @@ resolved before all the final data are set:
 =============================================================================== END OF
 SPECIFICATION — CONSOLIDATION 4.33.0g
 ===============================================================================
+

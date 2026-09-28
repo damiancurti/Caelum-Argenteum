@@ -1,6 +1,6 @@
 # AGENTS.md — Caelum Argenteum
 
-Documentation version: **4.36.24** — 2026-09-28.
+Documentation version: **4.36.24a** — 2026-09-28.
 
 Startup guide for AI agents and human contributors. This file describes **how
 to work** on the project, not what balance or design it contains. Balance
@@ -238,3 +238,4 @@ lifecycle permits removing confirmed entries, not deleting unrelated files.
 When there are no pending tests, keep the tracked file empty; no boilerplate.
 Agent-only checks and development backlog belong in PR evidence and TASKS,
 respectively, rather than the author queue.
+

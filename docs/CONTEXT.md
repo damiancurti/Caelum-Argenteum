@@ -1,6 +1,12 @@
 # CONTEXT.md — Ultra-condensed summary of Caelum Argenteum
 
-Documentation version: **4.36.24** — 2026-09-28.
+Documentation version: **4.36.24a** — 2026-09-28.
+
+## 4.36.24a — Repository rights (#55)
+
+Root LICENSE.md now makes the project's all-rights-reserved status explicit,
+subject to third-party terms and legal/platform exceptions. Documentation-only;
+the accepted 4.36.24 gameplay state below is unchanged.
 
 Summary of `PROJECT.md`, `SYSTEMS.md`, `MAP01.txt`, `ASSETS.md`, `HISTORY.md`
 and the repository README.
@@ -296,3 +302,4 @@ its release in [HISTORY.md](HISTORY.md); remove that entry in the same update.
 Partial, failed and unconfirmed checks remain. An empty tracked queue is valid.
 All seven docs and AGENTS declare the current version; ancillary guides without
 a header inherit README's version. Historical labels retain their original meaning.
+

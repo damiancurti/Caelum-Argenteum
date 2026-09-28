@@ -1,6 +1,17 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **4.36.24** — 2026-09-28.
+Documentation version: **4.36.24a** — 2026-09-28.
+
+## 4.36.24a — Proprietary rights notice (#55)
+
+2026-09-28: the author requested LICENSE.md with all rights reserved and
+explicitly authorized issue creation, merge and closure. Added a scoped
+copyright notice for Damián Curti, exceptions for third-party terms, applicable
+law, GitHub terms and separate permissions, and a README link. Updated current
+version markers and regenerated the document index. Validation is limited to
+document consistency, index freshness and the documentation-only diff; no
+engine or manual gameplay test is required or claimed. Existing third-party
+notices, runtime files and outstanding author checks are preserved.
 
 ## 4.36.24 — Active and completed quest journal (#35)
 
@@ -19071,3 +19082,4 @@ Brief evidence from the author to accept 0h:
 
 Later note: the migration was accepted by the author; the previous manual steps are
 preserved as a history of that delivery.
+

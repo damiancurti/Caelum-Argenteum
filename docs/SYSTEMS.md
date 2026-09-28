@@ -1,6 +1,6 @@
 # Caelum Argenteum — Current systems and rules
 
-Documentation version: **4.36.24** — 2026-09-28.
+Documentation version: **4.36.24a** — 2026-09-28.
 
 ## 4.36.24 — Persistent quest journal (#35)
 
@@ -4630,3 +4630,4 @@ CaelumExitMenu opens native confirmation and plays menu_strings_start while the 
 still active. Cancel returns to the parent menu. QuitSound and the Exit button of the
 map retain the same resource; the singular mark avoids overlapping two instances of
 strings.
+

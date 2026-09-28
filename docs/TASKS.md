@@ -1,6 +1,13 @@
 # TASKS.md — Active tasks
 
-Documentation version: **4.36.24** — 2026-09-28.
+Documentation version: **4.36.24a** — 2026-09-28.
+
+## Issue #55 — Proprietary rights notice (4.36.24a)
+
+Implemented: root LICENSE.md, README link, scoped reservation of the author's
+rights and explicit preservation of third-party terms. Validate documentation
+markers, index freshness and changed paths before the authorized merge/closure.
+No gameplay acceptance check is added.
 
 ## Issue #35 — Quest journal (4.36.24)
 
@@ -497,3 +504,4 @@ integration before extracting Impact Physics.
 - **Acceptance criteria:** validate the integration of the mechanisms in the
   gallery, persistence, and reset; extract Impact Physics only after
   validating its use in Caelum. Numerical criteria remain PENDING.
+

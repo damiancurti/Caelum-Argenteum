@@ -1,6 +1,14 @@
 # Caelum Argenteum — Audio and art
 
-Documentation version: **4.36.24** — 2026-09-28.
+Documentation version: **4.36.24a** — 2026-09-28.
+
+## 4.36.24a — Rights and attribution (#55)
+
+Root [LICENSE.md](../LICENSE.md) reserves the author's rights in original
+project materials to the extent owned. It does not relicense external assets,
+public-domain materials, GZDoom or development dependencies. Existing
+`src/licenses/` notices and the provenance records below remain applicable;
+previously pending external-license verification remains pending.
 
 ## 4.36.24 — Quest journal labels (#35)
 
@@ -1724,3 +1732,4 @@ folder. `--help` displays configurable destinations. Generating resources is a d
 editing operation, independent of compiling or playing; generators are not executed when
 applying the patch. The build packages only src. The previous patch-specific utilities
 are left in the historical backup.
+

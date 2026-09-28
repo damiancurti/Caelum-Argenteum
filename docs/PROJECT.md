@@ -1,6 +1,14 @@
 # Caelum Argenteum — Project, status and roadmap
 
-Documentation version: **4.36.24** — 2026-09-28.
+Documentation version: **4.36.24a** — 2026-09-28.
+
+## 4.36.24a — Proprietary rights notice (#55)
+
+The author requested an explicit all-rights-reserved notice. Root
+[LICENSE.md](../LICENSE.md) covers only rights owned by Damián Curti, preserves
+third-party terms and statutory/platform exceptions, and grants no general
+reuse license. README links the notice. This documentation-only patch leaves
+runtime behavior and existing acceptance unchanged.
 
 ## 4.36.24 — Quest journal categories and history (#35)
 
@@ -3088,3 +3096,4 @@ implemented; it does not make the remaining branches playable. Isolated trials u
 4.14.2/OpenGL with private instrumentation. They do not credit duration of a game or
 cooperative. Engine, IWAD, fixtures, captures and saves are left out of patch; 0m
 validation in HISTORY.md.
+
