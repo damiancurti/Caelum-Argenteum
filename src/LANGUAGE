@@ -4153,3 +4153,47 @@ CA_DEMO_BULL_2_3 = "Desde el suelo, cada pisada sonaba enorme. Ya no podía ayud
 CA_DEMO_BULL_3_1 = "Los golpes pasarán. Me alegra que lo hayamos enfrentado juntos. Pedir ayuda también exige advertir cuándo esa ayuda empieza a doler.";
 CA_DEMO_BULL_3_2 = "Estuve muy cerca de no poder seguir ayudándote. Agradezcamos el resultado sin fingir que fue sencillo para todos.";
 CA_DEMO_BULL_3_3 = "Tuve que sentarme y dejar el resto en tus manos. Fue difícil. Gracias por terminar; cuidá a quienes se ponen a tu lado.";
+
+[enu default]
+// #35: filtros y registros de misiones.
+CA_Q_KIND_MAIN = "Main";
+CA_Q_KIND_SIDE = "Side";
+CA_Q_FILTER_ALL = "All";
+CA_Q_FILTER_OTHER = "Other";
+CA_Q_FILTER_TYPE = "C/RT Type";
+CA_Q_FILTER_STATE = "V/LT Status";
+CA_Q_FILTER_EMPTY = "No quests match these filters.";
+CA_Q_SEWER_TITLE = "Through the sewers";
+CA_Q_SEWER_ACTIVE = "Find a way through the sewers.";
+CA_Q_SEWER_DONE = "The Zupay no longer blocks the way through the sewers.";
+CA_Q_RESCUE_0 = "Rescue Leonor Benítez";
+CA_Q_RESCUE_1 = "Rescue Rufino Acosta";
+CA_Q_RESCUE_2 = "Rescue Santos Barrera";
+CA_Q_RESCUE_3 = "Rescue Leandro Farías";
+CA_Q_RESCUE_ACTIVE = "Escort this prisoner alive to the refuge before the final fight. The rescue does not require defeating the sewer boss.";
+CA_Q_RESCUE_DONE = "This prisoner reached the refuge alive. Rescue completed.";
+CA_Q_RESCUE_DEAD = "This prisoner died before reaching safety. No rescue or payment was earned.";
+CA_Q_RESCUE_PAID = "The port reward has been collected.";
+CA_Q_RESCUE_UNPAID = "The port reward has not been collected. Speak with the survivor at the port.";
+
+[es]
+// #35: filtros y registros de misiones.
+CA_Q_KIND_MAIN = "Principal";
+CA_Q_KIND_SIDE = "Secundaria";
+CA_Q_FILTER_ALL = "Todas";
+CA_Q_FILTER_OTHER = "Otros";
+CA_Q_FILTER_TYPE = "C/RT Tipo";
+CA_Q_FILTER_STATE = "V/LT Estado";
+CA_Q_FILTER_EMPTY = "No hay misiones con estos filtros.";
+CA_Q_SEWER_TITLE = "A través de las cloacas";
+CA_Q_SEWER_ACTIVE = "Buscá un camino por las cloacas.";
+CA_Q_SEWER_DONE = "El Zupay ya no bloquea el paso por las cloacas.";
+CA_Q_RESCUE_0 = "Rescatar a Leonor Benítez";
+CA_Q_RESCUE_1 = "Rescatar a Rufino Acosta";
+CA_Q_RESCUE_2 = "Rescatar a Santos Barrera";
+CA_Q_RESCUE_3 = "Rescatar a Leandro Farías";
+CA_Q_RESCUE_ACTIVE = "Escoltá a este prisionero con vida hasta el refugio anterior al combate final. El rescate no requiere derrotar al jefe de las cloacas.";
+CA_Q_RESCUE_DONE = "Este prisionero llegó con vida al refugio. Rescate completado.";
+CA_Q_RESCUE_DEAD = "Este prisionero murió antes de llegar a salvo. No se obtuvo el rescate ni su pago.";
+CA_Q_RESCUE_PAID = "La recompensa del puerto ya fue cobrada.";
+CA_Q_RESCUE_UNPAID = "La recompensa del puerto sigue sin cobrar. Hablá con el sobreviviente en el puerto.";

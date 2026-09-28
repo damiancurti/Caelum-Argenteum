@@ -1,6 +1,6 @@
 # CONTEXT.md — Ultra-condensed summary of Caelum Argenteum
 
-Documentation version: **4.36.23** — 2026-09-28.
+Documentation version: **4.36.24** — 2026-09-28.
 
 Summary of `PROJECT.md`, `SYSTEMS.md`, `MAP01.txt`, `ASSETS.md`, `HISTORY.md`
 and the repository README.
@@ -61,6 +61,15 @@ the gauchos and rural culture, and the humans the urban porteño society.
   localization, project typography, and hub transitions.
 
 ## Current status
+
+**4.36.24 / #35:** Journal type/status filters retain active and completed
+main/side records. Author confirmed mansion = main; sewers/port = side; four
+optional rescues complete on live extraction, with payment shown separately.
+The catalogue reads existing authoritative state without duplicating progress
+or rewards. Legacy/reload/hub and focused UI/engine checks pass; evidence:
+assets/validation_43624. The author confirmed CA-43624-JOURNAL-01 passed on
+2026-09-28 and authorized merge/closure. Full port integration/export remain
+#16/#17. Controls and legacy limits: SYSTEMS.
 
 **4.36.23 / #52:** Toughness subtracts uncapped L*(L+1)/101 maximum-health percentage points before armor.
 Magical armor loses mental bonuses; shields stay unchanged. Palomo absorbs 77%;
@@ -125,28 +134,19 @@ and prevents their automatic respawn. Table contents become pickups through
 the existing destructor. Other maps and save schemas remain unchanged; exact
 historical cannon scale remains unverified.
 
-The preceding **4.36.14** implements #31: the author-selected combat-pain
-sounds, the supplied Suno dialogue-opening cue and the local sewer/port/coast
-music are integrated while all unused stock and MP3 backups remain preserved
-and unbound. The former MAP01 music is reserved for future chapter-end story
-intermissions; MAP01 now uses the former MAP02 music directly, MAP02 uses the
-new sewer track, MAP06 uses the new port track and MAP07 uses the new coast
-track. GZDoom 4.14.2 compiles the package and `validate_project.py` passes; the
-author confirmed `CA-43614-AUDIO-01` passed on 2026-09-25.
+**4.36.14 / #31:** author-selected combat pain, dialogue-opening cue and
+sewer/port/coast music are integrated. Sources, unused backups and the former
+mansion track remain preserved; ASSETS retains exact bindings and HISTORY
+records CA-43614-AUDIO-01, passed 2026-09-25.
 
 Issue **#18** supplies the accepted deterministic siege art and cleared MAP03
 gallery. ASSETS retains its models, sprite/state bindings and generator details;
 #19-#21 own the subsequent mechanics and balance.
 
-The preceding **4.36.9** implements #15: the author-approved 78-card Tarot
-front package is integrated under `src/graphics/caelum/tarot`, the shared card
-back is preserved, and each front is bound to its persistent card ID. The
-Journal now shows the correct owned front (El Loco and the Ace of Cups) with
-left/right selection among owned cards, and a separate development preview can
-inspect any imported front without granting the card or campaign progress. The
-Ace of Cups remains card 36 and no new powers or rewards are added.
-GZDoom 4.14.2 compiles the package and `validate_project.py` passes; the
-author confirmed `CA-4369-TAROT-ART-01` passed on 2026-09-25.
+**4.36.9 / #15:** all 78 approved Tarot fronts use persistent card IDs and
+the shared back. Journal selection shows owned fronts; the separate development
+preview grants no progress. Ace remains ID 36; no powers/rewards added.
+CA-4369-TAROT-ART-01 passed 2026-09-25; ASSETS/HISTORY retain full evidence.
 
 The preceding **4.36.8** implements #14: the four MAP02 prisoners can be
 released, then follow and fight alongside the player with their source combat

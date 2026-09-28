@@ -1,0 +1,9 @@
+{
+  "commit": "134b4980433c3aa030116412864bf5721c621886",
+  "pk3_sha256": "72da220ad01ec819898d9c5ceef0a225756e2622d25ddbdbd71a19dc4620cb28",
+  "source_checks": {
+    "caelum/core/CaelumConstants.zs": true,
+    "caelum/equipment/CaelumPersistentCharacterState.zs": true,
+    "caelum/quests/CaelumDemoNarrative.zs": true
+  }
+}

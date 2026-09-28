@@ -169,16 +169,57 @@ class CaelumJournalOverlay : EventHandler
         if (scroll != null) scroll.SetInt(0);
     }
 
+    ui int QuestFilter(String name, int maximum)
+    {
+        let value = CVar.GetCVar(name, players[consoleplayer]);
+        return value == null ? 0 : Clamp(value.GetInt(), 0, maximum);
+    }
+
+    ui bool QuestVisible(CaelumPlayer user, int id)
+    {
+        return user != null && CaelumQuestCatalogue.Matches(id, user.JournalQuestState[id],
+            QuestFilter("ca_journal_quest_kind", 2), QuestFilter("ca_journal_quest_status", 3));
+    }
+
+    ui void CycleQuestFilter(bool kind)
+    {
+        String name = kind ? "ca_journal_quest_kind" : "ca_journal_quest_status";
+        int maximum = kind ? 2 : 3;
+        let value = CVar.GetCVar(name, players[consoleplayer]);
+        if (value != null) value.SetInt((QuestFilter(name, maximum) + 1) % (maximum + 1));
+        SetQuestDetailOpen(false);
+        SendNetworkEvent("ca_social_refresh");
+        SendNetworkEvent("ca_journal_menu_move_sound");
+    }
+
+    ui String QuestClassification(CaelumPlayer user, int id)
+    {
+        return StringTable.Localize(CaelumQuestCatalogue.IsMain(id) ? "CA_Q_KIND_MAIN" : "CA_Q_KIND_SIDE", false)
+            .. " | " .. StringTable.Localize(GetQuestStateKey(user.JournalQuestState[id]), false);
+    }
+
+    ui void DrawQuestFilters()
+    {
+        int kind = QuestFilter("ca_journal_quest_kind", 2);
+        int status = QuestFilter("ca_journal_quest_status", 3);
+        DrawCenteredText(SmallFont, Font.CR_GRAY, 320, 110,
+            StringTable.Localize("CA_Q_FILTER_TYPE", false) .. ": "
+            .. StringTable.Localize(kind == 0 ? "CA_Q_FILTER_ALL" : kind == 1 ? "CA_Q_KIND_MAIN" : "CA_Q_KIND_SIDE", false)
+            .. " | " .. StringTable.Localize("CA_Q_FILTER_STATE", false) .. ": "
+            .. StringTable.Localize(status == 0 ? "CA_Q_FILTER_ALL" : status == 1 ? "CA_QUEST_STATUS_ACTIVE"
+                : status == 2 ? "CA_QUEST_STATUS_COMPLETED" : "CA_Q_FILTER_OTHER", false));
+    }
+
     ui int GetVisibleQuestId(CaelumPlayer localPlayer)
     {
         if (localPlayer == null) return -1;
         let selection = CVar.GetCVar("ca_journal_quest_selected", players[consoleplayer]);
         int chosen = selection == null ? 0 : selection.GetInt();
         if (chosen >= 0 && chosen < CaelumConstants.QUEST_DEFINED_COUNT
-            && localPlayer.JournalQuestState[chosen] != CaelumConstants.QUEST_STATE_UNDISCOVERED)
+            && QuestVisible(localPlayer, chosen))
             return chosen;
         for (int id = 0; id < CaelumConstants.QUEST_DEFINED_COUNT; id++)
-            if (localPlayer.JournalQuestState[id] != CaelumConstants.QUEST_STATE_UNDISCOVERED) return id;
+            if (QuestVisible(localPlayer, id)) return id;
         return -1;
     }
 
@@ -201,7 +242,7 @@ class CaelumJournalOverlay : EventHandler
                 return false;
             }
             id = (id + CaelumConstants.QUEST_DEFINED_COUNT * 2) % CaelumConstants.QUEST_DEFINED_COUNT;
-            if (user.JournalQuestState[id] == CaelumConstants.QUEST_STATE_UNDISCOVERED) continue;
+            if (!QuestVisible(user, id)) continue;
             selection.SetInt(id);
             SetQuestDetailOpen(false);
             return true;
@@ -341,6 +382,20 @@ class CaelumJournalOverlay : EventHandler
 
     ui String GetQuestDetailText(CaelumPlayer localPlayer, int questId)
     {
+        if (questId == CaelumConstants.QUEST_SEWERS)
+            return StringTable.Localize(localPlayer.JournalQuestState[questId] == CaelumConstants.QUEST_STATE_COMPLETED
+                ? "CA_Q_SEWER_DONE" : "CA_Q_SEWER_ACTIVE", false);
+        if (CaelumQuestCatalogue.IsRescue(questId))
+        {
+            int state = localPlayer.JournalQuestState[questId];
+            String text = StringTable.Localize(state == CaelumConstants.QUEST_STATE_COMPLETED
+                ? "CA_Q_RESCUE_DONE" : state == CaelumConstants.QUEST_STATE_FAILED
+                ? "CA_Q_RESCUE_DEAD" : "CA_Q_RESCUE_ACTIVE", false);
+            if (state == CaelumConstants.QUEST_STATE_COMPLETED)
+                text = text .. "\n\n" .. StringTable.Localize(localPlayer.JournalQuestRewardClaimed[questId]
+                    ? "CA_Q_RESCUE_PAID" : "CA_Q_RESCUE_UNPAID", false);
+            return text;
+        }
         if (questId == CaelumConstants.QUEST_PORT_SIEGE)
             return StringTable.Localize(localPlayer.JournalQuestState[questId] == CaelumConstants.QUEST_STATE_COMPLETED
                 ? "CA_DEMO_VOICE_10" : "CA_DEMO_VOICE_9", false);
@@ -508,7 +563,7 @@ class CaelumJournalOverlay : EventHandler
     {
         int questId = GetVisibleQuestId(localPlayer);
         if (questId < 0 || SmallFont == null) return;
-        let lines = SmallFont.BreakLines(GetQuestDetailText(localPlayer, questId), 512);
+        let lines = SmallFont.BreakLines(QuestClassification(localPlayer, questId) .. "\n\n" .. GetQuestDetailText(localPlayer, questId), 512);
         int count = GetQuestDetailLineCount();
         int last = Max(0, (lines.Count() - 1) / count) * count;
         let scroll = CVar.GetCVar("ca_journal_quest_scroll", players[consoleplayer]);
@@ -520,9 +575,8 @@ class CaelumJournalOverlay : EventHandler
         int questId = GetVisibleQuestId(localPlayer);
         if (questId < 0) return;
         DrawTextLine(TextFont, Font.CR_GOLD, 64, 132,
-            StringTable.Localize("CA_Q_DETAIL_TITLE", false) .. " - "
-            .. StringTable.Localize(GetQuestNameKey(questId), false));
-        let lines = SmallFont.BreakLines(GetQuestDetailText(localPlayer, questId), 512);
+            StringTable.Localize(GetQuestNameKey(questId), false));
+        let lines = SmallFont.BreakLines(QuestClassification(localPlayer, questId) .. "\n\n" .. GetQuestDetailText(localPlayer, questId), 512);
         int count = GetQuestDetailLineCount();
         int pages = Max(1, (lines.Count() + count - 1) / count);
         let scroll = CVar.GetCVar("ca_journal_quest_scroll", players[consoleplayer]);
@@ -564,15 +618,7 @@ class CaelumJournalOverlay : EventHandler
 
     ui String GetQuestNameKey(int questId)
     {
-        if (questId == CaelumConstants.QUEST_PORT_SIEGE) return "CA_DEMO_PORT_TITLE";
-        switch (questId)
-        {
-            case CaelumConstants.QUEST_MAIN_M00_THE_FOOL:
-                return "CA_Q_M01_TITLE";
-            case CaelumConstants.QUEST_TRIAL_ROUTE: return "CA_Q_SIDE_ROUTE_TITLE";
-            case CaelumConstants.QUEST_TRIAL_WAIT: return "CA_Q_SIDE_WAIT_TITLE";
-            default: return "CA_JOURNAL_QUESTS";
-        }
+        return CaelumQuestCatalogue.TitleKey(questId);
     }
 
     ui String GetQuestStateKey(int questState)
@@ -1409,12 +1455,14 @@ class CaelumJournalOverlay : EventHandler
 
     ui void DrawQuestPage(CaelumPlayer localPlayer)
     {
+        DrawQuestFilters();
+        if (GetVisibleQuestId(localPlayer) < 0 && IsQuestDetailOpen()) SetQuestDetailOpen(false);
         if (IsQuestDetailOpen()) { DrawQuestDetail(localPlayer); return; }
-        if (localPlayer.JournalKnownQuestCount <= 0)
+        if (GetVisibleQuestId(localPlayer) < 0)
         {
             DrawCenteredText(
                 TextFont, Font.CR_WHITE, 320.0, 164.0,
-                StringTable.Localize("CA_JOURNAL_QUESTS_EMPTY", false)
+                StringTable.Localize("CA_Q_FILTER_EMPTY", false)
             );
         }
         else
@@ -1433,26 +1481,20 @@ class CaelumJournalOverlay : EventHandler
                     TextFont, Font.CR_GOLD, 64.0, 132.0,
                     StringTable.Localize(GetQuestNameKey(questId), false)
                 );
-                DrawTextLine(
-                    SmallFont, Font.CR_WHITE, 64.0, 158.0,
-                    String.Format(
-                        "%s: %s  |  %s: %s",
-                        StringTable.Localize("CA_QUEST_STATUS_LABEL", false),
-                        StringTable.Localize(
-                            GetQuestStateKey(questState), false
-                        ),
-                        StringTable.Localize("CA_QUEST_STAGE_LABEL", false),
-                        StringTable.Localize(
-                            GetQuestStageKey(
-                                questId,
-                                localPlayer.JournalQuestStage[questId],
-                                localPlayer.JournalMainM00ArgentoStarted,
-                                localPlayer.MainM00ConvincedCountSnapshot
-                            ),
-                            false
-                        )
-                    )
-                );
+                DrawTextLine(SmallFont, Font.CR_WHITE, 64, 154,
+                    QuestClassification(localPlayer, questId));
+                if (questId >= CaelumConstants.QUEST_SEWERS)
+                {
+                    let lines = SmallFont.BreakLines(GetQuestDetailText(localPlayer, questId), 512);
+                    for (int row = 0; row < Min(7, lines.Count()); row++)
+                        DrawTextLine(SmallFont, Font.CR_WHITE, 64, 182 + row * 14, lines.StringAt(row));
+                    break;
+                }
+                let stageLines = SmallFont.BreakLines(StringTable.Localize(GetQuestStageKey(questId,
+                    localPlayer.JournalQuestStage[questId], localPlayer.JournalMainM00ArgentoStarted,
+                    localPlayer.MainM00ConvincedCountSnapshot), false), 512);
+                for (int row = 0; row < Min(2, stageLines.Count()); row++)
+                    DrawTextLine(SmallFont, Font.CR_WHITE, 64, 166 + row * 12, stageLines.StringAt(row));
                 DrawTextLine(
                     SmallFont, Font.CR_GRAY, 64.0, 190.0,
                     StringTable.Localize("CA_QUEST_OBJECTIVES_LABEL", false)
@@ -1501,11 +1543,11 @@ class CaelumJournalOverlay : EventHandler
         int selected = GetVisibleQuestId(localPlayer);
         if (selected >= 0)
         {
-            int ordinal = 0;
-            for (int id = 0; id <= selected; id++)
-                if (localPlayer.JournalQuestState[id] != CaelumConstants.QUEST_STATE_UNDISCOVERED) ordinal++;
+            int ordinal = 0, total = 0;
+            for (int id = 0; id < CaelumConstants.QUEST_DEFINED_COUNT; id++)
+                if (QuestVisible(localPlayer, id)) { total++; if (id <= selected) ordinal++; }
             DrawCenteredText(SmallFont, Font.CR_GRAY, 560, 132,
-                String.Format("%d/%d", ordinal, localPlayer.JournalKnownQuestCount));
+                String.Format("%d/%d", ordinal, total));
         }
         if (CaelumSideQuestRules.IsDefined(selected))
         {
@@ -1513,6 +1555,8 @@ class CaelumJournalOverlay : EventHandler
                 StringTable.Localize(GetSideQuestHelp(localPlayer, selected), false));
             return;
         }
+        if (selected != CaelumConstants.QUEST_MAIN_M00_THE_FOOL
+            || localPlayer.JournalQuestState[selected] == CaelumConstants.QUEST_STATE_COMPLETED) return;
         DrawTextLine(
             SmallFont, Font.CR_WHITE, 56.0, 288.0,
             String.Format(
@@ -2563,6 +2607,12 @@ class CaelumJournalOverlay : EventHandler
         if (currentPage == 2 && (e.KeyString ~== "f" || e.KeyChar == 102 || e.KeyChar == 70
             || e.KeyScan == InputEvent.Key_Pad_RTrigger))
         { CaelumScheduleCalendar.Open(localPlayer); return true; }
+        if (currentPage == 4 && (e.KeyString ~== "c" || e.KeyChar == 99 || e.KeyChar == 67
+            || e.KeyScan == InputEvent.Key_Pad_RTrigger))
+        { CycleQuestFilter(true); return true; }
+        if (currentPage == 4 && (e.KeyString ~== "v" || e.KeyChar == 118 || e.KeyChar == 86
+            || e.KeyScan == InputEvent.Key_Pad_LTrigger))
+        { CycleQuestFilter(false); return true; }
         if (HandleJournalNavigation(e.KeyScan)) return true;
 
         if ((currentPage == 2 && (e.KeyString ~== "q" || e.KeyChar == 113 || e.KeyChar == 81))
@@ -3135,7 +3185,7 @@ class CaelumJournalOverlay : EventHandler
         DrawCenteredText(TitleFont, Font.CR_GOLD, 320.0, 16.0,
             StringTable.Localize("CA_JOURNAL_TITLE", false));
         DrawNavigation();
-        DrawCenteredText(TextFont, Font.CR_GOLD, 320.0, 106.0,
+        if (currentPage != 4) DrawCenteredText(TextFont, Font.CR_GOLD, 320.0, 106.0,
             StringTable.Localize(GetPageKey(currentPage), false));
 
         if (currentPage == 0) { DrawInventoryPage(localPlayer); }

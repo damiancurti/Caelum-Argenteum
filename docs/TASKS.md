@@ -1,6 +1,18 @@
 # TASKS.md — Active tasks
 
-Documentation version: **4.36.23** — 2026-09-28.
+Documentation version: **4.36.24** — 2026-09-28.
+
+## Issue #35 — Quest journal (4.36.24)
+
+- Implemented: stable main/side catalogue, independent type/status filters,
+  completed records, sewer progress and four separate optional rescue records.
+- Author-approved categories: mansion main; sewers/port/rescues side. Live
+  extraction completes each rescue; port payment remains separate.
+- Verified: validator/build and focused native state, navigation, bilingual
+  layouts, legacy load, reload and hub persistence. Evidence: assets/validation_43624.
+- Accepted: the author confirmed all CA-43624-JOURNAL-01 checks passed on
+  2026-09-28 and authorized PR #54 merge and issue #35 closure.
+- Separate pending scope: #16 full port deployment and #17 export acceptance.
 
 ## Issue #52 — Final armor absorption (4.36.23)
 

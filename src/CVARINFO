@@ -91,3 +91,7 @@ user int ca_calendar_detail = 0;
 
 // Cada entrada conserva su propia vida restante en segundos.
 user float ca_notification_seconds = 8.0;
+
+// Filtros locales del diario; no son progreso guardado.
+user int ca_journal_quest_kind = 0;
+user int ca_journal_quest_status = 0;

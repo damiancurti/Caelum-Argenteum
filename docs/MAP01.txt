@@ -1,6 +1,17 @@
 CAELUM ARGENTEUM — STORY AND MAP01
 
-Documentation version: **4.36.23** — 2026-09-28.
+Documentation version: **4.36.24** — 2026-09-28.
+
+## 4.36.24 — Journal classification (#35)
+
+Author decision, 2026-09-28: mansion/El Loco is a main quest. The sewers/As de
+Copas and port/Caballero de Bastos are side quests; each prisoner rescue is an
+independent optional side quest completed on live extraction. Port payment
+remains a separate recorded fact. Palomo's existing guidance starts the mansion
+quest; viewing the prologue or Journal does not. Mentor trials/practices remain
+inside its existing progress, without extra mandatory objectives or rewards.
+SYSTEMS defines the read-only catalogue, filters and old-save evidence limits.
+This change does not deploy #16's port encounter or change #34's dialogue.
 
 ## 4.36.23 — Body defense identities (#52)
 

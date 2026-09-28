@@ -37,7 +37,10 @@ class CaelumConstants : Object
     const QUEST_OBJECTIVE_CAPACITY = 8;
     const QUEST_OBJECTIVE_STORAGE_COUNT =
         QUEST_CAPACITY * QUEST_OBJECTIVE_CAPACITY;
-    const QUEST_DEFINED_COUNT = 4;
+    const QUEST_DEFINED_COUNT = 9;
+    // IDs de lectura: conservan su autoridad en los registros de mundo/rescate.
+    const QUEST_SEWERS = 4;
+    const QUEST_RESCUE_FIRST = 5;
     const QUEST_PORT_SIEGE = 3;
     const QUEST_TRIAL_ROUTE = 1;
     const QUEST_TRIAL_WAIT = 2;

@@ -848,9 +848,12 @@ class CaelumPlayer : DoomPlayer
             JournalQuestCanStart[questId] = CaelumSideQuestRules.CanStart(persistentState, questId);
             JournalQuestReady[questId] = CaelumSideQuestRules.ObjectivesComplete(persistentState, questId);
             JournalQuestState[questId] =
-                persistentState.QuestState[questId];
-            JournalQuestStage[questId] =
-                persistentState.QuestStage[questId];
+                CaelumQuestCatalogue.State(persistentState, questId);
+            JournalQuestStage[questId] = questId < CaelumConstants.QUEST_SEWERS
+                ? persistentState.QuestStage[questId] : JournalQuestState[questId];
+            if (CaelumQuestCatalogue.IsRescue(questId))
+                JournalQuestRewardClaimed[questId] = persistentState.PrisonerRewardClaimed[
+                    questId - CaelumConstants.QUEST_RESCUE_FIRST];
             if (JournalQuestState[questId]
                 != CaelumConstants.QUEST_STATE_UNDISCOVERED)
             {
@@ -863,7 +866,8 @@ class CaelumPlayer : DoomPlayer
             objective++)
         {
             JournalQuestObjectiveKnown[objective] =
-                persistentState.QuestObjectiveKnown[objective];
+                objective < CaelumConstants.QUEST_SEWERS * CaelumConstants.QUEST_OBJECTIVE_CAPACITY
+                    && persistentState.QuestObjectiveKnown[objective];
             JournalQuestObjectiveProgress[objective] =
                 persistentState.QuestObjectiveProgress[objective];
             JournalQuestObjectiveTarget[objective] =

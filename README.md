@@ -4,8 +4,21 @@ An independent dark fantasy FPS-RPG inspired by nineteenth-century Argentina.
 Author and game designer: **Damian Curti**. Development target: **GZDoom 4.14.2**
 on Windows 11. The final game is intended to be independent of Doom assets.
 
-**Current release: 4.36.23.** Obtain and update the complete repository, validate
+**Current release: 4.36.24.** Obtain and update the complete repository, validate
 it, then rebuild with `run_dev.bat` as described below.
+
+Issue [#35](https://github.com/damiancurti/Caelum-Argenteum/issues/35) adds
+Journal filters for main/side and active/completed quests, retaining completed
+records and showing sewer progress and four independent optional rescues.
+In Quests, **C/right trigger** selects type and **V/left trigger** selects status;
+existing arrows, section navigation and F/Y detail remain available.
+Mansion is main; sewers, port siege and rescues are side quests. Live extraction
+completes a rescue; its port reward remains separate. Existing saves retain
+recorded progress without duplicate flags or rewards. See
+[validation evidence](assets/validation_43624/RESULTS.json) and
+[author acceptance](docs/HISTORY.md), confirmed 2026-09-28 for
+CA-43624-JOURNAL-01. No author checks remain pending. Full port deployment
+remains #16.
 
 Issue [#52](https://github.com/damiancurti/Caelum-Argenteum/issues/52) applies
 armor absorption after Toughness, whose historical curve L*(L+1)/101 subtracts
@@ -18,8 +31,7 @@ Gates now have Constitution 0 and Toughness 25/50/75, with maximum resistance
 5,500/6,500/11,000. Small/large rams need 2/2/7 and 1/2/2 hits respectively;
 cannons still apply Toughness and cannot damage gates. Saved gate resistance
 migrates proportionally, preserving open/broken states. See [validation evidence](assets/validation_43623/RESULTS.json) and
-[author acceptance](docs/HISTORY.md), confirmed 2026-09-28. No author checks
-remain pending. Full balance tables are in SYSTEMS.
+[author acceptance](docs/HISTORY.md), confirmed 2026-09-28. All #52 author checks passed. Full balance tables are in SYSTEMS.
 
 Issue [#34](https://github.com/damiancurti/Caelum-Argenteum/issues/34) gives
 Palomo quest 1, optional survival practices and exclusive material-location
