@@ -1,6 +1,134 @@
 # Caelum Argenteum — Current systems and rules
 
-Documentation version: **4.36.22** — 2026-09-27.
+Documentation version: **4.36.23** — 2026-09-28.
+
+## 4.36.23 — Armor last, body absorption and gate defense (#52)
+
+Author-approved design, 2026-09-27. For ordinary physical/magical attacks the
+order is (1) existing shield blocking, (2) anatomical vulnerability, reinforcement
+and critical, (3) Toughness, (4) additive innate and equipped armor absorption.
+Author revisions on 2026-09-28 replace the Type 4 divisor with subtractive
+maximum-health damage and restore the historical attribute growth curve.
+The earlier direct-level subtraction was superseded: level L is converted to
+`R(L)=max(0,L)*(max(0,L)+1)/101` percentage points, without a 100% cap.
+No minimum-damage floor is added. For an attack after shield and anatomy/critical:
+
+```
+P = 100 * postAnatomyDamage / maximumHealth
+R = max(0, Toughness) * (max(0, Toughness) + 1) / 101
+remainingPercent = max(0, P - R)
+preArmorDamage = maximumHealth * remainingPercent / 100
+finalDamage = round(preArmorDamage * (1 - innateFraction - equippedFraction))
+```
+
+The shared helper is `max(0, damage - maximumHealth*R(Toughness)/100)`.
+It uses maximum health, never remaining health, and preserves fractional values.
+At maximum health 1,000 and Toughness 100, incoming 999 or 1,000 becomes zero;
+1,010 (101%) leaves 10 (1%) before armor. Human light T1 absorption of 22.5%
+then absorbs 2.25 and leaves 7.75, rounded to 8. Toughness 100 therefore still
+negates attacks at or below 100%; larger hits pass their excess. There is no
+universal immunity to arbitrary damage. Neither the level nor its derived
+reduction is capped at 100. Level 50 subtracts 25.247525%; level 200 subtracts
+398.019802%. Historical pain/lucidity curves retain their separate existing caps.
+Equipped wear uses only its absorbed share after Toughness (1.5 in this example).
+A zero remainder causes neither armor absorption nor armor wear.
+The existing shield step can still absorb/wear before that threshold is reached.
+Existing durability constants and reinforcement grades are unchanged.
+
+| Recipient | Innate physical | Innate magical |
+| --- | ---: | ---: |
+| Beast Men and animals (Bull, Giant Rat) | 12.5% | 2.5% |
+| Caelith | 10% | 5% |
+| Human | 7.5% | 7.5% |
+| Duendes and demons (Mandinga, Zupay) | 5% | 10% |
+| Palomo (author-specified exception) | 77% | 77% |
+
+The author explicitly confirmed Leonor=duende, Rufino=Caelith,
+Santos=Beast Man and Leandro=Human. Their base NPC counterparts are Caella,
+Ronnie, Rulo and Argento respectively. The noncanonical quick/debug profile
+uses the Human defense fallback. NPCs inherit their class's racial defense;
+Palomo overrides only innate absorption. Innate defense survives absent/broken
+equipment. Only the contacted region's piece contributes equipped absorption.
+
+| Armor | T1 physical/magical | T2 physical/magical | T3 physical/magical |
+| --- | ---: | ---: | ---: |
+| Magical | 10% / 30% | 15% / 45% | 20% / 60% |
+| Light | 15% / 15% | 22.5% / 22.5% | 30% / 30% |
+| Medium | 22.5% / 22.5% | 33.75% / 33.75% | 45% / 45% |
+| Heavy | 35% / 35% | 52.5% / 52.5% | 70% / 70% |
+
+T2/T3 multiply T1 by 1.5/2.0. Magical armor grants no Intelligence, Patience
+or Insight. Other equipment bonuses, mass, fit, reinforcement and recipes stay
+unchanged. `CaelumArmorRules` is authoritative for both gameplay and the
+physical/magical equipment display; there is no separate UI balance table.
+
+Classified magical damage includes magical actor projectiles, `CaelumMagicTest`,
+the `CaelumTrapMagic` mine, and the channel's `Electric` discharge. The latter
+now receives armor defense on players as on NPCs, while keeping its previous
+shield bypass. Other shield defenses, coverage and wear are unchanged. Physical
+ground slams remain physical even when their source can also cast magic.
+Explosions retain region sampling and per-region health rounding: each reached
+region applies its anatomy/critical first, then subtracts Toughness using the
+whole recipient maximum health. The diagnostic multiplier is the actual
+post/pre fraction for this hit (an aggregate for explosions), not a fixed stat.
+Kinematic impacts use `max(0, severityPercent*surface - R(effectiveToughness))`
+after movement amortization, before weighted anatomy and final physical armor.
+The buckler/gauntlet acrobatic bonus doubles the effective attribute level before
+evaluating R: level 25 becomes level 50, giving 25.247525%, not twice R(25).
+Collision diagnostics display the derived reduction percentage, not the level.
+No second Toughness or native armor pass is applied.
+Survival drains, native crushing and other existing bypasses are not broadened.
+The pre-existing elemental-DOT asymmetry remains: player DOT bypasses the
+ordinary defense path; NPC DOT enters that path as physical. This patch does
+not claim universal DOT parity or redesign that separate rule.
+
+Gate defense is structural, not racial: common/reinforced/armored gates absorb
+10/20/30% after Toughness. Final author revision on 2026-09-28 sets Constitution
+to 0 for every material and Toughness to 25/50/75. Masses remain 550/650/1100 kg.
+Maximum resistance is therefore 5,500/6,500/11,000, using
+`H = int(10 * (100 + Constitution*(Constitution+1)/2) * mass/100)`.
+The proposed cannon bypass of Toughness was explicitly excluded.
+For frontal stationary contacts at existing ram speed 37.780229 m/s and cannon
+contact speed 500 m/s, each cell is final damage / hits to break an intact gate:
+
+| Attack | Common | Reinforced | Armored |
+| --- | ---: | ---: | ---: |
+| Small ram | 4,990 / 2 | 3,951 / 2 | 1,783 / 7 |
+| Large ram | 5,500 / 1 | 5,972 / 2 | 5,859 / 2 |
+| Cannon (4.3 kg inert round) | 0 / cannot break | 0 / cannot break | 0 / cannot break |
+
+Absorption multiplies the unrounded post-Toughness damage; round once at the
+end. The whole-gate impulse model remains, without penetration or explosion.
+The large ram calculates 6,704 damage against common gates, but actual health
+loss is capped at their remaining 5,500. All other listed first-hit values are
+below the intact maximum. Repeated hit counts use the same contact conditions.
+Gate levels 25/50/75 now subtract 6.435644/25.247525/56.435644 percentage points.
+These values supersede the direct-level #52 tables and historical 4.36.19 damage.
+The cannon does not exceed any gate threshold; masses and speeds remain unchanged.
+Gate `BalanceRevision=2` migrates remaining-health ratio to the lower maximum,
+rounded once with minimum 1 for living gates, without closing opened gates,
+reviving broken gates, or resetting timers and duplicate-contact serials.
+Repeated refresh/load does not rescale again. Explicit legacy-recovery revision
+0 keeps its former attributes; original saves and the previous PK3 permit rollback.
+Defense is read from data, not stored in each gate.
+
+Player `AttributeBalanceVersion=2` and NPC `ArmorBalanceRevision=1` recalculate
+derived values from preserved base data once on load. Attribute bonuses are
+never repeatedly subtracted; equipment IDs, tiers and wear are retained.
+Resource maxima may decrease and existing clamping prevents free resources.
+Keep original pre-upgrade saves and the prior PK3 for reversible rollback;
+do not overwrite the original with a migrated save. Old-save, migrated-reload
+and original-save rollback are distinct checks in validation_43623.
+This formula revision introduces no new serialized fields or reset: legacy
+`DamageResistanceMultiplier` and gate `RetainedDamage` remain for compatibility
+but no receiving path reads them. Existing 4.36.22 and initial 4.36.23 saves
+use the new rule immediately; the final gate revision separately migrates gate
+maximum/remaining health as described above. Character maxima and equipment are
+unchanged by the gate revision. Initial evidence is preserved in
+DIVISOR_RESULTS.json, TOUGHNESS_RESULTS.json and GATE_RESULTS.json; current
+results are in RESULTS.json and curve_revision/. Restoring attribute growth adds
+no serialized fields or gate revision: existing levels use R immediately without
+rescaling health or resetting saved state.
 
 ## 4.36.22 — Quest ownership and persistent narrative events (#34)
 
@@ -929,7 +1057,7 @@ E is a reference percentage, not physical energy in joules. Its undamaged thresh
 u≤0,8 MU/tic; u=28 produces E=100%. It is not limited to 100%. The height of the
 character no longer alters the reference of 28 MU.
 
-    P = max(0, S·E) / (1 + T*(T+1)/5050)  [updated in 4.36.19]
+    P = max(0, S·E - T*(T+1)/101)  [uncapped growth restored in #52, 2026-09-28]
     W = suma_i [ wi · Vi · (1−Ai) ]
     Daño = floor(Hmax · P · W / 100 + 0,5)
 
@@ -2869,7 +2997,7 @@ lucidity, Dialogue skill and durations do not share a single curve today.
 | Attribute / family | Implemented combat use | Implemented noncombat use | Differences from the table |
 | --- | --- | --- | --- |
 | Strength / Physical | Melee damage and physical thrust Type 1, with body mass. | Load Type 4; object thrust and launch power use Strength. | It matches the main thing. "Physical power" is not another independent universal effect: it is expressed in the routes of damage, thrust and launch. |
-| Hardness / Physical | Ordinary physical/magic damage after armor divided by Type 4. Pain and loss of Lucidity use Type 3. | Since 4.36.19, kinematic impacts also divide by Type 4, after biological absorption and before anatomy/armor. | Scales must be updated and the scope of “environmental damage” must be narrowed: it is not universal resistance to drowning, drainage for needs or any damage outside the classified system. |
+| Hardness / Physical | Ordinary physical/magic damage subtracts uncapped R(T)=T(T+1)/101 percentage points of maximum health after anatomy and before final armor (#52, 2026-09-28). Pain and loss of Lucidity use Type 3. | Since the #52 revision, kinematic impacts subtract R(T) after biological absorption/surface and before anatomy/armor. | Scales must be updated and the scope of “environmental damage” must be narrowed: it is not universal resistance to drowning, drainage for needs or any damage outside the classified system. |
 | Constitution / Physical | Maximum health Type 1, with body mass. | Passive Hunger/Thirst and natural health regeneration costs/Air divided by Type 4. | It is not connected to shortening debuffs or incoming poisons. There is no disease system implemented that applies that duration. |
 | Dexterity / Technical | Attack speed Type 4, physical precision Type 1 and physical critical chance Type 2. It also reduces the ranged-weapon reload time by Type 4. | Type 1 reduces the working time of materials in manufacture. | The ammunition reload belongs here; it is appropriate to distinguish it from the cooldown of skills when updating the table. Crafting covers a specific manual use, not a general system of accuracy rolls. |
 | Resilience / Technical | Maximum Adrenaline, Health Regeneration Factor and Air Capacity Type 4. | Sleep loss divided by Type 4, restored to 0ai. | Matches in association. Explain the Sleep divider; health regeneration is calculated over its maximum. |
@@ -4008,8 +4136,10 @@ removed in 0d is not needed.
 
 ## Damage and Anima cost: Type 4 divisor (4.33.0aa)
 
-F(A) = 1 + 2 × A × (A + 1) / 10100. General damage received = post-vulnerability damage
-and armor / F(Dureza). Magical cost = base cost ×tier modifier × charge / F(Elocuencia).
+F(A) = 1 + 2 × A × (A + 1) / 10100. Historical general damage used post-vulnerability damage / F(Dureza).
+The 2026-09-28 #52 revision supersedes that damage divisor with the subtractive
+maximum-health formula above; this historical divisor table still documents
+its original release and the unchanged Anima-cost rule. Magical cost = base cost ×tier modifier × charge / F(Elocuencia).
 T2 retains ×1,6 and T3 ×2,5; a prepared charge preserves ×2. The bell and statuette
 maintain its bases. Player and NPC use the same curve, also for explosions; the entire
 rounding of Engine Health is preserved.

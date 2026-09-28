@@ -162,17 +162,10 @@ class CaelumDebugOverlay : EventHandler
         return "CA_ARMOR_BASE_NOTHING";
     }
 
-    ui int GetArmorDefenseForPanel(CaelumArmorModel armor, int slot)
+    ui double GetArmorDefenseForPanel(CaelumArmorModel armor, int slot, bool magical = false)
     {
         if (armor.Durability[slot] <= 0) { return 0; }
-        int tier = armor.Tier[slot];
-        switch (armor.ArmorType[slot])
-        {
-            case CaelumConstants.ARMOR_TYPE_MAGIC: return tier == 1 ? 5 : (tier == 2 ? 10 : 15);
-            case CaelumConstants.ARMOR_TYPE_LIGHT: return tier == 1 ? 10 : (tier == 2 ? 20 : 30);
-            case CaelumConstants.ARMOR_TYPE_MEDIUM: return tier == 1 ? 20 : (tier == 2 ? 40 : 60);
-            default: return tier == 1 ? 30 : (tier == 2 ? 60 : 90);
-        }
+        return CaelumArmorRules.EquipmentDefense(armor.ArmorType[slot], armor.Tier[slot], magical);
     }
 
     ui int GetArmorReinforcementForPanel(CaelumArmorModel armor, int slot)
@@ -2957,10 +2950,10 @@ class CaelumDebugOverlay : EventHandler
                 int actorArmorDurability = actorArmor != null
                     ? actorArmor.Durability[actorArmorSlot] : 0;
                 String actorArmorLine = String.Format(
-                    "%s: %s %d%%   %.1f/%d   %s -%d",
+                    "%s: %s %.2f%%   %.1f/%d   %s -%d",
                     StringTable.Localize("CA_RESOURCE_ARMOR", false),
                     StringTable.Localize(GetArmorSlotKey(actorArmorSlot), false),
-                    inspectedActor.LastCombatArmorDefensePercent,
+                    inspectedActor.LastCombatArmorDefenseExactPercent,
                     inspectedActor.LastCombatArmorAbsorbedDamage,
                     actorArmorDurability,
                     StringTable.Localize("CA_RESOURCE_ARMOR_DURABILITY", false),
@@ -3006,9 +2999,10 @@ class CaelumDebugOverlay : EventHandler
                 )
             );
             String armorStatsLine = String.Format(
-                "%s: %d%%   %s: +%d   %s: %d/%d",
-                StringTable.Localize("CA_RESOURCE_ARMOR_DEFENSE", false),
+                "%s: %.2f/%.2f%%   %s: +%d   %s: %d/%d",
+                StringTable.Localize("CA_RESOURCE_ARMOR_DEFENSE_KINDS", false),
                 GetArmorDefenseForPanel(compactArmor, compactSlot),
+                GetArmorDefenseForPanel(compactArmor, compactSlot, true),
                 StringTable.Localize("CA_RESOURCE_ARMOR_REINFORCEMENT", false),
                 GetArmorReinforcementForPanel(compactArmor, compactSlot),
                 StringTable.Localize("CA_RESOURCE_ARMOR_DURABILITY", false),
@@ -3030,19 +3024,20 @@ class CaelumDebugOverlay : EventHandler
                 DTA_VIRTUALWIDTHF, 640.0, DTA_VIRTUALHEIGHTF, 360.0, DTA_KEEPRATIO, true);
 
             String hitLine = String.Format(
-                "%s: %s x%.2f -> %.1f",
+                "%s: %s x%.2f   %s x%.3f -> %.1f",
                 StringTable.Localize("CA_RESOURCE_ARMOR_LAST_HIT", false),
                 StringTable.Localize(GetVulnerabilityKey(localPlayer.LastArmorVulnerabilityGrade), false),
                 localPlayer.LastArmorVulnerabilityMultiplier,
+                StringTable.Localize("CA_ATTRIBUTE_TOUGHNESS", false),
+                localPlayer.LastToughnessDamageMultiplier,
                 localPlayer.LastArmorPreDefenseDamage
             );
             String armorDamageLine = String.Format(
-                "%s: %.1f   %s: %.1f x%.3f -> %d",
+                "%s: %.1f   %s: %.1f -> %d",
                 StringTable.Localize("CA_RESOURCE_ARMOR_ABSORBED", false),
                 localPlayer.LastArmorAbsorbedDamage,
                 StringTable.Localize("CA_RESOURCE_ARMOR_HEALTH_DAMAGE", false),
                 localPlayer.LastArmorPostDefenseDamage,
-                localPlayer.LastToughnessDamageMultiplier,
                 localPlayer.LastArmorHealthDamage
             );
             Screen.DrawText(DebugFont, Font.CR_RED, 20.0, 106.0, hitLine,
@@ -3462,15 +3457,16 @@ class CaelumDebugOverlay : EventHandler
                 ? "CA_ARMOR_HIT_CRITICAL"
                 : "CA_ARMOR_HIT_NORMAL";
             String armorConfigLine = String.Format(
-                "%s: %s / %s T%d   %s: %d%%   %s: +%d   %s: %d/%d   %s",
+                "%s: %s / %s T%d   %s: %.2f/%.2f%%   %s: +%d   %s: %d/%d   %s",
                 StringTable.Localize("CA_RESOURCE_ARMOR", false),
                 StringTable.Localize(GetArmorSlotKey(selectedSlot), false),
                 StringTable.Localize(GetArmorDisplayKey(
                     selectedSlot, armor.ArmorType[selectedSlot]
                 ), false),
                 armor.Tier[selectedSlot],
-                StringTable.Localize("CA_RESOURCE_ARMOR_DEFENSE", false),
+                StringTable.Localize("CA_RESOURCE_ARMOR_DEFENSE_KINDS", false),
                 GetArmorDefenseForPanel(armor, selectedSlot),
+                GetArmorDefenseForPanel(armor, selectedSlot, true),
                 StringTable.Localize("CA_RESOURCE_ARMOR_REINFORCEMENT", false),
                 GetArmorReinforcementForPanel(armor, selectedSlot),
                 StringTable.Localize("CA_RESOURCE_ARMOR_DURABILITY", false),

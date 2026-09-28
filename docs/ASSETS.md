@@ -1,6 +1,16 @@
 # Caelum Argenteum — Audio and art
 
-Documentation version: **4.36.22** — 2026-09-27.
+Documentation version: **4.36.23** — 2026-09-28.
+
+## 4.36.23 — Armor presentation (#52)
+
+No new art, audio, models, maps or generators. Gate attribute revision changes
+only balance data and its existing proportional-save migration. Existing debug/equipment text
+shows fractional physical/magical defense from shared runtime data. The
+2026-09-28 revision reports a per-hit retained fraction for subtractive Toughness;
+collision diagnostics show its uncapped L*(L+1)/101 percentage, not the raw level. English
+and Spanish Ronnie guidance describes magical protection instead of removed
+Intelligence/Patience/Insight bonuses. Existing attribution and licenses remain.
 
 ## 4.36.22 — Existing dialogue presentation (#34)
 

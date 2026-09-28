@@ -1,6 +1,16 @@
 CAELUM ARGENTEUM — STORY AND MAP01
 
-Documentation version: **4.36.22** — 2026-09-27.
+Documentation version: **4.36.23** — 2026-09-28.
+
+## 4.36.23 — Body defense identities (#52)
+
+Author confirmation, 2026-09-27: the prisoner races are Leonor=duende,
+Rufino=Caelith, Santos=Beast Man and Leandro=Human. These match the reused
+Caella/Ronnie/Rulo/Argento combat profiles without merging their identities.
+Palomo retains his spiritual identity and receives a special 77% physical and
+magical body absorption, not a reassignment to another race. Ronnie's armor
+description now explains magical absorption rather than removed mental bonuses.
+Balance tables and damage-order rules are maintained in SYSTEMS.md.
 
 ## 4.36.22 — Demo dialogue and quest roles (#34)
 

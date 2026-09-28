@@ -4,8 +4,22 @@ An independent dark fantasy FPS-RPG inspired by nineteenth-century Argentina.
 Author and game designer: **Damian Curti**. Development target: **GZDoom 4.14.2**
 on Windows 11. The final game is intended to be independent of Doom assets.
 
-**Current release: 4.36.22.** Obtain and update the complete repository, validate
+**Current release: 4.36.23.** Obtain and update the complete repository, validate
 it, then rebuild with `run_dev.bat` as described below.
+
+Issue [#52](https://github.com/damiancurti/Caelum-Argenteum/issues/52) applies
+armor absorption after Toughness, whose historical curve L*(L+1)/101 subtracts
+percentage points of maximum health for attacks and collisions, without a cap. It adds innate physical/magical body defense,
+rebalances all armor tiers and removes magical armor's mental attribute bonuses.
+Palomo absorbs 77% of either damage category; gates gain 10/20/30% defense.
+Shields retain their rules. Older saves rebuild derived attributes once while
+preserving equipment and gate state; keep original saves for rollback.
+Gates now have Constitution 0 and Toughness 25/50/75, with maximum resistance
+5,500/6,500/11,000. Small/large rams need 2/2/7 and 1/2/2 hits respectively;
+cannons still apply Toughness and cannot damage gates. Saved gate resistance
+migrates proportionally, preserving open/broken states. See [validation evidence](assets/validation_43623/RESULTS.json) and
+[author acceptance](docs/HISTORY.md), confirmed 2026-09-28. No author checks
+remain pending. Full balance tables are in SYSTEMS.
 
 Issue [#34](https://github.com/damiancurti/Caelum-Argenteum/issues/34) gives
 Palomo quest 1, optional survival practices and exclusive material-location
@@ -58,7 +72,8 @@ from running; idle/airborne input does not qualify. The benefit applies only
 to walls. Native checks and an 80 kg /20 kg equipment self-jump test passed;
 the author confirmed CA-43618-WALK-01 and final siege check CA-43619-BALANCE-01
 passed on 2026-09-27. Acceptance is recorded in [HISTORY](docs/HISTORY.md);
-#33/#49 acceptance is also recorded there; [pending_test.txt](pending_test.txt) is empty.
+#33/#49 acceptance is also recorded there; current outstanding checks are in
+[pending_test.txt](pending_test.txt).
 
 Issue [#21](https://github.com/damiancurti/Caelum-Argenteum/issues/21) adds
 controlled cannon loading, firing and recovery, with inert 4.3 kg projectiles
@@ -66,10 +81,11 @@ launched at 500 m/s through native fast collision and gravity. Two operators
 complete a cycle in 30 seconds; one takes 60 seconds; none pauses it. Both
 factions retain projectile ownership and only attackers count as objectives.
 The author authorized an approximate documented reconstruction of the selected
-Argentine 1884 gun. The final 4.36.19 balance applies Type 4 Toughness division to
-collisions and sets gate Toughness/Constitution to 50/100/200. A frontal shot
-now inflicts 766/1,194/800 points on normal/reinforced/armored gates; existing
-saves migrate proportionally with an explicit recovery hook.
+Argentine 1884 gun. The historical 4.36.19 balance applied Type 4 Toughness
+division to collisions and set gate Toughness/Constitution to 50/100/200.
+Its frontal-shot damage of 766/1,194/800 is superseded by #52: subtractive
+Toughness now leaves zero damage against all three gates. Existing saves
+migrate proportionally with an explicit recovery hook.
 In disposable MAP03, use `give CaelumDebugCannonTrial` and
 `give CaelumDebugCannonStatus`. Native evidence is in
 [validation_43617](assets/validation_43617/manifest.json).
@@ -661,10 +677,10 @@ preserved. The broader unfinished 4.36 physics roadmap remains in PROJECT.md.
   damage, reach and recovery, with triple primary Air per execution. Nearby
   enemies can all be hit once; walls, solid 3D floors and allies are respected.
   Giant gauntlets retain Block. Charged sweeps consume the existing charge.
-- General incoming damage after armor divides by Type 4 Toughness; magical
-  Anima cost divides by Type 4 Eloquence. At 100 the divisor is 3. Physical
-  collisions also use Type 4 since 4.36.19; pain and Lucidity retain
-  their previous curves. Existing saved character statistics are refreshed.
+- Incoming attacks and collisions subtract R(T)=T*(T+1)/101 percentage points of
+  maximum health before final armor absorption (#52 revision). Magical Anima
+  cost still divides by Type 4 Eloquence; at 100 its divisor is 3. Pain and
+  Lucidity retain their previous curves. Saved character statistics refresh.
 
 - Ronnie now shows current carried kilograms, capacity and the load-only Air
   multiplier. He explains why carrying less can help even below full capacity.

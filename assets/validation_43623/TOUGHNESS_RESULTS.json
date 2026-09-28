@@ -1,0 +1,137 @@
+{
+  "issue": 52,
+  "version": "4.36.23",
+  "date": "2026-09-28",
+  "baseline": "924731c6e26220e25aed9315e43337e23b339445",
+  "formula": "max(0, postAnatomyDamage - maximumHealth*Toughness/100), then final additive innate/equipped armor; collisions subtract Toughness from surfaced severity before anatomy.",
+  "engine": "GZDoom 4.14.2, Windows 11; isolated noautoload/nosound session with author-installed development IWAD.",
+  "native_checks": 422,
+  "native_failures": 0,
+  "evidence": {
+    "matrix": {
+      "log": "toughness_revision/matrix.txt",
+      "raw_local_sha256": "8bad90492e82580c5808c41b699918806b3bd666d2672fb4e9bdc116e08a5b06",
+      "normalization": "UTF-8, LF and trailing whitespace removed only",
+      "sha256": "4b6cac2c5664fdffeb3211c82494afcf928f6e7355236fc3baf9219ba3e00080",
+      "result": [
+        "QA52 DONE checks=422 failures=0"
+      ]
+    },
+    "prior_release_save": {
+      "log": "toughness_revision/prior_release_save.txt",
+      "raw_local_sha256": "9be0bf5699e81014b8784874901cb6697d0e0911ec0f64ae17080439ed65558f",
+      "normalization": "UTF-8, LF and trailing whitespace removed only",
+      "sha256": "d2719b16655eaad2379e638eee1328a657167fcc2f72445d117db47c6fcf6ff9",
+      "result": [
+        "QA52SAVE DONE failures=0 attributes=13/12/12 npcAnima=2710"
+      ]
+    },
+    "divisor_save_setup": {
+      "log": "toughness_revision/divisor_save_setup.txt",
+      "raw_local_sha256": "de1d868b2269695d7b150d27c5af1528edb181cfdcbc5d1b69f02d9eca89eea9",
+      "normalization": "UTF-8, LF and trailing whitespace removed only",
+      "sha256": "744b6507e195ed31279b9e670196b16a6bd9b3550ddaf2754a485e389cd39ed2",
+      "result": [
+        "QA52 SETUP attributes=13/12/12 npcAnima=2710 version=2"
+      ]
+    },
+    "divisor_save_load": {
+      "log": "toughness_revision/divisor_save_load.txt",
+      "raw_local_sha256": "6121f0c4ea2c497abf45a232a7a8cf8ae9afcdf40a9f2955368ad061e035474d",
+      "normalization": "UTF-8, LF and trailing whitespace removed only",
+      "sha256": "3dc96192f0a0f138b09a8701dac0b25dc80562f5c76b7eb35b39fbbfe6d5cf0d",
+      "result": [
+        "QA52TLOAD DONE failures=0 threshold=17.80000 max=1780"
+      ]
+    },
+    "repeated_load": {
+      "log": "toughness_revision/repeated_load.txt",
+      "raw_local_sha256": "6a0527375b69e70023eff01aea45733f3b317882d356b514977b4aa51056627c",
+      "normalization": "UTF-8, LF and trailing whitespace removed only",
+      "sha256": "6ecc7d31d34aec2b600e58d85d537debd62134635dca59d426b0a9ba5ac463b8",
+      "result": [
+        "QA52TLOAD DONE failures=0 threshold=17.80000 max=1780"
+      ]
+    }
+  },
+  "coverage": [
+    "All original race, tier, magical-bonus and shield cases rerun with current formula",
+    "Health maxima 500/1000/2000; Toughness 0/12.5/25/100/150; incoming severity 0/50/99.9/100/101/200 percent",
+    "Threshold uses maximum health while wounded; zero remainder causes no armor wear",
+    "Real player/NPC 1010-point attack at maximum health 1000 and Toughness 100 causes 8 rounded damage with Human light T1",
+    "Shield, critical and anatomy order; surface multiplier and buckler effective Toughness",
+    "Per-region explosion parity and aggregate diagnostic ratio",
+    "Nine siege cases, including zero damage and duplicate-contact rejection",
+    "4.36.22 save migration; initial 4.36.23 divisor save loading and repeated new save loading"
+  ],
+  "save_compatibility": "No new serialized fields for this formula revision. Existing player revision 2 and NPC revision 1 remain. Attributes, equipment durability, gate health/open/broken states and contact serials persist. Old reduction caches cannot affect damage. Original saves and baseline packages retained locally for rollback; earlier rollback evidence remains historical in DIVISOR_RESULTS.json.",
+  "siege_damage": {
+    "small_ram": [
+      38959,
+      3312,
+      0
+    ],
+    "large_ram": [
+      62525,
+      107369,
+      0
+    ],
+    "cannon": [
+      0,
+      0,
+      0
+    ]
+  },
+  "siege_gate_order": [
+    "common",
+    "reinforced",
+    "armored"
+  ],
+  "package": {
+    "sha256": "4e81ad9325903fdcacbd73d4183443faa90a92fa79c56c823b7f0442f19b0113",
+    "entries": 6120,
+    "all_entries_match_source": true
+  },
+  "runtime_changed": {
+    "src/LANGUAGE": "081d408f98ade1b5c301b26db58b5ea91a86a787799ce3b4d2672202fc66cb24",
+    "src/ZSCRIPT": "6ea80036dc0c726ebdcacfb4eab7cafeb3802704a2a24ad4acf4af9c0d402ae9",
+    "src/caelum/actors/CaelumBull.zs": "b93656db9462db525f6c65d509aed243d5e0935dd24f82bfc455ce3b1a2d2db1",
+    "src/caelum/actors/CaelumCaella.zs": "5f52984025bfdf9b7591334c002344a875dc9a0c3d72baa465534f1198acf7f8",
+    "src/caelum/actors/CaelumCombatActor.zs": "800949e0dc42fabff8db0aa7fc2f6a579e6b40508c24948d1fea566e330e8d46",
+    "src/caelum/actors/CaelumFolkloreCharacters.zs": "8f84b417bcfddb9fdfb219f2d45fa8678c3fa3dcb01afc96edbc0898f90eb349",
+    "src/caelum/actors/CaelumGiantRat.zs": "cb741a667b6cb67ce418f97337d74170e63e9fac7f9634956f9897120636f039",
+    "src/caelum/actors/CaelumRonnie.zs": "b9efba3e14ac1cc3a44ff893eb1b9f3c72f893106c2c10985a357c1b364c11a0",
+    "src/caelum/actors/CaelumRulo.zs": "8b3630ff55e2f7eb1b62c98dd679abba05fd5313b3ec4819b5407d4c28d0537d",
+    "src/caelum/debug/CaelumDebugOverlay.zs": "290843b146ff402e2cbdffca41e93e804d58024bef83c0d8d9538a9457933adb",
+    "src/caelum/equipment/CaelumArmorModel.zs": "4cb0b5422698ad9c19f7ae24729e0461d08f15be93de1f8d88fe8d68e1026983",
+    "src/caelum/equipment/CaelumArmorRules.zs": "13aa1bd7c84de7c3f2435bf65c45cf1bacc765b352cb7b09fb0ba7522eb5414d",
+    "src/caelum/player/CaelumPlayer.zs": "b08c04997ef41b4ee715ba57dabc8bbd9d515afdc3a16fee511814f2942a29be",
+    "src/caelum/statistics/CaelumDerivedStats.zs": "d0ccd2358a3c2f5f3ac063cd012fe3c87f718fa987441dd56e7a95be5b577068",
+    "src/caelum/world/CaelumBreakableGate.zs": "5bf90377ff5c59de144d07cb421c58297f3b138ebc509d4d4bc63809604de3cb",
+    "src/caelum/world/CaelumGateData.zs": "ab76a4e1dda2c2a12282edc492ec40718dc307e94b498a5483e482c89b3c92b7",
+    "src/caelum/world/CaelumPhysicalHazards.zs": "bb7f354ef1b1c59441cc3ffdf5da0030ea6cd5ed2a924b659524d236efc68741",
+    "src/caelum/world/CaelumSewerMaze.zs": "423191bd26cc22946e603d791f6a360347a62faa27b8642f557126b7143a3744"
+  },
+  "review": "Independent AI reviewed receiving paths, maximum-health semantics, per-region explosions, diagnostics, caches and save evidence; no blockers found.",
+  "superseded_evidence": {
+    "manifest": "DIVISOR_RESULTS.json",
+    "reason": "Initial 132-check Type 4 matrix and initial screenshot describe the previous formula; retained as historical evidence, not current balance validation."
+  },
+  "limitations": [
+    "Author campaign acceptance remains pending.",
+    "Toughness 100 still negates hits at or below 100 percent of maximum health; no damage floor is added.",
+    "Current cannons cannot damage gates, and neither ram damages armored gates. No siege penetration/explosion is added.",
+    "Existing elemental DOT bypass/classification asymmetry is unchanged.",
+    "No test fixtures, saves, IWAD or executable are distributed."
+  ],
+  "author_acceptance": {
+    "CA-43623-ARMOR-01": "pending",
+    "CA-43623-SAVE-01": "pending",
+    "CA-43623-TOUGHNESS-01": "pending"
+  },
+  "static_validation": {
+    "errors": [],
+    "report": "STATIC.json",
+    "documentation_index": "regenerated and checked fresh"
+  }
+}

@@ -8,7 +8,7 @@ class CaelumBreakableGate : Actor
     CaelumFactionCondition AccessCondition;
     double Toughness;
     double Constitution;
-    double RetainedDamage;
+    double RetainedDamage; // Campo legado; la recepción usa Dureza y vida máxima directamente.
     int StructuralMaximum;
     int BreakCount;
     int HoldTimer;
@@ -63,13 +63,14 @@ class CaelumBreakableGate : Actor
         // Migrar resistencia proporcional sin reparar, cerrar ni resucitar.
         double remaining = StructuralMaximum > 0
             ? Clamp(double(health) / StructuralMaximum, 0.0, 1.0) : 1.0;
-        double levelValue = CaelumGateData.AttributeLevel(args[1]);
+        Toughness = CaelumGateData.ToughnessLevel(args[1]);
+        Constitution = CaelumGateData.CONSTITUTION;
         if (LegacyBalanceForRecovery)
         {
             double reduction = CaelumGateData.LegacyReduction(args[1]);
-            levelValue = (Sqrt(1.0 + 20200.0 * reduction / (1.0 - reduction)) - 1.0) / 2.0;
+            Toughness = (Sqrt(1.0 + 20200.0 * reduction / (1.0 - reduction)) - 1.0) / 2.0;
+            Constitution = Toughness;
         }
-        Toughness = levelValue; Constitution = levelValue;
         let stats = new("CaelumDerivedStats");
         RetainedDamage = 100.0 / stats.CalculateType4Percent(Toughness);
         StructuralMaximum = Max(1, int(CaelumConstants.HEALTH_ANIMA_DAMAGE_SCALE
@@ -193,7 +194,9 @@ class CaelumBreakableGate : Actor
     {
         InitializeGate();
         if (Broken || Opened || damage <= 0) return 0;
-        int retained = mod == 'CaelumImpact' ? damage : Max(1, int(damage * RetainedDamage + 0.5));
+        // CaelumImpact ya incorpora Dureza y absorción, con un único redondeo.
+        int retained = mod == 'CaelumImpact' ? damage : Max(0, int(CaelumArmorRules.AfterToughnessDamage(damage, StructuralMaximum, Toughness)
+            * (1.0 - CaelumGateData.ArmorDefense(args[1]) / 100.0) + 0.5));
         if (flags & DMG_EXPLOSION)
         {
             if (ExplosionTick != level.maptime)
@@ -220,7 +223,7 @@ class CaelumBreakableGate : Actor
 
     // Contrato para #20/#21: masa de la pieza móvil, velocidad real MU/tic y
     // normal de contacto. El emisor incrementa serial una vez por golpe/disparo.
-    // No usar masa de chasis ni velocidad nominal; no volver a aplicar Tipo 4.
+    // No usar masa de chasis ni velocidad nominal; no volver a aplicar Dureza.
     int ApplySiegeImpact(Actor movingSource, int serial, double movingMass,
         vector3 contactVelocity, vector3 normal)
     {
@@ -250,8 +253,10 @@ class CaelumBreakableGate : Actor
     int ReceiveStructuralImpact(Actor source, Actor instigator, double energyPercent, double surfaceMultiplier)
     {
         InitializeGate();
-        double percent = Max(0.0, energyPercent * surfaceMultiplier) * RetainedDamage;
-        int damage = int(StructuralMaximum * percent / 100.0 + 0.5);
+        double percent = CaelumArmorRules.AfterToughnessPercent(
+            energyPercent * surfaceMultiplier, Toughness);
+        int damage = int(StructuralMaximum * percent / 100.0
+            * (1.0 - CaelumGateData.ArmorDefense(args[1]) / 100.0) + 0.5);
         return DamageMobj(source, instigator, damage, 'CaelumImpact', DMG_NO_ARMOR, Angle);
     }
 

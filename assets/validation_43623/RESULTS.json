@@ -1,0 +1,204 @@
+{
+  "issue": 52,
+  "version": "4.36.23",
+  "date": "2026-09-28",
+  "baseline": "e0fe01d9c9f58a5b89a0cf62532308a8198dc907",
+  "formula": "R(L)=max(0,L)*(max(0,L)+1)/101 without cap; attacks max(0,postAnatomyDamage-maximumHealth*R(L)/100), then additive innate/equipped armor. Collisions subtract R(effectiveLevel) from surfaced severity before anatomy. Acrobatic shield doubles level before the curve.",
+  "engine": "GZDoom 4.14.2, Windows 11; isolated noautoload/nosound session with author-installed development IWAD.",
+  "native_checks": 820,
+  "native_failures": 0,
+  "evidence": {
+    "matrix": {
+      "log": "curve_revision/matrix.txt",
+      "raw_local_sha256": "7839eac261a9b31add736081e9b45646319c3ff1cbf86b89fabedede31fff779",
+      "normalization": "UTF-8, LF and trailing whitespace removed only",
+      "sha256": "5418ea3177333a976912c0b90dd045d5fa36277fcb0da3fc46402dc66aea4fed",
+      "result": [
+        "QA52 DONE checks=820 failures=0"
+      ]
+    },
+    "old_save_setup": {
+      "log": "curve_revision/old_save_setup.txt",
+      "raw_local_sha256": "a6c3e5f8066af955b9d61075acf61500e27cff443007a1c32e439ecfdb48ce9b",
+      "normalization": "UTF-8, LF and trailing whitespace removed only",
+      "sha256": "106cf12259bcefd1d8ac1c0703ae10465cc3886bdf9ec14880fcb19ada3aaeb9",
+      "result": [
+        "QA52 SETUP attributes=13/12/12 npcAnima=2710 version=2"
+      ]
+    },
+    "load": {
+      "log": "curve_revision/load.txt",
+      "raw_local_sha256": "34099188dc71580370ad7b2d35f7da49e624d8fb30f9eda9b55321990a94bcc7",
+      "normalization": "UTF-8, LF and trailing whitespace removed only",
+      "sha256": "728b4d57722a8387be6ca31b14af95761ab1f7539ff30f2557ea496952809ef0",
+      "result": [
+        "QA52CURVELOAD DONE failures=0 playerLevel=13.000 preArmor=17.80000 gateDamage=176"
+      ]
+    },
+    "reload": {
+      "log": "curve_revision/reload.txt",
+      "raw_local_sha256": "7a8cfc5a9b38005b400fffe211e580a7b3e7e05388daaf4c8e813f15a1a54df2",
+      "normalization": "UTF-8, LF and trailing whitespace removed only",
+      "sha256": "29a3490b2ec46da038336762f6d5b42dd93aa842c95638f815a9f37ff5bb0884",
+      "result": [
+        "QA52CURVELOAD DONE failures=0 playerLevel=13.000 preArmor=17.80000 gateDamage=176"
+      ]
+    },
+    "rollback": {
+      "log": "curve_revision/rollback.txt",
+      "raw_local_sha256": "74a6a708f0f0dd0fc4a6af0df4b978467dd2e10d6913ef54bf8440840a66d031",
+      "normalization": "UTF-8, LF and trailing whitespace removed only",
+      "sha256": "3530cdda2789ff4cd9beda03c4a38c57a14693b68d3efd7b956d112ba4191689",
+      "result": [
+        "QA52CURVEROLLBACK DONE failures=0"
+      ]
+    }
+  },
+  "coverage": [
+    "All race/tier, mental-bonus, ordinary damage and shield regressions",
+    "Maximum health 500/1000/2000, levels 0/12.5/25/50/75/100/150/200 and severities through 500 percent",
+    "Exact threshold boundaries at each ten-level step from 10 through 200 using maximum health 10100",
+    "Wounded recipient retains threshold, zero damage causes no armor wear",
+    "Anatomy/critical and shield order, per-region explosions and diagnostic parity",
+    "Acrobatic level25 becomes50 before curve; collision level200 subtracts398.019802 percent once for both player and NPC",
+    "All nine siege cases with unchanged gate attributes and cannon reduction",
+    "Previous linear-curve save loads/reloads without changes to attributes/equipment/gate state; legacy reduction caches ignored; untouched original save and previous package restore prior behavior"
+  ],
+  "save_compatibility": "Curve correction adds no serialized fields or migration revision. Saved levels are evaluated through R on the next hit; maxima, attributes, equipment wear, gate health/open/broken/contact states remain unchanged. Existing gate revision2 and older character migrations remain intact; their dedicated evidence is retained in GATE_RESULTS.json and TOUGHNESS_RESULTS.json.",
+  "siege_damage": {
+    "small_ram": [
+      4990,
+      3951,
+      1783
+    ],
+    "large_ram": [
+      5500,
+      5972,
+      5859
+    ],
+    "cannon": [
+      0,
+      0,
+      0
+    ]
+  },
+  "siege_gate_order": [
+    "common",
+    "reinforced",
+    "armored"
+  ],
+  "package": {
+    "sha256": "72da220ad01ec819898d9c5ceef0a225756e2622d25ddbdbd71a19dc4620cb28",
+    "entries": 6120,
+    "all_entries_match_source": true
+  },
+  "runtime_changed": {
+    "src/LANGUAGE": "081d408f98ade1b5c301b26db58b5ea91a86a787799ce3b4d2672202fc66cb24",
+    "src/ZSCRIPT": "6ea80036dc0c726ebdcacfb4eab7cafeb3802704a2a24ad4acf4af9c0d402ae9",
+    "src/caelum/actors/CaelumBull.zs": "b93656db9462db525f6c65d509aed243d5e0935dd24f82bfc455ce3b1a2d2db1",
+    "src/caelum/actors/CaelumCaella.zs": "5f52984025bfdf9b7591334c002344a875dc9a0c3d72baa465534f1198acf7f8",
+    "src/caelum/actors/CaelumCombatActor.zs": "d54effa9d6d171c3fa7de649adf039bbd39288a621eb6aa62303d1a14257ecd7",
+    "src/caelum/actors/CaelumFolkloreCharacters.zs": "8f84b417bcfddb9fdfb219f2d45fa8678c3fa3dcb01afc96edbc0898f90eb349",
+    "src/caelum/actors/CaelumGiantRat.zs": "cb741a667b6cb67ce418f97337d74170e63e9fac7f9634956f9897120636f039",
+    "src/caelum/actors/CaelumRonnie.zs": "b9efba3e14ac1cc3a44ff893eb1b9f3c72f893106c2c10985a357c1b364c11a0",
+    "src/caelum/actors/CaelumRulo.zs": "8b3630ff55e2f7eb1b62c98dd679abba05fd5313b3ec4819b5407d4c28d0537d",
+    "src/caelum/debug/CaelumDebugOverlay.zs": "290843b146ff402e2cbdffca41e93e804d58024bef83c0d8d9538a9457933adb",
+    "src/caelum/equipment/CaelumArmorModel.zs": "4cb0b5422698ad9c19f7ae24729e0461d08f15be93de1f8d88fe8d68e1026983",
+    "src/caelum/equipment/CaelumArmorRules.zs": "f2a582e01df365f4a08d94430517c659e83cabd94217e4663c8de28c86ed2de2",
+    "src/caelum/player/CaelumPlayer.zs": "3ea026b545eb1802120e7a82622ca6b8ac8a8f5943c7a33ea72aaa02f641aa6d",
+    "src/caelum/statistics/CaelumDerivedStats.zs": "d0ccd2358a3c2f5f3ac063cd012fe3c87f718fa987441dd56e7a95be5b577068",
+    "src/caelum/world/CaelumBreakableGate.zs": "1b1563324416e3a3a561a6b7e7e95629ecb75409d5e246156997bf07a5fa2cae",
+    "src/caelum/world/CaelumGateData.zs": "c50d71b3c61554193a7d385b561dfced05a8d734ac6d32ea748d1e2001f192a2",
+    "src/caelum/world/CaelumPhysicalHazards.zs": "bb7f354ef1b1c59441cc3ffdf5da0030ea6cd5ed2a924b659524d236efc68741",
+    "src/caelum/world/CaelumSewerMaze.zs": "423191bd26cc22946e603d791f6a360347a62faa27b8642f557126b7143a3744"
+  },
+  "review": "Independent AI checked receiving paths, single uncapped conversion, shield effective-level semantics, diagnostics and unchanged serialized state; no blockers.",
+  "superseded_evidence": {
+    "manifests": [
+      "DIVISOR_RESULTS.json",
+      "TOUGHNESS_RESULTS.json",
+      "GATE_RESULTS.json"
+    ],
+    "reason": "Prior divisor/direct-level damage matrices retained as history. curve_revision/ records the final historical growth curve without cap."
+  },
+  "limitations": [
+    "Reduction is uncapped; damage remainder has minimum zero, with no minimum-damage floor.",
+    "Cannons retain Toughness reduction and cannot damage current gates. No penetration or explosion is added.",
+    "Pain/lucidity retain their separate capped curves; existing elemental DOT asymmetry unchanged.",
+    "No test fixtures, saves, IWAD or executable are distributed."
+  ],
+  "author_acceptance": {
+    "CA-43623-ARMOR-01": {
+      "result": "passed",
+      "confirmation_date": "2026-09-28",
+      "originating_version": "4.36.23",
+      "issue": 52,
+      "qualification": "Author confirmed all outstanding tests passed; no exceptions reported."
+    },
+    "CA-43623-SAVE-01": {
+      "result": "passed",
+      "confirmation_date": "2026-09-28",
+      "originating_version": "4.36.23",
+      "issue": 52,
+      "qualification": "Author confirmed all outstanding tests passed; no exceptions reported."
+    },
+    "CA-43623-TOUGHNESS-01": {
+      "result": "passed",
+      "confirmation_date": "2026-09-28",
+      "originating_version": "4.36.23",
+      "issue": 52,
+      "qualification": "Author confirmed all outstanding tests passed; no exceptions reported."
+    }
+  },
+  "static_validation": {
+    "errors": [],
+    "report": "STATIC.json",
+    "documentation_index": "regenerated and checked fresh"
+  },
+  "gate_balance": {
+    "revision": 2,
+    "constitution": [
+      0,
+      0,
+      0
+    ],
+    "toughness": [
+      25,
+      50,
+      75
+    ],
+    "maximum_health": [
+      5500,
+      6500,
+      11000
+    ],
+    "armor_percent": [
+      10,
+      20,
+      30
+    ],
+    "cannon_bypasses_toughness": false
+  },
+  "siege_damage_note": "Actual first-hit health loss. Large ram calculates 6704 against common gates but health loss is capped at 5500.",
+  "siege_hits": {
+    "small_ram": [
+      2,
+      2,
+      7
+    ],
+    "large_ram": [
+      1,
+      2,
+      2
+    ],
+    "cannon": [
+      "cannot break",
+      "cannot break",
+      "cannot break"
+    ]
+  },
+  "qa_notes": [
+    "All final runtime matrix and save tests passed on first execution."
+  ],
+  "author_confirmation": "Todas las prueba dieron correcto, haz el pr y merge."
+}

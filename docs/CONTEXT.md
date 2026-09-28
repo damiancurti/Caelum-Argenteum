@@ -1,6 +1,6 @@
 # CONTEXT.md — Ultra-condensed summary of Caelum Argenteum
 
-Documentation version: **4.36.22** — 2026-09-27.
+Documentation version: **4.36.23** — 2026-09-28.
 
 Summary of `PROJECT.md`, `SYSTEMS.md`, `MAP01.txt`, `ASSETS.md`, `HISTORY.md`
 and the repository README.
@@ -62,16 +62,16 @@ the gauchos and rural culture, and the humans the urban porteño society.
 
 ## Current status
 
-**4.36.22 / #34:** Palomo starts quest 1 and teaches survival/material locations;
-Ronnie retains crafting, repair and calendar instruction. Companions remember
-their worst Bull injury. The Voice queues releases, Zupay death/escape and paid
-rewards. Native dialogue/save/travel checks pass. Port siege deployment remains
-#16; #33's provisional Knight rule lasts until a real siege is registered.
-The reported MAP02 freeze was reproduced: NPC secondary wind used an unregistered
-CELH sprite. Appended A-L registration fixes rendering while preserving saved
-states. Dialogue migration fixes Palomo on MAP02 reload.
-CA-43622-NARRATIVE-01 passed 2026-09-27.
-Evidence: assets/validation_43622.
+**4.36.23 / #52:** Toughness subtracts uncapped L*(L+1)/101 maximum-health percentage points before armor.
+Magical armor loses mental bonuses; shields stay unchanged. Palomo absorbs 77%;
+gates absorb 10/20/30%, with Constitution 0 and Toughness 25/50/75.
+Native combat/siege and save migration pass. Tables: SYSTEMS; evidence:
+assets/validation_43623. Author confirmed all three checks passed 2026-09-28; merge authorized.
+
+**4.36.22 / #34:** revised Palomo/Voice/companion narrative, secondary-wind
+sprite freeze fix and legacy dialogue migration passed author acceptance
+CA-43622-NARRATIVE-01 on 2026-09-27. Evidence: assets/validation_43622;
+details retained in SYSTEMS/HISTORY. Siege deployment remains #16.
 
 The preceding **4.36.21** implements #49: tree/rock collision damage and
 pain no longer grant adrenaline or refresh combat. Walking, running and

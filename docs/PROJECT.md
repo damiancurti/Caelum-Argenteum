@@ -1,6 +1,38 @@
 # Caelum Argenteum — Project, status and roadmap
 
-Documentation version: **4.36.22** — 2026-09-27.
+Documentation version: **4.36.23** — 2026-09-28.
+
+## 4.36.23 — Final armor absorption (#52)
+
+Author revision, 2026-09-28: attacks and collisions now subtract Toughness
+through its historical growth R(L)=L(L+1)/101 as percentage points of maximum
+health, uncapped and with no minimum-damage floor. This supersedes the initial
+direct-level subtraction. An
+incoming 101% at Toughness 100 leaves 1% before armor; <=100% is still negated.
+Final gate revision, also approved on 2026-09-28: Constitution 0 for all gates;
+Toughness 25/50/75 and maximum resistance 5,500/6,500/11,000. Armor remains
+10/20/30%. Small rams break common/reinforced/armored gates in 2/2/7 hits;
+large rams in 1/2/2. Cannons retain Toughness reduction and deal zero gate damage.
+Gate balance revision 2 preserves remaining-health ratio, open/broken states
+and contact serials; repeated loads are idempotent. See SYSTEMS.
+Current native evidence supersedes the previous matrices, retained as
+DIVISOR_RESULTS.json, TOUGHNESS_RESULTS.json and GATE_RESULTS.json in
+assets/validation_43623. The curve revision changes no saved levels or maxima. Release remains 4.36.23 because
+all author revisions and acceptance belong to the same issue/PR patch.
+
+Ordinary damage now resolves shield, anatomy/critical, Toughness, then armor.
+Innate body defense adds to the struck piece's physical/magical percentage.
+New equipment values and the removed magical-armor attribute bonuses share one
+data source; shields and anatomical reinforcement retain their existing rules.
+Common/reinforced/armored gates absorb 10/20/30% after Toughness, including siege
+impacts. Native checks reproduce all nine calculated siege damage/hit counts.
+Palomo's author-specified innate absorption is 77% physical and magical.
+Player attribute revision 2 and NPC armor revision 1 rebuild derived values
+once on old-save load, without subtracting bonuses from base attributes.
+Evidence: `assets/validation_43623/RESULTS.json`. Static and isolated native
+checks are separate from author acceptance. On 2026-09-28 the author confirmed
+CA-43623-ARMOR-01, CA-43623-SAVE-01 and CA-43623-TOUGHNESS-01 passed and
+authorized PR #53 merge. No author checks remain pending; details are in HISTORY.
 
 ## 4.36.22 — Demo quest narrative (#34)
 

@@ -1,6 +1,37 @@
 # TASKS.md — Active tasks
 
-Documentation version: **4.36.22** — 2026-09-27.
+Documentation version: **4.36.23** — 2026-09-28.
+
+## Issue #52 — Final armor absorption (4.36.23)
+
+Author revision, 2026-09-28: attacks and collisions now subtract Toughness
+through its historical growth R(L)=L(L+1)/101 as percentage points of maximum
+health, uncapped and with no minimum-damage floor. This supersedes the initial
+direct-level subtraction. An
+incoming 101% at Toughness 100 leaves 1% before armor; <=100% is still negated.
+Final gate revision, also approved on 2026-09-28: Constitution 0 for all gates;
+Toughness 25/50/75 and maximum resistance 5,500/6,500/11,000. Armor remains
+10/20/30%. Small rams break common/reinforced/armored gates in 2/2/7 hits;
+large rams in 1/2/2. Cannons retain Toughness reduction and deal zero gate damage.
+Gate balance revision 2 preserves remaining-health ratio, open/broken states
+and contact serials; repeated loads are idempotent. See SYSTEMS.
+Current native evidence supersedes the previous matrices, retained as
+DIVISOR_RESULTS.json, TOUGHNESS_RESULTS.json and GATE_RESULTS.json in
+assets/validation_43623. The curve revision changes no saved levels or maxima. Release remains 4.36.23 because
+all author revisions and acceptance belong to the same issue/PR patch.
+
+- Implemented: shield/anatomy/Toughness/armor order; additive racial and equipped
+  physical/magical defenses; approved tier values; Palomo 77%; gate 10/20/30%.
+- Magical armor no longer grants mental attributes; other armor bonuses and
+  shield rules remain. Fractional UI values use the same balance data.
+- Legacy player/NPC derived statistics migrate idempotently; gate state and
+  equipment are preserved. Original saves permit rollback with the previous build.
+- Validation: native numerical/combat/impact/siege checks and save migration;
+  evidence in assets/validation_43623/RESULTS.json. The author confirmed
+  CA-43623-ARMOR-01, CA-43623-SAVE-01 and CA-43623-TOUGHNESS-01 passed on
+  2026-09-28 and authorized PR #53 merge. No author checks remain pending.
+- Scope: no siege penetration/explosion, new recipes, shield rebalance, map
+  geometry or redesign of the existing player/NPC elemental-DOT asymmetry.
 
 ## Issue #34 — Demo quest narrative (4.36.22)
 

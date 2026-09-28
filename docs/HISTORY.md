@@ -1,6 +1,49 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **4.36.22** — 2026-09-27.
+Documentation version: **4.36.23** — 2026-09-28.
+
+## 4.36.23 — Additive body/equipment armor after Toughness (#52)
+
+Author revision, 2026-09-28: attacks and collisions now subtract Toughness
+through its historical growth R(L)=L(L+1)/101 as percentage points of maximum
+health, uncapped and with no minimum-damage floor. This supersedes the initial
+direct-level subtraction. An
+incoming 101% at Toughness 100 leaves 1% before armor; <=100% is still negated.
+Final gate revision, also approved on 2026-09-28: Constitution 0 for all gates;
+Toughness 25/50/75 and maximum resistance 5,500/6,500/11,000. Armor remains
+10/20/30%. Small rams break common/reinforced/armored gates in 2/2/7 hits;
+large rams in 1/2/2. Cannons retain Toughness reduction and deal zero gate damage.
+Gate balance revision 2 preserves remaining-health ratio, open/broken states
+and contact serials; repeated loads are idempotent. See SYSTEMS.
+Current native evidence supersedes the previous matrices, retained as
+DIVISOR_RESULTS.json, TOUGHNESS_RESULTS.json and GATE_RESULTS.json in
+assets/validation_43623. The curve revision changes no saved levels or maxima. Release remains 4.36.23 because
+all author revisions and acceptance belong to the same issue/PR patch.
+
+- Author requested the third/fourth stage swap, all racial/armor tier values,
+  triple magical absorption for magical armor, removal of its mental bonuses,
+  unchanged shields, and structural gate defenses of 10/20/30%.
+- Author confirmed additive innate/equipped absorption, the four prisoner races,
+  and Palomo's exceptional 77% physical and magical innate defense on 2026-09-27.
+- Shared runtime/UI data retains fractional values. Toughness precedes final
+  armor absorption; wear uses the equipped absorbed share. Physical impacts
+  receive no duplicate reduction. Current siege inputs reproduce the nine
+  expected damage/hit-count cases recorded in SYSTEMS.
+- Attribute migration rebuilds from base values once (player revision 2, NPC
+  revision 1). Legacy equipment, gate remaining resistance/state and contact
+  serials are preserved. Original-save rollback remains available.
+- Cross-review identified an obsolete damage-order display and channel lightning
+  accidentally entering shield blocking; both were corrected and regression
+  checked. Existing elemental DOT differs between player and NPC; documented
+  without an unrelated behavior redesign.
+- Static checks and isolated engine/save results are recorded in
+  assets/validation_43623/RESULTS.json. They are not author acceptance.
+- Author acceptance, confirmed 2026-09-28: CA-43623-ARMOR-01,
+  CA-43623-SAVE-01 and CA-43623-TOUGHNESS-01 (all originating in 4.36.23,
+  issue #52) passed. The author reported all tests successful and authorized
+  PR #53 merge. No exceptions or partial results were reported. This is author
+  confirmation, separate from the 820 native checks and static validation.
+  Confirmed entries were removed from pending_test.txt; no checks remain pending.
 
 ## 4.36.22 — Palomo, Selene and port narrative (#34)
 
