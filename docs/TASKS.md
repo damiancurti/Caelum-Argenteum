@@ -1,6 +1,21 @@
 # TASKS.md — Active tasks
 
-Documentation version: **4.36.24** — 2026-09-28.
+Documentation version: **4.36.25** — 2026-09-28.
+
+## Issue #36 — Mansion enclosure and architectural detail (4.36.25)
+
+- Implemented: upper-storey roof/gable closure, native balcony guards,
+  interior/exterior wall finishes, closed shutters, stone trim, two reliefs
+  and an invisible but blocking outer horizon.
+- Author-approved visual proposal: aged render, wood, iron and discreet reliefs,
+  2026-09-28. Historical rationale and source attribution are in ASSETS.
+- Verified: preserved original map actors/actions/planes, deterministic output,
+  focused native geometry traversal for body tiers 1/4/7, railing collision,
+  roof closure and native views. Evidence: assets/validation_43625.
+- Pending: CA-43625-MANSION-01 ordinary tutorial/Bull/exit and final visuals.
+  This acceptance remains required before #17 export.
+- Author explicitly prioritized rebuilding over old MAP01 saves. Use a fresh
+  MAP01/new game; the preserved source baseline is not an automatic migration.
 
 ## Issue #35 — Quest journal (4.36.24)
 

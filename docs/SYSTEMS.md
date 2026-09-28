@@ -1,6 +1,18 @@
 # Caelum Argenteum — Current systems and rules
 
-Documentation version: **4.36.24** — 2026-09-28.
+Documentation version: **4.36.25** — 2026-09-28.
+
+## 4.36.25 — Rebuilt MAP01 geometry (#36)
+
+The mansion's roof closure and balcony guards use native solid 3D floors and
+3D middle-texture collision. Guards retain the existing 48-MU height. Doors,
+stairs, conversations, rewards, Bull rules and travel semantics do not change.
+The invisible outer boundary remains impassable; decorative shutter panels
+are closed wall surfaces and the two reliefs have no collision or interaction.
+
+Author decision, 2026-09-28: prioritize reconstruction over old MAP01 saves.
+Use a fresh MAP01/new game; this patch does not promise geometry migration or
+loading old MAP01 saves. Existing MAP02 compatibility guidance remains separate.
 
 ## 4.36.24 — Persistent quest journal (#35)
 

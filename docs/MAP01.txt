@@ -1,6 +1,36 @@
 CAELUM ARGENTEUM — STORY AND MAP01
 
-Documentation version: **4.36.24** — 2026-09-28.
+Documentation version: **4.36.25** — 2026-09-28.
+
+## 4.36.25 — Mansion roof, guards and period detail (#36)
+
+The author identified the affected level as the highest storey under the tiles:
+walking surface Z=264, former wall tops Z=392, roof rising toward the ridge.
+The two pitched roof controls (382/383; tags 570/571) remain intact. New solid
+gable fills follow their undersides over 54 upper wall sectors; the intentional
+central passage to the east balcony and all stair openings remain accessible.
+The repair completes 72 native railing sections alongside the existing 132.
+Their 48-MU height and bases Z=136/264 are retained. Narrow existing 1-MU
+construction seams between walkable slabs must not be mistaken for outer drops
+and fenced across. Per-section indices are in assets/map01_mansion/GENERATED.json.
+
+Target-sided 3D wall materials distinguish exterior aged render/closed wooden
+shutters from interior wallpaper/plaster. Slab fascia and lintels use existing
+stone; two original ornamental reliefs hang against upper-room walls without
+collision. Four original one-sided boundary lines now use Line_Horizon and
+retain blocking, with an explicit project-owned dark Limbo sky.
+
+The author approved this visual vocabulary on 2026-09-28. It is a restrained
+historicist interpretation appropriate to the setting, not an exact period
+house typology. The stepped three-storey massing remains intentionally stylized.
+ASSETS records the source/reference distinction. All 334 original map things,
+playable vertices, original floor/roof planes, tags and door/lift/travel actions
+are retained. No tutorial narrative or combat changes are part of #36.
+
+Source: assets/map01_mansion/REPAIR.json and preserved MAP01_43624.wad;
+generator: assets/generators/repair_map01_mansion.py. The author explicitly
+waived old MAP01 save compatibility in favor of reconstruction. Test a fresh
+MAP01/new game; final author playtest remains CA-43625-MANSION-01.
 
 ## 4.36.24 — Journal classification (#35)
 

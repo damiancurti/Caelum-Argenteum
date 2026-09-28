@@ -1,6 +1,6 @@
 # CONTEXT.md — Ultra-condensed summary of Caelum Argenteum
 
-Documentation version: **4.36.24** — 2026-09-28.
+Documentation version: **4.36.25** — 2026-09-28.
 
 Summary of `PROJECT.md`, `SYSTEMS.md`, `MAP01.txt`, `ASSETS.md`, `HISTORY.md`
 and the repository README.
@@ -62,14 +62,20 @@ the gauchos and rural culture, and the humans the urban porteño society.
 
 ## Current status
 
-**4.36.24 / #35:** Journal type/status filters retain active and completed
-main/side records. Author confirmed mansion = main; sewers/port = side; four
-optional rescues complete on live extraction, with payment shown separately.
-The catalogue reads existing authoritative state without duplicating progress
-or rewards. Legacy/reload/hub and focused UI/engine checks pass; evidence:
-assets/validation_43624. The author confirmed CA-43624-JOURNAL-01 passed on
-2026-09-28 and authorized merge/closure. Full port integration/export remain
-#16/#17. Controls and legacy limits: SYSTEMS.
+**4.36.25 / #36:** MAP01 upper gables now meet the pitched roof; 72 added
+guards complete 204 balcony spans. Interior/exterior wall finishes, closed
+wooden shutter panels, stone trim and two wall reliefs follow the author's
+approved period-inspired direction. The outer boundary blocks invisibly with
+a dark Limbo horizon. Geometry/native checks pass. The author prioritized
+rebuilding over old MAP01 saves: use a
+fresh MAP01/new game. Final author playtest CA-43625-MANSION-01 is pending.
+Evidence: assets/validation_43625; architecture/provenance: ASSETS and MAP01.
+
+**4.36.24 / #35:** Journal filters retain main/side and active/completed records,
+including separate rescue/extraction and payment status. Native legacy/reload/hub
+and UI checks pass (assets/validation_43624). CA-43624-JOURNAL-01 passed author
+acceptance on 2026-09-28; merge/closure authorized. Controls/classification and
+legacy limits: SYSTEMS. Full port integration/export remain #16/#17.
 
 **4.36.23 / #52:** Toughness subtracts uncapped L*(L+1)/101 maximum-health percentage points before armor.
 Magical armor loses mental bonuses; shields stay unchanged. Palomo absorbs 77%;

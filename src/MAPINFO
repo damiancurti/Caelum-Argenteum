@@ -48,6 +48,8 @@ map MAP01 "$CA_MAP01_NAME"
 {
     UnFreezeSinglePlayerConversations
     music = "CA_MUS02"
+    // Horizonte propio del Limbo tras retirar el muro perimetral visible.
+    sky1 = "CMLMSKY", 0
 
     // La puerta de retorno valida inventario y progreso antes de ChangeLevel.
     nointermission

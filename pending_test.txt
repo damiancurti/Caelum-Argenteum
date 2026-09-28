@@ -1,0 +1,21 @@
+CA-43625-MANSION-01 — Origin: 4.36.25 / issue #36
+Prerequisites: rebuild current source; start a NEW game/fresh MAP01 in GZDoom
+4.14.2. Do not use an old MAP01 save. The author approved the visual direction
+on 2026-09-28; this is the separate final in-game acceptance.
+1. Visit the highest storey under the tiled roof and inspect both end walls
+   from inside and the roof/gables from outside. Expected: no unintended sky
+   gaps; the east balcony passage and stair openings remain intentional.
+2. Walk both levels of balconies and their corners, stairs and landings with
+   representative small/medium/large characters. Expected: continuous visible
+   iron guards, blocking at their actual height, no fences across walking routes.
+3. Inspect exterior render/shutters, interior wallpaper/plaster, door lintels,
+   stone trim and the two upper-room reliefs. Expected: materials appropriate to
+   their surfaces; no floating/overlapping details, unreadable seams or obstruction.
+4. Approach the outer map limit. Expected: no enormous enclosing wall or missing
+   sky texture; the boundary still prevents leaving the playable area.
+5. Play the mansion tutorial, speak to residents, exercise their return paths,
+   complete the Bull encounter, obtain the Box and use the route to MAP02.
+   Expected: established interactions, movement and combat remain usable; no
+   decoration blocks doors/NPCs; rendering and performance remain acceptable.
+Report passed/failed/partial with the affected view or step. Keep this entry
+until the author explicitly confirms the test passed.

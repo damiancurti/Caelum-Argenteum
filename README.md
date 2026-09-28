@@ -4,8 +4,19 @@ An independent dark fantasy FPS-RPG inspired by nineteenth-century Argentina.
 Author and game designer: **Damian Curti**. Development target: **GZDoom 4.14.2**
 on Windows 11. The final game is intended to be independent of Doom assets.
 
-**Current release: 4.36.24.** Obtain and update the complete repository, validate
+**Current release: 4.36.25.** Obtain and update the complete repository, validate
 it, then rebuild with `run_dev.bat` as described below.
+
+Issue [#36](https://github.com/damiancurti/Caelum-Argenteum/issues/36) repairs
+the mansion's upper gables and balcony guards, separates exterior render from
+interior wall finishes, and adds closed wooden shutters and discreet reliefs.
+The outside boundary remains blocking but now renders a dark Limbo horizon.
+The author approved this period-inspired visual direction; final ordinary play
+and visual acceptance remain in [pending_test.txt](pending_test.txt).
+**Start a fresh MAP01/new game:** the author prioritized reconstruction over
+old MAP01 save compatibility. No old-map geometry migration is claimed.
+See [architecture and provenance](docs/ASSETS.md) and
+[validation evidence](assets/validation_43625/RESULTS.json).
 
 Issue [#35](https://github.com/damiancurti/Caelum-Argenteum/issues/35) adds
 Journal filters for main/side and active/completed quests, retaining completed
@@ -17,7 +28,7 @@ completes a rescue; its port reward remains separate. Existing saves retain
 recorded progress without duplicate flags or rewards. See
 [validation evidence](assets/validation_43624/RESULTS.json) and
 [author acceptance](docs/HISTORY.md), confirmed 2026-09-28 for
-CA-43624-JOURNAL-01. No author checks remain pending. Full port deployment
+CA-43624-JOURNAL-01. All #35 author checks passed. Full port deployment
 remains #16.
 
 Issue [#52](https://github.com/damiancurti/Caelum-Argenteum/issues/52) applies

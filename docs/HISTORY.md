@@ -1,6 +1,39 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **4.36.24** — 2026-09-28.
+Documentation version: **4.36.25** — 2026-09-28.
+
+## 4.36.25 — Mansion enclosure and architectural detail (#36)
+
+2026-09-28: the author requested implementation of #36, correct interior/exterior
+wall materials, a blocking invisible outer boundary, fully closed railings and
+an assessment of nineteenth-century architecture. The author explicitly placed
+reconstruction ahead of old-save compatibility and identified the roof defect
+on the highest storey. Native inspection reproduced open gables below the
+sloping tiled roof. Added roof-following solid fills, 72 missing guard sections,
+target-sided wall finishes, closed wooden shutter panels, stone fascia/lintels,
+two nonblocking reliefs and a native horizon with an explicit Limbo sky.
+The original map is preserved as the deterministic authoring baseline.
+
+The official Palacio San Jose architectural history informed the proposal.
+The author approved the aged-render/wood/iron/relief direction after seeing
+native exterior/interior views on 2026-09-28. The mansion remains a stylized
+Limbo interpretation; its stepped plan is not a replica of that residence.
+
+Validation: static scope/topology checks, deterministic map regeneration and
+isolated GZDoom 4.14.2 Windows/Vulkan checks. Twenty-one corridor/balcony/stair traversals
+pass for body tiers 1/4/7. Differential native rail checks demonstrate 109/78/76
+blocked crossings respectively with zero leaks in unobstructed samples; other
+samples are limited by adjacent geometry or segment length. All 204 guard
+spans have the expected native elevation/height. East/west gable traces now
+block where the preserved baseline was open. The test actor ignores other
+actors, so this is geometry evidence, not ordinary tutorial/NPC/Bull acceptance.
+The first candidate incorrectly fenced existing 1-MU walkway seams; baseline
+comparison exposed that regression and the corrected traversal checks pass.
+
+Evidence: assets/validation_43625. Fresh MAP01/new game is required; no old-map
+geometry migration is claimed. CA-43625-MANSION-01 remains pending for final
+visual, tutorial, Bull and exit acceptance. Commit/push/linked PR delivery does
+not confirm that manual test or authorize #17 export.
 
 ## 4.36.24 — Active and completed quest journal (#35)
 

@@ -4,6 +4,33 @@ Status: integrated engineering register (issue #22, patch 4.36.1b).
 Prepared: 2026-09-23. Inherits the project's release after integration.
 Inspected baseline: `1dc390576fa330d37ff543526fc7e69a397fc28f` (PR #7).
 
+## CA-KP-019 — A 3D wall inherits its control texture, not its visible face
+
+Status/evidence: CODE-VERIFIED / ENGINE-VERIFIED, #36 / 4.36.25.
+First recorded / last checked: 2026-09-28 / 2026-09-28.
+Baseline: 61b3c74e; correction is the linked #36 patch, with native evidence
+from its working tree. Environment: GZDoom 4.14.2, Windows 11, Vulkan,
+development Doom II IWAD, fresh MAP01.
+
+MAP01 reused CMIN01 on shared solid-wall controls, causing interior wallpaper
+to appear outside. Changing ordinary sidedef textures alone does not fix those
+3D wall faces. Sector_Set3dFloor argument 2 bits 16/32 select the target upper
+or lower texture; the visible/observer side determines interior versus exterior.
+Separate slots when one boundary supports different finishes at different levels.
+Keep slab undersides, roofs, door controls and cave/water models distinct.
+
+The same inspection found flat upper wall tops below a sloped roof. New solid
+gable controls end on the original roof underside; preserve the actual roof
+planes and intentional balcony/stair openings. Native before/after traces and
+images demonstrate the closure. A guard inferred from an exposed slab edge can
+incorrectly fence a narrow construction seam inside a continuous walkway: compare
+ordinary-sized native movement against the baseline before accepting it.
+
+Evidence: [#36 results](../assets/validation_43625/RESULTS.json), map generator
+and read-only layout validator in assets/generators. Representative native
+geometry probes ignore actors; final tutorial/Bull play remains author test
+CA-43625-MANSION-01. Visual direction approved 2026-09-28; final playtest pending.
+
 ## CA-KP-015 — Git checkout can invalidate raw document hashes
 
 Status/evidence: RESOLVED-VERIFIED tooling contract, #21 /4.36.19.

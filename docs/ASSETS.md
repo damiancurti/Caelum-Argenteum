@@ -1,6 +1,37 @@
 # Caelum Argenteum — Audio and art
 
-Documentation version: **4.36.24** — 2026-09-28.
+Documentation version: **4.36.25** — 2026-09-28.
+
+## 4.36.25 — Mansion architectural finishes (#36)
+
+The author approved aged render, wooden shutters, ornamental iron and discreet
+interior reliefs after reviewing native proposal views on 2026-09-28.
+The principal heritage reference is the official Museo y Monumento Historico
+Nacional Justo Jose de Urquiza article,
+[Historia del edificio](https://museourquiza.cultura.gob.ar/noticia/historia-del-edificio/),
+consulted 2026-09-28. It documents the 1848-1860 stages of Palacio San Jose:
+symmetrical fronts, galleries, wooden openings, iron grilles, classical cornices,
+ornamental ironwork and decorative sculpture. These support the vocabulary;
+the reference's courtyard plan and largely flat roofs are not claimed as a match
+for MAP01's stepped storeys and pitched tiled roof. For an 1889 setting, this
+is a plausible stylized historicist mansion, not an authenticated replica.
+
+All image sources already belong to the project's mansion/environment catalogues.
+CMEX01 supplies exterior render, CMIN01 interior wallpaper, CMIN03 upper plaster,
+CMST03 stone fascia/lintels, CMRLBAL the existing iron guards and CMRF01 the
+unchanged roof tiles. Native TEXTURES compositions add CMWIN36 (CMEX01 plus
+CMDT04 closed wooden shutters), CMPLS36 (the plaster portion of CMIN03), CMPNL36
+(CMDT02 ornamental relief at half scale) and CMLMSKY (the already used CVCI02
+source with a uniform dark tint). Original PNGs are unchanged. Shutters are
+decorative closed surfaces, not new traversable windows. The two reliefs are
+wall-mounted, nonblocking decorative planes; no new statue or gameplay actor
+is introduced. Website photographs/textures are not copied into the game.
+
+Geometry is generated deterministically by assets/generators/repair_map01_mansion.py
+from assets/map01_mansion/REPAIR.json and the preserved, hashed 4.36.24 WAD.
+GENERATED.json identifies every new guard, wall material assignment and relief.
+Native views and focused checks are in assets/validation_43625. Visual-direction
+approval does not establish final in-game author acceptance.
 
 ## 4.36.24 — Quest journal labels (#35)
 

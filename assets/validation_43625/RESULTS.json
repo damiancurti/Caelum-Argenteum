@@ -1,0 +1,62 @@
+{
+  "release": "4.36.25",
+  "issue": 36,
+  "date": "2026-09-28",
+  "baseline_commit": "61b3c74e",
+  "log_normalization": "Installation paths replaced with engine/development/workspace placeholders and trailing whitespace trimmed; original local logs remain in build.",
+  "environment": "Windows 11, GZDoom 4.14.2, Vulkan, developer-owned Doom II IWAD, fresh MAP01, isolated QA fixture",
+  "baseline_map_sha256": "c3c01999f2cd427ce0f618da82dd18148e6544c5f00ec14b5e066174edc0859c",
+  "final_map_sha256": "011cc53a25f18a4af16800cc61f8b0a599d424d8019f93b81eddd0135e26be10",
+  "tested_package_sha256": "3ae2355511f1179fb9cb29fc6872cd0384f29f8fa709506da5573260a9098f90",
+  "build": {"exit_code": 0, "files": 6121, "directory_entries": 0},
+  "project_validation": {"report": "PROJECT_VALIDATION.json", "exit_code": 0, "errors": []},
+  "static": {"report": "STATIC.json", "errors": [], "original_things_preserved": 334, "original_vertex_coordinates_preserved": 1525, "added_control_sectors": 2},
+  "determinism": {"repeated_generation_identical": true, "sha256": "011cc53a25f18a4af16800cc61f8b0a599d424d8019f93b81eddd0135e26be10"},
+  "native": {
+    "package_report": "native_package.txt",
+    "body_tiers": [1,4,7],
+    "corridor_balcony_stair_routes_passed": 21,
+    "gable_closure_traces_passed": 2,
+    "invisible_boundary_collision_passed": true,
+    "railing_spans_at_correct_elevation": 204,
+    "existing_spans": 132,
+    "completed_spans": 72,
+    "differential_crossings_blocked_by_tier": [109,78,76],
+    "differential_crossings_geometry_limited_by_tier": [95,126,128],
+    "differential_clear_sample_leaks": 0,
+    "before_after_camera_pairs": 16,
+    "camera_source": "views.json",
+    "all_completed_sections_indexed": ["rail_sections_136.svg","rail_sections_264.svg","../map01_mansion/GENERATED.json"],
+    "views_reports": ["native_views_before.txt","native_views_after.txt"],
+    "contact_sheet": "after_contact.png",
+    "performance_scope": "Native compilation, checks and 16 rendered final viewpoints completed without a hang or script error. Small geometry delta; no frame-time benchmark or whole-campaign performance claim."
+  },
+  "architecture": {
+    "reference": "https://museourquiza.cultura.gob.ar/noticia/historia-del-edificio/",
+    "consulted": "2026-09-28",
+    "assessment": "Period-compatible historicist vocabulary; the stepped three-storey Limbo massing is stylized and does not reproduce Palacio San Jose's courtyard plan or largely flat roofs.",
+    "new_artwork_downloaded": false,
+    "original_pngs_modified": false,
+    "proposal_approved_by_author": "2026-09-28: aged render, wooden shutters, ornamental iron and discreet interior reliefs",
+    "proposal_views": ["approved_proposal_exterior.png","approved_proposal_interior.png"]
+  },
+  "save_scope": "The author explicitly prioritized reconstruction over old MAP01 saves. Fresh MAP01/new game required. The old WAD is preserved as generator input; automatic geometry migration is not implemented or claimed.",
+  "limitations": [
+    "Native movement probes use actual body dimensions but ignore other actors, isolating geometry.",
+    "Differential railing samples blocked by adjacent geometry or too short for a body are recorded as geometry-limited, not independent railing collision passes.",
+    "Original 1-MU construction seams remain; guard inference excludes these traversable seams.",
+    "Shutter panels are closed decorative surfaces, not newly openable windows.",
+    "The preserved baseline fails the new gable-closure/count expectations by design; ordinary route comparison exposed and prevented a candidate railing regression.",
+    "Final ordinary tutorial, NPC returns, Bull encounter, exit and visual/performance acceptance require the author's fresh-game check."
+  ],
+  "pending_author_test": "CA-43625-MANSION-01",
+  "reproduction": [
+    "python assets/generators/repair_map01_mansion.py",
+    "python assets/generators/validate_map01_mansion.py",
+    "python build_document_index.py",
+    "python validate_project.py",
+    "powershell -NoProfile -ExecutionPolicy Bypass -File build_dev.ps1",
+    "For native geometry checks, load the built PK3 and a disposable fixture directory containing Checks.zs as ZSCRIPT, Views.zs and MAPINFO from this evidence directory. Start MAP01, then give Issue36View; give Issue36Checks. Never package the fixture into src.",
+    "For views, give View36_<id> using views.json IDs, wait at least 16 tics, then screenshot. Repeat against the preserved baseline WAD loaded after the current PK3 for comparison."
+  ]
+}
