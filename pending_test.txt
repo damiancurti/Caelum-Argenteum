@@ -29,8 +29,9 @@ Steps: test physical/magical combat and collisions with your character; repeat
 some comparable hits while wounded. Check campaign progression with the restored
 damage threshold. In disposable MAP03 siege trials, compare all three gate types:
 Constitution 0, Toughness 25/50/75 and armor 10/20/30%.
-Expected: Toughness removes percentage points of maximum health; lower current
+Expected: Toughness removes L*(L+1)/101 percentage points of maximum health
+without a cap (level 50: 25.2475%; level 200: 398.0198%); lower current
 health does not weaken it. Hits under the threshold can cause zero damage and
 zero armor wear; stronger hits pass the excess before armor. Current cannons
-cannot damage gates. Small rams need 2/3/32 hits against intact common/reinforced/
-armored gates; large rams need 1/2/3. Confirm campaign balance before merge.
+cannot damage gates. Small rams need 2/2/7 hits against intact common/reinforced/
+armored gates; large rams need 1/2/2. Confirm campaign balance before merge.

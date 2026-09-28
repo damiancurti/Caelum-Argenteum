@@ -2,80 +2,79 @@
   "issue": 52,
   "version": "4.36.23",
   "date": "2026-09-28",
-  "baseline": "1470877bd281cc3b71bca82a5642799820c99ae8",
-  "formula": "max(0, postAnatomyDamage - maximumHealth*Toughness/100), then final additive innate/equipped armor; collisions subtract Toughness from surfaced severity before anatomy.",
+  "baseline": "e0fe01d9c9f58a5b89a0cf62532308a8198dc907",
+  "formula": "R(L)=max(0,L)*(max(0,L)+1)/101 without cap; attacks max(0,postAnatomyDamage-maximumHealth*R(L)/100), then additive innate/equipped armor. Collisions subtract R(effectiveLevel) from surfaced severity before anatomy. Acrobatic shield doubles level before the curve.",
   "engine": "GZDoom 4.14.2, Windows 11; isolated noautoload/nosound session with author-installed development IWAD.",
-  "native_checks": 431,
+  "native_checks": 820,
   "native_failures": 0,
   "evidence": {
     "matrix": {
-      "log": "gate_revision/matrix.txt",
-      "raw_local_sha256": "65c3f8b62d68d109a23abb629e85d1aa25e24a372feae42fece4392dcebaf8be",
+      "log": "curve_revision/matrix.txt",
+      "raw_local_sha256": "7839eac261a9b31add736081e9b45646319c3ff1cbf86b89fabedede31fff779",
       "normalization": "UTF-8, LF and trailing whitespace removed only",
-      "sha256": "25d06f9b805fb8347a3330568a682716169d087cc78c4ec38ee35a2bca5b1eea",
+      "sha256": "5418ea3177333a976912c0b90dd045d5fa36277fcb0da3fc46402dc66aea4fed",
       "result": [
-        "QA52 DONE checks=431 failures=0"
+        "QA52 DONE checks=820 failures=0"
       ]
     },
     "old_save_setup": {
-      "log": "gate_revision/old_save_setup.txt",
-      "raw_local_sha256": "97bb12b88b9b1381e3498c47edfeb80f613ec15196e18d8597912bd68900888d",
+      "log": "curve_revision/old_save_setup.txt",
+      "raw_local_sha256": "a6c3e5f8066af955b9d61075acf61500e27cff443007a1c32e439ecfdb48ce9b",
       "normalization": "UTF-8, LF and trailing whitespace removed only",
-      "sha256": "08fdac1c4414e410947014cf4d60f6c9d4f55a016147a2f65bd3562e5ce9dbcb",
+      "sha256": "106cf12259bcefd1d8ac1c0703ae10465cc3886bdf9ec14880fcb19ada3aaeb9",
       "result": [
-        "QA52GATE SETUP gates=9 baseRevision=1"
+        "QA52 SETUP attributes=13/12/12 npcAnima=2710 version=2"
       ]
     },
-    "migration": {
-      "log": "gate_revision/migration.txt",
-      "raw_local_sha256": "fe5f81fd2c3b76526257ff47453969392317cd5002e4b96f311dd85f98946d23",
+    "load": {
+      "log": "curve_revision/load.txt",
+      "raw_local_sha256": "34099188dc71580370ad7b2d35f7da49e624d8fb30f9eda9b55321990a94bcc7",
       "normalization": "UTF-8, LF and trailing whitespace removed only",
-      "sha256": "1360a66523d12ba28226da63680db891a9979b511425e7cfc24e8bd4e4df1427",
+      "sha256": "728b4d57722a8387be6ca31b14af95761ab1f7539ff30f2557ea496952809ef0",
       "result": [
-        "QA52GATE DONE failures=0"
+        "QA52CURVELOAD DONE failures=0 playerLevel=13.000 preArmor=17.80000 gateDamage=176"
       ]
     },
-    "migrated_reload": {
-      "log": "gate_revision/migrated_reload.txt",
-      "raw_local_sha256": "9b8205beb924bffa225a73f95b1f56858fe36d37b1888bcaf9aa80ee9c50e998",
+    "reload": {
+      "log": "curve_revision/reload.txt",
+      "raw_local_sha256": "7a8cfc5a9b38005b400fffe211e580a7b3e7e05388daaf4c8e813f15a1a54df2",
       "normalization": "UTF-8, LF and trailing whitespace removed only",
-      "sha256": "6c4949a5ab395437caea9700bb7cf899ff16bc599bb52fff4253cd9760c66fef",
+      "sha256": "29a3490b2ec46da038336762f6d5b42dd93aa842c95638f815a9f37ff5bb0884",
       "result": [
-        "QA52GATE DONE failures=0"
+        "QA52CURVELOAD DONE failures=0 playerLevel=13.000 preArmor=17.80000 gateDamage=176"
       ]
     },
-    "original_save_rollback": {
-      "log": "gate_revision/original_save_rollback.txt",
-      "raw_local_sha256": "017ec7d6d9cc47b5d13baeddf2d25bc6a789f602e884f0363f56188c427c39be",
+    "rollback": {
+      "log": "curve_revision/rollback.txt",
+      "raw_local_sha256": "74a6a708f0f0dd0fc4a6af0df4b978467dd2e10d6913ef54bf8440840a66d031",
       "normalization": "UTF-8, LF and trailing whitespace removed only",
-      "sha256": "b43e9cb87694d268eb7c0a5bcc7bc3e9d094e2f345ad5bfa8e9e6935d9e01eed",
+      "sha256": "3530cdda2789ff4cd9beda03c4a38c57a14693b68d3efd7b956d112ba4191689",
       "result": [
-        "QA52GATEROLLBACK DONE failures=0"
+        "QA52CURVEROLLBACK DONE failures=0"
       ]
     }
   },
   "coverage": [
-    "All original race, tier, magical-bonus and shield cases rerun with current formula",
-    "Health maxima 500/1000/2000; Toughness 0/12.5/25/100/150; incoming severity 0/50/99.9/100/101/200 percent",
-    "Threshold uses maximum health while wounded; zero remainder causes no armor wear",
-    "Real player/NPC 1010-point attack at maximum health 1000 and Toughness 100 causes 8 rounded damage with Human light T1",
-    "Shield, critical and anatomy order; surface multiplier and buckler effective Toughness",
-    "Per-region explosion parity and aggregate diagnostic ratio",
-    "4.36.22 save migration; initial 4.36.23 divisor save loading and repeated new save loading",
-    "Nine siege cases with final gate attributes and remaining-health cap",
-    "Gate migration, repeated load and original-save rollback; retained damaged/open/broken/contact state"
+    "All race/tier, mental-bonus, ordinary damage and shield regressions",
+    "Maximum health 500/1000/2000, levels 0/12.5/25/50/75/100/150/200 and severities through 500 percent",
+    "Exact threshold boundaries at each ten-level step from 10 through 200 using maximum health 10100",
+    "Wounded recipient retains threshold, zero damage causes no armor wear",
+    "Anatomy/critical and shield order, per-region explosions and diagnostic parity",
+    "Acrobatic level25 becomes50 before curve; collision level200 subtracts398.019802 percent once for both player and NPC",
+    "All nine siege cases with unchanged gate attributes and cannon reduction",
+    "Previous linear-curve save loads/reloads without changes to attributes/equipment/gate state; legacy reduction caches ignored; untouched original save and previous package restore prior behavior"
   ],
-  "save_compatibility": "Gate BalanceRevision 2 preserves remaining-health ratio with one rounding and minimum 1 for living gates. Nine saved gates cover all materials, damaged/open/broken states, contact serials, a near-destroyed gate and explicit revision-0 recovery mode. Loaded and reloaded new saves match; untouched old save plus baseline package restores previous attributes and health. No new serialized fields. Previous character-stat migration evidence is retained in TOUGHNESS_RESULTS.json.",
+  "save_compatibility": "Curve correction adds no serialized fields or migration revision. Saved levels are evaluated through R on the next hit; maxima, attributes, equipment wear, gate health/open/broken/contact states remain unchanged. Existing gate revision2 and older character migrations remain intact; their dedicated evidence is retained in GATE_RESULTS.json and TOUGHNESS_RESULTS.json.",
   "siege_damage": {
     "small_ram": [
-      4071,
-      2664,
-      354
+      4990,
+      3951,
+      1783
     ],
     "large_ram": [
       5500,
-      4685,
-      4429
+      5972,
+      5859
     ],
     "cannon": [
       0,
@@ -89,44 +88,44 @@
     "armored"
   ],
   "package": {
-    "sha256": "ff028d1314d1fb9cc9dbef39352387d7491654da98fa93e446c0d2963e8685b8",
+    "sha256": "72da220ad01ec819898d9c5ceef0a225756e2622d25ddbdbd71a19dc4620cb28",
     "entries": 6120,
-    "all_entries_match_source": true,
-    "note": "The final rebuild changes only a gameplay comment relative to the matrix package; final rebuild also passes saved-game reload."
+    "all_entries_match_source": true
   },
   "runtime_changed": {
     "src/LANGUAGE": "081d408f98ade1b5c301b26db58b5ea91a86a787799ce3b4d2672202fc66cb24",
     "src/ZSCRIPT": "6ea80036dc0c726ebdcacfb4eab7cafeb3802704a2a24ad4acf4af9c0d402ae9",
     "src/caelum/actors/CaelumBull.zs": "b93656db9462db525f6c65d509aed243d5e0935dd24f82bfc455ce3b1a2d2db1",
     "src/caelum/actors/CaelumCaella.zs": "5f52984025bfdf9b7591334c002344a875dc9a0c3d72baa465534f1198acf7f8",
-    "src/caelum/actors/CaelumCombatActor.zs": "800949e0dc42fabff8db0aa7fc2f6a579e6b40508c24948d1fea566e330e8d46",
+    "src/caelum/actors/CaelumCombatActor.zs": "d54effa9d6d171c3fa7de649adf039bbd39288a621eb6aa62303d1a14257ecd7",
     "src/caelum/actors/CaelumFolkloreCharacters.zs": "8f84b417bcfddb9fdfb219f2d45fa8678c3fa3dcb01afc96edbc0898f90eb349",
     "src/caelum/actors/CaelumGiantRat.zs": "cb741a667b6cb67ce418f97337d74170e63e9fac7f9634956f9897120636f039",
     "src/caelum/actors/CaelumRonnie.zs": "b9efba3e14ac1cc3a44ff893eb1b9f3c72f893106c2c10985a357c1b364c11a0",
     "src/caelum/actors/CaelumRulo.zs": "8b3630ff55e2f7eb1b62c98dd679abba05fd5313b3ec4819b5407d4c28d0537d",
     "src/caelum/debug/CaelumDebugOverlay.zs": "290843b146ff402e2cbdffca41e93e804d58024bef83c0d8d9538a9457933adb",
     "src/caelum/equipment/CaelumArmorModel.zs": "4cb0b5422698ad9c19f7ae24729e0461d08f15be93de1f8d88fe8d68e1026983",
-    "src/caelum/equipment/CaelumArmorRules.zs": "13aa1bd7c84de7c3f2435bf65c45cf1bacc765b352cb7b09fb0ba7522eb5414d",
-    "src/caelum/player/CaelumPlayer.zs": "b08c04997ef41b4ee715ba57dabc8bbd9d515afdc3a16fee511814f2942a29be",
+    "src/caelum/equipment/CaelumArmorRules.zs": "f2a582e01df365f4a08d94430517c659e83cabd94217e4663c8de28c86ed2de2",
+    "src/caelum/player/CaelumPlayer.zs": "3ea026b545eb1802120e7a82622ca6b8ac8a8f5943c7a33ea72aaa02f641aa6d",
     "src/caelum/statistics/CaelumDerivedStats.zs": "d0ccd2358a3c2f5f3ac063cd012fe3c87f718fa987441dd56e7a95be5b577068",
     "src/caelum/world/CaelumBreakableGate.zs": "1b1563324416e3a3a561a6b7e7e95629ecb75409d5e246156997bf07a5fa2cae",
     "src/caelum/world/CaelumGateData.zs": "c50d71b3c61554193a7d385b561dfced05a8d734ac6d32ea748d1e2001f192a2",
     "src/caelum/world/CaelumPhysicalHazards.zs": "bb7f354ef1b1c59441cc3ffdf5da0030ea6cd5ed2a924b659524d236efc68741",
     "src/caelum/world/CaelumSewerMaze.zs": "423191bd26cc22946e603d791f6a360347a62faa27b8642f557126b7143a3744"
   },
-  "review": "Independent AI reviewed the two changed runtime files, idempotent migration, state preservation and legacy recovery; no blockers. Clarified a stale Type 4 comment.",
+  "review": "Independent AI checked receiving paths, single uncapped conversion, shield effective-level semantics, diagnostics and unchanged serialized state; no blockers.",
   "superseded_evidence": {
     "manifests": [
       "DIVISOR_RESULTS.json",
-      "TOUGHNESS_RESULTS.json"
+      "TOUGHNESS_RESULTS.json",
+      "GATE_RESULTS.json"
     ],
-    "reason": "Earlier #52 matrices and siege values retained as history; gate_revision/ is the current gate balance."
+    "reason": "Prior divisor/direct-level damage matrices retained as history. curve_revision/ records the final historical growth curve without cap."
   },
   "limitations": [
     "Author campaign acceptance remains pending.",
-    "Toughness 100 negates hits at or below 100 percent of maximum health; no damage floor.",
+    "Reduction is uncapped; damage remainder has minimum zero, with no minimum-damage floor.",
     "Cannons retain Toughness reduction and cannot damage current gates. No penetration or explosion is added.",
-    "Existing elemental DOT bypass/classification asymmetry unchanged.",
+    "Pain/lucidity retain their separate capped curves; existing elemental DOT asymmetry unchanged.",
     "No test fixtures, saves, IWAD or executable are distributed."
   ],
   "author_acceptance": {
@@ -163,17 +162,17 @@
     ],
     "cannon_bypasses_toughness": false
   },
-  "siege_damage_note": "Actual first-hit health loss. The large ram calculates 5785 against common gates but loss is capped at remaining health 5500.",
+  "siege_damage_note": "Actual first-hit health loss. Large ram calculates 6704 against common gates but health loss is capped at 5500.",
   "siege_hits": {
     "small_ram": [
       2,
-      3,
-      32
+      2,
+      7
     ],
     "large_ram": [
       1,
       2,
-      3
+      2
     ],
     "cannon": [
       "cannot break",
@@ -182,8 +181,6 @@
     ]
   },
   "qa_notes": [
-    "Initial matrix expected theoretical 5785 for common-gate large-ram hit; fixed assertion to existing health-loss cap of 5500.",
-    "Initial save attempt used loose src instead of the named PK3; rerun against package.",
-    "Initial opened-gate fixture had zero hold timer and closed normally; corrected fixture to keep it open during migration/reload. Final tests have zero failures."
+    "All final runtime matrix and save tests passed on first execution."
   ]
 }

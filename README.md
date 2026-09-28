@@ -8,14 +8,14 @@ on Windows 11. The final game is intended to be independent of Doom assets.
 it, then rebuild with `run_dev.bat` as described below.
 
 Issue [#52](https://github.com/damiancurti/Caelum-Argenteum/issues/52) applies
-armor absorption after Toughness, which subtracts percentage points of maximum
-health for attacks and collisions. It adds innate physical/magical body defense,
+armor absorption after Toughness, whose historical curve L*(L+1)/101 subtracts
+percentage points of maximum health for attacks and collisions, without a cap. It adds innate physical/magical body defense,
 rebalances all armor tiers and removes magical armor's mental attribute bonuses.
 Palomo absorbs 77% of either damage category; gates gain 10/20/30% defense.
 Shields retain their rules. Older saves rebuild derived attributes once while
 preserving equipment and gate state; keep original saves for rollback.
 Gates now have Constitution 0 and Toughness 25/50/75, with maximum resistance
-5,500/6,500/11,000. Small/large rams need 2/3/32 and 1/2/3 hits respectively;
+5,500/6,500/11,000. Small/large rams need 2/2/7 and 1/2/2 hits respectively;
 cannons still apply Toughness and cannot damage gates. Saved gate resistance
 migrates proportionally, preserving open/broken states. See [validation evidence](assets/validation_43623/RESULTS.json) and
 [pending author checks](pending_test.txt). Full balance tables are in SYSTEMS.
@@ -676,7 +676,7 @@ preserved. The broader unfinished 4.36 physics roadmap remains in PROJECT.md.
   damage, reach and recovery, with triple primary Air per execution. Nearby
   enemies can all be hit once; walls, solid 3D floors and allies are respected.
   Giant gauntlets retain Block. Charged sweeps consume the existing charge.
-- Incoming attacks and collisions subtract Toughness percentage points of
+- Incoming attacks and collisions subtract R(T)=T*(T+1)/101 percentage points of
   maximum health before final armor absorption (#52 revision). Magical Anima
   cost still divides by Type 4 Eloquence; at 100 its divisor is 3. Pain and
   Lucidity retain their previous curves. Saved character statistics refresh.

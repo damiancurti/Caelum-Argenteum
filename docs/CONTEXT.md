@@ -62,7 +62,7 @@ the gauchos and rural culture, and the humans the urban porteño society.
 
 ## Current status
 
-**4.36.23 / #52:** Toughness subtracts maximum-health percentage points before final armor.
+**4.36.23 / #52:** Toughness subtracts uncapped L*(L+1)/101 maximum-health percentage points before armor.
 Magical armor loses mental bonuses; shields stay unchanged. Palomo absorbs 77%;
 gates absorb 10/20/30%, with Constitution 0 and Toughness 25/50/75.
 Native combat/siege and save migration pass. Tables: SYSTEMS; evidence:

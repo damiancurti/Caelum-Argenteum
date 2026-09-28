@@ -12489,19 +12489,20 @@ class CaelumPlayer : DoomPlayer
         LastImpactBaseDamage = 0;
         LastImpactFinalDamage = 0;
         LastImpactToughnessMultiplier = 1.0;
-        LastImpactToughnessPercent = 0.0;
+        double impactToughness = 0.0;
         if (Attributes != null)
         {
-            LastImpactToughnessPercent = Max(
+            impactToughness = Max(
                 0.0,
                 double(Attributes.Toughness)
             );
             if (IsBucklerAcrobaticDefenseActive())
             {
-                LastImpactToughnessPercent *=
+                impactToughness *=
                     CaelumConstants.SHIELD_BUCKLER_IMPACT_TOUGHNESS_MULTIPLIER;
             }
         }
+        LastImpactToughnessPercent = CaelumArmorRules.ToughnessReductionPercent(impactToughness);
         LastImpactArmorDefensePercent = 0.0;
         LastImpactWeightedVulnerabilityMultiplier = 0.0;
         LastImpactWeightedArmorDefensePercent = 0.0;
@@ -12522,7 +12523,7 @@ class CaelumPlayer : DoomPlayer
             LastImpactDamagePercent * surfaceMultiplier;
         LastImpactToughnessMultiplier = GetImpactToughnessMultiplier(surfacedDamagePercent);
         LastImpactPostToughnessPercent = CaelumArmorRules.AfterToughnessPercent(
-            surfacedDamagePercent, LastImpactToughnessPercent);
+            surfacedDamagePercent, impactToughness);
 
         if (AnatomyProfile == null)
         {

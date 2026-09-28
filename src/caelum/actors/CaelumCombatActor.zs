@@ -1683,7 +1683,7 @@ class CaelumCombatActor : Actor
         LastImpactBaseDamage = 0;
         LastImpactFinalDamage = 0;
         LastImpactToughnessMultiplier = 1.0;
-        LastImpactToughnessPercent = Max(0.0, double(CombatToughness));
+        LastImpactToughnessPercent = CaelumArmorRules.ToughnessReductionPercent(CombatToughness);
         LastImpactArmorDefensePercent = 0.0;
         LastImpactWeightedVulnerabilityMultiplier = 0.0;
         LastImpactWeightedArmorDefensePercent = 0.0;
@@ -1704,7 +1704,7 @@ class CaelumCombatActor : Actor
                 * Max(0.0, sourceSurfaceMultiplier);
         LastImpactToughnessMultiplier = GetImpactToughnessMultiplier(surfacedDamagePercent);
         LastImpactPostToughnessPercent = CaelumArmorRules.AfterToughnessPercent(
-            surfacedDamagePercent, LastImpactToughnessPercent);
+            surfacedDamagePercent, CombatToughness);
 
         if (AnatomyProfile == null)
         {

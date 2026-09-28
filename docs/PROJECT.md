@@ -5,16 +5,19 @@ Documentation version: **4.36.23** — 2026-09-28.
 ## 4.36.23 — Final armor absorption (#52)
 
 Author revision, 2026-09-28: attacks and collisions now subtract Toughness
-as percentage points of maximum health, with no minimum-damage floor. An
+through its historical growth R(L)=L(L+1)/101 as percentage points of maximum
+health, uncapped and with no minimum-damage floor. This supersedes the initial
+direct-level subtraction. An
 incoming 101% at Toughness 100 leaves 1% before armor; <=100% is still negated.
 Final gate revision, also approved on 2026-09-28: Constitution 0 for all gates;
 Toughness 25/50/75 and maximum resistance 5,500/6,500/11,000. Armor remains
-10/20/30%. Small rams break common/reinforced/armored gates in 2/3/32 hits;
-large rams in 1/2/3. Cannons retain Toughness reduction and deal zero gate damage.
+10/20/30%. Small rams break common/reinforced/armored gates in 2/2/7 hits;
+large rams in 1/2/2. Cannons retain Toughness reduction and deal zero gate damage.
 Gate balance revision 2 preserves remaining-health ratio, open/broken states
 and contact serials; repeated loads are idempotent. See SYSTEMS.
 Current native evidence supersedes the previous matrices, retained as
-DIVISOR_RESULTS.json and TOUGHNESS_RESULTS.json in assets/validation_43623. Release remains 4.36.23 because
+DIVISOR_RESULTS.json, TOUGHNESS_RESULTS.json and GATE_RESULTS.json in
+assets/validation_43623. The curve revision changes no saved levels or maxima. Release remains 4.36.23 because
 this is an author revision of the same open issue/PR before acceptance.
 
 Ordinary damage now resolves shield, anatomy/critical, Toughness, then armor.
