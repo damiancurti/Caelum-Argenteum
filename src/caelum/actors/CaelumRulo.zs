@@ -2,6 +2,7 @@
 // con args[0]=1 y adopta el contrato tangible/anclado del residente.
 class CaelumRulo : CaelumAnchoredResident
 {
+    override int GetArmorRace() { return CaelumConstants.RACE_BEAST_MAN; }
     Default
     {
         Tag "$CA_RULO_NAME";

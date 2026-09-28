@@ -1,6 +1,20 @@
 # TASKS.md — Active tasks
 
-Documentation version: **4.36.22** — 2026-09-27.
+Documentation version: **4.36.23** — 2026-09-27.
+
+## Issue #52 — Final armor absorption (4.36.23)
+
+- Implemented: shield/anatomy/Toughness/armor order; additive racial and equipped
+  physical/magical defenses; approved tier values; Palomo 77%; gate 10/20/30%.
+- Magical armor no longer grants mental attributes; other armor bonuses and
+  shield rules remain. Fractional UI values use the same balance data.
+- Legacy player/NPC derived statistics migrate idempotently; gate state and
+  equipment are preserved. Original saves permit rollback with the previous build.
+- Validation: native numerical/combat/impact/siege checks and save migration;
+  evidence in assets/validation_43623/RESULTS.json. Author acceptance remains
+  CA-43623-ARMOR-01 and CA-43623-SAVE-01 in pending_test.txt.
+- Scope: no siege penetration/explosion, new recipes, shield rebalance, map
+  geometry or redesign of the existing player/NPC elemental-DOT asymmetry.
 
 ## Issue #34 — Demo quest narrative (4.36.22)
 

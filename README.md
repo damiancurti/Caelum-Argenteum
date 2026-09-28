@@ -4,8 +4,17 @@ An independent dark fantasy FPS-RPG inspired by nineteenth-century Argentina.
 Author and game designer: **Damian Curti**. Development target: **GZDoom 4.14.2**
 on Windows 11. The final game is intended to be independent of Doom assets.
 
-**Current release: 4.36.22.** Obtain and update the complete repository, validate
+**Current release: 4.36.23.** Obtain and update the complete repository, validate
 it, then rebuild with `run_dev.bat` as described below.
+
+Issue [#52](https://github.com/damiancurti/Caelum-Argenteum/issues/52) applies
+armor absorption after Toughness, adds innate physical/magical body defense,
+rebalances all armor tiers and removes magical armor's mental attribute bonuses.
+Palomo absorbs 77% of either damage category; gates gain 10/20/30% defense.
+Shields retain their rules. Older saves rebuild derived attributes once while
+preserving equipment and gate state; keep original saves for rollback.
+See [validation evidence](assets/validation_43623/RESULTS.json) and
+[pending author checks](pending_test.txt). Full balance tables are in SYSTEMS.
 
 Issue [#34](https://github.com/damiancurti/Caelum-Argenteum/issues/34) gives
 Palomo quest 1, optional survival practices and exclusive material-location
@@ -58,7 +67,8 @@ from running; idle/airborne input does not qualify. The benefit applies only
 to walls. Native checks and an 80 kg /20 kg equipment self-jump test passed;
 the author confirmed CA-43618-WALK-01 and final siege check CA-43619-BALANCE-01
 passed on 2026-09-27. Acceptance is recorded in [HISTORY](docs/HISTORY.md);
-#33/#49 acceptance is also recorded there; [pending_test.txt](pending_test.txt) is empty.
+#33/#49 acceptance is also recorded there; current outstanding checks are in
+[pending_test.txt](pending_test.txt).
 
 Issue [#21](https://github.com/damiancurti/Caelum-Argenteum/issues/21) adds
 controlled cannon loading, firing and recovery, with inert 4.3 kg projectiles

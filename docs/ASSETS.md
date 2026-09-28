@@ -1,6 +1,13 @@
 # Caelum Argenteum — Audio and art
 
-Documentation version: **4.36.22** — 2026-09-27.
+Documentation version: **4.36.23** — 2026-09-27.
+
+## 4.36.23 — Armor presentation (#52)
+
+No new art, audio, models, maps or generators. Existing debug/equipment text
+shows fractional physical/magical defense from shared runtime data. English
+and Spanish Ronnie guidance describes magical protection instead of removed
+Intelligence/Patience/Insight bonuses. Existing attribution and licenses remain.
 
 ## 4.36.22 — Existing dialogue presentation (#34)
 

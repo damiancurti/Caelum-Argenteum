@@ -2,6 +2,7 @@
 // torso y cuatro piernas; la cabeza sólo se resuelve en el frente del actor.
 class CaelumBull : CaelumCombatActor
 {
+    override int GetArmorRace() { return CaelumConstants.RACE_BEAST_MAN; }
     bool BullChargeActive;
     double BullRunningSpeed;
 

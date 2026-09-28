@@ -57,30 +57,11 @@ class CaelumArmorModel : Object
         return 20;
     }
 
-    int GetDefense(int slot)
+    double GetDefense(int slot, bool magical = false)
     {
         if (ArmorType[slot] == CaelumConstants.ARMOR_TYPE_BASE_CLOTHING) { return 0; }
         if (Durability[slot] <= 0) { return 0; }
-        int tier = Clamp(Tier[slot], 1, 3);
-        switch (ArmorType[slot])
-        {
-            case CaelumConstants.ARMOR_TYPE_MAGIC:
-                if (tier == 1) { return 5; }
-                if (tier == 2) { return 10; }
-                return 15;
-            case CaelumConstants.ARMOR_TYPE_LIGHT:
-                if (tier == 1) { return 10; }
-                if (tier == 2) { return 20; }
-                return 30;
-            case CaelumConstants.ARMOR_TYPE_MEDIUM:
-                if (tier == 1) { return 20; }
-                if (tier == 2) { return 40; }
-                return 60;
-            default:
-                if (tier == 1) { return 30; }
-                if (tier == 2) { return 60; }
-                return 90;
-        }
+        return CaelumArmorRules.EquipmentDefense(ArmorType[slot], Tier[slot], magical);
     }
 
     // El peso pertenece a la pieza equipada aunque su durabilidad llegue a cero.
@@ -188,13 +169,7 @@ class CaelumArmorModel : Object
     int GetBonusAttribute(int slot)
     {
         if (Durability[slot] <= 0) { return -1; }
-        if (ArmorType[slot] == CaelumConstants.ARMOR_TYPE_MAGIC)
-        {
-            if (slot == CaelumConstants.ARMOR_SLOT_HEAD) { return CaelumConstants.ATTRIBUTE_INTELLIGENCE; }
-            if (slot == CaelumConstants.ARMOR_SLOT_HANDS) { return CaelumConstants.ATTRIBUTE_PATIENCE; }
-            if (slot == CaelumConstants.ARMOR_SLOT_FEET) { return CaelumConstants.ATTRIBUTE_INSIGHT; }
-        }
-        else if (ArmorType[slot] == CaelumConstants.ARMOR_TYPE_LIGHT)
+        if (ArmorType[slot] == CaelumConstants.ARMOR_TYPE_LIGHT)
         {
             if (slot == CaelumConstants.ARMOR_SLOT_HANDS) { return CaelumConstants.ATTRIBUTE_DEXTERITY; }
             if (slot == CaelumConstants.ARMOR_SLOT_FEET) { return CaelumConstants.ATTRIBUTE_AGILITY; }

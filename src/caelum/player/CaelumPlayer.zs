@@ -12188,15 +12188,21 @@ class CaelumPlayer : DoomPlayer
         return 100.0 / DerivedStats.CalculateType4Percent(toughness);
     }
 
+    double GetArmorDefensePercent(int slot, bool magical = false)
+    {
+        int race = CharacterProfile != null ? CharacterProfile.Race : CaelumConstants.RACE_HUMAN;
+        return CaelumArmorRules.TotalDefense(CaelumArmorRules.InnateDefense(race, magical), ArmorModel, slot, magical);
+    }
+
     double GetImpactArmorDefensePercent()
     {
-        if (ArmorModel == null) { return 0.0; }
+
 
         double totalDefense = 0.0;
         for (int slot = 0; slot < CaelumConstants.ARMOR_SLOT_COUNT; slot++)
         {
             totalDefense += Clamp(
-                double(ArmorModel.GetDefense(slot)),
+                GetArmorDefensePercent(slot),
                 0.0,
                 100.0
             );
@@ -12403,9 +12409,7 @@ class CaelumPlayer : DoomPlayer
             LastImpactHeadContactWeight += weight;
             int location = AnatomyProfile.GetLocation(regionIndex);
             int slot = GetArmorSlotForHitLocation(location);
-            double defenseRatio = ArmorModel != null
-                ? Clamp(ArmorModel.GetDefense(slot) / 100.0, 0.0, 1.0)
-                : 0.0;
+            double defenseRatio = Clamp(GetArmorDefensePercent(slot) / 100.0, 0.0, 1.0);
             weightedLoss +=
                 CaelumConstants.CRITICAL_POINT_BASE_LUCIDITY_LOSS
                 * weight
@@ -12559,12 +12563,7 @@ class CaelumPlayer : DoomPlayer
                 );
                 double vulnerabilityMultiplier =
                     GetVulnerabilityMultiplier(effectiveGrade, false);
-                double defenseRatio = ArmorModel != null
-                    ? Clamp(
-                        ArmorModel.GetDefense(slot) / 100.0,
-                        0.0, 1.0
-                    )
-                    : 0.0;
+                double defenseRatio = Clamp(GetArmorDefensePercent(slot) / 100.0, 0.0, 1.0);
 
                 LastImpactWeightedVulnerabilityMultiplier +=
                     weight * vulnerabilityMultiplier;
@@ -13585,6 +13584,7 @@ class CaelumPlayer : DoomPlayer
             return false;
         }
         if (inflictor != null && inflictor.bMissile) { return true; }
+        if (mod == 'Electric' && inflictor is 'CaelumChannelEffect') { return true; }
         return source != null
             && (mod == 'Melee'
                 || mod == 'Hitscan'
@@ -13676,6 +13676,7 @@ class CaelumPlayer : DoomPlayer
         );
         if (LastExplosionTouchedRegionMask == 0) { return 0; }
 
+        bool magical = CaelumArmorRules.IsMagical(inflictor, mod);
         bool criticalHit = ResolveIncomingActorCritical(inflictor, source);
         LastArmorPreDefenseDamage = 0.0;
         LastArmorAbsorbedDamage = 0.0;
@@ -13717,10 +13718,9 @@ class CaelumPlayer : DoomPlayer
                 effectiveGrade,
                 criticalHit
             );
-            double preDefenseDamage = incomingDamage * vulnerabilityMultiplier;
-            double defenseRatio = ArmorModel != null
-                ? Clamp(ArmorModel.GetDefense(slot) / 100.0, 0.0, 1.0)
-                : 0.0;
+            double preDefenseDamage = incomingDamage * vulnerabilityMultiplier
+                * LastToughnessDamageMultiplier;
+            double defenseRatio = Clamp(GetArmorDefensePercent(slot, magical) / 100.0, 0.0, 1.0);
             double absorbedDamage = preDefenseDamage * defenseRatio;
             double postDefenseDamage = Max(
                 0.0,
@@ -13734,7 +13734,7 @@ class CaelumPlayer : DoomPlayer
             LastArmorPostDefenseDamage += postDefenseDamage;
             totalHealthDamage += Max(
                 0,
-                int(postDefenseDamage * LastToughnessDamageMultiplier + 0.5)
+                int(postDefenseDamage + 0.5)
             );
 
             if (naturalGrade == CaelumConstants.VULNERABILITY_CRITICAL_POINT
@@ -13749,7 +13749,7 @@ class CaelumPlayer : DoomPlayer
                 && ArmorModel.Durability[slot] > 0
                 && absorbedDamage > 0.0)
             {
-                double eligibleDamage = absorbedDamage
+                double eligibleDamage = preDefenseDamage * ArmorModel.GetDefense(slot, magical) / 100.0
                     * Max(0.0, ArmorDurabilityDamageMultiplier);
                 int durabilityLoss = int(
                     eligibleDamage
@@ -13916,7 +13916,8 @@ class CaelumPlayer : DoomPlayer
         PrepareRealArmorDamage(
             damageAfterShield,
             incomingActorCritical,
-            LastIncomingArmorSlot
+            LastIncomingArmorSlot,
+            CaelumArmorRules.IsMagical(inflictor, mod)
         );
 
         double adrenalineRatioBeforeDamage = 0.0;
@@ -13971,7 +13972,7 @@ class CaelumPlayer : DoomPlayer
                 LastArmorVulnerabilityGrade,
                 incomingActorCritical,
                 Clamp(
-                    ArmorModel.GetDefense(LastIncomingArmorSlot) / 100.0,
+                    GetArmorDefensePercent(LastIncomingArmorSlot, CaelumArmorRules.IsMagical(inflictor, mod)) / 100.0,
                     0.0, 1.0
                 )
             );
@@ -14076,6 +14077,13 @@ class CaelumPlayer : DoomPlayer
         LastShieldDurabilityChancePercent = 0.0;
         LastShieldDurabilityRollPercent = 0.0;
 
+        // La descarga de canalización ya omitía el escudo antes de #52.
+        if (mod == 'Electric' && inflictor is 'CaelumChannelEffect')
+        {
+            LastShieldWithinCoverage = false;
+            return incomingDamage;
+        }
+
         Actor attacker = source != null ? source : inflictor;
         double incomingOffset = 180.0;
         if (attacker != null)
@@ -14172,7 +14180,8 @@ class CaelumPlayer : DoomPlayer
     void PrepareRealArmorDamage(
         double incomingDamage,
         bool criticalHit,
-        int incomingSlot
+        int incomingSlot,
+        bool magical = false
     )
     {
         LastLocalizedLucidityLoss = 0.0;
@@ -14184,7 +14193,7 @@ class CaelumPlayer : DoomPlayer
         LastArmorDurabilityChancePercent = 0.0;
         LastArmorDurabilityRollPercent = 0.0;
         LastArmorHitWasCritical = criticalHit && incomingDamage > 0.0;
-        if (ArmorModel == null || incomingDamage <= 0.0) { return; }
+        if (incomingDamage <= 0.0) { return; }
 
         int slot = Clamp(
             incomingSlot, 0, CaelumConstants.ARMOR_SLOT_COUNT - 1
@@ -14194,10 +14203,12 @@ class CaelumPlayer : DoomPlayer
             LastArmorVulnerabilityGrade,
             criticalHit
         );
+        LastToughnessDamageMultiplier = DerivedStats != null
+            ? Clamp(DerivedStats.DamageResistanceMultiplier, 0.0, 1.0) : 1.0;
         LastArmorPreDefenseDamage = incomingDamage
-            * LastArmorVulnerabilityMultiplier;
+            * LastArmorVulnerabilityMultiplier * LastToughnessDamageMultiplier;
         double defenseRatio = Clamp(
-            ArmorModel.GetDefense(slot) / 100.0,
+            GetArmorDefensePercent(slot, magical) / 100.0,
             0.0,
             1.0
         );
@@ -14211,11 +14222,12 @@ class CaelumPlayer : DoomPlayer
             : 1.0;
         LastArmorHealthDamage = Max(
             0,
-            int(LastArmorPostDefenseDamage
-                * LastToughnessDamageMultiplier + 0.5)
+            int(LastArmorPostDefenseDamage + 0.5)
         );
 
-        double eligibleDamage = LastArmorAbsorbedDamage
+        // El cuerpo absorbe su parte sin desgastar la pieza equipada.
+        double eligibleDamage = LastArmorPreDefenseDamage
+            * (ArmorModel != null ? ArmorModel.GetDefense(slot, magical) / 100.0 : 0.0)
             * Max(0.0, ArmorDurabilityDamageMultiplier);
         LastArmorDurabilityLoss = int(
             eligibleDamage
@@ -17057,7 +17069,7 @@ class CaelumPlayer : DoomPlayer
     // Se reconstruyen una sola vez, sin conceder cartas ni reiniciar recursos.
     void EnsureCurrentAttributeBalance()
     {
-        if (AttributeBalanceVersion >= 1 || !CharacterCreationComplete
+        if (AttributeBalanceVersion >= 2 || !CharacterCreationComplete
             || Attributes == null || DerivedStats == null) return;
         ApplyCharacterProfile();
 
@@ -17118,6 +17130,7 @@ class CaelumPlayer : DoomPlayer
                 }
                 AttributeBalanceVersion = 1;
             }
+            AttributeBalanceVersion = 2;
             SyncHUDLoadState();
             // La masa nativa representa la masa total para que el motor y los
             // ataques externos respeten tambien el peso equipado del jugador.
@@ -18126,9 +18139,9 @@ class CaelumPlayer : DoomPlayer
             DebugArmorCriticalHit
         );
         LastArmorPreDefenseDamage = incomingDamage
-            * LastArmorVulnerabilityMultiplier;
+            * LastArmorVulnerabilityMultiplier * LastToughnessDamageMultiplier;
 
-        double defenseRatio = Clamp(ArmorModel.GetDefense(slot) / 100.0, 0.0, 1.0);
+        double defenseRatio = Clamp(GetArmorDefensePercent(slot) / 100.0, 0.0, 1.0);
         LastArmorAbsorbedDamage = LastArmorPreDefenseDamage * defenseRatio;
         LastArmorPostDefenseDamage = Max(
             0.0,
@@ -18139,12 +18152,12 @@ class CaelumPlayer : DoomPlayer
             : 1.0;
         int calculatedHealthDamage = Max(
             0,
-            int(LastArmorPostDefenseDamage
-                * LastToughnessDamageMultiplier + 0.5)
+            int(LastArmorPostDefenseDamage + 0.5)
         );
         LastArmorHealthDamage = Min(calculatedHealthDamage, health - 1);
 
-        double durabilityEligibleDamage = LastArmorAbsorbedDamage
+        double durabilityEligibleDamage = LastArmorPreDefenseDamage
+            * ArmorModel.GetDefense(slot) / 100.0
             * Max(0.0, ArmorDurabilityDamageMultiplier);
         LastArmorDurabilityLoss = int(
             durabilityEligibleDamage

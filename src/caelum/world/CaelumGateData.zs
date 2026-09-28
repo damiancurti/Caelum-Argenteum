@@ -11,6 +11,16 @@ class CaelumGateData : Object
 
     const BALANCE_REVISION = 1;
 
+    static double ArmorDefense(int material)
+    {
+        switch (material)
+        {
+            case REINFORCED: return 20.0;
+            case ARMORED: return 30.0;
+            default: return 10.0;
+        }
+    }
+
     static double AttributeLevel(int material)
     {
         switch (material)

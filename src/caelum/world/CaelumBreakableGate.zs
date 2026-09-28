@@ -193,7 +193,9 @@ class CaelumBreakableGate : Actor
     {
         InitializeGate();
         if (Broken || Opened || damage <= 0) return 0;
-        int retained = mod == 'CaelumImpact' ? damage : Max(1, int(damage * RetainedDamage + 0.5));
+        // CaelumImpact ya incorpora Dureza y absorción, con un único redondeo.
+        int retained = mod == 'CaelumImpact' ? damage : Max(0, int(damage * RetainedDamage
+            * (1.0 - CaelumGateData.ArmorDefense(args[1]) / 100.0) + 0.5));
         if (flags & DMG_EXPLOSION)
         {
             if (ExplosionTick != level.maptime)
@@ -251,7 +253,8 @@ class CaelumBreakableGate : Actor
     {
         InitializeGate();
         double percent = Max(0.0, energyPercent * surfaceMultiplier) * RetainedDamage;
-        int damage = int(StructuralMaximum * percent / 100.0 + 0.5);
+        int damage = int(StructuralMaximum * percent / 100.0
+            * (1.0 - CaelumGateData.ArmorDefense(args[1]) / 100.0) + 0.5);
         return DamageMobj(source, instigator, damage, 'CaelumImpact', DMG_NO_ARMOR, Angle);
     }
 

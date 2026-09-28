@@ -1,0 +1,95 @@
+{
+  "issue": 52,
+  "version": "4.36.23",
+  "date": "2026-09-27",
+  "baseline": "6f06c8b29b14ef882d9ec14eca2ea44e4866121d",
+  "engine": "GZDoom 4.14.2, Windows 11; isolated noautoload/nosound session with author-installed development IWAD.",
+  "native_checks": 132,
+  "native_failures": 0,
+  "evidence": {
+    "matrix": {
+      "log": "matrix.txt",
+      "raw_local_sha256": "9d5b88498f82d17711f5d82afb4c4eaf35a145201a7b6d7bb7f8c845f573caca",
+      "normalization": "UTF-8, LF and trailing whitespace removed only",
+      "sha256": "24c33eec7dacb9148c1280e0d1a905e8037efc837b2e7826d947e53b1975a6f5",
+      "result": [
+        "QA52 DONE checks=132 failures=0"
+      ]
+    },
+    "legacy_setup": {
+      "log": "legacy_setup.txt",
+      "raw_local_sha256": "a8af1dde016eb623cfbe134a1b01eb0464366fd3df60a16c063e2107279509c2",
+      "normalization": "UTF-8, LF and trailing whitespace removed only",
+      "sha256": "2c80778fa48111f589870c690049710b13f6e738693ed2eaf2ab1d6501835d2c",
+      "result": [
+        "QA52 SETUP attributes=33/32/32 npcAnima=3760 version=1"
+      ]
+    },
+    "migration": {
+      "log": "migration.txt",
+      "raw_local_sha256": "dec15dcd3a5337cd8a037894cc52dbd9e9cd7f1ce18a8682eea4e1746abf21fa",
+      "normalization": "UTF-8, LF and trailing whitespace removed only",
+      "sha256": "be963d48c1713ed0e73c70a815579667993afd93ac2e6396925ce0df945bfcfc",
+      "result": [
+        "QA52SAVE DONE failures=0 attributes=13/12/12 npcAnima=2710"
+      ]
+    },
+    "migrated_reload": {
+      "log": "migrated_reload.txt",
+      "raw_local_sha256": "89892086d97accecfc3e3ca3f00a1cd614d7e91080bfc02fe8ccf6a5106d5027",
+      "normalization": "UTF-8, LF and trailing whitespace removed only",
+      "sha256": "632a6383e519b3194c4fda556b8f68c0de11c724412512b4763415cf704fbca4",
+      "result": [
+        "QA52SAVE DONE failures=0 attributes=13/12/12 npcAnima=2710"
+      ]
+    },
+    "rollback": {
+      "log": "rollback.txt",
+      "raw_local_sha256": "fb255a47dd4b2d1254772d17905e79da08e02ae89b35724d02e61e0510612932",
+      "normalization": "UTF-8, LF and trailing whitespace removed only",
+      "sha256": "b93ed648335b243a13aaabb090dbd89c475144ba3f443821bcf6982696909baa",
+      "result": [
+        "QA52ROLLBACK PASS original save restores original bonuses and NPC maximum"
+      ]
+    }
+  },
+  "coverage": [
+    "24 armor type/tier/damage-category cases and removed magic bonuses",
+    "all four race groups, absent/broken equipment and fractional addition",
+    "all 13 NPC species/identity mappings including Palomo77",
+    "author 31-health/9-absorption example; wear from equipment share only",
+    "actual player/NPC health damage, magic mine region parity, channel classification",
+    "kinematic impact single Toughness pass; active gauntlet shield and channel shield bypass",
+    "nine siege damage/hit counts with duplicate-contact rejection",
+    "4.36.22 save migration, migrated reload, original-save rollback"
+  ],
+  "save_migration": "Existing player AttributeBalanceVersion advances to2 and rebuilds from preserved base data. Added NPC ArmorBalanceRevision1 rebuilds derived maxima; old integer diagnostic retained, new exact double added. Tested T3 player magical bonuses disappear once, NPC maximum decreases, equipment tier/wear and five damaged/open/broken gates/contact serials persist. Original save and baseline PK3 remain local for rollback.",
+  "package": {
+    "sha256": "dba111ef1041cda5baa19c2d9a40422f9f10492b8fb02ffaf3c7b22bfdce97aa",
+    "entries": 6120,
+    "all_entries_match_source": true
+  },
+  "runtime_changed": {
+    "src/caelum/equipment/CaelumArmorRules.zs": "14152c00142490c7a6c6acf749c6b113c01d4d5a9adf4fcc957a8f65c5394395"
+  },
+  "review": "Independent AI review checked pipeline, recipient identity, precision and save refresh. Corrected stale damage-order display and preserved channel shield bypass, with active-block regression.",
+  "limitations": [
+    "Author campaign acceptance remains pending.",
+    "Existing elemental DOT differs: player bypasses armor, NPC ordinary physical path remains.",
+    "Siege uses existing whole-gate impulse model without penetration/explosion.",
+    "No test fixtures, saves, IWAD or executable are distributed."
+  ],
+  "author_acceptance": {
+    "CA-43623-ARMOR-01": "pending",
+    "CA-43623-SAVE-01": "pending"
+  },
+  "static_validation": {
+    "errors": [],
+    "report": "STATIC.json",
+    "documentation_index": "regenerated and checked fresh"
+  },
+  "presentation": {
+    "capture": "armor_panel.png",
+    "verified": "Rendered physical/magical percentages and Toughness-before-absorption diagnostics are readable without clipping."
+  }
+}

@@ -64,6 +64,10 @@ class CaelumInteractiveFolkloreActor : CaelumFolkloreCombatActor abstract
 
 class CaelumPalomo : CaelumInteractiveFolkloreActor
 {
+    override double GetInnateArmorDefense(bool magical)
+    {
+        return CaelumArmorRules.PALOMO_DEFENSE;
+    }
     Vector3 WanderHome;
     double WanderDirection;
     int WanderDirectionTics;
@@ -445,6 +449,7 @@ class CaelumPalomo : CaelumInteractiveFolkloreActor
 
 class CaelumMandinga : CaelumFolkloreCombatActor
 {
+    override int GetArmorRace() { return CaelumConstants.RACE_GOBLIN; }
     Default
     {
         Tag "$CA_MANDINGA_NAME";
@@ -547,6 +552,7 @@ class CaelumMandinga : CaelumFolkloreCombatActor
 
 class CaelumZupayColossus : CaelumFolkloreCombatActor
 {
+    override int GetArmorRace() { return CaelumConstants.RACE_GOBLIN; }
     bool SewerFleeing;
     Actor SewerEscapeTarget;
 

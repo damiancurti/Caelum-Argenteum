@@ -1,6 +1,29 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **4.36.22** — 2026-09-27.
+Documentation version: **4.36.23** — 2026-09-27.
+
+## 4.36.23 — Additive body/equipment armor after Toughness (#52)
+
+- Author requested the third/fourth stage swap, all racial/armor tier values,
+  triple magical absorption for magical armor, removal of its mental bonuses,
+  unchanged shields, and structural gate defenses of 10/20/30%.
+- Author confirmed additive innate/equipped absorption, the four prisoner races,
+  and Palomo's exceptional 77% physical and magical innate defense on 2026-09-27.
+- Shared runtime/UI data retains fractional values. Toughness precedes final
+  armor absorption; wear uses the equipped absorbed share. Physical impacts
+  receive no duplicate reduction. Current siege inputs reproduce the nine
+  expected damage/hit-count cases recorded in SYSTEMS.
+- Attribute migration rebuilds from base values once (player revision 2, NPC
+  revision 1). Legacy equipment, gate remaining resistance/state and contact
+  serials are preserved. Original-save rollback remains available.
+- Cross-review identified an obsolete damage-order display and channel lightning
+  accidentally entering shield blocking; both were corrected and regression
+  checked. Existing elemental DOT differs between player and NPC; documented
+  without an unrelated behavior redesign.
+- Static checks and isolated engine/save results are recorded in
+  assets/validation_43623/RESULTS.json. They are not author acceptance.
+- Pending author tests: CA-43623-ARMOR-01 and CA-43623-SAVE-01, originating
+  in this release/issue. No confirmation date or passed result is claimed.
 
 ## 4.36.22 — Palomo, Selene and port narrative (#34)
 

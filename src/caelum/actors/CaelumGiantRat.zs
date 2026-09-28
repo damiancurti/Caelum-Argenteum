@@ -2,6 +2,7 @@
 // sus doce atributos son 1 y su masa corporal es de solo 10 kg.
 class CaelumGiantRat : CaelumCombatActor
 {
+    override int GetArmorRace() { return CaelumConstants.RACE_BEAST_MAN; }
     Default
     {
         Tag "$CA_GIANT_RAT_NAME";

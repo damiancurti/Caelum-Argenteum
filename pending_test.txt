@@ -1,0 +1,21 @@
+CA-43623-ARMOR-01 — 4.36.23 / issue #52
+Prerequisites: rebuilt current PK3; disposable campaign/test save with access
+to armor and enemies. Native numeric/siege evidence is already recorded.
+Steps: inspect magical/light/medium/heavy equipment, including fractional tiers;
+equip magical armor, compare attributes, then receive physical and magical hits.
+Try blocking with the same shield used before this revision. Check Ronnie's
+magical-armor explanation in the chosen game language.
+Expected: physical/magical defenses match SYSTEMS; magical armor adds no
+Intelligence/Patience/Insight; other equipment bonuses and shield behavior stay
+intact. Body absorption remains when a piece is absent/broken. No freeze or
+incorrect defense text. Confirm the campaign combat feel separately from the
+isolated numerical checks.
+
+CA-43623-SAVE-01 — 4.36.23 / issue #52
+Prerequisites: a COPY of a real pre-4.36.23 campaign save; retain its untouched
+original and previous build for rollback. Prefer a save with magical armor.
+Steps: load the copy with the new build, inspect attributes, equipment wear and
+quest/inventory progress; save to a NEW slot and reload; travel to another map.
+Expected: only obsolete magical-armor bonuses disappear, exactly once. Base
+attributes, other bonuses, equipment identity/wear and progress remain. Any
+previously damaged/open/broken gate keeps its state. No loading or combat hang.

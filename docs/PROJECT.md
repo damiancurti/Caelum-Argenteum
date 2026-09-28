@@ -1,6 +1,21 @@
 # Caelum Argenteum — Project, status and roadmap
 
-Documentation version: **4.36.22** — 2026-09-27.
+Documentation version: **4.36.23** — 2026-09-27.
+
+## 4.36.23 — Final armor absorption (#52)
+
+Ordinary damage now resolves shield, anatomy/critical, Toughness, then armor.
+Innate body defense adds to the struck piece's physical/magical percentage.
+New equipment values and the removed magical-armor attribute bonuses share one
+data source; shields and anatomical reinforcement retain their existing rules.
+Common/reinforced/armored gates absorb 10/20/30% after Toughness, including siege
+impacts. Native checks reproduce all nine approved siege damage/hit counts.
+Palomo's author-specified innate absorption is 77% physical and magical.
+Player attribute revision 2 and NPC armor revision 1 rebuild derived values
+once on old-save load, without subtracting bonuses from base attributes.
+Evidence: `assets/validation_43623/RESULTS.json`. Static and isolated native
+checks are separate from author acceptance; CA-43623-ARMOR-01 and
+CA-43623-SAVE-01 remain in `pending_test.txt`.
 
 ## 4.36.22 — Demo quest narrative (#34)
 
