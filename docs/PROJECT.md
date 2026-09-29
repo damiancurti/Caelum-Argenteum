@@ -32,7 +32,17 @@ implemented, including target detection and bilingual directions. Latest
 checks are in assets/validation_43625/furnishing. The author confirmed those
 tests passed and requested the same fixed corridor-side swing for Caella's
 bedside door (908). Implemented and checked in assets/validation_43625/caella.
-CA-43625-MANSION-01 now tracks only that final adjustment; export is separate.
+The author confirmed CA-43625-MANSION-01 fully passed on 2026-09-29 and
+authorized #36 closure and PR #57 merge. No #36 author checks remain; #17
+export remains a separate task.
+
+## 4.36.24a — Proprietary rights notice (#55)
+
+The author requested an explicit all-rights-reserved notice. Root
+[LICENSE.md](../LICENSE.md) covers only rights owned by Damián Curti, preserves
+third-party terms and statutory/platform exceptions, and grants no general
+reuse license. README links the notice. This documentation-only patch leaves
+runtime behavior and existing acceptance unchanged.
 
 ## 4.36.24 — Quest journal categories and history (#35)
 
@@ -3120,3 +3130,4 @@ implemented; it does not make the remaining branches playable. Isolated trials u
 4.14.2/OpenGL with private instrumentation. They do not credit duration of a game or
 cooperative. Engine, IWAD, fixtures, captures and saves are left out of patch; 0m
 validation in HISTORY.md.
+

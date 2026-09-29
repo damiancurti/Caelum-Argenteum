@@ -65,7 +65,8 @@ its Y retains its former depth. Generated PRACTICE.json data, spawn recovery,
 practice detection and bilingual Rulo/Journal directions agree. Existing
 target instances in earlier saves are not relocated; start fresh as above.
 The author confirmed the other door and target checks passed on 2026-09-29.
-CA-43625-MANSION-01 now covers only Caella's latest door direction.
+The author confirmed CA-43625-MANSION-01 fully passed on 2026-09-29, including
+Caella's latest door direction, and authorized merge/closure. No #36 checks remain.
 
 ## 4.36.24 — Journal classification (#35)
 
@@ -3653,3 +3654,4 @@ resolved before all the final data are set:
 =============================================================================== END OF
 SPECIFICATION — CONSOLIDATION 4.33.0g
 ===============================================================================
+

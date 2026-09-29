@@ -238,3 +238,4 @@ lifecycle permits removing confirmed entries, not deleting unrelated files.
 When there are no pending tests, keep the tracked file empty; no boilerplate.
 Agent-only checks and development backlog belong in PR evidence and TASKS,
 respectively, rather than the author queue.
+

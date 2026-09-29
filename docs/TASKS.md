@@ -25,10 +25,18 @@ Documentation version: **4.36.25** — 2026-09-28.
   placement, practice detection and bilingual guidance are implemented.
 - Author confirmed those door/target tests passed on 2026-09-29, then requested
   Caella's bedside connection (908) also open toward the corridor. Implemented.
-- Pending: CA-43625-MANSION-01 only for Caella's latest door direction. Native
-  evidence is in assets/validation_43625/caella; export remains separate.
+- Accepted: CA-43625-MANSION-01 fully passed on 2026-09-29, including Caella's
+  last door change. The author authorized PR #57 merge and #36 closure. No
+  #36 author checks remain. Evidence: assets/validation_43625/caella; #17 is separate.
 - Author explicitly prioritized rebuilding over old MAP01 saves. Use a fresh
   MAP01/new game; the preserved source baseline is not an automatic migration.
+
+## Issue #55 — Proprietary rights notice (4.36.24a)
+
+Implemented: root LICENSE.md, README link, scoped reservation of the author's
+rights and explicit preservation of third-party terms. Validate documentation
+markers, index freshness and changed paths before the authorized merge/closure.
+No gameplay acceptance check is added.
 
 ## Issue #35 — Quest journal (4.36.24)
 
@@ -525,3 +533,4 @@ integration before extracting Impact Physics.
 - **Acceptance criteria:** validate the integration of the mechanisms in the
   gallery, persistence, and reset; extract Impact Physics only after
   validating its use in Caelum. Numerical criteria remain PENDING.
+

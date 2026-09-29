@@ -54,7 +54,16 @@ approval was followed by author acceptance of the remaining prior work on
 existing art. DOORS.json contains the four authored swing sides (including Caella/908);
 PRACTICE.json and generate_mansion_practice.py provide the new target placement
 and detection bounds. Follow-up checks are in assets/validation_43625/furnishing; the latest Caella
-door check is in assets/validation_43625/caella. No new art was added.
+door check is in assets/validation_43625/caella. No new art was added. The
+author confirmed all #36 tests passed on 2026-09-29, including this final change.
+
+## 4.36.24a — Rights and attribution (#55)
+
+Root [LICENSE.md](../LICENSE.md) reserves the author's rights in original
+project materials to the extent owned. It does not relicense external assets,
+public-domain materials, GZDoom or development dependencies. Existing
+`src/licenses/` notices and the provenance records below remain applicable;
+previously pending external-license verification remains pending.
 
 ## 4.36.24 — Quest journal labels (#35)
 
@@ -1778,3 +1787,4 @@ folder. `--help` displays configurable destinations. Generating resources is a d
 editing operation, independent of compiling or playing; generators are not executed when
 applying the patch. The build packages only src. The previous patch-specific utilities
 are left in the historical backup.
+

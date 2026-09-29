@@ -2,6 +2,9 @@
 
 Documentation version: **4.36.25** — 2026-09-28.
 
+Repository rights: LICENSE.md reserves original-project rights, subject to
+third-party terms and legal/platform exceptions (#55).
+
 ## The game's premise
 
 Caelum Argenteum is an independent dark-fantasy FPS-RPG inspired by
@@ -64,9 +67,9 @@ guards, raised shutters, corrected interior/exterior finishes and an invisible
 blocking horizon. At Z=136, four side doors are removed; front singles are
 separated. The 48 wooden leaves use siege hinges. Native three-size traversal
 and access checks pass. Three model surfaces fix the zero-size-texture startup
-failure. Door/target tests accepted; CA-43625-MANSION-01 now covers only
-Caella's bedside door opening toward the corridor. Start fresh. Evidence:
-assets/validation_43625/caella; architecture: ASSETS/MAP01.
+failure. CA-43625-MANSION-01 fully passed author acceptance on 2026-09-29;
+merge/closure authorized. Start fresh. Evidence: assets/validation_43625/caella;
+architecture: ASSETS/MAP01.
 
 **4.36.24 / #35:** Journal filters retain main/side and active/completed records,
 including separate rescue/extraction and payment status. Native legacy/reload/hub
@@ -299,3 +302,4 @@ its release in [HISTORY.md](HISTORY.md); remove that entry in the same update.
 Partial, failed and unconfirmed checks remain. An empty tracked queue is valid.
 All seven docs and AGENTS declare the current version; ancillary guides without
 a header inherit README's version. Historical labels retain their original meaning.
+

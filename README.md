@@ -7,6 +7,15 @@ on Windows 11. The final game is intended to be independent of Doom assets.
 **Current release: 4.36.25.** Obtain and update the complete repository, validate
 it, then rebuild with `run_dev.bat` as described below.
 
+## License
+
+Copyright (c) 2026 Damián Curti. **All rights reserved.** See
+[LICENSE.md](LICENSE.md) for the proprietary rights notice and its exceptions.
+Third-party materials retain their own licenses and credits in `src/licenses/`.
+
+Documentation patch **4.36.24a / #55** adds this notice. Gameplay and existing
+third-party terms are unchanged; no new in-game validation is required.
+
 Issue [#36](https://github.com/damiancurti/Caelum-Argenteum/issues/36) repairs
 the mansion's upper gables and balcony guards, separates exterior render from
 interior wall finishes, and adds closed wooden shutters and discreet reliefs.
@@ -21,15 +30,14 @@ their beds. The practice target moves to the empty north-central ground-floor
 room; Rulo's bilingual directions and practice detection follow it.
 The door exporter now groups its 222 faces into three material surfaces,
 fixing the intermittent GZDoom "Trying to create zero size texture" startup error.
-The author approved this period-inspired visual direction. Only Caella's latest
-door adjustment remains in [pending_test.txt](pending_test.txt).
+The author confirmed all #36 tests passed on 2026-09-29 and authorized merge
+and issue closure. No #36 author checks remain in [pending_test.txt](pending_test.txt).
 **Start a fresh MAP01/new game:** the author prioritized reconstruction over
 old MAP01 save compatibility. No old-map geometry migration is claimed.
 See [architecture and provenance](docs/ASSETS.md) and
 [validation evidence](assets/validation_43625/layout/RESULTS.json).
-The author accepted the remaining #36 work on 2026-09-29. The author also confirmed those door and target tests passed. Only Caella's
-newly requested bedside door direction awaits confirmation; see
-[latest checks](assets/validation_43625/caella/RESULTS.json).
+See [latest checks](assets/validation_43625/caella/RESULTS.json) and
+[final author acceptance](docs/HISTORY.md), including Caella's bedside door.
 
 Issue [#35](https://github.com/damiancurti/Caelum-Argenteum/issues/35) adds
 Journal filters for main/side and active/completed quests, retaining completed

@@ -32,6 +32,9 @@ generated CaelumMansionPracticeData. The old workshop no longer records the
 six practice flags; their requirements and persistent IDs are unchanged.
 Rulo's instructions and Journal Detail name the new room in both languages.
 
+Author acceptance, 2026-09-29: all CA-43625-MANSION-01 checks passed, including
+the final Caella door adjustment. Merge and issue closure are authorized.
+
 Author decision, 2026-09-28: prioritize reconstruction over old MAP01 saves.
 Use a fresh MAP01/new game; this patch does not promise geometry migration or
 loading old MAP01 saves. Existing MAP02 compatibility guidance remains separate.
@@ -4664,3 +4667,4 @@ CaelumExitMenu opens native confirmation and plays menu_strings_start while the 
 still active. Cancel returns to the parent menu. QuitSound and the Exit button of the
 map retain the same resource; the singular mark avoids overlapping two instances of
 strings.
+

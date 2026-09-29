@@ -129,6 +129,32 @@ deterministic regeneration pass. Log, view, hashes and reproduction commands:
 assets/validation_43625/caella. Native checks do not substitute for the author's
 confirmation of this last adjustment; no merge/export authorization inferred.
 
+Final author acceptance, 2026-09-29: the author explicitly confirmed all tests
+correct and instructed issue #36 closure and PR #57 merge. CA-43625-MANSION-01
+(origin 4.36.25/#36) is fully passed, including Caella's final corridor-side
+door opening and ordinary passage; earlier roof/rails/materials/boundary,
+other doors, target/practices and save/reload confirmations remain recorded
+above. Removed the completed entry from pending_test.txt, leaving the tracked
+file empty. This is author acceptance, distinct from the recorded agent/native
+checks. The same patch remains version 4.36.25; #17 export is separate.
+
+Integrated main's documentation-only #55 rights notice before merging #36,
+preserving LICENSE.md, third-party exceptions and its historical 4.36.24a
+entry while retaining current 4.36.25 markers. Regenerated the document index
+and passed general documentation validation; no runtime files changed in
+this acceptance/conflict-resolution commit, so native tests were not repeated.
+
+## 4.36.24a — Proprietary rights notice (#55)
+
+2026-09-28: the author requested LICENSE.md with all rights reserved and
+explicitly authorized issue creation, merge and closure. Added a scoped
+copyright notice for Damián Curti, exceptions for third-party terms, applicable
+law, GitHub terms and separate permissions, and a README link. Updated current
+version markers and regenerated the document index. Validation is limited to
+document consistency, index freshness and the documentation-only diff; no
+engine or manual gameplay test is required or claimed. Existing third-party
+notices, runtime files and outstanding author checks are preserved.
+
 ## 4.36.24 — Active and completed quest journal (#35)
 
 2026-09-28: the author confirmed mansion/El Loco as main, sewers/As de Copas
@@ -19198,3 +19224,4 @@ Brief evidence from the author to accept 0h:
 
 Later note: the migration was accepted by the author; the previous manual steps are
 preserved as a history of that delivery.
+
