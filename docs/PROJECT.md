@@ -29,8 +29,10 @@ The author accepted the remaining prior work on 2026-09-29, requesting only
 fixed central-room swings for Rulo/Ronnie/Argento's side doors and moving the
 practice target to the empty north-central ground-floor room. Both are
 implemented, including target detection and bilingual directions. Latest
-checks are in assets/validation_43625/furnishing. CA-43625-MANSION-01 now
-tracks only these changes; this confirmation does not authorize #17 export.
+checks are in assets/validation_43625/furnishing. The author confirmed those
+tests passed and requested the same fixed corridor-side swing for Caella's
+bedside door (908). Implemented and checked in assets/validation_43625/caella.
+CA-43625-MANSION-01 now tracks only that final adjustment; export is separate.
 
 ## 4.36.24 — Quest journal categories and history (#35)
 

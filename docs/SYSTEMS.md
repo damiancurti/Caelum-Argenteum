@@ -22,7 +22,7 @@ retain CaelumSlidingDoorLeaf. New-game door fields serialize normally; old
 MAP01 reconstruction compatibility remains waived below. The central front
 entrances at Z=136 are four independent singles (groups 910/922 and 911/923);
 the four unwanted side connectors are removed at the author's request.
-Groups 906/907/909 instead have a fixed swing toward the central rooms,
+Groups 906/907/908/909 instead have a fixed swing toward the central rooms,
 avoiding the resident beds regardless of the caller's side. Reopening a
 partially open leaf retains its current direction until it closes.
 

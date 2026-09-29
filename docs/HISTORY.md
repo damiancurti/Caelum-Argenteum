@@ -112,6 +112,23 @@ and flags. Final-package logs, views, static checks and hashes are in
 assets/validation_43625/furnishing. Only author confirmation of the latest
 door use and normal six-practice sequence remains pending.
 
+Final door follow-up, 2026-09-29: the author explicitly confirmed the remaining
+CA-43625-MANSION-01 tests (origin 4.36.25/#36) passed: Rulo/Ronnie/Argento's
+fixed door directions, the relocated target, normal practice and save/reload.
+The author requested the same behavior for Caella's door beside her bed.
+Added group 908 with swing side -1, opening east into the central corridor.
+This uses the existing authored override; no map, furniture, mesh, practice
+or other door behavior changes. The pending entry now contains only this
+latest Caella check, preserving the accepted results here.
+
+Final PK3, GZDoom 4.14.2/Vulkan: ten focused assertions pass with actual solid
+furniture. The former swing reproduces the bed obstruction; native Use from
+both sides reaches fully open toward the corridor and closes normally.
+Other accepted direction values remain intact. General/static validation and
+deterministic regeneration pass. Log, view, hashes and reproduction commands:
+assets/validation_43625/caella. Native checks do not substitute for the author's
+confirmation of this last adjustment; no merge/export authorization inferred.
+
 ## 4.36.24 — Active and completed quest journal (#35)
 
 2026-09-28: the author confirmed mansion/El Loco as main, sewers/As de Copas

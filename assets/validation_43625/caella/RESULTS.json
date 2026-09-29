@@ -1,0 +1,22 @@
+{
+  "issue": 36,
+  "release": "4.36.25",
+  "date": "2026-09-29",
+  "base_commit": "a7d549ab8057931ce00f911ab5a5b3ca0cb987ab",
+  "scope": "Caella bedside door group 908 always opens east into the central corridor, away from the bed.",
+  "hashes": {
+    "src/maps/MAP01.wad": "d5df55e7b6e033afa02f5a9d7e9d58be58ec76d0cad20c396cad77a5627a307c",
+    "src/models/caelum/siege/ca_mansion_door.obj": "63c1081d9c31dd0f3dcdb77edc102dd356a154ed82121993013284d010aed628",
+    "src/caelum/world/CaelumMansionDoorData.zs": "e4df906767fc1a17f93a1814b96097171725720d80ec6bdba3672885b04b9008"
+  },
+  "package_sha256": "ba649852d67108b4b0b8705da903e87af5da2aa86fd61f1c92dca68395a80543",
+  "package_files": 6125,
+  "static_checks": 21,
+  "deterministic_regeneration": true,
+  "native_assertions": 10,
+  "environment": "GZDoom 4.14.2, Windows 11, Vulkan, author-installed development IWAD and isolated config copy.",
+  "native": "Actual furniture remains solid. Former swing reproduces bed obstruction. Native Use from both sides fully opens toward the corridor and returns to the closed position. Exactly one affected door; other accepted direction values retained.",
+  "author_acceptance": "Previous CA-43625-MANSION-01 door and target tests explicitly passed on 2026-09-29. Only this new Caella adjustment remains pending.",
+  "reproduce": "Rebuild with build_dev.ps1. Reuse assets/validation_43625/layout/run_issue36.ps1 and its documented local prerequisites: -Label caella_final -Package -Fixture assets/validation_43625/caella -Commands \"wait 100; give F36CaellaTests; wait 20; screenshot build/issue36_caella_final.png; wait 2; quit\". Windows may require powershell.exe -NoProfile -ExecutionPolicy Bypass -File before the runner path.",
+  "limits": "Isolated native door checks and directly positioned view; normal player passage awaits author confirmation. Fresh MAP01 remains the reconstruction baseline."
+}

@@ -15,21 +15,21 @@ The author's follow-up adds a flat upper ceiling, raises exterior shutters,
 corrects the east-wing interior finishes and uses siege-style hinged wood doors.
 The latest correction removes four unwanted side doors at Z=136 and centres
 four independent front entrances on their rooms, with a solid wall between them.
-The remaining 48 leaves preserve key and arena access rules. Rulo, Ronnie and
+The remaining 48 leaves preserve key and arena access rules. Rulo, Ronnie, Caella and
 Argento's side connections now always open toward the central rooms, away from
 their beds. The practice target moves to the empty north-central ground-floor
 room; Rulo's bilingual directions and practice detection follow it.
 The door exporter now groups its 222 faces into three material surfaces,
 fixing the intermittent GZDoom "Trying to create zero size texture" startup error.
-The author approved this period-inspired visual direction. The two latest
-follow-up checks remain in [pending_test.txt](pending_test.txt).
+The author approved this period-inspired visual direction. Only Caella's latest
+door adjustment remains in [pending_test.txt](pending_test.txt).
 **Start a fresh MAP01/new game:** the author prioritized reconstruction over
 old MAP01 save compatibility. No old-map geometry migration is claimed.
 See [architecture and provenance](docs/ASSETS.md) and
 [validation evidence](assets/validation_43625/layout/RESULTS.json).
-The author accepted the remaining #36 work on 2026-09-29. Only the fixed door
-direction and target relocation remain for author confirmation; see
-[latest checks](assets/validation_43625/furnishing/RESULTS.json).
+The author accepted the remaining #36 work on 2026-09-29. The author also confirmed those door and target tests passed. Only Caella's
+newly requested bedside door direction awaits confirmation; see
+[latest checks](assets/validation_43625/caella/RESULTS.json).
 
 Issue [#35](https://github.com/damiancurti/Caelum-Argenteum/issues/35) adds
 Journal filters for main/side and active/completed quests, retaining completed

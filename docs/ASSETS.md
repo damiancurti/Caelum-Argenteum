@@ -51,9 +51,10 @@ The latest central-room layout uses the same wood model and interior wallpaper;
 no new art is introduced. Native views and checks are in assets/validation_43625. Visual-direction
 approval was followed by author acceptance of the remaining prior work on
 2026-09-29. The latest fixed door directions and target relocation reuse all
-existing art. DOORS.json contains the three authored swing sides;
+existing art. DOORS.json contains the four authored swing sides (including Caella/908);
 PRACTICE.json and generate_mansion_practice.py provide the new target placement
-and detection bounds. Final follow-up checks are in assets/validation_43625/furnishing.
+and detection bounds. Follow-up checks are in assets/validation_43625/furnishing; the latest Caella
+door check is in assets/validation_43625/caella. No new art was added.
 
 ## 4.36.24 — Quest journal labels (#35)
 

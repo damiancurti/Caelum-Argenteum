@@ -8,6 +8,7 @@ class CaelumMansionDoorData : Object
     {
         if (group == 906) return -1;
         if (group == 907) return 1;
+        if (group == 908) return -1;
         if (group == 909) return 1;
         return 0;
     }

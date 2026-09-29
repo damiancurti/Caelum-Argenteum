@@ -30,7 +30,7 @@ The remaining 48 leaves (32 groups) use CaelumHingedDoorLeaf. Except for the
 author-requested central layout correction below, original coordinates,
 dimensions, keys and groups remain. The original
 siege wood mesh supplies planks, braces, hinges and handles; opposing leaves
-face their handles toward the centre. Except for the three fixed connections
+face their handles toward the centre. Except for the four fixed connections
 below, they swing away from the user through
 90 degrees to clear the mansion's narrow passages, and stop for solid bodies.
 Author clarification, 2026-09-29: both central-room corrections are at Z=136.
@@ -56,14 +56,16 @@ waived old MAP01 save compatibility in favor of reconstruction. Test a fresh
 MAP01/new game. On 2026-09-29 the author accepted the remaining prior work,
 then requested two changes: groups 906 (Rulo), 907 (Ronnie) and 909 (Argento)
 always swing toward the central rooms from either side, avoiding the beds;
-Caella's door and other furniture remain unchanged. The practice target now
+The author subsequently requested the same for Caella's bedside door (908),
+which now always opens east toward the central corridor. Furniture remains unchanged. The practice target now
 stands at (368,480,0) in the empty north-central ground-floor room. Its practice
 area follows that room's interior bounds, X=40..696 and Y=88..628, retaining
 the existing 48-MU vertical tolerance. The target's X is the room centre and
 its Y retains its former depth. Generated PRACTICE.json data, spawn recovery,
 practice detection and bilingual Rulo/Journal directions agree. Existing
 target instances in earlier saves are not relocated; start fresh as above.
-CA-43625-MANSION-01 now covers only these two follow-up checks.
+The author confirmed the other door and target checks passed on 2026-09-29.
+CA-43625-MANSION-01 now covers only Caella's latest door direction.
 
 ## 4.36.24 — Journal classification (#35)
 

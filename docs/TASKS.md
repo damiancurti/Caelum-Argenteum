@@ -23,8 +23,10 @@ Documentation version: **4.36.25** — 2026-09-28.
   request: Rulo/Ronnie/Argento side doors open toward central rooms, away from
   beds; target moves to the empty north-central ground-floor room. Direction,
   placement, practice detection and bilingual guidance are implemented.
-- Pending: CA-43625-MANSION-01 only for these two latest changes. Follow-up
-  evidence is in assets/validation_43625/furnishing; export remains separate.
+- Author confirmed those door/target tests passed on 2026-09-29, then requested
+  Caella's bedside connection (908) also open toward the corridor. Implemented.
+- Pending: CA-43625-MANSION-01 only for Caella's latest door direction. Native
+  evidence is in assets/validation_43625/caella; export remains separate.
 - Author explicitly prioritized rebuilding over old MAP01 saves. Use a fresh
   MAP01/new game; the preserved source baseline is not an automatic migration.
 

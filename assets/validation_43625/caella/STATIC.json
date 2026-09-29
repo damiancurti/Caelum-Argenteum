@@ -1,0 +1,91 @@
+{
+  "issue": 36,
+  "map_sha256": "d5df55e7b6e033afa02f5a9d7e9d58be58ec76d0cad20c396cad77a5627a307c",
+  "checks": [
+    {
+      "name": "door has one surface per material within the native skin-table limit",
+      "passed": true
+    },
+    {
+      "name": "door retains every siege-leaf face, winding, material and UV at authored dimensions",
+      "passed": true
+    },
+    {
+      "name": "output matches regeneration manifest",
+      "passed": true
+    },
+    {
+      "name": "only author-approved central door placements change",
+      "passed": true
+    },
+    {
+      "name": "all playable original vertices unchanged",
+      "passed": true
+    },
+    {
+      "name": "original planes, slopes, lighting, liquids and cave unchanged",
+      "passed": true
+    },
+    {
+      "name": "all original tags retained",
+      "passed": true
+    },
+    {
+      "name": "original door, lift, travel and other non-floor specials retained",
+      "passed": true
+    },
+    {
+      "name": "four horizon boundaries remain one-sided and blocking",
+      "passed": true
+    },
+    {
+      "name": "existing rail lines unchanged",
+      "passed": true
+    },
+    {
+      "name": "all railing faces visible and have native 3D collision",
+      "passed": true
+    },
+    {
+      "name": "reliefs do not introduce blockers or gameplay actors",
+      "passed": true
+    },
+    {
+      "name": "all shutters have a finite raised sill and no collision",
+      "passed": true
+    },
+    {
+      "name": "upper ceiling is flat at existing wall tops",
+      "passed": true
+    },
+    {
+      "name": "48 leaves include four independent central entrances",
+      "passed": true
+    },
+    {
+      "name": "opening and wall reconstructions match authored rectangles",
+      "passed": true
+    },
+    {
+      "name": "no abandoned sidedefs after doorway subdivision",
+      "passed": true
+    },
+    {
+      "name": "every retained sector has an outline",
+      "passed": true
+    },
+    {
+      "name": "gable 12100 meets original roof plane exactly",
+      "passed": true
+    },
+    {
+      "name": "gable 12101 meets original roof plane exactly",
+      "passed": true
+    },
+    {
+      "name": "all vertex, side and sector references valid",
+      "passed": true
+    }
+  ],
+  "errors": []
+}

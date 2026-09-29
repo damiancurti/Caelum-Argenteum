@@ -64,9 +64,9 @@ guards, raised shutters, corrected interior/exterior finishes and an invisible
 blocking horizon. At Z=136, four side doors are removed; front singles are
 separated. The 48 wooden leaves use siege hinges. Native three-size traversal
 and access checks pass. Three model surfaces fix the zero-size-texture startup
-failure. Prior work accepted; CA-43625-MANSION-01 now covers three doors opening
-toward central rooms and the target's ground-floor central-room relocation.
-Start fresh. Evidence: assets/validation_43625/furnishing; architecture: ASSETS/MAP01.
+failure. Door/target tests accepted; CA-43625-MANSION-01 now covers only
+Caella's bedside door opening toward the corridor. Start fresh. Evidence:
+assets/validation_43625/caella; architecture: ASSETS/MAP01.
 
 **4.36.24 / #35:** Journal filters retain main/side and active/completed records,
 including separate rescue/extraction and payment status. Native legacy/reload/hub

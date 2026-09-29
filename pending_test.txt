@@ -1,14 +1,8 @@
 CA-43625-MANSION-01 — Origin: 4.36.25 / issue #36
-Prerequisites: rebuild current source; start a NEW game/fresh MAP01 in GZDoom
-4.14.2. Earlier saved target instances are not relocated. The author accepted
-the remaining prior #36 work on 2026-09-29; only these follow-ups remain.
-1. Use the side connections between the central rooms and Rulo, Ronnie and
-   Argento at Z=136 from both sides. Expected: all three always open toward
-   the central rooms, away from the beds, fully open and close normally.
-   Walk through them normally; Caella's door and furniture remain unchanged.
-2. Find the practice target in the empty central north room on the ground
-   floor, between the workshops. Expected: one target, enough practice space,
-   Rulo and Journal Detail name that room, and all six practices register there.
-   Save/reload and confirm target placement and recorded progress remain.
-Report passed/failed/partial for these two changes. Other prior checks are
-recorded as accepted in HISTORY; this entry remains until these pass.
+Prerequisites: current rebuilt PK3; fresh MAP01/new game in GZDoom 4.14.2.
+The author confirmed all previous checks passed on 2026-09-29, including the
+other resident doors and relocated target/practices. Results are in HISTORY.
+Only the newly requested Caella adjustment remains:
+Use the door beside Caella's bed at Z=136 from both sides. Expected: it always
+opens toward the central corridor, away from the bed, opens fully and closes
+normally. Confirm ordinary passage in both directions.

@@ -1,0 +1,48 @@
+version "4.14"
+class F36CaellaUI : StaticEventHandler
+{
+    override void UiTick() { if(Menu.GetCurrentMenu()!=null) Menu.GetCurrentMenu().Close(); }
+}
+class F36CaellaTests : CaelumSocialDebugAction
+{
+    void Check(bool ok,String label) { Console.Printf("F36_CAELLA %s %s",ok?"PASS":"FAIL",label); }
+    void ResetDoor(CaelumHingedDoorLeaf leaf)
+    {
+        leaf.RuloArenaLocked=true;leaf.SlideProgress=0;leaf.PlaceAtProgress();
+        leaf.RuloArenaLocked=false;leaf.DoorRequested=false;leaf.HoldTimer=0;
+    }
+    override bool Use(bool pickup)
+    {
+        let user=CaelumPlayer(Owner);let record=user.GetPersistentCharacterState(true);
+        user.CharacterCreationComplete=true;user.CreationWizardOpen=false;
+        user.bNoClip=true;user.bNoGravity=true;user.bInvulnerable=true;
+        record.DemoNarrativeDelivered=2047;record.DemoNarrativePending=0;
+        Check(CaelumMansionFurniture.Prepare(),"actual beds and furniture present");
+        let it=ThinkerIterator.Create("CaelumHingedDoorLeaf");CaelumHingedDoorLeaf leaf;int count=0;
+        while((leaf=CaelumHingedDoorLeaf(it.Next()))!=null)if(leaf.args[0]==908)
+        {
+            count++;user.SetOrigin(leaf.ClosedPosition+(80,0,0),false);
+            ResetDoor(leaf);leaf.SwingSide=1;leaf.DoorRequested=true;leaf.HoldTimer=105;
+            for(int tick=0;tick<16;tick++)leaf.Tick();
+            Check(leaf.SlideProgress<64,"former resident-side swing hits bed");
+            for(int side=-1;side<=1;side+=2)
+            {
+                ResetDoor(leaf);user.SetOrigin(leaf.ClosedPosition+(side*80,0,0),false);
+                Check(leaf.Used(user),String.Format("native Use side=%d",side));
+                for(int tick=0;tick<16;tick++)leaf.Tick();
+                Check(leaf.SlideProgress==64 && leaf.SwingSide==-1 && leaf.Pos.X>leaf.ClosedPosition.X,
+                    String.Format("fully open toward corridor side=%d",side));
+                user.SetOrigin((0,0,1000),false);leaf.DoorRequested=false;leaf.HoldTimer=0;
+                for(int tick=0;tick<16;tick++)leaf.Tick();
+                Check(leaf.SlideProgress==0 && (leaf.Pos-leaf.ClosedPosition).Length()<0.01,
+                    String.Format("normal closure side=%d",side));
+            }
+            user.SetOrigin(leaf.ClosedPosition+(80,0,0),false);user.Angle=180;user.Pitch=0;
+            leaf.Used(user);
+        }
+        Check(count==1,"exactly one Caella bedside connection");
+        Check(CaelumMansionDoorData.FixedSwingSide(906)==-1 && CaelumMansionDoorData.FixedSwingSide(907)==1
+            && CaelumMansionDoorData.FixedSwingSide(909)==1,"accepted resident directions retained");
+        Console.Printf("F36_CAELLA_DONE");return true;
+    }
+}
