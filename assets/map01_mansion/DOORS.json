@@ -1,0 +1,9 @@
+{
+  "provenance": "Issue #36 author follow-up: siege wood gate construction, resized to the existing 64 x 120 MU mansion leaves. No combat/balance changes.",
+  "width": 64,
+  "height": 120,
+  "siege_variant": "wood",
+  "open_degrees": 90,
+  "opening_note": "A right angle clears the existing narrow mansion passages; the siege preview uses 82 degrees in its wider frame.",
+  "sweep_radius": 128
+}

@@ -113,6 +113,7 @@ def main():
         floor = next((level for level in reversed(data['interior_footprints']) if z >= level['z']), data['interior_footprints'][0])
         return any(a < x < c and b < y < d for a,b,c,d in floor['rectangles'])
 
+    window_faces = []
     for li, line in enumerate(lines[:data['baseline_lines']]):
         a, b = (vertices[line[k]] for k in ('v1','v2'))
         dx,dy = b['x']-a['x'], b['y']-a['y']; length=math.hypot(dx,dy)
@@ -129,7 +130,7 @@ def main():
                     slot=wall_slots[control_id]
                     material=data['materials']['interior' if interior(x,y,wall['heightfloor']) else 'exterior']
                     if material==data['materials']['exterior'] and length>=data['window_min_span'] and control_id not in [p[0] for g in data['gable_controls'] for p in controls[g['tag']]]:
-                        material=data['decoration']['windows']
+                        window_faces.append((li,side_key,x,y,wall['heightfloor']))
                     elif material==data['materials']['interior'] and wall['heightfloor']>=data['balcony_levels'][-1]:
                         material=data['decoration']['upper_plaster']
                     side[slot]=material
@@ -246,6 +247,51 @@ def main():
         lines.append(dict(v1=vi+1,v2=vi,sidefront=sd,sideback=sd+1,twosided=True,dontpegbottom=True))
         report['reliefs'].append(dict(line=len(lines)-1,sector=si,position=[x,y1,y2,z]))
 
+    # Finite shutter panels have an explicit sill, independent of 3D-floor
+    # texture pegging and the sector's ground height.
+    report['windows']=[]
+    for li,key,x,y,z in window_faces:
+        line=lines[li]
+        a,b=[vertices[line[k]] for k in ('v1','v2')]
+        dx,dy=b['x']-a['x'],b['y']-a['y'];length=math.hypot(dx,dy)
+        direction=1 if key=='sidefront' else -1
+        half=data['window_panel']['width']/2
+        vx,vy=direction*dx/length*half,direction*dy/length*half
+        si=sides[line[key]]['sector']; vi=len(vertices);sd=len(sides)
+        vertices.extend([dict(x=x-vx,y=y-vy),dict(x=x+vx,y=y+vy)])
+        bottom=z+data['window_panel']['sill']
+        sides.extend([dict(sector=si,texturemiddle=data['window_panel']['texture'],
+                           offsety_mid=(bottom-sectors[si]['heightfloor'])*data['window_panel']['scale']),
+                      dict(sector=si,texturemiddle='-')])
+        lines.append(dict(v1=vi,v2=vi+1,sidefront=sd,sideback=sd+1,twosided=True,dontpegbottom=True))
+        report['windows'].append(dict(line=len(lines)-1,wall=li,bottom=bottom,wall_base=z))
+
+    # The ceiling covers the upper interior at the existing wall-top elevation.
+    spec=data['ceiling']; target=[]
+    for si,sector in enumerate(sectors[:data['baseline_sectors']]):
+        if not tags(sector)&{g['roof_tag'] for g in data['gable_controls']}:continue
+        points={line[k] for line in lines[:data['baseline_lines']] for k in ('v1','v2')
+                if any(sides[line[side]]['sector']==si for side in ('sidefront','sideback') if line.get(side,-1)>=0)}
+        x=sum(vertices[i]['x'] for i in points)/len(points)
+        y=sum(vertices[i]['y'] for i in points)/len(points)
+        if interior(x,y,data['balcony_levels'][-1]):
+            add_tag(sector,spec['tag']);target.append(si)
+    si=len(sectors); sectors.append(dict(heightfloor=spec['bottom'],heightceiling=spec['top'],
+        texturefloor=spec['texture'],textureceiling=spec['texture'],lightlevel=176))
+    x,y=spec['control_origin'];size=data['control_size'];vi=len(vertices)
+    vertices.extend(dict(x=a,y=b) for a,b in [(x,y),(x,y+size),(x+size,y+size),(x+size,y)])
+    for j in range(4):
+        sd=len(sides);sides.append(dict(sector=si,texturemiddle=spec['texture']))
+        line=dict(v1=vi+j,v2=vi+(j+1)%4,sidefront=sd)
+        if j==0:line.update(special=160,arg0=spec['tag'],arg1=1,arg3=255)
+        lines.append(line)
+    report['ceiling_sectors']=target
+    report['hinged_doors']=[]
+    for i,thing in enumerate(obj['thing']):
+        if thing['type']==18025:
+            thing['type']=data['hinged_door_type'];report['hinged_doors'].append(i)
+    from mansion_door_openings import carve_openings
+    carve_openings(obj,data,report)
     write_map(obj, ROOT/'src/maps/MAP01.wad')
     report['output_sha256']=hashlib.sha256((ROOT/'src/maps/MAP01.wad').read_bytes()).hexdigest()
     report['counts']={k:len(v) for k,v in obj.items()}

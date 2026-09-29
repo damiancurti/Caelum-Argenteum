@@ -155,6 +155,7 @@ DoomEdNums
     18023 = CaelumRonnie
     18024 = CaelumBull
     18025 = CaelumSlidingDoorLeaf
+    18099 = CaelumHingedDoorLeaf
     18026 = CaelumFiniteWallPanel
     18027 = CaelumFiniteFloorPanel
     18028 = CaelumFiniteRoofPanel

@@ -16,7 +16,7 @@
   "face_sample_distance": 0.25,
   "interior_footprints": [
     {"z": 0, "rectangles": [[-561,-632,1305,632],[1305,-383,1961,383],[-2464,-320,-1776,320]]},
-    {"z": 128, "rectangles": [[-465,-536,1201,536],[1201,-287,1689,287],[1697,-383,1961,383]]},
+    {"z": 128, "rectangles": [[-465,-536,1201,536],[1201,-320,1689,320],[1697,-383,1961,383]]},
     {"z": 264, "rectangles": [[-363,-383,1047,383]]}
   ],
   "horizon_lines": [0,1,2,3],
@@ -28,6 +28,14 @@
   "rail_border_width": 16,
   "walkway_seam_width": 1,
   "window_min_span": 128,
+  "window_panel": {"width": 64, "sill": 32, "texture": "CMSHT36", "scale": 2},
+  "ceiling": {"bottom": 392, "top": 400, "tag": 12102, "control_origin": [-19648,32000], "texture": "CMCL01"},
+  "hinged_door_type": 18099,
+  "door_openings": {
+    "rectangles": [[192,-400,200,-336],[536,-400,544,-336],[192,336,200,400],[536,336,544,400]],
+    "bottom": 136, "top": 256, "first_tag": 12200, "control_origin": [-19000,32200], "retained_sector_origin": [-12000,32200],
+    "provenance": "Existing 64-MU leaves in groups 900/901/903/904 overlap solid 128..256 wall models. These rectangles match their original closed footprints; preserve every other floor and roof layer."
+  },
   "decoration": {"windows": "CMWIN36", "upper_plaster": "CMPLS36", "panels": [[1046,-350,-286,304],[1046,286,350,304]]},
   "notes": "Building envelopes, elevations, step limit and rail scale derive from the preserved MAP01. Control positions/tags are non-playable authoring allocations. The author prioritizes rebuilt geometry over old-save compatibility (2026-09-28)."
 }

@@ -62,14 +62,14 @@ the gauchos and rural culture, and the humans the urban porteño society.
 
 ## Current status
 
-**4.36.25 / #36:** MAP01 upper gables now meet the pitched roof; 72 added
-guards complete 204 balcony spans. Interior/exterior wall finishes, closed
-wooden shutter panels, stone trim and two wall reliefs follow the author's
-approved period-inspired direction. The outer boundary blocks invisibly with
-a dark Limbo horizon. Geometry/native checks pass. The author prioritized
-rebuilding over old MAP01 saves: use a
-fresh MAP01/new game. Final author playtest CA-43625-MANSION-01 is pending.
-Evidence: assets/validation_43625; architecture/provenance: ASSETS and MAP01.
+**4.36.25 / #36:** MAP01 has closed gables, a flat upper ceiling, 204 balcony
+guards, raised shutters, corrected interior/exterior finishes and an invisible
+blocking horizon. All 52 leaves now use siege-style wood and hinged opening;
+four obstructed single-door openings are rebuilt. Native geometry, three-size
+door traversal, locks and new-save reload pass. The author confirmed the hole
+closed; final CA-43625-MANSION-01 remains pending. Reconstruction takes priority
+over old MAP01 saves: start fresh. Evidence: assets/validation_43625/followup;
+architecture/provenance: ASSETS and MAP01.
 
 **4.36.24 / #35:** Journal filters retain main/side and active/completed records,
 including separate rescue/extraction and payment status. Native legacy/reload/hub

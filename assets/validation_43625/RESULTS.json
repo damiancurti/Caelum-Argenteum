@@ -8,26 +8,62 @@
   "baseline_map_sha256": "c3c01999f2cd427ce0f618da82dd18148e6544c5f00ec14b5e066174edc0859c",
   "final_map_sha256": "011cc53a25f18a4af16800cc61f8b0a599d424d8019f93b81eddd0135e26be10",
   "tested_package_sha256": "3ae2355511f1179fb9cb29fc6872cd0384f29f8fa709506da5573260a9098f90",
-  "build": {"exit_code": 0, "files": 6121, "directory_entries": 0},
-  "project_validation": {"report": "PROJECT_VALIDATION.json", "exit_code": 0, "errors": []},
-  "static": {"report": "STATIC.json", "errors": [], "original_things_preserved": 334, "original_vertex_coordinates_preserved": 1525, "added_control_sectors": 2},
-  "determinism": {"repeated_generation_identical": true, "sha256": "011cc53a25f18a4af16800cc61f8b0a599d424d8019f93b81eddd0135e26be10"},
+  "build": {
+    "exit_code": 0,
+    "files": 6121,
+    "directory_entries": 0
+  },
+  "project_validation": {
+    "report": "PROJECT_VALIDATION.json",
+    "exit_code": 0,
+    "errors": []
+  },
+  "static": {
+    "report": "STATIC.json",
+    "errors": [],
+    "original_things_preserved": 334,
+    "original_vertex_coordinates_preserved": 1525,
+    "added_control_sectors": 2
+  },
+  "determinism": {
+    "repeated_generation_identical": true,
+    "sha256": "011cc53a25f18a4af16800cc61f8b0a599d424d8019f93b81eddd0135e26be10"
+  },
   "native": {
     "package_report": "native_package.txt",
-    "body_tiers": [1,4,7],
+    "body_tiers": [
+      1,
+      4,
+      7
+    ],
     "corridor_balcony_stair_routes_passed": 21,
     "gable_closure_traces_passed": 2,
     "invisible_boundary_collision_passed": true,
     "railing_spans_at_correct_elevation": 204,
     "existing_spans": 132,
     "completed_spans": 72,
-    "differential_crossings_blocked_by_tier": [109,78,76],
-    "differential_crossings_geometry_limited_by_tier": [95,126,128],
+    "differential_crossings_blocked_by_tier": [
+      109,
+      78,
+      76
+    ],
+    "differential_crossings_geometry_limited_by_tier": [
+      95,
+      126,
+      128
+    ],
     "differential_clear_sample_leaks": 0,
     "before_after_camera_pairs": 16,
     "camera_source": "views.json",
-    "all_completed_sections_indexed": ["rail_sections_136.svg","rail_sections_264.svg","../map01_mansion/GENERATED.json"],
-    "views_reports": ["native_views_before.txt","native_views_after.txt"],
+    "all_completed_sections_indexed": [
+      "rail_sections_136.svg",
+      "rail_sections_264.svg",
+      "../map01_mansion/GENERATED.json"
+    ],
+    "views_reports": [
+      "native_views_before.txt",
+      "native_views_after.txt"
+    ],
     "contact_sheet": "after_contact.png",
     "performance_scope": "Native compilation, checks and 16 rendered final viewpoints completed without a hang or script error. Small geometry delta; no frame-time benchmark or whole-campaign performance claim."
   },
@@ -38,7 +74,10 @@
     "new_artwork_downloaded": false,
     "original_pngs_modified": false,
     "proposal_approved_by_author": "2026-09-28: aged render, wooden shutters, ornamental iron and discreet interior reliefs",
-    "proposal_views": ["approved_proposal_exterior.png","approved_proposal_interior.png"]
+    "proposal_views": [
+      "approved_proposal_exterior.png",
+      "approved_proposal_interior.png"
+    ]
   },
   "save_scope": "The author explicitly prioritized reconstruction over old MAP01 saves. Fresh MAP01/new game required. The old WAD is preserved as generator input; automatic geometry migration is not implemented or claimed.",
   "limitations": [
@@ -58,5 +97,7 @@
     "powershell -NoProfile -ExecutionPolicy Bypass -File build_dev.ps1",
     "For native geometry checks, load the built PK3 and a disposable fixture directory containing Checks.zs as ZSCRIPT, Views.zs and MAPINFO from this evidence directory. Start MAP01, then give Issue36View; give Issue36Checks. Never package the fixture into src.",
     "For views, give View36_<id> using views.json IDs, wait at least 16 tics, then screenshot. Repeat against the preserved baseline WAD loaded after the current PK3 for comparison."
-  ]
+  ],
+  "iteration_status": "Initial #36 delivery; final author-follow-up evidence is followup/RESULTS.json. Original hashes/captures remain historical evidence.",
+  "superseded_by": "followup/RESULTS.json"
 }

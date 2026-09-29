@@ -5,10 +5,21 @@ Documentation version: **4.36.25** — 2026-09-28.
 ## 4.36.25 — Rebuilt MAP01 geometry (#36)
 
 The mansion's roof closure and balcony guards use native solid 3D floors and
-3D middle-texture collision. Guards retain the existing 48-MU height. Doors,
-stairs, conversations, rewards, Bull rules and travel semantics do not change.
+3D middle-texture collision. Guards retain the existing 48-MU height. Stairs,
+conversations, rewards, Bull rules and travel semantics do not change.
 The invisible outer boundary remains impassable; decorative shutter panels
 are closed wall surfaces and the two reliefs have no collision or interaction.
+
+MAP01's 52 leaves now inherit the original grouped-door access rules but use
+solid 3D wooden leaves and hinged movement. Use opens away from the user;
+opposing leaves use their outer jambs. The opening angle is 90 degrees for
+clearance; the original 16-tic movement, 105-tic hold, keys, faction condition,
+group prevalidation and Rulo arena lock remain. Moving blockers follow the
+visible leaf. Swept solid-body checks stop opening and reopen an obstructed
+closure without pushing/crushing actors. These doors are not breakable siege
+gates: no combat statistics or destruction mechanics are added. Other maps
+retain CaelumSlidingDoorLeaf. New-game door fields serialize normally; old
+MAP01 reconstruction compatibility remains waived below.
 
 Author decision, 2026-09-28: prioritize reconstruction over old MAP01 saves.
 Use a fresh MAP01/new game; this patch does not promise geometry migration or

@@ -35,6 +35,28 @@ geometry migration is claimed. CA-43625-MANSION-01 remains pending for final
 visual, tutorial, Bull and exit acceptance. Commit/push/linked PR delivery does
 not confirm that manual test or authorize #17 export.
 
+Author follow-up, 2026-09-28 (same #36 patch/version): confirmed that the former
+upper hole is closed, and requested a flat interior ceiling, siege-style hinged
+single/double doors, raised northeast/southeast windows and interior materials
+on both walls near (1507,258,136). The confirmation is partial acceptance of
+CA-43625-MANSION-01, not a passed complete playtest; its entry remains pending.
+Implemented a ceiling at the existing Z=392 wall tops, finite shutter panels
+with raised sills, the east-wing interior envelope correction and 52 original
+door placements using the siege wood leaf mesh at their existing dimensions.
+Doors swing away from the user, use opposing outer hinges, retain group/key/
+arena rules and stop for solid bodies. They open to 90 degrees for clearance.
+Four pre-existing single-door footprints were solid wall at Z=136..256;
+local subdivisions restore those openings while retaining all other vertical layers.
+
+Final PK3 verification, 2026-09-29, in assets/validation_43625/followup: 34 groups, both sides,
+three body tiers (204 traversals); closed/open collision, native key/arena
+checks, solid-body sweep obstruction and 35 upward ceiling traces pass. Existing
+21 routes and differential rail checks also pass. A new-game save taken halfway
+through opening reloads at the next tic, completes opening and closes normally.
+Nine final views cover all requested surfaces and door poses. Static checks,
+deterministic regeneration and package validation pass. These isolated checks
+do not replace ordinary tutorial/Bull/companion testing or final author visuals.
+
 ## 4.36.24 — Active and completed quest journal (#35)
 
 2026-09-28: the author confirmed mansion/El Loco as main, sewers/As de Copas

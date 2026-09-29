@@ -18,7 +18,9 @@ def main():
     def check(name,value):
         checks.append({'name':name,'passed':bool(value)})
     check('output matches regeneration manifest',hashlib.sha256((ROOT/'src/maps/MAP01.wad').read_bytes()).hexdigest()==manifest['output_sha256'])
-    check('all 334 original map things unchanged',before['thing']==after['thing'])
+    check('all original things preserved except explicit hinged-door type',all(
+        dict(t,type=config['hinged_door_type'])==after['thing'][i] if t['type']==18025 else t==after['thing'][i]
+        for i,t in enumerate(before['thing'])) and len(before['thing'])==len(after['thing']))
     check('all playable original vertices unchanged',after['vertex'][:len(before['vertex'])]==before['vertex'])
     check('original planes, slopes, lighting, liquids and cave unchanged',all(
         {k:v for k,v in s.items() if k!='moreids'}=={k:v for k,v in after['sector'][i].items() if k!='moreids'}
@@ -38,6 +40,25 @@ def main():
     check('reliefs do not introduce blockers or gameplay actors',all(
         not any(after['linedef'][r['line']].get(flag,False) for flag in ['blocking','blockplayers','blockmonsters','midtex3d'])
         for r in manifest['reliefs']))
+    check('all shutters have a finite raised sill and no collision',all(
+        w['bottom']==w['wall_base']+config['window_panel']['sill'] and
+        not after['linedef'][w['line']].get('midtex3d',False) and
+        after['sidedef'][after['linedef'][w['line']]['sidefront']]['texturemiddle']==config['window_panel']['texture']
+        for w in manifest['windows']))
+    ceiling=config['ceiling']
+    ceiling_models=[after['sector'][after['sidedef'][line['sidefront']]['sector']] for line in after['linedef']
+                    if line.get('special')==160 and line.get('arg0')==ceiling['tag']]
+    check('upper ceiling is flat at existing wall tops',len(ceiling_models)==1 and
+        ceiling_models[0]['heightfloor']==ceiling['bottom'] and ceiling_models[0]['heightceiling']==ceiling['top'] and
+        not any('plane_' in k for k in ceiling_models[0]))
+    check('all 52 leaves retain original groups, locks, axes and closed positions',len(manifest['hinged_doors'])==52 and all(
+        after['thing'][i]==dict(before['thing'][i],type=config['hinged_door_type']) for i in manifest['hinged_doors']))
+    check('opening reconstructions use only four existing door footprints',
+        {tuple(s['rectangle']) for s in manifest['door_openings']['sectors']}=={tuple(r) for r in config['door_openings']['rectangles']})
+    referenced_sides={line[k] for line in after['linedef'] for k in ('sidefront','sideback') if line.get(k,-1)>=0}
+    check('no abandoned sidedefs after doorway subdivision',referenced_sides==set(range(len(after['sidedef']))))
+    referenced_sectors={after['sidedef'][i]['sector'] for i in referenced_sides}
+    check('every retained sector has an outline',referenced_sectors==set(range(len(after['sector']))))
     for control in config['gable_controls']:
         models=[after['sector'][after['sidedef'][line['sidefront']]['sector']] for line in after['linedef'] if line.get('special')==160 and line.get('arg0')==control['tag']]
         roof=before['sector'][control['roof_control']]

@@ -27,6 +27,17 @@ decorative closed surfaces, not new traversable windows. The two reliefs are
 wall-mounted, nonblocking decorative planes; no new statue or gameplay actor
 is introduced. Website photographs/textures are not copied into the game.
 
+The author follow-up replaces repeating CMWIN36 map faces with finite CMSHT36
+panels (the same CMDT04 source, half scale) above explicit sills. CMWIN36 remains
+defined for provenance. The flat upper ceiling uses the existing CMCL01 art.
+The new ca_mansion_door.obj extracts the original left leaf from
+ca_siege_gate_intact.obj, preserving its station wood/iron and stash-inside
+materials and UVs, resized from 48x96 to the existing 64x120-MU mansion leaf.
+The right leaf rotates the same model to put its hinges/handle on the correct
+edges. generate_mansion_doors.py and assets/map01_mansion/DOORS.json reproduce
+the adaptation using only the Python standard library. No new bitmap source,
+external model, siege balance or destructibility is introduced.
+
 Geometry is generated deterministically by assets/generators/repair_map01_mansion.py
 from assets/map01_mansion/REPAIR.json and the preserved, hashed 4.36.24 WAD.
 GENERATED.json identifies every new guard, wall material assignment and relief.

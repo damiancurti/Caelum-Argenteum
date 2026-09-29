@@ -9,6 +9,13 @@ reliefs and a uniform dark sky tint. Source PNGs and their existing provenance
 are unchanged. The repaired map reuses the existing roof, iron and stone art.
 No Doom image or externally downloaded artwork was introduced.
 
+Author follow-up: CMSHT36 uses the unchanged CMDT04 at half scale for finite
+raised panels; CMCL01 supplies the flat ceiling. ca_mansion_door.obj adapts one
+leaf of the project's ca_siege_gate_intact.obj, keeping its original station
+wood/iron and stash-inside materials, UVs and provenance. The adaptation is
+reproducible with assets/generators/generate_mansion_doors.py and DOORS.json;
+it adds no external resources. Siege asset credits remain applicable.
+
 Historical vocabulary reference (consulted 2026-09-28): Museo y Monumento
 Historico Nacional Justo Jose de Urquiza, "Historia del edificio",
 https://museourquiza.cultura.gob.ar/noticia/historia-del-edificio/ .

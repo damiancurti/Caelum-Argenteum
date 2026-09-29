@@ -30,6 +30,12 @@ Texture "CMPLS36", 128, 80
     WorldPanning
     Patch "graphics/caelum/textures/mansion/CMIN03.png", 0, 0
 }
+Texture "CMSHT36", 128, 128
+{
+    XScale 2
+    YScale 2
+    Patch "graphics/caelum/textures/mansion/CMDT04.png", 0, 0
+}
 Texture "CMPNL36", 128, 128
 {
     XScale 2

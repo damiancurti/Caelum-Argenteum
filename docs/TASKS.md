@@ -7,11 +7,15 @@ Documentation version: **4.36.25** — 2026-09-28.
 - Implemented: upper-storey roof/gable closure, native balcony guards,
   interior/exterior wall finishes, closed shutters, stone trim, two reliefs
   and an invisible but blocking outer horizon.
+  Author follow-up: flat upper ceiling, raised finite shutters, east-wing
+  interior materials, 52 hinged wooden leaves and four reopened single openings.
 - Author-approved visual proposal: aged render, wood, iron and discreet reliefs,
   2026-09-28. Historical rationale and source attribution are in ASSETS.
-- Verified: preserved original map actors/actions/planes, deterministic output,
+- Verified: preserved original placements/actions/planes, deterministic output,
   focused native geometry traversal for body tiers 1/4/7, railing collision,
   roof closure and native views. Evidence: assets/validation_43625.
+  Follow-up evidence covers both opening directions, three body sizes, access
+  locks, swept-body obstruction and the flat ceiling; see its followup directory.
 - Pending: CA-43625-MANSION-01 ordinary tutorial/Bull/exit and final visuals.
   This acceptance remains required before #17 export.
 - Author explicitly prioritized rebuilding over old MAP01 saves. Use a fresh

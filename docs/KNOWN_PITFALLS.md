@@ -31,6 +31,20 @@ and read-only layout validator in assets/generators. Representative native
 geometry probes ignore actors; final tutorial/Bull play remains author test
 CA-43625-MANSION-01. Visual direction approved 2026-09-28; final playtest pending.
 
+The author's #36 follow-up exposed three related authoring traps. A repeating
+window texture inherits 3D-floor pegging and can put windows at ground level:
+finite nonblocking panels with explicit sills remove that dependency. A broad
+footprint misclassified the middle east-wing interior; use its actual Y=+/-320
+wall face, not the older +/-287 estimate. Existing door actors also do not prove
+their openings are open: four single leaves overlapped solid stacked wall models.
+Rebuild only their authored rectangles and preserve the other vertical layers.
+The corrected generator retains existing sidedef slots during subdivision and
+keeps every retained sector outlined; static checks reject unused sides/empty
+sectors after an intermediate candidate produced native missing-front errors.
+For stacked-actor traversal probes, CANPASS is needed to match the player's
+vertical actor separation. Evidence: assets/validation_43625/followup; generic
+body probes and direct Use calls are not full companion/Bull play acceptance.
+
 ## CA-KP-015 — Git checkout can invalidate raw document hashes
 
 Status/evidence: RESOLVED-VERIFIED tooling contract, #21 /4.36.19.

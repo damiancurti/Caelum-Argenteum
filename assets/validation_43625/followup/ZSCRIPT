@@ -1,0 +1,151 @@
+version "4.14"
+class Issue36UI : StaticEventHandler
+{
+    override void UiTick() { if(Menu.GetCurrentMenu()!=null) Menu.GetCurrentMenu().Close(); }
+}
+class Issue36View : CaelumSocialDebugAction
+{
+    override bool Use(bool pickup)
+    {
+        let u=CaelumPlayer(Owner);
+        let r=u.GetPersistentCharacterState(true);
+        r.DemoNarrativeDelivered=2047; r.DemoNarrativePending=0;
+        u.CharacterCreationComplete=true; u.CreationWizardOpen=false;
+        u.bInvulnerable=true; u.bNoGravity=true; u.bNoClip=true;
+        u.SetOrigin((-1450,-1400,350),false); u.Angle=35; u.Pitch=10;
+        return true;
+    }
+}
+class Issue36Roof : Issue36View
+{
+    override bool Use(bool pickup) { Super.Use(pickup); Owner.SetOrigin((400,0,310),false);Owner.Angle=90;Owner.Pitch=-30;return true; }
+}
+class Issue36Above : Issue36View
+{
+    override bool Use(bool pickup) { Super.Use(pickup); Owner.SetOrigin((400,-900,850),false);Owner.Angle=90;Owner.Pitch=40;return true; }
+}
+class Issue36Balcony : Issue36View
+{
+    override bool Use(bool pickup) { Super.Use(pickup); Owner.SetOrigin((350,-580,145),false);Owner.Angle=270;Owner.Pitch=15;return true; }
+}
+class Issue36Upper : Issue36View
+{
+    override bool Use(bool pickup) { Super.Use(pickup); Owner.SetOrigin((900,-300,264),false);Owner.Angle=0;Owner.Pitch=-25;return true; }
+}
+class Issue36Rails : CaelumSocialDebugAction
+{
+    override bool Use(bool pickup)
+    {
+        for(int i=0;i<level.Lines.Size();i++)
+        {
+            let l=level.Lines[i];
+            if(!(l.flags & Line.ML_3DMIDTEX))continue;
+            bool ok;double top,bottom;[ok,top,bottom]=l.GetMidTexturePosition(0);
+            Console.Printf("QA36_RAIL %d %.3f %.3f",i,bottom,top);
+        }
+        return true;
+    }
+}
+class Issue36Probe : Actor
+{
+    Default { Radius 16; Height 56; +SOLID; +NOGRAVITY; +DROPOFF; +THRUACTORS; MaxStepHeight 24; }
+    States { Spawn: TNT1 A -1; Stop; }
+}
+class Issue36Checks : CaelumSocialDebugAction
+{
+    bool CrossRail(Actor p,Vector2 middle,Vector2 normal,double z)
+    {
+        double distance=p.Radius+2;
+        p.SetOrigin((middle.X+normal.X*distance,middle.Y+normal.Y*distance,z+1),false);
+        for(double step=distance-2;step>=-distance;step-=2)
+            if(!p.TryMove(middle+normal*step,true))return false;
+        return true;
+    }
+    void Check(bool value,String name)
+    { Console.Printf("QA36 %s %s", value ? "PASS" : "FAIL",name); }
+    override bool Use(bool pickup)
+    {
+        let p=Spawn("Issue36Probe",(0,0,264));
+        let stats=new("CaelumDerivedStats");
+        for(int tier=1;tier<=7;tier+=3)
+        {
+            double factor=stats.GetHeightMetersForTier(tier)/1.8;
+            p.A_SetSize(16*factor,56*factor,false);
+            p.SetOrigin((-320,0,264),false);
+            bool ok=true;
+            for(int x=-316;x<=1000;x+=4)
+            {
+                if(!p.TryMove((x,0),true)){ok=false;Console.Printf("QA36_ROUTE blocked tier=%d x=%d floor=%.2f ceiling=%.2f line=%d",tier,x,p.FloorZ,p.CeilingZ,p.BlockingLine==null ? -1 : p.BlockingLine.Index());break;}
+            }
+            Check(ok,String.Format("upper central corridor tier %d",tier));
+            p.SetOrigin((-400,-480,264),false);ok=true;
+            for(int x=-396;x<=1100;x+=4)if(!p.TryMove((x,-480),true)){ok=false;break;}
+            Check(ok,String.Format("upper south balcony tier %d",tier));
+            p.SetOrigin((-500,-590,136),false);ok=true;
+            for(int x=-496;x<=1250;x+=4)if(!p.TryMove((x,-590),true)){ok=false;Console.Printf("QA36_LOWER blocked tier=%d x=%d line=%d",tier,x,p.BlockingLine==null ? -1 : p.BlockingLine.Index());break;}
+            Check(ok,String.Format("lower south balcony tier %d",tier));
+            p.SetOrigin((-400,480,264),false);ok=true;
+            for(int x=-396;x<=1100;x+=4)if(!p.TryMove((x,480),true)){ok=false;break;}
+            Check(ok,String.Format("upper north balcony tier %d",tier));
+            p.SetOrigin((-500,590,136),false);ok=true;
+            for(int x=-496;x<=1250;x+=4)if(!p.TryMove((x,590),true)){ok=false;break;}
+            Check(ok,String.Format("lower north balcony tier %d",tier));
+            p.SetOrigin((1370,60,0),false);ok=true;
+            for(int y=64;y<=272;y+=4)
+            {
+                if(!p.TryMove((1370,y),true)){ok=false;Console.Printf("QA36_STAIRS1 tier=%d y=%d line=%d",tier,y,p.BlockingLine==null ? -1 : p.BlockingLine.Index());break;}
+                p.SetOrigin((p.Pos.X,p.Pos.Y,p.FloorZ),false);
+            }
+            Check(ok && p.Pos.Z==136,String.Format("ground-to-middle stair tier %d",tier));
+            p.SetOrigin((1750,350,136),false);ok=true;
+            for(int y=346;y>=40;y-=4)
+            {
+                if(!p.TryMove((1750,y),true)){ok=false;Console.Printf("QA36_STAIRS2 tier=%d y=%d line=%d",tier,y,p.BlockingLine==null ? -1 : p.BlockingLine.Index());break;}
+                p.SetOrigin((p.Pos.X,p.Pos.Y,p.FloorZ),false);
+            }
+            Check(ok && p.Pos.Z==264,String.Format("middle-to-upper stair tier %d",tier));
+            int demonstrated=0,wrong=0,occluded=0;
+            for(int i=0;i<level.Lines.Size();i++)
+            {
+                let l=level.Lines[i];if(!(l.flags&Line.ML_3DMIDTEX))continue;
+                bool valid;double top,bottom;[valid,top,bottom]=l.GetMidTexturePosition(0);
+                if(!valid || abs(top-bottom-48)>0.01)continue;
+                Vector2 delta=l.v2.p-l.v1.p;
+                double length=delta.Length();if(length<2*p.Radius+4){occluded++;continue;}
+                Vector2 normal=(delta.Y/length,-delta.X/length);
+                Vector2 middle=(l.v1.p+l.v2.p)*0.5;
+                int oldflags=l.flags;
+                l.flags=oldflags&~Line.ML_3DMIDTEX;
+                bool clear=CrossRail(p,middle,normal,bottom);
+                l.flags=oldflags;
+                if(!clear){occluded++;continue;}
+                if(CrossRail(p,middle,normal,bottom)){wrong++;Console.Printf("QA36_LEAK line=%d tier=%d",i,tier);}
+                else demonstrated++;
+            }
+            Check(wrong==0 && demonstrated>0,String.Format("differential rail collision tier %d: blocked=%d geometry-limited=%d leaks=%d",tier,demonstrated,occluded,wrong));
+        }
+        int checked=0,failed=0;
+        for(int i=0;i<level.Lines.Size();i++)
+        {
+            let l=level.Lines[i];if(!(l.flags&Line.ML_3DMIDTEX))continue;
+            bool valid;double top,bottom;[valid,top,bottom]=l.GetMidTexturePosition(0);
+            if(!valid || abs(top-bottom-48)>0.01)continue;
+            checked++;
+            if(abs(bottom-136)>0.01 && abs(bottom-264)>0.01){failed++;Console.Printf("QA36_BAD_RAIL %d %.4f",i,bottom);}
+        }
+        Check(failed==0 && checked>132,String.Format("all %d balcony spans have native 48-unit collision at correct level",checked));
+        p.SetOrigin((29950,0,0),false);
+        Check(!p.TryMove((29999,0),true),"invisible east horizon blocks native movement");
+        FLineTraceData hit;
+        for(int direction=0;direction<2;direction++)
+        {
+            double x=direction==0 ? 1000 : -320;
+            double yaw=direction==0 ? 0 : 180;
+            bool closed=p.LineTrace(yaw,150,0,TRF_THRUACTORS|TRF_ABSPOSITION,410,x,-200,hit);
+            Check(closed,String.Format("sloped gable closure direction %d",direction));
+        }
+        p.Destroy();Console.Printf("QA36_DONE");return true;
+    }
+}
+#include "Views.zs"
+#include "Followup.zs"

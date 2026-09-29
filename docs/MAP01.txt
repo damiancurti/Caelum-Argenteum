@@ -20,12 +20,29 @@ stone; two original ornamental reliefs hang against upper-room walls without
 collision. Four original one-sided boundary lines now use Line_Horizon and
 retain blocking, with an explicit project-owned dark Limbo sky.
 
+Author follow-up, 2026-09-28: a flat solid ceiling at Z=392..400 covers the
+upper interior below the retained pitched roof. Exterior shutter panels now
+have an explicit 32-MU sill above each wall base instead of vertically repeating
+window artwork. The middle east-wing interior extends to Y=+/-320, correcting
+both walls visible near (1507,258,136).
+
+All 52 original leaves (34 groups) now use CaelumHingedDoorLeaf, retaining their
+closed coordinates, dimensions, key requirements and group IDs. The original
+siege wood mesh supplies planks, braces, hinges and handles; opposing leaves
+face their handles toward the centre. They swing away from the user through
+90 degrees to clear the mansion's narrow passages, and stop for solid bodies.
+Four existing single-door footprints (groups 900/901/903/904) were obstructed
+by stacked wall models: local subdivisions remove only the wall layer from
+Z=136 to 256, preserving floors, upper walls and roofs. The centre partitions
+behind double groups 910/911 remain; both existing side passages are tested.
+
 The author approved this visual vocabulary on 2026-09-28. It is a restrained
 historicist interpretation appropriate to the setting, not an exact period
 house typology. The stepped three-storey massing remains intentionally stylized.
-ASSETS records the source/reference distinction. All 334 original map things,
-playable vertices, original floor/roof planes, tags and door/lift/travel actions
-are retained. No tutorial narrative or combat changes are part of #36.
+ASSETS records the source/reference distinction. All 334 original map placements,
+playable vertices, original floor/roof planes, tags and line actions are retained;
+only the 52 door type identifiers change. No tutorial narrative or combat
+changes are part of #36.
 
 Source: assets/map01_mansion/REPAIR.json and preserved MAP01_43624.wad;
 generator: assets/generators/repair_map01_mansion.py. The author explicitly
