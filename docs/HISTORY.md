@@ -86,6 +86,32 @@ a half-open central leaf while its neighbour stays closed; reload completes
 opening and closing. These are agent checks; CA-43625-MANSION-01 remains
 pending for the author's ordinary-play and visual acceptance.
 
+Third author follow-up, 2026-09-29: CA-43625-MANSION-01 (origin 4.36.25/#36)
+received qualified author acceptance: the remaining prior changes are correct,
+except the side connections to Rulo/Ronnie/Argento snag on beds. The author
+confirmed those three doors should always swing toward the central rooms,
+and the target belongs in the empty central ground-floor room. The pending
+entry is narrowed to these two latest changes; no export/merge is authorized.
+
+Implemented data-driven fixed sides for groups 906/907/909. Other door rules,
+Caella's connection and furniture remain unchanged. Target placement is now
+(368,480,0), with room-derived practice bounds and bilingual Rulo/Journal
+directions. The same persistent practice flags and target class remain.
+Fresh MAP01 remains required; earlier saved target instances are not relocated.
+
+Focused native checks preserve actual beds/stations: the previous resident-side
+swing reproduces the obstruction, and all three fixed doors open fully and
+close from both use sides. Body tiers 1/4/7 pass at bed-top height (Z=160),
+with furniture collision retained. Initial straight ground-level TryMove probes
+hit the accepted beds; those primitive probes do not perform player step-up,
+so they are retained as a limitation, not claimed as ordinary walking evidence.
+The new room contains exactly one target and no crafting stations; placement
+is idempotent, old workshop/upper storey are excluded, and all six existing
+practice flags can be recorded there. Native save/reload preserves the target
+and flags. Final-package logs, views, static checks and hashes are in
+assets/validation_43625/furnishing. Only author confirmation of the latest
+door use and normal six-practice sequence remains pending.
+
 ## 4.36.24 — Active and completed quest journal (#35)
 
 2026-09-28: the author confirmed mansion/El Loco as main, sewers/As de Copas

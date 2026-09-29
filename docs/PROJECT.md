@@ -25,8 +25,12 @@ The original map is preserved as the generator baseline, not packaged at runtime
 
 Static, deterministic regeneration and isolated GZDoom evidence are recorded in
 assets/validation_43625/layout (earlier iterations retain their evidence).
-Ordinary tutorial/Bull/exit play and final visual
-acceptance remain CA-43625-MANSION-01 in pending_test.txt, before #17 export.
+The author accepted the remaining prior work on 2026-09-29, requesting only
+fixed central-room swings for Rulo/Ronnie/Argento's side doors and moving the
+practice target to the empty north-central ground-floor room. Both are
+implemented, including target detection and bilingual directions. Latest
+checks are in assets/validation_43625/furnishing. CA-43625-MANSION-01 now
+tracks only these changes; this confirmation does not authorize #17 export.
 
 ## 4.36.24 — Quest journal categories and history (#35)
 

@@ -11,7 +11,7 @@ The invisible outer boundary remains impassable; decorative shutter panels
 are closed wall surfaces and the two reliefs have no collision or interaction.
 
 MAP01's 48 leaves now inherit the original grouped-door access rules but use
-solid 3D wooden leaves and hinged movement. Use opens away from the user;
+solid 3D wooden leaves and hinged movement. Use normally opens away from the user;
 opposing leaves use their outer jambs. The opening angle is 90 degrees for
 clearance; the original 16-tic movement, 105-tic hold, keys, faction condition,
 group prevalidation and Rulo arena lock remain. Moving blockers follow the
@@ -22,6 +22,15 @@ retain CaelumSlidingDoorLeaf. New-game door fields serialize normally; old
 MAP01 reconstruction compatibility remains waived below. The central front
 entrances at Z=136 are four independent singles (groups 910/922 and 911/923);
 the four unwanted side connectors are removed at the author's request.
+Groups 906/907/909 instead have a fixed swing toward the central rooms,
+avoiding the resident beds regardless of the caller's side. Reopening a
+partially open leaf retains its current direction until it closes.
+
+The author moved Rulo's target into the empty north-central ground-floor room
+on 2026-09-29. PRACTICE.json supplies its position and practice bounds through
+generated CaelumMansionPracticeData. The old workshop no longer records the
+six practice flags; their requirements and persistent IDs are unchanged.
+Rulo's instructions and Journal Detail name the new room in both languages.
 
 Author decision, 2026-09-28: prioritize reconstruction over old MAP01 saves.
 Use a fresh MAP01/new game; this patch does not promise geometry migration or

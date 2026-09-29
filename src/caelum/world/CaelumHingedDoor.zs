@@ -17,11 +17,15 @@ class CaelumHingedDoorLeaf : CaelumSlidingDoorLeaf
     override bool RequestDoorGroup(Actor user)
     {
         if (!Super.RequestDoorGroup(user)) return false;
-        // Ambas hojas abren hacia el lado opuesto al usuario. Una reapertura
-        // conserva su sentido hasta completar el cierre.
+        // Las conexiones indicadas abren hacia los cuartos centrales para
+        // evitar las camas. Las otras hojas abren al lado opuesto al usuario.
+        // Una reapertura conserva su sentido hasta completar el cierre.
         double across = args[2] == 0
             ? user.Pos.Y - ClosedPosition.Y : ClosedPosition.X - user.Pos.X;
         int groupSide = across > 0 ? -1 : 1;
+        int fixedSide = level.MapName == "MAP01"
+            ? CaelumMansionDoorData.FixedSwingSide(args[0]) : 0;
+        if (fixedSide != 0) groupSide = fixedSide;
         let it = ThinkerIterator.Create("CaelumHingedDoorLeaf");
         CaelumHingedDoorLeaf leaf;
         while ((leaf = CaelumHingedDoorLeaf(it.Next())) != null)

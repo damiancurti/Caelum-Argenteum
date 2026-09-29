@@ -19,8 +19,12 @@ Documentation version: **4.36.25** — 2026-09-28.
   roof closure and native views. Evidence: assets/validation_43625.
   Follow-up evidence covers both opening directions, three body sizes, access
   locks, swept-body obstruction and the flat ceiling; see followup and layout.
-- Pending: CA-43625-MANSION-01 ordinary tutorial/Bull/exit and final visuals.
-  This acceptance remains required before #17 export.
+- Author confirmed the remaining prior work correct on 2026-09-29. Latest
+  request: Rulo/Ronnie/Argento side doors open toward central rooms, away from
+  beds; target moves to the empty north-central ground-floor room. Direction,
+  placement, practice detection and bilingual guidance are implemented.
+- Pending: CA-43625-MANSION-01 only for these two latest changes. Follow-up
+  evidence is in assets/validation_43625/furnishing; export remains separate.
 - Author explicitly prioritized rebuilding over old MAP01 saves. Use a fresh
   MAP01/new game; the preserved source baseline is not an automatic migration.
 

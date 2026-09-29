@@ -1,0 +1,36 @@
+{
+  "issue": 36,
+  "release": "4.36.25",
+  "date": "2026-09-29",
+  "base_commit": "4c059b92e3bd74630184f6808d4f78aa690d14f4",
+  "scope": "Fixed swings toward central rooms for Rulo/Ronnie/Argento; target in empty north-central ground-floor room, matching practice detection and bilingual guidance.",
+  "environment": "GZDoom 4.14.2 Windows 11 Vulkan, author-installed development IWAD, isolated config copy, final 6125-file PK3.",
+  "hashes": {
+    "src/maps/MAP01.wad": "d5df55e7b6e033afa02f5a9d7e9d58be58ec76d0cad20c396cad77a5627a307c",
+    "src/models/caelum/siege/ca_mansion_door.obj": "63c1081d9c31dd0f3dcdb77edc102dd356a154ed82121993013284d010aed628",
+    "src/caelum/world/CaelumMansionDoorData.zs": "bdb76a5c5a5f79e61ebc26b3bd8b445d7f39741a0e00c8bea82f5db9425d8393",
+    "src/caelum/world/CaelumMansionPracticeData.zs": "53fe08bda9fcc5bffd7a65298379dc4f03624620a744ef6890ef4a41a48485a9",
+    "src/caelum/world/CaelumHingedDoor.zs": "f3b1b2b63d364b13376dd4b12e6295a77846c8c431231ab1a42d53abaf804818",
+    "src/caelum/quests/CaelumMainM00RuloTrial.zs": "b985cd715a854515fadab8221b54f80f88ab09be7c1d0b78cea2f7f9d55d85bb",
+    "src/LANGUAGE": "4132eea208992b44e4c8f6ceb32842e29af0b6fe289a11241cee1409dcce03f8",
+    "src/ZSCRIPT": "4ab63b9d6f4c71908743b61a50df9518bb5809e0bf9bfd492a1c0eb553da3a5f"
+  },
+  "package_sha256": "cd065344f4e21f7882f79bcac441bbdb6a656816b99e3ae578357a6cad80afda",
+  "deterministic_generators": true,
+  "static_checks": 21,
+  "native_assertions": 49,
+  "reload_assertions": 2,
+  "fixed_groups": {
+    "906": -1,
+    "907": 1,
+    "909": 1
+  },
+  "practice_position": [
+    368,
+    480,
+    0
+  ],
+  "native_evidence": "Real furniture remains solid. Forced former swing reproduces bed obstruction in all three connections. Native Use from both sides now fully opens and closes them. Exactly one target fits the new room, no crafting stations occupy it, repeated Ensure returns the same actor, old workshop and upper floor are excluded, six existing flags can be recorded, and target/flags survive native save/reload.",
+  "limits": "18 body probes (tiers 1/4/7, both directions) cross at bed-top height Z=160; initial floor-level straight TryMove probes hit the accepted beds (furnishing2.txt). No claim of ordinary player step-up validation or manual execution of all six weapon practices. Earlier saved target instances are not relocated; fresh MAP01 remains required. Test views position the player directly.",
+  "author_acceptance": "The author confirmed the remaining prior #36 work correct on 2026-09-29. CA-43625-MANSION-01 now contains only fixed door use and normal practice/relocation checks. No merge/export authorization inferred."
+}

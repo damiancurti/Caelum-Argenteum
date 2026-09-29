@@ -1,0 +1,7 @@
+{
+  "issue": 36,
+  "position": [368,480,0],
+  "bounds": [40,88,696,628],
+  "vertical_tolerance": 48,
+  "provenance": "Author-confirmed 2026-09-29: move Rulo's target out of the crowded northwest workshop into the empty central ground-floor room. X is the midpoint of the room's existing inner walls (40..696); Y retains the previous target's depth of 480. Bounds follow that north-central room's inner faces. The existing practice height tolerance is retained."
+}

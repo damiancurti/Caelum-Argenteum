@@ -1,0 +1,114 @@
+version "4.14"
+class F36FurnitureUI : StaticEventHandler
+{
+    override void UiTick() { if(Menu.GetCurrentMenu()!=null) Menu.GetCurrentMenu().Close(); }
+}
+class F36FurnitureBody : Actor
+{
+    Default { Radius 16; Height 56; +SOLID +NOGRAVITY +DROPOFF +CANPASS MaxStepHeight 24; }
+    States { Spawn: TNT1 A -1; Stop; }
+}
+class F36FurnitureTests : CaelumSocialDebugAction
+{
+    void Check(bool ok,String label) { Console.Printf("F36_FURNITURE %s %s",ok?"PASS":"FAIL",label); }
+    void ResetDoor(CaelumHingedDoorLeaf leaf)
+    {
+        leaf.RuloArenaLocked=true;leaf.SlideProgress=0;leaf.PlaceAtProgress();
+        leaf.RuloArenaLocked=false;leaf.DoorRequested=false;leaf.HoldTimer=0;
+    }
+    override bool Use(bool pickup)
+    {
+        let user=CaelumPlayer(Owner);let record=user.GetPersistentCharacterState(true);
+        user.CharacterCreationComplete=true;user.CreationWizardOpen=false;
+        user.bNoClip=true;user.bNoGravity=true;user.bInvulnerable=true;
+        record.DemoNarrativeDelivered=2047;record.DemoNarrativePending=0;
+        Check(CaelumMansionFurniture.Prepare(),"real beds and dining furniture remain present");
+        let body=Spawn("F36FurnitureBody",(0,0,1000));body.bSolid=false;
+        let it=ThinkerIterator.Create("CaelumHingedDoorLeaf");CaelumHingedDoorLeaf leaf;
+        int count=0;
+        while((leaf=CaelumHingedDoorLeaf(it.Next()))!=null)
+        {
+            int wanted=CaelumMansionDoorData.FixedSwingSide(leaf.args[0]);
+            if(wanted==0)continue;count++;
+            user.SetOrigin(leaf.ClosedPosition+(0,-100,0),false);
+            ResetDoor(leaf);leaf.SwingSide=-wanted;leaf.DoorRequested=true;leaf.HoldTimer=105;
+            for(int tick=0;tick<16;tick++)leaf.Tick();
+            Check(leaf.SlideProgress<64,String.Format("resident-side swing reproduces bed obstruction group=%d",leaf.args[0]));
+            for(int side=-1;side<=1;side+=2)
+            {
+                ResetDoor(leaf);user.SetOrigin(leaf.ClosedPosition+(side*80,0,0),false);
+                Check(leaf.Used(user),String.Format("native Use group=%d side=%d",leaf.args[0],side));
+                for(int tick=0;tick<16;tick++)leaf.Tick();
+                Check(leaf.SlideProgress==64 && leaf.SwingSide==wanted,String.Format("full opening away from bed group=%d side=%d",leaf.args[0],side));
+                user.SetOrigin((0,0,1000),false);
+                for(int tier=1;tier<=7;tier+=3)
+                {
+                    double factor=user.DerivedStats.GetHeightMetersForTier(tier)/1.8;
+                    body.A_SetSize(16*factor,56*factor);body.bSolid=true;
+                    // TryMove alone does not perform the player's 24-MU step
+                    // onto the existing beds. Probe at their top, preserving solids.
+                    body.SetOrigin(leaf.ClosedPosition+(side*64,0,24),false);bool clear=true;
+                    for(int n=62;n>=-64;n-=2)if(!body.TryMove(leaf.ClosedPosition.XY+(side*n,0),true))
+                    {clear=false;Console.Printf("F36_STOP group=%d side=%d tier=%d pos=%.1f,%.1f blocker=%s line=%d",leaf.args[0],side,tier,body.Pos.X,body.Pos.Y,body.BlockingMobj==null?'none':body.BlockingMobj.GetClassName(),body.BlockingLine==null?-1:body.BlockingLine.Index());break;}
+                    Check(clear,String.Format("bed-top-height traversal group=%d side=%d tier=%d",leaf.args[0],side,tier));
+                    body.bSolid=false;body.SetOrigin((0,0,1000),false);
+                }
+                leaf.DoorRequested=false;leaf.HoldTimer=0;
+                for(int tick=0;tick<16;tick++)leaf.Tick();
+                Check(leaf.SlideProgress==0,String.Format("closes normally group=%d side=%d",leaf.args[0],side));
+            }
+        }
+        Check(count==3,"exactly three authored connections");body.Destroy();
+        let dummy=CaelumMainM00RuloTrial.EnsurePracticeTarget();
+        Check(dummy!=null && (dummy.Pos-CaelumMansionPracticeData.Position()).Length()<0.01 && dummy.TestMobjLocation(),"target fits central ground-floor room");
+        Check(CaelumMainM00RuloTrial.EnsurePracticeTarget()==dummy,"target creation is idempotent");
+        int targets=0;let targetsIt=ThinkerIterator.Create("CaelumM00TrainingDummy");while(targetsIt.Next()!=null)targets++;
+        Check(targets==1,"exactly one tutorial target");
+        let stations=ThinkerIterator.Create("CaelumCraftingStation");Actor station;int roomStations=0;
+        while((station=Actor(stations.Next()))!=null)if(CaelumMansionPracticeData.Contains(station.Pos))roomStations++;
+        Check(roomStations==0,"central practice room has no crafting stations");
+        record.SetMainM00Flag(CaelumConstants.MAIN_M00_FLAG_RULO_STARTED);
+        user.SetOrigin((-290,400,0),false);
+        Check(!CaelumMainM00RuloTrial.NearPractice(user),"old workshop no longer records practice");
+        user.SetOrigin((368,360,0),false);
+        Check(CaelumMainM00RuloTrial.NearPractice(user),"new room records practice");
+        for(int n=0;n<6;n++)CaelumMainM00RuloTrial.RecordPractice(user,CaelumMainM00RuloTrial.PracticeFlag(n));
+        Check(user.MainM00RuloPracticeSnapshot==6,"all six practice flags remain available");
+        user.SetOrigin((368,360,136),false);
+        Check(!CaelumMainM00RuloTrial.NearPractice(user),"upper storey excluded from practice");
+        user.SetOrigin((368,360,0),false);user.Angle=90;user.Pitch=0;
+        Console.Printf("F36_FURNITURE_DONE");return true;
+    }
+}
+class F36FurnitureReload : F36FurnitureTests
+{
+    override bool Use(bool pickup)
+    {
+        let user=CaelumPlayer(Owner);let dummy=CaelumMainM00RuloTrial.EnsurePracticeTarget();
+        Check(dummy!=null && (dummy.Pos-CaelumMansionPracticeData.Position()).Length()<0.01,"reload preserves target position");
+        CaelumMainM00RuloTrial.Sync(user);
+        Check(user.MainM00RuloPracticeSnapshot==6,"reload preserves six practice flags");
+        Console.Printf("F36_FURNITURE_RELOAD_DONE");return true;
+    }
+}
+class F36FurnitureDoorView : CaelumSocialDebugAction
+{
+    virtual int Group() { return 906; }
+    override bool Use(bool pickup)
+    {
+        let user=CaelumPlayer(Owner);let record=user.GetPersistentCharacterState(true);
+        user.CharacterCreationComplete=true;user.CreationWizardOpen=false;
+        user.bNoClip=true;user.bNoGravity=true;
+        record.DemoNarrativeDelivered=2047;record.DemoNarrativePending=0;
+        let it=ThinkerIterator.Create("CaelumHingedDoorLeaf");CaelumHingedDoorLeaf leaf;
+        while((leaf=CaelumHingedDoorLeaf(it.Next()))!=null)if(leaf.args[0]==Group())
+        {
+            int side=Group()==906?1:-1;
+            user.SetOrigin(leaf.ClosedPosition+(side*80,0,0),false);
+            user.Angle=side==1?180:0;user.Pitch=0;leaf.Used(user);
+        }
+        return true;
+    }
+}
+class F36RonnieDoorView : F36FurnitureDoorView { override int Group() { return 907; } }
+class F36ArgentoDoorView : F36FurnitureDoorView { override int Group() { return 909; } }

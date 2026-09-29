@@ -5,7 +5,7 @@
   "checks": "& assets/validation_43625/layout/run_issue36.ps1 -Label layout_checks -Package -UserGraphics -Fixture assets/validation_43625/layout -Commands (Get-Content assets/validation_43625/layout/package_final_checks.cfg -Raw)",
   "creator_first": "& assets/validation_43625/layout/run_issue36.ps1 -Label creator_first -Package -UserGraphics -Creator -Fixture assets/validation_43625/layout/startup_first -Commands (Get-Content assets/validation_43625/layout/creator_final.cfg -Raw)",
   "creator_default": "Use the same creator command with startup_default and creator_default_final.cfg.",
-  "save": "Use the checks command with layout_final_save.cfg; it writes build/issue36_saves/f36layout.zds. Reload with -LoadSave build/issue36_saves/f36layout.zds and layout_final_reload.cfg, then separately with layout_reload_closed.cfg.",
+  "save": "Use the checks command with layout_final_save.cfg; it writes build/issue36_saves/f36layout.zds. Reload with -LoadSave f36layout.zds (relative to the runner's savedir) and layout_final_reload.cfg, then separately with layout_reload_closed.cfg.",
   "screenshots": "front_north.png and front_south.png are closed-door views from the final-package save run; front_open.png follows the complete final-package probes. The later second screenshot requested in package_final_checks.cfg was not produced and is not claimed as evidence. Independent final closed-state evidence is in layout_reload_closed.txt.",
   "limits": "Probes manipulate test bodies and door states. Ordinary tutorial, companions, Bull encounter, visuals and performance still require author acceptance. The native Enter helper targets exactly one MainWindow belonging to its newly launched GZDoom process."
 }

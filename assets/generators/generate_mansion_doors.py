@@ -41,6 +41,10 @@ code = '// Datos generados desde assets/map01_mansion/DOORS.json y siege_visuals
 code += 'class CaelumMansionDoorData : Object\n{\n'
 for key,value in [('HALF_WIDTH',data['width']/2),('OPEN_DEGREES',data['open_degrees']),('SWEEP_RADIUS',data['sweep_radius'])]:
     code += f'    const {key} = {value};\n'
-code += '}\n'
+code += '    static int FixedSwingSide(int group)\n    {\n'
+for group,side in sorted(data['fixed_swing_sides'].items(),key=lambda item:int(item[0])):
+    assert side in (-1,1)
+    code += f'        if (group == {group}) return {side};\n'
+code += '        return 0;\n    }\n}\n'
 (ROOT/'src/caelum/world/CaelumMansionDoorData.zs').write_text(code,encoding='utf-8')
 print('Generated mansion leaf:',len(faces),'faces')

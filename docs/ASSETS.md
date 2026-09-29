@@ -49,7 +49,11 @@ from assets/map01_mansion/REPAIR.json and the preserved, hashed 4.36.24 WAD.
 GENERATED.json identifies every new guard, wall material assignment and relief.
 The latest central-room layout uses the same wood model and interior wallpaper;
 no new art is introduced. Native views and checks are in assets/validation_43625. Visual-direction
-approval does not establish final in-game author acceptance.
+approval was followed by author acceptance of the remaining prior work on
+2026-09-29. The latest fixed door directions and target relocation reuse all
+existing art. DOORS.json contains the three authored swing sides;
+PRACTICE.json and generate_mansion_practice.py provide the new target placement
+and detection bounds. Final follow-up checks are in assets/validation_43625/furnishing.
 
 ## 4.36.24 — Quest journal labels (#35)
 
