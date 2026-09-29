@@ -26,22 +26,27 @@ have an explicit 32-MU sill above each wall base instead of vertically repeating
 window artwork. The middle east-wing interior extends to Y=+/-320, correcting
 both walls visible near (1507,258,136).
 
-All 52 original leaves (34 groups) now use CaelumHingedDoorLeaf, retaining their
-closed coordinates, dimensions, key requirements and group IDs. The original
+The remaining 48 leaves (32 groups) use CaelumHingedDoorLeaf. Except for the
+author-requested central layout correction below, original coordinates,
+dimensions, keys and groups remain. The original
 siege wood mesh supplies planks, braces, hinges and handles; opposing leaves
 face their handles toward the centre. They swing away from the user through
 90 degrees to clear the mansion's narrow passages, and stop for solid bodies.
-Four existing single-door footprints (groups 900/901/903/904) were obstructed
-by stacked wall models: local subdivisions remove only the wall layer from
-Z=136 to 256, preserving floors, upper walls and roofs. The centre partitions
-behind double groups 910/911 remain; both existing side passages are tested.
+Author clarification, 2026-09-29: both central-room corrections are at Z=136.
+The four side leaves in groups 900/901/903/904 and their newly carved openings
+are removed; the original side walls are restored. Front leaves at Y=+/-196
+are centred at X=282/454, derived from each room's existing bounds. Their
+64-MU openings leave a 108-MU wall between them. Groups 910/922 and 911/923
+operate independently. Only Z=136..256 wall layers are rebuilt; floors,
+upper walls, roofs and the rear central connecting doors remain unchanged.
 
 The author approved this visual vocabulary on 2026-09-28. It is a restrained
 historicist interpretation appropriate to the setting, not an exact period
 house typology. The stepped three-storey massing remains intentionally stylized.
-ASSETS records the source/reference distinction. All 334 original map placements,
-playable vertices, original floor/roof planes, tags and line actions are retained;
-only the 52 door type identifiers change. No tutorial narrative or combat
+ASSETS records the source/reference distinction. The map has 330 placements;
+four unwanted door actors are removed and four front leaves are repositioned.
+All other placements, playable vertices, original floor/roof planes, tags and
+line actions remain. No tutorial narrative or combat
 changes are part of #36.
 
 Source: assets/map01_mansion/REPAIR.json and preserved MAP01_43624.wad;

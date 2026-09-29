@@ -38,10 +38,17 @@ edges. generate_mansion_doors.py and assets/map01_mansion/DOORS.json reproduce
 the adaptation using only the Python standard library. No new bitmap source,
 external model, siege balance or destructibility is introduced.
 
+The 2026-09-29 correction groups those 222 opaque faces into three material
+surfaces. Emitting usemtl before every face exceeded GZDoom 4.14.2's 32-entry
+surface-skin limit and could select invalid textures during rendering. All
+vertices, face winding, material assignments and UVs are retained and checked
+against the siege source. See CA-KP-020 for engine references and reproduction.
+
 Geometry is generated deterministically by assets/generators/repair_map01_mansion.py
 from assets/map01_mansion/REPAIR.json and the preserved, hashed 4.36.24 WAD.
 GENERATED.json identifies every new guard, wall material assignment and relief.
-Native views and focused checks are in assets/validation_43625. Visual-direction
+The latest central-room layout uses the same wood model and interior wallpaper;
+no new art is introduced. Native views and checks are in assets/validation_43625. Visual-direction
 approval does not establish final in-game author acceptance.
 
 ## 4.36.24 — Quest journal labels (#35)

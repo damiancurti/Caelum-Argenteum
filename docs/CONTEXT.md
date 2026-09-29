@@ -2,13 +2,10 @@
 
 Documentation version: **4.36.25** — 2026-09-28.
 
-Summary of `PROJECT.md`, `SYSTEMS.md`, `MAP01.txt`, `ASSETS.md`, `HISTORY.md`
-and the repository README.
-
 ## The game's premise
 
 Caelum Argenteum is an independent dark-fantasy FPS-RPG inspired by
-nineteenth-century Argentina and built on GZDoom 4.14.2/ZScript. The newly
+nineteenth-century Argentina, built on GZDoom 4.14.2/ZScript. The newly
 formed nation is divided by political, social, and territorial interests while
 facing two simultaneous invasions.
 
@@ -64,11 +61,12 @@ the gauchos and rural culture, and the humans the urban porteño society.
 
 **4.36.25 / #36:** MAP01 has closed gables, a flat upper ceiling, 204 balcony
 guards, raised shutters, corrected interior/exterior finishes and an invisible
-blocking horizon. All 52 leaves now use siege-style wood and hinged opening;
-four obstructed single-door openings are rebuilt. Native geometry, three-size
-door traversal, locks and new-save reload pass. The author confirmed the hole
-closed; final CA-43625-MANSION-01 remains pending. Reconstruction takes priority
-over old MAP01 saves: start fresh. Evidence: assets/validation_43625/followup;
+blocking horizon. At Z=136, four side doors are removed; front singles are
+separated. The 48 wooden leaves use siege hinges. Native three-size traversal
+and access checks pass. Three model surfaces fix the zero-size-texture startup
+failure. The author confirmed hole closure; CA-43625-MANSION-01 remains pending.
+Reconstruction takes priority over old MAP01 saves: start fresh.
+Evidence: assets/validation_43625/layout;
 architecture/provenance: ASSETS and MAP01.
 
 **4.36.24 / #35:** Journal filters retain main/side and active/completed records,

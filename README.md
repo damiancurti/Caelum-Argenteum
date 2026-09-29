@@ -12,15 +12,18 @@ the mansion's upper gables and balcony guards, separates exterior render from
 interior wall finishes, and adds closed wooden shutters and discreet reliefs.
 The outside boundary remains blocking but now renders a dark Limbo horizon.
 The author's follow-up adds a flat upper ceiling, raises exterior shutters,
-corrects the east-wing interior finishes and replaces MAP01's 52 sliding leaves
-with siege-style wooden doors that swing on hinges. Four previously obstructed
-single-door openings are rebuilt; groups, keys and arena access rules remain.
+corrects the east-wing interior finishes and uses siege-style hinged wood doors.
+The latest correction removes four unwanted side doors at Z=136 and centres
+four independent front entrances on their rooms, with a solid wall between them.
+The remaining 48 leaves preserve key and arena access rules.
+The door exporter now groups its 222 faces into three material surfaces,
+fixing the intermittent GZDoom "Trying to create zero size texture" startup error.
 The author approved this period-inspired visual direction; final ordinary play
 and visual acceptance remain in [pending_test.txt](pending_test.txt).
 **Start a fresh MAP01/new game:** the author prioritized reconstruction over
 old MAP01 save compatibility. No old-map geometry migration is claimed.
 See [architecture and provenance](docs/ASSETS.md) and
-[validation evidence](assets/validation_43625/followup/RESULTS.json).
+[validation evidence](assets/validation_43625/layout/RESULTS.json).
 
 Issue [#35](https://github.com/damiancurti/Caelum-Argenteum/issues/35) adds
 Journal filters for main/side and active/completed quests, retaining completed

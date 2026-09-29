@@ -1,4 +1,4 @@
-"""Carve only the four authored doorway rectangles through stacked wall models."""
+"""Rebuild authored doorway rectangles while retaining other stacked layers."""
 from copy import deepcopy
 from repair_map01_mansion import tags
 
@@ -31,27 +31,32 @@ def carve_openings(obj, config, report):
         return index[point]
     report['door_openings']={'changed_lines':[], 'sectors':[], 'controls':[]}
     evidence=report['door_openings'];spec=config['door_openings']
-    for rect in spec['rectangles']:
+    for rect,closed in [(r,False) for r in spec['rectangles']]+[(r,True) for r in spec.get('closures',[])]:
         x0,y0,x1,y1=rect; replacements={}
         def inside(x,y):return x0<x<x1 and y0<y<y1
         def replacement(si):
             if si in replacements:return replacements[si]
             target=deepcopy(source_sectors[si]);tag=spec['first_tag']+len(evidence['sectors'])
             target['id']=tag;target.pop('moreids',None)
-            target['comment']='Issue #36: restored existing single-door opening'
+            target['comment']='Issue #36: central entrance '+('wall' if closed else 'opening')
             new_si=len(sectors);sectors.append(target);replacements[si]=new_si
-            evidence['sectors'].append(dict(source=si,target=new_si,rectangle=rect,tag=tag))
+            evidence['sectors'].append(dict(source=si,target=new_si,rectangle=rect,tag=tag,closed=closed))
             for oldtag in sorted(tags(source_sectors[si])):
                 for line,model in models.get(oldtag,[]):
                     model=deepcopy(model)
-                    if model['texturefloor']=='CMIN01' and model['heightfloor']<=spec['bottom'] and model['heightceiling']==spec['top']:
+                    closing_wall=closed and model['heightceiling']==spec['bottom']
+                    if closing_wall:
+                        model['heightceiling']=spec['top']
+                        model['texturefloor']=model['textureceiling']='CMIN01'
+                    elif not closed and model['texturefloor']=='CMIN01' and model['heightfloor']<=spec['bottom'] and model['heightceiling']==spec['top']:
                         model['heightceiling']=spec['bottom']
                     mi=len(sectors);sectors.append(model)
                     x=spec['control_origin'][0]+len(evidence['controls'])*config['control_size']*2
                     y=spec['control_origin'][1];size=config['control_size']
                     vs=[vertex(a,b) for a,b in [(x,y),(x,y+size),(x+size,y+size),(x+size,y)]]
                     for j in range(4):
-                        sd=len(sides);sides.append(dict(sector=mi,texturemiddle=sides[line['sidefront']].get('texturemiddle','CMIN01')))
+                        texture='CMIN01' if closing_wall else sides[line['sidefront']].get('texturemiddle','CMIN01')
+                        sd=len(sides);sides.append(dict(sector=mi,texturemiddle=texture))
                         item=dict(v1=vs[j],v2=vs[(j+1)%4],sidefront=sd)
                         if j==0:
                             item.update({k:v for k,v in line.items() if k=='special' or k.startswith('arg')})

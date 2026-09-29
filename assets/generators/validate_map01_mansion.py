@@ -17,10 +17,16 @@ def main():
     checks=[]
     def check(name,value):
         checks.append({'name':name,'passed':bool(value)})
+    from mansion_model_validation import check_door_model
+    for name,value in check_door_model(ROOT).items():check(name,value)
     check('output matches regeneration manifest',hashlib.sha256((ROOT/'src/maps/MAP01.wad').read_bytes()).hexdigest()==manifest['output_sha256'])
-    check('all original things preserved except explicit hinged-door type',all(
-        dict(t,type=config['hinged_door_type'])==after['thing'][i] if t['type']==18025 else t==after['thing'][i]
-        for i,t in enumerate(before['thing'])) and len(before['thing'])==len(after['thing']))
+    expected=[dict(t) for t in before['thing']]
+    for change in config['door_layout']['relocate']:
+        expected[change['thing']].update(x=change['x'],arg0=change['group'])
+    expected=[t for t in expected if not (t['type']==18025 and t.get('arg0') in config['door_layout']['remove_groups'])]
+    for t in expected:
+        if t['type']==18025:t['type']=config['hinged_door_type']
+    check('only author-approved central door placements change',expected==after['thing'])
     check('all playable original vertices unchanged',after['vertex'][:len(before['vertex'])]==before['vertex'])
     check('original planes, slopes, lighting, liquids and cave unchanged',all(
         {k:v for k,v in s.items() if k!='moreids'}=={k:v for k,v in after['sector'][i].items() if k!='moreids'}
@@ -51,10 +57,12 @@ def main():
     check('upper ceiling is flat at existing wall tops',len(ceiling_models)==1 and
         ceiling_models[0]['heightfloor']==ceiling['bottom'] and ceiling_models[0]['heightceiling']==ceiling['top'] and
         not any('plane_' in k for k in ceiling_models[0]))
-    check('all 52 leaves retain original groups, locks, axes and closed positions',len(manifest['hinged_doors'])==52 and all(
-        after['thing'][i]==dict(before['thing'][i],type=config['hinged_door_type']) for i in manifest['hinged_doors']))
-    check('opening reconstructions use only four existing door footprints',
-        {tuple(s['rectangle']) for s in manifest['door_openings']['sectors']}=={tuple(r) for r in config['door_openings']['rectangles']})
+    leaves=[t for t in after['thing'] if t['type']==config['hinged_door_type']]
+    check('48 leaves include four independent central entrances',len(leaves)==48 and all(
+        sum(t.get('arg0')==g for t in leaves)==1 for g in (910,911,922,923)))
+    check('opening and wall reconstructions match authored rectangles',all(
+        {tuple(s['rectangle']) for s in manifest['door_openings']['sectors'] if s['closed']==closed}=={tuple(r) for r in config['door_openings'][key]}
+        for key,closed in [('rectangles',False),('closures',True)]))
     referenced_sides={line[k] for line in after['linedef'] for k in ('sidefront','sideback') if line.get(k,-1)>=0}
     check('no abandoned sidedefs after doorway subdivision',referenced_sides==set(range(len(after['sidedef']))))
     referenced_sectors={after['sidedef'][i]['sector'] for i in referenced_sides}

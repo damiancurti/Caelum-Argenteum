@@ -286,6 +286,11 @@ def main():
         if j==0:line.update(special=160,arg0=spec['tag'],arg1=1,arg3=255)
         lines.append(line)
     report['ceiling_sectors']=target
+    layout=data['door_layout']
+    for change in layout['relocate']:
+        thing=obj['thing'][change['thing']]
+        thing['x']=change['x'];thing['arg0']=change['group']
+    obj['thing']=[t for t in obj['thing'] if not (t['type']==18025 and t.get('arg0') in layout['remove_groups'])]
     report['hinged_doors']=[]
     for i,thing in enumerate(obj['thing']):
         if thing['type']==18025:

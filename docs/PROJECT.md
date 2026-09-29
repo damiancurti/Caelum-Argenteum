@@ -8,10 +8,13 @@ MAP01 now closes the upper-storey gables against the existing pitched roof,
 completes balcony guards, separates interior wall finishes from exterior
 render and adds closed wooden shutter panels and two wall-mounted reliefs.
 The four outer boundaries retain collision but render the Limbo horizon.
-The floor plan, stairs, original placements, tutorial mechanics and cave remain.
-The author's follow-up adds the flat upper ceiling, raised shutters, corrected
-east-wing interior walls and 52 siege-style hinged leaves. Four obstructed
-single-door footprints are locally reopened without changing their locations.
+Stairs, tutorial mechanics and the cave remain. The author's follow-up adds
+the flat upper ceiling, raised shutters, corrected east-wing walls and hinged
+wooden doors. The 2026-09-29 clarification removes four side connectors at
+Z=136 and separates the front entrances into four independent singles centred
+on their rooms. Other placements and storeys remain unchanged.
+The door model now uses three material surfaces instead of 222, fixing the
+reproduced intermittent zero-size-texture startup failure (CA-KP-020).
 
 The author approved the restrained aged-render/wood/iron/relief visual proposal
 on 2026-09-28. The historical assessment and official heritage reference are in
@@ -21,7 +24,7 @@ old MAP01 save compatibility: start a fresh MAP01/new game for this revision.
 The original map is preserved as the generator baseline, not packaged at runtime.
 
 Static, deterministic regeneration and isolated GZDoom evidence are recorded in
-assets/validation_43625/followup (initial evidence remains in its parent).
+assets/validation_43625/layout (earlier iterations retain their evidence).
 Ordinary tutorial/Bull/exit play and final visual
 acceptance remain CA-43625-MANSION-01 in pending_test.txt, before #17 export.
 

@@ -17,6 +17,10 @@ on 2026-09-28; this is the separate final in-game acceptance.
    near (1507,258,136), including the opposite wall, use interior finishes.
    Open single and double wooden doors from both sides: hinges/handles match,
    leaves clear the passage, auto-close, respect keys and stop for occupants.
+   At Z=136, verify the four unwanted side doors are gone and each central room
+   has its own front door, spaced from the other across a finished wall.
+   Create a character with the first options; verify MAP01 starts without
+   "Trying to create zero size texture". Report any recurrence and selections.
 4. Approach the outer map limit. Expected: no enormous enclosing wall or missing
    sky texture; the boundary still prevents leaving the playable area.
 5. Play the mansion tutorial, speak to residents, exercise their return paths,

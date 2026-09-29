@@ -27,9 +27,15 @@ for i in used:
     x,y,z=vertices[i]
     output.append(f"v {(x+half/2)*data['width']/half:.6f} {y*data['height']/height:.6f} {z:.6f}")
 output+=uvs
-for material,face in faces:
+# GZDoom creates a surface for every usemtl, even if the name is repeated.
+# Group opaque faces by material to keep surface skin lookup within its limit.
+materials=sorted({material for material,_ in faces})
+assert len(materials)<=data['engine_surface_limit'], 'Too many model surfaces for GZDoom 4.14.2.'
+for material in materials:
     output.append('usemtl '+material)
-    output.append('f '+' '.join(str(remap[int(word.split('/')[0])-1])+'/'+word.split('/')[1] for word in face))
+    for face_material,face in faces:
+        if face_material==material:
+            output.append('f '+' '.join(str(remap[int(word.split('/')[0])-1])+'/'+word.split('/')[1] for word in face))
 (ROOT/'src/models/caelum/siege/ca_mansion_door.obj').write_text('\n'.join(output)+'\n',encoding='utf-8')
 code = '// Datos generados desde assets/map01_mansion/DOORS.json y siege_visuals.json.\n'
 code += 'class CaelumMansionDoorData : Object\n{\n'

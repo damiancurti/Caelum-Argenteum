@@ -3,6 +3,8 @@
   "width": 64,
   "height": 120,
   "siege_variant": "wood",
+  "engine_surface_limit": 32,
+  "surface_note": "GZDoom g4.14.2 model.h MD3_MAX_SURFACES. OBJ RenderFrame indexes the surface-skin array without its AddSkins bounds check; emit one surface per material.",
   "open_degrees": 90,
   "opening_note": "A right angle clears the existing narrow mansion passages; the siege preview uses 82 degrees in its wider frame.",
   "sweep_radius": 128

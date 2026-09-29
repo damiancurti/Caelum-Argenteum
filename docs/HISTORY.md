@@ -57,6 +57,35 @@ Nine final views cover all requested surfaces and door poses. Static checks,
 deterministic regeneration and package validation pass. These isolated checks
 do not replace ordinary tutorial/Bull/companion testing or final author visuals.
 
+Second author follow-up, 2026-09-29 (same #36/version): clarified that both
+central-room door corrections apply to the intermediate Z=136 storey. Removed
+the four newly reopened side connectors (900/901/903/904), restoring the
+original wall layers. Front entrances at Y=+/-196 now have separate 64-MU
+single doors centred on the existing rooms at X=282/454, a 108-MU wall between
+them, and independent groups 910/922 and 911/923. New wall faces use interior
+wallpaper. Other placements and vertical layers remain; 330 map things and
+48 leaves in 32 groups result. The highest-storey ceiling remains intact.
+
+The author also reported "Trying to create zero size texture" immediately
+after character creation. Isolated normal runs reproduced that exact fatal
+window. The new OBJ generator emitted usemtl once per face, creating 222
+surfaces for three materials. GZDoom 4.14.2's OBJ RenderFrame reads its
+surface-skin array without the 32-surface bounds check present in AddSkins.
+Grouping faces by material produces three surfaces with identical geometry,
+winding, dimensions and UVs. No graphics settings or engine files are changed.
+Registering an inherited actor state was investigated, failed to resolve the
+error and was removed; debugger-only successes were not accepted as proof.
+
+Evidence is in assets/validation_43625/layout: 21 static checks, deterministic
+map/model regeneration, repeated corrected normal launches, both-sided passage
+of three body sizes through all 32 groups, closed/open collision, access locks,
+sweep obstruction and the retained ceiling. Focused probes confirm the closed
+side walls, front wall and independent operation. Native creator confirmation
+loads MAP01 and renders its opening conversation. A current-map save retains
+a half-open central leaf while its neighbour stays closed; reload completes
+opening and closing. These are agent checks; CA-43625-MANSION-01 remains
+pending for the author's ordinary-play and visual acceptance.
+
 ## 4.36.24 — Active and completed quest journal (#35)
 
 2026-09-28: the author confirmed mansion/El Loco as main, sewers/As de Copas

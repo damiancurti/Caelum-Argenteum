@@ -10,7 +10,7 @@ conversations, rewards, Bull rules and travel semantics do not change.
 The invisible outer boundary remains impassable; decorative shutter panels
 are closed wall surfaces and the two reliefs have no collision or interaction.
 
-MAP01's 52 leaves now inherit the original grouped-door access rules but use
+MAP01's 48 leaves now inherit the original grouped-door access rules but use
 solid 3D wooden leaves and hinged movement. Use opens away from the user;
 opposing leaves use their outer jambs. The opening angle is 90 degrees for
 clearance; the original 16-tic movement, 105-tic hold, keys, faction condition,
@@ -19,7 +19,9 @@ visible leaf. Swept solid-body checks stop opening and reopen an obstructed
 closure without pushing/crushing actors. These doors are not breakable siege
 gates: no combat statistics or destruction mechanics are added. Other maps
 retain CaelumSlidingDoorLeaf. New-game door fields serialize normally; old
-MAP01 reconstruction compatibility remains waived below.
+MAP01 reconstruction compatibility remains waived below. The central front
+entrances at Z=136 are four independent singles (groups 910/922 and 911/923);
+the four unwanted side connectors are removed at the author's request.
 
 Author decision, 2026-09-28: prioritize reconstruction over old MAP01 saves.
 Use a fresh MAP01/new game; this patch does not promise geometry migration or

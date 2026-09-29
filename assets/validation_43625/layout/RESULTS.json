@@ -1,0 +1,51 @@
+{
+  "issue": 36,
+  "release": "4.36.25",
+  "date": "2026-09-29",
+  "base_commit": "99b399bc4ce9e504c8e18f1a6915c8690307aa4d",
+  "scope": "Author-confirmed Z=136 central doors and reproduced OBJ zero-size-texture startup failure.",
+  "environment": "GZDoom 4.14.2, Windows 11, Vulkan, RTX 3070 Ti, gl_multithread=true, gl_precache=false; isolated configuration copies and author-installed development IWAD.",
+  "hashes": {
+    "src/maps/MAP01.wad": "d5df55e7b6e033afa02f5a9d7e9d58be58ec76d0cad20c396cad77a5627a307c",
+    "assets/map01_mansion/GENERATED.json": "04af61aeccea62009fd94c120eb6988decdb25f9e29b5476fbbccca09f903f35",
+    "src/models/caelum/siege/ca_mansion_door.obj": "63c1081d9c31dd0f3dcdb77edc102dd356a154ed82121993013284d010aed628",
+    "src/caelum/world/CaelumMansionDoorData.zs": "577ed351d4b51de4c91fd1a0443c8a1648e3ad366527e8586a14b4eb90bccab7"
+  },
+  "tested_package_sha256": "0caaed1467cc9a8316b6fb588dbf9a1dc2a2fd9dcd754fceb0f5bfad44c76076",
+  "static_checks": 21,
+  "deterministic_regeneration": true,
+  "native": {
+    "checks_reported_pass": 437,
+    "diagnostic_begin_markers": 2,
+    "door_leaves": 48,
+    "door_groups": 32,
+    "body_tiers": [
+      1,
+      4,
+      7
+    ],
+    "both_sides_traversals": 192,
+    "side_walls_closed": 4,
+    "front_wall_closed_sides": 2,
+    "ceiling_traces": 35,
+    "corrected_source_repetitions": 3,
+    "final_package_checks": true,
+    "creator_first_list_choices": "beast man, warrior/warrior, male, short; legal allocations through menu methods, native Enter confirmation, 100 world overlay frames and first conversation capture.",
+    "creator_initial_defaults": "human, warrior/mage, male, normal; same native confirmation and rendering checks.",
+    "save_reload": "Group 910 saved at 32/64, reloaded at 36/64, reached 64/64 and returned to 0 at (282,196); independent 922 stayed closed at (454,196). Separate final closed-position replay retained.",
+    "limits": "Isolated native bodies temporarily disable unrelated solids. Ordinary NPC/Bull/tutorial and author visual acceptance remain pending. No old-MAP01 migration claimed."
+  },
+  "startup_fix": {
+    "before_surfaces": 222,
+    "after_surfaces": 3,
+    "native_surface_skin_limit": 32,
+    "faces_unchanged": 222,
+    "cause": "OBJ usemtl per face creates 222 surfaces; GZDoom 4.14.2 RenderFrame indexes surfaceskinids[i] without the bounds check in AddSkins. Grouping opaque faces by material avoids the out-of-range texture selection.",
+    "engine_sources": [
+      "https://github.com/ZDoom/gzdoom/blob/g4.14.2/src/common/models/models_obj.cpp",
+      "https://github.com/ZDoom/gzdoom/blob/g4.14.2/src/common/models/model.h"
+    ],
+    "evidence": "Exact fatal error reproduced outside a debugger and retained as zero_texture_before.png. Successful debugger/earlier runs did not disprove the intermittent defect. A temporary actor-state registration failed and was removed."
+  },
+  "author_acceptance": "CA-43625-MANSION-01 pending; prior hole closure and visual direction approval remain partial confirmation only."
+}
