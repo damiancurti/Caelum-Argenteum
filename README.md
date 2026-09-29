@@ -4,7 +4,7 @@ An independent dark fantasy FPS-RPG inspired by nineteenth-century Argentina.
 Author and game designer: **Damian Curti**. Development target: **GZDoom 4.14.2**
 on Windows 11. The final game is intended to be independent of Doom assets.
 
-**Current release: 4.36.24a.** Obtain and update the complete repository, validate
+**Current release: 4.36.25.** Obtain and update the complete repository, validate
 it, then rebuild with `run_dev.bat` as described below.
 
 ## License
@@ -16,6 +16,29 @@ Third-party materials retain their own licenses and credits in `src/licenses/`.
 Documentation patch **4.36.24a / #55** adds this notice. Gameplay and existing
 third-party terms are unchanged; no new in-game validation is required.
 
+Issue [#36](https://github.com/damiancurti/Caelum-Argenteum/issues/36) repairs
+the mansion's upper gables and balcony guards, separates exterior render from
+interior wall finishes, and adds closed wooden shutters and discreet reliefs.
+The outside boundary remains blocking but now renders a dark Limbo horizon.
+The author's follow-up adds a flat upper ceiling, raises exterior shutters,
+corrects the east-wing interior finishes and uses siege-style hinged wood doors.
+The latest correction removes four unwanted side doors at Z=136 and centres
+four independent front entrances on their rooms, with a solid wall between them.
+The remaining 48 leaves preserve key and arena access rules. Rulo, Ronnie, Caella and
+Argento's side connections now always open toward the central rooms, away from
+their beds. The practice target moves to the empty north-central ground-floor
+room; Rulo's bilingual directions and practice detection follow it.
+The door exporter now groups its 222 faces into three material surfaces,
+fixing the intermittent GZDoom "Trying to create zero size texture" startup error.
+The author confirmed all #36 tests passed on 2026-09-29 and authorized merge
+and issue closure. No #36 author checks remain in [pending_test.txt](pending_test.txt).
+**Start a fresh MAP01/new game:** the author prioritized reconstruction over
+old MAP01 save compatibility. No old-map geometry migration is claimed.
+See [architecture and provenance](docs/ASSETS.md) and
+[validation evidence](assets/validation_43625/layout/RESULTS.json).
+See [latest checks](assets/validation_43625/caella/RESULTS.json) and
+[final author acceptance](docs/HISTORY.md), including Caella's bedside door.
+
 Issue [#35](https://github.com/damiancurti/Caelum-Argenteum/issues/35) adds
 Journal filters for main/side and active/completed quests, retaining completed
 records and showing sewer progress and four independent optional rescues.
@@ -26,7 +49,7 @@ completes a rescue; its port reward remains separate. Existing saves retain
 recorded progress without duplicate flags or rewards. See
 [validation evidence](assets/validation_43624/RESULTS.json) and
 [author acceptance](docs/HISTORY.md), confirmed 2026-09-28 for
-CA-43624-JOURNAL-01. No author checks remain pending. Full port deployment
+CA-43624-JOURNAL-01. All #35 author checks passed. Full port deployment
 remains #16.
 
 Issue [#52](https://github.com/damiancurti/Caelum-Argenteum/issues/52) applies

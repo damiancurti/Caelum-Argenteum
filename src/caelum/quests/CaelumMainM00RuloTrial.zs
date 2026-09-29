@@ -8,7 +8,7 @@ class CaelumMainM00RuloTrial : Object play
         let it=ThinkerIterator.Create("CaelumM00TrainingDummy");
         let dummy=CaelumM00TrainingDummy(it.Next());
         if(dummy!=null)return dummy;
-        dummy=CaelumM00TrainingDummy(Actor.Spawn("CaelumM00TrainingDummy",(-290,480,0),NO_REPLACE));
+        dummy=CaelumM00TrainingDummy(Actor.Spawn("CaelumM00TrainingDummy",CaelumMansionPracticeData.Position(),NO_REPLACE));
         if(dummy!=null && (!dummy.TestMobjLocation() || Abs(dummy.FloorZ)>1))
         {dummy.Destroy();return null;}
         return dummy;
@@ -26,8 +26,7 @@ class CaelumMainM00RuloTrial : Object play
 
     static bool NearPractice(CaelumPlayer user)
     {
-        return IsActive(user) && user.Pos.X > -460 && user.Pos.X < -130
-            && user.Pos.Y > 205 && user.Pos.Y < 530 && Abs(user.Pos.Z) < 48;
+        return IsActive(user) && CaelumMansionPracticeData.Contains(user.Pos);
     }
 
     static bool InArena(Actor user)

@@ -1,0 +1,13 @@
+{
+  "provenance": "Issue #36 author follow-up: siege wood gate construction, resized to the existing 64 x 120 MU mansion leaves. No combat/balance changes.",
+  "width": 64,
+  "height": 120,
+  "siege_variant": "wood",
+  "engine_surface_limit": 32,
+  "surface_note": "GZDoom g4.14.2 model.h MD3_MAX_SURFACES. OBJ RenderFrame indexes the surface-skin array without its AddSkins bounds check; emit one surface per material.",
+  "open_degrees": 90,
+  "opening_note": "A right angle clears the existing narrow mansion passages; the siege preview uses 82 degrees in its wider frame.",
+  "sweep_radius": 128,
+  "fixed_swing_sides": {"906": -1, "907": 1, "908": -1, "909": 1},
+  "fixed_swing_note": "Author-confirmed 2026-09-29: all four resident side connections always swing toward the central rooms/corridor, away from their beds. Caella's group 908 was explicitly added in the final follow-up. For these Y-aligned leaves, negative side opens east and positive side opens west. Other doors retain their existing behavior."
+}

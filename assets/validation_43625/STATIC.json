@@ -1,0 +1,59 @@
+{
+  "issue": 36,
+  "map_sha256": "011cc53a25f18a4af16800cc61f8b0a599d424d8019f93b81eddd0135e26be10",
+  "checks": [
+    {
+      "name": "output matches regeneration manifest",
+      "passed": true
+    },
+    {
+      "name": "all 334 original map things unchanged",
+      "passed": true
+    },
+    {
+      "name": "all playable original vertices unchanged",
+      "passed": true
+    },
+    {
+      "name": "original planes, slopes, lighting, liquids and cave unchanged",
+      "passed": true
+    },
+    {
+      "name": "all original tags retained",
+      "passed": true
+    },
+    {
+      "name": "original door, lift, travel and other non-floor specials retained",
+      "passed": true
+    },
+    {
+      "name": "four horizon boundaries remain one-sided and blocking",
+      "passed": true
+    },
+    {
+      "name": "existing rail lines unchanged",
+      "passed": true
+    },
+    {
+      "name": "all railing faces visible and have native 3D collision",
+      "passed": true
+    },
+    {
+      "name": "reliefs do not introduce blockers or gameplay actors",
+      "passed": true
+    },
+    {
+      "name": "gable 12100 meets original roof plane exactly",
+      "passed": true
+    },
+    {
+      "name": "gable 12101 meets original roof plane exactly",
+      "passed": true
+    },
+    {
+      "name": "all vertex, side and sector references valid",
+      "passed": true
+    }
+  ],
+  "errors": []
+}

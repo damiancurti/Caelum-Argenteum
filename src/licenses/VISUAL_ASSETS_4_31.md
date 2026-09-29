@@ -1,5 +1,29 @@
 # Caelum Argenteum visual assets — V4.31
 
+## Mansion compositions and geometry — 4.36.25 / issue #36
+
+CMWIN36, CMPLS36, CMPNL36 and CMLMSKY are native TEXTURES compositions of
+existing project sources: mansion CMEX01/CMDT04, CMIN03, CMDT02 and environment
+ciudad/CVCI02 respectively. They add closed shutters, cropped plaster, scaled
+reliefs and a uniform dark sky tint. Source PNGs and their existing provenance
+are unchanged. The repaired map reuses the existing roof, iron and stone art.
+No Doom image or externally downloaded artwork was introduced.
+
+Author follow-up: CMSHT36 uses the unchanged CMDT04 at half scale for finite
+raised panels; CMCL01 supplies the flat ceiling. ca_mansion_door.obj adapts one
+leaf of the project's ca_siege_gate_intact.obj, keeping its original station
+wood/iron and stash-inside materials, UVs and provenance. The adaptation is
+reproducible with assets/generators/generate_mansion_doors.py and DOORS.json;
+it adds no external resources. Siege asset credits remain applicable.
+
+Historical vocabulary reference (consulted 2026-09-28): Museo y Monumento
+Historico Nacional Justo Jose de Urquiza, "Historia del edificio",
+https://museourquiza.cultura.gob.ar/noticia/historia-del-edificio/ .
+This is a design reference only; museum photographs are not distributed.
+The author approved the aged-render/wood/iron/relief proposal on 2026-09-28.
+Original geometry changes and reproducible inputs: assets/map01_mansion and
+assets/generators/repair_map01_mansion.py, outside the runtime package.
+
 ## CAPOOL01
 
 - Path: `graphics/caelum/textures/mansion/CAPOOL01.png`

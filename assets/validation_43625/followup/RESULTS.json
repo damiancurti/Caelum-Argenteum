@@ -1,0 +1,115 @@
+{
+  "issue": 36,
+  "release": "4.36.25",
+  "date": "2026-09-29",
+  "base_commit": "a121a7637b2cadbea84252f5f53b1c654ecceab7",
+  "scope": "Author follow-up: siege-style hinged MAP01 doors, northeast/southeast shutter sills, east-wing interior faces and flat upper ceiling. Same issue/release/PR.",
+  "environment": "Windows 11, GZDoom 4.14.2, Vulkan, developer-owned Doom II IWAD, isolated fresh MAP01 fixture, final built PK3.",
+  "final_map_sha256": "43fdb521369c6bf0cd1641c2051518fca9fa584723dd3d6f89d72f80102ff32b",
+  "tested_package_sha256": "c59fb08a30a71e5e050e9e852eb142c0a66ea5e7abd68cc6a4c3d0a58119d129",
+  "build": {
+    "exit_code": 0,
+    "files": 6124,
+    "directory_entries": 0
+  },
+  "determinism": {
+    "repeated_generation_identical": true,
+    "outputs": {
+      "src/maps/MAP01.wad": "43fdb521369c6bf0cd1641c2051518fca9fa584723dd3d6f89d72f80102ff32b",
+      "assets/map01_mansion/GENERATED.json": "47d3b0ac168bcc937764566a5897eb401c71544e3de401393a539a5652c7464b",
+      "src/models/caelum/siege/ca_mansion_door.obj": "625bf6e8430073d1f48f60e250aadf706bd4985050e7cd143f1eb67d3e219588",
+      "src/caelum/world/CaelumMansionDoorData.zs": "577ed351d4b51de4c91fd1a0443c8a1648e3ad366527e8586a14b4eb90bccab7"
+    }
+  },
+  "static": {
+    "report": "STATIC.json",
+    "checks": 19,
+    "errors": []
+  },
+  "native": {
+    "report": "native_package.txt",
+    "door_leaves": 52,
+    "door_groups": 34,
+    "body_tiers": [
+      1,
+      4,
+      7
+    ],
+    "door_traversals": 204,
+    "door_sides_tested": 2,
+    "door_checks_and_ceiling_checks": 451,
+    "upper_ceiling_traces": 35,
+    "ceiling_z": 392,
+    "key_and_arena_rejection_passed": true,
+    "solid_body_sweeps_passed": true,
+    "existing_corridor_balcony_stair_routes": 21,
+    "native_rail_spans": 204,
+    "differential_rail_blocked_by_tier": [
+      109,
+      78,
+      76
+    ],
+    "differential_rail_geometry_limited_by_tier": [
+      95,
+      126,
+      128
+    ],
+    "differential_rail_leaks": 0,
+    "horizon_and_both_gables_passed": true,
+    "crossing_scope": "Native solid actor with CANPASS and actual derived dimensions; unrelated solid actors temporarily disabled. Double groups 910/911 use their two existing paths beside the centre partition. Direct Used calls test access; this is not a full tutorial/NPC/Bull session.",
+    "new_save_reload": "Half-open double group 800 saved at progress 32/64, restored at 36/64 after one tic, reached 64/64 and returned to closed coordinates/angles. Logs native_save.txt and native_reload2.txt; old MAP01 migration remains explicitly waived.",
+    "views": 9,
+    "timed_performance_benchmark": false
+  },
+  "map_changes": {
+    "ceiling_sectors": 194,
+    "finite_shutters": 35,
+    "reopened_door_rectangles": 4,
+    "original_placements": 334,
+    "retyped_door_things": 52
+  },
+  "development_findings": [
+    "Four original single leaves were embedded in solid wall layers. Rectangular subdivisions now preserve every other vertical layer.",
+    "Appending replacement sidedefs while leaving unused entries produced missing-front diagnostics in an intermediate candidate. The final generator reuses the original slots and validates all references and outlines.",
+    "The siege preview 82-degree pose reduced narrow-door clearance. The mansion variant opens to a right angle; all three body sizes pass.",
+    "A probe without CANPASS falsely collided with door blockers on other storeys. Final tests use native vertical separation.",
+    "Two development starts timed out before executing test commands. Subsequent source and final-package runs completed. One first reload command used a doubled relative save path; the corrected isolated reload passes."
+  ],
+  "reproduction": {
+    "fixture": "Load this directory after the PK3; it includes the parent geometry checks and final follow-up checks.",
+    "console": "map MAP01; wait 30; give Issue36View; give Issue36Checks; give F36Tests",
+    "static": "python assets/generators/validate_map01_mansion.py",
+    "generators": [
+      "python assets/generators/generate_mansion_doors.py",
+      "python assets/generators/repair_map01_mansion.py"
+    ]
+  },
+  "author_acceptance": {
+    "former_upper_hole": "Author confirmed closed on 2026-09-28.",
+    "complete_patch": "Pending CA-43625-MANSION-01, including follow-up visuals, normal Use, companions and Bull."
+  },
+  "views_and_reload_package_sha256": "6ff411de7d6ae16722384cc770fb8b65a41541e2941e7865dc5eb925077c7a40",
+  "evidence_revision_note": "Views/save/reload cover identical map/model and ordinary opening behavior in the preceding package. The final package additionally preserves shared swing direction when a partly open double is reused from the other side; native_package.txt verifies this and all movement/access/ceiling checks.",
+  "project_validation": {
+    "report": "PROJECT_VALIDATION.json",
+    "errors": [],
+    "exit_code": 0
+  },
+  "source_sha256": {
+    "src/maps/MAP01.wad": "43fdb521369c6bf0cd1641c2051518fca9fa584723dd3d6f89d72f80102ff32b",
+    "assets/map01_mansion/GENERATED.json": "47d3b0ac168bcc937764566a5897eb401c71544e3de401393a539a5652c7464b",
+    "src/models/caelum/siege/ca_mansion_door.obj": "625bf6e8430073d1f48f60e250aadf706bd4985050e7cd143f1eb67d3e219588",
+    "src/caelum/world/CaelumMansionDoorData.zs": "577ed351d4b51de4c91fd1a0443c8a1648e3ad366527e8586a14b4eb90bccab7",
+    "assets/map01_mansion/DOORS.json": "452081a928355503a624ea6f4ad6c6384093bcdb1b9fefa5c3607bf6a416e941",
+    "assets/map01_mansion/REPAIR.json": "7bd235aacc235cf0b0f301c13f6d9e79532bc7ace383a2f08b63566e9a04854d",
+    "assets/generators/mansion_door_openings.py": "3bd1d7c6095e490148421a7d9ab180630f2bb89f57dbb1d03732a71167c67fc6",
+    "assets/generators/generate_mansion_doors.py": "a64255ade75ed60d34ddc357a744d9f355f37291d5351371fe11011b2be1a18f",
+    "assets/generators/repair_map01_mansion.py": "cd22aa54c34bc42ccecf486d107b7d46f0a38847605f7ce7f4659bc29dbad040",
+    "src/caelum/world/CaelumHingedDoor.zs": "0f0222ebed038c403f02133064282f85193e983ed5d032d92c294c720c71623f",
+    "src/caelum/world/CaelumSlidingDoor.zs": "10bfe8a0c9cbce51d6b2c072de8baf30fb18fabad3ebf89a1020ffe6d0d2ff95",
+    "src/MAPINFO": "f36bf36f11b1f00b43d24b20c9c7459c5985963f1151670f5e90a2bf9d5519c8",
+    "src/MODELDEF": "4398a721fc96be8e591a0d6da5da112aa803146d68460d2c73bebe303ab2ad0b",
+    "src/TEXTURES": "9ead7357f016f6f5c5f47aea3928221176bbd69caa7447c3f1579e5d9b801c24",
+    "src/ZSCRIPT": "47b9f33803f244b9294002bdb057b7f61e9b5fb8e29b6804a661c220b9f8f508"
+  }
+}

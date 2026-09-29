@@ -1,20 +1,14 @@
 # CONTEXT.md — Ultra-condensed summary of Caelum Argenteum
 
-Documentation version: **4.36.24a** — 2026-09-28.
+Documentation version: **4.36.25** — 2026-09-28.
 
-## 4.36.24a — Repository rights (#55)
-
-Root LICENSE.md now makes the project's all-rights-reserved status explicit,
-subject to third-party terms and legal/platform exceptions. Documentation-only;
-the accepted 4.36.24 gameplay state below is unchanged.
-
-Summary of `PROJECT.md`, `SYSTEMS.md`, `MAP01.txt`, `ASSETS.md`, `HISTORY.md`
-and the repository README.
+Repository rights: LICENSE.md reserves original-project rights, subject to
+third-party terms and legal/platform exceptions (#55).
 
 ## The game's premise
 
 Caelum Argenteum is an independent dark-fantasy FPS-RPG inspired by
-nineteenth-century Argentina and built on GZDoom 4.14.2/ZScript. The newly
+nineteenth-century Argentina, built on GZDoom 4.14.2/ZScript. The newly
 formed nation is divided by political, social, and territorial interests while
 facing two simultaneous invasions.
 
@@ -68,14 +62,20 @@ the gauchos and rural culture, and the humans the urban porteño society.
 
 ## Current status
 
-**4.36.24 / #35:** Journal type/status filters retain active and completed
-main/side records. Author confirmed mansion = main; sewers/port = side; four
-optional rescues complete on live extraction, with payment shown separately.
-The catalogue reads existing authoritative state without duplicating progress
-or rewards. Legacy/reload/hub and focused UI/engine checks pass; evidence:
-assets/validation_43624. The author confirmed CA-43624-JOURNAL-01 passed on
-2026-09-28 and authorized merge/closure. Full port integration/export remain
-#16/#17. Controls and legacy limits: SYSTEMS.
+**4.36.25 / #36:** MAP01 has closed gables, a flat upper ceiling, 204 balcony
+guards, raised shutters, corrected interior/exterior finishes and an invisible
+blocking horizon. At Z=136, four side doors are removed; front singles are
+separated. The 48 wooden leaves use siege hinges. Native three-size traversal
+and access checks pass. Three model surfaces fix the zero-size-texture startup
+failure. CA-43625-MANSION-01 fully passed author acceptance on 2026-09-29;
+merge/closure authorized. Start fresh. Evidence: assets/validation_43625/caella;
+architecture: ASSETS/MAP01.
+
+**4.36.24 / #35:** Journal filters retain main/side and active/completed records,
+including separate rescue/extraction and payment status. Native legacy/reload/hub
+and UI checks pass (assets/validation_43624). CA-43624-JOURNAL-01 passed author
+acceptance on 2026-09-28; merge/closure authorized. Controls/classification and
+legacy limits: SYSTEMS. Full port integration/export remain #16/#17.
 
 **4.36.23 / #52:** Toughness subtracts uncapped L*(L+1)/101 maximum-health percentage points before armor.
 Magical armor loses mental bonuses; shields stay unchanged. Palomo absorbs 77%;

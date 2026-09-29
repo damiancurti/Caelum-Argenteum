@@ -1,0 +1,7 @@
+{
+  "requirements": "Rebuild with build_dev.ps1. Reuse assets/validation_43625/layout/run_issue36.ps1 and its documented local GZDoom/IWAD/config requirements. Windows PowerShell can use -NoProfile -ExecutionPolicy Bypass -File for the local runner.",
+  "checks": "powershell.exe -NoProfile -ExecutionPolicy Bypass -File assets/validation_43625/layout/run_issue36.ps1 -Label furnishing_package -Package -Fixture assets/validation_43625/furnishing -Commands \"wait 100; give F36FurnitureTests; wait 10; screenshot build/issue36_furnishing_package.png; save f36furnishing; wait 4; quit\"",
+  "reload": "Same runner with -Label furnishing_reload_final -Package -Fixture assets/validation_43625/furnishing -LoadSave f36furnishing.zds -Commands \"wait 12; give F36FurnitureReload; wait 4; quit\". Save names are relative to the configured savedir.",
+  "view": "Same runner with -Label furnishing_rulo_final -Package -Fixture assets/validation_43625/furnishing -Commands \"wait 100; give F36FurnitureDoorView; wait 20; screenshot build/issue36_furnishing_rulo_final.png; wait 2; quit\".",
+  "log_normalization": "Workspace paths replaced by <workspace>; trailing whitespace normalized. Diagnostic furnishing2.txt is deliberately retained with failed floor-level primitive probes, not counted as a passing test."
+}

@@ -1,0 +1,18 @@
+[
+  {"id":"exterior","position":[-1450,-1400,350],"yaw":35,"pitch":10},
+  {"id":"gable_east","position":[900,-300,264],"yaw":0,"pitch":-25},
+  {"id":"gable_west","position":[-200,300,264],"yaw":180,"pitch":-25},
+  {"id":"roof","position":[400,-900,850],"yaw":90,"pitch":40},
+  {"id":"ground_interior","position":[400,0,0],"yaw":90,"pitch":0},
+  {"id":"middle_interior","position":[400,0,136],"yaw":90,"pitch":0},
+  {"id":"lower_south","position":[350,-580,136],"yaw":270,"pitch":10},
+  {"id":"lower_north","position":[350,580,136],"yaw":90,"pitch":10},
+  {"id":"lower_west","position":[-520,300,136],"yaw":180,"pitch":10},
+  {"id":"lower_east","position":[1280,450,136],"yaw":0,"pitch":10},
+  {"id":"upper_south","position":[350,-480,264],"yaw":270,"pitch":10},
+  {"id":"upper_north","position":[350,480,264],"yaw":90,"pitch":10},
+  {"id":"upper_west","position":[-420,300,264],"yaw":180,"pitch":10},
+  {"id":"upper_east","position":[1140,350,264],"yaw":0,"pitch":10},
+  {"id":"stairs","position":[1750,360,160],"yaw":270,"pitch":20},
+  {"id":"east_deck","position":[1650,0,264],"yaw":0,"pitch":10}
+]

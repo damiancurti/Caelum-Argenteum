@@ -1,6 +1,35 @@
 # TASKS.md — Active tasks
 
-Documentation version: **4.36.24a** — 2026-09-28.
+Documentation version: **4.36.25** — 2026-09-28.
+
+## Issue #36 — Mansion enclosure and architectural detail (4.36.25)
+
+- Implemented: upper-storey roof/gable closure, native balcony guards,
+  interior/exterior wall finishes, closed shutters, stone trim, two reliefs
+  and an invisible but blocking outer horizon.
+  Author follow-up: flat upper ceiling, raised finite shutters, east-wing
+  interior materials and hinged wooden leaves. Latest clarification: remove four
+  unwanted side doors at Z=136 and centre four independent front singles.
+  Corrected the door exporter's excessive surface count behind the reproduced
+  "Trying to create zero size texture" startup failure; see CA-KP-020.
+- Author-approved visual proposal: aged render, wood, iron and discreet reliefs,
+  2026-09-28. Historical rationale and source attribution are in ASSETS.
+- Verified: preserved unaffected placements/actions/planes, deterministic output,
+  focused native geometry traversal for body tiers 1/4/7, railing collision,
+  roof closure and native views. Evidence: assets/validation_43625.
+  Follow-up evidence covers both opening directions, three body sizes, access
+  locks, swept-body obstruction and the flat ceiling; see followup and layout.
+- Author confirmed the remaining prior work correct on 2026-09-29. Latest
+  request: Rulo/Ronnie/Argento side doors open toward central rooms, away from
+  beds; target moves to the empty north-central ground-floor room. Direction,
+  placement, practice detection and bilingual guidance are implemented.
+- Author confirmed those door/target tests passed on 2026-09-29, then requested
+  Caella's bedside connection (908) also open toward the corridor. Implemented.
+- Accepted: CA-43625-MANSION-01 fully passed on 2026-09-29, including Caella's
+  last door change. The author authorized PR #57 merge and #36 closure. No
+  #36 author checks remain. Evidence: assets/validation_43625/caella; #17 is separate.
+- Author explicitly prioritized rebuilding over old MAP01 saves. Use a fresh
+  MAP01/new game; the preserved source baseline is not an automatic migration.
 
 ## Issue #55 — Proprietary rights notice (4.36.24a)
 

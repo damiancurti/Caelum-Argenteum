@@ -1,0 +1,16 @@
+class View36_exterior : Issue36View { override bool Use(bool pickup) { Super.Use(pickup); Owner.SetOrigin((-1450,-1400,350),false); Owner.Angle=35; Owner.Pitch=10; return true; } }
+class View36_gable_east : Issue36View { override bool Use(bool pickup) { Super.Use(pickup); Owner.SetOrigin((900,-300,264),false); Owner.Angle=0; Owner.Pitch=-25; return true; } }
+class View36_gable_west : Issue36View { override bool Use(bool pickup) { Super.Use(pickup); Owner.SetOrigin((-200,300,264),false); Owner.Angle=180; Owner.Pitch=-25; return true; } }
+class View36_roof : Issue36View { override bool Use(bool pickup) { Super.Use(pickup); Owner.SetOrigin((400,-900,850),false); Owner.Angle=90; Owner.Pitch=40; return true; } }
+class View36_ground_interior : Issue36View { override bool Use(bool pickup) { Super.Use(pickup); Owner.SetOrigin((400,0,0),false); Owner.Angle=90; Owner.Pitch=0; return true; } }
+class View36_middle_interior : Issue36View { override bool Use(bool pickup) { Super.Use(pickup); Owner.SetOrigin((400,0,136),false); Owner.Angle=90; Owner.Pitch=0; return true; } }
+class View36_lower_south : Issue36View { override bool Use(bool pickup) { Super.Use(pickup); Owner.SetOrigin((350,-580,136),false); Owner.Angle=270; Owner.Pitch=10; return true; } }
+class View36_lower_north : Issue36View { override bool Use(bool pickup) { Super.Use(pickup); Owner.SetOrigin((350,580,136),false); Owner.Angle=90; Owner.Pitch=10; return true; } }
+class View36_lower_west : Issue36View { override bool Use(bool pickup) { Super.Use(pickup); Owner.SetOrigin((-520,300,136),false); Owner.Angle=180; Owner.Pitch=10; return true; } }
+class View36_lower_east : Issue36View { override bool Use(bool pickup) { Super.Use(pickup); Owner.SetOrigin((1280,450,136),false); Owner.Angle=0; Owner.Pitch=10; return true; } }
+class View36_upper_south : Issue36View { override bool Use(bool pickup) { Super.Use(pickup); Owner.SetOrigin((350,-480,264),false); Owner.Angle=270; Owner.Pitch=10; return true; } }
+class View36_upper_north : Issue36View { override bool Use(bool pickup) { Super.Use(pickup); Owner.SetOrigin((350,480,264),false); Owner.Angle=90; Owner.Pitch=10; return true; } }
+class View36_upper_west : Issue36View { override bool Use(bool pickup) { Super.Use(pickup); Owner.SetOrigin((-420,300,264),false); Owner.Angle=180; Owner.Pitch=10; return true; } }
+class View36_upper_east : Issue36View { override bool Use(bool pickup) { Super.Use(pickup); Owner.SetOrigin((1140,350,264),false); Owner.Angle=0; Owner.Pitch=10; return true; } }
+class View36_stairs : Issue36View { override bool Use(bool pickup) { Super.Use(pickup); Owner.SetOrigin((1750,360,160),false); Owner.Angle=270; Owner.Pitch=20; return true; } }
+class View36_east_deck : Issue36View { override bool Use(bool pickup) { Super.Use(pickup); Owner.SetOrigin((1650,0,264),false); Owner.Angle=0; Owner.Pitch=10; return true; } }

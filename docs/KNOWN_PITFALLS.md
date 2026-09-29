@@ -4,6 +4,77 @@ Status: integrated engineering register (issue #22, patch 4.36.1b).
 Prepared: 2026-09-23. Inherits the project's release after integration.
 Inspected baseline: `1dc390576fa330d37ff543526fc7e69a397fc28f` (PR #7).
 
+## CA-KP-020 — Repeated OBJ material declarations create unsafe surface counts
+
+Status/evidence: AUTHOR-REPORTED / CODE-VERIFIED / ENGINE-VERIFIED, #36 / 4.36.25.
+First recorded / last checked: 2026-09-29 / 2026-09-29.
+Baseline: 99b399bc, Windows 11, GZDoom 4.14.2, Vulkan, RTX 3070 Ti,
+gl_multithread=true and gl_precache=false. Author acceptance remains pending.
+
+Symptom: starting MAP01 could abort with "Trying to create zero size texture"
+after character allocation loaded. Some successful runs displayed incorrect
+door hardware textures. The mansion OBJ exporter emitted one usemtl per face:
+222 surfaces for three materials. GZDoom starts another surface even when the
+material name repeats. Its OBJ RenderFrame indexes surfaceskinids[i] without
+the i < MD3_MAX_SURFACES check used by AddSkins; the native limit is 32.
+Out-of-range texture selection depends on memory layout, so a passing run or
+a debugger session does not establish safety.
+
+Correction: group opaque faces by material in the generator. The model now
+has three surfaces, retaining all 222 faces, winding, dimensions and UVs.
+The read-only model check compares each face with the original siege source
+and rejects repeated surfaces or an exceeded engine limit. No engine binary,
+graphics preference or gameplay rule is changed. An investigated inherited
+state registration did not solve the failure and was removed.
+
+Evidence: assets/validation_43625/layout, including the native error capture,
+repeated corrected runs, creator and current-save tests. Source references:
+[OBJ loader/renderer](https://github.com/ZDoom/gzdoom/blob/g4.14.2/src/common/models/models_obj.cpp)
+and [surface limit](https://github.com/ZDoom/gzdoom/blob/g4.14.2/src/common/models/model.h).
+The author still needs to confirm ordinary play and new-character startup in
+CA-43625-MANSION-01.
+
+## CA-KP-019 — A 3D wall inherits its control texture, not its visible face
+
+Status/evidence: CODE-VERIFIED / ENGINE-VERIFIED, #36 / 4.36.25.
+First recorded / last checked: 2026-09-28 / 2026-09-28.
+Baseline: 61b3c74e; correction is the linked #36 patch, with native evidence
+from its working tree. Environment: GZDoom 4.14.2, Windows 11, Vulkan,
+development Doom II IWAD, fresh MAP01.
+
+MAP01 reused CMIN01 on shared solid-wall controls, causing interior wallpaper
+to appear outside. Changing ordinary sidedef textures alone does not fix those
+3D wall faces. Sector_Set3dFloor argument 2 bits 16/32 select the target upper
+or lower texture; the visible/observer side determines interior versus exterior.
+Separate slots when one boundary supports different finishes at different levels.
+Keep slab undersides, roofs, door controls and cave/water models distinct.
+
+The same inspection found flat upper wall tops below a sloped roof. New solid
+gable controls end on the original roof underside; preserve the actual roof
+planes and intentional balcony/stair openings. Native before/after traces and
+images demonstrate the closure. A guard inferred from an exposed slab edge can
+incorrectly fence a narrow construction seam inside a continuous walkway: compare
+ordinary-sized native movement against the baseline before accepting it.
+
+Evidence: [#36 results](../assets/validation_43625/RESULTS.json), map generator
+and read-only layout validator in assets/generators. Representative native
+geometry probes ignore actors; final tutorial/Bull play remains author test
+CA-43625-MANSION-01. Visual direction approved 2026-09-28; final playtest pending.
+
+The author's #36 follow-up exposed three related authoring traps. A repeating
+window texture inherits 3D-floor pegging and can put windows at ground level:
+finite nonblocking panels with explicit sills remove that dependency. A broad
+footprint misclassified the middle east-wing interior; use its actual Y=+/-320
+wall face, not the older +/-287 estimate. Existing door actors also do not prove
+their openings are open: four single leaves overlapped solid stacked wall models.
+Rebuild only their authored rectangles and preserve the other vertical layers.
+The corrected generator retains existing sidedef slots during subdivision and
+keeps every retained sector outlined; static checks reject unused sides/empty
+sectors after an intermediate candidate produced native missing-front errors.
+For stacked-actor traversal probes, CANPASS is needed to match the player's
+vertical actor separation. Evidence: assets/validation_43625/followup; generic
+body probes and direct Use calls are not full companion/Bull play acceptance.
+
 ## CA-KP-015 — Git checkout can invalidate raw document hashes
 
 Status/evidence: RESOLVED-VERIFIED tooling contract, #21 /4.36.19.

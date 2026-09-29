@@ -1,6 +1,43 @@
 # Caelum Argenteum — Current systems and rules
 
-Documentation version: **4.36.24a** — 2026-09-28.
+Documentation version: **4.36.25** — 2026-09-28.
+
+## 4.36.25 — Rebuilt MAP01 geometry (#36)
+
+The mansion's roof closure and balcony guards use native solid 3D floors and
+3D middle-texture collision. Guards retain the existing 48-MU height. Stairs,
+conversations, rewards, Bull rules and travel semantics do not change.
+The invisible outer boundary remains impassable; decorative shutter panels
+are closed wall surfaces and the two reliefs have no collision or interaction.
+
+MAP01's 48 leaves now inherit the original grouped-door access rules but use
+solid 3D wooden leaves and hinged movement. Use normally opens away from the user;
+opposing leaves use their outer jambs. The opening angle is 90 degrees for
+clearance; the original 16-tic movement, 105-tic hold, keys, faction condition,
+group prevalidation and Rulo arena lock remain. Moving blockers follow the
+visible leaf. Swept solid-body checks stop opening and reopen an obstructed
+closure without pushing/crushing actors. These doors are not breakable siege
+gates: no combat statistics or destruction mechanics are added. Other maps
+retain CaelumSlidingDoorLeaf. New-game door fields serialize normally; old
+MAP01 reconstruction compatibility remains waived below. The central front
+entrances at Z=136 are four independent singles (groups 910/922 and 911/923);
+the four unwanted side connectors are removed at the author's request.
+Groups 906/907/908/909 instead have a fixed swing toward the central rooms,
+avoiding the resident beds regardless of the caller's side. Reopening a
+partially open leaf retains its current direction until it closes.
+
+The author moved Rulo's target into the empty north-central ground-floor room
+on 2026-09-29. PRACTICE.json supplies its position and practice bounds through
+generated CaelumMansionPracticeData. The old workshop no longer records the
+six practice flags; their requirements and persistent IDs are unchanged.
+Rulo's instructions and Journal Detail name the new room in both languages.
+
+Author acceptance, 2026-09-29: all CA-43625-MANSION-01 checks passed, including
+the final Caella door adjustment. Merge and issue closure are authorized.
+
+Author decision, 2026-09-28: prioritize reconstruction over old MAP01 saves.
+Use a fresh MAP01/new game; this patch does not promise geometry migration or
+loading old MAP01 saves. Existing MAP02 compatibility guidance remains separate.
 
 ## 4.36.24 — Persistent quest journal (#35)
 

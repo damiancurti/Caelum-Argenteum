@@ -1,0 +1,83 @@
+{
+  "issue": 36,
+  "map_sha256": "43fdb521369c6bf0cd1641c2051518fca9fa584723dd3d6f89d72f80102ff32b",
+  "checks": [
+    {
+      "name": "output matches regeneration manifest",
+      "passed": true
+    },
+    {
+      "name": "all original things preserved except explicit hinged-door type",
+      "passed": true
+    },
+    {
+      "name": "all playable original vertices unchanged",
+      "passed": true
+    },
+    {
+      "name": "original planes, slopes, lighting, liquids and cave unchanged",
+      "passed": true
+    },
+    {
+      "name": "all original tags retained",
+      "passed": true
+    },
+    {
+      "name": "original door, lift, travel and other non-floor specials retained",
+      "passed": true
+    },
+    {
+      "name": "four horizon boundaries remain one-sided and blocking",
+      "passed": true
+    },
+    {
+      "name": "existing rail lines unchanged",
+      "passed": true
+    },
+    {
+      "name": "all railing faces visible and have native 3D collision",
+      "passed": true
+    },
+    {
+      "name": "reliefs do not introduce blockers or gameplay actors",
+      "passed": true
+    },
+    {
+      "name": "all shutters have a finite raised sill and no collision",
+      "passed": true
+    },
+    {
+      "name": "upper ceiling is flat at existing wall tops",
+      "passed": true
+    },
+    {
+      "name": "all 52 leaves retain original groups, locks, axes and closed positions",
+      "passed": true
+    },
+    {
+      "name": "opening reconstructions use only four existing door footprints",
+      "passed": true
+    },
+    {
+      "name": "no abandoned sidedefs after doorway subdivision",
+      "passed": true
+    },
+    {
+      "name": "every retained sector has an outline",
+      "passed": true
+    },
+    {
+      "name": "gable 12100 meets original roof plane exactly",
+      "passed": true
+    },
+    {
+      "name": "gable 12101 meets original roof plane exactly",
+      "passed": true
+    },
+    {
+      "name": "all vertex, side and sector references valid",
+      "passed": true
+    }
+  ],
+  "errors": []
+}

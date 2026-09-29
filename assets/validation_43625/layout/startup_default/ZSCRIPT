@@ -1,0 +1,27 @@
+version "4.14"
+class F36Startup : StaticEventHandler
+{
+    ui int Ticks; ui int Frames;
+    override void UiTick()
+    {
+        Ticks++;
+        if(Ticks==35) Menu.SetMenu("CaelumNewCharacterMenu");
+        if(Ticks==70)
+        {
+            let m=CaelumCharacterCreationMenu(Menu.GetCurrentMenu());
+            if(m==null) { Console.Printf("F36_START FAIL no creator"); return; }
+            // Preserve the choices initially displayed by the real creator.
+            m.Page=CaelumConstants.CREATION_PAGE_LAYERS;
+            for(int i=0;i<16 && m.RemainingLayerPoints()>0;i++) {m.SelectedLayer=i%4; m.ChangeSelectedPoint(1);}
+            m.Page=CaelumConstants.CREATION_PAGE_ATTRIBUTES;
+            for(int i=0;i<120 && m.RemainingAttributePoints()>0;i++) {m.SelectedAttribute=i%12; m.ChangeSelectedPoint(1);}
+            Console.Printf("F36_START confirming native creator");
+            m.Page=CaelumConstants.CREATION_PAGE_SUMMARY;
+        }
+    }
+    override void WorldLoaded(WorldEvent e) { Console.Printf("F36_START world loaded"); }
+    override void RenderOverlay(RenderEvent e)
+    {
+        if(players[consoleplayer].mo!=null) { Frames++; if(Frames==100) Console.Printf("F36_START 100 world overlay frames"); }
+    }
+}

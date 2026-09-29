@@ -48,6 +48,8 @@ map MAP01 "$CA_MAP01_NAME"
 {
     UnFreezeSinglePlayerConversations
     music = "CA_MUS02"
+    // Horizonte propio del Limbo tras retirar el muro perimetral visible.
+    sky1 = "CMLMSKY", 0
 
     // La puerta de retorno valida inventario y progreso antes de ChangeLevel.
     nointermission
@@ -153,6 +155,7 @@ DoomEdNums
     18023 = CaelumRonnie
     18024 = CaelumBull
     18025 = CaelumSlidingDoorLeaf
+    18099 = CaelumHingedDoorLeaf
     18026 = CaelumFiniteWallPanel
     18027 = CaelumFiniteFloorPanel
     18028 = CaelumFiniteRoofPanel

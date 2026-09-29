@@ -1,6 +1,40 @@
 # Caelum Argenteum — Project, status and roadmap
 
-Documentation version: **4.36.24a** — 2026-09-28.
+Documentation version: **4.36.25** — 2026-09-28.
+
+## 4.36.25 — Mansion architecture and enclosure (#36)
+
+MAP01 now closes the upper-storey gables against the existing pitched roof,
+completes balcony guards, separates interior wall finishes from exterior
+render and adds closed wooden shutter panels and two wall-mounted reliefs.
+The four outer boundaries retain collision but render the Limbo horizon.
+Stairs, tutorial mechanics and the cave remain. The author's follow-up adds
+the flat upper ceiling, raised shutters, corrected east-wing walls and hinged
+wooden doors. The 2026-09-29 clarification removes four side connectors at
+Z=136 and separates the front entrances into four independent singles centred
+on their rooms. Other placements and storeys remain unchanged.
+The door model now uses three material surfaces instead of 222, fixing the
+reproduced intermittent zero-size-texture startup failure (CA-KP-020).
+
+The author approved the restrained aged-render/wood/iron/relief visual proposal
+on 2026-09-28. The historical assessment and official heritage reference are in
+ASSETS; this remains a stylized Limbo mansion, not a reconstruction of a named
+nineteenth-century residence. The author explicitly prioritized rebuilding over
+old MAP01 save compatibility: start a fresh MAP01/new game for this revision.
+The original map is preserved as the generator baseline, not packaged at runtime.
+
+Static, deterministic regeneration and isolated GZDoom evidence are recorded in
+assets/validation_43625/layout (earlier iterations retain their evidence).
+The author accepted the remaining prior work on 2026-09-29, requesting only
+fixed central-room swings for Rulo/Ronnie/Argento's side doors and moving the
+practice target to the empty north-central ground-floor room. Both are
+implemented, including target detection and bilingual directions. Latest
+checks are in assets/validation_43625/furnishing. The author confirmed those
+tests passed and requested the same fixed corridor-side swing for Caella's
+bedside door (908). Implemented and checked in assets/validation_43625/caella.
+The author confirmed CA-43625-MANSION-01 fully passed on 2026-09-29 and
+authorized #36 closure and PR #57 merge. No #36 author checks remain; #17
+export remains a separate task.
 
 ## 4.36.24a — Proprietary rights notice (#55)
 

@@ -31,16 +31,7 @@ class CaelumSlidingDoorBlocker : Actor
             return;
         }
 
-        vector3 blockerPos = leaf.Pos;
-        if (leaf.args[2] == 0)
-        {
-            blockerPos.X += args[0];
-        }
-        else
-        {
-            blockerPos.Y += args[0];
-        }
-        SetOrigin(blockerPos, true);
+        SetOrigin(leaf.BlockerPosition(args[0]), true);
     }
 
     Default
@@ -90,7 +81,7 @@ class CaelumSlidingDoorLeaf : Actor
         }
     }
 
-    bool RequestDoorGroup(Actor user)
+    virtual bool RequestDoorGroup(Actor user)
     {
         // La petición valida la hoja antes de consultar llaves o emitir sonido.
         if (user == null || Abs(user.Pos.Z - Pos.Z) > 64
@@ -209,7 +200,12 @@ class CaelumSlidingDoorLeaf : Actor
         }
     }
 
-    void PlaceAtProgress()
+    virtual vector3 BlockerPosition(double offset)
+    {
+        return Pos + (args[2] == 0 ? offset : 0, args[2] == 0 ? 0 : offset, 0);
+    }
+
+    virtual void PlaceAtProgress()
     {
         vector3 newPosition = ClosedPosition;
         double displacement = SlideProgress * args[1];

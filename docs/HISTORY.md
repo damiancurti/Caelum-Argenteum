@@ -1,6 +1,148 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **4.36.24a** — 2026-09-28.
+Documentation version: **4.36.25** — 2026-09-28.
+
+## 4.36.25 — Mansion enclosure and architectural detail (#36)
+
+2026-09-28: the author requested implementation of #36, correct interior/exterior
+wall materials, a blocking invisible outer boundary, fully closed railings and
+an assessment of nineteenth-century architecture. The author explicitly placed
+reconstruction ahead of old-save compatibility and identified the roof defect
+on the highest storey. Native inspection reproduced open gables below the
+sloping tiled roof. Added roof-following solid fills, 72 missing guard sections,
+target-sided wall finishes, closed wooden shutter panels, stone fascia/lintels,
+two nonblocking reliefs and a native horizon with an explicit Limbo sky.
+The original map is preserved as the deterministic authoring baseline.
+
+The official Palacio San Jose architectural history informed the proposal.
+The author approved the aged-render/wood/iron/relief direction after seeing
+native exterior/interior views on 2026-09-28. The mansion remains a stylized
+Limbo interpretation; its stepped plan is not a replica of that residence.
+
+Validation: static scope/topology checks, deterministic map regeneration and
+isolated GZDoom 4.14.2 Windows/Vulkan checks. Twenty-one corridor/balcony/stair traversals
+pass for body tiers 1/4/7. Differential native rail checks demonstrate 109/78/76
+blocked crossings respectively with zero leaks in unobstructed samples; other
+samples are limited by adjacent geometry or segment length. All 204 guard
+spans have the expected native elevation/height. East/west gable traces now
+block where the preserved baseline was open. The test actor ignores other
+actors, so this is geometry evidence, not ordinary tutorial/NPC/Bull acceptance.
+The first candidate incorrectly fenced existing 1-MU walkway seams; baseline
+comparison exposed that regression and the corrected traversal checks pass.
+
+Evidence: assets/validation_43625. Fresh MAP01/new game is required; no old-map
+geometry migration is claimed. CA-43625-MANSION-01 remains pending for final
+visual, tutorial, Bull and exit acceptance. Commit/push/linked PR delivery does
+not confirm that manual test or authorize #17 export.
+
+Author follow-up, 2026-09-28 (same #36 patch/version): confirmed that the former
+upper hole is closed, and requested a flat interior ceiling, siege-style hinged
+single/double doors, raised northeast/southeast windows and interior materials
+on both walls near (1507,258,136). The confirmation is partial acceptance of
+CA-43625-MANSION-01, not a passed complete playtest; its entry remains pending.
+Implemented a ceiling at the existing Z=392 wall tops, finite shutter panels
+with raised sills, the east-wing interior envelope correction and 52 original
+door placements using the siege wood leaf mesh at their existing dimensions.
+Doors swing away from the user, use opposing outer hinges, retain group/key/
+arena rules and stop for solid bodies. They open to 90 degrees for clearance.
+Four pre-existing single-door footprints were solid wall at Z=136..256;
+local subdivisions restore those openings while retaining all other vertical layers.
+
+Final PK3 verification, 2026-09-29, in assets/validation_43625/followup: 34 groups, both sides,
+three body tiers (204 traversals); closed/open collision, native key/arena
+checks, solid-body sweep obstruction and 35 upward ceiling traces pass. Existing
+21 routes and differential rail checks also pass. A new-game save taken halfway
+through opening reloads at the next tic, completes opening and closes normally.
+Nine final views cover all requested surfaces and door poses. Static checks,
+deterministic regeneration and package validation pass. These isolated checks
+do not replace ordinary tutorial/Bull/companion testing or final author visuals.
+
+Second author follow-up, 2026-09-29 (same #36/version): clarified that both
+central-room door corrections apply to the intermediate Z=136 storey. Removed
+the four newly reopened side connectors (900/901/903/904), restoring the
+original wall layers. Front entrances at Y=+/-196 now have separate 64-MU
+single doors centred on the existing rooms at X=282/454, a 108-MU wall between
+them, and independent groups 910/922 and 911/923. New wall faces use interior
+wallpaper. Other placements and vertical layers remain; 330 map things and
+48 leaves in 32 groups result. The highest-storey ceiling remains intact.
+
+The author also reported "Trying to create zero size texture" immediately
+after character creation. Isolated normal runs reproduced that exact fatal
+window. The new OBJ generator emitted usemtl once per face, creating 222
+surfaces for three materials. GZDoom 4.14.2's OBJ RenderFrame reads its
+surface-skin array without the 32-surface bounds check present in AddSkins.
+Grouping faces by material produces three surfaces with identical geometry,
+winding, dimensions and UVs. No graphics settings or engine files are changed.
+Registering an inherited actor state was investigated, failed to resolve the
+error and was removed; debugger-only successes were not accepted as proof.
+
+Evidence is in assets/validation_43625/layout: 21 static checks, deterministic
+map/model regeneration, repeated corrected normal launches, both-sided passage
+of three body sizes through all 32 groups, closed/open collision, access locks,
+sweep obstruction and the retained ceiling. Focused probes confirm the closed
+side walls, front wall and independent operation. Native creator confirmation
+loads MAP01 and renders its opening conversation. A current-map save retains
+a half-open central leaf while its neighbour stays closed; reload completes
+opening and closing. These are agent checks; CA-43625-MANSION-01 remains
+pending for the author's ordinary-play and visual acceptance.
+
+Third author follow-up, 2026-09-29: CA-43625-MANSION-01 (origin 4.36.25/#36)
+received qualified author acceptance: the remaining prior changes are correct,
+except the side connections to Rulo/Ronnie/Argento snag on beds. The author
+confirmed those three doors should always swing toward the central rooms,
+and the target belongs in the empty central ground-floor room. The pending
+entry is narrowed to these two latest changes; no export/merge is authorized.
+
+Implemented data-driven fixed sides for groups 906/907/909. Other door rules,
+Caella's connection and furniture remain unchanged. Target placement is now
+(368,480,0), with room-derived practice bounds and bilingual Rulo/Journal
+directions. The same persistent practice flags and target class remain.
+Fresh MAP01 remains required; earlier saved target instances are not relocated.
+
+Focused native checks preserve actual beds/stations: the previous resident-side
+swing reproduces the obstruction, and all three fixed doors open fully and
+close from both use sides. Body tiers 1/4/7 pass at bed-top height (Z=160),
+with furniture collision retained. Initial straight ground-level TryMove probes
+hit the accepted beds; those primitive probes do not perform player step-up,
+so they are retained as a limitation, not claimed as ordinary walking evidence.
+The new room contains exactly one target and no crafting stations; placement
+is idempotent, old workshop/upper storey are excluded, and all six existing
+practice flags can be recorded there. Native save/reload preserves the target
+and flags. Final-package logs, views, static checks and hashes are in
+assets/validation_43625/furnishing. Only author confirmation of the latest
+door use and normal six-practice sequence remains pending.
+
+Final door follow-up, 2026-09-29: the author explicitly confirmed the remaining
+CA-43625-MANSION-01 tests (origin 4.36.25/#36) passed: Rulo/Ronnie/Argento's
+fixed door directions, the relocated target, normal practice and save/reload.
+The author requested the same behavior for Caella's door beside her bed.
+Added group 908 with swing side -1, opening east into the central corridor.
+This uses the existing authored override; no map, furniture, mesh, practice
+or other door behavior changes. The pending entry now contains only this
+latest Caella check, preserving the accepted results here.
+
+Final PK3, GZDoom 4.14.2/Vulkan: ten focused assertions pass with actual solid
+furniture. The former swing reproduces the bed obstruction; native Use from
+both sides reaches fully open toward the corridor and closes normally.
+Other accepted direction values remain intact. General/static validation and
+deterministic regeneration pass. Log, view, hashes and reproduction commands:
+assets/validation_43625/caella. Native checks do not substitute for the author's
+confirmation of this last adjustment; no merge/export authorization inferred.
+
+Final author acceptance, 2026-09-29: the author explicitly confirmed all tests
+correct and instructed issue #36 closure and PR #57 merge. CA-43625-MANSION-01
+(origin 4.36.25/#36) is fully passed, including Caella's final corridor-side
+door opening and ordinary passage; earlier roof/rails/materials/boundary,
+other doors, target/practices and save/reload confirmations remain recorded
+above. Removed the completed entry from pending_test.txt, leaving the tracked
+file empty. This is author acceptance, distinct from the recorded agent/native
+checks. The same patch remains version 4.36.25; #17 export is separate.
+
+Integrated main's documentation-only #55 rights notice before merging #36,
+preserving LICENSE.md, third-party exceptions and its historical 4.36.24a
+entry while retaining current 4.36.25 markers. Regenerated the document index
+and passed general documentation validation; no runtime files changed in
+this acceptance/conflict-resolution commit, so native tests were not repeated.
 
 ## 4.36.24a — Proprietary rights notice (#55)
 

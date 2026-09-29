@@ -1,0 +1,50 @@
+{
+  "issue": 36,
+  "baseline": "MAP01_43624.wad",
+  "baseline_sha256": "c3c01999f2cd427ce0f618da82dd18148e6544c5f00ec14b5e066174edc0859c",
+  "baseline_lines": 2131,
+  "baseline_sectors": 659,
+  "gable_base": 392,
+  "control_size": 48,
+  "upper_wall_tags": [560, 561, 564],
+  "gable_controls": [
+    {"roof_control": 382, "roof_tag": 570, "tag": 12100, "control_origin": [-19776, 32000]},
+    {"roof_control": 383, "roof_tag": 571, "tag": 12101, "control_origin": [-19712, 32000]}
+  ],
+  "materials": {"interior": "CMIN01", "exterior": "CMEX01", "trim": "CMST03", "gable": "CMEX01"},
+  "wall_min_height": 96,
+  "face_sample_distance": 0.25,
+  "interior_footprints": [
+    {"z": 0, "rectangles": [[-561,-632,1305,632],[1305,-383,1961,383],[-2464,-320,-1776,320]]},
+    {"z": 128, "rectangles": [[-465,-536,1201,536],[1201,-320,1689,320],[1697,-383,1961,383]]},
+    {"z": 264, "rectangles": [[-363,-383,1047,383]]}
+  ],
+  "horizon_lines": [0,1,2,3],
+  "balcony_levels": [136,264],
+  "balcony_bounds": [-600,-650,1970,650],
+  "stair_step_limit": 24,
+  "rail_y_scale": 2.583333,
+  "rail_height": 48,
+  "rail_border_width": 16,
+  "walkway_seam_width": 1,
+  "window_min_span": 128,
+  "window_panel": {"width": 64, "sill": 32, "texture": "CMSHT36", "scale": 2},
+  "ceiling": {"bottom": 392, "top": 400, "tag": 12102, "control_origin": [-19648,32000], "texture": "CMCL01"},
+  "hinged_door_type": 18099,
+  "door_layout": {
+    "remove_groups": [900,901,903,904],
+    "relocate": [
+      {"thing":212,"x":282,"group":910}, {"thing":213,"x":454,"group":922},
+      {"thing":214,"x":282,"group":911}, {"thing":215,"x":454,"group":923}
+    ],
+    "provenance": "Author correction 2026-09-29: both changes are at Z=136. Remove the four side connectors reopened in the first follow-up. Centre each 64-MU front leaf on its existing room (X=200..364 and 372..536), keeping opposite hinges and separate groups."
+  },
+  "door_openings": {
+    "rectangles": [[250,-200,314,-192],[422,-200,486,-192],[250,192,314,200],[422,192,486,200]],
+    "closures": [[314,-200,422,-192],[314,192,422,200]],
+    "bottom": 136, "top": 256, "first_tag": 12200, "control_origin": [-19000,32200], "retained_sector_origin": [-12000,32200],
+    "provenance": "Reconstruct the two central front entrances on each side at Z=136, closing the former shared opening between them. Width derives from the existing leaves; centres derive from room bounds. Other storeys remain unchanged."
+  },
+  "decoration": {"windows": "CMWIN36", "upper_plaster": "CMPLS36", "panels": [[1046,-350,-286,304],[1046,286,350,304]]},
+  "notes": "Building envelopes, elevations, step limit and rail scale derive from the preserved MAP01. Control positions/tags are non-playable authoring allocations. The author prioritizes rebuilt geometry over old-save compatibility (2026-09-28)."
+}

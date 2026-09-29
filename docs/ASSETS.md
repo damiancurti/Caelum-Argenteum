@@ -1,6 +1,61 @@
 # Caelum Argenteum — Audio and art
 
-Documentation version: **4.36.24a** — 2026-09-28.
+Documentation version: **4.36.25** — 2026-09-28.
+
+## 4.36.25 — Mansion architectural finishes (#36)
+
+The author approved aged render, wooden shutters, ornamental iron and discreet
+interior reliefs after reviewing native proposal views on 2026-09-28.
+The principal heritage reference is the official Museo y Monumento Historico
+Nacional Justo Jose de Urquiza article,
+[Historia del edificio](https://museourquiza.cultura.gob.ar/noticia/historia-del-edificio/),
+consulted 2026-09-28. It documents the 1848-1860 stages of Palacio San Jose:
+symmetrical fronts, galleries, wooden openings, iron grilles, classical cornices,
+ornamental ironwork and decorative sculpture. These support the vocabulary;
+the reference's courtyard plan and largely flat roofs are not claimed as a match
+for MAP01's stepped storeys and pitched tiled roof. For an 1889 setting, this
+is a plausible stylized historicist mansion, not an authenticated replica.
+
+All image sources already belong to the project's mansion/environment catalogues.
+CMEX01 supplies exterior render, CMIN01 interior wallpaper, CMIN03 upper plaster,
+CMST03 stone fascia/lintels, CMRLBAL the existing iron guards and CMRF01 the
+unchanged roof tiles. Native TEXTURES compositions add CMWIN36 (CMEX01 plus
+CMDT04 closed wooden shutters), CMPLS36 (the plaster portion of CMIN03), CMPNL36
+(CMDT02 ornamental relief at half scale) and CMLMSKY (the already used CVCI02
+source with a uniform dark tint). Original PNGs are unchanged. Shutters are
+decorative closed surfaces, not new traversable windows. The two reliefs are
+wall-mounted, nonblocking decorative planes; no new statue or gameplay actor
+is introduced. Website photographs/textures are not copied into the game.
+
+The author follow-up replaces repeating CMWIN36 map faces with finite CMSHT36
+panels (the same CMDT04 source, half scale) above explicit sills. CMWIN36 remains
+defined for provenance. The flat upper ceiling uses the existing CMCL01 art.
+The new ca_mansion_door.obj extracts the original left leaf from
+ca_siege_gate_intact.obj, preserving its station wood/iron and stash-inside
+materials and UVs, resized from 48x96 to the existing 64x120-MU mansion leaf.
+The right leaf rotates the same model to put its hinges/handle on the correct
+edges. generate_mansion_doors.py and assets/map01_mansion/DOORS.json reproduce
+the adaptation using only the Python standard library. No new bitmap source,
+external model, siege balance or destructibility is introduced.
+
+The 2026-09-29 correction groups those 222 opaque faces into three material
+surfaces. Emitting usemtl before every face exceeded GZDoom 4.14.2's 32-entry
+surface-skin limit and could select invalid textures during rendering. All
+vertices, face winding, material assignments and UVs are retained and checked
+against the siege source. See CA-KP-020 for engine references and reproduction.
+
+Geometry is generated deterministically by assets/generators/repair_map01_mansion.py
+from assets/map01_mansion/REPAIR.json and the preserved, hashed 4.36.24 WAD.
+GENERATED.json identifies every new guard, wall material assignment and relief.
+The latest central-room layout uses the same wood model and interior wallpaper;
+no new art is introduced. Native views and checks are in assets/validation_43625. Visual-direction
+approval was followed by author acceptance of the remaining prior work on
+2026-09-29. The latest fixed door directions and target relocation reuse all
+existing art. DOORS.json contains the four authored swing sides (including Caella/908);
+PRACTICE.json and generate_mansion_practice.py provide the new target placement
+and detection bounds. Follow-up checks are in assets/validation_43625/furnishing; the latest Caella
+door check is in assets/validation_43625/caella. No new art was added. The
+author confirmed all #36 tests passed on 2026-09-29, including this final change.
 
 ## 4.36.24a — Rights and attribution (#55)
 

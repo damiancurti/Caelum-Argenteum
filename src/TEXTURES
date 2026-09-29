@@ -4,6 +4,45 @@ Texture "CACVROCK", 256, 256
     Patch "models/caelum/world/environment/rock_granite.png", 0, 0
 }
 
+// Cielo propio del Limbo: conserva el fondo oscuro del recinto anterior.
+Texture "CMLMSKY", 512, 512
+{
+    Patch "graphics/caelum/textures/entornos_v1/ciudad/CVCI02.png", 0, 0
+    {
+        Blend "28 24 1f", 1.0
+    }
+}
+
+// Composiciones del issue #36: revoque, persiana y relieve propios existentes.
+Texture "CMWIN36", 256, 256
+{
+    XScale 2
+    YScale 2
+    WorldPanning
+    Patch "graphics/caelum/textures/mansion/CMEX01.png", 0, 0
+    Patch "graphics/caelum/textures/mansion/CMEX01.png", 128, 0
+    Patch "graphics/caelum/textures/mansion/CMEX01.png", 0, 128
+    Patch "graphics/caelum/textures/mansion/CMEX01.png", 128, 128
+    Patch "graphics/caelum/textures/mansion/CMDT04.png", 64, 64
+}
+Texture "CMPLS36", 128, 80
+{
+    WorldPanning
+    Patch "graphics/caelum/textures/mansion/CMIN03.png", 0, 0
+}
+Texture "CMSHT36", 128, 128
+{
+    XScale 2
+    YScale 2
+    Patch "graphics/caelum/textures/mansion/CMDT04.png", 0, 0
+}
+Texture "CMPNL36", 128, 128
+{
+    XScale 2
+    YScale 2
+    Patch "graphics/caelum/textures/mansion/CMDT02.png", 0, 0
+}
+
 // One texture pixel equals one map unit at the default sprite scale. Matching
 // this 72-pixel canvas to the actor's 72-unit Height keeps every visible body
 // region inside the collision cylinder.
