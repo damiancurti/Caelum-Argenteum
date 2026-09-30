@@ -21,6 +21,12 @@ class CaelumUnarmedWeapon : Weapon
         let user=CaelumPlayer(invoker.Owner);
         if(user==null || !user.CharacterCreationComplete || user.CreationWizardOpen
             || user.EquipmentMenuOpen || user.CraftingMenuOpen || user.IsPhysicallyImmobilized())return;
+        invoker.Punching=false;
+        if (user.DerivedStats==null) return;
+        double cost=CaelumAttackRules.NaturalAir()*user.DerivedStats.AirConsumptionMultiplier;
+        if (user.CurrentAir<cost) return;
+        user.CurrentAir-=cost;
+        user.UpdateAirStateEffects();
         invoker.Punching=true; invoker.PunchFrame=0;
         invoker.LeftPunch=!invoker.LeftPunch;
     }

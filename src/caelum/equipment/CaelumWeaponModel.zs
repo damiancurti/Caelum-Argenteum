@@ -6,6 +6,16 @@ class CaelumWeaponModel : Object
     int Tier;
     int Size;
     int Durability;
+    int DurabilityRevision;
+
+    void MigrateDurability(int revision = 1)
+    {
+        if (DurabilityRevision == revision) return;
+        Durability = revision == 1 ? Durability * CaelumAttackRules.DURABILITY_SCALE
+            : Durability / CaelumAttackRules.DURABILITY_SCALE;
+        DurabilityRevision = revision;
+    }
+
     int EssenceType;
     bool Equipped;
     bool Initialized;
@@ -17,6 +27,7 @@ class CaelumWeaponModel : Object
         Tier = 1;
         Size = CaelumConstants.EQUIPMENT_SIZE_M;
         Durability = GetMaximumDurability();
+        DurabilityRevision = CaelumAttackRules.DURABILITY_REVISION;
         EssenceType = CaelumConstants.ESSENCE_FIRE;
         Equipped = false;
         Initialized = true;
@@ -138,7 +149,7 @@ class CaelumWeaponModel : Object
         return CaelumEquipmentRules.ScaleDurabilityForSize(
             GetBaseDurabilityFor(weaponType) * tierMultiplier,
             equipmentSize
-        );
+        ) * CaelumAttackRules.DURABILITY_SCALE;
     }
 
     int GetMaximumDurability()
@@ -148,21 +159,7 @@ class CaelumWeaponModel : Object
 
     int GetAttackTicsFor(int weaponType)
     {
-        int catalogueWeapon = CaelumCraftingRules.GetCatalogueWeaponForPlayableType(
-            weaponType
-        );
-        if (catalogueWeapon >= 0)
-        {
-            return CaelumWeaponCatalogue.GetAttackTics(catalogueWeapon);
-        }
-        switch (weaponType)
-        {
-            case CaelumConstants.WEAPON_TYPE_BELL: return 22;
-            case CaelumConstants.WEAPON_TYPE_BOOK: return 16;
-            case CaelumConstants.WEAPON_TYPE_STATUETTE:
-                return CaelumConstants.WEAPON_STATUETTE_TIER_ONE_ATTACK_TICS;
-            default: return CaelumConstants.DEBUG_STAFF_CAST_TICS;
-        }
+        return CaelumAttackRules.BASE_TICS;
     }
 
     int GetAttackTics()

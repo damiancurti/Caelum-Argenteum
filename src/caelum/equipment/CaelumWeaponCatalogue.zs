@@ -128,25 +128,7 @@ class CaelumWeaponCatalogue : Object
 
     static int GetAttackTics(int weaponId)
     {
-        switch (ResolveWeapon(weaponId))
-        {
-            case CaelumConstants.CATALOGUE_WEAPON_DAGGER: return 8;
-            case CaelumConstants.CATALOGUE_WEAPON_HATCHET:
-            case CaelumConstants.CATALOGUE_WEAPON_MACHETE: return 10;
-            case CaelumConstants.CATALOGUE_WEAPON_JAVELIN: return 12;
-            case CaelumConstants.CATALOGUE_WEAPON_SWORD: return 14;
-            case CaelumConstants.CATALOGUE_WEAPON_AXE: return 16;
-            case CaelumConstants.CATALOGUE_WEAPON_FLAIL: return 15;
-            case CaelumConstants.CATALOGUE_WEAPON_SPEAR: return 18;
-            case CaelumConstants.CATALOGUE_WEAPON_GREATSWORD: return 22;
-            case CaelumConstants.CATALOGUE_WEAPON_WAR_AXE: return 24;
-            case CaelumConstants.CATALOGUE_WEAPON_HALBERD: return 20;
-            case CaelumConstants.CATALOGUE_WEAPON_GIANT_GAUNTLETS: return 26;
-            case CaelumConstants.CATALOGUE_WEAPON_STANDARD_BOW: return 20;
-            case CaelumConstants.CATALOGUE_WEAPON_CARBINE: return 48;
-            case CaelumConstants.CATALOGUE_WEAPON_LONGBOW: return 24;
-            default: return 30;
-        }
+        return CaelumAttackRules.BASE_TICS;
     }
 
     static double GetPrimaryRange(int weaponId)

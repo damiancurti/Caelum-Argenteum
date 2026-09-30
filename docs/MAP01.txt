@@ -1,6 +1,19 @@
 CAELUM ARGENTEUM — STORY AND MAP01
 
-Documentation version: **4.36.25** — 2026-09-28.
+Documentation version: **4.36.26** — 2026-09-30.
+
+## 4.36.26 — Combat controls preserved (#37)
+
+The shared weapon timing/durability and requested thrust presentation revision
+applies to tutorial equipment as well as later combat. Fire/AltFire, charged
+preparation, reload, sweep, practice classifications, dialogue and map geometry
+retain their existing assignments. Dagger Fire and machete/sword/greatsword/
+halberd AltFire use the author's thrust animation; the sword remains cutting
+primary and piercing secondary. Natural punches and bull gores now spend the
+approved shared base Air. SYSTEMS documents effective costs, clocks and saves.
+The author confirmed all outstanding #37 combat and visual checks passed on
+2026-09-30 and authorized merge/closure; details are recorded in HISTORY.
+
 
 ## 4.36.25 — Mansion roof, guards and period detail (#36)
 
@@ -3654,4 +3667,3 @@ resolved before all the final data are set:
 =============================================================================== END OF
 SPECIFICATION — CONSOLIDATION 4.33.0g
 ===============================================================================
-

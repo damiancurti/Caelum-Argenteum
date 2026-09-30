@@ -196,7 +196,7 @@ class CaelumDerivedStats : Object
     bool HasOverload() { return LoadRatio >= CaelumConstants.OVERLOAD_THRESHOLD; }
     bool HasExceededCapacity() { return LoadRatio >= 1.0; }
 
-    double CalculateLoadAirMultiplier(double loadRatio)
+    static double CalculateLoadAirMultiplier(double loadRatio)
     {
         double threshold = CaelumConstants.OVERLOAD_THRESHOLD;
         if (loadRatio <= threshold) return 1.0 + loadRatio;

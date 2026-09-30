@@ -1,6 +1,51 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **4.36.25** — 2026-09-28.
+Documentation version: **4.36.26** — 2026-09-30.
+
+## 4.36.26 — Attack clock, durability and thrusts (#37)
+
+2026-09-30: implemented the issue's 2026-09-25 approved timing, durability and
+enemy-cost specification. The author additionally requested grip-centered
+counterclockwise thrusts for dagger primary and machete/sword/greatsword/halberd
+secondary, and every attack animation matching its effective attack time.
+After clarifying the originally overallocated percentages, the author explicitly
+confirmed 30 units down, 60 forward and 16/16/48/20% lower/turn/advance/return,
+with impact at 80%. Existing art and attribution are preserved.
+
+The shared fractional 14-tic formula uses effective attributes and only weapon
+plus glove mass for speed. Actual carried load remains the separate Air modifier.
+Weapon durability and remaining values migrate ×10 once, including saved encoded
+pickups; armor/shields and proportional repair costs remain unchanged. Exact-item
+projectile references transfer through native copies. Missing identity on already
+saved legacy projectiles is not guessed. The Zupay slam is 48+32 tics and spends
+34 base Air once; natural strikes cost 1 base Air. Resource-idle enemies resume
+their intended attack, including a prepared bull gore without another charge.
+
+Isolated GZDoom 4.14.2 Windows/Vulkan evidence covers the 319-rule matrix,
+92 twenty-family cycle checks, seven held-Fire intervals, nine interruption/
+identity edge checks, ten enemy-state checks and waiting reload, cumulative magic
+boundaries at four Eloquence levels, legacy item/model/encoded-pickup migration,
+migrated reload, original-save rollback, and a saved pending thrust with one
+payment. Ten further checks cover punch affordability, native direct/radius
+damage dispatch after switching weapons, and two projectiles sharing a source.
+Native pose captures cover the five requested weapons. Initial fixture
+errors (deferred PostBeginPlay, PSprite invoker, observing before actor Tick and save path prefix)
+were corrected before recording passing evidence. Independent same-model review
+also identified and corrected implementation defects; it was not DeepSeek review.
+
+Static validator/build and final source hashes accompany assets/validation_43626.
+No author gameplay acceptance is claimed. CA-43626-COMBAT-01 and
+CA-43626-THRUST-01 are outstanding. Linked PR delivery does not close acceptance.
+
+Author acceptance, 2026-09-30: the author explicitly confirmed that all tests
+passed and requested issue #37 closure and PR #58 merge. CA-43626-COMBAT-01
+and CA-43626-THRUST-01 (both originating in 4.36.26 / #37) are therefore passed
+without reported qualifications, including combat behavior and the five thrusts'
+visual motion/framing. Their entries were removed from pending_test.txt; the
+tracked queue is now empty. The evidence above retains its pre-acceptance status
+as a historical test snapshot. This acceptance update changes no runtime code
+and retains version 4.36.26; #16/#17 integration/export remain separate.
+
 
 ## 4.36.25 — Mansion enclosure and architectural detail (#36)
 
@@ -19224,4 +19269,3 @@ Brief evidence from the author to accept 0h:
 
 Later note: the migration was accepted by the author; the previous manual steps are
 preserved as a history of that delivery.
-

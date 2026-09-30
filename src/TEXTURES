@@ -5427,3 +5427,23 @@ Sprite "CAWKA0", 1024, 1536
     Offset 512, 1536
     Patch "graphics/caelum/tarot/ca_tarot_60.png", 0, 0
 }
+
+// #37: daga modular con las mismas fuentes y agarre de la vista previa.
+Sprite "D011A0", 320, 200
+{
+    NoTrim
+    Offset 235, 158
+    Patch "sprites/caelum/first_person/v1/dagger/F011A0.png", 0, 0
+}
+Sprite "D012A0", 320, 200
+{
+    NoTrim
+    Offset 235, 158
+    Patch "sprites/caelum/first_person/v1/dagger/F012A0.png", 0, 0
+}
+Sprite "D013A0", 320, 200
+{
+    NoTrim
+    Offset 235, 158
+    Patch "sprites/caelum/first_person/v1/dagger/F013A0.png", 0, 0
+}

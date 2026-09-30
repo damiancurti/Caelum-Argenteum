@@ -143,7 +143,7 @@ class CaelumBull : CaelumCombatActor
     Melee:
         // Conserva la embestida y restaura la cornada directa al final del
         // avance. Sus 45 puntos son la base previa a Fuerza, masa y defensas.
-        BULL F 3 A_FaceTarget;
+        BULL F 3 A_CaelumBeginResourceAttack(CaelumAttackRules.NaturalAir());
         BULL G 5 A_CaelumBeginBullCharge;
         BULL G 0 A_CaelumProfiledMeleeAttack(
             CaelumConstants.BULL_GORE_BASE_DAMAGE

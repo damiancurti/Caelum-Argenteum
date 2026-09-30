@@ -54,7 +54,7 @@ class CaelumGiantRat : CaelumCombatActor
         RATG A 1;
         Goto See;
     Melee:
-        RATG D 6 A_FaceTarget;
+        RATG D 6 A_CaelumBeginResourceAttack(CaelumAttackRules.NaturalAir());
         RATG D 0 A_CaelumMeleeAttack(60);
         RATG A 8;
         Goto See;

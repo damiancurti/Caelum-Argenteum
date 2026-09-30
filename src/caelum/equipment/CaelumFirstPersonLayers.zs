@@ -330,6 +330,15 @@ class CaelumFirstPersonLayerFrames : Actor
     FlailChain_3:
         GFC3 A -1;
         Stop;
+    Weapon_3_1_0:
+        D011 A -1;
+        Stop;
+    Weapon_3_2_0:
+        D012 A -1;
+        Stop;
+    Weapon_3_3_0:
+        D013 A -1;
+        Stop;
     }
 }
 
@@ -337,9 +346,56 @@ class CaelumFirstPersonLayers : Object play
 {
     const FLAIL_HANDLE_ANGLE = -29.5;
 
+    static Vector2 Grip(int kind)
+    {
+        bool ranged=kind==2 || kind==14 || kind==15 || kind==16;
+        bool bow=kind==14 || kind==15;
+        bool large=kind==10 || kind==11 || kind==12;
+        bool rightLeaning=kind==4 || kind==5 || kind==7 || kind==11 || kind==12;
+        return bow?(141,160):ranged?(165,210):kind==10?(235,182):kind==12?(222,180)
+            :kind==8?(200,158):large?(235,172):(kind==0 || rightLeaning)?(235,164):(235,158);
+    }
+
+    static Vector2 BladeAxis(int kind,int tier)
+    {
+        // Puntas medidas sobre el recurso ya existente, relativas al agarre.
+        // Gran espada: coordenadas fuente antes de la escala uniforme.
+        if(kind==10)return (143,-751);
+        if(kind==12)return (-9,-46);
+        if(kind==5)return (-18,-112);
+        if(kind==3)return (27,-82);
+        return (24,-111);
+    }
+
+    static Vector3 ThrustPose(int kind,int tier,double p)
+    {
+        double lowerEnd=CaelumAttackRules.THRUST_LOWER_END;
+        double turnEnd=CaelumAttackRules.THRUST_TURN_END;
+        double impact=CaelumAttackRules.THRUST_IMPACT;
+        vector2 grip=Grip(kind)+(0,CaelumAttackRules.THRUST_LOWER);
+        vector2 direction=(160,100)-grip;
+        vector2 axis=BladeAxis(kind,tier);
+        double restRotation=(kind==5 || kind==12)?-28:0;
+        double rotation=VectorAngle(axis.X,axis.Y*1.2)-restRotation
+            -VectorAngle(direction.X,direction.Y*1.2);
+        while(rotation<0)rotation+=360;
+        while(rotation>=360)rotation-=360;
+        vector2 advance=direction/direction.Length()*CaelumAttackRules.THRUST_ADVANCE;
+        if(p<lowerEnd)return (0,CaelumAttackRules.THRUST_LOWER*p/lowerEnd,0);
+        if(p<turnEnd)return (0,CaelumAttackRules.THRUST_LOWER,rotation*(p-lowerEnd)/(turnEnd-lowerEnd));
+        if(p<impact)
+        {
+            vector2 offset=(0,CaelumAttackRules.THRUST_LOWER)+advance*((p-turnEnd)/(impact-turnEnd));
+            return (offset.X,offset.Y,rotation);
+        }
+        double back=1-(p-impact)/(1-impact);
+        vector2 offset=((0,CaelumAttackRules.THRUST_LOWER)+advance)*back;
+        return (offset.X,offset.Y,rotation*back);
+    }
+
     static bool Handles(int kind)
     {
-        return kind==0 || kind==2 || kind==4 || kind==5 || kind==7 || kind==8
+        return kind==0 || kind==2 || kind==3 || kind==4 || kind==5 || kind==7 || kind==8
             || kind==10 || kind==11 || kind==12 || kind==14 || kind==15 || kind==16;
     }
 
@@ -353,6 +409,7 @@ class CaelumFirstPersonLayers : Object play
     {
         switch(index)
         {
+            case 27: case 30: case 33: return (235,158);
             case 36: return (85.000000000, 150.000000000);
             case 39: return (85.000000000, 150.000000000);
             case 42: return (85.000000000, 150.000000000);
@@ -572,7 +629,7 @@ class CaelumFirstPersonLayers : Object play
         bool large=kind==10 || kind==11 || kind==12;
         bool rightLeaning=kind==4 || kind==5 || kind==7 || kind==11 || kind==12;
         double size=kind==0?1.20:kind==7?1.18:kind==10?1.38:kind==11?1.32:kind==12?1.13:ranged?0.82:1.0;
-        vector2 grip=bow?(141,160):ranged?(165,210):kind==10?(235,182):kind==12?(222,180):kind==8?(200,158):large?(235,172):(kind==0 || rightLeaning)?(235,164):(235,158);
+        vector2 grip=Grip(kind);
         grip+=(dx,dy);
         if(ranged)
         {
@@ -610,7 +667,7 @@ class CaelumFirstPersonLayers : Object play
         // Su agarre se centra para mantener toda la cadena dentro del encuadre.
         double weaponRotation=rotation+(rightLeaning?-28.0:kind==8?FLAIL_HANDLE_ANGLE:0.0);
         vector2 weaponGrip=grip;
-        if(rightLeaning)weaponGrip+=(4,3);
+        if(rightLeaning)weaponGrip+=Turn((4,3),rotation);
         if(kind==8)Flail(user,tier,grip,rotation,chainTurn);
         else if(kind==7 || kind==12)
             SegmentedWeapon(user,kind,tier,weaponGrip,size,weaponRotation);

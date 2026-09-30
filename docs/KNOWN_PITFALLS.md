@@ -506,6 +506,34 @@ This finding is scoped to GZDoom 4.14.2 FastProjectile, not all actors. The
 game's accepted general collision damage/crushing formulas remain unchanged.
 Author acceptance CA-43613-CATAPULT-01 is pending.
 
+## CA-KP-015 — Input and multi-frame attacks need one absolute clock
+
+Status/evidence: CODE-VERIFIED / ENGINE-VERIFIED.
+First recorded / last checked: 2026-09-30 / 2026-09-30.
+Issue: [#37](https://github.com/damiancurti/Caelum-Argenteum/issues/37).
+Baseline: 29177813 plus the #37 patch; GZDoom 4.14.2, Windows/Vulkan.
+
+In CaelumPlayer, native held-Fire input can observe the previous cooldown
+before the player's normal timer update. Checking only that cached value
+adds a tic between otherwise correctly timed attacks. RefreshWeaponAttackClock
+checks the saved absolute start/deadline before accepting input. Delayed impact
+must retain the remaining cycle instead of starting another full cooldown.
+
+For multi-frame enemy casts, rounding every frame separately stretches fast
+casts. CaelumCombatActor uses cumulative boundaries from the same start tic;
+zero-duration intermediate poses advance immediately. The four tested Eloquence
+levels produce complete cycles of 15, 12, 5 and 1 native tics, respectively.
+
+Reproduction: hold Fire with the fixture's sword for 120 tics; compare successive
+AttackAnimationStartTic values with Ceil(AttackAnimationDurationTics). Seven
+intervals equal 15. Run the Zupay cast at Eloquence 0/33/100/1000 and observe
+after the combat actor's Tick. A watcher created before that actor observes
+stale state and can falsely report an extra tic. Likewise, test setup must run
+after deferred PostBeginPlay initialization.
+
+Evidence and source hashes: [4.36.26 results](../assets/validation_43626/RESULTS.json).
+These isolated engine checks do not constitute author gameplay acceptance.
+
 ## Rules for adding and updating entries
 
 1. Add an entry only for reusable engineering knowledge: a recurring failure, a non-obvious project constraint, or a verified cause/fix likely to prevent future work. Ordinary progress belongs in the issue.

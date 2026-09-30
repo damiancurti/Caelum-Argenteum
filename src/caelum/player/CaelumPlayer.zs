@@ -1742,6 +1742,7 @@ class CaelumPlayer : DoomPlayer
         persistentState.EnsureQuestStateInitialized();
         persistentState.EnsureFactionStateInitialized();
         persistentState.EnsureEquipmentSizeInitialized();
+        persistentState.MigrateWeaponDurability();
         persistentState.EnsureRecipeBookInitialized();
         RefreshCraftingRecipeBookSummary();
         StoreCraftingTaskState(persistentState);
@@ -1844,6 +1845,7 @@ class CaelumPlayer : DoomPlayer
         persistentState.EnsureQuestStateInitialized();
         persistentState.EnsureFactionStateInitialized();
         persistentState.EnsureEquipmentSizeInitialized();
+        persistentState.MigrateWeaponDurability();
         persistentState.EnsureRecipeBookInitialized();
         RefreshCraftingRecipeBookSummary();
         LoadCraftingTaskState(persistentState);
@@ -3663,6 +3665,7 @@ class CaelumPlayer : DoomPlayer
             }
         }
         persistentState.EnsureEquipmentSizeInitialized();
+        persistentState.MigrateWeaponDurability();
         for (int slot = 0; slot < CaelumConstants.ARMOR_SLOT_COUNT; slot++)
         {
             for (int armorType = 0;
@@ -5753,6 +5756,7 @@ class CaelumPlayer : DoomPlayer
             GetPersistentCharacterState(true);
         if (persistentState == null) { return false; }
         persistentState.EnsureEquipmentSizeInitialized();
+        persistentState.MigrateWeaponDurability();
         ApplyCharacterProfile();
         RefreshEquipmentSelectionPreview();
         bool alreadyOwned = persistentState.OwnsArmor(
@@ -5828,6 +5832,7 @@ class CaelumPlayer : DoomPlayer
             GetPersistentCharacterState(true);
         if (persistentState == null) { return false; }
         persistentState.EnsureEquipmentSizeInitialized();
+        persistentState.MigrateWeaponDurability();
         ApplyCharacterProfile();
         RefreshEquipmentSelectionPreview();
         bool alreadyOwned = persistentState.OwnsShield(
@@ -5900,6 +5905,7 @@ class CaelumPlayer : DoomPlayer
             GetPersistentCharacterState(true);
         if (persistentState == null) { return false; }
         persistentState.EnsureEquipmentSizeInitialized();
+        persistentState.MigrateWeaponDurability();
         ApplyCharacterProfile();
         RefreshEquipmentSelectionPreview();
         bool alreadyOwned = persistentState.OwnsWeapon(
@@ -10025,6 +10031,7 @@ class CaelumPlayer : DoomPlayer
             GetPersistentCharacterState(false);
         if (persistentState == null) { return; }
         persistentState.EnsureEquipmentSizeInitialized();
+        persistentState.MigrateWeaponDurability();
         if (!EquipmentSelectionSizeCompatible)
         {
             LastEquipmentAction = CaelumConstants.EQUIPMENT_ACTION_FAILED_SIZE;
@@ -10192,6 +10199,7 @@ class CaelumPlayer : DoomPlayer
             GetPersistentCharacterState(true);
         if (persistentState == null) { return; }
         persistentState.EnsureEquipmentSizeInitialized();
+        persistentState.MigrateWeaponDurability();
 
         if (EquipmentSelectionKind == CaelumConstants.EQUIPMENT_KIND_WEAPON)
         {
@@ -11614,6 +11622,7 @@ class CaelumPlayer : DoomPlayer
             GetPersistentCharacterState(false);
         if (persistentState == null || !EquipmentSelectionOwned) { return; }
         persistentState.EnsureEquipmentSizeInitialized();
+        persistentState.MigrateWeaponDurability();
         if (EquipmentSelectionKind == CaelumConstants.EQUIPMENT_KIND_WEAPON)
         {
             persistentState.StoreOwnedWeaponDurability(
@@ -14520,6 +14529,7 @@ class CaelumPlayer : DoomPlayer
     override void Tick()
     {
         EnsureCurrentAttributeBalance();
+        MigrateWeaponDurability();
         Vector3 prePhysicsVelocity = Vel;
 
         // Los saves antiguos pueden conservar el modelo sin su objeto. Se
@@ -14697,10 +14707,9 @@ class CaelumPlayer : DoomPlayer
         UpdateSealChannel();
         UpdateLucidityPhysicalStun();
         UpdatePainImmobilization();
-        StaffCastCooldownRemaining = Max(
-            0.0,
-            StaffCastCooldownRemaining - 1.0 / TICRATE
-        );
+        if (StaffCastPending && AttackAnimationDurationTics>0 && AttackAnimationMap==level.MapName)
+            StaffCastCooldownRemaining=Max(0.0,(AttackAnimationStartTic+AttackAnimationDurationTics-level.time)/TICRATE);
+        else StaffCastCooldownRemaining=Max(0.0,StaffCastCooldownRemaining-1.0/TICRATE);
         if (StaffCastPending
             && (player == null || player.playerstate != PST_LIVE
                 || health <= 0))
@@ -14711,10 +14720,12 @@ class CaelumPlayer : DoomPlayer
         {
             CompletePendingStaffCast();
         }
-        EquippedWeaponCooldownRemaining = Max(
-            0.0,
-            EquippedWeaponCooldownRemaining - 1.0 / TICRATE
-        );
+        AdvancePhysicalAttackCycle();
+        if (AttackAnimationMap!=level.MapName)AttackAnimationDurationTics=0;
+        if (AttackAnimationDurationTics>0 && !WeaponModel.IsMagicalType(AttackAnimationKind))
+            EquippedWeaponCooldownRemaining=Max(0.0,
+                (AttackAnimationStartTic+AttackAnimationDurationTics-level.time)/TICRATE);
+        else EquippedWeaponCooldownRemaining=Max(0.0,EquippedWeaponCooldownRemaining-1.0/TICRATE);
         Inventory currentCarbineAmmo = FindInventory("CaelumCarbineAmmo");
         CarbineAmmoCount = currentCarbineAmmo != null
             ? currentCarbineAmmo.Amount : 0;
@@ -14998,8 +15009,132 @@ class CaelumPlayer : DoomPlayer
     }
 
     // Fire se enruta por el objeto realmente equipado en la mano habil.
+    int AttackAnimationSerial, AttackAnimationStartTic, AttackAnimationItemId;
+    int AttackAnimationKind;
+    double AttackAnimationDurationTics;
+    bool AttackAnimationSecondary, AttackAnimationSweep;
+    bool PhysicalAttackPending, PendingPhysicalCharged;
+    int PhysicalAttackReleaseTic;
+    String AttackAnimationMap;
+
+    void StartAttackAnimation(double duration, bool secondary, bool sweep=false)
+    {
+        AttackAnimationSerial++;
+        AttackAnimationMap=level.MapName;
+        AttackAnimationStartTic=level.time;
+        AttackAnimationDurationTics=duration;
+        AttackAnimationItemId=ActiveWeaponItemId;
+        AttackAnimationKind=WeaponModel.WeaponType;
+        AttackAnimationSecondary=secondary;
+        AttackAnimationSweep=sweep;
+    }
+
+    void RefreshWeaponAttackClock()
+    {
+        if(AttackAnimationDurationTics<=0 || AttackAnimationMap!=level.MapName)return;
+        double remaining=Max(0.0,(AttackAnimationStartTic+AttackAnimationDurationTics-level.time)/TICRATE);
+        if(WeaponModel.IsMagicalType(AttackAnimationKind))
+        {
+            if(StaffCastPending)
+            {
+                StaffCastCooldownRemaining=remaining;
+                if(remaining<=0)CompletePendingStaffCast();
+            }
+        }
+        else
+        {
+            AdvancePhysicalAttackCycle();
+            EquippedWeaponCooldownRemaining=remaining;
+        }
+    }
+
+    bool BeginPhysicalAttackCycle(bool secondary, bool sweep=false)
+    {
+        RefreshWeaponAttackClock();
+        double duration=GetEquippedAttackDurationTics();
+        if(duration<=0 || PhysicalAttackPending || EquippedWeaponCooldownRemaining>0 || StaffCastPending
+            || WeaponChargeActive || WeaponModel.Durability<=0 || DerivedStats==null) return false;
+        int kind=CaelumCraftingRules.GetCatalogueWeaponForPlayableType(WeaponModel.WeaponType);
+        if(kind<0)return false;
+        bool ranged=IsRangedWeaponType(WeaponModel.WeaponType);
+        double cost=(secondary?CaelumWeaponCatalogue.GetSecondaryAirCost(kind):CaelumWeaponCatalogue.GetPrimaryAirCost(kind))
+            *DerivedStats.AirConsumptionMultiplier;
+        if(sweep)cost*=CaelumConstants.LARGE_SWEEP_AIR_MULTIPLIER;
+        if(WeaponChargedStateActive && !ranged)cost*=CaelumConstants.WEAPON_CHARGED_COST_MULTIPLIER;
+        if(CurrentAir<cost)return false;
+        if(ranged)
+        {
+            // El disparo y su retroceso siguen comenzando juntos.
+            PerformCarbineAttack();
+            if(!LastCarbineFired)return false;
+            StartAttackAnimation(duration,false);
+            return true;
+        }
+        StartAttackAnimation(duration,secondary,sweep);
+        PendingPhysicalCharged=WeaponChargedStateActive;
+        if(PendingPhysicalCharged)ConsumeWeaponChargedState();
+        PhysicalAttackPending=true;
+        double impact=CaelumAttackRules.IsThrust(WeaponModel.WeaponType,secondary)
+            ? CaelumAttackRules.THRUST_IMPACT : CaelumAttackRules.SWING_IMPACT;
+        PhysicalAttackReleaseTic=level.time+int(Ceil(duration*impact));
+        EquippedWeaponCooldownRemaining=duration/TICRATE;
+        MarkCombatActivity();
+        return true;
+    }
+
+    void AdvancePhysicalAttackCycle()
+    {
+        if(!PhysicalAttackPending)return;
+        bool switching=player!=null && player.PendingWeapon!=null && player.PendingWeapon!=WP_NOCHANGE
+            && player.PendingWeapon!=player.ReadyWeapon;
+        if(AttackAnimationMap!=level.MapName || health<=0 || WeaponModel==null || !WeaponModel.Equipped || WeaponModel.Durability<=0
+            || ActiveWeaponItemId!=AttackAnimationItemId || WeaponModel.WeaponType!=AttackAnimationKind
+            || EquipmentMenuOpen || CraftingMenuOpen || CreationWizardOpen || IsPhysicallyImmobilized()
+            || switching || CombatBlockModeActive || CombatChannelModeActive)
+        {
+            PhysicalAttackPending=false;
+            AttackAnimationDurationTics=0;
+            return;
+        }
+        if(level.time<PhysicalAttackReleaseTic)return;
+        PhysicalAttackPending=false;
+        double remaining=EquippedWeaponCooldownRemaining;
+        WeaponChargedStateActive=PendingPhysicalCharged;
+        if(AttackAnimationSecondary && AttackAnimationKind==CaelumConstants.WEAPON_TYPE_JAVELIN
+            && !HasJavelinMeleeFallbackTarget())PerformJavelinThrow();
+        else PerformDebugSwordAttack(AttackAnimationSecondary,AttackAnimationSweep);
+        WeaponChargedStateActive=false;
+        // Los callbacks legados pueden asignar recuperación; el ciclo ya la
+        // fijó al empezar y no debe pagar una segunda duración después de golpear.
+        EquippedWeaponCooldownRemaining=remaining;
+    }
+
+    double GetEquippedAttackDurationTics()
+    {
+        if (WeaponModel == null || DerivedStats == null || !WeaponModel.Equipped) return -1;
+        double gloves = ArmorModel == null ? 0 : ArmorModel.GetWeight(CaelumConstants.ARMOR_SLOT_HANDS);
+        // El arma-guante y una pieza de armadura son objetos distintos. No se
+        // vuelve a sumar el peso de WeaponModel como si fuera otro guante.
+        double factor = WeaponModel.IsMagicalType(WeaponModel.WeaponType)
+            ? DerivedStats.CastingDurationMultiplier : DerivedStats.AttackDurationMultiplier;
+        return CaelumAttackRules.Duration(factor, WeaponModel.GetWeight(), gloves, DerivedStats.CarryCapacity);
+    }
+
+    void MigrateWeaponDurability(int revision = 1)
+    {
+        if (WeaponModel != null) WeaponModel.MigrateDurability(revision);
+        let persistent = GetPersistentCharacterState(false);
+        if (persistent != null) persistent.MigrateWeaponDurability(revision);
+        for (Inventory cursor=Inv; cursor!=null; cursor=cursor.Inv)
+        {
+            let item=CaelumEquipmentItem(cursor);
+            if (item!=null) item.MigrateWeaponDurability(revision);
+        }
+    }
+
     void PerformEquippedWeaponPrimaryAttack()
     {
+        RefreshWeaponAttackClock();
         if (WeaponModel == null || !WeaponModel.Equipped
             || WeaponModel.Durability <= 0
             || EquipmentMenuOpen || CreationWizardOpen
@@ -15026,7 +15161,7 @@ class CaelumPlayer : DoomPlayer
             && CaelumWeaponCatalogue.GetFamily(catalogueWeapon)
                 == CaelumConstants.CATALOGUE_FAMILY_RANGED)
         {
-            PerformCarbineAttack();
+            BeginPhysicalAttackCycle(false);
             return;
         }
         switch (WeaponModel.WeaponType)
@@ -15038,12 +15173,7 @@ class CaelumPlayer : DoomPlayer
                 PerformDebugStaffAttack(false);
                 break;
             default:
-                PerformDebugSwordAttack(false);
-                if (LastMeleeHadEnoughAir)
-                {
-                    EquippedWeaponCooldownRemaining =
-                        WeaponModel.GetAttackTics() / double(TICRATE);
-                }
+                BeginPhysicalAttackCycle(false);
                 break;
         }
     }
@@ -15059,6 +15189,7 @@ class CaelumPlayer : DoomPlayer
     // triple Aire. Los guanteletes siguen usando su bloqueo contextual.
     void PerformLargeWeaponSweep(int weaponType)
     {
+        RefreshWeaponAttackClock();
         if (!SupportsLargeWeaponSweep(weaponType)
             || EquipmentMenuOpen || CreationWizardOpen || CraftingMenuOpen
             || CombatChannelModeActive || StaffCastPending || WeaponChargeActive
@@ -15068,9 +15199,7 @@ class CaelumPlayer : DoomPlayer
             || WeaponModel == null || !WeaponModel.Equipped
             || WeaponModel.Durability <= 0) return;
         CancelCombatBlockMode();
-        PerformDebugSwordAttack(false, true);
-        if (LastMeleeHadEnoughAir)
-            EquippedWeaponCooldownRemaining = WeaponModel.GetAttackTics() / double(TICRATE);
+        BeginPhysicalAttackCycle(false,true);
     }
 
     // AltFire pertenece exclusivamente al arma activa. El escudo ya no
@@ -15078,6 +15207,7 @@ class CaelumPlayer : DoomPlayer
     // independiente.
     void PerformEquippedWeaponSecondaryAttack()
     {
+        RefreshWeaponAttackClock();
         if (WeaponModel == null || !WeaponModel.Equipped
             || WeaponModel.Durability <= 0
             || EquipmentMenuOpen || CreationWizardOpen
@@ -15126,19 +15256,14 @@ class CaelumPlayer : DoomPlayer
         if (catalogueWeapon == CaelumConstants.CATALOGUE_WEAPON_JAVELIN
             && !HasJavelinMeleeFallbackTarget())
         {
-            PerformJavelinThrow();
+            BeginPhysicalAttackCycle(true);
             return;
         }
 
         if (catalogueWeapon >= 0
             && CaelumWeaponCatalogue.GetSecondaryDamage(catalogueWeapon) > 0.0)
         {
-            PerformDebugSwordAttack(true);
-            if (LastMeleeHadEnoughAir)
-            {
-                EquippedWeaponCooldownRemaining =
-                    WeaponModel.GetAttackTics() / double(TICRATE);
-            }
+            BeginPhysicalAttackCycle(true);
         }
     }
 
@@ -15221,7 +15346,9 @@ class CaelumPlayer : DoomPlayer
         double dealtDamage,
         int weaponType,
         int tier,
-        int equipmentSize
+        int equipmentSize,
+        CaelumEquipmentItem sourceItem = null,
+        bool projectileWear = false
     )
     {
         LastWeaponDurabilityLoss = 0;
@@ -15233,27 +15360,14 @@ class CaelumPlayer : DoomPlayer
             return;
         }
 
-        CaelumEquipmentItem weapon =
-            FindNativeEquipmentItemById(ActiveWeaponItemId);
-        if (weapon == null || !weapon.Equipped || weapon.InMagicBox
-            || weapon.EquipmentKind
-                != CaelumConstants.EQUIPMENT_KIND_WEAPON
+        CaelumEquipmentItem weapon = projectileWear ? sourceItem
+            : FindNativeEquipmentItemById(ActiveWeaponItemId);
+        // Un proyectil viejo sin identidad no debe desgastar otra copia.
+        if (weapon == null || weapon.EquipmentKind != CaelumConstants.EQUIPMENT_KIND_WEAPON
             || weapon.ItemType != weaponType || weapon.Tier != tier
-            || weapon.EquipmentSize != equipmentSize)
-        {
-            weapon = FindEquippedNativeEquipmentItem(
-                CaelumConstants.EQUIPMENT_KIND_WEAPON,
-                weaponType, -1, tier, equipmentSize,
-                WeaponModel != null
-                    && WeaponModel.IsMagicalType(weaponType)
-                    ? WeaponModel.EssenceType : -1
-            );
-        }
-        if (weapon != null) { ActiveWeaponItemId = weapon.ItemId; }
-        if (weapon == null || weapon.Durability <= 0 || weapon.InMagicBox)
-        {
-            return;
-        }
+            || weapon.EquipmentSize != equipmentSize) return;
+        weapon.MigrateWeaponDurability();
+        if (weapon.Durability <= 0) return;
 
         double eligibleDamage = dealtDamage
             * Max(0.0, ArmorDurabilityDamageMultiplier);
@@ -15284,7 +15398,8 @@ class CaelumPlayer : DoomPlayer
 
         weapon.Durability -= LastWeaponDurabilityLoss;
 
-        bool isActiveWeapon = WeaponModel != null
+        bool isActiveWeapon = weapon.Owner == self && weapon.ItemId == ActiveWeaponItemId
+            && weapon.Equipped && WeaponModel != null
             && WeaponModel.Equipped
             && WeaponModel.WeaponType == weaponType
             && WeaponModel.Tier == tier
@@ -15303,7 +15418,7 @@ class CaelumPlayer : DoomPlayer
 
         CaelumPersistentCharacterState persistentState =
             GetPersistentCharacterState(false);
-        if (persistentState != null)
+        if (persistentState != null && weapon.Owner == self)
         {
             persistentState.StoreOwnedWeaponDurability(
                 weaponType, tier, equipmentSize, weapon.Durability
@@ -15334,6 +15449,7 @@ class CaelumPlayer : DoomPlayer
 
     void PerformJavelinThrow()
     {
+        if (GetEquippedAttackDurationTics() <= 0) return;
         if (WeaponModel == null || !WeaponModel.Equipped
             || WeaponModel.WeaponType != CaelumConstants.WEAPON_TYPE_JAVELIN
             || WeaponModel.Durability <= 0 || DerivedStats == null)
@@ -15504,7 +15620,7 @@ class CaelumPlayer : DoomPlayer
 
         CurrentAir = Max(0.0, CurrentAir - airCost);
         UpdateAirStateEffects();
-        EquippedWeaponCooldownRemaining = WeaponModel.GetAttackTics()
+        EquippedWeaponCooldownRemaining = GetEquippedAttackDurationTics()
             / double(TICRATE);
         MarkCombatActivity();
         RefreshCarriedInventorySummary();
@@ -15659,6 +15775,7 @@ class CaelumPlayer : DoomPlayer
 
     void RequestWeaponReloadOrCharge(int requestedWeaponType, bool isMagic)
     {
+        if (PhysicalAttackPending) return;
         if (IsRangedWeaponType(requestedWeaponType))
         {
             RequestRangedReload(requestedWeaponType);
@@ -15796,6 +15913,7 @@ class CaelumPlayer : DoomPlayer
 
     void PerformCarbineAttack()
     {
+        if (GetEquippedAttackDurationTics() <= 0) return;
         LastCarbineFired = false;
         LastCarbineHadEnoughAir = false;
         LastCarbineHadAmmo = false;
@@ -15977,7 +16095,7 @@ class CaelumPlayer : DoomPlayer
         CurrentAir = Max(0.0, CurrentAir - airCost);
         UpdateAirStateEffects();
         LastCarbineFired = true;
-        EquippedWeaponCooldownRemaining = WeaponModel.GetAttackTics()
+        EquippedWeaponCooldownRemaining = GetEquippedAttackDurationTics()
             / double(TICRATE);
         MarkCombatActivity();
     }
@@ -15986,6 +16104,7 @@ class CaelumPlayer : DoomPlayer
     {
         if (!StaffCastPending) { return; }
         StaffCastPending = false;
+        AttackAnimationDurationTics=0;
         StaffCastCooldownRemaining = 0.0;
         PendingStaffAnimaCost = 0.0;
         PendingStaffChargedAttack = false;
@@ -16073,6 +16192,7 @@ class CaelumPlayer : DoomPlayer
 
     void PerformDebugStaffAttack(bool secondaryAttack)
     {
+        if (GetEquippedAttackDurationTics() <= 0) return;
         LastStaffHit = false;
         LastStaffCriticalAttempted = false;
         LastStaffCriticalHit = false;
@@ -16137,9 +16257,9 @@ class CaelumPlayer : DoomPlayer
         PendingStaffAnimaCost = animaCost;
         PendingStaffChargedAttack = chargedAttack;
         if (chargedAttack) { ConsumeWeaponChargedState(); }
-        StaffCastCooldownRemaining = WeaponModel.GetAttackTics()
-            * DerivedStats.CastingDurationMultiplier / double(TICRATE);
+        StaffCastCooldownRemaining = GetEquippedAttackDurationTics() / double(TICRATE);
         PendingStaffCastTotalSeconds = StaffCastCooldownRemaining;
+        StartAttackAnimation(PendingStaffCastTotalSeconds*TICRATE,secondaryAttack);
         MarkCombatActivity();
     }
 
@@ -17517,6 +17637,7 @@ class CaelumPlayer : DoomPlayer
     // is live; status effects and the final Caelum armor stage remain separate.
     void PerformDebugSwordAttack(bool secondaryAttack, bool areaSweep = false)
     {
+        if (GetEquippedAttackDurationTics() <= 0) return;
         LastMeleeCalculatedDamage = 0.0;
         LastMeleeActualDamage = 0;
         LastMeleeSweepHitCount = 0;
@@ -19414,6 +19535,7 @@ class CaelumPlayer : DoomPlayer
             GetPersistentCharacterState(true);
         if (persistentState == null) { return; }
         persistentState.EnsureEquipmentSizeInitialized();
+        persistentState.MigrateWeaponDurability();
 
         int startingSize = CaelumEquipmentRules.GetDefaultSizeForCharacterTier(
             CharacterProfile.GetSizeTier()

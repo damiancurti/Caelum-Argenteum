@@ -1,0 +1,156 @@
+{
+    "version":  "4.36.26",
+    "issue":  37,
+    "date":  "2026-09-30",
+    "baseline_commit":  "291778130b2cb02f444281b8b3f19218b460f13b",
+    "branch":  "issue-37-attack-cadence",
+    "engine":  "GZDoom 4.14.2, Windows, Vulkan",
+    "package_sha256":  "4badf74d071f95293f4db9461e47c458309567f9c489ac10be72fd828a753136",
+    "package_files":  6126,
+    "static":  "PASS: validate_project.py, no errors; git diff --check",
+    "build":  "PASS: build_dev.ps1",
+    "native_checks":  {
+                          "rollback":  "PASS: original save loads original baseline",
+                          "held_fire_intervals":  7,
+                          "pending_thrust_payments":  1,
+                          "punch_and_damage_dispatch":  10,
+                          "held_fire_tics":  15,
+                          "migration":  "PASS: inventory 357-\u003e3570, world 251-\u003e2510, encoded 123-\u003e1230, model 357-\u003e3570, armor 37 unchanged, existing SiegeWithdrawal preserved",
+                          "family_cycles":  92,
+                          "interruption_identity":  9,
+                          "enemy_cycles":  10,
+                          "rule_matrix":  319,
+                          "enemy_wait_reload":  10,
+                          "magic_eloquence_cycles":  {
+                                                         "eloquence_0":  15,
+                                                         "eloquence_33":  12,
+                                                         "eloquence_100":  5,
+                                                         "eloquence_1000":  1
+                                                     },
+                          "migrated_reload":  "PASS: no second multiplication"
+                      },
+    "thrust":  {
+                   "advance_units":  60,
+                   "weapons":  [
+                                   "dagger primary",
+                                   "machete secondary",
+                                   "sword secondary",
+                                   "greatsword secondary",
+                                   "halberd secondary"
+                               ],
+                   "rotation":  "Counterclockwise about the grip toward center in the 320x200 weapon plane",
+                   "phase_percent":  [
+                                         16,
+                                         16,
+                                         48,
+                                         20
+                                     ],
+                   "impact_percent":  80,
+                   "lower_units":  30
+               },
+    "scope_and_limits":  [
+                             "Engine checks and native pose inspection are not author acceptance.",
+                             "Rule/cycle logs precede only two diagnostic release-label corrections; final package verified by pending-load, enemy/held-fire, migration and damage-dispatch runs.",
+                             "Damage dispatch checks exercise DamageMobj and native radius callbacks with prepared 1000 damage, unit wear modifier and initialized fixture item revision; they are not a complete projectile-flight collision suite.",
+                             "Legacy in-flight projectiles without a source pointer skip wear rather than guess an item.",
+                             "Unspecified resident/companion attack profiles retain legacy rules.",
+                             "Legacy rollback uses the untouched original save and original package.",
+                             "Pose captures use T1 art at held cycle phases; cross-tier feel/framing remains an author check.",
+                             "Development IWADs, executables, saves and QA fixtures remain local and are not distributed.",
+                             "Early fixture failures were corrected: initialization order, PSprite invoker, observer order and load wait/path; only verified logs are included."
+                         ],
+    "reproducibility":  [
+                            "Local isolated launcher: GZDoom -noautoload -nosound -window, isolated config/save directory, MAP03 except baseline/migration MAP01; load project PK3 plus local QA actor definitions.",
+                            "Rule matrix: iterate 20 kinds x 3 tiers x 5 sizes and compare shared duration/durability to approved formula; migration is checked twice and reversed.",
+                            "Cycle observer: accept each family attack, check release deadline and Ceil(duration) end; held input uses native +attack for 120 tics.",
+                            "Enemy observer: initialize after PostBeginPlay, drain Air/Anima, verify idle then one payment after regeneration; Zupay release at48/recovery to80.",
+                            "Save an 80%-release thrust before impact; load and verify exactly one resource deduction.",
+                            "Legacy fixture initialized weapon/model357, world251, encoded args124 and armor37 before saving with baseline; migration and reload use the new build."
+                        ],
+    "author_pending":  [
+                           "CA-43626-COMBAT-01",
+                           "CA-43626-THRUST-01"
+                       ],
+    "review":  "Independent same-model review; no DeepSeek available",
+    "runs":  [
+                 {
+                     "console_commands":  "wait 30; give QA37Checks; wait 5; give QA37Edges; wait 5; quit",
+                     "log":  "final_rules.txt"
+                 },
+                 {
+                     "console_commands":  "wait 30; give QA37RunTimeline; wait 430; give QA37RunSpeed; wait 85; give QA37RunPendingSave; wait 10; save issue37_pending_final; wait 115; quit",
+                     "log":  "final_cycles.txt"
+                 },
+                 {
+                     "console_commands":  "wait 20; load issue37_pending_final.zds; wait 120; quit",
+                     "log":  "final_pending_reload.txt"
+                 },
+                 {
+                     "console_commands":  "wait 30; give QA37RunEnemies; wait 90; give QA37RunHeld; wait 3; +attack; wait 120; -attack; wait 3; quit",
+                     "log":  "final_enemies_held.txt"
+                 },
+                 {
+                     "console_commands":  "wait 20; load issue37_legacy.zds; wait 35; give QA37Migration; wait 10; quit",
+                     "log":  "final_migration_verified.txt"
+                 },
+                 {
+                     "console_commands":  "wait 20; load issue37_migrated.zds; wait 5; give QA37Migration; wait 5; quit",
+                     "log":  "migration_reload.txt"
+                 },
+                 {
+                     "console_commands":  "wait 20; load issue37_legacy.zds; wait 5; give QA37LegacyRollback; wait 5; quit",
+                     "log":  "rollback.txt"
+                 },
+                 {
+                     "console_commands":  "wait 20; load issue37_waiting.zds; wait 110; quit",
+                     "log":  "waiting_reload.txt"
+                 },
+                 {
+                     "console_commands":  "wait 30; give QA37Dispatch; wait 5; quit",
+                     "log":  "dispatch_pass.txt"
+                 },
+                 {
+                     "console_commands":  "wait 30; give QA37ShowPose; give QA37ShowPose; give QA37ShowPose; give QA37ShowPose; give QA37ShowPose; give QA37ShowPose; give QA37ShowPose; give QA37ShowPose; give QA37ShowPose; give QA37ShowPose; give QA37ShowPose; give QA37ShowPose; give QA37ShowPose; give QA37ShowPose; give QA37ShowPose; give QA37ShowPose; give QA37ShowPose; give QA37ShowPose; give QA37ShowPose; give QA37ShowPose; wait 8; screenshot build/issue37_halberd_80.png; wait 5; quit",
+                     "log":  "final_halberd.txt"
+                 }
+             ],
+    "pose_images":  [
+                        "sword_0",
+                        "sword_16",
+                        "sword_32",
+                        "sword_80",
+                        "dagger_0",
+                        "dagger_80",
+                        "machete_0",
+                        "machete_32",
+                        "machete_80",
+                        "greatsword_0",
+                        "greatsword_32",
+                        "greatsword_80",
+                        "halberd_0",
+                        "halberd_32",
+                        "halberd_80"
+                    ],
+    "source_sha256":  {
+                          "src/caelum/player/CaelumPlayer.zs":  "0c72fe2105ea5b7f7e6d45b14b69d5b6d77a450e921b307e030f8d5658cc3a47",
+                          "src/caelum/world/CaelumSewerMaze.zs":  "628e9855a25a3fbfe60201240d7b8b7c646b753f426d780d0d1a025c62a34e8d",
+                          "src/caelum/equipment/CaelumPlayableWeapons.zs":  "702b2c5656f5e1d0dbc64208adcb0f0db760847df093c941793fcb27e10a4c4e",
+                          "src/caelum/actors/CaelumFolkloreCharacters.zs":  "48cd8081d916894c020d2143d0f8552c4113a16aaaa8aed1364826c4ba39dc0c",
+                          "src/caelum/equipment/CaelumAttackRules.zs":  "feb098f0b14fda2d8bb372eb82fdadd899da556a26dc8532db2876ce6ebd150b",
+                          "src/caelum/actors/CaelumCombatActor.zs":  "12b9b04af416f315d135a2be3302a1af5fb7f118eb105d2296c2284454d44256",
+                          "src/caelum/equipment/CaelumFirstPersonView.zs":  "2a1daa378ff62d5480d2c8ae7976cf81cf30a95b3ff4c2433d95ef91f9752d51",
+                          "src/caelum/actors/CaelumGiantRat.zs":  "c8392d756a47c41ad392d8f2d7e9c15874dbb09f7387ce63eb0d13c9487b6128",
+                          "src/caelum/actors/CaelumActorProjectile.zs":  "27867b5193777a9a282b4a7665030fc528cfc755c3777aaf46ed4debe86315c1",
+                          "src/caelum/world/CaelumPhysicalHazards.zs":  "dc97e11ba21b1c63119174580c82c3a232634513d35df09eabf6a9f3800712a5",
+                          "src/TEXTURES":  "8040951c0abdd39da830d3d9dbcf0b45fa34e0a3cac0f762922c2138e140b2d9",
+                          "src/caelum/equipment/CaelumEquipmentPickups.zs":  "ff6a02d103ec122f7ed2fd866c6c59d74cacec89730d679a3431bfb0c5bc5cbc",
+                          "src/caelum/equipment/CaelumUnarmedWeapon.zs":  "503beae3fc8a94f1e7df9461b7d29fd919370c845f600956ee64f89e83c58e96",
+                          "src/ZSCRIPT":  "8c654ee69167c19e8cae19ab34beae71dc2f8f1838e1dfa5505352850144539b",
+                          "src/caelum/actors/CaelumBull.zs":  "4ea992242a3ad0909a0f7ac35f439a62c17ce973d0cc22b92cb3562e8c897951",
+                          "src/caelum/equipment/CaelumFirstPersonLayers.zs":  "e5470662de8e78be3afe3a7674c3f697f3d70ae4fe3a5e4b07f6f802cd6d4d9f",
+                          "src/caelum/equipment/CaelumPersistentCharacterState.zs":  "06826209fd8ea9341ec5693fcf9c097c4a3089b6ee24ddb56971ee6054b912ce",
+                          "src/caelum/statistics/CaelumDerivedStats.zs":  "1ec5e150dcefa534430aa3628670127bd5363a204ffc3aa5f04de516a2a96c80",
+                          "src/caelum/equipment/CaelumWeaponModel.zs":  "728390d55baa3249571b81a56f60fd61bf1c11782e8baa9869789532c97dee13",
+                          "src/caelum/equipment/CaelumWeaponCatalogue.zs":  "9151e35eb4e8099d3044986528765cbdc4f6e309c906273c6b9dd8274ce7d10f"
+                      }
+}
