@@ -273,6 +273,26 @@ class CaelumPersistentCharacterState : Inventory
     double StoredThirst;
     double StoredSleep;
 
+    int WeaponDurabilityRevision;
+
+    override void PostBeginPlay()
+    {
+        Super.PostBeginPlay();
+        WeaponDurabilityRevision = CaelumAttackRules.DURABILITY_REVISION;
+    }
+
+    void MigrateWeaponDurability(int revision = 1)
+    {
+        if (WeaponDurabilityRevision == revision) return;
+        int scale = CaelumAttackRules.DURABILITY_SCALE;
+        WeaponDurability = revision == 1 ? WeaponDurability * scale : WeaponDurability / scale;
+        MainM00StarterDurability = revision == 1 ? MainM00StarterDurability * scale : MainM00StarterDurability / scale;
+        for (int i=0; i<300; i++)
+            SizedOwnedWeaponDurability[i] = revision == 1 ? SizedOwnedWeaponDurability[i] * scale
+                : SizedOwnedWeaponDurability[i] / scale;
+        WeaponDurabilityRevision = revision;
+    }
+
     Default
     {
         Inventory.Amount 1;

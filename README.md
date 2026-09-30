@@ -4,8 +4,16 @@ An independent dark fantasy FPS-RPG inspired by nineteenth-century Argentina.
 Author and game designer: **Damian Curti**. Development target: **GZDoom 4.14.2**
 on Windows 11. The final game is intended to be independent of Doom assets.
 
-**Current release: 4.36.25.** Obtain and update the complete repository, validate
+**Current release: 4.36.26.** Obtain and update the complete repository, validate
 it, then rebuild with `run_dev.bat` as described below.
+
+Issue [#37](https://github.com/damiancurti/Caelum-Argenteum/issues/37) implements
+the approved weapon/glove-weight attack clock, full-duration animations and five
+grip-centered thrust variants, weapon durability ×10 with proportional save
+migration, exact-item projectile wear, enemy resource recovery and the 80-tic
+Zupay slam. Rules and limits are in SYSTEMS; evidence is in
+`assets/validation_43626`. Combat and visual author acceptance remain pending
+in `pending_test.txt`. Keep an original save and its original build for rollback.
 
 ## License
 

@@ -514,19 +514,15 @@ class CaelumFirstPersonView : Object play
         }
         bool ranged = user.IsRangedWeaponType(kind);
         bool magic = user.WeaponModel.IsMagicalType(kind);
-        // La recuperación sólo crece cuando el callback real acepta el golpe
-        // o crea el proyectil. Una pulsación rechazada no genera esta señal.
-        if (user.EquippedWeaponCooldownRemaining > PreviousCooldown + 0.0001)
-        {
-            AttackFrame=0;
-            AttackLength=Min(8,Max(1,int(Ceil(user.EquippedWeaponCooldownRemaining*TICRATE))));
-            AttackSide=(user.player.cmd.buttons & BT_ALTATTACK) != 0 ? 2 : 1;
-        }
-        if (magic && user.LastStaffCastCompleted && !PreviousCastCompleted)
-        { AttackFrame=0; AttackLength=8; AttackSide=1; }
-        PreviousCooldown=user.EquippedWeaponCooldownRemaining;
-        PreviousCastCompleted=user.LastStaffCastCompleted;
-        bool attack = !outgoing && AttackLength > 0 && AttackFrame < AttackLength;
+        // La vista lee el reloj del ataque aceptado: no lo reinicia al abrir
+        // un overlay, cambiar FPS ni volver de un guardado.
+        double elapsed=Max(0.0,level.time-user.AttackAnimationStartTic);
+        double duration=user.AttackAnimationDurationTics;
+        bool attack=!outgoing && duration>0 && elapsed<duration
+            && user.AttackAnimationItemId==ItemId && user.AttackAnimationKind==kind;
+        double progress=duration>0 ? Clamp(elapsed/duration,0.0,1.0):0;
+        AttackFrame=int(elapsed);AttackLength=int(Ceil(duration));
+        AttackSide=user.AttackAnimationSecondary?2:1;
         bool blocking = !outgoing && user.CombatBlockModeActive && user.HasActiveBlockSource();
         bool reloading = ranged && user.RangedReloadActive && user.RangedReloadWeaponType == kind;
         int magazine = ranged ? user.GetRangedMagazineCount(kind) : 0;
@@ -560,8 +556,13 @@ class CaelumFirstPersonView : Object play
         double dx=0, dy=0, rotation=0;
         if (attack && !blocking)
         {
-            int step = Clamp(AttackFrame*8/Max(1,AttackLength),0,7);
-            if (!ranged && !magic && kind != CaelumConstants.WEAPON_TYPE_GIANT_GAUNTLETS)
+            int step = Clamp(int(progress*8),0,7);
+            if(CaelumAttackRules.IsThrust(kind,user.AttackAnimationSecondary))
+            {
+                vector3 pose=CaelumFirstPersonLayers.ThrustPose(kind,Tier,progress);
+                dx=pose.X;dy=pose.Y;rotation=pose.Z;
+            }
+            else if (!ranged && !magic && kind != CaelumConstants.WEAPON_TYPE_GIANT_GAUNTLETS)
             {
                 static const double xs[] = {18,36,5,-46,-81,-54,-27,-7};
                 static const double ys[] = {-17,-36,-33,-21,-11,-7,-4,-1};
@@ -575,7 +576,7 @@ class CaelumFirstPersonView : Object play
                 rotation = (ranged ? -2.0 : 4.0)*pulse;
             }
         }
-        if (magic && user.StaffCastPending) { dy-=8; rotation-=4; }
+
         if (user.WeaponChargeActive || user.WeaponChargedStateActive) { dy-=5; rotation-=3; }
         if (blocking)
         {
@@ -588,14 +589,12 @@ class CaelumFirstPersonView : Object play
         if(CaelumFirstPersonLayers.Handles(kind))
         {
             CaelumFirstPersonLayers.Draw(user,kind,Tier,phase,baseView.x+dx,lower+dy,rotation,
-                kind==8 && attack && !blocking ? (AttackFrame+1)*360.0/Max(1,AttackLength) : 0.0);
-            if(attack)AttackFrame++;
+                kind==8 && attack && !blocking ? progress*360.0 : 0.0);
             return;
         }
         user.A_ClearOverlays(46,49); user.A_ClearOverlays(51,53);
         view.x=160 + baseView.x + dx;
         view.y=32 + Max(0.0,baseView.y-WEAPONTOP) + dy;
         view.rotation=rotation;
-        if (attack) AttackFrame++;
     }
 }

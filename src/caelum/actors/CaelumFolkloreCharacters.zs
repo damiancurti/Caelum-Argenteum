@@ -501,15 +501,15 @@ class CaelumMandinga : CaelumFolkloreCombatActor
         MNDG A 1;
         Goto See;
     Melee:
-        MNDG D 6 A_FaceTarget;
+        MNDG D 6 A_CaelumBeginResourceAttack(CaelumWeaponCatalogue.GetPrimaryAirCost(CaelumConstants.CATALOGUE_WEAPON_MACHETE), CaelumConstants.WEAPON_TYPE_MACHETE, false, 0.6);
         MNDG E 0 A_CaelumProfiledMeleeAttack(
             CaelumConstants.MANDINGA_MACHETE_BASE_DAMAGE
         );
-        MNDG E 4;
+        MNDG E 4 A_CaelumWeaponRecovery;
         Goto See;
     Missile:
-        // 18 tics: ficha T1 de bastón redondeada con Elocuencia 6.
-        MNDG D 14 A_FaceTarget;
+        // Conserva el punto proporcional del lanzamiento; duración común #37.
+        MNDG D 14 A_CaelumBeginResourceAttack(0, CaelumConstants.WEAPON_TYPE_STAFF, true, 14.0/18.0);
         MNDG E 0 A_CaelumSpawnTierOneMagicProjectile(
             "CaelumActorSimpleElementalProjectile",
             0.65,
@@ -517,7 +517,7 @@ class CaelumMandinga : CaelumFolkloreCombatActor
             CaelumConstants.ESSENCE_FIRE,
             false
         );
-        MNDG E 4;
+        MNDG E 4 A_CaelumWeaponRecovery;
         Goto See;
     Attack:
         Goto Melee;
@@ -675,20 +675,20 @@ class CaelumZupayColossus : CaelumFolkloreCombatActor
     Melee:
         TNT1 A 0 A_StopSound(CHAN_7);
         // El golpe conserva el mismo punto proporcional de impacto, pero su
-        // ciclo completo pasa de 10 a 20 tics.
-        ZUPY D 12 A_FaceTarget;
+        // ciclo completo aprobado por #37 pasa de 20 a 80 tics.
+        ZUPY D 48 A_CaelumBeginResourceAttack(CaelumAttackRules.SlamAir(), -1, false, 0, true);
         ZUPY E 0 A_CaelumGroundSlam(
             CaelumConstants.ZUPAY_SLAM_BASE_DAMAGE,
             CaelumConstants.ZUPAY_SLAM_RADIUS_MAP_UNITS,
             CaelumConstants.ZUPAY_SLAM_VERTICAL_SPEED
         );
-        ZUPY E 8;
+        ZUPY E 32;
         Goto See;
     Missile:
         TNT1 A 0 A_StopSound(CHAN_7);
-        // 20 tics: ficha T1 de estatuilla redondeada con Elocuencia 33.
-        ZUPY M 3 A_FaceTarget;
-        ZUPY NOPQ 3;
+        // Las poses conservan límites proporcionales sobre la duración #37.
+        ZUPY M 3 A_CaelumBeginResourceAttack(0, CaelumConstants.WEAPON_TYPE_STATUETTE, true, 3.0/20.0);
+        ZUPY NOPQ 3 A_CaelumMagicWindFrame;
         // El proyectil nace al pasar de throw_release a throw_recover.
         ZUPY R 0 A_CaelumSpawnTierOneMagicProjectile(
             "CaelumActorExplosiveElementalProjectile",
@@ -697,7 +697,7 @@ class CaelumZupayColossus : CaelumFolkloreCombatActor
             CaelumConstants.ESSENCE_EARTH,
             true
         );
-        ZUPY R 5;
+        ZUPY R 5 A_CaelumMagicLastFrame;
         Goto See;
     Attack:
         Goto Melee;

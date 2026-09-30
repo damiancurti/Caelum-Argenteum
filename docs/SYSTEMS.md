@@ -1,6 +1,85 @@
 # Caelum Argenteum — Current systems and rules
 
-Documentation version: **4.36.25** — 2026-09-28.
+Documentation version: **4.36.26** — 2026-09-30.
+
+## 4.36.26 — Shared attack clock and durability (#37)
+
+All T1–T3 weapon bases are now 14 tics. Effective duration is
+`14 / (F(attribute) * (1 - p))`, with `F(A)=1+2*A*(A+1)/10100` and
+`p=(equipped weapon mass + equipped glove/arm armor mass)/maximum carry capacity`.
+Physical/ranged weapons use effective Dexterity; magic uses effective Eloquence.
+The denominator is neither remaining capacity nor the overload threshold.
+At `p>=1`, an attack cannot start: no cost, impact, projectile or attack animation.
+At 50% load, duration doubles for the same attribute state. A gauntlet weapon is
+counted once as its weapon item; a separate equipped arm-armor item contributes
+its own physical mass. Total inventory load does not enter this speed ratio.
+
+The shared calculation retains fractional tics; native state changes occur at
+the next simulation tic, normally `ceil(duration)`. Rendering FPS does not set
+cadence. Native held-Fire verification measured seven consecutive 15-tic
+intervals for a weapon whose effective duration rounds to 15. NPC magical pose
+boundaries round cumulatively, allowing poses to be skipped at extreme speed.
+AI decision/chase delays between distinct enemy attacks remain separate.
+
+An accepted player attack records its item, side, starting map/tic and duration.
+Its animation reads that same clock throughout the cycle, including recovery.
+Ordinary melee/sweeps strike at the existing swing's middle; authored thrusts
+strike at 80%. Ranged release and recoil begin together. Magic prepares and
+releases at the end of its effective duration; there is no additional eight-tic
+animation after release. All paths preserve one actual resource deduction.
+Changing equipment, opening Inventory/Crafting, death, immobilization, blocking
+or channeling cancels a pending physical impact. Its prepared charge is already
+consumed, as for an accepted magic preparation; no new charge starts during a
+pending physical impact. Charge preparation remains `2/F(attribute)` seconds,
+with the same three-second prepared window; ranged reload rules are unchanged.
+
+The author's 2026-09-30 thrust presentation applies to dagger Fire and machete,
+sword, greatsword and halberd AltFire. In the 320×200 weapon plane, the assembly
+lowers 30 units, rotates counterclockwise around the grip to aim at screen center,
+advances 60 units in a straight line toward that center, then returns to its
+original grip pose. The confirmed total-cycle allocation is 16% lower, 16% turn,
+48% advance and 20% return. The arm, weapon and supporting hand share the turn.
+Other spear/javelin attacks retain their existing presentation.
+
+Weapon maximum durability is ten times its previous value, applied after the
+existing tier/size calculation. Armor/shield durability is unchanged. Revision 1
+migrates weapon models, native items, persistent ownership/starter snapshots and
+encoded damaged world/chest pickups once, multiplying remaining durability by ten
+to preserve proportional wear. Native save/reload and original-save rollback
+were tested. Keep the original save with its original build for lossless rollback;
+the migration helpers also expose revision 0 for controlled diagnostic reversal.
+Repair uses the existing missing-durability fraction, so proportional repair
+materials/time do not increase. Melee damage-based wear and one durability per
+successful javelin throw remain unchanged. Bows, crossbow, carbine and magic
+already had durability and damage-based wear; they receive the same increase.
+
+New projectiles retain the exact source item through weapon switching, Box moves,
+drop/pickup copies and save/load. Their existing direct/explosive/multiple-projectile
+damage callbacks retain the prior wear basis (prepared projectile damage, successful
+melee damage); they no longer debit another identical equipped copy. Legacy
+in-flight projectiles without a saved source identity cannot safely reconstruct
+that identity and do not debit an unrelated current weapon.
+
+Enemy resource changes cover the authored Mandinga, Zupay, giant-rat and bull
+profiles. Mandinga melee uses the shared machete base Air (3). Punches, rat bites
+and bull gores use dagger minimum minus one (1 base Air). The Zupay slam uses
+`2*(greatsword primary Air + jump Air)=34`, with exactly 48 preparation and 32
+recovery tics. Its damage/radius/push are preserved. Effective enemy Air reuses
+`base*(body mass/100)*CalculateLoadAirMultiplier(actual carried mass/capacity)`;
+the existing load curve and its 0.75 threshold are unchanged. Without carried
+load the respective costs are 1.98, 226.44, 0.10 and 9.00 for Mandinga, Zupay,
+rat and bull. Existing actual armor/inventory mass contributes; no fictitious
+extra inventory is assigned. Mandinga/Zupay spells retain shared implement Anima
+costs, budgets and regeneration. An unaffordable intended attack enters idle,
+continues regenerating and resumes when its effective cost is affordable. The
+bull's charge retains its separate per-tic spending; a waiting prepared gore
+resumes without paying for another charge. These states survive saving/loading.
+Resident/companion legacy combat profiles are not assigned guessed weapon costs.
+
+Evidence: `assets/validation_43626`. Static checks, isolated engine tests and
+author acceptance are distinct. Author playtest and visual acceptance remain
+pending as CA-43626-COMBAT-01 and CA-43626-THRUST-01.
+
 
 ## 4.36.25 — Rebuilt MAP01 geometry (#36)
 

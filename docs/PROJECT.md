@@ -1,6 +1,19 @@
 # Caelum Argenteum — Project, status and roadmap
 
-Documentation version: **4.36.25** — 2026-09-28.
+Documentation version: **4.36.26** — 2026-09-30.
+
+## 4.36.26 — Attack cadence and thrust presentation (#37)
+
+Implemented: the author-approved 14-tic weapon/hand-load formula with effective
+Dexterity/Eloquence; weight rejection; shared full-duration first-person attack
+presentation and the five explicitly requested thrust variants; weapon durability
+×10 with proportional revision-1 migration and exact originating-item projectile
+wear; authored hostile Air costs and idle recovery; the 80-tic Zupay slam.
+SYSTEMS holds the contract and ASSETS the presentation/provenance. Native rules,
+twenty-family cycles, held input, interruption, enemy recovery, save/load and
+rollback checks pass; evidence is in assets/validation_43626. Author balance and
+visual acceptance remain pending. #16/#17 integration/export are separate.
+
 
 ## 4.36.25 — Mansion architecture and enclosure (#36)
 

@@ -135,6 +135,36 @@ class CaelumEquipmentItem : Inventory
     int Tier;
     int EquipmentSize;
     int Durability;
+    int WeaponDurabilityRevision;
+
+    override void PostBeginPlay()
+    {
+        Super.PostBeginPlay();
+        WeaponDurabilityRevision = CaelumAttackRules.DURABILITY_REVISION;
+    }
+
+    void MigrateWeaponDurability(int revision = 1)
+    {
+        if (WeaponDurabilityRevision == revision) return;
+        if (PreviewEquipmentKind() == CaelumConstants.EQUIPMENT_KIND_WEAPON)
+        {
+            Durability = revision == 1 ? Durability * CaelumAttackRules.DURABILITY_SCALE
+                : Durability / CaelumAttackRules.DURABILITY_SCALE;
+            if (!HasAcquiredIdentity() && args[3]>0)
+                args[3]=1+(revision==1 ? (args[3]-1)*CaelumAttackRules.DURABILITY_SCALE
+                    : (args[3]-1)/CaelumAttackRules.DURABILITY_SCALE);
+        }
+        WeaponDurabilityRevision = revision;
+    }
+
+    void TransferProjectileWearIdentity(CaelumEquipmentItem copy)
+    {
+        let iterator=ThinkerIterator.Create("CaelumActorProjectile");
+        CaelumActorProjectile projectile;
+        while((projectile=CaelumActorProjectile(iterator.Next()))!=null)
+            if(projectile.CaelumWearSourceItem==self)projectile.CaelumWearSourceItem=copy;
+    }
+
     int EssenceType;
     double UnitWeight;
     bool Equipped;
@@ -255,6 +285,7 @@ class CaelumEquipmentItem : Inventory
 
     int PreviewDurability(CaelumPlayer user)
     {
+        MigrateWeaponDurability();
         if (HasAcquiredIdentity()) return Durability;
         int maximum=PreviewMaximumDurability(user);
         int encoded=args[PreviewEquipmentKind()==CaelumConstants.EQUIPMENT_KIND_ARMOR ? 4 : 3];
@@ -372,6 +403,7 @@ class CaelumEquipmentItem : Inventory
             copy.Tier = Tier;
             copy.EquipmentSize = EquipmentSize;
             copy.Durability = Durability;
+            copy.WeaponDurabilityRevision = WeaponDurabilityRevision;
             copy.EssenceType = EssenceType;
             copy.UnitWeight = UnitWeight;
             copy.Equipped = Equipped;
@@ -380,6 +412,7 @@ class CaelumEquipmentItem : Inventory
             copy.SizePolicy = SizePolicy;
             copy.SizePolicyRevision = SizePolicyRevision;
             copy.AcquisitionResolved = HasAcquiredIdentity();
+            TransferProjectileWearIdentity(copy);
         }
         return copy;
     }
@@ -400,6 +433,7 @@ class CaelumEquipmentItem : Inventory
             copy.Tier = Tier;
             copy.EquipmentSize = EquipmentSize;
             copy.Durability = Durability;
+            copy.WeaponDurabilityRevision = WeaponDurabilityRevision;
             copy.EssenceType = EssenceType;
             copy.UnitWeight = UnitWeight;
             copy.Equipped = false;
@@ -408,6 +442,7 @@ class CaelumEquipmentItem : Inventory
             copy.SizePolicy = SizePolicy;
             copy.SizePolicyRevision = SizePolicyRevision;
             copy.AcquisitionResolved = HasAcquiredIdentity();
+            TransferProjectileWearIdentity(copy);
         }
         return copy;
     }
@@ -419,6 +454,7 @@ class CaelumEquipmentItem : Inventory
     override void Tick()
     {
         Super.Tick();
+        MigrateWeaponDurability();
         if (Owner == null) { UpdateWorldSprite(); }
     }
 

@@ -1,0 +1,9 @@
+CA-43626-COMBAT-01 — Origin: 4.36.26 / issue #37
+Prerequisites: rebuilt 4.36.26 PK3 on GZDoom 4.14.2; disposable save/copy; representative melee, bow, firearm and magical equipment with ammunition/resources.
+Steps: compare repeated Fire/AltFire with lighter/heavier weapons and equipped arm armor at a fixed attribute state; exercise a charged strike and reload; fight Mandingas, giant rats, bull and Zupay long enough to observe exhaustion/recovery; save/load during combat; inspect a copied older weapon's durability and repair fraction.
+Expected: attacks and animations share cadence; higher weapon/glove mass slows attacks; capacity-level equipment cannot attack; charged preparation/reload retain their rules; no free attacks, duplicate cost or permanently stalled resource recovery; Zupay slam is visibly slower; old weapon wear fraction is preserved and does not multiply again on reload.
+
+CA-43626-THRUST-01 — Origin: 4.36.26 / issue #37
+Prerequisites: 4.36.26; dagger, machete, sword, greatsword and halberd, preferably at several tiers and attack speeds.
+Steps: use dagger Fire and the other four AltFire attacks; inspect a slow attack and repeated fast attacks; switch weapons, block and open/close inventory during preparation.
+Expected: whole assembly lowers 30 units, turns counterclockwise around the grip toward screen center, advances 60 units straight toward center, and returns; phases occupy 16/16/48/20% of the full attack, with impact at 80%; hands and segments stay attached; no lingering pose or delayed cancelled hit. Confirm the visual feel and framing explicitly.

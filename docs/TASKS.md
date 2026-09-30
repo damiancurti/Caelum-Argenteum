@@ -1,6 +1,24 @@
 # TASKS.md — Active tasks
 
-Documentation version: **4.36.25** — 2026-09-28.
+Documentation version: **4.36.26** — 2026-09-30.
+
+## Issue #37 — Attack cadence, durability and thrusts (4.36.26)
+
+- Implemented: approved common duration/weight/attribute formula, full-cycle
+  animations, the author's five thrusts, ×10 weapon durability and proportional
+  migration, exact projectile source identity, authored enemy resource spending,
+  idle recovery and the 80-tic Zupay slam.
+- Verified: native shared-rule matrix, twenty weapon cycles, held Fire, cancelled
+  casts/swings, exhaustion/recovery, cumulative magic phases at Eloquence
+  0/33/100/1000, legacy migration/reload/rollback, pending-attack save/load and poses.
+- Evidence: assets/validation_43626. Independent same-model review found and
+  corrected state-index, bull recovery, encoded-pickup, phase rounding, charge
+  overlap and input-deadline risks; DeepSeek was not available in this session.
+- Pending author acceptance: CA-43626-COMBAT-01 and CA-43626-THRUST-01 in
+  pending_test.txt. Do not infer acceptance from commit, PR or isolated tests.
+- Resident/companion weapon-resource assignments remain outside the authored
+  hostile mappings; no guessed costs or equivalent equipment were added.
+
 
 ## Issue #36 — Mansion enclosure and architectural detail (4.36.25)
 

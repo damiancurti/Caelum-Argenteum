@@ -846,6 +846,137 @@ class CaelumCombatActor : Actor
         MaxTargetRange = GetCombatAbilityRange();
     }
 
+    bool AttackResourceWaiting;
+    bool AttackResourceMagical;
+    double AttackResourceBaseCost;
+    int AttackResourceWeapon;
+    State AttackResourceResume;
+    double WeaponCycleTics;
+    int WeaponCyclePreparationTics;
+    int WeaponCycleStartTic, WeaponCycleWindFrame;
+
+    double GetAttackCarriedWeight()
+    {
+        double weight = CombatArmor == null ? 0 : CombatArmor.GetTotalWeight();
+        for (Inventory cursor=Inv; cursor!=null; cursor=cursor.Inv)
+        {
+            let item=CaelumEquipmentItem(cursor);
+            if (item!=null && !item.InMagicBox) weight+=item.UnitWeight*item.Amount;
+        }
+        return weight;
+    }
+
+    double GetEffectiveAttackAir(double baseCost)
+    {
+        double capacity=Mass*CalculateActorType4Percent(CombatStrength)/100.0;
+        double load=capacity>0 ? GetAttackCarriedWeight()/capacity : 0;
+        return baseCost*(Mass/100.0)*CaelumDerivedStats.CalculateLoadAirMultiplier(load);
+    }
+
+    double GetProfileWeaponDuration(int weaponType)
+    {
+        let model=new("CaelumWeaponModel");
+        double gloves=CombatArmor==null ? 0 : CombatArmor.GetWeight(CaelumConstants.ARMOR_SLOT_HANDS);
+        int attribute=model.IsMagicalType(weaponType) ? CombatEloquence : CombatDexterity;
+        if(model.IsMagicalType(weaponType)) attribute+=GetCombatArmorAttributeBonus(CaelumConstants.ATTRIBUTE_ELOQUENCE);
+        else attribute+=GetCombatArmorAttributeBonus(CaelumConstants.ATTRIBUTE_DEXTERITY);
+        double capacity=Mass*CalculateActorType4Percent(CombatStrength)/100.0;
+        return CaelumAttackRules.Duration(100.0/CalculateActorType4Percent(attribute),
+            model.GetWeightFor(weaponType,1,CaelumConstants.EQUIPMENT_SIZE_M),gloves,capacity);
+    }
+
+    bool HasAttackResource()
+    {
+        if(AttackResourceWeapon>=0 && GetProfileWeaponDuration(AttackResourceWeapon)<=0)return false;
+        return AttackResourceMagical ? CurrentCombatAnima>=GetTierOneMagicAnimaCost(AttackResourceWeapon)
+            : CurrentCombatAir>=GetEffectiveAttackAir(AttackResourceBaseCost);
+    }
+
+    void WaitForAttackResource()
+    {
+        AttackResourceWaiting=true;
+        let bull=CaelumBull(self);
+        if(bull!=null)bull.StopBullCharge();
+        CombatAirSpending=false;
+        Vel.X=0; Vel.Y=0;
+        SetState(SpawnState);
+        SetStateLabel("AttackResourceWait");
+    }
+
+    action void A_CaelumWaitAttackResource()
+    {
+        let actor=CaelumCombatActor(self);
+        if(actor==null || actor.health<=0)return;
+        actor.Vel.X=0;actor.Vel.Y=0;
+        if(actor.ForcedSleepTics>0 || !actor.HasAttackResource())return;
+        actor.AttackResourceWaiting=false;
+        if(actor.Target==null || actor.Target.health<=0)actor.SetState(actor.SeeState);
+        else actor.SetState(actor.AttackResourceResume);
+    }
+
+    action void A_CaelumBeginResourceAttack(double baseAir, int weaponType=-1,
+        bool magical=false, double preparationFraction=0, bool slam=false)
+    {
+        let actor=CaelumCombatActor(self);
+        if(actor==null)return;
+        actor.AttackResourceBaseCost=baseAir;
+        actor.AttackResourceWeapon=weaponType;
+        actor.AttackResourceMagical=magical;
+        actor.AttackResourceResume=magical?actor.MissileState:actor.MeleeState;
+        if(!actor.HasAttackResource()){actor.WaitForAttackResource();return;}
+        actor.AttackResourceWaiting=false;
+        if(slam)actor.tics=CaelumAttackRules.SLAM_PREPARATION_TICS;
+        else if(weaponType>=0)
+        {
+            actor.WeaponCycleTics=actor.GetProfileWeaponDuration(weaponType);
+            if(actor.WeaponCycleTics<=0){actor.WaitForAttackResource();return;}
+            actor.WeaponCyclePreparationTics=int(Ceil(actor.WeaponCycleTics*preparationFraction));
+            actor.WeaponCycleStartTic=level.time;
+            actor.WeaponCycleWindFrame=1;
+            actor.tics=actor.WeaponCyclePreparationTics;
+        }
+        actor.A_FaceTarget();
+    }
+
+    action void A_CaelumMagicWindFrame()
+    {
+        let actor=CaelumCombatActor(self);
+        if(actor!=null)
+        {
+            actor.WeaponCycleWindFrame++;
+            actor.SetWeaponPhaseBoundary(actor.WeaponCycleWindFrame*3.0/20.0);
+        }
+    }
+
+    action void A_CaelumMagicLastFrame()
+    {
+        let actor=CaelumCombatActor(self);
+        if(actor!=null)actor.SetWeaponPhaseBoundary(1.0);
+    }
+
+    action void A_CaelumWeaponRecovery()
+    {
+        let actor=CaelumCombatActor(self);
+        if(actor!=null)actor.SetWeaponPhaseBoundary(1.0);
+    }
+
+    void SetWeaponPhaseBoundary(double fraction)
+    {
+        tics=WeaponCycleStartTic+int(Ceil(WeaponCycleTics*fraction))-level.time;
+        // Redondear los límites acumulados evita añadir un tic por cada pose.
+        if(tics<=0)SetState(CurState.NextState);
+    }
+
+    bool SpendPhysicalAttackAir(double baseAir)
+    {
+        AttackResourceBaseCost=baseAir;AttackResourceMagical=false;AttackResourceWeapon=-1;
+        // Una cornada ya preparada no repite la carrera después de esperar.
+        AttackResourceResume=self is "CaelumBull" ? CurState : MeleeState;
+        if(!TrySpendCombatAir(GetEffectiveAttackAir(baseAir)))
+        {WaitForAttackResource();return false;}
+        return true;
+    }
+
     bool TrySpendCombatAir(double requestedAmount)
     {
         double amount = Max(0.0, requestedAmount);
@@ -1070,6 +1201,7 @@ class CaelumCombatActor : Actor
         CaelumCombatActor combatActor = CaelumCombatActor(self);
         if (combatActor == null) { return; }
         if (!combatActor.BeginCaelumDiagnosticAttack()) { return; }
+        if (combatActor is "CaelumGiantRat" && !combatActor.SpendPhysicalAttackAir(CaelumAttackRules.NaturalAir())) return;
         if (combatActor.IsCaelumMassDiagnosticAlly(combatActor.Target))
         {
             combatActor.ImpactDiagnosticFriendlyFirePrevented++;
@@ -1105,6 +1237,8 @@ class CaelumCombatActor : Actor
         CaelumCombatActor combatActor = CaelumCombatActor(self);
         if (combatActor == null) { return; }
         if (!combatActor.BeginCaelumDiagnosticAttack()) { return; }
+        double cost=combatActor is "CaelumBull" ? CaelumAttackRules.NaturalAir() : CaelumWeaponCatalogue.GetPrimaryAirCost(CaelumConstants.CATALOGUE_WEAPON_MACHETE);
+        if (!combatActor.SpendPhysicalAttackAir(cost)) return;
         if (combatActor.IsCaelumMassDiagnosticAlly(combatActor.Target))
         {
             combatActor.ImpactDiagnosticFriendlyFirePrevented++;
@@ -1186,6 +1320,7 @@ class CaelumCombatActor : Actor
         CaelumCombatActor combatActor = CaelumCombatActor(self);
         if (combatActor == null) { return; }
         if (!combatActor.BeginCaelumDiagnosticAttack()) { return; }
+        if (!combatActor.SpendPhysicalAttackAir(CaelumAttackRules.SlamAir())) return;
 
         double strengthScaledDamage = Max(1.0,
             Max(0.0, authoredBaseDamage)
@@ -1374,7 +1509,13 @@ class CaelumCombatActor : Actor
 
         // El coste se paga al resolver el ataque aunque la tirada ofensiva
         // falle, como ocurre con el lanzamiento ya iniciado del jugador.
-        if (!combatActor.TrySpendTierOneMagicAnima(weaponType)) { return; }
+        if (!combatActor.TrySpendTierOneMagicAnima(weaponType))
+        {
+            combatActor.AttackResourceMagical=true;
+            combatActor.AttackResourceWeapon=weaponType;
+            combatActor.AttackResourceResume=combatActor.MissileState;
+            combatActor.WaitForAttackResource();return;
+        }
         int calculatedDamage = combatActor.PrepareActorOutgoingDamage(
             combatActor.GetTierOneMagicDamage(weaponType),
             true
@@ -3462,6 +3603,9 @@ class CaelumCombatActor : Actor
     {
     SiegeWithdrawal:
         "####" "#" 4;
+        Loop;
+    AttackResourceWait:
+        "####" "#" 1 A_CaelumWaitAttackResource;
         Loop;
     }
 }

@@ -2730,7 +2730,7 @@ class CaelumCarbineProjectile : CaelumActorProjectile
                 preparedDamage,
                 CaelumWearWeaponType,
                 CaelumWearWeaponTier,
-                CaelumWearWeaponSize
+                CaelumWearWeaponSize, CaelumWearSourceItem, true
             );
         }
         CaelumCombatActor combatTarget = CaelumCombatActor(victim);
@@ -2962,7 +2962,7 @@ class CaelumPlayerMagicProjectile : CaelumActorProjectile
                 preparedDamage,
                 CaelumWearWeaponType,
                 CaelumWearWeaponTier,
-                CaelumWearWeaponSize
+                CaelumWearWeaponSize, CaelumWearSourceItem, true
             );
         }
         CaelumCombatActor combatTarget = CaelumCombatActor(victim);

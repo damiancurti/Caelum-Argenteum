@@ -51,6 +51,7 @@ class CaelumActorProjectile : Actor
     // durabilidad se descuenta del objeto correcto aunque el jugador cambie
     // de arma antes de que el proyectil impacte.
     bool CaelumWeaponWearPrepared;
+    CaelumEquipmentItem CaelumWearSourceItem;
     int CaelumWearWeaponType;
     int CaelumWearWeaponTier;
     int CaelumWearWeaponSize;
@@ -147,6 +148,8 @@ class CaelumActorProjectile : Actor
     )
     {
         CaelumWeaponWearPrepared = true;
+        let user = CaelumPlayer(Target);
+        if (user != null) CaelumWearSourceItem = user.FindNativeEquipmentItemById(user.ActiveWeaponItemId);
         CaelumWearWeaponType = weaponType;
         CaelumWearWeaponTier = tier;
         CaelumWearWeaponSize = equipmentSize;

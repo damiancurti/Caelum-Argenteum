@@ -1,6 +1,25 @@
 # Caelum Argenteum — Audio and art
 
-Documentation version: **4.36.25** — 2026-09-28.
+Documentation version: **4.36.26** — 2026-09-30.
+
+## 4.36.26 — Grip-centered thrust motion (#37)
+
+The author specified dagger Fire and machete/sword/greatsword/halberd AltFire:
+30 units down, a counterclockwise grip rotation aimed at the center of the
+320×200 weapon plane, 60 units forward along that line, then a return to rest.
+Confirmed timing: 16/16/48/20 percent of the effective attack duration; impact
+at 80%. Blade-axis metadata is measured from the existing art; runtime alignment
+uses the existing 1.2 vertical aspect correction. Both hands and all weapon
+segments retain their relative offsets while rotating. Dagger now uses native
+modular bindings for its existing F011/F012/F013 art and existing hand layer.
+No raster source, attribution, palette or externally owned asset is replaced.
+First-person animations use the accepted attack's full clock instead of the old
+eight-tic cap or a second magic animation after release. Existing charge/reload
+presentation rules remain separate. Native poses for all five weapons are
+recorded in assets/validation_43626; visual author acceptance remains pending.
+Runtime sources: CaelumAttackRules, CaelumFirstPersonLayers, CaelumFirstPersonView
+and TEXTURES. The pre-existing first_person_v1/v3/v4 sources remain preserved.
+
 
 ## 4.36.25 — Mansion architectural finishes (#36)
 

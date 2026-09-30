@@ -1,6 +1,6 @@
 # CONTEXT.md — Ultra-condensed summary of Caelum Argenteum
 
-Documentation version: **4.36.25** — 2026-09-28.
+Documentation version: **4.36.26** — 2026-09-30.
 
 Repository rights: LICENSE.md reserves original-project rights, subject to
 third-party terms and legal/platform exceptions (#55).
@@ -60,6 +60,16 @@ the gauchos and rural culture, and the humans the urban porteño society.
 - **Presentation:** modular first-person view, event audio, Spanish/English
   localization, project typography, and hub transitions.
 
+
+**4.36.26 / #37:** common 14-tic attack duration scales with effective
+Dexterity/Eloquence and weapon-plus-glove mass over maximum capacity; 100%
+blocks attacks. Full-cycle animations include the author's five grip-centered
+thrusts (30 down, 60 advance, 16/16/48/20% phases). Weapon durability ×10 migrates
+proportional wear once; projectile wear follows the exact item. Authored enemies
+spend shared resources, idle/recover when exhausted, and retain the 80-tic Zupay
+slam exception. Native rules/cycles, persistence and visual evidence:
+assets/validation_43626. Author combat/visual checks remain pending.
+
 ## Current status
 
 **4.36.25 / #36:** MAP01 has closed gables, a flat upper ceiling, 204 balcony
@@ -117,16 +127,9 @@ projectiles; its original CA-43613-CATAPULT-01 passed 2026-09-27. Those native
 mechanics and sources remain in assets/validation_43617; final balance supersedes
 the original 400 m/s /zero-gate-damage result. Full port integration remains #16/#17.
 
-The preceding **4.36.16** implements #20 operational rams, retaining the
-planned [4.36.12] label. Full 6/32 staffing and author-authorized demonic
-velocities preserve the agreed small-versus-reinforced/large-versus-armored
-behavior through unchanged physics. Native approach, single physical strikes,
-recovery, local death-backed neutralization and victory-triggered withdrawal
-are implemented as opt-in hooks. `give CaelumDebugRamTrial` creates six MAP03
-lanes for disposable checks; `give CaelumDebugRamStatus` reports state.
-Evidence: assets/validation_43616. The author confirmed CA-43612-RAM-01 passed
-on 2026-09-26 and requested merge/closure; #21 cannon
-mechanics and #16/#17 complete port integration remain separate.
+**4.36.16 / #20:** operational rams passed CA-43612-RAM-01 on 2026-09-26;
+merge/closure authorized. Mechanics, debug commands and evidence remain in
+SYSTEMS/HISTORY and assets/validation_43616. Port integration remains #16/#17.
 
 The accepted **4.36.15** (#19) implements breakable actor gates, using approved 30%/50%/70% reductions and 550/650/1,100 kg moving masses. Intact, damaged and broken states persist across save/load and hub travel; old-save and native body-contact tests pass. CA-43611-GATES-01 passed on 2026-09-26. Full implementation and acceptance details remain in HISTORY; subsequent #21 balance supersedes original gate Constitution.
 
@@ -167,11 +170,8 @@ Peoples, Caelith, Cult of the Tarot and Sun Warriors. GZDoom 4.14.2 compiles the
 complete package and loads MAP01/MAP02/MAP06 without script errors; author
 confirmed CA-4368-RESCUE-01 passed on 2026-09-25.
 
-The preceding **4.36.7** implements #13: four recolored prisoner appearances
-reusing the mansion characters without new models: Caella -> Unitarians
-(Leonor Benítez, celeste), Ronnie -> Federals (Rufino Acosta, punzó), Rulo ->
-Free Peoples (Santos Barrera, black/brown/green) and Argento -> Cult of the
-Tarot (Leandro Farías, gold/silver over black). The author visual check
+**4.36.7 / #13:** four prisoner appearances reuse mansion models;
+ASSETS retains the character/faction/color mappings. The author confirmed
 CA-4367-PRISONER-ART-01 passed on 2026-09-24.
 
 The preceding **4.36.6** implements #12: 192 hostile sewer rats (two per
@@ -302,4 +302,3 @@ its release in [HISTORY.md](HISTORY.md); remove that entry in the same update.
 Partial, failed and unconfirmed checks remain. An empty tracked queue is valid.
 All seven docs and AGENTS declare the current version; ancillary guides without
 a header inherit README's version. Historical labels retain their original meaning.
-
