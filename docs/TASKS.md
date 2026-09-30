@@ -14,8 +14,8 @@ Documentation version: **4.36.26** — 2026-09-30.
 - Evidence: assets/validation_43626. Independent same-model review found and
   corrected state-index, bull recovery, encoded-pickup, phase rounding, charge
   overlap and input-deadline risks; DeepSeek was not available in this session.
-- Pending author acceptance: CA-43626-COMBAT-01 and CA-43626-THRUST-01 in
-  pending_test.txt. Do not infer acceptance from commit, PR or isolated tests.
+- Author accepted CA-43626-COMBAT-01 and CA-43626-THRUST-01 on 2026-09-30
+  and authorized PR #58 merge and issue closure. No author checks remain pending.
 - Resident/companion weapon-resource assignments remain outside the authored
   hostile mappings; no guessed costs or equivalent equipment were added.
 
@@ -551,4 +551,3 @@ integration before extracting Impact Physics.
 - **Acceptance criteria:** validate the integration of the mechanisms in the
   gallery, persistence, and reset; extract Impact Physics only after
   validating its use in Caelum. Numerical criteria remain PENDING.
-

@@ -37,6 +37,15 @@ Static validator/build and final source hashes accompany assets/validation_43626
 No author gameplay acceptance is claimed. CA-43626-COMBAT-01 and
 CA-43626-THRUST-01 are outstanding. Linked PR delivery does not close acceptance.
 
+Author acceptance, 2026-09-30: the author explicitly confirmed that all tests
+passed and requested issue #37 closure and PR #58 merge. CA-43626-COMBAT-01
+and CA-43626-THRUST-01 (both originating in 4.36.26 / #37) are therefore passed
+without reported qualifications, including combat behavior and the five thrusts'
+visual motion/framing. Their entries were removed from pending_test.txt; the
+tracked queue is now empty. The evidence above retains its pre-acceptance status
+as a historical test snapshot. This acceptance update changes no runtime code
+and retains version 4.36.26; #16/#17 integration/export remain separate.
+
 
 ## 4.36.25 — Mansion enclosure and architectural detail (#36)
 

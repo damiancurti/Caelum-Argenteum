@@ -68,7 +68,7 @@ thrusts (30 down, 60 advance, 16/16/48/20% phases). Weapon durability ×10 migra
 proportional wear once; projectile wear follows the exact item. Authored enemies
 spend shared resources, idle/recover when exhausted, and retain the 80-tic Zupay
 slam exception. Native rules/cycles, persistence and visual evidence:
-assets/validation_43626. Author combat/visual checks remain pending.
+assets/validation_43626. Both author checks passed 2026-09-30; merge/closure authorized.
 
 ## Current status
 

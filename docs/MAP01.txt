@@ -11,7 +11,8 @@ retain their existing assignments. Dagger Fire and machete/sword/greatsword/
 halberd AltFire use the author's thrust animation; the sword remains cutting
 primary and piercing secondary. Natural punches and bull gores now spend the
 approved shared base Air. SYSTEMS documents effective costs, clocks and saves.
-Tutorial playtest acceptance for this patch remains pending.
+The author confirmed all outstanding #37 combat and visual checks passed on
+2026-09-30 and authorized merge/closure; details are recorded in HISTORY.
 
 
 ## 4.36.25 — Mansion roof, guards and period detail (#36)
@@ -3666,4 +3667,3 @@ resolved before all the final data are set:
 =============================================================================== END OF
 SPECIFICATION — CONSOLIDATION 4.33.0g
 ===============================================================================
-

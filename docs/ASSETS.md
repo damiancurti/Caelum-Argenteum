@@ -16,7 +16,8 @@ No raster source, attribution, palette or externally owned asset is replaced.
 First-person animations use the accepted attack's full clock instead of the old
 eight-tic cap or a second magic animation after release. Existing charge/reload
 presentation rules remain separate. Native poses for all five weapons are
-recorded in assets/validation_43626; visual author acceptance remains pending.
+recorded in assets/validation_43626. The author confirmed CA-43626-THRUST-01
+passed on 2026-09-30, accepting the visual motion and framing.
 Runtime sources: CaelumAttackRules, CaelumFirstPersonLayers, CaelumFirstPersonView
 and TEXTURES. The pre-existing first_person_v1/v3/v4 sources remain preserved.
 
@@ -1806,4 +1807,3 @@ folder. `--help` displays configurable destinations. Generating resources is a d
 editing operation, independent of compiling or playing; generators are not executed when
 applying the patch. The build packages only src. The previous patch-specific utilities
 are left in the historical backup.
-

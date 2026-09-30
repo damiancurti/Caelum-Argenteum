@@ -77,8 +77,8 @@ resumes without paying for another charge. These states survive saving/loading.
 Resident/companion legacy combat profiles are not assigned guessed weapon costs.
 
 Evidence: `assets/validation_43626`. Static checks, isolated engine tests and
-author acceptance are distinct. Author playtest and visual acceptance remain
-pending as CA-43626-COMBAT-01 and CA-43626-THRUST-01.
+author acceptance are distinct. The author confirmed CA-43626-COMBAT-01 and
+CA-43626-THRUST-01 passed on 2026-09-30 and authorized merge/closure.
 
 
 ## 4.36.25 — Rebuilt MAP01 geometry (#36)
@@ -4746,4 +4746,3 @@ CaelumExitMenu opens native confirmation and plays menu_strings_start while the 
 still active. Cancel returns to the parent menu. QuitSound and the Exit button of the
 map retain the same resource; the singular mark avoids overlapping two instances of
 strings.
-

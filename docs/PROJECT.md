@@ -11,8 +11,9 @@ presentation and the five explicitly requested thrust variants; weapon durabilit
 wear; authored hostile Air costs and idle recovery; the 80-tic Zupay slam.
 SYSTEMS holds the contract and ASSETS the presentation/provenance. Native rules,
 twenty-family cycles, held input, interruption, enemy recovery, save/load and
-rollback checks pass; evidence is in assets/validation_43626. Author balance and
-visual acceptance remain pending. #16/#17 integration/export are separate.
+rollback checks pass; evidence is in assets/validation_43626. The author confirmed
+both combat and visual checks passed on 2026-09-30 and authorized PR #58 merge
+and issue closure. #16/#17 integration/export are separate.
 
 
 ## 4.36.25 — Mansion architecture and enclosure (#36)
@@ -3143,4 +3144,3 @@ implemented; it does not make the remaining branches playable. Isolated trials u
 4.14.2/OpenGL with private instrumentation. They do not credit duration of a game or
 cooperative. Engine, IWAD, fixtures, captures and saves are left out of patch; 0m
 validation in HISTORY.md.
-

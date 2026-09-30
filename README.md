@@ -12,8 +12,9 @@ the approved weapon/glove-weight attack clock, full-duration animations and five
 grip-centered thrust variants, weapon durability ×10 with proportional save
 migration, exact-item projectile wear, enemy resource recovery and the 80-tic
 Zupay slam. Rules and limits are in SYSTEMS; evidence is in
-`assets/validation_43626`. Combat and visual author acceptance remain pending
-in `pending_test.txt`. Keep an original save and its original build for rollback.
+`assets/validation_43626`. The author confirmed both combat and visual checks
+passed on 2026-09-30 and authorized PR #58 merge and issue closure. No author
+checks remain pending. Keep an original save and its original build for rollback.
 
 ## License
 
