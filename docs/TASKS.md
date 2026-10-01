@@ -8,6 +8,9 @@ Documentation version: **4.36.28** — 2026-10-01.
   deferred 4.37 Tarot/Trucazo until afterward. The accepted #16 content is frozen.
 - Implemented commit-based deterministic export, SHA-256 manifest, portable
   clean-profile launcher, license notices and README-owned player instructions.
+- Author reported an installation failure with engine/IWAD beside the package.
+  Same-patch correction detects both locally and handles relative/quoted paths
+  and folders; six process-level checks pass. Keep export acceptance pending.
 - Static/build, exact blob identity, byte-identical reproduction and four-map
   native load/save/reload checks pass. Clean-install engine evidence is in
   assets/validation_43628/RESULTS.json; prior acceptance links and measured

@@ -287,7 +287,7 @@
         "issues": [
           17
         ],
-        "evidence": "Current desktop packaging/native verification, raw-blob exporter correction and reload-log detector correction included. Full task time and token counters not exposed; no separate model review.",
+        "evidence": "Current desktop packaging/native verification, raw-blob exporter correction and reload-log detector correction included. Full task time and token counters not exposed; no separate model review. Author-reported portable-launch failure follow-up includes launcher correction, six process-level regression checks, refreshed package and local installation metadata. Counters remain unavailable.",
         "tokens": "unavailable"
       }
     ],
@@ -420,5 +420,50 @@
     "reproduction": "PASS; separate build/playtest_release_reproduced export has identical ZIP SHA-256",
     "native_evidence_applies": "The embedded PK3 is byte-identical to the fa6fb9bb package tested in native.maps. Subsequent changes affect documentation/delivery metadata only.",
     "publication": "Local artifact only; no GitHub Release or tag published; merge and external publication await author decision."
+  },
+  "launcher_correction": {
+    "date": "2026-10-01",
+    "author_report": "Executable not found with GZDoom, IWAD and extracted playtest in the same folder.",
+    "cause": "The original launcher always requested manual paths, had no adjacent-file discovery and interpreted relative input in the caller working directory.",
+    "change": "Automatically detect adjacent gzdoom.exe and DOOM2.WAD; resolve relative input beside launcher; accept containing folders, surrounding double quotes and whitespace; show attempted missing path; set engine working directory to package directory.",
+    "tests": [
+      {
+        "case": "automatic adjacent discovery",
+        "result": "PASS",
+        "exit_code": 0
+      },
+      {
+        "case": "relative filenames from another directory",
+        "result": "PASS",
+        "exit_code": 0
+      },
+      {
+        "case": "quoted paths with surrounding spaces",
+        "result": "PASS",
+        "exit_code": 0
+      },
+      {
+        "case": "containing folders",
+        "result": "PASS",
+        "exit_code": 0
+      },
+      {
+        "case": "missing engine diagnostic",
+        "result": "PASS",
+        "exit_code": 1
+      },
+      {
+        "case": "engine failure exit propagation",
+        "result": "PASS",
+        "exit_code": 17
+      }
+    ],
+    "test_type": "Process-level launcher integration with disposable compiled executable probe; exact arguments, working directory and return code checked. No real game content in the probe.",
+    "reproduce": "powershell.exe -NoProfile -ExecutionPolicy Bypass -File assets/validation_43628/verify_launcher.ps1 -OutputDirectory build/launcher_check_new",
+    "installed_engine_sha256": "ec706c2ea1ef946eec13be7b1b461df8d52efcd47caa6c056ed0e0257f7f9ffa",
+    "installed_pk3_sha256": "819aa4912ee59321d4f80e435b01ce84b0c9065bd497a883b0a8712d45eb9591",
+    "native_limit": "Author extraction uses the same executable bytes as the previously tested GZDoom and the identical PK3. Runtime smoke remains applicable; no new native gameplay run claimed for the launcher correction.",
+    "author_acceptance": "CA-43628-EXPORT-01 remains pending after the reported installation failure; author must retry.",
+    "fixture_correction": "The first test wrapper did not propagate its nested script exit code; wrapper corrected and all six cases rerun. Production launcher exit behavior was unchanged by that fixture correction."
   }
 }

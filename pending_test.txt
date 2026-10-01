@@ -4,7 +4,9 @@ Prerequisites: extracted #17 playtest ZIP identified by MANIFEST.json and its
 SHA-256; GZDoom 4.14.2; separately obtained Doom II IWAD; new writable folder,
 new profile and NEW GAME; no autoload, console progression cheats or QA overlays.
 Steps:
-1. Follow PLAYTEST.txt installation/controls using the portable launcher.
+1. Retry the corrected launcher after the reported installation failure: place
+   gzdoom.exe and DOOM2.WAD beside launch_playtest.bat and the PK3; both should
+   be detected without prompts. Follow PLAYTEST.txt installation/controls.
 2. Complete MAP01 prologue/Fool/first equipment/Box, four MAP02 sections and keys,
    fitted T1 loot, repair and rest, living extraction before the boss, Ace of Cups,
    MAP03 connector and MAP06 siege/Knight/endpoint through ordinary interactions.

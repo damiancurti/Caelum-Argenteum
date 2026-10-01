@@ -62,9 +62,13 @@ individual notices in licenses/ retain their terms and attribution.
 1. Extract the complete ZIP into a new writable folder. Keep MANIFEST.json and
    SHA256SUMS.txt with the package. Compare its downloaded ZIP SHA-256 with the
    supplied .sha256 file using PowerShell Get-FileHash before opening it.
-2. Double-click launch_playtest.bat and enter the full paths to gzdoom.exe and
-   DOOM2.WAD. Alternatively run launch_playtest.ps1 -Engine "C:/path/gzdoom.exe"
-   -Iwad "C:/path/DOOM2.WAD" from PowerShell. No Python or source checkout is needed.
+2. Keep launch_playtest.bat, launch_playtest.ps1 and caelum_argenteum_dev.pk3
+   together. If gzdoom.exe (with its engine files) and DOOM2.WAD are in that same
+   folder, double-click launch_playtest.bat: both are detected automatically.
+   Otherwise enter each missing file's full path or containing folder when asked.
+   Explicit -Engine and -Iwad arguments are also supported; relative paths resolve
+   beside the launcher. Spaces and surrounding double quotes are accepted.
+   No Python or source checkout is needed.
 3. The launcher disables autoload and uses user/gzdoom.ini and user/saves within
    this folder. Start a NEW GAME for this route; do not copy old saves into it.
    Preserve your original saves/packages. Campaigns that visited earlier MAP02

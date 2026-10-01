@@ -7,6 +7,8 @@ Documentation version: **4.36.28** — 2026-10-01.
 on 2026-10-01. Route: MAP01 -> MAP02 -> MAP03 connector -> MAP06. Exported-package
 author acceptance remains open; static/build, hashes and native smoke pass. See TASKS,
 pending_test.txt and assets/validation_43628. Gameplay and saves are unchanged.
+Launcher follow-up detects adjacent GZDoom/IWAD files after the author's failed
+installation attempt; six launcher checks pass. The author must retry.
 
 **4.36.27 / #16:** full port siege deployed: 1,000 Mandingas, Zupay, 24 machines,
 100 equipped defenders. Automatic unlimited cannons reload in 10/20 seconds;

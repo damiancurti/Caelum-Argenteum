@@ -18,6 +18,10 @@ controls, route/report guidance and license notices. It includes only committed
 runtime resources plus those delivery files; no engine, IWAD, QA overlay,
 development saves, stock sources or repository archive is distributed.
 Gameplay, balance, visuals and save schemas retain the accepted baseline.
+The 2026-10-01 launcher correction automatically finds gzdoom.exe and DOOM2.WAD
+beside the package, supports quoted paths/folders and resolves relative paths
+against that directory. Six isolated launcher-process checks pass; ordinary
+installation/campaign acceptance stays pending after the author's launch failure.
 
 Evidence and exact source commit: assets/validation_43628/RESULTS.json.
 The exported-package ordinary-player route remains an author acceptance check

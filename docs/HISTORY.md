@@ -42,6 +42,20 @@ are not yet available. Work planning/review and desktop implementation cannot
 be aggregated into measured savings. Final acceptance must capture any available
 counters, corrections, resets and concurrent unrelated work.
 
+2026-10-01 author follow-up: the exported launcher reported that GZDoom was
+missing even though gzdoom.exe and DOOM2.WAD were beside the package. The old
+launcher always prompted for paths and checked relative entries against the
+calling directory; it did not detect adjacent dependencies. The same 4.36.28
+patch now detects both files beside the launcher, resolves relative paths there,
+accepts enclosing folders and quoted/whitespace-padded paths, reports the attempted
+missing path and runs the engine from the package directory. Six process-level
+launcher checks pass using a disposable executable probe, including another
+working directory, paths with spaces, failures and exit-code propagation.
+The installed PK3 matches the previously engine-tested hash. Gameplay and saves
+are untouched; the ZIP and installed launcher metadata are refreshed together.
+The reported installation failure does not pass CA-43628-EXPORT-01; it remains
+pending until the author confirms the corrected installation and campaign.
+
 ## 4.36.27 — Complete third campaign map (#16)
 
 2026-09-30: the author confirmed automatic unlimited cannon fire on both sides,
