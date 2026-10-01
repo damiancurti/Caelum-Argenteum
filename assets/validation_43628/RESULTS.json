@@ -410,15 +410,15 @@
     "No final aggregate Usage counters or author-confirmed weekly balance yet."
   ],
   "delivery": {
-    "source_commit": "d2be1aa0f2a0cf960eee929f9823d85c836962c4",
+    "source_commit": "8415f225d2d359a80c077f018a4b487aeaf3e190",
     "zip_name": "caelum_argenteum_4.36.28_playtest.zip",
-    "local_output": "build/playtest_release/caelum_argenteum_4.36.28_playtest.zip",
-    "bytes": 474069475,
-    "zip_sha256": "8779dd5717a99b7e33bba4c3429343b6be4a89ece6c8fa70f53fe9ce71514cc5",
+    "local_output": "build/playtest_launcher_fix/caelum_argenteum_4.36.28_playtest.zip",
+    "bytes": 474070828,
+    "zip_sha256": "d1eb051c66c2f5390dd21b72c068bd413a4736af378fc5be9b7bd3a48be5cb95",
     "pk3_sha256": "819aa4912ee59321d4f80e435b01ce84b0c9065bd497a883b0a8712d45eb9591",
     "independent_verifier": "PASS; 6129 exact committed runtime blobs, all checksum/CRC/metadata/allowlist checks",
-    "reproduction": "PASS; separate build/playtest_release_reproduced export has identical ZIP SHA-256",
-    "native_evidence_applies": "The embedded PK3 is byte-identical to the fa6fb9bb package tested in native.maps. Subsequent changes affect documentation/delivery metadata only.",
+    "reproduction": "PASS; separate build/playtest_launcher_fix_reproduced export has identical ZIP SHA-256",
+    "native_evidence_applies": "Embedded PK3 is unchanged and byte-identical to native-tested fa6fb9bb. Launcher discovery is additionally covered by six process-level tests; full author route still pending.",
     "publication": "Local artifact only; no GitHub Release or tag published; merge and external publication await author decision."
   },
   "launcher_correction": {
@@ -464,6 +464,28 @@
     "installed_pk3_sha256": "819aa4912ee59321d4f80e435b01ce84b0c9065bd497a883b0a8712d45eb9591",
     "native_limit": "Author extraction uses the same executable bytes as the previously tested GZDoom and the identical PK3. Runtime smoke remains applicable; no new native gameplay run claimed for the launcher correction.",
     "author_acceptance": "CA-43628-EXPORT-01 remains pending after the reported installation failure; author must retry.",
-    "fixture_correction": "The first test wrapper did not propagate its nested script exit code; wrapper corrected and all six cases rerun. Production launcher exit behavior was unchanged by that fixture correction."
-  }
+    "fixture_correction": "The first test wrapper did not propagate its nested script exit code; wrapper corrected and all six cases rerun. Production launcher exit behavior was unchanged by that fixture correction.",
+    "local_installation_update": {
+      "result": "PASS",
+      "scope": "Replaced launcher PS1 and PLAYTEST/MANIFEST/SHA256SUMS from the corrected ZIP in the author-named extraction directory. Preserved all four originals in a dated backup folder.",
+      "installed_delivery_hashes_checked": 13,
+      "runtime_preserved": "Engine, IWAD, PK3, settings and saves were not replaced.",
+      "author_retry": "Pending; no successful author launch inferred from automated checks."
+    }
+  },
+  "superseded_deliveries": [
+    {
+      "source_commit": "d2be1aa0f2a0cf960eee929f9823d85c836962c4",
+      "zip_name": "caelum_argenteum_4.36.28_playtest.zip",
+      "local_output": "build/playtest_release/caelum_argenteum_4.36.28_playtest.zip",
+      "bytes": 474069475,
+      "zip_sha256": "8779dd5717a99b7e33bba4c3429343b6be4a89ece6c8fa70f53fe9ce71514cc5",
+      "pk3_sha256": "819aa4912ee59321d4f80e435b01ce84b0c9065bd497a883b0a8712d45eb9591",
+      "independent_verifier": "PASS; 6129 exact committed runtime blobs, all checksum/CRC/metadata/allowlist checks",
+      "reproduction": "PASS; separate build/playtest_release_reproduced export has identical ZIP SHA-256",
+      "native_evidence_applies": "The embedded PK3 is byte-identical to the fa6fb9bb package tested in native.maps. Subsequent changes affect documentation/delivery metadata only.",
+      "publication": "Local artifact only; no GitHub Release or tag published; merge and external publication await author decision.",
+      "superseded_reason": "Author-reported co-located engine/IWAD launch failure; replaced by corrected launcher package within the same 4.36.28 patch."
+    }
+  ]
 }
