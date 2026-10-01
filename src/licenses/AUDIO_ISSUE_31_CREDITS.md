@@ -84,8 +84,13 @@ mechanism; the full sequence is never played for one injury.
   as the generation tool for the Zupay sound.
 - The displayed CC0 labels are retained for Snaginneb, freesman and Brorsan
   Beppe. Pixabay asset-page license/usage terms for PhatPhrogStudio and
-  `53439420` still need to be confirmed and recorded before final public
-  redistribution.
+  `53439420` were subsequently confirmed by the author on 2026-10-01: he
+  downloaded these assets under the Pixabay Content License and authorizes
+  their inclusion integrated into this playtest under that license.
+  License reference: https://pixabay.com/service/license-summary/ .
+  This records the author's source/terms confirmation; the independent
+  automated lookup was blocked by the website. No standalone sound library
+  or new CC0 license is granted by this project.
 
 ## Existing credits
 

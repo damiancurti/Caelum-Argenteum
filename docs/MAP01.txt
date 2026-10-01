@@ -1,6 +1,6 @@
 CAELUM ARGENTEUM — STORY AND MAP01
 
-Documentation version: **4.36.27** — 2026-09-30.
+Documentation version: **4.36.28** — 2026-10-01.
 
 ## 4.36.27 — Port campaign endpoint (#16)
 

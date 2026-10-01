@@ -1,6 +1,39 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **4.36.27** — 2026-09-30.
+Documentation version: **4.36.28** — 2026-10-01.
+
+## 4.36.28 — Verify and export the complete three-map test build (#17)
+
+2026-10-01: implementation starts from merged 4.36.27, commit
+0a584960eaeecfac31db82adadb7426347c50964. The author explicitly selected
+"Exportar contenido actual; postergar 4.37", replacing the former Tarot/Trucazo
+gate for this playtest only. No gameplay, balance, geometry or saved fields change;
+the required diagnostic release labels advance to 4.36.28.
+
+Implemented a commit-addressed exporter with fixed ZIP metadata, committed file
+bytes, SHA-256 inventory/checksums, portable launchers with isolated configuration
+and saves, and installation/controls/route/issue-report instructions derived from
+README. All existing runtime map references remain; diagnostics stay outside
+the prescribed campaign route. Engines, IWADs, local QA and source stock are absent.
+The package keeps the established PK3 filename for save identity; older rebuilt
+MAP02/MAP06 campaigns still require their documented legacy development builds.
+
+The initial static check found stale document-index hashes at the clean baseline;
+maintained docs were written as UTF-8/LF and the index regenerated. No source
+resources were regenerated. Native and reproducibility results are recorded in
+assets/validation_43628/RESULTS.json, separately from accepted #8–#16/#18–#21
+component evidence. CA-43628-EXPORT-01 remains pending until the author confirms
+the ordinary-player route on the exported package; earlier #16 acceptance does
+not automatically pass it. The issue and publication remain open.
+
+The author reported permission from marjaja197 to use The Argentine Omen;
+credits remain intact. He also confirmed the two Pixabay pain assets' license
+and inclusion in the playtest; ASSETS records the scope of those confirmations.
+Batch Usage is incomplete: baseline 75% weekly allowance remaining, author
+reported 2026-09-23, reset unknown; final allowance and per-stage token counters
+are not yet available. Work planning/review and desktop implementation cannot
+be aggregated into measured savings. Final acceptance must capture any available
+counters, corrections, resets and concurrent unrelated work.
 
 ## 4.36.27 — Complete third campaign map (#16)
 

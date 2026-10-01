@@ -1,0 +1,45 @@
+{
+  "version": "4.36.28",
+  "issue": 17,
+  "date": "2026-10-01",
+  "baseline_commit": "0a584960eaeecfac31db82adadb7426347c50964",
+  "status": "Export implementation; native and archive checks pending execution. Author export acceptance remains pending.",
+  "author_decisions": [
+    "Export current accepted 4.36.27 content; postpone 4.37 until after this playtest.",
+    "marjaja197 is a different person who authorized use of The Argentine Omen.",
+    "Pixabay assets 503867 and 451598 were downloaded under the Pixabay Content License; author confirms their inclusion integrated into this playtest under that license."
+  ],
+  "source_changes": "Packaging/tooling/docs and audio permission notices; two required diagnostic release labels only. Gameplay, balance, assets and save schemas unchanged.",
+  "accepted_evidence": [
+    {"issues": [8], "history": "docs/HISTORY.md#4362--bow-first-use-composition-stall-issue-8", "id": "CA-4362-BOW-EMPTY-01", "date": "2026-09-23", "evidence": "assets/validation_4362/RESULTS.json"},
+    {"issues": [9], "history": "docs/HISTORY.md#4363--additional-counterclockwise-flail-rotation-issue-9", "id": "CA-4360I-VISUAL-01", "date": "2026-09-23", "evidence": "assets/validation_4363/RESULTS.json"},
+    {"issues": [10], "history": "docs/HISTORY.md#4364--map02-t1-loot-recipient-sizing-and-acquisition-feedback-10", "id": "CA-4364-T1-LOOT-01", "date": "2026-09-23", "evidence": "assets/validation_4364/RESULTS.json", "scope": "232 native sizing checks cover body tiers 1 through 7; two real clients tested small/large collectors and transactions."},
+    {"issues": [11], "id": "CA-4365-MAZE-01", "date": "2026-09-24", "evidence": "assets/validation_4365/RESULTS.json"},
+    {"issues": [12], "id": "CA-4366-RATS-01", "date": "2026-09-24", "evidence": "docs/HISTORY.md"},
+    {"issues": [13], "id": "CA-4367-PRISONER-ART-01", "date": "2026-09-24", "evidence": "assets/validation_4367/RESULTS.json"},
+    {"issues": [14], "history": "docs/HISTORY.md#4368--prisoner-rescue-escort-and-port-rewards-14", "id": "CA-4368-RESCUE-01", "date": "2026-09-25", "scope": "Author accepted release/follow/combat/extraction/save/travel and exactly 25 gold plus 10 own-faction reputation per rescued prisoner once, independent of size. No separate validation_4368 directory exists; retain history evidence."},
+    {"issues": [15], "history": "docs/HISTORY.md#4369--approved-tarot-fronts-and-collection-bindings-15", "id": "CA-4369-TAROT-ART-01", "date": "2026-09-25", "evidence": "assets/manifests/tarot_78_v4369.json"},
+    {"issues": [18], "id": "CA-43614A-SIEGE-ART-01", "date": "2026-09-26", "evidence": "assets/validation_43614a/RESULTS.json"},
+    {"issues": [19], "id": "CA-43611-GATES-01", "date": "2026-09-26", "evidence": "assets/validation_43615/engine_evidence.txt", "qualification": "Later accepted #21/#52 gate balance supersedes original values."},
+    {"issues": [20], "id": "CA-43612-RAM-01", "date": "2026-09-26", "evidence": "assets/validation_43616/engine_evidence.txt"},
+    {"issues": [21], "ids": ["CA-43613-CATAPULT-01", "CA-43619-BALANCE-01"], "date": "2026-09-27", "evidence": "assets/validation_43617/engine_evidence.txt", "qualification": "Historical ID refers to cannons; current 500 m/s and later #52 gate rules supersede issue #17's older figures."},
+    {"issues": [16], "ids": ["CA-43627-PORT-01", "CA-43627-SAVE-01"], "date": "2026-09-30", "evidence": "assets/validation_43627/RESULTS.json", "scope": "Accepted complete campaign, visuals/balance and original campaign-save continuity; native zero/one/four-rescue checks and no repeated rewards. Export acceptance remains separate."}
+  ],
+  "reused_performance": {
+    "evidence": "assets/validation_43627/resource_trial/RESULTS.json",
+    "os": "Windows 11", "cpu": "Ryzen 9 5950X", "gpu": "RTX 3070 Ti", "renderer": "Vulkan", "resolution": "1280x720",
+    "simulation_tics": 2100, "host_seconds": 60.7100564,
+    "initial_attackers": 1001, "defenders": 100, "machines": 24,
+    "limits": "Prior final gameplay snapshot with invulnerable diagnostic player and empty-resource probe; approximately one-second host sampling. Not rendering FPS, minimum requirements or ordinary-player route evidence."
+  },
+  "multiplayer": "Not tested for the full exported campaign; only prior #10 two-client equipment transactions are accepted.",
+  "author_acceptance": {"id": "CA-43628-EXPORT-01", "status": "PENDING", "queue": "pending_test.txt"},
+  "usage": {
+    "baseline_source": "Author report 2026-09-23", "baseline_weekly_remaining_percent": 75,
+    "baseline_reset_time": null, "final_weekly_remaining_percent": null,
+    "work_planning_review_tokens": null, "desktop_implementation_tokens": null,
+    "input_tokens": null, "cached_input_tokens": null, "output_tokens": null, "reasoning_tokens": null,
+    "scope": "#8/#9 plus #10 through #21, including correction sessions; available task evidence is not a Usage counter.",
+    "limits": "No exposed aggregate usage counters for this batch. Final allowance, resets, concurrent unrelated usage and Work/desktop measurements require author evidence at accepted completion. No percentage-to-token conversion or quantitative savings claim."
+  }
+}

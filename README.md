@@ -4,7 +4,7 @@ An independent dark fantasy FPS-RPG inspired by nineteenth-century Argentina.
 Author and game designer: **Damian Curti**. Development target: **GZDoom 4.14.2**
 on Windows 11. The final game is intended to be independent of Doom assets.
 
-**Current release: 4.36.27.** Obtain and update the complete repository, validate
+**Current release: 4.36.28.** Obtain and update the complete repository, validate
 it, then rebuild with `run_dev.bat` as described below.
 
 Issue [#16](https://github.com/damiancurti/Caelum-Argenteum/issues/16) completes
@@ -40,6 +40,92 @@ Zupay slam. Rules and limits are in SYSTEMS; evidence is in
 `assets/validation_43626`. The author confirmed both combat and visual checks
 passed on 2026-09-30 and authorized PR #58 merge and issue closure. No #37
 author checks remain pending. Keep an original save and its original build for rollback.
+
+Issue [#17](https://github.com/damiancurti/Caelum-Argenteum/issues/17) adds a
+reproducible export of the accepted 4.36.27 content. On 2026-10-01 the author
+explicitly postponed 4.37 Tarot/Trucazo until after this playtest. Gameplay and
+save schemas are unchanged. Export acceptance remains in pending_test.txt;
+exact commit, checksums and verification are in assets/validation_43628/RESULTS.json.
+
+<!-- PLAYTEST_INSTRUCTIONS_BEGIN -->
+## Playtest installation and route
+
+This is a single-player development playtest, not the final standalone game.
+Supply GZDoom 4.14.2 for Windows and your legally obtained Doom II DOOM2.WAD
+separately. Neither is included. Freedoom and other IWADs are not certified by
+this export. The package is for author-authorized testing; LICENSE.md and the
+individual notices in licenses/ retain their terms and attribution.
+
+1. Extract the complete ZIP into a new writable folder. Keep MANIFEST.json and
+   SHA256SUMS.txt with the package. Compare its downloaded ZIP SHA-256 with the
+   supplied .sha256 file using PowerShell Get-FileHash before opening it.
+2. Double-click launch_playtest.bat and enter the full paths to gzdoom.exe and
+   DOOM2.WAD. Alternatively run launch_playtest.ps1 -Engine "C:/path/gzdoom.exe"
+   -Iwad "C:/path/DOOM2.WAD" from PowerShell. No Python or source checkout is needed.
+3. The launcher disables autoload and uses user/gzdoom.ini and user/saves within
+   this folder. Start a NEW GAME for this route; do not copy old saves into it.
+   Preserve your original saves/packages. Campaigns that visited earlier MAP02
+   or MAP06 geometry still use the repository's documented legacy builds.
+4. Open Options > Customize Controls. Configure movement, look, Jump, Crouch,
+   Use, Fire, AltFire, Reload and Zoom. Fire attacks; AltFire is secondary attack
+   or ranged aim; Reload reloads ranged weapons or charges melee/magic; Zoom
+   blocks, sweeps with eligible heavy weapons, or aims down ranged sights.
+   Tab opens the Journal/inventory and M the automap. Configure User2 for the
+   equipped Seal; User3 does not imply the deferred full Tarot activation system.
+   Use interacts with NPCs, doors, chests, repair stations and card appearances.
+   Use GZDoom's Save/Load menus for separate named saves at each chapter.
+5. Complete the MAP01 mansion prologue, character creation, first weapon/Box and
+   El Loco capture; take the narrative exit to MAP02. Follow the Journal, progress
+   through four keyed sewer sections, collect fitted T1 equipment, and use beds
+   and recipe-based repair stations. Food, water and repair supplies are finite.
+6. Rescue any prisoners you choose and lead them alive to the extraction area
+   BEFORE the northern boss fight. They do not fight that boss. Defeat the MAP02
+   Zupay, capture the Ace of Cups, and take the existing MAP03 workshop connector
+   to MAP06. MAP03 is a connector, not a fourth complete campaign chapter.
+7. At the port each rescued prisoner pays 25 gold and +10 own-faction reputation
+   once. Stop all twelve hostile siege machines and defeat the commander to
+   capture the Knight of Wands. Survivors withdraw; use the port endpoint sign.
+   Verify saves before/after travel retain cards, keys, quests, resources and
+   reward status. Repeat interactions and reloads must not duplicate rewards.
+
+CADEV02 is a console-only diagnostic map, outside this route. MAP04/MAP05/MAP07/
+MAP08 and diagnostic commands remain inherited development content; they are
+not extra finished chapters. Do not use cheats, direct map commands or QA
+overlays for ordinary campaign acceptance.
+
+Known limits: 4.37 Tarot activation/Trucazo is deferred by author decision.
+The accepted port enemy zero-resource attack trial remains enabled. Historical
+overall cannon dimensions are unverified; the sleeping-bag icon reuses fabric
+art. The siege has 1,001 attackers, 100 defenders and 24 machines, and may be
+demanding. Prior Windows 11 / Ryzen 9 5950X / RTX 3070 Ti / Vulkan / 1280x720
+probe recorded 2,100 simulated tics in 60.71 host seconds; this is simulation
+throughput with a diagnostic player, not a rendering-FPS benchmark or minimum
+hardware requirement. Full multiplayer campaign behavior has not been verified;
+the earlier two-client equipment check does not establish co-op support.
+
+Report issues at https://github.com/damiancurti/Caelum-Argenteum/issues with
+version and source commit from MANIFEST.json, package hash, Windows/GZDoom
+version, renderer/resolution, CPU/GPU, IWAD identity (never upload the IWAD),
+fresh game versus loaded save, map, reproducible steps, expected/actual result,
+and any screenshot/log/save that demonstrates the failure. Include rescue count
+and whether a reward or travel was repeated. Never attach engine binaries,
+commercial assets or unrelated personal files.
+<!-- PLAYTEST_INSTRUCTIONS_END -->
+
+## Reproducing the playtest
+
+From a complete checkout of the identified source commit, run:
+
+```powershell
+python build_playtest.py --ref <commit-or-tag> --output build/playtest
+```
+
+The exporter reads committed blobs, not local edits. It preserves fixed ZIP
+metadata and uses stored entries for byte-for-byte reproduction independent of
+compression-library versions; the larger archive is intentional. It refuses to
+overwrite a different same-version export in the same destination. SHA256SUMS.txt
+covers each delivery file; MANIFEST.json also inventories every runtime member.
+GitHub remains the source of truth. ZIP generation does not publish a release.
 
 ## License
 
@@ -991,17 +1077,19 @@ V4.35 calendar/weather/events, V4.36 physical hazards and V4.37 Tarot/Trucazo.
 Issues #10–#15 implement the T1-only loot catalogue, the four-section sewer
 with cells/beds and repair refuges, the four recolored prisoners, persistent
 escorts/port rewards and the approved Tarot fronts. Issues #18–#21 add siege
-assets, breakable actor gates, rams and catapults. See [TASKS](docs/TASKS.md)
+assets, breakable actor gates, rams and cannons. See [TASKS](docs/TASKS.md)
 and the current author-roadmap section of [PROJECT](docs/PROJECT.md).
 
-After V4.37, complete and accept three campaign maps covering the prologue,
-El Loco and two distinct Minors, then verify the exported
+Per the 2026-10-01 author decision, export the current three-map content before
+V4.37. The accepted campaign covers the prologue,
+El Loco and two distinct Minors. Verify the exported
 playtest for other players (#17), including installation, controls, the full
 route, saves and issue reporting. The mansion -> maze -> port route is
 confirmed: the third map is a demon siege, whose commanding Zupay holds
-the second Minor (exact card pending). Freed prisoners use source-character
+the Knight of Wands as the second Minor. Freed prisoners use source-character
 combat stats and follow/fight until their living extraction before the MAP02
-boss; they leave for the port and do not participate in that boss fight. Then
+boss; they leave for the port and do not participate in that boss fight. After
+the playtest and deferred 4.37 work,
 **V5.0 reorganizes programming modules**; V5.1 adds thermal exposure and later
 V5 work expands persistent resources and marine biomes. Remaining weapon
 art, loot, faction consequences, perception/formations, general world sieges, co-op/PvP,
@@ -1018,8 +1106,8 @@ CA-4367-PRISONER-ART-01 passed on 2026-09-24, and CA-4368-RESCUE-01 passed on
 and was removed from [pending_test.txt](pending_test.txt); it covered the actual
 in-game Tarot imagery.
 The 4.36.14 audio integration passed static validation, packaging and a native
-ZScript compile; the in-game pain, music, dialogue cue and opening flow await
-the author's focused check, recorded in [pending_test.txt](pending_test.txt).
+ZScript compile; the author accepted its in-game pain, music, dialogue cue and opening flow on
+2026-09-25 (CA-43614-AUDIO-01, recorded in HISTORY).
 HISTORY records the accepted CA-4364-T1-LOOT-01. The 4.36.2 bow
 check also passed on the author's confirmation. On 2026-09-23 the
 author confirmed zero validator errors, successful rebuild/launch and both
@@ -1049,7 +1137,7 @@ From the repository root, using the author's installed Python:
 python validate_project.py
 ```
 
-Success prints JSON with `"version": "4.36.1b"`, `"documents": 10`, and
+Success prints JSON with `"version": "4.36.28"`, `"documents": 10`, and
 `"errors": []`, returning exit code 0 (`$LASTEXITCODE` in PowerShell or
 `echo %ERRORLEVEL%` in Command Prompt). On failure, report the full output,
 command, Python version (`python --version`) and current commit (`git rev-parse
@@ -1063,7 +1151,7 @@ For maintained docs longer than 5,000 words, query
 
 Rebuild the PK3 after updating; launching an old PK3 keeps old code. The commands
 `netevent ca_debug_hazards_report` and `netevent ca_debug_maze_report` must identify
-**4.36.1b**. The 4.36.1b documentation patch requires no new campaign or save migration.
+**4.36.28**. This packaging patch requires no save-schema migration.
 
 Double-click **run_dev.bat** to build and play with the supplied machine's
 existing engine/IWAD paths. Check `GZDOOM_EXE` and `DOOM2_IWAD` in that file on

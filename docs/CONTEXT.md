@@ -1,6 +1,12 @@
 # CONTEXT.md — Ultra-condensed summary of Caelum Argenteum
 
-Documentation version: **4.36.27** — 2026-09-30.
+Documentation version: **4.36.28** — 2026-10-01.
+
+**4.36.28 / #17:** preparing reproducible current-content export from accepted
+4.36.27. Author explicitly postponed 4.37 Tarot/Trucazo until after this playtest
+on 2026-10-01. Route: MAP01 -> MAP02 -> MAP03 connector -> MAP06. Exported-package
+author acceptance and distribution qualifications remain open; see TASKS,
+pending_test.txt and assets/validation_43628. Gameplay and saves are unchanged.
 
 **4.36.27 / #16:** full port siege deployed: 1,000 Mandingas, Zupay, 24 machines,
 100 equipped defenders. Automatic unlimited cannons reload in 10/20 seconds;
@@ -11,8 +17,7 @@ Use --legacy-map06 for campaigns that previously visited the old port. SYSTEMS
 holds current rules; assets/validation_43627 holds evidence.
 Current trial: dead crew are replaced; port enemies attack despite empty resources.
 
-Repository rights: LICENSE.md reserves original-project rights, subject to
-third-party terms and legal/platform exceptions (#55).
+Rights: LICENSE.md and third-party notices apply (#55).
 
 ## The game's premise
 
@@ -81,20 +86,16 @@ assets/validation_43626. Both author checks passed 2026-09-30; merge/closure aut
 
 ## Current status
 
-**4.36.25 / #36:** MAP01 has closed gables, a flat upper ceiling, 204 balcony
-guards, raised shutters, corrected interior/exterior finishes and an invisible
-blocking horizon. At Z=136, four side doors are removed; front singles are
-separated. The 48 wooden leaves use siege hinges. Native three-size traversal
-and access checks pass. Three model surfaces fix the zero-size-texture startup
-failure. CA-43625-MANSION-01 fully passed author acceptance on 2026-09-29;
-merge/closure authorized. Start fresh. Evidence: assets/validation_43625/caella;
-architecture: ASSETS/MAP01.
+**4.36.25 / #36:** mansion enclosure, guards, shutters, finishes and hinged
+doors passed native traversal/access checks and author acceptance
+CA-43625-MANSION-01 on 2026-09-29. Start fresh. Architecture: ASSETS/MAP01;
+evidence: assets/validation_43625/caella. Startup model-surface failure is fixed.
 
 **4.36.24 / #35:** Journal filters retain main/side and active/completed records,
 including separate rescue/extraction and payment status. Native legacy/reload/hub
 and UI checks pass (assets/validation_43624). CA-43624-JOURNAL-01 passed author
 acceptance on 2026-09-28; merge/closure authorized. Controls/classification and
-legacy limits: SYSTEMS. Port acceptance and #17 export remain pending.
+legacy limits: SYSTEMS. Port accepted; #17 export acceptance remains pending.
 
 **4.36.23 / #52:** Toughness subtracts uncapped L*(L+1)/101 maximum-health percentage points before armor.
 Magical armor loses mental bonuses; shields stay unchanged. Palomo absorbs 77%;
@@ -211,30 +212,30 @@ rations, and MAP01 tables at full capacity.
 
 Pending:
 
-- #18/#19/#20/#21 and #43 are author-accepted. #33 and #49 are also author-accepted. #34 narrative acceptance and full port integration remain #16/#17 prerequisites.
-- Closing 4.36: #34 author acceptance and remaining integration/save/reset validation
-  before extracting Impact Physics. Per the author's 2026-09-23 #8 decision,
+- #8–#16, #18–#21, #33–#37, #43 and #49 are author-accepted within their recorded
+  scope. #17 exported-package acceptance remains outstanding.
+- Extract Impact Physics only after its separate integration/save/reset closure. Per the author's 2026-09-23 #8 decision,
   existing ceiling/elevator cover moving sectors; avalanches await additional
   maps and damaging surfaces await temperature effects (no acid/lava requested).
-  Those three items no longer block 4.36; Tarot and demo gates remain.
+  Those three items do not block 4.36; the export check remains and Tarot is deferred.
 
 On 2026-09-23 the author accepted the 4.36.0i maze, save/load and table checks
 and bow appearance. The author also confirmed the complete 4.36.1 Windows
 validator/launcher/header check. The bow stall and final flail pose are now accepted;
 detailed results are in HISTORY. PR #7 and the #22 integration PR #23 are merged.
 
-After 4.36 comes 4.37 (Tarot/Trucazo), then the V4 playtest export, and only
-then V5. The 2026-09-23 author decision requires three complete maps with the
+The 2026-10-01 author decision puts the current-content V4 playtest export
+before 4.37 (Tarot/Trucazo); V5 follows the remaining V4 work. The 2026-09-23 author decision requires three complete maps with the
 prologue, confirmed El Loco and two Minors before export (#16/#17). Confirmed
-route: mansion MAP01 -> maze MAP02 -> workshop MAP03 -> port MAP06. The future
-port siege will replace the Knight of Wands' provisional #33 appearance condition.
+route: mansion MAP01 -> maze MAP02 -> workshop MAP03 -> port MAP06. The accepted
+port siege replaces the Knight of Wands' provisional #33 appearance condition.
 Prisoners match their source character's combat stats, follow/fight alongside
 the player and extract alive through an exit before the MAP02 boss; they do
 not fight that boss. At the port, each grants +10 reputation with its own
 faction and a fixed 25 gold coins once, independent of character size.
 The latest #10/#14 author decision supersedes the former weapon-price formula.
-The #15 approved Tarot fronts are integrated; activation/powers and the
-remaining detailed siege balance/conditions stay pending.
+The #15 approved Tarot fronts are integrated; activation/powers stay pending after this playtest;
+the current siege rules are author-accepted.
 Prisoner source/faction mapping: Caella/Unitarians, Ronnie/Federals,
 Rulo/Free Peoples, Argento/Cult of the Tarot; do not reassign mansion NPCs.
 PROJECT contains the authoritative scope, dependency order and usage protocol.

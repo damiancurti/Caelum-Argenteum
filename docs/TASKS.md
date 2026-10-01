@@ -1,6 +1,23 @@
 # TASKS.md — Active tasks
 
-Documentation version: **4.36.27** — 2026-09-30.
+Documentation version: **4.36.28** — 2026-10-01.
+
+## Issue #17 — Verify and export the complete three-map test build (4.36.28)
+
+- Author authorized export of current content on 2026-10-01 and explicitly
+  deferred 4.37 Tarot/Trucazo until afterward. The accepted #16 content is frozen.
+- Implemented commit-based deterministic export, SHA-256 manifest, portable
+  clean-profile launcher, license notices and README-owned player instructions.
+- Static/build, reproducibility and clean-install engine evidence belong in
+  assets/validation_43628/RESULTS.json; prior acceptance links and measured
+  performance retain their original conditions and scope there.
+- Outstanding: CA-43628-EXPORT-01, complete ordinary-player route from the
+  extracted package, including cross-map saves and reward/resource continuity.
+  Do not remove it until explicit author confirmation. No release publication
+  or merge is implied. Record missing rights confirmations as distribution gates.
+- At author-accepted completion collect final weekly allowance and available
+  Usage evidence; retain the 75% baseline, unknown reset, Work/desktop separation
+  and unmeasured stages. Do not infer tokens or quota savings.
 
 ## Issue #16 — Complete port siege (4.36.27)
 
@@ -22,8 +39,8 @@ Documentation version: **4.36.27** — 2026-09-30.
 - Current author-requested trial enables attacks despite insufficient Air/Anima
   for registered hostile port enemies. Player/allied limits remain. The data
   switch remains reversible; the author accepted the current setting.
-- Next: the separate #17 export gate and remaining
-  4.37 prerequisites. No playtest ZIP or final independent distribution is claimed.
+- Next: #17 export acceptance. The 2026-10-01 author decision moves 4.37
+  after this playtest; final independent distribution remains future work.
 
 ## Issue #37 — Attack cadence, durability and thrusts (4.36.26)
 
@@ -497,7 +514,7 @@ documentation update does not implement these features or reset accepted tests.
 | 4.36.12 | [#20](https://github.com/damiancurti/Caelum-Argenteum/issues/20) | Physical ram strikes; approved parameter table and native evidence required. After #19. |
 | 4.36.13 | [#21](https://github.com/damiancurti/Caelum-Argenteum/issues/21) | Native cannon launch/impact at approved 400 m/s; approved parameter table and native evidence required. After #20. |
 | 4.36.27 | [#16](https://github.com/damiancurti/Caelum-Argenteum/issues/16) | Complete MAP06 port siege and Knight of Wands. All author tests passed on 2026-09-30; PR #59 merge and issue closure authorized. |
-| V4 export | [#17](https://github.com/damiancurti/Caelum-Argenteum/issues/17) | Three-map acceptance, reproducible package and batch usage report. Requires #16 and retained 4.36/4.37 gates. |
+| V4 export | [#17](https://github.com/damiancurti/Caelum-Argenteum/issues/17) | Three-map acceptance, reproducible package and batch usage report. Uses accepted #16; author deferred 4.37 on 2026-10-01. |
 
 The source/faction mapping is Caella/Unitarians, Ronnie/Federals,
 Rulo/Free Peoples (Pueblos Libres) and Argento/Cult of the Tarot. These are new

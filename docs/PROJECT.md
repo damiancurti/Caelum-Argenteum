@@ -1,6 +1,31 @@
 # Caelum Argenteum — Project, status and roadmap
 
-Documentation version: **4.36.27** — 2026-09-30.
+Documentation version: **4.36.28** — 2026-10-01.
+
+## 4.36.28 — Reproducible three-map playtest export (#17)
+
+Author decision, 2026-10-01: export the accepted 4.36.27 content now and postpone
+4.37 Tarot activation/Trucazo until after this playtest. This explicitly replaces
+the former 4.37-before-export gate; it does not implement or cancel that work.
+Baseline: merged #16 / PR #59, commit 0a584960eaeecfac31db82adadb7426347c50964.
+The three campaign maps are MAP01, MAP02 and MAP06; MAP03 remains their workshop
+connector. Existing auxiliary hub maps and the separate console-only CADEV02
+remain intact; they are not additional completed campaign chapters.
+
+The commit-based exporter writes fixed-metadata, uncompressed ZIP/PK3 archives,
+per-file SHA-256 inventory, package checksums, portable launchers, installation,
+controls, route/report guidance and license notices. It includes only committed
+runtime resources plus those delivery files; no engine, IWAD, QA overlay,
+development saves, stock sources or repository archive is distributed.
+Gameplay, balance, visuals and save schemas retain the accepted baseline.
+
+Evidence and exact source commit: assets/validation_43628/RESULTS.json.
+The exported-package ordinary-player route remains an author acceptance check
+in pending_test.txt. Prior accepted component checks are linked in the evidence
+record, not silently promoted to acceptance of this export. External publication
+and PR merge are separate decisions; #17 remains open until its checks close.
+Current dependencies remain GZDoom 4.14.2 and a separately supplied Doom II IWAD.
+This is a single-player playtest, not the final independent distribution.
 
 ## 4.36.27 — Third campaign map: port siege (#16)
 
@@ -507,8 +532,8 @@ no game rule, balance, asset, map geometry, localization or save schema changes.
 The author requires **three complete campaign maps**, covering the prologue,
 El Loco / the Fool (0) and two Minor Arcana, before the external V4 playtest.
 This small campaign slice is now an explicit exception to deferring new
-campaign content to V5. It does not waive the existing 4.36 physics or 4.37
-Tarot/Trucazo gates. Test arenas and travel stubs do not count as complete maps.
+campaign content to V5. It retained the existing system gates. The later 2026-10-01 author decision
+explicitly moves 4.37 Tarot/Trucazo after the current-content playtest. Test arenas and travel stubs do not count as complete maps.
 
 The release sections above record completed implementations; later stages remain planned.
 
@@ -2546,8 +2571,9 @@ version.
 This is the sequence already planned, reconciled with what has been implemented. The original records are still complete in HISTORY.md. “Basis implemented” does not mean that
 all the content of that system are finished.
 
-Author decision of 2026-09-13: complete the numbered V4 roadmap through 4.37; then prepare
-and export a test version for other players; begin V5 only after that export. All
+The 2026-10-01 author decision supersedes the 2026-09-13 order: export the
+accepted 4.36.27 content through #17 now, then complete 4.37 Tarot/Trucazo.
+V5 still follows the V4 system work and playtest export. All
 inherited and cross-system pending work explicitly moves to V5, except for the
 three-map playtest slice explicitly authorized above on 2026-09-23. No 4.38 block is added,
 and completing the entire campaign is not required to export the playtest.
@@ -2569,7 +2595,7 @@ content extensions and the pending previous versions are returned to V5.
 | V4.35: calendar, weather and events | 0a–0g approved: clock/calendar, Limbo, rest, furniture/camera, sleeping bag and comfort. 0g implements safe acceleration, tables/seated meals and sleep Lucidity. 0h adds digestion, repeated servings and MAP01 furniture/workshops; native tests performed. 0i–0j correct access/Use, adjust stations/meals and establish Limbo 1:1; 0j and 0k approved by the author. 0l corrects chairs/water and adds regional SMN weather and geometric shelter. 0m scales food by mass, confirms Buenos Aires and adds author-approved port/coast test maps. 0n adds measured travel with provisions; 0o integrates the monthly agenda and persistent author-defined events. 0n/0o approved except for observations resolved in 0p, which adds reservations, Q and coastal vehicles. 0p and 0q approved; visual pack v4 and 1/3 eating rate accepted. 4.35 closed. Body thermal model in V5.1. |
 | V4.36: mobile environment and physical hazards | The 0i weight formula, maze, tables, saves and bow art are accepted; #8 is corrected and author-accepted; #9 retains the flail correction. Author-requested #10–#15 add the T1 four-section sewer, rats, prisoner escorts/port rewards and Tarot artwork; #18–#21 supply siege assets, breakable actor gates, rams and cannons (historical catapult task CA-436-04). Rams now have native #20 evidence (4.36.16), with CA-43612-RAM-01 author acceptance confirmed on 2026-09-26; cannon operation now has #21 evidence (4.36.17), with CA-43613-CATAPULT-01 author acceptance confirmed on 2026-09-27. Per the author's #8 clarification, the existing ceiling/elevator cover moving sectors; avalanches are deferred until additional maps and damaging surfaces until temperature effects, so those three are not release blockers. Validate integration/save/reset before extracting Impact Physics; neither assets nor a closed issue substitutes for acceptance. |
 | V4.37: Tarot and Trucazo | Collection initiated in 0t and passive base of the Minor 56 implemented in 0aa; activation of owned/selected cards with User3 and costs/cooldowns; then card content and Trucazo minigame on stable inventory/NPC/events. |
-| **V4 test export** | After 4.37 and before V5: complete and accept three campaign maps covering the prologue, the approved first Major and two distinct Minors (#16), including the sewer/rescue/art batch; then freeze an identifiable build and verify installation, controls, route, saves and issue reporting from the exported package (#17). Other V5 content is not required; this is not final standalone distribution. |
+| **V4 test export** | Before 4.37, per the 2026-10-01 author decision, and before V5: complete and accept three campaign maps covering the prologue, the approved first Major and two distinct Minors (#16), including the sewer/rescue/art batch; then freeze an identifiable build and verify installation, controls, route, saves and issue reporting from the exported package (#17). Other V5 content is not required; this is not final standalone distribution. |
 | **V5.0: modular code architecture** | First block of V5, after closing V4 and exporting the trial version. Separate responsibilities, reduce CaelumPlayer to coordination and migrate with small adapters. One implementation of inventory/player/Tarot; cross-player authority. Preserve saves, inputs and selectors. |
 | V5.1: thermal exposure | Model of heat/cold based on climate, zones, activity, persistent humidity, wind and real equipment; Resilience, consumables, shelters, drying, rest and acclimatization. Numerical curves await the author's balance decisions. |
 | V5.x: marine resources and biomes | Persistent 3D sources, melee extraction slashing/piercing, toughness/rarity/depth/region/skill, exhaustion and regeneration. Marine biomes, algae/iodine and non-potable waters; stores maintain access to remote materials. |
