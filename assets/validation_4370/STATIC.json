@@ -1,0 +1,33 @@
+{
+  "issue": 61,
+  "map_sha256": "2a62e9cfe2f7970fe0cb0459344f5e1428c1de6519b79a328f13ad6a2d991e35",
+  "checks": {
+    "preserved baseline hash": true,
+    "current map hash": true,
+    "all original vertex records unchanged": true,
+    "all original linedef records unchanged": true,
+    "all original sidedef records unchanged": true,
+    "all original sector records unchanged": true,
+    "all original thing records unchanged": true,
+    "all references valid": true,
+    "no zero length lines": true,
+    "all terrain edges traversable two-sided": true,
+    "no duplicate terrain edges": true,
+    "every shared terrain edge is continuous": true,
+    "hills remain inside authored vertical envelope": true,
+    "both gentle and marked relief exists": true,
+    "hills exist in every exterior direction": true,
+    "all terrain sectors have three sides": true,
+    "exactly one filled tympanum per original door group": true,
+    "single and double widths match retained leaves": true,
+    "tympana start at the actual rendered leaf top": true,
+    "decorative vegetation count": true,
+    "all new vegetation stands on original dry exterior ground": true,
+    "all new vegetation clears pool footprint and margin": true,
+    "complete backing dimensions and bounded material surfaces": true
+  },
+  "maximum_edge_discontinuity": 2.2737367544323206e-13,
+  "maximum_height": 128.0,
+  "maximum_slope_degrees": 15.791606120266081,
+  "errors": []
+}

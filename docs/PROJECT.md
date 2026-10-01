@@ -1,6 +1,27 @@
 # Caelum Argenteum — Project, status and roadmap
 
-Documentation version: **4.36.28** — 2026-10-01.
+Documentation version: **4.37.0** — 2026-10-01.
+
+## 4.37.0 — MAP01 rolling grounds and filled tympana (#61)
+
+The author requested implementation on 2026-10-01 after the accepted export,
+selected mixed gentle/marked hills and decorative-only new vegetation, and
+explicitly waived old-save work for this reconstruction. This starts the 4.37
+line; deferred Tarot/Trucazo remains separate final V4 work before V5.
+
+MAP01 gains continuous native sloped ground around the mansion, sixteen scattered
+ceibos and twenty-four decorative shrubs. The accepted four harvestable ceibos,
+twenty fiber shrubs, gathering quantities, entrance, cave/pool, NPC placements
+and tutorial logic remain unchanged. Every one of the 32 door groups has an
+opaque tympanum: triangular singles, arched doubles, with solid visual backing
+across the complete upper opening. Hinged leaves and their access rules remain.
+
+Static continuity/preservation and dry-placement checks, native terrain/resource/
+Palomo checks and 429 door regressions pass. Evidence, 128 door-view hashes and
+representative captures are recorded under assets/validation_4370. The pool is
+kept free of vegetation, including underwater. Author visual/ordinary-play acceptance remains pending
+as CA-4370-MANSION-01 in pending_test.txt. Use a fresh MAP01/new campaign.
+Next: author acceptance of #61, followed by the deferred Tarot/Trucazo scope.
 
 ## 4.36.28 — Reproducible three-map playtest export (#17)
 

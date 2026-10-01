@@ -497,4 +497,14 @@ DoomEdNums
     30989 = CaelumPrisonerFederal
     30990 = CaelumPrisonerBestia
     30991 = CaelumPrisonerTarot
+    18600 = CaelumMansionSceneryTree
+    18601 = CaelumMansionSceneryTree2
+    18602 = CaelumMansionSceneryTree3
+    18603 = CaelumMansionSceneryShrub
+// BEGIN GENERATED MANSION TYMPANA
+    18610 = CaelumMansionTympanum0
+    18611 = CaelumMansionTympanum1
+    18612 = CaelumMansionTympanum2
+    18613 = CaelumMansionTympanum3
+// END GENERATED MANSION TYMPANA
 }

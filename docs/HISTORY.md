@@ -1,6 +1,50 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **4.36.28** — 2026-10-01.
+Documentation version: **4.37.0** — 2026-10-01.
+
+## 4.37.0 — Rolling mansion grounds and filled door tympana (#61)
+
+2026-10-01: the author requested implementation of #61 from accepted 4.36.28
+(30caa726), visible live tests and consultation for unresolved choices. The author
+selected mixed gentle/marked hills and decorative-only additional vegetation,
+and explicitly waived old-save compatibility work. Numeric release: 4.37.0.
+The deferred Tarot/Trucazo scope remains separate.
+The author subsequently required the pool to contain no trees or shrubs,
+including underwater. One tree and one shrub were moved out of the pool; another
+shrub was moved off a cave opening. The manifest/generator now enforce dry
+exterior placement and a 128-MU exclusion margin around the preserved pool.
+
+Implemented continuous native exterior floor slopes, sixteen decorative ceibos,
+twenty-four decorative shrubs, and complete upper-gap backing with triangular
+single-door and arched double-door tympana for all 32 groups. The original map
+records, 48 door leaves, tutorial garden/resources and gameplay rules remain.
+Preserved the accepted map as a hashed regeneration/recovery source. Original
+art is reused; opaque mesh faces are grouped into two material surfaces.
+
+Static checks confirm original-record preservation and continuous terrain joins.
+Native GZDoom 4.14.2 on Windows 11 checked 53,046 directed terrain-edge crossings
+over body tiers 1/4/7, with no failures; the original four trees/twenty shrubs and
+200,000 fiber capacity remain. All forty new plants are grounded and decorative.
+Palomo physically completed all entrance waypoints and reached (500,120,264).
+Complete native/visual/performance evidence is maintained in assets/validation_4370.
+The retained door suite passed 429 checks, including both-side traversal at body
+tiers 1/4/7. A chained native tour captured 128 views: all 32 groups from both
+sides, closed/open. An actual player also crossed the terrain with gravity and
+collision enabled. These checks include the built PK3; the final placement
+correction receives a separate pool/resource/Palomo check in that package.
+Pool validation found zero plants in the water and all forty scenery actors dry.
+A same-version test save reloaded successfully and Palomo finished his route;
+this does not claim old-save compatibility. The final PK3 also starts without
+test fixtures. Two matched-view FPS snapshots on the RTX 3070 Ti/Vulkan setup
+were 140/430 before and 96/264 after (front/north). These are instantaneous
+observations, not a controlled benchmark or a guarantee on other hardware.
+The added rendering cost and ordinary-play performance remain author checks.
+These are isolated engine checks, not ordinary campaign or author acceptance.
+
+CA-4370-MANSION-01 — originating release 4.37.0, issue #61: PENDING author
+confirmation of appearance, ordinary movement/gathering, all door sides and
+tutorial progression. No old-save migration was tested or promised under the
+explicit waiver; use a fresh MAP01. The accepted 4.36.28 export is unchanged.
 
 ## 4.36.28 — Verify and export the complete three-map test build (#17)
 

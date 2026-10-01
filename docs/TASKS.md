@@ -1,6 +1,25 @@
 # TASKS.md — Active tasks
 
-Documentation version: **4.36.28** — 2026-10-01.
+Documentation version: **4.37.0** — 2026-10-01.
+
+## Issue #61 — MAP01 terrain, vegetation and filled tympana (4.37.0)
+
+- Implemented on issue-61-mansion-terrain: continuous native hills, mixed gentle
+  and marked relief, sixteen decorative trees/twenty-four decorative shrubs,
+  and filled triangular/arched tympana across all 32 original door groups.
+- Author selected mixed relief and decorative-only additions on 2026-10-01;
+  existing gathering resources remain unchanged. Old-save work is explicitly
+  waived; use fresh MAP01/new game.
+- Deterministic sources/manifests and read-only geometric preservation/continuity
+  checks are included. Native traversal/resource/Palomo checks and 429 door
+  regressions pass; the native tour captured 128 door views. Detailed evidence
+  and scoped FPS observations belong in assets/validation_4370.
+- Author correction: vegetation stays outside the pool, including underwater.
+  Corrected three placements (two in the pool, one in a cave opening); generation
+  now enforces dry exterior ground and a margin around the water.
+- CA-4370-MANSION-01 remains the pending author appearance/ordinary-play check.
+  Deliver through a linked PR; neither merge nor closure confirms that check.
+- Deferred Tarot/Trucazo remains separate final V4 scope before V5.
 
 ## Issue #17 — Verify and export the complete three-map test build (4.36.28)
 

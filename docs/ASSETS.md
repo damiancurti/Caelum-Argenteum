@@ -1,6 +1,34 @@
 # Caelum Argenteum — Audio and art
 
-Documentation version: **4.36.28** — 2026-10-01.
+Documentation version: **4.37.0** — 2026-10-01.
+
+## 4.37.0 — Mansion landscape and filled tympana (#61)
+
+All materials are reused project assets; no external art or Doom asset is added.
+Terrain reuses CMGR01A. The sixteen decorative ceibos reuse ca_tree_coast_ceibo,
+ca_tree_coast_ceibo2 and ca_tree_coast_ceibo3 OBJ meshes with their existing
+1/0.75/1.25 scales, bark/foliage textures and corresponding collision dimensions.
+Twenty-four decorative shrubs reuse CFBHA0 at its accepted 0.05 scale.
+Actor-only scenery classes keep these additions outside the harvesting system.
+The placement manifest excludes the pool with a 128-MU margin and requires the
+original exterior ground sector. Static and native checks cover dry placement
+and the absence of vegetation throughout the pool, including its submerged area.
+
+Four original deterministic tympanum meshes cover 64/128-MU widths and 20/28-MU
+gaps. A closed six-face stone backing seals the entire opening; the filled
+triangular/segmental field appears on both sides. CMST03 supplies the stone;
+UV selection uses only the plaster portion of CMIN03. Original PNGs are unchanged.
+Each mesh groups its faces into two material surfaces, retaining CA-KP-020's
+engine limit. Fixed models add no collision, light, sound or interaction.
+
+EXTERIOR.json owns authoring data. generate_map01_exterior.py reads the preserved,
+hashed accepted MAP01_43628.wad and invokes mansion_tympana.py for mesh/model/editor
+bindings. EXTERIOR_GENERATED.json records every terrain triangle, added plant,
+door group and output hash. Regenerate this current map with the #61 generator;
+repair_map01_mansion.py remains the historical #36 reconstruction source.
+validate_map01_exterior.py is read-only. The normal builder packages existing
+outputs without requiring generators. Evidence is in assets/validation_4370;
+author visual acceptance remains CA-4370-MANSION-01 pending.
 
 ## 4.36.28 — Playtest resource packaging (#17)
 

@@ -1,0 +1,108 @@
+{
+  "issue": 61,
+  "release": "4.37.0",
+  "date": "2026-10-01",
+  "base_commit": "30caa726",
+  "status": "Implementation and agent verification complete; author visual/ordinary-play acceptance pending",
+  "author_decisions": [
+    "Mixed gentle and marked hills, up to approximately ground-storey height",
+    "New vegetation is decorative only; preserve existing gathering resources",
+    "Visible live tests requested",
+    "No tree or shrub inside the pool, including underwater",
+    "Old-save work explicitly waived for this reconstruction; start fresh"
+  ],
+  "static": {
+    "geometry_checks": 23,
+    "errors": [],
+    "deterministic_outputs": 9,
+    "project_errors": []
+  },
+  "native": {
+    "engine": "GZDoom g4.14.2 on Windows 11, author-installed development Doom II IWAD, no autoload",
+    "directed_terrain_crossings": 53046,
+    "body_tiers": [
+      1,
+      4,
+      7
+    ],
+    "terrain_failures": 0,
+    "door_regression_passes": 429,
+    "door_leaves": 48,
+    "door_groups": 32,
+    "door_failures": 0,
+    "tutorial_resources": {
+      "ceibos": 4,
+      "fiber_bushes": 20,
+      "fiber_capacity": 200000
+    },
+    "grounded_decorative_actors": 40,
+    "pool": {
+      "plant_count": 0,
+      "all_scenery_dry": true,
+      "evidence": [
+        "native_pool_final.txt",
+        "native_reload_final.txt"
+      ]
+    },
+    "actual_player_walk": {
+      "passed": true,
+      "noclip": false,
+      "no_gravity": false,
+      "start_y": 1024,
+      "end_y": 7944.9
+    },
+    "current_version_save_reload": "PASS; same-version final map only, native_reload_final.txt. No old-save claim.",
+    "package_without_fixture": "PASS; native_clean.txt",
+    "coverage_reuse": "Terrain, tympanum geometry and door code are identical between the full package/door tour run and the final map. Only three exterior plant positions changed afterward, covered by the final pool/resource/Palomo/reload runs and dry-placement invariants.",
+    "palomo": {
+      "completed": true,
+      "waypoint": 15,
+      "position": [
+        500,
+        120,
+        264
+      ]
+    },
+    "limits": "Isolated native setup, synthetic body probes and direct door Use calls. Ordinary play and author visual acceptance remain separate. No old-save compatibility tested.",
+    "renderer": "Vulkan, NVIDIA GeForce RTX 3070 Ti, 1920x1080 actual render resolution",
+    "captured_door_views": 128,
+    "capture_coverage": "All 32 groups, both sides, closed/open. Original full captures remain in build; representative captures and their full hash manifest are retained.",
+    "fixture_corrections": "An unavailable HUD helper and player flag call were corrected only in test code before successful runs. Long single-line console tours interleaved at the engine input-buffer boundary; final chained per-group configs produced the verified 128-image sequence. Loadgame requires the basename relative to the configured save directory: preliminary relative/absolute path attempts failed, then basename reload passed. The pool_final Palomo check fired at 700 tics while he was still moving at waypoint 13; reload_final allowed another 350 tics and he finished at waypoint 15. Earlier checks2 used 1400 tics and passed. East performance views were excluded because the camera was unsuitable. Failed preliminary runs remain under build and are not pass evidence.",
+    "log_format": "Full log lines retained as UTF-8 with trailing whitespace trimmed; original logs remain under build."
+  },
+  "performance": {
+    "method": "Instantaneous native FPS counter snapshots at matching front/north view setups, same isolated configuration, no autoload, RTX 3070 Ti/Vulkan 1920x1080. Not a controlled frame-time benchmark.",
+    "before_fps": {
+      "front": 140,
+      "north": 430
+    },
+    "after_fps": {
+      "front": 96,
+      "north": 264
+    },
+    "interpretation": "Additional terrain/scenery has a visible rendering cost; the observed views remained above 90 FPS. Ordinary-play acceptability and other hardware remain unconfirmed. East views excluded because the camera was unsuitable."
+  },
+  "reproduction": [
+    "Run python assets/generators/validate_map01_exterior.py; python validate_project.py; python assets/validation_4370/issue61_determinism.py from the repository root.",
+    "For native checks, build normally, copy assets/validation_4370/native to build/issue61_qa, and run python assets/validation_4370/issue61_prepare_qa.py. The local launcher requires the author-installed engine/IWAD and build/gzdoom.ini; adapt those paths to a licensed local installation.",
+    "Use run_issue61.ps1 -Package -Label <name> -Commands (Get-Content assets/validation_4370/<name>.cfg -Raw). The full 128-view tour uses -Label door_views -Commands 'exec build/issue61_tour.cfg' and runs longer than the launcher's optional 60-second -Wait limit; omit -Wait for that tour.",
+    "The current save/reload pair uses pool_final.cfg, then -LoadSave build/issue61_saves/issue61_final.zds with reload_final.cfg. pool_final checks Palomo before he completes; reload_final confirms completion. Saves, executables, IWADs and user config are not committed or packaged."
+  ],
+  "author_acceptance": {
+    "id": "CA-4370-MANSION-01",
+    "status": "pending"
+  },
+  "source_hashes": {
+    "src/maps/MAP01.wad": "2a62e9cfe2f7970fe0cb0459344f5e1428c1de6519b79a328f13ad6a2d991e35",
+    "src/MODELDEF": "93113b0dbcc5530049888bd9de5c542d08b1d4debcc73be812282cfd85835194",
+    "src/MAPINFO": "aa576565e5d7305e342430d2e2c9b3558ee33af9d3d00a978355ce16c16a883c",
+    "src/caelum/world/CaelumMansionTympana.zs": "7b4bfd872bd5301f4ec40c84c336cafb2627b50f91ef199a24b02ddf228df4b3",
+    "assets/map01_mansion/EXTERIOR_GENERATED.json": "babc5856ac48169e064992068c63ecebae13a87f39087e99d405f66cef83c262",
+    "src/models/caelum/mansion/ca_mansion_tympanum_128_20.obj": "52ed3f3547a9952c4764052aced50ab90f681a6d1bf3d4b457ce437f18a528e8",
+    "src/models/caelum/mansion/ca_mansion_tympanum_128_28.obj": "38f7c08ab587daf6c2a2a5e18ff00612c40ae5bf58da5b762ab0ba868ef2222c",
+    "src/models/caelum/mansion/ca_mansion_tympanum_64_20.obj": "fdfb57420d37001b867c49334bf5cf18783f3f74454d975f9d6a8def687c4fa8",
+    "src/models/caelum/mansion/ca_mansion_tympanum_64_28.obj": "296838deee9cb4c3ebb48356d333c4fd00df3f0dd4d4df0cc60ae05141714a36",
+    "src/caelum/world/CaelumMansionScenery.zs": "a7e418cf23901bac0e911f4ee62bec4195d3e7721cfc083da4426bc6b99e8a36"
+  },
+  "tested_package_sha256": "574e9047d069597bceda30b7c24368d3deeb5d6f0b27fad3debe19f91ea7891d"
+}

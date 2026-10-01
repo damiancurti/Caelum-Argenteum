@@ -1,6 +1,27 @@
 # Caelum Argenteum — Current systems and rules
 
-Documentation version: **4.36.28** — 2026-10-01.
+Documentation version: **4.37.0** — 2026-10-01.
+
+## 4.37.0 — MAP01 exterior and door presentation (#61)
+
+The new scenery is decorative only, as requested by the author on 2026-10-01.
+Its Actor-only classes have no gathering, renewable resource, inventory, damage
+or reward behavior. Tree trunks are stationary solid scenery; shrubs are
+nonblocking. Existing resource actors and their reserves remain authoritative:
+four tutorial ceibos and twenty fiber bushes, including 200,000 fiber capacity.
+
+Native continuous floor planes supply walkable exterior relief. The terrain
+meets the retained flat ground with no steps at its boundaries. Original map
+objects, sectors, actions, door groups/keys/swing sides and tutorial logic remain.
+Fixed opaque tympanum meshes cover the visible gap over each hinged door without
+adding passage collision. Existing door blockers and architectural slabs retain
+their accepted collision. All supported body tiers remain below the visible
+100-MU leaf top; no headroom restriction is added.
+
+The author explicitly waived old-save compatibility work for #61 on 2026-10-01.
+Start a fresh MAP01/new campaign; no old-MAP01 migration is claimed. The accepted
+baseline is preserved for recovery, and existing MAP02/MAP06 launcher options
+remain unchanged. Author acceptance is distinct from the isolated native checks.
 
 ## 4.36.27 — Complete port siege (#16)
 

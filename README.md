@@ -4,8 +4,18 @@ An independent dark fantasy FPS-RPG inspired by nineteenth-century Argentina.
 Author and game designer: **Damian Curti**. Development target: **GZDoom 4.14.2**
 on Windows 11. The final game is intended to be independent of Doom assets.
 
-**Current release: 4.36.28.** Obtain and update the complete repository, validate
+**Current release: 4.37.0.** Obtain and update the complete repository, validate
 it, then rebuild with `run_dev.bat` as described below.
+
+Issue [#61](https://github.com/damiancurti/Caelum-Argenteum/issues/61) adds rolling
+terrain and scattered decorative vegetation around MAP01, plus filled triangular
+and arched tympana above the mansion's single and double doors. Existing tutorial
+resources and hinged-door rules remain; vegetation stays outside the pool,
+including underwater. **Start a fresh MAP01/new campaign:**
+the author waived old-save compatibility work for this geometry revision.
+Static and isolated native evidence is in [4.37.0 validation](assets/validation_4370/RESULTS.json).
+Author visual/ordinary-play acceptance remains in [pending_test.txt](pending_test.txt).
+Deferred Tarot/Trucazo remains separate; the accepted 4.36.28 export is unchanged.
 
 Issue [#16](https://github.com/damiancurti/Caelum-Argenteum/issues/16) completes
 the port siege: 1,000 Mandingas, a distinct Zupay, 24 siege machines and 100

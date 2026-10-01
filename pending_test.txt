@@ -1,0 +1,7 @@
+CA-4370-MANSION-01 | Origin: 4.37.0 / issue #61 | Author visual and ordinary-play acceptance
+Prerequisites: GZDoom 4.14.2, current normal build, fresh MAP01/new game. Old-save work was waived by the author on 2026-10-01.
+1. Walk around the mansion on all sides and across gentle/marked hills. Expect visible irregular relief, smooth traversable joins and acceptable performance.
+2. Inspect scattered trees/shrubs and the pool, including underwater. No tree or shrub should be inside the pool. New scenery is decorative; the original four ceibos and twenty bushes still support normal tutorial gathering.
+3. Inspect single and double doors from both sides, closed and open, on every storey. Expect filled triangular/arched tympana with no upper holes, clipping, blocked swing or blocked passage.
+4. Play the entrance/tutorial sequence. Expect Palomo to enter and complete his route, resources/cave/pool/workshops/NPCs to remain reachable, and progression to work normally.
+Expected: appearance accepted by the author, free traversal and unchanged tutorial operation. Agent/native test passes do not satisfy this author check.

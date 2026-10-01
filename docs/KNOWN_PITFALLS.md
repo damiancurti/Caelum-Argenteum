@@ -4,6 +4,30 @@ Status: integrated engineering register (issue #22, patch 4.36.1b).
 Prepared: 2026-09-23. Inherits the project's release after integration.
 Inspected baseline: `1dc390576fa330d37ff543526fc7e69a397fc28f` (PR #7).
 
+## CA-KP-023 — OBJ height and map headroom use different vertical scales
+
+Status/evidence: CODE-VERIFIED / ENGINE-VERIFIED, #61 / 4.37.0.
+First recorded / last checked: 2026-10-01 / 2026-10-01.
+Baseline: accepted MAP01 at 30caa726, Windows 11, GZDoom 4.14.2, Vulkan,
+RTX 3070 Ti, development Doom II IWAD. Author visual acceptance remains pending.
+
+Symptom: the accepted 120-unit mansion door OBJ leaves a visible upper gap even
+when its actor blocker and nominal map opening both reach 120 MU. GZDoom's
+model transform divides non-voxel height by the map pixel stretch; at MAP01's
+1.2 ratio, the visible leaf ends at 100 MU. Actor collision is independent.
+
+For the fixed #61 tympana, measure from that rendered top to the existing slab
+underside. Their MODELDEF Z scale of 1.2 makes newly authored mesh heights match
+map units. Fill the complete rectangular backing, including corners outside the
+triangular/arched inset. Preserve the accepted leaf, its sweep and blockers.
+Group faces into bounded material surfaces as described in CA-KP-020.
+
+Evidence: assets/validation_4370, EXTERIOR.json, generated tympanum meshes and
+native closed/open views from both sides. Reference: GZDoom g4.14.2
+[models.cpp](https://github.com/ZDoom/gzdoom/blob/g4.14.2/src/r_data/models.cpp),
+model transform around lines 143-192. This evidence establishes this map/model
+combination, not a universal scale for sprites, voxels or other map ratios.
+
 ## CA-KP-022 — A magic-resource wait can strand an otherwise mobile army
 
 Status/evidence: AUTHOR-REPORTED / CODE-VERIFIED / ENGINE-VERIFIED.

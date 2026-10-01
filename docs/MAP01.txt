@@ -1,6 +1,40 @@
 CAELUM ARGENTEUM — STORY AND MAP01
 
-Documentation version: **4.36.28** — 2026-10-01.
+Documentation version: **4.37.0** — 2026-10-01.
+
+## 4.37.0 — Exterior relief, scattered vegetation and door tympana (#61)
+
+Author decisions, 2026-10-01: mix gentle and marked hills, approximately up to
+ground-storey height; additional trees/shrubs are decorative only. Existing
+tutorial resources and access remain. Old-save work is waived; start fresh.
+
+The exterior uses 5,792 triangulated native floor sectors, shared heights and
+zero-height joins to retained geometry. Height ranges from 0 to 128 MU, with a
+maximum 15.80-degree slope. The sampled region is X=-8192..8192, Y=-6144..6144;
+EXTERIOR.json owns the reproducible hill centres, protected garden and plants.
+The entrance, all pre-existing geometry/actions and all 330 authored placements
+remain unchanged. Sixteen ceibos and twenty-four shrubs are dispersed outside
+the tutorial garden; the original four ceibos and twenty fiber bushes remain.
+All added vegetation stands on original dry exterior ground. The pool footprint
+(X=2200..3480, Y=-720..720) and a 128-MU surrounding margin exclude placements;
+the generator also rejects the cave and other non-exterior sectors. This follows
+the author's explicit correction that no tree or shrub may stand underwater.
+
+All 32 door groups retain their 48 hinged leaves. Their upper gaps receive filled
+triangular tympana for singles and segmental arches for doubles. A complete
+stone backing fills the spandrels as well as the ornamental face, from the
+visible leaf top to the existing slab underside. Both faces are finished.
+Existing plaster/stone textures retain the accepted nineteenth-century style.
+
+GZDoom's OBJ pixel-stretch correction renders the accepted 120-unit door mesh at
+100 MU. Tympanum dimensions account for that transform; their own model Z scale
+compensates by 1.2 so they meet the actual slab. Leaf art, movement and collision
+remain unchanged. No extra collision is introduced over the opening.
+
+Source: assets/map01_mansion/EXTERIOR.json and preserved MAP01_43628.wad;
+generator: assets/generators/generate_map01_exterior.py (including mansion_tympana.py).
+Static and native evidence: assets/validation_4370. Author check
+CA-4370-MANSION-01 remains pending; automated traversal is not author acceptance.
 
 ## 4.36.27 — Port campaign endpoint (#16)
 
