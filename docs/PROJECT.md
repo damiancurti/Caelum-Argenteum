@@ -1,6 +1,51 @@
 # Caelum Argenteum — Project, status and roadmap
 
-Documentation version: **4.36.28** — 2026-10-01.
+Documentation version: **4.37.0** — 2026-10-01.
+
+## 4.37.0 — MAP01 rolling grounds and filled tympana (#61)
+
+The author requested implementation on 2026-10-01 after the accepted export,
+selected mixed gentle/marked hills and decorative-only new vegetation, and
+explicitly waived old-save work for this reconstruction. This starts the 4.37
+line; deferred Tarot/Trucazo remains separate final V4 work before V5.
+
+MAP01 gains continuous native sloped ground around the mansion, sixteen scattered
+ceibos and twenty-four decorative shrubs. The accepted four harvestable ceibos,
+twenty fiber shrubs, gathering quantities, entrance, cave/pool, NPC placements
+and tutorial logic remain unchanged. Every one of the 32 door groups has an
+opaque tympanum: triangular singles, arched doubles, with solid visual backing
+across the complete upper opening. Hinged leaves and their access rules remain.
+
+Static continuity/preservation and dry-placement checks, native terrain/resource/
+Palomo checks and 429 door regressions pass. Evidence, 128 door-view hashes and
+representative captures are recorded under assets/validation_4370. The pool is
+kept free of vegetation, including underwater. On 2026-10-01 the author accepted
+the other checks and reported transparent distant ground plus a roof-front gap
+above the top door. This same patch bounds the exterior floor and closes that
+gap against the native roof slopes. The author then accepted both repairs and
+the rest of CA-4370-MANSION-01 on 2026-10-01.
+
+The next Prueba save identified another transparent-ground site near
+(23268,23285,0). The author requested a small cave there, choosing a mouth in a
+mound, gentle descent, a roughly 10–15-metre bent tunnel with a closed end, and
+decorative rocks of all five existing gems. This same landscape patch adds that
+native cave and refines the distant floor partition. No resources or progression
+are added. The author accepted CA-4370-CAVE-01 on 2026-10-01, reporting a separate
+invisible boundary and dark region near (25630,29408,0). Sixty-nine detached
+auxiliary rooms intersected or touched the playable exterior. Their polygons
+are now outside the horizon; all sector planes, actions and targets remain.
+CA-4370-EXTERIOR-01 was accepted on 2026-10-01. Native checks cover the repaired area,
+unchanged mansion surfaces and doors; evidence is in CONTROLS.json under the
+same validation directory. Use a fresh MAP01/new campaign.
+The author then reported workstations left among the northern hills. Six old
+station actors at Y=1040 escaped relocation because the code required absolute
+Z=0, while the relief places them at Z=1.08..3.30. Comparing against their native
+floor height restores the intended 38 interior stations and preserves all
+original actors. The author confirmed all remaining tests, including
+CA-4370-STATIONS-01, on 2026-10-01 and authorized PR #66 merge/issue #61 closure.
+No #61 author checks remain. Evidence: STATIONS.json; acceptance is recorded in
+HISTORY. The acceptance update preserves the tested runtime and release 4.37.0.
+Next: deferred Tarot/Trucazo.
 
 ## 4.36.28 — Reproducible three-map playtest export (#17)
 

@@ -1,6 +1,55 @@
 # Caelum Argenteum — Current systems and rules
 
-Documentation version: **4.36.28** — 2026-10-01.
+Documentation version: **4.37.0** — 2026-10-01.
+
+## 4.37.0 — MAP01 exterior and door presentation (#61)
+
+The new scenery is decorative only, as requested by the author on 2026-10-01.
+Its Actor-only classes have no gathering, renewable resource, inventory, damage
+or reward behavior. Tree trunks are stationary solid scenery; shrubs are
+nonblocking. Existing resource actors and their reserves remain authoritative:
+four tutorial ceibos and twenty fiber bushes, including 200,000 fiber capacity.
+
+Native continuous floor planes supply walkable exterior relief. The terrain
+meets the retained flat ground with no steps at its boundaries. Original map
+objects, architectural sectors/actions, door groups/keys/swing sides and tutorial
+logic remain. The distant flat exterior is partitioned solely to correct a
+rendering defect; the original outer limit and blocking horizon are retained.
+Fixed opaque tympanum meshes cover the visible gap over each hinged door without
+adding passage collision. Existing door blockers and architectural slabs retain
+their accepted collision. All supported body tiers remain below the visible
+100-MU leaf top; no headroom restriction is added.
+The additional top-door roof-front closure begins at Z=400, above the existing
+ceiling slab. It has no actor collision and changes no access or combat rule.
+
+The author-requested northeast cave is scenery, separate from the tutorial's
+resource cave. Its five gemstone rocks are plain, nonblocking Actors, neither
+shootable nor inventory/resource nodes. They cannot be extracted, depleted,
+picked up or converted into rewards. The tunnel has a gentle native floor
+descent, one bend and a closed end; solid 3D floors provide its roof and the
+walkable mound above. No quest, enemy, loot or gathering quota is introduced.
+
+The later invisible-boundary repair relocates detached auxiliary model rooms
+outside the playable horizon. Only their polygon positions change; sector
+planes, control actions/tags and the mansion's physical floors remain intact.
+Paired native height samples and door regressions verify the retained behavior.
+
+The northern-station correction compares original exterior stations with their
+native FloorZ, rather than absolute zero, before relocating them. Both station
+selection and the spare-station fallback use this condition. Existing room
+groups, positions, recipes, dimensions and capabilities remain; eighteen original
+actors are reused within 38 total stations. Repeated preparation preserves those
+instances and creates no duplicates. This correction applies to fresh MAP01;
+already prepared older worlds are not migrated under the existing waiver.
+
+The author accepted all #61 tests, including CA-4370-STATIONS-01, on 2026-10-01
+and authorized PR #66 merge/issue #61 closure. This acceptance update changes
+no runtime behavior, crafting rule or save state.
+
+The author explicitly waived old-save compatibility work for #61 on 2026-10-01.
+Start a fresh MAP01/new campaign; no old-MAP01 migration is claimed. The accepted
+baseline is preserved for recovery, and existing MAP02/MAP06 launcher options
+remain unchanged. Author acceptance is distinct from the isolated native checks.
 
 ## 4.36.27 — Complete port siege (#16)
 

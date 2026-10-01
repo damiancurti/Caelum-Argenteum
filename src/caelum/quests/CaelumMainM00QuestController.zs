@@ -138,7 +138,8 @@ class CaelumMainM00QuestController : EventHandler
                 || candidate.CraftingRoomGroup == 0
                     && candidate.Pos.X >= -500 && candidate.Pos.X <= 500
                     && candidate.Pos.Y >= 780 && candidate.Pos.Y <= 1060
-                    && Abs(candidate.Pos.Z) < 1))
+                    // El relieve cambia la altura absoluta de la fila original.
+                    && Abs(candidate.Pos.Z - candidate.FloorZ) < 1))
             { station = candidate; break; }
         }
         if (station == null) station = CaelumCraftingStation(Actor.Spawn(kind, origin, NO_REPLACE));
@@ -258,7 +259,8 @@ class CaelumMainM00QuestController : EventHandler
         int spare = 0;
         while ((extra = CaelumCraftingStation(stations.Next())) != null)
             if (extra.CraftingRoomGroup == 0 && extra.Pos.X >= -500 && extra.Pos.X <= 500
-                && extra.Pos.Y >= 780 && extra.Pos.Y <= 1060 && Abs(extra.Pos.Z) < 1)
+                && extra.Pos.Y >= 780 && extra.Pos.Y <= 1060
+                && Abs(extra.Pos.Z - extra.FloorZ) < 1)
             {
                 extra.SetOrigin((320 + spare * 56, 144, 264), false);
                 extra.CraftingRoomGroup = 5;

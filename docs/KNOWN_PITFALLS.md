@@ -4,6 +4,150 @@ Status: integrated engineering register (issue #22, patch 4.36.1b).
 Prepared: 2026-09-23. Inherits the project's release after integration.
 Inspected baseline: `1dc390576fa330d37ff543526fc7e69a397fc28f` (PR #7).
 
+## CA-KP-027 — Terrain relief can invalidate absolute-height relocation filters
+
+Status/evidence: AUTHOR-REPORTED / CODE-VERIFIED / ENGINE-VERIFIED, #61 / PR #66.
+First recorded / last checked: 2026-10-01 / 2026-10-01.
+Affected baseline: 00e4322d; repair: subsequent station-relocation change in
+PR #66, exact source/package hashes in assets/validation_4370/STATIONS.json.
+Environment: GZDoom 4.14.2, Windows 11, Vulkan, development Doom II IWAD,
+fresh MAP01 and isolated native fixture.
+
+Six original stations remained outdoors at Y=1040 while their replacements
+appeared inside, yielding 44 stations instead of 38. Their former flat staging
+row now sits on hills at Z=1.08..3.30. PlaceStation and PrepareMansionLayout's
+spare fallback required Abs(Pos.Z)<1, so both missed the grounded originals.
+The map's original thing records were unchanged; that invariant alone could
+not verify runtime relocation after a terrain change.
+
+Both filters now compare Pos.Z with native FloorZ, retaining the existing XY
+bounds, class and unassigned-group restrictions. Do not simply expand a magic
+absolute Z range when the intended condition is standing on the local floor.
+The fix reuses original actors and the existing destinations without deleting
+stations, introducing recipes or changing saved fields.
+
+Regression: native WorldLoaded captures all eighteen original references.
+After preparation there must be 38 stations, none outside, groups 5/7/5/9/12,
+and all originals retained. Test each station's network and physical access;
+repeat preparation and save/reload to check identity and duplication.
+Evidence: [station repair](../assets/validation_4370/STATIONS.json).
+Author acceptance: CA-4370-STATIONS-01 confirmed 2026-10-01. Already prepared older worlds
+are outside this fix under the author's explicit old-save waiver.
+
+## CA-KP-026 — Detached control rooms must remain outside playable geometry
+
+Status/evidence: AUTHOR-REPORTED / CODE-VERIFIED / ENGINE-VERIFIED, #61 / PR #66.
+First recorded / last checked: 2026-10-01 / 2026-10-01.
+Affected baseline: fe506a3e; fix: the subsequent control-relocation change in
+PR #66, with exact source hashes in assets/validation_4370/CONTROLS.json.
+Environment: GZDoom 4.14.2, Windows 11, Vulkan, development Doom II IWAD,
+fresh MAP01, no autoload, isolated test fixture.
+
+At (25630.19,29408,0), facing yaw 19.34, the engine selected auxiliary sector
+539 and rendered black space with an isolated stone pillar. The author also
+reported an invisible boundary. Sixty-nine detached original auxiliary polygons
+intersected or touched the playable horizon; 63 were wholly inside it. Their
+one-sided untextured walls do not form valid exterior holes with shared sides.
+Checking only the outer boundary and sector references missed this topology.
+
+CONTROL_RELOCATION.json identifies those polygons. mansion_control_relocation.py
+translates only their vertices into an unused off-map grid, preserving control
+lines and complete sector records. For models with explicit world-space planes,
+preserve the plane coefficients; moving their coordinates alone must not shift
+the target floor. The independent validator checks every 3D-floor model's bounds,
+non-overlap and preserved data. Native before/after height samples catch effects
+that an offline parser cannot establish.
+
+Evidence: [control repair](../assets/validation_4370/CONTROLS.json), matched
+reported views, 750 region samples/3,000 moves, 64 former room centres, actual
+player traversal, 840 identical mansion surface samples and 429 door checks.
+The black region is absent in the final views. This does not establish the
+cause of the earlier oversized-floor defect in CA-KP-024 or cover every camera.
+Author accepted this repair as CA-4370-EXTERIOR-01 on 2026-10-01.
+
+## CA-KP-025 — Normalize all four coefficients of generated UDMF planes
+
+Status/evidence: CODE-VERIFIED / ENGINE-VERIFIED, #61 / PR #66 / 4.37.0.
+First recorded / last checked: 2026-10-01 / 2026-10-01.
+Baseline: 3277ab2f plus the decorative-cave working tree; GZDoom 4.14.2,
+Windows 11, Vulkan, fresh MAP01 and an isolated native fixture.
+
+In the new cave near (23268,23285), writing an algebraically correct plane
+with normal (-gx,-gy,1) produced the wrong native height: an intended Z=-32
+ramp point reported about Z=221.31. Normalising A, B, C and D by the normal's
+length corrected the same point to -32 and restored the continuous mound.
+An offline ZatPoint calculation alone had passed because it evaluated the
+raw coefficients, not the engine's loaded representation.
+
+mansion_decorative_cave.py normalises its generated floor and roof planes.
+validate_mansion_cave.py checks unit normals and authored vertex heights; the
+native fixture independently samples all 1,152 new floor triangle centres.
+Keep this native check for distant geometry, where a small coefficient error
+can cause a large vertical displacement. This finding does not reinterpret
+the already accepted mansion relief; the new cave generator is its scope.
+
+Evidence: assets/validation_4370/CAVE.json and its retained diagnostic/final
+logs. Original reports and failed local trials remain available separately.
+New cave author acceptance CA-4370-CAVE-01 was confirmed on 2026-10-01.
+
+## CA-KP-024 — A valid oversized floor can disappear in the renderer
+
+Status/evidence: AUTHOR-REPORTED / ENGINE-VERIFIED, #61 / PR #66 / 4.37.0.
+First recorded / last checked: 2026-10-01 / 2026-10-01.
+Baseline: 30caa726 and f69e6f7e; GZDoom 4.14.2, Windows 11, Vulkan,
+RTX 3070 Ti, author-installed development Doom II IWAD.
+
+The author reported transparent exterior ground at (17455,7394,0). Native
+PointInSector still identified sector 0 with floor Z=0, and its CMGR01A texture
+was valid. The same view failed in the preserved baseline. Static texture and
+collision checks therefore did not detect the visible defect. Removing the
+horizon special, reducing the sky ceiling and splitting only long boundary
+lines each failed to repair the rendering; an isolated bounded sector rendered.
+
+The first correction partitioned the 60000-MU-wide exterior into nine bounded regions
+with flat, two-sided internal joins. Existing terrain stays in the central
+sector and original horizon extent/blocking remains. The reported point now
+renders grass. This establishes a geometry-dependent failure and a verified
+workaround, not a universal size limit or an identified internal renderer bug.
+Retain native before/after captures, inspect distant views in addition to the
+mansion, and verify that new joins preserve heights and traversal.
+
+The author accepted that point's repair but later reproduced the defect near
+(23268,23285,0). Sampling only region centres had missed it. The follow-up uses
+25 regions and checks positions near all four corners and edge midpoints as
+well as the reported locations. Do not generalise a few successful views into
+a guarantee that the complete oversized exterior renders correctly.
+
+Evidence and exact geometry: assets/validation_4370/FOLLOWUP.json, CAVE.json and
+assets/map01_mansion/EXTERIOR.json. Original CA-4370-MANSION-01 is author-accepted;
+CA-4370-CAVE-01 was subsequently accepted on 2026-10-01. The later distinct
+auxiliary-room defect and its pending repair are covered by CA-KP-026.
+
+## CA-KP-023 — OBJ height and map headroom use different vertical scales
+
+Status/evidence: CODE-VERIFIED / ENGINE-VERIFIED, #61 / 4.37.0.
+First recorded / last checked: 2026-10-01 / 2026-10-01.
+Baseline: accepted MAP01 at 30caa726, Windows 11, GZDoom 4.14.2, Vulkan,
+RTX 3070 Ti, development Doom II IWAD. The author accepted the general doorway
+checks and subsequent roof-front correction on 2026-10-01.
+
+Symptom: the accepted 120-unit mansion door OBJ leaves a visible upper gap even
+when its actor blocker and nominal map opening both reach 120 MU. GZDoom's
+model transform divides non-voxel height by the map pixel stretch; at MAP01's
+1.2 ratio, the visible leaf ends at 100 MU. Actor collision is independent.
+
+For the fixed #61 tympana, measure from that rendered top to the existing slab
+underside. Their MODELDEF Z scale of 1.2 makes newly authored mesh heights match
+map units. Fill the complete rectangular backing, including corners outside the
+triangular/arched inset. Preserve the accepted leaf, its sweep and blockers.
+Group faces into bounded material surfaces as described in CA-KP-020.
+
+Evidence: assets/validation_4370, EXTERIOR.json, generated tympanum meshes and
+native closed/open views from both sides. Reference: GZDoom g4.14.2
+[models.cpp](https://github.com/ZDoom/gzdoom/blob/g4.14.2/src/r_data/models.cpp),
+model transform around lines 143-192. This evidence establishes this map/model
+combination, not a universal scale for sprites, voxels or other map ratios.
+
 ## CA-KP-022 — A magic-resource wait can strand an otherwise mobile army
 
 Status/evidence: AUTHOR-REPORTED / CODE-VERIFIED / ENGINE-VERIFIED.

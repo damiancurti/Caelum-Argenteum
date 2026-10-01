@@ -1,23 +1,26 @@
 # CONTEXT.md — Ultra-condensed summary of Caelum Argenteum
 
-Documentation version: **4.36.28** — 2026-10-01.
+Documentation version: **4.37.0** — 2026-10-01.
 
-**4.36.28 / #17:** reproducible current-content export prepared from accepted
-4.36.27. Author explicitly postponed 4.37 Tarot/Trucazo until after this playtest
-on 2026-10-01. Route: MAP01 -> MAP02 -> MAP03 connector -> MAP06. Author confirmed
-all export tests passed, including the corrected launcher, on 2026-10-01 and
-authorized #60 merge/#17 closure. CA-43628-EXPORT-01 is recorded in HISTORY;
-pending_test.txt is empty. Evidence: assets/validation_43628. Gameplay/saves
-and the accepted ZIP remain unchanged. Next: deferred 4.37 Tarot/Trucazo.
+**4.37.0 / #61:** mixed hills, sixteen decorative ceibos, twenty-four shrubs,
+filled tympana for 32 door groups, and a short mound cave with five decorative
+gems. Resources, 48 hinged leaves and tutorial rules remain; pool excludes plants.
+CA-4370-MANSION-01 and CA-4370-CAVE-01 accepted 2026-10-01. Latest Prueba near
+(25630,29408) exposed auxiliary rooms inside the exterior; their relocation is
+accepted (CA-4370-EXTERIOR-01). Six stations left on northern hills now relocate
+using floor-relative height. All tests, including CA-4370-STATIONS-01, accepted
+2026-10-01; author authorized #66 merge/#61 closure. No pending author checks.
+Start fresh; evidence: assets/validation_4370. Next: deferred Tarot/Trucazo.
 
-**4.36.27 / #16:** full port siege deployed: 1,000 Mandingas, Zupay, 24 machines,
-100 equipped defenders. Automatic unlimited cannons reload in 10/20 seconds;
-Zupay flees at half health. Victory requires twelve neutralized hostile machines
-and commander defeat, enabling Knight capture and physical survivor withdrawal.
-Native integration/save/mass-scene checks pass. Author accepted all tests 2026-09-30.
-Use --legacy-map06 for campaigns that previously visited the old port. SYSTEMS
-holds current rules; assets/validation_43627 holds evidence.
-Current trial: dead crew are replaced; port enemies attack despite empty resources.
+**4.36.28 / #17:** author accepted the export and corrected launcher on 2026-10-01,
+authorizing #60 merge/#17 closure. CA-43628-EXPORT-01: HISTORY; evidence:
+assets/validation_43628. Route: MAP01 -> MAP02 -> MAP03 -> MAP06. The accepted ZIP
+remains unchanged. Deferred Tarot/Trucazo follows the present #61 work.
+
+**4.36.27 / #16:** full siege (1,000 Mandingas, Zupay, 24 machines, 100 defenders)
+is author-accepted 2026-09-30. SYSTEMS owns its rules; assets/validation_43627 owns
+evidence. Use --legacy-map06 for campaigns that visited the old port. Crew relief
+and enemy attacks despite empty resources remain the accepted current trial.
 
 Rights: LICENSE.md and third-party notices apply (#55).
 

@@ -4,8 +4,32 @@ An independent dark fantasy FPS-RPG inspired by nineteenth-century Argentina.
 Author and game designer: **Damian Curti**. Development target: **GZDoom 4.14.2**
 on Windows 11. The final game is intended to be independent of Doom assets.
 
-**Current release: 4.36.28.** Obtain and update the complete repository, validate
+**Current release: 4.37.0.** Obtain and update the complete repository, validate
 it, then rebuild with `run_dev.bat` as described below.
+
+Issue [#61](https://github.com/damiancurti/Caelum-Argenteum/issues/61) adds rolling
+terrain and scattered decorative vegetation around MAP01, plus filled triangular
+and arched tympana above the mansion's single and double doors. Existing tutorial
+resources and hinged-door rules remain; vegetation stays outside the pool,
+including underwater. **Start a fresh MAP01/new campaign:**
+the author waived old-save compatibility work for this geometry revision.
+Static and isolated native evidence is in [4.37.0 validation](assets/validation_4370/RESULTS.json).
+The author accepted the original checks and both subsequent floor/roof repairs.
+A later report at approximately (23268,23285,0) adds a small cave in a grassy
+mound: gentle descent, a short bent tunnel and five decorative gemstone rocks
+with no extraction or rewards. Exterior partitioning also covers the newly
+reported transparent ground. The author accepted the cave and other checks,
+then reported an invisible boundary and dark area near (25630,29408,0).
+The repair relocates 69 detached auxiliary rooms beyond the playable horizon,
+preserving their architectural controls; the author accepted that repair.
+The latest follow-up fixes six old stations left on the northern hills: their
+existing relocation now uses floor-relative height, preserving the intended
+38 interior stations. The author confirmed all tests on 2026-10-01 and authorized
+PR #66 merge and issue #61 closure. No author checks remain in
+[pending_test.txt](pending_test.txt). Evidence: [cave](assets/validation_4370/CAVE.json),
+[auxiliary rooms](assets/validation_4370/CONTROLS.json) and
+[stations](assets/validation_4370/STATIONS.json).
+Deferred Tarot/Trucazo remains separate; the accepted 4.36.28 export is unchanged.
 
 Issue [#16](https://github.com/damiancurti/Caelum-Argenteum/issues/16) completes
 the port siege: 1,000 Mandingas, a distinct Zupay, 24 siege machines and 100

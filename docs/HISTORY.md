@@ -1,6 +1,179 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **4.36.28** — 2026-10-01.
+Documentation version: **4.37.0** — 2026-10-01.
+
+## 4.37.0 — Rolling mansion grounds and filled door tympana (#61)
+
+2026-10-01: the author requested implementation of #61 from accepted 4.36.28
+(30caa726), visible live tests and consultation for unresolved choices. The author
+selected mixed gentle/marked hills and decorative-only additional vegetation,
+and explicitly waived old-save compatibility work. Numeric release: 4.37.0.
+The deferred Tarot/Trucazo scope remains separate.
+The author subsequently required the pool to contain no trees or shrubs,
+including underwater. One tree and one shrub were moved out of the pool; another
+shrub was moved off a cave opening. The manifest/generator now enforce dry
+exterior placement and a 128-MU exclusion margin around the preserved pool.
+
+Implemented continuous native exterior floor slopes, sixteen decorative ceibos,
+twenty-four decorative shrubs, and complete upper-gap backing with triangular
+single-door and arched double-door tympana for all 32 groups. The original map
+records, 48 door leaves, tutorial garden/resources and gameplay rules remain.
+Preserved the accepted map as a hashed regeneration/recovery source. Original
+art is reused; opaque mesh faces are grouped into two material surfaces.
+
+Static checks confirm original-record preservation and continuous terrain joins.
+Native GZDoom 4.14.2 on Windows 11 checked 53,046 directed terrain-edge crossings
+over body tiers 1/4/7, with no failures; the original four trees/twenty shrubs and
+200,000 fiber capacity remain. All forty new plants are grounded and decorative.
+Palomo physically completed all entrance waypoints and reached (500,120,264).
+Complete native/visual/performance evidence is maintained in assets/validation_4370.
+The retained door suite passed 429 checks, including both-side traversal at body
+tiers 1/4/7. A chained native tour captured 128 views: all 32 groups from both
+sides, closed/open. An actual player also crossed the terrain with gravity and
+collision enabled. These checks include the built PK3; the final placement
+correction receives a separate pool/resource/Palomo check in that package.
+Pool validation found zero plants in the water and all forty scenery actors dry.
+A same-version test save reloaded successfully and Palomo finished his route;
+this does not claim old-save compatibility. The final PK3 also starts without
+test fixtures. Two matched-view FPS snapshots on the RTX 3070 Ti/Vulkan setup
+were 140/430 before and 96/264 after (front/north). These are instantaneous
+observations, not a controlled benchmark or a guarantee on other hardware.
+The added rendering cost and ordinary-play performance remain author checks.
+These are isolated engine checks, not ordinary campaign or author acceptance.
+
+CA-4370-MANSION-01 — originating release 4.37.0, issue #61 / PR #66:
+Initially PARTIALLY ACCEPTED by the author on 2026-10-01. The author explicitly confirmed
+that the other tests passed, while reporting two visual defects: transparent
+ground at (17455,7394,0), and an opening between the upper doorway's tympanum and
+the pitched roof front. Thus relief/traversal outside the reported defect,
+vegetation/pool exclusion, gathering/resources, other door checks, performance
+and ordinary tutorial/Palomo progression are confirmed. Only the two corrected
+defects initially remained in pending_test.txt under the same stable ID.
+
+Same-patch correction: the distant floor failure reproduces in the preserved
+4.36.28 map. Removing Line_Horizon, lowering the sky ceiling, and subdividing
+only the outer boundary did not fix it. A bounded native floor sector did.
+The implemented fix partitions the oversized exterior into a central region and
+eight flat surrounding sectors, retaining grass, light, height, outer extent
+and blocking horizon. Only four original horizon-line endpoints and four
+front-sector references change; original vertices, sectors, actors and every
+other architectural record remain unchanged. The lower-level renderer cause
+is not claimed beyond this reproduced geometry-dependent failure.
+
+A copy of the author's Prueba save supplied the roof view; the original save was
+not modified. Group 915 shares interior sectors through its doorway, so the
+earlier wall-sector gable closure skipped this strip. An opaque 128-by-8-MU mesh
+closes from the ceiling-slab top (Z=400) to the existing roof planes (ridge 456),
+using CMEX01. It introduces no collision. Starting above the slab also avoids
+coplanar overlap with its 392..400 front edge. Follow-up evidence is retained in
+assets/validation_4370/FOLLOWUP.json; the initial evidence remains historical.
+The corrected PK3 passed 53,118 directed native terrain/seam crossings over body
+tiers 1/4/7 and all 429 door regressions. Resources and pool exclusion still pass.
+Native captures cover the reported point, all eight surrounding floor regions,
+the centre, and the upper door closed/open from both sides. Thirty static
+invariants and byte-identical regeneration of ten outputs cover the new layout.
+No old-save migration was tested or promised under the explicit waiver; use a
+fresh MAP01. The accepted 4.36.28 export is unchanged. Version remains 4.37.0.
+
+Later on 2026-10-01, the author confirmed that the remaining tests passed:
+CA-4370-MANSION-01, originating 4.37.0 / #61 / PR #66, is now ACCEPTED,
+including the previous (17455,7394,0) floor repair and top-door roof-front fill.
+Those checks were removed from pending_test.txt under its approved lifecycle.
+The author also reported a different transparent-floor site in the updated
+Prueba save at (23267.58,23285.28,0) and requested a small decorative gem cave
+there. The selected design is a mouth in a small mound, gentle underground
+descent, a short 10–15-metre tunnel with a bend and closed end, and all five
+existing gems. The issue scope was updated accordingly; this remains 4.37.0.
+
+The new CAVE.json layout provides a 448-MU tunnel, descending to Z=-96. Native
+solid 3D floors support the grassy mound above it. Five plain Actor classes
+reuse ruby, sapphire, emerald, topaz and opal rock art without extraction or
+rewards. The original tutorial cave/resources and accepted architecture stay
+unchanged. The previous nine-region exterior fix did not cover every remote
+view: the latest author position still showed transparency. Twenty-five bounded
+regions now replace it, with expanded native checks near the outer corners.
+
+During development, unnormalised plane coefficients made the new distant ramp
+render at the wrong height. Normalising all four plane coefficients fixed it;
+native samples cover all 1,152 new floor triangles. Native body probes check
+the entry/exit route at tiers 1/4/7, an actual player walks to the closed end and
+back with gravity/collision enabled, and a separate probe crosses the solid roof.
+The five gem actors ignore damage and have no resource/inventory ancestry.
+The final PK3 passes 53,286 exterior crossings, 896 cave-route steps for each
+of three body tiers, and the player's 438-tic round trip. All five decorative
+damage checks, original resource/pool checks and clean package startup pass.
+Sixteen final views cover the cave and both ground reports, plus distant
+corners/edge midpoints. Thirty-nine static checks and byte-identical generation
+of eleven outputs pass. Evidence and limitations belong in
+assets/validation_4370/CAVE.json. Earlier
+reports remain historical snapshots. At that delivery, CA-4370-CAVE-01 covered
+the cave and surrounding ground and awaited author acceptance.
+
+Later on 2026-10-01, the author confirmed the other tests passed and reported
+an invisible boundary leading into darkness at the new Prueba position
+(25630.19,29408,0). CA-4370-CAVE-01, originating 4.37.0 / #61 / PR #66, is
+ACCEPTED for the cave, traversal, decorative gems, roof and previously checked
+surrounding ground. The newly reported distant defect remains excluded from
+that acceptance and moves to CA-4370-EXTERIOR-01 in pending_test.txt.
+
+The fe506a3e package reproduces the black region and incorrectly selects detached
+control sector 539 at the reported point. An inventory found 63 original auxiliary
+rectangles wholly within the playable horizon and six intersecting or touching
+it. This same-patch repair translates their 276 vertices to an unused off-map
+grid. It preserves all original sector records, 3D-floor control actions/tags,
+architecture, actors and the unused auxiliary room. CONTROL_RELOCATION.json
+declares the list and coordinates; the generator remains deterministic.
+
+The final normal package passes 750 native point samples, 3,000 local moves,
+64 formerly occupied in-bounds room centres and a 1,090-tic actual-player round
+trip with gravity/collision enabled. All 840 paired mansion surface samples
+match the preceding package exactly; all 429 door regressions pass. The cave's
+1,152 floor samples, routes at three body sizes, decorative-gem damage checks,
+solid roof, Palomo, tutorial resources and dry/pool placement also pass. Palomo
+was still at waypoint 13 after 700 tics; the 1,400-tic observation confirms
+waypoint 15 at (500,120,264), with no gameplay change.
+Five boundary views show continuous grass; separate roof, entrance and pool views
+cover retained architecture. Forty-five static invariants, eleven deterministic
+outputs, project validation and clean package startup pass. Evidence and exact
+hashes: assets/validation_4370/CONTROLS.json. Native success is not author
+acceptance of CA-4370-EXTERIOR-01. Original saves remain unchanged; start fresh.
+
+Later on 2026-10-01, the author confirmed that the other tests passed and reported
+workbenches north of the mansion, among the hills and within roughly 2,000 MU
+of the exterior walls. CA-4370-EXTERIOR-01, originating 4.37.0 / #61 / PR #66,
+is ACCEPTED for the invisible-boundary/dark-region repair. The new station
+report is separate and becomes the only pending check, CA-4370-STATIONS-01.
+
+The 00e4322d package reproduces six stations at Y=1040: two workbenches, three
+forges and one anvil. Their native floor heights are Z=1.08..3.30. The existing
+relocation in CaelumMainM00QuestController required absolute Z within 1 MU of
+zero, so it missed these originals and created replacements indoors: 44 total
+instead of the documented 38. Both selection and the spare fallback now compare
+Pos.Z with native FloorZ, retaining the same XY bounds and unassigned-group
+filter. The original actors move into their existing designated workshops;
+no station is destroyed, no map/art changes, and no recipes or quotas change.
+
+Native checks confirm 38 total, zero outside and groups 5/7/5/9/12. All eighteen
+original station references survive relocation; 38 network scans and physical
+approach/reachability checks pass. Repeating preparation creates no duplicate.
+The normal PK3 also passes same-version save/reload, Palomo's route and clean
+startup. Six views cover the cleared north and all five workshops. Static map
+and project validation pass; geometry is byte-identical to 00e4322d. Evidence:
+assets/validation_4370/STATIONS.json. Existing prepared older worlds are not
+migrated under the author's waiver; fresh MAP01 is required. Version remains
+4.37.0 and the station repair awaited author acceptance at that delivery.
+
+Final author acceptance, 2026-10-01: the author explicitly confirmed that all
+tests passed and requested issue #61 closure and PR #66 merge.
+CA-4370-STATIONS-01, originating 4.37.0 / #61 / PR #66, is ACCEPTED: the northern
+hills are clear of leftover stations, and the existing interior workshops are
+reachable and usable with unchanged crafting options. The earlier accepted
+CA-4370-MANSION-01, CA-4370-CAVE-01 and CA-4370-EXTERIOR-01 remain confirmed.
+No #61 author tests remain; pending_test.txt is empty under its approved
+lifecycle. This acceptance update preserves the runtime tested at 5321d78f,
+the built package and release 4.37.0. The existing fresh-MAP01/old-save waiver
+still applies. Native evidence remains distinct from the author's acceptance.
+Next: deferred Tarot/Trucazo; no new gameplay is introduced by this update.
 
 ## 4.36.28 — Verify and export the complete three-map test build (#17)
 

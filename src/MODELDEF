@@ -3564,3 +3564,127 @@ Model CaelumCannonFlash
     FrameIndex CCFL A 0 0
 }
 // END GENERATED CANNON COMPONENTS
+
+Model CaelumMansionSceneryTree
+{
+    Path "models/caelum/world/environment"
+    Model 0 "ca_tree_coast_ceibo.obj"
+    Scale 1 1 1
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CAVT R 0 0
+}
+Model CaelumMansionSceneryTree2
+{
+    Path "models/caelum/world/environment"
+    Model 0 "ca_tree_coast_ceibo2.obj"
+    Scale 0.75 0.75 0.75
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CAVT R 0 0
+}
+Model CaelumMansionSceneryTree3
+{
+    Path "models/caelum/world/environment"
+    Model 0 "ca_tree_coast_ceibo3.obj"
+    Scale 1.25 1.25 1.25
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CAVT R 0 0
+}
+
+// BEGIN GENERATED MANSION TYMPANA
+Model CaelumMansionTympanum0
+{
+    Path "models/caelum/mansion"
+    Model 0 "ca_mansion_tympanum_128_20.obj"
+    Scale 1 1 1.2
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CDLS A 0 0
+}
+Model CaelumMansionTympanum1
+{
+    Path "models/caelum/mansion"
+    Model 0 "ca_mansion_tympanum_128_28.obj"
+    Scale 1 1 1.2
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CDLS A 0 0
+}
+Model CaelumMansionTympanum2
+{
+    Path "models/caelum/mansion"
+    Model 0 "ca_mansion_tympanum_64_20.obj"
+    Scale 1 1 1.2
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CDLS A 0 0
+}
+Model CaelumMansionTympanum3
+{
+    Path "models/caelum/mansion"
+    Model 0 "ca_mansion_tympanum_64_28.obj"
+    Scale 1 1 1.2
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CDLS A 0 0
+}
+Model CaelumMansionDoorGable
+{
+    Path "models/caelum/mansion"
+    Model 0 "ca_mansion_door_gable.obj"
+    Scale 1 1 1.2
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CDLS A 0 0
+}
+// END GENERATED MANSION TYMPANA
+
+// BEGIN GENERATED DECORATIVE CAVE
+Model CaelumCaveSceneryRuby
+{
+    Path "models/caelum/world/resources"
+    Model 0 "ca_vein_ruby.obj"
+    Scale 0.5 0.5 0.5
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CAVE J 0 0
+}
+Model CaelumCaveScenerySapphire
+{
+    Path "models/caelum/world/resources"
+    Model 0 "ca_vein_sapphire.obj"
+    Scale 0.5 0.5 0.5
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CAVE I 0 0
+}
+Model CaelumCaveSceneryEmerald
+{
+    Path "models/caelum/world/resources"
+    Model 0 "ca_vein_emerald.obj"
+    Scale 0.5 0.5 0.5
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CAVE K 0 0
+}
+Model CaelumCaveSceneryTopaz
+{
+    Path "models/caelum/world/resources"
+    Model 0 "ca_vein_topaz.obj"
+    Scale 0.5 0.5 0.5
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CAVE H 0 0
+}
+Model CaelumCaveSceneryOpal
+{
+    Path "models/caelum/world/resources"
+    Model 0 "ca_vein_opal.obj"
+    Scale 0.5 0.5 0.5
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CAVE G 0 0
+}
+// END GENERATED DECORATIVE CAVE

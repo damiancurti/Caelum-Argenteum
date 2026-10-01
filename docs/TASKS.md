@@ -1,6 +1,46 @@
 # TASKS.md — Active tasks
 
-Documentation version: **4.36.28** — 2026-10-01.
+Documentation version: **4.37.0** — 2026-10-01.
+
+## Issue #61 — MAP01 terrain, vegetation and filled tympana (4.37.0)
+
+- Implemented on issue-61-mansion-terrain: continuous native hills, mixed gentle
+  and marked relief, sixteen decorative trees/twenty-four decorative shrubs,
+  and filled triangular/arched tympana across all 32 original door groups.
+- Author selected mixed relief and decorative-only additions on 2026-10-01;
+  existing gathering resources remain unchanged. Old-save work is explicitly
+  waived; use fresh MAP01/new game.
+- Deterministic sources/manifests and read-only geometric preservation/continuity
+  checks are included. Native traversal/resource/Palomo checks and 429 door
+  regressions pass; the native tour captured 128 door views. Detailed evidence
+  and scoped FPS observations belong in assets/validation_4370.
+- Author correction: vegetation stays outside the pool, including underwater.
+  Corrected three placements (two in the pool, one in a cave opening); generation
+  now enforces dry exterior ground and a margin around the water.
+- Author follow-up 2026-10-01: the other tests passed; distant ground at
+  (17455,7394,0) was transparent and Prueba identified a roof-front gap above the
+  top doorway. Both are corrected in the same 4.37.0 patch and PR #66.
+- The author subsequently confirmed both repairs and all remaining original
+  checks: CA-4370-MANSION-01 is accepted, recorded in HISTORY.
+- New same-issue scope: Prueba at (23268,23285,0) identified another transparent
+  area. Add the selected small mound cave, gentle descent, short bent tunnel
+  and decorative rocks of all five gems. Native roof, passage, damage/resource
+  and expanded distant-ground views are covered by the cave evidence.
+- Author confirmed CA-4370-CAVE-01 on 2026-10-01; the original tutorial cave,
+  gathering reserves and progression stay unchanged.
+- Latest Prueba position (25630,29408,0): corrected invisible boundary/dark area
+  by relocating 69 detached auxiliary rooms outside the playable horizon while
+  preserving their control data. Static isolation and native surface, boundary,
+  traversal and door regressions are in assets/validation_4370/CONTROLS.json.
+  CA-4370-EXTERIOR-01 was accepted on 2026-10-01.
+- Northern stations: six original actors at Y=1040 escaped relocation when hills
+  raised their absolute Z above the old filter. Floor-relative recognition fixes
+  selection and the spare fallback. The 38-station/five-room layout and original
+  instances are retained; evidence: assets/validation_4370/STATIONS.json.
+  Author confirmed CA-4370-STATIONS-01 and all remaining tests on 2026-10-01,
+  authorizing PR #66 merge/issue #61 closure. No pending author checks remain;
+  HISTORY records acceptance. Tested runtime and version 4.37.0 are preserved.
+- Deferred Tarot/Trucazo remains separate final V4 scope before V5.
 
 ## Issue #17 — Verify and export the complete three-map test build (4.36.28)
 

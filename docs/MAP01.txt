@@ -1,6 +1,85 @@
 CAELUM ARGENTEUM — STORY AND MAP01
 
-Documentation version: **4.36.28** — 2026-10-01.
+Documentation version: **4.37.0** — 2026-10-01.
+
+## 4.37.0 — Exterior relief, scattered vegetation and door tympana (#61)
+
+Author decisions, 2026-10-01: mix gentle and marked hills, approximately up to
+ground-storey height; additional trees/shrubs are decorative only. Existing
+tutorial resources and access remain. Old-save work is waived; start fresh.
+
+The exterior uses 5,792 triangulated native floor sectors, shared heights and
+zero-height joins to retained geometry. Height ranges from 0 to 128 MU, with a
+maximum 15.80-degree slope. The sampled region is X=-8192..8192, Y=-6144..6144;
+EXTERIOR.json owns the reproducible hill centres, protected garden and plants.
+The entrance, architectural geometry/actions and all 330 authored placements
+remain unchanged. The repairs below subdivide four outer horizon lines and
+their front-sector references, and relocate detached auxiliary-room vertices.
+Sixteen ceibos and twenty-four shrubs are dispersed outside
+the tutorial garden; the original four ceibos and twenty fiber bushes remain.
+All added vegetation stands on original dry exterior ground. The pool footprint
+(X=2200..3480, Y=-720..720) and a 128-MU surrounding margin exclude placements;
+the generator also rejects the cave and other non-exterior sectors. This follows
+the author's explicit correction that no tree or shrub may stand underwater.
+
+All 32 door groups retain their 48 hinged leaves. Their upper gaps receive filled
+triangular tympana for singles and segmental arches for doubles. A complete
+stone backing fills the spandrels as well as the ornamental face, from the
+visible leaf top to the existing slab underside. Both faces are finished.
+Existing plaster/stone textures retain the accepted nineteenth-century style.
+The top-storey doorway (group 915, X=1051, Y=-64..64) also receives an opaque
+8-MU-deep gable from the existing ceiling-slab top at Z=400 to the roof underside
+(ridge Z=456). Its sides follow the two existing roof planes. The author located
+this separate upper gap in the save named Prueba; the original save is preserved.
+
+The author also reported transparent ground at (17455,7394,0), reproduced in the
+preserved baseline. The 60000-MU-wide exterior is now divided into a central
+region and 24 surrounding flat sectors, with splits at X/Y=+/-12288 and +/-20480. Existing
+grass, light, height, outer extent and blocking horizon remain; the largest
+individual floor span is 24576 MU. This fixes the observed renderer failure
+without extending the hills or adding barriers. EXTERIOR.json owns this layout.
+The author accepted those two repairs and the other original tests on 2026-10-01
+(CA-4370-MANSION-01). The additional splits follow a later transparent-ground
+report in the northeast, beyond the previously sampled region centres.
+
+At the author's new Prueba position (23267.58,23285.28,0), a small cave now opens
+in a grassy mound. Its mouth faces southwest, toward the mansion. A rock-lined
+approach leads northeast into a 448-MU (14-metre) tunnel with one offset bend
+and a closed end. The floor descends 96 MU over 384 MU (14.04 degrees); its native
+roof underside is Z=120. A 64-MU triangulated local mesh forms the mound, with
+solid 3D floors above the tunnel so the grass surface also supports walking.
+Five nonblocking decorative rocks show ruby, sapphire, emerald, topaz and opal;
+they grant no resources. This is separate from the existing tutorial cave.
+CAVE.json owns the layout and author-selected scope. No NPC, encounter, loot,
+quest, connection to the mansion basement or new story is introduced.
+
+GZDoom's OBJ pixel-stretch correction renders the accepted 120-unit door mesh at
+100 MU. Tympanum dimensions account for that transform; their own model Z scale
+compensates by 1.2 so they meet the actual slab. Leaf art, movement and collision
+remain unchanged. No extra collision is introduced over the opening.
+
+Source: assets/map01_mansion/EXTERIOR.json and preserved MAP01_43628.wad;
+generator: assets/generators/generate_map01_exterior.py (including mansion_tympana.py).
+The author accepted CA-4370-CAVE-01 on 2026-10-01, then reported an invisible
+boundary leading into darkness at the latest Prueba position (25630.19,29408,0).
+Native sector lookup there selected detached control room 539 instead of the
+exterior. Sixty-three auxiliary rectangles were wholly inside the horizon;
+another six intersected or touched it. CONTROL_RELOCATION.json explicitly lists
+all 69 rooms. Their 276 vertices move to an unused grid beyond Y=31000, leaving
+all sector planes, tags, actions, materials and heights intact. The unused room
+is preserved as well. This adds no terrain, barrier or playable room.
+Static and native evidence: assets/validation_4370/CONTROLS.json. Author check
+CA-4370-EXTERIOR-01 was accepted on 2026-10-01.
+
+The later northern-bank report exposes six original stations at Y=1040 that
+should already have moved into the workshops. The relief raises them to
+Z=1.08..3.30, so the old absolute-height filter missed them and spawned indoor
+replacements, leaving 44 stations. Floor-relative recognition restores the
+documented total of 38: Rulo 5, Ronnie 7, Argento 5, Caella 9 and upstairs 12.
+All eighteen original actors are reused. No WAD placement or room coordinates
+change. Evidence: assets/validation_4370/STATIONS.json. The author accepted
+CA-4370-STATIONS-01 and all remaining tests on 2026-10-01, authorizing PR #66
+merge and issue #61 closure. No author checks remain; start fresh MAP01.
 
 ## 4.36.27 — Port campaign endpoint (#16)
 

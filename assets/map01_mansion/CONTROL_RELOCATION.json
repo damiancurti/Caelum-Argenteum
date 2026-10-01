@@ -1,0 +1,12 @@
+{
+  "issue": 61,
+  "provenance": "Author's updated Prueba save at (25630.19464,29408.004524,0), 2026-10-01, reproduces an invisible boundary and black region. Native PointInSector incorrectly selects detached control sector 539 there. Sixty-nine original auxiliary polygons intersect or touch the 60000-MU playable horizon, including 63 wholly inside. Relocate only their vertices beyond that horizon; preserve every sector plane, tag, action, material and target. This is a technical layout repair, not a new play area or barrier.",
+  "reported_position": [25630.19463978812,29408.004523812844,0],
+  "reported_angles": [8.0859375,379.3359375,0],
+  "sectors": [142,143,144,145,146,147,148,149,150,151,152,153,170,171,172,185,186,187,188,369,370,371,372,373,374,375,376,377,378,379,380,381,382,384,405,406,407,408,409,410,411,414,415,416,417,420,539,540,541,542,543,544,545,546,547,548,549,550,551,552,553,554,555,556,557,558,559,560,617],
+  "destination_origin": [-8000,31000],
+  "columns": 8,
+  "spacing": 64,
+  "playable_bounds": [-30000,-30000,30000,30000],
+  "native_scan": [25000,28500,29900,29900,100]
+}

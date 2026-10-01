@@ -1,6 +1,64 @@
 # Caelum Argenteum — Audio and art
 
-Documentation version: **4.36.28** — 2026-10-01.
+Documentation version: **4.37.0** — 2026-10-01.
+
+## 4.37.0 — Mansion landscape and filled tympana (#61)
+
+All materials are reused project assets; no external art or Doom asset is added.
+Terrain reuses CMGR01A. The sixteen decorative ceibos reuse ca_tree_coast_ceibo,
+ca_tree_coast_ceibo2 and ca_tree_coast_ceibo3 OBJ meshes with their existing
+1/0.75/1.25 scales, bark/foliage textures and corresponding collision dimensions.
+Twenty-four decorative shrubs reuse CFBHA0 at its accepted 0.05 scale.
+Actor-only scenery classes keep these additions outside the harvesting system.
+The placement manifest excludes the pool with a 128-MU margin and requires the
+original exterior ground sector. Static and native checks cover dry placement
+and the absence of vegetation throughout the pool, including its submerged area.
+
+Four original deterministic tympanum meshes cover 64/128-MU widths and 20/28-MU
+gaps. A closed six-face stone backing seals the entire opening; the filled
+triangular/segmental field appears on both sides. CMST03 supplies the stone;
+UV selection uses only the plaster portion of CMIN03. Original PNGs are unchanged.
+Each mesh groups its faces into two material surfaces, retaining CA-KP-020's
+engine limit. Fixed models add no collision, light, sound or interaction.
+A fifth original mesh closes the top-door roof-front gap using the existing
+CMEX01 material. mansion_door_gable.py derives its contour from the preserved
+roof planes and starts above the ceiling slab to avoid overlapping its front.
+mansion_exterior_partition.py bounds the large outer floor for correct rendering;
+its flat sectors reuse the original grass and light without introducing art.
+
+EXTERIOR.json owns authoring data. generate_map01_exterior.py reads the preserved,
+hashed accepted MAP01_43628.wad and invokes mansion_tympana.py for mesh/model/editor
+bindings. EXTERIOR_GENERATED.json records every terrain triangle, added plant,
+door group and output hash. Regenerate this current map with the #61 generator;
+repair_map01_mansion.py remains the historical #36 reconstruction source.
+validate_map01_exterior.py is read-only. The normal builder packages existing
+outputs without requiring generators. Evidence is in assets/validation_4370;
+the author accepted CA-4370-MANSION-01 on 2026-10-01.
+
+CAVE.json and mansion_decorative_cave.py add the requested northeast cave.
+Native sloped sectors form its grassy mound; solid native 3D floors support
+the walkable roof above the tunnel. Rock surfaces reuse CACVROCK, backed by
+the project's rock_granite.png. Five Actor-only classes reuse existing ruby,
+sapphire, emerald, topaz and opal vein models at half scale. They inherit no
+resource behavior and add no external material, sound or story. The generated
+report includes roof controls, cave sectors, placements and camera/route data.
+The follow-up divides the distant exterior into 25 regions; no new art is used.
+The author accepted CA-4370-CAVE-01 on 2026-10-01.
+
+CONTROL_RELOCATION.json and mansion_control_relocation.py relocate 69 original
+detached auxiliary polygons that intersected or touched the playable horizon.
+Only their 276 vertex positions change, into an unused grid at (-8000,31000).
+Sector planes, heights, tags, lighting, materials and control actions remain
+byte-equivalent as parsed records; no visual asset is added. The independent
+validator checks isolation, non-overlap and preservation. CONTROLS.json records
+native evidence; CA-4370-EXTERIOR-01 is author-accepted on 2026-10-01.
+
+The northern-station follow-up changes no map or art. Runtime relocation now
+recognizes original stations resting on sloped ground, preserving all eighteen
+original actors within the intended 38 interior stations. STATIONS.json holds
+native evidence. The author accepted CA-4370-STATIONS-01 and all remaining
+checks on 2026-10-01, authorizing #66 merge/#61 closure. Art and map bytes remain
+unchanged in the acceptance update.
 
 ## 4.36.28 — Playtest resource packaging (#17)
 

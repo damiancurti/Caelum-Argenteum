@@ -1,0 +1,57 @@
+version "4.14"
+class Issue61UI : StaticEventHandler
+{
+    override void UiTick() { if(Menu.GetCurrentMenu()!=null) Menu.GetCurrentMenu().Close(); }
+}
+class Issue61View : CaelumSocialDebugAction
+{
+    override bool Use(bool pickup)
+    {
+        let u=CaelumPlayer(Owner);
+        let r=u.GetPersistentCharacterState(true);
+        r.DemoNarrativeDelivered=2047; r.DemoNarrativePending=0;
+        u.CharacterCreationComplete=true; u.CreationWizardOpen=false;
+        u.bInvulnerable=true; u.bNoGravity=true; u.bNoClip=true;
+        u.SetOrigin((-1150,-900,30),false); u.Angle=35; u.Pitch=-4;
+        return true;
+    }
+}
+class Issue61Door : Issue61View
+{
+    override bool Use(bool pickup) { Super.Use(pickup); Owner.SetOrigin((282,340,136),false); Owner.Angle=270; Owner.Pitch=-18; return true; }
+}
+class Issue61Double : Issue61View
+{
+    override bool Use(bool pickup) { Super.Use(pickup); Owner.SetOrigin((-760,0,0),false); Owner.Angle=0; Owner.Pitch=-17; return true; }
+}
+class Issue61North : Issue61View
+{
+    override bool Use(bool pickup) { Super.Use(pickup); Owner.SetOrigin((-1200,1100,20),false); Owner.Angle=45; Owner.Pitch=3; return true; }
+}
+class Issue61South : Issue61View
+{
+    override bool Use(bool pickup) { Super.Use(pickup); Owner.SetOrigin((600,-1750,40),false); Owner.Angle=230; Owner.Pitch=3; return true; }
+}
+class Issue61East : Issue61View
+{
+    override bool Use(bool pickup) { Super.Use(pickup); Owner.SetOrigin((3840,0,150),false); Owner.Angle=0; Owner.Pitch=3; return true; }
+}
+class Issue61Pool : Issue61View
+{
+    override bool Use(bool pickup) { Super.Use(pickup); Owner.SetOrigin((2200,-900,220),false); Owner.Angle=48; Owner.Pitch=18; return true; }
+}
+class Issue61Underwater : Issue61View
+{
+    override bool Use(bool pickup) { Super.Use(pickup); Owner.SetOrigin((2750,0,-200),false); Owner.Angle=0; Owner.Pitch=0; return true; }
+}
+#include "Checks.zs"
+
+#include "DoorChecks.zs"
+
+#include "Tour.zs"
+#include "Followup.zs"
+
+#include "Bounds.zs"
+
+#include "Cave.zs"
+#include "CaveChecks.zs"

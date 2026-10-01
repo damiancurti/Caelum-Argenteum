@@ -146,3 +146,6 @@ version "4.14"
 #include "caelum/hud/CaelumScheduleCalendar.zs"
 
 #include "caelum/quests/CaelumQuestCatalogue.zs"
+#include "caelum/world/CaelumMansionScenery.zs"
+#include "caelum/world/CaelumMansionTympana.zs"
+#include "caelum/world/CaelumDecorativeCave.zs"

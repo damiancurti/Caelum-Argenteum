@@ -1,0 +1,89 @@
+{
+  "issue": 61,
+  "pr": 66,
+  "release": "4.37.0",
+  "date": "2026-10-01",
+  "base_commit": "f69e6f7ea43909d76927f0a9fe0036aa6ce795e0",
+  "evidence_scope": "Historical native evidence; original hashes and test counts retain their delivery scope. Current station repair/package hashes and author status: STATIONS.json.",
+  "author_report": {
+    "ground": [
+      17455,
+      7394,
+      0
+    ],
+    "roof": "Prueba save looks at the gap between the top-storey doorway tympanum and roof front",
+    "accepted": "At this first follow-up the author confirmed the rest of the tests and left two repairs for recheck. Both were subsequently accepted on 2026-10-01; see author_recheck below."
+  },
+  "fixes": {
+    "ground": "Partition the original 60000-MU-wide exterior into nine bounded native regions. Preserve its height, grass, light, horizon extent and blocking; alter only the original four horizon-line endpoints and four front-sector references. All other original map records remain unchanged.",
+    "roof": "Opaque 128-by-8-MU gable follows the native paired roof undersides above door group 915, from ceiling slab top Z=400 to ridge Z=456. Existing CMEX01 material; no new collision."
+  },
+  "diagnosis": {
+    "ground": "Reproduced in both the initial issue map and preserved 4.36.28 baseline. Removing Line_Horizon, lowering the sky ceiling and splitting only outer boundary lines did not fix it. An isolated bounded sector and the final nine-region partition rendered grass. Exact internal renderer cause remains unidentified.",
+    "roof": "The original gable fills wall-tagged sectors; the upper door shares the interior sectors, leaving that front strip uncovered. A copied Prueba save established the view. The author's original save was not modified or committed."
+  },
+  "native": {
+    "engine": "GZDoom 4.14.2, Windows 11, Vulkan, RTX 3070 Ti, development Doom II IWAD, no autoload",
+    "directed_crossings": 53118,
+    "tiers": [
+      1,
+      4,
+      7
+    ],
+    "crossing_failures": 0,
+    "door_checks": 429,
+    "door_failures": 0,
+    "pool_plants": 0,
+    "dry_decorative_plants": 40,
+    "tutorial_resources": {
+      "trees": 4,
+      "bushes": 20,
+      "fiber": 200000
+    },
+    "visual": "Reported ground point, all eight exterior floor regions plus central exterior, and upper door from both sides closed/open",
+    "package_without_fixture": "PASS; followup/followup_clean.txt",
+    "limits": "Native isolated setup and screenshots; the two visual rechecks were pending at this historical snapshot and subsequently accepted. No old-save compatibility claim.",
+    "fixture_notes": "The initial multi-line exterior tour did not preserve wait ordering; final chained per-view exec files do. The first 140-tic open-door capture occurred after native automatic closure; final roof views use 24 tics after Use. Preliminary local captures are not final visual evidence."
+  },
+  "reproduction": [
+    "From repository root run python assets/generators/validate_map01_exterior.py, python validate_project.py and python assets/validation_4370/issue61_determinism.py; build normally.",
+    "Copy followup/native to build/issue61_qa. Run python assets/validation_4370/followup/issue61_prepare_followup.py to generate the nine-point chained exterior tour.",
+    "Use assets/validation_4370/run_issue61.ps1 -Package -Label <label> -Wait -Commands (Get-Content assets/validation_4370/followup/<label>.cfg -Raw) for followup_checks, followup_roof_views and followup_bounds_final. The local launcher requires a licensed engine/IWAD installation and build/gzdoom.ini.",
+    "The saved camera is reproduced in Followup.zs on a fresh MAP01. No author save, IWAD, executable or personal config is packaged."
+  ],
+  "author_recheck": "CA-4370-MANSION-01, including these two repairs, accepted by the author on 2026-10-01. This file preserves the 3277ab2f evidence; the later cave request and second ground site are recorded in CAVE.json.",
+  "static": {
+    "checks": 30,
+    "errors": [],
+    "project_errors": []
+  },
+  "determinism": {
+    "issue": 61,
+    "byte_identical": true,
+    "files": {
+      "src/maps/MAP01.wad": "9197d34704e9b5da01bc74d67fb0e660e434ab9971662246841254c83cc86d76",
+      "src/MODELDEF": "ec8496821d6f48732209b72ffab8709b9720b6de2fb8c9c8b3d631b031a9c808",
+      "src/MAPINFO": "3136708f4945b20d49644c9b406c42834598a6e8d09c1a566f85a4c262ef7704",
+      "src/caelum/world/CaelumMansionTympana.zs": "9d9a36ccf68e3a097266e2cd90d2fdff65793352ec9353ba6136ad31900e0a00",
+      "assets/map01_mansion/EXTERIOR_GENERATED.json": "1b75580e9d07724fa61a9ba64bb6c3e8c8a04f8ba4bfa9067ac2e565283e8bfe",
+      "src/models/caelum/mansion/ca_mansion_door_gable.obj": "f5dad4da3092cfec948d4c19ef23b276d84d6f22395600ffa7070f4556cd850f",
+      "src/models/caelum/mansion/ca_mansion_tympanum_128_20.obj": "52ed3f3547a9952c4764052aced50ab90f681a6d1bf3d4b457ce437f18a528e8",
+      "src/models/caelum/mansion/ca_mansion_tympanum_128_28.obj": "38f7c08ab587daf6c2a2a5e18ff00612c40ae5bf58da5b762ab0ba868ef2222c",
+      "src/models/caelum/mansion/ca_mansion_tympanum_64_20.obj": "fdfb57420d37001b867c49334bf5cf18783f3f74454d975f9d6a8def687c4fa8",
+      "src/models/caelum/mansion/ca_mansion_tympanum_64_28.obj": "296838deee9cb4c3ebb48356d333c4fd00df3f0dd4d4df0cc60ae05141714a36"
+    }
+  },
+  "tested_package_sha256": "a9d63b20d50c95f2f62b07e633624eb181def2c4a3f070fe18ecb7d74a1007e5",
+  "capture_sha256": {
+    "issue61_bound_0.png": "256ff2f7097182b074c05f9b683c9277cb00d4c52712c339e2c2308dd3a7974c",
+    "issue61_bound_1.png": "4dccc15cffb66410f589683f8137a9229c637c07e3a5ee8c156d97b9891a074e",
+    "issue61_bound_2.png": "1572db326b4add712151f95b25961cdd940c3eed683015722d26a157e58c2a14",
+    "issue61_bound_3.png": "8b443ea6d0dd9827f04491e402befd1981f35efba82580d7d5e983488f6dace9",
+    "issue61_bound_4.png": "a9b1732b199c15082044474efc86e17c46e8d6ca8766e8889ae0691825a3bfac",
+    "issue61_bound_5.png": "4c0a2f27164452fade12e0c3abd40e9f2d8187c3e295ac9bcc03c23b8f37d86e",
+    "issue61_bound_6.png": "869ef8e42cab24984d9a8dcf9a64624a0b3c92d9b1ad3f2801935fde83781553",
+    "issue61_bound_7.png": "38b695167bff7adc19587b4c0738eb3065577fcbe6079637915a0e0bcbd7f7af",
+    "issue61_bound_8.png": "38b695167bff7adc19587b4c0738eb3065577fcbe6079637915a0e0bcbd7f7af"
+  },
+  "log_format": "Full lines retained as UTF-8 with trailing whitespace trimmed. Original logs/captures remain in build; contact sheet includes all nine exterior views."
+}
