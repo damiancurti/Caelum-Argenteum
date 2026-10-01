@@ -26,7 +26,8 @@ The author's subsequent resource trial deliberately permits both attack types
 at zero resources for registered hostile port actors. This fallback behavior
 remains available when enemy_attack_resource_trial is disabled in the port data.
 Evidence: assets/validation_43627/relief, including native before/after movement,
-full-roster operation and saved-wait continuation. Author acceptance is pending.
+full-roster operation and saved-wait continuation. The author accepted the final
+resource trial and all #16 tests on 2026-09-30; see HISTORY for the test IDs.
 
 ## CA-KP-021 — Cannon target sight must originate at the raised barrel
 
@@ -51,7 +52,7 @@ Evidence: [integration results](../assets/validation_43627/RESULTS.json),
 integration/issue16_mass1.log (before) and issue16_mass_final.log (after).
 The final run records eighteen shots/contacts by tic 385. This verifies the
 tested platform geometry and native selector, not unrestricted ballistic
-accuracy or author acceptance of the battle. Author playtest remains pending.
+accuracy. Separate author acceptance of the battle was confirmed on 2026-09-30.
 
 ## CA-KP-020 — Repeated OBJ material declarations create unsafe surface counts
 

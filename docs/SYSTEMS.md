@@ -50,7 +50,8 @@ Attack cadence, weapon-load limits, damage, range, sleep/stun and half-health
 retreat remain. Set the data flag to 0, regenerate generate_map06_port.py and
 rebuild to restore the preceding port behavior: suppress unaffordable magic and
 continue physical pursuit while Air permits. No serialized field/schema changes
-are required. This is an author-requested playtest setting, not accepted balance.
+are required. The author accepted this playtest setting on 2026-09-30 along with
+all issue #16 tests; the data switch remains available for later balance changes.
 
 The port commander inherits the ordinary Zupay profile: twelve attributes at
 33, maximum health 44,022, Anima 6,610, Air approximately 1,222.18, mass 666 kg,

@@ -4,7 +4,7 @@
     "date":  "2026-09-30",
     "baseline":  "918775e3",
     "branch":  "issue-16-port-siege",
-    "status":  "Implemented; native integration verified; author acceptance pending",
+    "status":  "Implemented; native integration verified; all author tests accepted on 2026-09-30",
     "engine":  "GZDoom g4.14.2",
     "environment":  {
                         "os":  "Windows 11",
@@ -108,7 +108,7 @@
                        "failures":  0
                    }
                ],
-    "earlier_scoped_evidence":  "retreat/RESULTS.json retains the earlier partial snapshot and its original hashes; later integration supersedes its then-pending work, except author acceptance.",
+    "earlier_scoped_evidence":  "retreat/RESULTS.json and follow-up snapshots retain their original hashes and then-current status; current author acceptance is recorded below and in docs/HISTORY.md.",
     "development_findings":  [
                                  "integration/issue16_mass1.log retains the initial low-origin cannon visibility failure; corrected to barrel CheckSight, all 18 guns fire on the first cycle in the final run (CA-KP-021).",
                                  "Initial map compaction retained unused high sidedef indices and the engine rejected a linedef without a front sector. Reindexing only referenced sides/vertices permits native loading. No general engine index-limit claim is made.",
@@ -121,11 +121,13 @@
                         "CaelumCannonData.zs":  "d86b251c93661a3fa4db13f8d485edef33bdf1d553d4db40fb85d85469208b1b"
                     },
     "author_acceptance":  {
-                              "status":  "PENDING",
+                              "status":  "PASSED",
                               "tests":  [
                                             "CA-43627-PORT-01",
                                             "CA-43627-SAVE-01"
-                                        ]
+                                        ],
+                              "confirmation_date":  "2026-09-30",
+                              "qualifications":  "Author confirmed all tests passed without reported exceptions and explicitly requested PR #59 merge and issue #16 closure. Export #17 remains separate; earlier diagnostic stalls are not independently diagnosed by this acceptance."
                           },
     "review":  "Local code review and native checks; no independent model review performed",
     "usage":  {

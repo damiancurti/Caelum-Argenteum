@@ -29,7 +29,7 @@ teleportation or extra spawns. Temporary absence keeps a live assignment;
 confirmed guard history and permanent machine neutralization remain intact.
 The existing saved arrays/references hold relief identity without a new schema.
 Follow-up evidence is in assets/validation_43627/relief. The reported failure
-keeps both author checks pending; earlier evidence is retained with its scope.
+initially kept both author checks pending; earlier evidence retains its scope.
 
 The author then requested testing enemy physical/magical attacks even after
 Air/Anima exhaustion. The same #16 patch now enables a reversible port-data flag
@@ -37,7 +37,7 @@ for registered hostile Mandingas/Zupay only. Resources still drain to zero;
 neither maxima nor recovery increase. The player, defenders and other encounters
 retain normal limits. Existing waiting attacks can resume after load without a
 schema change. This supersedes the preceding insufficient-Anima fallback while
-the flag is enabled and remains a trial awaiting author acceptance. Evidence:
+the flag is enabled; acceptance was initially pending. Evidence:
 assets/validation_43627/resource_trial. Earlier measurements retain their scope.
 
 Native GZDoom 4.14.2 checks passed: both objective orders (23 checks each),
@@ -49,9 +49,15 @@ stress evidence records hardware, elapsed native tics/host time and shot/contact
 counts rather than inferring performance from an FPS screenshot. Static and
 deterministic-generation results are in assets/validation_43627/RESULTS.json.
 
-Author acceptance is pending for CA-43627-PORT-01 and CA-43627-SAVE-01. No full
-ordinary campaign playthrough, export certification or independent AI review is
-claimed. No additional model was available/used; recorded checks are agent tests.
+2026-09-30 author acceptance: the author explicitly confirmed that all tests
+passed and requested issue #16 closure and PR #59 merge. CA-43627-PORT-01
+(ordinary campaign, battle/visual review, crew relief and empty-resource attacks)
+and CA-43627-SAVE-01 (author save continuity), both originating in 4.36.27 / #16,
+are recorded as PASSED without reported exceptions and removed from pending_test.txt.
+The pending queue is empty. This confirmation is author-reported acceptance,
+separate from the native evidence above; it does not certify #17 export or
+independently diagnose earlier intermittent diagnostic-launch stalls.
+No independent AI review was performed; no additional model was available/used.
 The initial author-reported allowance was 75% on 2026-09-23; current usage/reset
 and per-surface token measurements are unavailable, and are not estimated.
 

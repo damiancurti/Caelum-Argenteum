@@ -16,13 +16,14 @@ neutralize all twelve attacking machines to capture the Knight of Wands;
 survivors physically withdraw. Use the port sign to acknowledge the playtest end.
 Native integration, save/reload and full-population evidence is in
 [4.36.27 validation](assets/validation_43627/RESULTS.json). Ordinary campaign and
-visual/balance author acceptance remain in [pending_test.txt](pending_test.txt).
+visual/balance and save-continuity checks passed per author confirmation on
+2026-09-30. No #16 author checks remain pending.
 
 The author's follow-up adds crew relief from existing unassigned combatants
 after a death. The current trial lets the port's hostile Mandingas and Zupay
 execute physical/magical attacks even without enough Air/Anima. Available
 resources drain to zero; the player and defenders retain normal limits. This
-reversible playtest option is documented in SYSTEMS; accepted balance is pending.
+reversible playtest option is documented in SYSTEMS and was accepted by the author.
 
 **Saves that already visited the former MAP06:** use
 `run_dev.bat --legacy-map06` (or `build_dev.ps1 -LegacyMap06`) to preserve its

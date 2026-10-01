@@ -9,15 +9,16 @@ defender and commander decisions. SYSTEMS is the current rule contract; MAP01
 documents the campaign route, ASSETS the geometry/provenance. Native evidence
 includes the concurrent 1,001-attacker, 100-defender, 24-machine scene, both
 objective orders, shared capture/rewards and save migration/rollback. Evidence:
-assets/validation_43627. Ordinary campaign and visual/balance author acceptance
-remain pending. This patch does not close #17's export or the separate 4.37 gates.
+assets/validation_43627. The author confirmed all campaign, visual/balance and
+save-continuity checks passed on 2026-09-30 and authorized PR #59 merge and #16
+closure. This patch does not close #17's export or the separate 4.37 gates.
 
 The author then reported no relief for lost operators and widespread stationary
 attackers. Crew slots now recruit existing free combatants. After the initial
 physical-pursuit fallback, the author requested a reversible trial permitting
 port enemies to use both attack types despite Air/Anima exhaustion. Counts,
 cadence and player/allied limits remain. See assets/validation_43627/relief and
-resource_trial; author acceptance remains pending.
+resource_trial; the author accepted these follow-ups in the same confirmation.
 
 ## 4.36.26 — Attack cadence and thrust presentation (#37)
 

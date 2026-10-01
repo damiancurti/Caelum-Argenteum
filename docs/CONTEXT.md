@@ -6,7 +6,7 @@ Documentation version: **4.36.27** — 2026-09-30.
 100 equipped defenders. Automatic unlimited cannons reload in 10/20 seconds;
 Zupay flees at half health. Victory requires twelve neutralized hostile machines
 and commander defeat, enabling Knight capture and physical survivor withdrawal.
-Native integration/save/mass-scene checks pass. Author playtest remains pending.
+Native integration/save/mass-scene checks pass. Author accepted all tests 2026-09-30.
 Use --legacy-map06 for campaigns that previously visited the old port. SYSTEMS
 holds current rules; assets/validation_43627 holds evidence.
 Current trial: dead crew are replaced; port enemies attack despite empty resources.
