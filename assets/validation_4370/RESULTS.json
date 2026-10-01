@@ -3,7 +3,7 @@
   "release": "4.37.0",
   "date": "2026-10-01",
   "base_commit": "30caa726",
-  "status": "Original mansion, cave and exterior repairs are author-accepted on 2026-10-01. Only CA-4370-STATIONS-01 remains pending.",
+  "status": "All #61 author tests accepted on 2026-10-01; PR #66 merge and issue #61 closure authorized. No pending author checks.",
   "evidence_scope": "Historical native evidence; original hashes and test counts retain their delivery scope. Current station repair/package hashes and author status: STATIONS.json.",
   "author_decisions": [
     "Mixed gentle and marked hills, up to approximately ground-storey height",

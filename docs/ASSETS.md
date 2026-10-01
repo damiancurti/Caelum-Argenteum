@@ -56,7 +56,9 @@ native evidence; CA-4370-EXTERIOR-01 is author-accepted on 2026-10-01.
 The northern-station follow-up changes no map or art. Runtime relocation now
 recognizes original stations resting on sloped ground, preserving all eighteen
 original actors within the intended 38 interior stations. STATIONS.json holds
-native evidence; only CA-4370-STATIONS-01 awaits author acceptance.
+native evidence. The author accepted CA-4370-STATIONS-01 and all remaining
+checks on 2026-10-01, authorizing #66 merge/#61 closure. Art and map bytes remain
+unchanged in the acceptance update.
 
 ## 4.36.28 — Playtest resource packaging (#17)
 

@@ -77,8 +77,9 @@ Z=1.08..3.30, so the old absolute-height filter missed them and spawned indoor
 replacements, leaving 44 stations. Floor-relative recognition restores the
 documented total of 38: Rulo 5, Ronnie 7, Argento 5, Caella 9 and upstairs 12.
 All eighteen original actors are reused. No WAD placement or room coordinates
-change. Evidence: assets/validation_4370/STATIONS.json. Only the station repair
-awaits author acceptance as CA-4370-STATIONS-01; start fresh MAP01.
+change. Evidence: assets/validation_4370/STATIONS.json. The author accepted
+CA-4370-STATIONS-01 and all remaining tests on 2026-10-01, authorizing PR #66
+merge and issue #61 closure. No author checks remain; start fresh MAP01.
 
 ## 4.36.27 — Port campaign endpoint (#16)
 

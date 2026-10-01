@@ -41,8 +41,11 @@ The author then reported workstations left among the northern hills. Six old
 station actors at Y=1040 escaped relocation because the code required absolute
 Z=0, while the relief places them at Z=1.08..3.30. Comparing against their native
 floor height restores the intended 38 interior stations and preserves all
-original actors. Only CA-4370-STATIONS-01 remains pending; evidence: STATIONS.json.
-Next: station correction acceptance, then deferred Tarot/Trucazo.
+original actors. The author confirmed all remaining tests, including
+CA-4370-STATIONS-01, on 2026-10-01 and authorized PR #66 merge/issue #61 closure.
+No #61 author checks remain. Evidence: STATIONS.json; acceptance is recorded in
+HISTORY. The acceptance update preserves the tested runtime and release 4.37.0.
+Next: deferred Tarot/Trucazo.
 
 ## 4.36.28 — Reproducible three-map playtest export (#17)
 

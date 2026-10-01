@@ -4,8 +4,8 @@
   "release": "4.37.0",
   "date": "2026-10-01",
   "base_commit": "00e4322d3ebb6b307384370f9216c87ddb77f425",
-  "author_accepted": "CA-4370-MANSION-01, CA-4370-CAVE-01 and CA-4370-EXTERIOR-01, confirmed 2026-10-01. The northern-station report is excluded.",
-  "pending": "CA-4370-STATIONS-01: cleared northern hills and retained usable interior workshops.",
+  "author_accepted": "CA-4370-MANSION-01, CA-4370-CAVE-01, CA-4370-EXTERIOR-01 and CA-4370-STATIONS-01 confirmed on 2026-10-01. All requested checks passed.",
+  "pending": "None. All #61 author tests accepted on 2026-10-01; PR #66 merge and issue #61 closure authorized.",
   "cause": "Six original stations at Y=1040 stand at native Z=1.08..3.30 on the new hills. Both original relocation filters required Abs(Pos.Z)<1 and skipped them, creating indoor replacements: 44 total.",
   "repair": "Compare Pos.Z with native FloorZ in PlaceStation and PrepareMansionLayout spare handling. Retain existing XY bounds, unassigned-group/class filters and destinations. Reuse original actors without destruction; no new balance, recipe or saved field.",
   "source": "src/caelum/quests/CaelumMainM00QuestController.zs",
@@ -139,5 +139,18 @@
     ],
     "context_words": 2488,
     "errors": []
+  },
+  "author_acceptance": {
+    "date": "2026-10-01",
+    "result": "PASS",
+    "origin": "4.37.0 / issue #61 / PR #66",
+    "final_test": "CA-4370-STATIONS-01",
+    "tested_runtime_commit": "5321d78f64746d3828a5c5fdd3b5c60e4bc86659",
+    "explicit_instruction": "All tests passed; close the issue and merge.",
+    "authorized_actions": [
+      "Merge PR #66",
+      "Close issue #61"
+    ],
+    "qualification": "Existing fresh-MAP01 requirement and old-save waiver remain. This acceptance update changes no runtime or tested package bytes."
   }
 }

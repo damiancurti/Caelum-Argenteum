@@ -5,7 +5,7 @@
   "date": "2026-10-01",
   "base_commit": "fe506a3eda2440df5a6fe5658fef18ff60746bab",
   "author_accepted": "CA-4370-EXTERIOR-01 confirmed on 2026-10-01, together with the previously accepted mansion/cave checks. A later northern-station report is separate.",
-  "pending": "Only CA-4370-STATIONS-01; see STATIONS.json.",
+  "pending": "None. All #61 author tests accepted on 2026-10-01; PR #66 merge and issue #61 closure authorized.",
   "repair": "Translate 276 vertices belonging to 69 original detached auxiliary polygons beyond the playable horizon. All original sector records, control lines/tags/actions, architectural vertices and actors remain intact.",
   "manifest": "assets/map01_mansion/CONTROL_RELOCATION.json",
   "reported_position": [

@@ -31,7 +31,7 @@ After preparation there must be 38 stations, none outside, groups 5/7/5/9/12,
 and all originals retained. Test each station's network and physical access;
 repeat preparation and save/reload to check identity and duplication.
 Evidence: [station repair](../assets/validation_4370/STATIONS.json).
-Author acceptance: CA-4370-STATIONS-01 pending. Already prepared older worlds
+Author acceptance: CA-4370-STATIONS-01 confirmed 2026-10-01. Already prepared older worlds
 are outside this fix under the author's explicit old-save waiver.
 
 ## CA-KP-026 — Detached control rooms must remain outside playable geometry

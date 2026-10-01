@@ -1,5 +1,0 @@
-CA-4370-STATIONS-01 | Origin: 4.37.0 / issue #61 / PR #66 | Northern workstations relocate indoors
-Prerequisites: GZDoom 4.14.2, current normal build, fresh MAP01/new game. Old-save work was waived by the author on 2026-10-01.
-1. Walk north of the mansion, through the hills near X=-250..430, Y=1040. Expect no leftover workbenches, forges or anvil outside.
-2. Visit the ground-floor workshops and the complete upstairs workshop. Expect the usual stations in their existing positions, reachable and usable, with unchanged crafting options.
-Expected: author acceptance of this station repair only. CA-4370-MANSION-01, CA-4370-CAVE-01 and CA-4370-EXTERIOR-01 were confirmed on 2026-10-01 and are recorded in HISTORY. Native checks do not satisfy this author test.

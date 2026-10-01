@@ -24,7 +24,8 @@ The repair relocates 69 detached auxiliary rooms beyond the playable horizon,
 preserving their architectural controls; the author accepted that repair.
 The latest follow-up fixes six old stations left on the northern hills: their
 existing relocation now uses floor-relative height, preserving the intended
-38 interior stations. Only this station correction remains in
+38 interior stations. The author confirmed all tests on 2026-10-01 and authorized
+PR #66 merge and issue #61 closure. No author checks remain in
 [pending_test.txt](pending_test.txt). Evidence: [cave](assets/validation_4370/CAVE.json),
 [auxiliary rooms](assets/validation_4370/CONTROLS.json) and
 [stations](assets/validation_4370/STATIONS.json).

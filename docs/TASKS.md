@@ -37,7 +37,9 @@ Documentation version: **4.37.0** — 2026-10-01.
   raised their absolute Z above the old filter. Floor-relative recognition fixes
   selection and the spare fallback. The 38-station/five-room layout and original
   instances are retained; evidence: assets/validation_4370/STATIONS.json.
-  Only CA-4370-STATIONS-01 remains pending.
+  Author confirmed CA-4370-STATIONS-01 and all remaining tests on 2026-10-01,
+  authorizing PR #66 merge/issue #61 closure. No pending author checks remain;
+  HISTORY records acceptance. Tested runtime and version 4.37.0 are preserved.
 - Deferred Tarot/Trucazo remains separate final V4 scope before V5.
 
 ## Issue #17 — Verify and export the complete three-map test build (4.36.28)

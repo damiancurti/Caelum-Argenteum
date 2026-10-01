@@ -161,7 +161,19 @@ startup. Six views cover the cleared north and all five workshops. Static map
 and project validation pass; geometry is byte-identical to 00e4322d. Evidence:
 assets/validation_4370/STATIONS.json. Existing prepared older worlds are not
 migrated under the author's waiver; fresh MAP01 is required. Version remains
-4.37.0 and the station repair awaits author acceptance.
+4.37.0 and the station repair awaited author acceptance at that delivery.
+
+Final author acceptance, 2026-10-01: the author explicitly confirmed that all
+tests passed and requested issue #61 closure and PR #66 merge.
+CA-4370-STATIONS-01, originating 4.37.0 / #61 / PR #66, is ACCEPTED: the northern
+hills are clear of leftover stations, and the existing interior workshops are
+reachable and usable with unchanged crafting options. The earlier accepted
+CA-4370-MANSION-01, CA-4370-CAVE-01 and CA-4370-EXTERIOR-01 remain confirmed.
+No #61 author tests remain; pending_test.txt is empty under its approved
+lifecycle. This acceptance update preserves the runtime tested at 5321d78f,
+the built package and release 4.37.0. The existing fresh-MAP01/old-save waiver
+still applies. Native evidence remains distinct from the author's acceptance.
+Next: deferred Tarot/Trucazo; no new gameplay is introduced by this update.
 
 ## 4.36.28 — Verify and export the complete three-map test build (#17)
 
