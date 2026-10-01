@@ -1,6 +1,39 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **4.37.0** — 2026-10-01.
+Documentation version: **4.37.1** — 2026-10-01.
+
+## 4.37.1 — Caella's shared training-dummy exercises (#62)
+
+2026-10-01: after accepting #61 and merging PR #66, the author requested #62.
+The patch moves only the primary/secondary magic practice credit from cast
+completion to valid player-projectile impacts on CaelumM00TrainingDummy.
+The projectile's existing prepared attack/elemental metadata determines the
+mode; misses, unrelated victims and physical attacks cannot award those flags.
+Anima spending remains at release, recovery observes the real reserve, and
+Seal Channel still needs its native consumption rather than a dummy impact.
+
+Caella and the Journal now name the north-central ground-floor practice room
+and distinguish the two hits from the other demonstrations in both languages.
+Equipment preparation reuses Rulo's existing recoverable target. Maps, rune
+order, wrong-rune reset, return-to-Caella gate, loan identity/return and Rulo's
+practice logic are unchanged. No persistent field/index or schema is changed;
+active/completed older progress is deliberately retained, not invalidated.
+
+Static validation and the native GZDoom 4.14.2 checks pass. Forty real spell
+combinations cover four implements, five essences and both attack modes; cast
+release alone gives no offensive credit. Negative checks cover misses, another
+target, physical damage, insufficient Anima and cancellation. Separate native
+checks cover resource/Channel completion, rune errors and order, return gate,
+loan IDs/return, restoration of an owned weapon, missing-target recovery, delayed
+projectile mode after an equipment switch, and the shared target during Rulo.
+Original 4.37.0 active/completed fixture saves preserve progress when loaded,
+saved and reloaded; rollback to the original package is also checked.
+
+Reproduction commands, fixture limitations and hashes are retained in
+assets/validation_4371/RESULTS.json. These checks are
+not a claim of an ordinary fresh campaign or author acceptance. The prior #61
+save waiver is not applied here. CA-4371-CAELLA-01 (originating 4.37.1 / #62)
+remains PENDING in pending_test.txt until explicit author confirmation.
 
 ## 4.37.0 — Rolling mansion grounds and filled door tympana (#61)
 

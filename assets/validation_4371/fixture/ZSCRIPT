@@ -1,0 +1,352 @@
+version "4.14"
+// Isolated engine fixture. Never packaged in the game.
+class Issue62UI : StaticEventHandler
+{
+    override void UiTick() { if (Menu.GetCurrentMenu()!=null) Menu.GetCurrentMenu().Close(); }
+}
+class Issue62Check : Object play
+{
+    static void Assert(bool ok, String label)
+    { Console.Printf("QA62 %s %s",ok?"PASS":"FAIL",label); }
+    static int Targets()
+    {
+        int count=0; let it=ThinkerIterator.Create("CaelumM00TrainingDummy");
+        while(it.Next()!=null) count++;
+        return count;
+    }
+    static CaelumCaella Speaker()
+    { let it=ThinkerIterator.Create("CaelumCaella"); return CaelumCaella(it.Next()); }
+    static void ClearShots()
+    {
+        let it=ThinkerIterator.Create("CaelumPlayerMagicProjectile"); Actor a;
+        while((a=Actor(it.Next()))!=null) a.Destroy();
+    }
+    static void ClearHits(CaelumPlayer u)
+    {
+        ClearShots();
+        let r=u.GetPersistentCharacterState(true);
+        r.MainM00Flag[CaelumConstants.MAIN_M00_FLAG_MAGIC_PRIMARY_USED]=false;
+        r.MainM00Flag[CaelumConstants.MAIN_M00_FLAG_MAGIC_SECONDARY_USED]=false;
+        u.CancelPendingStaffCast(false);
+    }
+    static void Aim(CaelumPlayer u, double angle=90)
+    {
+        vector3 p=CaelumMansionPracticeData.Position();
+        u.SetOrigin((p.X,p.Y-88,p.Z),false); u.Vel=(0,0,0); u.Angle=angle;
+        // Aim at the body's centre from the native projectile release height.
+        u.Pitch=atan2(u.Height*0.65-36,88-32);
+        u.CurrentAnima=u.DerivedStats.MaximumAnima;
+        // Control random aim only in the isolated fixture, never in production.
+        u.DerivedStats.MagicalAccuracyPercent=10000;
+    }
+    static void Dump(CaelumPlayer u, String label)
+    {
+        let r=u.GetPersistentCharacterState(true);
+        Console.Printf("QA62 STATE %s stage=%d primary=%d secondary=%d channel=%d spent=%d recovered=%d runes=%d targets=%d weapon=%d seal=%d",label,r.QuestStage[0],r.MainM00Flag[11],r.MainM00Flag[12],r.MainM00Flag[13],r.MainM00Flag[57],r.MainM00Flag[58],r.MainM00RuneSequenceIndex,Targets(),u.ActiveWeaponItemId,u.EquippedSealItemId);
+    }
+}
+class Issue62Setup : CaelumSocialDebugAction
+{
+    override bool Use(bool pickup)
+    {
+        let u=CaelumPlayer(Owner); let r=u.GetPersistentCharacterState(true);
+        u.CharacterCreationComplete=true; u.CreationWizardOpen=false; u.bInvulnerable=true;
+        r.DemoNarrativeDelivered=2047; r.DemoNarrativePending=0;
+        r.EnsureQuestStateInitialized();
+        r.QuestState[0]=CaelumConstants.QUEST_STATE_ACTIVE;
+        r.QuestStage[0]=CaelumConstants.MAIN_M00_STATE_ARGENTO_COMPLETE;
+        r.SetMainM00Flag(CaelumConstants.MAIN_M00_FLAG_ARGENTO_COMPLETE);
+        u.player.ConversationNPC=Issue62Check.Speaker();
+        Issue62Check.Assert(CaelumMainM00MagicTrial.Begin(u),"begin through Caella");
+        u.player.ConversationNPC=null;
+        Issue62Check.Aim(u);
+        Issue62Check.Assert(Issue62Check.Targets()==1,"single dummy before Rulo");
+        Issue62Check.Dump(u,"fresh-active");
+        return true;
+    }
+}
+class Issue62Dump : CaelumSocialDebugAction
+{
+    override bool Use(bool pickup) { Issue62Check.Dump(CaelumPlayer(Owner),"checkpoint"); return true; }
+}
+class Issue62Miss : CaelumSocialDebugAction
+{
+    override bool Use(bool pickup)
+    {
+        let u=CaelumPlayer(Owner); Issue62Check.Aim(u,270);
+        u.PerformDebugStaffAttack(false); return true;
+    }
+}
+class Issue62MissSecondary : CaelumSocialDebugAction
+{
+    override bool Use(bool pickup)
+    {
+        let u=CaelumPlayer(Owner); Issue62Check.Aim(u,270);
+        u.PerformDebugStaffAttack(true); return true;
+    }
+}
+class Issue62NoHits : CaelumSocialDebugAction
+{
+    override bool Use(bool pickup)
+    {
+        let u=CaelumPlayer(Owner); let r=u.GetPersistentCharacterState(true);
+        Issue62Check.Assert(!r.MainM00Flag[11]&&!r.MainM00Flag[12],"misses and unrelated targets do not advance attacks");
+        Issue62Check.Assert(r.MainM00Flag[57]&&r.MainM00Flag[58],"Anima spent and recovered without dummy hit");
+        return true;
+    }
+}
+class Issue62OtherDummy : CaelumTrainingDummy
+{
+    override int DamageMobj(Actor inflictor,Actor source,int damage,Name mod,int flags,double angle)
+    { Console.Printf("QA62 OTHER_HIT damage=%d magic=%d",damage,inflictor is "CaelumPlayerMagicProjectile"); return 0; }
+}
+class Issue62Other : CaelumSocialDebugAction
+{
+    override bool Use(bool pickup)
+    {
+        let u=CaelumPlayer(Owner); Issue62Check.Aim(u,0);
+        Actor.Spawn("Issue62OtherDummy",u.Pos+(88,0,0),NO_REPLACE);
+        u.PerformDebugStaffAttack(false); return true;
+    }
+}
+class Issue62Primary : CaelumSocialDebugAction
+{
+    override bool Use(bool pickup)
+    { let u=CaelumPlayer(Owner); Issue62Check.Aim(u); u.PerformDebugStaffAttack(false); Console.Printf("QA62 PRIMARY_CAST weapon=%d pending=%d duration=%d",u.WeaponModel.WeaponType,u.StaffCastPending,u.GetEquippedAttackDurationTics()); return true; }
+}
+class Issue62Secondary : CaelumSocialDebugAction
+{
+    override bool Use(bool pickup)
+    { let u=CaelumPlayer(Owner); Issue62Check.Aim(u); u.PerformDebugStaffAttack(true); return true; }
+}
+class Issue62Channel : CaelumSocialDebugAction
+{
+    override bool Use(bool pickup) { CaelumPlayer(Owner).RequestCombatChannelInput(); return true; }
+}
+class Issue62Retry : CaelumSocialDebugAction
+{
+    override bool Use(bool pickup)
+    {
+        let u=CaelumPlayer(Owner); int weapon=u.ActiveWeaponItemId; int seal=u.EquippedSealItemId;
+        int progress=u.GetPersistentCharacterState(true).CountMainM00MagicPractice();
+        CaelumMainM00MagicTrial.PrepareEquipment(u); CaelumMainM00MagicTrial.PrepareEquipment(u);
+        Issue62Check.Assert(u.ActiveWeaponItemId==weapon&&u.EquippedSealItemId==seal,"retry preserves equipment IDs");
+        Issue62Check.Assert(u.GetPersistentCharacterState(true).CountMainM00MagicPractice()==progress,"retry preserves practice");
+        Issue62Check.Assert(Issue62Check.Targets()==1,"retry keeps single dummy"); return true;
+    }
+}
+class Issue62RestoreTarget : CaelumSocialDebugAction
+{
+    override bool Use(bool pickup)
+    {
+        let u=CaelumPlayer(Owner); let t=CaelumMainM00RuloTrial.EnsurePracticeTarget();
+        if(t!=null)t.Destroy();
+        CaelumMainM00MagicTrial.PrepareEquipment(u); CaelumMainM00MagicTrial.PrepareEquipment(u);
+        Issue62Check.Assert(Issue62Check.Targets()==1,"Caella recovers missing dummy exactly once"); return true;
+    }
+}
+class Issue62Finish : CaelumSocialDebugAction
+{
+    override bool Use(bool pickup)
+    {
+        let u=CaelumPlayer(Owner); u.StopSealChannel(true); let r=u.GetPersistentCharacterState(true);
+        Issue62Check.Assert(r.IsMainM00MagicPracticeComplete(),"all five practices completed");
+        u.player.ConversationNPC=Issue62Check.Speaker();
+        Issue62Check.Assert(!CaelumMainM00MagicTrial.Complete(u),"cannot finish before runes");
+        CaelumMainM00MagicTrial.UseRune(u,CaelumConstants.ESSENCE_EARTH);
+        CaelumMainM00MagicTrial.UseRune(u,CaelumConstants.ESSENCE_FIRE);
+        Issue62Check.Assert(r.MainM00RuneSequenceIndex==0&&r.IsMainM00MagicPracticeComplete(),"wrong rune resets only sequence");
+        for(int i=0;i<4;i++) CaelumMainM00MagicTrial.UseRune(u,r.GetMainM00RuneElement(i));
+        Issue62Check.Assert(r.MainM00RuneSequenceIndex==4&&!r.HasMainM00Flag(CaelumConstants.MAIN_M00_FLAG_SECRET_PASSAGE_OPEN),"four runes require return to Caella");
+        Issue62Check.Assert(CaelumMainM00MagicTrial.Complete(u),"Caella completes trial");
+        u.player.ConversationNPC=null;
+        Issue62Check.Assert(r.QuestStage[0]==CaelumConstants.MAIN_M00_STATE_CAELLA_COMPLETE&&r.HasMainM00Flag(CaelumConstants.MAIN_M00_FLAG_SECRET_PASSAGE_OPEN),"stage 45 and secret passage unlocked");
+        Issue62Check.Assert(u.FindInventory("CA_LimboMagicImplement")==null&&u.FindInventory("CA_LimboMagicSeal")==null,"both loans returned");
+        Issue62Check.Dump(u,"completed"); return true;
+    }
+}
+class Issue62LegacyComplete : CaelumSocialDebugAction
+{
+    override bool Use(bool pickup)
+    {
+        // Seed only the old-version fixture; final-runtime offensive checks use real casts.
+        let u=CaelumPlayer(Owner); let r=u.GetPersistentCharacterState(true);
+        r.MainM00Flag[11]=true; r.MainM00Flag[12]=true; r.MainM00Flag[13]=true;
+        r.MainM00Flag[57]=true; r.MainM00Flag[58]=true;
+        let finishItem=Issue62Finish(Actor.Spawn("Issue62Finish",u.Pos,NO_REPLACE));
+        finishItem.Owner=u; finishItem.Use(false); finishItem.Destroy(); return true;
+    }
+}
+class Issue62CompletedCheck : CaelumSocialDebugAction
+{
+    override bool Use(bool pickup)
+    {
+        let u=CaelumPlayer(Owner); let r=u.GetPersistentCharacterState(true);
+        CaelumMainM00MagicTrial.Update(u); CaelumMainM00MagicTrial.Update(u);
+        Issue62Check.Assert(r.QuestStage[0]==45&&r.IsMainM00MagicPracticeComplete()&&r.MainM00RuneSequenceIndex==4,"completed save preserves all progress");
+        Issue62Check.Assert(r.HasMainM00Flag(CaelumConstants.MAIN_M00_FLAG_SECRET_PASSAGE_OPEN),"completed save keeps passage open");
+        Issue62Check.Assert(u.FindInventory("CA_LimboMagicImplement")==null&&u.FindInventory("CA_LimboMagicSeal")==null&&Issue62Check.Targets()==1,"completed load is idempotent, no loans or duplicate dummy");
+        Issue62Check.Dump(u,"completed-reload"); return true;
+    }
+}
+class Issue62MatrixRunner : Actor
+{
+    CaelumPlayer User;
+    int Age, CaseIndex, WeaponType;
+    bool SeenFlight;
+    override void Tick()
+    {
+        Super.Tick(); if(User==null)return;
+        User.DerivedStats.MagicalAccuracyPercent=10000;
+        int phase=Age%90;
+        if(phase==0)
+        {
+            Issue62Check.ClearHits(User); Issue62Check.Aim(User);
+            let item=User.FindNativeEquipmentItemById(User.ActiveWeaponItemId);
+            item.ItemType=WeaponType; item.EssenceType=CaseIndex/2;
+            item.UnitWeight=User.WeaponModel.GetWeightFor(WeaponType,item.Tier,item.EquipmentSize);
+            User.ActivateExactEquippedWeapon(item);
+            SeenFlight=false; User.PerformDebugStaffAttack(CaseIndex%2==1);
+            Issue62Check.Assert(User.StaffCastPending,"matrix native cast started");
+        }
+        if(!SeenFlight&&!User.StaffCastPending&&User.LastStaffCastCompleted)
+        {
+            SeenFlight=true;
+            Issue62Check.Assert(User.PendingStaffWeaponType==WeaponType&&User.PendingStaffEssenceType==CaseIndex/2&&User.PendingStaffSecondaryAttack==(CaseIndex%2==1),"native cast metadata matches matrix case");
+            let r=User.GetPersistentCharacterState(true);
+            Issue62Check.Assert(!r.MainM00Flag[11]&&!r.MainM00Flag[12],"cast release alone does not complete either attack");
+        }
+        if(phase==89)
+        {
+            let r=User.GetPersistentCharacterState(true);
+            Console.Printf("QA62 MATRIX_DETAIL p=%d s=%d yaw=%.2f pitch=%.2f pos=(%.1f,%.1f,%.1f) angle=%.2f",r.MainM00Flag[11],r.MainM00Flag[12],User.LastStaffYawOffset,User.LastStaffPitchOffset,User.Pos.X,User.Pos.Y,User.Pos.Z,User.Angle);
+            Issue62Check.Assert(SeenFlight&&r.MainM00Flag[11]==(CaseIndex%2==0)&&r.MainM00Flag[12]==(CaseIndex%2==1),String.Format("matrix weapon=%d essence=%d secondary=%d",WeaponType,CaseIndex/2,CaseIndex%2));
+            CaseIndex++;
+            if(CaseIndex==10){Console.Printf("QA62 MATRIX_DONE weapon=%d",WeaponType);Destroy();return;}
+        }
+        Age++;
+    }
+    Default { +NOINTERACTION }
+    States { Spawn: TNT1 A -1; Stop; }
+}
+class Issue62Matrix : CaelumSocialDebugAction
+{
+    virtual int Kind(){return CaelumConstants.WEAPON_TYPE_STAFF;}
+    override bool Use(bool pickup)
+    {
+        let runner=Issue62MatrixRunner(Actor.Spawn("Issue62MatrixRunner",Owner.Pos,NO_REPLACE));
+        runner.User=CaelumPlayer(Owner);runner.WeaponType=Kind(); return true;
+    }
+}
+class Issue62Book : Issue62Matrix { override int Kind(){return CaelumConstants.WEAPON_TYPE_BOOK;} }
+class Issue62Bell : Issue62Matrix { override int Kind(){return CaelumConstants.WEAPON_TYPE_BELL;} }
+class Issue62Statuette : Issue62Matrix { override int Kind(){return CaelumConstants.WEAPON_TYPE_STATUETTE;} }
+class Issue62Reject : CaelumSocialDebugAction
+{
+    override bool Use(bool pickup)
+    {
+        let u=CaelumPlayer(Owner); Issue62Check.ClearHits(u); Issue62Check.Aim(u);
+        let t=CaelumMainM00RuloTrial.EnsurePracticeTarget(); let r=u.GetPersistentCharacterState(true);
+        t.DamageMobj(u,u,10,'Melee');
+        Issue62Check.Assert(!r.MainM00Flag[11]&&!r.MainM00Flag[12],"physical damage cannot complete magic practice");
+        u.CurrentAnima=0; u.PerformDebugStaffAttack(false);
+        Issue62Check.Assert(!u.StaffCastPending&&!r.MainM00Flag[11],"insufficient Anima does not start or complete attack");
+        Issue62Check.Aim(u);u.PerformDebugStaffAttack(true);u.CancelPendingStaffCast(true);
+        Issue62Check.Assert(!u.StaffCastPending&&!r.MainM00Flag[12],"cancelled cast does not complete attack");
+        return true;
+    }
+}
+class Issue62Rulo : CaelumSocialDebugAction
+{
+    override bool Use(bool pickup)
+    {
+        let u=CaelumPlayer(Owner);let r=u.GetPersistentCharacterState(true);
+        r.SetMainM00Flag(CaelumConstants.MAIN_M00_FLAG_CAELLA_COMPLETE);
+        r.SetMainM00Flag(CaelumConstants.MAIN_M00_FLAG_RULO_STARTED);
+        r.QuestStage[0]=CaelumConstants.MAIN_M00_STATE_RULO_ACTIVE;
+        CaelumMainM00MagicTrial.ReturnLoans(u);
+        let own=Issue62Owned.Weapon(u);own.ItemType=CaelumConstants.WEAPON_TYPE_STAFF;
+        own.EssenceType=CaelumConstants.ESSENCE_FIRE;u.ActivateExactEquippedWeapon(own);
+        u.EnsureWeaponFamilySelectors();
+        Issue62Check.Aim(u);
+        Console.Printf("QA62 RULO_READY active=%d near=%d weapon=%d",CaelumMainM00RuloTrial.IsActive(u),CaelumMainM00RuloTrial.NearPractice(u),u.WeaponModel.WeaponType);return true;
+    }
+}
+class Issue62RuloCheck : CaelumSocialDebugAction
+{
+    override bool Use(bool pickup)
+    {
+        let u=CaelumPlayer(Owner);let r=u.GetPersistentCharacterState(true);
+        Issue62Check.Assert(r.HasMainM00Flag(CaelumConstants.MAIN_M00_FLAG_COMBAT_PRIMARY_USED),"same dummy still records Rulo projectile practice");
+        Console.Printf("QA62 RULO_RESULT completed=%d yaw=%.2f pitch=%.2f active=%d near=%d",u.LastStaffCastCompleted,u.LastStaffYawOffset,u.LastStaffPitchOffset,CaelumMainM00RuloTrial.IsActive(u),CaelumMainM00RuloTrial.NearPractice(u));
+        Issue62Check.Assert(Issue62Check.Targets()==1,"Caella and Rulo share one dummy");return true;
+    }
+}
+class Issue62Owned : CaelumSocialDebugAction
+{
+    static CaelumEquipmentItem Weapon(CaelumPlayer u)
+    {
+        let item=CaelumEquipmentItem(Actor.Spawn("CaelumWeaponPickup",u.Pos,NO_REPLACE));
+        item.EquipmentKind=CaelumConstants.EQUIPMENT_KIND_WEAPON;
+        item.ItemType=CaelumConstants.WEAPON_TYPE_SWORD;item.ArmorSlot=-1;item.Tier=1;
+        item.EquipmentSize=u.WeaponModel.Size;item.SizePolicy=CaelumEquipmentRules.CHARACTER_DEFAULT;
+        item.UnitWeight=u.WeaponModel.GetWeightFor(item.ItemType,item.Tier,item.EquipmentSize);
+        item.Durability=u.WeaponModel.GetMaximumDurabilityFor(item.ItemType,item.Tier,item.EquipmentSize);
+        item.PickupDataInitialized=true;item.Equipped=true;item.AttachToOwner(u);
+        u.EnsureEquipmentItemId(item);u.ActivateExactEquippedWeapon(item);u.EnsureWeaponFamilySelectors();return item;
+    }
+    override bool Use(bool pickup) { Weapon(CaelumPlayer(Owner));return true; }
+}
+class Issue62OwnedCheck : CaelumSocialDebugAction
+{
+    override bool Use(bool pickup)
+    {
+        let u=CaelumPlayer(Owner);let r=u.GetPersistentCharacterState(true);
+        let own=u.FindNativeEquipmentItemById(r.MainM00PreviousWeaponId);
+        Issue62Check.Assert(own!=null&&own.ItemType==CaelumConstants.WEAPON_TYPE_SWORD&&u.ActiveWeaponItemId==own.ItemId,"owned weapon survives and is restored after loan return");return true;
+    }
+}
+class Issue62DelayedRunner : Actor
+{
+    CaelumPlayer User;int Age;bool Switched;
+    override void Tick()
+    {
+        Super.Tick();if(User==null)return;
+        User.DerivedStats.MagicalAccuracyPercent=10000;
+        if(Age==0){Issue62Check.ClearHits(User);Issue62Check.Aim(User);User.PerformDebugStaffAttack(true);}
+        if(!Switched&&!User.StaffCastPending&&User.LastStaffCastCompleted)
+        {
+            let it=ThinkerIterator.Create("CaelumPlayerMagicProjectile");let shot=CaelumPlayerMagicProjectile(it.Next());
+            Issue62Check.Assert(shot!=null,"native spell remains in flight before equipment switch");
+            if(shot!=null)shot.Vel*=0.05;
+            Issue62Owned.Weapon(User);Switched=true;
+        }
+        if(Age==150)
+        {
+            let r=User.GetPersistentCharacterState(true);
+            Issue62Check.Assert(Switched&&!r.MainM00Flag[11]&&r.MainM00Flag[12],"delayed spell retains secondary mode after switching to sword");
+            Console.Printf("QA62 DELAY_DONE");Destroy();return;
+        }
+        Age++;
+    }
+    Default { +NOINTERACTION }
+    States { Spawn: TNT1 A -1; Stop; }
+}
+class Issue62Delayed : CaelumSocialDebugAction
+{
+    override bool Use(bool pickup)
+    {
+        let runner=Issue62DelayedRunner(Actor.Spawn("Issue62DelayedRunner",Owner.Pos,NO_REPLACE));
+        runner.User=CaelumPlayer(Owner);return true;
+    }
+}
+class Issue62ActiveCheck : CaelumSocialDebugAction
+{
+    override bool Use(bool pickup)
+    {
+        let u=CaelumPlayer(Owner);let r=u.GetPersistentCharacterState(true);
+        Issue62Check.Assert(r.IsMainM00MagicActive()&&r.MainM00Flag[11]&&!r.MainM00Flag[12]&&r.MainM00Flag[57]&&r.MainM00Flag[58],"active save preserves prior primary and Anima flags");
+        Issue62Check.Assert(u.ActiveWeaponItemId==1&&u.EquippedSealItemId==2&&Issue62Check.Targets()==1,"active fixture save preserves loan IDs and single dummy");
+        Issue62Check.Dump(u,"active-reload");return true;
+    }
+}

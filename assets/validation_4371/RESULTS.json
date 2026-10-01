@@ -1,0 +1,207 @@
+{
+  "issue": 62,
+  "version": "4.37.1",
+  "date": "2026-10-01",
+  "base_commit": "13ba3ccdf76c533a62faca88ff809033ee0f4791",
+  "engine": "GZDoom 4.14.2 / Windows 11 / Vulkan / RTX 3070 Ti",
+  "author_acceptance": "PENDING: CA-4371-CAELLA-01 in pending_test.txt; prior #61 acceptance does not apply",
+  "package": {
+    "path": "build/caelum_argenteum_dev.pk3",
+    "sha256": "34984bd0ab0d25aae3d85229d61c5b66f4ea34539f943c31e7f7e85988ab0c58",
+    "entries": 6137,
+    "all_entries_match_src": true
+  },
+  "baseline": {
+    "version": "4.37.0",
+    "sha256": "0cb63bf437a0aaa5b1872ebbb66a473ebece28f839766373dbd64b9c8867d4dd",
+    "map_and_persistent_state_unchanged": true
+  },
+  "runtime_file_hashes": {
+    "caelum/hud/CaelumJournalOverlay.zs": "559bcc37a423a159df1681a5b3309051ed7e473c515f0ade7a0ba6ae17e41514",
+    "caelum/player/CaelumPlayer.zs": "b35d68de65252fb147dffd971e8dbd6ea251285ff3031f0486acd72cdec34238",
+    "caelum/quests/CaelumMainM00MagicTrial.zs": "7d170afea69e40ff0e32cb01f979bcdde8a6403322a7bb12524ae1a7c021208b",
+    "caelum/quests/CaelumMainM00QuestController.zs": "f78852e09cf090d8da9f2f02e943e316cf0a40c34065448bf91dc6fd8bc3fc3a",
+    "caelum/quests/CaelumMainM00RuloTrial.zs": "de88c773c89e6e3e4956f0f210a7fce493bad916a86f1e01a555ac8172261edb",
+    "caelum/world/CaelumMansionScenery.zs": "e5d1efd8ed359ef9e1d2954905a18cda529329f106076081988dfd6efb68e6b5",
+    "caelum/world/CaelumPhysicalHazards.zs": "18a19b641d86b25b387d0b571da78d88c411b69101dadd91d3a25978629f4b5f",
+    "caelum/world/CaelumSewerMaze.zs": "4115afb0231461694195613b6d15c4823ebaf110284753fd6c328ddf0f4770cc",
+    "LANGUAGE": "9cbbdad6c861c2a24cf72aa6ab9f10c006ccb41acf974ed0818b0eba04304389",
+    "ZSCRIPT": "0d32f81614fe32b8742f815bc6d5eac31ba9c67db539c5e337a075e55eb3b3f9"
+  },
+  "semantic_runtime_changes": [
+    "caelum/hud/CaelumJournalOverlay.zs",
+    "caelum/player/CaelumPlayer.zs",
+    "caelum/quests/CaelumMainM00MagicTrial.zs",
+    "caelum/quests/CaelumMainM00RuloTrial.zs",
+    "caelum/world/CaelumPhysicalHazards.zs",
+    "caelum/world/CaelumSewerMaze.zs",
+    "LANGUAGE"
+  ],
+  "checkout_newline_only_changes": [
+    "caelum/quests/CaelumMainM00QuestController.zs",
+    "caelum/world/CaelumMansionScenery.zs",
+    "ZSCRIPT"
+  ],
+  "native_cases": [
+    {
+      "label": "pk3_staff",
+      "pass_assertions": 42,
+      "completion_marker": "MATRIX_DONE weapon=1",
+      "commands": "wait 140; give Issue62Setup; wait 35; give Issue62Matrix; wait 920; screenshot build/issue62_staff.png; wait 20; quit",
+      "log_sha256": "930b137577252e1bc490105b595084bb9215c998ac78d074422be943cefe5ace",
+      "evidence": "pk3_staff.txt"
+    },
+    {
+      "label": "pk3_book",
+      "pass_assertions": 42,
+      "completion_marker": "MATRIX_DONE weapon=18",
+      "commands": "wait 140; give Issue62Setup; wait 35; give Issue62Book; wait 920; wait 20; quit",
+      "log_sha256": "4283880f1509a894be009c567d7df4f1705d96cbf552b6ecdfe692e39847561c",
+      "evidence": "pk3_book.txt"
+    },
+    {
+      "label": "pk3_bell",
+      "pass_assertions": 42,
+      "completion_marker": "MATRIX_DONE weapon=17",
+      "commands": "wait 140; give Issue62Setup; wait 35; give Issue62Bell; wait 920; wait 20; quit",
+      "log_sha256": "056d8e26ab925a950206a1d6e85031f93b907ad74121f8b87ce02b06433f2e08",
+      "evidence": "pk3_bell.txt"
+    },
+    {
+      "label": "pk3_statuette",
+      "pass_assertions": 42,
+      "completion_marker": "MATRIX_DONE weapon=19",
+      "commands": "wait 140; give Issue62Setup; wait 35; give Issue62Statuette; wait 920; wait 20; quit",
+      "log_sha256": "a44c29d306f6c35aa55e4e7b62ca99aaa2e3be3b42239f00ab30b263bf3d39fc",
+      "evidence": "pk3_statuette.txt"
+    },
+    {
+      "label": "final_flow",
+      "pass_assertions": 19,
+      "completion_marker": "owned weapon survives",
+      "commands": "wait 140; give Issue62Owned; give Issue62Setup; wait 35; give Issue62Reject; give Issue62RestoreTarget; give Issue62Miss; wait 100; give Issue62MissSecondary; wait 100; give Issue62Other; wait 100; give Issue62NoHits; give Issue62Primary; wait 100; give Issue62Dump; give Issue62Retry; save final62_active; wait 40; give Issue62Secondary; wait 100; give Issue62Channel; wait 70; give Issue62Dump; give Issue62Finish; give Issue62OwnedCheck; save final62_complete; wait 40; screenshot build/issue62_complete.png; wait 20; quit",
+      "log_sha256": "898be1098c07cbfa2f0b497341f583489030c6400f799e5f6790dec9f218af40",
+      "evidence": "final_flow.txt"
+    },
+    {
+      "label": "legacy_active",
+      "pass_assertions": 2,
+      "completion_marker": "primary=1 secondary=0",
+      "commands": "wait 100; give Issue62Setup; wait 70; give Issue62Miss; wait 100; give Issue62Dump; save legacy62_active; wait 20; quit",
+      "log_sha256": "2f8690e3b9a32997af3385b1024b9237fea7d7258772cad0349cb0e55475aae1",
+      "evidence": "legacy_active.txt"
+    },
+    {
+      "label": "legacy_complete",
+      "pass_assertions": 9,
+      "completion_marker": "STATE completed stage=45",
+      "commands": "wait 100; give Issue62Setup; wait 35; give Issue62LegacyComplete; save legacy62_complete; wait 20; quit",
+      "log_sha256": "cbceae7a1bfb975ee46f1ed0342723e674649fc6acfb711837a4d13c9b4dcfa4",
+      "evidence": "legacy_complete.txt"
+    },
+    {
+      "label": "legacy_active_stable",
+      "pass_assertions": 12,
+      "completion_marker": "STATE completed stage=45",
+      "commands": "wait 140; give Issue62ActiveCheck; give Issue62Retry; save stable62_active; wait 40; give Issue62Secondary; wait 100; give Issue62Channel; wait 70; give Issue62Finish; save stable62_complete; wait 40; quit",
+      "log_sha256": "5a751733a46d96b0e14aa2c566539b655bb09dfcd884515375aa0d4ae585498e",
+      "evidence": "legacy_active_stable.txt"
+    },
+    {
+      "label": "legacy_complete_upgrade",
+      "pass_assertions": 3,
+      "completion_marker": "completed-reload",
+      "commands": "wait 70; give Issue62CompletedCheck; save migrated62_complete; wait 20; quit",
+      "log_sha256": "926b06b4fbc9a4df3d8a9a4dbf169461c2444bc0b58fd45d33c2866a6e0bfa0f",
+      "evidence": "legacy_complete_upgrade.txt"
+    },
+    {
+      "label": "stable_active_reload",
+      "pass_assertions": 5,
+      "completion_marker": "active-reload",
+      "commands": "wait 140; echo QA62_RELOAD_READY; give Issue62ActiveCheck; give Issue62Retry; wait 20; quit",
+      "log_sha256": "fcc5aa0b9504033c1f6401a52a0442eba74cff8a4c8ac6959554876d5fe031cc",
+      "evidence": "stable_active_reload.txt"
+    },
+    {
+      "label": "stable_complete_reload",
+      "pass_assertions": 3,
+      "completion_marker": "completed-reload",
+      "commands": "wait 140; echo QA62_RELOAD_READY; give Issue62CompletedCheck; wait 20; quit",
+      "log_sha256": "d6f9ec706f1b3ced16d055adc54965eb52d2b562a993ad240d21b4549899155b",
+      "evidence": "stable_complete_reload.txt"
+    },
+    {
+      "label": "rollback_active_final",
+      "pass_assertions": 5,
+      "completion_marker": "active-reload",
+      "commands": "wait 140; give Issue62ActiveCheck; give Issue62Retry; wait 20; quit",
+      "log_sha256": "d530e24f29122100c85b6b8ab38e9dcfdf642491d1962a322974d9a0e178029d",
+      "evidence": "rollback_active_final.txt"
+    },
+    {
+      "label": "rollback_complete_final",
+      "pass_assertions": 3,
+      "completion_marker": "completed-reload",
+      "commands": "wait 140; give Issue62CompletedCheck; wait 20; quit",
+      "log_sha256": "414af1a89b0c19fbd13680d7984918636eb2208bc1b1519b2463a7aaadd6ec29",
+      "evidence": "rollback_complete_final.txt"
+    },
+    {
+      "label": "final_delayed_rulo",
+      "pass_assertions": 6,
+      "completion_marker": "Caella and Rulo share one dummy",
+      "commands": "wait 140; give Issue62Setup; wait 35; give Issue62Delayed; wait 170; give Issue62Rulo; wait 35; give Issue62Primary; wait 100; give Issue62RuloCheck; wait 20; quit",
+      "log_sha256": "77fd403f88f004631d7927f23ee6318558ea5eb7f7757960f083e1683ba18d66",
+      "evidence": "final_delayed_rulo.txt"
+    },
+    {
+      "label": "final_active_reload",
+      "pass_assertions": 3,
+      "completion_marker": "checkpoint stage=40 primary=1 secondary=0",
+      "commands": "wait 140; give Issue62Dump; give Issue62Retry; wait 20; quit",
+      "log_sha256": "52c2d8e9752112730a843e9797f12b91dc1aa28166f834e8639097bc31216440",
+      "evidence": "final_active_reload.txt"
+    },
+    {
+      "label": "final_complete_reload",
+      "pass_assertions": 4,
+      "completion_marker": "completed-reload",
+      "commands": "wait 140; give Issue62CompletedCheck; give Issue62OwnedCheck; wait 20; quit",
+      "log_sha256": "52e3c04f4509a994b3665fa1e7fc0154abbda03698d9cc62507fc48a821b9ee9",
+      "evidence": "final_complete_reload.txt"
+    },
+    {
+      "label": "journal",
+      "pass_assertions": 2,
+      "completion_marker": "QA62_VISUAL_DONE",
+      "commands": "wait 140; give Issue62Setup; wait 70; language es; ca_journal_open true; ca_journal_page 4; ca_journal_quest_detail true; ca_journal_quest_scroll 4; wait 70; screenshot build/issue62_journal_es.png; wait 30; language enu; ca_journal_quest_scroll 4; wait 70; screenshot build/issue62_journal_en.png; wait 30; echo QA62_VISUAL_DONE; quit",
+      "log_sha256": "609aa7630e79dd8fb9d08135fca0bdd46263b3678a945c53c3b1e93cce260eb7",
+      "evidence": "journal.txt"
+    },
+    {
+      "label": "clean",
+      "pass_assertions": 0,
+      "completion_marker": "QA62_CLEAN_DONE",
+      "commands": "wait 200; echo QA62_CLEAN_DONE; wait 20; quit",
+      "log_sha256": "5d8bd936b3efbb3c8ed0df28d3e7cf553b2c44933279f1bac8c529b2831313ce",
+      "evidence": "clean.txt"
+    }
+  ],
+  "methodology": [
+    "Fresh MAP01 fixtures seed the completed-Argento prerequisite; Begin, casts, impacts, resource ticks, runes, completion and loan returns use production methods. This is not an ordinary full campaign.",
+    "Positive attack coverage uses native pending casts and moving projectiles, never directly awards hit flags. Matrix asserts actual pending weapon/essence/mode, no credit on release, and only the corresponding flag after impact.",
+    "The fixture temporarily sets MagicalAccuracyPercent=10000 and aims at the torso to control native random dispersion. Production accuracy/costs/cooldowns are unchanged. Initial uncontrolled probes missed normally; those probes are not counted as passing matrix evidence.",
+    "The legacy active fixture earned its primary flag by a genuine old-version missed cast. The legacy completed fixture seeds its five practice flags, then uses production rune and completion methods; both are isolated test saves, not private author saves.",
+    "Save commands wait for deferred native writes before subsequent attacks; loaded checks wait 140 tics for player initialization. Initial probes with short waits or a cast in the save tic were superseded by stable_* cases.",
+    "Delayed-hit fixture slows the actual released secondary projectile, equips an owned sword, then verifies secondary credit from stored projectile metadata. Rulo fixture stages his prerequisite and creates native family selectors before allowing equipment selection to settle and attacking. An earlier combined probe omitted those selectors and was corrected in the fixture, not in production.",
+    "Earlier passing native cases have identical gameplay code to the final PK3. Subsequent changes only update required diagnostic release labels and the bilingual Journal location heading. The final PK3 separately passes the 40-case matrix, clean startup, delayed/Rulo, reload and visual checks.",
+    "No IWAD, executable, PK3, private save or test overlay is packaged with the runtime. Captures/logs are isolated engine evidence, not author acceptance."
+  ],
+  "reproduction": [
+    "From the repository root, build_dev.ps1 produces the current runtime. Supply a local licensed Doom II IWAD, GZDoom 4.14.2 and build/gzdoom.ini; edit local paths in run_issue62.ps1 if needed.",
+    "Run assets/validation_4371/run_issue62.ps1 -Label <label> -Package -Fixture assets/validation_4371/fixture -Commands <recorded commands> -Wait. Save/load cases additionally need -LoadSave build/issue62_saves/<name>.zds.",
+    "Create legacy62_active and legacy62_complete with the 4.37.0 package built from base_commit in a separate checkout. Select it with -Runtime <path>; keep the basename caelum_argenteum_dev.pk3. Then run legacy_active_stable/legacy_complete_upgrade and subsequent reload/rollback cases.",
+    "Legacy cases use the old package; pk3_* and final_* use the current PK3. The clean case adds -Clean. Logs/captures/saves remain under build; only retained evidence and fixture sources are tracked."
+  ]
+}

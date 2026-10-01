@@ -1,6 +1,15 @@
 # Caelum Argenteum — Audio and art
 
-Documentation version: **4.37.0** — 2026-10-01.
+Documentation version: **4.37.1** — 2026-10-01.
+
+## 4.37.1 — Reused practice target and bilingual directions (#62)
+
+No new art, audio, model, map or generator output. Caella reuses the existing
+CaelumM00TrainingDummy and its CDMY sprite in the mansion practice room; the
+authoritative position/bounds remain assets/map01_mansion/PRACTICE.json and its
+generated runtime data. English/Spanish LANGUAGE strings explain the two spell
+hits and separate Seal/Anima demonstrations. Native fixtures and evidence live
+in assets/validation_4371 and are never included in the runtime PK3.
 
 ## 4.37.0 — Mansion landscape and filled tympana (#61)
 

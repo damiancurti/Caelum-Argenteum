@@ -1,0 +1,28 @@
+CA-4371-CAELLA-01 — 4.37.1 / issue #62 — PENDING AUTHOR ACCEPTANCE
+Prerequisites: rebuild with run_dev.bat and use GZDoom 4.14.2. Keep original
+4.37.0 saves and their package for rollback. Start a fresh campaign for step 1;
+use separate active/completed Caella saves for the compatibility checks.
+
+1. Reach Caella through the normal Palomo/Argento sequence. Read her practice
+   and controls replies and the Journal. Expected: both languages identify the
+   training dummy in the north-central ground-floor room and distinguish two
+   spell hits from Seal Channel and Anima expenditure/recovery.
+2. With the supplied or owned magic implement, cast Fire and AltFire into empty
+   space or at a wall. Expected: the two offensive objectives remain incomplete;
+   actual Anima expenditure and recovery may register independently.
+3. Aim at the dummy and land Fire and AltFire. Expected: each corresponding
+   objective completes only when its spell reaches the dummy. Use User2 for the
+   Seal. Expected: five practices can be completed, with a reusable dummy.
+4. Save/reload partway, ask Caella to prepare equipment again, and finish the
+   remaining practices. Expected: earned progress and loan identities persist;
+   there is one dummy and no duplicated equipment.
+5. Try an incorrect rune, then Earth -> Air -> Fire -> Water using Use with the
+   implement. Expected: errors reset only the rune sequence; return to Caella
+   is still required to open the passage. Only borrowed items are returned.
+6. Continue through Ronnie to Rulo. Expected: the same dummy remains usable for
+   his unchanged practice, and the ordinary tutorial can continue.
+7. Load copies of 4.37.0 saves with Caella active and completed. Expected: existing
+   flags/runes/loans and completed passage remain; missing offensive objectives
+   now need dummy hits. Save/reload again: no reset, duplicate target or loans.
+8. Confirm dialogue/Journal readability in Spanish and English and report any
+   exception together with the save phase and weapon/essence used.

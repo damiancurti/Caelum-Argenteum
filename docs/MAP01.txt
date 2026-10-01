@@ -1,6 +1,23 @@
 CAELUM ARGENTEUM — STORY AND MAP01
 
-Documentation version: **4.37.0** — 2026-10-01.
+Documentation version: **4.37.1** — 2026-10-01.
+
+## 4.37.1 — Caella practices on the mansion dummy (#62)
+
+The existing dummy in the north-central ground-floor room, off the central hall,
+is the target for both offensive demonstrations. Fire and AltFire must each hit
+it with a valid player magic projectile. Misses, other NPCs/targets and physical
+attacks do not complete those objectives. The dummy remains indestructible and
+shared with Rulo; it has no loot, resource or equipment-wear reward.
+
+Anima expenditure/recovery and Seal Channel retain their real resource checks
+without requiring an impact. Five practices precede the four runes. The accepted
+interaction remains Use with an active implement, Earth -> Air -> Fire -> Water,
+then return to Caella before the wall becomes passable and loans return. This
+restates the current SYSTEMS implementation; older section 18's operational
+proposal does not introduce an elemental selector or automatic opening here.
+No geometry or save schema changes: active/completed 4.37.0 progress is retained.
+Evidence: assets/validation_4371; author test CA-4371-CAELLA-01 remains pending.
 
 ## 4.37.0 — Exterior relief, scattered vegetation and door tympana (#61)
 
@@ -2818,12 +2835,14 @@ tutorial actions.
 
 Before the riddle, record:
 
-- A valid primary launch: Fire.
-- A valid secondary magic feature: AltFire.
+- A valid primary spell hit on the shared training dummy: Fire.
+- A valid secondary spell hit on the same dummy: AltFire.
 - A valid channeling with Seal: User2/Channel (current control).
 - Consumption and visible recovery of Anima.
 
-Do not demand harm against an enemy. Use targets or runes that respond to the right action.
+Do not demand harm against an enemy. Both offensive spells must hit the existing
+training dummy in the north-central ground-floor room; misses and other targets
+do not count. Seal Channel and Anima expenditure/recovery require no impact.
 
 18.5. RIDDLE
 

@@ -4,8 +4,18 @@ An independent dark fantasy FPS-RPG inspired by nineteenth-century Argentina.
 Author and game designer: **Damian Curti**. Development target: **GZDoom 4.14.2**
 on Windows 11. The final game is intended to be independent of Doom assets.
 
-**Current release: 4.37.0.** Obtain and update the complete repository, validate
+**Current release: 4.37.1.** Obtain and update the complete repository, validate
 it, then rebuild with `run_dev.bat` as described below.
+
+Issue [#62](https://github.com/damiancurti/Caelum-Argenteum/issues/62) makes Caella's
+primary and secondary spell exercises require hits on the training dummy in the
+north-central ground-floor room. Anima and Seal demonstrations remain separate.
+Caella and the Journal give matching English/Spanish directions. Runes, loans,
+passage progression and Rulo's shared dummy retain their existing rules.
+Active/completed 4.37.0 saves keep their progress; this patch changes no geometry
+or save schema. Keep original saves/packages for rollback. Evidence is in
+[4.37.1 validation](assets/validation_4371/RESULTS.json); ordinary campaign and
+save checks await author confirmation in [pending_test.txt](pending_test.txt).
 
 Issue [#61](https://github.com/damiancurti/Caelum-Argenteum/issues/61) adds rolling
 terrain and scattered decorative vegetation around MAP01, plus filled triangular
@@ -25,7 +35,7 @@ preserving their architectural controls; the author accepted that repair.
 The latest follow-up fixes six old stations left on the northern hills: their
 existing relocation now uses floor-relative height, preserving the intended
 38 interior stations. The author confirmed all tests on 2026-10-01 and authorized
-PR #66 merge and issue #61 closure. No author checks remain in
+PR #66 merge and issue #61 closure. No #61 author checks remain in
 [pending_test.txt](pending_test.txt). Evidence: [cave](assets/validation_4370/CAVE.json),
 [auxiliary rooms](assets/validation_4370/CONTROLS.json) and
 [stations](assets/validation_4370/STATIONS.json).
