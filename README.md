@@ -52,8 +52,11 @@ exact commit, checksums and verification are in assets/validation_43628/RESULTS.
 
 This is a single-player development playtest, not the final standalone game.
 Supply GZDoom 4.14.2 for Windows and your legally obtained Doom II DOOM2.WAD
-separately. Neither is included. Freedoom and other IWADs are not certified by
-this export. The package is for author-authorized testing; LICENSE.md and the
+separately. The tested GZDoom installation also auto-loaded its engine support
+packages and the installed Doom rerelease's id24res.wad. Keep your engine and
+IWAD installation resources together; none of those dependencies is included.
+Freedoom and other IWAD combinations are not certified by this export.
+The package is for author-authorized testing; LICENSE.md and the
 individual notices in licenses/ retain their terms and attribution.
 
 1. Extract the complete ZIP into a new writable folder. Keep MANIFEST.json and

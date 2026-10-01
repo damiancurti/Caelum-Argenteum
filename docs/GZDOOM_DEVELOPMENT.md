@@ -106,6 +106,15 @@ The validator should return exit code 0 and an empty errors list. Read the whole
 
 The inspected builder rejects empty files, checks PNG signatures/dimensions, writes file entries with relative paths, checks the archive and replaces the output only after successful creation. It does not prove that the engine can load every resource or that game behavior is correct. Do not assume byte-identical PK3 archives merely because generated source outputs are deterministic; archive metadata also matters.
 
+Issue #17 / 4.36.28 adds `build_playtest.py --ref <commit> --output <directory>`
+for release exports. At `fa6fb9bb`, `committed_files` reads raw Git blobs with
+`cat-file --batch`; it does not depend on checkout line endings or `git archive`
+conversion. Fixed metadata and stored ZIP entries make repeat exports identical.
+The independent `assets/validation_43628/verify_export.py` compares every runtime
+member to `git ls-tree` blob IDs, verifies SHA-256 coverage and checks the delivery
+allowlist. Native startup/save/reload evidence remains distinct from ordinary
+campaign acceptance. Keep the normal development builder and legacy map modes.
+
 ```powershell
 .\run_dev.bat
 ```

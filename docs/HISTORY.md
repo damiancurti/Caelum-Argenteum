@@ -22,7 +22,14 @@ The initial static check found stale document-index hashes at the clean baseline
 maintained docs were written as UTF-8/LF and the index regenerated. No source
 resources were regenerated. Native and reproducibility results are recorded in
 assets/validation_43628/RESULTS.json, separately from accepted #8–#16/#18–#21
-component evidence. CA-43628-EXPORT-01 remains pending until the author confirms
+component evidence. Static validation and the normal build pass. The independent
+verifier confirms all 6,129 committed runtime blobs and complete checksum coverage;
+two exports match byte for byte. GZDoom g4.14.2, Vulkan and OpenAL load/save/reload
+MAP01/MAP02/MAP03/MAP06 from a fresh extraction without detected resource errors.
+The engine also auto-loaded installed id24res.wad; delivery instructions now
+disclose that observed dependency. No engine/IWAD resources enter the ZIP.
+CADEV02 and ancillary map references remain intact outside the prescribed route.
+CA-43628-EXPORT-01 remains pending until the author confirms
 the ordinary-player route on the exported package; earlier #16 acceptance does
 not automatically pass it. The issue and publication remain open.
 

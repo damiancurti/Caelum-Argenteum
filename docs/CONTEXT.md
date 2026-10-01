@@ -2,10 +2,10 @@
 
 Documentation version: **4.36.28** — 2026-10-01.
 
-**4.36.28 / #17:** preparing reproducible current-content export from accepted
+**4.36.28 / #17:** reproducible current-content export prepared from accepted
 4.36.27. Author explicitly postponed 4.37 Tarot/Trucazo until after this playtest
 on 2026-10-01. Route: MAP01 -> MAP02 -> MAP03 connector -> MAP06. Exported-package
-author acceptance and distribution qualifications remain open; see TASKS,
+author acceptance remains open; static/build, hashes and native smoke pass. See TASKS,
 pending_test.txt and assets/validation_43628. Gameplay and saves are unchanged.
 
 **4.36.27 / #16:** full port siege deployed: 1,000 Mandingas, Zupay, 24 machines,
@@ -140,14 +140,10 @@ SYSTEMS/HISTORY and assets/validation_43616. Port acceptance and export remain p
 
 The accepted **4.36.15** (#19) implements breakable actor gates, using approved 30%/50%/70% reductions and 550/650/1,100 kg moving masses. Intact, damaged and broken states persist across save/load and hub travel; old-save and native body-contact tests pass. CA-43611-GATES-01 passed on 2026-09-26. Full implementation and acceptance details remain in HISTORY; subsequent #21 balance supersedes original gate Constitution.
 
-The preceding **4.36.14a** corrects #18 after the author's 2026-09-26
-feedback: two solid gate leaves in three materials, refined cannon/ram forms,
-and independent MODELDEF states instead of overlapping open/closed meshes.
-Fresh MAP03 shows all 16 states. The author passed all visual checks on
-2026-09-26 (CA-43614A-SIEGE-ART-01). The same correction now removes MAP03
-tables, chairs, beds and crafting stations, including existing saved actors,
-and prevents their automatic respawn. Table contents become pickups through
-the existing destructor. Other maps and save schemas remain unchanged; exact
+**4.36.14a / #18:** author accepted the corrected gate/cannon/ram forms and
+independent MODELDEF states on 2026-09-26 (CA-43614A-SIEGE-ART-01). MAP03
+furniture/stations and saved instances were retired, retaining table contents
+as pickups. Other maps/save schemas were unchanged. Details: ASSETS/HISTORY;
 historical cannon scale remains unverified.
 
 **4.36.14 / #31:** author-selected combat pain, dialogue-opening cue and

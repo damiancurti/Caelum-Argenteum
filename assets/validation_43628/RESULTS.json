@@ -3,7 +3,7 @@
   "issue": 17,
   "date": "2026-10-01",
   "baseline_commit": "0a584960eaeecfac31db82adadb7426347c50964",
-  "status": "Export implementation; native and archive checks pending execution. Author export acceptance remains pending.",
+  "status": "Implementation and automated checks PASS; ordinary exported-package author acceptance, final Usage closeout and publication remain pending.",
   "author_decisions": [
     "Export current accepted 4.36.27 content; postpone 4.37 until after this playtest.",
     "marjaja197 is a different person who authorized use of The Argentine Omen.",
@@ -11,35 +11,274 @@
   ],
   "source_changes": "Packaging/tooling/docs and audio permission notices; two required diagnostic release labels only. Gameplay, balance, assets and save schemas unchanged.",
   "accepted_evidence": [
-    {"issues": [8], "history": "docs/HISTORY.md#4362--bow-first-use-composition-stall-issue-8", "id": "CA-4362-BOW-EMPTY-01", "date": "2026-09-23", "evidence": "assets/validation_4362/RESULTS.json"},
-    {"issues": [9], "history": "docs/HISTORY.md#4363--additional-counterclockwise-flail-rotation-issue-9", "id": "CA-4360I-VISUAL-01", "date": "2026-09-23", "evidence": "assets/validation_4363/RESULTS.json"},
-    {"issues": [10], "history": "docs/HISTORY.md#4364--map02-t1-loot-recipient-sizing-and-acquisition-feedback-10", "id": "CA-4364-T1-LOOT-01", "date": "2026-09-23", "evidence": "assets/validation_4364/RESULTS.json", "scope": "232 native sizing checks cover body tiers 1 through 7; two real clients tested small/large collectors and transactions."},
-    {"issues": [11], "id": "CA-4365-MAZE-01", "date": "2026-09-24", "evidence": "assets/validation_4365/RESULTS.json"},
-    {"issues": [12], "id": "CA-4366-RATS-01", "date": "2026-09-24", "evidence": "docs/HISTORY.md"},
-    {"issues": [13], "id": "CA-4367-PRISONER-ART-01", "date": "2026-09-24", "evidence": "assets/validation_4367/RESULTS.json"},
-    {"issues": [14], "history": "docs/HISTORY.md#4368--prisoner-rescue-escort-and-port-rewards-14", "id": "CA-4368-RESCUE-01", "date": "2026-09-25", "scope": "Author accepted release/follow/combat/extraction/save/travel and exactly 25 gold plus 10 own-faction reputation per rescued prisoner once, independent of size. No separate validation_4368 directory exists; retain history evidence."},
-    {"issues": [15], "history": "docs/HISTORY.md#4369--approved-tarot-fronts-and-collection-bindings-15", "id": "CA-4369-TAROT-ART-01", "date": "2026-09-25", "evidence": "assets/manifests/tarot_78_v4369.json"},
-    {"issues": [18], "id": "CA-43614A-SIEGE-ART-01", "date": "2026-09-26", "evidence": "assets/validation_43614a/RESULTS.json"},
-    {"issues": [19], "id": "CA-43611-GATES-01", "date": "2026-09-26", "evidence": "assets/validation_43615/engine_evidence.txt", "qualification": "Later accepted #21/#52 gate balance supersedes original values."},
-    {"issues": [20], "id": "CA-43612-RAM-01", "date": "2026-09-26", "evidence": "assets/validation_43616/engine_evidence.txt"},
-    {"issues": [21], "ids": ["CA-43613-CATAPULT-01", "CA-43619-BALANCE-01"], "date": "2026-09-27", "evidence": "assets/validation_43617/engine_evidence.txt", "qualification": "Historical ID refers to cannons; current 500 m/s and later #52 gate rules supersede issue #17's older figures."},
-    {"issues": [16], "ids": ["CA-43627-PORT-01", "CA-43627-SAVE-01"], "date": "2026-09-30", "evidence": "assets/validation_43627/RESULTS.json", "scope": "Accepted complete campaign, visuals/balance and original campaign-save continuity; native zero/one/four-rescue checks and no repeated rewards. Export acceptance remains separate."}
+    {
+      "issues": [
+        8
+      ],
+      "history": "docs/HISTORY.md#4362--bow-first-use-composition-stall-issue-8",
+      "id": "CA-4362-BOW-EMPTY-01",
+      "date": "2026-09-23",
+      "evidence": "assets/validation_4362/RESULTS.json"
+    },
+    {
+      "issues": [
+        9
+      ],
+      "history": "docs/HISTORY.md#4363--additional-counterclockwise-flail-rotation-issue-9",
+      "id": "CA-4360I-VISUAL-01",
+      "date": "2026-09-23",
+      "evidence": "assets/validation_4363/RESULTS.json"
+    },
+    {
+      "issues": [
+        10
+      ],
+      "history": "docs/HISTORY.md#4364--map02-t1-loot-recipient-sizing-and-acquisition-feedback-10",
+      "id": "CA-4364-T1-LOOT-01",
+      "date": "2026-09-23",
+      "evidence": "assets/validation_4364/RESULTS.json",
+      "scope": "232 native sizing checks cover body tiers 1 through 7; two real clients tested small/large collectors and transactions."
+    },
+    {
+      "issues": [
+        11
+      ],
+      "id": "CA-4365-MAZE-01",
+      "date": "2026-09-24",
+      "evidence": "assets/validation_4365/RESULTS.json"
+    },
+    {
+      "issues": [
+        12
+      ],
+      "id": "CA-4366-RATS-01",
+      "date": "2026-09-24",
+      "evidence": "docs/HISTORY.md"
+    },
+    {
+      "issues": [
+        13
+      ],
+      "id": "CA-4367-PRISONER-ART-01",
+      "date": "2026-09-24",
+      "evidence": "assets/validation_4367/RESULTS.json"
+    },
+    {
+      "issues": [
+        14
+      ],
+      "history": "docs/HISTORY.md#4368--prisoner-rescue-escort-and-port-rewards-14",
+      "id": "CA-4368-RESCUE-01",
+      "date": "2026-09-25",
+      "scope": "Author accepted release/follow/combat/extraction/save/travel and exactly 25 gold plus 10 own-faction reputation per rescued prisoner once, independent of size. No separate validation_4368 directory exists; retain history evidence."
+    },
+    {
+      "issues": [
+        15
+      ],
+      "history": "docs/HISTORY.md#4369--approved-tarot-fronts-and-collection-bindings-15",
+      "id": "CA-4369-TAROT-ART-01",
+      "date": "2026-09-25",
+      "evidence": "assets/manifests/tarot_78_v4369.json"
+    },
+    {
+      "issues": [
+        18
+      ],
+      "id": "CA-43614A-SIEGE-ART-01",
+      "date": "2026-09-26",
+      "evidence": "assets/validation_43614a/RESULTS.json"
+    },
+    {
+      "issues": [
+        19
+      ],
+      "id": "CA-43611-GATES-01",
+      "date": "2026-09-26",
+      "evidence": "assets/validation_43615/engine_evidence.txt",
+      "qualification": "Later accepted #21/#52 gate balance supersedes original values."
+    },
+    {
+      "issues": [
+        20
+      ],
+      "id": "CA-43612-RAM-01",
+      "date": "2026-09-26",
+      "evidence": "assets/validation_43616/engine_evidence.txt"
+    },
+    {
+      "issues": [
+        21
+      ],
+      "ids": [
+        "CA-43613-CATAPULT-01",
+        "CA-43619-BALANCE-01"
+      ],
+      "date": "2026-09-27",
+      "evidence": "assets/validation_43617/engine_evidence.txt",
+      "qualification": "Historical ID refers to cannons; current 500 m/s and later #52 gate rules supersede issue #17's older figures."
+    },
+    {
+      "issues": [
+        16
+      ],
+      "ids": [
+        "CA-43627-PORT-01",
+        "CA-43627-SAVE-01"
+      ],
+      "date": "2026-09-30",
+      "evidence": "assets/validation_43627/RESULTS.json",
+      "scope": "Accepted complete campaign, visuals/balance and original campaign-save continuity; native zero/one/four-rescue checks and no repeated rewards. Export acceptance remains separate."
+    }
   ],
   "reused_performance": {
     "evidence": "assets/validation_43627/resource_trial/RESULTS.json",
-    "os": "Windows 11", "cpu": "Ryzen 9 5950X", "gpu": "RTX 3070 Ti", "renderer": "Vulkan", "resolution": "1280x720",
-    "simulation_tics": 2100, "host_seconds": 60.7100564,
-    "initial_attackers": 1001, "defenders": 100, "machines": 24,
+    "os": "Windows 11",
+    "cpu": "Ryzen 9 5950X",
+    "gpu": "RTX 3070 Ti",
+    "renderer": "Vulkan",
+    "resolution": "1280x720",
+    "simulation_tics": 2100,
+    "host_seconds": 60.7100564,
+    "initial_attackers": 1001,
+    "defenders": 100,
+    "machines": 24,
     "limits": "Prior final gameplay snapshot with invulnerable diagnostic player and empty-resource probe; approximately one-second host sampling. Not rendering FPS, minimum requirements or ordinary-player route evidence."
   },
   "multiplayer": "Not tested for the full exported campaign; only prior #10 two-client equipment transactions are accepted.",
-  "author_acceptance": {"id": "CA-43628-EXPORT-01", "status": "PENDING", "queue": "pending_test.txt"},
+  "author_acceptance": {
+    "id": "CA-43628-EXPORT-01",
+    "status": "PENDING",
+    "queue": "pending_test.txt"
+  },
   "usage": {
-    "baseline_source": "Author report 2026-09-23", "baseline_weekly_remaining_percent": 75,
-    "baseline_reset_time": null, "final_weekly_remaining_percent": null,
-    "work_planning_review_tokens": null, "desktop_implementation_tokens": null,
-    "input_tokens": null, "cached_input_tokens": null, "output_tokens": null, "reasoning_tokens": null,
+    "baseline_source": "Author report 2026-09-23",
+    "baseline_weekly_remaining_percent": 75,
+    "baseline_reset_time": null,
+    "final_weekly_remaining_percent": null,
+    "work_planning_review_tokens": null,
+    "desktop_implementation_tokens": null,
+    "input_tokens": null,
+    "cached_input_tokens": null,
+    "output_tokens": null,
+    "reasoning_tokens": null,
     "scope": "#8/#9 plus #10 through #21, including correction sessions; available task evidence is not a Usage counter.",
     "limits": "No exposed aggregate usage counters for this batch. Final allowance, resets, concurrent unrelated usage and Work/desktop measurements require author evidence at accepted completion. No percentage-to-token conversion or quantitative savings claim."
-  }
+  },
+  "static_validation": {
+    "command": "python validate_project.py",
+    "version": "4.36.28",
+    "errors": [],
+    "exit_code": 0
+  },
+  "normal_build": {
+    "command": "powershell.exe -NoProfile -ExecutionPolicy Bypass -File build_dev.ps1",
+    "exit_code": 0,
+    "runtime_files": 6129,
+    "sha256": "7c3a0585b5d30fc108d5f991f97869fa7d3fd2863060ef78c09d0244caed0905"
+  },
+  "native": {
+    "tested_runtime_source_commit": "fa6fb9bb01f721a197bfa8ccfd14f28c4e96e3ee",
+    "package_sha256": "819aa4912ee59321d4f80e435b01ce84b0c9065bd497a883b0a8712d45eb9591",
+    "engine": "GZDoom g4.14.2",
+    "os": "Windows 11",
+    "gpu": "RTX 3070 Ti",
+    "renderer": "Vulkan",
+    "configuration": "Extracted ZIP in a new directory; separate fresh INI per map, noautoload, sound enabled (OpenAL), 1280x720 window, disposable save directory; no QA overlay.",
+    "iwad_sha256": "10d67824b11025ddd9198e8cfc87ca335ee6e2d3e63af4180fa9b8a471893255",
+    "loaded_external_dependencies": [
+      "gzdoom.pk3",
+      "game_support.pk3",
+      "DOOM2.WAD",
+      "id24res.wad",
+      "game_widescreen_gfx.pk3"
+    ],
+    "support_note": "GZDoom game_support.pk3/iwadinfo.txt declares id24res.wad as SupportWAD. It was auto-found in the existing installation, not supplied by the project or the ZIP.",
+    "maps": [
+      {
+        "map": "MAP01",
+        "exit_code": 0,
+        "timeout": false,
+        "host_seconds": 10.119,
+        "package_sha256": "819aa4912ee59321d4f80e435b01ce84b0c9065bd497a883b0a8712d45eb9591",
+        "ready": true,
+        "done": true,
+        "saved": true,
+        "loaded": true,
+        "engine_4142": true,
+        "problems": [],
+        "log": "map01.txt",
+        "scope": "Direct map startup and native save/load only; not ordinary progression or author acceptance"
+      },
+      {
+        "map": "MAP02",
+        "exit_code": 0,
+        "timeout": false,
+        "host_seconds": 10.183,
+        "package_sha256": "819aa4912ee59321d4f80e435b01ce84b0c9065bd497a883b0a8712d45eb9591",
+        "ready": true,
+        "done": true,
+        "saved": true,
+        "loaded": true,
+        "engine_4142": true,
+        "problems": [],
+        "log": "map02.txt",
+        "scope": "Direct map startup and native save/load only; not ordinary progression or author acceptance"
+      },
+      {
+        "map": "MAP03",
+        "exit_code": 0,
+        "timeout": false,
+        "host_seconds": 10.059,
+        "package_sha256": "819aa4912ee59321d4f80e435b01ce84b0c9065bd497a883b0a8712d45eb9591",
+        "ready": true,
+        "done": true,
+        "saved": true,
+        "loaded": true,
+        "engine_4142": true,
+        "problems": [],
+        "log": "map03.txt",
+        "scope": "Direct map startup and native save/load only; not ordinary progression or author acceptance"
+      },
+      {
+        "map": "MAP06",
+        "exit_code": 0,
+        "timeout": false,
+        "host_seconds": 10.155,
+        "package_sha256": "819aa4912ee59321d4f80e435b01ce84b0c9065bd497a883b0a8712d45eb9591",
+        "ready": true,
+        "done": true,
+        "saved": true,
+        "loaded": true,
+        "engine_4142": true,
+        "problems": [],
+        "log": "map06.txt",
+        "scope": "Direct map startup and native save/load only; not ordinary progression or author acceptance"
+      }
+    ],
+    "log_processing": "Complete engine logs; installed dependency paths replaced with placeholders and trailing whitespace stripped. No warnings/errors removed.",
+    "limits": "Console map startup uses the project safe test profile. Successful save/load is confirmed by Game saved followed by a second native map banner and the done marker. This is not normal prologue, travel, combat, visual acceptance or a new FPS benchmark."
+  },
+  "packaging_checks": {
+    "independent_verifier": "assets/validation_43628/verify_export.py",
+    "result": "PASS",
+    "runtime_members": 6129,
+    "coverage": [
+      "Every runtime Git blob identity",
+      "SHA-256 of all runtime and delivery files",
+      "ZIP CRC",
+      "Exact delivery allowlist",
+      "Fixed metadata and ordering",
+      "No engine, IWAD, fixture, raw stock or repository archive"
+    ],
+    "reproduction": "Two separate exports of fa6fb9bb have identical 96f96e23ef5b6d7c7938daa55550463998ff262553ef1bba3843bd221cd8ab78 ZIP SHA-256. Final delivery identity is recorded separately after adding observed dependency instructions.",
+    "correction": "Independent blob verification rejected ANIMDEFS in the first 9323b156 candidate because git archive applied core.autocrlf. fa6fb9bb reads raw Git objects; every blob now matches. Initial save/load detection expected a nonexistent Loading game log string; corrected to the observed post-save native map banner. Both corrected checks were rerun."
+  },
+  "limitations": [
+    "CA-43628-EXPORT-01 remains pending; merged components do not constitute exported-package acceptance.",
+    "Prior full-scene performance and 0/partial/all rescue checks are reused within their stated conditions because the gameplay snapshot is unchanged apart from diagnostic version labels.",
+    "Historical cannon overall dimensions remain unverified; inherited sleeping-bag icon reuses fabric art. No blanket absence-of-placeholder or final standalone claim.",
+    "No independent second-model review; the available assistant performed implementation and verification.",
+    "No final aggregate Usage counters or author-confirmed weekly balance yet."
+  ]
 }
