@@ -4197,3 +4197,16 @@ CA_Q_RESCUE_DONE = "Este prisionero llegó con vida al refugio. Rescate completa
 CA_Q_RESCUE_DEAD = "Este prisionero murió antes de llegar a salvo. No se obtuvo el rescate ni su pago.";
 CA_Q_RESCUE_PAID = "La recompensa del puerto ya fue cobrada.";
 CA_Q_RESCUE_UNPAID = "La recompensa del puerto sigue sin cobrar. Hablá con el sobreviviente en el puerto.";
+
+[enu default]
+CA_PORT_SOLDIER = "Port defender";
+CA_PORT_OBJECTIVES = "Repel the siege: clear the crews of all 12 attacking machines and force the Zupay commander to retreat. Track both objectives in the Journal. After victory, capture the Knight of Wands beside the survivors and use the chapter-end sign at the dock.";
+CA_PORT_AFTER = "The port siege has ended. The surviving attackers are withdrawing.";
+CA_PORT_END_SIGN = "End of the three-map chapter";
+CA_PORT_END = "Chapter complete: the port is safe and the Knight of Wands is in your collection. Thank you for playing this campaign slice. You can save here and finish the playtest.";
+[es]
+CA_PORT_SOLDIER = "Defensor del puerto";
+CA_PORT_OBJECTIVES = "Rechaza el asedio: elimina las tripulaciones de las 12 máquinas atacantes y obliga al Zupay a retirarse. Consulta ambos objetivos en el Diario. Tras vencer, captura al Caballero de Bastos junto a los rescatados y usa el cartel de fin de capítulo del muelle.";
+CA_PORT_AFTER = "El asedio del puerto ha terminado. Los atacantes supervivientes se retiran.";
+CA_PORT_END_SIGN = "Fin del capítulo de tres mapas";
+CA_PORT_END = "Capítulo completo: el puerto está a salvo y el Caballero de Bastos está en tu colección. Gracias por jugar este tramo de la campaña. Puedes guardar aquí y terminar la prueba.";

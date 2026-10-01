@@ -1,6 +1,26 @@
 # Caelum Argenteum — Audio and art
 
-Documentation version: **4.36.26** — 2026-09-30.
+Documentation version: **4.36.27** — 2026-09-30.
+
+## 4.36.27 — Port battlefield and reused defenders (#16)
+
+The deterministic generate_map06_port.py extends the existing coastal port from
+assets/map06_port/LAYOUT.json, emitting MAP06 and CaelumPortData.zs. Existing
+buildings, docks and rescue placements are retained. Six ram gates and twelve
+raised gun platforms use accepted textures/models and native stairs. The exporter
+compacts shared sector edges and reindexes only used sides/vertices; MAP07 is not
+regenerated. The exact 4.36.26 MAP06 is preserved under
+assets/map06_port/legacy_43626/MAP06.wad for the explicit legacy build option.
+Its SHA-256 is 5ae44d61f8d29342c16c6ef8a98308be98b92c02643e585c14cb986106d453b8.
+
+All 100 defenders reuse Domingo's existing DOID/DOWK/DOMI sprites and scale;
+there is no new character art or attribution change. Their combat equipment is
+the existing T1 sword, kite shield and medium armor; the reused artwork is not
+redrawn to depict that inventory. Gates, rams and cannons retain accepted sources
+and the documented approximate cannon reconstruction, not a new historical claim.
+generate_cannon_runtime.py --data-only regenerates the changed reload data without
+requiring the optional Pillow art pipeline. Existing image/model generation remains.
+Screenshots and native checks are under assets/validation_43627/integration.
 
 ## 4.36.26 — Grip-centered thrust motion (#37)
 

@@ -1,6 +1,15 @@
 # CONTEXT.md — Ultra-condensed summary of Caelum Argenteum
 
-Documentation version: **4.36.26** — 2026-09-30.
+Documentation version: **4.36.27** — 2026-09-30.
+
+**4.36.27 / #16:** full port siege deployed: 1,000 Mandingas, Zupay, 24 machines,
+100 equipped defenders. Automatic unlimited cannons reload in 10/20 seconds;
+Zupay flees at half health. Victory requires twelve neutralized hostile machines
+and commander defeat, enabling Knight capture and physical survivor withdrawal.
+Native integration/save/mass-scene checks pass. Author accepted all tests 2026-09-30.
+Use --legacy-map06 for campaigns that previously visited the old port. SYSTEMS
+holds current rules; assets/validation_43627 holds evidence.
+Current trial: dead crew are replaced; port enemies attack despite empty resources.
 
 Repository rights: LICENSE.md reserves original-project rights, subject to
 third-party terms and legal/platform exceptions (#55).
@@ -85,7 +94,7 @@ architecture: ASSETS/MAP01.
 including separate rescue/extraction and payment status. Native legacy/reload/hub
 and UI checks pass (assets/validation_43624). CA-43624-JOURNAL-01 passed author
 acceptance on 2026-09-28; merge/closure authorized. Controls/classification and
-legacy limits: SYSTEMS. Full port integration/export remain #16/#17.
+legacy limits: SYSTEMS. Port acceptance and #17 export remain pending.
 
 **4.36.23 / #52:** Toughness subtracts uncapped L*(L+1)/101 maximum-health percentage points before armor.
 Magical armor loses mental bonuses; shields stay unchanged. Palomo absorbs 77%;
@@ -96,20 +105,17 @@ assets/validation_43623. Author confirmed all three checks passed 2026-09-28; me
 **4.36.22 / #34:** revised Palomo/Voice/companion narrative, secondary-wind
 sprite freeze fix and legacy dialogue migration passed author acceptance
 CA-43622-NARRATIVE-01 on 2026-09-27. Evidence: assets/validation_43622;
-details retained in SYSTEMS/HISTORY. Siege deployment remains #16.
+details retained in SYSTEMS/HISTORY. Siege deployment is now implemented in #16.
 
-The preceding **4.36.21** implements #49: tree/rock collision damage and
-pain no longer grant adrenaline or refresh combat. Walking, running and
-crouching use the existing absorption fraction against walls, rooted trees
-and rocks at rest before contact. Moving rocks and combat contacts retain
-their prior absorption; landing, crushing, shield rules and saves are preserved.
+**4.36.21 / #49:** environmental contacts retain accepted absorption and no
+longer grant combat adrenaline. SYSTEMS/HISTORY retain the complete rules.
 Evidence: assets/validation_43621. The author confirmed CA-43621-IMPACT-01
 passed on 2026-09-27. PR #50 targets main.
 
 4.36.20 (#33) unifies Arcana capture and routes MAP02 through MAP03 to MAP06.
 The Zupay flees at 50% health at triple speed; escape confirms defeat and unlocks
-the Ace. Actual rescue payments unlock the Knight beside survivors, provisionally
-until #16/#17. The Ace rendering freeze was corrected.
+the Ace. The former rescue-payment Knight condition is superseded by #16
+for current MAP06 and preserved only for legacy geometry. The Ace rendering freeze was corrected.
 The author confirmed CA-43620-ARCANA-01 and CA-43620-ROUTE-01 passed 2026-09-27.
 
 The preceding **4.36.19** applies the author-approved final #21 balance:
@@ -125,11 +131,11 @@ Native traversal and loaded self-jump pass. 4.36.17 implemented #21 controlled
 cannons, approximate 4.3 kg ammunition, 30/60-second crews and bounded saved
 projectiles; its original CA-43613-CATAPULT-01 passed 2026-09-27. Those native
 mechanics and sources remain in assets/validation_43617; final balance supersedes
-the original 400 m/s /zero-gate-damage result. Full port integration remains #16/#17.
+the original 400 m/s /zero-gate-damage result. Port acceptance and export remain pending.
 
 **4.36.16 / #20:** operational rams passed CA-43612-RAM-01 on 2026-09-26;
 merge/closure authorized. Mechanics, debug commands and evidence remain in
-SYSTEMS/HISTORY and assets/validation_43616. Port integration remains #16/#17.
+SYSTEMS/HISTORY and assets/validation_43616. Port acceptance and export remain pending.
 
 The accepted **4.36.15** (#19) implements breakable actor gates, using approved 30%/50%/70% reductions and 550/650/1,100 kg moving masses. Intact, damaged and broken states persist across save/load and hub travel; old-save and native body-contact tests pass. CA-43611-GATES-01 passed on 2026-09-26. Full implementation and acceptance details remain in HISTORY; subsequent #21 balance supersedes original gate Constitution.
 
@@ -170,15 +176,8 @@ Peoples, Caelith, Cult of the Tarot and Sun Warriors. GZDoom 4.14.2 compiles the
 complete package and loads MAP01/MAP02/MAP06 without script errors; author
 confirmed CA-4368-RESCUE-01 passed on 2026-09-25.
 
-**4.36.7 / #13:** four prisoner appearances reuse mansion models;
-ASSETS retains the character/faction/color mappings. The author confirmed
-CA-4367-PRISONER-ART-01 passed on 2026-09-24.
-
-The preceding **4.36.6** implements #12: 192 hostile sewer rats (two per
-Mandinga, 192/96 across the four sections), reusing the accepted CaelumGiantRat
-actor and RATG sprites with no new art, damage, health or AI. Deterministic
-initial placements preserve the ratio without respawn. The author confirmed
-CA-4366-RATS-01 passed on 2026-09-24, leaving the author-test queue empty.
+**4.36.7 / #13 and 4.36.6 / #12:** reused prisoner appearances and 192 sewer
+rats are author-accepted; provenance and results remain in ASSETS/HISTORY.
 
 The preceding **4.36.5** implements #11: wider four-section sewers, keyed
 barred gates/cells, beds, repair refuges, pre-boss extraction reservation and

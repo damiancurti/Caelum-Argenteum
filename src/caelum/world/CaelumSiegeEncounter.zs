@@ -10,6 +10,13 @@ class CaelumSiegeCombatant : Object play
     bool Withdrawing;
     bool Exited;
     int NearbyMachines;
+    int CommandPriority;
+    int StableIdentity;
+    int CommandGroup;
+    CaelumSiegeCombatant CommandLeader;
+    Actor NavigationTarget;
+    vector3 CrewOffset;
+    int Lane;
 
     static void ConfirmDeath(CaelumCombatActor body)
     {
@@ -26,11 +33,17 @@ class CaelumSiegeCombatant : Object play
                     machine.RememberGuard(entry);
             }
         entry.ConfirmedDead=true;
+        if(encounter is "CaelumPortSiege")CaelumPortSiege(encounter).CommandDirty=true;
     }
 
     void WithdrawTick()
     {
         if (Body == null || ConfirmedDead || Exited || Body.health <= 0) return;
+        if (Encounter is "CaelumPortSiege")
+        {
+            CaelumPortSiege(Encounter).Withdraw(self);
+            return;
+        }
         Body.target = null;
         Body.Vel.X = 0; Body.Vel.Y = 0;
         if (ExitNode == null) return;
@@ -71,8 +84,37 @@ class CaelumSiegeEncounter : Actor
     CaelumSiegeCombatant Boss;
     bool RosterSealed;
     bool Victory;
+    bool BossRetreated;
+    int DefeatStateRevision;
     int VictoryCount;
     int NeutralizedCount;
+
+    bool BossDefeated()
+    {
+        return Boss != null && (Boss.ConfirmedDead || BossRetreated);
+    }
+
+    void EnsureDefeatRevision()
+    {
+        if (DefeatStateRevision >= 1) return;
+        // El esquema previo sólo confirmaba muertes. No inferir una fuga de
+        // referencias ausentes, victoria previa ni cartas ya poseídas.
+        BossRetreated = false;
+        DefeatStateRevision = 1;
+    }
+
+    void ConfirmBossRetreat(CaelumSiegeCombatant entry)
+    {
+        EnsureDefeatRevision();
+        if (entry == null || entry != Boss || entry.Encounter != self
+            || entry.Body == null || entry.Body.health <= 0 || entry.ExitNode == null
+            || !entry.ExitNode.IsExit) return;
+        if ((entry.Body.Pos.XY-entry.ExitNode.Pos.XY).Length() > entry.ExitNode.Radius
+            || Abs(entry.Body.Pos.Z-entry.ExitNode.Pos.Z) > entry.Body.MaxStepHeight
+            || !entry.Body.CheckSight(entry.ExitNode)) return;
+        entry.Exited = true;
+        BossRetreated = true;
+    }
 
     CaelumSiegeCombatant RegisterAttacker(CaelumCombatActor body)
     {
@@ -83,6 +125,8 @@ class CaelumSiegeEncounter : Actor
         if (RosterSealed || body.SiegeCombatant != null) return null;
         let entry = new("CaelumSiegeCombatant");
         entry.Body = body; entry.Encounter = self;
+        entry.StableIdentity = Attackers.Size();
+        entry.CommandPriority = body is "CaelumZupayColossus" ? 1 : 2;
         body.SiegeCombatant = entry;
         Attackers.Push(entry);
         return entry;
@@ -115,6 +159,7 @@ class CaelumSiegeEncounter : Actor
     override void Tick()
     {
         Super.Tick();
+        EnsureDefeatRevision();
         if (!RosterSealed || Victory) return;
         NeutralizedCount = 0;
         for (int i = 0; i < Machines.Size(); i++)
@@ -122,12 +167,12 @@ class CaelumSiegeEncounter : Actor
             if (Machines[i] == null) return; // Ausencia no implica neutralización.
             if (Machines[i].Neutralized) NeutralizedCount++;
         }
-        if (NeutralizedCount != 12 || Boss==null || !Boss.ConfirmedDead) return;
+        if (NeutralizedCount != 12 || !BossDefeated()) return;
         Victory = true; VictoryCount++;
         for (int i = 0; i < Attackers.Size(); i++)
         {
             let entry = Attackers[i];
-            if (entry.ConfirmedDead || entry.Body == null || entry.Body.health <= 0) continue;
+            if (entry.ConfirmedDead || entry.Exited || entry.Body == null || entry.Body.health <= 0) continue;
             entry.Withdrawing = true;
             entry.Body.target = null;
             entry.Body.SetStateLabel("SiegeWithdrawal");
@@ -165,9 +210,20 @@ class CaelumHostileMachine : Actor
         if (entry == null || entry.Encounter != Encounter || entry.Body == null
             || !(entry.Body is "CaelumMandinga") || entry.ConfirmedDead || Neutralized) return false;
         for (int i = 0; i < Crew.Size(); i++) if (Crew[i] == entry) return true;
-        if (entry.CrewMachine != null || Crew.Size() >= RequiredCrew) return false;
+        if (entry.Body.health <= 0 || entry.Body.bFriendly || entry.CrewMachine != null) return false;
+        int vacancy=-1;
+        for(int i=0;i<Crew.Size();i++)
+            if(Crew[i]==null || Crew[i].ConfirmedDead || Crew[i].Body==null || Crew[i].Body.health<=0)
+            {vacancy=i;break;}
+        if(vacancy<0 && Crew.Size()>=RequiredCrew)return false;
         entry.CrewMachine = self;
-        Crew.Push(entry);
+        if(vacancy<0)Crew.Push(entry);
+        else
+        {
+            // Se libera el puesto, no la memoria de guardias eliminados.
+            if(Crew[vacancy]!=null && Crew[vacancy].CrewMachine==self)Crew[vacancy].CrewMachine=null;
+            Crew[vacancy]=entry;
+        }
         return true;
     }
 
@@ -204,7 +260,8 @@ class CaelumHostileMachine : Actor
         }
         if (LocalGuards.Size() == 0) return;
         for (int i = 0; i < LocalGuards.Size(); i++)
-            if (!LocalGuards[i].ConfirmedDead) return;
+            if (!LocalGuards[i].ConfirmedDead
+                && !(LocalGuards[i] == Encounter.Boss && Encounter.BossRetreated)) return;
         Neutralized = true;
         NeutralizationCount++;
         Vel = (0, 0, 0);

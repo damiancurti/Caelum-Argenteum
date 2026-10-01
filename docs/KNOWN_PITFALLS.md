@@ -4,6 +4,56 @@ Status: integrated engineering register (issue #22, patch 4.36.1b).
 Prepared: 2026-09-23. Inherits the project's release after integration.
 Inspected baseline: `1dc390576fa330d37ff543526fc7e69a397fc28f` (PR #7).
 
+## CA-KP-022 — A magic-resource wait can strand an otherwise mobile army
+
+Status/evidence: AUTHOR-REPORTED / CODE-VERIFIED / ENGINE-VERIFIED.
+First recorded / last checked: 2026-09-30 / 2026-09-30.
+Issue #16, baseline 2440558f; Windows 11, GZDoom 4.14.2, Vulkan, fresh MAP06.
+
+The author reported mostly stationary enemies inside the port army. A native
+probe separated motion over 175 tics from attack state and resource wait:
+after 700 tics, 713 attackers waited for Anima despite having Air available.
+The accepted #37 AttackResourceWait stops movement until the attempted attack
+is affordable. That behavior was unsuitable for the port army's magic/melee
+choice; it was not evidence that the mass scheduler disabled those enemies.
+
+Port Pulse now excludes unaffordable spells from A_Chase. Saved magic waits
+resume the existing See state when the physical attack is affordable. Physical
+exhaustion, sleep/stun, other encounters and resource balance stay unchanged.
+The comparable corrected sample moved 968 actors versus 429 before, with no
+magic wait. This does not eliminate legitimate collision congestion in a crowd.
+The author's subsequent resource trial deliberately permits both attack types
+at zero resources for registered hostile port actors. This fallback behavior
+remains available when enemy_attack_resource_trial is disabled in the port data.
+Evidence: assets/validation_43627/relief, including native before/after movement,
+full-roster operation and saved-wait continuation. The author accepted the final
+resource trial and all #16 tests on 2026-09-30; see HISTORY for the test IDs.
+
+## CA-KP-021 — Cannon target sight must originate at the raised barrel
+
+Status/evidence: CODE-VERIFIED / ENGINE-VERIFIED, #16 / 4.36.27.
+First recorded / last checked: 2026-09-30 / 2026-09-30.
+Affected baseline: 918775e3 plus the issue-16-port-siege working tree.
+Environment: Windows 11, GZDoom 4.14.2, Vulkan, development Doom II IWAD,
+fresh MAP06 with twelve defensive guns on raised platforms.
+
+An initial target selector called CheckSight from the non-interacting cannon
+controller at platform-floor height. The parapet occluded that point even when
+the raised barrel could fire over it. Only the six attacking guns fired in the
+first full-scene probe. Use the existing barrel actor for target visibility;
+keep the launch sweep from the physical pivot/muzzle and native projectile
+collision unchanged. The corrected scene fires all eighteen cannons at the
+first completed cycle. Select the aim point when the cannon becomes loaded,
+rather than retaining a target position selected at the start of its reload.
+
+Reproduction: start current MAP06 and observe each gun through its first
+350 native tics, recording per-gun shot/contact counts and operator presence.
+Evidence: [integration results](../assets/validation_43627/RESULTS.json),
+integration/issue16_mass1.log (before) and issue16_mass_final.log (after).
+The final run records eighteen shots/contacts by tic 385. This verifies the
+tested platform geometry and native selector, not unrestricted ballistic
+accuracy. Separate author acceptance of the battle was confirmed on 2026-09-30.
+
 ## CA-KP-020 — Repeated OBJ material declarations create unsafe surface counts
 
 Status/evidence: AUTHOR-REPORTED / CODE-VERIFIED / ENGINE-VERIFIED, #36 / 4.36.25.

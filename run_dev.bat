@@ -5,10 +5,16 @@ setlocal EnableDelayedExpansion
 
 REM Select compatibility explicitly; never modify or restart a saved campaign.
 set "BUILD_MAP_OPTION="
-if not "%~2"=="" goto invalid_arguments
+if not "%~3"=="" goto invalid_arguments
+:parse_arguments
 if "%~1"=="" goto arguments_ready
-if /I not "%~1"=="--legacy-map02" goto invalid_arguments
-set "BUILD_MAP_OPTION=-LegacyMap02"
+if /I "%~1"=="--legacy-map02" (
+    set "BUILD_MAP_OPTION=!BUILD_MAP_OPTION! -LegacyMap02"
+) else if /I "%~1"=="--legacy-map06" (
+    set "BUILD_MAP_OPTION=!BUILD_MAP_OPTION! -LegacyMap06"
+) else goto invalid_arguments
+shift
+goto parse_arguments
 :arguments_ready
 
 REM Engine path in the installation supplied by the author.
@@ -60,7 +66,8 @@ endlocal
 exit /b
 
 :invalid_arguments
-echo Usage: run_dev.bat [--legacy-map02]
+echo Usage: run_dev.bat [--legacy-map02] [--legacy-map06]
 echo --legacy-map02 continues saves that already visited the original 4.36.4 maze.
+echo --legacy-map06 continues saves that already visited the pre-siege 4.36.26 port.
 endlocal
 exit /b 2

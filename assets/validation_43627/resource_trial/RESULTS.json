@@ -1,0 +1,55 @@
+{
+  "version": "4.36.27",
+  "issue": 16,
+  "date": "2026-09-30",
+  "baseline_commit": "0543fc7b",
+  "decision": "Author-requested trial: registered hostile port Mandingas and Zupay can use physical and magical attacks despite insufficient Air or Anima.",
+  "setting": "assets/map06_port/LAYOUT.json: enemy_attack_resource_trial=1; set to 0, regenerate MAP06 and rebuild to restore resource limits and physical fallback.",
+  "package_sha256": "6937d14d9d60a662cbd4bfa98ea6710e6af4129d10aa5f736a13cf3ae3812fc4",
+  "static_validation": {"command": "python validate_project.py", "exit_code": 0, "context_words": 2494, "errors": []},
+  "build": {"files": 6129, "native_engine": "GZDoom g4.14.2", "startup": "PASS"},
+  "isolated_resource_checks": {
+    "log": "issue16_resource_trial.log",
+    "checks": 11,
+    "failures": 0,
+    "coverage": [
+      "Registered Mandinga and commander admit and spend physical attack Air at zero.",
+      "Both admit magical attacks, spend Anima and spawn real projectiles at zero.",
+      "Insufficient partial resources clamp to zero; no negative balance or refill.",
+      "Defender, unregistered enemy and friendly-converted enemy retain normal resource limits."
+    ],
+    "reproduce": "powershell.exe -NoProfile -ExecutionPolicy Bypass -File build/run_issue16.ps1 -Map MAP06 -QA -Label resource_trial -Commands 'wait 35; give QA16ResourceTrial; wait 5; quit'"
+  },
+  "full_battle": {
+    "log": "issue16_resource_mass.log",
+    "timing": "issue16_resource_mass_timing.txt",
+    "environment": "Windows 11; Ryzen 9 5950X; RTX 3070 Ti; Vulkan; 1280x720 windowed; no autoload/sound; background enabled",
+    "initial_attackers": 1001,
+    "initial_defenders": 100,
+    "initial_machines": 24,
+    "probe": "All living registered attackers have Air and Anima reset to zero every tic; player is invulnerable at (0,6912,0). No reduced roster, waves, altered NPC health or attack cadence.",
+    "simulation_tics": 2100,
+    "host_seconds": 60.7100564,
+    "timing_limit": "Approximately one-second host log sampling; simulation throughput, not rendering FPS.",
+    "final_living_attackers": 855,
+    "final_living_defenders": 100,
+    "resource_waiters_at_every_sample": 0,
+    "actual_magic_projectiles_at_age_2100": 10577,
+    "cannon_shots": 105,
+    "cannon_contacts": 105,
+    "ram_impacts": 8,
+    "port_checks": 8,
+    "port_failures": 0,
+    "exit_code": 0,
+    "save_reload": "PASS: population=1001 defenders=100 machines=12 neutralized=1 bossDefeated=0 victoryCount=0. Continued to 11243 magical projectiles at age 2275 without resource waiters.",
+    "physical_evidence_limit": "The mass probe attackAttempts counter is inactive outside diagnostic mode and is not evidence of physical attack count; physical resource admission/spending is verified by the isolated checks.",
+    "reproduce": "powershell.exe -NoProfile -ExecutionPolicy Bypass -File build/run_issue16.ps1 -Map MAP06 -Package -QA -Label resource_mass -MaxSeconds 90 -Commands 'wait 35; give QA16PortRun; give QA16EmptyArmy; wait 2105; save issue16_resource_mass; wait 5; load issue16_resource_mass; wait 30; give QA16PortLoaded; wait 180; quit'"
+  },
+  "compatibility": "No saved fields or state offsets added; existing registered port actors use the data flag on load. Earlier original-save and migration evidence remains in relief/RESULTS.json.",
+  "limitations": [
+    "Author balance, full route and original campaign-save acceptance remain pending in CA-43627-PORT-01 and CA-43627-SAVE-01.",
+    "Earlier diagnostic reload stalls remain recorded with unknown cause; this successful trial does not establish a fix for them.",
+    "Local build fixtures are not shipped. Archived native logs remove trailing whitespace only.",
+    "No independent model review was performed."
+  ]
+}

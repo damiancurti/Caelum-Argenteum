@@ -1,6 +1,29 @@
 # TASKS.md — Active tasks
 
-Documentation version: **4.36.26** — 2026-09-30.
+Documentation version: **4.36.27** — 2026-09-30.
+
+## Issue #16 — Complete port siege (4.36.27)
+
+- Implemented on `issue-16-port-siege`: full concurrent deployment, connected
+  command groups, machine crews/gates, automatic unlimited cannons, 10/20-second
+  reload, 100 equipped Domingo-appearance soldiers and half-health Zupay retreat.
+- Victory requires twelve neutralized attacking machines plus commander defeat;
+  surviving attackers physically retreat. Knight capture, prisoner rewards,
+  calendar state and the explicit port endpoint use the existing shared systems.
+- Native checks cover both objective orders, current save/load, original-save
+  migration and rollback, exact reload times, targeting, reward/capture and the
+  full 1,001-attacker/100-defender/24-machine scene. See assets/validation_43627.
+- Author confirmed CA-43627-PORT-01 and CA-43627-SAVE-01 passed on 2026-09-30
+  without reported exceptions and authorized PR #59 merge and issue #16 closure.
+- Author reported missing crew relief and mostly stationary attackers during
+  the initial port playtest. Follow-up implements nearest available same-side
+  replacements and physical pursuit while magic resources recover. These
+  follow-ups are included in the author's acceptance.
+- Current author-requested trial enables attacks despite insufficient Air/Anima
+  for registered hostile port enemies. Player/allied limits remain. The data
+  switch remains reversible; the author accepted the current setting.
+- Next: the separate #17 export gate and remaining
+  4.37 prerequisites. No playtest ZIP or final independent distribution is claimed.
 
 ## Issue #37 — Attack cadence, durability and thrusts (4.36.26)
 
@@ -473,14 +496,14 @@ documentation update does not implement these features or reset accepted tests.
 | 4.36.11 | [#19](https://github.com/damiancurti/Caelum-Argenteum/issues/19) | Damageable actor gates. Structural parameter table needs approval. After #18. |
 | 4.36.12 | [#20](https://github.com/damiancurti/Caelum-Argenteum/issues/20) | Physical ram strikes; approved parameter table and native evidence required. After #19. |
 | 4.36.13 | [#21](https://github.com/damiancurti/Caelum-Argenteum/issues/21) | Native cannon launch/impact at approved 400 m/s; approved parameter table and native evidence required. After #20. |
-| V4 content | [#16](https://github.com/damiancurti/Caelum-Argenteum/issues/16) | Third map is MAP06 port: stop demon siege; its Zupay holds second Minor. Card identity and detailed encounter conditions/balance pending. Requires siege foundations; numeric patch assigned when scheduled. |
+| 4.36.27 | [#16](https://github.com/damiancurti/Caelum-Argenteum/issues/16) | Complete MAP06 port siege and Knight of Wands. All author tests passed on 2026-09-30; PR #59 merge and issue closure authorized. |
 | V4 export | [#17](https://github.com/damiancurti/Caelum-Argenteum/issues/17) | Three-map acceptance, reproducible package and batch usage report. Requires #16 and retained 4.36/4.37 gates. |
 
 The source/faction mapping is Caella/Unitarians, Ronnie/Federals,
 Rulo/Free Peoples (Pueblos Libres) and Argento/Cult of the Tarot. These are new
 prisoners; do not alter the mansion residents or reuse unrelated saved faction IDs.
 The confirmed three-map route uses MAP06 for the existing port, not a
-renumbered MAP03. Issue #16 must replace the current player exit to MAP07
+renumbered MAP03. Issue #16 replaces the former player exit to MAP07
 with the approved route. El Loco is the first Major; Ace of Cups remains MAP02.
 
 Record Usage evidence per #8, including correction sessions through acceptance.

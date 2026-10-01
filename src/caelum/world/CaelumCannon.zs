@@ -29,6 +29,8 @@ class CaelumCannon : CaelumHostileMachine
     CaelumCannonBarrel Barrel;
     CaelumCannonProjectile ActiveShot;
     bool Initialized, Defending, Requested;
+    bool UnlimitedAmmunition;
+    int CycleRevision;
     int Phase, Work, Ammunition, ShotSerial, Shots, Contacts, LastDamage;
     vector3 AimPoint, LastContactVelocity, LastLaunchVelocity;
     Actor IntendedTarget, LastContact, LastOperator;
@@ -39,7 +41,7 @@ class CaelumCannon : CaelumHostileMachine
     void InitializeCannon(bool defender=false)
     {
         if(Initialized)return;
-        Initialized=true; Defending=defender; bFriendly=defender;
+        Initialized=true; Defending=defender; bFriendly=defender; CycleRevision=1;
         Mass=CaelumCannonData.MACHINE_MASS;
         GuardRadius=CaelumCannonData.GUARD_RADIUS;
         RequiredCrew=CaelumCannonData.CREW;
@@ -62,13 +64,22 @@ class CaelumCannon : CaelumHostileMachine
         if(body.bFriendly!=Defending)return false;
         if(!Defending && (body.SiegeCombatant==null || body.SiegeCombatant.Encounter!=Encounter))return false;
         for(int i=0;i<Operators.Size();i++)if(Operators[i]==body)return true;
-        if(Operators.Size()>=CaelumCannonData.CREW)return false;
+        int vacancy=-1;
+        for(int i=0;i<Operators.Size();i++)if(Operators[i]==null || Operators[i].health<=0){vacancy=i;break;}
+        if(vacancy<0 && Operators.Size()>=CaelumCannonData.CREW)return false;
         // Un mismo operador no abastece dos máquinas a la vez.
         let it=ThinkerIterator.Create("CaelumCannon"); CaelumCannon other;
         while((other=CaelumCannon(it.Next()))!=null)
             for(int i=0;other!=self && i<other.Operators.Size();i++)if(other.Operators[i]==body)return false;
         if(body.SiegeCombatant!=null && body.SiegeCombatant.CrewMachine!=null)return false;
-        Operators.Push(body);
+        if(vacancy<0)Operators.Push(body);
+        else
+        {
+            let old=Operators[vacancy];
+            if(old!=null && old.SiegeCombatant!=null && old.SiegeCombatant.CrewMachine==self)
+                old.SiegeCombatant.CrewMachine=null;
+            Operators[vacancy]=body;
+        }
         if(!Defending)body.SiegeCombatant.CrewMachine=self;
         return true;
     }
@@ -159,7 +170,8 @@ class CaelumCannon : CaelumHostileMachine
     void Fire()
     {
         if(!Armed || Neutralized || Phase!=LOADED || OperatorsPresent()==0)return;
-        if(ActiveShot!=null || Ammunition<=0 || !EligibleTarget(IntendedTarget))return;
+        if(!EligibleTarget(IntendedTarget)){CancelShot();return;}
+        if(ActiveShot!=null || (!UnlimitedAmmunition && Ammunition<=0))return;
         vector3 pivot=Pos+(0,0,CaelumCannonData.PIVOT_Z);
         vector3 delta=AimPoint-pivot;
         if(delta.Length()<CaelumCannonData.LENGTH)return;
@@ -172,7 +184,7 @@ class CaelumCannon : CaelumHostileMachine
         // Se barre desde el eje del tubo a la boca, no se teletransporta tras un muro.
         let shot=CaelumCannonProjectile(Spawn("CaelumCannonProjectile",pivot-(0,0,CaelumCannonData.RADIUS)));
         if(shot==null){Phase=LOADED; return;}
-        ShotSerial++; Shots++; Ammunition--;
+        ShotSerial++; Shots++; if(!UnlimitedAmmunition)Ammunition--;
         shot.Launcher=self; shot.target=self; shot.master=self;
         shot.Defending=Defending; shot.Serial=ShotSerial;
         for(int i=0;i<Operators.Size();i++)if(Operators[i]!=null && Operators[i].health>0)LastOperator=Operators[i];
@@ -193,6 +205,13 @@ class CaelumCannon : CaelumHostileMachine
     {
         if(isFrozen())return;
         Super.Tick();
+        if(Initialized && CycleRevision<1)
+        {
+            // Mantiene la fracción de trabajo ya realizada, sin completar ni
+            // duplicar un disparo al actualizar una partida de #21.
+            Work=int(double(Work)*CaelumCannonData.CYCLE/CaelumCannonData.LEGACY_CYCLE);
+            CycleRevision=1;
+        }
         if(!Initialized || !Armed || Neutralized)return;
         int staffing=OperatorsPresent();
         if(staffing==0)return;

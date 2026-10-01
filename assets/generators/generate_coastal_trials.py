@@ -94,6 +94,21 @@ class CoastalMap:
                 textureceiling=flat,lightlevel=176 if water else 176))
             polygon(-4096+i*128,-4096,64,sector,wall,control=(tag,water))
 
+        if getattr(self, 'compact', False):
+            # Remove internal edges between identical sectors; retain every
+            # physical step, material boundary and control-sector special.
+            lines = [line for line in lines if 'sideback' not in line or
+                     sides[line['sidefront']]['sector'] != sides[line['sideback']]['sector']]
+            used_sides = sorted({line[key] for line in lines for key in ('sidefront','sideback') if key in line})
+            side_remap = {old: new for new, old in enumerate(used_sides)}
+            used_vertices = sorted({line[key] for line in lines for key in ('v1','v2')})
+            vertex_remap = {old: new for new, old in enumerate(used_vertices)}
+            sides = [sides[i] for i in used_sides]
+            vertices = [vertices[i] for i in used_vertices]
+            for line in lines:
+                for key in ('sidefront','sideback'):
+                    if key in line: line[key] = side_remap[line[key]]
+                for key in ('v1','v2'): line[key] = vertex_remap[line[key]]
         self.prop(1,0,320,90)
         self.prop(30950,0,352)  # Marcador regional explícito, Buenos Aires, superficie.
         self.things[-1].update(arg0=1,arg1=0)
@@ -114,7 +129,7 @@ class CoastalMap:
         print(f'{self.name}: {len(sectors)} sectores, {len(lines)} líneas, {len(self.things)} actores')
 
 
-def generate(folder):
+def generate(folder, port_extension=None, include_coast=True):
     folder.mkdir(parents=True,exist_ok=True)
     port=CoastalMap('MAP06')
     port.volume(100,-128,-24,'CVPL06','CVPL06',water=True)
@@ -150,7 +165,11 @@ def generate(folder):
     # se destruye en PostBeginPlay en cualquier otro caso.
     for index in range(4):
         port.prop(30988 + index, 128 + index * 64, 640, 90, tid=44900 + index)
+    if port_extension is not None:
+        port_extension(port)
     port.write(folder)
+    if not include_coast:
+        return
 
     coast=CoastalMap('MAP07')
     coast.volume(100,-128,-24,'CVPL06','CVPL06',water=True)

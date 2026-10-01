@@ -1,13 +1,14 @@
 """Generate approximate #21 cannon components and authoritative physical data."""
 import json
 from pathlib import Path
-from generate_siege_models import Mesh, IRON, WOOD, INSIDE, BRASS, add_box, add_beam, add_wheel, add_tube, make_transparent_sprite
+import sys
 
 ROOT = Path(__file__).resolve().parents[2]
 D = json.loads(Path(__file__).with_name('cannon_physics.json').read_text(encoding='utf-8'))
 U, T = D['map_units_per_metre'], D['native_tics_per_second']
 
 def generate():
+    from generate_siege_models import Mesh, IRON, WOOD, INSIDE, BRASS, add_box, add_beam, add_wheel, add_tube, make_transparent_sprite
     wheel = D['wheel_diameter_m_estimate'] * U / 2
     track = D['track_m_estimate'] * U
     pivot = D['trunnion_height_m_estimate'] * U
@@ -51,17 +52,7 @@ def generate():
         mesh.write(ROOT/'src/models/caelum/siege'/f'{mesh.object_name}.obj')
     for name in ['CCFRA0','CCBRA0','CCBRB0','CCSHA0','CCFLA0']:
         make_transparent_sprite(ROOT/'src/sprites'/f'{name}.png')
-    values={'SPEED':D['muzzle_speed_m_s']*U/T, 'PROJECTILE_MASS':D['projectile_mass_kg'],
-        'RADIUS':radius,'LENGTH':length,'MACHINE_MASS':D['machine_mass_kg_estimate'],
-        'CREW':D['crew'],'CYCLE':D['cycle_seconds']*T,'RECOVERY':D['recovery_seconds']*T,
-        'PIVOT_Z':pivot,'MUZZLE_X':muzzle,'BREECH_X':rear,'WHEEL_RADIUS':wheel,
-        'HALF_TRACK':track/2,'TRAIL':trail,'GUARD_RADIUS':(trail+muzzle)*D['guard_radius_machine_lengths'],
-        'RECOIL':D['recoil_presentation_m']*U,'SPENT_TICS':D['spent_tics'],
-        'MAX_FLIGHT_TICS':D['flight_lifetime_seconds']*T}
-    values.update({'TRIAL_'+k.upper():v for k,v in D['trial'].items()})
-    code='// Generado desde cannon_physics.json; aproximación aprobada, no ficha histórica.\nclass CaelumCannonData : Object\n{\n'
-    code+=''.join(f'    const {key} = {value:.12g};\n' for key,value in values.items())+'}\n'
-    (ROOT/'src/caelum/world/CaelumCannonData.zs').write_text(code,encoding='utf-8')
+    generate_data_only()
     p=ROOT/'src/MODELDEF'; s=p.read_text(encoding='utf-8')
     start='// BEGIN GENERATED CANNON COMPONENTS'; end='// END GENERATED CANNON COMPONENTS'
     block=start+'\n'
@@ -72,4 +63,28 @@ def generate():
     else: s+='\n'+block
     p.write_text(s,encoding='utf-8')
 
-if __name__=='__main__': generate()
+def generate_data_only():
+    """Update physics without importing or rewriting accepted visual assets."""
+    wheel = D['wheel_diameter_m_estimate'] * U / 2
+    track = D['track_m_estimate'] * U
+    muzzle = D['muzzle_forward_m_estimate'] * U
+    trail = D['trail_length_m_estimate'] * U
+    values = {'SPEED': D['muzzle_speed_m_s']*U/T,
+        'PROJECTILE_MASS': D['projectile_mass_kg'], 'RADIUS': D['projectile_diameter_m']*U/2,
+        'LENGTH': D['projectile_length_m']*U, 'MACHINE_MASS': D['machine_mass_kg_estimate'],
+        'CREW': D['crew'], 'CYCLE': D['cycle_seconds']*T,
+        'LEGACY_CYCLE': D['legacy_cycle_seconds']*T, 'RECOVERY': D['recovery_seconds']*T,
+        'PIVOT_Z': D['trunnion_height_m_estimate']*U, 'MUZZLE_X': muzzle,
+        'BREECH_X': muzzle-D['barrel_length_m_estimate']*U, 'WHEEL_RADIUS': wheel,
+        'HALF_TRACK': track/2, 'TRAIL': trail,
+        'GUARD_RADIUS': (trail+muzzle)*D['guard_radius_machine_lengths'],
+        'RECOIL': D['recoil_presentation_m']*U, 'SPENT_TICS': D['spent_tics'],
+        'MAX_FLIGHT_TICS': D['flight_lifetime_seconds']*T}
+    values.update({'TRIAL_'+k.upper(): v for k, v in D['trial'].items()})
+    code = '// Generado desde cannon_physics.json; aproximación aprobada, no ficha histórica.\nclass CaelumCannonData : Object\n{\n'
+    code += ''.join(f'    const {key} = {value:.12g};\n' for key, value in values.items())+'}\n'
+    (ROOT/'src/caelum/world/CaelumCannonData.zs').write_text(code, encoding='utf-8')
+
+if __name__=='__main__':
+    if '--data-only' in sys.argv: generate_data_only()
+    else: generate()

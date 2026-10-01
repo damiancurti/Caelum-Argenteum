@@ -1,0 +1,78 @@
+{
+  "version": "4.36.27",
+  "issue": 16,
+  "baseline": "2440558f",
+  "date": "2026-09-30",
+  "scope": "Author-requested crew relief and correction of stationary port attackers; same pending PR/release",
+  "engine": "GZDoom g4.14.2, Windows 11, Vulkan, Ryzen 9 5950X, RTX 3070 Ti, 1280x720, -noautoload -nosound",
+  "before_after": {
+    "before": "issue16_mobility_before2.log",
+    "after": "issue16_mobility_after2.log",
+    "setup": "Fresh full MAP06, invulnerable player at (0,6912,0), no reduced roster or waves. Positions compared every 175 native tics. Moved means more than 1 MU net displacement in that interval.",
+    "sample_age": 700,
+    "before_alive": 994,
+    "before_moved": 429,
+    "before_resource_waits": 713,
+    "after_alive": 989,
+    "after_moved": 968,
+    "after_resource_waits": 0,
+    "finding": "Anima exhaustion blocked movement even with Air available. Port AI now suppresses unaffordable spells and resumes physical pursuit. No balance increase or diagnostic scheduler bypass was used."
+  },
+  "relief": {
+    "log": "issue16_relief2.log",
+    "checks": 12,
+    "failures": 0,
+    "setup": "One dead operator each on a small ram, hostile cannon and allied cannon. Living test combatants are invulnerable; guns are disarmed to isolate native recruitment/navigation from artillery displacement. Full roster is retained.",
+    "results": "Existing free combatants occupy the same slots; uniqueness, guard memory, no remote operation and repeat idempotence pass. Each recruit walks to its post; both guns have two present and the moving ram recovers its full crew.",
+    "reload_log": "issue16_relief_reload_final.log",
+    "reload_checks": 6,
+    "reload_failures": 0,
+    "reload_scope": "Saved identities/presence, temporary absence preserves living slot, large-ram replacement, neutralized machine cannot recruit/reactivate, no eligible reserve creates no extra unit."
+  },
+  "saved_wait": {
+    "log": "issue16_old_wait_package_final.log",
+    "save_origin": "Original 2440558f mass-test PK3 save issue16_mass_final",
+    "result": "PASS: original army survives loading with current code; 935 of 973 living attackers move over the next 175-tic sample, with three legitimate remaining resource waits. No army redeployment on load."
+  },
+  "objectives": {
+    "log": "issue16_relief_objectives.log",
+    "machines_first": {"checks": 23, "failures": 0, "survivors": 922},
+    "boss_first": {"checks": 23, "failures": 0, "survivors": 924},
+    "result": "PASS: recruitment does not revive neutralized machines, invent kills, weaken the conjunction or duplicate victory; physical boss/survivor retreat and card availability remain."
+  },
+  "mass_run": {
+    "log": "issue16_mass_relief_final.log",
+    "timing": "issue16_mass_relief_final_timing.txt",
+    "package_identity": "../FINAL_BUILD.json",
+    "start_tic": 35,
+    "end_tic": 2135,
+    "start_host_seconds": 4.1200179,
+    "end_host_seconds": 64.7473115,
+    "simulation_seconds": 60,
+    "approximate_tics_per_host_second": 34.64,
+    "initial_attackers": 1001,
+    "defenders": 100,
+    "rams": 6,
+    "cannons": 18,
+    "shots": 93,
+    "contacts": 93,
+    "ram_strikes": 10,
+    "final_living_attackers": 838,
+    "final_movers_over_175_tics": 783,
+    "final_resource_waits": 0,
+    "result": "Completed without hang/crash. Real crowd contacts/obstruction remain; movement is not expected from actors attacking or holding assigned posts. Host log sampling is approximate, not rendering-FPS measurement."
+  },
+  "investigation_limits": [
+    "The first armed relief probe's new ram recruit reached its post, but a different living original crew member was displaced far away, so the full-crew assertion failed. Retained issue16_relief.log and issue16_relief_resume2.log document this; the isolated disarmed probe tests arrival separately from battle displacement.",
+    "Several diagnostic reload launches stopped producing frames after the map-load banner and reached the watchdog. No gameplay exception or root cause was established. The same saved relief state later passed under a debugger and in the normal isolated final run; the original PK3 save also passed normally. Earlier stalled logs are retained. These results do not establish a fix for intermittent engine/render startup or certify arbitrary saves; the author save test remains pending.",
+    "Test-only vector-array and conditional StateLabel compilation mistakes were corrected before successful runs; no saves were migrated or rewritten by those failed launches."
+  ],
+  "reproduction": [
+    "Normal gameplay: lose one operator on a staffed machine with living free reserves; watch the nearest eligible same-side recruit walk to the slot. Repeat for small/large rams and both cannon sides, save/load en route. Kill all nearby guards to confirm permanent neutralization prevents recruitment.",
+    "Enter the fresh army and remain among it for at least 30 seconds. Low-Anima attackers must continue moving and melee when Air allows; spell use resumes only when affordable. Preserve the full force and resource values.",
+    "Static validation: python validate_project.py. Build: build_dev.ps1. Engine fixtures and saved games are local-only and not distributed. Archived logs trim trailing whitespace only."
+  ],
+  "author_acceptance": "Pending CA-43627-PORT-01 and CA-43627-SAVE-01; reported failure is not acceptance",
+  "static_validation": "PASS, zero errors, CONTEXT 2492 words",
+  "schema": "No new serialized fields or state-label offsets; existing saved crew/operator arrays and entry references are reused"
+}

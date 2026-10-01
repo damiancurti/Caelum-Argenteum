@@ -7,7 +7,8 @@ class CaelumCannonData : Object
     const LENGTH = 5.92;
     const MACHINE_MASS = 850;
     const CREW = 2;
-    const CYCLE = 1050;
+    const CYCLE = 350;
+    const LEGACY_CYCLE = 1050;
     const RECOVERY = 35;
     const PIVOT_Z = 33.6;
     const MUZZLE_X = 40;

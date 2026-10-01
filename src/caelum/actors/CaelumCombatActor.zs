@@ -486,6 +486,7 @@ class CaelumCombatActor : Actor
     {
         CaelumCombatActor combatActor = CaelumCombatActor(self);
         if (combatActor == null) { return; }
+        if (CaelumPortSiege.Pulse(combatActor)) return;
 
         // El primer miembro que ve al jugador publica el objetivo. Los demás
         // pueden pasar a See mediante una lectura O(1), sin ejecutar otra
@@ -522,6 +523,7 @@ class CaelumCombatActor : Actor
     {
         CaelumCombatActor combatActor = CaelumCombatActor(self);
         if (combatActor == null) { return; }
+        if (CaelumPortSiege.Pulse(combatActor)) return;
 
         // La prueba de escuadras separa decisión y combate de la consulta
         // espacial nativa. Sólo los líderes entran en A_Chase/TryMove; los
@@ -855,7 +857,7 @@ class CaelumCombatActor : Actor
     int WeaponCyclePreparationTics;
     int WeaponCycleStartTic, WeaponCycleWindFrame;
 
-    double GetAttackCarriedWeight()
+    virtual double GetAttackCarriedWeight()
     {
         double weight = CombatArmor == null ? 0 : CombatArmor.GetTotalWeight();
         for (Inventory cursor=Inv; cursor!=null; cursor=cursor.Inv)
@@ -888,6 +890,7 @@ class CaelumCombatActor : Actor
     bool HasAttackResource()
     {
         if(AttackResourceWeapon>=0 && GetProfileWeaponDuration(AttackResourceWeapon)<=0)return false;
+        if(CaelumPortSiege.IgnoreAttackResourceLimits(self))return true;
         return AttackResourceMagical ? CurrentCombatAnima>=GetTierOneMagicAnimaCost(AttackResourceWeapon)
             : CurrentCombatAir>=GetEffectiveAttackAir(AttackResourceBaseCost);
     }
@@ -907,6 +910,7 @@ class CaelumCombatActor : Actor
     {
         let actor=CaelumCombatActor(self);
         if(actor==null || actor.health<=0)return;
+        if(CaelumPortSiege.ResumePhysicalCombat(actor))return;
         actor.Vel.X=0;actor.Vel.Y=0;
         if(actor.ForcedSleepTics>0 || !actor.HasAttackResource())return;
         actor.AttackResourceWaiting=false;
@@ -980,7 +984,7 @@ class CaelumCombatActor : Actor
     bool TrySpendCombatAir(double requestedAmount)
     {
         double amount = Max(0.0, requestedAmount);
-        if (CurrentCombatAir < amount) { return false; }
+        if (CurrentCombatAir < amount && !CaelumPortSiege.IgnoreAttackResourceLimits(self)) { return false; }
         CurrentCombatAir = Max(0.0, CurrentCombatAir - amount);
         return true;
     }
@@ -1016,7 +1020,7 @@ class CaelumCombatActor : Actor
     bool TrySpendTierOneMagicAnima(int weaponType)
     {
         double cost = Max(0.0, GetTierOneMagicAnimaCost(weaponType));
-        if (CurrentCombatAnima < cost) { return false; }
+        if (CurrentCombatAnima < cost && !CaelumPortSiege.IgnoreAttackResourceLimits(self)) { return false; }
         CurrentCombatAnima = Max(0.0, CurrentCombatAnima - cost);
         return true;
     }

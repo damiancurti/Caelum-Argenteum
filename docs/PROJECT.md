@@ -1,6 +1,24 @@
 # Caelum Argenteum — Project, status and roadmap
 
-Documentation version: **4.36.26** — 2026-09-30.
+Documentation version: **4.36.27** — 2026-09-30.
+
+## 4.36.27 — Third campaign map: port siege (#16)
+
+Implemented the complete bounded MAP06 encounter and the author's latest cannon,
+defender and commander decisions. SYSTEMS is the current rule contract; MAP01
+documents the campaign route, ASSETS the geometry/provenance. Native evidence
+includes the concurrent 1,001-attacker, 100-defender, 24-machine scene, both
+objective orders, shared capture/rewards and save migration/rollback. Evidence:
+assets/validation_43627. The author confirmed all campaign, visual/balance and
+save-continuity checks passed on 2026-09-30 and authorized PR #59 merge and #16
+closure. This patch does not close #17's export or the separate 4.37 gates.
+
+The author then reported no relief for lost operators and widespread stationary
+attackers. Crew slots now recruit existing free combatants. After the initial
+physical-pursuit fallback, the author requested a reversible trial permitting
+port enemies to use both attack types despite Air/Anima exhaustion. Counts,
+cadence and player/allied limits remain. See assets/validation_43627/relief and
+resource_trial; the author accepted these follow-ups in the same confirmation.
 
 ## 4.36.26 — Attack cadence and thrust presentation (#37)
 
@@ -540,19 +558,19 @@ save/load or travel. Broad companion formations remain outside this patch.
 
 Confirmed route, updated by #33: MAP01 mansion/Fool -> MAP02 sewer/Ace of
 Cups -> existing MAP03 workshop/test room -> MAP06 port/Knight of Wands.
-Map IDs are preserved. The port's future objective is to stop a demon siege;
-#16/#17 will replace the provisional #33 reward-delivery appearance condition.
+Map IDs are preserved. Current MAP06 stops the demon siege under the 4.36.27
+contract above; actual victory replaces the provisional reward-delivery condition.
 The second Minor's identity is Knight of Wands (60).
 Catapults, rams and damageable actor gates are required, with separate
 asset/mechanic issues #18–#21. This bounded port encounter is now part of
-the playtest; a general world-siege director remains V5. Encounter counts,
-machine/gate parameter tables and detailed win/fail rules need authored data.
+the playtest; a general world-siege director remains V5. The authored encounter counts,
+machine/gate rules and objective conditions are recorded in SYSTEMS.
 The Tarot source ZIP was verified locally; its definitive manifest is committed
 as `assets/manifests/tarot_78_v4369.json` while the oversized archive is not
 stored in normal Git. Do not regenerate approved art.
 
-The remaining mechanism gates are rams and catapults (#20/#21), followed by
-integration/save/reset validation before extracting Impact Physics. The
+Rams and cannons (#20/#21) are accepted; #16 adds native integration/save
+evidence. Full campaign author acceptance precedes the playtest export. The
 author's #8 clarification covers moving sectors and defers avalanches and
 damaging surfaces as described above; none of those three blocks 4.36. For
 ram/catapult scope,

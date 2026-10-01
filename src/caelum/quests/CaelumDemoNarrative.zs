@@ -86,11 +86,11 @@ class CaelumDemoNarrative : Object play
     static bool PortCardReady(CaelumPersistentCharacterState record)
     {
         if (record == null) return false;
-        // #33 sigue vigente hasta que #16 registre un encuentro real en el puerto.
+        // #16 exige victoria real; una carta antigua poseída nunca se revoca.
         let encounter = PortEncounter();
         if (encounter != null) return encounter.Victory;
         if (record.PortSiegeNarrativeStarted) return record.PortSiegeNarrativeComplete;
-        return CaelumArcanaProgress.PortRewardsComplete(record);
+        return !CaelumPortData.IsCurrent() && CaelumArcanaProgress.PortRewardsComplete(record);
     }
 
     static void Update(CaelumPlayer user)
@@ -115,7 +115,7 @@ class CaelumDemoNarrative : Object play
                 record.QuestObjectiveKnown[slot] = true;
                 record.QuestObjectiveTarget[slot] = objective == 0 ? 12 : 1;
                 record.QuestObjectiveProgress[slot] = objective == 0 ? encounter.NeutralizedCount
-                    : encounter.Boss.ConfirmedDead ? 1 : 0;
+                    : encounter.BossDefeated() ? 1 : 0;
             }
             user.RefreshSocialJournalSnapshot();
         }
