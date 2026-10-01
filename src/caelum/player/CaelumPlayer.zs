@@ -16187,7 +16187,7 @@ class CaelumPlayer : DoomPlayer
             chargedAttack
         );
         LastStaffCastCompleted = true;
-        CaelumMainM00MagicTrial.RecordCast(self, secondaryAttack, animaCost);
+        CaelumMainM00MagicTrial.RecordAnimaSpent(self, animaCost);
     }
 
     void PerformDebugStaffAttack(bool secondaryAttack)

@@ -473,6 +473,7 @@ class CaelumJournalOverlay : EventHandler
         if (magicActive)
         {
             text = text .. "\n\n" .. StringTable.Localize("CA_Q_DETAIL_LOCATION", false)
+                .. "\n" .. StringTable.Localize("CA_DLG_M01_MAGIC_TARGET_LOCATION", false)
                 .. "\n" .. StringTable.Localize("CA_DLG_M01_MAGIC_LOCATION", false)
                 .. "\n\n" .. StringTable.Localize("CA_Q_DETAIL_PRACTICE", false);
             for (int practiceAction = 0; practiceAction < 5; practiceAction++)

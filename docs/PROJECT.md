@@ -1,6 +1,26 @@
 # Caelum Argenteum — Project, status and roadmap
 
-Documentation version: **4.37.0** — 2026-10-01.
+Documentation version: **4.37.1** — 2026-10-01.
+
+## 4.37.1 — Caella's practical exercises on the shared dummy (#62)
+
+Caella's primary and secondary spell exercises now require a valid impact on the
+existing training dummy in the north-central ground-floor room. Empty casts,
+other targets and physical attacks do not satisfy those two objectives. Anima
+expenditure/recovery and actual Seal Channel consumption remain separate checks.
+Dialogue, Journal directions and completion feedback explain this in English
+and Spanish. Rulo keeps the same recoverable, indestructible practice target.
+
+The five practices, four-rune order, return to Caella, loan ownership and passage
+rules are preserved. No map, equipment balance or persistent schema changes.
+Existing active/completed 4.37.0 saves retain earned progress, including offensive
+flags earned under the former cast-based rule. No reset or conversion is needed.
+Static and isolated GZDoom checks pass, including forty spell combinations and
+active/completed save continuity; evidence is in assets/validation_4371/RESULTS.json.
+The author confirmed all tests passed on 2026-10-01: CA-4371-CAELLA-01 is
+ACCEPTED without reported exceptions (#62 / PR #67). The tested runtime is
+unchanged. Next: the separately requested Anima-cost balance patch; deferred
+Tarot/Trucazo remains separate.
 
 ## 4.37.0 — MAP01 rolling grounds and filled tympana (#61)
 

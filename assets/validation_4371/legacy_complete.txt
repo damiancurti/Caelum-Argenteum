@@ -1,0 +1,16 @@
+GZDoom version g4.14.2
+adding build/caelum_argenteum_dev.pk3, 6137 lumps
+adding build/issue62_qa, 2 lumps
+MAP01 - La mansión
+QA62 PASS begin through Caella
+QA62 PASS single dummy before Rulo
+QA62 STATE fresh-active stage=40 primary=0 secondary=0 channel=0 spent=0 recovered=0 runes=0 targets=1 weapon=1 seal=2
+QA62 PASS all five practices completed
+QA62 PASS cannot finish before runes
+QA62 PASS wrong rune resets only sequence
+QA62 PASS four runes require return to Caella
+QA62 PASS Caella completes trial
+QA62 PASS stage 45 and secret passage unlocked
+QA62 PASS both loans returned
+QA62 STATE completed stage=45 primary=1 secondary=1 channel=1 spent=1 recovered=1 runes=4 targets=1 weapon=0 seal=0
+Partida guardada.

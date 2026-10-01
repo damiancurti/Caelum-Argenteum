@@ -354,8 +354,11 @@ class CaelumM00TrainingDummy : CaelumTrainingDummy
     {
         let shot = CaelumActorProjectile(inflictor);
         if (shot != null && damage > 0)
+        {
             CaelumMainM00RuloTrial.RecordHit(CaelumPlayer(source),
                 shot.CaelumSecondaryElement || shot is "CaelumJavelinProjectile", shot.MainM00ChargedPractice, shot.MainM00MobilePractice, false);
+            CaelumMainM00MagicTrial.RecordHit(CaelumPlayer(source), self, CaelumPlayerMagicProjectile(shot));
+        }
         // No produce desgaste, adrenalina ni botín por golpear un blanco.
         return 0;
     }

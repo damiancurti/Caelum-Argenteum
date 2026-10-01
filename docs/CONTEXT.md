@@ -1,21 +1,22 @@
 # CONTEXT.md — Ultra-condensed summary of Caelum Argenteum
 
-Documentation version: **4.37.0** — 2026-10-01.
+Documentation version: **4.37.1** — 2026-10-01.
 
-**4.37.0 / #61:** mixed hills, sixteen decorative ceibos, twenty-four shrubs,
-filled tympana for 32 door groups, and a short mound cave with five decorative
-gems. Resources, 48 hinged leaves and tutorial rules remain; pool excludes plants.
-CA-4370-MANSION-01 and CA-4370-CAVE-01 accepted 2026-10-01. Latest Prueba near
-(25630,29408) exposed auxiliary rooms inside the exterior; their relocation is
-accepted (CA-4370-EXTERIOR-01). Six stations left on northern hills now relocate
-using floor-relative height. All tests, including CA-4370-STATIONS-01, accepted
-2026-10-01; author authorized #66 merge/#61 closure. No pending author checks.
-Start fresh; evidence: assets/validation_4370. Next: deferred Tarot/Trucazo.
+**4.37.1 / #62:** Caella primary/secondary spells must hit the shared training
+dummy in the north-central ground-floor room. Seal/Anima checks remain separate;
+runes, loans and passage gates are unchanged. Active/completed 4.37.0 saves retain
+earned progress without a schema change. Evidence: assets/validation_4371.
+Author accepted CA-4371-CAELLA-01 on 2026-10-01; #62 / PR #67 is accepted.
+Next: separately requested magic-weapon Anima base costs divided by ten.
 
-**4.36.28 / #17:** author accepted the export and corrected launcher on 2026-10-01,
-authorizing #60 merge/#17 closure. CA-43628-EXPORT-01: HISTORY; evidence:
-assets/validation_43628. Route: MAP01 -> MAP02 -> MAP03 -> MAP06. The accepted ZIP
-remains unchanged. Deferred Tarot/Trucazo follows the present #61 work.
+**4.37.0 / #61:** mansion hills, decorative plants/gem cave and door tympana;
+pool exclusion, distant-floor/roof repairs, relocated auxiliary rooms/stations.
+All four CA-4370 author tests accepted 2026-10-01; PR #66 merged/#61 closed.
+Its geometry revision requires fresh MAP01. Evidence: assets/validation_4370;
+full decisions, preservation scope and acceptance IDs: HISTORY.
+
+**4.36.28 / #17:** export/launcher accepted 2026-10-01; #60 merged/#17 closed.
+CA-43628-EXPORT-01: HISTORY; evidence: assets/validation_43628. Accepted ZIP unchanged.
 
 **4.36.27 / #16:** full siege (1,000 Mandingas, Zupay, 24 machines, 100 defenders)
 is author-accepted 2026-09-30. SYSTEMS owns its rules; assets/validation_43627 owns

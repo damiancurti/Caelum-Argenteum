@@ -1,0 +1,8 @@
+GZDoom version g4.14.2
+adding build/caelum_argenteum_dev.pk3, 6137 lumps
+adding build/issue62_qa, 2 lumps
+MAP01 - La mansión
+QA62 STATE checkpoint stage=40 primary=1 secondary=0 channel=0 spent=1 recovered=1 runes=0 targets=1 weapon=2 seal=3
+QA62 PASS retry preserves equipment IDs
+QA62 PASS retry preserves practice
+QA62 PASS retry keeps single dummy

@@ -1,6 +1,6 @@
 # Caelum Argenteum — Current systems and rules
 
-Documentation version: **4.37.0** — 2026-10-01.
+Documentation version: **4.37.1** — 2026-10-01.
 
 ## 4.37.0 — MAP01 exterior and door presentation (#61)
 
@@ -4096,12 +4096,24 @@ This reference consolidates implemented rules. Narrative scope is in
 [MAP01.txt](MAP01.txt), acceptance status in [PROJECT.md](PROJECT.md) and historical
 variants in [HISTORY.md](HISTORY.md).
 
-## Caella test (4.33.0i–0m)
+## Caella test (4.33.0i–0m; impact checks updated in 4.37.1 / #62)
 
-It is enabled when closing Argento in phase 35. Fire/AltFire use its actual releases;
-User2 retains Seal Channel with Adrenaline expense. The old MAP01 Reload/Channel display
-is replaced by User2. The Anima is spent when completing a release and its recovery is
-observed in the actual reserve.
+It is enabled when closing Argento in phase 35. Fire and AltFire each require a
+valid player magic projectile impact on the shared mansion training dummy in the
+north-central ground-floor room, off the central hall. The projectile's stored
+mode determines primary/secondary; casting, missing, hitting another target or
+using a physical attack does not satisfy either offensive objective. Staff,
+book, bell and statuette retain their native attacks, including actual explosive
+damage reaching the dummy. The target stays indestructible and reusable by Rulo.
+
+User2 retains Seal Channel with actual Adrenaline expense and needs no impact.
+Anima is spent on completed release, even a miss; recovery is observed in the
+actual reserve independently of offensive hits. The old MAP01 Reload/Channel
+display remains replaced by User2. Existing combat costs and dispersion remain.
+Caella preparation reuses the existing missing-target recovery path without
+duplicating a present target. Existing active/completed 4.37.0 save flags, rune
+progress and loan IDs are preserved, including offensive flags earned under the
+former cast-based rule. There are no new saved fields or conversion/reset steps.
 
 The practice requires five actions followed by four runes; the Journal counts from 0/9
 to 9/9. Use on a rune with an active implement channels its element. Earth → Air → Fire

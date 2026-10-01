@@ -39,6 +39,8 @@ class CaelumMainM00MagicTrial : Object play
     static bool PrepareEquipment(CaelumPlayer user)
     {
         if (!IsActive(user) || user.WeaponModel == null || user.DerivedStats == null) return false;
+        // Caella comparte el blanco recuperable de Rulo desde su propia fase.
+        CaelumMainM00RuloTrial.EnsurePracticeTarget();
         let record = user.GetPersistentCharacterState(true);
         user.SyncActiveModelsToNativeInventory();
         let implement = FindImplement(user);
@@ -175,23 +177,34 @@ class CaelumMainM00MagicTrial : Object play
         return true;
     }
 
-    static void RecordCast(CaelumPlayer user, bool secondary, double spent)
+    static void RecordAnimaSpent(CaelumPlayer user, double spent)
     {
-        if (!IsActive(user)) return;
+        if (!IsActive(user) || spent <= 0.0) return;
         let record = user.GetPersistentCharacterState(true);
-        bool changed = record.SetMainM00Flag(secondary
-            ? CaelumConstants.MAIN_M00_FLAG_MAGIC_SECONDARY_USED
-            : CaelumConstants.MAIN_M00_FLAG_MAGIC_PRIMARY_USED);
-        if (spent > 0.0)
-        {
-            changed = record.SetMainM00Flag(CaelumConstants.MAIN_M00_FLAG_MAGIC_ANIMA_SPENT) || changed;
-            record.MainM00AnimaAfterCast = user.CurrentAnima;
-        }
+        bool changed = record.SetMainM00Flag(CaelumConstants.MAIN_M00_FLAG_MAGIC_ANIMA_SPENT);
+        record.MainM00AnimaAfterCast = user.CurrentAnima;
         if (changed)
         {
             Sync(user);
-            Feedback(user, secondary ? "CA_M01_MAGIC_SECONDARY_DONE" : "CA_M01_MAGIC_PRIMARY_DONE");
+            Feedback(user, "CA_M01_MAGIC_ANIMA_DONE");
         }
+    }
+
+    static void RecordHit(CaelumPlayer user, Actor victim, CaelumPlayerMagicProjectile shot)
+    {
+        // Se valida el impacto recibido por el muñeco. El proyectil conserva
+        // el modo del lanzamiento aunque el jugador ya haya cambiado de arma.
+        if (!IsActive(user) || !(victim is "CaelumM00TrainingDummy")
+            || shot == null || shot.Target != user || !shot.CaelumAttackPrepared
+            || !shot.CaelumMagicalAttack || !shot.CaelumAttackAccuracySucceeded
+            || !shot.CaelumElementalPayloadPrepared) return;
+        let record = user.GetPersistentCharacterState(true);
+        if (!record.SetMainM00Flag(shot.CaelumSecondaryElement
+            ? CaelumConstants.MAIN_M00_FLAG_MAGIC_SECONDARY_USED
+            : CaelumConstants.MAIN_M00_FLAG_MAGIC_PRIMARY_USED)) return;
+        Sync(user);
+        Feedback(user, shot.CaelumSecondaryElement
+            ? "CA_M01_MAGIC_SECONDARY_DONE" : "CA_M01_MAGIC_PRIMARY_DONE");
     }
 
     static bool CanPrepareChannel(CaelumPlayer user, CaelumEquipmentItem seal)

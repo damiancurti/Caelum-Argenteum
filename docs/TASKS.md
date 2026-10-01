@@ -1,6 +1,23 @@
 # TASKS.md — Active tasks
 
-Documentation version: **4.37.0** — 2026-10-01.
+Documentation version: **4.37.1** — 2026-10-01.
+
+## Issue #62 — Caella's exercises against the training dummy (4.37.1)
+
+- Implemented on issue-62-caella-dummy: offensive completion comes from a valid
+  player magic projectile received by the shared mansion dummy. Projectile
+  metadata identifies primary/secondary even after an equipment change.
+- Actual Anima spending/recovery and Seal Channel retain independent checks;
+  runes, return conversation, loans, passage and Rulo rules retain their gates.
+- Reuses the existing target recovery path during Caella equipment preparation;
+  adds no target class, placement, balance values or persistent schema revision.
+- English/Spanish Caella and Journal instructions identify the target and room.
+- Static validation, forty native spell combinations, negative/resource/rune/loan
+  checks and active/completed save continuity pass. Evidence:
+  assets/validation_4371/RESULTS.json. Native fixtures are isolated from
+  the package. The author accepted all tests on 2026-10-01 without exceptions;
+  CA-4371-CAELLA-01 is recorded in HISTORY and removed from pending_test.txt.
+  Issue #62 / PR #67 is accepted; the new Anima-cost balance is a separate patch.
 
 ## Issue #61 — MAP01 terrain, vegetation and filled tympana (4.37.0)
 

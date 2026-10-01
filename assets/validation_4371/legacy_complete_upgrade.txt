@@ -1,0 +1,9 @@
+GZDoom version g4.14.2
+adding build/caelum_argenteum_dev.pk3, 6137 lumps
+adding build/issue62_qa, 2 lumps
+MAP01 - La mansión
+QA62 PASS completed save preserves all progress
+QA62 PASS completed save keeps passage open
+QA62 PASS completed load is idempotent, no loans or duplicate dummy
+QA62 STATE completed-reload stage=45 primary=1 secondary=1 channel=1 spent=1 recovered=1 runes=4 targets=1 weapon=0 seal=0
+Partida guardada.

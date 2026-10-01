@@ -1,0 +1,59 @@
+GZDoom version g4.14.2
+adding build/caelum_argenteum_dev.pk3, 6137 lumps
+adding build/issue62_qa, 2 lumps
+MAP01 - La mansión
+QA62 PASS begin through Caella
+QA62 PASS single dummy before Rulo
+QA62 STATE fresh-active stage=40 primary=0 secondary=0 channel=0 spent=0 recovered=0 runes=0 targets=1 weapon=1 seal=2
+QA62 PASS matrix native cast started
+QA62 PASS native cast metadata matches matrix case
+QA62 PASS cast release alone does not complete either attack
+QA62 MATRIX_DETAIL p=1 s=0 yaw=0.10 pitch=0.50 pos=(368.0,392.0,0.0) angle=90.00
+QA62 PASS matrix weapon=1 essence=0 secondary=0
+QA62 PASS matrix native cast started
+QA62 PASS native cast metadata matches matrix case
+QA62 PASS cast release alone does not complete either attack
+QA62 MATRIX_DETAIL p=0 s=1 yaw=0.25 pitch=-0.22 pos=(368.0,392.0,0.0) angle=90.00
+QA62 PASS matrix weapon=1 essence=0 secondary=1
+QA62 PASS matrix native cast started
+QA62 PASS native cast metadata matches matrix case
+QA62 PASS cast release alone does not complete either attack
+QA62 MATRIX_DETAIL p=1 s=0 yaw=0.14 pitch=-0.47 pos=(368.0,392.0,0.0) angle=90.00
+QA62 PASS matrix weapon=1 essence=1 secondary=0
+QA62 PASS matrix native cast started
+QA62 PASS native cast metadata matches matrix case
+QA62 PASS cast release alone does not complete either attack
+QA62 MATRIX_DETAIL p=0 s=1 yaw=-0.48 pitch=0.54 pos=(368.0,392.0,0.0) angle=90.00
+QA62 PASS matrix weapon=1 essence=1 secondary=1
+QA62 PASS matrix native cast started
+QA62 PASS native cast metadata matches matrix case
+QA62 PASS cast release alone does not complete either attack
+QA62 MATRIX_DETAIL p=1 s=0 yaw=-0.68 pitch=0.65 pos=(368.0,392.0,0.0) angle=90.00
+QA62 PASS matrix weapon=1 essence=2 secondary=0
+QA62 PASS matrix native cast started
+QA62 PASS native cast metadata matches matrix case
+QA62 PASS cast release alone does not complete either attack
+QA62 MATRIX_DETAIL p=0 s=1 yaw=-0.16 pitch=0.33 pos=(368.0,392.0,0.0) angle=90.00
+QA62 PASS matrix weapon=1 essence=2 secondary=1
+QA62 PASS matrix native cast started
+QA62 PASS native cast metadata matches matrix case
+QA62 PASS cast release alone does not complete either attack
+QA62 MATRIX_DETAIL p=1 s=0 yaw=0.65 pitch=-0.55 pos=(368.0,392.0,0.0) angle=90.00
+QA62 PASS matrix weapon=1 essence=3 secondary=0
+QA62 PASS matrix native cast started
+QA62 PASS native cast metadata matches matrix case
+QA62 PASS cast release alone does not complete either attack
+QA62 MATRIX_DETAIL p=0 s=1 yaw=0.10 pitch=0.08 pos=(368.0,392.0,0.0) angle=90.00
+QA62 PASS matrix weapon=1 essence=3 secondary=1
+QA62 PASS matrix native cast started
+QA62 PASS native cast metadata matches matrix case
+QA62 PASS cast release alone does not complete either attack
+QA62 MATRIX_DETAIL p=1 s=0 yaw=-0.23 pitch=-0.59 pos=(368.0,392.0,0.0) angle=90.00
+QA62 PASS matrix weapon=1 essence=4 secondary=0
+QA62 PASS matrix native cast started
+QA62 PASS native cast metadata matches matrix case
+QA62 PASS cast release alone does not complete either attack
+QA62 MATRIX_DETAIL p=0 s=1 yaw=-0.08 pitch=0.42 pos=(368.0,392.0,0.0) angle=90.00
+QA62 PASS matrix weapon=1 essence=4 secondary=1
+QA62 MATRIX_DONE weapon=1
+Captured issue62_staff.png
