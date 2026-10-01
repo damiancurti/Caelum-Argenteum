@@ -64,13 +64,22 @@ class CaelumCannon : CaelumHostileMachine
         if(body.bFriendly!=Defending)return false;
         if(!Defending && (body.SiegeCombatant==null || body.SiegeCombatant.Encounter!=Encounter))return false;
         for(int i=0;i<Operators.Size();i++)if(Operators[i]==body)return true;
-        if(Operators.Size()>=CaelumCannonData.CREW)return false;
+        int vacancy=-1;
+        for(int i=0;i<Operators.Size();i++)if(Operators[i]==null || Operators[i].health<=0){vacancy=i;break;}
+        if(vacancy<0 && Operators.Size()>=CaelumCannonData.CREW)return false;
         // Un mismo operador no abastece dos máquinas a la vez.
         let it=ThinkerIterator.Create("CaelumCannon"); CaelumCannon other;
         while((other=CaelumCannon(it.Next()))!=null)
             for(int i=0;other!=self && i<other.Operators.Size();i++)if(other.Operators[i]==body)return false;
         if(body.SiegeCombatant!=null && body.SiegeCombatant.CrewMachine!=null)return false;
-        Operators.Push(body);
+        if(vacancy<0)Operators.Push(body);
+        else
+        {
+            let old=Operators[vacancy];
+            if(old!=null && old.SiegeCombatant!=null && old.SiegeCombatant.CrewMachine==self)
+                old.SiegeCombatant.CrewMachine=null;
+            Operators[vacancy]=body;
+        }
         if(!Defending)body.SiegeCombatant.CrewMachine=self;
         return true;
     }

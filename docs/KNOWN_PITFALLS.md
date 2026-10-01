@@ -4,6 +4,27 @@ Status: integrated engineering register (issue #22, patch 4.36.1b).
 Prepared: 2026-09-23. Inherits the project's release after integration.
 Inspected baseline: `1dc390576fa330d37ff543526fc7e69a397fc28f` (PR #7).
 
+## CA-KP-022 — A magic-resource wait can strand an otherwise mobile army
+
+Status/evidence: AUTHOR-REPORTED / CODE-VERIFIED / ENGINE-VERIFIED.
+First recorded / last checked: 2026-09-30 / 2026-09-30.
+Issue #16, baseline 2440558f; Windows 11, GZDoom 4.14.2, Vulkan, fresh MAP06.
+
+The author reported mostly stationary enemies inside the port army. A native
+probe separated motion over 175 tics from attack state and resource wait:
+after 700 tics, 713 attackers waited for Anima despite having Air available.
+The accepted #37 AttackResourceWait stops movement until the attempted attack
+is affordable. That behavior was unsuitable for the port army's magic/melee
+choice; it was not evidence that the mass scheduler disabled those enemies.
+
+Port Pulse now excludes unaffordable spells from A_Chase. Saved magic waits
+resume the existing See state when the physical attack is affordable. Physical
+exhaustion, sleep/stun, other encounters and resource balance stay unchanged.
+The comparable corrected sample moved 968 actors versus 429 before, with no
+magic wait. This does not eliminate legitimate collision congestion in a crowd.
+Evidence: assets/validation_43627/relief, including native before/after movement,
+full-roster operation and saved-wait continuation. Author acceptance is pending.
+
 ## CA-KP-021 — Cannon target sight must originate at the raised barrel
 
 Status/evidence: CODE-VERIFIED / ENGINE-VERIFIED, #16 / 4.36.27.

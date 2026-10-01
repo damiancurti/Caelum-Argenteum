@@ -17,6 +17,20 @@ Knight capture, calendar phases and explicit playtest endpoint. Separate additiv
 revisions retain encounter state and scale saved cannon work once. Exact legacy
 MAP06 geometry and the original-save/package rollback path are preserved.
 
+Author follow-up on the same date: requested automatic relief for crew losses
+and reported that most enemies stood still when the player entered the army.
+The native baseline reproduced magic-resource waits: after 700 tics, 713 living
+attackers were waiting for Anima and only 429 moved during the preceding 175
+tics. Port AI now suppresses unavailable spells and continues physical pursuit
+when Air permits; the comparable corrected run recorded 968 movers and zero
+magic waits. Resource values/costs/regeneration and the approved roster remain.
+Nearest unassigned same-side combatants now fill dead crew slots without
+teleportation or extra spawns. Temporary absence keeps a live assignment;
+confirmed guard history and permanent machine neutralization remain intact.
+The existing saved arrays/references hold relief identity without a new schema.
+Follow-up evidence is in assets/validation_43627/relief. The reported failure
+keeps both author checks pending; earlier evidence is retained with its scope.
+
 Native GZDoom 4.14.2 checks passed: both objective orders (23 checks each),
 reload timing/crew/ammunition (9), zero/some/all prisoner payments and shared
 Knight capture (24), current save/reload, legacy migration/idempotence/rollback,

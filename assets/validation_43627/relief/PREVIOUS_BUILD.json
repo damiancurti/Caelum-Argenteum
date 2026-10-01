@@ -1,12 +1,12 @@
 {
     "version":  "4.36.27",
     "build_files":  6129,
-    "final_pk3_sha256":  "1834bb4ae95551361132c6491d2781ccf6825eda51a8d9321e04dd188f48a65f",
-    "native_smoke":  "relief/issue16_mass_relief_final.log and relief/issue16_relief_objectives.log: PASS",
+    "final_pk3_sha256":  "d2edb40a9e6810c1598efc358684873d41b8c7f5db97c8dfcc3df1ddca384289",
+    "native_smoke":  "integration/issue16_package_final.log: PASS",
     "static_validation":  {
                               "command":  "python validate_project.py",
                               "exit_code":  0,
-                              "context_words":  2492,
+                              "context_words":  2482,
                               "errors":  [
 
                                          ]
@@ -22,7 +22,7 @@
                    },
                    {
                        "path":  "src/caelum/world/CaelumPortSiege.zs",
-                       "sha256":  "fd7aee6a2deea3161003b97d2d10e6c15575140183544f6221ab5282f42c5166"
+                       "sha256":  "1f50168dbabf9707d3d80bb7864ecd98dd48990ef66b58a1501783fd889031ba"
                    },
                    {
                        "path":  "src/caelum/world/CaelumPortDefender.zs",
@@ -30,7 +30,7 @@
                    },
                    {
                        "path":  "src/caelum/world/CaelumCannon.zs",
-                       "sha256":  "570982439d27ceaaec3cc6a6da28d94af0f05fec8ba3549c0cd85195972e9f5b"
+                       "sha256":  "7baefc32e67789814ad3b8fb2f7b313a719072425005fdb92a2f2eabe7635550"
                    },
                    {
                        "path":  "src/caelum/world/CaelumCannonData.zs",
@@ -38,7 +38,7 @@
                    },
                    {
                        "path":  "src/caelum/world/CaelumSiegeEncounter.zs",
-                       "sha256":  "8e5a00afbb646c023c2058b09b183f84b5b95a2def24761bb51e86322ec09f92"
+                       "sha256":  "45801693cecadf2c7a08c5e2dba9e1a2306f78d61212a127d980611fec7bbe09"
                    },
                    {
                        "path":  "src/caelum/actors/CaelumFolkloreCharacters.zs",
@@ -47,10 +47,6 @@
                    {
                        "path":  "src/caelum/quests/CaelumDemoNarrative.zs",
                        "sha256":  "788e7999e3f17a5c1822fcb8d0a235a153762035a1e56974e718643bedf5c4a8"
-                   },
-                   {
-                       "path":  "src/caelum/actors/CaelumCombatActor.zs",
-                       "sha256":  "3c967a35c735ab53a4ddfdc18b48f86a46b69cd0a43f4d1821b02de96e92830d"
                    }
                ]
 }

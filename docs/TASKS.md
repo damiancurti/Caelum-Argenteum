@@ -15,6 +15,10 @@ Documentation version: **4.36.27** — 2026-09-30.
   full 1,001-attacker/100-defender/24-machine scene. See assets/validation_43627.
 - Author acceptance remains pending: CA-43627-PORT-01 and CA-43627-SAVE-01.
   An isolated probe or a PR does not certify a complete ordinary campaign run.
+- Author reported missing crew relief and mostly stationary attackers during
+  the initial port playtest. Follow-up implements nearest available same-side
+  replacements and physical pursuit while magic resources recover. Recheck
+  these behaviors in both outstanding author tests; no acceptance is inferred.
 - Next: author review/playtest, then the separate #17 export gate and remaining
   4.37 prerequisites. No playtest ZIP or final independent distribution is claimed.
 

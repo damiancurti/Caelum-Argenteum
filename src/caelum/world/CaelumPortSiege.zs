@@ -197,6 +197,83 @@ class CaelumPortSiege : CaelumSiegeEncounter
         }
     }
 
+    CaelumSiegeCombatant NearestReserve(vector3 station)
+    {
+        CaelumSiegeCombatant chosen;double best=1e30;
+        for(int i=0;i<Attackers.Size();i++)
+        {
+            let e=Attackers[i];
+            if(e==Boss || !ActiveEntry(e) || e.CrewMachine!=null || !(e.Body is "CaelumMandinga"))continue;
+            double distance=(e.Body.Pos-station).Length();
+            if(distance<best){chosen=e;best=distance;}
+        }
+        return chosen;
+    }
+
+    void RefillCrews()
+    {
+        // Sólo las bajas liberan puestos. Un tripulante vivo que se alejó
+        // conserva su asignación; las máquinas neutralizadas no se reactivan.
+        for(int i=0;i<Machines.Size();i++)
+        {
+            let ram=CaelumBatteringRam(Machines[i]);if(ram==null || ram.Neutralized)continue;
+            for(int slot=0;slot<ram.Crew.Size();slot++)
+            {
+                let old=ram.Crew[slot];
+                if(old!=null && !old.ConfirmedDead && old.Body!=null && old.Body.health>0)continue;
+                vector3 offset=((slot%2==0 ? -1 : 1)*CaelumRamData.TRIAL_CREW_SIDE*ram.SizeFactor,
+                    ((slot/2)-(ram.RequiredCrew/2-1)/2.0)*CaelumRamData.TRIAL_CREW_STEP,0);
+                let replacement=NearestReserve(ram.Pos+offset);
+                if(replacement!=null && ram.AssignCrew(replacement))
+                {replacement.CrewOffset=offset;replacement.Lane=NearestLane(ram.Pos.X);}
+            }
+        }
+        for(int i=0;i<Guns.Size();i++)
+        {
+            let gun=Guns[i];if(gun==null || gun.Neutralized)continue;
+            for(int slot=0;slot<gun.Operators.Size();slot++)
+            {
+                if(gun.Operators[slot]!=null && gun.Operators[slot].health>0)continue;
+                vector3 offset=((slot==0 ? -1 : 1)*CaelumPortData.OPERATOR_SIDE,0,0);
+                if(!gun.Defending)
+                {
+                    let replacement=NearestReserve(gun.Pos+offset);
+                    if(replacement!=null && gun.AssignOperator(replacement.Body))
+                    {replacement.CrewOffset=offset;replacement.Lane=NearestLane(gun.Pos.X);}
+                }
+                else
+                {
+                    CaelumPortDefender chosen;double best=1e30;
+                    for(int d=0;d<Defenders.Size();d++)
+                    {
+                        let soldier=Defenders[d];if(soldier==null || soldier.health<=0 || !soldier.bFriendly || soldier.Gun!=null)continue;
+                        double distance=(soldier.Pos-(gun.Pos+offset)).Length();
+                        if(distance<best){chosen=soldier;best=distance;}
+                    }
+                    if(chosen!=null && gun.AssignOperator(chosen))
+                    {chosen.Gun=gun;chosen.Station=gun.Pos+offset;chosen.Lane=NearestLane(gun.Pos.X);}
+                }
+            }
+        }
+    }
+
+    static double PhysicalCost(CaelumCombatActor body)
+    {
+        if(body is "CaelumPortDefender")return CaelumWeaponCatalogue.GetPrimaryAirCost(CaelumConstants.CATALOGUE_WEAPON_SWORD);
+        if(body is "CaelumZupayColossus")return CaelumAttackRules.SlamAir();
+        return CaelumWeaponCatalogue.GetPrimaryAirCost(CaelumConstants.CATALOGUE_WEAPON_MACHETE);
+    }
+
+    static bool ResumePhysicalCombat(CaelumCombatActor body)
+    {
+        if(body.SiegeCombatant==null || !(body.SiegeCombatant.Encounter is "CaelumPortSiege")
+            || !body.AttackResourceMagical || body.ForcedSleepTics>0
+            || body.CombatLucidityPhysicalStunRemaining>0
+            || body.CurrentCombatAir<body.GetEffectiveAttackAir(PhysicalCost(body)))return false;
+        // Una espera ya guardada de magia puede continuar con el ataque físico.
+        body.AttackResourceWaiting=false;body.SetState(body.SeeState);return true;
+    }
+
     Actor CannonTarget(CaelumCannon gun)
     {
         Actor chosen;bool chosenCrew=false;double best=1e30;
@@ -292,13 +369,20 @@ class CaelumPortSiege : CaelumSiegeEncounter
         {WalkTo(body,goal,post);return true;}
         if(victim==null || victim.health<=0){body.target=null;return true;}
         body.target=victim;
+        int magicWeapon=body is "CaelumZupayColossus" ? CaelumConstants.WEAPON_TYPE_STATUETTE : CaelumConstants.WEAPON_TYPE_STAFF;
+        bool canCast=soldier==null && body.CurrentCombatAnima>=body.GetTierOneMagicAnimaCost(magicWeapon);
         if(!body.InStateSequence(body.CurState,body.SeeState))body.SetState(body.SeeState);
         else if(hasPost && !nearEnemy)
         {
             if(soldier!=null)body.A_Chase(null,null,CHF_DONTMOVE|CHF_DONTLOOKALLAROUND);
-            else body.A_Chase(null,"Missile",CHF_DONTMOVE|CHF_DONTLOOKALLAROUND);
+            else if(canCast)body.A_Chase(null,"Missile",CHF_DONTMOVE|CHF_DONTLOOKALLAROUND);
+            else body.A_Chase(null,null,CHF_DONTMOVE|CHF_DONTLOOKALLAROUND);
         }
-        else body.A_Chase();
+        else
+        {
+            if(canCast)body.A_Chase("Melee","Missile");
+            else body.A_Chase("Melee",null);
+        }
         return true;
     }
 
@@ -348,7 +432,7 @@ class CaelumPortSiege : CaelumSiegeEncounter
         }
         if(!Victory)
         {
-            if(CommandDirty || level.time%CaelumPortData.COMMAND_UPDATE_TICS==0){ElectCommands();RefreshTargets();}
+            if(CommandDirty || level.time%CaelumPortData.COMMAND_UPDATE_TICS==0){RefillCrews();ElectCommands();RefreshTargets();}
             OrderGuns();
         }
         for(int i=0;i<MAXPLAYERS;i++)if(playeringame[i] && players[i].mo!=null)Calendar(CaelumPlayer(players[i].mo));

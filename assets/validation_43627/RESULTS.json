@@ -136,5 +136,6 @@
                   "work_tokens":  null,
                   "desktop_tokens":  null,
                   "note":  "Unavailable measurements are not inferred from changed lines or elapsed time."
-              }
+              },
+    "current_follow_up":  "relief/RESULTS.json supersedes the initial build for crew relief and mobile physical fallback. Earlier measurements retain their original tested scope."
 }

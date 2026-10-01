@@ -909,6 +909,7 @@ class CaelumCombatActor : Actor
     {
         let actor=CaelumCombatActor(self);
         if(actor==null || actor.health<=0)return;
+        if(CaelumPortSiege.ResumePhysicalCombat(actor))return;
         actor.Vel.X=0;actor.Vel.Y=0;
         if(actor.ForcedSleepTics>0 || !actor.HasAttackResource())return;
         actor.AttackResourceWaiting=false;

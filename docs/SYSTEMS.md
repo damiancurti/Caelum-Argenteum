@@ -29,6 +29,30 @@ every 35 tics or upon a confirmed death. Split groups elect their own leader
 and reconnect deterministically. Operators follow their moving machine posts;
 availability controls operation separately from death-backed neutralization.
 
+Author follow-up, 2026-09-30: a dead crew member is replaced by the nearest
+living, unassigned combatant of the same side (stable roster order breaks ties).
+Both ram sizes and both cannon sides reuse the vacated slot. A living operator
+who temporarily leaves keeps the assignment. Recruits must walk to the moving
+post/platform before counting as present; no teleport, extra spawn or remote
+operation. Guard death memory remains separate; neutralized machines never
+recruit or reactivate. If no eligible reserve remains, the vacancy stays open.
+Allied replacements come from the original gate defenders, so their distribution
+changes with losses while the original 100-person roster remains fixed.
+
+Port combatants with insufficient Anima suppress unavailable magic attacks and
+continue pursuit/physical attacks using their existing Air costs. A saved magic
+wait resumes physical pursuit when Air permits. Actual physical exhaustion,
+sleep and stun retain their existing waits; other encounters retain #37's rules.
+No attribute, resource maximum, cost, regeneration or spell range is increased.
+
+The port commander inherits the ordinary Zupay profile: twelve attributes at
+33, maximum health 44,022, Anima 6,610, Air approximately 1,222.18, mass 666 kg,
+physical height 93.333333 MU (2.9167 m). Its displayed art is about 120 MU tall
+(3.75 m); collision height and sprite height are distinct. The half-health
+retreat threshold is 22,011. Ground slam uses base damage 66, radius 192 MU
+(6 m) and the accepted 80-tic cycle; the earth statuette uses the existing T1
+damage/cost formulas. These are existing statistics, not a balance revision.
+
 The port Zupay flees at 50% maximum health, at triple base speed, using the
 accepted sewer movement states. Starting flight is not defeat: it must reach
 the final authored exit with sight and compatible floor height. Death also

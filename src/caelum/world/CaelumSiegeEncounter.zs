@@ -210,9 +210,20 @@ class CaelumHostileMachine : Actor
         if (entry == null || entry.Encounter != Encounter || entry.Body == null
             || !(entry.Body is "CaelumMandinga") || entry.ConfirmedDead || Neutralized) return false;
         for (int i = 0; i < Crew.Size(); i++) if (Crew[i] == entry) return true;
-        if (entry.CrewMachine != null || Crew.Size() >= RequiredCrew) return false;
+        if (entry.Body.health <= 0 || entry.Body.bFriendly || entry.CrewMachine != null) return false;
+        int vacancy=-1;
+        for(int i=0;i<Crew.Size();i++)
+            if(Crew[i]==null || Crew[i].ConfirmedDead || Crew[i].Body==null || Crew[i].Body.health<=0)
+            {vacancy=i;break;}
+        if(vacancy<0 && Crew.Size()>=RequiredCrew)return false;
         entry.CrewMachine = self;
-        Crew.Push(entry);
+        if(vacancy<0)Crew.Push(entry);
+        else
+        {
+            // Se libera el puesto, no la memoria de guardias eliminados.
+            if(Crew[vacancy]!=null && Crew[vacancy].CrewMachine==self)Crew[vacancy].CrewMachine=null;
+            Crew[vacancy]=entry;
+        }
         return true;
     }
 
