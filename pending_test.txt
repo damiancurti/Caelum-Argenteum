@@ -1,5 +1,6 @@
-CA-4370-MANSION-01 | Origin: 4.37.0 / issue #61 / PR #66 | Two corrected visual defects
+CA-4370-CAVE-01 | Origin: 4.37.0 / issue #61 / PR #66 | Northeast decorative cave and surrounding ground
 Prerequisites: GZDoom 4.14.2, current normal build, fresh MAP01/new game. Old-save work was waived by the author on 2026-10-01.
-1. Visit (17455,7394,0), look down and turn around; walk across the surrounding flat exterior. Expect continuous visible grass, no transparent ground and no new barriers.
-2. On the highest storey, stand outside the double doorway at approximately (1210,-12,264), facing west and looking up. Inspect the front between its tympanum and the pitched roof, then inspect both sides with the door closed/open. Expect complete masonry up to both roof slopes with no hole or flickering overlap.
-Expected: both corrected defects accepted by the author. The author's 2026-10-01 confirmation that the other checks passed is recorded in HISTORY; those checks are no longer pending. Agent/native passes do not confirm these two rechecks.
+1. Visit the latest Prueba location near (23268,23285,0), or approach from (22947,22979,0) facing northeast. Expect a cave mouth in a small grassy mound, visible ground around it and no transparent exterior patches.
+2. Walk down the gentle ramp, around the bend to the closed end, then back outside. Inspect the five gem rocks and try using/hitting them. Expect decorative ruby, sapphire, emerald, topaz and opal; no resource yield, inventory gain or mining interaction.
+3. Walk around and over the mound. Expect solid grass above the tunnel, no fall through its roof, visible rock walls/ceiling and acceptable appearance/performance.
+Expected: new cave/site accepted by the author. Original CA-4370-MANSION-01, including the earlier floor and upper-door roof repairs, was confirmed on 2026-10-01 and is recorded in HISTORY. Agent checks do not satisfy this new author test.

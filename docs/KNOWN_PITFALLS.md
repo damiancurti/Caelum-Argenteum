@@ -4,6 +4,31 @@ Status: integrated engineering register (issue #22, patch 4.36.1b).
 Prepared: 2026-09-23. Inherits the project's release after integration.
 Inspected baseline: `1dc390576fa330d37ff543526fc7e69a397fc28f` (PR #7).
 
+## CA-KP-025 — Normalize all four coefficients of generated UDMF planes
+
+Status/evidence: CODE-VERIFIED / ENGINE-VERIFIED, #61 / PR #66 / 4.37.0.
+First recorded / last checked: 2026-10-01 / 2026-10-01.
+Baseline: 3277ab2f plus the decorative-cave working tree; GZDoom 4.14.2,
+Windows 11, Vulkan, fresh MAP01 and an isolated native fixture.
+
+In the new cave near (23268,23285), writing an algebraically correct plane
+with normal (-gx,-gy,1) produced the wrong native height: an intended Z=-32
+ramp point reported about Z=221.31. Normalising A, B, C and D by the normal's
+length corrected the same point to -32 and restored the continuous mound.
+An offline ZatPoint calculation alone had passed because it evaluated the
+raw coefficients, not the engine's loaded representation.
+
+mansion_decorative_cave.py normalises its generated floor and roof planes.
+validate_mansion_cave.py checks unit normals and authored vertex heights; the
+native fixture independently samples all 1,152 new floor triangle centres.
+Keep this native check for distant geometry, where a small coefficient error
+can cause a large vertical displacement. This finding does not reinterpret
+the already accepted mansion relief; the new cave generator is its scope.
+
+Evidence: assets/validation_4370/CAVE.json and its retained diagnostic/final
+logs. Original reports and failed local trials remain available separately.
+New cave author acceptance CA-4370-CAVE-01 is pending.
+
 ## CA-KP-024 — A valid oversized floor can disappear in the renderer
 
 Status/evidence: AUTHOR-REPORTED / ENGINE-VERIFIED, #61 / PR #66 / 4.37.0.
@@ -18,7 +43,7 @@ collision checks therefore did not detect the visible defect. Removing the
 horizon special, reducing the sky ceiling and splitting only long boundary
 lines each failed to repair the rendering; an isolated bounded sector rendered.
 
-The correction partitions the 60000-MU-wide exterior into nine bounded regions
+The first correction partitioned the 60000-MU-wide exterior into nine bounded regions
 with flat, two-sided internal joins. Existing terrain stays in the central
 sector and original horizon extent/blocking remains. The reported point now
 renders grass. This establishes a geometry-dependent failure and a verified
@@ -26,9 +51,15 @@ workaround, not a universal size limit or an identified internal renderer bug.
 Retain native before/after captures, inspect distant views in addition to the
 mansion, and verify that new joins preserve heights and traversal.
 
-Evidence and exact geometry: assets/validation_4370/FOLLOWUP.json and
-assets/map01_mansion/EXTERIOR.json. Author accepted the other #61 tests; only
-the corrected ground and upper-door roof-front views await recheck.
+The author accepted that point's repair but later reproduced the defect near
+(23268,23285,0). Sampling only region centres had missed it. The follow-up uses
+25 regions and checks positions near all four corners and edge midpoints as
+well as the reported locations. Do not generalise a few successful views into
+a guarantee that the complete oversized exterior renders correctly.
+
+Evidence and exact geometry: assets/validation_4370/FOLLOWUP.json, CAVE.json and
+assets/map01_mansion/EXTERIOR.json. Original CA-4370-MANSION-01 is author-accepted;
+the new cave/site check CA-4370-CAVE-01 remains pending.
 
 ## CA-KP-023 — OBJ height and map headroom use different vertical scales
 
@@ -36,7 +67,7 @@ Status/evidence: CODE-VERIFIED / ENGINE-VERIFIED, #61 / 4.37.0.
 First recorded / last checked: 2026-10-01 / 2026-10-01.
 Baseline: accepted MAP01 at 30caa726, Windows 11, GZDoom 4.14.2, Vulkan,
 RTX 3070 Ti, development Doom II IWAD. The author accepted the general doorway
-checks; the subsequent roof-front correction has its own pending recheck.
+checks and subsequent roof-front correction on 2026-10-01.
 
 Symptom: the accepted 120-unit mansion door OBJ leaves a visible upper gap even
 when its actor blocker and nominal map opening both reach 120 MU. GZDoom's

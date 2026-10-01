@@ -508,4 +508,11 @@ DoomEdNums
     18613 = CaelumMansionTympanum3
     18614 = CaelumMansionDoorGable
 // END GENERATED MANSION TYMPANA
+// BEGIN GENERATED DECORATIVE CAVE
+    18620 = CaelumCaveSceneryRuby
+    18621 = CaelumCaveScenerySapphire
+    18622 = CaelumCaveSceneryEmerald
+    18623 = CaelumCaveSceneryTopaz
+    18624 = CaelumCaveSceneryOpal
+// END GENERATED DECORATIVE CAVE
 }

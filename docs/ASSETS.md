@@ -33,8 +33,17 @@ door group and output hash. Regenerate this current map with the #61 generator;
 repair_map01_mansion.py remains the historical #36 reconstruction source.
 validate_map01_exterior.py is read-only. The normal builder packages existing
 outputs without requiring generators. Evidence is in assets/validation_4370;
-the author accepted the remaining tests on 2026-10-01. CA-4370-MANSION-01 now
-retains only distant-ground and upper-door roof-front visual rechecks.
+the author accepted CA-4370-MANSION-01 on 2026-10-01.
+
+CAVE.json and mansion_decorative_cave.py add the requested northeast cave.
+Native sloped sectors form its grassy mound; solid native 3D floors support
+the walkable roof above the tunnel. Rock surfaces reuse CACVROCK, backed by
+the project's rock_granite.png. Five Actor-only classes reuse existing ruby,
+sapphire, emerald, topaz and opal vein models at half scale. They inherit no
+resource behavior and add no external material, sound or story. The generated
+report includes roof controls, cave sectors, placements and camera/route data.
+The follow-up divides the distant exterior into 25 regions; no new art is used.
+Only the new cave/site requires author acceptance (CA-4370-CAVE-01).
 
 ## 4.36.28 — Playtest resource packaging (#17)
 

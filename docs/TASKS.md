@@ -20,8 +20,14 @@ Documentation version: **4.37.0** — 2026-10-01.
 - Author follow-up 2026-10-01: the other tests passed; distant ground at
   (17455,7394,0) was transparent and Prueba identified a roof-front gap above the
   top doorway. Both are corrected in the same 4.37.0 patch and PR #66.
-- CA-4370-MANSION-01 now retains only those two visual rechecks. Confirmed
-  results are recorded in HISTORY; merge/closure does not confirm the rechecks.
+- The author subsequently confirmed both repairs and all remaining original
+  checks: CA-4370-MANSION-01 is accepted, recorded in HISTORY.
+- New same-issue scope: Prueba at (23268,23285,0) identified another transparent
+  area. Add the selected small mound cave, gentle descent, short bent tunnel
+  and decorative rocks of all five gems. Native roof, passage, damage/resource
+  and expanded distant-ground views are covered by the cave evidence.
+- CA-4370-CAVE-01 is the only outstanding author check. The original tutorial
+  cave, gathering reserves and progression stay unchanged.
 - Deferred Tarot/Trucazo remains separate final V4 scope before V5.
 
 ## Issue #17 — Verify and export the complete three-map test build (4.36.28)

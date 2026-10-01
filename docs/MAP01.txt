@@ -34,12 +34,24 @@ this separate upper gap in the save named Prueba; the original save is preserved
 
 The author also reported transparent ground at (17455,7394,0), reproduced in the
 preserved baseline. The 60000-MU-wide exterior is now divided into a central
-region and eight surrounding flat sectors, with splits at X/Y=+/-12288. Existing
+region and 24 surrounding flat sectors, with splits at X/Y=+/-12288 and +/-20480. Existing
 grass, light, height, outer extent and blocking horizon remain; the largest
 individual floor span is 24576 MU. This fixes the observed renderer failure
 without extending the hills or adding barriers. EXTERIOR.json owns this layout.
-The author accepted the other tests on 2026-10-01; only these two visual rechecks
-remain under CA-4370-MANSION-01.
+The author accepted those two repairs and the other original tests on 2026-10-01
+(CA-4370-MANSION-01). The additional splits follow a later transparent-ground
+report in the northeast, beyond the previously sampled region centres.
+
+At the author's new Prueba position (23267.58,23285.28,0), a small cave now opens
+in a grassy mound. Its mouth faces southwest, toward the mansion. A rock-lined
+approach leads northeast into a 448-MU (14-metre) tunnel with one offset bend
+and a closed end. The floor descends 96 MU over 384 MU (14.04 degrees); its native
+roof underside is Z=120. A 64-MU triangulated local mesh forms the mound, with
+solid 3D floors above the tunnel so the grass surface also supports walking.
+Five nonblocking decorative rocks show ruby, sapphire, emerald, topaz and opal;
+they grant no resources. This is separate from the existing tutorial cave.
+CAVE.json owns the layout and author-selected scope. No NPC, encounter, loot,
+quest, connection to the mansion basement or new story is introduced.
 
 GZDoom's OBJ pixel-stretch correction renders the accepted 120-unit door mesh at
 100 MU. Tympanum dimensions account for that transform; their own model Z scale
@@ -49,7 +61,7 @@ remain unchanged. No extra collision is introduced over the opening.
 Source: assets/map01_mansion/EXTERIOR.json and preserved MAP01_43628.wad;
 generator: assets/generators/generate_map01_exterior.py (including mansion_tympana.py).
 Static and native evidence: assets/validation_4370. Author check
-CA-4370-MANSION-01 remains pending; automated traversal is not author acceptance.
+CA-4370-CAVE-01 remains pending; automated traversal is not author acceptance.
 
 ## 4.36.27 — Port campaign endpoint (#16)
 

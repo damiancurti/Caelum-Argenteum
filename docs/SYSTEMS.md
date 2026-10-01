@@ -22,6 +22,13 @@ their accepted collision. All supported body tiers remain below the visible
 The additional top-door roof-front closure begins at Z=400, above the existing
 ceiling slab. It has no actor collision and changes no access or combat rule.
 
+The author-requested northeast cave is scenery, separate from the tutorial's
+resource cave. Its five gemstone rocks are plain, nonblocking Actors, neither
+shootable nor inventory/resource nodes. They cannot be extracted, depleted,
+picked up or converted into rewards. The tunnel has a gentle native floor
+descent, one bend and a closed end; solid 3D floors provide its roof and the
+walkable mound above. No quest, enemy, loot or gathering quota is introduced.
+
 The author explicitly waived old-save compatibility work for #61 on 2026-10-01.
 Start a fresh MAP01/new campaign; no old-MAP01 migration is claimed. The accepted
 baseline is preserved for recovery, and existing MAP02/MAP06 launcher options

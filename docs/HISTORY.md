@@ -42,13 +42,13 @@ The added rendering cost and ordinary-play performance remain author checks.
 These are isolated engine checks, not ordinary campaign or author acceptance.
 
 CA-4370-MANSION-01 — originating release 4.37.0, issue #61 / PR #66:
-PARTIALLY ACCEPTED by the author on 2026-10-01. The author explicitly confirmed
+Initially PARTIALLY ACCEPTED by the author on 2026-10-01. The author explicitly confirmed
 that the other tests passed, while reporting two visual defects: transparent
 ground at (17455,7394,0), and an opening between the upper doorway's tympanum and
 the pitched roof front. Thus relief/traversal outside the reported defect,
 vegetation/pool exclusion, gathering/resources, other door checks, performance
 and ordinary tutorial/Palomo progression are confirmed. Only the two corrected
-defects remain in pending_test.txt under the same stable ID.
+defects initially remained in pending_test.txt under the same stable ID.
 
 Same-patch correction: the distant floor failure reproduces in the preserved
 4.36.28 map. Removing Line_Horizon, lowering the sky ceiling, and subdividing
@@ -74,6 +74,40 @@ the centre, and the upper door closed/open from both sides. Thirty static
 invariants and byte-identical regeneration of ten outputs cover the new layout.
 No old-save migration was tested or promised under the explicit waiver; use a
 fresh MAP01. The accepted 4.36.28 export is unchanged. Version remains 4.37.0.
+
+Later on 2026-10-01, the author confirmed that the remaining tests passed:
+CA-4370-MANSION-01, originating 4.37.0 / #61 / PR #66, is now ACCEPTED,
+including the previous (17455,7394,0) floor repair and top-door roof-front fill.
+Those checks were removed from pending_test.txt under its approved lifecycle.
+The author also reported a different transparent-floor site in the updated
+Prueba save at (23267.58,23285.28,0) and requested a small decorative gem cave
+there. The selected design is a mouth in a small mound, gentle underground
+descent, a short 10–15-metre tunnel with a bend and closed end, and all five
+existing gems. The issue scope was updated accordingly; this remains 4.37.0.
+
+The new CAVE.json layout provides a 448-MU tunnel, descending to Z=-96. Native
+solid 3D floors support the grassy mound above it. Five plain Actor classes
+reuse ruby, sapphire, emerald, topaz and opal rock art without extraction or
+rewards. The original tutorial cave/resources and accepted architecture stay
+unchanged. The previous nine-region exterior fix did not cover every remote
+view: the latest author position still showed transparency. Twenty-five bounded
+regions now replace it, with expanded native checks near the outer corners.
+
+During development, unnormalised plane coefficients made the new distant ramp
+render at the wrong height. Normalising all four plane coefficients fixed it;
+native samples cover all 1,152 new floor triangles. Native body probes check
+the entry/exit route at tiers 1/4/7, an actual player walks to the closed end and
+back with gravity/collision enabled, and a separate probe crosses the solid roof.
+The five gem actors ignore damage and have no resource/inventory ancestry.
+The final PK3 passes 53,286 exterior crossings, 896 cave-route steps for each
+of three body tiers, and the player's 438-tic round trip. All five decorative
+damage checks, original resource/pool checks and clean package startup pass.
+Sixteen final views cover the cave and both ground reports, plus distant
+corners/edge midpoints. Thirty-nine static checks and byte-identical generation
+of eleven outputs pass. Evidence and limitations belong in
+assets/validation_4370/CAVE.json. Earlier
+reports remain historical snapshots. New author check CA-4370-CAVE-01 covers
+only the cave and surrounding ground; it remains pending.
 
 ## 4.36.28 — Verify and export the complete three-map test build (#17)
 

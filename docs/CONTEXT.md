@@ -5,11 +5,11 @@ Documentation version: **4.37.0** — 2026-10-01.
 **4.37.0 / #61:** mixed gentle/marked exterior hills, sixteen decorative ceibos,
 twenty-four decorative shrubs, and filled triangular/arched tympana for all 32
 MAP01 door groups. Resources, 48 hinged leaves and tutorial rules remain.
-Author accepted the other checks on 2026-10-01, reporting transparent far ground
-and an upper-door roof gap. Bounded exterior sectors and a fitted gable correct
-both; CA-4370-MANSION-01 retains only these rechecks. Pool/cave exclude vegetation.
-Old-save work remains waived: use fresh MAP01. Evidence: assets/validation_4370.
-Next: #61 rechecks, then deferred Tarot/Trucazo.
+Author accepted CA-4370-MANSION-01 on 2026-10-01. A later transparent-ground
+report near (23268,23285) adds an author-requested short cave in a small mound,
+with gentle descent and five decorative gems. CA-4370-CAVE-01 awaits acceptance.
+Pool excludes vegetation. Start fresh; evidence: assets/validation_4370.
+Next: cave acceptance, then deferred Tarot/Trucazo.
 
 **4.36.28 / #17:** author accepted the export and corrected launcher on 2026-10-01,
 authorizing #60 merge/#17 closure. CA-43628-EXPORT-01: HISTORY; evidence:

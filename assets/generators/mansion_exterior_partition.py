@@ -9,23 +9,25 @@ def partition_exterior(obj,spec,report):
     corners=[vertices[i] for i in horizon]
     xs=[min(p['x'] for p in corners),*spec['inner_x'],max(p['x'] for p in corners)]
     ys=[min(p['y'] for p in corners),*spec['inner_y'],max(p['y'] for p in corners)]
+    cx=next(i for i in range(len(xs)-1) if xs[i]<0<xs[i+1])
+    cy=next(i for i in range(len(ys)-1) if ys[i]<0<ys[i+1])
     # Every retained hole/island in sector 0 must remain inside the central cell.
     # Otherwise partitioning would require clipping/reassigning that geometry.
     for i,line in enumerate(lines):
         if i in spec['horizon_lines']:continue
         touches=any(sides[line[k]]['sector']==spec['sector'] for k in ('sidefront','sideback') if line.get(k,-1)>=0)
         if touches:
-            assert all(xs[1]<vertices[line[k]]['x']<xs[2] and ys[1]<vertices[line[k]]['y']<ys[2] for k in ('v1','v2')), f'Exterior feature crosses the partition: line {i}'
+            assert all(xs[cx]<vertices[line[k]]['x']<xs[cx+1] and ys[cy]<vertices[line[k]]['y']<ys[cy+1] for k in ('v1','v2')), f'Exterior feature crosses the partition: line {i}'
     ids={(vertices[i]['x'],vertices[i]['y']):i for i in horizon}
     for x in xs:
         for y in ys:
             if (x,y) not in ids:
                 ids[x,y]=len(vertices);vertices.append(dict(x=x,y=y))
     base=sectors[spec['sector']];edges={};cells=[]
-    for ix in range(3):
-        for iy in range(3):
-            si=spec['sector'] if (ix,iy)==(1,1) else len(sectors)
-            if (ix,iy)!=(1,1):
+    for ix in range(len(xs)-1):
+        for iy in range(len(ys)-1):
+            si=spec['sector'] if (ix,iy)==(cx,cy) else len(sectors)
+            if (ix,iy)!=(cx,cy):
                 sector=deepcopy(base);sector['comment']='Issue #61: bounded exterior floor rendering'
                 sectors.append(sector)
             cells.append(dict(sector=si,bounds=[xs[ix],ys[iy],xs[ix+1],ys[iy+1]]))

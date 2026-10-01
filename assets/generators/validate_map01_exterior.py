@@ -45,9 +45,10 @@ def main():
     partition=report['exterior_partition'];partition_lines=[lines[i] for i in partition['lines']]
     seams=[l for l in partition_lines if l.get('sideback',-1)>=0]
     perimeter=[l for l in partition_lines if l.get('sideback',-1)<0]
-    checks['bounded exterior cells cover original horizon footprint']=len(partition['cells'])==9 and sum((c['bounds'][2]-c['bounds'][0])*(c['bounds'][3]-c['bounds'][1]) for c in partition['cells'])==60000**2 and all(max(c['bounds'][2]-c['bounds'][0],c['bounds'][3]-c['bounds'][1])<32768 for c in partition['cells'])
-    checks['partition joins stay flat and traversable']=len(seams)==12 and all(l.get('twosided') and not l.get('blocking') and not l.get('special') and all(abs(z(sides[l[side]]['sector'],v[l[end]]))<1e-6 for side in ('sidefront','sideback') for end in ('v1','v2')) for l in seams)
-    checks['original blocking horizon remains closed']=len(perimeter)==12 and all(l.get('special')==9 and l.get('blocking') for l in perimeter) and all(count==2 for count in Counter(l[end] for l in perimeter for end in ('v1','v2')).values())
+    nx,ny=[len(spec['exterior_partition'][key])+1 for key in ('inner_x','inner_y')]
+    checks['bounded exterior cells cover original horizon footprint']=len(partition['cells'])==nx*ny and sum((c['bounds'][2]-c['bounds'][0])*(c['bounds'][3]-c['bounds'][1]) for c in partition['cells'])==60000**2 and all(max(c['bounds'][2]-c['bounds'][0],c['bounds'][3]-c['bounds'][1])<32768 for c in partition['cells'])
+    checks['partition joins stay flat and traversable']=len(seams)==(nx-1)*ny+(ny-1)*nx and all(l.get('twosided') and not l.get('blocking') and not l.get('special') and all(abs(z(sides[l[side]]['sector'],v[l[end]]))<1e-6 for side in ('sidefront','sideback') for end in ('v1','v2')) for l in seams)
+    checks['original blocking horizon remains closed']=len(perimeter)==2*(nx+ny) and all(l.get('special')==9 and l.get('blocking') for l in perimeter) and all(count==2 for count in Counter(l[end] for l in perimeter for end in ('v1','v2')).values())
     doors=[t for t in baseline['thing'] if t['type']==spec['tympana']['leaf_editor_number']]
     groups=Counter(t['arg0'] for t in doors)
     checks['exactly one filled tympanum per original door group']=Counter(t['group'] for t in report['tympana'])==Counter({g:1 for g in groups})
@@ -88,6 +89,8 @@ def main():
     checks['upper-door gable follows both existing roof slopes']=all(abs(b+closure['base']-roof_z(a))<1e-5 for a,b,c in roof_verts if b>0) and max(b for a,b,c in roof_verts)+closure['base']==closure['ridge']
     checks['upper-door gable fills full width and wall depth']=min(a for a,b,c in roof_verts)==-closure['width']/2 and max(a for a,b,c in roof_verts)==closure['width']/2 and {c for a,b,c in roof_verts}=={-closure['depth']/2,closure['depth']/2} and min(b for a,b,c in roof_verts)==0
     checks['gable starts above the existing ceiling slab without face overlap']=closure['base']==baseline['sector'][roof_spec['ceiling_control_sector']]['heightceiling']
+    from validate_mansion_cave import cave_checks
+    checks.update(cave_checks(obj,report,json.loads((DATA/spec['cave']).read_text()),ROOT))
     result=dict(issue=61,map_sha256=report['output_sha256'],checks=checks,maximum_edge_discontinuity=max_jump,maximum_height=max(heights),maximum_slope_degrees=math.degrees(math.atan(report['maximum_gradient'])),errors=[k for k,v in checks.items() if not v])
     print(json.dumps(result,indent=2))
     return bool(result['errors'])

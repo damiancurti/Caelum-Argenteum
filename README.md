@@ -14,10 +14,13 @@ resources and hinged-door rules remain; vegetation stays outside the pool,
 including underwater. **Start a fresh MAP01/new campaign:**
 the author waived old-save compatibility work for this geometry revision.
 Static and isolated native evidence is in [4.37.0 validation](assets/validation_4370/RESULTS.json).
-The author accepted the remaining checks after reporting two visual defects:
-distant transparent ground and a roof-front gap above the top-storey door.
-Both are corrected in this same patch; only their visual rechecks remain in
-[pending_test.txt](pending_test.txt).
+The author accepted the original checks and both subsequent floor/roof repairs.
+A later report at approximately (23268,23285,0) adds a small cave in a grassy
+mound: gentle descent, a short bent tunnel and five decorative gemstone rocks
+with no extraction or rewards. Exterior partitioning also covers the newly
+reported transparent ground. Only this cave/site remains for author acceptance
+in [pending_test.txt](pending_test.txt); evidence is in
+[the cave follow-up](assets/validation_4370/CAVE.json).
 Deferred Tarot/Trucazo remains separate; the accepted 4.36.28 export is unchanged.
 
 Issue [#16](https://github.com/damiancurti/Caelum-Argenteum/issues/16) completes

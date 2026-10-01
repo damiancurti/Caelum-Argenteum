@@ -22,9 +22,16 @@ representative captures are recorded under assets/validation_4370. The pool is
 kept free of vegetation, including underwater. On 2026-10-01 the author accepted
 the other checks and reported transparent distant ground plus a roof-front gap
 above the top door. This same patch bounds the exterior floor and closes that
-gap against the native roof slopes. CA-4370-MANSION-01 in pending_test.txt keeps
-only these two visual rechecks. Use a fresh MAP01/new campaign.
-Next: confirm the two #61 corrections, then deferred Tarot/Trucazo.
+gap against the native roof slopes. The author then accepted both repairs and
+the rest of CA-4370-MANSION-01 on 2026-10-01.
+
+The next Prueba save identified another transparent-ground site near
+(23268,23285,0). The author requested a small cave there, choosing a mouth in a
+mound, gentle descent, a roughly 10–15-metre bent tunnel with a closed end, and
+decorative rocks of all five existing gems. This same landscape patch adds that
+native cave and refines the distant floor partition. No resources or progression
+are added. Only CA-4370-CAVE-01 remains pending. Use a fresh MAP01/new campaign.
+Next: cave/site acceptance, then deferred Tarot/Trucazo.
 
 ## 4.36.28 — Reproducible three-map playtest export (#17)
 

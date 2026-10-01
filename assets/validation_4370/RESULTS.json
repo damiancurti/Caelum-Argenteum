@@ -3,8 +3,8 @@
   "release": "4.37.0",
   "date": "2026-10-01",
   "base_commit": "30caa726",
-  "status": "Initial-delivery evidence; author accepted the remaining tests and requested two visual corrections, recorded in FOLLOWUP.json",
-  "evidence_scope": "The counts, hashes and captures in this file describe the initial delivery at f69e6f7e. Same-patch correction evidence and final hashes are in FOLLOWUP.json.",
+  "status": "Historical initial-delivery evidence. Original CA-4370-MANSION-01 and its two later repairs are author-accepted on 2026-10-01; a new cave/site check remains pending.",
+  "evidence_scope": "Counts, hashes and captures here describe f69e6f7e. FOLLOWUP.json describes the first corrections at 3277ab2f. CAVE.json contains the latest cave/exterior evidence and final hashes.",
   "author_decisions": [
     "Mixed gentle and marked hills, up to approximately ground-storey height",
     "New vegetation is decorative only; preserve existing gathering resources",
@@ -91,7 +91,7 @@
   ],
   "author_acceptance": {
     "id": "CA-4370-MANSION-01",
-    "status": "Partial author acceptance 2026-10-01: all other checks passed; distant-ground and upper-door roof-front corrections await recheck. See FOLLOWUP.json."
+    "status": "Accepted by the author on 2026-10-01, including the subsequent distant-ground and upper-door roof-front repairs. The later cave/site has a separate CA-4370-CAVE-01 check; see CAVE.json."
   },
   "source_hashes": {
     "src/maps/MAP01.wad": "2a62e9cfe2f7970fe0cb0459344f5e1428c1de6519b79a328f13ad6a2d991e35",

@@ -4,6 +4,7 @@
   "release": "4.37.0",
   "date": "2026-10-01",
   "base_commit": "f69e6f7ea43909d76927f0a9fe0036aa6ce795e0",
+  "evidence_scope": "Historical first-repair evidence, delivered at 3277ab2f. The author later accepted these repairs; latest cave/site evidence and final hashes are in CAVE.json.",
   "author_report": {
     "ground": [
       17455,
@@ -11,7 +12,7 @@
       0
     ],
     "roof": "Prueba save looks at the gap between the top-storey doorway tympanum and roof front",
-    "accepted": "The author explicitly confirmed the rest of the tests passed. Only these two visual corrections remain pending under CA-4370-MANSION-01."
+    "accepted": "At this first follow-up the author confirmed the rest of the tests and left two repairs for recheck. Both were subsequently accepted on 2026-10-01; see author_recheck below."
   },
   "fixes": {
     "ground": "Partition the original 60000-MU-wide exterior into nine bounded native regions. Preserve its height, grass, light, horizon extent and blocking; alter only the original four horizon-line endpoints and four front-sector references. All other original map records remain unchanged.",
@@ -41,7 +42,7 @@
     },
     "visual": "Reported ground point, all eight exterior floor regions plus central exterior, and upper door from both sides closed/open",
     "package_without_fixture": "PASS; followup/followup_clean.txt",
-    "limits": "Native isolated setup and screenshots; visual rechecks await the author. Earlier ordinary-play tests are author-confirmed. No old-save compatibility claim.",
+    "limits": "Native isolated setup and screenshots; the two visual rechecks were pending at this historical snapshot and subsequently accepted. No old-save compatibility claim.",
     "fixture_notes": "The initial multi-line exterior tour did not preserve wait ordering; final chained per-view exec files do. The first 140-tic open-door capture occurred after native automatic closure; final roof views use 24 tics after Use. Preliminary local captures are not final visual evidence."
   },
   "reproduction": [
@@ -50,7 +51,7 @@
     "Use assets/validation_4370/run_issue61.ps1 -Package -Label <label> -Wait -Commands (Get-Content assets/validation_4370/followup/<label>.cfg -Raw) for followup_checks, followup_roof_views and followup_bounds_final. The local launcher requires a licensed engine/IWAD installation and build/gzdoom.ini.",
     "The saved camera is reproduced in Followup.zs on a fresh MAP01. No author save, IWAD, executable or personal config is packaged."
   ],
-  "author_recheck": "CA-4370-MANSION-01: the two corrected visual defects only, pending",
+  "author_recheck": "CA-4370-MANSION-01, including these two repairs, accepted by the author on 2026-10-01. This file preserves the 3277ab2f evidence; the later cave request and second ground site are recorded in CAVE.json.",
   "static": {
     "checks": 30,
     "errors": [],
