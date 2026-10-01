@@ -18,9 +18,12 @@ The author accepted the original checks and both subsequent floor/roof repairs.
 A later report at approximately (23268,23285,0) adds a small cave in a grassy
 mound: gentle descent, a short bent tunnel and five decorative gemstone rocks
 with no extraction or rewards. Exterior partitioning also covers the newly
-reported transparent ground. Only this cave/site remains for author acceptance
-in [pending_test.txt](pending_test.txt); evidence is in
-[the cave follow-up](assets/validation_4370/CAVE.json).
+reported transparent ground. The author accepted the cave and other checks,
+then reported an invisible boundary and dark area near (25630,29408,0).
+The repair relocates 69 detached auxiliary rooms beyond the playable horizon,
+preserving their architectural controls. Only this last repair remains in
+[pending_test.txt](pending_test.txt). Evidence: [cave](assets/validation_4370/CAVE.json)
+and [auxiliary-room repair](assets/validation_4370/CONTROLS.json).
 Deferred Tarot/Trucazo remains separate; the accepted 4.36.28 export is unchanged.
 
 Issue [#16](https://github.com/damiancurti/Caelum-Argenteum/issues/16) completes

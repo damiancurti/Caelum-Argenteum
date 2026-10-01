@@ -26,8 +26,13 @@ Documentation version: **4.37.0** — 2026-10-01.
   area. Add the selected small mound cave, gentle descent, short bent tunnel
   and decorative rocks of all five gems. Native roof, passage, damage/resource
   and expanded distant-ground views are covered by the cave evidence.
-- CA-4370-CAVE-01 is the only outstanding author check. The original tutorial
-  cave, gathering reserves and progression stay unchanged.
+- Author confirmed CA-4370-CAVE-01 on 2026-10-01; the original tutorial cave,
+  gathering reserves and progression stay unchanged.
+- Latest Prueba position (25630,29408,0): corrected invisible boundary/dark area
+  by relocating 69 detached auxiliary rooms outside the playable horizon while
+  preserving their control data. Static isolation and native surface, boundary,
+  traversal and door regressions are in assets/validation_4370/CONTROLS.json.
+  CA-4370-EXTERIOR-01 is the only outstanding author check.
 - Deferred Tarot/Trucazo remains separate final V4 scope before V5.
 
 ## Issue #17 — Verify and export the complete three-map test build (4.36.28)

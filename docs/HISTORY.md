@@ -106,8 +106,37 @@ Sixteen final views cover the cave and both ground reports, plus distant
 corners/edge midpoints. Thirty-nine static checks and byte-identical generation
 of eleven outputs pass. Evidence and limitations belong in
 assets/validation_4370/CAVE.json. Earlier
-reports remain historical snapshots. New author check CA-4370-CAVE-01 covers
-only the cave and surrounding ground; it remains pending.
+reports remain historical snapshots. At that delivery, CA-4370-CAVE-01 covered
+the cave and surrounding ground and awaited author acceptance.
+
+Later on 2026-10-01, the author confirmed the other tests passed and reported
+an invisible boundary leading into darkness at the new Prueba position
+(25630.19,29408,0). CA-4370-CAVE-01, originating 4.37.0 / #61 / PR #66, is
+ACCEPTED for the cave, traversal, decorative gems, roof and previously checked
+surrounding ground. The newly reported distant defect remains excluded from
+that acceptance and moves to CA-4370-EXTERIOR-01 in pending_test.txt.
+
+The fe506a3e package reproduces the black region and incorrectly selects detached
+control sector 539 at the reported point. An inventory found 63 original auxiliary
+rectangles wholly within the playable horizon and six intersecting or touching
+it. This same-patch repair translates their 276 vertices to an unused off-map
+grid. It preserves all original sector records, 3D-floor control actions/tags,
+architecture, actors and the unused auxiliary room. CONTROL_RELOCATION.json
+declares the list and coordinates; the generator remains deterministic.
+
+The final normal package passes 750 native point samples, 3,000 local moves,
+64 formerly occupied in-bounds room centres and a 1,090-tic actual-player round
+trip with gravity/collision enabled. All 840 paired mansion surface samples
+match the preceding package exactly; all 429 door regressions pass. The cave's
+1,152 floor samples, routes at three body sizes, decorative-gem damage checks,
+solid roof, Palomo, tutorial resources and dry/pool placement also pass. Palomo
+was still at waypoint 13 after 700 tics; the 1,400-tic observation confirms
+waypoint 15 at (500,120,264), with no gameplay change.
+Five boundary views show continuous grass; separate roof, entrance and pool views
+cover retained architecture. Forty-five static invariants, eleven deterministic
+outputs, project validation and clean package startup pass. Evidence and exact
+hashes: assets/validation_4370/CONTROLS.json. Native success is not author
+acceptance of CA-4370-EXTERIOR-01. Original saves remain unchanged; start fresh.
 
 ## 4.36.28 — Verify and export the complete three-map test build (#17)
 

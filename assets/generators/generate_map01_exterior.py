@@ -108,11 +108,13 @@ def generate():
     partition_exterior(obj,spec['exterior_partition'],report)
     from mansion_decorative_cave import add_cave
     add_cave(obj,json.loads((DATA/spec['cave']).read_text(encoding='utf-8')),report,ROOT)
+    from mansion_control_relocation import relocate_controls
+    report['control_relocations']=relocate_controls(obj,json.loads((DATA/spec['control_relocation']).read_text(encoding='utf-8')))
     write_map(obj,ROOT/'src/maps/MAP01.wad')
     report['counts']={k:len(v) for k,v in obj.items()}
     report['output_sha256']=hashlib.sha256((ROOT/'src/maps/MAP01.wad').read_bytes()).hexdigest()
     (DATA/'EXTERIOR_GENERATED.json').write_text(json.dumps(report,indent=2)+'\n',encoding='utf-8')
-    print(json.dumps({k:v for k,v in report.items() if k not in ('terrain_triangles','vegetation','tympana','cave')}))
+    print(json.dumps({k:v for k,v in report.items() if k not in ('terrain_triangles','vegetation','tympana','cave','control_relocations')}))
 
 
 def add_vegetation(obj,spec,report,in_base):

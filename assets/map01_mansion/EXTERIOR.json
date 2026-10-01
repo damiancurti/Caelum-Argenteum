@@ -12,6 +12,7 @@
     "inner_y": [-20480,-12288,12288,20480]
   },
   "cave": "CAVE.json",
+  "control_relocation": "CONTROL_RELOCATION.json",
   "terrain": {
     "sector": 0,
     "bounds": [-8192, -6144, 8192, 6144],

@@ -43,7 +43,15 @@ sapphire, emerald, topaz and opal vein models at half scale. They inherit no
 resource behavior and add no external material, sound or story. The generated
 report includes roof controls, cave sectors, placements and camera/route data.
 The follow-up divides the distant exterior into 25 regions; no new art is used.
-Only the new cave/site requires author acceptance (CA-4370-CAVE-01).
+The author accepted CA-4370-CAVE-01 on 2026-10-01.
+
+CONTROL_RELOCATION.json and mansion_control_relocation.py relocate 69 original
+detached auxiliary polygons that intersected or touched the playable horizon.
+Only their 276 vertex positions change, into an unused grid at (-8000,31000).
+Sector planes, heights, tags, lighting, materials and control actions remain
+byte-equivalent as parsed records; no visual asset is added. The independent
+validator checks isolation, non-overlap and preservation. CONTROLS.json records
+native evidence and the remaining author check CA-4370-EXTERIOR-01.
 
 ## 4.36.28 — Playtest resource packaging (#17)
 

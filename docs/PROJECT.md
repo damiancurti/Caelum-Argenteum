@@ -30,8 +30,14 @@ The next Prueba save identified another transparent-ground site near
 mound, gentle descent, a roughly 10–15-metre bent tunnel with a closed end, and
 decorative rocks of all five existing gems. This same landscape patch adds that
 native cave and refines the distant floor partition. No resources or progression
-are added. Only CA-4370-CAVE-01 remains pending. Use a fresh MAP01/new campaign.
-Next: cave/site acceptance, then deferred Tarot/Trucazo.
+are added. The author accepted CA-4370-CAVE-01 on 2026-10-01, reporting a separate
+invisible boundary and dark region near (25630,29408,0). Sixty-nine detached
+auxiliary rooms intersected or touched the playable exterior. Their polygons
+are now outside the horizon; all sector planes, actions and targets remain.
+Only CA-4370-EXTERIOR-01 remains pending. Native checks cover the repaired area,
+unchanged mansion surfaces and doors; evidence is in CONTROLS.json under the
+same validation directory. Use a fresh MAP01/new campaign.
+Next: exterior repair acceptance, then deferred Tarot/Trucazo.
 
 ## 4.36.28 — Reproducible three-map playtest export (#17)
 

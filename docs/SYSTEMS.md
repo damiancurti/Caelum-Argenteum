@@ -29,6 +29,11 @@ picked up or converted into rewards. The tunnel has a gentle native floor
 descent, one bend and a closed end; solid 3D floors provide its roof and the
 walkable mound above. No quest, enemy, loot or gathering quota is introduced.
 
+The later invisible-boundary repair relocates detached auxiliary model rooms
+outside the playable horizon. Only their polygon positions change; sector
+planes, control actions/tags and the mansion's physical floors remain intact.
+Paired native height samples and door regressions verify the retained behavior.
+
 The author explicitly waived old-save compatibility work for #61 on 2026-10-01.
 Start a fresh MAP01/new campaign; no old-MAP01 migration is claimed. The accepted
 baseline is preserved for recovery, and existing MAP02/MAP06 launcher options

@@ -4,10 +4,10 @@
   "release": "4.37.0",
   "date": "2026-10-01",
   "base_commit": "3277ab2f4a963f58522132e187b4f9caeba5ef15",
-  "author_accepted": "CA-4370-MANSION-01, including the preceding distant-ground and top-door roof repairs, confirmed 2026-10-01. The new cave/site has not yet been accepted.",
+  "author_accepted": "CA-4370-MANSION-01 and CA-4370-CAVE-01 confirmed 2026-10-01. The later invisible boundary near (25630,29408,0) is excluded and documented in CONTROLS.json.",
   "request": "At the latest Prueba transparent-ground position near (23268,23285,0), add a small mound cave with gentle descent, a short bent tunnel ending underground, and decorative rocks of all five existing gems; no resource yield.",
   "source": "assets/map01_mansion/CAVE.json; generation is integrated into generate_map01_exterior.py",
-  "pending": "CA-4370-CAVE-01: cave appearance/traversal, decorative-only gems and surrounding ground",
+  "pending": "Only the later auxiliary-room repair: CA-4370-EXTERIOR-01 (CONTROLS.json).",
   "limits": "Native isolated tests and visual captures are separate from author acceptance. Start fresh MAP01 under the author's existing old-save waiver. No original save is modified or packaged.",
   "native": {
     "engine": "GZDoom 4.14.2, Windows 11, Vulkan, RTX 3070 Ti, development Doom II IWAD, no autoload",
@@ -171,5 +171,6 @@
     "Run python assets/validation_4370/cave/issue61_cave_qa.py from the repository root. This creates an isolated fixture and two chained view tours; no author save is needed.",
     "With licensed engine/IWAD and local build/gzdoom.ini, use assets/validation_4370/run_issue61.ps1 -Package -Fixture build/issue61_cave_qa -Label cave_final_all -Wait -Commands (Get-Content assets/validation_4370/cave/cave_final_all.cfg -Raw). Repeat with cave_final_views and cave_final_far configurations. For cave_clean add -Clean.",
     "Run the retained issue61_cave_contacts.ps1 from the root after the view tours. Individual originals remain local in build, while labelled contacts and representative full-resolution views are retained here."
-  ]
+  ],
+  "evidence_scope": "Historical delivery evidence; source hashes and native results below retain their original scope. Latest auxiliary-room repair and final hashes: CONTROLS.json."
 }

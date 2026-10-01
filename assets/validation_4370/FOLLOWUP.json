@@ -4,7 +4,7 @@
   "release": "4.37.0",
   "date": "2026-10-01",
   "base_commit": "f69e6f7ea43909d76927f0a9fe0036aa6ce795e0",
-  "evidence_scope": "Historical first-repair evidence, delivered at 3277ab2f. The author later accepted these repairs; latest cave/site evidence and final hashes are in CAVE.json.",
+  "evidence_scope": "Historical delivery evidence; source hashes and native results below retain their original scope. Latest auxiliary-room repair and final hashes: CONTROLS.json.",
   "author_report": {
     "ground": [
       17455,

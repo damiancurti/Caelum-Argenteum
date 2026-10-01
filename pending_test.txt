@@ -1,6 +1,5 @@
-CA-4370-CAVE-01 | Origin: 4.37.0 / issue #61 / PR #66 | Northeast decorative cave and surrounding ground
+CA-4370-EXTERIOR-01 | Origin: 4.37.0 / issue #61 / PR #66 | Invisible boundary and dark region at latest Prueba position
 Prerequisites: GZDoom 4.14.2, current normal build, fresh MAP01/new game. Old-save work was waived by the author on 2026-10-01.
-1. Visit the latest Prueba location near (23268,23285,0), or approach from (22947,22979,0) facing northeast. Expect a cave mouth in a small grassy mound, visible ground around it and no transparent exterior patches.
-2. Walk down the gentle ramp, around the bend to the closed end, then back outside. Inspect the five gem rocks and try using/hitting them. Expect decorative ruby, sapphire, emerald, topaz and opal; no resource yield, inventory gain or mining interaction.
-3. Walk around and over the mound. Expect solid grass above the tunnel, no fall through its roof, visible rock walls/ceiling and acceptable appearance/performance.
-Expected: new cave/site accepted by the author. Original CA-4370-MANSION-01, including the earlier floor and upper-door roof repairs, was confirmed on 2026-10-01 and is recorded in HISTORY. Agent checks do not satisfy this new author test.
+1. Return to the reported position near (25630,29408,0), facing east-northeast (yaw 19.34 degrees). Expect visible grass rather than the dark region and isolated stone pillar.
+2. Walk east through (26300,29408), (27600,29500) and (28900,29500), then return. Inspect the ground and move sideways across the former boundary. Expect continuous visible terrain without an invisible wall or dark pocket. The original outer map limit at X/Y=+/-30000 remains blocking.
+Expected: author acceptance of this repair only. CA-4370-MANSION-01 and CA-4370-CAVE-01 were confirmed on 2026-10-01 and are recorded in HISTORY. Native checks do not satisfy this author test.

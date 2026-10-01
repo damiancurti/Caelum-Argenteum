@@ -4,6 +4,37 @@ Status: integrated engineering register (issue #22, patch 4.36.1b).
 Prepared: 2026-09-23. Inherits the project's release after integration.
 Inspected baseline: `1dc390576fa330d37ff543526fc7e69a397fc28f` (PR #7).
 
+## CA-KP-026 — Detached control rooms must remain outside playable geometry
+
+Status/evidence: AUTHOR-REPORTED / CODE-VERIFIED / ENGINE-VERIFIED, #61 / PR #66.
+First recorded / last checked: 2026-10-01 / 2026-10-01.
+Affected baseline: fe506a3e; fix: the subsequent control-relocation change in
+PR #66, with exact source hashes in assets/validation_4370/CONTROLS.json.
+Environment: GZDoom 4.14.2, Windows 11, Vulkan, development Doom II IWAD,
+fresh MAP01, no autoload, isolated test fixture.
+
+At (25630.19,29408,0), facing yaw 19.34, the engine selected auxiliary sector
+539 and rendered black space with an isolated stone pillar. The author also
+reported an invisible boundary. Sixty-nine detached original auxiliary polygons
+intersected or touched the playable horizon; 63 were wholly inside it. Their
+one-sided untextured walls do not form valid exterior holes with shared sides.
+Checking only the outer boundary and sector references missed this topology.
+
+CONTROL_RELOCATION.json identifies those polygons. mansion_control_relocation.py
+translates only their vertices into an unused off-map grid, preserving control
+lines and complete sector records. For models with explicit world-space planes,
+preserve the plane coefficients; moving their coordinates alone must not shift
+the target floor. The independent validator checks every 3D-floor model's bounds,
+non-overlap and preserved data. Native before/after height samples catch effects
+that an offline parser cannot establish.
+
+Evidence: [control repair](../assets/validation_4370/CONTROLS.json), matched
+reported views, 750 region samples/3,000 moves, 64 former room centres, actual
+player traversal, 840 identical mansion surface samples and 429 door checks.
+The black region is absent in the final views. This does not establish the
+cause of the earlier oversized-floor defect in CA-KP-024 or cover every camera.
+Author acceptance of this repair remains pending as CA-4370-EXTERIOR-01.
+
 ## CA-KP-025 — Normalize all four coefficients of generated UDMF planes
 
 Status/evidence: CODE-VERIFIED / ENGINE-VERIFIED, #61 / PR #66 / 4.37.0.
@@ -27,7 +58,7 @@ the already accepted mansion relief; the new cave generator is its scope.
 
 Evidence: assets/validation_4370/CAVE.json and its retained diagnostic/final
 logs. Original reports and failed local trials remain available separately.
-New cave author acceptance CA-4370-CAVE-01 is pending.
+New cave author acceptance CA-4370-CAVE-01 was confirmed on 2026-10-01.
 
 ## CA-KP-024 — A valid oversized floor can disappear in the renderer
 
@@ -59,7 +90,8 @@ a guarantee that the complete oversized exterior renders correctly.
 
 Evidence and exact geometry: assets/validation_4370/FOLLOWUP.json, CAVE.json and
 assets/map01_mansion/EXTERIOR.json. Original CA-4370-MANSION-01 is author-accepted;
-the new cave/site check CA-4370-CAVE-01 remains pending.
+CA-4370-CAVE-01 was subsequently accepted on 2026-10-01. The later distinct
+auxiliary-room defect and its pending repair are covered by CA-KP-026.
 
 ## CA-KP-023 — OBJ height and map headroom use different vertical scales
 

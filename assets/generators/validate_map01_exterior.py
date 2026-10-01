@@ -17,14 +17,19 @@ def main():
     checks={}
     checks['preserved baseline hash']=hashlib.sha256((DATA/spec['baseline']).read_bytes()).hexdigest()==spec['baseline_sha256']
     checks['current map hash']=hashlib.sha256((ROOT/'src/maps/MAP01.wad').read_bytes()).hexdigest()==report['output_sha256']
+    relocation=json.loads((DATA/spec['control_relocation']).read_text())
+    auxiliary_vertices={l[k] for l in baseline['linedef'] if baseline['sidedef'][l['sidefront']]['sector'] in relocation['sectors'] for k in ('v1','v2')}
     for kind in baseline:
         exceptions=set(spec['exterior_partition']['horizon_lines']) if kind in ('linedef','sidedef') else set()
-        checks[f'original {kind} records unchanged outside declared horizon repair']=all(
+        if kind=='vertex':exceptions=auxiliary_vertices
+        checks[f'original {kind} records unchanged outside declared horizon/control repairs']=all(
             obj[kind][i]==item for i,item in enumerate(baseline[kind]) if i not in exceptions)
     checks['horizon changes only endpoints and front-sector references']=all(
         {k:val for k,val in obj['linedef'][i].items() if k!='v2'}=={k:val for k,val in baseline['linedef'][i].items() if k!='v2'}
         and {k:val for k,val in obj['sidedef'][i].items() if k!='sector'}=={k:val for k,val in baseline['sidedef'][i].items() if k!='sector'}
         for i in spec['exterior_partition']['horizon_lines'])
+    from validate_mansion_controls import control_checks
+    checks.update(control_checks(obj,baseline,relocation,report))
     v,lines,sides,sectors=(obj[k] for k in ('vertex','linedef','sidedef','sector'))
     checks['all references valid']=all(0<=line[k]<len(v) for line in lines for k in ('v1','v2')) and all(0<=line[k]<len(sides) for line in lines for k in ('sidefront','sideback') if line.get(k,-1)>=0) and all(0<=s['sector']<len(sectors) for s in sides)
     checks['no zero length lines']=all(v[l['v1']]!=v[l['v2']] for l in lines)
