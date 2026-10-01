@@ -1,6 +1,26 @@
 # Caelum Argenteum — Audio and art
 
-Documentation version: **4.36.27** — 2026-09-30.
+Documentation version: **4.36.28** — 2026-10-01.
+
+## 4.36.28 — Playtest resource packaging (#17)
+
+The export preserves committed src bytes and all existing attribution notices.
+assets/playtest/EXPORT.json reviews the runtime map allowlist; build_playtest.py
+adds no visual/audio replacements. The ZIP contains no engine, IWAD, raw stock,
+source archive or development test fixture. licenses/ is available both inside
+the PK3 and beside it. Root LICENSE.md retains the project's reserved rights.
+
+2026-10-01 author report: marjaja197 is a different person who authorized the
+author to use The Argentine Omen in the project. This is author-reported
+permission, not a CC0 grant or an assertion that Damián owns the track.
+The author also confirmed that PhatPhrogStudio #503867 and 53439420 #451598 were
+downloaded under the Pixabay Content License and authorized their inclusion
+integrated into this playtest under that license. Source URLs and creator names
+remain in AUDIO_ISSUE_31_CREDITS.md. This is author-confirmed provenance; an
+independent automated query of the official page was blocked by its website.
+Existing cannon overall dimensions remain historically unverified and the
+sleeping-bag icon reuses fabric artwork. The current-content export does not
+claim to resolve those inherited limitations or certify every visual.
 
 ## 4.36.27 — Port battlefield and reused defenders (#16)
 

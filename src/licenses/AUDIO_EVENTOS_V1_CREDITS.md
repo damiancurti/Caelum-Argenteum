@@ -26,6 +26,9 @@ metadata, not a new assertion or grant of licensing rights.
 
 This music was already supplied for Caelum Argenteum. Its existing provenance
 and rights remain applicable. It is **not** relicensed as CC0 by this package.
+On 2026-10-01, Damián Curti confirmed that marjaja197 is a different person
+who authorized him to use this music in the project. This records the author's
+permission report; it does not relicense the music or claim ownership.
 The excerpt uses 00:30.358146–00:33.667042 of the mixed track; no guitar stem was isolated.
 The full MAP01 track is unchanged. Its source checksum is retained in the edit
 manifest to identify the exact input.

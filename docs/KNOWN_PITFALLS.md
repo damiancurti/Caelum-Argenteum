@@ -136,6 +136,16 @@ index is regenerated from LF sources. An isolated core.autocrlf=true checkout
 matches the source hashes; static validation passes. Keep exact-byte freshness
 checks and UTF-8 sources. This is tooling evidence, not gameplay acceptance.
 
+2026-10-01 extension, #17 / 4.36.28: `git archive` at `9323b156` also applied
+checkout conversions to runtime text under `core.autocrlf=true`; independently
+comparing exported ANIMDEFS to its Git blob detected the mismatch. Repeated
+exports on one machine alone did not catch it. RESOLVED-VERIFIED at `fa6fb9bb`:
+`build_playtest.py:committed_files` reads `git cat-file --batch` blobs instead.
+`assets/validation_43628/verify_export.py` verifies all 6,129 blob identities,
+archive metadata and hashes; two subsequent archives matched byte for byte.
+See [4.36.28 evidence](../assets/validation_43628/RESULTS.json). This is static
+packaging evidence; export author acceptance remains pending.
+
 ## CA-KP-016 — Register dynamically selected Arcana front sprites
 
 Status/evidence: AUTHOR-REPORTED / ENGINE-VERIFIED correction.

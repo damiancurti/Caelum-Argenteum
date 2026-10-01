@@ -1,6 +1,81 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **4.36.27** — 2026-09-30.
+Documentation version: **4.36.28** — 2026-10-01.
+
+## 4.36.28 — Verify and export the complete three-map test build (#17)
+
+2026-10-01: implementation starts from merged 4.36.27, commit
+0a584960eaeecfac31db82adadb7426347c50964. The author explicitly selected
+"Exportar contenido actual; postergar 4.37", replacing the former Tarot/Trucazo
+gate for this playtest only. No gameplay, balance, geometry or saved fields change;
+the required diagnostic release labels advance to 4.36.28.
+
+Implemented a commit-addressed exporter with fixed ZIP metadata, committed file
+bytes, SHA-256 inventory/checksums, portable launchers with isolated configuration
+and saves, and installation/controls/route/issue-report instructions derived from
+README. All existing runtime map references remain; diagnostics stay outside
+the prescribed campaign route. Engines, IWADs, local QA and source stock are absent.
+The package keeps the established PK3 filename for save identity; older rebuilt
+MAP02/MAP06 campaigns still require their documented legacy development builds.
+
+The initial static check found stale document-index hashes at the clean baseline;
+maintained docs were written as UTF-8/LF and the index regenerated. No source
+resources were regenerated. Native and reproducibility results are recorded in
+assets/validation_43628/RESULTS.json, separately from accepted #8–#16/#18–#21
+component evidence. Static validation and the normal build pass. The independent
+verifier confirms all 6,129 committed runtime blobs and complete checksum coverage;
+two exports match byte for byte. GZDoom g4.14.2, Vulkan and OpenAL load/save/reload
+MAP01/MAP02/MAP03/MAP06 from a fresh extraction without detected resource errors.
+The engine also auto-loaded installed id24res.wad; delivery instructions now
+disclose that observed dependency. No engine/IWAD resources enter the ZIP.
+CADEV02 and ancillary map references remain intact outside the prescribed route.
+CA-43628-EXPORT-01 initially remained pending for the ordinary-player route;
+earlier #16 acceptance did not automatically pass it. The explicit author
+acceptance below closes that gate; external publication remains separate.
+
+The author reported permission from marjaja197 to use The Argentine Omen;
+credits remain intact. He also confirmed the two Pixabay pain assets' license
+and inclusion in the playtest; ASSETS records the scope of those confirmations.
+Batch Usage is incomplete: baseline 75% weekly allowance remaining, author
+reported 2026-09-23, reset unknown; final allowance and per-stage token counters
+are not yet available. Work planning/review and desktop implementation cannot
+be aggregated into measured savings. Final allowance/reset information was
+requested at author acceptance; unavailable counters and concurrent activity
+remain unmeasured. The available disjoint desktop intervals retain their scope.
+
+2026-10-01 author follow-up: the exported launcher reported that GZDoom was
+missing even though gzdoom.exe and DOOM2.WAD were beside the package. The old
+launcher always prompted for paths and checked relative entries against the
+calling directory; it did not detect adjacent dependencies. The same 4.36.28
+patch now detects both files beside the launcher, resolves relative paths there,
+accepts enclosing folders and quoted/whitespace-padded paths, reports the attempted
+missing path and runs the engine from the package directory. Six process-level
+launcher checks pass using a disposable executable probe, including another
+working directory, paths with spaces, failures and exit-code propagation.
+The installed PK3 matches the previously engine-tested hash. Gameplay and saves
+are untouched; the ZIP and installed launcher metadata are refreshed together.
+The reported installation failure initially kept CA-43628-EXPORT-01 pending.
+
+2026-10-01 author acceptance (America/Buenos_Aires): Damián Curti explicitly
+confirmed "Todas las pruebas dieron correcto" and requested issue closure and
+PR merge. CA-43628-EXPORT-01, originating in 4.36.28 / issue #17, is therefore
+PASSED, including the corrected portable installation and ordinary three-map
+campaign via MAP03, keys/quests/cards/resources, repair/rest, prisoner outcomes,
+cross-map saves and absence of duplicate rewards. No exceptions, failed or
+partial results were reported. Existing documented limits (including unverified
+full multiplayer and deferred 4.37) remain; this is author-reported acceptance,
+not new automated gameplay evidence or a measured FPS benchmark.
+The accepted delivery is the corrected ZIP from commit 8415f225; exact ZIP/PK3
+checksums remain in assets/validation_43628/RESULTS.json. Its bytes are preserved.
+The confirmed entry is removed from pending_test.txt, leaving the tracked file
+empty. PR #60 merge and #17 closure are authorized; version remains 4.36.28.
+The author also explicitly discontinued further weekly-consumption measurement:
+"Ya no es necesario medir eso, no son necesarias más pruebas de medir el consumo
+semanal." No additional weekly-quota tests or final allowance collection are
+required. Preserve prior measured intervals and the 75% baseline as historical
+evidence; missing token/reset/concurrency data remain unmeasured without estimates.
+No GitHub Release/tag publication is requested. This acceptance-only update
+requires static/index/diff validation, without repeating unchanged engine tests.
 
 ## 4.36.27 — Complete third campaign map (#16)
 
