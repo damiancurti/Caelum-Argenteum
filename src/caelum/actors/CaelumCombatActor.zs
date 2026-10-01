@@ -486,6 +486,7 @@ class CaelumCombatActor : Actor
     {
         CaelumCombatActor combatActor = CaelumCombatActor(self);
         if (combatActor == null) { return; }
+        if (CaelumPortSiege.Pulse(combatActor)) return;
 
         // El primer miembro que ve al jugador publica el objetivo. Los demás
         // pueden pasar a See mediante una lectura O(1), sin ejecutar otra
@@ -522,6 +523,7 @@ class CaelumCombatActor : Actor
     {
         CaelumCombatActor combatActor = CaelumCombatActor(self);
         if (combatActor == null) { return; }
+        if (CaelumPortSiege.Pulse(combatActor)) return;
 
         // La prueba de escuadras separa decisión y combate de la consulta
         // espacial nativa. Sólo los líderes entran en A_Chase/TryMove; los
@@ -855,7 +857,7 @@ class CaelumCombatActor : Actor
     int WeaponCyclePreparationTics;
     int WeaponCycleStartTic, WeaponCycleWindFrame;
 
-    double GetAttackCarriedWeight()
+    virtual double GetAttackCarriedWeight()
     {
         double weight = CombatArmor == null ? 0 : CombatArmor.GetTotalWeight();
         for (Inventory cursor=Inv; cursor!=null; cursor=cursor.Inv)

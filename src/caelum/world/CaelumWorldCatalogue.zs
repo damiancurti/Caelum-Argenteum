@@ -136,6 +136,7 @@ class CaelumWorldCatalogue : Object
     {
         return id >= CONNECTION_TO_RESERVOIR && id < CONNECTION_DEFINED_COUNT
             && id != CONNECTION_FROM_RESERVOIR && id != CONNECTION_TO_TAROT
-            && id != CONNECTION_TO_MAINTENANCE && id != CONNECTION_MAZE_TO_COAST;
+            && id != CONNECTION_TO_MAINTENANCE && id != CONNECTION_MAZE_TO_COAST
+            && id != CONNECTION_TO_COAST && id != CONNECTION_FROM_PORT;
     }
 }

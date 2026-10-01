@@ -1,0 +1,26 @@
+CA-43627-PORT-01 | Origin: 4.36.27 / issue #16 | Ordinary campaign and port battle
+Prerequisites: fresh campaign or a save that has never visited MAP06; normal
+4.36.27 build, GZDoom 4.14.2. Keep the original save/package.
+Steps: follow MAP01/Fool -> MAP02/Ace -> MAP03 -> MAP06 without diagnostic map
+commands. At the port inspect the six gate lanes, defenders and cannon platforms;
+fight the siege, lower Zupay to half health and neutralize all attacking machines.
+Capture the Knight with the Box, collect any owed prisoner rewards and Use the
+completion sign. Try rest/repair resources before and after the battle.
+Expected: 100 Domingo-appearance soldiers defend gates/operate guns with the
+specified sword, kite shield and medium armor; automatic unlimited cannons prefer
+enemy operators and take 10 seconds with two crew/20 with one. Zupay runs to the
+exit; both objectives are required. Survivors withdraw physically; the distinct
+Knight is captured once, rewards remain correct, and the endpoint acknowledges
+the playtest ending without a diagnostic-map transition. Report visual, combat,
+navigation or responsiveness problems; agent probes do not establish acceptance.
+
+CA-43627-SAVE-01 | Origin: 4.36.27 / issue #16 | Author save continuity
+Prerequisites: copies of port saves; retain originals and their original build.
+Steps: on current MAP06 save/load during combat, during Zupay's flight and after
+victory/card/payment. Continue each. For a campaign that already visited old
+MAP06, launch with --legacy-map06 (plus --legacy-map02 when needed), load a copy,
+save it separately, reload; then verify the untouched original with its old build.
+Expected: no duplicated army, machine reactivation, early victory, repeated card
+or reward. Flight/withdrawal continue. The legacy option retains the former map
+and progress rather than placing a new siege into visited geometry. Rollback uses
+the untouched original save/package.

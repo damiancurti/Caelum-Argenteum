@@ -1,0 +1,73 @@
+{
+    "issue":  16,
+    "status":  "in progress; not a release or completed port",
+    "planned_version":  "4.36.27",
+    "baseline":  "918775e3",
+    "engine":  "GZDoom g4.14.2",
+    "platform":  "Windows; Vulkan; RTX 3070 Ti; Ryzen 9 5950X",
+    "scope":  "Isolated commander retreat and objective state. MAP06 commander is not deployed.",
+    "checks":  [
+                   {
+                       "log":  "issue16_retreat_final.log",
+                       "name":  "Commander first",
+                       "checks":  20,
+                       "failures":  0
+                   },
+                   {
+                       "log":  "issue16_package_persistence.log",
+                       "name":  "Machines first and mid/post retreat reload in normal PK3",
+                       "checks":  23,
+                       "failures":  0
+                   },
+                   {
+                       "log":  "issue16_sewer_regression.log",
+                       "name":  "MAP02 existing boss, Ace capture and exit regression",
+                       "checks":  21,
+                       "failures":  0
+                   }
+               ],
+    "static_validation":  "python validate_project.py: zero errors; 2499 context words",
+    "build":  "build_dev.ps1: 6127 files",
+    "remaining":  [
+                      "Cannon ammunition and control/targeting author decisions",
+                      "MAP06 deployment and all other issue acceptance gates",
+                      "Old-save engine migration test for the new defeat schema",
+                      "Full concurrent 1001-creature and 24-machine native stress run",
+                      "Author acceptance"
+                  ],
+    "usage":  {
+                  "reset_time":  null,
+                  "work_tokens":  null,
+                  "note":  "No measured usage data exposed; no estimates from allowance or diff.",
+                  "desktop_tokens":  null,
+                  "model":  "Current session model; no delegation",
+                  "allowance_remaining":  null,
+                  "initial_20260923_allowance_percent":  75
+              },
+    "hashes":  [
+                   {
+                       "sha256":  "4dab08b13de5cfa1ad1d262bf8915cb86955181b382b236e898ecb9f038d6836",
+                       "path":  "src/caelum/actors/CaelumFolkloreCharacters.zs"
+                   },
+                   {
+                       "sha256":  "92f5ff28d217f7cd05b804abd7ef8f0e4e371c16707228507e604eed1bcbdcf9",
+                       "path":  "src/caelum/world/CaelumSiegeEncounter.zs"
+                   },
+                   {
+                       "sha256":  "6cb248068b0e11823734832ad1c62ae8cd37c9cc67e3663546d14ae8c66b2154",
+                       "path":  "src/caelum/world/CaelumPortSiege.zs"
+                   },
+                   {
+                       "sha256":  "70f7301c057c156a562d5eb8984c0de0b9112d3d3a64189c0c58cdf74c26b901",
+                       "path":  "src/caelum/quests/CaelumDemoNarrative.zs"
+                   },
+                   {
+                       "sha256":  "b3492676486ecee8bee9d722032c37a0d663bfa90c6c08af5db7df7b80f4e199",
+                       "path":  "src/ZSCRIPT"
+                   },
+                   {
+                       "sha256":  "11f6c7f152dbd7e052b6b7f637c264bc4cf94a3923c0f2f8bb3d61f84e1a9c4d",
+                       "path":  "build/caelum_argenteum_dev.pk3"
+                   }
+               ]
+}

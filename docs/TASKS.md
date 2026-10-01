@@ -1,6 +1,22 @@
 # TASKS.md — Active tasks
 
-Documentation version: **4.36.26** — 2026-09-30.
+Documentation version: **4.36.27** — 2026-09-30.
+
+## Issue #16 — Complete port siege (4.36.27)
+
+- Implemented on `issue-16-port-siege`: full concurrent deployment, connected
+  command groups, machine crews/gates, automatic unlimited cannons, 10/20-second
+  reload, 100 equipped Domingo-appearance soldiers and half-health Zupay retreat.
+- Victory requires twelve neutralized attacking machines plus commander defeat;
+  surviving attackers physically retreat. Knight capture, prisoner rewards,
+  calendar state and the explicit port endpoint use the existing shared systems.
+- Native checks cover both objective orders, current save/load, original-save
+  migration and rollback, exact reload times, targeting, reward/capture and the
+  full 1,001-attacker/100-defender/24-machine scene. See assets/validation_43627.
+- Author acceptance remains pending: CA-43627-PORT-01 and CA-43627-SAVE-01.
+  An isolated probe or a PR does not certify a complete ordinary campaign run.
+- Next: author review/playtest, then the separate #17 export gate and remaining
+  4.37 prerequisites. No playtest ZIP or final independent distribution is claimed.
 
 ## Issue #37 — Attack cadence, durability and thrusts (4.36.26)
 

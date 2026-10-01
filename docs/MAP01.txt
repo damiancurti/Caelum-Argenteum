@@ -1,6 +1,28 @@
 CAELUM ARGENTEUM — STORY AND MAP01
 
-Documentation version: **4.36.26** — 2026-09-30.
+Documentation version: **4.36.27** — 2026-09-30.
+
+## 4.36.27 — Port campaign endpoint (#16)
+
+The playable route remains MAP01 mansion/El loco -> MAP02 sewer/Ace of Cups ->
+MAP03 workshop -> MAP06 port/Knight of Wands. The port keeps the arrival area,
+buildings, docks and rescued-prisoner positions and extends north into six gate
+lanes, twelve raised defensive cannon platforms with stairs and an open siege
+field. The distinct commander and surviving army use physical northern exits.
+The canonical geometry/placement source is assets/map06_port/LAYOUT.json.
+
+The player's objectives are the twelve attacking machines and commander defeat;
+the Zupay flees at half health like the sewer boss. After victory, capture the
+Knight through the owned Box and Use the port completion sign. It acknowledges
+the playtest endpoint and starts the reserved end music without sending the
+player into diagnostic maps. Existing food/water and prisoner payments remain;
+the port also has a bed and workbench using existing rules. Siege activity
+interrupts unsafe time advancement without introducing a timed failure.
+
+New/unvisited MAP06 uses this layout. Previously visited MAP06 needs the exact
+preserved geometry selected with --legacy-map06, independently combinable with
+--legacy-map02. Native integration is verified; a full normal campaign traversal
+and the author's acceptance remain pending (pending_test.txt).
 
 ## 4.36.26 — Combat controls preserved (#37)
 

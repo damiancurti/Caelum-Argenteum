@@ -1,6 +1,64 @@
 # Caelum Argenteum — Current systems and rules
 
-Documentation version: **4.36.26** — 2026-09-30.
+Documentation version: **4.36.27** — 2026-09-30.
+
+## 4.36.27 — Complete port siege (#16)
+
+MAP06 deploys 1,000 Mandingas and one distinct commanding Zupay concurrently,
+five small rams (six operators each), one large ram (32), six attacking cannons
+and twelve defending cannons. The 74 attacking operators belong to the same
+1,000-Mandinga roster; they are not extra enemies. One hundred friendly soldiers
+reuse Domingo's appearance: all twelve attributes 18, height 1.8 m, body mass
+80 kg, existing campaign T1 sword, kite shield and medium armor. Twenty-four
+operate the defensive guns; the remaining 76 defend the ram gates. Their
+equipment uses the shared damage, defense, resource, timing and wear models.
+
+Author decisions of 2026-09-30 supersede the former cannon cycle: both sides
+fire automatically with unlimited ammunition and prefer eligible visible enemy
+siege operators, then other enemies. Two operators complete a cycle in 10 seconds
+(350 native tics), one in 20; zero stops progress. Aim is selected when loaded,
+with native-gravity elevation compensation. Accepted 500 m/s projectiles and
+physical impacts remain. Saved revision 0 work migrates proportionally from
+the old 1,050-tic cycle to 350 once. The scenario explicitly enables unlimited
+ammunition; old finite-ammunition actors retain their stored rounds and mode.
+
+Connected compatible attackers share command across species. Zupay priority is
+1 and every Mandinga priority is 2; saved roster identity breaks equal-priority
+ties. Local links use sight and the layout's 1,024-MU radius; groups are rebuilt
+every 35 tics or upon a confirmed death. Split groups elect their own leader
+and reconnect deterministically. Operators follow their moving machine posts;
+availability controls operation separately from death-backed neutralization.
+
+The port Zupay flees at 50% maximum health, at triple base speed, using the
+accepted sewer movement states. Starting flight is not defeat: it must reach
+the final authored exit with sight and compatible floor height. Death also
+counts; escape does not award a kill or write the sewer/Ace flag. Victory
+requires this defeat AND all twelve attacking machines neutralized, in either
+order. Each machine remembers its local guards; temporary absence is not death.
+An escaped commander no longer blocks remembered guard clearance. Neutralization
+is permanent and cancels further operation without deleting released shots.
+
+Victory occurs once, enables the distinct Knight of Wands through shared Box
+capture, ends the calendar siege and orders living attackers to withdraw.
+Survivors navigate to actual northern exits and are removed only upon arrival,
+without awarding kills. Gate passages open for the withdrawal. Zero, some or
+all rescued prisoners remain valid outcomes; existing 25-gold/+10-own-faction
+payments stay independent and once-only. Use the marked port endpoint after
+capturing the Knight to acknowledge the playtest ending and its reserved music.
+There is no automatic diagnostic-map exit or arbitrary time-limit failure.
+
+Deployment revision 1, command identity, crews, guard memory, retreat, victory,
+card and reward state persist. Additive defeat revision 1 never infers escape
+from a missing actor. Saves that already visited the former MAP06 require
+`run_dev.bat --legacy-map06` (or `build_dev.ps1 -LegacyMap06`) for the exact old
+geometry; this continues that map, not the new siege. Combine with
+`--legacy-map02` when needed. Keep the original save and package for rollback.
+Old owned cards remain owned; the provisional reward-only Knight rule applies
+only to the preserved old port. Fresh/unvisited MAP06 uses the new deployment.
+
+Native integration, both objective orders, persistence, reward/capture and
+concurrent population evidence are in assets/validation_43627. Full ordinary
+campaign play and visual/balance acceptance remain author checks in pending_test.txt.
 
 ## 4.36.26 — Shared attack clock and durability (#37)
 
@@ -403,8 +461,8 @@ delivered. Zero extracted survivors permits immediate appearance on arrival;
 dead or unrescued prisoners do not block it. The existing transaction's
 PrisonerRewardClaimed flag is the authority: dialogue entry/exit, partial
 claims and a failed capacity check do not count as delivery. The existing
-25 gold and +10 own-faction reputation rewards remain once-only. **This is
-the provisional pre-siege condition; #16/#17 will define its replacement.**
+25 gold and +10 own-faction reputation rewards remain once-only. **Historical pre-siege condition: 4.36.27 replaces it with siege victory
+in current MAP06; preserved legacy MAP06 retains this rule.**
 
 All three cards share the original Fool's Use/Box identity checks, native
 confirmation dialogue, 35-tic image-to-player animation, cancellation and
@@ -509,7 +567,8 @@ and implemented in 4.36.19 above.
 ## 4.36.17 — Controlled cannon fire (#21; planned label 4.36.13)
 
 Historical delivery baseline: speed, attributes and impact mitigation below
-are superseded by the 4.36.19 balance above; other mechanics remain current.
+are superseded by 4.36.19; the 30/60-second cycle and scenario targeting
+are superseded by 4.36.27 above. Other shared mechanics remain current.
 
 The author confirmed an approximate documented reconstruction, an inert
 elongated 75 mm /185 mm /4.3 kg round, two operators (load/fire), and a 30-second
@@ -695,7 +754,8 @@ neutralization without polling health or treating missing actors as deaths.
 ## 4.36.15 — Breakable actor gates (#19; planned label 4.36.11)
 
 Historical delivery baseline: speed, attributes and impact mitigation below
-are superseded by the 4.36.19 balance above; other mechanics remain current.
+are superseded by 4.36.19; the 30/60-second cycle and scenario targeting
+are superseded by 4.36.27 above. Other shared mechanics remain current.
 
 The author's 2026-09-26 clarification defines the issue's 0.3/0.5/0.7 as
 ordinary weapon damage reductions of 30%/50%/70%. Invert the existing Type 4

@@ -1,0 +1,46 @@
+Issue #16 / 4.36.27 native evidence
+
+Archived log copies trim trailing whitespace only; original local engine logs
+remain in build/. Messages, counters and failures are retained.
+
+Build the repository using build_dev.ps1. Use the author's GZDoom 4.14.2 and
+development IWAD, -noautoload -nosound -window, 1280x720. No executable, IWAD,
+PK3, saved game or test fixture is distributed with this evidence.
+
+Full-population probe: start fresh MAP06, initialize the normal direct-map test
+profile, make only the player invulnerable and move to (-2880,5376,0). Do not
+kill, freeze or stage the army in waves. Record roster/alive/crew/machine counts
+every 175 native tics for 2100 tics, as well as each gun's shot/contact counters,
+ram strikes, neutralization and group leadership. Sample log arrival from the
+host approximately once per second; compare elapsed tics against host time.
+Save the active battle and reload, checking roster/machine identity and counts.
+
+Objective probes: directly damage remembered local guards to isolate machine
+neutralization, without treating the rest of the army as objective kills. Lower
+the real commander to half maximum health; wait for its actual native escape.
+Repeat in the inverse order. Check victory count, independent sewer flag, card
+availability, calendar phase and attack-free survivor movement. These probes are
+not a normal combat playthrough. Place one survivor just outside its exit radius
+to verify native boundary arrival removes it without a death or kill award.
+
+Card/rewards: on a saved actual victory, set separate zero/one/four extracted
+prisoner cases; invoke the existing payment transaction and repeat it. Reveal
+the Knight, start the shared owned-Box capture, advance its native animation,
+check stable card ID 60 and repeat rejection, save/reload and recheck payment.
+
+Reload cycles: assign two unique friendly operators at accepted posts. Assert
+not-loaded at tic 349 and loaded at 350; remove one friendly operator and assert
+699/700. Zero operators must stop work without neutralizing. Unlimited mode
+must fire with zero stored rounds. Neutralization must stop the next shot while
+preserving the existing projectile. Finite mode remains independently selected.
+
+Legacy: baseline 918775e3 package, original MAP06; save a cannon partway through
+its old cycle (525/1050, finite ammunition 7) and an old encounter. Load a copy
+with current code and build_dev.ps1 -LegacyMap06. Verify work 175/350, rounds,
+no fabricated defeat, repeat update and migrated-save reload. Reopen the untouched
+original using its original package and verify the original values. Current-map
+flight and victory saves are tested separately. Do not load visited old MAP06
+geometry into the new-map package.
+
+Acceptance: pending_test.txt contains the ordinary campaign, visual/combat and
+author-save checks. Native probe PASS is not author acceptance.

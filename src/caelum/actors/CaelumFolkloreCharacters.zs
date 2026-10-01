@@ -556,7 +556,22 @@ class CaelumZupayColossus : CaelumFolkloreCombatActor
     bool SewerFleeing;
     Actor SewerEscapeTarget;
 
-    bool IsSewerBoss() { return level.MapName == "MAP02" && tid == 43799; }
+    virtual bool IsSewerBoss() { return level.MapName == "MAP02" && tid == 43799; }
+
+    virtual bool IsRetreatBoss() { return IsSewerBoss(); }
+    virtual vector3 EscapePosition()
+    {
+        return CaelumSewerTravel.GatePosition(CaelumWorldCatalogue.CONNECTION_TO_RESERVOIR);
+    }
+    virtual bool ReachedEscape()
+    {
+        CaelumArcanaProgress.ConfirmSewerDefeat();
+        return true;
+    }
+    virtual double EscapeReach()
+    {
+        return Radius + GetDefaultByType("CaelumSewerTravelGate").Radius + Speed;
+    }
 
     override void Die(Actor source, Actor inflictor, int dmgflags, Name meansOfDeath)
     {
@@ -568,24 +583,23 @@ class CaelumZupayColossus : CaelumFolkloreCombatActor
 
     override void Tick()
     {
-        if (IsSewerBoss() && health > 0 && CombatMaximumHealth > 0
+        if (IsRetreatBoss() && health > 0 && CombatMaximumHealth > 0
             && double(health) / CombatMaximumHealth <= CaelumConstants.HEALTH_WOUNDED_THRESHOLD)
             SewerFleeing = true;
-        if (SewerFleeing && IsSewerBoss() && health > 0)
+        if (SewerFleeing && IsRetreatBoss() && health > 0)
         {
-            Vector3 exitPos = CaelumSewerTravel.GatePosition(CaelumWorldCatalogue.CONNECTION_TO_RESERVOIR);
+            Vector3 exitPos = EscapePosition();
             if (SewerEscapeTarget == null)
                 SewerEscapeTarget = Spawn("CaelumSewerEscapeTarget", exitPos, NO_REPLACE);
+            else SewerEscapeTarget.SetOrigin(exitPos, false);
             target = SewerEscapeTarget; LastEnemy = null;
             Speed = CombatBaseSpeed * CaelumConstants.SEWER_ZUPAY_FLEE_SPEED_MULTIPLIER;
             Vector2 delta = exitPos.XY - Pos.XY;
-            double reach = Radius + GetDefaultByType("CaelumSewerTravelGate").Radius;
             // A_Chase avanza por pasos y la puerta colisiona en XY. Llegar a
             // un paso del contacto evita exigir penetrar su volumen sólido.
-            if (delta.Length() <= reach + Speed && Abs(Pos.Z - exitPos.Z) <= MaxStepHeight
-                && SewerEscapeTarget != null && CheckSight(SewerEscapeTarget))
+            if (delta.Length() <= EscapeReach() && Abs(Pos.Z - exitPos.Z) <= MaxStepHeight
+                && SewerEscapeTarget != null && CheckSight(SewerEscapeTarget) && ReachedEscape())
             {
-                CaelumArcanaProgress.ConfirmSewerDefeat();
                 // La retirada concluye sin muerte ficticia ni duplicar botín.
                 A_StopSound(CHAN_7);
                 Destroy();

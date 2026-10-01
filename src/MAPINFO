@@ -133,6 +133,8 @@ map MAP08 "$CA_MAP08_NAME"
 // del proyecto y evitan reutilizar números estándar de actores de Doom.
 DoomEdNums
 {
+    31050 = CaelumPortSiege
+    31051 = CaelumPortCompletion
     // Infraestructura de crafting.
     18000 = CaelumForgeStation
     18001 = CaelumRangedWorkshopStation

@@ -1,0 +1,140 @@
+{
+    "version":  "4.36.27",
+    "issue":  16,
+    "date":  "2026-09-30",
+    "baseline":  "918775e3",
+    "branch":  "issue-16-port-siege",
+    "status":  "Implemented; native integration verified; author acceptance pending",
+    "engine":  "GZDoom g4.14.2",
+    "environment":  {
+                        "os":  "Windows 11",
+                        "cpu":  "AMD Ryzen 9 5950X",
+                        "gpu":  "NVIDIA GeForce RTX 3070 Ti",
+                        "renderer":  "Vulkan",
+                        "resolution":  "1280x720 windowed",
+                        "flags":  "-noautoload -nosound; background simulation enabled",
+                        "iwad":  "Author-installed development Doom II; not distributed"
+                    },
+    "full_population":  {
+                            "log":  "integration/issue16_mass_final.log",
+                            "timing":  "integration/issue16_mass_final_timing.txt",
+                            "tested_pk3_sha256":  "925112fe64ec0188ab46c414de4be0b1a83d73ec112deb22000926a4043958ea",
+                            "start":  {
+                                          "tic":  35,
+                                          "host_seconds":  5.0897488,
+                                          "living_attackers":  1001,
+                                          "living_defenders":  100,
+                                          "registered_attacking_crew":  74,
+                                          "rams":  6,
+                                          "cannons":  18,
+                                          "total_machines":  24
+                                      },
+                            "end":  {
+                                        "tic":  2135,
+                                        "host_seconds":  65.3348203,
+                                        "living_attackers":  974,
+                                        "living_defenders":  100,
+                                        "shots":  95,
+                                        "contacts":  95,
+                                        "ram_strikes":  4,
+                                        "neutralized":  4
+                                    },
+                            "native_duration_seconds":  60,
+                            "host_sample_elapsed_seconds":  60.2450715,
+                            "approximate_simulation_tics_per_host_second":  34.86,
+                            "checks":  8,
+                            "failures":  0,
+                            "saved_battle_reload":  "PASS: roster 1001, defenders 100, machines 12, neutralized 4, no premature victory",
+                            "limits":  "Local native probe, player invulnerable; no waves or reduced roster. Host sampling is approximately once per second. Simulation throughput is not an averaged rendering FPS benchmark or a full ordinary campaign playthrough. Runtime diagnostics version strings and an intermission comment were updated after this package; gameplay hashes remain identical. Final package smoke is recorded separately."
+                        },
+    "checks":  [
+                   {
+                       "log":  "integration/issue16_objectives2.log",
+                       "scope":  "Machines first, connected command groups, deterministic leadership, hostile-only objectives, crew-first targeting, commander physical exit, calendar and withdrawal",
+                       "checks":  23,
+                       "failures":  0,
+                       "living_survivors":  923
+                   },
+                   {
+                       "log":  "integration/issue16_boss_first.log",
+                       "scope":  "Commander first; same conjunctive objective and physical aftermath",
+                       "checks":  23,
+                       "failures":  0,
+                       "living_survivors":  924
+                   },
+                   {
+                       "log":  "integration/issue16_reload_port.log",
+                       "scope":  "Actual saved mid-flight and post-victory encounter; no redeployment or duplicate victory",
+                       "result":  "PASS"
+                   },
+                   {
+                       "log":  "integration/issue16_cannon_cycles.log",
+                       "scope":  "350/700-tic cycles, zero crew, unlimited rounds and permanent neutralization",
+                       "checks":  9,
+                       "failures":  0
+                   },
+                   {
+                       "log":  "integration/issue16_rewards.log",
+                       "scope":  "Zero/one/four rescues, unchanged money and reputation, actual shared Knight animation, repeat rejection and reload",
+                       "checks":  24,
+                       "failures":  0,
+                       "reload":  "PASS"
+                   },
+                   {
+                       "log":  "integration/issue16_exit_boundary.log",
+                       "scope":  "Survivor placed 128 MU from its 96-MU exit, then moves natively across boundary; no fake death/kill",
+                       "result":  "PASS"
+                   },
+                   {
+                       "log":  "integration/issue16_legacy_save.log",
+                       "scope":  "Original baseline package creates old-schema MAP06 save: work 525/1050, finite ammo 7",
+                       "result":  "PASS"
+                   },
+                   {
+                       "log":  "integration/issue16_legacy_load.log",
+                       "scope":  "Byte-identical old map/current code: work 175/350, finite ammo retained, additive defeat revision, idempotent migration and reload",
+                       "checks":  4,
+                       "failures":  0
+                   },
+                   {
+                       "log":  "integration/issue16_rollback_final.log",
+                       "scope":  "Untouched original save reopens in original package with work 525/1050 and ammo 7",
+                       "result":  "PASS"
+                   },
+                   {
+                       "log":  "integration/issue16_command_order.log",
+                       "scope":  "Mandingas spawned before and after commander; confirmed commander death and second leader death elect stable successors",
+                       "checks":  4,
+                       "failures":  0
+                   }
+               ],
+    "earlier_scoped_evidence":  "retreat/RESULTS.json retains the earlier partial snapshot and its original hashes; later integration supersedes its then-pending work, except author acceptance.",
+    "development_findings":  [
+                                 "integration/issue16_mass1.log retains the initial low-origin cannon visibility failure; corrected to barrel CheckSight, all 18 guns fire on the first cycle in the final run (CA-KP-021).",
+                                 "Initial map compaction retained unused high sidedef indices and the engine rejected a linedef without a front sector. Reindexing only referenced sides/vertices permits native loading. No general engine index-limit claim is made.",
+                                 "An early objective harness reset its age and repeated setup after victory; corrected the test-only phase gate. Passing objective logs are archived; no product fix was inferred from that harness failure."
+                             ],
+    "determinism":  {
+                        "result":  "PASS: rerunning both generators reproduced all three outputs byte-for-byte",
+                        "MAP06.wad":  "d7d6f79c3197db8fd4958cc35c07794df8dff1399197baa7655f8420adbbb51a",
+                        "CaelumPortData.zs":  "dcb8444a06cf34f13a6da7d5b2bc1f6d521173d4bc7a1d6fa3b1605c7171c4ac",
+                        "CaelumCannonData.zs":  "d86b251c93661a3fa4db13f8d485edef33bdf1d553d4db40fb85d85469208b1b"
+                    },
+    "author_acceptance":  {
+                              "status":  "PENDING",
+                              "tests":  [
+                                            "CA-43627-PORT-01",
+                                            "CA-43627-SAVE-01"
+                                        ]
+                          },
+    "review":  "Local code review and native checks; no independent model review performed",
+    "usage":  {
+                  "author_reported_initial_allowance_percent":  75,
+                  "baseline_date":  "2026-09-23",
+                  "current_allowance":  null,
+                  "reset_time":  null,
+                  "work_tokens":  null,
+                  "desktop_tokens":  null,
+                  "note":  "Unavailable measurements are not inferred from changed lines or elapsed time."
+              }
+}

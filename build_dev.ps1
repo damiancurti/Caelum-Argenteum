@@ -1,7 +1,8 @@
 param(
     [string]$Source = "src",
     [string]$Destination = "build/caelum_argenteum_dev.pk3",
-    [switch]$LegacyMap02
+    [switch]$LegacyMap02,
+    [switch]$LegacyMap06
 )
 
 $ErrorActionPreference = "Stop"
@@ -20,7 +21,7 @@ if ($Files.Count -eq 0) {
 }
 
 # Keep the established package name so GZDoom can restore existing saves.
-# Only the MAP02 lump changes; current code and all other maps stay current.
+# Compatibility replaces only selected map lumps; runtime code stays current.
 $LegacyMap02Bytes = $null
 if ($LegacyMap02) {
     $LegacyMap02Path = Join-Path $ProjectRoot "assets/map02_maze/legacy_4364/MAP02.wad"
@@ -39,6 +40,15 @@ if ($LegacyMap02) {
     if ($ActualHash -ne $LegacyMap02Hash) {
         throw "Legacy MAP02 checksum mismatch; refusing to replace the existing PK3."
     }
+}
+
+$LegacyMap06Bytes = $null
+if ($LegacyMap06) {
+    $LegacyPortPath = Join-Path $ProjectRoot 'assets/map06_port/legacy_43626/MAP06.wad'
+    if ((Get-FileHash -LiteralPath $LegacyPortPath -Algorithm SHA256).Hash -ne '5AE44D61F8D29342C16C6EF8A98308BE98B92C02643E585C14CB986106D453B8') {
+        throw 'Legacy MAP06 checksum mismatch; refusing to replace the existing PK3.'
+    }
+    $LegacyMap06Bytes = [IO.File]::ReadAllBytes($LegacyPortPath)
 }
 
 foreach ($File in $Files) {
@@ -101,6 +111,7 @@ try {
         )
         try {
             $LegacyReplacementCount = 0
+            $LegacyPortReplacementCount = 0
             foreach ($File in $Files) {
                 $RelativePath = $File.FullName.Substring($SourcePath.Length).TrimStart(
                     [char[]]@('\', '/')
@@ -115,6 +126,10 @@ try {
                     if ($LegacyMap02 -and $EntryName -ieq "maps/MAP02.wad") {
                         $EntryStream.Write($LegacyMap02Bytes, 0, $LegacyMap02Bytes.Length)
                         $LegacyReplacementCount++
+                    }
+                    elseif ($LegacyMap06 -and $EntryName -ieq 'maps/MAP06.wad') {
+                        $EntryStream.Write($LegacyMap06Bytes, 0, $LegacyMap06Bytes.Length)
+                        $LegacyPortReplacementCount++
                     }
                     else {
                         $InputStream = [System.IO.File]::OpenRead($File.FullName)
@@ -132,6 +147,9 @@ try {
             }
             if ($LegacyMap02 -and $LegacyReplacementCount -ne 1) {
                 throw "Legacy compatibility requires exactly one maps/MAP02.wad entry in the source."
+            }
+            if ($LegacyMap06 -and $LegacyPortReplacementCount -ne 1) {
+                throw 'Legacy compatibility requires exactly one maps/MAP06.wad entry in the source.'
             }
         }
         finally {
@@ -182,6 +200,8 @@ try {
         Write-Host "MAP02 layout: current source. Use -LegacyMap02 for saves that already visited the old maze."
     }
     Write-Host "Files included: $($Files.Count)"
+    if ($LegacyMap06) { Write-Host 'MAP06 layout: byte-identical 4.36.26 compatibility port; no new siege geometry.' }
+    else { Write-Host 'MAP06 layout: port siege. Use -LegacyMap06 for campaigns that already visited the pre-siege port.' }
     Write-Host "Directory entries: 0"
 }
 finally {

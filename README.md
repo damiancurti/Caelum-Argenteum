@@ -4,8 +4,26 @@ An independent dark fantasy FPS-RPG inspired by nineteenth-century Argentina.
 Author and game designer: **Damian Curti**. Development target: **GZDoom 4.14.2**
 on Windows 11. The final game is intended to be independent of Doom assets.
 
-**Current release: 4.36.26.** Obtain and update the complete repository, validate
+**Current release: 4.36.27.** Obtain and update the complete repository, validate
 it, then rebuild with `run_dev.bat` as described below.
+
+Issue [#16](https://github.com/damiancurti/Caelum-Argenteum/issues/16) completes
+the port siege: 1,000 Mandingas, a distinct Zupay, 24 siege machines and 100
+Domingo-appearance defenders with sword, kite shield and medium armor.
+Cannons fire automatically, with unlimited rounds, enemy-operator priority and
+10/20-second reload. The Zupay flees at half health. Defeat the commander and
+neutralize all twelve attacking machines to capture the Knight of Wands;
+survivors physically withdraw. Use the port sign to acknowledge the playtest end.
+Native integration, save/reload and full-population evidence is in
+[4.36.27 validation](assets/validation_43627/RESULTS.json). Ordinary campaign and
+visual/balance author acceptance remain in [pending_test.txt](pending_test.txt).
+
+**Saves that already visited the former MAP06:** use
+`run_dev.bat --legacy-map06` (or `build_dev.ps1 -LegacyMap06`) to preserve its
+exact geometry and progress. This continues the old port; it does not transform
+the saved map into the siege. Combine with `--legacy-map02` if that save also
+needs the old sewer layout. Keep original saves and their original package for
+rollback. Fresh campaigns or saves with an unvisited MAP06 use the normal build.
 
 Issue [#37](https://github.com/damiancurti/Caelum-Argenteum/issues/37) implements
 the approved weapon/glove-weight attack clock, full-duration animations and five
@@ -13,8 +31,8 @@ grip-centered thrust variants, weapon durability ×10 with proportional save
 migration, exact-item projectile wear, enemy resource recovery and the 80-tic
 Zupay slam. Rules and limits are in SYSTEMS; evidence is in
 `assets/validation_43626`. The author confirmed both combat and visual checks
-passed on 2026-09-30 and authorized PR #58 merge and issue closure. No author
-checks remain pending. Keep an original save and its original build for rollback.
+passed on 2026-09-30 and authorized PR #58 merge and issue closure. No #37
+author checks remain pending. Keep an original save and its original build for rollback.
 
 ## License
 
@@ -58,8 +76,7 @@ completes a rescue; its port reward remains separate. Existing saves retain
 recorded progress without duplicate flags or rewards. See
 [validation evidence](assets/validation_43624/RESULTS.json) and
 [author acceptance](docs/HISTORY.md), confirmed 2026-09-28 for
-CA-43624-JOURNAL-01. All #35 author checks passed. Full port deployment
-remains #16.
+CA-43624-JOURNAL-01. All #35 author checks passed. Port deployment is implemented in #16 above.
 
 Issue [#52](https://github.com/damiancurti/Caelum-Argenteum/issues/52) applies
 armor absorption after Toughness, whose historical curve L*(L+1)/101 subtracts

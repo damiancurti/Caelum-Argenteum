@@ -1,6 +1,36 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **4.36.26** — 2026-09-30.
+Documentation version: **4.36.27** — 2026-09-30.
+
+## 4.36.27 — Complete third campaign map (#16)
+
+2026-09-30: the author confirmed automatic unlimited cannon fire on both sides,
+enemy siege-operator target priority, 10/20-second reload, 100 Domingo-appearance
+defenders (all attributes 18, 1.8 m, 80 kg) with sword, kite shield and medium
+armor, and a port Zupay retreat at half health matching MAP02. Existing campaign
+T1 equipment supplies the requested categories without new item balance.
+
+Implemented the full 1,000-Mandinga/one-Zupay deployment, five small and one large
+ram, six attacking and twelve defending cannons, six gate lanes, physical command
+groups, permanent machine neutralization, conjunctive objectives, survivor exits,
+Knight capture, calendar phases and explicit playtest endpoint. Separate additive
+revisions retain encounter state and scale saved cannon work once. Exact legacy
+MAP06 geometry and the original-save/package rollback path are preserved.
+
+Native GZDoom 4.14.2 checks passed: both objective orders (23 checks each),
+reload timing/crew/ammunition (9), zero/some/all prisoner payments and shared
+Knight capture (24), current save/reload, legacy migration/idempotence/rollback,
+and actual survivor exit without a kill. Earlier isolated commander and sewer
+regression evidence remains scoped to its original source snapshot. Full scene
+stress evidence records hardware, elapsed native tics/host time and shot/contact
+counts rather than inferring performance from an FPS screenshot. Static and
+deterministic-generation results are in assets/validation_43627/RESULTS.json.
+
+Author acceptance is pending for CA-43627-PORT-01 and CA-43627-SAVE-01. No full
+ordinary campaign playthrough, export certification or independent AI review is
+claimed. No additional model was available/used; recorded checks are agent tests.
+The initial author-reported allowance was 75% on 2026-09-23; current usage/reset
+and per-surface token measurements are unavailable, and are not estimated.
 
 ## 4.36.26 — Attack clock, durability and thrusts (#37)
 
