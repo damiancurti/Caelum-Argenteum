@@ -19,3 +19,8 @@ class CaelumMansionTympanum3 : Actor
     Default { +NOGRAVITY }
     States { Spawn: CDLS A -1; Stop; }
 }
+class CaelumMansionDoorGable : Actor
+{
+    Default { +NOGRAVITY }
+    States { Spawn: CDLS A -1; Stop; }
+}

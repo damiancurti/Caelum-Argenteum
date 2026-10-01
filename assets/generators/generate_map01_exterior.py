@@ -103,6 +103,9 @@ def generate():
     add_vegetation(obj,spec,report,in_base)
     from mansion_tympana import add_tympana
     add_tympana(obj,spec['tympana'],report,ROOT)
+    report['terrain_linedef_end']=len(lines)
+    from mansion_exterior_partition import partition_exterior
+    partition_exterior(obj,spec['exterior_partition'],report)
     write_map(obj,ROOT/'src/maps/MAP01.wad')
     report['counts']={k:len(v) for k,v in obj.items()}
     report['output_sha256']=hashlib.sha256((ROOT/'src/maps/MAP01.wad').read_bytes()).hexdigest()

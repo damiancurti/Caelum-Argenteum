@@ -4,6 +4,13 @@
   "provenance": "Author request 2026-10-01: mixed gentle and pronounced traversable hills, up to approximately ground-storey height; scattered new vegetation is decorative only. Preserve the tutorial garden, resources and entrance. Coordinates below are the issue's reproducible visual layout, not gameplay balance.",
   "baseline": "MAP01_43628.wad",
   "baseline_sha256": "d5df55e7b6e033afa02f5a9d7e9d58be58ec76d0cad20c396cad77a5627a307c",
+  "exterior_partition": {
+    "provenance": "Author reported transparent ground at (17455,7394,0). The 60000-MU-wide base exterior also fails in the preserved baseline; bounded native sectors render correctly. Retain the original horizon extent and flat height, partitioning around the terrain envelope with four unchanged outer corner vertices. Only the four original horizon line endpoints and their front-sector references are adjusted.",
+    "sector": 0,
+    "horizon_lines": [0,1,2,3],
+    "inner_x": [-12288,12288],
+    "inner_y": [-12288,12288]
+  },
   "terrain": {
     "sector": 0,
     "bounds": [-8192, -6144, 8192, 6144],
@@ -38,7 +45,16 @@
     "face_relief": 0.25,
     "plaster_v_range": [0.375, 0.8125],
     "stone_material": "graphics/caelum/textures/mansion/CMST03.png",
-    "field_material": "graphics/caelum/textures/mansion/CMIN03.png"
+    "field_material": "graphics/caelum/textures/mansion/CMIN03.png",
+    "roof_closure": {
+      "provenance": "Author's Prueba save identifies the gap above upper door group 915. Its 128-MU opening shares the interior sector, so the earlier wall-sector gable fill omits it. Close only the wall-depth opening from the existing ceiling slab top to the two native roof undersides, preserving original architectural records and collision. Starting at the slab top avoids coplanar overlap with its visible 392..400-MU edge.",
+      "door_group": 915,
+      "editor_number": 18614,
+      "roof_control_sectors": [382,383],
+      "ceiling_control_sector": 661,
+      "material": "graphics/caelum/textures/mansion/CMEX01.png",
+      "texture_repeat": 128
+    }
   },
   "vegetation": {
     "provenance": "Existing ceibo meshes and fiber-bush sprite reused in Actor-only decorative classes; no harvest, inventory, resource initialization or movement logic. Author correction: no trees or shrubs inside the pool, including underwater. Only original exterior sector 0 placements are allowed; keep a 128-MU margin around pool sector tag 940, whose boundary is preserved from the baseline map.",

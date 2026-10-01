@@ -20,6 +20,11 @@ triangular/segmental field appears on both sides. CMST03 supplies the stone;
 UV selection uses only the plaster portion of CMIN03. Original PNGs are unchanged.
 Each mesh groups its faces into two material surfaces, retaining CA-KP-020's
 engine limit. Fixed models add no collision, light, sound or interaction.
+A fifth original mesh closes the top-door roof-front gap using the existing
+CMEX01 material. mansion_door_gable.py derives its contour from the preserved
+roof planes and starts above the ceiling slab to avoid overlapping its front.
+mansion_exterior_partition.py bounds the large outer floor for correct rendering;
+its flat sectors reuse the original grass and light without introducing art.
 
 EXTERIOR.json owns authoring data. generate_map01_exterior.py reads the preserved,
 hashed accepted MAP01_43628.wad and invokes mansion_tympana.py for mesh/model/editor
@@ -28,7 +33,8 @@ door group and output hash. Regenerate this current map with the #61 generator;
 repair_map01_mansion.py remains the historical #36 reconstruction source.
 validate_map01_exterior.py is read-only. The normal builder packages existing
 outputs without requiring generators. Evidence is in assets/validation_4370;
-author visual acceptance remains CA-4370-MANSION-01 pending.
+the author accepted the remaining tests on 2026-10-01. CA-4370-MANSION-01 now
+retains only distant-ground and upper-door roof-front visual rechecks.
 
 ## 4.36.28 — Playtest resource packaging (#17)
 

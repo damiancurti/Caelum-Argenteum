@@ -12,8 +12,10 @@ The exterior uses 5,792 triangulated native floor sectors, shared heights and
 zero-height joins to retained geometry. Height ranges from 0 to 128 MU, with a
 maximum 15.80-degree slope. The sampled region is X=-8192..8192, Y=-6144..6144;
 EXTERIOR.json owns the reproducible hill centres, protected garden and plants.
-The entrance, all pre-existing geometry/actions and all 330 authored placements
-remain unchanged. Sixteen ceibos and twenty-four shrubs are dispersed outside
+The entrance, architectural geometry/actions and all 330 authored placements
+remain unchanged. Only the four outer horizon lines and their front-sector
+references are subdivided in the same-patch correction below.
+Sixteen ceibos and twenty-four shrubs are dispersed outside
 the tutorial garden; the original four ceibos and twenty fiber bushes remain.
 All added vegetation stands on original dry exterior ground. The pool footprint
 (X=2200..3480, Y=-720..720) and a 128-MU surrounding margin exclude placements;
@@ -25,6 +27,19 @@ triangular tympana for singles and segmental arches for doubles. A complete
 stone backing fills the spandrels as well as the ornamental face, from the
 visible leaf top to the existing slab underside. Both faces are finished.
 Existing plaster/stone textures retain the accepted nineteenth-century style.
+The top-storey doorway (group 915, X=1051, Y=-64..64) also receives an opaque
+8-MU-deep gable from the existing ceiling-slab top at Z=400 to the roof underside
+(ridge Z=456). Its sides follow the two existing roof planes. The author located
+this separate upper gap in the save named Prueba; the original save is preserved.
+
+The author also reported transparent ground at (17455,7394,0), reproduced in the
+preserved baseline. The 60000-MU-wide exterior is now divided into a central
+region and eight surrounding flat sectors, with splits at X/Y=+/-12288. Existing
+grass, light, height, outer extent and blocking horizon remain; the largest
+individual floor span is 24576 MU. This fixes the observed renderer failure
+without extending the hills or adding barriers. EXTERIOR.json owns this layout.
+The author accepted the other tests on 2026-10-01; only these two visual rechecks
+remain under CA-4370-MANSION-01.
 
 GZDoom's OBJ pixel-stretch correction renders the accepted 120-unit door mesh at
 100 MU. Tympanum dimensions account for that transform; their own model Z scale

@@ -17,8 +17,11 @@ Documentation version: **4.37.0** — 2026-10-01.
 - Author correction: vegetation stays outside the pool, including underwater.
   Corrected three placements (two in the pool, one in a cave opening); generation
   now enforces dry exterior ground and a margin around the water.
-- CA-4370-MANSION-01 remains the pending author appearance/ordinary-play check.
-  Deliver through a linked PR; neither merge nor closure confirms that check.
+- Author follow-up 2026-10-01: the other tests passed; distant ground at
+  (17455,7394,0) was transparent and Prueba identified a roof-front gap above the
+  top doorway. Both are corrected in the same 4.37.0 patch and PR #66.
+- CA-4370-MANSION-01 now retains only those two visual rechecks. Confirmed
+  results are recorded in HISTORY; merge/closure does not confirm the rechecks.
 - Deferred Tarot/Trucazo remains separate final V4 scope before V5.
 
 ## Issue #17 — Verify and export the complete three-map test build (4.36.28)

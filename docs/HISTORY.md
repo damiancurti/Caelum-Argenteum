@@ -41,10 +41,39 @@ observations, not a controlled benchmark or a guarantee on other hardware.
 The added rendering cost and ordinary-play performance remain author checks.
 These are isolated engine checks, not ordinary campaign or author acceptance.
 
-CA-4370-MANSION-01 — originating release 4.37.0, issue #61: PENDING author
-confirmation of appearance, ordinary movement/gathering, all door sides and
-tutorial progression. No old-save migration was tested or promised under the
-explicit waiver; use a fresh MAP01. The accepted 4.36.28 export is unchanged.
+CA-4370-MANSION-01 — originating release 4.37.0, issue #61 / PR #66:
+PARTIALLY ACCEPTED by the author on 2026-10-01. The author explicitly confirmed
+that the other tests passed, while reporting two visual defects: transparent
+ground at (17455,7394,0), and an opening between the upper doorway's tympanum and
+the pitched roof front. Thus relief/traversal outside the reported defect,
+vegetation/pool exclusion, gathering/resources, other door checks, performance
+and ordinary tutorial/Palomo progression are confirmed. Only the two corrected
+defects remain in pending_test.txt under the same stable ID.
+
+Same-patch correction: the distant floor failure reproduces in the preserved
+4.36.28 map. Removing Line_Horizon, lowering the sky ceiling, and subdividing
+only the outer boundary did not fix it. A bounded native floor sector did.
+The implemented fix partitions the oversized exterior into a central region and
+eight flat surrounding sectors, retaining grass, light, height, outer extent
+and blocking horizon. Only four original horizon-line endpoints and four
+front-sector references change; original vertices, sectors, actors and every
+other architectural record remain unchanged. The lower-level renderer cause
+is not claimed beyond this reproduced geometry-dependent failure.
+
+A copy of the author's Prueba save supplied the roof view; the original save was
+not modified. Group 915 shares interior sectors through its doorway, so the
+earlier wall-sector gable closure skipped this strip. An opaque 128-by-8-MU mesh
+closes from the ceiling-slab top (Z=400) to the existing roof planes (ridge 456),
+using CMEX01. It introduces no collision. Starting above the slab also avoids
+coplanar overlap with its 392..400 front edge. Follow-up evidence is retained in
+assets/validation_4370/FOLLOWUP.json; the initial evidence remains historical.
+The corrected PK3 passed 53,118 directed native terrain/seam crossings over body
+tiers 1/4/7 and all 429 door regressions. Resources and pool exclusion still pass.
+Native captures cover the reported point, all eight surrounding floor regions,
+the centre, and the upper door closed/open from both sides. Thirty static
+invariants and byte-identical regeneration of ten outputs cover the new layout.
+No old-save migration was tested or promised under the explicit waiver; use a
+fresh MAP01. The accepted 4.36.28 export is unchanged. Version remains 4.37.0.
 
 ## 4.36.28 — Verify and export the complete three-map test build (#17)
 

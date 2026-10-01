@@ -86,6 +86,8 @@ def add_tympana(obj,spec,report,root):
         code += [f'class {name} : Actor', '{', '    Default { +NOGRAVITY }', '    States { Spawn: CDLS A -1; Stop; }', '}']
         modeldefs += [f'Model {name}', '{', '    Path "models/caelum/mansion"', f'    Model 0 "{model}"', f'    Scale 1 1 {spec["pixel_stretch"]}', '    CorrectPixelStretch', '    DontCullBackFaces', '    FrameIndex CDLS A 0 0', '}']
         editors.append(f'    {spec["first_editor_number"]+index} = {name}')
+    from mansion_door_gable import add_roof_closure
+    add_roof_closure(obj,spec,report,root,code,modeldefs,editors)
     (root/'src/caelum/world/CaelumMansionTympana.zs').write_text('\n'.join(code)+'\n',encoding='utf-8')
     for filename,content in [('MODELDEF',modeldefs),('MAPINFO',editors)]:
         path=root/'src'/filename

@@ -4,12 +4,39 @@ Status: integrated engineering register (issue #22, patch 4.36.1b).
 Prepared: 2026-09-23. Inherits the project's release after integration.
 Inspected baseline: `1dc390576fa330d37ff543526fc7e69a397fc28f` (PR #7).
 
+## CA-KP-024 — A valid oversized floor can disappear in the renderer
+
+Status/evidence: AUTHOR-REPORTED / ENGINE-VERIFIED, #61 / PR #66 / 4.37.0.
+First recorded / last checked: 2026-10-01 / 2026-10-01.
+Baseline: 30caa726 and f69e6f7e; GZDoom 4.14.2, Windows 11, Vulkan,
+RTX 3070 Ti, author-installed development Doom II IWAD.
+
+The author reported transparent exterior ground at (17455,7394,0). Native
+PointInSector still identified sector 0 with floor Z=0, and its CMGR01A texture
+was valid. The same view failed in the preserved baseline. Static texture and
+collision checks therefore did not detect the visible defect. Removing the
+horizon special, reducing the sky ceiling and splitting only long boundary
+lines each failed to repair the rendering; an isolated bounded sector rendered.
+
+The correction partitions the 60000-MU-wide exterior into nine bounded regions
+with flat, two-sided internal joins. Existing terrain stays in the central
+sector and original horizon extent/blocking remains. The reported point now
+renders grass. This establishes a geometry-dependent failure and a verified
+workaround, not a universal size limit or an identified internal renderer bug.
+Retain native before/after captures, inspect distant views in addition to the
+mansion, and verify that new joins preserve heights and traversal.
+
+Evidence and exact geometry: assets/validation_4370/FOLLOWUP.json and
+assets/map01_mansion/EXTERIOR.json. Author accepted the other #61 tests; only
+the corrected ground and upper-door roof-front views await recheck.
+
 ## CA-KP-023 — OBJ height and map headroom use different vertical scales
 
 Status/evidence: CODE-VERIFIED / ENGINE-VERIFIED, #61 / 4.37.0.
 First recorded / last checked: 2026-10-01 / 2026-10-01.
 Baseline: accepted MAP01 at 30caa726, Windows 11, GZDoom 4.14.2, Vulkan,
-RTX 3070 Ti, development Doom II IWAD. Author visual acceptance remains pending.
+RTX 3070 Ti, development Doom II IWAD. The author accepted the general doorway
+checks; the subsequent roof-front correction has its own pending recheck.
 
 Symptom: the accepted 120-unit mansion door OBJ leaves a visible upper gap even
 when its actor blocker and nominal map opening both reach 120 MU. GZDoom's

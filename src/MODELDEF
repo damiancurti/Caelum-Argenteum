@@ -3630,4 +3630,13 @@ Model CaelumMansionTympanum3
     DontCullBackFaces
     FrameIndex CDLS A 0 0
 }
+Model CaelumMansionDoorGable
+{
+    Path "models/caelum/mansion"
+    Model 0 "ca_mansion_door_gable.obj"
+    Scale 1 1 1.2
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CDLS A 0 0
+}
 // END GENERATED MANSION TYMPANA

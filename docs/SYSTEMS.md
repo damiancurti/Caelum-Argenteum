@@ -12,11 +12,15 @@ four tutorial ceibos and twenty fiber bushes, including 200,000 fiber capacity.
 
 Native continuous floor planes supply walkable exterior relief. The terrain
 meets the retained flat ground with no steps at its boundaries. Original map
-objects, sectors, actions, door groups/keys/swing sides and tutorial logic remain.
+objects, architectural sectors/actions, door groups/keys/swing sides and tutorial
+logic remain. The distant flat exterior is partitioned solely to correct a
+rendering defect; the original outer limit and blocking horizon are retained.
 Fixed opaque tympanum meshes cover the visible gap over each hinged door without
 adding passage collision. Existing door blockers and architectural slabs retain
 their accepted collision. All supported body tiers remain below the visible
 100-MU leaf top; no headroom restriction is added.
+The additional top-door roof-front closure begins at Z=400, above the existing
+ceiling slab. It has no actor collision and changes no access or combat rule.
 
 The author explicitly waived old-save compatibility work for #61 on 2026-10-01.
 Start a fresh MAP01/new campaign; no old-MAP01 migration is claimed. The accepted

@@ -1,0 +1,16 @@
+{
+  "issue": 61,
+  "byte_identical": true,
+  "files": {
+    "src/maps/MAP01.wad": "9197d34704e9b5da01bc74d67fb0e660e434ab9971662246841254c83cc86d76",
+    "src/MODELDEF": "ec8496821d6f48732209b72ffab8709b9720b6de2fb8c9c8b3d631b031a9c808",
+    "src/MAPINFO": "3136708f4945b20d49644c9b406c42834598a6e8d09c1a566f85a4c262ef7704",
+    "src/caelum/world/CaelumMansionTympana.zs": "9d9a36ccf68e3a097266e2cd90d2fdff65793352ec9353ba6136ad31900e0a00",
+    "assets/map01_mansion/EXTERIOR_GENERATED.json": "1b75580e9d07724fa61a9ba64bb6c3e8c8a04f8ba4bfa9067ac2e565283e8bfe",
+    "src/models/caelum/mansion/ca_mansion_door_gable.obj": "f5dad4da3092cfec948d4c19ef23b276d84d6f22395600ffa7070f4556cd850f",
+    "src/models/caelum/mansion/ca_mansion_tympanum_128_20.obj": "52ed3f3547a9952c4764052aced50ab90f681a6d1bf3d4b457ce437f18a528e8",
+    "src/models/caelum/mansion/ca_mansion_tympanum_128_28.obj": "38f7c08ab587daf6c2a2a5e18ff00612c40ae5bf58da5b762ab0ba868ef2222c",
+    "src/models/caelum/mansion/ca_mansion_tympanum_64_20.obj": "fdfb57420d37001b867c49334bf5cf18783f3f74454d975f9d6a8def687c4fa8",
+    "src/models/caelum/mansion/ca_mansion_tympanum_64_28.obj": "296838deee9cb4c3ebb48356d333c4fd00df3f0dd4d4df0cc60ae05141714a36"
+  }
+}

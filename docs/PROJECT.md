@@ -19,9 +19,12 @@ across the complete upper opening. Hinged leaves and their access rules remain.
 Static continuity/preservation and dry-placement checks, native terrain/resource/
 Palomo checks and 429 door regressions pass. Evidence, 128 door-view hashes and
 representative captures are recorded under assets/validation_4370. The pool is
-kept free of vegetation, including underwater. Author visual/ordinary-play acceptance remains pending
-as CA-4370-MANSION-01 in pending_test.txt. Use a fresh MAP01/new campaign.
-Next: author acceptance of #61, followed by the deferred Tarot/Trucazo scope.
+kept free of vegetation, including underwater. On 2026-10-01 the author accepted
+the other checks and reported transparent distant ground plus a roof-front gap
+above the top door. This same patch bounds the exterior floor and closes that
+gap against the native roof slopes. CA-4370-MANSION-01 in pending_test.txt keeps
+only these two visual rechecks. Use a fresh MAP01/new campaign.
+Next: confirm the two #61 corrections, then deferred Tarot/Trucazo.
 
 ## 4.36.28 — Reproducible three-map playtest export (#17)
 
