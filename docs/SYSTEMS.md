@@ -34,6 +34,14 @@ outside the playable horizon. Only their polygon positions change; sector
 planes, control actions/tags and the mansion's physical floors remain intact.
 Paired native height samples and door regressions verify the retained behavior.
 
+The northern-station correction compares original exterior stations with their
+native FloorZ, rather than absolute zero, before relocating them. Both station
+selection and the spare-station fallback use this condition. Existing room
+groups, positions, recipes, dimensions and capabilities remain; eighteen original
+actors are reused within 38 total stations. Repeated preparation preserves those
+instances and creates no duplicates. This correction applies to fresh MAP01;
+already prepared older worlds are not migrated under the existing waiver.
+
 The author explicitly waived old-save compatibility work for #61 on 2026-10-01.
 Start a fresh MAP01/new campaign; no old-MAP01 migration is claimed. The accepted
 baseline is preserved for recovery, and existing MAP02/MAP06 launcher options

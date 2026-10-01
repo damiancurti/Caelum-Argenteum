@@ -3,8 +3,8 @@
   "release": "4.37.0",
   "date": "2026-10-01",
   "base_commit": "30caa726",
-  "status": "Original mansion and subsequent cave checks are author-accepted on 2026-10-01. Only CA-4370-EXTERIOR-01 remains pending.",
-  "evidence_scope": "Historical delivery evidence; source hashes and native results below retain their original scope. Latest auxiliary-room repair and final hashes: CONTROLS.json.",
+  "status": "Original mansion, cave and exterior repairs are author-accepted on 2026-10-01. Only CA-4370-STATIONS-01 remains pending.",
+  "evidence_scope": "Historical native evidence; original hashes and test counts retain their delivery scope. Current station repair/package hashes and author status: STATIONS.json.",
   "author_decisions": [
     "Mixed gentle and marked hills, up to approximately ground-storey height",
     "New vegetation is decorative only; preserve existing gathering resources",

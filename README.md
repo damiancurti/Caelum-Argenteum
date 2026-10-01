@@ -21,9 +21,13 @@ with no extraction or rewards. Exterior partitioning also covers the newly
 reported transparent ground. The author accepted the cave and other checks,
 then reported an invisible boundary and dark area near (25630,29408,0).
 The repair relocates 69 detached auxiliary rooms beyond the playable horizon,
-preserving their architectural controls. Only this last repair remains in
-[pending_test.txt](pending_test.txt). Evidence: [cave](assets/validation_4370/CAVE.json)
-and [auxiliary-room repair](assets/validation_4370/CONTROLS.json).
+preserving their architectural controls; the author accepted that repair.
+The latest follow-up fixes six old stations left on the northern hills: their
+existing relocation now uses floor-relative height, preserving the intended
+38 interior stations. Only this station correction remains in
+[pending_test.txt](pending_test.txt). Evidence: [cave](assets/validation_4370/CAVE.json),
+[auxiliary rooms](assets/validation_4370/CONTROLS.json) and
+[stations](assets/validation_4370/STATIONS.json).
 Deferred Tarot/Trucazo remains separate; the accepted 4.36.28 export is unchanged.
 
 Issue [#16](https://github.com/damiancurti/Caelum-Argenteum/issues/16) completes

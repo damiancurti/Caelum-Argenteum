@@ -69,7 +69,16 @@ all 69 rooms. Their 276 vertices move to an unused grid beyond Y=31000, leaving
 all sector planes, tags, actions, materials and heights intact. The unused room
 is preserved as well. This adds no terrain, barrier or playable room.
 Static and native evidence: assets/validation_4370/CONTROLS.json. Author check
-CA-4370-EXTERIOR-01 remains pending; automated traversal is not author acceptance.
+CA-4370-EXTERIOR-01 was accepted on 2026-10-01.
+
+The later northern-bank report exposes six original stations at Y=1040 that
+should already have moved into the workshops. The relief raises them to
+Z=1.08..3.30, so the old absolute-height filter missed them and spawned indoor
+replacements, leaving 44 stations. Floor-relative recognition restores the
+documented total of 38: Rulo 5, Ronnie 7, Argento 5, Caella 9 and upstairs 12.
+All eighteen original actors are reused. No WAD placement or room coordinates
+change. Evidence: assets/validation_4370/STATIONS.json. Only the station repair
+awaits author acceptance as CA-4370-STATIONS-01; start fresh MAP01.
 
 ## 4.36.27 — Port campaign endpoint (#16)
 

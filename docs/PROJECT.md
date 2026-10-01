@@ -34,10 +34,15 @@ are added. The author accepted CA-4370-CAVE-01 on 2026-10-01, reporting a separa
 invisible boundary and dark region near (25630,29408,0). Sixty-nine detached
 auxiliary rooms intersected or touched the playable exterior. Their polygons
 are now outside the horizon; all sector planes, actions and targets remain.
-Only CA-4370-EXTERIOR-01 remains pending. Native checks cover the repaired area,
+CA-4370-EXTERIOR-01 was accepted on 2026-10-01. Native checks cover the repaired area,
 unchanged mansion surfaces and doors; evidence is in CONTROLS.json under the
 same validation directory. Use a fresh MAP01/new campaign.
-Next: exterior repair acceptance, then deferred Tarot/Trucazo.
+The author then reported workstations left among the northern hills. Six old
+station actors at Y=1040 escaped relocation because the code required absolute
+Z=0, while the relief places them at Z=1.08..3.30. Comparing against their native
+floor height restores the intended 38 interior stations and preserves all
+original actors. Only CA-4370-STATIONS-01 remains pending; evidence: STATIONS.json.
+Next: station correction acceptance, then deferred Tarot/Trucazo.
 
 ## 4.36.28 — Reproducible three-map playtest export (#17)
 

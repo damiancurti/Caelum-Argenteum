@@ -32,7 +32,12 @@ Documentation version: **4.37.0** — 2026-10-01.
   by relocating 69 detached auxiliary rooms outside the playable horizon while
   preserving their control data. Static isolation and native surface, boundary,
   traversal and door regressions are in assets/validation_4370/CONTROLS.json.
-  CA-4370-EXTERIOR-01 is the only outstanding author check.
+  CA-4370-EXTERIOR-01 was accepted on 2026-10-01.
+- Northern stations: six original actors at Y=1040 escaped relocation when hills
+  raised their absolute Z above the old filter. Floor-relative recognition fixes
+  selection and the spare fallback. The 38-station/five-room layout and original
+  instances are retained; evidence: assets/validation_4370/STATIONS.json.
+  Only CA-4370-STATIONS-01 remains pending.
 - Deferred Tarot/Trucazo remains separate final V4 scope before V5.
 
 ## Issue #17 — Verify and export the complete three-map test build (4.36.28)

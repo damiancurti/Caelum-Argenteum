@@ -138,6 +138,31 @@ outputs, project validation and clean package startup pass. Evidence and exact
 hashes: assets/validation_4370/CONTROLS.json. Native success is not author
 acceptance of CA-4370-EXTERIOR-01. Original saves remain unchanged; start fresh.
 
+Later on 2026-10-01, the author confirmed that the other tests passed and reported
+workbenches north of the mansion, among the hills and within roughly 2,000 MU
+of the exterior walls. CA-4370-EXTERIOR-01, originating 4.37.0 / #61 / PR #66,
+is ACCEPTED for the invisible-boundary/dark-region repair. The new station
+report is separate and becomes the only pending check, CA-4370-STATIONS-01.
+
+The 00e4322d package reproduces six stations at Y=1040: two workbenches, three
+forges and one anvil. Their native floor heights are Z=1.08..3.30. The existing
+relocation in CaelumMainM00QuestController required absolute Z within 1 MU of
+zero, so it missed these originals and created replacements indoors: 44 total
+instead of the documented 38. Both selection and the spare fallback now compare
+Pos.Z with native FloorZ, retaining the same XY bounds and unassigned-group
+filter. The original actors move into their existing designated workshops;
+no station is destroyed, no map/art changes, and no recipes or quotas change.
+
+Native checks confirm 38 total, zero outside and groups 5/7/5/9/12. All eighteen
+original station references survive relocation; 38 network scans and physical
+approach/reachability checks pass. Repeating preparation creates no duplicate.
+The normal PK3 also passes same-version save/reload, Palomo's route and clean
+startup. Six views cover the cleared north and all five workshops. Static map
+and project validation pass; geometry is byte-identical to 00e4322d. Evidence:
+assets/validation_4370/STATIONS.json. Existing prepared older worlds are not
+migrated under the author's waiver; fresh MAP01 is required. Version remains
+4.37.0 and the station repair awaits author acceptance.
+
 ## 4.36.28 — Verify and export the complete three-map test build (#17)
 
 2026-10-01: implementation starts from merged 4.36.27, commit

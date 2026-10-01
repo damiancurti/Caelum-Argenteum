@@ -4,8 +4,8 @@
   "release": "4.37.0",
   "date": "2026-10-01",
   "base_commit": "fe506a3eda2440df5a6fe5658fef18ff60746bab",
-  "author_accepted": "CA-4370-MANSION-01 and CA-4370-CAVE-01, confirmed 2026-10-01; the latest invisible-boundary report is excluded.",
-  "pending": "CA-4370-EXTERIOR-01: only the newly repaired invisible boundary/dark region near (25630,29408,0).",
+  "author_accepted": "CA-4370-EXTERIOR-01 confirmed on 2026-10-01, together with the previously accepted mansion/cave checks. A later northern-station report is separate.",
+  "pending": "Only CA-4370-STATIONS-01; see STATIONS.json.",
   "repair": "Translate 276 vertices belonging to 69 original detached auxiliary polygons beyond the playable horizon. All original sector records, control lines/tags/actions, architectural vertices and actors remain intact.",
   "manifest": "assets/map01_mansion/CONTROL_RELOCATION.json",
   "reported_position": [
@@ -46,7 +46,7 @@
     "clean_startup": "PASS"
   },
   "limitations": [
-    "Author acceptance remains pending for this last repair. No complete campaign replay or old-save migration is claimed; the author waived old-save work. Original Prueba is preserved and not committed.",
+    "At delivery this repair awaited author acceptance; CA-4370-EXTERIOR-01 was subsequently confirmed on 2026-10-01. No complete campaign replay or old-save migration is claimed. Original Prueba is preserved and not committed.",
     "The original fixture failed compilation when dereferencing .XY directly on a function result. Assigning the vector to a local fixed the test. Final logs use the corrected fixture.",
     "The first static sweep identified six additional auxiliary rooms touching or crossing the horizon beyond the initial 63. The final list covers all 69, independently verifies every 3D-floor model is outside, and leaves no overlapping relocation geometry.",
     "The preliminary Palomo result at 700 tics is retained as FAIL in diagnostic logs. A longer observation resolves it; it is not an unresolved route failure.",
@@ -174,5 +174,6 @@
     "Use assets/validation_4370/run_issue61.ps1 -Package -Fixture build/issue61_boundary_qa -Wait, with Labels boundary_final_checks, boundary_final_walk, boundary_final_views and boundary_palomo; supply their retained .cfg contents through -Commands.",
     "boundary_final_regression uses -Fixture assets/validation_4370/cave/native. boundary_clean uses -Clean. Local engine/IWAD paths and build/gzdoom.ini must match the installation.",
     "To repeat the baseline view and paired heights, build fe506a3e in a separate checkout and copy this retained controls/native fixture into its build/issue61_boundary_qa directory. Run boundary_before/surfaces_before there with -Package. The pre-repair camera matches the manifest; compare all QA61_SURFACE lines exactly."
-  ]
+  ],
+  "evidence_scope": "Historical native evidence; original hashes and test counts retain their delivery scope. Current station repair/package hashes and author status: STATIONS.json."
 }

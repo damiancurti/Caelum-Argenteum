@@ -6,10 +6,10 @@ Documentation version: **4.37.0** — 2026-10-01.
 filled tympana for 32 door groups, and a short mound cave with five decorative
 gems. Resources, 48 hinged leaves and tutorial rules remain; pool excludes plants.
 CA-4370-MANSION-01 and CA-4370-CAVE-01 accepted 2026-10-01. Latest Prueba near
-(25630,29408) exposed auxiliary rooms inside the exterior; 69 rooms now sit
-beyond its horizon, retaining their controls. Only CA-4370-EXTERIOR-01 awaits
-acceptance. Start fresh; evidence: assets/validation_4370.
-Next: exterior repair acceptance, then deferred Tarot/Trucazo.
+(25630,29408) exposed auxiliary rooms inside the exterior; their relocation is
+accepted (CA-4370-EXTERIOR-01). Six stations left on northern hills now relocate
+using floor-relative height. Only CA-4370-STATIONS-01 awaits acceptance.
+Start fresh; evidence: assets/validation_4370. Next: station acceptance, then Tarot/Trucazo.
 
 **4.36.28 / #17:** author accepted the export and corrected launcher on 2026-10-01,
 authorizing #60 merge/#17 closure. CA-43628-EXPORT-01: HISTORY; evidence:

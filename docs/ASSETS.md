@@ -51,7 +51,12 @@ Only their 276 vertex positions change, into an unused grid at (-8000,31000).
 Sector planes, heights, tags, lighting, materials and control actions remain
 byte-equivalent as parsed records; no visual asset is added. The independent
 validator checks isolation, non-overlap and preservation. CONTROLS.json records
-native evidence and the remaining author check CA-4370-EXTERIOR-01.
+native evidence; CA-4370-EXTERIOR-01 is author-accepted on 2026-10-01.
+
+The northern-station follow-up changes no map or art. Runtime relocation now
+recognizes original stations resting on sloped ground, preserving all eighteen
+original actors within the intended 38 interior stations. STATIONS.json holds
+native evidence; only CA-4370-STATIONS-01 awaits author acceptance.
 
 ## 4.36.28 — Playtest resource packaging (#17)
 

@@ -4,6 +4,36 @@ Status: integrated engineering register (issue #22, patch 4.36.1b).
 Prepared: 2026-09-23. Inherits the project's release after integration.
 Inspected baseline: `1dc390576fa330d37ff543526fc7e69a397fc28f` (PR #7).
 
+## CA-KP-027 — Terrain relief can invalidate absolute-height relocation filters
+
+Status/evidence: AUTHOR-REPORTED / CODE-VERIFIED / ENGINE-VERIFIED, #61 / PR #66.
+First recorded / last checked: 2026-10-01 / 2026-10-01.
+Affected baseline: 00e4322d; repair: subsequent station-relocation change in
+PR #66, exact source/package hashes in assets/validation_4370/STATIONS.json.
+Environment: GZDoom 4.14.2, Windows 11, Vulkan, development Doom II IWAD,
+fresh MAP01 and isolated native fixture.
+
+Six original stations remained outdoors at Y=1040 while their replacements
+appeared inside, yielding 44 stations instead of 38. Their former flat staging
+row now sits on hills at Z=1.08..3.30. PlaceStation and PrepareMansionLayout's
+spare fallback required Abs(Pos.Z)<1, so both missed the grounded originals.
+The map's original thing records were unchanged; that invariant alone could
+not verify runtime relocation after a terrain change.
+
+Both filters now compare Pos.Z with native FloorZ, retaining the existing XY
+bounds, class and unassigned-group restrictions. Do not simply expand a magic
+absolute Z range when the intended condition is standing on the local floor.
+The fix reuses original actors and the existing destinations without deleting
+stations, introducing recipes or changing saved fields.
+
+Regression: native WorldLoaded captures all eighteen original references.
+After preparation there must be 38 stations, none outside, groups 5/7/5/9/12,
+and all originals retained. Test each station's network and physical access;
+repeat preparation and save/reload to check identity and duplication.
+Evidence: [station repair](../assets/validation_4370/STATIONS.json).
+Author acceptance: CA-4370-STATIONS-01 pending. Already prepared older worlds
+are outside this fix under the author's explicit old-save waiver.
+
 ## CA-KP-026 — Detached control rooms must remain outside playable geometry
 
 Status/evidence: AUTHOR-REPORTED / CODE-VERIFIED / ENGINE-VERIFIED, #61 / PR #66.
@@ -33,7 +63,7 @@ reported views, 750 region samples/3,000 moves, 64 former room centres, actual
 player traversal, 840 identical mansion surface samples and 429 door checks.
 The black region is absent in the final views. This does not establish the
 cause of the earlier oversized-floor defect in CA-KP-024 or cover every camera.
-Author acceptance of this repair remains pending as CA-4370-EXTERIOR-01.
+Author accepted this repair as CA-4370-EXTERIOR-01 on 2026-10-01.
 
 ## CA-KP-025 — Normalize all four coefficients of generated UDMF planes
 
