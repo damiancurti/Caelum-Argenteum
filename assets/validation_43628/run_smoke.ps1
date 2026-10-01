@@ -45,7 +45,8 @@ foreach ($map in @('MAP01','MAP02','MAP03','MAP06')) {
         host_seconds=[Math]::Round($timer.Elapsed.TotalSeconds,3);
         package_sha256=(Get-FileHash (Join-Path $OutputDirectory 'caelum_argenteum_dev.pk3')).Hash.ToLowerInvariant();
         ready=$text.Contains("ISSUE17_READY_$map"); done=$text.Contains("ISSUE17_DONE_$map");
-        saved=($text -match 'Game saved'); loaded=($text -match 'Loading game');
+        saved=($text -match 'Game saved');
+        loaded=($text -match ('(?s)Game saved\..*\r?\n'+$map+' - '));
         engine_4142=($text -match 'g4\.14\.2'); problems=$problems;
         log="$label.log";
         scope='Direct map startup and native save/load only; not ordinary progression or author acceptance'

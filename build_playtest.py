@@ -12,7 +12,6 @@ import json
 from pathlib import Path, PurePosixPath
 import re
 import subprocess
-import tarfile
 import zipfile
 
 
@@ -21,8 +20,8 @@ STAMP = (1980, 1, 1, 0, 0, 0)
 PK3_NAME = "caelum_argenteum_dev.pk3"  # Preserve the established save identity.
 
 
-def git(*args):
-    return subprocess.check_output(["git", "-C", str(ROOT), *args])
+def git(*args, input=None):
+    return subprocess.check_output(["git", "-C", str(ROOT), *args], input=input)
 
 
 def digest(data):
@@ -49,15 +48,25 @@ def archive_bytes(files):
 
 
 def committed_files(commit):
-    raw = git("archive", "--format=tar", commit, "src", "README.md", "LICENSE.md", "assets/playtest")
-    with tarfile.open(fileobj=io.BytesIO(raw), mode="r:") as archive:
-        result = {}
-        for member in archive:
-            if member.isdir():
-                continue
-            if not member.isfile():
-                raise ValueError(f"Non-regular export source: {member.name}")
-            result[member.name] = archive.extractfile(member).read()
+    # git archive can apply checkout conversions, including core.autocrlf.
+    # Reading the blob objects directly makes the contract independent of Git config.
+    listing = git("ls-tree", "-r", "-z", commit, "--", "src", "README.md", "LICENSE.md", "assets/playtest")
+    members = []
+    for entry in listing.decode("utf-8").rstrip("\0").split("\0"):
+        attributes, name = entry.split("\t", 1)
+        mode, kind, oid = attributes.split()
+        if kind != "blob" or mode not in {"100644", "100755"}:
+            raise ValueError(f"Non-regular export source: {name}")
+        members.append((name, oid))
+    objects = io.BytesIO(git("cat-file", "--batch", input="".join(oid + "\n" for _, oid in members).encode("ascii")))
+    result = {}
+    for name, expected_oid in members:
+        oid, kind, size = objects.readline().decode("ascii").split()
+        if oid != expected_oid or kind != "blob":
+            raise ValueError(f"Unexpected Git object: {name}")
+        result[name] = objects.read(int(size))
+        if len(result[name]) != int(size) or objects.read(1) != b"\n":
+            raise ValueError(f"Truncated Git object: {name}")
     return result
 
 
