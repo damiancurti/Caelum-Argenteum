@@ -9,6 +9,7 @@ class CaelumPortData : Object play
     const DEFENDER_HEIGHT_M = 1.8;
     const DEFENDER_MASS_KG = 80;
     const EQUIPMENT_TIER = 1;
+    const ENEMY_ATTACK_RESOURCE_TRIAL = 1;
     const GATE_Y = 3584;
     const WALL_SOUTH_Y = 3520;
     const WALL_HEIGHT = 128;

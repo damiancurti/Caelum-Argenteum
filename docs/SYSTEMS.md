@@ -39,11 +39,18 @@ recruit or reactivate. If no eligible reserve remains, the vacancy stays open.
 Allied replacements come from the original gate defenders, so their distribution
 changes with losses while the original 100-person roster remains fixed.
 
-Port combatants with insufficient Anima suppress unavailable magic attacks and
-continue pursuit/physical attacks using their existing Air costs. A saved magic
-wait resumes physical pursuit when Air permits. Actual physical exhaustion,
-sleep and stun retain their existing waits; other encounters retain #37's rules.
-No attribute, resource maximum, cost, regeneration or spell range is increased.
+The author subsequently requested a trial in which port enemies may execute
+physical and magical attacks even with insufficient Air/Anima. This trial is
+enabled by `enemy_attack_resource_trial: 1` in assets/map06_port/LAYOUT.json.
+Only hostile Mandingas and the commander registered to CaelumPortSiege qualify;
+the player, defenders, friendly conversions and other encounters keep their
+normal costs/limits. Spending still drains available resources, clamped at zero;
+it does not refill or increase them. Existing saved resource waits can resume.
+Attack cadence, weapon-load limits, damage, range, sleep/stun and half-health
+retreat remain. Set the data flag to 0, regenerate generate_map06_port.py and
+rebuild to restore the preceding port behavior: suppress unaffordable magic and
+continue physical pursuit while Air permits. No serialized field/schema changes
+are required. This is an author-requested playtest setting, not accepted balance.
 
 The port commander inherits the ordinary Zupay profile: twelve attributes at
 33, maximum health 44,022, Anima 6,610, Air approximately 1,222.18, mass 666 kg,

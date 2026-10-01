@@ -31,6 +31,15 @@ The existing saved arrays/references hold relief identity without a new schema.
 Follow-up evidence is in assets/validation_43627/relief. The reported failure
 keeps both author checks pending; earlier evidence is retained with its scope.
 
+The author then requested testing enemy physical/magical attacks even after
+Air/Anima exhaustion. The same #16 patch now enables a reversible port-data flag
+for registered hostile Mandingas/Zupay only. Resources still drain to zero;
+neither maxima nor recovery increase. The player, defenders and other encounters
+retain normal limits. Existing waiting attacks can resume after load without a
+schema change. This supersedes the preceding insufficient-Anima fallback while
+the flag is enabled and remains a trial awaiting author acceptance. Evidence:
+assets/validation_43627/resource_trial. Earlier measurements retain their scope.
+
 Native GZDoom 4.14.2 checks passed: both objective orders (23 checks each),
 reload timing/crew/ammunition (9), zero/some/all prisoner payments and shared
 Knight capture (24), current save/reload, legacy migration/idempotence/rollback,

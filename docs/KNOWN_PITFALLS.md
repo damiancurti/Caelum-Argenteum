@@ -22,6 +22,9 @@ resume the existing See state when the physical attack is affordable. Physical
 exhaustion, sleep/stun, other encounters and resource balance stay unchanged.
 The comparable corrected sample moved 968 actors versus 429 before, with no
 magic wait. This does not eliminate legitimate collision congestion in a crowd.
+The author's subsequent resource trial deliberately permits both attack types
+at zero resources for registered hostile port actors. This fallback behavior
+remains available when enemy_attack_resource_trial is disabled in the port data.
 Evidence: assets/validation_43627/relief, including native before/after movement,
 full-roster operation and saved-wait continuation. Author acceptance is pending.
 

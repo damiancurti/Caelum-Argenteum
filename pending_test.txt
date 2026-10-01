@@ -8,7 +8,9 @@ Capture the Knight with the Box, collect any owed prisoner rewards and Use the
 completion sign. Try rest/repair resources before and after the battle.
 Kill one operator of a staffed ram/cannon while leaving reserves alive; watch a
 replacement walk to the vacancy. Spend at least 30 seconds inside the enemy
-formation and check that low-Anima attackers keep pursuing/using melee.
+formation and check that enemies keep using magic and physical attacks after
+their Air/Anima run out under the enabled resource trial. Player and defender
+resource limits must remain normal; assess the trial's combat pressure.
 Expected: 100 Domingo-appearance soldiers defend gates/operate guns with the
 specified sword, kite shield and medium armor; automatic unlimited cannons prefer
 enemy operators and take 10 seconds with two crew/20 with one. Zupay runs to the

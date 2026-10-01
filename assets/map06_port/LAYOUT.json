@@ -4,6 +4,7 @@
   "notes": [
     "Author: 1000 Mandingas, one Zupay, five small rams, one large ram, six attacking and twelve defending cannons.",
     "Author 2026-09-30: 100 defenders, uniform attributes 18, 1.8 metres, 80 kg, Domingo appearance, sword, kite shield, medium armor. Existing campaign T1 equipment is used.",
+    "Author trial: registered hostile port enemies may attack with insufficient Air or Anima; enemy_attack_resource_trial=0 restores resource limits and physical fallback.",
     "Geometry, formation spacing and command connectivity radius are implementation choices for playtesting, not new combat balance.",
     "Machine proximity uses existing accepted physical-scale guard radii. Crew posts follow current machine positions.",
     "Existing port buildings, docks and prisoner positions are retained. The battle district extends north."
@@ -14,6 +15,7 @@
   "defender_height_m": 1.8,
   "defender_mass_kg": 80,
   "equipment_tier": 1,
+  "enemy_attack_resource_trial": 1,
   "gate_x": [-2560, -1536, -512, 512, 1536, 2560],
   "gate_y": 3584,
   "wall_south_y": 3520,

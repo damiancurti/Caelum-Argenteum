@@ -19,6 +19,9 @@ Documentation version: **4.36.27** — 2026-09-30.
   the initial port playtest. Follow-up implements nearest available same-side
   replacements and physical pursuit while magic resources recover. Recheck
   these behaviors in both outstanding author tests; no acceptance is inferred.
+- Current author-requested trial enables attacks despite insufficient Air/Anima
+  for registered hostile port enemies. Player/allied limits remain. The data
+  switch is reversible; test results do not establish acceptance of this balance.
 - Next: author review/playtest, then the separate #17 export gate and remaining
   4.37 prerequisites. No playtest ZIP or final independent distribution is claimed.
 

@@ -890,6 +890,7 @@ class CaelumCombatActor : Actor
     bool HasAttackResource()
     {
         if(AttackResourceWeapon>=0 && GetProfileWeaponDuration(AttackResourceWeapon)<=0)return false;
+        if(CaelumPortSiege.IgnoreAttackResourceLimits(self))return true;
         return AttackResourceMagical ? CurrentCombatAnima>=GetTierOneMagicAnimaCost(AttackResourceWeapon)
             : CurrentCombatAir>=GetEffectiveAttackAir(AttackResourceBaseCost);
     }
@@ -983,7 +984,7 @@ class CaelumCombatActor : Actor
     bool TrySpendCombatAir(double requestedAmount)
     {
         double amount = Max(0.0, requestedAmount);
-        if (CurrentCombatAir < amount) { return false; }
+        if (CurrentCombatAir < amount && !CaelumPortSiege.IgnoreAttackResourceLimits(self)) { return false; }
         CurrentCombatAir = Max(0.0, CurrentCombatAir - amount);
         return true;
     }
@@ -1019,7 +1020,7 @@ class CaelumCombatActor : Actor
     bool TrySpendTierOneMagicAnima(int weaponType)
     {
         double cost = Max(0.0, GetTierOneMagicAnimaCost(weaponType));
-        if (CurrentCombatAnima < cost) { return false; }
+        if (CurrentCombatAnima < cost && !CaelumPortSiege.IgnoreAttackResourceLimits(self)) { return false; }
         CurrentCombatAnima = Max(0.0, CurrentCombatAnima - cost);
         return true;
     }

@@ -19,9 +19,10 @@ Native integration, save/reload and full-population evidence is in
 visual/balance author acceptance remain in [pending_test.txt](pending_test.txt).
 
 The author's follow-up adds crew relief from existing unassigned combatants
-after a death. Port enemies without enough Anima keep pursuing and using their
-physical attack when Air permits; they no longer stand waiting for a spell.
-Resource costs, regeneration and the approved population remain unchanged.
+after a death. The current trial lets the port's hostile Mandingas and Zupay
+execute physical/magical attacks even without enough Air/Anima. Available
+resources drain to zero; the player and defenders retain normal limits. This
+reversible playtest option is documented in SYSTEMS; accepted balance is pending.
 
 **Saves that already visited the former MAP06:** use
 `run_dev.bat --legacy-map06` (or `build_dev.ps1 -LegacyMap06`) to preserve its

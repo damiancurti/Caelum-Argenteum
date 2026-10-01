@@ -1,12 +1,12 @@
 {
     "version":  "4.36.27",
     "build_files":  6129,
-    "final_pk3_sha256":  "6937d14d9d60a662cbd4bfa98ea6710e6af4129d10aa5f736a13cf3ae3812fc4",
-    "native_smoke":  "resource_trial/issue16_resource_trial.log: 11 checks PASS; resource_trial/issue16_resource_mass.log: full empty-resource battle and save/load PASS",
+    "final_pk3_sha256":  "1834bb4ae95551361132c6491d2781ccf6825eda51a8d9321e04dd188f48a65f",
+    "native_smoke":  "relief/issue16_mass_relief_final.log and relief/issue16_relief_objectives.log: PASS",
     "static_validation":  {
                               "command":  "python validate_project.py",
                               "exit_code":  0,
-                              "context_words":  2494,
+                              "context_words":  2492,
                               "errors":  [
 
                                          ]
@@ -18,11 +18,11 @@
                    },
                    {
                        "path":  "src/caelum/world/CaelumPortData.zs",
-                       "sha256":  "b37f22d8bb81fc7391594cc621cbcffc0d8a8c8cb217f416c2145a2a42a939fc"
+                       "sha256":  "dcb8444a06cf34f13a6da7d5b2bc1f6d521173d4bc7a1d6fa3b1605c7171c4ac"
                    },
                    {
                        "path":  "src/caelum/world/CaelumPortSiege.zs",
-                       "sha256":  "a6e7efde346db28827671b6cc0d4d6e4be54ee77d76043d0a86a76b91eb4b1e1"
+                       "sha256":  "fd7aee6a2deea3161003b97d2d10e6c15575140183544f6221ab5282f42c5166"
                    },
                    {
                        "path":  "src/caelum/world/CaelumPortDefender.zs",
@@ -50,7 +50,7 @@
                    },
                    {
                        "path":  "src/caelum/actors/CaelumCombatActor.zs",
-                       "sha256":  "71ae24ee7968c95d675172c9777aa24ae1a1154e5912be256e3cde9816c17f81"
+                       "sha256":  "3c967a35c735ab53a4ddfdc18b48f86a46b69cd0a43f4d1821b02de96e92830d"
                    }
                ]
 }

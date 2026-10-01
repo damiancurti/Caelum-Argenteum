@@ -13,10 +13,11 @@ assets/validation_43627. Ordinary campaign and visual/balance author acceptance
 remain pending. This patch does not close #17's export or the separate 4.37 gates.
 
 The author then reported no relief for lost operators and widespread stationary
-attackers. Crew slots now recruit existing free combatants; the reproduced
-magic-resource wait now permits port pursuit and physical attacks when Air is
-available. Counts and resource balance stay unchanged. See follow-up evidence
-under assets/validation_43627/relief; author acceptance remains pending.
+attackers. Crew slots now recruit existing free combatants. After the initial
+physical-pursuit fallback, the author requested a reversible trial permitting
+port enemies to use both attack types despite Air/Anima exhaustion. Counts,
+cadence and player/allied limits remain. See assets/validation_43627/relief and
+resource_trial; author acceptance remains pending.
 
 ## 4.36.26 — Attack cadence and thrust presentation (#37)
 

@@ -9,7 +9,7 @@ and commander defeat, enabling Knight capture and physical survivor withdrawal.
 Native integration/save/mass-scene checks pass. Author playtest remains pending.
 Use --legacy-map06 for campaigns that previously visited the old port. SYSTEMS
 holds current rules; assets/validation_43627 holds evidence.
-Follow-up: dead crew are replaced; low-Anima enemies keep physical pursuit.
+Current trial: dead crew are replaced; port enemies attack despite empty resources.
 
 Repository rights: LICENSE.md reserves original-project rights, subject to
 third-party terms and legal/platform exceptions (#55).

@@ -266,12 +266,22 @@ class CaelumPortSiege : CaelumSiegeEncounter
 
     static bool ResumePhysicalCombat(CaelumCombatActor body)
     {
+        if(IgnoreAttackResourceLimits(body))return false;
         if(body.SiegeCombatant==null || !(body.SiegeCombatant.Encounter is "CaelumPortSiege")
             || !body.AttackResourceMagical || body.ForcedSleepTics>0
             || body.CombatLucidityPhysicalStunRemaining>0
             || body.CurrentCombatAir<body.GetEffectiveAttackAir(PhysicalCost(body)))return false;
         // Una espera ya guardada de magia puede continuar con el ataque físico.
         body.AttackResourceWaiting=false;body.SetState(body.SeeState);return true;
+    }
+
+    static bool IgnoreAttackResourceLimits(CaelumCombatActor body)
+    {
+        // Prueba solicitada por el autor: sólo los atacantes del puerto.
+        return CaelumPortData.ENEMY_ATTACK_RESOURCE_TRIAL!=0 && body!=null
+            && !body.bFriendly && body.SiegeCombatant!=null
+            && body.SiegeCombatant.Encounter is "CaelumPortSiege"
+            && (body is "CaelumMandinga" || body is "CaelumPortCommander");
     }
 
     Actor CannonTarget(CaelumCannon gun)
@@ -370,7 +380,8 @@ class CaelumPortSiege : CaelumSiegeEncounter
         if(victim==null || victim.health<=0){body.target=null;return true;}
         body.target=victim;
         int magicWeapon=body is "CaelumZupayColossus" ? CaelumConstants.WEAPON_TYPE_STATUETTE : CaelumConstants.WEAPON_TYPE_STAFF;
-        bool canCast=soldier==null && body.CurrentCombatAnima>=body.GetTierOneMagicAnimaCost(magicWeapon);
+        bool canCast=soldier==null && (IgnoreAttackResourceLimits(body)
+            || body.CurrentCombatAnima>=body.GetTierOneMagicAnimaCost(magicWeapon));
         if(!body.InStateSequence(body.CurState,body.SeeState))body.SetState(body.SeeState);
         else if(hasPost && !nearEnemy)
         {
