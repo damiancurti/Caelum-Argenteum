@@ -17,9 +17,10 @@ Existing active/completed 4.37.0 saves retain earned progress, including offensi
 flags earned under the former cast-based rule. No reset or conversion is needed.
 Static and isolated GZDoom checks pass, including forty spell combinations and
 active/completed save continuity; evidence is in assets/validation_4371/RESULTS.json.
-Ordinary campaign author acceptance is pending as CA-4371-CAELLA-01; #61's prior
-acceptance and geometry-specific save waiver do not accept or waive this patch.
-Next: author review of #62, then the separately deferred Tarot/Trucazo scope.
+The author confirmed all tests passed on 2026-10-01: CA-4371-CAELLA-01 is
+ACCEPTED without reported exceptions (#62 / PR #67). The tested runtime is
+unchanged. Next: the separately requested Anima-cost balance patch; deferred
+Tarot/Trucazo remains separate.
 
 ## 4.37.0 — MAP01 rolling grounds and filled tympana (#61)
 

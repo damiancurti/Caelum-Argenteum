@@ -17,7 +17,8 @@ then return to Caella before the wall becomes passable and loans return. This
 restates the current SYSTEMS implementation; older section 18's operational
 proposal does not introduce an elemental selector or automatic opening here.
 No geometry or save schema changes: active/completed 4.37.0 progress is retained.
-Evidence: assets/validation_4371; author test CA-4371-CAELLA-01 remains pending.
+Evidence: assets/validation_4371. The author accepted CA-4371-CAELLA-01 and all
+#62 / PR #67 checks on 2026-10-01 without reported exceptions.
 
 ## 4.37.0 — Exterior relief, scattered vegetation and door tympana (#61)
 

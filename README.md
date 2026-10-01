@@ -14,8 +14,9 @@ Caella and the Journal give matching English/Spanish directions. Runes, loans,
 passage progression and Rulo's shared dummy retain their existing rules.
 Active/completed 4.37.0 saves keep their progress; this patch changes no geometry
 or save schema. Keep original saves/packages for rollback. Evidence is in
-[4.37.1 validation](assets/validation_4371/RESULTS.json); ordinary campaign and
-save checks await author confirmation in [pending_test.txt](pending_test.txt).
+[4.37.1 validation](assets/validation_4371/RESULTS.json). The author confirmed all
+campaign/save checks passed on 2026-10-01 (CA-4371-CAELLA-01, issue #62 / PR #67).
+The subsequent magic-cost balance request is a separate patch.
 
 Issue [#61](https://github.com/damiancurti/Caelum-Argenteum/issues/61) adds rolling
 terrain and scattered decorative vegetation around MAP01, plus filled triangular

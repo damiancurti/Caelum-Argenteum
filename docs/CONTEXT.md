@@ -6,7 +6,8 @@ Documentation version: **4.37.1** — 2026-10-01.
 dummy in the north-central ground-floor room. Seal/Anima checks remain separate;
 runes, loans and passage gates are unchanged. Active/completed 4.37.0 saves retain
 earned progress without a schema change. Evidence: assets/validation_4371.
-Author campaign/save test CA-4371-CAELLA-01 is pending; then review/merge #62.
+Author accepted CA-4371-CAELLA-01 on 2026-10-01; #62 / PR #67 is accepted.
+Next: separately requested magic-weapon Anima base costs divided by ten.
 
 **4.37.0 / #61:** mansion hills, decorative plants/gem cave and door tympana;
 pool exclusion, distant-floor/roof repairs, relocated auxiliary rooms/stations.

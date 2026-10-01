@@ -4,7 +4,15 @@
   "date": "2026-10-01",
   "base_commit": "13ba3ccdf76c533a62faca88ff809033ee0f4791",
   "engine": "GZDoom 4.14.2 / Windows 11 / Vulkan / RTX 3070 Ti",
-  "author_acceptance": "PENDING: CA-4371-CAELLA-01 in pending_test.txt; prior #61 acceptance does not apply",
+  "author_acceptance": {
+    "test_id": "CA-4371-CAELLA-01",
+    "issue": 62,
+    "pr": 67,
+    "status": "ACCEPTED",
+    "date": "2026-10-01",
+    "confirmation": "All tests passed, without reported exceptions.",
+    "qualification": "Subsequent Anima balance request is a separate patch; tested runtime unchanged."
+  },
   "package": {
     "path": "build/caelum_argenteum_dev.pk3",
     "sha256": "34984bd0ab0d25aae3d85229d61c5b66f4ea34539f943c31e7f7e85988ab0c58",

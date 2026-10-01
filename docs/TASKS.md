@@ -15,8 +15,9 @@ Documentation version: **4.37.1** — 2026-10-01.
 - Static validation, forty native spell combinations, negative/resource/rune/loan
   checks and active/completed save continuity pass. Evidence:
   assets/validation_4371/RESULTS.json. Native fixtures are isolated from
-  the package; author campaign/save acceptance remains CA-4371-CAELLA-01 in the
-  root pending_test.txt. Do not merge/close #62 until that acceptance.
+  the package. The author accepted all tests on 2026-10-01 without exceptions;
+  CA-4371-CAELLA-01 is recorded in HISTORY and removed from pending_test.txt.
+  Issue #62 / PR #67 is accepted; the new Anima-cost balance is a separate patch.
 
 ## Issue #61 — MAP01 terrain, vegetation and filled tympana (4.37.0)
 

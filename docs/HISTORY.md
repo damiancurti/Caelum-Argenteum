@@ -31,9 +31,17 @@ saved and reloaded; rollback to the original package is also checked.
 
 Reproduction commands, fixture limitations and hashes are retained in
 assets/validation_4371/RESULTS.json. These checks are
-not a claim of an ordinary fresh campaign or author acceptance. The prior #61
-save waiver is not applied here. CA-4371-CAELLA-01 (originating 4.37.1 / #62)
-remains PENDING in pending_test.txt until explicit author confirmation.
+not by themselves a claim of an ordinary fresh campaign or author acceptance.
+The prior #61 save waiver is not applied here.
+
+CA-4371-CAELLA-01 — originating release 4.37.1, issue #62 / PR #67:
+ACCEPTED by the author on 2026-10-01, who explicitly confirmed that all tests
+passed without reported exceptions. This includes the ordinary tutorial, both
+languages, offensive/non-offensive objectives, shared Rulo target, loans and
+active/completed save continuity. Its entry is removed from pending_test.txt.
+The author then requested magic-weapon Anima base costs divided by ten, retaining
+the Type 4 attribute divisor (one third at 100). That balance is a separate
+issue/patch; this acceptance preserves the tested 4.37.1 runtime.
 
 ## 4.37.0 — Rolling mansion grounds and filled door tympana (#61)
 
