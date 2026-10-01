@@ -163,7 +163,135 @@
     "output_tokens": null,
     "reasoning_tokens": null,
     "scope": "#8/#9 plus #10 through #21, including correction sessions; available task evidence is not a Usage counter.",
-    "limits": "No exposed aggregate usage counters for this batch. Final allowance, resets, concurrent unrelated usage and Work/desktop measurements require author evidence at accepted completion. No percentage-to-token conversion or quantitative savings claim."
+    "limits": "No exposed aggregate usage counters for this batch. Final allowance, resets, concurrent unrelated usage and Work/desktop measurements require author evidence at accepted completion. No percentage-to-token conversion or quantitative savings claim.",
+    "retrieved_evidence": "Merged PR bodies #24/#25/#26/#27/#28/#38/#39/#40/#41/#42/#45/#59 and available per-patch validation records reviewed 2026-10-01.",
+    "measured_desktop_wall_intervals": [
+      {
+        "issue": 8,
+        "source_pr": "https://github.com/damiancurti/Caelum-Argenteum/pull/24",
+        "scope": "implementation",
+        "start_utc": "2026-09-24T00:11:05Z",
+        "end_utc": "2026-09-24T00:37:23Z",
+        "elapsed_seconds": 1578
+      },
+      {
+        "issue": 8,
+        "source_pr": "https://github.com/damiancurti/Caelum-Argenteum/pull/25",
+        "scope": "acceptance follow-up",
+        "start_utc": "2026-09-24T00:43:35Z",
+        "end_utc": "2026-09-24T00:47:02Z",
+        "elapsed_seconds": 207
+      },
+      {
+        "issue": 9,
+        "source_pr": "https://github.com/damiancurti/Caelum-Argenteum/pull/26",
+        "scope": "implementation",
+        "start_utc": "2026-09-24T00:53:40Z",
+        "end_utc": "2026-09-24T01:06:41Z",
+        "elapsed_seconds": 781
+      },
+      {
+        "issue": 9,
+        "source_pr": "https://github.com/damiancurti/Caelum-Argenteum/pull/26",
+        "scope": "acceptance follow-up",
+        "start_utc": "2026-09-24T01:09:02Z",
+        "end_utc": "2026-09-24T01:11:51Z",
+        "elapsed_seconds": 169
+      },
+      {
+        "issue": 10,
+        "source_pr": "https://github.com/damiancurti/Caelum-Argenteum/pull/27",
+        "scope": "implementation",
+        "start_utc": "2026-09-24T01:26:23Z",
+        "end_utc": "2026-09-24T02:12:30Z",
+        "elapsed_seconds": 2767
+      },
+      {
+        "issue": 10,
+        "source_pr": "https://github.com/damiancurti/Caelum-Argenteum/pull/27",
+        "scope": "acceptance follow-up",
+        "start_utc": "2026-09-24T02:18:46Z",
+        "end_utc": "2026-09-24T02:19:58Z",
+        "elapsed_seconds": 72
+      },
+      {
+        "issue": 11,
+        "source_pr": "https://github.com/damiancurti/Caelum-Argenteum/pull/28",
+        "scope": "implementation",
+        "start_utc": "2026-09-24T02:27:46Z",
+        "end_utc": "2026-09-24T03:10:24Z",
+        "elapsed_seconds": 2558
+      },
+      {
+        "issue": 11,
+        "source_pr": "https://github.com/damiancurti/Caelum-Argenteum/pull/28",
+        "scope": "acceptance documentation follow-up",
+        "start_utc": "2026-09-24T03:26:20Z",
+        "end_utc": "2026-09-24T03:27:27Z",
+        "elapsed_seconds": 67
+      }
+    ],
+    "sampled_wall_seconds": 8199,
+    "sampled_wall_limit": "8199 seconds (2h16m39s) is ONLY the disjoint recorded #8–#11 desktop intervals. It excludes setup, some publication/closure work, manual-testing gaps and all unmeasured stages. It is not the batch duration, token consumption or quota use.",
+    "stage_coverage": [
+      {
+        "issues": [
+          8,
+          9,
+          10,
+          11
+        ],
+        "evidence": "PR intervals above; #11 acceptance boundary also in assets/validation_4365/RESULTS.json",
+        "tokens": "unavailable"
+      },
+      {
+        "issues": [
+          12,
+          13,
+          14,
+          15
+        ],
+        "evidence": "Implementation/acceptance in HISTORY and available manifests; no comparable elapsed or token counters found in reviewed records",
+        "tokens": "unavailable"
+      },
+      {
+        "issues": [
+          18
+        ],
+        "evidence": "PR #38/#39; assets/validation_43614a/RESULTS.json explicitly marks correction usage unavailable",
+        "tokens": "unavailable"
+      },
+      {
+        "issues": [
+          19
+        ],
+        "evidence": "PR #40 explicitly marks Work, token categories, final allowance, reset and concurrent-use counters unavailable",
+        "tokens": "unavailable"
+      },
+      {
+        "issues": [
+          20,
+          21
+        ],
+        "evidence": "assets/validation_43616/manifest.json and assets/validation_43617/manifest.json: one desktop session each; token categories null; no measured Work use; current quota/reset unknown",
+        "tokens": "unavailable"
+      },
+      {
+        "issues": [
+          16
+        ],
+        "evidence": "PR #59 records baseline 75%, current allowance/reset and Work/desktop token measurements unavailable; follow-up corrections remain within #16 evidence",
+        "tokens": "unavailable"
+      },
+      {
+        "issues": [
+          17
+        ],
+        "evidence": "Current desktop packaging/native verification, raw-blob exporter correction and reload-log detector correction included. Full task time and token counters not exposed; no separate model review.",
+        "tokens": "unavailable"
+      }
+    ],
+    "comparison": "No quantitative earlier-patch savings comparison: workload, measurement completeness, reset boundaries and concurrency are not comparable."
   },
   "static_validation": {
     "command": "python validate_project.py",
@@ -280,5 +408,17 @@
     "Historical cannon overall dimensions remain unverified; inherited sleeping-bag icon reuses fabric art. No blanket absence-of-placeholder or final standalone claim.",
     "No independent second-model review; the available assistant performed implementation and verification.",
     "No final aggregate Usage counters or author-confirmed weekly balance yet."
-  ]
+  ],
+  "delivery": {
+    "source_commit": "d2be1aa0f2a0cf960eee929f9823d85c836962c4",
+    "zip_name": "caelum_argenteum_4.36.28_playtest.zip",
+    "local_output": "build/playtest_release/caelum_argenteum_4.36.28_playtest.zip",
+    "bytes": 474069475,
+    "zip_sha256": "8779dd5717a99b7e33bba4c3429343b6be4a89ece6c8fa70f53fe9ce71514cc5",
+    "pk3_sha256": "819aa4912ee59321d4f80e435b01ce84b0c9065bd497a883b0a8712d45eb9591",
+    "independent_verifier": "PASS; 6129 exact committed runtime blobs, all checksum/CRC/metadata/allowlist checks",
+    "reproduction": "PASS; separate build/playtest_release_reproduced export has identical ZIP SHA-256",
+    "native_evidence_applies": "The embedded PK3 is byte-identical to the fa6fb9bb package tested in native.maps. Subsequent changes affect documentation/delivery metadata only.",
+    "publication": "Local artifact only; no GitHub Release or tag published; merge and external publication await author decision."
+  }
 }
