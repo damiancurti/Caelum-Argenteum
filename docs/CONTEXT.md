@@ -4,11 +4,11 @@ Documentation version: **4.36.28** — 2026-10-01.
 
 **4.36.28 / #17:** reproducible current-content export prepared from accepted
 4.36.27. Author explicitly postponed 4.37 Tarot/Trucazo until after this playtest
-on 2026-10-01. Route: MAP01 -> MAP02 -> MAP03 connector -> MAP06. Exported-package
-author acceptance remains open; static/build, hashes and native smoke pass. See TASKS,
-pending_test.txt and assets/validation_43628. Gameplay and saves are unchanged.
-Launcher follow-up detects adjacent GZDoom/IWAD files after the author's failed
-installation attempt; six launcher checks pass. The author must retry.
+on 2026-10-01. Route: MAP01 -> MAP02 -> MAP03 connector -> MAP06. Author confirmed
+all export tests passed, including the corrected launcher, on 2026-10-01 and
+authorized #60 merge/#17 closure. CA-43628-EXPORT-01 is recorded in HISTORY;
+pending_test.txt is empty. Evidence: assets/validation_43628. Gameplay/saves
+and the accepted ZIP remain unchanged. Next: deferred 4.37 Tarot/Trucazo.
 
 **4.36.27 / #16:** full port siege deployed: 1,000 Mandingas, Zupay, 24 machines,
 100 equipped defenders. Automatic unlimited cannons reload in 10/20 seconds;
@@ -97,7 +97,7 @@ evidence: assets/validation_43625/caella. Startup model-surface failure is fixed
 including separate rescue/extraction and payment status. Native legacy/reload/hub
 and UI checks pass (assets/validation_43624). CA-43624-JOURNAL-01 passed author
 acceptance on 2026-09-28; merge/closure authorized. Controls/classification and
-legacy limits: SYSTEMS. Port accepted; #17 export acceptance remains pending.
+legacy limits: SYSTEMS. Port and #17 export are author-accepted.
 
 **4.36.23 / #52:** Toughness subtracts uncapped L*(L+1)/101 maximum-health percentage points before armor.
 Magical armor loses mental bonuses; shields stay unchanged. Palomo absorbs 77%;
@@ -134,11 +134,11 @@ Native traversal and loaded self-jump pass. 4.36.17 implemented #21 controlled
 cannons, approximate 4.3 kg ammunition, 30/60-second crews and bounded saved
 projectiles; its original CA-43613-CATAPULT-01 passed 2026-09-27. Those native
 mechanics and sources remain in assets/validation_43617; final balance supersedes
-the original 400 m/s /zero-gate-damage result. Port acceptance and export remain pending.
+the original 400 m/s /zero-gate-damage result. Port and export are now author-accepted.
 
 **4.36.16 / #20:** operational rams passed CA-43612-RAM-01 on 2026-09-26;
 merge/closure authorized. Mechanics, debug commands and evidence remain in
-SYSTEMS/HISTORY and assets/validation_43616. Port acceptance and export remain pending.
+SYSTEMS/HISTORY and assets/validation_43616. Port and export are now author-accepted.
 
 The accepted **4.36.15** (#19) implements breakable actor gates, using approved 30%/50%/70% reductions and 550/650/1,100 kg moving masses. Intact, damaged and broken states persist across save/load and hub travel; old-save and native body-contact tests pass. CA-43611-GATES-01 passed on 2026-09-26. Full implementation and acceptance details remain in HISTORY; subsequent #21 balance supersedes original gate Constitution.
 
@@ -211,11 +211,11 @@ rations, and MAP01 tables at full capacity.
 Pending:
 
 - #8–#16, #18–#21, #33–#37, #43 and #49 are author-accepted within their recorded
-  scope. #17 exported-package acceptance remains outstanding.
+  scope. #17 exported-package acceptance passed on 2026-10-01.
 - Extract Impact Physics only after its separate integration/save/reset closure. Per the author's 2026-09-23 #8 decision,
   existing ceiling/elevator cover moving sectors; avalanches await additional
   maps and damaging surfaces await temperature effects (no acid/lava requested).
-  Those three items do not block 4.36; the export check remains and Tarot is deferred.
+  Those three items do not block 4.36; export is accepted and Tarot remains next.
 
 On 2026-09-23 the author accepted the 4.36.0i maze, save/load and table checks
 and bow appearance. The author also confirmed the complete 4.36.1 Windows
@@ -236,8 +236,9 @@ The #15 approved Tarot fronts are integrated; activation/powers stay pending aft
 the current siege rules are author-accepted.
 Prisoner source/faction mapping: Caella/Unitarians, Ronnie/Federals,
 Rulo/Free Peoples, Argento/Cult of the Tarot; do not reassign mansion NPCs.
-PROJECT contains the authoritative scope, dependency order and usage protocol.
-PROJECT retains the author's allowance baseline and measurement protocol.
+PROJECT contains the authoritative scope and dependency order. The author
+discontinued further weekly-allowance measurements on 2026-10-01; historical
+usage evidence remains preserved.
 
 ## Repository structure (summarized)
 

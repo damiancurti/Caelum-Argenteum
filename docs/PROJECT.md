@@ -20,14 +20,15 @@ development saves, stock sources or repository archive is distributed.
 Gameplay, balance, visuals and save schemas retain the accepted baseline.
 The 2026-10-01 launcher correction automatically finds gzdoom.exe and DOOM2.WAD
 beside the package, supports quoted paths/folders and resolves relative paths
-against that directory. Six isolated launcher-process checks pass; ordinary
-installation/campaign acceptance stays pending after the author's launch failure.
+against that directory. Six isolated launcher-process checks pass. On 2026-10-01
+the author confirmed all tests passed after the correction and authorized
+PR #60 merge and #17 closure. CA-43628-EXPORT-01 is recorded as PASS in HISTORY;
+the author queue is empty. This explicitly accepts the exported-package route,
+separately from the earlier component and isolated engine evidence.
 
-Evidence and exact source commit: assets/validation_43628/RESULTS.json.
-The exported-package ordinary-player route remains an author acceptance check
-in pending_test.txt. Prior accepted component checks are linked in the evidence
-record, not silently promoted to acceptance of this export. External publication
-and PR merge are separate decisions; #17 remains open until its checks close.
+Evidence and exact accepted source commit: assets/validation_43628/RESULTS.json.
+The acceptance update preserves the tested ZIP from 8415f225, gameplay and saves.
+GitHub Release/tag publication was not requested. Next: deferred 4.37 work.
 Current dependencies remain GZDoom 4.14.2 and a separately supplied Doom II IWAD.
 This is a single-player playtest, not the final independent distribution.
 
@@ -608,15 +609,20 @@ need approval. Later campaign expansion remains V5.
 
 ### Usage measurement for this batch
 
-Author-confirmed baseline on 2026-09-23: **75% of weekly allowance remaining**.
-It is an author report, not a directly observed account counter; the reset
-time is unknown. Capture source/timestamp, model/provider/effort/speed, token
-categories when exposed, correction rounds and final allowance. Keep Work
-planning/review separate from desktop implementation; mark missing coverage,
-resets and concurrent unrelated usage. Never infer tokens from changed lines
-or quota percentages, or compare the full translation as an equivalent patch.
-Issues #8–#21 define the current measured implementation batch. Details and
-per-patch evidence belong in the linked PRs; #17 consolidates the final report.
+On 2026-10-01, the author discontinued further weekly-allowance measurement:
+no additional quota-consumption tests or final weekly-balance collection are
+required. This supersedes that part of the original #8/#17 batch protocol.
+Preserve the existing evidence; do not create estimates to fill its gaps.
+
+Historical author-confirmed baseline on 2026-09-23: **75% of weekly allowance
+remaining**, with reset time unknown. It is not a directly observed account
+counter or a token count. Existing evidence separates Work planning/review from
+desktop implementation and records missing coverage, correction rounds, resets
+and concurrent unrelated work where available. Never infer tokens from changed
+lines or quota percentages, or compare dissimilar workloads as equivalent.
+The #8–#21 batch report is retained in #17 and assets/validation_43628/RESULTS.json;
+unavailable token categories and final allowance remain unmeasured, not pending
+author tests or a closure blocker.
 
 ## 4.36.0i — maze, flail, rations and approved weight
 

@@ -2,15 +2,34 @@
   "issue": 17,
   "content_baseline": "0a584960eaeecfac31db82adadb7426347c50964",
   "author_scope_decision": "2026-10-01: export current 4.36.27 content; postpone 4.37 Tarot/Trucazo until after this playtest.",
-  "campaign_route": ["MAP01", "MAP02", "MAP03", "MAP06"],
-  "campaign_maps": ["MAP01", "MAP02", "MAP06"],
+  "campaign_route": [
+    "MAP01",
+    "MAP02",
+    "MAP03",
+    "MAP06"
+  ],
+  "campaign_maps": [
+    "MAP01",
+    "MAP02",
+    "MAP06"
+  ],
   "connector_map": "MAP03",
   "diagnostic_map": "CADEV02",
-  "runtime_maps": ["maps/CADEV02.wad", "maps/MAP01.wad", "maps/MAP02.wad", "maps/MAP03.wad", "maps/MAP04.wad", "maps/MAP05.wad", "maps/MAP06.wad", "maps/MAP07.wad", "maps/MAP08.wad"],
+  "runtime_maps": [
+    "maps/CADEV02.wad",
+    "maps/MAP01.wad",
+    "maps/MAP02.wad",
+    "maps/MAP03.wad",
+    "maps/MAP04.wad",
+    "maps/MAP05.wad",
+    "maps/MAP06.wad",
+    "maps/MAP07.wad",
+    "maps/MAP08.wad"
+  ],
   "map_policy": "Preserve all accepted runtime maps and references. CADEV02 is console-only and not part of the playable campaign route; ancillary hub destinations are outside playtest acceptance. No local QA overlays or source archives are included.",
   "engine": "GZDoom 4.14.2, supplied separately",
   "iwad": "Legally obtained Doom II DOOM2.WAD, supplied separately; other IWADs are not certified by this export",
   "observed_support_dependencies": "Native GZDoom test also auto-loaded gzdoom.pk3, game_support.pk3, game_widescreen_gfx.pk3 and the installed Doom rerelease's id24res.wad. All supplied by the tester's existing engine/IWAD installation; none included in this export.",
-  "distribution_status": "Local review candidate; author confirmed music permission and Pixabay inclusion on 2026-10-01. External publication awaits export author acceptance and a separate publication decision.",
+  "distribution_status": "Author accepted all playtest tests and authorized PR #60 merge/#17 closure on 2026-10-01. Music/Pixabay permission provenance is recorded. No external Release/tag publication requested. Accepted existing ZIP remains pinned in assets/validation_43628/RESULTS.json.",
   "multiplayer": "Single-player playtest. Prior #10 two-client equipment transaction evidence is not a full cooperative campaign test."
 }

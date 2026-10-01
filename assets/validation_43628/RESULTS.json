@@ -3,7 +3,7 @@
   "issue": 17,
   "date": "2026-10-01",
   "baseline_commit": "0a584960eaeecfac31db82adadb7426347c50964",
-  "status": "Implementation and automated checks PASS; ordinary exported-package author acceptance, final Usage closeout and publication remain pending.",
+  "status": "Implementation, automated verification and CA-43628-EXPORT-01 author acceptance PASS. Author authorized PR #60 merge and issue #17 closure on 2026-10-01.",
   "author_decisions": [
     "Export current accepted 4.36.27 content; postpone 4.37 until after this playtest.",
     "marjaja197 is a different person who authorized use of The Argentine Omen.",
@@ -148,8 +148,19 @@
   "multiplayer": "Not tested for the full exported campaign; only prior #10 two-client equipment transactions are accepted.",
   "author_acceptance": {
     "id": "CA-43628-EXPORT-01",
-    "status": "PENDING",
-    "queue": "pending_test.txt"
+    "originating_version": "4.36.28",
+    "issue": 17,
+    "pull_request": 60,
+    "status": "PASS",
+    "date": "2026-10-01",
+    "timezone": "America/Buenos_Aires",
+    "confirmation": "Author explicitly stated all tests passed and requested issue closure and PR merge.",
+    "scope": "Corrected installation/launcher, full ordinary-player campaign, keys/quests/cards/resources, repair/rest, prisoner outcomes and one-time rewards, cross-map saves and required presentation checks from pending_test.txt.",
+    "qualifications": "No failures or partial results reported. Previously documented limitations remain; full multiplayer, measured rendering FPS and deferred 4.37 are not newly certified.",
+    "source_commit": "8415f225d2d359a80c077f018a4b487aeaf3e190",
+    "zip_sha256": "d1eb051c66c2f5390dd21b72c068bd413a4736af378fc5be9b7bd3a48be5cb95",
+    "pending_entry_removed": true,
+    "history": "docs/HISTORY.md#43628--verify-and-export-the-complete-three-map-test-build-17"
   },
   "usage": {
     "baseline_source": "Author report 2026-09-23",
@@ -163,7 +174,7 @@
     "output_tokens": null,
     "reasoning_tokens": null,
     "scope": "#8/#9 plus #10 through #21, including correction sessions; available task evidence is not a Usage counter.",
-    "limits": "No exposed aggregate usage counters for this batch. Final allowance, resets, concurrent unrelated usage and Work/desktop measurements require author evidence at accepted completion. No percentage-to-token conversion or quantitative savings claim.",
+    "limits": "No exposed aggregate token counters for this batch. Final weekly balance measurement was waived by the author on 2026-10-01. Historical reset/concurrent-use and Work/desktop gaps remain unmeasured. No percentage-to-token conversion or quantitative savings claim.",
     "retrieved_evidence": "Merged PR bodies #24/#25/#26/#27/#28/#38/#39/#40/#41/#42/#45/#59 and available per-patch validation records reviewed 2026-10-01.",
     "measured_desktop_wall_intervals": [
       {
@@ -287,11 +298,18 @@
         "issues": [
           17
         ],
-        "evidence": "Current desktop packaging/native verification, raw-blob exporter correction and reload-log detector correction included. Full task time and token counters not exposed; no separate model review. Author-reported portable-launch failure follow-up includes launcher correction, six process-level regression checks, refreshed package and local installation metadata. Counters remain unavailable.",
+        "evidence": "Current desktop packaging/native verification, raw-blob exporter correction and reload-log detector correction included. Full task time and token counters not exposed; no separate model review. Author-reported portable-launch failure follow-up includes launcher correction, six process-level regression checks, refreshed package and local installation metadata. Counters remain unavailable. Acceptance follow-up records the explicit author pass, clears the queue and validates documentation before the authorized merge/closure; no unchanged engine test repeated.",
         "tokens": "unavailable"
       }
     ],
-    "comparison": "No quantitative earlier-patch savings comparison: workload, measurement completeness, reset boundaries and concurrency are not comparable."
+    "comparison": "No quantitative earlier-patch savings comparison: workload, measurement completeness, reset boundaries and concurrency are not comparable.",
+    "closeout": "Author discontinued further weekly-consumption measurement on 2026-10-01; no additional weekly-quota tests or final balance collection required. Historical evidence is retained and unavailable counters remain unmeasured.",
+    "author_measurement_decision": {
+      "date": "2026-10-01",
+      "weekly_allowance_measurement_required": false,
+      "confirmation": "Ya no es necesario medir eso, no son necesarias más pruebas de medir el consumo semanal.",
+      "scope": "Retires further weekly allowance/consumption tests and final weekly-balance collection; historical records retained without estimates."
+    }
   },
   "static_validation": {
     "command": "python validate_project.py",
@@ -403,11 +421,11 @@
     "correction": "Independent blob verification rejected ANIMDEFS in the first 9323b156 candidate because git archive applied core.autocrlf. fa6fb9bb reads raw Git objects; every blob now matches. Initial save/load detection expected a nonexistent Loading game log string; corrected to the observed post-save native map banner. Both corrected checks were rerun."
   },
   "limitations": [
-    "CA-43628-EXPORT-01 remains pending; merged components do not constitute exported-package acceptance.",
+    "Author explicitly passed CA-43628-EXPORT-01 on 2026-10-01. Native probe limits remain separate from this manual acceptance.",
     "Prior full-scene performance and 0/partial/all rescue checks are reused within their stated conditions because the gameplay snapshot is unchanged apart from diagnostic version labels.",
     "Historical cannon overall dimensions remain unverified; inherited sleeping-bag icon reuses fabric art. No blanket absence-of-placeholder or final standalone claim.",
     "No independent second-model review; the available assistant performed implementation and verification.",
-    "No final aggregate Usage counters or author-confirmed weekly balance yet."
+    "Aggregate token counters and final weekly balance remain unmeasured; author waived further weekly-consumption measurement on 2026-10-01."
   ],
   "delivery": {
     "source_commit": "8415f225d2d359a80c077f018a4b487aeaf3e190",
@@ -418,8 +436,8 @@
     "pk3_sha256": "819aa4912ee59321d4f80e435b01ce84b0c9065bd497a883b0a8712d45eb9591",
     "independent_verifier": "PASS; 6129 exact committed runtime blobs, all checksum/CRC/metadata/allowlist checks",
     "reproduction": "PASS; separate build/playtest_launcher_fix_reproduced export has identical ZIP SHA-256",
-    "native_evidence_applies": "Embedded PK3 is unchanged and byte-identical to native-tested fa6fb9bb. Launcher discovery is additionally covered by six process-level tests; full author route still pending.",
-    "publication": "Local artifact only; no GitHub Release or tag published; merge and external publication await author decision."
+    "native_evidence_applies": "Embedded PK3 is byte-identical to native-tested fa6fb9bb. Six launcher-process checks also pass; author separately accepted all export tests on 2026-10-01.",
+    "publication": "Accepted local artifact; author authorized PR #60 merge and #17 closure on 2026-10-01. No GitHub Release/tag publication requested."
   },
   "launcher_correction": {
     "date": "2026-10-01",
@@ -463,14 +481,14 @@
     "installed_engine_sha256": "ec706c2ea1ef946eec13be7b1b461df8d52efcd47caa6c056ed0e0257f7f9ffa",
     "installed_pk3_sha256": "819aa4912ee59321d4f80e435b01ce84b0c9065bd497a883b0a8712d45eb9591",
     "native_limit": "Author extraction uses the same executable bytes as the previously tested GZDoom and the identical PK3. Runtime smoke remains applicable; no new native gameplay run claimed for the launcher correction.",
-    "author_acceptance": "CA-43628-EXPORT-01 remains pending after the reported installation failure; author must retry.",
+    "author_acceptance": "PASS: included in explicit author confirmation that all tests passed on 2026-10-01.",
     "fixture_correction": "The first test wrapper did not propagate its nested script exit code; wrapper corrected and all six cases rerun. Production launcher exit behavior was unchanged by that fixture correction.",
     "local_installation_update": {
       "result": "PASS",
       "scope": "Replaced launcher PS1 and PLAYTEST/MANIFEST/SHA256SUMS from the corrected ZIP in the author-named extraction directory. Preserved all four originals in a dated backup folder.",
       "installed_delivery_hashes_checked": 13,
       "runtime_preserved": "Engine, IWAD, PK3, settings and saves were not replaced.",
-      "author_retry": "Pending; no successful author launch inferred from automated checks."
+      "author_retry": "PASS: author explicitly confirmed all tests passed after the installed launcher correction."
     }
   },
   "superseded_deliveries": [

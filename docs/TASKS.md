@@ -10,18 +10,21 @@ Documentation version: **4.36.28** — 2026-10-01.
   clean-profile launcher, license notices and README-owned player instructions.
 - Author reported an installation failure with engine/IWAD beside the package.
   Same-patch correction detects both locally and handles relative/quoted paths
-  and folders; six process-level checks pass. Keep export acceptance pending.
+  and folders; six process-level checks pass. Author accepted the retry.
 - Static/build, exact blob identity, byte-identical reproduction and four-map
   native load/save/reload checks pass. Clean-install engine evidence is in
   assets/validation_43628/RESULTS.json; prior acceptance links and measured
   performance retain their original conditions and scope there.
-- Outstanding: CA-43628-EXPORT-01, complete ordinary-player route from the
-  extracted package, including cross-map saves and reward/resource continuity.
-  Do not remove it until explicit author confirmation. No release publication
-  or merge is implied. Record missing rights confirmations as distribution gates.
-- At author-accepted completion collect final weekly allowance and available
-  Usage evidence; retain the 75% baseline, unknown reset, Work/desktop separation
-  and unmeasured stages. Do not infer tokens or quota savings.
+- Author confirmed all tests passed on 2026-10-01 and authorized PR #60 merge
+  and issue #17 closure. CA-43628-EXPORT-01 (corrected installation, ordinary
+  campaign, cross-map saves and reward/resource continuity) is recorded as PASS
+  in HISTORY without reported exceptions and removed from the pending queue.
+- The accepted ZIP retains source commit 8415f225 and its recorded checksums.
+  No GitHub Release/tag publication is requested; 4.37 remains the next work.
+- Usage report retains the 75% baseline, unknown reset, separate Work/desktop
+  evidence and unmeasured stages. On 2026-10-01 the author discontinued further
+  weekly-allowance measurement; no additional quota tests/final balance are
+  required. Missing counters do not become token or quota estimates.
 
 ## Issue #16 — Complete port siege (4.36.27)
 
@@ -43,8 +46,8 @@ Documentation version: **4.36.28** — 2026-10-01.
 - Current author-requested trial enables attacks despite insufficient Air/Anima
   for registered hostile port enemies. Player/allied limits remain. The data
   switch remains reversible; the author accepted the current setting.
-- Next: #17 export acceptance. The 2026-10-01 author decision moves 4.37
-  after this playtest; final independent distribution remains future work.
+- #17 export passed author acceptance on 2026-10-01. Next: deferred 4.37;
+  final independent distribution remains future work.
 
 ## Issue #37 — Attack cadence, durability and thrusts (4.36.26)
 
@@ -110,7 +113,7 @@ No gameplay acceptance check is added.
   layouts, legacy load, reload and hub persistence. Evidence: assets/validation_43624.
 - Accepted: the author confirmed all CA-43624-JOURNAL-01 checks passed on
   2026-09-28 and authorized PR #54 merge and issue #35 closure.
-- Separate pending scope: #16 full port deployment and #17 export acceptance.
+- Subsequent #16 port deployment and #17 export are now author-accepted.
 
 ## Issue #52 — Final armor absorption (4.36.23)
 
@@ -518,7 +521,7 @@ documentation update does not implement these features or reset accepted tests.
 | 4.36.12 | [#20](https://github.com/damiancurti/Caelum-Argenteum/issues/20) | Physical ram strikes; approved parameter table and native evidence required. After #19. |
 | 4.36.13 | [#21](https://github.com/damiancurti/Caelum-Argenteum/issues/21) | Native cannon launch/impact at approved 400 m/s; approved parameter table and native evidence required. After #20. |
 | 4.36.27 | [#16](https://github.com/damiancurti/Caelum-Argenteum/issues/16) | Complete MAP06 port siege and Knight of Wands. All author tests passed on 2026-09-30; PR #59 merge and issue closure authorized. |
-| V4 export | [#17](https://github.com/damiancurti/Caelum-Argenteum/issues/17) | Three-map acceptance, reproducible package and batch usage report. Uses accepted #16; author deferred 4.37 on 2026-10-01. |
+| 4.36.28 | [#17](https://github.com/damiancurti/Caelum-Argenteum/issues/17) | Reproducible three-map package and corrected launcher accepted on 2026-10-01; PR #60 merge/closure authorized. Further weekly quota measurement discontinued; 4.37 remains next. |
 
 The source/faction mapping is Caella/Unitarians, Ronnie/Federals,
 Rulo/Free Peoples (Pueblos Libres) and Argento/Cult of the Tarot. These are new
@@ -527,10 +530,10 @@ The confirmed three-map route uses MAP06 for the existing port, not a
 renumbered MAP03. Issue #16 replaces the former player exit to MAP07
 with the approved route. El Loco is the first Major; Ace of Cups remains MAP02.
 
-Record Usage evidence per #8, including correction sessions through acceptance.
-The author confirms 75% weekly allowance remaining at the initial baseline;
-reset time is unknown. It is not a measured token count. Account for
-Work, desktop, resets, concurrent work and missing measurements separately.
+Preserve the historical #8–#21 Usage evidence and correction records. The author
+discontinued further weekly-allowance measurements on 2026-10-01. The initial
+75% remaining baseline has an unknown reset and is not a token count. Existing
+Work/desktop, resets, concurrent-work and missing-measurement distinctions remain.
 Only add actionable author checks to pending_test.txt after implementation;
 missing design/assets belong here and in issues, not in that queue.
 

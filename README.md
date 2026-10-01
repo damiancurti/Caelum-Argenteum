@@ -44,8 +44,11 @@ author checks remain pending. Keep an original save and its original build for r
 Issue [#17](https://github.com/damiancurti/Caelum-Argenteum/issues/17) adds a
 reproducible export of the accepted 4.36.27 content. On 2026-10-01 the author
 explicitly postponed 4.37 Tarot/Trucazo until after this playtest. Gameplay and
-save schemas are unchanged. Export acceptance remains in pending_test.txt;
-exact commit, checksums and verification are in assets/validation_43628/RESULTS.json.
+save schemas are unchanged. The author confirmed all exported-package tests
+passed on 2026-10-01, including the corrected launcher, and authorized PR #60
+merge and issue #17 closure. CA-43628-EXPORT-01 is recorded in HISTORY;
+no #17 author checks remain pending. The accepted ZIP is unchanged, identified
+by source commit 8415f225 and checksums in assets/validation_43628/RESULTS.json.
 
 <!-- PLAYTEST_INSTRUCTIONS_BEGIN -->
 ## Playtest installation and route
