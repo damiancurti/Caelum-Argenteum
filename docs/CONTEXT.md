@@ -1,19 +1,21 @@
 # CONTEXT.md — Ultra-condensed summary of Caelum Argenteum
 
-Documentation version: **4.37.3** — 2026-10-01.
+Documentation version: **4.37.4** — 2026-10-02.
 
-**4.37.3 / #63:** Palomo records weapon/armor/Seal/shield choices; Ronnie
-teaches/crafts that plan. All actual own equipment/Box survive departure; loans
-return and ammo/materials/coins/consumables are removed (author clarification).
-Revision 1 preserves old choices/progress. Evidence: assets/validation_4373.
-All three CA-4373 checks accepted 2026-10-01; PR #70 merge/#63 closure authorized.
+**4.37.4 / #64:** Y selects a destination; T retains x105 fast-forward. Real
+provisions/furniture support sleep at 10% to 100%, which pauses crafting. The
+task forecast includes sleep and rechecks at confirmation. Clock revision 1 keeps
+legacy counters/dates but freezes future exterior progression in Limbo; its local
+clock remains 1:1. Evidence: assets/validation_4374. Author accepted all three
+checks on 2026-10-02 and authorized PR #71 merge / #64 closure; see HISTORY.
+The author authorized dependent #65 daily 50/50 tables in a separate branch/PR.
 
-**Accepted base:** #68 / PR #69 (4.37.2, cheaper magic), #62 / PR #67 (dummy),
-#61 / PR #66 (landscape), #17 / PR #60 (export) are merged/closed. Their tests,
-decisions and evidence are in HISTORY. #61 geometry requires fresh MAP01;
-use --legacy-map06 for campaigns that visited the pre-siege port. The 4.36.27
-siege retains its accepted full forces and relief/resource rules. Rights:
-LICENSE.md and third-party notices (#55). Deferred Tarot/Trucazo remains separate.
+**Accepted base:** #63 / PR #70 (Palomo loadout and retained own equipment),
+#68 / PR #69 (cheaper magic), #62 / PR #67 (dummy), #61 / PR #66 (landscape),
+and #17 / PR #60 (export) are merged/closed. Decisions/evidence: HISTORY.
+#61 geometry needs fresh MAP01; --legacy-map06 preserves pre-siege port saves.
+The accepted siege retains its forces and resource rules. Rights: LICENSE.md
+and notices (#55). Tarot/Trucazo remains deferred.
 
 ## The game's premise
 

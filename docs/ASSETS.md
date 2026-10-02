@@ -1,6 +1,15 @@
 # Caelum Argenteum — Audio and art
 
-Documentation version: **4.37.3** — 2026-10-01.
+Documentation version: **4.37.4** — 2026-10-02.
+
+## 4.37.4 — Existing Journal assets for time skipping (#64)
+
+The new bilingual destination panel reuses the existing Journal frame and fonts;
+there are no new art, sound, map, generator or third-party resources. LANGUAGE
+owns its English/Spanish text. assets/validation_4374 contains isolated native
+fixtures, launch/verification tooling, filtered logs and screenshots. Only src/
+is packaged. Development IWADs, executables, test saves and baseline packages
+remain local and are excluded from delivery.
 
 ## 4.37.3 — Existing equipment catalogue and bilingual Palomo dialogue (#63)
 

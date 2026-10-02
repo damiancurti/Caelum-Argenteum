@@ -42,6 +42,9 @@ class CaelumDiningTable : Actor
     bool PresentationReady;
     bool MansionFullFoodPrepared;
     int MansionFoodToSeed;
+    // Contrato diario común: #65 aporta reposición y la previsión equivalente.
+    virtual void SyncLocalDay(int localDay) {}
+    virtual int ForecastDailyTarget() { return 0; }
     virtual clearscope int SeatCount() { return 6; }
     virtual clearscope int Capacity() { return 18; }
     virtual clearscope double LengthMU() { return 192; }

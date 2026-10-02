@@ -1,6 +1,69 @@
 # Caelum Argenteum — Current systems and rules
 
-Documentation version: **4.37.3** — 2026-10-01.
+Documentation version: **4.37.4** — 2026-10-02.
+
+## 4.37.4 — Explicit time skipping and separate Limbo clock (#64)
+
+Y opens a destination day/hour/minute selector in an existing safe rest or work
+context (or an authored safe zone outside MAP01). Left/Right select the field,
+Up/Down change it, Enter confirms, R recalculates the task default, and Q closes
+or interrupts. Escape retains native pause. T remains the existing x105
+fast-forward, with 104 extra integrated personal steps per normal engine step.
+Neither mode simulates arbitrary world AI or physics. The skip yields between
+batches, supports save/reload and retains actual partial progress on interruption.
+The technical planning horizon is 30 local days, inherited from the journey
+planner; destinations are expressed in whole minutes.
+
+Author decisions, 2026-10-01: automatic sleep begins at the existing critical
+10% Sleep threshold and wakes at 100%. Recovery remains 100 points per eight
+local hours. Sleeping pauses all crafting ticks, including forced sleep;
+reservations remain until the native task completes or is explicitly cancelled.
+The skip resumes work at its original valid station after waking. On completion
+or interruption the automatic session ends with its actual resource values.
+
+Automatic care may use the whole safe location. MAP01 uses its actual available
+tables and unoccupied furniture; other maps use the authored safe zone containing
+the player and the support. Existing threat guards also cover the remote supports,
+so a distant unrelated encounter does not make all of MAP01 one safe region.
+No teleportation or additional travel-time balance is introduced. Work remains
+standing. Waiting uses an available chair; sleep prefers the best available real
+support, then an accessible owned sleeping bag with room, then existing ground
+rest. Existing comfort factors and seated meal duration apply.
+
+Provisions are real inventory transactions: accessible tables first, then carried
+items, then the owned Box reserve. Partial water containers preserve their identity,
+remaining volume and storage location. Automatic servings reuse the journey
+trigger: wait until the whole dose fits, and never refresh an active food/water
+effect. No new portion begins while asleep. Critical needs, damage, movement,
+combat, invalid stations, unsupported effects or hazards interrupt safely.
+
+With an active crafting task, the numeric preview accounts for real stock, food
+effects, needs, healing/Air costs and sleep interruptions. Confirmation recalculates
+from current state before starting. The preview never mutates inventory or awards
+work; the runtime uses the native per-tic effects and task transaction. The final
+completion minute rounds forward. Unsustainable needs, an upcoming siege, unsupported
+forecast effects or the planning horizon report a blocker rather than a completion
+date. A manually chosen destination still stops if its actual conditions become
+unsafe. Daily table notifications and matching forecast hooks are provided here;
+the 50/50 replenishment policy is the separate dependent issue #65.
+
+CaelumWorldClock revision 1 adds persistent LimboDays/LimboDayTics while retaining
+the legacy monotonic CompletedDays/DayTics and LimboSubTics for existing consumers.
+126000 active-play personal tics equal one local hour in MAP01 (1:1). Normal play,
+T and Y advance this same local clock; its midnight dispatches the daily hook.
+The civil calendar anchors advance alongside the legacy counter only in Limbo,
+keeping both campaign and diagnostic civil dates frozen. Outside time retains
+the existing 20:1 pace and does not advance the Limbo counter. No computer-clock
+or offline catch-up is used.
+
+Older MAP01 saves seed local time once from their previously displayed counter;
+outside saves start the new unused Limbo counter at zero. Existing civil dates,
+quests, inventory, reservations and aggregate timestamps are preserved. Old
+versions did not record which elapsed days belonged to Limbo, so the migration
+does not guess or undo their already accumulated civil time. Keep the original
+save and original package for rollback; new sessions freeze the campaign start
+at 03/11/1889 09:00 until departure. This section supersedes contradictory historical
+descriptions of the Limbo/global clock below.
 
 ## 4.37.3 — Palomo choices, Ronnie crafting and Limbo departure (#63)
 

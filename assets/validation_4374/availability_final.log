@@ -1,0 +1,18 @@
+GZDoom version g4.14.2
+adding src, 6141 lumps
+MAP01 - La mansión
+QA64 SETUP pos=(-320,-288,264)
+QA64 PASS automatic care finds a real bed beyond interaction reach
+QA64 PASS care without furniture opens in the safe workshop
+QA64 PASS care without furniture begins
+QA64 PASS missing furniture grants no comfort or seated-meal effect
+QA64 PASS one actual food and water serving is taken from the owned Box
+QA64 PASS standing portions retain ten-second native duration
+QA64 PASS remaining portions keep their Box location
+QA64 PASS remaining portions keep their Box location
+QA64 PASS sleep falls back to existing ground comfort when no bed exists
+QA64 PASS ground sleep uses the same eight-hour recovery rate
+QA64 BAG available=1 room=0 active=1 factor=1
+QA64 PASS owned sleeping bag respects actual room availability
+QA64 PASS partial bottled water is consumed once; the empty owned container remains in the Box
+QA64 AVAILABILITY_DONE

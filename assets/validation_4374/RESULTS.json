@@ -1,0 +1,217 @@
+{
+  "issue": 64,
+  "version": "4.37.4",
+  "date": "2026-10-02",
+  "engine": "GZDoom 4.14.2 / Windows 11",
+  "baseline_commit": "c3ba10b1e92fe48fee3b7501984ccc794671299d",
+  "baseline_package_sha256": "4336b781c7ecfb527e9051445ad9763cf74d3952d31650034d52d0b40357d4d0",
+  "final_package_sha256": "cc053f90f9b0b33bca40b1dcdcefa2a4061990d3b251afe153b1a6102961cdef",
+  "packaged_changed_sources": {
+    "src/KEYCONF": "bb0df30b1912ccf42159b6b289eded4e283dd584c6adcf7ed316da9284e81a40",
+    "src/LANGUAGE": "be0eca9b781db440a1248b7b7c6f41b909973512117a07e4e4b5049d79dceb45",
+    "src/ZSCRIPT": "ef8cd2192b04868ef2317a5825b7b0a1e6f99f0b29f75b68ddf5c90cb1e692d1",
+    "src/caelum/hud/CaelumJournalOverlay.zs": "74c94f7060c2e1c2b2235ad5c6cdef66b571bcf65790e1e65cc85ba2c3439093",
+    "src/caelum/player/CaelumPlayer.zs": "4372ac01fa9c9caae28b791728ae195a36b5d43abf5bcebe4adae54edb334cc1",
+    "src/caelum/world/CaelumCalendar.zs": "8dccfd6d541bbd3a87cc3f7e8c0caec6d662a34c266b23aa1e9fb2c0e6c11a5f",
+    "src/caelum/world/CaelumDining.zs": "61deee63818a9c40d809d095f3fa29f0ca7f63cc6671cfd3920b851d1a23174b",
+    "src/caelum/world/CaelumJourneyPlan.zs": "d4aef624c3850c33646fc67500d3e27c6fa41a7c0682eda5818a75f56688b472",
+    "src/caelum/world/CaelumPhysicalHazards.zs": "0750d56fc2ef3f9a80d09a031ba5dcadff716ae1846310b074e2be575adfb1a3",
+    "src/caelum/world/CaelumRest.zs": "d64f0f3cf3df99cd9d6722f295622f73657424bd854a6f74cfb32705b32acab1",
+    "src/caelum/world/CaelumRestFurniture.zs": "794c83bd3b4905c78c7fa83222ef31fa47cc18694c96cf2d2eb3ff29104a7c1c",
+    "src/caelum/world/CaelumSewerMaze.zs": "c64ef2e21175acd2d9e64355a50816e25e4d67435a1772b0f2a657f2299e1118",
+    "src/caelum/world/CaelumTimeAdvance.zs": "dedf1d83782ef50cecc8548324b4645a74263c2ec0c2e933d3dfb9848da31174",
+    "src/caelum/world/CaelumWorldClock.zs": "95e0d7da50e88535033973eecc416770fea4fa549ddbc1a0d8b45415341abbba",
+    "src/caelum/hud/CaelumTimeSkipPanel.zs": "86578f79a3b65906fda0181d4e1f237f0ef1ddcd61eb34f9f92718a06d1c4d90",
+    "src/caelum/world/CaelumTimeSkip.zs": "d5c0bf4072e9fd27c5b85dbb9cc94c4450f995f475ebcdca036c79ffb1d0db7a",
+    "src/caelum/world/CaelumTimeSkipModel.zs": "35693f02cbb5fcd103dec21697b6176a712ed76f357dfe9c5df5053d484ab7c8"
+  },
+  "native": {
+    "compare_normal": {
+      "status": "PASS",
+      "assertions": 8,
+      "raw_log_sha256": "45677136c170c2bef793360127feba889ffaddba0406c944eb4124e022f334c0",
+      "completion_marker": "QA64 AUDIT_DONE mode=2",
+      "runtime": "development snapshot / see limitations"
+    },
+    "compare_skip": {
+      "status": "PASS",
+      "assertions": 8,
+      "raw_log_sha256": "f3978caeb31e5e69e2255a7b94227f99b5c0c0c05d4f0c3ae07211c40dd1c941",
+      "completion_marker": "QA64 AUDIT_DONE mode=3",
+      "runtime": "development snapshot / see limitations"
+    },
+    "fast": {
+      "status": "PASS",
+      "assertions": 3,
+      "raw_log_sha256": "44661ddd298ad40e2a26fc265c31db569e6b662b80d770dfbe800a822b0fc165",
+      "completion_marker": "QA64 FAST_DONE",
+      "runtime": "development snapshot / see limitations"
+    },
+    "fast_skip": {
+      "status": "PASS",
+      "assertions": 6,
+      "raw_log_sha256": "1776eea5f6f6607bf91188db33041bbb1cf570bbde1e9f9411c8ceb312521ddc",
+      "completion_marker": "QA64 EXIT_DONE",
+      "runtime": "development snapshot / see limitations"
+    },
+    "boundaries_interrupt": {
+      "status": "PASS",
+      "assertions": 13,
+      "raw_log_sha256": "1218e59c68bcbd9cf15cb9d3ac0ba0654de2bba2e0a1e7c7f8f7f49a4bb5cfbd",
+      "completion_marker": "QA64 INTERRUPT_DONE",
+      "runtime": "development snapshot / see limitations"
+    },
+    "no_supplies": {
+      "status": "PASS",
+      "assertions": 5,
+      "raw_log_sha256": "4ded1c666fd18b6fc07780d11d29ebe6a9b67dcdde5c6667f8b8730321f56dec",
+      "completion_marker": "QA64 NO_SUPPLIES_DONE",
+      "runtime": "development snapshot / see limitations"
+    },
+    "availability_final": {
+      "status": "PASS",
+      "assertions": 12,
+      "raw_log_sha256": "83e264defc7e5f7db0ff355bd7c4aeae1193028616546e15b91ae86c5e14fccd",
+      "completion_marker": "QA64 AVAILABILITY_DONE",
+      "runtime": "development snapshot / see limitations"
+    },
+    "model": {
+      "status": "PASS",
+      "assertions": 3,
+      "raw_log_sha256": "197f9acb44435840e2941b3da9d44548a4ad762840795ec84607c90d36c3c538",
+      "completion_marker": "QA64 MODEL_DONE",
+      "runtime": "development snapshot / see limitations"
+    },
+    "model_edge2": {
+      "status": "PASS",
+      "assertions": 3,
+      "raw_log_sha256": "ec747f81f4e7106584925c4d8d73ae309c0501b5e35b6e5ae9e0bbeebdc0f826",
+      "completion_marker": "QA64 MODEL_DONE",
+      "runtime": "development snapshot / see limitations"
+    },
+    "schedule3": {
+      "status": "PASS",
+      "assertions": 9,
+      "raw_log_sha256": "219618f969e2eb739925b38daa919036134dd55f6dbf347f7f3ab1d50ed9d631",
+      "completion_marker": "QA64 SCHEDULE_DONE",
+      "runtime": "development snapshot / see limitations"
+    },
+    "seated_final": {
+      "status": "PASS",
+      "assertions": 3,
+      "raw_log_sha256": "4ed540d9e3caa1c900376fc84392eae016ba4d3fcc7a749686300a5fbb3a2ea9",
+      "completion_marker": "QA64 SEATED_DONE",
+      "runtime": "final gameplay PK3 (diagnostic labels finalized afterward)"
+    },
+    "task_sleep_final": {
+      "status": "PASS",
+      "assertions": 10,
+      "raw_log_sha256": "69b0d35f76d81824e1e984f7dd2bfc249d1b548a71148d1017c9a9413940eb19",
+      "completion_marker": "QA64 AUDIT_DONE mode=5",
+      "runtime": "final gameplay PK3 (diagnostic labels finalized afterward)"
+    },
+    "task_awake_pass": {
+      "status": "PASS",
+      "assertions": 10,
+      "raw_log_sha256": "9cfedd71be0a1de290d876fe8e5f4ecc82db375394e9e1ec57944ed1177ffdbb",
+      "completion_marker": "QA64 AUDIT_DONE mode=5",
+      "runtime": "final gameplay PK3 (diagnostic labels finalized afterward)"
+    },
+    "save_active_final": {
+      "status": "PASS",
+      "assertions": 3,
+      "raw_log_sha256": "a3e2d006c7d3bd76c7e01ba1af4ae0cd5ce6a5efe210194658b3a0d8435771d1",
+      "completion_marker": "active=1 sleeping=1",
+      "runtime": "final gameplay PK3 (diagnostic labels finalized afterward)"
+    },
+    "reload_active_final": {
+      "status": "PASS",
+      "assertions": 8,
+      "raw_log_sha256": "2792d0e07178259db1bab53092eef2486ecbcfa47dc34437696a7e1b90e5f7ea",
+      "completion_marker": "QA64 AUDIT_DONE mode=1",
+      "runtime": "final gameplay PK3 (diagnostic labels finalized afterward)"
+    },
+    "completed_reload_final": {
+      "status": "PASS",
+      "assertions": 4,
+      "raw_log_sha256": "2118c6f685a845c1e75fd8d87bd2aea2882c33a84f3a61478390ec892cd335e3",
+      "completion_marker": "QA64 COMPLETED_RELOAD_DONE",
+      "runtime": "final gameplay PK3 (diagnostic labels finalized afterward)"
+    },
+    "legacy_seed": {
+      "status": "PASS",
+      "assertions": 0,
+      "raw_log_sha256": "19dd257ae7c3a0b7226bb6a828584f21592b09ab5c82bd775807dc098aca7f25",
+      "completion_marker": "MAP01 -",
+      "runtime": "development snapshot / see limitations"
+    },
+    "legacy_migrated2": {
+      "status": "PASS",
+      "assertions": 5,
+      "raw_log_sha256": "5033d2344ff702f76780d8660c3dcbbef23374eca9c110b0a2e350a519f1a6fd",
+      "completion_marker": "QA64 BOUNDARY_DONE",
+      "runtime": "development snapshot / see limitations"
+    },
+    "legacy_rollback": {
+      "status": "PASS",
+      "assertions": 0,
+      "raw_log_sha256": "3f313ea31e394b31ae67f2166895d1d2f912cf1d66eae65af295ea38ace14ef6",
+      "completion_marker": "MAP01 -",
+      "runtime": "development snapshot / see limitations"
+    },
+    "package_final": {
+      "status": "PASS",
+      "assertions": 0,
+      "raw_log_sha256": "e7ac6e0f80fdf10648eb4ed8b061b551e7095fbe404a7f11ccc52789d5d0e788",
+      "completion_marker": "MAP01 -",
+      "runtime": "final PK3"
+    }
+  },
+  "exact_comparisons": {
+    "compare_normal vs compare_skip": {
+      "hunger": "97.9550909919",
+      "thirst": "97.9101819837",
+      "sleep": "47.9320359604",
+      "health": "1780",
+      "air": "1021.7821782178",
+      "remaining": "80.0000000000",
+      "food": "113",
+      "water": "19"
+    },
+    "fast vs fast_skip": {
+      "hunger": "97.9326364878",
+      "thirst": "97.8652729756",
+      "sleep": "47.8980539406",
+      "remaining": "60.0000000000",
+      "food": "113",
+      "water": "19",
+      "local_delta": "105"
+    }
+  },
+  "static": {
+    "validate_project.py": "PASS / zero errors",
+    "git diff --check": "PASS",
+    "build_dev.ps1": "PASS"
+  },
+  "author_acceptance": "PASS — author confirmed all checks on 2026-10-02 without reported exceptions; authorized PR #71 merge and issue #64 closure",
+  "author_checks": [
+    "CA-4374-TIME-01",
+    "CA-4374-CARE-01",
+    "CA-4374-SAVE-01"
+  ],
+  "limitations": [
+    "QA prepares safe tutorial progression, existing materials and shortened task duration; native work/payment/output paths execute.",
+    "Normal/fast comparisons and targeted guard/migration cases were run during implementation. Subsequent changes corrected forecast health ordering, target stability/rounding and bag-fit caching; affected cases were rerun. Final PK3 cases explicitly identified above cover tasks, active/completed saves and chairs.",
+    "The schedule fixture first records actual nearby threats, then makes only those actors friendly to isolate the future calendar event. Production safety guards remain enabled.",
+    "Legacy saves require the original PK3 basename. A separate current-package copy has that basename; original baseline save/package are preserved for rollback. Upgraded saves are not claimed to downgrade.",
+    "Daily food/water policy and combined multi-day consumption remain the separate dependent issue 65 patch.",
+    "Selected logs retain native assertions and state; original raw log hashes identify full local evidence. Fixtures and captures are not author acceptance."
+  ],
+  "reproduce": [
+    "Run from repository root with the engine/IWAD paths in run_issue64.ps1 and build/gzdoom.ini available locally.",
+    "Build with build_dev.ps1 and await completion. Use run_issue64.ps1 -Label NAME -Runtime build/caelum_argenteum_dev.pk3 -Fixture assets/validation_4374/qa -Commands (Get-Content assets/validation_4374/NAME.cfg -Raw) -Wait.",
+    "Save tests run seed before reload; add -LoadSave build/issue64_saves/issue64_active_final.zds or issue64_completed_task.zds as appropriate.",
+    "Legacy seed/rollback use accepted 4.37.3 runtime build/issue64_baseline_4373.pk3 and legacy fixture. Migration loads that save with a current PK3 in a separate directory preserving the basename and both legacy/qa fixtures.",
+    "Run python assets/validation_4374/collect.py, python build_document_index.py, python validate_project.py and git diff --check."
+  ]
+}

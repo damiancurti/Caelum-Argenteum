@@ -98,8 +98,9 @@ class CaelumRestFurniture : Actor abstract
         if (Occupant != null)
         {
             let rest = CaelumRestState.Get(Occupant);
-            if (rest == null || rest.Status != CaelumRestRules.STATUS_ACTIVE
-                || rest.Furniture != self || rest.OriginMap != level.MapName)
+            if (!CaelumTimeSkipState.UsesFurniture(Occupant,self)
+                && (rest == null || rest.Status != CaelumRestRules.STATUS_ACTIVE
+                || rest.Furniture != self || rest.OriginMap != level.MapName))
                 Occupant = null;
         }
         if (Occupant == null && !bSolid) RestoreSolid();

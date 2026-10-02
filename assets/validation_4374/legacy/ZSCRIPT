@@ -1,0 +1,35 @@
+version "4.14"
+class Issue64LegacyRecord : Inventory
+{
+    int ClockDays, ClockTics, Civil, CivilTics;
+    Default {Inventory.MaxAmount 1; +INVENTORY.UNDROPPABLE}
+    States {Spawn:TNT1 A -1;Stop;}
+}
+class Issue64LegacySeed : CaelumSocialDebugAction
+{
+    override bool Use(bool pickup)
+    {
+        let u=CaelumPlayer(Owner);u.CharacterCreationComplete=true;u.CreationWizardOpen=false;
+        let r=u.GetPersistentCharacterState(true);r.EnsureQuestStateInitialized();
+        r.DemoNarrativeDelivered=2047;r.DemoNarrativePending=0;r.ProfileCommitted=true;
+        r.QuestState[0]=CaelumConstants.QUEST_STATE_ACTIVE;r.QuestStage[0]=CaelumConstants.MAIN_M00_STATE_MET_PALOMO;
+        r.SetMainM00Flag(CaelumConstants.MAIN_M00_FLAG_UNKNOWN_VOICE_HEARD);
+        u.ApplyCharacterProfile();u.CurrentHunger=87;u.CurrentThirst=76;u.CurrentSleep=65;
+        if(u.player.ConversationNPC!=null)u.player.ConversationNPC.bInConversation=false;u.player.ConversationNPC=null;
+        let clock=CaelumWorldClock.Get(u,true);clock.CompletedDays=2;clock.DayTics=10000;clock.LimboSubTics=7;
+        let cal=CaelumCalendarState.Get(u,true);cal.EnsureCampaign(clock);
+        let proof=Issue64LegacyRecord(u.GiveInventoryType("Issue64LegacyRecord"));
+        proof.ClockDays=clock.CompletedDays;proof.ClockTics=clock.DayTics;
+        proof.Civil=cal.DateSerial(clock);proof.CivilTics=cal.CivilDayTics(clock);
+        u.PersistCharacterState();Console.Printf("QA64 LEGACY_SEED days=%d tics=%d civil=%d/%d",proof.ClockDays,proof.ClockTics,proof.Civil,proof.CivilTics);return true;
+    }
+}
+class Issue64LegacyReport : CaelumSocialDebugAction
+{
+    override bool Use(bool pickup)
+    {
+        let u=CaelumPlayer(Owner);let proof=Issue64LegacyRecord(u.FindInventory("Issue64LegacyRecord"));
+        let clock=CaelumWorldClock.Get(u);let cal=CaelumCalendarState.Get(u);
+        Console.Printf("QA64 LEGACY_REPORT record=%d days=%d tics=%d civil=%d/%d hunger=%.3f thirst=%.3f sleep=%.3f",proof!=null,clock.CompletedDays,clock.DayTics,cal.DateSerial(clock),cal.CivilDayTics(clock),u.CurrentHunger,u.CurrentThirst,u.CurrentSleep);return true;
+    }
+}

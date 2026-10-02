@@ -1,0 +1,22 @@
+GZDoom version g4.14.2
+adding src, 6141 lumps
+MAP01 - La mansión
+QA64 SETUP pos=(-320,-288,264)
+QA64 PASS native Limbo departure starts
+MAP02 - Alcantarillas — el laberinto
+QA64 PASS native departure carries both clock records
+QA64 PASS native exit resumes outside calendar at its frozen instant
+QA64 PASS Limbo clock retains only the departure fade interval
+QA64 EXIT_DONE outside=03/11/1889 09:00
+Partida guardada.
+QA64 PASS forecast identifies a scheduled threat before task completion
+QA64 SCHEDULE_BLOCK CA_FAST_UNSAFE conversation=1 ground=1 water=0 velocity=0.0000
+QA64 ISOLATE_THREAT CaelumMandinga distance=814.6
+QA64 ISOLATE_THREAT CaelumGiantRat distance=729.7
+QA64 ISOLATE_THREAT CaelumGiantRat distance=1011.9
+QA64 SCHEDULE_ISOLATED  cheats=0
+QA64 PASS exterior selector opens in an authored safe zone
+QA64 PASS exterior skip begins before scheduled threat
+QA64 PASS native calendar event interrupts once at its chronological boundary
+QA64 PASS no simulated time crosses the unresolved siege
+QA64 SCHEDULE_DONE

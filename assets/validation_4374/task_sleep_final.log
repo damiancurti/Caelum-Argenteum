@@ -1,0 +1,31 @@
+GZDoom version g4.14.2
+adding build/caelum_argenteum_dev.pk3, 6141 lumps
+MAP01 - La mansión
+QA64 SETUP pos=(-320,-288,264)
+QA64 PASS native shield task reserves materials
+QA64 TASK action=10 known=1 infrastructure=1 station=1 menu=1 combat=0.00 conversation=0 velocity=0.0000 ground=1 water=0
+QA64 BLOCK 
+QA64 THREAT CaelumM00Bull distance=1882 pos=(-2180,0,0)
+QA64 PASS open explicit destination selector
+QA64 STATE local=0 d 00:00:03 outside=03/11/1889 09:00 hunger=95.00000000 thirst=95.00000000 sleep=9.90000000 task=1 remaining=120.00000000
+QA64 SKIP open=1 active=0 sleeping=0 elapsed=0 work=0 sleepTics=0 reason= target=0/6300 forecast=
+QA64 RESERVED type=32 tier=1 units=2400 raw=2400
+QA64 RESERVED type=12 tier=1 units=5600 raw=5600
+QA64 SPECIAL CaelumMaterialPickup kind=5 amount=5600
+QA64 SPECIAL CaelumMaterialPickup kind=5 amount=2400
+QA64 PASS confirm skip
+QA64 STATE local=0 d 00:00:05 outside=03/11/1889 09:00 hunger=94.99775455 thirst=94.99550910 sleep=9.89660180 task=1 remaining=118.00000000
+QA64 SKIP open=1 active=0 sleeping=0 elapsed=0 work=0 sleepTics=0 reason=CA_SKIP_CALCULATING target=0/45675 forecast=
+QA64 PASS explicit target reached without unsafe interruption
+QA64 PASS exact target clock at completion
+QA64 PASS outside date remains frozen
+QA64 PASS task forecast reaches exactly one native crafted output
+QA64 MATERIALS before=8000 reserved=8000 after=0
+QA64 PASS task pays its existing material reservation once
+QA64 PASS repeated completion cannot duplicate output
+QA64 AUDIT_DONE mode=5
+QA64 STATE local=0 d 07:15:00 outside=03/11/1889 09:00 hunger=95.56352761 thirst=96.13216426 sleep=97.75668874 task=0 remaining=0.00000000
+QA64 SKIP open=1 active=0 sleeping=0 elapsed=913268 work=4103 sleepTics=908256 reason=CA_SKIP_COMPLETE target=0/45675 forecast=
+QA64 PASS completed destination remains stable while reviewing the result
+Captured issue64_task_sleep_final.png
+Partida guardada.

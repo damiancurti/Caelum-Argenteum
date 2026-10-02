@@ -2144,7 +2144,8 @@ class CaelumJournalOverlay : EventHandler
             clock == null ? StringTable.Localize("CA_WORLD_CLOCK_NONE", false)
                 : String.Format(StringTable.Localize(CaelumWorldCatalogue.IsLimboMap(level.MapName)
                     ? "CA_WORLD_CLOCK_LIMBO" : "CA_WORLD_CLOCK_RECORDED", false),
-                    CaelumWorldClock.FormatStamp(clock.CompletedDays, clock.DayTics)));
+                    CaelumWorldClock.FormatStamp(CaelumWorldCatalogue.IsLimboMap(level.MapName)?clock.LocalDays():clock.CompletedDays,
+                        CaelumWorldCatalogue.IsLimboMap(level.MapName)?clock.LocalTics():clock.DayTics)));
         let calendar = CaelumCalendarState(localPlayer.FindInventory("CaelumCalendarState"));
         int dateSerial = calendar == null ? -1 : calendar.DateSerial(clock, calendar.TrialDate);
         String calendarText = StringTable.Localize("CA_CALENDAR_UNSET", false);
@@ -2224,7 +2225,8 @@ class CaelumJournalOverlay : EventHandler
         let clock = CaelumWorldClock(localPlayer.FindInventory("CaelumWorldClock"));
         let calendar = CaelumCalendarState(localPlayer.FindInventory("CaelumCalendarState"));
         if (calendar != null)
-            DrawCenteredText(SmallFont, Font.CR_CYAN, 170, 32, calendar.FormatDate(clock));
+            DrawCenteredText(SmallFont, Font.CR_CYAN, 170, 32,
+                CaelumWorldCatalogue.IsLimboMap(level.MapName)?CaelumWorldClock.FormatStamp(clock.LocalDays(),clock.LocalTics()):calendar.FormatDate(clock));
         int minuteTics = CaelumWorldClock.TicsPerHour() / 60;
         int remainingMinutes = (Max(0, rest.RequestedTics-rest.ElapsedTics)+minuteTics-1) / minuteTics;
         DrawCenteredText(SmallFont, Font.CR_WHITE, 460, 32,
@@ -2456,6 +2458,9 @@ class CaelumJournalOverlay : EventHandler
             : CaelumRestState(localPlayer.FindInventory("CaelumRestState"));
         bool restOpen = activeRest != null && activeRest.Status == CaelumRestRules.STATUS_ACTIVE;
         bool craftOpen = localPlayer != null && localPlayer.CraftingMenuOpen;
+        if(localPlayer!=null && CaelumTimeSkipPanel.Input(e,localPlayer))return true;
+        if(menuactive==0 && e.Type==InputEvent.Type_KeyDown && (e.KeyString~=="y" || e.KeyChar==121 || e.KeyChar==89))
+        {SendNetworkEvent("ca_skip_open");return true;}
         if (menuactive == 0 && (restOpen || craftOpen) && e.Type == InputEvent.Type_KeyDown
             && (e.KeyChar == 116 || e.KeyChar == 84 || e.KeyString ~== "t"))
         { SendNetworkEvent("ca_time_fast"); return true; }
@@ -2909,6 +2914,16 @@ class CaelumJournalOverlay : EventHandler
         }
         else if (e.Name == "ca_time_fast")
         { CaelumTimeAdvanceState.Toggle(requestingPlayer); }
+        else if(e.Name=="ca_skip_open") {CaelumTimeSkipState.OpenMenu(requestingPlayer);}
+        else if(e.Name=="ca_skip_start") {CaelumTimeSkipState.Start(requestingPlayer);}
+        else if(e.Name=="ca_skip_edit") {CaelumTimeSkipState.Edit(requestingPlayer,e.Args[0],e.Args[1]);}
+        else if(e.Name=="ca_skip_cancel")
+        {CaelumTimeSkipState.FinishSkip(requestingPlayer,"CA_SKIP_CANCELLED",!CaelumTimeSkipState.IsActive(requestingPlayer));}
+        else if(e.Name=="ca_skip_forecast")
+        {
+            let s=CaelumTimeSkipState.Get(requestingPlayer);
+            if(s!=null && s.Open && !s.Active){s.UseTaskDefault=true;s.HadTask=requestingPlayer.CraftingTaskActive;s.Recalculate(requestingPlayer);}
+        }
         else if (e.Name == "ca_table_eat" || e.Name == "ca_table_drink")
         {
             if (!CaelumDiningSession.Toggle(requestingPlayer, e.Name == "ca_table_drink"))
@@ -3163,6 +3178,8 @@ class CaelumJournalOverlay : EventHandler
         }
         CaelumPlayer localPlayer = CaelumPlayer(players[consoleplayer].mo);
         if (localPlayer == null) { return; }
+        let skip=CaelumTimeSkipState(localPlayer.FindInventory("CaelumTimeSkipState"));
+        if(skip!=null && skip.Open){CaelumTimeSkipPanel.Draw(self,localPlayer,skip);return;}
         let plan = CaelumJourneyPlan(localPlayer.FindInventory("CaelumJourneyPlan"));
         if (plan != null && plan.Open && plan.Available != null) { DrawJourney(plan); return; }
         let rest = CaelumRestState(localPlayer.FindInventory("CaelumRestState"));

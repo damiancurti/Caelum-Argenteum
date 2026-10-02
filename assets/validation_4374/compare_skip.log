@@ -1,0 +1,17 @@
+GZDoom version g4.14.2
+adding src, 6141 lumps
+MAP01 - La mansión
+QA64 SETUP pos=(-320,-288,264)
+QA64 PASS native shield task reserves materials
+QA64 TASK action=10 known=1 infrastructure=1 station=1 menu=1 combat=0.00 conversation=0 velocity=0.0000 ground=1 water=0
+QA64 PASS comparison selector opens
+QA64 PASS comparison starts
+QA64 PASS explicit target reached without unsafe interruption
+QA64 PASS exact target clock at completion
+QA64 PASS outside date remains frozen
+QA64 PASS comparison interval is exactly 40 local seconds
+QA64 PASS productive work matches elapsed awake interval
+QA64 COMPARE ordinary=0 hunger=97.9550909919 thirst=97.9101819837 sleep=47.9320359604 health=1780 air=1021.7821782178 remaining=80.0000000000 food=113 water=19
+QA64 AUDIT_DONE mode=3
+QA64 STATE local=0 d 00:00:43 outside=03/11/1889 09:00 hunger=97.95509099 thirst=97.91018198 sleep=47.93203596 task=1 remaining=80.00000000
+QA64 SKIP open=1 active=0 sleeping=0 elapsed=1400 work=1400 sleepTics=0 reason=CA_SKIP_COMPLETE target=0/76 forecast=

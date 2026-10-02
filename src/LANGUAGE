@@ -1,6 +1,31 @@
 [enu default]
 
 // English is the default language and the source used for future translations.
+CA_SKIP_TITLE = "Skip to day and time";
+CA_SKIP_LIMBO = "Limbo local clock | Outside date frozen | Normal pace 1:1";
+CA_SKIP_CAMPAIGN = "Campaign date and local time";
+CA_SKIP_NOW = "Now: %s";
+CA_SKIP_TARGET = "Destination: %s";
+CA_SKIP_DAY = "Editing day";
+CA_SKIP_HOUR = "Editing hour";
+CA_SKIP_MINUTE = "Editing minute";
+CA_SKIP_NO_TASK = "No active task. Choose the destination day and time.";
+CA_SKIP_CALCULATING = "Calculating work, provisions and sleep...";
+CA_SKIP_FORECAST_READY = "Estimated task completion with currently available provisions and rest.";
+CA_SKIP_ESTIMATE = "%s | Sleep: %.2f local hours";
+CA_SKIP_PROGRESS = "Productive work: %.1f s | Sleep: %.2f local hours";
+CA_SKIP_RUNNING = "Skipping time...";
+CA_SKIP_POLICY = "Sleep at 10%, wake at 100%. Uses actual supplies and available furniture.";
+CA_SKIP_HELP = "Left/Right: field | Up/Down: value | Enter: skip | R: task estimate | Q: close";
+CA_SKIP_ACTIVE_HELP = "Q: interrupt, keeping partial progress | Escape: pause";
+CA_SKIP_CANCELLED = "Skip interrupted. Elapsed time, consumption and work are preserved.";
+CA_SKIP_COMPLETE = "Destination reached.";
+CA_SKIP_FUTURE = "Choose a future destination within the next 30 local days.";
+CA_SKIP_TASK_CHANGED = "Task or work station changed. Skip interrupted.";
+CA_SKIP_NO_FORECAST = "Task completion is not available. Review its blocker or choose a destination manually.";
+CA_SKIP_PROVISIONS = "Available provisions cannot sustain the task until completion.";
+CA_SKIP_FORECAST_EFFECT = "An active effect prevents a reliable task estimate. Wait for it to finish or set a destination.";
+CA_SKIP_HORIZON = "The task exceeds the 30-day planning horizon. Choose a shorter interval.";
 CA_PLAYER_DISPLAY_NAME = "Caelum Argenteum Adventurer";
 CA_ARGENTO_NAME = "Argento";
 CA_CAELLA_NAME = "Caella";
@@ -653,6 +678,31 @@ CA_SHIELD_TYPE_TOWER = "tower shield";
 CA_SHIELD_TYPE_MAGIC = "magic shield";
 
 [es]
+CA_SKIP_TITLE = "Saltar a día y hora";
+CA_SKIP_LIMBO = "Reloj local del Limbo | Fecha exterior congelada | Ritmo normal 1:1";
+CA_SKIP_CAMPAIGN = "Fecha de campaña y hora local";
+CA_SKIP_NOW = "Ahora: %s";
+CA_SKIP_TARGET = "Destino: %s";
+CA_SKIP_DAY = "Editando día";
+CA_SKIP_HOUR = "Editando hora";
+CA_SKIP_MINUTE = "Editando minuto";
+CA_SKIP_NO_TASK = "Sin tarea activa. Elegí el día y la hora de destino.";
+CA_SKIP_CALCULATING = "Calculando trabajo, provisiones y sueño...";
+CA_SKIP_FORECAST_READY = "Fin estimado de la tarea con las provisiones y el descanso disponibles.";
+CA_SKIP_ESTIMATE = "%s | Sueño: %.2f horas locales";
+CA_SKIP_PROGRESS = "Trabajo productivo: %.1f s | Sueño: %.2f horas locales";
+CA_SKIP_RUNNING = "Saltando el tiempo...";
+CA_SKIP_POLICY = "Dormir al 10%, despertar al 100%. Usa provisiones reales y muebles disponibles.";
+CA_SKIP_HELP = "Izq./Der.: campo | Arriba/Abajo: valor | Intro: saltar | R: estimar tarea | Q: cerrar";
+CA_SKIP_ACTIVE_HELP = "Q: interrumpir conservando el avance | Escape: pausa";
+CA_SKIP_CANCELLED = "Salto interrumpido. Se conservan el tiempo, el consumo y el trabajo realizados.";
+CA_SKIP_COMPLETE = "Destino alcanzado.";
+CA_SKIP_FUTURE = "Elegí un destino futuro dentro de los próximos 30 días locales.";
+CA_SKIP_TASK_CHANGED = "Cambió la tarea o su estación. Salto interrumpido.";
+CA_SKIP_NO_FORECAST = "No hay fecha de finalización disponible. Revisá el impedimento o elegí el destino.";
+CA_SKIP_PROVISIONS = "Las provisiones disponibles no alcanzan para sostener la tarea hasta su finalización.";
+CA_SKIP_FORECAST_EFFECT = "Un efecto activo impide estimar la tarea con precisión. Esperá a que termine o elegí un destino.";
+CA_SKIP_HORIZON = "La tarea supera el horizonte de 30 días. Elegí un intervalo más corto.";
 
 // Spanish is maintained as a first-class language from the beginning.
 CA_PLAYER_DISPLAY_NAME = "Aventurero de Caelum Argenteum";
@@ -3531,8 +3581,8 @@ CA_FAST_ZONE = "Fast-forward requires a designated safe area.";
 CA_FAST_EFFECT = "This temporary effect cannot be fast-forwarded yet.";
 CA_FAST_ON = "Fast-forward on. T returns to normal speed.";
 CA_FAST_OFF = "Normal speed. Your activity continues.";
-CA_FAST_HELP_ON = "T: normal speed | Fast-forward x105";
-CA_FAST_HELP_OFF = "T: fast-forward in a safe area";
+CA_FAST_HELP_ON = "T: normal speed | Fast-forward x105 | Y: skip to day/time";
+CA_FAST_HELP_OFF = "T: fast-forward in a safe area | Y: skip to day/time";
 CA_SLEEP_LUCIDITY_HELP = "Sleeping: Lucidity -10/s; no Lucidity recovery";
 CA_SLEEP_CAST = "Sleep: %d targets.";
 CA_TABLE_SMALL = "Small round table (2 seats)";
@@ -3557,8 +3607,8 @@ CA_FAST_ZONE = "El avance rápido requiere estar en una zona segura habilitada."
 CA_FAST_EFFECT = "Este efecto temporal todavía no admite avance rápido.";
 CA_FAST_ON = "Avance rápido activado. T vuelve a la velocidad normal.";
 CA_FAST_OFF = "Velocidad normal. Tu actividad continúa.";
-CA_FAST_HELP_ON = "T: velocidad normal | Avance rápido x105";
-CA_FAST_HELP_OFF = "T: avance rápido en zona segura";
+CA_FAST_HELP_ON = "T: velocidad normal | Avance rápido x105 | Y: saltar a día/hora";
+CA_FAST_HELP_OFF = "T: avance rápido en zona segura | Y: saltar a día/hora";
 CA_SLEEP_LUCIDITY_HELP = "Durmiendo: Lucidez -10/s; sin recuperación de Lucidez";
 CA_SLEEP_CAST = "Sueño: %d objetivos.";
 CA_TABLE_SMALL = "Mesa redonda pequeña (2 plazas)";
@@ -3595,11 +3645,11 @@ CA_REST_SIT_UNTIMED = "Sentarme";
 CA_REST_SLEEP_UNTIMED = "Acostarme y dormir";
 
 [default]
-CA_FAST_LIMBO_ON = "T: normal speed | x105 | Limbo base pace 1:1";
-CA_FAST_LIMBO_OFF = "T: fast-forward | Limbo base pace 1:1";
+CA_FAST_LIMBO_ON = "T: normal speed | x105 | Y: skip | Limbo base pace 1:1";
+CA_FAST_LIMBO_OFF = "T: fast-forward | Y: skip to day/time | Limbo base pace 1:1";
 [es]
-CA_FAST_LIMBO_ON = "T: velocidad normal | x105 | Escala base del Limbo 1:1";
-CA_FAST_LIMBO_OFF = "T: acelerar | Escala base del Limbo 1:1";
+CA_FAST_LIMBO_ON = "T: velocidad normal | x105 | Y: saltar | Base del Limbo 1:1";
+CA_FAST_LIMBO_OFF = "T: acelerar | Y: saltar a día/hora | Base del Limbo 1:1";
 
 [default]
 CA_WORLD_CLOCK_LIMBO = "Recorded time: %s | Limbo: 1 real second = 1 game second";

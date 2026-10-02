@@ -82,6 +82,7 @@ class CaelumRestState : Inventory
 
     static bool IsSleeping(CaelumPlayer user)
     {
+        if (CaelumTimeSkipState.IsSleeping(user)) return true;
         let rest = Get(user);
         return rest != null && rest.Status == CaelumRestRules.STATUS_ACTIVE
             && rest.Mode == CaelumRestRules.MODE_SLEEP;
@@ -89,6 +90,7 @@ class CaelumRestState : Inventory
 
     static bool IsSeated(CaelumPlayer user)
     {
+        if (CaelumTimeSkipState.IsSeated(user)) return true;
         let rest = Get(user);
         return rest != null && rest.Status == CaelumRestRules.STATUS_ACTIVE
             && rest.Mode == CaelumRestRules.MODE_WAIT && rest.Furniture != null
@@ -97,6 +99,7 @@ class CaelumRestState : Inventory
 
     static int ResourceFactor(CaelumPlayer user)
     {
+        if (CaelumTimeSkipState.IsActive(user)) return CaelumTimeSkipState.ResourceFactor(user);
         let rest = Get(user);
         if (rest == null || rest.Status != CaelumRestRules.STATUS_ACTIVE
             || !rest.UsesFurniture || rest.OriginMap != level.MapName
@@ -109,6 +112,7 @@ class CaelumRestState : Inventory
 
     static bool HasPendingTic(CaelumPlayer user)
     {
+        if (CaelumTimeSkipState.IsActive(user)) return true;
         let rest = Get(user);
         let clock = CaelumWorldClock.Get(user);
         return rest != null && rest.Status == CaelumRestRules.STATUS_ACTIVE && clock != null

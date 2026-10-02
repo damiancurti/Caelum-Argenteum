@@ -148,7 +148,7 @@ class CaelumJourneyModel : Object play
         }
     }
 
-    void BeginServings()
+    virtual void BeginServings()
     {
         // No desperdiciar una porción por encima del máximo. Se come durante
         // la marcha y antes/después de acampar; no se empieza a comer dormido.
@@ -166,7 +166,7 @@ class CaelumJourneyModel : Object play
         WaterPulse = dose / 10; WaterEffectTics = 10 * TICRATE; WaterPulseTics = 0;
     }
 
-    void Pulses()
+    virtual void Pulses()
     {
         if (FoodEffectTics > 0)
         {
@@ -188,16 +188,23 @@ class CaelumJourneyModel : Object play
         }
     }
 
-    void Step(bool sleeping)
+    virtual double Comfort(bool sleeping)
+    { return sleeping && Bag && Hunger > 10 && Thirst > 10 ? 3.0 : 1.0; }
+
+    virtual double SleepRecoveryScale() { return 1.0; }
+    virtual int AirHealth() { return Health; }
+    virtual double AirAdrenaline() { return Adrenaline; }
+
+    virtual void Step(bool sleeping)
     {
         if (!sleeping) BeginServings();
         Pulses();
         // Los factores de comodidad coinciden con la bolsa real. No se crean
         // camas ni suministros: sin bolsa se duerme en el suelo (factor 1).
-        double comfort = sleeping && Bag && Hunger > 10 && Thirst > 10 ? 3.0 : 1.0;
+        double comfort = Comfort(sleeping);
         Hunger = Max(0.0, Hunger - HungerLoss / comfort);
         Thirst = Max(0.0, Thirst - ThirstLoss / comfort);
-        Sleep = sleeping ? Min(100.0, Sleep + 100.0 / (8 * CaelumWorldClock.TicsPerHour()))
+        Sleep = sleeping ? CaelumRestRules.RecoverSleep(Sleep, SleepRecoveryScale())
             : Max(0.0, Sleep - SleepLoss);
         Stun = Max(0.0, Stun - 1.0 / TICRATE);
         double oldLucidity = Lucidity;
@@ -229,12 +236,12 @@ class CaelumJourneyModel : Object play
         }
         if (Air < MaxAir && MaxAir > 0)
         {
-            double raw = double(Health) / MaxHealth <= CaelumConstants.HEALTH_BADLY_WOUNDED_THRESHOLD
+            double raw = double(AirHealth()) / MaxHealth <= CaelumConstants.HEALTH_BADLY_WOUNDED_THRESHOLD
                 ? CaelumConstants.HEALTH_BADLY_WOUNDED_PERFORMANCE_MULTIPLIER
-                : double(Health) / MaxHealth <= CaelumConstants.HEALTH_WOUNDED_THRESHOLD
+                : double(AirHealth()) / MaxHealth <= CaelumConstants.HEALTH_WOUNDED_THRESHOLD
                 ? CaelumConstants.HEALTH_WOUNDED_PERFORMANCE_MULTIPLIER : 1.0;
             double performance = 1.0 - (1.0 - raw) * HealthPenalty;
-            performance += (1.0 - performance) * (MaxAdrenaline > 0 ? Adrenaline / MaxAdrenaline : 0.0);
+            performance += (1.0 - performance) * (MaxAdrenaline > 0 ? AirAdrenaline() / MaxAdrenaline : 0.0);
             double foodCost = CaelumConstants.AIR_FULL_RECOVERY_HUNGER_COST * costs / MaxAir;
             double waterCost = CaelumConstants.AIR_FULL_RECOVERY_THIRST_COST * costs / MaxAir;
             double gained = Min(Min(AirRate * performance * comfort, MaxAir - Air), Min(Hunger / foodCost, Thirst / waterCost));
