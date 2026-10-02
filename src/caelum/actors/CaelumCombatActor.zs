@@ -3440,8 +3440,16 @@ class CaelumCombatActor : Actor
         return total;
     }
 
+    bool MazeDropReleased;
+
     override void Die(Actor source, Actor inflictor, int dmgflags, Name MeansOfDeath)
     {
+        // La posición seca original recupera incluso bajas en pozos/aplastamientos.
+        if(!MazeDropReleased && CaelumMazeLayout.IsCardinal())
+        {
+            MazeDropReleased=true;
+            CaelumMazeLayout.CreateDeathDrop(tid);
+        }
         Super.Die(source,inflictor,dmgflags,MeansOfDeath);
         // Los saves previos retienen sus EventHandlers. La misma confirmación
         // idempotente cubre su muerte nativa sin convertir ausencia en muerte.

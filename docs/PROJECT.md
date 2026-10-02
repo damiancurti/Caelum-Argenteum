@@ -1,6 +1,22 @@
 # Caelum Argenteum — Project, status and roadmap
 
-Documentation version: **4.37.5** — 2026-10-02.
+Documentation version: **4.37.6** — 2026-10-02.
+
+## 4.37.6 — Cardinal MAP02 (#73, coordinated #75 loot)
+
+Fresh MAP02 now starts at the central hub. The four blocks occupy south, west,
+east and north, retaining that logical progression and the northern Zupay.
+The #75 supplies explicitly included in #73 are material equivalents in 39
+chests and guaranteed finite enemy drops. The #74 flooded return is not part
+of this patch: the central elevator footprint is reserved and opens no bypass.
+The author waived compatibility work for existing saves on 2026-10-02;
+start a new campaign for this geometry. New-map save/load and hub state are tested.
+The author also confirmed keeping current stations; unavailable crafting branches
+require another workshop. Native evidence and author acceptance remain separate.
+The author accepted both CA-MAP02 checks on 2026-10-02 and authorized merge
+and closure of #73. See SYSTEMS for the contract and assets/validation_4376
+for evidence; #74 remains separate.
+
 
 ## 4.37.5 — Daily food and water on mansion tables (#65)
 

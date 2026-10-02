@@ -1,5 +1,5 @@
 {
-  "revision": 2,
+  "revision": 3,
   "seed": 436009,
   "grid": 32,
   "nodes_per_axis": 5,
@@ -10,26 +10,147 @@
   "channel_depth": 16,
   "ceiling": 320,
   "gate_height": 128,
-  "section_stride": 4096,
-  "first_section_y": 768,
-  "first_node_x": -1536,
-  "arrival": {"chair": [-1536, -160, 0], "bed": [-1728, -160, 0], "workbench": [-1024, -160, 0]},
-  "section_names": ["south", "west", "east", "north"],
-  "section_tints": ["C8C4B0", "ADBDAF", "B6ADB9", "A6BDCC"],
-  "chests_per_section": [10, 10, 10, 9],
-  "traps_per_section": [12, 11, 11, 11],
-  "mandingas_per_section": [24, 24, 24, 24],
+  "arrival": {
+    "chair": [
+      -448,
+      -448,
+      0
+    ],
+    "bed": [
+      -448,
+      320,
+      0
+    ],
+    "workbench": [
+      320,
+      -448,
+      0
+    ]
+  },
+  "section_names": [
+    "south",
+    "west",
+    "east",
+    "north"
+  ],
+  "section_tints": [
+    "C8C4B0",
+    "ADBDAF",
+    "B6ADB9",
+    "A6BDCC"
+  ],
+  "chests_per_section": [
+    10,
+    10,
+    10,
+    9
+  ],
+  "traps_per_section": [
+    12,
+    11,
+    11,
+    11
+  ],
+  "mandingas_per_section": [
+    24,
+    24,
+    24,
+    24
+  ],
   "rats_per_mandinga": 2,
-  "food_bundles_per_section": [6, 6, 6, 6],
-  "water_bundles_per_section": [6, 6, 6, 6],
-  "arrow_bundles_per_section": [3, 3, 3, 3],
-  "bolt_bundles_per_section": [1, 2, 1, 2],
-  "bullet_bundles_per_section": [2, 1, 2, 1],
-  "provision_bundle_units": 5,
+  "arrow_bundles_per_section": [
+    3,
+    3,
+    3,
+    3
+  ],
+  "bolt_bundles_per_section": [
+    1,
+    2,
+    1,
+    2
+  ],
+  "bullet_bundles_per_section": [
+    2,
+    1,
+    2,
+    1
+  ],
   "ammunition_bundle_units": 20,
   "largest_player_radius": 21.333333,
   "largest_prisoner_radius": 21.3,
   "largest_supported_height": 74.7,
   "clearance_basis": "Two 160-MU dry walkways flank a 64-MU, 16-deep channel. Each walkway exceeds three maximum player diameters (128 MU); level crossings and open gates provide 384 MU. Endpoint-cell and refuge routes use the same clearance. Existing supported player and prisoner collision sizes are unchanged.",
-  "gate_rule": "Transparent keyed barred lines block actors, Use, hitscan and projectiles while closed, preserving the former closed-door attack barrier; sight passes through. Key possession opens them permanently without consumption, so followers cannot be trapped by an untested auto-close timer."
+  "gate_rule": "Transparent barred rendering with native closed movement, Use, hitscan, projectile and AI-sight blocking. Accepted runtime sight blocking keeps the boss from alerting through the closed arena gate. Keys open permanently without consumption.",
+  "section_origins": [
+    [
+      -1536,
+      -5280
+    ],
+    [
+      -5280,
+      -1536
+    ],
+    [
+      2208,
+      -1536
+    ],
+    [
+      -1536,
+      2208
+    ]
+  ],
+  "entry_nodes": [
+    [
+      2,
+      4
+    ],
+    [
+      4,
+      2
+    ],
+    [
+      0,
+      2
+    ],
+    [
+      2,
+      0
+    ]
+  ],
+  "hub_bounds": [
+    -640,
+    -640,
+    640,
+    640
+  ],
+  "player_start": [
+    0,
+    0
+  ],
+  "entrance_gates": [
+    [
+      0,
+      -1536
+    ],
+    [
+      -1536,
+      0
+    ],
+    [
+      1536,
+      0
+    ],
+    [
+      0,
+      1536
+    ]
+  ],
+  "elevator_reservation": [
+    -256,
+    -256,
+    256,
+    256
+  ],
+  "cardinal_spacing_basis": "Author requested minimum-length hub approaches on 2026-10-02. Entry distance = half the junction grid span + room width + one collision-grid cell. Adjacent section floors retain exactly one 32-MU solid wall strip; no overlap or unintended connection."
 }

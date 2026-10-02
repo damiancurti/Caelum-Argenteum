@@ -4,8 +4,18 @@ An independent dark fantasy FPS-RPG inspired by nineteenth-century Argentina.
 Author and game designer: **Damian Curti**. Development target: **GZDoom 4.14.2**
 on Windows 11. The final game is intended to be independent of Doom assets.
 
-**Current release: 4.37.5.** Obtain and update the complete repository, validate
+**Current release: 4.37.6.** Obtain and update the complete repository, validate
 it, then rebuild with `run_dev.bat` as described below.
+
+Issue [#73](https://github.com/damiancurti/Caelum-Argenteum/issues/73) rebuilds
+MAP02 around a central start and south/west/east/north blocks. Each block's
+cell/progression keys drop from local Mandingas. Its coordinated #75 loot uses
+material chests and finite enemy ammunition/rations. **Start a new campaign**
+for this geometry; old-save migration was waived by the author. Existing stations
+remain, so some material recipes require another workshop. The #74 flooded return
+network remains pending. See [layout and evidence](assets/validation_4376/LAYOUT.png)
+and [test results](assets/validation_4376/RESULTS.json). The author accepted all
+MAP02 checks on 2026-10-02 and authorized merge and closure of #73.
 
 Issue [#65](https://github.com/damiancurti/Caelum-Argenteum/issues/65) adds daily
 food and water to mansion tables: half the existing slots for each, replenished
@@ -15,7 +25,7 @@ Evidence: [4.37.5 validation](assets/validation_4375/RESULTS.json). The author
 accepted both CA-4375 checks on 2026-10-02 and authorized
 [PR #72](https://github.com/damiancurti/Caelum-Argenteum/pull/72) merge and #65
 closure, following the merged #64 / PR #71. HISTORY records all five confirmed
-checks across both patches; [pending_test.txt](pending_test.txt) is empty.
+checks across both patches; the author-test queue was empty after #65 acceptance.
 
 Issue [#64](https://github.com/damiancurti/Caelum-Argenteum/issues/64) adds **Y:
 skip to day/time**, separate from **T: fast-forward**. Choose the destination

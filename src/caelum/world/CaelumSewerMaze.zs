@@ -1,7 +1,104 @@
+// Presupuesto de recetas sin cupos, concesiones ni desbloqueos del tutorial.
+class CaelumMazeMaterialBudget : CaelumMainM00StarterMaterials
+{
+    override void Expand(int material,int amount,int depth)
+    {
+        if(amount<=0)return;
+        if(material<0 || material>=CaelumConstants.MATERIAL_TYPE_COUNT || depth>8){Valid=false;return;}
+        int component=CaelumCraftingRules.FindComponentRecipeForOutput(material);
+        if(component>=0)
+        {
+            Recipes[component]=true;
+            int output=CaelumCraftingRules.GetComponentOutputUnits(0,2);
+            int batches=int(Ceil(double(amount)/Max(1,output)));
+            Expand(CaelumCraftingRules.GetComponentBaseMaterial(material,1),
+                batches*CaelumCraftingRules.GetComponentInputUnits(0),depth+1);
+            return;
+        }
+        int processing=CaelumCraftingRules.FindProcessingRecipeForOutput(material,1);
+        if(processing>=0)
+        {
+            Recipes[processing]=true;
+            int output=CaelumCraftingRules.GetProcessingOutputUnits(processing,0);
+            int batches=int(Ceil(double(amount)/Max(1,output)));
+            Expand(CaelumCraftingRules.GetProcessingInputOneMaterial(processing),
+                batches*CaelumCraftingRules.GetProcessingInputOneUnits(processing,0),depth+1);
+            int second=CaelumCraftingRules.GetProcessingInputTwoMaterial(processing);
+            if(second>=0)Expand(second,batches*CaelumCraftingRules.GetProcessingInputTwoUnits(processing,0),depth+1);
+            return;
+        }
+        Units[material]+=amount;
+    }
+
+    void AddCatalogueWeapon(int type,int essence,int size)
+    {
+        for(int option=0;option<CaelumMainM00StarterRules.OPTION_COUNT;option++)
+        {
+            if(CaelumMainM00StarterRules.GetWeaponType(option)!=type)continue;
+            if(option>=16 && CaelumCraftingRules.GetUnifiedEssenceType(CaelumMainM00StarterRules.GetRecipe(option))!=essence)continue;
+            AddWeapon(option,size);return;
+        }
+        Valid=false;
+    }
+}
+
 // Contenido de MAP02. Inventarios reales y estado serializado por el hub nativo.
 class CaelumMazeChest : CaelumStashChest
 {
     Inventory Loot[5];
+    bool MaterialAllocated;
+    int MaterialSize;
+    int MaterialRemaining[CaelumConstants.MATERIAL_TYPE_COUNT];
+
+    int PreviewMaterial(int material,CaelumMazeMaterialBudget budget)
+    {
+        return MaterialAllocated?MaterialRemaining[material]:budget.Units[material];
+    }
+
+    CaelumMazeMaterialBudget PreviewBudget(CaelumPlayer user)
+    {
+        int size=MaterialAllocated?MaterialSize:CaelumEquipmentRules.ResolveAcquisitionSize(user,
+            CaelumEquipmentRules.CHARACTER_DEFAULT,CaelumConstants.EQUIPMENT_SIZE_M);
+        return CaelumMazeLootCatalogue.MaterialBudget(args[0],size);
+    }
+
+    void CollectMaterials(CaelumPlayer user)
+    {
+        let budget=PreviewBudget(user);
+        if(!budget.Valid)return;
+        for(int material=0;material<CaelumConstants.MATERIAL_TYPE_COUNT;material++)
+        {
+            int remaining=PreviewMaterial(material,budget);
+            if(remaining<=0)continue;
+            user.RefreshCarriedInventorySummary();
+            int low=0,high=remaining;
+            while(low<high)
+            {
+                int mid=low+(high-low+1)/2;
+                if(user.CanAddWeightToPersonalInventory(mid*CaelumConstants.MATERIAL_UNIT_WEIGHT))low=mid;
+                else high=mid-1;
+            }
+            if(low<=0)continue;
+            let item=CaelumMaterialPickup(Actor.Spawn("CaelumMaterialPickup",Pos,NO_REPLACE));
+            if(item==null)return;
+            item.args[0]=material;item.args[1]=1;item.Amount=low;item.UpdateMaterialVisuals();
+            Actor receiver=user;
+            if(!item.CallTryPickup(receiver)){item.Destroy();continue;}
+            if(!MaterialAllocated)
+            {
+                MaterialSize=CaelumEquipmentRules.ResolveAcquisitionSize(user,CaelumEquipmentRules.CHARACTER_DEFAULT,CaelumConstants.EQUIPMENT_SIZE_M);
+                for(int m=0;m<CaelumConstants.MATERIAL_TYPE_COUNT;m++)MaterialRemaining[m]=budget.Units[m];
+                MaterialAllocated=true;
+            }
+            MaterialRemaining[material]-=low;
+        }
+        int left=0;
+        for(int m=0;m<CaelumConstants.MATERIAL_TYPE_COUNT;m++)
+            if(PreviewMaterial(m,budget)>0)left++;
+        if(left>0)CaelumNotifications.Notify(user,String.Format(
+            StringTable.Localize("CA_CHEST_PREVIEW_CAPACITY",false),left));
+    }
+
     bool Stocked;
     int Seeded;
     int LootRevision;
@@ -41,6 +138,7 @@ class CaelumMazeChest : CaelumStashChest
 
     void EnsureLoot()
     {
+        if(CaelumMazeLayout.IsCardinal())return;
         MigrateLegacyLoot();
         if(Stocked)return;
         while(Seeded<5)
@@ -82,6 +180,7 @@ class CaelumMazeChest : CaelumStashChest
     {
         // Confirmar vuelve a consultar el receptor y las existencias reales.
         if(!CanInspect(user))return;
+        if(CaelumMazeLayout.IsCardinal()){CollectMaterials(user);return;}
         int taken=0,remaining=0;
         for(int i=0;i<5;i++)
         {
@@ -194,8 +293,8 @@ class CaelumSewerMaze : Object play
         while((enemy=Actor(enemies.Next()))!=null)if(enemy.health>0)mandingas++;
         let ratIt=ThinkerIterator.Create("CaelumGiantRat");Actor rat;
         while((rat=Actor(ratIt.Next()))!=null)if(rat.health>0)rats++;
-        Console.Printf("[Caelum 4.37.5] Laberinto MAP02: cofres=%d objetos restantes=%d Mandingas vivos=%d ratas vivas=%d Zupay vivo=%d",chests,objects,mandingas,rats,BossAlive());
-        Console.Printf("Contenido inicial: 39 cofres, 65 piezas T1, 96 Mandingas, 192 ratas, 45 trampas, 120 raciones de comida y 120 de agua. Carta: índice %d.",CUPS_ACE);
+        Console.Printf("[Caelum 4.37.6] Laberinto MAP02: cofres=%d objetos heredados restantes=%d Mandingas vivos=%d ratas vivas=%d Zupay vivo=%d",chests,objects,mandingas,rats,BossAlive());
+        if(CaelumMazeLayout.IsCardinal())Console.Printf("Contenido inicial: 39 cofres de materiales equivalentes a 65 piezas T1, 96 Mandingas, 192 ratas, 45 trampas; drops: 96 comida, 96 agua, 240 flechas, 120 virotes, 120 balas. Carta: índice %d.",CUPS_ACE);
         for(int i=0;i<MAXPLAYERS;i++)if(playeringame[i])
         {
             let user=CaelumPlayer(players[i].mo);if(user==null)continue;

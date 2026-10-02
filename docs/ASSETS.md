@@ -1,6 +1,19 @@
 # Caelum Argenteum — Audio and art
 
-Documentation version: **4.37.5** — 2026-10-02.
+Documentation version: **4.37.6** — 2026-10-02.
+
+## 4.37.6 — Cardinal sewer data and supply ledger (#73/#75)
+
+LAYOUT.json revision 3 is the source of the four block origins, entry nodes,
+central start, furniture and reserved elevator footprint. The deterministic
+generator writes MAP02.wad, MAP02_MANIFEST.json, CaelumMazeLayout.zs and the
+equipment-to-recipe catalogue together. The manifest retains the 65 original
+instance identities as conversion provenance, and publishes finite drop assignments.
+No new art, sound, equipment balance or enemy combat profile is introduced.
+assets/validation_4376/MATERIAL_LEDGER.json contains native per-instance/per-size
+recipe expansion; LAYOUT.png labels the map and key graph. The old geometry is
+recoverable from baseline commit 3f0b7cea; the author waived old-save migration.
+
 
 ## 4.37.5 — Existing food plates and water cups (#65)
 

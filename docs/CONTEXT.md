@@ -1,15 +1,20 @@
 # CONTEXT.md — Ultra-condensed summary of Caelum Argenteum
 
-Documentation version: **4.37.5** — 2026-10-02.
+Documentation version: **4.37.6** — 2026-10-02.
 
-**4.37.5 / #65:** mansion tables start 50/50 food/water and refill vacancies
-once per local midnight. Revision 1 preserves legacy food and player containers;
-occupied tables may stay below targets. Palomo explains the timing. Evidence:
-assets/validation_4375. Author accepted all five #64/#65 checks on 2026-10-02
-and authorized both merges/closures. #64 / PR #71 is merged/closed; #65 uses
-PR #72. #64 adds Y destinations, real automatic care, sleep 10% to 100%
-without crafting, and a frozen exterior date with a 1:1 Limbo clock. T remains.
-Evidence: assets/validation_4374. HISTORY records acceptance; pending_test.txt is empty.
+**4.37.6 / #73:** fresh MAP02 starts centrally with real south/west/east/north
+blocks, local Mandinga key carriers and retained northern extraction/boss route.
+Includes #75 material chests and finite enemy supplies (96 food/96 water).
+Author waived old-save compatibility and confirmed retaining current stations.
+The central #74 elevator footprint is reserved; its lower network remains pending.
+Evidence: assets/validation_4376. Author accepted all checks on 2026-10-02.
+
+
+**Accepted #64/#65:** mansion tables refill vacant food/water slots at midnight,
+preserving deposited containers. Y adds timed destinations and automatic care;
+sleep runs 10% to 100% without crafting. Limbo stays 1:1 while exterior dates
+freeze. All five checks passed on 2026-10-02; PRs #71/#72 are merged.
+HISTORY and assets/validation_4374/4375 retain decisions and evidence.
 
 **Accepted base:** #63 / PR #70 (Palomo loadout and retained own equipment),
 #68 / PR #69 (cheaper magic), #62 / PR #67 (dummy), #61 / PR #66 (landscape),

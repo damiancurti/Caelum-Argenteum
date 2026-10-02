@@ -1,0 +1,56 @@
+{
+  "version": "4.37.6",
+  "issue": 73,
+  "related_loot_issue": 75,
+  "baseline": "3f0b7cea",
+  "date": "2026-10-02",
+  "engine": "GZDoom 4.14.2 / Windows 11 / Vulkan",
+  "development_iwad": "Installed Doom II; not distributed",
+  "static": {
+    "checks": 212,
+    "failures": 0,
+    "evidence": "LAYOUT.json",
+    "determinism": "DETERMINISM.json"
+  },
+  "native": {
+    "route_steps": 3848,
+    "keys": 8,
+    "gates": 12,
+    "beds": 4,
+    "recipe_size_cases": 325,
+    "supplies": "240 arrows, 120 bolts, 120 bullets, 96 food, 96 water; guarded dry-anchor drops",
+    "persistence": "Native save/load and MAP03 hub return passed",
+    "chests": "Capacity failure, partial collection, fixed recipient allocation and empty persistence passed",
+    "escort": "One follower and all four extractions passed",
+    "boss": "Wrong/missing key, blocked sight, immobility, unlock, retreat and Ace prerequisites passed",
+    "logs": [
+      "native_route_supplies_escort.log",
+      "native_boss.log"
+    ],
+    "limitations": "Route AI/hazards suppressed; follower test isolates damage. Ordinary play acceptance is recorded separately. Earlier fixture attempts are retained, not counted as successful runs."
+  },
+  "author_acceptance": {
+    "confirmed": true,
+    "date": "2026-10-02",
+    "ids": [
+      "CA-MAP02-CARDINAL-01",
+      "CA-MAP02-MATERIALS-DROPS-01"
+    ],
+    "qualification": "All tests passed; no exceptions reported; merge and #73 closure explicitly requested"
+  },
+  "decisions": [
+    "Shortest symmetric approaches with 32-MU separating wall strip",
+    "Keep existing stations",
+    "Old-save migration explicitly waived; start a new campaign",
+    "Only reserve #74 elevator footprint; flooded return network deferred"
+  ],
+  "sha256": {
+    "src/maps/MAP02.wad": "a143e28b8aa4ea169e54d99bc851258f664089d1d6b2ed78de86ea4c1a96af99",
+    "assets/map02_maze/MAP02_MANIFEST.json": "e57232b731bb2cea56b65187b7db33908d9c4eaca4b402a9bd4c8aeb9733856b",
+    "src/caelum/world/CaelumMazeLayout.zs": "c4520dfba767e310b07595a65ca19b34f8848e3869a71cfa63c948ab694c0bad",
+    "src/caelum/world/CaelumMazeLootCatalogue.zs": "483ee58e8bcc02c56a32a2e0b9f429af42fe71a147152dc0a629b7df7f4ff022",
+    "src/caelum/actors/CaelumFolkloreCharacters.zs": "4196b30ee02882550a42a1fc34f42ab671456370ff433d668be2affafe1d1ca6",
+    "src/caelum/world/CaelumSewerMaze.zs": "bcacc97b0d952e157ddfb1e2a03edd510295e176db02c87f4b3694f5b4122244",
+    "build/caelum_argenteum_dev.pk3": "f0a47d34f21e9a7f369687781824d7adc73e12c03f408a15277d8b7682a06ad2"
+  }
+}

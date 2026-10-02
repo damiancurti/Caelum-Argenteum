@@ -1,6 +1,14 @@
 CAELUM ARGENTEUM — STORY AND MAP01
 
-Documentation version: **4.37.5** — 2026-10-02.
+Documentation version: **4.37.6** — 2026-10-02.
+
+## 4.37.6 — MAP02 destination revision (#73)
+
+The unchanged mansion exit now arrives at the center of fresh MAP02. The sewer
+has four cardinal blocks in south/west/east/north progression. Its northern
+extraction, Zupay, Ace and MAP03 -> MAP06 route retain the accepted narrative.
+No mansion dialogue, loadout, rewards or story premise changes in this patch.
+
 
 ## 4.37.5 — Palomo replenishes the tables each local midnight (#65)
 
