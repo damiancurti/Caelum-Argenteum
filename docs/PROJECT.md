@@ -12,9 +12,11 @@ Palomo explains the daily timing. Player belongings and old food remain intact;
 revision-1 migration fills only free slots. No other map receives provisions.
 
 Evidence: assets/validation_4375/RESULTS.json, with static/build and isolated native
-checks separated from author acceptance. Both #64 and #65 remain unmerged and
-their author checks remain in pending_test.txt. Next: author validation, review
-and merge #64 before retargeting and merging the dependent #65 PR.
+checks separated from author acceptance. The author confirmed all five #64/#65
+checks on 2026-10-02 without reported exceptions and authorized both merges and
+closures. PR #71 is merged and #64 closed; PR #72 delivers the dependent #65.
+HISTORY records each accepted ID and originating release. No author checks remain
+pending; runtime and release 4.37.5 are unchanged by this acceptance update.
 
 ## 4.37.4 — Time skipping with automatic care (#64)
 
@@ -28,8 +30,10 @@ Native checks cover normal/skip and fast/skip equality, eight hours asleep with
 zero work, actual consumption, forecast costs, cancellations, saved sessions and
 old-package rollback. Reproducible evidence is in assets/validation_4374/RESULTS.json.
 Static/build results are recorded there separately from native execution.
-Author acceptance remains pending in pending_test.txt. Issue #65 is authorized
-on a separate dependent branch/PR for daily mansion food/water replenishment.
+The author accepted all three CA-4374 checks on 2026-10-02 without reported
+exceptions and authorized PR #71 merge / #64 closure. HISTORY records the
+confirmation; no #64 author checks remain pending. The tested runtime is unchanged.
+Daily mansion food/water replenishment is the separate #65 / PR #72 patch.
 
 ## 4.37.3 — Palomo's equipment plan and owned equipment departure (#63)
 

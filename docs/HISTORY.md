@@ -25,8 +25,18 @@ needs, sleep, work and stock match the forecast exactly across all three refills
 An isolated hub fixture verifies native map unload/revisit persistence without
 adding a production return route. Palomo's actual page is inspected in English
 and Spanish. Static/build evidence is recorded separately in
-assets/validation_4375/RESULTS.json. Author acceptance remains pending:
-CA-4375-TABLES-01 and CA-4375-SAVES-01. The #64 checks are carried forward.
+assets/validation_4375/RESULTS.json.
+
+Author acceptance, 2026-10-02: Damián confirmed that all tests passed and
+authorized PR #72 merge and issue #65 closure. CA-4375-TABLES-01 (4.37.5 / #65:
+table ratios, daily boundaries, multi-day care and Palomo's explanation) and
+CA-4375-SAVES-01 (4.37.5 / #65: legacy contents, deposited containers, save/reload
+and repeated skips) both passed without reported exceptions. Their entries are
+removed from pending_test.txt. The three #64 checks were accepted in the same
+confirmation and are recorded in the 4.37.4 entry; PR #71 was merged and #64
+closed before integrating its acceptance into this dependent patch. No author
+checks remain pending. Runtime and release 4.37.5 remain unchanged; this update
+records acceptance separately from native/static evidence.
 
 ## 4.37.4 — Explicit time skip and frozen exterior calendar (#64)
 
@@ -50,8 +60,14 @@ Limbo intervals and does not roll back their dates. An original 4.37.3 save and
 package are retained locally and tested for rollback. Daily stock policy remains
 the dependent #65 patch, using the shared midnight notification/forecast hook.
 
-Author acceptance: pending. CA-4374-TIME-01, CA-4374-CARE-01 and CA-4374-SAVE-01
-are outstanding; no manual check, merge or issue closure is claimed.
+Author acceptance, 2026-10-02: Damián confirmed that all tests passed and
+authorized PR #71 merge and issue #64 closure. CA-4374-TIME-01 (4.37.4 / #64:
+destination, productive work and frozen exterior date), CA-4374-CARE-01
+(4.37.4 / #64: real provisions, furniture and interruption) and CA-4374-SAVE-01
+(4.37.4 / #64: migration and active/completed save continuation) all passed
+without reported exceptions. Their entries are removed from pending_test.txt.
+This explicit author confirmation is distinct from the earlier isolated native
+evidence. Runtime and release 4.37.4 remain unchanged.
 
 ## 4.37.3 — Palomo equipment plan and retained owned equipment (#63)
 

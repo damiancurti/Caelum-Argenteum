@@ -5,10 +5,11 @@ Documentation version: **4.37.5** — 2026-10-02.
 **4.37.5 / #65:** mansion tables start 50/50 food/water and refill vacancies
 once per local midnight. Revision 1 preserves legacy food and player containers;
 occupied tables may stay below targets. Palomo explains the timing. Evidence:
-assets/validation_4375. Separate PR stacked on #64 / PR #71; both await author
-acceptance. #64 adds Y destinations, real automatic care, sleep 10% to 100%
+assets/validation_4375. Author accepted all five #64/#65 checks on 2026-10-02
+and authorized both merges/closures. #64 / PR #71 is merged/closed; #65 uses
+PR #72. #64 adds Y destinations, real automatic care, sleep 10% to 100%
 without crafting, and a frozen exterior date with a 1:1 Limbo clock. T remains.
-Evidence: assets/validation_4374. Outstanding checks: pending_test.txt.
+Evidence: assets/validation_4374. HISTORY records acceptance; pending_test.txt is empty.
 
 **Accepted base:** #63 / PR #70 (Palomo loadout and retained own equipment),
 #68 / PR #69 (cheaper magic), #62 / PR #67 (dummy), #61 / PR #66 (landscape),

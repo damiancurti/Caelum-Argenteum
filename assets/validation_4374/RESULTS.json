@@ -193,7 +193,7 @@
     "git diff --check": "PASS",
     "build_dev.ps1": "PASS"
   },
-  "author_acceptance": "PENDING",
+  "author_acceptance": "PASS — author confirmed all checks on 2026-10-02 without reported exceptions; authorized PR #71 merge and issue #64 closure",
   "author_checks": [
     "CA-4374-TIME-01",
     "CA-4374-CARE-01",

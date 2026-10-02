@@ -147,12 +147,12 @@
     "git diff --check": "PASS",
     "changed_package_sources": "byte-for-byte match"
   },
-  "author_acceptance": "PENDING",
+  "author_acceptance": "PASS — author confirmed all checks on 2026-10-02 without reported exceptions; authorized PR #72 merge and issue #65 closure",
   "author_checks": [
     "CA-4375-TABLES-01",
     "CA-4375-SAVES-01"
   ],
-  "carried_author_checks": [
+  "accepted_dependency_checks": [
     "CA-4374-TIME-01",
     "CA-4374-CARE-01",
     "CA-4374-SAVE-01"
