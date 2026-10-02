@@ -6,7 +6,7 @@ Documentation version: **4.37.3** — 2026-10-01.
 teaches/crafts that plan. All actual own equipment/Box survive departure; loans
 return and ammo/materials/coins/consumables are removed (author clarification).
 Revision 1 preserves old choices/progress. Evidence: assets/validation_4373.
-Three CA-4373 author tests remain pending. Commit/push and draft PR; no merge yet.
+All three CA-4373 checks accepted 2026-10-01; PR #70 merge/#63 closure authorized.
 
 **Accepted base:** #68 / PR #69 (4.37.2, cheaper magic), #62 / PR #67 (dummy),
 #61 / PR #66 (landscape), #17 / PR #60 (export) are merged/closed. Their tests,

@@ -43,9 +43,22 @@ route observation moves the test camera. These do not establish an ordinary
 full-campaign manual pass. Early fixture/package-name failures were corrected;
 the final evidence records successful runs and does not package private saves.
 
-Author acceptance is pending, not inferred from these tests: CA-4373-LOADOUT-01,
-CA-4373-SAVES-01 and CA-4373-EXIT-01 remain in pending_test.txt. No merge/closure
-is performed for #63 by this delivery. Earlier accepted tests remain in history.
+Author acceptance, 2026-10-01: the author explicitly confirmed that all tests
+passed and requested issue closure and merge of PR #70. The accepted checks,
+all originating in 4.37.3 / issue #63, are:
+
+- CA-4373-LOADOUT-01: PASS — following Palomo, reviewing/confirming the plan,
+  Ronnie's crafting flow including the shield, and food-source explanations.
+- CA-4373-SAVES-01: PASS — legacy/current saves retain choices, sizes, identity,
+  progress and issued stock; cancellation/reload does not duplicate output.
+- CA-4373-EXIT-01: PASS — cancellation leaves inventory intact; narrative exit
+  and reload retain owned equipment/Box, return loans and remove supplies.
+
+No exceptions or partial results were reported. These explicit author results
+are separate from the isolated evidence above. The three confirmed entries are
+removed from pending_test.txt, leaving the tracked file empty. This acceptance
+update changes documentation/evidence only and retains version 4.37.3 and the
+tested runtime. Earlier accepted tests remain in history.
 
 ## 4.37.2 — Tenfold reduction of magic-weapon Anima bases (#68)
 

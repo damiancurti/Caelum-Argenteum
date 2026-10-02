@@ -14,9 +14,10 @@ crafting. All actual owned equipment and the Box now survive the Limbo exit.
 Borrowed props return, and ammunition, materials, coins and consumables are
 removed as requested. Existing choices/progress migrate once; keep original
 saves/packages for rollback. No map conversion is needed.
-Evidence: [4.37.3 validation](assets/validation_4373/RESULTS.json). Three author
-checks remain in [pending_test.txt](pending_test.txt); isolated engine tests
-do not replace author acceptance. This delivery is a branch and draft PR.
+Evidence: [4.37.3 validation](assets/validation_4373/RESULTS.json). The author
+accepted all three CA-4373 checks on 2026-10-01 and authorized PR #70 merge and
+#63 closure. Acceptance is recorded in [HISTORY](docs/HISTORY.md); no author
+checks remain pending. The tested runtime is unchanged.
 
 Issue [#68](https://github.com/damiancurti/Caelum-Argenteum/issues/68) reduces
 magic-weapon Anima bases tenfold: staff 50, book 70, bell/statuette 100. The

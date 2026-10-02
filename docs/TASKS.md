@@ -14,9 +14,10 @@ Documentation version: **4.37.3** — 2026-10-01.
 - Static/build and isolated native evidence: assets/validation_4373/RESULTS.json.
   Native checks cover 49 choices, menu callbacks, physical route, all four shield
   recipes, cancellation, pending tasks, old saves and narrative exit/reload.
-- Author acceptance remains pending: CA-4373-LOADOUT-01, CA-4373-SAVES-01 and
-  CA-4373-EXIT-01 in pending_test.txt. Commit/push and linked draft PR are the
-  requested delivery; no merge or issue closure is authorized for this patch.
+- Author accepted CA-4373-LOADOUT-01, CA-4373-SAVES-01 and CA-4373-EXIT-01 on
+  2026-10-01 without reported exceptions and authorized PR #70 merge and #63
+  closure. HISTORY records the results; the confirmed entries are removed from
+  pending_test.txt. Runtime and release 4.37.3 remain unchanged.
 
 ## Issue #68 — Magic-weapon Anima base costs divided by ten (4.37.2)
 

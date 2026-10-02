@@ -21,9 +21,10 @@ size, condition and placement remain native inventory state.
 Loadout revision 1 migrates legacy owned equipment classification once; old
 choices, issued allowances and completed tutorials remain. No map conversion.
 Keep original saves and their original package for rollback. Static/build and
-isolated native evidence: assets/validation_4373/RESULTS.json. Author acceptance
-remains pending in the three CA-4373 checks in pending_test.txt. Delivery is a
-focused branch and linked draft PR; merge/closure awaits author instruction.
+isolated native evidence: assets/validation_4373/RESULTS.json. The author accepted
+all three CA-4373 checks on 2026-10-01 without reported exceptions and authorized
+PR #70 merge and #63 closure. HISTORY records the IDs and results; no author
+checks remain pending. The tested runtime is unchanged.
 
 ## 4.37.2 — Reduced magic-weapon Anima costs (#68)
 

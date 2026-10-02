@@ -23,7 +23,8 @@ ammunition, materials, coins and consumables are removed, as clarified on
 2026-10-01. Selections do not create uncrafted equipment. SYSTEMS owns the
 full cleanup and revision-1 migration contract; older contrary exit descriptions
 are historical. Existing confirmed choices and completed tutorial stages remain.
-Evidence: assets/validation_4373. Three author checks remain in pending_test.txt.
+Evidence: assets/validation_4373. The author accepted all three CA-4373 checks
+on 2026-10-01 without reported exceptions; results and IDs are in HISTORY.
 
 ## 4.37.2 — Cheaper magic implements during the tutorial (#68)
 
