@@ -1,0 +1,1209 @@
+Log started: 2026-10-02 11:21:21
+GZDoom version g4.14.2
+W_Init: Init WADfiles.
+adding C:/Program Files (x86)/GZDoom/gzdoom.pk3, 692 lumps
+adding C:/Program Files (x86)/GZDoom/game_support.pk3, 3308 lumps
+adding C:/Program Files (x86)/Steam/steamapps/common/ultimate doom/base/doom2/DOOM2.WAD, 2919 lumps
+adding C:/Program Files (x86)/Steam/steamapps/common/Ultimate Doom/rerelease/id24res.wad, 530 lumps
+adding C:/Program Files (x86)/GZDoom/game_widescreen_gfx.pk3, 214 lumps
+adding C:/GZDooMProjects/CaelumArgenteum/build/caelum_argenteum_dev.pk3, 6141 lumps
+adding C:/GZDooMProjects/CaelumArgenteum/build/issue73_qa, 4 lumps
+S_Init: Setting up sound.
+I_InitSound: Initializing OpenAL
+  Opened device OpenAL Soft on G27F (NVIDIA High Definition Audio)
+  EFX enabled
+I_InitInput
+I_StartupMouse
+I_StartupKeyboard
+I_StartupXInput
+I_StartupRawPS2
+I_StartupDirectInputJoystick
+Vulkan device: NVIDIA GeForce RTX 3070 Ti
+Vulkan device type: discrete gpu
+Vulkan version: 1.4.303 (api) 576.352.0 (driver)
+Vulkan extensions: VK_KHR_16bit_storage VK_KHR_8bit_storage VK_KHR_acceleration_structure VK_KHR_bind_memory2 VK_KHR_buffer_device_address VK_KHR_calibrated_timestamps VK_KHR_compute_shader_derivatives VK_KHR_cooperative_matrix VK_KHR_copy_commands2 VK_KHR_create_renderpass2 VK_KHR_dedicated_allocation VK_KHR_deferred_host_operations VK_KHR_depth_stencil_resolve VK_KHR_descriptor_update_template VK_KHR_device_group VK_KHR_draw_indirect_count VK_KHR_driver_properties VK_KHR_dynamic_rendering VK_KHR_dynamic_rendering_local_read VK_KHR_external_fence VK_KHR_external_fence_win32 VK_KHR_external_memory VK_KHR_external_memory_win32 VK_KHR_external_semaphore VK_KHR_external_semaphore_win32 VK_KHR_format_feature_flags2 VK_KHR_fragment_shader_barycentric VK_KHR_fragment_shading_rate VK_KHR_get_memory_requirements2 VK_KHR_global_priority VK_KHR_image_format_list VK_KHR_imageless_framebuffer VK_KHR_index_type_uint8 VK_KHR_line_rasterization VK_KHR_load_store_op_none VK_KHR_maintenance1 VK_KHR_maintenance2 VK_KHR_maintenance3 VK_KHR_maintenance4 VK_KHR_maintenance5 VK_KHR_maintenance6 VK_KHR_maintenance7 VK_KHR_map_memory2 VK_KHR_multiview VK_KHR_pipeline_binary VK_KHR_pipeline_executable_properties VK_KHR_pipeline_library VK_KHR_present_id VK_KHR_present_wait VK_KHR_push_descriptor VK_KHR_ray_query VK_KHR_ray_tracing_maintenance1 VK_KHR_ray_tracing_pipeline VK_KHR_ray_tracing_position_fetch VK_KHR_relaxed_block_layout VK_KHR_sampler_mirror_clamp_to_edge VK_KHR_sampler_ycbcr_conversion VK_KHR_separate_depth_stencil_layouts VK_KHR_shader_atomic_int64 VK_KHR_shader_clock VK_KHR_shader_draw_parameters VK_KHR_shader_expect_assume VK_KHR_shader_float16_int8 VK_KHR_shader_float_controls VK_KHR_shader_float_controls2 VK_KHR_shader_integer_dot_product VK_KHR_shader_maximal_reconvergence VK_KHR_shader_non_semantic_info VK_KHR_shader_quad_control VK_KHR_shader_relaxed_extended_instruction VK_KHR_shader_subgroup_extended_types VK_KHR_shader_subgroup_rotate VK_KHR_shader_subgroup_uniform_control_flow VK_KHR_shader_terminate_invocation VK_KHR_spirv_1_4 VK_KHR_storage_buffer_storage_class VK_KHR_swapchain VK_KHR_swapchain_mutable_format VK_KHR_synchronization2 VK_KHR_timeline_semaphore VK_KHR_uniform_buffer_standard_layout VK_KHR_variable_pointers VK_KHR_vertex_attribute_divisor VK_KHR_video_decode_av1 VK_KHR_video_decode_h264 VK_KHR_video_decode_h265 VK_KHR_video_decode_queue VK_KHR_video_encode_h264 VK_KHR_video_encode_h265 VK_KHR_video_encode_quantization_map VK_KHR_video_encode_queue VK_KHR_video_maintenance1 VK_KHR_video_maintenance2 VK_KHR_video_queue VK_KHR_vulkan_memory_model VK_KHR_win32_keyed_mutex VK_KHR_workgroup_memory_explicit_layout VK_KHR_zero_initialize_workgroup_memory VK_EXT_4444_formats VK_EXT_attachment_feedback_loop_dynamic_state VK_EXT_attachment_feedback_loop_layout VK_EXT_blend_operation_advanced VK_EXT_border_color_swizzle VK_EXT_buffer_device_address VK_EXT_calibrated_timestamps VK_EXT_color_write_enable VK_EXT_conditional_rendering VK_EXT_conservative_rasterization VK_EXT_custom_border_color VK_EXT_depth_bias_control VK_EXT_depth_clamp_control VK_EXT_depth_clamp_zero_one VK_EXT_depth_clip_control VK_EXT_depth_clip_enable VK_EXT_depth_range_unrestricted VK_EXT_descriptor_buffer VK_EXT_descriptor_indexing VK_EXT_device_address_binding_report VK_EXT_device_fault VK_EXT_device_generated_commands VK_EXT_discard_rectangles VK_EXT_dynamic_rendering_unused_attachments VK_EXT_extended_dynamic_state VK_EXT_extended_dynamic_state2 VK_EXT_extended_dynamic_state3 VK_EXT_external_memory_host VK_EXT_fragment_shader_interlock VK_EXT_full_screen_exclusive VK_EXT_global_priority VK_EXT_global_priority_query VK_EXT_graphics_pipeline_library VK_EXT_hdr_metadata VK_EXT_host_image_copy VK_EXT_host_query_reset VK_EXT_image_2d_view_of_3d VK_EXT_image_robustness VK_EXT_image_sliced_view_of_3d VK_EXT_image_view_min_lod VK_EXT_index_type_uint8 VK_EXT_inline_uniform_block VK_EXT_legacy_vertex_attributes VK_EXT_line_rasterization VK_EXT_load_store_op_none VK_EXT_memory_budget VK_EXT_memory_priority VK_EXT_mesh_shader VK_EXT_multi_draw VK_EXT_mutable_descriptor_type VK_EXT_nested_command_buffer VK_EXT_non_seamless_cube_map VK_EXT_opacity_micromap VK_EXT_pageable_device_local_memory VK_EXT_pci_bus_info VK_EXT_pipeline_creation_cache_control VK_EXT_pipeline_creation_feedback VK_EXT_pipeline_library_group_handles VK_EXT_pipeline_robustness VK_EXT_post_depth_coverage VK_EXT_present_mode_fifo_latest_ready VK_EXT_primitive_topology_list_restart VK_EXT_primitives_generated_query VK_EXT_private_data VK_EXT_provoking_vertex VK_EXT_queue_family_foreign VK_EXT_robustness2 VK_EXT_sample_locations VK_EXT_sampler_filter_minmax VK_EXT_scalar_block_layout VK_EXT_separate_stencil_usage VK_EXT_shader_atomic_float VK_EXT_shader_demote_to_helper_invocation VK_EXT_shader_image_atomic_int64 VK_EXT_shader_module_identifier VK_EXT_shader_object VK_EXT_shader_replicated_composites VK_EXT_shader_subgroup_ballot VK_EXT_shader_subgroup_vote VK_EXT_shader_viewport_index_layer VK_EXT_subgroup_size_control VK_EXT_swapchain_maintenance1 VK_EXT_texel_buffer_alignment VK_EXT_tooling_info VK_EXT_transform_feedback VK_EXT_vertex_attribute_divisor VK_EXT_vertex_attribute_robustness VK_EXT_vertex_input_dynamic_state VK_EXT_ycbcr_2plane_444_formats VK_EXT_ycbcr_image_arrays VK_NV_acquire_winrt_display VK_NV_clip_space_w_scaling VK_NV_cluster_acceleration_structure VK_NV_compute_shader_derivatives VK_NV_cooperative_matrix VK_NV_cooperative_matrix2 VK_NV_cooperative_vector VK_NV_copy_memory_indirect VK_NV_corner_sampled_image VK_NV_coverage_reduction_mode VK_NV_cuda_kernel_launch VK_NV_dedicated_allocation VK_NV_dedicated_allocation_image_aliasing VK_NV_descriptor_pool_overallocation VK_NV_device_diagnostic_checkpoints VK_NV_device_diagnostics_config VK_NV_device_generated_commands VK_NV_device_generated_commands_compute VK_NV_disk_cache_utils VK_NV_external_memory VK_NV_external_memory_win32 VK_NV_fill_rectangle VK_NV_fragment_coverage_to_color VK_NV_fragment_shader_barycentric VK_NV_fragment_shading_rate_enums VK_NV_framebuffer_mixed_samples VK_NV_geometry_shader_passthrough VK_NV_inherited_viewport_scissor VK_NV_internal_nvpresent VK_NV_linear_color_attachment VK_NV_low_latency VK_NV_low_latency2 VK_NV_memory_decompression VK_NV_mesh_shader VK_NV_optical_flow VK_NV_partitioned_acceleration_structure VK_NV_present_metering VK_NV_raw_access_chains VK_NV_ray_tracing VK_NV_ray_tracing_invocation_reorder VK_NV_ray_tracing_motion_blur VK_NV_representative_fragment_test VK_NV_sample_mask_override_coverage VK_NV_scissor_exclusive VK_NV_shader_atomic_float16_vector VK_NV_shader_image_footprint VK_NV_shader_sm_builtins VK_NV_shader_subgroup_partitioned VK_NV_shading_rate_image VK_NV_viewport_array2 VK_NV_viewport_swizzle VK_NV_win32_keyed_mutex VK_NVX_binary_import VK_NVX_image_view_handle VK_NVX_multiview_per_view_attributes VK_AMD_buffer_marker VK_GOOGLE_hlsl_functionality1 VK_GOOGLE_user_type
+Max. texture size: 32768
+Max. uniform buffer range: 65536
+Min. uniform buffer offset alignment: 64
+Resolution: 1520 x 825
+I_Init: Setting up machine state.
+CPU speed: 3400 MHz
+CPU Vendor ID: AuthenticAMD
+  Name: AMD Ryzen 9 5950X 16-Core Processor 
+  Family 25 (25), Model 33, Stepping 0
+  Features: SSE2 SSE3 SSSE3 SSE4.1 SSE4.2 AVX AVX2 F16C FMA3 BMI1 BMI2 HyperThreading
+V_Init: allocate screen.
+ST_Init: Init startup screen.
+Checking cmd-line parameters...
+S_InitData: Load sound definitions.
+G_ParseMapInfo: Load map definitions.
+Texman.Init: Init texture manager.
+ParseTeamInfo: Load team definitions.
+LoadActors: Load actor definitions.
+script parsing took 842.14 ms
+R_Init: Init Doom refresh subsystem.
+DecalLibrary: Load decals.
+M_Init: Init menus.
+P_Init: Init Playloop state.
+ParseSBarInfo: Loading custom status bar definition.
+D_CheckNetGame: Checking network game status.
+player 1 of 1 (1 nodes)
+
+----------------------------------------
+
+MAP02 - Alcantarillas — el laberinto
+
+QA73_WORLD MAP02 save=0 reopen=0
+[Caelum] Inicio por comando directo: perfil de prueba seguro aplicado.
+[Caelum] Character creation values loaded. Attribute total: 150.00
+QA73 PASS central normal start
+QA73 PASS largest supported profile
+QA73 PASS recipe entry=0 size=0
+QA73_LEDGER entry=0 size=0 material=76 units=500
+QA73 PASS recipe entry=1 size=0
+QA73_LEDGER entry=1 size=0 material=76 units=1000
+QA73 PASS recipe entry=2 size=0
+QA73_LEDGER entry=2 size=0 material=76 units=500
+QA73 PASS recipe entry=3 size=0
+QA73_LEDGER entry=3 size=0 material=76 units=500
+QA73 PASS recipe entry=4 size=0
+QA73_LEDGER entry=4 size=0 material=76 units=1000
+QA73 PASS recipe entry=5 size=0
+QA73_LEDGER entry=5 size=0 material=76 units=2500
+QA73 PASS recipe entry=6 size=0
+QA73_LEDGER entry=6 size=0 material=76 units=500
+QA73 PASS recipe entry=7 size=0
+QA73_LEDGER entry=7 size=0 material=76 units=1000
+QA73 PASS recipe entry=8 size=0
+QA73_LEDGER entry=8 size=0 material=76 units=2000
+QA73 PASS recipe entry=9 size=0
+QA73_LEDGER entry=9 size=0 material=76 units=5000
+QA73 PASS recipe entry=10 size=0
+QA73_LEDGER entry=10 size=0 material=76 units=1000
+QA73 PASS recipe entry=11 size=0
+QA73_LEDGER entry=11 size=0 material=76 units=2000
+QA73 PASS recipe entry=12 size=0
+QA73_LEDGER entry=12 size=0 material=76 units=4000
+QA73 PASS recipe entry=13 size=0
+QA73_LEDGER entry=13 size=0 material=76 units=10000
+QA73 PASS recipe entry=14 size=0
+QA73_LEDGER entry=14 size=0 material=76 units=2000
+QA73 PASS recipe entry=15 size=0
+QA73_LEDGER entry=15 size=0 material=76 units=4000
+QA73 PASS recipe entry=16 size=0
+QA73_LEDGER entry=16 size=0 material=42 units=900
+QA73_LEDGER entry=16 size=0 material=62 units=1892
+QA73_LEDGER entry=16 size=0 material=63 units=212
+QA73 PASS recipe entry=17 size=0
+QA73_LEDGER entry=17 size=0 material=42 units=1800
+QA73_LEDGER entry=17 size=0 material=54 units=200
+QA73 PASS recipe entry=18 size=0
+QA73_LEDGER entry=18 size=0 material=42 units=1800
+QA73_LEDGER entry=18 size=0 material=55 units=200
+QA73 PASS recipe entry=19 size=0
+QA73_LEDGER entry=19 size=0 material=42 units=1800
+QA73_LEDGER entry=19 size=0 material=56 units=200
+QA73 PASS recipe entry=20 size=0
+QA73_LEDGER entry=20 size=0 material=42 units=1800
+QA73_LEDGER entry=20 size=0 material=57 units=200
+QA73 PASS recipe entry=21 size=0
+QA73_LEDGER entry=21 size=0 material=42 units=1800
+QA73_LEDGER entry=21 size=0 material=58 units=200
+QA73 PASS recipe entry=22 size=0
+QA73_LEDGER entry=22 size=0 material=62 units=5400
+QA73_LEDGER entry=22 size=0 material=63 units=600
+QA73 PASS recipe entry=23 size=0
+QA73_LEDGER entry=23 size=0 material=42 units=300
+QA73_LEDGER entry=23 size=0 material=62 units=632
+QA73_LEDGER entry=23 size=0 material=63 units=72
+QA73 PASS recipe entry=24 size=0
+QA73_LEDGER entry=24 size=0 material=42 units=1052
+QA73_LEDGER entry=24 size=0 material=62 units=416
+QA73_LEDGER entry=24 size=0 material=63 units=48
+QA73 PASS recipe entry=25 size=0
+QA73_LEDGER entry=25 size=0 material=42 units=452
+QA73_LEDGER entry=25 size=0 material=62 units=956
+QA73_LEDGER entry=25 size=0 material=63 units=108
+QA73 PASS recipe entry=26 size=0
+QA73_LEDGER entry=26 size=0 material=42 units=1600
+QA73_LEDGER entry=26 size=0 material=62 units=360
+QA73_LEDGER entry=26 size=0 material=63 units=40
+QA73 PASS recipe entry=27 size=0
+QA73_LEDGER entry=27 size=0 material=42 units=2800
+QA73_LEDGER entry=27 size=0 material=62 units=1080
+QA73_LEDGER entry=27 size=0 material=63 units=120
+QA73 PASS recipe entry=28 size=0
+QA73_LEDGER entry=28 size=0 material=62 units=3600
+QA73_LEDGER entry=28 size=0 material=63 units=400
+QA73 PASS recipe entry=29 size=0
+QA73_LEDGER entry=29 size=0 material=42 units=2800
+QA73_LEDGER entry=29 size=0 material=62 units=632
+QA73_LEDGER entry=29 size=0 material=63 units=72
+QA73 PASS recipe entry=30 size=0
+QA73_LEDGER entry=30 size=0 material=42 units=2700
+QA73_LEDGER entry=30 size=0 material=62 units=5672
+QA73_LEDGER entry=30 size=0 material=63 units=632
+QA73 PASS recipe entry=31 size=0
+QA73_LEDGER entry=31 size=0 material=42 units=7000
+QA73_LEDGER entry=31 size=0 material=62 units=2700
+QA73_LEDGER entry=31 size=0 material=63 units=300
+QA73 PASS recipe entry=32 size=0
+QA73_LEDGER entry=32 size=0 material=42 units=6400
+QA73_LEDGER entry=32 size=0 material=62 units=1440
+QA73_LEDGER entry=32 size=0 material=63 units=160
+QA73 PASS recipe entry=33 size=0
+QA73_LEDGER entry=33 size=0 material=62 units=6300
+QA73_LEDGER entry=33 size=0 material=63 units=700
+QA73_LEDGER entry=33 size=0 material=76 units=3000
+QA73 PASS recipe entry=34 size=0
+QA73_LEDGER entry=34 size=0 material=42 units=1200
+QA73_LEDGER entry=34 size=0 material=74 units=1800
+QA73 PASS recipe entry=35 size=0
+QA73_LEDGER entry=35 size=0 material=42 units=2000
+QA73_LEDGER entry=35 size=0 material=74 units=3000
+QA73 PASS recipe entry=36 size=0
+QA73_LEDGER entry=36 size=0 material=42 units=1600
+QA73_LEDGER entry=36 size=0 material=74 units=2400
+QA73 PASS recipe entry=37 size=0
+QA73_LEDGER entry=37 size=0 material=54 units=252
+QA73_LEDGER entry=37 size=0 material=62 units=2036
+QA73_LEDGER entry=37 size=0 material=63 units=228
+QA73 PASS recipe entry=38 size=0
+QA73_LEDGER entry=38 size=0 material=55 units=252
+QA73_LEDGER entry=38 size=0 material=62 units=2036
+QA73_LEDGER entry=38 size=0 material=63 units=228
+QA73 PASS recipe entry=39 size=0
+QA73_LEDGER entry=39 size=0 material=56 units=252
+QA73_LEDGER entry=39 size=0 material=62 units=2036
+QA73_LEDGER entry=39 size=0 material=63 units=228
+QA73 PASS recipe entry=40 size=0
+QA73_LEDGER entry=40 size=0 material=57 units=252
+QA73_LEDGER entry=40 size=0 material=62 units=2036
+QA73_LEDGER entry=40 size=0 material=63 units=228
+QA73 PASS recipe entry=41 size=0
+QA73_LEDGER entry=41 size=0 material=58 units=252
+QA73_LEDGER entry=41 size=0 material=62 units=2036
+QA73_LEDGER entry=41 size=0 material=63 units=228
+QA73 PASS recipe entry=42 size=0
+QA73_LEDGER entry=42 size=0 material=54 units=300
+QA73_LEDGER entry=42 size=0 material=74 units=2700
+QA73 PASS recipe entry=43 size=0
+QA73_LEDGER entry=43 size=0 material=55 units=300
+QA73_LEDGER entry=43 size=0 material=74 units=2700
+QA73 PASS recipe entry=44 size=0
+QA73_LEDGER entry=44 size=0 material=56 units=300
+QA73_LEDGER entry=44 size=0 material=74 units=2700
+QA73 PASS recipe entry=45 size=0
+QA73_LEDGER entry=45 size=0 material=57 units=300
+QA73_LEDGER entry=45 size=0 material=74 units=2700
+QA73 PASS recipe entry=46 size=0
+QA73_LEDGER entry=46 size=0 material=58 units=300
+QA73_LEDGER entry=46 size=0 material=74 units=2700
+QA73 PASS recipe entry=47 size=0
+QA73_LEDGER entry=47 size=0 material=42 units=3600
+QA73_LEDGER entry=47 size=0 material=54 units=400
+QA73 PASS recipe entry=48 size=0
+QA73_LEDGER entry=48 size=0 material=42 units=3600
+QA73_LEDGER entry=48 size=0 material=55 units=400
+QA73 PASS recipe entry=49 size=0
+QA73_LEDGER entry=49 size=0 material=42 units=3600
+QA73_LEDGER entry=49 size=0 material=56 units=400
+QA73 PASS recipe entry=50 size=0
+QA73_LEDGER entry=50 size=0 material=42 units=3600
+QA73_LEDGER entry=50 size=0 material=57 units=400
+QA73 PASS recipe entry=51 size=0
+QA73_LEDGER entry=51 size=0 material=42 units=3600
+QA73_LEDGER entry=51 size=0 material=58 units=400
+QA73 PASS recipe entry=52 size=0
+QA73_LEDGER entry=52 size=0 material=62 units=2520
+QA73_LEDGER entry=52 size=0 material=63 units=280
+QA73_LEDGER entry=52 size=0 material=76 units=1200
+QA73 PASS recipe entry=53 size=0
+QA73_LEDGER entry=53 size=0 material=62 units=3780
+QA73_LEDGER entry=53 size=0 material=63 units=420
+QA73_LEDGER entry=53 size=0 material=76 units=1800
+QA73 PASS recipe entry=54 size=0
+QA73_LEDGER entry=54 size=0 material=62 units=5040
+QA73_LEDGER entry=54 size=0 material=63 units=560
+QA73_LEDGER entry=54 size=0 material=76 units=2400
+QA73 PASS recipe entry=55 size=0
+QA73_LEDGER entry=55 size=0 material=62 units=1260
+QA73_LEDGER entry=55 size=0 material=63 units=140
+QA73_LEDGER entry=55 size=0 material=76 units=600
+QA73 PASS recipe entry=56 size=0
+QA73_LEDGER entry=56 size=0 material=54 units=800
+QA73_LEDGER entry=56 size=0 material=65 units=200
+QA73 PASS recipe entry=57 size=0
+QA73_LEDGER entry=57 size=0 material=55 units=800
+QA73_LEDGER entry=57 size=0 material=65 units=200
+QA73 PASS recipe entry=58 size=0
+QA73_LEDGER entry=58 size=0 material=56 units=800
+QA73_LEDGER entry=58 size=0 material=65 units=200
+QA73 PASS recipe entry=59 size=0
+QA73_LEDGER entry=59 size=0 material=57 units=800
+QA73_LEDGER entry=59 size=0 material=65 units=200
+QA73 PASS recipe entry=60 size=0
+QA73_LEDGER entry=60 size=0 material=54 units=600
+QA73_LEDGER entry=60 size=0 material=62 units=360
+QA73_LEDGER entry=60 size=0 material=63 units=40
+QA73 PASS recipe entry=61 size=0
+QA73_LEDGER entry=61 size=0 material=55 units=600
+QA73_LEDGER entry=61 size=0 material=62 units=360
+QA73_LEDGER entry=61 size=0 material=63 units=40
+QA73 PASS recipe entry=62 size=0
+QA73_LEDGER entry=62 size=0 material=56 units=600
+QA73_LEDGER entry=62 size=0 material=62 units=360
+QA73_LEDGER entry=62 size=0 material=63 units=40
+QA73 PASS recipe entry=63 size=0
+QA73_LEDGER entry=63 size=0 material=57 units=600
+QA73_LEDGER entry=63 size=0 material=62 units=360
+QA73_LEDGER entry=63 size=0 material=63 units=40
+QA73 PASS recipe entry=64 size=0
+QA73_LEDGER entry=64 size=0 material=58 units=600
+QA73_LEDGER entry=64 size=0 material=62 units=360
+QA73_LEDGER entry=64 size=0 material=63 units=40
+QA73 PASS recipe entry=0 size=1
+QA73_LEDGER entry=0 size=1 material=76 units=752
+QA73 PASS recipe entry=1 size=1
+QA73_LEDGER entry=1 size=1 material=76 units=1500
+QA73 PASS recipe entry=2 size=1
+QA73_LEDGER entry=2 size=1 material=76 units=752
+QA73 PASS recipe entry=3 size=1
+QA73_LEDGER entry=3 size=1 material=76 units=752
+QA73 PASS recipe entry=4 size=1
+QA73_LEDGER entry=4 size=1 material=76 units=1500
+QA73 PASS recipe entry=5 size=1
+QA73_LEDGER entry=5 size=1 material=76 units=3752
+QA73 PASS recipe entry=6 size=1
+QA73_LEDGER entry=6 size=1 material=76 units=752
+QA73 PASS recipe entry=7 size=1
+QA73_LEDGER entry=7 size=1 material=76 units=1500
+QA73 PASS recipe entry=8 size=1
+QA73_LEDGER entry=8 size=1 material=76 units=3000
+QA73 PASS recipe entry=9 size=1
+QA73_LEDGER entry=9 size=1 material=76 units=7500
+QA73 PASS recipe entry=10 size=1
+QA73_LEDGER entry=10 size=1 material=76 units=1500
+QA73 PASS recipe entry=11 size=1
+QA73_LEDGER entry=11 size=1 material=76 units=3000
+QA73 PASS recipe entry=12 size=1
+QA73_LEDGER entry=12 size=1 material=76 units=6000
+QA73 PASS recipe entry=13 size=1
+QA73_LEDGER entry=13 size=1 material=76 units=15000
+QA73 PASS recipe entry=14 size=1
+QA73_LEDGER entry=14 size=1 material=76 units=3000
+QA73 PASS recipe entry=15 size=1
+QA73_LEDGER entry=15 size=1 material=76 units=6000
+QA73 PASS recipe entry=16 size=1
+QA73_LEDGER entry=16 size=1 material=42 units=1352
+QA73_LEDGER entry=16 size=1 material=62 units=2844
+QA73_LEDGER entry=16 size=1 material=63 units=316
+QA73 PASS recipe entry=17 size=1
+QA73_LEDGER entry=17 size=1 material=42 units=2700
+QA73_LEDGER entry=17 size=1 material=54 units=300
+QA73 PASS recipe entry=18 size=1
+QA73_LEDGER entry=18 size=1 material=42 units=2700
+QA73_LEDGER entry=18 size=1 material=55 units=300
+QA73 PASS recipe entry=19 size=1
+QA73_LEDGER entry=19 size=1 material=42 units=2700
+QA73_LEDGER entry=19 size=1 material=56 units=300
+QA73 PASS recipe entry=20 size=1
+QA73_LEDGER entry=20 size=1 material=42 units=2700
+QA73_LEDGER entry=20 size=1 material=57 units=300
+QA73 PASS recipe entry=21 size=1
+QA73_LEDGER entry=21 size=1 material=42 units=2700
+QA73_LEDGER entry=21 size=1 material=58 units=300
+QA73 PASS recipe entry=22 size=1
+QA73_LEDGER entry=22 size=1 material=62 units=8100
+QA73_LEDGER entry=22 size=1 material=63 units=900
+QA73 PASS recipe entry=23 size=1
+QA73_LEDGER entry=23 size=1 material=42 units=452
+QA73_LEDGER entry=23 size=1 material=62 units=956
+QA73_LEDGER entry=23 size=1 material=63 units=108
+QA73 PASS recipe entry=24 size=1
+QA73_LEDGER entry=24 size=1 material=42 units=1576
+QA73_LEDGER entry=24 size=1 material=62 units=612
+QA73_LEDGER entry=24 size=1 material=63 units=68
+QA73 PASS recipe entry=25 size=1
+QA73_LEDGER entry=25 size=1 material=42 units=676
+QA73_LEDGER entry=25 size=1 material=62 units=1424
+QA73_LEDGER entry=25 size=1 material=63 units=160
+QA73 PASS recipe entry=26 size=1
+QA73_LEDGER entry=26 size=1 material=42 units=2400
+QA73_LEDGER entry=26 size=1 material=62 units=540
+QA73_LEDGER entry=26 size=1 material=63 units=60
+QA73 PASS recipe entry=27 size=1
+QA73_LEDGER entry=27 size=1 material=42 units=4200
+QA73_LEDGER entry=27 size=1 material=62 units=1620
+QA73_LEDGER entry=27 size=1 material=63 units=180
+QA73 PASS recipe entry=28 size=1
+QA73_LEDGER entry=28 size=1 material=62 units=5400
+QA73_LEDGER entry=28 size=1 material=63 units=600
+QA73 PASS recipe entry=29 size=1
+QA73_LEDGER entry=29 size=1 material=42 units=4200
+QA73_LEDGER entry=29 size=1 material=62 units=956
+QA73_LEDGER entry=29 size=1 material=63 units=108
+QA73 PASS recipe entry=30 size=1
+QA73_LEDGER entry=30 size=1 material=42 units=4052
+QA73_LEDGER entry=30 size=1 material=62 units=8516
+QA73_LEDGER entry=30 size=1 material=63 units=948
+QA73 PASS recipe entry=31 size=1
+QA73_LEDGER entry=31 size=1 material=42 units=10500
+QA73_LEDGER entry=31 size=1 material=62 units=4052
+QA73_LEDGER entry=31 size=1 material=63 units=452
+QA73 PASS recipe entry=32 size=1
+QA73_LEDGER entry=32 size=1 material=42 units=9600
+QA73_LEDGER entry=32 size=1 material=62 units=2160
+QA73_LEDGER entry=32 size=1 material=63 units=240
+QA73 PASS recipe entry=33 size=1
+QA73_LEDGER entry=33 size=1 material=62 units=9452
+QA73_LEDGER entry=33 size=1 material=63 units=1052
+QA73_LEDGER entry=33 size=1 material=76 units=4500
+QA73 PASS recipe entry=34 size=1
+QA73_LEDGER entry=34 size=1 material=42 units=1800
+QA73_LEDGER entry=34 size=1 material=74 units=2700
+QA73 PASS recipe entry=35 size=1
+QA73_LEDGER entry=35 size=1 material=42 units=3000
+QA73_LEDGER entry=35 size=1 material=74 units=4500
+QA73 PASS recipe entry=36 size=1
+QA73_LEDGER entry=36 size=1 material=42 units=2400
+QA73_LEDGER entry=36 size=1 material=74 units=3600
+QA73 PASS recipe entry=37 size=1
+QA73_LEDGER entry=37 size=1 material=54 units=376
+QA73_LEDGER entry=37 size=1 material=62 units=3044
+QA73_LEDGER entry=37 size=1 material=63 units=340
+QA73 PASS recipe entry=38 size=1
+QA73_LEDGER entry=38 size=1 material=55 units=376
+QA73_LEDGER entry=38 size=1 material=62 units=3044
+QA73_LEDGER entry=38 size=1 material=63 units=340
+QA73 PASS recipe entry=39 size=1
+QA73_LEDGER entry=39 size=1 material=56 units=376
+QA73_LEDGER entry=39 size=1 material=62 units=3044
+QA73_LEDGER entry=39 size=1 material=63 units=340
+QA73 PASS recipe entry=40 size=1
+QA73_LEDGER entry=40 size=1 material=57 units=376
+QA73_LEDGER entry=40 size=1 material=62 units=3044
+QA73_LEDGER entry=40 size=1 material=63 units=340
+QA73 PASS recipe entry=41 size=1
+QA73_LEDGER entry=41 size=1 material=58 units=376
+QA73_LEDGER entry=41 size=1 material=62 units=3044
+QA73_LEDGER entry=41 size=1 material=63 units=340
+QA73 PASS recipe entry=42 size=1
+QA73_LEDGER entry=42 size=1 material=54 units=452
+QA73_LEDGER entry=42 size=1 material=74 units=4052
+QA73 PASS recipe entry=43 size=1
+QA73_LEDGER entry=43 size=1 material=55 units=452
+QA73_LEDGER entry=43 size=1 material=74 units=4052
+QA73 PASS recipe entry=44 size=1
+QA73_LEDGER entry=44 size=1 material=56 units=452
+QA73_LEDGER entry=44 size=1 material=74 units=4052
+QA73 PASS recipe entry=45 size=1
+QA73_LEDGER entry=45 size=1 material=57 units=452
+QA73_LEDGER entry=45 size=1 material=74 units=4052
+QA73 PASS recipe entry=46 size=1
+QA73_LEDGER entry=46 size=1 material=58 units=452
+QA73_LEDGER entry=46 size=1 material=74 units=4052
+QA73 PASS recipe entry=47 size=1
+QA73_LEDGER entry=47 size=1 material=42 units=5400
+QA73_LEDGER entry=47 size=1 material=54 units=600
+QA73 PASS recipe entry=48 size=1
+QA73_LEDGER entry=48 size=1 material=42 units=5400
+QA73_LEDGER entry=48 size=1 material=55 units=600
+QA73 PASS recipe entry=49 size=1
+QA73_LEDGER entry=49 size=1 material=42 units=5400
+QA73_LEDGER entry=49 size=1 material=56 units=600
+QA73 PASS recipe entry=50 size=1
+QA73_LEDGER entry=50 size=1 material=42 units=5400
+QA73_LEDGER entry=50 size=1 material=57 units=600
+QA73 PASS recipe entry=51 size=1
+QA73_LEDGER entry=51 size=1 material=42 units=5400
+QA73_LEDGER entry=51 size=1 material=58 units=600
+QA73 PASS recipe entry=52 size=1
+QA73_LEDGER entry=52 size=1 material=62 units=3780
+QA73_LEDGER entry=52 size=1 material=63 units=420
+QA73_LEDGER entry=52 size=1 material=76 units=1800
+QA73 PASS recipe entry=53 size=1
+QA73_LEDGER entry=53 size=1 material=62 units=5672
+QA73_LEDGER entry=53 size=1 material=63 units=632
+QA73_LEDGER entry=53 size=1 material=76 units=2700
+QA73 PASS recipe entry=54 size=1
+QA73_LEDGER entry=54 size=1 material=62 units=7560
+QA73_LEDGER entry=54 size=1 material=63 units=840
+QA73_LEDGER entry=54 size=1 material=76 units=3600
+QA73 PASS recipe entry=55 size=1
+QA73_LEDGER entry=55 size=1 material=62 units=1892
+QA73_LEDGER entry=55 size=1 material=63 units=212
+QA73_LEDGER entry=55 size=1 material=76 units=900
+QA73 PASS recipe entry=56 size=1
+QA73_LEDGER entry=56 size=1 material=54 units=800
+QA73_LEDGER entry=56 size=1 material=65 units=200
+QA73 PASS recipe entry=57 size=1
+QA73_LEDGER entry=57 size=1 material=55 units=800
+QA73_LEDGER entry=57 size=1 material=65 units=200
+QA73 PASS recipe entry=58 size=1
+QA73_LEDGER entry=58 size=1 material=56 units=800
+QA73_LEDGER entry=58 size=1 material=65 units=200
+QA73 PASS recipe entry=59 size=1
+QA73_LEDGER entry=59 size=1 material=57 units=800
+QA73_LEDGER entry=59 size=1 material=65 units=200
+QA73 PASS recipe entry=60 size=1
+QA73_LEDGER entry=60 size=1 material=54 units=600
+QA73_LEDGER entry=60 size=1 material=62 units=360
+QA73_LEDGER entry=60 size=1 material=63 units=40
+QA73 PASS recipe entry=61 size=1
+QA73_LEDGER entry=61 size=1 material=55 units=600
+QA73_LEDGER entry=61 size=1 material=62 units=360
+QA73_LEDGER entry=61 size=1 material=63 units=40
+QA73 PASS recipe entry=62 size=1
+QA73_LEDGER entry=62 size=1 material=56 units=600
+QA73_LEDGER entry=62 size=1 material=62 units=360
+QA73_LEDGER entry=62 size=1 material=63 units=40
+QA73 PASS recipe entry=63 size=1
+QA73_LEDGER entry=63 size=1 material=57 units=600
+QA73_LEDGER entry=63 size=1 material=62 units=360
+QA73_LEDGER entry=63 size=1 material=63 units=40
+QA73 PASS recipe entry=64 size=1
+QA73_LEDGER entry=64 size=1 material=58 units=600
+QA73_LEDGER entry=64 size=1 material=62 units=360
+QA73_LEDGER entry=64 size=1 material=63 units=40
+QA73 PASS recipe entry=0 size=2
+QA73_LEDGER entry=0 size=2 material=76 units=1000
+QA73 PASS recipe entry=1 size=2
+QA73_LEDGER entry=1 size=2 material=76 units=2000
+QA73 PASS recipe entry=2 size=2
+QA73_LEDGER entry=2 size=2 material=76 units=1000
+QA73 PASS recipe entry=3 size=2
+QA73_LEDGER entry=3 size=2 material=76 units=1000
+QA73 PASS recipe entry=4 size=2
+QA73_LEDGER entry=4 size=2 material=76 units=2000
+QA73 PASS recipe entry=5 size=2
+QA73_LEDGER entry=5 size=2 material=76 units=5000
+QA73 PASS recipe entry=6 size=2
+QA73_LEDGER entry=6 size=2 material=76 units=1000
+QA73 PASS recipe entry=7 size=2
+QA73_LEDGER entry=7 size=2 material=76 units=2000
+QA73 PASS recipe entry=8 size=2
+QA73_LEDGER entry=8 size=2 material=76 units=4000
+QA73 PASS recipe entry=9 size=2
+QA73_LEDGER entry=9 size=2 material=76 units=10000
+QA73 PASS recipe entry=10 size=2
+QA73_LEDGER entry=10 size=2 material=76 units=2000
+QA73 PASS recipe entry=11 size=2
+QA73_LEDGER entry=11 size=2 material=76 units=4000
+QA73 PASS recipe entry=12 size=2
+QA73_LEDGER entry=12 size=2 material=76 units=8000
+QA73 PASS recipe entry=13 size=2
+QA73_LEDGER entry=13 size=2 material=76 units=20000
+QA73 PASS recipe entry=14 size=2
+QA73_LEDGER entry=14 size=2 material=76 units=4000
+QA73 PASS recipe entry=15 size=2
+QA73_LEDGER entry=15 size=2 material=76 units=8000
+QA73 PASS recipe entry=16 size=2
+QA73_LEDGER entry=16 size=2 material=42 units=1800
+QA73_LEDGER entry=16 size=2 material=62 units=3780
+QA73_LEDGER entry=16 size=2 material=63 units=420
+QA73 PASS recipe entry=17 size=2
+QA73_LEDGER entry=17 size=2 material=42 units=3600
+QA73_LEDGER entry=17 size=2 material=54 units=400
+QA73 PASS recipe entry=18 size=2
+QA73_LEDGER entry=18 size=2 material=42 units=3600
+QA73_LEDGER entry=18 size=2 material=55 units=400
+QA73 PASS recipe entry=19 size=2
+QA73_LEDGER entry=19 size=2 material=42 units=3600
+QA73_LEDGER entry=19 size=2 material=56 units=400
+QA73 PASS recipe entry=20 size=2
+QA73_LEDGER entry=20 size=2 material=42 units=3600
+QA73_LEDGER entry=20 size=2 material=57 units=400
+QA73 PASS recipe entry=21 size=2
+QA73_LEDGER entry=21 size=2 material=42 units=3600
+QA73_LEDGER entry=21 size=2 material=58 units=400
+QA73 PASS recipe entry=22 size=2
+QA73_LEDGER entry=22 size=2 material=62 units=10800
+QA73_LEDGER entry=22 size=2 material=63 units=1200
+QA73 PASS recipe entry=23 size=2
+QA73_LEDGER entry=23 size=2 material=42 units=600
+QA73_LEDGER entry=23 size=2 material=62 units=1260
+QA73_LEDGER entry=23 size=2 material=63 units=140
+QA73 PASS recipe entry=24 size=2
+QA73_LEDGER entry=24 size=2 material=42 units=2100
+QA73_LEDGER entry=24 size=2 material=62 units=812
+QA73_LEDGER entry=24 size=2 material=63 units=92
+QA73 PASS recipe entry=25 size=2
+QA73_LEDGER entry=25 size=2 material=42 units=900
+QA73_LEDGER entry=25 size=2 material=62 units=1892
+QA73_LEDGER entry=25 size=2 material=63 units=212
+QA73 PASS recipe entry=26 size=2
+QA73_LEDGER entry=26 size=2 material=42 units=3200
+QA73_LEDGER entry=26 size=2 material=62 units=720
+QA73_LEDGER entry=26 size=2 material=63 units=80
+QA73 PASS recipe entry=27 size=2
+QA73_LEDGER entry=27 size=2 material=42 units=5600
+QA73_LEDGER entry=27 size=2 material=62 units=2160
+QA73_LEDGER entry=27 size=2 material=63 units=240
+QA73 PASS recipe entry=28 size=2
+QA73_LEDGER entry=28 size=2 material=62 units=7200
+QA73_LEDGER entry=28 size=2 material=63 units=800
+QA73 PASS recipe entry=29 size=2
+QA73_LEDGER entry=29 size=2 material=42 units=5600
+QA73_LEDGER entry=29 size=2 material=62 units=1260
+QA73_LEDGER entry=29 size=2 material=63 units=140
+QA73 PASS recipe entry=30 size=2
+QA73_LEDGER entry=30 size=2 material=42 units=5400
+QA73_LEDGER entry=30 size=2 material=62 units=11340
+QA73_LEDGER entry=30 size=2 material=63 units=1260
+QA73 PASS recipe entry=31 size=2
+QA73_LEDGER entry=31 size=2 material=42 units=14000
+QA73_LEDGER entry=31 size=2 material=62 units=5400
+QA73_LEDGER entry=31 size=2 material=63 units=600
+QA73 PASS recipe entry=32 size=2
+QA73_LEDGER entry=32 size=2 material=42 units=12800
+QA73_LEDGER entry=32 size=2 material=62 units=2880
+QA73_LEDGER entry=32 size=2 material=63 units=320
+QA73 PASS recipe entry=33 size=2
+QA73_LEDGER entry=33 size=2 material=62 units=12600
+QA73_LEDGER entry=33 size=2 material=63 units=1400
+QA73_LEDGER entry=33 size=2 material=76 units=6000
+QA73 PASS recipe entry=34 size=2
+QA73_LEDGER entry=34 size=2 material=42 units=2400
+QA73_LEDGER entry=34 size=2 material=74 units=3600
+QA73 PASS recipe entry=35 size=2
+QA73_LEDGER entry=35 size=2 material=42 units=4000
+QA73_LEDGER entry=35 size=2 material=74 units=6000
+QA73 PASS recipe entry=36 size=2
+QA73_LEDGER entry=36 size=2 material=42 units=3200
+QA73_LEDGER entry=36 size=2 material=74 units=4800
+QA73 PASS recipe entry=37 size=2
+QA73_LEDGER entry=37 size=2 material=54 units=500
+QA73_LEDGER entry=37 size=2 material=62 units=4052
+QA73_LEDGER entry=37 size=2 material=63 units=452
+QA73 PASS recipe entry=38 size=2
+QA73_LEDGER entry=38 size=2 material=55 units=500
+QA73_LEDGER entry=38 size=2 material=62 units=4052
+QA73_LEDGER entry=38 size=2 material=63 units=452
+QA73 PASS recipe entry=39 size=2
+QA73_LEDGER entry=39 size=2 material=56 units=500
+QA73_LEDGER entry=39 size=2 material=62 units=4052
+QA73_LEDGER entry=39 size=2 material=63 units=452
+QA73 PASS recipe entry=40 size=2
+QA73_LEDGER entry=40 size=2 material=57 units=500
+QA73_LEDGER entry=40 size=2 material=62 units=4052
+QA73_LEDGER entry=40 size=2 material=63 units=452
+QA73 PASS recipe entry=41 size=2
+QA73_LEDGER entry=41 size=2 material=58 units=500
+QA73_LEDGER entry=41 size=2 material=62 units=4052
+QA73_LEDGER entry=41 size=2 material=63 units=452
+QA73 PASS recipe entry=42 size=2
+QA73_LEDGER entry=42 size=2 material=54 units=600
+QA73_LEDGER entry=42 size=2 material=74 units=5400
+QA73 PASS recipe entry=43 size=2
+QA73_LEDGER entry=43 size=2 material=55 units=600
+QA73_LEDGER entry=43 size=2 material=74 units=5400
+QA73 PASS recipe entry=44 size=2
+QA73_LEDGER entry=44 size=2 material=56 units=600
+QA73_LEDGER entry=44 size=2 material=74 units=5400
+QA73 PASS recipe entry=45 size=2
+QA73_LEDGER entry=45 size=2 material=57 units=600
+QA73_LEDGER entry=45 size=2 material=74 units=5400
+QA73 PASS recipe entry=46 size=2
+QA73_LEDGER entry=46 size=2 material=58 units=600
+QA73_LEDGER entry=46 size=2 material=74 units=5400
+QA73 PASS recipe entry=47 size=2
+QA73_LEDGER entry=47 size=2 material=42 units=7200
+QA73_LEDGER entry=47 size=2 material=54 units=800
+QA73 PASS recipe entry=48 size=2
+QA73_LEDGER entry=48 size=2 material=42 units=7200
+QA73_LEDGER entry=48 size=2 material=55 units=800
+QA73 PASS recipe entry=49 size=2
+QA73_LEDGER entry=49 size=2 material=42 units=7200
+QA73_LEDGER entry=49 size=2 material=56 units=800
+QA73 PASS recipe entry=50 size=2
+QA73_LEDGER entry=50 size=2 material=42 units=7200
+QA73_LEDGER entry=50 size=2 material=57 units=800
+QA73 PASS recipe entry=51 size=2
+QA73_LEDGER entry=51 size=2 material=42 units=7200
+QA73_LEDGER entry=51 size=2 material=58 units=800
+QA73 PASS recipe entry=52 size=2
+QA73_LEDGER entry=52 size=2 material=62 units=5040
+QA73_LEDGER entry=52 size=2 material=63 units=560
+QA73_LEDGER entry=52 size=2 material=76 units=2400
+QA73 PASS recipe entry=53 size=2
+QA73_LEDGER entry=53 size=2 material=62 units=7560
+QA73_LEDGER entry=53 size=2 material=63 units=840
+QA73_LEDGER entry=53 size=2 material=76 units=3600
+QA73 PASS recipe entry=54 size=2
+QA73_LEDGER entry=54 size=2 material=62 units=10080
+QA73_LEDGER entry=54 size=2 material=63 units=1120
+QA73_LEDGER entry=54 size=2 material=76 units=4800
+QA73 PASS recipe entry=55 size=2
+QA73_LEDGER entry=55 size=2 material=62 units=2520
+QA73_LEDGER entry=55 size=2 material=63 units=280
+QA73_LEDGER entry=55 size=2 material=76 units=1200
+QA73 PASS recipe entry=56 size=2
+QA73_LEDGER entry=56 size=2 material=54 units=800
+QA73_LEDGER entry=56 size=2 material=65 units=200
+QA73 PASS recipe entry=57 size=2
+QA73_LEDGER entry=57 size=2 material=55 units=800
+QA73_LEDGER entry=57 size=2 material=65 units=200
+QA73 PASS recipe entry=58 size=2
+QA73_LEDGER entry=58 size=2 material=56 units=800
+QA73_LEDGER entry=58 size=2 material=65 units=200
+QA73 PASS recipe entry=59 size=2
+QA73_LEDGER entry=59 size=2 material=57 units=800
+QA73_LEDGER entry=59 size=2 material=65 units=200
+QA73 PASS recipe entry=60 size=2
+QA73_LEDGER entry=60 size=2 material=54 units=600
+QA73_LEDGER entry=60 size=2 material=62 units=360
+QA73_LEDGER entry=60 size=2 material=63 units=40
+QA73 PASS recipe entry=61 size=2
+QA73_LEDGER entry=61 size=2 material=55 units=600
+QA73_LEDGER entry=61 size=2 material=62 units=360
+QA73_LEDGER entry=61 size=2 material=63 units=40
+QA73 PASS recipe entry=62 size=2
+QA73_LEDGER entry=62 size=2 material=56 units=600
+QA73_LEDGER entry=62 size=2 material=62 units=360
+QA73_LEDGER entry=62 size=2 material=63 units=40
+QA73 PASS recipe entry=63 size=2
+QA73_LEDGER entry=63 size=2 material=57 units=600
+QA73_LEDGER entry=63 size=2 material=62 units=360
+QA73_LEDGER entry=63 size=2 material=63 units=40
+QA73 PASS recipe entry=64 size=2
+QA73_LEDGER entry=64 size=2 material=58 units=600
+QA73_LEDGER entry=64 size=2 material=62 units=360
+QA73_LEDGER entry=64 size=2 material=63 units=40
+QA73 PASS recipe entry=0 size=3
+QA73_LEDGER entry=0 size=3 material=76 units=1252
+QA73 PASS recipe entry=1 size=3
+QA73_LEDGER entry=1 size=3 material=76 units=2500
+QA73 PASS recipe entry=2 size=3
+QA73_LEDGER entry=2 size=3 material=76 units=1252
+QA73 PASS recipe entry=3 size=3
+QA73_LEDGER entry=3 size=3 material=76 units=1252
+QA73 PASS recipe entry=4 size=3
+QA73_LEDGER entry=4 size=3 material=76 units=2500
+QA73 PASS recipe entry=5 size=3
+QA73_LEDGER entry=5 size=3 material=76 units=6252
+QA73 PASS recipe entry=6 size=3
+QA73_LEDGER entry=6 size=3 material=76 units=1252
+QA73 PASS recipe entry=7 size=3
+QA73_LEDGER entry=7 size=3 material=76 units=2500
+QA73 PASS recipe entry=8 size=3
+QA73_LEDGER entry=8 size=3 material=76 units=5000
+QA73 PASS recipe entry=9 size=3
+QA73_LEDGER entry=9 size=3 material=76 units=12500
+QA73 PASS recipe entry=10 size=3
+QA73_LEDGER entry=10 size=3 material=76 units=2500
+QA73 PASS recipe entry=11 size=3
+QA73_LEDGER entry=11 size=3 material=76 units=5000
+QA73 PASS recipe entry=12 size=3
+QA73_LEDGER entry=12 size=3 material=76 units=10000
+QA73 PASS recipe entry=13 size=3
+QA73_LEDGER entry=13 size=3 material=76 units=25000
+QA73 PASS recipe entry=14 size=3
+QA73_LEDGER entry=14 size=3 material=76 units=5000
+QA73 PASS recipe entry=15 size=3
+QA73_LEDGER entry=15 size=3 material=76 units=10000
+QA73 PASS recipe entry=16 size=3
+QA73_LEDGER entry=16 size=3 material=42 units=2252
+QA73_LEDGER entry=16 size=3 material=62 units=4736
+QA73_LEDGER entry=16 size=3 material=63 units=528
+QA73 PASS recipe entry=17 size=3
+QA73_LEDGER entry=17 size=3 material=42 units=4500
+QA73_LEDGER entry=17 size=3 material=54 units=500
+QA73 PASS recipe entry=18 size=3
+QA73_LEDGER entry=18 size=3 material=42 units=4500
+QA73_LEDGER entry=18 size=3 material=55 units=500
+QA73 PASS recipe entry=19 size=3
+QA73_LEDGER entry=19 size=3 material=42 units=4500
+QA73_LEDGER entry=19 size=3 material=56 units=500
+QA73 PASS recipe entry=20 size=3
+QA73_LEDGER entry=20 size=3 material=42 units=4500
+QA73_LEDGER entry=20 size=3 material=57 units=500
+QA73 PASS recipe entry=21 size=3
+QA73_LEDGER entry=21 size=3 material=42 units=4500
+QA73_LEDGER entry=21 size=3 material=58 units=500
+QA73 PASS recipe entry=22 size=3
+QA73_LEDGER entry=22 size=3 material=62 units=13500
+QA73_LEDGER entry=22 size=3 material=63 units=1500
+QA73 PASS recipe entry=23 size=3
+QA73_LEDGER entry=23 size=3 material=42 units=752
+QA73_LEDGER entry=23 size=3 material=62 units=1584
+QA73_LEDGER entry=23 size=3 material=63 units=176
+QA73 PASS recipe entry=24 size=3
+QA73_LEDGER entry=24 size=3 material=42 units=2628
+QA73_LEDGER entry=24 size=3 material=62 units=1020
+QA73_LEDGER entry=24 size=3 material=63 units=116
+QA73 PASS recipe entry=25 size=3
+QA73_LEDGER entry=25 size=3 material=42 units=1128
+QA73_LEDGER entry=25 size=3 material=62 units=2368
+QA73_LEDGER entry=25 size=3 material=63 units=264
+QA73 PASS recipe entry=26 size=3
+QA73_LEDGER entry=26 size=3 material=42 units=4000
+QA73_LEDGER entry=26 size=3 material=62 units=900
+QA73_LEDGER entry=26 size=3 material=63 units=100
+QA73 PASS recipe entry=27 size=3
+QA73_LEDGER entry=27 size=3 material=42 units=7000
+QA73_LEDGER entry=27 size=3 material=62 units=2700
+QA73_LEDGER entry=27 size=3 material=63 units=300
+QA73 PASS recipe entry=28 size=3
+QA73_LEDGER entry=28 size=3 material=62 units=9000
+QA73_LEDGER entry=28 size=3 material=63 units=1000
+QA73 PASS recipe entry=29 size=3
+QA73_LEDGER entry=29 size=3 material=42 units=7000
+QA73_LEDGER entry=29 size=3 material=62 units=1584
+QA73_LEDGER entry=29 size=3 material=63 units=176
+QA73 PASS recipe entry=30 size=3
+QA73_LEDGER entry=30 size=3 material=42 units=6752
+QA73_LEDGER entry=30 size=3 material=62 units=14184
+QA73_LEDGER entry=30 size=3 material=63 units=1576
+QA73 PASS recipe entry=31 size=3
+QA73_LEDGER entry=31 size=3 material=42 units=17500
+QA73_LEDGER entry=31 size=3 material=62 units=6752
+QA73_LEDGER entry=31 size=3 material=63 units=752
+QA73 PASS recipe entry=32 size=3
+QA73_LEDGER entry=32 size=3 material=42 units=16000
+QA73_LEDGER entry=32 size=3 material=62 units=3600
+QA73_LEDGER entry=32 size=3 material=63 units=400
+QA73 PASS recipe entry=33 size=3
+QA73_LEDGER entry=33 size=3 material=62 units=15752
+QA73_LEDGER entry=33 size=3 material=63 units=1752
+QA73_LEDGER entry=33 size=3 material=76 units=7500
+QA73 PASS recipe entry=34 size=3
+QA73_LEDGER entry=34 size=3 material=42 units=3000
+QA73_LEDGER entry=34 size=3 material=74 units=4500
+QA73 PASS recipe entry=35 size=3
+QA73_LEDGER entry=35 size=3 material=42 units=5000
+QA73_LEDGER entry=35 size=3 material=74 units=7500
+QA73 PASS recipe entry=36 size=3
+QA73_LEDGER entry=36 size=3 material=42 units=4000
+QA73_LEDGER entry=36 size=3 material=74 units=6000
+QA73 PASS recipe entry=37 size=3
+QA73_LEDGER entry=37 size=3 material=54 units=628
+QA73_LEDGER entry=37 size=3 material=62 units=5068
+QA73_LEDGER entry=37 size=3 material=63 units=564
+QA73 PASS recipe entry=38 size=3
+QA73_LEDGER entry=38 size=3 material=55 units=628
+QA73_LEDGER entry=38 size=3 material=62 units=5068
+QA73_LEDGER entry=38 size=3 material=63 units=564
+QA73 PASS recipe entry=39 size=3
+QA73_LEDGER entry=39 size=3 material=56 units=628
+QA73_LEDGER entry=39 size=3 material=62 units=5068
+QA73_LEDGER entry=39 size=3 material=63 units=564
+QA73 PASS recipe entry=40 size=3
+QA73_LEDGER entry=40 size=3 material=57 units=628
+QA73_LEDGER entry=40 size=3 material=62 units=5068
+QA73_LEDGER entry=40 size=3 material=63 units=564
+QA73 PASS recipe entry=41 size=3
+QA73_LEDGER entry=41 size=3 material=58 units=628
+QA73_LEDGER entry=41 size=3 material=62 units=5068
+QA73_LEDGER entry=41 size=3 material=63 units=564
+QA73 PASS recipe entry=42 size=3
+QA73_LEDGER entry=42 size=3 material=54 units=752
+QA73_LEDGER entry=42 size=3 material=74 units=6752
+QA73 PASS recipe entry=43 size=3
+QA73_LEDGER entry=43 size=3 material=55 units=752
+QA73_LEDGER entry=43 size=3 material=74 units=6752
+QA73 PASS recipe entry=44 size=3
+QA73_LEDGER entry=44 size=3 material=56 units=752
+QA73_LEDGER entry=44 size=3 material=74 units=6752
+QA73 PASS recipe entry=45 size=3
+QA73_LEDGER entry=45 size=3 material=57 units=752
+QA73_LEDGER entry=45 size=3 material=74 units=6752
+QA73 PASS recipe entry=46 size=3
+QA73_LEDGER entry=46 size=3 material=58 units=752
+QA73_LEDGER entry=46 size=3 material=74 units=6752
+QA73 PASS recipe entry=47 size=3
+QA73_LEDGER entry=47 size=3 material=42 units=9000
+QA73_LEDGER entry=47 size=3 material=54 units=1000
+QA73 PASS recipe entry=48 size=3
+QA73_LEDGER entry=48 size=3 material=42 units=9000
+QA73_LEDGER entry=48 size=3 material=55 units=1000
+QA73 PASS recipe entry=49 size=3
+QA73_LEDGER entry=49 size=3 material=42 units=9000
+QA73_LEDGER entry=49 size=3 material=56 units=1000
+QA73 PASS recipe entry=50 size=3
+QA73_LEDGER entry=50 size=3 material=42 units=9000
+QA73_LEDGER entry=50 size=3 material=57 units=1000
+QA73 PASS recipe entry=51 size=3
+QA73_LEDGER entry=51 size=3 material=42 units=9000
+QA73_LEDGER entry=51 size=3 material=58 units=1000
+QA73 PASS recipe entry=52 size=3
+QA73_LEDGER entry=52 size=3 material=62 units=6300
+QA73_LEDGER entry=52 size=3 material=63 units=700
+QA73_LEDGER entry=52 size=3 material=76 units=3000
+QA73 PASS recipe entry=53 size=3
+QA73_LEDGER entry=53 size=3 material=62 units=9452
+QA73_LEDGER entry=53 size=3 material=63 units=1052
+QA73_LEDGER entry=53 size=3 material=76 units=4500
+QA73 PASS recipe entry=54 size=3
+QA73_LEDGER entry=54 size=3 material=62 units=12600
+QA73_LEDGER entry=54 size=3 material=63 units=1400
+QA73_LEDGER entry=54 size=3 material=76 units=6000
+QA73 PASS recipe entry=55 size=3
+QA73_LEDGER entry=55 size=3 material=62 units=3152
+QA73_LEDGER entry=55 size=3 material=63 units=352
+QA73_LEDGER entry=55 size=3 material=76 units=1500
+QA73 PASS recipe entry=56 size=3
+QA73_LEDGER entry=56 size=3 material=54 units=800
+QA73_LEDGER entry=56 size=3 material=65 units=200
+QA73 PASS recipe entry=57 size=3
+QA73_LEDGER entry=57 size=3 material=55 units=800
+QA73_LEDGER entry=57 size=3 material=65 units=200
+QA73 PASS recipe entry=58 size=3
+QA73_LEDGER entry=58 size=3 material=56 units=800
+QA73_LEDGER entry=58 size=3 material=65 units=200
+QA73 PASS recipe entry=59 size=3
+QA73_LEDGER entry=59 size=3 material=57 units=800
+QA73_LEDGER entry=59 size=3 material=65 units=200
+QA73 PASS recipe entry=60 size=3
+QA73_LEDGER entry=60 size=3 material=54 units=600
+QA73_LEDGER entry=60 size=3 material=62 units=360
+QA73_LEDGER entry=60 size=3 material=63 units=40
+QA73 PASS recipe entry=61 size=3
+QA73_LEDGER entry=61 size=3 material=55 units=600
+QA73_LEDGER entry=61 size=3 material=62 units=360
+QA73_LEDGER entry=61 size=3 material=63 units=40
+QA73 PASS recipe entry=62 size=3
+QA73_LEDGER entry=62 size=3 material=56 units=600
+QA73_LEDGER entry=62 size=3 material=62 units=360
+QA73_LEDGER entry=62 size=3 material=63 units=40
+QA73 PASS recipe entry=63 size=3
+QA73_LEDGER entry=63 size=3 material=57 units=600
+QA73_LEDGER entry=63 size=3 material=62 units=360
+QA73_LEDGER entry=63 size=3 material=63 units=40
+QA73 PASS recipe entry=64 size=3
+QA73_LEDGER entry=64 size=3 material=58 units=600
+QA73_LEDGER entry=64 size=3 material=62 units=360
+QA73_LEDGER entry=64 size=3 material=63 units=40
+QA73 PASS recipe entry=0 size=4
+QA73_LEDGER entry=0 size=4 material=76 units=1500
+QA73 PASS recipe entry=1 size=4
+QA73_LEDGER entry=1 size=4 material=76 units=3000
+QA73 PASS recipe entry=2 size=4
+QA73_LEDGER entry=2 size=4 material=76 units=1500
+QA73 PASS recipe entry=3 size=4
+QA73_LEDGER entry=3 size=4 material=76 units=1500
+QA73 PASS recipe entry=4 size=4
+QA73_LEDGER entry=4 size=4 material=76 units=3000
+QA73 PASS recipe entry=5 size=4
+QA73_LEDGER entry=5 size=4 material=76 units=7500
+QA73 PASS recipe entry=6 size=4
+QA73_LEDGER entry=6 size=4 material=76 units=1500
+QA73 PASS recipe entry=7 size=4
+QA73_LEDGER entry=7 size=4 material=76 units=3000
+QA73 PASS recipe entry=8 size=4
+QA73_LEDGER entry=8 size=4 material=76 units=6000
+QA73 PASS recipe entry=9 size=4
+QA73_LEDGER entry=9 size=4 material=76 units=15000
+QA73 PASS recipe entry=10 size=4
+QA73_LEDGER entry=10 size=4 material=76 units=3000
+QA73 PASS recipe entry=11 size=4
+QA73_LEDGER entry=11 size=4 material=76 units=6000
+QA73 PASS recipe entry=12 size=4
+QA73_LEDGER entry=12 size=4 material=76 units=12000
+QA73 PASS recipe entry=13 size=4
+QA73_LEDGER entry=13 size=4 material=76 units=30000
+QA73 PASS recipe entry=14 size=4
+QA73_LEDGER entry=14 size=4 material=76 units=6000
+QA73 PASS recipe entry=15 size=4
+QA73_LEDGER entry=15 size=4 material=76 units=12000
+QA73 PASS recipe entry=16 size=4
+QA73_LEDGER entry=16 size=4 material=42 units=2700
+QA73_LEDGER entry=16 size=4 material=62 units=5672
+QA73_LEDGER entry=16 size=4 material=63 units=632
+QA73 PASS recipe entry=17 size=4
+QA73_LEDGER entry=17 size=4 material=42 units=5400
+QA73_LEDGER entry=17 size=4 material=54 units=600
+QA73 PASS recipe entry=18 size=4
+QA73_LEDGER entry=18 size=4 material=42 units=5400
+QA73_LEDGER entry=18 size=4 material=55 units=600
+QA73 PASS recipe entry=19 size=4
+QA73_LEDGER entry=19 size=4 material=42 units=5400
+QA73_LEDGER entry=19 size=4 material=56 units=600
+QA73 PASS recipe entry=20 size=4
+QA73_LEDGER entry=20 size=4 material=42 units=5400
+QA73_LEDGER entry=20 size=4 material=57 units=600
+QA73 PASS recipe entry=21 size=4
+QA73_LEDGER entry=21 size=4 material=42 units=5400
+QA73_LEDGER entry=21 size=4 material=58 units=600
+QA73 PASS recipe entry=22 size=4
+QA73_LEDGER entry=22 size=4 material=62 units=16200
+QA73_LEDGER entry=22 size=4 material=63 units=1800
+QA73 PASS recipe entry=23 size=4
+QA73_LEDGER entry=23 size=4 material=42 units=900
+QA73_LEDGER entry=23 size=4 material=62 units=1892
+QA73_LEDGER entry=23 size=4 material=63 units=212
+QA73 PASS recipe entry=24 size=4
+QA73_LEDGER entry=24 size=4 material=42 units=3152
+QA73_LEDGER entry=24 size=4 material=62 units=1224
+QA73_LEDGER entry=24 size=4 material=63 units=136
+QA73 PASS recipe entry=25 size=4
+QA73_LEDGER entry=25 size=4 material=42 units=1352
+QA73_LEDGER entry=25 size=4 material=62 units=2844
+QA73_LEDGER entry=25 size=4 material=63 units=316
+QA73 PASS recipe entry=26 size=4
+QA73_LEDGER entry=26 size=4 material=42 units=4800
+QA73_LEDGER entry=26 size=4 material=62 units=1080
+QA73_LEDGER entry=26 size=4 material=63 units=120
+QA73 PASS recipe entry=27 size=4
+QA73_LEDGER entry=27 size=4 material=42 units=8400
+QA73_LEDGER entry=27 size=4 material=62 units=3240
+QA73_LEDGER entry=27 size=4 material=63 units=360
+QA73 PASS recipe entry=28 size=4
+QA73_LEDGER entry=28 size=4 material=62 units=10800
+QA73_LEDGER entry=28 size=4 material=63 units=1200
+QA73 PASS recipe entry=29 size=4
+QA73_LEDGER entry=29 size=4 material=42 units=8400
+QA73_LEDGER entry=29 size=4 material=62 units=1892
+QA73_LEDGER entry=29 size=4 material=63 units=212
+QA73 PASS recipe entry=30 size=4
+QA73_LEDGER entry=30 size=4 material=42 units=8100
+QA73_LEDGER entry=30 size=4 material=62 units=17012
+QA73_LEDGER entry=30 size=4 material=63 units=1892
+QA73 PASS recipe entry=31 size=4
+QA73_LEDGER entry=31 size=4 material=42 units=21000
+QA73_LEDGER entry=31 size=4 material=62 units=8100
+QA73_LEDGER entry=31 size=4 material=63 units=900
+QA73 PASS recipe entry=32 size=4
+QA73_LEDGER entry=32 size=4 material=42 units=19200
+QA73_LEDGER entry=32 size=4 material=62 units=4320
+QA73_LEDGER entry=32 size=4 material=63 units=480
+QA73 PASS recipe entry=33 size=4
+QA73_LEDGER entry=33 size=4 material=62 units=18900
+QA73_LEDGER entry=33 size=4 material=63 units=2100
+QA73_LEDGER entry=33 size=4 material=76 units=9000
+QA73 PASS recipe entry=34 size=4
+QA73_LEDGER entry=34 size=4 material=42 units=3600
+QA73_LEDGER entry=34 size=4 material=74 units=5400
+QA73 PASS recipe entry=35 size=4
+QA73_LEDGER entry=35 size=4 material=42 units=6000
+QA73_LEDGER entry=35 size=4 material=74 units=9000
+QA73 PASS recipe entry=36 size=4
+QA73_LEDGER entry=36 size=4 material=42 units=4800
+QA73_LEDGER entry=36 size=4 material=74 units=7200
+QA73 PASS recipe entry=37 size=4
+QA73_LEDGER entry=37 size=4 material=54 units=752
+QA73_LEDGER entry=37 size=4 material=62 units=6084
+QA73_LEDGER entry=37 size=4 material=63 units=676
+QA73 PASS recipe entry=38 size=4
+QA73_LEDGER entry=38 size=4 material=55 units=752
+QA73_LEDGER entry=38 size=4 material=62 units=6084
+QA73_LEDGER entry=38 size=4 material=63 units=676
+QA73 PASS recipe entry=39 size=4
+QA73_LEDGER entry=39 size=4 material=56 units=752
+QA73_LEDGER entry=39 size=4 material=62 units=6084
+QA73_LEDGER entry=39 size=4 material=63 units=676
+QA73 PASS recipe entry=40 size=4
+QA73_LEDGER entry=40 size=4 material=57 units=752
+QA73_LEDGER entry=40 size=4 material=62 units=6084
+QA73_LEDGER entry=40 size=4 material=63 units=676
+QA73 PASS recipe entry=41 size=4
+QA73_LEDGER entry=41 size=4 material=58 units=752
+QA73_LEDGER entry=41 size=4 material=62 units=6084
+QA73_LEDGER entry=41 size=4 material=63 units=676
+QA73 PASS recipe entry=42 size=4
+QA73_LEDGER entry=42 size=4 material=54 units=900
+QA73_LEDGER entry=42 size=4 material=74 units=8100
+QA73 PASS recipe entry=43 size=4
+QA73_LEDGER entry=43 size=4 material=55 units=900
+QA73_LEDGER entry=43 size=4 material=74 units=8100
+QA73 PASS recipe entry=44 size=4
+QA73_LEDGER entry=44 size=4 material=56 units=900
+QA73_LEDGER entry=44 size=4 material=74 units=8100
+QA73 PASS recipe entry=45 size=4
+QA73_LEDGER entry=45 size=4 material=57 units=900
+QA73_LEDGER entry=45 size=4 material=74 units=8100
+QA73 PASS recipe entry=46 size=4
+QA73_LEDGER entry=46 size=4 material=58 units=900
+QA73_LEDGER entry=46 size=4 material=74 units=8100
+QA73 PASS recipe entry=47 size=4
+QA73_LEDGER entry=47 size=4 material=42 units=10800
+QA73_LEDGER entry=47 size=4 material=54 units=1200
+QA73 PASS recipe entry=48 size=4
+QA73_LEDGER entry=48 size=4 material=42 units=10800
+QA73_LEDGER entry=48 size=4 material=55 units=1200
+QA73 PASS recipe entry=49 size=4
+QA73_LEDGER entry=49 size=4 material=42 units=10800
+QA73_LEDGER entry=49 size=4 material=56 units=1200
+QA73 PASS recipe entry=50 size=4
+QA73_LEDGER entry=50 size=4 material=42 units=10800
+QA73_LEDGER entry=50 size=4 material=57 units=1200
+QA73 PASS recipe entry=51 size=4
+QA73_LEDGER entry=51 size=4 material=42 units=10800
+QA73_LEDGER entry=51 size=4 material=58 units=1200
+QA73 PASS recipe entry=52 size=4
+QA73_LEDGER entry=52 size=4 material=62 units=7560
+QA73_LEDGER entry=52 size=4 material=63 units=840
+QA73_LEDGER entry=52 size=4 material=76 units=3600
+QA73 PASS recipe entry=53 size=4
+QA73_LEDGER entry=53 size=4 material=62 units=11340
+QA73_LEDGER entry=53 size=4 material=63 units=1260
+QA73_LEDGER entry=53 size=4 material=76 units=5400
+QA73 PASS recipe entry=54 size=4
+QA73_LEDGER entry=54 size=4 material=62 units=15120
+QA73_LEDGER entry=54 size=4 material=63 units=1680
+QA73_LEDGER entry=54 size=4 material=76 units=7200
+QA73 PASS recipe entry=55 size=4
+QA73_LEDGER entry=55 size=4 material=62 units=3780
+QA73_LEDGER entry=55 size=4 material=63 units=420
+QA73_LEDGER entry=55 size=4 material=76 units=1800
+QA73 PASS recipe entry=56 size=4
+QA73_LEDGER entry=56 size=4 material=54 units=800
+QA73_LEDGER entry=56 size=4 material=65 units=200
+QA73 PASS recipe entry=57 size=4
+QA73_LEDGER entry=57 size=4 material=55 units=800
+QA73_LEDGER entry=57 size=4 material=65 units=200
+QA73 PASS recipe entry=58 size=4
+QA73_LEDGER entry=58 size=4 material=56 units=800
+QA73_LEDGER entry=58 size=4 material=65 units=200
+QA73 PASS recipe entry=59 size=4
+QA73_LEDGER entry=59 size=4 material=57 units=800
+QA73_LEDGER entry=59 size=4 material=65 units=200
+QA73 PASS recipe entry=60 size=4
+QA73_LEDGER entry=60 size=4 material=54 units=600
+QA73_LEDGER entry=60 size=4 material=62 units=360
+QA73_LEDGER entry=60 size=4 material=63 units=40
+QA73 PASS recipe entry=61 size=4
+QA73_LEDGER entry=61 size=4 material=55 units=600
+QA73_LEDGER entry=61 size=4 material=62 units=360
+QA73_LEDGER entry=61 size=4 material=63 units=40
+QA73 PASS recipe entry=62 size=4
+QA73_LEDGER entry=62 size=4 material=56 units=600
+QA73_LEDGER entry=62 size=4 material=62 units=360
+QA73_LEDGER entry=62 size=4 material=63 units=40
+QA73 PASS recipe entry=63 size=4
+QA73_LEDGER entry=63 size=4 material=57 units=600
+QA73_LEDGER entry=63 size=4 material=62 units=360
+QA73_LEDGER entry=63 size=4 material=63 units=40
+QA73 PASS recipe entry=64 size=4
+QA73_LEDGER entry=64 size=4 material=58 units=600
+QA73_LEDGER entry=64 size=4 material=62 units=360
+QA73_LEDGER entry=64 size=4 material=63 units=40
+----------------------------------------
+Necesitas la llave de las compuertas.
+----------------------------------------
+QA73 PASS locked gate 44700 rejects missing/wrong keys
+----------------------------------------
+Necesitas la llave de las criptas.
+----------------------------------------
+QA73 PASS locked gate 44701 rejects missing/wrong keys
+----------------------------------------
+Necesitas la llave del santuario.
+----------------------------------------
+QA73 PASS locked gate 44702 rejects missing/wrong keys
+----------------------------------------
+Necesitás la llave de la cámara norte.
+----------------------------------------
+QA73 PASS locked gate 44703 rejects missing/wrong keys
+----------------------------------------
+Necesitás la llave de la celda sur.
+----------------------------------------
+QA73 PASS locked gate 44710 rejects missing/wrong keys
+----------------------------------------
+Necesitás la llave de la celda oeste.
+----------------------------------------
+QA73 PASS locked gate 44711 rejects missing/wrong keys
+----------------------------------------
+Necesitás la llave de la celda este.
+----------------------------------------
+QA73 PASS locked gate 44712 rejects missing/wrong keys
+----------------------------------------
+Necesitás la llave de la celda norte.
+----------------------------------------
+QA73 PASS locked gate 44713 rejects missing/wrong keys
+QA73 PASS gate 44720 exists
+QA73 PASS gate 44720 approached within normal Use range 48.00
+QA73 PASS gate 44720 opened by real held key/native activation
+QA73 PASS key carrier approached through native collision
+QA73 PASS key carrier approached through native collision
+QA73 PASS gate 44710 exists
+QA73 PASS gate 44710 approached within normal Use range 48.00
+QA73 PASS gate 44710 opened by real held key/native activation
+QA73 PASS endpoint bed 44810 exists
+QA73 PASS largest player fits bed 44810
+QA73 PASS bed 44810 releases into clear walkable space
+QA73 PASS preview does not allocate
+QA73 PASS successful collection fixes size
+QA73 PASS collected materials never refill
+QA73 PASS gate 44700 exists
+QA73 PASS gate 44700 approached within normal Use range 48.00
+QA73 PASS gate 44700 opened by real held key/native activation
+QA73 PASS gate 44721 exists
+QA73 PASS gate 44721 approached within normal Use range 48.00
+QA73 PASS gate 44721 opened by real held key/native activation
+QA73 PASS key carrier approached through native collision
+QA73 PASS key carrier approached through native collision
+QA73 PASS gate 44711 exists
+QA73 PASS gate 44711 approached within normal Use range 48.00
+QA73 PASS gate 44711 opened by real held key/native activation
+QA73 PASS endpoint bed 44811 exists
+QA73 PASS largest player fits bed 44811
+QA73 PASS bed 44811 releases into clear walkable space
+QA73 PASS gate 44701 exists
+QA73 PASS gate 44701 approached within normal Use range 48.00
+QA73 PASS gate 44701 opened by real held key/native activation
+QA73 PASS gate 44722 exists
+QA73 PASS gate 44722 approached within normal Use range 48.00
+QA73 PASS gate 44722 opened by real held key/native activation
+QA73 PASS key carrier approached through native collision
+QA73 PASS key carrier approached through native collision
+QA73 PASS gate 44712 exists
+QA73 PASS gate 44712 approached within normal Use range 48.00
+QA73 PASS gate 44712 opened by real held key/native activation
+QA73 PASS endpoint bed 44812 exists
+QA73 PASS largest player fits bed 44812
+QA73 PASS bed 44812 releases into clear walkable space
+QA73 PASS gate 44702 exists
+QA73 PASS gate 44702 approached within normal Use range 48.00
+QA73 PASS gate 44702 opened by real held key/native activation
+QA73 PASS gate 44723 exists
+QA73 PASS gate 44723 approached within normal Use range 48.00
+QA73 PASS gate 44723 opened by real held key/native activation
+QA73 PASS key carrier approached through native collision
+QA73 PASS key carrier approached through native collision
+QA73 PASS gate 44713 exists
+QA73 PASS gate 44713 approached within normal Use range 48.00
+QA73 PASS gate 44713 opened by real held key/native activation
+QA73 PASS endpoint bed 44813 exists
+QA73 PASS largest player fits bed 44813
+QA73 PASS bed 44813 releases into clear walkable space
+QA73 PASS gate 44703 exists
+QA73 PASS gate 44703 approached within normal Use range 48.00
+QA73 PASS gate 44703 opened by real held key/native activation
+QA73 PASS no authored ammunition on floor before assigned deaths
+QA73 PASS all ammunition drops once after environmental deaths
+QA73 PASS all 192 rats drop one assigned ration despite repeated death callback
+QA73 PASS death supplies recover on reachable dry anchors after deep-pit kills
+QA73 PASS capacity failure does not bind adaptive chest
+QA73 PASS partial material collection conserves remainder
+[Caelum] Inicio por comando directo: perfil de prueba seguro aplicado.
+QA73 PASS different recipient profile cannot resize remaining shared materials
+QA73 PASS later material collection drains exact remainder
+QA73 PASS complete collision route without noclip or teleport
+QA73 PASS all four beds used and released
+QA73_DONE failures=0 steps=4429
+Partida guardada.
+
+----------------------------------------
+
+MAP02 - Alcantarillas — el laberinto
+
+QA73_WORLD MAP02 save=1 reopen=0
+QA73_PERSIST phase=0 failures=0 opened=12 released=288
+
+----------------------------------------
+
+MAP03 - Alcantarillas: depósito
+
+QA73_WORLD MAP03 save=0 reopen=0
+Partida guardada.
+
+----------------------------------------
+
+MAP02 - Alcantarillas — el laberinto
+
+QA73_WORLD MAP02 save=0 reopen=1
+Partida guardada.
+QA73_PERSIST phase=2 failures=0 opened=12 released=288
+QA73_ESCORT_BEGIN native live AI, ordinary collision, accepted catch-up behavior enabled
+QA73_ESCORT_ONE FAIL
+QA73_ESCORT_FAIL blocked point=2316 x=-4456 y=136
