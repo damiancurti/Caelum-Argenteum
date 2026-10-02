@@ -279,10 +279,11 @@ class CaelumConstants : Object
     const BASE_ATTACK_PUSH_FORCE = 8.0;
     // Fichas T1 compartidas por el jugador y los actores que usan magia.
     const WEAPON_STAFF_TIER_ONE_BASE_DAMAGE = 120.0;
-    const WEAPON_STAFF_TIER_ONE_ANIMA_COST = 500.0;
+    const WEAPON_STAFF_TIER_ONE_ANIMA_COST = 50.0;
+    const WEAPON_BOOK_TIER_ONE_ANIMA_COST = 70.0;
     const WEAPON_STAFF_TIER_ONE_ATTACK_TICS = 18;
     const WEAPON_STATUETTE_TIER_ONE_BASE_DAMAGE = 140.0;
-    const WEAPON_STATUETTE_TIER_ONE_ANIMA_COST = 1000.0;
+    const WEAPON_STATUETTE_TIER_ONE_ANIMA_COST = 100.0;
     const WEAPON_STATUETTE_TIER_ONE_ATTACK_TICS = 24;
     // Balance provisional de los tres personajes folclóricos. El radio de
     // Palomo pertenece sólo al entorno de prueba y puede ajustarse aquí.
@@ -344,7 +345,7 @@ class CaelumConstants : Object
     // La campana compensa su abanico de siete proyectiles con menor dano
     // individual y un coste de lanzamiento duplicado.
     const WEAPON_BELL_BASE_DAMAGE = 50.0;
-    const WEAPON_BELL_ANIMA_COST = 1000.0;
+    const WEAPON_BELL_ANIMA_COST = 100.0;
     const WEAPON_BELL_PROJECTILE_COUNT = 7;
     // Provisional trace distance until final magical-weapon ranges are authored.
     const DEBUG_STAFF_TRACE_RANGE = 1024.0;

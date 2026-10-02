@@ -1,0 +1,510 @@
+GZDoom version g4.14.2
+adding build/caelum_argenteum_dev.pk3, 6137 lumps
+adding build/issue68_qa, 1 lumps
+MAP01 - La mansión
+QA62 PASS begin through Caella
+QA62 PASS single dummy before Rulo
+QA62 STATE fresh-active stage=40 primary=0 secondary=0 channel=0 spent=0 recovered=0 runes=0 targets=1 weapon=1 seal=2
+QA68 PASS quote weapon=0 tier=1 E=0 charge=0 alt=0 cost=50.000000000
+QA68 PASS cancelled quote consumes no Anima
+QA68 PASS quote weapon=0 tier=1 E=0 charge=0 alt=1 cost=50.000000000
+QA68 PASS cancelled quote consumes no Anima
+QA68 PASS quote weapon=0 tier=1 E=0 charge=1 alt=0 cost=100.000000000
+QA68 PASS cancelled quote consumes no Anima
+QA68 PASS quote weapon=0 tier=1 E=0 charge=1 alt=1 cost=100.000000000
+QA68 PASS cancelled quote consumes no Anima
+QA68 PASS quote weapon=0 tier=1 E=25 charge=0 alt=0 cost=44.298245614
+QA68 PASS cancelled quote consumes no Anima
+QA68 PASS quote weapon=0 tier=1 E=25 charge=0 alt=1 cost=44.298245614
+QA68 PASS cancelled quote consumes no Anima
+QA68 PASS quote weapon=0 tier=1 E=25 charge=1 alt=0 cost=88.596491228
+QA68 PASS cancelled quote consumes no Anima
+QA68 PASS quote weapon=0 tier=1 E=25 charge=1 alt=1 cost=88.596491228
+QA68 PASS cancelled quote consumes no Anima
+QA68 PASS quote weapon=0 tier=1 E=50 charge=0 alt=0 cost=33.223684211
+QA68 PASS cancelled quote consumes no Anima
+QA68 PASS quote weapon=0 tier=1 E=50 charge=0 alt=1 cost=33.223684211
+QA68 PASS cancelled quote consumes no Anima
+QA68 PASS quote weapon=0 tier=1 E=50 charge=1 alt=0 cost=66.447368421
+QA68 PASS cancelled quote consumes no Anima
+QA68 PASS quote weapon=0 tier=1 E=50 charge=1 alt=1 cost=66.447368421
+QA68 PASS cancelled quote consumes no Anima
+QA68 PASS quote weapon=0 tier=1 E=100 charge=0 alt=0 cost=16.666666667
+QA68 PASS cancelled quote consumes no Anima
+QA68 PASS quote weapon=0 tier=1 E=100 charge=0 alt=1 cost=16.666666667
+QA68 PASS cancelled quote consumes no Anima
+QA68 PASS quote weapon=0 tier=1 E=100 charge=1 alt=0 cost=33.333333333
+QA68 PASS cancelled quote consumes no Anima
+QA68 PASS quote weapon=0 tier=1 E=100 charge=1 alt=1 cost=33.333333333
+QA68 PASS cancelled quote consumes no Anima
+QA68 PASS quote weapon=0 tier=1 E=200 charge=0 alt=0 cost=5.580110497
+QA68 PASS cancelled quote consumes no Anima
+QA68 PASS quote weapon=0 tier=1 E=200 charge=0 alt=1 cost=5.580110497
+QA68 PASS cancelled quote consumes no Anima
+QA68 PASS quote weapon=0 tier=1 E=200 charge=1 alt=0 cost=11.160220994
+QA68 PASS cancelled quote consumes no Anima
+QA68 PASS quote weapon=0 tier=1 E=200 charge=1 alt=1 cost=11.160220994
+QA68 PASS cancelled quote consumes no Anima
+QA68 PASS quote weapon=0 tier=2 E=0 charge=0 alt=0 cost=80.000000000
+QA68 PASS cancelled quote consumes no Anima
+QA68 PASS quote weapon=0 tier=2 E=0 charge=0 alt=1 cost=80.000000000
+QA68 PASS cancelled quote consumes no Anima
+QA68 PASS quote weapon=0 tier=2 E=0 charge=1 alt=0 cost=160.000000000
+QA68 PASS cancelled quote consumes no Anima
+QA68 PASS quote weapon=0 tier=2 E=0 charge=1 alt=1 cost=160.000000000
+QA68 PASS cancelled quote consumes no Anima
+QA68 PASS quote weapon=0 tier=2 E=25 charge=0 alt=0 cost=70.877192982
+QA68 PASS cancelled quote consumes no Anima
+QA68 PASS quote weapon=0 tier=2 E=25 charge=0 alt=1 cost=70.877192982
+QA68 PASS cancelled quote consumes no Anima
+QA68 PASS quote weapon=0 tier=2 E=25 charge=1 alt=0 cost=141.754385965
+QA68 PASS cancelled quote consumes no Anima
+QA68 PASS quote weapon=0 tier=2 E=25 charge=1 alt=1 cost=141.754385965
+QA68 PASS cancelled quote consumes no Anima
+QA68 PASS quote weapon=0 tier=2 E=50 charge=0 alt=0 cost=53.157894737
+QA68 PASS cancelled quote consumes no Anima
+QA68 PASS quote weapon=0 tier=2 E=50 charge=0 alt=1 cost=53.157894737
+QA68 PASS cancelled quote consumes no Anima
+QA68 PASS quote weapon=0 tier=2 E=50 charge=1 alt=0 cost=106.315789474
+QA68 PASS cancelled quote consumes no Anima
+QA68 PASS quote weapon=0 tier=2 E=50 charge=1 alt=1 cost=106.315789474
+QA68 PASS cancelled quote consumes no Anima
+QA68 PASS quote weapon=0 tier=2 E=100 charge=0 alt=0 cost=26.666666667
+QA68 PASS cancelled quote consumes no Anima
+QA68 PASS quote weapon=0 tier=2 E=100 charge=0 alt=1 cost=26.666666667
+QA68 PASS cancelled quote consumes no Anima
+QA68 PASS quote weapon=0 tier=2 E=100 charge=1 alt=0 cost=53.333333333
+QA68 PASS cancelled quote consumes no Anima
+QA68 PASS quote weapon=0 tier=2 E=100 charge=1 alt=1 cost=53.333333333
+QA68 PASS cancelled quote consumes no Anima
+QA68 PASS quote weapon=0 tier=2 E=200 charge=0 alt=0 cost=8.928176796
+QA68 PASS cancelled quote consumes no Anima
+QA68 PASS quote weapon=0 tier=2 E=200 charge=0 alt=1 cost=8.928176796
+QA68 PASS cancelled quote consumes no Anima
+QA68 PASS quote weapon=0 tier=2 E=200 charge=1 alt=0 cost=17.856353591
+QA68 PASS cancelled quote consumes no Anima
+QA68 PASS quote weapon=0 tier=2 E=200 charge=1 alt=1 cost=17.856353591
+QA68 PASS cancelled quote consumes no Anima
+QA68 PASS quote weapon=0 tier=3 E=0 charge=0 alt=0 cost=125.000000000
+QA68 PASS cancelled quote consumes no Anima
+QA68 PASS quote weapon=0 tier=3 E=0 charge=0 alt=1 cost=125.000000000
+QA68 PASS cancelled quote consumes no Anima
+QA68 PASS quote weapon=0 tier=3 E=0 charge=1 alt=0 cost=250.000000000
+QA68 PASS cancelled quote consumes no Anima
+QA68 PASS quote weapon=0 tier=3 E=0 charge=1 alt=1 cost=250.000000000
+QA68 PASS cancelled quote consumes no Anima
+QA68 PASS quote weapon=0 tier=3 E=25 charge=0 alt=0 cost=110.745614035
+QA68 PASS cancelled quote consumes no Anima
+QA68 PASS quote weapon=0 tier=3 E=25 charge=0 alt=1 cost=110.745614035
+QA68 PASS cancelled quote consumes no Anima
+QA68 PASS quote weapon=0 tier=3 E=25 charge=1 alt=0 cost=221.491228070
+QA68 PASS cancelled quote consumes no Anima
+QA68 PASS quote weapon=0 tier=3 E=25 charge=1 alt=1 cost=221.491228070
+QA68 PASS cancelled quote consumes no Anima
+QA68 PASS quote weapon=0 tier=3 E=50 charge=0 alt=0 cost=83.059210526
+QA68 PASS cancelled quote consumes no Anima
+QA68 PASS quote weapon=0 tier=3 E=50 charge=0 alt=1 cost=83.059210526
+QA68 PASS cancelled quote consumes no Anima
+QA68 PASS quote weapon=0 tier=3 E=50 charge=1 alt=0 cost=166.118421053
+QA68 PASS cancelled quote consumes no Anima
+QA68 PASS quote weapon=0 tier=3 E=50 charge=1 alt=1 cost=166.118421053
+QA68 PASS cancelled quote consumes no Anima
+QA68 PASS quote weapon=0 tier=3 E=100 charge=0 alt=0 cost=41.666666667
+QA68 PASS cancelled quote consumes no Anima
+QA68 PASS quote weapon=0 tier=3 E=100 charge=0 alt=1 cost=41.666666667
+QA68 PASS cancelled quote consumes no Anima
+QA68 PASS quote weapon=0 tier=3 E=100 charge=1 alt=0 cost=83.333333333
+QA68 PASS cancelled quote consumes no Anima
+QA68 PASS quote weapon=0 tier=3 E=100 charge=1 alt=1 cost=83.333333333
+QA68 PASS cancelled quote consumes no Anima
+QA68 PASS quote weapon=0 tier=3 E=200 charge=0 alt=0 cost=13.950276243
+QA68 PASS cancelled quote consumes no Anima
+QA68 PASS quote weapon=0 tier=3 E=200 charge=0 alt=1 cost=13.950276243
+QA68 PASS cancelled quote consumes no Anima
+QA68 PASS quote weapon=0 tier=3 E=200 charge=1 alt=0 cost=27.900552486
+QA68 PASS cancelled quote consumes no Anima
+QA68 PASS quote weapon=0 tier=3 E=200 charge=1 alt=1 cost=27.900552486
+QA68 PASS cancelled quote consumes no Anima
+QA68 PASS quote weapon=1 tier=1 E=0 charge=0 alt=0 cost=70.000000000
+QA68 PASS cancelled quote consumes no Anima
+QA68 PASS quote weapon=1 tier=1 E=0 charge=0 alt=1 cost=70.000000000
+QA68 PASS cancelled quote consumes no Anima
+QA68 PASS quote weapon=1 tier=1 E=0 charge=1 alt=0 cost=140.000000000
+QA68 PASS cancelled quote consumes no Anima
+QA68 PASS quote weapon=1 tier=1 E=0 charge=1 alt=1 cost=140.000000000
+QA68 PASS cancelled quote consumes no Anima
+QA68 PASS quote weapon=1 tier=1 E=25 charge=0 alt=0 cost=62.017543860
+QA68 PASS cancelled quote consumes no Anima
+QA68 PASS quote weapon=1 tier=1 E=25 charge=0 alt=1 cost=62.017543860
+QA68 PASS cancelled quote consumes no Anima
+QA68 PASS quote weapon=1 tier=1 E=25 charge=1 alt=0 cost=124.035087719
+QA68 PASS cancelled quote consumes no Anima
+QA68 PASS quote weapon=1 tier=1 E=25 charge=1 alt=1 cost=124.035087719
+QA68 PASS cancelled quote consumes no Anima
+QA68 PASS quote weapon=1 tier=1 E=50 charge=0 alt=0 cost=46.513157895
+QA68 PASS cancelled quote consumes no Anima
+QA68 PASS quote weapon=1 tier=1 E=50 charge=0 alt=1 cost=46.513157895
+QA68 PASS cancelled quote consumes no Anima
+QA68 PASS quote weapon=1 tier=1 E=50 charge=1 alt=0 cost=93.026315789
+QA68 PASS cancelled quote consumes no Anima
+QA68 PASS quote weapon=1 tier=1 E=50 charge=1 alt=1 cost=93.026315789
+QA68 PASS cancelled quote consumes no Anima
+QA68 PASS quote weapon=1 tier=1 E=100 charge=0 alt=0 cost=23.333333333
+QA68 PASS cancelled quote consumes no Anima
+QA68 PASS quote weapon=1 tier=1 E=100 charge=0 alt=1 cost=23.333333333
+QA68 PASS cancelled quote consumes no Anima
+QA68 PASS quote weapon=1 tier=1 E=100 charge=1 alt=0 cost=46.666666667
+QA68 PASS cancelled quote consumes no Anima
+QA68 PASS quote weapon=1 tier=1 E=100 charge=1 alt=1 cost=46.666666667
+QA68 PASS cancelled quote consumes no Anima
+QA68 PASS quote weapon=1 tier=1 E=200 charge=0 alt=0 cost=7.812154696
+QA68 PASS cancelled quote consumes no Anima
+QA68 PASS quote weapon=1 tier=1 E=200 charge=0 alt=1 cost=7.812154696
+QA68 PASS cancelled quote consumes no Anima
+QA68 PASS quote weapon=1 tier=1 E=200 charge=1 alt=0 cost=15.624309392
+QA68 PASS cancelled quote consumes no Anima
+QA68 PASS quote weapon=1 tier=1 E=200 charge=1 alt=1 cost=15.624309392
+QA68 PASS cancelled quote consumes no Anima
+QA68 PASS quote weapon=1 tier=2 E=0 charge=0 alt=0 cost=112.000000000
+QA68 PASS cancelled quote consumes no Anima
+QA68 PASS quote weapon=1 tier=2 E=0 charge=0 alt=1 cost=112.000000000
+QA68 PASS cancelled quote consumes no Anima
+QA68 PASS quote weapon=1 tier=2 E=0 charge=1 alt=0 cost=224.000000000
+QA68 PASS cancelled quote consumes no Anima
+QA68 PASS quote weapon=1 tier=2 E=0 charge=1 alt=1 cost=224.000000000
+QA68 PASS cancelled quote consumes no Anima
+QA68 PASS quote weapon=1 tier=2 E=25 charge=0 alt=0 cost=99.228070175
+QA68 PASS cancelled quote consumes no Anima
+QA68 PASS quote weapon=1 tier=2 E=25 charge=0 alt=1 cost=99.228070175
+QA68 PASS cancelled quote consumes no Anima
+QA68 PASS quote weapon=1 tier=2 E=25 charge=1 alt=0 cost=198.456140351
+QA68 PASS cancelled quote consumes no Anima
+QA68 PASS quote weapon=1 tier=2 E=25 charge=1 alt=1 cost=198.456140351
+QA68 PASS cancelled quote consumes no Anima
+QA68 PASS quote weapon=1 tier=2 E=50 charge=0 alt=0 cost=74.421052632
+QA68 PASS cancelled quote consumes no Anima
+QA68 PASS quote weapon=1 tier=2 E=50 charge=0 alt=1 cost=74.421052632
+QA68 PASS cancelled quote consumes no Anima
+QA68 PASS quote weapon=1 tier=2 E=50 charge=1 alt=0 cost=148.842105263
+QA68 PASS cancelled quote consumes no Anima
+QA68 PASS quote weapon=1 tier=2 E=50 charge=1 alt=1 cost=148.842105263
+QA68 PASS cancelled quote consumes no Anima
+QA68 PASS quote weapon=1 tier=2 E=100 charge=0 alt=0 cost=37.333333333
+QA68 PASS cancelled quote consumes no Anima
+QA68 PASS quote weapon=1 tier=2 E=100 charge=0 alt=1 cost=37.333333333
+QA68 PASS cancelled quote consumes no Anima
+QA68 PASS quote weapon=1 tier=2 E=100 charge=1 alt=0 cost=74.666666667
+QA68 PASS cancelled quote consumes no Anima
+QA68 PASS quote weapon=1 tier=2 E=100 charge=1 alt=1 cost=74.666666667
+QA68 PASS cancelled quote consumes no Anima
+QA68 PASS quote weapon=1 tier=2 E=200 charge=0 alt=0 cost=12.499447514
+QA68 PASS cancelled quote consumes no Anima
+QA68 PASS quote weapon=1 tier=2 E=200 charge=0 alt=1 cost=12.499447514
+QA68 PASS cancelled quote consumes no Anima
+QA68 PASS quote weapon=1 tier=2 E=200 charge=1 alt=0 cost=24.998895028
+QA68 PASS cancelled quote consumes no Anima
+QA68 PASS quote weapon=1 tier=2 E=200 charge=1 alt=1 cost=24.998895028
+QA68 PASS cancelled quote consumes no Anima
+QA68 PASS quote weapon=1 tier=3 E=0 charge=0 alt=0 cost=175.000000000
+QA68 PASS cancelled quote consumes no Anima
+QA68 PASS quote weapon=1 tier=3 E=0 charge=0 alt=1 cost=175.000000000
+QA68 PASS cancelled quote consumes no Anima
+QA68 PASS quote weapon=1 tier=3 E=0 charge=1 alt=0 cost=350.000000000
+QA68 PASS cancelled quote consumes no Anima
+QA68 PASS quote weapon=1 tier=3 E=0 charge=1 alt=1 cost=350.000000000
+QA68 PASS cancelled quote consumes no Anima
+QA68 PASS quote weapon=1 tier=3 E=25 charge=0 alt=0 cost=155.043859649
+QA68 PASS cancelled quote consumes no Anima
+QA68 PASS quote weapon=1 tier=3 E=25 charge=0 alt=1 cost=155.043859649
+QA68 PASS cancelled quote consumes no Anima
+QA68 PASS quote weapon=1 tier=3 E=25 charge=1 alt=0 cost=310.087719298
+QA68 PASS cancelled quote consumes no Anima
+QA68 PASS quote weapon=1 tier=3 E=25 charge=1 alt=1 cost=310.087719298
+QA68 PASS cancelled quote consumes no Anima
+QA68 PASS quote weapon=1 tier=3 E=50 charge=0 alt=0 cost=116.282894737
+QA68 PASS cancelled quote consumes no Anima
+QA68 PASS quote weapon=1 tier=3 E=50 charge=0 alt=1 cost=116.282894737
+QA68 PASS cancelled quote consumes no Anima
+QA68 PASS quote weapon=1 tier=3 E=50 charge=1 alt=0 cost=232.565789474
+QA68 PASS cancelled quote consumes no Anima
+QA68 PASS quote weapon=1 tier=3 E=50 charge=1 alt=1 cost=232.565789474
+QA68 PASS cancelled quote consumes no Anima
+QA68 PASS quote weapon=1 tier=3 E=100 charge=0 alt=0 cost=58.333333333
+QA68 PASS cancelled quote consumes no Anima
+QA68 PASS quote weapon=1 tier=3 E=100 charge=0 alt=1 cost=58.333333333
+QA68 PASS cancelled quote consumes no Anima
+QA68 PASS quote weapon=1 tier=3 E=100 charge=1 alt=0 cost=116.666666667
+QA68 PASS cancelled quote consumes no Anima
+QA68 PASS quote weapon=1 tier=3 E=100 charge=1 alt=1 cost=116.666666667
+QA68 PASS cancelled quote consumes no Anima
+QA68 PASS quote weapon=1 tier=3 E=200 charge=0 alt=0 cost=19.530386740
+QA68 PASS cancelled quote consumes no Anima
+QA68 PASS quote weapon=1 tier=3 E=200 charge=0 alt=1 cost=19.530386740
+QA68 PASS cancelled quote consumes no Anima
+QA68 PASS quote weapon=1 tier=3 E=200 charge=1 alt=0 cost=39.060773481
+QA68 PASS cancelled quote consumes no Anima
+QA68 PASS quote weapon=1 tier=3 E=200 charge=1 alt=1 cost=39.060773481
+QA68 PASS cancelled quote consumes no Anima
+QA68 PASS quote weapon=2 tier=1 E=0 charge=0 alt=0 cost=100.000000000
+QA68 PASS cancelled quote consumes no Anima
+QA68 PASS quote weapon=2 tier=1 E=0 charge=0 alt=1 cost=100.000000000
+QA68 PASS cancelled quote consumes no Anima
+QA68 PASS quote weapon=2 tier=1 E=0 charge=1 alt=0 cost=200.000000000
+QA68 PASS cancelled quote consumes no Anima
+QA68 PASS quote weapon=2 tier=1 E=0 charge=1 alt=1 cost=200.000000000
+QA68 PASS cancelled quote consumes no Anima
+QA68 PASS quote weapon=2 tier=1 E=25 charge=0 alt=0 cost=88.596491228
+QA68 PASS cancelled quote consumes no Anima
+QA68 PASS quote weapon=2 tier=1 E=25 charge=0 alt=1 cost=88.596491228
+QA68 PASS cancelled quote consumes no Anima
+QA68 PASS quote weapon=2 tier=1 E=25 charge=1 alt=0 cost=177.192982456
+QA68 PASS cancelled quote consumes no Anima
+QA68 PASS quote weapon=2 tier=1 E=25 charge=1 alt=1 cost=177.192982456
+QA68 PASS cancelled quote consumes no Anima
+QA68 PASS quote weapon=2 tier=1 E=50 charge=0 alt=0 cost=66.447368421
+QA68 PASS cancelled quote consumes no Anima
+QA68 PASS quote weapon=2 tier=1 E=50 charge=0 alt=1 cost=66.447368421
+QA68 PASS cancelled quote consumes no Anima
+QA68 PASS quote weapon=2 tier=1 E=50 charge=1 alt=0 cost=132.894736842
+QA68 PASS cancelled quote consumes no Anima
+QA68 PASS quote weapon=2 tier=1 E=50 charge=1 alt=1 cost=132.894736842
+QA68 PASS cancelled quote consumes no Anima
+QA68 PASS quote weapon=2 tier=1 E=100 charge=0 alt=0 cost=33.333333333
+QA68 PASS cancelled quote consumes no Anima
+QA68 PASS quote weapon=2 tier=1 E=100 charge=0 alt=1 cost=33.333333333
+QA68 PASS cancelled quote consumes no Anima
+QA68 PASS quote weapon=2 tier=1 E=100 charge=1 alt=0 cost=66.666666667
+QA68 PASS cancelled quote consumes no Anima
+QA68 PASS quote weapon=2 tier=1 E=100 charge=1 alt=1 cost=66.666666667
+QA68 PASS cancelled quote consumes no Anima
+QA68 PASS quote weapon=2 tier=1 E=200 charge=0 alt=0 cost=11.160220994
+QA68 PASS cancelled quote consumes no Anima
+QA68 PASS quote weapon=2 tier=1 E=200 charge=0 alt=1 cost=11.160220994
+QA68 PASS cancelled quote consumes no Anima
+QA68 PASS quote weapon=2 tier=1 E=200 charge=1 alt=0 cost=22.320441989
+QA68 PASS cancelled quote consumes no Anima
+QA68 PASS quote weapon=2 tier=1 E=200 charge=1 alt=1 cost=22.320441989
+QA68 PASS cancelled quote consumes no Anima
+QA68 PASS quote weapon=2 tier=2 E=0 charge=0 alt=0 cost=160.000000000
+QA68 PASS cancelled quote consumes no Anima
+QA68 PASS quote weapon=2 tier=2 E=0 charge=0 alt=1 cost=160.000000000
+QA68 PASS cancelled quote consumes no Anima
+QA68 PASS quote weapon=2 tier=2 E=0 charge=1 alt=0 cost=320.000000000
+QA68 PASS cancelled quote consumes no Anima
+QA68 PASS quote weapon=2 tier=2 E=0 charge=1 alt=1 cost=320.000000000
+QA68 PASS cancelled quote consumes no Anima
+QA68 PASS quote weapon=2 tier=2 E=25 charge=0 alt=0 cost=141.754385965
+QA68 PASS cancelled quote consumes no Anima
+QA68 PASS quote weapon=2 tier=2 E=25 charge=0 alt=1 cost=141.754385965
+QA68 PASS cancelled quote consumes no Anima
+QA68 PASS quote weapon=2 tier=2 E=25 charge=1 alt=0 cost=283.508771930
+QA68 PASS cancelled quote consumes no Anima
+QA68 PASS quote weapon=2 tier=2 E=25 charge=1 alt=1 cost=283.508771930
+QA68 PASS cancelled quote consumes no Anima
+QA68 PASS quote weapon=2 tier=2 E=50 charge=0 alt=0 cost=106.315789474
+QA68 PASS cancelled quote consumes no Anima
+QA68 PASS quote weapon=2 tier=2 E=50 charge=0 alt=1 cost=106.315789474
+QA68 PASS cancelled quote consumes no Anima
+QA68 PASS quote weapon=2 tier=2 E=50 charge=1 alt=0 cost=212.631578947
+QA68 PASS cancelled quote consumes no Anima
+QA68 PASS quote weapon=2 tier=2 E=50 charge=1 alt=1 cost=212.631578947
+QA68 PASS cancelled quote consumes no Anima
+QA68 PASS quote weapon=2 tier=2 E=100 charge=0 alt=0 cost=53.333333333
+QA68 PASS cancelled quote consumes no Anima
+QA68 PASS quote weapon=2 tier=2 E=100 charge=0 alt=1 cost=53.333333333
+QA68 PASS cancelled quote consumes no Anima
+QA68 PASS quote weapon=2 tier=2 E=100 charge=1 alt=0 cost=106.666666667
+QA68 PASS cancelled quote consumes no Anima
+QA68 PASS quote weapon=2 tier=2 E=100 charge=1 alt=1 cost=106.666666667
+QA68 PASS cancelled quote consumes no Anima
+QA68 PASS quote weapon=2 tier=2 E=200 charge=0 alt=0 cost=17.856353591
+QA68 PASS cancelled quote consumes no Anima
+QA68 PASS quote weapon=2 tier=2 E=200 charge=0 alt=1 cost=17.856353591
+QA68 PASS cancelled quote consumes no Anima
+QA68 PASS quote weapon=2 tier=2 E=200 charge=1 alt=0 cost=35.712707182
+QA68 PASS cancelled quote consumes no Anima
+QA68 PASS quote weapon=2 tier=2 E=200 charge=1 alt=1 cost=35.712707182
+QA68 PASS cancelled quote consumes no Anima
+QA68 PASS quote weapon=2 tier=3 E=0 charge=0 alt=0 cost=250.000000000
+QA68 PASS cancelled quote consumes no Anima
+QA68 PASS quote weapon=2 tier=3 E=0 charge=0 alt=1 cost=250.000000000
+QA68 PASS cancelled quote consumes no Anima
+QA68 PASS quote weapon=2 tier=3 E=0 charge=1 alt=0 cost=500.000000000
+QA68 PASS cancelled quote consumes no Anima
+QA68 PASS quote weapon=2 tier=3 E=0 charge=1 alt=1 cost=500.000000000
+QA68 PASS cancelled quote consumes no Anima
+QA68 PASS quote weapon=2 tier=3 E=25 charge=0 alt=0 cost=221.491228070
+QA68 PASS cancelled quote consumes no Anima
+QA68 PASS quote weapon=2 tier=3 E=25 charge=0 alt=1 cost=221.491228070
+QA68 PASS cancelled quote consumes no Anima
+QA68 PASS quote weapon=2 tier=3 E=25 charge=1 alt=0 cost=442.982456140
+QA68 PASS cancelled quote consumes no Anima
+QA68 PASS quote weapon=2 tier=3 E=25 charge=1 alt=1 cost=442.982456140
+QA68 PASS cancelled quote consumes no Anima
+QA68 PASS quote weapon=2 tier=3 E=50 charge=0 alt=0 cost=166.118421053
+QA68 PASS cancelled quote consumes no Anima
+QA68 PASS quote weapon=2 tier=3 E=50 charge=0 alt=1 cost=166.118421053
+QA68 PASS cancelled quote consumes no Anima
+QA68 PASS quote weapon=2 tier=3 E=50 charge=1 alt=0 cost=332.236842105
+QA68 PASS cancelled quote consumes no Anima
+QA68 PASS quote weapon=2 tier=3 E=50 charge=1 alt=1 cost=332.236842105
+QA68 PASS cancelled quote consumes no Anima
+QA68 PASS quote weapon=2 tier=3 E=100 charge=0 alt=0 cost=83.333333333
+QA68 PASS cancelled quote consumes no Anima
+QA68 PASS quote weapon=2 tier=3 E=100 charge=0 alt=1 cost=83.333333333
+QA68 PASS cancelled quote consumes no Anima
+QA68 PASS quote weapon=2 tier=3 E=100 charge=1 alt=0 cost=166.666666667
+QA68 PASS cancelled quote consumes no Anima
+QA68 PASS quote weapon=2 tier=3 E=100 charge=1 alt=1 cost=166.666666667
+QA68 PASS cancelled quote consumes no Anima
+QA68 PASS quote weapon=2 tier=3 E=200 charge=0 alt=0 cost=27.900552486
+QA68 PASS cancelled quote consumes no Anima
+QA68 PASS quote weapon=2 tier=3 E=200 charge=0 alt=1 cost=27.900552486
+QA68 PASS cancelled quote consumes no Anima
+QA68 PASS quote weapon=2 tier=3 E=200 charge=1 alt=0 cost=55.801104972
+QA68 PASS cancelled quote consumes no Anima
+QA68 PASS quote weapon=2 tier=3 E=200 charge=1 alt=1 cost=55.801104972
+QA68 PASS cancelled quote consumes no Anima
+QA68 PASS quote weapon=3 tier=1 E=0 charge=0 alt=0 cost=100.000000000
+QA68 PASS cancelled quote consumes no Anima
+QA68 PASS quote weapon=3 tier=1 E=0 charge=0 alt=1 cost=100.000000000
+QA68 PASS cancelled quote consumes no Anima
+QA68 PASS quote weapon=3 tier=1 E=0 charge=1 alt=0 cost=200.000000000
+QA68 PASS cancelled quote consumes no Anima
+QA68 PASS quote weapon=3 tier=1 E=0 charge=1 alt=1 cost=200.000000000
+QA68 PASS cancelled quote consumes no Anima
+QA68 PASS quote weapon=3 tier=1 E=25 charge=0 alt=0 cost=88.596491228
+QA68 PASS cancelled quote consumes no Anima
+QA68 PASS quote weapon=3 tier=1 E=25 charge=0 alt=1 cost=88.596491228
+QA68 PASS cancelled quote consumes no Anima
+QA68 PASS quote weapon=3 tier=1 E=25 charge=1 alt=0 cost=177.192982456
+QA68 PASS cancelled quote consumes no Anima
+QA68 PASS quote weapon=3 tier=1 E=25 charge=1 alt=1 cost=177.192982456
+QA68 PASS cancelled quote consumes no Anima
+QA68 PASS quote weapon=3 tier=1 E=50 charge=0 alt=0 cost=66.447368421
+QA68 PASS cancelled quote consumes no Anima
+QA68 PASS quote weapon=3 tier=1 E=50 charge=0 alt=1 cost=66.447368421
+QA68 PASS cancelled quote consumes no Anima
+QA68 PASS quote weapon=3 tier=1 E=50 charge=1 alt=0 cost=132.894736842
+QA68 PASS cancelled quote consumes no Anima
+QA68 PASS quote weapon=3 tier=1 E=50 charge=1 alt=1 cost=132.894736842
+QA68 PASS cancelled quote consumes no Anima
+QA68 PASS quote weapon=3 tier=1 E=100 charge=0 alt=0 cost=33.333333333
+QA68 PASS cancelled quote consumes no Anima
+QA68 PASS quote weapon=3 tier=1 E=100 charge=0 alt=1 cost=33.333333333
+QA68 PASS cancelled quote consumes no Anima
+QA68 PASS quote weapon=3 tier=1 E=100 charge=1 alt=0 cost=66.666666667
+QA68 PASS cancelled quote consumes no Anima
+QA68 PASS quote weapon=3 tier=1 E=100 charge=1 alt=1 cost=66.666666667
+QA68 PASS cancelled quote consumes no Anima
+QA68 PASS quote weapon=3 tier=1 E=200 charge=0 alt=0 cost=11.160220994
+QA68 PASS cancelled quote consumes no Anima
+QA68 PASS quote weapon=3 tier=1 E=200 charge=0 alt=1 cost=11.160220994
+QA68 PASS cancelled quote consumes no Anima
+QA68 PASS quote weapon=3 tier=1 E=200 charge=1 alt=0 cost=22.320441989
+QA68 PASS cancelled quote consumes no Anima
+QA68 PASS quote weapon=3 tier=1 E=200 charge=1 alt=1 cost=22.320441989
+QA68 PASS cancelled quote consumes no Anima
+QA68 PASS quote weapon=3 tier=2 E=0 charge=0 alt=0 cost=160.000000000
+QA68 PASS cancelled quote consumes no Anima
+QA68 PASS quote weapon=3 tier=2 E=0 charge=0 alt=1 cost=160.000000000
+QA68 PASS cancelled quote consumes no Anima
+QA68 PASS quote weapon=3 tier=2 E=0 charge=1 alt=0 cost=320.000000000
+QA68 PASS cancelled quote consumes no Anima
+QA68 PASS quote weapon=3 tier=2 E=0 charge=1 alt=1 cost=320.000000000
+QA68 PASS cancelled quote consumes no Anima
+QA68 PASS quote weapon=3 tier=2 E=25 charge=0 alt=0 cost=141.754385965
+QA68 PASS cancelled quote consumes no Anima
+QA68 PASS quote weapon=3 tier=2 E=25 charge=0 alt=1 cost=141.754385965
+QA68 PASS cancelled quote consumes no Anima
+QA68 PASS quote weapon=3 tier=2 E=25 charge=1 alt=0 cost=283.508771930
+QA68 PASS cancelled quote consumes no Anima
+QA68 PASS quote weapon=3 tier=2 E=25 charge=1 alt=1 cost=283.508771930
+QA68 PASS cancelled quote consumes no Anima
+QA68 PASS quote weapon=3 tier=2 E=50 charge=0 alt=0 cost=106.315789474
+QA68 PASS cancelled quote consumes no Anima
+QA68 PASS quote weapon=3 tier=2 E=50 charge=0 alt=1 cost=106.315789474
+QA68 PASS cancelled quote consumes no Anima
+QA68 PASS quote weapon=3 tier=2 E=50 charge=1 alt=0 cost=212.631578947
+QA68 PASS cancelled quote consumes no Anima
+QA68 PASS quote weapon=3 tier=2 E=50 charge=1 alt=1 cost=212.631578947
+QA68 PASS cancelled quote consumes no Anima
+QA68 PASS quote weapon=3 tier=2 E=100 charge=0 alt=0 cost=53.333333333
+QA68 PASS cancelled quote consumes no Anima
+QA68 PASS quote weapon=3 tier=2 E=100 charge=0 alt=1 cost=53.333333333
+QA68 PASS cancelled quote consumes no Anima
+QA68 PASS quote weapon=3 tier=2 E=100 charge=1 alt=0 cost=106.666666667
+QA68 PASS cancelled quote consumes no Anima
+QA68 PASS quote weapon=3 tier=2 E=100 charge=1 alt=1 cost=106.666666667
+QA68 PASS cancelled quote consumes no Anima
+QA68 PASS quote weapon=3 tier=2 E=200 charge=0 alt=0 cost=17.856353591
+QA68 PASS cancelled quote consumes no Anima
+QA68 PASS quote weapon=3 tier=2 E=200 charge=0 alt=1 cost=17.856353591
+QA68 PASS cancelled quote consumes no Anima
+QA68 PASS quote weapon=3 tier=2 E=200 charge=1 alt=0 cost=35.712707182
+QA68 PASS cancelled quote consumes no Anima
+QA68 PASS quote weapon=3 tier=2 E=200 charge=1 alt=1 cost=35.712707182
+QA68 PASS cancelled quote consumes no Anima
+QA68 PASS quote weapon=3 tier=3 E=0 charge=0 alt=0 cost=250.000000000
+QA68 PASS cancelled quote consumes no Anima
+QA68 PASS quote weapon=3 tier=3 E=0 charge=0 alt=1 cost=250.000000000
+QA68 PASS cancelled quote consumes no Anima
+QA68 PASS quote weapon=3 tier=3 E=0 charge=1 alt=0 cost=500.000000000
+QA68 PASS cancelled quote consumes no Anima
+QA68 PASS quote weapon=3 tier=3 E=0 charge=1 alt=1 cost=500.000000000
+QA68 PASS cancelled quote consumes no Anima
+QA68 PASS quote weapon=3 tier=3 E=25 charge=0 alt=0 cost=221.491228070
+QA68 PASS cancelled quote consumes no Anima
+QA68 PASS quote weapon=3 tier=3 E=25 charge=0 alt=1 cost=221.491228070
+QA68 PASS cancelled quote consumes no Anima
+QA68 PASS quote weapon=3 tier=3 E=25 charge=1 alt=0 cost=442.982456140
+QA68 PASS cancelled quote consumes no Anima
+QA68 PASS quote weapon=3 tier=3 E=25 charge=1 alt=1 cost=442.982456140
+QA68 PASS cancelled quote consumes no Anima
+QA68 PASS quote weapon=3 tier=3 E=50 charge=0 alt=0 cost=166.118421053
+QA68 PASS cancelled quote consumes no Anima
+QA68 PASS quote weapon=3 tier=3 E=50 charge=0 alt=1 cost=166.118421053
+QA68 PASS cancelled quote consumes no Anima
+QA68 PASS quote weapon=3 tier=3 E=50 charge=1 alt=0 cost=332.236842105
+QA68 PASS cancelled quote consumes no Anima
+QA68 PASS quote weapon=3 tier=3 E=50 charge=1 alt=1 cost=332.236842105
+QA68 PASS cancelled quote consumes no Anima
+QA68 PASS quote weapon=3 tier=3 E=100 charge=0 alt=0 cost=83.333333333
+QA68 PASS cancelled quote consumes no Anima
+QA68 PASS quote weapon=3 tier=3 E=100 charge=0 alt=1 cost=83.333333333
+QA68 PASS cancelled quote consumes no Anima
+QA68 PASS quote weapon=3 tier=3 E=100 charge=1 alt=0 cost=166.666666667
+QA68 PASS cancelled quote consumes no Anima
+QA68 PASS quote weapon=3 tier=3 E=100 charge=1 alt=1 cost=166.666666667
+QA68 PASS cancelled quote consumes no Anima
+QA68 PASS quote weapon=3 tier=3 E=200 charge=0 alt=0 cost=27.900552486
+QA68 PASS cancelled quote consumes no Anima
+QA68 PASS quote weapon=3 tier=3 E=200 charge=0 alt=1 cost=27.900552486
+QA68 PASS cancelled quote consumes no Anima
+QA68 PASS quote weapon=3 tier=3 E=200 charge=1 alt=0 cost=55.801104972
+QA68 PASS cancelled quote consumes no Anima
+QA68 PASS quote weapon=3 tier=3 E=200 charge=1 alt=1 cost=55.801104972
+QA68 PASS cancelled quote consumes no Anima
+QA68 PASS insufficient reserve rejects cast at reduced threshold
+QA68 PASS exact fractional reserve accepts cast
+QA68 PASS NPC cost shape=0 E=0 expected=50.000000000 actual=50.000000000
+QA68 PASS NPC insufficient reserve retains normal gate
+QA68 PASS NPC cost shape=3 E=0 expected=100.000000000 actual=100.000000000
+QA68 PASS NPC insufficient reserve retains normal gate
+QA68 PASS NPC cost shape=0 E=25 expected=44.298245614 actual=44.298245614
+QA68 PASS NPC insufficient reserve retains normal gate
+QA68 PASS NPC cost shape=3 E=25 expected=88.596491228 actual=88.596491228
+QA68 PASS NPC insufficient reserve retains normal gate
+QA68 PASS NPC cost shape=0 E=50 expected=33.223684211 actual=33.223684211
+QA68 PASS NPC insufficient reserve retains normal gate
+QA68 PASS NPC cost shape=3 E=50 expected=66.447368421 actual=66.447368421
+QA68 PASS NPC insufficient reserve retains normal gate
+QA68 PASS NPC cost shape=0 E=100 expected=16.666666667 actual=16.666666667
+QA68 PASS NPC insufficient reserve retains normal gate
+QA68 PASS NPC cost shape=3 E=100 expected=33.333333333 actual=33.333333333
+QA68 PASS NPC insufficient reserve retains normal gate
+QA68 PASS NPC cost shape=0 E=200 expected=5.580110497 actual=5.580110497
+QA68 PASS NPC insufficient reserve retains normal gate
+QA68 PASS NPC cost shape=3 E=200 expected=11.160220994 actual=11.160220994
+QA68 PASS NPC insufficient reserve retains normal gate
+QA68 RULES_DONE quotes=240

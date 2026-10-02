@@ -1,0 +1,8 @@
+GZDoom version g4.14.2
+adding build/caelum_argenteum_dev.pk3, 6137 lumps
+adding build/issue68_qa, 1 lumps
+MAP01 - La mansión
+QA68 PASS paid save reload does not restart its cast
+QA68 PASS paid reload retains equipment and quest
+QA68 PASS next cast after reload retains one reduction
+QA68 PASS next cast pays reduced cost after reload

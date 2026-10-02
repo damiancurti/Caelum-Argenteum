@@ -187,7 +187,8 @@ class CaelumWeaponModel : Object
                 return CaelumConstants.WEAPON_STAFF_TIER_ONE_ANIMA_COST;
             case CaelumConstants.WEAPON_TYPE_BELL:
                 return CaelumConstants.WEAPON_BELL_ANIMA_COST;
-            case CaelumConstants.WEAPON_TYPE_BOOK: return 700.0;
+            case CaelumConstants.WEAPON_TYPE_BOOK:
+                return CaelumConstants.WEAPON_BOOK_TIER_ONE_ANIMA_COST;
             case CaelumConstants.WEAPON_TYPE_STATUETTE:
                 return CaelumConstants.WEAPON_STATUETTE_TIER_ONE_ANIMA_COST;
             default: return 0.0;

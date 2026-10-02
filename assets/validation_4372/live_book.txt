@@ -1,0 +1,44 @@
+GZDoom version g4.14.2
+adding build/caelum_argenteum_dev.pk3, 6137 lumps
+adding build/issue68_qa, 1 lumps
+MAP01 - La mansión
+QA62 PASS begin through Caella
+QA62 PASS single dummy before Rulo
+QA62 STATE fresh-active stage=40 primary=0 secondary=0 channel=0 spent=0 recovered=0 runes=0 targets=1 weapon=1 seal=2
+QA68 PASS live native cast starts with correct quote
+QA68 PASS live payment shape=1 case=0 expected=70.000000000 actual=70.000000000
+QA68 PASS live cast completed
+QA68 PASS live native cast starts with correct quote
+QA68 PASS live payment shape=1 case=1 expected=70.000000000 actual=70.000000000
+QA68 PASS live cast completed
+QA68 PASS live native cast starts with correct quote
+QA68 PASS live payment shape=1 case=2 expected=46.666666667 actual=46.666666667
+QA68 PASS live cast completed
+QA68 PASS live native cast starts with correct quote
+QA68 PASS live payment shape=1 case=3 expected=46.666666667 actual=46.666666667
+QA68 PASS live cast completed
+QA68 PASS live native cast starts with correct quote
+QA68 PASS live payment shape=1 case=4 expected=112.000000000 actual=112.000000000
+QA68 PASS live cast completed
+QA68 PASS live native cast starts with correct quote
+QA68 PASS live payment shape=1 case=5 expected=112.000000000 actual=112.000000000
+QA68 PASS live cast completed
+QA68 PASS live native cast starts with correct quote
+QA68 PASS live payment shape=1 case=6 expected=74.666666667 actual=74.666666667
+QA68 PASS live cast completed
+QA68 PASS live native cast starts with correct quote
+QA68 PASS live payment shape=1 case=7 expected=74.666666667 actual=74.666666667
+QA68 PASS live cast completed
+QA68 PASS live native cast starts with correct quote
+QA68 PASS live payment shape=1 case=8 expected=175.000000000 actual=175.000000000
+QA68 PASS live cast completed
+QA68 PASS live native cast starts with correct quote
+QA68 PASS live payment shape=1 case=9 expected=175.000000000 actual=175.000000000
+QA68 PASS live cast completed
+QA68 PASS live native cast starts with correct quote
+QA68 PASS live payment shape=1 case=10 expected=116.666666667 actual=116.666666667
+QA68 PASS live cast completed
+QA68 PASS live native cast starts with correct quote
+QA68 PASS live payment shape=1 case=11 expected=116.666666667 actual=116.666666667
+QA68 PASS live cast completed
+QA68 LIVE_DONE shape=1

@@ -4,8 +4,16 @@ An independent dark fantasy FPS-RPG inspired by nineteenth-century Argentina.
 Author and game designer: **Damian Curti**. Development target: **GZDoom 4.14.2**
 on Windows 11. The final game is intended to be independent of Doom assets.
 
-**Current release: 4.37.1.** Obtain and update the complete repository, validate
+**Current release: 4.37.2.** Obtain and update the complete repository, validate
 it, then rebuild with `run_dev.bat` as described below.
+
+Issue [#68](https://github.com/damiancurti/Caelum-Argenteum/issues/68) reduces
+magic-weapon Anima bases tenfold: staff 50, book 70, bell/statuette 100. The
+existing Eloquence Type 4 divisor gives one third at 100; tiers and charge retain
+their multipliers. Old saved costs and pending casts update once while progress
+and resources remain. Keep original saves and the original package for rollback.
+Evidence: [4.37.2 validation](assets/validation_4372/RESULTS.json). Author balance
+acceptance remains in [pending_test.txt](pending_test.txt).
 
 Issue [#62](https://github.com/damiancurti/Caelum-Argenteum/issues/62) makes Caella's
 primary and secondary spell exercises require hits on the training dummy in the

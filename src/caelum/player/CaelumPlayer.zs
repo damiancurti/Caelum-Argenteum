@@ -17191,11 +17191,11 @@ class CaelumPlayer : DoomPlayer
         }
     }
 
-    // Un save 0z contiene estadísticas y costes de lanzamiento ya calculados.
+    // Un save anterior puede conservar estadísticas y costes ya calculados.
     // Se reconstruyen una sola vez, sin conceder cartas ni reiniciar recursos.
     void EnsureCurrentAttributeBalance()
     {
-        if (AttributeBalanceVersion >= 2 || !CharacterCreationComplete
+        if (AttributeBalanceVersion >= 3 || !CharacterCreationComplete
             || Attributes == null || DerivedStats == null) return;
         ApplyCharacterProfile();
 
@@ -17208,7 +17208,9 @@ class CaelumPlayer : DoomPlayer
             && CharacterAllocation != null
             && DerivedStats != null)
         {
-            bool migrateBalance = AttributeBalanceVersion < 1;
+            // La revisión 3 actualiza el coste guardado y el lanzamiento en curso
+            // antes de pagarlo; conserva el tiempo, los recursos y el progreso.
+            bool migrateBalance = AttributeBalanceVersion < 3;
             Attributes.InitializeFromCreation(CharacterProfile, CharacterAllocation);
             if (ArmorModel != null)
             {
@@ -17254,9 +17256,8 @@ class CaelumPlayer : DoomPlayer
                         * tierFactor * DerivedStats.StaffAnimaCost / CaelumConstants.DEBUG_STAFF_ANIMA_COST
                         * (PendingStaffChargedAttack ? CaelumConstants.WEAPON_CHARGED_COST_MULTIPLIER : 1.0);
                 }
-                AttributeBalanceVersion = 1;
             }
-            AttributeBalanceVersion = 2;
+            AttributeBalanceVersion = 3;
             SyncHUDLoadState();
             // La masa nativa representa la masa total para que el motor y los
             // ataques externos respeten tambien el peso equipado del jugador.

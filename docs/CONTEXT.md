@@ -1,13 +1,14 @@
 # CONTEXT.md — Ultra-condensed summary of Caelum Argenteum
 
-Documentation version: **4.37.1** — 2026-10-01.
+Documentation version: **4.37.2** — 2026-10-01.
 
-**4.37.1 / #62:** Caella primary/secondary spells must hit the shared training
-dummy in the north-central ground-floor room. Seal/Anima checks remain separate;
-runes, loans and passage gates are unchanged. Active/completed 4.37.0 saves retain
-earned progress without a schema change. Evidence: assets/validation_4371.
-Author accepted CA-4371-CAELLA-01 on 2026-10-01; #62 / PR #67 is accepted.
-Next: separately requested magic-weapon Anima base costs divided by ten.
+**4.37.2 / #68:** magic Anima bases: staff 50, book 70, bell/statuette 100.
+Existing Eloquence Type 4 divides by 3 at 100. Revision 3 updates saved derived
+and pending costs once; resources/progress remain. Evidence: assets/validation_4372.
+Author balance/continuity check CA-4372-ANIMA-01 is pending.
+
+**4.37.1 / #62:** shared dummy exercises accepted 2026-10-01;
+CA-4371-CAELLA-01: HISTORY. PR #67 merged; #62 closed.
 
 **4.37.0 / #61:** mansion hills, decorative plants/gem cave and door tympana;
 pool exclusion, distant-floor/roof repairs, relocated auxiliary rooms/stations.

@@ -1,0 +1,158 @@
+{
+  "issue": 68,
+  "version": "4.37.2",
+  "date": "2026-10-01",
+  "base_commit": "62dbdf33c96c1a6e83d427454dbde00c64bbf700",
+  "author_request": "Magic-weapon base Anima costs divided by ten; corresponding attribute Type 4 divisor, one third at 100.",
+  "base_costs": {
+    "staff": 50,
+    "book": 70,
+    "bell": 100,
+    "statuette": 100
+  },
+  "formula": "base * tier(1,1.6,2.5) * charge(1,2) / (1 + 2*E*(E+1)/10100), E=max(0,effective Eloquence)",
+  "engine": "GZDoom 4.14.2 / Windows 11 / Vulkan / RTX 3070 Ti",
+  "package": {
+    "sha256": "2f46450d8eca31b0248e0d2a987502c5b8642604e0b82776b1ddcedebb0b9259",
+    "entries": 6137,
+    "all_entries_match_src": true
+  },
+  "baseline": {
+    "version": "4.37.1",
+    "sha256": "2ce2ec18ede49194ce61ca8b66473dfe9794b6c63a829643f9cfce77c7a20a24",
+    "runtime_accepted_in": "#62 / PR #67"
+  },
+  "runtime_file_hashes": {
+    "caelum/core/CaelumConstants.zs": "5df8e06090fb5616585473742189c97a24ed0a87abe82fb5d68d313bca67281d",
+    "caelum/equipment/CaelumWeaponModel.zs": "f91f95b67cf638dc52b05bc8703c7b4f1c1e001f3b44368d0a9f7d9cd89ebd43",
+    "caelum/player/CaelumPlayer.zs": "e17c5f8572cd3c7af10ac40ce5cbd4cd908fc83837b62fc98c0adf6d48de025b",
+    "caelum/world/CaelumPhysicalHazards.zs": "bf58cf617c39b794f44286ff3493199d9bbce54176dc65429f77e958c7292153",
+    "caelum/world/CaelumSewerMaze.zs": "54aca4137971358c16a3beb0ff951764b4a8b8780b7a5583f0bf42747c1945b4"
+  },
+  "native_cases": [
+    {
+      "label": "legacy_pending",
+      "pass_assertions": 1,
+      "support_fixture_assertions": 2,
+      "completion_marker": "LEGACY revision=2",
+      "commands": "wait 140; give Issue62Setup; wait 35; give Issue68Legacy; save legacy68_pending; wait 40; give Issue68Rollback; quit",
+      "log_sha256": "c723c1f5f60b9720c3d1b176d6c46b06c49daffe170563af2b1e164fbe17f519",
+      "evidence": "legacy_pending.txt"
+    },
+    {
+      "label": "rules_final",
+      "pass_assertions": 502,
+      "support_fixture_assertions": 2,
+      "completion_marker": "RULES_DONE quotes=240",
+      "commands": "wait 140; give Issue62Setup; wait 35; give Issue68Rules; wait 20; quit",
+      "log_sha256": "3a987edee173ac338fe7e6e25c34da2de69bfe54a0cb21ad665f88b7f26e926e",
+      "evidence": "rules_final.txt"
+    },
+    {
+      "label": "live_staff",
+      "pass_assertions": 36,
+      "support_fixture_assertions": 2,
+      "completion_marker": "LIVE_DONE shape=0",
+      "commands": "wait 140; give Issue62Setup; wait 35; give Issue68Staff; wait 1230; screenshot build/issue68_staff.png; wait 20; quit",
+      "log_sha256": "36fdd7d2f9317e308f6ec7dc83b503addb81a634698500fd00d60223b3505279",
+      "evidence": "live_staff.txt"
+    },
+    {
+      "label": "live_book",
+      "pass_assertions": 36,
+      "support_fixture_assertions": 2,
+      "completion_marker": "LIVE_DONE shape=1",
+      "commands": "wait 140; give Issue62Setup; wait 35; give Issue68Book; wait 1230; wait 20; quit",
+      "log_sha256": "4387dd755650b9a8a3c49290fff31e93b9c108dd460cab4793331d0b1a703978",
+      "evidence": "live_book.txt"
+    },
+    {
+      "label": "live_bell",
+      "pass_assertions": 36,
+      "support_fixture_assertions": 2,
+      "completion_marker": "LIVE_DONE shape=2",
+      "commands": "wait 140; give Issue62Setup; wait 35; give Issue68Bell; wait 1230; wait 20; quit",
+      "log_sha256": "e5becfe50e0247bdbe0ef9777cd3dbecb01ab4b50868285f34947dc5dee28b4b",
+      "evidence": "live_bell.txt"
+    },
+    {
+      "label": "live_statuette",
+      "pass_assertions": 36,
+      "support_fixture_assertions": 2,
+      "completion_marker": "LIVE_DONE shape=3",
+      "commands": "wait 140; give Issue62Setup; wait 35; give Issue68Statuette; wait 1230; wait 20; quit",
+      "log_sha256": "fc1f203a147957a393d08f91157f94e65b6be70b0c289faa03de6d1b9e30fd0e",
+      "evidence": "live_statuette.txt"
+    },
+    {
+      "label": "migration",
+      "pass_assertions": 10,
+      "support_fixture_assertions": 0,
+      "completion_marker": "native saved cast pays its updated quote exactly once",
+      "commands": "wait 140; give Issue68Migration; save migrated68_pending; wait 40; give Issue68PayPending; save migrated68_paid; wait 40; quit",
+      "log_sha256": "60f2c8d4951b8f9e860f5e91dcf46955607870fed11004cb564712edd7676cdd",
+      "evidence": "migration.txt"
+    },
+    {
+      "label": "migration_reload",
+      "pass_assertions": 10,
+      "support_fixture_assertions": 0,
+      "completion_marker": "native saved cast pays its updated quote exactly once",
+      "commands": "wait 140; give Issue68Migration; give Issue68PayPending; wait 20; quit",
+      "log_sha256": "aab22081629573f3cd5b6aab62420f1d270c02cc55e72d6e66ca91cfc2ed19ed",
+      "evidence": "migration_reload.txt"
+    },
+    {
+      "label": "paid_reload",
+      "pass_assertions": 4,
+      "support_fixture_assertions": 0,
+      "completion_marker": "next cast pays reduced cost after reload",
+      "commands": "wait 140; give Issue68PaidCheck; wait 20; quit",
+      "log_sha256": "e0b352e6ee000a01fcba51eca0cf0afd0276ecee41000bf86c30eff1a7c3383f",
+      "evidence": "paid_reload.txt"
+    },
+    {
+      "label": "rollback",
+      "pass_assertions": 1,
+      "support_fixture_assertions": 0,
+      "completion_marker": "original save and original package restore original cost",
+      "commands": "wait 140; give Issue68Rollback; wait 20; quit",
+      "log_sha256": "defc46b59f31a6a37d4c57ed3abc530debdb765254c7e1bf7b7b0073bcc2b812",
+      "evidence": "rollback.txt"
+    },
+    {
+      "label": "caella",
+      "pass_assertions": 0,
+      "support_fixture_assertions": 14,
+      "completion_marker": "stage 45 and secret passage unlocked",
+      "commands": "wait 140; give Issue62Setup; wait 35; give Issue62Miss; wait 100; give Issue62MissSecondary; wait 100; give Issue62NoHits; give Issue62Primary; wait 100; give Issue62Secondary; wait 100; give Issue62Channel; wait 70; give Issue62Retry; give Issue62Finish; wait 20; quit",
+      "log_sha256": "64e21deaf4ff8c6115eec8475b0fe4ee053a4a71434ea0c6a3b865261b336f8f",
+      "evidence": "caella.txt"
+    },
+    {
+      "label": "clean",
+      "pass_assertions": 0,
+      "support_fixture_assertions": 0,
+      "completion_marker": "QA68_CLEAN_DONE",
+      "commands": "wait 200; echo QA68_CLEAN_DONE; wait 20; quit",
+      "log_sha256": "d13ae78757f647d5258599fcdde95fe2b04f621d5bf608c79909861526e661f5",
+      "evidence": "clean.txt"
+    }
+  ],
+  "author_acceptance": "PENDING CA-4372-ANIMA-01; #62 acceptance does not accept the subsequent balance change.",
+  "methodology": [
+    "The support overlay is assets/validation_4371/fixture. Native setup seeds Argento completion and uses production Caella Begin/equipment; neither fixture is included in the PK3.",
+    "240 cost quotations execute native PerformDebugStaffAttack over 4 shapes x 3 tiers x 5 Eloquence levels (0,25,50,100,200) x charge on/off x primary/secondary. Each cancellation is checked to spend nothing. Expected costs independently use the author-specified bases and Type 4 equation.",
+    "48 live casts complete on native ticks across all shapes, tiers, modes and charge states; normal cases use Eloquence 0 and charged cases 100. The fixture suppresses regeneration solely to measure the actual debit, and controls aim to keep the visible spells on the dummy.",
+    "NPC checks use native GetTierOneMagicAnimaCost/TrySpendTierOneMagicAnima for the authored staff/statuette shapes. Exact-reserve checks seed the native floating-point quote; independent expected-value comparisons use a tolerance of 0.00001. An initial independent floating-point boundary setup was corrected without changing gameplay.",
+    "The original pending save is produced in the 4.37.1 package. Its real native cast/animation clock is extended to 30 seconds solely to permit save/load inspection; an initial probe extended only the legacy timer and was superseded. Forward load observes revision 3 without manually invoking the initial migration.",
+    "The original pending quote 471.433905900 becomes 47.143390590 before payment. Equipment/quest identity and partial reserve remain; repeated migration calls, current-version save/load and the next cast do not divide twice. Original-save rollback is checked using the preserved original package, not by treating a new revision-3 save as an old-price save.",
+    "Type 4 derived-stat code, Sleep rules, persistent character-state fields and MAP01 geometry remain identical to the accepted baseline (ignoring checkout line endings for text). Only three gameplay files and two required diagnostic version labels change.",
+    "Static/native checks do not replace author balance acceptance. No private author save, IWAD, executable or development PK3 is distributed."
+  ],
+  "reproduction": [
+    "Build with build_dev.ps1. From the repository root, use run_issue68.ps1 -Label <label> -Package -BaseMap assets/validation_4371/fixture -Fixture assets/validation_4372/fixture -Commands <recorded commands> -Wait. Configure its local engine/IWAD paths and supply build/gzdoom.ini.",
+    "legacy_pending and rollback use -Runtime <original 4.37.1 PK3>, built from base_commit in an isolated checkout and preserving the basename caelum_argenteum_dev.pk3. Migration uses -LoadSave build/issue68_saves/legacy68_pending.zds; migration_reload uses migrated68_pending.zds; paid_reload uses migrated68_paid.zds.",
+    "The clean case uses -Clean and omits -BaseMap so no fixture is loaded. Logs/saves/captures stay under build. The evidence collector rejects absent completion markers or any failed assertion."
+  ]
+}

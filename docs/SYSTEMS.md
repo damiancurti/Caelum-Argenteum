@@ -1,6 +1,37 @@
 # Caelum Argenteum — Current systems and rules
 
-Documentation version: **4.37.1** — 2026-10-01.
+Documentation version: **4.37.2** — 2026-10-01.
+
+## 4.37.2 — Magic-weapon Anima bases divided by ten (#68)
+
+Author decision, 2026-10-01: launching with every magical implement costs one
+tenth of its former base. Eloquence remains the corresponding attribute, using
+the existing Type 4 divisor; this is division, not a subtractive percentage.
+
+`F(E) = 1 + 2 * max(0,E) * (max(0,E) + 1) / 10100`
+`Anima per cast = base * tier multiplier * charge multiplier / F(Eloquence)`
+
+| Implement | Former T1 base | Current T1 base | T1 at Eloquence 100 |
+| --- | --- | --- | --- |
+| Staff | 500 | 50 | 16.666666... |
+| Book | 700 | 70 | 23.333333... |
+| Bell | 1000 | 100 | 33.333333... |
+| Statuette | 1000 | 100 | 33.333333... |
+
+Eloquence 0 retains the base; 100 gives F=3 and one third of the base. Values
+above 100 continue along the same curve. T1/T2/T3 multipliers remain 1/1.6/2.5;
+a prepared charge remains x2. Primary/secondary and all five essences use their
+implement's cost. A bell volley pays once, not once per projectile. Authored NPC
+staff/statuette attacks share the reduced constants and their existing divisor.
+Damage, duration, regeneration, Seal Channel, physical costs and the Arcanist
+Sleep/class-ability base are unchanged. Runtime resources retain fractional costs.
+
+Attribute-balance revision 3 recalculates saved derived costs and any pending
+cast once, before payment, retaining elapsed casting time, current resources,
+equipment IDs and quest progress. It uses the existing revision field; no new
+saved fields or map conversion. Already paid casts receive no retroactive refund.
+For rollback, retain and load the original save with its original 4.37.1 package;
+do not treat a newly saved revision-3 state as an original-price rollback save.
 
 ## 4.37.0 — MAP01 exterior and door presentation (#61)
 
@@ -4458,7 +4489,8 @@ The 2026-09-28 #52 revision supersedes that damage divisor with the subtractive
 maximum-health formula above; this historical divisor table still documents
 its original release and the unchanged Anima-cost rule. Magical cost = base cost ×tier modifier × charge / F(Elocuencia).
 T2 retains ×1,6 and T3 ×2,5; a prepared charge preserves ×2. The bell and statuette
-maintain its bases. Player and NPC use the same curve, also for explosions; the entire
+retain their relative bases, reduced tenfold in 4.37.2 / #68 as specified above.
+Player and NPC use the same curve, also for explosions; the entire
 rounding of Engine Health is preserved.
 
 | Attribute | Divisor | Remaining percentage |

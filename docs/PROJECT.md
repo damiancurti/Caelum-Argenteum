@@ -1,6 +1,20 @@
 # Caelum Argenteum — Project, status and roadmap
 
-Documentation version: **4.37.1** — 2026-10-01.
+Documentation version: **4.37.2** — 2026-10-01.
+
+## 4.37.2 — Reduced magic-weapon Anima costs (#68)
+
+After accepting #62 / PR #67, the author requested tenfold lower magic-weapon
+bases on 2026-10-01. T1 staff/book/bell/statuette now cost 50/70/100/100 before
+the existing Eloquence Type 4 divisor. Eloquence 100 costs one third; tier and
+charge multipliers retain their accepted values. Player and authored NPC magic
+share the reduced constants. Other costs, damage and resource recovery remain.
+
+Existing saved derived costs and pending casts update once through attribute
+revision 3, preserving resources, elapsed cast state, inventory identity and
+quest progress. Original saves/packages provide tested rollback. Evidence and
+scope: assets/validation_4372/RESULTS.json. Author balance/continuity acceptance
+is pending as CA-4372-ANIMA-01. Deferred Tarot/Trucazo remains separate.
 
 ## 4.37.1 — Caella's practical exercises on the shared dummy (#62)
 

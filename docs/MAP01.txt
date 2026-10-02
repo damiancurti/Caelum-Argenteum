@@ -1,6 +1,16 @@
 CAELUM ARGENTEUM — STORY AND MAP01
 
-Documentation version: **4.37.1** — 2026-10-01.
+Documentation version: **4.37.2** — 2026-10-01.
+
+## 4.37.2 — Cheaper magic implements during the tutorial (#68)
+
+Caella's temporary staff uses the shared reduced base: 50 Anima before Eloquence
+Type 4 division. At 100 Eloquence, an uncharged T1 cast costs 50/3. Owned book,
+bell and statuette bases are 70/100/100. Tier/charge factors remain unchanged.
+The accepted #62 dummy impacts, separate Anima/Seal demonstrations, rune order,
+return to Caella, loans and passage progression are preserved. Existing saves
+update cached costs and pending casts once without resetting tutorial progress.
+Author check CA-4372-ANIMA-01 is pending; evidence: assets/validation_4372.
 
 ## 4.37.1 — Caella practices on the mansion dummy (#62)
 
