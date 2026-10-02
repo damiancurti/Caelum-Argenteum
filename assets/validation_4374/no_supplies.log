@@ -1,0 +1,12 @@
+GZDoom version g4.14.2
+adding src, 6141 lumps
+MAP01 - La mansión
+QA64 SETUP pos=(-320,-288,264)
+Captured issue64_no_supplies.png
+QA64 PASS native shield task reserves materials
+QA64 TASK action=10 known=1 infrastructure=1 station=1 menu=1 combat=0.00 conversation=0 velocity=0.0000 ground=1 water=0
+QA64 PASS forecast refuses completion without enough real water
+QA64 PASS blocked task default cannot begin as a false completion promise
+QA64 PASS manual destination stops accurately at critical thirst
+QA64 PASS no provisions are invented
+QA64 NO_SUPPLIES_DONE

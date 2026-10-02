@@ -1,6 +1,21 @@
 CAELUM ARGENTEUM — STORY AND MAP01
 
-Documentation version: **4.37.3** — 2026-10-01.
+Documentation version: **4.37.4** — 2026-10-02.
+
+## 4.37.4 — Limbo-local time and automatic care (#64)
+
+The mansion now explicitly exposes Limbo-local day/hour destinations through Y;
+T retains fast-forward. Normal local time remains 1:1 active play, with no offline
+catch-up. The exterior story date freezes throughout the mansion and resumes at
+departure. Existing saved civil dates are preserved by the one-time local-clock
+migration; historical accumulated time is not guessed or reset.
+
+The author's automatic-care policy uses the whole safe location, actual provisions
+and available furniture, sleeping from 10% to 100% Sleep. Ronnie's productive
+crafting pauses while asleep and resumes at a still-valid station. No map geometry,
+story milestones, recipes or furnishing coordinates change. Daily replenishment
+is implemented separately in #65 using this local midnight boundary. Author
+acceptance of #64 remains outstanding in pending_test.txt.
 
 ## 4.37.3 — Palomo guides equipment; Ronnie teaches crafting (#63)
 

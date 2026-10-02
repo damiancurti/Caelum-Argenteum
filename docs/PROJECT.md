@@ -1,6 +1,21 @@
 # Caelum Argenteum — Project, status and roadmap
 
-Documentation version: **4.37.3** — 2026-10-01.
+Documentation version: **4.37.4** — 2026-10-02.
+
+## 4.37.4 — Time skipping with automatic care (#64)
+
+Implemented on issue-64-time-skip: Y selects a local/civil destination independently
+of the existing T fast-forward. Actual provisions and available furniture sustain
+needs; sleep at 10% to 100% pauses productive work. The task default includes sleep
+and reports unavailable completion forecasts. Clock revision 1 preserves old
+records and separates Limbo-local time from the frozen exterior calendar.
+
+Native checks cover normal/skip and fast/skip equality, eight hours asleep with
+zero work, actual consumption, forecast costs, cancellations, saved sessions and
+old-package rollback. Reproducible evidence is in assets/validation_4374/RESULTS.json.
+Static/build results are recorded there separately from native execution.
+Author acceptance remains pending in pending_test.txt. Issue #65 is authorized
+on a separate dependent branch/PR for daily mansion food/water replenishment.
 
 ## 4.37.3 — Palomo's equipment plan and owned equipment departure (#63)
 

@@ -1,0 +1,8 @@
+GZDoom version g4.14.2
+adding build/caelum_argenteum_dev.pk3, 6141 lumps
+MAP01 - La mansión
+QA64 SETUP pos=(-320,-288,264)
+QA64 PASS idle skip uses a real available chair
+QA64 PASS seated effects still run after ten seconds
+QA64 PASS seated portions expire after thirty seconds without refreshing
+QA64 SEATED_DONE

@@ -5,6 +5,24 @@ class CaelumWorldClock : Inventory
     int CompletedDays;
     int DayTics;
     int LimboSubTics;
+    // Revisión 1: tiempo local separado, sin reconstruir ni borrar el pasado.
+    int LocalClockRevision;
+    int LimboDays;
+    int LimboDayTics;
+
+    void EnsureLocalClock()
+    {
+        if (LocalClockRevision >= 1) return;
+        // Conserva la hora que mostraba un guardado antiguo dentro del Limbo.
+        if (CaelumWorldCatalogue.IsLimboMap(level.MapName))
+        { LimboDays = CompletedDays; LimboDayTics = DayTics; }
+        LocalClockRevision = 1;
+    }
+
+    clearscope int LocalDays()
+    { return LocalClockRevision >= 1 ? LimboDays : CompletedDays; }
+    clearscope int LocalTics()
+    { return LocalClockRevision >= 1 ? LimboDayTics : DayTics; }
 
     static clearscope double SecondsPerGameHour(String mapName)
     {
@@ -62,6 +80,8 @@ class CaelumWorldClock : Inventory
 
     void AdvanceOnMap(String mapName)
     {
+        EnsureLocalClock();
+        int previousDay = LimboDays;
         if (CaelumWorldCatalogue.IsLimboMap(mapName))
         {
             // Una fracción entera guardada evita perder tiempo al cargar o
@@ -70,8 +90,23 @@ class CaelumWorldClock : Inventory
             int divisor = int(SecondsPerGameHour(mapName) / CaelumConstants.REAL_SECONDS_PER_GAME_HOUR);
             if (LimboSubTics < divisor) return;
             LimboSubTics -= divisor;
+            if (LimboDayTics >= TicsPerDay()-1)
+            { if (LimboDays < 2147483647) { LimboDays++; LimboDayTics=0; } }
+            else LimboDayTics++;
+            // El contador heredado sigue monótono para descansos y reservas.
+            // Desplazar ambos anclajes congela la fecha civil, no el reloj local.
+            let calendar = CaelumCalendarState.Get(CaelumPlayer(Owner));
+            if (calendar != null) calendar.ExcludeLimboTic();
         }
         AdvanceOneTic();
+        if (LimboDays != previousDay) SyncLocalDay();
+    }
+
+    void SyncLocalDay()
+    {
+        if (!CaelumWorldCatalogue.IsLimboMap(level.MapName)) return;
+        let it=ThinkerIterator.Create("CaelumDiningTable"); CaelumDiningTable table;
+        while ((table=CaelumDiningTable(it.Next()))!=null) table.SyncLocalDay(LocalDays());
     }
 
     static clearscope String FormatStamp(int days, int tics, bool seconds = false)
@@ -138,6 +173,7 @@ class CaelumWorldClockTicker : StaticEventHandler
         // El anclaje civil se fija antes de consumir el primer tic exterior.
         let calendar = CaelumCalendarState.Get(user, true);
         if (calendar == null || !calendar.EnsureCampaign(clock)) return;
+        CaelumTimeSkipState.PrepareStep(user);
         clock.AdvanceOnMap(level.MapName);
         CaelumWeatherState.Sync(user, clock, calendar);
         // WorldTick sigue la simulación nativa. Las conversaciones de Caelum

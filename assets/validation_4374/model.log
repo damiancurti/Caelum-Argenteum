@@ -1,0 +1,10 @@
+GZDoom version g4.14.2
+adding src, 6141 lumps
+MAP01 - La mansión
+QA64 SETUP pos=(-320,-288,264)
+QA64 PASS native shield task reserves materials
+QA64 TASK action=10 known=1 infrastructure=1 station=1 menu=1 combat=0.00 conversation=0 velocity=0.0000 ground=1 water=0
+QA64 MODEL hunger delta=0.0000000000 thirst delta=0.0000000000 sleep delta=0.0000000000 health=1034/1034 air delta=0.0000000000
+QA64 PASS forecast matches native needs, meals and healing costs
+QA64 PASS forecast matches native health and Air regeneration
+QA64 MODEL_DONE

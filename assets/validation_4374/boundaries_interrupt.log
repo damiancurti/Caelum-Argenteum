@@ -1,0 +1,19 @@
+GZDoom version g4.14.2
+adding src, 6141 lumps
+MAP01 - La mansión
+QA64 SETUP pos=(-320,-288,264)
+QA64 PASS local clock migration is idempotent
+QA64 PASS 126000 active-play tics equal one local Limbo hour
+QA64 PASS normal Limbo hour does not change either civil component
+QA64 PASS local daily rollover fires at midnight
+QA64 PASS leaving Limbo advances only the exterior calendar from its frozen instant
+QA64 BOUNDARY_DONE
+QA64 PASS interrupt fixture opens selector
+QA64 PASS interrupt fixture begins
+QA64 PASS cancellation neither rolls back nor duplicates elapsed consumption
+QA64 PASS cancelled destination resumes from actual state
+QA64 PASS combat interrupts before another simulated tic
+QA64 PASS safe resumption after combat clears
+QA64 PASS damage interrupts and retains injury
+QA64 PASS displacement interrupts the skip
+QA64 INTERRUPT_DONE

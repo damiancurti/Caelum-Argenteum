@@ -1,0 +1,11 @@
+GZDoom version g4.14.2
+adding build/issue64_current/issue64_baseline_4373.pk3, 6141 lumps
+MAP01 - La mansión
+QA64 LEGACY_REPORT record=1 days=2 tics=10002 civil=689886/66701 hunger=86.998 thirst=75.997 sleep=64.998
+QA64 PASS local clock migration is idempotent
+QA64 PASS 126000 active-play tics equal one local Limbo hour
+QA64 PASS normal Limbo hour does not change either civil component
+QA64 PASS local daily rollover fires at midnight
+QA64 PASS leaving Limbo advances only the exterior calendar from its frozen instant
+QA64 BOUNDARY_DONE
+Partida guardada.

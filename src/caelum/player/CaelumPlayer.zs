@@ -11154,9 +11154,12 @@ class CaelumPlayer : DoomPlayer
     void UpdateCraftingTask()
     {
         CraftingTaskProgressing = false;
+        if (CaelumSleepRules.IsSleeping(self)
+            || (CaelumTimeSkipState.IsActive(self) && CaelumScheduleState.SiegeActive(self,level.MapName))) return;
         if (!CraftingTaskActive || CraftingTaskCompleting) { return; }
         if (!RefreshActiveCraftingStationSession()) { return; }
         CraftingTaskProgressing = true;
+        CaelumTimeSkipState.RecordWork(self);
         CraftingTaskRemainingSeconds = Max(
             0.0,
             CraftingTaskRemainingSeconds - 1.0 / TICRATE
@@ -14493,7 +14496,7 @@ class CaelumPlayer : DoomPlayer
             if (!channelPressed) CombatChannelInputLatched = false;
         }
         if ((CreationWizardOpen || EquipmentMenuOpen || CraftingMenuOpen
-                || choosingJourney || PalomoMerchantMenuOpen
+                || choosingJourney || CaelumTimeSkipState.IsOpen(self) || PalomoMerchantMenuOpen
                 || CombatChannelModeActive || CaelumRestState.IsActive(self) || ForcedSleepTics > 0)
             && player != null)
         {
@@ -14674,6 +14677,8 @@ class CaelumPlayer : DoomPlayer
         );
         CaelumRestState.Advance(self);
         CaelumTimeAdvanceState.Pump(self);
+        CaelumTimeSkipState.AfterStep(self);
+        CaelumTimeSkipState.Pump(self);
     }
 
     // Este paso no mueve actores ni llama Super.Tick. Cada intervalo simulado

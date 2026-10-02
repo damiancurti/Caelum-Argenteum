@@ -4,8 +4,19 @@ An independent dark fantasy FPS-RPG inspired by nineteenth-century Argentina.
 Author and game designer: **Damian Curti**. Development target: **GZDoom 4.14.2**
 on Windows 11. The final game is intended to be independent of Doom assets.
 
-**Current release: 4.37.3.** Obtain and update the complete repository, validate
+**Current release: 4.37.4.** Obtain and update the complete repository, validate
 it, then rebuild with `run_dev.bat` as described below.
+
+Issue [#64](https://github.com/damiancurti/Caelum-Argenteum/issues/64) adds **Y:
+skip to day/time**, separate from **T: fast-forward**. Choose the destination
+with arrow keys and Enter; Q interrupts while retaining actual progress.
+Automatic care consumes available food/water and uses real furniture; sleep
+from 10% to 100% pauses crafting. Task forecasts include sleep and explain blockers.
+Limbo keeps a 1:1 local clock while the exterior calendar freezes. Old saves keep
+their existing dates/counters through revision-1 migration; retain original saves
+and packages for rollback. Evidence: [4.37.4 validation](assets/validation_4374/RESULTS.json).
+Author checks: [pending_test.txt](pending_test.txt). Daily mansion replenishment
+is the separately authorized dependent #65 patch. No #64 merge is implied.
 
 Issue [#63](https://github.com/damiancurti/Caelum-Argenteum/issues/63) moves the
 weapon, armor, Seal and shield plan to Palomo after following him inside. He
@@ -16,7 +27,7 @@ removed as requested. Existing choices/progress migrate once; keep original
 saves/packages for rollback. No map conversion is needed.
 Evidence: [4.37.3 validation](assets/validation_4373/RESULTS.json). The author
 accepted all three CA-4373 checks on 2026-10-01 and authorized PR #70 merge and
-#63 closure. Acceptance is recorded in [HISTORY](docs/HISTORY.md); no author
+#63 closure. Acceptance is recorded in [HISTORY](docs/HISTORY.md); no #63 author
 checks remain pending. The tested runtime is unchanged.
 
 Issue [#68](https://github.com/damiancurti/Caelum-Argenteum/issues/68) reduces

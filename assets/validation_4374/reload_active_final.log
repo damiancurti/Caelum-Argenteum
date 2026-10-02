@@ -1,0 +1,17 @@
+GZDoom version g4.14.2
+adding build/caelum_argenteum_dev.pk3, 6141 lumps
+MAP01 - La mansión
+QA64 PASS explicit target reached without unsafe interruption
+QA64 PASS exact target clock at completion
+QA64 PASS outside date remains frozen
+QA64 PASS eight local hours sleeping yield zero productive work
+QA64 PASS sleep preserves pending task duration
+QA64 PASS sleep neither spends reserved materials nor creates rewards
+QA64 PASS eight-hour sleep restores 100 points
+QA64 AUDIT_DONE mode=1
+QA64 STATE local=0 d 08:00:03 outside=03/11/1889 09:00 hunger=86.91637854 thirst=78.83275707 sleep=100.00000000 task=1 remaining=120.00000000
+QA64 SKIP open=1 active=0 sleeping=1 elapsed=1008000 work=0 sleepTics=1008000 reason=CA_SKIP_COMPLETE target=0/50406 forecast=
+QA64 PASS completed destination remains stable while reviewing the result
+QA64 STATE local=0 d 08:00:05 outside=03/11/1889 09:00 hunger=86.91365192 thirst=78.82730383 sleep=99.99587361 task=1 remaining=117.57142857
+QA64 SKIP open=1 active=0 sleeping=1 elapsed=1008000 work=0 sleepTics=1008000 reason=CA_SKIP_COMPLETE target=0/50406 forecast=
+Captured issue64_reload_active_final.png

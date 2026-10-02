@@ -1,0 +1,8 @@
+GZDoom version g4.14.2
+adding build/caelum_argenteum_dev.pk3, 6141 lumps
+MAP01 - La mansión
+QA64 PASS completed skip/task remain completed after reload
+QA64 PASS saved destination remains stable after reload
+QA64 PASS completed reload cannot award another crafted item
+QA64 PASS completed reload cannot charge materials again
+QA64 COMPLETED_RELOAD_DONE

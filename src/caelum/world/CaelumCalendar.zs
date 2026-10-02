@@ -224,6 +224,20 @@ class CaelumCalendarState : Inventory
         return true;
     }
 
+    void ExcludeLimboTic()
+    {
+        if (!Configured) return;
+        AnchorClockTics++;
+        if (AnchorClockTics >= CaelumWorldClock.TicsPerDay())
+        { AnchorClockTics=0; AnchorClockDays++; }
+        if (TrialDate)
+        {
+            TrialAnchorClockTics++;
+            if (TrialAnchorClockTics >= CaelumWorldClock.TicsPerDay())
+            { TrialAnchorClockTics=0; TrialAnchorClockDays++; }
+        }
+    }
+
     void DisableTrial()
     {
         // La campaña siguió avanzando durante la prueba; no se vuelve a 09:00.

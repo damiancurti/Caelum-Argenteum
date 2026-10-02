@@ -4,6 +4,28 @@ Status: integrated engineering register (issue #22, patch 4.36.1b).
 Prepared: 2026-09-23. Inherits the project's release after integration.
 Inspected baseline: `1dc390576fa330d37ff543526fc7e69a397fc28f` (PR #7).
 
+## CA-KP-028 — Temporal forecasts must preserve within-tic ordering
+
+Status/evidence: CODE-VERIFIED / ENGINE-VERIFIED, issue #64, 4.37.4.
+First recorded / last checked: 2026-10-02 / 2026-10-02.
+Affected baseline: c3ba10b1 plus the initial #64 forecast; final source/package
+hashes and selected results: assets/validation_4374/RESULTS.json.
+Environment: GZDoom 4.14.2, Windows 11, Vulkan, isolated MAP01 fixture.
+
+The player calculates health performance before that tic's healing and Adrenaline
+decay. A forecast using the already-healed health for Air regeneration crossed a
+health threshold one tic early. A long sample ending with full Air concealed it;
+a 100-tic sample at 50% health exposed a 0.007485 Air difference and corresponding
+food/water cost differences. The skip model now samples those inputs before the
+step. The existing journey model retains its established default behavior.
+
+Regression: compare native and predicted partial Air, health, Hunger, Thirst and
+Sleep at the boundary as well as after a longer interval. The corrected edge and
+long samples agree within 0.000001; normal/skip and fast/skip interval comparisons
+also cover actual servings and productive work. Do not replace chronological
+substeps with a final-date assignment or apply forecast inventory as a reward.
+Author acceptance remains separate in pending_test.txt.
+
 ## CA-KP-027 — Terrain relief can invalidate absolute-height relocation filters
 
 Status/evidence: AUTHOR-REPORTED / CODE-VERIFIED / ENGINE-VERIFIED, #61 / PR #66.

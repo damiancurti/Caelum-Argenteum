@@ -1,6 +1,19 @@
 # TASKS.md — Active tasks
 
-Documentation version: **4.37.3** — 2026-10-01.
+Documentation version: **4.37.4** — 2026-10-02.
+
+## Issue #64 — Date/time skip and automatic care (4.37.4)
+
+- Implemented on issue-64-time-skip with Y destination selection, current T mode,
+  native provisions/rest/work substeps and a nonmutating task-completion forecast.
+- Author confirmed 10%/100% sleep policy and access throughout the safe location.
+  Clock revision 1 preserves legacy counters/dates while freezing future exterior
+  progression in Limbo. Original-save/package rollback remains available.
+- Static/build and isolated GZDoom evidence: assets/validation_4374/RESULTS.json.
+  Author checks remain in pending_test.txt; implementation is not acceptance.
+- The author also authorized #65 in another branch/PR. Its daily 50/50 table
+  policy consumes #64's midnight and forecast contracts; combined multi-day
+  verification belongs to that dependent patch. No #64 merge/closure is requested.
 
 ## Issue #63 — Move equipment guidance to Palomo (4.37.3)
 

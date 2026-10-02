@@ -1,0 +1,17 @@
+GZDoom version g4.14.2
+adding src, 6141 lumps
+MAP01 - La mansión
+QA64 SETUP pos=(-320,-288,264)
+QA64 PASS native shield task reserves materials
+QA64 TASK action=10 known=1 infrastructure=1 station=1 menu=1 combat=0.00 conversation=0 velocity=0.0000 ground=1 water=0
+QA64 PASS matching skip advances exactly sixty seconds
+QA64 FAST_COMPARE fast=0 hunger=97.9326364878 thirst=97.8652729756 sleep=47.8980539406 remaining=60.0000000000 food=113 water=19 local_delta=105
+QA64 FAST_DONE
+QA64 PASS native Limbo departure starts
+MAP02 - Alcantarillas — el laberinto
+QA64 PASS native departure carries both clock records
+QA64 PASS native exit resumes outside calendar at its frozen instant
+QA64 PASS Limbo clock retains only the departure fade interval
+QA64 EXIT_DONE outside=03/11/1889 09:00
+Partida guardada.
+Captured issue64_exit.png

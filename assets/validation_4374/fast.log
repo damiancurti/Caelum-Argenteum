@@ -1,0 +1,10 @@
+GZDoom version g4.14.2
+adding src, 6141 lumps
+MAP01 - La mansión
+QA64 SETUP pos=(-320,-288,264)
+QA64 PASS native shield task reserves materials
+QA64 TASK action=10 known=1 infrastructure=1 station=1 menu=1 combat=0.00 conversation=0 velocity=0.0000 ground=1 water=0
+QA64 PASS existing fast-forward remains available
+QA64 PASS fast-forward still adds 104 steps to each normal step
+QA64 FAST_COMPARE fast=1 hunger=97.9326364878 thirst=97.8652729756 sleep=47.8980539406 remaining=60.0000000000 food=113 water=19 local_delta=105
+QA64 FAST_DONE

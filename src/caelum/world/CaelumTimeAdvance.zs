@@ -8,6 +8,7 @@ class CaelumTimeAdvanceZone : Actor
 
 class CaelumTimeAdvanceState : Inventory
 {
+    const UNSUPPORTED_ACTOR_RADIUS = 1024;
     bool Active;
     bool Pumping;
     int LastPumpTic;
@@ -39,10 +40,15 @@ class CaelumTimeAdvanceState : Inventory
     {
         if(level.MapName=="MAP01")
         {
+            let skip=CaelumTimeSkipState.Get(user);
+            if (skip!=null && skip.Open && skip.OriginMap==level.MapName
+                && (user.Pos-skip.OriginPosition).Length()<=4
+                && skip.AnchorFurniture!=null) return true;
             let rest=CaelumRestState.Get(user);
             if(rest!=null && rest.Status==CaelumRestRules.STATUS_ACTIVE && rest.Furniture!=null)return true;
             let station=CaelumCraftingStation(user.ActiveCraftingStationActor);
-            return station!=null && station.CraftingRoomGroup>=1 && station.CraftingRoomGroup<=5;
+            return station!=null && station.CraftingRoomGroup>=1 && station.CraftingRoomGroup<=5
+                && station.CanReachFrom(user) && (user.Pos-station.Pos).Length()<=CaelumConstants.CRAFTING_ACTIVE_STATION_DISTANCE;
         }
         let it = ThinkerIterator.Create("CaelumTimeAdvanceZone"); CaelumTimeAdvanceZone zone;
         while ((zone = CaelumTimeAdvanceZone(it.Next())) != null)
@@ -51,7 +57,7 @@ class CaelumTimeAdvanceState : Inventory
         return false;
     }
 
-    static String BlockReason(CaelumPlayer user, bool scanWorld = true)
+    static String BlockReason(CaelumPlayer user, bool scanWorld = true, bool skipping = false)
     {
         if (user == null || user.player == null || user.health <= 0 || !user.CharacterCreationComplete
             || user.CreationWizardOpen || user.DerivedStats == null || (user.player.cheats & CF_PREDICTING)) return "CA_FAST_ACTIVITY";
@@ -59,14 +65,14 @@ class CaelumTimeAdvanceState : Inventory
         if (CaelumScheduleState.SiegeActive(user, level.MapName)) return "CA_EVENT_SIEGE_INTERRUPT";
         bool resting = CaelumRestState.IsActive(user);
         bool crafting = user.CraftingTaskActive && user.CraftingMenuOpen && user.ActiveCraftingStationActor != null;
-        if (!resting && !crafting) return "CA_FAST_ACTIVITY";
+        if (!resting && !crafting && !skipping) return "CA_FAST_ACTIVITY";
         if (crafting && !user.RefreshActiveCraftingStationSession()) return "CA_FAST_ACTIVITY";
         if (user.CombatTimeRemaining > 0 || user.HasActiveConversation() || user.ForcedSleepTics > 0
             || user.PalomoMerchantMenuOpen || user.CombatChannelModeActive || user.StaffCastPending
             || user.WeaponChargeActive || user.WeaponChargedStateActive || user.RangedReloadActive
             || user.WaterLevel != 0 || !user.player.onground || user.Vel.Length() > 0.1) return "CA_FAST_UNSAFE";
         if (user.CurrentHunger <= 10 || user.CurrentThirst <= 10
-            || (user.CurrentSleep <= 10 && !CaelumRestState.IsSleeping(user))) return "CA_REST_NEEDS";
+            || (!skipping && user.CurrentSleep <= 10 && !CaelumRestState.IsSleeping(user))) return "CA_REST_NEEDS";
         let status = user.ElementalStatus;
         if (status != null && (status.BurnRemaining > 0 || status.PoisonRemaining > 0
             || status.CutRemaining > 0 || status.IsLightningStunned())) return "CA_FAST_UNSAFE";
@@ -79,24 +85,29 @@ class CaelumTimeAdvanceState : Inventory
             let it = ThinkerIterator.Create("Actor"); Actor other;
             while ((other=Actor(it.Next()))!=null)
             {
-                if (other==user || (Inventory(other)!=null && Inventory(other).Owner!=null) || other.Distance2D(user)>1024) continue;
-                let sleeper = CaelumCombatActor(other);
-                if (sleeper != null && sleeper.ForcedSleepTics > 0) return "CA_FAST_UNSAFE";
-                // Los bloques en movimiento no tienen adaptador de salto temporal.
-                let hazard = CaelumHazardRock(other);
-                if (hazard != null && hazard.Released && hazard.Vel.Length() > 0.1)
-                    return "CA_FAST_UNSAFE";
-                let crusher = CaelumCrusherTrap(other);
-                if (crusher != null && crusher.IsMoving()) return "CA_FAST_UNSAFE";
-                if (other.bMissile || (other.bIsMonster && other.health>0 && !other.bFriendly))
-                    return "CA_FAST_UNSAFE";
+                if (other==user || (Inventory(other)!=null && Inventory(other).Owner!=null)
+                    || other.Distance2D(user)>UNSUPPORTED_ACTOR_RADIUS) continue;
+                if (UnsupportedActor(other)) return "CA_FAST_UNSAFE";
             }
         }
         return "";
     }
 
+    static bool UnsupportedActor(Actor other)
+    {
+        if(other==null)return false;
+        let sleeper=CaelumCombatActor(other);
+        let hazard=CaelumHazardRock(other);
+        let crusher=CaelumCrusherTrap(other);
+        return (sleeper!=null && sleeper.ForcedSleepTics>0)
+            || (hazard!=null && hazard.Released && hazard.Vel.Length()>0.1)
+            || (crusher!=null && crusher.IsMoving()) || other.bMissile
+            || (other.bIsMonster && other.health>0 && !other.bFriendly);
+    }
+
     static bool Toggle(CaelumPlayer user)
     {
+        if (CaelumTimeSkipState.IsOpen(user)) return false;
         let advance=Get(user,true); if(advance==null)return false;
         if(advance.Active) { Halt(user); CaelumNotifications.Notify(user,StringTable.Localize("CA_FAST_OFF",false)); return true; }
         String reason=BlockReason(user);
@@ -128,7 +139,6 @@ class CaelumTimeAdvanceState : Inventory
         if(reason.Length()!=0)
         { advance.LastReason=reason;Halt(user);CaelumNotifications.Notify(user,StringTable.Localize(reason,false));return; }
         let clock=CaelumWorldClock.Get(user);if(clock==null){Halt(user);return;}
-        let calendar=CaelumCalendarState.Get(user);
         advance.Pumping=true;
         // Máximo un minuto de campaña por imagen (105 tics totales a x105).
         // Subpasos de un tic respetan exactamente umbrales y expiraciones;
@@ -141,18 +151,26 @@ class CaelumTimeAdvanceState : Inventory
             if(reason.Length()!=0) {advance.LastReason=reason;Halt(user);break;}
             // Cada lugar conserva su escala de calendario durante el avance.
             // El serial evita acreditar dos veces un paso de descanso.
-            advance.PersonalStepSerial=advance.PersonalStepSerial==2147483647?0:advance.PersonalStepSerial+1;
-            clock.AdvanceOnMap(level.MapName);
-            CaelumWeatherState.Sync(user,clock,calendar);
-            AdvancePowers(user);
-            user.UpdateCraftingTask();
-            user.AdvancePersonalTimeTic();
-            user.HUDAbilitySuccessRemaining=Max(0.0,user.HUDAbilitySuccessRemaining-1.0/TICRATE);
+            SimulatePersonalTic(user);
             advance.SimulatedTics++;
-            CaelumRestState.Advance(user);
             if(!user.CraftingTaskActive && advance.Station!=null) Halt(user);
         }
         advance.Pumping=false;
+    }
+
+    // Un paso compartido por los dos avances; no ejecuta IA ni física ajenas.
+    static void SimulatePersonalTic(CaelumPlayer user)
+    {
+        let advance=Get(user,true);
+        advance.PersonalStepSerial=advance.PersonalStepSerial==2147483647?0:advance.PersonalStepSerial+1;
+        let clock=CaelumWorldClock.Get(user);
+        clock.AdvanceOnMap(level.MapName);
+        CaelumWeatherState.Sync(user,clock,CaelumCalendarState.Get(user));
+        AdvancePowers(user);
+        user.UpdateCraftingTask();
+        user.AdvancePersonalTimeTic();
+        user.HUDAbilitySuccessRemaining=Max(0.0,user.HUDAbilitySuccessRemaining-1.0/TICRATE);
+        CaelumRestState.Advance(user);
     }
 
     Default
