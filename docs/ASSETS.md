@@ -1,6 +1,17 @@
 # Caelum Argenteum — Audio and art
 
-Documentation version: **4.37.2** — 2026-10-01.
+Documentation version: **4.37.3** — 2026-10-01.
+
+## 4.37.3 — Existing equipment catalogue and bilingual Palomo dialogue (#63)
+
+No new art, audio, map geometry, generators or external resources. Palomo uses
+the existing actor, route and native USDF presentation. LANGUAGE owns the new
+English/Spanish explanations; native models supply numeric item quotes. The
+new conversation is appended to CAPALOMO, preserving all original conversation
+page indices for saves. Retired Ronnie choice page slots remain as referrals.
+assets/validation_4373 contains isolated fixtures, filtered native logs, static
+checks and GZDoom screenshots; it is not packaged. Development IWADs, engine
+binaries, private saves and baseline packages are excluded from delivery.
 
 ## 4.37.2 — Magic-cost balance data and evidence (#68)
 

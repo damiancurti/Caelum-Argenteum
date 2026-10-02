@@ -1,6 +1,64 @@
 # Caelum Argenteum — Current systems and rules
 
-Documentation version: **4.37.2** — 2026-10-01.
+Documentation version: **4.37.3** — 2026-10-01.
+
+## 4.37.3 — Palomo choices, Ronnie crafting and Limbo departure (#63)
+
+This section supersedes older role assignments and the Box-plus-first-weapon
+departure restriction recorded below; historical release labels remain evidence.
+
+After his exterior introduction, Palomo explicitly invites the player to follow
+him inside. Once he finishes the existing physical route, he offers 36 T1
+weapon options, four armor families, five Seals and four shields. Each option
+has an actions/effects page, a current stats/costs page and an explicit confirm
+or back choice. Confirmations remain fixed per category and survive reopening
+and saves. There are no new class restrictions or balance values. Weapon/armor
+sizes use the existing character-size policy; previous confirmed sizes remain.
+Weight, absorption, coverage, Air and Anima quotes come from native catalogue,
+equipment models and derived stats. Charge and other existing multipliers still
+apply. Seal Channel keeps its actual Adrenaline cost and cooldown.
+
+The existing persistent weapon, armor and Seal fields remain authoritative;
+the shield adds MainM00ShieldChoice and MainM00ShieldCrafted. Palomo only records
+choices. Choosing grants no equipment, recipes or supplies and does not advance
+Caella or Ronnie. After Caella's trial and the four confirmations, Ronnie starts
+the existing crafting stage, teaches the selected recipes/dependencies, and
+opens the finite raw-material allowance. A legacy already-started tutorial can
+continue without filling new choices or repeating its start. Adding a missing
+choice to that legacy plan teaches its dependencies without resetting issued
+stock, existing tasks or progress. Caella still chooses/teaches the amulet.
+
+Shield materials expand from established plate/strap recipes at the same 100%
+layer efficiency and recorded size as the starter plan. All four T1 shields
+require existing raw copper, raw tin and tanned leather; no new supply source
+or unresolved authored quantity is needed. Shield tasks use the shared recursive
+material solver/reservations and selected T1 shields enter personal inventory
+before the Box reward. Cancel, pause, payment and save/load retain native rules.
+Crafting armor, a Seal or a shield remains optional preparation; the first
+weapon remains an actual crafting task. Reopening dialogues does not replenish
+allowances or create extra output. Palomo says he replenishes mansion tables,
+which always supply food and water; this dialogue coordinates with #65.
+
+On narrative departure, retain every actual owned equipment instance and the
+Magic Box: weapons, armor, shields, Seals and amulets, whether equipped, carried
+or boxed. Preserve ItemId, type, essence, size, condition, weight and placement.
+Return the magic practice implement/Seal and gathering sword through their
+normal loan lifecycle. Remove all ammunition (including loaded magazines),
+materials, currencies, consumables and tutorial keys; this supply cleanup was
+explicitly confirmed by the author on 2026-10-01. Never grant a merely selected
+piece, replace an item, or reconstruct a destroyed first weapon. The existing
+recovery of the actual dropped first-weapon instance remains. No healing or
+new equipment is awarded by this change. Active crafting still blocks departure
+until the player finishes or cancels it.
+
+Loadout revision 1 clears the legacy temporary flag on currently owned equipment
+once, excluding explicit loan classes. New own crafted pieces are not marked
+temporary. Existing choice fields, recipe knowledge, reservations, issued stock
+and completed stages are preserved; missing shield state defaults to unchosen.
+Old native conversation page indices are retained by appending the new Palomo
+conversation and keeping old page slots as referrals. Migration is idempotent.
+Rollback uses the preserved original save and original package, not a downgraded
+new save. Equipment already removed by an earlier completed exit is not invented.
 
 ## 4.37.2 — Magic-weapon Anima bases divided by ten (#68)
 
@@ -4168,6 +4226,10 @@ uses 57–58 free flags. Do not shift accepted fields/indices. Placement, compat
 testing and limits are in PROJECT.md.
 
 ## Ronnie: choice, materials and first weapon (4.33.0l)
+
+Historical baseline: the 4.37.3 section above supersedes the choice speaker,
+shield scope, temporary-equipment classification and final departure restriction.
+The existing recipes, task flow and other supply rules continue to apply.
 
 After Caella, Ronnie offers 36 T1 choices: 16 physical weapons and four magic shapes for
 five essences. The class does not restrict the choice. It can be read and returned

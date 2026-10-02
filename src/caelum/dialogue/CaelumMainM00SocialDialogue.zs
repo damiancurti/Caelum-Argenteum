@@ -287,6 +287,14 @@ class CaelumMainM00ConversationMenu : CaelumPalomoConversationMenu
         CaelumPlayer user = mPlayer == null ? null : CaelumPlayer(mPlayer.mo);
         if (user != null)
         {
+            if (mCurNode.UserData ~== "loadout_summary") text = user.MainM00LoadoutSummary;
+            for (int option = 0; option < 49; option++)
+            {
+                if (mCurNode.UserData ~== String.Format("loadout_preview_%d", option))
+                    text = user.MainM00LoadoutDescriptions[option];
+                if (mCurNode.UserData ~== String.Format("loadout_stats_%d", option))
+                    text = user.MainM00LoadoutStats[option];
+            }
             if (mCurNode.UserData ~== "palomo_sleep")
                 text = StringTable.Localize(user.PalomoSleepLessonCompleteSnapshot ? "CA_DEMO_SLEEP_DONE" : "CA_DEMO_SLEEP", false);
             if (mCurNode.UserData ~== "ronnie_ammo")

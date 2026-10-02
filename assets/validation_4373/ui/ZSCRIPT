@@ -1,0 +1,61 @@
+version "4.14"
+class Issue63MenuDriver : StaticEventHandler
+{
+    ui int Step;ui int Age;ui bool Started;ui bool Done;ui bool RonnieReplied;
+    override void UiTick()
+    {
+        let menu=ConversationMenu(Menu.GetCurrentMenu());
+        if(menu==null||menu.mCurNode==null)return;
+        String page=menu.mCurNode.UserData;
+        if(page=="ronnie_magic_ready"&&!RonnieReplied)
+        {
+            RonnieReplied=true;
+            Console.Printf("QA63 PASS native Ronnie start page reached");
+            ConversationMenu.SendConversationReply(menu.mCurNode.ThisNodeNum,0);menu.Close();return;
+        }
+        if(Done)return;
+        if(!Started){if(page!="loadout_root")return;Started=true;}
+        Age++;if(Age%70!=0)return;
+        String expected;int reply;
+        switch(Step)
+        {
+            case 0:expected="loadout_root";reply=3;break;
+            case 1:expected="loadout_shields";reply=0;break;
+            case 2:expected="loadout_preview_45";reply=0;break;
+            case 3:expected="loadout_stats_45";reply=1;break;
+            case 4:expected="loadout_preview_45";reply=1;break;
+            case 5:expected="loadout_shields";reply=3;break;
+            case 6:expected="loadout_preview_48";reply=0;break;
+            case 7:expected="loadout_stats_48";reply=0;break;
+            case 8:expected="loadout_root";reply=4;break;
+            case 9:expected="loadout_summary";reply=0;break;
+            case 10:expected="loadout_root";reply=0;break;
+            case 11:expected="loadout_weapons";reply=4;break;
+            case 12:expected="loadout_family_4";reply=0;break;
+            case 13:expected="loadout_magic_0";reply=1;break;
+            case 14:expected="loadout_preview_17";reply=0;break;
+            case 15:expected="loadout_stats_17";reply=0;break;
+            case 16:expected="loadout_root";reply=2;break;
+            case 17:expected="loadout_seals";reply=1;break;
+            case 18:expected="loadout_preview_41";reply=0;break;
+            case 19:expected="loadout_stats_41";reply=0;break;
+            case 20:expected="loadout_root";reply=1;break;
+            case 21:expected="loadout_armors";reply=3;break;
+            case 22:expected="loadout_preview_39";reply=0;break;
+            case 23:expected="loadout_stats_39";reply=0;break;
+            case 24:expected="loadout_root";reply=4;break;
+            default:expected="loadout_summary";reply=0;break;
+        }
+        Console.Printf("QA63 %s native menu step=%d page=%s expected=%s lines=%d",page==expected&&menu.mDialogueLines.Count()<=6?"PASS":"FAIL",Step,page,expected,menu.mDialogueLines.Count());
+        if(page!=expected){Done=true;return;}
+        if(Step>=25)
+        {
+            let u=CaelumPlayer(players[consoleplayer].mo);
+            Console.Printf("QA63 UI_SUMMARY %s",u.MainM00LoadoutSummary);
+            Console.Printf("QA63 UI_DONE");Done=true;return;
+        }
+        // Exercise GZDoom's native menu reply -> network -> GiveItem route.
+        ConversationMenu.SendConversationReply(menu.mCurNode.ThisNodeNum,reply);
+        menu.Close();Step++;
+    }
+}

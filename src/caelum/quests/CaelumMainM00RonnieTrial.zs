@@ -306,36 +306,31 @@ class CaelumMainM00RonnieTrial : Object play
         user.RefreshEquipmentSelectionPreview();
     }
 
+    // Compatibilidad con las clases de acción antiguas; Palomo es la autoridad.
     static bool Choose(CaelumPlayer user, int option)
+    { return CaelumMainM00Loadout.Choose(user, 0, option); }
+
+    static bool Start(CaelumPlayer user)
     {
-        if (!IsRonnie(user) || !CaelumMainM00StarterRules.IsOption(option)) return false;
+        if (!IsRonnie(user)) return false;
         let record = user.GetPersistentCharacterState(true);
+        if (IsStarted(user)) return true;
         if (!record.HasMainM00Flag(CaelumConstants.MAIN_M00_FLAG_CAELLA_COMPLETE)
-            || record.MainM00StarterChosen || record.MainM00StarterWeaponId > 0) return false;
-        int size = CaelumEquipmentRules.GetDefaultSizeForCharacterTier(user.CharacterProfile.GetSizeTier());
-        let requirements = new("CaelumMainM00StarterMaterials");
-        if (!requirements.Build(option, size, 2)) return false;
+            || !CaelumMainM00Loadout.IsComplete(record)) return false;
         if (!record.TryAdvanceMainM00State(CaelumConstants.MAIN_M00_STATE_CAELLA_COMPLETE,
             CaelumConstants.MAIN_M00_STATE_RONNIE_ACTIVE)) return false;
-        record.MainM00StarterChosen = true;
-        record.MainM00StarterOption = option;
-        record.MainM00StarterSize = size;
         record.SetMainM00Flag(CaelumConstants.MAIN_M00_FLAG_RONNIE_STARTED);
-        for (int i = 0; i < CaelumConstants.MATERIAL_TYPE_COUNT; i++)
-        {
-            record.MainM00StarterRequired[i] = requirements.Units[i];
-            user.MainM00StarterMissingSnapshot[i] = requirements.Units[i];
-        }
-        for (int i = 0; i < CaelumConstants.CRAFTING_NETWORK_PLAYABLE_RECIPE_COUNT; i++)
-            if (requirements.Recipes[i]) record.LearnCraftingRecipe(i);
+        CaelumMainM00Loadout.TeachPlan(user);
         EnsureSupplies(user);
         PrepareLoan(user);
-        // Lleva al catálogo conocido sin abrir una estación a distancia.
-        user.CraftingSelectionRecipe = CaelumMainM00StarterRules.GetRecipe(option);
-        user.CraftingSelectionTier = 1;
-        user.CraftingSelectionSize = size;
-        user.CraftingEfficiencyIndex = 2;
-        user.ResetCraftingLayerChoices();
+        if (!user.CraftingTaskActive)
+        {
+            user.CraftingSelectionRecipe = CaelumMainM00StarterRules.GetRecipe(record.MainM00StarterOption);
+            user.CraftingSelectionTier = 1;
+            user.CraftingSelectionSize = record.MainM00StarterSize;
+            user.CraftingEfficiencyIndex = 2;
+            user.ResetCraftingLayerChoices();
+        }
         Sync(user);
         return true;
     }
@@ -344,7 +339,7 @@ class CaelumMainM00RonnieTrial : Object play
     {
         if (user == null) return;
         let record = user.GetPersistentCharacterState(false);
-        if (record == null || !record.MainM00StarterChosen) return;
+        if (record == null || !IsStarted(user) || !record.MainM00StarterChosen) return;
         int recipe = record.MainM00StarterOption == 15 ? CaelumConstants.CRAFTING_BOLT_RECIPE
             : (record.MainM00StarterOption == 12 || record.MainM00StarterOption == 14)
             ? CaelumConstants.CRAFTING_ARROW_RECIPE : -1;
@@ -450,6 +445,7 @@ class CaelumMainM00RonnieTrial : Object play
         return CanInteract(user) && IsStarted(user) && user.CraftingSelectionTier == 1
             && (CaelumMainM00StarterRules.IsWeaponRecipe(user.CraftingSelectionRecipe)
                 || CaelumMainM00SupplyRules.IsChosenArmorRecipe(user)
+                || CaelumMainM00Loadout.IsChosenShieldRecipe(user)
                 || CaelumMainM00SealCrafting.IsLearnedRecipe(user));
     }
 
@@ -460,7 +456,7 @@ class CaelumMainM00RonnieTrial : Object play
         let record = user.GetPersistentCharacterState(true);
         if (record.MainM00StarterWeaponId > 0)
         {
-            result.ItemFlags |= CaelumConstants.CA_ITEMFLAG_LIMBO_TEMP;
+            result.ItemFlags &= ~CaelumConstants.CA_ITEMFLAG_LIMBO_TEMP;
             Feedback(user, "CA_M01_STARTER_EXTRA");
             return;
         }
@@ -501,7 +497,8 @@ class CaelumMainM00RonnieTrial : Object play
         CaelumMainM00SupplyRules.Ensure(user);
         CaelumMainM00SealCrafting.Sync(user);
         user.SetPalomoDialogueToken("CaelumM00ArmorChosenToken", record.MainM00ArmorChosen);
-        user.SetPalomoDialogueToken("CaelumM00RonnieStartedToken", record.MainM00StarterChosen);
+        user.SetPalomoDialogueToken("CaelumM00RonnieStartedToken", IsStarted(user));
+        user.SetPalomoDialogueToken("CaelumM00LoadoutReadyToken", CaelumMainM00Loadout.IsComplete(record));
         user.SetPalomoDialogueToken("CaelumM00StarterCraftedToken", record.MainM00StarterWeaponId > 0);
         user.SetPalomoDialogueToken("CaelumM00RonnieFinishedToken",
             record.HasMainM00Flag(CaelumConstants.MAIN_M00_FLAG_RONNIE_COMPLETE));
@@ -538,6 +535,7 @@ class CaelumMainM00RonnieTrial : Object play
                 }
                 let equipment = CaelumEquipmentItem(cursor);
                 if (equipment != null && equipment.IsLimboTemporary()
+                    && CaelumMainM00Loadout.IsBorrowed(equipment)
                     && !(equipment is "CA_LimboMagicImplement") && !(equipment is "CA_LimboMagicSeal"))
                 {
                     changed = true;

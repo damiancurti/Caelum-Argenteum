@@ -4,8 +4,19 @@ An independent dark fantasy FPS-RPG inspired by nineteenth-century Argentina.
 Author and game designer: **Damian Curti**. Development target: **GZDoom 4.14.2**
 on Windows 11. The final game is intended to be independent of Doom assets.
 
-**Current release: 4.37.2.** Obtain and update the complete repository, validate
+**Current release: 4.37.3.** Obtain and update the complete repository, validate
 it, then rebuild with `run_dev.bat` as described below.
+
+Issue [#63](https://github.com/damiancurti/Caelum-Argenteum/issues/63) moves the
+weapon, armor, Seal and shield plan to Palomo after following him inside. He
+explains each option before confirmation; Ronnie teaches its recipes and guides
+crafting. All actual owned equipment and the Box now survive the Limbo exit.
+Borrowed props return, and ammunition, materials, coins and consumables are
+removed as requested. Existing choices/progress migrate once; keep original
+saves/packages for rollback. No map conversion is needed.
+Evidence: [4.37.3 validation](assets/validation_4373/RESULTS.json). Three author
+checks remain in [pending_test.txt](pending_test.txt); isolated engine tests
+do not replace author acceptance. This delivery is a branch and draft PR.
 
 Issue [#68](https://github.com/damiancurti/Caelum-Argenteum/issues/68) reduces
 magic-weapon Anima bases tenfold: staff 50, book 70, bell/statuette 100. The
@@ -14,8 +25,8 @@ their multipliers. Old saved costs and pending casts update once while progress
 and resources remain. Keep original saves and the original package for rollback.
 Evidence: [4.37.2 validation](assets/validation_4372/RESULTS.json). The author
 accepted all checks on 2026-10-01 (CA-4372-ANIMA-01, recorded in
-[HISTORY](docs/HISTORY.md)) and authorized PR #69 merge and #68 closure.
-No author tests remain pending; the tested runtime is unchanged.
+[HISTORY](docs/HISTORY.md)) and PR #69 was merged / #68 closed.
+Those accepted results remain unchanged; current #63 checks are listed above.
 
 Issue [#62](https://github.com/damiancurti/Caelum-Argenteum/issues/62) makes Caella's
 primary and secondary spell exercises require hits on the training dummy in the
@@ -826,8 +837,9 @@ preserved. The broader unfinished 4.36 physics roadmap remains in PROJECT.md.
 - After returning the sword, Ronnie's workshop dialogue offers one empty normal
   canteen. Retry if carrying capacity blocked delivery. Quest Detail records
   filling and drinking; this optional practice adds no main-quest requirement.
-- Caella offers a confirmed choice of one T1 seal and one T1 amulet, teaching
-  the selected recipes and components. At 100% per layer, the seal requires
+- Palomo confirms one T1 Seal; Ronnie teaches its recipe and components.
+  Caella retains the confirmed T1 amulet choice and teaching. At 100% per layer,
+  the seal requires
   360 g raw copper, 40 g raw tin and 600 g of its gem; the amulet needs 200 g
   raw silver and 800 g of its gem. Matching gems share the summed allowance.
   The basement chest supplies needed silver and leather; cave veins supply gems.
@@ -836,16 +848,16 @@ preserved. The broader unfinished 4.36 physics roadmap remains in PROJECT.md.
   knowledge and issued stock are retained; unused allowances for other seals
   are removed. A previously started seal task retains its personal output.
 
-- After the weapon choice, Ronnie offers magic, light, medium or heavy armor
-  with descriptions and confirmation. He teaches the chosen family's four T1
-  pieces and component recipes. Existing choices can ask under his workshop
-  dialogue. Armor preparation is optional; its 0/4–4/4 count appears in Detail.
+- Palomo offers magic, light, medium or heavy armor with descriptions and
+  confirmation. Ronnie teaches its four T1 pieces and component recipes when
+  crafting begins. Armor preparation is optional; its 0/4–4/4 count appears in
+  Detail.
 - Armor now uses the same recursive native crafting path as weapons. Chosen
   T1 pieces go to personal inventory before the Box reward and can be equipped.
   Native tasks, reservations, pause/cancel, weight and saves remain authoritative.
 - MAP01 grants only the raw-material allowance for one chosen weapon, one
-  chosen armor set and one ten-arrow/bolt batch when appropriate, plus the
-  chosen seal and amulet allowances after learning from Caella, at 100% in
+  chosen armor set, one shield and one ten-arrow/bolt batch when appropriate,
+  plus the chosen Seal and Caella's amulet allowances, at 100% in
   every layer and the chosen equipment size. New choices default to 100%.
   At size M, armor leather is 5/10/20/40 kg; giant gauntlets add 6 kg.
 - Sources share a per-character allowance, charged when materials are generated
@@ -860,9 +872,10 @@ preserved. The broader unfinished 4.36 physics roadmap remains in PROJECT.md.
   damage at 100% when requested; repeating the request does not add stock.
   Ronnie can lend the gathering sword again for this repair; return it through
   the same conversation. General crafting efficiencies and work times are unchanged. The narrative
-  exit still carries only the Box and first weapon; armor remains Limbo equipment.
+  exit now retains all actual owned equipment and the Box; supplies are removed.
 
-- Choosing Ronnie's crossbow also teaches the 10-bolt recipe and its component
+- Choosing Palomo's crossbow and starting with Ronnie also teaches the 10-bolt
+  recipe and its component
   dependencies. Previous crossbow choices receive that knowledge on load,
   including saves outside MAP01. No ammunition or materials are granted.
 - Bolts use the native 50 g item and the T1 shaft/bronze-point structure used

@@ -1,6 +1,29 @@
 # Caelum Argenteum — Project, status and roadmap
 
-Documentation version: **4.37.2** — 2026-10-01.
+Documentation version: **4.37.3** — 2026-10-01.
+
+## 4.37.3 — Palomo's equipment plan and owned equipment departure (#63)
+
+Palomo invites the player to follow his existing physical route inside and
+records weapon, armor, Seal and shield choices. Review and backtracking precede
+each confirmation; explanations use the existing catalogue and current derived
+costs. Ronnie teaches and supplies that same persistent plan after Caella's
+trial. Caella retains the amulet choice. The selected shield uses established
+bronze/strap recipes and existing copper, tin and leather sources.
+
+All actual owned equipment and the Magic Box now survive the narrative exit,
+including equipped, carried and boxed pieces. Author clarification, 2026-10-01:
+remove ammunition (including magazines), materials, coins and consumables.
+Borrowed trial props follow their existing return rules. A choice never grants
+an uncrafted item or reconstructs a destroyed first weapon. Equipment identity,
+size, condition and placement remain native inventory state.
+
+Loadout revision 1 migrates legacy owned equipment classification once; old
+choices, issued allowances and completed tutorials remain. No map conversion.
+Keep original saves and their original package for rollback. Static/build and
+isolated native evidence: assets/validation_4373/RESULTS.json. Author acceptance
+remains pending in the three CA-4373 checks in pending_test.txt. Delivery is a
+focused branch and linked draft PR; merge/closure awaits author instruction.
 
 ## 4.37.2 — Reduced magic-weapon Anima costs (#68)
 

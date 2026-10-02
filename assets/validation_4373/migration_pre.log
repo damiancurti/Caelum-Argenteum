@@ -1,0 +1,9 @@
+GZDoom version g4.14.2
+adding build/issue63_migration/issue63_baseline_4372.pk3, 6138 lumps
+adding build/issue63_qa, 3 lumps
+MAP01 - La mansión
+QA63 PASS migration revision applied idempotently
+QA63 PASS migration preserves quest and choice
+QA63 STATE migrated stage=20 started=0 option=0 size=0 armor=0 seal=0 first=0
+QA63 MIGRATION_DONE
+Partida guardada.

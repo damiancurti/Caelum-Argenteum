@@ -109,23 +109,7 @@ class CaelumMainM00Return : Object play
             item = candidate;
         }
         if (item != null) return item;
-        // Recuperación excepcional de una pieza destruida, desde la elección
-        // guardada; no consume ni reembolsa materiales ni fabrica otra receta.
-        item = CaelumEquipmentItem(Actor.Spawn("CaelumWeaponPickup", user.Pos, NO_REPLACE));
-        if (item == null) return null;
-        item.EquipmentKind = CaelumConstants.EQUIPMENT_KIND_WEAPON;
-        item.ItemType = CaelumMainM00StarterRules.GetWeaponType(r.MainM00StarterOption);
-        item.Tier = 1; item.EquipmentSize = r.MainM00StarterSize; item.ArmorSlot = -1;
-        item.EssenceType = user.WeaponModel.IsMagicalType(item.ItemType)
-            ? CaelumCraftingRules.GetUnifiedEssenceType(CaelumMainM00StarterRules.GetRecipe(r.MainM00StarterOption)) : 0;
-        item.Durability = r.MainM00StarterConditionKnown ? Max(0, r.MainM00StarterDurability)
-            : user.WeaponModel.GetMaximumDurabilityFor(item.ItemType, 1, item.EquipmentSize);
-        item.UnitWeight = user.WeaponModel.GetWeightFor(item.ItemType, 1, item.EquipmentSize);
-        item.PickupDataInitialized = true; item.ItemId = r.MainM00StarterWeaponId;
-        item.AcquisitionResolved = true;
-        item.SizePolicyRevision = CaelumEquipmentRules.SIZE_POLICY_REVISION;
-        item.ItemFlags = CaelumConstants.CA_ITEMFLAG_LIMBO_PRESERVABLE;
-        return item;
+        return null;
     }
 
     static bool Commit(CaelumPlayer user)
@@ -141,38 +125,34 @@ class CaelumMainM00Return : Object play
             || !r.HasMainM00Flag(CaelumConstants.MAIN_M00_FLAG_EXIT_CONFIRMED)
             || r.HasMainM00Flag(CaelumConstants.MAIN_M00_FLAG_INVENTORY_SANITIZED)) return false;
         user.SyncActiveModelsToNativeInventory();
+        CaelumMainM00Loadout.EnsureMigration(user);
+        // Devuelve los préstamos mediante sus propias reglas. La elección no
+        // crea ni reconstruye objetos; viajan las instancias realmente propias.
+        CaelumMainM00MagicTrial.ReturnLoans(user);
+        CaelumMainM00RonnieTrial.ReturnLoan(user);
+        CaelumMainM00RuloTrial.ReturnAmmo(user);
         let first = ResolveStarter(user);
-        if (first == null) return false;
-        // Todas las comprobaciones fallables preceden a la limpieza. Desde
-        // aquí no se cede ejecución hasta tener el registro completo.
-        if (first.Owner == null)
+        if (first != null && first.Owner == null)
         {
             first.AttachToOwner(user);
             CaelumNotifications.Acquired(user, first, 1);
         }
-        first.Equipped = false; first.InMagicBox = true;
-        first.ItemFlags &= ~CaelumConstants.CA_ITEMFLAG_LIMBO_TEMP;
-        first.ItemFlags |= CaelumConstants.CA_ITEMFLAG_LIMBO_PRESERVABLE;
-        user.player.ReadyWeapon = null; user.player.PendingWeapon = WP_NOCHANGE;
-        user.A_ClearOverlays(-1, 1000);
         for (Inventory cursor = user.Inv; cursor != null;)
         {
             Inventory next = cursor.Inv;
-            if (cursor != first && (cursor is "CaelumEquipmentItem"
-                || cursor is "CaelumSpecialInventoryItem" || cursor is "CaelumConsumableItem"
-                || cursor is "Ammo" || cursor is "Key" || cursor is "Weapon")) cursor.Destroy();
+            let equipment = CaelumEquipmentItem(cursor);
+            if (equipment != null)
+            {
+                // Propiedad, ItemId, talla, desgaste, posición y equipamiento
+                // se mantienen. Sólo los actores de préstamo quedan excluidos.
+                if (CaelumMainM00Loadout.IsBorrowed(equipment)) equipment.Destroy();
+                else equipment.ItemFlags &= ~CaelumConstants.CA_ITEMFLAG_LIMBO_TEMP;
+            }
+            else if (cursor is "CaelumSpecialInventoryItem" || cursor is "CaelumConsumableItem"
+                || cursor is "Ammo" || cursor is "Key") cursor.Destroy();
             cursor = next;
         }
-        user.WeaponModel.Equipped = false; user.ActiveWeaponItemId = 0;
-        user.ShieldModel.Equipped = false; user.EquippedShieldItemId = 0;
-        user.EquippedAmuletItemId = 0; user.EquippedSealItemId = 0;
-        for (int slot = 0; slot < CaelumConstants.ARMOR_SLOT_COUNT; slot++)
-        {
-            user.EquippedArmorItemId[slot] = 0;
-            user.ArmorModel.ArmorType[slot] = CaelumConstants.ARMOR_TYPE_BASE_CLOTHING;
-            user.ArmorModel.Tier[slot] = 1; user.ArmorModel.Size[slot] = CaelumConstants.EQUIPMENT_SIZE_M;
-            user.ArmorModel.Durability[slot] = 0;
-        }
+        // Los cargadores también son munición: vaciarlos sin sustituir armas.
         for (int kind = 0; kind < CaelumConstants.WEAPON_TYPE_COUNT; kind++) user.SetRangedMagazineCount(kind, 0);
         r.MainM00AmmoLoanRemaining = 0;
         r.NativeEquipmentMigrationComplete = true;
