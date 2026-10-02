@@ -12,8 +12,10 @@ magic-weapon Anima bases tenfold: staff 50, book 70, bell/statuette 100. The
 existing Eloquence Type 4 divisor gives one third at 100; tiers and charge retain
 their multipliers. Old saved costs and pending casts update once while progress
 and resources remain. Keep original saves and the original package for rollback.
-Evidence: [4.37.2 validation](assets/validation_4372/RESULTS.json). Author balance
-acceptance remains in [pending_test.txt](pending_test.txt).
+Evidence: [4.37.2 validation](assets/validation_4372/RESULTS.json). The author
+accepted all checks on 2026-10-01 (CA-4372-ANIMA-01, recorded in
+[HISTORY](docs/HISTORY.md)) and authorized PR #69 merge and #68 closure.
+No author tests remain pending; the tested runtime is unchanged.
 
 Issue [#62](https://github.com/damiancurti/Caelum-Argenteum/issues/62) makes Caella's
 primary and secondary spell exercises require hits on the training dummy in the

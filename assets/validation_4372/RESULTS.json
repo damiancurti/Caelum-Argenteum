@@ -139,7 +139,18 @@
       "evidence": "clean.txt"
     }
   ],
-  "author_acceptance": "PENDING CA-4372-ANIMA-01; #62 acceptance does not accept the subsequent balance change.",
+  "author_acceptance": {
+    "test_id": "CA-4372-ANIMA-01",
+    "originating_version": "4.37.2",
+    "issue": 68,
+    "pull_request": 69,
+    "status": "ACCEPTED",
+    "confirmation_date": "2026-10-01",
+    "confirmation": "The author confirmed all listed tests passed and explicitly authorized issue closure and PR merge.",
+    "qualifications": "No exceptions reported. The pending-cast author step applied when a suitable save was available; no per-step breakdown was supplied.",
+    "accepted_runtime_commit": "bc0bc4ac7db304925e37c90fe7437f4044b97856",
+    "pending_entry_removed": true
+  },
   "methodology": [
     "The support overlay is assets/validation_4371/fixture. Native setup seeds Argento completion and uses production Caella Begin/equipment; neither fixture is included in the PK3.",
     "240 cost quotations execute native PerformDebugStaffAttack over 4 shapes x 3 tiers x 5 Eloquence levels (0,25,50,100,200) x charge on/off x primary/secondary. Each cancellation is checked to spend nothing. Expected costs independently use the author-specified bases and Type 4 equation.",

@@ -5,7 +5,7 @@ Documentation version: **4.37.2** — 2026-10-01.
 **4.37.2 / #68:** magic Anima bases: staff 50, book 70, bell/statuette 100.
 Existing Eloquence Type 4 divides by 3 at 100. Revision 3 updates saved derived
 and pending costs once; resources/progress remain. Evidence: assets/validation_4372.
-Author balance/continuity check CA-4372-ANIMA-01 is pending.
+CA-4372-ANIMA-01 accepted 2026-10-01; PR #69 merge/#68 closure authorized.
 
 **4.37.1 / #62:** shared dummy exercises accepted 2026-10-01;
 CA-4371-CAELLA-01: HISTORY. PR #67 merged; #62 closed.

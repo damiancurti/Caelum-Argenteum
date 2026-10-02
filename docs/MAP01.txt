@@ -10,7 +10,8 @@ bell and statuette bases are 70/100/100. Tier/charge factors remain unchanged.
 The accepted #62 dummy impacts, separate Anima/Seal demonstrations, rune order,
 return to Caella, loans and passage progression are preserved. Existing saves
 update cached costs and pending casts once without resetting tutorial progress.
-Author check CA-4372-ANIMA-01 is pending; evidence: assets/validation_4372.
+Author check CA-4372-ANIMA-01 was accepted on 2026-10-01 (#68 / PR #69);
+evidence: assets/validation_4372. The tested runtime remains unchanged.
 
 ## 4.37.1 — Caella practices on the mansion dummy (#62)
 

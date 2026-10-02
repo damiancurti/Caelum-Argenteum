@@ -30,7 +30,15 @@ identity, partial reserves and elapsed cast time remain. Save/reload, original
 save/package rollback, Caella progression and clean startup are covered.
 Detailed evidence, fixture conditions and reproduction are in assets/validation_4372.
 Those checks are distinct from ordinary author balance acceptance.
-CA-4372-ANIMA-01 — originating 4.37.2 / #68 — remains PENDING in pending_test.txt.
+CA-4372-ANIMA-01 — originating release 4.37.2, issue #68 / PR #69:
+ACCEPTED by the author on 2026-10-01, who confirmed all listed tests passed
+without reported exceptions or qualifications and explicitly authorized issue
+closure and PR merge. The accepted checklist covers the lower bases and Type 4
+divisor, tier/charge costs, ordinary combat and Caella continuity, saved-cost
+migration/reload, and original-save/package rollback. Its pending-cast step
+applied when a suitable save was available; the author supplied no further
+breakdown. The entry was removed from pending_test.txt; no author checks remain.
+This acceptance changes no runtime from bc0bc4ac and keeps release 4.37.2.
 
 ## 4.37.1 — Caella's shared training-dummy exercises (#62)
 

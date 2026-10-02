@@ -13,8 +13,10 @@ share the reduced constants. Other costs, damage and resource recovery remain.
 Existing saved derived costs and pending casts update once through attribute
 revision 3, preserving resources, elapsed cast state, inventory identity and
 quest progress. Original saves/packages provide tested rollback. Evidence and
-scope: assets/validation_4372/RESULTS.json. Author balance/continuity acceptance
-is pending as CA-4372-ANIMA-01. Deferred Tarot/Trucazo remains separate.
+scope: assets/validation_4372/RESULTS.json. The author accepted all listed
+CA-4372-ANIMA-01 checks on 2026-10-01 without reported exceptions and authorized
+PR #69 merge and #68 closure. The tested runtime remains unchanged.
+Deferred Tarot/Trucazo remains separate.
 
 ## 4.37.1 — Caella's practical exercises on the shared dummy (#62)
 

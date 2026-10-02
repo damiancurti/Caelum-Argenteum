@@ -10,8 +10,9 @@ Documentation version: **4.37.2** — 2026-10-01.
 - Shared constants cover player and authored NPC magic. Attribute revision 3
   updates saved derived costs and pending unpaid casts once, preserving state.
 - Static/build, 240 native quotes, 48 live payments and save migration/reload
-  checks pass. Evidence: assets/validation_4372/RESULTS.json. Author balance/continuity check
-  CA-4372-ANIMA-01 is pending; #62 acceptance remains recorded in HISTORY.
+  checks pass. Evidence: assets/validation_4372/RESULTS.json. The author accepted
+  CA-4372-ANIMA-01 on 2026-10-01 and authorized PR #69 merge and #68 closure.
+  HISTORY records acceptance; the author test queue is empty.
 
 ## Issue #62 — Caella's exercises against the training dummy (4.37.1)
 
