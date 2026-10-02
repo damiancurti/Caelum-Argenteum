@@ -1,6 +1,44 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **4.37.1** — 2026-10-01.
+Documentation version: **4.37.2** — 2026-10-01.
+
+## 4.37.2 — Tenfold reduction of magic-weapon Anima bases (#68)
+
+2026-10-01: the author accepted all #62 tests and requested magic-weapon casts
+ten times cheaper at base, divided by the corresponding attribute's Type 4
+growth (one third at 100). Accepted #62 / PR #67 was merged; #68 starts from
+62dbdf33. The existing divisor already uses Eloquence and matches that example.
+
+Reduced T1 staff 500->50, book 700->70, bell 1000->100 and statuette 1000->100.
+The book base now joins the shared constants instead of remaining a literal in
+the weapon model. Existing tier 1/1.6/2.5, charge x2 and Type 4 formulas remain.
+Authored NPC staff/statuette costs follow the same shared constants. No damage,
+duration, regeneration, Seal Channel, physical cost or Sleep ability changes.
+
+Attribute-balance revision 3 reuses the existing saved revision field to refresh
+derived costs and the unpaid quote of an in-progress cast once. It preserves
+resources, elapsed cast time, equipment IDs and quests; completed expenditure
+is not refunded. Original saves and their original package are retained for
+rollback. Maps and persistent character-state schema are unchanged.
+
+Static validation and the normal PK3 build pass. Native GZDoom 4.14.2 checks
+cover 240 quotes/cancellations and 48 actual cast payments, all four shapes,
+three tiers, both attack modes, charge, Eloquence 0/25/50/100/200 and the authored
+NPC costs. Original pending cost 471.433905900 updates to 47.143390590 before
+payment; repeated migration/load does not reduce it twice. Equipment and quest
+identity, partial reserves and elapsed cast time remain. Save/reload, original
+save/package rollback, Caella progression and clean startup are covered.
+Detailed evidence, fixture conditions and reproduction are in assets/validation_4372.
+Those checks are distinct from ordinary author balance acceptance.
+CA-4372-ANIMA-01 — originating release 4.37.2, issue #68 / PR #69:
+ACCEPTED by the author on 2026-10-01, who confirmed all listed tests passed
+without reported exceptions or qualifications and explicitly authorized issue
+closure and PR merge. The accepted checklist covers the lower bases and Type 4
+divisor, tier/charge costs, ordinary combat and Caella continuity, saved-cost
+migration/reload, and original-save/package rollback. Its pending-cast step
+applied when a suitable save was available; the author supplied no further
+breakdown. The entry was removed from pending_test.txt; no author checks remain.
+This acceptance changes no runtime from bc0bc4ac and keeps release 4.37.2.
 
 ## 4.37.1 — Caella's shared training-dummy exercises (#62)
 

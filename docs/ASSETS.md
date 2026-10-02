@@ -1,6 +1,13 @@
 # Caelum Argenteum — Audio and art
 
-Documentation version: **4.37.1** — 2026-10-01.
+Documentation version: **4.37.2** — 2026-10-01.
+
+## 4.37.2 — Magic-cost balance data and evidence (#68)
+
+No art, audio, map or generated asset changes. Existing core constants own the
+reduced 50/70/100/100 staff/book/bell/statuette bases. The existing Type 4 curve
+and native combat assets remain. Isolated fixtures reuse the accepted #62
+support fixture; assets/validation_4372 contains evidence, never runtime content.
 
 ## 4.37.1 — Reused practice target and bilingual directions (#62)
 

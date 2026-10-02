@@ -1,0 +1,5 @@
+GZDoom version g4.14.2
+adding build/issue68_old/caelum_argenteum_dev.pk3, 6137 lumps
+adding build/issue68_qa, 1 lumps
+MAP01 - La mansión
+QA68 PASS original save and original package restore original cost

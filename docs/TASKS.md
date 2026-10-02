@@ -1,6 +1,18 @@
 # TASKS.md — Active tasks
 
-Documentation version: **4.37.1** — 2026-10-01.
+Documentation version: **4.37.2** — 2026-10-01.
+
+## Issue #68 — Magic-weapon Anima base costs divided by ten (4.37.2)
+
+- Author request after accepting #62; focused branch issue-68-anima-costs.
+- Bases staff/book/bell/statuette: 50/70/100/100. Existing Eloquence Type 4
+  division gives one third at 100; tiers/charge, damage and other costs remain.
+- Shared constants cover player and authored NPC magic. Attribute revision 3
+  updates saved derived costs and pending unpaid casts once, preserving state.
+- Static/build, 240 native quotes, 48 live payments and save migration/reload
+  checks pass. Evidence: assets/validation_4372/RESULTS.json. The author accepted
+  CA-4372-ANIMA-01 on 2026-10-01 and authorized PR #69 merge and #68 closure.
+  HISTORY records acceptance; the author test queue is empty.
 
 ## Issue #62 — Caella's exercises against the training dummy (4.37.1)
 

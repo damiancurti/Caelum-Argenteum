@@ -1,0 +1,10 @@
+GZDoom version g4.14.2
+adding build/issue68_old/caelum_argenteum_dev.pk3, 6137 lumps
+adding build/issue68_qa, 1 lumps
+MAP01 - La mansión
+QA62 PASS begin through Caella
+QA62 PASS single dummy before Rulo
+QA62 STATE fresh-active stage=40 primary=0 secondary=0 channel=0 spent=0 recovered=0 runes=0 targets=1 weapon=1 seal=2
+QA68 PASS legacy native pending cast created
+QA68 LEGACY revision=2 cost=471.433905900 anima=1320.000000000 weapon=1 seal=2 stage=40
+Partida guardada.

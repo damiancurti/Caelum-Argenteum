@@ -1,0 +1,170 @@
+version "4.14"
+// Isolated resource-cost tests; load the accepted #62 fixture as a support overlay.
+class Issue68 : Object play
+{
+    static void Check(bool ok,String label){Console.Printf("QA68 %s %s",ok?"PASS":"FAIL",label);}
+    static bool Near(double a,double b){return Abs(a-b)<0.00001;}
+    static int Kind(int slot){return slot==0?CaelumConstants.WEAPON_TYPE_STAFF:slot==1?CaelumConstants.WEAPON_TYPE_BOOK:slot==2?CaelumConstants.WEAPON_TYPE_BELL:CaelumConstants.WEAPON_TYPE_STATUETTE;}
+    static double Base(int slot){return slot==0?50:slot==1?70:100;}
+    static double Cost(int slot,int tier,bool charged,double eloquence)
+    {return Base(slot)*(tier==3?2.5:tier==2?1.6:1)*(charged?2:1)/(1+2*eloquence*(eloquence+1)/10100.0);}
+    static void Equip(CaelumPlayer u,int slot,int tier)
+    {
+        u.CancelPendingStaffCast(false);u.CancelWeaponCharge();Issue62Check.ClearShots();
+        let item=CaelumEquipmentItem(u.FindInventory("CA_LimboMagicImplement"));
+        item.ItemType=Kind(slot);item.Tier=tier;item.EssenceType=CaelumConstants.ESSENCE_FIRE;
+        item.Durability=u.WeaponModel.GetMaximumDurabilityFor(item.ItemType,tier,item.EquipmentSize);
+        item.UnitWeight=u.WeaponModel.GetWeightFor(item.ItemType,tier,item.EquipmentSize);
+        u.ActivateExactEquippedWeapon(item);u.EnsureWeaponFamilySelectors();
+    }
+    static void Attribute(CaelumPlayer u,double eloquence)
+    {
+        u.Attributes.Eloquence=eloquence;u.DerivedStats.Recalculate(u.Attributes,u.CharacterProfile);
+        u.DerivedStats.MagicalAccuracyPercent=10000;u.DerivedStats.AnimaRegenerationPerSecond=0;
+    }
+    static void Charge(CaelumPlayer u,bool charged)
+    {u.WeaponChargedStateActive=charged;u.WeaponChargedRemainingSeconds=charged?CaelumConstants.WEAPON_CHARGED_STATE_SECONDS:0;}
+}
+class Issue68Marker : Inventory
+{
+    double OldQuote,OldDerived,BeforeAnima,BeforeHealth;
+    int WeaponId,SealId,Stage;
+    Default{Inventory.MaxAmount 1; +INVENTORY.UNDROPPABLE}
+    States{Spawn:TNT1 A -1;Stop;}
+}
+class Issue68Legacy : CaelumSocialDebugAction
+{
+    override bool Use(bool pickup)
+    {
+        let u=CaelumPlayer(Owner);Issue62Check.Aim(u);u.CurrentAnima=u.DerivedStats.MaximumAnima*0.6;
+        u.PerformDebugStaffAttack(true);
+        Issue68.Check(u.StaffCastPending,"legacy native pending cast created");
+        u.StaffCastCooldownRemaining=30;u.PendingStaffCastTotalSeconds=30;
+        u.StartAttackAnimation(30*TICRATE,true);
+        u.DerivedStats.AnimaRegenerationPerSecond=0;
+        let m=Issue68Marker(Actor.Spawn("Issue68Marker",u.Pos,NO_REPLACE));m.AttachToOwner(u);
+        m.OldQuote=u.PendingStaffAnimaCost;m.OldDerived=u.DerivedStats.StaffAnimaCost;
+        m.BeforeAnima=u.CurrentAnima;m.BeforeHealth=u.health;
+        m.WeaponId=u.ActiveWeaponItemId;m.SealId=u.EquippedSealItemId;m.Stage=u.GetPersistentCharacterState(true).QuestStage[0];
+        Console.Printf("QA68 LEGACY revision=%d cost=%.9f anima=%.9f weapon=%d seal=%d stage=%d",u.AttributeBalanceVersion,m.OldQuote,m.BeforeAnima,m.WeaponId,m.SealId,m.Stage);
+        return true;
+    }
+}
+class Issue68Migration : CaelumSocialDebugAction
+{
+    override bool Use(bool pickup)
+    {
+        let u=CaelumPlayer(Owner);let m=Issue68Marker(u.FindInventory("Issue68Marker"));
+        Issue68.Check(m!=null,"original save marker available");if(m==null)return true;
+        Issue68.Check(u.AttributeBalanceVersion==3,"loaded attribute revision is 3");
+        Issue68.Check(u.StaffCastPending&&Issue68.Near(u.PendingStaffAnimaCost,m.OldQuote/10),"old pending cost divided by ten before payment");
+        Issue68.Check(Issue68.Near(u.DerivedStats.StaffAnimaCost,m.OldDerived/10),"saved derived staff cost refreshed");
+        Issue68.Check(u.ActiveWeaponItemId==m.WeaponId&&u.EquippedSealItemId==m.SealId&&u.GetPersistentCharacterState(true).QuestStage[0]==m.Stage,"loan identities and quest progress retained");
+        Issue68.Check(u.CurrentAnima>=m.BeforeAnima&&u.CurrentAnima<u.DerivedStats.MaximumAnima,"migration retains partial reserve without refill or early charge");
+        double a=u.CurrentAnima;int hp=u.health;double cost=u.PendingStaffAnimaCost;double time=u.StaffCastCooldownRemaining;
+        u.EnsureCurrentAttributeBalance();u.EnsureCurrentAttributeBalance();
+        Issue68.Check(Issue68.Near(a,u.CurrentAnima)&&hp==u.health&&Issue68.Near(cost,u.PendingStaffAnimaCost)&&Issue68.Near(time,u.StaffCastCooldownRemaining),"repeat migration preserves resources cost and elapsed cast");
+        Console.Printf("QA68 MIGRATION cost=%.9f eloquence=%.2f remaining=%.5f anima=%.9f",cost,u.Attributes.Eloquence,time,a);
+        return true;
+    }
+}
+class Issue68PayPending : CaelumSocialDebugAction
+{
+    override bool Use(bool pickup)
+    {
+        let u=CaelumPlayer(Owner);double a=u.CurrentAnima;double cost=u.PendingStaffAnimaCost;
+        Issue68.Check(u.StaffCastPending,"saved cast still pending before payment");
+        u.CompletePendingStaffCast();
+        Issue68.Check(!u.StaffCastPending&&u.LastStaffCastCompleted&&Issue68.Near(a-u.CurrentAnima,cost),"native saved cast pays its updated quote exactly once");
+        a=u.CurrentAnima;u.CompletePendingStaffCast();
+        Issue68.Check(Issue68.Near(a,u.CurrentAnima),"completed cast cannot charge twice");return true;
+    }
+}
+class Issue68Rollback : CaelumSocialDebugAction
+{
+    override bool Use(bool pickup)
+    {
+        let u=CaelumPlayer(Owner);let m=Issue68Marker(u.FindInventory("Issue68Marker"));
+        Issue68.Check(m!=null&&u.AttributeBalanceVersion==2&&u.StaffCastPending&&Issue68.Near(u.PendingStaffAnimaCost,m.OldQuote),"original save and original package restore original cost");return true;
+    }
+}
+class Issue68PaidCheck : CaelumSocialDebugAction
+{
+    override bool Use(bool pickup)
+    {
+        let u=CaelumPlayer(Owner);let m=Issue68Marker(u.FindInventory("Issue68Marker"));
+        Issue68.Check(m!=null&&u.AttributeBalanceVersion==3&&!u.StaffCastPending,"paid save reload does not restart its cast");
+        if(m==null)return true;
+        Issue68.Check(u.ActiveWeaponItemId==m.WeaponId&&u.EquippedSealItemId==m.SealId&&u.GetPersistentCharacterState(true).QuestStage[0]==m.Stage,"paid reload retains equipment and quest");
+        u.PerformDebugStaffAttack(false);double before=u.CurrentAnima;
+        Issue68.Check(u.StaffCastPending&&Issue68.Near(u.PendingStaffAnimaCost,m.OldQuote/10),"next cast after reload retains one reduction");
+        u.CompletePendingStaffCast();
+        Issue68.Check(Issue68.Near(before-u.CurrentAnima,m.OldQuote/10),"next cast pays reduced cost after reload");return true;
+    }
+}
+class Issue68Rules : CaelumSocialDebugAction
+{
+    override bool Use(bool pickup)
+    {
+        let u=CaelumPlayer(Owner);int count=0;
+        for(int slot=0;slot<4;slot++)for(int tier=1;tier<=3;tier++)for(int sample=0;sample<5;sample++)for(int charge=0;charge<2;charge++)for(int secondary=0;secondary<2;secondary++)
+        {
+            double eloquence=sample==0?0:sample==1?25:sample==2?50:sample==3?100:200;
+            Issue68.Equip(u,slot,tier);Issue68.Attribute(u,eloquence);u.CurrentAnima=u.DerivedStats.MaximumAnima;
+            Issue68.Charge(u,charge==1);u.PerformDebugStaffAttack(secondary==1);
+            double expected=Issue68.Cost(slot,tier,charge==1,eloquence);
+            Issue68.Check(u.StaffCastPending&&Issue68.Near(u.PendingStaffAnimaCost,expected),String.Format("quote weapon=%d tier=%d E=%.0f charge=%d alt=%d cost=%.9f",slot,tier,eloquence,charge,secondary,u.PendingStaffAnimaCost));
+            double before=u.CurrentAnima;u.CancelPendingStaffCast(true);
+            Issue68.Check(Issue68.Near(before,u.CurrentAnima),"cancelled quote consumes no Anima");count++;
+        }
+        Issue68.Equip(u,0,1);Issue68.Attribute(u,100);u.CurrentAnima=Issue68.Cost(0,1,false,100)-0.01;
+        u.PerformDebugStaffAttack(false);Issue68.Check(!u.StaffCastPending&&u.LastStaffInsufficientAnima,"insufficient reserve rejects cast at reduced threshold");
+        u.CurrentAnima=Issue68.Cost(0,1,false,100);u.PerformDebugStaffAttack(false);
+        Issue68.Check(u.StaffCastPending,"exact fractional reserve accepts cast");u.CancelPendingStaffCast(false);
+        let a=CaelumCombatActor(Actor.Spawn("CaelumCombatActor",u.Pos+(500,0,0),NO_REPLACE));
+        for(int sample=0;sample<5;sample++)for(int slot=0;slot<2;slot++)
+        {
+            int eloquence=sample==0?0:sample==1?25:sample==2?50:sample==3?100:200;
+            a.CombatEloquence=eloquence;int shape=slot==0?0:3;double cost=Issue68.Cost(shape,1,false,eloquence);
+            double nativeCost=a.GetTierOneMagicAnimaCost(Issue68.Kind(shape));
+            a.CurrentCombatAnima=nativeCost;Issue68.Check(Issue68.Near(nativeCost,cost)&&a.TrySpendTierOneMagicAnima(Issue68.Kind(shape))&&Issue68.Near(a.CurrentCombatAnima,0),String.Format("NPC cost shape=%d E=%d expected=%.9f actual=%.9f",shape,eloquence,cost,nativeCost));
+            a.CurrentCombatAnima=cost-0.01;Issue68.Check(!a.TrySpendTierOneMagicAnima(Issue68.Kind(shape)),"NPC insufficient reserve retains normal gate");
+        }
+        a.Destroy();Console.Printf("QA68 RULES_DONE quotes=%d",count);return true;
+    }
+}
+class Issue68CastRunner : Actor
+{
+    CaelumPlayer User;int Slot,Age,CaseIndex;bool Paid;
+    double Expected,BeforeAnima;
+    override void Tick()
+    {
+        Super.Tick();if(User==null)return;int phase=Age%100;
+        if(phase==0){Issue68.Equip(User,Slot,CaseIndex/4+1);Issue62Check.Aim(User);Paid=false;}
+        if(phase>=20){User.DerivedStats.AnimaRegenerationPerSecond=0;User.DerivedStats.MagicalAccuracyPercent=10000;}
+        if(phase==35)
+        {
+            bool charged=CaseIndex%4>=2;double eloquence=charged?100:0;
+            Issue68.Attribute(User,eloquence);User.CurrentAnima=User.DerivedStats.MaximumAnima;
+            BeforeAnima=User.CurrentAnima;Expected=Issue68.Cost(Slot,CaseIndex/4+1,charged,eloquence);
+            Issue68.Charge(User,charged);User.PerformDebugStaffAttack(CaseIndex%2==1);
+            Issue68.Check(User.StaffCastPending&&Issue68.Near(User.PendingStaffAnimaCost,Expected),"live native cast starts with correct quote");
+        }
+        if(phase>35&&!Paid&&User.LastStaffCastCompleted&&!User.StaffCastPending)
+        {
+            Paid=true;Issue68.Check(Issue68.Near(BeforeAnima-User.CurrentAnima,Expected),String.Format("live payment shape=%d case=%d expected=%.9f actual=%.9f",Slot,CaseIndex,Expected,BeforeAnima-User.CurrentAnima));
+        }
+        if(phase==99){Issue68.Check(Paid,"live cast completed");CaseIndex++;if(CaseIndex==12){Console.Printf("QA68 LIVE_DONE shape=%d",Slot);Destroy();return;}}
+        Age++;
+    }
+    Default{+NOINTERACTION}
+    States{Spawn:TNT1 A -1;Stop;}
+}
+class Issue68Staff : CaelumSocialDebugAction
+{
+    virtual int Slot(){return 0;}
+    override bool Use(bool pickup){let r=Issue68CastRunner(Actor.Spawn("Issue68CastRunner",Owner.Pos,NO_REPLACE));r.User=CaelumPlayer(Owner);r.Slot=Slot();return true;}
+}
+class Issue68Book : Issue68Staff {override int Slot(){return 1;}}
+class Issue68Bell : Issue68Staff {override int Slot(){return 2;}}
+class Issue68Statuette : Issue68Staff {override int Slot(){return 3;}}

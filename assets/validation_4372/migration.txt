@@ -1,0 +1,17 @@
+GZDoom version g4.14.2
+adding build/caelum_argenteum_dev.pk3, 6137 lumps
+adding build/issue68_qa, 1 lumps
+MAP01 - La mansión
+QA68 PASS original save marker available
+QA68 PASS loaded attribute revision is 3
+QA68 PASS old pending cost divided by ten before payment
+QA68 PASS saved derived staff cost refreshed
+QA68 PASS loan identities and quest progress retained
+QA68 PASS migration retains partial reserve without refill or early charge
+QA68 PASS repeat migration preserves resources cost and elapsed cast
+QA68 MIGRATION cost=47.143390590 eloquence=17.00 remaining=26.00000 anima=1339.204620462
+Partida guardada.
+QA68 PASS saved cast still pending before payment
+QA68 PASS native saved cast pays its updated quote exactly once
+QA68 PASS completed cast cannot charge twice
+Partida guardada.
