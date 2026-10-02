@@ -1,6 +1,40 @@
 # Caelum Argenteum — Current systems and rules
 
-Documentation version: **4.37.4** — 2026-10-02.
+Documentation version: **4.37.5** — 2026-10-02.
+
+## 4.37.5 — Daily mansion provisions (#65)
+
+This policy supersedes the historical one-time all-food allocation below.
+Only MAP01 mansion tables receive automatic stock. Each existing provision slot
+holds one established ration: small 4 = 2 food / 2 water; normal 18 = 9 / 9;
+large 60 = 30 / 30. The six tables have 94 slots, with fresh totals of 47 food
+and 47 water. Serving mass, water volume, digestion and recovery are unchanged.
+
+Fresh tables receive their initial targets once. Every Limbo-local midnight,
+SyncLocalDay fills only empty slots toward each target, food then water. Normal
+play, T and Y use the same boundary. A multi-day skip consumes real portions
+between refills; its numeric task forecast applies the same per-slot policy.
+The exterior calendar remains frozen, and no wall-clock/offline catch-up occurs.
+
+MansionProvisionRevision 1 and LastMansionRestockDay persist per table. Repeated
+or older day notifications do nothing; missing several days supplies only one
+current target, never a daily backlog. A full or obstructed table records the
+day too, so withdrawing an item cannot claim its missed portion later that day.
+Displays follow actual inventory ownership and preserve the existing models.
+
+Deposited items and containers are never replaced to make room. Containers keep
+their class and liters and occupy a slot; their water is not a new ration slot.
+Consequently an occupied table can remain below a target. Saved all-food tables
+have no reliable item provenance: migration keeps every ration and belonging,
+retires only the old pending allocation, and fills available holes. Such tables
+converge to the new ratio as excess old food is consumed and later days refill
+the vacancies. Migration neither discards food nor invents overflow storage.
+Keep the original save/package for rollback; upgraded saves are not claimed to
+load in an older version. No map geometry or authored return route changes.
+
+Palomo's bilingual food-source explanation now identifies local midnight and
+states that removing a serving does not refill it immediately. Tables outside
+MAP01 receive no automatic initial or daily supplies.
 
 ## 4.37.4 — Explicit time skipping and separate Limbo clock (#64)
 

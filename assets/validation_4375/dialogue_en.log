@@ -1,0 +1,8 @@
+GZDoom version g4.14.2
+adding build/caelum_argenteum_dev.pk3, 6141 lumps
+MAP01 - The Mansion
+QA64 SETUP pos=(-320,-288,264)
+QA65 PASS native Palomo food-source conversation opens
+QA65 PASS native food-source page reached lines=7
+QA65 DIALOGUE_DONE
+Captured issue65_dialogue_en.png

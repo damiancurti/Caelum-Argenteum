@@ -1,0 +1,10 @@
+GZDoom version g4.14.2
+adding src, 6141 lumps
+MAP01 - La mansión
+QA64 SETUP pos=(-320,-288,264)
+QA64 PASS native shield task reserves materials
+QA64 TASK action=10 known=1 infrastructure=1 station=1 menu=1 combat=0.00 conversation=0 velocity=0.0000 ground=1 water=0
+QA65 PASS native midnight records exactly the new local day
+QA65 PASS normal, fast or skip midnight restores both provision types
+QA65 PASS table presentation matches actual owned food/water and empty slots
+QA65 BOUNDARY_DONE mode=2

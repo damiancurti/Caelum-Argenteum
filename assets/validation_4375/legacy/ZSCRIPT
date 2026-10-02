@@ -1,0 +1,40 @@
+version "4.14.2"
+class Issue65LegacyRecord : Inventory
+{
+    Array<CaelumConsumableItem> Kept;
+    CaelumDiningTable FirstTable;
+    CaelumWaterContainer Bottle;
+    int LocalDay;
+    Default {Inventory.MaxAmount 1;Inventory.InterHubAmount 1;+INVENTORY.UNDROPPABLE}
+    States {Spawn:TNT1 A -1;Stop;}
+}
+class Issue65LegacySeed : CaelumSocialDebugAction
+{
+    override bool Use(bool pickup)
+    {
+        let u=CaelumPlayer(Owner);let r=Issue65LegacyRecord(u.GiveInventoryType("Issue65LegacyRecord"));
+        let it=ThinkerIterator.Create("CaelumDiningTable");CaelumDiningTable t;
+        r.LocalDay=CaelumWorldClock.Get(u).LocalDays();int tables=0;
+        while((t=CaelumDiningTable(it.Next()))!=null)
+        {
+            if(tables==0)
+            {
+                r.FirstTable=t;t.Items[0].Destroy();t.Items[0]=null;t.Items[1].Destroy();t.Items[1]=null;
+                r.Bottle=CaelumWaterContainer(Spawn("CaelumCanteenNormal",t.Pos,NO_REPLACE));
+                r.Bottle.WaterLiters=0.05;r.Bottle.AttachToOwner(t);t.Items[0]=r.Bottle;t.RefreshDisplays();
+            }
+            for(int i=0;i<t.Capacity();i++)if(t.Items[i]!=null)r.Kept.Push(t.Items[i]);
+            tables++;
+        }
+        Console.Printf("QA65 LEGACY_SEEDED tables=%d kept=%d localDay=%d",tables,r.Kept.Size(),r.LocalDay);return true;
+    }
+}
+class Issue65LegacyReport : CaelumSocialDebugAction
+{
+    override bool Use(bool pickup)
+    {
+        let r=Issue65LegacyRecord(Owner.FindInventory("Issue65LegacyRecord"));int present=0;
+        for(int i=0;i<r.Kept.Size();i++)if(r.Kept[i]!=null && CaelumDiningTable(r.Kept[i].Owner)!=null)present++;
+        Console.Printf("QA65 LEGACY_REPORT kept=%d expected=%d liters=%.6f",present,r.Kept.Size(),r.Bottle.WaterLiters);return true;
+    }
+}

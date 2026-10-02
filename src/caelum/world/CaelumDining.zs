@@ -42,9 +42,40 @@ class CaelumDiningTable : Actor
     bool PresentationReady;
     bool MansionFullFoodPrepared;
     int MansionFoodToSeed;
-    // Contrato diario común: #65 aporta reposición y la previsión equivalente.
-    virtual void SyncLocalDay(int localDay) {}
-    virtual int ForecastDailyTarget() { return 0; }
+    // Revisión 1: conservar pertenencias antiguas y registrar una entrega diaria.
+    int MansionProvisionRevision;
+    int LastMansionRestockDay;
+    virtual int ForecastDailyTarget() { return level.MapName=="MAP01"?Capacity()/2:0; }
+    virtual void SyncLocalDay(int localDay)
+    {
+        if(level.MapName!="MAP01" || localDay<0)return;
+        if(MansionProvisionRevision>=1 && localDay<=LastMansionRestockDay)return;
+        MansionProvisionRevision=1;LastMansionRestockDay=localDay;
+        // Retira el saldo del sembrado antiguo, nunca sus objetos. Un guardado
+        // no distingue raciones iniciales de las depositadas por el jugador.
+        MansionFullFoodPrepared=true;MansionFoodToSeed=0;
+        RefreshDisplays();
+        int food=0,water=0,target=ForecastDailyTarget();
+        for(int i=0;i<Capacity();i++)
+        {
+            let item=Items[i];if(item==null)continue;
+            int kind=item.GetConsumableType();
+            if(kind==CaelumConstants.CONSUMABLE_FOOD_RATION)food+=item.Amount;
+            else if(kind==CaelumConstants.CONSUMABLE_WATER_RATION)water+=item.Amount;
+        }
+        for(int i=0;i<Capacity();i++)
+        {
+            if(Items[i]!=null)continue;
+            bool needsFood=food<target;
+            if(!needsFood && water>=target)break;
+            class<CaelumConsumableItem> kind=needsFood?"CaelumFoodRation":"CaelumWaterRation";
+            let ration=CaelumConsumableItem(Spawn(kind,Pos,NO_REPLACE));
+            if(ration==null)break;
+            ration.Amount=1;ration.InMagicBox=false;ration.AttachToOwner(self);Items[i]=ration;
+            if(needsFood)food++;else water++;
+        }
+        RefreshDisplays();
+    }
     virtual clearscope int SeatCount() { return 6; }
     virtual clearscope int Capacity() { return 18; }
     virtual clearscope double LengthMU() { return 192; }
@@ -286,32 +317,15 @@ class CaelumDiningTable : Actor
     void SeedMansionFood()
     {
         if(level.MapName!="MAP01")return;
-        if(!MansionFullFoodPrepared)
+        // El reloj del jugador viaja con el hub. Volver a visitar una mesa
+        // sólo completa el día actual, sin acumular los días no observados.
+        for(int i=0;i<MAXPLAYERS;i++)
         {
-            // Completar toda la capacidad, contando primero la comida ya presente.
-            // Se guarda el saldo inicial: consumir nunca vuelve a aumentarlo.
-            int food=0;
-            for(int i=0;i<Capacity();i++)
-                if(Items[i]!=null && Items[i].Owner==self && Items[i].Amount>0
-                    && Items[i].GetConsumableType()==CaelumConstants.CONSUMABLE_FOOD_RATION)
-                    food+=Items[i].Amount;
-            MansionFoodToSeed=Max(0,Capacity()-food);
-            MansionFullFoodPrepared=true;
+            if(!playeringame[i])continue;
+            let clock=CaelumWorldClock.Get(CaelumPlayer(players[i].mo));
+            if(clock!=null){SyncLocalDay(clock.LocalDays());return;}
         }
-        bool changed=false;
-        while(MansionFoodToSeed>0)
-        {
-            int slot=FreeSlot();
-            // Una mesa llena conserva las pertenencias del guardado y no queda
-            // esperando huecos para reponer comida después de cada retirada.
-            if(slot<0){MansionFoodToSeed=0;break;}
-            let ration=CaelumConsumableItem(Spawn("CaelumFoodRation",Pos,NO_REPLACE));
-            if(ration==null)break;
-            ration.Amount=1; ration.InMagicBox=false;
-            ration.AttachToOwner(self); Items[slot]=ration;
-            MansionFoodToSeed--; changed=true;
-        }
-        if(changed)RefreshDisplays();
+        if(MansionProvisionRevision<1)SyncLocalDay(0);
     }
 
     override void Tick()

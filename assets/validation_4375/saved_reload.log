@@ -1,0 +1,8 @@
+GZDoom version g4.14.2
+adding build/caelum_argenteum_dev.pk3, 6141 lumps
+MAP01 - La mansión
+QA65 PASS table-owned record survives native serialization
+QA65 PASS save/load or hub revisit cannot repeat a same-day refill
+QA65 PASS serialized table retains deposited container and ration identity
+QA65 PASS table presentation matches actual owned food/water and empty slots
+QA65 TABLE_SAVED_DONE

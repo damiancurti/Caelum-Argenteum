@@ -1,6 +1,42 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **4.37.4** — 2026-10-02.
+Documentation version: **4.37.5** — 2026-10-02.
+
+## 4.37.5 — Daily mansion food and water (#65)
+
+2026-10-02: the author authorized #65 in its own branch/PR while implementing
+#64. The base is #64 commit e4cf1e3e / PR #71; no acceptance or merge is inferred.
+Fresh tables use 50% food and 50% water by their existing 4/18/60 ration slots.
+Daily local midnight fills deficits without exceeding capacity or overwriting
+belongings. Missed days do not accrue stock. Normal/T/Y share the same hook;
+the forecast and actual consumption process each boundary chronologically.
+
+MansionProvisionRevision 1 keeps legacy rations and containers, retires the old
+pending food allocation and records LastMansionRestockDay. Old full all-food
+tables cannot be forcibly converted without losing ambiguous player belongings;
+they normalize through consumption and later daily refills. Original saves and
+baseline packages remain the rollback path. Palomo's English/Spanish explanation
+now specifies local midnight and no instant refill after taking a portion.
+
+Native evidence covers all six table targets, occupied/empty/full stock, each
+time mode at midnight, repeated short skips, normal save reloads and revisioned
+legacy migration/rollback. A three-day run consumes 25 food and 50 water rations;
+needs, sleep, work and stock match the forecast exactly across all three refills.
+An isolated hub fixture verifies native map unload/revisit persistence without
+adding a production return route. Palomo's actual page is inspected in English
+and Spanish. Static/build evidence is recorded separately in
+assets/validation_4375/RESULTS.json.
+
+Author acceptance, 2026-10-02: Damián confirmed that all tests passed and
+authorized PR #72 merge and issue #65 closure. CA-4375-TABLES-01 (4.37.5 / #65:
+table ratios, daily boundaries, multi-day care and Palomo's explanation) and
+CA-4375-SAVES-01 (4.37.5 / #65: legacy contents, deposited containers, save/reload
+and repeated skips) both passed without reported exceptions. Their entries are
+removed from pending_test.txt. The three #64 checks were accepted in the same
+confirmation and are recorded in the 4.37.4 entry; PR #71 was merged and #64
+closed before integrating its acceptance into this dependent patch. No author
+checks remain pending. Runtime and release 4.37.5 remain unchanged; this update
+records acceptance separately from native/static evidence.
 
 ## 4.37.4 — Explicit time skip and frozen exterior calendar (#64)
 

@@ -4,8 +4,18 @@ An independent dark fantasy FPS-RPG inspired by nineteenth-century Argentina.
 Author and game designer: **Damian Curti**. Development target: **GZDoom 4.14.2**
 on Windows 11. The final game is intended to be independent of Doom assets.
 
-**Current release: 4.37.4.** Obtain and update the complete repository, validate
+**Current release: 4.37.5.** Obtain and update the complete repository, validate
 it, then rebuild with `run_dev.bat` as described below.
+
+Issue [#65](https://github.com/damiancurti/Caelum-Argenteum/issues/65) adds daily
+food and water to mansion tables: half the existing slots for each, replenished
+at local midnight through normal time, T or Y. Palomo explains the timing.
+Deposited containers and old food are preserved; only free slots are filled.
+Evidence: [4.37.5 validation](assets/validation_4375/RESULTS.json). The author
+accepted both CA-4375 checks on 2026-10-02 and authorized
+[PR #72](https://github.com/damiancurti/Caelum-Argenteum/pull/72) merge and #65
+closure, following the merged #64 / PR #71. HISTORY records all five confirmed
+checks across both patches; [pending_test.txt](pending_test.txt) is empty.
 
 Issue [#64](https://github.com/damiancurti/Caelum-Argenteum/issues/64) adds **Y:
 skip to day/time**, separate from **T: fast-forward**. Choose the destination
@@ -17,8 +27,8 @@ their existing dates/counters through revision-1 migration; retain original save
 and packages for rollback. Evidence: [4.37.4 validation](assets/validation_4374/RESULTS.json).
 The author accepted all three CA-4374 checks on 2026-10-02 and authorized
 [PR #71](https://github.com/damiancurti/Caelum-Argenteum/pull/71) merge and #64
-closure. Results are recorded in [HISTORY](docs/HISTORY.md); no #64 checks remain
-pending. Daily mansion replenishment is the separate dependent #65 / PR #72.
+closure; both are complete. Results are recorded in [HISTORY](docs/HISTORY.md);
+no #64 checks remain pending. Daily mansion replenishment is #65 / PR #72 above.
 
 Issue [#63](https://github.com/damiancurti/Caelum-Argenteum/issues/63) moves the
 weapon, armor, Seal and shield plan to Palomo after following him inside. He

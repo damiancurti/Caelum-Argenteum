@@ -1,0 +1,26 @@
+GZDoom version g4.14.2
+adding build/caelum_argenteum_dev.pk3, 6141 lumps
+MAP01 - La mansión
+QA64 SETUP pos=(-320,-288,264)
+QA64 PASS native shield task reserves materials
+QA64 TASK action=10 known=1 infrastructure=1 station=1 menu=1 combat=0.00 conversation=0 velocity=0.0000 ground=1 water=0
+QA65 PASS multi-day selector opens
+QA65 PASS three-day skip starts with actual tables only
+QA65 PASS each crossed midnight refills once within both targets
+QA65 DAY local=1 food=47 water=47 elapsed=3027683 sleep=1259302 work=1768381
+QA65 PASS each crossed midnight refills once within both targets
+QA65 DAY local=2 food=47 water=47 elapsed=6051269 sleep=2717354 work=3333915
+QA65 PASS each crossed midnight refills once within both targets
+QA65 DAY local=3 food=47 water=47 elapsed=9072000 sleep=3647425 work=5424575
+QA65 PASS three-day target completes exactly
+QA65 PASS forecast survives chronological daily refills
+QA65 MULTI_COMPARE nativeH=96.7408268200 modelH=96.7408268200 nativeT=93.4816535629 modelT=93.4816535629 nativeS=68.5073683784 modelS=68.5073683784 nativeSleep=3647425 modelSleep=3647425 nativeWork=5424575 modelWork=5424575 meals=25 drinks=50
+QA65 PASS three-day native needs and sleep match the numeric forecast
+QA65 PASS three-day sleep and productive work match the forecast
+QA65 MULTI_STOCK nativeFood=47 modelFood=47 nativeWater=47 modelWater=47
+QA65 PASS native final stock matches forecast after consuming beyond the initial water supply
+QA65 PASS three local days leave exterior campaign date frozen
+QA65 PASS unfinished multi-day task neither pays early nor awards output
+QA65 MULTI_DONE food=47 water=47
+Captured issue65_multiday_final.png
+Partida guardada.

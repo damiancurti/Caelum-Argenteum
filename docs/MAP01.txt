@@ -1,6 +1,22 @@
 CAELUM ARGENTEUM — STORY AND MAP01
 
-Documentation version: **4.37.4** — 2026-10-02.
+Documentation version: **4.37.5** — 2026-10-02.
+
+## 4.37.5 — Palomo replenishes the tables each local midnight (#65)
+
+The four small tables, one normal table and one large table now begin with 47
+food and 47 water rations in total. Each table's target is half its existing
+slots per provision type: 2/2, 9/9 or 30/30. At local midnight, only vacancies
+and deficits are filled. Taking a portion does not trigger immediate replacement.
+Palomo explains this in his existing food-source dialogue in both languages.
+
+The mansion uses #64's local day with a frozen exterior story date. T and Y cross
+the same daily boundary. Save migration retains old contents and deposited
+containers; a full legacy all-food table gains water only as slots become free
+for a later daily refill. Existing table positions, capacities and models remain.
+The author accepted all five #64/#65 checks on 2026-10-02 without reported
+exceptions and authorized both merges/closures. HISTORY records each result;
+no author checks remain pending. The tested map/runtime is unchanged.
 
 ## 4.37.4 — Limbo-local time and automatic care (#64)
 
