@@ -1,0 +1,35 @@
+GZDoom version g4.14.2
+adding src, 6138 lumps
+adding build/issue63_ui, 2 lumps
+adding build/issue63_qa, 3 lumps
+MAP01 - La mansión
+QA63 PASS open native equipment menu
+QA63 PASS native menu step=0 page=loadout_root expected=loadout_root lines=3
+QA63 PASS native menu step=1 page=loadout_shields expected=loadout_shields lines=2
+QA63 PASS native menu step=2 page=loadout_preview_45 expected=loadout_preview_45 lines=3
+QA63 PASS native menu step=3 page=loadout_stats_45 expected=loadout_stats_45 lines=4
+QA63 PASS native menu step=4 page=loadout_preview_45 expected=loadout_preview_45 lines=3
+QA63 PASS native menu step=5 page=loadout_shields expected=loadout_shields lines=2
+QA63 PASS native menu step=6 page=loadout_preview_48 expected=loadout_preview_48 lines=3
+QA63 PASS native menu step=7 page=loadout_stats_48 expected=loadout_stats_48 lines=4
+QA63 PASS native menu step=8 page=loadout_root expected=loadout_root lines=3
+QA63 PASS native menu step=9 page=loadout_summary expected=loadout_summary lines=4
+QA63 PASS native menu step=10 page=loadout_root expected=loadout_root lines=3
+QA63 PASS native menu step=11 page=loadout_weapons expected=loadout_weapons lines=1
+QA63 PASS native menu step=12 page=loadout_family_4 expected=loadout_family_4 lines=1
+QA63 PASS native menu step=13 page=loadout_magic_0 expected=loadout_magic_0 lines=1
+QA63 PASS native menu step=14 page=loadout_preview_17 expected=loadout_preview_17 lines=4
+QA63 PASS native menu step=15 page=loadout_stats_17 expected=loadout_stats_17 lines=5
+QA63 PASS native menu step=16 page=loadout_root expected=loadout_root lines=3
+QA63 PASS native menu step=17 page=loadout_seals expected=loadout_seals lines=2
+QA63 PASS native menu step=18 page=loadout_preview_41 expected=loadout_preview_41 lines=2
+QA63 PASS native menu step=19 page=loadout_stats_41 expected=loadout_stats_41 lines=3
+QA63 PASS native menu step=20 page=loadout_root expected=loadout_root lines=3
+QA63 PASS native menu step=21 page=loadout_armors expected=loadout_armors lines=2
+QA63 PASS native menu step=22 page=loadout_preview_39 expected=loadout_preview_39 lines=3
+QA63 PASS native menu step=23 page=loadout_stats_39 expected=loadout_stats_39 lines=2
+QA63 PASS native menu step=24 page=loadout_root expected=loadout_root lines=3
+QA63 PASS native menu step=25 page=loadout_summary expected=loadout_summary lines=4
+QA63 UI_SUMMARY Arma: bastón - esencia de agua
+Armadura: Armadura pesada
+QA63 UI_DONE

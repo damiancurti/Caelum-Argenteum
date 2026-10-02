@@ -113,6 +113,9 @@ class CaelumPersistentCharacterState : Inventory
     int MainM00RepairSupply[CaelumConstants.MATERIAL_TYPE_COUNT];
     int MainM00SupplyLimit[CaelumConstants.MATERIAL_TYPE_COUNT];
     int MainM00SupplyIssued[CaelumConstants.MATERIAL_TYPE_COUNT];
+    int MainM00LoadoutRevision;
+    int MainM00ShieldChoice;
+    bool MainM00ShieldCrafted;
     bool MainM00StarterChosen;
     int MainM00StarterOption;
     int MainM00StarterSize;
@@ -413,6 +416,9 @@ class CaelumPersistentCharacterState : Inventory
         for (int slot = 0; slot < 4; slot++) MainM00ArmorCrafted[slot] = false;
         for (int material = 0; material < CaelumConstants.MATERIAL_TYPE_COUNT; material++)
         { MainM00SupplyLimit[material] = 0; MainM00SupplyIssued[material] = 0; MainM00RepairSupply[material] = 0; }
+        MainM00LoadoutRevision = 0;
+        MainM00ShieldChoice = 0;
+        MainM00ShieldCrafted = false;
         MainM00StarterChosen = false;
         MainM00StarterOption = 0;
         MainM00StarterSize = 0;

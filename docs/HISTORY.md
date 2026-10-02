@@ -1,6 +1,64 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **4.37.2** — 2026-10-01.
+Documentation version: **4.37.3** — 2026-10-01.
+
+## 4.37.3 — Palomo equipment plan and retained owned equipment (#63)
+
+2026-10-01: implementation requested with commit and push after accepted #68 /
+PR #69 was merged. Baseline: 40c06804. The author clarified that only equipment
+and the Box survive departure; ammunition, materials, coins and consumables
+still leave inventory. Borrowed trial props retain their normal return rules.
+
+Palomo now invites following his existing physical route, explains 36 weapons,
+four armor families, five Seals and four shields, and records confirmations in
+the persistent plan used by Ronnie. Ronnie teaches its native recipes and opens
+its finite allowance after Caella. The actual prior Seal chooser was Caella;
+that choice transfers too, while her amulet choice remains. New selection grants
+no object or recipe. Text states Palomo replenishes tables with food and water.
+
+Selected shields use native plate/strap recipes and the shared recursive material
+solver, allowing pre-Box personal output from existing copper/tin/leather. Native
+testing caught the former component-only shield payment path; the shared solver
+fix is included. No new balance or material recipe was introduced. All actual own
+equipment now crosses the return door with native identity, size, condition and
+equipped/Box placement. A destroyed first weapon is not reconstructed from its
+selection; uncrafted choices are never granted. Supply cleanup remains explicit.
+
+Loadout revision 1 reclassifies held legacy own equipment once, excluding loans;
+it leaves choice/progress/issued stock intact. Old conversation page slots remain
+in order. Original-save plus original-package rollback remains available and was
+loaded natively; upgrading a save is not a claim that it can then be downgraded.
+
+Static/build checks and GZDoom 4.14.2 fixtures are recorded separately in
+assets/validation_4373/RESULTS.json. Native tests cover 49 choices, 26 real menu
+reply transitions in each language, native Ronnie start, physical Palomo
+route/catch-up, all four shield transactions,
+weapon/four armor pieces/Seal crafting, cancel/restart, pending-task reload,
+pre-choice/post-choice/completed old saves, current-plan reopen/reload, original
+save rollback, and narrative MAP02 crossing plus reload. Twelve audited owned
+pieces preserve identity/condition/location; an additional destroyed-first case
+retains the eleven remaining pieces without reconstructing the missing weapon.
+Fixtures prepare progression/materials and accelerate elapsed crafting time;
+route observation moves the test camera. These do not establish an ordinary
+full-campaign manual pass. Early fixture/package-name failures were corrected;
+the final evidence records successful runs and does not package private saves.
+
+Author acceptance, 2026-10-01: the author explicitly confirmed that all tests
+passed and requested issue closure and merge of PR #70. The accepted checks,
+all originating in 4.37.3 / issue #63, are:
+
+- CA-4373-LOADOUT-01: PASS — following Palomo, reviewing/confirming the plan,
+  Ronnie's crafting flow including the shield, and food-source explanations.
+- CA-4373-SAVES-01: PASS — legacy/current saves retain choices, sizes, identity,
+  progress and issued stock; cancellation/reload does not duplicate output.
+- CA-4373-EXIT-01: PASS — cancellation leaves inventory intact; narrative exit
+  and reload retain owned equipment/Box, return loans and remove supplies.
+
+No exceptions or partial results were reported. These explicit author results
+are separate from the isolated evidence above. The three confirmed entries are
+removed from pending_test.txt, leaving the tracked file empty. This acceptance
+update changes documentation/evidence only and retains version 4.37.3 and the
+tested runtime. Earlier accepted tests remain in history.
 
 ## 4.37.2 — Tenfold reduction of magic-weapon Anima bases (#68)
 

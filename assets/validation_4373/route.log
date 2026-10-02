@@ -1,0 +1,17 @@
+GZDoom version g4.14.2
+adding src, 6138 lumps
+adding build/issue63_qa, 3 lumps
+MAP01 - La mansión
+QA63 ROUTE t=70 waypoint=0 pos=(-896.0,0.0,0.0)
+QA63 ROUTE t=140 waypoint=1 pos=(-336.0,0.0,0.0)
+QA63 ROUTE t=210 waypoint=1 pos=(224.0,0.0,0.0)
+QA63 ROUTE t=280 waypoint=1 pos=(784.0,0.0,0.0)
+QA63 ROUTE t=350 waypoint=1 pos=(1344.0,0.0,0.0)
+QA63 ROUTE t=420 waypoint=5 pos=(1599.9,212.0,136.0)
+QA63 ROUTE t=490 waypoint=7 pos=(1848.0,48.0,136.0)
+QA63 ROUTE t=560 waypoint=9 pos=(1751.1,167.8,232.0)
+QA63 ROUTE t=630 waypoint=11 pos=(1350.2,0.1,264.0)
+QA63 ROUTE t=700 waypoint=13 pos=(790.2,0.0,264.0)
+QA63 PASS Palomo physical entrance route completed visibly
+QA63 PASS catch up and open loadout dialogue
+QA63 ROUTE_DONE t=751

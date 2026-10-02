@@ -1,30 +1,19 @@
 # CONTEXT.md — Ultra-condensed summary of Caelum Argenteum
 
-Documentation version: **4.37.2** — 2026-10-01.
+Documentation version: **4.37.3** — 2026-10-01.
 
-**4.37.2 / #68:** magic Anima bases: staff 50, book 70, bell/statuette 100.
-Existing Eloquence Type 4 divides by 3 at 100. Revision 3 updates saved derived
-and pending costs once; resources/progress remain. Evidence: assets/validation_4372.
-CA-4372-ANIMA-01 accepted 2026-10-01; PR #69 merge/#68 closure authorized.
+**4.37.3 / #63:** Palomo records weapon/armor/Seal/shield choices; Ronnie
+teaches/crafts that plan. All actual own equipment/Box survive departure; loans
+return and ammo/materials/coins/consumables are removed (author clarification).
+Revision 1 preserves old choices/progress. Evidence: assets/validation_4373.
+All three CA-4373 checks accepted 2026-10-01; PR #70 merge/#63 closure authorized.
 
-**4.37.1 / #62:** shared dummy exercises accepted 2026-10-01;
-CA-4371-CAELLA-01: HISTORY. PR #67 merged; #62 closed.
-
-**4.37.0 / #61:** mansion hills, decorative plants/gem cave and door tympana;
-pool exclusion, distant-floor/roof repairs, relocated auxiliary rooms/stations.
-All four CA-4370 author tests accepted 2026-10-01; PR #66 merged/#61 closed.
-Its geometry revision requires fresh MAP01. Evidence: assets/validation_4370;
-full decisions, preservation scope and acceptance IDs: HISTORY.
-
-**4.36.28 / #17:** export/launcher accepted 2026-10-01; #60 merged/#17 closed.
-CA-43628-EXPORT-01: HISTORY; evidence: assets/validation_43628. Accepted ZIP unchanged.
-
-**4.36.27 / #16:** full siege (1,000 Mandingas, Zupay, 24 machines, 100 defenders)
-is author-accepted 2026-09-30. SYSTEMS owns its rules; assets/validation_43627 owns
-evidence. Use --legacy-map06 for campaigns that visited the old port. Crew relief
-and enemy attacks despite empty resources remain the accepted current trial.
-
-Rights: LICENSE.md and third-party notices apply (#55).
+**Accepted base:** #68 / PR #69 (4.37.2, cheaper magic), #62 / PR #67 (dummy),
+#61 / PR #66 (landscape), #17 / PR #60 (export) are merged/closed. Their tests,
+decisions and evidence are in HISTORY. #61 geometry requires fresh MAP01;
+use --legacy-map06 for campaigns that visited the pre-siege port. The 4.36.27
+siege retains its accepted full forces and relief/resource rules. Rights:
+LICENSE.md and third-party notices (#55). Deferred Tarot/Trucazo remains separate.
 
 ## The game's premise
 

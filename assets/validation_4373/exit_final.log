@@ -1,0 +1,376 @@
+GZDoom version g4.14.2
+adding src, 6138 lumps
+adding build/issue63_qa, 3 lumps
+MAP01 - La mansión
+QA63 PASS choice kind=0 option=0
+QA63 PASS same choice retry succeeds without reward
+QA63 PASS confirmed choice cannot be replaced
+QA63 PASS planning grants no items or recipes and does not skip trials
+QA63 PASS choice kind=0 option=1
+QA63 PASS same choice retry succeeds without reward
+QA63 PASS confirmed choice cannot be replaced
+QA63 PASS planning grants no items or recipes and does not skip trials
+QA63 PASS choice kind=0 option=2
+QA63 PASS same choice retry succeeds without reward
+QA63 PASS confirmed choice cannot be replaced
+QA63 PASS planning grants no items or recipes and does not skip trials
+QA63 PASS choice kind=0 option=3
+QA63 PASS same choice retry succeeds without reward
+QA63 PASS confirmed choice cannot be replaced
+QA63 PASS planning grants no items or recipes and does not skip trials
+QA63 PASS choice kind=0 option=4
+QA63 PASS same choice retry succeeds without reward
+QA63 PASS confirmed choice cannot be replaced
+QA63 PASS planning grants no items or recipes and does not skip trials
+QA63 PASS choice kind=0 option=5
+QA63 PASS same choice retry succeeds without reward
+QA63 PASS confirmed choice cannot be replaced
+QA63 PASS planning grants no items or recipes and does not skip trials
+QA63 PASS choice kind=0 option=6
+QA63 PASS same choice retry succeeds without reward
+QA63 PASS confirmed choice cannot be replaced
+QA63 PASS planning grants no items or recipes and does not skip trials
+QA63 PASS choice kind=0 option=7
+QA63 PASS same choice retry succeeds without reward
+QA63 PASS confirmed choice cannot be replaced
+QA63 PASS planning grants no items or recipes and does not skip trials
+QA63 PASS choice kind=0 option=8
+QA63 PASS same choice retry succeeds without reward
+QA63 PASS confirmed choice cannot be replaced
+QA63 PASS planning grants no items or recipes and does not skip trials
+QA63 PASS choice kind=0 option=9
+QA63 PASS same choice retry succeeds without reward
+QA63 PASS confirmed choice cannot be replaced
+QA63 PASS planning grants no items or recipes and does not skip trials
+QA63 PASS choice kind=0 option=10
+QA63 PASS same choice retry succeeds without reward
+QA63 PASS confirmed choice cannot be replaced
+QA63 PASS planning grants no items or recipes and does not skip trials
+QA63 PASS choice kind=0 option=11
+QA63 PASS same choice retry succeeds without reward
+QA63 PASS confirmed choice cannot be replaced
+QA63 PASS planning grants no items or recipes and does not skip trials
+QA63 PASS choice kind=0 option=12
+QA63 PASS same choice retry succeeds without reward
+QA63 PASS confirmed choice cannot be replaced
+QA63 PASS planning grants no items or recipes and does not skip trials
+QA63 PASS choice kind=0 option=13
+QA63 PASS same choice retry succeeds without reward
+QA63 PASS confirmed choice cannot be replaced
+QA63 PASS planning grants no items or recipes and does not skip trials
+QA63 PASS choice kind=0 option=14
+QA63 PASS same choice retry succeeds without reward
+QA63 PASS confirmed choice cannot be replaced
+QA63 PASS planning grants no items or recipes and does not skip trials
+QA63 PASS choice kind=0 option=15
+QA63 PASS same choice retry succeeds without reward
+QA63 PASS confirmed choice cannot be replaced
+QA63 PASS planning grants no items or recipes and does not skip trials
+QA63 PASS choice kind=0 option=16
+QA63 PASS same choice retry succeeds without reward
+QA63 PASS confirmed choice cannot be replaced
+QA63 PASS planning grants no items or recipes and does not skip trials
+QA63 PASS choice kind=0 option=17
+QA63 PASS same choice retry succeeds without reward
+QA63 PASS confirmed choice cannot be replaced
+QA63 PASS planning grants no items or recipes and does not skip trials
+QA63 PASS choice kind=0 option=18
+QA63 PASS same choice retry succeeds without reward
+QA63 PASS confirmed choice cannot be replaced
+QA63 PASS planning grants no items or recipes and does not skip trials
+QA63 PASS choice kind=0 option=19
+QA63 PASS same choice retry succeeds without reward
+QA63 PASS confirmed choice cannot be replaced
+QA63 PASS planning grants no items or recipes and does not skip trials
+QA63 PASS choice kind=0 option=20
+QA63 PASS same choice retry succeeds without reward
+QA63 PASS confirmed choice cannot be replaced
+QA63 PASS planning grants no items or recipes and does not skip trials
+QA63 PASS choice kind=0 option=21
+QA63 PASS same choice retry succeeds without reward
+QA63 PASS confirmed choice cannot be replaced
+QA63 PASS planning grants no items or recipes and does not skip trials
+QA63 PASS choice kind=0 option=22
+QA63 PASS same choice retry succeeds without reward
+QA63 PASS confirmed choice cannot be replaced
+QA63 PASS planning grants no items or recipes and does not skip trials
+QA63 PASS choice kind=0 option=23
+QA63 PASS same choice retry succeeds without reward
+QA63 PASS confirmed choice cannot be replaced
+QA63 PASS planning grants no items or recipes and does not skip trials
+QA63 PASS choice kind=0 option=24
+QA63 PASS same choice retry succeeds without reward
+QA63 PASS confirmed choice cannot be replaced
+QA63 PASS planning grants no items or recipes and does not skip trials
+QA63 PASS choice kind=0 option=25
+QA63 PASS same choice retry succeeds without reward
+QA63 PASS confirmed choice cannot be replaced
+QA63 PASS planning grants no items or recipes and does not skip trials
+QA63 PASS choice kind=0 option=26
+QA63 PASS same choice retry succeeds without reward
+QA63 PASS confirmed choice cannot be replaced
+QA63 PASS planning grants no items or recipes and does not skip trials
+QA63 PASS choice kind=0 option=27
+QA63 PASS same choice retry succeeds without reward
+QA63 PASS confirmed choice cannot be replaced
+QA63 PASS planning grants no items or recipes and does not skip trials
+QA63 PASS choice kind=0 option=28
+QA63 PASS same choice retry succeeds without reward
+QA63 PASS confirmed choice cannot be replaced
+QA63 PASS planning grants no items or recipes and does not skip trials
+QA63 PASS choice kind=0 option=29
+QA63 PASS same choice retry succeeds without reward
+QA63 PASS confirmed choice cannot be replaced
+QA63 PASS planning grants no items or recipes and does not skip trials
+QA63 PASS choice kind=0 option=30
+QA63 PASS same choice retry succeeds without reward
+QA63 PASS confirmed choice cannot be replaced
+QA63 PASS planning grants no items or recipes and does not skip trials
+QA63 PASS choice kind=0 option=31
+QA63 PASS same choice retry succeeds without reward
+QA63 PASS confirmed choice cannot be replaced
+QA63 PASS planning grants no items or recipes and does not skip trials
+QA63 PASS choice kind=0 option=32
+QA63 PASS same choice retry succeeds without reward
+QA63 PASS confirmed choice cannot be replaced
+QA63 PASS planning grants no items or recipes and does not skip trials
+QA63 PASS choice kind=0 option=33
+QA63 PASS same choice retry succeeds without reward
+QA63 PASS confirmed choice cannot be replaced
+QA63 PASS planning grants no items or recipes and does not skip trials
+QA63 PASS choice kind=0 option=34
+QA63 PASS same choice retry succeeds without reward
+QA63 PASS confirmed choice cannot be replaced
+QA63 PASS planning grants no items or recipes and does not skip trials
+QA63 PASS choice kind=0 option=35
+QA63 PASS same choice retry succeeds without reward
+QA63 PASS confirmed choice cannot be replaced
+QA63 PASS planning grants no items or recipes and does not skip trials
+QA63 PASS choice kind=1 option=0
+QA63 PASS same choice retry succeeds without reward
+QA63 PASS confirmed choice cannot be replaced
+QA63 PASS planning grants no items or recipes and does not skip trials
+QA63 PASS choice kind=1 option=1
+QA63 PASS same choice retry succeeds without reward
+QA63 PASS confirmed choice cannot be replaced
+QA63 PASS planning grants no items or recipes and does not skip trials
+QA63 PASS choice kind=1 option=2
+QA63 PASS same choice retry succeeds without reward
+QA63 PASS confirmed choice cannot be replaced
+QA63 PASS planning grants no items or recipes and does not skip trials
+QA63 PASS choice kind=1 option=3
+QA63 PASS same choice retry succeeds without reward
+QA63 PASS confirmed choice cannot be replaced
+QA63 PASS planning grants no items or recipes and does not skip trials
+QA63 PASS choice kind=2 option=0
+QA63 PASS same choice retry succeeds without reward
+QA63 PASS confirmed choice cannot be replaced
+QA63 PASS planning grants no items or recipes and does not skip trials
+QA63 PASS choice kind=2 option=1
+QA63 PASS same choice retry succeeds without reward
+QA63 PASS confirmed choice cannot be replaced
+QA63 PASS planning grants no items or recipes and does not skip trials
+QA63 PASS choice kind=2 option=2
+QA63 PASS same choice retry succeeds without reward
+QA63 PASS confirmed choice cannot be replaced
+QA63 PASS planning grants no items or recipes and does not skip trials
+QA63 PASS choice kind=2 option=3
+QA63 PASS same choice retry succeeds without reward
+QA63 PASS confirmed choice cannot be replaced
+QA63 PASS planning grants no items or recipes and does not skip trials
+QA63 PASS choice kind=2 option=4
+QA63 PASS same choice retry succeeds without reward
+QA63 PASS confirmed choice cannot be replaced
+QA63 PASS planning grants no items or recipes and does not skip trials
+QA63 PASS choice kind=3 option=0
+QA63 PASS same choice retry succeeds without reward
+QA63 PASS confirmed choice cannot be replaced
+QA63 PASS planning grants no items or recipes and does not skip trials
+QA63 PASS choice kind=3 option=1
+QA63 PASS same choice retry succeeds without reward
+QA63 PASS confirmed choice cannot be replaced
+QA63 PASS planning grants no items or recipes and does not skip trials
+QA63 PASS choice kind=3 option=2
+QA63 PASS same choice retry succeeds without reward
+QA63 PASS confirmed choice cannot be replaced
+QA63 PASS planning grants no items or recipes and does not skip trials
+QA63 PASS choice kind=3 option=3
+QA63 PASS same choice retry succeeds without reward
+QA63 PASS confirmed choice cannot be replaced
+QA63 PASS planning grants no items or recipes and does not skip trials
+QA63 PASS Ronnie cannot reopen the choice authority
+QA63 PASS incomplete plan cannot begin crafting
+QA63 PASS confirm sword with Palomo
+QA63 PASS confirm light armor with Palomo
+QA63 PASS confirm Earth Seal with Palomo
+QA63 PASS confirm shield with Palomo
+QA63 PASS Caella still gates Ronnie crafting
+QA63 PASS Ronnie consumes complete Palomo plan
+QA63 PASS reopening Ronnie duplicates neither loan recipes nor material allowance
+QA63 PASS shield recipe taught
+QA63 PASS shield expands to authored available copper tin and leather
+QA63 STATE chosen stage=50 started=1 option=4 size=2 armor=1 seal=3 first=0
+QA63 ITEM chosen id=1 kind=2 type=0 size=2 durability=10000 boxed=0 equipped=1 flags=1
+QA63 MATRIX_DONE choices=49
+QA63 PASS tutorial crafting before receiving Box
+QA63 PASS actual upstairs station network found
+QA63 PASS native task starts without Magic Box
+QA63 PASS cancel releases reservations without output or material loss
+QA63 PASS cancelled recipe can resume as a new task
+QA63 PASS native crafting transaction completes
+QA63 PASS chosen shield crafted once into personal inventory
+QA63 PASS legacy-style missing shield addition keeps started plan
+QA63 PASS actual upstairs station network found
+QA63 PASS native task starts without Magic Box
+QA63 PASS cancel releases reservations without output or material loss
+QA63 PASS cancelled recipe can resume as a new task
+QA63 PASS native crafting transaction completes
+QA63 PASS chosen shield crafted once into personal inventory
+QA63 PASS legacy-style missing shield addition keeps started plan
+QA63 PASS actual upstairs station network found
+QA63 PASS native task starts without Magic Box
+QA63 PASS cancel releases reservations without output or material loss
+QA63 PASS cancelled recipe can resume as a new task
+QA63 PASS native crafting transaction completes
+QA63 PASS chosen shield crafted once into personal inventory
+QA63 PASS legacy-style missing shield addition keeps started plan
+QA63 PASS actual upstairs station network found
+QA63 PASS native task starts without Magic Box
+QA63 PASS cancel releases reservations without output or material loss
+QA63 PASS cancelled recipe can resume as a new task
+QA63 PASS native crafting transaction completes
+QA63 PASS chosen shield crafted once into personal inventory
+QA63 PASS actual upstairs station network found
+QA63 PASS native task starts without Magic Box
+QA63 PASS cancel releases reservations without output or material loss
+QA63 PASS cancelled recipe can resume as a new task
+QA63 PASS native crafting transaction completes
+QA63 PASS first weapon remains a real crafting task
+QA63 PASS actual upstairs station network found
+QA63 PASS native task starts without Magic Box
+QA63 PASS cancel releases reservations without output or material loss
+QA63 PASS cancelled recipe can resume as a new task
+QA63 PASS native crafting transaction completes
+QA63 PASS chosen armor part recorded
+QA63 PASS actual upstairs station network found
+QA63 PASS native task starts without Magic Box
+QA63 PASS cancel releases reservations without output or material loss
+QA63 PASS cancelled recipe can resume as a new task
+QA63 PASS native crafting transaction completes
+QA63 PASS chosen armor part recorded
+QA63 PASS actual upstairs station network found
+QA63 PASS native task starts without Magic Box
+QA63 PASS cancel releases reservations without output or material loss
+QA63 PASS cancelled recipe can resume as a new task
+QA63 PASS native crafting transaction completes
+QA63 PASS chosen armor part recorded
+QA63 PASS actual upstairs station network found
+QA63 PASS native task starts without Magic Box
+QA63 PASS cancel releases reservations without output or material loss
+QA63 PASS cancelled recipe can resume as a new task
+QA63 PASS native crafting transaction completes
+QA63 PASS chosen armor part recorded
+QA63 PASS actual upstairs station network found
+QA63 PASS native task starts without Magic Box
+QA63 PASS cancel releases reservations without output or material loss
+QA63 PASS cancelled recipe can resume as a new task
+QA63 PASS native crafting transaction completes
+QA63 PASS Palomo Seal reaches Ronnie's crafting plan
+QA63 PASS finish Ronnie and return gathering loan
+QA63 PASS borrowed sword returned
+QA63 STATE crafted stage=60 started=1 option=4 size=2 armor=1 seal=3 first=6
+QA63 ITEM crafted id=11 kind=9 type=2 size=2 durability=0 boxed=0 equipped=0 flags=0
+QA63 ITEM crafted id=10 kind=0 type=1 size=2 durability=40 boxed=0 equipped=0 flags=0
+QA63 ITEM crafted id=9 kind=0 type=1 size=2 durability=40 boxed=0 equipped=0 flags=0
+QA63 ITEM crafted id=8 kind=0 type=1 size=2 durability=40 boxed=0 equipped=0 flags=0
+QA63 ITEM crafted id=7 kind=0 type=1 size=2 durability=40 boxed=0 equipped=0 flags=0
+QA63 ITEM crafted id=6 kind=2 type=0 size=2 durability=10000 boxed=0 equipped=1 flags=2
+QA63 ITEM crafted id=5 kind=1 type=3 size=2 durability=100 boxed=0 equipped=0 flags=0
+QA63 ITEM crafted id=4 kind=1 type=2 size=2 durability=250 boxed=0 equipped=0 flags=0
+QA63 ITEM crafted id=3 kind=1 type=1 size=2 durability=150 boxed=0 equipped=0 flags=0
+QA63 ITEM crafted id=2 kind=1 type=0 size=2 durability=80 boxed=0 equipped=0 flags=0
+QA63 CRAFT_DONE
+Partida guardada.
+QA63 AUDIT_CAPTURE count=12
+QA63 PASS native return begins after requirements
+QA63 PASS cancelled departure does not clean inventory
+QA63 PASS departure can be confirmed again
+MAP02 - Alcantarillas — el laberinto
+Partida guardada.
+QA63 PASS narrative crossing reaches MAP02
+QA63 PASS owned Magic Box persists
+QA63 PASS all owned equipment survives without duplication; loans returned
+QA63 AUDIT_DETAIL id=14 size=4/4 durability=37/37 essence=3/3 weight=1.0000/1.0000 equipped=0/0 box=1/1
+QA63 PASS identity condition sizing and location retained id=14
+QA63 PASS identity condition sizing and location retained id=13
+QA63 PASS identity condition sizing and location retained id=11
+QA63 PASS identity condition sizing and location retained id=10
+QA63 PASS identity condition sizing and location retained id=9
+QA63 PASS identity condition sizing and location retained id=8
+QA63 PASS identity condition sizing and location retained id=7
+QA63 PASS identity condition sizing and location retained id=6
+QA63 PASS identity condition sizing and location retained id=5
+QA63 PASS identity condition sizing and location retained id=4
+QA63 PASS identity condition sizing and location retained id=3
+QA63 PASS identity condition sizing and location retained id=2
+QA63 PASS ammunition materials coins and consumables removed
+QA63 PASS repeated exit cannot duplicate equipment
+QA63 EXIT_DONE count=12
+QA63 PASS narrative crossing reaches MAP02
+QA63 PASS owned Magic Box persists
+QA63 PASS all owned equipment survives without duplication; loans returned
+QA63 AUDIT_DETAIL id=14 size=4/4 durability=37/37 essence=3/3 weight=1.0000/1.0000 equipped=0/0 box=1/1
+QA63 PASS identity condition sizing and location retained id=14
+QA63 PASS identity condition sizing and location retained id=13
+QA63 PASS identity condition sizing and location retained id=11
+QA63 PASS identity condition sizing and location retained id=10
+QA63 PASS identity condition sizing and location retained id=9
+QA63 PASS identity condition sizing and location retained id=8
+QA63 PASS identity condition sizing and location retained id=7
+QA63 PASS identity condition sizing and location retained id=6
+QA63 PASS identity condition sizing and location retained id=5
+QA63 PASS identity condition sizing and location retained id=4
+QA63 PASS identity condition sizing and location retained id=3
+QA63 PASS identity condition sizing and location retained id=2
+QA63 PASS ammunition materials coins and consumables removed
+QA63 PASS repeated exit cannot duplicate equipment
+QA63 EXIT_DONE count=12
+QA63 PASS narrative crossing reaches MAP02
+QA63 PASS owned Magic Box persists
+QA63 PASS all owned equipment survives without duplication; loans returned
+QA63 AUDIT_DETAIL id=14 size=4/4 durability=37/37 essence=3/3 weight=1.0000/1.0000 equipped=0/0 box=1/1
+QA63 PASS identity condition sizing and location retained id=14
+QA63 PASS identity condition sizing and location retained id=13
+QA63 PASS identity condition sizing and location retained id=11
+QA63 PASS identity condition sizing and location retained id=10
+QA63 PASS identity condition sizing and location retained id=9
+QA63 PASS identity condition sizing and location retained id=8
+QA63 PASS identity condition sizing and location retained id=7
+QA63 PASS identity condition sizing and location retained id=6
+QA63 PASS identity condition sizing and location retained id=5
+QA63 PASS identity condition sizing and location retained id=4
+QA63 PASS identity condition sizing and location retained id=3
+QA63 PASS identity condition sizing and location retained id=2
+QA63 PASS ammunition materials coins and consumables removed
+QA63 PASS repeated exit cannot duplicate equipment
+QA63 EXIT_DONE count=12
+QA63 PASS narrative crossing reaches MAP02
+QA63 PASS owned Magic Box persists
+QA63 PASS all owned equipment survives without duplication; loans returned
+QA63 AUDIT_DETAIL id=14 size=4/4 durability=37/37 essence=3/3 weight=1.0000/1.0000 equipped=0/0 box=1/1
+QA63 PASS identity condition sizing and location retained id=14
+QA63 PASS identity condition sizing and location retained id=13
+QA63 PASS identity condition sizing and location retained id=11
+QA63 PASS identity condition sizing and location retained id=10
+QA63 PASS identity condition sizing and location retained id=9
+QA63 PASS identity condition sizing and location retained id=8
+QA63 PASS identity condition sizing and location retained id=7
+QA63 PASS identity condition sizing and location retained id=6
+QA63 PASS identity condition sizing and location retained id=5
+QA63 PASS identity condition sizing and location retained id=4
+QA63 PASS identity condition sizing and location retained id=3
+QA63 PASS identity condition sizing and location retained id=2
+QA63 PASS ammunition materials coins and consumables removed
+QA63 PASS repeated exit cannot duplicate equipment
+QA63 EXIT_DONE count=12
+Partida guardada.

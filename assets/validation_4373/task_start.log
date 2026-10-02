@@ -1,0 +1,216 @@
+GZDoom version g4.14.2
+adding src, 6138 lumps
+adding build/issue63_qa, 3 lumps
+MAP01 - La mansión
+QA63 PASS choice kind=0 option=0
+QA63 PASS same choice retry succeeds without reward
+QA63 PASS confirmed choice cannot be replaced
+QA63 PASS planning grants no items or recipes and does not skip trials
+QA63 PASS choice kind=0 option=1
+QA63 PASS same choice retry succeeds without reward
+QA63 PASS confirmed choice cannot be replaced
+QA63 PASS planning grants no items or recipes and does not skip trials
+QA63 PASS choice kind=0 option=2
+QA63 PASS same choice retry succeeds without reward
+QA63 PASS confirmed choice cannot be replaced
+QA63 PASS planning grants no items or recipes and does not skip trials
+QA63 PASS choice kind=0 option=3
+QA63 PASS same choice retry succeeds without reward
+QA63 PASS confirmed choice cannot be replaced
+QA63 PASS planning grants no items or recipes and does not skip trials
+QA63 PASS choice kind=0 option=4
+QA63 PASS same choice retry succeeds without reward
+QA63 PASS confirmed choice cannot be replaced
+QA63 PASS planning grants no items or recipes and does not skip trials
+QA63 PASS choice kind=0 option=5
+QA63 PASS same choice retry succeeds without reward
+QA63 PASS confirmed choice cannot be replaced
+QA63 PASS planning grants no items or recipes and does not skip trials
+QA63 PASS choice kind=0 option=6
+QA63 PASS same choice retry succeeds without reward
+QA63 PASS confirmed choice cannot be replaced
+QA63 PASS planning grants no items or recipes and does not skip trials
+QA63 PASS choice kind=0 option=7
+QA63 PASS same choice retry succeeds without reward
+QA63 PASS confirmed choice cannot be replaced
+QA63 PASS planning grants no items or recipes and does not skip trials
+QA63 PASS choice kind=0 option=8
+QA63 PASS same choice retry succeeds without reward
+QA63 PASS confirmed choice cannot be replaced
+QA63 PASS planning grants no items or recipes and does not skip trials
+QA63 PASS choice kind=0 option=9
+QA63 PASS same choice retry succeeds without reward
+QA63 PASS confirmed choice cannot be replaced
+QA63 PASS planning grants no items or recipes and does not skip trials
+QA63 PASS choice kind=0 option=10
+QA63 PASS same choice retry succeeds without reward
+QA63 PASS confirmed choice cannot be replaced
+QA63 PASS planning grants no items or recipes and does not skip trials
+QA63 PASS choice kind=0 option=11
+QA63 PASS same choice retry succeeds without reward
+QA63 PASS confirmed choice cannot be replaced
+QA63 PASS planning grants no items or recipes and does not skip trials
+QA63 PASS choice kind=0 option=12
+QA63 PASS same choice retry succeeds without reward
+QA63 PASS confirmed choice cannot be replaced
+QA63 PASS planning grants no items or recipes and does not skip trials
+QA63 PASS choice kind=0 option=13
+QA63 PASS same choice retry succeeds without reward
+QA63 PASS confirmed choice cannot be replaced
+QA63 PASS planning grants no items or recipes and does not skip trials
+QA63 PASS choice kind=0 option=14
+QA63 PASS same choice retry succeeds without reward
+QA63 PASS confirmed choice cannot be replaced
+QA63 PASS planning grants no items or recipes and does not skip trials
+QA63 PASS choice kind=0 option=15
+QA63 PASS same choice retry succeeds without reward
+QA63 PASS confirmed choice cannot be replaced
+QA63 PASS planning grants no items or recipes and does not skip trials
+QA63 PASS choice kind=0 option=16
+QA63 PASS same choice retry succeeds without reward
+QA63 PASS confirmed choice cannot be replaced
+QA63 PASS planning grants no items or recipes and does not skip trials
+QA63 PASS choice kind=0 option=17
+QA63 PASS same choice retry succeeds without reward
+QA63 PASS confirmed choice cannot be replaced
+QA63 PASS planning grants no items or recipes and does not skip trials
+QA63 PASS choice kind=0 option=18
+QA63 PASS same choice retry succeeds without reward
+QA63 PASS confirmed choice cannot be replaced
+QA63 PASS planning grants no items or recipes and does not skip trials
+QA63 PASS choice kind=0 option=19
+QA63 PASS same choice retry succeeds without reward
+QA63 PASS confirmed choice cannot be replaced
+QA63 PASS planning grants no items or recipes and does not skip trials
+QA63 PASS choice kind=0 option=20
+QA63 PASS same choice retry succeeds without reward
+QA63 PASS confirmed choice cannot be replaced
+QA63 PASS planning grants no items or recipes and does not skip trials
+QA63 PASS choice kind=0 option=21
+QA63 PASS same choice retry succeeds without reward
+QA63 PASS confirmed choice cannot be replaced
+QA63 PASS planning grants no items or recipes and does not skip trials
+QA63 PASS choice kind=0 option=22
+QA63 PASS same choice retry succeeds without reward
+QA63 PASS confirmed choice cannot be replaced
+QA63 PASS planning grants no items or recipes and does not skip trials
+QA63 PASS choice kind=0 option=23
+QA63 PASS same choice retry succeeds without reward
+QA63 PASS confirmed choice cannot be replaced
+QA63 PASS planning grants no items or recipes and does not skip trials
+QA63 PASS choice kind=0 option=24
+QA63 PASS same choice retry succeeds without reward
+QA63 PASS confirmed choice cannot be replaced
+QA63 PASS planning grants no items or recipes and does not skip trials
+QA63 PASS choice kind=0 option=25
+QA63 PASS same choice retry succeeds without reward
+QA63 PASS confirmed choice cannot be replaced
+QA63 PASS planning grants no items or recipes and does not skip trials
+QA63 PASS choice kind=0 option=26
+QA63 PASS same choice retry succeeds without reward
+QA63 PASS confirmed choice cannot be replaced
+QA63 PASS planning grants no items or recipes and does not skip trials
+QA63 PASS choice kind=0 option=27
+QA63 PASS same choice retry succeeds without reward
+QA63 PASS confirmed choice cannot be replaced
+QA63 PASS planning grants no items or recipes and does not skip trials
+QA63 PASS choice kind=0 option=28
+QA63 PASS same choice retry succeeds without reward
+QA63 PASS confirmed choice cannot be replaced
+QA63 PASS planning grants no items or recipes and does not skip trials
+QA63 PASS choice kind=0 option=29
+QA63 PASS same choice retry succeeds without reward
+QA63 PASS confirmed choice cannot be replaced
+QA63 PASS planning grants no items or recipes and does not skip trials
+QA63 PASS choice kind=0 option=30
+QA63 PASS same choice retry succeeds without reward
+QA63 PASS confirmed choice cannot be replaced
+QA63 PASS planning grants no items or recipes and does not skip trials
+QA63 PASS choice kind=0 option=31
+QA63 PASS same choice retry succeeds without reward
+QA63 PASS confirmed choice cannot be replaced
+QA63 PASS planning grants no items or recipes and does not skip trials
+QA63 PASS choice kind=0 option=32
+QA63 PASS same choice retry succeeds without reward
+QA63 PASS confirmed choice cannot be replaced
+QA63 PASS planning grants no items or recipes and does not skip trials
+QA63 PASS choice kind=0 option=33
+QA63 PASS same choice retry succeeds without reward
+QA63 PASS confirmed choice cannot be replaced
+QA63 PASS planning grants no items or recipes and does not skip trials
+QA63 PASS choice kind=0 option=34
+QA63 PASS same choice retry succeeds without reward
+QA63 PASS confirmed choice cannot be replaced
+QA63 PASS planning grants no items or recipes and does not skip trials
+QA63 PASS choice kind=0 option=35
+QA63 PASS same choice retry succeeds without reward
+QA63 PASS confirmed choice cannot be replaced
+QA63 PASS planning grants no items or recipes and does not skip trials
+QA63 PASS choice kind=1 option=0
+QA63 PASS same choice retry succeeds without reward
+QA63 PASS confirmed choice cannot be replaced
+QA63 PASS planning grants no items or recipes and does not skip trials
+QA63 PASS choice kind=1 option=1
+QA63 PASS same choice retry succeeds without reward
+QA63 PASS confirmed choice cannot be replaced
+QA63 PASS planning grants no items or recipes and does not skip trials
+QA63 PASS choice kind=1 option=2
+QA63 PASS same choice retry succeeds without reward
+QA63 PASS confirmed choice cannot be replaced
+QA63 PASS planning grants no items or recipes and does not skip trials
+QA63 PASS choice kind=1 option=3
+QA63 PASS same choice retry succeeds without reward
+QA63 PASS confirmed choice cannot be replaced
+QA63 PASS planning grants no items or recipes and does not skip trials
+QA63 PASS choice kind=2 option=0
+QA63 PASS same choice retry succeeds without reward
+QA63 PASS confirmed choice cannot be replaced
+QA63 PASS planning grants no items or recipes and does not skip trials
+QA63 PASS choice kind=2 option=1
+QA63 PASS same choice retry succeeds without reward
+QA63 PASS confirmed choice cannot be replaced
+QA63 PASS planning grants no items or recipes and does not skip trials
+QA63 PASS choice kind=2 option=2
+QA63 PASS same choice retry succeeds without reward
+QA63 PASS confirmed choice cannot be replaced
+QA63 PASS planning grants no items or recipes and does not skip trials
+QA63 PASS choice kind=2 option=3
+QA63 PASS same choice retry succeeds without reward
+QA63 PASS confirmed choice cannot be replaced
+QA63 PASS planning grants no items or recipes and does not skip trials
+QA63 PASS choice kind=2 option=4
+QA63 PASS same choice retry succeeds without reward
+QA63 PASS confirmed choice cannot be replaced
+QA63 PASS planning grants no items or recipes and does not skip trials
+QA63 PASS choice kind=3 option=0
+QA63 PASS same choice retry succeeds without reward
+QA63 PASS confirmed choice cannot be replaced
+QA63 PASS planning grants no items or recipes and does not skip trials
+QA63 PASS choice kind=3 option=1
+QA63 PASS same choice retry succeeds without reward
+QA63 PASS confirmed choice cannot be replaced
+QA63 PASS planning grants no items or recipes and does not skip trials
+QA63 PASS choice kind=3 option=2
+QA63 PASS same choice retry succeeds without reward
+QA63 PASS confirmed choice cannot be replaced
+QA63 PASS planning grants no items or recipes and does not skip trials
+QA63 PASS choice kind=3 option=3
+QA63 PASS same choice retry succeeds without reward
+QA63 PASS confirmed choice cannot be replaced
+QA63 PASS planning grants no items or recipes and does not skip trials
+QA63 PASS Ronnie cannot reopen the choice authority
+QA63 PASS incomplete plan cannot begin crafting
+QA63 PASS confirm sword with Palomo
+QA63 PASS confirm light armor with Palomo
+QA63 PASS confirm Earth Seal with Palomo
+QA63 PASS confirm shield with Palomo
+QA63 PASS Caella still gates Ronnie crafting
+QA63 PASS Ronnie consumes complete Palomo plan
+QA63 PASS reopening Ronnie duplicates neither loan recipes nor material allowance
+QA63 PASS shield recipe taught
+QA63 PASS shield expands to authored available copper tin and leather
+QA63 STATE chosen stage=50 started=1 option=4 size=2 armor=1 seal=3 first=0
+QA63 ITEM chosen id=1 kind=2 type=0 size=2 durability=10000 boxed=0 equipped=1 flags=1
+QA63 MATRIX_DONE choices=49
+QA63 PASS pending shield task starts before save
+Partida guardada.

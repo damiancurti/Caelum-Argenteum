@@ -909,1168 +909,79 @@ conversation
         ifitem { item = "CaelumM00MagicCompleteToken"; amount = 1; }
         link = "ronnie_magic_ready";
     }
-    page
-    {
-        pagename = "ronnie_magic_ready";
-        userstring = "ronnie_magic_ready";
-        name = "$CA_RONNIE_NAME";
-        dialog = "$CA_M01_RONNIE_CHOOSE";
+    page { pagename = "ronnie_magic_ready"; userstring = "ronnie_magic_ready";
+        name = "$CA_RONNIE_NAME"; dialog = "$CA_LOADOUT_RONNIE";
         goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
-        ifitem { item = "CaelumM00RonnieStartedToken"; amount = 1; }
-        link = "ronnie_collect";
-        choice
-        {
-            text = "$CA_M01_FAMILY_0";
-            nextpage = "ronnie_family_0";
-            closedialog = false;
-        }
-        choice
-        {
-            text = "$CA_M01_FAMILY_1";
-            nextpage = "ronnie_family_1";
-            closedialog = false;
-        }
-        choice
-        {
-            text = "$CA_M01_FAMILY_2";
-            nextpage = "ronnie_family_2";
-            closedialog = false;
-        }
-        choice
-        {
-            text = "$CA_M01_FAMILY_3";
-            nextpage = "ronnie_family_3";
-            closedialog = false;
-        }
-        choice
-        {
-            text = "$CA_M01_FAMILY_4";
-            nextpage = "ronnie_family_4";
-            closedialog = false;
-        }
+        ifitem { item = "CaelumM00RonnieStartedToken"; amount = 1; } link = "ronnie_collect";
+        choice { text = "$CA_LOADOUT_START"; giveitem = "CaelumM00StartRonnieAction";
+            nextpage = "ronnie_collect"; closedialog = false;
+            require { item = "CaelumM00LoadoutReadyToken"; amount = 1; } }
     }
-    page
-    {
-        pagename = "ronnie_family_0";
-        userstring = "ronnie_family_0";
-        name = "$CA_RONNIE_NAME";
-        dialog = "$CA_M01_RONNIE_SELECT_HELP";
-        goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
-        choice
-        {
-            text = "$CA_M01_WEAPON_OPTION_0";
-            nextpage = "ronnie_weapon_0";
-            closedialog = false;
-        }
-        choice
-        {
-            text = "$CA_M01_WEAPON_OPTION_1";
-            nextpage = "ronnie_weapon_1";
-            closedialog = false;
-        }
-        choice
-        {
-            text = "$CA_M01_WEAPON_OPTION_2";
-            nextpage = "ronnie_weapon_2";
-            closedialog = false;
-        }
-        choice
-        {
-            text = "$CA_M01_WEAPON_OPTION_3";
-            nextpage = "ronnie_weapon_3";
-            closedialog = false;
-        }
-        choice
-        {
-            text = "$CA_M01_RONNIE_BACK";
-            nextpage = "ronnie_magic_ready";
-            closedialog = false;
-        }
-    }
-    page
-    {
-        pagename = "ronnie_family_1";
-        userstring = "ronnie_family_1";
-        name = "$CA_RONNIE_NAME";
-        dialog = "$CA_M01_RONNIE_SELECT_HELP";
-        goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
-        choice
-        {
-            text = "$CA_M01_WEAPON_OPTION_4";
-            nextpage = "ronnie_weapon_4";
-            closedialog = false;
-        }
-        choice
-        {
-            text = "$CA_M01_WEAPON_OPTION_5";
-            nextpage = "ronnie_weapon_5";
-            closedialog = false;
-        }
-        choice
-        {
-            text = "$CA_M01_WEAPON_OPTION_6";
-            nextpage = "ronnie_weapon_6";
-            closedialog = false;
-        }
-        choice
-        {
-            text = "$CA_M01_WEAPON_OPTION_7";
-            nextpage = "ronnie_weapon_7";
-            closedialog = false;
-        }
-        choice
-        {
-            text = "$CA_M01_RONNIE_BACK";
-            nextpage = "ronnie_magic_ready";
-            closedialog = false;
-        }
-    }
-    page
-    {
-        pagename = "ronnie_family_2";
-        userstring = "ronnie_family_2";
-        name = "$CA_RONNIE_NAME";
-        dialog = "$CA_M01_RONNIE_SELECT_HELP";
-        goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
-        choice
-        {
-            text = "$CA_M01_WEAPON_OPTION_8";
-            nextpage = "ronnie_weapon_8";
-            closedialog = false;
-        }
-        choice
-        {
-            text = "$CA_M01_WEAPON_OPTION_9";
-            nextpage = "ronnie_weapon_9";
-            closedialog = false;
-        }
-        choice
-        {
-            text = "$CA_M01_WEAPON_OPTION_10";
-            nextpage = "ronnie_weapon_10";
-            closedialog = false;
-        }
-        choice
-        {
-            text = "$CA_M01_WEAPON_OPTION_11";
-            nextpage = "ronnie_weapon_11";
-            closedialog = false;
-        }
-        choice
-        {
-            text = "$CA_M01_RONNIE_BACK";
-            nextpage = "ronnie_magic_ready";
-            closedialog = false;
-        }
-    }
-    page
-    {
-        pagename = "ronnie_family_3";
-        userstring = "ronnie_family_3";
-        name = "$CA_RONNIE_NAME";
-        dialog = "$CA_M01_RONNIE_SELECT_HELP";
-        goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
-        choice
-        {
-            text = "$CA_M01_WEAPON_OPTION_12";
-            nextpage = "ronnie_weapon_12";
-            closedialog = false;
-        }
-        choice
-        {
-            text = "$CA_M01_WEAPON_OPTION_13";
-            nextpage = "ronnie_weapon_13";
-            closedialog = false;
-        }
-        choice
-        {
-            text = "$CA_M01_WEAPON_OPTION_14";
-            nextpage = "ronnie_weapon_14";
-            closedialog = false;
-        }
-        choice
-        {
-            text = "$CA_M01_WEAPON_OPTION_15";
-            nextpage = "ronnie_weapon_15";
-            closedialog = false;
-        }
-        choice
-        {
-            text = "$CA_M01_RONNIE_BACK";
-            nextpage = "ronnie_magic_ready";
-            closedialog = false;
-        }
-    }
-    page
-    {
-        pagename = "ronnie_family_4";
-        userstring = "ronnie_family_4";
-        name = "$CA_RONNIE_NAME";
-        dialog = "$CA_M01_RONNIE_SELECT_HELP";
-        goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
-        choice
-        {
-            text = "$CA_M01_WEAPON_OPTION_16";
-            nextpage = "ronnie_weapon_16";
-            closedialog = false;
-        }
-        choice
-        {
-            text = "$CA_M01_WEAPON_OPTION_17";
-            nextpage = "ronnie_weapon_17";
-            closedialog = false;
-        }
-        choice
-        {
-            text = "$CA_M01_WEAPON_OPTION_18";
-            nextpage = "ronnie_weapon_18";
-            closedialog = false;
-        }
-        choice
-        {
-            text = "$CA_M01_WEAPON_OPTION_19";
-            nextpage = "ronnie_weapon_19";
-            closedialog = false;
-        }
-        choice
-        {
-            text = "$CA_M01_RONNIE_BACK";
-            nextpage = "ronnie_magic_ready";
-            closedialog = false;
-        }
-    }
-    page
-    {
-        pagename = "ronnie_weapon_0";
-        userstring = "ronnie_weapon_0";
-        name = "$CA_RONNIE_NAME";
-        dialog = "$CA_M01_WEAPON_DESC_0";
-        goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
-        choice
-        {
-            text = "$CA_M01_RONNIE_CONFIRM";
-            nextpage = "ronnie_armor";
-            closedialog = false;
-            giveitem = "CaelumM00ChooseStarter0";
-        }
-        choice
-        {
-            text = "$CA_M01_RONNIE_BACK";
-            nextpage = "ronnie_magic_ready";
-            closedialog = false;
-        }
-    }
-    page
-    {
-        pagename = "ronnie_weapon_1";
-        userstring = "ronnie_weapon_1";
-        name = "$CA_RONNIE_NAME";
-        dialog = "$CA_M01_WEAPON_DESC_1";
-        goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
-        choice
-        {
-            text = "$CA_M01_RONNIE_CONFIRM";
-            nextpage = "ronnie_armor";
-            closedialog = false;
-            giveitem = "CaelumM00ChooseStarter1";
-        }
-        choice
-        {
-            text = "$CA_M01_RONNIE_BACK";
-            nextpage = "ronnie_magic_ready";
-            closedialog = false;
-        }
-    }
-    page
-    {
-        pagename = "ronnie_weapon_2";
-        userstring = "ronnie_weapon_2";
-        name = "$CA_RONNIE_NAME";
-        dialog = "$CA_M01_WEAPON_DESC_2";
-        goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
-        choice
-        {
-            text = "$CA_M01_RONNIE_CONFIRM";
-            nextpage = "ronnie_armor";
-            closedialog = false;
-            giveitem = "CaelumM00ChooseStarter2";
-        }
-        choice
-        {
-            text = "$CA_M01_RONNIE_BACK";
-            nextpage = "ronnie_magic_ready";
-            closedialog = false;
-        }
-    }
-    page
-    {
-        pagename = "ronnie_weapon_3";
-        userstring = "ronnie_weapon_3";
-        name = "$CA_RONNIE_NAME";
-        dialog = "$CA_M01_WEAPON_DESC_3";
-        goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
-        choice
-        {
-            text = "$CA_M01_RONNIE_CONFIRM";
-            nextpage = "ronnie_armor";
-            closedialog = false;
-            giveitem = "CaelumM00ChooseStarter3";
-        }
-        choice
-        {
-            text = "$CA_M01_RONNIE_BACK";
-            nextpage = "ronnie_magic_ready";
-            closedialog = false;
-        }
-    }
-    page
-    {
-        pagename = "ronnie_weapon_4";
-        userstring = "ronnie_weapon_4";
-        name = "$CA_RONNIE_NAME";
-        dialog = "$CA_M01_WEAPON_DESC_4";
-        goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
-        choice
-        {
-            text = "$CA_M01_RONNIE_CONFIRM";
-            nextpage = "ronnie_armor";
-            closedialog = false;
-            giveitem = "CaelumM00ChooseStarter4";
-        }
-        choice
-        {
-            text = "$CA_M01_RONNIE_BACK";
-            nextpage = "ronnie_magic_ready";
-            closedialog = false;
-        }
-    }
-    page
-    {
-        pagename = "ronnie_weapon_5";
-        userstring = "ronnie_weapon_5";
-        name = "$CA_RONNIE_NAME";
-        dialog = "$CA_M01_WEAPON_DESC_5";
-        goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
-        choice
-        {
-            text = "$CA_M01_RONNIE_CONFIRM";
-            nextpage = "ronnie_armor";
-            closedialog = false;
-            giveitem = "CaelumM00ChooseStarter5";
-        }
-        choice
-        {
-            text = "$CA_M01_RONNIE_BACK";
-            nextpage = "ronnie_magic_ready";
-            closedialog = false;
-        }
-    }
-    page
-    {
-        pagename = "ronnie_weapon_6";
-        userstring = "ronnie_weapon_6";
-        name = "$CA_RONNIE_NAME";
-        dialog = "$CA_M01_WEAPON_DESC_6";
-        goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
-        choice
-        {
-            text = "$CA_M01_RONNIE_CONFIRM";
-            nextpage = "ronnie_armor";
-            closedialog = false;
-            giveitem = "CaelumM00ChooseStarter6";
-        }
-        choice
-        {
-            text = "$CA_M01_RONNIE_BACK";
-            nextpage = "ronnie_magic_ready";
-            closedialog = false;
-        }
-    }
-    page
-    {
-        pagename = "ronnie_weapon_7";
-        userstring = "ronnie_weapon_7";
-        name = "$CA_RONNIE_NAME";
-        dialog = "$CA_M01_WEAPON_DESC_7";
-        goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
-        choice
-        {
-            text = "$CA_M01_RONNIE_CONFIRM";
-            nextpage = "ronnie_armor";
-            closedialog = false;
-            giveitem = "CaelumM00ChooseStarter7";
-        }
-        choice
-        {
-            text = "$CA_M01_RONNIE_BACK";
-            nextpage = "ronnie_magic_ready";
-            closedialog = false;
-        }
-    }
-    page
-    {
-        pagename = "ronnie_weapon_8";
-        userstring = "ronnie_weapon_8";
-        name = "$CA_RONNIE_NAME";
-        dialog = "$CA_M01_WEAPON_DESC_8";
-        goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
-        choice
-        {
-            text = "$CA_M01_RONNIE_CONFIRM";
-            nextpage = "ronnie_armor";
-            closedialog = false;
-            giveitem = "CaelumM00ChooseStarter8";
-        }
-        choice
-        {
-            text = "$CA_M01_RONNIE_BACK";
-            nextpage = "ronnie_magic_ready";
-            closedialog = false;
-        }
-    }
-    page
-    {
-        pagename = "ronnie_weapon_9";
-        userstring = "ronnie_weapon_9";
-        name = "$CA_RONNIE_NAME";
-        dialog = "$CA_M01_WEAPON_DESC_9";
-        goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
-        choice
-        {
-            text = "$CA_M01_RONNIE_CONFIRM";
-            nextpage = "ronnie_armor";
-            closedialog = false;
-            giveitem = "CaelumM00ChooseStarter9";
-        }
-        choice
-        {
-            text = "$CA_M01_RONNIE_BACK";
-            nextpage = "ronnie_magic_ready";
-            closedialog = false;
-        }
-    }
-    page
-    {
-        pagename = "ronnie_weapon_10";
-        userstring = "ronnie_weapon_10";
-        name = "$CA_RONNIE_NAME";
-        dialog = "$CA_M01_WEAPON_DESC_10";
-        goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
-        choice
-        {
-            text = "$CA_M01_RONNIE_CONFIRM";
-            nextpage = "ronnie_armor";
-            closedialog = false;
-            giveitem = "CaelumM00ChooseStarter10";
-        }
-        choice
-        {
-            text = "$CA_M01_RONNIE_BACK";
-            nextpage = "ronnie_magic_ready";
-            closedialog = false;
-        }
-    }
-    page
-    {
-        pagename = "ronnie_weapon_11";
-        userstring = "ronnie_weapon_11";
-        name = "$CA_RONNIE_NAME";
-        dialog = "$CA_M01_WEAPON_DESC_11";
-        goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
-        choice
-        {
-            text = "$CA_M01_RONNIE_CONFIRM";
-            nextpage = "ronnie_armor";
-            closedialog = false;
-            giveitem = "CaelumM00ChooseStarter11";
-        }
-        choice
-        {
-            text = "$CA_M01_RONNIE_BACK";
-            nextpage = "ronnie_magic_ready";
-            closedialog = false;
-        }
-    }
-    page
-    {
-        pagename = "ronnie_weapon_12";
-        userstring = "ronnie_weapon_12";
-        name = "$CA_RONNIE_NAME";
-        dialog = "$CA_M01_WEAPON_DESC_12";
-        goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
-        choice
-        {
-            text = "$CA_M01_RONNIE_CONFIRM";
-            nextpage = "ronnie_armor";
-            closedialog = false;
-            giveitem = "CaelumM00ChooseStarter12";
-        }
-        choice
-        {
-            text = "$CA_M01_RONNIE_BACK";
-            nextpage = "ronnie_magic_ready";
-            closedialog = false;
-        }
-    }
-    page
-    {
-        pagename = "ronnie_weapon_13";
-        userstring = "ronnie_weapon_13";
-        name = "$CA_RONNIE_NAME";
-        dialog = "$CA_M01_WEAPON_DESC_13";
-        goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
-        choice
-        {
-            text = "$CA_M01_RONNIE_CONFIRM";
-            nextpage = "ronnie_armor";
-            closedialog = false;
-            giveitem = "CaelumM00ChooseStarter13";
-        }
-        choice
-        {
-            text = "$CA_M01_RONNIE_BACK";
-            nextpage = "ronnie_magic_ready";
-            closedialog = false;
-        }
-    }
-    page
-    {
-        pagename = "ronnie_weapon_14";
-        userstring = "ronnie_weapon_14";
-        name = "$CA_RONNIE_NAME";
-        dialog = "$CA_M01_WEAPON_DESC_14";
-        goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
-        choice
-        {
-            text = "$CA_M01_RONNIE_CONFIRM";
-            nextpage = "ronnie_armor";
-            closedialog = false;
-            giveitem = "CaelumM00ChooseStarter14";
-        }
-        choice
-        {
-            text = "$CA_M01_RONNIE_BACK";
-            nextpage = "ronnie_magic_ready";
-            closedialog = false;
-        }
-    }
-    page
-    {
-        pagename = "ronnie_weapon_15";
-        userstring = "ronnie_weapon_15";
-        name = "$CA_RONNIE_NAME";
-        dialog = "$CA_M01_WEAPON_DESC_15";
-        goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
-        choice
-        {
-            text = "$CA_M01_RONNIE_CONFIRM";
-            nextpage = "ronnie_armor";
-            closedialog = false;
-            giveitem = "CaelumM00ChooseStarter15";
-        }
-        choice
-        {
-            text = "$CA_M01_RONNIE_BACK";
-            nextpage = "ronnie_magic_ready";
-            closedialog = false;
-        }
-    }
-    page
-    {
-        pagename = "ronnie_weapon_16";
-        userstring = "ronnie_weapon_16";
-        name = "$CA_RONNIE_NAME";
-        dialog = "$CA_M01_WEAPON_DESC_16";
-        goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
-        choice
-        {
-            text = "$CA_M01_ELEMENT_0";
-            nextpage = "ronnie_magic_16_0";
-            closedialog = false;
-        }
-        choice
-        {
-            text = "$CA_M01_ELEMENT_1";
-            nextpage = "ronnie_magic_16_1";
-            closedialog = false;
-        }
-        choice
-        {
-            text = "$CA_M01_ELEMENT_2";
-            nextpage = "ronnie_magic_16_2";
-            closedialog = false;
-        }
-        choice
-        {
-            text = "$CA_M01_ELEMENT_3";
-            nextpage = "ronnie_magic_16_3";
-            closedialog = false;
-        }
-        choice
-        {
-            text = "$CA_M01_ELEMENT_4";
-            nextpage = "ronnie_magic_16_4";
-            closedialog = false;
-        }
-        choice
-        {
-            text = "$CA_M01_RONNIE_BACK";
-            nextpage = "ronnie_magic_ready";
-            closedialog = false;
-        }
-    }
-    page
-    {
-        pagename = "ronnie_magic_16_0";
-        userstring = "ronnie_magic_16_0";
-        name = "$CA_RONNIE_NAME";
-        dialog = "$CA_M01_MAGIC_DESC_16_0";
-        goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
-        choice
-        {
-            text = "$CA_M01_RONNIE_CONFIRM";
-            nextpage = "ronnie_armor";
-            closedialog = false;
-            giveitem = "CaelumM00ChooseStarter16";
-        }
-        choice
-        {
-            text = "$CA_M01_RONNIE_BACK";
-            nextpage = "ronnie_magic_ready";
-            closedialog = false;
-        }
-    }
-    page
-    {
-        pagename = "ronnie_magic_16_1";
-        userstring = "ronnie_magic_16_1";
-        name = "$CA_RONNIE_NAME";
-        dialog = "$CA_M01_MAGIC_DESC_16_1";
-        goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
-        choice
-        {
-            text = "$CA_M01_RONNIE_CONFIRM";
-            nextpage = "ronnie_armor";
-            closedialog = false;
-            giveitem = "CaelumM00ChooseStarter17";
-        }
-        choice
-        {
-            text = "$CA_M01_RONNIE_BACK";
-            nextpage = "ronnie_magic_ready";
-            closedialog = false;
-        }
-    }
-    page
-    {
-        pagename = "ronnie_magic_16_2";
-        userstring = "ronnie_magic_16_2";
-        name = "$CA_RONNIE_NAME";
-        dialog = "$CA_M01_MAGIC_DESC_16_2";
-        goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
-        choice
-        {
-            text = "$CA_M01_RONNIE_CONFIRM";
-            nextpage = "ronnie_armor";
-            closedialog = false;
-            giveitem = "CaelumM00ChooseStarter18";
-        }
-        choice
-        {
-            text = "$CA_M01_RONNIE_BACK";
-            nextpage = "ronnie_magic_ready";
-            closedialog = false;
-        }
-    }
-    page
-    {
-        pagename = "ronnie_magic_16_3";
-        userstring = "ronnie_magic_16_3";
-        name = "$CA_RONNIE_NAME";
-        dialog = "$CA_M01_MAGIC_DESC_16_3";
-        goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
-        choice
-        {
-            text = "$CA_M01_RONNIE_CONFIRM";
-            nextpage = "ronnie_armor";
-            closedialog = false;
-            giveitem = "CaelumM00ChooseStarter19";
-        }
-        choice
-        {
-            text = "$CA_M01_RONNIE_BACK";
-            nextpage = "ronnie_magic_ready";
-            closedialog = false;
-        }
-    }
-    page
-    {
-        pagename = "ronnie_magic_16_4";
-        userstring = "ronnie_magic_16_4";
-        name = "$CA_RONNIE_NAME";
-        dialog = "$CA_M01_MAGIC_DESC_16_4";
-        goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
-        choice
-        {
-            text = "$CA_M01_RONNIE_CONFIRM";
-            nextpage = "ronnie_armor";
-            closedialog = false;
-            giveitem = "CaelumM00ChooseStarter20";
-        }
-        choice
-        {
-            text = "$CA_M01_RONNIE_BACK";
-            nextpage = "ronnie_magic_ready";
-            closedialog = false;
-        }
-    }
-    page
-    {
-        pagename = "ronnie_weapon_17";
-        userstring = "ronnie_weapon_17";
-        name = "$CA_RONNIE_NAME";
-        dialog = "$CA_M01_WEAPON_DESC_17";
-        goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
-        choice
-        {
-            text = "$CA_M01_ELEMENT_0";
-            nextpage = "ronnie_magic_17_0";
-            closedialog = false;
-        }
-        choice
-        {
-            text = "$CA_M01_ELEMENT_1";
-            nextpage = "ronnie_magic_17_1";
-            closedialog = false;
-        }
-        choice
-        {
-            text = "$CA_M01_ELEMENT_2";
-            nextpage = "ronnie_magic_17_2";
-            closedialog = false;
-        }
-        choice
-        {
-            text = "$CA_M01_ELEMENT_3";
-            nextpage = "ronnie_magic_17_3";
-            closedialog = false;
-        }
-        choice
-        {
-            text = "$CA_M01_ELEMENT_4";
-            nextpage = "ronnie_magic_17_4";
-            closedialog = false;
-        }
-        choice
-        {
-            text = "$CA_M01_RONNIE_BACK";
-            nextpage = "ronnie_magic_ready";
-            closedialog = false;
-        }
-    }
-    page
-    {
-        pagename = "ronnie_magic_17_0";
-        userstring = "ronnie_magic_17_0";
-        name = "$CA_RONNIE_NAME";
-        dialog = "$CA_M01_MAGIC_DESC_17_0";
-        goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
-        choice
-        {
-            text = "$CA_M01_RONNIE_CONFIRM";
-            nextpage = "ronnie_armor";
-            closedialog = false;
-            giveitem = "CaelumM00ChooseStarter21";
-        }
-        choice
-        {
-            text = "$CA_M01_RONNIE_BACK";
-            nextpage = "ronnie_magic_ready";
-            closedialog = false;
-        }
-    }
-    page
-    {
-        pagename = "ronnie_magic_17_1";
-        userstring = "ronnie_magic_17_1";
-        name = "$CA_RONNIE_NAME";
-        dialog = "$CA_M01_MAGIC_DESC_17_1";
-        goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
-        choice
-        {
-            text = "$CA_M01_RONNIE_CONFIRM";
-            nextpage = "ronnie_armor";
-            closedialog = false;
-            giveitem = "CaelumM00ChooseStarter22";
-        }
-        choice
-        {
-            text = "$CA_M01_RONNIE_BACK";
-            nextpage = "ronnie_magic_ready";
-            closedialog = false;
-        }
-    }
-    page
-    {
-        pagename = "ronnie_magic_17_2";
-        userstring = "ronnie_magic_17_2";
-        name = "$CA_RONNIE_NAME";
-        dialog = "$CA_M01_MAGIC_DESC_17_2";
-        goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
-        choice
-        {
-            text = "$CA_M01_RONNIE_CONFIRM";
-            nextpage = "ronnie_armor";
-            closedialog = false;
-            giveitem = "CaelumM00ChooseStarter23";
-        }
-        choice
-        {
-            text = "$CA_M01_RONNIE_BACK";
-            nextpage = "ronnie_magic_ready";
-            closedialog = false;
-        }
-    }
-    page
-    {
-        pagename = "ronnie_magic_17_3";
-        userstring = "ronnie_magic_17_3";
-        name = "$CA_RONNIE_NAME";
-        dialog = "$CA_M01_MAGIC_DESC_17_3";
-        goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
-        choice
-        {
-            text = "$CA_M01_RONNIE_CONFIRM";
-            nextpage = "ronnie_armor";
-            closedialog = false;
-            giveitem = "CaelumM00ChooseStarter24";
-        }
-        choice
-        {
-            text = "$CA_M01_RONNIE_BACK";
-            nextpage = "ronnie_magic_ready";
-            closedialog = false;
-        }
-    }
-    page
-    {
-        pagename = "ronnie_magic_17_4";
-        userstring = "ronnie_magic_17_4";
-        name = "$CA_RONNIE_NAME";
-        dialog = "$CA_M01_MAGIC_DESC_17_4";
-        goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
-        choice
-        {
-            text = "$CA_M01_RONNIE_CONFIRM";
-            nextpage = "ronnie_armor";
-            closedialog = false;
-            giveitem = "CaelumM00ChooseStarter25";
-        }
-        choice
-        {
-            text = "$CA_M01_RONNIE_BACK";
-            nextpage = "ronnie_magic_ready";
-            closedialog = false;
-        }
-    }
-    page
-    {
-        pagename = "ronnie_weapon_18";
-        userstring = "ronnie_weapon_18";
-        name = "$CA_RONNIE_NAME";
-        dialog = "$CA_M01_WEAPON_DESC_18";
-        goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
-        choice
-        {
-            text = "$CA_M01_ELEMENT_0";
-            nextpage = "ronnie_magic_18_0";
-            closedialog = false;
-        }
-        choice
-        {
-            text = "$CA_M01_ELEMENT_1";
-            nextpage = "ronnie_magic_18_1";
-            closedialog = false;
-        }
-        choice
-        {
-            text = "$CA_M01_ELEMENT_2";
-            nextpage = "ronnie_magic_18_2";
-            closedialog = false;
-        }
-        choice
-        {
-            text = "$CA_M01_ELEMENT_3";
-            nextpage = "ronnie_magic_18_3";
-            closedialog = false;
-        }
-        choice
-        {
-            text = "$CA_M01_ELEMENT_4";
-            nextpage = "ronnie_magic_18_4";
-            closedialog = false;
-        }
-        choice
-        {
-            text = "$CA_M01_RONNIE_BACK";
-            nextpage = "ronnie_magic_ready";
-            closedialog = false;
-        }
-    }
-    page
-    {
-        pagename = "ronnie_magic_18_0";
-        userstring = "ronnie_magic_18_0";
-        name = "$CA_RONNIE_NAME";
-        dialog = "$CA_M01_MAGIC_DESC_18_0";
-        goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
-        choice
-        {
-            text = "$CA_M01_RONNIE_CONFIRM";
-            nextpage = "ronnie_armor";
-            closedialog = false;
-            giveitem = "CaelumM00ChooseStarter26";
-        }
-        choice
-        {
-            text = "$CA_M01_RONNIE_BACK";
-            nextpage = "ronnie_magic_ready";
-            closedialog = false;
-        }
-    }
-    page
-    {
-        pagename = "ronnie_magic_18_1";
-        userstring = "ronnie_magic_18_1";
-        name = "$CA_RONNIE_NAME";
-        dialog = "$CA_M01_MAGIC_DESC_18_1";
-        goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
-        choice
-        {
-            text = "$CA_M01_RONNIE_CONFIRM";
-            nextpage = "ronnie_armor";
-            closedialog = false;
-            giveitem = "CaelumM00ChooseStarter27";
-        }
-        choice
-        {
-            text = "$CA_M01_RONNIE_BACK";
-            nextpage = "ronnie_magic_ready";
-            closedialog = false;
-        }
-    }
-    page
-    {
-        pagename = "ronnie_magic_18_2";
-        userstring = "ronnie_magic_18_2";
-        name = "$CA_RONNIE_NAME";
-        dialog = "$CA_M01_MAGIC_DESC_18_2";
-        goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
-        choice
-        {
-            text = "$CA_M01_RONNIE_CONFIRM";
-            nextpage = "ronnie_armor";
-            closedialog = false;
-            giveitem = "CaelumM00ChooseStarter28";
-        }
-        choice
-        {
-            text = "$CA_M01_RONNIE_BACK";
-            nextpage = "ronnie_magic_ready";
-            closedialog = false;
-        }
-    }
-    page
-    {
-        pagename = "ronnie_magic_18_3";
-        userstring = "ronnie_magic_18_3";
-        name = "$CA_RONNIE_NAME";
-        dialog = "$CA_M01_MAGIC_DESC_18_3";
-        goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
-        choice
-        {
-            text = "$CA_M01_RONNIE_CONFIRM";
-            nextpage = "ronnie_armor";
-            closedialog = false;
-            giveitem = "CaelumM00ChooseStarter29";
-        }
-        choice
-        {
-            text = "$CA_M01_RONNIE_BACK";
-            nextpage = "ronnie_magic_ready";
-            closedialog = false;
-        }
-    }
-    page
-    {
-        pagename = "ronnie_magic_18_4";
-        userstring = "ronnie_magic_18_4";
-        name = "$CA_RONNIE_NAME";
-        dialog = "$CA_M01_MAGIC_DESC_18_4";
-        goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
-        choice
-        {
-            text = "$CA_M01_RONNIE_CONFIRM";
-            nextpage = "ronnie_armor";
-            closedialog = false;
-            giveitem = "CaelumM00ChooseStarter30";
-        }
-        choice
-        {
-            text = "$CA_M01_RONNIE_BACK";
-            nextpage = "ronnie_magic_ready";
-            closedialog = false;
-        }
-    }
-    page
-    {
-        pagename = "ronnie_weapon_19";
-        userstring = "ronnie_weapon_19";
-        name = "$CA_RONNIE_NAME";
-        dialog = "$CA_M01_WEAPON_DESC_19";
-        goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
-        choice
-        {
-            text = "$CA_M01_ELEMENT_0";
-            nextpage = "ronnie_magic_19_0";
-            closedialog = false;
-        }
-        choice
-        {
-            text = "$CA_M01_ELEMENT_1";
-            nextpage = "ronnie_magic_19_1";
-            closedialog = false;
-        }
-        choice
-        {
-            text = "$CA_M01_ELEMENT_2";
-            nextpage = "ronnie_magic_19_2";
-            closedialog = false;
-        }
-        choice
-        {
-            text = "$CA_M01_ELEMENT_3";
-            nextpage = "ronnie_magic_19_3";
-            closedialog = false;
-        }
-        choice
-        {
-            text = "$CA_M01_ELEMENT_4";
-            nextpage = "ronnie_magic_19_4";
-            closedialog = false;
-        }
-        choice
-        {
-            text = "$CA_M01_RONNIE_BACK";
-            nextpage = "ronnie_magic_ready";
-            closedialog = false;
-        }
-    }
-    page
-    {
-        pagename = "ronnie_magic_19_0";
-        userstring = "ronnie_magic_19_0";
-        name = "$CA_RONNIE_NAME";
-        dialog = "$CA_M01_MAGIC_DESC_19_0";
-        goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
-        choice
-        {
-            text = "$CA_M01_RONNIE_CONFIRM";
-            nextpage = "ronnie_armor";
-            closedialog = false;
-            giveitem = "CaelumM00ChooseStarter31";
-        }
-        choice
-        {
-            text = "$CA_M01_RONNIE_BACK";
-            nextpage = "ronnie_magic_ready";
-            closedialog = false;
-        }
-    }
-    page
-    {
-        pagename = "ronnie_magic_19_1";
-        userstring = "ronnie_magic_19_1";
-        name = "$CA_RONNIE_NAME";
-        dialog = "$CA_M01_MAGIC_DESC_19_1";
-        goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
-        choice
-        {
-            text = "$CA_M01_RONNIE_CONFIRM";
-            nextpage = "ronnie_armor";
-            closedialog = false;
-            giveitem = "CaelumM00ChooseStarter32";
-        }
-        choice
-        {
-            text = "$CA_M01_RONNIE_BACK";
-            nextpage = "ronnie_magic_ready";
-            closedialog = false;
-        }
-    }
-    page
-    {
-        pagename = "ronnie_magic_19_2";
-        userstring = "ronnie_magic_19_2";
-        name = "$CA_RONNIE_NAME";
-        dialog = "$CA_M01_MAGIC_DESC_19_2";
-        goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
-        choice
-        {
-            text = "$CA_M01_RONNIE_CONFIRM";
-            nextpage = "ronnie_armor";
-            closedialog = false;
-            giveitem = "CaelumM00ChooseStarter33";
-        }
-        choice
-        {
-            text = "$CA_M01_RONNIE_BACK";
-            nextpage = "ronnie_magic_ready";
-            closedialog = false;
-        }
-    }
-    page
-    {
-        pagename = "ronnie_magic_19_3";
-        userstring = "ronnie_magic_19_3";
-        name = "$CA_RONNIE_NAME";
-        dialog = "$CA_M01_MAGIC_DESC_19_3";
-        goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
-        choice
-        {
-            text = "$CA_M01_RONNIE_CONFIRM";
-            nextpage = "ronnie_armor";
-            closedialog = false;
-            giveitem = "CaelumM00ChooseStarter34";
-        }
-        choice
-        {
-            text = "$CA_M01_RONNIE_BACK";
-            nextpage = "ronnie_magic_ready";
-            closedialog = false;
-        }
-    }
-    page
-    {
-        pagename = "ronnie_magic_19_4";
-        userstring = "ronnie_magic_19_4";
-        name = "$CA_RONNIE_NAME";
-        dialog = "$CA_M01_MAGIC_DESC_19_4";
-        goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
-        choice
-        {
-            text = "$CA_M01_RONNIE_CONFIRM";
-            nextpage = "ronnie_armor";
-            closedialog = false;
-            giveitem = "CaelumM00ChooseStarter35";
-        }
-        choice
-        {
-            text = "$CA_M01_RONNIE_BACK";
-            nextpage = "ronnie_magic_ready";
-            closedialog = false;
-        }
-    }
+    page { pagename = "ronnie_family_0"; userstring = "ronnie_family_0"; name = "$CA_RONNIE_NAME"; dialog = "$CA_LOADOUT_REFERRAL"; goodbye = "$CA_DLG_M01_SOCIAL_LEAVE"; }
+    page { pagename = "ronnie_family_1"; userstring = "ronnie_family_1"; name = "$CA_RONNIE_NAME"; dialog = "$CA_LOADOUT_REFERRAL"; goodbye = "$CA_DLG_M01_SOCIAL_LEAVE"; }
+    page { pagename = "ronnie_family_2"; userstring = "ronnie_family_2"; name = "$CA_RONNIE_NAME"; dialog = "$CA_LOADOUT_REFERRAL"; goodbye = "$CA_DLG_M01_SOCIAL_LEAVE"; }
+    page { pagename = "ronnie_family_3"; userstring = "ronnie_family_3"; name = "$CA_RONNIE_NAME"; dialog = "$CA_LOADOUT_REFERRAL"; goodbye = "$CA_DLG_M01_SOCIAL_LEAVE"; }
+    page { pagename = "ronnie_family_4"; userstring = "ronnie_family_4"; name = "$CA_RONNIE_NAME"; dialog = "$CA_LOADOUT_REFERRAL"; goodbye = "$CA_DLG_M01_SOCIAL_LEAVE"; }
+    page { pagename = "ronnie_weapon_0"; userstring = "ronnie_weapon_0"; name = "$CA_RONNIE_NAME"; dialog = "$CA_LOADOUT_REFERRAL"; goodbye = "$CA_DLG_M01_SOCIAL_LEAVE"; }
+    page { pagename = "ronnie_weapon_1"; userstring = "ronnie_weapon_1"; name = "$CA_RONNIE_NAME"; dialog = "$CA_LOADOUT_REFERRAL"; goodbye = "$CA_DLG_M01_SOCIAL_LEAVE"; }
+    page { pagename = "ronnie_weapon_2"; userstring = "ronnie_weapon_2"; name = "$CA_RONNIE_NAME"; dialog = "$CA_LOADOUT_REFERRAL"; goodbye = "$CA_DLG_M01_SOCIAL_LEAVE"; }
+    page { pagename = "ronnie_weapon_3"; userstring = "ronnie_weapon_3"; name = "$CA_RONNIE_NAME"; dialog = "$CA_LOADOUT_REFERRAL"; goodbye = "$CA_DLG_M01_SOCIAL_LEAVE"; }
+    page { pagename = "ronnie_weapon_4"; userstring = "ronnie_weapon_4"; name = "$CA_RONNIE_NAME"; dialog = "$CA_LOADOUT_REFERRAL"; goodbye = "$CA_DLG_M01_SOCIAL_LEAVE"; }
+    page { pagename = "ronnie_weapon_5"; userstring = "ronnie_weapon_5"; name = "$CA_RONNIE_NAME"; dialog = "$CA_LOADOUT_REFERRAL"; goodbye = "$CA_DLG_M01_SOCIAL_LEAVE"; }
+    page { pagename = "ronnie_weapon_6"; userstring = "ronnie_weapon_6"; name = "$CA_RONNIE_NAME"; dialog = "$CA_LOADOUT_REFERRAL"; goodbye = "$CA_DLG_M01_SOCIAL_LEAVE"; }
+    page { pagename = "ronnie_weapon_7"; userstring = "ronnie_weapon_7"; name = "$CA_RONNIE_NAME"; dialog = "$CA_LOADOUT_REFERRAL"; goodbye = "$CA_DLG_M01_SOCIAL_LEAVE"; }
+    page { pagename = "ronnie_weapon_8"; userstring = "ronnie_weapon_8"; name = "$CA_RONNIE_NAME"; dialog = "$CA_LOADOUT_REFERRAL"; goodbye = "$CA_DLG_M01_SOCIAL_LEAVE"; }
+    page { pagename = "ronnie_weapon_9"; userstring = "ronnie_weapon_9"; name = "$CA_RONNIE_NAME"; dialog = "$CA_LOADOUT_REFERRAL"; goodbye = "$CA_DLG_M01_SOCIAL_LEAVE"; }
+    page { pagename = "ronnie_weapon_10"; userstring = "ronnie_weapon_10"; name = "$CA_RONNIE_NAME"; dialog = "$CA_LOADOUT_REFERRAL"; goodbye = "$CA_DLG_M01_SOCIAL_LEAVE"; }
+    page { pagename = "ronnie_weapon_11"; userstring = "ronnie_weapon_11"; name = "$CA_RONNIE_NAME"; dialog = "$CA_LOADOUT_REFERRAL"; goodbye = "$CA_DLG_M01_SOCIAL_LEAVE"; }
+    page { pagename = "ronnie_weapon_12"; userstring = "ronnie_weapon_12"; name = "$CA_RONNIE_NAME"; dialog = "$CA_LOADOUT_REFERRAL"; goodbye = "$CA_DLG_M01_SOCIAL_LEAVE"; }
+    page { pagename = "ronnie_weapon_13"; userstring = "ronnie_weapon_13"; name = "$CA_RONNIE_NAME"; dialog = "$CA_LOADOUT_REFERRAL"; goodbye = "$CA_DLG_M01_SOCIAL_LEAVE"; }
+    page { pagename = "ronnie_weapon_14"; userstring = "ronnie_weapon_14"; name = "$CA_RONNIE_NAME"; dialog = "$CA_LOADOUT_REFERRAL"; goodbye = "$CA_DLG_M01_SOCIAL_LEAVE"; }
+    page { pagename = "ronnie_weapon_15"; userstring = "ronnie_weapon_15"; name = "$CA_RONNIE_NAME"; dialog = "$CA_LOADOUT_REFERRAL"; goodbye = "$CA_DLG_M01_SOCIAL_LEAVE"; }
+    page { pagename = "ronnie_weapon_16"; userstring = "ronnie_weapon_16"; name = "$CA_RONNIE_NAME"; dialog = "$CA_LOADOUT_REFERRAL"; goodbye = "$CA_DLG_M01_SOCIAL_LEAVE"; }
+    page { pagename = "ronnie_magic_16_0"; userstring = "ronnie_magic_16_0";
+        name = "$CA_RONNIE_NAME"; dialog = "$CA_LOADOUT_REFERRAL"; goodbye = "$CA_DLG_M01_SOCIAL_LEAVE"; }
+    page { pagename = "ronnie_magic_16_1"; userstring = "ronnie_magic_16_1";
+        name = "$CA_RONNIE_NAME"; dialog = "$CA_LOADOUT_REFERRAL"; goodbye = "$CA_DLG_M01_SOCIAL_LEAVE"; }
+    page { pagename = "ronnie_magic_16_2"; userstring = "ronnie_magic_16_2";
+        name = "$CA_RONNIE_NAME"; dialog = "$CA_LOADOUT_REFERRAL"; goodbye = "$CA_DLG_M01_SOCIAL_LEAVE"; }
+    page { pagename = "ronnie_magic_16_3"; userstring = "ronnie_magic_16_3";
+        name = "$CA_RONNIE_NAME"; dialog = "$CA_LOADOUT_REFERRAL"; goodbye = "$CA_DLG_M01_SOCIAL_LEAVE"; }
+    page { pagename = "ronnie_magic_16_4"; userstring = "ronnie_magic_16_4";
+        name = "$CA_RONNIE_NAME"; dialog = "$CA_LOADOUT_REFERRAL"; goodbye = "$CA_DLG_M01_SOCIAL_LEAVE"; }
+    page { pagename = "ronnie_weapon_17"; userstring = "ronnie_weapon_17"; name = "$CA_RONNIE_NAME"; dialog = "$CA_LOADOUT_REFERRAL"; goodbye = "$CA_DLG_M01_SOCIAL_LEAVE"; }
+    page { pagename = "ronnie_magic_17_0"; userstring = "ronnie_magic_17_0";
+        name = "$CA_RONNIE_NAME"; dialog = "$CA_LOADOUT_REFERRAL"; goodbye = "$CA_DLG_M01_SOCIAL_LEAVE"; }
+    page { pagename = "ronnie_magic_17_1"; userstring = "ronnie_magic_17_1";
+        name = "$CA_RONNIE_NAME"; dialog = "$CA_LOADOUT_REFERRAL"; goodbye = "$CA_DLG_M01_SOCIAL_LEAVE"; }
+    page { pagename = "ronnie_magic_17_2"; userstring = "ronnie_magic_17_2";
+        name = "$CA_RONNIE_NAME"; dialog = "$CA_LOADOUT_REFERRAL"; goodbye = "$CA_DLG_M01_SOCIAL_LEAVE"; }
+    page { pagename = "ronnie_magic_17_3"; userstring = "ronnie_magic_17_3";
+        name = "$CA_RONNIE_NAME"; dialog = "$CA_LOADOUT_REFERRAL"; goodbye = "$CA_DLG_M01_SOCIAL_LEAVE"; }
+    page { pagename = "ronnie_magic_17_4"; userstring = "ronnie_magic_17_4";
+        name = "$CA_RONNIE_NAME"; dialog = "$CA_LOADOUT_REFERRAL"; goodbye = "$CA_DLG_M01_SOCIAL_LEAVE"; }
+    page { pagename = "ronnie_weapon_18"; userstring = "ronnie_weapon_18"; name = "$CA_RONNIE_NAME"; dialog = "$CA_LOADOUT_REFERRAL"; goodbye = "$CA_DLG_M01_SOCIAL_LEAVE"; }
+    page { pagename = "ronnie_magic_18_0"; userstring = "ronnie_magic_18_0";
+        name = "$CA_RONNIE_NAME"; dialog = "$CA_LOADOUT_REFERRAL"; goodbye = "$CA_DLG_M01_SOCIAL_LEAVE"; }
+    page { pagename = "ronnie_magic_18_1"; userstring = "ronnie_magic_18_1";
+        name = "$CA_RONNIE_NAME"; dialog = "$CA_LOADOUT_REFERRAL"; goodbye = "$CA_DLG_M01_SOCIAL_LEAVE"; }
+    page { pagename = "ronnie_magic_18_2"; userstring = "ronnie_magic_18_2";
+        name = "$CA_RONNIE_NAME"; dialog = "$CA_LOADOUT_REFERRAL"; goodbye = "$CA_DLG_M01_SOCIAL_LEAVE"; }
+    page { pagename = "ronnie_magic_18_3"; userstring = "ronnie_magic_18_3";
+        name = "$CA_RONNIE_NAME"; dialog = "$CA_LOADOUT_REFERRAL"; goodbye = "$CA_DLG_M01_SOCIAL_LEAVE"; }
+    page { pagename = "ronnie_magic_18_4"; userstring = "ronnie_magic_18_4";
+        name = "$CA_RONNIE_NAME"; dialog = "$CA_LOADOUT_REFERRAL"; goodbye = "$CA_DLG_M01_SOCIAL_LEAVE"; }
+    page { pagename = "ronnie_weapon_19"; userstring = "ronnie_weapon_19"; name = "$CA_RONNIE_NAME"; dialog = "$CA_LOADOUT_REFERRAL"; goodbye = "$CA_DLG_M01_SOCIAL_LEAVE"; }
+    page { pagename = "ronnie_magic_19_0"; userstring = "ronnie_magic_19_0";
+        name = "$CA_RONNIE_NAME"; dialog = "$CA_LOADOUT_REFERRAL"; goodbye = "$CA_DLG_M01_SOCIAL_LEAVE"; }
+    page { pagename = "ronnie_magic_19_1"; userstring = "ronnie_magic_19_1";
+        name = "$CA_RONNIE_NAME"; dialog = "$CA_LOADOUT_REFERRAL"; goodbye = "$CA_DLG_M01_SOCIAL_LEAVE"; }
+    page { pagename = "ronnie_magic_19_2"; userstring = "ronnie_magic_19_2";
+        name = "$CA_RONNIE_NAME"; dialog = "$CA_LOADOUT_REFERRAL"; goodbye = "$CA_DLG_M01_SOCIAL_LEAVE"; }
+    page { pagename = "ronnie_magic_19_3"; userstring = "ronnie_magic_19_3";
+        name = "$CA_RONNIE_NAME"; dialog = "$CA_LOADOUT_REFERRAL"; goodbye = "$CA_DLG_M01_SOCIAL_LEAVE"; }
+    page { pagename = "ronnie_magic_19_4"; userstring = "ronnie_magic_19_4";
+        name = "$CA_RONNIE_NAME"; dialog = "$CA_LOADOUT_REFERRAL"; goodbye = "$CA_DLG_M01_SOCIAL_LEAVE"; }
     page
     {
         pagename = "ronnie_collect";
@@ -2173,7 +1084,6 @@ conversation
         name = "$CA_RONNIE_NAME";
         dialog = "$CA_DLG_M01_WORKSHOP_RONNIE";
         goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
-        choice { text = "$CA_M01_ARMOR_ASK"; nextpage = "ronnie_armor"; }
         choice { text = "$CA_M01_AMMO_ASK"; nextpage = "ronnie_ammo"; }
         choice { text = "$CA_DLG_M01_GARDEN_ASK"; nextpage = "ronnie_resources"; }
         choice { text = "$CA_M01_SEALS_GATHER_ASK"; nextpage = "ronnie_seals_gather";
@@ -2217,58 +1127,12 @@ conversation
         goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
     }
 
-    page
-    {
-        pagename = "ronnie_armor"; userstring = "ronnie_armor";
-        name = "$CA_RONNIE_NAME"; dialog = "$CA_M01_ARMOR_OFFER";
-        goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
-        ifitem { item = "CaelumM00ArmorChosenToken"; amount = 1; }
-        link = "ronnie_armor_ready";
-        choice { text = "$CA_M01_ARMOR_NAME_0"; nextpage = "ronnie_armor_0"; }
-        choice { text = "$CA_M01_ARMOR_NAME_1"; nextpage = "ronnie_armor_1"; }
-        choice { text = "$CA_M01_ARMOR_NAME_2"; nextpage = "ronnie_armor_2"; }
-        choice { text = "$CA_M01_ARMOR_NAME_3"; nextpage = "ronnie_armor_3"; }
-    }
-    page
-    {
-        pagename = "ronnie_armor_0"; userstring = "ronnie_armor_0";
-        name = "$CA_RONNIE_NAME"; dialog = "$CA_M01_ARMOR_DESC_0";
-        goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
-        choice { text = "$CA_M01_ARMOR_CONFIRM"; nextpage = "ronnie_armor_ready"; giveitem = "CaelumM00ChooseArmor0"; }
-        choice { text = "$CA_M01_RONNIE_BACK"; nextpage = "ronnie_armor"; }
-    }
-    page
-    {
-        pagename = "ronnie_armor_1"; userstring = "ronnie_armor_1";
-        name = "$CA_RONNIE_NAME"; dialog = "$CA_M01_ARMOR_DESC_1";
-        goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
-        choice { text = "$CA_M01_ARMOR_CONFIRM"; nextpage = "ronnie_armor_ready"; giveitem = "CaelumM00ChooseArmor1"; }
-        choice { text = "$CA_M01_RONNIE_BACK"; nextpage = "ronnie_armor"; }
-    }
-    page
-    {
-        pagename = "ronnie_armor_2"; userstring = "ronnie_armor_2";
-        name = "$CA_RONNIE_NAME"; dialog = "$CA_M01_ARMOR_DESC_2";
-        goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
-        choice { text = "$CA_M01_ARMOR_CONFIRM"; nextpage = "ronnie_armor_ready"; giveitem = "CaelumM00ChooseArmor2"; }
-        choice { text = "$CA_M01_RONNIE_BACK"; nextpage = "ronnie_armor"; }
-    }
-    page
-    {
-        pagename = "ronnie_armor_3"; userstring = "ronnie_armor_3";
-        name = "$CA_RONNIE_NAME"; dialog = "$CA_M01_ARMOR_DESC_3";
-        goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
-        choice { text = "$CA_M01_ARMOR_CONFIRM"; nextpage = "ronnie_armor_ready"; giveitem = "CaelumM00ChooseArmor3"; }
-        choice { text = "$CA_M01_RONNIE_BACK"; nextpage = "ronnie_armor"; }
-    }
-    page
-    {
-        pagename = "ronnie_armor_ready"; userstring = "ronnie_armor_ready";
-        name = "$CA_RONNIE_NAME"; dialog = "$CA_M01_ARMOR_READY";
-        goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
-        choice { text = "$CA_DLG_M01_WORKSHOPS_ASK"; nextpage = "ronnie_workshop"; }
-        choice { text = "$CA_M01_RONNIE_ROUTE_CHOICE"; nextpage = "ronnie_resources"; }
-    }
+    page { pagename = "ronnie_armor"; userstring = "ronnie_armor"; name = "$CA_RONNIE_NAME"; dialog = "$CA_LOADOUT_REFERRAL"; goodbye = "$CA_DLG_M01_SOCIAL_LEAVE"; }
+    page { pagename = "ronnie_armor_0"; userstring = "ronnie_armor_0"; name = "$CA_RONNIE_NAME"; dialog = "$CA_LOADOUT_REFERRAL"; goodbye = "$CA_DLG_M01_SOCIAL_LEAVE"; }
+    page { pagename = "ronnie_armor_1"; userstring = "ronnie_armor_1"; name = "$CA_RONNIE_NAME"; dialog = "$CA_LOADOUT_REFERRAL"; goodbye = "$CA_DLG_M01_SOCIAL_LEAVE"; }
+    page { pagename = "ronnie_armor_2"; userstring = "ronnie_armor_2"; name = "$CA_RONNIE_NAME"; dialog = "$CA_LOADOUT_REFERRAL"; goodbye = "$CA_DLG_M01_SOCIAL_LEAVE"; }
+    page { pagename = "ronnie_armor_3"; userstring = "ronnie_armor_3"; name = "$CA_RONNIE_NAME"; dialog = "$CA_LOADOUT_REFERRAL"; goodbye = "$CA_DLG_M01_SOCIAL_LEAVE"; }
+    page { pagename = "ronnie_armor_ready"; userstring = "ronnie_armor_ready"; name = "$CA_RONNIE_NAME"; dialog = "$CA_LOADOUT_REFERRAL"; goodbye = "$CA_DLG_M01_SOCIAL_LEAVE"; }
 
     page
     {
@@ -2696,39 +1560,18 @@ conversation
         goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
     }
     page { pagename = "caella_choose_seal"; userstring = "caella_choose_seal";
-        name = "$CA_CAELLA_NAME"; dialog = "$CA_AF_CHOOSE_SEAL"; goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
-        ifitem { item = "CaelumM00SealsLearnedToken"; amount = 1; } link = "caella_seals_ready";
-        choice { text = "$CA_AF_SEAL_0"; nextpage = "caella_confirm_seal_0"; }
-        choice { text = "$CA_AF_SEAL_1"; nextpage = "caella_confirm_seal_1"; }
-        choice { text = "$CA_AF_SEAL_2"; nextpage = "caella_confirm_seal_2"; }
-        choice { text = "$CA_AF_SEAL_3"; nextpage = "caella_confirm_seal_3"; }
-        choice { text = "$CA_AF_SEAL_4"; nextpage = "caella_confirm_seal_4"; }
-    }
+        name = "$CA_CAELLA_NAME"; dialog = "$CA_LOADOUT_REFERRAL";
+        goodbye = "$CA_DLG_M01_SOCIAL_LEAVE"; }
     page { pagename = "caella_confirm_seal_0"; userstring = "caella_confirm_seal_0";
-        name = "$CA_CAELLA_NAME"; dialog = "$CA_AF_CONFIRM_SEAL_0"; goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
-        choice { text = "$CA_AF_CONFIRM"; giveitem = "CaelumM00ChooseSeal0"; nextpage = "caella_seals_ready"; }
-        choice { text = "$CA_AF_BACK"; nextpage = "caella_choose_seal"; }
-    }
+        name = "$CA_CAELLA_NAME"; dialog = "$CA_LOADOUT_REFERRAL"; goodbye = "$CA_DLG_M01_SOCIAL_LEAVE"; }
     page { pagename = "caella_confirm_seal_1"; userstring = "caella_confirm_seal_1";
-        name = "$CA_CAELLA_NAME"; dialog = "$CA_AF_CONFIRM_SEAL_1"; goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
-        choice { text = "$CA_AF_CONFIRM"; giveitem = "CaelumM00ChooseSeal1"; nextpage = "caella_seals_ready"; }
-        choice { text = "$CA_AF_BACK"; nextpage = "caella_choose_seal"; }
-    }
+        name = "$CA_CAELLA_NAME"; dialog = "$CA_LOADOUT_REFERRAL"; goodbye = "$CA_DLG_M01_SOCIAL_LEAVE"; }
     page { pagename = "caella_confirm_seal_2"; userstring = "caella_confirm_seal_2";
-        name = "$CA_CAELLA_NAME"; dialog = "$CA_AF_CONFIRM_SEAL_2"; goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
-        choice { text = "$CA_AF_CONFIRM"; giveitem = "CaelumM00ChooseSeal2"; nextpage = "caella_seals_ready"; }
-        choice { text = "$CA_AF_BACK"; nextpage = "caella_choose_seal"; }
-    }
+        name = "$CA_CAELLA_NAME"; dialog = "$CA_LOADOUT_REFERRAL"; goodbye = "$CA_DLG_M01_SOCIAL_LEAVE"; }
     page { pagename = "caella_confirm_seal_3"; userstring = "caella_confirm_seal_3";
-        name = "$CA_CAELLA_NAME"; dialog = "$CA_AF_CONFIRM_SEAL_3"; goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
-        choice { text = "$CA_AF_CONFIRM"; giveitem = "CaelumM00ChooseSeal3"; nextpage = "caella_seals_ready"; }
-        choice { text = "$CA_AF_BACK"; nextpage = "caella_choose_seal"; }
-    }
+        name = "$CA_CAELLA_NAME"; dialog = "$CA_LOADOUT_REFERRAL"; goodbye = "$CA_DLG_M01_SOCIAL_LEAVE"; }
     page { pagename = "caella_confirm_seal_4"; userstring = "caella_confirm_seal_4";
-        name = "$CA_CAELLA_NAME"; dialog = "$CA_AF_CONFIRM_SEAL_4"; goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
-        choice { text = "$CA_AF_CONFIRM"; giveitem = "CaelumM00ChooseSeal4"; nextpage = "caella_seals_ready"; }
-        choice { text = "$CA_AF_BACK"; nextpage = "caella_choose_seal"; }
-    }
+        name = "$CA_CAELLA_NAME"; dialog = "$CA_LOADOUT_REFERRAL"; goodbye = "$CA_DLG_M01_SOCIAL_LEAVE"; }
     page { pagename = "caella_choose_amulet"; userstring = "caella_choose_amulet";
         name = "$CA_CAELLA_NAME"; dialog = "$CA_AF_CHOOSE_AMULET"; goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
         ifitem { item = "CaelumM00AmuletChosenToken"; amount = 1; } link = "caella_seals_ready";
@@ -4094,5 +2937,846 @@ conversation
         name = "$CA_SPEAKER_UNKNOWN_VOICE";
         dialog = "$CA_DEMO_VOICE_10";
         goodbye = "$CA_DLG_M01_CONTINUE";
+    }
+}
+
+// #63: añadido al final para conservar índices de páginas guardadas.
+conversation { id = 43630; class = "CaelumMainM00ConversationMenu";
+    page { pagename = "loadout_root"; userstring = "loadout_root";
+        name = "$CA_PALOMO_NAME"; dialog = "$CA_LOADOUT_INTRO";
+        goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+        choice { text = "$CA_LOADOUT_WEAPON"; nextpage = "loadout_weapons"; closedialog = false; }
+        choice { text = "$CA_LOADOUT_ARMOR"; nextpage = "loadout_armors"; closedialog = false; }
+        choice { text = "$CA_LOADOUT_SEAL"; nextpage = "loadout_seals"; closedialog = false; }
+        choice { text = "$CA_LOADOUT_SHIELD"; nextpage = "loadout_shields"; closedialog = false; }
+        choice { text = "$CA_LOADOUT_PLAN"; nextpage = "loadout_summary"; closedialog = false; }
+        choice { text = "$CA_DEMO_PALOMO_LESSONS_ASK"; nextpage = "palomo_lessons"; closedialog = false; }
+    }
+    page { pagename = "loadout_weapons"; userstring = "loadout_weapons";
+        name = "$CA_PALOMO_NAME"; dialog = "$CA_LOADOUT_WEAPON_INTRO";
+        goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+        choice { text = "$CA_M01_FAMILY_0"; nextpage = "loadout_family_0"; closedialog = false; }
+        choice { text = "$CA_M01_FAMILY_1"; nextpage = "loadout_family_1"; closedialog = false; }
+        choice { text = "$CA_M01_FAMILY_2"; nextpage = "loadout_family_2"; closedialog = false; }
+        choice { text = "$CA_M01_FAMILY_3"; nextpage = "loadout_family_3"; closedialog = false; }
+        choice { text = "$CA_M01_FAMILY_4"; nextpage = "loadout_family_4"; closedialog = false; }
+        choice { text = "$CA_AF_BACK"; nextpage = "loadout_root"; closedialog = false; }
+    }
+    page { pagename = "loadout_family_0"; userstring = "loadout_family_0";
+        name = "$CA_PALOMO_NAME"; dialog = "$CA_LOADOUT_WEAPON_INTRO";
+        goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+        choice { text = "$CA_M01_WEAPON_OPTION_0"; nextpage = "loadout_preview_0"; closedialog = false; }
+        choice { text = "$CA_M01_WEAPON_OPTION_1"; nextpage = "loadout_preview_1"; closedialog = false; }
+        choice { text = "$CA_M01_WEAPON_OPTION_2"; nextpage = "loadout_preview_2"; closedialog = false; }
+        choice { text = "$CA_M01_WEAPON_OPTION_3"; nextpage = "loadout_preview_3"; closedialog = false; }
+        choice { text = "$CA_AF_BACK"; nextpage = "loadout_weapons"; closedialog = false; }
+    }
+    page { pagename = "loadout_family_1"; userstring = "loadout_family_1";
+        name = "$CA_PALOMO_NAME"; dialog = "$CA_LOADOUT_WEAPON_INTRO";
+        goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+        choice { text = "$CA_M01_WEAPON_OPTION_4"; nextpage = "loadout_preview_4"; closedialog = false; }
+        choice { text = "$CA_M01_WEAPON_OPTION_5"; nextpage = "loadout_preview_5"; closedialog = false; }
+        choice { text = "$CA_M01_WEAPON_OPTION_6"; nextpage = "loadout_preview_6"; closedialog = false; }
+        choice { text = "$CA_M01_WEAPON_OPTION_7"; nextpage = "loadout_preview_7"; closedialog = false; }
+        choice { text = "$CA_AF_BACK"; nextpage = "loadout_weapons"; closedialog = false; }
+    }
+    page { pagename = "loadout_family_2"; userstring = "loadout_family_2";
+        name = "$CA_PALOMO_NAME"; dialog = "$CA_LOADOUT_WEAPON_INTRO";
+        goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+        choice { text = "$CA_M01_WEAPON_OPTION_8"; nextpage = "loadout_preview_8"; closedialog = false; }
+        choice { text = "$CA_M01_WEAPON_OPTION_9"; nextpage = "loadout_preview_9"; closedialog = false; }
+        choice { text = "$CA_M01_WEAPON_OPTION_10"; nextpage = "loadout_preview_10"; closedialog = false; }
+        choice { text = "$CA_M01_WEAPON_OPTION_11"; nextpage = "loadout_preview_11"; closedialog = false; }
+        choice { text = "$CA_AF_BACK"; nextpage = "loadout_weapons"; closedialog = false; }
+    }
+    page { pagename = "loadout_family_3"; userstring = "loadout_family_3";
+        name = "$CA_PALOMO_NAME"; dialog = "$CA_LOADOUT_WEAPON_INTRO";
+        goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+        choice { text = "$CA_M01_WEAPON_OPTION_12"; nextpage = "loadout_preview_12"; closedialog = false; }
+        choice { text = "$CA_M01_WEAPON_OPTION_13"; nextpage = "loadout_preview_13"; closedialog = false; }
+        choice { text = "$CA_M01_WEAPON_OPTION_14"; nextpage = "loadout_preview_14"; closedialog = false; }
+        choice { text = "$CA_M01_WEAPON_OPTION_15"; nextpage = "loadout_preview_15"; closedialog = false; }
+        choice { text = "$CA_AF_BACK"; nextpage = "loadout_weapons"; closedialog = false; }
+    }
+    page { pagename = "loadout_family_4"; userstring = "loadout_family_4";
+        name = "$CA_PALOMO_NAME"; dialog = "$CA_LOADOUT_WEAPON_INTRO";
+        goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+        choice { text = "$CA_M01_WEAPON_OPTION_16"; nextpage = "loadout_magic_0"; closedialog = false; }
+        choice { text = "$CA_M01_WEAPON_OPTION_17"; nextpage = "loadout_magic_1"; closedialog = false; }
+        choice { text = "$CA_M01_WEAPON_OPTION_18"; nextpage = "loadout_magic_2"; closedialog = false; }
+        choice { text = "$CA_M01_WEAPON_OPTION_19"; nextpage = "loadout_magic_3"; closedialog = false; }
+        choice { text = "$CA_AF_BACK"; nextpage = "loadout_weapons"; closedialog = false; }
+    }
+    page { pagename = "loadout_magic_0"; userstring = "loadout_magic_0";
+        name = "$CA_PALOMO_NAME"; dialog = "$CA_LOADOUT_ESSENCE_INTRO";
+        goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+        choice { text = "$CA_AF_SEAL_0"; nextpage = "loadout_preview_16"; closedialog = false; }
+        choice { text = "$CA_AF_SEAL_1"; nextpage = "loadout_preview_17"; closedialog = false; }
+        choice { text = "$CA_AF_SEAL_2"; nextpage = "loadout_preview_18"; closedialog = false; }
+        choice { text = "$CA_AF_SEAL_3"; nextpage = "loadout_preview_19"; closedialog = false; }
+        choice { text = "$CA_AF_SEAL_4"; nextpage = "loadout_preview_20"; closedialog = false; }
+        choice { text = "$CA_AF_BACK"; nextpage = "loadout_family_4"; closedialog = false; }
+    }
+    page { pagename = "loadout_magic_1"; userstring = "loadout_magic_1";
+        name = "$CA_PALOMO_NAME"; dialog = "$CA_LOADOUT_ESSENCE_INTRO";
+        goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+        choice { text = "$CA_AF_SEAL_0"; nextpage = "loadout_preview_21"; closedialog = false; }
+        choice { text = "$CA_AF_SEAL_1"; nextpage = "loadout_preview_22"; closedialog = false; }
+        choice { text = "$CA_AF_SEAL_2"; nextpage = "loadout_preview_23"; closedialog = false; }
+        choice { text = "$CA_AF_SEAL_3"; nextpage = "loadout_preview_24"; closedialog = false; }
+        choice { text = "$CA_AF_SEAL_4"; nextpage = "loadout_preview_25"; closedialog = false; }
+        choice { text = "$CA_AF_BACK"; nextpage = "loadout_family_4"; closedialog = false; }
+    }
+    page { pagename = "loadout_magic_2"; userstring = "loadout_magic_2";
+        name = "$CA_PALOMO_NAME"; dialog = "$CA_LOADOUT_ESSENCE_INTRO";
+        goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+        choice { text = "$CA_AF_SEAL_0"; nextpage = "loadout_preview_26"; closedialog = false; }
+        choice { text = "$CA_AF_SEAL_1"; nextpage = "loadout_preview_27"; closedialog = false; }
+        choice { text = "$CA_AF_SEAL_2"; nextpage = "loadout_preview_28"; closedialog = false; }
+        choice { text = "$CA_AF_SEAL_3"; nextpage = "loadout_preview_29"; closedialog = false; }
+        choice { text = "$CA_AF_SEAL_4"; nextpage = "loadout_preview_30"; closedialog = false; }
+        choice { text = "$CA_AF_BACK"; nextpage = "loadout_family_4"; closedialog = false; }
+    }
+    page { pagename = "loadout_magic_3"; userstring = "loadout_magic_3";
+        name = "$CA_PALOMO_NAME"; dialog = "$CA_LOADOUT_ESSENCE_INTRO";
+        goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+        choice { text = "$CA_AF_SEAL_0"; nextpage = "loadout_preview_31"; closedialog = false; }
+        choice { text = "$CA_AF_SEAL_1"; nextpage = "loadout_preview_32"; closedialog = false; }
+        choice { text = "$CA_AF_SEAL_2"; nextpage = "loadout_preview_33"; closedialog = false; }
+        choice { text = "$CA_AF_SEAL_3"; nextpage = "loadout_preview_34"; closedialog = false; }
+        choice { text = "$CA_AF_SEAL_4"; nextpage = "loadout_preview_35"; closedialog = false; }
+        choice { text = "$CA_AF_BACK"; nextpage = "loadout_family_4"; closedialog = false; }
+    }
+    page { pagename = "loadout_preview_0"; userstring = "loadout_preview_0";
+        name = "$CA_PALOMO_NAME"; dialog = "$CA_LOADOUT_REVIEW";
+        goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+        choice { text = "$CA_LOADOUT_STATS"; nextpage = "loadout_stats_0"; closedialog = false; }
+
+        choice { text = "$CA_AF_BACK"; nextpage = "loadout_family_0"; closedialog = false; }
+    }
+    page { pagename = "loadout_preview_1"; userstring = "loadout_preview_1";
+        name = "$CA_PALOMO_NAME"; dialog = "$CA_LOADOUT_REVIEW";
+        goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+        choice { text = "$CA_LOADOUT_STATS"; nextpage = "loadout_stats_1"; closedialog = false; }
+
+        choice { text = "$CA_AF_BACK"; nextpage = "loadout_family_0"; closedialog = false; }
+    }
+    page { pagename = "loadout_preview_2"; userstring = "loadout_preview_2";
+        name = "$CA_PALOMO_NAME"; dialog = "$CA_LOADOUT_REVIEW";
+        goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+        choice { text = "$CA_LOADOUT_STATS"; nextpage = "loadout_stats_2"; closedialog = false; }
+
+        choice { text = "$CA_AF_BACK"; nextpage = "loadout_family_0"; closedialog = false; }
+    }
+    page { pagename = "loadout_preview_3"; userstring = "loadout_preview_3";
+        name = "$CA_PALOMO_NAME"; dialog = "$CA_LOADOUT_REVIEW";
+        goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+        choice { text = "$CA_LOADOUT_STATS"; nextpage = "loadout_stats_3"; closedialog = false; }
+
+        choice { text = "$CA_AF_BACK"; nextpage = "loadout_family_0"; closedialog = false; }
+    }
+    page { pagename = "loadout_preview_4"; userstring = "loadout_preview_4";
+        name = "$CA_PALOMO_NAME"; dialog = "$CA_LOADOUT_REVIEW";
+        goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+        choice { text = "$CA_LOADOUT_STATS"; nextpage = "loadout_stats_4"; closedialog = false; }
+
+        choice { text = "$CA_AF_BACK"; nextpage = "loadout_family_1"; closedialog = false; }
+    }
+    page { pagename = "loadout_preview_5"; userstring = "loadout_preview_5";
+        name = "$CA_PALOMO_NAME"; dialog = "$CA_LOADOUT_REVIEW";
+        goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+        choice { text = "$CA_LOADOUT_STATS"; nextpage = "loadout_stats_5"; closedialog = false; }
+
+        choice { text = "$CA_AF_BACK"; nextpage = "loadout_family_1"; closedialog = false; }
+    }
+    page { pagename = "loadout_preview_6"; userstring = "loadout_preview_6";
+        name = "$CA_PALOMO_NAME"; dialog = "$CA_LOADOUT_REVIEW";
+        goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+        choice { text = "$CA_LOADOUT_STATS"; nextpage = "loadout_stats_6"; closedialog = false; }
+
+        choice { text = "$CA_AF_BACK"; nextpage = "loadout_family_1"; closedialog = false; }
+    }
+    page { pagename = "loadout_preview_7"; userstring = "loadout_preview_7";
+        name = "$CA_PALOMO_NAME"; dialog = "$CA_LOADOUT_REVIEW";
+        goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+        choice { text = "$CA_LOADOUT_STATS"; nextpage = "loadout_stats_7"; closedialog = false; }
+
+        choice { text = "$CA_AF_BACK"; nextpage = "loadout_family_1"; closedialog = false; }
+    }
+    page { pagename = "loadout_preview_8"; userstring = "loadout_preview_8";
+        name = "$CA_PALOMO_NAME"; dialog = "$CA_LOADOUT_REVIEW";
+        goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+        choice { text = "$CA_LOADOUT_STATS"; nextpage = "loadout_stats_8"; closedialog = false; }
+
+        choice { text = "$CA_AF_BACK"; nextpage = "loadout_family_2"; closedialog = false; }
+    }
+    page { pagename = "loadout_preview_9"; userstring = "loadout_preview_9";
+        name = "$CA_PALOMO_NAME"; dialog = "$CA_LOADOUT_REVIEW";
+        goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+        choice { text = "$CA_LOADOUT_STATS"; nextpage = "loadout_stats_9"; closedialog = false; }
+
+        choice { text = "$CA_AF_BACK"; nextpage = "loadout_family_2"; closedialog = false; }
+    }
+    page { pagename = "loadout_preview_10"; userstring = "loadout_preview_10";
+        name = "$CA_PALOMO_NAME"; dialog = "$CA_LOADOUT_REVIEW";
+        goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+        choice { text = "$CA_LOADOUT_STATS"; nextpage = "loadout_stats_10"; closedialog = false; }
+
+        choice { text = "$CA_AF_BACK"; nextpage = "loadout_family_2"; closedialog = false; }
+    }
+    page { pagename = "loadout_preview_11"; userstring = "loadout_preview_11";
+        name = "$CA_PALOMO_NAME"; dialog = "$CA_LOADOUT_REVIEW";
+        goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+        choice { text = "$CA_LOADOUT_STATS"; nextpage = "loadout_stats_11"; closedialog = false; }
+
+        choice { text = "$CA_AF_BACK"; nextpage = "loadout_family_2"; closedialog = false; }
+    }
+    page { pagename = "loadout_preview_12"; userstring = "loadout_preview_12";
+        name = "$CA_PALOMO_NAME"; dialog = "$CA_LOADOUT_REVIEW";
+        goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+        choice { text = "$CA_LOADOUT_STATS"; nextpage = "loadout_stats_12"; closedialog = false; }
+
+        choice { text = "$CA_AF_BACK"; nextpage = "loadout_family_3"; closedialog = false; }
+    }
+    page { pagename = "loadout_preview_13"; userstring = "loadout_preview_13";
+        name = "$CA_PALOMO_NAME"; dialog = "$CA_LOADOUT_REVIEW";
+        goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+        choice { text = "$CA_LOADOUT_STATS"; nextpage = "loadout_stats_13"; closedialog = false; }
+
+        choice { text = "$CA_AF_BACK"; nextpage = "loadout_family_3"; closedialog = false; }
+    }
+    page { pagename = "loadout_preview_14"; userstring = "loadout_preview_14";
+        name = "$CA_PALOMO_NAME"; dialog = "$CA_LOADOUT_REVIEW";
+        goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+        choice { text = "$CA_LOADOUT_STATS"; nextpage = "loadout_stats_14"; closedialog = false; }
+
+        choice { text = "$CA_AF_BACK"; nextpage = "loadout_family_3"; closedialog = false; }
+    }
+    page { pagename = "loadout_preview_15"; userstring = "loadout_preview_15";
+        name = "$CA_PALOMO_NAME"; dialog = "$CA_LOADOUT_REVIEW";
+        goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+        choice { text = "$CA_LOADOUT_STATS"; nextpage = "loadout_stats_15"; closedialog = false; }
+
+        choice { text = "$CA_AF_BACK"; nextpage = "loadout_family_3"; closedialog = false; }
+    }
+    page { pagename = "loadout_preview_16"; userstring = "loadout_preview_16";
+        name = "$CA_PALOMO_NAME"; dialog = "$CA_LOADOUT_REVIEW";
+        goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+        choice { text = "$CA_LOADOUT_STATS"; nextpage = "loadout_stats_16"; closedialog = false; }
+
+        choice { text = "$CA_AF_BACK"; nextpage = "loadout_magic_0"; closedialog = false; }
+    }
+    page { pagename = "loadout_preview_17"; userstring = "loadout_preview_17";
+        name = "$CA_PALOMO_NAME"; dialog = "$CA_LOADOUT_REVIEW";
+        goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+        choice { text = "$CA_LOADOUT_STATS"; nextpage = "loadout_stats_17"; closedialog = false; }
+
+        choice { text = "$CA_AF_BACK"; nextpage = "loadout_magic_0"; closedialog = false; }
+    }
+    page { pagename = "loadout_preview_18"; userstring = "loadout_preview_18";
+        name = "$CA_PALOMO_NAME"; dialog = "$CA_LOADOUT_REVIEW";
+        goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+        choice { text = "$CA_LOADOUT_STATS"; nextpage = "loadout_stats_18"; closedialog = false; }
+
+        choice { text = "$CA_AF_BACK"; nextpage = "loadout_magic_0"; closedialog = false; }
+    }
+    page { pagename = "loadout_preview_19"; userstring = "loadout_preview_19";
+        name = "$CA_PALOMO_NAME"; dialog = "$CA_LOADOUT_REVIEW";
+        goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+        choice { text = "$CA_LOADOUT_STATS"; nextpage = "loadout_stats_19"; closedialog = false; }
+
+        choice { text = "$CA_AF_BACK"; nextpage = "loadout_magic_0"; closedialog = false; }
+    }
+    page { pagename = "loadout_preview_20"; userstring = "loadout_preview_20";
+        name = "$CA_PALOMO_NAME"; dialog = "$CA_LOADOUT_REVIEW";
+        goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+        choice { text = "$CA_LOADOUT_STATS"; nextpage = "loadout_stats_20"; closedialog = false; }
+
+        choice { text = "$CA_AF_BACK"; nextpage = "loadout_magic_0"; closedialog = false; }
+    }
+    page { pagename = "loadout_preview_21"; userstring = "loadout_preview_21";
+        name = "$CA_PALOMO_NAME"; dialog = "$CA_LOADOUT_REVIEW";
+        goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+        choice { text = "$CA_LOADOUT_STATS"; nextpage = "loadout_stats_21"; closedialog = false; }
+
+        choice { text = "$CA_AF_BACK"; nextpage = "loadout_magic_1"; closedialog = false; }
+    }
+    page { pagename = "loadout_preview_22"; userstring = "loadout_preview_22";
+        name = "$CA_PALOMO_NAME"; dialog = "$CA_LOADOUT_REVIEW";
+        goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+        choice { text = "$CA_LOADOUT_STATS"; nextpage = "loadout_stats_22"; closedialog = false; }
+
+        choice { text = "$CA_AF_BACK"; nextpage = "loadout_magic_1"; closedialog = false; }
+    }
+    page { pagename = "loadout_preview_23"; userstring = "loadout_preview_23";
+        name = "$CA_PALOMO_NAME"; dialog = "$CA_LOADOUT_REVIEW";
+        goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+        choice { text = "$CA_LOADOUT_STATS"; nextpage = "loadout_stats_23"; closedialog = false; }
+
+        choice { text = "$CA_AF_BACK"; nextpage = "loadout_magic_1"; closedialog = false; }
+    }
+    page { pagename = "loadout_preview_24"; userstring = "loadout_preview_24";
+        name = "$CA_PALOMO_NAME"; dialog = "$CA_LOADOUT_REVIEW";
+        goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+        choice { text = "$CA_LOADOUT_STATS"; nextpage = "loadout_stats_24"; closedialog = false; }
+
+        choice { text = "$CA_AF_BACK"; nextpage = "loadout_magic_1"; closedialog = false; }
+    }
+    page { pagename = "loadout_preview_25"; userstring = "loadout_preview_25";
+        name = "$CA_PALOMO_NAME"; dialog = "$CA_LOADOUT_REVIEW";
+        goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+        choice { text = "$CA_LOADOUT_STATS"; nextpage = "loadout_stats_25"; closedialog = false; }
+
+        choice { text = "$CA_AF_BACK"; nextpage = "loadout_magic_1"; closedialog = false; }
+    }
+    page { pagename = "loadout_preview_26"; userstring = "loadout_preview_26";
+        name = "$CA_PALOMO_NAME"; dialog = "$CA_LOADOUT_REVIEW";
+        goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+        choice { text = "$CA_LOADOUT_STATS"; nextpage = "loadout_stats_26"; closedialog = false; }
+
+        choice { text = "$CA_AF_BACK"; nextpage = "loadout_magic_2"; closedialog = false; }
+    }
+    page { pagename = "loadout_preview_27"; userstring = "loadout_preview_27";
+        name = "$CA_PALOMO_NAME"; dialog = "$CA_LOADOUT_REVIEW";
+        goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+        choice { text = "$CA_LOADOUT_STATS"; nextpage = "loadout_stats_27"; closedialog = false; }
+
+        choice { text = "$CA_AF_BACK"; nextpage = "loadout_magic_2"; closedialog = false; }
+    }
+    page { pagename = "loadout_preview_28"; userstring = "loadout_preview_28";
+        name = "$CA_PALOMO_NAME"; dialog = "$CA_LOADOUT_REVIEW";
+        goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+        choice { text = "$CA_LOADOUT_STATS"; nextpage = "loadout_stats_28"; closedialog = false; }
+
+        choice { text = "$CA_AF_BACK"; nextpage = "loadout_magic_2"; closedialog = false; }
+    }
+    page { pagename = "loadout_preview_29"; userstring = "loadout_preview_29";
+        name = "$CA_PALOMO_NAME"; dialog = "$CA_LOADOUT_REVIEW";
+        goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+        choice { text = "$CA_LOADOUT_STATS"; nextpage = "loadout_stats_29"; closedialog = false; }
+
+        choice { text = "$CA_AF_BACK"; nextpage = "loadout_magic_2"; closedialog = false; }
+    }
+    page { pagename = "loadout_preview_30"; userstring = "loadout_preview_30";
+        name = "$CA_PALOMO_NAME"; dialog = "$CA_LOADOUT_REVIEW";
+        goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+        choice { text = "$CA_LOADOUT_STATS"; nextpage = "loadout_stats_30"; closedialog = false; }
+
+        choice { text = "$CA_AF_BACK"; nextpage = "loadout_magic_2"; closedialog = false; }
+    }
+    page { pagename = "loadout_preview_31"; userstring = "loadout_preview_31";
+        name = "$CA_PALOMO_NAME"; dialog = "$CA_LOADOUT_REVIEW";
+        goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+        choice { text = "$CA_LOADOUT_STATS"; nextpage = "loadout_stats_31"; closedialog = false; }
+
+        choice { text = "$CA_AF_BACK"; nextpage = "loadout_magic_3"; closedialog = false; }
+    }
+    page { pagename = "loadout_preview_32"; userstring = "loadout_preview_32";
+        name = "$CA_PALOMO_NAME"; dialog = "$CA_LOADOUT_REVIEW";
+        goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+        choice { text = "$CA_LOADOUT_STATS"; nextpage = "loadout_stats_32"; closedialog = false; }
+
+        choice { text = "$CA_AF_BACK"; nextpage = "loadout_magic_3"; closedialog = false; }
+    }
+    page { pagename = "loadout_preview_33"; userstring = "loadout_preview_33";
+        name = "$CA_PALOMO_NAME"; dialog = "$CA_LOADOUT_REVIEW";
+        goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+        choice { text = "$CA_LOADOUT_STATS"; nextpage = "loadout_stats_33"; closedialog = false; }
+
+        choice { text = "$CA_AF_BACK"; nextpage = "loadout_magic_3"; closedialog = false; }
+    }
+    page { pagename = "loadout_preview_34"; userstring = "loadout_preview_34";
+        name = "$CA_PALOMO_NAME"; dialog = "$CA_LOADOUT_REVIEW";
+        goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+        choice { text = "$CA_LOADOUT_STATS"; nextpage = "loadout_stats_34"; closedialog = false; }
+
+        choice { text = "$CA_AF_BACK"; nextpage = "loadout_magic_3"; closedialog = false; }
+    }
+    page { pagename = "loadout_preview_35"; userstring = "loadout_preview_35";
+        name = "$CA_PALOMO_NAME"; dialog = "$CA_LOADOUT_REVIEW";
+        goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+        choice { text = "$CA_LOADOUT_STATS"; nextpage = "loadout_stats_35"; closedialog = false; }
+
+        choice { text = "$CA_AF_BACK"; nextpage = "loadout_magic_3"; closedialog = false; }
+    }
+    page { pagename = "loadout_armors"; userstring = "loadout_armors";
+        name = "$CA_PALOMO_NAME"; dialog = "$CA_LOADOUT_REVIEW";
+        goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+        choice { text = "$CA_M01_ARMOR_NAME_0"; nextpage = "loadout_preview_36"; closedialog = false; }
+        choice { text = "$CA_M01_ARMOR_NAME_1"; nextpage = "loadout_preview_37"; closedialog = false; }
+        choice { text = "$CA_M01_ARMOR_NAME_2"; nextpage = "loadout_preview_38"; closedialog = false; }
+        choice { text = "$CA_M01_ARMOR_NAME_3"; nextpage = "loadout_preview_39"; closedialog = false; }
+        choice { text = "$CA_AF_BACK"; nextpage = "loadout_root"; closedialog = false; }
+    }
+    page { pagename = "loadout_preview_36"; userstring = "loadout_preview_36";
+        name = "$CA_PALOMO_NAME"; dialog = "$CA_LOADOUT_REVIEW";
+        goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+        choice { text = "$CA_LOADOUT_STATS"; nextpage = "loadout_stats_36"; closedialog = false; }
+
+        choice { text = "$CA_AF_BACK"; nextpage = "loadout_armors"; closedialog = false; }
+    }
+    page { pagename = "loadout_preview_37"; userstring = "loadout_preview_37";
+        name = "$CA_PALOMO_NAME"; dialog = "$CA_LOADOUT_REVIEW";
+        goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+        choice { text = "$CA_LOADOUT_STATS"; nextpage = "loadout_stats_37"; closedialog = false; }
+
+        choice { text = "$CA_AF_BACK"; nextpage = "loadout_armors"; closedialog = false; }
+    }
+    page { pagename = "loadout_preview_38"; userstring = "loadout_preview_38";
+        name = "$CA_PALOMO_NAME"; dialog = "$CA_LOADOUT_REVIEW";
+        goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+        choice { text = "$CA_LOADOUT_STATS"; nextpage = "loadout_stats_38"; closedialog = false; }
+
+        choice { text = "$CA_AF_BACK"; nextpage = "loadout_armors"; closedialog = false; }
+    }
+    page { pagename = "loadout_preview_39"; userstring = "loadout_preview_39";
+        name = "$CA_PALOMO_NAME"; dialog = "$CA_LOADOUT_REVIEW";
+        goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+        choice { text = "$CA_LOADOUT_STATS"; nextpage = "loadout_stats_39"; closedialog = false; }
+
+        choice { text = "$CA_AF_BACK"; nextpage = "loadout_armors"; closedialog = false; }
+    }
+    page { pagename = "loadout_seals"; userstring = "loadout_seals";
+        name = "$CA_PALOMO_NAME"; dialog = "$CA_LOADOUT_REVIEW";
+        goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+        choice { text = "$CA_AF_SEAL_0"; nextpage = "loadout_preview_40"; closedialog = false; }
+        choice { text = "$CA_AF_SEAL_1"; nextpage = "loadout_preview_41"; closedialog = false; }
+        choice { text = "$CA_AF_SEAL_2"; nextpage = "loadout_preview_42"; closedialog = false; }
+        choice { text = "$CA_AF_SEAL_3"; nextpage = "loadout_preview_43"; closedialog = false; }
+        choice { text = "$CA_AF_SEAL_4"; nextpage = "loadout_preview_44"; closedialog = false; }
+        choice { text = "$CA_AF_BACK"; nextpage = "loadout_root"; closedialog = false; }
+    }
+    page { pagename = "loadout_preview_40"; userstring = "loadout_preview_40";
+        name = "$CA_PALOMO_NAME"; dialog = "$CA_LOADOUT_REVIEW";
+        goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+        choice { text = "$CA_LOADOUT_STATS"; nextpage = "loadout_stats_40"; closedialog = false; }
+
+        choice { text = "$CA_AF_BACK"; nextpage = "loadout_seals"; closedialog = false; }
+    }
+    page { pagename = "loadout_preview_41"; userstring = "loadout_preview_41";
+        name = "$CA_PALOMO_NAME"; dialog = "$CA_LOADOUT_REVIEW";
+        goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+        choice { text = "$CA_LOADOUT_STATS"; nextpage = "loadout_stats_41"; closedialog = false; }
+
+        choice { text = "$CA_AF_BACK"; nextpage = "loadout_seals"; closedialog = false; }
+    }
+    page { pagename = "loadout_preview_42"; userstring = "loadout_preview_42";
+        name = "$CA_PALOMO_NAME"; dialog = "$CA_LOADOUT_REVIEW";
+        goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+        choice { text = "$CA_LOADOUT_STATS"; nextpage = "loadout_stats_42"; closedialog = false; }
+
+        choice { text = "$CA_AF_BACK"; nextpage = "loadout_seals"; closedialog = false; }
+    }
+    page { pagename = "loadout_preview_43"; userstring = "loadout_preview_43";
+        name = "$CA_PALOMO_NAME"; dialog = "$CA_LOADOUT_REVIEW";
+        goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+        choice { text = "$CA_LOADOUT_STATS"; nextpage = "loadout_stats_43"; closedialog = false; }
+
+        choice { text = "$CA_AF_BACK"; nextpage = "loadout_seals"; closedialog = false; }
+    }
+    page { pagename = "loadout_preview_44"; userstring = "loadout_preview_44";
+        name = "$CA_PALOMO_NAME"; dialog = "$CA_LOADOUT_REVIEW";
+        goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+        choice { text = "$CA_LOADOUT_STATS"; nextpage = "loadout_stats_44"; closedialog = false; }
+
+        choice { text = "$CA_AF_BACK"; nextpage = "loadout_seals"; closedialog = false; }
+    }
+    page { pagename = "loadout_shields"; userstring = "loadout_shields";
+        name = "$CA_PALOMO_NAME"; dialog = "$CA_LOADOUT_REVIEW";
+        goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+        choice { text = "$CA_LOADOUT_SHIELD_NAME_0"; nextpage = "loadout_preview_45"; closedialog = false; }
+        choice { text = "$CA_LOADOUT_SHIELD_NAME_1"; nextpage = "loadout_preview_46"; closedialog = false; }
+        choice { text = "$CA_LOADOUT_SHIELD_NAME_2"; nextpage = "loadout_preview_47"; closedialog = false; }
+        choice { text = "$CA_LOADOUT_SHIELD_NAME_3"; nextpage = "loadout_preview_48"; closedialog = false; }
+        choice { text = "$CA_AF_BACK"; nextpage = "loadout_root"; closedialog = false; }
+    }
+    page { pagename = "loadout_preview_45"; userstring = "loadout_preview_45";
+        name = "$CA_PALOMO_NAME"; dialog = "$CA_LOADOUT_REVIEW";
+        goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+        choice { text = "$CA_LOADOUT_STATS"; nextpage = "loadout_stats_45"; closedialog = false; }
+
+        choice { text = "$CA_AF_BACK"; nextpage = "loadout_shields"; closedialog = false; }
+    }
+    page { pagename = "loadout_preview_46"; userstring = "loadout_preview_46";
+        name = "$CA_PALOMO_NAME"; dialog = "$CA_LOADOUT_REVIEW";
+        goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+        choice { text = "$CA_LOADOUT_STATS"; nextpage = "loadout_stats_46"; closedialog = false; }
+
+        choice { text = "$CA_AF_BACK"; nextpage = "loadout_shields"; closedialog = false; }
+    }
+    page { pagename = "loadout_preview_47"; userstring = "loadout_preview_47";
+        name = "$CA_PALOMO_NAME"; dialog = "$CA_LOADOUT_REVIEW";
+        goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+        choice { text = "$CA_LOADOUT_STATS"; nextpage = "loadout_stats_47"; closedialog = false; }
+
+        choice { text = "$CA_AF_BACK"; nextpage = "loadout_shields"; closedialog = false; }
+    }
+    page { pagename = "loadout_preview_48"; userstring = "loadout_preview_48";
+        name = "$CA_PALOMO_NAME"; dialog = "$CA_LOADOUT_REVIEW";
+        goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+        choice { text = "$CA_LOADOUT_STATS"; nextpage = "loadout_stats_48"; closedialog = false; }
+
+        choice { text = "$CA_AF_BACK"; nextpage = "loadout_shields"; closedialog = false; }
+    }
+page
+    {
+        pagename = "palomo_lessons";
+        name = "$CA_PALOMO_NAME";
+        dialog = "$CA_DEMO_PALOMO_LESSONS";
+        goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+        choice { text = "$CA_M01_NEEDS_ASK"; nextpage = "ronnie_needs"; }
+        choice { text = "$CA_DEMO_SLEEP_ASK"; nextpage = "palomo_sleep"; giveitem = "CaelumPalomoSleepLessonAction"; }
+        choice { text = "$CA_M01_AIR_ASK"; nextpage = "ronnie_air"; }
+        choice { text = "$CA_M01_LOAD_ASK"; nextpage = "ronnie_load"; }
+        choice { text = "$CA_M01_SWIM_ASK"; nextpage = "ronnie_swim"; }
+        choice { text = "$CA_WATER_ASK"; nextpage = "ronnie_water"; }
+        choice { text = "$CA_DLG_M01_GARDEN_ASK"; nextpage = "palomo_materials"; }
+    }
+page
+    {
+        pagename = "palomo_sleep"; userstring = "palomo_sleep";
+        name = "$CA_PALOMO_NAME"; dialog = "$CA_DEMO_SLEEP";
+        goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+    }
+page
+    {
+        pagename = "palomo_materials";
+        name = "$CA_PALOMO_NAME"; dialog = "$CA_DEMO_MATERIALS";
+        goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+    }
+page
+    {
+        pagename = "ronnie_needs";
+        userstring = "ronnie_needs";
+        name = "$CA_PALOMO_NAME";
+        dialog = "$CA_M01_NEEDS_INTRO";
+        goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+        choice { text = "$CA_M01_NEEDS_START"; nextpage = "ronnie_needs_practice"; giveitem = "CaelumM00NeedsLessonAction"; }
+        choice { text = "$CA_M01_NEEDS_SAFE_ASK"; nextpage = "ronnie_needs_safe"; }
+    }
+page
+    {
+        pagename = "ronnie_needs_practice";
+        userstring = "ronnie_needs_practice";
+        name = "$CA_PALOMO_NAME";
+        dialog = "$CA_M01_NEEDS_PRACTICE";
+        goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+        choice { text = "$CA_M01_NEEDS_SAFE_ASK"; nextpage = "ronnie_needs_safe"; }
+        choice { text = "$CA_M01_NEEDS_RETRY"; nextpage = "ronnie_needs_practice"; giveitem = "CaelumM00NeedsLessonAction"; }
+    }
+page
+    {
+        pagename = "ronnie_needs_safe";
+        userstring = "ronnie_needs_safe";
+        name = "$CA_PALOMO_NAME";
+        dialog = "$CA_M01_NEEDS_SAFE";
+        goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+        choice { text = "$CA_M01_NEEDS_BACK"; nextpage = "ronnie_needs"; }
+    }
+page
+    {
+        pagename = "ronnie_air";
+        userstring = "ronnie_air";
+        name = "$CA_PALOMO_NAME";
+        dialog = "$CA_M01_AIR_INTRO";
+        goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+        choice { text = "$CA_M01_AIR_START"; nextpage = "ronnie_air_practice"; giveitem = "CaelumM00AirLessonAction"; }
+    }
+page
+    {
+        pagename = "ronnie_air_practice";
+        userstring = "ronnie_air_practice";
+        name = "$CA_PALOMO_NAME";
+        dialog = "$CA_M01_AIR_PRACTICE";
+        goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+    }
+page
+    {
+        pagename = "ronnie_load";
+        userstring = "ronnie_load";
+        name = "$CA_PALOMO_NAME";
+        dialog = "$CA_M01_LOAD_INTRO";
+        goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+        choice { text = "$CA_M01_LOAD_START"; nextpage = "ronnie_load_practice"; giveitem = "CaelumM00LoadLessonAction"; }
+    }
+page
+    {
+        pagename = "ronnie_load_practice";
+        userstring = "ronnie_load_practice";
+        name = "$CA_PALOMO_NAME";
+        dialog = "$CA_M01_LOAD_PRACTICE";
+        goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+    }
+page
+    {
+        pagename = "ronnie_swim";
+        userstring = "ronnie_swim";
+        name = "$CA_PALOMO_NAME";
+        dialog = "$CA_M01_SWIM_INTRO";
+        goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+        choice { text = "$CA_M01_SWIM_START"; nextpage = "ronnie_swim_practice"; giveitem = "CaelumM00SwimLessonAction"; }
+    }
+page
+    {
+        pagename = "ronnie_swim_practice";
+        userstring = "ronnie_swim_practice";
+        name = "$CA_PALOMO_NAME";
+        dialog = "$CA_M01_SWIM_PRACTICE";
+        goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+    }
+page
+    {
+        pagename = "ronnie_water"; userstring = "ronnie_water";
+        name = "$CA_PALOMO_NAME"; dialog = "$CA_WATER_RONNIE";
+        goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+        choice { text = "$CA_WATER_ACCEPT"; giveitem = "CaelumM00WaterContainerAction"; closedialog = true; }
+    }
+    page { pagename = "loadout_summary"; userstring = "loadout_summary";
+        name = "$CA_PALOMO_NAME"; dialog = "$CA_LOADOUT_REVIEW"; goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+        choice { text = "$CA_AF_BACK"; nextpage = "loadout_root"; closedialog = false; } }
+    page { pagename = "loadout_stats_0"; userstring = "loadout_stats_0";
+        name = "$CA_PALOMO_NAME"; dialog = "$CA_LOADOUT_REVIEW"; goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+        choice { text = "$CA_AF_CONFIRM"; nextpage = "loadout_root"; closedialog = false; giveitem = "CaelumM00ChooseStarter0"; exclude { item = "CaelumM00LoadoutWeaponToken"; amount = 1; } }
+        choice { text = "$CA_AF_BACK"; nextpage = "loadout_preview_0"; closedialog = false; }
+    }
+    page { pagename = "loadout_stats_1"; userstring = "loadout_stats_1";
+        name = "$CA_PALOMO_NAME"; dialog = "$CA_LOADOUT_REVIEW"; goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+        choice { text = "$CA_AF_CONFIRM"; nextpage = "loadout_root"; closedialog = false; giveitem = "CaelumM00ChooseStarter1"; exclude { item = "CaelumM00LoadoutWeaponToken"; amount = 1; } }
+        choice { text = "$CA_AF_BACK"; nextpage = "loadout_preview_1"; closedialog = false; }
+    }
+    page { pagename = "loadout_stats_2"; userstring = "loadout_stats_2";
+        name = "$CA_PALOMO_NAME"; dialog = "$CA_LOADOUT_REVIEW"; goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+        choice { text = "$CA_AF_CONFIRM"; nextpage = "loadout_root"; closedialog = false; giveitem = "CaelumM00ChooseStarter2"; exclude { item = "CaelumM00LoadoutWeaponToken"; amount = 1; } }
+        choice { text = "$CA_AF_BACK"; nextpage = "loadout_preview_2"; closedialog = false; }
+    }
+    page { pagename = "loadout_stats_3"; userstring = "loadout_stats_3";
+        name = "$CA_PALOMO_NAME"; dialog = "$CA_LOADOUT_REVIEW"; goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+        choice { text = "$CA_AF_CONFIRM"; nextpage = "loadout_root"; closedialog = false; giveitem = "CaelumM00ChooseStarter3"; exclude { item = "CaelumM00LoadoutWeaponToken"; amount = 1; } }
+        choice { text = "$CA_AF_BACK"; nextpage = "loadout_preview_3"; closedialog = false; }
+    }
+    page { pagename = "loadout_stats_4"; userstring = "loadout_stats_4";
+        name = "$CA_PALOMO_NAME"; dialog = "$CA_LOADOUT_REVIEW"; goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+        choice { text = "$CA_AF_CONFIRM"; nextpage = "loadout_root"; closedialog = false; giveitem = "CaelumM00ChooseStarter4"; exclude { item = "CaelumM00LoadoutWeaponToken"; amount = 1; } }
+        choice { text = "$CA_AF_BACK"; nextpage = "loadout_preview_4"; closedialog = false; }
+    }
+    page { pagename = "loadout_stats_5"; userstring = "loadout_stats_5";
+        name = "$CA_PALOMO_NAME"; dialog = "$CA_LOADOUT_REVIEW"; goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+        choice { text = "$CA_AF_CONFIRM"; nextpage = "loadout_root"; closedialog = false; giveitem = "CaelumM00ChooseStarter5"; exclude { item = "CaelumM00LoadoutWeaponToken"; amount = 1; } }
+        choice { text = "$CA_AF_BACK"; nextpage = "loadout_preview_5"; closedialog = false; }
+    }
+    page { pagename = "loadout_stats_6"; userstring = "loadout_stats_6";
+        name = "$CA_PALOMO_NAME"; dialog = "$CA_LOADOUT_REVIEW"; goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+        choice { text = "$CA_AF_CONFIRM"; nextpage = "loadout_root"; closedialog = false; giveitem = "CaelumM00ChooseStarter6"; exclude { item = "CaelumM00LoadoutWeaponToken"; amount = 1; } }
+        choice { text = "$CA_AF_BACK"; nextpage = "loadout_preview_6"; closedialog = false; }
+    }
+    page { pagename = "loadout_stats_7"; userstring = "loadout_stats_7";
+        name = "$CA_PALOMO_NAME"; dialog = "$CA_LOADOUT_REVIEW"; goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+        choice { text = "$CA_AF_CONFIRM"; nextpage = "loadout_root"; closedialog = false; giveitem = "CaelumM00ChooseStarter7"; exclude { item = "CaelumM00LoadoutWeaponToken"; amount = 1; } }
+        choice { text = "$CA_AF_BACK"; nextpage = "loadout_preview_7"; closedialog = false; }
+    }
+    page { pagename = "loadout_stats_8"; userstring = "loadout_stats_8";
+        name = "$CA_PALOMO_NAME"; dialog = "$CA_LOADOUT_REVIEW"; goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+        choice { text = "$CA_AF_CONFIRM"; nextpage = "loadout_root"; closedialog = false; giveitem = "CaelumM00ChooseStarter8"; exclude { item = "CaelumM00LoadoutWeaponToken"; amount = 1; } }
+        choice { text = "$CA_AF_BACK"; nextpage = "loadout_preview_8"; closedialog = false; }
+    }
+    page { pagename = "loadout_stats_9"; userstring = "loadout_stats_9";
+        name = "$CA_PALOMO_NAME"; dialog = "$CA_LOADOUT_REVIEW"; goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+        choice { text = "$CA_AF_CONFIRM"; nextpage = "loadout_root"; closedialog = false; giveitem = "CaelumM00ChooseStarter9"; exclude { item = "CaelumM00LoadoutWeaponToken"; amount = 1; } }
+        choice { text = "$CA_AF_BACK"; nextpage = "loadout_preview_9"; closedialog = false; }
+    }
+    page { pagename = "loadout_stats_10"; userstring = "loadout_stats_10";
+        name = "$CA_PALOMO_NAME"; dialog = "$CA_LOADOUT_REVIEW"; goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+        choice { text = "$CA_AF_CONFIRM"; nextpage = "loadout_root"; closedialog = false; giveitem = "CaelumM00ChooseStarter10"; exclude { item = "CaelumM00LoadoutWeaponToken"; amount = 1; } }
+        choice { text = "$CA_AF_BACK"; nextpage = "loadout_preview_10"; closedialog = false; }
+    }
+    page { pagename = "loadout_stats_11"; userstring = "loadout_stats_11";
+        name = "$CA_PALOMO_NAME"; dialog = "$CA_LOADOUT_REVIEW"; goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+        choice { text = "$CA_AF_CONFIRM"; nextpage = "loadout_root"; closedialog = false; giveitem = "CaelumM00ChooseStarter11"; exclude { item = "CaelumM00LoadoutWeaponToken"; amount = 1; } }
+        choice { text = "$CA_AF_BACK"; nextpage = "loadout_preview_11"; closedialog = false; }
+    }
+    page { pagename = "loadout_stats_12"; userstring = "loadout_stats_12";
+        name = "$CA_PALOMO_NAME"; dialog = "$CA_LOADOUT_REVIEW"; goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+        choice { text = "$CA_AF_CONFIRM"; nextpage = "loadout_root"; closedialog = false; giveitem = "CaelumM00ChooseStarter12"; exclude { item = "CaelumM00LoadoutWeaponToken"; amount = 1; } }
+        choice { text = "$CA_AF_BACK"; nextpage = "loadout_preview_12"; closedialog = false; }
+    }
+    page { pagename = "loadout_stats_13"; userstring = "loadout_stats_13";
+        name = "$CA_PALOMO_NAME"; dialog = "$CA_LOADOUT_REVIEW"; goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+        choice { text = "$CA_AF_CONFIRM"; nextpage = "loadout_root"; closedialog = false; giveitem = "CaelumM00ChooseStarter13"; exclude { item = "CaelumM00LoadoutWeaponToken"; amount = 1; } }
+        choice { text = "$CA_AF_BACK"; nextpage = "loadout_preview_13"; closedialog = false; }
+    }
+    page { pagename = "loadout_stats_14"; userstring = "loadout_stats_14";
+        name = "$CA_PALOMO_NAME"; dialog = "$CA_LOADOUT_REVIEW"; goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+        choice { text = "$CA_AF_CONFIRM"; nextpage = "loadout_root"; closedialog = false; giveitem = "CaelumM00ChooseStarter14"; exclude { item = "CaelumM00LoadoutWeaponToken"; amount = 1; } }
+        choice { text = "$CA_AF_BACK"; nextpage = "loadout_preview_14"; closedialog = false; }
+    }
+    page { pagename = "loadout_stats_15"; userstring = "loadout_stats_15";
+        name = "$CA_PALOMO_NAME"; dialog = "$CA_LOADOUT_REVIEW"; goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+        choice { text = "$CA_AF_CONFIRM"; nextpage = "loadout_root"; closedialog = false; giveitem = "CaelumM00ChooseStarter15"; exclude { item = "CaelumM00LoadoutWeaponToken"; amount = 1; } }
+        choice { text = "$CA_AF_BACK"; nextpage = "loadout_preview_15"; closedialog = false; }
+    }
+    page { pagename = "loadout_stats_16"; userstring = "loadout_stats_16";
+        name = "$CA_PALOMO_NAME"; dialog = "$CA_LOADOUT_REVIEW"; goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+        choice { text = "$CA_AF_CONFIRM"; nextpage = "loadout_root"; closedialog = false; giveitem = "CaelumM00ChooseStarter16"; exclude { item = "CaelumM00LoadoutWeaponToken"; amount = 1; } }
+        choice { text = "$CA_AF_BACK"; nextpage = "loadout_preview_16"; closedialog = false; }
+    }
+    page { pagename = "loadout_stats_17"; userstring = "loadout_stats_17";
+        name = "$CA_PALOMO_NAME"; dialog = "$CA_LOADOUT_REVIEW"; goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+        choice { text = "$CA_AF_CONFIRM"; nextpage = "loadout_root"; closedialog = false; giveitem = "CaelumM00ChooseStarter17"; exclude { item = "CaelumM00LoadoutWeaponToken"; amount = 1; } }
+        choice { text = "$CA_AF_BACK"; nextpage = "loadout_preview_17"; closedialog = false; }
+    }
+    page { pagename = "loadout_stats_18"; userstring = "loadout_stats_18";
+        name = "$CA_PALOMO_NAME"; dialog = "$CA_LOADOUT_REVIEW"; goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+        choice { text = "$CA_AF_CONFIRM"; nextpage = "loadout_root"; closedialog = false; giveitem = "CaelumM00ChooseStarter18"; exclude { item = "CaelumM00LoadoutWeaponToken"; amount = 1; } }
+        choice { text = "$CA_AF_BACK"; nextpage = "loadout_preview_18"; closedialog = false; }
+    }
+    page { pagename = "loadout_stats_19"; userstring = "loadout_stats_19";
+        name = "$CA_PALOMO_NAME"; dialog = "$CA_LOADOUT_REVIEW"; goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+        choice { text = "$CA_AF_CONFIRM"; nextpage = "loadout_root"; closedialog = false; giveitem = "CaelumM00ChooseStarter19"; exclude { item = "CaelumM00LoadoutWeaponToken"; amount = 1; } }
+        choice { text = "$CA_AF_BACK"; nextpage = "loadout_preview_19"; closedialog = false; }
+    }
+    page { pagename = "loadout_stats_20"; userstring = "loadout_stats_20";
+        name = "$CA_PALOMO_NAME"; dialog = "$CA_LOADOUT_REVIEW"; goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+        choice { text = "$CA_AF_CONFIRM"; nextpage = "loadout_root"; closedialog = false; giveitem = "CaelumM00ChooseStarter20"; exclude { item = "CaelumM00LoadoutWeaponToken"; amount = 1; } }
+        choice { text = "$CA_AF_BACK"; nextpage = "loadout_preview_20"; closedialog = false; }
+    }
+    page { pagename = "loadout_stats_21"; userstring = "loadout_stats_21";
+        name = "$CA_PALOMO_NAME"; dialog = "$CA_LOADOUT_REVIEW"; goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+        choice { text = "$CA_AF_CONFIRM"; nextpage = "loadout_root"; closedialog = false; giveitem = "CaelumM00ChooseStarter21"; exclude { item = "CaelumM00LoadoutWeaponToken"; amount = 1; } }
+        choice { text = "$CA_AF_BACK"; nextpage = "loadout_preview_21"; closedialog = false; }
+    }
+    page { pagename = "loadout_stats_22"; userstring = "loadout_stats_22";
+        name = "$CA_PALOMO_NAME"; dialog = "$CA_LOADOUT_REVIEW"; goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+        choice { text = "$CA_AF_CONFIRM"; nextpage = "loadout_root"; closedialog = false; giveitem = "CaelumM00ChooseStarter22"; exclude { item = "CaelumM00LoadoutWeaponToken"; amount = 1; } }
+        choice { text = "$CA_AF_BACK"; nextpage = "loadout_preview_22"; closedialog = false; }
+    }
+    page { pagename = "loadout_stats_23"; userstring = "loadout_stats_23";
+        name = "$CA_PALOMO_NAME"; dialog = "$CA_LOADOUT_REVIEW"; goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+        choice { text = "$CA_AF_CONFIRM"; nextpage = "loadout_root"; closedialog = false; giveitem = "CaelumM00ChooseStarter23"; exclude { item = "CaelumM00LoadoutWeaponToken"; amount = 1; } }
+        choice { text = "$CA_AF_BACK"; nextpage = "loadout_preview_23"; closedialog = false; }
+    }
+    page { pagename = "loadout_stats_24"; userstring = "loadout_stats_24";
+        name = "$CA_PALOMO_NAME"; dialog = "$CA_LOADOUT_REVIEW"; goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+        choice { text = "$CA_AF_CONFIRM"; nextpage = "loadout_root"; closedialog = false; giveitem = "CaelumM00ChooseStarter24"; exclude { item = "CaelumM00LoadoutWeaponToken"; amount = 1; } }
+        choice { text = "$CA_AF_BACK"; nextpage = "loadout_preview_24"; closedialog = false; }
+    }
+    page { pagename = "loadout_stats_25"; userstring = "loadout_stats_25";
+        name = "$CA_PALOMO_NAME"; dialog = "$CA_LOADOUT_REVIEW"; goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+        choice { text = "$CA_AF_CONFIRM"; nextpage = "loadout_root"; closedialog = false; giveitem = "CaelumM00ChooseStarter25"; exclude { item = "CaelumM00LoadoutWeaponToken"; amount = 1; } }
+        choice { text = "$CA_AF_BACK"; nextpage = "loadout_preview_25"; closedialog = false; }
+    }
+    page { pagename = "loadout_stats_26"; userstring = "loadout_stats_26";
+        name = "$CA_PALOMO_NAME"; dialog = "$CA_LOADOUT_REVIEW"; goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+        choice { text = "$CA_AF_CONFIRM"; nextpage = "loadout_root"; closedialog = false; giveitem = "CaelumM00ChooseStarter26"; exclude { item = "CaelumM00LoadoutWeaponToken"; amount = 1; } }
+        choice { text = "$CA_AF_BACK"; nextpage = "loadout_preview_26"; closedialog = false; }
+    }
+    page { pagename = "loadout_stats_27"; userstring = "loadout_stats_27";
+        name = "$CA_PALOMO_NAME"; dialog = "$CA_LOADOUT_REVIEW"; goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+        choice { text = "$CA_AF_CONFIRM"; nextpage = "loadout_root"; closedialog = false; giveitem = "CaelumM00ChooseStarter27"; exclude { item = "CaelumM00LoadoutWeaponToken"; amount = 1; } }
+        choice { text = "$CA_AF_BACK"; nextpage = "loadout_preview_27"; closedialog = false; }
+    }
+    page { pagename = "loadout_stats_28"; userstring = "loadout_stats_28";
+        name = "$CA_PALOMO_NAME"; dialog = "$CA_LOADOUT_REVIEW"; goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+        choice { text = "$CA_AF_CONFIRM"; nextpage = "loadout_root"; closedialog = false; giveitem = "CaelumM00ChooseStarter28"; exclude { item = "CaelumM00LoadoutWeaponToken"; amount = 1; } }
+        choice { text = "$CA_AF_BACK"; nextpage = "loadout_preview_28"; closedialog = false; }
+    }
+    page { pagename = "loadout_stats_29"; userstring = "loadout_stats_29";
+        name = "$CA_PALOMO_NAME"; dialog = "$CA_LOADOUT_REVIEW"; goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+        choice { text = "$CA_AF_CONFIRM"; nextpage = "loadout_root"; closedialog = false; giveitem = "CaelumM00ChooseStarter29"; exclude { item = "CaelumM00LoadoutWeaponToken"; amount = 1; } }
+        choice { text = "$CA_AF_BACK"; nextpage = "loadout_preview_29"; closedialog = false; }
+    }
+    page { pagename = "loadout_stats_30"; userstring = "loadout_stats_30";
+        name = "$CA_PALOMO_NAME"; dialog = "$CA_LOADOUT_REVIEW"; goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+        choice { text = "$CA_AF_CONFIRM"; nextpage = "loadout_root"; closedialog = false; giveitem = "CaelumM00ChooseStarter30"; exclude { item = "CaelumM00LoadoutWeaponToken"; amount = 1; } }
+        choice { text = "$CA_AF_BACK"; nextpage = "loadout_preview_30"; closedialog = false; }
+    }
+    page { pagename = "loadout_stats_31"; userstring = "loadout_stats_31";
+        name = "$CA_PALOMO_NAME"; dialog = "$CA_LOADOUT_REVIEW"; goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+        choice { text = "$CA_AF_CONFIRM"; nextpage = "loadout_root"; closedialog = false; giveitem = "CaelumM00ChooseStarter31"; exclude { item = "CaelumM00LoadoutWeaponToken"; amount = 1; } }
+        choice { text = "$CA_AF_BACK"; nextpage = "loadout_preview_31"; closedialog = false; }
+    }
+    page { pagename = "loadout_stats_32"; userstring = "loadout_stats_32";
+        name = "$CA_PALOMO_NAME"; dialog = "$CA_LOADOUT_REVIEW"; goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+        choice { text = "$CA_AF_CONFIRM"; nextpage = "loadout_root"; closedialog = false; giveitem = "CaelumM00ChooseStarter32"; exclude { item = "CaelumM00LoadoutWeaponToken"; amount = 1; } }
+        choice { text = "$CA_AF_BACK"; nextpage = "loadout_preview_32"; closedialog = false; }
+    }
+    page { pagename = "loadout_stats_33"; userstring = "loadout_stats_33";
+        name = "$CA_PALOMO_NAME"; dialog = "$CA_LOADOUT_REVIEW"; goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+        choice { text = "$CA_AF_CONFIRM"; nextpage = "loadout_root"; closedialog = false; giveitem = "CaelumM00ChooseStarter33"; exclude { item = "CaelumM00LoadoutWeaponToken"; amount = 1; } }
+        choice { text = "$CA_AF_BACK"; nextpage = "loadout_preview_33"; closedialog = false; }
+    }
+    page { pagename = "loadout_stats_34"; userstring = "loadout_stats_34";
+        name = "$CA_PALOMO_NAME"; dialog = "$CA_LOADOUT_REVIEW"; goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+        choice { text = "$CA_AF_CONFIRM"; nextpage = "loadout_root"; closedialog = false; giveitem = "CaelumM00ChooseStarter34"; exclude { item = "CaelumM00LoadoutWeaponToken"; amount = 1; } }
+        choice { text = "$CA_AF_BACK"; nextpage = "loadout_preview_34"; closedialog = false; }
+    }
+    page { pagename = "loadout_stats_35"; userstring = "loadout_stats_35";
+        name = "$CA_PALOMO_NAME"; dialog = "$CA_LOADOUT_REVIEW"; goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+        choice { text = "$CA_AF_CONFIRM"; nextpage = "loadout_root"; closedialog = false; giveitem = "CaelumM00ChooseStarter35"; exclude { item = "CaelumM00LoadoutWeaponToken"; amount = 1; } }
+        choice { text = "$CA_AF_BACK"; nextpage = "loadout_preview_35"; closedialog = false; }
+    }
+    page { pagename = "loadout_stats_36"; userstring = "loadout_stats_36";
+        name = "$CA_PALOMO_NAME"; dialog = "$CA_LOADOUT_REVIEW"; goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+        choice { text = "$CA_AF_CONFIRM"; nextpage = "loadout_root"; closedialog = false; giveitem = "CaelumM00ChooseArmor0"; exclude { item = "CaelumM00ArmorChosenToken"; amount = 1; } }
+        choice { text = "$CA_AF_BACK"; nextpage = "loadout_preview_36"; closedialog = false; }
+    }
+    page { pagename = "loadout_stats_37"; userstring = "loadout_stats_37";
+        name = "$CA_PALOMO_NAME"; dialog = "$CA_LOADOUT_REVIEW"; goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+        choice { text = "$CA_AF_CONFIRM"; nextpage = "loadout_root"; closedialog = false; giveitem = "CaelumM00ChooseArmor1"; exclude { item = "CaelumM00ArmorChosenToken"; amount = 1; } }
+        choice { text = "$CA_AF_BACK"; nextpage = "loadout_preview_37"; closedialog = false; }
+    }
+    page { pagename = "loadout_stats_38"; userstring = "loadout_stats_38";
+        name = "$CA_PALOMO_NAME"; dialog = "$CA_LOADOUT_REVIEW"; goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+        choice { text = "$CA_AF_CONFIRM"; nextpage = "loadout_root"; closedialog = false; giveitem = "CaelumM00ChooseArmor2"; exclude { item = "CaelumM00ArmorChosenToken"; amount = 1; } }
+        choice { text = "$CA_AF_BACK"; nextpage = "loadout_preview_38"; closedialog = false; }
+    }
+    page { pagename = "loadout_stats_39"; userstring = "loadout_stats_39";
+        name = "$CA_PALOMO_NAME"; dialog = "$CA_LOADOUT_REVIEW"; goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+        choice { text = "$CA_AF_CONFIRM"; nextpage = "loadout_root"; closedialog = false; giveitem = "CaelumM00ChooseArmor3"; exclude { item = "CaelumM00ArmorChosenToken"; amount = 1; } }
+        choice { text = "$CA_AF_BACK"; nextpage = "loadout_preview_39"; closedialog = false; }
+    }
+    page { pagename = "loadout_stats_40"; userstring = "loadout_stats_40";
+        name = "$CA_PALOMO_NAME"; dialog = "$CA_LOADOUT_REVIEW"; goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+        choice { text = "$CA_AF_CONFIRM"; nextpage = "loadout_root"; closedialog = false; giveitem = "CaelumM00ChooseSeal0"; exclude { item = "CaelumM00SealsLearnedToken"; amount = 1; } }
+        choice { text = "$CA_AF_BACK"; nextpage = "loadout_preview_40"; closedialog = false; }
+    }
+    page { pagename = "loadout_stats_41"; userstring = "loadout_stats_41";
+        name = "$CA_PALOMO_NAME"; dialog = "$CA_LOADOUT_REVIEW"; goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+        choice { text = "$CA_AF_CONFIRM"; nextpage = "loadout_root"; closedialog = false; giveitem = "CaelumM00ChooseSeal1"; exclude { item = "CaelumM00SealsLearnedToken"; amount = 1; } }
+        choice { text = "$CA_AF_BACK"; nextpage = "loadout_preview_41"; closedialog = false; }
+    }
+    page { pagename = "loadout_stats_42"; userstring = "loadout_stats_42";
+        name = "$CA_PALOMO_NAME"; dialog = "$CA_LOADOUT_REVIEW"; goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+        choice { text = "$CA_AF_CONFIRM"; nextpage = "loadout_root"; closedialog = false; giveitem = "CaelumM00ChooseSeal2"; exclude { item = "CaelumM00SealsLearnedToken"; amount = 1; } }
+        choice { text = "$CA_AF_BACK"; nextpage = "loadout_preview_42"; closedialog = false; }
+    }
+    page { pagename = "loadout_stats_43"; userstring = "loadout_stats_43";
+        name = "$CA_PALOMO_NAME"; dialog = "$CA_LOADOUT_REVIEW"; goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+        choice { text = "$CA_AF_CONFIRM"; nextpage = "loadout_root"; closedialog = false; giveitem = "CaelumM00ChooseSeal3"; exclude { item = "CaelumM00SealsLearnedToken"; amount = 1; } }
+        choice { text = "$CA_AF_BACK"; nextpage = "loadout_preview_43"; closedialog = false; }
+    }
+    page { pagename = "loadout_stats_44"; userstring = "loadout_stats_44";
+        name = "$CA_PALOMO_NAME"; dialog = "$CA_LOADOUT_REVIEW"; goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+        choice { text = "$CA_AF_CONFIRM"; nextpage = "loadout_root"; closedialog = false; giveitem = "CaelumM00ChooseSeal4"; exclude { item = "CaelumM00SealsLearnedToken"; amount = 1; } }
+        choice { text = "$CA_AF_BACK"; nextpage = "loadout_preview_44"; closedialog = false; }
+    }
+    page { pagename = "loadout_stats_45"; userstring = "loadout_stats_45";
+        name = "$CA_PALOMO_NAME"; dialog = "$CA_LOADOUT_REVIEW"; goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+        choice { text = "$CA_AF_CONFIRM"; nextpage = "loadout_root"; closedialog = false; giveitem = "CaelumM00ChooseShield0"; exclude { item = "CaelumM00ShieldChosenToken"; amount = 1; } }
+        choice { text = "$CA_AF_BACK"; nextpage = "loadout_preview_45"; closedialog = false; }
+    }
+    page { pagename = "loadout_stats_46"; userstring = "loadout_stats_46";
+        name = "$CA_PALOMO_NAME"; dialog = "$CA_LOADOUT_REVIEW"; goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+        choice { text = "$CA_AF_CONFIRM"; nextpage = "loadout_root"; closedialog = false; giveitem = "CaelumM00ChooseShield1"; exclude { item = "CaelumM00ShieldChosenToken"; amount = 1; } }
+        choice { text = "$CA_AF_BACK"; nextpage = "loadout_preview_46"; closedialog = false; }
+    }
+    page { pagename = "loadout_stats_47"; userstring = "loadout_stats_47";
+        name = "$CA_PALOMO_NAME"; dialog = "$CA_LOADOUT_REVIEW"; goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+        choice { text = "$CA_AF_CONFIRM"; nextpage = "loadout_root"; closedialog = false; giveitem = "CaelumM00ChooseShield2"; exclude { item = "CaelumM00ShieldChosenToken"; amount = 1; } }
+        choice { text = "$CA_AF_BACK"; nextpage = "loadout_preview_47"; closedialog = false; }
+    }
+    page { pagename = "loadout_stats_48"; userstring = "loadout_stats_48";
+        name = "$CA_PALOMO_NAME"; dialog = "$CA_LOADOUT_REVIEW"; goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+        choice { text = "$CA_AF_CONFIRM"; nextpage = "loadout_root"; closedialog = false; giveitem = "CaelumM00ChooseShield3"; exclude { item = "CaelumM00ShieldChosenToken"; amount = 1; } }
+        choice { text = "$CA_AF_BACK"; nextpage = "loadout_preview_48"; closedialog = false; }
     }
 }

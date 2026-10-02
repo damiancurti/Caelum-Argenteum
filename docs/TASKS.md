@@ -1,6 +1,23 @@
 # TASKS.md — Active tasks
 
-Documentation version: **4.37.2** — 2026-10-01.
+Documentation version: **4.37.3** — 2026-10-01.
+
+## Issue #63 — Move equipment guidance to Palomo (4.37.3)
+
+- Implemented on issue-63-palomo-loadout: physical follow invitation, reviewable
+  weapon/armor/Seal/shield plan and existing Ronnie recipe/material/task flow.
+- Shield allowance uses current recipes and existing sources; no missing supply
+  decision. Caella retains the amulet, and #65 food-source dialogue is coordinated.
+- All own equipment survives departure; loans return and supplies are removed
+  according to the author's explicit clarification. Revision-1 migration keeps
+  old choices, quotas and progress; original-save/package rollback is tested.
+- Static/build and isolated native evidence: assets/validation_4373/RESULTS.json.
+  Native checks cover 49 choices, menu callbacks, physical route, all four shield
+  recipes, cancellation, pending tasks, old saves and narrative exit/reload.
+- Author accepted CA-4373-LOADOUT-01, CA-4373-SAVES-01 and CA-4373-EXIT-01 on
+  2026-10-01 without reported exceptions and authorized PR #70 merge and #63
+  closure. HISTORY records the results; the confirmed entries are removed from
+  pending_test.txt. Runtime and release 4.37.3 remain unchanged.
 
 ## Issue #68 — Magic-weapon Anima base costs divided by ten (4.37.2)
 
@@ -12,7 +29,7 @@ Documentation version: **4.37.2** — 2026-10-01.
 - Static/build, 240 native quotes, 48 live payments and save migration/reload
   checks pass. Evidence: assets/validation_4372/RESULTS.json. The author accepted
   CA-4372-ANIMA-01 on 2026-10-01 and authorized PR #69 merge and #68 closure.
-  HISTORY records acceptance; the author test queue is empty.
+  HISTORY records acceptance; no #68 author checks remain outstanding.
 
 ## Issue #62 — Caella's exercises against the training dummy (4.37.1)
 

@@ -402,6 +402,7 @@ class CaelumMainM00SealCrafting : Object play
 
     static bool Choose(CaelumPlayer user, bool amulet, int type)
     {
+        if (!amulet) return CaelumMainM00Loadout.Choose(user, 2, type);
         if (!CanLearn(user)) return false;
         let speaker = CaelumCaella(user.player.ConversationNPC);
         if (speaker == null || !speaker.StoryAnchored || type < 0
@@ -477,7 +478,7 @@ class CaelumMainM00SealCrafting : Object play
         let r = user.GetPersistentCharacterState(false);
         if (item.EquipmentKind == CaelumConstants.EQUIPMENT_KIND_AMULET) r.MainM00AmuletPrepared = true;
         else r.MainM00SealsPrepared[item.ItemType] = true;
-        item.ItemFlags |= CaelumConstants.CA_ITEMFLAG_LIMBO_TEMP;
+        item.ItemFlags &= ~CaelumConstants.CA_ITEMFLAG_LIMBO_TEMP;
         user.RefreshSocialJournalSnapshot();
     }
 

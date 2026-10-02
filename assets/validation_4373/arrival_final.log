@@ -1,0 +1,42 @@
+GZDoom version g4.14.2
+adding src, 6138 lumps
+adding build/issue63_qa, 3 lumps
+MAP02 - Alcantarillas — el laberinto
+QA63 PASS narrative crossing reaches MAP02
+QA63 PASS owned Magic Box persists
+QA63 PASS all owned equipment survives without duplication; loans returned
+QA63 AUDIT_DETAIL id=14 size=4/4 durability=37/37 essence=3/3 weight=1.0000/1.0000 equipped=0/0 box=1/1
+QA63 PASS identity condition sizing and location retained id=14
+QA63 PASS identity condition sizing and location retained id=13
+QA63 PASS identity condition sizing and location retained id=11
+QA63 PASS identity condition sizing and location retained id=10
+QA63 PASS identity condition sizing and location retained id=9
+QA63 PASS identity condition sizing and location retained id=8
+QA63 PASS identity condition sizing and location retained id=7
+QA63 PASS identity condition sizing and location retained id=6
+QA63 PASS identity condition sizing and location retained id=5
+QA63 PASS identity condition sizing and location retained id=4
+QA63 PASS identity condition sizing and location retained id=3
+QA63 PASS identity condition sizing and location retained id=2
+QA63 PASS ammunition materials coins and consumables removed
+QA63 PASS repeated exit cannot duplicate equipment
+QA63 EXIT_DONE count=12
+QA63 PASS narrative crossing reaches MAP02
+QA63 PASS owned Magic Box persists
+QA63 PASS all owned equipment survives without duplication; loans returned
+QA63 AUDIT_DETAIL id=14 size=4/4 durability=37/37 essence=3/3 weight=1.0000/1.0000 equipped=0/0 box=1/1
+QA63 PASS identity condition sizing and location retained id=14
+QA63 PASS identity condition sizing and location retained id=13
+QA63 PASS identity condition sizing and location retained id=11
+QA63 PASS identity condition sizing and location retained id=10
+QA63 PASS identity condition sizing and location retained id=9
+QA63 PASS identity condition sizing and location retained id=8
+QA63 PASS identity condition sizing and location retained id=7
+QA63 PASS identity condition sizing and location retained id=6
+QA63 PASS identity condition sizing and location retained id=5
+QA63 PASS identity condition sizing and location retained id=4
+QA63 PASS identity condition sizing and location retained id=3
+QA63 PASS identity condition sizing and location retained id=2
+QA63 PASS ammunition materials coins and consumables removed
+QA63 PASS repeated exit cannot duplicate equipment
+QA63 EXIT_DONE count=12

@@ -1,4 +1,4 @@
-// La selección de Ronnie apunta al catálogo vigente; no define recetas nuevas.
+// La selección de Palomo apunta al catálogo vigente; no define recetas nuevas.
 class CaelumMainM00StarterRules : Object
 {
     const OPTION_COUNT = 36;
@@ -27,7 +27,7 @@ class CaelumMainM00StarterRules : Object
         return CaelumCraftingRules.GetUnifiedEssenceWeaponType(GetRecipe(option));
     }
 
-    static ui String GetName(int option)
+    static clearscope String GetName(int option)
     {
         if (!IsOption(option)) return StringTable.Localize("CA_M01_STARTER_NONE", false);
         if (option < 16)
@@ -174,6 +174,17 @@ class CaelumMainM00StarterMaterials : Object play
         }
     }
 
+    void AddShield(int shieldType, int size)
+    {
+        Recipes[CaelumConstants.CRAFTING_NETWORK_LEGACY_RECIPE_COUNT + shieldType] = true;
+        let model = new("CaelumShieldModel");
+        double weight = model.GetWeightFor(shieldType, 1, size);
+        Expand(CaelumCraftingRules.GetShieldPlateMaterial(shieldType), ScaleUnits(
+            CaelumCraftingRules.GetRequiredShieldPlateUnits(weight)));
+        Expand(CaelumConstants.MATERIAL_STRAP, ScaleUnits(
+            CaelumCraftingRules.GetRequiredShieldStrapUnits(weight)));
+    }
+
     void AddSeal(int sealType)
     {
         Recipes[CaelumConstants.CRAFTING_NETWORK_PHYSICAL_RECIPE_COUNT
@@ -241,13 +252,14 @@ class CaelumMainM00SupplyRules : Object play
     static void UpdateLimits(CaelumPlayer user)
     {
         let r = user.GetPersistentCharacterState(false);
-        if (r == null || !r.MainM00StarterChosen) return;
+        if (r == null || !r.MainM00StarterChosen || !CaelumMainM00RonnieTrial.IsStarted(user)) return;
         let needs = new("CaelumMainM00StarterMaterials");
         needs.Build(r.MainM00StarterOption, r.MainM00StarterSize, 2);
         for (int i = 0; i < CaelumConstants.MATERIAL_TYPE_COUNT; i++)
             r.MainM00StarterRequired[i] = needs.Units[i];
         needs.AddStarterAmmunition(r.MainM00StarterOption);
         if (r.MainM00ArmorChosen) needs.AddArmor(r.MainM00ArmorType, r.MainM00ArmorSize);
+        if (r.MainM00ShieldChoice > 0) needs.AddShield(r.MainM00ShieldChoice - 1, r.MainM00StarterSize);
         // Preservar lo gastado en los sellos ya preparados en 0ae, pero no
         // mantener cupos sin usar para los otros cuatro elementos.
         for (int element = 0; element < CaelumConstants.SEAL_TYPE_COUNT; element++)
@@ -281,7 +293,7 @@ class CaelumMainM00SupplyRules : Object play
     {
         if (!IsLimited(user)) return;
         let r = user.GetPersistentCharacterState(false);
-        if (!r.MainM00StarterChosen || r.MainM00SupplyQuotaReady) return;
+        if (!r.MainM00StarterChosen || !CaelumMainM00RonnieTrial.IsStarted(user) || r.MainM00SupplyQuotaReady) return;
         r.MainM00SupplyQuotaReady = true;
         UpdateLimits(user);
         // Migración: valorar existencias (incluidos componentes) al 100%.
@@ -310,7 +322,7 @@ class CaelumMainM00SupplyRules : Object play
         if (!IsLimited(user)) return 2147483647;
         Ensure(user);
         let r = user.GetPersistentCharacterState(false);
-        if (!r.MainM00StarterChosen || material < 0 || material >= CaelumConstants.MATERIAL_TYPE_COUNT) return 0;
+        if (!r.MainM00StarterChosen || !CaelumMainM00RonnieTrial.IsStarted(user) || material < 0 || material >= CaelumConstants.MATERIAL_TYPE_COUNT) return 0;
         return Max(0, r.MainM00SupplyLimit[material] - r.MainM00SupplyIssued[material]);
     }
 
@@ -378,27 +390,7 @@ class CaelumMainM00SupplyRules : Object play
     }
 
     static bool ChooseArmor(CaelumPlayer user, int armorType)
-    {
-        if (!CaelumMainM00RonnieTrial.IsRonnie(user) || armorType < 0 || armorType >= 4) return false;
-        let r = user.GetPersistentCharacterState(false);
-        if (r == null || !r.MainM00StarterChosen || r.MainM00ArmorChosen
-            || r.QuestStage[0] >= CaelumConstants.MAIN_M00_STATE_EXIT_CONFIRMED) return false;
-        Ensure(user);
-        r.MainM00ArmorChosen = true;
-        r.MainM00ArmorType = armorType;
-        r.MainM00ArmorSize = r.MainM00StarterSize;
-        let needs = new("CaelumMainM00StarterMaterials");
-        needs.Efficiency = 2;
-        needs.AddArmor(armorType, r.MainM00ArmorSize);
-        for (int i = 0; i < CaelumConstants.CRAFTING_NETWORK_PLAYABLE_RECIPE_COUNT; i++)
-            if (needs.Recipes[i]) r.LearnCraftingRecipe(i);
-        UpdateLimits(user);
-        if (!user.CraftingTaskActive)
-        { user.CraftingEfficiencyIndex = 2; user.ResetCraftingLayerChoices(); }
-        user.RefreshCraftingRecipeBookSummary();
-        CaelumMainM00RonnieTrial.Sync(user);
-        return true;
-    }
+    { return CaelumMainM00Loadout.Choose(user, 1, armorType); }
 
     static bool IsChosenArmorRecipe(CaelumPlayer user)
     {
@@ -413,7 +405,7 @@ class CaelumMainM00SupplyRules : Object play
         if (!IsLimited(user) || !IsChosenArmorRecipe(user) || item == null) return;
         let r = user.GetPersistentCharacterState(false);
         r.MainM00ArmorCrafted[item.ArmorSlot] = true;
-        item.ItemFlags |= CaelumConstants.CA_ITEMFLAG_LIMBO_TEMP;
+        item.ItemFlags &= ~CaelumConstants.CA_ITEMFLAG_LIMBO_TEMP;
         user.RefreshSocialJournalSnapshot();
     }
 }

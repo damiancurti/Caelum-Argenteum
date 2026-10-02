@@ -1,0 +1,163 @@
+{
+  "issue": 63,
+  "version": "4.37.3",
+  "date": "2026-10-01",
+  "engine": "GZDoom 4.14.2 / Windows 11",
+  "baseline_commit": "40c06804f0c32941f9c9b8f60267e84ba405edd5",
+  "baseline_local_pk3_sha256": "ab692d7a4a0e61375bbdfc102a59e10d6e194aab79cc1ab03c584e119299256b",
+  "static": {
+    "status": "PASS",
+    "old_page_indices_preserved": 285,
+    "total_pages": 411,
+    "choices": 49,
+    "localized_keys": 129,
+    "languages": [
+      "default",
+      "es"
+    ],
+    "source_entries_match_pk3": 6138,
+    "pk3_sha256": "4336b781c7ecfb527e9051445ad9763cf74d3952d31650034d52d0b40357d4d0",
+    "source_tree_sha256": "a8bc280ffed922129c7f0f66d8e6997c1fed64247eaf240cde3ac2d58bc8763f"
+  },
+  "native": {
+    "route": {
+      "status": "PASS",
+      "assertions": 2,
+      "raw_log_sha256": "9ff67e201853ee3a23ff58c400f2a450ee93358a735979e264d5ef41c9236624",
+      "completion_marker": "QA63 ROUTE_DONE"
+    },
+    "legacy_final": {
+      "status": "PASS",
+      "assertions": 4,
+      "raw_log_sha256": "5855f8afb481788df398dd69440785df24543ad250d02d2ab2b0921b768aee9d",
+      "completion_marker": "QA63 STATE complete"
+    },
+    "migration_pre": {
+      "status": "PASS",
+      "assertions": 2,
+      "raw_log_sha256": "489adafdea71dbbcc3e5e68617ee3905edbb13e8a9a2265471da1df8bae22755",
+      "completion_marker": "QA63 MIGRATION_DONE"
+    },
+    "migration_post": {
+      "status": "PASS",
+      "assertions": 7,
+      "raw_log_sha256": "73c252c0c8979e3ff824e99afd7acbc2433a8266eeffc5a88f5ebf21db894c2b",
+      "completion_marker": "QA63 MIGRATION_DONE"
+    },
+    "migration_complete": {
+      "status": "PASS",
+      "assertions": 7,
+      "raw_log_sha256": "a12422eaf0e6a2e2710d3739016f6e2a499f44ab5d7459dc825d9b9405671d08",
+      "completion_marker": "QA63 MIGRATION_DONE"
+    },
+    "migration_reload": {
+      "status": "PASS",
+      "assertions": 7,
+      "raw_log_sha256": "48e208e14d9b67d1a89eb6826107465c977d41c64024a00e462e9f20c569a7be",
+      "completion_marker": "QA63 MIGRATION_DONE"
+    },
+    "rollback": {
+      "status": "PASS",
+      "assertions": 0,
+      "raw_log_sha256": "a810f9f6ac3628f557d3d25bda354120d9cf6f16dfd8046d1be318050c3d9eaa",
+      "completion_marker": "MAP01 -"
+    },
+    "exit_final": {
+      "status": "PASS",
+      "assertions": 344,
+      "raw_log_sha256": "745c3b8955da1716d149b4b74d6bffa589a18cd4da132c33cfc545a3ddddc4be",
+      "completion_marker": "QA63 EXIT_DONE count=12"
+    },
+    "arrival_final": {
+      "status": "PASS",
+      "assertions": 34,
+      "raw_log_sha256": "7f94a33937000817ade9ab3ad5a287032912bb4d93cd69db29d0d48d3178e4c3",
+      "completion_marker": "QA63 EXIT_DONE count=12"
+    },
+    "task_start": {
+      "status": "PASS",
+      "assertions": 208,
+      "raw_log_sha256": "f2b68b3a13285396d9af409e8576c44487b8b6978a534051f379bcca6d6eda82",
+      "completion_marker": "pending shield task starts before save"
+    },
+    "task_reload": {
+      "status": "PASS",
+      "assertions": 4,
+      "raw_log_sha256": "ecb3eaabf3870aed4202c31fe3c0a5149df6f6734f3721ac13f6a15332205425",
+      "completion_marker": "QA63 TASK_DONE"
+    },
+    "plan_reload": {
+      "status": "PASS",
+      "assertions": 3,
+      "raw_log_sha256": "198cd495dd677a4b2c9f1e2c791dd7e922135d607f90cc94c905b237ab1e610d",
+      "completion_marker": "QA63 PLAN_DONE"
+    },
+    "lost_first": {
+      "status": "PASS",
+      "assertions": 52,
+      "raw_log_sha256": "6f746a8d7ddca0d997560f0f4957aa7e2567ba484c56105a35ac418fe5390a83",
+      "completion_marker": "QA63 EXIT_DONE count=11"
+    },
+    "ui_final": {
+      "status": "PASS",
+      "assertions": 27,
+      "raw_log_sha256": "7716d035858a8faac4ec4938488e69fb9de58b8d63e45756a49d3f7b32208c23",
+      "completion_marker": "QA63 UI_DONE"
+    },
+    "ui_english": {
+      "status": "PASS",
+      "assertions": 27,
+      "raw_log_sha256": "86e6221deeab2338581b1ecd012d721a3a9ba8225af29cbfd86b61c89b8bed17",
+      "completion_marker": "QA63 UI_DONE"
+    },
+    "ronnie_ui_final": {
+      "status": "PASS",
+      "assertions": 4,
+      "raw_log_sha256": "a6a1c8618c742ab9e2b0cfd3c32210fd2bbb2f30f9b69f0fc48ab882ae7d81bf",
+      "completion_marker": "QA63 RONNIE_UI_DONE"
+    },
+    "package_final": {
+      "status": "PASS",
+      "assertions": 0,
+      "raw_log_sha256": "c0d048d6ab0588d98e700cf42cfbda3c032ef79b45a54674cc5d7a4a7d8b9c72",
+      "completion_marker": "MAP01 -"
+    }
+  },
+  "author_acceptance": "PASS",
+  "author_confirmation_date": "2026-10-01",
+  "author_confirmation": "The author explicitly confirmed all tests passed and requested issue #63 closure and PR #70 merge. No exceptions were reported.",
+  "accepted_runtime_commit": "2b1f9d1be859efe6f080b36b9b10a2064edc547c",
+  "author_checks": [
+    "CA-4373-LOADOUT-01",
+    "CA-4373-SAVES-01",
+    "CA-4373-EXIT-01"
+  ],
+  "scope": [
+    "49 choices; native menu backtracking and confirmations in Spanish and English",
+    "Existing physical Palomo route completes at waypoint 15; catch-up opens dialogue",
+    "Native menu reply starts Ronnie using the confirmed plan",
+    "All four shields plus weapon, four armor pieces and Seal use native crafting transactions",
+    "Cancellation, pending task reload and duplicate completion guard",
+    "Pre/post/completed 4.37.2 saves migrate; issued quantities remain; original save/package reloads",
+    "12 actual owned items retain identity, condition, size and location through MAP02 and reload",
+    "Destroyed first-weapon case preserves remaining 11 items without reconstruction; supplies removed"
+  ],
+  "limitations": [
+    "Fixtures prepare progression and materials; crafting elapsed time is accelerated.",
+    "Physical NPC route is real; fixture observation moves the camera rather than walking the player route.",
+    "No full ordinary-campaign author acceptance is inferred.",
+    "Migration/gameplay runs precede final explanatory text and retired-page referral refinements. Gameplay logic is unchanged; the final clean package and static graph checks cover those refinements.",
+    "Logs are filtered for relevant startup/map/assertion lines; full local logs are identified by SHA256.",
+    "Initial fixture/package-name setup failures were corrected; no unresolved runtime failure remains in these cases."
+  ],
+  "reproduce": [
+    "Run from repository root. Copy qa, legacy and ui directories here to build/issue63_qa, build/issue63_legacy and build/issue63_ui.",
+    "Copy the four helper scripts to build/. Keep build/gzdoom.ini and local engine/development IWAD paths configured in the runner.",
+    "Build baseline commit in a separate checkout and keep its PK3 as build/issue63_baseline_4372.pk3. Never replace original user saves.",
+    "Build current source with build_dev.ps1 and wait for completion. Run build/issue63_suite.ps1; it uses a separate directory with the required same package basename for migration.",
+    "Run plan_seed.cfg with -Label plan_seed -BaseMap build/issue63_ui to create the confirmed-plan save. Then run build/issue63_followup.ps1.",
+    "Run individual configs with run_issue63.ps1 -Label NAME -Commands (Get-Content PATH -Raw), matching runtime/fixture/save as indicated in suite scripts.",
+    "Use -Clean -Package for package_final; -Package -BaseMap build/issue63_ui for ui_english; -LoadSave build/issue63_saves/issue63_plan_ui.zds -BaseMap build/issue63_ui for ronnie_ui_final.",
+    "Run python build/issue63_static.py, python validate_project.py and git diff --check; the validator checks index freshness read-only."
+  ]
+}

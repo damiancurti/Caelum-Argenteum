@@ -1,6 +1,30 @@
 CAELUM ARGENTEUM — STORY AND MAP01
 
-Documentation version: **4.37.2** — 2026-10-01.
+Documentation version: **4.37.3** — 2026-10-01.
+
+## 4.37.3 — Palomo guides equipment; Ronnie teaches crafting (#63)
+
+The exterior farewell explicitly invites the player to follow Palomo inside.
+He uses his existing visible, solid route through the entrance and stairs;
+the player can catch up and resume upstairs. No geometry or route coordinates
+change. Palomo then explains and confirms one weapon, armor family, Seal and
+shield, with review/backtracking and a separate summary of confirmed choices.
+Ronnie consumes that plan after Caella's trial for recipes, finite materials
+and native crafting, without offering a second selection menu. The first
+weapon remains a crafting task. The former Seal chooser was Caella in the
+runtime; it moves to Palomo as #63 requires. Caella retains amulet selection.
+The food-source explanation states that Palomo replenishes the tables and
+that food and water are always available there (coordination with #65).
+
+The return-door dialogue now agrees with the author's departure decision:
+all actual own equipment and the Magic Box survive, equipped/carried/boxed,
+with unchanged identity, size and condition. Borrowed trial props return;
+ammunition, materials, coins and consumables are removed, as clarified on
+2026-10-01. Selections do not create uncrafted equipment. SYSTEMS owns the
+full cleanup and revision-1 migration contract; older contrary exit descriptions
+are historical. Existing confirmed choices and completed tutorial stages remain.
+Evidence: assets/validation_4373. The author accepted all three CA-4373 checks
+on 2026-10-01 without reported exceptions; results and IDs are in HISTORY.
 
 ## 4.37.2 — Cheaper magic implements during the tutorial (#68)
 

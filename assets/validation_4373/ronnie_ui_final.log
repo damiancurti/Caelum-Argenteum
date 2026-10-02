@@ -1,0 +1,10 @@
+GZDoom version g4.14.2
+adding src, 6138 lumps
+adding build/issue63_ui, 2 lumps
+adding build/issue63_qa, 3 lumps
+MAP01 - La mansión
+QA63 PASS open actual Ronnie conversation after native Palomo confirmations
+QA63 PASS native Ronnie start page reached
+QA63 PASS native Ronnie reply begins existing crafting stage
+QA63 PASS native reply teaches stored water staff and magic shield plan
+QA63 RONNIE_UI_DONE

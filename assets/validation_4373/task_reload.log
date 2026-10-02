@@ -1,0 +1,9 @@
+GZDoom version g4.14.2
+adding src, 6138 lumps
+adding build/issue63_qa, 3 lumps
+MAP01 - La mansión
+QA63 PASS reload retains active task recipe and size
+QA63 PASS reload neither spends reserved material nor creates output
+QA63 PASS reloaded task creates one shield
+QA63 PASS repeated task completion creates no duplicate
+QA63 TASK_DONE

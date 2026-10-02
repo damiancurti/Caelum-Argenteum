@@ -1,0 +1,17 @@
+GZDoom version g4.14.2
+adding build/issue63_migration/issue63_baseline_4372.pk3, 6138 lumps
+adding build/issue63_qa, 3 lumps
+MAP01 - La mansión
+QA63 PASS migration revision applied idempotently
+QA63 PASS migration preserves quest and choice
+QA63 PASS legacy confirmed choices preserved
+QA63 PASS issued allowances not replenished
+QA63 PASS own equipment reclassified; loans remain distinct
+QA63 PASS own equipment reclassified; loans remain distinct
+QA63 PASS own equipment reclassified; loans remain distinct
+QA63 STATE migrated stage=50 started=1 option=4 size=2 armor=1 seal=3 first=0
+QA63 ITEM migrated id=3 kind=9 type=2 size=2 durability=37 boxed=0 equipped=0 flags=0
+QA63 ITEM migrated id=2 kind=0 type=1 size=2 durability=37 boxed=0 equipped=0 flags=0
+QA63 ITEM migrated id=1 kind=2 type=0 size=2 durability=10000 boxed=0 equipped=1 flags=1
+QA63 MIGRATION_DONE
+Partida guardada.
