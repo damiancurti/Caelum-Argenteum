@@ -15,8 +15,10 @@ from 10% to 100% pauses crafting. Task forecasts include sleep and explain block
 Limbo keeps a 1:1 local clock while the exterior calendar freezes. Old saves keep
 their existing dates/counters through revision-1 migration; retain original saves
 and packages for rollback. Evidence: [4.37.4 validation](assets/validation_4374/RESULTS.json).
-Author checks: [pending_test.txt](pending_test.txt). Daily mansion replenishment
-is the separately authorized dependent #65 patch. No #64 merge is implied.
+The author accepted all three CA-4374 checks on 2026-10-02 and authorized
+[PR #71](https://github.com/damiancurti/Caelum-Argenteum/pull/71) merge and #64
+closure. Results are recorded in [HISTORY](docs/HISTORY.md); no #64 checks remain
+pending. Daily mansion replenishment is the separate dependent #65 / PR #72.
 
 Issue [#63](https://github.com/damiancurti/Caelum-Argenteum/issues/63) moves the
 weapon, armor, Seal and shield plan to Palomo after following him inside. He

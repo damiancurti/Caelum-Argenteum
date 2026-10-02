@@ -6,7 +6,8 @@ Documentation version: **4.37.4** — 2026-10-02.
 provisions/furniture support sleep at 10% to 100%, which pauses crafting. The
 task forecast includes sleep and rechecks at confirmation. Clock revision 1 keeps
 legacy counters/dates but freezes future exterior progression in Limbo; its local
-clock remains 1:1. Evidence: assets/validation_4374. Author checks are pending.
+clock remains 1:1. Evidence: assets/validation_4374. Author accepted all three
+checks on 2026-10-02 and authorized PR #71 merge / #64 closure; see HISTORY.
 The author authorized dependent #65 daily 50/50 tables in a separate branch/PR.
 
 **Accepted base:** #63 / PR #70 (Palomo loadout and retained own equipment),

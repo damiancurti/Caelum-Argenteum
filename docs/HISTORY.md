@@ -24,8 +24,14 @@ Limbo intervals and does not roll back their dates. An original 4.37.3 save and
 package are retained locally and tested for rollback. Daily stock policy remains
 the dependent #65 patch, using the shared midnight notification/forecast hook.
 
-Author acceptance: pending. CA-4374-TIME-01, CA-4374-CARE-01 and CA-4374-SAVE-01
-are outstanding; no manual check, merge or issue closure is claimed.
+Author acceptance, 2026-10-02: Damián confirmed that all tests passed and
+authorized PR #71 merge and issue #64 closure. CA-4374-TIME-01 (4.37.4 / #64:
+destination, productive work and frozen exterior date), CA-4374-CARE-01
+(4.37.4 / #64: real provisions, furniture and interruption) and CA-4374-SAVE-01
+(4.37.4 / #64: migration and active/completed save continuation) all passed
+without reported exceptions. Their entries are removed from pending_test.txt.
+This explicit author confirmation is distinct from the earlier isolated native
+evidence. Runtime and release 4.37.4 remain unchanged.
 
 ## 4.37.3 — Palomo equipment plan and retained owned equipment (#63)
 

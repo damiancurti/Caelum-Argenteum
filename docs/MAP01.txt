@@ -14,8 +14,9 @@ The author's automatic-care policy uses the whole safe location, actual provisio
 and available furniture, sleeping from 10% to 100% Sleep. Ronnie's productive
 crafting pauses while asleep and resumes at a still-valid station. No map geometry,
 story milestones, recipes or furnishing coordinates change. Daily replenishment
-is implemented separately in #65 using this local midnight boundary. Author
-acceptance of #64 remains outstanding in pending_test.txt.
+is implemented separately in #65 using this local midnight boundary. The author
+accepted all #64 checks on 2026-10-02 and authorized PR #71 merge / #64 closure;
+HISTORY records their results. No #64 author checks remain pending.
 
 ## 4.37.3 — Palomo guides equipment; Ronnie teaches crafting (#63)
 

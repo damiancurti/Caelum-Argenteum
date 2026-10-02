@@ -10,10 +10,13 @@ Documentation version: **4.37.4** — 2026-10-02.
   Clock revision 1 preserves legacy counters/dates while freezing future exterior
   progression in Limbo. Original-save/package rollback remains available.
 - Static/build and isolated GZDoom evidence: assets/validation_4374/RESULTS.json.
-  Author checks remain in pending_test.txt; implementation is not acceptance.
+  The author accepted CA-4374-TIME-01, CA-4374-CARE-01 and CA-4374-SAVE-01 on
+  2026-10-02 without reported exceptions; HISTORY records the results. Their
+  pending entries are removed. Runtime and release 4.37.4 remain unchanged.
 - The author also authorized #65 in another branch/PR. Its daily 50/50 table
   policy consumes #64's midnight and forecast contracts; combined multi-day
-  verification belongs to that dependent patch. No #64 merge/closure is requested.
+  verification belongs to that dependent patch. PR #71 merge and #64 closure
+  are explicitly authorized; #65 is delivered separately through PR #72.
 
 ## Issue #63 — Move equipment guidance to Palomo (4.37.3)
 
