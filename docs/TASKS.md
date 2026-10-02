@@ -1,6 +1,18 @@
 # TASKS.md — Active tasks
 
-Documentation version: **4.37.5** — 2026-10-02.
+Documentation version: **4.37.6** — 2026-10-02.
+
+## Issue #73 — Cardinal MAP02 (4.37.6)
+
+- Implements central arrival, south/west/east/north blocks and local carriers
+  for all eight keys; includes the #75 supply changes explicitly required by #73.
+- Author confirmed retaining current stations and waived old-save compatibility.
+- #74 lower water tunnels/four return grates/elevator remain separate; only the
+  central upper footprint is reserved. Do not report #74 as implemented.
+- Evidence: assets/validation_4376. The author confirmed both CA-MAP02 checks
+  passed on 2026-10-02 and authorized merge and closure of #73. HISTORY records
+  acceptance separately from static/native evidence. #74 remains the next map task.
+
 
 ## Issue #65 — Daily mansion food/water (4.37.5)
 

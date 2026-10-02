@@ -81,7 +81,7 @@ class CaelumMainM00StarterMaterials : Object play
         return numerator <= 0 ? 0 : int(Ceil(double(output) * numerator / Max(1, denominator)));
     }
 
-    void Expand(int material, int amount, int depth = 0)
+    virtual void Expand(int material, int amount, int depth = 0)
     {
         if (amount <= 0) return;
         if (material < 0 || material >= CaelumConstants.MATERIAL_TYPE_COUNT || depth > 8)

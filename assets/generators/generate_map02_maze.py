@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Generate the revision-2 four-section sewer, retaining the accepted T1 catalogue.
+"""Generate the revision-3 cardinal sewer and its finite supply assignments.
 Authored layout data is in assets/map02_maze/LAYOUT.json. No other map is written.
 """
 from pathlib import Path
@@ -9,7 +9,7 @@ ROOT=Path(__file__).resolve().parents[2]
 OUT=ROOT/'assets/map02_maze';OUT.mkdir(exist_ok=True)
 cfg=json.loads((OUT/'LAYOUT.json').read_text(encoding='utf-8'))
 CELL=cfg['grid'];rng=random.Random(cfg['seed'])
-cells={};things=[];rooms=[];zones=[];locks={};contents=[];features=[];gates=[];refuges=[];prisoners=[];rats=[]
+cells={};things=[];rooms=[];zones=[];locks={};contents=[];features=[];gates=[];refuges=[];prisoners=[];rats=[];drops=[]
 prisoner_types=[(30988,'CaelumPrisonerUnitario'),(30989,'CaelumPrisonerFederal'),(30990,'CaelumPrisonerBestia'),(30991,'CaelumPrisonerTarot')]
 flags=dict(skill1=True,skill2=True,skill3=True,skill4=True,skill5=True,single=True,coop=True)
 def room(x1,y1,x2,y2,floor=0,ceiling=None,group=0,tag=0,water=False):
@@ -22,7 +22,7 @@ def thing(kind,x,y,z=0,angle=90,tid=0,args=()):
  if tid:t['id']=tid
  for i,a in enumerate(args):t['arg'+str(i)]=a
  things.append(t);return t
-def coord(z,n):return (cfg['first_node_x']+n[0]*cfg['node_spacing'],cfg['first_section_y']+z*cfg['section_stride']+n[1]*cfg['node_spacing'])
+def coord(z,n):return (cfg['section_origins'][z][0]+n[0]*cfg['node_spacing'],cfg['section_origins'][z][1]+n[1]*cfg['node_spacing'])
 def corridor(a,b,group,channel=True):
  x,y=a;xx,yy=b;w=cfg['passage_width']//2;c=cfg['channel_width']//2
  assert x==xx or y==yy
@@ -43,11 +43,12 @@ def gate(center,axis,tag,lock,role,zone):
  else:room(x-w,y-32,x+w,y+32,ceiling=cfg['gate_height'],group=tag)
  gates.append(dict(center=[x,y],axis=axis,tag=tag,lock=lock,role=role,zone=zone,width=cfg['passage_width'],height=cfg['gate_height']))
  locks[tag]=lock;thing(30980,x,y,tid=tag,args=[tag,lock])
-room(-1920,-320,-768,320,group=0)
-corridor((-1152,0),(-1152,512),0,False)
-corridor((-1152,512),(-1536,512),0,False)
-corridor((-1536,512),coord(0,(0,0)),1,False)
-thing(1,-1152,0);thing(30981,-1792,0,tid=44800,args=[cfg['revision']])
+room(*cfg['hub_bounds'],group=0)
+thing(1,*cfg['player_start']);thing(30981,-576,0,tid=44800,args=[cfg['revision']])
+for z in range(4):
+ entry=coord(z,cfg['entry_nodes'][z])
+ corridor(tuple(cfg['player_start']),entry,z+1,False)
+ if z>0:gate(tuple(cfg['entrance_gates'][z]),'x' if z in (1,2) else 'y',44699+z,202+z,'section',z-1)
 # One copy of each T1 entry; 26 chests have two entries, 13 have one.
 loot=[];tier=1
 for armor in range(4):
@@ -66,7 +67,7 @@ trap_types=['mine']*12+['teleport']*6+['crusher']*9+['rolling_rock']*6+['falling
 rng.shuffle(trap_types);trap_index=0;chest_index=0
 for z in range(4):
  nodes=[(x,y) for y in range(cfg['nodes_per_axis']) for x in range(cfg['nodes_per_axis'])];graph={n:set() for n in nodes}
- start=(0,0);end=(4,4);stack=[start];seen={start}
+ start=tuple(cfg['entry_nodes'][z]);end=(4,4);stack=[start];seen={start}
  while stack:
   a=stack[-1];near=[(a[0]+dx,a[1]+dy) for dx,dy in ((1,0),(-1,0),(0,1),(0,-1))]
   near=[b for b in near if b in graph and b not in seen]
@@ -85,20 +86,15 @@ for z in range(4):
  dist=distances(graph,start);keynode=max((n for n in nodes if n not in [start,end]),key=lambda n:(dist[n],n))
  cellnode=max((n for n in nodes if n not in [start,end,keynode]),key=lambda n:(dist[n],n))
  kx,ky=coord(z,keynode);keytype=30970+z if z<3 else 30982
- thing(keytype,kx-256,ky,tid=43710+z)
- cx,cy=coord(z,cellnode);thing(30983+z,cx+256,cy,tid=43720+z)
- zones.append(dict(zone=z,name=cfg['section_names'][z],key=z+1,node=list(keynode),position=[kx-256,ky],cell_key_position=[cx+256,cy],distance=dist[keynode],edges=[[list(a),list(b)] for a in nodes for b in sorted(graph[a]) if a<b]))
+
+ cx,cy=coord(z,cellnode)
+ zones.append(dict(zone=z,name=cfg['section_names'][z],key=z+1,node=list(keynode),position=[kx+192,ky-192],cell_key_position=[cx+192,cy-192],distance=dist[keynode],edges=[[list(a),list(b)] for a in nodes for b in sorted(graph[a]) if a<b]))
  candidates=[n for n in nodes if n not in [start,end]];rng.shuffle(candidates)
  for n in candidates[:cfg['chests_per_section'][z]]:
   x,y=coord(z,n);index=chest_index;chest_index+=1
   thing(30973,x-192,y+192,angle=270,args=[index],tid=43800+index)
   for ci in range(index,len(loot),39):
    item=dict(loot[ci]);item.update(catalogue_index=ci,chest=index,chest_slot=ci//39,position=[x-192,y+192]);contents.append(item)
- for n in candidates[10:16]:
-  x,y=coord(z,n);thing(30978,x-128,y-192);thing(30979,x+128,y-192)
- for key,kind,offset in [('arrow',18111,-128),('bolt',18112,0),('bullet',18110,128)]:
-  for n in candidates[16:16+cfg[key+'_bundles_per_section'][z]]:
-   x,y=coord(z,n);thing(kind,x+offset,y+128)
  for n in candidates[:cfg['traps_per_section'][z]]:
   x,y=coord(z,n);kind=trap_types[trap_index];tid=43900+trap_index;trap_index+=1
   if kind=='mine':thing(30963,x,y,z=.5,tid=tid,args=[100,128])
@@ -116,14 +112,25 @@ for z in range(4):
    for step in range(6):room(x,y-64+step*32,x+128,y-32+step*32,floor=-96+(step+1)*16,group=tid)
    thing(30976,x-64,y-32,z=88,tid=tid)
   features.append(dict(zone=z,type=kind,position=[x,y],tid=tid))
- for n in [n for n in nodes if n!=start]:
-  x,y=coord(z,n);thing(18037,x+192,y-192,angle=270)
-  # Two fixed dry-walkway positions per junction keep the 2:1 rat ratio without RNG.
-  thing(18029,x-192,y-64,angle=90);thing(18029,x+192,y+64,angle=270)
-  rats.append(dict(zone=z,node=list(n),position=[x-192,y-64]))
-  rats.append(dict(zone=z,node=list(n),position=[x+192,y+64]))
+ enemy_nodes=[n for n in nodes if n!=start]
+ ammo=[]
+ for key,cls in [('arrow','CaelumArrowAmmo'),('bolt','CaelumBoltAmmo'),('bullet','CaelumCarbineAmmo')]:
+  ammo += [(cls,cfg['ammunition_bundle_units'])]*cfg[key+'_bundles_per_section'][z]
+ progression=['CaelumMazeSluiceKey','CaelumMazeCryptKey','CaelumMazeSanctumKey','CaelumMazeNorthKey']
+ cellkeys=['CaelumMazeSouthCellKey','CaelumMazeWestCellKey','CaelumMazeEastCellKey','CaelumMazeNorthCellKey']
+ for ni,n in enumerate(enemy_nodes):
+  x,y=coord(z,n);tid=47000+z*24+ni
+  thing(18037,x+192,y-192,angle=270,tid=tid)
+  drop=(progression[z],1) if n==keynode else (cellkeys[z],1) if n==cellnode else ammo.pop(0) if ammo else None
+  if drop:drops.append(dict(tid=tid,zone=z,actor='CaelumMandinga',cls=drop[0],amount=drop[1],position=[x+192,y-192,0]))
+  for ri,(dx,dy,cls) in enumerate([(-192,-64,'CaelumFoodRation'),(192,64,'CaelumWaterRation')]):
+   rtid=48000+z*48+ni*2+ri
+   thing(18029,x+dx,y+dy,angle=90 if ri==0 else 270,tid=rtid)
+   rats.append(dict(zone=z,node=list(n),position=[x+dx,y+dy]))
+   drops.append(dict(tid=rtid,zone=z,actor='CaelumGiantRat',cls=cls,amount=1,position=[x+dx,y+dy,0]))
+ assert not ammo
  # A protected service alcove per section. Existing repair rules/stations only.
- sx,sy=coord(z,start);rx=sx-1024
+ sx,sy=coord(z,(0,0));rx=sx-1024
  corridor((sx,sy),(rx,sy),z+1,False);room(rx-320,sy-320,rx+320,sy+320,group=z+1)
  gate((sx-576,sy),'x',44720+z,0,'refuge',z)
  stations=[]
@@ -136,12 +143,9 @@ for z in range(4):
  thing(30987,cellx-96,ey-160,angle=90,tid=44810+z)
  thing(prisoner_types[z][0],cellx+96,ey+96,tid=44820+z,args=[0])
  prisoners.append(dict(zone=z,cell_center=[cellx,ey],bed=[cellx-96,ey-160],reserved_actor=[cellx+96,ey+96],lock=207+z,actor=prisoner_types[z][1],doomednum=prisoner_types[z][0]))
- bridgey=ey+768
- corridor((ex,ey),(ex,bridgey),z+1,False)
- if z<3:
-  nsx,nsy=coord(z+1,start);corridor((ex,bridgey),(nsx,bridgey),z+1,False);corridor((nsx,bridgey),(nsx,nsy),z+2,False)
-  gate((ex,ey+384),'y',44700+z,203+z,'section',z)
- else:
+ if z==3:
+  bridgey=ey+768
+  corridor((ex,ey),(ex,bridgey),z+1,False)
   # Refuge/extraction route is outside the final keyed arena; no player exit here.
   extraction=[ex-640,bridgey];corridor((ex,bridgey),tuple(extraction),4,False)
   room(extraction[0]-256,bridgey-256,extraction[0]+256,bridgey+256,group=4)
@@ -199,7 +203,7 @@ for (x,y),v in sorted(cells.items()):
    for si in [l['sidefront']]+([l['sideback']] if 'sideback' in l else []):
     sides[si]['texturemiddle']='CMGT02';sides[si]['offsetx']=min(a[1],b[1])%128 if barrier['axis']=='x' else min(a[0],b[0])%128
 def value(v):return str(v).lower() if isinstance(v,bool) else json.dumps(v) if isinstance(v,str) else str(v)
-text=['namespace = "ZDoom";\n// MAP02 revision 2, 4.36.7; generated from LAYOUT.json.\n']
+text=['namespace = "ZDoom";\n// MAP02 revision 3, 4.37.6; generated from LAYOUT.json.\n']
 for kind,entries in [('vertex',vertices),('sector',sectors),('sidedef',sides),('linedef',lines),('thing',things)]:
  for entry in entries:text.append(kind+'\n{\n'+''.join(f'    {k} = {value(v)};\n' for k,v in entry.items())+'}\n')
 body=bytearray();directory=bytearray()
@@ -217,14 +221,25 @@ for batch in range((len(loot)+19)//20):
   item=loot[i];args=item['args'];policy=f'{item["cls"]}(item).SizePolicy=CaelumEquipmentRules.CHARACTER_DEFAULT;' if item['size_policy']=='CHARACTER_DEFAULT' else ''
   zs.append(f'        case {i}:\n            item=Inventory(Actor.Spawn("{item["cls"]}",position,NO_REPLACE));\n            if(item!=null) {{ '+''.join(f'item.args[{k}]={v};' for k,v in enumerate(args))+policy+' }\n            break;')
  zs.append('        }\n        return item;\n    }')
+zs += ['    static CaelumMazeMaterialBudget MaterialBudget(int chest,int size)', '    {', '        let budget=new("CaelumMazeMaterialBudget");budget.Valid=true;budget.Efficiency=2;', '        for(int slot=0;slot<2;slot++)AddMaterialEntry(budget,ChestEntry(chest,slot),size);', '        return budget;', '    }', '    static void AddMaterialEntry(CaelumMazeMaterialBudget budget,int index,int size)', '    {', '        switch(index)', '        {']
+for i,item in enumerate(loot):
+ cat=item['category'];typ=item['type']
+ if cat=='armor':call=f'budget.AddArmor({typ},size,{item["slot"]});'
+ elif cat=='weapon':
+  call=f'budget.AddCatalogueWeapon({typ},{item["essence"]},size);'
+ elif cat=='shield':call=f'budget.AddShield({typ},size);'
+ elif cat=='amulet':call=f'budget.AddAmulet({typ});'
+ else:call=f'budget.AddSeal({typ});'
+ zs.append(f'        case {i}: {call} break;')
+zs += ['        }','    }']
 zs.append('}\n');(ROOT/'src/caelum/world/CaelumMazeLootCatalogue.zs').write_text('\n'.join(zs),encoding='utf-8')
 
-manifest=dict(version='4.36.7',layout_revision=cfg['revision'],catalogue_revision=1,size_policy='CHARACTER_DEFAULT',distribution='Unchanged 65 unique T1 entries; index=chest+slot*39.',seed=cfg['seed'],layout=cfg,zones=zones,rooms=rooms,locks=locks,gates=gates,conduits=conduits,refuges=refuges,prisoners=prisoners,rats=rats,time_advance_zones=time_advance_zones,extraction=extraction,boss_center=boss_center,card=card,travel=travel,loot=contents,traps=features,things=things,counts=dict(rooms=len(rooms),mandingas=96,rats=len(rats),zupays=1,chests=39,equipment=len(contents),food_rations=120,water_rations=120,arrows=240,bolts=120,bullets=120,traps=len(features)),geometry=dict(sectors=len(sectors),lines=len(lines),vertices=len(vertices)),cells=[list(k)+list(v) for k,v in sorted(cells.items())])
+manifest=dict(version='4.37.6',layout_revision=cfg['revision'],catalogue_revision=1,size_policy='CHARACTER_DEFAULT',distribution='65 original T1 instances converted to basic recipe inputs; index=chest+slot*39. First successful withdrawal fixes shared recipient-size material budget.',seed=cfg['seed'],layout=cfg,zones=zones,rooms=rooms,locks=locks,gates=gates,conduits=conduits,refuges=refuges,prisoners=prisoners,rats=rats,drops=drops,time_advance_zones=time_advance_zones,extraction=extraction,boss_center=boss_center,card=card,travel=travel,loot=contents,traps=features,things=things,counts=dict(rooms=len(rooms),mandingas=96,rats=len(rats),zupays=1,chests=39,equipment=0,converted_equipment=len(contents),food_rations=96,water_rations=96,arrows=240,bolts=120,bullets=120,traps=len(features)),geometry=dict(sectors=len(sectors),lines=len(lines),vertices=len(vertices)),cells=[list(k)+list(v) for k,v in sorted(cells.items())])
 # Keep each collision cell on one line so geometry evidence remains reviewable.
 manifest_text=json.dumps({**manifest,'cells':'__COLLISION_CELLS__'},indent=2)
 cell_text='[\n'+',\n'.join('    '+json.dumps(row) for row in manifest['cells'])+'\n  ]'
 (OUT/'MAP02_MANIFEST.json').write_text(manifest_text.replace('"__COLLISION_CELLS__"',cell_text)+'\n',encoding='utf-8')
-runtime=['// Generado desde LAYOUT.json y generate_map02_maze.py.','class CaelumMazeLayout : Object play','{','    const REVISION = 2;','    static bool IsCurrent(){return level.MapName=="MAP02" && ActorIterator.Create(44800,"CaelumMazeLayoutMarker").Next()!=null;}','    static vector3 TravelPosition(int id)','    {']
+runtime=['// Generado desde LAYOUT.json y generate_map02_maze.py.','class CaelumMazeLayout : Object play','{','    const REVISION = 3;','    static bool IsCurrent(){return level.MapName=="MAP02" && ActorIterator.Create(44800,"CaelumMazeLayoutMarker").Next()!=null;}','    static vector3 TravelPosition(int id)','    {']
 for key,pos in travel.items():runtime.append(f'        if(id=={key})return ({pos[0]},{pos[1]},0);')
 runtime+=['        return (0,0,0);','    }',f'    const TIME_ADVANCE_ZONE_COUNT = {len(time_advance_zones)};','    static vector3 TimeAdvanceZonePosition(int index)','    {']
 for index,zone in enumerate(time_advance_zones):
@@ -232,6 +247,17 @@ for index,zone in enumerate(time_advance_zones):
 runtime+=['        return (0,0,0);','    }']
 for role,pos in cfg['arrival'].items():
  runtime.append(f'    static vector3 Arrival{role.title()}Position(){{return ({pos[0]},{pos[1]},{pos[2]});}}')
+runtime += ['    static bool IsCardinal(){let marker=ActorIterator.Create(44800,"CaelumMazeLayoutMarker").Next();return level.MapName=="MAP02" && marker!=null && marker.args[0]>=3;}',
+ '    static Inventory CreateDeathDrop(int tid)', '    {']
+for z in range(4):
+ runtime.append(f'        if((tid>={47000+z*24} && tid<{47000+(z+1)*24}) || (tid>={48000+z*48} && tid<{48000+(z+1)*48}))return CreateDeathDrop{z}(tid);')
+runtime += ['        return null;','    }']
+for z in range(4):
+ runtime += [f'    static Inventory CreateDeathDrop{z}(int tid)', '    {', '        Inventory item;']
+ for d in drops:
+  if d['zone']!=z:continue
+  runtime.append(f'        if(tid=={d["tid"]}){{item=Inventory(Actor.Spawn("{d["cls"]}",({d["position"][0]},{d["position"][1]},0),NO_REPLACE));if(item!=null)item.Amount={d["amount"]};return item;}}')
+ runtime += ['        return null;','    }']
 runtime.append('}')
 (ROOT/'src/caelum/world/CaelumMazeLayout.zs').write_text('\n'.join(runtime)+'\n',encoding='utf-8')
 print(manifest['counts']);print(manifest['geometry'])

@@ -315,4 +315,81 @@ class CaelumMazeLootCatalogue : Object play
         }
         return item;
     }
+    static CaelumMazeMaterialBudget MaterialBudget(int chest,int size)
+    {
+        let budget=new("CaelumMazeMaterialBudget");budget.Valid=true;budget.Efficiency=2;
+        for(int slot=0;slot<2;slot++)AddMaterialEntry(budget,ChestEntry(chest,slot),size);
+        return budget;
+    }
+    static void AddMaterialEntry(CaelumMazeMaterialBudget budget,int index,int size)
+    {
+        switch(index)
+        {
+        case 0: budget.AddArmor(0,size,0); break;
+        case 1: budget.AddArmor(0,size,1); break;
+        case 2: budget.AddArmor(0,size,2); break;
+        case 3: budget.AddArmor(0,size,3); break;
+        case 4: budget.AddArmor(1,size,0); break;
+        case 5: budget.AddArmor(1,size,1); break;
+        case 6: budget.AddArmor(1,size,2); break;
+        case 7: budget.AddArmor(1,size,3); break;
+        case 8: budget.AddArmor(2,size,0); break;
+        case 9: budget.AddArmor(2,size,1); break;
+        case 10: budget.AddArmor(2,size,2); break;
+        case 11: budget.AddArmor(2,size,3); break;
+        case 12: budget.AddArmor(3,size,0); break;
+        case 13: budget.AddArmor(3,size,1); break;
+        case 14: budget.AddArmor(3,size,2); break;
+        case 15: budget.AddArmor(3,size,3); break;
+        case 16: budget.AddCatalogueWeapon(0,0,size); break;
+        case 17: budget.AddCatalogueWeapon(1,0,size); break;
+        case 18: budget.AddCatalogueWeapon(1,1,size); break;
+        case 19: budget.AddCatalogueWeapon(1,2,size); break;
+        case 20: budget.AddCatalogueWeapon(1,3,size); break;
+        case 21: budget.AddCatalogueWeapon(1,4,size); break;
+        case 22: budget.AddCatalogueWeapon(2,0,size); break;
+        case 23: budget.AddCatalogueWeapon(3,0,size); break;
+        case 24: budget.AddCatalogueWeapon(4,0,size); break;
+        case 25: budget.AddCatalogueWeapon(5,0,size); break;
+        case 26: budget.AddCatalogueWeapon(6,0,size); break;
+        case 27: budget.AddCatalogueWeapon(7,0,size); break;
+        case 28: budget.AddCatalogueWeapon(8,0,size); break;
+        case 29: budget.AddCatalogueWeapon(9,0,size); break;
+        case 30: budget.AddCatalogueWeapon(10,0,size); break;
+        case 31: budget.AddCatalogueWeapon(11,0,size); break;
+        case 32: budget.AddCatalogueWeapon(12,0,size); break;
+        case 33: budget.AddCatalogueWeapon(13,0,size); break;
+        case 34: budget.AddCatalogueWeapon(14,0,size); break;
+        case 35: budget.AddCatalogueWeapon(15,0,size); break;
+        case 36: budget.AddCatalogueWeapon(16,0,size); break;
+        case 37: budget.AddCatalogueWeapon(17,0,size); break;
+        case 38: budget.AddCatalogueWeapon(17,1,size); break;
+        case 39: budget.AddCatalogueWeapon(17,2,size); break;
+        case 40: budget.AddCatalogueWeapon(17,3,size); break;
+        case 41: budget.AddCatalogueWeapon(17,4,size); break;
+        case 42: budget.AddCatalogueWeapon(18,0,size); break;
+        case 43: budget.AddCatalogueWeapon(18,1,size); break;
+        case 44: budget.AddCatalogueWeapon(18,2,size); break;
+        case 45: budget.AddCatalogueWeapon(18,3,size); break;
+        case 46: budget.AddCatalogueWeapon(18,4,size); break;
+        case 47: budget.AddCatalogueWeapon(19,0,size); break;
+        case 48: budget.AddCatalogueWeapon(19,1,size); break;
+        case 49: budget.AddCatalogueWeapon(19,2,size); break;
+        case 50: budget.AddCatalogueWeapon(19,3,size); break;
+        case 51: budget.AddCatalogueWeapon(19,4,size); break;
+        case 52: budget.AddShield(0,size); break;
+        case 53: budget.AddShield(1,size); break;
+        case 54: budget.AddShield(2,size); break;
+        case 55: budget.AddShield(3,size); break;
+        case 56: budget.AddAmulet(0); break;
+        case 57: budget.AddAmulet(1); break;
+        case 58: budget.AddAmulet(2); break;
+        case 59: budget.AddAmulet(3); break;
+        case 60: budget.AddSeal(0); break;
+        case 61: budget.AddSeal(1); break;
+        case 62: budget.AddSeal(2); break;
+        case 63: budget.AddSeal(3); break;
+        case 64: budget.AddSeal(4); break;
+        }
+    }
 }

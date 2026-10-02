@@ -583,6 +583,18 @@ class CaelumZupayColossus : CaelumFolkloreCombatActor
 
     override void Tick()
     {
+        // La reja del jefe es también su activación: ningún sonido, blanco
+        // heredado o impulso inicia la IA antes de abrirla con la llave norte.
+        if(IsSewerBoss())
+        {
+            let gate=CaelumMazeBarredGate(ActorIterator.Create(
+                CaelumConstants.PRISONER_BOSS_GATE_TID,"CaelumMazeBarredGate").Next());
+            if(gate!=null && !gate.Opened)
+            {
+                Vel=(0,0,0);Target=null;LastEnemy=null;
+                return;
+            }
+        }
         if (IsRetreatBoss() && health > 0 && CombatMaximumHealth > 0
             && double(health) / CombatMaximumHealth <= CaelumConstants.HEALTH_WOUNDED_THRESHOLD)
             SewerFleeing = true;

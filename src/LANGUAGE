@@ -4067,6 +4067,8 @@ CA_MAZE_HINT_ROCK = "Losa de presión suelta";
 [enu default]
 // Chest preview, issue #10.
 CA_CHEST_PREVIEW_TITLE = "Chest contents";
+CA_CHEST_MATERIAL_ADAPTIVE = "Materials for size %s; first collection fixes the shared budget.";
+CA_CHEST_MATERIAL_FIXED = "Shared material budget fixed for size %s.";
 CA_CHEST_PREVIEW_UNCLAIMED = "Preview: the items remain in the chest.";
 CA_CHEST_PREVIEW_EMPTY = "The chest is empty.";
 CA_CHEST_PREVIEW_COLLECT = "Enter / A: collect as much as you can carry";
@@ -4075,6 +4077,8 @@ CA_CHEST_PREVIEW_CAPACITY = "%d items remain in the chest: you cannot carry them
 
 [es]
 CA_CHEST_PREVIEW_TITLE = "Contenido del cofre";
+CA_CHEST_MATERIAL_ADAPTIVE = "Materiales para talle %s; la primera recogida fija el lote compartido.";
+CA_CHEST_MATERIAL_FIXED = "Lote compartido de materiales fijado para talle %s.";
 CA_CHEST_PREVIEW_UNCLAIMED = "Vista previa: los objetos siguen en el cofre.";
 CA_CHEST_PREVIEW_EMPTY = "El cofre está vacío.";
 CA_CHEST_PREVIEW_COLLECT = "Entrar / A: recoger todo lo que puedas cargar";

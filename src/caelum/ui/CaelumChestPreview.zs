@@ -2,7 +2,10 @@
 class CaelumChestPreviewState : Inventory
 {
     CaelumMazeChest Chest;
-    String Lines[5];
+    String Lines[CaelumConstants.MATERIAL_TYPE_COUNT];
+    int Page;
+    bool Materials;
+    String Allocation;
     int Count;
 
     static CaelumChestPreviewState Get(CaelumPlayer user,bool create=false)
@@ -23,6 +26,27 @@ class CaelumChestPreviewState : Inventory
         let user=CaelumPlayer(Owner);
         if(Chest==null)return;
         if(!Chest.CanInspect(user)){Chest=null;return;}
+        Materials=CaelumMazeLayout.IsCardinal();
+        if(Materials)
+        {
+            let budget=Chest.PreviewBudget(user);
+            int size=Chest.MaterialAllocated?Chest.MaterialSize:CaelumEquipmentRules.ResolveAcquisitionSize(
+                user,CaelumEquipmentRules.CHARACTER_DEFAULT,CaelumConstants.EQUIPMENT_SIZE_M);
+            Allocation=String.Format(StringTable.Localize(Chest.MaterialAllocated?
+                "CA_CHEST_MATERIAL_FIXED":"CA_CHEST_MATERIAL_ADAPTIVE",false),
+                StringTable.Localize(CaelumDisplayNames.GetEquipmentSizeKey(size),false));
+            for(int m=0;m<CaelumConstants.MATERIAL_TYPE_COUNT;m++)
+            {
+                int amount=Chest.PreviewMaterial(m,budget);
+                if(amount<=0)continue;
+                String label=StringTable.Localize(CaelumDisplayNames.GetSpecialItemKey(
+                    CaelumConstants.EQUIPMENT_KIND_MATERIAL,m),false);
+                int tier=CaelumMaterialRules.ResolveTier(m,1);
+                if(tier>0)label.AppendFormat(" · T%d",tier);
+                Lines[Count++]=String.Format("%d × %s",amount,label);
+            }
+            return;
+        }
         for(int i=0;i<5;i++)
         {
             let item=Chest.Loot[i];
@@ -74,7 +98,8 @@ class CaelumChestPreview : StaticEventHandler
         if(preview==null || preview.Chest==null)return false;
         // Las liberaciones llegan al motor y no dejan Use o marcha retenidos.
         if(e.Type!=InputEvent.Type_KeyDown || e.KeyScan==InputEvent.Key_Grave)return false;
-        if(e.KeyScan==InputEvent.Key_Enter || e.KeyScan==InputEvent.Key_Pad_A)
+        if(e.KeyString~=="n")EventHandler.SendNetworkEvent("ca_chest_next");
+        else if(e.KeyScan==InputEvent.Key_Enter || e.KeyScan==InputEvent.Key_Pad_A)
             EventHandler.SendNetworkEvent("ca_chest_collect");
         else if(e.KeyScan==InputEvent.Key_Escape || e.KeyScan==InputEvent.Key_Tab
             || e.KeyScan==InputEvent.Key_Pad_B || e.KeyString~=="q")
@@ -84,11 +109,12 @@ class CaelumChestPreview : StaticEventHandler
 
     override void NetworkProcess(ConsoleEvent e)
     {
-        if(e.Name!="ca_chest_collect" && e.Name!="ca_chest_cancel")return;
+        if(e.Name!="ca_chest_collect" && e.Name!="ca_chest_cancel" && e.Name!="ca_chest_next")return;
         if(e.Player<0 || e.Player>=MAXPLAYERS || !playeringame[e.Player])return;
         let user=CaelumPlayer(players[e.Player].mo);
         let preview=CaelumChestPreviewState.Get(user);
         if(preview==null)return;
+        if(e.Name=="ca_chest_next"){preview.Page=(preview.Page+1)%Max(1,(preview.Count+4)/5);return;}
         if(e.Name=="ca_chest_cancel"){preview.Chest=null;return;}
         if(preview.Chest!=null)preview.Chest.Collect(user);
         preview.Refresh();
@@ -114,16 +140,19 @@ class CaelumChestPreview : StaticEventHandler
         let font=Font.GetFont("CaelumSmall");
         Screen.Dim(0x05070A,0.94,0,0,Screen.GetWidth(),Screen.GetHeight());
         DrawLine(Font.GetFont("CaelumDisplay"),Font.CR_GOLD,28,StringTable.Localize("CA_CHEST_PREVIEW_TITLE",false));
-        DrawLine(font,Font.CR_GRAY,60,StringTable.Localize("CA_CHEST_PREVIEW_UNCLAIMED",false));
+        DrawLine(font,Font.CR_GRAY,60,preview.Materials?preview.Allocation:StringTable.Localize("CA_CHEST_PREVIEW_UNCLAIMED",false));
         double y=88;
         if(preview.Count==0)DrawLine(font,Font.CR_WHITE,y,StringTable.Localize("CA_CHEST_PREVIEW_EMPTY",false));
-        for(int i=0;i<preview.Count;i++)
+        int first=preview.Materials?preview.Page*5:0;
+        if(first>=preview.Count)first=0;
+        for(int i=first;i<Min(preview.Count,first+5);i++)
         {
             let lines=font.BreakLines(preview.Lines[i],550);
             for(int row=0;row<lines.Count();row++)
             {DrawLine(font,Font.CR_WHITE,y,lines.StringAt(row));y+=Max(12,font.GetHeight()+2);}
             lines.Destroy();y+=6;
         }
+        if(preview.Count>5)DrawLine(font,Font.CR_GRAY,284,String.Format("N: %d / %d",preview.Page+1,(preview.Count+4)/5));
         DrawLine(font,Font.CR_GOLD,304,StringTable.Localize("CA_CHEST_PREVIEW_COLLECT",false));
         DrawLine(font,Font.CR_GRAY,322,StringTable.Localize("CA_CHEST_PREVIEW_CANCEL",false));
     }

@@ -15,7 +15,7 @@ import struct
 
 ROOT = Path(__file__).resolve().parents[2]
 SOURCE = ROOT / "assets/map02_maze"
-REPORT = ROOT / "assets/validation_4366/LAYOUT.json"
+REPORT = ROOT / "assets/validation_4376/LAYOUT.json"
 
 
 def read_map(path):
@@ -47,29 +47,42 @@ def main():
     check("WAD things exactly match manifest", actual["thing"] == current["things"])
     counts = Counter(t["type"] for t in actual["thing"])
     old_counts = Counter(t["type"] for t in legacy["things"])
-    for kind, number in {18037: 96, 18029: 192, 18038: 1, 30973: 39, 30978: 24, 30979: 24,
-                         18111: 12, 18112: 6, 18110: 6, 30987: 4}.items():
+    for kind, number in {18037: 96, 18029: 192, 18038: 1, 30973: 39, 30978: 0, 30979: 0,
+                         18111: 0, 18112: 0, 18110: 0, 30987: 4}.items():
         check(f"actual actor count {kind}", counts[kind] == number, counts[kind])
-    for kind in (18037, 18038, 30973, 30978, 30979, 30961, 30963, 30964, 30965, 30966, 30975, 30976):
+    for kind in (18037, 18038, 30973, 30961, 30963, 30964, 30965, 30966, 30975, 30976):
         check(f"accepted actor count preserved {kind}", counts[kind] == old_counts[kind])
     check("45 traps preserve each accepted type", len(current["traps"]) == 45 and
           Counter(t["type"] for t in current["traps"]) == Counter(t["type"] for t in legacy["traps"]))
-    for key, kind, expected in [("arrows", 18111, 240), ("bolts", 18112, 120), ("bullets", 18110, 120)]:
-        check(f"actual {key} units", counts[kind] * data["ammunition_bundle_units"] == expected)
-    for key, kind in [("food", 30978), ("water", 30979)]:
-        check(f"actual {key} units", counts[kind] * data["provision_bundle_units"] == 120)
+    for cls, expected in {'CaelumArrowAmmo':240,'CaelumBoltAmmo':120,'CaelumCarbineAmmo':120,'CaelumFoodRation':96,'CaelumWaterRation':96}.items():
+        check(f"death drop total {cls}",sum(d['amount'] for d in current['drops'] if d['cls']==cls)==expected)
+    check('unique one-object carriers',len({d['tid'] for d in current['drops']})==len(current['drops']))
+    check('no preplaced collectible supplies',all(counts[k]==0 for k in [30970,30971,30972,30982,30983,30984,30985,30986,30978,30979,18110,18111,18112]))
     identity = lambda item: (item["catalogue_index"], item["chest"], item["chest_slot"], item["cls"], tuple(item["args"]))
     check("65 unique accepted T1 identities and chest assignments preserved",
           len(current["loot"]) == 65 and len({identity(i) for i in current["loot"]}) == 65 and
           sorted(map(identity, current["loot"])) == sorted(map(identity, legacy["loot"])) and
           all(i["tier"] == 1 for i in current["loot"]))
     check("four sections and four independent cells", len(current["zones"]) == 4 and len(current["prisoners"]) == 4)
+    half = data['room_width'] / 2
+    boxes = []
+    for z in range(4):
+        centers = [r['center'] for r in current['rooms'] if r['zone'] == z]
+        centers += [current['refuges'][z]['center'], current['prisoners'][z]['cell_center']]
+        boxes.append((min(p[0] for p in centers)-half,min(p[1] for p in centers)-half,
+                      max(p[0] for p in centers)+half,max(p[1] for p in centers)+half))
+    for a in range(4):
+        for b in range(a+1,4):
+            x1,y1,x2,y2=boxes[a];xx1,yy1,xx2,yy2=boxes[b]
+            check(f"blocks {a}/{b} retain a solid grid strip with no overlap",
+                  x2+data['grid']<=xx1 or xx2+data['grid']<=x1 or
+                  y2+data['grid']<=yy1 or yy2+data['grid']<=y1)
     check("192 rats recorded in the per-section manifest", len(current["rats"]) == 192 and current["counts"]["rats"] == 192)
     for z, zone in enumerate(current["zones"]):
         check(f"section {z + 1} has twice as many rats as Mandingas",
               sum(1 for rat in current["rats"] if rat["zone"] == z)
               == data["mandingas_per_section"][z] * data["rats_per_mandinga"])
-    check("four unique section keys and four unique cell keys", all(counts[k] == 1 for k in (30970, 30971, 30972, 30982, 30983, 30984, 30985, 30986)))
+    check("four progression and four cell key drops",sum(d['cls'].endswith('Key') for d in current['drops'])==8)
     equipment_source = (ROOT / "src/caelum/equipment/CaelumEquipmentPickups.zs").read_text(encoding="utf-8")
     for cls in ("CaelumCarbineAmmo", "CaelumArrowAmmo", "CaelumBoltAmmo"):
         body = equipment_source.split("class " + cls + " :", 1)[1].split("\nclass ", 1)[0]
@@ -133,7 +146,7 @@ def main():
 
     def reachable(keys):
         closed = [g for g in current["gates"] if g["lock"] and g["lock"] not in keys]
-        seen = nodes_at((-1152, 0))
+        seen = nodes_at(data['player_start'])
         todo = deque(seen)
         while todo:
             a = todo.popleft()
@@ -187,7 +200,7 @@ def main():
     check("three largest actors fit each dry walkway", (data["passage_width"] - data["channel_width"]) / 2 >= 6 * radius)
     result = dict(version=current["version"], evidence="static analysis", checks=len(checks),
                   failures=sum(not c["passed"] for c in checks),
-                  scope="Fresh revision-2 MAP02 only. Geometry clearance excludes dynamic actors; native movement, projectile and save migration tests remain separate.",
+                  scope="Fresh revision-3 MAP02 only. Geometry clearance excludes dynamic actors; native movement, projectile and save migration tests remain separate.",
                   collision=dict(radius=radius, height=height, maximum_step=16, valid_grid_cells=len(valid)),
                   stages=stages, results=checks,
                   hashes={str(p.relative_to(ROOT)).replace("\\", "/"): hashlib.sha256(p.read_bytes()).hexdigest()

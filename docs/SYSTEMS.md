@@ -1,6 +1,59 @@
 # Caelum Argenteum — Current systems and rules
 
-Documentation version: **4.37.5** — 2026-10-02.
+Documentation version: **4.37.6** — 2026-10-02.
+
+## 4.37.6 — Central hub, cardinal keys and finite supplies (#73/#75)
+
+This revision supersedes the revision-2 coordinates and finished-equipment/ration
+counts in the historical #10/#11 sections below. Ordinary arrival is `(0,0,0)`.
+The initial open block is south. At the author's follow-up request, all four
+entries are 2,208 MU from the center: minimum symmetric separation with one
+32-MU wall strip between block footprints, including cells/refuges.
+Return to the hub after each block:
+
+`hub -> south [203 + cell 207] -> hub -> west [204 + cell 208] -> hub -> east
+[205 + cell 209] -> hub -> north [206 + cell 210] -> extraction -> arena 206
+-> Zupay defeat/confirmed retreat -> Ace of Cups -> MAP03 -> MAP06`.
+
+Each progression key opens the next block entrance; 206 opens the northern arena.
+Each key has one guaranteed Mandinga carrier inside its own accessible block,
+outside the matching locked cell. Native locks, permanent openings, beds,
+refuges, escort/extraction and boss/card/campaign rules are retained.
+The author's follow-up requires the Zupay to remain inactive until its own
+keyed gate opens. Closed native lines block AI sight; the sewer boss also skips
+its actor tick, clears target/enemy references and zeroes velocity while that
+gate is closed. Sound alerts or retained See states cannot start movement or
+attacks early. Opening with key 206 resumes the existing boss/retreat behavior.
+There are 100 junctions, 96 Mandingas (24/block), 192 rats (48/block), 45 traps,
+39 chests, four prisoners/beds and the separate northern Zupay.
+
+The 65 actual former equipment instances become their existing recipes' basic
+inputs at 100% efficiency, including processed materials and component recipes.
+Minimum recipe batches round upward at each layer; this is a material budget,
+not free crafting or a change to player efficiency. The per-instance ledger
+includes all five equipment sizes and summed basic-material quantities.
+Preview follows recipient size without reserving stock. The first successful
+withdrawal fixes that chest's shared size and budget; partial withdrawal, failed
+capacity, other recipients, reload and hub travel cannot resize or refill it.
+Material previews paginate with N. No recipe is learned by inspecting/collecting.
+The author confirmed retaining existing stations: sewing/leather, jewelry and
+shield-anvil routes may require another workshop and known recipes.
+
+Exactly eight Mandingas carry one key each; 24 others carry one same-type
+20-unit ammunition stack: 240 arrows, 120 bolts and 120 bullets in total.
+Other Mandingas carry no assigned object. Each rat carries one ration:
+96 food and 96 water map-wide. These supplies are not preplaced on the floor.
+Death releases each assignment once at its original dry, reachable map position,
+so pit/crush/companion kills cannot destroy keys or leave them below the map.
+The generated manifest publishes each carrier, stack, recovery anchor and lock.
+
+The central `[-256,-256]..[256,256]` footprint is reserved for #74's elevator.
+No lower tunnel, return grate or elevator is implemented here; current pit escape
+geometry remains until #74. The reservation cannot bypass any surface gate.
+The author's 2026-10-02 save waiver means fresh-map testing; no old snapshot
+migration is claimed. Existing legacy-4.36.4 build selection remains available
+for its original purpose, not as compatibility with the retired 4.37.5 geometry.
+
 
 ## 4.37.5 — Daily mansion provisions (#65)
 

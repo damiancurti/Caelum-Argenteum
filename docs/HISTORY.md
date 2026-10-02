@@ -1,6 +1,56 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **4.37.5** — 2026-10-02.
+Documentation version: **4.37.6** — 2026-10-02.
+
+## 4.37.6 — Central MAP02 and local progression carriers (#73)
+
+Author implementation request: 2026-10-02, including commit, push and visible
+GZDoom tests, with an explicit waiver of old-save compatibility. The issue's
+accepted logical order is mapped to real south/west/east/north blocks around
+a central start. #75 supplies are included because #73 explicitly requires them.
+The author subsequently requested shorter hub approaches: each entry is now
+2,208 MU from the center, leaving only a 32-MU wall strip between neighboring
+block footprints (including cells/refuges). All affected checks were repeated.
+The author confirmed retaining existing stations when informed that material
+conversion requires additional workshops for some recipes. No station, recipe
+unlock, combat/balance or story change was inferred from that conversion.
+
+Static evidence: 212 floor-cell collision/count/dependency checks pass.
+Native Windows 11 / GZDoom 4.14.2 / Vulkan / installed development Doom II:
+3,848 collision steps with largest supported player, eight carrier keys, all
+twelve gates and four beds pass in an isolated route (AI/hazards suppressed).
+65 recipes at all five sizes pass; the ledger records their exact basic inputs.
+Deep-pit/crush death and repeated callbacks preserve exact ammunition and 96/96
+rat rations. Save/load and MAP03 hub return retain keys, opened gates, emptied
+chest and all 288 assigned-death guards. Further evidence is in validation_4376.
+These are agent checks, separate from the author acceptance recorded below.
+#74's return network is not implemented.
+
+The author also required the boss not to see or move before opening its keyed
+gate. Its MAP02 tick now clears targets/velocity and remains suspended while
+that gate is closed; accepted combat/retreat resumes on opening. Partial chest
+collection, capacity failure and a changed recipient profile pass native checks.
+Live follower AI passed one-companion traversal and four-companion extraction
+with damage isolated and the boss gate closed. Earlier driver attempts are kept
+as evidence: a fixed path collided with followers, and an invalid open-arena/
+active-hazard setup could not establish pre-boss extraction. The final driver
+uses native collision detours; the product's follower AI is unchanged.
+
+Final isolated boss test passes: absent/wrong keys reject opening, native sight
+is blocked, forced velocity/targets cannot move or activate the closed-gate boss,
+and the correct key restores sight and movement. Native half-health retreat
+reaches the relocated exit; defeat enables Ace capture but alone does not unlock
+travel. The first fixture directly executed a See-state action outside Tick,
+causing its own displacement; the corrected fixture injects velocity/targets
+and lets the engine run normal ticks. Both logs are retained for provenance.
+
+Author acceptance, 2026-10-02: Damián Curti confirmed all tests passed and
+explicitly requested issue closure and merge. CA-MAP02-CARDINAL-01 (origin
+4.37.6 / #73) and CA-MAP02-MATERIALS-DROPS-01 (origin 4.37.6 / #73 and #75)
+are accepted without reported exceptions, including the compact approaches,
+retained stations and locked-boss requirement. Their outstanding entries were
+removed from pending_test.txt; the tracked queue is empty. The explicit old-save
+waiver still applies; this acceptance does not implement #74.
 
 ## 4.37.5 — Daily mansion food and water (#65)
 
