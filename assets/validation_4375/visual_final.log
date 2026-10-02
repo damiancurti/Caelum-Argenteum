@@ -1,0 +1,32 @@
+GZDoom version g4.14.2
+adding build/caelum_argenteum_dev.pk3, 6141 lumps
+MAP01 - La mansión
+QA64 SETUP pos=(-320,-288,264)
+QA65 PASS each fresh mansion table is half food and half water
+QA65 PASS table provision migration revision is initialized
+QA65 PASS table presentation matches actual owned food/water and empty slots
+QA65 TABLE capacity=4 food=2 water=2 day=0
+QA65 PASS each fresh mansion table is half food and half water
+QA65 PASS table provision migration revision is initialized
+QA65 PASS table presentation matches actual owned food/water and empty slots
+QA65 TABLE capacity=4 food=2 water=2 day=0
+QA65 PASS each fresh mansion table is half food and half water
+QA65 PASS table provision migration revision is initialized
+QA65 PASS table presentation matches actual owned food/water and empty slots
+QA65 TABLE capacity=4 food=2 water=2 day=0
+QA65 PASS each fresh mansion table is half food and half water
+QA65 PASS table provision migration revision is initialized
+QA65 PASS table presentation matches actual owned food/water and empty slots
+QA65 TABLE capacity=4 food=2 water=2 day=0
+QA65 PASS each fresh mansion table is half food and half water
+QA65 PASS table provision migration revision is initialized
+QA65 PASS table presentation matches actual owned food/water and empty slots
+QA65 TABLE capacity=18 food=9 water=9 day=0
+QA65 PASS each fresh mansion table is half food and half water
+QA65 PASS table provision migration revision is initialized
+QA65 PASS table presentation matches actual owned food/water and empty slots
+QA65 TABLE capacity=60 food=30 water=30 day=0
+QA65 PASS six mansion tables provide 47 food and 47 water slots
+QA65 FRESH_DONE
+QA65 VIEW table=(-384,392,136) angle=90
+Captured issue65_table_fresh.png

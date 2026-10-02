@@ -1,0 +1,6 @@
+GZDoom version g4.14.2
+adding src, 6141 lumps
+MAP07 - Costa del Plata
+QA65 PASS tables outside MAP01 receive no initial or daily stock
+QA65 PASS other-map test observes actual dining tables
+QA65 OTHER_MAP_DONE count=1

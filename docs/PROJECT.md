@@ -1,6 +1,20 @@
 # Caelum Argenteum — Project, status and roadmap
 
-Documentation version: **4.37.4** — 2026-10-02.
+Documentation version: **4.37.5** — 2026-10-02.
+
+## 4.37.5 — Daily food and water on mansion tables (#65)
+
+Implemented on issue-65-daily-tables, based on #64 / PR #71 and delivered through
+a separate dependent PR. Fresh mansion tables use the authored 50/50 ration-slot
+targets; local midnight restores missing portions once. Normal time, fast-forward
+and explicit skips share the event, including chronological multi-day consumption.
+Palomo explains the daily timing. Player belongings and old food remain intact;
+revision-1 migration fills only free slots. No other map receives provisions.
+
+Evidence: assets/validation_4375/RESULTS.json, with static/build and isolated native
+checks separated from author acceptance. Both #64 and #65 remain unmerged and
+their author checks remain in pending_test.txt. Next: author validation, review
+and merge #64 before retargeting and merging the dependent #65 PR.
 
 ## 4.37.4 — Time skipping with automatic care (#64)
 

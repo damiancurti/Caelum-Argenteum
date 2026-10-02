@@ -1,6 +1,19 @@
 # TASKS.md — Active tasks
 
-Documentation version: **4.37.4** — 2026-10-02.
+Documentation version: **4.37.5** — 2026-10-02.
+
+## Issue #65 — Daily mansion food/water (4.37.5)
+
+- Authorized by the author as a separate implementation/PR alongside #64.
+- Implemented on issue-65-daily-tables, stacked on issue-64-time-skip / PR #71.
+  Authored 2/2, 9/9 and 30/30 targets share the local midnight event and forecast.
+- Per-table revision/day guards prevent duplicate stock. Deposited items and
+  legacy rations remain; full old tables normalize only through consumption and
+  later refills. Palomo explains daily timing in both languages.
+- Evidence: assets/validation_4375/RESULTS.json. Author checks for this patch and
+  #64 remain in pending_test.txt. Neither native tests nor a PR imply acceptance.
+- Next: author checks and review; merge #64 first, then retarget the #65 PR to
+  main. No merge or issue closure is authorized by this implementation request.
 
 ## Issue #64 — Date/time skip and automatic care (4.37.4)
 

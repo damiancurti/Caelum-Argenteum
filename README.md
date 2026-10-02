@@ -4,8 +4,16 @@ An independent dark fantasy FPS-RPG inspired by nineteenth-century Argentina.
 Author and game designer: **Damian Curti**. Development target: **GZDoom 4.14.2**
 on Windows 11. The final game is intended to be independent of Doom assets.
 
-**Current release: 4.37.4.** Obtain and update the complete repository, validate
+**Current release: 4.37.5.** Obtain and update the complete repository, validate
 it, then rebuild with `run_dev.bat` as described below.
+
+Issue [#65](https://github.com/damiancurti/Caelum-Argenteum/issues/65) adds daily
+food and water to mansion tables: half the existing slots for each, replenished
+at local midnight through normal time, T or Y. Palomo explains the timing.
+Deposited containers and old food are preserved; only free slots are filled.
+Evidence: [4.37.5 validation](assets/validation_4375/RESULTS.json). This is a
+separate PR based on [#64 / PR #71](https://github.com/damiancurti/Caelum-Argenteum/pull/71).
+Both patches await author checks in [pending_test.txt](pending_test.txt).
 
 Issue [#64](https://github.com/damiancurti/Caelum-Argenteum/issues/64) adds **Y:
 skip to day/time**, separate from **T: fast-forward**. Choose the destination
@@ -16,7 +24,7 @@ Limbo keeps a 1:1 local clock while the exterior calendar freezes. Old saves kee
 their existing dates/counters through revision-1 migration; retain original saves
 and packages for rollback. Evidence: [4.37.4 validation](assets/validation_4374/RESULTS.json).
 Author checks: [pending_test.txt](pending_test.txt). Daily mansion replenishment
-is the separately authorized dependent #65 patch. No #64 merge is implied.
+is supplied by the separate #65 patch above. No #64 merge is implied.
 
 Issue [#63](https://github.com/damiancurti/Caelum-Argenteum/issues/63) moves the
 weapon, armor, Seal and shield plan to Palomo after following him inside. He

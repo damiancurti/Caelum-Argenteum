@@ -1,0 +1,4 @@
+// Isolated serialization fixture: production MAP01 has no return route.
+map MAP01 "$CA_MAP01_NAME" { cluster = 965 }
+map MAP03 "$CA_MAP03_NAME" { cluster = 965 }
+cluster 965 { hub }

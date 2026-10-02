@@ -1,13 +1,14 @@
 # CONTEXT.md — Ultra-condensed summary of Caelum Argenteum
 
-Documentation version: **4.37.4** — 2026-10-02.
+Documentation version: **4.37.5** — 2026-10-02.
 
-**4.37.4 / #64:** Y selects a destination; T retains x105 fast-forward. Real
-provisions/furniture support sleep at 10% to 100%, which pauses crafting. The
-task forecast includes sleep and rechecks at confirmation. Clock revision 1 keeps
-legacy counters/dates but freezes future exterior progression in Limbo; its local
-clock remains 1:1. Evidence: assets/validation_4374. Author checks are pending.
-The author authorized dependent #65 daily 50/50 tables in a separate branch/PR.
+**4.37.5 / #65:** mansion tables start 50/50 food/water and refill vacancies
+once per local midnight. Revision 1 preserves legacy food and player containers;
+occupied tables may stay below targets. Palomo explains the timing. Evidence:
+assets/validation_4375. Separate PR stacked on #64 / PR #71; both await author
+acceptance. #64 adds Y destinations, real automatic care, sleep 10% to 100%
+without crafting, and a frozen exterior date with a 1:1 Limbo clock. T remains.
+Evidence: assets/validation_4374. Outstanding checks: pending_test.txt.
 
 **Accepted base:** #63 / PR #70 (Palomo loadout and retained own equipment),
 #68 / PR #69 (cheaper magic), #62 / PR #67 (dummy), #61 / PR #66 (landscape),

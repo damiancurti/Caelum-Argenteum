@@ -12,3 +12,13 @@ CA-4374-SAVE-01 — 4.37.4 / issue #64
 Prerequisites: an original pre-4.37.4 save/package preserved separately and a current session with a pending task.
 Steps: load the old save, check its date/inventory/quest, save under a new name and reload. Save/load once during a skip and once after completion; revisit the selector.
 Expected: one-time local-clock migration preserves existing dates and progress. The skip resumes its actual partial state; no duplicated provisions, reservations or crafted output. The preserved original still loads with its original package.
+
+CA-4375-TABLES-01 — 4.37.5 / issue #65
+Prerequisites: a fresh MAP01 with confirmed character and the combined #64/#65 build.
+Steps: inspect the small, normal and large tables; withdraw food and water. Cross midnight with normal/T/Y time where convenient, then use Y for several days from a safe workshop. Read Palomo's food-source explanation.
+Expected: fresh targets 2/2, 9/9, 30/30; no immediate refill on withdrawal, one refill per local midnight, actual consumption between days, capacity never exceeded and exterior date frozen. Palomo explains the daily food/water service.
+
+CA-4375-SAVES-01 — 4.37.5 / issue #65
+Prerequisites: preserved original pre-4.37.5 save/package plus a separate current save; use a partially filled canteen deposited on a table.
+Steps: load the old save, inspect its table contents, save under a new name and reload. Take portions, repeat short skips within one day, cross midnight and reload again.
+Expected: existing food and owned containers/liters survive. Full legacy food tables are not forcibly emptied; later free slots fill toward targets. No same-day repeat delivery or accumulated missed-day stock. The preserved original still opens with its original package.

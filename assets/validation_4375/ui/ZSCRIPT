@@ -1,0 +1,30 @@
+version "4.14.2"
+class Issue65Dialogue : CaelumSocialDebugAction
+{
+    override bool Use(bool pickup)
+    {
+        let u=CaelumPlayer(Owner);u.CloseCraftingStationSession();u.SetCraftingJournalState(false);
+        let it=ThinkerIterator.Create("CaelumPalomo");let p=Actor(it.Next());
+        if(p==null){Console.Printf("QA65 FAIL Palomo is available");return true;}
+        p.SetOrigin((500,120,264),false);u.SetOrigin((500,20,264),false);u.Angle=90;u.Pitch=0;
+        bool opened=CaelumFactionCondition.OpenDialogue(u,p,43317);
+        Console.Printf("QA65 %s native Palomo food-source conversation opens",opened?"PASS":"FAIL");return true;
+    }
+}
+class Issue65MenuDriver : StaticEventHandler
+{
+    ui int Step;ui int Age;ui bool Done;
+    override void UiTick()
+    {
+        if(Done)return;let menu=ConversationMenu(Menu.GetCurrentMenu());
+        if(menu==null || menu.mCurNode==null)return;
+        if(Step==0 && menu.mCurNode.UserData!="palomo_upstairs_wait")return;
+        if(++Age%35!=0)return;
+        if(Step==3)
+        {
+            Console.Printf("QA65 %s native food-source page reached lines=%d",menu.mCurNode.UserData=="ronnie_needs_safe"?"PASS":"FAIL",menu.mDialogueLines.Count());
+            Console.Printf("QA65 DIALOGUE_DONE");Done=true;return;
+        }
+        ConversationMenu.SendConversationReply(menu.mCurNode.ThisNodeNum,Step==2?1:0);menu.Close();Step++;
+    }
+}

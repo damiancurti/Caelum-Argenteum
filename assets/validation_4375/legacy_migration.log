@@ -1,0 +1,20 @@
+GZDoom version g4.14.2
+adding build/issue65_current/issue65_baseline_4374.pk3, 6141 lumps
+MAP01 - La mansión
+QA65 PASS migration keeps every legacy ration and deposited item
+QA65 PASS migration preserves partial canteen identity and liters
+QA65 PASS migration and reload synchronize a saved table idempotently
+QA65 PASS table presentation matches actual owned food/water and empty slots
+QA65 PASS migration and reload synchronize a saved table idempotently
+QA65 PASS table presentation matches actual owned food/water and empty slots
+QA65 PASS migration and reload synchronize a saved table idempotently
+QA65 PASS table presentation matches actual owned food/water and empty slots
+QA65 PASS migration and reload synchronize a saved table idempotently
+QA65 PASS table presentation matches actual owned food/water and empty slots
+QA65 PASS migration and reload synchronize a saved table idempotently
+QA65 PASS table presentation matches actual owned food/water and empty slots
+QA65 PASS migration and reload synchronize a saved table idempotently
+QA65 PASS table presentation matches actual owned food/water and empty slots
+QA65 PASS full legacy food tables stay intact; only the free slot receives water
+QA65 MIGRATION_DONE food=92 water=1
+Partida guardada.

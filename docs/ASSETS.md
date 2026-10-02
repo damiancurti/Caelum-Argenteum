@@ -1,6 +1,15 @@
 # Caelum Argenteum — Audio and art
 
-Documentation version: **4.37.4** — 2026-10-02.
+Documentation version: **4.37.5** — 2026-10-02.
+
+## 4.37.5 — Existing food plates and water cups (#65)
+
+Daily provisions reuse CaelumFoodRation, CaelumWaterRation and the existing table
+plate/cup displays. There are no new assets, generators, geometry or attributions.
+Palomo's existing LANGUAGE entries explain midnight replenishment. Isolated
+fixtures, logs, screenshots and results live in assets/validation_4375; only
+src/ is packaged. Local engine/IWAD dependencies, test saves and baseline PK3s
+are excluded from delivery.
 
 ## 4.37.4 — Existing Journal assets for time skipping (#64)
 
