@@ -39,9 +39,10 @@ No engine, IWAD or diagnostic fixture enters src or the development PK3.
 validate_map06_city.py checks final dimensions/counts, real cannon floors,
 control-sector separation, original port contents, exact legacy hashes and
 two byte-identical generations. Available static evidence and failed live-run
-records are in assets/validation_4379/south; expanded-layout validation and its
-final evidence collection are unfinished. Original first-iteration evidence is
-preserved separately; visual acceptance remains the author's pending check.
+records are in assets/validation_4379/south. Original first-iteration evidence
+is preserved separately. The author confirmed all expanded-layout/manual checks
+passed on 2026-10-03, including visual acceptance; performance testing continues
+in #86 without changing the previous measured results.
 
 ## 4.37.8 — Supply ledger provenance and verification (#75)
 

@@ -129,6 +129,23 @@ performance failure. No explicit manual-test pass was supplied; CA-4379-CITY-01,
 CA-4379-ROUTE-01 and CA-4379-COMBAT-01 remain pending. The same-patch approval
 keeps version 4.37.9 and changes no gameplay or geometry.
 
+Subsequent explicit author confirmation, 2026-10-03: "All tests passed; you may
+mark them approved." Record the following as author PASS, all originating in
+4.37.9 / issue #77:
+
+- CA-4379-CITY-01: expanded city, traversal, siege, crew replacement, victory
+  and persistence accepted.
+- CA-4379-ROUTE-01: campaign connection, rescue/rewards and saved-layout
+  continuation accepted.
+- CA-4379-COMBAT-01: targeting, exhaustion/recovery, Pain, projectile limits,
+  chair regeneration and persistence accepted.
+
+The three confirmed entries are removed from pending_test.txt; the tracked file
+is empty. This explicit confirmation supersedes their pending status above.
+Performance follow-up remains in #86 as separately requested; the earlier native
+13.5/35-tic measurement remains historical evidence, not a newly corrected result.
+Version 4.37.9 and all tested gameplay payloads are unchanged by this acceptance.
+
 ### First city iteration — superseded geometry, retained evidence
 
 Author decisions, 2026-10-02: approve a 96 × 96 m city, four additional buildings

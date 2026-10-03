@@ -33,14 +33,15 @@ Earlier [group-limit](assets/validation_4379/south/GROUP100.json) and
 [uncapped failure](assets/validation_4379/south/LIVE_FREEZE.json) records remain.
 
 On 2026-10-03 the author approved merging [PR #85](https://github.com/damiancurti/Caelum-Argenteum/pull/85)
-and closing #77, with performance work deferred to #86. This approval does not
-mark unconfirmed manual checks as passed.
+and closing #77, with performance work deferred to #86. The author then explicitly
+confirmed all three manual checks passed; HISTORY records their acceptance.
 
 Normal progression is **MAP01 → MAP02 → MAP06**, retaining Ace/Zupay requirements
 and the existing 10 km planned port journey. See the [authored city data](assets/map06_port/CITY.json)
 and [current live-test evidence](assets/validation_4379/south/COMBAT_RECOVERY.json).
-Expanded-layout validation is unfinished. Original first-city evidence remains
-preserved in validation_4379 and is superseded for this geometry.
+Expanded-layout author checks are accepted. Original first-city evidence remains
+preserved in validation_4379 and is superseded for this geometry; performance
+testing continues separately in #86.
 
 Use a fresh/unvisited MAP06 for the expansion. For previously visited ports,
 select the matching saved layout with `run_dev.bat --legacy-map06-north-city`
@@ -48,7 +49,7 @@ select the matching saved layout with `run_dev.bat --legacy-map06-north-city`
 or `--legacy-map06` (pre-siege port). Preserve original saves/packages for rollback.
 These alternatives retain the old army and progress; they do not convert a
 visited city. Saves already in MAP03 can still use their old onward port route.
-Outstanding manual checks remain in [pending_test.txt](pending_test.txt).
+No author checks remain pending; [pending_test.txt](pending_test.txt) is empty.
 
 Issue [#75](https://github.com/damiancurti/Caelum-Argenteum/issues/75) is implemented
 in the accepted #73/#74 runtime: materials in 39 chests, finite Mandinga ammunition

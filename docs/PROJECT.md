@@ -42,8 +42,8 @@ Current evidence is assets/validation_4379/south. The original validation_4379
 files describe the superseded first iteration. Static generation/connectivity,
 native collision and actual-tic traversal, all 36 physical crew replacements,
 both victory orders, persistence and measured full-scene throughput are distinct
-checks; their final collection is unfinished. Display FPS is not inferred.
-CA-4379-CITY-01 and CA-4379-ROUTE-01 remain pending author acceptance. Narrative
+checks; their available evidence remains scoped to each run. Display FPS is not inferred.
+CA-4379-CITY-01 and CA-4379-ROUTE-01 passed author acceptance on 2026-10-03. Narrative
 intelligence/captain identity and later V4.37 work remain separate issues.
 
 The author subsequently requested nearest-visible player/guard targeting,
@@ -51,7 +51,7 @@ shared attack range/cost enforcement, retreat/idle recovery, Pain interruption
 and double chair/idle Anima. Player ranged projectiles also obey their authored
 limits. SYSTEMS records the contract; COMBAT_RECOVERY.json under
 assets/validation_4379/south records 90 native checks, save persistence and the
-live comparison. CA-4379-COMBAT-01 adds author verification of this follow-up.
+live comparison. CA-4379-COMBAT-01 also passed author verification on 2026-10-03.
 
 The full-army live check still **fails performance**: late throughput is about
 13.5 tics/s versus the normal 35, despite Windows responding in all 248 samples
@@ -59,8 +59,9 @@ of the 300.5-second run. The preceding comparison measured 3.9 before targeting
 changes and 14.3 with targeting alone. These unseeded runs do not isolate causes
 or measure display FPS. GROUP100.json and LIVE_FREEZE.json preserve earlier
 failures. No permanent deadlock was proven. On 2026-10-03 the author approved
-PR #85 merge and #77 closure, deferring performance work to #86. The remaining
-manual checks stay pending; merge approval is not a claim that they passed.
+PR #85 merge and #77 closure, deferring performance work to #86. A subsequent
+explicit confirmation approved all three manual checks; HISTORY records them.
+This author acceptance does not rewrite the prior measured performance failure.
 
 ## 4.37.8 — MAP02 material ledger and finite-supply audit (#75)
 

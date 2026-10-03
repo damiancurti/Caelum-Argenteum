@@ -102,8 +102,9 @@ for the pre-siege 4.36.26 port. These three alternatives are mutually exclusive;
 each can accompany --legacy-map02. Existing populations, positions, casualties
 and rewards stay in those saved layouts. Keep original saves/packages for
 rollback; no old MAP06 geometry or army is reset or transplanted.
-Current native/static evidence: assets/validation_4379/south. Author acceptance
-is separate and remains in pending_test.txt.
+Current native/static evidence: assets/validation_4379/south. The author confirmed
+all three #77 checks passed on 2026-10-03; HISTORY records acceptance separately
+from the native results. Performance follow-up remains in #86.
 
 ## 4.37.8 — Corrected MAP02 material accounting (#75)
 

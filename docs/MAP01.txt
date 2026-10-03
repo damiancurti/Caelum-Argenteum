@@ -34,7 +34,8 @@ and rewards stay in those saved layouts. Keep original saves/packages for
 rollback; no old MAP06 geometry or army is reset or transplanted.
 Current evidence and the city plan are in assets/validation_4379/south. The first
 city iteration remains documented in HISTORY and the original validation_4379
-files. CA-4379-CITY-01 and CA-4379-ROUTE-01 still require author confirmation.
+files. CA-4379-CITY-01 and CA-4379-ROUTE-01 passed author confirmation on
+2026-10-03; HISTORY records acceptance. Performance follow-up is issue #86.
 
 ## 4.37.8 — MAP02 supplies audit (#75)
 

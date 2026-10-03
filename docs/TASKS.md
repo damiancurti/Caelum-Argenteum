@@ -5,7 +5,8 @@ Documentation version: **4.37.9** — 2026-10-03.
 ## Issue #77 — Expanded southern Barracas al Sud (4.37.9)
 
 - Author approved PR #85 merge and #77 closure on 2026-10-03, explicitly
-  deferring performance work to issue #86. Manual test results are not inferred.
+  deferring performance work to issue #86, then explicitly confirmed all manual
+  tests passed. HISTORY records the three accepted IDs; pending_test.txt is empty.
 - Final author-approved scope: 960 × 960 m; 160 houses, 64 shops, 24 factories,
   40 construction sites; four accessible cannon towers and a connected wall walk.
 - South assault integrated into six city gates; north/west fortified exits,
@@ -33,10 +34,10 @@ Documentation version: **4.37.9** — 2026-10-03.
   3.9 before targeting and 14.3 with targeting alone; RNG differs between runs.
   COMBAT_RECOVERY.json records current evidence; GROUP100.json/LIVE_FREEZE.json
   retain the prior failures. No permanent deadlock or performance fix is claimed.
-- Next: reproduce/profile the live-performance failure in #86 and complete
-  remaining expanded-layout/manual checks CA-4379-CITY-01 / CA-4379-ROUTE-01 /
-  CA-4379-COMBAT-01. Captain identity/intelligence and later V4.37 work remain
-  separate. All three author checks are retained until explicitly confirmed.
+- Accepted on 2026-10-03: CA-4379-CITY-01 / CA-4379-ROUTE-01 /
+  CA-4379-COMBAT-01 (all originating in 4.37.9 / #77).
+- Next: reproduce/profile the measured live-performance failure in #86.
+  Captain identity/intelligence and later V4.37 work remain separate.
 
 ## Issue #75 — Material supplies and corrected audit (4.37.8)
 

@@ -6,7 +6,7 @@
   "tested_state": "Uncommitted #77 combat follow-up; exact package and modified source hashes below",
   "environment": "Windows 11; GZDoom 4.14.2; Vulkan; Ryzen 9 5950X; RTX 3070 Ti; development Doom II IWAD; actual render resolution 1520x825",
   "scope": "Nearest visible player/guard, authored range and costs, retreat/idle, Pain interruption, double chair/idle Anima",
-  "author_acceptance": "Pending: CA-4379-CITY-01, CA-4379-ROUTE-01, CA-4379-COMBAT-01",
+  "author_acceptance": "Explicit author PASS on 2026-10-03: CA-4379-CITY-01, CA-4379-ROUTE-01, CA-4379-COMBAT-01; performance follow-up remains in #86 without changing the measured native results",
   "map_sha256": "84f0c18fdb4be7a91eff146845f78dda5082d5b0c9d996928f0652d7c6fc7efd",
   "map_changed": false,
   "tested_and_delivery_payloads_identical": 6141,

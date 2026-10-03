@@ -8,12 +8,12 @@ southern assault; four towers and all wall walks have stairs. Forces: 6,000
 Mandingas + commander, 600 soldiers, six hostile guns/six rams. Defenders install
 36 guns; eight south-wall and four tower guns fire. MAP01 → MAP02 → MAP06 retains
 Ace/Zupay and 10 km planning. Evidence: validation_4379/south. City/route checks
-pending. Old port saves select their legacy layout;
+accepted. Old port saves select their legacy layout;
 --legacy-map06-north-city preserves the first 4.37.9 northern city.
 
 **Combat follow-up:** nearest player/guard; range/costs, retreat/idle, Pain,
 double chair Anima. 90 checks pass; merge approved. Performance: #86 (13.5/35 tics/s).
-See south/COMBAT_RECOVERY.json. Manual checks remain pending.
+See south/COMBAT_RECOVERY.json. Author checks passed 2026-10-03.
 
 **Accepted #73/#74/#75:** cardinal maze, material chests/finite enemy supplies,
 six flooded returns, four grates and central elevator. Closed blocks keep covers
