@@ -2,35 +2,56 @@
 
 Documentation version: **4.37.9** — 2026-10-03.
 
-## 4.37.9 — Fortified Barracas al Sud (#77)
+## 4.37.9 — Expanded southern Barracas al Sud (#77)
 
-The third campaign map keeps internal ID MAP06. The author approved a 96 × 96 m
-urban footprint, four additional buildings and four traversable corner towers.
-North, south and west gateways reach exterior ground inside MAP06; east reaches
-the existing docks. The six military gates and their siege front stay north.
-These four urban exits are physical gateways, not new campaign destinations.
+The author's final 2026-10-03 direction supersedes the first 96 m northern layout.
+MAP06 now contains a 960 × 960 m city: 160 houses (including the two retained port
+buildings), 64 shops, 24 factories and 40 construction sites. The 288 constructions
+have connected streets and avenues; different façades, counters/awnings, industrial
+halls/chimneys and incomplete masonry/timber works distinguish their uses.
+The existing harbor arrival, prisoners, bed, workbench and both piers remain.
 
-The author resolved a discrepancy on 2026-10-03: the former route passed through
-the MAP03 workshop, while #77 required direct MAP02 → MAP06. The normal exit now
-uses a new stable connection ID, retains Zupay/Ace prerequisites and reuses the
-accepted 10 km port journey with its provision/time preview. Diagnostic MAP03
-is no longer entered through ordinary play. Existing saves already there retain
-their former onward port route; old connection history is not reinterpreted.
+Six breakable gates integrate the attacking front into the city south wall.
+North and west also have fortified gates; the eastern arch reaches the docks.
+These exits remain local MAP06 passages. A raised walk connects the perimeter,
+with physical stairs to every gun position and four traversable corner towers.
+The author increased the forces to 6,000 Mandingas plus one commander and 600
+soldiers. Attacking machines remain five small rams, one large ram and six guns.
+Defenders have 36 guns: eight per wall plus four tower guns. Only the eight south
+wall guns and four tower guns fire during this siege; the other 24 are staffed
+reserve emplacements. Two hostile gun positions on the southern flanks give
+the northern towers real visible targets without changing cannon physics.
+Each attacking command group is now capped at 100 members including its leader,
+as requested by the author after the live freeze check. Excess neighbors form
+additional groups; rank priority, stable ties and the full population remain.
 
-For a save that already visited the 4.36.27–4.37.8 siege port, use
-`run_dev.bat --legacy-map06-siege`. This selects the exact saved layout with
-current code. Keep original saves/packages for rollback; a normal build activates
-the expansion only for a new/unvisited MAP06. The earlier --legacy-map06 mode
-still selects the pre-siege 4.36.26 port. The MAP02 save waiver is not extended.
+Normal progression remains MAP01 → MAP02 → MAP06, using stable connection 16
+and network revision 4. It retains Ace/Zupay prerequisites and the accepted
+10 km provision/time transaction. Saves already in the former MAP03 workshop
+retain their legacy onward route. City exits introduce no diagnostic travel.
 
-Static/native evidence and its limits are in assets/validation_4379: 42 static
-checks, 183 native clearance checks, 2,248 actual-tic walking steps, both victory
-orders, 0/2/4 rescue journeys and reversible save compatibility. The paired full
-battles sustained approximately 35 simulation tics/host second; display FPS is
-not measured. All accepted
-forces, combat resources, machinery, rewards and both victory objectives remain.
-Author acceptance is pending: CA-4379-CITY-01 and CA-4379-ROUTE-01. Narrative
+Use a fresh/unvisited MAP06 for the expanded southern city. For a previously
+visited port, select its exact geometry: --legacy-map06-north-city for the first
+4.37.9 northern city, --legacy-map06-siege for 4.36.27–4.37.8, or --legacy-map06
+for the pre-siege 4.36.26 port. These three alternatives are mutually exclusive;
+each can accompany --legacy-map02. Existing populations, positions, casualties
+and rewards stay in those saved layouts. Keep original saves/packages for
+rollback; no old MAP06 geometry or army is reset or transplanted.
+
+Current evidence is assets/validation_4379/south. The original validation_4379
+files describe the superseded first iteration. Static generation/connectivity,
+native collision and actual-tic traversal, all 36 physical crew replacements,
+both victory orders, persistence and measured full-scene throughput are distinct
+checks; their final collection is unfinished. Display FPS is not inferred.
+CA-4379-CITY-01 and CA-4379-ROUTE-01 remain pending author acceptance. Narrative
 intelligence/captain identity and later V4.37 work remain separate issues.
+
+The full-army live check still **fails** after capping groups: late simulation
+throughput is about 3.7 tics/s. The latest five-minute run keeps Windows responsive,
+but five simulation seconds take about 47 host seconds. GROUP100.json retains
+the capped-group checks; LIVE_FREEZE.json preserves the earlier uncapped stalls.
+Both are under assets/validation_4379/south. A performance correction remains
+necessary before acceptance; no permanent deadlock was proven.
 
 ## 4.37.8 — MAP02 material ledger and finite-supply audit (#75)
 

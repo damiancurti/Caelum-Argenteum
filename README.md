@@ -8,17 +8,34 @@ on Windows 11. The final game is intended to be independent of Doom assets.
 it, then rebuild with `run_dev.bat` as described below.
 
 Issue [#77](https://github.com/damiancurti/Caelum-Argenteum/issues/77) expands
-**Barracas al Sud (MAP06)** to a 96 × 96 m fortified city: four new buildings,
-four walkable corner towers and four cardinal gateways within the same map.
-The existing military front and full siege remain north. Normal progression is
-now **MAP01 → MAP02 → MAP06**, with the same Ace/Zupay requirements and planned
-10 km port journey. See the [before/after layout](assets/validation_4379/LAYOUT_BEFORE_AFTER.png)
-and [test evidence](assets/validation_4379/RESULTS.json).
+**Barracas al Sud (MAP06)** to **960 × 960 m**: 160 houses, 64 shops, 24 factories
+and 40 construction sites. Six gates face the southern siege; north/west gates,
+the eastern docks, a connected wall walk and four cannon towers are traversable.
+The author increased the armies to **6,000 Mandingas plus one commander and 600
+soldiers**. Attackers keep six guns and six rams. Defenders install 36 guns:
+eight per wall plus four towers; **eight south-wall and all four tower guns fire**
+during this assault. The other 24 are staffed reserve positions.
+The author's follow-up caps every attacking command group at **100 enemies,
+including its leader**, while preserving Zupay priority and the full population.
 
-Use a new/unvisited MAP06 for the expansion. For campaigns that already visited
-the previous siege port, run `run_dev.bat --legacy-map06-siege`; keep the original
-save/package for rollback. `--legacy-map06` retains its pre-siege meaning. A save
-already in the old MAP03 workshop can still continue along its legacy port route.
+**Current validation failure:** the capped groups pass their native checks,
+but the five-minute full-army run still slows to about 3.7 tics/s (normal: 35).
+Windows remained responsive in that run; simulation performance still fails.
+See the [group-limit tests](assets/validation_4379/south/GROUP100.json) and the
+[earlier uncapped failure](assets/validation_4379/south/LIVE_FREEZE.json).
+
+Normal progression is **MAP01 → MAP02 → MAP06**, retaining Ace/Zupay requirements
+and the existing 10 km planned port journey. See the [authored city data](assets/map06_port/CITY.json)
+and [current live-test evidence](assets/validation_4379/south/GROUP100.json).
+Expanded-layout validation is unfinished. Original first-city evidence remains
+preserved in validation_4379 and is superseded for this geometry.
+
+Use a fresh/unvisited MAP06 for the expansion. For previously visited ports,
+select the matching saved layout with `run_dev.bat --legacy-map06-north-city`
+(first 4.37.9 northern city), `--legacy-map06-siege` (4.36.27–4.37.8 siege port),
+or `--legacy-map06` (pre-siege port). Preserve original saves/packages for rollback.
+These alternatives retain the old army and progress; they do not convert a
+visited city. Saves already in MAP03 can still use their old onward port route.
 Author acceptance remains in [pending_test.txt](pending_test.txt).
 
 Issue [#75](https://github.com/damiancurti/Caelum-Argenteum/issues/75) is implemented
@@ -210,8 +227,8 @@ individual notices in licenses/ retain their terms and attribution.
    and recipe-based repair stations. Food, water and repair supplies are finite.
 6. Rescue any prisoners you choose and lead them alive to the extraction area
    BEFORE the northern boss fight. They do not fight that boss. Defeat the MAP02
-   Zupay, capture the Ace of Cups, and take the existing MAP03 workshop connector
-   to MAP06. MAP03 is a connector, not a fourth complete campaign chapter.
+   Zupay, capture the Ace of Cups, and plan the direct port journey to MAP06.
+   MAP03 is a diagnostic map, outside the ordinary campaign route.
 7. At the port each rescued prisoner pays 25 gold and +10 own-faction reputation
    once. Stop all twelve hostile siege machines and defeat the commander to
    capture the Knight of Wands. Survivors withdraw; use the port endpoint sign.
@@ -226,11 +243,11 @@ overlays for ordinary campaign acceptance.
 Known limits: 4.37 Tarot activation/Trucazo is deferred by author decision.
 The accepted port enemy zero-resource attack trial remains enabled. Historical
 overall cannon dimensions are unverified; the sleeping-bag icon reuses fabric
-art. The siege has 1,001 attackers, 100 defenders and 24 machines, and may be
-demanding. Prior Windows 11 / Ryzen 9 5950X / RTX 3070 Ti / Vulkan / 1280x720
-probe recorded 2,100 simulated tics in 60.71 host seconds; this is simulation
-throughput with a diagnostic player, not a rendering-FPS benchmark or minimum
-hardware requirement. Full multiplayer campaign behavior has not been verified;
+art. The expanded siege has 6,001 attackers, 600 defenders and 48 machines
+(six rams, six hostile guns and 36 defensive guns). Current full-population
+measurements and their environment are in the linked evidence. The old
+1,001/100 benchmark does not establish performance at this scale. Simulation
+throughput is not display FPS or a minimum hardware requirement. Full multiplayer campaign behavior has not been verified;
 the earlier two-client equipment check does not establish co-op support.
 
 Report issues at https://github.com/damiancurti/Caelum-Argenteum/issues with

@@ -2,29 +2,39 @@ CAELUM ARGENTEUM — STORY AND MAP01
 
 Documentation version: **4.37.9** — 2026-10-03.
 
-## 4.37.9 — Barracas al Sud campaign layout (#77)
+## 4.37.9 — Expanded Barracas al Sud campaign layout (#77)
 
-The third playable map is internal MAP06; MAP03 remains the diagnostic reservoir.
-The author approved 96 × 96 m of city, four extra buildings and exactly four
-walkable towers, one at each corner. CITY.json defines the expansion. Its four
-cardinal gateways connect northern military ground, southern/western exterior
-ground and eastern docks, all inside MAP06. No new campaign maps are authored.
-The existing northern six-gate battlefield, defenses, rams and retreat nodes
-retain their accepted placement and populations. Arrival, rescued prisoners,
-rest/crafting and both piers remain accessible; the endpoint sign shifts west
-of the northeast tower. LAYOUT_BEFORE_AFTER.png documents the two footprints.
+The third campaign map remains internal MAP06. The author replaced the first
+96 × 96 m proposal with a 960 × 960 m city, one hundred times its area, populated
+by 160 houses, 64 shops, 24 factories and 40 construction sites. CITY.json
+describes this city under expansion; SOUTH.json supplies the southern deployment.
+Its north/west exits reach local exterior ground, six south gates share the
+integrated siege front, and the eastern arch reaches the retained docks. Four
+corner towers and the continuous raised wall walk are traversable by stairs.
 
-Author clarification, 2026-10-03: normal progression is now MAP01 → MAP02 → MAP06,
-superseding the historical workshop step described under 4.36.27 below. The
-existing maze exit leads directly to the port through the accepted 10 km journey
-planner, still requiring the sewer Zupay and Ace. Diagnostic travel is not made
-available by any city gateway. Existing saves inside the former workshop can
-still use their legacy onward route.
+The assault now comes from the south: 6,000 Mandingas and one commander oppose
+600 soldiers. The six hostile guns and six rams retain their counts. Thirty-six
+defensive guns occupy eight positions per wall and one per tower; twelve fire
+in this assault (eight south-wall plus all four tower guns). The other 24 are
+staffed reserve positions. No new faction, quest, captain identity or reward is
+invented by the larger city. The original arrival, rescued prisoners, resources
+and piers remain; the endpoint stays at (128,1856,0).
 
-Use a fresh/unvisited MAP06 for the expansion. A campaign that already visited
-the siege port must select --legacy-map06-siege; --legacy-map06 retains the older
-pre-siege layout. Neither option converts saved geometry. Native tests are
-recorded in assets/validation_4379; author city/campaign checks remain pending.
+Author clarification, 2026-10-03: MAP01 → MAP02 → MAP06 is the normal route.
+The former MAP03 workshop step is historical. The existing maze exit still
+requires the sewer Zupay/Ace and uses the approved 10 km journey planner.
+Saves already in that workshop retain their legacy port connection.
+
+Use a fresh/unvisited MAP06 for the expanded southern city. For a previously
+visited port, select its exact geometry: --legacy-map06-north-city for the first
+4.37.9 northern city, --legacy-map06-siege for 4.36.27–4.37.8, or --legacy-map06
+for the pre-siege 4.36.26 port. These three alternatives are mutually exclusive;
+each can accompany --legacy-map02. Existing populations, positions, casualties
+and rewards stay in those saved layouts. Keep original saves/packages for
+rollback; no old MAP06 geometry or army is reset or transplanted.
+Current evidence and the city plan are in assets/validation_4379/south. The first
+city iteration remains documented in HISTORY and the original validation_4379
+files. CA-4379-CITY-01 and CA-4379-ROUTE-01 still require author confirmation.
 
 ## 4.37.8 — MAP02 supplies audit (#75)
 

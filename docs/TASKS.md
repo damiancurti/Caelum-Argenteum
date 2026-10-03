@@ -2,24 +2,35 @@
 
 Documentation version: **4.37.9** — 2026-10-03.
 
-## Issue #77 — Fortified Barracas al Sud (4.37.9)
+## Issue #77 — Expanded southern Barracas al Sud (4.37.9)
 
-- Approved: 96 × 96 m urban core, four additional buildings, four traversable
-  corner towers and four local cardinal exits; military front remains north.
-- Implemented on issue-77-fortified-barracas. No internal map renumbering or
-  additional enemies/fronts; existing siege quantities and two-part victory stay.
-- Author resolved the old MAP03 workshop discrepancy: direct MAP02 → MAP06,
-  with existing Ace/Zupay requirements and 10 km provision/time planning.
-  New connection 16/network revision 4 preserves stored identities and the
-  legacy workshop's onward route for saves already there.
-- Exact pre-expansion siege geometry retained under legacy_4378; explicit
-  --legacy-map06-siege mode complements the older --legacy-map06 option.
-- Evidence: assets/validation_4379; 42 static checks, 183 clearance checks,
-  2,248 actual-tic steps and paired full armies at approximately 35 simulation
-  tics/host second. Native
-  traversal, siege, travel, rescues and persistence are separate from acceptance.
-- Next: review the linked PR and author checks CA-4379-CITY-01 / CA-4379-ROUTE-01.
-  Companion prisoner intelligence and captain identity remain separate issues.
+- Final author-approved scope: 960 × 960 m; 160 houses, 64 shops, 24 factories,
+  40 construction sites; four accessible cannon towers and a connected wall walk.
+- South assault integrated into six city gates; north/west fortified exits,
+  eastern docks. All four directions remain inside MAP06.
+- Forces: 6,000 Mandingas plus one commander, 600 defenders, six hostile guns
+  and six rams. Thirty-six defensive guns are installed; eight southern wall
+  guns plus four tower guns are active, with 24 staffed reserve emplacements.
+- Physical stairs and saved crew routes retain existing actors and resources.
+  Twelve hostile objectives plus commander defeat still gate victory/rewards.
+- Author follow-up: at most 100 enemies per attacking command group, including
+  its leader. Preserve Zupay priority, stable ties, sight links and the full army.
+- Direct MAP02 → MAP06 uses the accepted Ace/Zupay and 10 km journey contract;
+  the legacy MAP03 onward route remains for existing workshop saves.
+- Exact prior layouts are selectable with --legacy-map06-north-city,
+  --legacy-map06-siege or --legacy-map06. Current code preserves their state;
+  the saved geometry/population is not converted into the expanded city.
+- Evidence: assets/validation_4379/south. Original validation_4379 results
+  describe the superseded 96 m northern iteration, not the final battle scale.
+- Blocking live test: the 100-member cap passes its native tests but the latest
+  five-minute full-army run still slows to about 3.7 tics/s instead of 35.
+  Windows stays responsive in that run. GROUP100.json retains the new checks;
+  assets/validation_4379/south/LIVE_FREEZE.json retains earlier uncapped stalls.
+- Next: isolate and fix the live-performance failure, complete the remaining
+  expanded-layout validation, then review PR #85 and complete
+  CA-4379-CITY-01 / CA-4379-ROUTE-01.
+  Captain identity/intelligence, later narrative work and author acceptance
+  remain separate; no merge or issue closure is inferred.
 
 ## Issue #75 — Material supplies and corrected audit (4.37.8)
 

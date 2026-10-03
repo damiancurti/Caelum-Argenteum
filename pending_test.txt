@@ -1,30 +1,35 @@
 CA-4379-CITY-01
 Origin: 4.37.9 / issue #77.
-Prerequisites: normal current build and a new/unvisited MAP06; use copies of saves.
+Prerequisites: normal current build and a fresh/unvisited MAP06; use save copies.
 Steps:
-1. Enter Barracas al Sud. Explore the four added buildings, bed/workbench and
-   prisoner area; climb and descend all four corner towers without cheats.
-2. Cross north/south/west gates onto exterior ground and the east gate to both
-   piers, then return. Confirm the city scale, walls and views are satisfactory.
-3. Play the northern siege with its full forces. Observe rams/guns, defeat the
-   commander and neutralize all twelve hostile machines, then follow withdrawal.
-4. Capture the Knight, use the endpoint sign west of the northeast tower, and
-   save/reload. Check that victory, rewards and army state do not reset.
-Expected: all places are reachable; no stuck tower stairs, accidental level
-transition, early victory or duplicate reward; acceptable full-battle performance.
+1. Explore the 960 × 960 m city. Check representative houses, shops, factories
+   and construction sites; confirm that their appearance and distribution suit
+   a city expanding under construction. Visit the original harbor resources.
+2. Cross north/west gates, all six south gates and the eastern dock arch. Walk
+   the raised perimeter and climb/descend all four towers without cheats.
+3. Play the southern siege with 6,000 Mandingas, one commander and 600 soldiers.
+   Observe six rams/six hostile guns and twelve active defensive guns: eight
+   on the south wall and four on the towers. The other 24 wall guns stay staffed
+   in reserve. Observe a replacement physically climbing to a vacant gun post.
+4. Complete both victory requirements, follow withdrawal, capture the Knight
+   and use the endpoint sign near the original harbor. Save/reload before and
+   after victory and verify that progress and rewards do not reset.
+Expected: reachable streets/gates/defenses, appropriate city appearance, no
+blocked stairs or early/duplicate rewards, and acceptable full-battle performance.
 
 CA-4379-ROUTE-01
 Origin: 4.37.9 / issue #77.
-Prerequisites: current build, playable MAP02, and a copy of your campaign save.
+Prerequisites: current build, playable MAP02, copied campaign saves when available.
 Steps:
-1. Finish the sewer Zupay/Ace objectives and approach the existing final exit.
-   Confirm the port journey after reviewing its provisions/time preview.
-2. Arrive directly at MAP06 without visiting the MAP03 workshop. Speak to any
-   extracted prisoners and collect their existing payments once; save/reload.
-3. If continuing a campaign that already visited the prior siege MAP06, rebuild
-   with run_dev.bat --legacy-map06-siege and load its copied save. Verify the
-   old port/army/progress are retained. Preserve the original save/package for
-   rollback; do not load that old port with the expanded geometry.
-Expected: direct campaign travel with prerequisites and costs retained; rescued
-prisoners/rewards survive arrival/reload; compatibility mode preserves old state.
-Report subchecks not performed, including absence of an older port save.
+1. Complete sewer Zupay/Ace objectives and use the existing final exit. Review
+   the journey's provisions/time preview and arrive directly at MAP06.
+2. Speak to extracted prisoners and claim their unchanged once-only payments.
+   Save/reload and verify rescue/reward state; ordinary travel must skip MAP03.
+3. For an already-visited old port, select its matching mode: --legacy-map06-north-city
+   for the first 4.37.9 city, --legacy-map06-siege for 4.36.27–4.37.8, or
+   --legacy-map06 for the pre-siege port. Load a copy and check retained layout,
+   original army/casualties and progress. Preserve the original package/save
+   for rollback; these modes do not transplant old actors into the new city.
+Expected: correct direct travel and persistent rescue/rewards; compatibility
+retains the exact visited port. Report subchecks not performed, including the
+absence of any old port save. Agent checks do not constitute author acceptance.

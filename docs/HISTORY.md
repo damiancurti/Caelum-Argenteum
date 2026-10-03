@@ -4,6 +4,78 @@ Documentation version: **4.37.9** — 2026-10-03.
 
 ## 4.37.9 — Expand fortified Barracas al Sud (#77)
 
+Final author direction, 2026-10-03 (same patch/version, PR #85): move the attack
+south and integrate six gates into the city wall. Fortify north/west exits,
+connect the raised wall walk and place an operating cannon on every tower.
+The author then explicitly expanded each city side tenfold to 960 × 960 m and
+approved 288 constructions: 160 houses, 64 shops, 24 factories and 40 works in
+progress. The two original port buildings count among the houses and stay.
+
+The final population decision is 6,000 Mandingas plus one commander and 600
+soldiers. Hostile machines stay at six guns and six rams. A clarification confirmed
+36 defensive guns installed (eight per wall plus four towers), with only the
+eight southern wall guns and all four tower guns active during this assault.
+Two hostile gun positions on the south flanks preserve real firing visibility
+for the northern towers. Cannon physics, combat equipment and rewards stay.
+
+The follow-up adds physical access to all 36 defensive posts, selects reserves
+near those entrances and saves their route progress. Native tests exposed
+occupied staging points and approaches through a gun carriage; the final routes
+keep those paths free and use collision-respecting movement without teleporting
+or spawning replacements. All 36 recruits complete their actual-tic routes.
+The original first-city WAD/data and package are preserved for reversible
+--legacy-map06-north-city continuation; older compatibility selectors remain.
+
+Follow-up validation covers supported body profiles, physical walking, all gun
+roles, 36 relief identities, both victory orders, real retreat, rewards, travel
+and repeated save/load/rollback; final collection and remaining expanded-layout
+checks are unfinished. Available evidence is under assets/validation_4379/south.
+The earlier approximately
+35-tic comparison below describes only the original 1,001/100 northern scene;
+it is not a performance claim for 6,001/600. Current measurements are reported
+separately and do not measure display FPS. Author acceptance of the expanded
+city remains pending under the same two stable IDs; no test entry is removed.
+
+Live freeze check requested by the author, 2026-10-03: **FAILED**. Two separate
+native full-army runs were stopped by their test runners after approximately
+302 host seconds each. Both continued simulation and rendering intermittently,
+but late 175-tic intervals took approximately 56 seconds (about 3.1 tics/s,
+versus the normal 35). Windows reported “Not responding” in both runs. The
+second run disabled background priority lowering and included direct foreground
+window inspection; the first activation timed out, the retry succeeded.
+No permanent deadlock or spontaneous crash was established. This is a severe
+live-play failure, not a passing stress test. Population, combat and physics
+were not modified during these runs. Raw samples, environment, tested-package
+hash and measurement limits are in assets/validation_4379/south/LIVE_FREEZE.json.
+Root cause and correction remain outstanding; no author acceptance is inferred.
+Native profilethinkers samples identify expensive controller updates (up to
+230.6 ms in the sampled ticks). A trial moving candidate-priority rejection
+before cannon visibility traces reproduced the slowdown and was reverted;
+it is not a validated correction or an isolated root-cause finding.
+
+Subsequent author request, 2026-10-03: limit each command group to 100 enemies
+and repeat the tests. LAYOUT.json now owns that cap, including the leader.
+The search stops adding neighbors at 100 but still considers every queued
+member for rank/stable-identity election. Remaining actors seed later groups.
+Seventeen isolated native checks pass the 100/101/250 boundaries, a late-added
+Zupay, actual leader deaths, separation/reconnection, deterministic reelection
+and unchanged registry size. Diagnostic actors were reactivated before lethal
+damage because dormant actors reject it; that fixture correction changes no
+gameplay. No new saved field or geometry revision is introduced.
+The capped full-army run lasts 301.3 host seconds and never exceeds 100 members
+or leaves an active attacker unassigned at the sampled checks. All 46 gun-role
+checks pass. Windows Responding is true in all 132 observations, but the final
+175-tic interval takes 47.3 host seconds, about 3.7 tics/s instead of 35: **live
+performance still fails**. Combat randomness differs from the earlier runs;
+this is not a controlled speedup benchmark. Loading a pre-cap expanded save,
+saving/reloading it again, and loading a fresh capped save retain the cap and
+roster; the older save also retains all 36 relief identities. The static audit
+passes 662 checks and two identical map generations. GROUP100.json under the
+same south evidence directory records these scoped results. The capped groups
+are implemented; they do not constitute a performance fix or author acceptance.
+
+### First city iteration — superseded geometry, retained evidence
+
 Author decisions, 2026-10-02: approve a 96 × 96 m city, four additional buildings
 and four accessible corner towers; north/south/west reach local exterior ground,
 east reaches docks, with the existing six-gate military front retained north.

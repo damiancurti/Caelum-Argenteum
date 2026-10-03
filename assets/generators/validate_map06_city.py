@@ -1,7 +1,8 @@
-"""Audit #77 geometry and provenance without modifying runtime sources."""
+"""Audit the expanded southern city, authored deployment and exact save layouts."""
 import hashlib
 import json
 import tempfile
+from collections import Counter
 from pathlib import Path
 import generate_map06_port as portgen
 from generate_port_city import CITY
@@ -9,69 +10,60 @@ from generate_coastal_trials import CoastalMap, generate
 
 ROOT = Path(__file__).resolve().parents[2]
 
-
 def audit():
-    checks = []
-    def check(ok, label):
-        checks.append({'check': label, 'passed': bool(ok)})
-        if not ok:
-            raise AssertionError(label)
-    snapshots = []
-    write = CoastalMap.write
-    expand = portgen.expand_city
+    checks=[]
+    def check(ok,label):
+        checks.append(dict(check=label,passed=bool(ok)))
+        if not ok:raise AssertionError(label)
+    captures=[];writer=CoastalMap.write
     try:
-        CoastalMap.write = lambda port, folder: snapshots.append(port)
-        portgen.expand_city = lambda port: None
-        generate(ROOT/'build', port_extension=portgen.extend, include_coast=False)
-        portgen.expand_city = expand
-        generate(ROOT/'build', port_extension=portgen.extend, include_coast=False)
-    finally:
-        CoastalMap.write = write
-        portgen.expand_city = expand
-    before, after = snapshots
-    c = CITY
-    x1,y1,x2,y2 = c['bounds']
-    check(x2-x1 == y2-y1 == 96*32, 'Approved 96 by 96 metre urban footprint')
-    check({g['name'] for g in c['gates']} == {'north','south','east','west'}, 'Exactly four cardinal city gates')
-    check({t['name'] for t in c['towers']} == {'northwest','northeast','southwest','southeast'}, 'Exactly four corner towers')
-    check(len(c['buildings']) == 4, 'Exactly four additional buildings')
-    check({p:v for p,v in before.cells.items() if p[1]>=2304} ==
-          {p:v for p,v in after.cells.items() if p[1]>=2304}, 'Northern battlefield, ram approaches, platforms and retreat boundary unchanged')
-    previous = json.loads((ROOT/'assets/map06_port/legacy_4378/LAYOUT.json').read_text())
-    check({k:v for k,v in previous.items() if k!='completion_position'} ==
-          {k:v for k,v in portgen.D.items() if k!='completion_position'}, 'All accepted siege data retained; only completion-sign placement changed')
-    provenance = json.loads((ROOT/'assets/map06_port/legacy_4378/PROVENANCE.json').read_text())
-    for name, digest in provenance['files'].items():
-        check(hashlib.sha256((ROOT/'assets/map06_port/legacy_4378'/name).read_bytes()).hexdigest()==digest,
-              'Exact legacy provenance: '+name)
+        CoastalMap.write=lambda p,f:captures.append(p)
+        generate(ROOT/'build',include_coast=False)
+        generate(ROOT/'build',port_extension=portgen.extend,include_coast=False)
+    finally:CoastalMap.write=writer
+    original,port=captures;c=CITY;s=portgen.S
+    x1,y1,x2,y2=c['bounds']
+    check(x2-x1==y2-y1==960*32,'Author-approved 960 by 960 metre city')
+    counts=Counter(b['kind'] for b in c['buildings']);counts['house']+=c['retained_houses']
+    check(dict(counts)==c['city_totals'] and sum(counts.values())==288,'160 houses, 64 shops, 24 factories, 40 construction sites')
+    check(len(c['towers'])==4,'Four traversable corner cannon towers')
+    check(len([g for g in c['gates'] if g['name'].startswith('south_')])==6,'Six gates integrated into the southern city wall')
+    check({g['name'] for g in c['gates'] if not g['name'].startswith('south_')}=={'north','west','east'},'North and west fortified passages plus the eastern docks')
+    check(s['mandingas']==6000 and s['defenders']==600,'Sixfold Mandinga and defender populations; commander remains separate')
+    check(portgen.D['command_group_limit']==100,'Author-approved maximum of 100 attackers per command group, including its leader')
+    check(len(s['defending_guns'])==36 and s['active_defending_guns']==list(range(12)),'36 defensive guns installed, eight southern and four tower guns active')
+    check(len(s['attacking_guns'])==6 and len(s['gate_x'])==6,'Six hostile cannons and six ram lanes unchanged in count')
+    check(len(s['guard_positions'])+2*len(s['defending_guns'])==600,'Crew assignments and reserves account for exactly 600 defenders')
+    check(s['field_bounds'][3]==y1 and s['exit_y']<s['boss_position'][1]<y1,'Attack and physical retreat belong to the southern field')
+    check(len(c['access_stairs'])==len(s['crew_routes'])==36,'A physical access stair and crew route for every defensive gun')
+    for i,position in enumerate(s['defending_guns']):
+        x,y,z=position;cell=port.cells[(x//64*64,y//64*64)]
+        surfaces=[cell[0]]+([port.volumes[cell[4]][1]] if cell[4] else [])
+        check(z in surfaces,f'Gun {i} stands on a real floor at its authored height')
     for gate in c['gates']:
-        gx1,gy1,gx2,gy2 = gate['bounds']
-        check(max(gx2-gx1,gy2-gy1)==256, gate['name']+' gate width 256 MU')
-        for x in range(gx1,gx2,64):
-            for y in range(gy1,gy2,64):
-                cell=after.cells[x,y]
-                check(cell[0]==0 and after.volumes[cell[4]][0]==c['gate_headroom'], f'{gate["name"]} supported passage {x},{y}')
-    for b in c['buildings']:
-        check(after.volumes[b['tag']][0]==160, f'Building {b["tag"]} native roof/headroom')
-    for thing in before.things:
-        check(thing in after.things, f'Retained port actor {thing["type"]} at {thing["x"]},{thing["y"]}')
+        a,b,d,e=gate['bounds']
+        check(all(port.cells[x,y][0]==0 and port.cells[x,y][4]==gate['tag'] for x in range(a,d,64) for y in range(b,e,64)),gate['name']+' has a continuous native arch')
+    for i,(tag,volume) in enumerate(sorted(port.volumes.items())):
+        x=c['control_origin'][0]+(i%c['control_columns'])*128;y=c['control_origin'][1]+(i//c['control_columns'])*128
+        check((x,y) not in port.cells and abs(x)<32768 and abs(y)<32768,f'Control sector {tag} is outside playable geometry and fixed-point bounds')
+    for thing in original.things:check(thing in port.things,f'Retained campaign actor {thing["type"]} at {thing["x"]},{thing["y"]}')
+    for rect in [(-1216,384,-448,1152),(-1088,1280,-512,1984)]:
+        a,b,d,e=rect
+        check(all(original.cells[x,y]==port.cells[x,y] for x in range(a,d,64) for y in range(b,e,64)),'Original port house and contents retained: '+str(rect))
+    for folder in ['legacy_4378','legacy_4379_north']:
+        path=ROOT/'assets/map06_port'/folder;provenance=json.loads((path/'PROVENANCE.json').read_text())
+        for name,digest in provenance['files'].items():check(hashlib.sha256((path/name).read_bytes()).hexdigest()==digest,'Exact compatibility provenance: '+folder+'/'+name)
     hashes=[]
-    # Temporary output stays under the workspace and is retained as local QA.
     for iteration in range(2):
-        output=Path(tempfile.mkdtemp(prefix='issue77_determinism_',dir=ROOT/'build'))
+        output=Path(tempfile.mkdtemp(prefix='issue77_south_determinism_',dir=ROOT/'build'))
         generate(output,port_extension=portgen.extend,include_coast=False)
         hashes.append(hashlib.sha256((output/'MAP06.wad').read_bytes()).hexdigest())
     current=hashlib.sha256((ROOT/'src/maps/MAP06.wad').read_bytes()).hexdigest()
-    check(hashes[0]==hashes[1]==current,'Two independent generator runs equal the shipped MAP06 byte for byte')
-    result={'issue':77,'checks':checks,'map_sha256':current,'determinism':hashes,
-            'old_city_metres':[68,76],'new_city_metres':[96,96],
-            'native_clearance_evidence':'See native_geometry.log; static cells alone do not prove actor traversal.'}
-    out=ROOT/'assets/validation_4379'
-    out.mkdir(exist_ok=True)
-    (out/'STATIC.json').write_bytes((json.dumps(result,indent=2)+'\n').encode())
+    check(hashes[0]==hashes[1]==current,'Two independent generations match the shipped map byte for byte')
+    report=dict(issue=77,checks=checks,map_sha256=current,determinism=hashes,city_metres=[960,960],buildings=dict(counts),geometry_cells=len(port.cells),evidence='Static topology does not replace the native traversal, combat and author tests.')
+    output=ROOT/'assets/validation_4379/south';output.mkdir(parents=True,exist_ok=True)
+    (output/'STATIC.json').write_bytes((json.dumps(report,indent=2)+'\n').encode())
     print(f'{len(checks)} static checks passed; MAP06 SHA256 {current}')
-    return snapshots
+    return captures
 
-
-if __name__=='__main__':
-    audit()
+if __name__=='__main__':audit()

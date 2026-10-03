@@ -1,0 +1,49 @@
+{
+  "issue": 77,
+  "revision": 1,
+  "author_decisions": [
+    "96 by 96 metre urban footprint, four additional buildings, four traversable corner watchtowers.",
+    "North, south and west gates lead to exterior MAP06 ground; east leads to the docks. The existing six-gate military front stays north.",
+    "All coordinates below implement the approved scale on the existing 64-MU grid; no combat, population, reward or travel balance changes."
+  ],
+  "bounds": [-2176, -768, 896, 2304],
+  "wall_thickness": 64,
+  "wall_height": 192,
+  "gate_headroom": 192,
+  "gate_roof_thickness": 24,
+  "exterior_ground": [[-2560, -1152, -2176, 2304], [-2176, -1152, 896, -768]],
+  "exterior_water": [896, -1152, 2304, -128],
+  "dock_walk": [896, 448, 1024, 1728],
+  "retired_walls": [[-1280, -128, -1216, 2304], [-1216, -128, 896, -64], [-1216, 2240, 896, 2304]],
+  "gates": [
+    {"name": "north", "bounds": [-128, 2240, 128, 2304], "inside": [0, 2112, 0], "outside": [0, 2432, 0], "tag": 220},
+    {"name": "south", "bounds": [0, -768, 256, -704], "inside": [128, -576, 0], "outside": [128, -960, 0], "tag": 221},
+    {"name": "west", "bounds": [-2176, 640, -2112, 896], "inside": [-1984, 768, 0], "outside": [-2368, 768, 0], "tag": 222},
+    {"name": "east", "bounds": [832, 448, 896, 704], "inside": [704, 576, 0], "outside": [1152, 576, 0], "tag": 223}
+  ],
+  "buildings": [
+    {"bounds": [-2048, -64, -1472, 576], "door_y": 192, "tag": 211, "wall": "CVCI01", "floor": "CVPO01"},
+    {"bounds": [-2048, 1024, -1472, 1536], "door_y": 1152, "tag": 212, "wall": "CVCI02", "floor": "CVCI03"},
+    {"bounds": [-1344, -576, -832, -192], "door_y": -448, "tag": 213, "wall": "CVCI02", "floor": "CVPO01"},
+    {"bounds": [-704, -576, -192, -192], "door_y": -448, "tag": 214, "wall": "CVCI01", "floor": "CVCI03"}
+  ],
+  "tower_size": 640,
+  "tower_parapet": 16,
+  "tower_step_rise": 16,
+  "tower_deck_height": 256,
+  "tower_deck_local": [192, 192, 448, 448],
+  "tower_entry_local": [64, 0, 192, 192],
+  "tower_stairs_local": [
+    [192,64,256,192,1], [256,64,320,192,2], [320,64,384,192,3], [384,64,448,192,4],
+    [448,64,576,192,4], [448,192,576,256,5], [448,256,576,320,6], [448,320,576,384,7],
+    [448,384,576,448,8], [448,448,576,576,8], [384,448,448,576,9], [320,448,384,576,10],
+    [256,448,320,576,11], [192,448,256,576,12], [64,448,192,576,12], [64,384,192,448,13],
+    [64,320,192,384,14], [64,256,192,320,15], [64,192,192,256,16]
+  ],
+  "towers": [
+    {"name": "northwest", "origin": [-2176,1664], "rotate": false},
+    {"name": "northeast", "origin": [256,1664], "rotate": false},
+    {"name": "southwest", "origin": [-2176,-768], "rotate": true},
+    {"name": "southeast", "origin": [256,-768], "rotate": true}
+  ]
+}

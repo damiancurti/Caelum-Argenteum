@@ -1,0 +1,251 @@
+{
+    "issue":  77,
+    "method":  [
+                   "Fresh native MAP06; full army and machinery active, no dormant or culled actors.",
+                   "Fixture makes the player invulnerable and seeds character creation; moves to the south wall and issues native turn, forward and attack commands. The player subsequently reaches the attacking crowd.",
+                   "Poll world/UI log heartbeat and process CPU, memory and Windows Responding. First run UI heartbeat every 175 tics; second run every 35 tics.",
+                   "Second run disables vid_lowerinbackground. Direct Computer Use inspection brought the existing window forward during combat; the first activation timed out, retry succeeded.",
+                   "Each engine instance was stopped by its owned runner after the 300-second host limit. Neither run completed the longer scripted quit sequence."
+               ],
+    "version":  "4.37.9",
+    "runs":  [
+                 {
+                     "raw_log":  "issue77_south_live_freeze.log",
+                     "world_intervals":  [
+                                             {
+                                                 "simulation_tics":  175,
+                                                 "host_seconds":  6.970,
+                                                 "tics_per_host_second":  25.109
+                                             },
+                                             {
+                                                 "simulation_tics":  175,
+                                                 "host_seconds":  7.553,
+                                                 "tics_per_host_second":  23.169
+                                             },
+                                             {
+                                                 "simulation_tics":  175,
+                                                 "host_seconds":  7.313,
+                                                 "tics_per_host_second":  23.931
+                                             },
+                                             {
+                                                 "simulation_tics":  175,
+                                                 "host_seconds":  6.272,
+                                                 "tics_per_host_second":  27.902
+                                             },
+                                             {
+                                                 "simulation_tics":  175,
+                                                 "host_seconds":  6.950,
+                                                 "tics_per_host_second":  25.180
+                                             },
+                                             {
+                                                 "simulation_tics":  175,
+                                                 "host_seconds":  8.307,
+                                                 "tics_per_host_second":  21.067
+                                             },
+                                             {
+                                                 "simulation_tics":  175,
+                                                 "host_seconds":  7.094,
+                                                 "tics_per_host_second":  24.668
+                                             },
+                                             {
+                                                 "simulation_tics":  175,
+                                                 "host_seconds":  8.423,
+                                                 "tics_per_host_second":  20.777
+                                             },
+                                             {
+                                                 "simulation_tics":  175,
+                                                 "host_seconds":  7.428,
+                                                 "tics_per_host_second":  23.560
+                                             },
+                                             {
+                                                 "simulation_tics":  175,
+                                                 "host_seconds":  27.900,
+                                                 "tics_per_host_second":  6.273
+                                             },
+                                             {
+                                                 "simulation_tics":  175,
+                                                 "host_seconds":  31.256,
+                                                 "tics_per_host_second":  5.599
+                                             },
+                                             {
+                                                 "simulation_tics":  175,
+                                                 "host_seconds":  53.862,
+                                                 "tics_per_host_second":  3.249
+                                             },
+                                             {
+                                                 "simulation_tics":  175,
+                                                 "host_seconds":  56.342,
+                                                 "tics_per_host_second":  3.106
+                                             }
+                                         ],
+                     "last_world_sample":  {
+                                               "line":  "QA77SOUTH SAMPLE age=2276 tic=2429 registered=6001 liveAttackers=5850 liveDefenders=599",
+                                               "host_seconds":  251.8260549
+                                           },
+                     "stopped_by_test_runner_at_host_limit":  true,
+                     "windows_responding_true":  113,
+                     "label":  "south_live_freeze",
+                     "first_world_sample":  {
+                                                "line":  "QA77SOUTH SAMPLE age=1 tic=154 registered=6001 liveAttackers=6001 liveDefenders=600",
+                                                "host_seconds":  16.1573091
+                                            },
+                     "raw_timing":  "issue77_south_live_freeze_timing.json",
+                     "commands":  "wait 150; give QA77BenchmarkView; give QA77SouthRun; wait 175; +left; wait 35; -left; +right; wait 35; -right; +forward; wait 70; -forward; +attack; wait 70; -attack; wait 700; screenshot build/issue77_live_battle.png; wait 4020; quit",
+                     "host_seconds":  302.038,
+                     "background_priority_lowering_disabled":  false,
+                     "windows_responding_false":  34
+                 },
+                 {
+                     "raw_log":  "issue77_south_live_unthrottled.log",
+                     "world_intervals":  [
+                                             {
+                                                 "simulation_tics":  175,
+                                                 "host_seconds":  6.929,
+                                                 "tics_per_host_second":  25.257
+                                             },
+                                             {
+                                                 "simulation_tics":  175,
+                                                 "host_seconds":  7.934,
+                                                 "tics_per_host_second":  22.058
+                                             },
+                                             {
+                                                 "simulation_tics":  175,
+                                                 "host_seconds":  6.816,
+                                                 "tics_per_host_second":  25.674
+                                             },
+                                             {
+                                                 "simulation_tics":  175,
+                                                 "host_seconds":  7.374,
+                                                 "tics_per_host_second":  23.732
+                                             },
+                                             {
+                                                 "simulation_tics":  175,
+                                                 "host_seconds":  6.839,
+                                                 "tics_per_host_second":  25.588
+                                             },
+                                             {
+                                                 "simulation_tics":  175,
+                                                 "host_seconds":  7.336,
+                                                 "tics_per_host_second":  23.853
+                                             },
+                                             {
+                                                 "simulation_tics":  175,
+                                                 "host_seconds":  7.452,
+                                                 "tics_per_host_second":  23.485
+                                             },
+                                             {
+                                                 "simulation_tics":  175,
+                                                 "host_seconds":  8.240,
+                                                 "tics_per_host_second":  21.239
+                                             },
+                                             {
+                                                 "simulation_tics":  175,
+                                                 "host_seconds":  7.182,
+                                                 "tics_per_host_second":  24.368
+                                             },
+                                             {
+                                                 "simulation_tics":  175,
+                                                 "host_seconds":  25.543,
+                                                 "tics_per_host_second":  6.851
+                                             },
+                                             {
+                                                 "simulation_tics":  175,
+                                                 "host_seconds":  37.513,
+                                                 "tics_per_host_second":  4.665
+                                             },
+                                             {
+                                                 "simulation_tics":  175,
+                                                 "host_seconds":  56.405,
+                                                 "tics_per_host_second":  3.103
+                                             },
+                                             {
+                                                 "simulation_tics":  175,
+                                                 "host_seconds":  56.291,
+                                                 "tics_per_host_second":  3.109
+                                             }
+                                         ],
+                     "last_world_sample":  {
+                                               "line":  "QA77SOUTH SAMPLE age=2276 tic=2429 registered=6001 liveAttackers=5911 liveDefenders=599",
+                                               "host_seconds":  256.2974583
+                                           },
+                     "stopped_by_test_runner_at_host_limit":  true,
+                     "windows_responding_true":  105,
+                     "label":  "south_live_unthrottled",
+                     "first_world_sample":  {
+                                                "line":  "QA77SOUTH SAMPLE age=1 tic=154 registered=6001 liveAttackers=6001 liveDefenders=600",
+                                                "host_seconds":  14.4443301
+                                            },
+                     "raw_timing":  "issue77_south_live_unthrottled_timing.json",
+                     "commands":  "vid_lowerinbackground false; wait 150; give QA77BenchmarkView; give QA77SouthRun; wait 175; +left; wait 35; -left; +right; wait 35; -right; +forward; wait 70; -forward; +attack; wait 70; -attack; wait 700; screenshot build/issue77_live_battle.png; wait 4020; quit",
+                     "host_seconds":  302.011,
+                     "background_priority_lowering_disabled":  true,
+                     "windows_responding_false":  42
+                 }
+             ],
+    "findings":  [
+                     "Both runs continued advancing simulation and render callbacks, but progressively more slowly; no permanent deadlock or spontaneous crash was established.",
+                     "The final complete 175-tic intervals took about 56 seconds, versus 5 seconds at the normal 35-tic rate: about 3.1 simulation tics per host second.",
+                     "Windows Responding was false in both runs. The process and visual heartbeat later advanced again. These are temporary stalls, not an acceptable live-play result.",
+                     "The second run reproduced the degradation after the background-priority change and direct window activation; background execution alone does not explain the failure."
+                 ],
+    "environment":  {
+                        "gpu":  "NVIDIA GeForce RTX 3070 Ti",
+                        "resolution":  [
+                                           1520,
+                                           825
+                                       ],
+                        "engine":  "GZDoom 4.14.2",
+                        "os":  "Windows 11",
+                        "renderer":  "Vulkan"
+                    },
+    "date":  "2026-10-03",
+    "limitations":  [
+                        "Windows Responding calls can themselves wait several seconds, so sample timestamps are observation times, not exact event times; false-sample count is not stall duration.",
+                        "RenderOverlay heartbeat proves rendering progress but is not a GPU FPS benchmark. No claim of playable frame rate is made.",
+                        "Combat randomness and foreground interaction differ between runs; this is reproduction, not an identical deterministic replay.",
+                        "Root cause is not yet isolated. No population, combat or physics change was made during this test.",
+                        "Expanded issue implementation and author acceptance remain unfinished. Do not merge or close the issue based on these tests."
+                    ],
+    "scene":  {
+                  "active_defensive_cannons":  12,
+                  "hostile_cannons":  6,
+                  "mandingas":  6000,
+                  "hostile_rams":  6,
+                  "city_metres":  [
+                                      960,
+                                      960
+                                  ],
+                  "defensive_cannons":  36,
+                  "map":  "MAP06",
+                  "defenders":  600,
+                  "commander":  1
+              },
+    "source_sha256":  {
+                          "build/measure_issue77_live.ps1":  "183ed3442e4e63749fef0958f687758fdcf09cb276ac660ab0f8adc57b9126ec",
+                          "build/issue77_south_final/caelum_argenteum_dev.pk3":  "7cf1ecad199c97e5e8cc0e5286c3d9627760791f801879b04e7289baeb39a1d7",
+                          "build/issue77_fixture/SouthQA.zs":  "054a227a3359c6947ee9e39f6e3cf7d74f2667a87d87d6897e768160a0466afb",
+                          "src/caelum/world/CaelumPortDefender.zs":  "e5cc3324bd09a043d970169e31af130747afcd8f705f1cc98507103ed771cc4e",
+                          "build/issue77_fixture/Port.zs":  "6c27ab49068e5f2a8b75bcf1011b657354c46ff19c902abcc666043f13ed53ed",
+                          "src/caelum/world/CaelumPortData.zs":  "3f19cf7a56c02a5bf2a07c108235795e6bfc901dff4a30c21c4cc18de16f6d06",
+                          "src/caelum/world/CaelumPortSiege.zs":  "d8c287d2d26ae744885d5e015614714d9b73234c5ffb2bc27cd92d4c6e0a4f37",
+                          "src/maps/MAP06.wad":  "84f0c18fdb4be7a91eff146845f78dda5082d5b0c9d996928f0652d7c6fc7efd"
+                      },
+    "result":  "FAIL: severe progressive slowdown and temporary unresponsive-window episodes",
+    "diagnostic_followup":  {
+                                "profile_timing":  "issue77_south_profile_timing.json",
+                                "profile_log":  "issue77_south_profile.log",
+                                "profile_result":  "Controller cost observed; expensive subroutine not yet isolated.",
+                                "sampled_controller_peak_ms":  230.598263,
+                                "experiment":  {
+                                                   "change":  "Reject lower-priority cannon candidates before visibility checks.",
+                                                   "windows_responding_false":  34,
+                                                   "late_175_tic_interval_host_seconds":  58.35817259999999,
+                                                   "timing":  "issue77_south_live_target_filter_timing.json",
+                                                   "log":  "issue77_south_live_target_filter.log",
+                                                   "package_sha256":  "cb98c39946b2cd5cc6cccf14c7c14f1ac6d0ff3ec0fffe4dbb6f332764fbaf0d",
+                                                   "late_tics_per_host_second":  2.9987230957262707363669395855,
+                                                   "host_seconds":  300.20172279999997,
+                                                   "status":  "FAILED and reverted; current controller exactly matches original tested package bytes."
+                                               }
+                            }
+}
