@@ -4,8 +4,19 @@ An independent dark fantasy FPS-RPG inspired by nineteenth-century Argentina.
 Author and game designer: **Damian Curti**. Development target: **GZDoom 4.14.2**
 on Windows 11. The final game is intended to be independent of Doom assets.
 
-**Current release: 4.37.7.** Obtain and update the complete repository, validate
+**Current release: 4.37.8.** Obtain and update the complete repository, validate
 it, then rebuild with `run_dev.bat` as described below.
+
+Issue [#75](https://github.com/damiancurti/Caelum-Argenteum/issues/75) is implemented
+in the accepted #73/#74 runtime: materials in 39 chests, finite Mandinga ammunition
+and keys, and 96 food + 96 water rat drops. This patch fixes the per-piece report,
+which joined recipes by list position instead of catalogue ID. **Gameplay and
+total supplies are unchanged.** Use the [corrected ledger](assets/validation_4378/MATERIAL_LEDGER.json)
+and [current native evidence](assets/validation_4378/RESULTS.json): 325 successful
+crafting completions, collection/capacity, keyed route and save/hub persistence.
+The author accepted this correction on 2026-10-02 and authorized
+[PR #84](https://github.com/damiancurti/Caelum-Argenteum/pull/84) merge and #75 closure.
+HISTORY retains both this approval and the original gameplay acceptance.
 
 Issue [#74](https://github.com/damiancurti/Caelum-Argenteum/issues/74) replaces
 the six MAP02 pit stair exits with connected shallow-water tunnels, four

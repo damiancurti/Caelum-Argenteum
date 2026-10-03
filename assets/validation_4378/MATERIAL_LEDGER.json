@@ -1,0 +1,5013 @@
+{
+  "version": "4.37.8",
+  "baseline": "3f0b7cea",
+  "issue": 75,
+  "coordinated_issue": 73,
+  "source": "Native GZDoom crafting inputs keyed by catalogue_index, independently matched to one recipe and successfully consumed to produce every item at all five sizes. Whole minimum batches remain rounded upward.",
+  "recipient_policy": "Preview is adaptive. First successful partial or full withdrawal fixes one shared chest budget at that recipient size. All remaining units persist; other collectors cannot resize it.",
+  "instances": [
+    {
+      "cls": "CaelumArmorPickup",
+      "args": [
+        0,
+        0,
+        1,
+        0,
+        0
+      ],
+      "category": "armor",
+      "type": 0,
+      "slot": 0,
+      "tier": 1,
+      "size_policy": "CHARACTER_DEFAULT",
+      "catalogue_index": 0,
+      "chest": 0,
+      "chest_slot": 0,
+      "position": [
+        -192,
+        -2784
+      ],
+      "quantity": 1,
+      "materials_by_size": {
+        "0": {
+          "MATERIAL_COW_HIDE": 500
+        },
+        "1": {
+          "MATERIAL_COW_HIDE": 752
+        },
+        "2": {
+          "MATERIAL_COW_HIDE": 1000
+        },
+        "3": {
+          "MATERIAL_COW_HIDE": 1252
+        },
+        "4": {
+          "MATERIAL_COW_HIDE": 1500
+        }
+      },
+      "before_position": [
+        576,
+        3264
+      ],
+      "before_quantity": 1,
+      "before_source": "chest 0"
+    },
+    {
+      "cls": "CaelumWeaponPickup",
+      "args": [
+        17,
+        1,
+        0,
+        0,
+        3
+      ],
+      "category": "weapon",
+      "type": 17,
+      "essence": 2,
+      "tier": 1,
+      "size_policy": "CHARACTER_DEFAULT",
+      "catalogue_index": 39,
+      "chest": 0,
+      "chest_slot": 1,
+      "position": [
+        -192,
+        -2784
+      ],
+      "quantity": 1,
+      "materials_by_size": {
+        "0": {
+          "MATERIAL_RAW_EMERALD": 252,
+          "MATERIAL_RAW_COPPER": 2036,
+          "MATERIAL_RAW_TIN": 228
+        },
+        "1": {
+          "MATERIAL_RAW_EMERALD": 376,
+          "MATERIAL_RAW_COPPER": 3044,
+          "MATERIAL_RAW_TIN": 340
+        },
+        "2": {
+          "MATERIAL_RAW_EMERALD": 500,
+          "MATERIAL_RAW_COPPER": 4052,
+          "MATERIAL_RAW_TIN": 452
+        },
+        "3": {
+          "MATERIAL_RAW_EMERALD": 628,
+          "MATERIAL_RAW_COPPER": 5068,
+          "MATERIAL_RAW_TIN": 564
+        },
+        "4": {
+          "MATERIAL_RAW_EMERALD": 752,
+          "MATERIAL_RAW_COPPER": 6084,
+          "MATERIAL_RAW_TIN": 676
+        }
+      },
+      "before_position": [
+        576,
+        3264
+      ],
+      "before_quantity": 1,
+      "before_source": "chest 0"
+    },
+    {
+      "cls": "CaelumArmorPickup",
+      "args": [
+        1,
+        0,
+        1,
+        0,
+        0
+      ],
+      "category": "armor",
+      "type": 0,
+      "slot": 1,
+      "tier": 1,
+      "size_policy": "CHARACTER_DEFAULT",
+      "catalogue_index": 1,
+      "chest": 1,
+      "chest_slot": 0,
+      "position": [
+        -960,
+        -3552
+      ],
+      "quantity": 1,
+      "materials_by_size": {
+        "0": {
+          "MATERIAL_COW_HIDE": 1000
+        },
+        "1": {
+          "MATERIAL_COW_HIDE": 1500
+        },
+        "2": {
+          "MATERIAL_COW_HIDE": 2000
+        },
+        "3": {
+          "MATERIAL_COW_HIDE": 2500
+        },
+        "4": {
+          "MATERIAL_COW_HIDE": 3000
+        }
+      },
+      "before_position": [
+        -192,
+        2496
+      ],
+      "before_quantity": 1,
+      "before_source": "chest 1"
+    },
+    {
+      "cls": "CaelumWeaponPickup",
+      "args": [
+        17,
+        1,
+        0,
+        0,
+        4
+      ],
+      "category": "weapon",
+      "type": 17,
+      "essence": 3,
+      "tier": 1,
+      "size_policy": "CHARACTER_DEFAULT",
+      "catalogue_index": 40,
+      "chest": 1,
+      "chest_slot": 1,
+      "position": [
+        -960,
+        -3552
+      ],
+      "quantity": 1,
+      "materials_by_size": {
+        "0": {
+          "MATERIAL_RAW_TOPAZ": 252,
+          "MATERIAL_RAW_COPPER": 2036,
+          "MATERIAL_RAW_TIN": 228
+        },
+        "1": {
+          "MATERIAL_RAW_TOPAZ": 376,
+          "MATERIAL_RAW_COPPER": 3044,
+          "MATERIAL_RAW_TIN": 340
+        },
+        "2": {
+          "MATERIAL_RAW_TOPAZ": 500,
+          "MATERIAL_RAW_COPPER": 4052,
+          "MATERIAL_RAW_TIN": 452
+        },
+        "3": {
+          "MATERIAL_RAW_TOPAZ": 628,
+          "MATERIAL_RAW_COPPER": 5068,
+          "MATERIAL_RAW_TIN": 564
+        },
+        "4": {
+          "MATERIAL_RAW_TOPAZ": 752,
+          "MATERIAL_RAW_COPPER": 6084,
+          "MATERIAL_RAW_TIN": 676
+        }
+      },
+      "before_position": [
+        -192,
+        2496
+      ],
+      "before_quantity": 1,
+      "before_source": "chest 1"
+    },
+    {
+      "cls": "CaelumArmorPickup",
+      "args": [
+        2,
+        0,
+        1,
+        0,
+        0
+      ],
+      "category": "armor",
+      "type": 0,
+      "slot": 2,
+      "tier": 1,
+      "size_policy": "CHARACTER_DEFAULT",
+      "catalogue_index": 2,
+      "chest": 2,
+      "chest_slot": 0,
+      "position": [
+        -960,
+        -2784
+      ],
+      "quantity": 1,
+      "materials_by_size": {
+        "0": {
+          "MATERIAL_COW_HIDE": 500
+        },
+        "1": {
+          "MATERIAL_COW_HIDE": 752
+        },
+        "2": {
+          "MATERIAL_COW_HIDE": 1000
+        },
+        "3": {
+          "MATERIAL_COW_HIDE": 1252
+        },
+        "4": {
+          "MATERIAL_COW_HIDE": 1500
+        }
+      },
+      "before_position": [
+        -192,
+        3264
+      ],
+      "before_quantity": 1,
+      "before_source": "chest 2"
+    },
+    {
+      "cls": "CaelumWeaponPickup",
+      "args": [
+        17,
+        1,
+        0,
+        0,
+        5
+      ],
+      "category": "weapon",
+      "type": 17,
+      "essence": 4,
+      "tier": 1,
+      "size_policy": "CHARACTER_DEFAULT",
+      "catalogue_index": 41,
+      "chest": 2,
+      "chest_slot": 1,
+      "position": [
+        -960,
+        -2784
+      ],
+      "quantity": 1,
+      "materials_by_size": {
+        "0": {
+          "MATERIAL_RAW_OPAL": 252,
+          "MATERIAL_RAW_COPPER": 2036,
+          "MATERIAL_RAW_TIN": 228
+        },
+        "1": {
+          "MATERIAL_RAW_OPAL": 376,
+          "MATERIAL_RAW_COPPER": 3044,
+          "MATERIAL_RAW_TIN": 340
+        },
+        "2": {
+          "MATERIAL_RAW_OPAL": 500,
+          "MATERIAL_RAW_COPPER": 4052,
+          "MATERIAL_RAW_TIN": 452
+        },
+        "3": {
+          "MATERIAL_RAW_OPAL": 628,
+          "MATERIAL_RAW_COPPER": 5068,
+          "MATERIAL_RAW_TIN": 564
+        },
+        "4": {
+          "MATERIAL_RAW_OPAL": 752,
+          "MATERIAL_RAW_COPPER": 6084,
+          "MATERIAL_RAW_TIN": 676
+        }
+      },
+      "before_position": [
+        -192,
+        3264
+      ],
+      "before_quantity": 1,
+      "before_source": "chest 2"
+    },
+    {
+      "cls": "CaelumArmorPickup",
+      "args": [
+        3,
+        0,
+        1,
+        0,
+        0
+      ],
+      "category": "armor",
+      "type": 0,
+      "slot": 3,
+      "tier": 1,
+      "size_policy": "CHARACTER_DEFAULT",
+      "catalogue_index": 3,
+      "chest": 3,
+      "chest_slot": 0,
+      "position": [
+        576,
+        -2016
+      ],
+      "quantity": 1,
+      "materials_by_size": {
+        "0": {
+          "MATERIAL_COW_HIDE": 500
+        },
+        "1": {
+          "MATERIAL_COW_HIDE": 752
+        },
+        "2": {
+          "MATERIAL_COW_HIDE": 1000
+        },
+        "3": {
+          "MATERIAL_COW_HIDE": 1252
+        },
+        "4": {
+          "MATERIAL_COW_HIDE": 1500
+        }
+      },
+      "before_position": [
+        576,
+        4032
+      ],
+      "before_quantity": 1,
+      "before_source": "chest 3"
+    },
+    {
+      "cls": "CaelumWeaponPickup",
+      "args": [
+        18,
+        1,
+        0,
+        0,
+        1
+      ],
+      "category": "weapon",
+      "type": 18,
+      "essence": 0,
+      "tier": 1,
+      "size_policy": "CHARACTER_DEFAULT",
+      "catalogue_index": 42,
+      "chest": 3,
+      "chest_slot": 1,
+      "position": [
+        576,
+        -2016
+      ],
+      "quantity": 1,
+      "materials_by_size": {
+        "0": {
+          "MATERIAL_RAW_RUBY": 300,
+          "MATERIAL_PLANT_FIBER": 2700
+        },
+        "1": {
+          "MATERIAL_RAW_RUBY": 452,
+          "MATERIAL_PLANT_FIBER": 4052
+        },
+        "2": {
+          "MATERIAL_RAW_RUBY": 600,
+          "MATERIAL_PLANT_FIBER": 5400
+        },
+        "3": {
+          "MATERIAL_RAW_RUBY": 752,
+          "MATERIAL_PLANT_FIBER": 6752
+        },
+        "4": {
+          "MATERIAL_RAW_RUBY": 900,
+          "MATERIAL_PLANT_FIBER": 8100
+        }
+      },
+      "before_position": [
+        576,
+        4032
+      ],
+      "before_quantity": 1,
+      "before_source": "chest 3"
+    },
+    {
+      "cls": "CaelumArmorPickup",
+      "args": [
+        0,
+        1,
+        1,
+        0,
+        0
+      ],
+      "category": "armor",
+      "type": 1,
+      "slot": 0,
+      "tier": 1,
+      "size_policy": "CHARACTER_DEFAULT",
+      "catalogue_index": 4,
+      "chest": 4,
+      "chest_slot": 0,
+      "position": [
+        576,
+        -2784
+      ],
+      "quantity": 1,
+      "materials_by_size": {
+        "0": {
+          "MATERIAL_COW_HIDE": 1000
+        },
+        "1": {
+          "MATERIAL_COW_HIDE": 1500
+        },
+        "2": {
+          "MATERIAL_COW_HIDE": 2000
+        },
+        "3": {
+          "MATERIAL_COW_HIDE": 2500
+        },
+        "4": {
+          "MATERIAL_COW_HIDE": 3000
+        }
+      },
+      "before_position": [
+        1344,
+        3264
+      ],
+      "before_quantity": 1,
+      "before_source": "chest 4"
+    },
+    {
+      "cls": "CaelumWeaponPickup",
+      "args": [
+        18,
+        1,
+        0,
+        0,
+        2
+      ],
+      "category": "weapon",
+      "type": 18,
+      "essence": 1,
+      "tier": 1,
+      "size_policy": "CHARACTER_DEFAULT",
+      "catalogue_index": 43,
+      "chest": 4,
+      "chest_slot": 1,
+      "position": [
+        576,
+        -2784
+      ],
+      "quantity": 1,
+      "materials_by_size": {
+        "0": {
+          "MATERIAL_RAW_SAPPHIRE": 300,
+          "MATERIAL_PLANT_FIBER": 2700
+        },
+        "1": {
+          "MATERIAL_RAW_SAPPHIRE": 452,
+          "MATERIAL_PLANT_FIBER": 4052
+        },
+        "2": {
+          "MATERIAL_RAW_SAPPHIRE": 600,
+          "MATERIAL_PLANT_FIBER": 5400
+        },
+        "3": {
+          "MATERIAL_RAW_SAPPHIRE": 752,
+          "MATERIAL_PLANT_FIBER": 6752
+        },
+        "4": {
+          "MATERIAL_RAW_SAPPHIRE": 900,
+          "MATERIAL_PLANT_FIBER": 8100
+        }
+      },
+      "before_position": [
+        1344,
+        3264
+      ],
+      "before_quantity": 1,
+      "before_source": "chest 4"
+    },
+    {
+      "cls": "CaelumArmorPickup",
+      "args": [
+        1,
+        1,
+        1,
+        0,
+        0
+      ],
+      "category": "armor",
+      "type": 1,
+      "slot": 1,
+      "tier": 1,
+      "size_policy": "CHARACTER_DEFAULT",
+      "catalogue_index": 5,
+      "chest": 5,
+      "chest_slot": 0,
+      "position": [
+        -960,
+        -4320
+      ],
+      "quantity": 1,
+      "materials_by_size": {
+        "0": {
+          "MATERIAL_COW_HIDE": 2500
+        },
+        "1": {
+          "MATERIAL_COW_HIDE": 3752
+        },
+        "2": {
+          "MATERIAL_COW_HIDE": 5000
+        },
+        "3": {
+          "MATERIAL_COW_HIDE": 6252
+        },
+        "4": {
+          "MATERIAL_COW_HIDE": 7500
+        }
+      },
+      "before_position": [
+        -192,
+        1728
+      ],
+      "before_quantity": 1,
+      "before_source": "chest 5"
+    },
+    {
+      "cls": "CaelumWeaponPickup",
+      "args": [
+        18,
+        1,
+        0,
+        0,
+        3
+      ],
+      "category": "weapon",
+      "type": 18,
+      "essence": 2,
+      "tier": 1,
+      "size_policy": "CHARACTER_DEFAULT",
+      "catalogue_index": 44,
+      "chest": 5,
+      "chest_slot": 1,
+      "position": [
+        -960,
+        -4320
+      ],
+      "quantity": 1,
+      "materials_by_size": {
+        "0": {
+          "MATERIAL_RAW_EMERALD": 300,
+          "MATERIAL_PLANT_FIBER": 2700
+        },
+        "1": {
+          "MATERIAL_RAW_EMERALD": 452,
+          "MATERIAL_PLANT_FIBER": 4052
+        },
+        "2": {
+          "MATERIAL_RAW_EMERALD": 600,
+          "MATERIAL_PLANT_FIBER": 5400
+        },
+        "3": {
+          "MATERIAL_RAW_EMERALD": 752,
+          "MATERIAL_PLANT_FIBER": 6752
+        },
+        "4": {
+          "MATERIAL_RAW_EMERALD": 900,
+          "MATERIAL_PLANT_FIBER": 8100
+        }
+      },
+      "before_position": [
+        -192,
+        1728
+      ],
+      "before_quantity": 1,
+      "before_source": "chest 5"
+    },
+    {
+      "cls": "CaelumArmorPickup",
+      "args": [
+        2,
+        1,
+        1,
+        0,
+        0
+      ],
+      "category": "armor",
+      "type": 1,
+      "slot": 2,
+      "tier": 1,
+      "size_policy": "CHARACTER_DEFAULT",
+      "catalogue_index": 6,
+      "chest": 6,
+      "chest_slot": 0,
+      "position": [
+        1344,
+        -2784
+      ],
+      "quantity": 1,
+      "materials_by_size": {
+        "0": {
+          "MATERIAL_COW_HIDE": 500
+        },
+        "1": {
+          "MATERIAL_COW_HIDE": 752
+        },
+        "2": {
+          "MATERIAL_COW_HIDE": 1000
+        },
+        "3": {
+          "MATERIAL_COW_HIDE": 1252
+        },
+        "4": {
+          "MATERIAL_COW_HIDE": 1500
+        }
+      },
+      "before_position": [
+        -1728,
+        4032
+      ],
+      "before_quantity": 1,
+      "before_source": "chest 6"
+    },
+    {
+      "cls": "CaelumWeaponPickup",
+      "args": [
+        18,
+        1,
+        0,
+        0,
+        4
+      ],
+      "category": "weapon",
+      "type": 18,
+      "essence": 3,
+      "tier": 1,
+      "size_policy": "CHARACTER_DEFAULT",
+      "catalogue_index": 45,
+      "chest": 6,
+      "chest_slot": 1,
+      "position": [
+        1344,
+        -2784
+      ],
+      "quantity": 1,
+      "materials_by_size": {
+        "0": {
+          "MATERIAL_RAW_TOPAZ": 300,
+          "MATERIAL_PLANT_FIBER": 2700
+        },
+        "1": {
+          "MATERIAL_RAW_TOPAZ": 452,
+          "MATERIAL_PLANT_FIBER": 4052
+        },
+        "2": {
+          "MATERIAL_RAW_TOPAZ": 600,
+          "MATERIAL_PLANT_FIBER": 5400
+        },
+        "3": {
+          "MATERIAL_RAW_TOPAZ": 752,
+          "MATERIAL_PLANT_FIBER": 6752
+        },
+        "4": {
+          "MATERIAL_RAW_TOPAZ": 900,
+          "MATERIAL_PLANT_FIBER": 8100
+        }
+      },
+      "before_position": [
+        -1728,
+        4032
+      ],
+      "before_quantity": 1,
+      "before_source": "chest 6"
+    },
+    {
+      "cls": "CaelumArmorPickup",
+      "args": [
+        3,
+        1,
+        1,
+        0,
+        0
+      ],
+      "category": "armor",
+      "type": 1,
+      "slot": 3,
+      "tier": 1,
+      "size_policy": "CHARACTER_DEFAULT",
+      "catalogue_index": 7,
+      "chest": 7,
+      "chest_slot": 0,
+      "position": [
+        1344,
+        -4320
+      ],
+      "quantity": 1,
+      "materials_by_size": {
+        "0": {
+          "MATERIAL_COW_HIDE": 1000
+        },
+        "1": {
+          "MATERIAL_COW_HIDE": 1500
+        },
+        "2": {
+          "MATERIAL_COW_HIDE": 2000
+        },
+        "3": {
+          "MATERIAL_COW_HIDE": 2500
+        },
+        "4": {
+          "MATERIAL_COW_HIDE": 3000
+        }
+      },
+      "before_position": [
+        -1728,
+        2496
+      ],
+      "before_quantity": 1,
+      "before_source": "chest 7"
+    },
+    {
+      "cls": "CaelumWeaponPickup",
+      "args": [
+        18,
+        1,
+        0,
+        0,
+        5
+      ],
+      "category": "weapon",
+      "type": 18,
+      "essence": 4,
+      "tier": 1,
+      "size_policy": "CHARACTER_DEFAULT",
+      "catalogue_index": 46,
+      "chest": 7,
+      "chest_slot": 1,
+      "position": [
+        1344,
+        -4320
+      ],
+      "quantity": 1,
+      "materials_by_size": {
+        "0": {
+          "MATERIAL_RAW_OPAL": 300,
+          "MATERIAL_PLANT_FIBER": 2700
+        },
+        "1": {
+          "MATERIAL_RAW_OPAL": 452,
+          "MATERIAL_PLANT_FIBER": 4052
+        },
+        "2": {
+          "MATERIAL_RAW_OPAL": 600,
+          "MATERIAL_PLANT_FIBER": 5400
+        },
+        "3": {
+          "MATERIAL_RAW_OPAL": 752,
+          "MATERIAL_PLANT_FIBER": 6752
+        },
+        "4": {
+          "MATERIAL_RAW_OPAL": 900,
+          "MATERIAL_PLANT_FIBER": 8100
+        }
+      },
+      "before_position": [
+        -1728,
+        2496
+      ],
+      "before_quantity": 1,
+      "before_source": "chest 7"
+    },
+    {
+      "cls": "CaelumArmorPickup",
+      "args": [
+        0,
+        2,
+        1,
+        0,
+        0
+      ],
+      "category": "armor",
+      "type": 2,
+      "slot": 0,
+      "tier": 1,
+      "size_policy": "CHARACTER_DEFAULT",
+      "catalogue_index": 8,
+      "chest": 8,
+      "chest_slot": 0,
+      "position": [
+        -1728,
+        -5088
+      ],
+      "quantity": 1,
+      "materials_by_size": {
+        "0": {
+          "MATERIAL_COW_HIDE": 2000
+        },
+        "1": {
+          "MATERIAL_COW_HIDE": 3000
+        },
+        "2": {
+          "MATERIAL_COW_HIDE": 4000
+        },
+        "3": {
+          "MATERIAL_COW_HIDE": 5000
+        },
+        "4": {
+          "MATERIAL_COW_HIDE": 6000
+        }
+      },
+      "before_position": [
+        -960,
+        960
+      ],
+      "before_quantity": 1,
+      "before_source": "chest 8"
+    },
+    {
+      "cls": "CaelumWeaponPickup",
+      "args": [
+        19,
+        1,
+        0,
+        0,
+        1
+      ],
+      "category": "weapon",
+      "type": 19,
+      "essence": 0,
+      "tier": 1,
+      "size_policy": "CHARACTER_DEFAULT",
+      "catalogue_index": 47,
+      "chest": 8,
+      "chest_slot": 1,
+      "position": [
+        -1728,
+        -5088
+      ],
+      "quantity": 1,
+      "materials_by_size": {
+        "0": {
+          "MATERIAL_WOOD": 3600,
+          "MATERIAL_RAW_RUBY": 400
+        },
+        "1": {
+          "MATERIAL_WOOD": 5400,
+          "MATERIAL_RAW_RUBY": 600
+        },
+        "2": {
+          "MATERIAL_WOOD": 7200,
+          "MATERIAL_RAW_RUBY": 800
+        },
+        "3": {
+          "MATERIAL_WOOD": 9000,
+          "MATERIAL_RAW_RUBY": 1000
+        },
+        "4": {
+          "MATERIAL_WOOD": 10800,
+          "MATERIAL_RAW_RUBY": 1200
+        }
+      },
+      "before_position": [
+        -960,
+        960
+      ],
+      "before_quantity": 1,
+      "before_source": "chest 8"
+    },
+    {
+      "cls": "CaelumArmorPickup",
+      "args": [
+        1,
+        2,
+        1,
+        0,
+        0
+      ],
+      "category": "armor",
+      "type": 2,
+      "slot": 1,
+      "tier": 1,
+      "size_policy": "CHARACTER_DEFAULT",
+      "catalogue_index": 9,
+      "chest": 9,
+      "chest_slot": 0,
+      "position": [
+        -1728,
+        -4320
+      ],
+      "quantity": 1,
+      "materials_by_size": {
+        "0": {
+          "MATERIAL_COW_HIDE": 5000
+        },
+        "1": {
+          "MATERIAL_COW_HIDE": 7500
+        },
+        "2": {
+          "MATERIAL_COW_HIDE": 10000
+        },
+        "3": {
+          "MATERIAL_COW_HIDE": 12500
+        },
+        "4": {
+          "MATERIAL_COW_HIDE": 15000
+        }
+      },
+      "before_position": [
+        -960,
+        1728
+      ],
+      "before_quantity": 1,
+      "before_source": "chest 9"
+    },
+    {
+      "cls": "CaelumWeaponPickup",
+      "args": [
+        19,
+        1,
+        0,
+        0,
+        2
+      ],
+      "category": "weapon",
+      "type": 19,
+      "essence": 1,
+      "tier": 1,
+      "size_policy": "CHARACTER_DEFAULT",
+      "catalogue_index": 48,
+      "chest": 9,
+      "chest_slot": 1,
+      "position": [
+        -1728,
+        -4320
+      ],
+      "quantity": 1,
+      "materials_by_size": {
+        "0": {
+          "MATERIAL_WOOD": 3600,
+          "MATERIAL_RAW_SAPPHIRE": 400
+        },
+        "1": {
+          "MATERIAL_WOOD": 5400,
+          "MATERIAL_RAW_SAPPHIRE": 600
+        },
+        "2": {
+          "MATERIAL_WOOD": 7200,
+          "MATERIAL_RAW_SAPPHIRE": 800
+        },
+        "3": {
+          "MATERIAL_WOOD": 9000,
+          "MATERIAL_RAW_SAPPHIRE": 1000
+        },
+        "4": {
+          "MATERIAL_WOOD": 10800,
+          "MATERIAL_RAW_SAPPHIRE": 1200
+        }
+      },
+      "before_position": [
+        -960,
+        1728
+      ],
+      "before_quantity": 1,
+      "before_source": "chest 9"
+    },
+    {
+      "cls": "CaelumArmorPickup",
+      "args": [
+        2,
+        2,
+        1,
+        0,
+        0
+      ],
+      "category": "armor",
+      "type": 2,
+      "slot": 2,
+      "tier": 1,
+      "size_policy": "CHARACTER_DEFAULT",
+      "catalogue_index": 10,
+      "chest": 10,
+      "chest_slot": 0,
+      "position": [
+        -3168,
+        1728
+      ],
+      "quantity": 1,
+      "materials_by_size": {
+        "0": {
+          "MATERIAL_COW_HIDE": 1000
+        },
+        "1": {
+          "MATERIAL_COW_HIDE": 1500
+        },
+        "2": {
+          "MATERIAL_COW_HIDE": 2000
+        },
+        "3": {
+          "MATERIAL_COW_HIDE": 2500
+        },
+        "4": {
+          "MATERIAL_COW_HIDE": 3000
+        }
+      },
+      "before_position": [
+        576,
+        5824
+      ],
+      "before_quantity": 1,
+      "before_source": "chest 10"
+    },
+    {
+      "cls": "CaelumWeaponPickup",
+      "args": [
+        19,
+        1,
+        0,
+        0,
+        3
+      ],
+      "category": "weapon",
+      "type": 19,
+      "essence": 2,
+      "tier": 1,
+      "size_policy": "CHARACTER_DEFAULT",
+      "catalogue_index": 49,
+      "chest": 10,
+      "chest_slot": 1,
+      "position": [
+        -3168,
+        1728
+      ],
+      "quantity": 1,
+      "materials_by_size": {
+        "0": {
+          "MATERIAL_WOOD": 3600,
+          "MATERIAL_RAW_EMERALD": 400
+        },
+        "1": {
+          "MATERIAL_WOOD": 5400,
+          "MATERIAL_RAW_EMERALD": 600
+        },
+        "2": {
+          "MATERIAL_WOOD": 7200,
+          "MATERIAL_RAW_EMERALD": 800
+        },
+        "3": {
+          "MATERIAL_WOOD": 9000,
+          "MATERIAL_RAW_EMERALD": 1000
+        },
+        "4": {
+          "MATERIAL_WOOD": 10800,
+          "MATERIAL_RAW_EMERALD": 1200
+        }
+      },
+      "before_position": [
+        576,
+        5824
+      ],
+      "before_quantity": 1,
+      "before_source": "chest 10"
+    },
+    {
+      "cls": "CaelumArmorPickup",
+      "args": [
+        3,
+        2,
+        1,
+        0,
+        0
+      ],
+      "category": "armor",
+      "type": 2,
+      "slot": 3,
+      "tier": 1,
+      "size_policy": "CHARACTER_DEFAULT",
+      "catalogue_index": 11,
+      "chest": 11,
+      "chest_slot": 0,
+      "position": [
+        -5472,
+        960
+      ],
+      "quantity": 1,
+      "materials_by_size": {
+        "0": {
+          "MATERIAL_COW_HIDE": 2000
+        },
+        "1": {
+          "MATERIAL_COW_HIDE": 3000
+        },
+        "2": {
+          "MATERIAL_COW_HIDE": 4000
+        },
+        "3": {
+          "MATERIAL_COW_HIDE": 5000
+        },
+        "4": {
+          "MATERIAL_COW_HIDE": 6000
+        }
+      },
+      "before_position": [
+        -1728,
+        7360
+      ],
+      "before_quantity": 1,
+      "before_source": "chest 11"
+    },
+    {
+      "cls": "CaelumWeaponPickup",
+      "args": [
+        19,
+        1,
+        0,
+        0,
+        4
+      ],
+      "category": "weapon",
+      "type": 19,
+      "essence": 3,
+      "tier": 1,
+      "size_policy": "CHARACTER_DEFAULT",
+      "catalogue_index": 50,
+      "chest": 11,
+      "chest_slot": 1,
+      "position": [
+        -5472,
+        960
+      ],
+      "quantity": 1,
+      "materials_by_size": {
+        "0": {
+          "MATERIAL_WOOD": 3600,
+          "MATERIAL_RAW_TOPAZ": 400
+        },
+        "1": {
+          "MATERIAL_WOOD": 5400,
+          "MATERIAL_RAW_TOPAZ": 600
+        },
+        "2": {
+          "MATERIAL_WOOD": 7200,
+          "MATERIAL_RAW_TOPAZ": 800
+        },
+        "3": {
+          "MATERIAL_WOOD": 9000,
+          "MATERIAL_RAW_TOPAZ": 1000
+        },
+        "4": {
+          "MATERIAL_WOOD": 10800,
+          "MATERIAL_RAW_TOPAZ": 1200
+        }
+      },
+      "before_position": [
+        -1728,
+        7360
+      ],
+      "before_quantity": 1,
+      "before_source": "chest 11"
+    },
+    {
+      "cls": "CaelumArmorPickup",
+      "args": [
+        0,
+        3,
+        1,
+        0,
+        0
+      ],
+      "category": "armor",
+      "type": 3,
+      "slot": 0,
+      "tier": 1,
+      "size_policy": "CHARACTER_DEFAULT",
+      "catalogue_index": 12,
+      "chest": 12,
+      "chest_slot": 0,
+      "position": [
+        -4704,
+        1728
+      ],
+      "quantity": 1,
+      "materials_by_size": {
+        "0": {
+          "MATERIAL_COW_HIDE": 4000
+        },
+        "1": {
+          "MATERIAL_COW_HIDE": 6000
+        },
+        "2": {
+          "MATERIAL_COW_HIDE": 8000
+        },
+        "3": {
+          "MATERIAL_COW_HIDE": 10000
+        },
+        "4": {
+          "MATERIAL_COW_HIDE": 12000
+        }
+      },
+      "before_position": [
+        -1728,
+        8128
+      ],
+      "before_quantity": 1,
+      "before_source": "chest 12"
+    },
+    {
+      "cls": "CaelumWeaponPickup",
+      "args": [
+        19,
+        1,
+        0,
+        0,
+        5
+      ],
+      "category": "weapon",
+      "type": 19,
+      "essence": 4,
+      "tier": 1,
+      "size_policy": "CHARACTER_DEFAULT",
+      "catalogue_index": 51,
+      "chest": 12,
+      "chest_slot": 1,
+      "position": [
+        -4704,
+        1728
+      ],
+      "quantity": 1,
+      "materials_by_size": {
+        "0": {
+          "MATERIAL_WOOD": 3600,
+          "MATERIAL_RAW_OPAL": 400
+        },
+        "1": {
+          "MATERIAL_WOOD": 5400,
+          "MATERIAL_RAW_OPAL": 600
+        },
+        "2": {
+          "MATERIAL_WOOD": 7200,
+          "MATERIAL_RAW_OPAL": 800
+        },
+        "3": {
+          "MATERIAL_WOOD": 9000,
+          "MATERIAL_RAW_OPAL": 1000
+        },
+        "4": {
+          "MATERIAL_WOOD": 10800,
+          "MATERIAL_RAW_OPAL": 1200
+        }
+      },
+      "before_position": [
+        -1728,
+        8128
+      ],
+      "before_quantity": 1,
+      "before_source": "chest 12"
+    },
+    {
+      "cls": "CaelumArmorPickup",
+      "args": [
+        1,
+        3,
+        1,
+        0,
+        0
+      ],
+      "category": "armor",
+      "type": 3,
+      "slot": 1,
+      "tier": 1,
+      "size_policy": "CHARACTER_DEFAULT",
+      "catalogue_index": 13,
+      "chest": 13,
+      "chest_slot": 0,
+      "position": [
+        -3936,
+        -1344
+      ],
+      "quantity": 1,
+      "materials_by_size": {
+        "0": {
+          "MATERIAL_COW_HIDE": 10000
+        },
+        "1": {
+          "MATERIAL_COW_HIDE": 15000
+        },
+        "2": {
+          "MATERIAL_COW_HIDE": 20000
+        },
+        "3": {
+          "MATERIAL_COW_HIDE": 25000
+        },
+        "4": {
+          "MATERIAL_COW_HIDE": 30000
+        }
+      },
+      "before_position": [
+        -1728,
+        5824
+      ],
+      "before_quantity": 1,
+      "before_source": "chest 13"
+    },
+    {
+      "cls": "CaelumShieldPickup",
+      "args": [
+        0,
+        1,
+        0,
+        0,
+        0
+      ],
+      "category": "shield",
+      "type": 0,
+      "tier": 1,
+      "size_policy": "CHARACTER_DEFAULT",
+      "catalogue_index": 52,
+      "chest": 13,
+      "chest_slot": 1,
+      "position": [
+        -3936,
+        -1344
+      ],
+      "quantity": 1,
+      "materials_by_size": {
+        "0": {
+          "MATERIAL_RAW_COPPER": 2520,
+          "MATERIAL_RAW_TIN": 280,
+          "MATERIAL_COW_HIDE": 1200
+        },
+        "1": {
+          "MATERIAL_RAW_COPPER": 3780,
+          "MATERIAL_RAW_TIN": 420,
+          "MATERIAL_COW_HIDE": 1800
+        },
+        "2": {
+          "MATERIAL_RAW_COPPER": 5040,
+          "MATERIAL_RAW_TIN": 560,
+          "MATERIAL_COW_HIDE": 2400
+        },
+        "3": {
+          "MATERIAL_RAW_COPPER": 6300,
+          "MATERIAL_RAW_TIN": 700,
+          "MATERIAL_COW_HIDE": 3000
+        },
+        "4": {
+          "MATERIAL_RAW_COPPER": 7560,
+          "MATERIAL_RAW_TIN": 840,
+          "MATERIAL_COW_HIDE": 3600
+        }
+      },
+      "before_position": [
+        -1728,
+        5824
+      ],
+      "before_quantity": 1,
+      "before_source": "chest 13"
+    },
+    {
+      "cls": "CaelumArmorPickup",
+      "args": [
+        2,
+        3,
+        1,
+        0,
+        0
+      ],
+      "category": "armor",
+      "type": 3,
+      "slot": 2,
+      "tier": 1,
+      "size_policy": "CHARACTER_DEFAULT",
+      "catalogue_index": 14,
+      "chest": 14,
+      "chest_slot": 0,
+      "position": [
+        -3936,
+        1728
+      ],
+      "quantity": 1,
+      "materials_by_size": {
+        "0": {
+          "MATERIAL_COW_HIDE": 2000
+        },
+        "1": {
+          "MATERIAL_COW_HIDE": 3000
+        },
+        "2": {
+          "MATERIAL_COW_HIDE": 4000
+        },
+        "3": {
+          "MATERIAL_COW_HIDE": 5000
+        },
+        "4": {
+          "MATERIAL_COW_HIDE": 6000
+        }
+      },
+      "before_position": [
+        576,
+        6592
+      ],
+      "before_quantity": 1,
+      "before_source": "chest 14"
+    },
+    {
+      "cls": "CaelumShieldPickup",
+      "args": [
+        1,
+        1,
+        0,
+        0,
+        0
+      ],
+      "category": "shield",
+      "type": 1,
+      "tier": 1,
+      "size_policy": "CHARACTER_DEFAULT",
+      "catalogue_index": 53,
+      "chest": 14,
+      "chest_slot": 1,
+      "position": [
+        -3936,
+        1728
+      ],
+      "quantity": 1,
+      "materials_by_size": {
+        "0": {
+          "MATERIAL_RAW_COPPER": 3780,
+          "MATERIAL_RAW_TIN": 420,
+          "MATERIAL_COW_HIDE": 1800
+        },
+        "1": {
+          "MATERIAL_RAW_COPPER": 5672,
+          "MATERIAL_RAW_TIN": 632,
+          "MATERIAL_COW_HIDE": 2700
+        },
+        "2": {
+          "MATERIAL_RAW_COPPER": 7560,
+          "MATERIAL_RAW_TIN": 840,
+          "MATERIAL_COW_HIDE": 3600
+        },
+        "3": {
+          "MATERIAL_RAW_COPPER": 9452,
+          "MATERIAL_RAW_TIN": 1052,
+          "MATERIAL_COW_HIDE": 4500
+        },
+        "4": {
+          "MATERIAL_RAW_COPPER": 11340,
+          "MATERIAL_RAW_TIN": 1260,
+          "MATERIAL_COW_HIDE": 5400
+        }
+      },
+      "before_position": [
+        576,
+        6592
+      ],
+      "before_quantity": 1,
+      "before_source": "chest 14"
+    },
+    {
+      "cls": "CaelumArmorPickup",
+      "args": [
+        3,
+        3,
+        1,
+        0,
+        0
+      ],
+      "category": "armor",
+      "type": 3,
+      "slot": 3,
+      "tier": 1,
+      "size_policy": "CHARACTER_DEFAULT",
+      "catalogue_index": 15,
+      "chest": 15,
+      "chest_slot": 0,
+      "position": [
+        -3168,
+        960
+      ],
+      "quantity": 1,
+      "materials_by_size": {
+        "0": {
+          "MATERIAL_COW_HIDE": 4000
+        },
+        "1": {
+          "MATERIAL_COW_HIDE": 6000
+        },
+        "2": {
+          "MATERIAL_COW_HIDE": 8000
+        },
+        "3": {
+          "MATERIAL_COW_HIDE": 10000
+        },
+        "4": {
+          "MATERIAL_COW_HIDE": 12000
+        }
+      },
+      "before_position": [
+        -192,
+        6592
+      ],
+      "before_quantity": 1,
+      "before_source": "chest 15"
+    },
+    {
+      "cls": "CaelumShieldPickup",
+      "args": [
+        2,
+        1,
+        0,
+        0,
+        0
+      ],
+      "category": "shield",
+      "type": 2,
+      "tier": 1,
+      "size_policy": "CHARACTER_DEFAULT",
+      "catalogue_index": 54,
+      "chest": 15,
+      "chest_slot": 1,
+      "position": [
+        -3168,
+        960
+      ],
+      "quantity": 1,
+      "materials_by_size": {
+        "0": {
+          "MATERIAL_RAW_COPPER": 5040,
+          "MATERIAL_RAW_TIN": 560,
+          "MATERIAL_COW_HIDE": 2400
+        },
+        "1": {
+          "MATERIAL_RAW_COPPER": 7560,
+          "MATERIAL_RAW_TIN": 840,
+          "MATERIAL_COW_HIDE": 3600
+        },
+        "2": {
+          "MATERIAL_RAW_COPPER": 10080,
+          "MATERIAL_RAW_TIN": 1120,
+          "MATERIAL_COW_HIDE": 4800
+        },
+        "3": {
+          "MATERIAL_RAW_COPPER": 12600,
+          "MATERIAL_RAW_TIN": 1400,
+          "MATERIAL_COW_HIDE": 6000
+        },
+        "4": {
+          "MATERIAL_RAW_COPPER": 15120,
+          "MATERIAL_RAW_TIN": 1680,
+          "MATERIAL_COW_HIDE": 7200
+        }
+      },
+      "before_position": [
+        -192,
+        6592
+      ],
+      "before_quantity": 1,
+      "before_source": "chest 15"
+    },
+    {
+      "cls": "CaelumWeaponPickup",
+      "args": [
+        0,
+        1,
+        0,
+        0,
+        1
+      ],
+      "category": "weapon",
+      "type": 0,
+      "essence": 0,
+      "tier": 1,
+      "size_policy": "CHARACTER_DEFAULT",
+      "catalogue_index": 16,
+      "chest": 16,
+      "chest_slot": 0,
+      "position": [
+        -4704,
+        192
+      ],
+      "quantity": 1,
+      "materials_by_size": {
+        "0": {
+          "MATERIAL_WOOD": 900,
+          "MATERIAL_RAW_COPPER": 1892,
+          "MATERIAL_RAW_TIN": 212
+        },
+        "1": {
+          "MATERIAL_WOOD": 1352,
+          "MATERIAL_RAW_COPPER": 2844,
+          "MATERIAL_RAW_TIN": 316
+        },
+        "2": {
+          "MATERIAL_WOOD": 1800,
+          "MATERIAL_RAW_COPPER": 3780,
+          "MATERIAL_RAW_TIN": 420
+        },
+        "3": {
+          "MATERIAL_WOOD": 2252,
+          "MATERIAL_RAW_COPPER": 4736,
+          "MATERIAL_RAW_TIN": 528
+        },
+        "4": {
+          "MATERIAL_WOOD": 2700,
+          "MATERIAL_RAW_COPPER": 5672,
+          "MATERIAL_RAW_TIN": 632
+        }
+      },
+      "before_position": [
+        -960,
+        8128
+      ],
+      "before_quantity": 1,
+      "before_source": "chest 16"
+    },
+    {
+      "cls": "CaelumShieldPickup",
+      "args": [
+        3,
+        1,
+        0,
+        0,
+        0
+      ],
+      "category": "shield",
+      "type": 3,
+      "tier": 1,
+      "size_policy": "CHARACTER_DEFAULT",
+      "catalogue_index": 55,
+      "chest": 16,
+      "chest_slot": 1,
+      "position": [
+        -4704,
+        192
+      ],
+      "quantity": 1,
+      "materials_by_size": {
+        "0": {
+          "MATERIAL_RAW_COPPER": 1260,
+          "MATERIAL_RAW_TIN": 140,
+          "MATERIAL_COW_HIDE": 600
+        },
+        "1": {
+          "MATERIAL_RAW_COPPER": 1892,
+          "MATERIAL_RAW_TIN": 212,
+          "MATERIAL_COW_HIDE": 900
+        },
+        "2": {
+          "MATERIAL_RAW_COPPER": 2520,
+          "MATERIAL_RAW_TIN": 280,
+          "MATERIAL_COW_HIDE": 1200
+        },
+        "3": {
+          "MATERIAL_RAW_COPPER": 3152,
+          "MATERIAL_RAW_TIN": 352,
+          "MATERIAL_COW_HIDE": 1500
+        },
+        "4": {
+          "MATERIAL_RAW_COPPER": 3780,
+          "MATERIAL_RAW_TIN": 420,
+          "MATERIAL_COW_HIDE": 1800
+        }
+      },
+      "before_position": [
+        -960,
+        8128
+      ],
+      "before_quantity": 1,
+      "before_source": "chest 16"
+    },
+    {
+      "cls": "CaelumWeaponPickup",
+      "args": [
+        1,
+        1,
+        0,
+        0,
+        1
+      ],
+      "category": "weapon",
+      "type": 1,
+      "essence": 0,
+      "tier": 1,
+      "size_policy": "CHARACTER_DEFAULT",
+      "catalogue_index": 17,
+      "chest": 17,
+      "chest_slot": 0,
+      "position": [
+        -3168,
+        -1344
+      ],
+      "quantity": 1,
+      "materials_by_size": {
+        "0": {
+          "MATERIAL_WOOD": 1800,
+          "MATERIAL_RAW_RUBY": 200
+        },
+        "1": {
+          "MATERIAL_WOOD": 2700,
+          "MATERIAL_RAW_RUBY": 300
+        },
+        "2": {
+          "MATERIAL_WOOD": 3600,
+          "MATERIAL_RAW_RUBY": 400
+        },
+        "3": {
+          "MATERIAL_WOOD": 4500,
+          "MATERIAL_RAW_RUBY": 500
+        },
+        "4": {
+          "MATERIAL_WOOD": 5400,
+          "MATERIAL_RAW_RUBY": 600
+        }
+      },
+      "before_position": [
+        -960,
+        5056
+      ],
+      "before_quantity": 1,
+      "before_source": "chest 17"
+    },
+    {
+      "cls": "CaelumAmuletPickup",
+      "args": [
+        0,
+        1,
+        0,
+        0,
+        0
+      ],
+      "category": "amulet",
+      "type": 0,
+      "tier": 1,
+      "size_policy": "NOT_APPLICABLE",
+      "catalogue_index": 56,
+      "chest": 17,
+      "chest_slot": 1,
+      "position": [
+        -3168,
+        -1344
+      ],
+      "quantity": 1,
+      "materials_by_size": {
+        "0": {
+          "MATERIAL_RAW_RUBY": 800,
+          "MATERIAL_RAW_SILVER": 200
+        },
+        "1": {
+          "MATERIAL_RAW_RUBY": 800,
+          "MATERIAL_RAW_SILVER": 200
+        },
+        "2": {
+          "MATERIAL_RAW_RUBY": 800,
+          "MATERIAL_RAW_SILVER": 200
+        },
+        "3": {
+          "MATERIAL_RAW_RUBY": 800,
+          "MATERIAL_RAW_SILVER": 200
+        },
+        "4": {
+          "MATERIAL_RAW_RUBY": 800,
+          "MATERIAL_RAW_SILVER": 200
+        }
+      },
+      "before_position": [
+        -960,
+        5056
+      ],
+      "before_quantity": 1,
+      "before_source": "chest 17"
+    },
+    {
+      "cls": "CaelumWeaponPickup",
+      "args": [
+        1,
+        1,
+        0,
+        0,
+        2
+      ],
+      "category": "weapon",
+      "type": 1,
+      "essence": 1,
+      "tier": 1,
+      "size_policy": "CHARACTER_DEFAULT",
+      "catalogue_index": 18,
+      "chest": 18,
+      "chest_slot": 0,
+      "position": [
+        -4704,
+        960
+      ],
+      "quantity": 1,
+      "materials_by_size": {
+        "0": {
+          "MATERIAL_WOOD": 1800,
+          "MATERIAL_RAW_SAPPHIRE": 200
+        },
+        "1": {
+          "MATERIAL_WOOD": 2700,
+          "MATERIAL_RAW_SAPPHIRE": 300
+        },
+        "2": {
+          "MATERIAL_WOOD": 3600,
+          "MATERIAL_RAW_SAPPHIRE": 400
+        },
+        "3": {
+          "MATERIAL_WOOD": 4500,
+          "MATERIAL_RAW_SAPPHIRE": 500
+        },
+        "4": {
+          "MATERIAL_WOOD": 5400,
+          "MATERIAL_RAW_SAPPHIRE": 600
+        }
+      },
+      "before_position": [
+        576,
+        8128
+      ],
+      "before_quantity": 1,
+      "before_source": "chest 18"
+    },
+    {
+      "cls": "CaelumAmuletPickup",
+      "args": [
+        1,
+        1,
+        0,
+        0,
+        0
+      ],
+      "category": "amulet",
+      "type": 1,
+      "tier": 1,
+      "size_policy": "NOT_APPLICABLE",
+      "catalogue_index": 57,
+      "chest": 18,
+      "chest_slot": 1,
+      "position": [
+        -4704,
+        960
+      ],
+      "quantity": 1,
+      "materials_by_size": {
+        "0": {
+          "MATERIAL_RAW_SAPPHIRE": 800,
+          "MATERIAL_RAW_SILVER": 200
+        },
+        "1": {
+          "MATERIAL_RAW_SAPPHIRE": 800,
+          "MATERIAL_RAW_SILVER": 200
+        },
+        "2": {
+          "MATERIAL_RAW_SAPPHIRE": 800,
+          "MATERIAL_RAW_SILVER": 200
+        },
+        "3": {
+          "MATERIAL_RAW_SAPPHIRE": 800,
+          "MATERIAL_RAW_SILVER": 200
+        },
+        "4": {
+          "MATERIAL_RAW_SAPPHIRE": 800,
+          "MATERIAL_RAW_SILVER": 200
+        }
+      },
+      "before_position": [
+        576,
+        8128
+      ],
+      "before_quantity": 1,
+      "before_source": "chest 18"
+    },
+    {
+      "cls": "CaelumWeaponPickup",
+      "args": [
+        1,
+        1,
+        0,
+        0,
+        3
+      ],
+      "category": "weapon",
+      "type": 1,
+      "essence": 2,
+      "tier": 1,
+      "size_policy": "CHARACTER_DEFAULT",
+      "catalogue_index": 19,
+      "chest": 19,
+      "chest_slot": 0,
+      "position": [
+        -5472,
+        -1344
+      ],
+      "quantity": 1,
+      "materials_by_size": {
+        "0": {
+          "MATERIAL_WOOD": 1800,
+          "MATERIAL_RAW_EMERALD": 200
+        },
+        "1": {
+          "MATERIAL_WOOD": 2700,
+          "MATERIAL_RAW_EMERALD": 300
+        },
+        "2": {
+          "MATERIAL_WOOD": 3600,
+          "MATERIAL_RAW_EMERALD": 400
+        },
+        "3": {
+          "MATERIAL_WOOD": 4500,
+          "MATERIAL_RAW_EMERALD": 500
+        },
+        "4": {
+          "MATERIAL_WOOD": 5400,
+          "MATERIAL_RAW_EMERALD": 600
+        }
+      },
+      "before_position": [
+        1344,
+        5824
+      ],
+      "before_quantity": 1,
+      "before_source": "chest 19"
+    },
+    {
+      "cls": "CaelumAmuletPickup",
+      "args": [
+        2,
+        1,
+        0,
+        0,
+        0
+      ],
+      "category": "amulet",
+      "type": 2,
+      "tier": 1,
+      "size_policy": "NOT_APPLICABLE",
+      "catalogue_index": 58,
+      "chest": 19,
+      "chest_slot": 1,
+      "position": [
+        -5472,
+        -1344
+      ],
+      "quantity": 1,
+      "materials_by_size": {
+        "0": {
+          "MATERIAL_RAW_EMERALD": 800,
+          "MATERIAL_RAW_SILVER": 200
+        },
+        "1": {
+          "MATERIAL_RAW_EMERALD": 800,
+          "MATERIAL_RAW_SILVER": 200
+        },
+        "2": {
+          "MATERIAL_RAW_EMERALD": 800,
+          "MATERIAL_RAW_SILVER": 200
+        },
+        "3": {
+          "MATERIAL_RAW_EMERALD": 800,
+          "MATERIAL_RAW_SILVER": 200
+        },
+        "4": {
+          "MATERIAL_RAW_EMERALD": 800,
+          "MATERIAL_RAW_SILVER": 200
+        }
+      },
+      "before_position": [
+        1344,
+        5824
+      ],
+      "before_quantity": 1,
+      "before_source": "chest 19"
+    },
+    {
+      "cls": "CaelumWeaponPickup",
+      "args": [
+        1,
+        1,
+        0,
+        0,
+        4
+      ],
+      "category": "weapon",
+      "type": 1,
+      "essence": 3,
+      "tier": 1,
+      "size_policy": "CHARACTER_DEFAULT",
+      "catalogue_index": 20,
+      "chest": 20,
+      "chest_slot": 0,
+      "position": [
+        2016,
+        960
+      ],
+      "quantity": 1,
+      "materials_by_size": {
+        "0": {
+          "MATERIAL_WOOD": 1800,
+          "MATERIAL_RAW_TOPAZ": 200
+        },
+        "1": {
+          "MATERIAL_WOOD": 2700,
+          "MATERIAL_RAW_TOPAZ": 300
+        },
+        "2": {
+          "MATERIAL_WOOD": 3600,
+          "MATERIAL_RAW_TOPAZ": 400
+        },
+        "3": {
+          "MATERIAL_WOOD": 4500,
+          "MATERIAL_RAW_TOPAZ": 500
+        },
+        "4": {
+          "MATERIAL_WOOD": 5400,
+          "MATERIAL_RAW_TOPAZ": 600
+        }
+      },
+      "before_position": [
+        -1728,
+        11456
+      ],
+      "before_quantity": 1,
+      "before_source": "chest 20"
+    },
+    {
+      "cls": "CaelumAmuletPickup",
+      "args": [
+        3,
+        1,
+        0,
+        0,
+        0
+      ],
+      "category": "amulet",
+      "type": 3,
+      "tier": 1,
+      "size_policy": "NOT_APPLICABLE",
+      "catalogue_index": 59,
+      "chest": 20,
+      "chest_slot": 1,
+      "position": [
+        2016,
+        960
+      ],
+      "quantity": 1,
+      "materials_by_size": {
+        "0": {
+          "MATERIAL_RAW_TOPAZ": 800,
+          "MATERIAL_RAW_SILVER": 200
+        },
+        "1": {
+          "MATERIAL_RAW_TOPAZ": 800,
+          "MATERIAL_RAW_SILVER": 200
+        },
+        "2": {
+          "MATERIAL_RAW_TOPAZ": 800,
+          "MATERIAL_RAW_SILVER": 200
+        },
+        "3": {
+          "MATERIAL_RAW_TOPAZ": 800,
+          "MATERIAL_RAW_SILVER": 200
+        },
+        "4": {
+          "MATERIAL_RAW_TOPAZ": 800,
+          "MATERIAL_RAW_SILVER": 200
+        }
+      },
+      "before_position": [
+        -1728,
+        11456
+      ],
+      "before_quantity": 1,
+      "before_source": "chest 20"
+    },
+    {
+      "cls": "CaelumWeaponPickup",
+      "args": [
+        1,
+        1,
+        0,
+        0,
+        5
+      ],
+      "category": "weapon",
+      "type": 1,
+      "essence": 4,
+      "tier": 1,
+      "size_policy": "CHARACTER_DEFAULT",
+      "catalogue_index": 21,
+      "chest": 21,
+      "chest_slot": 0,
+      "position": [
+        4320,
+        -1344
+      ],
+      "quantity": 1,
+      "materials_by_size": {
+        "0": {
+          "MATERIAL_WOOD": 1800,
+          "MATERIAL_RAW_OPAL": 200
+        },
+        "1": {
+          "MATERIAL_WOOD": 2700,
+          "MATERIAL_RAW_OPAL": 300
+        },
+        "2": {
+          "MATERIAL_WOOD": 3600,
+          "MATERIAL_RAW_OPAL": 400
+        },
+        "3": {
+          "MATERIAL_WOOD": 4500,
+          "MATERIAL_RAW_OPAL": 500
+        },
+        "4": {
+          "MATERIAL_WOOD": 5400,
+          "MATERIAL_RAW_OPAL": 600
+        }
+      },
+      "before_position": [
+        1344,
+        9152
+      ],
+      "before_quantity": 1,
+      "before_source": "chest 21"
+    },
+    {
+      "cls": "CaelumSealPickup",
+      "args": [
+        0,
+        1,
+        0,
+        0,
+        0
+      ],
+      "category": "seal",
+      "type": 0,
+      "tier": 1,
+      "size_policy": "NOT_APPLICABLE",
+      "catalogue_index": 60,
+      "chest": 21,
+      "chest_slot": 1,
+      "position": [
+        4320,
+        -1344
+      ],
+      "quantity": 1,
+      "materials_by_size": {
+        "0": {
+          "MATERIAL_RAW_RUBY": 600,
+          "MATERIAL_RAW_COPPER": 360,
+          "MATERIAL_RAW_TIN": 40
+        },
+        "1": {
+          "MATERIAL_RAW_RUBY": 600,
+          "MATERIAL_RAW_COPPER": 360,
+          "MATERIAL_RAW_TIN": 40
+        },
+        "2": {
+          "MATERIAL_RAW_RUBY": 600,
+          "MATERIAL_RAW_COPPER": 360,
+          "MATERIAL_RAW_TIN": 40
+        },
+        "3": {
+          "MATERIAL_RAW_RUBY": 600,
+          "MATERIAL_RAW_COPPER": 360,
+          "MATERIAL_RAW_TIN": 40
+        },
+        "4": {
+          "MATERIAL_RAW_RUBY": 600,
+          "MATERIAL_RAW_COPPER": 360,
+          "MATERIAL_RAW_TIN": 40
+        }
+      },
+      "before_position": [
+        1344,
+        9152
+      ],
+      "before_quantity": 1,
+      "before_source": "chest 21"
+    },
+    {
+      "cls": "CaelumWeaponPickup",
+      "args": [
+        2,
+        1,
+        0,
+        0,
+        1
+      ],
+      "category": "weapon",
+      "type": 2,
+      "essence": 0,
+      "tier": 1,
+      "size_policy": "CHARACTER_DEFAULT",
+      "catalogue_index": 22,
+      "chest": 22,
+      "chest_slot": 0,
+      "position": [
+        5088,
+        960
+      ],
+      "quantity": 1,
+      "materials_by_size": {
+        "0": {
+          "MATERIAL_RAW_COPPER": 5400,
+          "MATERIAL_RAW_TIN": 600
+        },
+        "1": {
+          "MATERIAL_RAW_COPPER": 8100,
+          "MATERIAL_RAW_TIN": 900
+        },
+        "2": {
+          "MATERIAL_RAW_COPPER": 10800,
+          "MATERIAL_RAW_TIN": 1200
+        },
+        "3": {
+          "MATERIAL_RAW_COPPER": 13500,
+          "MATERIAL_RAW_TIN": 1500
+        },
+        "4": {
+          "MATERIAL_RAW_COPPER": 16200,
+          "MATERIAL_RAW_TIN": 1800
+        }
+      },
+      "before_position": [
+        1344,
+        11456
+      ],
+      "before_quantity": 1,
+      "before_source": "chest 22"
+    },
+    {
+      "cls": "CaelumSealPickup",
+      "args": [
+        1,
+        1,
+        0,
+        0,
+        0
+      ],
+      "category": "seal",
+      "type": 1,
+      "tier": 1,
+      "size_policy": "NOT_APPLICABLE",
+      "catalogue_index": 61,
+      "chest": 22,
+      "chest_slot": 1,
+      "position": [
+        5088,
+        960
+      ],
+      "quantity": 1,
+      "materials_by_size": {
+        "0": {
+          "MATERIAL_RAW_SAPPHIRE": 600,
+          "MATERIAL_RAW_COPPER": 360,
+          "MATERIAL_RAW_TIN": 40
+        },
+        "1": {
+          "MATERIAL_RAW_SAPPHIRE": 600,
+          "MATERIAL_RAW_COPPER": 360,
+          "MATERIAL_RAW_TIN": 40
+        },
+        "2": {
+          "MATERIAL_RAW_SAPPHIRE": 600,
+          "MATERIAL_RAW_COPPER": 360,
+          "MATERIAL_RAW_TIN": 40
+        },
+        "3": {
+          "MATERIAL_RAW_SAPPHIRE": 600,
+          "MATERIAL_RAW_COPPER": 360,
+          "MATERIAL_RAW_TIN": 40
+        },
+        "4": {
+          "MATERIAL_RAW_SAPPHIRE": 600,
+          "MATERIAL_RAW_COPPER": 360,
+          "MATERIAL_RAW_TIN": 40
+        }
+      },
+      "before_position": [
+        1344,
+        11456
+      ],
+      "before_quantity": 1,
+      "before_source": "chest 22"
+    },
+    {
+      "cls": "CaelumWeaponPickup",
+      "args": [
+        3,
+        1,
+        0,
+        0,
+        1
+      ],
+      "category": "weapon",
+      "type": 3,
+      "essence": 0,
+      "tier": 1,
+      "size_policy": "CHARACTER_DEFAULT",
+      "catalogue_index": 23,
+      "chest": 23,
+      "chest_slot": 0,
+      "position": [
+        2784,
+        -576
+      ],
+      "quantity": 1,
+      "materials_by_size": {
+        "0": {
+          "MATERIAL_WOOD": 300,
+          "MATERIAL_RAW_COPPER": 632,
+          "MATERIAL_RAW_TIN": 72
+        },
+        "1": {
+          "MATERIAL_WOOD": 452,
+          "MATERIAL_RAW_COPPER": 956,
+          "MATERIAL_RAW_TIN": 108
+        },
+        "2": {
+          "MATERIAL_WOOD": 600,
+          "MATERIAL_RAW_COPPER": 1260,
+          "MATERIAL_RAW_TIN": 140
+        },
+        "3": {
+          "MATERIAL_WOOD": 752,
+          "MATERIAL_RAW_COPPER": 1584,
+          "MATERIAL_RAW_TIN": 176
+        },
+        "4": {
+          "MATERIAL_WOOD": 900,
+          "MATERIAL_RAW_COPPER": 1892,
+          "MATERIAL_RAW_TIN": 212
+        }
+      },
+      "before_position": [
+        -192,
+        9920
+      ],
+      "before_quantity": 1,
+      "before_source": "chest 23"
+    },
+    {
+      "cls": "CaelumSealPickup",
+      "args": [
+        2,
+        1,
+        0,
+        0,
+        0
+      ],
+      "category": "seal",
+      "type": 2,
+      "tier": 1,
+      "size_policy": "NOT_APPLICABLE",
+      "catalogue_index": 62,
+      "chest": 23,
+      "chest_slot": 1,
+      "position": [
+        2784,
+        -576
+      ],
+      "quantity": 1,
+      "materials_by_size": {
+        "0": {
+          "MATERIAL_RAW_EMERALD": 600,
+          "MATERIAL_RAW_COPPER": 360,
+          "MATERIAL_RAW_TIN": 40
+        },
+        "1": {
+          "MATERIAL_RAW_EMERALD": 600,
+          "MATERIAL_RAW_COPPER": 360,
+          "MATERIAL_RAW_TIN": 40
+        },
+        "2": {
+          "MATERIAL_RAW_EMERALD": 600,
+          "MATERIAL_RAW_COPPER": 360,
+          "MATERIAL_RAW_TIN": 40
+        },
+        "3": {
+          "MATERIAL_RAW_EMERALD": 600,
+          "MATERIAL_RAW_COPPER": 360,
+          "MATERIAL_RAW_TIN": 40
+        },
+        "4": {
+          "MATERIAL_RAW_EMERALD": 600,
+          "MATERIAL_RAW_COPPER": 360,
+          "MATERIAL_RAW_TIN": 40
+        }
+      },
+      "before_position": [
+        -192,
+        9920
+      ],
+      "before_quantity": 1,
+      "before_source": "chest 23"
+    },
+    {
+      "cls": "CaelumWeaponPickup",
+      "args": [
+        4,
+        1,
+        0,
+        0,
+        1
+      ],
+      "category": "weapon",
+      "type": 4,
+      "essence": 0,
+      "tier": 1,
+      "size_policy": "CHARACTER_DEFAULT",
+      "catalogue_index": 24,
+      "chest": 24,
+      "chest_slot": 0,
+      "position": [
+        2784,
+        192
+      ],
+      "quantity": 1,
+      "materials_by_size": {
+        "0": {
+          "MATERIAL_WOOD": 1052,
+          "MATERIAL_RAW_COPPER": 416,
+          "MATERIAL_RAW_TIN": 48
+        },
+        "1": {
+          "MATERIAL_WOOD": 1576,
+          "MATERIAL_RAW_COPPER": 612,
+          "MATERIAL_RAW_TIN": 68
+        },
+        "2": {
+          "MATERIAL_WOOD": 2100,
+          "MATERIAL_RAW_COPPER": 812,
+          "MATERIAL_RAW_TIN": 92
+        },
+        "3": {
+          "MATERIAL_WOOD": 2628,
+          "MATERIAL_RAW_COPPER": 1020,
+          "MATERIAL_RAW_TIN": 116
+        },
+        "4": {
+          "MATERIAL_WOOD": 3152,
+          "MATERIAL_RAW_COPPER": 1224,
+          "MATERIAL_RAW_TIN": 136
+        }
+      },
+      "before_position": [
+        -960,
+        10688
+      ],
+      "before_quantity": 1,
+      "before_source": "chest 24"
+    },
+    {
+      "cls": "CaelumSealPickup",
+      "args": [
+        3,
+        1,
+        0,
+        0,
+        0
+      ],
+      "category": "seal",
+      "type": 3,
+      "tier": 1,
+      "size_policy": "NOT_APPLICABLE",
+      "catalogue_index": 63,
+      "chest": 24,
+      "chest_slot": 1,
+      "position": [
+        2784,
+        192
+      ],
+      "quantity": 1,
+      "materials_by_size": {
+        "0": {
+          "MATERIAL_RAW_TOPAZ": 600,
+          "MATERIAL_RAW_COPPER": 360,
+          "MATERIAL_RAW_TIN": 40
+        },
+        "1": {
+          "MATERIAL_RAW_TOPAZ": 600,
+          "MATERIAL_RAW_COPPER": 360,
+          "MATERIAL_RAW_TIN": 40
+        },
+        "2": {
+          "MATERIAL_RAW_TOPAZ": 600,
+          "MATERIAL_RAW_COPPER": 360,
+          "MATERIAL_RAW_TIN": 40
+        },
+        "3": {
+          "MATERIAL_RAW_TOPAZ": 600,
+          "MATERIAL_RAW_COPPER": 360,
+          "MATERIAL_RAW_TIN": 40
+        },
+        "4": {
+          "MATERIAL_RAW_TOPAZ": 600,
+          "MATERIAL_RAW_COPPER": 360,
+          "MATERIAL_RAW_TIN": 40
+        }
+      },
+      "before_position": [
+        -960,
+        10688
+      ],
+      "before_quantity": 1,
+      "before_source": "chest 24"
+    },
+    {
+      "cls": "CaelumWeaponPickup",
+      "args": [
+        5,
+        1,
+        0,
+        0,
+        1
+      ],
+      "category": "weapon",
+      "type": 5,
+      "essence": 0,
+      "tier": 1,
+      "size_policy": "CHARACTER_DEFAULT",
+      "catalogue_index": 25,
+      "chest": 25,
+      "chest_slot": 0,
+      "position": [
+        4320,
+        -576
+      ],
+      "quantity": 1,
+      "materials_by_size": {
+        "0": {
+          "MATERIAL_WOOD": 452,
+          "MATERIAL_RAW_COPPER": 956,
+          "MATERIAL_RAW_TIN": 108
+        },
+        "1": {
+          "MATERIAL_WOOD": 676,
+          "MATERIAL_RAW_COPPER": 1424,
+          "MATERIAL_RAW_TIN": 160
+        },
+        "2": {
+          "MATERIAL_WOOD": 900,
+          "MATERIAL_RAW_COPPER": 1892,
+          "MATERIAL_RAW_TIN": 212
+        },
+        "3": {
+          "MATERIAL_WOOD": 1128,
+          "MATERIAL_RAW_COPPER": 2368,
+          "MATERIAL_RAW_TIN": 264
+        },
+        "4": {
+          "MATERIAL_WOOD": 1352,
+          "MATERIAL_RAW_COPPER": 2844,
+          "MATERIAL_RAW_TIN": 316
+        }
+      },
+      "before_position": [
+        1344,
+        9920
+      ],
+      "before_quantity": 1,
+      "before_source": "chest 25"
+    },
+    {
+      "cls": "CaelumSealPickup",
+      "args": [
+        4,
+        1,
+        0,
+        0,
+        0
+      ],
+      "category": "seal",
+      "type": 4,
+      "tier": 1,
+      "size_policy": "NOT_APPLICABLE",
+      "catalogue_index": 64,
+      "chest": 25,
+      "chest_slot": 1,
+      "position": [
+        4320,
+        -576
+      ],
+      "quantity": 1,
+      "materials_by_size": {
+        "0": {
+          "MATERIAL_RAW_OPAL": 600,
+          "MATERIAL_RAW_COPPER": 360,
+          "MATERIAL_RAW_TIN": 40
+        },
+        "1": {
+          "MATERIAL_RAW_OPAL": 600,
+          "MATERIAL_RAW_COPPER": 360,
+          "MATERIAL_RAW_TIN": 40
+        },
+        "2": {
+          "MATERIAL_RAW_OPAL": 600,
+          "MATERIAL_RAW_COPPER": 360,
+          "MATERIAL_RAW_TIN": 40
+        },
+        "3": {
+          "MATERIAL_RAW_OPAL": 600,
+          "MATERIAL_RAW_COPPER": 360,
+          "MATERIAL_RAW_TIN": 40
+        },
+        "4": {
+          "MATERIAL_RAW_OPAL": 600,
+          "MATERIAL_RAW_COPPER": 360,
+          "MATERIAL_RAW_TIN": 40
+        }
+      },
+      "before_position": [
+        1344,
+        9920
+      ],
+      "before_quantity": 1,
+      "before_source": "chest 25"
+    },
+    {
+      "cls": "CaelumWeaponPickup",
+      "args": [
+        6,
+        1,
+        0,
+        0,
+        1
+      ],
+      "category": "weapon",
+      "type": 6,
+      "essence": 0,
+      "tier": 1,
+      "size_policy": "CHARACTER_DEFAULT",
+      "catalogue_index": 26,
+      "chest": 26,
+      "chest_slot": 0,
+      "position": [
+        5088,
+        -1344
+      ],
+      "quantity": 1,
+      "materials_by_size": {
+        "0": {
+          "MATERIAL_WOOD": 1600,
+          "MATERIAL_RAW_COPPER": 360,
+          "MATERIAL_RAW_TIN": 40
+        },
+        "1": {
+          "MATERIAL_WOOD": 2400,
+          "MATERIAL_RAW_COPPER": 540,
+          "MATERIAL_RAW_TIN": 60
+        },
+        "2": {
+          "MATERIAL_WOOD": 3200,
+          "MATERIAL_RAW_COPPER": 720,
+          "MATERIAL_RAW_TIN": 80
+        },
+        "3": {
+          "MATERIAL_WOOD": 4000,
+          "MATERIAL_RAW_COPPER": 900,
+          "MATERIAL_RAW_TIN": 100
+        },
+        "4": {
+          "MATERIAL_WOOD": 4800,
+          "MATERIAL_RAW_COPPER": 1080,
+          "MATERIAL_RAW_TIN": 120
+        }
+      },
+      "before_position": [
+        -1728,
+        9920
+      ],
+      "before_quantity": 1,
+      "before_source": "chest 26"
+    },
+    {
+      "cls": "CaelumWeaponPickup",
+      "args": [
+        7,
+        1,
+        0,
+        0,
+        1
+      ],
+      "category": "weapon",
+      "type": 7,
+      "essence": 0,
+      "tier": 1,
+      "size_policy": "CHARACTER_DEFAULT",
+      "catalogue_index": 27,
+      "chest": 27,
+      "chest_slot": 0,
+      "position": [
+        2784,
+        1728
+      ],
+      "quantity": 1,
+      "materials_by_size": {
+        "0": {
+          "MATERIAL_WOOD": 2800,
+          "MATERIAL_RAW_COPPER": 1080,
+          "MATERIAL_RAW_TIN": 120
+        },
+        "1": {
+          "MATERIAL_WOOD": 4200,
+          "MATERIAL_RAW_COPPER": 1620,
+          "MATERIAL_RAW_TIN": 180
+        },
+        "2": {
+          "MATERIAL_WOOD": 5600,
+          "MATERIAL_RAW_COPPER": 2160,
+          "MATERIAL_RAW_TIN": 240
+        },
+        "3": {
+          "MATERIAL_WOOD": 7000,
+          "MATERIAL_RAW_COPPER": 2700,
+          "MATERIAL_RAW_TIN": 300
+        },
+        "4": {
+          "MATERIAL_WOOD": 8400,
+          "MATERIAL_RAW_COPPER": 3240,
+          "MATERIAL_RAW_TIN": 360
+        }
+      },
+      "before_position": [
+        -960,
+        12224
+      ],
+      "before_quantity": 1,
+      "before_source": "chest 27"
+    },
+    {
+      "cls": "CaelumWeaponPickup",
+      "args": [
+        8,
+        1,
+        0,
+        0,
+        1
+      ],
+      "category": "weapon",
+      "type": 8,
+      "essence": 0,
+      "tier": 1,
+      "size_policy": "CHARACTER_DEFAULT",
+      "catalogue_index": 28,
+      "chest": 28,
+      "chest_slot": 0,
+      "position": [
+        5088,
+        192
+      ],
+      "quantity": 1,
+      "materials_by_size": {
+        "0": {
+          "MATERIAL_RAW_COPPER": 3600,
+          "MATERIAL_RAW_TIN": 400
+        },
+        "1": {
+          "MATERIAL_RAW_COPPER": 5400,
+          "MATERIAL_RAW_TIN": 600
+        },
+        "2": {
+          "MATERIAL_RAW_COPPER": 7200,
+          "MATERIAL_RAW_TIN": 800
+        },
+        "3": {
+          "MATERIAL_RAW_COPPER": 9000,
+          "MATERIAL_RAW_TIN": 1000
+        },
+        "4": {
+          "MATERIAL_RAW_COPPER": 10800,
+          "MATERIAL_RAW_TIN": 1200
+        }
+      },
+      "before_position": [
+        1344,
+        10688
+      ],
+      "before_quantity": 1,
+      "before_source": "chest 28"
+    },
+    {
+      "cls": "CaelumWeaponPickup",
+      "args": [
+        9,
+        1,
+        0,
+        0,
+        1
+      ],
+      "category": "weapon",
+      "type": 9,
+      "essence": 0,
+      "tier": 1,
+      "size_policy": "CHARACTER_DEFAULT",
+      "catalogue_index": 29,
+      "chest": 29,
+      "chest_slot": 0,
+      "position": [
+        3552,
+        1728
+      ],
+      "quantity": 1,
+      "materials_by_size": {
+        "0": {
+          "MATERIAL_WOOD": 2800,
+          "MATERIAL_RAW_COPPER": 632,
+          "MATERIAL_RAW_TIN": 72
+        },
+        "1": {
+          "MATERIAL_WOOD": 4200,
+          "MATERIAL_RAW_COPPER": 956,
+          "MATERIAL_RAW_TIN": 108
+        },
+        "2": {
+          "MATERIAL_WOOD": 5600,
+          "MATERIAL_RAW_COPPER": 1260,
+          "MATERIAL_RAW_TIN": 140
+        },
+        "3": {
+          "MATERIAL_WOOD": 7000,
+          "MATERIAL_RAW_COPPER": 1584,
+          "MATERIAL_RAW_TIN": 176
+        },
+        "4": {
+          "MATERIAL_WOOD": 8400,
+          "MATERIAL_RAW_COPPER": 1892,
+          "MATERIAL_RAW_TIN": 212
+        }
+      },
+      "before_position": [
+        -192,
+        12224
+      ],
+      "before_quantity": 1,
+      "before_source": "chest 29"
+    },
+    {
+      "cls": "CaelumWeaponPickup",
+      "args": [
+        10,
+        1,
+        0,
+        0,
+        1
+      ],
+      "category": "weapon",
+      "type": 10,
+      "essence": 0,
+      "tier": 1,
+      "size_policy": "CHARACTER_DEFAULT",
+      "catalogue_index": 30,
+      "chest": 30,
+      "chest_slot": 0,
+      "position": [
+        1344,
+        3168
+      ],
+      "quantity": 1,
+      "materials_by_size": {
+        "0": {
+          "MATERIAL_WOOD": 2700,
+          "MATERIAL_RAW_COPPER": 5672,
+          "MATERIAL_RAW_TIN": 632
+        },
+        "1": {
+          "MATERIAL_WOOD": 4052,
+          "MATERIAL_RAW_COPPER": 8516,
+          "MATERIAL_RAW_TIN": 948
+        },
+        "2": {
+          "MATERIAL_WOOD": 5400,
+          "MATERIAL_RAW_COPPER": 11340,
+          "MATERIAL_RAW_TIN": 1260
+        },
+        "3": {
+          "MATERIAL_WOOD": 6752,
+          "MATERIAL_RAW_COPPER": 14184,
+          "MATERIAL_RAW_TIN": 1576
+        },
+        "4": {
+          "MATERIAL_WOOD": 8100,
+          "MATERIAL_RAW_COPPER": 17012,
+          "MATERIAL_RAW_TIN": 1892
+        }
+      },
+      "before_position": [
+        -192,
+        13248
+      ],
+      "before_quantity": 1,
+      "before_source": "chest 30"
+    },
+    {
+      "cls": "CaelumWeaponPickup",
+      "args": [
+        11,
+        1,
+        0,
+        0,
+        1
+      ],
+      "category": "weapon",
+      "type": 11,
+      "essence": 0,
+      "tier": 1,
+      "size_policy": "CHARACTER_DEFAULT",
+      "catalogue_index": 31,
+      "chest": 31,
+      "chest_slot": 0,
+      "position": [
+        576,
+        5472
+      ],
+      "quantity": 1,
+      "materials_by_size": {
+        "0": {
+          "MATERIAL_WOOD": 7000,
+          "MATERIAL_RAW_COPPER": 2700,
+          "MATERIAL_RAW_TIN": 300
+        },
+        "1": {
+          "MATERIAL_WOOD": 10500,
+          "MATERIAL_RAW_COPPER": 4052,
+          "MATERIAL_RAW_TIN": 452
+        },
+        "2": {
+          "MATERIAL_WOOD": 14000,
+          "MATERIAL_RAW_COPPER": 5400,
+          "MATERIAL_RAW_TIN": 600
+        },
+        "3": {
+          "MATERIAL_WOOD": 17500,
+          "MATERIAL_RAW_COPPER": 6752,
+          "MATERIAL_RAW_TIN": 752
+        },
+        "4": {
+          "MATERIAL_WOOD": 21000,
+          "MATERIAL_RAW_COPPER": 8100,
+          "MATERIAL_RAW_TIN": 900
+        }
+      },
+      "before_position": [
+        -1728,
+        14784
+      ],
+      "before_quantity": 1,
+      "before_source": "chest 31"
+    },
+    {
+      "cls": "CaelumWeaponPickup",
+      "args": [
+        12,
+        1,
+        0,
+        0,
+        1
+      ],
+      "category": "weapon",
+      "type": 12,
+      "essence": 0,
+      "tier": 1,
+      "size_policy": "CHARACTER_DEFAULT",
+      "catalogue_index": 32,
+      "chest": 32,
+      "chest_slot": 0,
+      "position": [
+        -960,
+        3936
+      ],
+      "quantity": 1,
+      "materials_by_size": {
+        "0": {
+          "MATERIAL_WOOD": 6400,
+          "MATERIAL_RAW_COPPER": 1440,
+          "MATERIAL_RAW_TIN": 160
+        },
+        "1": {
+          "MATERIAL_WOOD": 9600,
+          "MATERIAL_RAW_COPPER": 2160,
+          "MATERIAL_RAW_TIN": 240
+        },
+        "2": {
+          "MATERIAL_WOOD": 12800,
+          "MATERIAL_RAW_COPPER": 2880,
+          "MATERIAL_RAW_TIN": 320
+        },
+        "3": {
+          "MATERIAL_WOOD": 16000,
+          "MATERIAL_RAW_COPPER": 3600,
+          "MATERIAL_RAW_TIN": 400
+        },
+        "4": {
+          "MATERIAL_WOOD": 19200,
+          "MATERIAL_RAW_COPPER": 4320,
+          "MATERIAL_RAW_TIN": 480
+        }
+      },
+      "before_position": [
+        1344,
+        14784
+      ],
+      "before_quantity": 1,
+      "before_source": "chest 32"
+    },
+    {
+      "cls": "CaelumWeaponPickup",
+      "args": [
+        13,
+        1,
+        0,
+        0,
+        1
+      ],
+      "category": "weapon",
+      "type": 13,
+      "essence": 0,
+      "tier": 1,
+      "size_policy": "CHARACTER_DEFAULT",
+      "catalogue_index": 33,
+      "chest": 33,
+      "chest_slot": 0,
+      "position": [
+        -960,
+        2400
+      ],
+      "quantity": 1,
+      "materials_by_size": {
+        "0": {
+          "MATERIAL_RAW_COPPER": 6300,
+          "MATERIAL_RAW_TIN": 700,
+          "MATERIAL_COW_HIDE": 3000
+        },
+        "1": {
+          "MATERIAL_RAW_COPPER": 9452,
+          "MATERIAL_RAW_TIN": 1052,
+          "MATERIAL_COW_HIDE": 4500
+        },
+        "2": {
+          "MATERIAL_RAW_COPPER": 12600,
+          "MATERIAL_RAW_TIN": 1400,
+          "MATERIAL_COW_HIDE": 6000
+        },
+        "3": {
+          "MATERIAL_RAW_COPPER": 15752,
+          "MATERIAL_RAW_TIN": 1752,
+          "MATERIAL_COW_HIDE": 7500
+        },
+        "4": {
+          "MATERIAL_RAW_COPPER": 18900,
+          "MATERIAL_RAW_TIN": 2100,
+          "MATERIAL_COW_HIDE": 9000
+        }
+      },
+      "before_position": [
+        -960,
+        16320
+      ],
+      "before_quantity": 1,
+      "before_source": "chest 33"
+    },
+    {
+      "cls": "CaelumWeaponPickup",
+      "args": [
+        14,
+        1,
+        0,
+        0,
+        1
+      ],
+      "category": "weapon",
+      "type": 14,
+      "essence": 0,
+      "tier": 1,
+      "size_policy": "CHARACTER_DEFAULT",
+      "catalogue_index": 34,
+      "chest": 34,
+      "chest_slot": 0,
+      "position": [
+        -1728,
+        3168
+      ],
+      "quantity": 1,
+      "materials_by_size": {
+        "0": {
+          "MATERIAL_WOOD": 1200,
+          "MATERIAL_PLANT_FIBER": 1800
+        },
+        "1": {
+          "MATERIAL_WOOD": 1800,
+          "MATERIAL_PLANT_FIBER": 2700
+        },
+        "2": {
+          "MATERIAL_WOOD": 2400,
+          "MATERIAL_PLANT_FIBER": 3600
+        },
+        "3": {
+          "MATERIAL_WOOD": 3000,
+          "MATERIAL_PLANT_FIBER": 4500
+        },
+        "4": {
+          "MATERIAL_WOOD": 3600,
+          "MATERIAL_PLANT_FIBER": 5400
+        }
+      },
+      "before_position": [
+        -1728,
+        16320
+      ],
+      "before_quantity": 1,
+      "before_source": "chest 34"
+    },
+    {
+      "cls": "CaelumWeaponPickup",
+      "args": [
+        15,
+        1,
+        0,
+        0,
+        1
+      ],
+      "category": "weapon",
+      "type": 15,
+      "essence": 0,
+      "tier": 1,
+      "size_policy": "CHARACTER_DEFAULT",
+      "catalogue_index": 35,
+      "chest": 35,
+      "chest_slot": 0,
+      "position": [
+        -960,
+        4704
+      ],
+      "quantity": 1,
+      "materials_by_size": {
+        "0": {
+          "MATERIAL_WOOD": 2000,
+          "MATERIAL_PLANT_FIBER": 3000
+        },
+        "1": {
+          "MATERIAL_WOOD": 3000,
+          "MATERIAL_PLANT_FIBER": 4500
+        },
+        "2": {
+          "MATERIAL_WOOD": 4000,
+          "MATERIAL_PLANT_FIBER": 6000
+        },
+        "3": {
+          "MATERIAL_WOOD": 5000,
+          "MATERIAL_PLANT_FIBER": 7500
+        },
+        "4": {
+          "MATERIAL_WOOD": 6000,
+          "MATERIAL_PLANT_FIBER": 9000
+        }
+      },
+      "before_position": [
+        -192,
+        14784
+      ],
+      "before_quantity": 1,
+      "before_source": "chest 35"
+    },
+    {
+      "cls": "CaelumWeaponPickup",
+      "args": [
+        16,
+        1,
+        0,
+        0,
+        1
+      ],
+      "category": "weapon",
+      "type": 16,
+      "essence": 0,
+      "tier": 1,
+      "size_policy": "CHARACTER_DEFAULT",
+      "catalogue_index": 36,
+      "chest": 36,
+      "chest_slot": 0,
+      "position": [
+        -192,
+        3936
+      ],
+      "quantity": 1,
+      "materials_by_size": {
+        "0": {
+          "MATERIAL_WOOD": 1600,
+          "MATERIAL_PLANT_FIBER": 2400
+        },
+        "1": {
+          "MATERIAL_WOOD": 2400,
+          "MATERIAL_PLANT_FIBER": 3600
+        },
+        "2": {
+          "MATERIAL_WOOD": 3200,
+          "MATERIAL_PLANT_FIBER": 4800
+        },
+        "3": {
+          "MATERIAL_WOOD": 4000,
+          "MATERIAL_PLANT_FIBER": 6000
+        },
+        "4": {
+          "MATERIAL_WOOD": 4800,
+          "MATERIAL_PLANT_FIBER": 7200
+        }
+      },
+      "before_position": [
+        1344,
+        13248
+      ],
+      "before_quantity": 1,
+      "before_source": "chest 36"
+    },
+    {
+      "cls": "CaelumWeaponPickup",
+      "args": [
+        17,
+        1,
+        0,
+        0,
+        1
+      ],
+      "category": "weapon",
+      "type": 17,
+      "essence": 0,
+      "tier": 1,
+      "size_policy": "CHARACTER_DEFAULT",
+      "catalogue_index": 37,
+      "chest": 37,
+      "chest_slot": 0,
+      "position": [
+        -192,
+        3168
+      ],
+      "quantity": 1,
+      "materials_by_size": {
+        "0": {
+          "MATERIAL_RAW_RUBY": 252,
+          "MATERIAL_RAW_COPPER": 2036,
+          "MATERIAL_RAW_TIN": 228
+        },
+        "1": {
+          "MATERIAL_RAW_RUBY": 376,
+          "MATERIAL_RAW_COPPER": 3044,
+          "MATERIAL_RAW_TIN": 340
+        },
+        "2": {
+          "MATERIAL_RAW_RUBY": 500,
+          "MATERIAL_RAW_COPPER": 4052,
+          "MATERIAL_RAW_TIN": 452
+        },
+        "3": {
+          "MATERIAL_RAW_RUBY": 628,
+          "MATERIAL_RAW_COPPER": 5068,
+          "MATERIAL_RAW_TIN": 564
+        },
+        "4": {
+          "MATERIAL_RAW_RUBY": 752,
+          "MATERIAL_RAW_COPPER": 6084,
+          "MATERIAL_RAW_TIN": 676
+        }
+      },
+      "before_position": [
+        -1728,
+        14016
+      ],
+      "before_quantity": 1,
+      "before_source": "chest 37"
+    },
+    {
+      "cls": "CaelumWeaponPickup",
+      "args": [
+        17,
+        1,
+        0,
+        0,
+        2
+      ],
+      "category": "weapon",
+      "type": 17,
+      "essence": 1,
+      "tier": 1,
+      "size_policy": "CHARACTER_DEFAULT",
+      "catalogue_index": 38,
+      "chest": 38,
+      "chest_slot": 0,
+      "position": [
+        -1728,
+        2400
+      ],
+      "quantity": 1,
+      "materials_by_size": {
+        "0": {
+          "MATERIAL_RAW_SAPPHIRE": 252,
+          "MATERIAL_RAW_COPPER": 2036,
+          "MATERIAL_RAW_TIN": 228
+        },
+        "1": {
+          "MATERIAL_RAW_SAPPHIRE": 376,
+          "MATERIAL_RAW_COPPER": 3044,
+          "MATERIAL_RAW_TIN": 340
+        },
+        "2": {
+          "MATERIAL_RAW_SAPPHIRE": 500,
+          "MATERIAL_RAW_COPPER": 4052,
+          "MATERIAL_RAW_TIN": 452
+        },
+        "3": {
+          "MATERIAL_RAW_SAPPHIRE": 628,
+          "MATERIAL_RAW_COPPER": 5068,
+          "MATERIAL_RAW_TIN": 564
+        },
+        "4": {
+          "MATERIAL_RAW_SAPPHIRE": 752,
+          "MATERIAL_RAW_COPPER": 6084,
+          "MATERIAL_RAW_TIN": 676
+        }
+      },
+      "before_position": [
+        576,
+        13248
+      ],
+      "before_quantity": 1,
+      "before_source": "chest 38"
+    }
+  ],
+  "aggregate_basic_material_units_by_size": {
+    "0": {
+      "MATERIAL_COW_HIDE": 46500,
+      "MATERIAL_WOOD": 57804,
+      "MATERIAL_RAW_COPPER": 55660,
+      "MATERIAL_RAW_TIN": 6204,
+      "MATERIAL_RAW_RUBY": 2552,
+      "MATERIAL_RAW_SAPPHIRE": 2552,
+      "MATERIAL_RAW_EMERALD": 2552,
+      "MATERIAL_RAW_TOPAZ": 2552,
+      "MATERIAL_RAW_OPAL": 1752,
+      "MATERIAL_PLANT_FIBER": 20700,
+      "MATERIAL_RAW_SILVER": 800
+    },
+    "1": {
+      "MATERIAL_COW_HIDE": 69760,
+      "MATERIAL_WOOD": 86708,
+      "MATERIAL_RAW_COPPER": 82556,
+      "MATERIAL_RAW_TIN": 9196,
+      "MATERIAL_RAW_RUBY": 3128,
+      "MATERIAL_RAW_SAPPHIRE": 3128,
+      "MATERIAL_RAW_EMERALD": 3128,
+      "MATERIAL_RAW_TOPAZ": 3128,
+      "MATERIAL_RAW_OPAL": 2328,
+      "MATERIAL_PLANT_FIBER": 31060,
+      "MATERIAL_RAW_SILVER": 800
+    },
+    "2": {
+      "MATERIAL_COW_HIDE": 93000,
+      "MATERIAL_WOOD": 115600,
+      "MATERIAL_RAW_COPPER": 109364,
+      "MATERIAL_RAW_TIN": 12164,
+      "MATERIAL_RAW_RUBY": 3700,
+      "MATERIAL_RAW_SAPPHIRE": 3700,
+      "MATERIAL_RAW_EMERALD": 3700,
+      "MATERIAL_RAW_TOPAZ": 3700,
+      "MATERIAL_RAW_OPAL": 2900,
+      "MATERIAL_PLANT_FIBER": 41400,
+      "MATERIAL_RAW_SILVER": 800
+    },
+    "3": {
+      "MATERIAL_COW_HIDE": 116260,
+      "MATERIAL_WOOD": 144512,
+      "MATERIAL_RAW_COPPER": 136324,
+      "MATERIAL_RAW_TIN": 15164,
+      "MATERIAL_RAW_RUBY": 4280,
+      "MATERIAL_RAW_SAPPHIRE": 4280,
+      "MATERIAL_RAW_EMERALD": 4280,
+      "MATERIAL_RAW_TOPAZ": 4280,
+      "MATERIAL_RAW_OPAL": 3480,
+      "MATERIAL_PLANT_FIBER": 51760,
+      "MATERIAL_RAW_SILVER": 800
+    },
+    "4": {
+      "MATERIAL_COW_HIDE": 139500,
+      "MATERIAL_WOOD": 173404,
+      "MATERIAL_RAW_COPPER": 163196,
+      "MATERIAL_RAW_TIN": 18140,
+      "MATERIAL_RAW_RUBY": 4852,
+      "MATERIAL_RAW_SAPPHIRE": 4852,
+      "MATERIAL_RAW_EMERALD": 4852,
+      "MATERIAL_RAW_TOPAZ": 4852,
+      "MATERIAL_RAW_OPAL": 4052,
+      "MATERIAL_PLANT_FIBER": 62100,
+      "MATERIAL_RAW_SILVER": 800
+    }
+  },
+  "existing_chest_materials": 0,
+  "existing_preplaced_equipment": 0,
+  "stations": "Author confirmed retaining current stations on 2026-10-02. Sewing, jewelry and shield-anvil routes require another workshop; no automatic knowledge or efficiency change.",
+  "correction": {
+    "supersedes": "assets/validation_4376/MATERIAL_LEDGER.json",
+    "original_sha256": "9e662f1467ab38c8aa30dfa35031b43ed7d8ac2b8302da7687d3e808d8bf7c5f",
+    "cause": "Original report joined native recipe entry to array position; manifest instances are ordered by chest, not catalogue index.",
+    "corrected_item_size_rows": 315,
+    "corrected_equipment_instances": 63,
+    "runtime_and_aggregate_unchanged": true,
+    "original_native_inputs_equal_current": true,
+    "rows": [
+      {
+        "catalogue_index": 39,
+        "size": 0,
+        "incorrectly_used_index": 1
+      },
+      {
+        "catalogue_index": 39,
+        "size": 1,
+        "incorrectly_used_index": 1
+      },
+      {
+        "catalogue_index": 39,
+        "size": 2,
+        "incorrectly_used_index": 1
+      },
+      {
+        "catalogue_index": 39,
+        "size": 3,
+        "incorrectly_used_index": 1
+      },
+      {
+        "catalogue_index": 39,
+        "size": 4,
+        "incorrectly_used_index": 1
+      },
+      {
+        "catalogue_index": 1,
+        "size": 0,
+        "incorrectly_used_index": 2
+      },
+      {
+        "catalogue_index": 1,
+        "size": 1,
+        "incorrectly_used_index": 2
+      },
+      {
+        "catalogue_index": 1,
+        "size": 2,
+        "incorrectly_used_index": 2
+      },
+      {
+        "catalogue_index": 1,
+        "size": 3,
+        "incorrectly_used_index": 2
+      },
+      {
+        "catalogue_index": 1,
+        "size": 4,
+        "incorrectly_used_index": 2
+      },
+      {
+        "catalogue_index": 40,
+        "size": 0,
+        "incorrectly_used_index": 3
+      },
+      {
+        "catalogue_index": 40,
+        "size": 1,
+        "incorrectly_used_index": 3
+      },
+      {
+        "catalogue_index": 40,
+        "size": 2,
+        "incorrectly_used_index": 3
+      },
+      {
+        "catalogue_index": 40,
+        "size": 3,
+        "incorrectly_used_index": 3
+      },
+      {
+        "catalogue_index": 40,
+        "size": 4,
+        "incorrectly_used_index": 3
+      },
+      {
+        "catalogue_index": 2,
+        "size": 0,
+        "incorrectly_used_index": 4
+      },
+      {
+        "catalogue_index": 2,
+        "size": 1,
+        "incorrectly_used_index": 4
+      },
+      {
+        "catalogue_index": 2,
+        "size": 2,
+        "incorrectly_used_index": 4
+      },
+      {
+        "catalogue_index": 2,
+        "size": 3,
+        "incorrectly_used_index": 4
+      },
+      {
+        "catalogue_index": 2,
+        "size": 4,
+        "incorrectly_used_index": 4
+      },
+      {
+        "catalogue_index": 41,
+        "size": 0,
+        "incorrectly_used_index": 5
+      },
+      {
+        "catalogue_index": 41,
+        "size": 1,
+        "incorrectly_used_index": 5
+      },
+      {
+        "catalogue_index": 41,
+        "size": 2,
+        "incorrectly_used_index": 5
+      },
+      {
+        "catalogue_index": 41,
+        "size": 3,
+        "incorrectly_used_index": 5
+      },
+      {
+        "catalogue_index": 41,
+        "size": 4,
+        "incorrectly_used_index": 5
+      },
+      {
+        "catalogue_index": 42,
+        "size": 0,
+        "incorrectly_used_index": 7
+      },
+      {
+        "catalogue_index": 42,
+        "size": 1,
+        "incorrectly_used_index": 7
+      },
+      {
+        "catalogue_index": 42,
+        "size": 2,
+        "incorrectly_used_index": 7
+      },
+      {
+        "catalogue_index": 42,
+        "size": 3,
+        "incorrectly_used_index": 7
+      },
+      {
+        "catalogue_index": 42,
+        "size": 4,
+        "incorrectly_used_index": 7
+      },
+      {
+        "catalogue_index": 4,
+        "size": 0,
+        "incorrectly_used_index": 8
+      },
+      {
+        "catalogue_index": 4,
+        "size": 1,
+        "incorrectly_used_index": 8
+      },
+      {
+        "catalogue_index": 4,
+        "size": 2,
+        "incorrectly_used_index": 8
+      },
+      {
+        "catalogue_index": 4,
+        "size": 3,
+        "incorrectly_used_index": 8
+      },
+      {
+        "catalogue_index": 4,
+        "size": 4,
+        "incorrectly_used_index": 8
+      },
+      {
+        "catalogue_index": 43,
+        "size": 0,
+        "incorrectly_used_index": 9
+      },
+      {
+        "catalogue_index": 43,
+        "size": 1,
+        "incorrectly_used_index": 9
+      },
+      {
+        "catalogue_index": 43,
+        "size": 2,
+        "incorrectly_used_index": 9
+      },
+      {
+        "catalogue_index": 43,
+        "size": 3,
+        "incorrectly_used_index": 9
+      },
+      {
+        "catalogue_index": 43,
+        "size": 4,
+        "incorrectly_used_index": 9
+      },
+      {
+        "catalogue_index": 5,
+        "size": 0,
+        "incorrectly_used_index": 10
+      },
+      {
+        "catalogue_index": 5,
+        "size": 1,
+        "incorrectly_used_index": 10
+      },
+      {
+        "catalogue_index": 5,
+        "size": 2,
+        "incorrectly_used_index": 10
+      },
+      {
+        "catalogue_index": 5,
+        "size": 3,
+        "incorrectly_used_index": 10
+      },
+      {
+        "catalogue_index": 5,
+        "size": 4,
+        "incorrectly_used_index": 10
+      },
+      {
+        "catalogue_index": 44,
+        "size": 0,
+        "incorrectly_used_index": 11
+      },
+      {
+        "catalogue_index": 44,
+        "size": 1,
+        "incorrectly_used_index": 11
+      },
+      {
+        "catalogue_index": 44,
+        "size": 2,
+        "incorrectly_used_index": 11
+      },
+      {
+        "catalogue_index": 44,
+        "size": 3,
+        "incorrectly_used_index": 11
+      },
+      {
+        "catalogue_index": 44,
+        "size": 4,
+        "incorrectly_used_index": 11
+      },
+      {
+        "catalogue_index": 6,
+        "size": 0,
+        "incorrectly_used_index": 12
+      },
+      {
+        "catalogue_index": 6,
+        "size": 1,
+        "incorrectly_used_index": 12
+      },
+      {
+        "catalogue_index": 6,
+        "size": 2,
+        "incorrectly_used_index": 12
+      },
+      {
+        "catalogue_index": 6,
+        "size": 3,
+        "incorrectly_used_index": 12
+      },
+      {
+        "catalogue_index": 6,
+        "size": 4,
+        "incorrectly_used_index": 12
+      },
+      {
+        "catalogue_index": 45,
+        "size": 0,
+        "incorrectly_used_index": 13
+      },
+      {
+        "catalogue_index": 45,
+        "size": 1,
+        "incorrectly_used_index": 13
+      },
+      {
+        "catalogue_index": 45,
+        "size": 2,
+        "incorrectly_used_index": 13
+      },
+      {
+        "catalogue_index": 45,
+        "size": 3,
+        "incorrectly_used_index": 13
+      },
+      {
+        "catalogue_index": 45,
+        "size": 4,
+        "incorrectly_used_index": 13
+      },
+      {
+        "catalogue_index": 7,
+        "size": 0,
+        "incorrectly_used_index": 14
+      },
+      {
+        "catalogue_index": 7,
+        "size": 1,
+        "incorrectly_used_index": 14
+      },
+      {
+        "catalogue_index": 7,
+        "size": 2,
+        "incorrectly_used_index": 14
+      },
+      {
+        "catalogue_index": 7,
+        "size": 3,
+        "incorrectly_used_index": 14
+      },
+      {
+        "catalogue_index": 7,
+        "size": 4,
+        "incorrectly_used_index": 14
+      },
+      {
+        "catalogue_index": 46,
+        "size": 0,
+        "incorrectly_used_index": 15
+      },
+      {
+        "catalogue_index": 46,
+        "size": 1,
+        "incorrectly_used_index": 15
+      },
+      {
+        "catalogue_index": 46,
+        "size": 2,
+        "incorrectly_used_index": 15
+      },
+      {
+        "catalogue_index": 46,
+        "size": 3,
+        "incorrectly_used_index": 15
+      },
+      {
+        "catalogue_index": 46,
+        "size": 4,
+        "incorrectly_used_index": 15
+      },
+      {
+        "catalogue_index": 8,
+        "size": 0,
+        "incorrectly_used_index": 16
+      },
+      {
+        "catalogue_index": 8,
+        "size": 1,
+        "incorrectly_used_index": 16
+      },
+      {
+        "catalogue_index": 8,
+        "size": 2,
+        "incorrectly_used_index": 16
+      },
+      {
+        "catalogue_index": 8,
+        "size": 3,
+        "incorrectly_used_index": 16
+      },
+      {
+        "catalogue_index": 8,
+        "size": 4,
+        "incorrectly_used_index": 16
+      },
+      {
+        "catalogue_index": 47,
+        "size": 0,
+        "incorrectly_used_index": 17
+      },
+      {
+        "catalogue_index": 47,
+        "size": 1,
+        "incorrectly_used_index": 17
+      },
+      {
+        "catalogue_index": 47,
+        "size": 2,
+        "incorrectly_used_index": 17
+      },
+      {
+        "catalogue_index": 47,
+        "size": 3,
+        "incorrectly_used_index": 17
+      },
+      {
+        "catalogue_index": 47,
+        "size": 4,
+        "incorrectly_used_index": 17
+      },
+      {
+        "catalogue_index": 9,
+        "size": 0,
+        "incorrectly_used_index": 18
+      },
+      {
+        "catalogue_index": 9,
+        "size": 1,
+        "incorrectly_used_index": 18
+      },
+      {
+        "catalogue_index": 9,
+        "size": 2,
+        "incorrectly_used_index": 18
+      },
+      {
+        "catalogue_index": 9,
+        "size": 3,
+        "incorrectly_used_index": 18
+      },
+      {
+        "catalogue_index": 9,
+        "size": 4,
+        "incorrectly_used_index": 18
+      },
+      {
+        "catalogue_index": 48,
+        "size": 0,
+        "incorrectly_used_index": 19
+      },
+      {
+        "catalogue_index": 48,
+        "size": 1,
+        "incorrectly_used_index": 19
+      },
+      {
+        "catalogue_index": 48,
+        "size": 2,
+        "incorrectly_used_index": 19
+      },
+      {
+        "catalogue_index": 48,
+        "size": 3,
+        "incorrectly_used_index": 19
+      },
+      {
+        "catalogue_index": 48,
+        "size": 4,
+        "incorrectly_used_index": 19
+      },
+      {
+        "catalogue_index": 10,
+        "size": 0,
+        "incorrectly_used_index": 20
+      },
+      {
+        "catalogue_index": 10,
+        "size": 1,
+        "incorrectly_used_index": 20
+      },
+      {
+        "catalogue_index": 10,
+        "size": 2,
+        "incorrectly_used_index": 20
+      },
+      {
+        "catalogue_index": 10,
+        "size": 3,
+        "incorrectly_used_index": 20
+      },
+      {
+        "catalogue_index": 10,
+        "size": 4,
+        "incorrectly_used_index": 20
+      },
+      {
+        "catalogue_index": 49,
+        "size": 0,
+        "incorrectly_used_index": 21
+      },
+      {
+        "catalogue_index": 49,
+        "size": 1,
+        "incorrectly_used_index": 21
+      },
+      {
+        "catalogue_index": 49,
+        "size": 2,
+        "incorrectly_used_index": 21
+      },
+      {
+        "catalogue_index": 49,
+        "size": 3,
+        "incorrectly_used_index": 21
+      },
+      {
+        "catalogue_index": 49,
+        "size": 4,
+        "incorrectly_used_index": 21
+      },
+      {
+        "catalogue_index": 11,
+        "size": 0,
+        "incorrectly_used_index": 22
+      },
+      {
+        "catalogue_index": 11,
+        "size": 1,
+        "incorrectly_used_index": 22
+      },
+      {
+        "catalogue_index": 11,
+        "size": 2,
+        "incorrectly_used_index": 22
+      },
+      {
+        "catalogue_index": 11,
+        "size": 3,
+        "incorrectly_used_index": 22
+      },
+      {
+        "catalogue_index": 11,
+        "size": 4,
+        "incorrectly_used_index": 22
+      },
+      {
+        "catalogue_index": 50,
+        "size": 0,
+        "incorrectly_used_index": 23
+      },
+      {
+        "catalogue_index": 50,
+        "size": 1,
+        "incorrectly_used_index": 23
+      },
+      {
+        "catalogue_index": 50,
+        "size": 2,
+        "incorrectly_used_index": 23
+      },
+      {
+        "catalogue_index": 50,
+        "size": 3,
+        "incorrectly_used_index": 23
+      },
+      {
+        "catalogue_index": 50,
+        "size": 4,
+        "incorrectly_used_index": 23
+      },
+      {
+        "catalogue_index": 12,
+        "size": 0,
+        "incorrectly_used_index": 24
+      },
+      {
+        "catalogue_index": 12,
+        "size": 1,
+        "incorrectly_used_index": 24
+      },
+      {
+        "catalogue_index": 12,
+        "size": 2,
+        "incorrectly_used_index": 24
+      },
+      {
+        "catalogue_index": 12,
+        "size": 3,
+        "incorrectly_used_index": 24
+      },
+      {
+        "catalogue_index": 12,
+        "size": 4,
+        "incorrectly_used_index": 24
+      },
+      {
+        "catalogue_index": 51,
+        "size": 0,
+        "incorrectly_used_index": 25
+      },
+      {
+        "catalogue_index": 51,
+        "size": 1,
+        "incorrectly_used_index": 25
+      },
+      {
+        "catalogue_index": 51,
+        "size": 2,
+        "incorrectly_used_index": 25
+      },
+      {
+        "catalogue_index": 51,
+        "size": 3,
+        "incorrectly_used_index": 25
+      },
+      {
+        "catalogue_index": 51,
+        "size": 4,
+        "incorrectly_used_index": 25
+      },
+      {
+        "catalogue_index": 13,
+        "size": 0,
+        "incorrectly_used_index": 26
+      },
+      {
+        "catalogue_index": 13,
+        "size": 1,
+        "incorrectly_used_index": 26
+      },
+      {
+        "catalogue_index": 13,
+        "size": 2,
+        "incorrectly_used_index": 26
+      },
+      {
+        "catalogue_index": 13,
+        "size": 3,
+        "incorrectly_used_index": 26
+      },
+      {
+        "catalogue_index": 13,
+        "size": 4,
+        "incorrectly_used_index": 26
+      },
+      {
+        "catalogue_index": 52,
+        "size": 0,
+        "incorrectly_used_index": 27
+      },
+      {
+        "catalogue_index": 52,
+        "size": 1,
+        "incorrectly_used_index": 27
+      },
+      {
+        "catalogue_index": 52,
+        "size": 2,
+        "incorrectly_used_index": 27
+      },
+      {
+        "catalogue_index": 52,
+        "size": 3,
+        "incorrectly_used_index": 27
+      },
+      {
+        "catalogue_index": 52,
+        "size": 4,
+        "incorrectly_used_index": 27
+      },
+      {
+        "catalogue_index": 14,
+        "size": 0,
+        "incorrectly_used_index": 28
+      },
+      {
+        "catalogue_index": 14,
+        "size": 1,
+        "incorrectly_used_index": 28
+      },
+      {
+        "catalogue_index": 14,
+        "size": 2,
+        "incorrectly_used_index": 28
+      },
+      {
+        "catalogue_index": 14,
+        "size": 3,
+        "incorrectly_used_index": 28
+      },
+      {
+        "catalogue_index": 14,
+        "size": 4,
+        "incorrectly_used_index": 28
+      },
+      {
+        "catalogue_index": 53,
+        "size": 0,
+        "incorrectly_used_index": 29
+      },
+      {
+        "catalogue_index": 53,
+        "size": 1,
+        "incorrectly_used_index": 29
+      },
+      {
+        "catalogue_index": 53,
+        "size": 2,
+        "incorrectly_used_index": 29
+      },
+      {
+        "catalogue_index": 53,
+        "size": 3,
+        "incorrectly_used_index": 29
+      },
+      {
+        "catalogue_index": 53,
+        "size": 4,
+        "incorrectly_used_index": 29
+      },
+      {
+        "catalogue_index": 15,
+        "size": 0,
+        "incorrectly_used_index": 30
+      },
+      {
+        "catalogue_index": 15,
+        "size": 1,
+        "incorrectly_used_index": 30
+      },
+      {
+        "catalogue_index": 15,
+        "size": 2,
+        "incorrectly_used_index": 30
+      },
+      {
+        "catalogue_index": 15,
+        "size": 3,
+        "incorrectly_used_index": 30
+      },
+      {
+        "catalogue_index": 15,
+        "size": 4,
+        "incorrectly_used_index": 30
+      },
+      {
+        "catalogue_index": 54,
+        "size": 0,
+        "incorrectly_used_index": 31
+      },
+      {
+        "catalogue_index": 54,
+        "size": 1,
+        "incorrectly_used_index": 31
+      },
+      {
+        "catalogue_index": 54,
+        "size": 2,
+        "incorrectly_used_index": 31
+      },
+      {
+        "catalogue_index": 54,
+        "size": 3,
+        "incorrectly_used_index": 31
+      },
+      {
+        "catalogue_index": 54,
+        "size": 4,
+        "incorrectly_used_index": 31
+      },
+      {
+        "catalogue_index": 16,
+        "size": 0,
+        "incorrectly_used_index": 32
+      },
+      {
+        "catalogue_index": 16,
+        "size": 1,
+        "incorrectly_used_index": 32
+      },
+      {
+        "catalogue_index": 16,
+        "size": 2,
+        "incorrectly_used_index": 32
+      },
+      {
+        "catalogue_index": 16,
+        "size": 3,
+        "incorrectly_used_index": 32
+      },
+      {
+        "catalogue_index": 16,
+        "size": 4,
+        "incorrectly_used_index": 32
+      },
+      {
+        "catalogue_index": 55,
+        "size": 0,
+        "incorrectly_used_index": 33
+      },
+      {
+        "catalogue_index": 55,
+        "size": 1,
+        "incorrectly_used_index": 33
+      },
+      {
+        "catalogue_index": 55,
+        "size": 2,
+        "incorrectly_used_index": 33
+      },
+      {
+        "catalogue_index": 55,
+        "size": 3,
+        "incorrectly_used_index": 33
+      },
+      {
+        "catalogue_index": 55,
+        "size": 4,
+        "incorrectly_used_index": 33
+      },
+      {
+        "catalogue_index": 17,
+        "size": 0,
+        "incorrectly_used_index": 34
+      },
+      {
+        "catalogue_index": 17,
+        "size": 1,
+        "incorrectly_used_index": 34
+      },
+      {
+        "catalogue_index": 17,
+        "size": 2,
+        "incorrectly_used_index": 34
+      },
+      {
+        "catalogue_index": 17,
+        "size": 3,
+        "incorrectly_used_index": 34
+      },
+      {
+        "catalogue_index": 17,
+        "size": 4,
+        "incorrectly_used_index": 34
+      },
+      {
+        "catalogue_index": 56,
+        "size": 0,
+        "incorrectly_used_index": 35
+      },
+      {
+        "catalogue_index": 56,
+        "size": 1,
+        "incorrectly_used_index": 35
+      },
+      {
+        "catalogue_index": 56,
+        "size": 2,
+        "incorrectly_used_index": 35
+      },
+      {
+        "catalogue_index": 56,
+        "size": 3,
+        "incorrectly_used_index": 35
+      },
+      {
+        "catalogue_index": 56,
+        "size": 4,
+        "incorrectly_used_index": 35
+      },
+      {
+        "catalogue_index": 18,
+        "size": 0,
+        "incorrectly_used_index": 36
+      },
+      {
+        "catalogue_index": 18,
+        "size": 1,
+        "incorrectly_used_index": 36
+      },
+      {
+        "catalogue_index": 18,
+        "size": 2,
+        "incorrectly_used_index": 36
+      },
+      {
+        "catalogue_index": 18,
+        "size": 3,
+        "incorrectly_used_index": 36
+      },
+      {
+        "catalogue_index": 18,
+        "size": 4,
+        "incorrectly_used_index": 36
+      },
+      {
+        "catalogue_index": 57,
+        "size": 0,
+        "incorrectly_used_index": 37
+      },
+      {
+        "catalogue_index": 57,
+        "size": 1,
+        "incorrectly_used_index": 37
+      },
+      {
+        "catalogue_index": 57,
+        "size": 2,
+        "incorrectly_used_index": 37
+      },
+      {
+        "catalogue_index": 57,
+        "size": 3,
+        "incorrectly_used_index": 37
+      },
+      {
+        "catalogue_index": 57,
+        "size": 4,
+        "incorrectly_used_index": 37
+      },
+      {
+        "catalogue_index": 19,
+        "size": 0,
+        "incorrectly_used_index": 38
+      },
+      {
+        "catalogue_index": 19,
+        "size": 1,
+        "incorrectly_used_index": 38
+      },
+      {
+        "catalogue_index": 19,
+        "size": 2,
+        "incorrectly_used_index": 38
+      },
+      {
+        "catalogue_index": 19,
+        "size": 3,
+        "incorrectly_used_index": 38
+      },
+      {
+        "catalogue_index": 19,
+        "size": 4,
+        "incorrectly_used_index": 38
+      },
+      {
+        "catalogue_index": 58,
+        "size": 0,
+        "incorrectly_used_index": 39
+      },
+      {
+        "catalogue_index": 58,
+        "size": 1,
+        "incorrectly_used_index": 39
+      },
+      {
+        "catalogue_index": 58,
+        "size": 2,
+        "incorrectly_used_index": 39
+      },
+      {
+        "catalogue_index": 58,
+        "size": 3,
+        "incorrectly_used_index": 39
+      },
+      {
+        "catalogue_index": 58,
+        "size": 4,
+        "incorrectly_used_index": 39
+      },
+      {
+        "catalogue_index": 20,
+        "size": 0,
+        "incorrectly_used_index": 40
+      },
+      {
+        "catalogue_index": 20,
+        "size": 1,
+        "incorrectly_used_index": 40
+      },
+      {
+        "catalogue_index": 20,
+        "size": 2,
+        "incorrectly_used_index": 40
+      },
+      {
+        "catalogue_index": 20,
+        "size": 3,
+        "incorrectly_used_index": 40
+      },
+      {
+        "catalogue_index": 20,
+        "size": 4,
+        "incorrectly_used_index": 40
+      },
+      {
+        "catalogue_index": 59,
+        "size": 0,
+        "incorrectly_used_index": 41
+      },
+      {
+        "catalogue_index": 59,
+        "size": 1,
+        "incorrectly_used_index": 41
+      },
+      {
+        "catalogue_index": 59,
+        "size": 2,
+        "incorrectly_used_index": 41
+      },
+      {
+        "catalogue_index": 59,
+        "size": 3,
+        "incorrectly_used_index": 41
+      },
+      {
+        "catalogue_index": 59,
+        "size": 4,
+        "incorrectly_used_index": 41
+      },
+      {
+        "catalogue_index": 21,
+        "size": 0,
+        "incorrectly_used_index": 42
+      },
+      {
+        "catalogue_index": 21,
+        "size": 1,
+        "incorrectly_used_index": 42
+      },
+      {
+        "catalogue_index": 21,
+        "size": 2,
+        "incorrectly_used_index": 42
+      },
+      {
+        "catalogue_index": 21,
+        "size": 3,
+        "incorrectly_used_index": 42
+      },
+      {
+        "catalogue_index": 21,
+        "size": 4,
+        "incorrectly_used_index": 42
+      },
+      {
+        "catalogue_index": 60,
+        "size": 0,
+        "incorrectly_used_index": 43
+      },
+      {
+        "catalogue_index": 60,
+        "size": 1,
+        "incorrectly_used_index": 43
+      },
+      {
+        "catalogue_index": 60,
+        "size": 2,
+        "incorrectly_used_index": 43
+      },
+      {
+        "catalogue_index": 60,
+        "size": 3,
+        "incorrectly_used_index": 43
+      },
+      {
+        "catalogue_index": 60,
+        "size": 4,
+        "incorrectly_used_index": 43
+      },
+      {
+        "catalogue_index": 22,
+        "size": 0,
+        "incorrectly_used_index": 44
+      },
+      {
+        "catalogue_index": 22,
+        "size": 1,
+        "incorrectly_used_index": 44
+      },
+      {
+        "catalogue_index": 22,
+        "size": 2,
+        "incorrectly_used_index": 44
+      },
+      {
+        "catalogue_index": 22,
+        "size": 3,
+        "incorrectly_used_index": 44
+      },
+      {
+        "catalogue_index": 22,
+        "size": 4,
+        "incorrectly_used_index": 44
+      },
+      {
+        "catalogue_index": 61,
+        "size": 0,
+        "incorrectly_used_index": 45
+      },
+      {
+        "catalogue_index": 61,
+        "size": 1,
+        "incorrectly_used_index": 45
+      },
+      {
+        "catalogue_index": 61,
+        "size": 2,
+        "incorrectly_used_index": 45
+      },
+      {
+        "catalogue_index": 61,
+        "size": 3,
+        "incorrectly_used_index": 45
+      },
+      {
+        "catalogue_index": 61,
+        "size": 4,
+        "incorrectly_used_index": 45
+      },
+      {
+        "catalogue_index": 23,
+        "size": 0,
+        "incorrectly_used_index": 46
+      },
+      {
+        "catalogue_index": 23,
+        "size": 1,
+        "incorrectly_used_index": 46
+      },
+      {
+        "catalogue_index": 23,
+        "size": 2,
+        "incorrectly_used_index": 46
+      },
+      {
+        "catalogue_index": 23,
+        "size": 3,
+        "incorrectly_used_index": 46
+      },
+      {
+        "catalogue_index": 23,
+        "size": 4,
+        "incorrectly_used_index": 46
+      },
+      {
+        "catalogue_index": 62,
+        "size": 0,
+        "incorrectly_used_index": 47
+      },
+      {
+        "catalogue_index": 62,
+        "size": 1,
+        "incorrectly_used_index": 47
+      },
+      {
+        "catalogue_index": 62,
+        "size": 2,
+        "incorrectly_used_index": 47
+      },
+      {
+        "catalogue_index": 62,
+        "size": 3,
+        "incorrectly_used_index": 47
+      },
+      {
+        "catalogue_index": 62,
+        "size": 4,
+        "incorrectly_used_index": 47
+      },
+      {
+        "catalogue_index": 24,
+        "size": 0,
+        "incorrectly_used_index": 48
+      },
+      {
+        "catalogue_index": 24,
+        "size": 1,
+        "incorrectly_used_index": 48
+      },
+      {
+        "catalogue_index": 24,
+        "size": 2,
+        "incorrectly_used_index": 48
+      },
+      {
+        "catalogue_index": 24,
+        "size": 3,
+        "incorrectly_used_index": 48
+      },
+      {
+        "catalogue_index": 24,
+        "size": 4,
+        "incorrectly_used_index": 48
+      },
+      {
+        "catalogue_index": 63,
+        "size": 0,
+        "incorrectly_used_index": 49
+      },
+      {
+        "catalogue_index": 63,
+        "size": 1,
+        "incorrectly_used_index": 49
+      },
+      {
+        "catalogue_index": 63,
+        "size": 2,
+        "incorrectly_used_index": 49
+      },
+      {
+        "catalogue_index": 63,
+        "size": 3,
+        "incorrectly_used_index": 49
+      },
+      {
+        "catalogue_index": 63,
+        "size": 4,
+        "incorrectly_used_index": 49
+      },
+      {
+        "catalogue_index": 25,
+        "size": 0,
+        "incorrectly_used_index": 50
+      },
+      {
+        "catalogue_index": 25,
+        "size": 1,
+        "incorrectly_used_index": 50
+      },
+      {
+        "catalogue_index": 25,
+        "size": 2,
+        "incorrectly_used_index": 50
+      },
+      {
+        "catalogue_index": 25,
+        "size": 3,
+        "incorrectly_used_index": 50
+      },
+      {
+        "catalogue_index": 25,
+        "size": 4,
+        "incorrectly_used_index": 50
+      },
+      {
+        "catalogue_index": 64,
+        "size": 0,
+        "incorrectly_used_index": 51
+      },
+      {
+        "catalogue_index": 64,
+        "size": 1,
+        "incorrectly_used_index": 51
+      },
+      {
+        "catalogue_index": 64,
+        "size": 2,
+        "incorrectly_used_index": 51
+      },
+      {
+        "catalogue_index": 64,
+        "size": 3,
+        "incorrectly_used_index": 51
+      },
+      {
+        "catalogue_index": 64,
+        "size": 4,
+        "incorrectly_used_index": 51
+      },
+      {
+        "catalogue_index": 26,
+        "size": 0,
+        "incorrectly_used_index": 52
+      },
+      {
+        "catalogue_index": 26,
+        "size": 1,
+        "incorrectly_used_index": 52
+      },
+      {
+        "catalogue_index": 26,
+        "size": 2,
+        "incorrectly_used_index": 52
+      },
+      {
+        "catalogue_index": 26,
+        "size": 3,
+        "incorrectly_used_index": 52
+      },
+      {
+        "catalogue_index": 26,
+        "size": 4,
+        "incorrectly_used_index": 52
+      },
+      {
+        "catalogue_index": 27,
+        "size": 0,
+        "incorrectly_used_index": 53
+      },
+      {
+        "catalogue_index": 27,
+        "size": 1,
+        "incorrectly_used_index": 53
+      },
+      {
+        "catalogue_index": 27,
+        "size": 2,
+        "incorrectly_used_index": 53
+      },
+      {
+        "catalogue_index": 27,
+        "size": 3,
+        "incorrectly_used_index": 53
+      },
+      {
+        "catalogue_index": 27,
+        "size": 4,
+        "incorrectly_used_index": 53
+      },
+      {
+        "catalogue_index": 28,
+        "size": 0,
+        "incorrectly_used_index": 54
+      },
+      {
+        "catalogue_index": 28,
+        "size": 1,
+        "incorrectly_used_index": 54
+      },
+      {
+        "catalogue_index": 28,
+        "size": 2,
+        "incorrectly_used_index": 54
+      },
+      {
+        "catalogue_index": 28,
+        "size": 3,
+        "incorrectly_used_index": 54
+      },
+      {
+        "catalogue_index": 28,
+        "size": 4,
+        "incorrectly_used_index": 54
+      },
+      {
+        "catalogue_index": 29,
+        "size": 0,
+        "incorrectly_used_index": 55
+      },
+      {
+        "catalogue_index": 29,
+        "size": 1,
+        "incorrectly_used_index": 55
+      },
+      {
+        "catalogue_index": 29,
+        "size": 2,
+        "incorrectly_used_index": 55
+      },
+      {
+        "catalogue_index": 29,
+        "size": 3,
+        "incorrectly_used_index": 55
+      },
+      {
+        "catalogue_index": 29,
+        "size": 4,
+        "incorrectly_used_index": 55
+      },
+      {
+        "catalogue_index": 30,
+        "size": 0,
+        "incorrectly_used_index": 56
+      },
+      {
+        "catalogue_index": 30,
+        "size": 1,
+        "incorrectly_used_index": 56
+      },
+      {
+        "catalogue_index": 30,
+        "size": 2,
+        "incorrectly_used_index": 56
+      },
+      {
+        "catalogue_index": 30,
+        "size": 3,
+        "incorrectly_used_index": 56
+      },
+      {
+        "catalogue_index": 30,
+        "size": 4,
+        "incorrectly_used_index": 56
+      },
+      {
+        "catalogue_index": 31,
+        "size": 0,
+        "incorrectly_used_index": 57
+      },
+      {
+        "catalogue_index": 31,
+        "size": 1,
+        "incorrectly_used_index": 57
+      },
+      {
+        "catalogue_index": 31,
+        "size": 2,
+        "incorrectly_used_index": 57
+      },
+      {
+        "catalogue_index": 31,
+        "size": 3,
+        "incorrectly_used_index": 57
+      },
+      {
+        "catalogue_index": 31,
+        "size": 4,
+        "incorrectly_used_index": 57
+      },
+      {
+        "catalogue_index": 32,
+        "size": 0,
+        "incorrectly_used_index": 58
+      },
+      {
+        "catalogue_index": 32,
+        "size": 1,
+        "incorrectly_used_index": 58
+      },
+      {
+        "catalogue_index": 32,
+        "size": 2,
+        "incorrectly_used_index": 58
+      },
+      {
+        "catalogue_index": 32,
+        "size": 3,
+        "incorrectly_used_index": 58
+      },
+      {
+        "catalogue_index": 32,
+        "size": 4,
+        "incorrectly_used_index": 58
+      },
+      {
+        "catalogue_index": 33,
+        "size": 0,
+        "incorrectly_used_index": 59
+      },
+      {
+        "catalogue_index": 33,
+        "size": 1,
+        "incorrectly_used_index": 59
+      },
+      {
+        "catalogue_index": 33,
+        "size": 2,
+        "incorrectly_used_index": 59
+      },
+      {
+        "catalogue_index": 33,
+        "size": 3,
+        "incorrectly_used_index": 59
+      },
+      {
+        "catalogue_index": 33,
+        "size": 4,
+        "incorrectly_used_index": 59
+      },
+      {
+        "catalogue_index": 34,
+        "size": 0,
+        "incorrectly_used_index": 60
+      },
+      {
+        "catalogue_index": 34,
+        "size": 1,
+        "incorrectly_used_index": 60
+      },
+      {
+        "catalogue_index": 34,
+        "size": 2,
+        "incorrectly_used_index": 60
+      },
+      {
+        "catalogue_index": 34,
+        "size": 3,
+        "incorrectly_used_index": 60
+      },
+      {
+        "catalogue_index": 34,
+        "size": 4,
+        "incorrectly_used_index": 60
+      },
+      {
+        "catalogue_index": 35,
+        "size": 0,
+        "incorrectly_used_index": 61
+      },
+      {
+        "catalogue_index": 35,
+        "size": 1,
+        "incorrectly_used_index": 61
+      },
+      {
+        "catalogue_index": 35,
+        "size": 2,
+        "incorrectly_used_index": 61
+      },
+      {
+        "catalogue_index": 35,
+        "size": 3,
+        "incorrectly_used_index": 61
+      },
+      {
+        "catalogue_index": 35,
+        "size": 4,
+        "incorrectly_used_index": 61
+      },
+      {
+        "catalogue_index": 36,
+        "size": 0,
+        "incorrectly_used_index": 62
+      },
+      {
+        "catalogue_index": 36,
+        "size": 1,
+        "incorrectly_used_index": 62
+      },
+      {
+        "catalogue_index": 36,
+        "size": 2,
+        "incorrectly_used_index": 62
+      },
+      {
+        "catalogue_index": 36,
+        "size": 3,
+        "incorrectly_used_index": 62
+      },
+      {
+        "catalogue_index": 36,
+        "size": 4,
+        "incorrectly_used_index": 62
+      },
+      {
+        "catalogue_index": 37,
+        "size": 0,
+        "incorrectly_used_index": 63
+      },
+      {
+        "catalogue_index": 37,
+        "size": 1,
+        "incorrectly_used_index": 63
+      },
+      {
+        "catalogue_index": 37,
+        "size": 2,
+        "incorrectly_used_index": 63
+      },
+      {
+        "catalogue_index": 37,
+        "size": 3,
+        "incorrectly_used_index": 63
+      },
+      {
+        "catalogue_index": 37,
+        "size": 4,
+        "incorrectly_used_index": 63
+      },
+      {
+        "catalogue_index": 38,
+        "size": 0,
+        "incorrectly_used_index": 64
+      },
+      {
+        "catalogue_index": 38,
+        "size": 1,
+        "incorrectly_used_index": 64
+      },
+      {
+        "catalogue_index": 38,
+        "size": 2,
+        "incorrectly_used_index": 64
+      },
+      {
+        "catalogue_index": 38,
+        "size": 3,
+        "incorrectly_used_index": 64
+      },
+      {
+        "catalogue_index": 38,
+        "size": 4,
+        "incorrectly_used_index": 64
+      }
+    ]
+  }
+}

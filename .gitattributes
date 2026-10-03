@@ -1,3 +1,6 @@
 # Document index hashes use exact source bytes. Keep them stable on checkout.
 /docs/*.md text eol=lf
 /docs/MAP01.txt text eol=lf
+
+# Keep the #75 ledger and retained native evidence hashes stable on checkout.
+/assets/validation_4378/* text eol=lf

@@ -1,0 +1,19 @@
+{
+  "identical": true,
+  "matches_current_source": true,
+  "method": "Two runs of unchanged generator/config in an isolated build directory; exact byte comparison to current source.",
+  "runs": [
+    {
+      "src/maps/MAP02.wad": "fc59611c4af051cda3f7b290ffdd8b505dd14606cbd6454e226ff6db81ada91b",
+      "assets/map02_maze/MAP02_MANIFEST.json": "9f962cfeed5c03f64068c3c360bc9b9bd9b6c709354d6ab88055662dcbbcec90",
+      "src/caelum/world/CaelumMazeLayout.zs": "d94068b9c8f2a83ee8e6926117c1a58106fedc06b0b90039558b6c9fccdc0fb4",
+      "src/caelum/world/CaelumMazeLootCatalogue.zs": "483ee58e8bcc02c56a32a2e0b9f429af42fe71a147152dc0a629b7df7f4ff022"
+    },
+    {
+      "src/maps/MAP02.wad": "fc59611c4af051cda3f7b290ffdd8b505dd14606cbd6454e226ff6db81ada91b",
+      "assets/map02_maze/MAP02_MANIFEST.json": "9f962cfeed5c03f64068c3c360bc9b9bd9b6c709354d6ab88055662dcbbcec90",
+      "src/caelum/world/CaelumMazeLayout.zs": "d94068b9c8f2a83ee8e6926117c1a58106fedc06b0b90039558b6c9fccdc0fb4",
+      "src/caelum/world/CaelumMazeLootCatalogue.zs": "483ee58e8bcc02c56a32a2e0b9f429af42fe71a147152dc0a629b7df7f4ff022"
+    }
+  ]
+}

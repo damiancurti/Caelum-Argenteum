@@ -1,0 +1,98 @@
+{
+  "version": "4.37.8",
+  "issue": 75,
+  "baseline": "a99f266e",
+  "date": "2026-10-02",
+  "change": "Correct the per-instance material ledger's positional join; add a repeatable supply validator. Gameplay already implemented and accepted with #73/#74 remains unchanged.",
+  "ledger_correction": {
+    "instances": 63,
+    "item_size_rows": 315,
+    "aggregate_changed": false,
+    "original_preserved": "assets/validation_4376/MATERIAL_LEDGER.json",
+    "corrected": "MATERIAL_LEDGER.json"
+  },
+  "static": {
+    "checks_including_native_log_crosschecks": 866,
+    "failures": 0,
+    "negative_validator_cases_rejected": 11,
+    "deterministic_outputs": 4,
+    "gameplay_runtime_unchanged": true,
+    "tested_package_source_members_match_before_diagnostic_labels": 6141
+  },
+  "native": {
+    "engine": "GZDoom 4.14.2",
+    "os": "Windows 11",
+    "renderer": "Vulkan",
+    "development_iwad": "Installed Doom II; not distributed",
+    "recipe_completions": 325,
+    "recipe_failures": 0,
+    "recipe_scope": "Exact per-instance basic inputs at each of five sizes. Production recipe selection, direct material planning, reservation, consumption and creation of exactly one equipment item. Test setup supplies Box ownership, recipe knowledge and all station capabilities, and invokes completion without waiting for task time; no product recipe unlock or efficiency change.",
+    "route_collision_steps": 3848,
+    "keys": 8,
+    "gates": 12,
+    "supplies": "240 arrows / 120 bolts / 120 bullets / 96 food / 96 water; original dry anchors, repeated death callbacks pay once",
+    "chests": "Adaptive preview, capacity failure without binding, partial collection, changed recipient profile retaining allocated size, exact final drain",
+    "persistence": "Real native save/load and MAP03 hub round trip retain 12 gates, all 288 death guards and empty chest state",
+    "logs": [
+      "native_recipes.log",
+      "native_supplies_persistence.log"
+    ],
+    "limitations": "Isolated direct-MAP02 tests suppress hostile AI and route hazards. Route uses native collision/line activation; death scenarios invoke actor death callbacks. Recipient regression changes one player's profile, not a new multiplayer run. These checks do not replace full campaign acceptance or prove every workshop is present in MAP02."
+  },
+  "author_acceptance": {
+    "confirmed": true,
+    "inherited_unchanged_gameplay": true,
+    "id": "CA-MAP02-MATERIALS-DROPS-01",
+    "origin": "4.37.6 / #73 and #75",
+    "confirmation_date": "2026-10-02",
+    "source": "docs/HISTORY.md, 4.37.6 author acceptance",
+    "qualification": "Original gameplay acceptance remains valid, including retained stations and the previous-save waiver. The author separately accepted the corrected 4.37.8 report/delivery and authorized PR #84 merge and #75 closure on 2026-10-02; no additional full campaign run is inferred."
+  },
+  "fixture_iterations": [
+    "First recipe fixture used reserved identifiers and did not compile; corrected names before native execution.",
+    "Second fixture omitted required Box ownership: all plans passed, but output creation was correctly refused. Final fixture grants the ordinary output prerequisite without changing game rules; all 325 completions pass.",
+    "First route fixture quit before the final hub-return observer. Extended observation; final run records both persistence phases.",
+    "First ledger crosscheck rejected 315 original per-item/size rows. Both original and current native inputs agree: the archived report used array position instead of catalogue_index. Corrected ledger preserves totals and the old report."
+  ],
+  "retained_log_sha256": {
+    "native_recipes.log": "169305bb8ead7c9c8ddd34835f8b4aa6b575b8b0955cfc619eaa1da67119855a",
+    "native_supplies_persistence.log": "a14dd2b4a76a7b52871e63264d2c181f8359a764c729ac0ec828c5c99380c5aa"
+  },
+  "native_tested_sha256": {
+    "src/maps/MAP02.wad": "fc59611c4af051cda3f7b290ffdd8b505dd14606cbd6454e226ff6db81ada91b",
+    "src/caelum/world/CaelumMazeLootCatalogue.zs": "483ee58e8bcc02c56a32a2e0b9f429af42fe71a147152dc0a629b7df7f4ff022",
+    "src/caelum/world/CaelumSewerMaze.zs": "e3f96c87befa37d74b0baefc64e2b09f83634db887c9e83057c5bde826c70b4f",
+    "src/caelum/world/CaelumMazeLayout.zs": "d94068b9c8f2a83ee8e6926117c1a58106fedc06b0b90039558b6c9fccdc0fb4",
+    "src/caelum/actors/CaelumCombatActor.zs": "21c0a7789d35e565446bfe71dd9e7af9e78f52e82da2dafc44f43ef9e7588d36",
+    "src/caelum/quests/CaelumMainM00StarterRules.zs": "5be73bb7ba6b755b6241eb2e3309a1b6f3610d9c77ac3bdeab0edcb5a1da1abb",
+    "src/caelum/equipment/CaelumCraftingRules.zs": "10f615dec4095cf77e577ec193bf7cbd10626137f289bbe8cd5025d23c267af3",
+    "src/caelum/player/CaelumPlayer.zs": "8890770570a0e2a75ea4f4c3ce2ec412b404a86e0c1b444b218daad86b7aac13",
+    "build/caelum_argenteum_dev.pk3": "9f544f267fa7026232b0f6077112bc5b8bab447b801195a24499057928c5a194"
+  },
+  "evidence_reuse": "Native recipe/route evidence precedes the required 4.37.8 diagnostic-label update in two Console.Printf strings. Gameplay is byte-identical after normalizing only those labels. Final build/startup is checked separately.",
+  "final_package": {
+    "sha256": "b7f993eb0dca501d5286016c64a10cc14d55460ff68f3023c8c6556e3cd263cf",
+    "source_members_matching": 6141,
+    "differences_from_behavioral_test_package": {
+      "caelum/world/CaelumPhysicalHazards.zs": "Only [Caelum 4.37.7] -> [Caelum 4.37.8]",
+      "caelum/world/CaelumSewerMaze.zs": "Only [Caelum 4.37.7] -> [Caelum 4.37.8]"
+    },
+    "startup": "GZDoom 4.14.2 without test fixture loads MAP02 and reports 4.37.8, 39 chests, 96 Mandingas, 192 rats, no legacy equipment.",
+    "log": "native_final_startup.log",
+    "log_sha256": "8bd0731af1e6a61da8728d524395346aedf2ee86d56533a62a5ef165f3b3b27b"
+  },
+  "project_validation": {
+    "version": "4.37.8",
+    "documents": 10,
+    "context_words": 2497,
+    "errors": []
+  },
+  "delivery_acceptance": {
+    "version": "4.37.8",
+    "confirmed": true,
+    "confirmation_date": "2026-10-02",
+    "result": "Author confirmed the delivery was correct, without reported exceptions.",
+    "authorization": "Explicit request to merge PR #84 and close issue #75.",
+    "source": "docs/HISTORY.md, 4.37.8 author approval"
+  }
+}

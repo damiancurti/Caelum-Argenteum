@@ -1,0 +1,3479 @@
+{
+  "issue": 75,
+  "checks": 866,
+  "failures": 0,
+  "native_evidence_supplied": true,
+  "author_acceptance": "Recorded separately in HISTORY, originating release 4.37.6.",
+  "sha256": {
+    "assets/map02_maze/MAP02_MANIFEST.json": "9f962cfeed5c03f64068c3c360bc9b9bd9b6c709354d6ab88055662dcbbcec90",
+    "src/maps/MAP02.wad": "fc59611c4af051cda3f7b290ffdd8b505dd14606cbd6454e226ff6db81ada91b",
+    "assets/validation_4378/MATERIAL_LEDGER.json": "e87ceb454b1807091a928c3ea07b436f53063ba796d2e64c692469d39874eb7b",
+    "src/caelum/core/CaelumConstants.zs": "1d873ea4d9a707d97d75964c705f04f2de73e6cfe5db6c72d134a153c9ac7560"
+  },
+  "results": [
+    {
+      "check": "WAD map things match the generated manifest",
+      "passed": true
+    },
+    {
+      "check": "96 Mandingas, 192 rats and 39 chests",
+      "passed": true
+    },
+    {
+      "check": "65 actual equipment instances retain identities and chest allocation",
+      "passed": true
+    },
+    {
+      "check": "No pre-existing chest materials are lost or counted twice",
+      "passed": true
+    },
+    {
+      "check": "No authored finished equipment, ammunition, rations or keys on the floor",
+      "passed": true
+    },
+    {
+      "check": "Each carrier has at most one assigned object",
+      "passed": true
+    },
+    {
+      "check": "Carrier 47000 exists with the correct actor type",
+      "passed": true
+    },
+    {
+      "check": "Carrier 47000 has a dry original upper recovery anchor",
+      "passed": true
+    },
+    {
+      "check": "Carrier 48000 exists with the correct actor type",
+      "passed": true
+    },
+    {
+      "check": "Carrier 48000 has a dry original upper recovery anchor",
+      "passed": true
+    },
+    {
+      "check": "Carrier 48001 exists with the correct actor type",
+      "passed": true
+    },
+    {
+      "check": "Carrier 48001 has a dry original upper recovery anchor",
+      "passed": true
+    },
+    {
+      "check": "Carrier 47001 exists with the correct actor type",
+      "passed": true
+    },
+    {
+      "check": "Carrier 47001 has a dry original upper recovery anchor",
+      "passed": true
+    },
+    {
+      "check": "Carrier 48002 exists with the correct actor type",
+      "passed": true
+    },
+    {
+      "check": "Carrier 48002 has a dry original upper recovery anchor",
+      "passed": true
+    },
+    {
+      "check": "Carrier 48003 exists with the correct actor type",
+      "passed": true
+    },
+    {
+      "check": "Carrier 48003 has a dry original upper recovery anchor",
+      "passed": true
+    },
+    {
+      "check": "Carrier 47002 exists with the correct actor type",
+      "passed": true
+    },
+    {
+      "check": "Carrier 47002 has a dry original upper recovery anchor",
+      "passed": true
+    },
+    {
+      "check": "Carrier 48004 exists with the correct actor type",
+      "passed": true
+    },
+    {
+      "check": "Carrier 48004 has a dry original upper recovery anchor",
+      "passed": true
+    },
+    {
+      "check": "Carrier 48005 exists with the correct actor type",
+      "passed": true
+    },
+    {
+      "check": "Carrier 48005 has a dry original upper recovery anchor",
+      "passed": true
+    },
+    {
+      "check": "Carrier 47003 exists with the correct actor type",
+      "passed": true
+    },
+    {
+      "check": "Carrier 47003 has a dry original upper recovery anchor",
+      "passed": true
+    },
+    {
+      "check": "Carrier 48006 exists with the correct actor type",
+      "passed": true
+    },
+    {
+      "check": "Carrier 48006 has a dry original upper recovery anchor",
+      "passed": true
+    },
+    {
+      "check": "Carrier 48007 exists with the correct actor type",
+      "passed": true
+    },
+    {
+      "check": "Carrier 48007 has a dry original upper recovery anchor",
+      "passed": true
+    },
+    {
+      "check": "Carrier 47004 exists with the correct actor type",
+      "passed": true
+    },
+    {
+      "check": "Carrier 47004 has a dry original upper recovery anchor",
+      "passed": true
+    },
+    {
+      "check": "Carrier 48008 exists with the correct actor type",
+      "passed": true
+    },
+    {
+      "check": "Carrier 48008 has a dry original upper recovery anchor",
+      "passed": true
+    },
+    {
+      "check": "Carrier 48009 exists with the correct actor type",
+      "passed": true
+    },
+    {
+      "check": "Carrier 48009 has a dry original upper recovery anchor",
+      "passed": true
+    },
+    {
+      "check": "Carrier 47005 exists with the correct actor type",
+      "passed": true
+    },
+    {
+      "check": "Carrier 47005 has a dry original upper recovery anchor",
+      "passed": true
+    },
+    {
+      "check": "Carrier 48010 exists with the correct actor type",
+      "passed": true
+    },
+    {
+      "check": "Carrier 48010 has a dry original upper recovery anchor",
+      "passed": true
+    },
+    {
+      "check": "Carrier 48011 exists with the correct actor type",
+      "passed": true
+    },
+    {
+      "check": "Carrier 48011 has a dry original upper recovery anchor",
+      "passed": true
+    },
+    {
+      "check": "Carrier 47006 exists with the correct actor type",
+      "passed": true
+    },
+    {
+      "check": "Carrier 47006 has a dry original upper recovery anchor",
+      "passed": true
+    },
+    {
+      "check": "Carrier 48012 exists with the correct actor type",
+      "passed": true
+    },
+    {
+      "check": "Carrier 48012 has a dry original upper recovery anchor",
+      "passed": true
+    },
+    {
+      "check": "Carrier 48013 exists with the correct actor type",
+      "passed": true
+    },
+    {
+      "check": "Carrier 48013 has a dry original upper recovery anchor",
+      "passed": true
+    },
+    {
+      "check": "Carrier 48014 exists with the correct actor type",
+      "passed": true
+    },
+    {
+      "check": "Carrier 48014 has a dry original upper recovery anchor",
+      "passed": true
+    },
+    {
+      "check": "Carrier 48015 exists with the correct actor type",
+      "passed": true
+    },
+    {
+      "check": "Carrier 48015 has a dry original upper recovery anchor",
+      "passed": true
+    },
+    {
+      "check": "Carrier 48016 exists with the correct actor type",
+      "passed": true
+    },
+    {
+      "check": "Carrier 48016 has a dry original upper recovery anchor",
+      "passed": true
+    },
+    {
+      "check": "Carrier 48017 exists with the correct actor type",
+      "passed": true
+    },
+    {
+      "check": "Carrier 48017 has a dry original upper recovery anchor",
+      "passed": true
+    },
+    {
+      "check": "Carrier 48018 exists with the correct actor type",
+      "passed": true
+    },
+    {
+      "check": "Carrier 48018 has a dry original upper recovery anchor",
+      "passed": true
+    },
+    {
+      "check": "Carrier 48019 exists with the correct actor type",
+      "passed": true
+    },
+    {
+      "check": "Carrier 48019 has a dry original upper recovery anchor",
+      "passed": true
+    },
+    {
+      "check": "Carrier 48020 exists with the correct actor type",
+      "passed": true
+    },
+    {
+      "check": "Carrier 48020 has a dry original upper recovery anchor",
+      "passed": true
+    },
+    {
+      "check": "Carrier 48021 exists with the correct actor type",
+      "passed": true
+    },
+    {
+      "check": "Carrier 48021 has a dry original upper recovery anchor",
+      "passed": true
+    },
+    {
+      "check": "Carrier 48022 exists with the correct actor type",
+      "passed": true
+    },
+    {
+      "check": "Carrier 48022 has a dry original upper recovery anchor",
+      "passed": true
+    },
+    {
+      "check": "Carrier 48023 exists with the correct actor type",
+      "passed": true
+    },
+    {
+      "check": "Carrier 48023 has a dry original upper recovery anchor",
+      "passed": true
+    },
+    {
+      "check": "Carrier 48024 exists with the correct actor type",
+      "passed": true
+    },
+    {
+      "check": "Carrier 48024 has a dry original upper recovery anchor",
+      "passed": true
+    },
+    {
+      "check": "Carrier 48025 exists with the correct actor type",
+      "passed": true
+    },
+    {
+      "check": "Carrier 48025 has a dry original upper recovery anchor",
+      "passed": true
+    },
+    {
+      "check": "Carrier 48026 exists with the correct actor type",
+      "passed": true
+    },
+    {
+      "check": "Carrier 48026 has a dry original upper recovery anchor",
+      "passed": true
+    },
+    {
+      "check": "Carrier 48027 exists with the correct actor type",
+      "passed": true
+    },
+    {
+      "check": "Carrier 48027 has a dry original upper recovery anchor",
+      "passed": true
+    },
+    {
+      "check": "Carrier 48028 exists with the correct actor type",
+      "passed": true
+    },
+    {
+      "check": "Carrier 48028 has a dry original upper recovery anchor",
+      "passed": true
+    },
+    {
+      "check": "Carrier 48029 exists with the correct actor type",
+      "passed": true
+    },
+    {
+      "check": "Carrier 48029 has a dry original upper recovery anchor",
+      "passed": true
+    },
+    {
+      "check": "Carrier 48030 exists with the correct actor type",
+      "passed": true
+    },
+    {
+      "check": "Carrier 48030 has a dry original upper recovery anchor",
+      "passed": true
+    },
+    {
+      "check": "Carrier 48031 exists with the correct actor type",
+      "passed": true
+    },
+    {
+      "check": "Carrier 48031 has a dry original upper recovery anchor",
+      "passed": true
+    },
+    {
+      "check": "Carrier 48032 exists with the correct actor type",
+      "passed": true
+    },
+    {
+      "check": "Carrier 48032 has a dry original upper recovery anchor",
+      "passed": true
+    },
+    {
+      "check": "Carrier 48033 exists with the correct actor type",
+      "passed": true
+    },
+    {
+      "check": "Carrier 48033 has a dry original upper recovery anchor",
+      "passed": true
+    },
+    {
+      "check": "Carrier 48034 exists with the correct actor type",
+      "passed": true
+    },
+    {
+      "check": "Carrier 48034 has a dry original upper recovery anchor",
+      "passed": true
+    },
+    {
+      "check": "Carrier 48035 exists with the correct actor type",
+      "passed": true
+    },
+    {
+      "check": "Carrier 48035 has a dry original upper recovery anchor",
+      "passed": true
+    },
+    {
+      "check": "Carrier 48036 exists with the correct actor type",
+      "passed": true
+    },
+    {
+      "check": "Carrier 48036 has a dry original upper recovery anchor",
+      "passed": true
+    },
+    {
+      "check": "Carrier 48037 exists with the correct actor type",
+      "passed": true
+    },
+    {
+      "check": "Carrier 48037 has a dry original upper recovery anchor",
+      "passed": true
+    },
+    {
+      "check": "Carrier 48038 exists with the correct actor type",
+      "passed": true
+    },
+    {
+      "check": "Carrier 48038 has a dry original upper recovery anchor",
+      "passed": true
+    },
+    {
+      "check": "Carrier 48039 exists with the correct actor type",
+      "passed": true
+    },
+    {
+      "check": "Carrier 48039 has a dry original upper recovery anchor",
+      "passed": true
+    },
+    {
+      "check": "Carrier 48040 exists with the correct actor type",
+      "passed": true
+    },
+    {
+      "check": "Carrier 48040 has a dry original upper recovery anchor",
+      "passed": true
+    },
+    {
+      "check": "Carrier 48041 exists with the correct actor type",
+      "passed": true
+    },
+    {
+      "check": "Carrier 48041 has a dry original upper recovery anchor",
+      "passed": true
+    },
+    {
+      "check": "Carrier 48042 exists with the correct actor type",
+      "passed": true
+    },
+    {
+      "check": "Carrier 48042 has a dry original upper recovery anchor",
+      "passed": true
+    },
+    {
+      "check": "Carrier 48043 exists with the correct actor type",
+      "passed": true
+    },
+    {
+      "check": "Carrier 48043 has a dry original upper recovery anchor",
+      "passed": true
+    },
+    {
+      "check": "Carrier 47022 exists with the correct actor type",
+      "passed": true
+    },
+    {
+      "check": "Carrier 47022 has a dry original upper recovery anchor",
+      "passed": true
+    },
+    {
+      "check": "Carrier 48044 exists with the correct actor type",
+      "passed": true
+    },
+    {
+      "check": "Carrier 48044 has a dry original upper recovery anchor",
+      "passed": true
+    },
+    {
+      "check": "Carrier 48045 exists with the correct actor type",
+      "passed": true
+    },
+    {
+      "check": "Carrier 48045 has a dry original upper recovery anchor",
+      "passed": true
+    },
+    {
+      "check": "Carrier 48046 exists with the correct actor type",
+      "passed": true
+    },
+    {
+      "check": "Carrier 48046 has a dry original upper recovery anchor",
+      "passed": true
+    },
+    {
+      "check": "Carrier 48047 exists with the correct actor type",
+      "passed": true
+    },
+    {
+      "check": "Carrier 48047 has a dry original upper recovery anchor",
+      "passed": true
+    },
+    {
+      "check": "Carrier 47024 exists with the correct actor type",
+      "passed": true
+    },
+    {
+      "check": "Carrier 47024 has a dry original upper recovery anchor",
+      "passed": true
+    },
+    {
+      "check": "Carrier 48048 exists with the correct actor type",
+      "passed": true
+    },
+    {
+      "check": "Carrier 48048 has a dry original upper recovery anchor",
+      "passed": true
+    },
+    {
+      "check": "Carrier 48049 exists with the correct actor type",
+      "passed": true
+    },
+    {
+      "check": "Carrier 48049 has a dry original upper recovery anchor",
+      "passed": true
+    },
+    {
+      "check": "Carrier 47025 exists with the correct actor type",
+      "passed": true
+    },
+    {
+      "check": "Carrier 47025 has a dry original upper recovery anchor",
+      "passed": true
+    },
+    {
+      "check": "Carrier 48050 exists with the correct actor type",
+      "passed": true
+    },
+    {
+      "check": "Carrier 48050 has a dry original upper recovery anchor",
+      "passed": true
+    },
+    {
+      "check": "Carrier 48051 exists with the correct actor type",
+      "passed": true
+    },
+    {
+      "check": "Carrier 48051 has a dry original upper recovery anchor",
+      "passed": true
+    },
+    {
+      "check": "Carrier 47026 exists with the correct actor type",
+      "passed": true
+    },
+    {
+      "check": "Carrier 47026 has a dry original upper recovery anchor",
+      "passed": true
+    },
+    {
+      "check": "Carrier 48052 exists with the correct actor type",
+      "passed": true
+    },
+    {
+      "check": "Carrier 48052 has a dry original upper recovery anchor",
+      "passed": true
+    },
+    {
+      "check": "Carrier 48053 exists with the correct actor type",
+      "passed": true
+    },
+    {
+      "check": "Carrier 48053 has a dry original upper recovery anchor",
+      "passed": true
+    },
+    {
+      "check": "Carrier 47027 exists with the correct actor type",
+      "passed": true
+    },
+    {
+      "check": "Carrier 47027 has a dry original upper recovery anchor",
+      "passed": true
+    },
+    {
+      "check": "Carrier 48054 exists with the correct actor type",
+      "passed": true
+    },
+    {
+      "check": "Carrier 48054 has a dry original upper recovery anchor",
+      "passed": true
+    },
+    {
+      "check": "Carrier 48055 exists with the correct actor type",
+      "passed": true
+    },
+    {
+      "check": "Carrier 48055 has a dry original upper recovery anchor",
+      "passed": true
+    },
+    {
+      "check": "Carrier 47028 exists with the correct actor type",
+      "passed": true
+    },
+    {
+      "check": "Carrier 47028 has a dry original upper recovery anchor",
+      "passed": true
+    },
+    {
+      "check": "Carrier 48056 exists with the correct actor type",
+      "passed": true
+    },
+    {
+      "check": "Carrier 48056 has a dry original upper recovery anchor",
+      "passed": true
+    },
+    {
+      "check": "Carrier 48057 exists with the correct actor type",
+      "passed": true
+    },
+    {
+      "check": "Carrier 48057 has a dry original upper recovery anchor",
+      "passed": true
+    },
+    {
+      "check": "Carrier 47029 exists with the correct actor type",
+      "passed": true
+    },
+    {
+      "check": "Carrier 47029 has a dry original upper recovery anchor",
+      "passed": true
+    },
+    {
+      "check": "Carrier 48058 exists with the correct actor type",
+      "passed": true
+    },
+    {
+      "check": "Carrier 48058 has a dry original upper recovery anchor",
+      "passed": true
+    },
+    {
+      "check": "Carrier 48059 exists with the correct actor type",
+      "passed": true
+    },
+    {
+      "check": "Carrier 48059 has a dry original upper recovery anchor",
+      "passed": true
+    },
+    {
+      "check": "Carrier 48060 exists with the correct actor type",
+      "passed": true
+    },
+    {
+      "check": "Carrier 48060 has a dry original upper recovery anchor",
+      "passed": true
+    },
+    {
+      "check": "Carrier 48061 exists with the correct actor type",
+      "passed": true
+    },
+    {
+      "check": "Carrier 48061 has a dry original upper recovery anchor",
+      "passed": true
+    },
+    {
+      "check": "Carrier 48062 exists with the correct actor type",
+      "passed": true
+    },
+    {
+      "check": "Carrier 48062 has a dry original upper recovery anchor",
+      "passed": true
+    },
+    {
+      "check": "Carrier 48063 exists with the correct actor type",
+      "passed": true
+    },
+    {
+      "check": "Carrier 48063 has a dry original upper recovery anchor",
+      "passed": true
+    },
+    {
+      "check": "Carrier 48064 exists with the correct actor type",
+      "passed": true
+    },
+    {
+      "check": "Carrier 48064 has a dry original upper recovery anchor",
+      "passed": true
+    },
+    {
+      "check": "Carrier 48065 exists with the correct actor type",
+      "passed": true
+    },
+    {
+      "check": "Carrier 48065 has a dry original upper recovery anchor",
+      "passed": true
+    },
+    {
+      "check": "Carrier 48066 exists with the correct actor type",
+      "passed": true
+    },
+    {
+      "check": "Carrier 48066 has a dry original upper recovery anchor",
+      "passed": true
+    },
+    {
+      "check": "Carrier 48067 exists with the correct actor type",
+      "passed": true
+    },
+    {
+      "check": "Carrier 48067 has a dry original upper recovery anchor",
+      "passed": true
+    },
+    {
+      "check": "Carrier 48068 exists with the correct actor type",
+      "passed": true
+    },
+    {
+      "check": "Carrier 48068 has a dry original upper recovery anchor",
+      "passed": true
+    },
+    {
+      "check": "Carrier 48069 exists with the correct actor type",
+      "passed": true
+    },
+    {
+      "check": "Carrier 48069 has a dry original upper recovery anchor",
+      "passed": true
+    },
+    {
+      "check": "Carrier 48070 exists with the correct actor type",
+      "passed": true
+    },
+    {
+      "check": "Carrier 48070 has a dry original upper recovery anchor",
+      "passed": true
+    },
+    {
+      "check": "Carrier 48071 exists with the correct actor type",
+      "passed": true
+    },
+    {
+      "check": "Carrier 48071 has a dry original upper recovery anchor",
+      "passed": true
+    },
+    {
+      "check": "Carrier 48072 exists with the correct actor type",
+      "passed": true
+    },
+    {
+      "check": "Carrier 48072 has a dry original upper recovery anchor",
+      "passed": true
+    },
+    {
+      "check": "Carrier 48073 exists with the correct actor type",
+      "passed": true
+    },
+    {
+      "check": "Carrier 48073 has a dry original upper recovery anchor",
+      "passed": true
+    },
+    {
+      "check": "Carrier 48074 exists with the correct actor type",
+      "passed": true
+    },
+    {
+      "check": "Carrier 48074 has a dry original upper recovery anchor",
+      "passed": true
+    },
+    {
+      "check": "Carrier 48075 exists with the correct actor type",
+      "passed": true
+    },
+    {
+      "check": "Carrier 48075 has a dry original upper recovery anchor",
+      "passed": true
+    },
+    {
+      "check": "Carrier 47038 exists with the correct actor type",
+      "passed": true
+    },
+    {
+      "check": "Carrier 47038 has a dry original upper recovery anchor",
+      "passed": true
+    },
+    {
+      "check": "Carrier 48076 exists with the correct actor type",
+      "passed": true
+    },
+    {
+      "check": "Carrier 48076 has a dry original upper recovery anchor",
+      "passed": true
+    },
+    {
+      "check": "Carrier 48077 exists with the correct actor type",
+      "passed": true
+    },
+    {
+      "check": "Carrier 48077 has a dry original upper recovery anchor",
+      "passed": true
+    },
+    {
+      "check": "Carrier 48078 exists with the correct actor type",
+      "passed": true
+    },
+    {
+      "check": "Carrier 48078 has a dry original upper recovery anchor",
+      "passed": true
+    },
+    {
+      "check": "Carrier 48079 exists with the correct actor type",
+      "passed": true
+    },
+    {
+      "check": "Carrier 48079 has a dry original upper recovery anchor",
+      "passed": true
+    },
+    {
+      "check": "Carrier 48080 exists with the correct actor type",
+      "passed": true
+    },
+    {
+      "check": "Carrier 48080 has a dry original upper recovery anchor",
+      "passed": true
+    },
+    {
+      "check": "Carrier 48081 exists with the correct actor type",
+      "passed": true
+    },
+    {
+      "check": "Carrier 48081 has a dry original upper recovery anchor",
+      "passed": true
+    },
+    {
+      "check": "Carrier 48082 exists with the correct actor type",
+      "passed": true
+    },
+    {
+      "check": "Carrier 48082 has a dry original upper recovery anchor",
+      "passed": true
+    },
+    {
+      "check": "Carrier 48083 exists with the correct actor type",
+      "passed": true
+    },
+    {
+      "check": "Carrier 48083 has a dry original upper recovery anchor",
+      "passed": true
+    },
+    {
+      "check": "Carrier 48084 exists with the correct actor type",
+      "passed": true
+    },
+    {
+      "check": "Carrier 48084 has a dry original upper recovery anchor",
+      "passed": true
+    },
+    {
+      "check": "Carrier 48085 exists with the correct actor type",
+      "passed": true
+    },
+    {
+      "check": "Carrier 48085 has a dry original upper recovery anchor",
+      "passed": true
+    },
+    {
+      "check": "Carrier 47043 exists with the correct actor type",
+      "passed": true
+    },
+    {
+      "check": "Carrier 47043 has a dry original upper recovery anchor",
+      "passed": true
+    },
+    {
+      "check": "Carrier 48086 exists with the correct actor type",
+      "passed": true
+    },
+    {
+      "check": "Carrier 48086 has a dry original upper recovery anchor",
+      "passed": true
+    },
+    {
+      "check": "Carrier 48087 exists with the correct actor type",
+      "passed": true
+    },
+    {
+      "check": "Carrier 48087 has a dry original upper recovery anchor",
+      "passed": true
+    },
+    {
+      "check": "Carrier 48088 exists with the correct actor type",
+      "passed": true
+    },
+    {
+      "check": "Carrier 48088 has a dry original upper recovery anchor",
+      "passed": true
+    },
+    {
+      "check": "Carrier 48089 exists with the correct actor type",
+      "passed": true
+    },
+    {
+      "check": "Carrier 48089 has a dry original upper recovery anchor",
+      "passed": true
+    },
+    {
+      "check": "Carrier 48090 exists with the correct actor type",
+      "passed": true
+    },
+    {
+      "check": "Carrier 48090 has a dry original upper recovery anchor",
+      "passed": true
+    },
+    {
+      "check": "Carrier 48091 exists with the correct actor type",
+      "passed": true
+    },
+    {
+      "check": "Carrier 48091 has a dry original upper recovery anchor",
+      "passed": true
+    },
+    {
+      "check": "Carrier 48092 exists with the correct actor type",
+      "passed": true
+    },
+    {
+      "check": "Carrier 48092 has a dry original upper recovery anchor",
+      "passed": true
+    },
+    {
+      "check": "Carrier 48093 exists with the correct actor type",
+      "passed": true
+    },
+    {
+      "check": "Carrier 48093 has a dry original upper recovery anchor",
+      "passed": true
+    },
+    {
+      "check": "Carrier 48094 exists with the correct actor type",
+      "passed": true
+    },
+    {
+      "check": "Carrier 48094 has a dry original upper recovery anchor",
+      "passed": true
+    },
+    {
+      "check": "Carrier 48095 exists with the correct actor type",
+      "passed": true
+    },
+    {
+      "check": "Carrier 48095 has a dry original upper recovery anchor",
+      "passed": true
+    },
+    {
+      "check": "Carrier 47048 exists with the correct actor type",
+      "passed": true
+    },
+    {
+      "check": "Carrier 47048 has a dry original upper recovery anchor",
+      "passed": true
+    },
+    {
+      "check": "Carrier 48096 exists with the correct actor type",
+      "passed": true
+    },
+    {
+      "check": "Carrier 48096 has a dry original upper recovery anchor",
+      "passed": true
+    },
+    {
+      "check": "Carrier 48097 exists with the correct actor type",
+      "passed": true
+    },
+    {
+      "check": "Carrier 48097 has a dry original upper recovery anchor",
+      "passed": true
+    },
+    {
+      "check": "Carrier 47049 exists with the correct actor type",
+      "passed": true
+    },
+    {
+      "check": "Carrier 47049 has a dry original upper recovery anchor",
+      "passed": true
+    },
+    {
+      "check": "Carrier 48098 exists with the correct actor type",
+      "passed": true
+    },
+    {
+      "check": "Carrier 48098 has a dry original upper recovery anchor",
+      "passed": true
+    },
+    {
+      "check": "Carrier 48099 exists with the correct actor type",
+      "passed": true
+    },
+    {
+      "check": "Carrier 48099 has a dry original upper recovery anchor",
+      "passed": true
+    },
+    {
+      "check": "Carrier 47050 exists with the correct actor type",
+      "passed": true
+    },
+    {
+      "check": "Carrier 47050 has a dry original upper recovery anchor",
+      "passed": true
+    },
+    {
+      "check": "Carrier 48100 exists with the correct actor type",
+      "passed": true
+    },
+    {
+      "check": "Carrier 48100 has a dry original upper recovery anchor",
+      "passed": true
+    },
+    {
+      "check": "Carrier 48101 exists with the correct actor type",
+      "passed": true
+    },
+    {
+      "check": "Carrier 48101 has a dry original upper recovery anchor",
+      "passed": true
+    },
+    {
+      "check": "Carrier 47051 exists with the correct actor type",
+      "passed": true
+    },
+    {
+      "check": "Carrier 47051 has a dry original upper recovery anchor",
+      "passed": true
+    },
+    {
+      "check": "Carrier 48102 exists with the correct actor type",
+      "passed": true
+    },
+    {
+      "check": "Carrier 48102 has a dry original upper recovery anchor",
+      "passed": true
+    },
+    {
+      "check": "Carrier 48103 exists with the correct actor type",
+      "passed": true
+    },
+    {
+      "check": "Carrier 48103 has a dry original upper recovery anchor",
+      "passed": true
+    },
+    {
+      "check": "Carrier 47052 exists with the correct actor type",
+      "passed": true
+    },
+    {
+      "check": "Carrier 47052 has a dry original upper recovery anchor",
+      "passed": true
+    },
+    {
+      "check": "Carrier 48104 exists with the correct actor type",
+      "passed": true
+    },
+    {
+      "check": "Carrier 48104 has a dry original upper recovery anchor",
+      "passed": true
+    },
+    {
+      "check": "Carrier 48105 exists with the correct actor type",
+      "passed": true
+    },
+    {
+      "check": "Carrier 48105 has a dry original upper recovery anchor",
+      "passed": true
+    },
+    {
+      "check": "Carrier 47053 exists with the correct actor type",
+      "passed": true
+    },
+    {
+      "check": "Carrier 47053 has a dry original upper recovery anchor",
+      "passed": true
+    },
+    {
+      "check": "Carrier 48106 exists with the correct actor type",
+      "passed": true
+    },
+    {
+      "check": "Carrier 48106 has a dry original upper recovery anchor",
+      "passed": true
+    },
+    {
+      "check": "Carrier 48107 exists with the correct actor type",
+      "passed": true
+    },
+    {
+      "check": "Carrier 48107 has a dry original upper recovery anchor",
+      "passed": true
+    },
+    {
+      "check": "Carrier 48108 exists with the correct actor type",
+      "passed": true
+    },
+    {
+      "check": "Carrier 48108 has a dry original upper recovery anchor",
+      "passed": true
+    },
+    {
+      "check": "Carrier 48109 exists with the correct actor type",
+      "passed": true
+    },
+    {
+      "check": "Carrier 48109 has a dry original upper recovery anchor",
+      "passed": true
+    },
+    {
+      "check": "Carrier 48110 exists with the correct actor type",
+      "passed": true
+    },
+    {
+      "check": "Carrier 48110 has a dry original upper recovery anchor",
+      "passed": true
+    },
+    {
+      "check": "Carrier 48111 exists with the correct actor type",
+      "passed": true
+    },
+    {
+      "check": "Carrier 48111 has a dry original upper recovery anchor",
+      "passed": true
+    },
+    {
+      "check": "Carrier 48112 exists with the correct actor type",
+      "passed": true
+    },
+    {
+      "check": "Carrier 48112 has a dry original upper recovery anchor",
+      "passed": true
+    },
+    {
+      "check": "Carrier 48113 exists with the correct actor type",
+      "passed": true
+    },
+    {
+      "check": "Carrier 48113 has a dry original upper recovery anchor",
+      "passed": true
+    },
+    {
+      "check": "Carrier 48114 exists with the correct actor type",
+      "passed": true
+    },
+    {
+      "check": "Carrier 48114 has a dry original upper recovery anchor",
+      "passed": true
+    },
+    {
+      "check": "Carrier 48115 exists with the correct actor type",
+      "passed": true
+    },
+    {
+      "check": "Carrier 48115 has a dry original upper recovery anchor",
+      "passed": true
+    },
+    {
+      "check": "Carrier 48116 exists with the correct actor type",
+      "passed": true
+    },
+    {
+      "check": "Carrier 48116 has a dry original upper recovery anchor",
+      "passed": true
+    },
+    {
+      "check": "Carrier 48117 exists with the correct actor type",
+      "passed": true
+    },
+    {
+      "check": "Carrier 48117 has a dry original upper recovery anchor",
+      "passed": true
+    },
+    {
+      "check": "Carrier 48118 exists with the correct actor type",
+      "passed": true
+    },
+    {
+      "check": "Carrier 48118 has a dry original upper recovery anchor",
+      "passed": true
+    },
+    {
+      "check": "Carrier 48119 exists with the correct actor type",
+      "passed": true
+    },
+    {
+      "check": "Carrier 48119 has a dry original upper recovery anchor",
+      "passed": true
+    },
+    {
+      "check": "Carrier 48120 exists with the correct actor type",
+      "passed": true
+    },
+    {
+      "check": "Carrier 48120 has a dry original upper recovery anchor",
+      "passed": true
+    },
+    {
+      "check": "Carrier 48121 exists with the correct actor type",
+      "passed": true
+    },
+    {
+      "check": "Carrier 48121 has a dry original upper recovery anchor",
+      "passed": true
+    },
+    {
+      "check": "Carrier 48122 exists with the correct actor type",
+      "passed": true
+    },
+    {
+      "check": "Carrier 48122 has a dry original upper recovery anchor",
+      "passed": true
+    },
+    {
+      "check": "Carrier 48123 exists with the correct actor type",
+      "passed": true
+    },
+    {
+      "check": "Carrier 48123 has a dry original upper recovery anchor",
+      "passed": true
+    },
+    {
+      "check": "Carrier 47062 exists with the correct actor type",
+      "passed": true
+    },
+    {
+      "check": "Carrier 47062 has a dry original upper recovery anchor",
+      "passed": true
+    },
+    {
+      "check": "Carrier 48124 exists with the correct actor type",
+      "passed": true
+    },
+    {
+      "check": "Carrier 48124 has a dry original upper recovery anchor",
+      "passed": true
+    },
+    {
+      "check": "Carrier 48125 exists with the correct actor type",
+      "passed": true
+    },
+    {
+      "check": "Carrier 48125 has a dry original upper recovery anchor",
+      "passed": true
+    },
+    {
+      "check": "Carrier 47063 exists with the correct actor type",
+      "passed": true
+    },
+    {
+      "check": "Carrier 47063 has a dry original upper recovery anchor",
+      "passed": true
+    },
+    {
+      "check": "Carrier 48126 exists with the correct actor type",
+      "passed": true
+    },
+    {
+      "check": "Carrier 48126 has a dry original upper recovery anchor",
+      "passed": true
+    },
+    {
+      "check": "Carrier 48127 exists with the correct actor type",
+      "passed": true
+    },
+    {
+      "check": "Carrier 48127 has a dry original upper recovery anchor",
+      "passed": true
+    },
+    {
+      "check": "Carrier 48128 exists with the correct actor type",
+      "passed": true
+    },
+    {
+      "check": "Carrier 48128 has a dry original upper recovery anchor",
+      "passed": true
+    },
+    {
+      "check": "Carrier 48129 exists with the correct actor type",
+      "passed": true
+    },
+    {
+      "check": "Carrier 48129 has a dry original upper recovery anchor",
+      "passed": true
+    },
+    {
+      "check": "Carrier 48130 exists with the correct actor type",
+      "passed": true
+    },
+    {
+      "check": "Carrier 48130 has a dry original upper recovery anchor",
+      "passed": true
+    },
+    {
+      "check": "Carrier 48131 exists with the correct actor type",
+      "passed": true
+    },
+    {
+      "check": "Carrier 48131 has a dry original upper recovery anchor",
+      "passed": true
+    },
+    {
+      "check": "Carrier 48132 exists with the correct actor type",
+      "passed": true
+    },
+    {
+      "check": "Carrier 48132 has a dry original upper recovery anchor",
+      "passed": true
+    },
+    {
+      "check": "Carrier 48133 exists with the correct actor type",
+      "passed": true
+    },
+    {
+      "check": "Carrier 48133 has a dry original upper recovery anchor",
+      "passed": true
+    },
+    {
+      "check": "Carrier 48134 exists with the correct actor type",
+      "passed": true
+    },
+    {
+      "check": "Carrier 48134 has a dry original upper recovery anchor",
+      "passed": true
+    },
+    {
+      "check": "Carrier 48135 exists with the correct actor type",
+      "passed": true
+    },
+    {
+      "check": "Carrier 48135 has a dry original upper recovery anchor",
+      "passed": true
+    },
+    {
+      "check": "Carrier 48136 exists with the correct actor type",
+      "passed": true
+    },
+    {
+      "check": "Carrier 48136 has a dry original upper recovery anchor",
+      "passed": true
+    },
+    {
+      "check": "Carrier 48137 exists with the correct actor type",
+      "passed": true
+    },
+    {
+      "check": "Carrier 48137 has a dry original upper recovery anchor",
+      "passed": true
+    },
+    {
+      "check": "Carrier 48138 exists with the correct actor type",
+      "passed": true
+    },
+    {
+      "check": "Carrier 48138 has a dry original upper recovery anchor",
+      "passed": true
+    },
+    {
+      "check": "Carrier 48139 exists with the correct actor type",
+      "passed": true
+    },
+    {
+      "check": "Carrier 48139 has a dry original upper recovery anchor",
+      "passed": true
+    },
+    {
+      "check": "Carrier 48140 exists with the correct actor type",
+      "passed": true
+    },
+    {
+      "check": "Carrier 48140 has a dry original upper recovery anchor",
+      "passed": true
+    },
+    {
+      "check": "Carrier 48141 exists with the correct actor type",
+      "passed": true
+    },
+    {
+      "check": "Carrier 48141 has a dry original upper recovery anchor",
+      "passed": true
+    },
+    {
+      "check": "Carrier 48142 exists with the correct actor type",
+      "passed": true
+    },
+    {
+      "check": "Carrier 48142 has a dry original upper recovery anchor",
+      "passed": true
+    },
+    {
+      "check": "Carrier 48143 exists with the correct actor type",
+      "passed": true
+    },
+    {
+      "check": "Carrier 48143 has a dry original upper recovery anchor",
+      "passed": true
+    },
+    {
+      "check": "Carrier 47072 exists with the correct actor type",
+      "passed": true
+    },
+    {
+      "check": "Carrier 47072 has a dry original upper recovery anchor",
+      "passed": true
+    },
+    {
+      "check": "Carrier 48144 exists with the correct actor type",
+      "passed": true
+    },
+    {
+      "check": "Carrier 48144 has a dry original upper recovery anchor",
+      "passed": true
+    },
+    {
+      "check": "Carrier 48145 exists with the correct actor type",
+      "passed": true
+    },
+    {
+      "check": "Carrier 48145 has a dry original upper recovery anchor",
+      "passed": true
+    },
+    {
+      "check": "Carrier 47073 exists with the correct actor type",
+      "passed": true
+    },
+    {
+      "check": "Carrier 47073 has a dry original upper recovery anchor",
+      "passed": true
+    },
+    {
+      "check": "Carrier 48146 exists with the correct actor type",
+      "passed": true
+    },
+    {
+      "check": "Carrier 48146 has a dry original upper recovery anchor",
+      "passed": true
+    },
+    {
+      "check": "Carrier 48147 exists with the correct actor type",
+      "passed": true
+    },
+    {
+      "check": "Carrier 48147 has a dry original upper recovery anchor",
+      "passed": true
+    },
+    {
+      "check": "Carrier 47074 exists with the correct actor type",
+      "passed": true
+    },
+    {
+      "check": "Carrier 47074 has a dry original upper recovery anchor",
+      "passed": true
+    },
+    {
+      "check": "Carrier 48148 exists with the correct actor type",
+      "passed": true
+    },
+    {
+      "check": "Carrier 48148 has a dry original upper recovery anchor",
+      "passed": true
+    },
+    {
+      "check": "Carrier 48149 exists with the correct actor type",
+      "passed": true
+    },
+    {
+      "check": "Carrier 48149 has a dry original upper recovery anchor",
+      "passed": true
+    },
+    {
+      "check": "Carrier 47075 exists with the correct actor type",
+      "passed": true
+    },
+    {
+      "check": "Carrier 47075 has a dry original upper recovery anchor",
+      "passed": true
+    },
+    {
+      "check": "Carrier 48150 exists with the correct actor type",
+      "passed": true
+    },
+    {
+      "check": "Carrier 48150 has a dry original upper recovery anchor",
+      "passed": true
+    },
+    {
+      "check": "Carrier 48151 exists with the correct actor type",
+      "passed": true
+    },
+    {
+      "check": "Carrier 48151 has a dry original upper recovery anchor",
+      "passed": true
+    },
+    {
+      "check": "Carrier 47076 exists with the correct actor type",
+      "passed": true
+    },
+    {
+      "check": "Carrier 47076 has a dry original upper recovery anchor",
+      "passed": true
+    },
+    {
+      "check": "Carrier 48152 exists with the correct actor type",
+      "passed": true
+    },
+    {
+      "check": "Carrier 48152 has a dry original upper recovery anchor",
+      "passed": true
+    },
+    {
+      "check": "Carrier 48153 exists with the correct actor type",
+      "passed": true
+    },
+    {
+      "check": "Carrier 48153 has a dry original upper recovery anchor",
+      "passed": true
+    },
+    {
+      "check": "Carrier 47077 exists with the correct actor type",
+      "passed": true
+    },
+    {
+      "check": "Carrier 47077 has a dry original upper recovery anchor",
+      "passed": true
+    },
+    {
+      "check": "Carrier 48154 exists with the correct actor type",
+      "passed": true
+    },
+    {
+      "check": "Carrier 48154 has a dry original upper recovery anchor",
+      "passed": true
+    },
+    {
+      "check": "Carrier 48155 exists with the correct actor type",
+      "passed": true
+    },
+    {
+      "check": "Carrier 48155 has a dry original upper recovery anchor",
+      "passed": true
+    },
+    {
+      "check": "Carrier 48156 exists with the correct actor type",
+      "passed": true
+    },
+    {
+      "check": "Carrier 48156 has a dry original upper recovery anchor",
+      "passed": true
+    },
+    {
+      "check": "Carrier 48157 exists with the correct actor type",
+      "passed": true
+    },
+    {
+      "check": "Carrier 48157 has a dry original upper recovery anchor",
+      "passed": true
+    },
+    {
+      "check": "Carrier 48158 exists with the correct actor type",
+      "passed": true
+    },
+    {
+      "check": "Carrier 48158 has a dry original upper recovery anchor",
+      "passed": true
+    },
+    {
+      "check": "Carrier 48159 exists with the correct actor type",
+      "passed": true
+    },
+    {
+      "check": "Carrier 48159 has a dry original upper recovery anchor",
+      "passed": true
+    },
+    {
+      "check": "Carrier 48160 exists with the correct actor type",
+      "passed": true
+    },
+    {
+      "check": "Carrier 48160 has a dry original upper recovery anchor",
+      "passed": true
+    },
+    {
+      "check": "Carrier 48161 exists with the correct actor type",
+      "passed": true
+    },
+    {
+      "check": "Carrier 48161 has a dry original upper recovery anchor",
+      "passed": true
+    },
+    {
+      "check": "Carrier 48162 exists with the correct actor type",
+      "passed": true
+    },
+    {
+      "check": "Carrier 48162 has a dry original upper recovery anchor",
+      "passed": true
+    },
+    {
+      "check": "Carrier 48163 exists with the correct actor type",
+      "passed": true
+    },
+    {
+      "check": "Carrier 48163 has a dry original upper recovery anchor",
+      "passed": true
+    },
+    {
+      "check": "Carrier 48164 exists with the correct actor type",
+      "passed": true
+    },
+    {
+      "check": "Carrier 48164 has a dry original upper recovery anchor",
+      "passed": true
+    },
+    {
+      "check": "Carrier 48165 exists with the correct actor type",
+      "passed": true
+    },
+    {
+      "check": "Carrier 48165 has a dry original upper recovery anchor",
+      "passed": true
+    },
+    {
+      "check": "Carrier 48166 exists with the correct actor type",
+      "passed": true
+    },
+    {
+      "check": "Carrier 48166 has a dry original upper recovery anchor",
+      "passed": true
+    },
+    {
+      "check": "Carrier 48167 exists with the correct actor type",
+      "passed": true
+    },
+    {
+      "check": "Carrier 48167 has a dry original upper recovery anchor",
+      "passed": true
+    },
+    {
+      "check": "Carrier 48168 exists with the correct actor type",
+      "passed": true
+    },
+    {
+      "check": "Carrier 48168 has a dry original upper recovery anchor",
+      "passed": true
+    },
+    {
+      "check": "Carrier 48169 exists with the correct actor type",
+      "passed": true
+    },
+    {
+      "check": "Carrier 48169 has a dry original upper recovery anchor",
+      "passed": true
+    },
+    {
+      "check": "Carrier 48170 exists with the correct actor type",
+      "passed": true
+    },
+    {
+      "check": "Carrier 48170 has a dry original upper recovery anchor",
+      "passed": true
+    },
+    {
+      "check": "Carrier 48171 exists with the correct actor type",
+      "passed": true
+    },
+    {
+      "check": "Carrier 48171 has a dry original upper recovery anchor",
+      "passed": true
+    },
+    {
+      "check": "Carrier 47086 exists with the correct actor type",
+      "passed": true
+    },
+    {
+      "check": "Carrier 47086 has a dry original upper recovery anchor",
+      "passed": true
+    },
+    {
+      "check": "Carrier 48172 exists with the correct actor type",
+      "passed": true
+    },
+    {
+      "check": "Carrier 48172 has a dry original upper recovery anchor",
+      "passed": true
+    },
+    {
+      "check": "Carrier 48173 exists with the correct actor type",
+      "passed": true
+    },
+    {
+      "check": "Carrier 48173 has a dry original upper recovery anchor",
+      "passed": true
+    },
+    {
+      "check": "Carrier 47087 exists with the correct actor type",
+      "passed": true
+    },
+    {
+      "check": "Carrier 47087 has a dry original upper recovery anchor",
+      "passed": true
+    },
+    {
+      "check": "Carrier 48174 exists with the correct actor type",
+      "passed": true
+    },
+    {
+      "check": "Carrier 48174 has a dry original upper recovery anchor",
+      "passed": true
+    },
+    {
+      "check": "Carrier 48175 exists with the correct actor type",
+      "passed": true
+    },
+    {
+      "check": "Carrier 48175 has a dry original upper recovery anchor",
+      "passed": true
+    },
+    {
+      "check": "Carrier 48176 exists with the correct actor type",
+      "passed": true
+    },
+    {
+      "check": "Carrier 48176 has a dry original upper recovery anchor",
+      "passed": true
+    },
+    {
+      "check": "Carrier 48177 exists with the correct actor type",
+      "passed": true
+    },
+    {
+      "check": "Carrier 48177 has a dry original upper recovery anchor",
+      "passed": true
+    },
+    {
+      "check": "Carrier 48178 exists with the correct actor type",
+      "passed": true
+    },
+    {
+      "check": "Carrier 48178 has a dry original upper recovery anchor",
+      "passed": true
+    },
+    {
+      "check": "Carrier 48179 exists with the correct actor type",
+      "passed": true
+    },
+    {
+      "check": "Carrier 48179 has a dry original upper recovery anchor",
+      "passed": true
+    },
+    {
+      "check": "Carrier 48180 exists with the correct actor type",
+      "passed": true
+    },
+    {
+      "check": "Carrier 48180 has a dry original upper recovery anchor",
+      "passed": true
+    },
+    {
+      "check": "Carrier 48181 exists with the correct actor type",
+      "passed": true
+    },
+    {
+      "check": "Carrier 48181 has a dry original upper recovery anchor",
+      "passed": true
+    },
+    {
+      "check": "Carrier 48182 exists with the correct actor type",
+      "passed": true
+    },
+    {
+      "check": "Carrier 48182 has a dry original upper recovery anchor",
+      "passed": true
+    },
+    {
+      "check": "Carrier 48183 exists with the correct actor type",
+      "passed": true
+    },
+    {
+      "check": "Carrier 48183 has a dry original upper recovery anchor",
+      "passed": true
+    },
+    {
+      "check": "Carrier 48184 exists with the correct actor type",
+      "passed": true
+    },
+    {
+      "check": "Carrier 48184 has a dry original upper recovery anchor",
+      "passed": true
+    },
+    {
+      "check": "Carrier 48185 exists with the correct actor type",
+      "passed": true
+    },
+    {
+      "check": "Carrier 48185 has a dry original upper recovery anchor",
+      "passed": true
+    },
+    {
+      "check": "Carrier 48186 exists with the correct actor type",
+      "passed": true
+    },
+    {
+      "check": "Carrier 48186 has a dry original upper recovery anchor",
+      "passed": true
+    },
+    {
+      "check": "Carrier 48187 exists with the correct actor type",
+      "passed": true
+    },
+    {
+      "check": "Carrier 48187 has a dry original upper recovery anchor",
+      "passed": true
+    },
+    {
+      "check": "Carrier 48188 exists with the correct actor type",
+      "passed": true
+    },
+    {
+      "check": "Carrier 48188 has a dry original upper recovery anchor",
+      "passed": true
+    },
+    {
+      "check": "Carrier 48189 exists with the correct actor type",
+      "passed": true
+    },
+    {
+      "check": "Carrier 48189 has a dry original upper recovery anchor",
+      "passed": true
+    },
+    {
+      "check": "Carrier 48190 exists with the correct actor type",
+      "passed": true
+    },
+    {
+      "check": "Carrier 48190 has a dry original upper recovery anchor",
+      "passed": true
+    },
+    {
+      "check": "Carrier 48191 exists with the correct actor type",
+      "passed": true
+    },
+    {
+      "check": "Carrier 48191 has a dry original upper recovery anchor",
+      "passed": true
+    },
+    {
+      "check": "Exact finite supply: CaelumArrowAmmo = 240",
+      "passed": true
+    },
+    {
+      "check": "Exact finite supply: CaelumBoltAmmo = 120",
+      "passed": true
+    },
+    {
+      "check": "Exact finite supply: CaelumCarbineAmmo = 120",
+      "passed": true
+    },
+    {
+      "check": "Exact finite supply: CaelumFoodRation = 96",
+      "passed": true
+    },
+    {
+      "check": "Exact finite supply: CaelumWaterRation = 96",
+      "passed": true
+    },
+    {
+      "check": "Only the 224 authorized death objects, all with positive quantities",
+      "passed": true
+    },
+    {
+      "check": "Exactly the eight established keys, once each",
+      "passed": true
+    },
+    {
+      "check": "Block 0: 48 rats each supply exactly one ration",
+      "passed": true
+    },
+    {
+      "check": "Block 0: both local keys belong to Mandingas outside their cells",
+      "passed": true
+    },
+    {
+      "check": "Block 1: 48 rats each supply exactly one ration",
+      "passed": true
+    },
+    {
+      "check": "Block 1: both local keys belong to Mandingas outside their cells",
+      "passed": true
+    },
+    {
+      "check": "Block 2: 48 rats each supply exactly one ration",
+      "passed": true
+    },
+    {
+      "check": "Block 2: both local keys belong to Mandingas outside their cells",
+      "passed": true
+    },
+    {
+      "check": "Block 3: 48 rats each supply exactly one ration",
+      "passed": true
+    },
+    {
+      "check": "Block 3: both local keys belong to Mandingas outside their cells",
+      "passed": true
+    },
+    {
+      "check": "24 single-type ammunition stacks, each of the authorized 20 units",
+      "passed": true
+    },
+    {
+      "check": "Equipment 0 has all five positive basic-material budgets",
+      "passed": true
+    },
+    {
+      "check": "Equipment 39 has all five positive basic-material budgets",
+      "passed": true
+    },
+    {
+      "check": "Equipment 1 has all five positive basic-material budgets",
+      "passed": true
+    },
+    {
+      "check": "Equipment 40 has all five positive basic-material budgets",
+      "passed": true
+    },
+    {
+      "check": "Equipment 2 has all five positive basic-material budgets",
+      "passed": true
+    },
+    {
+      "check": "Equipment 41 has all five positive basic-material budgets",
+      "passed": true
+    },
+    {
+      "check": "Equipment 3 has all five positive basic-material budgets",
+      "passed": true
+    },
+    {
+      "check": "Equipment 42 has all five positive basic-material budgets",
+      "passed": true
+    },
+    {
+      "check": "Equipment 4 has all five positive basic-material budgets",
+      "passed": true
+    },
+    {
+      "check": "Equipment 43 has all five positive basic-material budgets",
+      "passed": true
+    },
+    {
+      "check": "Equipment 5 has all five positive basic-material budgets",
+      "passed": true
+    },
+    {
+      "check": "Equipment 44 has all five positive basic-material budgets",
+      "passed": true
+    },
+    {
+      "check": "Equipment 6 has all five positive basic-material budgets",
+      "passed": true
+    },
+    {
+      "check": "Equipment 45 has all five positive basic-material budgets",
+      "passed": true
+    },
+    {
+      "check": "Equipment 7 has all five positive basic-material budgets",
+      "passed": true
+    },
+    {
+      "check": "Equipment 46 has all five positive basic-material budgets",
+      "passed": true
+    },
+    {
+      "check": "Equipment 8 has all five positive basic-material budgets",
+      "passed": true
+    },
+    {
+      "check": "Equipment 47 has all five positive basic-material budgets",
+      "passed": true
+    },
+    {
+      "check": "Equipment 9 has all five positive basic-material budgets",
+      "passed": true
+    },
+    {
+      "check": "Equipment 48 has all five positive basic-material budgets",
+      "passed": true
+    },
+    {
+      "check": "Equipment 10 has all five positive basic-material budgets",
+      "passed": true
+    },
+    {
+      "check": "Equipment 49 has all five positive basic-material budgets",
+      "passed": true
+    },
+    {
+      "check": "Equipment 11 has all five positive basic-material budgets",
+      "passed": true
+    },
+    {
+      "check": "Equipment 50 has all five positive basic-material budgets",
+      "passed": true
+    },
+    {
+      "check": "Equipment 12 has all five positive basic-material budgets",
+      "passed": true
+    },
+    {
+      "check": "Equipment 51 has all five positive basic-material budgets",
+      "passed": true
+    },
+    {
+      "check": "Equipment 13 has all five positive basic-material budgets",
+      "passed": true
+    },
+    {
+      "check": "Equipment 52 has all five positive basic-material budgets",
+      "passed": true
+    },
+    {
+      "check": "Equipment 14 has all five positive basic-material budgets",
+      "passed": true
+    },
+    {
+      "check": "Equipment 53 has all five positive basic-material budgets",
+      "passed": true
+    },
+    {
+      "check": "Equipment 15 has all five positive basic-material budgets",
+      "passed": true
+    },
+    {
+      "check": "Equipment 54 has all five positive basic-material budgets",
+      "passed": true
+    },
+    {
+      "check": "Equipment 16 has all five positive basic-material budgets",
+      "passed": true
+    },
+    {
+      "check": "Equipment 55 has all five positive basic-material budgets",
+      "passed": true
+    },
+    {
+      "check": "Equipment 17 has all five positive basic-material budgets",
+      "passed": true
+    },
+    {
+      "check": "Equipment 56 has all five positive basic-material budgets",
+      "passed": true
+    },
+    {
+      "check": "Equipment 18 has all five positive basic-material budgets",
+      "passed": true
+    },
+    {
+      "check": "Equipment 57 has all five positive basic-material budgets",
+      "passed": true
+    },
+    {
+      "check": "Equipment 19 has all five positive basic-material budgets",
+      "passed": true
+    },
+    {
+      "check": "Equipment 58 has all five positive basic-material budgets",
+      "passed": true
+    },
+    {
+      "check": "Equipment 20 has all five positive basic-material budgets",
+      "passed": true
+    },
+    {
+      "check": "Equipment 59 has all five positive basic-material budgets",
+      "passed": true
+    },
+    {
+      "check": "Equipment 21 has all five positive basic-material budgets",
+      "passed": true
+    },
+    {
+      "check": "Equipment 60 has all five positive basic-material budgets",
+      "passed": true
+    },
+    {
+      "check": "Equipment 22 has all five positive basic-material budgets",
+      "passed": true
+    },
+    {
+      "check": "Equipment 61 has all five positive basic-material budgets",
+      "passed": true
+    },
+    {
+      "check": "Equipment 23 has all five positive basic-material budgets",
+      "passed": true
+    },
+    {
+      "check": "Equipment 62 has all five positive basic-material budgets",
+      "passed": true
+    },
+    {
+      "check": "Equipment 24 has all five positive basic-material budgets",
+      "passed": true
+    },
+    {
+      "check": "Equipment 63 has all five positive basic-material budgets",
+      "passed": true
+    },
+    {
+      "check": "Equipment 25 has all five positive basic-material budgets",
+      "passed": true
+    },
+    {
+      "check": "Equipment 64 has all five positive basic-material budgets",
+      "passed": true
+    },
+    {
+      "check": "Equipment 26 has all five positive basic-material budgets",
+      "passed": true
+    },
+    {
+      "check": "Equipment 27 has all five positive basic-material budgets",
+      "passed": true
+    },
+    {
+      "check": "Equipment 28 has all five positive basic-material budgets",
+      "passed": true
+    },
+    {
+      "check": "Equipment 29 has all five positive basic-material budgets",
+      "passed": true
+    },
+    {
+      "check": "Equipment 30 has all five positive basic-material budgets",
+      "passed": true
+    },
+    {
+      "check": "Equipment 31 has all five positive basic-material budgets",
+      "passed": true
+    },
+    {
+      "check": "Equipment 32 has all five positive basic-material budgets",
+      "passed": true
+    },
+    {
+      "check": "Equipment 33 has all five positive basic-material budgets",
+      "passed": true
+    },
+    {
+      "check": "Equipment 34 has all five positive basic-material budgets",
+      "passed": true
+    },
+    {
+      "check": "Equipment 35 has all five positive basic-material budgets",
+      "passed": true
+    },
+    {
+      "check": "Equipment 36 has all five positive basic-material budgets",
+      "passed": true
+    },
+    {
+      "check": "Equipment 37 has all five positive basic-material budgets",
+      "passed": true
+    },
+    {
+      "check": "Equipment 38 has all five positive basic-material budgets",
+      "passed": true
+    },
+    {
+      "check": "Per-instance budgets sum exactly to the accepted aggregate ledger",
+      "passed": true
+    },
+    {
+      "check": "Native completion covers all 325 item/size combinations without failures",
+      "passed": true
+    },
+    {
+      "check": "Native run reports exactly 325 allocated budgets",
+      "passed": true
+    },
+    {
+      "check": "Native inputs match accepted equipment 0 size 0",
+      "passed": true
+    },
+    {
+      "check": "Native inputs match accepted equipment 0 size 1",
+      "passed": true
+    },
+    {
+      "check": "Native inputs match accepted equipment 0 size 2",
+      "passed": true
+    },
+    {
+      "check": "Native inputs match accepted equipment 0 size 3",
+      "passed": true
+    },
+    {
+      "check": "Native inputs match accepted equipment 0 size 4",
+      "passed": true
+    },
+    {
+      "check": "Native inputs match accepted equipment 39 size 0",
+      "passed": true
+    },
+    {
+      "check": "Native inputs match accepted equipment 39 size 1",
+      "passed": true
+    },
+    {
+      "check": "Native inputs match accepted equipment 39 size 2",
+      "passed": true
+    },
+    {
+      "check": "Native inputs match accepted equipment 39 size 3",
+      "passed": true
+    },
+    {
+      "check": "Native inputs match accepted equipment 39 size 4",
+      "passed": true
+    },
+    {
+      "check": "Native inputs match accepted equipment 1 size 0",
+      "passed": true
+    },
+    {
+      "check": "Native inputs match accepted equipment 1 size 1",
+      "passed": true
+    },
+    {
+      "check": "Native inputs match accepted equipment 1 size 2",
+      "passed": true
+    },
+    {
+      "check": "Native inputs match accepted equipment 1 size 3",
+      "passed": true
+    },
+    {
+      "check": "Native inputs match accepted equipment 1 size 4",
+      "passed": true
+    },
+    {
+      "check": "Native inputs match accepted equipment 40 size 0",
+      "passed": true
+    },
+    {
+      "check": "Native inputs match accepted equipment 40 size 1",
+      "passed": true
+    },
+    {
+      "check": "Native inputs match accepted equipment 40 size 2",
+      "passed": true
+    },
+    {
+      "check": "Native inputs match accepted equipment 40 size 3",
+      "passed": true
+    },
+    {
+      "check": "Native inputs match accepted equipment 40 size 4",
+      "passed": true
+    },
+    {
+      "check": "Native inputs match accepted equipment 2 size 0",
+      "passed": true
+    },
+    {
+      "check": "Native inputs match accepted equipment 2 size 1",
+      "passed": true
+    },
+    {
+      "check": "Native inputs match accepted equipment 2 size 2",
+      "passed": true
+    },
+    {
+      "check": "Native inputs match accepted equipment 2 size 3",
+      "passed": true
+    },
+    {
+      "check": "Native inputs match accepted equipment 2 size 4",
+      "passed": true
+    },
+    {
+      "check": "Native inputs match accepted equipment 41 size 0",
+      "passed": true
+    },
+    {
+      "check": "Native inputs match accepted equipment 41 size 1",
+      "passed": true
+    },
+    {
+      "check": "Native inputs match accepted equipment 41 size 2",
+      "passed": true
+    },
+    {
+      "check": "Native inputs match accepted equipment 41 size 3",
+      "passed": true
+    },
+    {
+      "check": "Native inputs match accepted equipment 41 size 4",
+      "passed": true
+    },
+    {
+      "check": "Native inputs match accepted equipment 3 size 0",
+      "passed": true
+    },
+    {
+      "check": "Native inputs match accepted equipment 3 size 1",
+      "passed": true
+    },
+    {
+      "check": "Native inputs match accepted equipment 3 size 2",
+      "passed": true
+    },
+    {
+      "check": "Native inputs match accepted equipment 3 size 3",
+      "passed": true
+    },
+    {
+      "check": "Native inputs match accepted equipment 3 size 4",
+      "passed": true
+    },
+    {
+      "check": "Native inputs match accepted equipment 42 size 0",
+      "passed": true
+    },
+    {
+      "check": "Native inputs match accepted equipment 42 size 1",
+      "passed": true
+    },
+    {
+      "check": "Native inputs match accepted equipment 42 size 2",
+      "passed": true
+    },
+    {
+      "check": "Native inputs match accepted equipment 42 size 3",
+      "passed": true
+    },
+    {
+      "check": "Native inputs match accepted equipment 42 size 4",
+      "passed": true
+    },
+    {
+      "check": "Native inputs match accepted equipment 4 size 0",
+      "passed": true
+    },
+    {
+      "check": "Native inputs match accepted equipment 4 size 1",
+      "passed": true
+    },
+    {
+      "check": "Native inputs match accepted equipment 4 size 2",
+      "passed": true
+    },
+    {
+      "check": "Native inputs match accepted equipment 4 size 3",
+      "passed": true
+    },
+    {
+      "check": "Native inputs match accepted equipment 4 size 4",
+      "passed": true
+    },
+    {
+      "check": "Native inputs match accepted equipment 43 size 0",
+      "passed": true
+    },
+    {
+      "check": "Native inputs match accepted equipment 43 size 1",
+      "passed": true
+    },
+    {
+      "check": "Native inputs match accepted equipment 43 size 2",
+      "passed": true
+    },
+    {
+      "check": "Native inputs match accepted equipment 43 size 3",
+      "passed": true
+    },
+    {
+      "check": "Native inputs match accepted equipment 43 size 4",
+      "passed": true
+    },
+    {
+      "check": "Native inputs match accepted equipment 5 size 0",
+      "passed": true
+    },
+    {
+      "check": "Native inputs match accepted equipment 5 size 1",
+      "passed": true
+    },
+    {
+      "check": "Native inputs match accepted equipment 5 size 2",
+      "passed": true
+    },
+    {
+      "check": "Native inputs match accepted equipment 5 size 3",
+      "passed": true
+    },
+    {
+      "check": "Native inputs match accepted equipment 5 size 4",
+      "passed": true
+    },
+    {
+      "check": "Native inputs match accepted equipment 44 size 0",
+      "passed": true
+    },
+    {
+      "check": "Native inputs match accepted equipment 44 size 1",
+      "passed": true
+    },
+    {
+      "check": "Native inputs match accepted equipment 44 size 2",
+      "passed": true
+    },
+    {
+      "check": "Native inputs match accepted equipment 44 size 3",
+      "passed": true
+    },
+    {
+      "check": "Native inputs match accepted equipment 44 size 4",
+      "passed": true
+    },
+    {
+      "check": "Native inputs match accepted equipment 6 size 0",
+      "passed": true
+    },
+    {
+      "check": "Native inputs match accepted equipment 6 size 1",
+      "passed": true
+    },
+    {
+      "check": "Native inputs match accepted equipment 6 size 2",
+      "passed": true
+    },
+    {
+      "check": "Native inputs match accepted equipment 6 size 3",
+      "passed": true
+    },
+    {
+      "check": "Native inputs match accepted equipment 6 size 4",
+      "passed": true
+    },
+    {
+      "check": "Native inputs match accepted equipment 45 size 0",
+      "passed": true
+    },
+    {
+      "check": "Native inputs match accepted equipment 45 size 1",
+      "passed": true
+    },
+    {
+      "check": "Native inputs match accepted equipment 45 size 2",
+      "passed": true
+    },
+    {
+      "check": "Native inputs match accepted equipment 45 size 3",
+      "passed": true
+    },
+    {
+      "check": "Native inputs match accepted equipment 45 size 4",
+      "passed": true
+    },
+    {
+      "check": "Native inputs match accepted equipment 7 size 0",
+      "passed": true
+    },
+    {
+      "check": "Native inputs match accepted equipment 7 size 1",
+      "passed": true
+    },
+    {
+      "check": "Native inputs match accepted equipment 7 size 2",
+      "passed": true
+    },
+    {
+      "check": "Native inputs match accepted equipment 7 size 3",
+      "passed": true
+    },
+    {
+      "check": "Native inputs match accepted equipment 7 size 4",
+      "passed": true
+    },
+    {
+      "check": "Native inputs match accepted equipment 46 size 0",
+      "passed": true
+    },
+    {
+      "check": "Native inputs match accepted equipment 46 size 1",
+      "passed": true
+    },
+    {
+      "check": "Native inputs match accepted equipment 46 size 2",
+      "passed": true
+    },
+    {
+      "check": "Native inputs match accepted equipment 46 size 3",
+      "passed": true
+    },
+    {
+      "check": "Native inputs match accepted equipment 46 size 4",
+      "passed": true
+    },
+    {
+      "check": "Native inputs match accepted equipment 8 size 0",
+      "passed": true
+    },
+    {
+      "check": "Native inputs match accepted equipment 8 size 1",
+      "passed": true
+    },
+    {
+      "check": "Native inputs match accepted equipment 8 size 2",
+      "passed": true
+    },
+    {
+      "check": "Native inputs match accepted equipment 8 size 3",
+      "passed": true
+    },
+    {
+      "check": "Native inputs match accepted equipment 8 size 4",
+      "passed": true
+    },
+    {
+      "check": "Native inputs match accepted equipment 47 size 0",
+      "passed": true
+    },
+    {
+      "check": "Native inputs match accepted equipment 47 size 1",
+      "passed": true
+    },
+    {
+      "check": "Native inputs match accepted equipment 47 size 2",
+      "passed": true
+    },
+    {
+      "check": "Native inputs match accepted equipment 47 size 3",
+      "passed": true
+    },
+    {
+      "check": "Native inputs match accepted equipment 47 size 4",
+      "passed": true
+    },
+    {
+      "check": "Native inputs match accepted equipment 9 size 0",
+      "passed": true
+    },
+    {
+      "check": "Native inputs match accepted equipment 9 size 1",
+      "passed": true
+    },
+    {
+      "check": "Native inputs match accepted equipment 9 size 2",
+      "passed": true
+    },
+    {
+      "check": "Native inputs match accepted equipment 9 size 3",
+      "passed": true
+    },
+    {
+      "check": "Native inputs match accepted equipment 9 size 4",
+      "passed": true
+    },
+    {
+      "check": "Native inputs match accepted equipment 48 size 0",
+      "passed": true
+    },
+    {
+      "check": "Native inputs match accepted equipment 48 size 1",
+      "passed": true
+    },
+    {
+      "check": "Native inputs match accepted equipment 48 size 2",
+      "passed": true
+    },
+    {
+      "check": "Native inputs match accepted equipment 48 size 3",
+      "passed": true
+    },
+    {
+      "check": "Native inputs match accepted equipment 48 size 4",
+      "passed": true
+    },
+    {
+      "check": "Native inputs match accepted equipment 10 size 0",
+      "passed": true
+    },
+    {
+      "check": "Native inputs match accepted equipment 10 size 1",
+      "passed": true
+    },
+    {
+      "check": "Native inputs match accepted equipment 10 size 2",
+      "passed": true
+    },
+    {
+      "check": "Native inputs match accepted equipment 10 size 3",
+      "passed": true
+    },
+    {
+      "check": "Native inputs match accepted equipment 10 size 4",
+      "passed": true
+    },
+    {
+      "check": "Native inputs match accepted equipment 49 size 0",
+      "passed": true
+    },
+    {
+      "check": "Native inputs match accepted equipment 49 size 1",
+      "passed": true
+    },
+    {
+      "check": "Native inputs match accepted equipment 49 size 2",
+      "passed": true
+    },
+    {
+      "check": "Native inputs match accepted equipment 49 size 3",
+      "passed": true
+    },
+    {
+      "check": "Native inputs match accepted equipment 49 size 4",
+      "passed": true
+    },
+    {
+      "check": "Native inputs match accepted equipment 11 size 0",
+      "passed": true
+    },
+    {
+      "check": "Native inputs match accepted equipment 11 size 1",
+      "passed": true
+    },
+    {
+      "check": "Native inputs match accepted equipment 11 size 2",
+      "passed": true
+    },
+    {
+      "check": "Native inputs match accepted equipment 11 size 3",
+      "passed": true
+    },
+    {
+      "check": "Native inputs match accepted equipment 11 size 4",
+      "passed": true
+    },
+    {
+      "check": "Native inputs match accepted equipment 50 size 0",
+      "passed": true
+    },
+    {
+      "check": "Native inputs match accepted equipment 50 size 1",
+      "passed": true
+    },
+    {
+      "check": "Native inputs match accepted equipment 50 size 2",
+      "passed": true
+    },
+    {
+      "check": "Native inputs match accepted equipment 50 size 3",
+      "passed": true
+    },
+    {
+      "check": "Native inputs match accepted equipment 50 size 4",
+      "passed": true
+    },
+    {
+      "check": "Native inputs match accepted equipment 12 size 0",
+      "passed": true
+    },
+    {
+      "check": "Native inputs match accepted equipment 12 size 1",
+      "passed": true
+    },
+    {
+      "check": "Native inputs match accepted equipment 12 size 2",
+      "passed": true
+    },
+    {
+      "check": "Native inputs match accepted equipment 12 size 3",
+      "passed": true
+    },
+    {
+      "check": "Native inputs match accepted equipment 12 size 4",
+      "passed": true
+    },
+    {
+      "check": "Native inputs match accepted equipment 51 size 0",
+      "passed": true
+    },
+    {
+      "check": "Native inputs match accepted equipment 51 size 1",
+      "passed": true
+    },
+    {
+      "check": "Native inputs match accepted equipment 51 size 2",
+      "passed": true
+    },
+    {
+      "check": "Native inputs match accepted equipment 51 size 3",
+      "passed": true
+    },
+    {
+      "check": "Native inputs match accepted equipment 51 size 4",
+      "passed": true
+    },
+    {
+      "check": "Native inputs match accepted equipment 13 size 0",
+      "passed": true
+    },
+    {
+      "check": "Native inputs match accepted equipment 13 size 1",
+      "passed": true
+    },
+    {
+      "check": "Native inputs match accepted equipment 13 size 2",
+      "passed": true
+    },
+    {
+      "check": "Native inputs match accepted equipment 13 size 3",
+      "passed": true
+    },
+    {
+      "check": "Native inputs match accepted equipment 13 size 4",
+      "passed": true
+    },
+    {
+      "check": "Native inputs match accepted equipment 52 size 0",
+      "passed": true
+    },
+    {
+      "check": "Native inputs match accepted equipment 52 size 1",
+      "passed": true
+    },
+    {
+      "check": "Native inputs match accepted equipment 52 size 2",
+      "passed": true
+    },
+    {
+      "check": "Native inputs match accepted equipment 52 size 3",
+      "passed": true
+    },
+    {
+      "check": "Native inputs match accepted equipment 52 size 4",
+      "passed": true
+    },
+    {
+      "check": "Native inputs match accepted equipment 14 size 0",
+      "passed": true
+    },
+    {
+      "check": "Native inputs match accepted equipment 14 size 1",
+      "passed": true
+    },
+    {
+      "check": "Native inputs match accepted equipment 14 size 2",
+      "passed": true
+    },
+    {
+      "check": "Native inputs match accepted equipment 14 size 3",
+      "passed": true
+    },
+    {
+      "check": "Native inputs match accepted equipment 14 size 4",
+      "passed": true
+    },
+    {
+      "check": "Native inputs match accepted equipment 53 size 0",
+      "passed": true
+    },
+    {
+      "check": "Native inputs match accepted equipment 53 size 1",
+      "passed": true
+    },
+    {
+      "check": "Native inputs match accepted equipment 53 size 2",
+      "passed": true
+    },
+    {
+      "check": "Native inputs match accepted equipment 53 size 3",
+      "passed": true
+    },
+    {
+      "check": "Native inputs match accepted equipment 53 size 4",
+      "passed": true
+    },
+    {
+      "check": "Native inputs match accepted equipment 15 size 0",
+      "passed": true
+    },
+    {
+      "check": "Native inputs match accepted equipment 15 size 1",
+      "passed": true
+    },
+    {
+      "check": "Native inputs match accepted equipment 15 size 2",
+      "passed": true
+    },
+    {
+      "check": "Native inputs match accepted equipment 15 size 3",
+      "passed": true
+    },
+    {
+      "check": "Native inputs match accepted equipment 15 size 4",
+      "passed": true
+    },
+    {
+      "check": "Native inputs match accepted equipment 54 size 0",
+      "passed": true
+    },
+    {
+      "check": "Native inputs match accepted equipment 54 size 1",
+      "passed": true
+    },
+    {
+      "check": "Native inputs match accepted equipment 54 size 2",
+      "passed": true
+    },
+    {
+      "check": "Native inputs match accepted equipment 54 size 3",
+      "passed": true
+    },
+    {
+      "check": "Native inputs match accepted equipment 54 size 4",
+      "passed": true
+    },
+    {
+      "check": "Native inputs match accepted equipment 16 size 0",
+      "passed": true
+    },
+    {
+      "check": "Native inputs match accepted equipment 16 size 1",
+      "passed": true
+    },
+    {
+      "check": "Native inputs match accepted equipment 16 size 2",
+      "passed": true
+    },
+    {
+      "check": "Native inputs match accepted equipment 16 size 3",
+      "passed": true
+    },
+    {
+      "check": "Native inputs match accepted equipment 16 size 4",
+      "passed": true
+    },
+    {
+      "check": "Native inputs match accepted equipment 55 size 0",
+      "passed": true
+    },
+    {
+      "check": "Native inputs match accepted equipment 55 size 1",
+      "passed": true
+    },
+    {
+      "check": "Native inputs match accepted equipment 55 size 2",
+      "passed": true
+    },
+    {
+      "check": "Native inputs match accepted equipment 55 size 3",
+      "passed": true
+    },
+    {
+      "check": "Native inputs match accepted equipment 55 size 4",
+      "passed": true
+    },
+    {
+      "check": "Native inputs match accepted equipment 17 size 0",
+      "passed": true
+    },
+    {
+      "check": "Native inputs match accepted equipment 17 size 1",
+      "passed": true
+    },
+    {
+      "check": "Native inputs match accepted equipment 17 size 2",
+      "passed": true
+    },
+    {
+      "check": "Native inputs match accepted equipment 17 size 3",
+      "passed": true
+    },
+    {
+      "check": "Native inputs match accepted equipment 17 size 4",
+      "passed": true
+    },
+    {
+      "check": "Native inputs match accepted equipment 56 size 0",
+      "passed": true
+    },
+    {
+      "check": "Native inputs match accepted equipment 56 size 1",
+      "passed": true
+    },
+    {
+      "check": "Native inputs match accepted equipment 56 size 2",
+      "passed": true
+    },
+    {
+      "check": "Native inputs match accepted equipment 56 size 3",
+      "passed": true
+    },
+    {
+      "check": "Native inputs match accepted equipment 56 size 4",
+      "passed": true
+    },
+    {
+      "check": "Native inputs match accepted equipment 18 size 0",
+      "passed": true
+    },
+    {
+      "check": "Native inputs match accepted equipment 18 size 1",
+      "passed": true
+    },
+    {
+      "check": "Native inputs match accepted equipment 18 size 2",
+      "passed": true
+    },
+    {
+      "check": "Native inputs match accepted equipment 18 size 3",
+      "passed": true
+    },
+    {
+      "check": "Native inputs match accepted equipment 18 size 4",
+      "passed": true
+    },
+    {
+      "check": "Native inputs match accepted equipment 57 size 0",
+      "passed": true
+    },
+    {
+      "check": "Native inputs match accepted equipment 57 size 1",
+      "passed": true
+    },
+    {
+      "check": "Native inputs match accepted equipment 57 size 2",
+      "passed": true
+    },
+    {
+      "check": "Native inputs match accepted equipment 57 size 3",
+      "passed": true
+    },
+    {
+      "check": "Native inputs match accepted equipment 57 size 4",
+      "passed": true
+    },
+    {
+      "check": "Native inputs match accepted equipment 19 size 0",
+      "passed": true
+    },
+    {
+      "check": "Native inputs match accepted equipment 19 size 1",
+      "passed": true
+    },
+    {
+      "check": "Native inputs match accepted equipment 19 size 2",
+      "passed": true
+    },
+    {
+      "check": "Native inputs match accepted equipment 19 size 3",
+      "passed": true
+    },
+    {
+      "check": "Native inputs match accepted equipment 19 size 4",
+      "passed": true
+    },
+    {
+      "check": "Native inputs match accepted equipment 58 size 0",
+      "passed": true
+    },
+    {
+      "check": "Native inputs match accepted equipment 58 size 1",
+      "passed": true
+    },
+    {
+      "check": "Native inputs match accepted equipment 58 size 2",
+      "passed": true
+    },
+    {
+      "check": "Native inputs match accepted equipment 58 size 3",
+      "passed": true
+    },
+    {
+      "check": "Native inputs match accepted equipment 58 size 4",
+      "passed": true
+    },
+    {
+      "check": "Native inputs match accepted equipment 20 size 0",
+      "passed": true
+    },
+    {
+      "check": "Native inputs match accepted equipment 20 size 1",
+      "passed": true
+    },
+    {
+      "check": "Native inputs match accepted equipment 20 size 2",
+      "passed": true
+    },
+    {
+      "check": "Native inputs match accepted equipment 20 size 3",
+      "passed": true
+    },
+    {
+      "check": "Native inputs match accepted equipment 20 size 4",
+      "passed": true
+    },
+    {
+      "check": "Native inputs match accepted equipment 59 size 0",
+      "passed": true
+    },
+    {
+      "check": "Native inputs match accepted equipment 59 size 1",
+      "passed": true
+    },
+    {
+      "check": "Native inputs match accepted equipment 59 size 2",
+      "passed": true
+    },
+    {
+      "check": "Native inputs match accepted equipment 59 size 3",
+      "passed": true
+    },
+    {
+      "check": "Native inputs match accepted equipment 59 size 4",
+      "passed": true
+    },
+    {
+      "check": "Native inputs match accepted equipment 21 size 0",
+      "passed": true
+    },
+    {
+      "check": "Native inputs match accepted equipment 21 size 1",
+      "passed": true
+    },
+    {
+      "check": "Native inputs match accepted equipment 21 size 2",
+      "passed": true
+    },
+    {
+      "check": "Native inputs match accepted equipment 21 size 3",
+      "passed": true
+    },
+    {
+      "check": "Native inputs match accepted equipment 21 size 4",
+      "passed": true
+    },
+    {
+      "check": "Native inputs match accepted equipment 60 size 0",
+      "passed": true
+    },
+    {
+      "check": "Native inputs match accepted equipment 60 size 1",
+      "passed": true
+    },
+    {
+      "check": "Native inputs match accepted equipment 60 size 2",
+      "passed": true
+    },
+    {
+      "check": "Native inputs match accepted equipment 60 size 3",
+      "passed": true
+    },
+    {
+      "check": "Native inputs match accepted equipment 60 size 4",
+      "passed": true
+    },
+    {
+      "check": "Native inputs match accepted equipment 22 size 0",
+      "passed": true
+    },
+    {
+      "check": "Native inputs match accepted equipment 22 size 1",
+      "passed": true
+    },
+    {
+      "check": "Native inputs match accepted equipment 22 size 2",
+      "passed": true
+    },
+    {
+      "check": "Native inputs match accepted equipment 22 size 3",
+      "passed": true
+    },
+    {
+      "check": "Native inputs match accepted equipment 22 size 4",
+      "passed": true
+    },
+    {
+      "check": "Native inputs match accepted equipment 61 size 0",
+      "passed": true
+    },
+    {
+      "check": "Native inputs match accepted equipment 61 size 1",
+      "passed": true
+    },
+    {
+      "check": "Native inputs match accepted equipment 61 size 2",
+      "passed": true
+    },
+    {
+      "check": "Native inputs match accepted equipment 61 size 3",
+      "passed": true
+    },
+    {
+      "check": "Native inputs match accepted equipment 61 size 4",
+      "passed": true
+    },
+    {
+      "check": "Native inputs match accepted equipment 23 size 0",
+      "passed": true
+    },
+    {
+      "check": "Native inputs match accepted equipment 23 size 1",
+      "passed": true
+    },
+    {
+      "check": "Native inputs match accepted equipment 23 size 2",
+      "passed": true
+    },
+    {
+      "check": "Native inputs match accepted equipment 23 size 3",
+      "passed": true
+    },
+    {
+      "check": "Native inputs match accepted equipment 23 size 4",
+      "passed": true
+    },
+    {
+      "check": "Native inputs match accepted equipment 62 size 0",
+      "passed": true
+    },
+    {
+      "check": "Native inputs match accepted equipment 62 size 1",
+      "passed": true
+    },
+    {
+      "check": "Native inputs match accepted equipment 62 size 2",
+      "passed": true
+    },
+    {
+      "check": "Native inputs match accepted equipment 62 size 3",
+      "passed": true
+    },
+    {
+      "check": "Native inputs match accepted equipment 62 size 4",
+      "passed": true
+    },
+    {
+      "check": "Native inputs match accepted equipment 24 size 0",
+      "passed": true
+    },
+    {
+      "check": "Native inputs match accepted equipment 24 size 1",
+      "passed": true
+    },
+    {
+      "check": "Native inputs match accepted equipment 24 size 2",
+      "passed": true
+    },
+    {
+      "check": "Native inputs match accepted equipment 24 size 3",
+      "passed": true
+    },
+    {
+      "check": "Native inputs match accepted equipment 24 size 4",
+      "passed": true
+    },
+    {
+      "check": "Native inputs match accepted equipment 63 size 0",
+      "passed": true
+    },
+    {
+      "check": "Native inputs match accepted equipment 63 size 1",
+      "passed": true
+    },
+    {
+      "check": "Native inputs match accepted equipment 63 size 2",
+      "passed": true
+    },
+    {
+      "check": "Native inputs match accepted equipment 63 size 3",
+      "passed": true
+    },
+    {
+      "check": "Native inputs match accepted equipment 63 size 4",
+      "passed": true
+    },
+    {
+      "check": "Native inputs match accepted equipment 25 size 0",
+      "passed": true
+    },
+    {
+      "check": "Native inputs match accepted equipment 25 size 1",
+      "passed": true
+    },
+    {
+      "check": "Native inputs match accepted equipment 25 size 2",
+      "passed": true
+    },
+    {
+      "check": "Native inputs match accepted equipment 25 size 3",
+      "passed": true
+    },
+    {
+      "check": "Native inputs match accepted equipment 25 size 4",
+      "passed": true
+    },
+    {
+      "check": "Native inputs match accepted equipment 64 size 0",
+      "passed": true
+    },
+    {
+      "check": "Native inputs match accepted equipment 64 size 1",
+      "passed": true
+    },
+    {
+      "check": "Native inputs match accepted equipment 64 size 2",
+      "passed": true
+    },
+    {
+      "check": "Native inputs match accepted equipment 64 size 3",
+      "passed": true
+    },
+    {
+      "check": "Native inputs match accepted equipment 64 size 4",
+      "passed": true
+    },
+    {
+      "check": "Native inputs match accepted equipment 26 size 0",
+      "passed": true
+    },
+    {
+      "check": "Native inputs match accepted equipment 26 size 1",
+      "passed": true
+    },
+    {
+      "check": "Native inputs match accepted equipment 26 size 2",
+      "passed": true
+    },
+    {
+      "check": "Native inputs match accepted equipment 26 size 3",
+      "passed": true
+    },
+    {
+      "check": "Native inputs match accepted equipment 26 size 4",
+      "passed": true
+    },
+    {
+      "check": "Native inputs match accepted equipment 27 size 0",
+      "passed": true
+    },
+    {
+      "check": "Native inputs match accepted equipment 27 size 1",
+      "passed": true
+    },
+    {
+      "check": "Native inputs match accepted equipment 27 size 2",
+      "passed": true
+    },
+    {
+      "check": "Native inputs match accepted equipment 27 size 3",
+      "passed": true
+    },
+    {
+      "check": "Native inputs match accepted equipment 27 size 4",
+      "passed": true
+    },
+    {
+      "check": "Native inputs match accepted equipment 28 size 0",
+      "passed": true
+    },
+    {
+      "check": "Native inputs match accepted equipment 28 size 1",
+      "passed": true
+    },
+    {
+      "check": "Native inputs match accepted equipment 28 size 2",
+      "passed": true
+    },
+    {
+      "check": "Native inputs match accepted equipment 28 size 3",
+      "passed": true
+    },
+    {
+      "check": "Native inputs match accepted equipment 28 size 4",
+      "passed": true
+    },
+    {
+      "check": "Native inputs match accepted equipment 29 size 0",
+      "passed": true
+    },
+    {
+      "check": "Native inputs match accepted equipment 29 size 1",
+      "passed": true
+    },
+    {
+      "check": "Native inputs match accepted equipment 29 size 2",
+      "passed": true
+    },
+    {
+      "check": "Native inputs match accepted equipment 29 size 3",
+      "passed": true
+    },
+    {
+      "check": "Native inputs match accepted equipment 29 size 4",
+      "passed": true
+    },
+    {
+      "check": "Native inputs match accepted equipment 30 size 0",
+      "passed": true
+    },
+    {
+      "check": "Native inputs match accepted equipment 30 size 1",
+      "passed": true
+    },
+    {
+      "check": "Native inputs match accepted equipment 30 size 2",
+      "passed": true
+    },
+    {
+      "check": "Native inputs match accepted equipment 30 size 3",
+      "passed": true
+    },
+    {
+      "check": "Native inputs match accepted equipment 30 size 4",
+      "passed": true
+    },
+    {
+      "check": "Native inputs match accepted equipment 31 size 0",
+      "passed": true
+    },
+    {
+      "check": "Native inputs match accepted equipment 31 size 1",
+      "passed": true
+    },
+    {
+      "check": "Native inputs match accepted equipment 31 size 2",
+      "passed": true
+    },
+    {
+      "check": "Native inputs match accepted equipment 31 size 3",
+      "passed": true
+    },
+    {
+      "check": "Native inputs match accepted equipment 31 size 4",
+      "passed": true
+    },
+    {
+      "check": "Native inputs match accepted equipment 32 size 0",
+      "passed": true
+    },
+    {
+      "check": "Native inputs match accepted equipment 32 size 1",
+      "passed": true
+    },
+    {
+      "check": "Native inputs match accepted equipment 32 size 2",
+      "passed": true
+    },
+    {
+      "check": "Native inputs match accepted equipment 32 size 3",
+      "passed": true
+    },
+    {
+      "check": "Native inputs match accepted equipment 32 size 4",
+      "passed": true
+    },
+    {
+      "check": "Native inputs match accepted equipment 33 size 0",
+      "passed": true
+    },
+    {
+      "check": "Native inputs match accepted equipment 33 size 1",
+      "passed": true
+    },
+    {
+      "check": "Native inputs match accepted equipment 33 size 2",
+      "passed": true
+    },
+    {
+      "check": "Native inputs match accepted equipment 33 size 3",
+      "passed": true
+    },
+    {
+      "check": "Native inputs match accepted equipment 33 size 4",
+      "passed": true
+    },
+    {
+      "check": "Native inputs match accepted equipment 34 size 0",
+      "passed": true
+    },
+    {
+      "check": "Native inputs match accepted equipment 34 size 1",
+      "passed": true
+    },
+    {
+      "check": "Native inputs match accepted equipment 34 size 2",
+      "passed": true
+    },
+    {
+      "check": "Native inputs match accepted equipment 34 size 3",
+      "passed": true
+    },
+    {
+      "check": "Native inputs match accepted equipment 34 size 4",
+      "passed": true
+    },
+    {
+      "check": "Native inputs match accepted equipment 35 size 0",
+      "passed": true
+    },
+    {
+      "check": "Native inputs match accepted equipment 35 size 1",
+      "passed": true
+    },
+    {
+      "check": "Native inputs match accepted equipment 35 size 2",
+      "passed": true
+    },
+    {
+      "check": "Native inputs match accepted equipment 35 size 3",
+      "passed": true
+    },
+    {
+      "check": "Native inputs match accepted equipment 35 size 4",
+      "passed": true
+    },
+    {
+      "check": "Native inputs match accepted equipment 36 size 0",
+      "passed": true
+    },
+    {
+      "check": "Native inputs match accepted equipment 36 size 1",
+      "passed": true
+    },
+    {
+      "check": "Native inputs match accepted equipment 36 size 2",
+      "passed": true
+    },
+    {
+      "check": "Native inputs match accepted equipment 36 size 3",
+      "passed": true
+    },
+    {
+      "check": "Native inputs match accepted equipment 36 size 4",
+      "passed": true
+    },
+    {
+      "check": "Native inputs match accepted equipment 37 size 0",
+      "passed": true
+    },
+    {
+      "check": "Native inputs match accepted equipment 37 size 1",
+      "passed": true
+    },
+    {
+      "check": "Native inputs match accepted equipment 37 size 2",
+      "passed": true
+    },
+    {
+      "check": "Native inputs match accepted equipment 37 size 3",
+      "passed": true
+    },
+    {
+      "check": "Native inputs match accepted equipment 37 size 4",
+      "passed": true
+    },
+    {
+      "check": "Native inputs match accepted equipment 38 size 0",
+      "passed": true
+    },
+    {
+      "check": "Native inputs match accepted equipment 38 size 1",
+      "passed": true
+    },
+    {
+      "check": "Native inputs match accepted equipment 38 size 2",
+      "passed": true
+    },
+    {
+      "check": "Native inputs match accepted equipment 38 size 3",
+      "passed": true
+    },
+    {
+      "check": "Native inputs match accepted equipment 38 size 4",
+      "passed": true
+    },
+    {
+      "check": "Native keyed route and collection complete without failure",
+      "passed": true
+    },
+    {
+      "check": "Native persistence phase 0: 12 gates, 288 death guards and drained chest",
+      "passed": true
+    },
+    {
+      "check": "Native persistence phase 2: 12 gates, 288 death guards and drained chest",
+      "passed": true
+    }
+  ]
+}

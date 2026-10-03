@@ -1,14 +1,15 @@
 # CONTEXT.md — Ultra-condensed summary of Caelum Argenteum
 
-Documentation version: **4.37.7** — 2026-10-02.
+Documentation version: **4.37.8** — 2026-10-02.
 
-**4.37.7 / #74:** six flooded pit returns, four exterior-opened grates and a
-central elevator. Closed-block covers stay shut until normal entry opens.
-Author waived old saves; start fresh. Current persistence, sizes, keys and escort
-tested: assets/validation_4377. CA-MAP02-PIT-RETURN-01 accepted 2026-10-02; merge authorized.
+**4.37.8 / #75:** corrected the material ledger by catalogue ID: 63 instances,
+315 size rows; totals/runtime unchanged. Native crafting, supplies and persistence
+pass: assets/validation_4378. #75 accepted; merge authorized 2026-10-02.
 
-**Accepted #73 / 4.37.6:** cardinal blocks/local keys, #75 material chests and
-96/96 rat rations; retained stations and northern extraction/boss. Accepted 2026-10-02.
+**Accepted #73/#74:** cardinal blocks/local keys, 39 material chests, 96/96 rat
+rations; six flooded returns, four grates and central elevator. Closed-block
+covers unlock with normal entry. Stations/extraction/boss retained. Accepted
+2026-10-02; PRs #76/#83 merged. Old saves waived; start fresh.
 
 **Accepted #64/#65:** mansion tables refill vacant food/water slots at midnight,
 preserving deposited containers. Y adds timed destinations and automatic care;

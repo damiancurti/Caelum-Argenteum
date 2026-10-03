@@ -1,6 +1,13 @@
 CAELUM ARGENTEUM — STORY AND MAP01
 
-Documentation version: **4.37.7** — 2026-10-02.
+Documentation version: **4.37.8** — 2026-10-02.
+
+## 4.37.8 — MAP02 supplies audit (#75)
+
+Mansion departure, sewer gameplay and onward story remain unchanged.
+The material ledger is corrected by catalogue identity; SYSTEMS and
+assets/validation_4378 hold the contract and evidence. Existing knowledge,
+workshop and Box prerequisites remain; no extra tutorial grant is introduced.
 
 ## 4.37.7 — MAP02 flooded-return destination (#74)
 

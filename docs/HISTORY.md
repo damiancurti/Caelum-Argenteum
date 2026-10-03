@@ -1,6 +1,63 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **4.37.7** — 2026-10-02.
+Documentation version: **4.37.8** — 2026-10-02.
+
+## 4.37.8 — Correct MAP02 material ledger and verify finite supplies (#75)
+
+Author request: 2026-10-02, implement #75 with commit, push and necessary tests.
+Inspection of merged baseline a99f266e found gameplay already implemented and
+accepted with #73, including CA-MAP02-MATERIALS-DROPS-01 (origin 4.37.6 / #73 and
+#75, passed 2026-10-02 without exceptions). #74 preserved that contract.
+
+The new crosscheck exposed a report defect: recipe entry i was associated with
+manifest array position i, although the manifest is ordered by chest
+(0,39,1,40,...) rather than catalogue identity. Thus 63 of 65 instances, or 315
+of 325 item/size rows, showed another item's inputs. Original and current native
+inputs are identical and their aggregate is correct. The corrected ledger joins
+by catalogue_index, preserving the original report and checksum as provenance.
+No runtime stock, balance or geometry change is made. This corrects the earlier
+claim that the archived per-instance table was exact; its aggregate and native
+logs remain valid.
+
+Static/tooling: 866 WAD, assignment, identity, ledger and native-log checks pass;
+11 deliberately invalid variants are rejected, including the original positional
+join with unchanged totals. Two isolated generator runs reproduce the WAD,
+manifest, layout runtime and catalogue byte for byte. The normal build includes
+6,141 files. Gameplay matches a99f266e; only the two required diagnostic
+release labels advance to 4.37.8. Native behavioral evidence predates those
+text-only labels; final build/startup validates the labeled package.
+
+Native Windows 11 / GZDoom 4.14.2 / Vulkan / installed development Doom II:
+325 recipe completions consume exact per-item basics through production
+planning/reservation/consumption and create one item. Fixtures provide Box
+ownership, known recipes and station capabilities and skip elapsed task time.
+These are isolated completion checks, not new product grants or proof that all
+workshops exist in MAP02. The route completes 3,848 native collision steps,
+eight keys and twelve gates. Repeated deep-pit death callbacks release 240 arrows,
+120 bolts, 120 bullets and 96/96 rations once at dry anchors. Preview, capacity
+failure, partial collection and changed recipient profile conserve shared stock.
+Real save/load and a MAP03 round trip retain twelve open gates, 288 death guards
+and the emptied chest. Hostile AI and route hazards are isolated; the recipient
+case changes one player's profile rather than repeating multiplayer.
+
+Earlier fixture attempts are not successful evidence: reserved identifiers
+prevented the first recipe fixture compiling; omitted Box ownership correctly
+rejected output in the second; the first route fixture quit before the last hub
+observer. Each fixture defect was corrected and its affected run repeated.
+The first ledger comparison genuinely failed against the original report and
+identified the positional join. Final logs, corrected ledger and hashes are
+retained in assets/validation_4378; earlier reports remain preserved.
+
+The author's existing station approval and previous-save waiver still apply.
+Gameplay is unchanged, so accepted CA-MAP02-MATERIALS-DROPS-01 is not requeued;
+pending_test.txt remains empty.
+
+Author approval, 2026-10-02: Damián Curti confirmed the #75 delivery was correct,
+without reported exceptions, and explicitly requested PR #84 merge and issue
+#75 closure. This accepts the corrected 4.37.8 ledger and audit delivery while
+preserving the earlier CA-MAP02-MATERIALS-DROPS-01 acceptance (origin 4.37.6 /
+#73 and #75). No additional full-campaign test is inferred. This documentation
+update changes no runtime behavior and retains release 4.37.8.
 
 ## 4.37.7 — Six flooded pit returns and central elevator (#74)
 
