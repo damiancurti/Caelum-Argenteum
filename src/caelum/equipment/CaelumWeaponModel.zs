@@ -108,6 +108,12 @@ class CaelumWeaponModel : Object
             || weaponType == CaelumConstants.WEAPON_TYPE_CARBINE;
     }
 
+    double GetRangedRangeFor(int weaponType)
+    {
+        int id=CaelumCraftingRules.GetCatalogueWeaponForPlayableType(weaponType);
+        return CaelumWeaponCatalogue.GetPrimaryRange(id)*CaelumJourneyRules.MAP_UNITS_PER_METER;
+    }
+
     double GetRangedTierMultiplierFor(int tier)
     {
         if (tier <= 1) { return 1.0; }

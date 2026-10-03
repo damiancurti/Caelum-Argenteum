@@ -486,6 +486,7 @@ class CaelumCombatActor : Actor
     {
         CaelumCombatActor combatActor = CaelumCombatActor(self);
         if (combatActor == null) { return; }
+        if (combatActor.PulseResourceRecovery()) return;
         if (CaelumPortSiege.Pulse(combatActor)) return;
 
         // El primer miembro que ve al jugador publica el objetivo. Los demás
@@ -523,6 +524,7 @@ class CaelumCombatActor : Actor
     {
         CaelumCombatActor combatActor = CaelumCombatActor(self);
         if (combatActor == null) { return; }
+        if (combatActor.PulseResourceRecovery()) return;
         if (CaelumPortSiege.Pulse(combatActor)) return;
 
         // La prueba de escuadras separa decisión y combate de la consulta
@@ -849,6 +851,10 @@ class CaelumCombatActor : Actor
     }
 
     bool AttackResourceWaiting;
+    // Revisión 1: retirada por agotamiento y descanso hasta completar reservas.
+    int RecoveryRevision, RecoveryPhase;
+    Actor RecoveryThreat, RecoveryGoal;
+    double IdleHealthAccumulator;
     bool AttackResourceMagical;
     double AttackResourceBaseCost;
     int AttackResourceWeapon;
@@ -856,6 +862,102 @@ class CaelumCombatActor : Actor
     double WeaponCycleTics;
     int WeaponCyclePreparationTics;
     int WeaponCycleStartTic, WeaponCycleWindFrame;
+
+    void EnsureRecoveryRevision()
+    {
+        if(RecoveryRevision>=1)return;
+        RecoveryPhase=0;RecoveryThreat=null;RecoveryGoal=null;
+        IdleHealthAccumulator=0;RecoveryRevision=1;
+        // Una espera antigua conserva su coste y se evalúa sin regalar recursos.
+    }
+
+    bool WithinAttackRange(bool magical, double spawnHeight=-1)
+    {
+        if(target==null || target.health<=0 || !target.bShootable || RecoveryPhase!=0)return false;
+        if(!magical)return CheckMeleeRange();
+        vector3 origin=Pos+(0,0,spawnHeight>=0 ? spawnHeight : Height*0.65);
+        vector3 aim=target.Pos+(0,0,target.Height/2);
+        return (aim-origin).Length()<=GetCombatAbilityRange() && CheckSight(target);
+    }
+
+    double RecoveryThreatRange()
+    {
+        let opponent=CaelumCombatActor(RecoveryThreat);
+        if(opponent!=null)
+            return opponent.MissileState!=null ? Max(opponent.MeleeRange,
+                opponent is "CaelumBull" ? opponent.MaxTargetRange : opponent.GetCombatAbilityRange()) : opponent.MeleeRange;
+        let user=CaelumPlayer(RecoveryThreat);
+        if(user!=null && user.WeaponModel!=null && user.WeaponModel.Equipped)
+        {
+            let weapon=user.WeaponModel;
+            if(weapon.IsMagicalType(weapon.WeaponType))
+                return CaelumConstants.ESSENCE_BASE_RANGE_MAP_UNITS*(user.DerivedStats==null ? 1 : user.DerivedStats.AbilityRangePercent/100.0);
+            int id=CaelumCraftingRules.GetCatalogueWeaponForPlayableType(weapon.WeaponType);
+            if(weapon.IsRangedPhysicalType(weapon.WeaponType))
+                return weapon.GetRangedRangeFor(weapon.WeaponType);
+            return Max(CaelumWeaponCatalogue.GetPrimaryRange(id),CaelumWeaponCatalogue.GetSecondaryRange(id));
+        }
+        return RecoveryThreat==null ? 0 : RecoveryThreat.MeleeRange;
+    }
+
+    void EndResourceRecovery()
+    {
+        if(target==RecoveryGoal)target=RecoveryThreat;
+        RecoveryPhase=0;RecoveryThreat=null;AttackResourceWaiting=false;
+    }
+
+    bool ResourceRecoveryActive()
+    {
+        EnsureRecoveryRevision();
+        if(RecoveryPhase==0)return false;
+        State pain=FindState("Pain");
+        if(health<=0 || (pain!=null && InStateSequence(CurState,pain)))
+        {EndResourceRecovery();return false;}
+        let boss=CaelumZupayColossus(self);
+        if((SiegeCombatant!=null && SiegeCombatant.Withdrawing) || (boss!=null && boss.SewerFleeing))
+        {EndResourceRecovery();return false;}
+        return true;
+    }
+
+    bool PulseResourceRecovery()
+    {
+        if(!ResourceRecoveryActive())return false;
+        if(ForcedSleepTics>0 || CombatLucidityPhysicalStunRemaining>0)return true;
+        if(CurrentCombatAir>=MaximumCombatAir && CurrentCombatAnima>=MaximumCombatAnima)
+        {
+            EndResourceRecovery();SetStateLabel("AttackOutOfRange");return true;
+        }
+        if(RecoveryPhase==1)
+        {
+            double reach=RecoveryThreatRange()+Radius;
+            // La envolvente horizontal también cubre el alcance melee nativo:
+            // una diferencia de altura no debe acortar la retirada por sí sola.
+            if(RecoveryThreat==null || RecoveryThreat.health<=0 || Distance2D(RecoveryThreat)>reach)
+            {
+                RecoveryPhase=2;target=null;LastEnemy=null;Vel.X=0;Vel.Y=0;
+                SetState(SpawnState);return true;
+            }
+            vector2 away=Pos.XY-RecoveryThreat.Pos.XY;
+            if(away.Length()==0)away=(Cos(Angle),Sin(Angle));
+            vector3 destination=(RecoveryThreat.Pos.XY+away.Unit()*(reach+Speed),Pos.Z);
+            if(RecoveryGoal==null)RecoveryGoal=Spawn("CaelumSewerEscapeTarget",destination,NO_REPLACE);
+            else RecoveryGoal.SetOrigin(destination,false);
+            target=RecoveryGoal;LastEnemy=null;Vel.X=0;Vel.Y=0;
+            A_Chase(null,null,CHF_DONTLOOKALLAROUND);
+        }
+        else {target=null;LastEnemy=null;Vel.X=0;Vel.Y=0;}
+        return true;
+    }
+
+    bool IsCombatIdle()
+    {
+        if(health<=0 || CombatAirSpending || RecoveryPhase==1 || ForcedSleepTics>0)return false;
+        State pain=FindState("Pain");
+        if(pain!=null && InStateSequence(CurState,pain))return false;
+        if(MeleeState!=null && InStateSequence(CurState,MeleeState))return false;
+        if(MissileState!=null && InStateSequence(CurState,MissileState))return false;
+        return RecoveryPhase==2 || (target==null && Vel.XY.Length()<=0.01 && Abs(Vel.Z)<=0.01);
+    }
 
     virtual double GetAttackCarriedWeight()
     {
@@ -890,29 +992,36 @@ class CaelumCombatActor : Actor
     bool HasAttackResource()
     {
         if(AttackResourceWeapon>=0 && GetProfileWeaponDuration(AttackResourceWeapon)<=0)return false;
-        if(CaelumPortSiege.IgnoreAttackResourceLimits(self))return true;
         return AttackResourceMagical ? CurrentCombatAnima>=GetTierOneMagicAnimaCost(AttackResourceWeapon)
             : CurrentCombatAir>=GetEffectiveAttackAir(AttackResourceBaseCost);
     }
 
     void WaitForAttackResource()
     {
+        EnsureRecoveryRevision();
         AttackResourceWaiting=true;
         let bull=CaelumBull(self);
         if(bull!=null)bull.StopBullCharge();
         CombatAirSpending=false;
         Vel.X=0; Vel.Y=0;
-        SetState(SpawnState);
-        SetStateLabel("AttackResourceWait");
+        if(AttackResourceWeapon>=0 && GetProfileWeaponDuration(AttackResourceWeapon)<=0)
+        {SetStateLabel("AttackResourceWait");return;}
+        if(RecoveryPhase==0)
+        {
+            RecoveryThreat=target!=RecoveryGoal ? target : RecoveryThreat;
+            RecoveryPhase=1;
+        }
+        SetStateLabel("ResourceRetreat");
     }
 
     action void A_CaelumWaitAttackResource()
     {
         let actor=CaelumCombatActor(self);
         if(actor==null || actor.health<=0)return;
-        if(CaelumPortSiege.ResumePhysicalCombat(actor))return;
+        if(actor.PulseResourceRecovery())return;
         actor.Vel.X=0;actor.Vel.Y=0;
-        if(actor.ForcedSleepTics>0 || !actor.HasAttackResource())return;
+        if(actor.ForcedSleepTics>0)return;
+        if(!actor.HasAttackResource()){actor.WaitForAttackResource();return;}
         actor.AttackResourceWaiting=false;
         if(actor.Target==null || actor.Target.health<=0)actor.SetState(actor.SeeState);
         else actor.SetState(actor.AttackResourceResume);
@@ -923,6 +1032,8 @@ class CaelumCombatActor : Actor
     {
         let actor=CaelumCombatActor(self);
         if(actor==null)return;
+        if(!actor.WithinAttackRange(magical))
+        {actor.SetStateLabel("AttackOutOfRange");return;}
         actor.AttackResourceBaseCost=baseAir;
         actor.AttackResourceWeapon=weaponType;
         actor.AttackResourceMagical=magical;
@@ -984,7 +1095,7 @@ class CaelumCombatActor : Actor
     bool TrySpendCombatAir(double requestedAmount)
     {
         double amount = Max(0.0, requestedAmount);
-        if (CurrentCombatAir < amount && !CaelumPortSiege.IgnoreAttackResourceLimits(self)) { return false; }
+        if (CurrentCombatAir < amount) { return false; }
         CurrentCombatAir = Max(0.0, CurrentCombatAir - amount);
         return true;
     }
@@ -1020,7 +1131,7 @@ class CaelumCombatActor : Actor
     bool TrySpendTierOneMagicAnima(int weaponType)
     {
         double cost = Max(0.0, GetTierOneMagicAnimaCost(weaponType));
-        if (CurrentCombatAnima < cost && !CaelumPortSiege.IgnoreAttackResourceLimits(self)) { return false; }
+        if (CurrentCombatAnima < cost) { return false; }
         CurrentCombatAnima = Max(0.0, CurrentCombatAnima - cost);
         return true;
     }
@@ -1037,6 +1148,13 @@ class CaelumCombatActor : Actor
                 / 100.0
                 + 0.5
         ));
+    }
+
+    bool SpendBasicMagic(int weaponType=CaelumConstants.WEAPON_TYPE_STAFF)
+    {
+        if(TrySpendTierOneMagicAnima(weaponType))return true;
+        AttackResourceMagical=true;AttackResourceWeapon=weaponType;
+        AttackResourceResume=MissileState;WaitForAttackResource();return false;
     }
 
     double GetTierOneStatuetteExplosionRadius()
@@ -1205,7 +1323,8 @@ class CaelumCombatActor : Actor
         CaelumCombatActor combatActor = CaelumCombatActor(self);
         if (combatActor == null) { return; }
         if (!combatActor.BeginCaelumDiagnosticAttack()) { return; }
-        if (combatActor is "CaelumGiantRat" && !combatActor.SpendPhysicalAttackAir(CaelumAttackRules.NaturalAir())) return;
+        if (!combatActor.WithinAttackRange(false)) return;
+        if (!combatActor.SpendPhysicalAttackAir(CaelumAttackRules.NaturalAir())) return;
         if (combatActor.IsCaelumMassDiagnosticAlly(combatActor.Target))
         {
             combatActor.ImpactDiagnosticFriendlyFirePrevented++;
@@ -1241,6 +1360,7 @@ class CaelumCombatActor : Actor
         CaelumCombatActor combatActor = CaelumCombatActor(self);
         if (combatActor == null) { return; }
         if (!combatActor.BeginCaelumDiagnosticAttack()) { return; }
+        if (!combatActor.WithinAttackRange(false)) return;
         double cost=combatActor is "CaelumBull" ? CaelumAttackRules.NaturalAir() : CaelumWeaponCatalogue.GetPrimaryAirCost(CaelumConstants.CATALOGUE_WEAPON_MACHETE);
         if (!combatActor.SpendPhysicalAttackAir(cost)) return;
         if (combatActor.IsCaelumMassDiagnosticAlly(combatActor.Target))
@@ -1324,6 +1444,7 @@ class CaelumCombatActor : Actor
         CaelumCombatActor combatActor = CaelumCombatActor(self);
         if (combatActor == null) { return; }
         if (!combatActor.BeginCaelumDiagnosticAttack()) { return; }
+        if (!combatActor.WithinAttackRange(false)) return;
         if (!combatActor.SpendPhysicalAttackAir(CaelumAttackRules.SlamAir())) return;
 
         double strengthScaledDamage = Max(1.0,
@@ -1366,6 +1487,12 @@ class CaelumCombatActor : Actor
         CaelumCombatActor combatActor = CaelumCombatActor(self);
         if (combatActor == null) { return; }
         if (!combatActor.BeginCaelumDiagnosticAttack()) { return; }
+        if (!combatActor.WithinAttackRange(true,spawnHeight)) return;
+        if (magicalAttack)
+        {
+            if (!combatActor.SpendBasicMagic()) return;
+        }
+        else if (!combatActor.SpendPhysicalAttackAir(CaelumAttackRules.NaturalAir())) return;
         int calculatedDamage = combatActor.PrepareActorOutgoingDamage(
             baseDamage,
             magicalAttack
@@ -1377,6 +1504,7 @@ class CaelumCombatActor : Actor
         );
         if (missile != null)
         {
+            missile.ConfigureCaelumTravelDistance(combatActor.GetCombatAbilityRange());
             combatActor.ImpactDiagnosticProjectilesSpawned++;
             missile.StoreCaelumAttackResult(
                 calculatedDamage,
@@ -1407,6 +1535,7 @@ class CaelumCombatActor : Actor
         CaelumCombatActor combatActor = CaelumCombatActor(self);
         if (combatActor == null) { return; }
         if (!combatActor.BeginCaelumDiagnosticAttack()) { return; }
+        if (!combatActor.WithinAttackRange(true,spawnHeight) || !combatActor.SpendBasicMagic()) return;
         int calculatedDamage = combatActor.PrepareActorOutgoingDamage(
             baseDamage,
             true
@@ -1458,6 +1587,7 @@ class CaelumCombatActor : Actor
         CaelumCombatActor combatActor = CaelumCombatActor(self);
         if (combatActor == null) { return; }
         if (!combatActor.BeginCaelumDiagnosticAttack()) { return; }
+        if (!combatActor.WithinAttackRange(true,spawnHeight) || !combatActor.SpendBasicMagic(CaelumConstants.WEAPON_TYPE_STATUETTE)) return;
         int calculatedDamage = combatActor.PrepareActorOutgoingDamage(baseDamage, true);
         if (calculatedDamage <= 0) { return; }
 
@@ -1505,6 +1635,7 @@ class CaelumCombatActor : Actor
         CaelumCombatActor combatActor = CaelumCombatActor(self);
         if (combatActor == null) { return; }
         if (!combatActor.BeginCaelumDiagnosticAttack()) { return; }
+        if (!combatActor.WithinAttackRange(true,combatActor.Height*Max(0.0,spawnHeightRatio))) return;
         if (combatActor.IsCaelumMassDiagnosticAlly(combatActor.Target))
         {
             combatActor.ImpactDiagnosticFriendlyFirePrevented++;
@@ -3458,6 +3589,7 @@ class CaelumCombatActor : Actor
 
     override void Tick()
     {
+        ResourceRecoveryActive();
         // Los valores base quedan intactos: reconstruir evita restas acumuladas.
         if (ArmorBalanceRevision < 1 && CombatProfileInitialized)
         {
@@ -3557,12 +3689,20 @@ class CaelumCombatActor : Actor
 
         UpdateCombatHealthEffects();
         UpdateActorOffensiveStatistics();
+        double idleFactor=IsCombatIdle() ? CaelumRestRules.CHAIR_RESOURCE_FACTOR : 1;
+        if (idleFactor>1 && health>0 && health<CombatMaximumHealth)
+        {
+            IdleHealthAccumulator+=CombatMaximumHealth/CaelumConstants.HEALTH_BASE_RECOVERY_REAL_SECONDS
+                *CalculateActorType4Percent(CombatResilience)/100.0*idleFactor/TICRATE;
+            int recovered=int(IdleHealthAccumulator);
+            IdleHealthAccumulator-=recovered;health=Min(CombatMaximumHealth,health+recovered);
+        }
         if (health > 0 && CurrentCombatAnima < MaximumCombatAnima)
         {
             CurrentCombatAnima = Min(
                 MaximumCombatAnima,
                 CurrentCombatAnima
-                    + CombatAnimaRegenerationPerSecond / TICRATE
+                    + CombatAnimaRegenerationPerSecond * idleFactor / TICRATE
             );
         }
         if (health > 0 && !CombatAirSpending
@@ -3570,7 +3710,7 @@ class CaelumCombatActor : Actor
         {
             CurrentCombatAir = Min(
                 MaximumCombatAir,
-                CurrentCombatAir + CombatAirRegenerationPerSecond / TICRATE
+                CurrentCombatAir + CombatAirRegenerationPerSecond * idleFactor / TICRATE
             );
         }
         if (health > 0 && !sleeping
@@ -3619,5 +3759,30 @@ class CaelumCombatActor : Actor
     AttackResourceWait:
         "####" "#" 1 A_CaelumWaitAttackResource;
         Loop;
+    ResourceRetreat:
+        "####" "#" 4 A_CaelumRecoverResources;
+        Loop;
+    AttackOutOfRange:
+        "####" "#" 1;
+        "####" "#" 0 A_CaelumResumeCombat;
+        Wait;
+    }
+
+    action void A_CaelumRecoverResources()
+    {
+        let actor=CaelumCombatActor(self);
+        if(actor!=null)actor.PulseResourceRecovery();
+    }
+
+    action void A_CaelumResumeCombat()
+    {
+        let actor=CaelumCombatActor(self);
+        if(actor!=null)actor.SetState(actor.SeeState);
+    }
+
+    override void OnDestroy()
+    {
+        if(RecoveryGoal!=null)RecoveryGoal.Destroy();
+        Super.OnDestroy();
     }
 }

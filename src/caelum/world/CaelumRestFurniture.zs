@@ -9,7 +9,7 @@ class CaelumRestFurniture : Actor abstract
 
     virtual double PoseAngle() { return Angle + 180; }
     virtual int RestMode() { return CaelumRestRules.MODE_WAIT; }
-    virtual clearscope int ComfortFactor() { return 2; }
+    virtual clearscope int ComfortFactor() { return CaelumRestRules.CHAIR_RESOURCE_FACTOR; }
     virtual bool SupportsRest(CaelumPlayer user) { return Occupant == user; }
     // Ajuste gráfico a las poses RSDO; el volumen físico conserva sus medidas.
     virtual vector3 PoseOffset() { return (Cos(Angle)*-16, Sin(Angle)*-16, 0); }

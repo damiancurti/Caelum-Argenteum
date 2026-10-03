@@ -14700,7 +14700,8 @@ class CaelumPlayer : DoomPlayer
         {
             CurrentAnima = Min(
                 DerivedStats.MaximumAnima,
-                CurrentAnima + DerivedStats.AnimaRegenerationPerSecond / TICRATE
+                CurrentAnima + DerivedStats.AnimaRegenerationPerSecond
+                    * (CaelumRestState.IsSeated(self) ? CaelumRestState.ResourceFactor(self) : 1) / TICRATE
             );
         }
 
@@ -16048,6 +16049,7 @@ class CaelumPlayer : DoomPlayer
         projectile.Target = self;
         projectile.Angle = attackAngle;
         projectile.Pitch = attackPitch;
+        projectile.ConfigureCaelumTravelDistance(WeaponModel.GetRangedRangeFor(WeaponModel.WeaponType));
         double rangedProjectileSpeed = WeaponModel.WeaponType
                 == CaelumConstants.WEAPON_TYPE_CARBINE
             ? CaelumConstants.WEAPON_CARBINE_PROJECTILE_SPEED
@@ -16465,6 +16467,7 @@ class CaelumPlayer : DoomPlayer
                 DerivedStats.BuffPowerPercent
             );
             projectile.UpdateCaelumElementalWorldSprite();
+            projectile.ConfigureCaelumTravelDistance(spellRange);
             if (activeMagicType == CaelumConstants.WEAPON_TYPE_BOOK)
             {
                 CaelumHomingMagicProjectile homingProjectile =

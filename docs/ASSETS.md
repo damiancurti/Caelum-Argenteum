@@ -12,6 +12,9 @@ parameters and original northern deployment for legacy layouts; generated
 CaelumPortData resolves the current map marker without rewriting saved armies.
 The #77 author-approved command_group_limit of 100 lives in LAYOUT.json and is
 emitted as COMMAND_GROUP_LIMIT; it changes neither map geometry nor population.
+The subsequent combat follow-up retires enemy_attack_resource_trial (0) and
+adds no art or map changes. COMBAT_RECOVERY.json in the same south evidence
+directory records source/package hashes, native checks and three live runs.
 
 generate_port_city.py builds houses with native roofs/windows, shop awnings and
 counters, factory halls/chimneys, and four stages of exposed foundations,

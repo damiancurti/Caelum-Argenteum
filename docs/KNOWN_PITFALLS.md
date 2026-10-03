@@ -4,6 +4,24 @@ Status: integrated engineering register (issue #22, patch 4.36.1b).
 Prepared: 2026-09-23. Inherits the project's release after integration.
 Inspected baseline: `1dc390576fa330d37ff543526fc7e69a397fc28f` (PR #7).
 
+## CA-KP-031 — Clamp projectile travel before native collision
+
+Status/evidence: CODE-VERIFIED and ENGINE-VERIFIED on GZDoom 4.14.2.
+First recorded / last checked: 2026-10-03. Issue #77 / 4.37.9, from e08487c9.
+
+Expiring a projectile after Super.Tick can allow that tick's native collision
+to hit beyond its remaining range. Limit its velocity to the remaining movement
+budget before Super.Tick, then accumulate actual displacement and expire it.
+Keep explosion radius separate from projectile travel; retain saved distance
+when migrating a previously limited flight. Homing and player projectiles need
+the same shared check, not only the optimized NPC projectile class.
+
+The #77 native fixture launches six projectile families at 100 MU/tic with
+50 MU range. Targets inside are hit; targets beyond the final step are untouched.
+Actual player firing assigns catalogue/ability limits, and midflight save/reload
+preserves the original total budget. See south/COMBAT_RECOVERY.json under
+assets/validation_4379. This evidence does not establish full-battle performance.
+
 ## CA-KP-030 — Join per-instance evidence by identity, not array position
 
 Status/evidence: CODE-VERIFIED report defect; ENGINE-VERIFIED unchanged budgets.

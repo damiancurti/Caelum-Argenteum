@@ -46,12 +46,20 @@ checks; their final collection is unfinished. Display FPS is not inferred.
 CA-4379-CITY-01 and CA-4379-ROUTE-01 remain pending author acceptance. Narrative
 intelligence/captain identity and later V4.37 work remain separate issues.
 
-The full-army live check still **fails** after capping groups: late simulation
-throughput is about 3.7 tics/s. The latest five-minute run keeps Windows responsive,
-but five simulation seconds take about 47 host seconds. GROUP100.json retains
-the capped-group checks; LIVE_FREEZE.json preserves the earlier uncapped stalls.
-Both are under assets/validation_4379/south. A performance correction remains
-necessary before acceptance; no permanent deadlock was proven.
+The author subsequently requested nearest-visible player/guard targeting,
+shared attack range/cost enforcement, retreat/idle recovery, Pain interruption
+and double chair/idle Anima. Player ranged projectiles also obey their authored
+limits. SYSTEMS records the contract; COMBAT_RECOVERY.json under
+assets/validation_4379/south records 90 native checks, save persistence and the
+live comparison. CA-4379-COMBAT-01 adds author verification of this follow-up.
+
+The full-army live check still **fails performance**: late throughput is about
+13.5 tics/s versus the normal 35, despite Windows responding in all 248 samples
+of the 300.5-second run. The preceding comparison measured 3.9 before targeting
+changes and 14.3 with targeting alone. These unseeded runs do not isolate causes
+or measure display FPS. GROUP100.json and LIVE_FREEZE.json preserve earlier
+failures. No permanent deadlock was proven; a performance correction remains
+necessary before acceptance.
 
 ## 4.37.8 — MAP02 material ledger and finite-supply audit (#75)
 

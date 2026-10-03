@@ -32,4 +32,20 @@ Steps:
    for rollback; these modes do not transplant old actors into the new city.
 Expected: correct direct travel and persistent rescue/rewards; compatibility
 retains the exact visited port. Report subchecks not performed, including the
-absence of any old port save. Agent checks do not constitute author acceptance.
+   absence of any old port save. Agent checks do not constitute author acceptance.
+
+CA-4379-COMBAT-01
+Origin: 4.37.9 / issue #77 author combat follow-ups.
+Prerequisites: current build; copied saves and a fresh MAP06 for the full battle.
+Steps:
+1. Observe Mandingas choosing the nearest visible player or guard and groups
+   staying at or below 100 members, including the ranked leader.
+2. Observe exhausted enemies and guards retreat, stop outside their opponent's
+   range, and rest until both Air and Anima are full. Trigger Pain while resting;
+   verify that combat resumes and another unaffordable attack causes retreat.
+3. Fire arrows, bolts and spells at targets within and beyond their listed range.
+   Sit in a chair with depleted Anima, then stand; compare regeneration rates.
+4. Save/reload during combat and rest. Check preserved resources, recovery state
+   and crew identities. Report playability of the full southern battle.
+Expected: range and costs enforced, double idle/chair recovery including Anima,
+Pain interruption without free attacks, persistent state and acceptable playability.

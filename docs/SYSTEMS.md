@@ -24,7 +24,8 @@ per wall and one on each tower. The eight southern wall guns and four tower
 guns are active; 24 staffed guns remain in reserve for this southern assault.
 All 72 defensive operators belong to the 600 soldiers, leaving 528 reserves.
 Existing defender attributes/equipment, cannon loading/ballistics, ram crews,
-gate materials and the port enemy zero-resource attack trial remain unchanged.
+and gate materials remain unchanged. The later author direction below retires
+the port enemy zero-resource attack trial.
 
 Author follow-up, 2026-10-03: each attacking command group has at most 100
 members, including its leader. LAYOUT.json owns command_group_limit. The bounded
@@ -34,6 +35,45 @@ election: Zupay priority 1, Mandinga priority 2, stable roster identity for ties
 The 1,024-MU visibility links and 35-tic/death-triggered refresh remain. All
 6,001 attackers stay simulated. Existing port saves regroup on the next ordinary
 refresh; no roster, geometry or save-schema replacement is required.
+
+Further author decisions, 2026-10-03, apply to the shared combat actors:
+
+- Mandingas in the siege choose the nearest visible living player or guard.
+  A leader's candidate cannot hide a closer opponent. Perception uses the
+  existing eight-tic data cadence, staggered by identity; death or lost sight
+  invalidates the cached target. Hidden lane goals remain approach destinations.
+- NPC melee attacks require native melee reach; magic checks the actual muzzle
+  and target center against the caster's derived range and line of sight. Release
+  checks repeat the preparation check, so a target can escape during wind-up.
+  Existing natural-melee and T1 staff costs cover legacy NPC attacks without
+  an explicit cost. Profiled weapons, slam and bull running keep their own costs.
+- An unaffordable attack triggers physical retreat, then idle once beyond the
+  current opponent's horizontal attack envelope plus the retreating actor's
+  radius. Armed opponents use their weapon/ability range; bulls retain charge
+  range. Melee vertical overlap cannot prematurely count as safe distance.
+  Native collision can obstruct retreat. Both full Air and full Anima are
+  required to resume; neither resource is granted by entering recovery.
+- Actual Pain interrupts recovery immediately. The next attempted attack still
+  pays its cost and can trigger retreat again. Scripted boss flight, withdrawal
+  and prisoner extraction retain priority. All living idle combat actors recover
+  health, Air and Anima at twice their normal rates, using the chair factor.
+- Seated players now also recover Anima at twice its normal rate, including
+  time advancement and its forecast. Leaving the chair restores the normal rate;
+  beds' Anima behavior remains unchanged. Existing needs checks still apply.
+- Player bows, carbine and crossbow use catalogue range converted from meters
+  to map units; player magic uses derived ability range, including charged,
+  homing and multi-projectile casts. NPC and player projectiles share a native
+  movement-distance budget clamped before collision. Blast radius remains a
+  separate authored effect; javelin throwing retains its existing gravity and
+  ballistic trajectory because it has no separately authored flight-range cap.
+
+Recovery revision 1 and target-cache revision 1 initialize derived state once,
+without replacing actors, restoring resources or resetting deaths/crew identities.
+New recovery phases and remaining projectile distance serialize normally. Old
+limited NPC flights retain recorded distance/age; old uncapped player shots
+already in flight retain their original behavior until they end. Preserve the
+original save/package for rollback; loading a newly saved recovery state into
+an older executable package is not promised.
 
 In the expanded city, a vacant defensive post selects the nearest eligible
 reserve to its stair entrance. That same actor follows saved waypoints using

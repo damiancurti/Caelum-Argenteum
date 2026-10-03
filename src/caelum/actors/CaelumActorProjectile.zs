@@ -45,6 +45,8 @@ class CaelumActorProjectile : Actor
     int CaelumActorExplosionDamage;
     double CaelumActorExplosionRadius;
     double CaelumMaximumTravelDistance;
+    int CaelumTravelRevision;
+    double CaelumTravelledDistance;
     bool CaelumDiagnosticCompletionRecorded;
 
     // Conserva la identidad del arma que originó el proyectil. Así la
@@ -107,6 +109,37 @@ class CaelumActorProjectile : Actor
     void ConfigureCaelumTravelDistance(double maximumTravelDistance)
     {
         CaelumMaximumTravelDistance = Max(1.0, maximumTravelDistance);
+    }
+
+    override void Tick()
+    {
+        if(CaelumTravelRevision<1)
+        {
+            // En vuelos antiguos de velocidad fija, la edad guardada conserva
+            // lo ya recorrido. Los proyectiles antiguos sin límite lo retienen.
+            let simple=CaelumActorSimpleElementalProjectile(self);
+            let explosive=CaelumActorExplosiveElementalProjectile(self);
+            CaelumTravelledDistance=simple!=null ? simple.CaelumLifetimeTicks*Max(1.0,Speed)
+                : explosive!=null ? explosive.CaelumDistanceTraveled : 0;
+            CaelumTravelRevision=1;
+        }
+        bool limited=bMissile && CaelumMaximumTravelDistance>0;
+        if(limited)
+        {
+            double remaining=CaelumMaximumTravelDistance-CaelumTravelledDistance;
+            if(remaining<=0){RegisterCaelumDiagnosticCompletion(false,true);Destroy();return;}
+            double step=Vel.Length();
+            // Limitar antes de la colisión impide un impacto después del alcance.
+            if(step>remaining)Vel*=remaining/step;
+        }
+        vector3 previous=Pos;
+        Super.Tick();
+        if(limited && bMissile)
+        {
+            CaelumTravelledDistance+=(Pos-previous).Length();
+            if(CaelumTravelledDistance>=CaelumMaximumTravelDistance)
+            {RegisterCaelumDiagnosticCompletion(false,true);Destroy();}
+        }
     }
 
     void RegisterCaelumDiagnosticCompletion(bool impact, bool expired)

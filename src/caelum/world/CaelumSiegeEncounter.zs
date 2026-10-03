@@ -14,6 +14,9 @@ class CaelumSiegeCombatant : Object play
     int StableIdentity;
     int CommandGroup;
     CaelumSiegeCombatant CommandLeader;
+    // Caché de percepción del puerto; revisión propia en CaelumPortSiege.
+    Actor CombatTarget;
+    int TargetRefreshTic;
     Actor NavigationTarget;
     vector3 CrewOffset;
     int Lane;

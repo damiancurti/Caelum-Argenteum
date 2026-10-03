@@ -74,6 +74,53 @@ passes 662 checks and two identical map generations. GROUP100.json under the
 same south evidence directory records these scoped results. The capped groups
 are implemented; they do not constitute a performance fix or author acceptance.
 
+Combat follow-ups, same issue/version, 2026-10-03: the author selected the nearest
+visible player or guard as Mandinga target, required authored attack ranges and
+resource costs for all enemies/NPCs, and approved natural-melee/T1 staff costs
+for legacy attacks. Exhaustion now causes collision-respecting retreat beyond
+the opponent's attack envelope, then idle until both Air and Anima are full.
+Actual Pain interrupts recovery; another unaffordable attack restarts it.
+Idle uses chair recovery, including the newly approved double Anima rate for
+seated players. Player projectile ranges were explicitly approved too. Existing
+damage, defense, cannon physics, force counts and map geometry are unchanged.
+
+Ninety isolated native checks pass: nearest-target selection (8), resource/range
+and real Pain behavior (16), projectiles/chair/forecast (34), shared actor types
+(11), group regression (17) and idempotent target-cache migration (4). Six
+projectile families hit inside range and cannot overshoot outside it in one
+tick; actual player bow/crossbow/carbine and eight ordinary/charged magic cases
+receive catalogue/ability limits. A saved chair session, idle recovery and a
+projectile already 530 MU into its 1,000-MU budget reload correctly and complete
+their checks. The prior port save and its subsequent migrated save retain all
+6,001 attackers, 600 guards and 36 replacement-crew identities. Original-save
+rollback uses the preserved earlier package, not a promised new-save downgrade.
+
+Prototype QA corrections: wait for deferred PostBeginPlay before reading actor
+resources; keep the retreat dummy stationary; place the rat target within its
+24-MU reach; tolerate a diagnostic event handler absent from older saves. Also
+wait through the existing 35-tic group refresh before checking old membership.
+These fixture problems were rerun successfully and changed no balance.
+Normal Mandinga melee reaches guards, but the tested 53 damage is absorbed by
+their existing Toughness; target selection does not imply positive health loss.
+
+Three clean live runs retain the full army, 100-member cap, camera/input sequence
+and 300-host-second ceiling. Final sampled throughput: 3.9 tics/s before the
+targeting change, 14.3 with targeting alone, 13.5 with the complete resource/range
+change. The final run lasts 300.5 seconds, passes all 46 cannon-role checks,
+never exceeds the sampled group cap, and reports Windows responsive in all
+248 observations. Its final target sample includes 17 distinct guards and 93
+resting attackers. **Performance still fails against the normal 35 tics/s.**
+No permanent deadlock is established. Combat RNG was not seeded; these are
+descriptive simulation intervals, not display FPS or a causal speedup claim.
+
+COMBAT_RECOVERY.json under assets/validation_4379/south retains raw logs, timing,
+captures, commands and source/package hashes. The tested and delivered 6,141
+payloads are identical; runtime data regenerates deterministically and MAP06
+retains its previous SHA-256. Static project validation and document-index
+freshness are checked in this delivery. CA-4379-COMBAT-01 is added; CITY-01 and
+ROUTE-01 remain pending. PR #85 stays draft; no acceptance, merge or closure
+is inferred from these agent tests.
+
 ### First city iteration — superseded geometry, retained evidence
 
 Author decisions, 2026-10-02: approve a 96 × 96 m city, four additional buildings

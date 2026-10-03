@@ -1,0 +1,214 @@
+{
+  "issue": 77,
+  "version": "4.37.9",
+  "date": "2026-10-03",
+  "baseline_commit": "e08487c90b2ad8e4030223d0ee8a8708b8aade71",
+  "tested_state": "Uncommitted #77 combat follow-up; exact package and modified source hashes below",
+  "environment": "Windows 11; GZDoom 4.14.2; Vulkan; Ryzen 9 5950X; RTX 3070 Ti; development Doom II IWAD; actual render resolution 1520x825",
+  "scope": "Nearest visible player/guard, authored range and costs, retreat/idle, Pain interruption, double chair/idle Anima",
+  "author_acceptance": "Pending: CA-4379-CITY-01, CA-4379-ROUTE-01, CA-4379-COMBAT-01",
+  "map_sha256": "84f0c18fdb4be7a91eff146845f78dda5082d5b0c9d996928f0652d7c6fc7efd",
+  "map_changed": false,
+  "tested_and_delivery_payloads_identical": 6141,
+  "native_checks": {
+    "recovery_verified2": [
+      "QA77TARGETCACHE DONE checks=4 failures=0 revision=1 identity=100 target=None deadlineDelta=7",
+      "QA77SOUTHLOAD PASS revision=2 population=6001 defenders=600 guns=42 gates=8 savedRecruits=36",
+      "QA77GROUP PASS live/save snapshot active=6001 groups=68 max=100 unassigned=0 badLeader=0 oversized=0 leaderSnapshot=1",
+      "QA77RECOVERY DONE checks=16 failures=0",
+      "QA77RANGECHAIR DONE checks=34 failures=0",
+      "QA77ACTORS DONE checks=11 failures=0",
+      "QA77GROUPCASE DONE checks=17 failures=0",
+      "QA77TARGETCASE DONE checks=8 failures=0"
+    ],
+    "recovery_load": [
+      "QA77RECOVERYLOAD PASS age=63 phase=2 distance=530.00000 seated=1",
+      "QA77RANGECHAIR DONE checks=34 failures=0",
+      "QA77ACTORS DONE checks=11 failures=0"
+    ],
+    "recovery_reload_final": [
+      "QA77TARGETCACHE DONE checks=4 failures=0 revision=1 identity=100 target=None deadlineDelta=4",
+      "QA77SOUTHLOAD PASS revision=2 population=6001 defenders=600 guns=42 gates=8 savedRecruits=36",
+      "QA77GROUP PASS live/save snapshot active=6001 groups=70 max=100 unassigned=0 badLeader=0 oversized=0 leaderSnapshot=1"
+    ],
+    "recovery_rollback": [
+      "QA77SOUTHLOAD PASS revision=2 population=6001 defenders=600 guns=42 gates=8 savedRecruits=36",
+      "QA77GROUP PASS live/save snapshot active=6001 groups=69 max=100 unassigned=0 badLeader=0 oversized=0 leaderSnapshot=1"
+    ]
+  },
+  "comparisons": [
+    {
+      "label": "target_before_final",
+      "package_sha256": "36b2a2f8ea0c943b0ee131ce8841684445f9da2e41d5fba32ebc26159400c697",
+      "host_seconds": 303.1528588,
+      "stopped_at_host_limit": true,
+      "last_interval_tics": 175,
+      "last_interval_host_seconds": 45.173256699999996,
+      "last_interval_tics_per_second": 3.873973514068115,
+      "responding_true": 131,
+      "responding_false": 1,
+      "final_sample": {
+        "line": "QA77SOUTH SAMPLE age=2626 tic=2777 registered=6001 liveAttackers=5874 liveDefenders=599",
+        "host_seconds": 274.2422539
+      },
+      "final_targets": "QA77TARGET SAMPLE age=2626 tic=2777 guardTargets=4981 playerTargets=870 otherTargets=23 noTarget=0 guardHits=0 guardDamage=0 uniqueGuards=0 playerHits=0 playerDamage=0 distinctGuardTargets=2",
+      "checks": [
+        "QA77SOUTH DONE age=351 checks=46 failures=0",
+        "QA77SOUTH DONE age=1051 checks=46 failures=0"
+      ]
+    },
+    {
+      "label": "target_after_live",
+      "package_sha256": "147556a2299eb3c2e3a2265866a7e37643c7eb1c4714eea5806e099695a01413",
+      "host_seconds": 300.5504731,
+      "stopped_at_host_limit": true,
+      "last_interval_tics": 175,
+      "last_interval_host_seconds": 12.265087699999981,
+      "last_interval_tics_per_second": 14.268140944479367,
+      "responding_true": 255,
+      "responding_false": 0,
+      "final_sample": {
+        "line": "QA77SOUTH SAMPLE age=4026 tic=4175 registered=6001 liveAttackers=5850 liveDefenders=595",
+        "host_seconds": 295.4231134
+      },
+      "final_targets": "QA77TARGET SAMPLE age=4026 tic=4175 guardTargets=4354 playerTargets=1464 otherTargets=32 noTarget=0 guardHits=0 guardDamage=0 uniqueGuards=0 playerHits=0 playerDamage=0 distinctGuardTargets=19",
+      "checks": [
+        "QA77SOUTH DONE age=351 checks=46 failures=0",
+        "QA77SOUTH DONE age=1051 checks=46 failures=0"
+      ]
+    },
+    {
+      "label": "recovery_live_final",
+      "package_sha256": "1274cf4af4f59460ecc3d83753f5f54fe50fc75bd6c082cdbb8a28a46f596904",
+      "host_seconds": 300.46757809999997,
+      "stopped_at_host_limit": true,
+      "last_interval_tics": 175,
+      "last_interval_host_seconds": 12.918731099999945,
+      "last_interval_tics_per_second": 13.54622204343279,
+      "responding_true": 248,
+      "responding_false": 0,
+      "final_sample": {
+        "line": "QA77SOUTH SAMPLE age=3851 tic=4001 registered=6001 liveAttackers=5915 liveDefenders=595",
+        "host_seconds": 292.88879449999996
+      },
+      "final_targets": "QA77TARGET SAMPLE age=3851 tic=4001 guardTargets=4331 playerTargets=1470 otherTargets=21 noTarget=93 guardHits=0 guardDamage=0 uniqueGuards=0 playerHits=0 playerDamage=0 distinctGuardTargets=17 retreating=0 resting=93",
+      "checks": [
+        "QA77SOUTH DONE age=351 checks=46 failures=0",
+        "QA77SOUTH DONE age=1051 checks=46 failures=0"
+      ]
+    }
+  ],
+  "static_checks": {
+    "project_validator_exit_code": 0,
+    "project_validator_errors": [],
+    "context_words": 2499,
+    "document_index_fresh": true,
+    "git_diff_check": true,
+    "runtime_data_two_generations_identical": true,
+    "map_unchanged": true
+  },
+  "text_artifact_storage": "Line endings normalized to LF to match repository attributes before hashing; content unchanged",
+  "live_performance_result": "FAIL: severe slowdown remains; no permanent deadlock established",
+  "commands": {
+    "target_cases_before_final": "wait 150; give QA77TargetCases; wait 520; quit",
+    "target_cases_after_final": "wait 150; give QA77TargetCases; wait 520; quit",
+    "target_before_final": "vid_lowerinbackground false; wait 150; give QA77BenchmarkView; give QA77SouthRun; give QA77TargetRun; wait 175; +left; wait 35; -left; +right; wait 35; -right; +forward; wait 70; -forward; +attack; wait 70; -attack; wait 700; screenshot build/issue77_target_before_final.png; wait 4020; quit",
+    "target_after_live": "vid_lowerinbackground false; wait 150; give QA77BenchmarkView; give QA77SouthRun; give QA77TargetRun; wait 175; +left; wait 35; -left; +right; wait 35; -right; +forward; wait 70; -forward; +attack; wait 70; -attack; wait 700; screenshot build/issue77_target_after.png; wait 4020; quit",
+    "recovery_verified2": "wait 150; give QA77TargetCache; give QA77SouthLoaded; give QA77GroupCheck; save issue77_recovery_migrated_final; wait 100; give QA77RecoveryCases; wait 200; give QA77RangeChairCases; wait 220; give QA77ResourceActors; wait 45; give QA77GroupCases; wait 30; give QA77TargetCases; wait 530; quit",
+    "recovery_load": "wait 1; give QA77RecoveryLoaded; wait 140; give QA77ResourceActors; wait 45; quit",
+    "recovery_reload_final": "wait 150; give QA77TargetCache; give QA77SouthLoaded; give QA77GroupCheck; wait 35; quit",
+    "recovery_rollback": "wait 150; give QA77SouthLoaded; give QA77GroupCheck; wait 35; quit",
+    "recovery_live_final": "vid_lowerinbackground false; wait 150; give QA77BenchmarkView; give QA77SouthRun; give QA77TargetRun; wait 175; +left; wait 35; -left; +right; wait 35; -right; +forward; wait 70; -forward; +attack; wait 70; -attack; wait 700; screenshot build/issue77_recovery_live_final.png; wait 4020; quit"
+  },
+  "source_hashes": {
+    "src/caelum/actors/CaelumActorProjectile.zs": "1c482e3017d34c0b729c1a6bad640b2c2ffa97d397e45e01079c80f998ef6fbb",
+    "src/caelum/actors/CaelumAnchoredResident.zs": "ad475634dbb7e08da65f671c2f9b095bc2cd63491885083b2ff846c038ee11e1",
+    "src/caelum/actors/CaelumBull.zs": "cedde93badd7cd66cc3f9e420cd071ee85663095dd8c33dcec4ac51fb1022863",
+    "src/caelum/actors/CaelumCombatActor.zs": "4cf83ec86950ed8667437a4fcc212444049f0785c6c4bac829c3c18673339802",
+    "src/caelum/actors/CaelumMagicProjectiles.zs": "dd57a39543e6e63c9e9aa926d33bc3d8f4444794fc09e2b868ff97a5554a7f64",
+    "src/caelum/equipment/CaelumWeaponModel.zs": "9a6a596d957954a2c8ee6a1f6a2f69ece32f8fbaccbc65b30abc4ffe5657d5b8",
+    "src/caelum/player/CaelumPlayer.zs": "a9b38df78083f7d2c595522a4afaf3978bb095b1e57ed2a7e5eb8f63c63b182a",
+    "src/caelum/world/CaelumPortData.zs": "cb4a437a6e3ef4b60ba2d66524fda59ebcde772b5b99f09374a5e8fe26f6c6f3",
+    "src/caelum/world/CaelumPortDefender.zs": "3ea0b3f89da41c679d50fc51c92fe7f580fe04af96a55b6cb64e14ace1ea6e3d",
+    "src/caelum/world/CaelumPortSiege.zs": "e7328a59384d9ad4ce3f12e502e92a88c6cea40d8c3cdd091c126557325d32bf",
+    "src/caelum/world/CaelumRest.zs": "50d084c39791104874d3a3100cc555596e712b62fa0be13d4483a952aa85c609",
+    "src/caelum/world/CaelumRestFurniture.zs": "4cbd5574a6baa9c599b2162f6ca9e42d6af6aa725e6f9fdf6660219db83bd823",
+    "src/caelum/world/CaelumSiegeEncounter.zs": "f651d269f95ad060b6f72694e7a1fd4fe3afab3120fb73a05527b56da3a86ce7",
+    "src/caelum/world/CaelumTimeSkipModel.zs": "57a7c7348c45bb98910cf0879a27115b25b55475917984149609006e6cd9ef46",
+    "src/caelum/world/CaelumJourneyPlan.zs": "6e691795a91818c880d47c415fb2b8484b8b0281eca411f5c736ce6c1df15954"
+  },
+  "expected_before_target_failures": 2,
+  "interpretation": [
+    "The clean before/guard-only/final runs use the same camera, input sequence, full background rendering and 300-host-second ceiling; combat RNG was not seeded.",
+    "Rates describe the final sampled simulation interval, not display FPS, an average, or a controlled causal speedup.",
+    "Windows Responding and UI heartbeat do not prove acceptable playability or absence of all stalls.",
+    "All 6001 attackers and 600 defenders are simulated in live runs; only isolated fixtures freeze the army.",
+    "Ordinary Mandinga melee reaches guards; existing Toughness absorbs the tested 53 damage. No armor or damage rebalance was made.",
+    "Old active saves update groups at the existing 35-tic cadence; an inspection before that refresh can still see old uncapped membership.",
+    "Prototype fixture failures (early PostBeginPlay reads, moving dummy, rat reach, absent event handler in old saves) were corrected and rerun; they are not final product failures.",
+    "Midflight/chair/idle save reload and old-save migration preserve state. Rollback loads the preserved original save with the original package; new-save downgrade is not claimed.",
+    "Earlier expanded-layout geometry evidence remains applicable because the map is byte-identical; remaining end-to-end and author checks are separate."
+  ],
+  "artifacts": [
+    {
+      "path": "issue77_target_cases_before_final.log",
+      "sha256": "ab9fb7ef6338fe5d38b55d3106f7485db71e10643b511ad105d66401442a59eb"
+    },
+    {
+      "path": "issue77_target_cases_after_final.log",
+      "sha256": "71254788c4224b7af49a7f7d9fddd1d4fd853e110e83ace883f78e634cb5cd35"
+    },
+    {
+      "path": "issue77_target_before_final.log",
+      "sha256": "6c33f8f5d70f31a9d180917052487d183e87d7122ed76136ede7f45689da825c"
+    },
+    {
+      "path": "issue77_target_after_live.log",
+      "sha256": "daf206bf78b7e4623d4a39e05c9539eb9d87abef48a0104a80da26aa989e9cc2"
+    },
+    {
+      "path": "issue77_recovery_verified2.log",
+      "sha256": "0af8ab3fa69204a0c7f43ef6a1680a6d5440d59cebc8687e0c9a99191a8f20a7"
+    },
+    {
+      "path": "issue77_recovery_load.log",
+      "sha256": "8349277eec25b23a1dd03ffe221c922ae628d604e0b5b73e5ed5a8f8706b55d6"
+    },
+    {
+      "path": "issue77_recovery_reload_final.log",
+      "sha256": "7a15767a2b3ce8e6fca4c5f89b3c6b73e85a49de624b153a84f7583aa2b12181"
+    },
+    {
+      "path": "issue77_recovery_rollback.log",
+      "sha256": "20042645e14c44ef65abfb5a56a4634a4d71263402ea792e9f01598816359db4"
+    },
+    {
+      "path": "issue77_recovery_live_final.log",
+      "sha256": "84d6994891a714bd7fed7787f03489ede528a0dfaffeb900c379b6f5d881cdc6"
+    },
+    {
+      "path": "issue77_target_before_final_timing.json",
+      "sha256": "e22e2e5873bcc7edc77466134bd4081487eeb03fa861b2931180ade4232722e9"
+    },
+    {
+      "path": "issue77_target_after_live_timing.json",
+      "sha256": "e01b426e838f381e3b9f426f8ba03bd40c51c39f071d9d25b2321522239ab99c"
+    },
+    {
+      "path": "issue77_recovery_live_final_timing.json",
+      "sha256": "66bc482c2e22d5054f78567a265e6bb3e3454ac341ec33e679701ea906d45a57"
+    },
+    {
+      "path": "issue77_target_before_final.png",
+      "sha256": "43e939a2f75e2a98e3fe7aaa2ae23efead8a49c93dc4f71b1608d0d025d53e40"
+    },
+    {
+      "path": "issue77_target_after.png",
+      "sha256": "03e7d02c4208c7b68582e475936b5483f4730fda394e6bc3ad3b700bc64ed027"
+    },
+    {
+      "path": "issue77_recovery_live_final.png",
+      "sha256": "0cc876ed22a19ee853f3d0700f435f450bb37d8af01936419315cbf721ddf333"
+    }
+  ]
+}

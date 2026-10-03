@@ -22,13 +22,18 @@ Documentation version: **4.37.9** — 2026-10-03.
   the saved geometry/population is not converted into the expanded city.
 - Evidence: assets/validation_4379/south. Original validation_4379 results
   describe the superseded 96 m northern iteration, not the final battle scale.
-- Blocking live test: the 100-member cap passes its native tests but the latest
-  five-minute full-army run still slows to about 3.7 tics/s instead of 35.
-  Windows stays responsive in that run. GROUP100.json retains the new checks;
-  assets/validation_4379/south/LIVE_FREEZE.json retains earlier uncapped stalls.
+- Combat follow-up implemented: nearest visible player/guard, shared attack
+  ranges/costs, retreat then idle until both resources fill, Pain interruption,
+  double idle/chair Anima and player projectile limits. Ninety native checks pass;
+  save/reload retains recovery, projectile budget and old crew identities.
+- Blocking live test: the final 300.5-second run reaches about 13.5 tics/s
+  instead of 35. Windows responds in all 248 observations. The comparison gives
+  3.9 before targeting and 14.3 with targeting alone; RNG differs between runs.
+  COMBAT_RECOVERY.json records current evidence; GROUP100.json/LIVE_FREEZE.json
+  retain the prior failures. No permanent deadlock or performance fix is claimed.
 - Next: isolate and fix the live-performance failure, complete the remaining
   expanded-layout validation, then review PR #85 and complete
-  CA-4379-CITY-01 / CA-4379-ROUTE-01.
+  CA-4379-CITY-01 / CA-4379-ROUTE-01 / CA-4379-COMBAT-01.
   Captain identity/intelligence, later narrative work and author acceptance
   remain separate; no merge or issue closure is inferred.
 

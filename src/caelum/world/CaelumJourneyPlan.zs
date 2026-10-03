@@ -192,6 +192,7 @@ class CaelumJourneyModel : Object play
     { return sleeping && Bag && Hunger > 10 && Thirst > 10 ? 3.0 : 1.0; }
 
     virtual double SleepRecoveryScale() { return 1.0; }
+    virtual double AnimaComfort(bool sleeping) { return 1.0; }
     virtual int AirHealth() { return Health; }
     virtual double AirAdrenaline() { return Adrenaline; }
 
@@ -214,7 +215,7 @@ class CaelumJourneyModel : Object play
             Stun = CaelumConstants.LUCIDITY_PHYSICAL_STUN_SECONDS
                 * (1.0 + ((Sleep <= 10 ? 4.0 : Sleep <= 50 ? 2.0 : 1.0) - 1.0) * HealthPenalty);
         Adrenaline = Max(0.0, Adrenaline - CaelumConstants.ADRENALINE_DECAY_PER_SECOND / TICRATE);
-        Anima = Min(MaxAnima, Anima + AnimaRate);
+        Anima = Min(MaxAnima, Anima + AnimaRate * AnimaComfort(sleeping));
         int critical = int(Hunger <= 10) + int(Thirst <= 10) + int(Sleep <= 10 && !sleeping);
         if (critical == 0) DamageFraction = 0;
         else

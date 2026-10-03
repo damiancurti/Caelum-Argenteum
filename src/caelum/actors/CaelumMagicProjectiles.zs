@@ -1,5 +1,5 @@
 // Proyectil recto y de impacto único para grupos numerosos de NPC. No busca
-// blancos, no explota y no calcula distancia recorrida mediante raíces por tic.
+// blancos ni explota. La base común limita cada paso antes de la colisión.
 class CaelumActorSimpleElementalProjectile : CaelumActorProjectile
 {
     int CaelumLifetimeTicks;
@@ -47,12 +47,8 @@ class CaelumActorSimpleElementalProjectile : CaelumActorProjectile
         PrepareElementSprite();
         CaelumLifetimeTicks++;
 
-        // La velocidad de esta clase es constante. Tiempo x velocidad limita
-        // exactamente su alcance sin guardar posiciones ni calcular raíces.
-        if ((CaelumMaximumTravelDistance > 0.0
-                && CaelumLifetimeTicks * Max(1.0, Speed)
-                    >= CaelumMaximumTravelDistance)
-            || CaelumLifetimeTicks >= 350)
+        // El alcance se resuelve en la base; se conserva la salvaguarda temporal.
+        if (CaelumLifetimeTicks >= 350)
         {
             RegisterCaelumDiagnosticCompletion(false, true);
             Destroy();

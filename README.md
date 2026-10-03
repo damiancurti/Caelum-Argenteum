@@ -18,15 +18,23 @@ during this assault. The other 24 are staffed reserve positions.
 The author's follow-up caps every attacking command group at **100 enemies,
 including its leader**, while preserving Zupay priority and the full population.
 
-**Current validation failure:** the capped groups pass their native checks,
-but the five-minute full-army run still slows to about 3.7 tics/s (normal: 35).
-Windows remained responsive in that run; simulation performance still fails.
-See the [group-limit tests](assets/validation_4379/south/GROUP100.json) and the
-[earlier uncapped failure](assets/validation_4379/south/LIVE_FREEZE.json).
+Mandingas now choose the nearest visible player or guard. Shared NPC attacks
+enforce range and resource costs; exhausted actors retreat and rest until both
+Air and Anima are full. Pain interrupts rest. Idle NPCs and seated players gain
+double Anima recovery; player arrows, bolts and spells also obey their ranges.
+
+**Current validation failure:** combat/recovery checks pass, but the final
+five-minute full-army run still slows to about **13.5 tics/s** (normal: 35).
+Windows responded in all 248 observations; this does not establish playability.
+The comparison measured 3.9 before nearest-target selection and 14.3 with that
+change alone; unseeded combat makes these descriptive runs, not a causal benchmark.
+See [combat, recovery and live evidence](assets/validation_4379/south/COMBAT_RECOVERY.json).
+Earlier [group-limit](assets/validation_4379/south/GROUP100.json) and
+[uncapped failure](assets/validation_4379/south/LIVE_FREEZE.json) records remain.
 
 Normal progression is **MAP01 → MAP02 → MAP06**, retaining Ace/Zupay requirements
 and the existing 10 km planned port journey. See the [authored city data](assets/map06_port/CITY.json)
-and [current live-test evidence](assets/validation_4379/south/GROUP100.json).
+and [current live-test evidence](assets/validation_4379/south/COMBAT_RECOVERY.json).
 Expanded-layout validation is unfinished. Original first-city evidence remains
 preserved in validation_4379 and is superseded for this geometry.
 

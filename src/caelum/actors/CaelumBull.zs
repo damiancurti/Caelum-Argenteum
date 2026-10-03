@@ -39,6 +39,8 @@ class CaelumBull : CaelumCombatActor
         if (CurrentCombatAir < firstTicCost)
         {
             StopBullCharge();
+            AttackResourceMagical=false;AttackResourceWeapon=-1;AttackResourceBaseCost=CaelumAttackRules.NaturalAir();
+            WaitForAttackResource();
             return;
         }
         BullChargeActive = true;
@@ -55,6 +57,8 @@ class CaelumBull : CaelumCombatActor
     {
         CaelumBull bull = CaelumBull(self);
         if (bull == null) { return; }
+        if(bull.ResourceRecoveryActive() || bull.target==null || bull.target.health<=0
+            || bull.Distance2D(bull.target)>bull.MaxTargetRange || !bull.CheckSight(bull.target))return;
         if (!bull.BeginCaelumDiagnosticAttack())
         {
             bull.StopBullCharge();
@@ -121,7 +125,11 @@ class CaelumBull : CaelumCombatActor
         if (BullChargeActive)
         {
             double ticCost = GetBullRunningAirCostPerSecond() / TICRATE;
-            if (!TrySpendCombatAir(ticCost)) { StopBullCharge(); }
+            if (!TrySpendCombatAir(ticCost))
+            {
+                StopBullCharge();AttackResourceMagical=false;AttackResourceWeapon=-1;
+                AttackResourceBaseCost=CaelumAttackRules.NaturalAir();WaitForAttackResource();
+            }
         }
     }
 
