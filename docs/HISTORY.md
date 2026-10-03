@@ -50,9 +50,14 @@ retained in assets/validation_4378; earlier reports remain preserved.
 
 The author's existing station approval and previous-save waiver still apply.
 Gameplay is unchanged, so accepted CA-MAP02-MATERIALS-DROPS-01 is not requeued;
-pending_test.txt remains empty. No new author acceptance of this corrected report
-or full campaign test is claimed. This delivery records commit/push and a linked
-PR; merge and #75 closure require their own authorization.
+pending_test.txt remains empty.
+
+Author approval, 2026-10-02: Damián Curti confirmed the #75 delivery was correct,
+without reported exceptions, and explicitly requested PR #84 merge and issue
+#75 closure. This accepts the corrected 4.37.8 ledger and audit delivery while
+preserving the earlier CA-MAP02-MATERIALS-DROPS-01 acceptance (origin 4.37.6 /
+#73 and #75). No additional full-campaign test is inferred. This documentation
+update changes no runtime behavior and retains release 4.37.8.
 
 ## 4.37.7 — Six flooded pit returns and central elevator (#74)
 

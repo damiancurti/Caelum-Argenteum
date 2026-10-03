@@ -14,7 +14,9 @@ which joined recipes by list position instead of catalogue ID. **Gameplay and
 total supplies are unchanged.** Use the [corrected ledger](assets/validation_4378/MATERIAL_LEDGER.json)
 and [current native evidence](assets/validation_4378/RESULTS.json): 325 successful
 crafting completions, collection/capacity, keyed route and save/hub persistence.
-The original author acceptance remains recorded in HISTORY; no test is reopened.
+The author accepted this correction on 2026-10-02 and authorized
+[PR #84](https://github.com/damiancurti/Caelum-Argenteum/pull/84) merge and #75 closure.
+HISTORY retains both this approval and the original gameplay acceptance.
 
 Issue [#74](https://github.com/damiancurti/Caelum-Argenteum/issues/74) replaces
 the six MAP02 pit stair exits with connected shallow-water tunnels, four

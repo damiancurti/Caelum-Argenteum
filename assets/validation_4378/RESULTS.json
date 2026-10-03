@@ -46,7 +46,7 @@
     "origin": "4.37.6 / #73 and #75",
     "confirmation_date": "2026-10-02",
     "source": "docs/HISTORY.md, 4.37.6 author acceptance",
-    "qualification": "No new manual test is claimed for the corrected report. Existing stations and previous-save waiver retain explicit author approval. This request authorizes commit/push; PR merge and #75 closure are not performed by this delivery."
+    "qualification": "Original gameplay acceptance remains valid, including retained stations and the previous-save waiver. The author separately accepted the corrected 4.37.8 report/delivery and authorized PR #84 merge and #75 closure on 2026-10-02; no additional full campaign run is inferred."
   },
   "fixture_iterations": [
     "First recipe fixture used reserved identifiers and did not compile; corrected names before native execution.",
@@ -86,5 +86,13 @@
     "documents": 10,
     "context_words": 2497,
     "errors": []
+  },
+  "delivery_acceptance": {
+    "version": "4.37.8",
+    "confirmed": true,
+    "confirmation_date": "2026-10-02",
+    "result": "Author confirmed the delivery was correct, without reported exceptions.",
+    "authorization": "Explicit request to merge PR #84 and close issue #75.",
+    "source": "docs/HISTORY.md, 4.37.8 author approval"
   }
 }

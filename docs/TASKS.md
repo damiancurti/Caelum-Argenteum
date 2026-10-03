@@ -15,7 +15,9 @@ Documentation version: **4.37.8** — 2026-10-02.
   limits: assets/validation_4378. Existing stations/knowledge remain required.
 - CA-MAP02-MATERIALS-DROPS-01 was accepted 2026-10-02 (4.37.6 / #73 and #75).
   Preserve that acceptance and the old-save waiver; no unchanged test reopened.
-  Commit/push requested; focused PR for #75. Merge/closure not claimed.
+  On 2026-10-02 the author also accepted this corrected report and #75 delivery
+  without reported exceptions, authorizing PR #84 merge and #75 closure.
+  HISTORY records this approval; pending_test.txt remains empty.
 
 ## Issue #74 — Flooded pit returns (4.37.7)
 

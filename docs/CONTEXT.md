@@ -4,7 +4,7 @@ Documentation version: **4.37.8** — 2026-10-02.
 
 **4.37.8 / #75:** corrected the material ledger by catalogue ID: 63 instances,
 315 size rows; totals/runtime unchanged. Native crafting, supplies and persistence
-pass: assets/validation_4378. CA-MAP02-MATERIALS-DROPS-01 remains accepted.
+pass: assets/validation_4378. #75 accepted; merge authorized 2026-10-02.
 
 **Accepted #73/#74:** cardinal blocks/local keys, 39 material chests, 96/96 rat
 rations; six flooded returns, four grates and central elevator. Closed-block

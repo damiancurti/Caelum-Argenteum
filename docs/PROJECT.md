@@ -21,8 +21,9 @@ product station, knowledge, efficiency and time requirements remain unchanged.
 
 CA-MAP02-MATERIALS-DROPS-01 was accepted on 2026-10-02 (4.37.6 / #73 and #75).
 No unchanged author check is requeued or new manual campaign pass inferred.
-The previous-save waiver and retained stations remain approved. Commit/push
-and a focused #75 PR are requested; merge/closure are not claimed.
+The previous-save waiver and retained stations remain approved. On 2026-10-02,
+the author accepted the corrected report and #75 delivery without reported
+exceptions and explicitly requested PR #84 merge and #75 closure.
 Tarot/Trucazo remains later work.
 
 ## 4.37.7 — Flooded MAP02 return (#74)
