@@ -1,6 +1,69 @@
 # Caelum Argenteum — Current systems and rules
 
-Documentation version: **4.37.8** — 2026-10-02.
+Documentation version: **4.37.9** — 2026-10-03.
+
+## 4.37.9 — Expanded city, southern siege and campaign route (#77)
+
+The final city footprint is 960 × 960 m at 32 MU/m, with 288 constructions:
+160 houses, 64 shops, 24 factories and 40 construction sites. Streets connect
+their entrances, the preserved harbor and the fortified perimeter. North/west
+and six southern gates retain the accepted 96-MU breakable gate actors in
+128-MU-wide masonry passages; arches have 96 MU clear height. The eastern dock
+arch is open. Native character collision tiers 1–7 remain supported.
+
+The wall walk stands at 256 MU and tower gun decks at 384 MU; 16-MU risers
+provide physical access. The four towers project beyond the wall corners so
+their artillery has real exterior firing lines. Movement and projectiles retain
+native collision and gravity. The northern tower guns can engage the two
+southern flank gun crews without a range or wall-penetration exemption.
+
+The author's sixfold population change means 6,000 Mandingas, one commander
+and 600 defenders. Five small rams, one large ram and six attacking cannons
+remain the twelve hostile objectives. There are 36 defending cannons: eight
+per wall and one on each tower. The eight southern wall guns and four tower
+guns are active; 24 staffed guns remain in reserve for this southern assault.
+All 72 defensive operators belong to the 600 soldiers, leaving 528 reserves.
+Existing defender attributes/equipment, cannon loading/ballistics, ram crews,
+gate materials and the port enemy zero-resource attack trial remain unchanged.
+
+Author follow-up, 2026-10-03: each attacking command group has at most 100
+members, including its leader. LAYOUT.json owns command_group_limit. The bounded
+neighbor traversal leaves excess actors for subsequent groups instead of joining
+an unlimited connected component. Every queued member participates in leader
+election: Zupay priority 1, Mandinga priority 2, stable roster identity for ties.
+The 1,024-MU visibility links and 35-tic/death-triggered refresh remain. All
+6,001 attackers stay simulated. Existing port saves regroup on the next ordinary
+refresh; no roster, geometry or save-schema replacement is required.
+
+In the expanded city, a vacant defensive post selects the nearest eligible
+reserve to its stair entrance. That same actor follows saved waypoints using
+native TryMove at its existing See-state speed/cadence, with native A_Chase
+obstacle avoidance. It climbs every level, approaches beside the carriage and
+must be physically near the cannon to operate it. There is no teleport or new
+soldier. Reserve positions keep access points free. Saved route progress is
+idempotent; layout/setup revision 2 activates this behavior only on the new map.
+
+Victory still requires all twelve hostile machines neutralized AND the commander
+defeated, in either order. Half-health flight and survivor withdrawal use real
+southern exit zones; withdrawal awards no kills. Knight capture and the endpoint
+at (128,1856,0) retain their shared rules. Rescued prisoners still pay independent
+25-gold/+10-own-faction rewards once, with no new supplies or shops' trading rules.
+
+Connection 16/network revision 4 provides direct MAP02 → MAP06 without renumbering
+old IDs/history. It retains the maze exit, Ace/Zupay prerequisites and 10 km
+journey planner, calendar, provisions and caravan confirmation. Connection 2 is
+inactive; legacy connection 8 remains for saves already in MAP03. Arrival and
+prisoner/resource positions are preserved. No cardinal exit enters a diagnostic map.
+
+Use a fresh/unvisited MAP06 for the expanded southern city. For a previously
+visited port, select its exact geometry: --legacy-map06-north-city for the first
+4.37.9 northern city, --legacy-map06-siege for 4.36.27–4.37.8, or --legacy-map06
+for the pre-siege 4.36.26 port. These three alternatives are mutually exclusive;
+each can accompany --legacy-map02. Existing populations, positions, casualties
+and rewards stay in those saved layouts. Keep original saves/packages for
+rollback; no old MAP06 geometry or army is reset or transplanted.
+Current native/static evidence: assets/validation_4379/south. Author acceptance
+is separate and remains in pending_test.txt.
 
 ## 4.37.8 — Corrected MAP02 material accounting (#75)
 
@@ -369,7 +432,8 @@ ammunition; old finite-ammunition actors retain their stored rounds and mode.
 
 Connected compatible attackers share command across species. Zupay priority is
 1 and every Mandinga priority is 2; saved roster identity breaks equal-priority
-ties. Local links use sight and the layout's 1,024-MU radius; groups are rebuilt
+ties. The #77 follow-up limits each group to 100 members including its leader.
+Local links use sight and the layout's 1,024-MU radius; groups are rebuilt
 every 35 tics or upon a confirmed death. Split groups elect their own leader
 and reconnect deterministically. Operators follow their moving machine posts;
 availability controls operation separately from death-backed neutralization.

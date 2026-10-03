@@ -31,7 +31,10 @@ class CaelumWorldCatalogue : Object
     const CONNECTION_FROM_HAZARD_GALLERY = 13;
     const CONNECTION_MAZE_TO_COAST = 14;
     const CONNECTION_COAST_TO_MAZE = 15;
-    const CONNECTION_DEFINED_COUNT = 16;
+    // Ruta directa de campaña; los IDs anteriores conservan su historial.
+    const CONNECTION_MAZE_TO_PORT = 16;
+    const CONNECTION_DEFINED_COUNT = 17;
+    const CAMPAIGN_ROUTE_REVISION = 4;
 
     static clearscope bool IsLocation(int id)
     {
@@ -91,6 +94,7 @@ class CaelumWorldCatalogue : Object
 
     static clearscope int ConnectionOrigin(int id)
     {
+        if (id == CONNECTION_MAZE_TO_PORT) return LOCATION_SEWERS;
         if (id == CONNECTION_MAZE_TO_COAST) return LOCATION_SEWERS;
         if (id == CONNECTION_COAST_TO_MAZE) return LOCATION_COAST;
         if (id == CONNECTION_RETURN) return LOCATION_MANSION;
@@ -109,6 +113,7 @@ class CaelumWorldCatalogue : Object
 
     static clearscope int ConnectionDestination(int id)
     {
+        if (id == CONNECTION_MAZE_TO_PORT) return LOCATION_PORT;
         if (id == CONNECTION_MAZE_TO_COAST) return LOCATION_COAST;
         if (id == CONNECTION_COAST_TO_MAZE) return LOCATION_SEWERS;
         if (id == CONNECTION_RETURN || id == CONNECTION_FROM_RESERVOIR
@@ -135,7 +140,7 @@ class CaelumWorldCatalogue : Object
     static clearscope bool IsSewerConnection(int id)
     {
         return id >= CONNECTION_TO_RESERVOIR && id < CONNECTION_DEFINED_COUNT
-            && id != CONNECTION_FROM_RESERVOIR && id != CONNECTION_TO_TAROT
+            && id != CONNECTION_TO_RESERVOIR && id != CONNECTION_FROM_RESERVOIR && id != CONNECTION_TO_TAROT
             && id != CONNECTION_TO_MAINTENANCE && id != CONNECTION_MAZE_TO_COAST
             && id != CONNECTION_TO_COAST && id != CONNECTION_FROM_PORT;
     }

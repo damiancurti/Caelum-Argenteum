@@ -1,0 +1,11 @@
+{
+  "source_commit": "83b6b115e7456c585c142a91144c229175cfc999",
+  "release": "4.37.9",
+  "issue": 77,
+  "purpose": "Published first city layout, before the author moved the integrated siege south.",
+  "files": {
+    "CITY.json": "39433262364c23dd95e960a6b72d4597e52b72334e8b89cb0e44c82552b474d0",
+    "LAYOUT.json": "a14d73c5eeb026659a0cf5c1fdd4eef34a252d73e6f4b31988157e4775657d05",
+    "MAP06.wad": "8b88438a0905d0f42665c47e5793dfaa79fd2b824e810a987d1f4eeae7e1fadf"
+  }
+}

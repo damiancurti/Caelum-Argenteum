@@ -7,8 +7,51 @@ class CaelumPortDefender : CaelumFolkloreCombatActor
     Actor NavigationTarget;
     vector3 Station;
     int Lane;
+    // Esquema de navegación 2: sólo se activa en el nuevo plano sur.
+    // Los saves del frente norte conservan los campos por defecto y su puesto.
+    bool FollowingCrewRoute;
+    int CrewRouteGun, CrewRouteStep;
     CaelumShieldModel Shield;
     CaelumWeaponModel Sword;
+
+    void BeginCrewRoute(int index)
+    {
+        if(!CaelumPortData.IsSouth())return;
+        CrewRouteGun=index;CrewRouteStep=0;FollowingCrewRoute=true;
+        double best=1e30;
+        if(NavigationTarget==null)NavigationTarget=Spawn("CaelumSewerEscapeTarget",Pos);
+        for(int i=0;i<CaelumPortData.CrewRouteCount(index);i++)
+        {
+            vector3 point=CaelumPortData.CrewRoutePoint(index,i);
+            if(Abs(point.Z-Pos.Z)>MaxStepHeight)continue;
+            NavigationTarget.SetOrigin(point,false);
+            double distance=(point-Pos).Length();
+            if(distance<best && CheckSight(NavigationTarget)){best=distance;CrewRouteStep=i;}
+        }
+    }
+
+    vector3 CrewPost()
+    {
+        if(Gun==null || !FollowingCrewRoute){FollowingCrewRoute=false;return Station;}
+        int count=CaelumPortData.CrewRouteCount(CrewRouteGun);
+        while(CrewRouteStep<count)
+        {
+            vector3 point=CaelumPortData.CrewRoutePoint(CrewRouteGun,CrewRouteStep);
+            if((point.XY-Pos.XY).Length()>Radius || Abs(point.Z-Pos.Z)>MaxStepHeight)return point;
+            CrewRouteStep++;
+        }
+        if(CrewRouteStep==count)
+        {
+            vector3 last=CaelumPortData.CrewRoutePoint(CrewRouteGun,count-1);
+            vector3 side=Station;
+            if(Station.X!=Gun.Pos.X)side.Y=last.Y;else side.X=last.X;
+            side.Z=last.Z;
+            if((side-Pos).Length()>Radius)return side;
+            CrewRouteStep++;
+        }
+        if((Station-Pos).Length()>Radius)return Station;
+        FollowingCrewRoute=false;return Station;
+    }
 
     override void PostBeginPlay()
     {

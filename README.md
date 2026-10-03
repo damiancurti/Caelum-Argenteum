@@ -4,8 +4,39 @@ An independent dark fantasy FPS-RPG inspired by nineteenth-century Argentina.
 Author and game designer: **Damian Curti**. Development target: **GZDoom 4.14.2**
 on Windows 11. The final game is intended to be independent of Doom assets.
 
-**Current release: 4.37.8.** Obtain and update the complete repository, validate
+**Current release: 4.37.9.** Obtain and update the complete repository, validate
 it, then rebuild with `run_dev.bat` as described below.
+
+Issue [#77](https://github.com/damiancurti/Caelum-Argenteum/issues/77) expands
+**Barracas al Sud (MAP06)** to **960 × 960 m**: 160 houses, 64 shops, 24 factories
+and 40 construction sites. Six gates face the southern siege; north/west gates,
+the eastern docks, a connected wall walk and four cannon towers are traversable.
+The author increased the armies to **6,000 Mandingas plus one commander and 600
+soldiers**. Attackers keep six guns and six rams. Defenders install 36 guns:
+eight per wall plus four towers; **eight south-wall and all four tower guns fire**
+during this assault. The other 24 are staffed reserve positions.
+The author's follow-up caps every attacking command group at **100 enemies,
+including its leader**, while preserving Zupay priority and the full population.
+
+**Current validation failure:** the capped groups pass their native checks,
+but the five-minute full-army run still slows to about 3.7 tics/s (normal: 35).
+Windows remained responsive in that run; simulation performance still fails.
+See the [group-limit tests](assets/validation_4379/south/GROUP100.json) and the
+[earlier uncapped failure](assets/validation_4379/south/LIVE_FREEZE.json).
+
+Normal progression is **MAP01 → MAP02 → MAP06**, retaining Ace/Zupay requirements
+and the existing 10 km planned port journey. See the [authored city data](assets/map06_port/CITY.json)
+and [current live-test evidence](assets/validation_4379/south/GROUP100.json).
+Expanded-layout validation is unfinished. Original first-city evidence remains
+preserved in validation_4379 and is superseded for this geometry.
+
+Use a fresh/unvisited MAP06 for the expansion. For previously visited ports,
+select the matching saved layout with `run_dev.bat --legacy-map06-north-city`
+(first 4.37.9 northern city), `--legacy-map06-siege` (4.36.27–4.37.8 siege port),
+or `--legacy-map06` (pre-siege port). Preserve original saves/packages for rollback.
+These alternatives retain the old army and progress; they do not convert a
+visited city. Saves already in MAP03 can still use their old onward port route.
+Author acceptance remains in [pending_test.txt](pending_test.txt).
 
 Issue [#75](https://github.com/damiancurti/Caelum-Argenteum/issues/75) is implemented
 in the accepted #73/#74 runtime: materials in 39 chests, finite Mandinga ammunition
@@ -131,7 +162,7 @@ execute physical/magical attacks even without enough Air/Anima. Available
 resources drain to zero; the player and defenders retain normal limits. This
 reversible playtest option is documented in SYSTEMS and was accepted by the author.
 
-**Saves that already visited the former MAP06:** use
+**Saves that already visited the pre-siege 4.36.26 MAP06:** use
 `run_dev.bat --legacy-map06` (or `build_dev.ps1 -LegacyMap06`) to preserve its
 exact geometry and progress. This continues the old port; it does not transform
 the saved map into the siege. Combine with `--legacy-map02` if that save also
@@ -196,8 +227,8 @@ individual notices in licenses/ retain their terms and attribution.
    and recipe-based repair stations. Food, water and repair supplies are finite.
 6. Rescue any prisoners you choose and lead them alive to the extraction area
    BEFORE the northern boss fight. They do not fight that boss. Defeat the MAP02
-   Zupay, capture the Ace of Cups, and take the existing MAP03 workshop connector
-   to MAP06. MAP03 is a connector, not a fourth complete campaign chapter.
+   Zupay, capture the Ace of Cups, and plan the direct port journey to MAP06.
+   MAP03 is a diagnostic map, outside the ordinary campaign route.
 7. At the port each rescued prisoner pays 25 gold and +10 own-faction reputation
    once. Stop all twelve hostile siege machines and defeat the commander to
    capture the Knight of Wands. Survivors withdraw; use the port endpoint sign.
@@ -212,11 +243,11 @@ overlays for ordinary campaign acceptance.
 Known limits: 4.37 Tarot activation/Trucazo is deferred by author decision.
 The accepted port enemy zero-resource attack trial remains enabled. Historical
 overall cannon dimensions are unverified; the sleeping-bag icon reuses fabric
-art. The siege has 1,001 attackers, 100 defenders and 24 machines, and may be
-demanding. Prior Windows 11 / Ryzen 9 5950X / RTX 3070 Ti / Vulkan / 1280x720
-probe recorded 2,100 simulated tics in 60.71 host seconds; this is simulation
-throughput with a diagnostic player, not a rendering-FPS benchmark or minimum
-hardware requirement. Full multiplayer campaign behavior has not been verified;
+art. The expanded siege has 6,001 attackers, 600 defenders and 48 machines
+(six rams, six hostile guns and 36 defensive guns). Current full-population
+measurements and their environment are in the linked evidence. The old
+1,001/100 benchmark does not establish performance at this scale. Simulation
+throughput is not display FPS or a minimum hardware requirement. Full multiplayer campaign behavior has not been verified;
 the earlier two-client equipment check does not establish co-op support.
 
 Report issues at https://github.com/damiancurti/Caelum-Argenteum/issues with
@@ -337,7 +368,8 @@ flees at 50% health with triple base speed and counts as defeated when it
 disappears near the exit. Defeat reveals the Ace; the Knight appears beside
 the port survivors after every owed rescue reward is delivered (immediately
 if none survived). Its condition remains provisional until the port siege.
-The forward route is lair MAP02 -> cleared workshop MAP03 -> port MAP06.
+That release used MAP02 -> workshop MAP03 -> MAP06. Issue #77 supersedes the
+workshop step with direct MAP02 -> MAP06; #16 supersedes the provisional Knight rule.
 Existing saves, card identities/effects and prisoner rewards are preserved.
 See [validation evidence](assets/validation_43620/RESULTS.json);
 the author confirmed all #33 checks passed on 2026-09-27.

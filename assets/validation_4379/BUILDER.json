@@ -1,0 +1,24 @@
+{
+  "compatibility_changes_only": [
+    "maps/MAP06.wad"
+  ],
+  "legacy_map_exact": true,
+  "conflicting_modes_rejected_without_replacing_package": true,
+  "all_other_maps_byte_identical_to_4378": [
+    "maps/CADEV02.wad",
+    "maps/MAP01.wad",
+    "maps/MAP02.wad",
+    "maps/MAP03.wad",
+    "maps/MAP04.wad",
+    "maps/MAP05.wad",
+    "maps/MAP07.wad",
+    "maps/MAP08.wad"
+  ],
+  "unchanged_combat_sources": [
+    "CaelumPortSiege.zs",
+    "CaelumPortDefender.zs",
+    "CaelumSiegeEncounter.zs",
+    "CaelumBatteringRam.zs",
+    "CaelumCannon.zs"
+  ]
+}

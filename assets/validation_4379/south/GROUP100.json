@@ -1,0 +1,218 @@
+{
+    "issue":  77,
+    "version":  "4.37.9",
+    "date":  "2026-10-03",
+    "author_request":  "Limit command groups to 100 enemies and repeat tests.",
+    "implementation":  {
+                           "data":  "assets/map06_port/LAYOUT.json:command_group_limit",
+                           "priorities":  "Zupay=1; Mandinga=2; stable roster identity breaks ties",
+                           "includes_leader":  true,
+                           "population":  "6000 Mandingas + commander, 600 defenders",
+                           "limit":  100,
+                           "map_changed_by_group_cap":  false,
+                           "save_schema_change":  false
+                       },
+    "grouping_result":  "PASS: boundary cases, ranked leadership, real deaths, split/rejoin, determinism, full-army coverage and save/load",
+    "live_performance_result":  "FAIL: severe progressive simulation slowdown remains; no Windows Responding=false samples in this run",
+    "checks":  {
+                   "group100_reload":  [
+                                           "QA77GROUP PASS live/save snapshot active=6001 groups=66 max=100 unassigned=0 badLeader=0 oversized=0 leaderSnapshot=1",
+                                           "QA77SOUTHLOAD PASS revision=2 population=6001 defenders=600 guns=42 gates=8 savedRecruits=36"
+                                       ],
+                   "group100_live":  [
+                                         "QA77GROUP PASS full_army active=6001 groups=65 max=100 unassigned=0 badLeader=0 oversized=0 leaderSnapshot=1",
+                                         "QA77GROUP PASS full_army active=6001 groups=65 max=100 unassigned=0 badLeader=0 oversized=0 leaderSnapshot=1",
+                                         "QA77GROUP PASS full_army active=5997 groups=64 max=100 unassigned=0 badLeader=0 oversized=0 leaderSnapshot=1",
+                                         "QA77SOUTH DONE age=351 checks=46 failures=0",
+                                         "QA77GROUP PASS full_army active=5997 groups=63 max=100 unassigned=0 badLeader=0 oversized=0 leaderSnapshot=1",
+                                         "QA77GROUP PASS full_army active=5994 groups=62 max=100 unassigned=0 badLeader=0 oversized=0 leaderSnapshot=1",
+                                         "QA77GROUP PASS full_army active=5994 groups=62 max=100 unassigned=0 badLeader=0 oversized=0 leaderSnapshot=1",
+                                         "QA77GROUP PASS full_army active=5990 groups=65 max=100 unassigned=0 badLeader=0 oversized=0 leaderSnapshot=1",
+                                         "QA77SOUTH DONE age=1051 checks=46 failures=0",
+                                         "QA77GROUP PASS full_army active=5990 groups=65 max=100 unassigned=0 badLeader=0 oversized=0 leaderSnapshot=1",
+                                         "QA77GROUP PASS full_army active=5976 groups=67 max=100 unassigned=0 badLeader=0 oversized=0 leaderSnapshot=1",
+                                         "QA77GROUP PASS full_army active=5935 groups=63 max=100 unassigned=0 badLeader=0 oversized=0 leaderSnapshot=1",
+                                         "QA77GROUP PASS full_army active=5899 groups=63 max=100 unassigned=0 badLeader=0 oversized=0 leaderSnapshot=1",
+                                         "QA77GROUP PASS full_army active=5884 groups=64 max=100 unassigned=0 badLeader=0 oversized=0 leaderSnapshot=1",
+                                         "QA77GROUP PASS full_army active=5883 groups=60 max=100 unassigned=0 badLeader=0 oversized=0 leaderSnapshot=1",
+                                         "QA77GROUP PASS full_army active=5876 groups=63 max=100 unassigned=0 badLeader=0 oversized=0 leaderSnapshot=1",
+                                         "QA77GROUP PASS full_army active=5874 groups=63 max=100 unassigned=0 badLeader=0 oversized=0 leaderSnapshot=1",
+                                         "QA77GROUP PASS full_army active=5874 groups=62 max=100 unassigned=0 badLeader=0 oversized=0 leaderSnapshot=1"
+                                     ],
+                   "group100_load_new":  [
+                                             "QA77GROUP PASS live/save snapshot active=5998 groups=64 max=100 unassigned=0 badLeader=0 oversized=0 leaderSnapshot=1",
+                                             "QA77SOUTHLOAD PASS revision=2 population=6001 defenders=600 guns=42 gates=8 savedRecruits=0"
+                                         ],
+                   "group100_load_old2":  [
+                                              "QA77GROUP PASS live/save snapshot active=6001 groups=69 max=100 unassigned=0 badLeader=0 oversized=0 leaderSnapshot=1",
+                                              "QA77SOUTHLOAD PASS revision=2 population=6001 defenders=600 guns=42 gates=8 savedRecruits=36"
+                                          ],
+                   "group100_cases3":  [
+                                           "QA77GROUP PASS boundary_100 active=100 groups=1 max=100 unassigned=0 badLeader=0 oversized=0 leaderSnapshot=1",
+                                           "QA77GROUPCASE PASS boundary membership and hierarchy",
+                                           "QA77GROUPCASE PASS 100 fits one group; 101 requires two",
+                                           "QA77GROUP PASS boundary_101 active=101 groups=2 max=100 unassigned=0 badLeader=0 oversized=0 leaderSnapshot=1",
+                                           "QA77GROUPCASE PASS boundary membership and hierarchy",
+                                           "QA77GROUPCASE PASS 100 fits one group; 101 requires two",
+                                           "QA77GROUP PASS 250_with_late_commander active=250 groups=3 max=100 unassigned=0 badLeader=0 oversized=0 leaderSnapshot=1",
+                                           "QA77GROUPCASE PASS all 250 actors assigned with bounded groups",
+                                           "QA77GROUPCASE PASS fully linked 250 actors partition into three groups",
+                                           "QA77GROUPCASE PASS late-registered Zupay leads its group",
+                                           "QA77GROUPCASE PASS unchanged positions reproduce identical membership and leaders",
+                                           "QA77GROUPCASE PASS native commander death excludes him",
+                                           "QA77GROUP PASS after_commander_death active=249 groups=3 max=100 unassigned=0 badLeader=0 oversized=0 leaderSnapshot=1",
+                                           "QA77GROUPCASE PASS survivors elect valid ranked successors",
+                                           "QA77GROUPCASE PASS native Mandinga leader death confirmed",
+                                           "QA77GROUP PASS after_mandinga_death active=248 groups=3 max=100 unassigned=0 badLeader=0 oversized=0 leaderSnapshot=1",
+                                           "QA77GROUPCASE PASS stable tie priority after leader loss",
+                                           "QA77GROUP PASS separated_cluster active=248 groups=4 max=100 unassigned=0 badLeader=0 oversized=0 leaderSnapshot=1",
+                                           "QA77GROUPCASE PASS separation preserves coverage and cap",
+                                           "QA77GROUPCASE PASS remote actors have their own local command group",
+                                           "QA77GROUP PASS rejoined_cluster active=248 groups=3 max=100 unassigned=0 badLeader=0 oversized=0 leaderSnapshot=1",
+                                           "QA77GROUPCASE PASS reconnection still respects the cap",
+                                           "QA77GROUPCASE PASS unchanged positions reproduce identical membership and leaders",
+                                           "QA77GROUPCASE PASS regrouping never replaces or duplicates registered actors",
+                                           "QA77GROUPCASE DONE checks=17 failures=0",
+                                           "QA77GROUP PASS live/save snapshot active=6001 groups=66 max=100 unassigned=0 badLeader=0 oversized=0 leaderSnapshot=1"
+                                       ]
+               },
+    "native_test_scope":  [
+                              "Boundary fixture creates an isolated fully connected set, with subjects dormant/non-solid except when applying native lethal damage; it is not a combat-performance test.",
+                              "The live run starts all 6001 attackers and 600 defenders with all authored machinery. Only the player is invulnerable; no enemies are culled, made dormant or simplified.",
+                              "Same native turn/forward/attack command sequence as the prior freeze benchmark; vid_lowerinbackground=false. UI/window progress was monitored throughout.",
+                              "Live group audit samples every 175 tics; rank snapshot checks defer only while CommandDirty marks a death awaiting its next normal refresh.",
+                              "The previous uncapped-layout save retains all roster references and 36 saved relief identities, is saved with capped groups, and passes a second reload. A fresh capped save also passes.",
+                              "The runner stops only its spawned engine instance at the 300-second host limit. The longer scheduled quit sequence was not reached."
+                          ],
+    "timing":  {
+                   "rendering":  "RenderOverlay heartbeat is retained in the raw log; it is not a hardware FPS measurement.",
+                   "stopped_at_host_limit":  true,
+                   "host_seconds":  301.2877433,
+                   "normal_tics_per_second":  35,
+                   "responding_true":  132,
+                   "intervals":  [
+                                     {
+                                         "simulation_tics":  175,
+                                         "ending_sample":  "QA77SOUTH SAMPLE age=176 tic=328 registered=6001 liveAttackers=6001 liveDefenders=600",
+                                         "host_seconds":  6.927473099999998,
+                                         "tics_per_host_second":  25.261736490900275097924664883
+                                     },
+                                     {
+                                         "simulation_tics":  175,
+                                         "ending_sample":  "QA77SOUTH SAMPLE age=351 tic=503 registered=6001 liveAttackers=5997 liveDefenders=600",
+                                         "host_seconds":  7.043338100000000,
+                                         "tics_per_host_second":  24.846173435859908528315572413
+                                     },
+                                     {
+                                         "simulation_tics":  175,
+                                         "ending_sample":  "QA77SOUTH SAMPLE age=526 tic=678 registered=6001 liveAttackers=5997 liveDefenders=600",
+                                         "host_seconds":  6.132100999999998,
+                                         "tics_per_host_second":  28.538342731145500877543514416
+                                     },
+                                     {
+                                         "simulation_tics":  175,
+                                         "ending_sample":  "QA77SOUTH SAMPLE age=701 tic=853 registered=6001 liveAttackers=5994 liveDefenders=600",
+                                         "host_seconds":  7.024632200000000,
+                                         "tics_per_host_second":  24.912336335559319390415913875
+                                     },
+                                     {
+                                         "simulation_tics":  175,
+                                         "ending_sample":  "QA77SOUTH SAMPLE age=876 tic=1028 registered=6001 liveAttackers=5994 liveDefenders=600",
+                                         "host_seconds":  6.184591300000004,
+                                         "tics_per_host_second":  28.296130093511577202438522648
+                                     },
+                                     {
+                                         "simulation_tics":  175,
+                                         "ending_sample":  "QA77SOUTH SAMPLE age=1051 tic=1203 registered=6001 liveAttackers=5990 liveDefenders=600",
+                                         "host_seconds":  7.0738664,
+                                         "tics_per_host_second":  24.738946158214127425420417892
+                                     },
+                                     {
+                                         "simulation_tics":  175,
+                                         "ending_sample":  "QA77SOUTH SAMPLE age=1226 tic=1378 registered=6001 liveAttackers=5990 liveDefenders=600",
+                                         "host_seconds":  6.7159593,
+                                         "tics_per_host_second":  26.057334802490539214554203746
+                                     },
+                                     {
+                                         "simulation_tics":  175,
+                                         "ending_sample":  "QA77SOUTH SAMPLE age=1401 tic=1553 registered=6001 liveAttackers=5976 liveDefenders=599",
+                                         "host_seconds":  7.0367093,
+                                         "tics_per_host_second":  24.869579307475441681241542833
+                                     },
+                                     {
+                                         "simulation_tics":  175,
+                                         "ending_sample":  "QA77SOUTH SAMPLE age=1576 tic=1728 registered=6001 liveAttackers=5935 liveDefenders=599",
+                                         "host_seconds":  5.926896799999991,
+                                         "tics_per_host_second":  29.52641254020152092705796089
+                                     },
+                                     {
+                                         "simulation_tics":  175,
+                                         "ending_sample":  "QA77SOUTH SAMPLE age=1751 tic=1903 registered=6001 liveAttackers=5899 liveDefenders=599",
+                                         "host_seconds":  5.974621700000000,
+                                         "tics_per_host_second":  29.290557425585623270507654066
+                                     },
+                                     {
+                                         "simulation_tics":  175,
+                                         "ending_sample":  "QA77SOUTH SAMPLE age=1926 tic=2078 registered=6001 liveAttackers=5884 liveDefenders=599",
+                                         "host_seconds":  4.928262000000009,
+                                         "tics_per_host_second":  35.509475754332801384081895606
+                                     },
+                                     {
+                                         "simulation_tics":  175,
+                                         "ending_sample":  "QA77SOUTH SAMPLE age=2101 tic=2253 registered=6001 liveAttackers=5883 liveDefenders=599",
+                                         "host_seconds":  40.4755894,
+                                         "tics_per_host_second":  4.3235936176385858880167412707
+                                     },
+                                     {
+                                         "simulation_tics":  175,
+                                         "ending_sample":  "QA77SOUTH SAMPLE age=2276 tic=2428 registered=6001 liveAttackers=5876 liveDefenders=599",
+                                         "host_seconds":  46.0913933,
+                                         "tics_per_host_second":  3.7968042940459341679306535522
+                                     },
+                                     {
+                                         "simulation_tics":  175,
+                                         "ending_sample":  "QA77SOUTH SAMPLE age=2451 tic=2603 registered=6001 liveAttackers=5874 liveDefenders=599",
+                                         "host_seconds":  48.5496099,
+                                         "tics_per_host_second":  3.6045603736148660588928851517
+                                     },
+                                     {
+                                         "simulation_tics":  175,
+                                         "ending_sample":  "QA77SOUTH SAMPLE age=2626 tic=2778 registered=6001 liveAttackers=5874 liveDefenders=599",
+                                         "host_seconds":  47.3022764,
+                                         "tics_per_host_second":  3.6996105329087291029401705496
+                                     }
+                                 ],
+                   "responding_false":  0
+               },
+    "environment":  {
+                        "gpu":  "NVIDIA GeForce RTX 3070 Ti",
+                        "resolution":  [
+                                           1520,
+                                           825
+                                       ],
+                        "engine":  "GZDoom 4.14.2",
+                        "cpu":  "AMD Ryzen 9 5950X",
+                        "renderer":  "Vulkan"
+                    },
+    "static_audit":  "STATIC.json: 662 checks, including two byte-identical generations and the authored group limit.",
+    "limitations":  [
+                        "Combat randomness differs between runs; late throughput comparison is not an identical deterministic replay.",
+                        "Windows responsiveness alone does not establish playable performance.",
+                        "Expanded-layout completion and author acceptance remain pending; no merge or issue closure is implied."
+                    ],
+    "source_sha256":  {
+                          "build/issue77_group100/caelum_argenteum_dev.pk3":  "36b2a2f8ea0c943b0ee131ce8841684445f9da2e41d5fba32ebc26159400c697",
+                          "src/maps/MAP06.wad":  "84f0c18fdb4be7a91eff146845f78dda5082d5b0c9d996928f0652d7c6fc7efd",
+                          "src/caelum/world/CaelumPortSiege.zs":  "cde8a8d7bbb6a6de59414af756b588f3259f6e12b03d8cef1d6797489a9a5094",
+                          "assets/map06_port/LAYOUT.json":  "d1d6dc5903eb0affcecb603049c8e2a4a2e6ffbe66360eae96b9dd24aaf04237",
+                          "src/caelum/world/CaelumPortData.zs":  "58ceead2ed3955332ae4184baa4add84a21ca16152a2c0e888c8de846f92d735"
+                      },
+    "delivery_package":  {
+                             "different_payloads":  [
+
+                                                    ],
+                             "sha256":  "215550885585b49e9be8c08273aadf14e1b337b8cbad7475731e0f3c56df3b1d",
+                             "identical_payload_entries":  6141,
+                             "note":  "ZIP container hashes differ; all 6141 unpacked files match the tested package byte for byte."
+                         }
+}

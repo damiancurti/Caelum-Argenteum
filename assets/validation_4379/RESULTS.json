@@ -1,0 +1,384 @@
+{
+  "issue": 77,
+  "version": "4.37.9",
+  "date": "2026-10-03",
+  "base_commit": "f4429c543db89062376a9f620deba4ba4439d989",
+  "environment": {
+    "engine": "GZDoom 4.14.2",
+    "os": "Windows 11",
+    "renderer": "Vulkan",
+    "gpu": "NVIDIA GeForce RTX 3070 Ti",
+    "cpu": "AMD Ryzen 9 5950X",
+    "iwad": "Author-installed development Doom II; not distributed"
+  },
+  "author_decisions": [
+    "96 x 96 m urban footprint, four extra buildings, four traversable corner towers.",
+    "Four same-map urban exits; eastern docks and existing northern six-gate military front.",
+    "Direct MAP02 to MAP06 replaces the workshop step; retain existing port travel rules."
+  ],
+  "static": {
+    "issue": 77,
+    "checks": [
+      {
+        "check": "Approved 96 by 96 metre urban footprint",
+        "passed": true
+      },
+      {
+        "check": "Exactly four cardinal city gates",
+        "passed": true
+      },
+      {
+        "check": "Exactly four corner towers",
+        "passed": true
+      },
+      {
+        "check": "Exactly four additional buildings",
+        "passed": true
+      },
+      {
+        "check": "Northern battlefield, ram approaches, platforms and retreat boundary unchanged",
+        "passed": true
+      },
+      {
+        "check": "All accepted siege data retained; only completion-sign placement changed",
+        "passed": true
+      },
+      {
+        "check": "Exact legacy provenance: LAYOUT.json",
+        "passed": true
+      },
+      {
+        "check": "Exact legacy provenance: MAP06.wad",
+        "passed": true
+      },
+      {
+        "check": "north gate width 256 MU",
+        "passed": true
+      },
+      {
+        "check": "north supported passage -128,2240",
+        "passed": true
+      },
+      {
+        "check": "north supported passage -64,2240",
+        "passed": true
+      },
+      {
+        "check": "north supported passage 0,2240",
+        "passed": true
+      },
+      {
+        "check": "north supported passage 64,2240",
+        "passed": true
+      },
+      {
+        "check": "south gate width 256 MU",
+        "passed": true
+      },
+      {
+        "check": "south supported passage 0,-768",
+        "passed": true
+      },
+      {
+        "check": "south supported passage 64,-768",
+        "passed": true
+      },
+      {
+        "check": "south supported passage 128,-768",
+        "passed": true
+      },
+      {
+        "check": "south supported passage 192,-768",
+        "passed": true
+      },
+      {
+        "check": "west gate width 256 MU",
+        "passed": true
+      },
+      {
+        "check": "west supported passage -2176,640",
+        "passed": true
+      },
+      {
+        "check": "west supported passage -2176,704",
+        "passed": true
+      },
+      {
+        "check": "west supported passage -2176,768",
+        "passed": true
+      },
+      {
+        "check": "west supported passage -2176,832",
+        "passed": true
+      },
+      {
+        "check": "east gate width 256 MU",
+        "passed": true
+      },
+      {
+        "check": "east supported passage 832,448",
+        "passed": true
+      },
+      {
+        "check": "east supported passage 832,512",
+        "passed": true
+      },
+      {
+        "check": "east supported passage 832,576",
+        "passed": true
+      },
+      {
+        "check": "east supported passage 832,640",
+        "passed": true
+      },
+      {
+        "check": "Building 211 native roof/headroom",
+        "passed": true
+      },
+      {
+        "check": "Building 212 native roof/headroom",
+        "passed": true
+      },
+      {
+        "check": "Building 213 native roof/headroom",
+        "passed": true
+      },
+      {
+        "check": "Building 214 native roof/headroom",
+        "passed": true
+      },
+      {
+        "check": "Retained port actor 18063 at -1056,192",
+        "passed": true
+      },
+      {
+        "check": "Retained port actor 30988 at 128,640",
+        "passed": true
+      },
+      {
+        "check": "Retained port actor 30989 at 192,640",
+        "passed": true
+      },
+      {
+        "check": "Retained port actor 30990 at 256,640",
+        "passed": true
+      },
+      {
+        "check": "Retained port actor 30991 at 320,640",
+        "passed": true
+      },
+      {
+        "check": "Retained port actor 31050 at 0,2496",
+        "passed": true
+      },
+      {
+        "check": "Retained port actor 30987 at -768,1664",
+        "passed": true
+      },
+      {
+        "check": "Retained port actor 18004 at -768,1472",
+        "passed": true
+      },
+      {
+        "check": "Retained port actor 31051 at 128,1856",
+        "passed": true
+      },
+      {
+        "check": "Two independent generator runs equal the shipped MAP06 byte for byte",
+        "passed": true
+      }
+    ],
+    "map_sha256": "8b88438a0905d0f42665c47e5793dfaa79fd2b824e810a987d1f4eeae7e1fadf",
+    "determinism": [
+      "8b88438a0905d0f42665c47e5793dfaa79fd2b824e810a987d1f4eeae7e1fadf",
+      "8b88438a0905d0f42665c47e5793dfaa79fd2b824e810a987d1f4eeae7e1fadf"
+    ],
+    "old_city_metres": [
+      68,
+      76
+    ],
+    "new_city_metres": [
+      96,
+      96
+    ],
+    "native_clearance_evidence": "See native_geometry.log; static cells alone do not prove actor traversal."
+  },
+  "native": [
+    {
+      "scenario": "walking_final",
+      "log": "native_walking_final.log",
+      "sha256": "07c275a60a59b47f299c06809af0ebfce0bc8d0526b869a154fbfdf84a37d295",
+      "checks": [
+        "QA77CITY DONE checks=183 failures=0",
+        "QA77WALK DONE failures=0 steps=2248"
+      ],
+      "commands": "wait 35; give QA77City; wait 10; give QA77Walk; wait 2800; give QA77View; wait 150; screenshot build/issue77_tower_final.png; give QA77EastView; wait 150; screenshot build/issue77_east_final.png; give QA77SouthView; wait 150; screenshot build/issue77_south_final.png; wait 5; quit"
+    },
+    {
+      "scenario": "objectives",
+      "log": "native_objectives.log",
+      "sha256": "32289307878e09147f6b0cb8a333090fdb84a848fa961365f687a9f7e0c72c0c",
+      "checks": [
+        "QA16OBJ DONE checks=23 failures=0",
+        "QA16EXIT PASS",
+        "QA16REWARD DONE checks=24 failures=0",
+        "QA16REWARDLOAD PASS"
+      ],
+      "commands": "wait 50; give QA16BossWin; wait 1000; give QA16Exit; wait 80; give QA16Rewards; wait 5; save issue77_rewards; wait 5; load issue77_rewards; wait 20; give QA16RewardLoaded; wait 5; quit"
+    },
+    {
+      "scenario": "machines_first",
+      "log": "native_machines_first.log",
+      "sha256": "304352cccdd904a3c7569576409ff74c7d9cdb844699c560183e91cd36317bae",
+      "checks": [
+        "QA16OBJ DONE checks=23 failures=0"
+      ],
+      "commands": "wait 50; give QA16MachinesWin; wait 1000; give QA16Exit; wait 80; quit"
+    },
+    {
+      "scenario": "travel0",
+      "log": "native_travel0.log",
+      "sha256": "b84f863ae18e3154b5e93e3c26c8ff94add4ca3bf051821f2ca40e46644dbd96",
+      "checks": [
+        "QA77TRAVEL DONE count=0 checks=27 failures=0"
+      ],
+      "commands": "wait 100; give QA77TravelPrepare; wait 20; give QA77Depart; wait 150; give QA77Arrival; wait 5; save issue77_travel0; wait 5; load issue77_travel0; wait 30; give QA77Arrival; wait 5; quit"
+    },
+    {
+      "scenario": "travel2_final",
+      "log": "native_travel2_final.log",
+      "sha256": "12ea2762e7a95d181520e04cb5c2c52c8e664f93294566d651937bd1d7478e52",
+      "checks": [
+        "QA77MIGRATION PASS direct=1 reservoir=0",
+        "QA77TRAVEL DONE count=2 checks=29 failures=0"
+      ],
+      "commands": "wait 30; load issue77_old_maze; wait 90; give QA77RouteLoaded; give QA77TravelPartial; wait 20; give QA77Depart; wait 150; give QA77Arrival; wait 5; save issue77_travel2; wait 5; load issue77_travel2; wait 30; give QA77Arrival; wait 5; quit"
+    },
+    {
+      "scenario": "travel4",
+      "log": "native_travel4.log",
+      "sha256": "f0cbbec2ccbc2cd8f0e2532353d9bf6bc9d4de8e53b980f8aa0ce69331a2107f",
+      "checks": [
+        "QA77TRAVEL DONE count=4 checks=31 failures=0"
+      ],
+      "commands": "wait 100; give QA77TravelAll; wait 20; give QA77Depart; wait 150; give QA77Arrival; wait 5; save issue77_travel4; wait 5; load issue77_travel4; wait 30; give QA77Arrival; wait 5; quit"
+    },
+    {
+      "scenario": "compatibility",
+      "log": "native_compatibility.log",
+      "sha256": "12d7d85122a96714796ec82df6052d8c5528f2a35c84f43c8c5a221063bcd9c7",
+      "checks": [
+        "QA16LOAD PASS population=1001 defenders=100 machines=12 neutralized=2"
+      ],
+      "commands": "wait 20; load issue77_baseline; wait 30; give QA16PortLoaded; wait 5; save issue77_compat; wait 5; load issue77_compat; wait 30; give QA16PortLoaded; wait 5; quit"
+    },
+    {
+      "scenario": "rollback_port",
+      "log": "native_rollback_port.log",
+      "sha256": "036142d6ae1f7e7f82771c9d28bb0d0c34873c8383c0f2fe6147f56d5f3500a3",
+      "checks": [
+        "QA16LOAD PASS population=1001 defenders=100 machines=12 neutralized=2"
+      ],
+      "commands": "wait 20; load issue77_compat; wait 30; give QA16PortLoaded; wait 5; quit"
+    },
+    {
+      "scenario": "maze_migration",
+      "log": "native_maze_migration.log",
+      "sha256": "224cf9c19f3e68f74c9e4655a25300724e6947fa63ddc3c009af65ac5f72c5be",
+      "checks": [
+        "QA77MIGRATION PASS direct=1 reservoir=0"
+      ],
+      "commands": "wait 20; load issue77_old_maze; wait 90; give QA77RouteLoaded; wait 5; save issue77_migrated_maze; wait 5; load issue77_migrated_maze; wait 90; give QA77RouteLoaded; wait 5; quit"
+    },
+    {
+      "scenario": "rollback_maze",
+      "log": "native_rollback_maze.log",
+      "sha256": "72086b12a34112378e3deb3b4656378224da36342c0ab7edc215518a98921961",
+      "checks": [
+        "QA77ROLLBACK PASS direct=0 reservoir=1"
+      ],
+      "commands": "wait 20; load issue77_migrated_maze; wait 90; give QA77RollbackLoaded; wait 5; quit"
+    },
+    {
+      "scenario": "caravan",
+      "log": "native_caravan.log",
+      "sha256": "84faa43b5009a08b9081ae654a310df43ae70cfe1ade213d61ae7fbacd391e37",
+      "checks": [
+        "QA77CARAVAN DONE failures=0"
+      ],
+      "commands": "wait 100; give QA77TravelPrepare; wait 20; give QA77CaravanOpen; wait 250; give QA77CaravanConfirm; wait 150; give QA77Arrival; wait 5; quit"
+    },
+    {
+      "scenario": "legacy_workshop",
+      "log": "native_legacy_workshop.log",
+      "sha256": "63df9993304c37f30fe149c41c7d8c3253975ce960615b37035ce6b3ec2b53ee",
+      "checks": [
+        "QA77LEGACY DONE failures=0"
+      ],
+      "commands": "wait 20; load issue77_old_workshop; wait 90; give QA77LegacyStart; wait 20; give QA77LegacyDepart; wait 150; give QA77LegacyArrival; wait 5; quit"
+    },
+    {
+      "scenario": "perf_before",
+      "log": "native_perf_before.log",
+      "sha256": "3f360f7576dab293de3c04da77fe365b0abcc0e763c279cccb10bad48f8874e8",
+      "checks": [
+        "QA16PORT DONE checks=8 failures=0"
+      ],
+      "commands": "wait 35; give QA16PortRun; wait 2105; give QA16PortLoaded; wait 5; quit"
+    },
+    {
+      "scenario": "perf_after",
+      "log": "native_perf_after.log",
+      "sha256": "d0e50b6844a8cdb4c3a1dec1beccc938724ca6f846c6192b22302ebe2c2d0d36",
+      "checks": [
+        "QA16PORT DONE checks=8 failures=0"
+      ],
+      "commands": "wait 35; give QA16PortRun; wait 2105; give QA16PortLoaded; wait 5; quit"
+    }
+  ],
+  "performance": {
+    "before": {
+      "native_tics": 2100,
+      "host_seconds": 60.079179999999994,
+      "native_tics_per_host_second": 34.95387253953866,
+      "first": "QA16PORT SAMPLE tic=35 age=1 liveAttackers=1001 liveDefenders=100 crew=74 machines=12 rams=6 guns=18 shots=0 contacts=0 blockedRams=0 strikes=0 groups=1 bossFollowers=1001 priorities=1001 neutralized=0 victory=0",
+      "last": "QA16PORT SAMPLE tic=2135 age=2101 liveAttackers=846 liveDefenders=100 crew=74 machines=12 rams=6 guns=18 shots=89 contacts=89 blockedRams=0 strikes=8 groups=2 bossFollowers=844 priorities=1001 neutralized=4 victory=0"
+    },
+    "after": {
+      "native_tics": 2100,
+      "host_seconds": 59.9461464,
+      "native_tics_per_host_second": 35.03144282181915,
+      "first": "QA16PORT SAMPLE tic=35 age=1 liveAttackers=1001 liveDefenders=100 crew=74 machines=12 rams=6 guns=18 shots=0 contacts=0 blockedRams=0 strikes=0 groups=1 bossFollowers=1001 priorities=1001 neutralized=0 victory=0",
+      "last": "QA16PORT SAMPLE tic=2135 age=2101 liveAttackers=892 liveDefenders=100 crew=74 machines=12 rams=6 guns=18 shots=101 contacts=101 blockedRams=0 strikes=7 groups=3 bossFollowers=889 priorities=1001 neutralized=1 victory=0"
+    }
+  },
+  "evidence_limits": [
+    "Native clearance sweeps test 25 routes with all seven supported profiles: 183 checks and 84,448 collision steps.",
+    "Actual-tic movement separately traverses four gates and ascends/descends all four towers: 2,248 steps; native gravity retained. Hostile bodies/damage are isolated in traversal fixtures.",
+    "Full-battle runs keep 1,000 Mandingas, one commander, 100 defenders and all 24 machines concurrently active. Performance samples measure simulation throughput, not display FPS or a controlled combat outcome.",
+    "Travel fixtures seed Ace/Zupay progress and 0/2/4 extracted prisoners, then use native departure, planning, ChangeLevel, arrival, payments and save/reload. This is not a full unaided campaign playthrough.",
+    "Siege objective fixtures force guard deaths and the commander threshold to exercise both objective orders and real northern withdrawal, then shared card/reward persistence.",
+    "Legacy geometry continues old saves; it does not migrate them into the expanded city. Original saves/packages are retained for rollback.",
+    "Early local traversal harness failures were resolved by settling collision sweeps on native floorz and retaining native vertical velocity in actual-tic tests; product movement code was unchanged."
+  ],
+  "runtime_source_sha256_at_test": {
+    "src/CAPALOMO": "6bde693f287d5f56a2cd93eed1c6160ea12945e2cdac6710f27b681b5025ab54",
+    "src/LANGUAGE": "880baac95d1df4d94edb4b232e1cef75b214c2092c4617eb11116661f3678355",
+    "src/caelum/quests/CaelumMainM00QuestController.zs": "3eef654f015067a0f13532361ecc30c13e2793feb3596f191f2a237ead548ea6",
+    "src/caelum/world/CaelumCaravanTrial.zs": "f88c6afc7d13bad19cf658db18c91741de3c33a4f6f78d8c4821baca6afe90c8",
+    "src/caelum/world/CaelumJourneyPlan.zs": "ba0c02e0e833fd370c9ce6b6cd6d15f4bb0b1ef77aa821abf2256c3099f8c5dc",
+    "src/caelum/world/CaelumPhysicalHazards.zs": "c62de625308f14108d2587a265e7f6fa7d90787ad3a82ec0f3cd56335fd43b90",
+    "src/caelum/world/CaelumPortData.zs": "a149b8169c630fa273ad8255cf98a57ee74c7c38ab0262db777f995e4c02b614",
+    "src/caelum/world/CaelumSewerMaze.zs": "c71d12db995613778ed7e1ef9c07c2c2ba2694c8d5275f5714f1b212e85e92a5",
+    "src/caelum/world/CaelumSewerTravel.zs": "cd75013058d782be48be26606356ad618f4f145d2bad752f450ab8bc5989c27b",
+    "src/caelum/world/CaelumWorldCatalogue.zs": "044754c4689c7e381294ba39d9135ed7c9676c80b26c2e3217778389ed618a58",
+    "src/maps/MAP06.wad": "8b88438a0905d0f42665c47e5793dfaa79fd2b824e810a987d1f4eeae7e1fadf"
+  },
+  "author_acceptance": {
+    "confirmed": false,
+    "pending_ids": [
+      "CA-4379-CITY-01",
+      "CA-4379-ROUTE-01"
+    ]
+  }
+}

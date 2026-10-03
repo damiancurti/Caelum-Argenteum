@@ -7,7 +7,8 @@
     "Author trial: registered hostile port enemies may attack with insufficient Air or Anima; enemy_attack_resource_trial=0 restores resource limits and physical fallback.",
     "Geometry, formation spacing and command connectivity radius are implementation choices for playtesting, not new combat balance.",
     "Machine proximity uses existing accepted physical-scale guard radii. Crew posts follow current machine positions.",
-    "Existing port buildings, docks and prisoner positions are retained. The battle district extends north."
+    "Existing port buildings, docks and prisoner positions are retained. The battle district extends north.",
+    "Author 2026-10-03, issue #77: cap each port command group at 100 enemies including its leader; preserve rank priority and the full army."
   ],
   "mandingas": 1000,
   "defenders": 100,
@@ -37,9 +38,10 @@
   "exit_y": 11520,
   "route_radius": 96,
   "command_link_radius": 1024,
+  "command_group_limit": 100,
   "command_update_tics": 35,
   "target_update_tics": 8,
   "resource_bed": [-768, 1664, 0],
   "resource_workbench": [-768, 1472, 0],
-  "completion_position": [384, 1856, 0]
+  "completion_position": [128, 1856, 0]
 }

@@ -1,6 +1,36 @@
 # TASKS.md — Active tasks
 
-Documentation version: **4.37.8** — 2026-10-02.
+Documentation version: **4.37.9** — 2026-10-03.
+
+## Issue #77 — Expanded southern Barracas al Sud (4.37.9)
+
+- Final author-approved scope: 960 × 960 m; 160 houses, 64 shops, 24 factories,
+  40 construction sites; four accessible cannon towers and a connected wall walk.
+- South assault integrated into six city gates; north/west fortified exits,
+  eastern docks. All four directions remain inside MAP06.
+- Forces: 6,000 Mandingas plus one commander, 600 defenders, six hostile guns
+  and six rams. Thirty-six defensive guns are installed; eight southern wall
+  guns plus four tower guns are active, with 24 staffed reserve emplacements.
+- Physical stairs and saved crew routes retain existing actors and resources.
+  Twelve hostile objectives plus commander defeat still gate victory/rewards.
+- Author follow-up: at most 100 enemies per attacking command group, including
+  its leader. Preserve Zupay priority, stable ties, sight links and the full army.
+- Direct MAP02 → MAP06 uses the accepted Ace/Zupay and 10 km journey contract;
+  the legacy MAP03 onward route remains for existing workshop saves.
+- Exact prior layouts are selectable with --legacy-map06-north-city,
+  --legacy-map06-siege or --legacy-map06. Current code preserves their state;
+  the saved geometry/population is not converted into the expanded city.
+- Evidence: assets/validation_4379/south. Original validation_4379 results
+  describe the superseded 96 m northern iteration, not the final battle scale.
+- Blocking live test: the 100-member cap passes its native tests but the latest
+  five-minute full-army run still slows to about 3.7 tics/s instead of 35.
+  Windows stays responsive in that run. GROUP100.json retains the new checks;
+  assets/validation_4379/south/LIVE_FREEZE.json retains earlier uncapped stalls.
+- Next: isolate and fix the live-performance failure, complete the remaining
+  expanded-layout validation, then review PR #85 and complete
+  CA-4379-CITY-01 / CA-4379-ROUTE-01.
+  Captain identity/intelligence, later narrative work and author acceptance
+  remain separate; no merge or issue closure is inferred.
 
 ## Issue #75 — Material supplies and corrected audit (4.37.8)
 

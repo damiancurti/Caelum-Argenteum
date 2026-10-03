@@ -6,6 +6,8 @@ class CaelumSewerTravel : Object play
     {
         if(level.MapName=="MAP02")
         {
+            // Reutiliza el acceso autorizado sin regenerar la geometría del laberinto.
+            if(id==CaelumWorldCatalogue.CONNECTION_MAZE_TO_PORT)id=CaelumWorldCatalogue.CONNECTION_TO_RESERVOIR;
             if(CaelumMazeLayout.IsCurrent())return CaelumMazeLayout.TravelPosition(id);
             if(id==2)return (704,9600,0);
             if(id==4)return (1600,9600,0);
