@@ -1,6 +1,21 @@
 # TASKS.md — Active tasks
 
-Documentation version: **4.37.7** — 2026-10-02.
+Documentation version: **4.37.8** — 2026-10-02.
+
+## Issue #75 — Material supplies and corrected audit (4.37.8)
+
+- Gameplay delivered and accepted with #73, retained by #74: 65 equipment
+  equivalents in 39 material chests; finite enemy supplies and local keys.
+- Correct the positional ledger join using catalogue_index: 63 instances /
+  315 size rows. Original evidence preserved; totals/runtime unchanged.
+- Auditor passes 866 checks, rejects 11 invalid variants and verifies new native
+  evidence. Two generator runs match all four current outputs byte for byte.
+- GZDoom: 325 recipe completions, 3,848-step keyed route, exact death supplies,
+  partial/capacity collection, real save/load and hub return. Evidence and fixture
+  limits: assets/validation_4378. Existing stations/knowledge remain required.
+- CA-MAP02-MATERIALS-DROPS-01 was accepted 2026-10-02 (4.37.6 / #73 and #75).
+  Preserve that acceptance and the old-save waiver; no unchanged test reopened.
+  Commit/push requested; focused PR for #75. Merge/closure not claimed.
 
 ## Issue #74 — Flooded pit returns (4.37.7)
 

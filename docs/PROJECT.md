@@ -1,6 +1,29 @@
 # Caelum Argenteum — Project, status and roadmap
 
-Documentation version: **4.37.7** — 2026-10-02.
+Documentation version: **4.37.8** — 2026-10-02.
+
+## 4.37.8 — MAP02 material ledger and finite-supply audit (#75)
+
+Gameplay was implemented and author-accepted with #73, then retained by #74.
+This delivery corrects an audit artifact: 63 equipment instances (315 item/size
+rows) were joined to native recipe output by array position instead of
+catalogue_index. Original and current native inputs agree; all aggregate
+quantities are unchanged. The old report remains historical evidence.
+assets/validation_4378/MATERIAL_LEDGER.json supersedes its per-instance associations.
+
+The new auditor checks the WAD/manifest, carriers, identities and native inputs:
+866 checks pass; 11 invalid variants are rejected, including the old positional
+join. Two isolated generator runs reproduce all four outputs byte for byte.
+GZDoom 4.14.2 completes 325 recipes with exact per-instance budgets and passes
+the keyed route, finite drops, partial/capacity collection and save/hub persistence.
+Recipe fixtures supply known recipes, station capabilities and Box ownership;
+product station, knowledge, efficiency and time requirements remain unchanged.
+
+CA-MAP02-MATERIALS-DROPS-01 was accepted on 2026-10-02 (4.37.6 / #73 and #75).
+No unchanged author check is requeued or new manual campaign pass inferred.
+The previous-save waiver and retained stations remain approved. Commit/push
+and a focused #75 PR are requested; merge/closure are not claimed.
+Tarot/Trucazo remains later work.
 
 ## 4.37.7 — Flooded MAP02 return (#74)
 

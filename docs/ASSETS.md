@@ -1,6 +1,30 @@
 # Caelum Argenteum — Audio and art
 
-Documentation version: **4.37.7** — 2026-10-02.
+Documentation version: **4.37.8** — 2026-10-02.
+
+## 4.37.8 — Supply ledger provenance and verification (#75)
+
+No art or geometry changes; diagnostic release labels advance to 4.37.8.
+Preserve the original
+assets/validation_4376/MATERIAL_LEDGER.json as historical evidence.
+assets/validation_4378/MATERIAL_LEDGER.json corrects its material-to-instance
+join by stable catalogue ID, retaining original positions, quantities, size
+policy and aggregate totals. Original and current native inputs match.
+
+assets/generators/validate_map02_supplies.py checks WAD/manifest assignments and
+the corrected ledger; optional native logs also verify crafting completion and
+persistence. Reproduce the submitted audit with:
+
+    python assets/generators/validate_map02_supplies.py --recipe-log assets/validation_4378/native_recipes.log --route-log assets/validation_4378/native_supplies_persistence.log
+
+validation_4378 retains SUPPLIES.json, MUTATIONS.json, DETERMINISM.json,
+RESULTS.json and two sanitized successful native logs. Eleven negative cases
+include the historical positional join despite its correct aggregate.
+Two isolated generator runs reproduce all four current files exactly; all
+6,141 tested PK3 members match the pre-label source; final startup checks
+validate the release-label update. No development IWADs, engine binaries,
+saves or test fixtures are distributed. Earlier local fixture failures and
+their diagnosed limits are listed in RESULTS; author acceptance stays separate.
 
 ## 4.37.7 — Layered sewer return geometry (#74)
 

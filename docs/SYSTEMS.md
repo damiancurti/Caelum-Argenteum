@@ -1,6 +1,25 @@
 # Caelum Argenteum — Current systems and rules
 
-Documentation version: **4.37.7** — 2026-10-02.
+Documentation version: **4.37.8** — 2026-10-02.
+
+## 4.37.8 — Corrected MAP02 material accounting (#75)
+
+The #73/#75 supply contract below is unchanged. Its current per-instance ledger
+is assets/validation_4378/MATERIAL_LEDGER.json, keyed by catalogue_index.
+The archived 4.37.6 table accidentally joined recipe output to the chest-ordered
+array position. For example, catalogue 39 is an Earth Bell, not the armor whose
+hide budget occupied that row. At equipment size 0 its whole-batch reference is
+252 raw emerald, 2,036 raw copper and 228 raw tin units. The correction affects
+315 item/size rows across 63 instances; aggregate quantities and runtime stock
+remain unchanged.
+
+All 65 existing recipes produce one equipment instance at each of five sizes
+from their allocated basics in isolated native completion tests. 100% remains
+a budget reference. Ordinary crafting retains its selected efficiency, knowledge,
+time, station and Box requirements. The fixture supplies those prerequisites
+and skips task elapsed time; it does not establish that every crafting route is
+available at MAP02's retained workshops. Existing author approval of the workshops
+and the old-save waiver remains in force.
 
 ## 4.37.7 — Floor traps, flooded return and central lift (#74)
 

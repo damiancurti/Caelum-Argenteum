@@ -4,6 +4,24 @@ Status: integrated engineering register (issue #22, patch 4.36.1b).
 Prepared: 2026-09-23. Inherits the project's release after integration.
 Inspected baseline: `1dc390576fa330d37ff543526fc7e69a397fc28f` (PR #7).
 
+## CA-KP-030 — Join per-instance evidence by identity, not array position
+
+Status/evidence: CODE-VERIFIED report defect; ENGINE-VERIFIED unchanged budgets.
+First recorded / last checked: 2026-10-02. Issue #75 / 4.37.8, baseline a99f266e.
+
+The manifest orders instances by chest; the native budget log orders by
+catalogue_index. A positional join assigned another recipe's inputs to 63
+instances across five sizes. Aggregate totals still matched because the set
+was merely permuted. Compare stable keys, quantities and every per-instance
+value; a matching sum does not validate their associations.
+
+Original and current native inputs agree. The corrected MATERIAL_LEDGER.json
+in assets/validation_4378 joins by catalogue_index and preserves the original
+report as provenance. validate_map02_supplies.py rejects that old report even
+with unchanged totals; MUTATIONS.json records the negative case. Native
+completion confirms 325 outputs with fixture-provided crafting prerequisites
+and skipped elapsed time, separate from ordinary campaign acceptance.
+
 ## CA-KP-029 — Lowering a base sector changes upper map-thing spawn heights
 
 Status/evidence: CODE-VERIFIED spawn adjustment; ENGINE-VERIFIED layered traversal.
