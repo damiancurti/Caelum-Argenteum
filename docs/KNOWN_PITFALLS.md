@@ -7,8 +7,8 @@ Inspected baseline: `1dc390576fa330d37ff543526fc7e69a397fc28f` (PR #7).
 ## CA-KP-029 — Lowering a base sector changes upper map-thing spawn heights
 
 Status/evidence: CODE-VERIFIED spawn adjustment; ENGINE-VERIFIED layered traversal.
-First recorded / last checked: 2026-10-02. Issue: #74 / 4.37.7, working branch
-from baseline 5c55bb26; final commit is the linked issue delivery.
+First recorded / last checked: 2026-10-02. Issue: #74 / 4.37.7, implementation
+commit 2f932eab (PR #83), from baseline 5c55bb26.
 
 UDMF thing `height` is relative to its base sector floor. Adding a solid upper
 3D slab does not make that slab the original map-thing height reference. When
@@ -28,7 +28,8 @@ Detached 3D controls retain the CA-KP-026 separation rule.
 Evidence: [static checks](../assets/validation_4377/STATIC.json) and
 [native results](../assets/validation_4377/RESULTS.json). Native traversal does
 not individually inspect every upper actor's rendering; that position comparison
-is static. Author acceptance remains CA-MAP02-PIT-RETURN-01, pending.
+is static. The author accepted CA-MAP02-PIT-RETURN-01 on 2026-10-02
+without reported exceptions; see HISTORY for the separate acceptance record.
 
 ## CA-KP-028 — Temporal forecasts must preserve within-tic ordering
 

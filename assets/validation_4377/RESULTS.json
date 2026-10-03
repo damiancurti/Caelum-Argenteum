@@ -80,8 +80,14 @@
     }
   ],
   "author_acceptance": {
-    "confirmed": false,
-    "pending_id": "CA-MAP02-PIT-RETURN-01"
+    "confirmed": true,
+    "accepted_id": "CA-MAP02-PIT-RETURN-01",
+    "origin_version": "4.37.7",
+    "issue": 74,
+    "confirmation_date": "2026-10-02",
+    "result": "All pending checks passed, without reported exceptions.",
+    "authorization": "The author explicitly requested PR #83 merge and issue #74 closure.",
+    "qualification": "Previous-save compatibility remains waived; author acceptance is separate from the isolated agent evidence."
   },
   "fixture_iterations": [
     "Initial Use-distance probe stood 2 MU beyond the native range; corrected fixture approached within range.",

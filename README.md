@@ -13,8 +13,9 @@ independent grates opened from outside and an elevator to the central start.
 Press Use at a grate to open it and call the lift; Use from inside travels to
 the other landing. Closed blocks keep their trapdoors shut until their normal
 entrance opens. **Start a new campaign**: the author waived old-save compatibility.
-Current-layout save/load and hub returns are tested; author acceptance remains
-in [pending_test.txt](pending_test.txt). See the [lower-network diagram](assets/validation_4377/LOWER_NETWORK.png)
+Current-layout save/load and hub returns are tested. The author accepted all
+#74 checks on 2026-10-02 and authorized [PR #83](https://github.com/damiancurti/Caelum-Argenteum/pull/83)
+merge and issue closure. See the [lower-network diagram](assets/validation_4377/LOWER_NETWORK.png)
 and [test evidence](assets/validation_4377/RESULTS.json).
 
 The accepted #73 cardinal layout and #75 material chests, finite enemy drops and

@@ -5,7 +5,7 @@ Documentation version: **4.37.7** — 2026-10-02.
 **4.37.7 / #74:** six flooded pit returns, four exterior-opened grates and a
 central elevator. Closed-block covers stay shut until normal entry opens.
 Author waived old saves; start fresh. Current persistence, sizes, keys and escort
-tested: assets/validation_4377. CA-MAP02-PIT-RETURN-01 awaits author acceptance.
+tested: assets/validation_4377. CA-MAP02-PIT-RETURN-01 accepted 2026-10-02; merge authorized.
 
 **Accepted #73 / 4.37.6:** cardinal blocks/local keys, #75 material chests and
 96/96 rat rations; retained stations and northern extraction/boss. Accepted 2026-10-02.

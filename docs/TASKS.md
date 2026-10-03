@@ -11,8 +11,10 @@ Documentation version: **4.37.7** — 2026-10-02.
   their trap covers shut until their normal entrance opens.
 - Population, other hazards, #75 supplies, surface locks and extraction retained.
 - Static/native evidence: assets/validation_4377. New-layout save/load, hub return,
-  all sizes, key recovery and four followers tested; author acceptance remains
-  CA-MAP02-PIT-RETURN-01 in pending_test.txt. Review the linked #74 PR before merge.
+  all sizes, key recovery and four followers tested. The author confirmed all
+  CA-MAP02-PIT-RETURN-01 checks passed on 2026-10-02 without reported exceptions
+  and authorized PR #83 merge / #74 closure. Acceptance is recorded in HISTORY;
+  the author-test queue is empty. Release 4.37.7 remains unchanged.
 
 ## Issue #73 — Cardinal MAP02 (4.37.6)
 
@@ -23,7 +25,7 @@ Documentation version: **4.37.7** — 2026-10-02.
   water tunnels/four return grates/elevator in 4.37.7 above.
 - Evidence: assets/validation_4376. The author confirmed both CA-MAP02 checks
   passed on 2026-10-02 and authorized merge and closure of #73. HISTORY records
-  acceptance separately from static/native evidence. #74 author acceptance is pending.
+  acceptance separately from static/native evidence. #74 was also accepted on 2026-10-02.
 
 
 ## Issue #65 — Daily mansion food/water (4.37.5)

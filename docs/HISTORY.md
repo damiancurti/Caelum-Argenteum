@@ -43,10 +43,16 @@ was also diverted around crusher 43923 to preserve its original moving sector;
 all affected native checks were repeated. Successful final logs and the exact
 tested runtime hashes are retained in assets/validation_4377/RESULTS.json.
 
-Tests isolate hostile AI/damage for traversal and escort. They are agent evidence,
-not author acceptance of combat, aesthetics or the complete campaign. Outstanding
-author check: CA-MAP02-PIT-RETURN-01 (origin 4.37.7 / #74). No pass, merge or issue
-closure is claimed without a later explicit author confirmation.
+Agent tests isolate hostile AI/damage for traversal and escort; their scope
+remains distinct from author acceptance and a complete campaign test.
+
+Author acceptance, 2026-10-02: Damián Curti explicitly confirmed that all tests
+passed and requested issue closure and merge. CA-MAP02-PIT-RETURN-01
+(origin 4.37.7 / issue #74) is accepted in full, without reported exceptions;
+PR #83 merge and #74 closure are expressly authorized. The confirmed entry
+is removed from pending_test.txt, which remains tracked and empty. The
+previous-save compatibility waiver still applies. This acceptance update
+changes no runtime behavior and retains release 4.37.7.
 
 ## 4.37.6 — Central MAP02 and local progression carriers (#73)
 

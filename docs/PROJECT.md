@@ -13,8 +13,10 @@ bypass. Existing locks, cells, extraction, population and #75 supplies remain.
 
 The author explicitly waived compatibility with previous saves for this patch.
 Start fresh; new-layout saves and MAP03 hub returns are tested. Static and native
-evidence is in assets/validation_4377; author acceptance remains outstanding as
-CA-MAP02-PIT-RETURN-01 in pending_test.txt. Tarot/Trucazo remains later work.
+evidence is in assets/validation_4377. On 2026-10-02 the author confirmed all
+CA-MAP02-PIT-RETURN-01 checks passed without reported exceptions and authorized
+PR #83 merge and #74 closure. The author-test queue is empty; HISTORY records
+acceptance separately from agent evidence. Tarot/Trucazo remains later work.
 
 ## 4.37.6 — Cardinal MAP02 (#73, coordinated #75 loot)
 
