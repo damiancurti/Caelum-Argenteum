@@ -25,6 +25,7 @@ class CaelumTimeSkipModel : CaelumJourneyModel
     int ProductiveTics, RequiredTics, StartDay;
     double Scale, NextThreat, FoodTrigger, WaterTrigger;
     int HealthBeforeStep;
+    int ChairFactor;
     double AdrenalineBeforeStep;
 
     override void Step(bool sleeping)
@@ -53,6 +54,8 @@ class CaelumTimeSkipModel : CaelumJourneyModel
         Sleeping=alreadySleeping;NextThreat=-1;
         let bed=CaelumTimeSkipRules.FindFurniture(user,true);
         BedFactor=bed!=null?bed.ComfortFactor():Bag && CaelumRestBag.HasRoom(user)?3:1;
+        let chair=user.CraftingTaskActive?null:CaelumTimeSkipRules.FindFurniture(user,false);
+        ChairFactor=chair!=null?chair.ComfortFactor():1;
         let it=ThinkerIterator.Create("CaelumDiningTable");CaelumDiningTable table;
         while((table=CaelumDiningTable(it.Next()))!=null)
         {
@@ -127,6 +130,8 @@ class CaelumTimeSkipModel : CaelumJourneyModel
     override double Comfort(bool sleeping)
     {return Hunger<=CaelumTimeSkipRules.SleepAt() || Thirst<=CaelumTimeSkipRules.SleepAt()?1:sleeping?BedFactor:1;}
     override double SleepRecoveryScale() {return Scale;}
+    override double AnimaComfort(bool sleeping)
+    {return sleeping || Hunger<=CaelumTimeSkipRules.SleepAt() || Thirst<=CaelumTimeSkipRules.SleepAt()?1:Max(1,ChairFactor);}
 
     void LocalDay()
     {

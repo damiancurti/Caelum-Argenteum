@@ -1,6 +1,41 @@
 CAELUM ARGENTEUM — STORY AND MAP01
 
-Documentation version: **4.37.8** — 2026-10-02.
+Documentation version: **4.37.9** — 2026-10-03.
+
+## 4.37.9 — Expanded Barracas al Sud campaign layout (#77)
+
+The third campaign map remains internal MAP06. The author replaced the first
+96 × 96 m proposal with a 960 × 960 m city, one hundred times its area, populated
+by 160 houses, 64 shops, 24 factories and 40 construction sites. CITY.json
+describes this city under expansion; SOUTH.json supplies the southern deployment.
+Its north/west exits reach local exterior ground, six south gates share the
+integrated siege front, and the eastern arch reaches the retained docks. Four
+corner towers and the continuous raised wall walk are traversable by stairs.
+
+The assault now comes from the south: 6,000 Mandingas and one commander oppose
+600 soldiers. The six hostile guns and six rams retain their counts. Thirty-six
+defensive guns occupy eight positions per wall and one per tower; twelve fire
+in this assault (eight south-wall plus all four tower guns). The other 24 are
+staffed reserve positions. No new faction, quest, captain identity or reward is
+invented by the larger city. The original arrival, rescued prisoners, resources
+and piers remain; the endpoint stays at (128,1856,0).
+
+Author clarification, 2026-10-03: MAP01 → MAP02 → MAP06 is the normal route.
+The former MAP03 workshop step is historical. The existing maze exit still
+requires the sewer Zupay/Ace and uses the approved 10 km journey planner.
+Saves already in that workshop retain their legacy port connection.
+
+Use a fresh/unvisited MAP06 for the expanded southern city. For a previously
+visited port, select its exact geometry: --legacy-map06-north-city for the first
+4.37.9 northern city, --legacy-map06-siege for 4.36.27–4.37.8, or --legacy-map06
+for the pre-siege 4.36.26 port. These three alternatives are mutually exclusive;
+each can accompany --legacy-map02. Existing populations, positions, casualties
+and rewards stay in those saved layouts. Keep original saves/packages for
+rollback; no old MAP06 geometry or army is reset or transplanted.
+Current evidence and the city plan are in assets/validation_4379/south. The first
+city iteration remains documented in HISTORY and the original validation_4379
+files. CA-4379-CITY-01 and CA-4379-ROUTE-01 passed author confirmation on
+2026-10-03; HISTORY records acceptance. Performance follow-up is issue #86.
 
 ## 4.37.8 — MAP02 supplies audit (#75)
 

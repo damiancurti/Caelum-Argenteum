@@ -52,7 +52,12 @@ class CoastalMap:
 
         def polygon(x, y, size, sector, wall, horizon=False, control=None):
             corners = [(x,y), (x,y+size), (x+size,y+size), (x+size,y)]
-            for a,b in zip(corners,corners[1:]+corners[:1]):
+            neighbors = [(x-size,y),(x,y+size),(x+size,y),(x,y-size)]
+            for index,(a,b) in enumerate(zip(corners,corners[1:]+corners[:1])):
+                # Large city ground needs only its physical/material boundaries.
+                # Avoid allocating interior edges merely to discard them later.
+                if control is None and getattr(self,'compact',False) and self.cells.get(neighbors[index])==self.cells.get((x,y)):
+                    continue
                 side = len(sides)
                 sides.append(dict(sector=sector, texturetop=wall, texturebottom=wall, texturemiddle=wall))
                 key = tuple(sorted((a,b)))
@@ -92,7 +97,9 @@ class CoastalMap:
             sector=len(sectors)
             sectors.append(dict(heightfloor=bottom,heightceiling=top,texturefloor=flat,
                 textureceiling=flat,lightlevel=176 if water else 176))
-            polygon(-4096+i*128,-4096,64,sector,wall,control=(tag,water))
+            control_x,control_y=getattr(self,'control_origin',(-4096,-4096))
+            columns=getattr(self,'control_columns',len(self.volumes))
+            polygon(control_x+(i%columns)*128,control_y+(i//columns)*128,64,sector,wall,control=(tag,water))
 
         if getattr(self, 'compact', False):
             # Remove internal edges between identical sectors; retain every

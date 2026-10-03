@@ -1,0 +1,1195 @@
+{
+    "label":  "group100_live",
+    "host_seconds":  301.2877433,
+    "pid":  25564,
+    "samples":  [
+                    {
+                        "line":  "QA77UI SAMPLE uiTics=35 renderedFrames=3",
+                        "host_seconds":  9.2280775999999989
+                    },
+                    {
+                        "line":  "QA77UI SAMPLE uiTics=70 renderedFrames=5",
+                        "host_seconds":  10.4590041
+                    },
+                    {
+                        "line":  "QA77UI SAMPLE uiTics=105 renderedFrames=7",
+                        "host_seconds":  12.1839467
+                    },
+                    {
+                        "line":  "QA77UI SAMPLE uiTics=140 renderedFrames=9",
+                        "host_seconds":  13.4761283
+                    },
+                    {
+                        "line":  "QA77SOUTH SAMPLE age=1 tic=153 registered=6001 liveAttackers=6001 liveDefenders=600",
+                        "host_seconds":  14.257304
+                    },
+                    {
+                        "line":  "QA77UI SAMPLE uiTics=175 renderedFrames=11",
+                        "host_seconds":  15.016762799999999
+                    },
+                    {
+                        "line":  "QA77UI SAMPLE uiTics=210 renderedFrames=13",
+                        "host_seconds":  16.3073959
+                    },
+                    {
+                        "line":  "QA77UI SAMPLE uiTics=245 renderedFrames=15",
+                        "host_seconds":  17.9922629
+                    },
+                    {
+                        "line":  "QA77UI SAMPLE uiTics=280 renderedFrames=17",
+                        "host_seconds":  19.1884554
+                    },
+                    {
+                        "line":  "QA77UI SAMPLE uiTics=315 renderedFrames=19",
+                        "host_seconds":  21.1847651
+                    },
+                    {
+                        "line":  "QA77SOUTH SAMPLE age=176 tic=328 registered=6001 liveAttackers=6001 liveDefenders=600",
+                        "host_seconds":  21.184777099999998
+                    },
+                    {
+                        "line":  "QA77UI SAMPLE uiTics=350 renderedFrames=21",
+                        "host_seconds":  22.6622879
+                    },
+                    {
+                        "line":  "QA77UI SAMPLE uiTics=385 renderedFrames=23",
+                        "host_seconds":  23.6264012
+                    },
+                    {
+                        "line":  "QA77UI SAMPLE uiTics=420 renderedFrames=25",
+                        "host_seconds":  25.1147
+                    },
+                    {
+                        "line":  "QA77UI SAMPLE uiTics=455 renderedFrames=27",
+                        "host_seconds":  26.4229238
+                    },
+                    {
+                        "line":  "QA77UI SAMPLE uiTics=490 renderedFrames=29",
+                        "host_seconds":  27.3548141
+                    },
+                    {
+                        "line":  "QA77SOUTH SAMPLE age=351 tic=503 registered=6001 liveAttackers=5997 liveDefenders=600",
+                        "host_seconds":  28.228115199999998
+                    },
+                    {
+                        "line":  "QA77UI SAMPLE uiTics=525 renderedFrames=31",
+                        "host_seconds":  28.495420199999998
+                    },
+                    {
+                        "line":  "QA77UI SAMPLE uiTics=560 renderedFrames=33",
+                        "host_seconds":  30.116598099999997
+                    },
+                    {
+                        "line":  "QA77UI SAMPLE uiTics=595 renderedFrames=35",
+                        "host_seconds":  31.3293711
+                    },
+                    {
+                        "line":  "QA77UI SAMPLE uiTics=630 renderedFrames=38",
+                        "host_seconds":  32.4441687
+                    },
+                    {
+                        "line":  "QA77UI SAMPLE uiTics=665 renderedFrames=40",
+                        "host_seconds":  33.6613531
+                    },
+                    {
+                        "line":  "QA77SOUTH SAMPLE age=526 tic=678 registered=6001 liveAttackers=5997 liveDefenders=600",
+                        "host_seconds":  34.360216199999996
+                    },
+                    {
+                        "line":  "QA77UI SAMPLE uiTics=700 renderedFrames=42",
+                        "host_seconds":  34.983387
+                    },
+                    {
+                        "line":  "QA77UI SAMPLE uiTics=735 renderedFrames=44",
+                        "host_seconds":  36.5724916
+                    },
+                    {
+                        "line":  "QA77UI SAMPLE uiTics=770 renderedFrames=46",
+                        "host_seconds":  37.597190399999995
+                    },
+                    {
+                        "line":  "QA77UI SAMPLE uiTics=805 renderedFrames=48",
+                        "host_seconds":  39.4225841
+                    },
+                    {
+                        "line":  "QA77UI SAMPLE uiTics=840 renderedFrames=50",
+                        "host_seconds":  40.2783836
+                    },
+                    {
+                        "line":  "QA77SOUTH SAMPLE age=701 tic=853 registered=6001 liveAttackers=5994 liveDefenders=600",
+                        "host_seconds":  41.384848399999996
+                    },
+                    {
+                        "line":  "QA77UI SAMPLE uiTics=875 renderedFrames=52",
+                        "host_seconds":  41.6504584
+                    },
+                    {
+                        "line":  "QA77UI SAMPLE uiTics=910 renderedFrames=54",
+                        "host_seconds":  43.3613749
+                    },
+                    {
+                        "line":  "QA77UI SAMPLE uiTics=945 renderedFrames=56",
+                        "host_seconds":  44.3405998
+                    },
+                    {
+                        "line":  "QA77UI SAMPLE uiTics=980 renderedFrames=58",
+                        "host_seconds":  45.6318707
+                    },
+                    {
+                        "line":  "QA77UI SAMPLE uiTics=1015 renderedFrames=60",
+                        "host_seconds":  47.304106499999996
+                    },
+                    {
+                        "line":  "QA77SOUTH SAMPLE age=876 tic=1028 registered=6001 liveAttackers=5994 liveDefenders=600",
+                        "host_seconds":  47.5694397
+                    },
+                    {
+                        "line":  "QA77UI SAMPLE uiTics=1050 renderedFrames=62",
+                        "host_seconds":  48.2075788
+                    },
+                    {
+                        "line":  "QA77UI SAMPLE uiTics=1085 renderedFrames=64",
+                        "host_seconds":  50.393116799999994
+                    },
+                    {
+                        "line":  "QA77UI SAMPLE uiTics=1120 renderedFrames=66",
+                        "host_seconds":  51.2348837
+                    },
+                    {
+                        "line":  "QA77UI SAMPLE uiTics=1155 renderedFrames=68",
+                        "host_seconds":  52.665374199999995
+                    },
+                    {
+                        "line":  "QA77UI SAMPLE uiTics=1190 renderedFrames=71",
+                        "host_seconds":  54.084207199999994
+                    },
+                    {
+                        "line":  "QA77SOUTH SAMPLE age=1051 tic=1203 registered=6001 liveAttackers=5990 liveDefenders=600",
+                        "host_seconds":  54.6433061
+                    },
+                    {
+                        "line":  "QA77UI SAMPLE uiTics=1225 renderedFrames=73",
+                        "host_seconds":  55.4234862
+                    },
+                    {
+                        "line":  "QA77UI SAMPLE uiTics=1260 renderedFrames=75",
+                        "host_seconds":  56.6060175
+                    },
+                    {
+                        "line":  "QA77UI SAMPLE uiTics=1295 renderedFrames=77",
+                        "host_seconds":  58.0322919
+                    },
+                    {
+                        "line":  "QA77UI SAMPLE uiTics=1330 renderedFrames=79",
+                        "host_seconds":  59.400355399999995
+                    },
+                    {
+                        "line":  "QA77UI SAMPLE uiTics=1365 renderedFrames=81",
+                        "host_seconds":  61.359232399999996
+                    },
+                    {
+                        "line":  "QA77SOUTH SAMPLE age=1226 tic=1378 registered=6001 liveAttackers=5990 liveDefenders=600",
+                        "host_seconds":  61.3592654
+                    },
+                    {
+                        "line":  "QA77UI SAMPLE uiTics=1400 renderedFrames=83",
+                        "host_seconds":  62.3074431
+                    },
+                    {
+                        "line":  "QA77UI SAMPLE uiTics=1435 renderedFrames=85",
+                        "host_seconds":  64.2136917
+                    },
+                    {
+                        "line":  "QA77UI SAMPLE uiTics=1470 renderedFrames=87",
+                        "host_seconds":  65.480625199999992
+                    },
+                    {
+                        "line":  "QA77UI SAMPLE uiTics=1505 renderedFrames=89",
+                        "host_seconds":  66.289998799999992
+                    },
+                    {
+                        "line":  "QA77UI SAMPLE uiTics=1540 renderedFrames=91",
+                        "host_seconds":  67.472768399999993
+                    },
+                    {
+                        "line":  "QA77SOUTH SAMPLE age=1401 tic=1553 registered=6001 liveAttackers=5976 liveDefenders=599",
+                        "host_seconds":  68.3959747
+                    },
+                    {
+                        "line":  "QA77UI SAMPLE uiTics=1575 renderedFrames=93",
+                        "host_seconds":  68.6590093
+                    },
+                    {
+                        "line":  "QA77UI SAMPLE uiTics=1610 renderedFrames=95",
+                        "host_seconds":  70.2780966
+                    },
+                    {
+                        "line":  "QA77UI SAMPLE uiTics=1645 renderedFrames=97",
+                        "host_seconds":  71.13825709999999
+                    },
+                    {
+                        "line":  "QA77UI SAMPLE uiTics=1680 renderedFrames=99",
+                        "host_seconds":  72.6163339
+                    },
+                    {
+                        "line":  "QA77UI SAMPLE uiTics=1715 renderedFrames=101",
+                        "host_seconds":  74.0404468
+                    },
+                    {
+                        "line":  "QA77SOUTH SAMPLE age=1576 tic=1728 registered=6001 liveAttackers=5935 liveDefenders=599",
+                        "host_seconds":  74.322871499999991
+                    },
+                    {
+                        "line":  "QA77UI SAMPLE uiTics=1750 renderedFrames=103",
+                        "host_seconds":  75.3560655
+                    },
+                    {
+                        "line":  "QA77UI SAMPLE uiTics=1785 renderedFrames=106",
+                        "host_seconds":  76.850070899999992
+                    },
+                    {
+                        "line":  "QA77UI SAMPLE uiTics=1820 renderedFrames=108",
+                        "host_seconds":  78.159826099999989
+                    },
+                    {
+                        "line":  "QA77UI SAMPLE uiTics=1855 renderedFrames=110",
+                        "host_seconds":  79.183262599999992
+                    },
+                    {
+                        "line":  "QA77UI SAMPLE uiTics=1890 renderedFrames=112",
+                        "host_seconds":  80.0346563
+                    },
+                    {
+                        "line":  "QA77SOUTH SAMPLE age=1751 tic=1903 registered=6001 liveAttackers=5899 liveDefenders=599",
+                        "host_seconds":  80.297493199999991
+                    },
+                    {
+                        "line":  "QA77UI SAMPLE uiTics=1925 renderedFrames=115",
+                        "host_seconds":  80.9171286
+                    },
+                    {
+                        "line":  "QA77UI SAMPLE uiTics=1960 renderedFrames=119",
+                        "host_seconds":  81.706758999999991
+                    },
+                    {
+                        "line":  "QA77UI SAMPLE uiTics=1995 renderedFrames=127",
+                        "host_seconds":  82.8244113
+                    },
+                    {
+                        "line":  "QA77UI SAMPLE uiTics=2030 renderedFrames=140",
+                        "host_seconds":  83.6171281
+                    },
+                    {
+                        "line":  "QA77UI SAMPLE uiTics=2065 renderedFrames=155",
+                        "host_seconds":  84.6853285
+                    },
+                    {
+                        "line":  "QA77SOUTH SAMPLE age=1926 tic=2078 registered=6001 liveAttackers=5884 liveDefenders=599",
+                        "host_seconds":  85.2257552
+                    },
+                    {
+                        "line":  "QA77UI SAMPLE uiTics=2100 renderedFrames=170",
+                        "host_seconds":  85.7529043
+                    },
+                    {
+                        "line":  "QA77UI SAMPLE uiTics=2135 renderedFrames=176",
+                        "host_seconds":  93.6804779
+                    },
+                    {
+                        "line":  "QA77UI SAMPLE uiTics=2170 renderedFrames=178",
+                        "host_seconds":  102.7354831
+                    },
+                    {
+                        "line":  "QA77UI SAMPLE uiTics=2205 renderedFrames=180",
+                        "host_seconds":  111.92444959999999
+                    },
+                    {
+                        "line":  "QA77UI SAMPLE uiTics=2240 renderedFrames=182",
+                        "host_seconds":  121.10628559999999
+                    },
+                    {
+                        "line":  "QA77SOUTH SAMPLE age=2101 tic=2253 registered=6001 liveAttackers=5883 liveDefenders=599",
+                        "host_seconds":  125.7013446
+                    },
+                    {
+                        "line":  "QA77UI SAMPLE uiTics=2275 renderedFrames=184",
+                        "host_seconds":  130.3704472
+                    },
+                    {
+                        "line":  "QA77UI SAMPLE uiTics=2310 renderedFrames=186",
+                        "host_seconds":  139.3080687
+                    },
+                    {
+                        "line":  "QA77UI SAMPLE uiTics=2345 renderedFrames=188",
+                        "host_seconds":  148.1125439
+                    },
+                    {
+                        "line":  "QA77UI SAMPLE uiTics=2380 renderedFrames=191",
+                        "host_seconds":  157.00513089999998
+                    },
+                    {
+                        "line":  "QA77UI SAMPLE uiTics=2415 renderedFrames=193",
+                        "host_seconds":  171.7926982
+                    },
+                    {
+                        "line":  "QA77SOUTH SAMPLE age=2276 tic=2428 registered=6001 liveAttackers=5876 liveDefenders=599",
+                        "host_seconds":  171.7927379
+                    },
+                    {
+                        "line":  "QA77UI SAMPLE uiTics=2450 renderedFrames=195",
+                        "host_seconds":  181.4047072
+                    },
+                    {
+                        "line":  "QA77UI SAMPLE uiTics=2485 renderedFrames=197",
+                        "host_seconds":  191.1080504
+                    },
+                    {
+                        "line":  "QA77UI SAMPLE uiTics=2520 renderedFrames=199",
+                        "host_seconds":  199.93630629999998
+                    },
+                    {
+                        "line":  "QA77UI SAMPLE uiTics=2555 renderedFrames=201",
+                        "host_seconds":  208.69281709999998
+                    },
+                    {
+                        "line":  "QA77UI SAMPLE uiTics=2590 renderedFrames=203",
+                        "host_seconds":  215.7048649
+                    },
+                    {
+                        "line":  "QA77SOUTH SAMPLE age=2451 tic=2603 registered=6001 liveAttackers=5874 liveDefenders=599",
+                        "host_seconds":  220.3423478
+                    },
+                    {
+                        "line":  "QA77UI SAMPLE uiTics=2625 renderedFrames=205",
+                        "host_seconds":  225.09497639999998
+                    },
+                    {
+                        "line":  "QA77UI SAMPLE uiTics=2660 renderedFrames=207",
+                        "host_seconds":  234.7723867
+                    },
+                    {
+                        "line":  "QA77UI SAMPLE uiTics=2695 renderedFrames=209",
+                        "host_seconds":  244.4427858
+                    },
+                    {
+                        "line":  "QA77UI SAMPLE uiTics=2730 renderedFrames=211",
+                        "host_seconds":  253.7177471
+                    },
+                    {
+                        "line":  "QA77UI SAMPLE uiTics=2765 renderedFrames=213",
+                        "host_seconds":  262.8552593
+                    },
+                    {
+                        "line":  "QA77SOUTH SAMPLE age=2626 tic=2778 registered=6001 liveAttackers=5874 liveDefenders=599",
+                        "host_seconds":  267.6446242
+                    },
+                    {
+                        "line":  "QA77UI SAMPLE uiTics=2800 renderedFrames=215",
+                        "host_seconds":  272.46662649999996
+                    },
+                    {
+                        "line":  "QA77UI SAMPLE uiTics=2835 renderedFrames=217",
+                        "host_seconds":  282.33469479999997
+                    },
+                    {
+                        "line":  "QA77UI SAMPLE uiTics=2870 renderedFrames=219",
+                        "host_seconds":  291.922342
+                    }
+                ],
+    "stopped_at_host_limit":  true,
+    "window":  [
+                   {
+                       "working_set":  22253568,
+                       "host_seconds":  0.2784561,
+                       "responding":  true,
+                       "cpu_seconds":  0.15625
+                   },
+                   {
+                       "working_set":  37797888,
+                       "host_seconds":  0.5596223,
+                       "responding":  true,
+                       "cpu_seconds":  0.4375
+                   },
+                   {
+                       "working_set":  288735232,
+                       "host_seconds":  1.6265098,
+                       "responding":  true,
+                       "cpu_seconds":  1.53125
+                   },
+                   {
+                       "working_set":  385048576,
+                       "host_seconds":  2.6176062,
+                       "responding":  true,
+                       "cpu_seconds":  3.46875
+                   },
+                   {
+                       "working_set":  426872832,
+                       "host_seconds":  4.1352209,
+                       "responding":  true,
+                       "cpu_seconds":  3.9375
+                   },
+                   {
+                       "working_set":  430297088,
+                       "host_seconds":  4.6020962999999995,
+                       "responding":  true,
+                       "cpu_seconds":  6.921875
+                   },
+                   {
+                       "working_set":  667013120,
+                       "host_seconds":  7.6156226,
+                       "responding":  true,
+                       "cpu_seconds":  7.390625
+                   },
+                   {
+                       "working_set":  835657728,
+                       "host_seconds":  8.627829199999999,
+                       "responding":  true,
+                       "cpu_seconds":  8.484375
+                   },
+                   {
+                       "working_set":  923774976,
+                       "host_seconds":  9.5206312,
+                       "responding":  true,
+                       "cpu_seconds":  9.171875
+                   },
+                   {
+                       "working_set":  1043566592,
+                       "host_seconds":  10.7548123,
+                       "responding":  true,
+                       "cpu_seconds":  10.609375
+                   },
+                   {
+                       "working_set":  1027891200,
+                       "host_seconds":  11.714998999999999,
+                       "responding":  true,
+                       "cpu_seconds":  11.328125
+                   },
+                   {
+                       "working_set":  1040658432,
+                       "host_seconds":  12.753355899999999,
+                       "responding":  true,
+                       "cpu_seconds":  12.515625
+                   },
+                   {
+                       "working_set":  1070039040,
+                       "host_seconds":  13.75325,
+                       "responding":  true,
+                       "cpu_seconds":  13.265625
+                   },
+                   {
+                       "working_set":  964247552,
+                       "host_seconds":  14.5334538,
+                       "responding":  true,
+                       "cpu_seconds":  13.9375
+                   },
+                   {
+                       "working_set":  1065459712,
+                       "host_seconds":  15.5742731,
+                       "responding":  true,
+                       "cpu_seconds":  15.21875
+                   },
+                   {
+                       "working_set":  1156521984,
+                       "host_seconds":  16.6031068,
+                       "responding":  true,
+                       "cpu_seconds":  16.015625
+                   },
+                   {
+                       "working_set":  1041240064,
+                       "host_seconds":  17.721152699999998,
+                       "responding":  true,
+                       "cpu_seconds":  16.796875
+                   },
+                   {
+                       "working_set":  1123246080,
+                       "host_seconds":  18.532188599999998,
+                       "responding":  true,
+                       "cpu_seconds":  17.890625
+                   },
+                   {
+                       "working_set":  1148694528,
+                       "host_seconds":  19.7287629,
+                       "responding":  true,
+                       "cpu_seconds":  19.171875
+                   },
+                   {
+                       "working_set":  1082720256,
+                       "host_seconds":  20.5702782,
+                       "responding":  true,
+                       "cpu_seconds":  19.734375
+                   },
+                   {
+                       "working_set":  1173245952,
+                       "host_seconds":  21.7236612,
+                       "responding":  true,
+                       "cpu_seconds":  21.140625
+                   },
+                   {
+                       "working_set":  1236017152,
+                       "host_seconds":  22.6732803,
+                       "responding":  true,
+                       "cpu_seconds":  21.859375
+                   },
+                   {
+                       "working_set":  1192194048,
+                       "host_seconds":  23.6364155,
+                       "responding":  true,
+                       "cpu_seconds":  22.546875
+                   },
+                   {
+                       "working_set":  1195360256,
+                       "host_seconds":  24.583139199999998,
+                       "responding":  true,
+                       "cpu_seconds":  23.578125
+                   },
+                   {
+                       "working_set":  1232891904,
+                       "host_seconds":  25.6544363,
+                       "responding":  true,
+                       "cpu_seconds":  24.875
+                   },
+                   {
+                       "working_set":  1230606336,
+                       "host_seconds":  26.6978494,
+                       "responding":  true,
+                       "cpu_seconds":  25.515625
+                   },
+                   {
+                       "working_set":  1230659584,
+                       "host_seconds":  27.6305999,
+                       "responding":  true,
+                       "cpu_seconds":  26.625
+                   },
+                   {
+                       "working_set":  1245257728,
+                       "host_seconds":  28.5083305,
+                       "responding":  true,
+                       "cpu_seconds":  27.21875
+                   },
+                   {
+                       "working_set":  1245265920,
+                       "host_seconds":  29.657936,
+                       "responding":  true,
+                       "cpu_seconds":  28.359375
+                   },
+                   {
+                       "working_set":  1245270016,
+                       "host_seconds":  30.6534028,
+                       "responding":  true,
+                       "cpu_seconds":  29.5625
+                   },
+                   {
+                       "working_set":  1245384704,
+                       "host_seconds":  31.620721999999997,
+                       "responding":  true,
+                       "cpu_seconds":  30.125
+                   },
+                   {
+                       "working_set":  1238499328,
+                       "host_seconds":  32.7208489,
+                       "responding":  true,
+                       "cpu_seconds":  31.3125
+                   },
+                   {
+                       "working_set":  1234239488,
+                       "host_seconds":  33.6709341,
+                       "responding":  true,
+                       "cpu_seconds":  32.484375
+                   },
+                   {
+                       "working_set":  1171542016,
+                       "host_seconds":  34.642714999999995,
+                       "responding":  true,
+                       "cpu_seconds":  33.0625
+                   },
+                   {
+                       "working_set":  1173499904,
+                       "host_seconds":  35.5206476,
+                       "responding":  true,
+                       "cpu_seconds":  34
+                   },
+                   {
+                       "working_set":  1175330816,
+                       "host_seconds":  36.5811596,
+                       "responding":  true,
+                       "cpu_seconds":  34.984375
+                   },
+                   {
+                       "working_set":  1175330816,
+                       "host_seconds":  37.6041617,
+                       "responding":  true,
+                       "cpu_seconds":  36
+                   },
+                   {
+                       "working_set":  1175351296,
+                       "host_seconds":  38.634915899999996,
+                       "responding":  true,
+                       "cpu_seconds":  37.28125
+                   },
+                   {
+                       "working_set":  1175355392,
+                       "host_seconds":  39.704242199999996,
+                       "responding":  true,
+                       "cpu_seconds":  37.859375
+                   },
+                   {
+                       "working_set":  1181163520,
+                       "host_seconds":  40.5552991,
+                       "responding":  true,
+                       "cpu_seconds":  39.109375
+                   },
+                   {
+                       "working_set":  1181544448,
+                       "host_seconds":  41.6598002,
+                       "responding":  true,
+                       "cpu_seconds":  39.75
+                   },
+                   {
+                       "working_set":  1181544448,
+                       "host_seconds":  42.660619499999996,
+                       "responding":  true,
+                       "cpu_seconds":  40.90625
+                   },
+                   {
+                       "working_set":  1181544448,
+                       "host_seconds":  43.6525345,
+                       "responding":  true,
+                       "cpu_seconds":  41.578125
+                   },
+                   {
+                       "working_set":  1181544448,
+                       "host_seconds":  44.6156752,
+                       "responding":  true,
+                       "cpu_seconds":  42.8125
+                   },
+                   {
+                       "working_set":  1181544448,
+                       "host_seconds":  45.6441653,
+                       "responding":  true,
+                       "cpu_seconds":  43.421875
+                   },
+                   {
+                       "working_set":  1181548544,
+                       "host_seconds":  46.5118601,
+                       "responding":  true,
+                       "cpu_seconds":  44.71875
+                   },
+                   {
+                       "working_set":  1181548544,
+                       "host_seconds":  47.5807919,
+                       "responding":  true,
+                       "cpu_seconds":  45.34375
+                   },
+                   {
+                       "working_set":  1184403456,
+                       "host_seconds":  48.7644811,
+                       "responding":  true,
+                       "cpu_seconds":  46.90625
+                   },
+                   {
+                       "working_set":  1184559104,
+                       "host_seconds":  49.6890171,
+                       "responding":  true,
+                       "cpu_seconds":  47.578125
+                   },
+                   {
+                       "working_set":  1184559104,
+                       "host_seconds":  50.6691447,
+                       "responding":  true,
+                       "cpu_seconds":  48.140625
+                   },
+                   {
+                       "working_set":  1191813120,
+                       "host_seconds":  51.5111418,
+                       "responding":  true,
+                       "cpu_seconds":  49.3125
+                   },
+                   {
+                       "working_set":  1191813120,
+                       "host_seconds":  52.677549299999995,
+                       "responding":  true,
+                       "cpu_seconds":  50.5
+                   },
+                   {
+                       "working_set":  1191813120,
+                       "host_seconds":  53.7069178,
+                       "responding":  true,
+                       "cpu_seconds":  51.140625
+                   },
+                   {
+                       "working_set":  1191813120,
+                       "host_seconds":  54.6542129,
+                       "responding":  true,
+                       "cpu_seconds":  52.40625
+                   },
+                   {
+                       "working_set":  1208680448,
+                       "host_seconds":  55.7030369,
+                       "responding":  true,
+                       "cpu_seconds":  53.03125
+                   },
+                   {
+                       "working_set":  1208680448,
+                       "host_seconds":  56.617532399999995,
+                       "responding":  true,
+                       "cpu_seconds":  54.40625
+                   },
+                   {
+                       "working_set":  1208680448,
+                       "host_seconds":  57.697952199999996,
+                       "responding":  true,
+                       "cpu_seconds":  55.015625
+                   },
+                   {
+                       "working_set":  1208680448,
+                       "host_seconds":  58.5732431,
+                       "responding":  true,
+                       "cpu_seconds":  56.359375
+                   },
+                   {
+                       "working_set":  1208680448,
+                       "host_seconds":  59.6911967,
+                       "responding":  true,
+                       "cpu_seconds":  57.03125
+                   },
+                   {
+                       "working_set":  1199128576,
+                       "host_seconds":  60.6388032,
+                       "responding":  true,
+                       "cpu_seconds":  58.28125
+                   },
+                   {
+                       "working_set":  1199144960,
+                       "host_seconds":  61.648627299999994,
+                       "responding":  true,
+                       "cpu_seconds":  58.9375
+                   },
+                   {
+                       "working_set":  1199280128,
+                       "host_seconds":  62.584737,
+                       "responding":  true,
+                       "cpu_seconds":  59.9375
+                   },
+                   {
+                       "working_set":  1200799744,
+                       "host_seconds":  63.6129439,
+                       "responding":  true,
+                       "cpu_seconds":  61.03125
+                   },
+                   {
+                       "working_set":  1205497856,
+                       "host_seconds":  64.7683153,
+                       "responding":  true,
+                       "cpu_seconds":  62.1875
+                   },
+                   {
+                       "working_set":  1206321152,
+                       "host_seconds":  65.7545863,
+                       "responding":  true,
+                       "cpu_seconds":  62.71875
+                   },
+                   {
+                       "working_set":  1217224704,
+                       "host_seconds":  66.5644349,
+                       "responding":  true,
+                       "cpu_seconds":  63.84375
+                   },
+                   {
+                       "working_set":  1218846720,
+                       "host_seconds":  67.7466372,
+                       "responding":  true,
+                       "cpu_seconds":  64.984375
+                   },
+                   {
+                       "working_set":  1218883584,
+                       "host_seconds":  68.6688097,
+                       "responding":  true,
+                       "cpu_seconds":  65.59375
+                   },
+                   {
+                       "working_set":  1223131136,
+                       "host_seconds":  69.572096399999992,
+                       "responding":  true,
+                       "cpu_seconds":  66.765625
+                   },
+                   {
+                       "working_set":  1223131136,
+                       "host_seconds":  70.55337759999999,
+                       "responding":  true,
+                       "cpu_seconds":  67.296875
+                   },
+                   {
+                       "working_set":  1224753152,
+                       "host_seconds":  71.6769632,
+                       "responding":  true,
+                       "cpu_seconds":  68.46875
+                   },
+                   {
+                       "working_set":  1226575872,
+                       "host_seconds":  72.6252951,
+                       "responding":  true,
+                       "cpu_seconds":  69.71875
+                   },
+                   {
+                       "working_set":  1226575872,
+                       "host_seconds":  73.656901699999992,
+                       "responding":  true,
+                       "cpu_seconds":  70.359375
+                   },
+                   {
+                       "working_set":  1232031744,
+                       "host_seconds":  74.6011328,
+                       "responding":  true,
+                       "cpu_seconds":  71.625
+                   },
+                   {
+                       "working_set":  1232031744,
+                       "host_seconds":  75.6297974,
+                       "responding":  true,
+                       "cpu_seconds":  72.46875
+                   },
+                   {
+                       "working_set":  1236078592,
+                       "host_seconds":  76.534277,
+                       "responding":  true,
+                       "cpu_seconds":  73.03125
+                   },
+                   {
+                       "working_set":  1237893120,
+                       "host_seconds":  77.6564855,
+                       "responding":  true,
+                       "cpu_seconds":  74.328125
+                   },
+                   {
+                       "working_set":  1237897216,
+                       "host_seconds":  78.6936498,
+                       "responding":  true,
+                       "cpu_seconds":  75.34375
+                   },
+                   {
+                       "working_set":  1238740992,
+                       "host_seconds":  79.7165333,
+                       "responding":  true,
+                       "cpu_seconds":  76.171875
+                   },
+                   {
+                       "working_set":  1239064576,
+                       "host_seconds":  80.567947199999992,
+                       "responding":  true,
+                       "cpu_seconds":  77.0625
+                   },
+                   {
+                       "working_set":  1235189760,
+                       "host_seconds":  81.7141121,
+                       "responding":  true,
+                       "cpu_seconds":  78.15625
+                   },
+                   {
+                       "working_set":  1235177472,
+                       "host_seconds":  82.552064,
+                       "responding":  true,
+                       "cpu_seconds":  79
+                   },
+                   {
+                       "working_set":  1222189056,
+                       "host_seconds":  83.62418989999999,
+                       "responding":  true,
+                       "cpu_seconds":  79.984375
+                   },
+                   {
+                       "working_set":  1244053504,
+                       "host_seconds":  84.692407199999991,
+                       "responding":  true,
+                       "cpu_seconds":  81
+                   },
+                   {
+                       "working_set":  1244307456,
+                       "host_seconds":  85.7570301,
+                       "responding":  true,
+                       "cpu_seconds":  81.984375
+                   },
+                   {
+                       "working_set":  1256341504,
+                       "host_seconds":  86.5528587,
+                       "responding":  true,
+                       "cpu_seconds":  85.65625
+                   },
+                   {
+                       "working_set":  1296171008,
+                       "host_seconds":  89.6842692,
+                       "responding":  true,
+                       "cpu_seconds":  89.5
+                   },
+                   {
+                       "working_set":  1296306176,
+                       "host_seconds":  93.6903924,
+                       "responding":  true,
+                       "cpu_seconds":  93.921875
+                   },
+                   {
+                       "working_set":  1296306176,
+                       "host_seconds":  98.240952299999989,
+                       "responding":  true,
+                       "cpu_seconds":  98.375
+                   },
+                   {
+                       "working_set":  1296306176,
+                       "host_seconds":  102.7501192,
+                       "responding":  true,
+                       "cpu_seconds":  102.734375
+                   },
+                   {
+                       "working_set":  1332109312,
+                       "host_seconds":  107.31049859999999,
+                       "responding":  true,
+                       "cpu_seconds":  107.3125
+                   },
+                   {
+                       "working_set":  1332301824,
+                       "host_seconds":  111.93470219999999,
+                       "responding":  true,
+                       "cpu_seconds":  111.78125
+                   },
+                   {
+                       "working_set":  1322921984,
+                       "host_seconds":  116.5046058,
+                       "responding":  true,
+                       "cpu_seconds":  116.21875
+                   },
+                   {
+                       "working_set":  1322930176,
+                       "host_seconds":  121.11629789999999,
+                       "responding":  true,
+                       "cpu_seconds":  120.671875
+                   },
+                   {
+                       "working_set":  1322917888,
+                       "host_seconds":  125.7131173,
+                       "responding":  true,
+                       "cpu_seconds":  125.21875
+                   },
+                   {
+                       "working_set":  1317228544,
+                       "host_seconds":  130.3806962,
+                       "responding":  true,
+                       "cpu_seconds":  129.796875
+                   },
+                   {
+                       "working_set":  1311059968,
+                       "host_seconds":  135.1062553,
+                       "responding":  true,
+                       "cpu_seconds":  133.90625
+                   },
+                   {
+                       "working_set":  1309253632,
+                       "host_seconds":  139.3213012,
+                       "responding":  true,
+                       "cpu_seconds":  138.234375
+                   },
+                   {
+                       "working_set":  1309933568,
+                       "host_seconds":  143.7255912,
+                       "responding":  true,
+                       "cpu_seconds":  142.578125
+                   },
+                   {
+                       "working_set":  1309933568,
+                       "host_seconds":  148.1195172,
+                       "responding":  true,
+                       "cpu_seconds":  146.78125
+                   },
+                   {
+                       "working_set":  1306796032,
+                       "host_seconds":  152.52990499999999,
+                       "responding":  true,
+                       "cpu_seconds":  151.171875
+                   },
+                   {
+                       "working_set":  1306796032,
+                       "host_seconds":  157.0186178,
+                       "responding":  true,
+                       "cpu_seconds":  156.046875
+                   },
+                   {
+                       "working_set":  1306800128,
+                       "host_seconds":  162.1496307,
+                       "responding":  true,
+                       "cpu_seconds":  160.71875
+                   },
+                   {
+                       "working_set":  1306800128,
+                       "host_seconds":  167.0731202,
+                       "responding":  true,
+                       "cpu_seconds":  165.296875
+                   },
+                   {
+                       "working_set":  1262960640,
+                       "host_seconds":  171.803731,
+                       "responding":  true,
+                       "cpu_seconds":  169.890625
+                   },
+                   {
+                       "working_set":  1263665152,
+                       "host_seconds":  176.5358863,
+                       "responding":  true,
+                       "cpu_seconds":  174.671875
+                   },
+                   {
+                       "working_set":  1263665152,
+                       "host_seconds":  181.4160143,
+                       "responding":  true,
+                       "cpu_seconds":  179.296875
+                   },
+                   {
+                       "working_set":  1263665152,
+                       "host_seconds":  186.18299199999998,
+                       "responding":  true,
+                       "cpu_seconds":  183.953125
+                   },
+                   {
+                       "working_set":  1263665152,
+                       "host_seconds":  191.11750719999998,
+                       "responding":  true,
+                       "cpu_seconds":  188.25
+                   },
+                   {
+                       "working_set":  1280274432,
+                       "host_seconds":  195.5227004,
+                       "responding":  true,
+                       "cpu_seconds":  192.5625
+                   },
+                   {
+                       "working_set":  1280315392,
+                       "host_seconds":  199.9499841,
+                       "responding":  true,
+                       "cpu_seconds":  196.90625
+                   },
+                   {
+                       "working_set":  1278246912,
+                       "host_seconds":  204.41471149999998,
+                       "responding":  true,
+                       "cpu_seconds":  200.984375
+                   },
+                   {
+                       "working_set":  1278246912,
+                       "host_seconds":  208.69983979999998,
+                       "responding":  true,
+                       "cpu_seconds":  204.40625
+                   },
+                   {
+                       "working_set":  1318510592,
+                       "host_seconds":  212.15330419999998,
+                       "responding":  true,
+                       "cpu_seconds":  207.953125
+                   },
+                   {
+                       "working_set":  1312215040,
+                       "host_seconds":  215.71533829999998,
+                       "responding":  true,
+                       "cpu_seconds":  212.40625
+                   },
+                   {
+                       "working_set":  1306755072,
+                       "host_seconds":  220.3533157,
+                       "responding":  true,
+                       "cpu_seconds":  216.9375
+                   },
+                   {
+                       "working_set":  1307770880,
+                       "host_seconds":  225.1060249,
+                       "responding":  true,
+                       "cpu_seconds":  221.53125
+                   },
+                   {
+                       "working_set":  1330307072,
+                       "host_seconds":  229.9322579,
+                       "responding":  true,
+                       "cpu_seconds":  226.15625
+                   },
+                   {
+                       "working_set":  1327951872,
+                       "host_seconds":  234.7833824,
+                       "responding":  true,
+                       "cpu_seconds":  230.84375
+                   },
+                   {
+                       "working_set":  1321558016,
+                       "host_seconds":  239.5787508,
+                       "responding":  true,
+                       "cpu_seconds":  235.375
+                   },
+                   {
+                       "working_set":  1321558016,
+                       "host_seconds":  244.45324829999998,
+                       "responding":  true,
+                       "cpu_seconds":  240.046875
+                   },
+                   {
+                       "working_set":  1346052096,
+                       "host_seconds":  249.25125549999998,
+                       "responding":  true,
+                       "cpu_seconds":  244.421875
+                   },
+                   {
+                       "working_set":  1340493824,
+                       "host_seconds":  253.7274905,
+                       "responding":  true,
+                       "cpu_seconds":  248.71875
+                   },
+                   {
+                       "working_set":  1340493824,
+                       "host_seconds":  258.1826206,
+                       "responding":  true,
+                       "cpu_seconds":  253.03125
+                   },
+                   {
+                       "working_set":  1340489728,
+                       "host_seconds":  262.8664786,
+                       "responding":  true,
+                       "cpu_seconds":  257.671875
+                   },
+                   {
+                       "working_set":  1339674624,
+                       "host_seconds":  267.6536994,
+                       "responding":  true,
+                       "cpu_seconds":  262.34375
+                   },
+                   {
+                       "working_set":  1339682816,
+                       "host_seconds":  272.4763239,
+                       "responding":  true,
+                       "cpu_seconds":  267.09375
+                   },
+                   {
+                       "working_set":  1339682816,
+                       "host_seconds":  277.4527602,
+                       "responding":  true,
+                       "cpu_seconds":  271.84375
+                   },
+                   {
+                       "working_set":  1353027584,
+                       "host_seconds":  282.34659849999997,
+                       "responding":  true,
+                       "cpu_seconds":  276.515625
+                   },
+                   {
+                       "working_set":  1348247552,
+                       "host_seconds":  287.1446391,
+                       "responding":  true,
+                       "cpu_seconds":  281.15625
+                   },
+                   {
+                       "working_set":  1348251648,
+                       "host_seconds":  291.93785249999996,
+                       "responding":  true,
+                       "cpu_seconds":  285.6875
+                   },
+                   {
+                       "working_set":  1348251648,
+                       "host_seconds":  296.6231411,
+                       "responding":  true,
+                       "cpu_seconds":  290.1875
+                   }
+               ],
+    "full_background_rendering":  true
+}

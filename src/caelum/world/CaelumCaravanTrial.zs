@@ -88,6 +88,7 @@ class CaelumCaravanAction : CaelumPalomoDialogueAction abstract
     }
 }
 class CaelumCaravanRoute2Action : CaelumCaravanAction { override int Route() { return 2; } }
+class CaelumCaravanRoute16Action : CaelumCaravanAction { override int Route() { return CaelumWorldCatalogue.CONNECTION_MAZE_TO_PORT; } }
 class CaelumCaravanRoute3Action : CaelumCaravanAction { override int Route() { return 3; } }
 class CaelumCaravanRoute4Action : CaelumCaravanAction { override int Route() { return 4; } }
 class CaelumCaravanRoute5Action : CaelumCaravanAction { override int Route() { return 5; } }

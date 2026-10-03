@@ -29,6 +29,7 @@ class CaelumAnchoredResident : CaelumCombatActor abstract
 
     void ClearStoryCombatState()
     {
+        EndResourceRecovery();
         // A_Chase marca INCOMBAT al disparar. StartConversation lo rechaza
         // incluso con salud completa; no basta con soltar el Target.
         bInCombat = false;
@@ -213,6 +214,7 @@ class CaelumAnchoredResident : CaelumCombatActor abstract
 
     void RegenerateEscortPrisonerHealth()
     {
+        if(IsCombatIdle())return; // El descanso quieto ya usa la recuperación común.
         if (health <= 0 || health >= CombatMaximumHealth) return;
         // La recuperación base de los seguidores reutiliza la tasa natural del
         // jugador: vida máxima por hora real, escalada por Resiliencia Tipo 4.
@@ -323,6 +325,9 @@ class CaelumAnchoredResident : CaelumCombatActor abstract
             return;
         }
 
+        // Las salidas de historia anteriores prevalecen; el combate común
+        // conserva su retirada/descanso sin que el seguimiento lo reinicie.
+        if(ResourceRecoveryActive())return;
         Actor threat = FindEscortThreat();
         if (threat != null)
         {
@@ -457,6 +462,7 @@ class CaelumAnchoredResident : CaelumCombatActor abstract
 
     void RestoreRuloPartyHealth()
     {
+        EndResourceRecovery();
         health = CombatMaximumHealth;
         CurrentCombatAir = MaximumCombatAir;
         CurrentCombatAnima = MaximumCombatAnima;
@@ -616,6 +622,7 @@ class CaelumAnchoredResident : CaelumCombatActor abstract
     action void A_CaelumResidentLook()
     {
         CaelumAnchoredResident resident = CaelumAnchoredResident(self);
+        if(resident!=null && resident.PulseResourceRecovery())return;
         if (resident != null && resident.StoryAnchored)
         {
             if (resident.IsRuloPartyFighting())
@@ -634,6 +641,7 @@ class CaelumAnchoredResident : CaelumCombatActor abstract
     action void A_CaelumResidentChase()
     {
         CaelumAnchoredResident resident = CaelumAnchoredResident(self);
+        if(resident!=null && resident.PulseResourceRecovery())return;
         if (resident != null && resident.StoryAnchored)
         {
             if (resident.IsRuloPartyFighting())
@@ -715,6 +723,8 @@ class CaelumAnchoredResident : CaelumCombatActor abstract
     override void Tick()
     {
         EnsureStorySurvival();
+        if(ResourceRecoveryActive() && IsRuloPartyFighting())
+        {Super.Tick();return;}
         if (IsEscortPrisoner())
         {
             UpdateEscortPrisoner();

@@ -132,6 +132,31 @@ Direct map loading tests startup, not normal campaign progression. Use an ordina
 
 ### Continuing campaigns after a map rebuild
 
+Issue #77 distinguishes four MAP06 geometries. A normal build selects the
+960 m southern city. `-LegacyMap06NorthCity` / `--legacy-map06-north-city` selects
+the exact first 4.37.9 northern city; `-LegacyMap06Siege` / `--legacy-map06-siege`
+selects the 4.36.27–4.37.8 siege port; `-LegacyMap06` / `--legacy-map06` keeps the
+pre-siege 4.36.26 port. Select the layout already visited, including stored hub
+maps. The three legacy port modes are mutually exclusive and each can accompany
+the separate legacy MAP02 option. Keep original saves/packages for rollback.
+The legacy_4378 and legacy_4379_north provenance files preserve exact sources.
+Current native repeated-load/rollback evidence is in validation_4379/south.
+
+The new controller's saved map argument marks layout revision 2; older maps keep
+their original deployment data. SetupRevision prevents redeployment after load.
+New defender waypoint fields default inactive in legacy saves and activate only
+for the new layout. Preserve both the physical map and the matching coordinates;
+updating a global coordinate table alone would silently misroute old actors.
+
+The #77 group-cap follow-up changes only the ordinary command rebuild. Its
+100-member limit includes the leader; existing saved memberships converge on
+the next 35-tic/death-triggered refresh without replacing actors or save fields.
+
+Programmatic traversal tests must retain native vertical velocity when advancing
+engine tics. Resetting all three velocity components each tic can suspend a
+descending player above the next tread. A collision sweep with explicit floor
+settling and an actual-tic traversal test provide different evidence; label both.
+
 For issue #11, `run_dev.bat --legacy-map02` rebuilds current code with the
 preserved 4.36.4 MAP02. The equivalent builder switch is `-LegacyMap02`.
 Keep this mode for a campaign that has already visited the old maze, including

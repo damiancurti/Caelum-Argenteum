@@ -1,0 +1,2670 @@
+{
+  "issue": 77,
+  "checks": [
+    {
+      "check": "Author-approved 960 by 960 metre city",
+      "passed": true
+    },
+    {
+      "check": "160 houses, 64 shops, 24 factories, 40 construction sites",
+      "passed": true
+    },
+    {
+      "check": "Four traversable corner cannon towers",
+      "passed": true
+    },
+    {
+      "check": "Six gates integrated into the southern city wall",
+      "passed": true
+    },
+    {
+      "check": "North and west fortified passages plus the eastern docks",
+      "passed": true
+    },
+    {
+      "check": "Sixfold Mandinga and defender populations; commander remains separate",
+      "passed": true
+    },
+    {
+      "check": "Author-approved maximum of 100 attackers per command group, including its leader",
+      "passed": true
+    },
+    {
+      "check": "36 defensive guns installed, eight southern and four tower guns active",
+      "passed": true
+    },
+    {
+      "check": "Six hostile cannons and six ram lanes unchanged in count",
+      "passed": true
+    },
+    {
+      "check": "Crew assignments and reserves account for exactly 600 defenders",
+      "passed": true
+    },
+    {
+      "check": "Attack and physical retreat belong to the southern field",
+      "passed": true
+    },
+    {
+      "check": "A physical access stair and crew route for every defensive gun",
+      "passed": true
+    },
+    {
+      "check": "Gun 0 stands on a real floor at its authored height",
+      "passed": true
+    },
+    {
+      "check": "Gun 1 stands on a real floor at its authored height",
+      "passed": true
+    },
+    {
+      "check": "Gun 2 stands on a real floor at its authored height",
+      "passed": true
+    },
+    {
+      "check": "Gun 3 stands on a real floor at its authored height",
+      "passed": true
+    },
+    {
+      "check": "Gun 4 stands on a real floor at its authored height",
+      "passed": true
+    },
+    {
+      "check": "Gun 5 stands on a real floor at its authored height",
+      "passed": true
+    },
+    {
+      "check": "Gun 6 stands on a real floor at its authored height",
+      "passed": true
+    },
+    {
+      "check": "Gun 7 stands on a real floor at its authored height",
+      "passed": true
+    },
+    {
+      "check": "Gun 8 stands on a real floor at its authored height",
+      "passed": true
+    },
+    {
+      "check": "Gun 9 stands on a real floor at its authored height",
+      "passed": true
+    },
+    {
+      "check": "Gun 10 stands on a real floor at its authored height",
+      "passed": true
+    },
+    {
+      "check": "Gun 11 stands on a real floor at its authored height",
+      "passed": true
+    },
+    {
+      "check": "Gun 12 stands on a real floor at its authored height",
+      "passed": true
+    },
+    {
+      "check": "Gun 13 stands on a real floor at its authored height",
+      "passed": true
+    },
+    {
+      "check": "Gun 14 stands on a real floor at its authored height",
+      "passed": true
+    },
+    {
+      "check": "Gun 15 stands on a real floor at its authored height",
+      "passed": true
+    },
+    {
+      "check": "Gun 16 stands on a real floor at its authored height",
+      "passed": true
+    },
+    {
+      "check": "Gun 17 stands on a real floor at its authored height",
+      "passed": true
+    },
+    {
+      "check": "Gun 18 stands on a real floor at its authored height",
+      "passed": true
+    },
+    {
+      "check": "Gun 19 stands on a real floor at its authored height",
+      "passed": true
+    },
+    {
+      "check": "Gun 20 stands on a real floor at its authored height",
+      "passed": true
+    },
+    {
+      "check": "Gun 21 stands on a real floor at its authored height",
+      "passed": true
+    },
+    {
+      "check": "Gun 22 stands on a real floor at its authored height",
+      "passed": true
+    },
+    {
+      "check": "Gun 23 stands on a real floor at its authored height",
+      "passed": true
+    },
+    {
+      "check": "Gun 24 stands on a real floor at its authored height",
+      "passed": true
+    },
+    {
+      "check": "Gun 25 stands on a real floor at its authored height",
+      "passed": true
+    },
+    {
+      "check": "Gun 26 stands on a real floor at its authored height",
+      "passed": true
+    },
+    {
+      "check": "Gun 27 stands on a real floor at its authored height",
+      "passed": true
+    },
+    {
+      "check": "Gun 28 stands on a real floor at its authored height",
+      "passed": true
+    },
+    {
+      "check": "Gun 29 stands on a real floor at its authored height",
+      "passed": true
+    },
+    {
+      "check": "Gun 30 stands on a real floor at its authored height",
+      "passed": true
+    },
+    {
+      "check": "Gun 31 stands on a real floor at its authored height",
+      "passed": true
+    },
+    {
+      "check": "Gun 32 stands on a real floor at its authored height",
+      "passed": true
+    },
+    {
+      "check": "Gun 33 stands on a real floor at its authored height",
+      "passed": true
+    },
+    {
+      "check": "Gun 34 stands on a real floor at its authored height",
+      "passed": true
+    },
+    {
+      "check": "Gun 35 stands on a real floor at its authored height",
+      "passed": true
+    },
+    {
+      "check": "north has a continuous native arch",
+      "passed": true
+    },
+    {
+      "check": "west has a continuous native arch",
+      "passed": true
+    },
+    {
+      "check": "east has a continuous native arch",
+      "passed": true
+    },
+    {
+      "check": "south_0 has a continuous native arch",
+      "passed": true
+    },
+    {
+      "check": "south_1 has a continuous native arch",
+      "passed": true
+    },
+    {
+      "check": "south_2 has a continuous native arch",
+      "passed": true
+    },
+    {
+      "check": "south_3 has a continuous native arch",
+      "passed": true
+    },
+    {
+      "check": "south_4 has a continuous native arch",
+      "passed": true
+    },
+    {
+      "check": "south_5 has a continuous native arch",
+      "passed": true
+    },
+    {
+      "check": "Control sector 100 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 201 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 202 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 203 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 220 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 222 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 223 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 224 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 225 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 226 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 227 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 228 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 229 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 230 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 240 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 241 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1000 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1001 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1004 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1005 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1008 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1009 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1012 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1013 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1016 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1017 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1020 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1021 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1024 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1025 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1028 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1029 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1030 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1032 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1033 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1034 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1036 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1037 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1038 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1040 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1041 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1044 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1045 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1048 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1049 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1052 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1053 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1056 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1057 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1060 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1061 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1064 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1065 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1068 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1069 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1072 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1073 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1076 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1077 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1080 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1081 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1084 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1085 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1088 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1089 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1092 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1093 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1096 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1097 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1100 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1101 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1102 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1104 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1105 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1106 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1108 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1109 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1110 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1112 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1113 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1116 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1117 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1120 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1121 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1124 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1125 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1128 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1129 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1132 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1133 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1136 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1137 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1140 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1141 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1144 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1145 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1148 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1149 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1152 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1153 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1156 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1157 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1160 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1161 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1164 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1165 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1168 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1169 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1172 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1173 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1174 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1176 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1177 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1178 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1180 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1181 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1182 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1184 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1185 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1188 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1189 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1192 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1193 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1196 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1197 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1200 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1201 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1204 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1205 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1208 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1209 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1212 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1213 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1216 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1217 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1220 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1221 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1224 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1225 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1228 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1229 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1232 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1233 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1236 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1237 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1240 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1241 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1244 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1245 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1246 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1248 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1249 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1250 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1252 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1253 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1254 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1256 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1257 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1260 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1261 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1264 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1265 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1268 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1269 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1272 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1273 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1276 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1277 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1280 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1281 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1284 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1285 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1288 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1289 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1292 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1293 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1296 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1297 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1300 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1301 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1304 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1305 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1308 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1309 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1312 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1313 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1316 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1317 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1318 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1320 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1321 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1322 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1324 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1325 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1326 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1328 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1329 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1332 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1333 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1336 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1337 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1340 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1341 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1344 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1345 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1348 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1349 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1352 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1353 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1356 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1357 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1360 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1361 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1364 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1365 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1368 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1369 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1372 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1373 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1376 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1377 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1380 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1381 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1384 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1385 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1388 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1389 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1390 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1392 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1393 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1394 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1396 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1397 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1398 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1400 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1401 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1404 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1405 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1408 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1409 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1412 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1413 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1416 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1417 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1420 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1421 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1424 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1425 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1428 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1429 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1432 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1433 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1434 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1436 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1437 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1438 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1440 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1441 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1442 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1444 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1445 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1446 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1448 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1449 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1450 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1452 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1453 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1454 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1456 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1457 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1458 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1460 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1461 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1462 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1464 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1465 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1466 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1468 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1469 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1470 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1472 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1473 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1474 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1476 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1477 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1478 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1480 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1481 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1482 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1484 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1485 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1486 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1488 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1489 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1490 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1492 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1493 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1494 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1496 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1497 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1498 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1500 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1501 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1502 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1504 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1505 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1506 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1508 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1509 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1510 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1512 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1513 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1514 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1516 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1517 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1518 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1520 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1521 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1522 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1524 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1525 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1526 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1528 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1529 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1530 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1532 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1533 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1534 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1536 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1537 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1538 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1540 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1541 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1542 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1544 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1545 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1546 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1548 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1549 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1550 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1552 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1553 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1554 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1556 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1557 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1558 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1560 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1561 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1562 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1564 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1565 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1566 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1568 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1569 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1570 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1572 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1573 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1574 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1576 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1577 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1578 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1580 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1581 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1582 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1584 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1585 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1586 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1588 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1589 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1590 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1592 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1593 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1596 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1597 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1600 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1601 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1604 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1605 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1606 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1608 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1609 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1612 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1613 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1616 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1617 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1620 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1621 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1624 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1625 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1628 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1629 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1632 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1633 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1636 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1637 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1640 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1641 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1644 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1645 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1648 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1649 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1652 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1653 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1656 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1657 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1660 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1661 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1664 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1665 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1668 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1669 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1672 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1673 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1674 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1676 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1677 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1680 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1681 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1684 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1685 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1688 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1689 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1692 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1693 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1696 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1697 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1700 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1701 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1704 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1705 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1708 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1709 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1712 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1713 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1716 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1717 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1720 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1721 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1724 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1725 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1728 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1729 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1732 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1733 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1736 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1737 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1740 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1741 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1744 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1745 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1746 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1748 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1749 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1752 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1753 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1756 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1757 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1760 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1761 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1764 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1765 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1768 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1769 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1772 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1773 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1776 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1777 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1780 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1781 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1784 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1785 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1788 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1789 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1792 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1793 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1796 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1797 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1800 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1801 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1804 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1805 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1808 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1809 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1812 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1813 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1816 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1817 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1818 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1820 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1821 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1824 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1825 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1828 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1829 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1832 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1833 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1836 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1837 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1840 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1841 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1844 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1845 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1848 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1849 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1852 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1853 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1856 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1857 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1860 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1861 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1864 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1865 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1868 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1869 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1872 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1873 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1876 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1877 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1880 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1881 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1884 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1885 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1888 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1889 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1890 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1892 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1893 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1896 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1897 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1900 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1901 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1904 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1905 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1908 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1909 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1912 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1913 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1916 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1917 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1920 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1921 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1924 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1925 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1936 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1940 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1944 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1945 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1948 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1949 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1952 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1953 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1956 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1957 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1960 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1961 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1962 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1964 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1965 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1968 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1969 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1972 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1973 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1976 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1977 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1980 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1981 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1984 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1985 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1988 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1989 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1992 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1993 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1996 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 1997 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 2000 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 2004 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 2016 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 2020 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 2032 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 2036 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 2048 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 2052 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 2064 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 2068 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 2080 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 2084 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 2096 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 2100 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 2112 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 2116 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 2128 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Control sector 2132 is outside playable geometry and fixed-point bounds",
+      "passed": true
+    },
+    {
+      "check": "Retained campaign actor 18063 at -1056,192",
+      "passed": true
+    },
+    {
+      "check": "Retained campaign actor 30988 at 128,640",
+      "passed": true
+    },
+    {
+      "check": "Retained campaign actor 30989 at 192,640",
+      "passed": true
+    },
+    {
+      "check": "Retained campaign actor 30990 at 256,640",
+      "passed": true
+    },
+    {
+      "check": "Retained campaign actor 30991 at 320,640",
+      "passed": true
+    },
+    {
+      "check": "Original port house and contents retained: (-1216, 384, -448, 1152)",
+      "passed": true
+    },
+    {
+      "check": "Original port house and contents retained: (-1088, 1280, -512, 1984)",
+      "passed": true
+    },
+    {
+      "check": "Exact compatibility provenance: legacy_4378/LAYOUT.json",
+      "passed": true
+    },
+    {
+      "check": "Exact compatibility provenance: legacy_4378/MAP06.wad",
+      "passed": true
+    },
+    {
+      "check": "Exact compatibility provenance: legacy_4379_north/CITY.json",
+      "passed": true
+    },
+    {
+      "check": "Exact compatibility provenance: legacy_4379_north/LAYOUT.json",
+      "passed": true
+    },
+    {
+      "check": "Exact compatibility provenance: legacy_4379_north/MAP06.wad",
+      "passed": true
+    },
+    {
+      "check": "Two independent generations match the shipped map byte for byte",
+      "passed": true
+    }
+  ],
+  "map_sha256": "84f0c18fdb4be7a91eff146845f78dda5082d5b0c9d996928f0652d7c6fc7efd",
+  "determinism": [
+    "84f0c18fdb4be7a91eff146845f78dda5082d5b0c9d996928f0652d7c6fc7efd",
+    "84f0c18fdb4be7a91eff146845f78dda5082d5b0c9d996928f0652d7c6fc7efd"
+  ],
+  "city_metres": [
+    960,
+    960
+  ],
+  "buildings": {
+    "factory": 24,
+    "house": 160,
+    "shop": 64,
+    "construction": 40
+  },
+  "geometry_cells": 316656,
+  "evidence": "Static topology does not replace the native traversal, combat and author tests."
+}

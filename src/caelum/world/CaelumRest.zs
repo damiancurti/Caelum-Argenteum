@@ -10,6 +10,7 @@ class CaelumRestRules : Object
     const STATUS_INTERRUPTED = 4;
     // Ritmo confirmado por el autor: cien puntos en ocho horas del lugar.
     const FULL_SLEEP_GAME_HOURS = 8.0;
+    const CHAIR_RESOURCE_FACTOR = 2;
 
     static clearscope int DurationTics(int minutes)
     {

@@ -1,6 +1,67 @@
 # Caelum Argenteum — Project, status and roadmap
 
-Documentation version: **4.37.8** — 2026-10-02.
+Documentation version: **4.37.9** — 2026-10-03.
+
+## 4.37.9 — Expanded southern Barracas al Sud (#77)
+
+The author's final 2026-10-03 direction supersedes the first 96 m northern layout.
+MAP06 now contains a 960 × 960 m city: 160 houses (including the two retained port
+buildings), 64 shops, 24 factories and 40 construction sites. The 288 constructions
+have connected streets and avenues; different façades, counters/awnings, industrial
+halls/chimneys and incomplete masonry/timber works distinguish their uses.
+The existing harbor arrival, prisoners, bed, workbench and both piers remain.
+
+Six breakable gates integrate the attacking front into the city south wall.
+North and west also have fortified gates; the eastern arch reaches the docks.
+These exits remain local MAP06 passages. A raised walk connects the perimeter,
+with physical stairs to every gun position and four traversable corner towers.
+The author increased the forces to 6,000 Mandingas plus one commander and 600
+soldiers. Attacking machines remain five small rams, one large ram and six guns.
+Defenders have 36 guns: eight per wall plus four tower guns. Only the eight south
+wall guns and four tower guns fire during this siege; the other 24 are staffed
+reserve emplacements. Two hostile gun positions on the southern flanks give
+the northern towers real visible targets without changing cannon physics.
+Each attacking command group is now capped at 100 members including its leader,
+as requested by the author after the live freeze check. Excess neighbors form
+additional groups; rank priority, stable ties and the full population remain.
+
+Normal progression remains MAP01 → MAP02 → MAP06, using stable connection 16
+and network revision 4. It retains Ace/Zupay prerequisites and the accepted
+10 km provision/time transaction. Saves already in the former MAP03 workshop
+retain their legacy onward route. City exits introduce no diagnostic travel.
+
+Use a fresh/unvisited MAP06 for the expanded southern city. For a previously
+visited port, select its exact geometry: --legacy-map06-north-city for the first
+4.37.9 northern city, --legacy-map06-siege for 4.36.27–4.37.8, or --legacy-map06
+for the pre-siege 4.36.26 port. These three alternatives are mutually exclusive;
+each can accompany --legacy-map02. Existing populations, positions, casualties
+and rewards stay in those saved layouts. Keep original saves/packages for
+rollback; no old MAP06 geometry or army is reset or transplanted.
+
+Current evidence is assets/validation_4379/south. The original validation_4379
+files describe the superseded first iteration. Static generation/connectivity,
+native collision and actual-tic traversal, all 36 physical crew replacements,
+both victory orders, persistence and measured full-scene throughput are distinct
+checks; their available evidence remains scoped to each run. Display FPS is not inferred.
+CA-4379-CITY-01 and CA-4379-ROUTE-01 passed author acceptance on 2026-10-03. Narrative
+intelligence/captain identity and later V4.37 work remain separate issues.
+
+The author subsequently requested nearest-visible player/guard targeting,
+shared attack range/cost enforcement, retreat/idle recovery, Pain interruption
+and double chair/idle Anima. Player ranged projectiles also obey their authored
+limits. SYSTEMS records the contract; COMBAT_RECOVERY.json under
+assets/validation_4379/south records 90 native checks, save persistence and the
+live comparison. CA-4379-COMBAT-01 also passed author verification on 2026-10-03.
+
+The full-army live check still **fails performance**: late throughput is about
+13.5 tics/s versus the normal 35, despite Windows responding in all 248 samples
+of the 300.5-second run. The preceding comparison measured 3.9 before targeting
+changes and 14.3 with targeting alone. These unseeded runs do not isolate causes
+or measure display FPS. GROUP100.json and LIVE_FREEZE.json preserve earlier
+failures. No permanent deadlock was proven. On 2026-10-03 the author approved
+PR #85 merge and #77 closure, deferring performance work to #86. A subsequent
+explicit confirmation approved all three manual checks; HISTORY records them.
+This author acceptance does not rewrite the prior measured performance failure.
 
 ## 4.37.8 — MAP02 material ledger and finite-supply audit (#75)
 

@@ -12,6 +12,10 @@ if /I "%~1"=="--legacy-map02" (
     set "BUILD_MAP_OPTION=!BUILD_MAP_OPTION! -LegacyMap02"
 ) else if /I "%~1"=="--legacy-map06" (
     set "BUILD_MAP_OPTION=!BUILD_MAP_OPTION! -LegacyMap06"
+) else if /I "%~1"=="--legacy-map06-siege" (
+    set "BUILD_MAP_OPTION=!BUILD_MAP_OPTION! -LegacyMap06Siege"
+) else if /I "%~1"=="--legacy-map06-north-city" (
+    set "BUILD_MAP_OPTION=!BUILD_MAP_OPTION! -LegacyMap06NorthCity"
 ) else goto invalid_arguments
 shift
 goto parse_arguments
@@ -66,8 +70,10 @@ endlocal
 exit /b
 
 :invalid_arguments
-echo Usage: run_dev.bat [--legacy-map02] [--legacy-map06]
+echo Usage: run_dev.bat [--legacy-map02] [--legacy-map06 ^| --legacy-map06-siege ^| --legacy-map06-north-city]
 echo --legacy-map02 continues saves that already visited the original 4.36.4 maze.
 echo --legacy-map06 continues saves that already visited the pre-siege 4.36.26 port.
+echo --legacy-map06-siege continues saves that already visited the 4.36.27-4.37.8 siege port.
+echo --legacy-map06-north-city continues saves from the first 4.37.9 city with the northern siege.
 endlocal
 exit /b 2

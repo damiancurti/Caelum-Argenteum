@@ -1,0 +1,187 @@
+{
+  "issue": 77,
+  "checks": [
+    {
+      "check": "Approved 96 by 96 metre urban footprint",
+      "passed": true
+    },
+    {
+      "check": "Exactly four cardinal city gates",
+      "passed": true
+    },
+    {
+      "check": "Exactly four corner towers",
+      "passed": true
+    },
+    {
+      "check": "Exactly four additional buildings",
+      "passed": true
+    },
+    {
+      "check": "Northern battlefield, ram approaches, platforms and retreat boundary unchanged",
+      "passed": true
+    },
+    {
+      "check": "All accepted siege data retained; only completion-sign placement changed",
+      "passed": true
+    },
+    {
+      "check": "Exact legacy provenance: LAYOUT.json",
+      "passed": true
+    },
+    {
+      "check": "Exact legacy provenance: MAP06.wad",
+      "passed": true
+    },
+    {
+      "check": "north gate width 256 MU",
+      "passed": true
+    },
+    {
+      "check": "north supported passage -128,2240",
+      "passed": true
+    },
+    {
+      "check": "north supported passage -64,2240",
+      "passed": true
+    },
+    {
+      "check": "north supported passage 0,2240",
+      "passed": true
+    },
+    {
+      "check": "north supported passage 64,2240",
+      "passed": true
+    },
+    {
+      "check": "south gate width 256 MU",
+      "passed": true
+    },
+    {
+      "check": "south supported passage 0,-768",
+      "passed": true
+    },
+    {
+      "check": "south supported passage 64,-768",
+      "passed": true
+    },
+    {
+      "check": "south supported passage 128,-768",
+      "passed": true
+    },
+    {
+      "check": "south supported passage 192,-768",
+      "passed": true
+    },
+    {
+      "check": "west gate width 256 MU",
+      "passed": true
+    },
+    {
+      "check": "west supported passage -2176,640",
+      "passed": true
+    },
+    {
+      "check": "west supported passage -2176,704",
+      "passed": true
+    },
+    {
+      "check": "west supported passage -2176,768",
+      "passed": true
+    },
+    {
+      "check": "west supported passage -2176,832",
+      "passed": true
+    },
+    {
+      "check": "east gate width 256 MU",
+      "passed": true
+    },
+    {
+      "check": "east supported passage 832,448",
+      "passed": true
+    },
+    {
+      "check": "east supported passage 832,512",
+      "passed": true
+    },
+    {
+      "check": "east supported passage 832,576",
+      "passed": true
+    },
+    {
+      "check": "east supported passage 832,640",
+      "passed": true
+    },
+    {
+      "check": "Building 211 native roof/headroom",
+      "passed": true
+    },
+    {
+      "check": "Building 212 native roof/headroom",
+      "passed": true
+    },
+    {
+      "check": "Building 213 native roof/headroom",
+      "passed": true
+    },
+    {
+      "check": "Building 214 native roof/headroom",
+      "passed": true
+    },
+    {
+      "check": "Retained port actor 18063 at -1056,192",
+      "passed": true
+    },
+    {
+      "check": "Retained port actor 30988 at 128,640",
+      "passed": true
+    },
+    {
+      "check": "Retained port actor 30989 at 192,640",
+      "passed": true
+    },
+    {
+      "check": "Retained port actor 30990 at 256,640",
+      "passed": true
+    },
+    {
+      "check": "Retained port actor 30991 at 320,640",
+      "passed": true
+    },
+    {
+      "check": "Retained port actor 31050 at 0,2496",
+      "passed": true
+    },
+    {
+      "check": "Retained port actor 30987 at -768,1664",
+      "passed": true
+    },
+    {
+      "check": "Retained port actor 18004 at -768,1472",
+      "passed": true
+    },
+    {
+      "check": "Retained port actor 31051 at 128,1856",
+      "passed": true
+    },
+    {
+      "check": "Two independent generator runs equal the shipped MAP06 byte for byte",
+      "passed": true
+    }
+  ],
+  "map_sha256": "8b88438a0905d0f42665c47e5793dfaa79fd2b824e810a987d1f4eeae7e1fadf",
+  "determinism": [
+    "8b88438a0905d0f42665c47e5793dfaa79fd2b824e810a987d1f4eeae7e1fadf",
+    "8b88438a0905d0f42665c47e5793dfaa79fd2b824e810a987d1f4eeae7e1fadf"
+  ],
+  "old_city_metres": [
+    68,
+    76
+  ],
+  "new_city_metres": [
+    96,
+    96
+  ],
+  "native_clearance_evidence": "See native_geometry.log; static cells alone do not prove actor traversal."
+}

@@ -2,10 +2,15 @@ param(
     [string]$Source = "src",
     [string]$Destination = "build/caelum_argenteum_dev.pk3",
     [switch]$LegacyMap02,
-    [switch]$LegacyMap06
+    [switch]$LegacyMap06,
+    [switch]$LegacyMap06Siege,
+    [switch]$LegacyMap06NorthCity
 )
 
 $ErrorActionPreference = "Stop"
+if (([int]$LegacyMap06.IsPresent + [int]$LegacyMap06Siege.IsPresent + [int]$LegacyMap06NorthCity.IsPresent) -gt 1) {
+    throw 'Select only one MAP06 compatibility revision: -LegacyMap06, -LegacyMap06Siege or -LegacyMap06NorthCity.'
+}
 
 $ProjectRoot = $PSScriptRoot
 $SourcePath = [System.IO.Path]::GetFullPath((Join-Path $ProjectRoot $Source))
@@ -47,6 +52,20 @@ if ($LegacyMap06) {
     $LegacyPortPath = Join-Path $ProjectRoot 'assets/map06_port/legacy_43626/MAP06.wad'
     if ((Get-FileHash -LiteralPath $LegacyPortPath -Algorithm SHA256).Hash -ne '5AE44D61F8D29342C16C6EF8A98308BE98B92C02643E585C14CB986106D453B8') {
         throw 'Legacy MAP06 checksum mismatch; refusing to replace the existing PK3.'
+    }
+    $LegacyMap06Bytes = [IO.File]::ReadAllBytes($LegacyPortPath)
+}
+if ($LegacyMap06Siege) {
+    $LegacyPortPath = Join-Path $ProjectRoot 'assets/map06_port/legacy_4378/MAP06.wad'
+    if ((Get-FileHash -LiteralPath $LegacyPortPath -Algorithm SHA256).Hash -ne 'D7D6F79C3197DB8FD4958CC35C07794DF8DFF1399197BAA7655F8420ADBBB51A') {
+        throw 'Legacy siege MAP06 checksum mismatch; refusing to replace the existing PK3.'
+    }
+    $LegacyMap06Bytes = [IO.File]::ReadAllBytes($LegacyPortPath)
+}
+if ($LegacyMap06NorthCity) {
+    $LegacyPortPath = Join-Path $ProjectRoot 'assets/map06_port/legacy_4379_north/MAP06.wad'
+    if ((Get-FileHash -LiteralPath $LegacyPortPath -Algorithm SHA256).Hash -ne '8B88438A0905D0F42665C47E5793DFAA79FD2B824E810A987D1F4EEAE7E1FADF') {
+        throw 'Legacy north-city MAP06 checksum mismatch; refusing to replace the existing PK3.'
     }
     $LegacyMap06Bytes = [IO.File]::ReadAllBytes($LegacyPortPath)
 }
@@ -127,7 +146,7 @@ try {
                         $EntryStream.Write($LegacyMap02Bytes, 0, $LegacyMap02Bytes.Length)
                         $LegacyReplacementCount++
                     }
-                    elseif ($LegacyMap06 -and $EntryName -ieq 'maps/MAP06.wad') {
+                    elseif (($LegacyMap06 -or $LegacyMap06Siege -or $LegacyMap06NorthCity) -and $EntryName -ieq 'maps/MAP06.wad') {
                         $EntryStream.Write($LegacyMap06Bytes, 0, $LegacyMap06Bytes.Length)
                         $LegacyPortReplacementCount++
                     }
@@ -148,7 +167,7 @@ try {
             if ($LegacyMap02 -and $LegacyReplacementCount -ne 1) {
                 throw "Legacy compatibility requires exactly one maps/MAP02.wad entry in the source."
             }
-            if ($LegacyMap06 -and $LegacyPortReplacementCount -ne 1) {
+            if (($LegacyMap06 -or $LegacyMap06Siege -or $LegacyMap06NorthCity) -and $LegacyPortReplacementCount -ne 1) {
                 throw 'Legacy compatibility requires exactly one maps/MAP06.wad entry in the source.'
             }
         }
@@ -201,7 +220,9 @@ try {
     }
     Write-Host "Files included: $($Files.Count)"
     if ($LegacyMap06) { Write-Host 'MAP06 layout: byte-identical 4.36.26 compatibility port; no new siege geometry.' }
-    else { Write-Host 'MAP06 layout: port siege. Use -LegacyMap06 for campaigns that already visited the pre-siege port.' }
+    elseif ($LegacyMap06Siege) { Write-Host 'MAP06 layout: byte-identical 4.37.8 siege port for existing campaigns; expanded city inactive.' }
+    elseif ($LegacyMap06NorthCity) { Write-Host 'MAP06 layout: byte-identical first 4.37.9 city with the northern siege.' }
+    else { Write-Host 'MAP06 layout: expanded city with integrated southern siege. Select the matching legacy MAP06 option for previously visited ports.' }
     Write-Host "Directory entries: 0"
 }
 finally {

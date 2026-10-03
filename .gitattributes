@@ -4,3 +4,14 @@
 
 # Keep the #75 ledger and retained native evidence hashes stable on checkout.
 /assets/validation_4378/* text eol=lf
+
+# Preserve the exact pre-expansion port and stable #77 evidence hashes.
+/assets/map06_port/legacy_4378/* -text
+/assets/map06_port/legacy_4378/*.json whitespace=cr-at-eol
+/assets/map06_port/legacy_4379_north/* -text
+/assets/map06_port/legacy_4379_north/*.json whitespace=cr-at-eol
+/assets/validation_4379/*.json text eol=lf
+# Native CPU identification includes a trailing space; preserve engine output.
+/assets/validation_4379/*.log text eol=lf whitespace=-blank-at-eol
+/assets/validation_4379/south/*.json text eol=lf
+/assets/validation_4379/south/*.log text eol=lf whitespace=-blank-at-eol

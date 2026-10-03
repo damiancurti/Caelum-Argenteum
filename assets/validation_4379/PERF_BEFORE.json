@@ -1,0 +1,54 @@
+[
+  {
+    "line": "QA16PORT SAMPLE tic=35 age=1 liveAttackers=1001 liveDefenders=100 crew=74 machines=12 rams=6 guns=18 shots=0 contacts=0 blockedRams=0 strikes=0 groups=1 bossFollowers=1001 priorities=1001 neutralized=0 victory=0",
+    "host_seconds": 4.2353729
+  },
+  {
+    "line": "QA16PORT SAMPLE tic=210 age=176 liveAttackers=1001 liveDefenders=100 crew=74 machines=12 rams=6 guns=18 shots=0 contacts=0 blockedRams=0 strikes=0 groups=1 bossFollowers=1001 priorities=1001 neutralized=0 victory=0",
+    "host_seconds": 9.310045599999999
+  },
+  {
+    "line": "QA16PORT SAMPLE tic=385 age=351 liveAttackers=997 liveDefenders=100 crew=74 machines=12 rams=6 guns=18 shots=18 contacts=18 blockedRams=0 strikes=0 groups=1 bossFollowers=997 priorities=1001 neutralized=1 victory=0",
+    "host_seconds": 14.2287573
+  },
+  {
+    "line": "QA16PORT SAMPLE tic=560 age=526 liveAttackers=995 liveDefenders=100 crew=74 machines=12 rams=6 guns=18 shots=18 contacts=18 blockedRams=0 strikes=0 groups=1 bossFollowers=995 priorities=1001 neutralized=1 victory=0",
+    "host_seconds": 19.2503441
+  },
+  {
+    "line": "QA16PORT SAMPLE tic=735 age=701 liveAttackers=989 liveDefenders=100 crew=74 machines=12 rams=6 guns=18 shots=33 contacts=33 blockedRams=0 strikes=0 groups=1 bossFollowers=989 priorities=1001 neutralized=4 victory=0",
+    "host_seconds": 24.3297115
+  },
+  {
+    "line": "QA16PORT SAMPLE tic=910 age=876 liveAttackers=985 liveDefenders=100 crew=74 machines=12 rams=6 guns=18 shots=33 contacts=33 blockedRams=0 strikes=0 groups=2 bossFollowers=983 priorities=1001 neutralized=4 victory=0",
+    "host_seconds": 29.314743999999997
+  },
+  {
+    "line": "QA16PORT SAMPLE tic=1085 age=1051 liveAttackers=981 liveDefenders=100 crew=74 machines=12 rams=6 guns=18 shots=47 contacts=47 blockedRams=0 strikes=2 groups=2 bossFollowers=979 priorities=1001 neutralized=4 victory=0",
+    "host_seconds": 34.2525066
+  },
+  {
+    "line": "QA16PORT SAMPLE tic=1260 age=1226 liveAttackers=962 liveDefenders=100 crew=74 machines=12 rams=6 guns=18 shots=47 contacts=47 blockedRams=0 strikes=4 groups=2 bossFollowers=960 priorities=1001 neutralized=4 victory=0",
+    "host_seconds": 39.2579067
+  },
+  {
+    "line": "QA16PORT SAMPLE tic=1435 age=1401 liveAttackers=932 liveDefenders=100 crew=74 machines=12 rams=6 guns=18 shots=61 contacts=61 blockedRams=0 strikes=6 groups=2 bossFollowers=930 priorities=1001 neutralized=4 victory=0",
+    "host_seconds": 44.3037778
+  },
+  {
+    "line": "QA16PORT SAMPLE tic=1610 age=1576 liveAttackers=908 liveDefenders=100 crew=74 machines=12 rams=6 guns=18 shots=61 contacts=61 blockedRams=0 strikes=8 groups=2 bossFollowers=906 priorities=1001 neutralized=4 victory=0",
+    "host_seconds": 49.2881462
+  },
+  {
+    "line": "QA16PORT SAMPLE tic=1785 age=1751 liveAttackers=906 liveDefenders=100 crew=74 machines=12 rams=6 guns=18 shots=75 contacts=75 blockedRams=0 strikes=8 groups=2 bossFollowers=904 priorities=1001 neutralized=4 victory=0",
+    "host_seconds": 54.2337054
+  },
+  {
+    "line": "QA16PORT SAMPLE tic=1960 age=1926 liveAttackers=890 liveDefenders=100 crew=74 machines=12 rams=6 guns=18 shots=75 contacts=75 blockedRams=0 strikes=8 groups=2 bossFollowers=888 priorities=1001 neutralized=4 victory=0",
+    "host_seconds": 59.308718999999996
+  },
+  {
+    "line": "QA16PORT SAMPLE tic=2135 age=2101 liveAttackers=846 liveDefenders=100 crew=74 machines=12 rams=6 guns=18 shots=89 contacts=89 blockedRams=0 strikes=8 groups=2 bossFollowers=844 priorities=1001 neutralized=4 victory=0",
+    "host_seconds": 64.3145529
+  }
+]

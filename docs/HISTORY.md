@@ -1,6 +1,195 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **4.37.8** — 2026-10-02.
+Documentation version: **4.37.9** — 2026-10-03.
+
+## 4.37.9 — Expand fortified Barracas al Sud (#77)
+
+Final author direction, 2026-10-03 (same patch/version, PR #85): move the attack
+south and integrate six gates into the city wall. Fortify north/west exits,
+connect the raised wall walk and place an operating cannon on every tower.
+The author then explicitly expanded each city side tenfold to 960 × 960 m and
+approved 288 constructions: 160 houses, 64 shops, 24 factories and 40 works in
+progress. The two original port buildings count among the houses and stay.
+
+The final population decision is 6,000 Mandingas plus one commander and 600
+soldiers. Hostile machines stay at six guns and six rams. A clarification confirmed
+36 defensive guns installed (eight per wall plus four towers), with only the
+eight southern wall guns and all four tower guns active during this assault.
+Two hostile gun positions on the south flanks preserve real firing visibility
+for the northern towers. Cannon physics, combat equipment and rewards stay.
+
+The follow-up adds physical access to all 36 defensive posts, selects reserves
+near those entrances and saves their route progress. Native tests exposed
+occupied staging points and approaches through a gun carriage; the final routes
+keep those paths free and use collision-respecting movement without teleporting
+or spawning replacements. All 36 recruits complete their actual-tic routes.
+The original first-city WAD/data and package are preserved for reversible
+--legacy-map06-north-city continuation; older compatibility selectors remain.
+
+Follow-up validation covers supported body profiles, physical walking, all gun
+roles, 36 relief identities, both victory orders, real retreat, rewards, travel
+and repeated save/load/rollback; final collection and remaining expanded-layout
+checks are unfinished. Available evidence is under assets/validation_4379/south.
+The earlier approximately
+35-tic comparison below describes only the original 1,001/100 northern scene;
+it is not a performance claim for 6,001/600. Current measurements are reported
+separately and do not measure display FPS. Author acceptance of the expanded
+city remains pending under the same two stable IDs; no test entry is removed.
+
+Live freeze check requested by the author, 2026-10-03: **FAILED**. Two separate
+native full-army runs were stopped by their test runners after approximately
+302 host seconds each. Both continued simulation and rendering intermittently,
+but late 175-tic intervals took approximately 56 seconds (about 3.1 tics/s,
+versus the normal 35). Windows reported “Not responding” in both runs. The
+second run disabled background priority lowering and included direct foreground
+window inspection; the first activation timed out, the retry succeeded.
+No permanent deadlock or spontaneous crash was established. This is a severe
+live-play failure, not a passing stress test. Population, combat and physics
+were not modified during these runs. Raw samples, environment, tested-package
+hash and measurement limits are in assets/validation_4379/south/LIVE_FREEZE.json.
+Root cause and correction remain outstanding; no author acceptance is inferred.
+Native profilethinkers samples identify expensive controller updates (up to
+230.6 ms in the sampled ticks). A trial moving candidate-priority rejection
+before cannon visibility traces reproduced the slowdown and was reverted;
+it is not a validated correction or an isolated root-cause finding.
+
+Subsequent author request, 2026-10-03: limit each command group to 100 enemies
+and repeat the tests. LAYOUT.json now owns that cap, including the leader.
+The search stops adding neighbors at 100 but still considers every queued
+member for rank/stable-identity election. Remaining actors seed later groups.
+Seventeen isolated native checks pass the 100/101/250 boundaries, a late-added
+Zupay, actual leader deaths, separation/reconnection, deterministic reelection
+and unchanged registry size. Diagnostic actors were reactivated before lethal
+damage because dormant actors reject it; that fixture correction changes no
+gameplay. No new saved field or geometry revision is introduced.
+The capped full-army run lasts 301.3 host seconds and never exceeds 100 members
+or leaves an active attacker unassigned at the sampled checks. All 46 gun-role
+checks pass. Windows Responding is true in all 132 observations, but the final
+175-tic interval takes 47.3 host seconds, about 3.7 tics/s instead of 35: **live
+performance still fails**. Combat randomness differs from the earlier runs;
+this is not a controlled speedup benchmark. Loading a pre-cap expanded save,
+saving/reloading it again, and loading a fresh capped save retain the cap and
+roster; the older save also retains all 36 relief identities. The static audit
+passes 662 checks and two identical map generations. GROUP100.json under the
+same south evidence directory records these scoped results. The capped groups
+are implemented; they do not constitute a performance fix or author acceptance.
+
+Combat follow-ups, same issue/version, 2026-10-03: the author selected the nearest
+visible player or guard as Mandinga target, required authored attack ranges and
+resource costs for all enemies/NPCs, and approved natural-melee/T1 staff costs
+for legacy attacks. Exhaustion now causes collision-respecting retreat beyond
+the opponent's attack envelope, then idle until both Air and Anima are full.
+Actual Pain interrupts recovery; another unaffordable attack restarts it.
+Idle uses chair recovery, including the newly approved double Anima rate for
+seated players. Player projectile ranges were explicitly approved too. Existing
+damage, defense, cannon physics, force counts and map geometry are unchanged.
+
+Ninety isolated native checks pass: nearest-target selection (8), resource/range
+and real Pain behavior (16), projectiles/chair/forecast (34), shared actor types
+(11), group regression (17) and idempotent target-cache migration (4). Six
+projectile families hit inside range and cannot overshoot outside it in one
+tick; actual player bow/crossbow/carbine and eight ordinary/charged magic cases
+receive catalogue/ability limits. A saved chair session, idle recovery and a
+projectile already 530 MU into its 1,000-MU budget reload correctly and complete
+their checks. The prior port save and its subsequent migrated save retain all
+6,001 attackers, 600 guards and 36 replacement-crew identities. Original-save
+rollback uses the preserved earlier package, not a promised new-save downgrade.
+
+Prototype QA corrections: wait for deferred PostBeginPlay before reading actor
+resources; keep the retreat dummy stationary; place the rat target within its
+24-MU reach; tolerate a diagnostic event handler absent from older saves. Also
+wait through the existing 35-tic group refresh before checking old membership.
+These fixture problems were rerun successfully and changed no balance.
+Normal Mandinga melee reaches guards, but the tested 53 damage is absorbed by
+their existing Toughness; target selection does not imply positive health loss.
+
+Three clean live runs retain the full army, 100-member cap, camera/input sequence
+and 300-host-second ceiling. Final sampled throughput: 3.9 tics/s before the
+targeting change, 14.3 with targeting alone, 13.5 with the complete resource/range
+change. The final run lasts 300.5 seconds, passes all 46 cannon-role checks,
+never exceeds the sampled group cap, and reports Windows responsive in all
+248 observations. Its final target sample includes 17 distinct guards and 93
+resting attackers. **Performance still fails against the normal 35 tics/s.**
+No permanent deadlock is established. Combat RNG was not seeded; these are
+descriptive simulation intervals, not display FPS or a causal speedup claim.
+
+COMBAT_RECOVERY.json under assets/validation_4379/south retains raw logs, timing,
+captures, commands and source/package hashes. The tested and delivered 6,141
+payloads are identical; runtime data regenerates deterministically and MAP06
+retains its previous SHA-256. Static project validation and document-index
+freshness are checked in this delivery. CA-4379-COMBAT-01 is added; CITY-01 and
+ROUTE-01 remain pending. PR #85 stays draft; no acceptance, merge or closure
+is inferred from these agent tests.
+
+Author disposition, 2026-10-03: explicitly approve PR #85 merge and #77 closure,
+with performance testing deferred to another issue. Follow-up #86 records the
+13.5/35-tic baseline, raw evidence, preservation constraints and acceptance for
+that work. This supersedes the draft/merge restriction above, not the measured
+performance failure. No explicit manual-test pass was supplied; CA-4379-CITY-01,
+CA-4379-ROUTE-01 and CA-4379-COMBAT-01 remain pending. The same-patch approval
+keeps version 4.37.9 and changes no gameplay or geometry.
+
+Subsequent explicit author confirmation, 2026-10-03: "All tests passed; you may
+mark them approved." Record the following as author PASS, all originating in
+4.37.9 / issue #77:
+
+- CA-4379-CITY-01: expanded city, traversal, siege, crew replacement, victory
+  and persistence accepted.
+- CA-4379-ROUTE-01: campaign connection, rescue/rewards and saved-layout
+  continuation accepted.
+- CA-4379-COMBAT-01: targeting, exhaustion/recovery, Pain, projectile limits,
+  chair regeneration and persistence accepted.
+
+The three confirmed entries are removed from pending_test.txt; the tracked file
+is empty. This explicit confirmation supersedes their pending status above.
+Performance follow-up remains in #86 as separately requested; the earlier native
+13.5/35-tic measurement remains historical evidence, not a newly corrected result.
+Version 4.37.9 and all tested gameplay payloads are unchanged by this acceptance.
+
+### First city iteration — superseded geometry, retained evidence
+
+Author decisions, 2026-10-02: approve a 96 × 96 m city, four additional buildings
+and four accessible corner towers; north/south/west reach local exterior ground,
+east reaches docks, with the existing six-gate military front retained north.
+On 2026-10-03 the author resolved the discovered route discrepancy in favor of
+direct MAP02 → MAP06, as #77 specifies. The preceding workshop step and old
+map-name wording remain historical records, superseded by this clarification.
+
+The patch adds connected streets/buildings, a fortified perimeter, four open
+cardinal arches and native tower stairs/decks. It preserves combat data and
+northern battlefield geometry exactly. The endpoint sign moves out of a tower.
+Stable connection 16 and network revision 4 implement the direct port journey,
+retaining the existing 10 km planner, provision/time transaction and Ace/Zupay
+requirements. Existing identifiers/history and the legacy workshop's onward
+route remain; no automatic diagnostic entry is added.
+
+The exact 4.37.8 siege MAP06 is preserved with provenance and selected through
+--legacy-map06-siege. This continues existing geometry with current code; it
+does not transplant saved actors into the expansion. --legacy-map06 keeps its
+pre-siege meaning. Original packages/saves provide rollback. No old-save waiver
+was requested or inferred for #77, and no population/reward reset is a migration.
+
+Static audit: 42 checks pass, including exact northern geometry and combat data,
+legacy provenance and two byte-identical MAP06 generations. Native collision
+sweeps pass 183 checks / 84,448 steps across 25 routes and all seven body tiers;
+actual-tic traversal passes 2,248 steps through all four gates and up/down all four
+towers. Both victory orders pass 23 checks each; boundary withdrawal awards no
+kills. Shared reward/capture checks pass 24 checks and reload retains ownership.
+Direct journey scenarios with 0/2/4 rescues pass 27/29/31 checks including reload;
+the Journal caravan dialogue also submits the correct plan after native closure.
+Old port and maze saves pass repeated migration/load and rollback checks.
+
+Full-population comparison: 2,100 native tics took 60.079 s before and 59.946 s
+after (approximately 35 tics/host second in both cases). Both runs kept the full
+army and all machinery active. This is simulation throughput sampled every
+100 ms, not display FPS or identical random combat outcomes.
+
+Test evidence is retained in assets/validation_4379: static/deterministic checks,
+native traversal and views, full-population siege, both objectives, prisoner
+arrival/rewards, direct travel and save compatibility. Fixtures seed prerequisites
+or isolate damage where stated; these are agent checks, not a full author campaign
+acceptance. CA-4379-CITY-01 and CA-4379-ROUTE-01 originate in this release/issue
+and remain pending. No merge or closure is authorized by this delivery request.
 
 ## 4.37.8 — Correct MAP02 material ledger and verify finite supplies (#75)
 

@@ -1,0 +1,10 @@
+{
+  "source_commit": "f4429c543db89062376a9f620deba4ba4439d989",
+  "release": "4.37.8",
+  "issue": 77,
+  "purpose": "Exact pre-expansion siege map for reversible saved-campaign compatibility.",
+  "files": {
+    "LAYOUT.json": "1e13a58637d9f2a38a17b812c2d97f3fbb261458826d213b159b88cb9e576379",
+    "MAP06.wad": "d7d6f79c3197db8fd4958cc35c07794df8dff1399197baa7655f8420adbbb51a"
+  }
+}

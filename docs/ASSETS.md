@@ -1,6 +1,48 @@
 # Caelum Argenteum — Audio and art
 
-Documentation version: **4.37.8** — 2026-10-02.
+Documentation version: **4.37.9** — 2026-10-03.
+
+## 4.37.9 — Expanded urban geometry and save-layout provenance (#77)
+
+assets/map06_port/CITY.json owns the 960 × 960 m city, 288 classified
+constructions, fortified passages, wall walk, access stairs and four towers.
+SOUTH.json owns the sixfold populations, gun/ram/formation placements, southern
+retreat and physical crew routes. LAYOUT.json retains the accepted shared
+parameters and original northern deployment for legacy layouts; generated
+CaelumPortData resolves the current map marker without rewriting saved armies.
+The #77 author-approved command_group_limit of 100 lives in LAYOUT.json and is
+emitted as COMMAND_GROUP_LIMIT; it changes neither map geometry nor population.
+The subsequent combat follow-up retires enemy_attack_resource_trial (0) and
+adds no art or map changes. COMBAT_RECOVERY.json in the same south evidence
+directory records source/package hashes, native checks and three live runs.
+
+generate_port_city.py builds houses with native roofs/windows, shop awnings and
+counters, factory halls/chimneys, and four stages of exposed foundations,
+brickwork, stored materials and timber staging. generate_map06_port.py packages
+the authored map and shared data. Existing CMST/CVCI/CVPO/CASWR materials and
+native 3D floors are reused; no new third-party art, engine asset or license is
+introduced. The original harbor buildings, props, prisoners and piers remain.
+MAP07 and the other map WADs are unchanged by this follow-up.
+
+The compact coastal writer omits identical-cell internal edges before allocating
+them and places control sectors in a separate bounded grid. This keeps the
+larger MAP06 deterministic without changing the default MAP07 generation path.
+Control sectors never overlap the southern battlefield or playable city.
+
+legacy_4378 preserves the exact previous siege port from f4429c543db89062376a9f620deba4ba4439d989.
+legacy_4379_north preserves the first published city from 83b6b115e7456c585c142a91144c229175cfc999,
+including its byte-identical MAP06 hash 8b88438a0905d0f42665c47e5793dfaa79fd2b824e810a987d1f4eeae7e1fadf.
+Both directories retain SHA-256 provenance. The builder replaces only the chosen
+MAP06 WAD and rejects conflicting port modes before replacing the package.
+No engine, IWAD or diagnostic fixture enters src or the development PK3.
+
+validate_map06_city.py checks final dimensions/counts, real cannon floors,
+control-sector separation, original port contents, exact legacy hashes and
+two byte-identical generations. Available static evidence and failed live-run
+records are in assets/validation_4379/south. Original first-iteration evidence
+is preserved separately. The author confirmed all expanded-layout/manual checks
+passed on 2026-10-03, including visual acceptance; performance testing continues
+in #86 without changing the previous measured results.
 
 ## 4.37.8 — Supply ledger provenance and verification (#75)
 
