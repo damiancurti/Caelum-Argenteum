@@ -1,0 +1,3576 @@
+{
+  "checks": 891,
+  "failures": 0,
+  "results": [
+    {
+      "passed": true,
+      "check": "accepted population, traps and supply totals unchanged"
+    },
+    {
+      "passed": true,
+      "check": "drops unchanged"
+    },
+    {
+      "passed": true,
+      "check": "loot unchanged"
+    },
+    {
+      "passed": true,
+      "check": "zones unchanged"
+    },
+    {
+      "passed": true,
+      "check": "gates unchanged"
+    },
+    {
+      "passed": true,
+      "check": "prisoners unchanged"
+    },
+    {
+      "passed": true,
+      "check": "extraction unchanged"
+    },
+    {
+      "passed": true,
+      "check": "travel unchanged"
+    },
+    {
+      "passed": true,
+      "check": "refuges unchanged"
+    },
+    {
+      "passed": true,
+      "check": "exactly four independent keyless return grates"
+    },
+    {
+      "passed": true,
+      "check": "all flooded tunnel cells form one network"
+    },
+    {
+      "passed": true,
+      "check": "pit 43905 connects without stairs"
+    },
+    {
+      "passed": true,
+      "check": "pit 43916 connects without stairs"
+    },
+    {
+      "passed": true,
+      "check": "pit 43925 connects without stairs"
+    },
+    {
+      "passed": true,
+      "check": "pit 43929 connects without stairs"
+    },
+    {
+      "passed": true,
+      "check": "pit 43930 connects without stairs"
+    },
+    {
+      "passed": true,
+      "check": "pit 43933 connects without stairs"
+    },
+    {
+      "passed": true,
+      "check": "upper gate 44700 has no lower crossing"
+    },
+    {
+      "passed": true,
+      "check": "upper gate 44701 has no lower crossing"
+    },
+    {
+      "passed": true,
+      "check": "upper gate 44702 has no lower crossing"
+    },
+    {
+      "passed": true,
+      "check": "upper gate 44720 has no lower crossing"
+    },
+    {
+      "passed": true,
+      "check": "upper gate 44710 has no lower crossing"
+    },
+    {
+      "passed": true,
+      "check": "upper gate 44721 has no lower crossing"
+    },
+    {
+      "passed": true,
+      "check": "upper gate 44711 has no lower crossing"
+    },
+    {
+      "passed": true,
+      "check": "upper gate 44722 has no lower crossing"
+    },
+    {
+      "passed": true,
+      "check": "upper gate 44712 has no lower crossing"
+    },
+    {
+      "passed": true,
+      "check": "upper gate 44723 has no lower crossing"
+    },
+    {
+      "passed": true,
+      "check": "upper gate 44713 has no lower crossing"
+    },
+    {
+      "passed": true,
+      "check": "upper gate 44703 has no lower crossing"
+    },
+    {
+      "passed": true,
+      "check": "crusher 43900 retains unmodified base floor and complete sector"
+    },
+    {
+      "passed": true,
+      "check": "crusher 43909 retains unmodified base floor and complete sector"
+    },
+    {
+      "passed": true,
+      "check": "crusher 43915 retains unmodified base floor and complete sector"
+    },
+    {
+      "passed": true,
+      "check": "crusher 43921 retains unmodified base floor and complete sector"
+    },
+    {
+      "passed": true,
+      "check": "crusher 43923 retains unmodified base floor and complete sector"
+    },
+    {
+      "passed": true,
+      "check": "crusher 43924 retains unmodified base floor and complete sector"
+    },
+    {
+      "passed": true,
+      "check": "crusher 43932 retains unmodified base floor and complete sector"
+    },
+    {
+      "passed": true,
+      "check": "crusher 43938 retains unmodified base floor and complete sector"
+    },
+    {
+      "passed": true,
+      "check": "crusher 43941 retains unmodified base floor and complete sector"
+    },
+    {
+      "passed": true,
+      "check": "retained map thing 1"
+    },
+    {
+      "passed": true,
+      "check": "preserved upper thing height 1"
+    },
+    {
+      "passed": true,
+      "check": "retained map thing 44800"
+    },
+    {
+      "passed": true,
+      "check": "preserved upper thing height 44800"
+    },
+    {
+      "passed": true,
+      "check": "retained map thing 44700"
+    },
+    {
+      "passed": true,
+      "check": "preserved upper thing height 44700"
+    },
+    {
+      "passed": true,
+      "check": "retained map thing 44701"
+    },
+    {
+      "passed": true,
+      "check": "preserved upper thing height 44701"
+    },
+    {
+      "passed": true,
+      "check": "retained map thing 44702"
+    },
+    {
+      "passed": true,
+      "check": "preserved upper thing height 44702"
+    },
+    {
+      "passed": true,
+      "check": "retained map thing 43800"
+    },
+    {
+      "passed": true,
+      "check": "preserved upper thing height 43800"
+    },
+    {
+      "passed": true,
+      "check": "retained map thing 43801"
+    },
+    {
+      "passed": true,
+      "check": "preserved upper thing height 43801"
+    },
+    {
+      "passed": true,
+      "check": "retained map thing 43802"
+    },
+    {
+      "passed": true,
+      "check": "preserved upper thing height 43802"
+    },
+    {
+      "passed": true,
+      "check": "retained map thing 43803"
+    },
+    {
+      "passed": true,
+      "check": "preserved upper thing height 43803"
+    },
+    {
+      "passed": true,
+      "check": "retained map thing 43804"
+    },
+    {
+      "passed": true,
+      "check": "preserved upper thing height 43804"
+    },
+    {
+      "passed": true,
+      "check": "retained map thing 43805"
+    },
+    {
+      "passed": true,
+      "check": "preserved upper thing height 43805"
+    },
+    {
+      "passed": true,
+      "check": "retained map thing 43806"
+    },
+    {
+      "passed": true,
+      "check": "preserved upper thing height 43806"
+    },
+    {
+      "passed": true,
+      "check": "retained map thing 43807"
+    },
+    {
+      "passed": true,
+      "check": "preserved upper thing height 43807"
+    },
+    {
+      "passed": true,
+      "check": "retained map thing 43808"
+    },
+    {
+      "passed": true,
+      "check": "preserved upper thing height 43808"
+    },
+    {
+      "passed": true,
+      "check": "retained map thing 43809"
+    },
+    {
+      "passed": true,
+      "check": "preserved upper thing height 43809"
+    },
+    {
+      "passed": true,
+      "check": "retained map thing 43900"
+    },
+    {
+      "passed": true,
+      "check": "preserved upper thing height 43900"
+    },
+    {
+      "passed": true,
+      "check": "retained map thing 43901"
+    },
+    {
+      "passed": true,
+      "check": "preserved upper thing height 43901"
+    },
+    {
+      "passed": true,
+      "check": "retained map thing 43902"
+    },
+    {
+      "passed": true,
+      "check": "preserved upper thing height 43902"
+    },
+    {
+      "passed": true,
+      "check": "retained map thing 44003"
+    },
+    {
+      "passed": true,
+      "check": "preserved upper thing height 44003"
+    },
+    {
+      "passed": true,
+      "check": "retained map thing 43903"
+    },
+    {
+      "passed": true,
+      "check": "preserved upper thing height 43903"
+    },
+    {
+      "passed": true,
+      "check": "retained map thing 43904"
+    },
+    {
+      "passed": true,
+      "check": "preserved upper thing height 43904"
+    },
+    {
+      "passed": true,
+      "check": "retained map thing 44006"
+    },
+    {
+      "passed": true,
+      "check": "preserved upper thing height 44006"
+    },
+    {
+      "passed": true,
+      "check": "retained map thing 43906"
+    },
+    {
+      "passed": true,
+      "check": "preserved upper thing height 43906"
+    },
+    {
+      "passed": true,
+      "check": "retained map thing 44007"
+    },
+    {
+      "passed": true,
+      "check": "preserved upper thing height 44007"
+    },
+    {
+      "passed": true,
+      "check": "retained map thing 43907"
+    },
+    {
+      "passed": true,
+      "check": "preserved upper thing height 43907"
+    },
+    {
+      "passed": true,
+      "check": "retained map thing 44008"
+    },
+    {
+      "passed": true,
+      "check": "preserved upper thing height 44008"
+    },
+    {
+      "passed": true,
+      "check": "retained map thing 43908"
+    },
+    {
+      "passed": true,
+      "check": "preserved upper thing height 43908"
+    },
+    {
+      "passed": true,
+      "check": "retained map thing 43909"
+    },
+    {
+      "passed": true,
+      "check": "preserved upper thing height 43909"
+    },
+    {
+      "passed": true,
+      "check": "retained map thing 44010"
+    },
+    {
+      "passed": true,
+      "check": "preserved upper thing height 44010"
+    },
+    {
+      "passed": true,
+      "check": "retained map thing 43910"
+    },
+    {
+      "passed": true,
+      "check": "preserved upper thing height 43910"
+    },
+    {
+      "passed": true,
+      "check": "retained map thing 43911"
+    },
+    {
+      "passed": true,
+      "check": "preserved upper thing height 43911"
+    },
+    {
+      "passed": true,
+      "check": "retained map thing 47000"
+    },
+    {
+      "passed": true,
+      "check": "preserved upper thing height 47000"
+    },
+    {
+      "passed": true,
+      "check": "retained map thing 48000"
+    },
+    {
+      "passed": true,
+      "check": "preserved upper thing height 48000"
+    },
+    {
+      "passed": true,
+      "check": "retained map thing 48001"
+    },
+    {
+      "passed": true,
+      "check": "preserved upper thing height 48001"
+    },
+    {
+      "passed": true,
+      "check": "retained map thing 47001"
+    },
+    {
+      "passed": true,
+      "check": "preserved upper thing height 47001"
+    },
+    {
+      "passed": true,
+      "check": "retained map thing 48002"
+    },
+    {
+      "passed": true,
+      "check": "preserved upper thing height 48002"
+    },
+    {
+      "passed": true,
+      "check": "retained map thing 48003"
+    },
+    {
+      "passed": true,
+      "check": "preserved upper thing height 48003"
+    },
+    {
+      "passed": true,
+      "check": "retained map thing 47002"
+    },
+    {
+      "passed": true,
+      "check": "preserved upper thing height 47002"
+    },
+    {
+      "passed": true,
+      "check": "retained map thing 48004"
+    },
+    {
+      "passed": true,
+      "check": "preserved upper thing height 48004"
+    },
+    {
+      "passed": true,
+      "check": "retained map thing 48005"
+    },
+    {
+      "passed": true,
+      "check": "preserved upper thing height 48005"
+    },
+    {
+      "passed": true,
+      "check": "retained map thing 47003"
+    },
+    {
+      "passed": true,
+      "check": "preserved upper thing height 47003"
+    },
+    {
+      "passed": true,
+      "check": "retained map thing 48006"
+    },
+    {
+      "passed": true,
+      "check": "preserved upper thing height 48006"
+    },
+    {
+      "passed": true,
+      "check": "retained map thing 48007"
+    },
+    {
+      "passed": true,
+      "check": "preserved upper thing height 48007"
+    },
+    {
+      "passed": true,
+      "check": "retained map thing 47004"
+    },
+    {
+      "passed": true,
+      "check": "preserved upper thing height 47004"
+    },
+    {
+      "passed": true,
+      "check": "retained map thing 48008"
+    },
+    {
+      "passed": true,
+      "check": "preserved upper thing height 48008"
+    },
+    {
+      "passed": true,
+      "check": "retained map thing 48009"
+    },
+    {
+      "passed": true,
+      "check": "preserved upper thing height 48009"
+    },
+    {
+      "passed": true,
+      "check": "retained map thing 47005"
+    },
+    {
+      "passed": true,
+      "check": "preserved upper thing height 47005"
+    },
+    {
+      "passed": true,
+      "check": "retained map thing 48010"
+    },
+    {
+      "passed": true,
+      "check": "preserved upper thing height 48010"
+    },
+    {
+      "passed": true,
+      "check": "retained map thing 48011"
+    },
+    {
+      "passed": true,
+      "check": "preserved upper thing height 48011"
+    },
+    {
+      "passed": true,
+      "check": "retained map thing 47006"
+    },
+    {
+      "passed": true,
+      "check": "preserved upper thing height 47006"
+    },
+    {
+      "passed": true,
+      "check": "retained map thing 48012"
+    },
+    {
+      "passed": true,
+      "check": "preserved upper thing height 48012"
+    },
+    {
+      "passed": true,
+      "check": "retained map thing 48013"
+    },
+    {
+      "passed": true,
+      "check": "preserved upper thing height 48013"
+    },
+    {
+      "passed": true,
+      "check": "retained map thing 47007"
+    },
+    {
+      "passed": true,
+      "check": "preserved upper thing height 47007"
+    },
+    {
+      "passed": true,
+      "check": "retained map thing 48014"
+    },
+    {
+      "passed": true,
+      "check": "preserved upper thing height 48014"
+    },
+    {
+      "passed": true,
+      "check": "retained map thing 48015"
+    },
+    {
+      "passed": true,
+      "check": "preserved upper thing height 48015"
+    },
+    {
+      "passed": true,
+      "check": "retained map thing 47008"
+    },
+    {
+      "passed": true,
+      "check": "preserved upper thing height 47008"
+    },
+    {
+      "passed": true,
+      "check": "retained map thing 48016"
+    },
+    {
+      "passed": true,
+      "check": "preserved upper thing height 48016"
+    },
+    {
+      "passed": true,
+      "check": "retained map thing 48017"
+    },
+    {
+      "passed": true,
+      "check": "preserved upper thing height 48017"
+    },
+    {
+      "passed": true,
+      "check": "retained map thing 47009"
+    },
+    {
+      "passed": true,
+      "check": "preserved upper thing height 47009"
+    },
+    {
+      "passed": true,
+      "check": "retained map thing 48018"
+    },
+    {
+      "passed": true,
+      "check": "preserved upper thing height 48018"
+    },
+    {
+      "passed": true,
+      "check": "retained map thing 48019"
+    },
+    {
+      "passed": true,
+      "check": "preserved upper thing height 48019"
+    },
+    {
+      "passed": true,
+      "check": "retained map thing 47010"
+    },
+    {
+      "passed": true,
+      "check": "preserved upper thing height 47010"
+    },
+    {
+      "passed": true,
+      "check": "retained map thing 48020"
+    },
+    {
+      "passed": true,
+      "check": "preserved upper thing height 48020"
+    },
+    {
+      "passed": true,
+      "check": "retained map thing 48021"
+    },
+    {
+      "passed": true,
+      "check": "preserved upper thing height 48021"
+    },
+    {
+      "passed": true,
+      "check": "retained map thing 47011"
+    },
+    {
+      "passed": true,
+      "check": "preserved upper thing height 47011"
+    },
+    {
+      "passed": true,
+      "check": "retained map thing 48022"
+    },
+    {
+      "passed": true,
+      "check": "preserved upper thing height 48022"
+    },
+    {
+      "passed": true,
+      "check": "retained map thing 48023"
+    },
+    {
+      "passed": true,
+      "check": "preserved upper thing height 48023"
+    },
+    {
+      "passed": true,
+      "check": "retained map thing 47012"
+    },
+    {
+      "passed": true,
+      "check": "preserved upper thing height 47012"
+    },
+    {
+      "passed": true,
+      "check": "retained map thing 48024"
+    },
+    {
+      "passed": true,
+      "check": "preserved upper thing height 48024"
+    },
+    {
+      "passed": true,
+      "check": "retained map thing 48025"
+    },
+    {
+      "passed": true,
+      "check": "preserved upper thing height 48025"
+    },
+    {
+      "passed": true,
+      "check": "retained map thing 47013"
+    },
+    {
+      "passed": true,
+      "check": "preserved upper thing height 47013"
+    },
+    {
+      "passed": true,
+      "check": "retained map thing 48026"
+    },
+    {
+      "passed": true,
+      "check": "preserved upper thing height 48026"
+    },
+    {
+      "passed": true,
+      "check": "retained map thing 48027"
+    },
+    {
+      "passed": true,
+      "check": "preserved upper thing height 48027"
+    },
+    {
+      "passed": true,
+      "check": "retained map thing 47014"
+    },
+    {
+      "passed": true,
+      "check": "preserved upper thing height 47014"
+    },
+    {
+      "passed": true,
+      "check": "retained map thing 48028"
+    },
+    {
+      "passed": true,
+      "check": "preserved upper thing height 48028"
+    },
+    {
+      "passed": true,
+      "check": "retained map thing 48029"
+    },
+    {
+      "passed": true,
+      "check": "preserved upper thing height 48029"
+    },
+    {
+      "passed": true,
+      "check": "retained map thing 47015"
+    },
+    {
+      "passed": true,
+      "check": "preserved upper thing height 47015"
+    },
+    {
+      "passed": true,
+      "check": "retained map thing 48030"
+    },
+    {
+      "passed": true,
+      "check": "preserved upper thing height 48030"
+    },
+    {
+      "passed": true,
+      "check": "retained map thing 48031"
+    },
+    {
+      "passed": true,
+      "check": "preserved upper thing height 48031"
+    },
+    {
+      "passed": true,
+      "check": "retained map thing 47016"
+    },
+    {
+      "passed": true,
+      "check": "preserved upper thing height 47016"
+    },
+    {
+      "passed": true,
+      "check": "retained map thing 48032"
+    },
+    {
+      "passed": true,
+      "check": "preserved upper thing height 48032"
+    },
+    {
+      "passed": true,
+      "check": "retained map thing 48033"
+    },
+    {
+      "passed": true,
+      "check": "preserved upper thing height 48033"
+    },
+    {
+      "passed": true,
+      "check": "retained map thing 47017"
+    },
+    {
+      "passed": true,
+      "check": "preserved upper thing height 47017"
+    },
+    {
+      "passed": true,
+      "check": "retained map thing 48034"
+    },
+    {
+      "passed": true,
+      "check": "preserved upper thing height 48034"
+    },
+    {
+      "passed": true,
+      "check": "retained map thing 48035"
+    },
+    {
+      "passed": true,
+      "check": "preserved upper thing height 48035"
+    },
+    {
+      "passed": true,
+      "check": "retained map thing 47018"
+    },
+    {
+      "passed": true,
+      "check": "preserved upper thing height 47018"
+    },
+    {
+      "passed": true,
+      "check": "retained map thing 48036"
+    },
+    {
+      "passed": true,
+      "check": "preserved upper thing height 48036"
+    },
+    {
+      "passed": true,
+      "check": "retained map thing 48037"
+    },
+    {
+      "passed": true,
+      "check": "preserved upper thing height 48037"
+    },
+    {
+      "passed": true,
+      "check": "retained map thing 47019"
+    },
+    {
+      "passed": true,
+      "check": "preserved upper thing height 47019"
+    },
+    {
+      "passed": true,
+      "check": "retained map thing 48038"
+    },
+    {
+      "passed": true,
+      "check": "preserved upper thing height 48038"
+    },
+    {
+      "passed": true,
+      "check": "retained map thing 48039"
+    },
+    {
+      "passed": true,
+      "check": "preserved upper thing height 48039"
+    },
+    {
+      "passed": true,
+      "check": "retained map thing 47020"
+    },
+    {
+      "passed": true,
+      "check": "preserved upper thing height 47020"
+    },
+    {
+      "passed": true,
+      "check": "retained map thing 48040"
+    },
+    {
+      "passed": true,
+      "check": "preserved upper thing height 48040"
+    },
+    {
+      "passed": true,
+      "check": "retained map thing 48041"
+    },
+    {
+      "passed": true,
+      "check": "preserved upper thing height 48041"
+    },
+    {
+      "passed": true,
+      "check": "retained map thing 47021"
+    },
+    {
+      "passed": true,
+      "check": "preserved upper thing height 47021"
+    },
+    {
+      "passed": true,
+      "check": "retained map thing 48042"
+    },
+    {
+      "passed": true,
+      "check": "preserved upper thing height 48042"
+    },
+    {
+      "passed": true,
+      "check": "retained map thing 48043"
+    },
+    {
+      "passed": true,
+      "check": "preserved upper thing height 48043"
+    },
+    {
+      "passed": true,
+      "check": "retained map thing 47022"
+    },
+    {
+      "passed": true,
+      "check": "preserved upper thing height 47022"
+    },
+    {
+      "passed": true,
+      "check": "retained map thing 48044"
+    },
+    {
+      "passed": true,
+      "check": "preserved upper thing height 48044"
+    },
+    {
+      "passed": true,
+      "check": "retained map thing 48045"
+    },
+    {
+      "passed": true,
+      "check": "preserved upper thing height 48045"
+    },
+    {
+      "passed": true,
+      "check": "retained map thing 47023"
+    },
+    {
+      "passed": true,
+      "check": "preserved upper thing height 47023"
+    },
+    {
+      "passed": true,
+      "check": "retained map thing 48046"
+    },
+    {
+      "passed": true,
+      "check": "preserved upper thing height 48046"
+    },
+    {
+      "passed": true,
+      "check": "retained map thing 48047"
+    },
+    {
+      "passed": true,
+      "check": "preserved upper thing height 48047"
+    },
+    {
+      "passed": true,
+      "check": "retained map thing 44720"
+    },
+    {
+      "passed": true,
+      "check": "preserved upper thing height 44720"
+    },
+    {
+      "passed": true,
+      "check": "retained map thing 18004"
+    },
+    {
+      "passed": true,
+      "check": "preserved upper thing height 18004"
+    },
+    {
+      "passed": true,
+      "check": "retained map thing 18000"
+    },
+    {
+      "passed": true,
+      "check": "preserved upper thing height 18000"
+    },
+    {
+      "passed": true,
+      "check": "retained map thing 18001"
+    },
+    {
+      "passed": true,
+      "check": "preserved upper thing height 18001"
+    },
+    {
+      "passed": true,
+      "check": "retained map thing 18003"
+    },
+    {
+      "passed": true,
+      "check": "preserved upper thing height 18003"
+    },
+    {
+      "passed": true,
+      "check": "retained map thing 44710"
+    },
+    {
+      "passed": true,
+      "check": "preserved upper thing height 44710"
+    },
+    {
+      "passed": true,
+      "check": "retained map thing 44810"
+    },
+    {
+      "passed": true,
+      "check": "preserved upper thing height 44810"
+    },
+    {
+      "passed": true,
+      "check": "retained map thing 44820"
+    },
+    {
+      "passed": true,
+      "check": "preserved upper thing height 44820"
+    },
+    {
+      "passed": true,
+      "check": "retained map thing 43810"
+    },
+    {
+      "passed": true,
+      "check": "preserved upper thing height 43810"
+    },
+    {
+      "passed": true,
+      "check": "retained map thing 43811"
+    },
+    {
+      "passed": true,
+      "check": "preserved upper thing height 43811"
+    },
+    {
+      "passed": true,
+      "check": "retained map thing 43812"
+    },
+    {
+      "passed": true,
+      "check": "preserved upper thing height 43812"
+    },
+    {
+      "passed": true,
+      "check": "retained map thing 43813"
+    },
+    {
+      "passed": true,
+      "check": "preserved upper thing height 43813"
+    },
+    {
+      "passed": true,
+      "check": "retained map thing 43814"
+    },
+    {
+      "passed": true,
+      "check": "preserved upper thing height 43814"
+    },
+    {
+      "passed": true,
+      "check": "retained map thing 43815"
+    },
+    {
+      "passed": true,
+      "check": "preserved upper thing height 43815"
+    },
+    {
+      "passed": true,
+      "check": "retained map thing 43816"
+    },
+    {
+      "passed": true,
+      "check": "preserved upper thing height 43816"
+    },
+    {
+      "passed": true,
+      "check": "retained map thing 43817"
+    },
+    {
+      "passed": true,
+      "check": "preserved upper thing height 43817"
+    },
+    {
+      "passed": true,
+      "check": "retained map thing 43818"
+    },
+    {
+      "passed": true,
+      "check": "preserved upper thing height 43818"
+    },
+    {
+      "passed": true,
+      "check": "retained map thing 43819"
+    },
+    {
+      "passed": true,
+      "check": "preserved upper thing height 43819"
+    },
+    {
+      "passed": true,
+      "check": "retained map thing 44012"
+    },
+    {
+      "passed": true,
+      "check": "preserved upper thing height 44012"
+    },
+    {
+      "passed": true,
+      "check": "retained map thing 43912"
+    },
+    {
+      "passed": true,
+      "check": "preserved upper thing height 43912"
+    },
+    {
+      "passed": true,
+      "check": "retained map thing 43913"
+    },
+    {
+      "passed": true,
+      "check": "preserved upper thing height 43913"
+    },
+    {
+      "passed": true,
+      "check": "retained map thing 44014"
+    },
+    {
+      "passed": true,
+      "check": "preserved upper thing height 44014"
+    },
+    {
+      "passed": true,
+      "check": "retained map thing 43914"
+    },
+    {
+      "passed": true,
+      "check": "preserved upper thing height 43914"
+    },
+    {
+      "passed": true,
+      "check": "retained map thing 43915"
+    },
+    {
+      "passed": true,
+      "check": "preserved upper thing height 43915"
+    },
+    {
+      "passed": true,
+      "check": "retained map thing 44017"
+    },
+    {
+      "passed": true,
+      "check": "preserved upper thing height 44017"
+    },
+    {
+      "passed": true,
+      "check": "retained map thing 43917"
+    },
+    {
+      "passed": true,
+      "check": "preserved upper thing height 43917"
+    },
+    {
+      "passed": true,
+      "check": "retained map thing 43918"
+    },
+    {
+      "passed": true,
+      "check": "preserved upper thing height 43918"
+    },
+    {
+      "passed": true,
+      "check": "retained map thing 43919"
+    },
+    {
+      "passed": true,
+      "check": "preserved upper thing height 43919"
+    },
+    {
+      "passed": true,
+      "check": "retained map thing 44020"
+    },
+    {
+      "passed": true,
+      "check": "preserved upper thing height 44020"
+    },
+    {
+      "passed": true,
+      "check": "retained map thing 43920"
+    },
+    {
+      "passed": true,
+      "check": "preserved upper thing height 43920"
+    },
+    {
+      "passed": true,
+      "check": "retained map thing 43921"
+    },
+    {
+      "passed": true,
+      "check": "preserved upper thing height 43921"
+    },
+    {
+      "passed": true,
+      "check": "retained map thing 43922"
+    },
+    {
+      "passed": true,
+      "check": "preserved upper thing height 43922"
+    },
+    {
+      "passed": true,
+      "check": "retained map thing 47024"
+    },
+    {
+      "passed": true,
+      "check": "preserved upper thing height 47024"
+    },
+    {
+      "passed": true,
+      "check": "retained map thing 48048"
+    },
+    {
+      "passed": true,
+      "check": "preserved upper thing height 48048"
+    },
+    {
+      "passed": true,
+      "check": "retained map thing 48049"
+    },
+    {
+      "passed": true,
+      "check": "preserved upper thing height 48049"
+    },
+    {
+      "passed": true,
+      "check": "retained map thing 47025"
+    },
+    {
+      "passed": true,
+      "check": "preserved upper thing height 47025"
+    },
+    {
+      "passed": true,
+      "check": "retained map thing 48050"
+    },
+    {
+      "passed": true,
+      "check": "preserved upper thing height 48050"
+    },
+    {
+      "passed": true,
+      "check": "retained map thing 48051"
+    },
+    {
+      "passed": true,
+      "check": "preserved upper thing height 48051"
+    },
+    {
+      "passed": true,
+      "check": "retained map thing 47026"
+    },
+    {
+      "passed": true,
+      "check": "preserved upper thing height 47026"
+    },
+    {
+      "passed": true,
+      "check": "retained map thing 48052"
+    },
+    {
+      "passed": true,
+      "check": "preserved upper thing height 48052"
+    },
+    {
+      "passed": true,
+      "check": "retained map thing 48053"
+    },
+    {
+      "passed": true,
+      "check": "preserved upper thing height 48053"
+    },
+    {
+      "passed": true,
+      "check": "retained map thing 47027"
+    },
+    {
+      "passed": true,
+      "check": "preserved upper thing height 47027"
+    },
+    {
+      "passed": true,
+      "check": "retained map thing 48054"
+    },
+    {
+      "passed": true,
+      "check": "preserved upper thing height 48054"
+    },
+    {
+      "passed": true,
+      "check": "retained map thing 48055"
+    },
+    {
+      "passed": true,
+      "check": "preserved upper thing height 48055"
+    },
+    {
+      "passed": true,
+      "check": "retained map thing 47028"
+    },
+    {
+      "passed": true,
+      "check": "preserved upper thing height 47028"
+    },
+    {
+      "passed": true,
+      "check": "retained map thing 48056"
+    },
+    {
+      "passed": true,
+      "check": "preserved upper thing height 48056"
+    },
+    {
+      "passed": true,
+      "check": "retained map thing 48057"
+    },
+    {
+      "passed": true,
+      "check": "preserved upper thing height 48057"
+    },
+    {
+      "passed": true,
+      "check": "retained map thing 47029"
+    },
+    {
+      "passed": true,
+      "check": "preserved upper thing height 47029"
+    },
+    {
+      "passed": true,
+      "check": "retained map thing 48058"
+    },
+    {
+      "passed": true,
+      "check": "preserved upper thing height 48058"
+    },
+    {
+      "passed": true,
+      "check": "retained map thing 48059"
+    },
+    {
+      "passed": true,
+      "check": "preserved upper thing height 48059"
+    },
+    {
+      "passed": true,
+      "check": "retained map thing 47030"
+    },
+    {
+      "passed": true,
+      "check": "preserved upper thing height 47030"
+    },
+    {
+      "passed": true,
+      "check": "retained map thing 48060"
+    },
+    {
+      "passed": true,
+      "check": "preserved upper thing height 48060"
+    },
+    {
+      "passed": true,
+      "check": "retained map thing 48061"
+    },
+    {
+      "passed": true,
+      "check": "preserved upper thing height 48061"
+    },
+    {
+      "passed": true,
+      "check": "retained map thing 47031"
+    },
+    {
+      "passed": true,
+      "check": "preserved upper thing height 47031"
+    },
+    {
+      "passed": true,
+      "check": "retained map thing 48062"
+    },
+    {
+      "passed": true,
+      "check": "preserved upper thing height 48062"
+    },
+    {
+      "passed": true,
+      "check": "retained map thing 48063"
+    },
+    {
+      "passed": true,
+      "check": "preserved upper thing height 48063"
+    },
+    {
+      "passed": true,
+      "check": "retained map thing 47032"
+    },
+    {
+      "passed": true,
+      "check": "preserved upper thing height 47032"
+    },
+    {
+      "passed": true,
+      "check": "retained map thing 48064"
+    },
+    {
+      "passed": true,
+      "check": "preserved upper thing height 48064"
+    },
+    {
+      "passed": true,
+      "check": "retained map thing 48065"
+    },
+    {
+      "passed": true,
+      "check": "preserved upper thing height 48065"
+    },
+    {
+      "passed": true,
+      "check": "retained map thing 47033"
+    },
+    {
+      "passed": true,
+      "check": "preserved upper thing height 47033"
+    },
+    {
+      "passed": true,
+      "check": "retained map thing 48066"
+    },
+    {
+      "passed": true,
+      "check": "preserved upper thing height 48066"
+    },
+    {
+      "passed": true,
+      "check": "retained map thing 48067"
+    },
+    {
+      "passed": true,
+      "check": "preserved upper thing height 48067"
+    },
+    {
+      "passed": true,
+      "check": "retained map thing 47034"
+    },
+    {
+      "passed": true,
+      "check": "preserved upper thing height 47034"
+    },
+    {
+      "passed": true,
+      "check": "retained map thing 48068"
+    },
+    {
+      "passed": true,
+      "check": "preserved upper thing height 48068"
+    },
+    {
+      "passed": true,
+      "check": "retained map thing 48069"
+    },
+    {
+      "passed": true,
+      "check": "preserved upper thing height 48069"
+    },
+    {
+      "passed": true,
+      "check": "retained map thing 47035"
+    },
+    {
+      "passed": true,
+      "check": "preserved upper thing height 47035"
+    },
+    {
+      "passed": true,
+      "check": "retained map thing 48070"
+    },
+    {
+      "passed": true,
+      "check": "preserved upper thing height 48070"
+    },
+    {
+      "passed": true,
+      "check": "retained map thing 48071"
+    },
+    {
+      "passed": true,
+      "check": "preserved upper thing height 48071"
+    },
+    {
+      "passed": true,
+      "check": "retained map thing 47036"
+    },
+    {
+      "passed": true,
+      "check": "preserved upper thing height 47036"
+    },
+    {
+      "passed": true,
+      "check": "retained map thing 48072"
+    },
+    {
+      "passed": true,
+      "check": "preserved upper thing height 48072"
+    },
+    {
+      "passed": true,
+      "check": "retained map thing 48073"
+    },
+    {
+      "passed": true,
+      "check": "preserved upper thing height 48073"
+    },
+    {
+      "passed": true,
+      "check": "retained map thing 47037"
+    },
+    {
+      "passed": true,
+      "check": "preserved upper thing height 47037"
+    },
+    {
+      "passed": true,
+      "check": "retained map thing 48074"
+    },
+    {
+      "passed": true,
+      "check": "preserved upper thing height 48074"
+    },
+    {
+      "passed": true,
+      "check": "retained map thing 48075"
+    },
+    {
+      "passed": true,
+      "check": "preserved upper thing height 48075"
+    },
+    {
+      "passed": true,
+      "check": "retained map thing 47038"
+    },
+    {
+      "passed": true,
+      "check": "preserved upper thing height 47038"
+    },
+    {
+      "passed": true,
+      "check": "retained map thing 48076"
+    },
+    {
+      "passed": true,
+      "check": "preserved upper thing height 48076"
+    },
+    {
+      "passed": true,
+      "check": "retained map thing 48077"
+    },
+    {
+      "passed": true,
+      "check": "preserved upper thing height 48077"
+    },
+    {
+      "passed": true,
+      "check": "retained map thing 47039"
+    },
+    {
+      "passed": true,
+      "check": "preserved upper thing height 47039"
+    },
+    {
+      "passed": true,
+      "check": "retained map thing 48078"
+    },
+    {
+      "passed": true,
+      "check": "preserved upper thing height 48078"
+    },
+    {
+      "passed": true,
+      "check": "retained map thing 48079"
+    },
+    {
+      "passed": true,
+      "check": "preserved upper thing height 48079"
+    },
+    {
+      "passed": true,
+      "check": "retained map thing 47040"
+    },
+    {
+      "passed": true,
+      "check": "preserved upper thing height 47040"
+    },
+    {
+      "passed": true,
+      "check": "retained map thing 48080"
+    },
+    {
+      "passed": true,
+      "check": "preserved upper thing height 48080"
+    },
+    {
+      "passed": true,
+      "check": "retained map thing 48081"
+    },
+    {
+      "passed": true,
+      "check": "preserved upper thing height 48081"
+    },
+    {
+      "passed": true,
+      "check": "retained map thing 47041"
+    },
+    {
+      "passed": true,
+      "check": "preserved upper thing height 47041"
+    },
+    {
+      "passed": true,
+      "check": "retained map thing 48082"
+    },
+    {
+      "passed": true,
+      "check": "preserved upper thing height 48082"
+    },
+    {
+      "passed": true,
+      "check": "retained map thing 48083"
+    },
+    {
+      "passed": true,
+      "check": "preserved upper thing height 48083"
+    },
+    {
+      "passed": true,
+      "check": "retained map thing 47042"
+    },
+    {
+      "passed": true,
+      "check": "preserved upper thing height 47042"
+    },
+    {
+      "passed": true,
+      "check": "retained map thing 48084"
+    },
+    {
+      "passed": true,
+      "check": "preserved upper thing height 48084"
+    },
+    {
+      "passed": true,
+      "check": "retained map thing 48085"
+    },
+    {
+      "passed": true,
+      "check": "preserved upper thing height 48085"
+    },
+    {
+      "passed": true,
+      "check": "retained map thing 47043"
+    },
+    {
+      "passed": true,
+      "check": "preserved upper thing height 47043"
+    },
+    {
+      "passed": true,
+      "check": "retained map thing 48086"
+    },
+    {
+      "passed": true,
+      "check": "preserved upper thing height 48086"
+    },
+    {
+      "passed": true,
+      "check": "retained map thing 48087"
+    },
+    {
+      "passed": true,
+      "check": "preserved upper thing height 48087"
+    },
+    {
+      "passed": true,
+      "check": "retained map thing 47044"
+    },
+    {
+      "passed": true,
+      "check": "preserved upper thing height 47044"
+    },
+    {
+      "passed": true,
+      "check": "retained map thing 48088"
+    },
+    {
+      "passed": true,
+      "check": "preserved upper thing height 48088"
+    },
+    {
+      "passed": true,
+      "check": "retained map thing 48089"
+    },
+    {
+      "passed": true,
+      "check": "preserved upper thing height 48089"
+    },
+    {
+      "passed": true,
+      "check": "retained map thing 47045"
+    },
+    {
+      "passed": true,
+      "check": "preserved upper thing height 47045"
+    },
+    {
+      "passed": true,
+      "check": "retained map thing 48090"
+    },
+    {
+      "passed": true,
+      "check": "preserved upper thing height 48090"
+    },
+    {
+      "passed": true,
+      "check": "retained map thing 48091"
+    },
+    {
+      "passed": true,
+      "check": "preserved upper thing height 48091"
+    },
+    {
+      "passed": true,
+      "check": "retained map thing 47046"
+    },
+    {
+      "passed": true,
+      "check": "preserved upper thing height 47046"
+    },
+    {
+      "passed": true,
+      "check": "retained map thing 48092"
+    },
+    {
+      "passed": true,
+      "check": "preserved upper thing height 48092"
+    },
+    {
+      "passed": true,
+      "check": "retained map thing 48093"
+    },
+    {
+      "passed": true,
+      "check": "preserved upper thing height 48093"
+    },
+    {
+      "passed": true,
+      "check": "retained map thing 47047"
+    },
+    {
+      "passed": true,
+      "check": "preserved upper thing height 47047"
+    },
+    {
+      "passed": true,
+      "check": "retained map thing 48094"
+    },
+    {
+      "passed": true,
+      "check": "preserved upper thing height 48094"
+    },
+    {
+      "passed": true,
+      "check": "retained map thing 48095"
+    },
+    {
+      "passed": true,
+      "check": "preserved upper thing height 48095"
+    },
+    {
+      "passed": true,
+      "check": "retained map thing 44721"
+    },
+    {
+      "passed": true,
+      "check": "preserved upper thing height 44721"
+    },
+    {
+      "passed": true,
+      "check": "retained map thing 18004"
+    },
+    {
+      "passed": true,
+      "check": "preserved upper thing height 18004"
+    },
+    {
+      "passed": true,
+      "check": "retained map thing 18000"
+    },
+    {
+      "passed": true,
+      "check": "preserved upper thing height 18000"
+    },
+    {
+      "passed": true,
+      "check": "retained map thing 18001"
+    },
+    {
+      "passed": true,
+      "check": "preserved upper thing height 18001"
+    },
+    {
+      "passed": true,
+      "check": "retained map thing 18003"
+    },
+    {
+      "passed": true,
+      "check": "preserved upper thing height 18003"
+    },
+    {
+      "passed": true,
+      "check": "retained map thing 44711"
+    },
+    {
+      "passed": true,
+      "check": "preserved upper thing height 44711"
+    },
+    {
+      "passed": true,
+      "check": "retained map thing 44811"
+    },
+    {
+      "passed": true,
+      "check": "preserved upper thing height 44811"
+    },
+    {
+      "passed": true,
+      "check": "retained map thing 44821"
+    },
+    {
+      "passed": true,
+      "check": "preserved upper thing height 44821"
+    },
+    {
+      "passed": true,
+      "check": "retained map thing 43820"
+    },
+    {
+      "passed": true,
+      "check": "preserved upper thing height 43820"
+    },
+    {
+      "passed": true,
+      "check": "retained map thing 43821"
+    },
+    {
+      "passed": true,
+      "check": "preserved upper thing height 43821"
+    },
+    {
+      "passed": true,
+      "check": "retained map thing 43822"
+    },
+    {
+      "passed": true,
+      "check": "preserved upper thing height 43822"
+    },
+    {
+      "passed": true,
+      "check": "retained map thing 43823"
+    },
+    {
+      "passed": true,
+      "check": "preserved upper thing height 43823"
+    },
+    {
+      "passed": true,
+      "check": "retained map thing 43824"
+    },
+    {
+      "passed": true,
+      "check": "preserved upper thing height 43824"
+    },
+    {
+      "passed": true,
+      "check": "retained map thing 43825"
+    },
+    {
+      "passed": true,
+      "check": "preserved upper thing height 43825"
+    },
+    {
+      "passed": true,
+      "check": "retained map thing 43826"
+    },
+    {
+      "passed": true,
+      "check": "preserved upper thing height 43826"
+    },
+    {
+      "passed": true,
+      "check": "retained map thing 43827"
+    },
+    {
+      "passed": true,
+      "check": "preserved upper thing height 43827"
+    },
+    {
+      "passed": true,
+      "check": "retained map thing 43828"
+    },
+    {
+      "passed": true,
+      "check": "preserved upper thing height 43828"
+    },
+    {
+      "passed": true,
+      "check": "retained map thing 43829"
+    },
+    {
+      "passed": true,
+      "check": "preserved upper thing height 43829"
+    },
+    {
+      "passed": true,
+      "check": "retained map thing 43923"
+    },
+    {
+      "passed": true,
+      "check": "preserved upper thing height 43923"
+    },
+    {
+      "passed": true,
+      "check": "retained map thing 43924"
+    },
+    {
+      "passed": true,
+      "check": "preserved upper thing height 43924"
+    },
+    {
+      "passed": true,
+      "check": "retained map thing 43926"
+    },
+    {
+      "passed": true,
+      "check": "preserved upper thing height 43926"
+    },
+    {
+      "passed": true,
+      "check": "retained map thing 44027"
+    },
+    {
+      "passed": true,
+      "check": "preserved upper thing height 44027"
+    },
+    {
+      "passed": true,
+      "check": "retained map thing 43927"
+    },
+    {
+      "passed": true,
+      "check": "preserved upper thing height 43927"
+    },
+    {
+      "passed": true,
+      "check": "retained map thing 44028"
+    },
+    {
+      "passed": true,
+      "check": "preserved upper thing height 44028"
+    },
+    {
+      "passed": true,
+      "check": "retained map thing 43928"
+    },
+    {
+      "passed": true,
+      "check": "preserved upper thing height 43928"
+    },
+    {
+      "passed": true,
+      "check": "retained map thing 44031"
+    },
+    {
+      "passed": true,
+      "check": "preserved upper thing height 44031"
+    },
+    {
+      "passed": true,
+      "check": "retained map thing 43931"
+    },
+    {
+      "passed": true,
+      "check": "preserved upper thing height 43931"
+    },
+    {
+      "passed": true,
+      "check": "retained map thing 43932"
+    },
+    {
+      "passed": true,
+      "check": "preserved upper thing height 43932"
+    },
+    {
+      "passed": true,
+      "check": "retained map thing 47048"
+    },
+    {
+      "passed": true,
+      "check": "preserved upper thing height 47048"
+    },
+    {
+      "passed": true,
+      "check": "retained map thing 48096"
+    },
+    {
+      "passed": true,
+      "check": "preserved upper thing height 48096"
+    },
+    {
+      "passed": true,
+      "check": "retained map thing 48097"
+    },
+    {
+      "passed": true,
+      "check": "preserved upper thing height 48097"
+    },
+    {
+      "passed": true,
+      "check": "retained map thing 47049"
+    },
+    {
+      "passed": true,
+      "check": "preserved upper thing height 47049"
+    },
+    {
+      "passed": true,
+      "check": "retained map thing 48098"
+    },
+    {
+      "passed": true,
+      "check": "preserved upper thing height 48098"
+    },
+    {
+      "passed": true,
+      "check": "retained map thing 48099"
+    },
+    {
+      "passed": true,
+      "check": "preserved upper thing height 48099"
+    },
+    {
+      "passed": true,
+      "check": "retained map thing 47050"
+    },
+    {
+      "passed": true,
+      "check": "preserved upper thing height 47050"
+    },
+    {
+      "passed": true,
+      "check": "retained map thing 48100"
+    },
+    {
+      "passed": true,
+      "check": "preserved upper thing height 48100"
+    },
+    {
+      "passed": true,
+      "check": "retained map thing 48101"
+    },
+    {
+      "passed": true,
+      "check": "preserved upper thing height 48101"
+    },
+    {
+      "passed": true,
+      "check": "retained map thing 47051"
+    },
+    {
+      "passed": true,
+      "check": "preserved upper thing height 47051"
+    },
+    {
+      "passed": true,
+      "check": "retained map thing 48102"
+    },
+    {
+      "passed": true,
+      "check": "preserved upper thing height 48102"
+    },
+    {
+      "passed": true,
+      "check": "retained map thing 48103"
+    },
+    {
+      "passed": true,
+      "check": "preserved upper thing height 48103"
+    },
+    {
+      "passed": true,
+      "check": "retained map thing 47052"
+    },
+    {
+      "passed": true,
+      "check": "preserved upper thing height 47052"
+    },
+    {
+      "passed": true,
+      "check": "retained map thing 48104"
+    },
+    {
+      "passed": true,
+      "check": "preserved upper thing height 48104"
+    },
+    {
+      "passed": true,
+      "check": "retained map thing 48105"
+    },
+    {
+      "passed": true,
+      "check": "preserved upper thing height 48105"
+    },
+    {
+      "passed": true,
+      "check": "retained map thing 47053"
+    },
+    {
+      "passed": true,
+      "check": "preserved upper thing height 47053"
+    },
+    {
+      "passed": true,
+      "check": "retained map thing 48106"
+    },
+    {
+      "passed": true,
+      "check": "preserved upper thing height 48106"
+    },
+    {
+      "passed": true,
+      "check": "retained map thing 48107"
+    },
+    {
+      "passed": true,
+      "check": "preserved upper thing height 48107"
+    },
+    {
+      "passed": true,
+      "check": "retained map thing 47054"
+    },
+    {
+      "passed": true,
+      "check": "preserved upper thing height 47054"
+    },
+    {
+      "passed": true,
+      "check": "retained map thing 48108"
+    },
+    {
+      "passed": true,
+      "check": "preserved upper thing height 48108"
+    },
+    {
+      "passed": true,
+      "check": "retained map thing 48109"
+    },
+    {
+      "passed": true,
+      "check": "preserved upper thing height 48109"
+    },
+    {
+      "passed": true,
+      "check": "retained map thing 47055"
+    },
+    {
+      "passed": true,
+      "check": "preserved upper thing height 47055"
+    },
+    {
+      "passed": true,
+      "check": "retained map thing 48110"
+    },
+    {
+      "passed": true,
+      "check": "preserved upper thing height 48110"
+    },
+    {
+      "passed": true,
+      "check": "retained map thing 48111"
+    },
+    {
+      "passed": true,
+      "check": "preserved upper thing height 48111"
+    },
+    {
+      "passed": true,
+      "check": "retained map thing 47056"
+    },
+    {
+      "passed": true,
+      "check": "preserved upper thing height 47056"
+    },
+    {
+      "passed": true,
+      "check": "retained map thing 48112"
+    },
+    {
+      "passed": true,
+      "check": "preserved upper thing height 48112"
+    },
+    {
+      "passed": true,
+      "check": "retained map thing 48113"
+    },
+    {
+      "passed": true,
+      "check": "preserved upper thing height 48113"
+    },
+    {
+      "passed": true,
+      "check": "retained map thing 47057"
+    },
+    {
+      "passed": true,
+      "check": "preserved upper thing height 47057"
+    },
+    {
+      "passed": true,
+      "check": "retained map thing 48114"
+    },
+    {
+      "passed": true,
+      "check": "preserved upper thing height 48114"
+    },
+    {
+      "passed": true,
+      "check": "retained map thing 48115"
+    },
+    {
+      "passed": true,
+      "check": "preserved upper thing height 48115"
+    },
+    {
+      "passed": true,
+      "check": "retained map thing 47058"
+    },
+    {
+      "passed": true,
+      "check": "preserved upper thing height 47058"
+    },
+    {
+      "passed": true,
+      "check": "retained map thing 48116"
+    },
+    {
+      "passed": true,
+      "check": "preserved upper thing height 48116"
+    },
+    {
+      "passed": true,
+      "check": "retained map thing 48117"
+    },
+    {
+      "passed": true,
+      "check": "preserved upper thing height 48117"
+    },
+    {
+      "passed": true,
+      "check": "retained map thing 47059"
+    },
+    {
+      "passed": true,
+      "check": "preserved upper thing height 47059"
+    },
+    {
+      "passed": true,
+      "check": "retained map thing 48118"
+    },
+    {
+      "passed": true,
+      "check": "preserved upper thing height 48118"
+    },
+    {
+      "passed": true,
+      "check": "retained map thing 48119"
+    },
+    {
+      "passed": true,
+      "check": "preserved upper thing height 48119"
+    },
+    {
+      "passed": true,
+      "check": "retained map thing 47060"
+    },
+    {
+      "passed": true,
+      "check": "preserved upper thing height 47060"
+    },
+    {
+      "passed": true,
+      "check": "retained map thing 48120"
+    },
+    {
+      "passed": true,
+      "check": "preserved upper thing height 48120"
+    },
+    {
+      "passed": true,
+      "check": "retained map thing 48121"
+    },
+    {
+      "passed": true,
+      "check": "preserved upper thing height 48121"
+    },
+    {
+      "passed": true,
+      "check": "retained map thing 47061"
+    },
+    {
+      "passed": true,
+      "check": "preserved upper thing height 47061"
+    },
+    {
+      "passed": true,
+      "check": "retained map thing 48122"
+    },
+    {
+      "passed": true,
+      "check": "preserved upper thing height 48122"
+    },
+    {
+      "passed": true,
+      "check": "retained map thing 48123"
+    },
+    {
+      "passed": true,
+      "check": "preserved upper thing height 48123"
+    },
+    {
+      "passed": true,
+      "check": "retained map thing 47062"
+    },
+    {
+      "passed": true,
+      "check": "preserved upper thing height 47062"
+    },
+    {
+      "passed": true,
+      "check": "retained map thing 48124"
+    },
+    {
+      "passed": true,
+      "check": "preserved upper thing height 48124"
+    },
+    {
+      "passed": true,
+      "check": "retained map thing 48125"
+    },
+    {
+      "passed": true,
+      "check": "preserved upper thing height 48125"
+    },
+    {
+      "passed": true,
+      "check": "retained map thing 47063"
+    },
+    {
+      "passed": true,
+      "check": "preserved upper thing height 47063"
+    },
+    {
+      "passed": true,
+      "check": "retained map thing 48126"
+    },
+    {
+      "passed": true,
+      "check": "preserved upper thing height 48126"
+    },
+    {
+      "passed": true,
+      "check": "retained map thing 48127"
+    },
+    {
+      "passed": true,
+      "check": "preserved upper thing height 48127"
+    },
+    {
+      "passed": true,
+      "check": "retained map thing 47064"
+    },
+    {
+      "passed": true,
+      "check": "preserved upper thing height 47064"
+    },
+    {
+      "passed": true,
+      "check": "retained map thing 48128"
+    },
+    {
+      "passed": true,
+      "check": "preserved upper thing height 48128"
+    },
+    {
+      "passed": true,
+      "check": "retained map thing 48129"
+    },
+    {
+      "passed": true,
+      "check": "preserved upper thing height 48129"
+    },
+    {
+      "passed": true,
+      "check": "retained map thing 47065"
+    },
+    {
+      "passed": true,
+      "check": "preserved upper thing height 47065"
+    },
+    {
+      "passed": true,
+      "check": "retained map thing 48130"
+    },
+    {
+      "passed": true,
+      "check": "preserved upper thing height 48130"
+    },
+    {
+      "passed": true,
+      "check": "retained map thing 48131"
+    },
+    {
+      "passed": true,
+      "check": "preserved upper thing height 48131"
+    },
+    {
+      "passed": true,
+      "check": "retained map thing 47066"
+    },
+    {
+      "passed": true,
+      "check": "preserved upper thing height 47066"
+    },
+    {
+      "passed": true,
+      "check": "retained map thing 48132"
+    },
+    {
+      "passed": true,
+      "check": "preserved upper thing height 48132"
+    },
+    {
+      "passed": true,
+      "check": "retained map thing 48133"
+    },
+    {
+      "passed": true,
+      "check": "preserved upper thing height 48133"
+    },
+    {
+      "passed": true,
+      "check": "retained map thing 47067"
+    },
+    {
+      "passed": true,
+      "check": "preserved upper thing height 47067"
+    },
+    {
+      "passed": true,
+      "check": "retained map thing 48134"
+    },
+    {
+      "passed": true,
+      "check": "preserved upper thing height 48134"
+    },
+    {
+      "passed": true,
+      "check": "retained map thing 48135"
+    },
+    {
+      "passed": true,
+      "check": "preserved upper thing height 48135"
+    },
+    {
+      "passed": true,
+      "check": "retained map thing 47068"
+    },
+    {
+      "passed": true,
+      "check": "preserved upper thing height 47068"
+    },
+    {
+      "passed": true,
+      "check": "retained map thing 48136"
+    },
+    {
+      "passed": true,
+      "check": "preserved upper thing height 48136"
+    },
+    {
+      "passed": true,
+      "check": "retained map thing 48137"
+    },
+    {
+      "passed": true,
+      "check": "preserved upper thing height 48137"
+    },
+    {
+      "passed": true,
+      "check": "retained map thing 47069"
+    },
+    {
+      "passed": true,
+      "check": "preserved upper thing height 47069"
+    },
+    {
+      "passed": true,
+      "check": "retained map thing 48138"
+    },
+    {
+      "passed": true,
+      "check": "preserved upper thing height 48138"
+    },
+    {
+      "passed": true,
+      "check": "retained map thing 48139"
+    },
+    {
+      "passed": true,
+      "check": "preserved upper thing height 48139"
+    },
+    {
+      "passed": true,
+      "check": "retained map thing 47070"
+    },
+    {
+      "passed": true,
+      "check": "preserved upper thing height 47070"
+    },
+    {
+      "passed": true,
+      "check": "retained map thing 48140"
+    },
+    {
+      "passed": true,
+      "check": "preserved upper thing height 48140"
+    },
+    {
+      "passed": true,
+      "check": "retained map thing 48141"
+    },
+    {
+      "passed": true,
+      "check": "preserved upper thing height 48141"
+    },
+    {
+      "passed": true,
+      "check": "retained map thing 47071"
+    },
+    {
+      "passed": true,
+      "check": "preserved upper thing height 47071"
+    },
+    {
+      "passed": true,
+      "check": "retained map thing 48142"
+    },
+    {
+      "passed": true,
+      "check": "preserved upper thing height 48142"
+    },
+    {
+      "passed": true,
+      "check": "retained map thing 48143"
+    },
+    {
+      "passed": true,
+      "check": "preserved upper thing height 48143"
+    },
+    {
+      "passed": true,
+      "check": "retained map thing 44722"
+    },
+    {
+      "passed": true,
+      "check": "preserved upper thing height 44722"
+    },
+    {
+      "passed": true,
+      "check": "retained map thing 18004"
+    },
+    {
+      "passed": true,
+      "check": "preserved upper thing height 18004"
+    },
+    {
+      "passed": true,
+      "check": "retained map thing 18000"
+    },
+    {
+      "passed": true,
+      "check": "preserved upper thing height 18000"
+    },
+    {
+      "passed": true,
+      "check": "retained map thing 18001"
+    },
+    {
+      "passed": true,
+      "check": "preserved upper thing height 18001"
+    },
+    {
+      "passed": true,
+      "check": "retained map thing 18003"
+    },
+    {
+      "passed": true,
+      "check": "preserved upper thing height 18003"
+    },
+    {
+      "passed": true,
+      "check": "retained map thing 44712"
+    },
+    {
+      "passed": true,
+      "check": "preserved upper thing height 44712"
+    },
+    {
+      "passed": true,
+      "check": "retained map thing 44812"
+    },
+    {
+      "passed": true,
+      "check": "preserved upper thing height 44812"
+    },
+    {
+      "passed": true,
+      "check": "retained map thing 44822"
+    },
+    {
+      "passed": true,
+      "check": "preserved upper thing height 44822"
+    },
+    {
+      "passed": true,
+      "check": "retained map thing 43830"
+    },
+    {
+      "passed": true,
+      "check": "preserved upper thing height 43830"
+    },
+    {
+      "passed": true,
+      "check": "retained map thing 43831"
+    },
+    {
+      "passed": true,
+      "check": "preserved upper thing height 43831"
+    },
+    {
+      "passed": true,
+      "check": "retained map thing 43832"
+    },
+    {
+      "passed": true,
+      "check": "preserved upper thing height 43832"
+    },
+    {
+      "passed": true,
+      "check": "retained map thing 43833"
+    },
+    {
+      "passed": true,
+      "check": "preserved upper thing height 43833"
+    },
+    {
+      "passed": true,
+      "check": "retained map thing 43834"
+    },
+    {
+      "passed": true,
+      "check": "preserved upper thing height 43834"
+    },
+    {
+      "passed": true,
+      "check": "retained map thing 43835"
+    },
+    {
+      "passed": true,
+      "check": "preserved upper thing height 43835"
+    },
+    {
+      "passed": true,
+      "check": "retained map thing 43836"
+    },
+    {
+      "passed": true,
+      "check": "preserved upper thing height 43836"
+    },
+    {
+      "passed": true,
+      "check": "retained map thing 43837"
+    },
+    {
+      "passed": true,
+      "check": "preserved upper thing height 43837"
+    },
+    {
+      "passed": true,
+      "check": "retained map thing 43838"
+    },
+    {
+      "passed": true,
+      "check": "preserved upper thing height 43838"
+    },
+    {
+      "passed": true,
+      "check": "retained map thing 44034"
+    },
+    {
+      "passed": true,
+      "check": "preserved upper thing height 44034"
+    },
+    {
+      "passed": true,
+      "check": "retained map thing 43934"
+    },
+    {
+      "passed": true,
+      "check": "preserved upper thing height 43934"
+    },
+    {
+      "passed": true,
+      "check": "retained map thing 43935"
+    },
+    {
+      "passed": true,
+      "check": "preserved upper thing height 43935"
+    },
+    {
+      "passed": true,
+      "check": "retained map thing 44036"
+    },
+    {
+      "passed": true,
+      "check": "preserved upper thing height 44036"
+    },
+    {
+      "passed": true,
+      "check": "retained map thing 43936"
+    },
+    {
+      "passed": true,
+      "check": "preserved upper thing height 43936"
+    },
+    {
+      "passed": true,
+      "check": "retained map thing 44037"
+    },
+    {
+      "passed": true,
+      "check": "preserved upper thing height 44037"
+    },
+    {
+      "passed": true,
+      "check": "retained map thing 43937"
+    },
+    {
+      "passed": true,
+      "check": "preserved upper thing height 43937"
+    },
+    {
+      "passed": true,
+      "check": "retained map thing 43938"
+    },
+    {
+      "passed": true,
+      "check": "preserved upper thing height 43938"
+    },
+    {
+      "passed": true,
+      "check": "retained map thing 44039"
+    },
+    {
+      "passed": true,
+      "check": "preserved upper thing height 44039"
+    },
+    {
+      "passed": true,
+      "check": "retained map thing 43939"
+    },
+    {
+      "passed": true,
+      "check": "preserved upper thing height 43939"
+    },
+    {
+      "passed": true,
+      "check": "retained map thing 44040"
+    },
+    {
+      "passed": true,
+      "check": "preserved upper thing height 44040"
+    },
+    {
+      "passed": true,
+      "check": "retained map thing 43940"
+    },
+    {
+      "passed": true,
+      "check": "preserved upper thing height 43940"
+    },
+    {
+      "passed": true,
+      "check": "retained map thing 43941"
+    },
+    {
+      "passed": true,
+      "check": "preserved upper thing height 43941"
+    },
+    {
+      "passed": true,
+      "check": "retained map thing 44042"
+    },
+    {
+      "passed": true,
+      "check": "preserved upper thing height 44042"
+    },
+    {
+      "passed": true,
+      "check": "retained map thing 43942"
+    },
+    {
+      "passed": true,
+      "check": "preserved upper thing height 43942"
+    },
+    {
+      "passed": true,
+      "check": "retained map thing 43943"
+    },
+    {
+      "passed": true,
+      "check": "preserved upper thing height 43943"
+    },
+    {
+      "passed": true,
+      "check": "retained map thing 43944"
+    },
+    {
+      "passed": true,
+      "check": "preserved upper thing height 43944"
+    },
+    {
+      "passed": true,
+      "check": "retained map thing 47072"
+    },
+    {
+      "passed": true,
+      "check": "preserved upper thing height 47072"
+    },
+    {
+      "passed": true,
+      "check": "retained map thing 48144"
+    },
+    {
+      "passed": true,
+      "check": "preserved upper thing height 48144"
+    },
+    {
+      "passed": true,
+      "check": "retained map thing 48145"
+    },
+    {
+      "passed": true,
+      "check": "preserved upper thing height 48145"
+    },
+    {
+      "passed": true,
+      "check": "retained map thing 47073"
+    },
+    {
+      "passed": true,
+      "check": "preserved upper thing height 47073"
+    },
+    {
+      "passed": true,
+      "check": "retained map thing 48146"
+    },
+    {
+      "passed": true,
+      "check": "preserved upper thing height 48146"
+    },
+    {
+      "passed": true,
+      "check": "retained map thing 48147"
+    },
+    {
+      "passed": true,
+      "check": "preserved upper thing height 48147"
+    },
+    {
+      "passed": true,
+      "check": "retained map thing 47074"
+    },
+    {
+      "passed": true,
+      "check": "preserved upper thing height 47074"
+    },
+    {
+      "passed": true,
+      "check": "retained map thing 48148"
+    },
+    {
+      "passed": true,
+      "check": "preserved upper thing height 48148"
+    },
+    {
+      "passed": true,
+      "check": "retained map thing 48149"
+    },
+    {
+      "passed": true,
+      "check": "preserved upper thing height 48149"
+    },
+    {
+      "passed": true,
+      "check": "retained map thing 47075"
+    },
+    {
+      "passed": true,
+      "check": "preserved upper thing height 47075"
+    },
+    {
+      "passed": true,
+      "check": "retained map thing 48150"
+    },
+    {
+      "passed": true,
+      "check": "preserved upper thing height 48150"
+    },
+    {
+      "passed": true,
+      "check": "retained map thing 48151"
+    },
+    {
+      "passed": true,
+      "check": "preserved upper thing height 48151"
+    },
+    {
+      "passed": true,
+      "check": "retained map thing 47076"
+    },
+    {
+      "passed": true,
+      "check": "preserved upper thing height 47076"
+    },
+    {
+      "passed": true,
+      "check": "retained map thing 48152"
+    },
+    {
+      "passed": true,
+      "check": "preserved upper thing height 48152"
+    },
+    {
+      "passed": true,
+      "check": "retained map thing 48153"
+    },
+    {
+      "passed": true,
+      "check": "preserved upper thing height 48153"
+    },
+    {
+      "passed": true,
+      "check": "retained map thing 47077"
+    },
+    {
+      "passed": true,
+      "check": "preserved upper thing height 47077"
+    },
+    {
+      "passed": true,
+      "check": "retained map thing 48154"
+    },
+    {
+      "passed": true,
+      "check": "preserved upper thing height 48154"
+    },
+    {
+      "passed": true,
+      "check": "retained map thing 48155"
+    },
+    {
+      "passed": true,
+      "check": "preserved upper thing height 48155"
+    },
+    {
+      "passed": true,
+      "check": "retained map thing 47078"
+    },
+    {
+      "passed": true,
+      "check": "preserved upper thing height 47078"
+    },
+    {
+      "passed": true,
+      "check": "retained map thing 48156"
+    },
+    {
+      "passed": true,
+      "check": "preserved upper thing height 48156"
+    },
+    {
+      "passed": true,
+      "check": "retained map thing 48157"
+    },
+    {
+      "passed": true,
+      "check": "preserved upper thing height 48157"
+    },
+    {
+      "passed": true,
+      "check": "retained map thing 47079"
+    },
+    {
+      "passed": true,
+      "check": "preserved upper thing height 47079"
+    },
+    {
+      "passed": true,
+      "check": "retained map thing 48158"
+    },
+    {
+      "passed": true,
+      "check": "preserved upper thing height 48158"
+    },
+    {
+      "passed": true,
+      "check": "retained map thing 48159"
+    },
+    {
+      "passed": true,
+      "check": "preserved upper thing height 48159"
+    },
+    {
+      "passed": true,
+      "check": "retained map thing 47080"
+    },
+    {
+      "passed": true,
+      "check": "preserved upper thing height 47080"
+    },
+    {
+      "passed": true,
+      "check": "retained map thing 48160"
+    },
+    {
+      "passed": true,
+      "check": "preserved upper thing height 48160"
+    },
+    {
+      "passed": true,
+      "check": "retained map thing 48161"
+    },
+    {
+      "passed": true,
+      "check": "preserved upper thing height 48161"
+    },
+    {
+      "passed": true,
+      "check": "retained map thing 47081"
+    },
+    {
+      "passed": true,
+      "check": "preserved upper thing height 47081"
+    },
+    {
+      "passed": true,
+      "check": "retained map thing 48162"
+    },
+    {
+      "passed": true,
+      "check": "preserved upper thing height 48162"
+    },
+    {
+      "passed": true,
+      "check": "retained map thing 48163"
+    },
+    {
+      "passed": true,
+      "check": "preserved upper thing height 48163"
+    },
+    {
+      "passed": true,
+      "check": "retained map thing 47082"
+    },
+    {
+      "passed": true,
+      "check": "preserved upper thing height 47082"
+    },
+    {
+      "passed": true,
+      "check": "retained map thing 48164"
+    },
+    {
+      "passed": true,
+      "check": "preserved upper thing height 48164"
+    },
+    {
+      "passed": true,
+      "check": "retained map thing 48165"
+    },
+    {
+      "passed": true,
+      "check": "preserved upper thing height 48165"
+    },
+    {
+      "passed": true,
+      "check": "retained map thing 47083"
+    },
+    {
+      "passed": true,
+      "check": "preserved upper thing height 47083"
+    },
+    {
+      "passed": true,
+      "check": "retained map thing 48166"
+    },
+    {
+      "passed": true,
+      "check": "preserved upper thing height 48166"
+    },
+    {
+      "passed": true,
+      "check": "retained map thing 48167"
+    },
+    {
+      "passed": true,
+      "check": "preserved upper thing height 48167"
+    },
+    {
+      "passed": true,
+      "check": "retained map thing 47084"
+    },
+    {
+      "passed": true,
+      "check": "preserved upper thing height 47084"
+    },
+    {
+      "passed": true,
+      "check": "retained map thing 48168"
+    },
+    {
+      "passed": true,
+      "check": "preserved upper thing height 48168"
+    },
+    {
+      "passed": true,
+      "check": "retained map thing 48169"
+    },
+    {
+      "passed": true,
+      "check": "preserved upper thing height 48169"
+    },
+    {
+      "passed": true,
+      "check": "retained map thing 47085"
+    },
+    {
+      "passed": true,
+      "check": "preserved upper thing height 47085"
+    },
+    {
+      "passed": true,
+      "check": "retained map thing 48170"
+    },
+    {
+      "passed": true,
+      "check": "preserved upper thing height 48170"
+    },
+    {
+      "passed": true,
+      "check": "retained map thing 48171"
+    },
+    {
+      "passed": true,
+      "check": "preserved upper thing height 48171"
+    },
+    {
+      "passed": true,
+      "check": "retained map thing 47086"
+    },
+    {
+      "passed": true,
+      "check": "preserved upper thing height 47086"
+    },
+    {
+      "passed": true,
+      "check": "retained map thing 48172"
+    },
+    {
+      "passed": true,
+      "check": "preserved upper thing height 48172"
+    },
+    {
+      "passed": true,
+      "check": "retained map thing 48173"
+    },
+    {
+      "passed": true,
+      "check": "preserved upper thing height 48173"
+    },
+    {
+      "passed": true,
+      "check": "retained map thing 47087"
+    },
+    {
+      "passed": true,
+      "check": "preserved upper thing height 47087"
+    },
+    {
+      "passed": true,
+      "check": "retained map thing 48174"
+    },
+    {
+      "passed": true,
+      "check": "preserved upper thing height 48174"
+    },
+    {
+      "passed": true,
+      "check": "retained map thing 48175"
+    },
+    {
+      "passed": true,
+      "check": "preserved upper thing height 48175"
+    },
+    {
+      "passed": true,
+      "check": "retained map thing 47088"
+    },
+    {
+      "passed": true,
+      "check": "preserved upper thing height 47088"
+    },
+    {
+      "passed": true,
+      "check": "retained map thing 48176"
+    },
+    {
+      "passed": true,
+      "check": "preserved upper thing height 48176"
+    },
+    {
+      "passed": true,
+      "check": "retained map thing 48177"
+    },
+    {
+      "passed": true,
+      "check": "preserved upper thing height 48177"
+    },
+    {
+      "passed": true,
+      "check": "retained map thing 47089"
+    },
+    {
+      "passed": true,
+      "check": "preserved upper thing height 47089"
+    },
+    {
+      "passed": true,
+      "check": "retained map thing 48178"
+    },
+    {
+      "passed": true,
+      "check": "preserved upper thing height 48178"
+    },
+    {
+      "passed": true,
+      "check": "retained map thing 48179"
+    },
+    {
+      "passed": true,
+      "check": "preserved upper thing height 48179"
+    },
+    {
+      "passed": true,
+      "check": "retained map thing 47090"
+    },
+    {
+      "passed": true,
+      "check": "preserved upper thing height 47090"
+    },
+    {
+      "passed": true,
+      "check": "retained map thing 48180"
+    },
+    {
+      "passed": true,
+      "check": "preserved upper thing height 48180"
+    },
+    {
+      "passed": true,
+      "check": "retained map thing 48181"
+    },
+    {
+      "passed": true,
+      "check": "preserved upper thing height 48181"
+    },
+    {
+      "passed": true,
+      "check": "retained map thing 47091"
+    },
+    {
+      "passed": true,
+      "check": "preserved upper thing height 47091"
+    },
+    {
+      "passed": true,
+      "check": "retained map thing 48182"
+    },
+    {
+      "passed": true,
+      "check": "preserved upper thing height 48182"
+    },
+    {
+      "passed": true,
+      "check": "retained map thing 48183"
+    },
+    {
+      "passed": true,
+      "check": "preserved upper thing height 48183"
+    },
+    {
+      "passed": true,
+      "check": "retained map thing 47092"
+    },
+    {
+      "passed": true,
+      "check": "preserved upper thing height 47092"
+    },
+    {
+      "passed": true,
+      "check": "retained map thing 48184"
+    },
+    {
+      "passed": true,
+      "check": "preserved upper thing height 48184"
+    },
+    {
+      "passed": true,
+      "check": "retained map thing 48185"
+    },
+    {
+      "passed": true,
+      "check": "preserved upper thing height 48185"
+    },
+    {
+      "passed": true,
+      "check": "retained map thing 47093"
+    },
+    {
+      "passed": true,
+      "check": "preserved upper thing height 47093"
+    },
+    {
+      "passed": true,
+      "check": "retained map thing 48186"
+    },
+    {
+      "passed": true,
+      "check": "preserved upper thing height 48186"
+    },
+    {
+      "passed": true,
+      "check": "retained map thing 48187"
+    },
+    {
+      "passed": true,
+      "check": "preserved upper thing height 48187"
+    },
+    {
+      "passed": true,
+      "check": "retained map thing 47094"
+    },
+    {
+      "passed": true,
+      "check": "preserved upper thing height 47094"
+    },
+    {
+      "passed": true,
+      "check": "retained map thing 48188"
+    },
+    {
+      "passed": true,
+      "check": "preserved upper thing height 48188"
+    },
+    {
+      "passed": true,
+      "check": "retained map thing 48189"
+    },
+    {
+      "passed": true,
+      "check": "preserved upper thing height 48189"
+    },
+    {
+      "passed": true,
+      "check": "retained map thing 47095"
+    },
+    {
+      "passed": true,
+      "check": "preserved upper thing height 47095"
+    },
+    {
+      "passed": true,
+      "check": "retained map thing 48190"
+    },
+    {
+      "passed": true,
+      "check": "preserved upper thing height 48190"
+    },
+    {
+      "passed": true,
+      "check": "retained map thing 48191"
+    },
+    {
+      "passed": true,
+      "check": "preserved upper thing height 48191"
+    },
+    {
+      "passed": true,
+      "check": "retained map thing 44723"
+    },
+    {
+      "passed": true,
+      "check": "preserved upper thing height 44723"
+    },
+    {
+      "passed": true,
+      "check": "retained map thing 18004"
+    },
+    {
+      "passed": true,
+      "check": "preserved upper thing height 18004"
+    },
+    {
+      "passed": true,
+      "check": "retained map thing 18000"
+    },
+    {
+      "passed": true,
+      "check": "preserved upper thing height 18000"
+    },
+    {
+      "passed": true,
+      "check": "retained map thing 18001"
+    },
+    {
+      "passed": true,
+      "check": "preserved upper thing height 18001"
+    },
+    {
+      "passed": true,
+      "check": "retained map thing 18003"
+    },
+    {
+      "passed": true,
+      "check": "preserved upper thing height 18003"
+    },
+    {
+      "passed": true,
+      "check": "retained map thing 44713"
+    },
+    {
+      "passed": true,
+      "check": "preserved upper thing height 44713"
+    },
+    {
+      "passed": true,
+      "check": "retained map thing 44813"
+    },
+    {
+      "passed": true,
+      "check": "preserved upper thing height 44813"
+    },
+    {
+      "passed": true,
+      "check": "retained map thing 44823"
+    },
+    {
+      "passed": true,
+      "check": "preserved upper thing height 44823"
+    },
+    {
+      "passed": true,
+      "check": "retained map thing 44830"
+    },
+    {
+      "passed": true,
+      "check": "preserved upper thing height 44830"
+    },
+    {
+      "passed": true,
+      "check": "retained map thing 44703"
+    },
+    {
+      "passed": true,
+      "check": "preserved upper thing height 44703"
+    },
+    {
+      "passed": true,
+      "check": "retained map thing 43799"
+    },
+    {
+      "passed": true,
+      "check": "preserved upper thing height 43799"
+    },
+    {
+      "passed": true,
+      "check": "retained map thing 43798"
+    },
+    {
+      "passed": true,
+      "check": "preserved upper thing height 43798"
+    },
+    {
+      "passed": true,
+      "check": "retained map thing 1"
+    },
+    {
+      "passed": true,
+      "check": "preserved upper thing height 1"
+    },
+    {
+      "passed": true,
+      "check": "deterministic map, manifest and generated ZScript"
+    }
+  ],
+  "sha256": {
+    "src/maps/MAP02.wad": "fc59611c4af051cda3f7b290ffdd8b505dd14606cbd6454e226ff6db81ada91b",
+    "assets/map02_maze/MAP02_MANIFEST.json": "9f962cfeed5c03f64068c3c360bc9b9bd9b6c709354d6ab88055662dcbbcec90",
+    "src/caelum/world/CaelumMazeLayout.zs": "d94068b9c8f2a83ee8e6926117c1a58106fedc06b0b90039558b6c9fccdc0fb4",
+    "src/caelum/world/CaelumMazeLootCatalogue.zs": "483ee58e8bcc02c56a32a2e0b9f429af42fe71a147152dc0a629b7df7f4ff022"
+  }
+}

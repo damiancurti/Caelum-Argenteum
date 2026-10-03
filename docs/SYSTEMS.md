@@ -1,6 +1,44 @@
 # Caelum Argenteum — Current systems and rules
 
-Documentation version: **4.37.6** — 2026-10-02.
+Documentation version: **4.37.7** — 2026-10-02.
+
+## 4.37.7 — Floor traps, flooded return and central lift (#74)
+
+This revision replaces the former six pit stair exits and the #73 elevator
+reservation. Upper progression, all other trap types, 100 junctions, 96 Mandingas,
+192 rats, 39 material chests, prisoners, extraction and the boss route remain.
+
+The six 128-by-128 apertures join one interconnected lower network. Its floor is
+at -160 MU, water surface at -144 and ceiling at -32: 16 MU of native swimmable
+water and 128 MU of clear height. These reuse the existing channel depth and
+32-MU mapping grid; the maximum supported collision height is 74.67 MU. Water
+uses established movement/Air rules, with no added damage, current or drowning
+balance. Native tests observe water level 1 for the return route.
+
+Exactly four permanent, keyless grates surround the 512-by-512 central platform:
+south 44910, west 44911, east 44912 and north 44913. A closed grate opens only
+from its exterior tunnel side. Opening any one calls the elevator to the lower
+landing; it does not require opening the other three. Stand near that platform
+edge and press Use again from inside to travel up to the original central start
+at height 0. Use from a landing calls the lift to that landing; Use from inside
+requests the other level. Descending from the start with all grates closed still
+allows an upward return, without opening a grate from inside. Calls during an
+existing movement do not create another mover; call again after it stops.
+
+On the author's explicit #74 follow-up, a block whose normal entrance is closed
+keeps its trapdoor covers solid and inactive, including for enemies. Opening
+that entrance restores ordinary trap activation. The initially open south block
+needs no additional condition. Native underside collision prevents jumping into
+unopened blocks; the continuous upper slab separates every other lower passage.
+No new keys, cell access, extraction condition or companion rule is introduced.
+Followers retain their existing collision movement and distant catch-up behavior.
+
+Enemy death supplies still appear once at their assigned original dry upper
+anchors, including after deaths in water/pits; keys remain recoverable by the
+normal surface route. This does not restore preplaced ground loot. Trap/grate
+fields and native moving floors persist through current-layout saves and hub
+travel. Old-layout save compatibility was explicitly waived by the author;
+the preserved revision-3 source is provenance, not an automatic migration mode.
 
 ## 4.37.6 — Central hub, cardinal keys and finite supplies (#73/#75)
 

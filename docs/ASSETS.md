@@ -1,6 +1,30 @@
 # Caelum Argenteum — Audio and art
 
-Documentation version: **4.37.6** — 2026-10-02.
+Documentation version: **4.37.7** — 2026-10-02.
+
+## 4.37.7 — Layered sewer return geometry (#74)
+
+assets/map02_maze/LAYOUT.json revision 4 owns lower elevations, width, water
+depth, path coordinates, four grate tags/sides, platform footprint and speed.
+generate_map02_maze.py deterministically emits MAP02.wad, the manifest and
+CaelumMazeLayout.zs together. The manifest separates upper and lower collision
+cells and records exterior activation sides; LOWER_NETWORK.png in
+assets/validation_4377 diagrams the six pits, connected ring and both landings.
+
+Native solid 3D floors retain the surface above overlapping tunnels. Separate
+swimmable controls provide the existing shallow water. Grates lift only the
+lower face of their solid 3D floor, keeping the upper landing fixed. The lift
+uses native Floor_MoveToValue at the existing MAP01 speed of 16. Detached control
+polygons remain outside all playable geometry. Upper map-thing heights account
+for the lowered base floor, preserving their original world coordinates.
+Lower paths avoid every upper gate and all nine original crusher sectors,
+including an explicit eastern detour around crusher 43923.
+
+Existing CASWR stone/iron, CAPOOL01 water and CMGT02 barred materials are reused;
+there are no new third-party resources or changed attributions. Revision-3 WAD
+and manifest snapshots are preserved in assets/map02_maze/legacy_4376 from
+baseline 5c55bb26; the author waived compatibility rather than requesting a new
+launcher mode. Development fixtures, engine and IWAD are not packaged.
 
 ## 4.37.6 — Cardinal sewer data and supply ledger (#73/#75)
 

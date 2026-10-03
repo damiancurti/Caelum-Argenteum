@@ -1,17 +1,31 @@
 # TASKS.md — Active tasks
 
-Documentation version: **4.37.6** — 2026-10-02.
+Documentation version: **4.37.7** — 2026-10-02.
+
+## Issue #74 — Flooded pit returns (4.37.7)
+
+- Implemented: six stairless pits, one connected shallow-water network, four
+  exterior-only independent grates, central native elevator and safe calls
+  from either landing, including descending while all grates remain closed.
+- Author decisions: previous-save compatibility waived; closed blocks keep
+  their trap covers shut until their normal entrance opens.
+- Population, other hazards, #75 supplies, surface locks and extraction retained.
+- Static/native evidence: assets/validation_4377. New-layout save/load, hub return,
+  all sizes, key recovery and four followers tested. The author confirmed all
+  CA-MAP02-PIT-RETURN-01 checks passed on 2026-10-02 without reported exceptions
+  and authorized PR #83 merge / #74 closure. Acceptance is recorded in HISTORY;
+  the author-test queue is empty. Release 4.37.7 remains unchanged.
 
 ## Issue #73 — Cardinal MAP02 (4.37.6)
 
 - Implements central arrival, south/west/east/north blocks and local carriers
   for all eight keys; includes the #75 supply changes explicitly required by #73.
 - Author confirmed retaining current stations and waived old-save compatibility.
-- #74 lower water tunnels/four return grates/elevator remain separate; only the
-  central upper footprint is reserved. Do not report #74 as implemented.
+- This patch reserved the central footprint only; #74 implements the lower
+  water tunnels/four return grates/elevator in 4.37.7 above.
 - Evidence: assets/validation_4376. The author confirmed both CA-MAP02 checks
   passed on 2026-10-02 and authorized merge and closure of #73. HISTORY records
-  acceptance separately from static/native evidence. #74 remains the next map task.
+  acceptance separately from static/native evidence. #74 was also accepted on 2026-10-02.
 
 
 ## Issue #65 — Daily mansion food/water (4.37.5)

@@ -1,6 +1,13 @@
 CAELUM ARGENTEUM — STORY AND MAP01
 
-Documentation version: **4.37.6** — 2026-10-02.
+Documentation version: **4.37.7** — 2026-10-02.
+
+## 4.37.7 — MAP02 flooded-return destination (#74)
+
+The mansion exit still arrives at MAP02's central start. Its new lower return
+network brings falls from six maze traps back to that same area by elevator.
+The accepted mansion, prisoner extraction, Zupay, Ace and onward campaign story
+remain unchanged. Current geometry and interactions are defined in SYSTEMS.
 
 ## 4.37.6 — MAP02 destination revision (#73)
 

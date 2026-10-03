@@ -1,5 +1,5 @@
 {
-  "revision": 3,
+  "revision": 4,
   "seed": 436009,
   "grid": 32,
   "nodes_per_axis": 5,
@@ -152,5 +152,142 @@
     256,
     256
   ],
-  "cardinal_spacing_basis": "Author requested minimum-length hub approaches on 2026-10-02. Entry distance = half the junction grid span + room width + one collision-grid cell. Adjacent section floors retain exactly one 32-MU solid wall strip; no overlap or unintended connection."
+  "cardinal_spacing_basis": "Author requested minimum-length hub approaches on 2026-10-02. Entry distance = half the junction grid span + room width + one collision-grid cell. Adjacent section floors retain exactly one 32-MU solid wall strip; no overlap or unintended connection.",
+  "return_network": {
+    "revision": 1,
+    "floor": -160,
+    "ceiling": -32,
+    "water_depth": 16,
+    "width": 128,
+    "ring_radius": 512,
+    "elevator_tag": 44900,
+    "elevator_speed": 16,
+    "grate_tags": [
+      44910,
+      44911,
+      44912,
+      44913
+    ],
+    "grate_width": 384,
+    "grate_thickness": 32,
+    "control_origin": [
+      -16000,
+      -16000
+    ],
+    "paths": [
+      {
+        "trap": 43905,
+        "points": [
+          [
+            -832,
+            -4544
+          ],
+          [
+            -832,
+            -512
+          ],
+          [
+            0,
+            -512
+          ]
+        ],
+        "grate": 44910
+      },
+      {
+        "trap": 43916,
+        "points": [
+          [
+            -3808,
+            1504
+          ],
+          [
+            -3808,
+            1856
+          ],
+          [
+            -512,
+            1856
+          ],
+          [
+            -512,
+            0
+          ]
+        ],
+        "grate": 44911
+      },
+      {
+        "trap": 43925,
+        "points": [
+          [
+            5216,
+            736
+          ],
+          [
+            5216,
+            640
+          ],
+          [
+            512,
+            640
+          ],
+          [
+            512,
+            0
+          ]
+        ],
+        "grate": 44912
+      },
+      {
+        "trap": 43929,
+        "points": [
+          [
+            5216,
+            -1568
+          ],
+          [
+            5216,
+            640
+          ]
+        ],
+        "grate": 44912
+      },
+      {
+        "trap": 43930,
+        "points": [
+          [
+            2912,
+            1504
+          ],
+          [
+            2912,
+            640
+          ]
+        ],
+        "grate": 44912
+      },
+      {
+        "trap": 43933,
+        "points": [
+          [
+            2144,
+            1504
+          ],
+          [
+            2048,
+            1504
+          ],
+          [
+            2048,
+            640
+          ]
+        ],
+        "grate": 44913
+      }
+    ],
+    "basis": "128 MU width/headroom derives from four existing 32-MU grid cells and exceeds the accepted 74.7-MU maximum actor height. Lower ceiling -32 keeps one grid cell of solid slab under the upper floor. Water reuses the existing 16-MU harmless channel depth; no current or damage. Elevator uses the accepted MAP01 speed 16. Pits retain their 128x128 openings; no ladder or stair exit.",
+    "activation": "Four independent permanent keyless grates: south/west/east/north, opened only from outside the lift enclosure below the upper slab. Use at either face then calls the platform from either landing; Use from inside sends it to the other landing.",
+    "progression_rule": "Author approved on 2026-10-02: a closed block keeps all its trapdoor covers solid/inactive, including for enemies, until the normal keyed entrance opens. This prevents upward jumps through remotely opened pits. South is initially accessible.",
+    "save_policy": "Author explicitly waived prior-save compatibility for issue #74 on 2026-10-02. New-layout mechanism state must persist through save/load and hub travel.",
+    "moving_sector_isolation": "Lower paths avoid every surface gate and crusher panel. East branches detour around crusher 43923 so its original base floor and complete sector remain unchanged."
+  }
 }

@@ -1,0 +1,112 @@
+{
+  "version": "4.37.7",
+  "issue": 74,
+  "baseline": "5c55bb26",
+  "date": "2026-10-02",
+  "engine": "GZDoom 4.14.2 / Windows 11 / Vulkan",
+  "development_iwad": "Installed Doom II; not distributed",
+  "decisions": [
+    "Previous-save compatibility explicitly waived by author",
+    "Closed-block trap covers stay solid/inactive until the normal keyed entrance opens, including for enemies; author approved",
+    "Existing shallow 16-MU water; no new current/damage/drowning balance",
+    "Retain existing follower movement and distant collision-checked catch-up"
+  ],
+  "static": {
+    "checks": 891,
+    "failures": 0,
+    "deterministic_outputs": [
+      "src/maps/MAP02.wad",
+      "assets/map02_maze/MAP02_MANIFEST.json",
+      "src/caelum/world/CaelumMazeLayout.zs",
+      "src/caelum/world/CaelumMazeLootCatalogue.zs"
+    ],
+    "evidence": "STATIC.json"
+  },
+  "native": {
+    "route_steps": 4726,
+    "pits": 6,
+    "independent_grates": 4,
+    "body_size_tiers": 7,
+    "save_reload_cases": [
+      "pit",
+      "flooded tunnel",
+      "opened grate",
+      "moving elevator at z=-98"
+    ],
+    "hub_return": "MAP02 -> MAP03 -> MAP02: opened trap, grate and unrelated key retained",
+    "ordinary_controls": "Forward/Use: exterior open, lower boarding, upward trip, upper call, closed-four-grate descent and interior upward return without opening a grate",
+    "protection": "Extreme upward velocity 64 blocked by closed cover; standing character cannot open blocked-section trap; keyed normal entrance restores trap activation",
+    "supplies": "8 keys / 240 arrows / 120 bolts / 120 bullets / 96 food / 96 water: exactly once after lower-network deaths, original dry upper anchors",
+    "escort": "Four living prisoners follow the player through two repeated falls and full lower/upper returns with unchanged follow/catch-up AI. Native AI may avoid the aperture and catch up from above. The player survives both falls without invulnerability; follower and route combat damage are isolated.",
+    "failures": 0,
+    "logs": [
+      "native_route.log",
+      "native_states.log",
+      "native_followers.log"
+    ],
+    "limitations": "Hostile AI disabled for isolated traversal; route movement uses native collision steps, separate state run uses real Forward/Use commands. Warp/setup placement establishes scenarios. Follower distant catch-up remains enabled. Agent checks do not establish author acceptance or a complete combat campaign.",
+    "evidence_reuse": "Final route and state checks use the corrected collision geometry and runtime, including the detour around crusher 43923. A final upper-slab texture preservation changes only control flat names; subsequent native checks use that exact final package. Final package members match the hashes below."
+  },
+  "pit_routes": [
+    {
+      "trap": 43905,
+      "grate": 44910,
+      "waypoints": 162
+    },
+    {
+      "trap": 43916,
+      "grate": 44911,
+      "waypoints": 180
+    },
+    {
+      "trap": 43925,
+      "grate": 44912,
+      "waypoints": 179
+    },
+    {
+      "trap": 43929,
+      "grate": 44913,
+      "waypoints": 244
+    },
+    {
+      "trap": 43930,
+      "grate": 44910,
+      "waypoints": 161
+    },
+    {
+      "trap": 43933,
+      "grate": 44911,
+      "waypoints": 137
+    }
+  ],
+  "author_acceptance": {
+    "confirmed": true,
+    "accepted_id": "CA-MAP02-PIT-RETURN-01",
+    "origin_version": "4.37.7",
+    "issue": 74,
+    "confirmation_date": "2026-10-02",
+    "result": "All pending checks passed, without reported exceptions.",
+    "authorization": "The author explicitly requested PR #83 merge and issue #74 closure.",
+    "qualification": "Previous-save compatibility remains waived; author acceptance is separate from the isolated agent evidence."
+  },
+  "fixture_iterations": [
+    "Initial Use-distance probe stood 2 MU beyond the native range; corrected fixture approached within range.",
+    "Initial multi-line wait configuration executed before map startup; a single queued command stream fixes test sequencing.",
+    "Static reload observer initially repeated its reporting flag; final evidence records exactly four actual reloads.",
+    "Follower driver initially backtracked into its followers or oscillated laterally; forward waypoint selection and collision-preserving detours fix the driver.",
+    "Dormant but shootable enemies still attracted escorts. Four actors placed simultaneously over one aperture could avoid the edge, stack or suffer contact damage, so that setup did not establish four clean physical falls. Final fixture releases followers on clear adjacent floor, isolates hostile targets/damage, and verifies normal following through repeated player falls and complete returns."
+  ],
+  "sha256": {
+    "src/maps/MAP02.wad": "fc59611c4af051cda3f7b290ffdd8b505dd14606cbd6454e226ff6db81ada91b",
+    "src/MAPINFO": "9aef8a26a7f5d816b3c18b4c42560ce36e0143062bb54aff644cc879dd9e718c",
+    "src/caelum/world/CaelumMazeLayout.zs": "d94068b9c8f2a83ee8e6926117c1a58106fedc06b0b90039558b6c9fccdc0fb4",
+    "src/caelum/world/CaelumMazeLootCatalogue.zs": "483ee58e8bcc02c56a32a2e0b9f429af42fe71a147152dc0a629b7df7f4ff022",
+    "src/caelum/world/CaelumMazeGates.zs": "d70bfd0fc5b9871bf9bd79f7df24698c2ba356cacc058a7d7ac32cf7cbb2d1c2",
+    "src/caelum/world/CaelumSewerMaze.zs": "bb680f6937213b39030ab12905a7ea95022ab3c3ceeea351bef76515273f1257",
+    "src/caelum/world/CaelumPhysicalHazards.zs": "3854fbed794fd97df63c2b7ac2bda1bc7229d186e77d3a5d4fdd6c80132030e5",
+    "assets/map02_maze/LAYOUT.json": "d5fb2bad176e5876d470110946e7b6489cb52e7c11f2afa86121a02719f5e279",
+    "assets/map02_maze/MAP02_MANIFEST.json": "9f962cfeed5c03f64068c3c360bc9b9bd9b6c709354d6ab88055662dcbbcec90",
+    "assets/generators/generate_map02_maze.py": "1c0b169b4de1904b32a402d0ea0ae7f38487c2c688f074bef00d77f6eb9e661b",
+    "build/caelum_argenteum_dev.pk3": "ab1d5f42cb763489e074e1c01c2fc8bbc0a6aeb7b5146c30bd0fc085695cc67f"
+  }
+}
