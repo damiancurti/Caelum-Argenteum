@@ -23,7 +23,7 @@ enforce range and resource costs; exhausted actors retreat and rest until both
 Air and Anima are full. Pain interrupts rest. Idle NPCs and seated players gain
 double Anima recovery; player arrows, bolts and spells also obey their ranges.
 
-**Current validation failure:** combat/recovery checks pass, but the final
+**Performance follow-up [#86](https://github.com/damiancurti/Caelum-Argenteum/issues/86):** combat/recovery checks pass, but the final
 five-minute full-army run still slows to about **13.5 tics/s** (normal: 35).
 Windows responded in all 248 observations; this does not establish playability.
 The comparison measured 3.9 before nearest-target selection and 14.3 with that
@@ -31,6 +31,10 @@ change alone; unseeded combat makes these descriptive runs, not a causal benchma
 See [combat, recovery and live evidence](assets/validation_4379/south/COMBAT_RECOVERY.json).
 Earlier [group-limit](assets/validation_4379/south/GROUP100.json) and
 [uncapped failure](assets/validation_4379/south/LIVE_FREEZE.json) records remain.
+
+On 2026-10-03 the author approved merging [PR #85](https://github.com/damiancurti/Caelum-Argenteum/pull/85)
+and closing #77, with performance work deferred to #86. This approval does not
+mark unconfirmed manual checks as passed.
 
 Normal progression is **MAP01 → MAP02 → MAP06**, retaining Ace/Zupay requirements
 and the existing 10 km planned port journey. See the [authored city data](assets/map06_port/CITY.json)
@@ -44,7 +48,7 @@ select the matching saved layout with `run_dev.bat --legacy-map06-north-city`
 or `--legacy-map06` (pre-siege port). Preserve original saves/packages for rollback.
 These alternatives retain the old army and progress; they do not convert a
 visited city. Saves already in MAP03 can still use their old onward port route.
-Author acceptance remains in [pending_test.txt](pending_test.txt).
+Outstanding manual checks remain in [pending_test.txt](pending_test.txt).
 
 Issue [#75](https://github.com/damiancurti/Caelum-Argenteum/issues/75) is implemented
 in the accepted #73/#74 runtime: materials in 39 chests, finite Mandinga ammunition

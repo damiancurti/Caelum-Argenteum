@@ -58,8 +58,9 @@ The full-army live check still **fails performance**: late throughput is about
 of the 300.5-second run. The preceding comparison measured 3.9 before targeting
 changes and 14.3 with targeting alone. These unseeded runs do not isolate causes
 or measure display FPS. GROUP100.json and LIVE_FREEZE.json preserve earlier
-failures. No permanent deadlock was proven; a performance correction remains
-necessary before acceptance.
+failures. No permanent deadlock was proven. On 2026-10-03 the author approved
+PR #85 merge and #77 closure, deferring performance work to #86. The remaining
+manual checks stay pending; merge approval is not a claim that they passed.
 
 ## 4.37.8 — MAP02 material ledger and finite-supply audit (#75)
 

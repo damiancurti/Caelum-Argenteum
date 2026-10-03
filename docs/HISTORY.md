@@ -121,6 +121,14 @@ freshness are checked in this delivery. CA-4379-COMBAT-01 is added; CITY-01 and
 ROUTE-01 remain pending. PR #85 stays draft; no acceptance, merge or closure
 is inferred from these agent tests.
 
+Author disposition, 2026-10-03: explicitly approve PR #85 merge and #77 closure,
+with performance testing deferred to another issue. Follow-up #86 records the
+13.5/35-tic baseline, raw evidence, preservation constraints and acceptance for
+that work. This supersedes the draft/merge restriction above, not the measured
+performance failure. No explicit manual-test pass was supplied; CA-4379-CITY-01,
+CA-4379-ROUTE-01 and CA-4379-COMBAT-01 remain pending. The same-patch approval
+keeps version 4.37.9 and changes no gameplay or geometry.
+
 ### First city iteration — superseded geometry, retained evidence
 
 Author decisions, 2026-10-02: approve a 96 × 96 m city, four additional buildings

@@ -4,6 +4,8 @@ Documentation version: **4.37.9** — 2026-10-03.
 
 ## Issue #77 — Expanded southern Barracas al Sud (4.37.9)
 
+- Author approved PR #85 merge and #77 closure on 2026-10-03, explicitly
+  deferring performance work to issue #86. Manual test results are not inferred.
 - Final author-approved scope: 960 × 960 m; 160 houses, 64 shops, 24 factories,
   40 construction sites; four accessible cannon towers and a connected wall walk.
 - South assault integrated into six city gates; north/west fortified exits,
@@ -26,16 +28,15 @@ Documentation version: **4.37.9** — 2026-10-03.
   ranges/costs, retreat then idle until both resources fill, Pain interruption,
   double idle/chair Anima and player projectile limits. Ninety native checks pass;
   save/reload retains recovery, projectile budget and old crew identities.
-- Blocking live test: the final 300.5-second run reaches about 13.5 tics/s
+- Deferred performance (#86): the final 300.5-second run reaches about 13.5 tics/s
   instead of 35. Windows responds in all 248 observations. The comparison gives
   3.9 before targeting and 14.3 with targeting alone; RNG differs between runs.
   COMBAT_RECOVERY.json records current evidence; GROUP100.json/LIVE_FREEZE.json
   retain the prior failures. No permanent deadlock or performance fix is claimed.
-- Next: isolate and fix the live-performance failure, complete the remaining
-  expanded-layout validation, then review PR #85 and complete
-  CA-4379-CITY-01 / CA-4379-ROUTE-01 / CA-4379-COMBAT-01.
-  Captain identity/intelligence, later narrative work and author acceptance
-  remain separate; no merge or issue closure is inferred.
+- Next: reproduce/profile the live-performance failure in #86 and complete
+  remaining expanded-layout/manual checks CA-4379-CITY-01 / CA-4379-ROUTE-01 /
+  CA-4379-COMBAT-01. Captain identity/intelligence and later V4.37 work remain
+  separate. All three author checks are retained until explicitly confirmed.
 
 ## Issue #75 — Material supplies and corrected audit (4.37.8)
 

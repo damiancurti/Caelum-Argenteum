@@ -1,6 +1,7 @@
 CA-4379-CITY-01
 Origin: 4.37.9 / issue #77.
 Prerequisites: normal current build and a fresh/unvisited MAP06; use save copies.
+Performance follow-up: #86. Merge approval does not confirm this check.
 Steps:
 1. Explore the 960 × 960 m city. Check representative houses, shops, factories
    and construction sites; confirm that their appearance and distribution suit
@@ -37,6 +38,7 @@ retains the exact visited port. Report subchecks not performed, including the
 CA-4379-COMBAT-01
 Origin: 4.37.9 / issue #77 author combat follow-ups.
 Prerequisites: current build; copied saves and a fresh MAP06 for the full battle.
+Performance follow-up: #86. Merge approval does not confirm this check.
 Steps:
 1. Observe Mandingas choosing the nearest visible player or guard and groups
    staying at or below 100 members, including the ranked leader.

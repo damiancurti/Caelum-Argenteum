@@ -12,8 +12,8 @@ pending. Old port saves select their legacy layout;
 --legacy-map06-north-city preserves the first 4.37.9 northern city.
 
 **Combat follow-up:** nearest player/guard; range/costs, retreat/idle, Pain,
-double chair Anima. 90 checks pass; live: 13.5/35 tics/s, still failing.
-See south/COMBAT_RECOVERY.json. CA-4379-COMBAT-01 also pending; no acceptance.
+double chair Anima. 90 checks pass; merge approved. Performance: #86 (13.5/35 tics/s).
+See south/COMBAT_RECOVERY.json. Manual checks remain pending.
 
 **Accepted #73/#74/#75:** cardinal maze, material chests/finite enemy supplies,
 six flooded returns, four grates and central elevator. Closed blocks keep covers
