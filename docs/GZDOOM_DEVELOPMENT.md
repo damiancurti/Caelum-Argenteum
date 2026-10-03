@@ -132,6 +132,20 @@ Direct map loading tests startup, not normal campaign progression. Use an ordina
 
 ### Continuing campaigns after a map rebuild
 
+Issue #77 distinguishes three MAP06 geometries. The normal builder selects the
+expanded 4.37.9 city; `-LegacyMap06Siege` / `--legacy-map06-siege` selects the exact
+4.36.27–4.37.8 siege port; `-LegacyMap06` / `--legacy-map06` keeps the pre-siege
+4.36.26 port. Select the layout already visited by the saved campaign, including
+stored hub maps. The two port modes are mutually exclusive, and either can be
+combined with the separate legacy MAP02 option. Preserve original saves/packages
+for rollback. assets/map06_port/legacy_4378/PROVENANCE.json records exact sources;
+assets/validation_4379 records native repeated-load and rollback checks.
+
+Programmatic traversal tests must retain native vertical velocity when advancing
+engine tics. Resetting all three velocity components each tic can suspend a
+descending player above the next tread. A collision sweep with explicit floor
+settling and an actual-tic traversal test provide different evidence; label both.
+
 For issue #11, `run_dev.bat --legacy-map02` rebuilds current code with the
 preserved 4.36.4 MAP02. The equivalent builder switch is `-LegacyMap02`.
 Keep this mode for a campaign that has already visited the old maze, including

@@ -1,6 +1,51 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **4.37.8** — 2026-10-02.
+Documentation version: **4.37.9** — 2026-10-03.
+
+## 4.37.9 — Expand fortified Barracas al Sud (#77)
+
+Author decisions, 2026-10-02: approve a 96 × 96 m city, four additional buildings
+and four accessible corner towers; north/south/west reach local exterior ground,
+east reaches docks, with the existing six-gate military front retained north.
+On 2026-10-03 the author resolved the discovered route discrepancy in favor of
+direct MAP02 → MAP06, as #77 specifies. The preceding workshop step and old
+map-name wording remain historical records, superseded by this clarification.
+
+The patch adds connected streets/buildings, a fortified perimeter, four open
+cardinal arches and native tower stairs/decks. It preserves combat data and
+northern battlefield geometry exactly. The endpoint sign moves out of a tower.
+Stable connection 16 and network revision 4 implement the direct port journey,
+retaining the existing 10 km planner, provision/time transaction and Ace/Zupay
+requirements. Existing identifiers/history and the legacy workshop's onward
+route remain; no automatic diagnostic entry is added.
+
+The exact 4.37.8 siege MAP06 is preserved with provenance and selected through
+--legacy-map06-siege. This continues existing geometry with current code; it
+does not transplant saved actors into the expansion. --legacy-map06 keeps its
+pre-siege meaning. Original packages/saves provide rollback. No old-save waiver
+was requested or inferred for #77, and no population/reward reset is a migration.
+
+Static audit: 42 checks pass, including exact northern geometry and combat data,
+legacy provenance and two byte-identical MAP06 generations. Native collision
+sweeps pass 183 checks / 84,448 steps across 25 routes and all seven body tiers;
+actual-tic traversal passes 2,248 steps through all four gates and up/down all four
+towers. Both victory orders pass 23 checks each; boundary withdrawal awards no
+kills. Shared reward/capture checks pass 24 checks and reload retains ownership.
+Direct journey scenarios with 0/2/4 rescues pass 27/29/31 checks including reload;
+the Journal caravan dialogue also submits the correct plan after native closure.
+Old port and maze saves pass repeated migration/load and rollback checks.
+
+Full-population comparison: 2,100 native tics took 60.079 s before and 59.946 s
+after (approximately 35 tics/host second in both cases). Both runs kept the full
+army and all machinery active. This is simulation throughput sampled every
+100 ms, not display FPS or identical random combat outcomes.
+
+Test evidence is retained in assets/validation_4379: static/deterministic checks,
+native traversal and views, full-population siege, both objectives, prisoner
+arrival/rewards, direct travel and save compatibility. Fixtures seed prerequisites
+or isolate damage where stated; these are agent checks, not a full author campaign
+acceptance. CA-4379-CITY-01 and CA-4379-ROUTE-01 originate in this release/issue
+and remain pending. No merge or closure is authorized by this delivery request.
 
 ## 4.37.8 — Correct MAP02 material ledger and verify finite supplies (#75)
 

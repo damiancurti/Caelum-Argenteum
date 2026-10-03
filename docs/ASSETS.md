@@ -1,6 +1,30 @@
 # Caelum Argenteum — Audio and art
 
-Documentation version: **4.37.8** — 2026-10-02.
+Documentation version: **4.37.9** — 2026-10-03.
+
+## 4.37.9 — Expanded city geometry and retained port (#77)
+
+assets/map06_port/CITY.json owns the approved urban footprint, four gateways,
+four added building rectangles and four stair/deck tower layouts.
+generate_port_city.py applies them through generate_map06_port.py; the existing
+LAYOUT.json remains authoritative for siege forces and placements. The only
+changed siege placement is the endpoint sign, moved clear of the northeast tower.
+MAP07 and MAP02 geometry are untouched. Existing CMST/CVCI/CVPO materials and
+native 3D floors are reused; no new third-party assets or rights are introduced.
+The bilingual MAP06 display name now identifies fortified Barracas al Sud.
+
+assets/map06_port/legacy_4378 preserves the exact previous MAP06 and layout with
+source commit f4429c543db89062376a9f620deba4ba4439d989 and SHA-256 provenance.
+Its MAP06 hash is d7d6f79c3197db8fd4958cc35c07794df8dff1399197baa7655f8420adbbb51a.
+The -LegacyMap06Siege builder switch replaces only maps/MAP06.wad; conflicting
+port compatibility modes are rejected before replacing the package. Original
+legacy_43626 files and their switch remain. No engine, IWAD or QA fixture enters
+src or the development PK3.
+
+validate_map06_city.py checks approved counts/dimensions, exact unchanged northern
+geometry and combat data, legacy hashes and two byte-identical generator runs.
+assets/validation_4379 contains the before/after plan, native views and scoped
+test evidence. These checks are distinct from pending author visual acceptance.
 
 ## 4.37.8 — Supply ledger provenance and verification (#75)
 

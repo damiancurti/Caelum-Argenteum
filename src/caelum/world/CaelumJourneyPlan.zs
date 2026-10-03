@@ -14,7 +14,7 @@ class CaelumJourneyRules : Object play
 
     static clearscope double DistanceKm(int id)
     {
-        if (id == 8 || id == 9) return 10.0;
+        if (id == 8 || id == 9 || id == CaelumWorldCatalogue.CONNECTION_MAZE_TO_PORT) return 10.0;
         if (id == 10 || id == 11) return 500.0;
         return 0.0;
     }

@@ -1,6 +1,25 @@
 # TASKS.md — Active tasks
 
-Documentation version: **4.37.8** — 2026-10-02.
+Documentation version: **4.37.9** — 2026-10-03.
+
+## Issue #77 — Fortified Barracas al Sud (4.37.9)
+
+- Approved: 96 × 96 m urban core, four additional buildings, four traversable
+  corner towers and four local cardinal exits; military front remains north.
+- Implemented on issue-77-fortified-barracas. No internal map renumbering or
+  additional enemies/fronts; existing siege quantities and two-part victory stay.
+- Author resolved the old MAP03 workshop discrepancy: direct MAP02 → MAP06,
+  with existing Ace/Zupay requirements and 10 km provision/time planning.
+  New connection 16/network revision 4 preserves stored identities and the
+  legacy workshop's onward route for saves already there.
+- Exact pre-expansion siege geometry retained under legacy_4378; explicit
+  --legacy-map06-siege mode complements the older --legacy-map06 option.
+- Evidence: assets/validation_4379; 42 static checks, 183 clearance checks,
+  2,248 actual-tic steps and paired full armies at approximately 35 simulation
+  tics/host second. Native
+  traversal, siege, travel, rescues and persistence are separate from acceptance.
+- Next: review the linked PR and author checks CA-4379-CITY-01 / CA-4379-ROUTE-01.
+  Companion prisoner intelligence and captain identity remain separate issues.
 
 ## Issue #75 — Material supplies and corrected audit (4.37.8)
 

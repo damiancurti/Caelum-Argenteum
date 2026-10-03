@@ -44,6 +44,6 @@ class CaelumPortData : Object play
     static vector3 BossPosition(){return (0,9216,0);}
     static vector3 BedPosition(){return (-768,1664,0);}
     static vector3 WorkbenchPosition(){return (-768,1472,0);}
-    static vector3 CompletionPosition(){return (384,1856,0);}
+    static vector3 CompletionPosition(){return (128,1856,0);}
     static bool IsCurrent(){return level.MapName=="MAP06" && ActorIterator.Create(46000,"CaelumPortSiege").Next()!=null;}
 }

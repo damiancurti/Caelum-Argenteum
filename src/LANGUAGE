@@ -3728,7 +3728,8 @@ CA_CLIMATE_CANOPY = "techado abierto";
 CA_CLIMATE_INDOOR = "interior";
 
 [default]
-CA_MAP06_NAME = "Riverside port";
+CA_MAP06_NAME = "Barracas al Sud — fortified port";
+CA_CARAVAN_CONFIRM_16 = "Destination: Barracas al Sud. Review provisions and travel time for the existing 10 km port journey before confirming departure.";
 CA_MAP07_NAME = "La Plata river shore";
 CA_CARAVAN_CONFIRM_8 = "Confirm travel to Riverside port.";
 CA_CARAVAN_CONFIRM_9 = "Confirm travel to Sewers: reservoir.";
@@ -3736,7 +3737,8 @@ CA_CARAVAN_CONFIRM_10 = "Confirm travel to La Plata river shore.";
 CA_CARAVAN_CONFIRM_11 = "Confirm travel to Riverside port.";
 
 [es]
-CA_MAP06_NAME = "Puerto ribereño";
+CA_MAP06_NAME = "Barracas al Sud — puerto fortificado";
+CA_CARAVAN_CONFIRM_16 = "Destino: Barracas al Sud. Revisa las provisiones y el tiempo del recorrido de 10 km al puerto antes de confirmar la salida.";
 CA_MAP07_NAME = "Costa del Plata";
 CA_CARAVAN_CONFIRM_8 = "Confirmar traslado a Puerto ribereño.";
 CA_CARAVAN_CONFIRM_9 = "Confirmar traslado a Alcantarillas: depósito.";

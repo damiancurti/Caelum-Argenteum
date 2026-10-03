@@ -1,6 +1,40 @@
 # Caelum Argenteum — Current systems and rules
 
-Documentation version: **4.37.8** — 2026-10-02.
+Documentation version: **4.37.9** — 2026-10-03.
+
+## 4.37.9 — City traversal and direct campaign travel (#77)
+
+MAP06 has four open urban gateways (256 MU wide, 192 MU clear height), four
+corner watchtowers with 16-MU stairs to 256-MU observation decks, and four new
+roofed buildings. Native supported-character collision tiers remain 1–7.
+These are ordinary physical passages inside MAP06; walking through them cannot
+end the siege, award a card or transfer to a diagnostic map. The existing six
+breakable military gates remain a separate northern defense. Enemy access,
+allied gun platforms and physical northern withdrawal paths are retained.
+
+The author confirmed direct MAP02 → MAP06 on 2026-10-03, superseding the former
+MAP03 workshop step. Connection 16 adds that route without renumbering existing
+IDs or stored history. It uses the existing maze exit position and the same
+Zupay/Ace checks, 10 km port journey, movement speed, provisions and calendar
+transaction. No new travel length, force, stock, price or reward is introduced.
+Connection 2 becomes inactive; its saved actor remains hidden/nonblocking.
+The Journal caravan option also offers connection 16 with bilingual confirmation;
+its previous dialogue pages retain their positions for saved conversations.
+Network revision 4 creates missing current gates once, including loaded maps.
+Legacy connection 8 still lets saves already in MAP03 continue to the port.
+The existing 32-slot history arrays need no resizing or destructive conversion.
+
+Arrival and prisoner positions, bed and workbench remain. The completion sign
+moves west to (128,1856,0) to clear the northeast tower. Zero, partial and all
+rescues retain their independent 25-gold/+10-own-faction once-only payments.
+Victory still requires all twelve hostile machines neutralized AND the commander
+defeated; the Knight and endpoint remain gated by those accepted rules.
+
+Previously visited siege-port saves require --legacy-map06-siege; this is exact
+geometry selection, not a conversion into the expanded city. Repeated loading
+does not redeploy armies or reset victory/rewards. Preserve the original package
+and save for rollback. See validation_4379 for separate static/native evidence
+and pending_test.txt for author acceptance.
 
 ## 4.37.8 — Corrected MAP02 material accounting (#75)
 

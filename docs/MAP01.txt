@@ -1,6 +1,30 @@
 CAELUM ARGENTEUM — STORY AND MAP01
 
-Documentation version: **4.37.8** — 2026-10-02.
+Documentation version: **4.37.9** — 2026-10-03.
+
+## 4.37.9 — Barracas al Sud campaign layout (#77)
+
+The third playable map is internal MAP06; MAP03 remains the diagnostic reservoir.
+The author approved 96 × 96 m of city, four extra buildings and exactly four
+walkable towers, one at each corner. CITY.json defines the expansion. Its four
+cardinal gateways connect northern military ground, southern/western exterior
+ground and eastern docks, all inside MAP06. No new campaign maps are authored.
+The existing northern six-gate battlefield, defenses, rams and retreat nodes
+retain their accepted placement and populations. Arrival, rescued prisoners,
+rest/crafting and both piers remain accessible; the endpoint sign shifts west
+of the northeast tower. LAYOUT_BEFORE_AFTER.png documents the two footprints.
+
+Author clarification, 2026-10-03: normal progression is now MAP01 → MAP02 → MAP06,
+superseding the historical workshop step described under 4.36.27 below. The
+existing maze exit leads directly to the port through the accepted 10 km journey
+planner, still requiring the sewer Zupay and Ace. Diagnostic travel is not made
+available by any city gateway. Existing saves inside the former workshop can
+still use their legacy onward route.
+
+Use a fresh/unvisited MAP06 for the expansion. A campaign that already visited
+the siege port must select --legacy-map06-siege; --legacy-map06 retains the older
+pre-siege layout. Neither option converts saved geometry. Native tests are
+recorded in assets/validation_4379; author city/campaign checks remain pending.
 
 ## 4.37.8 — MAP02 supplies audit (#75)
 

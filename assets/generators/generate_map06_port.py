@@ -2,6 +2,7 @@
 import json
 from pathlib import Path
 from generate_coastal_trials import generate
+from generate_port_city import expand_city
 
 ROOT = Path(__file__).resolve().parents[2]
 D = json.loads((ROOT/'assets/map06_port/LAYOUT.json').read_text(encoding='utf-8'))
@@ -22,6 +23,7 @@ def extend(port):
                           floor=(step+1)*16, flat='CMST01')
     # Authored northern boundary; no automatic removal before the exit zone.
     port.room(-3072, 11712, 3072, 11776, floor=128, flat='CMST01')
+    expand_city(port)
     port.prop(31050, 0, 2496, tid=46000)
     port.prop(30987, *D['resource_bed'][:2])
     port.prop(18004, *D['resource_workbench'][:2])

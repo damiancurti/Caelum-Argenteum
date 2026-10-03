@@ -1,0 +1,30 @@
+CA-4379-CITY-01
+Origin: 4.37.9 / issue #77.
+Prerequisites: normal current build and a new/unvisited MAP06; use copies of saves.
+Steps:
+1. Enter Barracas al Sud. Explore the four added buildings, bed/workbench and
+   prisoner area; climb and descend all four corner towers without cheats.
+2. Cross north/south/west gates onto exterior ground and the east gate to both
+   piers, then return. Confirm the city scale, walls and views are satisfactory.
+3. Play the northern siege with its full forces. Observe rams/guns, defeat the
+   commander and neutralize all twelve hostile machines, then follow withdrawal.
+4. Capture the Knight, use the endpoint sign west of the northeast tower, and
+   save/reload. Check that victory, rewards and army state do not reset.
+Expected: all places are reachable; no stuck tower stairs, accidental level
+transition, early victory or duplicate reward; acceptable full-battle performance.
+
+CA-4379-ROUTE-01
+Origin: 4.37.9 / issue #77.
+Prerequisites: current build, playable MAP02, and a copy of your campaign save.
+Steps:
+1. Finish the sewer Zupay/Ace objectives and approach the existing final exit.
+   Confirm the port journey after reviewing its provisions/time preview.
+2. Arrive directly at MAP06 without visiting the MAP03 workshop. Speak to any
+   extracted prisoners and collect their existing payments once; save/reload.
+3. If continuing a campaign that already visited the prior siege MAP06, rebuild
+   with run_dev.bat --legacy-map06-siege and load its copied save. Verify the
+   old port/army/progress are retained. Preserve the original save/package for
+   rollback; do not load that old port with the expanded geometry.
+Expected: direct campaign travel with prerequisites and costs retained; rescued
+prisoners/rewards survive arrival/reload; compatibility mode preserves old state.
+Report subchecks not performed, including absence of an older port save.

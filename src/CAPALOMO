@@ -2215,7 +2215,7 @@ conversation
         pagename = "caravan_routes";
         name = "$CA_CARAVAN_TITLE"; dialog = "$CA_CARAVAN_OFFER";
         goodbye = "$CA_CARAVAN_CANCEL";
-        choice { text = "$CA_MAP03_NAME"; nextpage = "caravan_2"; closedialog = false; }
+        choice { text = "$CA_MAP06_NAME"; nextpage = "caravan_16"; closedialog = false; }
         choice { text = "$CA_SEWER_SUPPORT_SEAL"; giveitem = "CaelumSewerPrepareSealAction"; closedialog = true; }
         choice { text = "$CA_SEWER_SUPPORT_CRAFT"; giveitem = "CaelumSewerPrepareCraftAction"; closedialog = true; }
     }
@@ -2241,6 +2241,14 @@ conversation
         name = "$CA_CARAVAN_TITLE"; dialog = "$CA_CARAVAN_CONFIRM_6";
         goodbye = "$CA_CARAVAN_CANCEL";
         choice { text = "$CA_CARAVAN_DEPART"; giveitem = "CaelumCaravanRoute6Action"; closedialog = true; }
+        choice { text = "$CA_CARAVAN_BACK"; nextpage = "caravan_routes"; closedialog = false; }
+    }
+    page
+    {
+        pagename = "caravan_16";
+        name = "$CA_CARAVAN_TITLE"; dialog = "$CA_CARAVAN_CONFIRM_16";
+        goodbye = "$CA_CARAVAN_CANCEL";
+        choice { text = "$CA_CARAVAN_DEPART"; giveitem = "CaelumCaravanRoute16Action"; closedialog = true; }
         choice { text = "$CA_CARAVAN_BACK"; nextpage = "caravan_routes"; closedialog = false; }
     }
 }

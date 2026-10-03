@@ -516,11 +516,11 @@ class CaelumMainM00QuestController : EventHandler
         {
             SiegePreviewPrepared = CaelumSiegePreviewWorld.Prepare();
         }
-        if (!SewerNetworkPrepared || SewerNetworkRevision < 3)
+        if (!SewerNetworkPrepared || SewerNetworkRevision < CaelumWorldCatalogue.CAMPAIGN_ROUTE_REVISION)
         {
             CaelumSewerTravel.PrepareWorld();
             SewerNetworkPrepared = true;
-            SewerNetworkRevision = 3;
+            SewerNetworkRevision = CaelumWorldCatalogue.CAMPAIGN_ROUTE_REVISION;
         }
         RetireGroundFloorStock();
         RetireLegacyProcessingManual();

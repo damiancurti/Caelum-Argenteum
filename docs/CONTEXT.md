@@ -1,28 +1,22 @@
 # CONTEXT.md — Ultra-condensed summary of Caelum Argenteum
 
-Documentation version: **4.37.8** — 2026-10-02.
+Documentation version: **4.37.9** — 2026-10-03.
 
-**4.37.8 / #75:** corrected the material ledger by catalogue ID: 63 instances,
-315 size rows; totals/runtime unchanged. Native crafting, supplies and persistence
-pass: assets/validation_4378. #75 accepted; merge authorized 2026-10-02.
+**4.37.9 / #77:** MAP06 now has a 96 × 96 m fortified city, four added buildings,
+four accessible corner towers and four local cardinal exits. Northern siege
+geometry/forces/rewards stay. Author confirmed direct MAP02 → MAP06, retaining
+Ace/Zupay requirements and the existing 10 km journey. Evidence: validation_4379.
+CA-4379-CITY-01 / ROUTE-01 await author acceptance. Use --legacy-map06-siege for
+previously visited siege-port saves; --legacy-map06 retains the pre-siege port.
 
-**Accepted #73/#74:** cardinal blocks/local keys, 39 material chests, 96/96 rat
-rations; six flooded returns, four grates and central elevator. Closed-block
-covers unlock with normal entry. Stations/extraction/boss retained. Accepted
-2026-10-02; PRs #76/#83 merged. Old saves waived; start fresh.
+**Accepted #73/#74/#75:** cardinal maze, material chests/finite enemy supplies,
+six flooded returns, four grates and central elevator. Closed blocks keep covers
+shut until normal entry. #75 corrected per-item report associations, not totals.
+Accepted 2026-10-02; PRs #76/#83/#84 merged. MAP02 old-save waiver stays specific.
 
-**Accepted #64/#65:** mansion tables refill vacant food/water slots at midnight,
-preserving deposited containers. Y adds timed destinations and automatic care;
-sleep runs 10% to 100% without crafting. Limbo stays 1:1 while exterior dates
-freeze. All five checks passed on 2026-10-02; PRs #71/#72 are merged.
-HISTORY and assets/validation_4374/4375 retain decisions and evidence.
-
-**Accepted base:** #63 / PR #70 (Palomo loadout and retained own equipment),
-#68 / PR #69 (cheaper magic), #62 / PR #67 (dummy), #61 / PR #66 (landscape),
-and #17 / PR #60 (export) are merged/closed. Decisions/evidence: HISTORY.
-#61 geometry needs fresh MAP01; --legacy-map06 preserves pre-siege port saves.
-The accepted siege retains its forces and resource rules. Rights: LICENSE.md
-and notices (#55). Tarot/Trucazo remains deferred.
+**Accepted base:** #64/#65 (Y/time and daily tables), #63 (Palomo loadout),
+#68 (magic), #62 (dummy), #61 (landscape), #17 (export). HISTORY retains evidence
+and acceptance. #61 geometry needs fresh MAP01. Rights: LICENSE.md and notices.
 
 ## The game's premise
 
@@ -228,7 +222,7 @@ detailed results are in HISTORY. PR #7 and the #22 integration PR #23 are merged
 The 2026-10-01 author decision puts the current-content V4 playtest export
 before 4.37 (Tarot/Trucazo); V5 follows the remaining V4 work. The 2026-09-23 author decision requires three complete maps with the
 prologue, confirmed El Loco and two Minors before export (#16/#17). Confirmed
-route: mansion MAP01 -> maze MAP02 -> workshop MAP03 -> port MAP06. The accepted
+route under #77: mansion MAP01 -> maze MAP02 -> port MAP06. The accepted
 port siege replaces the Knight of Wands' provisional #33 appearance condition.
 Prisoners match their source character's combat stats, follow/fight alongside
 the player and extract alive through an exit before the MAP02 boss; they do

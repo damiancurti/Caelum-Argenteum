@@ -4,8 +4,22 @@ An independent dark fantasy FPS-RPG inspired by nineteenth-century Argentina.
 Author and game designer: **Damian Curti**. Development target: **GZDoom 4.14.2**
 on Windows 11. The final game is intended to be independent of Doom assets.
 
-**Current release: 4.37.8.** Obtain and update the complete repository, validate
+**Current release: 4.37.9.** Obtain and update the complete repository, validate
 it, then rebuild with `run_dev.bat` as described below.
+
+Issue [#77](https://github.com/damiancurti/Caelum-Argenteum/issues/77) expands
+**Barracas al Sud (MAP06)** to a 96 × 96 m fortified city: four new buildings,
+four walkable corner towers and four cardinal gateways within the same map.
+The existing military front and full siege remain north. Normal progression is
+now **MAP01 → MAP02 → MAP06**, with the same Ace/Zupay requirements and planned
+10 km port journey. See the [before/after layout](assets/validation_4379/LAYOUT_BEFORE_AFTER.png)
+and [test evidence](assets/validation_4379/RESULTS.json).
+
+Use a new/unvisited MAP06 for the expansion. For campaigns that already visited
+the previous siege port, run `run_dev.bat --legacy-map06-siege`; keep the original
+save/package for rollback. `--legacy-map06` retains its pre-siege meaning. A save
+already in the old MAP03 workshop can still continue along its legacy port route.
+Author acceptance remains in [pending_test.txt](pending_test.txt).
 
 Issue [#75](https://github.com/damiancurti/Caelum-Argenteum/issues/75) is implemented
 in the accepted #73/#74 runtime: materials in 39 chests, finite Mandinga ammunition
@@ -131,7 +145,7 @@ execute physical/magical attacks even without enough Air/Anima. Available
 resources drain to zero; the player and defenders retain normal limits. This
 reversible playtest option is documented in SYSTEMS and was accepted by the author.
 
-**Saves that already visited the former MAP06:** use
+**Saves that already visited the pre-siege 4.36.26 MAP06:** use
 `run_dev.bat --legacy-map06` (or `build_dev.ps1 -LegacyMap06`) to preserve its
 exact geometry and progress. This continues the old port; it does not transform
 the saved map into the siege. Combine with `--legacy-map02` if that save also
@@ -337,7 +351,8 @@ flees at 50% health with triple base speed and counts as defeated when it
 disappears near the exit. Defeat reveals the Ace; the Knight appears beside
 the port survivors after every owed rescue reward is delivered (immediately
 if none survived). Its condition remains provisional until the port siege.
-The forward route is lair MAP02 -> cleared workshop MAP03 -> port MAP06.
+That release used MAP02 -> workshop MAP03 -> MAP06. Issue #77 supersedes the
+workshop step with direct MAP02 -> MAP06; #16 supersedes the provisional Knight rule.
 Existing saves, card identities/effects and prisoner rewards are preserved.
 See [validation evidence](assets/validation_43620/RESULTS.json);
 the author confirmed all #33 checks passed on 2026-09-27.

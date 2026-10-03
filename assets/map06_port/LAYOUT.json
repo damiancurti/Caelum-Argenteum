@@ -41,5 +41,5 @@
   "target_update_tics": 8,
   "resource_bed": [-768, 1664, 0],
   "resource_workbench": [-768, 1472, 0],
-  "completion_position": [384, 1856, 0]
+  "completion_position": [128, 1856, 0]
 }

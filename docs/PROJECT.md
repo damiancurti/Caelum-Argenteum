@@ -1,6 +1,36 @@
 # Caelum Argenteum — Project, status and roadmap
 
-Documentation version: **4.37.8** — 2026-10-02.
+Documentation version: **4.37.9** — 2026-10-03.
+
+## 4.37.9 — Fortified Barracas al Sud (#77)
+
+The third campaign map keeps internal ID MAP06. The author approved a 96 × 96 m
+urban footprint, four additional buildings and four traversable corner towers.
+North, south and west gateways reach exterior ground inside MAP06; east reaches
+the existing docks. The six military gates and their siege front stay north.
+These four urban exits are physical gateways, not new campaign destinations.
+
+The author resolved a discrepancy on 2026-10-03: the former route passed through
+the MAP03 workshop, while #77 required direct MAP02 → MAP06. The normal exit now
+uses a new stable connection ID, retains Zupay/Ace prerequisites and reuses the
+accepted 10 km port journey with its provision/time preview. Diagnostic MAP03
+is no longer entered through ordinary play. Existing saves already there retain
+their former onward port route; old connection history is not reinterpreted.
+
+For a save that already visited the 4.36.27–4.37.8 siege port, use
+`run_dev.bat --legacy-map06-siege`. This selects the exact saved layout with
+current code. Keep original saves/packages for rollback; a normal build activates
+the expansion only for a new/unvisited MAP06. The earlier --legacy-map06 mode
+still selects the pre-siege 4.36.26 port. The MAP02 save waiver is not extended.
+
+Static/native evidence and its limits are in assets/validation_4379: 42 static
+checks, 183 native clearance checks, 2,248 actual-tic walking steps, both victory
+orders, 0/2/4 rescue journeys and reversible save compatibility. The paired full
+battles sustained approximately 35 simulation tics/host second; display FPS is
+not measured. All accepted
+forces, combat resources, machinery, rewards and both victory objectives remain.
+Author acceptance is pending: CA-4379-CITY-01 and CA-4379-ROUTE-01. Narrative
+intelligence/captain identity and later V4.37 work remain separate issues.
 
 ## 4.37.8 — MAP02 material ledger and finite-supply audit (#75)
 
