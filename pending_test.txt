@@ -1,0 +1,34 @@
+CA-MAP02-PIT-RETURN-01
+Origin: 4.37.7 / issue #74.
+Status: pending explicit author acceptance; agent native checks are separate.
+Prerequisites: rebuild the current source and start a fresh campaign/MAP02.
+Previous-map saves were explicitly waived. Use the ordinary campaign route or
+the engine's direct `map MAP02` test profile. Consult
+assets/validation_4377/LOWER_NETWORK.png for positions and cardinal orientation.
+
+1. Enter the initially open south block and step on its floor trap. Confirm a
+   real fall into shallow water, no stairs/ladder, and a walkable route to center.
+   Other pits are in west and east; open those blocks with their normal keys and
+   repeat. Pit IDs/upper room centers: 43905 (-768,-4512), 43916 (-3744,1536),
+   43925 (5280,768), 43929 (5280,-1536), 43930 (2976,1536), 43933 (2208,1536).
+2. Approach each central grate from the tunnel side. Use opens the reached grate
+   without a key and calls the lift down; the other three need not be opened.
+   Enter, stand near an edge, face it and Use to return to the central start.
+3. Repeat trips and call from both landings. Also descend from the start with
+   all grates closed, then Use from inside: you must be able to return upward
+   while the grates remain closed. They must not open from inside.
+4. Check a still-closed surface block remains inaccessible from below, including
+   by jumping beneath its trap. Its cover stays shut until the normal entrance
+   opens. Cells, extraction and boss progression retain their existing keys/rules.
+5. Bring released prisoners through falls and the return route; let distant
+   followers catch up using their established behavior. Confirm none is stranded.
+   Kill a key carrier near/in a pit and recover its key at its original dry upper
+   position. No ammunition/rations/equipment should be preplaced as floor loot.
+6. Save/load in a pit, tunnel, near an opened grate and during elevator movement.
+   Return through the hub and repeat. Opened mechanisms and progress must persist,
+   with a usable route and no duplicate supplies. Check the appearance, water,
+   clearance and movement with your intended character size.
+
+Expected: every accessible trap has a complete flooded return; exactly four
+independent grates; working repeatable elevator; no locked-progression bypass,
+unavoidable companion softlock, save-state reset or new water damage rule.

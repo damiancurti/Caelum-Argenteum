@@ -1,6 +1,52 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **4.37.6** — 2026-10-02.
+Documentation version: **4.37.7** — 2026-10-02.
+
+## 4.37.7 — Six flooded pit returns and central elevator (#74)
+
+Author implementation request: 2026-10-02, including native tests, commit and
+push. The author explicitly waived previous-save compatibility and approved
+keeping each closed block's trapdoors shut until its normal entrance opens.
+The change implements against merged #73 baseline 5c55bb26 and preserves its
+coordinated #75 loot, upper progression and population.
+
+Six former stair-escape pits now join native shallow-water tunnels, four
+exterior-operated keyless grates and a central moving-floor return. Geometry,
+activation sides and a lower-network diagram are recorded in the manifest and
+assets/validation_4377. No balance, narrative, companion AI or other trap rule
+is changed. Revision-3 geometry is preserved as source provenance; new campaigns
+use revision 4, and the pre-existing 4.36.4 legacy mode retains its original scope.
+
+Static evidence: 891 geometry, content, original spawn-height and deterministic
+generation checks pass, plus the normal project validator/build. Native Windows
+11 / GZDoom 4.14.2 / Vulkan / installed development Doom II: all six falls and
+return routes pass 4,726 native collision steps with the maximum-size player;
+all four grates open independently from their exterior side. Seven body tiers
+fit. Ordinary forward/Use commands board and call the platform at both landings;
+four save/load cases (pit, tunnel, grate and moving elevator) and MAP03 hub
+return retain playable state, opened traps/grates and unrelated inventory.
+All eight keys, 240 arrows, 120 bolts, 120 bullets and 96/96 rations recover once
+on their dry upper anchors after lower-network deaths. Four live followers
+complete two player fall-and-return cycles using their accepted follow/catch-up
+behavior; some may avoid the aperture and catch up from the upper level.
+
+A focused correction permits an interior return to the upper landing even when
+all four grates are still closed, without opening them from inside. Its ordinary
+control regression passes. Initial fixture iterations corrected an out-of-range
+Use probe, command-file timing and duplicate reload reporting; these were test
+driver errors, not successful evidence. Another fixture incorrectly required all
+four followers placed over one aperture to fall at once: some avoided the edge
+or stacked, while dormant but shootable enemies still attracted attacks. The
+final fixture uses clear neighboring starting positions, excludes hostile
+targets, and verifies live following through repeated player falls. The route
+was also diverted around crusher 43923 to preserve its original moving sector;
+all affected native checks were repeated. Successful final logs and the exact
+tested runtime hashes are retained in assets/validation_4377/RESULTS.json.
+
+Tests isolate hostile AI/damage for traversal and escort. They are agent evidence,
+not author acceptance of combat, aesthetics or the complete campaign. Outstanding
+author check: CA-MAP02-PIT-RETURN-01 (origin 4.37.7 / #74). No pass, merge or issue
+closure is claimed without a later explicit author confirmation.
 
 ## 4.37.6 — Central MAP02 and local progression carriers (#73)
 

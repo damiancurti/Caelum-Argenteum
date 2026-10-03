@@ -1,7 +1,7 @@
 // Generado desde LAYOUT.json y generate_map02_maze.py.
 class CaelumMazeLayout : Object play
 {
-    const REVISION = 3;
+    const REVISION = 4;
     static bool IsCurrent(){return level.MapName=="MAP02" && ActorIterator.Create(44800,"CaelumMazeLayoutMarker").Next()!=null;}
     static vector3 TravelPosition(int id)
     {
@@ -281,5 +281,29 @@ class CaelumMazeLayout : Object play
         if(tid==48190){item=Inventory(Actor.Spawn("CaelumFoodRation",(1344,5216,0),NO_REPLACE));if(item!=null)item.Amount=1;return item;}
         if(tid==48191){item=Inventory(Actor.Spawn("CaelumWaterRation",(1728,5344,0),NO_REPLACE));if(item!=null)item.Amount=1;return item;}
         return null;
+    }
+    const RETURN_FLOOR = -160;
+    const RETURN_CEILING = -32;
+    const RETURN_SPEED = 16;
+    const RETURN_ELEVATOR_TAG = 44900;
+    static bool IsFloodedReturn(){let marker=ActorIterator.Create(44800,"CaelumMazeLayoutMarker").Next();return level.MapName=="MAP02" && marker!=null && marker.args[0]>=4;}
+    static bool IsReturnGrate(int tag){return tag==44910 || tag==44911 || tag==44912 || tag==44913;}
+    static bool IsInsideElevator(vector2 p){return p.X>-256 && p.X<256 && p.Y>-256 && p.Y<256;}
+    static bool IsGrateExterior(int index,vector2 p)
+    {
+        if(index==0)return p.Y<=-288;
+        if(index==1)return p.X<=-288;
+        if(index==2)return p.X>=288;
+        if(index==3)return p.Y>=288;
+        return false;
+    }
+    static int PitEntrance(int trap)
+    {
+        if(trap==43916)return 44700;
+        if(trap==43925)return 44701;
+        if(trap==43929)return 44701;
+        if(trap==43930)return 44701;
+        if(trap==43933)return 44701;
+        return 0;
     }
 }

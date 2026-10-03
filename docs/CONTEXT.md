@@ -1,14 +1,14 @@
 # CONTEXT.md — Ultra-condensed summary of Caelum Argenteum
 
-Documentation version: **4.37.6** — 2026-10-02.
+Documentation version: **4.37.7** — 2026-10-02.
 
-**4.37.6 / #73:** fresh MAP02 starts centrally with real south/west/east/north
-blocks, local Mandinga key carriers and retained northern extraction/boss route.
-Includes #75 material chests and finite enemy supplies (96 food/96 water).
-Author waived old-save compatibility and confirmed retaining current stations.
-The central #74 elevator footprint is reserved; its lower network remains pending.
-Evidence: assets/validation_4376. Author accepted all checks on 2026-10-02.
+**4.37.7 / #74:** six flooded pit returns, four exterior-opened grates and a
+central elevator. Closed-block covers stay shut until normal entry opens.
+Author waived old saves; start fresh. Current persistence, sizes, keys and escort
+tested: assets/validation_4377. CA-MAP02-PIT-RETURN-01 awaits author acceptance.
 
+**Accepted #73 / 4.37.6:** cardinal blocks/local keys, #75 material chests and
+96/96 rat rations; retained stations and northern extraction/boss. Accepted 2026-10-02.
 
 **Accepted #64/#65:** mansion tables refill vacant food/water slots at midnight,
 preserving deposited containers. Y adds timed destinations and automatic care;

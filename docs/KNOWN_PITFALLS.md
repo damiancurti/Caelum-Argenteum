@@ -4,6 +4,32 @@ Status: integrated engineering register (issue #22, patch 4.36.1b).
 Prepared: 2026-09-23. Inherits the project's release after integration.
 Inspected baseline: `1dc390576fa330d37ff543526fc7e69a397fc28f` (PR #7).
 
+## CA-KP-029 — Lowering a base sector changes upper map-thing spawn heights
+
+Status/evidence: CODE-VERIFIED spawn adjustment; ENGINE-VERIFIED layered traversal.
+First recorded / last checked: 2026-10-02. Issue: #74 / 4.37.7, working branch
+from baseline 5c55bb26; final commit is the linked issue delivery.
+
+UDMF thing `height` is relative to its base sector floor. Adding a solid upper
+3D slab does not make that slab the original map-thing height reference. When
+overlaying lower passages onto an existing map, retain each upper thing's world
+height with `newHeight = oldHeight + oldBaseFloor - newBaseFloor`. Apply this only
+to existing upper things; deliberately lower actors and elevator controllers
+need their own authored placement. Runtime spawns with absolute world coordinates
+are a separate path and must not receive the same offset blindly.
+
+In `generate_map02_maze.py`, the original upper cells remain available before
+the lower overlay. The manifest publishes both layers, and #74 static evidence
+compares every retained upper map thing against the preserved revision-3 WAD
+manifest. Native Windows 11 / GZDoom 4.14.2 / Vulkan checks confirm upper arrival,
+all six traps, maximum-size layered traversal and dry-anchor supply recovery.
+Detached 3D controls retain the CA-KP-026 separation rule.
+
+Evidence: [static checks](../assets/validation_4377/STATIC.json) and
+[native results](../assets/validation_4377/RESULTS.json). Native traversal does
+not individually inspect every upper actor's rendering; that position comparison
+is static. Author acceptance remains CA-MAP02-PIT-RETURN-01, pending.
+
 ## CA-KP-028 — Temporal forecasts must preserve within-tic ordering
 
 Status/evidence: CODE-VERIFIED / ENGINE-VERIFIED, issue #64, 4.37.4.

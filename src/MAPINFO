@@ -497,6 +497,8 @@ DoomEdNums
     30989 = CaelumPrisonerFederal
     30990 = CaelumPrisonerBestia
     30991 = CaelumPrisonerTarot
+    30992 = CaelumMazeReturnGrate
+    30993 = CaelumMazeReturnElevator
     18600 = CaelumMansionSceneryTree
     18601 = CaelumMansionSceneryTree2
     18602 = CaelumMansionSceneryTree3

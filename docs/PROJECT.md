@@ -1,6 +1,20 @@
 # Caelum Argenteum — Project, status and roadmap
 
-Documentation version: **4.37.6** — 2026-10-02.
+Documentation version: **4.37.7** — 2026-10-02.
+
+## 4.37.7 — Flooded MAP02 return (#74)
+
+The six floor traps now drop into a connected lower water network with no stair
+or ladder exits. Four independent, exterior-operated grates surround a native
+moving-floor elevator returning to the central start. One grate is sufficient.
+The author approved keeping a closed block's trap covers shut until its normal
+entrance opens; this prevents enemies or upward jumps creating a progression
+bypass. Existing locks, cells, extraction, population and #75 supplies remain.
+
+The author explicitly waived compatibility with previous saves for this patch.
+Start fresh; new-layout saves and MAP03 hub returns are tested. Static and native
+evidence is in assets/validation_4377; author acceptance remains outstanding as
+CA-MAP02-PIT-RETURN-01 in pending_test.txt. Tarot/Trucazo remains later work.
 
 ## 4.37.6 — Cardinal MAP02 (#73, coordinated #75 loot)
 
