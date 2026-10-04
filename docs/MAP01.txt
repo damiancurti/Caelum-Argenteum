@@ -1,6 +1,20 @@
 CAELUM ARGENTEUM — STORY AND MAP01
 
-Documentation version: **4.37.16** — 2026-10-04.
+Documentation version: **4.37.17** — 2026-10-04.
+
+4.37.17 / issue #89: Ronnie gives an owned T1 Pickaxe (Pico) and its recipe
+at the gathering lesson, replacing the sword loan. Primary chops, secondary
+mines, family/key 1. Palomo's choices and the requirement to craft the chosen
+weapon remain; no duplicate Pickaxe is required. Show that weapon to Ronnie
+to finish. Repair/Seal gathering dialogue now refers to the owned tool.
+The Pickaxe survives departure. Old owned swords and mission progress are
+preserved; only actual legacy temporary loans use the old return lifecycle.
+Started/completed saves receive the new gift once, subject to normal capacity,
+without replenishing supplies. All extracting tools play the material sound
+and show a centered CaelumText success notice. SYSTEMS defines the contract;
+assets/validation_43717 records evidence, pending_test.txt author acceptance.
+Earlier references to borrowing/returning Ronnie's sword below describe the
+older flow and are superseded by this update. Geometry is unchanged.
 
 4.37.13 / issue #81: Argento offers Trucazo practice through his existing
 conversation pages. Requires the physical Tarot deck from Palomo, inside or

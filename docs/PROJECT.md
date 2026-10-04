@@ -1,6 +1,27 @@
 # Caelum Argenteum — Project, status and roadmap
 
-Documentation version: **4.37.16** — 2026-10-04.
+Documentation version: **4.37.17** — 2026-10-04.
+
+## 4.37.17 - Owned Pickaxe and resource feedback (#89)
+
+Ronnie now gives an owned Pickaxe and its recipe when the gathering lesson
+starts. The author confirmed primary slashing, secondary piercing, family 1,
+and preservation of the chosen-weapon crafting lesson. The single T1 tool
+shares axe numbers/recipe and multiplies chopping/mining yield by 10/100 before
+existing source, carry and Limbo quota limits. Sounds and centered CaelumText
+success messages apply to every weapon that actually extracts material.
+
+Recipe book revision 5 appends recipe 131; weapon IDs and ownership indices are
+appended. Tutorial gift revision 1 adds one owned instance for started/completed
+old saves, preserving swords, choices, damage, quotas and progress. Full storage
+defers the gift until ordinary capacity permits it. There are no new vendors,
+enemy drops or higher tiers. Evidence: assets/validation_43717. Static/native
+verification and author acceptance are separate; current author checks are in
+pending_test.txt. Earlier release descriptions of Ronnie's sword loan are
+historical and are superseded by this section.
+Native verification passed 117 assertions, including crafting, both attack
+inputs and old-save reload/travel/rollback; visual captures confirm the author's
+20-degree clockwise rest pose. Asset generators reproduced identical bytes.
 
 ## 4.37.16 - Navigation HUD and project menu identity (#87)
 

@@ -1,6 +1,62 @@
 # Caelum Argenteum — Current systems and rules
 
-Documentation version: **4.37.16** — 2026-10-04.
+Documentation version: **4.37.17** — 2026-10-04.
+
+## 4.37.17 - Pickaxe, gathering sounds and success notice (#89)
+
+Author decisions, 2026-10-04: English/code **Pickaxe**, Spanish **Pico**;
+weapon family/key **1**, alongside unarmed; **T1 only**. Primary is slashing for
+chopping and secondary is piercing for mining. All numeric weapon statistics,
+size-scaled weight and maximum durability use the actual T1 **axe**, not the
+hatchet. At M, the existing axe weighs 8 kg, primary/secondary base damage is
+140/160, and current maximum durability is 10,000. Shield compatibility, costs,
+reach and the attack clock follow the axe. The mining pose turns the same
+hybrid head while retaining the native grip, recovery and hand rig.
+The author's rest-pose refinement tilts the tool 20 degrees clockwise around
+that grip, with the native swing continuing from the same resting angle.
+
+One learned recipe reuses the axe's ingredient types, ratios, rounding, size,
+efficiency and station rules. At M/T1/100%, it consumes 5,600 Handle and 2,400
+Weapon Head units. No T2/T3 recipe, vendor stock or enemy-drop source is added.
+The output uses the existing inventory, repair, disassembly, weight and Box
+rules. New physical crafting outputs explicitly carry the current durability
+revision, preventing a new item from being scaled as an old save.
+
+An eligible hit by the actual equipped Pickaxe multiplies the normal released
+quantity by **10 for chopping** or **100 for mining**, once, before the existing
+finite source and tutorial allowance caps. Remove only the released amount.
+Fractional carry, resource type, renewal, spawn failure and pickup capacity
+retain their shared behavior. Owning a Pickaxe while using another tool adds
+no bonus; misses, wrong damage type, ordinary non-resource rocks and exhausted
+sources yield nothing.
+
+After a successful extraction, **every eligible weapon** plays one positional
+material sound: wood/fiber chopping, stone/coal, metal ore, or crystal/gems.
+The same confirmed event shows **Material extracted: <material>** / **Material
+extraído: <material>** at screen center in **CaelumText**. The latest success
+replaces the previous one; duration follows the existing notification setting.
+Menus hide the notice. It confirms extraction, not an inventory pickup. Zero
+extraction emits neither sound nor message. Mining OGGs remain unchanged; tala
+uses an isolated one-shot from the approved long recording.
+
+Ronnie gives the owned tool plus its recipe/component knowledge when the
+lesson starts. It replaces the former sword loan. Palomo's four choices remain
+intact and the selected weapon must still be crafted and shown to Ronnie;
+the gift never completes that objective and no duplicate Pickaxe is required.
+Equipping it again neither repairs nor replaces it. Selling, transferring or
+breaking the gift does not replay the reward; its recipe remains learned.
+The owned Pickaxe survives completion and narrative departure with other owned
+equipment. Old temporary sword instances follow their original return rules;
+owned swords are never removed by the new grant.
+
+Save contract: playable type 20, catalogue type 16, recipe 131, recipe book
+revision 5 and gift revision 1 are additive. Existing recipe indices 0–130 and
+ownership indices 0–299 retain their meanings. Started/completed old saves
+receive one gift through the normal capacity rules, even outside MAP01; a full
+inventory defers delivery. Repeated loads/updates do not replenish quotas,
+reset progress or heal the gift. Keep the original save and matching old PK3
+for rollback; migration tests never overwrite those originals. Earlier Ronnie
+loan/return wording below describes the pre-#89 flow; this section supersedes it.
 
 ## 4.37.16 - Compass and menu pointers (#87)
 
@@ -523,8 +579,8 @@ which always supply food and water; this dialogue coordinates with #65.
 On narrative departure, retain every actual owned equipment instance and the
 Magic Box: weapons, armor, shields, Seals and amulets, whether equipped, carried
 or boxed. Preserve ItemId, type, essence, size, condition, weight and placement.
-Return the magic practice implement/Seal and gathering sword through their
-normal loan lifecycle. Remove all ammunition (including loaded magazines),
+Return the magic practice implement/Seal and any legacy gathering sword through
+their loan lifecycle; the owned #89 Pickaxe is retained. Remove all ammunition (including loaded magazines),
 materials, currencies, consumables and tutorial keys; this supply cleanup was
 explicitly confirmed by the author on 2026-10-01. Never grant a merely selected
 piece, replace an item, or reconstruct a destroyed first weapon. The existing

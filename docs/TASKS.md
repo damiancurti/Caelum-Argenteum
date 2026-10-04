@@ -1,6 +1,19 @@
 # TASKS.md — Active tasks
 
-Documentation version: **4.37.16** — 2026-10-04.
+Documentation version: **4.37.17** — 2026-10-04.
+
+## Issue #89 - Pickaxe and gathering feedback (4.37.17)
+
+- Implemented one T1 owned utility tool, family 1; approved slash/pierce attacks,
+  shared axe data/recipe, ×10 chopping and ×100 mining within existing limits.
+- Ronnie grants it once with recipe knowledge; the chosen weapon still needs
+  crafting. Additive migration preserves old swords, progress and recipe IDs.
+- Integrated supplied reference art and CC0 sounds with preserved provenance.
+  Every successful extracting weapon emits one sound and centered CaelumText
+  notice; invalid/exhausted hits do not.
+- Static/native evidence: assets/validation_43717. Author checks are the three
+  entries in pending_test.txt. Commit/push and a linked PR are authorized;
+  issue closure/merge awaits acceptance of #89.
 
 ## Issue #87 - Compass and project menu pointers (4.37.16)
 

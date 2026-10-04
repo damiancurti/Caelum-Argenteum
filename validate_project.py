@@ -211,7 +211,7 @@ def validate(root):
         check(sample_rate == 48000 and last_granule == 134400, 'The dialogue-opening cue must retain 134400 samples at 48000 Hz')
     else:
         errors.append('Missing dialogue cue')
-    audio_count = sum(p.suffix.lower() in ('.ogg','.mp3') for p in (root/'src').rglob('*') if p.is_file())
+    audio_count = sum(p.suffix.lower() in ('.ogg','.mp3','.wav') for p in (root/'src').rglob('*') if p.is_file())
     assets = (root/'docs/ASSETS.md').read_text(encoding='utf-8-sig')
     count = re.search(AUDIO_INVENTORY_RE, assets)
     inventory = int(count.group(1) or count.group(2)) if count else None

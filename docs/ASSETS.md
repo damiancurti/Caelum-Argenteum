@@ -1,6 +1,30 @@
 # Caelum Argenteum — Audio and art
 
-Documentation version: **4.37.16** — 2026-10-04.
+Documentation version: **4.37.17** — 2026-10-04.
+
+## 4.37.17 - Pickaxe art and gathering audio (#89)
+
+The author's updated reference ZIP, all seven verified source files and its
+credits/SHA-256 list are retained under assets/issue89_pickaxe/reference_package.
+[PROVENANCE.json](../assets/issue89_pickaxe/PROVENANCE.json) records the package
+URL/hash, built-in imagegen prompt, selected transparent image and processing.
+The isolated hybrid tool preserves the left axe blade, opposite mining point,
+wooden shaft and wrapped grips. Deterministic Windows sprite preparation creates
+the inventory/pickup icon and first-person body; native textures turn the head
+for mining. The existing project hand rig and attack clock provide ready,
+wind-up, strike and recovery without introducing independent attack timing.
+Author refinement: the resting tool tilts 20 degrees clockwise around the
+existing grip; the hand remains aligned and the native swing uses that pose.
+
+Audio: Joseph SARDIN / BigSoundBank **Ax on log (0705)** and NoisyRedFox /
+Freesound **760565/760566/760567**, all supplied as CC0. Chopping uses only the
+first 0.120–0.900 s impact with 4 ms endpoint fades; original gain/rate retained.
+The three mining OGGs are copied byte-for-byte for stone/coal, crystal/gems and
+metal ore. Packaged credits: src/licenses/AUDIO_GATHERING_ISSUE89_CREDITS.md.
+The superseded HerrParadox/Pixabay MP3 is not included. The image's OpenAI
+provenance is separate from the audio licenses; no CC0 image dedication is made.
+Generators are optional; native assets are already under src. Native playback,
+waveform checks and subjective author audio acceptance are recorded separately.
 
 ## 4.37.16 - Compass, Sun of May and C moon (#87)
 
@@ -1778,10 +1802,12 @@ third party is not rewritten when reorganizing documents.
 
 ## Physical audio inventory
 
-The fully audited project contains 99 runtime files: 97 OGG and 2 MP3, including the
+The fully audited project contains 103 runtime files: 100 OGG, 2 MP3 and 1 WAV, including the
 issue #31 pain cues, dialogue-opening cue and three new map-music tracks. `assets/audio_stock`
 preserves 26 source/backup files outside `src`: 10 pack-05 backups and 16 issue-#31
-music/sound masters. Total catalogued: 125 files. A copy by another name does not imply
+music/sound masters. Issue #89 preserves four more audio originals under
+assets/issue89_pickaxe/reference_package. Total catalogued: 133 files.
+A copy by another name does not imply
 another recording: menu_move and menu_select continue to share content. 14 native
 interface/interruptors aliases also do not add files.
 
@@ -1795,6 +1821,10 @@ file does not imply that there is already a climate or scene emitter.
 | `music/CA_MUS03_SEWER.ogg` | MAP02 sewer music. |
 | `music/CA_MUS04_PORT.ogg` | MAP06 port music. |
 | `music/CA_MUS05_COAST.ogg` | MAP07 coast music. |
+| `sounds/caelum/gathering/chop.wav` | One confirmed wood/fiber extraction impact, any eligible weapon. |
+| `sounds/caelum/gathering/stone.ogg` | Confirmed stone/coal extraction. |
+| `sounds/caelum/gathering/metal.ogg` | Confirmed metal-ore extraction. |
+| `sounds/caelum/gathering/crystal.ogg` | Confirmed crystal/gem extraction. |
 | `sounds/caelum/ambience/ca_ambience_blacksmith_loop.ogg` | Registered; use according to calls of actor, system or TERRAIN. |
 | `sounds/caelum/ambience/ca_ambience_crowd_murmur_loop.ogg` | Registered; use according to calls of actor, system or TERRAIN. |
 | `sounds/caelum/ambience/ca_ambience_fire_loop.ogg` | Registered; use according to calls of actor, system or TERRAIN. |
