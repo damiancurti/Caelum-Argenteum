@@ -21,8 +21,9 @@ NPC decisions consume only their own hand and public cards/calls. Existing
 furniture capacities, dining/rest and world Tarot powers remain unchanged.
 
 Evidence is in assets/validation_43713. Static checks, target-engine checks and
-author acceptance are separate; the two new author checks remain in
-pending_test.txt. The author accepted #80 and PR #92 is merged. Human multiplayer, teams, broader ranked/
+author acceptance are separate. CA-43713-TRUCAZO-01/02 passed on 2026-10-04,
+and the author authorized #81 closure/PR #94 merge. The #99 choice-order change
+remains separate. Human multiplayer, teams, broader ranked/
 casual services and full Major-card expansion remain outside this slice.
 
 ## 4.37.12 — Campaign Tarot powers and physical deck (#80)

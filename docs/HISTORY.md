@@ -4,6 +4,13 @@ Documentation version: **4.37.13** — 2026-10-04.
 
 ## 4.37.13 — Complete Trucazo practice against Argento (#81)
 
+Author acceptance, 2026-10-04: the author explicitly approved all Trucazo tests
+and authorized issue #81 closure and PR #94 merge. CA-43713-TRUCAZO-01
+(complete practice) and CA-43713-TRUCAZO-02 (persistence, abandonment and
+existing activities), both originating in 4.37.13 / #81, are PASSED without
+qualifications. Their entries are removed from pending_test.txt. Runtime and
+version are unchanged. The requested dialogue-option reorder is separate #99.
+
 Implemented 2026-10-04 on issue-81-trucazo-argento, based on #80 commit c7fe3fe9.
 The isolated worktree preserves the author's #80 test checkout and package.
 The author selected Argento in MAP01, supplied the original Trucazo v2.0 Word
@@ -51,10 +58,10 @@ automatic matches, normal Use/conversation/menu entry, native save/reload,
 baseline-save migration/rollback and bilingual captures. Fixtures seed test
 prerequisites; they are not a claim of a full campaign playthrough or author
 acceptance. Engines, IWADs, saves and fixtures are not distributed.
-CA-43713-TRUCAZO-01/02 remain pending. During delivery the author accepted all
+CA-43713-TRUCAZO-01/02 are now accepted as recorded above. During delivery the author accepted all
 #80 tests and authorized its closure/merge; PR #92 merged as 71ef7714. Only the
 confirmed Tarot checks were removed, with their results in the 4.37.12 entry.
-Neither #81 closure nor merge is authorized by this delivery.
+The author subsequently authorized #81 closure and merge, as recorded above.
 
 ## 4.37.12 — Campaign Tarot powers and physical deck (#80)
 

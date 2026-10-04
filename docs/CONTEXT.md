@@ -5,7 +5,7 @@ Documentation version: **4.37.13** — 2026-10-04.
 **#81 / 4.37.13:** Argento's MAP01 dialogue starts complete Trucazo practice:
 shared 56-Minor deck, traditional calls, Patience-squared health, Type 1 damage.
 No Majors, Magic Senses or wagers; abandonment is defeat. Native paused menu
-and saved match state; evidence: assets/validation_43713. Author checks pending.
+and saved match state; evidence: assets/validation_43713. Accepted 2026-10-04.
 
 **#80 / 4.37.12:** up to three essences; User3 costs 1000 Anima, lasts 60 s,
 recharges 600 s from use. Fool flies; Minors double fixed bonuses. Palomo's

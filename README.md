@@ -19,8 +19,9 @@ The approved shared 56-Minor deal, traditional calls, Patience-squared health
 and Intelligence Type 1 damage determine the match. This practice has no
 Majors, Magic Senses, wagers, rewards or changes to world Tarot ownership.
 Native saved matches retain their cards, calls and results. See
-[4.37.13 evidence](assets/validation_43713/RESULTS.json); author acceptance is
-pending in [pending_test.txt](pending_test.txt). The #80 checks passed.
+[4.37.13 evidence](assets/validation_43713/RESULTS.json). The author approved
+all Trucazo checks on 2026-10-04 and authorized #81 closure/PR #94 merge.
+The #80 checks also passed; the #99 dialogue-order change remains separate.
 
 Issue [#80](https://github.com/damiancurti/Caelum-Argenteum/issues/80) completes
 the three campaign Tarot powers. In Journal > Tarot, **Enter/A** toggles up to

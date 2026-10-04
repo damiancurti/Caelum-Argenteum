@@ -24,8 +24,9 @@ Documentation version: **4.37.13** — 2026-10-04.
   Inventory and static UI restoration preserve old saves and current matches.
 - Evidence: assets/validation_43713; native rules, 100 automatic matches,
   ordinary dialogue entry, screenshots and save/restore/rollback checks.
-- Next: author checks CA-43713-TRUCAZO-01/02. Acceptance remains pending;
-  multiplayer, teams and broader services/full Major expansion stay deferred.
+- Accepted 2026-10-04: CA-43713-TRUCAZO-01/02 passed; closure/merge authorized.
+  Next: #99 reorders the practice choice. Multiplayer, teams and broader
+  services/full Major expansion stay deferred.
 
 ## Issue #80 — Campaign Tarot activation (4.37.12)
 
