@@ -5461,3 +5461,16 @@ Graphic M_SKULL2, 128, 128
     YScale 5.333333
     Patch "graphics/caelum/ui/ca_sun_selector.png", 0, 0
 }
+
+// Issue #89: origen transparente, pivote común con las manos nativas.
+Sprite "CPIKA0", 128, 128 { Offset 64, 114 Patch "graphics/caelum/icons/ca_pickaxe.png", 0, 0 }
+Sprite "DP89A0", 320, 200 {
+    NoTrim
+    Offset 216, 160
+    Patch "sprites/caelum/pickaxe/pickaxe_body.png", 0, 0
+}
+Sprite "DP89B0", 320, 200 {
+    NoTrim
+    Offset 216, 160
+    Patch "sprites/caelum/pickaxe/pickaxe_body.png", 112, 0 { FlipX }
+}
