@@ -45,9 +45,21 @@ Full-city scenario checks exercise real deployment/calendar/conversation but
 inject the two completed objective states to test presentation; they do not
 claim a normal full-army victory or resolve #86's performance limitation.
 
-Author acceptance: **pending**. CA-43710-BRIEFING-01 and
-CA-43710-BRIEFING-02 are actionable in `pending_test.txt`. No manual pass, merge
-or issue closure is asserted by this implementation evidence.
+Author acceptance, 2026-10-04: Damian Curti explicitly confirmed that all tests
+passed and requested issue #78 closure, then PR #88 merge. Both checks originate
+in 4.37.10 / #78:
+
+- **CA-43710-BRIEFING-01 — passed:** post-payment intelligence and narrative
+  review, including rewards, Journal agreement and Selene intervention ordering.
+- **CA-43710-BRIEFING-02 — passed:** repeat access, siege outcome, saved campaigns
+  and hub return, preserving rewards/events and zero-rescue fallback guidance.
+
+No exceptions were reported. The author did not supply additional test logs or
+environment details; this confirmation is separate from the controlled native
+evidence above. Both confirmed entries were removed from `pending_test.txt`,
+which is now empty. Acceptance retains version 4.37.10 and the tested runtime.
+Future siege scheduling remains an unauthored design decision, while #79 and
+#86 retain their separate scope. Merge and closure are authorized.
 
 ## 4.37.9 — Expand fortified Barracas al Sud (#77)
 

@@ -7,8 +7,8 @@ objectives. Dialogue/Journal share bilingual text and calendar records; future
 date/hour remains PENDING. Rewards, Selene queues and save/page schemas persist. Concealed
 Selene service/anti-demon motive and implanted souls are canon, not an immediate
 confession; amnesia remains. Zupay retreats in Chapter I; later death is Chapter II.
-Evidence: assets/validation_43710; author checks pending. Follow-ups: #79 (captain),
-#86 (performance).
+Evidence: assets/validation_43710; both author checks passed 2026-10-04; merge/closure
+authorized. Follow-ups: #79 (captain), #86 (performance).
 
 **#77 accepted 2026-10-03:** expanded southern MAP06, 6,000 Mandingas plus
 commander, 600 soldiers; city/route and combat checks passed. Geometry/forces,

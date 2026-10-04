@@ -18,8 +18,10 @@ the separately recorded performance work. No map, asset, combat or balance chang
 
 Evidence: `assets/validation_43710/RESULTS.json`, native GZDoom 4.14.2 Windows
 dialogue/queue, payment, calendar, save and hub checks. The original USDF page
-indexes and persistent schemas are preserved. Author acceptance is pending in
-`pending_test.txt`; a commit/PR is not a manual acceptance result.
+indexes and persistent schemas are preserved. On 2026-10-04 the author confirmed
+both CA-43710-BRIEFING checks passed without reported exceptions and authorized
+PR #88 merge / #78 closure. HISTORY records the results; no author checks remain
+in `pending_test.txt`. This confirmation is separate from native test evidence.
 
 ## 4.37.9 — Expanded southern Barracas al Sud (#77)
 

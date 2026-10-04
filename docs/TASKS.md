@@ -10,11 +10,13 @@ Documentation version: **4.37.10** — 2026-10-04.
   existing save schemas, current siege trigger and both victory requirements.
 - Canon: concealed Selene service and anti-demon motive; implanted souls and
   bodily identity; amnesia and Limbo denial; Zupay retreats now, death in Chapter II.
-- Evidence: `assets/validation_43710/RESULTS.json`; author checks remain pending as
-  CA-43710-BRIEFING-01 and CA-43710-BRIEFING-02 in the root queue.
+- Evidence: `assets/validation_43710/RESULTS.json`; the author confirmed
+  CA-43710-BRIEFING-01 and CA-43710-BRIEFING-02 passed on 2026-10-04 without
+  reported exceptions and authorized PR #88 merge / #78 closure. HISTORY records
+  both results; `pending_test.txt` is empty. Version remains 4.37.10.
 - PENDING author design: a future siege date/hour or scheduling change. Current
   data only records actual entry/deployment and victory; no deadline was invented.
-- Next: author text/playthrough acceptance; #79 supplies captain recognition;
+- Next: #79 supplies captain recognition;
   #86 owns full-city performance. Neither is claimed implemented by this patch.
 
 ## Issue #77 — Expanded southern Barracas al Sud (4.37.9)

@@ -255,7 +255,10 @@
     "Initial fixture iterations exposed harness-only timing, scope and startup issues; final logs listed here pass. A missing USDF userstring binding found by the initial rendered test was corrected before final validation."
   ],
   "author_acceptance": {
-    "status": "pending",
+    "status": "passed",
+    "confirmed_on": "2026-10-04",
+    "confirmed_by": "Damian Curti",
+    "qualification": "Author explicitly confirmed all pending tests passed without reported exceptions and authorized issue #78 closure and PR #88 merge. No additional test logs or environment details were supplied. Controlled native evidence retains its stated limits; future scheduling and issues #79/#86 remain separate.",
     "tests": [
       "CA-43710-BRIEFING-01",
       "CA-43710-BRIEFING-02"
@@ -265,7 +268,7 @@
     "normal_validation": "python validate_project.py",
     "normal_build": "powershell.exe -NoProfile -ExecutionPolicy Bypass -File build_dev.ps1",
     "native_harness_local": "build/run_issue78.ps1 with per-run issue78_*.cfg and issue78_qa/issue78_fullqa/issue78_oldqa; isolated fixtures and saves are deliberately not distributed",
-    "author_steps": "../../pending_test.txt"
+    "author_acceptance_record": "../../docs/HISTORY.md#43710--prisoner-intelligence-after-the-barracas-al-sud-reward-78"
   },
   "normal_validation": {
     "exit_code": 0,

@@ -13,8 +13,11 @@ Journal agree on Barracas al Sud, the observed timing and both victory objective
 stop the commander and neutralize twelve attacking machines. Real calendar records
 provide active/completed dates; no future deadline has been authored or invented.
 Rewards, Selene interventions, page indexes, maps and save schemas remain intact.
-See [focused native evidence](assets/validation_43710/RESULTS.json). Two narrative
-author checks remain in [pending_test.txt](pending_test.txt).
+See [focused native evidence](assets/validation_43710/RESULTS.json). On 2026-10-04
+the author confirmed both narrative checks passed and authorized
+[PR #88](https://github.com/damiancurti/Caelum-Argenteum/pull/88) merge / #78 closure.
+[HISTORY](docs/HISTORY.md) records acceptance; [pending_test.txt](pending_test.txt)
+is empty. The release remains 4.37.10.
 
 Issue [#77](https://github.com/damiancurti/Caelum-Argenteum/issues/77) expands
 **Barracas al Sud (MAP06)** to **960 × 960 m**: 160 houses, 64 shops, 24 factories
