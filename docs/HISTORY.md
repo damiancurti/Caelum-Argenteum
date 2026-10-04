@@ -4,6 +4,12 @@ Documentation version: **4.37.15** — 2026-10-04.
 
 ## 4.37.15 - Add traditional Truco ranked mode (#101)
 
+Author acceptance of #101, 2026-10-04: all tests PASSED, without reported
+qualifications. CA-43715-TRUCO-01, CA-43715-TRUCO-02 originated in
+4.37.15 / #101. The author explicitly confirmed all tests correct
+and authorized issue closure and merge. The confirmed entries are removed
+from pending_test.txt. Runtime and version are unchanged.
+
 Author request and clarified variants, 2026-10-04: 30 points, optional Flor,
 traditional 40-card/three-card deal, no health/attributes/powers and no rating
 system yet. Falta/Flor al Resto use the leader's distance to 15 in malas or 30

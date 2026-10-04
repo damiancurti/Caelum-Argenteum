@@ -10,7 +10,7 @@ include a rating, ranks, wagers or rewards. A separate revision-1 match inventor
 preserves the accepted Trucazo practice and its existing saves. Its own pause,
 menu, calls, points and native save/load are validated separately. Existing
 physical deck ownership permits either mode; no new campaign item is added.
-Evidence: assets/validation_43715. Author checks CA-43715-TRUCO-01/02 remain.
+Evidence: assets/validation_43715. Author checks passed 2026-10-04.
 
 ## 4.37.14a - Argento practice choice near the end (#99)
 

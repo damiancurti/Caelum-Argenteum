@@ -14,7 +14,7 @@ to 30 points (15 malas / 15 buenas), traditional pardas, Envido/Real/Falta,
 Truco/Retruco/Vale 4 and optional Flor raises. No attributes, health, powers,
 rating, wagers or rewards apply. Saved matches retain the chosen rules and
 pending calls. Evidence: [4.37.15](assets/validation_43715/RESULTS.json).
-Author checks are pending; the accepted Trucazo practice remains available.
+Author checks passed 2026-10-04; the accepted Trucazo practice remains available.
 
 Issue [#99](https://github.com/damiancurti/Caelum-Argenteum/issues/99) places
 Argento's Trucazo practice after the ordinary story/service choices, immediately
