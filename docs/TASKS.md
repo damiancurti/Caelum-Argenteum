@@ -15,8 +15,8 @@ Documentation version: **4.37.14** — 2026-10-04.
 
 - Show keyboard Y time skip next to T acceleration in the lower EN/ES help and
   active-task status; preserve existing controls, mechanics and saves.
-- Agent evidence: assets/validation_43713a. Next: CA-43713A-CRAFT-01.
-- Based on accepted #81, merged via PR #94. This UI patch awaits acceptance.
+- Agent evidence: assets/validation_43713a. Author checks passed 2026-10-04; closure/merge authorized.
+- Based on accepted #81, merged via PR #94. Author acceptance passed 2026-10-04.
 
 ## Issue #81 — Trucazo against Argento (4.37.13)
 
