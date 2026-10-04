@@ -1,6 +1,25 @@
 # Caelum Argenteum — Project, status and roadmap
 
-Documentation version: **4.37.9** — 2026-10-03.
+Documentation version: **4.37.10** — 2026-10-04.
+
+## 4.37.10 — Post-payment prisoner siege intelligence (#78)
+
+Implemented on `issue-78-prisoner-siege-intelligence`: all four rescued prisoners
+brief the player after successful port payment, with shared bilingual Journal
+information for upcoming/unconfirmed, active and completed siege states. Location
+and recorded dates use the existing world/calendar data. No future deadline is
+invented; that author decision remains PENDING. Current siege entry/deployment,
+both victory requirements, zero/partial/all-rescue completion and rewards remain.
+
+MAP01 records the authorized concealed Selene service, anti-demon motivation,
+implanted-soul/body identities and Chapter II death boundary. Player-facing lines
+preserve the mystery and amnesia. #79 owns guard-captain recognition; #86 continues
+the separately recorded performance work. No map, asset, combat or balance change.
+
+Evidence: `assets/validation_43710/RESULTS.json`, native GZDoom 4.14.2 Windows
+dialogue/queue, payment, calendar, save and hub checks. The original USDF page
+indexes and persistent schemas are preserved. Author acceptance is pending in
+`pending_test.txt`; a commit/PR is not a manual acceptance result.
 
 ## 4.37.9 — Expanded southern Barracas al Sud (#77)
 

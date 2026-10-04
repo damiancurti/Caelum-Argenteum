@@ -1,0 +1,280 @@
+{
+  "issue": 78,
+  "release": "4.37.10",
+  "date": "2026-10-04",
+  "baseline_commit": "f8002810",
+  "environment": {
+    "engine": "GZDoom 4.14.2",
+    "os": "Windows 11",
+    "renderer": "Vulkan / NVIDIA GeForce RTX 3070 Ti",
+    "iwad": "Author-installed DOOM2.WAD, development only, not distributed",
+    "autoload": false,
+    "sound": false,
+    "isolated_config": "build/issue78.ini",
+    "isolated_saves": "build/issue78_saves"
+  },
+  "static_report": "STATIC.json",
+  "native_runs": [
+    {
+      "run": "rewardsfinal",
+      "native_log": "rewardsfinal.txt",
+      "assertions": 52,
+      "failures": 0,
+      "completed_suites": [
+        "rewards"
+      ],
+      "map_loads": [
+        [
+          "MAP06",
+          "Barracas al Sud — puerto fortificado"
+        ]
+      ]
+    },
+    {
+      "run": "bossfinal",
+      "native_log": "bossfinal.txt",
+      "assertions": 7,
+      "failures": 0,
+      "completed_suites": [
+        "boss-first"
+      ],
+      "map_loads": [
+        [
+          "MAP06",
+          "Barracas al Sud — puerto fortificado"
+        ]
+      ]
+    },
+    {
+      "run": "machinesfinal",
+      "native_log": "machinesfinal.txt",
+      "assertions": 7,
+      "failures": 0,
+      "completed_suites": [
+        "machines-first"
+      ],
+      "map_loads": [
+        [
+          "MAP06",
+          "Barracas al Sud — puerto fortificado"
+        ]
+      ]
+    },
+    {
+      "run": "loadpage",
+      "native_log": "loadpage.txt",
+      "assertions": 5,
+      "failures": 0,
+      "completed_suites": [
+        "persistence"
+      ],
+      "map_loads": [
+        [
+          "MAP06",
+          "Barracas al Sud — puerto fortificado"
+        ],
+        [
+          "MAP06",
+          "Barracas al Sud — puerto fortificado"
+        ]
+      ]
+    },
+    {
+      "run": "hubfinal",
+      "native_log": "hubfinal.txt",
+      "assertions": 10,
+      "failures": 0,
+      "completed_suites": [
+        "persistence",
+        "persistence"
+      ],
+      "map_loads": [
+        [
+          "MAP06",
+          "Barracas al Sud — puerto fortificado"
+        ],
+        [
+          "MAP06",
+          "Barracas al Sud — puerto fortificado"
+        ],
+        [
+          "MAP02",
+          "Alcantarillas — el laberinto"
+        ]
+      ]
+    },
+    {
+      "run": "hubreturnfinal",
+      "native_log": "hubreturnfinal.txt",
+      "assertions": 10,
+      "failures": 0,
+      "completed_suites": [
+        "persistence",
+        "persistence"
+      ],
+      "map_loads": [
+        [
+          "MAP06",
+          "Barracas al Sud — puerto fortificado"
+        ],
+        [
+          "MAP02",
+          "Alcantarillas — el laberinto"
+        ],
+        [
+          "MAP06",
+          "Barracas al Sud — puerto fortificado"
+        ]
+      ]
+    },
+    {
+      "run": "finalmenus",
+      "native_log": "finalmenus.txt",
+      "assertions": 0,
+      "failures": 0,
+      "completed_suites": [],
+      "map_loads": [
+        [
+          "MAP06",
+          "Barracas al Sud — puerto fortificado"
+        ]
+      ]
+    },
+    {
+      "run": "fullcity2",
+      "native_log": "fullcity2.txt",
+      "assertions": 6,
+      "failures": 0,
+      "completed_suites": [
+        "full-city"
+      ],
+      "map_loads": [
+        [
+          "MAP06",
+          "Barracas al Sud — puerto fortificado"
+        ]
+      ]
+    },
+    {
+      "run": "fullenglish",
+      "native_log": "fullenglish.txt",
+      "assertions": 6,
+      "failures": 0,
+      "completed_suites": [
+        "full-city"
+      ],
+      "map_loads": [
+        [
+          "MAP06",
+          "Barracas al Sud — fortified port"
+        ]
+      ]
+    },
+    {
+      "run": "rollback",
+      "native_log": "rollback.txt",
+      "assertions": 0,
+      "failures": 0,
+      "completed_suites": [],
+      "map_loads": [
+        [
+          "MAP06",
+          "Barracas al Sud — puerto fortificado"
+        ],
+        [
+          "MAP06",
+          "Barracas al Sud — puerto fortificado"
+        ]
+      ]
+    },
+    {
+      "run": "newpageload",
+      "native_log": "newpageload.txt",
+      "assertions": 5,
+      "failures": 0,
+      "completed_suites": [
+        "persistence"
+      ],
+      "map_loads": [
+        [
+          "MAP06",
+          "Barracas al Sud — puerto fortificado"
+        ],
+        [
+          "MAP06",
+          "Barracas al Sud — puerto fortificado"
+        ]
+      ]
+    }
+  ],
+  "native_assertions_executed": 108,
+  "native_failures": 0,
+  "visual_checks": [
+    "All four existing native payment branches show the briefing only after actual grant; repeat branch has no grant choice.",
+    "All four payment voice bits progress once (finalmenus: delivered 543 -> 575 -> 639 -> 767 -> 1023).",
+    "Spanish upcoming/unconfirmed and active/completed text fits the existing native conversation panel.",
+    "English active/completed text and Journal detail render without unresolved placeholders.",
+    "Real current MAP06 deploys its complete roster; calendar event dates appear in the briefing.",
+    "Victory during an open paid conversation updates its text before closing, retaining the pending payment voice.",
+    "A baseline paid-page save resumes at the same page with the new information; original save remains usable for rollback.",
+    "Current saved page reloads without repeating currency, reputation or narration."
+  ],
+  "capture_files": [
+    "unpaid_es.png",
+    "paid_es.png",
+    "rufino_es.png",
+    "santos_es.png",
+    "leandro_es.png",
+    "selene_es.png",
+    "repeat_es.png",
+    "active_es.png",
+    "complete_es.png",
+    "active_en.png",
+    "complete_en.png",
+    "journal_en.png",
+    "oldpaidpage_upgraded.png",
+    "currentpaidpage.png"
+  ],
+  "runtime_sha256": {
+    "src/CAPALOMO": "278356ee93ba1df465fe0fc5c28c6763495ccc7a594f3d5cb7a9dafb4adf3a25",
+    "src/LANGUAGE": "dcb7af8624d1720d639f1905d294c1806bd0cd6007e08774c41c995e98095e18",
+    "src/caelum/dialogue/CaelumPalomoDialogue.zs": "d0c010a7dace90600bc98b010b53b5c1fbbcef3b42ec506cd6b13107f0ddc250",
+    "src/caelum/dialogue/CaelumPrisonerRescue.zs": "afbf8b86453a10a552c73aa3555022a898268bf70cb21dcc25805ff0e38469ef",
+    "src/caelum/hud/CaelumJournalOverlay.zs": "797991c129a87055118b1d160bb5f0fcfaac1aedf64bf4a7a8c6693e39e42748",
+    "src/caelum/quests/CaelumDemoNarrative.zs": "eeded60aa0399f78d53ca2c364a3e9cc724553af26cd40d5755ed22ca83adf88",
+    "src/caelum/world/CaelumPhysicalHazards.zs": "da7243fc26bb9582d6f43a166b1e96091d25e0a31a9cf2fdaac7047f6a6861f8",
+    "src/caelum/world/CaelumSewerMaze.zs": "27ab131433fe02fb649e7dc06d07f9273519c4ee4a70230e4a556ff76d828b04"
+  },
+  "tested_final_package_sha256": "a8d0d11d1a4b9b9d47a459ab7408710f7f98bbb9c7e12ebe28de9574a74cf592",
+  "package_matches_changed_runtime_files": true,
+  "scope_limits": [
+    "Isolated reward/victory/save fixtures override MAP06 with the preserved pre-siege layout and do not prove a full campaign playthrough.",
+    "Full-city tests use actual current MAP06 deployment/calendar and native payment menus, then inject completed objective flags to exercise native victory presentation. They are not a normal 6000-enemy battle victory or a performance benchmark.",
+    "No new future date/hour exists in current siege data; new scheduling decisions remain PENDING.",
+    "Native UI driver uses the installed engine ConversationMenu.MenuEvent path after inspection of gzdoom.pk3:zscript/ui/menu/conversationmenu.zs. User-desktop input interference was avoided by using isolated engine UI events and native captures.",
+    "Initial fixture iterations exposed harness-only timing, scope and startup issues; final logs listed here pass. A missing USDF userstring binding found by the initial rendered test was corrected before final validation."
+  ],
+  "author_acceptance": {
+    "status": "pending",
+    "tests": [
+      "CA-43710-BRIEFING-01",
+      "CA-43710-BRIEFING-02"
+    ]
+  },
+  "reproduction": {
+    "normal_validation": "python validate_project.py",
+    "normal_build": "powershell.exe -NoProfile -ExecutionPolicy Bypass -File build_dev.ps1",
+    "native_harness_local": "build/run_issue78.ps1 with per-run issue78_*.cfg and issue78_qa/issue78_fullqa/issue78_oldqa; isolated fixtures and saves are deliberately not distributed",
+    "author_steps": "../../pending_test.txt"
+  },
+  "normal_validation": {
+    "exit_code": 0,
+    "errors": [],
+    "report": "VALIDATOR.json"
+  },
+  "normal_build": {
+    "exit_code": 0,
+    "files": 6141,
+    "map_layout": "Current MAP02 and expanded southern MAP06"
+  }
+}

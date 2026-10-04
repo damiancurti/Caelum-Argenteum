@@ -15,3 +15,7 @@
 /assets/validation_4379/*.log text eol=lf whitespace=-blank-at-eol
 /assets/validation_4379/south/*.json text eol=lf
 /assets/validation_4379/south/*.log text eol=lf whitespace=-blank-at-eol
+
+# Preserve #78 native evidence and validator records across Windows checkouts.
+/assets/validation_43710/*.json text eol=lf
+/assets/validation_43710/*.txt text eol=lf whitespace=-blank-at-eol

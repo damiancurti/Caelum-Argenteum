@@ -211,6 +211,12 @@ clear only on a new attempt. Older saves cannot supply damage history they never
 recorded. Validate both state/queue logic and rendered native menu closures;
 directly invoking an action does not exercise the complete presentation path.
 
+#78 reuses existing USDF pages with `userstring` presentation tags, preserving
+global saved node indexes. `CaelumSiegeIntelligence` formats the same quest and
+calendar information for dialogue and Journal without writing state in UI scope.
+Its native checks include an old save made with the paid conversation open and
+an active conversation changing to completed text; see validation_43710.
+
 ## ZScript and engine investigation discipline
 
 - Prefer the project's working patterns and the target engine's supported API. Similarity to C++, C# or another scripting language is not evidence that a method, field or overload exists in ZScript.

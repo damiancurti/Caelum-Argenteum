@@ -100,6 +100,7 @@ class CaelumDemoNarrative : Object play
         let record = user.GetPersistentCharacterState(false);
         if (record == null) return;
         EnsureRevision(record);
+        CaelumSiegeIntelligence.ObservePayment(user);
         let encounter = PortEncounter();
         if (encounter != null)
         {

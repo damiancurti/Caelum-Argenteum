@@ -1,0 +1,26 @@
+CA-43710-BRIEFING-01 — Post-payment intelligence and narrative review
+Origin: 4.37.10 / issue #78. Status: pending author acceptance.
+Prerequisites: current build; an extracted survivor in MAP06; room for 25 gold.
+Steps:
+1. Speak before accepting payment. Close/reopen, then accept the reward.
+2. Read the post-payment text; close it and read the following Unknown Voice line.
+3. Check the paid rescue and port siege entries in TAB > Quests. Repeat with the
+   other rescued survivors, and compare English and Spanish if reviewing both.
+Expected: no briefing before payment; one 25-gold/+10-own-faction grant per rescued
+prisoner; readable location, observed timing and commander plus twelve-machine
+objectives afterward; Selene waits until the prisoner closes. No confession of
+Selene service/implanted souls, restored memories or claim that Zupay died here.
+
+CA-43710-BRIEFING-02 — Repeat access, siege outcome and saved campaign
+Origin: 4.37.10 / issue #78. Status: pending author acceptance.
+Prerequisites: copy of a campaign save with one or more rescued/paid prisoners;
+use the matching legacy map option if that save visited an older layout.
+Steps:
+1. Save with a paid prisoner conversation open; reload and reread the information.
+2. Leave/return through an available hub route, then speak to the survivor again.
+3. After completing the siege's two objectives, revisit the dialogue and Journal.
+   A zero-rescue campaign should still receive normal encounter/Journal guidance.
+Expected: payments/reputation and pending/consumed voices are not duplicated or
+lost; current information stays accessible. Completed assault text is past tense;
+both objectives remain required. Before any encounter, the date/hour is explicitly
+unconfirmed; no new countdown or attack schedule is implied.

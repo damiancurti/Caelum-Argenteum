@@ -1,6 +1,21 @@
 # TASKS.md — Active tasks
 
-Documentation version: **4.37.9** — 2026-10-03.
+Documentation version: **4.37.10** — 2026-10-04.
+
+## Issue #78 — Prisoner siege intelligence (4.37.10)
+
+- Implemented: successful payment gates every prisoner briefing; repeat access,
+  paid-rescue Journal details and the port quest use common bilingual information.
+- Preserved: 25 gold/+10 own-faction rewards, Selene's event queue, page indexes,
+  existing save schemas, current siege trigger and both victory requirements.
+- Canon: concealed Selene service and anti-demon motive; implanted souls and
+  bodily identity; amnesia and Limbo denial; Zupay retreats now, death in Chapter II.
+- Evidence: `assets/validation_43710/RESULTS.json`; author checks remain pending as
+  CA-43710-BRIEFING-01 and CA-43710-BRIEFING-02 in the root queue.
+- PENDING author design: a future siege date/hour or scheduling change. Current
+  data only records actual entry/deployment and victory; no deadline was invented.
+- Next: author text/playthrough acceptance; #79 supplies captain recognition;
+  #86 owns full-city performance. Neither is claimed implemented by this patch.
 
 ## Issue #77 — Expanded southern Barracas al Sud (4.37.9)
 

@@ -1,6 +1,41 @@
 CAELUM ARGENTEUM — STORY AND MAP01
 
-Documentation version: **4.37.9** — 2026-10-03.
+Documentation version: **4.37.10** — 2026-10-04.
+
+## 4.37.10 — Post-payment siege briefing and concealed allegiance (#78)
+
+Author decision, 2026-10-02: the rescued prisoners serve Selene and intend to
+sabotage the demonic plan. Their Earth bodies correspond to the mansion residents;
+the souls inhabiting those bodies were implanted by Selene, while the residents'
+authentic souls remain in Limbo. Prisoner/resident identities are therefore
+distinct, but their bodily resemblance is not unrelated visual reuse. Their
+denial of meeting the protagonist in Limbo and the protagonist's amnesia remain.
+The source/faction/name mapping and Leandro's previously recorded temptation
+remain; no new confession, confirmed Cult membership or recovered memory is added.
+
+This is writer-facing motivation. The port dialogue reveals siege intelligence
+only after the prisoner's real rescue reward has been delivered. It does not
+name Selene, explain the implanted souls, redeem Selene or redefine the origin of
+the demonic conflict. The precise identity-revelation moment is still unassigned.
+This specifically supersedes #34's restriction against expanding this agenda;
+it does not change the mansion dialogue or its knowledge boundaries.
+
+All four existing paid branches and the existing Journal identify Barracas al Sud,
+the actual siege state and the need to stop the commanding Zupay **and** neutralize
+the twelve hostile machines. Active/completed dates use the real port calendar
+events. **PENDING:** no future date/hour has been authored. Before the encounter,
+the speaker says that timing is unconfirmed; the current entry/deployment trigger
+is unchanged. After victory the wording is retrospective, including delayed voice
+interventions. Rescue, arrival and actual payment remain separate prerequisites;
+zero survivors retain the encounter's fallback guidance and campaign completion.
+
+The Zupay survives/retreats in the accepted Chapter I encounters; his later death
+belongs to Chapter II. Stopping the commander is not a new death scene and cannot
+replace the machine objective. The former active phrase "commander has fallen" /
+"comandante cayó" is replaced with "has been stopped" / "fue detenido". Original
+release evidence remains in HISTORY. The independent guard-recognition/amnesiac
+captain work belongs to #79; this briefing neither requires it nor supplies those
+conversations, a class restriction, ranks or restored memories.
 
 ## 4.37.9 — Expanded Barracas al Sud campaign layout (#77)
 
@@ -379,8 +414,9 @@ and Leandro's questions. Release comments stress keeping companions alive;
 payment comments acknowledge only benefits actually delivered at the port.
 The sewer boss line is deliberately valid for death and escape: "The Zupay no
 longer bars the way. Breathe. You do not have to remember how you reached these
-sewers to choose how to leave them." No recovered memory, betrayal, new agenda
-or explanation of the voice's identity is introduced.
+sewers to choose how to leave them." No recovered memory, betrayal or explanation
+of the voice's identity is introduced. #78 later authorizes the concealed Selene-service/anti-demon agenda
+for the prisoners, without an immediate player-facing confession.
 
 For #16's real port encounter, the brief voice introduction names both objectives:
 neutralize the twelve attacking machines and defeat the distinct Zupay commander.
@@ -502,9 +538,10 @@ label is now the Free Peoples faction.
 
 ## 4.36.7 — Prisoner identities and shared ambush history (#13)
 
-The four MAP02 prisoners are distinct characters from the MAP01 mansion
-residents, despite reusing their visuals and combat profiles. The author
-defines them as army leaders who accompanied the protagonist when the
+The four MAP02 prisoners have distinct souls/identities from the MAP01 mansion
+residents, while occupying their Earth bodies under #78's authorial truth.
+Their visuals and combat profiles are reused; the player is not told that truth
+at the port. The author defines them as army leaders who accompanied the protagonist when the
 protagonist was ambushed and died. Their common presence is confirmed; the
 gathering was a diplomatic meeting to negotiate peace, organized by Leandro
 Farías. Negotiations do not establish that peace was signed or that the
@@ -2137,6 +2174,15 @@ Rulo, Ronnie, Argento and Caella also died. Palomo tested them, but none managed
 integrate the four branches and find their way out. Their authentic souls remain in the
 mansion of Limbo.
 
+Current #78 authorial truth: Selene implanted souls in their Earth bodies.
+Those prisoners serve her and seek to sabotage the demonic plan; their identities
+remain concealed from the protagonist. The authentic residents remain in Limbo.
+
+The earlier body/soul wording is retained below for provenance; #78's implanted
+souls and allegiance take precedence for the prisoners' current characterization.
+The later boss/reintegration plan remains outside this patch and is not cancelled
+or implemented by it. No immediate reveal or new encounter is authorized here:
+
 Selene received or recovered their bodies on Earth and animated them with corrupted
 versions or fragments of their souls. During the first chapter, she will guide the player
 toward those bodies. The four corrupted versions will be the first bosses of the
@@ -2210,9 +2256,12 @@ PROLOGUE — MAP01 — EL LOCO
 CHAPTER I — TIER 1 — SEVEN MAJOR ARCANA
 
 - Part one of the land campaign.
-- Selene guides the player to Rulo, Ronnie, Argento and Caella corrupted.
-- The four are the first bosses.
-- The Box frees their bodies and allows their true souls to be reintegrated.
+- Current #78: Selene guides toward the Earth bodies inhabited by her implanted
+  souls, serving her against the demonic plan; the port briefing keeps that hidden.
+- Existing later-campaign plan, outside #78: Selene guides the player to Rulo,
+  Ronnie, Argento and Caella corrupted; the four are the first bosses; the Box
+  frees their bodies and allows their true souls to be reintegrated. This patch
+  neither cancels nor implements that plan or sets its revelation timing.
 - Three additional Major Arcana complete the seven of the chapter.
 - The player discovers the factions, the Caelith invasion and the first evidence of the
   infiltration of the Cult.
@@ -2326,9 +2375,10 @@ what he already mastered. Rulo defeated the Bull. Ronnie learned to survive the 
 roads. Argento understood the wills of others. Caella found what the house was hiding.
 None got out.
 
-While their souls remained in the mansion, Selene reached their bodies. She set them
-in motion again with corrupted fragments and turned them into instruments that the
-protagonist would find later.
+While their authentic souls remained in the mansion, Selene reached their bodies
+and animated them with implanted souls. As the rescued prisoners, those souls
+serve her and oppose the demonic plan. Their port intelligence does not reveal
+this hidden identity to the amnesiac protagonist (#78).
 
 The protagonist had also tried to escape the war. An ambush ended his life and his body
 was thrown into the sewers. The perpetrators took his belongings. His memory preserved the

@@ -1,0 +1,56 @@
+{
+  "issue": 78,
+  "version": "4.37.10",
+  "baseline": "f8002810",
+  "checks": [
+    {
+      "check": "All conversation IDs and global page/dialogue order match the accepted baseline",
+      "passed": true
+    },
+    {
+      "check": "No native dialogue page was added or removed",
+      "passed": true
+    },
+    {
+      "check": "unitario: both paid-entry routes retain the existing claimed-token gate",
+      "passed": true
+    },
+    {
+      "check": "federal: both paid-entry routes retain the existing claimed-token gate",
+      "passed": true
+    },
+    {
+      "check": "bestia: both paid-entry routes retain the existing claimed-token gate",
+      "passed": true
+    },
+    {
+      "check": "tarot: both paid-entry routes retain the existing claimed-token gate",
+      "passed": true
+    },
+    {
+      "check": "Six shared presentation keys, without a new schedule or deadline",
+      "passed": true
+    },
+    {
+      "check": "Every briefing key has English and Spanish text",
+      "passed": true
+    },
+    {
+      "check": "All three states use the canonical location placeholder in both languages",
+      "passed": true
+    },
+    {
+      "check": "Active victory prose no longer implies commander death",
+      "passed": true
+    },
+    {
+      "check": "Runtime map geometry is unchanged",
+      "passed": true
+    },
+    {
+      "check": "Persistent schema and registered runtime handlers are unchanged",
+      "passed": true
+    }
+  ],
+  "passed": true
+}
