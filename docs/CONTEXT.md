@@ -2,15 +2,8 @@
 
 Documentation version: **4.37.14** — 2026-10-04.
 
-**#97 / 4.37.14:** Palomo grants the deck on first upstairs conversation, before
-equipment/Box. Capacity retries; no duplicates. validation_43714; pending.
-
-**#93 / 4.37.13a:** crafting help shows Y skip/T acceleration (EN/ES).
-validation_43713a; pending.
-
-**#81 / 4.37.13:** Argento's paused MAP01 Trucazo: 56 Minors, traditional calls,
-Patience health, Type 1 damage. No Majors/Magic Senses/wagers. Abandoning loses;
-matches persist. validation_43713; accepted 2026-10-04.
+**Accepted 2026-10-04:** #93, #97; all author checks passed.
+Evidence: assets/validation_*. #81 accepted/merged.
 
 **Accepted #80 / 4.37.12 (2026-10-04):** three essences; User3 costs 1000 Anima,
 lasts 60 s, recharges 600 s from use. Fool flies; Minors double fixed bonuses.

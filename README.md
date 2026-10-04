@@ -11,7 +11,7 @@ Issue [#97](https://github.com/damiancurti/Caelum-Argenteum/issues/97) moves
 Palomo's Tarot deck to the **first conversation upstairs after following him**.
 It arrives when the dialogue opens, before choosing equipment or receiving the
 Magic Box. If it cannot fit, make room and speak again; repeats grant no copy.
-See [4.37.14 evidence](assets/validation_43714/RESULTS.json). Author check pending.
+See [4.37.14 evidence](assets/validation_43714/RESULTS.json). Author check passed 2026-10-04.
 
 Issue [#93](https://github.com/damiancurti/Caelum-Argenteum/issues/93) makes
 **Y: time skip** visible beside **T: speed up** in the crafting footer and

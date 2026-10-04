@@ -4,6 +4,12 @@ Documentation version: **4.37.14** — 2026-10-04.
 
 ## 4.37.14 - Give the deck at Palomo's first upstairs conversation (#97)
 
+Author acceptance of #97, 2026-10-04: all tests PASSED, without reported
+qualifications. CA-43714-DECK-01 originated in
+4.37.14 / #97. The author explicitly confirmed all tests correct
+and authorized issue closure and merge. The confirmed entries are removed
+from pending_test.txt. Runtime and version are unchanged.
+
 Author decision, 2026-10-04: Palomo must give the deck immediately when spoken
 to on the mansion's last floor after following him. The previous #80 delivery
 waited for accepting the Box after the resident trials. The successful native

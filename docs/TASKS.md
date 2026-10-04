@@ -8,8 +8,8 @@ Documentation version: **4.37.14** — 2026-10-04.
   Palomo upstairs, before choosing equipment or receiving the later Box.
 - Reuse the existing grant record/capacity guards; preserve repeated dialogue,
   saves, essences, route and USDF page indexes. Explain the new timing in EN/ES.
-- Evidence: assets/validation_43714. Next: author CA-43714-DECK-01.
-- Focused PR follows #95; #81 is accepted/merged, #93 still pending.
+- Evidence: assets/validation_43714. Author checks passed 2026-10-04; closure/merge authorized.
+- Focused PR follows #95; #81 is accepted/merged, #93 is author-accepted.
 
 ## Issue #93 - Crafting time help (4.37.13a)
 
