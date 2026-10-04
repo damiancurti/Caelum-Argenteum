@@ -84,12 +84,14 @@ class CaelumMainM00PalomoFinal : Object play
         {
             user.SyncLiveMagicBoxOwnershipFromPersistentState();
             user.SyncPalomoDialogueTokens();
-            return record.MagicBoxOwned && CaelumMagicBox.EnsureOwned(user) != null;
+            return record.MagicBoxOwned && CaelumMagicBox.EnsureOwned(user) != null
+                && CaelumTarotDeckRules.Grant(user);
         }
         if (!record.CanReceiveMainM00MagicBox()) return false;
         // Una Caja heredada de pruebas conserva identidad, contenido y peso.
         user.GrantMagicBoxFromPalomo(false);
         if (!user.MagicBoxOwned || CaelumMagicBox.EnsureOwned(user) == null
+            || !CaelumTarotDeckRules.Grant(user)
             || !record.RecordMainM00MagicBoxGranted()) return false;
         user.SyncPalomoDialogueTokens();
         user.RefreshSocialJournalSnapshot();

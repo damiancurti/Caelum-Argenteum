@@ -148,6 +148,7 @@ class CaelumMainM00Return : Object play
                 if (CaelumMainM00Loadout.IsBorrowed(equipment)) equipment.Destroy();
                 else equipment.ItemFlags &= ~CaelumConstants.CA_ITEMFLAG_LIMBO_TEMP;
             }
+            else if (cursor is "CaelumTarotDeck") { } // El mazo físico también cruza.
             else if (cursor is "CaelumSpecialInventoryItem" || cursor is "CaelumConsumableItem"
                 || cursor is "Ammo" || cursor is "Key") cursor.Destroy();
             cursor = next;

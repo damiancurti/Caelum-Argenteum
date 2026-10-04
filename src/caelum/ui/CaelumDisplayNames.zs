@@ -110,6 +110,7 @@ class CaelumDisplayNames : Object
         }
         if (specialCategory == CaelumConstants.EQUIPMENT_KIND_KEY_ITEM)
         {
+            if (specialType == CaelumConstants.KEY_ITEM_TAROT_DECK) return "CA_TAROT_DECK_NAME";
             if (specialType == CaelumConstants.KEY_ITEM_SLEEPING_BAG) return "CA_SLEEPING_BAG_NAME";
             return specialType == CaelumConstants.KEY_ITEM_PROCESSING_MANUAL
                 ? "CA_KEY_ITEM_PROCESSING_MANUAL"

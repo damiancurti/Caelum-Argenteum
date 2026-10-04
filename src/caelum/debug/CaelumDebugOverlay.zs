@@ -456,6 +456,7 @@ class CaelumDebugOverlay : EventHandler
         }
         if (specialCategory == CaelumConstants.EQUIPMENT_KIND_KEY_ITEM)
         {
+            if (specialType == CaelumConstants.KEY_ITEM_TAROT_DECK) return "CA_TAROT_DECK_NAME";
             if (specialType == CaelumConstants.KEY_ITEM_SLEEPING_BAG) return "CA_SLEEPING_BAG_NAME";
             if (specialType == CaelumConstants.KEY_ITEM_PROCESSING_MANUAL)
             {
@@ -649,6 +650,8 @@ class CaelumDebugOverlay : EventHandler
                 return "CA_EQUIPMENT_ACTION_DROPPED";
             case CaelumConstants.EQUIPMENT_ACTION_FAILED_SIZE:
                 return "CA_EQUIPMENT_ACTION_FAILED_SIZE";
+            case CaelumConstants.EQUIPMENT_ACTION_FAILED_PROTECTED:
+                return "CA_TAROT_DECK_PROTECTED";
             case CaelumConstants.EQUIPMENT_ACTION_FAILED_BOX_FULL:
                 return "CA_EQUIPMENT_ACTION_FAILED_BOX_FULL";
             case CaelumConstants.EQUIPMENT_ACTION_CREATED_IN_MAGIC_BOX:
@@ -1286,6 +1289,8 @@ class CaelumDebugOverlay : EventHandler
             return "graphics/caelum/icons/ca_key.png";
         if (localPlayer.EquipmentSelectionKind == CaelumConstants.EQUIPMENT_KIND_KEY_ITEM)
         {
+            if (localPlayer.EquipmentSelectionSpecialType == CaelumConstants.KEY_ITEM_TAROT_DECK)
+                return CaelumTarotArt.BackPath();
             if (localPlayer.EquipmentSelectionSpecialType == CaelumConstants.KEY_ITEM_SLEEPING_BAG)
                 return "graphics/caelum/icons/ca_sleeping_bag.png";
             return localPlayer.EquipmentSelectionSpecialType

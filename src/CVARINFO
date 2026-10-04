@@ -82,6 +82,7 @@ user bool ca_journal_quest_abandon_held = false;
 user int ca_journal_quest_abandon_scan = -1;
 user int ca_journal_tarot_selected = -1;
 user int ca_journal_tarot_preview = -1;
+user bool ca_journal_tarot_select_held = false;
 
 // Calendario mensual; selección local, fechas autoritativas en el inventario.
 user int ca_calendar_open = 0;

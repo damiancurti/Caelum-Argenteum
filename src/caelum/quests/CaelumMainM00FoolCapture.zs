@@ -95,6 +95,7 @@ class CaelumMainM00FoolCapture : Object play
             || essence.CaptureUser != null || !HasOwnedBox(user)) return false;
         let record = user.GetPersistentCharacterState(false);
         if (record == null || !essence.IsAvailable(user) || !essence.IsRevealedFor(record)) return false;
+        if (!CaelumTarotDeckRules.InOwnedBox(user, true)) return false;
         let image = CaelumM00FoolCaptureImage(Actor.Spawn("CaelumM00FoolCaptureImage", essence.Pos, NO_REPLACE));
         if (image == null) return false;
         essence.CaptureUser = user;
@@ -115,6 +116,7 @@ class CaelumMainM00FoolCapture : Object play
             || essence.CaptureImage == null || !HasOwnedBox(user)) return false;
         let record = user.GetPersistentCharacterState(false);
         if (record == null || record.MagicBoxItemId != essence.CaptureBoxId
+            || !CaelumTarotDeckRules.InOwnedBox(user, true)
             || !essence.RecordCapture(record)) return false;
         user.ApplyCharacterProfile();
         user.RefreshSocialJournalSnapshot();

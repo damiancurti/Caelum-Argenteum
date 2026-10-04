@@ -815,6 +815,45 @@ class CaelumHUDOverlay : EventHandler
         }
     }
 
+    // El Tarot comparte la columna lateral del Sello. Ambos contadores leen
+    // el registro guardado; dibujar nunca inicia ni modifica un poder.
+    ui void DrawTarotIndicator(CaelumPlayer localPlayer)
+    {
+        let record = CaelumPersistentCharacterState(localPlayer.FindInventory("CaelumPersistentCharacterState"));
+        if (record == null) return;
+        bool selected = false;
+        for (int card = 0; card < CaelumConstants.TAROT_CARD_COUNT; card++)
+            selected = selected || record.TarotSelected[card];
+        bool active = record.TarotEffectTics > 0;
+        if (!selected && !active && record.TarotCooldownTics <= 0) return;
+        bool available = active || (selected && record.TarotCooldownTics <= 0
+            && localPlayer.CurrentAnima >= CaelumConstants.TAROT_ACTIVATION_ANIMA);
+        let icon = TexMan.CheckForTexture("graphics/caelum/icons/ca_tarot_back.png", TexMan.Type_Any);
+        if (!icon.IsValid()) return;
+        Screen.DrawTexture(icon, false, 586.0, 52.0,
+            DTA_DESTWIDTHF, 32.0, DTA_DESTHEIGHTF, 48.0,
+            DTA_LEFTOFFSETF, 0.0, DTA_TOPOFFSETF, 0.0,
+            DTA_DESATURATE, available ? 0 : 255,
+            DTA_VIRTUALWIDTHF, 640.0, DTA_VIRTUALHEIGHTF, 360.0,
+            DTA_KEEPRATIO, true);
+        if (active)
+        {
+            String duration = String.Format(StringTable.Localize("CA_TAROT_HUD_DURATION", false),
+                (record.TarotEffectTics + TICRATE - 1) / TICRATE);
+            Screen.DrawText(HUDFont, Font.CR_CYAN, 624.0 - HUDFont.StringWidth(duration), 102.0, duration,
+                DTA_VIRTUALWIDTHF, 640.0, DTA_VIRTUALHEIGHTF, 360.0,
+                DTA_KEEPRATIO, true, DTA_SHADOW, true);
+        }
+        if (record.TarotCooldownTics > 0)
+        {
+            String cooldown = String.Format(StringTable.Localize("CA_TAROT_HUD_COOLDOWN", false),
+                (record.TarotCooldownTics + TICRATE - 1) / TICRATE);
+            Screen.DrawText(HUDFont, Font.CR_WHITE, 624.0 - HUDFont.StringWidth(cooldown), 116.0, cooldown,
+                DTA_VIRTUALWIDTHF, 640.0, DTA_VIRTUALHEIGHTF, 360.0,
+                DTA_KEEPRATIO, true, DTA_SHADOW, true);
+        }
+    }
+
     // RenderOverlay draws only client-side information and never changes the
     // gameplay resource. A 640x360 virtual canvas keeps the placement stable
     // on Damian's 1920x1080 display and other aspect ratios.
@@ -987,6 +1026,7 @@ class CaelumHUDOverlay : EventHandler
         DrawFirstPersonBlockShield(localPlayer);
 
         DrawSealIndicator(localPlayer);
+        DrawTarotIndicator(localPlayer);
 
         if (localPlayer.HUDAbilitySuccessRemaining > 0.0)
         {

@@ -1,6 +1,6 @@
 # Caelum Argenteum — Current systems and rules
 
-Documentation version: **4.37.11** — 2026-10-04.
+Documentation version: **4.37.12** — 2026-10-04.
 
 ## 4.37.11 — Guard recognition as a persistent Journal clue (#79)
 
@@ -4275,12 +4275,71 @@ state; the cooperative variant needs joint design.
 
 ## Tarot: collection and capture of El Loco (4.33.0t)
 
+### Issue #80 approved power contract — author decision, 2026-10-04
+
+Implemented in 4.37.12; both author playtests passed on 2026-10-04. The author
+defines a shared activation of up to three selected, captured essences: **1000
+Anima total**, **60 seconds** of effect and **600 seconds** of cooldown.
+The Fool's flight is additional to its existing authored world transition.
+
+| Contract | The Fool (0) | Ace of Cups (36) | Knight of Wands (60) |
+| --- | --- | --- | --- |
+| Existing passive | +2% collection | +1 each to Charisma, Empathy and Eloquence; +1% collection | +0.6 Strength; +1% collection |
+| Approved active effect | Flight | Double this card's fixed contribution to +2 each | Double this card's fixed contribution to +1.2 Strength |
+| Target/context | Self; ordinary live-player ability context | Self; ordinary live-player ability context | Self; ordinary live-player ability context |
+| Payment | Shared 1000 Anima for the selected set, once | Same activation | Same activation |
+| Duration | 60 seconds | 60 seconds | 60 seconds |
+| Cooldown | Shared 600 seconds from activation | Same activation | Same activation |
+| Cancellation/refund | No manual cancellation or Anima refund | Same activation | Same activation |
+| Feedback | Selected/active/unavailable, remaining time and flight controls | Selected/active/unavailable and actual bonus | Selected/active/unavailable and actual bonus |
+| Persistence | Selected set, activated set and remaining timers survive save/load/travel | Same; derive bonuses without accumulation | Same; derive bonuses without accumulation |
+
+Changing a selection must never grant an essence or replay acquisition rewards.
+Physical-deck possession is distinct from captured-essence ownership. Palomo's
+once-only complete deck and capture-commit requirement come from #80; its
+weight is 780 grams and it occupies one slot. The author's final clarification
+makes it unsellable, undroppable and unbreakable. Essences stay with the
+character. No deck-in-Box requirement gates power activation.
+The existing MAP01 return-door confirmation, quest/Box checks, 18-tic fade,
+inventory preservation and one-way MAP02 transition remain authoritative.
+
+Enter/A toggles cards in the Journal, up to three. User3 activates the complete
+selection once. A held input cannot pay again; empty selection, unowned or
+unsupported cards, invalid activities, insufficient Anima and cooldown reject
+without payment. Selection changes affect the next activation. All 56 Minors
+reuse the existing suit/rank contribution; other Major powers remain unavailable.
+This patch adds no new acquisition content beyond the existing campaign.
+
+The persistent record owns revisioned selection and activated-card arrays plus
+remaining effect/cooldown tics. Personal time advances them, including existing
+rest/travel simulation. Loading or map entry never resets them. Flight uses
+native PowerFlight with the saved timer as authority, including infinite-flight
+maps. Fly/swim up/down are exposed in Controls. Expiry removes flight and only
+the temporary Minor contribution, without healing or Anima refund.
+The HUD shows remaining effect duration in cyan and shared cooldown in white,
+with the Tarot icon above the existing side Seal indicator. The Journal also
+shows both timers. The author's follow-up explicitly requests this HUD feedback.
+Planned journeys retain the existing temporary-effect restriction for every
+active Tarot set; after effects end, journey application advances the remaining
+cooldown by its simulated duration, just as it does for Seals and class abilities.
+
+The native physical deck grants no TarotOwned flags. Standard C storage and
+capacity rules apply to its one slot and 0.780 kg. Failed delivery can be retried
+after reorganizing inventory. Capture revalidates Box identity and deck location
+at commit, preserving boss/quest availability on failure. Legacy Box-handoff or
+earned-essence evidence enables one deck recovery; capacity failure retries.
+Power revision 1 starts unselected; deck revision 1 never grants missing
+essences. Preserve the original save/package for rollback. No map is rewritten.
+
+
+### Existing collection rules
+
 Rule in force since 0aa: each Minor exclusively contributes a base passive, in addition
 to its +1% per collection. Major: +2% per card. The 22 Major and 56 Minor add up +100%
 collection, in an additive way, before Type 1/2/4. Do not round the level or alter
-creation points. Combat awards no XP. Active powers and Trucazos are still pending.
-4.36.0i obtains El Loco and Ace (1) of Cups. The other 76 cards require their
-missions/rewards.
+creation points. Combat awards no XP. The active rule above supersedes the reservation hook; Trucazo remains #81.
+The campaign obtains The Fool, Ace of Cups and Knight of Wands. The other 75
+essences still require their acquisition content.
 
 | Suit | Family | First / second / third attribute |
 | --- | --- | --- |
@@ -4300,7 +4359,8 @@ missions/rewards.
 | King | +0,5 at all three |
 | Ace | +1 at all three |
 
-Each full suit gives +3 to its three attributes. Order: creation + minor passive +
+Each full suit gives +3 passive to its three attributes. While a Minor power is
+active, its fixed contribution is added once more before collection multiplication. Order: creation + minor passive +
 equipment, then multiplication by (1 + collection percentage/100). Armorless example: 20
 creation +18 amulet T3 +9 seal T3 +3 minor =50; with 78 cards it turns out 100 in the
 attributes that receive those bonuses. It is not a cap imposed on the attribute nor are
@@ -4369,8 +4429,8 @@ EnsureOwned recovers the instance if missing and assigns identity to the old pro
 without duplicating contents. Use the existing ID counter and protect the Box identity
 against imported equipment with the same number. It does not advance a mission for
 possessing an inherited Box: it is necessary to accept to Palomo. The Box travels with
-Inventory. 0t adds the capture of El Loco and the attribute bonus described above;
-return between worlds and powers remain pending.
+Inventory. 0t added El Loco capture and its attribute bonus. The later mansion
+departure and #80 powers are implemented; the current contract appears above.
 
 In Inventory, C saves/withdraws the selected object. Slots/load limits and restrictions
 are retained for equipment placed, loans, mission reserves and crafting. Delivery allows
@@ -4913,7 +4973,7 @@ returns its corresponding materials.
 | Zoom | Sweeping with greatsword/war axe/halberd; Block with compatible equipment (including giant gauntlets); ADS for ranged weapons. |
 | User1 | Interface reserved for racial ability; pending content. |
 | User2 | Channel the equipped Seal. |
-| User3 | Tarot interface active; full content pending. |
+| User3 | Activate up to three selected captured essences under the #80 shared contract. |
 | User4 | Class ability interface; pending content. |
 | Use | Native interaction with NPC, stations, doors, lift and El Loco appearance. |
 | Tab | Journal/Inventory; Tarot displays the collection from 0t. |

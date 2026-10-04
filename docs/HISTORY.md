@@ -1,6 +1,58 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **4.37.11** — 2026-10-04.
+Documentation version: **4.37.12** — 2026-10-04.
+
+## 4.37.12 — Campaign Tarot powers and physical deck (#80)
+
+Author acceptance, 2026-10-04: the author explicitly confirmed that all Tarot
+tests passed and then authorized issue #80 closure and PR #92 merge.
+CA-43712-TAROT-01 (4.37.12 / #80, physical deck and capture) and
+CA-43712-TAROT-02 (4.37.12 / #80, powers, HUD timers and persistence) are PASSED,
+without qualifications or reported exceptions. Both entries are removed from
+pending_test.txt in this same update. The patch version and tested runtime
+remain unchanged; agent-only evidence stays distinct from this acceptance.
+
+Implemented 2026-10-04 over accepted main 63f903d3, on focused branch
+issue-80-campaign-tarot. The issue required an author-approved contract before
+power implementation. The author's answers define up to three selected cards,
+one 1000-Anima payment, 60-second effects and a 600-second cooldown from
+activation, without manual cancellation or refund. The Fool grants flight;
+Minor Arcana double only their own fixed attribute contributions. Collection
+percentages and the authored mansion crossing are preserved.
+
+The deck contains 78 physical cards, weighs 780 grams and occupies one slot.
+The author's final answer supersedes initial sale permission: it cannot be sold,
+dropped or broken, so no price was invented. Captured essences remain personal.
+Palomo's native Box dialogue hands over and explains the deck once. Capture
+checks its owned-Box location at start and commit; failure leaves essence and
+earned quest/boss progress intact. Limbo departure preserves the deck.
+
+Power revision 1 initializes empty selection, active set and timers without
+changing TarotOwned. Deck revision 1 recovers one deck for old recorded Box
+delivery or essence ownership, retrying capacity failure without replaying
+rewards. Original saves and the 4.37.11 package are retained locally for rollback;
+no engine, IWAD, save or QA fixture is distributed.
+
+The Journal separates physical cards, captured essences, selection and effects.
+Changing selection affects the next activation. Native input testing exposed a
+missing unarmed User3 callback, now routed through the same service. Flight uses
+native PowerFlight and fly/swim descent, not crouch. Existing art is reused.
+Attribute recalculation derives temporary bonuses once before the unchanged
+collection percentage; it never refills resources. Personal time advances both
+timers, including the established rest/travel simulation.
+The author's follow-up requests HUD countdowns: active duration and cooldown
+appear above the side Seal indicator. Final review also covers planned journeys:
+their existing temporary-effect restriction applies to Minor effects as well as
+native flight, and committed travel advances the remaining shared cooldown.
+
+Validation/build, native GZDoom 4.14.2 evidence and package/source identities
+are recorded in assets/validation_43712/RESULTS.json: normal validator/build,
+nine static checks, 171 current-version native assertions and two baseline/
+rollback assertions pass. Isolated story fixtures
+seed authored prerequisites; they do not claim a full new campaign playthrough
+or full-army performance acceptance. CA-43712-TAROT-01/02 were originally in
+pending_test.txt until explicit author confirmation. #81 and #86 remain separate.
+
 
 ## 4.37.11 — Barracas al Sud recognizes its amnesiac captain (#79)
 

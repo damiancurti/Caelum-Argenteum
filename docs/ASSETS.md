@@ -1,6 +1,6 @@
 # Caelum Argenteum — Audio and art
 
-Documentation version: **4.37.11** — 2026-10-04.
+Documentation version: **4.37.12** — 2026-10-04.
 
 ## 4.37.11 — Existing guard presentation and bilingual recognition (#79)
 

@@ -73,10 +73,16 @@ class CaelumUnarmedWeapon : Weapon
         if(Punching && ++PunchFrame>=22)Punching=false;
     }
 
+    action void A_CaelumTarotInput()
+    {
+        let user = CaelumPlayer(invoker.Owner);
+        if (user != null) user.ReserveTarotInput();
+    }
+
     States
     {
     Ready:
-        TNT1 A 1 A_WeaponReady;
+        TNT1 A 1 A_WeaponReady(WRF_ALLOWUSER3);
         Loop;
     Select:
         TNT1 A 1 A_Raise;
@@ -91,6 +97,10 @@ class CaelumUnarmedWeapon : Weapon
         TNT1 A 5;
         TNT1 A 4;
         TNT1 A 5 A_ReFire;
+        Goto Ready;
+    User3:
+        TNT1 A 0 A_CaelumTarotInput;
+        TNT1 A 1;
         Goto Ready;
     Spawn:
         TNT1 A -1;

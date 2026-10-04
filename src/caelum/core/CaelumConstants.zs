@@ -13,6 +13,12 @@ class CaelumConstants : Object
     // capacidad permite añadir contenido sin desplazar partidas; por ahora el
     // único contenido definido es la misión principal del prólogo de MAP01.
     const TAROT_CARD_COUNT = 78;
+    // #80: decisiones del autor, 2026-10-04; una activación paga por todo el grupo.
+    const TAROT_SELECTED_LIMIT = 3;
+    const TAROT_ACTIVATION_ANIMA = 1000;
+    const TAROT_EFFECT_SECONDS = 60;
+    const TAROT_COOLDOWN_SECONDS = 600;
+    const TAROT_DECK_WEIGHT = 0.780;
     const TAROT_MAJOR_COUNT = 22;
     const TAROT_THE_FOOL = 0;
     const TAROT_MAJOR_ATTRIBUTE_PERCENT = 2;
@@ -625,6 +631,7 @@ class CaelumConstants : Object
     const EQUIPMENT_ACTION_FAILED_MATERIALS = 28;
     const EQUIPMENT_ACTION_FAILED_MAGIC_BOX_UNOWNED = 29;
     const EQUIPMENT_ACTION_FAILED_RECIPE_LOCKED = 30;
+    const EQUIPMENT_ACTION_FAILED_PROTECTED = 31;
 
     // Las estaciones reales reutilizan la transacción de crafteo ya probada.
     // El índice de receta ahora es local a la estación activa.
@@ -1122,7 +1129,8 @@ class CaelumConstants : Object
     const KEY_ITEM_SEALED_LETTER = 0;
     const KEY_ITEM_PROCESSING_MANUAL = 1;
     const KEY_ITEM_SLEEPING_BAG = 2;
-    const KEY_ITEM_TYPE_COUNT = 3;
+    const KEY_ITEM_TAROT_DECK = 3;
+    const KEY_ITEM_TYPE_COUNT = 4;
     const LOCK_CAELUM_SILVER = 200;
     const LOCK_CAELUM_SILVER_STASH = 201;
 
