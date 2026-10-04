@@ -1,6 +1,13 @@
 # Caelum Argenteum — Current systems and rules
 
-Documentation version: **4.37.14** — 2026-10-04.
+Documentation version: **4.37.14a** — 2026-10-04.
+
+## 4.37.14a - Argento dialogue order (#99)
+
+Argento offers Trucazo practice after the available story/service replies
+and before goodbye. This applies to the early, offer, progress and completed
+conversation pages; a page with no other reply still has practice and goodbye.
+No new page, condition, action or match rule is introduced.
 
 ## 4.37.14 - Early physical deck delivery (#97)
 

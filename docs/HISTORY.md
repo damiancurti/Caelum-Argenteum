@@ -1,6 +1,21 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **4.37.14** — 2026-10-04.
+Documentation version: **4.37.14a** — 2026-10-04.
+
+## 4.37.14a - Move Argento practice to the end (#99)
+
+Author acceptance of #99, 2026-10-04: all tests PASSED, without reported
+qualifications. CA-43714A-ARGENTO-01 originated in
+4.37.14a / #99. The author explicitly confirmed all tests correct
+and authorized issue closure and merge. The confirmed entries are removed
+from pending_test.txt. Runtime and version are unchanged.
+
+Author request, 2026-10-04: the practice choice should be among the last
+replies. Moved the same USDF choice block to the end of each of the four
+existing pages. Page order, links, prerequisites, other replies and the
+accepted Trucazo implementation are preserved. Static scope comparison and
+GZDoom 4.14.2 native menu/entry evidence: assets/validation_43714a.
+CA-43714A-ARGENTO-01 awaits author confirmation; previous pending checks remain.
 
 ## 4.37.14 - Give the deck at Palomo's first upstairs conversation (#97)
 

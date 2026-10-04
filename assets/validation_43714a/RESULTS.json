@@ -1,0 +1,40 @@
+{
+  "issue": 99,
+  "release": "4.37.14a",
+  "date": "2026-10-04",
+  "status": "Agent checks passed; author acceptance pending",
+  "base_commit": "bda7d3727091562d923bb8f508ed6c4781da6ad2",
+  "static": {
+    "only_challenge_blocks_moved": true,
+    "all_page_ids_and_other_contents_preserved": true
+  },
+  "native": {
+    "engine": "GZDoom 4.14.2 Windows 11/Vulkan",
+    "last_ordinary_reply_index": 3,
+    "other_ordinary_replies": 3,
+    "normal_use_entry": true,
+    "challenge_opens_match": true,
+    "screenshot_inspected": "1024x768 ES",
+    "exit": 0
+  },
+  "package": {
+    "sha256": "77ad32fc20c24f05ccd6d84a67ba486c3d97e2a382f5fb7ba67149d9d09996da",
+    "files": 6147,
+    "members_match_source": true
+  },
+  "qualifications": [
+    "Fixture seeds completed social trial and deck, then native Use and conversation selection. Initial fixture lacked convinced flags and displayed the progress page with only practice; corrected fixture verifies completed-page ordering.",
+    "Only presentation order changes; accepted match rules are not retested."
+  ],
+  "pending_author_tests": [
+    "CA-43714A-ARGENTO-01"
+  ],
+  "author_acceptance": {
+    "date": "2026-10-04",
+    "result": "PASSED",
+    "test_ids": [
+      "CA-43714A-ARGENTO-01"
+    ],
+    "qualifications": "None reported; author explicitly approved all tests and requested closure/merge."
+  }
+}

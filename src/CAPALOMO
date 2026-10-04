@@ -346,13 +346,13 @@ conversation
         name = "$CA_ARGENTO_NAME";
         dialog = "$CA_DLG_M01_ARGENTO_EARLY";
         goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
-        choice { text = "$CA_TC_CHALLENGE"; giveitem = "CaelumTrucazoChallengeAction"; closedialog = true; }
         ifitem
         {
             item = "CaelumM00SocialReadyToken";
             amount = 1;
         }
         link = "argento_offer";
+        choice { text = "$CA_TC_CHALLENGE"; giveitem = "CaelumTrucazoChallengeAction"; closedialog = true; }
     }
     page
     {
@@ -361,7 +361,6 @@ conversation
         name = "$CA_ARGENTO_NAME";
         dialog = "$CA_DLG_M01_ARGENTO_START";
         goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
-        choice { text = "$CA_TC_CHALLENGE"; giveitem = "CaelumTrucazoChallengeAction"; closedialog = true; }
         ifitem
         {
             item = "CaelumM00ArgentoStartedToken";
@@ -374,6 +373,7 @@ conversation
             nextpage = "argento_residents";
             closedialog = false;
         }
+        choice { text = "$CA_TC_CHALLENGE"; giveitem = "CaelumTrucazoChallengeAction"; closedialog = true; }
     }
     page
     {
@@ -411,7 +411,6 @@ conversation
         name = "$CA_ARGENTO_NAME";
         dialog = "$CA_DLG_M01_ARGENTO_PROGRESS";
         goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
-        choice { text = "$CA_TC_CHALLENGE"; giveitem = "CaelumTrucazoChallengeAction"; closedialog = true; }
         ifitem
         {
             item = "CaelumM00AllConvincedToken";
@@ -454,6 +453,7 @@ conversation
                 amount = 1;
             }
         }
+        choice { text = "$CA_TC_CHALLENGE"; giveitem = "CaelumTrucazoChallengeAction"; closedialog = true; }
     }
     page
     {
@@ -525,7 +525,6 @@ conversation
         name = "$CA_ARGENTO_NAME";
         dialog = "$CA_DLG_M01_ARGENTO_COMPLETE";
         goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
-        choice { text = "$CA_TC_CHALLENGE"; giveitem = "CaelumTrucazoChallengeAction"; closedialog = true; }
         choice
         {
             text = "$CA_DLG_M01_ARGENTO_NEXT";
@@ -534,6 +533,7 @@ conversation
         }
         choice { text = "$CA_DLG_M01_WORKSHOPS_ASK"; nextpage = "argento_workshop"; }
         choice { text = "$CA_M01_KEY_ASK"; nextpage = "argento_key_gate"; closedialog = false; }
+        choice { text = "$CA_TC_CHALLENGE"; giveitem = "CaelumTrucazoChallengeAction"; closedialog = true; }
     }
     page
     {

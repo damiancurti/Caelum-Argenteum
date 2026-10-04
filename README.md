@@ -4,8 +4,13 @@ An independent dark fantasy FPS-RPG inspired by nineteenth-century Argentina.
 Author and game designer: **Damian Curti**. Development target: **GZDoom 4.14.2**
 on Windows 11. The final game is intended to be independent of Doom assets.
 
-**Current release: 4.37.14.** Obtain and update the complete repository, validate
+**Current release: 4.37.14a.** Obtain and update the complete repository, validate
 it, then rebuild with `run_dev.bat` as described below.
+
+Issue [#99](https://github.com/damiancurti/Caelum-Argenteum/issues/99) places
+Argento's Trucazo practice after the ordinary story/service choices, immediately
+before goodbye. Rules and dialogue page identities are unchanged.
+See [4.37.14a evidence](assets/validation_43714a/RESULTS.json); author check passed 2026-10-04.
 
 Issue [#97](https://github.com/damiancurti/Caelum-Argenteum/issues/97) moves
 Palomo's Tarot deck to the **first conversation upstairs after following him**.
