@@ -1,0 +1,92 @@
+{
+  "issue": 101,
+  "release": "4.37.15",
+  "date": "2026-10-04",
+  "status": "Agent checks passed; author acceptance pending",
+  "base_commit": "f041142bb4d71bfabed8c0080571f6bcb6aa620f",
+  "static": {
+    "accepted_practice_sources_unchanged": true,
+    "additive_inventory_revision": 1,
+    "existing_persistent_schemas_unchanged": true,
+    "no_new_card_art": true,
+    "page_order_preserved": true
+  },
+  "native": {
+    "engine": "GZDoom 4.14.2 Windows 11/Vulkan",
+    "rule_assertion_groups": 34,
+    "failed_final_assertions": 0,
+    "primary_automatic_matches": 100,
+    "primary_flor_on_off": [
+      50,
+      50
+    ],
+    "primary_hands": 1321,
+    "additional_final_package_automatic_matches": 100,
+    "normal_menu_full_match": {
+      "start": [
+        0,
+        0
+      ],
+      "end": [
+        3,
+        30
+      ],
+      "hands": 12,
+      "with_flor": true
+    },
+    "pending_call_save_reload": [
+      "Contra Flor al Resto",
+      "Falta Envido"
+    ],
+    "snapshot_equal": true,
+    "world_health_and_anima_preserved": true,
+    "native_resume_tics": 1,
+    "return_to_world": true,
+    "normal_practice_entry": true,
+    "old_packaged_practice_save_unchanged": true,
+    "prechange_package_rollback": true,
+    "captures": [
+      "1024x768 ES",
+      "1520x825 EN"
+    ]
+  },
+  "package": {
+    "files": 6150,
+    "sha256": "2a9a04a8506116977eb02ff86c57341c5b111daa2ff99a06e56421cae7774343",
+    "members_match_source": true,
+    "no_qa_fixtures": true
+  },
+  "logs": {
+    "final_native": {
+      "sha256": "7e3394b2afd59412bfe845151c67b81ca700b997acceaf3275fb0401d82bc235",
+      "exit": 0
+    },
+    "final_english": {
+      "sha256": "7adbab36632d977a46dcb965c4735aab3b7538ae3de2fa81d017cc276601f930",
+      "exit": 0
+    },
+    "legacy_final": {
+      "sha256": "873f00e8b118b6958aa92465842a96d2fa95647c557cd5fa8f19f71d502ce7d3",
+      "exit": 0
+    },
+    "full_ui": {
+      "sha256": "f8c97dd4fc3aa693ccab44705a2db7427100ff9569ace2fb942fd7b648e199bf",
+      "exit": 0
+    },
+    "rollback_original": {
+      "sha256": "4d4df8074beef0a29f5070289e44917f33753aba1c5013e1c76cb025182b9da0",
+      "exit": 0
+    }
+  },
+  "qualifications": [
+    "Fixtures seed deck/quest prerequisites. One full native menu match starts at 0-0; two pending-call scenarios seed scores/cards to verify exact save/load. No full campaign replay is claimed.",
+    "An initial pending-Flor capture exposed a premature zero-point award label, corrected before final package checks.",
+    "Legacy-save probes initially used a source-directory save and omitted its QA classes; final packaged legacy save and original QA classes load unchanged, without editing any save.",
+    "A fixture identifier used a reserved word and was corrected before executing its tests.",
+    "The running author game was preserved; run_dev.bat rebuilds updated sources after restart."
+  ],
+  "pending_author_tests": [
+    "CA-43715-TRUCO-01",
+    "CA-43715-TRUCO-02"
+  ]
+}

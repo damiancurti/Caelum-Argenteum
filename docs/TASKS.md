@@ -1,6 +1,14 @@
 # TASKS.md — Active tasks
 
-Documentation version: **4.37.14a** — 2026-10-04.
+Documentation version: **4.37.15** — 2026-10-04.
+
+## Issue #101 - Traditional ranked Truco (4.37.15)
+
+- Separate Argentine Truco against Argento: 30 points, optional Flor, no
+  RPG damage or future rating service. Author's confirmed variants: SYSTEMS.
+- Preserve accepted practice, deck/quest rules and saved matches. Additive
+  revision-1 inventory, existing card art and native pause/save/load.
+- Evidence: assets/validation_43715. Next: CA-43715-TRUCO-01/02.
 
 ## Issue #99 - Argento practice choice order (4.37.14a)
 

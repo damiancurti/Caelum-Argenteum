@@ -1,6 +1,22 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **4.37.14a** — 2026-10-04.
+Documentation version: **4.37.15** — 2026-10-04.
+
+## 4.37.15 - Add traditional Truco ranked mode (#101)
+
+Author request and clarified variants, 2026-10-04: 30 points, optional Flor,
+traditional 40-card/three-card deal, no health/attributes/powers and no rating
+system yet. Falta/Flor al Resto use the leader's distance to 15 in malas or 30
+in buenas. Flor 3, two Flors/Contra Flor 6, rejection with Flor 4 (including
+al Resto), no Flor 3; early fold adds an unsettled Envido point. Full current
+rules are in SYSTEMS. The physical Tarot deck supplies equivalent card faces.
+
+Added a separate revision-1 native inventory/menu and Argento choice, retaining
+existing USDF page indexes, practice code and saved matches. Static/native
+checks, automatic complete matches, EN/ES captures, pending-call save/load and
+old-practice-save compatibility are recorded in assets/validation_43715.
+Fixtures seed prerequisites; this is not author acceptance or a full campaign
+replay. CA-43715-TRUCO-01/02 remain pending with earlier unconfirmed checks.
 
 ## 4.37.14a - Move Argento practice to the end (#99)
 

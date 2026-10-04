@@ -353,6 +353,7 @@ conversation
         }
         link = "argento_offer";
         choice { text = "$CA_TC_CHALLENGE"; giveitem = "CaelumTrucazoChallengeAction"; closedialog = true; }
+        choice { text = "$CA_TT_CHALLENGE"; giveitem = "CaelumTrucoChallengeAction"; closedialog = true; }
     }
     page
     {
@@ -374,6 +375,7 @@ conversation
             closedialog = false;
         }
         choice { text = "$CA_TC_CHALLENGE"; giveitem = "CaelumTrucazoChallengeAction"; closedialog = true; }
+        choice { text = "$CA_TT_CHALLENGE"; giveitem = "CaelumTrucoChallengeAction"; closedialog = true; }
     }
     page
     {
@@ -454,6 +456,7 @@ conversation
             }
         }
         choice { text = "$CA_TC_CHALLENGE"; giveitem = "CaelumTrucazoChallengeAction"; closedialog = true; }
+        choice { text = "$CA_TT_CHALLENGE"; giveitem = "CaelumTrucoChallengeAction"; closedialog = true; }
     }
     page
     {
@@ -534,6 +537,7 @@ conversation
         choice { text = "$CA_DLG_M01_WORKSHOPS_ASK"; nextpage = "argento_workshop"; }
         choice { text = "$CA_M01_KEY_ASK"; nextpage = "argento_key_gate"; closedialog = false; }
         choice { text = "$CA_TC_CHALLENGE"; giveitem = "CaelumTrucazoChallengeAction"; closedialog = true; }
+        choice { text = "$CA_TT_CHALLENGE"; giveitem = "CaelumTrucoChallengeAction"; closedialog = true; }
     }
     page
     {

@@ -1,6 +1,16 @@
 # Caelum Argenteum — Project, status and roadmap
 
-Documentation version: **4.37.14a** — 2026-10-04.
+Documentation version: **4.37.15** — 2026-10-04.
+
+## 4.37.15 - Traditional Truco ranked mode (#101)
+
+The author's ranked mode is ordinary Argentine Truco against Argento, with
+30-point matches and optional Flor selected before the deal. It does not yet
+include a rating, ranks, wagers or rewards. A separate revision-1 match inventory
+preserves the accepted Trucazo practice and its existing saves. Its own pause,
+menu, calls, points and native save/load are validated separately. Existing
+physical deck ownership permits either mode; no new campaign item is added.
+Evidence: assets/validation_43715. Author checks CA-43715-TRUCO-01/02 remain.
 
 ## 4.37.14a - Argento practice choice near the end (#99)
 

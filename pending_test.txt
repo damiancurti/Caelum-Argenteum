@@ -27,3 +27,25 @@ Prerequisites: MAP01 with Palomo's deck; Argento available for conversation.
    Expect practice after other available replies and immediately before goodbye.
 2. Select the practice. Expect the ordinary Trucazo introduction and controls;
    story/service replies retain their original order and behavior.
+
+CA-43715-TRUCO-01 - Traditional match with and without Flor
+Origin: 4.37.15 / issue #101. Author acceptance pending.
+Prerequisites: MAP01, physical deck, Argento available.
+1. Choose traditional Truco near the end of his replies. Select Flor OFF,
+   begin and complete a match. Expect three cards, ordinary hierarchy/pardas,
+   Envido/Real/Falta and Truco raises, persistent points, first to 30 wins.
+2. Repeat with Flor ON. Three same-suit cards require Flor; use Contra Flor
+   and al Resto when offered. Expect SYSTEMS scoring and no RPG damage,
+   attribute/essence bonus, wager, reward or rating change.
+3. Confirm the separate Trucazo practice still uses its accepted rules.
+
+CA-43715-TRUCO-02 - Persistence and controls
+Origin: 4.37.15 / issue #101. Author acceptance pending.
+Prerequisites: retain an original pre-patch save/package; start ranked Truco.
+1. Save with an Envido/Flor or Truco answer pending. Load through the match
+   menu and from another menu. Expect exact option/cards/points/call and pause.
+2. Inspect ES/EN rules/actions, navigate cards and return from rules/save/load.
+   Fold a hand, then abandon a match with confirmation: automatic defeat.
+3. Open an older save and continue accepted practice or start traditional
+   Truco. Expect no lost deck, quest progress or practice match. Original
+   save/package remain the reversible rollback route.

@@ -1,13 +1,10 @@
 # CONTEXT.md — Ultra-condensed summary of Caelum Argenteum
 
-Documentation version: **4.37.14a** — 2026-10-04.
+Documentation version: **4.37.15** — 2026-10-04.
 
-**Pending:** #99 Argento practice last before goodbye; #97 Palomo deck on first
-upstairs conversation; #93 crafting Y/T help. Evidence: assets/validation_*.
-
-**Accepted #81 / 4.37.13 (2026-10-04):** paused MAP01 Trucazo, 56 Minors,
-traditional calls, Patience health, Type 1 damage. No Majors/senses/wagers.
-Abandoning loses; saves persist. PR #94 merged.
+**Pending:** #101 traditional Truco, 30 points, optional Flor, no rating;
+#99 Argento practice near goodbye; #97 Palomo deck upstairs; #93 crafting Y/T.
+Evidence: assets/validation_*. **Accepted #81:** Trucazo practice, PR #94 merged.
 
 **Accepted #80 / 4.37.12 (2026-10-04):** three essences; User3 costs 1000 Anima,
 lasts 60 s, recharges 600 s from use. Fool flies; Minors double fixed bonuses.

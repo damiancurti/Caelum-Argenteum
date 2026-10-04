@@ -1,6 +1,13 @@
 # Caelum Argenteum — Audio and art
 
-Documentation version: **4.37.14a** — 2026-10-04.
+Documentation version: **4.37.15** — 2026-10-04.
+
+## 4.37.15 - Traditional Truco card reuse (#101)
+
+Traditional Truco reuses the existing Tarot front/back resources without new
+or edited art. Its 40-card subset maps Page/Sota to Spanish 10, Knight to 11,
+and King to 12. Physical deck ownership and original art provenance remain
+unchanged. The runtime mapping excludes 8/9/10/Queen Tarot ranks and all Majors.
 
 ## 4.37.13 — Trucazo source and existing card presentation (#81)
 
