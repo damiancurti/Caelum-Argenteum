@@ -1,0 +1,42 @@
+{
+  "baseline": "63f903d3b1480308cea59522a072d01945e1db34",
+  "checks": [
+    {
+      "check": "Focused branch starts at accepted #79 main",
+      "passed": true
+    },
+    {
+      "check": "Accepted map, artwork, dialogue-page indices and acquisition definitions unchanged",
+      "passed": true
+    },
+    {
+      "check": "Card IDs, collection percentages and 78-card capacity stay stable",
+      "passed": true
+    },
+    {
+      "check": "Existing persistent record declarations retained; new fields are additive",
+      "passed": true
+    },
+    {
+      "check": "Existing armed User1/User2/User3/User4 selector callbacks unchanged",
+      "passed": true
+    },
+    {
+      "check": "Changed localization keys exist in EN/ES with matching substitution signatures",
+      "passed": true
+    },
+    {
+      "check": "Built package includes every changed/new runtime source byte-for-byte",
+      "passed": true
+    },
+    {
+      "check": "Package contains only src entries, including no QA fixture, engine, IWAD or save",
+      "passed": true
+    },
+    {
+      "check": "Final package contains 6144 files and no directory entries",
+      "passed": true
+    }
+  ],
+  "failures": 0
+}

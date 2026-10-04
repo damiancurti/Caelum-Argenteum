@@ -473,6 +473,7 @@ class CaelumPlayer : DoomPlayer
     bool CombatRacialAbilityInputReserved;
     bool CombatTarotInputReserved;
     int TarotOwnedCountSnapshot;
+    bool TarotSelectedSnapshot[CaelumConstants.TAROT_CARD_COUNT];
     int TarotAttributeBonusSnapshot;
     int AttributeBalanceVersion;
     double TarotMinorBaseSnapshot[CaelumConstants.PRIMARY_ATTRIBUTE_COUNT];
@@ -876,6 +877,9 @@ class CaelumPlayer : DoomPlayer
             JournalQuestObjectiveTarget[objective] =
                 persistentState.QuestObjectiveTarget[objective];
         }
+        CaelumTarotPowers.EnsureRevision(persistentState);
+        for (int card = 0; card < CaelumConstants.TAROT_CARD_COUNT; card++)
+            TarotSelectedSnapshot[card] = persistentState.TarotSelected[card];
         TarotOwnedCountSnapshot = persistentState.CountTarotCards();
         TarotAttributeBonusSnapshot = persistentState.GetTarotAttributeBonusPercent();
         for (int attribute = 0; attribute < CaelumConstants.PRIMARY_ATTRIBUTE_COUNT; attribute++)
@@ -9261,6 +9265,7 @@ class CaelumPlayer : DoomPlayer
         }
         if (specialCategory == CaelumConstants.EQUIPMENT_KIND_KEY_ITEM)
         {
+            if (specialType == CaelumConstants.KEY_ITEM_TAROT_DECK) return 'CaelumTarotDeck';
             if (specialType == CaelumConstants.KEY_ITEM_SLEEPING_BAG) return 'CaelumSleepingBag';
             if (specialType == CaelumConstants.KEY_ITEM_PROCESSING_MANUAL)
             {
@@ -11434,6 +11439,12 @@ class CaelumPlayer : DoomPlayer
 
     void DropSelectedNativeInventoryItem()
     {
+        if (EquipmentSelectionKind == CaelumConstants.EQUIPMENT_KIND_KEY_ITEM
+            && EquipmentSelectionSpecialType == CaelumConstants.KEY_ITEM_TAROT_DECK)
+        {
+            LastEquipmentAction = CaelumConstants.EQUIPMENT_ACTION_FAILED_PROTECTED;
+            return;
+        }
         let training = GetPersistentCharacterState(false);
         if (EquipmentSelectionKind == CaelumConstants.EQUIPMENT_KIND_AMMUNITION
             && training != null && training.MainM00AmmoLoanRemaining > 0
@@ -14483,6 +14494,7 @@ class CaelumPlayer : DoomPlayer
         { CaelumJourneyPlan.Cancel(self); choosingJourney = false; }
         CaelumRestState.HandleInput(self);
         if (player != null && (player.cmd.buttons & BT_USER4) == 0) ClassSleepInputLatched = false;
+        if (player != null && (player.cmd.buttons & BT_USER3) == 0) CombatTarotInputReserved = false;
         // Usar termina la canalización antes de la interacción nativa. Así
         // no se descarta silenciosamente el intento de capturar/hablar/abrir.
         if (CombatChannelModeActive && player != null)
@@ -14527,6 +14539,7 @@ class CaelumPlayer : DoomPlayer
     // regeneration that also pauses when the game itself is paused.
     override void Tick()
     {
+        CaelumTarotDeckRules.EnsureLegacy(self);
         EnsureCurrentAttributeBalance();
         MigrateWeaponDurability();
         Vector3 prePhysicsVelocity = Vel;
@@ -14685,6 +14698,7 @@ class CaelumPlayer : DoomPlayer
     // recorre las mismas tasas y umbrales que un tic de juego normal.
     void AdvancePersonalTimeTic()
     {
+        CaelumTarotPowers.Advance(self);
         if (ElementalStatus != null) { ElementalStatus.Tick(self); }
         IlluminationRemaining = Max(
             0.0, IlluminationRemaining - 1.0 / TICRATE
@@ -16845,7 +16859,7 @@ class CaelumPlayer : DoomPlayer
         // El propio icono del Sello muestra su estado; no tapa el centro.
     }
 
-    // User1/User3 y las clases distintas del arcanista conservan su reserva
+    // User1 y las clases distintas del arcanista conservan su reserva
     // hasta que sus respectivos bloques sean implementados.
     void ReserveRacialAbilityInput()
     {
@@ -16856,9 +16870,9 @@ class CaelumPlayer : DoomPlayer
 
     void ReserveTarotInput()
     {
+        if (CombatTarotInputReserved) return;
         CombatTarotInputReserved = true;
-        ShowAbilitySuccessMessage();
-        CombatTarotInputReserved = false;
+        CaelumTarotPowers.Activate(self);
     }
 
     void ReserveClassAbilityInput()

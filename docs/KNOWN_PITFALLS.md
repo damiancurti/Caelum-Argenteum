@@ -4,6 +4,29 @@ Status: integrated engineering register (issue #22, patch 4.36.1b).
 Prepared: 2026-09-23. Inherits the project's release after integration.
 Inspected baseline: `1dc390576fa330d37ff543526fc7e69a397fc28f` (PR #7).
 
+## CA-KP-032 — Test ability input through the native ready weapon
+
+Status/evidence: CODE-VERIFIED / ENGINE-VERIFIED.
+First recorded / last checked: 2026-10-04.
+Issue: [#80](https://github.com/damiancurti/Caelum-Argenteum/issues/80).
+Baseline: 63f903d3 plus the 4.37.12 patch; GZDoom 4.14.2, Windows/Vulkan.
+
+A successful direct ability-service call does not establish that User3 reaches
+it. The unarmed fallback originally lacked both WRF_ALLOWUSER3 and a User3
+state, although the weapon selectors already routed their callbacks. Add the
+same opt-in and callback to every affected native ready-weapon path. Latch a
+held input until PlayerThink observes release; returning to Ready must not
+turn one held press into repeated activations or failure notifications.
+
+Reproduction: choose three captured cards through the Journal's network event,
+close the Journal, hold native +user3 for 70 tics while unarmed, then release.
+Expect one resource payment, one active set and coherent effect/cooldown
+remainders. The native input check passes alongside direct service rejection,
+save/load and map-travel tests. See [4.37.12 results](../assets/validation_43712/RESULTS.json).
+The Journal test invokes its UI helper and real network event; it does not
+claim physical keyboard/controller testing. Author acceptance remains pending
+under CA-43712-TAROT-02. This lesson does not expand other ability contracts.
+
 ## CA-KP-031 — Clamp projectile travel before native collision
 
 Status/evidence: CODE-VERIFIED and ENGINE-VERIFIED on GZDoom 4.14.2.

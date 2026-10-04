@@ -14,6 +14,14 @@ class CaelumPersistentCharacterState : Inventory
     // Índices estables: Mayores 0–21 (Marsella), Menores 22–77.
     // Una bandera por carta es la autoridad; contar/recalcular no la concede.
     bool TarotOwned[CaelumConstants.TAROT_CARD_COUNT];
+    // #80: la selección de poder pertenece al personaje, no al cursor del Diario.
+    int TarotPowerRevision;
+    bool TarotSelected[CaelumConstants.TAROT_CARD_COUNT];
+    bool TarotActive[CaelumConstants.TAROT_CARD_COUNT];
+    int TarotEffectTics;
+    int TarotCooldownTics;
+    int TarotDeckRevision;
+    bool TarotDeckGranted;
     // #34: registro aditivo; nunca sustituye progreso ni recompensas anteriores.
     int DemoNarrativeRevision;
     int DemoNarrativePending;
@@ -1012,10 +1020,15 @@ class CaelumPersistentCharacterState : Inventory
             int card = CaelumConstants.TAROT_MAJOR_COUNT
                 + suit * CaelumConstants.TAROT_MINOR_RANK_COUNT + rank;
             if (!HasTarotCard(card)) continue;
-            if (rank == 0) tenths += 10; // Ancho.
-            else if (rank == 13) tenths += 5; // Rey.
-            else if (rank >= 10 && rank - 10 == position) tenths += 6;
-            else if (rank <= 9 && (rank - 1) / 3 == position) tenths += 3;
+            int contribution = 0;
+            if (rank == 0) contribution = 10; // Ancho.
+            else if (rank == 13) contribution = 5; // Rey.
+            else if (rank >= 10 && rank - 10 == position) contribution = 6;
+            else if (rank <= 9 && (rank - 1) / 3 == position) contribution = 3;
+            // #80 duplica sólo la base de la carta activada, nunca el
+            // atributo entero ni el porcentaje permanente de colección.
+            tenths += contribution;
+            if (TarotEffectTics > 0 && TarotActive[card]) tenths += contribution;
         }
         return tenths / 10.0;
     }

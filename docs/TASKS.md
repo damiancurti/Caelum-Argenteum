@@ -1,6 +1,27 @@
 # TASKS.md — Active tasks
 
-Documentation version: **4.37.11** — 2026-10-04.
+Documentation version: **4.37.12** — 2026-10-04.
+
+## Issue #80 — Campaign Tarot activation (4.37.12)
+
+- Implemented: up to three selected captured essences; shared User3 activation,
+  1000 Anima once, 60-second effects and 600-second cooldown from activation.
+- Powers: Fool flight; fixed Minor bonuses double. Permanent collection,
+  acquisition rewards and the authored mansion transition are preserved.
+- Deck: Palomo's once-only 78 cards, 780 grams and one slot; protected against
+  sale/drop/breakage. Capture requires it inside the player's own Box. Captured
+  essences and powers remain personal.
+- Compatibility: additive revisions, idempotent legacy recovery, saved selection,
+  active set and timers. Changing selection never changes a running effect.
+- Evidence: assets/validation_43712. Author checks CA-43712-TAROT-01/02 remain
+  pending; native evidence is not author acceptance.
+  Normal validator/build, nine static and 171 native assertions pass, plus two
+  baseline/rollback checks.
+- Follow-up implemented: HUD duration/cooldown above the side Seal indicator;
+  rest and committed journeys advance the shared timers.
+- Next: #81 Trucazo; remaining Major powers/acquisition/awakening belong to V5.
+  No design values remain pending for this implementation.
+
 
 ## Issue #79 — The amnesiac guard captain (4.37.11)
 
@@ -17,7 +38,7 @@ Documentation version: **4.37.11** — 2026-10-04.
   victory is not a full normal battle.
 - Accepted 2026-10-04: the author confirmed CA-43711-CAPTAIN-01 and
   CA-43711-CAPTAIN-02 passed without reported exceptions and authorized PR #90
-  merge / #79 closure. HISTORY records both results; `pending_test.txt` is empty.
+  merge / #79 closure. HISTORY records both results; `pending_test.txt` has no remaining #79 checks.
   Acceptance retains version 4.37.11.
 - Pending design: unspecified prior biography and future siege scheduling;
   performance remains #86. No additional story facts or mechanics are inferred.

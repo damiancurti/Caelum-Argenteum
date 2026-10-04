@@ -1,30 +1,29 @@
 # CONTEXT.md — Ultra-condensed summary of Caelum Argenteum
 
-Documentation version: **4.37.11** — 2026-10-04.
+Documentation version: **4.37.12** — 2026-10-04.
 
-**#79 / 4.37.11:** first/repeat guard recognition records one Journal clue;
-amnesia persists. Quest revision 3 initializes reserved slot 9; old page indexes
-remain. Evidence: assets/validation_43711; both author checks passed 2026-10-04;
-merge/closure authorized. No class or reward changes. Unspecified biography pending.
+**#80 / 4.37.12:** Journal selects up to three essences; User3 costs 1000 Anima
+once, lasts 60 s and recharges for 600 s from use, without cancellation.
+Fool: flight; Minors: double fixed bonuses. Palomo gives 78 physical cards
+(780 g, one slot), unsellable/undroppable/unbreakable. Capture requires the deck
+inside the owned Box; powers remain personal. Additive revisions preserve saves.
+Evidence: assets/validation_43712; author checks remain in pending_test.txt.
 
-**#78 accepted 2026-10-04:** paid prisoners share siege/calendar guidance;
-future timing PENDING. Selene service/implanted souls stay concealed. Zupay
-retreats in Chapter I, dies later in II. Evidence: assets/validation_43710.
+**Accepted #79/#78 (2026-10-04):** guards recognize the amnesiac captain; one
+Journal clue. Paid prisoners share siege/calendar guidance; future timing pending.
+Selene service/implanted souls stay concealed. Zupay retreats in Chapter I,
+dies in II. Evidence: assets/validation_43711 and validation_43710.
 
-**#77 accepted 2026-10-03:** expanded southern MAP06, 6,000 Mandingas plus
-commander, 600 soldiers; city/route and combat checks passed. Geometry/forces,
-matching legacy-save options and 10 km route: README/SYSTEMS. Evidence:
-assets/validation_4379/south/COMBAT_RECOVERY.json. Performance remains #86
-(13.5/35 tics/s).
+**Accepted #77 (2026-10-03):** MAP06 has 6,000 Mandingas plus commander and 600
+soldiers. Geometry/legacy options/10 km route: README/SYSTEMS. Evidence:
+assets/validation_4379/south/COMBAT_RECOVERY.json. Performance: #86 (13.5/35 tics/s).
 
-**Accepted #73/#74/#75:** cardinal maze, material chests/finite enemy supplies,
-six flooded returns, four grates and central elevator. Closed blocks keep covers
-shut until normal entry. #75 corrected per-item report associations, not totals.
-Accepted 2026-10-02; PRs #76/#83/#84 merged. MAP02 old-save waiver stays specific.
+**Accepted #73/#74/#75:** cardinal maze, finite supplies, flooded returns,
+grates and elevator. Closed blocks remain shut until entry. #75 corrected report
+associations; its old-save waiver stays specific. HISTORY retains acceptance.
 
-**Accepted base:** #64/#65 (Y/time and daily tables), #63 (Palomo loadout),
-#68 (magic), #62 (dummy), #61 (landscape), #17 (export). HISTORY retains evidence
-and acceptance. #61 geometry needs fresh MAP01. Rights: LICENSE.md and notices.
+**Accepted base:** #64/#65 (time/tables), #63 (loadout), #68 (magic), #62 (dummy),
+#61 (landscape), #17 (export). #61 geometry needs fresh MAP01. Rights: LICENSE.md.
 
 ## The game's premise
 
@@ -63,8 +62,8 @@ the gauchos and rural culture, and the humans the urban porteño society.
   Box with weight reduction and restricted contents.
 - **Quests, reputation, and factions:** optional quest base, states, reusable
   dialogue/access/trade conditions, and faction conditions.
-- **Tarot:** persistent collection and shared capture of El loco, Ace of Cups and Knight of Wands; base passives for
-  the 56 Minor Arcana by suit; card rewards.
+- **Tarot:** collection/capture of Fool, Ace of Cups and Knight of Wands;
+  56 Minor passives, physical deck and three-card powers described above.
 - **World and travel:** world Journal, visited locations, connections, grouped
   doors, caravans, coastal vehicles (carriage and merchant ship), and measured
   routes with provisions.
@@ -237,8 +236,8 @@ the player and extract alive through an exit before the MAP02 boss; they do
 not fight that boss. At the port, each grants +10 reputation with its own
 faction and a fixed 25 gold coins once, independent of character size.
 The latest #10/#14 author decision supersedes the former weapon-price formula.
-The #15 approved Tarot fronts are integrated; activation/powers stay pending after this playtest;
-the current siege rules are author-accepted.
+The #15 fronts and #80 powers are integrated; Tarot author checks remain pending.
+Siege rules retain their separate acceptance.
 Prisoner source/faction mapping: Caella/Unitarians, Ronnie/Federals,
 Rulo/Free Peoples, Argento/Cult of the Tarot; do not reassign mansion NPCs.
 PROJECT contains the authoritative scope and dependency order. The author

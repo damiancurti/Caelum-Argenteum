@@ -1,6 +1,6 @@
 CAELUM ARGENTEUM — STORY AND MAP01
 
-Documentation version: **4.37.11** — 2026-10-04.
+Documentation version: **4.37.12** — 2026-10-04.
 
 ## 4.37.11 — Guard captain with amnesia (#79)
 
@@ -2084,6 +2084,15 @@ no path leads properly to the outside. Distances may not coincide, the rooms may
 and some details lack a natural explanation, but nothing yet confirms a life after death.
 
 6.3. THE MAGIC BOX
+
+4.37.12 / #80: Palomo's existing Box handoff also gives and explains one complete
+physical Tarot deck: 78 cards, 780 grams and one slot. The final author policy
+makes it unsellable, undroppable and unbreakable. Physical cards are distinct
+from captured essences. Capture requires the deck inside the protagonist's own
+Box at start and commit; failure preserves essence and earned progression.
+The deck survives departure from Limbo. Legacy recovery preserves captured
+essences without replaying rewards. The Fool's active flight and shared Minor
+powers follow SYSTEMS; neither replaces the authored final doorway.
 
 [CANON]
 

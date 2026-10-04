@@ -4,24 +4,35 @@ An independent dark fantasy FPS-RPG inspired by nineteenth-century Argentina.
 Author and game designer: **Damian Curti**. Development target: **GZDoom 4.14.2**
 on Windows 11. The final game is intended to be independent of Doom assets.
 
-**Current release: 4.37.11.** Obtain and update the complete repository, validate
+**Current release: 4.37.12.** Obtain and update the complete repository, validate
 it, then rebuild with `run_dev.bat` as described below.
 
-Issue [#79](https://github.com/damiancurti/Caelum-Argenteum/issues/79) establishes
-the protagonist as the amnesiac captain of fortified Barracas al Sud's guard.
-Local guards recognize him in first/repeat conversations; a persistent Journal
-clue records their testimony without restoring his memories or changing class,
-factions, stats or rewards. Prisoner rescues are not required. See
-[test evidence](assets/validation_43711/RESULTS.json). On 2026-10-04 the author
-confirmed both checks passed and authorized
-[PR #90](https://github.com/damiancurti/Caelum-Argenteum/pull/90) merge / #79 closure.
-[HISTORY](docs/HISTORY.md) records acceptance; [pending_test.txt](pending_test.txt)
-is empty. The release remains 4.37.11.
+Issue [#80](https://github.com/damiancurti/Caelum-Argenteum/issues/80) completes
+the three campaign Tarot powers. In Journal > Tarot, **Enter/A** toggles up to
+three captured essences; **User3** activates them together for **1000 Anima**.
+Effects last **60 seconds**, with a shared **600-second cooldown from activation**
+and no cancellation/refund. The Fool grants native flight; the Ace of Cups and
+Knight of Wands double their fixed attribute contributions. Fly/swim up/down
+are exposed in Caelum's Controls section.
+Remaining duration and cooldown appear in the HUD above the side Seal indicator,
+and in the Journal.
 
-Normal validation/build pass, with 149 current-version native assertions and
-fourteen reviewed captures. Save migration, open dialogue reload, hub return and
-the earlier prisoner briefing remain compatible. The full-city presentation test
-uses a controlled victory state; it does not resolve performance issue #86.
+Palomo gives one physical **78-card deck, 780 g, one slot**, with the Magic Box.
+It cannot be sold, dropped or broken. Move it using Inventory **C**: capture
+requires it inside your own Box. Physical cards grant no essence bonuses.
+Eligible old saves receive the deck once; free capacity if recovery needs room.
+Selection, running powers and remaining timers persist through save/load and
+travel. The authored mansion transition remains unchanged.
+
+See [test evidence](assets/validation_43712/RESULTS.json) and
+[outstanding author checks](pending_test.txt). Native evidence is separate
+from author acceptance; full-city performance remains #86.
+
+Issue [#79](https://github.com/damiancurti/Caelum-Argenteum/issues/79) established
+the protagonist as Barracas al Sud's amnesiac guard captain. Guards recognize
+him and record a persistent Journal clue without restoring memories or granting
+rewards. Both author checks passed 2026-10-04; PR #90 is merged and #79 closed.
+The [4.37.11 evidence](assets/validation_43711/RESULTS.json) remains available.
 
 Issue [#78](https://github.com/damiancurti/Caelum-Argenteum/issues/78) adds siege
 intelligence to each rescued prisoner's **successful port payment**. Dialogue and

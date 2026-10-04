@@ -1,6 +1,38 @@
 # Caelum Argenteum — Project, status and roadmap
 
-Documentation version: **4.37.11** — 2026-10-04.
+Documentation version: **4.37.12** — 2026-10-04.
+
+## 4.37.12 — Campaign Tarot powers and physical deck (#80)
+
+The author approved a shared activation of up to three captured essences for
+1000 Anima, 60-second effects and a 600-second cooldown from activation, without
+manual cancellation or refund. The Fool grants native flight. Minor Arcana
+double their own fixed contributions: the campaign Ace gives +2 each to its
+three social attributes and the Knight gives +1.2 Strength. Permanent collection
+percentages remain unchanged. The shared rule covers the existing 56-Minor
+passive catalogue without adding acquisition content or granting essences.
+
+Enter/A selects cards in the Tarot Journal; User3 activates the whole selection,
+including while unarmed. The Journal reports actual effects, timers and physical
+deck location. The HUD places duration/cooldown above the side Seal indicator.
+Selected and activated sets are separate; changes affect the next
+activation. Native flight controls are exposed in Caelum's Controls section.
+The authored world transition, User1, User2 and User4 remain unchanged.
+
+Palomo gives one complete physical deck with the Box: 78 cards, 780 grams and
+one slot. Final author policy makes it unsellable, undroppable and unbreakable.
+Capture requires it inside the player's own Box at start and commit; powers
+remain personal and independent of deck location. Limbo departure preserves it.
+
+Additive revisions preserve existing essences, initialize an empty selection and
+recover a missing legacy deck once from recorded Box delivery or essence
+ownership. Insufficient capacity retries after space is freed. Preserve original
+saves/packages for rollback. Personal time, including rest/travel simulation,
+advances saved timers without granting free resources. Evidence:
+assets/validation_43712/RESULTS.json; author checks are pending in pending_test.txt.
+Remaining Major powers, acquisition content and awakening stay V5 work. Trucazo
+is #81 and full-city performance remains #86.
+
 
 ## 4.37.11 — The amnesiac captain of Barracas al Sud (#79)
 
@@ -24,7 +56,7 @@ conversation pages retain their indexes; new pages are appended. Native validati
 and author acceptance are reported in HISTORY and `assets/validation_43711`.
 The author confirmed both CA-43711-CAPTAIN checks passed on 2026-10-04 without
 reported exceptions and authorized PR #90 merge / #79 closure. HISTORY records
-acceptance; `pending_test.txt` is empty. #86 retains performance work; future
+acceptance; `pending_test.txt` has no remaining #79 checks. #86 retains performance work; future
 siege scheduling and unspecified biography remain pending author decisions.
 
 ## 4.37.10 — Post-payment prisoner siege intelligence (#78)
@@ -2941,7 +2973,7 @@ the independent distribution.
 | Sieges | Director of battle, reinforcements, tactics, commanders, allies, machines/artillery/barricades, sabotage and alternative routes; time limit and permanent consequences on cities, routes and factions. It depends on AI, physics, world and stable calendar. |
 | Physics | Complete multiple impacts/contacts validation, sustained thrust, crushing and anatomy/armor. Future melee impact physics requires speed, effective mass, area/edge, defined material, penetration and technique; do not replace accepted combat without that design. |
 | Abilities | Racial User1 and class User4 effects were defined on 2026-09-14 and recorded in SYSTEMS.md; Arcanist Sleep implemented in 0g, the rest pending. The Pilgrim uses Amparo (50% less environmental damage), not Bless Food. User2 retains Seals; User3 retains Tarot. Do not invent powers or values to fill existing hooks. |
-| Tarot | Persistent collection and global percentage initiated with El Loco in 0t; passive base by suit/rank of all Minors in 0aa. Selection, activation and awakening remain pending of essence weapons; cards with exploration, breathing and Box effects according to design. Complete the 78, its missions and persistence; do not confuse a hook with finished powers. |
+| Tarot | Persistent collection/global percentage and all Minor passives remain. #80 adds up to three selected essences, shared User3 activation, Fool flight and doubled fixed Minor bonuses under the authored 1000-Anima/60-second/600-second rule. Remaining Major powers, acquisition of the other cards and essence-weapon awakening need authored content and later issues. |
 | Trucazo | Truco with Tarot: Major modifiers, playable Minors/rows, Envido/Truco/Retruco/Vale 4, damage and health, Magic Senses, bets and consequences; casual/ranked and teams from 1v1 to 4v4. Implement layered after Tarot base rules and multiplayer authority. |
 | Cooperative and PvP | Target 2–8 players, host authority, ownership/validation/synchronization, shared missions and world, travel, connection/disconnection and peers. Current individual persistence does not credit these modes. |
 | Saving |  Keep native save and traveling Inventory. Independent external profile, narrative autosaves and world-shared state remain pending; test compatibility before removing V5 adapters. |

@@ -1,0 +1,351 @@
+{
+  "issue": 80,
+  "release": "4.37.12",
+  "date": "2026-10-04",
+  "baseline_commit": "63f903d3b1480308cea59522a072d01945e1db34",
+  "environment": {
+    "engine": "GZDoom 4.14.2",
+    "os": "Windows 11",
+    "renderer": "Vulkan / NVIDIA GeForce RTX 3070 Ti",
+    "players": 1,
+    "development_iwad": "Author-installed DOOM2.WAD; not distributed",
+    "launch": "-noautoload -nosound; isolated config/saves; hidden owned native processes",
+    "viewports": [
+      [
+        1520,
+        825
+      ],
+      [
+        1024,
+        768
+      ]
+    ]
+  },
+  "approved_contract": {
+    "selected_limit": 3,
+    "shared_anima_cost": 1000,
+    "effect_seconds": 60,
+    "cooldown_seconds_from_activation": 600,
+    "manual_cancel": false,
+    "refund": false,
+    "fool": "Native flight; authored mansion transition unchanged",
+    "minors": "Double only each active card's fixed contribution; permanent collection percentage unchanged",
+    "deck": {
+      "physical_cards": 78,
+      "grams": 780,
+      "slots": 1,
+      "sale": false,
+      "drop": false,
+      "break": false,
+      "capture_requires_owned_box": true,
+      "power_requires_deck": false
+    },
+    "hud_followup": "Remaining active duration in cyan and cooldown in white above the side Seal indicator; gray Tarot while recharging."
+  },
+  "build": {
+    "command": "powershell.exe -NoProfile -ExecutionPolicy Bypass -File build_dev.ps1",
+    "exit_code": 0,
+    "files": 6144,
+    "sha256": "51d2946565fe6af523c10588cd71df0abc1da628477183e3f886ef7d1960b781",
+    "maps": "Current normal MAP02/MAP06; existing legacy options unchanged"
+  },
+  "runtime_sha256_lf_normalized": {
+    "src/CVARINFO": "dd60aeaf71e80f57a42042c7eb7929e63b40fc1f89e0b2b67d44afdc8c83e16d",
+    "src/KEYCONF": "c4826ee5548e0bf2293baf48a9ba5a91de0bc4191d519bf3fe11562eb06dc4e1",
+    "src/LANGUAGE": "979f233efde6b3261cea2c3ff6580cffcd72f820154a30c3e28d541657cfe6f8",
+    "src/ZSCRIPT": "1b07a48ceba6efb292bc1b5a2a9d9717943da9010b4aea502ae4a4fe380e127d",
+    "src/caelum/core/CaelumConstants.zs": "d50964fe804792edc06c6c5d765126ad170f8786cc6eebc2294f6ec2fc01a8dc",
+    "src/caelum/core/CaelumTarotPowers.zs": "e521cc7eab890699b31a6a2c911211a0823889e96b4d6317a52c3797c426baa4",
+    "src/caelum/debug/CaelumDebugOverlay.zs": "55913d50e67023ad95b9b0596d513718dab1a5d3751342d1d76503d2fea357e9",
+    "src/caelum/dialogue/CaelumPalomoDialogue.zs": "1b7a3ff057bc39dbc419e44155dbf820cfdc734f8836a1a115e4ea5039bb117d",
+    "src/caelum/equipment/CaelumPersistentCharacterState.zs": "33fbeb76c356472b5ec32b1a7ba51a243d03990c4110b8ab8d36e694d5881ec5",
+    "src/caelum/equipment/CaelumTarotDeck.zs": "379b82b671c7e47dafcba2d1e3f441882d7b7b327f964948688daac7edbd2075",
+    "src/caelum/equipment/CaelumUnarmedWeapon.zs": "31d2c6fdf7e6d62b956fe30ea365c0bb11a705767b859a30dfd463922aa936ac",
+    "src/caelum/hud/CaelumHUDOverlay.zs": "ec5da06423f807eafbd0accf712fe27c873189a13b99fe212f77d8309496f4f4",
+    "src/caelum/hud/CaelumJournalOverlay.zs": "d3e062f0fee801177e74836bc96423df9a39dbd1c70141fa4f7d42609f487482",
+    "src/caelum/player/CaelumPlayer.zs": "3fb94e280c82c2cc1a522725c315bbc87a60b3d063ae39a9d61effab9e70e7cf",
+    "src/caelum/quests/CaelumMainM00FoolCapture.zs": "e72e2889de9f3766d3ac8cdf7c17d4a37c887e7d80ca7e6d62e0c6abbb2d06f1",
+    "src/caelum/quests/CaelumMainM00Return.zs": "ffae45dcb7cd6b4c0fde8c60b81340dab6025eb519fb585215e0498674fbc23b",
+    "src/caelum/ui/CaelumDisplayNames.zs": "42222bc0cc9987c86e1fa214885e184f64660942eedd87788789cab6c2263d40",
+    "src/caelum/world/CaelumJourneyPlan.zs": "6266200749a8683096fabfd92d8dc0475af17ded6333adecfcb27e64a12af490",
+    "src/caelum/world/CaelumPhysicalHazards.zs": "0f354055b9b7e6ff2024ff37e6b720e2bec654a934affc3d38bb40ec8d292ccd",
+    "src/caelum/world/CaelumSewerMaze.zs": "49b4d98c46246081ffd2d3f2321bd3d703e09f00b84c7b0d01411494cf34ce01"
+  },
+  "preserved_baseline_package_sha256": "bde8c92ea1ecd066baa210b39b7cdaf93859160b3362be8b17c22def4f3789f8",
+  "static_contract_checks_passed": 9,
+  "validator_errors": [],
+  "native_current_assertions_passed": 171,
+  "baseline_preparation_rollback_assertions_passed": 2,
+  "native_runs": [
+    {
+      "run": "power_persistence_complete",
+      "version": "current",
+      "purpose": "Final service rejection/cost/bonuses; native save/reload, MAP02-MAP03-MAP02 hub travel, expiry and reuse.",
+      "assertions_passed": 42,
+      "failures": 0,
+      "log": "power_persistence_complete.txt",
+      "sha256": "06327c4ce79326576a722a361f41f9ffd810fdbe9a4d795368fd827af8b2680e"
+    },
+    {
+      "run": "native_complete",
+      "version": "current",
+      "purpose": "Final Journal UI helper/network event, actual held unarmed User3, native flight up/down and natural 60-second expiry.",
+      "assertions_passed": 9,
+      "failures": 0,
+      "log": "native_complete.txt",
+      "sha256": "6a24e9fdb80088c1d22f4a551196e8305d53cf20d9410b9757af4cb92537f27b"
+    },
+    {
+      "run": "native_sword_final",
+      "version": "current",
+      "purpose": "Actual held User3 with native SwordSelectorWeapon; three selected powers and one payment.",
+      "assertions_passed": 4,
+      "failures": 0,
+      "log": "native_sword_final.txt",
+      "sha256": "3c0f07665049b378f21b0e186e351fcdae7e46f5ea58ba88d2a290e25098d683"
+    },
+    {
+      "run": "deck_protected",
+      "version": "current-reused",
+      "purpose": "Protected deck mass/slot, unique gift, Box movement, shared Ace capture start/commit, failure preservation and no sale/drop/break path.",
+      "assertions_passed": 17,
+      "failures": 0,
+      "log": "deck_protected.txt",
+      "sha256": "dc9b4d786b573bf30541bd875471c4bde9f7a1495bc7fdaeff4026f1bb82f350"
+    },
+    {
+      "run": "capacity_final",
+      "version": "current-reused",
+      "purpose": "Capacity failure/retry, personal fallback, unique recovery, dead/predicted/frozen/Seal/spell rejection and powers outside Box.",
+      "assertions_passed": 11,
+      "failures": 0,
+      "log": "capacity_final.txt",
+      "sha256": "f8331c3795444ad37e712b535933be94282ba7957843316ff7c285bca1835ec6"
+    },
+    {
+      "run": "knight_final",
+      "version": "current-reused",
+      "purpose": "Isolated MAP06 with recorded victory: Knight start/commit deck checks and once-only capture. Local tiny map override; no full-army battle.",
+      "assertions_passed": 5,
+      "failures": 0,
+      "log": "knight_final.txt",
+      "sha256": "604e92b25303642ff454f2fc4191298aed023410d4752cd9e41ec63dc2846d95"
+    },
+    {
+      "run": "palomo_fool_departure",
+      "version": "current-reused",
+      "purpose": "Native Palomo menus, Box/deck handoff, actual Fool capture animation and authored MAP01-to-MAP02 confirmation/fade. Prerequisites seeded locally.",
+      "assertions_passed": 11,
+      "failures": 0,
+      "log": "palomo_fool_departure.txt",
+      "sha256": "930f9dc617c99c4451047bd0dcb9d79f1fc1ff5a5bc8d47b56fab92a9e4e9906"
+    },
+    {
+      "run": "legacy_upgrade_final",
+      "version": "current-reused",
+      "purpose": "Original 4.37.11 native save migration with stable package basename; old quests/Box/merchant/essences retained; one deck and no automatic active set.",
+      "assertions_passed": 5,
+      "failures": 0,
+      "log": "legacy_upgrade_final.txt",
+      "sha256": "c2fd8c42de9f3b4e6967b681c47e0194a0d7ec422f41e3bfde6af5c7dbf31b7f"
+    },
+    {
+      "run": "legacy_reload_verified",
+      "version": "current-reused",
+      "purpose": "Migrated native save reload retains ownership, no duplicate deck or selection, and old progress.",
+      "assertions_passed": 5,
+      "failures": 0,
+      "log": "legacy_reload_verified.txt",
+      "sha256": "b0af9187d257fa61d7871cc970073daafe2b2a24bd667d6db29c7d56110ec115"
+    },
+    {
+      "run": "journal_4by3",
+      "version": "current-reused",
+      "purpose": "Native active save reload and actual 1024x768 EN/ES Tarot Journal renders.",
+      "assertions_passed": 4,
+      "failures": 0,
+      "log": "journal_4by3.txt",
+      "sha256": "e5057ac18dc07d82ff0a544d2567fdf4e28fcd89b53740b4f267cae493033ded"
+    },
+    {
+      "run": "hud_timers_final",
+      "version": "current",
+      "purpose": "Native real equipped Seal beside Tarot HUD; EN/ES active/cooldown renders; rest simulation and journey Apply timing.",
+      "assertions_passed": 29,
+      "failures": 0,
+      "log": "hud_timers_final.txt",
+      "sha256": "a3395e3990e159082787fd58b9e84bbf1a3c77dca16ee661548a46c7b3eedfaf"
+    },
+    {
+      "run": "hud_4by3_final",
+      "version": "current",
+      "purpose": "1024x768 HUD with real Seal; active and cooldown-only states; repeat rest/journey timing checks.",
+      "assertions_passed": 29,
+      "failures": 0,
+      "log": "hud_4by3_final.txt",
+      "sha256": "1013d1c1bbe7247bbb3a0191423344adedf22eaada8722efc34fc2d9cf37896d"
+    },
+    {
+      "run": "package_smoke",
+      "version": "current",
+      "purpose": "Final normal packaged MAP01 startup without QA fixtures.",
+      "assertions_passed": 0,
+      "failures": 0,
+      "log": "package_smoke.txt",
+      "sha256": "0c7b513fe497bc5374eaf29e605e29d5eea18483a2ac86c71bbffaf85a7023b3"
+    },
+    {
+      "run": "legacy_stable_setup",
+      "version": "baseline",
+      "purpose": "Preserved 4.37.11 package creates original native save with quest, merchant, Box and three essences.",
+      "assertions_passed": 1,
+      "failures": 0,
+      "log": "legacy_stable_setup.txt",
+      "sha256": "bc183ae3732ff70afb25a752640467243515a7c24d9825a9b094ba427623eec4"
+    },
+    {
+      "run": "legacy_rollback_final",
+      "version": "baseline",
+      "purpose": "Restoring original save and original package retains baseline progress; no claim of backward conversion of new progress.",
+      "assertions_passed": 1,
+      "failures": 0,
+      "log": "legacy_rollback_final.txt",
+      "sha256": "78a89c050e731f70345f802d8afc73e318e54214f4306a5f6cb8d3f2dae40aff"
+    }
+  ],
+  "visual_inspection": [
+    {
+      "file": "palomo_offer_es.png",
+      "purpose": "Native Palomo offer, Spanish",
+      "pixels": [
+        1520,
+        825
+      ],
+      "sha256": "b97e67c0a5346713b96251b238f3fd28604f364508949f0a8b936f53f63ae12b"
+    },
+    {
+      "file": "palomo_received_es.png",
+      "purpose": "Native Palomo handoff and final protected-deck rule, Spanish",
+      "pixels": [
+        1520,
+        825
+      ],
+      "sha256": "aaf2fd5452f06ca2ce7f70748b21204032339622bbcfb8825dc045fcd9e1009f"
+    },
+    {
+      "file": "deck_box_es.png",
+      "purpose": "One captured essence versus 78 physical cards inside Box",
+      "pixels": [
+        1520,
+        825
+      ],
+      "sha256": "7a1456c9805d40a79305eb4d33c4b99119e328adbf4af582ac4ff8353c2770dd"
+    },
+    {
+      "file": "journal_fool_es.png",
+      "purpose": "Fool active selection and timing, Spanish widescreen",
+      "pixels": [
+        1520,
+        825
+      ],
+      "sha256": "fe9c03189514ca10b1338af652d6fe89b34c221bcebd0dae8a90a095a09a8b3c"
+    },
+    {
+      "file": "journal_knight_en.png",
+      "purpose": "Knight actual passive/active rule, English widescreen",
+      "pixels": [
+        1520,
+        825
+      ],
+      "sha256": "919ee71de99a0ecd2d6fa98e1a0c605ff67dbdbe8ae7051f6e2f4a8d4d1016ff"
+    },
+    {
+      "file": "journal_fool_4by3_es.png",
+      "purpose": "Fool Journal, actual 4:3",
+      "pixels": [
+        1024,
+        768
+      ],
+      "sha256": "c42415af0163bae2ae17b2637d72211e757c67a3d7d9f213f1fc18a037c592b1"
+    },
+    {
+      "file": "journal_cups_4by3_en.png",
+      "purpose": "Ace Journal, actual 4:3",
+      "pixels": [
+        1024,
+        768
+      ],
+      "sha256": "07e164b0c78169d478c3cb56ea21edde1bedfa896f8889f80c6065e3631abf03"
+    },
+    {
+      "file": "hud_active_4by3_es.png",
+      "purpose": "Active duration and cooldown above native equipped Seal, Spanish 4:3",
+      "pixels": [
+        1024,
+        768
+      ],
+      "sha256": "c0d4b14a6e946c35558dbda8213472e406299885b6665467d4edf3950815ac10"
+    },
+    {
+      "file": "hud_cooldown_4by3_es.png",
+      "purpose": "Expired effect, gray Tarot and remaining cooldown beside Seal, Spanish 4:3",
+      "pixels": [
+        1024,
+        768
+      ],
+      "sha256": "9ccabf3fa48c6886d70fab0d422925e733b9afcb50dc72b64273004b1c109cc4"
+    },
+    {
+      "file": "hud_active_en.png",
+      "purpose": "Native HUD active/cooldown with Seal, English",
+      "pixels": [
+        1520,
+        825
+      ],
+      "sha256": "470d82022d07d1c8b9211d4517614d3d756ebbb8f6086e329c9fb1169af9ae26"
+    },
+    {
+      "file": "hud_cooldown_en.png",
+      "purpose": "Native HUD cooldown after effect expiry, English",
+      "pixels": [
+        1520,
+        825
+      ],
+      "sha256": "42de3c04ca1296c43def9223be97e55a56ed4fbe72d480c86b98459314352006"
+    },
+    {
+      "file": "hud_unarmed_es.png",
+      "purpose": "Final normal User3 activation and clean live HUD, Spanish",
+      "pixels": [
+        1520,
+        825
+      ],
+      "sha256": "15f5d95806559480dc6df3f7aad29a6eeac5bff79729ef49d5bf368075cd3927"
+    }
+  ],
+  "evidence_reuse": "Runs marked current-reused exercise unchanged deck/capture/migration/Journal behavior. Final changes subsequently added read-only HUD feedback and elapsed-tic handling for committed journeys; final power/persistence, native input/expiry and rest/journey/HUD runs cover those changes. Earlier diagnostic version strings and localization grouping do not change the reused behavior.",
+  "resolved_test_findings": [
+    "Unarmed User3 needed native ready/state opt-in and release latch.",
+    "Rejected deck drop must return before generic inventory clears its Box flag.",
+    "Flight descent uses native +movedown, not crouch.",
+    "Native save compatibility probes require the same PK3 basename. Original stable-basename save and original package passed upgrade and rollback.",
+    "The reload fixture now finds its existing probe inventory before trying to give another.",
+    "An unsupported vid_setmode diagnostic did not resize the window; actual 4:3 runs use isolated window config, with verified 1024x768 screenshots.",
+    "Planned journey Apply now advances Tarot cooldown; active Minor effects use the existing temporary-effect journey restriction."
+  ],
+  "limitations": [
+    "Seeded prerequisites and local QA actions isolate changed behavior; no full normal campaign playthrough or author acceptance is claimed.",
+    "Journal selection testing invokes its UI helper and the real network event; physical keyboard/controller Enter/A remains an author check. Native +user3 and flight inputs were exercised.",
+    "Knight capture used a local tiny MAP06 fixture with recorded victory, not a new 6000-attacker battle. Performance remains issue #86.",
+    "Journey tests exercise its real Apply transaction on a captured numeric model; existing route geometry and provisions were not retested.",
+    "No engine, IWAD, save or local QA fixture is included."
+  ],
+  "author_acceptance": {
+    "status": "pending",
+    "checks": [
+      "CA-43712-TAROT-01",
+      "CA-43712-TAROT-02"
+    ],
+    "file": "pending_test.txt"
+  }
+}

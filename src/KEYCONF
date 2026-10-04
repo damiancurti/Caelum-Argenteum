@@ -6,6 +6,8 @@ addmenukey "$CA_CONTROL_TOGGLE_ATTRIBUTE_PANEL" "toggle ca_debug_attributes"
 addmenukey "$CA_CONTROL_RACIAL_ABILITY" +user1
 addmenukey "$CA_CONTROL_SEAL_CHANNEL" +user2
 addmenukey "$CA_CONTROL_TAROT_ABILITY" +user3
+addmenukey "$CA_CONTROL_FLY_UP" +moveup
+addmenukey "$CA_CONTROL_FLY_DOWN" +movedown
 addmenukey "$CA_CONTROL_CLASS_ABILITY" +user4
 
 // Los eventos de red permiten que el jugador correcto cambie su perfil.
