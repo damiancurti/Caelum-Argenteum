@@ -1,6 +1,45 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **4.37.15** — 2026-10-04.
+Documentation version: **4.37.16** — 2026-10-04.
+
+## 4.37.16 - Add compass and project menu pointers (#87)
+
+Author acceptance of #87, 2026-10-04: all tests PASSED, without reported
+qualifications. CA-43716-UI-01, CA-43716-UI-02, CA-43716-UI-03 originated in
+4.37.16 / #87. The author explicitly confirmed all tests correct
+and authorized issue closure and merge. The confirmed entries are removed
+from pending_test.txt. Runtime and version are unchanged.
+This includes the refined compass and physical pointer click/drag; the
+initial agent-side Computer Use interruption remains historical evidence.
+
+Author correction, 2026-10-04: the compass was visibly offset from its cardinal
+letters. Native font inspection found a 9-unit glyph cell, -4 trailing
+kerning and asymmetric transparent padding: StringWidth alone did not center
+the visible letter. The compass now compensates for that kerning and measured
+ink center without changing the shared font. The author also requested silver
+laurels and a Sun of May background. Added mirrored silver SVG foliage, a
+beveled metal rim and the reused project Sun at 42% opacity behind the needle.
+Native ES/EN, 4:3/21:9 and scale captures plus deterministic-generation checks
+are recorded in assets/validation_43716/compass_refinement. This is a follow-up
+to the same open patch, retaining 4.37.16. Visual acceptance remains pending;
+no pending test was removed based only on this correction request.
+
+2026-10-04: added a camera-driven compass with eight EN/ES directions, +Y
+north, continuous needle/bearing, native scale controls and notification space.
+Both skull frames now use a transparent Sun with exactly 32 alternating rays;
+the native cursor uses a silver C moon adapted from the existing TITLEPIC.
+Sources, prompts, deterministic generator and credits accompany the patch.
+No map, balance, control or saved-schema changes were introduced.
+
+Static/native results and captures: assets/validation_43716. Native checks
+cover rotation, lateral/backward velocity, sector boundaries, localization,
+scales and menu rendering. The initial south label/bearing overlap and small
+selector raster were corrected before delivery. Screenshot commands require
+a later rendered frame; the first capture sequence was therefore repeated
+with explicit waits. The user's physical Escape stopped Computer Use; no
+further OS input was sent. Pointer hotspot metadata/resource lookup is checked,
+but physical clicking/dragging and author visual acceptance remain pending
+under CA-43716-UI-01/02/03. Earlier unconfirmed tests are retained.
 
 ## 4.37.15 - Add traditional Truco ranked mode (#101)
 

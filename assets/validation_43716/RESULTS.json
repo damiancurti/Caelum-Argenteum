@@ -1,0 +1,199 @@
+{
+  "issue": 87,
+  "release": "4.37.16",
+  "date": "2026-10-04",
+  "base_commit": "33dfcc913c27ad676e01a6babf806aa3f48f30f8",
+  "status": "Executed static/native checks passed; author acceptance and physical pointer verification pending",
+  "static": {
+    "deterministic_two_runs": true,
+    "sun_rays": {
+      "straight": 16,
+      "wavy": 16,
+      "alternating": true
+    },
+    "persistent_schemas_unchanged": true,
+    "new_persistent_fields": 0,
+    "north": "+Y",
+    "east": "+X",
+    "cardinal_sources": [
+      "assets/generators/generate_map02_maze.py",
+      "assets/map06_port/CITY.json"
+    ],
+    "cursor_native_size": [
+      32,
+      32
+    ],
+    "cursor_grAb": [
+      31,
+      7
+    ],
+    "cursor_point_alpha": 239,
+    "cursor_corner_alpha": 0
+  },
+  "native": {
+    "engine": "GZDoom 4.14.2 Windows 11/Vulkan",
+    "heading_matrix_passes": 26,
+    "eight_view_directions": true,
+    "negative_and_wrapped_angles": true,
+    "sector_boundary_checks": true,
+    "lateral_backward_velocity_keeps_heading": true,
+    "es_o_en_w": true,
+    "hud_scale_controls": [
+      "automatic",
+      "hud_scale=3",
+      "hud_scalefactor=0.5"
+    ],
+    "twenty_notification_entries_preserved": true,
+    "main_menu_navigation_and_both_frames": true,
+    "native_resources_resolve": {
+      "cursor": {
+        "size": [
+          32,
+          32
+        ],
+        "offset": [
+          31,
+          7
+        ]
+      },
+      "M_SKULL1": {
+        "scaled_size": [
+          24,
+          24
+        ]
+      },
+      "M_SKULL2": {
+        "scaled_size": [
+          24,
+          24
+        ]
+      }
+    },
+    "map02_and_map06_loaded": true,
+    "old_43715_save_load_resave_reload": true,
+    "old_package_rollback": true,
+    "persistent_character_state_equal": true,
+    "changed_keys": [],
+    "physical_mouse_click_drag": "NOT TESTED: user Escape stopped Computer Use"
+  },
+  "package": {
+    "files": 6156,
+    "sha256": "0bfcd55a6586fff6d6642844e1c8f88d3bcf76042c8a1c767b132651903fb95e",
+    "members_match_source": true,
+    "no_qa_fixtures": true
+  },
+  "captures": {
+    "north_es.png": [
+      1024,
+      768
+    ],
+    "west_en.png": [
+      1024,
+      768
+    ],
+    "scale3.png": [
+      1024,
+      768
+    ],
+    "scale_half.png": [
+      1024,
+      768
+    ],
+    "messages.png": [
+      1024,
+      768
+    ],
+    "main.png": [
+      1024,
+      768
+    ],
+    "main_down.png": [
+      1024,
+      768
+    ],
+    "options.png": [
+      1024,
+      768
+    ],
+    "save.png": [
+      1024,
+      768
+    ],
+    "wide.png": [
+      1520,
+      825
+    ],
+    "port_north.png": [
+      1520,
+      825
+    ],
+    "small_console.png": [
+      1024,
+      768
+    ],
+    "final_cursor_resource.png": [
+      1024,
+      768
+    ],
+    "wide21.png": [
+      1512,
+      648
+    ]
+  },
+  "logs": {
+    "final_package": {
+      "sha256": "49d886c2dda4f23ee14697f21c2327d9be664d8c1c62021fe1ee4a4da7a2d437",
+      "exit": 0
+    },
+    "final_layout": {
+      "sha256": "a048ca07733c8cdfbbd45b045ed6addbcd2b31f04883493f82a697760376a8e9",
+      "exit": 0
+    },
+    "wide": {
+      "sha256": "96797bb42e359ee03e19b12f80dad47b2bb68b689cd3b58dd7993f19c979dece",
+      "exit": 0
+    },
+    "port": {
+      "sha256": "65402c537ea55ab09ec8cd4d293d4dd4088b44aeae9c5b7870d1c0c2234722bb",
+      "exit": 0
+    },
+    "legacy_final": {
+      "sha256": "a8c320cbb5d15d87aa196948717c2a518fbc5a705210092874bfabf0f4e5a778",
+      "exit": 0
+    },
+    "rollback": {
+      "sha256": "eb8730cd12564905dc26e884778474dbb01fd179154c85b5a6af0660f1ab771f",
+      "exit": 0
+    },
+    "wide21": {
+      "sha256": "ed16c99d242dcdba71b58725b2650806eac6bac7f3f571a22521a96cf1ad7ac8",
+      "exit": 0
+    }
+  },
+  "qualifications": [
+    "All native tests use owned isolated processes; fixtures seed a safe profile and expose native console/menu events. No full campaign traversal or author acceptance is claimed.",
+    "The final change only increases native-console clearance at reduced HUD scale; final_layout reruns that affected case and native resources. Earlier heading/menu/map/save evidence remains applicable to unchanged behavior.",
+    "final_cursor_resource.png is an enlarged in-engine texture preview, not an OS-pointer screenshot or proof of physical mouse behavior. Computer Use stopped on the user physical Escape; no subsequent OS input was sent.",
+    "The existing twenty-entry feed can reach the resource area when every entry wraps; native console notices also overlap its first entries. This patch reserves compass space and does not redesign those pre-existing message interactions.",
+    "A requested 2560x1080 window was clamped by the desktop to 1924x1061. The separate 1512x648 capture verifies an actual 21:9 viewport.",
+    "Early capture commands ran subsequent state changes before rendering; accepted captures were repeated with waits after screenshots. Initial small Sun raster and compass south-label overlap were corrected.",
+    "The running author game and its package were preserved; run_dev.bat rebuilds the current checkout after restart.",
+    "Compass appearance and glyph alignment were refined after author feedback; see compass_refinement/RESULTS.json for superseding captures and final package hash."
+  ],
+  "pending_author_tests": [
+    "CA-43716-UI-01",
+    "CA-43716-UI-02",
+    "CA-43716-UI-03"
+  ],
+  "compass_refinement": "compass_refinement/RESULTS.json",
+  "author_acceptance": {
+    "date": "2026-10-04",
+    "result": "PASSED",
+    "test_ids": [
+      "CA-43716-UI-01",
+      "CA-43716-UI-02",
+      "CA-43716-UI-03"
+    ],
+    "qualifications": "None reported; author explicitly approved all tests and requested closure/merge."
+  }
+}

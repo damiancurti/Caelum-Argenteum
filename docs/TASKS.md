@@ -1,6 +1,17 @@
 # TASKS.md — Active tasks
 
-Documentation version: **4.37.15** — 2026-10-04.
+Documentation version: **4.37.16** — 2026-10-04.
+
+## Issue #87 - Compass and project menu pointers (4.37.16)
+
+- Implemented view-driven compass, north +Y, eight bilingual directions,
+  bounded native HUD scaling and reserved message space.
+- Author refinement: corrected visible letter alignment; added silver laurels
+  and a subdued Sun of May behind the needle. Native evidence under
+  assets/validation_43716/compass_refinement; visual acceptance passed 2026-10-04.
+- Sun of May replaces both skull frames; C moon supplies the native cursor.
+  Immutable generated art inputs and deterministic vector integration retained.
+- Evidence: assets/validation_43716. Author checks passed 2026-10-04; closure/merge authorized.
 
 ## Issue #101 - Traditional ranked Truco (4.37.15)
 

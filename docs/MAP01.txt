@@ -1,6 +1,6 @@
 CAELUM ARGENTEUM — STORY AND MAP01
 
-Documentation version: **4.37.15** — 2026-10-04.
+Documentation version: **4.37.16** — 2026-10-04.
 
 4.37.13 / issue #81: Argento offers Trucazo practice through his existing
 conversation pages. Requires the physical Tarot deck from Palomo, inside or

@@ -4,6 +4,48 @@ Status: integrated engineering register (issue #22, patch 4.36.1b).
 Prepared: 2026-09-23. Inherits the project's release after integration.
 Inspected baseline: `1dc390576fa330d37ff543526fc7e69a397fc28f` (PR #7).
 
+## CA-KP-035 - Center visible font ink rather than trailing advance
+
+Status/evidence: CODE-VERIFIED / ENGINE-VERIFIED.
+First recorded / last checked: 2026-10-04. Issue #87 / 4.37.16 follow-up.
+Baseline: 3a06a55a plus the compass refinement; GZDoom 4.14.2 Windows/Vulkan.
+
+CaelumMono's native StringWidth("N") is 5, whereas GetCharWidth is 9:
+StringWidth includes the final -4 kerning. Its 18x28 source PNG also has
+asymmetric transparent padding. At Scale 2, the visible N/E/S/O/W ink center
+is (5.5,6.5), versus cell center (4.5,7). Centering only StringWidth therefore
+visibly shifts the letters from the compass. Subtract the final kerning and
+apply the measured ink offset locally; do not change the shared font to fix
+one widget. These offsets describe the existing cardinal glyphs, not arbitrary
+fonts or lowercase text. If the font changes, remeasure its alpha bounds.
+
+Regression: compare N/S against the needle's vertical axis and E/O/W against
+its horizontal axis in ES/EN at automatic and enlarged HUD scales. Native
+captures and measured font values: assets/validation_43716/compass_refinement.
+Author visual acceptance CA-43716-UI-01 passed on 2026-10-04.
+
+## CA-KP-034 - Native Windows cursor dimensions and hotspot
+
+Status/evidence: CODE-VERIFIED; texture metadata ENGINE-VERIFIED.
+First recorded / last checked: 2026-10-04. Issue #87 / 4.37.16.
+Baseline: 33dfcc91 plus the #87 patch; GZDoom 4.14.2, Windows 11/Vulkan.
+
+GZDoom g4.14.2's Windows I_SetCursor rejects source bitmaps above 32x32;
+TEXTURES display scaling does not reduce that source bitmap. Supply an actual
+32x32 transparent PNG. Native GetTexelLeftOffset/TopOffset provide the cursor
+hotspot, so the PNG grAb chunk must identify the intended pointing pixel.
+The OS then scales the cursor for display DPI. GameInfo.CursorPic is selected
+when vid_cursor is None; an explicit user override takes precedence.
+
+Source reference: g4.14.2 src/common/platform/win32/i_system.cpp, I_SetCursor,
+and src/d_main.cpp, vid_cursor callback. The final package resolves cursor as
+32x32 with offset (31,7), confirmed by native TexMan queries. Its pointing
+pixel has alpha 239; the corner is transparent. This establishes resource
+metadata, not physical mouse behavior: the user's Escape stopped Computer Use
+before click/drag verification. CA-43716-UI-03 passed author acceptance on 2026-10-04. Regression:
+inspect actual bitmap dimensions/offset, then test menu clicks and slider
+dragging at the intended DPI. Evidence: assets/validation_43716/RESULTS.json.
+
 ## CA-KP-033 — Refresh dialogue text after successful-open rewards
 
 Status/evidence: CODE-VERIFIED / ENGINE-VERIFIED.
@@ -23,7 +65,7 @@ reposition replies already laid out by the native menu.
 Regression: open Palomo upstairs with and without carrying capacity; inspect
 the first displayed message and reply positions, then retry and reopen. Final
 EN/ES captures and native checks: [4.37.14 evidence](../assets/validation_43714/RESULTS.json).
-Author acceptance remains pending under CA-43714-DECK-01. This verifies the
+Author acceptance CA-43714-DECK-01 passed on 2026-10-04. This verifies the
 two tested layouts, not arbitrary font overrides or resolutions.
 
 ## CA-KP-032 — Test ability input through the native ready weapon

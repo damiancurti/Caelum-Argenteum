@@ -1025,6 +1025,7 @@ class CaelumHUDOverlay : EventHandler
         DrawFirstPersonWeapon(localPlayer);
         DrawFirstPersonBlockShield(localPlayer);
 
+        CaelumCompass.Draw(event, localPlayer, HUDFont);
         DrawSealIndicator(localPlayer);
         DrawTarotIndicator(localPlayer);
 

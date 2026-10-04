@@ -1,6 +1,7 @@
 // GameInfo modifica ajustes globales suministrados por el proyecto.
 GameInfo
 {
+    CursorPic = "cursor"
     // Reemplaza la clase de jugador por la clase ZScript propia del proyecto.
     PlayerClasses = "CaelumPlayer"
 

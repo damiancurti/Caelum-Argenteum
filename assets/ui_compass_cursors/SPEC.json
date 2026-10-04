@@ -1,0 +1,66 @@
+{
+  "issue": 87,
+  "compass": {
+    "author_followup": "Center the cardinal letters; silver laurels and a Sun of May background.",
+    "sun_opacity": 0.42,
+    "silver_highlight": "#e2e6e7",
+    "silver_mid": "#8d9ba3",
+    "silver_shadow": "#303c45",
+    "metal_dark": "#172127",
+    "font_alignment": {
+      "font": "CaelumMono",
+      "source_scale": 2,
+      "source_cell": [
+        18,
+        28
+      ],
+      "native_cell": [
+        9,
+        14
+      ],
+      "native_ink_offset": [
+        1,
+        -0.5
+      ],
+      "measurement": "Alpha >= 128 bounds: N/S/E/O x=5..16,y=5..20; W x=4..17,y=5..20. All cardinal centers match. Digits vary by at most half a source pixel horizontally. Subtract final native kerning before centering.",
+      "cardinal_ink_center": [
+        11,
+        13
+      ]
+    }
+  },
+  "sun": {
+    "canvas": 512,
+    "rays": 32,
+    "straight_path": "M 246 145 L 256 12 L 266 145 Z",
+    "wavy_path": "M 246 145 C 218 113 276 83 256 12 C 297 66 250 102 266 145 Z",
+    "face_center": [
+      646,
+      583
+    ],
+    "face_source_radius": 252,
+    "face_radius": 122,
+    "frame_size": 24
+  },
+  "moon": {
+    "viewbox": [
+      200,
+      170,
+      896,
+      896
+    ],
+    "size": 32,
+    "hotspot": [
+      31,
+      7
+    ]
+  },
+  "palette": {
+    "outline": "#523614",
+    "light": "#fff0ac",
+    "gold": "#d2a443",
+    "shadow": "#79501e",
+    "silver": "#afbec5",
+    "panel": "#111b23"
+  }
+}

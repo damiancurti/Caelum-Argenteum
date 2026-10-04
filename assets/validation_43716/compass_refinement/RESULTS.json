@@ -1,0 +1,83 @@
+{
+  "issue": 87,
+  "release": "4.37.16",
+  "date": "2026-10-04",
+  "base_commit": "3a06a55a5d3ad9c7384c71af6efdc81d3a69405a",
+  "status": "Author-requested compass refinement implemented; native/static checks passed; author visual acceptance pending",
+  "changes": [
+    "Center cardinal glyph ink after removing trailing kerning.",
+    "Silver mirrored laurel branches, beveled dark-metal dial and reused Sun of May at 42% opacity.",
+    "Slightly enlarged art and cardinal spacing retain reserved notification margin."
+  ],
+  "static": {
+    "two_generator_runs_byte_identical": true,
+    "selector_and_mouse_resources_byte_identical_to_base": true,
+    "native_font_cell": [
+      9,
+      14
+    ],
+    "native_cardinal_ink_center": [
+      5.5,
+      6.5
+    ],
+    "native_kerning": -4,
+    "persistent_schemas_unchanged": true,
+    "save_migration_required": false
+  },
+  "native": {
+    "engine": "GZDoom 4.14.2 Windows 11/Vulkan",
+    "exits": {
+      "font_probe": 0,
+      "laurel_preview": 0,
+      "laurel_wide": 0,
+      "laurel_final": 0
+    },
+    "captures": [
+      "1024x768 ES, automatic and hud_scale=3",
+      "1024x768 EN, diagonal view",
+      "1512x648 EN, automatic and hud_scalefactor=0.5"
+    ],
+    "visible_letter_midpoints_at_scale3": {
+      "N": [
+        83,
+        22
+      ],
+      "S": [
+        83,
+        145
+      ],
+      "E": [
+        144.5,
+        83.5
+      ],
+      "O": [
+        22,
+        83.5
+      ]
+    },
+    "cardinal_axes_intersection_pixels": [
+      83,
+      83.5
+    ],
+    "dial_center_pixels": [
+      83.5,
+      83.5
+    ],
+    "native_heading_checks": [
+      0,
+      3,
+      6
+    ]
+  },
+  "package": {
+    "files": 6156,
+    "sha256": "8f3f8b18a4acfa889635bc7d28f5b6714f3868530417226377f82308f64362f2",
+    "members_match_source": true,
+    "no_qa_fixtures": true
+  },
+  "qualifications": [
+    "This follow-up changes only compass presentation and its source art; original #87 heading/map/save/menu/pointer evidence remains applicable to unchanged behavior.",
+    "The original compass captures are retained as history and superseded by this folder for appearance.",
+    "No acceptance entry was removed based only on the correction request. Physical pointer acceptance remains separately pending."
+  ]
+}

@@ -185,8 +185,8 @@ class CaelumNotifications : Object
         {
             int column = index / 10;
             int row = index % 10;
-            double x = column == 0 ? 40.0 : 706.0;
-            int width = column == 0 ? 540 : 430;
+            double x = column == 0 ? CaelumCompass.NotificationLeft(user) : 706.0;
+            int width = column == 0 ? int(CaelumCompassLayout.NOTIFY_RIGHT - x) : 430;
             let lines = font.BreakLines(inbox.Text[index], int(width / textScale));
             for (int line = 0; line < Min(2, lines.Count()); line++)
             {

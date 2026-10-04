@@ -1,8 +1,8 @@
 # CONTEXT.md — Ultra-condensed summary of Caelum Argenteum
 
-Documentation version: **4.37.15** — 2026-10-04.
+Documentation version: **4.37.16** — 2026-10-04.
 
-**Accepted 2026-10-04:** #93, #97, #99, #101; all author checks passed.
+**Accepted 2026-10-04:** #93, #97, #99, #101, #87; all author checks passed.
 Evidence: assets/validation_*. #81 accepted/merged.
 
 **Accepted #80 / 4.37.12 (2026-10-04):** three essences; User3 costs 1000 Anima,

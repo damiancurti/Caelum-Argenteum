@@ -4756,3 +4756,23 @@ CA_TC_SUIT_0 = "Espadas";
 CA_TC_SUIT_1 = "Copas";
 CA_TC_SUIT_2 = "Bastos";
 CA_TC_SUIT_3 = "Oros";
+
+[enu default]
+CA_COMPASS_N = "N";
+CA_COMPASS_NE = "NE";
+CA_COMPASS_E = "E";
+CA_COMPASS_SE = "SE";
+CA_COMPASS_S = "S";
+CA_COMPASS_SW = "SW";
+CA_COMPASS_W = "W";
+CA_COMPASS_NW = "NW";
+
+[es]
+CA_COMPASS_N = "N";
+CA_COMPASS_NE = "NE";
+CA_COMPASS_E = "E";
+CA_COMPASS_SE = "SE";
+CA_COMPASS_S = "S";
+CA_COMPASS_SW = "SO";
+CA_COMPASS_W = "O";
+CA_COMPASS_NW = "NO";

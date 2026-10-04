@@ -1,6 +1,30 @@
 # Caelum Argenteum — Current systems and rules
 
-Documentation version: **4.37.15** — 2026-10-04.
+Documentation version: **4.37.16** — 2026-10-04.
+
+## 4.37.16 - Compass and menu pointers (#87)
+
+The top-left compass follows the rendered camera angle, including stationary
+turning. Strafing and walking backward do not change its heading. World north
+is +Y, east +X; this matches MAP02's cardinal blocks and MAP06's city exits.
+The needle and 000-359 bearing update continuously; the nearest of eight
+directions appears below it. West is O/SO/NO in Spanish and W/SW/NW in English.
+The cardinal letters are centered by visible glyph bounds, compensating for
+CaelumMono's trailing kerning and padding. The dial shares their center and
+uses silver laurels, a dark-metal rim and a subdued Sun of May background.
+
+The compass uses the native hud_scale and hud_scalefactor controls, with
+resolution-based bounds. It hides in menus, dialogue, crafting, Journal and
+after death. The existing twenty-message feed reserves a left strip whose
+width follows the compass; its entry count and right column stay unchanged.
+The standard four native console-notification rows are reserved when enabled.
+It introduces no saved fields, character migration or gameplay changes.
+
+Both native skull selector frames resolve to the same transparent Sun of May,
+with a face and 16 straight/16 wavy alternating rays. Native navigation and
+selection behavior are retained. GameInfo selects the 32-pixel silver C moon
+cursor, with hotspot (31,7) at its upper horn. An explicit user vid_cursor
+override still takes precedence. Physical click/drag passed author acceptance on 2026-10-04.
 
 ## 4.37.15 - Traditional Truco ranked mode (#101)
 
