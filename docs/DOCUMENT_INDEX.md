@@ -143,7 +143,7 @@ SHA-256: `f693254059bc7d68529dac37972c3032cfe6e069e24f7d8d00e63b840ba6a043`
 
 ## [HISTORY.md](HISTORY.md) - 179695 words
 
-SHA-256: `124b243d2078e3e6f78ebd3343b3e319a0feec6148a482cd89e9352e0c089460`
+SHA-256: `d01ab8c2767485603991ab43c54e52d51458ad956c8607f62f889a0b2111fadd`
 
 - Lines 1-4 - [Caelum Argenteum — Consolidated history](HISTORY.md#caelum-argenteum--consolidated-history) - context: -
 - Lines 5-58 - [4.37.13 — Complete Trucazo practice against Argento (#81)](HISTORY.md#43713--complete-trucazo-practice-against-argento-81) - context: Caelum Argenteum — Consolidated history
@@ -852,6 +852,6 @@ SHA-256: `c07478eae5b0558fee3c7bc64482f442d26a7a88047903d7cd0094ba6551a686`
 - Lines 874-881 - [Integration and closing of 4.36](TASKS.md#integration-and-closing-of-436) - context: TASKS.md — Active tasks
 
 <!-- DOCUMENT_INDEX_META
-{"documents": [{"path": "ASSETS.md", "sha256": "f693254059bc7d68529dac37972c3032cfe6e069e24f7d8d00e63b840ba6a043", "words": 18067}, {"path": "HISTORY.md", "sha256": "124b243d2078e3e6f78ebd3343b3e319a0feec6148a482cd89e9352e0c089460", "words": 179695}, {"path": "KNOWN_PITFALLS.md", "sha256": "72185ae863c0c83a31b5b591ef012b2b7efd2459c43a06eb7b36122222d39a83", "words": 7551}, {"path": "MAP01.txt", "sha256": "0725ec3033208da3245c2513a5672cf67da5e377609603020fb05ee5457a3e8f", "words": 30393}, {"path": "PROJECT.md", "sha256": "43f76a4df53d2bb0bb76f9242ab952dbd52ea6fc81b1decd8e80c7b9f90d4acd", "words": 36356}, {"path": "SYSTEMS.md", "sha256": "091562c3b5624f964831235277c51c7a432f3345af8948fffba9a5a8b74ed00b", "words": 53327}, {"path": "TASKS.md", "sha256": "c07478eae5b0558fee3c7bc64482f442d26a7a88047903d7cd0094ba6551a686", "words": 7420}], "generated_by": "build_document_index.py", "threshold_words": 5000}
+{"documents": [{"path": "ASSETS.md", "sha256": "f693254059bc7d68529dac37972c3032cfe6e069e24f7d8d00e63b840ba6a043", "words": 18067}, {"path": "HISTORY.md", "sha256": "d01ab8c2767485603991ab43c54e52d51458ad956c8607f62f889a0b2111fadd", "words": 179695}, {"path": "KNOWN_PITFALLS.md", "sha256": "72185ae863c0c83a31b5b591ef012b2b7efd2459c43a06eb7b36122222d39a83", "words": 7551}, {"path": "MAP01.txt", "sha256": "0725ec3033208da3245c2513a5672cf67da5e377609603020fb05ee5457a3e8f", "words": 30393}, {"path": "PROJECT.md", "sha256": "43f76a4df53d2bb0bb76f9242ab952dbd52ea6fc81b1decd8e80c7b9f90d4acd", "words": 36356}, {"path": "SYSTEMS.md", "sha256": "091562c3b5624f964831235277c51c7a432f3345af8948fffba9a5a8b74ed00b", "words": 53327}, {"path": "TASKS.md", "sha256": "c07478eae5b0558fee3c7bc64482f442d26a7a88047903d7cd0094ba6551a686", "words": 7420}], "generated_by": "build_document_index.py", "threshold_words": 5000}
 DOCUMENT_INDEX_META -->
 
