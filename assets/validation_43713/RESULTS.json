@@ -2,7 +2,7 @@
   "issue": 81,
   "release": "4.37.13",
   "date": "2026-10-04",
-  "status": "Agent validation passed; author acceptance pending",
+  "status": "Agent validation and author acceptance passed",
   "base_commit": "71ef7714400752b49cf99c08f66cb34240316f55",
   "baseline_runtime_commit": "c7fe3fe9b64b5c906aeec87b4df1ff7840668de4",
   "environment": "Windows 11, GZDoom 4.14.2, Vulkan, isolated configuration and saves",
@@ -64,8 +64,14 @@
     "Earlier save/entry tests cover unchanged match logic; delivered run covers final UI and packaged rules.",
     "Spanish introduction was captured with the same final rules width; other wraps were unchanged from previously inspected views."
   ],
-  "pending_author_tests": [
-    "CA-43713-TRUCAZO-01",
-    "CA-43713-TRUCAZO-02"
-  ]
+  "pending_author_tests": [],
+  "author_acceptance": {
+    "date": "2026-10-04",
+    "passed": [
+      "CA-43713-TRUCAZO-01",
+      "CA-43713-TRUCAZO-02"
+    ],
+    "qualifications": [],
+    "closure_and_merge_authorized": true
+  }
 }

@@ -8,7 +8,7 @@ EN/ES. Evidence: validation_43713a; author check pending.
 **#81 / 4.37.13:** Argento offers paused Trucazo practice in MAP01.
 56 Minors, traditional calls, Patience health and Type 1 damage. No Majors,
 Magic Senses or wagers. Abandoning loses; matches persist. Evidence:
-validation_43713; author checks pending.
+validation_43713; accepted 2026-10-04.
 
 **#80 / 4.37.12:** up to three essences; User3 costs 1000 Anima, lasts 60 s,
 recharges 600 s from use. Fool flies; Minors double fixed bonuses. Palomo's

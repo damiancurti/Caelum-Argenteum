@@ -1,34 +1,3 @@
-CA-43713-TRUCAZO-01 — Complete practice with Argento
-Origin: 4.37.13 / issue #81. Author acceptance pending.
-Prerequisites: MAP01, physical Tarot deck received from Palomo; keep original
-save/package. The deck may be carried or inside the Box. No essences required.
-1. Use Argento and choose the Trucazo practice. Read rules/ranking and begin.
-   Expect five initial cards each from one shared 56-Minor deck; initial
-   8/9/10/Queens go to attack rows, replacement nonplayables to defense rows,
-   and at least three playable cards per hand. Rival faces stay hidden.
-2. Use Left/Right or 1-5 to select cards, Up/Down for actions and Enter/A to
-   confirm. Play complete hands, accept/refuse and raise Envido/Real Envido
-   and Truco/Retruco/Vale 4 when offered. Inspect rows and both health totals.
-   Expect correct hierarchy, ties to mano, legal responses and no blocked turn.
-3. Finish the match. Expect simultaneous hand-end damage, a clear win/loss,
-   no wagers/rewards or world-health/resource/essence changes. Return to the
-   mansion, move/use normally, speak again and try the EN/ES menu text.
-
-CA-43713-TRUCAZO-02 — Persistence, abandonment and existing activities
-Origin: 4.37.13 / issue #81. Author acceptance pending.
-Prerequisites: an active practice and a retained pre-4.37.13 MAP01 save/package.
-1. Use the match menu to save with a call pending and after a hand result.
-   Reload both. Expect identical hand/rows, used cards, health, caller/value
-   and result; the match screen returns paused without redealing or damage
-   replay. Complete a restored match normally.
-2. Esc/B opens abandonment confirmation. Back returns to the same match;
-   confirming records defeat. Save/load the result: it remains settled. Close
-   it and start another practice; no rewards or campaign losses are repeated.
-3. Load a COPY of the old save in 4.37.13 and challenge Argento. Expect the old
-   character/quest/deck intact and a normal first match. Keep the original for
-   rollback with its original package. Verify ordinary dining/rest/table and
-   Tarot selection/activation still work after closing the match.
-
 CA-43713A-CRAFT-01 - Visible time shortcuts
 Origin: 4.37.13a / issue #93. Author acceptance pending.
 Prerequisites: a reachable working crafting station and a valid recipe/task.
