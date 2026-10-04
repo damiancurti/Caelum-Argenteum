@@ -7,7 +7,7 @@ once, lasts 60 s and recharges for 600 s from use, without cancellation.
 Fool: flight; Minors: double fixed bonuses. Palomo gives 78 physical cards
 (780 g, one slot), unsellable/undroppable/unbreakable. Capture requires the deck
 inside the owned Box; powers remain personal. Additive revisions preserve saves.
-Evidence: assets/validation_43712; author checks remain in pending_test.txt.
+Evidence: assets/validation_43712; both author checks passed 2026-10-04.
 
 **Accepted #79/#78 (2026-10-04):** guards recognize the amnesiac captain; one
 Journal clue. Paid prisoners share siege/calendar guidance; future timing pending.
@@ -236,7 +236,7 @@ the player and extract alive through an exit before the MAP02 boss; they do
 not fight that boss. At the port, each grants +10 reputation with its own
 faction and a fixed 25 gold coins once, independent of character size.
 The latest #10/#14 author decision supersedes the former weapon-price formula.
-The #15 fronts and #80 powers are integrated; Tarot author checks remain pending.
+The #15 fronts and #80 powers are integrated; Tarot author checks passed 2026-10-04.
 Siege rules retain their separate acceptance.
 Prisoner source/faction mapping: Caella/Unitarians, Ronnie/Federals,
 Rulo/Free Peoples, Argento/Cult of the Tarot; do not reassign mansion NPCs.

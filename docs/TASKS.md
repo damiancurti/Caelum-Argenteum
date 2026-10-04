@@ -13,8 +13,8 @@ Documentation version: **4.37.12** — 2026-10-04.
   essences and powers remain personal.
 - Compatibility: additive revisions, idempotent legacy recovery, saved selection,
   active set and timers. Changing selection never changes a running effect.
-- Evidence: assets/validation_43712. Author checks CA-43712-TAROT-01/02 remain
-  pending; native evidence is not author acceptance.
+- Evidence: assets/validation_43712. The author confirmed CA-43712-TAROT-01/02
+  passed on 2026-10-04 and authorized #80 closure and PR #92 merge.
   Normal validator/build, nine static and 171 native assertions pass, plus two
   baseline/rollback checks.
 - Follow-up implemented: HUD duration/cooldown above the side Seal indicator;

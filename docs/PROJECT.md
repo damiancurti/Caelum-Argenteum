@@ -29,7 +29,9 @@ recover a missing legacy deck once from recorded Box delivery or essence
 ownership. Insufficient capacity retries after space is freed. Preserve original
 saves/packages for rollback. Personal time, including rest/travel simulation,
 advances saved timers without granting free resources. Evidence:
-assets/validation_43712/RESULTS.json; author checks are pending in pending_test.txt.
+assets/validation_43712/RESULTS.json. The author confirmed both Tarot checks
+passed on 2026-10-04 and authorized #80 closure and PR #92 merge; HISTORY
+records their IDs and results.
 Remaining Major powers, acquisition content and awakening stay V5 work. Trucazo
 is #81 and full-city performance remains #86.
 

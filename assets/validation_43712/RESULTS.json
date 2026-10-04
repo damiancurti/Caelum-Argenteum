@@ -341,11 +341,15 @@
     "No engine, IWAD, save or local QA fixture is included."
   ],
   "author_acceptance": {
-    "status": "pending",
+    "status": "passed",
+    "date": "2026-10-04",
     "checks": [
       "CA-43712-TAROT-01",
       "CA-43712-TAROT-02"
     ],
-    "file": "pending_test.txt"
+    "origin": "4.37.12 / issue #80",
+    "qualifications": "None reported; all Tarot tests passed.",
+    "merge_and_closure_authorized": true,
+    "record": "docs/HISTORY.md"
   }
 }

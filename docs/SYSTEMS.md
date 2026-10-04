@@ -4277,7 +4277,7 @@ state; the cooperative variant needs joint design.
 
 ### Issue #80 approved power contract — author decision, 2026-10-04
 
-Implemented in 4.37.12; author playtest acceptance remains pending. The author
+Implemented in 4.37.12; both author playtests passed on 2026-10-04. The author
 defines a shared activation of up to three selected, captured essences: **1000
 Anima total**, **60 seconds** of effect and **600 seconds** of cooldown.
 The Fool's flight is additional to its existing authored world transition.

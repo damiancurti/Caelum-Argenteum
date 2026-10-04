@@ -24,9 +24,9 @@ Eligible old saves receive the deck once; free capacity if recovery needs room.
 Selection, running powers and remaining timers persist through save/load and
 travel. The authored mansion transition remains unchanged.
 
-See [test evidence](assets/validation_43712/RESULTS.json) and
-[outstanding author checks](pending_test.txt). Native evidence is separate
-from author acceptance; full-city performance remains #86.
+See [test evidence](assets/validation_43712/RESULTS.json). The author confirmed
+CA-43712-TAROT-01/02 passed on 2026-10-04 and authorized #80 closure and PR #92
+merge. Both checks are recorded in HISTORY; full-city performance remains #86.
 
 Issue [#79](https://github.com/damiancurti/Caelum-Argenteum/issues/79) established
 the protagonist as Barracas al Sud's amnesiac guard captain. Guards recognize

@@ -4,6 +4,14 @@ Documentation version: **4.37.12** — 2026-10-04.
 
 ## 4.37.12 — Campaign Tarot powers and physical deck (#80)
 
+Author acceptance, 2026-10-04: the author explicitly confirmed that all Tarot
+tests passed and then authorized issue #80 closure and PR #92 merge.
+CA-43712-TAROT-01 (4.37.12 / #80, physical deck and capture) and
+CA-43712-TAROT-02 (4.37.12 / #80, powers, HUD timers and persistence) are PASSED,
+without qualifications or reported exceptions. Both entries are removed from
+pending_test.txt in this same update. The patch version and tested runtime
+remain unchanged; agent-only evidence stays distinct from this acceptance.
+
 Implemented 2026-10-04 over accepted main 63f903d3, on focused branch
 issue-80-campaign-tarot. The issue required an author-approved contract before
 power implementation. The author's answers define up to three selected cards,
@@ -42,7 +50,7 @@ are recorded in assets/validation_43712/RESULTS.json: normal validator/build,
 nine static checks, 171 current-version native assertions and two baseline/
 rollback assertions pass. Isolated story fixtures
 seed authored prerequisites; they do not claim a full new campaign playthrough
-or full-army performance acceptance. CA-43712-TAROT-01/02 remain in
+or full-army performance acceptance. CA-43712-TAROT-01/02 were originally in
 pending_test.txt until explicit author confirmation. #81 and #86 remain separate.
 
 
