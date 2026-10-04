@@ -15,7 +15,7 @@ Documentation version: **4.37.15** — 2026-10-04.
 - Practice is the final ordinary reply before goodbye in all existing pages.
 - Preserve page identity and every other reply/action/condition; native verify
   the displayed order and entry into the already accepted match.
-- Evidence: assets/validation_43714a. Next: CA-43714A-ARGENTO-01.
+- Evidence: assets/validation_43714a. Author checks passed 2026-10-04; closure/merge authorized.
 
 ## Issue #97 - Palomo's first upstairs deck handoff (4.37.14)
 
@@ -23,15 +23,15 @@ Documentation version: **4.37.15** — 2026-10-04.
   Palomo upstairs, before choosing equipment or receiving the later Box.
 - Reuse the existing grant record/capacity guards; preserve repeated dialogue,
   saves, essences, route and USDF page indexes. Explain the new timing in EN/ES.
-- Evidence: assets/validation_43714. Next: author CA-43714-DECK-01.
-- Focused PR follows #95; #81 is accepted/merged, #93 still pending.
+- Evidence: assets/validation_43714. Author checks passed 2026-10-04; closure/merge authorized.
+- Focused PR follows #95; #81 is accepted/merged, #93 is author-accepted.
 
 ## Issue #93 - Crafting time help (4.37.13a)
 
 - Show keyboard Y time skip next to T acceleration in the lower EN/ES help and
   active-task status; preserve existing controls, mechanics and saves.
-- Agent evidence: assets/validation_43713a. Next: CA-43713A-CRAFT-01.
-- Based on accepted #81, merged via PR #94. This UI patch awaits acceptance.
+- Agent evidence: assets/validation_43713a. Author checks passed 2026-10-04; closure/merge authorized.
+- Based on accepted #81, merged via PR #94. Author acceptance passed 2026-10-04.
 
 ## Issue #81 — Trucazo against Argento (4.37.13)
 

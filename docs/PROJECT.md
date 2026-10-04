@@ -17,7 +17,7 @@ Evidence: assets/validation_43715. Author checks CA-43715-TRUCO-01/02 remain.
 The existing practice choice is now the last ordinary reply before goodbye
 in all four Argento pages that offer it. Other replies retain their order,
 conditions and actions. Evidence: assets/validation_43714a; author check
-CA-43714A-ARGENTO-01 is pending. Match rules and saved page indexes are intact.
+CA-43714A-ARGENTO-01 passed author acceptance on 2026-10-04. Match rules and saved page indexes are intact.
 
 ## 4.37.14 - Palomo gives the deck upstairs (#97)
 
@@ -27,7 +27,7 @@ conversation, before completing the resident trials or receiving the Box.
 Repeated dialogue preserves the same deck; capacity failure permits another
 attempt. Existing saves receive it on the next eligible conversation if it
 has never been granted. No new save fields or migration revision are needed.
-Evidence: assets/validation_43714; CA-43714-DECK-01 awaits author acceptance.
+Evidence: assets/validation_43714; CA-43714-DECK-01 passed author acceptance on 2026-10-04.
 
 ## 4.37.13a - Visible crafting time shortcut (#93)
 
@@ -35,7 +35,7 @@ The author reported that Y worked but was missing from the bottom crafting
 help. The EN/ES footer now lists keyboard Y for time skipping beside T for
 acceleration; the active-task status repeats both. Input, work/skip mechanics
 and save schema are unchanged. Evidence: assets/validation_43713a. Author
-check CA-43713A-CRAFT-01 is pending; #81 acceptance remains separate.
+check CA-43713A-CRAFT-01 passed author acceptance on 2026-10-04; #81 acceptance remains separate.
 
 ## 4.37.13 — Trucazo practice against Argento (#81)
 
