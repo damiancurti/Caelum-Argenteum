@@ -16,8 +16,8 @@ appended. Tutorial gift revision 1 adds one owned instance for started/completed
 old saves, preserving swords, choices, damage, quotas and progress. Full storage
 defers the gift until ordinary capacity permits it. There are no new vendors,
 enemy drops or higher tiers. Evidence: assets/validation_43717. Static/native
-verification and author acceptance are separate; current author checks are in
-pending_test.txt. Earlier release descriptions of Ronnie's sword loan are
+verification and author acceptance are separate. All three author checks
+passed on 2026-10-04. Earlier release descriptions of Ronnie's sword loan are
 historical and are superseded by this section.
 Native verification passed 117 assertions, including crafting, both attack
 inputs and old-save reload/travel/rollback; visual captures confirm the author's

@@ -14,8 +14,8 @@ chopping yields ×10 and mining ×100, bounded by the source and tutorial quotas
 Ronnie gives the owned tool and recipe; the chosen weapon still must be crafted.
 Every eligible tool now plays the material-specific extraction sound and shows
 a centered success message in CaelumText. Original sources/credits and native
-evidence: [4.37.17](assets/validation_43717/RESULTS.json). Author acceptance remains
-in [pending_test.txt](pending_test.txt); previous approved issues are merged.
+evidence: [4.37.17](assets/validation_43717/RESULTS.json). All three author checks
+passed on 2026-10-04, including art/audio; closure and merge are authorized.
 
 Issue [#87](https://github.com/damiancurti/Caelum-Argenteum/issues/87) adds a
 top-left compass driven by the rendered view, with eight directions and a

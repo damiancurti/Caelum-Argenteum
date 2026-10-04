@@ -3,7 +3,7 @@
   "release": "4.37.17",
   "date": "2026-10-04",
   "base_commit": "97419a12929a010dfbf4b41fee1c61fed18fbf67",
-  "status": "Implemented; static/native checks passed; author acceptance pending",
+  "status": "Accepted by the author on 2026-10-04; all static/native and author checks passed",
   "static": {
     "generators_two_runs_byte_identical": true,
     "updated_reference_zip_crc_and_seven_hashes_verified": true,
@@ -218,12 +218,14 @@
     }
   },
   "author_acceptance": {
-    "status": "PENDING",
+    "status": "PASSED",
     "ids": [
       "CA-43717-PICKAXE-01",
       "CA-43717-PICKAXE-02",
       "CA-43717-PICKAXE-03"
     ],
-    "audio": "Engine playback/channel checks and numerical waveform analysis passed. Subjective attack/decay, perceived loudness and attenuation need author listening; no agent auditory evaluation is claimed."
+    "audio": "Engine playback/channel checks and numerical waveform analysis passed. The author subsequently confirmed the subjective attack/decay, perceived loudness and attenuation checks; no agent auditory evaluation is claimed.",
+    "confirmation_date": "2026-10-04",
+    "qualifications": "None reported; author confirmed all tests and requested closure/merge."
   }
 }

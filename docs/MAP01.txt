@@ -12,7 +12,7 @@ preserved; only actual legacy temporary loans use the old return lifecycle.
 Started/completed saves receive the new gift once, subject to normal capacity,
 without replenishing supplies. All extracting tools play the material sound
 and show a centered CaelumText success notice. SYSTEMS defines the contract;
-assets/validation_43717 records evidence, pending_test.txt author acceptance.
+assets/validation_43717 records evidence; author acceptance passed 2026-10-04.
 Earlier references to borrowing/returning Ronnie's sword below describe the
 older flow and are superseded by this update. Geometry is unchanged.
 

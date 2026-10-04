@@ -11,9 +11,9 @@ Documentation version: **4.37.17** — 2026-10-04.
 - Integrated supplied reference art and CC0 sounds with preserved provenance.
   Every successful extracting weapon emits one sound and centered CaelumText
   notice; invalid/exhausted hits do not.
-- Static/native evidence: assets/validation_43717. Author checks are the three
-  entries in pending_test.txt. Commit/push and a linked PR are authorized;
-  issue closure/merge awaits acceptance of #89.
+- Static/native evidence: assets/validation_43717. All three author checks
+  passed on 2026-10-04; HISTORY records their IDs. Issue closure and merge
+  of PR #107 are explicitly authorized by the author.
 
 ## Issue #87 - Compass and project menu pointers (4.37.16)
 
