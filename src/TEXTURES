@@ -5447,3 +5447,17 @@ Sprite "D013A0", 320, 200
     Offset 235, 158
     Patch "sprites/caelum/first_person/v1/dagger/F013A0.png", 0, 0
 }
+
+// #87: ambos fotogramas nativos usan el mismo Sol de Mayo de alta resolucion.
+Graphic M_SKULL1, 128, 128
+{
+    XScale 5.333333
+    YScale 5.333333
+    Patch "graphics/caelum/ui/ca_sun_selector.png", 0, 0
+}
+Graphic M_SKULL2, 128, 128
+{
+    XScale 5.333333
+    YScale 5.333333
+    Patch "graphics/caelum/ui/ca_sun_selector.png", 0, 0
+}

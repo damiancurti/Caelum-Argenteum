@@ -49,3 +49,29 @@ Prerequisites: retain an original pre-patch save/package; start ranked Truco.
 3. Open an older save and continue accepted practice or start traditional
    Truco. Expect no lost deck, quest progress or practice match. Original
    save/package remain the reversible rollback route.
+
+CA-43716-UI-01 - Compass orientation and layout
+Origin: 4.37.16 / issue #87. Author acceptance pending.
+Prerequisites: MAP02 or MAP06; ordinary HUD visible.
+1. Turn in place toward the map's +Y north, +X east, -Y south and -X west;
+   inspect intermediate directions. Expect continuous needle/000-359 bearing.
+2. Strafe and walk backward while holding the view. Heading stays unchanged.
+3. In ES/EN expect O/SO/NO versus W/SW/NW. Try normal/fullscreen and HUD
+   scales with notifications. Expect no compass/message/resource overlap.
+
+CA-43716-UI-02 - Sun of May menu selector
+Origin: 4.37.16 / issue #87. Author acceptance pending.
+Prerequisites: rebuilt package; main and character menus.
+1. Navigate with keyboard and controller. Expect the gold Sun beside the
+   selected item, readable face, alternating rays and no skull-frame flicker.
+2. Check menu scales and resolutions. Expect transparent edges, correct
+   alignment and unchanged selection/confirmation behavior.
+
+CA-43716-UI-03 - Moon pointer click and drag
+Origin: 4.37.16 / issue #87. Author acceptance pending; Computer Use stopped.
+Prerequisites: mouse-enabled menus, vid_cursor set to None (game default).
+1. Move the mouse. Expect the logo's silver C moon, with transparent background
+   and upper horn marking the pointed item; no rabbit pointer.
+2. Click menu items and drag a settings slider. Expect activation at the
+   upper horn with no displacement. Repeat at normal and alternate display DPI.
+3. Confirm the pointer is readable over both bright and dark menu backgrounds.

@@ -1,6 +1,25 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **4.37.15** — 2026-10-04.
+Documentation version: **4.37.16** — 2026-10-04.
+
+## 4.37.16 - Add compass and project menu pointers (#87)
+
+2026-10-04: added a camera-driven compass with eight EN/ES directions, +Y
+north, continuous needle/bearing, native scale controls and notification space.
+Both skull frames now use a transparent Sun with exactly 32 alternating rays;
+the native cursor uses a silver C moon adapted from the existing TITLEPIC.
+Sources, prompts, deterministic generator and credits accompany the patch.
+No map, balance, control or saved-schema changes were introduced.
+
+Static/native results and captures: assets/validation_43716. Native checks
+cover rotation, lateral/backward velocity, sector boundaries, localization,
+scales and menu rendering. The initial south label/bearing overlap and small
+selector raster were corrected before delivery. Screenshot commands require
+a later rendered frame; the first capture sequence was therefore repeated
+with explicit waits. The user's physical Escape stopped Computer Use; no
+further OS input was sent. Pointer hotspot metadata/resource lookup is checked,
+but physical clicking/dragging and author visual acceptance remain pending
+under CA-43716-UI-01/02/03. Earlier unconfirmed tests are retained.
 
 ## 4.37.15 - Add traditional Truco ranked mode (#101)
 

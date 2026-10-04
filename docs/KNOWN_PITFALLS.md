@@ -4,6 +4,28 @@ Status: integrated engineering register (issue #22, patch 4.36.1b).
 Prepared: 2026-09-23. Inherits the project's release after integration.
 Inspected baseline: `1dc390576fa330d37ff543526fc7e69a397fc28f` (PR #7).
 
+## CA-KP-034 - Native Windows cursor dimensions and hotspot
+
+Status/evidence: CODE-VERIFIED; texture metadata ENGINE-VERIFIED.
+First recorded / last checked: 2026-10-04. Issue #87 / 4.37.16.
+Baseline: 33dfcc91 plus the #87 patch; GZDoom 4.14.2, Windows 11/Vulkan.
+
+GZDoom g4.14.2's Windows I_SetCursor rejects source bitmaps above 32x32;
+TEXTURES display scaling does not reduce that source bitmap. Supply an actual
+32x32 transparent PNG. Native GetTexelLeftOffset/TopOffset provide the cursor
+hotspot, so the PNG grAb chunk must identify the intended pointing pixel.
+The OS then scales the cursor for display DPI. GameInfo.CursorPic is selected
+when vid_cursor is None; an explicit user override takes precedence.
+
+Source reference: g4.14.2 src/common/platform/win32/i_system.cpp, I_SetCursor,
+and src/d_main.cpp, vid_cursor callback. The final package resolves cursor as
+32x32 with offset (31,7), confirmed by native TexMan queries. Its pointing
+pixel has alpha 239; the corner is transparent. This establishes resource
+metadata, not physical mouse behavior: the user's Escape stopped Computer Use
+before click/drag verification. CA-43716-UI-03 remains pending. Regression:
+inspect actual bitmap dimensions/offset, then test menu clicks and slider
+dragging at the intended DPI. Evidence: assets/validation_43716/RESULTS.json.
+
 ## CA-KP-033 — Refresh dialogue text after successful-open rewards
 
 Status/evidence: CODE-VERIFIED / ENGINE-VERIFIED.

@@ -1,10 +1,10 @@
 # CONTEXT.md — Ultra-condensed summary of Caelum Argenteum
 
-Documentation version: **4.37.15** — 2026-10-04.
+Documentation version: **4.37.16** — 2026-10-04.
 
-**Pending:** #101 traditional Truco, 30 points, optional Flor, no rating;
-#99 Argento practice near goodbye; #97 Palomo deck upstairs; #93 crafting Y/T.
-Evidence: assets/validation_*. **Accepted #81:** Trucazo practice, PR #94 merged.
+**Pending:** #87 compass/Sun/moon (physical mouse test interrupted);
+#101 traditional Truco, optional Flor; #99 Argento order; #97 upstairs deck;
+#93 crafting Y/T. Evidence: assets/validation_*. #81 accepted/merged.
 
 **Accepted #80 / 4.37.12 (2026-10-04):** three essences; User3 costs 1000 Anima,
 lasts 60 s, recharges 600 s from use. Fool flies; Minors double fixed bonuses.

@@ -4,8 +4,16 @@ An independent dark fantasy FPS-RPG inspired by nineteenth-century Argentina.
 Author and game designer: **Damian Curti**. Development target: **GZDoom 4.14.2**
 on Windows 11. The final game is intended to be independent of Doom assets.
 
-**Current release: 4.37.15.** Obtain and update the complete repository, validate
+**Current release: 4.37.16.** Obtain and update the complete repository, validate
 it, then rebuild with `run_dev.bat` as described below.
+
+Issue [#87](https://github.com/damiancurti/Caelum-Argenteum/issues/87) adds a
+top-left compass driven by the rendered view, with eight directions and a
+numeric bearing (north = +Y). Spanish uses O; English uses W. The menu selector
+is a 32-ray Sun of May; the mouse pointer adapts the logo's silver C moon.
+HUD scale controls apply; notifications reserve the compass's left strip.
+Evidence: [4.37.16](assets/validation_43716/RESULTS.json). Author acceptance,
+including physical pointer click/drag, remains pending.
 
 Issue [#101](https://github.com/damiancurti/Caelum-Argenteum/issues/101) adds
 **traditional Truco (ranked)** against Argento beside the Trucazo practice.

@@ -1,0 +1,37 @@
+{
+  "issue": 87,
+  "sun": {
+    "canvas": 512,
+    "rays": 32,
+    "straight_path": "M 246 145 L 256 12 L 266 145 Z",
+    "wavy_path": "M 246 145 C 218 113 276 83 256 12 C 297 66 250 102 266 145 Z",
+    "face_center": [
+      646,
+      583
+    ],
+    "face_source_radius": 252,
+    "face_radius": 122,
+    "frame_size": 24
+  },
+  "moon": {
+    "viewbox": [
+      200,
+      170,
+      896,
+      896
+    ],
+    "size": 32,
+    "hotspot": [
+      31,
+      7
+    ]
+  },
+  "palette": {
+    "outline": "#523614",
+    "light": "#fff0ac",
+    "gold": "#d2a443",
+    "shadow": "#79501e",
+    "silver": "#afbec5",
+    "panel": "#111b23"
+  }
+}

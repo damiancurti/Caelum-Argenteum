@@ -1,0 +1,36 @@
+MAP02 - Alcantarillas — el laberinto
+CA87 PASS camera=90.00 sector=0 direction=N scale=0.80 native=1.00
+CA87 PASS camera=45.00 sector=1 direction=NE scale=0.80 native=1.00
+CA87 PASS camera=0.00 sector=2 direction=E scale=0.80 native=1.00
+CA87 PASS camera=-45.00 sector=3 direction=SE scale=0.80 native=1.00
+CA87 PASS camera=-90.00 sector=4 direction=S scale=0.80 native=1.00
+CA87 PASS camera=-135.00 sector=5 direction=SO scale=0.80 native=1.00
+CA87 PASS camera=-180.00 sector=6 direction=O scale=0.80 native=1.00
+CA87 PASS camera=135.00 sector=7 direction=NO scale=0.80 native=1.00
+CA87 PASS angle=-720.00 bearing=90.00 sector=2 expected=2
+CA87 PASS angle=-1.00 bearing=91.00 sector=2 expected=2
+CA87 PASS angle=0.00 bearing=90.00 sector=2 expected=2
+CA87 PASS angle=22.49 bearing=67.51 sector=2 expected=2
+CA87 PASS angle=22.50 bearing=67.50 sector=2 expected=2
+CA87 PASS angle=67.49 bearing=22.51 sector=1 expected=1
+CA87 PASS angle=67.50 bearing=22.50 sector=1 expected=1
+CA87 PASS angle=90.00 bearing=0.00 sector=0 expected=0
+CA87 PASS angle=112.49 bearing=337.51 sector=0 expected=0
+CA87 PASS angle=112.50 bearing=337.50 sector=0 expected=0
+CA87 PASS angle=359.99 bearing=90.01 sector=2 expected=2
+CA87 PASS angle=360.00 bearing=90.00 sector=2 expected=2
+CA87 PASS angle=720.00 bearing=90.00 sector=2 expected=2
+CA87 PASS camera=90.00 sector=0 direction=N scale=0.80 native=1.00
+CA87 PASS camera=90.00 sector=0 direction=N scale=0.80 native=1.00
+Captured issue87_north_es.png
+CA87 PASS camera=-180.00 sector=6 direction=W scale=0.80 native=1.00
+Captured issue87_west_en.png
+CA87 PASS camera=-180.00 sector=6 direction=W scale=1.50 native=1.00
+Captured issue87_scale3.png
+CA87 PASS camera=-180.00 sector=6 direction=W scale=0.40 native=1.00
+Captured issue87_scale_half.png
+Captured issue87_messages.png
+Captured issue87_main.png
+Captured issue87_main_down.png
+Captured issue87_save.png
+Captured issue87_options.png

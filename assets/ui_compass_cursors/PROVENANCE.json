@@ -1,0 +1,53 @@
+{
+  "issue": 87,
+  "release": "4.37.16",
+  "date": "2026-10-04",
+  "tool": "OpenAI built-in image_gen; transparent-background edits/generation",
+  "reference": "src/graphics/TITLEPIC.png",
+  "reference_sha256": "2a2d0437145a50b8a6c3d76aa973729bfe7a81ceb1317d6dd15259208ed36c70",
+  "prompts": [
+    {
+      "asset": "source_moon.png",
+      "use": "Immutable generated logo adaptation; deterministic crop/resize, remove isolated central speck, native PNG hotspot.",
+      "prompt_summary": "Extract only the silver crescent C moon from the Caelum Argenteum TITLEPIC logo. Preserve the upright silhouette open to the right, beveled silver surface and subtle gold edge. Remove all buildings, sun, lettering and background. Center the isolated moon on a transparent canvas; no added text, outside shadow or scenery."
+    },
+    {
+      "asset": "source_sun_face.png",
+      "use": "Only the generated face is retained. The model did not produce the requested exact ray count; final 32-ray ring is deterministic SVG geometry.",
+      "prompt_summary": "Correct the Sun of May ray ring to exactly 32 rays: 16 straight and 16 wavy, alternating at 11.25-degree intervals. Preserve the recognizable serious human face, gold metal relief and transparent background."
+    }
+  ],
+  "generator": "assets/generators/generate_ui_compass_cursors.py",
+  "rasterizer": "resvg-py==0.5.0",
+  "sun_rays": {
+    "straight": 16,
+    "wavy": 16,
+    "alternating": true
+  },
+  "cursor": {
+    "size": [
+      32,
+      32
+    ],
+    "hotspot": [
+      31,
+      7
+    ],
+    "native_chunk": "grAb"
+  },
+  "rights": "Project-created adaptations; existing TITLEPIC provenance and project LICENSE.md apply. No Doom artwork copied.",
+  "files": {
+    "assets/ui_compass_cursors/source_moon.png": "035a828d3987c174451ab24b43b39c26df75cb0faa61bbf7c125e09a23770fbd",
+    "assets/ui_compass_cursors/source_sun_face.png": "ba54590d7967000464c65f7ac0f2bdc07b6d828ed7de2a15041e4cb09eb9c362",
+    "assets/ui_compass_cursors/compass_rose.svg": "794566e756851ef026cf37fedca1538fbd1d632932cc9f74ef2b3c363b50785e",
+    "assets/ui_compass_cursors/moon.svg": "cc7772851e3856a3d3249bb7ccf8f8991d439d5258cd7730fb9c72cf9e943cf3",
+    "assets/ui_compass_cursors/sun.svg": "2b2a4ab1a03a6836a99714ba65636a3930da5f6d80f922929db55a2df06ee089",
+    "assets/ui_compass_cursors/SPEC.json": "488f4264ab049d6262e0ac4a84f19c8002f84e71c135b6ecdacb570c97f92c92",
+    "src/graphics/M_SKULL1.png": "ca8ceaf14882f46918533bb2a5773824a8e09f617bc4c4876f4aaf6ac0f19963",
+    "src/graphics/M_SKULL2.png": "ca8ceaf14882f46918533bb2a5773824a8e09f617bc4c4876f4aaf6ac0f19963",
+    "src/graphics/cursor.png": "b9444029347dfa0e09ff316de345c388b6f16e6462fc02421f1142ea27374139",
+    "src/graphics/caelum/ui/ca_sun_selector.png": "9fc5ad9889b4a85f712df0a8e315044e99135eb103839bb91e4b71402d4d48ca",
+    "src/graphics/caelum/ui/ca_compass_rose.png": "0e5f612f151340abadde0cd71c2b28e40641904ca1a816a977711c95882041b0"
+  },
+  "prompt_record": "Generation briefs preserved from the session; wording summarized."
+}

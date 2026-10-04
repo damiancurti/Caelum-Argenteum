@@ -1,6 +1,16 @@
 # Caelum Argenteum — Project, status and roadmap
 
-Documentation version: **4.37.15** — 2026-10-04.
+Documentation version: **4.37.16** — 2026-10-04.
+
+## 4.37.16 - Navigation HUD and project menu identity (#87)
+
+Implemented the view-driven top-left compass, bilingual cardinal/intermediate
+directions, Sun of May selector and logo-derived C moon pointer. Presentation
+only: maps, balance, controls and persistent schemas are unchanged. North +Y
+matches both the cardinal maze and fortified city's exits. Static/native
+evidence is in assets/validation_43716; CA-43716-UI-01/02/03 remain pending.
+Computer Use was stopped by the user's Escape; physical pointer click/drag
+is explicitly unverified. Earlier pending checks remain in pending_test.txt.
 
 ## 4.37.15 - Traditional Truco ranked mode (#101)
 

@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="128" height="128">
+<circle cx="64" cy="64" r="61" fill="#111b23" fill-opacity=".84" stroke="#afbec5" stroke-width="2"/>
+<circle cx="64" cy="64" r="55" fill="none" stroke="#d2a443" stroke-width="1"/>
+<path d="M64 13V25 M64 103V115 M13 64H25 M103 64H115 M28 28L35 35 M93 93L100 100 M28 100L35 93 M93 35L100 28" stroke="#afbec5" stroke-width="2"/>
+<circle cx="64" cy="64" r="4" fill="#d2a443"/></svg>

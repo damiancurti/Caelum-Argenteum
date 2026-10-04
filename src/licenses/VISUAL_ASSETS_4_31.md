@@ -1,5 +1,16 @@
 # Caelum Argenteum visual assets — V4.31
 
+## Compass and menu identity - 4.37.16 / issue #87
+
+The C moon adapts the project's TITLEPIC logo using OpenAI's built-in image
+generation tool. The Sun face was generated with the same tool; its exact
+32-ray alternating ring and the compass rose are original project SVG
+geometry. No Doom image was used. Immutable inputs, prompts, hashes and
+deterministic conversion are preserved in assets/ui_compass_cursors and
+assets/generators/generate_ui_compass_cursors.py in the source repository.
+The generated images remain governed by the project's LICENSE.md; this notice
+does not grant rights to development IWADs or third-party runtime resources.
+
 ## Mansion compositions and geometry — 4.36.25 / issue #36
 
 CMWIN36, CMPLS36, CMPNL36 and CMLMSKY are native TEXTURES compositions of

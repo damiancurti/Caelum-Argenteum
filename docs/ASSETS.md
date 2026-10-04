@@ -1,6 +1,27 @@
 # Caelum Argenteum — Audio and art
 
-Documentation version: **4.37.15** — 2026-10-04.
+Documentation version: **4.37.16** — 2026-10-04.
+
+## 4.37.16 - Compass, Sun of May and C moon (#87)
+
+Sources, exact generator inputs and generation prompts are preserved under
+[assets/ui_compass_cursors](../assets/ui_compass_cursors/PROVENANCE.json).
+The built-in image-generation tool adapted the project's TITLEPIC moon and
+generated a Sun face. The final Sun uses only that face: deterministic SVG
+geometry supplies exactly 32 alternating rays (16 straight, 16 wavy). The
+compass rose is original vector geometry. No Doom imagery was copied.
+
+Run assets/generators/generate_ui_compass_cursors.py with resvg-py==0.5.0 to
+reproduce the SVG/PNG outputs. The pinned rasterizer is an optional editing
+dependency; packaged outputs require no Python library. The two 24px fallback
+selector frames and their 128px TEXTURES overrides share one Sun. The moon
+uses a transparent 32x32 PNG with grAb hotspot (31,7), respecting GZDoom
+4.14.2's native Windows cursor size limit. Its source silhouette is an AI
+adaptation of the logo, not a pixel-identical crop. Ownership/provenance stays
+with the project; reference and output hashes are recorded in PROVENANCE.
+
+Native captures and limitations: assets/validation_43716. Physical mouse
+click/drag was interrupted by the user's Escape stop and remains pending.
 
 ## 4.37.15 - Traditional Truco card reuse (#101)
 
