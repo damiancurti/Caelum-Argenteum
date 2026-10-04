@@ -13,6 +13,12 @@ CA-43714A-ARGENTO-01 awaits author confirmation; previous pending checks remain.
 
 ## 4.37.14 - Give the deck at Palomo's first upstairs conversation (#97)
 
+Author acceptance of #97, 2026-10-04: all tests PASSED, without reported
+qualifications. CA-43714-DECK-01 originated in
+4.37.14 / #97. The author explicitly confirmed all tests correct
+and authorized issue closure and merge. The confirmed entries are removed
+from pending_test.txt. Runtime and version are unchanged.
+
 Author decision, 2026-10-04: Palomo must give the deck immediately when spoken
 to on the mansion's last floor after following him. The previous #80 delivery
 waited for accepting the Box after the resident trials. The successful native
@@ -30,6 +36,12 @@ in assets/validation_43714. CA-43714-DECK-01 remains pending. During delivery, t
 and PR #94 merged; #93 still awaits acceptance.
 
 ## 4.37.13a - Show the crafting time-skip shortcut (#93)
+
+Author acceptance of #93, 2026-10-04: all tests PASSED, without reported
+qualifications. CA-43713A-CRAFT-01 originated in
+4.37.13a / #93. The author explicitly confirmed all tests correct
+and authorized issue closure and merge. The confirmed entries are removed
+from pending_test.txt. Runtime and version are unchanged.
 
 Author-requested presentation hotfix, 2026-10-04. The crafting help omitted Y
 although #64 already handled the key. Two localized footer rows now separate
