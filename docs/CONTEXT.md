@@ -4,8 +4,8 @@ Documentation version: **4.37.11** — 2026-10-04.
 
 **#79 / 4.37.11:** first/repeat guard recognition records one Journal clue;
 amnesia persists. Quest revision 3 initializes reserved slot 9; old page indexes
-remain. Evidence: assets/validation_43711; author checks pending. No class or
-reward changes. Unspecified biography remains pending.
+remain. Evidence: assets/validation_43711; both author checks passed 2026-10-04;
+merge/closure authorized. No class or reward changes. Unspecified biography pending.
 
 **#78 accepted 2026-10-04:** paid prisoners share siege/calendar guidance;
 future timing PENDING. Selene service/implanted souls stay concealed. Zupay

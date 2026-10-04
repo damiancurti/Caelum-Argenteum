@@ -13,8 +13,12 @@ Documentation version: **4.37.11** — 2026-10-04.
 - Compatibility: quest revision 3 initializes reserved slot 9 once; existing
   USDF page indexes and 32-slot persistent quest arrays remain unchanged.
 - Evidence: `assets/validation_43711`; nine static and 149 current-version native
-  assertions pass, plus fourteen baseline/rollback checks. Author acceptance
-  remains in `pending_test.txt`; controlled victory is not a full normal battle.
+  assertions pass, plus fourteen baseline/rollback checks. Controlled native
+  victory is not a full normal battle.
+- Accepted 2026-10-04: the author confirmed CA-43711-CAPTAIN-01 and
+  CA-43711-CAPTAIN-02 passed without reported exceptions and authorized PR #90
+  merge / #79 closure. HISTORY records both results; `pending_test.txt` is empty.
+  Acceptance retains version 4.37.11.
 - Pending design: unspecified prior biography and future siege scheduling;
   performance remains #86. No additional story facts or mechanics are inferred.
 

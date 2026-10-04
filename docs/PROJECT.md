@@ -22,7 +22,9 @@ Quest revision 3 initializes only the previously reserved clue slot for old
 version-2 saves, without inferring that earlier port visits revealed it. Existing
 conversation pages retain their indexes; new pages are appended. Native validation
 and author acceptance are reported in HISTORY and `assets/validation_43711`.
-Author checks remain in `pending_test.txt`. #86 retains performance work; future
+The author confirmed both CA-43711-CAPTAIN checks passed on 2026-10-04 without
+reported exceptions and authorized PR #90 merge / #79 closure. HISTORY records
+acceptance; `pending_test.txt` is empty. #86 retains performance work; future
 siege scheduling and unspecified biography remain pending author decisions.
 
 ## 4.37.10 — Post-payment prisoner siege intelligence (#78)

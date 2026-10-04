@@ -12,8 +12,11 @@ the protagonist as the amnesiac captain of fortified Barracas al Sud's guard.
 Local guards recognize him in first/repeat conversations; a persistent Journal
 clue records their testimony without restoring his memories or changing class,
 factions, stats or rewards. Prisoner rescues are not required. See
-[test evidence](assets/validation_43711/RESULTS.json) and the two outstanding
-author checks in [pending_test.txt](pending_test.txt).
+[test evidence](assets/validation_43711/RESULTS.json). On 2026-10-04 the author
+confirmed both checks passed and authorized
+[PR #90](https://github.com/damiancurti/Caelum-Argenteum/pull/90) merge / #79 closure.
+[HISTORY](docs/HISTORY.md) records acceptance; [pending_test.txt](pending_test.txt)
+is empty. The release remains 4.37.11.
 
 Normal validation/build pass, with 149 current-version native assertions and
 fourteen reviewed captures. Save migration, open dialogue reload, hub return and

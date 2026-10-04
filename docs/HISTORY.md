@@ -59,8 +59,23 @@ it is not a full normal battle or a performance claim for #86. Original native
 logs retain environment details; initial fixture-only failures are qualified in
 RESULTS rather than counted as passes. No runtime failure remains unresolved.
 
-Author acceptance: pending. CA-43711-CAPTAIN-01 and CA-43711-CAPTAIN-02 remain
-actionable in `pending_test.txt`; implementation evidence is not author acceptance.
+Author acceptance, 2026-10-04: Damian Curti explicitly confirmed that all tests
+passed and requested issue #79 closure and PR #90 merge. Both checks originate
+in 4.37.11 / #79:
+
+- **CA-43711-CAPTAIN-01 — passed:** first/repeat guard recognition, amnesiac
+  responses, Journal agreement and narrative review, preserving customization
+  and the existing prisoner payment/briefing sequence.
+- **CA-43711-CAPTAIN-02 — passed:** learned information across old/current saves,
+  open-page reload, hub return and independent rescue/siege progression, without
+  duplicate rewards/events or automatic memory recovery.
+
+No exceptions were reported. The author supplied no additional logs or environment
+details; this confirmation is separate from the controlled native evidence above.
+Both confirmed entries were removed from `pending_test.txt`, which is now empty.
+Acceptance retains version 4.37.11 and the tested runtime. Unspecified biography,
+future siege scheduling and #86 performance remain separate. Merge and closure
+are authorized.
 
 ## 4.37.10 — Prisoner intelligence after the Barracas al Sud reward (#78)
 
