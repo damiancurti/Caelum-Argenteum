@@ -216,8 +216,8 @@ class CaelumTrucazoMenu : ListMenu
         if(ConfirmForfeit)Wrap(22,130,510,L("CA_TC_FORFEIT_HELP"));
         else if(Details==1 || match.Phase==CaelumTrucazoRules.INTRO)
         {
-            Wrap(22,112,520,L("CA_TC_RULES_TEXT"));
-            Wrap(22,374,520,L("CA_TC_RANKING"),Font.CR_GRAY);
+            Wrap(22,112,440,L("CA_TC_RULES_TEXT"));
+            Wrap(22,374,440,L("CA_TC_RANKING"),Font.CR_GRAY);
         }
         else if(Details==2)DrawRows(match);
         else

@@ -2,18 +2,68 @@
   "issue": 81,
   "release": "4.37.13",
   "date": "2026-10-04",
-  "status": "Final validation in progress; author acceptance pending",
-  "baseline_commit": "c7fe3fe9b64b5c906aeec87b4df1ff7840668de4",
-  "native_rules": {
-    "passed": 10480,
+  "status": "Agent validation passed; author acceptance pending",
+  "base_commit": "71ef7714400752b49cf99c08f66cb34240316f55",
+  "baseline_runtime_commit": "c7fe3fe9b64b5c906aeec87b4df1ff7840668de4",
+  "environment": "Windows 11, GZDoom 4.14.2, Vulkan, isolated configuration and saves",
+  "package": {
+    "files": 6147,
+    "sha256": "9e79f68dba755d644ca136916e46f4ee3bc1d4f145fbf319069b26e542df36c4",
+    "all_members_identical_to_src": true,
+    "no_qa_fixture_packaged": true
+  },
+  "static": {
+    "passed": 13,
     "failed": 0,
-    "complete_automatic_matches": 100
+    "details": "STATIC.json",
+    "project_validator": "VALIDATOR.json"
+  },
+  "native_rules": {
+    "passed": 10555,
+    "failed": 0,
+    "complete_automatic_matches": 100,
+    "player_wins": 2,
+    "npc_wins": 98,
+    "maximum_hands": 10,
+    "final_packaged_menu_match": {
+      "completed": true,
+      "hands": 2,
+      "winner": "Argento"
+    }
+  },
+  "native_integration": {
+    "ordinary_use_argento_dialogue": true,
+    "pending_call_reload_exact_state": true,
+    "settled_result_reload_exact_state": true,
+    "native_save_menu_return": true,
+    "cancel_abandon_preserves_match": true,
+    "confirm_abandon_settles_defeat": true,
+    "map_change_cleanup": true,
+    "world_pauses": true,
+    "world_health_and_anima_preserved": true,
+    "no_qa_package_startup": true
   },
   "old_save": {
+    "baseline_package_sha256": "51d2946565fe6af523c10588cd71df0abc1da628477183e3f886ef7d1960b781",
     "baseline_character_equal": true,
     "ordinary_argento_entry": true,
-    "completed_match_hands": 5
+    "completed_match_hands": 5,
+    "upgraded_result_reload": true,
+    "original_save_original_package_rollback": true
   },
+  "visual": {
+    "spanish": "1024x768",
+    "english": "1520x825",
+    "aspect_preserved": true,
+    "rules_action_columns_separate": true
+  },
+  "qualifications": [
+    "Fixtures supply prerequisites and automate native inputs; no full campaign playthrough or physical controller acceptance is claimed.",
+    "Restoration has one ordinary engine resume tic before the native menu pauses.",
+    "Initial final-package guard run used MAP02 and correctly rejected MAP01-only entry; repeated on MAP01 with all checks passing.",
+    "Earlier save/entry tests cover unchanged match logic; delivered run covers final UI and packaged rules.",
+    "Spanish introduction was captured with the same final rules width; other wraps were unchanged from previously inspected views."
+  ],
   "pending_author_tests": [
     "CA-43713-TRUCAZO-01",
     "CA-43713-TRUCAZO-02"

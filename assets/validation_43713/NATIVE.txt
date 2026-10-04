@@ -1,0 +1,96 @@
+=== issue81_delivered.log ===
+Full local log SHA256: a5f8f09fe675baeae9cf8e08d6b197c6e4c5c52faa1b76ea896d792f59507420
+GZDoom version g4.14.2
+MAP01 - The Mansion
+CA81 NATURAL matches=100 won=2 lost=98 maximum_hands=10
+CA81 SUMMARY passed=10555 failed=0
+CA81 PREPARE open=1
+Captured issue81_delivered_intro_en.png
+CA81 UI_COMPLETE hands=2 winner=1 steps=32
+Captured issue81_delivered_result_en.png
+CA81 REPORT menu=1 exists=1 visible=1 phase=4 serial=21 conversation=0 frozen=0 leveltime=105
+
+=== issue81_delivered_smoke.log ===
+Full local log SHA256: 4df0cde8305d4d56e861f9c72718cf51062efdebeeacd43606de0a1d118ade00
+GZDoom version g4.14.2
+MAP01 - La mansiÃ³n
+
+=== issue81_normal_entry.log ===
+Full local log SHA256: 55da2502349c5ec90c228910e239bb16408742a5e7790ef02c3718369f311fa9
+GZDoom version g4.14.2
+MAP01 - La mansiÃ³n
+CA81 NORMAL_READY at_argento=1
+CA81 NORMAL_CHALLENGE selected=1
+Captured issue81_argento_es.png
+Captured issue81_normal_intro_es.png
+CA81 REPORT menu=1 exists=1 visible=1 phase=0 serial=1 conversation=0 frozen=0 leveltime=180
+CA81 SNAPSHOT stored 1/3/1/1/1/1/0/1/1/2/1/1/10.48.46.33.73.55.24.42.62.59.75.68.71.57.40.45.76.32.64.53.50.25.56.35.39.63.67.31.37.51.65.36.72.66.70.69.41.60.77.34.52.49.27.23.26.47.43.29.22.74.30.54.28.44.58.38.61 HP144.000000 POINTS0 TRICKS0 H33:0 H55:0 H42:0 A48 A59 HP324.000000 POINTS0 TRICKS0 H46:0 H24:0 H75:0 A73 A62
+Captured issue81_pending_es.png
+
+=== issue81_pending_reload2.log ===
+Full local log SHA256: cdac2d892917f0f4cad84af2c9c70c7408d988618afc107a0c7dbb0f608cf05e
+GZDoom version g4.14.2
+MAP01 - La mansiÃ³n
+MAP01 - La mansiÃ³n
+CA81 SNAPSHOT equal=1 worldhealth=1 anima=1 time_delta=1 revision=1
+Captured issue81_reload2_es.png
+CA81 REPORT menu=1 exists=1 visible=1 phase=1 serial=3 conversation=0 frozen=0 leveltime=181
+CA81 REPORT menu=0 exists=1 visible=0 phase=4 serial=5 conversation=0 frozen=0 leveltime=215
+
+=== issue81_legacy_baseline.log ===
+Full local log SHA256: 32f216332cfa1a1d827d22ec901bd6fd8c7b3097959e96e5988f8d72a8e13def
+GZDoom version g4.14.2
+MAP01 - La mansiÃ³n
+CA81 LEGACY health=1780 anima=1780.000000 int=13.000000 patience=12.000000 deck=1 essences=0 box=0 quest=20 selected=0
+
+=== issue81_legacy_upgrade.log ===
+Full local log SHA256: f28d08205f22e723c85b0ead36d4b86a5d327af80be3f1204c309813d9f248dd
+GZDoom version g4.14.2
+MAP01 - La mansiÃ³n
+MAP01 - La mansiÃ³n
+CA81 LEGACY health=1780 anima=1780.000000 int=13.000000 patience=12.000000 deck=1 essences=0 box=0 quest=20 selected=0
+CA81 NORMAL_READY at_argento=1
+CA81 NORMAL_CHALLENGE selected=1
+CA81 REPORT menu=1 exists=1 visible=1 phase=0 serial=1 conversation=0 frozen=0 leveltime=356
+CA81 UI_COMPLETE hands=5 winner=1 steps=95
+CA81 REPORT menu=1 exists=1 visible=1 phase=4 serial=44 conversation=0 frozen=0 leveltime=356
+
+=== issue81_legacy_migrated_reload.log ===
+Full local log SHA256: b6bed34b7d5e40adc43c193d5c9e81266c8d31036b2053f69745267190f71ed3
+GZDoom version g4.14.2
+MAP01 - La mansiÃ³n
+MAP01 - La mansiÃ³n
+CA81 LEGACY health=1780 anima=1780.000000 int=13.000000 patience=12.000000 deck=1 essences=0 box=0 quest=20 selected=0
+CA81 REPORT menu=1 exists=1 visible=1 phase=4 serial=44 conversation=0 frozen=0 leveltime=357
+Captured issue81_result_en.png
+CA81 REPORT menu=0 exists=1 visible=0 phase=4 serial=45 conversation=0 frozen=0 leveltime=391
+CA81 PREPARE open=1
+Captured issue81_rows_en.png
+CA81 SNAPSHOT stored 1/48/4/1/0/0/0/0/1/0/0/1/10.46.59.60.35.70.32.29.49.52.54.38.64.55.51.65.67.24.61.42.28.39.62.44.45.37.57.27.40.48.56.76.41.25.23.77.63.36.43.66.73.31.47.75.30.34.74.22.69.58.53.33.71.68.72.26.50 HP144.000000 POINTS0 TRICKS0 H46:0 H60:0 H70:0 H52:0 A29 HP324.000000 POINTS0 TRICKS0 H35:0 H32:0 H49:0 H54:0 A59
+MAP01 - The Mansion
+CA81 SNAPSHOT equal=1 worldhealth=1 anima=1 time_delta=1 revision=1
+CA81 REPORT menu=1 exists=1 visible=1 phase=4 serial=48 conversation=0 frozen=0 leveltime=392
+
+=== issue81_legacy_rollback.log ===
+Full local log SHA256: 0fbbdd2d6d01dd9d351b19bbcead2386d679923a3945cf97defcf82ce2566e4e
+GZDoom version g4.14.2
+MAP01 - La mansiÃ³n
+MAP01 - La mansiÃ³n
+CA81 LEGACY health=1780 anima=1780.000000 int=13.000000 patience=12.000000 deck=1 essences=0 box=0 quest=20 selected=0
+
+=== issue81_final_controls.log ===
+Full local log SHA256: 2ba40f1ff921844066019d46c4d11cbfc16921162d2ca2290504aa0ffc79ad0d
+GZDoom version g4.14.2
+MAP01 - La mansiÃ³n
+CA81 PREPARE open=1
+Captured issue81_intro_final_es.png
+Captured issue81_hand_final_es.png
+CA81 SNAPSHOT stored 1/3/1/1/1/1/0/1/1/2/1/1/10.31.47.53.51.45.73.40.35.26.48.38.75.43.65.37.62.39.41.54.24.36.33.23.50.70.71.63.77.67.42.32.60.74.58.34.64.49.68.25.57.59.72.52.69.28.56.44.22.46.61.76.30.66.29.27.55 HP144.000000 POINTS0 TRICKS0 H53:0 H40:0 H26:0 A31 A45 HP324.000000 POINTS0 TRICKS0 H47:0 H51:0 H35:0 A73 A48
+Captured issue81_forfeit_es.png
+CA81 SNAPSHOT equal=1 worldhealth=1 anima=1 time_delta=0 revision=1
+Captured issue81_save_menu_es.png
+CA81 SNAPSHOT equal=1 worldhealth=1 anima=1 time_delta=0 revision=1
+CA81 REPORT menu=0 exists=1 visible=0 phase=4 serial=5 conversation=0 frozen=0 leveltime=139
+CA81 PREPARE open=1
+MAP02 - Alcantarillas â€” el laberinto
+CA81 REPORT menu=0 exists=1 visible=0 phase=4 serial=8 conversation=0 frozen=0 leveltime=69

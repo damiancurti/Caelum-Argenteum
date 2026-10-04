@@ -41,7 +41,9 @@ restore now reconstructs the Trucazo menu and pause. Native verification retains
 the exact pending call/cards/rows/health; the engine advances its ordinary one
 resume tic before the restored menu pauses. Closing a result restores ordinary
 controls. Spanish encoding and a played-card label overlap were corrected from
-actual 1024x768 captures. No new card art or accepted furniture behavior changes.
+actual 1024x768 captures. Final rules wrapping keeps the action column clear;
+1520x825 captures verify proportional cards and text. No new card art or
+accepted furniture behavior changes.
 
 Static validation/build and target Windows GZDoom 4.14.2 evidence are recorded
 in assets/validation_43713/RESULTS.json, including rules assertions, 100 complete
