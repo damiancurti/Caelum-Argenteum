@@ -427,6 +427,8 @@ class CaelumFirstPersonView : Object play
 
     static State Pose(int weaponType, int tier, int phase)
     {
+        if (weaponType == CaelumConstants.WEAPON_TYPE_PICKAXE)
+            return GetDefaultByType("CaelumPickaxeFrames").FindStateByString(phase == 1 ? "Mine" : "Ready");
         String frame = phase == 1 ? "B" : phase == 2 ? "C" : "A";
         return GetDefaultByType("CaelumFirstPersonFrames").FindStateByString(
             String.Format("CA_FP1_%s_T%d_%s", Family(weaponType), Clamp(tier,1,3), frame));
@@ -434,6 +436,7 @@ class CaelumFirstPersonView : Object play
 
     static Vector2 Pivot(int weaponType, int tier, int phase)
     {
+        if (weaponType == CaelumConstants.WEAPON_TYPE_PICKAXE) return (216.0/320, 160.0/200);
         // Porcentaje distinto por caja visible; todos vienen del manifiesto.
         int index = Clamp(weaponType,0,19)*9 + (Clamp(tier,1,3)-1)*3 + Clamp(phase,0,2);
         static const double px[] = {
@@ -538,6 +541,8 @@ class CaelumFirstPersonView : Object play
             phase = blocking || baseView.y > WEAPONTOP + 1 ? 1 : 0;
         else if (kind == CaelumConstants.WEAPON_TYPE_GIANT_GAUNTLETS)
             phase = attack && !blocking ? AttackSide : 0;
+        if (kind == CaelumConstants.WEAPON_TYPE_PICKAXE)
+            phase = attack && !blocking && user.AttackAnimationSecondary ? 1 : 0;
         State pose = Pose(kind, Tier, phase);
         if (pose == null) { Hide(user); return; }
         let view = user.player.GetPSprite(LAYER);

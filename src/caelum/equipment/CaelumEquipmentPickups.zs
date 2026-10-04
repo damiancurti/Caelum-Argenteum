@@ -109,6 +109,7 @@ class CaelumWorldSpriteRegistry : Actor
         M040 A 1;
         M041 A 1;
         M042 A 1;
+        CPIK A 1;
         Stop;
     }
 }
@@ -220,6 +221,8 @@ class CaelumEquipmentItem : Inventory
 
     int PreviewTier()
     {
+        if (PreviewEquipmentKind() == CaelumConstants.EQUIPMENT_KIND_WEAPON
+            && PreviewItemType() == CaelumConstants.WEAPON_TYPE_PICKAXE) return 1;
         if (HasAcquiredIdentity()) return Tier;
         if (level.MapName == "MAP02") return 1;
         return PickupDataInitialized ? Tier
@@ -612,6 +615,7 @@ class CaelumWeaponPickup : CaelumEquipmentItem
             case CaelumConstants.WEAPON_TYPE_HATCHET: visual = "CHAT"; break;
             case CaelumConstants.WEAPON_TYPE_MACHETE: visual = "CMAC"; break;
             case CaelumConstants.WEAPON_TYPE_JAVELIN: visual = "CJAV"; break;
+            case CaelumConstants.WEAPON_TYPE_PICKAXE: visual = "CPIK"; break;
             case CaelumConstants.WEAPON_TYPE_AXE: visual = "CAXE"; break;
             case CaelumConstants.WEAPON_TYPE_FLAIL: visual = "CFLA"; break;
             case CaelumConstants.WEAPON_TYPE_SPEAR: visual = "CSPR"; break;

@@ -6,6 +6,8 @@ class CaelumNotificationInbox : Inventory
     int Count;
     String Text[LIMIT];
     int RemainingTics[LIMIT];
+    String ExtractionText;
+    int ExtractionRemainingTics;
 
     Default
     {
@@ -42,6 +44,7 @@ class CaelumNotificationInbox : Inventory
     override void Tick()
     {
         Super.Tick();
+        if (ExtractionRemainingTics > 0) ExtractionRemainingTics--;
         for (int i = Count - 1; i >= 0; i--)
         {
             RemainingTics[i]--;
@@ -52,19 +55,58 @@ class CaelumNotificationInbox : Inventory
 
 class CaelumNotifications : Object
 {
-    static play void Notify(Actor recipient, String message)
+    static play CaelumNotificationInbox Inbox(Actor recipient)
     {
-        if (recipient == null || recipient.player == null || message == "") return;
+        if (recipient == null || recipient.player == null) return null;
         let inbox = CaelumNotificationInbox(recipient.FindInventory("CaelumNotificationInbox"));
         if (inbox == null)
         {
             inbox = CaelumNotificationInbox(Actor.Spawn("CaelumNotificationInbox", recipient.Pos, NO_REPLACE));
-            if (inbox == null) return;
+            if (inbox == null) return null;
             inbox.AttachToOwner(recipient);
         }
+        return inbox;
+    }
+
+    static play int Duration(Actor recipient)
+    {
         let setting = CVar.GetCVar("ca_notification_seconds", recipient.player);
         double seconds = setting == null ? 8.0 : setting.GetFloat();
-        inbox.Add(message, Max(1, int(Max(0.0, seconds) * TICRATE)));
+        return Max(1, int(Max(0.0, seconds) * TICRATE));
+    }
+
+    static play void Notify(Actor recipient, String message)
+    {
+        if (message == "") return;
+        let inbox = Inbox(recipient);
+        if (inbox != null) inbox.Add(message, Duration(recipient));
+    }
+
+    static play void Extracted(Actor recipient, int material)
+    {
+        let inbox = Inbox(recipient);
+        if (inbox == null) return;
+        inbox.ExtractionText = String.Format(StringTable.Localize("CA_GATHERING_EXTRACTED", false),
+            StringTable.Localize(CaelumDisplayNames.GetSpecialItemKey(
+                CaelumConstants.EQUIPMENT_KIND_MATERIAL, material), false));
+        inbox.ExtractionRemainingTics = Duration(recipient);
+    }
+
+    static ui void DrawExtraction(CaelumPlayer user)
+    {
+        if (menuactive != 0 || user.CraftingMenuOpen || user.EquipmentMenuOpen
+            || user.player.ConversationNPC != null) return;
+        let journal = CVar.GetCVar("ca_journal_open", user.player);
+        if (journal != null && journal.GetBool()) return;
+        let inbox = CaelumNotificationInbox(user.FindInventory("CaelumNotificationInbox"));
+        if (inbox == null || inbox.ExtractionRemainingTics <= 0) return;
+        let font = Font.GetFont("CaelumText");
+        if (font == null) return;
+        // Un solo aviso renovable y centrado; nunca acumula una columna sobre la mira.
+        Screen.DrawText(font, Font.CR_GOLD, 320.0 - font.StringWidth(inbox.ExtractionText) * 0.5,
+            180.0 - font.GetHeight() * 0.5, inbox.ExtractionText,
+            DTA_VIRTUALWIDTHF, 640.0, DTA_VIRTUALHEIGHTF, 360.0,
+            DTA_KEEPRATIO, true, DTA_SHADOW, true);
     }
 
     static clearscope String EssenceKey(int essence)

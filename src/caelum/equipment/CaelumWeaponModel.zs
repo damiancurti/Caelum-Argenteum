@@ -40,6 +40,11 @@ class CaelumWeaponModel : Object
         return 1.5;
     }
 
+    static int ResolveTierFor(int weaponType, int tier)
+    {
+        return weaponType == CaelumConstants.WEAPON_TYPE_PICKAXE ? 1 : Clamp(tier, 1, 3);
+    }
+
     double GetTierOneWeightFor(int weaponType)
     {
         switch (Clamp(weaponType, 0, CaelumConstants.WEAPON_TYPE_COUNT - 1))
@@ -51,6 +56,7 @@ class CaelumWeaponModel : Object
             case CaelumConstants.WEAPON_TYPE_HATCHET: return CaelumConstants.WEAPON_HATCHET_TIER_ONE_WEIGHT;
             case CaelumConstants.WEAPON_TYPE_MACHETE: return CaelumConstants.WEAPON_MACHETE_TIER_ONE_WEIGHT;
             case CaelumConstants.WEAPON_TYPE_JAVELIN: return CaelumConstants.WEAPON_JAVELIN_TIER_ONE_WEIGHT;
+            case CaelumConstants.WEAPON_TYPE_PICKAXE:
             case CaelumConstants.WEAPON_TYPE_AXE: return CaelumConstants.WEAPON_AXE_TIER_ONE_WEIGHT;
             case CaelumConstants.WEAPON_TYPE_FLAIL: return CaelumConstants.WEAPON_FLAIL_TIER_ONE_WEIGHT;
             case CaelumConstants.WEAPON_TYPE_SPEAR: return CaelumConstants.WEAPON_SPEAR_TIER_ONE_WEIGHT;
@@ -70,7 +76,7 @@ class CaelumWeaponModel : Object
     double GetWeightFor(int weaponType, int tier, int equipmentSize)
     {
         return CaelumEquipmentRules.CalculateTieredEquipmentWeight(
-            GetTierOneWeightFor(weaponType), tier, equipmentSize
+            GetTierOneWeightFor(weaponType), ResolveTierFor(weaponType, tier), equipmentSize
         );
     }
 
@@ -149,6 +155,7 @@ class CaelumWeaponModel : Object
 
     int GetMaximumDurabilityFor(int weaponType, int tier, int equipmentSize)
     {
+        tier = ResolveTierFor(weaponType, tier);
         int tierMultiplier = 1;
         if (tier == 2) { tierMultiplier = 3; }
         else if (tier >= 3) { tierMultiplier = 9; }

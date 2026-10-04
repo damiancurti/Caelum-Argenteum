@@ -10,6 +10,13 @@ class CaelumWeaponCatalogue : Object
         );
     }
 
+    // El Pico hereda la ficha numérica del hacha; sólo cambia familia y filo secundario.
+    static int GetStatisticsWeapon(int weaponId)
+    {
+        return weaponId == CaelumConstants.CATALOGUE_WEAPON_PICKAXE
+            ? CaelumConstants.CATALOGUE_WEAPON_AXE : ResolveWeapon(weaponId);
+    }
+
     static String GetNameKey(int weaponId)
     {
         switch (ResolveWeapon(weaponId))
@@ -19,6 +26,7 @@ class CaelumWeaponCatalogue : Object
             case CaelumConstants.CATALOGUE_WEAPON_MACHETE: return "CA_WEAPON_CATALOGUE_MACHETE";
             case CaelumConstants.CATALOGUE_WEAPON_JAVELIN: return "CA_WEAPON_CATALOGUE_JAVELIN";
             case CaelumConstants.CATALOGUE_WEAPON_SWORD: return "CA_WEAPON_CATALOGUE_SWORD";
+            case CaelumConstants.CATALOGUE_WEAPON_PICKAXE: return "CA_WEAPON_CATALOGUE_PICKAXE";
             case CaelumConstants.CATALOGUE_WEAPON_AXE: return "CA_WEAPON_CATALOGUE_AXE";
             case CaelumConstants.CATALOGUE_WEAPON_FLAIL: return "CA_WEAPON_CATALOGUE_FLAIL";
             case CaelumConstants.CATALOGUE_WEAPON_SPEAR: return "CA_WEAPON_CATALOGUE_SPEAR";
@@ -36,6 +44,8 @@ class CaelumWeaponCatalogue : Object
     static int GetFamily(int weaponId)
     {
         int resolved = ResolveWeapon(weaponId);
+        if (resolved == CaelumConstants.CATALOGUE_WEAPON_PICKAXE)
+            return CaelumConstants.CATALOGUE_FAMILY_UTILITY;
         if (resolved <= CaelumConstants.CATALOGUE_WEAPON_JAVELIN)
         {
             return CaelumConstants.CATALOGUE_FAMILY_SMALL;
@@ -54,7 +64,8 @@ class CaelumWeaponCatalogue : Object
     static bool UsesOneHandedShieldRules(int weaponId)
     {
         int family = GetFamily(weaponId);
-        return family == CaelumConstants.CATALOGUE_FAMILY_SMALL
+        return family == CaelumConstants.CATALOGUE_FAMILY_UTILITY
+            || family == CaelumConstants.CATALOGUE_FAMILY_SMALL
             || family == CaelumConstants.CATALOGUE_FAMILY_ONE_HANDED;
     }
 
@@ -85,7 +96,7 @@ class CaelumWeaponCatalogue : Object
 
     static double GetPrimaryDamage(int weaponId)
     {
-        switch (ResolveWeapon(weaponId))
+        switch (GetStatisticsWeapon(weaponId))
         {
             case CaelumConstants.CATALOGUE_WEAPON_DAGGER: return 60.0;
             case CaelumConstants.CATALOGUE_WEAPON_HATCHET: return 80.0;
@@ -108,7 +119,7 @@ class CaelumWeaponCatalogue : Object
 
     static double GetSecondaryDamage(int weaponId)
     {
-        switch (ResolveWeapon(weaponId))
+        switch (GetStatisticsWeapon(weaponId))
         {
             case CaelumConstants.CATALOGUE_WEAPON_DAGGER: return 80.0;
             case CaelumConstants.CATALOGUE_WEAPON_HATCHET: return 100.0;
@@ -133,7 +144,7 @@ class CaelumWeaponCatalogue : Object
 
     static double GetPrimaryRange(int weaponId)
     {
-        switch (ResolveWeapon(weaponId))
+        switch (GetStatisticsWeapon(weaponId))
         {
             case CaelumConstants.CATALOGUE_WEAPON_DAGGER:
             case CaelumConstants.CATALOGUE_WEAPON_HATCHET: return 48.0;
@@ -156,7 +167,7 @@ class CaelumWeaponCatalogue : Object
 
     static double GetSecondaryRange(int weaponId)
     {
-        switch (ResolveWeapon(weaponId))
+        switch (GetStatisticsWeapon(weaponId))
         {
             // AltFire de jabalina usa el alcance melee al tener un blanco cerca.
             case CaelumConstants.CATALOGUE_WEAPON_JAVELIN:
@@ -183,7 +194,7 @@ class CaelumWeaponCatalogue : Object
 
     static double GetMaximumSpread(int weaponId)
     {
-        switch (ResolveWeapon(weaponId))
+        switch (GetStatisticsWeapon(weaponId))
         {
             case CaelumConstants.CATALOGUE_WEAPON_LONGBOW: return 30.0;
             case CaelumConstants.CATALOGUE_WEAPON_CROSSBOW: return 90.0;
@@ -209,7 +220,7 @@ class CaelumWeaponCatalogue : Object
 
     static double GetCriticalChancePercent(int weaponId)
     {
-        switch (ResolveWeapon(weaponId))
+        switch (GetStatisticsWeapon(weaponId))
         {
             case CaelumConstants.CATALOGUE_WEAPON_DAGGER: return 15.0;
             case CaelumConstants.CATALOGUE_WEAPON_HATCHET:
@@ -229,7 +240,7 @@ class CaelumWeaponCatalogue : Object
 
     static double GetPrimaryAirCost(int weaponId)
     {
-        switch (ResolveWeapon(weaponId))
+        switch (GetStatisticsWeapon(weaponId))
         {
             case CaelumConstants.CATALOGUE_WEAPON_DAGGER: return 2.0;
             case CaelumConstants.CATALOGUE_WEAPON_HATCHET:
@@ -252,7 +263,7 @@ class CaelumWeaponCatalogue : Object
 
     static double GetSecondaryAirCost(int weaponId)
     {
-        switch (ResolveWeapon(weaponId))
+        switch (GetStatisticsWeapon(weaponId))
         {
             case CaelumConstants.CATALOGUE_WEAPON_DAGGER: return 3.0;
             case CaelumConstants.CATALOGUE_WEAPON_HATCHET: return 4.0;
@@ -292,6 +303,8 @@ class CaelumWeaponCatalogue : Object
 
     static int GetSecondaryDamageType(int weaponId)
     {
+        if (weaponId == CaelumConstants.CATALOGUE_WEAPON_PICKAXE)
+            return CaelumConstants.CATALOGUE_DAMAGE_PIERCING;
         switch (ResolveWeapon(weaponId))
         {
             case CaelumConstants.CATALOGUE_WEAPON_DAGGER:

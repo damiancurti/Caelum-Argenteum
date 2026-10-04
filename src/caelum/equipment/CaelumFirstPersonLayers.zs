@@ -348,6 +348,7 @@ class CaelumFirstPersonLayers : Object play
 
     static Vector2 Grip(int kind)
     {
+        if (kind == CaelumConstants.WEAPON_TYPE_PICKAXE) return (216,160);
         bool ranged=kind==2 || kind==14 || kind==15 || kind==16;
         bool bow=kind==14 || kind==15;
         bool large=kind==10 || kind==11 || kind==12;
@@ -395,18 +396,22 @@ class CaelumFirstPersonLayers : Object play
 
     static bool Handles(int kind)
     {
-        return kind==0 || kind==2 || kind==3 || kind==4 || kind==5 || kind==7 || kind==8
+        return kind==CaelumConstants.WEAPON_TYPE_PICKAXE || kind==0 || kind==2 || kind==3 || kind==4 || kind==5 || kind==7 || kind==8
             || kind==10 || kind==11 || kind==12 || kind==14 || kind==15 || kind==16;
     }
 
     static State Pose(int kind, int tier, int phase)
     {
+        if (kind == CaelumConstants.WEAPON_TYPE_PICKAXE)
+            return CaelumFirstPersonView.Pose(kind, 1, phase);
         return GetDefaultByType("CaelumFirstPersonLayerFrames").FindStateByString(
             String.Format("Weapon_%d_%d_%d",kind,Clamp(tier,1,3),phase));
     }
 
     static Vector2 Pivot(int index)
     {
+        if (index >= CaelumConstants.WEAPON_TYPE_PICKAXE * 9
+            && index < (CaelumConstants.WEAPON_TYPE_PICKAXE + 1) * 9) return (216,160);
         switch(index)
         {
             case 27: case 30: case 33: return (235,158);
@@ -665,7 +670,11 @@ class CaelumFirstPersonLayers : Object play
         // lleva la punta hacia la derecha; positivo, hacia la izquierda.
         // Mangual: -62° + 22,5° + 10° = -29,5°; su cadena va en una capa aparte.
         // Su agarre se centra para mantener toda la cadena dentro del encuadre.
-        double weaponRotation=rotation+(rightLeaning?-28.0:kind==8?FLAIL_HANDLE_ANGLE:0.0);
+        // El Pico descansa 20° en sentido horario alrededor del agarre;
+        // el ciclo nativo parte de esa postura sin girar la mano por separado.
+        double weaponRotation=rotation+(kind==CaelumConstants.WEAPON_TYPE_PICKAXE
+            ?-CaelumConstants.PICKAXE_REST_CLOCKWISE_DEGREES
+            :rightLeaning?-28.0:kind==8?FLAIL_HANDLE_ANGLE:0.0);
         vector2 weaponGrip=grip;
         if(rightLeaning)weaponGrip+=Turn((4,3),rotation);
         if(kind==8)Flail(user,tier,grip,rotation,chainTurn);
@@ -679,5 +688,20 @@ class CaelumFirstPersonLayers : Object play
             if(body!=null)body.scale=(size*(phase==1?1.15:1.0),size*(phase==1?0.97:1.0));
             BowPresentation(user,kind,tier,phase,grip,size,rotation);
         }
+    }
+}
+
+// Clase nueva: no desplaza los índices de estados guardados de las otras armas.
+// El mismo mango y agarre sostienen corte, giro al pico, impacto y recuperación.
+class CaelumPickaxeFrames : Actor
+{
+    States (Weapon, Overlay)
+    {
+    Ready:
+        DP89 A -1;
+        Stop;
+    Mine:
+        DP89 B -1;
+        Stop;
     }
 }

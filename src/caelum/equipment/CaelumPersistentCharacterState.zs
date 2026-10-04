@@ -209,23 +209,23 @@ class CaelumPersistentCharacterState : Inventory
     // Los registros antiguos se conservan para migrar partidas 4.5 al talle M.
     bool SizedOwnedArmor[300];
     bool SizedOwnedShield[60];
-    bool SizedOwnedWeapon[300];
+    bool SizedOwnedWeapon[CaelumConstants.WEAPON_OWNERSHIP_COUNT];
     int SizedOwnedArmorDurability[300];
     int SizedOwnedShieldDurability[60];
-    int SizedOwnedWeaponDurability[300];
-    int SizedWeaponEssenceType[300];
+    int SizedOwnedWeaponDurability[CaelumConstants.WEAPON_OWNERSHIP_COUNT];
+    int SizedWeaponEssenceType[CaelumConstants.WEAPON_OWNERSHIP_COUNT];
     bool EquipmentSizeInitialized;
     bool WeaponWeightInitialized;
     // false significa inventario personal o ranura equipada; true lo coloca en
     // la Caja Mágica, cuya contribución reducida se calcula de forma agregada.
     bool SizedArmorInMagicBox[300];
     bool SizedShieldInMagicBox[60];
-    bool SizedWeaponInMagicBox[300];
+    bool SizedWeaponInMagicBox[CaelumConstants.WEAPON_OWNERSHIP_COUNT];
     bool EquipmentStorageInitialized;
     // Equipado y activo son conceptos distintos. Varias armas pueden estar
     // preparadas simultaneamente, pero WeaponType/Tier/Size identifica solo
     // la que responde al boton de familia seleccionado en este momento.
-    bool SizedWeaponEquipped[300];
+    bool SizedWeaponEquipped[CaelumConstants.WEAPON_OWNERSHIP_COUNT];
     bool WeaponLoadoutInitialized;
     // Impide que los registros 4.7 vuelvan a crear objetos descartados una
     // vez que la propiedad ya fue transferida al inventario nativo.
@@ -245,7 +245,9 @@ class CaelumPersistentCharacterState : Inventory
     // mapas y guardados. La versión distingue el catálogo 4.29.0x del libro
     // vacío que usan los personajes creados desde 4.29.0y.
     int RecipeBookVersion;
-    bool KnownCraftingRecipe[131];
+    bool KnownCraftingRecipe[CaelumConstants.CRAFTING_NETWORK_PLAYABLE_RECIPE_COUNT];
+    int MainM00PickaxeRevision;
+    int MainM00PickaxeId;
     bool MainM00LeatherSuppliesPrepared;
 
     // Instantánea viajera de la única tarea 4.30. Los guardados normales ya
@@ -298,7 +300,7 @@ class CaelumPersistentCharacterState : Inventory
         int scale = CaelumAttackRules.DURABILITY_SCALE;
         WeaponDurability = revision == 1 ? WeaponDurability * scale : WeaponDurability / scale;
         MainM00StarterDurability = revision == 1 ? MainM00StarterDurability * scale : MainM00StarterDurability / scale;
-        for (int i=0; i<300; i++)
+        for (int i=0; i<CaelumConstants.WEAPON_OWNERSHIP_COUNT; i++)
             SizedOwnedWeaponDurability[i] = revision == 1 ? SizedOwnedWeaponDurability[i] * scale
                 : SizedOwnedWeaponDurability[i] / scale;
         WeaponDurabilityRevision = revision;
@@ -1440,7 +1442,11 @@ class CaelumPersistentCharacterState : Inventory
         // recetas de procesamiento (v3) y las cincuenta de componentes (v4)
         // se anexan bloqueadas; se aprenderán con sus Arcanos Menores.
         int addedRecipeStart;
-        if (RecipeBookVersion >= 3)
+        if (RecipeBookVersion >= 4)
+        {
+            addedRecipeStart = CaelumConstants.CRAFTING_PICKAXE_RECIPE;
+        }
+        else if (RecipeBookVersion >= 3)
         {
             addedRecipeStart = CaelumConstants.CRAFTING_NETWORK_LEGACY_RECIPE_COUNT
                 + CaelumConstants.CRAFTING_NETWORK_SHIELD_RECIPE_COUNT
