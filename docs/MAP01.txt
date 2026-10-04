@@ -1,6 +1,27 @@
 CAELUM ARGENTEUM — STORY AND MAP01
 
-Documentation version: **4.37.10** — 2026-10-04.
+Documentation version: **4.37.11** — 2026-10-04.
+
+## 4.37.11 — Guard captain with amnesia (#79)
+
+Author decision, 2026-10-02: the protagonist is captain of the guard of fortified
+Barracas al Sud. After returning from Limbo, local guards recognize him while he
+does not remember that life. Their recognition supplies a clue, never automatic
+memory recovery. Discovery of his past remains gradual. The active wanderer and
+intact-previous-life passages below are reconciled; originals remain in HISTORY.
+
+The opening retains its mystery: the protagonist does not know he is in Limbo
+or that the Unknown Voice is Selene. The prologue Journal no longer asserts intact
+autobiographical memory. Character customization, species, class, capacities and
+factions are unchanged. Captain is an in-world position, not the Warrior class.
+No new death circumstances, prior deeds, hierarchy, family history, equipment,
+reputation, allegiance or command abilities follow from this title.
+
+First/repeat guard dialogue in MAP06 and a persistent Journal clue express the
+recognition and amnesia in English/Spanish. They do not require prisoner rescue
+or disclose the prisoners' concealed identity. The #78 post-payment briefing and
+Selene's event queue retain their independent conditions. Exact prior biography
+and the circumstances not already established remain pending author decisions.
 
 ## 4.37.10 — Post-payment siege briefing and concealed allegiance (#78)
 
@@ -1848,9 +1869,11 @@ him while the Argentine peoples kept the possibility of meeting under the Sol de
 That is why he decided to corrupt the Moon and break the Earth from within before trying
 to dominate it again.
 
-The protagonist does not begin as a hero or as a declared member of a faction. He is a
-wanderer trying to escape the conflict. He dies in circumstances he does not remember and
-wakes up in an impossible mansion, without knowing that he is in Limbo.
+The protagonist is captain of the guard of fortified Barracas al Sud (#79).
+He dies in circumstances he does not remember and wakes in an impossible mansion,
+without knowing that he is in Limbo. After returning, local guards recognize him,
+but he does not remember his past. Recognition does not restore those memories.
+The position does not determine his gameplay class or faction membership.
 
 -------------------------------------------------------------------------------
 3. SOCIAL AND CULTURAL ALLEGORY
@@ -2088,10 +2111,13 @@ gift sees; the Box captures.
 
 [CANON]
 
-The protagonist was a wanderer who tried to escape the conflict. He was ambushed, killed
-and thrown into the sewers. He does not remember the ambush, his death or the moments
-immediately preceding. He preserves his identity, his place of origin, previous capacities
-and memories, but his memory ends before the fatal event.
+The protagonist is captain of the guard of fortified Barracas al Sud (#79).
+The already established ambush, death and disposal of his body in the sewers remain
+writer-facing facts. He does not remember his past after returning from Limbo;
+local guards recognize their captain without restoring his memories. His chosen
+character profile and capacities remain, but do not imply an intact remembered
+biography. His past is discovered gradually; no further deeds, family or hierarchy
+are defined by this decision.
 
 Selene detected his potential and used her power to revive his link to his body. However,
 her influence outside the Moon is too weak to return him by her own means. The soul awakens
@@ -2380,9 +2406,11 @@ and animated them with implanted souls. As the rescued prisoners, those souls
 serve her and oppose the demonic plan. Their port intelligence does not reveal
 this hidden identity to the amnesiac protagonist (#78).
 
-The protagonist had also tried to escape the war. An ambush ended his life and his body
-was thrown into the sewers. The perpetrators took his belongings. His memory preserved the
-previous life, but not the face of his murderers or the instant of death.
+The protagonist was captain of Barracas al Sud's guard. An ambush ended his life
+and his body was thrown into the sewers; the perpetrators took his belongings.
+These established facts are not new memories. After his return from Limbo, guards
+recognize him, but he cannot remember that life. Their testimony begins to reveal
+his past without restoring it all at once (#79).
 
 Selene perceived his ability and reanimated the link between body and soul. From the Moon
 she could not complete the return. The protagonist opened his eyes in the mansion without
@@ -2443,7 +2471,7 @@ the visible location.
 - Exterior roads returning to the property.
 - Rooms whose internal measurements do not match the exterior.
 - Physical needs they feel, although no character can tell how much time has passed.
-- Absence of memories immediately prior to awakening.
+- Amnesia about his past; local recognition after Limbo does not restore it (#79).
 - Temporary objects that get rid of as they move away from their area.
 - Palomo that appears after losing sight, with no spectacular effect.
 - Your phrases that each NPC remembers in isolation.
@@ -2813,8 +2841,8 @@ temporary Limbo object unless Palomo expressly inserts it in the Box.
 
 Initial journal text:
 
-“Desperté en una propiedad que no reconozco. Recuerdo quién soy y de dónde vengo,
-pero no cómo llegué. Una voz que nadie más parece oír insiste en que busque una
+“Desperté en una propiedad que no reconozco. No consigo reconstruir mi pasado
+ni recordar cómo llegué. Una voz que nadie más parece oír insiste en que busque una
 salida.”
 
 16.2. UNKNOWN VOICE

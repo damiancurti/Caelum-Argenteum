@@ -1,0 +1,27 @@
+CA-43711-CAPTAIN-01 — Guard recognition, amnesia and narrative review
+Origin: 4.37.11 / issue #79. Status: pending author acceptance.
+Prerequisites: current build; MAP06 with a living local guard not actively fighting.
+Steps:
+1. Approach and Use a guard. Read the first greeting and select the amnesiac response.
+2. Close and speak again, or speak to another guard. Review English/Spanish wording.
+3. Open TAB > Quests, main/completed filter, and read "They call me captain".
+4. Review a new campaign's opening Journal and the current captain biography in MAP01.
+Expected: the fortified city's guard recognizes its captain; responses and Journal
+retain missing memories. First/repeat text agrees. No class/faction/equipment/
+reputation/reward or guard-command changes, invented biography or premature
+Limbo/Selene disclosure. Prisoner intelligence still follows actual payment.
+
+CA-43711-CAPTAIN-02 — Saved knowledge and independent progression
+Origin: 4.37.11 / issue #79. Status: pending author acceptance.
+Prerequisites: copies of a pre-4.37.11 save and current campaign; use matching legacy
+map options for visited old geometry. Keep originals with their original package.
+Steps:
+1. Load the earlier save: no captain clue should appear solely from past port visits.
+2. Hear a guard's first greeting and close without answering; verify the clue exists.
+3. Save with the guard conversation open, reload, close and reopen it.
+4. Leave/return through a hub route and talk again after the siege is completed.
+5. Check recognition with zero, some or all prisoners rescued in available campaigns.
+Expected: the current open page resumes; later conversations acknowledge learned
+information. No memories return, rewards/events duplicate or unrelated progress
+changes. Rescues and siege outcomes remain independent. Original save/package
+still provide rollback; these tests do not claim full-city performance is fixed.

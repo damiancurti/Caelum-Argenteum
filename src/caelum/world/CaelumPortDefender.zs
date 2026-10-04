@@ -14,6 +14,28 @@ class CaelumPortDefender : CaelumFolkloreCombatActor
     CaelumShieldModel Shield;
     CaelumWeaponModel Sword;
 
+    override bool Used(Actor activator)
+    {
+        let user = CaelumPlayer(activator);
+        if (level.MapName != "MAP06" || user == null || user.player == null
+            || health <= 0 || !CaelumUseGeometry.AimedAt(user, self)) return false;
+        if ((user.player.cmd.buttons & BT_USE) == 0 || user.FolkloreInteractionUseLatched)
+            return true;
+        user.FolkloreInteractionUseLatched = true;
+        user.FolkloreInteractionReleaseGuardTics = 0;
+        return CaelumGuardCaptainDialogue.Open(user, self);
+    }
+
+    override void Tick()
+    {
+        Super.Tick();
+        // Reconstruir la primera/repetida charla desde el registro del hablante.
+        // No alterar el nodo de una conversación que sigue abierta al cargar.
+        if (!bInConversation && HasConversation())
+            Level.ExecuteSpecial(CaelumConstants.GZDOOM_THING_SET_CONVERSATION_SPECIAL,
+                self, null, false, 0, 0);
+    }
+
     void BeginCrewRoute(int index)
     {
         if(!CaelumPortData.IsSouth())return;

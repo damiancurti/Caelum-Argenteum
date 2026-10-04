@@ -1,6 +1,22 @@
 # TASKS.md — Active tasks
 
-Documentation version: **4.37.10** — 2026-10-04.
+Documentation version: **4.37.11** — 2026-10-04.
+
+## Issue #79 — The amnesiac guard captain (4.37.11)
+
+- Implemented: captain canon, first/repeat local guard recognition, amnesiac
+  responses and one persistent main Journal clue, independent of prisoner rescues.
+- Reconciled: active wanderer/intact-memory biography and prologue Journal;
+  original wording retained in HISTORY. Limbo/Unknown Voice mystery remains.
+- Preserved: player customization, factions, class, stats, rewards, army control,
+  prisoner briefing, siege objectives and narrator queue.
+- Compatibility: quest revision 3 initializes reserved slot 9 once; existing
+  USDF page indexes and 32-slot persistent quest arrays remain unchanged.
+- Evidence: `assets/validation_43711`; nine static and 149 current-version native
+  assertions pass, plus fourteen baseline/rollback checks. Author acceptance
+  remains in `pending_test.txt`; controlled victory is not a full normal battle.
+- Pending design: unspecified prior biography and future siege scheduling;
+  performance remains #86. No additional story facts or mechanics are inferred.
 
 ## Issue #78 — Prisoner siege intelligence (4.37.10)
 
@@ -13,11 +29,11 @@ Documentation version: **4.37.10** — 2026-10-04.
 - Evidence: `assets/validation_43710/RESULTS.json`; the author confirmed
   CA-43710-BRIEFING-01 and CA-43710-BRIEFING-02 passed on 2026-10-04 without
   reported exceptions and authorized PR #88 merge / #78 closure. HISTORY records
-  both results; `pending_test.txt` is empty. Version remains 4.37.10.
+  both results; no #78 author checks remain. Acceptance retained version 4.37.10.
 - PENDING author design: a future siege date/hour or scheduling change. Current
   data only records actual entry/deployment and victory; no deadline was invented.
-- Next: #79 supplies captain recognition;
-  #86 owns full-city performance. Neither is claimed implemented by this patch.
+- Captain recognition is implemented separately in #79 / 4.37.11 above;
+  #86 still owns full-city performance. Neither belongs to the #78 patch.
 
 ## Issue #77 — Expanded southern Barracas al Sud (4.37.9)
 

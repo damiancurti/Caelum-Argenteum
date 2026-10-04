@@ -1,0 +1,245 @@
+{
+  "issue": 79,
+  "release": "4.37.11",
+  "date": "2026-10-04",
+  "baseline_commit": "7e85c088390395323c194469e148ea338cc1334d",
+  "environment": {
+    "engine": "GZDoom 4.14.2",
+    "os": "Windows 11",
+    "renderer": "Vulkan / NVIDIA GeForce RTX 3070 Ti",
+    "development_iwad": "Author-installed local DOOM2.WAD; not distributed",
+    "launch": "-noautoload -nosound; isolated config/saves; hidden owned process; native engine scripts and menu actions",
+    "resolution": "1520x825",
+    "players": 1
+  },
+  "runtime_sha256": {
+    "src/CAPALOMO": "ce526619331a9e5d4211c68c1c88e88d92f16f69cc359840ec8a8d228478028a",
+    "src/LANGUAGE": "951564d4e5e30e94f8699bbaa4b6e9bbe859276e328c39c89ee427c561bcb924",
+    "src/ZSCRIPT": "017b8e136e79aa02d43687ad5ddddfb60398523ce0b421ca7ae4940e89424444",
+    "src/caelum/core/CaelumConstants.zs": "c229ce28aa9d464a181fc2e11e457d8c12c13fe81bd3394629c92cad658fb3f0",
+    "src/caelum/dialogue/CaelumGuardCaptainDialogue.zs": "3c65b193045d4787147a2698e72473b6fdc85b99605fd5ce3a163e1434798302",
+    "src/caelum/equipment/CaelumPersistentCharacterState.zs": "a6b5af4b381ef419b954f4f95266091ee05d4cbc0b67013701bffcde4dc26444",
+    "src/caelum/hud/CaelumJournalOverlay.zs": "a26215b6dbc0c4286da2db46efa31fc4df068df00f5a695d94bd37b6aca71f78",
+    "src/caelum/quests/CaelumQuestCatalogue.zs": "3b632bfd0d8d8d1c08c03f9db2deab43d0145eb83f3f53283e12d5995dc10083",
+    "src/caelum/world/CaelumPhysicalHazards.zs": "b90d736436d354be67dbe5a37f669af5674efb16d709cdb5a064c9c6b2771db9",
+    "src/caelum/world/CaelumPortDefender.zs": "fbb3e0aaa44b4abc974b749046af4d4d9392359679806af01f5d399d4b3e0270",
+    "src/caelum/world/CaelumPortSiege.zs": "2ea4f9da486fbd40bfa3a42746cb98eebc856a7942a472454dff32d82efa8b1f",
+    "src/caelum/world/CaelumSewerMaze.zs": "7974ad83cc8fa1fbd03da093b0f7523db6ffc6121cb84793afc4e9fd66617483"
+  },
+  "preserved_baseline_package_sha256": "a8d0d11d1a4b9b9d47a459ab7408710f7f98bbb9c7e12ebe28de9574a74cf592",
+  "static_contract_checks_passed": 9,
+  "native_current_assertions_passed": 149,
+  "baseline_preparation_rollback_assertions_passed": 14,
+  "native_runs": [
+    {
+      "run": "compile",
+      "version": "current",
+      "purpose": "Normal MAP01 source compilation/startup; no test fixture.",
+      "assertions_passed": 0,
+      "failures": 0,
+      "log": "compile.txt",
+      "sha256": "b3d65b82d9971752d35691bc3dbfebb9c375587c788a95d7de888f8f57bdd192"
+    },
+    {
+      "run": "first2",
+      "version": "current",
+      "purpose": "Rejected interactions; idempotent revision-2 migration; zero-rescue native first/response/repeat Spanish pages; invariants.",
+      "assertions_passed": 28,
+      "failures": 0,
+      "log": "first2.txt",
+      "sha256": "c80633ec02943710adf98daa6d5eeab916a165faf402ff900d80505d1f723667"
+    },
+    {
+      "run": "nativeuse",
+      "version": "current",
+      "purpose": "Real +use interaction; English first/repeat; open-page save/reload; zero/two/four rescues; actual prisoner payment and delayed Selene voice; EN/ES Journal renders.",
+      "assertions_passed": 50,
+      "failures": 0,
+      "log": "nativeuse.txt",
+      "sha256": "b30e4a040ccc474d37fcf445c908963cf52db60eed4fb11ef95fd99deb29672b"
+    },
+    {
+      "run": "oldsave2",
+      "version": "baseline",
+      "purpose": "4.37.10 prepares original partial-rescue save, Mage/Priest profile and one actual payment; clue does not exist yet.",
+      "assertions_passed": 7,
+      "failures": 0,
+      "log": "oldsave2.txt",
+      "sha256": "614b043bf32bff97b6d1224a8a26fc4186589b2f8d856fec5e7c5afe617cf388"
+    },
+    {
+      "run": "upgrade",
+      "version": "current",
+      "purpose": "Original 4.37.10 save migrates to quest revision 3 with unknown clue; learn via native Use, resave/reload open page, travel to MAP02.",
+      "assertions_passed": 28,
+      "failures": 0,
+      "log": "upgrade.txt",
+      "sha256": "9763aa92bade9a5c02e2cf7525caaf265d31889c2edbd4cf151e68ec6509995f"
+    },
+    {
+      "run": "hubreturn2",
+      "version": "current",
+      "purpose": "Reload migrated MAP02 save, return to the saved MAP06, preserve clue/profile/progress and render repeat dialogue.",
+      "assertions_passed": 14,
+      "failures": 0,
+      "log": "hubreturn2.txt",
+      "sha256": "8dbeb0eb56d3336ed8945a9206a89d0ad1064ad47028cd3d9e54eb84c474bec4"
+    },
+    {
+      "run": "full2",
+      "version": "current",
+      "purpose": "Current 600-guard/6001-attacker city deploys; native Use on a real reserve guard, zero rescues; controlled two-objective victory and repeat recognition.",
+      "assertions_passed": 20,
+      "failures": 0,
+      "log": "full2.txt",
+      "sha256": "a1e1d1e8453a1c6fe4ee1befc63595b911beb7488d995645081aa46dc680c585"
+    },
+    {
+      "run": "rollback2",
+      "version": "baseline",
+      "purpose": "Original pre-change save loads with the preserved original 4.37.10 package and retains original quest revision/profile/progress.",
+      "assertions_passed": 7,
+      "failures": 0,
+      "log": "rollback2.txt",
+      "sha256": "b6b47b722ae2112121f7d31e945be38b222fc196201100d4ec99ddf19379453c"
+    },
+    {
+      "run": "prologue",
+      "version": "current",
+      "purpose": "MAP01 startup and refusal of guard recognition outside MAP06; no premature identity clue.",
+      "assertions_passed": 2,
+      "failures": 0,
+      "log": "prologue.txt",
+      "sha256": "691b6e535deabc315db021111acda2f4656c4a9f87a6eea01e95ec6cb2f6d9c6"
+    },
+    {
+      "run": "oldpage",
+      "version": "baseline",
+      "purpose": "Original 4.37.10 paid-prisoner native conversation saved open on its claimed page.",
+      "assertions_passed": 0,
+      "failures": 0,
+      "log": "oldpage.txt",
+      "sha256": "ef441fa12732ec51866a32157f3ee7e5fc76ca8005645cfc77d6d94fabb194b2"
+    },
+    {
+      "run": "oldpageload",
+      "version": "current",
+      "purpose": "Original paid-prisoner open page resumes unchanged with migration and no fabricated captain clue.",
+      "assertions_passed": 7,
+      "failures": 0,
+      "log": "oldpageload.txt",
+      "sha256": "515e2495825b4bba588fd7308768eda006c28573558f12e88dce5e6538224c5a"
+    }
+  ],
+  "captures": [
+    {
+      "file": "first_es.png",
+      "sha256": "424f183fb6f123e02c3bffe24d91a69eb1ebe62f31966710a569c6e16bef817d",
+      "reviewed": true
+    },
+    {
+      "file": "answer_es.png",
+      "sha256": "99e93b693b9f57ab50ea92310ada0697f5f81e1c3822666ea1b8e8907b3f4991",
+      "reviewed": true
+    },
+    {
+      "file": "repeat_es.png",
+      "sha256": "94065eaff81d91b44bd1ccb4dec47654ff8eef9e22b94b0c99070152e7385b02",
+      "reviewed": true
+    },
+    {
+      "file": "first_en.png",
+      "sha256": "cc03dee0eb7b67de96dbab4cf2e7323b9e6759aac02f206f86b50d30722657e4",
+      "reviewed": true
+    },
+    {
+      "file": "repeat_en.png",
+      "sha256": "25fbb2c2c1141f374b18830d9edf9bce7656a15ae2ccd7f716cc7f97a73e41db",
+      "reviewed": true
+    },
+    {
+      "file": "current_reload.png",
+      "sha256": "be75f281edf73d2e616392846957d68f38688b872f8b372af5c5e647b4005728",
+      "reviewed": true
+    },
+    {
+      "file": "journal_en.png",
+      "sha256": "288d3da22f3e0e7af7c5581e6fe690622489d4f09782ec61456faec05b196edd",
+      "reviewed": true
+    },
+    {
+      "file": "journal_es.png",
+      "sha256": "98da63766fd5997f82bc67775a0eac6093d5d45294d32e0d9015224a5acecb8a",
+      "reviewed": true
+    },
+    {
+      "file": "selene.png",
+      "sha256": "075ea1c81b631eb39e5d63432579e1fb43edc8fa5f86b61316c5e4c2d3233770",
+      "reviewed": true
+    },
+    {
+      "file": "legacy_first.png",
+      "sha256": "8b7d6abc48a62036c00db94344949e5b5b4c2bfa52cf2ef4e28de53e6911cca7",
+      "reviewed": true
+    },
+    {
+      "file": "hub_return.png",
+      "sha256": "02a62bcfab163cc5151573670e0170af5bae192e242f2127477581b8aa6a48bb",
+      "reviewed": true
+    },
+    {
+      "file": "full_active.png",
+      "sha256": "f20ee466d92c1848bb69c7ea8b02744e30d5e01c22aa643e862e1adc61aa2154",
+      "reviewed": true
+    },
+    {
+      "file": "full_complete.png",
+      "sha256": "bb5239fcbf7d1feb01d4543de5ff4677861346e781625a9872efc78af67450eb",
+      "reviewed": true
+    },
+    {
+      "file": "old_paid_page.png",
+      "sha256": "b2e206e01a1fe4db5702891855631b442188e0aa50dd84a8d18091abfd2c66ef",
+      "reviewed": true
+    }
+  ],
+  "qualifications": [
+    "Focused single-player native tests and reviewed renders are distinct from author acceptance and a normal full campaign playthrough.",
+    "Isolated logic/save/hub fixtures use preserved legacy MAP06 geometry and a guard spawned by the old package. The separate full2 run uses current expanded geometry, actual deployment and a real reserve guard; it does not replace the army or add production guards.",
+    "Full-city completion injects the existing boss-retreat and twelve-machine objective states after actual guard interaction; no complete normal battle or performance benchmark is claimed. Issue #86 remains separate.",
+    "Original saves and the original package remain local for rollback. Test fixtures, engine executables, IWADs and saves are not distributed.",
+    "Initial harness revisions used two incorrect field/API names and an unavailable test class constant, retained a stale native voice menu, and expected a cross-map Actor reference to survive. Final fixtures correct those setup problems; listed runs pass. No unresolved product failure is hidden.",
+    "Pre-4.37.11 saves do not gain the clue merely by visiting the port or already receiving prisoner payment. Recognition still requires an existing local guard encounter."
+  ],
+  "author_acceptance": {
+    "status": "pending",
+    "tests": [
+      "CA-43711-CAPTAIN-01",
+      "CA-43711-CAPTAIN-02"
+    ]
+  },
+  "reproduction": {
+    "validation": "python validate_project.py",
+    "build": "powershell.exe -NoProfile -ExecutionPolicy Bypass -File build_dev.ps1",
+    "native_local": "build/run_issue79.ps1 with issue79_qa / issue79_legacy_qa / issue79_fullqa and recorded per-run configs; local fixtures deliberately excluded from distribution",
+    "author_steps": "../../pending_test.txt"
+  },
+  "normal_validation": {
+    "exit_code": 0,
+    "errors": [],
+    "report": "VALIDATOR.json"
+  },
+  "normal_build": {
+    "exit_code": 0,
+    "files": 6142,
+    "package_sha256": "bde8c92ea1ecd066baa210b39b7cdaf93859160b3362be8b17c22def4f3789f8",
+    "matches_tested_runtime": true,
+    "maps": "Current MAP02 and expanded southern MAP06"
+  },
+  "package_smoke": {
+    "engine_exit_code": 0,
+    "map": "MAP01",
+    "log": "package.txt",
+    "sha256": "3c8db8b947ccf3ed5b15f0c3e5e6c284de38c3bb30b04fd4f15173ca683205de"
+  }
+}
