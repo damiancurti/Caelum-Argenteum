@@ -1,6 +1,15 @@
 # TASKS.md — Active tasks
 
-Documentation version: **4.37.13a** — 2026-10-04.
+Documentation version: **4.37.14** — 2026-10-04.
+
+## Issue #97 - Palomo's first upstairs deck handoff (4.37.14)
+
+- Grant the physical deck upon successful conversation opening after following
+  Palomo upstairs, before choosing equipment or receiving the later Box.
+- Reuse the existing grant record/capacity guards; preserve repeated dialogue,
+  saves, essences, route and USDF page indexes. Explain the new timing in EN/ES.
+- Evidence: assets/validation_43714. Author checks passed 2026-10-04; closure/merge authorized.
+- Focused PR follows #95; #81 is accepted/merged, #93 is author-accepted.
 
 ## Issue #93 - Crafting time help (4.37.13a)
 

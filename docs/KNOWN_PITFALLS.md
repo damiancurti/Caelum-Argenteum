@@ -4,6 +4,28 @@ Status: integrated engineering register (issue #22, patch 4.36.1b).
 Prepared: 2026-09-23. Inherits the project's release after integration.
 Inspected baseline: `1dc390576fa330d37ff543526fc7e69a397fc28f` (PR #7).
 
+## CA-KP-033 — Refresh dialogue text after successful-open rewards
+
+Status/evidence: CODE-VERIFIED / ENGINE-VERIFIED.
+First recorded / last checked: 2026-10-04. Issue #97 / 4.37.14.
+Baseline: bbf79f87 plus the #97 working tree; GZDoom 4.14.2, Windows 11/Vulkan.
+Scope: OpenPalomoDialogue and CaelumMainM00ConversationMenu.
+
+Native StartConversation initializes the menu before returning success. A
+reward granted after that return correctly avoids failed-open rewards, but
+initial text can still describe the state before delivery. In the isolated
+reproduction, inventory contained the deck while the menu still said to make
+room. Refresh the affected root message from current inventory in Ticker,
+preserving the parent menu's established pause policy. Keep alternate messages
+within the same reserved line count: changing only dialogue lines does not
+reposition replies already laid out by the native menu.
+
+Regression: open Palomo upstairs with and without carrying capacity; inspect
+the first displayed message and reply positions, then retry and reopen. Final
+EN/ES captures and native checks: [4.37.14 evidence](../assets/validation_43714/RESULTS.json).
+Author acceptance remains pending under CA-43714-DECK-01. This verifies the
+two tested layouts, not arbitrary font overrides or resolutions.
+
 ## CA-KP-032 — Test ability input through the native ready weapon
 
 Status/evidence: CODE-VERIFIED / ENGINE-VERIFIED.

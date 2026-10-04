@@ -35,3 +35,7 @@
 # Preserve #93 evidence on Windows checkouts.
 /assets/validation_43713a/*.json text eol=lf
 /assets/validation_43713a/*.txt text eol=lf
+
+# Preserve #97 evidence on Windows checkouts.
+/assets/validation_43714/*.json text eol=lf
+/assets/validation_43714/*.txt text eol=lf

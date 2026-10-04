@@ -1,6 +1,30 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **4.37.13a** — 2026-10-04.
+Documentation version: **4.37.14** — 2026-10-04.
+
+## 4.37.14 - Give the deck at Palomo's first upstairs conversation (#97)
+
+Author acceptance of #97, 2026-10-04: all tests PASSED, without reported
+qualifications. CA-43714-DECK-01 originated in
+4.37.14 / #97. The author explicitly confirmed all tests correct
+and authorized issue closure and merge. The confirmed entries are removed
+from pending_test.txt. Runtime and version are unchanged.
+
+Author decision, 2026-10-04: Palomo must give the deck immediately when spoken
+to on the mansion's last floor after following him. The previous #80 delivery
+waited for accepting the Box after the resident trials. The successful native
+conversation-open path now performs the existing idempotent grant once Palomo's
+route is complete. The early equipment-plan menu explains the physical deck
+in EN/ES and refreshes after the grant, since native menu initialization occurs
+before StartConversation returns. Later Box text refers to the already-owned
+deck. USDF pages, route, Box choices, power balance and capture rules are intact.
+
+No persistent field changed: existing delivery revision 1 and grant identity
+handle repeat dialogue and old saves. Capacity failure leaves delivery pending;
+reopening after making room retries. The original save/package remain the
+rollback route. Native/static evidence and fixture qualifications are recorded
+in assets/validation_43714. CA-43714-DECK-01 remains pending. During delivery, the author accepted #81
+and PR #94 merged; #93 still awaits acceptance.
 
 ## 4.37.13a - Show the crafting time-skip shortcut (#93)
 

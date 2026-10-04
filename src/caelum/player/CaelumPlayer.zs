@@ -1434,6 +1434,13 @@ class CaelumPlayer : DoomPlayer
         );
         if (!speaker.HasConversation()) { return false; }
         if (!speaker.StartConversation(self, true, true)) { return false; }
+        // La primera charla tras seguirlo arriba entrega el mazo, antes de
+        // elegir equipo o recibir la Caja. Una charla fallida no da premios.
+        // Grant conserva identidad y permite reintentar si falta capacidad.
+        if (level.MapName == "MAP01" && palomo.NarrativeRevealRequired
+            && palomo.DepartureDone
+            && persistentState.HasMainM00Flag(CaelumConstants.MAIN_M00_FLAG_PALOMO_MET))
+            CaelumTarotDeckRules.Grant(self);
         return true;
     }
 

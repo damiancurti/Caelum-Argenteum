@@ -1,6 +1,16 @@
 # Caelum Argenteum — Project, status and roadmap
 
-Documentation version: **4.37.13a** — 2026-10-04.
+Documentation version: **4.37.14** — 2026-10-04.
+
+## 4.37.14 - Palomo gives the deck upstairs (#97)
+
+Palomo hands over the physical Tarot deck as soon as his first top-floor
+conversation opens after the player follows him. This is the equipment-plan
+conversation, before completing the resident trials or receiving the Box.
+Repeated dialogue preserves the same deck; capacity failure permits another
+attempt. Existing saves receive it on the next eligible conversation if it
+has never been granted. No new save fields or migration revision are needed.
+Evidence: assets/validation_43714; CA-43714-DECK-01 passed author acceptance on 2026-10-04.
 
 ## 4.37.13a - Visible crafting time shortcut (#93)
 

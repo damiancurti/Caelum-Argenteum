@@ -1,14 +1,14 @@
 # CONTEXT.md — Ultra-condensed summary of Caelum Argenteum
 
-Documentation version: **4.37.13a** — 2026-10-04.
+Documentation version: **4.37.14** — 2026-10-04.
 
-**Accepted 2026-10-04:** #93; all author checks passed.
+**Accepted 2026-10-04:** #93, #97; all author checks passed.
 Evidence: assets/validation_*. #81 accepted/merged.
 
-**#80 / 4.37.12:** up to three essences; User3 costs 1000 Anima, lasts 60 s,
-recharges 600 s from use. Fool flies; Minors double fixed bonuses. Palomo's
-78-card deck: 780 g, one slot, unsellable/undroppable/unbreakable; owned Box
-required for capture. Evidence: assets/validation_43712; accepted 2026-10-04.
+**Accepted #80 / 4.37.12 (2026-10-04):** three essences; User3 costs 1000 Anima,
+lasts 60 s, recharges 600 s from use. Fool flies; Minors double fixed bonuses.
+Deck: 780 g, one slot, unsellable/undroppable/unbreakable; capture needs
+it inside the owned Box. Evidence: validation_43712.
 
 **Accepted #79/#78 (2026-10-04):** guards recognize the amnesiac captain; one
 Journal clue. Paid prisoners share siege/calendar guidance; future timing pending.
