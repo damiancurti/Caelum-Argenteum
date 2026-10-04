@@ -2048,7 +2048,7 @@ class CaelumJournalOverlay : EventHandler
                     ? Font.CR_CYAN : Font.CR_GOLD,
                 52.0, 304.0,
                 String.Format(
-                    "%s: %.1f/%.1f s · %s | T: >>",
+                    "%s: %.1f/%.1f s · %s | %s",
                     StringTable.Localize("CA_CRAFTING_TASK_ACTIVE", false),
                     localPlayer.CraftingTaskRemainingSeconds,
                     localPlayer.CraftingTaskTotalSeconds,
@@ -2057,7 +2057,8 @@ class CaelumJournalOverlay : EventHandler
                             ? "CA_JOURNAL_CRAFTING_RUNNING"
                             : "CA_JOURNAL_CRAFTING_PAUSED",
                         false
-                    )
+                    ),
+                    StringTable.Localize("CA_JOURNAL_CRAFTING_TIME_HELP", false)
                 )
             );
         }

@@ -1,0 +1,45 @@
+{
+  "issue": 93,
+  "release": "4.37.13a",
+  "date": "2026-10-04",
+  "status": "Agent validation passed; author acceptance pending",
+  "base_commit": "312cdce7f00bf535ad7cde187fa7dc49ced51813",
+  "static": {
+    "input_process_unchanged": true,
+    "no_time_crafting_player_or_save_logic_changed": true,
+    "pending_trucazo_checks_retained": true
+  },
+  "project_validator": "VALIDATOR.json",
+  "native": {
+    "engine": "GZDoom 4.14.2 / Windows 11",
+    "spanish_layout": "1024x768, idle and active crafting",
+    "english_layout": "1520x825, idle and active crafting, final PK3",
+    "existing_skip_open_endpoint": {
+      "spanish": true,
+      "english": true
+    },
+    "package_startup_without_fixture": true,
+    "errors": 0
+  },
+  "package": {
+    "files": 6147,
+    "sha256": "42e0cacb4f9f8b0fac7c3d1fe243b954d395e74735e3721b38aa0f12b571b8db",
+    "all_members_identical_to_src": true
+  },
+  "qualifications": [
+    "Isolated fixture opens an actual station and supplies task state for UI inspection; no recipe transaction or task completion is claimed.",
+    "Native skip opening uses the unchanged network endpoint. Physical keyboard/controller acceptance remains pending.",
+    "Spanish captures precede only the version diagnostic update; English and startup use the final package."
+  ],
+  "pending_author_tests": [
+    "CA-43713A-CRAFT-01"
+  ],
+  "author_acceptance": {
+    "date": "2026-10-04",
+    "result": "PASSED",
+    "test_ids": [
+      "CA-43713A-CRAFT-01"
+    ],
+    "qualifications": "None reported; author explicitly approved all tests and requested closure/merge."
+  }
+}

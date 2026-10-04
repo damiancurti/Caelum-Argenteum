@@ -1,6 +1,14 @@
 # Caelum Argenteum — Project, status and roadmap
 
-Documentation version: **4.37.13** — 2026-10-04.
+Documentation version: **4.37.13a** — 2026-10-04.
+
+## 4.37.13a - Visible crafting time shortcut (#93)
+
+The author reported that Y worked but was missing from the bottom crafting
+help. The EN/ES footer now lists keyboard Y for time skipping beside T for
+acceleration; the active-task status repeats both. Input, work/skip mechanics
+and save schema are unchanged. Evidence: assets/validation_43713a. Author
+check CA-43713A-CRAFT-01 passed author acceptance on 2026-10-04; #81 acceptance remains separate.
 
 ## 4.37.13 — Trucazo practice against Argento (#81)
 

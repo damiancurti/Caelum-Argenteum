@@ -1949,8 +1949,9 @@ CA_JOURNAL_CRAFTING_BREAKDOWN = "Expanded recipe";
 CA_JOURNAL_CRAFTING_SELECTED_STEP = "selected step";
 CA_DEBUG_CRAFTING_ADVANCE_HINT = "console debug command: +10 min";
 CA_DEBUG_CRAFTING_NO_ACTIVE_TASK = "Crafting: no active task · console debug command advances 10 min";
-CA_JOURNAL_CRAFTING_HELP = "Left/Right recipe | Up/Down step | X efficiency | Space tier | B material batch";
-CA_JOURNAL_CRAFTING_HELP_2 = "R size | E craft | F repair | D dismantle | C cancel | T fast | G family | Tab/Q close";
+CA_JOURNAL_CRAFTING_HELP = "Left/Right recipe | Up/Down step | G family | Space tier | B batch | R size | X efficiency";
+CA_JOURNAL_CRAFTING_HELP_2 = "Keyboard: E craft | F repair | D dismantle | C cancel | T fast | Y time skip | Tab/Q close";
+CA_JOURNAL_CRAFTING_TIME_HELP = "T: speed up | Y: time skip";
 
 [es]
 CA_CONTROL_DEBUG_ADVANCE_CRAFTING_TIME = "Depuración: adelantar 10 minutos la tarea de crafteo";
@@ -1963,8 +1964,9 @@ CA_JOURNAL_CRAFTING_BREAKDOWN = "Receta desplegada";
 CA_JOURNAL_CRAFTING_SELECTED_STEP = "paso elegido";
 CA_DEBUG_CRAFTING_ADVANCE_HINT = "comando de consola de depuración: +10 min";
 CA_DEBUG_CRAFTING_NO_ACTIVE_TASK = "Crafteo: sin tarea activa · el comando de consola adelanta 10 min";
-CA_JOURNAL_CRAFTING_HELP = "Izq/Der receta | Arr/Ab paso | X eficiencia | Esp tier | B lote de materiales";
-CA_JOURNAL_CRAFTING_HELP_2 = "R talle | E crear | F reparar | D desarmar | C cancelar | T acelerar | G familia | Tab/Q cerrar";
+CA_JOURNAL_CRAFTING_HELP = "Izq/Der receta | Arr/Ab paso | G familia | Esp tier | B lote | R talle | X eficiencia";
+CA_JOURNAL_CRAFTING_HELP_2 = "Teclado: E crear | F reparar | D desarmar | C cancelar | T acelerar | Y salto temporal | Tab/Q cerrar";
+CA_JOURNAL_CRAFTING_TIME_HELP = "T: acelerar | Y: salto temporal";
 
 [enu default]
 CA_TREE_DESERT_CARDON_ADULT = "adult cardón cactus";
