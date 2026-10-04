@@ -1,0 +1,20 @@
+{
+  "issue": 81,
+  "checks": {
+    "saved_usdf_page_order_unchanged": true,
+    "saved_usdf_page_count_unchanged": true,
+    "four_normal_argento_choices": true,
+    "furniture_and_rest_sources_unchanged": true,
+    "world_tarot_sources_unchanged": true,
+    "no_map_changes": true,
+    "original_design_byte_identity": true,
+    "complete_bilingual_keys": true,
+    "spanish_utf8_not_replacement_text": true,
+    "ui_has_no_rival_hand_or_deck_face_access": true,
+    "envido_values_only_after_reveal": true,
+    "npc_policy_inputs_own_and_public_only": true,
+    "author_accepted_tarot_removed_trucazo_retained": true
+  },
+  "passed": 13,
+  "failed": []
+}

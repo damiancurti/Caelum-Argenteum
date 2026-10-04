@@ -1,6 +1,25 @@
 # Caelum Argenteum — Audio and art
 
-Documentation version: **4.37.12** — 2026-10-04.
+Documentation version: **4.37.13** — 2026-10-04.
+
+## 4.37.13 — Trucazo source and existing card presentation (#81)
+
+The practice menu reuses the approved 78-card Tarot fronts/back and Caelum
+fonts. No card art, models, maps, audio, attribution or generators change.
+Minor identities remain Sword/Cup/Wand/Coin blocks of 14, with Knight before
+Page in stored indices; displayed strength follows the approved Truco ranking.
+
+The author's supplied `DOCUMENTO 12 - trucazo.docx`, headed Trucazo v2.0, is
+preserved byte-for-byte at
+[assets/design_sources/trucazo_v2_original.docx](../assets/design_sources/trucazo_v2_original.docx).
+Original local source: the author's `Caelum Argenteum/Documentación` directory;
+SHA-256 `a326583696714f4dad6938b1ba85b7e09f60f6096012e413d8353ce0fbc8b4d9`.
+This is historical author design evidence, including unresolved future Major
+effects; the corrected current contract is in SYSTEMS and HISTORY. The source
+contains 416 body paragraphs, no actual Word tables/media or tracked edits.
+It was read without modifying its contents or producing a replacement Word file.
+Native screenshots/log excerpts are in assets/validation_43713. Engines, IWADs,
+saves and isolated QA fixtures stay local and are not distributed.
 
 ## 4.37.11 — Existing guard presentation and bilingual recognition (#79)
 

@@ -1,6 +1,32 @@
 # TASKS.md — Active tasks
 
-Documentation version: **4.37.12** — 2026-10-04.
+Documentation version: **4.37.13** — 2026-10-04.
+
+## Issue #81 — Trucazo against Argento (4.37.13)
+
+- Requested 2026-10-04: one complete single-player match against Argento in
+  MAP01, with native validation, commit and push.
+- Isolated branch `issue-81-trucazo-argento` starts from #80 commit c7fe3fe9;
+  #80 is now author-accepted and merged via PR #92. Its original build stays
+  available while the author tests it.
+- The contract in SYSTEMS incorporates the author's original Trucazo
+  v2.0 document and 2026-10-04 decisions: traditional Truco base, ties to mano,
+  no Majors or Magic Senses in this practice, no wagers, abandonment is defeat.
+  Patience-squared health and row-based damage come from the source. The author
+  resolved both source contradictions: one shared 56-Minor deck, first-row
+  nonplayables from the initial five, second-row nonplayables from replacements
+  up to three playable cards; Intelligence uses Type 1. The exact deal was
+  confirmed separately. Native menu/network probing verifies actions can run
+  while the world remains paused.
+- Implemented: ordinary Argento challenge, bilingual card/menu presentation,
+  complete hands/calls/damage/result loop, legal NPC policy with no hidden-hand
+  inputs, abandonment confirmation and native save/load. Additive revision-1
+  Inventory and static UI restoration preserve old saves and current matches.
+- Evidence: assets/validation_43713; native rules, 100 automatic matches,
+  ordinary dialogue entry, screenshots and save/restore/rollback checks.
+- Accepted 2026-10-04: CA-43713-TRUCAZO-01/02 passed; closure/merge authorized.
+  Next: #99 reorders the practice choice. Multiplayer, teams and broader
+  services/full Major expansion stay deferred.
 
 ## Issue #80 — Campaign Tarot activation (4.37.12)
 
@@ -19,7 +45,8 @@ Documentation version: **4.37.12** — 2026-10-04.
   baseline/rollback checks.
 - Follow-up implemented: HUD duration/cooldown above the side Seal indicator;
   rest and committed journeys advance the shared timers.
-- Next: #81 Trucazo; remaining Major powers/acquisition/awakening belong to V5.
+- #81 supplies the first Trucazo practice; remaining Major powers/acquisition/
+  awakening belong to V5. #80 author checks passed on 2026-10-04.
   No design values remain pending for this implementation.
 
 

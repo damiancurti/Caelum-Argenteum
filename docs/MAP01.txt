@@ -1,6 +1,15 @@
 CAELUM ARGENTEUM — STORY AND MAP01
 
-Documentation version: **4.37.12** — 2026-10-04.
+Documentation version: **4.37.13** — 2026-10-04.
+
+4.37.13 / issue #81: Argento offers Trucazo practice through his existing
+conversation pages. Requires the physical Tarot deck from Palomo, inside or
+outside the Box. This is a complete 1v1 match with the approved shared Minor
+deck, calls, health and row damage; SYSTEMS contains the contract. The world
+pauses in the bilingual match menu. No Majors, Magic Senses, wagers or campaign
+rewards apply. Abandoning is defeat; native save/load preserves the match.
+Existing conversation page indices, geometry, table capacities and character
+progress remain intact. Evidence: assets/validation_43713; author checks pending.
 
 ## 4.37.11 — Guard captain with amnesia (#79)
 

@@ -346,6 +346,7 @@ conversation
         name = "$CA_ARGENTO_NAME";
         dialog = "$CA_DLG_M01_ARGENTO_EARLY";
         goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+        choice { text = "$CA_TC_CHALLENGE"; giveitem = "CaelumTrucazoChallengeAction"; closedialog = true; }
         ifitem
         {
             item = "CaelumM00SocialReadyToken";
@@ -360,6 +361,7 @@ conversation
         name = "$CA_ARGENTO_NAME";
         dialog = "$CA_DLG_M01_ARGENTO_START";
         goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+        choice { text = "$CA_TC_CHALLENGE"; giveitem = "CaelumTrucazoChallengeAction"; closedialog = true; }
         ifitem
         {
             item = "CaelumM00ArgentoStartedToken";
@@ -409,6 +411,7 @@ conversation
         name = "$CA_ARGENTO_NAME";
         dialog = "$CA_DLG_M01_ARGENTO_PROGRESS";
         goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+        choice { text = "$CA_TC_CHALLENGE"; giveitem = "CaelumTrucazoChallengeAction"; closedialog = true; }
         ifitem
         {
             item = "CaelumM00AllConvincedToken";
@@ -522,6 +525,7 @@ conversation
         name = "$CA_ARGENTO_NAME";
         dialog = "$CA_DLG_M01_ARGENTO_COMPLETE";
         goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+        choice { text = "$CA_TC_CHALLENGE"; giveitem = "CaelumTrucazoChallengeAction"; closedialog = true; }
         choice
         {
             text = "$CA_DLG_M01_ARGENTO_NEXT";

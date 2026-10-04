@@ -1,6 +1,67 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **4.37.12** — 2026-10-04.
+Documentation version: **4.37.13** — 2026-10-04.
+
+## 4.37.13 — Complete Trucazo practice against Argento (#81)
+
+Author acceptance, 2026-10-04: the author explicitly approved all Trucazo tests
+and authorized issue #81 closure and PR #94 merge. CA-43713-TRUCAZO-01
+(complete practice) and CA-43713-TRUCAZO-02 (persistence, abandonment and
+existing activities), both originating in 4.37.13 / #81, are PASSED without
+qualifications. Their entries are removed from pending_test.txt. Runtime and
+version are unchanged. The requested dialogue-option reorder is separate #99.
+
+Implemented 2026-10-04 on issue-81-trucazo-argento, based on #80 commit c7fe3fe9.
+The isolated worktree preserves the author's #80 test checkout and package.
+The author selected Argento in MAP01, supplied the original Trucazo v2.0 Word
+source and confirmed ordinary traditional Argentine Truco as the base. The
+original is preserved byte-for-byte under assets/design_sources; its hash and
+provenance are in ASSETS. Current rules are consolidated in SYSTEMS.
+
+Author decisions resolve the source's contradictions: one shared 56-Minor deck,
+with only Majors removed before dealing. Each player receives five; their
+initial nonplayable cards enter the first row. Replacements are drawn from the
+remaining shared deck until each has three playable cards; replacement
+nonplayables enter the second row. Replenishment occurs only at the deal. This
+interpretation was explicitly confirmed after clarifying the phrase about
+drawing from the second row. Intelligence uses Type 1, matching the source's
+10 -> 1.55 example rather than its contradictory linear formula. The author's
+tie-to-mano rule supersedes the original awakened-card tie priority. Traditional
+calls/scoring supersede inconsistent source references to rounds and raises.
+The practice explicitly excludes Majors, Magic Senses and wagers; abandoning
+is automatic defeat. Health and row damage remain included, with no world HP,
+resource, reputation, money, item or essence transaction.
+
+Existing Argento pages gain challenge choices without new/reordered USDF pages.
+The complete physical deck may be inside or outside the Box. One native
+revision-1 Inventory owns the shared shuffled deck, hands/rows, played flags,
+mano/turns, calls (including suspended Truco), health, result and request serial.
+NPC decisions receive their own cards and public information only. A native
+menu displays existing art, legal actions, rules/rows and save/load controls,
+with world pause and explicit abandonment confirmation. There is no seating or
+world-freeze flag mutation. Older saves acquire no match until first challenge;
+original saves and the original package remain the reversible rollback route.
+
+Testing found that loading while an unrelated menu was open could leave that
+old menu visible over an intact restored match. A one-time static interface
+restore now reconstructs the Trucazo menu and pause. Native verification retains
+the exact pending call/cards/rows/health; the engine advances its ordinary one
+resume tic before the restored menu pauses. Closing a result restores ordinary
+controls. Spanish encoding and a played-card label overlap were corrected from
+actual 1024x768 captures. Final rules wrapping keeps the action column clear;
+1520x825 captures verify proportional cards and text. No new card art or
+accepted furniture behavior changes.
+
+Static validation/build and target Windows GZDoom 4.14.2 evidence are recorded
+in assets/validation_43713/RESULTS.json, including rules assertions, 100 complete
+automatic matches, normal Use/conversation/menu entry, native save/reload,
+baseline-save migration/rollback and bilingual captures. Fixtures seed test
+prerequisites; they are not a claim of a full campaign playthrough or author
+acceptance. Engines, IWADs, saves and fixtures are not distributed.
+CA-43713-TRUCAZO-01/02 are now accepted as recorded above. During delivery the author accepted all
+#80 tests and authorized its closure/merge; PR #92 merged as 71ef7714. Only the
+confirmed Tarot checks were removed, with their results in the 4.37.12 entry.
+The author subsequently authorized #81 closure and merge, as recorded above.
 
 ## 4.37.12 — Campaign Tarot powers and physical deck (#80)
 

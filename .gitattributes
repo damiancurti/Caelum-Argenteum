@@ -27,3 +27,7 @@
 # Preserve #80 evidence on Windows checkouts.
 /assets/validation_43712/*.json text eol=lf
 /assets/validation_43712/*.txt text eol=lf whitespace=-blank-at-eol
+
+# Preserve #81 evidence on Windows checkouts.
+/assets/validation_43713/*.json text eol=lf
+/assets/validation_43713/*.txt text eol=lf

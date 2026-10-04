@@ -63,3 +63,8 @@ OptionMenuSettings
 {
     Linespacing 12
 }
+
+ListMenu "CaelumTrucazoMenu"
+{
+    Class "CaelumTrucazoMenu"
+}

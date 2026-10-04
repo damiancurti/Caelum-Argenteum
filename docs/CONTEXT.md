@@ -1,13 +1,16 @@
 # CONTEXT.md — Ultra-condensed summary of Caelum Argenteum
 
-Documentation version: **4.37.12** — 2026-10-04.
+Documentation version: **4.37.13** — 2026-10-04.
 
-**#80 / 4.37.12:** Journal selects up to three essences; User3 costs 1000 Anima
-once, lasts 60 s and recharges for 600 s from use, without cancellation.
-Fool: flight; Minors: double fixed bonuses. Palomo gives 78 physical cards
-(780 g, one slot), unsellable/undroppable/unbreakable. Capture requires the deck
-inside the owned Box; powers remain personal. Additive revisions preserve saves.
-Evidence: assets/validation_43712; both author checks passed 2026-10-04.
+**#81 / 4.37.13:** Argento's MAP01 dialogue starts complete Trucazo practice:
+shared 56-Minor deck, traditional calls, Patience-squared health, Type 1 damage.
+No Majors, Magic Senses or wagers; abandonment is defeat. Native paused menu
+and saved match state; evidence: assets/validation_43713. Accepted 2026-10-04.
+
+**#80 / 4.37.12:** up to three essences; User3 costs 1000 Anima, lasts 60 s,
+recharges 600 s from use. Fool flies; Minors double fixed bonuses. Palomo's
+78-card deck: 780 g, one slot, unsellable/undroppable/unbreakable; owned Box
+required for capture. Evidence: assets/validation_43712; accepted 2026-10-04.
 
 **Accepted #79/#78 (2026-10-04):** guards recognize the amnesiac captain; one
 Journal clue. Paid prisoners share siege/calendar guidance; future timing pending.

@@ -156,3 +156,8 @@ version "4.14"
 #include "caelum/world/CaelumMansionScenery.zs"
 #include "caelum/world/CaelumMansionTympana.zs"
 #include "caelum/world/CaelumDecorativeCave.zs"
+
+#include "caelum/trucazo/CaelumTrucazoRules.zs"
+#include "caelum/trucazo/CaelumTrucazoMatch.zs"
+
+#include "caelum/trucazo/CaelumTrucazoMenu.zs"
