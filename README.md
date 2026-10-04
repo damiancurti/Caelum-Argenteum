@@ -4,8 +4,20 @@ An independent dark fantasy FPS-RPG inspired by nineteenth-century Argentina.
 Author and game designer: **Damian Curti**. Development target: **GZDoom 4.14.2**
 on Windows 11. The final game is intended to be independent of Doom assets.
 
-**Current release: 4.37.9.** Obtain and update the complete repository, validate
+**Current release: 4.37.10.** Obtain and update the complete repository, validate
 it, then rebuild with `run_dev.bat` as described below.
+
+Issue [#78](https://github.com/damiancurti/Caelum-Argenteum/issues/78) adds siege
+intelligence to each rescued prisoner's **successful port payment**. Dialogue and
+Journal agree on Barracas al Sud, the observed timing and both victory objectives:
+stop the commander and neutralize twelve attacking machines. Real calendar records
+provide active/completed dates; no future deadline has been authored or invented.
+Rewards, Selene interventions, page indexes, maps and save schemas remain intact.
+See [focused native evidence](assets/validation_43710/RESULTS.json). On 2026-10-04
+the author confirmed both narrative checks passed and authorized
+[PR #88](https://github.com/damiancurti/Caelum-Argenteum/pull/88) merge / #78 closure.
+[HISTORY](docs/HISTORY.md) records acceptance; [pending_test.txt](pending_test.txt)
+is empty. The release remains 4.37.10.
 
 Issue [#77](https://github.com/damiancurti/Caelum-Argenteum/issues/77) expands
 **Barracas al Sud (MAP06)** to **960 × 960 m**: 160 houses, 64 shops, 24 factories
@@ -49,7 +61,7 @@ select the matching saved layout with `run_dev.bat --legacy-map06-north-city`
 or `--legacy-map06` (pre-siege port). Preserve original saves/packages for rollback.
 These alternatives retain the old army and progress; they do not convert a
 visited city. Saves already in MAP03 can still use their old onward port route.
-No author checks remain pending; [pending_test.txt](pending_test.txt) is empty.
+The #77 author checks remain accepted; #78 adds its own pending narrative checks.
 
 Issue [#75](https://github.com/damiancurti/Caelum-Argenteum/issues/75) is implemented
 in the accepted #73/#74 runtime: materials in 39 chests, finite Mandinga ammunition

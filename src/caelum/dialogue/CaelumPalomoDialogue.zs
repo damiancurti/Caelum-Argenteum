@@ -279,10 +279,24 @@ class CaelumPalomoConversationMenu : ConversationMenu
         // ConversationMenu.Ticker sólo activa la pausa tras 20 tics. Omitir
         // esa acción conserva el modo nativo sin pausa incluso en snapshots
         // anteriores a la nueva opción MAPINFO. No altera los demás menús.
+        // El asedio sigue vivo durante la charla: actualizar sólo su información.
+        if (mCurNode != null && (CaelumSiegeIntelligence.IsPaidPage(mCurNode.UserData)
+            || mCurNode.UserData ~== "port_siege_start" || mCurNode.UserData ~== "port_siege_complete"))
+            FormatSpeakerMessage();
     }
 
     override void FormatSpeakerMessage()
     {
+        if (CaelumSiegeIntelligence.IsPaidPage(mCurNode.UserData)
+            || mCurNode.UserData ~== "port_siege_start" || mCurNode.UserData ~== "port_siege_complete")
+        {
+            let user = mPlayer == null ? null : CaelumPlayer(mPlayer.mo);
+            String text = CaelumSiegeIntelligence.Text(user);
+            if (CaelumSiegeIntelligence.IsPaidPage(mCurNode.UserData))
+                text = StringTable.Localize(mCurNode.Dialogue) .. "\n\n" .. text;
+            mDialogueLines = displayFont.BreakLines(text, SpeechWidth);
+            return;
+        }
         if (mCurNode.UserData ~== "palomo_upstairs_wait")
         {
             let user = mPlayer == null ? null : CaelumPlayer(mPlayer.mo);

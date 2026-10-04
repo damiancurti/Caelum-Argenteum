@@ -1,6 +1,15 @@
 # Caelum Argenteum — Audio and art
 
-Documentation version: **4.37.9** — 2026-10-03.
+Documentation version: **4.37.10** — 2026-10-04.
+
+## 4.37.10 — Existing prisoner dialogue presentation (#78)
+
+No visual/audio assets, models, sprites, maps, fonts or attributions change.
+The existing CAPALOMO pages keep their ordering and IDs; added presentation tags
+select shared bilingual briefing text from `src/LANGUAGE`. Existing menu metrics,
+prisoner appearances and Unknown Voice audio/presentation are reused. Native
+captures and focused test records live in `assets/validation_43710`; development
+IWADs, binaries, saves and isolated test fixtures are not distributed there.
 
 ## 4.37.9 — Expanded urban geometry and save-layout provenance (#77)
 

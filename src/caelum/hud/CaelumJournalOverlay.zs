@@ -394,11 +394,12 @@ class CaelumJournalOverlay : EventHandler
             if (state == CaelumConstants.QUEST_STATE_COMPLETED)
                 text = text .. "\n\n" .. StringTable.Localize(localPlayer.JournalQuestRewardClaimed[questId]
                     ? "CA_Q_RESCUE_PAID" : "CA_Q_RESCUE_UNPAID", false);
+            if (localPlayer.JournalQuestRewardClaimed[questId])
+                text = text .. "\n\n" .. CaelumSiegeIntelligence.Text(localPlayer);
             return text;
         }
         if (questId == CaelumConstants.QUEST_PORT_SIEGE)
-            return StringTable.Localize(localPlayer.JournalQuestState[questId] == CaelumConstants.QUEST_STATE_COMPLETED
-                ? "CA_DEMO_VOICE_10" : "CA_DEMO_VOICE_9", false);
+            return CaelumSiegeIntelligence.Text(localPlayer);
         if (CaelumSideQuestRules.IsDefined(questId))
         {
             int state = localPlayer.JournalQuestState[questId];
@@ -639,7 +640,8 @@ class CaelumJournalOverlay : EventHandler
     ui String GetQuestStageKey(int questId, int questStage, bool argentoStarted, int residents)
     {
         if (questId == CaelumConstants.QUEST_PORT_SIEGE)
-            return questStage >= 2 ? "CA_DEMO_PORT_DONE" : "CA_DEMO_PORT_ACTIVE";
+            return questStage >= 2 ? "CA_DEMO_PORT_DONE" : questStage == 1
+                ? "CA_DEMO_PORT_ACTIVE" : "CA_PRISONER_SIEGE_AWAITING";
         if (questId != CaelumConstants.QUEST_MAIN_M00_THE_FOOL)
         {
             return "CA_Q_SIDE_STAGE";

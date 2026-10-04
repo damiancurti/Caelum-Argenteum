@@ -1,6 +1,6 @@
 # AGENTS.md — Caelum Argenteum
 
-Documentation version: **4.37.9** — 2026-10-03.
+Documentation version: **4.37.10** — 2026-10-04.
 
 Startup guide for AI agents and human contributors. This file describes **how
 to work** on the project, not what balance or design it contains. Balance

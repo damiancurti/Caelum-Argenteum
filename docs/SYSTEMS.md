@@ -1,6 +1,46 @@
 # Caelum Argenteum — Current systems and rules
 
-Documentation version: **4.37.9** — 2026-10-03.
+Documentation version: **4.37.10** — 2026-10-04.
+
+## 4.37.10 — Prisoner siege intelligence after payment (#78)
+
+The existing port payment confirmation now also gives the siege briefing in
+English/Spanish. Each survivor must first be extracted alive and actually deliver
+the accepted 25 gold / +10 own-faction reward. Failed capacity checks, captive or
+following prisoners and unpaid port conversations do not unlock this information.
+The existing claimed flag gates repeat access; re-reading never grants anything.
+The paid rescue's Journal detail and the port siege quest share the same text.
+
+`CaelumSiegeIntelligence` reads the existing quest snapshot: stage 0 means no
+observed encounter yet, stage 1 active, stage 2 completed. Successful payment
+discovers the existing quest at stage 0 if necessary. The ordinary encounter still
+discovers/updates it for zero rescues. The controller's sealed twelve-machine
+roster and confirmed victory remain authoritative; both stopping the commander
+and neutralizing all twelve hostile machines are required. Defender cannons do
+not count. No four-prisoner requirement or new siege trigger was introduced.
+
+Location comes from `CaelumWorldCatalogue.LOCATION_PORT`. During/after the assault,
+the briefing displays the recorded `port16_siege_start` / `port16_siege_end` date
+from the same calendar events created by `CaelumPortSiege.Calendar`. Current MAP06
+deploys on entry and records that event; it does not schedule a future attack.
+**PENDING author decision:** a future date/hour, countdown or rescheduling rule.
+Before an encounter the text explicitly says the date/hour is unconfirmed; a
+legacy save without a dated event does not fabricate a historical timestamp.
+
+Native conversation pages and their global indexes are unchanged. `userstring`
+tags format existing paid pages and the two existing port voice pages. Text
+updates while the non-pausing conversation remains open, including victory.
+Delayed start narration also reflects completion instead of describing an ended
+siege as still active. Payment and completion events retain their original
+pending/delivered bits; the normal queue waits until the prisoner dialogue closes.
+
+No new serialized field, schema or event handler is added. Existing paid saves
+recover Journal access idempotently from the accepted claimed flags without
+replaying rewards or modifying the narration queue. Existing quest progress is
+preserved. Original saves/packages remain the rollback path; use the matching
+legacy map option for saves that visited older geometry. #78 changes no maps.
+Static/native results are in `assets/validation_43710/RESULTS.json`; author
+acceptance remains separate in `pending_test.txt`.
 
 ## 4.37.9 — Expanded city, southern siege and campaign route (#77)
 

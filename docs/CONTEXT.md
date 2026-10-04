@@ -1,19 +1,20 @@
 # CONTEXT.md — Ultra-condensed summary of Caelum Argenteum
 
-Documentation version: **4.37.9** — 2026-10-03.
+Documentation version: **4.37.10** — 2026-10-04.
 
-**#77:** MAP06: 960 × 960 m, 288 constructions:
-160 houses, 64 shops, 24 factories and 40 works in progress. Six gates face the
-southern assault; four towers and all wall walks have stairs. Forces: 6,000
-Mandingas + commander, 600 soldiers, six hostile guns/six rams. Defenders install
-36 guns; eight south-wall and four tower guns fire. MAP01 → MAP02 → MAP06 retains
-Ace/Zupay and 10 km planning. Evidence: validation_4379/south. City/route checks
-accepted. Old port saves select their legacy layout;
---legacy-map06-north-city preserves the first 4.37.9 northern city.
+**#78 / 4.37.10:** paid prisoners reveal siege timing/state, place and both
+objectives. Dialogue/Journal share bilingual text and calendar records; future
+date/hour remains PENDING. Rewards, Selene queues and save/page schemas persist. Concealed
+Selene service/anti-demon motive and implanted souls are canon, not an immediate
+confession; amnesia remains. Zupay retreats in Chapter I; later death is Chapter II.
+Evidence: assets/validation_43710; both author checks passed 2026-10-04; merge/closure
+authorized. Follow-ups: #79 (captain), #86 (performance).
 
-**Combat follow-up:** nearest player/guard; range/costs, retreat/idle, Pain,
-double chair Anima. 90 checks pass; merge approved. Performance: #86 (13.5/35 tics/s).
-See south/COMBAT_RECOVERY.json. Author checks passed 2026-10-03.
+**#77 accepted 2026-10-03:** expanded southern MAP06, 6,000 Mandingas plus
+commander, 600 soldiers; city/route and combat checks passed. Geometry/forces,
+matching legacy-save options and 10 km route: README/SYSTEMS. Evidence:
+assets/validation_4379/south/COMBAT_RECOVERY.json. Performance remains #86
+(13.5/35 tics/s).
 
 **Accepted #73/#74/#75:** cardinal maze, material chests/finite enemy supplies,
 six flooded returns, four grates and central elevator. Closed blocks keep covers

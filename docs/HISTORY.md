@@ -1,6 +1,65 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **4.37.9** — 2026-10-03.
+Documentation version: **4.37.10** — 2026-10-04.
+
+## 4.37.10 — Prisoner intelligence after the Barracas al Sud reward (#78)
+
+Implemented 2026-10-04 over accepted main `f8002810`; focused branch
+`issue-78-prisoner-siege-intelligence`. The author's 2026-10-02 #78 decision
+authorizes the prisoners' concealed service to Selene and anti-demon motivation.
+Each surviving extracted prisoner's actual payment unlocks the shared bilingual
+briefing and Journal access. Failed payment reveals nothing; retries/re-reading
+cannot repeat grants. Existing scene/quest/calendar state distinguishes the
+unconfirmed future, active siege and completed assault. A new future deadline,
+countdown or rescheduling remains PENDING, not an invented game rule.
+
+The patch preserves twelve-machine-plus-commander victory, zero/partial/all
+rescues, the narrator queue, native USDF page indexes and persistent schemas.
+Old paid characters derive briefing access without replaying historical events.
+Current dialogue refreshes during an open non-pausing menu and delayed siege
+introductions reflect completed assaults. No new map, death scene, combat rule,
+reward balance, identity confession or recovered memory is implemented.
+
+Active prose reconciliation: "commander has fallen" / "comandante cayó" was
+ambiguous after the accepted retreat and now says "has been stopped" /
+"fue detenido". The Zupay's later death remains Chapter II. #34's former
+restriction on expanding the prisoners' agenda is superseded only in #78's
+authorized scope. Older body/soul wording is retained for provenance, with the
+implanted souls and authorized allegiance taking precedence for the prisoners'
+current characterization. The later boss/reintegration plan is neither cancelled
+nor implemented, and does not authorize an immediate disclosure here.
+Original accepted release records and assets remain untouched. #79 owns the
+guard-captain recognition work and its wider biography audit.
+
+Preserved wording from the earlier narrative source: "While their souls remained
+in the mansion, Selene reached their bodies. She set them in motion again with
+corrupted fragments and turned them into instruments that the protagonist would
+find later." #78 replaces that active paragraph with the implanted-soul service
+and anti-demon motivation, retaining the original here as provenance.
+
+Validation: normal validator/build plus isolated and rendered native GZDoom
+4.14.2 checks on Windows/Vulkan with the author's local development IWAD.
+`assets/validation_43710/RESULTS.json` records the exact tests, tested-source hashes,
+calendar evidence, payment/queue checks, old/current saves, hub travel and captures.
+Full-city scenario checks exercise real deployment/calendar/conversation but
+inject the two completed objective states to test presentation; they do not
+claim a normal full-army victory or resolve #86's performance limitation.
+
+Author acceptance, 2026-10-04: Damian Curti explicitly confirmed that all tests
+passed and requested issue #78 closure, then PR #88 merge. Both checks originate
+in 4.37.10 / #78:
+
+- **CA-43710-BRIEFING-01 — passed:** post-payment intelligence and narrative
+  review, including rewards, Journal agreement and Selene intervention ordering.
+- **CA-43710-BRIEFING-02 — passed:** repeat access, siege outcome, saved campaigns
+  and hub return, preserving rewards/events and zero-rescue fallback guidance.
+
+No exceptions were reported. The author did not supply additional test logs or
+environment details; this confirmation is separate from the controlled native
+evidence above. Both confirmed entries were removed from `pending_test.txt`,
+which is now empty. Acceptance retains version 4.37.10 and the tested runtime.
+Future siege scheduling remains an unauthored design decision, while #79 and
+#86 retain their separate scope. Merge and closure are authorized.
 
 ## 4.37.9 — Expand fortified Barracas al Sud (#77)
 

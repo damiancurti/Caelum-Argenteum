@@ -2668,6 +2668,7 @@ conversation
     page
     {
         pagename = "prisoner_unitario_claimed";
+        userstring = "prisoner_unitario_claimed";
         name = "$CA_PRISONER_UNITARIO_NAME";
         dialog = "$CA_PRISONER_PORT_REWARD_GRANTED";
         goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
@@ -2707,6 +2708,7 @@ conversation
     page
     {
         pagename = "prisoner_federal_claimed";
+        userstring = "prisoner_federal_claimed";
         name = "$CA_PRISONER_FEDERAL_NAME";
         dialog = "$CA_PRISONER_PORT_REWARD_GRANTED";
         goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
@@ -2746,6 +2748,7 @@ conversation
     page
     {
         pagename = "prisoner_bestia_claimed";
+        userstring = "prisoner_bestia_claimed";
         name = "$CA_PRISONER_BESTIA_NAME";
         dialog = "$CA_PRISONER_PORT_REWARD_GRANTED";
         goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
@@ -2785,6 +2788,7 @@ conversation
     page
     {
         pagename = "prisoner_tarot_claimed";
+        userstring = "prisoner_tarot_claimed";
         name = "$CA_PRISONER_TAROT_NAME";
         dialog = "$CA_PRISONER_PORT_REWARD_GRANTED";
         goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
@@ -2931,6 +2935,8 @@ conversation
     page
     {
         name = "$CA_SPEAKER_UNKNOWN_VOICE";
+        pagename = "port_siege_start";
+        userstring = "port_siege_start";
         dialog = "$CA_DEMO_VOICE_9";
         goodbye = "$CA_DLG_M01_CONTINUE";
     }
@@ -2943,6 +2949,8 @@ conversation
     page
     {
         name = "$CA_SPEAKER_UNKNOWN_VOICE";
+        pagename = "port_siege_complete";
+        userstring = "port_siege_complete";
         dialog = "$CA_DEMO_VOICE_10";
         goodbye = "$CA_DLG_M01_CONTINUE";
     }

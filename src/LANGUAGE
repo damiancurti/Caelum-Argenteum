@@ -4153,7 +4153,7 @@ CA_DEMO_VOICE_6 = "Rufino has paid his debt. In the sewers you needed each other
 CA_DEMO_VOICE_7 = "Santos made his thanks tangible. You brought someone back to his people. That will matter beyond this quay.";
 CA_DEMO_VOICE_8 = "Leandro has given you what he owed. His questions remain his own. You can accept a debt repaid without answering them.";
 CA_DEMO_VOICE_9 = "The port is under siege. Silence the twelve attacking machines by defeating the enemies guarding them, and defeat their Zupay commander. The port cannons are defending the gates. You need both objectives; chasing every scattered attacker will only keep you here.";
-CA_DEMO_VOICE_10 = "Their twelve machines are silent and their commander has fallen. The survivors are withdrawing. Let them go. The way through the port is won.";
+CA_DEMO_VOICE_10 = "Their twelve machines are silent and their commander has been stopped. The survivors are withdrawing. Let them go. The way through the port is won.";
 CA_DEMO_PORT_TITLE = "The port under siege";
 CA_DEMO_PORT_MACHINES = "Neutralize the twelve attacking machines";
 CA_DEMO_PORT_COMMANDER = "Defeat the port Zupay commander";
@@ -4191,7 +4191,7 @@ CA_DEMO_VOICE_6 = "Rufino pagó su deuda. En las cloacas se necesitaron mutuamen
 CA_DEMO_VOICE_7 = "Santos puso algo concreto en su agradecimiento. Ayudaste a alguien a volver con los suyos. Eso importa más allá de este muelle.";
 CA_DEMO_VOICE_8 = "Leandro te entregó lo que debía. Sus preguntas siguen siendo suyas. Podés aceptar una deuda saldada sin responderlas.";
 CA_DEMO_VOICE_9 = "El puerto está sitiado. Neutralizá las doce máquinas atacantes derrotando a los enemigos que las custodian, y vencé al Zupay que los comanda. Los cañones del puerto defienden las puertas. Necesitás cumplir ambos objetivos; perseguir a cada atacante disperso sólo te retendrá acá.";
-CA_DEMO_VOICE_10 = "Sus doce máquinas quedaron en silencio y su comandante cayó. Los sobrevivientes se retiran. Dejalos ir. El paso por el puerto está ganado.";
+CA_DEMO_VOICE_10 = "Sus doce máquinas quedaron en silencio y su comandante fue detenido. Los sobrevivientes se retiran. Dejalos ir. El paso por el puerto está ganado.";
 CA_DEMO_PORT_TITLE = "El puerto sitiado";
 CA_DEMO_PORT_MACHINES = "Neutralizar las doce máquinas atacantes";
 CA_DEMO_PORT_COMMANDER = "Vencer al Zupay comandante del puerto";
@@ -4407,3 +4407,19 @@ CA_LOADOUT_STATS = "Weight, costs and confirmation";
 [es]
 CA_LOADOUT_PLAN = "Revisar el plan confirmado";
 CA_LOADOUT_STATS = "Peso, costes y confirmación";
+
+[enu default]
+CA_PRISONER_SIEGE_PENDING = "%PLACE% is threatened by an assault. I have no confirmed date or hour. Stop the Zupay commander and neutralize all twelve attacking machines; both are necessary.";
+CA_PRISONER_SIEGE_ACTIVE = "%PLACE% is under siege now. Force the Zupay commander to retreat and neutralize all twelve attacking machines by defeating their guards. Both objectives are required; the port cannons defend us.";
+CA_PRISONER_SIEGE_COMPLETE = "The assault on %PLACE% has ended. The commander was stopped and all twelve attacking machines were neutralized. Let the withdrawing survivors go.";
+CA_PRISONER_SIEGE_STARTED_AT = "Recorded start:";
+CA_PRISONER_SIEGE_ENDED_AT = "Recorded end:";
+CA_PRISONER_SIEGE_AWAITING = "Assault timing unconfirmed";
+
+[es]
+CA_PRISONER_SIEGE_PENDING = "%PLACE% está amenazada por un asalto. No tengo fecha ni hora confirmadas. Frená al Zupay comandante y neutralizá las doce máquinas atacantes: hacen falta ambas cosas.";
+CA_PRISONER_SIEGE_ACTIVE = "%PLACE% está bajo asedio ahora. Obligá al Zupay comandante a retirarse y neutralizá las doce máquinas atacantes derrotando a sus custodios. Hacen falta ambos objetivos; los cañones del puerto nos defienden.";
+CA_PRISONER_SIEGE_COMPLETE = "El asalto a %PLACE% terminó. El comandante fue detenido y las doce máquinas atacantes quedaron neutralizadas. Dejá ir a los sobrevivientes que se retiran.";
+CA_PRISONER_SIEGE_STARTED_AT = "Inicio registrado:";
+CA_PRISONER_SIEGE_ENDED_AT = "Fin registrado:";
+CA_PRISONER_SIEGE_AWAITING = "Fecha del asalto sin confirmar";
