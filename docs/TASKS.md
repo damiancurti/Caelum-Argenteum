@@ -7,7 +7,7 @@ Documentation version: **4.37.14a** — 2026-10-04.
 - Practice is the final ordinary reply before goodbye in all existing pages.
 - Preserve page identity and every other reply/action/condition; native verify
   the displayed order and entry into the already accepted match.
-- Evidence: assets/validation_43714a. Next: CA-43714A-ARGENTO-01.
+- Evidence: assets/validation_43714a. Author checks passed 2026-10-04; closure/merge authorized.
 
 ## Issue #97 - Palomo's first upstairs deck handoff (4.37.14)
 

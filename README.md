@@ -10,7 +10,7 @@ it, then rebuild with `run_dev.bat` as described below.
 Issue [#99](https://github.com/damiancurti/Caelum-Argenteum/issues/99) places
 Argento's Trucazo practice after the ordinary story/service choices, immediately
 before goodbye. Rules and dialogue page identities are unchanged.
-See [4.37.14a evidence](assets/validation_43714a/RESULTS.json); author check pending.
+See [4.37.14a evidence](assets/validation_43714a/RESULTS.json); author check passed 2026-10-04.
 
 Issue [#97](https://github.com/damiancurti/Caelum-Argenteum/issues/97) moves
 Palomo's Tarot deck to the **first conversation upstairs after following him**.

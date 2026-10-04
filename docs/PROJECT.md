@@ -7,7 +7,7 @@ Documentation version: **4.37.14a** — 2026-10-04.
 The existing practice choice is now the last ordinary reply before goodbye
 in all four Argento pages that offer it. Other replies retain their order,
 conditions and actions. Evidence: assets/validation_43714a; author check
-CA-43714A-ARGENTO-01 is pending. Match rules and saved page indexes are intact.
+CA-43714A-ARGENTO-01 passed author acceptance on 2026-10-04. Match rules and saved page indexes are intact.
 
 ## 4.37.14 - Palomo gives the deck upstairs (#97)
 
