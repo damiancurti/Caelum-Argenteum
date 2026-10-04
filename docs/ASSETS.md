@@ -1,6 +1,16 @@
 # Caelum Argenteum — Audio and art
 
-Documentation version: **4.37.17** — 2026-10-04.
+Documentation version: **4.37.18** — 2026-10-04.
+
+## 4.37.18 - Journal subsection presentation (#91)
+
+Craft, Repair and Dismantle reuse the existing `ca_ui_action_craft.png`,
+`ca_ui_action_repair.png` and `ca_ui_action_dismantle.png` in the Journal icon
+set. Their silver/gold frames, laurel selection, Caelum fonts and native C moon
+pointer come from the accepted UI assets; no new external art or attribution
+is introduced. All seven main sections retain their icons. Selected rows,
+bounded wrapping/scrolling and distinct Tarot effect labels use those fonts.
+Native bilingual resolution/scale captures: assets/validation_43718.
 
 ## 4.37.17 - Pickaxe art and gathering audio (#89)
 

@@ -1,6 +1,27 @@
 # Caelum Argenteum — Project, status and roadmap
 
-Documentation version: **4.37.17** — 2026-10-04.
+Documentation version: **4.37.18** — 2026-10-04.
+
+## 4.37.18 - Crafting sections and complete Tarot descriptions (#91)
+
+The Journal now has distinct Craft, Repair and Dismantle views using the
+existing inventory visual language. Learned recipes remain browsable when
+materials or a station are missing. Repair and Dismantle identify real owned
+weapon instances, preserve their wear/variants and revalidate the target on
+confirmation. The Pickaxe's learned recipe now authorizes its existing repair
+path; no repair, recovery, station, efficiency or timing formula changes.
+
+Tarot separates passive attributes/collection, world activation and Trucazo
+awakening. Its fixed-bonus text shares the stat contribution source. Uncaptured
+essences remain unrevealed; unimplemented Major powers and their exclusion
+from practice are explicit. Scrolling keeps long text within the panel.
+
+Keyboard/controller navigation is retained; native mouse input uses the
+existing C moon pointer and the same coordinate projection as Journal drawing.
+Browser revision 1 is transient and reconstructible; saved equipment, task
+reservations, recipes and Tarot state remain authoritative. Native verification
+includes old-save load and rollback. Evidence: assets/validation_43718.
+Author acceptance is pending; #89 was accepted, closed and merged as PR #107.
 
 ## 4.37.17 - Owned Pickaxe and resource feedback (#89)
 

@@ -1,0 +1,413 @@
+{
+  "issue": 91,
+  "release": "4.37.18",
+  "date": "2026-10-04",
+  "base_commit": "7c1c2390003f1474cacca2f75d586046f8fde1fd",
+  "status": "Implementation, project validator and isolated native checks passed; author acceptance pending.",
+  "static": {
+    "project_validator": "PROJECT_VALIDATION.json",
+    "diff_check": "git diff --check passed",
+    "runtime_source_sha256": {
+      "src/CVARINFO": "d4f33b7ad4d5f893e06ae4f8eaeb419ce0177e6c0894b57c1871dcda2b4892c5",
+      "src/LANGUAGE": "571245fb5c12d15a7358a1a5abe503fa0164cf490d82303a441953d2e133bf68",
+      "src/MAPINFO": "e96fd19dac31a8801452c1e9ddeac0d8591fd552c4284079131b0a132c9d9371",
+      "src/ZSCRIPT": "281a7a69cdf6cfe0342a93e33a6b17ac5935f727896de346b292b603eed94bd3",
+      "src/caelum/core/CaelumTarotDetails.zs": "a40a396eab04d61729f2452c4e95d8990559c7d5fd16c0bea351977b208eecf6",
+      "src/caelum/crafting/CaelumCraftingBrowser.zs": "3a58c403db420bfc24e53792e7845d8a9c6d431fc7b86d39a028773874e9c758",
+      "src/caelum/equipment/CaelumPersistentCharacterState.zs": "7521040883b316b3bccbe9b2960d86165e744ee9300e60651dd30a342d12a81a",
+      "src/caelum/hud/CaelumCraftingUI.zs": "672974efbf704f1d58bb94a6f1a85acc9f3f689d7fa194b19086d33ea5f79c18",
+      "src/caelum/hud/CaelumJournalOverlay.zs": "3a5e25898a23ca54542a6892c89c3eb6b136f3a28c995d70035e15b25a743f87",
+      "src/caelum/player/CaelumPlayer.zs": "7357ff9298cd10a1c057c9fdff4795206ede23e85f64c153d4c55ca61de520a2",
+      "src/caelum/world/CaelumPhysicalHazards.zs": "035c5f0eba8f0c76eb18b607bf3e6ba1e3fc301954ab6d3be15aea137e3bbafa",
+      "src/caelum/world/CaelumSewerMaze.zs": "a84e6cf94f33ff3a2a78043ea1b5c66b4f271bebf3fdee3d8e1cfdfa06632173"
+    },
+    "canonical_text": "Shared Minor fixed bonuses; current Trucazo/activation rules only. No new powers or balance values.",
+    "project_validator_errors": []
+  },
+  "native": {
+    "engine": "GZDoom 4.14.2, Windows 11, Vulkan",
+    "development_dependency": "Doom II IWAD and locally discovered id24res.wad used for development only; engine, WADs, fixtures and saves are not distributed.",
+    "logs": {
+      "release_functional.log": {
+        "passed": 33,
+        "failed": 0,
+        "sha256": "cbd0d87280eea1233abc4198006f27a9d2b74f29bef474a45ba5868f7a7d44d1"
+      },
+      "release_1280.log": {
+        "passed": 3,
+        "failed": 0,
+        "sha256": "a13cdc72c85167b4f6f7b53cd10c41729deb5f6d6e84fc477905bc788f9d80ae"
+      },
+      "release_1024.log": {
+        "passed": 3,
+        "failed": 0,
+        "sha256": "c262f1c8c7d904e49895e4ebd290c3d0ef0abb9398b1ec06c7610c36fb886c21"
+      },
+      "release_640.log": {
+        "passed": 3,
+        "failed": 0,
+        "sha256": "041d179ff7ab77d8a5f810814d88486e70d84d9f5098af4b3c1a2649ec5ce236"
+      },
+      "release_migration.log": {
+        "passed": 7,
+        "failed": 0,
+        "sha256": "b69827bad23b333ca6b8939b3993ef178756b34ef6ffca8a951c7c2ddbb3dd9f"
+      },
+      "release_resume.log": {
+        "passed": 11,
+        "failed": 0,
+        "sha256": "9aabb51889c6a274a82f624b6f5867119e976696a9b67336f5a1c051f63fc494"
+      },
+      "release_rollback.log": {
+        "passed": 7,
+        "failed": 0,
+        "sha256": "04fbdf9707c8d446ed7beb6d1bc36171e711c05c26ec6f53c841fb78089e674b"
+      },
+      "release_focus.log": {
+        "passed": 2,
+        "failed": 0,
+        "sha256": "5a7fc36504be1f7aaab9e3a9fcb48f949e1a2146ebcdc66f0ef27fdae62614ec"
+      },
+      "release_cards.log": {
+        "passed": 1,
+        "failed": 0,
+        "sha256": "9006d64bdce180d235af9f5da93f42cb5981c0054cb7feca3952d4e0f4a482b1"
+      }
+    },
+    "total_passes": 70,
+    "scope": "All listed runs used the final package hash below except release_rollback, which used the accepted 4.37.17 package.",
+    "functional_coverage": [
+      "Idempotent transient browser; empty/learned/filter lists and browsing without a station.",
+      "Actual owned IDs, duplicate Pickaxes with different wear, Box accessibility and nearby-item exclusion.",
+      "Equipped, temporary, tutorial-first-weapon, full-durability, recipe, station and material blocking reasons.",
+      "Stale identity/removal and repeated confirmation cannot act on a different copy.",
+      "Recovery preview matches native quantities/time and cannot change an active task output reservation.",
+      "Native repair/dismantle completion affects only the exact item; refreshed lists reflect removal and repair.",
+      "All 56 Minors preserve +3 per attribute; campaign active bonuses, concealed unknown powers and Fool exclusion.",
+      "Learned recipe refresh, task start and world power activation at three resolutions.",
+      "Save load/reload preserves IDs, wear, recipes, paused repair reservations, essence selection, active effects and cooldowns.",
+      "Saved repair resumes at a native workbench and completes the same sword without changing the other Pickaxe.",
+      "A save written with the new Journal open loads on the accepted old package.",
+      "Y opens time skip; native confirmation completes the exact dismantling target and refreshes its list."
+    ],
+    "commands": {
+      "functional": "+map MAP01; wait 35; give CA91Setup; wait 35; give CA91Functional; wait 35; quit",
+      "migration": "+map MAP02; wait 35; load legacy; wait 105; ca_journal_open true; ca_journal_page 3; wait 35; give CA91LegacyVerify; wait 35; save migrated_final; wait 35; quit",
+      "resume": "+map MAP02; wait 35; load migrated_final; wait 105; give CA91LegacyVerify; wait 35; give CA91ResumeVerify; wait 35; quit",
+      "rollback": "Repeat load migrated_final and CA91LegacyVerify on the 4.37.17 package.",
+      "visual": "Separate fresh configurations; native screenshot commands exercise Craft, Repair, Dismantle, task state, active Tarot, long effects, concealed art preview and unimplemented owned Major. Fixtures initialize data and call existing native operations."
+    },
+    "log_normalization": "Installation paths replaced with role placeholders; trailing whitespace and line endings normalized. No test/error lines removed."
+  },
+  "desktop_interaction": {
+    "method": "Computer Use / @oai/sky, observed window and refreshed screenshot after each action.",
+    "final_package_resolution": "1024x768",
+    "passed": [
+      "Click Repair, select Pickaxe #2 by row and observe its own wear/requirements.",
+      "Use 3, Right and Enter to start dismantling the selected copy.",
+      "Use Y to open the existing time panel; return from native completion to a refreshed five-weapon list.",
+      "Click all seven main Journal icons and reach the corresponding pages.",
+      "Wheel-scroll Tarot details; Enter selects and clicking the card removes the essence.",
+      "Tab closes the Journal and returns to the world.",
+      "The existing C moon cursor follows the new hit areas."
+    ],
+    "earlier_source_ui_check": "The 1520x825 widescreen input test established the projection correction before cursor ownership moved to the static adapter; final captures include 1280x720.",
+    "limitation": "Injected Enter/Q produced no raw InputProcess key event in the time panel. The focus probe confirmed both Journal/static GUI and mouse flags false. Native Start and completion passed; actual keyboard modal confirmation remains CA-43718-UI-01.",
+    "physical_controller": "Not tested; existing bindings retained and author check remains pending."
+  },
+  "save_compatibility": {
+    "persistent_schema_changed": false,
+    "browser_revision": 1,
+    "browser_transient": true,
+    "input_handler": "StaticEventHandler; no saved cursor flags",
+    "evidence": {
+      "legacy": {
+        "sha256": "13ad17e4730b0cc6ac71165e4b8c22b594c596aa86f109ed8c16538392a85bdd",
+        "journal_IsUiProcessor": false,
+        "journal_RequireMouse": false,
+        "browser_serialized": false,
+        "static_input_serialized": false
+      },
+      "migrated_final": {
+        "sha256": "7d05fad75b0dab5069737b0fcbaa514b0d73ccb27a824cbea264d9f369448637",
+        "journal_IsUiProcessor": false,
+        "journal_RequireMouse": false,
+        "browser_serialized": false,
+        "static_input_serialized": false
+      }
+    },
+    "old_package_sha256": "27dd1ea56001b6f0f4583ddb46306419fedfa423f81de75557f34b7a5d109fab",
+    "rollback_result": "Seven state assertions passed with the migrated final save on 4.37.17; no map geometry changes."
+  },
+  "package": {
+    "path": "build/issue91_final/caelum_argenteum_dev.pk3",
+    "files": 6166,
+    "bytes": 433182622,
+    "sha256": "f063f737f14126106b115fde75a8131250ec4637e4ad5e7f8979e9083b622c19",
+    "members_match_src": true,
+    "zip_crc_passed": true,
+    "directory_entries": 0
+  },
+  "visual_captures": [
+    {
+      "file": "wide_es_craft.png",
+      "width": 1280,
+      "height": 720,
+      "language": "Spanish",
+      "hud_scale": 1,
+      "sha256": "110f5c9373fc72bf46b09b3638258f3283ef8f2b34d13aa74323057119e59f03"
+    },
+    {
+      "file": "wide_es_repair.png",
+      "width": 1280,
+      "height": 720,
+      "language": "Spanish",
+      "hud_scale": 1,
+      "sha256": "c4291ebaaf56a642978a333e037764ab7da052d3bd99ee1a148a8f6e8f4ef449"
+    },
+    {
+      "file": "wide_es_dismantle.png",
+      "width": 1280,
+      "height": 720,
+      "language": "Spanish",
+      "hud_scale": 1,
+      "sha256": "5152a8272fc51da7b2d81cc936986145db9766173579b79c2fd455443035fd6b"
+    },
+    {
+      "file": "wide_es_task.png",
+      "width": 1280,
+      "height": 720,
+      "language": "Spanish",
+      "hud_scale": 1,
+      "sha256": "e20002c079a6a03099ed5f7362fc3fe64bf1cb49b72f97c4bcd2f97fee3d083c"
+    },
+    {
+      "file": "wide_es_tarot.png",
+      "width": 1280,
+      "height": 720,
+      "language": "Spanish",
+      "hud_scale": 1,
+      "sha256": "c5ea6d697507cd2e53b56c2942597a6f31cec138fdacca2f383e091914cc3fa9"
+    },
+    {
+      "file": "wide_es_trucazo.png",
+      "width": 1280,
+      "height": 720,
+      "language": "Spanish",
+      "hud_scale": 1,
+      "sha256": "bd58ff9ba6996418b665897d4fd10161e3a03ff5fb312b1865c167594264c296"
+    },
+    {
+      "file": "wide_es_unowned.png",
+      "width": 1280,
+      "height": 720,
+      "language": "Spanish",
+      "hud_scale": 1,
+      "sha256": "0993f106360f5a21b4d19301b22efa5e0c6507fb424a868462d5fece6b1f9b4a"
+    },
+    {
+      "file": "wide_es_pending.png",
+      "width": 1280,
+      "height": 720,
+      "language": "Spanish",
+      "hud_scale": 1,
+      "sha256": "759a9728fd2a1f9a2018cf8f8a445f34715e26d9fe648de10b1a4df2c3280633"
+    },
+    {
+      "file": "four_en_craft.png",
+      "width": 1024,
+      "height": 768,
+      "language": "English",
+      "hud_scale": 4,
+      "sha256": "1ebdab2292fd2187a5cd60733dbf0440a1e31d78bc4772a8a3940d94c3c72b40"
+    },
+    {
+      "file": "four_en_repair.png",
+      "width": 1024,
+      "height": 768,
+      "language": "English",
+      "hud_scale": 4,
+      "sha256": "cf99b589fea849c1bd3c67bf1f04d06faa2f391f403ae5cb9a26ae0bff810cfa"
+    },
+    {
+      "file": "four_en_dismantle.png",
+      "width": 1024,
+      "height": 768,
+      "language": "English",
+      "hud_scale": 4,
+      "sha256": "44acdba7858b2f8aeab7374f0aafe6aedac016eac04e90c4906781171247ae0b"
+    },
+    {
+      "file": "four_en_task.png",
+      "width": 1024,
+      "height": 768,
+      "language": "English",
+      "hud_scale": 4,
+      "sha256": "00fbc6521a41f3015e233792923c12009df59fc3ed503e6a1dfda7767825da13"
+    },
+    {
+      "file": "four_en_tarot.png",
+      "width": 1024,
+      "height": 768,
+      "language": "English",
+      "hud_scale": 4,
+      "sha256": "3a9d74726ca326dde988968d2af1018da347dd29f26dae20e687679a5dbd4f91"
+    },
+    {
+      "file": "four_en_trucazo.png",
+      "width": 1024,
+      "height": 768,
+      "language": "English",
+      "hud_scale": 4,
+      "sha256": "986553b4126eb8db0233e8e8a8c79f1113efb366a9e8ac303d2ba611502307c6"
+    },
+    {
+      "file": "four_en_unowned.png",
+      "width": 1024,
+      "height": 768,
+      "language": "English",
+      "hud_scale": 4,
+      "sha256": "77c1cb13785ac0011a4f1c41649de4780ab0d91ee44d02976b73b30acfc6008f"
+    },
+    {
+      "file": "four_en_pending.png",
+      "width": 1024,
+      "height": 768,
+      "language": "English",
+      "hud_scale": 4,
+      "sha256": "243e5c6c4c2948f6472ba6da527cc1c343940f2c733d40bd0847d2799ca14a25"
+    },
+    {
+      "file": "small_es_craft.png",
+      "width": 640,
+      "height": 480,
+      "language": "Spanish",
+      "hud_scale": 2,
+      "sha256": "bd479b7cf01d240cff37a517fa7c4476256bf92956c14965ea0012e41f352406"
+    },
+    {
+      "file": "small_es_repair.png",
+      "width": 640,
+      "height": 480,
+      "language": "Spanish",
+      "hud_scale": 2,
+      "sha256": "f6040e67b0b51be11855bf24af4a9f71129ef6adfbada840f95be814e68ac93b"
+    },
+    {
+      "file": "small_es_dismantle.png",
+      "width": 640,
+      "height": 480,
+      "language": "Spanish",
+      "hud_scale": 2,
+      "sha256": "dafec55e3f532b2d0da7a31c95dc639e652c425d909d04401f78e900b6f3830f"
+    },
+    {
+      "file": "small_es_task.png",
+      "width": 640,
+      "height": 480,
+      "language": "Spanish",
+      "hud_scale": 2,
+      "sha256": "d5cf0ba6015fc1b35dff374f422bbb3669c3023b91c4285f3b50215885fd7618"
+    },
+    {
+      "file": "small_es_tarot.png",
+      "width": 640,
+      "height": 480,
+      "language": "Spanish",
+      "hud_scale": 2,
+      "sha256": "999dfa94d9b9434b1f711f99552a973f6c5bb4c1a321cc29b2910672be468ab9"
+    },
+    {
+      "file": "small_es_trucazo.png",
+      "width": 640,
+      "height": 480,
+      "language": "Spanish",
+      "hud_scale": 2,
+      "sha256": "0f306a7c73dc464e43829dafc284a1490fd884558214d9b353362cbe751b6948"
+    },
+    {
+      "file": "small_es_unowned.png",
+      "width": 640,
+      "height": 480,
+      "language": "Spanish",
+      "hud_scale": 2,
+      "sha256": "cb44319a7da168dc943c4fbd1df09fb83e2d34c6c3096d6382e937543edf93b3"
+    },
+    {
+      "file": "small_es_pending.png",
+      "width": 640,
+      "height": 480,
+      "language": "Spanish",
+      "hud_scale": 2,
+      "sha256": "813d2381d9ea74a5a2369cac02c3daeae073c778750531f40141dc6fc28db11d"
+    },
+    {
+      "file": "wide_es_fool.png",
+      "width": 1280,
+      "height": 720,
+      "language": "Spanish",
+      "hud_scale": 3,
+      "sha256": "66a22b38ae3b317ca13e883bf3bfc186b1373bd60b3cf57b211de44c410d2ef1"
+    },
+    {
+      "file": "wide_es_fool_trucazo.png",
+      "width": 1280,
+      "height": 720,
+      "language": "Spanish",
+      "hud_scale": 3,
+      "sha256": "a78582ea1dab1d13c8f7268feaf4dc11e03dd908d49ff914e6d5d175dff7cec8"
+    },
+    {
+      "file": "wide_es_knight.png",
+      "width": 1280,
+      "height": 720,
+      "language": "Spanish",
+      "hud_scale": 3,
+      "sha256": "82456e7860d1afb8d3a1e045045d3da76de1276dd5019d1f810250310e1918a8"
+    },
+    {
+      "file": "wide_es_knight_trucazo.png",
+      "width": 1280,
+      "height": 720,
+      "language": "Spanish",
+      "hud_scale": 3,
+      "sha256": "30ca1881b7fb3512acc3d1a976805d59ccc49302211fb2d5297228103c03b3d2"
+    }
+  ],
+  "resolved_diagnostics": [
+    {
+      "finding": "ZScript identifiers are case-insensitive; a mode parameter shadowed the Mode field.",
+      "resolution": "Use operation parameter; all three native flow modes pass."
+    },
+    {
+      "finding": "Default VirtualToRealCoords aspect handling displaced outer tab hit areas in widescreen.",
+      "resolution": "Use the same 640x360 draw projection with vbottom/handleaspect false; desktop clicks pass."
+    },
+    {
+      "finding": "Native IsUiProcessor/RequireMouse flags on the saved Journal handler would persist into rollback.",
+      "resolution": "An unsaved static adapter owns the flags; final save JSON and old-package load verified."
+    },
+    {
+      "finding": "Early local QA fixtures used a wrong recipe/ownership removal/material efficiency setup and one nonexistent diagnostic helper.",
+      "resolution": "Corrected unshipped fixtures; final source and all retained logs compile without these diagnostics."
+    }
+  ],
+  "observations_outside_scope": [
+    "The unchanged Reputation page has footer overlap at 1024x768. This patch only adds main-tab mouse navigation there; its layout is outside Craft/Tarot scope."
+  ],
+  "author_acceptance": {
+    "status": "pending",
+    "test_ids": [
+      "CA-43718-CRAFT-01",
+      "CA-43718-TAROT-01",
+      "CA-43718-UI-01"
+    ]
+  },
+  "previous_issue": {
+    "issue": 89,
+    "author_accepted": "2026-10-04",
+    "closed": true,
+    "merged_pr": 107,
+    "merge_commit": "7c1c2390003f1474cacca2f75d586046f8fde1fd"
+  }
+}

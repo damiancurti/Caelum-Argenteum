@@ -73,6 +73,7 @@ class CaelumPlayer : DoomPlayer
     bool MagicBoxOwned;
     bool EquipmentMenuOpen;
     bool CraftingMenuOpen;
+    transient CaelumCraftingBrowser CraftingBrowser;
     bool PalomoMerchantMenuOpen;
     bool PalomoMerchantDiscountGranted;
     bool PalomoMerchantReputationDiscount;
@@ -3604,6 +3605,7 @@ class CaelumPlayer : DoomPlayer
         RefreshFormalInventorySnapshot();
         if (PalomoMerchantMenuOpen) { RefreshPalomoMerchantSnapshot(); }
         if (CraftingMenuOpen) { RefreshCraftingPreview(); }
+        if (CraftingBrowser != null) CraftingBrowser.Refresh(self);
         PersistCharacterState();
     }
 
@@ -7137,7 +7139,7 @@ class CaelumPlayer : DoomPlayer
             && ConsumeCraftingFinishMaterials();
     }
 
-    bool CanStartCraftingTask()
+    bool CanStartCraftingTask(bool recipeInfrastructure = true)
     {
         if (CraftingTaskActive)
         {
@@ -7155,7 +7157,7 @@ class CaelumPlayer : DoomPlayer
             LastCraftingAction = CaelumConstants.CRAFTING_ACTION_FAILED_TARGET;
             return false;
         }
-        if (!RefreshActiveCraftingStationSession())
+        if (!RefreshActiveCraftingStationSession(recipeInfrastructure))
         {
             LastCraftingAction =
                 CaelumConstants.CRAFTING_ACTION_FAILED_INFRASTRUCTURE;
@@ -7307,6 +7309,13 @@ class CaelumPlayer : DoomPlayer
         PersistCharacterState();
         RefreshFormalInventorySnapshot();
         if (CraftingMenuOpen) { RefreshCraftingPreview(); }
+    }
+
+    int GetFirstKnownCraftingRecipe()
+    {
+        for (int recipe = 0; recipe < CaelumConstants.CRAFTING_NETWORK_PLAYABLE_RECIPE_COUNT; recipe++)
+            if (IsCraftingRecipeKnown(recipe) && CaelumCraftingRules.RecipeMatchesFilter(recipe, CraftingRecipeFilter)) return recipe;
+        return -1;
     }
 
     bool IsCraftingRecipeKnown(int recipeIndex)
@@ -7553,7 +7562,8 @@ class CaelumPlayer : DoomPlayer
         // estaciones especializadas conservan sus índices locales y no deben
         // recibir selecciones pertenecientes a otra familia.
         if (ActiveCraftingStationType
-            != CaelumConstants.CRAFTING_STATION_WORKBENCH)
+            != CaelumConstants.CRAFTING_STATION_WORKBENCH
+            && ActiveCraftingStationType != CaelumConstants.CRAFTING_STATION_NONE)
         {
             CraftingRecipeFilter =
                 CaelumConstants.CRAFTING_RECIPE_FILTER_ALL;
@@ -7565,12 +7575,16 @@ class CaelumPlayer : DoomPlayer
         CaelumPersistentCharacterState persistentState =
             GetPersistentCharacterState(false);
 
-        int stationRecipeCount = CaelumCraftingRules.GetStationRecipeCount(
-            ActiveCraftingStationType
-        );
+        int stationRecipeCount = ActiveCraftingStationType == CaelumConstants.CRAFTING_STATION_NONE
+            ? CaelumConstants.CRAFTING_NETWORK_PLAYABLE_RECIPE_COUNT
+            : CaelumCraftingRules.GetStationRecipeCount(ActiveCraftingStationType);
+        bool unifiedCatalogue = ActiveCraftingStationType == CaelumConstants.CRAFTING_STATION_WORKBENCH
+            || ActiveCraftingStationType == CaelumConstants.CRAFTING_STATION_NONE;
+        int firstKnown = unifiedCatalogue ? GetFirstKnownCraftingRecipe() : 0;
+        if (firstKnown < 0) stationRecipeCount = 0;
         if (stationRecipeCount <= 0)
         {
-            CraftingSelectionRecipe = 0;
+            CraftingSelectionRecipe = -1;
             CraftingSelectedRecipeKnown = false;
             CraftingSelectedWeapon = -1;
             CraftingSelectedRecipeKind =
@@ -7614,14 +7628,12 @@ class CaelumPlayer : DoomPlayer
         CraftingSelectionRecipe = Clamp(
             CraftingSelectionRecipe, 0, stationRecipeCount - 1
         );
-        if (!CaelumCraftingRules.RecipeMatchesFilter(
+        if ((unifiedCatalogue && !IsCraftingRecipeKnown(CraftingSelectionRecipe)) || !CaelumCraftingRules.RecipeMatchesFilter(
             CraftingSelectionRecipe, CraftingRecipeFilter
         ))
         {
             CraftingSelectionRecipe =
-                CaelumCraftingRules.GetFirstRecipeMatchingFilter(
-                    CraftingRecipeFilter
-                );
+                unifiedCatalogue ? firstKnown : CaelumCraftingRules.GetFirstRecipeMatchingFilter(CraftingRecipeFilter);
         }
         CraftingSelectedRecipeKnown = persistentState != null
             && persistentState.KnowsCraftingRecipe(CraftingSelectionRecipe);
@@ -8168,7 +8180,7 @@ class CaelumPlayer : DoomPlayer
         CraftingTaskProgressing = false;
     }
 
-    bool RefreshActiveCraftingStationSession()
+    bool RefreshActiveCraftingStationSession(bool recipeInfrastructure = true)
     {
         CaelumCraftingStation station =
             CaelumCraftingStation(ActiveCraftingStationActor);
@@ -8221,7 +8233,7 @@ class CaelumPlayer : DoomPlayer
                 & CraftingTaskNetworkCapabilities)
                 == CraftingTaskNetworkCapabilities;
         }
-        return CraftingSelectedInfrastructureAvailable;
+        return !recipeInfrastructure || CraftingSelectedInfrastructureAvailable;
     }
 
     void ToggleCraftingMenu()
@@ -8238,9 +8250,10 @@ class CaelumPlayer : DoomPlayer
 
     void CycleCraftingRecipe(int direction)
     {
-        int stationRecipeCount = CaelumCraftingRules.GetStationRecipeCount(
-            ActiveCraftingStationType
-        );
+        bool unifiedCatalogue = ActiveCraftingStationType == CaelumConstants.CRAFTING_STATION_WORKBENCH
+            || ActiveCraftingStationType == CaelumConstants.CRAFTING_STATION_NONE;
+        int stationRecipeCount = unifiedCatalogue ? CaelumConstants.CRAFTING_NETWORK_PLAYABLE_RECIPE_COUNT
+            : CaelumCraftingRules.GetStationRecipeCount(ActiveCraftingStationType);
         if (stationRecipeCount <= 0) { return; }
         int step = direction < 0 ? -1 : 1;
         for (int offset = 1; offset <= stationRecipeCount; offset++)
@@ -8249,7 +8262,7 @@ class CaelumPlayer : DoomPlayer
                 CraftingSelectionRecipe + step * offset
                     + stationRecipeCount * 2
             ) % stationRecipeCount;
-            if (CaelumCraftingRules.RecipeMatchesFilter(
+            if ((!unifiedCatalogue || IsCraftingRecipeKnown(candidate)) && CaelumCraftingRules.RecipeMatchesFilter(
                 candidate, CraftingRecipeFilter
             ))
             {
@@ -8264,7 +8277,8 @@ class CaelumPlayer : DoomPlayer
     void CycleCraftingRecipeFilter()
     {
         if (ActiveCraftingStationType
-            != CaelumConstants.CRAFTING_STATION_WORKBENCH)
+            != CaelumConstants.CRAFTING_STATION_WORKBENCH
+            && ActiveCraftingStationType != CaelumConstants.CRAFTING_STATION_NONE)
         {
             CraftingRecipeFilter =
                 CaelumConstants.CRAFTING_RECIPE_FILTER_ALL;
@@ -8273,9 +8287,7 @@ class CaelumPlayer : DoomPlayer
         CraftingRecipeFilter = (CraftingRecipeFilter + 1)
             % CaelumConstants.CRAFTING_RECIPE_FILTER_COUNT;
         CraftingSelectionRecipe =
-            CaelumCraftingRules.GetFirstRecipeMatchingFilter(
-                CraftingRecipeFilter
-            );
+            GetFirstKnownCraftingRecipe();
         LastCraftingAction = CaelumConstants.CRAFTING_ACTION_NONE;
         RefreshCraftingPreview();
     }
@@ -10483,7 +10495,7 @@ class CaelumPlayer : DoomPlayer
 
     bool AddScaledEquipmentTaskMaterial(
         int materialType, int materialTier, int fullUnits,
-        double durabilityFraction, bool recovery
+        double durabilityFraction, bool recovery, CaelumCraftingBrowser preview = null
     )
     {
         int units = recovery
@@ -10499,6 +10511,7 @@ class CaelumPlayer : DoomPlayer
                 units, CraftingEfficiencyIndex
             );
         }
+        if (preview != null) { preview.AddMaterial(materialType, materialTier, units); return true; }
         if (recovery)
         {
             return AddCraftingTaskOutput(
@@ -10514,7 +10527,7 @@ class CaelumPlayer : DoomPlayer
     }
 
     bool BuildEquipmentTaskMaterials(
-        CaelumEquipmentItem item, double durabilityFraction, bool recovery
+        CaelumEquipmentItem item, double durabilityFraction, bool recovery, CaelumCraftingBrowser preview = null
     )
     {
         if (!IsDurabilityTaskEquipment(item)) { return false; }
@@ -10596,25 +10609,25 @@ class CaelumPlayer : DoomPlayer
         tierTier = CaelumMaterialRules.ResolveTier(tierType, item.Tier);
         if (!AddScaledEquipmentTaskMaterial(
                 basicType, basicTier, basicUnits,
-                durabilityFraction, recovery
+                durabilityFraction, recovery, preview
             )
             || !AddScaledEquipmentTaskMaterial(
                 tierType, tierTier, tierUnits,
-                durabilityFraction, recovery
+                durabilityFraction, recovery, preview
             )
             || !AddScaledEquipmentTaskMaterial(
                 CaelumConstants.MATERIAL_SILVER_INGOT, 1,
                 CaelumCraftingRules.GetRequiredSilverDetailUnits(
                     finalWeight, item.Tier
                 ),
-                durabilityFraction, recovery
+                durabilityFraction, recovery, preview
             )
             || !AddScaledEquipmentTaskMaterial(
                 CaelumConstants.MATERIAL_GOLD_INGOT, 1,
                 CaelumCraftingRules.GetRequiredGoldDetailUnits(
                     finalWeight, item.Tier
                 ),
-                durabilityFraction, recovery
+                durabilityFraction, recovery, preview
             ))
         {
             return false;
@@ -10660,7 +10673,7 @@ class CaelumPlayer : DoomPlayer
     }
 
     bool CanCompletePreparedDismantle(
-        CaelumEquipmentItem target, bool sendOutputsToMagicBox
+        CaelumEquipmentItem target, bool sendOutputsToMagicBox, CaelumCraftingBrowser preview = null
     )
     {
         if (target == null || DerivedStats == null) { return false; }
@@ -10675,13 +10688,13 @@ class CaelumPlayer : DoomPlayer
         for (int slot = 0;
             slot < CaelumConstants.CRAFTING_TASK_MATERIAL_SLOT_COUNT; slot++)
         {
-            if (CraftingTaskOutputUnits[slot] <= 0) { continue; }
+            if ((preview == null ? CraftingTaskOutputUnits[slot] : slot < preview.MaterialUnits.Size() ? preview.MaterialUnits[slot] : 0) <= 0) { continue; }
             CaelumSpecialInventoryItem existing = FindNativeSpecialItem(
                 CaelumConstants.EQUIPMENT_KIND_MATERIAL,
-                CraftingTaskOutputType[slot],
-                CraftingTaskOutputTier[slot]
+                (preview == null ? CraftingTaskOutputType[slot] : preview.MaterialTypes[slot]),
+                (preview == null ? CraftingTaskOutputTier[slot] : preview.MaterialTiers[slot])
             );
-            double outputWeight = CraftingTaskOutputUnits[slot]
+            double outputWeight = (preview == null ? CraftingTaskOutputUnits[slot] : slot < preview.MaterialUnits.Size() ? preview.MaterialUnits[slot] : 0)
                 * CaelumConstants.MATERIAL_UNIT_WEIGHT;
             if (sendOutputsToMagicBox)
             {
@@ -10708,21 +10721,21 @@ class CaelumPlayer : DoomPlayer
         );
     }
 
-    int GetDismantleNetBoxSlots(CaelumEquipmentItem target)
+    int GetDismantleNetBoxSlots(CaelumEquipmentItem target, CaelumCraftingBrowser preview = null)
     {
         if (target == null || DerivedStats == null) { return -1; }
-        if (CanCompletePreparedDismantle(target, false)) { return 0; }
-        if (!CanCompletePreparedDismantle(target, true)) { return -1; }
+        if (CanCompletePreparedDismantle(target, false, preview)) { return 0; }
+        if (!CanCompletePreparedDismantle(target, true, preview)) { return -1; }
 
         int requiredSlots = 0;
         for (int slot = 0;
             slot < CaelumConstants.CRAFTING_TASK_MATERIAL_SLOT_COUNT; slot++)
         {
-            if (CraftingTaskOutputUnits[slot] <= 0) { continue; }
+            if ((preview == null ? CraftingTaskOutputUnits[slot] : slot < preview.MaterialUnits.Size() ? preview.MaterialUnits[slot] : 0) <= 0) { continue; }
             CaelumSpecialInventoryItem existing = FindNativeSpecialItem(
                 CaelumConstants.EQUIPMENT_KIND_MATERIAL,
-                CraftingTaskOutputType[slot],
-                CraftingTaskOutputTier[slot]
+                (preview == null ? CraftingTaskOutputType[slot] : preview.MaterialTypes[slot]),
+                (preview == null ? CraftingTaskOutputTier[slot] : preview.MaterialTiers[slot])
             );
             if (existing == null || !existing.InMagicBox) { requiredSlots++; }
         }
@@ -10772,6 +10785,9 @@ class CaelumPlayer : DoomPlayer
     {
         if (item == null || item.EquipmentKind != CaelumConstants.EQUIPMENT_KIND_WEAPON)
             return false;
+        int physical = CaelumCraftingRules.GetCatalogueWeaponForPlayableType(item.ItemType);
+        if (physical >= 0)
+            return DirectCraftingRecipeKnown(CaelumCraftingRules.FindUnifiedPhysicalRecipeIndex(physical));
         // La receta del arma completa autoriza la reparación; tener sus
         // componentes no sustituye ese conocimiento. La esencia distingue variantes.
         for (int option = 0; option < CaelumMainM00StarterRules.OPTION_COUNT; option++)
@@ -10787,54 +10803,41 @@ class CaelumPlayer : DoomPlayer
         return false;
     }
 
-    void BeginRepairSelectedEquipment()
+    // Misma validación para la vista previa y la transacción autoritativa.
+    int GetEquipmentTaskBlockReason(CaelumEquipmentItem target, bool dismantle)
+    {
+        if (target == null || target.Owner != self || !IsDurabilityTaskEquipment(target))
+            return target != null && target.IsLimboTemporary()
+                ? CaelumConstants.EQUIPMENT_ACTION_FAILED_RESERVED : CaelumConstants.EQUIPMENT_ACTION_FAILED_NOT_OWNED;
+        if (CraftingTaskActive) return CaelumConstants.EQUIPMENT_ACTION_FAILED_CRAFTING_TASK;
+        if (CombatTimeRemaining > 0) return CaelumConstants.EQUIPMENT_ACTION_FAILED_COMBAT;
+        if (!dismantle && target.EquipmentKind == CaelumConstants.EQUIPMENT_KIND_WEAPON && !KnowsWeaponRepairRecipe(target))
+            return CaelumConstants.EQUIPMENT_ACTION_FAILED_RECIPE_LOCKED;
+        if (dismantle && target.IsLimboFirstWeapon()) return CaelumConstants.EQUIPMENT_ACTION_FAILED_RESERVED;
+        if (target.Equipped) return CaelumConstants.EQUIPMENT_ACTION_FAILED_EQUIPPED;
+        if (!dismantle && (GetEquipmentTaskMaximumDurability(target) <= 0 || target.Durability >= GetEquipmentTaskMaximumDurability(target)))
+            return CaelumConstants.EQUIPMENT_ACTION_FAILED_DURABILITY;
+        if (!CraftingMenuOpen || ActiveCraftingStationType != CaelumConstants.CRAFTING_STATION_WORKBENCH
+            || GetMissingEquipmentTaskStation(target) != CaelumConstants.CRAFTING_STATION_NONE)
+            return CaelumConstants.EQUIPMENT_ACTION_FAILED_INFRASTRUCTURE;
+        return CaelumConstants.EQUIPMENT_ACTION_NONE;
+    }
+
+    void BeginRepairSelectedEquipment(int targetItemId = 0)
     {
         LastCraftingAction = CaelumConstants.CRAFTING_ACTION_NONE;
-        LastEquipmentAction =
-            CaelumConstants.EQUIPMENT_ACTION_FAILED_NOT_OWNED;
-        if (!CanStartCraftingTask())
+        if (!CanStartCraftingTask(false))
         {
-            LastEquipmentAction = CombatTimeRemaining > 0.0
+            LastEquipmentAction = CombatTimeRemaining > 0
                 ? CaelumConstants.EQUIPMENT_ACTION_FAILED_COMBAT
+                : !CraftingMenuOpen ? CaelumConstants.EQUIPMENT_ACTION_FAILED_INFRASTRUCTURE
                 : CaelumConstants.EQUIPMENT_ACTION_FAILED_CRAFTING_TASK;
             return;
         }
-        if (!CraftingMenuOpen
-            || ActiveCraftingStationType
-                != CaelumConstants.CRAFTING_STATION_WORKBENCH)
-        {
-            LastEquipmentAction =
-                CaelumConstants.EQUIPMENT_ACTION_FAILED_INFRASTRUCTURE;
-            return;
-        }
-        CaelumEquipmentItem target = GetSelectedNativeEquipmentItem();
-        if (!IsDurabilityTaskEquipment(target)) { return; }
-        if (target.EquipmentKind == CaelumConstants.EQUIPMENT_KIND_WEAPON
-            && !KnowsWeaponRepairRecipe(target))
-        {
-            LastEquipmentAction = CaelumConstants.EQUIPMENT_ACTION_FAILED_RECIPE_LOCKED;
-            return;
-        }
-        if (target.Equipped)
-        {
-            LastEquipmentAction =
-                CaelumConstants.EQUIPMENT_ACTION_FAILED_EQUIPPED;
-            return;
-        }
+        let target = targetItemId > 0 ? FindNativeEquipmentItemById(targetItemId) : GetSelectedNativeEquipmentItem();
+        LastEquipmentAction = GetEquipmentTaskBlockReason(target, false);
+        if (LastEquipmentAction != CaelumConstants.EQUIPMENT_ACTION_NONE) return;
         int maximum = GetEquipmentTaskMaximumDurability(target);
-        if (maximum <= 0 || target.Durability >= maximum)
-        {
-            LastEquipmentAction =
-                CaelumConstants.EQUIPMENT_ACTION_FAILED_DURABILITY;
-            return;
-        }
-        if (GetMissingEquipmentTaskStation(target)
-            != CaelumConstants.CRAFTING_STATION_NONE)
-        {
-            LastEquipmentAction =
-                CaelumConstants.EQUIPMENT_ACTION_FAILED_INFRASTRUCTURE;
-            return;
-        }
 
         double missingFraction = Clamp(
             (maximum - target.Durability) / double(maximum),
@@ -10883,43 +10886,20 @@ class CaelumPlayer : DoomPlayer
         );
     }
 
-    void BeginDismantleSelectedEquipment()
+    void BeginDismantleSelectedEquipment(int targetItemId = 0)
     {
         LastCraftingAction = CaelumConstants.CRAFTING_ACTION_NONE;
-        LastEquipmentAction =
-            CaelumConstants.EQUIPMENT_ACTION_FAILED_NOT_OWNED;
-        if (!CanStartCraftingTask())
+        if (!CanStartCraftingTask(false))
         {
-            LastEquipmentAction = CombatTimeRemaining > 0.0
+            LastEquipmentAction = CombatTimeRemaining > 0
                 ? CaelumConstants.EQUIPMENT_ACTION_FAILED_COMBAT
+                : !CraftingMenuOpen ? CaelumConstants.EQUIPMENT_ACTION_FAILED_INFRASTRUCTURE
                 : CaelumConstants.EQUIPMENT_ACTION_FAILED_CRAFTING_TASK;
             return;
         }
-        if (!CraftingMenuOpen
-            || ActiveCraftingStationType
-                != CaelumConstants.CRAFTING_STATION_WORKBENCH)
-        {
-            LastEquipmentAction =
-                CaelumConstants.EQUIPMENT_ACTION_FAILED_INFRASTRUCTURE;
-            return;
-        }
-        CaelumEquipmentItem target = GetSelectedNativeEquipmentItem();
-        if (!IsDurabilityTaskEquipment(target)) { return; }
-        if (target.IsLimboFirstWeapon())
-        { LastEquipmentAction = CaelumConstants.EQUIPMENT_ACTION_FAILED_RESERVED; return; }
-        if (target.Equipped)
-        {
-            LastEquipmentAction =
-                CaelumConstants.EQUIPMENT_ACTION_FAILED_EQUIPPED;
-            return;
-        }
-        if (GetMissingEquipmentTaskStation(target)
-            != CaelumConstants.CRAFTING_STATION_NONE)
-        {
-            LastEquipmentAction =
-                CaelumConstants.EQUIPMENT_ACTION_FAILED_INFRASTRUCTURE;
-            return;
-        }
+        let target = targetItemId > 0 ? FindNativeEquipmentItemById(targetItemId) : GetSelectedNativeEquipmentItem();
+        LastEquipmentAction = GetEquipmentTaskBlockReason(target, true);
+        if (LastEquipmentAction != CaelumConstants.EQUIPMENT_ACTION_NONE) return;
 
         int maximum = Max(1, GetEquipmentTaskMaximumDurability(target));
         double remainingFraction = Clamp(

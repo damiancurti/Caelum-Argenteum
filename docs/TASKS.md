@@ -1,6 +1,21 @@
 # TASKS.md — Active tasks
 
-Documentation version: **4.37.17** — 2026-10-04.
+Documentation version: **4.37.18** — 2026-10-04.
+
+## Issue #91 - Crafting sections and Tarot fields (4.37.18)
+
+- Implemented Craft/Repair/Dismantle icons and lists: known recipes only,
+  real owned weapon IDs, wear/variants, actionable blocking reasons and live
+  refresh. Confirmation revalidates exact ownership and requirements.
+- Pickaxe repair recognizes its learned recipe. Existing costs/recovery,
+  durations, station rules, protections and reservations are preserved.
+- Tarot labels passive, active and Trucazo effects; shared fixed-bonus data,
+  honest unknown/unimplemented states, scrolling and unchanged selection/timers.
+- Reused game art/fonts and native C moon cursor; keyboard, mouse and existing
+  controller bindings share the Journal dispatcher. Browser state is transient.
+- Static/native and save compatibility evidence: assets/validation_43718.
+  Author acceptance: CA-43718-CRAFT-01, CA-43718-TAROT-01, CA-43718-UI-01.
+  Keep #91 open until author acceptance; commit/push and linked PR are authorized.
 
 ## Issue #89 - Pickaxe and gathering feedback (4.37.17)
 
@@ -13,7 +28,7 @@ Documentation version: **4.37.17** — 2026-10-04.
   notice; invalid/exhausted hits do not.
 - Static/native evidence: assets/validation_43717. All three author checks
   passed on 2026-10-04; HISTORY records their IDs. Issue closure and merge
-  of PR #107 are explicitly authorized by the author.
+  of PR #107 were authorized and completed on 2026-10-04.
 
 ## Issue #87 - Compass and project menu pointers (4.37.16)
 

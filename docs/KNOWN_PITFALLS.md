@@ -4,6 +4,36 @@ Status: integrated engineering register (issue #22, patch 4.36.1b).
 Prepared: 2026-09-23. Inherits the project's release after integration.
 Inspected baseline: `1dc390576fa330d37ff543526fc7e69a397fc28f` (PR #7).
 
+## CA-KP-037 - Match Journal mouse coordinates to its drawing projection
+
+Status/evidence: CODE-VERIFIED / ENGINE-VERIFIED.
+First recorded / last checked: 2026-10-04. Issue #91 / 4.37.18.
+Baseline: 7c1c2390 plus #91 implementation; GZDoom 4.14.2 Windows/Vulkan.
+
+The Journal draws a 640x360 canvas with DTA_KEEPRATIO. In a 1520x825 native
+window, calling Screen.VirtualToRealCoords with its default aspect handling
+returned origin (210.2, 0) and size (1099.6, 825). A click at real (1363, 150)
+became virtual (671.0, 65.5), outside the visible Tarot icon. A center tab could
+still work, concealing the mismatch. The native C moon cursor itself was correct.
+
+For these draw calls, pass explicit vbottom=false and handleaspect=false when
+inverting the projection. The same Tarot click then enters the correct page;
+subsection/list clicks and scrolling were tested through physical UI input.
+Keep the native RequireMouse/IsUiProcessor flags conditional on the Journal,
+yielding to its modal panels; share keyboard dispatch with GUI key events.
+Store those cursor flags on a StaticEventHandler, not the saved Journal
+EventHandler: GZDoom serializes its native flags even when custom browser
+state is transient. Persisting them can leave a rollback build requesting GUI
+input without the corresponding UI dispatcher. The static input adapter and
+transient browser avoid serializing either change.
+
+Regression: click both outer main icons as well as a central subsection at
+wide and 4:3 resolutions. Check Escape/Tab and returning keyboard focus, not
+only coordinate arithmetic or a static cursor screenshot. Evidence and the
+tested package hash: assets/validation_43718/RESULTS.json. Author acceptance
+remains pending. This projection choice applies to these Journal draw flags;
+other overlays may intentionally use aspect correction.
+
 ## CA-KP-036 - Stamp newly constructed equipment durability revisions
 
 Status/evidence: CODE-VERIFIED / ENGINE-VERIFIED.

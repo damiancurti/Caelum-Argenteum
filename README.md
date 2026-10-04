@@ -4,8 +4,20 @@ An independent dark fantasy FPS-RPG inspired by nineteenth-century Argentina.
 Author and game designer: **Damian Curti**. Development target: **GZDoom 4.14.2**
 on Windows 11. The final game is intended to be independent of Doom assets.
 
-**Current release: 4.37.17.** Obtain and update the complete repository, validate
+**Current release: 4.37.18.** Obtain and update the complete repository, validate
 it, then rebuild with `run_dev.bat` as described below.
+
+Issue [#91](https://github.com/damiancurti/Caelum-Argenteum/issues/91) separates
+**Craft / Repair / Dismantle** in the Journal. Craft lists learned recipes;
+Repair and Dismantle list exact owned weapons, including the Pickaxe and
+accessible Box contents, with durability and unavailable-action reasons.
+Use **1/2/3**, Left/Right or the mouse to choose; **Enter** confirms;
+Up/Down or the wheel scroll details. Existing costs, stations and task rules
+remain. **Y** still opens time skip. Tarot now labels **Passive**, **Active**
+and **Trucazo** effects separately, with scrolling and unchanged timers.
+The existing silver frames, laurels, fonts and C moon pointer are reused.
+Evidence: [4.37.18](assets/validation_43718/RESULTS.json).
+Author acceptance remains in [pending_test.txt](pending_test.txt).
 
 Issue [#89](https://github.com/damiancurti/Caelum-Argenteum/issues/89) adds the
 **Pickaxe / Pico**, a single-tier T1 tool in weapon family **1**. Primary chops,
@@ -15,7 +27,7 @@ Ronnie gives the owned tool and recipe; the chosen weapon still must be crafted.
 Every eligible tool now plays the material-specific extraction sound and shows
 a centered success message in CaelumText. Original sources/credits and native
 evidence: [4.37.17](assets/validation_43717/RESULTS.json). All three author checks
-passed on 2026-10-04, including art/audio; closure and merge are authorized.
+passed on 2026-10-04, including art/audio; issue #89 is closed and PR #107 merged.
 
 Issue [#87](https://github.com/damiancurti/Caelum-Argenteum/issues/87) adds a
 top-left compass driven by the rendered view, with eight directions and a
