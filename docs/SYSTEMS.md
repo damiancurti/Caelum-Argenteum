@@ -1,6 +1,52 @@
 # Caelum Argenteum — Current systems and rules
 
-Documentation version: **4.37.14a** — 2026-10-04.
+Documentation version: **4.37.15** — 2026-10-04.
+
+## 4.37.15 - Traditional Truco ranked mode (#101)
+
+Author decisions, 2026-10-04: alongside the accepted Trucazo practice, Argento
+offers traditional Argentine Truco, called ranked. The author confirmed a
+30-point match (15 malas / 15 buenas), optional Flor, and no rating service yet.
+No health, row damage, character attributes, essences, powers, wagers, prizes
+or campaign transactions apply. Palomo's physical deck is still required.
+The same 40 equivalent cards already used as playable Minors provide the art:
+1-7, Page/Sota = Spanish 10, Knight/Caballero = 11, King = 12, in four suits.
+Only those 40 enter the shared shuffle; deal three each, without replenishment.
+
+- Hierarchy: Sword Ace, Wand Ace, Sword 7, Coin 7, 3, 2, other Aces,
+  Kings, Knights, Pages, other 7s, 6, 5, 4. Equal strengths are parda.
+  A won trick plus a parda wins the hand after two; split wins require the
+  third. A tied third favors the first winner; three pardas favor mano.
+  A trick winner leads next; a parda preserves the previous lead. Mano
+  alternates between hands; the first mano is randomly selected.
+- Truco/Retruco/Vale 4 are worth 2/3/4; refusal awards the previous stake,
+  initially 1. The accepting side owns the next raise. Irme al mazo folds
+  the hand at its current stake; before the player's first card, unsettled
+  Envido additionally awards the opponent 1 (explicitly confirmed).
+- Envido uses the best same-suit pair +20, figures 0, otherwise the highest
+  number. Ties favor mano. Envido adds 2, up to twice; Real Envido adds 3;
+  after Real only Falta may raise. Refusal awards the previous call, or 1
+  for the first. Calls occur before the caller's first card in the first
+  trick; responding Envido suspends a pending Truco and then restores it.
+- Falta Envido and Contra Flor al Resto award the leader's distance to 15
+  while both are in malas, otherwise to 30. This replaces, rather than adds
+  to, the current side-game bid. The author explicitly confirmed this variant.
+- When enabled, Flor is mandatory for three same-suit cards, valued as their
+  sum +20 (figures 0), with ties to mano. It must be declared before playing
+  the first card and cancels Envido. Unopposed Flor gives 3; two declared
+  Flors without a raise or accepted Contra Flor give the winner 6. Declining
+  with Flor gives the caller 4, also for Contra Flor al Resto; without Flor
+  gives 3. These refusal variants were explicitly confirmed by the author.
+- Points are awarded immediately; reaching or exceeding 30 ends the match,
+  including an Envido/Flor resolved before the hand. Abandoning the match
+  requires confirmation and is defeat. Save/load remains available.
+
+The NPC policy receives its own hand and public cards/calls, never the hidden
+opposing hand/deck. The traditional inventory starts at revision 1 only when
+needed; old saves need no mutation of their existing match or character schema.
+Original saves and their original package remain the rollback route. Flor can
+change only before beginning; saved live matches keep their option and exact
+pending calls. Traditional and practice menus use separate state/event names.
 
 ## 4.37.14a - Argento dialogue order (#99)
 

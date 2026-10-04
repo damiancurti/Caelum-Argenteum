@@ -68,3 +68,8 @@ ListMenu "CaelumTrucazoMenu"
 {
     Class "CaelumTrucazoMenu"
 }
+
+ListMenu "CaelumTrucoMenu"
+{
+    Class "CaelumTrucoMenu"
+}

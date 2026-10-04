@@ -161,3 +161,6 @@ version "4.14"
 #include "caelum/trucazo/CaelumTrucazoMatch.zs"
 
 #include "caelum/trucazo/CaelumTrucazoMenu.zs"
+#include "caelum/trucazo/CaelumTrucoRules.zs"
+#include "caelum/trucazo/CaelumTrucoMatch.zs"
+#include "caelum/trucazo/CaelumTrucoMenu.zs"

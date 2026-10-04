@@ -1,5 +1,71 @@
 [enu default]
 
+// #101: traditional ranked mode, independent from the Trucazo practice.
+CA_TT_CHALLENGE = "Play traditional Truco (ranked).";
+CA_TT_TITLE = "TRUCO | Ranked";
+CA_TT_WITH_FLOR = "Argento | 30 points | With Flor | No rating or wagers";
+CA_TT_WITHOUT_FLOR = "Argento | 30 points | Without Flor | No rating or wagers";
+CA_TT_FLOR_ON = "Flor: ON (change)";
+CA_TT_FLOR_OFF = "Flor: OFF (change)";
+CA_TT_INTRO = "Choose whether to play with Flor, then begin.";
+CA_TT_FALTA = "Falta Envido";
+CA_TT_FLOR = "Flor";
+CA_TT_CONTRA = "Contra Flor";
+CA_TT_REST = "Contra Flor al Resto";
+CA_TT_NO_FLOR = "I have no Flor";
+CA_TT_FOLD = "Fold this hand";
+CA_TT_PARDA = "Parda: tied trick.";
+CA_TT_FLOR_PENDING = "%s: %s. Answer the call.";
+CA_TT_SCORE = "%s: %d / 30 (%s)";
+CA_TT_MALAS = "malas";
+CA_TT_BUENAS = "buenas";
+CA_TT_FLOR_AWARD = "Flor: %s +%d";
+CA_TT_FLOR_VALUES = "Flor values: you %d / Argento %d";
+CA_TT_HAND_POINTS = "Points this hand: you %d | Argento %d";
+CA_TT_CONTROLS = "Left/Right or 1-3: card | Up/Down: action | Enter/A: confirm | Esc/B: back";
+CA_TT_RULES_TEXT = "40 Spanish-deck equivalents from the physical deck: 1-7, Page (10), Knight (11), King (12), in four suits. Three cards each. First to 30 wins (15 malas + 15 buenas). No health, damage, attributes or powers.\n\nWin two tricks. Parda: the other winning trick decides; split wins go to the third, and a tied third favors the first winner. Three ties favor mano. The winner leads; a tie retains the lead.\n\nTruco / Retruco / Vale 4: 2 / 3 / 4. Refusal awards the prior value. Envido +2 (up to twice), Real +3; figures 0, best same-suit pair +20. Ties favor mano.\n\nFalta / Flor al Resto: leader's distance to 15 if both in malas, otherwise to 30. Flor 3; two Flors or Contra Flor 6; declining with Flor awards 4. Flor cancels Envido. Folding before your first card adds 1 if Envido is unsettled. Abandoning loses the match.";
+CA_TT_RANKING = "Strongest: Sword Ace > Wand Ace > Sword 7 > Coin 7 > 3 > 2 > other Aces > Kings > Knights > Pages > other 7s > 6 > 5 > 4.\n\nFlor is mandatory when enabled: three of one suit, total +20 (figures 0). Choose Flor, Contra Flor or al Resto before playing your first card. No classification or rewards yet.";
+CA_TT_EVENT_12 = "%s: Falta Envido (%d).";
+CA_TT_EVENT_13 = "%s: Flor.";
+CA_TT_EVENT_14 = "%s: Contra Flor.";
+CA_TT_EVENT_15 = "%s: Contra Flor al Resto.";
+CA_TT_EVENT_16 = "%s wins Flor: %d points.";
+CA_TT_EVENT_17 = "%s folds the hand.";
+
+[es]
+CA_TT_CHALLENGE = "Jugar al Truco tradicional (ranked).";
+CA_TT_TITLE = "TRUCO | Ranked";
+CA_TT_WITH_FLOR = "Argento | 30 tantos | Con Flor | Sin clasificación ni apuestas";
+CA_TT_WITHOUT_FLOR = "Argento | 30 tantos | Sin Flor | Sin clasificación ni apuestas";
+CA_TT_FLOR_ON = "Flor: SÍ (cambiar)";
+CA_TT_FLOR_OFF = "Flor: NO (cambiar)";
+CA_TT_INTRO = "Elige si jugar con Flor y luego comienza.";
+CA_TT_FALTA = "Falta Envido";
+CA_TT_FLOR = "Flor";
+CA_TT_CONTRA = "Contra Flor";
+CA_TT_REST = "Contra Flor al Resto";
+CA_TT_NO_FLOR = "No tengo Flor";
+CA_TT_FOLD = "Irme al mazo";
+CA_TT_PARDA = "Parda: baza empatada.";
+CA_TT_FLOR_PENDING = "%s: %s. Responde al canto.";
+CA_TT_SCORE = "%s: %d / 30 (%s)";
+CA_TT_MALAS = "malas";
+CA_TT_BUENAS = "buenas";
+CA_TT_FLOR_AWARD = "Flor: %s +%d";
+CA_TT_FLOR_VALUES = "Flores: tú %d / Argento %d";
+CA_TT_HAND_POINTS = "Tantos de esta mano: tú %d | Argento %d";
+CA_TT_CONTROLS = "Izq./Der. o 1-3: carta | Arriba/Abajo: acción | Enter/A: confirmar | Esc/B: atrás";
+CA_TT_RULES_TEXT = "40 cartas equivalentes a la baraja española: 1-7, Sota (10), Caballero (11), Rey (12), de cuatro palos. Tres por jugador. Gana el primero en 30 (15 malas + 15 buenas). Sin vida, daño, atributos ni poderes.\n\nGana dos bazas. Parda: decide la otra baza ganada; si ganan una cada uno, decide la tercera; si ésta emparda, gana quien ganó la primera. Tres pardas: mano. Sale el ganador; la parda conserva la salida.\n\nTruco / Retruco / Vale 4: 2 / 3 / 4. Rechazar da el valor anterior. Envido +2 (hasta dos), Real +3; figuras 0, mejor pareja del mismo palo +20. Empate: mano.\n\nFalta / Flor al Resto: lo que le falta al puntero para 15 si ambos están en malas, si no para 30. Flor 3; dos Flores o Contra Flor 6; achicarse con Flor da 4. Flor anula Envido. Mazo antes de tu primera carta suma 1 si el Envido no se resolvió. Abandonar pierde la partida.";
+CA_TT_RANKING = "Mayor a menor: As de Espadas > As de Bastos > 7 de Espadas > 7 de Oros > 3 > 2 > otros Ases > Reyes > Caballeros > Sotas > otros 7 > 6 > 5 > 4.\n\nCon Flor activada es obligatorio cantarla: tres del mismo palo, suma +20 (figuras 0). Canta Flor, Contra Flor o al Resto antes de jugar tu primera carta. Aún sin clasificación ni premios.";
+CA_TT_EVENT_12 = "%s: Falta Envido (%d).";
+CA_TT_EVENT_13 = "%s: Flor.";
+CA_TT_EVENT_14 = "%s: Contra Flor.";
+CA_TT_EVENT_15 = "%s: Contra Flor al Resto.";
+CA_TT_EVENT_16 = "%s gana la Flor: %d tantos.";
+CA_TT_EVENT_17 = "%s se va al mazo.";
+
+[enu default]
+
 // English is the default language and the source used for future translations.
 CA_SKIP_TITLE = "Skip to day and time";
 CA_SKIP_LIMBO = "Limbo local clock | Outside date frozen | Normal pace 1:1";

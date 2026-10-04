@@ -4,8 +4,17 @@ An independent dark fantasy FPS-RPG inspired by nineteenth-century Argentina.
 Author and game designer: **Damian Curti**. Development target: **GZDoom 4.14.2**
 on Windows 11. The final game is intended to be independent of Doom assets.
 
-**Current release: 4.37.14a.** Obtain and update the complete repository, validate
+**Current release: 4.37.15.** Obtain and update the complete repository, validate
 it, then rebuild with `run_dev.bat` as described below.
+
+Issue [#101](https://github.com/damiancurti/Caelum-Argenteum/issues/101) adds
+**traditional Truco (ranked)** against Argento beside the Trucazo practice.
+Choose **Flor ON/OFF** before starting: 40 playable cards, three each, first
+to 30 points (15 malas / 15 buenas), traditional pardas, Envido/Real/Falta,
+Truco/Retruco/Vale 4 and optional Flor raises. No attributes, health, powers,
+rating, wagers or rewards apply. Saved matches retain the chosen rules and
+pending calls. Evidence: [4.37.15](assets/validation_43715/RESULTS.json).
+Author checks passed 2026-10-04; the accepted Trucazo practice remains available.
 
 Issue [#99](https://github.com/damiancurti/Caelum-Argenteum/issues/99) places
 Argento's Trucazo practice after the ordinary story/service choices, immediately

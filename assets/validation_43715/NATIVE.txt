@@ -1,0 +1,112 @@
+GZDoom 4.14.2 / Windows 11 / Vulkan / final package.
+
+== final_native ==
+CA101 PASS 40 unique cards; six dealt; three each
+CA101 PASS four exceptional cards
+CA101 PASS king above knight above page
+CA101 PASS rest at malas/buenas boundaries
+CA101 PASS parda plus win closes second trick
+CA101 PASS third parda favors first winner
+CA101 PASS three pardas favor mano
+CA101 PASS decisive third; split second remains open
+CA101 PASS six and seven same suit = 33
+CA101 PASS envido envido real = 7; raise limits
+CA101 PASS refuse real after double envido awards 4
+CA101 PASS falta immediately wins at 30
+CA101 PASS envido suspends and restores Truco
+CA101 PASS retuco vale4 refusal adds three
+CA101 PASS Truco refusal awards one; no knockout
+CA101 PASS mano alternates; score survives deal
+CA101 PASS first-card fold awards hand plus unsettled envido
+CA101 PASS mandatory Flor; sum 38; no Envido
+CA101 PASS unopposed Flor scores three
+CA101 PASS two Flors score six to highest
+CA101 PASS declining Contra Flor awards four
+CA101 PASS Flor al resto wins at thirty
+CA101 PASS Flor cancels pending Envido
+CA101 PASS Flor disabled permits ordinary play
+CA101 PASS actual first-trick parda stays tied
+CA101 PASS parda retains lead
+CA101 PASS parda then win resolves after two
+CA101 PASS stale network action ignored
+CA101 PASS abandonment loses the match
+CA101 PASS 100 complete matches; 50 each Flor setting
+CA101 RULES passes=30 failures=0 hands=1249
+CA101 REPLY 0 $CA_DLG_M01_ARGENTO_NEXT
+CA101 REPLY 1 $CA_DLG_M01_WORKSHOPS_ASK
+CA101 REPLY 2 $CA_M01_KEY_ASK
+CA101 REPLY 3 $CA_TC_CHALLENGE
+CA101 REPLY 4 $CA_TT_CHALLENGE
+CA101 PASS page=argento_complete challenge=4 ordinary=5
+CA101 SNAPSHOT stored
+CA101 PASS save/load state; worldhp=1 anima=1 time_delta=1 menu=1
+CA101 UI_COMPLETE flor=1 winner=0 scores=31:18 hands=2
+
+== final_english ==
+CA101 PASS 40 unique cards; six dealt; three each
+CA101 PASS four exceptional cards
+CA101 PASS king above knight above page
+CA101 PASS rest at malas/buenas boundaries
+CA101 PASS parda plus win closes second trick
+CA101 PASS third parda favors first winner
+CA101 PASS three pardas favor mano
+CA101 PASS decisive third; split second remains open
+CA101 PASS six and seven same suit = 33
+CA101 PASS envido envido real = 7; raise limits
+CA101 PASS refuse real after double envido awards 4
+CA101 PASS falta immediately wins at 30
+CA101 PASS envido suspends and restores Truco
+CA101 PASS retuco vale4 refusal adds three
+CA101 PASS Truco refusal awards one; no knockout
+CA101 PASS mano alternates; score survives deal
+CA101 PASS first-card fold awards hand plus unsettled envido
+CA101 PASS mandatory Flor; sum 38; no Envido
+CA101 PASS unopposed Flor scores three
+CA101 PASS two Flors score six to highest
+CA101 PASS declining Contra Flor awards four
+CA101 PASS Flor al resto wins at thirty
+CA101 PASS Flor cancels pending Envido
+CA101 PASS Flor disabled permits ordinary play
+CA101 PASS actual first-trick parda stays tied
+CA101 PASS parda retains lead
+CA101 PASS parda then win resolves after two
+CA101 PASS stale network action ignored
+CA101 PASS abandonment loses the match
+CA101 PASS tied accepted Contra Flor favors mano for six
+CA101 PASS refused Flor al Resto awards four
+CA101 PASS first Falta refusal awards one
+CA101 PASS tied Envido favors mano
+CA101 PASS 100 complete matches; 50 each Flor setting
+CA101 RULES passes=34 failures=0 hands=1321
+CA101 REPLY 0 $CA_DLG_M01_ARGENTO_NEXT
+CA101 REPLY 1 $CA_DLG_M01_WORKSHOPS_ASK
+CA101 REPLY 2 $CA_M01_KEY_ASK
+CA101 REPLY 3 $CA_TC_CHALLENGE
+CA101 REPLY 4 $CA_TT_CHALLENGE
+CA101 PASS page=argento_complete challenge=4 ordinary=5
+CA101 SNAPSHOT stored
+CA101 PASS save/load state; worldhp=1 anima=1 time_delta=1 menu=1
+CA101 UI_COMPLETE flor=0 winner=0 scores=30:24 hands=3
+
+== legacy_final ==
+CA101 PASS accepted practice save preserved; new mode unused=1
+
+== full_ui ==
+CA101 REPLY 0 $CA_DLG_M01_ARGENTO_NEXT
+CA101 REPLY 1 $CA_DLG_M01_WORKSHOPS_ASK
+CA101 REPLY 2 $CA_M01_KEY_ASK
+CA101 REPLY 3 $CA_TC_CHALLENGE
+CA101 REPLY 4 $CA_TT_CHALLENGE
+CA101 PASS page=argento_complete challenge=4 ordinary=5
+CA101 UI_COMPLETE flor=1 winner=1 scores=3:30 hands=12
+CA101 PASS return to world
+CA101 REPLY 0 $CA_DLG_M01_ARGENTO_NEXT
+CA101 REPLY 1 $CA_DLG_M01_WORKSHOPS_ASK
+CA101 REPLY 2 $CA_M01_KEY_ASK
+CA101 REPLY 3 $CA_TC_CHALLENGE
+CA101 REPLY 4 $CA_TT_CHALLENGE
+CA101 PASS page=argento_complete challenge=3 ordinary=5
+CA101 PASS normal practice entry
+
+== rollback_original ==
+CA81 SNAPSHOT equal=1 worldhealth=1 anima=1 time_delta=1 revision=1
