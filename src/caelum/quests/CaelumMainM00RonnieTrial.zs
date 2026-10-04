@@ -226,58 +226,67 @@ class CaelumMainM00RonnieTrial : Object play
         return loan != null && loan.IsLimboTemporary() ? loan : null;
     }
 
+    // Revisión 1: concede una sola herramienta propia, incluso en una partida
+    // que ya terminó el tutorial. No cambia elecciones, cupos ni armas previas.
+    static bool EnsurePickaxe(CaelumPlayer user)
+    {
+        if (user == null || !user.CharacterCreationComplete || user.WeaponModel == null
+            || !IsStarted(user) || user.health <= 0) return false;
+        let record = user.GetPersistentCharacterState(true);
+        if (record.MainM00PickaxeRevision >= CaelumConstants.PICKAXE_TUTORIAL_REVISION)
+            return true;
+        record.LearnCraftingRecipe(CaelumConstants.CRAFTING_PICKAXE_RECIPE);
+        // El mismo grafo del hacha enseña componentes, sin regalar otra receta de arma.
+        let dependencies = new("CaelumMainM00StarterMaterials");
+        dependencies.Build(CaelumCraftingRules.FindUnifiedPhysicalRecipeIndex(
+            CaelumConstants.CATALOGUE_WEAPON_AXE), record.MainM00StarterSize);
+        for (int i = 0; i < CaelumConstants.CRAFTING_NETWORK_PLAYABLE_RECIPE_COUNT; i++)
+            if (dependencies.Recipes[i] && !CaelumMainM00StarterRules.IsWeaponRecipe(i))
+                record.LearnCraftingRecipe(i);
+        int size = CaelumEquipmentRules.ResolveAcquisitionSize(user,
+            CaelumEquipmentRules.CHARACTER_DEFAULT, record.MainM00StarterSize);
+        double weight = user.WeaponModel.GetWeightFor(CaelumConstants.WEAPON_TYPE_PICKAXE, 1, size);
+        bool box = !user.CanAddWeightToPersonalInventory(weight);
+        if (box && (!user.HasNativeMagicBoxSlotAvailable() || !user.CanAddRawWeightToMagicBox(weight)))
+            return false;
+        let item = CaelumEquipmentItem(Actor.Spawn("CaelumWeaponPickup", user.Pos, NO_REPLACE));
+        if (item == null) return false;
+        item.EquipmentKind = CaelumConstants.EQUIPMENT_KIND_WEAPON;
+        item.ItemType = CaelumConstants.WEAPON_TYPE_PICKAXE;
+        item.Tier = 1; item.ArmorSlot = -1; item.EquipmentSize = size;
+        item.SizePolicy = CaelumEquipmentRules.CHARACTER_DEFAULT;
+        item.EssenceType = CaelumConstants.ESSENCE_FIRE;
+        item.UnitWeight = weight;
+        item.Durability = user.WeaponModel.GetMaximumDurabilityFor(item.ItemType, 1, size);
+        item.WeaponDurabilityRevision = CaelumAttackRules.DURABILITY_REVISION;
+        item.PickupDataInitialized = true; item.AcquisitionResolved = true;
+        item.InMagicBox = box;
+        item.AttachToOwner(user);
+        user.EnsureEquipmentItemId(item);
+        record.MainM00PickaxeId = item.ItemId;
+        record.MainM00PickaxeRevision = CaelumConstants.PICKAXE_TUTORIAL_REVISION;
+        CaelumNotifications.Acquired(user, item, 1);
+        user.RefreshCraftingRecipeBookSummary();
+        user.OnNativeInventoryChanged();
+        user.PersistCharacterState();
+        return true;
+    }
+
+    // Nombre conservado para acciones guardadas: ahora equipa el Pico propio.
     static bool PrepareLoan(CaelumPlayer user, bool forRepair = false, bool forSeals = false)
     {
-        if (!CanInteract(user) || !IsStarted(user) || user.WeaponModel == null) return false;
+        if (!CanInteract(user) || !IsStarted(user) || !EnsurePickaxe(user))
+        { Feedback(user, "CA_M01_REPAIR_LOAN_NO_ROOM"); return false; }
         let record = user.GetPersistentCharacterState(true);
-        if (record.HasMainM00Flag(CaelumConstants.MAIN_M00_FLAG_RONNIE_COMPLETE))
-        {
-            let first = user.FindNativeEquipmentItemById(record.MainM00StarterWeaponId);
-            bool repair = forRepair && record.MainM00RepairLessonOffered && !record.MainM00RepairLessonComplete
-                && first != null && first.Durability < user.GetEquipmentTaskMaximumDurability(first);
-            bool seals = forSeals && CaelumMainM00SealCrafting.CanGather(user);
-            if (record.QuestStage[0] >= CaelumConstants.MAIN_M00_STATE_EXIT_CONFIRMED
-                || (!repair && !seals)) return false;
-        }
+        let item = user.FindNativeEquipmentItemById(record.MainM00PickaxeId);
+        // Vender, romper o transferir la pieza no vuelve a conceder el regalo.
+        if (item == null) { Feedback(user, "CA_PICKAXE_NOT_OWNED"); return false; }
+        if (item.Durability <= 0) { Feedback(user, "CA_EQUIPMENT_ACTION_BROKEN"); return false; }
+        if (item.InMagicBox && !user.CanMoveRawWeightFromMagicBoxToPersonal(item.UnitWeight))
+        { Feedback(user, "CA_M01_REPAIR_LOAN_NO_ROOM"); return false; }
         user.SyncActiveModelsToNativeInventory();
-        let loan = FindLoan(user);
-        if (loan == null)
-        {
-            // Migra la espada antigua sin sustituir su instancia ni su ItemId.
-            for (Inventory cursor = user.Inv; cursor != null; cursor = cursor.Inv)
-            {
-                if (cursor is "CaelumM01SwordPickup") { loan = CaelumEquipmentItem(cursor); break; }
-            }
-            if (loan == null)
-                loan = CaelumEquipmentItem(Actor.Spawn("CA_LimboRonnieSword", user.Pos, NO_REPLACE));
-            if (loan == null) return false;
-            if (loan.Owner == null)
-            {
-                loan.EquipmentKind = CaelumConstants.EQUIPMENT_KIND_WEAPON;
-                loan.ItemType = CaelumConstants.WEAPON_TYPE_SWORD;
-                loan.Tier = 1;
-                loan.SizePolicy = CaelumEquipmentRules.CHARACTER_DEFAULT;
-                loan.EquipmentSize = CaelumEquipmentRules.ResolveAcquisitionSize(
-                    user, loan.SizePolicy, record.MainM00StarterSize);
-                loan.ArmorSlot = -1;
-                loan.EssenceType = CaelumConstants.ESSENCE_FIRE;
-                loan.UnitWeight = user.WeaponModel.GetWeightFor(loan.ItemType, 1, loan.EquipmentSize);
-                loan.PickupDataInitialized = true;
-                if ((forRepair || forSeals) && !user.CanAddWeightToPersonalInventory(loan.UnitWeight + CaelumConstants.MATERIAL_UNIT_WEIGHT))
-                { loan.Destroy(); Feedback(user, "CA_M01_REPAIR_LOAN_NO_ROOM"); return false; }
-                loan.AttachToOwner(user);
-                user.EnsureEquipmentItemId(loan);
-                CaelumNotifications.Acquired(user, loan, 1);
-            }
-            loan.ItemFlags |= CaelumConstants.CA_ITEMFLAG_LIMBO_TEMP;
-            record.MainM00RonnieSwordId = loan.ItemId;
-        }
-        // Igual que el préstamo de Caella: revisar el préstamo restaura la
-        // misma pieza; no concede armas ni materiales repetidos.
-        loan.Durability = user.WeaponModel.GetMaximumDurabilityFor(loan.ItemType, loan.Tier, loan.EquipmentSize);
-        loan.InMagicBox = false;
-        loan.Equipped = true;
-        user.ActivateExactEquippedWeapon(loan);
+        item.InMagicBox = false; item.Equipped = true;
+        user.ActivateExactEquippedWeapon(item);
         user.ApplyCharacterProfile();
         user.EnsureWeaponFamilySelectors();
         user.PersistCharacterState();
@@ -510,8 +519,12 @@ class CaelumMainM00RonnieTrial : Object play
     {
         if (!IsStarted(user)) return;
         // El conocimiento pendiente también se incorpora al cargar fuera del
-        // Limbo; no concede munición, materiales ni vuelve a prestar la espada.
-        if (level.time % TICRATE == 0) TeachStarterAmmunition(user);
+        // Limbo; la revisión del Pico evita repetir el regalo de equipo.
+        if (level.time % TICRATE == 0)
+        {
+            EnsurePickaxe(user);
+            TeachStarterAmmunition(user);
+        }
         if (level.MapName != "MAP01")
         {
             if (level.time % TICRATE != 0) return;

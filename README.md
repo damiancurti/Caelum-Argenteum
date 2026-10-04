@@ -4,8 +4,18 @@ An independent dark fantasy FPS-RPG inspired by nineteenth-century Argentina.
 Author and game designer: **Damian Curti**. Development target: **GZDoom 4.14.2**
 on Windows 11. The final game is intended to be independent of Doom assets.
 
-**Current release: 4.37.16.** Obtain and update the complete repository, validate
+**Current release: 4.37.17.** Obtain and update the complete repository, validate
 it, then rebuild with `run_dev.bat` as described below.
+
+Issue [#89](https://github.com/damiancurti/Caelum-Argenteum/issues/89) adds the
+**Pickaxe / Pico**, a single-tier T1 tool in weapon family **1**. Primary chops,
+secondary mines; numerical statistics and recipe reuse the T1 axe. Successful
+chopping yields ×10 and mining ×100, bounded by the source and tutorial quotas.
+Ronnie gives the owned tool and recipe; the chosen weapon still must be crafted.
+Every eligible tool now plays the material-specific extraction sound and shows
+a centered success message in CaelumText. Original sources/credits and native
+evidence: [4.37.17](assets/validation_43717/RESULTS.json). All three author checks
+passed on 2026-10-04, including art/audio; closure and merge are authorized.
 
 Issue [#87](https://github.com/damiancurti/Caelum-Argenteum/issues/87) adds a
 top-left compass driven by the rendered view, with eight directions and a

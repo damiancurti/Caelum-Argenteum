@@ -963,6 +963,12 @@ class CaelumSwordSelectorWeapon : CaelumPhysicalSelectorWeapon
     }
 }
 
+class CaelumPickaxeSelectorWeapon : CaelumPhysicalSelectorWeapon
+{
+    Default { Weapon.SelectionOrder 100; Weapon.SlotNumber 1; }
+    override int GetCaelumWeaponType() { return CaelumConstants.WEAPON_TYPE_PICKAXE; }
+}
+
 class CaelumAxeSelectorWeapon : CaelumPhysicalSelectorWeapon
 {
     Default { Weapon.SelectionOrder 302; Weapon.SlotNumber 3; }

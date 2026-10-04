@@ -1,0 +1,231 @@
+{
+  "issue": 89,
+  "release": "4.37.17",
+  "date": "2026-10-04",
+  "base_commit": "97419a12929a010dfbf4b41fee1c61fed18fbf67",
+  "status": "Accepted by the author on 2026-10-04; all static/native and author checks passed",
+  "static": {
+    "generators_two_runs_byte_identical": true,
+    "updated_reference_zip_crc_and_seven_hashes_verified": true,
+    "recipe_id": 131,
+    "recipe_revision": 5,
+    "gift_revision": 1,
+    "old_recipe_and_ownership_indices_unchanged": true,
+    "mining_originals_byte_identical": true,
+    "project_validator": "PROJECT_VALIDATION.json",
+    "project_validator_errors": [],
+    "runtime_audio_files": 103
+  },
+  "native": {
+    "engine": "GZDoom 4.14.2 Windows 11/Vulkan",
+    "logs": {
+      "final_functional.log": {
+        "passed": 73,
+        "failed": 0,
+        "sha256": "52974222d8d4b2e345259e1fe5939559fa3ff1f93a334cf35a19c3963092255a"
+      },
+      "final_tutorial.log": {
+        "passed": 12,
+        "failed": 0,
+        "sha256": "0e423e3cc0bd379dc03be39a75895b1cc3c2a908ed36c3109323f8595a8d03dd"
+      },
+      "final_migration_verified.log": {
+        "passed": 29,
+        "failed": 0,
+        "sha256": "10615b70602d0d0e16baffc717476faa16766a0f48b81ee4063cc26644844492"
+      },
+      "final_rollback.log": {
+        "passed": 1,
+        "failed": 0,
+        "sha256": "f173ef300264ed752e9b764658b3495af1cdae3d9faadeadd87687ed64362d72"
+      },
+      "final_visual_verified.log": {
+        "passed": 2,
+        "failed": 0,
+        "sha256": "bb3ed9e61e84c0a575567fee4332bd886c14f3e304258038bec6ae5e828937f1"
+      }
+    },
+    "total_passes": 117,
+    "coverage": [
+      "axe numeric statistics and all five sizes",
+      "single T1 and stable recipe/ownership IDs",
+      "native crafting reservation/completion with exact 5600/2400 M ingredients",
+      "all four material sound categories on ordinary tools; only actual Pickaxe receives multipliers",
+      "finite node depletion, fractional carry and finite Limbo quota",
+      "wrong attack and exhausted source silence",
+      "primary and secondary input-driven impacts, Air and durability",
+      "slot 1 cycling",
+      "fresh Ronnie Start/Finish with chosen weapon still required",
+      "capacity deferral and no duplicate gift/free repair",
+      "old started/completed saves, resave/reload, MAP01 departure, travel reload",
+      "original save rollback on original 4.37.16 package",
+      "20-degree clockwise native PSprite pose",
+      "inventory, pickup and crafting icon; English/Spanish centered success notice"
+    ],
+    "scope": "Isolated native fixtures; not author acceptance. Local engine/IWAD/fixtures/saves are not distributed.",
+    "package_note": "Functional, migration and visual tests used this source before whitespace-only debug icon indentation cleanup. Final rebuilt package additionally receives a clean native compile/load smoke check.",
+    "final_package_smoke": {
+      "log": "delivery_smoke.log",
+      "passed": true,
+      "sha256": "665fe939f480c39b67f5f857b742d1e8427776e6879bfd6e2628c17b943d6dbc"
+    }
+  },
+  "resolved_diagnostics": [
+    {
+      "log": "diagnostic_wear_diag.log",
+      "finding": "A newly attached gift had item durability 100000 while its model had 10000.",
+      "resolution": "Stamp current durability revision on new gift and physical crafting output. diagnostic_live4.log and final_functional.log confirm matching model/item wear."
+    },
+    {
+      "log": "diagnostic_final_migration.log",
+      "finding": "Immediate load/quit after give raced deferred engine commands; one idempotence assertion ran on the next save and the last check never executed.",
+      "resolution": "Explicit 35-tic command completion gaps; final_migration_verified.log passes all 29 assertions including both reloads."
+    },
+    {
+      "log": "diagnostic_final_visual.log",
+      "finding": "Extra local screenshot fixture used unqualified GetSpriteIndex outside Actor.",
+      "resolution": "Qualified Actor.GetSpriteIndex in the unshipped fixture; final_visual_verified.log compiles and passes."
+    },
+    {
+      "finding": "Early input fixtures cycled an already selected Pico to fists, lacked actual Magic Box ownership, and missed targets under ordinary low accuracy.",
+      "resolution": "Use the native Box grant, cycle slot 1 twice, and use existing debug accuracy for controlled impact tests. No accuracy or hit rules were changed."
+    }
+  ],
+  "package": {
+    "path": "build/issue89_final/caelum_argenteum_dev.pk3",
+    "files": 6163,
+    "bytes": 433170266,
+    "sha256": "27dd1ea56001b6f0f4583ddb46306419fedfa423f81de75557f34b7a5d109fab",
+    "members_match_src": true,
+    "zip_crc_passed": true,
+    "no_test_fixtures_or_development_dependencies_added": true
+  },
+  "runtime_assets": {
+    "src/sounds/caelum/gathering/chop.wav": {
+      "sha256": "4499d53a95fc1780cb5ef9f1f0b8054f626287470ef6631846a6f49e01224a60",
+      "frames": 37440,
+      "rate": 48000,
+      "channels": 1,
+      "seconds": 0.78,
+      "peak": 0.364227294921875,
+      "rms": 0.008710062562711153
+    },
+    "src/sounds/caelum/gathering/crystal.ogg": {
+      "sha256": "3c7972b3d95f79289b1ebc07e68c6b938e16149e5c5a95885098b5281ff11ebc",
+      "frames": 7212,
+      "rate": 44100,
+      "channels": 1,
+      "seconds": 0.1635374149659864,
+      "peak": 1.5712933540344238,
+      "rms": 0.16791875147048768
+    },
+    "src/sounds/caelum/gathering/metal.ogg": {
+      "sha256": "5bf14afc7f63234ff8d425c0b6bbda63c045a73bb4d1ce426012d01547991fa2",
+      "frames": 7212,
+      "rate": 44100,
+      "channels": 1,
+      "seconds": 0.1635374149659864,
+      "peak": 1.4653582572937012,
+      "rms": 0.2829378305410605
+    },
+    "src/sounds/caelum/gathering/stone.ogg": {
+      "sha256": "a24bcd03d1c6b2d1ddb43e9833ed50523a1954a760136fb9502cbc5a9350b405",
+      "frames": 7212,
+      "rate": 44100,
+      "channels": 1,
+      "seconds": 0.1635374149659864,
+      "peak": 1.9906591176986694,
+      "rms": 0.27586987232075777
+    },
+    "src/sprites/caelum/pickaxe/pickaxe_body.png": {
+      "sha256": "eedb1673e35f3c72fab92534065e1fd6ad5d149e5cb28a3cad4c18a538974c4d",
+      "size": [
+        320,
+        200
+      ]
+    },
+    "src/graphics/caelum/icons/ca_pickaxe.png": {
+      "sha256": "ed7233a15d06a35cecb367254d3795826a48fa3e1e1d17f1fe31a5883b0c1b14",
+      "size": [
+        128,
+        128
+      ]
+    }
+  },
+  "captures": {
+    "final_ready.png": {
+      "size": [
+        1520,
+        825
+      ],
+      "sha256": "01aac1459cc94ac5f0ed560ab04aeec4182d135e6a8830e3039d9406eab8ae3e"
+    },
+    "final_chop_es.png": {
+      "size": [
+        1520,
+        825
+      ],
+      "sha256": "4402f39248d5536c5ebc11d1d64bd9f53ebdca212120e2a126325e90f2a7d264"
+    },
+    "final_mine_es.png": {
+      "size": [
+        1520,
+        825
+      ],
+      "sha256": "7043ceed4b255edaaf9a3601879fa2d885f2bd376dd92d48b756a28603ac887a"
+    },
+    "final_notice_en.png": {
+      "size": [
+        1520,
+        825
+      ],
+      "sha256": "3a5ab70cca844d22f20d900678f2cd53bb0875cd8490fa740763034fc9f03a25"
+    },
+    "final_inventory_clean.png": {
+      "size": [
+        1520,
+        825
+      ],
+      "sha256": "757156de1d9bb7ad30bb86996b7cea5df22ddf7087b664f61847cd10cffa2e18"
+    },
+    "final_pickup.png": {
+      "size": [
+        1520,
+        825
+      ],
+      "sha256": "a96f9ea625576a79a0fa1936f51a98b4332d5333f727c84da25e5b1cfc5ea71d"
+    },
+    "final_recipe.png": {
+      "size": [
+        1520,
+        825
+      ],
+      "sha256": "efcd6fcdae7e180622cb48d02d5b136eba6dd013f8acb811741d20ec41d2f457"
+    },
+    "chop_clockwise.png": {
+      "size": [
+        1520,
+        825
+      ],
+      "sha256": "ec1dbe7f46102b811358410c1fed64c1a0c497e4fdfe6ebdf2353cc35436e561"
+    },
+    "mine_clockwise.png": {
+      "size": [
+        1520,
+        825
+      ],
+      "sha256": "5abcf81993a63be7bc8dd4217c1dfa9d5556f82d399b8a4f18ec8b022669f087"
+    }
+  },
+  "author_acceptance": {
+    "status": "PASSED",
+    "ids": [
+      "CA-43717-PICKAXE-01",
+      "CA-43717-PICKAXE-02",
+      "CA-43717-PICKAXE-03"
+    ],
+    "audio": "Engine playback/channel checks and numerical waveform analysis passed. The author subsequently confirmed the subjective attack/decay, perceived loudness and attenuation checks; no agent auditory evaluation is claimed.",
+    "confirmation_date": "2026-10-04",
+    "qualifications": "None reported; author confirmed all tests and requested closure/merge."
+  }
+}

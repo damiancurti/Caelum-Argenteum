@@ -180,3 +180,9 @@ caelum/world/rock_roll = "sounds/caelum/world/hazards/ca_rock_roll_loop.ogg"
 
 // Barco — variante del inicio: 6.000000 s.
 caelum/travel/ship_first_seconds = "sounds/caelum/ui/travel/ca_travel_ship_first_seconds.ogg"
+
+// Extracciones confirmadas: un impacto posicional, sin capas genéricas añadidas.
+caelum/gathering/chop = "sounds/caelum/gathering/chop.wav"
+caelum/gathering/stone = "sounds/caelum/gathering/stone.ogg"
+caelum/gathering/crystal = "sounds/caelum/gathering/crystal.ogg"
+caelum/gathering/metal = "sounds/caelum/gathering/metal.ogg"

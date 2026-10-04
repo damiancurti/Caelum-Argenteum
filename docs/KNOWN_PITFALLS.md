@@ -4,6 +4,26 @@ Status: integrated engineering register (issue #22, patch 4.36.1b).
 Prepared: 2026-09-23. Inherits the project's release after integration.
 Inspected baseline: `1dc390576fa330d37ff543526fc7e69a397fc28f` (PR #7).
 
+## CA-KP-036 - Stamp newly constructed equipment durability revisions
+
+Status/evidence: CODE-VERIFIED / ENGINE-VERIFIED.
+First recorded / last checked: 2026-10-04. Issue #89 / 4.37.17.
+Baseline: 97419a12 plus #89; GZDoom 4.14.2 Windows/Vulkan.
+
+A weapon spawned and attached directly to inventory can reach migration with
+new maximum durability but a legacy revision marker. In the #89 native fixture,
+the model held 10,000 while the owned item had been multiplied to 100,000;
+the next hit copied the larger value back into the model. Setting the current
+WeaponDurabilityRevision alongside a newly computed Durability fixes that
+path. Do this before attachment/synchronization; do not use it to bypass genuine
+old-save migration. The same explicit initialization already exists in other
+project gift/test constructors. #89 applies it to its gift and physical crafting.
+
+Regression: wait after granting/crafting, inspect both model and owned item,
+then hit a resource and save/reload. Both begin at the same maximum and decrease
+together. Evidence: assets/validation_43717, including the reproduced mismatch
+and corrected native impact. Author visual/audio acceptance remains separate.
+
 ## CA-KP-035 - Center visible font ink rather than trailing advance
 
 Status/evidence: CODE-VERIFIED / ENGINE-VERIFIED.

@@ -635,7 +635,7 @@ class CaelumConstants : Object
 
     // Las estaciones reales reutilizan la transacción de crafteo ya probada.
     // El índice de receta ahora es local a la estación activa.
-    const CRAFTING_PLAYABLE_RECIPE_COUNT = 16;
+    const CRAFTING_PLAYABLE_RECIPE_COUNT = 17;
     const CRAFTING_STATION_NONE = -1;
     const CRAFTING_STATION_FORGE = 0;
     const CRAFTING_STATION_RANGED_WORKSHOP = 1;
@@ -658,7 +658,8 @@ class CaelumConstants : Object
     // estar como máximo a esta distancia.
     const CRAFTING_NETWORK_LINK_DISTANCE = 128.0;
 
-    const CRAFTING_FORGE_RECIPE_COUNT = 12;
+    const CRAFTING_LEGACY_FORGE_RECIPE_COUNT = 12;
+    const CRAFTING_FORGE_RECIPE_COUNT = CRAFTING_LEGACY_FORGE_RECIPE_COUNT + 1;
     const CRAFTING_RANGED_WORKSHOP_RECIPE_COUNT = 4;
     const CRAFTING_NETWORK_PHYSICAL_RECIPE_COUNT = 16;
     const CRAFTING_NETWORK_ARMOR_RECIPE_COUNT = 16;
@@ -698,8 +699,10 @@ class CaelumConstants : Object
         CRAFTING_NETWORK_LEGACY_RECIPE_COUNT
         + CRAFTING_NETWORK_SHIELD_RECIPE_COUNT
         + CRAFTING_NETWORK_PROCESSING_RECIPE_COUNT
-        + CRAFTING_NETWORK_COMPONENT_RECIPE_COUNT + 2;
-    const CRAFTING_RECIPE_BOOK_VERSION = 4;
+        + CRAFTING_NETWORK_COMPONENT_RECIPE_COUNT + 3;
+    // Se anexa sin mover ninguna receta aprendida (0..130).
+    const CRAFTING_PICKAXE_RECIPE = CRAFTING_NETWORK_PLAYABLE_RECIPE_COUNT - 1;
+    const CRAFTING_RECIPE_BOOK_VERSION = 5;
 
     const CRAFTING_RECIPE_KIND_PHYSICAL_WEAPON = 0;
     const CRAFTING_RECIPE_KIND_ARMOR = 1;
@@ -916,10 +919,11 @@ class CaelumConstants : Object
     const WEAPON_TYPE_BELL = 17;
     const WEAPON_TYPE_BOOK = 18;
     const WEAPON_TYPE_STATUETTE = 19;
-    const WEAPON_TYPE_COUNT = 20;
+    const WEAPON_TYPE_PICKAXE = 20;
+    const WEAPON_TYPE_COUNT = 21;
     // El aviso temporal acompana al indicador permanente al cambiar de arma.
     const ACTIVE_WEAPON_NOTICE_SECONDS = 1.5;
-    const WEAPON_OWNERSHIP_COUNT = 300;
+    const WEAPON_OWNERSHIP_COUNT = WEAPON_TYPE_COUNT * 3 * EQUIPMENT_SIZE_COUNT;
     const WEAPON_SWORD_TIER_ONE_WEIGHT = 6.0;
     const WEAPON_STAFF_TIER_ONE_WEIGHT = 4.0;
     const WEAPON_CARBINE_TIER_ONE_WEIGHT = 12.0;
@@ -986,7 +990,13 @@ class CaelumConstants : Object
     const CATALOGUE_WEAPON_CARBINE = 13;
     const CATALOGUE_WEAPON_LONGBOW = 14;
     const CATALOGUE_WEAPON_CROSSBOW = 15;
-    const CATALOGUE_PHYSICAL_WEAPON_COUNT = 16;
+    const CATALOGUE_WEAPON_PICKAXE = 16;
+    const CATALOGUE_PHYSICAL_WEAPON_COUNT = 17;
+    const CATALOGUE_FAMILY_UTILITY = 1;
+    const PICKAXE_CHOPPING_MULTIPLIER = 10.0;
+    const PICKAXE_MINING_MULTIPLIER = 100.0;
+    const PICKAXE_TUTORIAL_REVISION = 1;
+    const PICKAXE_REST_CLOCKWISE_DEGREES = 20.0;
     const CATALOGUE_FAMILY_SMALL = 2;
     const CATALOGUE_FAMILY_ONE_HANDED = 3;
     const CATALOGUE_FAMILY_LARGE = 4;

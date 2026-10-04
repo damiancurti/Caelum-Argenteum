@@ -3923,6 +3923,8 @@ class CaelumPlayer : DoomPlayer
                 return 'CaelumJavelinSelectorWeapon';
             case CaelumConstants.WEAPON_TYPE_SWORD:
                 return 'CaelumSwordSelectorWeapon';
+            case CaelumConstants.WEAPON_TYPE_PICKAXE:
+                return 'CaelumPickaxeSelectorWeapon';
             case CaelumConstants.WEAPON_TYPE_AXE:
                 return 'CaelumAxeSelectorWeapon';
             case CaelumConstants.WEAPON_TYPE_FLAIL:
@@ -4023,6 +4025,7 @@ class CaelumPlayer : DoomPlayer
     void EnsureWeaponFamilySelectors()
     {
         if (!CharacterCreationComplete) { return; }
+        EnsurePhysicalWeaponSelector(CaelumConstants.WEAPON_TYPE_PICKAXE, "CaelumPickaxeSelectorWeapon");
         EnsurePhysicalWeaponSelector(
             CaelumConstants.WEAPON_TYPE_DAGGER,
             "CaelumDaggerSelectorWeapon"
@@ -5453,6 +5456,8 @@ class CaelumPlayer : DoomPlayer
             0,
             CaelumConstants.WEAPON_TYPE_COUNT - 1
         );
+        if (EquipmentSelectionKind == CaelumConstants.EQUIPMENT_KIND_WEAPON)
+            EquipmentSelectionTier = CaelumWeaponModel.ResolveTierFor(EquipmentSelectionWeaponType, EquipmentSelectionTier);
         EquipmentSelectionWeaponEssenceType = Clamp(
             EquipmentSelectionWeaponEssenceType,
             0,
@@ -5914,7 +5919,7 @@ class CaelumPlayer : DoomPlayer
         int resolvedType = Clamp(
             weaponType, 0, CaelumConstants.WEAPON_TYPE_COUNT - 1
         );
-        int resolvedTier = Clamp(tier, 1, 3);
+        int resolvedTier = CaelumWeaponModel.ResolveTierFor(resolvedType, tier);
         int resolvedSize = Clamp(
             equipmentSize, 0, CaelumConstants.EQUIPMENT_SIZE_COUNT - 1
         );
@@ -7461,6 +7466,7 @@ class CaelumPlayer : DoomPlayer
             case CaelumConstants.WEAPON_TYPE_HATCHET: return "graphics/caelum/icons/ca_hatchet.png";
             case CaelumConstants.WEAPON_TYPE_MACHETE: return "graphics/caelum/icons/ca_machete.png";
             case CaelumConstants.WEAPON_TYPE_JAVELIN: return "graphics/caelum/icons/ca_javelin.png";
+            case CaelumConstants.WEAPON_TYPE_PICKAXE: return "graphics/caelum/icons/ca_pickaxe.png";
             case CaelumConstants.WEAPON_TYPE_AXE: return "graphics/caelum/icons/ca_axe.png";
             case CaelumConstants.WEAPON_TYPE_FLAIL: return "graphics/caelum/icons/ca_flail.png";
             case CaelumConstants.WEAPON_TYPE_SPEAR: return "graphics/caelum/icons/ca_spear.png";
@@ -7619,7 +7625,8 @@ class CaelumPlayer : DoomPlayer
         }
         CraftingSelectedRecipeKnown = persistentState != null
             && persistentState.KnowsCraftingRecipe(CraftingSelectionRecipe);
-        CraftingSelectionTier = Clamp(CraftingSelectionTier, 1, 3);
+        CraftingSelectionTier = CraftingSelectionRecipe == CaelumConstants.CRAFTING_PICKAXE_RECIPE
+            ? 1 : Clamp(CraftingSelectionTier, 1, 3);
         CraftingSelectionSize = Clamp(
             CraftingSelectionSize,
             0,
@@ -9116,6 +9123,8 @@ class CaelumPlayer : DoomPlayer
             CraftingSelectionTier,
             CraftingSelectionSize
         );
+        // La pieza nace con durabilidad actual; no debe migrarse como un save antiguo.
+        result.WeaponDurabilityRevision = CaelumAttackRules.DURABILITY_REVISION;
         result.Equipped = false;
         result.InMagicBox = !CaelumMainM00RonnieTrial.CanUsePersonalCraftingOutput(self);
         result.PickupDataInitialized = true;
@@ -17869,7 +17878,7 @@ class CaelumPlayer : DoomPlayer
         );
         double extractedResourceUnits = resourceTarget != null
             ? resourceTarget.TryExtractResource(
-                self, harvestDamageKind, integerDamage
+                self, harvestDamageKind, integerDamage, WeaponModel.WeaponType
             )
             : 0.0;
 

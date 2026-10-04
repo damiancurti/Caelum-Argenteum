@@ -88,10 +88,31 @@ class CaelumEnvironmentProp : CaelumMovableProp
         return true;
     }
 
+    Sound GetResourceExtractionSound()
+    {
+        if (GetRequiredHarvestDamageType() == CaelumConstants.CATALOGUE_DAMAGE_SLASHING)
+            return "caelum/gathering/chop";
+        switch (GetResourceMaterialType())
+        {
+            case CaelumConstants.MATERIAL_RAW_IRON:
+            case CaelumConstants.MATERIAL_RAW_COPPER:
+            case CaelumConstants.MATERIAL_RAW_TIN:
+            case CaelumConstants.MATERIAL_RAW_SILVER:
+            case CaelumConstants.MATERIAL_RAW_GOLD: return "caelum/gathering/metal";
+            case CaelumConstants.MATERIAL_RAW_RUBY:
+            case CaelumConstants.MATERIAL_RAW_SAPPHIRE:
+            case CaelumConstants.MATERIAL_RAW_EMERALD:
+            case CaelumConstants.MATERIAL_RAW_TOPAZ:
+            case CaelumConstants.MATERIAL_RAW_OPAL: return "caelum/gathering/crystal";
+            default: return "caelum/gathering/stone";
+        }
+    }
+
     double TryExtractResource(
         Actor extractor,
         int damageKind,
-        double strikePower
+        double strikePower,
+        int weaponType = -1
     )
     {
         EnsureResourceState();
@@ -110,6 +131,11 @@ class CaelumEnvironmentProp : CaelumMovableProp
         double released = strikePower
             * GetResourceHardnessMultiplier()
             * Max(0.0, GetResourceAbundance());
+        // El tipo procede del arma que resolvió este impacto, no del inventario.
+        if (weaponType == CaelumConstants.WEAPON_TYPE_PICKAXE)
+            released *= damageKind == CaelumConstants.CATALOGUE_DAMAGE_SLASHING
+                ? CaelumConstants.PICKAXE_CHOPPING_MULTIPLIER
+                : CaelumConstants.PICKAXE_MINING_MULTIPLIER;
         double removed = Min(ResourceRemainingUnits, released);
         if (removed <= 0.0) { return 0.0; }
 
@@ -120,6 +146,7 @@ class CaelumEnvironmentProp : CaelumMovableProp
             if (available <= 0) return 0.0;
             removed = Min(removed, Max(0.0, available - ResourceYieldCarry));
         }
+        if (removed <= 0.0) return 0.0;
         double combined = ResourceYieldCarry + removed;
         int wholeUnits = int(Floor(combined));
         if (wholeUnits > 0
@@ -130,6 +157,9 @@ class CaelumEnvironmentProp : CaelumMovableProp
         ResourceRemainingUnits -= removed;
         ResourceYieldCarry = combined - wholeUnits;
         ScheduleResourceRecovery(user);
+        // Un único sonido posicional después de confirmar la extracción real.
+        A_StartSound(GetResourceExtractionSound(), CHAN_BODY);
+        CaelumNotifications.Extracted(extractor, GetResourceMaterialType());
         return removed;
     }
 

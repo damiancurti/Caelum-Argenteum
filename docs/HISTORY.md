@@ -1,6 +1,45 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **4.37.16** — 2026-10-04.
+Documentation version: **4.37.17** — 2026-10-04.
+
+## 4.37.17 - Pickaxe and successful extraction feedback (#89)
+
+Author acceptance, 2026-10-04: all tests PASSED, without reported qualifications.
+CA-43717-PICKAXE-01, CA-43717-PICKAXE-02 and CA-43717-PICKAXE-03 originated in
+4.37.17 / issue #89. The author explicitly confirmed all tests correct and
+requested issue closure and merge. This includes the 20-degree rest pose and
+subjective audio checks. Their entries are removed from pending_test.txt.
+Runtime and release version are unchanged by this acceptance update.
+
+Author decisions, 2026-10-04: primary slashing, secondary piercing, family 1,
+same numeric T1 axe data; Ronnie gives an owned Pickaxe and recipe while the
+chosen weapon remains the crafting lesson. Follow-up: extraction sounds must
+apply to all eligible weapons and successful extraction must show a centered
+message in the project's typeface. Implemented with CaelumText and the existing
+notification duration setting.
+The author also requested a 20-degree clockwise rest angle; the weapon rotates
+around the existing hand grip, and native pose captures verify the result.
+
+Added stable appended IDs, recipe book revision 5 and gift revision 1. Kept old
+recipe knowledge, owned swords, mission progress and finite tutorial supplies.
+Native impact testing caught a new gift being migrated as legacy durability;
+new gifts and physical crafting outputs now stamp the current revision before
+entering inventory. Code/static analysis, native checks and author acceptance
+are distinct in assets/validation_43717/RESULTS.json. Author acceptance of this
+release passed as recorded above: CA-43717-PICKAXE-01/02/03.
+
+Executed native evidence: 117 assertions passed across axe equivalence, recipe
+and real crafting, successful/invalid extraction, input-driven impacts, capacity,
+fresh tutorial, old-save migration/reload/travel, original-package rollback,
+and the 20-degree rest pose. Nine captures cover the tool, recipe and bilingual
+feedback. Both optional asset generators reproduced byte-identical outputs in
+two runs; all 6,163 PK3 members match src. The three author checks subsequently
+passed; channel playback checks alone do not claim auditory acceptance.
+
+The updated issue ZIP passed all seven source SHA-256 checks and ZIP CRCs.
+Original CC0 recordings, image provenance, prompt and deterministic integration
+remain in assets/issue89_pickaxe; only runtime sprites/sounds and credits are
+packaged. No development fixture, executable or IWAD is distributed.
 
 ## 4.37.16 - Add compass and project menu pointers (#87)
 

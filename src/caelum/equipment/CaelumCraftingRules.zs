@@ -31,6 +31,11 @@ class CaelumCraftingRules : Object
     static int GetStationRecipeWeapon(int stationType, int recipeIndex)
     {
         int resolvedStation = ResolveStationType(stationType);
+        if ((resolvedStation == CaelumConstants.CRAFTING_STATION_WORKBENCH
+                && recipeIndex == CaelumConstants.CRAFTING_PICKAXE_RECIPE)
+            || (resolvedStation == CaelumConstants.CRAFTING_STATION_FORGE
+                && recipeIndex == CaelumConstants.CRAFTING_LEGACY_FORGE_RECIPE_COUNT))
+            return CaelumConstants.CATALOGUE_WEAPON_PICKAXE;
         if (resolvedStation == CaelumConstants.CRAFTING_STATION_FORGE)
         {
             switch (Clamp(recipeIndex, 0, CaelumConstants.CRAFTING_FORGE_RECIPE_COUNT - 1))
@@ -68,7 +73,7 @@ class CaelumCraftingRules : Object
                 recipeIndex, 0,
                 CaelumConstants.CRAFTING_NETWORK_PLAYABLE_RECIPE_COUNT - 1
             );
-            if (unifiedIndex < CaelumConstants.CRAFTING_FORGE_RECIPE_COUNT)
+            if (unifiedIndex < CaelumConstants.CRAFTING_LEGACY_FORGE_RECIPE_COUNT)
             {
                 return GetStationRecipeWeapon(
                     CaelumConstants.CRAFTING_STATION_FORGE, unifiedIndex
@@ -76,7 +81,7 @@ class CaelumCraftingRules : Object
             }
             return GetStationRecipeWeapon(
                 CaelumConstants.CRAFTING_STATION_RANGED_WORKSHOP,
-                unifiedIndex - CaelumConstants.CRAFTING_FORGE_RECIPE_COUNT
+                unifiedIndex - CaelumConstants.CRAFTING_LEGACY_FORGE_RECIPE_COUNT
             );
         }
         return -1;
@@ -207,6 +212,8 @@ class CaelumCraftingRules : Object
 
     static int GetUnifiedRecipeKind(int recipeIndex)
     {
+        if (recipeIndex == CaelumConstants.CRAFTING_PICKAXE_RECIPE)
+            return CaelumConstants.CRAFTING_RECIPE_KIND_PHYSICAL_WEAPON;
         if (GetRecipeAmmunitionType(recipeIndex) >= 0)
             return CaelumConstants.CRAFTING_RECIPE_KIND_AMMUNITION;
         int resolved = Clamp(recipeIndex, 0,
@@ -265,6 +272,7 @@ class CaelumCraftingRules : Object
 
     static int GetUnifiedPhysicalRecipeIndex(int recipeIndex)
     {
+        if (recipeIndex == CaelumConstants.CRAFTING_PICKAXE_RECIPE) return recipeIndex;
         return Clamp(
             recipeIndex, 0,
             CaelumConstants.CRAFTING_NETWORK_PHYSICAL_RECIPE_COUNT - 1
@@ -273,6 +281,8 @@ class CaelumCraftingRules : Object
 
     static int FindUnifiedPhysicalRecipeIndex(int weaponId)
     {
+        if (weaponId == CaelumConstants.CATALOGUE_WEAPON_PICKAXE)
+            return CaelumConstants.CRAFTING_PICKAXE_RECIPE;
         int resolvedWeapon = CaelumWeaponCatalogue.ResolveWeapon(weaponId);
         for (int recipeIndex = 0;
             recipeIndex < CaelumConstants.CRAFTING_NETWORK_PHYSICAL_RECIPE_COUNT;
@@ -1296,6 +1306,7 @@ class CaelumCraftingRules : Object
             case CaelumConstants.CATALOGUE_WEAPON_MACHETE: return CaelumConstants.WEAPON_TYPE_MACHETE;
             case CaelumConstants.CATALOGUE_WEAPON_JAVELIN: return CaelumConstants.WEAPON_TYPE_JAVELIN;
             case CaelumConstants.CATALOGUE_WEAPON_SWORD: return CaelumConstants.WEAPON_TYPE_SWORD;
+            case CaelumConstants.CATALOGUE_WEAPON_PICKAXE: return CaelumConstants.WEAPON_TYPE_PICKAXE;
             case CaelumConstants.CATALOGUE_WEAPON_AXE: return CaelumConstants.WEAPON_TYPE_AXE;
             case CaelumConstants.CATALOGUE_WEAPON_FLAIL: return CaelumConstants.WEAPON_TYPE_FLAIL;
             case CaelumConstants.CATALOGUE_WEAPON_SPEAR: return CaelumConstants.WEAPON_TYPE_SPEAR;
@@ -1319,6 +1330,7 @@ class CaelumCraftingRules : Object
             case CaelumConstants.WEAPON_TYPE_MACHETE: return CaelumConstants.CATALOGUE_WEAPON_MACHETE;
             case CaelumConstants.WEAPON_TYPE_JAVELIN: return CaelumConstants.CATALOGUE_WEAPON_JAVELIN;
             case CaelumConstants.WEAPON_TYPE_SWORD: return CaelumConstants.CATALOGUE_WEAPON_SWORD;
+            case CaelumConstants.WEAPON_TYPE_PICKAXE: return CaelumConstants.CATALOGUE_WEAPON_PICKAXE;
             case CaelumConstants.WEAPON_TYPE_AXE: return CaelumConstants.CATALOGUE_WEAPON_AXE;
             case CaelumConstants.WEAPON_TYPE_FLAIL: return CaelumConstants.CATALOGUE_WEAPON_FLAIL;
             case CaelumConstants.WEAPON_TYPE_SPEAR: return CaelumConstants.CATALOGUE_WEAPON_SPEAR;
@@ -1358,7 +1370,7 @@ class CaelumCraftingRules : Object
 
     static double GetPlayableTierOneWeight(int weaponId)
     {
-        switch (CaelumWeaponCatalogue.ResolveWeapon(weaponId))
+        switch (CaelumWeaponCatalogue.GetStatisticsWeapon(weaponId))
         {
             case CaelumConstants.CATALOGUE_WEAPON_DAGGER: return CaelumConstants.WEAPON_DAGGER_TIER_ONE_WEIGHT;
             case CaelumConstants.CATALOGUE_WEAPON_HATCHET: return CaelumConstants.WEAPON_HATCHET_TIER_ONE_WEIGHT;
@@ -1381,7 +1393,7 @@ class CaelumCraftingRules : Object
 
     static int GetPrimaryMaterial(int weaponId)
     {
-        switch (CaelumWeaponCatalogue.ResolveWeapon(weaponId))
+        switch (CaelumWeaponCatalogue.GetStatisticsWeapon(weaponId))
         {
             case CaelumConstants.CATALOGUE_WEAPON_DAGGER: return CaelumConstants.MATERIAL_SMALL_BLADE;
             case CaelumConstants.CATALOGUE_WEAPON_HATCHET: return CaelumConstants.MATERIAL_SMALL_WEAPON_HEAD;
@@ -1404,7 +1416,7 @@ class CaelumCraftingRules : Object
 
     static int GetSecondaryMaterial(int weaponId)
     {
-        switch (CaelumWeaponCatalogue.ResolveWeapon(weaponId))
+        switch (CaelumWeaponCatalogue.GetStatisticsWeapon(weaponId))
         {
             case CaelumConstants.CATALOGUE_WEAPON_DAGGER:
             case CaelumConstants.CATALOGUE_WEAPON_SWORD: return CaelumConstants.MATERIAL_HILT;
@@ -1447,7 +1459,7 @@ class CaelumCraftingRules : Object
 
     static double GetTierWeightRatio(int weaponId)
     {
-        int resolved = CaelumWeaponCatalogue.ResolveWeapon(weaponId);
+        int resolved = CaelumWeaponCatalogue.GetStatisticsWeapon(weaponId);
         if (resolved == CaelumConstants.CATALOGUE_WEAPON_JAVELIN
             || resolved == CaelumConstants.CATALOGUE_WEAPON_SPEAR
             || resolved == CaelumConstants.CATALOGUE_WEAPON_HALBERD)

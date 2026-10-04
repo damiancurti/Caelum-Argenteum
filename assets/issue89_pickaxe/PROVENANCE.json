@@ -1,0 +1,27 @@
+{
+  "issue": 89,
+  "release": "4.37.17",
+  "date": "2026-10-04",
+  "package_url": "https://github.com/user-attachments/files/33029586/Caelum_Argenteum_Pico_Issue89_References.zip",
+  "package_sha256": "397ca2f77d442a338a3b49594a931c17db80a3065baa882ca3530465ff6569ca",
+  "package_bytes": 2059778,
+  "source_package": "reference_package",
+  "original_files_verified": "All seven SHA256SUMS entries and ZIP CRCs matched before extraction.",
+  "image": {
+    "reference": "reference_package/references/Pico_sprite_sheet_reference.png",
+    "selected_output": "pickaxe_isolated.png",
+    "mode": "built-in image_gen, transparent background edit",
+    "prompt": "Edit target: the supplied sprite-sheet reference for the Caelum Argenteum Pickaxe. Produce ONE isolated full-length weapon based exactly on the upper-left standalone pickaxe, centered on a genuinely transparent alpha background. Keep its recognizable hybrid geometry: broad chopping axe blade on the LEFT, long curved tapered mining point on the RIGHT, forged worn silver-gray iron head with dark riveted central socket, straight aged brown wood shaft, the same dark leather wrapping bands and small iron pommel. Preserve the dark-fantasy nineteenth-century hand-painted game sprite aesthetic, restrained palette and legible hard silhouette. Straight upright shaft, side-on view like the upper-left source. Complete weapon from top to bottom, generous transparent margin. No hands, arms, people, text, grid, other objects, ground shadow, background or opaque matte. Do not add embellishments or change proportions. This will be downsampled into a GZDoom weapon sprite and pickup icon; preserve crisp readable details and true transparency.",
+    "processing": "prepare_sprites.ps1 performs deterministic resampling and asset-space placement only. The engine uses its existing hand rig and native attack clock; a texture-level turn of the weapon presents the mining point without mirroring the hand.",
+    "rights": "OpenAI-generated project artwork; the audio CC0 dedication does not apply to the image.",
+    "rest_pose": "Author refinement, 2026-10-04: 20 degrees clockwise about the native grip; engine rotation, unchanged source pixels and hand rig."
+  },
+  "audio": {
+    "license": "CC0 1.0",
+    "credits": "reference_package/CREDITS_AND_LICENSES.md",
+    "chopping": "First impact of Joseph SARDIN / BigSoundBank Ax on log (0705); 0.120–0.900 s, 4 ms linear endpoint fades, unchanged 48 kHz mono PCM16 rate and gain.",
+    "mining": "NoisyRedFox / Freesound 760565 stone, 760566 crystal/gems, 760567 metal ore; copied byte-for-byte as 44.1 kHz mono Vorbis originals.",
+    "processing": "prepare_audio.py, Python standard library",
+    "excluded": "The superseded HerrParadox/Pixabay MP3 is absent from the supplied updated package and is not added."
+  }
+}

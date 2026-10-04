@@ -1,6 +1,11 @@
 # CONTEXT.md — Ultra-condensed summary of Caelum Argenteum
 
-Documentation version: **4.37.16** — 2026-10-04.
+Documentation version: **4.37.17** — 2026-10-04.
+
+**#89 / 4.37.17:** Ronnie's owned T1 Pico + recipe, family 1, slash/pierce,
+axe data; capped ×10 chopping/×100 mining. Gift/book migrations; chosen-weapon
+crafting retained. All tools: extraction sounds/centered CaelumText. Rest: 20°
+clockwise. Evidence: validation_43717; accepted 2026-10-04.
 
 **Accepted 2026-10-04:** #93, #97, #99, #101, #87; all author checks passed.
 Evidence: assets/validation_*. #81 accepted/merged.
