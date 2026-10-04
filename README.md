@@ -24,24 +24,24 @@ to 30 points (15 malas / 15 buenas), traditional pardas, Envido/Real/Falta,
 Truco/Retruco/Vale 4 and optional Flor raises. No attributes, health, powers,
 rating, wagers or rewards apply. Saved matches retain the chosen rules and
 pending calls. Evidence: [4.37.15](assets/validation_43715/RESULTS.json).
-Author checks are pending; the accepted Trucazo practice remains available.
+Author checks passed 2026-10-04; the accepted Trucazo practice remains available.
 
 Issue [#99](https://github.com/damiancurti/Caelum-Argenteum/issues/99) places
 Argento's Trucazo practice after the ordinary story/service choices, immediately
 before goodbye. Rules and dialogue page identities are unchanged.
-See [4.37.14a evidence](assets/validation_43714a/RESULTS.json); author check pending.
+See [4.37.14a evidence](assets/validation_43714a/RESULTS.json); author check passed 2026-10-04.
 
 Issue [#97](https://github.com/damiancurti/Caelum-Argenteum/issues/97) moves
 Palomo's Tarot deck to the **first conversation upstairs after following him**.
 It arrives when the dialogue opens, before choosing equipment or receiving the
 Magic Box. If it cannot fit, make room and speak again; repeats grant no copy.
-See [4.37.14 evidence](assets/validation_43714/RESULTS.json). Author check pending.
+See [4.37.14 evidence](assets/validation_43714/RESULTS.json). Author check passed 2026-10-04.
 
 Issue [#93](https://github.com/damiancurti/Caelum-Argenteum/issues/93) makes
 **Y: time skip** visible beside **T: speed up** in the crafting footer and
 active-task status, in EN/ES. Y opens the destination selector; R refreshes
 the completion estimate and Enter confirms. Native screenshot evidence:
-[4.37.13a](assets/validation_43713a/RESULTS.json). Author check remains pending.
+[4.37.13a](assets/validation_43713a/RESULTS.json). Author check passed 2026-10-04.
 
 Issue [#81](https://github.com/damiancurti/Caelum-Argenteum/issues/81) adds a
 complete **Trucazo practice against Argento in MAP01**. Carry Palomo's physical
