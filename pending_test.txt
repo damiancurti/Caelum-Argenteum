@@ -19,3 +19,11 @@ and package. Leave room for 780 grams in carried inventory.
    before an essence capture. With full capacity, free weight and speak again.
 4. Repeat with an older save that already owns the deck: no additional copy,
    loss of deck or essence changes. Original save/package remain the rollback.
+
+CA-43714A-ARGENTO-01 - Practice choice near the end
+Origin: 4.37.14a / issue #99. Author acceptance pending.
+Prerequisites: MAP01 with Palomo's deck; Argento available for conversation.
+1. Talk to Argento before/during/after his social trial as saves permit.
+   Expect practice after other available replies and immediately before goodbye.
+2. Select the practice. Expect the ordinary Trucazo introduction and controls;
+   story/service replies retain their original order and behavior.

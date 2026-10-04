@@ -1,6 +1,13 @@
 # TASKS.md — Active tasks
 
-Documentation version: **4.37.14** — 2026-10-04.
+Documentation version: **4.37.14a** — 2026-10-04.
+
+## Issue #99 - Argento practice choice order (4.37.14a)
+
+- Practice is the final ordinary reply before goodbye in all existing pages.
+- Preserve page identity and every other reply/action/condition; native verify
+  the displayed order and entry into the already accepted match.
+- Evidence: assets/validation_43714a. Next: CA-43714A-ARGENTO-01.
 
 ## Issue #97 - Palomo's first upstairs deck handoff (4.37.14)
 
