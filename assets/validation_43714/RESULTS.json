@@ -1,0 +1,47 @@
+{
+  "issue": 97,
+  "release": "4.37.14",
+  "date": "2026-10-04",
+  "status": "Agent validation passed; author acceptance pending",
+  "base_commit": "be1eea73d61b4fa257dc03552242e0a75e3eb083",
+  "static": {
+    "usdf_page_indexes_and_choices_unchanged": true,
+    "palomo_route_unchanged": true,
+    "deck_grant_and_capacity_unchanged": true,
+    "persistent_schema_unchanged": true,
+    "powers_and_capture_unchanged": true,
+    "box_handoff_unchanged": true
+  },
+  "native": {
+    "engine": "GZDoom 4.14.2, Windows 11/Vulkan",
+    "passed_assertions": 22,
+    "failed_final_assertions": 0,
+    "no_foyer_or_route_grant": true,
+    "grant_before_first_reply_without_box": true,
+    "capacity_failure_and_retry": true,
+    "reopen_preserves_identity": true,
+    "old_save_without_deck_upgrade": true,
+    "already_owned_old_save_no_duplicate": true,
+    "save_reload_preserves_identity_and_quest": true,
+    "later_box_handoff_no_duplicate": true,
+    "original_save_original_package_rollback": true,
+    "no_fixture_startup": true,
+    "spanish_capture": "1024x768",
+    "english_capture": "1520x825"
+  },
+  "package": {
+    "files": 6147,
+    "sha256": "c4d902fab1470ff5085fc4bc3e3639f0a795f38a9809a78eb121a138968bdb5a",
+    "all_members_identical_to_src": true
+  },
+  "baseline_package_sha256": "4b630e6349cf38a7c332d466261162a2481b4b36b09bf70c52c1bc7e15b8bf88",
+  "qualifications": [
+    "Fixtures seed the completed route and quest prerequisites, then use native +use/conversation/save/load; no new full route or campaign playthrough is claimed.",
+    "Earlier UI probes exposed a stale pre-grant message and reply overlap; final messages refresh with equal reserved line counts and final captures were inspected.",
+    "One unchanged-baseline rollback process crashed with exit -1073740940 before assertions; separate fresh rollback runs passed. Cause unconfirmed.",
+    "The author had the regular package open; final native tests use a separate package with the same basename. run_dev.bat rebuilds the updated checkout on restart."
+  ],
+  "pending_author_tests": [
+    "CA-43714-DECK-01"
+  ]
+}

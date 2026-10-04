@@ -1,19 +1,21 @@
 # CONTEXT.md — Ultra-condensed summary of Caelum Argenteum
 
-Documentation version: **4.37.13a** — 2026-10-04.
+Documentation version: **4.37.14** — 2026-10-04.
 
-**#93 / 4.37.13a:** crafting help shows keyboard Y time skip and T acceleration.
-EN/ES. Evidence: validation_43713a; author check pending.
+**#97 / 4.37.14:** Palomo grants the deck on first upstairs conversation, before
+equipment/Box. Capacity retries; no duplicates. validation_43714; pending.
 
-**#81 / 4.37.13:** Argento offers paused Trucazo practice in MAP01.
-56 Minors, traditional calls, Patience health and Type 1 damage. No Majors,
-Magic Senses or wagers. Abandoning loses; matches persist. Evidence:
-validation_43713; accepted 2026-10-04.
+**#93 / 4.37.13a:** crafting help shows Y skip/T acceleration (EN/ES).
+validation_43713a; pending.
 
-**#80 / 4.37.12:** up to three essences; User3 costs 1000 Anima, lasts 60 s,
-recharges 600 s from use. Fool flies; Minors double fixed bonuses. Palomo's
-78-card deck: 780 g, one slot, unsellable/undroppable/unbreakable; owned Box
-required for capture. Evidence: assets/validation_43712; accepted 2026-10-04.
+**#81 / 4.37.13:** Argento's paused MAP01 Trucazo: 56 Minors, traditional calls,
+Patience health, Type 1 damage. No Majors/Magic Senses/wagers. Abandoning loses;
+matches persist. validation_43713; accepted 2026-10-04.
+
+**Accepted #80 / 4.37.12 (2026-10-04):** three essences; User3 costs 1000 Anima,
+lasts 60 s, recharges 600 s from use. Fool flies; Minors double fixed bonuses.
+Deck: 780 g, one slot, unsellable/undroppable/unbreakable; capture needs
+it inside the owned Box. Evidence: validation_43712.
 
 **Accepted #79/#78 (2026-10-04):** guards recognize the amnesiac captain; one
 Journal clue. Paid prisoners share siege/calendar guidance; future timing pending.

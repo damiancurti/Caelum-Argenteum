@@ -1,6 +1,6 @@
 # Caelum Argenteum — Audio and art
 
-Documentation version: **4.37.13a** — 2026-10-04.
+Documentation version: **4.37.14** — 2026-10-04.
 
 ## 4.37.13 — Trucazo source and existing card presentation (#81)
 

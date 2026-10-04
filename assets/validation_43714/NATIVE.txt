@@ -1,0 +1,83 @@
+issue97_gates.log
+Full local log SHA256: b51f7277d9f6ddec402356d227c280dd94503d0b8a040a92dc46034fb091552f
+GZDoom version g4.14.2
+CA97 READY phase=0 z=0 distance=56
+CA97 PASS deck=0 granted=0 box=0 essences=0 conversation=1 stage=20
+CA97 CONTEXT userz=0 npcz=0 distance=56 sight=1 latch=0 done=0
+CA97 READY phase=1 z=0 distance=56
+CA97 PASS deck=0 granted=0 box=0 essences=0 conversation=0 stage=30
+CA97 CONTEXT userz=0 npcz=-0 distance=32 sight=1 latch=0 done=0
+CA97 READY phase=2 z=264 distance=56
+CA97 CAPACITY open=1
+Captured issue97_no_room_es.png
+CA97 PASS deck=0 granted=0 box=0 essences=0 conversation=1 stage=30
+CA97 CONTEXT userz=264 npcz=264 distance=56 sight=1 latch=0 done=1
+Captured issue97_received_es.png
+CA97 PASS deck=1 granted=1 box=0 essences=0 conversation=1 stage=30
+CA97 CONTEXT userz=264 npcz=264 distance=56 sight=1 latch=0 done=1
+CA97 PASS deck=1 granted=1 box=0 essences=0 conversation=0 stage=30
+CA97 CONTEXT userz=264 npcz=264 distance=56 sight=1 latch=0 done=1
+CA97 SNAPSHOT stored deck=1
+CA97 PASS deck=1 granted=1 box=0 essences=0 conversation=1 stage=30
+CA97 CONTEXT userz=264 npcz=264 distance=56 sight=1 latch=0 done=1
+CA97 SNAPSHOT PASS identity=1 essences=1 stage=1
+
+issue97_before_change.log
+Full local log SHA256: 44cde72f8dc1150c8328cb7486d1b2d502a4413ef772b0e6e1d316aa3d2faf94
+GZDoom version g4.14.2
+CA97 READY phase=0 z=0 distance=56
+CA97 READY phase=2 z=264 distance=56
+CA97 PASS deck=0 granted=0 box=0 essences=0 conversation=1 stage=30
+CA97 CONTEXT userz=264 npcz=264 distance=56 sight=1 latch=0 done=1
+CA97 BOX_READY eligible=1
+CA97 SNAPSHOT stored deck=1
+CA97 BOX PASS deck_count=1 same_deck=1 box_granted=1
+
+issue97_final_upgrade.log
+Full local log SHA256: c1d7fc17573931bd08257e8c1cfbed8011915d3746f054ea639e5e717e1281c9
+GZDoom version g4.14.2
+CA97 PASS deck=0 granted=0 box=0 essences=0 conversation=0 stage=30
+CA97 CONTEXT userz=264 npcz=264 distance=56 sight=1 latch=0 done=1
+Captured issue97_final_handoff_es.png
+CA97 PASS deck=1 granted=1 box=0 essences=0 conversation=1 stage=30
+CA97 CONTEXT userz=264 npcz=264 distance=56 sight=1 latch=0 done=1
+CA97 SNAPSHOT stored deck=1
+CA97 SNAPSHOT PASS identity=1 essences=1 stage=1
+CA97 PASS deck=1 granted=1 box=0 essences=0 conversation=1 stage=30
+CA97 CONTEXT userz=264 npcz=264 distance=56 sight=1 latch=0 done=1
+CA97 SNAPSHOT PASS identity=1 essences=1 stage=1
+CA97 BOX_READY eligible=1
+CA97 BOX PASS deck_count=1 same_deck=1 box_granted=1
+CA97 SNAPSHOT stored deck=1
+CA97 BOX PASS deck_count=1 same_deck=1 box_granted=1
+
+issue97_final_english_owned.log
+Full local log SHA256: e1bd89dbb05359a908d5c9e633e2ce7c74a24d25c4bec3b3dd8de77420c4ea4f
+GZDoom version g4.14.2
+Captured issue97_final_handoff_en.png
+CA97 PASS deck=1 granted=1 box=0 essences=0 conversation=1 stage=30
+CA97 CONTEXT userz=264 npcz=264 distance=56 sight=1 latch=0 done=1
+CA97 BOX PASS deck_count=1 same_deck=1 box_granted=1
+CA97 BOX PASS deck_count=1 same_deck=1 box_granted=1
+
+issue97_owned_reload.log
+Full local log SHA256: f1429889501b60651e87ea44e58b1cb4ab695898afac663d21f5d878862ba351
+GZDoom version g4.14.2
+CA97 BOX PASS deck_count=1 same_deck=1 box_granted=1
+
+issue97_rollback_retry.log
+Full local log SHA256: eaa01232ba85266ce6d4398c6d9024a7f93b69679d2c7953cb46de9bb03cd20c
+GZDoom version g4.14.2
+CA97 PASS deck=0 granted=0 box=0 essences=0 conversation=0 stage=30
+CA97 CONTEXT userz=264 npcz=264 distance=56 sight=1 latch=0 done=1
+
+issue97_rollback_owned.log
+Full local log SHA256: 78d579754c7f8f668d724f6ff8c8698be12c05d087f1d1f09add2aaf132547e1
+GZDoom version g4.14.2
+CA97 BOX PASS deck_count=1 same_deck=1 box_granted=1
+
+issue97_package_smoke.log
+Full local log SHA256: 94742169a8ce32251cd3718eb4567f34f2b9b94b661416c7fcf8bfe4dc4cf48a
+GZDoom version g4.14.2
+
+Earlier baseline rollback attempt: issue97_rollback.log exited -1073740940 after loading MAP01, before assertions. Fresh rollback_retry and rollback_owned exited 0 and passed; crash cause unconfirmed and no changed production runtime was loaded in that process.

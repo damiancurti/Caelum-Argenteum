@@ -1,6 +1,23 @@
 # Caelum Argenteum — Current systems and rules
 
-Documentation version: **4.37.13a** — 2026-10-04.
+Documentation version: **4.37.14** — 2026-10-04.
+
+## 4.37.14 - Early physical deck delivery (#97)
+
+After Palomo completes his existing route upstairs, successfully opening his
+conversation grants the protected 78-card physical Tarot deck immediately,
+before selecting any reply or equipment plan. His foyer conversation and
+interaction during the route grant nothing. The Box keeps its later quest
+requirements and acceptance choice; accepting it can still retry a blocked
+handoff but never duplicates a granted deck.
+
+The original 780 g/one-slot capacity rules and TarotDeckGranted/revision-1
+record remain authoritative. If the deck cannot fit, Palomo explains that the
+player must make room and speak again. Closing immediately, revisiting and
+save/load retain the grant. A pre-change save with no deck can receive it on
+its next eligible conversation; previously granted decks and essences remain
+unchanged. Store the carried deck in the owned Box before capturing an essence.
+This supersedes #80's original Box-linked delivery timing only.
 
 ## 4.37.13a - Crafting time help (#93)
 

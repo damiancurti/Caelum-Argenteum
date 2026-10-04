@@ -231,6 +231,14 @@ class CaelumMainM00SocialDialogue : Object play
 // Apply, en ámbito play: ningún mensaje de red puede saltarse el requisito.
 class CaelumMainM00ConversationMenu : CaelumPalomoConversationMenu
 {
+    override void Ticker()
+    {
+        Super.Ticker();
+        // La entrega ocurre tras abrir USDF; reflejar su resultado al dibujar.
+        if (mCurNode != null && mCurNode.UserData ~== "loadout_root")
+            FormatSpeakerMessage();
+    }
+
     bool IsRonnieOptionBlocked(StrifeDialogueReply reply)
     {
         CaelumPlayer user = mPlayer == null ? null : CaelumPlayer(mPlayer.mo);
@@ -287,6 +295,9 @@ class CaelumMainM00ConversationMenu : CaelumPalomoConversationMenu
         CaelumPlayer user = mPlayer == null ? null : CaelumPlayer(mPlayer.mo);
         if (user != null)
         {
+            if (mCurNode.UserData ~== "loadout_root")
+                text = StringTable.Localize(user.FindInventory("CaelumTarotDeck") != null
+                    ? "CA_M01_PALOMO_DECK_HANDOFF" : "CA_M01_PALOMO_DECK_ROOM", false) .. "\n\n" .. text;
             if (mCurNode.UserData ~== "loadout_summary") text = user.MainM00LoadoutSummary;
             for (int option = 0; option < 49; option++)
             {
