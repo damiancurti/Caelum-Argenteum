@@ -626,6 +626,17 @@ native capture; fresh-save and hub-return probes. See validation_4364 evidence.
 Author acceptance: CA-4364-T1-LOOT-01 passed on 2026-09-23. Preserve this separation when adding another
 UI to an established save schema.
 
+Additional ENGINE-VERIFIED scope in 4.37.13 (#81): a native menu is presentation,
+not saved match state. Loading a Trucazo save while another menu was open could
+retain the obsolete menu and its nonpaused state. Its static WorldLoaded hook
+now sends a one-time interface restore; UiTick reconstructs the match menu and
+sets native Menu.On. A paused-menu network probe confirms play-scope actions
+still run while level.time stays fixed. Pending-call reload keeps the exact
+deck/rows/health, with the ordinary one engine resume tic before menu pause;
+closing returns to menuactive=0 with no frozen-control flag. See
+[4.37.13 evidence](../assets/validation_43713/RESULTS.json). This does not claim
+arbitrary serialized menu objects can be restored or bypass scope separation.
+
 ## CA-KP-008 — Changed map geometry prevents old saves from loading
 
 Status/evidence: ENGINE-VERIFIED in 4.36.5 (#11), GZDoom g4.14.2.

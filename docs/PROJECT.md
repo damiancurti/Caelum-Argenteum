@@ -1,6 +1,29 @@
 # Caelum Argenteum — Project, status and roadmap
 
-Documentation version: **4.37.12** — 2026-10-04.
+Documentation version: **4.37.13** — 2026-10-04.
+
+## 4.37.13 — Trucazo practice against Argento (#81)
+
+The first complete human-versus-NPC match starts through Argento's normal MAP01
+dialogue, using the physical deck from #80. The author's original Trucazo v2.0
+source and 2026-10-04 corrections are consolidated in SYSTEMS: one shared deck
+of 56 Minors, five-card initial hands, two nonplayable rows, traditional calls,
+ties to mano, Patience-squared health and Type 1 Intelligence damage. The match
+repeats hands until a knockout; abandoning is defeat. No Majors, Magic Senses,
+wagers, campaign rewards, item transfer or world damage apply to this practice.
+
+The native menu pauses the world, shows existing card art and bilingual legal
+actions, and permits native save/load. A revision-1 traveling Inventory owns
+the match. Older saves create no match until challenged; current saves preserve
+the exact deal, calls and settled outcome. A static controller restores the
+menu after load, including when an unrelated old menu was still present.
+NPC decisions consume only their own hand and public cards/calls. Existing
+furniture capacities, dining/rest and world Tarot powers remain unchanged.
+
+Evidence is in assets/validation_43713. Static checks, target-engine checks and
+author acceptance are separate; the two new author checks remain in
+pending_test.txt. The author accepted #80 and PR #92 is merged. Human multiplayer, teams, broader ranked/
+casual services and full Major-card expansion remain outside this slice.
 
 ## 4.37.12 — Campaign Tarot powers and physical deck (#80)
 

@@ -4,8 +4,23 @@ An independent dark fantasy FPS-RPG inspired by nineteenth-century Argentina.
 Author and game designer: **Damian Curti**. Development target: **GZDoom 4.14.2**
 on Windows 11. The final game is intended to be independent of Doom assets.
 
-**Current release: 4.37.12.** Obtain and update the complete repository, validate
+**Current release: 4.37.13.** Obtain and update the complete repository, validate
 it, then rebuild with `run_dev.bat` as described below.
+
+Issue [#81](https://github.com/damiancurti/Caelum-Argenteum/issues/81) adds a
+complete **Trucazo practice against Argento in MAP01**. Carry Palomo's physical
+Tarot deck (inside or outside the Box), speak to Argento and choose **Play a
+practice match of Trucazo**. Select cards with Left/Right or 1-5; select actions
+with Up/Down and confirm with Enter/A. Rules, ranking, both public rows, saving
+and loading are available from the match menu. Esc/B opens the abandon choice;
+confirming it is a defeat. The world pauses while playing.
+
+The approved shared 56-Minor deal, traditional calls, Patience-squared health
+and Intelligence Type 1 damage determine the match. This practice has no
+Majors, Magic Senses, wagers, rewards or changes to world Tarot ownership.
+Native saved matches retain their cards, calls and results. See
+[4.37.13 evidence](assets/validation_43713/RESULTS.json); author acceptance is
+pending in [pending_test.txt](pending_test.txt). The #80 checks passed.
 
 Issue [#80](https://github.com/damiancurti/Caelum-Argenteum/issues/80) completes
 the three campaign Tarot powers. In Journal > Tarot, **Enter/A** toggles up to

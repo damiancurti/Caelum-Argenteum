@@ -1,0 +1,21 @@
+{
+  "issue": 81,
+  "release": "4.37.13",
+  "date": "2026-10-04",
+  "status": "Final validation in progress; author acceptance pending",
+  "baseline_commit": "c7fe3fe9b64b5c906aeec87b4df1ff7840668de4",
+  "native_rules": {
+    "passed": 10480,
+    "failed": 0,
+    "complete_automatic_matches": 100
+  },
+  "old_save": {
+    "baseline_character_equal": true,
+    "ordinary_argento_entry": true,
+    "completed_match_hands": 5
+  },
+  "pending_author_tests": [
+    "CA-43713-TRUCAZO-01",
+    "CA-43713-TRUCAZO-02"
+  ]
+}

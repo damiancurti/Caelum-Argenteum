@@ -1,6 +1,6 @@
 # Caelum Argenteum — Current systems and rules
 
-Documentation version: **4.37.12** — 2026-10-04.
+Documentation version: **4.37.13** — 2026-10-04.
 
 ## 4.37.11 — Guard recognition as a persistent Journal clue (#79)
 
@@ -4272,6 +4272,82 @@ the traveller log. Previous indexes are preserved. The presentation is reconstru
 when loading and does not re-grant cards or objects. Arrival does not offer normal
 return to MAP01. With more than one player the crossing is rejected before mutating the
 state; the cooperative variant needs joint design.
+
+## Trucazo — Argento practice (4.37.13 / #81)
+
+The author selected Argento in MAP01 for the first human-versus-NPC match on
+2026-10-04. Issue [#81](https://github.com/damiancurti/Caelum-Argenteum/issues/81)
+requires explicit rules before implementing the match. The author supplied
+`DOCUMENTO 12 - trucazo.docx` (TCG/Trucazo v2.0) from the original project's
+Documentation folder and explicitly confirmed traditional Argentine Truco as
+the base, with the additions in that document. Source SHA-256:
+`a326583696714f4dad6938b1ba85b7e09f60f6096012e413d8353ce0fbc8b4d9`.
+The source is preserved in assets/design_sources/trucazo_v2_original.docx.
+The author resolved the source contradictions before match implementation.
+The following table is the implemented contract; author playtest acceptance
+remains separate and pending.
+
+| Area | Confirmed contract | Decision still required |
+| --- | --- | --- |
+| Opponent/location | One human against Argento in MAP01. | None for the initial opponent/location. |
+| Physical source | The complete 78-card physical deck supplied by Palomo in #80; separate from captured essences. The 40 playable cards are Minor Aces through 7, Pages, Knights and Kings, in all four suits. | None for identities/playability. |
+| Dealing | Author correction: one shared shuffled deck of all 56 Minors. Each player receives five cards; their nonplayable 8/9/10/Queens enter their first row. Draw replacements from the remaining shared deck until each has at least three playable cards; replacement nonplayables enter their second row. Replenish only during the deal, never after playing a card. | None; the author confirmed this exact interpretation on 2026-10-04. |
+| Card strength | Sword Ace; Wand Ace; Sword 7; Coin 7; all 3s; all 2s; Cup/Coin Aces; Kings; Knights; Pages; Cup/Wand 7s; all 6s; all 5s; all 4s. The author's current tie rule is mano (the participant who plays first). | None for ordinary strength/ties. The latest tie decision takes precedence over the source's awakened-card tie priority. |
+| Turns/hand outcome | Traditional Truco: up to three tricks, first to win two wins the hand; trick winner leads next. The source's damage/health extension determines the complete match. | None for the hand structure. |
+| Calls | Ordinary Truco scoring: unraised hand 1; accepted Truco/Retruco/Vale 4 worth 2/3/4; refused raises worth 1/2/3. Envido uses the best same-suit pair, 20 plus numeric values, figures 0; ties go to mano. No same-suit pair uses the highest individual value. Envido adds 2, at most twice; Real Envido adds 3, once. Refusal awards the previous call total, or 1 for an initial call. | None. Traditional scoring/timing, explicitly authorized by the author, supersedes contradictory source terminology about rounds and accepted-call raises. |
+| Match ending | Trucazo health is Patience squared. Repeat hands until a participant reaches zero; a double knockout goes to mano. This practice cannot damage world health. | None for the health-based end condition. |
+| Major modifiers | Explicitly excluded from this practice by the author on 2026-10-04. World Tarot powers remain separate. | None for this slice. |
+| Health/damage | First-row value: (5 + sum of numeric cards) times (1 + Queen count). Second-row value uses the same formula. Damage before Intelligence: max(0, attacker's first-row value times points won minus defender's second-row value). Source's worked match uses the defender's second row. Author confirmed Type 1: multiply by 1 + I*(I+1)/200, then round to the nearest whole health point as in the source example. | None; this supersedes the source's contradictory linear formula. |
+| Magic Senses | Explicitly deferred by the author on 2026-10-04. Ordinary decisions/UI must not leak private hands. | None for this slice. |
+| Stakes/consequences | Explicitly a practice with no wagers, prizes, item/card transfer or reputation changes. | None for this slice. |
+| Leaving/interruption | Voluntary abandonment is an automatic match defeat. Restore ordinary controls; never strand the player seated. The source requires a dedicated screen that pauses the world. | None for voluntary abandonment. Native interruptions must preserve a valid state. |
+| Save/load | Native persistence retains the exact dealt cards, used cards, rows, health, pending/suspended calls, result and action revision. Loading restores the menu and pause; it does not begin another hand or replay damage. | None. |
+| Furniture | Existing 2/6/12-seat capacities and dining/rest behavior remain authoritative. | No capacity changes proposed. |
+| Deferred scope | Human multiplayer, teams, network synchronization, broader ranked/casual services and full Major expansion are outside #81. The author additionally excludes Majors, Magic Senses and wagers from this practice. | None for this slice. |
+
+The initial mano is randomly selected; subsequent hands alternate. Every trick
+tie uses that hand's mano, including when the other participant led the trick.
+After a trick, Continue exposes the result before the next lead. Completed
+hands apply both damage totals simultaneously and offer the next deal if both
+participants still have health. Trucazo uses separate health, never world HP.
+Attributes and awakened Minor ownership are snapshotted at match start.
+The source's casual awakened-Minor rule doubles numeric Envido/row contributions
+and Queen counts; an awakened figure copies its same-suit numeric partner for
+Envido (two figures remain zero before the suit bonus). Physical ownership
+alone never awakens a card. No campaign Major effect runs in this practice.
+
+Envido is available before one's first card in the first trick, including as a
+response to a pending Truco; the suspended Truco resumes after Envido resolves.
+Calls may be raised while responding. After accepting Truco, only its recipient
+may raise it on their turn. No playing a card while a response is pending, no
+late Envido, no third Envido, no second Real Envido or raise above Vale 4. The
+original hand supplies Envido values; remaining cards supply legal plays.
+
+Argento leads with his strongest available card, responds with his weakest
+winning card if possible, otherwise saves strength by discarding his weakest.
+He calls/accepts Envido above the source threshold of 25, raises an eligible
+Envido response, and uses premium Aces/sevens or a won trick to support Truco.
+The policy receives only his own cards and public state, never the player's
+hand or future deck. A refused Envido does not reveal either private value.
+
+Challenge choices are added to existing Argento pages without adding/reordering
+USDF pages. The physical deck may be inside or outside the owned Box. The
+match's revision-1 native Inventory is created on first valid challenge;
+repeated interaction cannot reset an active match. The static input/controller
+exists on old saves, and only validated play-scope messages mutate state. A
+serial rejects stale actions. The view is reconstructed once on native load,
+which includes the engine's ordinary one-tic resume before the menu pauses.
+Loading original pre-patch saves with their original package is the reversible
+rollback path; original saves/packages must be retained. This patch never
+claims old engines can load a new save containing the new match class.
+
+Left/Right or 1-5 selects a card, Up/Down chooses a legal action, Enter/A
+confirms it. Esc/B returns from rules/rows or opens abandonment confirmation.
+Save/Load opens the normal native menus. A finished result has an explicit
+return-to-mansion action. Leaving MAP01, death or losing the valid opponent
+invalidates an active session as defeat and releases its presentation; there
+are no seat, world-freeze flags, resources or stakes to restore. Existing
+furniture, dining/rest and Tarot ownership/powers are not modified.
 
 ## Tarot: collection and capture of El Loco (4.33.0t)
 
