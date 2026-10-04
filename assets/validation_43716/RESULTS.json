@@ -177,11 +177,13 @@
     "The existing twenty-entry feed can reach the resource area when every entry wraps; native console notices also overlap its first entries. This patch reserves compass space and does not redesign those pre-existing message interactions.",
     "A requested 2560x1080 window was clamped by the desktop to 1924x1061. The separate 1512x648 capture verifies an actual 21:9 viewport.",
     "Early capture commands ran subsequent state changes before rendering; accepted captures were repeated with waits after screenshots. Initial small Sun raster and compass south-label overlap were corrected.",
-    "The running author game and its package were preserved; run_dev.bat rebuilds the current checkout after restart."
+    "The running author game and its package were preserved; run_dev.bat rebuilds the current checkout after restart.",
+    "Compass appearance and glyph alignment were refined after author feedback; see compass_refinement/RESULTS.json for superseding captures and final package hash."
   ],
   "pending_author_tests": [
     "CA-43716-UI-01",
     "CA-43716-UI-02",
     "CA-43716-UI-03"
-  ]
+  ],
+  "compass_refinement": "compass_refinement/RESULTS.json"
 }

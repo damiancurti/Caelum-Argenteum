@@ -8,6 +8,8 @@ generation tool. The Sun face was generated with the same tool; its exact
 geometry. No Doom image was used. Immutable inputs, prompts, hashes and
 deterministic conversion are preserved in assets/ui_compass_cursors and
 assets/generators/generate_ui_compass_cursors.py in the source repository.
+The author's compass refinement adds original mirrored silver laurel paths
+and reuses that same Sun as its subdued background; it adds no external art.
 The generated images remain governed by the project's LICENSE.md; this notice
 does not grant rights to development IWADs or third-party runtime resources.
 

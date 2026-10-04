@@ -12,6 +12,8 @@ top-left compass driven by the rendered view, with eight directions and a
 numeric bearing (north = +Y). Spanish uses O; English uses W. The menu selector
 is a 32-ray Sun of May; the mouse pointer adapts the logo's silver C moon.
 HUD scale controls apply; notifications reserve the compass's left strip.
+The author's refinement centers the visible cardinal letters and adds silver
+laurels around a dark-metal dial with a subdued Sun of May behind the needle.
 Evidence: [4.37.16](assets/validation_43716/RESULTS.json). Author acceptance,
 including physical pointer click/drag, remains pending.
 

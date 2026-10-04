@@ -5,7 +5,9 @@ Documentation version: **4.37.16** — 2026-10-04.
 ## 4.37.16 - Navigation HUD and project menu identity (#87)
 
 Implemented the view-driven top-left compass, bilingual cardinal/intermediate
-directions, Sun of May selector and logo-derived C moon pointer. Presentation
+directions, Sun of May selector and logo-derived C moon pointer. The author's
+compass correction centers the visible letters and adds silver laurels with
+a subdued Sun of May background. Presentation
 only: maps, balance, controls and persistent schemas are unchanged. North +Y
 matches both the cardinal maze and fortified city's exits. Static/native
 evidence is in assets/validation_43716; CA-43716-UI-01/02/03 remain pending.

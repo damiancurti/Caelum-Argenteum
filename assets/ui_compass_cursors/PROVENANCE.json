@@ -39,15 +39,21 @@
   "files": {
     "assets/ui_compass_cursors/source_moon.png": "035a828d3987c174451ab24b43b39c26df75cb0faa61bbf7c125e09a23770fbd",
     "assets/ui_compass_cursors/source_sun_face.png": "ba54590d7967000464c65f7ac0f2bdc07b6d828ed7de2a15041e4cb09eb9c362",
-    "assets/ui_compass_cursors/compass_rose.svg": "794566e756851ef026cf37fedca1538fbd1d632932cc9f74ef2b3c363b50785e",
+    "assets/ui_compass_cursors/compass_rose.svg": "f47a34fa28d413cfa351b9b1c360d95a3b409820979db87bef3abf56b473eead",
     "assets/ui_compass_cursors/moon.svg": "cc7772851e3856a3d3249bb7ccf8f8991d439d5258cd7730fb9c72cf9e943cf3",
     "assets/ui_compass_cursors/sun.svg": "2b2a4ab1a03a6836a99714ba65636a3930da5f6d80f922929db55a2df06ee089",
-    "assets/ui_compass_cursors/SPEC.json": "488f4264ab049d6262e0ac4a84f19c8002f84e71c135b6ecdacb570c97f92c92",
+    "assets/ui_compass_cursors/SPEC.json": "3678d9648579a08507880b354953109f3def1263ab05f44dffff8303751a9c8e",
     "src/graphics/M_SKULL1.png": "ca8ceaf14882f46918533bb2a5773824a8e09f617bc4c4876f4aaf6ac0f19963",
     "src/graphics/M_SKULL2.png": "ca8ceaf14882f46918533bb2a5773824a8e09f617bc4c4876f4aaf6ac0f19963",
     "src/graphics/cursor.png": "b9444029347dfa0e09ff316de345c388b6f16e6462fc02421f1142ea27374139",
     "src/graphics/caelum/ui/ca_sun_selector.png": "9fc5ad9889b4a85f712df0a8e315044e99135eb103839bb91e4b71402d4d48ca",
-    "src/graphics/caelum/ui/ca_compass_rose.png": "0e5f612f151340abadde0cd71c2b28e40641904ca1a816a977711c95882041b0"
+    "src/graphics/caelum/ui/ca_compass_rose.png": "a5a95abeba0bedd040db1f2b734fdd5136794d37a1e21390ef6c125828b9c7c2"
   },
-  "prompt_record": "Generation briefs preserved from the session; wording summarized."
+  "prompt_record": "Generation briefs preserved from the session; wording summarized.",
+  "compass_refinement": {
+    "date": "2026-10-04",
+    "author_request": "Center the compass against its cardinal letters; add silver laurels and a Sun of May background.",
+    "method": "Deterministic source SVG edit: symmetric silver laurel paths, beveled dark-metal rim, reused project Sun at opacity 0.42. No new AI image generation.",
+    "font_alignment": "Measured native CaelumMono kerning and source glyph ink bounds; compensate final kerning and center visible cardinal ink."
+  }
 }

@@ -58,6 +58,8 @@ Prerequisites: MAP02 or MAP06; ordinary HUD visible.
 2. Strafe and walk backward while holding the view. Heading stays unchanged.
 3. In ES/EN expect O/SO/NO versus W/SW/NW. Try normal/fullscreen and HUD
    scales with notifications. Expect no compass/message/resource overlap.
+4. Inspect the refined art: the dial/needle align with the centers of N/S
+   and E/O (W); silver laurels frame a subdued Sun of May behind the needle.
 
 CA-43716-UI-02 - Sun of May menu selector
 Origin: 4.37.16 / issue #87. Author acceptance pending.

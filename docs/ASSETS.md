@@ -9,7 +9,16 @@ Sources, exact generator inputs and generation prompts are preserved under
 The built-in image-generation tool adapted the project's TITLEPIC moon and
 generated a Sun face. The final Sun uses only that face: deterministic SVG
 geometry supplies exactly 32 alternating rays (16 straight, 16 wavy). The
-compass rose is original vector geometry. No Doom imagery was copied.
+compass rose uses original vector geometry and reuses the project's Sun.
+No Doom imagery was copied.
+
+Author refinement, 2026-10-04: silver laurel branches surround a beveled
+dark-metal dial; the same 32-ray Sun sits behind the needle at 42% opacity.
+The laurels are mirrored SVG paths with silver relief gradients. Editing the
+existing vector generator introduces no new image-generation input. SPEC.json
+also records measured CaelumMono glyph bounds used to center the letters.
+Updated captures: assets/validation_43716/compass_refinement. Previous captures
+remain as evidence of the original delivery, superseded for compass appearance.
 
 Run assets/generators/generate_ui_compass_cursors.py with resvg-py==0.5.0 to
 reproduce the SVG/PNG outputs. The pinned rasterizer is an optional editing

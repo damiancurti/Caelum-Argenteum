@@ -1,0 +1,8 @@
+MAP02 - Alcantarillas — el laberinto
+CA87 FONT code=78 width=9 advance=0 height=14 kern=-4 glyph=14 top=0.00 size=9.00,14.00 offset=0.00,0.00
+CA87 FONT code=69 width=9 advance=0 height=14 kern=-4 glyph=14 top=0.00 size=9.00,14.00 offset=0.00,0.00
+CA87 FONT code=83 width=9 advance=0 height=14 kern=-4 glyph=14 top=0.00 size=9.00,14.00 offset=0.00,0.00
+CA87 FONT code=87 width=9 advance=0 height=14 kern=-4 glyph=14 top=0.00 size=9.00,14.00 offset=0.00,0.00
+CA87 FONT code=79 width=9 advance=0 height=14 kern=-4 glyph=14 top=0.00 size=9.00,14.00 offset=0.00,0.00
+CA87 FONT code=48 width=9 advance=0 height=14 kern=-4 glyph=14 top=0.00 size=9.00,14.00 offset=0.00,0.00
+CA87 FONT string N=5 N000=24

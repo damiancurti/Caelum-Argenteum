@@ -9,6 +9,9 @@ turning. Strafing and walking backward do not change its heading. World north
 is +Y, east +X; this matches MAP02's cardinal blocks and MAP06's city exits.
 The needle and 000-359 bearing update continuously; the nearest of eight
 directions appears below it. West is O/SO/NO in Spanish and W/SW/NW in English.
+The cardinal letters are centered by visible glyph bounds, compensating for
+CaelumMono's trailing kerning and padding. The dial shares their center and
+uses silver laurels, a dark-metal rim and a subdued Sun of May background.
 
 The compass uses the native hud_scale and hud_scalefactor controls, with
 resolution-based bounds. It hides in menus, dialogue, crafting, Journal and

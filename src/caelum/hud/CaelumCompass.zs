@@ -5,12 +5,16 @@ class CaelumCompassLayout : Object
     const CANVAS_WIDTH = 1280.0;
     const CANVAS_HEIGHT = 720.0;
     const MARGIN = 8.0;
-    const CENTER_X = 44.0;
-    const CENTER_Y = 44.0;
-    const ROSE_SIZE = 52.0;
+    const CENTER_X = 48.0;
+    const CENTER_Y = 48.0;
+    const ROSE_SIZE = 60.0;
     const NEEDLE_LENGTH = 21.0;
-    const LABEL_RADIUS = 37.0;
-    const HEADING_Y = 108.0;
+    const LABEL_RADIUS = 41.0;
+    const HEADING_Y = 116.0;
+    // Centro visible de las letras cardinales de CaelumMono respecto a su
+    // celda de 9x14: (5.5, 6.5). Medicion conservada en SPEC.json.
+    const FONT_INK_OFFSET_X = 1.0;
+    const FONT_INK_OFFSET_Y = -0.5;
     const NOTIFY_LEFT = 112.0;
     const NOTIFY_RIGHT = 580.0;
     const NATIVE_NOTIFY_LINE = 18.0;
@@ -61,8 +65,11 @@ class CaelumCompass : Object ui
     static void Text(Font font, double x, double y, String value, double scale, int color)
     {
         scale *= 2.0;
-        Screen.DrawText(font, color, x - font.StringWidth(value) * scale * 0.5,
-            y - font.GetHeight() * scale * 0.5, value,
+        // StringWidth incluye el kerning final, que no es parte del dibujo.
+        double width = font.StringWidth(value) - font.GetDefaultKerning();
+        Screen.DrawText(font, color,
+            x - (width * 0.5 + CaelumCompassLayout.FONT_INK_OFFSET_X) * scale,
+            y - (font.GetHeight() * 0.5 + CaelumCompassLayout.FONT_INK_OFFSET_Y) * scale, value,
             DTA_SCALEX, scale, DTA_SCALEY, scale, DTA_SHADOW, true);
     }
     static void Draw(RenderEvent event, CaelumPlayer user, Font font)

@@ -68,11 +68,35 @@ width="{width * factor:.6f}" height="{height * factor:.6f}" clip-path="url(#face
     moon_svg = f'<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="{box}"><defs><mask id="clean"><rect width="1280" height="1280" fill="white"/><circle cx="784" cy="630" r="200" fill="black"/></mask></defs><image mask="url(#clean)" href="{image_uri("source_moon.png")}" width="1280" height="1280"/></svg>'
     (SOURCE / "moon.svg").write_text(moon_svg + "\n", encoding="utf-8", newline="\n")
     (OUTPUT / "cursor.png").write_bytes(png_offset(render(moon_svg, moon["size"]), *moon["hotspot"]))
-    rose = f'''<svg xmlns="http://www.w3.org/2000/svg" width="128" height="128">
-<circle cx="64" cy="64" r="61" fill="{palette['panel']}" fill-opacity=".84" stroke="{palette['silver']}" stroke-width="2"/>
-<circle cx="64" cy="64" r="55" fill="none" stroke="{palette['gold']}" stroke-width="1"/>
-<path d="M64 13V25 M64 103V115 M13 64H25 M103 64H115 M28 28L35 35 M93 93L100 100 M28 100L35 93 M93 35L100 28" stroke="{palette['silver']}" stroke-width="2"/>
-<circle cx="64" cy="64" r="4" fill="{palette['gold']}"/></svg>'''
+    compass = spec["compass"]
+    sun_uri = "data:image/png;base64," + base64.b64encode(high_resolution.read_bytes()).decode("ascii")
+    leaves = []
+    for x, y, angle in [(50, 111, -35), (37, 102, -25), (27, 90, -15),
+                        (20, 76, 0), (19, 62, 10), (21, 48, 20), (26, 34, 30)]:
+        leaves.append(f'<g transform="translate({x} {y}) rotate({angle})">'
+                      '<path d="M0 0 C-8 -1 -13 -9 -6 -18 C1 -13 3 -6 0 0Z" '
+                      'fill="url(#silver)" stroke="#172127" stroke-width=".8"/>'
+                      '<path d="M0 0L-6 -17" fill="none" stroke="#e2e6e7" stroke-opacity=".65" stroke-width=".8"/>'
+                      '</g>')
+    rose = f'''<svg xmlns="http://www.w3.org/2000/svg" width="128" height="128" viewBox="0 0 128 128">
+<defs>
+<linearGradient id="silver" x1="0" y1="0" x2="1" y2="1">
+<stop stop-color="{compass['silver_shadow']}"/><stop offset=".28" stop-color="{compass['silver_highlight']}"/>
+<stop offset=".48" stop-color="{compass['silver_mid']}"/><stop offset=".74" stop-color="{compass['silver_shadow']}"/>
+<stop offset="1" stop-color="{compass['silver_highlight']}"/></linearGradient>
+<radialGradient id="dial"><stop stop-color="#35302a"/><stop offset="1" stop-color="{compass['metal_dark']}"/></radialGradient>
+<g id="laurel"><path d="M61 122 C17 108 8 59 30 17" fill="none" stroke="{compass['silver_shadow']}" stroke-width="3"/>
+<path d="M61 121 C18 107 9 59 30 17" fill="none" stroke="{compass['silver_mid']}" stroke-width="1.2"/>
+{''.join(leaves)}</g>
+</defs>
+<circle cx="64" cy="64" r="45" fill="#090e12" fill-opacity=".9"/>
+<circle cx="64" cy="64" r="43" fill="url(#dial)" stroke="url(#silver)" stroke-width="3"/>
+<circle cx="64" cy="64" r="40" fill="none" stroke="{palette['gold']}" stroke-opacity=".65" stroke-width="1"/>
+<image href="{sun_uri}" x="24" y="24" width="80" height="80" opacity="{compass['sun_opacity']}"/>
+<path d="M64 25V30 M64 98V103 M25 64H30 M98 64H103 M36 36L40 40 M88 88L92 92 M36 92L40 88 M88 40L92 36" stroke="{compass['silver_highlight']}" stroke-opacity=".65" stroke-width="1.4"/>
+<use href="#laurel"/><use href="#laurel" transform="translate(128 0) scale(-1 1)"/>
+<path d="M60 116L64 112L68 116L64 124Z" fill="url(#silver)" stroke="{compass['silver_shadow']}" stroke-width="1"/>
+</svg>'''
     (SOURCE / "compass_rose.svg").write_text(rose + "\n", encoding="utf-8", newline="\n")
     target = OUTPUT / "caelum/ui/ca_compass_rose.png"
     target.parent.mkdir(parents=True, exist_ok=True)

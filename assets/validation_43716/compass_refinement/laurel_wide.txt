@@ -1,0 +1,4 @@
+MAP02 - Sewers — the labyrinth
+CA87 PASS camera=-180.00 sector=6 direction=W scale=0.90 native=1.00
+Captured issue87_laurel_wide.png
+Captured issue87_laurel_small.png

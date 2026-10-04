@@ -4,6 +4,26 @@ Status: integrated engineering register (issue #22, patch 4.36.1b).
 Prepared: 2026-09-23. Inherits the project's release after integration.
 Inspected baseline: `1dc390576fa330d37ff543526fc7e69a397fc28f` (PR #7).
 
+## CA-KP-035 - Center visible font ink rather than trailing advance
+
+Status/evidence: CODE-VERIFIED / ENGINE-VERIFIED.
+First recorded / last checked: 2026-10-04. Issue #87 / 4.37.16 follow-up.
+Baseline: 3a06a55a plus the compass refinement; GZDoom 4.14.2 Windows/Vulkan.
+
+CaelumMono's native StringWidth("N") is 5, whereas GetCharWidth is 9:
+StringWidth includes the final -4 kerning. Its 18x28 source PNG also has
+asymmetric transparent padding. At Scale 2, the visible N/E/S/O/W ink center
+is (5.5,6.5), versus cell center (4.5,7). Centering only StringWidth therefore
+visibly shifts the letters from the compass. Subtract the final kerning and
+apply the measured ink offset locally; do not change the shared font to fix
+one widget. These offsets describe the existing cardinal glyphs, not arbitrary
+fonts or lowercase text. If the font changes, remeasure its alpha bounds.
+
+Regression: compare N/S against the needle's vertical axis and E/O/W against
+its horizontal axis in ES/EN at automatic and enlarged HUD scales. Native
+captures and measured font values: assets/validation_43716/compass_refinement.
+Author visual acceptance remains pending under CA-43716-UI-01.
+
 ## CA-KP-034 - Native Windows cursor dimensions and hotspot
 
 Status/evidence: CODE-VERIFIED; texture metadata ENGINE-VERIFIED.
