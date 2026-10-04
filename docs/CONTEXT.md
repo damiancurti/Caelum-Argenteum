@@ -1,14 +1,15 @@
 # CONTEXT.md — Ultra-condensed summary of Caelum Argenteum
 
-Documentation version: **4.37.10** — 2026-10-04.
+Documentation version: **4.37.11** — 2026-10-04.
 
-**#78 / 4.37.10:** paid prisoners reveal siege timing/state, place and both
-objectives. Dialogue/Journal share bilingual text and calendar records; future
-date/hour remains PENDING. Rewards, Selene queues and save/page schemas persist. Concealed
-Selene service/anti-demon motive and implanted souls are canon, not an immediate
-confession; amnesia remains. Zupay retreats in Chapter I; later death is Chapter II.
-Evidence: assets/validation_43710; both author checks passed 2026-10-04; merge/closure
-authorized. Follow-ups: #79 (captain), #86 (performance).
+**#79 / 4.37.11:** first/repeat guard recognition records one Journal clue;
+amnesia persists. Quest revision 3 initializes reserved slot 9; old page indexes
+remain. Evidence: assets/validation_43711; both author checks passed 2026-10-04;
+merge/closure authorized. No class or reward changes. Unspecified biography pending.
+
+**#78 accepted 2026-10-04:** paid prisoners share siege/calendar guidance;
+future timing PENDING. Selene service/implanted souls stay concealed. Zupay
+retreats in Chapter I, dies later in II. Evidence: assets/validation_43710.
 
 **#77 accepted 2026-10-03:** expanded southern MAP06, 6,000 Mandingas plus
 commander, 600 soldiers; city/route and combat checks passed. Geometry/forces,
@@ -40,9 +41,9 @@ the existing divisions and weaken the resistance. Both threats come from the
 plan of an infernal prince who, after repeatedly failing to conquer the Earth
 by force, decided to corrupt the Moon and break the Earth from within.
 
-The protagonist does not begin as a hero or a declared member of a faction: he
-is a wanderer trying to escape the conflict, dies in circumstances he does not
-remember, and wakes in an impossible mansion without knowing he is in Limbo.
+The protagonist is captain of fortified Barracas al Sud's guard. He wakes in a
+mansion unaware it is Limbo. After returning, guards recognize him, but he cannot
+remember his past. Captaincy changes neither customization, class nor faction.
 The main species are allegorical of nineteenth-century Argentina: the Beast Men
 represent the native peoples, the Caelith European colonialism, the duendes
 the gauchos and rural culture, and the humans the urban porteño society.

@@ -4,8 +4,24 @@ An independent dark fantasy FPS-RPG inspired by nineteenth-century Argentina.
 Author and game designer: **Damian Curti**. Development target: **GZDoom 4.14.2**
 on Windows 11. The final game is intended to be independent of Doom assets.
 
-**Current release: 4.37.10.** Obtain and update the complete repository, validate
+**Current release: 4.37.11.** Obtain and update the complete repository, validate
 it, then rebuild with `run_dev.bat` as described below.
+
+Issue [#79](https://github.com/damiancurti/Caelum-Argenteum/issues/79) establishes
+the protagonist as the amnesiac captain of fortified Barracas al Sud's guard.
+Local guards recognize him in first/repeat conversations; a persistent Journal
+clue records their testimony without restoring his memories or changing class,
+factions, stats or rewards. Prisoner rescues are not required. See
+[test evidence](assets/validation_43711/RESULTS.json). On 2026-10-04 the author
+confirmed both checks passed and authorized
+[PR #90](https://github.com/damiancurti/Caelum-Argenteum/pull/90) merge / #79 closure.
+[HISTORY](docs/HISTORY.md) records acceptance; [pending_test.txt](pending_test.txt)
+is empty. The release remains 4.37.11.
+
+Normal validation/build pass, with 149 current-version native assertions and
+fourteen reviewed captures. Save migration, open dialogue reload, hub return and
+the earlier prisoner briefing remain compatible. The full-city presentation test
+uses a controlled victory state; it does not resolve performance issue #86.
 
 Issue [#78](https://github.com/damiancurti/Caelum-Argenteum/issues/78) adds siege
 intelligence to each rescued prisoner's **successful port payment**. Dialogue and
@@ -16,8 +32,7 @@ Rewards, Selene interventions, page indexes, maps and save schemas remain intact
 See [focused native evidence](assets/validation_43710/RESULTS.json). On 2026-10-04
 the author confirmed both narrative checks passed and authorized
 [PR #88](https://github.com/damiancurti/Caelum-Argenteum/pull/88) merge / #78 closure.
-[HISTORY](docs/HISTORY.md) records acceptance; [pending_test.txt](pending_test.txt)
-is empty. The release remains 4.37.10.
+[HISTORY](docs/HISTORY.md) records the accepted 4.37.10 checks.
 
 Issue [#77](https://github.com/damiancurti/Caelum-Argenteum/issues/77) expands
 **Barracas al Sud (MAP06)** to **960 × 960 m**: 160 houses, 64 shops, 24 factories

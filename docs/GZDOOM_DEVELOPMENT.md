@@ -217,6 +217,13 @@ calendar information for dialogue and Journal without writing state in UI scope.
 Its native checks include an old save made with the paid conversation open and
 an active conversation changing to completed text; see validation_43710.
 
+For a narrative clue added to the fixed-capacity quest record, reserve a new ID
+and migrate only that slot once; do not infer dialogue knowledge from map visits.
+When increasing QUEST_DEFINED_COUNT, audit category ranges such as IsRescue rather
+than treating every later ID as a prisoner. #79's native old-save, open-page and
+hub tests cover this extension and its derived Journal arrays; evidence is in
+assets/validation_43711. Keep conversation pages appended to preserve older indexes.
+
 ## ZScript and engine investigation discipline
 
 - Prefer the project's working patterns and the target engine's supported API. Similarity to C++, C# or another scripting language is not evidence that a method, field or overload exists in ZScript.

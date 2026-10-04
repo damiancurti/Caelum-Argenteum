@@ -19,3 +19,7 @@
 # Preserve #78 native evidence and validator records across Windows checkouts.
 /assets/validation_43710/*.json text eol=lf
 /assets/validation_43710/*.txt text eol=lf whitespace=-blank-at-eol
+
+# Preserve #79 evidence on Windows checkouts.
+/assets/validation_43711/*.json text eol=lf
+/assets/validation_43711/*.txt text eol=lf whitespace=-blank-at-eol

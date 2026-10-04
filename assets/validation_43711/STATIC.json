@@ -1,0 +1,43 @@
+{
+  "baseline_commit": "7e85c088390395323c194469e148ea338cc1334d",
+  "checks": [
+    {
+      "check": "Entire previous CAPALOMO text remains a prefix: existing global page indexes and action branches do not shift.",
+      "passed": true
+    },
+    {
+      "check": "New conversation IDs do not collide with baseline registrations.",
+      "passed": true
+    },
+    {
+      "check": "Only four presentation pages appended; none can grant an inventory action.",
+      "passed": true
+    },
+    {
+      "check": "Seven recognition/Journal keys have both English and Spanish definitions.",
+      "passed": true
+    },
+    {
+      "check": "Among existing bilingual keys, only the two conflicting prologue summary definitions change.",
+      "passed": true
+    },
+    {
+      "check": "No map geometry or art/audio changes; saved-map checksums remain intact.",
+      "passed": true
+    },
+    {
+      "check": "Recognition uses previously reserved slot 9 within the existing 32-slot persistent capacity.",
+      "passed": true
+    },
+    {
+      "check": "Conflicting active wanderer/intact-memory premises removed; original paragraphs retained in HISTORY.",
+      "passed": true
+    },
+    {
+      "check": "Quest migration has a new revision while retaining the earlier revision-1 migration boundary.",
+      "passed": true
+    }
+  ],
+  "passed": 9,
+  "failed": 0
+}

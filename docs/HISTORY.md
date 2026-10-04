@@ -1,6 +1,81 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **4.37.10** — 2026-10-04.
+Documentation version: **4.37.11** — 2026-10-04.
+
+## 4.37.11 — Barracas al Sud recognizes its amnesiac captain (#79)
+
+Implemented 2026-10-04 over accepted main `7e85c088`, on focused branch
+`issue-79-guard-captain-amnesia`. The author's 2026-10-02 decision replaces the
+active wanderer background with captain of fortified Barracas al Sud's guard.
+Recognition by others does not restore memories. Customization, factions,
+abilities and class remain unchanged; no biography or captain powers are invented.
+
+Native local guard dialogue supplies first/repeat recognition, an amnesiac
+response and a completed Journal clue when the greeting is successfully opened.
+The clue is personal, persistent and independent of rescues or siege completion.
+It grants no rewards/events and does not complete another quest. The prologue
+retains its Limbo mystery and no longer asserts intact prior-life memories.
+
+QuestStateVersion 3 initializes previously reserved slot 9 once for old saves;
+the existing 32-slot persistent schema remains. The derived Journal capacity
+expands to 10. Four appended USDF pages preserve existing saved page indexes.
+Original saves and baseline package are retained locally for reversible rollback.
+
+Preserved original active premise: "The protagonist does not begin as a hero or
+as a declared member of a faction. He is a wanderer trying to escape the conflict.
+He dies in circumstances he does not remember and wakes up in an impossible
+mansion, without knowing that he is in Limbo."
+
+Preserved original biography: "The protagonist was a wanderer who tried to escape
+the conflict. He was ambushed, killed and thrown into the sewers. He does not
+remember the ambush, his death or the moments immediately preceding. He preserves
+his identity, his place of origin, previous capacities and memories, but his
+memory ends before the fatal event."
+
+Preserved original story paragraph: "The protagonist had also tried to escape
+the war. An ambush ended his life and his body was thrown into the sewers. The
+perpetrators took his belongings. His memory preserved the previous life, but
+not the face of his murderers or the instant of death."
+
+The former prologue Journal asserted "I remember who I am and where I came from,
+but not how I arrived" / "Recuerdo quién soy y de dónde vengo, pero no cómo llegué".
+It now says the protagonist cannot reconstruct his past or how he arrived.
+Previously established ambush/body facts remain writer-facing canon; this patch
+does not invent participants, motives, prior deeds or a family/rank hierarchy.
+
+Validation: nine static compatibility/content checks and 149 current-version
+native assertions passed on Windows 11 / GZDoom 4.14.2 / Vulkan. Fourteen separate
+baseline/rollback assertions pass with the preserved 4.37.10 package. Normal
+validation returns no errors; the 6,142-file PK3 build and its MAP01 engine smoke
+test pass. Eleven focused native runs and fourteen reviewed captures are retained in
+`assets/validation_43711/RESULTS.json`, with tested-source hashes and limits.
+The native tests cover real Use input, both languages, zero/two/four rescues,
+actual payment and queued Selene intervention, a non-Warrior profile, original
+save migration, current open-page reload, MAP06 -> MAP02 -> MAP06 persistence,
+original-save rollback and an older paid-prisoner page resumed unchanged.
+The full-city run uses an existing deployed guard and injects the two original
+victory conditions only after recognition to verify post-siege presentation;
+it is not a full normal battle or a performance claim for #86. Original native
+logs retain environment details; initial fixture-only failures are qualified in
+RESULTS rather than counted as passes. No runtime failure remains unresolved.
+
+Author acceptance, 2026-10-04: Damian Curti explicitly confirmed that all tests
+passed and requested issue #79 closure and PR #90 merge. Both checks originate
+in 4.37.11 / #79:
+
+- **CA-43711-CAPTAIN-01 — passed:** first/repeat guard recognition, amnesiac
+  responses, Journal agreement and narrative review, preserving customization
+  and the existing prisoner payment/briefing sequence.
+- **CA-43711-CAPTAIN-02 — passed:** learned information across old/current saves,
+  open-page reload, hub return and independent rescue/siege progression, without
+  duplicate rewards/events or automatic memory recovery.
+
+No exceptions were reported. The author supplied no additional logs or environment
+details; this confirmation is separate from the controlled native evidence above.
+Both confirmed entries were removed from `pending_test.txt`, which is now empty.
+Acceptance retains version 4.37.11 and the tested runtime. Unspecified biography,
+future siege scheduling and #86 performance remain separate. Merge and closure
+are authorized.
 
 ## 4.37.10 — Prisoner intelligence after the Barracas al Sud reward (#78)
 

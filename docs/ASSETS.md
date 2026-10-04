@@ -1,6 +1,15 @@
 # Caelum Argenteum — Audio and art
 
-Documentation version: **4.37.10** — 2026-10-04.
+Documentation version: **4.37.11** — 2026-10-04.
+
+## 4.37.11 — Existing guard presentation and bilingual recognition (#79)
+
+Guard recognition reuses the existing Barracas al Sud defender appearance,
+localized soldier name and native conversation menu. No art, audio, model,
+map, attribution or generator changes. New dialogue/Journal text lives in
+LANGUAGE; four USDF pages are appended without shifting earlier saved pages.
+Focused native captures and evidence are in `assets/validation_43711`.
+Development IWADs, executable files, saves and isolated fixtures are not distributed.
 
 ## 4.37.10 — Existing prisoner dialogue presentation (#78)
 

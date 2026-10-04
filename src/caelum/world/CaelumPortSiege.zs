@@ -407,6 +407,8 @@ class CaelumPortSiege : CaelumSiegeEncounter
     {
         let soldier=CaelumPortDefender(body);
         let entry=body.SiegeCombatant;
+        // El menú nativo no pausa el mundo; sólo este guardia detiene su ruta.
+        if(soldier!=null && soldier.bInConversation)return true;
         CaelumPortSiege port=soldier!=null ? soldier.Port : entry!=null ? CaelumPortSiege(entry.Encounter) : null;
         if(port==null || !port.RosterSealed)return false;
         if(body.PulseResourceRecovery())return true;

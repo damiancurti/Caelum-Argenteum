@@ -1,6 +1,34 @@
 # Caelum Argenteum — Current systems and rules
 
-Documentation version: **4.37.10** — 2026-10-04.
+Documentation version: **4.37.11** — 2026-10-04.
+
+## 4.37.11 — Guard recognition as a persistent Journal clue (#79)
+
+Use a living local guard in MAP06, within the existing Use reach and line of
+sight. The native USDF menu identifies the protagonist as captain and offers an
+amnesiac response. The first successfully opened greeting records clue 9,
+`QUEST_GUARD_CAPTAIN`, as completed; closing without selecting a response still
+preserves the information already heard. Later guards and repeat visits use the
+repeat greeting/response. No action grants money, reputation, items, membership,
+class changes, command abilities or memories, and no prisoner count gates it.
+The Journal lists "They call me captain" under main/completed records: completion
+means the clue was heard, not that the protagonist recovered his past.
+
+`CaelumGuardCaptainDialogue` delegates the actual conversation to the existing
+faction/dialogue opener with no faction condition. Native fighting, dead,
+sleeping/stunned, out-of-range, blocked-sight, already-speaking and unfinished
+character creation conditions cannot grant the clue. A stale INCOMBAT flag is
+ignored only when there is no living hostile target or the siege is over. The
+guard's route pauses during its own non-pausing conversation and resumes afterward;
+protection, combat stats, cannon ownership and army control are unchanged.
+
+Persistent quest arrays retain their 32-slot schema. QuestStateVersion 3 clears
+only previously unused slot 9 for revision-2 saves, once; it never guesses knowledge
+from port visits, rewards or siege completion. Older revision-1 migration remains
+intact. The Journal's derived arrays expand from 9 to 10 entries, and rescue
+classification remains explicitly bounded to four prisoners. Dialogue IDs 43631/32
+and their four pages are appended to CAPALOMO, preserving all existing page indexes.
+Original saves/package remain the rollback path; no save rewriting is required.
 
 ## 4.37.10 — Prisoner siege intelligence after payment (#78)
 

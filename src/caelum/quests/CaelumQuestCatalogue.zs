@@ -1,9 +1,11 @@
 // #35: catálogo de presentación. No escribe progreso ni entrega recompensas.
 class CaelumQuestCatalogue : Object
 {
-    static bool IsMain(int id) { return id == CaelumConstants.QUEST_MAIN_M00_THE_FOOL; }
+    static bool IsMain(int id)
+    { return id == CaelumConstants.QUEST_MAIN_M00_THE_FOOL || id == CaelumConstants.QUEST_GUARD_CAPTAIN; }
     static bool IsRescue(int id)
-    { return id >= CaelumConstants.QUEST_RESCUE_FIRST && id < CaelumConstants.QUEST_DEFINED_COUNT; }
+    { return id >= CaelumConstants.QUEST_RESCUE_FIRST
+        && id < CaelumConstants.QUEST_RESCUE_FIRST + CaelumConstants.PRISONER_COUNT; }
 
     static String TitleKey(int id)
     {
@@ -18,6 +20,7 @@ class CaelumQuestCatalogue : Object
             case 6: return "CA_Q_RESCUE_1";
             case 7: return "CA_Q_RESCUE_2";
             case 8: return "CA_Q_RESCUE_3";
+            case CaelumConstants.QUEST_GUARD_CAPTAIN: return "CA_Q_GUARD_CAPTAIN_TITLE";
         }
         return "CA_JOURNAL_QUESTS";
     }
@@ -39,7 +42,8 @@ class CaelumQuestCatalogue : Object
     static play int State(CaelumPersistentCharacterState record, int id)
     {
         if (record == null || id < 0 || id >= CaelumConstants.QUEST_DEFINED_COUNT) return 0;
-        if (id < CaelumConstants.QUEST_SEWERS) return record.QuestState[id];
+        if (id < CaelumConstants.QUEST_SEWERS || id == CaelumConstants.QUEST_GUARD_CAPTAIN)
+            return record.QuestState[id];
         if (id == CaelumConstants.QUEST_SEWERS)
         {
             // La carta es evidencia admitida por #33 para guardados antiguos.

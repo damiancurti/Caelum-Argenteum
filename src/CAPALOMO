@@ -3796,3 +3796,61 @@ page
         choice { text = "$CA_AF_BACK"; nextpage = "loadout_preview_48"; closedialog = false; }
     }
 }
+
+// #79: páginas añadidas al final; conservan todos los índices anteriores.
+conversation
+{
+    id = 43631;
+    class = "CaelumPalomoConversationMenu";
+    page
+    {
+        pagename = "guard_captain_first";
+        userstring = "guard_captain_first";
+        name = "$CA_PORT_SOLDIER";
+        dialog = "$CA_GUARD_CAPTAIN_FIRST";
+        goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+        choice
+        {
+            text = "$CA_GUARD_CAPTAIN_FIRST_RESPONSE";
+            nextpage = "guard_captain_first_answer";
+            closedialog = false;
+        }
+    }
+    page
+    {
+        pagename = "guard_captain_first_answer";
+        userstring = "guard_captain_first_answer";
+        name = "$CA_PORT_SOLDIER";
+        dialog = "$CA_GUARD_CAPTAIN_ANSWER";
+        goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+    }
+}
+
+// #79: páginas añadidas al final; conservan todos los índices anteriores.
+conversation
+{
+    id = 43632;
+    class = "CaelumPalomoConversationMenu";
+    page
+    {
+        pagename = "guard_captain_repeat";
+        userstring = "guard_captain_repeat";
+        name = "$CA_PORT_SOLDIER";
+        dialog = "$CA_GUARD_CAPTAIN_REPEAT";
+        goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+        choice
+        {
+            text = "$CA_GUARD_CAPTAIN_REPEAT_RESPONSE";
+            nextpage = "guard_captain_repeat_answer";
+            closedialog = false;
+        }
+    }
+    page
+    {
+        pagename = "guard_captain_repeat_answer";
+        userstring = "guard_captain_repeat_answer";
+        name = "$CA_PORT_SOLDIER";
+        dialog = "$CA_GUARD_CAPTAIN_ANSWER";
+        goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+    }
+}

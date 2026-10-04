@@ -382,6 +382,8 @@ class CaelumJournalOverlay : EventHandler
 
     ui String GetQuestDetailText(CaelumPlayer localPlayer, int questId)
     {
+        if (questId == CaelumConstants.QUEST_GUARD_CAPTAIN)
+            return StringTable.Localize("CA_Q_GUARD_CAPTAIN_DETAIL", false);
         if (questId == CaelumConstants.QUEST_SEWERS)
             return StringTable.Localize(localPlayer.JournalQuestState[questId] == CaelumConstants.QUEST_STATE_COMPLETED
                 ? "CA_Q_SEWER_DONE" : "CA_Q_SEWER_ACTIVE", false);

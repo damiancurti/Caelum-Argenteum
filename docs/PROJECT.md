@@ -1,6 +1,31 @@
 # Caelum Argenteum — Project, status and roadmap
 
-Documentation version: **4.37.10** — 2026-10-04.
+Documentation version: **4.37.11** — 2026-10-04.
+
+## 4.37.11 — The amnesiac captain of Barracas al Sud (#79)
+
+The protagonist is the captain of the guard of fortified Barracas al Sud. Local
+guards recognize him after his return from Limbo, but his past remains missing.
+This replaces the active unaffiliated-wanderer premise; HISTORY preserves its
+original wording. The prologue retains the Unknown Voice and Limbo mystery.
+Chosen character profile, class, attributes, abilities, equipment and factions
+remain unchanged. The captaincy grants no gameplay authority or reward.
+
+Local living guards use native dialogue to recognize him, with an amnesiac
+response and a repeat branch. Opening recognition records one completed main
+Journal clue; it does not restore memories or complete any other quest. Neither
+recognition nor its repeat branch depends on prisoner rescues or siege victory.
+Active fighters retain native conversation restrictions; calm guards and surviving
+guards after the assault provide the interaction. Existing combat resumes afterward.
+
+Quest revision 3 initializes only the previously reserved clue slot for old
+version-2 saves, without inferring that earlier port visits revealed it. Existing
+conversation pages retain their indexes; new pages are appended. Native validation
+and author acceptance are reported in HISTORY and `assets/validation_43711`.
+The author confirmed both CA-43711-CAPTAIN checks passed on 2026-10-04 without
+reported exceptions and authorized PR #90 merge / #79 closure. HISTORY records
+acceptance; `pending_test.txt` is empty. #86 retains performance work; future
+siege scheduling and unspecified biography remain pending author decisions.
 
 ## 4.37.10 — Post-payment prisoner siege intelligence (#78)
 
@@ -20,8 +45,8 @@ Evidence: `assets/validation_43710/RESULTS.json`, native GZDoom 4.14.2 Windows
 dialogue/queue, payment, calendar, save and hub checks. The original USDF page
 indexes and persistent schemas are preserved. On 2026-10-04 the author confirmed
 both CA-43710-BRIEFING checks passed without reported exceptions and authorized
-PR #88 merge / #78 closure. HISTORY records the results; no author checks remain
-in `pending_test.txt`. This confirmation is separate from native test evidence.
+PR #88 merge / #78 closure. HISTORY records the results; no #78 author checks
+remain. This confirmation is separate from native test evidence.
 
 ## 4.37.9 — Expanded southern Barracas al Sud (#77)
 

@@ -1512,7 +1512,7 @@ CA_QUEST_STATUS_COMPLETED = "Completed";
 CA_QUEST_STATUS_FAILED = "Failed";
 CA_MAP01_NAME = "The Mansion";
 CA_Q_M01_TITLE = "Where the Lost Awaken";
-CA_Q_M01_SUMMARY = "I awoke on a property I do not recognize. I remember who I am and where I came from, but not how I arrived. A voice no one else seems to hear insists that I find a way out.";
+CA_Q_M01_SUMMARY = "I awoke on a property I do not recognize. I cannot piece together my past or remember how I arrived. A voice no one else seems to hear insists that I find a way out.";
 CA_Q_M01_STATE_INITIALIZE = "Awakening";
 CA_Q_M01_STATE_AWAKEN = "Awakening";
 CA_Q_M01_STATE_MEET_PALOMO = "Find the person nearby";
@@ -1582,7 +1582,7 @@ CA_QUEST_STATUS_COMPLETED = "Completada";
 CA_QUEST_STATUS_FAILED = "Fallida";
 CA_MAP01_NAME = "La mansión";
 CA_Q_M01_TITLE = "Donde despiertan los perdidos";
-CA_Q_M01_SUMMARY = "Desperté en una propiedad que no reconozco. Recuerdo quién soy y de dónde vengo, pero no cómo llegué. Una voz que nadie más parece oír insiste en que busque una salida.";
+CA_Q_M01_SUMMARY = "Desperté en una propiedad que no reconozco. No consigo reconstruir mi pasado ni recordar cómo llegué. Una voz que nadie más parece oír insiste en que busque una salida.";
 CA_Q_M01_STATE_INITIALIZE = "Despertar";
 CA_Q_M01_STATE_AWAKEN = "Despertar";
 CA_Q_M01_STATE_MEET_PALOMO = "Encontrar a quien está cerca";
@@ -4423,3 +4423,21 @@ CA_PRISONER_SIEGE_COMPLETE = "El asalto a %PLACE% terminó. El comandante fue de
 CA_PRISONER_SIEGE_STARTED_AT = "Inicio registrado:";
 CA_PRISONER_SIEGE_ENDED_AT = "Fin registrado:";
 CA_PRISONER_SIEGE_AWAITING = "Fecha del asalto sin confirmar";
+
+[enu default]
+CA_GUARD_CAPTAIN_FIRST = "Captain! You're back in Barracas al Sud. We recognize you: you're the captain of our guard.";
+CA_GUARD_CAPTAIN_FIRST_RESPONSE = "Your captain? I don't remember that life.";
+CA_GUARD_CAPTAIN_REPEAT = "Captain. We still recognize you as the captain of Barracas al Sud's guard.";
+CA_GUARD_CAPTAIN_REPEAT_RESPONSE = "I've heard that, but I still don't remember my past.";
+CA_GUARD_CAPTAIN_ANSWER = "You don't have to pretend to remember. We know you as our captain.";
+CA_Q_GUARD_CAPTAIN_TITLE = "They call me captain";
+CA_Q_GUARD_CAPTAIN_DETAIL = "The guards of fortified Barracas al Sud recognize me as their captain. I do not remember that life. Their recognition gives me a clue to my past, but my memories have not returned.";
+
+[es]
+CA_GUARD_CAPTAIN_FIRST = "¡Capitán! Volviste a Barracas al Sud. Te reconocemos: sos el capitán de nuestra guardia.";
+CA_GUARD_CAPTAIN_FIRST_RESPONSE = "¿Su capitán? No recuerdo esa vida.";
+CA_GUARD_CAPTAIN_REPEAT = "Capitán. Te seguimos reconociendo como el capitán de la guardia de Barracas al Sud.";
+CA_GUARD_CAPTAIN_REPEAT_RESPONSE = "Ya me lo dijeron, pero sigo sin recordar mi pasado.";
+CA_GUARD_CAPTAIN_ANSWER = "No tenés que fingir que recordás. Te conocemos como nuestro capitán.";
+CA_Q_GUARD_CAPTAIN_TITLE = "Me llaman capitán";
+CA_Q_GUARD_CAPTAIN_DETAIL = "Los guardias de la ciudad fortificada de Barracas al Sud me reconocen como su capitán. No recuerdo esa vida. Su reconocimiento me da una pista sobre mi pasado, pero mis recuerdos no han vuelto.";
