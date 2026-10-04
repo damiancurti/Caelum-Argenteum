@@ -1,6 +1,13 @@
 # TASKS.md — Active tasks
 
-Documentation version: **4.37.13** — 2026-10-04.
+Documentation version: **4.37.13a** — 2026-10-04.
+
+## Issue #93 - Crafting time help (4.37.13a)
+
+- Show keyboard Y time skip next to T acceleration in the lower EN/ES help and
+  active-task status; preserve existing controls, mechanics and saves.
+- Agent evidence: assets/validation_43713a. Next: CA-43713A-CRAFT-01.
+- Focused PR is stacked on #81; do not merge #81 as part of this UI delivery.
 
 ## Issue #81 — Trucazo against Argento (4.37.13)
 

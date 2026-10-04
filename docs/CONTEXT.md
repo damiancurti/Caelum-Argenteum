@@ -1,11 +1,14 @@
 # CONTEXT.md — Ultra-condensed summary of Caelum Argenteum
 
-Documentation version: **4.37.13** — 2026-10-04.
+Documentation version: **4.37.13a** — 2026-10-04.
 
-**#81 / 4.37.13:** Argento's MAP01 dialogue starts complete Trucazo practice:
-shared 56-Minor deck, traditional calls, Patience-squared health, Type 1 damage.
-No Majors, Magic Senses or wagers; abandonment is defeat. Native paused menu
-and saved match state; evidence: assets/validation_43713. Author checks pending.
+**#93 / 4.37.13a:** crafting help shows keyboard Y time skip and T acceleration.
+EN/ES. Evidence: validation_43713a; author check pending.
+
+**#81 / 4.37.13:** Argento offers paused Trucazo practice in MAP01.
+56 Minors, traditional calls, Patience health and Type 1 damage. No Majors,
+Magic Senses or wagers. Abandoning loses; matches persist. Evidence:
+validation_43713; author checks pending.
 
 **#80 / 4.37.12:** up to three essences; User3 costs 1000 Anima, lasts 60 s,
 recharges 600 s from use. Fool flies; Minors double fixed bonuses. Palomo's
@@ -30,10 +33,8 @@ associations; its old-save waiver stays specific. HISTORY retains acceptance.
 
 ## The game's premise
 
-Caelum Argenteum is an independent dark-fantasy FPS-RPG inspired by
-nineteenth-century Argentina, built on GZDoom 4.14.2/ZScript. The newly
-formed nation is divided by political, social, and territorial interests while
-facing two simultaneous invasions.
+Caelum Argenteum is an independent dark-fantasy FPS-RPG set in nineteenth-century
+Argentina, built on GZDoom 4.14.2/ZScript. The divided nation faces two invasions.
 
 The first invasion is external: the Caelith, original inhabitants of the Moon,
 descend upon the Earth under the command of Queen Selene. The second is

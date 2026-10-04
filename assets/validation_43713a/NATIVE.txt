@@ -1,0 +1,21 @@
+issue81_help93_es2.log
+Full local log SHA256: 4e56ac6330a99b0a173974eb4fd6f58d5d1a9628294a72214872d49c0caead80
+GZDoom version g4.14.2
+CA93 SETUP open=1 station=1
+Captured issue93_idle_es.png
+Captured issue93_active_es.png
+Captured issue93_skip_es.png
+CA93 REPORT craft=1 active=1 progressing=1 skip=1
+
+issue81_help93_en.log
+Full local log SHA256: 36c9c0b0f181909c2ccf123ca2543d01593ec393edabaaf3ec41fbc7d307ab90
+GZDoom version g4.14.2
+CA93 SETUP open=1 station=1
+Captured issue93_idle_en.png
+Captured issue93_active_en.png
+Captured issue93_skip_en.png
+CA93 REPORT craft=1 active=1 progressing=1 skip=1
+
+issue81_help93_smoke.log
+Full local log SHA256: 51e77c09b325765ad2dd86c48e945980eb781f4391440c246faab03b50d24f67
+GZDoom version g4.14.2

@@ -4,8 +4,14 @@ An independent dark fantasy FPS-RPG inspired by nineteenth-century Argentina.
 Author and game designer: **Damian Curti**. Development target: **GZDoom 4.14.2**
 on Windows 11. The final game is intended to be independent of Doom assets.
 
-**Current release: 4.37.13.** Obtain and update the complete repository, validate
+**Current release: 4.37.13a.** Obtain and update the complete repository, validate
 it, then rebuild with `run_dev.bat` as described below.
+
+Issue [#93](https://github.com/damiancurti/Caelum-Argenteum/issues/93) makes
+**Y: time skip** visible beside **T: speed up** in the crafting footer and
+active-task status, in EN/ES. Y opens the destination selector; R refreshes
+the completion estimate and Enter confirms. Native screenshot evidence:
+[4.37.13a](assets/validation_43713a/RESULTS.json). Author check remains pending.
 
 Issue [#81](https://github.com/damiancurti/Caelum-Argenteum/issues/81) adds a
 complete **Trucazo practice against Argento in MAP01**. Carry Palomo's physical

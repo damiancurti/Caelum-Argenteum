@@ -1,6 +1,14 @@
 # Caelum Argenteum — Current systems and rules
 
-Documentation version: **4.37.13** — 2026-10-04.
+Documentation version: **4.37.13a** — 2026-10-04.
+
+## 4.37.13a - Crafting time help (#93)
+
+Crafting shows Y (keyboard) for the existing time-skip selector and T for
+acceleration in its lower help and active-task status. Recipe/step/family/tier/
+batch/size/efficiency navigation shares the first help row; actions, time and
+closing share the second. Y on a controller retains its existing filter action.
+The #64 time-skip rules and controls below remain authoritative and unchanged.
 
 ## 4.37.11 — Guard recognition as a persistent Journal clue (#79)
 
