@@ -15,7 +15,7 @@ HUD scale controls apply; notifications reserve the compass's left strip.
 The author's refinement centers the visible cardinal letters and adds silver
 laurels around a dark-metal dial with a subdued Sun of May behind the needle.
 Evidence: [4.37.16](assets/validation_43716/RESULTS.json). Author acceptance,
-including physical pointer click/drag, remains pending.
+including physical pointer click/drag, passed 2026-10-04.
 
 Issue [#101](https://github.com/damiancurti/Caelum-Argenteum/issues/101) adds
 **traditional Truco (ranked)** against Argento beside the Trucazo practice.

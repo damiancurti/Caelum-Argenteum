@@ -8,11 +8,10 @@ Documentation version: **4.37.16** — 2026-10-04.
   bounded native HUD scaling and reserved message space.
 - Author refinement: corrected visible letter alignment; added silver laurels
   and a subdued Sun of May behind the needle. Native evidence under
-  assets/validation_43716/compass_refinement; visual acceptance pending.
+  assets/validation_43716/compass_refinement; visual acceptance passed 2026-10-04.
 - Sun of May replaces both skull frames; C moon supplies the native cursor.
   Immutable generated art inputs and deterministic vector integration retained.
-- Evidence: assets/validation_43716. Next: CA-43716-UI-01/02/03, including
-  physical mouse click/drag after the user stopped Computer Use with Escape.
+- Evidence: assets/validation_43716. Author checks passed 2026-10-04; closure/merge authorized.
 
 ## Issue #101 - Traditional ranked Truco (4.37.15)
 

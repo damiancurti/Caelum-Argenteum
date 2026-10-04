@@ -2,9 +2,8 @@
 
 Documentation version: **4.37.16** — 2026-10-04.
 
-**Pending:** #87 centered laurel compass/Sun/moon (mouse test interrupted);
-#101 traditional Truco, optional Flor; #99 Argento order; #97 upstairs deck;
-#93 crafting Y/T. Evidence: assets/validation_*. #81 accepted/merged.
+**Accepted 2026-10-04:** #93, #97, #99, #101, #87; all author checks passed.
+Evidence: assets/validation_*. #81 accepted/merged.
 
 **Accepted #80 / 4.37.12 (2026-10-04):** three essences; User3 costs 1000 Anima,
 lasts 60 s, recharges 600 s from use. Fool flies; Minors double fixed bonuses.

@@ -30,7 +30,8 @@ adaptation of the logo, not a pixel-identical crop. Ownership/provenance stays
 with the project; reference and output hashes are recorded in PROVENANCE.
 
 Native captures and limitations: assets/validation_43716. Physical mouse
-click/drag was interrupted by the user's Escape stop and remains pending.
+click/drag was initially interrupted by Escape; the author confirmed all
+checks passed on 2026-10-04.
 
 ## 4.37.15 - Traditional Truco card reuse (#101)
 

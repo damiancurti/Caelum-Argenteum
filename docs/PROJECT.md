@@ -10,9 +10,9 @@ compass correction centers the visible letters and adds silver laurels with
 a subdued Sun of May background. Presentation
 only: maps, balance, controls and persistent schemas are unchanged. North +Y
 matches both the cardinal maze and fortified city's exits. Static/native
-evidence is in assets/validation_43716; CA-43716-UI-01/02/03 remain pending.
-Computer Use was stopped by the user's Escape; physical pointer click/drag
-is explicitly unverified. Earlier pending checks remain in pending_test.txt.
+evidence is in assets/validation_43716; CA-43716-UI-01/02/03 passed author acceptance on 2026-10-04.
+The author confirmed physical pointer click/drag and all visual checks.
+The earlier agent-side Computer Use interruption remains historical evidence.
 
 ## 4.37.15 - Traditional Truco ranked mode (#101)
 

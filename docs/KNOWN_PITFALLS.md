@@ -22,7 +22,7 @@ fonts or lowercase text. If the font changes, remeasure its alpha bounds.
 Regression: compare N/S against the needle's vertical axis and E/O/W against
 its horizontal axis in ES/EN at automatic and enlarged HUD scales. Native
 captures and measured font values: assets/validation_43716/compass_refinement.
-Author visual acceptance remains pending under CA-43716-UI-01.
+Author visual acceptance CA-43716-UI-01 passed on 2026-10-04.
 
 ## CA-KP-034 - Native Windows cursor dimensions and hotspot
 
@@ -42,7 +42,7 @@ and src/d_main.cpp, vid_cursor callback. The final package resolves cursor as
 32x32 with offset (31,7), confirmed by native TexMan queries. Its pointing
 pixel has alpha 239; the corner is transparent. This establishes resource
 metadata, not physical mouse behavior: the user's Escape stopped Computer Use
-before click/drag verification. CA-43716-UI-03 remains pending. Regression:
+before click/drag verification. CA-43716-UI-03 passed author acceptance on 2026-10-04. Regression:
 inspect actual bitmap dimensions/offset, then test menu clicks and slider
 dragging at the intended DPI. Evidence: assets/validation_43716/RESULTS.json.
 
@@ -65,7 +65,7 @@ reposition replies already laid out by the native menu.
 Regression: open Palomo upstairs with and without carrying capacity; inspect
 the first displayed message and reply positions, then retry and reopen. Final
 EN/ES captures and native checks: [4.37.14 evidence](../assets/validation_43714/RESULTS.json).
-Author acceptance remains pending under CA-43714-DECK-01. This verifies the
+Author acceptance CA-43714-DECK-01 passed on 2026-10-04. This verifies the
 two tested layouts, not arbitrary font overrides or resolutions.
 
 ## CA-KP-032 — Test ability input through the native ready weapon

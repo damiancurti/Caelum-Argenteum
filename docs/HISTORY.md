@@ -4,6 +4,14 @@ Documentation version: **4.37.16** — 2026-10-04.
 
 ## 4.37.16 - Add compass and project menu pointers (#87)
 
+Author acceptance of #87, 2026-10-04: all tests PASSED, without reported
+qualifications. CA-43716-UI-01, CA-43716-UI-02, CA-43716-UI-03 originated in
+4.37.16 / #87. The author explicitly confirmed all tests correct
+and authorized issue closure and merge. The confirmed entries are removed
+from pending_test.txt. Runtime and version are unchanged.
+This includes the refined compass and physical pointer click/drag; the
+initial agent-side Computer Use interruption remains historical evidence.
+
 Author correction, 2026-10-04: the compass was visibly offset from its cardinal
 letters. Native font inspection found a 9-unit glyph cell, -4 trailing
 kerning and asymmetric transparent padding: StringWidth alone did not center

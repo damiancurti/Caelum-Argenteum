@@ -24,7 +24,7 @@ Both native skull selector frames resolve to the same transparent Sun of May,
 with a face and 16 straight/16 wavy alternating rays. Native navigation and
 selection behavior are retained. GameInfo selects the 32-pixel silver C moon
 cursor, with hotspot (31,7) at its upper horn. An explicit user vid_cursor
-override still takes precedence. Physical click/drag acceptance is pending.
+override still takes precedence. Physical click/drag passed author acceptance on 2026-10-04.
 
 ## 4.37.15 - Traditional Truco ranked mode (#101)
 
