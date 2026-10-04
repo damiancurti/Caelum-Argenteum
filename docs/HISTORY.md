@@ -4,6 +4,12 @@ Documentation version: **4.37.13a** — 2026-10-04.
 
 ## 4.37.13a - Show the crafting time-skip shortcut (#93)
 
+Author acceptance of #93, 2026-10-04: all tests PASSED, without reported
+qualifications. CA-43713A-CRAFT-01 originated in
+4.37.13a / #93. The author explicitly confirmed all tests correct
+and authorized issue closure and merge. The confirmed entries are removed
+from pending_test.txt. Runtime and version are unchanged.
+
 Author-requested presentation hotfix, 2026-10-04. The crafting help omitted Y
 although #64 already handled the key. Two localized footer rows now separate
 selection settings from actions, including T acceleration and Y time skip;

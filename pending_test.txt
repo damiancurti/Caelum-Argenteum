@@ -1,8 +1,0 @@
-CA-43713A-CRAFT-01 - Visible time shortcuts
-Origin: 4.37.13a / issue #93. Author acceptance pending.
-Prerequisites: a reachable working crafting station and a valid recipe/task.
-1. Open crafting in ES and EN. Expect the bottom help to show keyboard Y time
-   skip beside T acceleration, with all text readable inside the panel.
-2. Begin a task. Expect its progress line to show both shortcuts. Press Y:
-   the existing destination selector opens. R updates the estimate, Q returns;
-   T retains acceleration. Existing recipe and controller inputs still work.
