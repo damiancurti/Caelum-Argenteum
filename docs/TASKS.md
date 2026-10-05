@@ -1,6 +1,24 @@
 # TASKS.md — Active tasks
 
-Documentation version: **4.37.21** — 2026-10-04.
+Documentation version: **4.37.22** — 2026-10-05.
+
+## Issue #106 - First-person shield sets (4.37.22)
+
+- Shared equipped-item artwork for kite, tower and magic; preserve the round
+  shield and accepted left-hand framing. All tiers/sizes use the real item type.
+- Original source sheets, native registration generator, palette and provenance
+  retained in assets/first_person_shields. The author accepted design/positions
+  and requested muted colors; the existing greatsword palette is applied.
+- Native accessory layers cover physical/magical selectors and compatible
+  unarmed equipment, with real block/return and stale-overlay cleanup.
+- Author scope extension, 2026-10-05: dedicated T1-T3 giant-gauntlet boxer
+  guard; existing idle/attack art and block rules retained.
+- Static/native matrix, aspect ratios and persistence evidence are recorded in
+  assets/validation_43722/RESULTS.json. Gameplay data and save schema stay intact.
+- CA-43722-SHIELD-ART-01 passed by explicit author confirmation on 2026-10-05
+  (sprites, positions and final palette). Manual play acceptance:
+  CA-43722-SHIELD-PLAY-01 in pending_test.txt. Commit/push and linked focused PR;
+  merge or closure is not manual acceptance.
 
 ## Issue #103 - Narrative artwork and introductory page (4.37.21)
 

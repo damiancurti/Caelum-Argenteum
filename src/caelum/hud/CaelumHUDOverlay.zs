@@ -193,6 +193,9 @@ class CaelumHUDOverlay : EventHandler
     // conserva una silueta/ocupacion distinta sin duplicar armas o personajes.
     ui void DrawFirstPersonBlockShield(CaelumPlayer localPlayer)
     {
+        // El controlador nativo ya dibuja escudo y agarre; no duplicar el icono.
+        if (CaelumFirstPersonView.OwnsView(localPlayer.player.ReadyWeapon)
+            || localPlayer.player.ReadyWeapon is 'CaelumUnarmedWeapon') { return; }
         if (IsDomingoSwordViewActive(localPlayer)) { return; }
         if (!localPlayer.HUDCombatBlockActive) { return; }
         if (CaelumFirstPersonView.OwnsView(localPlayer.player.ReadyWeapon)

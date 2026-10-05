@@ -1,6 +1,9 @@
 # CONTEXT.md — Ultra-condensed summary of Caelum Argenteum
 
-Documentation version: **4.37.21** — 2026-10-04.
+Documentation version: **4.37.22** — 2026-10-05.
+
+**4.37.22/#106:** accepted shield art; gauntlet guard. Evidence: validation_43722;
+pending_test.txt. Gameplay/saves unchanged.
 
 **#103 / 4.37.21:** approved banner/art; new-character single-page typewriter
 intro, actual bindings/survival, CA_MUS01; second key starts MAP01/CA_MUS02.

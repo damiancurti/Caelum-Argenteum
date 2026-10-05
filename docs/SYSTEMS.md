@@ -1,6 +1,26 @@
 # Caelum Argenteum — Current systems and rules
 
-Documentation version: **4.37.21** — 2026-10-04.
+Documentation version: **4.37.22** — 2026-10-05.
+
+## 4.37.22 - Shield presentation follows the equipped item (#106)
+
+The shared first-person renderer resolves BUCKLER/KITE/TOWER/MAGIC from the
+actual native equipped shield. All three tiers and five equipment sizes use the
+same art family per type. Existing shield usability, durability and weapon
+compatibility determine visibility; giant gauntlets do not display an external
+shield. Their dedicated T1-T3 boxer guard follows the existing native block
+source, with no new protection or attack rule. The native block toggle still owns entry, continuation and cancellation.
+Holding block keeps the frontal pose and left grip fixed until that state ends;
+the right-hand/weapon presentation resumes on release. Unarmed compatible
+equipment uses the same shield controller, replacing the free left fist.
+
+This patch changes presentation only. Coverage, defense, weight, durability,
+Air, damage, attack cadence, recipes and inventory/progression schemas retain
+their definitions. New presentation caches are transient and rebuilt from
+existing equipped-item state after loading. Existing weapon state indices and
+the original shield/hand PNGs are preserved. ASSETS holds registration and
+provenance; validation_43722 records static and native evidence separately from
+author acceptance.
 
 ## 4.37.21 - New-character introduction and exit (#103)
 

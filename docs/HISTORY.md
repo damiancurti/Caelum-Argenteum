@@ -1,6 +1,41 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **4.37.21** — 2026-10-04.
+Documentation version: **4.37.22** — 2026-10-05.
+
+## 4.37.22 - Kite, tower and magic first-person shields (#106)
+
+Author request, 2026-10-05: implement #106, run live tests, commit and push; use
+each object's existing art and the approved shield positions/perspectives as
+references. The initial native comparisons received explicit author approval
+for both the sprites and their positions, qualified by a request for slightly
+muted colors. The new sheets therefore reuse the existing greatsword native
+palette, preserving their exact geometry/alpha and the unmodified round shield.
+
+The implementation resolves the real equipped shield in the shared native
+controller and in compatible unarmed presentation. Layers 44/45 hold one shield
+and one original left hand; the provisional HUD world-icon overlay is suppressed
+on these paths. Equip/lower, idle/movement, attack accompaniment, H entry,
+indefinite I hold, cancellation and type changes share the existing clocks.
+Broken, missing/boxed and incompatible shields are hidden. Gauntlet block rules,
+gameplay definitions, maps, old weapon state indices and save data are preserved.
+New visual caches are transient. Source/provenance: assets/first_person_shields.
+
+The author extended this issue on 2026-10-05: giant gauntlets must also show
+blocking, with elbows closed and the edges of both hands together like a boxer.
+Three tier-specific original guard sprites reference their existing art. New
+separate states preserve historical state indices and use the existing real
+block mode; original idle/attack sprites remain byte-identical.
+
+Static and Windows GZDoom 4.14.2 evidence, exact build hashes, native matrix,
+resolution comparisons and save qualifications are in assets/validation_43722.
+Intermediate QA failures are retained locally with their corrections; final
+results identify the tested package. Author acceptance, 2026-10-05: CA-43722-SHIELD-ART-01 (origin 4.37.22 / #106)
+passed. The author first confirmed the sprites/positions and then explicitly
+answered "Yes, I approve the final palette" after reviewing the muted gallery.
+Qualification: approval concerns the design, positions and colors shown in the
+comparison captures; the full aspect-ratio/transition matrix is agent evidence.
+The confirmed art entry is removed from pending_test.txt in this update.
+CA-43722-SHIELD-PLAY-01 remains pending for author gameplay confirmation.
 
 ## 4.37.21 - Narrative artwork, single-page introduction and farewell (#103)
 

@@ -1,6 +1,14 @@
 CAELUM ARGENTEUM — STORY AND MAP01
 
-Documentation version: **4.37.21** — 2026-10-04.
+Documentation version: **4.37.22** — 2026-10-05.
+
+## 4.37.22 - First-person shields (#106)
+
+The equipped shields selected/crafted through the established tutorial now use
+their own inward-facing first-person presentation. This visual integration
+does not alter Palomo's #96 names, selection, recipes, Rulo's trial, dialogue,
+world pickups, map geometry or story. ASSETS and SYSTEMS describe the shared
+renderer and unchanged equipment rules; native evidence is in validation_43722.
 
 ## 4.37.21 - Author-requested introductory text (#103)
 
