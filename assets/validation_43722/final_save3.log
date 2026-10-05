@@ -1,0 +1,16 @@
+CA106 PASS manual body/hand visibility
+CA106 PASS manual actual equipped type
+CA106 PASS manual synchronized single left grip
+CA106 PASS manual grip origin registration
+CA106 PASS manual indefinitely held I frame
+CA106 PASS manual right weapon/hand layers hidden
+CA106 POSE manual type=3 tier=2 size=2 body=(160.000,100.000) frame=8 tics=-1 shield_id=3 durability=300 air=1020.08465
+CA106 SNAPSHOT id=3 type=3 tier=2 size=2 durability=300 count=1 block=1 air=1020.084649
+CA106 BLOCK 0
+CA106 PASS manual body/hand visibility
+CA106 PASS manual actual equipped type
+CA106 PASS manual synchronized single left grip
+CA106 PASS manual grip origin registration
+CA106 PASS manual weapon layer restored
+CA106 POSE manual type=3 tier=2 size=2 body=(82.000,45.000) frame=0 tics=1 shield_id=3 durability=300 air=1020.46895
+CA106 DONE checks=14 failures=0
