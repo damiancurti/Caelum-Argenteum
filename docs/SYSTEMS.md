@@ -52,7 +52,8 @@ Shield options 0-3 use the same localization keys as inventory: buckler / kite
 shield / tower shield / magic shield; Spanish: rodela / escudo de lagrima /
 escudo de torre / escudo magico (accented in game). Preview, confirmation and
 plan summary use FormatShieldName. Type IDs, stats and crafting are unchanged.
-Evidence: assets/validation_43719; outstanding author checks: pending_test.txt.
+Evidence: assets/validation_43719. All three author checks passed 2026-10-04;
+HISTORY records their IDs and qualifications.
 
 ## 4.37.18 - Craft, Repair, Dismantle and Tarot details (#91)
 

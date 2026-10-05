@@ -14,7 +14,7 @@ unequipped and recognizes an already owned matching T1 without duplication.
 Previous choices and active crafting are preserved. All four shield dialogues
 now use the inventory names in English and Spanish. Other equipment keeps its
 existing crafting flow. Evidence: [4.37.19](assets/validation_43719/RESULTS.json).
-Author acceptance is pending in [pending_test.txt](pending_test.txt).
+The author accepted all three checks on 2026-10-04; results are in HISTORY.
 
 Issue [#91](https://github.com/damiancurti/Caelum-Argenteum/issues/91) separates
 **Craft / Repair / Dismantle** in the Journal. Craft lists learned recipes;

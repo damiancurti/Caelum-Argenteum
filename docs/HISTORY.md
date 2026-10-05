@@ -4,6 +4,13 @@ Documentation version: **4.37.19** — 2026-10-04.
 
 ## 4.37.19 - Palomo necklace reward and shield naming (#96)
 
+Author acceptance, 2026-10-04: all tests PASSED without reported qualifications.
+CA-43719-NECKLACE-01, CA-43719-SHIELDS-01 and CA-43719-SAVE-01 originated in
+4.37.19 / issue #96. The author explicitly confirmed all tests correct,
+requested commit/push and then authorized issue closure and PR #109 merge.
+The three confirmed entries are removed from pending_test.txt, retaining
+the empty tracked file. Runtime and release version are unchanged.
+
 Author decision, 2026-10-04: "Choose and receive with Palomo; Caella teaches
 the recipe." The existing four T1 amulets remain the choices. Previous choices
 are preserved and an already owned matching T1 is recognized without a second
@@ -28,9 +35,8 @@ that same name in previews, confirmation statistics and the plan summary.
 No shield ID, model, statistic or recipe changed.
 
 Static analysis, isolated GZDoom 4.14.2 tests and live menu observations are
-recorded separately in assets/validation_43719/RESULTS.json. These do not replace
-author acceptance: CA-43719-NECKLACE-01, CA-43719-SHIELDS-01 and
-CA-43719-SAVE-01 remain pending. No author acceptance is claimed for #96.
+recorded separately in assets/validation_43719/RESULTS.json. Their technical
+scope remains distinct from the author acceptance recorded above.
 
 ## 4.37.18 - Crafting browser and three Tarot effect fields (#91)
 

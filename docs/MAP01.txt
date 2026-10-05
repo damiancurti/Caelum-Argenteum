@@ -20,7 +20,7 @@ All four shield labels, descriptions, confirmation pages and summary now share
 the canonical inventory names in English and Spanish, retaining type IDs.
 Original dialogue page indices remain stable; the new necklace conversation is
 appended. SYSTEMS owns capacity, grant revision 1 and rollback rules. Native
-evidence: assets/validation_43719. Author acceptance remains pending.
+evidence: assets/validation_43719. All three author checks passed 2026-10-04.
 
 4.37.18 / issue #91: the Journal separates Craft, Repair and Dismantle. Ronnie's
 owned Pickaxe and learned recipe appear through the same weapon/recipe rules.

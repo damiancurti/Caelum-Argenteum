@@ -4,7 +4,7 @@ Documentation version: **4.37.19** — 2026-10-04.
 
 **#96 / 4.37.19:** Palomo chooses/gives one existing T1 amulet; Caella teaches
 its recipe. Native capacity, no auto-equip/duplicates, old-save revision 1.
-Canonical shield names; evidence: validation_43719. Author acceptance pending.
+Canonical shield names; evidence: validation_43719. All author tests accepted.
 **#91 accepted/closed; PR #108 merged:** Craft/Repair/Dismantle and Tarot fields.
 
 **#89 accepted/closed, PR #107 merged:** owned T1 Pico, axe recipe, ×10/×100

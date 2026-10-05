@@ -12,8 +12,9 @@ Documentation version: **4.37.19** — 2026-10-04.
   indices; old Caella pages teach/refer without changing a selection.
 - All four shields use canonical inventory names in both languages, including
   previews, confirmation and summary; item mapping and statistics are retained.
-- Evidence: assets/validation_43719. Author acceptance remains pending in the
-  three CA-43719 entries in pending_test.txt. Deliver through the linked #96 PR.
+- Evidence: assets/validation_43719. The author accepted CA-43719-NECKLACE-01,
+  CA-43719-SHIELDS-01 and CA-43719-SAVE-01 on 2026-10-04 without reported
+  qualifications, and authorized #96 closure and PR #109 merge.
 
 ## Issue #91 - Crafting sections and Tarot fields (4.37.18)
 

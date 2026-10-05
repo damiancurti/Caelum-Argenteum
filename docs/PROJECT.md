@@ -14,8 +14,8 @@ are preserved. Shield dialogue uses the same bilingual names as inventory.
 The other equipment categories keep their accepted crafting and trial rules.
 
 Static/native verification and save evidence: assets/validation_43719.
-Author checks remain in pending_test.txt; #96 is delivered for review, with
-commit/push and a linked PR. #91 was accepted, closed and merged as PR #108
+All three author checks passed on 2026-10-04; #96 closure and PR #109 merge
+were authorized. #91 was accepted, closed and merged as PR #108
 on 2026-10-04 (merge 466a0734).
 
 ## 4.37.18 - Crafting sections and complete Tarot descriptions (#91)

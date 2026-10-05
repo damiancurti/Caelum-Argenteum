@@ -3,7 +3,7 @@
   "release": "4.37.19",
   "date": "2026-10-04",
   "base_commit": "466a07343a216d0f80ce565cae8dbb09ce9d6aaf",
-  "status": "Implemented; static/native checks passed. Author acceptance remains pending.",
+  "status": "Accepted by the author on 2026-10-04; all three author checks passed without reported qualifications.",
   "author_decision": "Choose and receive the existing T1 amulet with Palomo; Caella teaches that recipe. Preserve prior choices and recognize an owned matching T1 without duplication.",
   "static": {
     "project_validator": "PROJECT_VALIDATION.json",
@@ -174,12 +174,14 @@
     "qualification": "Observed on the same implementation before the final formal-address wording adjustment and saved-dialogue refresh. Final bilingual scripted native flows verify the final text/state. These are agent observations, not author acceptance."
   },
   "author_acceptance": {
-    "status": "PENDING",
+    "status": "PASSED",
     "checks": [
       "CA-43719-NECKLACE-01",
       "CA-43719-SHIELDS-01",
       "CA-43719-SAVE-01"
     ],
-    "source": "pending_test.txt"
+    "source": "docs/HISTORY.md; explicit author confirmation in the implementation session.",
+    "date": "2026-10-04",
+    "qualifications": "None reported."
   }
 }

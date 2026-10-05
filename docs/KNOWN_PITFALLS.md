@@ -127,8 +127,8 @@ tokens before StartConversation; never call the gift or a reply from this
 presentation hook. The same original 4.37.18 save then displays the Palomo
 referral and remains unchosen, with no reward. Before/after native logs and
 package hashes: [4.37.19 evidence](../assets/validation_43719/RESULTS.json).
-ENGINE-VERIFIED in GZDoom 4.14.2, Windows 11/Vulkan; author acceptance for #96
-remains pending. Regression: save on an old page, load the new build and inspect
+ENGINE-VERIFIED in GZDoom 4.14.2, Windows 11/Vulkan; all #96 author checks
+passed 2026-10-04. Regression: save on an old page, load the new build and inspect
 both the restored text and unchanged choice, rather than only its node number.
 
 ## CA-KP-032 — Test ability input through the native ready weapon
