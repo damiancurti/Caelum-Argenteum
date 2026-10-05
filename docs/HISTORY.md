@@ -39,12 +39,17 @@ answered "Yes, I approve the final palette" after reviewing the muted gallery.
 Qualification: approval concerns the design, positions and colors shown in the
 comparison captures; the full aspect-ratio/transition matrix is agent evidence.
 The confirmed art entry is removed from pending_test.txt in this update.
-CA-43722-SHIELD-PLAY-01 remains pending for author gameplay confirmation.
+Subsequent author confirmation, 2026-10-05: "All tests passed; close the
+issues and perform the merges." CA-43722-SHIELD-PLAY-01 (origin 4.37.22 / #106)
+passed without reported qualifications. This covers the outstanding shield
+play/equipment/save checklist; its entry is removed from pending_test.txt.
+The author also authorized merging PR #113 and closing #106. #112 was still
+not implemented at this confirmation; it is not retroactively marked tested.
 Author acceptance, 2026-10-05: CA-43722-GAUNTLET-ART-01 (origin 4.37.22 /
 #106 author extension) passed. After requesting wider attack-like proportions
 and fixing the three-hand icon, the author explicitly approved the revised
 T1-T3 guard and two-glove inventory gallery. This confirms those visuals;
-independent manual gameplay/save acceptance remains pending. The confirmed
+independent manual gameplay/save acceptance was subsequently confirmed as above. The confirmed
 gauntlet art entry is removed from pending_test.txt in this update.
 
 ## 4.37.21 - Narrative artwork, single-page introduction and farewell (#103)

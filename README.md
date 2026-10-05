@@ -18,13 +18,13 @@ save schemas are unchanged. The author also requested a closed boxer guard
 for giant gauntlets; all three tiers now have a dedicated held-block sprite.
 His follow-up adds thicker attack-like proportions and two-glove inventory icons.
 The author accepted the revised gauntlet guard and two-glove icons on 2026-10-05
-(CA-43722-GAUNTLET-ART-01). Manual gameplay confirmation remains pending.
+(CA-43722-GAUNTLET-ART-01). Manual gameplay confirmation also passed on 2026-10-05.
 
 The author approved the sprites and positions;
 the final muted palette was also explicitly accepted on 2026-10-05.
 Sources: [shield composition](assets/first_person_shields/COMPOSITION.json).
 Tests: [4.37.22 evidence](assets/validation_43722/RESULTS.json).
-Outstanding manual play check: [pending_test.txt](pending_test.txt).
+All #106 author checks passed on 2026-10-05; merge and closure authorized.
 
 Issue [#103](https://github.com/damiancurti/Caelum-Argenteum/issues/103) adds
 the author's banner and a **single-page introduction after character creation**.

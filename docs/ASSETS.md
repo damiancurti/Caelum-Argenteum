@@ -69,11 +69,11 @@ below the viewport like the accepted round shield; top edges and the grip remain
 visible at 4:3, 16:9 and 21:9. Evidence and qualifications:
 `assets/validation_43722/RESULTS.json`. The author accepted CA-43722-SHIELD-ART-01 on 2026-10-05: sprites, positions
 and final muted palette, based on the comparison captures. Aspect-ratio and
-transition checks remain agent engine evidence. CA-43722-SHIELD-PLAY-01 remains
-in pending_test.txt for manual gameplay acceptance.
+transition checks remain agent engine evidence. CA-43722-SHIELD-PLAY-01 also passed by explicit author confirmation on
+2026-10-05; no #106 author check remains pending.
 
 The author accepted the revised gauntlet guard and two-glove icons on 2026-10-05
-(CA-43722-GAUNTLET-ART-01). Manual gameplay confirmation remains pending.
+(CA-43722-GAUNTLET-ART-01). Manual gameplay confirmation also passed on 2026-10-05.
 
 ## 4.37.21 - Approved narrative artwork sources and presentation (#103)
 

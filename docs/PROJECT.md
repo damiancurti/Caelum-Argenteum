@@ -17,9 +17,9 @@ test results: assets/validation_43722/RESULTS.json.
 The author accepted the designs and positions on 2026-10-05, requesting more
 muted colors. The three new sheets now use the existing greatsword palette.
 The author then explicitly accepted the final palette (CA-43722-SHIELD-ART-01).
-Manual play acceptance remains in pending_test.txt; visual approval does not
-independently confirm the engine/save tests. Deliver through the focused
-#106 branch and linked PR. Earlier #103/#98/#96 acceptance remains unchanged.
+The author later confirmed all tests passed on 2026-10-05 and authorized
+merge/closure. CA-43722-SHIELD-PLAY-01 and the revised gauntlet visual check
+are complete; HISTORY records their explicit acceptance. Earlier #103/#98/#96 acceptance remains unchanged.
 
 ## 4.37.21 - Approved narrative artwork and introduction (#103)
 

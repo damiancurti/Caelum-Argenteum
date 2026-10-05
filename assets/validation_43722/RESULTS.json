@@ -200,7 +200,7 @@
   ],
   "author_acceptance": {
     "CA-43722-SHIELD-ART-01": "Passed 2026-10-05: explicit approval of sprites, positions and final muted palette.",
-    "CA-43722-SHIELD-PLAY-01": "Pending manual gameplay confirmation.",
+    "CA-43722-SHIELD-PLAY-01": "Passed 2026-10-05: author explicitly confirms all tests passed and authorizes issue closure/PR merge, with no reported qualifications.",
     "CA-43722-GAUNTLET-ART-01": "Passed 2026-10-05: explicit approval of revised thicker guards and corrected two-glove inventory icons, T1-T3; manual gameplay is separate."
   },
   "captures": [

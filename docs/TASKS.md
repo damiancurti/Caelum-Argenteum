@@ -17,12 +17,12 @@ Documentation version: **4.37.22** — 2026-10-05.
 - Static/native matrix, aspect ratios and persistence evidence are recorded in
   assets/validation_43722/RESULTS.json. Gameplay data and save schema stay intact.
 - CA-43722-SHIELD-ART-01 passed by explicit author confirmation on 2026-10-05
-  (sprites, positions and final palette). Manual play acceptance:
-  CA-43722-SHIELD-PLAY-01 in pending_test.txt. Commit/push and linked focused PR;
-  merge or closure is not manual acceptance.
+  (sprites, positions and final palette). CA-43722-SHIELD-PLAY-01
+  also passed by explicit author confirmation on 2026-10-05. Merge/closure
+  authorized after commit/push and linked PR #113.
 
 The author accepted the revised gauntlet guard and two-glove icons on 2026-10-05
-(CA-43722-GAUNTLET-ART-01). Manual gameplay confirmation remains pending.
+(CA-43722-GAUNTLET-ART-01). Manual gameplay confirmation also passed on 2026-10-05.
 
 ## Issue #103 - Narrative artwork and introductory page (4.37.21)
 
