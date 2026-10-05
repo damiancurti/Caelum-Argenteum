@@ -235,7 +235,9 @@ class CaelumMainM00ConversationMenu : CaelumPalomoConversationMenu
     {
         Super.Ticker();
         // La entrega ocurre tras abrir USDF; reflejar su resultado al dibujar.
-        if (mCurNode != null && mCurNode.UserData ~== "loadout_root")
+        if (mCurNode != null && (mCurNode.UserData ~== "loadout_root"
+            || mCurNode.UserData ~== "palomo_necklace_status"
+            || mCurNode.UserData ~== "caella_choose_amulet"))
             FormatSpeakerMessage();
     }
 
@@ -299,6 +301,15 @@ class CaelumMainM00ConversationMenu : CaelumPalomoConversationMenu
                 text = StringTable.Localize(user.FindInventory("CaelumTarotDeck") != null
                     ? "CA_M01_PALOMO_DECK_HANDOFF" : "CA_M01_PALOMO_DECK_ROOM", false) .. "\n\n" .. text;
             if (mCurNode.UserData ~== "loadout_summary") text = user.MainM00LoadoutSummary;
+            if (mCurNode.UserData ~== "palomo_necklace_status") text = user.MainM00NecklaceStatus;
+            if (mCurNode.UserData ~== "caella_choose_amulet") text = user.MainM00AmuletLessonText;
+            for (int type = 0; type < CaelumConstants.AMULET_TYPE_COUNT; type++)
+            {
+                if (mCurNode.UserData ~== String.Format("palomo_necklace_%d", type))
+                    text = CaelumMainM00Necklace.Describe(type);
+                if (mCurNode.UserData ~== String.Format("caella_confirm_amulet_%d", type))
+                    text = user.MainM00AmuletLessonText;
+            }
             for (int option = 0; option < 49; option++)
             {
                 if (mCurNode.UserData ~== String.Format("loadout_preview_%d", option))

@@ -1,0 +1,26 @@
+CA-43719-NECKLACE-01 | Origin: 4.37.19 / issue #96
+Prerequisite: new MAP01 character, or a save before choosing an amulet.
+1. Follow Palomo upstairs; open his equipment menu and review the four amulets.
+2. Confirm one. Check its actual T1 item in Inventory and the receipt message.
+3. Reopen the conversation. Finish Caella's trial and ask for the amulet recipe.
+Expected: correct chosen T1, one copy, no forced equip or changed accessory;
+Caella teaches its recipe/components and never offers a different selection.
+The original four equipment choices and first-weapon crafting still work.
+
+CA-43719-SHIELDS-01 | Origin: 4.37.19 / issue #96
+Prerequisite: access to Palomo's upstairs equipment dialogue.
+1. Inspect all four shield options, description and confirmation pages.
+2. Confirm a shield; compare the plan and its eventual crafted inventory name.
+Expected: type/name agreement (ES: rodela, escudo de lagrima, escudo de torre,
+escudo magico; accented in game). English uses buckler, kite shield, tower
+shield and magic shield. Text remains readable with the normal UI settings.
+
+CA-43719-SAVE-01 | Origin: 4.37.19 / issue #96
+Prerequisite: keep an original pre-4.37.19 save and its original PK3 separately;
+use a copy with an amulet choice, preferably an existing owned T1 or active task.
+1. Load in 4.37.19. Check choice, owned item IDs/placement and tutorial progress.
+2. If the same T1 is being crafted, finish or cancel that task normally.
+3. Save to a new slot, reload and talk to Palomo/Caella again.
+Expected: at most one new gift, existing matching T1 reused, choice/progress and
+other equipment preserved. A pending full-inventory delivery reports failure
+and retries after making room; repeats/reloads never duplicate a settled gift.

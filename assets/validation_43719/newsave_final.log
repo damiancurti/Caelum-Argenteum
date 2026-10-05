@@ -1,0 +1,50 @@
+Vulkan device: NVIDIA GeForce RTX 3070 Ti
+Resolution: 1520 x 825
+script parsing took 947.21 ms
+MAP01 - La mansión
+CA96 STATE choice=0 stage=20 count=0 task=0 recipe=0 issuedWood=0 issuedLeather=0
+CA96 PASS ordinary upstairs Palomo entry
+CA96 PAGE loadout_root node=286 visible=8
+CA96 REPLY 0 Elegir o recibir mi amuleto T1
+CA96 REPLY 1 Revisar armas
+CA96 REPLY 2 Revisar armaduras
+CA96 REPLY 3 Revisar Sellos
+CA96 REPLY 4 Revisar escudos
+CA96 REPLY 5 Revisar el plan confirmado
+CA96 REPLY 6 ¿Cómo me las arreglo para sobrevivir?
+CA96 REPLY 7 [Volveré luego.]
+CA96 TEXT El mazo es suyo: 78 cartas físicas para el Trucazo.
+CA96 TEXT Sus poderes requieren capturar esencias.
+CA96 TEXT
+CA96 TEXT Elija arma, armadura, Sello y escudo para las lecciones de oficio de Ronnie después de
+CA96 TEXT Caella. También le entrego un amuleto T1 a elección. Lea cada descripción antes de
+CA96 TEXT confirmar; las elecciones confirmadas quedan fijas.
+CA96 PAGE palomo_necklaces node=416 visible=6
+CA96 REPLY 0 Amuleto de Rubí
+CA96 REPLY 1 Amuleto de Zafiro
+CA96 REPLY 2 Amuleto de Esmeralda
+CA96 REPLY 3 Amuleto de Topacio
+CA96 REPLY 4 Volver al equipo
+CA96 REPLY 5 [Volveré luego.]
+CA96 TEXT Elija un amuleto T1. Yo se lo entrego; Caella puede enseñarle su receta. La elección es
+CA96 TEXT definitiva. Si ya eligió uno, conservaré esa elección y reconoceré un T1 del mismo tipo
+CA96 TEXT que ya sea suyo.
+CA96 PAGE palomo_necklace_1 node=418 visible=3
+CA96 REPLY 0 Confirmar esta elección
+CA96 REPLY 1 Volver a las opciones
+CA96 REPLY 2 [Volveré luego.]
+CA96 TEXT Amuleto de Zafiro
+CA96 TEXT T1 | Peso: 1.000 kg
+CA96 TEXT Al equiparlo: +6 a cada atributo mental, +2 a cada atributo técnico y social, +1 a cada
+CA96 TEXT atributo físico.
+CA96 TEXT Confirme para recibirlo una sola vez. No reemplazará su amuleto equipado. Caella
+CA96 TEXT enseña su receta.
+Partida guardada.
+MAP01 - La mansión
+CA96 PAGE palomo_necklace_status node=421 visible=2
+CA96 REPLY 0 Volver al equipo
+CA96 REPLY 1 [Volveré luego.]
+CA96 TEXT Amuleto de Zafiro
+CA96 TEXT El regalo ya fue entregado, o se reconoció un T1 que ya era suyo. No se entrega otra
+CA96 TEXT copia. Administre sus amuletos en Inventario; Caella enseña la receta.
+CA96 PASS native dialogue delivered selected T1 once

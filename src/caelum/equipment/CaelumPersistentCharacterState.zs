@@ -248,6 +248,9 @@ class CaelumPersistentCharacterState : Inventory
     bool KnownCraftingRecipe[CaelumConstants.CRAFTING_NETWORK_PLAYABLE_RECIPE_COUNT];
     int MainM00PickaxeRevision;
     int MainM00PickaxeId;
+    // #96: cero mantiene pendiente el regalo; sólo la entrega fija revisión/ID.
+    int MainM00NecklaceRevision;
+    int MainM00NecklaceItemId;
     bool MainM00LeatherSuppliesPrepared;
 
     // Instantánea viajera de la única tarea 4.30. Los guardados normales ya

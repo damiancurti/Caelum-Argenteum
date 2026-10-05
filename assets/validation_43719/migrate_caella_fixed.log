@@ -1,0 +1,15 @@
+Vulkan device: NVIDIA GeForce RTX 3070 Ti
+Resolution: 1520 x 825
+script parsing took 930.03 ms
+MAP01 - La mansión
+MAP01 - La mansión
+CA96 PAGE caella_confirm_amulet_2 node=160 visible=2
+CA96 REPLY 0 Volver a las opciones
+CA96 REPLY 1 [Volveré luego.]
+CA96 TEXT Primero elegí tu amuleto T1 con Palomo. Él te lo entrega; yo te enseñaré la receta de
+CA96 TEXT ese mismo amuleto.
+CA96 PASS migration preserves choice and quest stage
+CA96 PASS migration preserves issued allowance
+CA96 PASS old unchosen save remains unchosen
+CA96 STATE choice=0 stage=45 count=0 task=0 recipe=0 issuedWood=0 issuedLeather=0
+Partida guardada.

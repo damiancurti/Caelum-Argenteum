@@ -1,6 +1,36 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **4.37.18** — 2026-10-04.
+Documentation version: **4.37.19** — 2026-10-04.
+
+## 4.37.19 - Palomo necklace reward and shield naming (#96)
+
+Author decision, 2026-10-04: "Choose and receive with Palomo; Caella teaches
+the recipe." The existing four T1 amulets remain the choices. Previous choices
+are preserved and an already owned matching T1 is recognized without a second
+copy. Palomo grants the actual item with native capacity rules, without
+auto-equipping; Caella teaches the chosen recipe and its component graph.
+The four original equipment choices and first-weapon crafting remain intact.
+
+Added grant revision 1 and stored native item ID, with idempotent old-save
+handling for missing, already owned, completed-tutorial and active-crafting
+cases. Full inventories remain pending; a matching active T1 task is not
+interrupted. Original dialogue page indices are preserved, including old Caella
+preview slots and later guard dialogue; the new conversation is append-only.
+Rollback retains the original save and original package.
+
+An isolated old save on Caella's preview exposed an empty new text snapshot
+when the paused dialogue resumed before periodic refresh. Rebuilding only the
+presentation before native StartConversation fixes the text without granting
+items or choosing a reply. CA-KP-033 records the reproduced cause and correction.
+
+Corrected shield menu names to the inventory localization source and included
+that same name in previews, confirmation statistics and the plan summary.
+No shield ID, model, statistic or recipe changed.
+
+Static analysis, isolated GZDoom 4.14.2 tests and live menu observations are
+recorded separately in assets/validation_43719/RESULTS.json. These do not replace
+author acceptance: CA-43719-NECKLACE-01, CA-43719-SHIELDS-01 and
+CA-43719-SAVE-01 remain pending. No author acceptance is claimed for #96.
 
 ## 4.37.18 - Crafting browser and three Tarot effect fields (#91)
 
@@ -11,6 +41,7 @@ requested issue closure and PR #108 merge. This includes the real keyboard
 time-panel check; the controller check remains conditional on normal use as
 originally specified. The three confirmed entries are removed from
 pending_test.txt, retaining the empty file. Runtime and version are unchanged.
+Issue #91 closed and PR #108 merged on 2026-10-04; merge commit 466a0734.
 
 Separated Craft, Repair and Dismantle while retaining the station/task backend.
 The browser filters learned recipes and exact owned weapons, including the

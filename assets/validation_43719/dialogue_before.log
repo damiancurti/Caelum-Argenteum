@@ -1,0 +1,3 @@
+CA96 PAGE caella_confirm_amulet_2 node=160 visible=2
+CA96 TEXT .
+CA96 STATE choice=0 stage=45 count=0 task=0 recipe=0 issuedWood=0 issuedLeather=0

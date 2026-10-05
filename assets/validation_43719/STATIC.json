@@ -1,0 +1,28 @@
+{
+  "checks": {
+    "all_original_page_indices_preserved": true,
+    "six_new_pages_appended": true,
+    "old_guard_pages_preserved": true,
+    "shield_0_canonical_reply_and_preview": true,
+    "shield_0_same_confirmation_action": true,
+    "shield_1_canonical_reply_and_preview": true,
+    "shield_1_same_confirmation_action": true,
+    "shield_2_canonical_reply_and_preview": true,
+    "shield_2_same_confirmation_action": true,
+    "shield_3_canonical_reply_and_preview": true,
+    "shield_3_same_confirmation_action": true,
+    "existing_progression_gate_unchanged": true,
+    "package_contains_exactly_src": true,
+    "all_packaged_bytes_match_source": true
+  },
+  "passed": 14,
+  "failed": 0,
+  "original_pages": 399,
+  "current_pages": 405,
+  "package": {
+    "name": "caelum_argenteum_dev.pk3",
+    "sha256": "936cdeb6b825f180732cbc5bae78a164561d3d7f203def4de4ac963b94cdbe03",
+    "bytes": 433188337,
+    "files": 6167
+  }
+}

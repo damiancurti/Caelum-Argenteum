@@ -1,0 +1,602 @@
+Vulkan device: NVIDIA GeForce RTX 3070 Ti
+Resolution: 1520 x 825
+script parsing took 932.43 ms
+MAP01 - La mansión
+CA96 STATE choice=0 stage=20 count=0 task=0 recipe=0 issuedWood=0 issuedLeather=0
+CA96 PASS ordinary upstairs Palomo entry
+CA96 PAGE loadout_root node=286 visible=8
+CA96 REPLY 0 Elegir o recibir mi amuleto T1
+CA96 REPLY 1 Revisar armas
+CA96 REPLY 2 Revisar armaduras
+CA96 REPLY 3 Revisar Sellos
+CA96 REPLY 4 Revisar escudos
+CA96 REPLY 5 Revisar el plan confirmado
+CA96 REPLY 6 ¿Cómo me las arreglo para sobrevivir?
+CA96 REPLY 7 [Volveré luego.]
+CA96 TEXT El mazo es suyo: 78 cartas físicas para el Trucazo.
+CA96 TEXT Sus poderes requieren capturar esencias.
+CA96 TEXT
+CA96 TEXT Elija arma, armadura, Sello y escudo para las lecciones de oficio de Ronnie después de
+CA96 TEXT Caella. También le entrego un amuleto T1 a elección. Lea cada descripción antes de
+CA96 TEXT confirmar; las elecciones confirmadas quedan fijas.
+CA96 PAGE palomo_necklaces node=416 visible=6
+CA96 REPLY 0 Amuleto de Rubí
+CA96 REPLY 1 Amuleto de Zafiro
+CA96 REPLY 2 Amuleto de Esmeralda
+CA96 REPLY 3 Amuleto de Topacio
+CA96 REPLY 4 Volver al equipo
+CA96 REPLY 5 [Volveré luego.]
+CA96 TEXT Elija un amuleto T1. Yo se lo entrego; Caella puede enseñarle su receta. La elección es
+CA96 TEXT definitiva. Si ya eligió uno, conservaré esa elección y reconoceré un T1 del mismo tipo
+CA96 TEXT que ya sea suyo.
+CA96 PAGE palomo_necklace_0 node=417 visible=3
+CA96 REPLY 0 Confirmar esta elección
+CA96 REPLY 1 Volver a las opciones
+CA96 REPLY 2 [Volveré luego.]
+CA96 TEXT Amuleto de Rubí
+CA96 TEXT T1 | Peso: 1.000 kg
+CA96 TEXT Al equiparlo: +6 a cada atributo físico, +2 a cada atributo técnico y social, +1 a cada
+CA96 TEXT atributo mental.
+CA96 TEXT Confirme para recibirlo una sola vez. No reemplazará su amuleto equipado. Caella
+CA96 TEXT enseña su receta.
+CA96 PAGE palomo_necklace_status node=421 visible=2
+CA96 REPLY 0 Volver al equipo
+CA96 REPLY 1 [Volveré luego.]
+CA96 TEXT Amuleto de Rubí
+CA96 TEXT El regalo ya fue entregado, o se reconoció un T1 que ya era suyo. No se entrega otra
+CA96 TEXT copia. Administre sus amuletos en Inventario; Caella enseña la receta.
+CA96 PASS native dialogue delivered selected T1 once
+CA96 PAGE palomo_necklace_status node=421 visible=2
+CA96 REPLY 0 Volver al equipo
+CA96 REPLY 1 [Volveré luego.]
+CA96 TEXT Amuleto de Rubí
+CA96 TEXT El regalo ya fue entregado, o se reconoció un T1 que ya era suyo. No se entrega otra
+CA96 TEXT copia. Administre sus amuletos en Inventario; Caella enseña la receta.
+CA96 PAGE loadout_root node=286 visible=8
+CA96 REPLY 0 Elegir o recibir mi amuleto T1
+CA96 REPLY 1 Revisar armas
+CA96 REPLY 2 Revisar armaduras
+CA96 REPLY 3 Revisar Sellos
+CA96 REPLY 4 Revisar escudos
+CA96 REPLY 5 Revisar el plan confirmado
+CA96 REPLY 6 ¿Cómo me las arreglo para sobrevivir?
+CA96 REPLY 7 [Volveré luego.]
+CA96 TEXT El mazo es suyo: 78 cartas físicas para el Trucazo.
+CA96 TEXT Sus poderes requieren capturar esencias.
+CA96 TEXT
+CA96 TEXT Elija arma, armadura, Sello y escudo para las lecciones de oficio de Ronnie después de
+CA96 TEXT Caella. También le entrego un amuleto T1 a elección. Lea cada descripción antes de
+CA96 TEXT confirmar; las elecciones confirmadas quedan fijas.
+CA96 PASS native four shield reply labels equal inventory keys
+CA96 PAGE loadout_shields node=344 visible=6
+CA96 REPLY 0 rodela
+CA96 REPLY 1 escudo de lágrima
+CA96 REPLY 2 escudo de torre
+CA96 REPLY 3 escudo mágico
+CA96 REPLY 4 Volver a las opciones
+CA96 REPLY 5 [Volveré luego.]
+CA96 TEXT Confirme sólo si esta es su elección. Volver permite comparar. Si ya confirmó esta
+CA96 TEXT categoría, todavía puede consultarla.
+CA96 PAGE loadout_preview_45 node=345 visible=3
+CA96 REPLY 0 Peso, costes y confirmación
+CA96 REPLY 1 Volver a las opciones
+CA96 REPLY 2 [Volveré luego.]
+CA96 TEXT rodela
+CA96 TEXT El escudo físico más liviano; favorece el bloqueo acrobático y reduce la masa de
+CA96 TEXT combate.
+CA96 PAGE loadout_stats_45 node=408 visible=3
+CA96 REPLY 0 Confirmar esta elección
+CA96 REPLY 1 Volver a las opciones
+CA96 REPLY 2 [Volveré luego.]
+CA96 TEXT rodela
+CA96 TEXT T1: 8.000 kg; absorción física 50% / mágica 50%; cobertura frontal de 120 grados.
+CA96 TEXT Mantené Zoom con un arma compatible: bloquear gasta Aire y durabilidad. Armas
+CA96 TEXT grandes, a distancia y guanteletes usan su propia acción de Zoom. Ronnie prepara el
+CA96 TEXT plan de bronce y cuero.
+CA96 PAGE loadout_root node=286 visible=8
+CA96 REPLY 0 Elegir o recibir mi amuleto T1
+CA96 REPLY 1 Revisar armas
+CA96 REPLY 2 Revisar armaduras
+CA96 REPLY 3 Revisar Sellos
+CA96 REPLY 4 Revisar escudos
+CA96 REPLY 5 Revisar el plan confirmado
+CA96 REPLY 6 ¿Cómo me las arreglo para sobrevivir?
+CA96 REPLY 7 [Volveré luego.]
+CA96 TEXT El mazo es suyo: 78 cartas físicas para el Trucazo.
+CA96 TEXT Sus poderes requieren capturar esencias.
+CA96 TEXT
+CA96 TEXT Elija arma, armadura, Sello y escudo para las lecciones de oficio de Ronnie después de
+CA96 TEXT Caella. También le entrego un amuleto T1 a elección. Lea cada descripción antes de
+CA96 TEXT confirmar; las elecciones confirmadas quedan fijas.
+CA96 PASS native shield confirmation records corresponding type and name
+CA96 PAGE loadout_summary node=362 visible=2
+CA96 REPLY 0 Volver a las opciones
+CA96 REPLY 1 [Volveré luego.]
+CA96 TEXT Arma: Sin elegir
+CA96 TEXT Armadura: Sin elegir
+CA96 TEXT Sello: Sin elegir
+CA96 TEXT Escudo: rodela
+CA96 PAGE caella_magic_done node=144 visible=3
+CA96 REPLY 0 ¿Dónde puedo fabricar equipo?
+CA96 REPLY 1 ¿Puedo elegir un sello y un amuleto?
+CA96 REPLY 2 [Volveré luego.]
+CA96 TEXT Gracias por devolverme el equipo. La pared seguirá pareciendo sólida: caminá a través
+CA96 TEXT de las cuatro marcas. El pasadizo lleva al ascensor y a la cueva. Después hablá con
+CA96 TEXT Ronnie para preparar tu arma.
+CA96 PAGE caella_seals_ready node=148 visible=4
+CA96 REPLY 0 Aprender la receta de mi amuleto T1
+CA96 REPLY 1 ¿Y dónde están los materiales?
+CA96 REPLY 2 ¿Cómo equipo y uso un sello?
+CA96 REPLY 3 [Volveré luego.]
+CA96 TEXT Tu elección confirmada está registrada. Fabricá tu Sello en mi Banco de Trabajo o
+CA96 TEXT arriba. Palomo te deja elegir un amuleto T1 y te lo entrega; yo puedo enseñarte su
+CA96 TEXT receta. Preguntame por los materiales o cómo equiparlos.
+CA96 PAGE caella_choose_amulet node=157 visible=3
+CA96 REPLY 0 Aprender la receta de este amuleto
+CA96 REPLY 1 Volver a las opciones
+CA96 REPLY 2 [Volveré luego.]
+CA96 TEXT Amuleto de Rubí
+CA96 TEXT Puedo enseñarte la receta del amuleto que elegiste con Palomo, incluidos sus
+CA96 TEXT componentes. Una pieza que ya es tuya no necesita materiales adicionales del tutorial.
+CA96 PAGE caella_choose_amulet node=157 visible=2
+CA96 REPLY 0 Volver a las opciones
+CA96 REPLY 1 [Volveré luego.]
+CA96 TEXT Amuleto de Rubí
+CA96 TEXT Ya conocés la receta de este amuleto. Podés consultarla en Fabricación.
+CA96 PASS native Caella lesson taught only selected recipe
+CA96 PASS ordinary upstairs Palomo entry
+CA96 PAGE loadout_root node=286 visible=8
+CA96 REPLY 0 Elegir o recibir mi amuleto T1
+CA96 REPLY 1 Revisar armas
+CA96 REPLY 2 Revisar armaduras
+CA96 REPLY 3 Revisar Sellos
+CA96 REPLY 4 Revisar escudos
+CA96 REPLY 5 Revisar el plan confirmado
+CA96 REPLY 6 ¿Cómo me las arreglo para sobrevivir?
+CA96 REPLY 7 [Volveré luego.]
+CA96 TEXT El mazo es suyo: 78 cartas físicas para el Trucazo.
+CA96 TEXT Sus poderes requieren capturar esencias.
+CA96 TEXT
+CA96 TEXT Elija arma, armadura, Sello y escudo para las lecciones de oficio de Ronnie después de
+CA96 TEXT Caella. También le entrego un amuleto T1 a elección. Lea cada descripción antes de
+CA96 TEXT confirmar; las elecciones confirmadas quedan fijas.
+CA96 PAGE palomo_necklaces node=416 visible=6
+CA96 REPLY 0 Amuleto de Rubí
+CA96 REPLY 1 Amuleto de Zafiro
+CA96 REPLY 2 Amuleto de Esmeralda
+CA96 REPLY 3 Amuleto de Topacio
+CA96 REPLY 4 Volver al equipo
+CA96 REPLY 5 [Volveré luego.]
+CA96 TEXT Elija un amuleto T1. Yo se lo entrego; Caella puede enseñarle su receta. La elección es
+CA96 TEXT definitiva. Si ya eligió uno, conservaré esa elección y reconoceré un T1 del mismo tipo
+CA96 TEXT que ya sea suyo.
+CA96 PAGE palomo_necklace_1 node=418 visible=3
+CA96 REPLY 0 Confirmar esta elección
+CA96 REPLY 1 Volver a las opciones
+CA96 REPLY 2 [Volveré luego.]
+CA96 TEXT Amuleto de Zafiro
+CA96 TEXT T1 | Peso: 1.000 kg
+CA96 TEXT Al equiparlo: +6 a cada atributo mental, +2 a cada atributo técnico y social, +1 a cada
+CA96 TEXT atributo físico.
+CA96 TEXT Confirme para recibirlo una sola vez. No reemplazará su amuleto equipado. Caella
+CA96 TEXT enseña su receta.
+CA96 PAGE palomo_necklace_status node=421 visible=2
+CA96 REPLY 0 Volver al equipo
+CA96 REPLY 1 [Volveré luego.]
+CA96 TEXT Amuleto de Zafiro
+CA96 TEXT El regalo ya fue entregado, o se reconoció un T1 que ya era suyo. No se entrega otra
+CA96 TEXT copia. Administre sus amuletos en Inventario; Caella enseña la receta.
+CA96 PASS native dialogue delivered selected T1 once
+CA96 PAGE palomo_necklace_status node=421 visible=2
+CA96 REPLY 0 Volver al equipo
+CA96 REPLY 1 [Volveré luego.]
+CA96 TEXT Amuleto de Zafiro
+CA96 TEXT El regalo ya fue entregado, o se reconoció un T1 que ya era suyo. No se entrega otra
+CA96 TEXT copia. Administre sus amuletos en Inventario; Caella enseña la receta.
+CA96 PAGE loadout_root node=286 visible=8
+CA96 REPLY 0 Elegir o recibir mi amuleto T1
+CA96 REPLY 1 Revisar armas
+CA96 REPLY 2 Revisar armaduras
+CA96 REPLY 3 Revisar Sellos
+CA96 REPLY 4 Revisar escudos
+CA96 REPLY 5 Revisar el plan confirmado
+CA96 REPLY 6 ¿Cómo me las arreglo para sobrevivir?
+CA96 REPLY 7 [Volveré luego.]
+CA96 TEXT El mazo es suyo: 78 cartas físicas para el Trucazo.
+CA96 TEXT Sus poderes requieren capturar esencias.
+CA96 TEXT
+CA96 TEXT Elija arma, armadura, Sello y escudo para las lecciones de oficio de Ronnie después de
+CA96 TEXT Caella. También le entrego un amuleto T1 a elección. Lea cada descripción antes de
+CA96 TEXT confirmar; las elecciones confirmadas quedan fijas.
+CA96 PASS native four shield reply labels equal inventory keys
+CA96 PAGE loadout_shields node=344 visible=6
+CA96 REPLY 0 rodela
+CA96 REPLY 1 escudo de lágrima
+CA96 REPLY 2 escudo de torre
+CA96 REPLY 3 escudo mágico
+CA96 REPLY 4 Volver a las opciones
+CA96 REPLY 5 [Volveré luego.]
+CA96 TEXT Confirme sólo si esta es su elección. Volver permite comparar. Si ya confirmó esta
+CA96 TEXT categoría, todavía puede consultarla.
+CA96 PAGE loadout_preview_46 node=346 visible=3
+CA96 REPLY 0 Peso, costes y confirmación
+CA96 REPLY 1 Volver a las opciones
+CA96 REPLY 2 [Volveré luego.]
+CA96 TEXT escudo de lágrima
+CA96 TEXT Cobertura intermedia; los bloqueos exitosos aumentan más la Adrenalina.
+CA96 PAGE loadout_stats_46 node=409 visible=3
+CA96 REPLY 0 Confirmar esta elección
+CA96 REPLY 1 Volver a las opciones
+CA96 REPLY 2 [Volveré luego.]
+CA96 TEXT escudo de lágrima
+CA96 TEXT T1: 12.000 kg; absorción física 70% / mágica 70%; cobertura frontal de 140 grados.
+CA96 TEXT Mantené Zoom con un arma compatible: bloquear gasta Aire y durabilidad. Armas
+CA96 TEXT grandes, a distancia y guanteletes usan su propia acción de Zoom. Ronnie prepara el
+CA96 TEXT plan de bronce y cuero.
+CA96 PAGE loadout_root node=286 visible=8
+CA96 REPLY 0 Elegir o recibir mi amuleto T1
+CA96 REPLY 1 Revisar armas
+CA96 REPLY 2 Revisar armaduras
+CA96 REPLY 3 Revisar Sellos
+CA96 REPLY 4 Revisar escudos
+CA96 REPLY 5 Revisar el plan confirmado
+CA96 REPLY 6 ¿Cómo me las arreglo para sobrevivir?
+CA96 REPLY 7 [Volveré luego.]
+CA96 TEXT El mazo es suyo: 78 cartas físicas para el Trucazo.
+CA96 TEXT Sus poderes requieren capturar esencias.
+CA96 TEXT
+CA96 TEXT Elija arma, armadura, Sello y escudo para las lecciones de oficio de Ronnie después de
+CA96 TEXT Caella. También le entrego un amuleto T1 a elección. Lea cada descripción antes de
+CA96 TEXT confirmar; las elecciones confirmadas quedan fijas.
+CA96 PASS native shield confirmation records corresponding type and name
+CA96 PAGE loadout_summary node=362 visible=2
+CA96 REPLY 0 Volver a las opciones
+CA96 REPLY 1 [Volveré luego.]
+CA96 TEXT Arma: Sin elegir
+CA96 TEXT Armadura: Sin elegir
+CA96 TEXT Sello: Sello de Fuego
+CA96 TEXT Escudo: escudo de lágrima
+CA96 PAGE caella_magic_done node=144 visible=3
+CA96 REPLY 0 ¿Dónde puedo fabricar equipo?
+CA96 REPLY 1 ¿Puedo elegir un sello y un amuleto?
+CA96 REPLY 2 [Volveré luego.]
+CA96 TEXT Gracias por devolverme el equipo. La pared seguirá pareciendo sólida: caminá a través
+CA96 TEXT de las cuatro marcas. El pasadizo lleva al ascensor y a la cueva. Después hablá con
+CA96 TEXT Ronnie para preparar tu arma.
+CA96 PAGE caella_seals_ready node=148 visible=4
+CA96 REPLY 0 Aprender la receta de mi amuleto T1
+CA96 REPLY 1 ¿Y dónde están los materiales?
+CA96 REPLY 2 ¿Cómo equipo y uso un sello?
+CA96 REPLY 3 [Volveré luego.]
+CA96 TEXT Tu elección confirmada está registrada. Fabricá tu Sello en mi Banco de Trabajo o
+CA96 TEXT arriba. Palomo te deja elegir un amuleto T1 y te lo entrega; yo puedo enseñarte su
+CA96 TEXT receta. Preguntame por los materiales o cómo equiparlos.
+CA96 PAGE caella_choose_amulet node=157 visible=3
+CA96 REPLY 0 Aprender la receta de este amuleto
+CA96 REPLY 1 Volver a las opciones
+CA96 REPLY 2 [Volveré luego.]
+CA96 TEXT Amuleto de Zafiro
+CA96 TEXT Puedo enseñarte la receta del amuleto que elegiste con Palomo, incluidos sus
+CA96 TEXT componentes. Una pieza que ya es tuya no necesita materiales adicionales del tutorial.
+CA96 PAGE caella_choose_amulet node=157 visible=2
+CA96 REPLY 0 Volver a las opciones
+CA96 REPLY 1 [Volveré luego.]
+CA96 TEXT Amuleto de Zafiro
+CA96 TEXT Ya conocés la receta de este amuleto. Podés consultarla en Fabricación.
+CA96 PASS native Caella lesson taught only selected recipe
+CA96 PASS ordinary upstairs Palomo entry
+CA96 PAGE loadout_root node=286 visible=8
+CA96 REPLY 0 Elegir o recibir mi amuleto T1
+CA96 REPLY 1 Revisar armas
+CA96 REPLY 2 Revisar armaduras
+CA96 REPLY 3 Revisar Sellos
+CA96 REPLY 4 Revisar escudos
+CA96 REPLY 5 Revisar el plan confirmado
+CA96 REPLY 6 ¿Cómo me las arreglo para sobrevivir?
+CA96 REPLY 7 [Volveré luego.]
+CA96 TEXT El mazo es suyo: 78 cartas físicas para el Trucazo.
+CA96 TEXT Sus poderes requieren capturar esencias.
+CA96 TEXT
+CA96 TEXT Elija arma, armadura, Sello y escudo para las lecciones de oficio de Ronnie después de
+CA96 TEXT Caella. También le entrego un amuleto T1 a elección. Lea cada descripción antes de
+CA96 TEXT confirmar; las elecciones confirmadas quedan fijas.
+CA96 PAGE palomo_necklaces node=416 visible=6
+CA96 REPLY 0 Amuleto de Rubí
+CA96 REPLY 1 Amuleto de Zafiro
+CA96 REPLY 2 Amuleto de Esmeralda
+CA96 REPLY 3 Amuleto de Topacio
+CA96 REPLY 4 Volver al equipo
+CA96 REPLY 5 [Volveré luego.]
+CA96 TEXT Elija un amuleto T1. Yo se lo entrego; Caella puede enseñarle su receta. La elección es
+CA96 TEXT definitiva. Si ya eligió uno, conservaré esa elección y reconoceré un T1 del mismo tipo
+CA96 TEXT que ya sea suyo.
+CA96 PAGE palomo_necklace_2 node=419 visible=3
+CA96 REPLY 0 Confirmar esta elección
+CA96 REPLY 1 Volver a las opciones
+CA96 REPLY 2 [Volveré luego.]
+CA96 TEXT Amuleto de Esmeralda
+CA96 TEXT T1 | Peso: 1.000 kg
+CA96 TEXT Al equiparlo: +6 a cada atributo técnico, +2 a cada atributo físico y mental, +1 a cada
+CA96 TEXT atributo social.
+CA96 TEXT Confirme para recibirlo una sola vez. No reemplazará su amuleto equipado. Caella
+CA96 TEXT enseña su receta.
+CA96 PAGE palomo_necklace_status node=421 visible=2
+CA96 REPLY 0 Volver al equipo
+CA96 REPLY 1 [Volveré luego.]
+CA96 TEXT Amuleto de Esmeralda
+CA96 TEXT El regalo ya fue entregado, o se reconoció un T1 que ya era suyo. No se entrega otra
+CA96 TEXT copia. Administre sus amuletos en Inventario; Caella enseña la receta.
+CA96 PASS native dialogue delivered selected T1 once
+CA96 PAGE palomo_necklace_status node=421 visible=2
+CA96 REPLY 0 Volver al equipo
+CA96 REPLY 1 [Volveré luego.]
+CA96 TEXT Amuleto de Esmeralda
+CA96 TEXT El regalo ya fue entregado, o se reconoció un T1 que ya era suyo. No se entrega otra
+CA96 TEXT copia. Administre sus amuletos en Inventario; Caella enseña la receta.
+CA96 PAGE loadout_root node=286 visible=8
+CA96 REPLY 0 Elegir o recibir mi amuleto T1
+CA96 REPLY 1 Revisar armas
+CA96 REPLY 2 Revisar armaduras
+CA96 REPLY 3 Revisar Sellos
+CA96 REPLY 4 Revisar escudos
+CA96 REPLY 5 Revisar el plan confirmado
+CA96 REPLY 6 ¿Cómo me las arreglo para sobrevivir?
+CA96 REPLY 7 [Volveré luego.]
+CA96 TEXT El mazo es suyo: 78 cartas físicas para el Trucazo.
+CA96 TEXT Sus poderes requieren capturar esencias.
+CA96 TEXT
+CA96 TEXT Elija arma, armadura, Sello y escudo para las lecciones de oficio de Ronnie después de
+CA96 TEXT Caella. También le entrego un amuleto T1 a elección. Lea cada descripción antes de
+CA96 TEXT confirmar; las elecciones confirmadas quedan fijas.
+CA96 PASS native four shield reply labels equal inventory keys
+CA96 PAGE loadout_shields node=344 visible=6
+CA96 REPLY 0 rodela
+CA96 REPLY 1 escudo de lágrima
+CA96 REPLY 2 escudo de torre
+CA96 REPLY 3 escudo mágico
+CA96 REPLY 4 Volver a las opciones
+CA96 REPLY 5 [Volveré luego.]
+CA96 TEXT Confirme sólo si esta es su elección. Volver permite comparar. Si ya confirmó esta
+CA96 TEXT categoría, todavía puede consultarla.
+CA96 PAGE loadout_preview_47 node=347 visible=3
+CA96 REPLY 0 Peso, costes y confirmación
+CA96 REPLY 1 Volver a las opciones
+CA96 REPLY 2 [Volveré luego.]
+CA96 TEXT escudo de torre
+CA96 TEXT El más pesado, con mayor cobertura y absorción física; aumenta la masa de combate.
+CA96 PAGE loadout_stats_47 node=410 visible=3
+CA96 REPLY 0 Confirmar esta elección
+CA96 REPLY 1 Volver a las opciones
+CA96 REPLY 2 [Volveré luego.]
+CA96 TEXT escudo de torre
+CA96 TEXT T1: 16.000 kg; absorción física 80% / mágica 80%; cobertura frontal de 160 grados.
+CA96 TEXT Mantené Zoom con un arma compatible: bloquear gasta Aire y durabilidad. Armas
+CA96 TEXT grandes, a distancia y guanteletes usan su propia acción de Zoom. Ronnie prepara el
+CA96 TEXT plan de bronce y cuero.
+CA96 PAGE loadout_root node=286 visible=8
+CA96 REPLY 0 Elegir o recibir mi amuleto T1
+CA96 REPLY 1 Revisar armas
+CA96 REPLY 2 Revisar armaduras
+CA96 REPLY 3 Revisar Sellos
+CA96 REPLY 4 Revisar escudos
+CA96 REPLY 5 Revisar el plan confirmado
+CA96 REPLY 6 ¿Cómo me las arreglo para sobrevivir?
+CA96 REPLY 7 [Volveré luego.]
+CA96 TEXT El mazo es suyo: 78 cartas físicas para el Trucazo.
+CA96 TEXT Sus poderes requieren capturar esencias.
+CA96 TEXT
+CA96 TEXT Elija arma, armadura, Sello y escudo para las lecciones de oficio de Ronnie después de
+CA96 TEXT Caella. También le entrego un amuleto T1 a elección. Lea cada descripción antes de
+CA96 TEXT confirmar; las elecciones confirmadas quedan fijas.
+CA96 PASS native shield confirmation records corresponding type and name
+CA96 PAGE loadout_summary node=362 visible=2
+CA96 REPLY 0 Volver a las opciones
+CA96 REPLY 1 [Volveré luego.]
+CA96 TEXT Arma: Sin elegir
+CA96 TEXT Armadura: Sin elegir
+CA96 TEXT Sello: Sello de Fuego
+CA96 TEXT Escudo: escudo de torre
+CA96 PAGE caella_magic_done node=144 visible=3
+CA96 REPLY 0 ¿Dónde puedo fabricar equipo?
+CA96 REPLY 1 ¿Puedo elegir un sello y un amuleto?
+CA96 REPLY 2 [Volveré luego.]
+CA96 TEXT Gracias por devolverme el equipo. La pared seguirá pareciendo sólida: caminá a través
+CA96 TEXT de las cuatro marcas. El pasadizo lleva al ascensor y a la cueva. Después hablá con
+CA96 TEXT Ronnie para preparar tu arma.
+CA96 PAGE caella_seals_ready node=148 visible=4
+CA96 REPLY 0 Aprender la receta de mi amuleto T1
+CA96 REPLY 1 ¿Y dónde están los materiales?
+CA96 REPLY 2 ¿Cómo equipo y uso un sello?
+CA96 REPLY 3 [Volveré luego.]
+CA96 TEXT Tu elección confirmada está registrada. Fabricá tu Sello en mi Banco de Trabajo o
+CA96 TEXT arriba. Palomo te deja elegir un amuleto T1 y te lo entrega; yo puedo enseñarte su
+CA96 TEXT receta. Preguntame por los materiales o cómo equiparlos.
+CA96 PAGE caella_choose_amulet node=157 visible=3
+CA96 REPLY 0 Aprender la receta de este amuleto
+CA96 REPLY 1 Volver a las opciones
+CA96 REPLY 2 [Volveré luego.]
+CA96 TEXT Amuleto de Esmeralda
+CA96 TEXT Puedo enseñarte la receta del amuleto que elegiste con Palomo, incluidos sus
+CA96 TEXT componentes. Una pieza que ya es tuya no necesita materiales adicionales del tutorial.
+CA96 PAGE caella_choose_amulet node=157 visible=2
+CA96 REPLY 0 Volver a las opciones
+CA96 REPLY 1 [Volveré luego.]
+CA96 TEXT Amuleto de Esmeralda
+CA96 TEXT Ya conocés la receta de este amuleto. Podés consultarla en Fabricación.
+CA96 PASS native Caella lesson taught only selected recipe
+CA96 PASS ordinary upstairs Palomo entry
+CA96 PAGE loadout_root node=286 visible=8
+CA96 REPLY 0 Elegir o recibir mi amuleto T1
+CA96 REPLY 1 Revisar armas
+CA96 REPLY 2 Revisar armaduras
+CA96 REPLY 3 Revisar Sellos
+CA96 REPLY 4 Revisar escudos
+CA96 REPLY 5 Revisar el plan confirmado
+CA96 REPLY 6 ¿Cómo me las arreglo para sobrevivir?
+CA96 REPLY 7 [Volveré luego.]
+CA96 TEXT El mazo es suyo: 78 cartas físicas para el Trucazo.
+CA96 TEXT Sus poderes requieren capturar esencias.
+CA96 TEXT
+CA96 TEXT Elija arma, armadura, Sello y escudo para las lecciones de oficio de Ronnie después de
+CA96 TEXT Caella. También le entrego un amuleto T1 a elección. Lea cada descripción antes de
+CA96 TEXT confirmar; las elecciones confirmadas quedan fijas.
+CA96 PAGE palomo_necklaces node=416 visible=6
+CA96 REPLY 0 Amuleto de Rubí
+CA96 REPLY 1 Amuleto de Zafiro
+CA96 REPLY 2 Amuleto de Esmeralda
+CA96 REPLY 3 Amuleto de Topacio
+CA96 REPLY 4 Volver al equipo
+CA96 REPLY 5 [Volveré luego.]
+CA96 TEXT Elija un amuleto T1. Yo se lo entrego; Caella puede enseñarle su receta. La elección es
+CA96 TEXT definitiva. Si ya eligió uno, conservaré esa elección y reconoceré un T1 del mismo tipo
+CA96 TEXT que ya sea suyo.
+CA96 PAGE palomo_necklace_3 node=420 visible=3
+CA96 REPLY 0 Confirmar esta elección
+CA96 REPLY 1 Volver a las opciones
+CA96 REPLY 2 [Volveré luego.]
+CA96 TEXT Amuleto de Topacio
+CA96 TEXT T1 | Peso: 1.000 kg
+CA96 TEXT Al equiparlo: +6 a cada atributo social, +2 a cada atributo físico y mental, +1 a cada
+CA96 TEXT atributo técnico.
+CA96 TEXT Confirme para recibirlo una sola vez. No reemplazará su amuleto equipado. Caella
+CA96 TEXT enseña su receta.
+CA96 PAGE palomo_necklace_status node=421 visible=2
+CA96 REPLY 0 Volver al equipo
+CA96 REPLY 1 [Volveré luego.]
+CA96 TEXT Amuleto de Topacio
+CA96 TEXT El regalo ya fue entregado, o se reconoció un T1 que ya era suyo. No se entrega otra
+CA96 TEXT copia. Administre sus amuletos en Inventario; Caella enseña la receta.
+CA96 PASS native dialogue delivered selected T1 once
+CA96 PAGE palomo_necklace_status node=421 visible=2
+CA96 REPLY 0 Volver al equipo
+CA96 REPLY 1 [Volveré luego.]
+CA96 TEXT Amuleto de Topacio
+CA96 TEXT El regalo ya fue entregado, o se reconoció un T1 que ya era suyo. No se entrega otra
+CA96 TEXT copia. Administre sus amuletos en Inventario; Caella enseña la receta.
+CA96 PAGE loadout_root node=286 visible=8
+CA96 REPLY 0 Elegir o recibir mi amuleto T1
+CA96 REPLY 1 Revisar armas
+CA96 REPLY 2 Revisar armaduras
+CA96 REPLY 3 Revisar Sellos
+CA96 REPLY 4 Revisar escudos
+CA96 REPLY 5 Revisar el plan confirmado
+CA96 REPLY 6 ¿Cómo me las arreglo para sobrevivir?
+CA96 REPLY 7 [Volveré luego.]
+CA96 TEXT El mazo es suyo: 78 cartas físicas para el Trucazo.
+CA96 TEXT Sus poderes requieren capturar esencias.
+CA96 TEXT
+CA96 TEXT Elija arma, armadura, Sello y escudo para las lecciones de oficio de Ronnie después de
+CA96 TEXT Caella. También le entrego un amuleto T1 a elección. Lea cada descripción antes de
+CA96 TEXT confirmar; las elecciones confirmadas quedan fijas.
+CA96 PASS native four shield reply labels equal inventory keys
+CA96 PAGE loadout_shields node=344 visible=6
+CA96 REPLY 0 rodela
+CA96 REPLY 1 escudo de lágrima
+CA96 REPLY 2 escudo de torre
+CA96 REPLY 3 escudo mágico
+CA96 REPLY 4 Volver a las opciones
+CA96 REPLY 5 [Volveré luego.]
+CA96 TEXT Confirme sólo si esta es su elección. Volver permite comparar. Si ya confirmó esta
+CA96 TEXT categoría, todavía puede consultarla.
+CA96 PAGE loadout_preview_48 node=348 visible=3
+CA96 REPLY 0 Peso, costes y confirmación
+CA96 REPLY 1 Volver a las opciones
+CA96 REPLY 2 [Volveré luego.]
+CA96 TEXT escudo mágico
+CA96 TEXT Liviano y más eficaz contra magia; al bloquear refleja proyectiles que llegan de
+CA96 TEXT frente.
+CA96 PAGE loadout_stats_48 node=411 visible=3
+CA96 REPLY 0 Confirmar esta elección
+CA96 REPLY 1 Volver a las opciones
+CA96 REPLY 2 [Volveré luego.]
+CA96 TEXT escudo mágico
+CA96 TEXT T1: 4.000 kg; absorción física 40% / mágica 80%; cobertura frontal de 120 grados.
+CA96 TEXT Mantené Zoom con un arma compatible: bloquear gasta Aire y durabilidad. Armas
+CA96 TEXT grandes, a distancia y guanteletes usan su propia acción de Zoom. Ronnie prepara el
+CA96 TEXT plan de bronce y cuero.
+CA96 PAGE loadout_root node=286 visible=8
+CA96 REPLY 0 Elegir o recibir mi amuleto T1
+CA96 REPLY 1 Revisar armas
+CA96 REPLY 2 Revisar armaduras
+CA96 REPLY 3 Revisar Sellos
+CA96 REPLY 4 Revisar escudos
+CA96 REPLY 5 Revisar el plan confirmado
+CA96 REPLY 6 ¿Cómo me las arreglo para sobrevivir?
+CA96 REPLY 7 [Volveré luego.]
+CA96 TEXT El mazo es suyo: 78 cartas físicas para el Trucazo.
+CA96 TEXT Sus poderes requieren capturar esencias.
+CA96 TEXT
+CA96 TEXT Elija arma, armadura, Sello y escudo para las lecciones de oficio de Ronnie después de
+CA96 TEXT Caella. También le entrego un amuleto T1 a elección. Lea cada descripción antes de
+CA96 TEXT confirmar; las elecciones confirmadas quedan fijas.
+CA96 PASS native shield confirmation records corresponding type and name
+CA96 PAGE loadout_summary node=362 visible=2
+CA96 REPLY 0 Volver a las opciones
+CA96 REPLY 1 [Volveré luego.]
+CA96 TEXT Arma: Sin elegir
+CA96 TEXT Armadura: Sin elegir
+CA96 TEXT Sello: Sello de Fuego
+CA96 TEXT Escudo: escudo mágico
+CA96 PAGE caella_magic_done node=144 visible=3
+CA96 REPLY 0 ¿Dónde puedo fabricar equipo?
+CA96 REPLY 1 ¿Puedo elegir un sello y un amuleto?
+CA96 REPLY 2 [Volveré luego.]
+CA96 TEXT Gracias por devolverme el equipo. La pared seguirá pareciendo sólida: caminá a través
+CA96 TEXT de las cuatro marcas. El pasadizo lleva al ascensor y a la cueva. Después hablá con
+CA96 TEXT Ronnie para preparar tu arma.
+CA96 PAGE caella_seals_ready node=148 visible=4
+CA96 REPLY 0 Aprender la receta de mi amuleto T1
+CA96 REPLY 1 ¿Y dónde están los materiales?
+CA96 REPLY 2 ¿Cómo equipo y uso un sello?
+CA96 REPLY 3 [Volveré luego.]
+CA96 TEXT Tu elección confirmada está registrada. Fabricá tu Sello en mi Banco de Trabajo o
+CA96 TEXT arriba. Palomo te deja elegir un amuleto T1 y te lo entrega; yo puedo enseñarte su
+CA96 TEXT receta. Preguntame por los materiales o cómo equiparlos.
+CA96 PAGE caella_choose_amulet node=157 visible=3
+CA96 REPLY 0 Aprender la receta de este amuleto
+CA96 REPLY 1 Volver a las opciones
+CA96 REPLY 2 [Volveré luego.]
+CA96 TEXT Amuleto de Topacio
+CA96 TEXT Puedo enseñarte la receta del amuleto que elegiste con Palomo, incluidos sus
+CA96 TEXT componentes. Una pieza que ya es tuya no necesita materiales adicionales del tutorial.
+CA96 PAGE caella_choose_amulet node=157 visible=2
+CA96 REPLY 0 Volver a las opciones
+CA96 REPLY 1 [Volveré luego.]
+CA96 TEXT Amuleto de Topacio
+CA96 TEXT Ya conocés la receta de este amuleto. Podés consultarla en Fabricación.
+CA96 PASS native Caella lesson taught only selected recipe
+CA96 PAGE palomo_final node=163 visible=8
+CA96 REPLY 0 Elegir o recibir mi amuleto T1
+CA96 REPLY 1 ¿Y ahora?
+CA96 REPLY 2 ¿Todo esto fue idea suya?
+CA96 REPLY 3 ¿Por qué ellos no pueden salir?
+CA96 REPLY 4 ¿Ahora me va a decir dónde estamos?
+CA96 REPLY 5 ¿Y la voz que escuché?
+CA96 REPLY 6 ¿Cómo me las arreglo para sobrevivir?
+CA96 REPLY 7 Eso es todo por ahora.
+CA96 TEXT Curioso. Cada uno le mostró el camino que conocía y usted tuvo la cortesía de no
+CA96 TEXT confundir ninguno con el camino completo.
+CA96 PAGE palomo_necklace_status node=421 visible=2
+CA96 REPLY 0 Volver al equipo
+CA96 REPLY 1 [Volveré luego.]
+CA96 TEXT Amuleto de Topacio
+CA96 TEXT El regalo ya fue entregado, o se reconoció un T1 que ya era suyo. No se entrega otra
+CA96 TEXT copia. Administre sus amuletos en Inventario; Caella enseña la receta.
+CA96 PAGE palomo_fool_received node=203 visible=6
+CA96 REPLY 0 Elegir o recibir mi amuleto T1
+CA96 REPLY 1 ¿Adónde lleva la salida?
+CA96 REPLY 2 ¿Qué cambió con la carta?
+CA96 REPLY 3 ¿Cómo guardo mis cosas?
+CA96 REPLY 4 ¿Cómo me las arreglo para sobrevivir?
+CA96 REPLY 5 Eso es todo por ahora.
+CA96 TEXT Parece que la caja estaba menos vacía de lo que ambos suponíamos. O usted más lleno.
+CA96 TEXT Conviene desconfiar de las medidas sencillas.
+CA96 TEXT
+CA96 TEXT El loco encontró un lugar en su colección. Quizá le resulte más fácil reconocer su
+CA96 TEXT comienzo que su destino.
+CA96 PAGE palomo_necklace_status node=421 visible=2
+CA96 REPLY 0 Volver al equipo
+CA96 REPLY 1 [Volveré luego.]
+CA96 TEXT Amuleto de Topacio
+CA96 TEXT El regalo ya fue entregado, o se reconoció un T1 que ya era suyo. No se entrega otra
+CA96 TEXT copia. Administre sus amuletos en Inventario; Caella enseña la receta.

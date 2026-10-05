@@ -1,6 +1,16 @@
 # Caelum Argenteum — Audio and art
 
-Documentation version: **4.37.18** — 2026-10-04.
+Documentation version: **4.37.19** — 2026-10-04.
+
+## 4.37.19 - Existing necklace assets and shield localization (#96)
+
+The reward uses the existing CaelumAmuletPickup catalogue and sprites for
+Ruby, Sapphire, Emerald and Topaz T1. Existing Caelum fonts, native conversation
+panels and acquired-item feedback present its choice, delivery and recipe
+lesson. Shield dialogue labels use CA_SHIELD_TYPE_* directly; names in preview,
+confirmation and summary share FormatShieldName with inventory. No external
+art, audio, new item sprite or attribution is added. Native presentation and
+bilingual evidence are recorded under assets/validation_43719.
 
 ## 4.37.18 - Journal subsection presentation (#91)
 

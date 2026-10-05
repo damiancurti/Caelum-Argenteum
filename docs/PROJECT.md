@@ -1,6 +1,22 @@
 # Caelum Argenteum — Project, status and roadmap
 
-Documentation version: **4.37.18** — 2026-10-04.
+Documentation version: **4.37.19** — 2026-10-04.
+
+## 4.37.19 - Palomo necklace reward and shield names (#96)
+
+Palomo now offers and gives one of the four existing T1 amulets after the player
+follows him upstairs; Caella teaches that same item's recipe. The author's
+choice/recipe split was confirmed on 2026-10-04. The gift is actual owned
+equipment, capacity-aware and never auto-equipped. Old selections, owned
+copies, active crafting and completed progress have an idempotent revision-1
+path; no new balance or recipe is introduced. Original dialogue node indices
+are preserved. Shield dialogue uses the same bilingual names as inventory.
+The other equipment categories keep their accepted crafting and trial rules.
+
+Static/native verification and save evidence: assets/validation_43719.
+Author checks remain in pending_test.txt; #96 is delivered for review, with
+commit/push and a linked PR. #91 was accepted, closed and merged as PR #108
+on 2026-10-04 (merge 466a0734).
 
 ## 4.37.18 - Crafting sections and complete Tarot descriptions (#91)
 
@@ -352,7 +368,8 @@ Palomo invites the player to follow his existing physical route inside and
 records weapon, armor, Seal and shield choices. Review and backtracking precede
 each confirmation; explanations use the existing catalogue and current derived
 costs. Ronnie teaches and supplies that same persistent plan after Caella's
-trial. Caella retains the amulet choice. The selected shield uses established
+trial. Caella retained the amulet choice at #63; #96 moves it and a one-time
+gift to Palomo, retaining her recipe lesson. The selected shield uses established
 bronze/strap recipes and existing copper, tin and leather sources.
 
 All actual owned equipment and the Magic Box now survive the narrative exit,

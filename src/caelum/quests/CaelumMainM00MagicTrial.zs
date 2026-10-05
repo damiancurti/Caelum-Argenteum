@@ -403,41 +403,9 @@ class CaelumMainM00SealCrafting : Object play
     static bool Choose(CaelumPlayer user, bool amulet, int type)
     {
         if (!amulet) return CaelumMainM00Loadout.Choose(user, 2, type);
-        if (!CanLearn(user)) return false;
-        let speaker = CaelumCaella(user.player.ConversationNPC);
-        if (speaker == null || !speaker.StoryAnchored || type < 0
-            || type >= (amulet ? CaelumConstants.AMULET_TYPE_COUNT : CaelumConstants.SEAL_TYPE_COUNT)) return false;
-        let r = user.GetPersistentCharacterState(false);
-        EnsureMigration(user);
-        int oldChoice = amulet ? r.MainM00AmuletChoice : r.MainM00SealChoice;
-        if (oldChoice > 0) return oldChoice == type + 1;
-        CaelumMainM00SupplyRules.Ensure(user);
-        bool previousSealLesson = r.MainM00SealRecipesLearned;
-        if (amulet) r.MainM00AmuletChoice = type + 1;
-        else r.MainM00SealChoice = type + 1;
-        r.MainM00SealRecipesLearned = true;
-        let needs = new("CaelumMainM00StarterMaterials"); needs.Efficiency = 2;
-        if (amulet) needs.AddAmulet(type); else needs.AddSeal(type);
-        for (int recipe = 0; recipe < CaelumConstants.CRAFTING_NETWORK_PLAYABLE_RECIPE_COUNT; recipe++)
-            if (needs.Recipes[recipe]) r.LearnCraftingRecipe(recipe);
-        for (Inventory cursor = user.Inv; cursor != null; cursor = cursor.Inv)
-        {
-            let item = CaelumEquipmentItem(cursor);
-            if (item == null || item.EquipmentKind != (amulet ? CaelumConstants.EQUIPMENT_KIND_AMULET
-                : CaelumConstants.EQUIPMENT_KIND_SEAL) || item.Tier != 1 || item.ItemType != type
-                || item is "CA_LimboMagicSeal") continue;
-            if (amulet) { r.MainM00AmuletPrepared = true; r.MainM00AmuletOwnedAtLearning = true; }
-            else
-            {
-                r.MainM00SealsPrepared[type] = true;
-                if (!previousSealLesson) r.MainM00SealOwnedAtLearning[type] = true;
-            }
-        }
-        CaelumMainM00SupplyRules.UpdateLimits(user);
-        if (!user.CraftingTaskActive) { user.CraftingEfficiencyIndex = 2; user.ResetCraftingLayerChoices(); }
-        user.RefreshCraftingRecipeBookSummary();
-        Sync(user); user.RefreshSocialJournalSnapshot(); user.PersistCharacterState();
-        return true;
+        let record = user == null ? null : user.GetPersistentCharacterState(false);
+        return record != null && record.MainM00AmuletChoice == type + 1
+            && CaelumMainM00Necklace.Teach(user);
     }
 
     static bool IsLearnedRecipe(CaelumPlayer user)

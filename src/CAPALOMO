@@ -1581,32 +1581,44 @@ conversation
     page { pagename = "caella_confirm_seal_4"; userstring = "caella_confirm_seal_4";
         name = "$CA_CAELLA_NAME"; dialog = "$CA_LOADOUT_REFERRAL"; goodbye = "$CA_DLG_M01_SOCIAL_LEAVE"; }
     page { pagename = "caella_choose_amulet"; userstring = "caella_choose_amulet";
-        name = "$CA_CAELLA_NAME"; dialog = "$CA_AF_CHOOSE_AMULET"; goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
-        ifitem { item = "CaelumM00AmuletChosenToken"; amount = 1; } link = "caella_seals_ready";
-        choice { text = "$CA_AF_AMULET_0"; nextpage = "caella_confirm_amulet_0"; }
-        choice { text = "$CA_AF_AMULET_1"; nextpage = "caella_confirm_amulet_1"; }
-        choice { text = "$CA_AF_AMULET_2"; nextpage = "caella_confirm_amulet_2"; }
-        choice { text = "$CA_AF_AMULET_3"; nextpage = "caella_confirm_amulet_3"; }
+        name = "$CA_CAELLA_NAME"; dialog = "$CA_CAELLA_NECKLACE_LESSON"; goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+        choice { text = "$CA_CAELLA_NECKLACE_TEACH"; giveitem = "CaelumM00LearnAmuletAction";
+            nextpage = "caella_choose_amulet"; closedialog = false;
+            require { item = "CaelumM00AmuletChosenToken"; amount = 1; }
+            exclude { item = "CaelumM00AmuletRecipeKnownToken"; amount = 1; } }
+        choice { text = "$CA_AF_BACK"; nextpage = "caella_seals_ready"; closedialog = false; }
     }
     page { pagename = "caella_confirm_amulet_0"; userstring = "caella_confirm_amulet_0";
-        name = "$CA_CAELLA_NAME"; dialog = "$CA_AF_CONFIRM_AMULET_0"; goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
-        choice { text = "$CA_AF_CONFIRM"; giveitem = "CaelumM00ChooseAmulet0"; nextpage = "caella_seals_ready"; }
-        choice { text = "$CA_AF_BACK"; nextpage = "caella_choose_amulet"; }
+        name = "$CA_CAELLA_NAME"; dialog = "$CA_CAELLA_NECKLACE_LESSON"; goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+        choice { text = "$CA_CAELLA_NECKLACE_TEACH"; giveitem = "CaelumM00LearnAmuletAction";
+            nextpage = "caella_choose_amulet"; closedialog = false;
+            require { item = "CaelumM00AmuletChosenToken"; amount = 1; }
+            exclude { item = "CaelumM00AmuletRecipeKnownToken"; amount = 1; } }
+        choice { text = "$CA_AF_BACK"; nextpage = "caella_seals_ready"; closedialog = false; }
     }
     page { pagename = "caella_confirm_amulet_1"; userstring = "caella_confirm_amulet_1";
-        name = "$CA_CAELLA_NAME"; dialog = "$CA_AF_CONFIRM_AMULET_1"; goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
-        choice { text = "$CA_AF_CONFIRM"; giveitem = "CaelumM00ChooseAmulet1"; nextpage = "caella_seals_ready"; }
-        choice { text = "$CA_AF_BACK"; nextpage = "caella_choose_amulet"; }
+        name = "$CA_CAELLA_NAME"; dialog = "$CA_CAELLA_NECKLACE_LESSON"; goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+        choice { text = "$CA_CAELLA_NECKLACE_TEACH"; giveitem = "CaelumM00LearnAmuletAction";
+            nextpage = "caella_choose_amulet"; closedialog = false;
+            require { item = "CaelumM00AmuletChosenToken"; amount = 1; }
+            exclude { item = "CaelumM00AmuletRecipeKnownToken"; amount = 1; } }
+        choice { text = "$CA_AF_BACK"; nextpage = "caella_seals_ready"; closedialog = false; }
     }
     page { pagename = "caella_confirm_amulet_2"; userstring = "caella_confirm_amulet_2";
-        name = "$CA_CAELLA_NAME"; dialog = "$CA_AF_CONFIRM_AMULET_2"; goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
-        choice { text = "$CA_AF_CONFIRM"; giveitem = "CaelumM00ChooseAmulet2"; nextpage = "caella_seals_ready"; }
-        choice { text = "$CA_AF_BACK"; nextpage = "caella_choose_amulet"; }
+        name = "$CA_CAELLA_NAME"; dialog = "$CA_CAELLA_NECKLACE_LESSON"; goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+        choice { text = "$CA_CAELLA_NECKLACE_TEACH"; giveitem = "CaelumM00LearnAmuletAction";
+            nextpage = "caella_choose_amulet"; closedialog = false;
+            require { item = "CaelumM00AmuletChosenToken"; amount = 1; }
+            exclude { item = "CaelumM00AmuletRecipeKnownToken"; amount = 1; } }
+        choice { text = "$CA_AF_BACK"; nextpage = "caella_seals_ready"; closedialog = false; }
     }
     page { pagename = "caella_confirm_amulet_3"; userstring = "caella_confirm_amulet_3";
-        name = "$CA_CAELLA_NAME"; dialog = "$CA_AF_CONFIRM_AMULET_3"; goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
-        choice { text = "$CA_AF_CONFIRM"; giveitem = "CaelumM00ChooseAmulet3"; nextpage = "caella_seals_ready"; }
-        choice { text = "$CA_AF_BACK"; nextpage = "caella_choose_amulet"; }
+        name = "$CA_CAELLA_NAME"; dialog = "$CA_CAELLA_NECKLACE_LESSON"; goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+        choice { text = "$CA_CAELLA_NECKLACE_TEACH"; giveitem = "CaelumM00LearnAmuletAction";
+            nextpage = "caella_choose_amulet"; closedialog = false;
+            require { item = "CaelumM00AmuletChosenToken"; amount = 1; }
+            exclude { item = "CaelumM00AmuletRecipeKnownToken"; amount = 1; } }
+        choice { text = "$CA_AF_BACK"; nextpage = "caella_seals_ready"; closedialog = false; }
     }
 
 }
@@ -1641,6 +1653,7 @@ conversation
         goodbye = "$CA_DLG_M01_PALOMO_LEAVE";
         ifitem { item = "CaelumMainM00MagicBoxGrantedToken"; amount = 1; }
         link = "palomo_box_received";
+        choice { text = "$CA_PALOMO_NECKLACE_ASK"; giveitem = "CaelumM00OpenNecklaceAction"; closedialog = true; }
         choice { text = "$CA_M01_PALOMO_FAVOR_ASK"; nextpage = "palomo_box_offer"; closedialog = false; }
         choice { text = "$CA_M01_PALOMO_IDEA_ASK"; nextpage = "palomo_final_idea"; closedialog = false; }
         choice { text = "$CA_M01_PALOMO_EXIT_ASK"; nextpage = "palomo_final_exit"; closedialog = false; }
@@ -1715,6 +1728,7 @@ conversation
         pagename = "palomo_box_received"; userstring = "palomo_box_received";
         name = "$CA_PALOMO_NAME"; dialog = "$CA_M01_PALOMO_RECEIVED";
         goodbye = "$CA_DLG_M01_PALOMO_LEAVE";
+        choice { text = "$CA_PALOMO_NECKLACE_ASK"; giveitem = "CaelumM00OpenNecklaceAction"; closedialog = true; }
         choice { text = "$CA_M01_PALOMO_USE_ASK"; nextpage = "palomo_box_use"; closedialog = false; }
         choice { text = "$CA_M01_PALOMO_CAVE_ASK"; nextpage = "palomo_box_cave"; closedialog = false; }
         choice { text = "$CA_DEMO_PALOMO_LESSONS_ASK"; nextpage = "palomo_lessons"; closedialog = false; }
@@ -1998,6 +2012,7 @@ conversation
         pagename = "palomo_fool_received"; userstring = "palomo_fool_received";
         name = "$CA_PALOMO_NAME"; dialog = "$CA_M01_FOOL_PALOMO";
         goodbye = "$CA_DLG_M01_PALOMO_LEAVE";
+        choice { text = "$CA_PALOMO_NECKLACE_ASK"; giveitem = "CaelumM00OpenNecklaceAction"; closedialog = true; }
         choice { text = "$CA_M01_RETURN_ASK"; nextpage = "palomo_return_door"; closedialog = false; }
         choice { text = "$CA_M01_FOOL_COLLECTION_ASK"; nextpage = "palomo_fool_collection"; closedialog = false; }
         choice { text = "$CA_M01_PALOMO_USE_ASK"; nextpage = "palomo_fool_box_use"; closedialog = false; }
@@ -2969,6 +2984,7 @@ conversation { id = 43630; class = "CaelumMainM00ConversationMenu";
     page { pagename = "loadout_root"; userstring = "loadout_root";
         name = "$CA_PALOMO_NAME"; dialog = "$CA_LOADOUT_INTRO";
         goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+        choice { text = "$CA_PALOMO_NECKLACE_ASK"; giveitem = "CaelumM00OpenNecklaceAction"; closedialog = true; }
         choice { text = "$CA_LOADOUT_WEAPON"; nextpage = "loadout_weapons"; closedialog = false; }
         choice { text = "$CA_LOADOUT_ARMOR"; nextpage = "loadout_armors"; closedialog = false; }
         choice { text = "$CA_LOADOUT_SEAL"; nextpage = "loadout_seals"; closedialog = false; }
@@ -3408,10 +3424,10 @@ conversation { id = 43630; class = "CaelumMainM00ConversationMenu";
     page { pagename = "loadout_shields"; userstring = "loadout_shields";
         name = "$CA_PALOMO_NAME"; dialog = "$CA_LOADOUT_REVIEW";
         goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
-        choice { text = "$CA_LOADOUT_SHIELD_NAME_0"; nextpage = "loadout_preview_45"; closedialog = false; }
-        choice { text = "$CA_LOADOUT_SHIELD_NAME_1"; nextpage = "loadout_preview_46"; closedialog = false; }
-        choice { text = "$CA_LOADOUT_SHIELD_NAME_2"; nextpage = "loadout_preview_47"; closedialog = false; }
-        choice { text = "$CA_LOADOUT_SHIELD_NAME_3"; nextpage = "loadout_preview_48"; closedialog = false; }
+        choice { text = "$CA_SHIELD_TYPE_BUCKLER"; nextpage = "loadout_preview_45"; closedialog = false; }
+        choice { text = "$CA_SHIELD_TYPE_KITE"; nextpage = "loadout_preview_46"; closedialog = false; }
+        choice { text = "$CA_SHIELD_TYPE_TOWER"; nextpage = "loadout_preview_47"; closedialog = false; }
+        choice { text = "$CA_SHIELD_TYPE_MAGIC"; nextpage = "loadout_preview_48"; closedialog = false; }
         choice { text = "$CA_AF_BACK"; nextpage = "loadout_root"; closedialog = false; }
     }
     page { pagename = "loadout_preview_45"; userstring = "loadout_preview_45";
@@ -3860,5 +3876,53 @@ conversation
         name = "$CA_PORT_SOLDIER";
         dialog = "$CA_GUARD_CAPTAIN_ANSWER";
         goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+    }
+}
+
+// #96: subdiálogo nuevo al final para no desplazar páginas de partidas previas.
+conversation { id = 43633; class = "CaelumMainM00ConversationMenu";
+    page { pagename = "palomo_necklaces"; userstring = "palomo_necklaces";
+        name = "$CA_PALOMO_NAME"; dialog = "$CA_PALOMO_NECKLACE_INTRO"; goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+        ifitem { item = "CaelumM00AmuletChosenToken"; amount = 1; } link = "palomo_necklace_status";
+        choice { text = "$CA_AMULET_RUBY"; nextpage = "palomo_necklace_0"; closedialog = false; }
+        choice { text = "$CA_AMULET_SAPPHIRE"; nextpage = "palomo_necklace_1"; closedialog = false; }
+        choice { text = "$CA_AMULET_EMERALD"; nextpage = "palomo_necklace_2"; closedialog = false; }
+        choice { text = "$CA_AMULET_TOPAZ"; nextpage = "palomo_necklace_3"; closedialog = false; }
+        choice { text = "$CA_PALOMO_NECKLACE_BACK"; giveitem = "CaelumM00NecklaceBackAction"; closedialog = true; }
+    }
+    page { pagename = "palomo_necklace_0"; userstring = "palomo_necklace_0";
+        name = "$CA_PALOMO_NAME"; dialog = "$CA_PALOMO_NECKLACE_CONFIRM"; goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+        choice { text = "$CA_AF_CONFIRM"; giveitem = "CaelumM00PalomoAmulet0";
+            nextpage = "palomo_necklace_status"; closedialog = false;
+            exclude { item = "CaelumM00AmuletChosenToken"; amount = 1; } }
+        choice { text = "$CA_AF_BACK"; nextpage = "palomo_necklaces"; closedialog = false; }
+    }
+    page { pagename = "palomo_necklace_1"; userstring = "palomo_necklace_1";
+        name = "$CA_PALOMO_NAME"; dialog = "$CA_PALOMO_NECKLACE_CONFIRM"; goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+        choice { text = "$CA_AF_CONFIRM"; giveitem = "CaelumM00PalomoAmulet1";
+            nextpage = "palomo_necklace_status"; closedialog = false;
+            exclude { item = "CaelumM00AmuletChosenToken"; amount = 1; } }
+        choice { text = "$CA_AF_BACK"; nextpage = "palomo_necklaces"; closedialog = false; }
+    }
+    page { pagename = "palomo_necklace_2"; userstring = "palomo_necklace_2";
+        name = "$CA_PALOMO_NAME"; dialog = "$CA_PALOMO_NECKLACE_CONFIRM"; goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+        choice { text = "$CA_AF_CONFIRM"; giveitem = "CaelumM00PalomoAmulet2";
+            nextpage = "palomo_necklace_status"; closedialog = false;
+            exclude { item = "CaelumM00AmuletChosenToken"; amount = 1; } }
+        choice { text = "$CA_AF_BACK"; nextpage = "palomo_necklaces"; closedialog = false; }
+    }
+    page { pagename = "palomo_necklace_3"; userstring = "palomo_necklace_3";
+        name = "$CA_PALOMO_NAME"; dialog = "$CA_PALOMO_NECKLACE_CONFIRM"; goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+        choice { text = "$CA_AF_CONFIRM"; giveitem = "CaelumM00PalomoAmulet3";
+            nextpage = "palomo_necklace_status"; closedialog = false;
+            exclude { item = "CaelumM00AmuletChosenToken"; amount = 1; } }
+        choice { text = "$CA_AF_BACK"; nextpage = "palomo_necklaces"; closedialog = false; }
+    }
+    page { pagename = "palomo_necklace_status"; userstring = "palomo_necklace_status";
+        name = "$CA_PALOMO_NAME"; dialog = "$CA_PALOMO_NECKLACE_ROOM"; goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+        choice { text = "$CA_PALOMO_NECKLACE_RETRY"; giveitem = "CaelumM00ReceiveNecklaceAction";
+            nextpage = "palomo_necklace_status"; closedialog = false;
+            exclude { item = "CaelumM00NecklaceDeliveredToken"; amount = 1; } }
+        choice { text = "$CA_PALOMO_NECKLACE_BACK"; giveitem = "CaelumM00NecklaceBackAction"; closedialog = true; }
     }
 }
