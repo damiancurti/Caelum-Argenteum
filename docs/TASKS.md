@@ -14,6 +14,8 @@ Documentation version: **4.37.24** — 2026-10-05.
 - Final integrated campaign/state, Tarot, NPC Trucazo and export checks are
   recorded in assets/validation_43724. Native fixtures seed prerequisites where
   stated; they do not replace the already recorded ordinary-play acceptance.
+- Export from bf12c897 is independently verified and byte-identically reproduced.
+  CA-43724-EXPORT-01 remains the final fresh-package/manual-controls check.
 - Delivery review and any outstanding author check remain in pending_test.txt;
   confirmed results belong to HISTORY. Next development scope is V5.0.
 

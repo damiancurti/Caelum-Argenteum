@@ -3,7 +3,7 @@
   "version": "4.37.24",
   "date": "2026-10-05",
   "baseline_commit": "53dc44102e5b250bccf5428a7abe12409725387a",
-  "status": "Implementation and controlled native checks complete; committed export and author acceptance pending.",
+  "status": "Implemented, committed export verified and native checks complete; final author acceptance pending.",
   "scope": {
     "campaign": [
       "MAP01",
@@ -340,6 +340,13 @@
       ],
       "native_commands": "wait 100; echo CA82_43723_SAVE_LOADED; save migrated43724; wait 10; load migrated43724.zds; wait 100; echo CA82_43724_SAVE_RELOADED; screenshot build/issue82/legacy_save.png; wait 5; quit",
       "package": "final"
+    },
+    {
+      "run": "export_smoke",
+      "log": "export_smoke.txt",
+      "sha256": "eb390a8cb2b4871378237007553aae48a7c0397db9b91a069ad69e3afc42028e",
+      "package": "committed_export",
+      "result": "Six native binding queries, MAP01, save and reload pass; localized empty-Tarot text fits ES/EN. Console-driven Journal and intro conversation overlap in diagnostic captures; not normal-input layout evidence."
     }
   ],
   "launcher_tests": [
@@ -426,7 +433,30 @@
     }
   },
   "export": {
-    "status": "Pending committed source"
+    "status": "PASS - deterministic committed export, independently verified and loaded in GZDoom",
+    "source_commit": "bf12c897486cc062bcca6773806e9e59ea84fbea",
+    "local_zip": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\playtest\\4.37.24\\caelum_argenteum_4.37.24_playtest.zip",
+    "bytes": 525429548,
+    "zip_sha256": "a82f3fe09e860b70c31ec4a4698c8a94821b5a7aedd01995d3098f2f3a8606a1",
+    "pk3_sha256": "a8688ef61e3ad037fe142cecc9983cd15361d5858a990b2960fac2e123814e26",
+    "runtime_files": 6181,
+    "reproduced_byte_identically": true,
+    "independent_verification": {
+      "result": "PASS",
+      "source_commit": "bf12c897486cc062bcca6773806e9e59ea84fbea",
+      "runtime_members": 6181,
+      "zip_sha256": "a82f3fe09e860b70c31ec4a4698c8a94821b5a7aedd01995d3098f2f3a8606a1",
+      "pk3_sha256": "a8688ef61e3ad037fe142cecc9983cd15361d5858a990b2960fac2e123814e26",
+      "scope": "Independent Git blob identity, complete hash coverage, CRC, allowlist, metadata and licenses"
+    },
+    "native_startup_and_save_reload": "export_smoke.txt",
+    "only_semantic_change_since_final_integration_package": [
+      "LANGUAGE"
+    ],
+    "change_description": "Two localized empty-Tarot help strings, already observed in ES/EN in the exported native runtime. No gameplay logic change.",
+    "git_export_line_ending_normalizations": 170,
+    "development_build_matches_export_except_checkout_line_endings": true,
+    "launcher_native_first_start": "Actual extracted launch_playtest.ps1 starts GZDoom with its own user/gzdoom.ini and user/saves, -noautoload and +exec default_controls.cfg. Title screen observed. Physical input test pending."
   },
   "captures": [
     "palomo_deck.png",
@@ -438,5 +468,11 @@
     "port_arrival.png",
     "captain_active.png",
     "captain_complete.png"
-  ]
+  ],
+  "normal_validation": {
+    "command": "python validate_project.py",
+    "errors": [],
+    "context_words": 2471,
+    "result": "PASS"
+  }
 }

@@ -49,6 +49,17 @@ The empty Tarot Journal now describes the accepted early upstairs deck handoff
 and the later Box requirement in both languages; it no longer claims those
 separate handoffs happen together. This corrects help text, not reward timing.
 
+Export source: bf12c897486cc062bcca6773806e9e59ea84fbea. Two independent generations produce the same
+525,429,548-byte ZIP, SHA-256 a82f3fe09e860b70c31ec4a4698c8a94821b5a7aedd01995d3098f2f3a8606a1.
+Independent verification confirms all 6,181 runtime blobs, complete checksums,
+ZIP metadata, allowlisted files and retained licenses. The extracted runtime
+passes six binding queries, MAP01 startup and save/reload. The actual portable
+launcher opens a fresh isolated profile; desktop-injected Escape did not reach
+the game, so physical-key author acceptance stays pending rather than inferred.
+Normal validation passes with no errors; development build matches exported
+runtime content except Git-normalized text line endings. The sole semantic
+change after the integrated native runs is the bilingual empty-Tarot help text.
+
 ## 4.37.23 - Contextual creation and combined profession choices (#112)
 
 Author request, 2026-10-05: after #106, implement #112, run necessary live
