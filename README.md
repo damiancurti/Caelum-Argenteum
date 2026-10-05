@@ -6,8 +6,21 @@ An independent dark fantasy FPS-RPG inspired by nineteenth-century Argentina.
 Author and game designer: **Damian Curti**. Development target: **GZDoom 4.14.2**
 on Windows 11. The final game is intended to be independent of Doom assets.
 
-**Current release: 4.37.22.** Obtain and update the complete repository, validate
+**Current release: 4.37.23.** Obtain and update the complete repository, validate
 it, then rebuild with `run_dev.bat` as described below.
+
+Issue [#112](https://github.com/damiancurti/Caelum-Argenteum/issues/112) adds
+**contextual character-creation descriptions** in English and Spanish. Race,
+class, family and attribute choices update a readable right-hand panel before
+confirmation. The second class lists the resulting professions; the summary
+shows that same profession. Planned abilities are identified as unavailable.
+With the author's approval, the creator now shares the real profile's family
+distribution, correcting the old Human/Priest Social-Mental preview mismatch.
+Point budgets, formulas, existing saves and the accepted introduction remain
+unchanged. [Validation and captures](assets/validation_43723/RESULTS.json).
+Native checks passed in Spanish/English at 4:3, 16:9 and 21:9, including
+confirmation, introduction, MAP01 start and save/reload (1,236 assertions).
+[Browse the captured screens](assets/validation_43723/gallery.html).
 
 Issue [#106](https://github.com/damiancurti/Caelum-Argenteum/issues/106) gives
 the kite, tower and magic shields distinct **first-person interiors and grips**,

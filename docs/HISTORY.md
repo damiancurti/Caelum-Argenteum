@@ -1,6 +1,51 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **4.37.22** — 2026-10-05.
+Documentation version: **4.37.23** — 2026-10-05.
+
+## 4.37.23 - Contextual creation and combined profession choices (#112)
+
+Author request, 2026-10-05: after #106, implement #112, run necessary live
+tests, commit and push. The author grants freedom to write general, concrete
+descriptions provided they match implemented gameplay. Later they authorize
+merging and closing both issues; at that moment #112 was still unimplemented,
+so their passed-test confirmation applies to #106 only.
+
+The creator now shows immediate right-side descriptions for races, first
+classes, combined professions, families and attributes in both languages.
+The requested Spanish first/second headings are exact. All sixteen ordered
+class pairs reuse the profile mapping; backtracking refreshes labels without
+caching stale combinations. The summary emphasizes the resulting profession.
+Existing allocation/navigation handlers and the accepted #103 introduction
+remain in use, with no new save fields or migration.
+
+Two source discrepancies were reported. The issue's Engineering/Wisdom names
+are not implemented attributes; Agility/Resilience and the existing family
+order are retained. The old creator duplicated pattern 2 with Social/Mental
+swapped from the actual profile. The author explicitly chose "Correct the
+creator using the real profile". Shared DistributionFor and ProfessionFor
+retain the actual profile tables and remove the stale creator copy. The
+existing family cap now evaluates the real base, without changing budgets,
+costs, refunds or the actual character's balance.
+
+Descriptions distinguish implemented Sleep from planned class/racial powers,
+and describe relative contributions rather than inventing weaknesses. The
+attribute audit prevents promising unavailable healing or magical perception.
+Evidence, exact builds and the distinction between static/native verification
+and author acceptance are in assets/validation_43723/RESULTS.json.
+
+Validation on Windows 11 / GZDoom 4.14.2: six Spanish/English runs at 960x720,
+1280x720 and 1680x720 passed 1,224 assertions covering all sixteen pairs,
+descriptions, real font wrapping, allocation gates/refunds/caps and backtracking.
+The interactive run passed twelve further assertions. Native keyboard input
+confirmed the character, revealed the existing introduction, and started MAP01.
+The author then pressed the isolated F9/F10 test bindings and confirmed "Listo":
+the save/reload retained both base classes, Arcanist and all allocated points,
+without repeating creation or introduction. Controller coverage uses native menu
+callbacks, not a physical controller. Cancellation to the parent menu passed.
+Earlier harness-only direct startup attempts hit the engine's menu-context
+guard; actual keyboard startup subsequently passed with unchanged production
+introduction code. Fifty unedited native captures and complete final-run logs
+are retained in validation_43723. No new outstanding author check was requested.
 
 ## 4.37.22 - Kite, tower and magic first-person shields (#106)
 

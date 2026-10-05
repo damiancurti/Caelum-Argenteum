@@ -1,6 +1,27 @@
 # Caelum Argenteum — Project, status and roadmap
 
-Documentation version: **4.37.22** — 2026-10-05.
+Documentation version: **4.37.23** — 2026-10-05.
+
+## 4.37.23 - Contextual character creation (#112)
+
+The native creation menu displays four race/class choices or allocation rows
+on the left and immediate descriptions on the right. Both languages cover
+all playable races, four base classes, ten professions, four families and the
+twelve implemented attributes. Second-class labels and the summary use the
+profile's authoritative, order-independent profession combination.
+
+The author authorized concise wording grounded in current gameplay, then
+explicitly authorized correcting the creator's duplicated Human/Priest family
+distribution. Shared profile data now keeps Social/Mental preview and actual
+character formation consistent. No new traits, penalties or balance values.
+Static/native evidence and qualification: assets/validation_43723/RESULTS.json.
+All 1,236 assertions passed across the six layout/language runs and interactive
+creation/save/reload run. Keyboard confirmation starts MAP01 through the accepted
+introduction; loading the saved character preserves its profile and allocation.
+The author's merge/closure authorization on 2026-10-05 applies after this issue
+is implemented and verified; the earlier confirmation of passed #106 tests
+does not claim blanket manual acceptance of #112. The author assisted the final
+save/reload check and confirmed its completion separately.
 
 ## 4.37.22 - Distinct playable first-person shields (#106)
 

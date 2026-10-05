@@ -32,6 +32,10 @@ class CaelumCharacterProfile : Object
     void CycleHeight() { HeightChoice = (HeightChoice + 1) % 3; }
 
     int GetDistributionValue(int pattern, int layer)
+    { return DistributionFor(pattern, layer); }
+
+    // Una sola tabla sirve al perfil jugable y a la vista previa del creador.
+    static clearscope int DistributionFor(int pattern, int layer)
     {
         switch (pattern)
         {
@@ -74,9 +78,12 @@ class CaelumCharacterProfile : Object
     }
 
     int GetProfession()
+    { return ProfessionFor(FirstClass, SecondClass); }
+
+    static clearscope int ProfessionFor(int first, int second)
     {
-        int lowClass = Min(FirstClass, SecondClass);
-        int highClass = Max(FirstClass, SecondClass);
+        int lowClass = Min(first, second);
+        int highClass = Max(first, second);
         if (lowClass == highClass) return lowClass;
         if (lowClass == CaelumConstants.CLASS_WARRIOR && highClass == CaelumConstants.CLASS_EXPLORER) return CaelumConstants.PROFESSION_MERCENARY;
         if (lowClass == CaelumConstants.CLASS_WARRIOR && highClass == CaelumConstants.CLASS_PRIEST) return CaelumConstants.PROFESSION_CLERIC;

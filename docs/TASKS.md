@@ -1,6 +1,24 @@
 # TASKS.md — Active tasks
 
-Documentation version: **4.37.22** — 2026-10-05.
+Documentation version: **4.37.23** — 2026-10-05.
+
+## Issue #112 - Contextual character creation (4.37.23)
+
+- Native two-column descriptions before confirmation, both languages, all
+  playable races/classes, ten professions, four families and twelve attributes.
+- Exact requested Spanish headings; all sixteen class combinations and the
+  summary reuse the actual profile mapping. Backtracking refreshes immediately.
+- Author-authorized fix: replace the creator's incorrect duplicated Human/
+  Priest Social-Mental contribution with the actual profile distribution.
+- No invented penalties or unfinished powers presented as available. Existing
+  allocation budgets/caps/refunds, input handlers, draft persistence and #103
+  introduction remain authoritative. No new saved fields.
+- Evidence: assets/validation_43723/RESULTS.json. Commit/push, focused linked PR,
+  merge and closure authorized by the author after implementation/verification.
+- Implementation and native verification complete: 1,224 matrix assertions and
+  twelve interactive checks passed, including confirmation, introduction,
+  ordinary MAP01 startup and author-assisted save/reload. Fifty native captures
+  cover both languages and 4:3, 16:9 and 21:9. No outstanding author check.
 
 ## Issue #106 - First-person shield sets (4.37.22)
 

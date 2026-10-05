@@ -1,6 +1,35 @@
 # Caelum Argenteum — Current systems and rules
 
-Documentation version: **4.37.22** — 2026-10-05.
+Documentation version: **4.37.23** — 2026-10-05.
+
+## 4.37.23 - Creation descriptions and authoritative preview (#112)
+
+Creation now explains the highlighted choice before confirmation. Spanish
+headings are "¿Qué quieres ser?" and "Tus opciones son"; second-class options
+and the final summary show the profession returned by the profile mapping.
+Repeated classes retain specialization, and pair order remains irrelevant.
+
+Descriptions follow the implemented attribute audit, current derived-stat
+consumers and the abilities catalog. Sleep is the implemented Arcanist ability;
+the other profession and racial abilities are explicitly marked planned.
+Empathy does not promise a working general healing system, and Insight does
+not promise implemented hidden-object detection. No new restrictions or
+penalties are invented as weaknesses; smaller contributions are relative.
+
+The issue text mentioned Engineering and Wisdom, but the game's technical
+family is Agility, Dexterity and Resilience. These real attributes and the
+existing Physical/Technical/Social/Mental order are preserved. There are no
+attribute renames or added mechanics.
+
+A pre-existing creator-only copy of distribution pattern 2 used Social 3 /
+Mental 5; the actual profile and canonical rules use Social 5 / Mental 3.
+The author explicitly authorized the fix on 2026-10-05 after the discrepancy
+was reported. Both paths now use CaelumCharacterProfile.DistributionFor.
+For a Human/Priest/Priest profile the preview correctly shows Social 15 and
+Mental 9, and refuses a family point at the existing cap of 15. This corrects
+the preview and its existing cap check; it does not rebalance the actual
+profile. Four family points, thirty individual points, refunds, individual
+caps and mandatory completion keep their rules. Existing saves are unchanged.
 
 ## 4.37.22 - Shield presentation follows the equipped item (#106)
 
