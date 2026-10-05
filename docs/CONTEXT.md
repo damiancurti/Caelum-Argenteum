@@ -1,11 +1,13 @@
 # CONTEXT.md — Ultra-condensed summary of Caelum Argenteum
 
-Documentation version: **4.37.17** — 2026-10-04.
+Documentation version: **4.37.18** — 2026-10-04.
 
-**#89 / 4.37.17:** Ronnie's owned T1 Pico + recipe, family 1, slash/pierce,
-axe data; capped ×10 chopping/×100 mining. Gift/book migrations; chosen-weapon
-crafting retained. All tools: extraction sounds/centered CaelumText. Rest: 20°
-clockwise. Evidence: validation_43717; accepted 2026-10-04.
+**#91 / 4.37.18:** Craft/Repair/Dismantle; known recipes, owned weapon IDs,
+Pickaxe repair. Tarot's three fields scroll; powers/timers unchanged.
+Transient browser; save/rollback: validation_43718. Author accepted all tests.
+
+**#89 accepted/closed, PR #107 merged:** owned T1 Pico, axe recipe, ×10/×100
+yield, all-tool sounds/centered feedback, 20° rest pose. Evidence: validation_43717.
 
 **Accepted 2026-10-04:** #93, #97, #99, #101, #87; all author checks passed.
 Evidence: assets/validation_*. #81 accepted/merged.
@@ -297,15 +299,14 @@ Use DOCUMENT_INDEX for long documents; follow the engineering guides.
     with scope and acceptance criteria; a PR without a linked issue is not
     reviewed.
 
-The full verbatim list is in `AGENTS.md` and `docs/PROJECT.md`.
+The authoritative list is in `AGENTS.md` and `docs/PROJECT.md`.
 
 Work plans issues; Codex implements/tests; the author confirms manual acceptance.
 Keep implementation, static/native evidence and author acceptance distinct.
 
-[pending_test.txt](../pending_test.txt) is the single author-test queue. Preserve
-outstanding tests across versions. Only an explicit pass confirmed by the author
-moves a test's ID, originating version/issue, result, date and qualifications to
-its release in [HISTORY.md](HISTORY.md); remove that entry in the same update.
+[pending_test.txt](../pending_test.txt) holds outstanding author tests across
+versions. Only author-confirmed passes move their ID, version/issue, result,
+date and qualifications to [HISTORY.md](HISTORY.md); remove the entry together.
 Partial, failed and unconfirmed checks remain. An empty tracked queue is valid.
 All seven docs and AGENTS declare the current version; ancillary guides without
 a header inherit README's version. Historical labels retain their original meaning.

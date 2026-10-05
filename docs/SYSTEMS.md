@@ -1,6 +1,53 @@
 # Caelum Argenteum — Current systems and rules
 
-Documentation version: **4.37.17** — 2026-10-04.
+Documentation version: **4.37.18** — 2026-10-04.
+
+## 4.37.18 - Craft, Repair, Dismantle and Tarot details (#91)
+
+Oficios / Crafts has three icon subsections: **Craftear / Craft**,
+**Reparar / Repair**, **Desarmar / Dismantle**. Craft contains only learned
+recipes matching the category filter. Missing ingredients or infrastructure
+disable starting, not visibility. It can be browsed outside a station.
+An empty category explains that there are no learned matching recipes.
+
+Repair and Dismantle list accessible weapon instances in the player's native
+inventory, including equipped weapons and the owned Magic Box. Nearby drops,
+NPC inventory and inaccessible Box contents are excluded. Each copy has its
+stable item ID, tier, size, wear, location and applicable essence. Equipped,
+temporary/protected, undamaged or unknown-recipe items remain visible with
+their applicable reason. Repair recognizes the learned Pickaxe recipe.
+Armor/shield task APIs remain available to their existing consumers; this
+weapon browser does not widen the issue's ownership scope.
+
+The existing material, proportional wear/recovery, rounding, efficiency,
+station-network, carrying-capacity and time rules remain authoritative.
+Repair previews required components and, when ready, the actual input
+reservation after processing. Dismantle previews recovery. A blocked operation
+does not promise a completion time. Confirm rechecks mode, exact identity,
+ownership and current requirements; a stale row cannot select a different copy.
+Browsing never creates reservations or changes an active task's outputs.
+Lists refresh after learning, ownership changes and completion. Closing or
+leaving the workbench still pauses; cancellation releases the reservation.
+
+Controls: **1/2/3** select the operation; **F/D** also open Repair/Dismantle
+without starting it. **Left/Right** or the wheel over the list selects entries;
+**Up/Down** or the wheel over details scrolls text. **Enter/E** confirms the
+selected operation. **G** filters Craft; **Space/R/B** change its tier, size
+and batch. **X** adjusts craft/repair efficiency. **C** cancels a task,
+**T** retains x60 and **Y** opens the time-skip selector. **Tab/Q** closes
+Oficios; **PgUp/PgDn** changes the main Journal section. Native controller
+direction/confirm/back bindings remain. Mouse clicks select main section
+icons, operation icons, list rows and the bottom confirmation/status area.
+
+Tarot exposes three labeled fields for the selected card: passive fixed and
+collection bonuses; active world power with the existing shared 1000-Anima,
+60-second/600-second-from-use rules; and the current Trucazo effect. The latter
+explains captured Minor awakening, trick strength, Envido/row contribution or
+Major exclusion, independently of world power selection. Traditional Truco
+has no essence effects. No undefined power is invented. Uncaptured artwork
+previews do not reveal powers or grant ownership. Physical deck possession
+and captured essences remain separate. Up/Down or the wheel scrolls all three
+fields; selection, remaining effect time and recharge stay visible.
 
 ## 4.37.17 - Pickaxe, gathering sounds and success notice (#89)
 

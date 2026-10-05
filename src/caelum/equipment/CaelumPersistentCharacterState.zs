@@ -1005,30 +1005,11 @@ class CaelumPersistentCharacterState : Inventory
     // Las décimas enteras evitan que un palo completo quede en 2,999... .
     double GetTarotMinorBaseBonus(int attribute)
     {
-        if (attribute < 0 || attribute >= CaelumConstants.PRIMARY_ATTRIBUTE_COUNT)
-            return 0.0;
-        int family = attribute / 3;
-        int suit = family == CaelumConstants.LAYER_PHYSICAL
-            ? CaelumConstants.TAROT_SUIT_WANDS
-            : family == CaelumConstants.LAYER_TECHNICAL
-                ? CaelumConstants.TAROT_SUIT_COINS
-                : family == CaelumConstants.LAYER_SOCIAL
-                    ? CaelumConstants.TAROT_SUIT_CUPS
-                    : CaelumConstants.TAROT_SUIT_SWORDS;
-        int position = attribute % 3;
         int tenths = 0;
-        for (int rank = 0; rank < CaelumConstants.TAROT_MINOR_RANK_COUNT; rank++)
+        for (int card = CaelumConstants.TAROT_MAJOR_COUNT; card < CaelumConstants.TAROT_CARD_COUNT; card++)
         {
-            int card = CaelumConstants.TAROT_MAJOR_COUNT
-                + suit * CaelumConstants.TAROT_MINOR_RANK_COUNT + rank;
             if (!HasTarotCard(card)) continue;
-            int contribution = 0;
-            if (rank == 0) contribution = 10; // Ancho.
-            else if (rank == 13) contribution = 5; // Rey.
-            else if (rank >= 10 && rank - 10 == position) contribution = 6;
-            else if (rank <= 9 && (rank - 1) / 3 == position) contribution = 3;
-            // #80 duplica sólo la base de la carta activada, nunca el
-            // atributo entero ni el porcentaje permanente de colección.
+            int contribution = CaelumTarotDetails.MinorTenths(card, attribute);
             tenths += contribution;
             if (TarotEffectTics > 0 && TarotActive[card]) tenths += contribution;
         }
