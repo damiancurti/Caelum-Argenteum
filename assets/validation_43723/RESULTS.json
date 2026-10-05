@@ -1,0 +1,189 @@
+{
+  "issue": 112,
+  "version": "4.37.23",
+  "date": "2026-10-05",
+  "baseline": "2656517f53fc0bd73ec0792d89869eca500bc669",
+  "environment": {
+    "os": "Windows 11",
+    "engine": "GZDoom 4.14.2",
+    "renderer": "Vulkan / NVIDIA RTX 3070 Ti",
+    "development_iwad": "Locally installed DOOM2.WAD; not redistributed",
+    "config": "Isolated INIs; -noautoload -nosound; local test event handler outside src"
+  },
+  "tested_package": {
+    "local_path": "build/issue112/final/caelum_argenteum_dev.pk3",
+    "sha256": "92c45d7b1dd1eeb730174d3c59cdcfafda1cc99beaae3ce4394e2a6a7a994ed5",
+    "entries": 6181,
+    "content_manifest_sha256": "da3535edb0e86bebd4aec821c61a4ad8a0e01a3a7679688f0f12b2ad10163387"
+  },
+  "static": {
+    "shared_profile_distribution_unchanged": true,
+    "shared_profession_mapping_unchanged": true,
+    "saved_fields_unchanged": true,
+    "unchanged_creator_methods": [
+      "Init",
+      "ResetAllocations",
+      "Wrap",
+      "RaceLayerValue",
+      "CombinedLayerValue",
+      "FinalLayerValue",
+      "RemainingLayerPoints",
+      "RemainingAttributePoints",
+      "MaximumAttributeBonus",
+      "ChangeChoice",
+      "ChangeSelectedPoint",
+      "SetDraft",
+      "ConfirmAndStart",
+      "MenuEvent"
+    ],
+    "localized_new_keys_per_language": 37,
+    "requested_spanish_headings_exact": true,
+    "changed_runtime_files": [
+      "src/LANGUAGE",
+      "src/caelum/character/CaelumCharacterCreationMenu.zs",
+      "src/caelum/character/CaelumCharacterProfile.zs",
+      "src/caelum/world/CaelumPhysicalHazards.zs",
+      "src/caelum/world/CaelumSewerMaze.zs"
+    ],
+    "tested_package_matches_src": true,
+    "other_runtime_files_unchanged_from_baseline": true,
+    "project_validator": "PASS: 4.37.23, 10 documents, 2483 context words, zero errors",
+    "git_diff_check": "PASS",
+    "document_index": "Regenerated and validated"
+  },
+  "native_matrix": [
+    {
+      "language": "es",
+      "aspect": "4x3",
+      "resolution": "960 x 720",
+      "checks": 204,
+      "failures": 0,
+      "log": "es_4x3.txt"
+    },
+    {
+      "language": "es",
+      "aspect": "16x9",
+      "resolution": "1280 x 720",
+      "checks": 204,
+      "failures": 0,
+      "log": "es_16x9.txt"
+    },
+    {
+      "language": "es",
+      "aspect": "21x9",
+      "resolution": "1680 x 720",
+      "checks": 204,
+      "failures": 0,
+      "log": "es_21x9.txt"
+    },
+    {
+      "language": "en",
+      "aspect": "4x3",
+      "resolution": "960 x 720",
+      "checks": 204,
+      "failures": 0,
+      "log": "en_4x3.txt"
+    },
+    {
+      "language": "en",
+      "aspect": "16x9",
+      "resolution": "1280 x 720",
+      "checks": 204,
+      "failures": 0,
+      "log": "en_16x9.txt"
+    },
+    {
+      "language": "en",
+      "aspect": "21x9",
+      "resolution": "1680 x 720",
+      "checks": 204,
+      "failures": 0,
+      "log": "en_21x9.txt"
+    }
+  ],
+  "matrix_checks_total": 1224,
+  "matrix_coverage": [
+    "All 16 ordered profession pairs and highlighted labels",
+    "All race/class/profession/family/attribute descriptions localized and wrapped within the actual font/panel bounds",
+    "Human/Priest/Priest Social 15 and Mental 9 match the real profile; family cap enforced",
+    "Backtracking refresh, keyboard and controller MenuEvent paths, family and individual refunds/caps",
+    "Mandatory 4 family and 30 individual points; allocation retained on back; class change resets dependencies"
+  ],
+  "native_interactive": {
+    "log": "live.txt",
+    "checks": 12,
+    "failures": 0,
+    "steps": [
+      "Prepare a valid Human/Priest/Mage through existing allocation callbacks",
+      "Actual keyboard Enter confirms and opens the unchanged introduction",
+      "Next Enter reveals the complete text; following Enter starts MAP01 normally",
+      "Dismiss initial conversation; author presses F9 to check imported state and save",
+      "Author presses F10 to load that save; state checks pass without reopening creation/introduction"
+    ],
+    "author_assistance_confirmation": "2026-10-05: Listo, in response to the F9/F10 instructions",
+    "cancel_to_parent": "Passed in flow_attempt.txt before the invalid harness startup attempt"
+  },
+  "qualifications": [
+    "Controller menu callback path tested; no claim of a physical controller hardware test.",
+    "Two earlier harness attempts called StartGameDirect from a console callback or menu ticker and hit the engine menu-context guard. The real keyboard menu path was then used successfully; production introduction code was unchanged.",
+    "Earlier all-tests-passed author confirmation referred to #106. #112 wording, real-profile correction, commit/push and merge/closure are explicitly authorized; no separate blanket visual acceptance is claimed.",
+    "No balance tables, formulas, allocation budgets, save fields, save migration or production test fixtures added."
+  ],
+  "captures": [
+    "es_4x3_race.png",
+    "es_4x3_first.png",
+    "es_4x3_profession.png",
+    "es_4x3_balanced.png",
+    "es_4x3_family.png",
+    "es_4x3_attribute.png",
+    "es_4x3_insight.png",
+    "es_4x3_summary.png",
+    "es_16x9_race.png",
+    "es_16x9_first.png",
+    "es_16x9_profession.png",
+    "es_16x9_balanced.png",
+    "es_16x9_family.png",
+    "es_16x9_attribute.png",
+    "es_16x9_insight.png",
+    "es_16x9_summary.png",
+    "es_21x9_race.png",
+    "es_21x9_first.png",
+    "es_21x9_profession.png",
+    "es_21x9_balanced.png",
+    "es_21x9_family.png",
+    "es_21x9_attribute.png",
+    "es_21x9_insight.png",
+    "es_21x9_summary.png",
+    "en_4x3_race.png",
+    "en_4x3_first.png",
+    "en_4x3_profession.png",
+    "en_4x3_balanced.png",
+    "en_4x3_family.png",
+    "en_4x3_attribute.png",
+    "en_4x3_insight.png",
+    "en_4x3_summary.png",
+    "en_16x9_race.png",
+    "en_16x9_first.png",
+    "en_16x9_profession.png",
+    "en_16x9_balanced.png",
+    "en_16x9_family.png",
+    "en_16x9_attribute.png",
+    "en_16x9_insight.png",
+    "en_16x9_summary.png",
+    "en_21x9_race.png",
+    "en_21x9_first.png",
+    "en_21x9_profession.png",
+    "en_21x9_balanced.png",
+    "en_21x9_family.png",
+    "en_21x9_attribute.png",
+    "en_21x9_insight.png",
+    "en_21x9_summary.png",
+    "live_game.png",
+    "live_loaded.png"
+  ],
+  "delivery_build": {
+    "path": "build/caelum_argenteum_dev.pk3",
+    "sha256": "62284207fca220528beb01b4fd72071258bfb239074920327bf3ac0896fd2e78",
+    "all_6181_entries_identical_to_native_tested_build": true
+  }
+}

@@ -52,29 +52,7 @@ class CaelumCharacterCreationMenu : ListMenu
     }
 
     int DistributionValue(int pattern, int layer)
-    {
-        if (pattern == 0)
-        {
-            if (layer == 0) return 5;
-            if (layer == 1 || layer == 2) return 3;
-            return 1;
-        }
-        if (pattern == 1)
-        {
-            if (layer == 0 || layer == 3) return 3;
-            if (layer == 1) return 5;
-            return 1;
-        }
-        if (pattern == 2)
-        {
-            if (layer == 0 || layer == 2) return 3;
-            if (layer == 1) return 1;
-            return 5;
-        }
-        if (layer == 0) return 1;
-        if (layer == 1 || layer == 2) return 3;
-        return 5;
-    }
+    { return CaelumCharacterProfile.DistributionFor(pattern, layer); }
 
     int RaceLayerValue(int layer)
     {
@@ -178,11 +156,12 @@ class CaelumCharacterCreationMenu : ListMenu
         }
     }
 
-    String RaceKey()
+    String RaceKey(int value = -1)
     {
-        if (Race == CaelumConstants.RACE_BEAST_MAN) return "CA_RACE_BEAST_MAN";
-        if (Race == CaelumConstants.RACE_CAELITH) return "CA_RACE_CAELITH";
-        if (Race == CaelumConstants.RACE_HUMAN) return "CA_RACE_HUMAN";
+        if (value < 0) value = Race;
+        if (value == CaelumConstants.RACE_BEAST_MAN) return "CA_RACE_BEAST_MAN";
+        if (value == CaelumConstants.RACE_CAELITH) return "CA_RACE_CAELITH";
+        if (value == CaelumConstants.RACE_HUMAN) return "CA_RACE_HUMAN";
         return "CA_RACE_GOBLIN";
     }
 
@@ -192,6 +171,52 @@ class CaelumCharacterCreationMenu : ListMenu
         if (value == CaelumConstants.CLASS_EXPLORER) return "CA_CLASS_EXPLORER";
         if (value == CaelumConstants.CLASS_PRIEST) return "CA_CLASS_PRIEST";
         return "CA_CLASS_MAGE";
+    }
+
+    String ProfessionKey(int candidate)
+    {
+        int profession = CaelumCharacterProfile.ProfessionFor(FirstClass, candidate);
+        switch (profession)
+        {
+            case CaelumConstants.PROFESSION_MERCENARY: return "CA_PROFESSION_MERCENARY";
+            case CaelumConstants.PROFESSION_CLERIC: return "CA_PROFESSION_CLERIC";
+            case CaelumConstants.PROFESSION_BATTLE_MAGE: return "CA_PROFESSION_BATTLE_MAGE";
+            case CaelumConstants.PROFESSION_PILGRIM: return "CA_PROFESSION_PILGRIM";
+            case CaelumConstants.PROFESSION_INVESTIGATOR: return "CA_PROFESSION_INVESTIGATOR";
+            case CaelumConstants.PROFESSION_ARCANIST: return "CA_PROFESSION_ARCANIST";
+            default: return ClassKey(profession);
+        }
+    }
+
+    String ContextKey()
+    {
+        String key;
+        if (Page == CaelumConstants.CREATION_PAGE_RACE) key = RaceKey();
+        else if (Page == CaelumConstants.CREATION_PAGE_FIRST_CLASS) key = ClassKey(FirstClass);
+        else if (Page == CaelumConstants.CREATION_PAGE_SECOND_CLASS)
+        {
+            key = ProfessionKey(SecondClass);
+            if (CaelumCharacterProfile.ProfessionFor(FirstClass, SecondClass) < 4)
+                return "CA_CREATE_PROFESSION_" .. key.Mid(9);
+        }
+        else if (Page == CaelumConstants.CREATION_PAGE_LAYERS) key = LayerKey(SelectedLayer);
+        else if (Page == CaelumConstants.CREATION_PAGE_ATTRIBUTES) key = AttributeKey(SelectedAttribute);
+        else return "";
+        return "CA_CREATE_" .. key.Mid(3);
+    }
+
+    String ContextText()
+    {
+        String key = ContextKey();
+        if (key == "") return "";
+        String result = StringTable.Localize(key, false);
+        if (Page == CaelumConstants.CREATION_PAGE_RACE)
+            result = result .. "\n\n" .. StringTable.Localize("CA_CREATE_RACIAL_PLANNED", false);
+        else if (Page == CaelumConstants.CREATION_PAGE_FIRST_CLASS
+            || (Page == CaelumConstants.CREATION_PAGE_SECOND_CLASS
+                && CaelumCharacterProfile.ProfessionFor(FirstClass, SecondClass) != CaelumConstants.PROFESSION_ARCANIST))
+            result = result .. "\n\n" .. StringTable.Localize("CA_CREATE_CLASS_PLANNED", false);
+        return result;
     }
 
     String SexKey()
@@ -270,112 +295,143 @@ class CaelumCharacterCreationMenu : ListMenu
         {
             case 0: return StringTable.Localize(RaceKey(), false);
             case 1: return StringTable.Localize(ClassKey(FirstClass), false);
-            case 2: return StringTable.Localize(ClassKey(SecondClass), false);
+            case 2: return StringTable.Localize(ProfessionKey(SecondClass), false);
             case 3: return StringTable.Localize(SexKey(), false);
             default: return StringTable.Localize(HeightKey(), false);
         }
     }
 
-    void DrawTextCentered(Font font, int color, int y, String value)
+    // Lienzo adaptable de 600 de alto, igual al de la introducción aceptada.
+    // Las medidas sólo distribuyen texto; no calculan atributos ni costes.
+    double PanelWidth() { return Min(1040.0, CaelumNarrativeArtwork.CanvasWidth() - 64); }
+    double PanelLeft() { return (CaelumNarrativeArtwork.CanvasWidth() - PanelWidth()) / 2; }
+    double LeftWidth() { return PanelWidth() * 0.43 - 32; }
+    double ContextLeft() { return PanelLeft() + PanelWidth() * 0.43 + 20; }
+    double ContextWidth() { return PanelWidth() * 0.57 - 40; }
+
+    void Line(Font font, int color, double x, double y, String value, double width, double scale = 1.6)
     {
-        int x = 160 - font.StringWidth(value) / 2;
-        screen.DrawText(
-            font, color, x, y, value,
-            DTA_320x200, true, DTA_Localize, false
-        );
+        if (font.StringWidth(value) * scale > width)
+            scale = width / Max(1, font.StringWidth(value));
+        CaelumNarrativeArtwork.Text(font, color, x, y, value, scale);
+    }
+
+    void Center(Font font, int color, double y, String value, double scale = 1.5)
+    {
+        scale = Min(scale, PanelWidth() / Max(1, font.StringWidth(value)));
+        CaelumNarrativeArtwork.Text(font, color,
+            (CaelumNarrativeArtwork.CanvasWidth() - font.StringWidth(value) * scale) / 2, y, value, scale);
+    }
+
+    double ContextScale()
+    {
+        double scale = 1.75;
+        while (scale > 1.05)
+        {
+            let lines = TextFont.BreakLines(ContextText(), int(ContextWidth() / scale));
+            bool fits = lines.Count() * (TextFont.GetHeight() + 4) * scale <= 340;
+            lines.Destroy();
+            if (fits) break;
+            scale -= 0.05;
+        }
+        return scale;
+    }
+
+    void DrawContext()
+    {
+        if (ContextKey() == "") return;
+        double scale = ContextScale();
+        let lines = TextFont.BreakLines(ContextText(), int(ContextWidth() / scale));
+        double y = 134;
+        for (int i = 0; i < lines.Count(); i++)
+        {
+            CaelumNarrativeArtwork.Text(TextFont, Font.CR_WHITE,
+                ContextLeft(), y, lines.StringAt(i), scale);
+            y += (TextFont.GetHeight() + 4) * scale;
+        }
+        lines.Destroy();
     }
 
     void DrawBasicPage()
     {
-        DrawTextCentered(TextFont, Font.CR_GOLD, 82, "< " .. CurrentChoice() .. " >");
+        if (Page > CaelumConstants.CREATION_PAGE_SECOND_CLASS)
+        { Center(TextFont, Font.CR_GOLD, 232, "< " .. CurrentChoice() .. " >", 1.6); return; }
+        int selected = Page == 0 ? Race : Page == 1 ? FirstClass : SecondClass;
+        for (int i = 0; i < 4; i++)
+        {
+            String key = Page == 0 ? RaceKey(i) : Page == 1 ? ClassKey(i) : ProfessionKey(i);
+            String value = (i == selected ? "> " : "  ") .. StringTable.Localize(key, false);
+            Line(TextFont, i == selected ? Font.CR_GOLD : Font.CR_WHITE,
+                PanelLeft() + 16, 146 + i * 58, value, LeftWidth());
+        }
+        if (Page == CaelumConstants.CREATION_PAGE_SECOND_CLASS)
+            Line(SmallTextFont, Font.CR_GRAY, PanelLeft() + 16, 411,
+                String.Format(StringTable.Localize("CA_CREATE_SECOND_NOTE", false),
+                    StringTable.Localize(ClassKey(FirstClass), false)), LeftWidth(), 1.35);
     }
 
     void DrawLayerPage()
     {
         for (int layer = 0; layer < 4; layer++)
         {
-            String row = String.Format(
-                "%s  %d (+%d)",
-                StringTable.Localize(LayerKey(layer), false),
-                FinalLayerValue(layer), LayerBonus[layer]
-            );
-            int color = layer == SelectedLayer ? Font.CR_GOLD : Font.CR_UNTRANSLATED;
-            screen.DrawText(TextFont, color, 80, 62 + layer * 18, row, DTA_320x200, true);
+            String row = String.Format("%s %d (+%d)", StringTable.Localize(LayerKey(layer), false),
+                FinalLayerValue(layer), LayerBonus[layer]);
+            Line(TextFont, layer == SelectedLayer ? Font.CR_GOLD : Font.CR_WHITE,
+                PanelLeft() + 16, 146 + layer * 58, row, LeftWidth());
         }
-        DrawTextCentered(
-            SmallTextFont, Font.CR_GREEN, 142,
-            String.Format("%s: %d", StringTable.Localize("CA_CREATION_POINTS_LEFT", false), RemainingLayerPoints())
-        );
+        DrawRemaining(RemainingLayerPoints());
+    }
+
+    void DrawRemaining(int remaining)
+    {
+        Line(SmallTextFont, Font.CR_GREEN, PanelLeft() + 16, 468,
+            String.Format("%s: %d", StringTable.Localize("CA_CREATION_POINTS_LEFT", false), remaining), LeftWidth());
     }
 
     void DrawAttributePage()
     {
         for (int attribute = 0; attribute < 12; attribute++)
         {
-            int column = attribute / 6;
-            int rowIndex = attribute % 6;
-            String row = String.Format(
-                "%s +%d/%d",
-                StringTable.Localize(AttributeKey(attribute), false),
-                AttributeBonus[attribute], MaximumAttributeBonus(attribute)
-            );
-            int color = attribute == SelectedAttribute
-                ? Font.CR_GOLD : Font.CR_UNTRANSLATED;
-            screen.DrawText(
-                SmallTextFont, color, 25 + column * 150, 55 + rowIndex * 15,
-                row, DTA_320x200, true
-            );
+            String row = String.Format("%s +%d/%d", StringTable.Localize(AttributeKey(attribute), false),
+                AttributeBonus[attribute], MaximumAttributeBonus(attribute));
+            Line(SmallTextFont, attribute == SelectedAttribute ? Font.CR_GOLD : Font.CR_WHITE,
+                PanelLeft() + 16, 124 + attribute * 27, row, LeftWidth());
         }
-        DrawTextCentered(
-            SmallTextFont, Font.CR_GREEN, 151,
-            String.Format("%s: %d", StringTable.Localize("CA_CREATION_POINTS_LEFT", false), RemainingAttributePoints())
-        );
+        DrawRemaining(RemainingAttributePoints());
     }
 
     void DrawSummaryPage()
     {
-        DrawTextCentered(TextFont, Font.CR_UNTRANSLATED, 55,
-            StringTable.Localize(RaceKey(), false));
-        DrawTextCentered(TextFont, Font.CR_UNTRANSLATED, 72,
-            StringTable.Localize(ClassKey(FirstClass), false));
-        DrawTextCentered(TextFont, Font.CR_UNTRANSLATED, 89,
-            StringTable.Localize(ClassKey(SecondClass), false));
-        DrawTextCentered(TextFont, Font.CR_UNTRANSLATED, 106,
-            StringTable.Localize(SexKey(), false));
-        DrawTextCentered(TextFont, Font.CR_UNTRANSLATED, 123,
-            StringTable.Localize(HeightKey(), false));
+        Center(TextFont, Font.CR_WHITE, 150, StringTable.Localize(RaceKey(), false));
+        Center(TextFont, Font.CR_GOLD, 208, StringTable.Localize(ProfessionKey(SecondClass), false), 1.6);
+        Center(SmallTextFont, Font.CR_GRAY, 256, StringTable.Localize(ClassKey(FirstClass), false)
+            .. " + " .. StringTable.Localize(ClassKey(SecondClass), false));
+        Center(TextFont, Font.CR_WHITE, 322, StringTable.Localize(SexKey(), false));
+        Center(TextFont, Font.CR_WHITE, 372, StringTable.Localize(HeightKey(), false));
     }
 
     override void Drawer()
     {
-        screen.Dim(0, 0.76, 0, 0, screen.GetWidth(), screen.GetHeight());
-        DrawTextCentered(
-            TitleFont, Font.CR_GOLD, 12,
-            StringTable.Localize("CA_CREATION_MAIN_TITLE", false)
-        );
-        DrawTextCentered(
-            TextFont, Font.CR_UNTRANSLATED, 35,
-            StringTable.Localize(PageTitleKey(), false)
-        );
-
+        screen.Dim(0, 0.90, 0, 0, screen.GetWidth(), screen.GetHeight());
+        bool contextual = ContextKey() != "";
+        if (contextual)
+        {
+            CaelumNarrativeArtwork.Rect(ContextLeft() - 16, 116, ContextWidth() + 32, 378, 0x152029, 0.85);
+            CaelumNarrativeArtwork.Rect(ContextLeft() - 16, 116, 1, 378, 0xA8B6C8, 0.7);
+        }
+        Center(TitleFont, Font.CR_GOLD, 24, StringTable.Localize("CA_CREATION_MAIN_TITLE", false), 1.65);
+        Center(TextFont, Font.CR_WHITE, 74, StringTable.Localize(PageTitleKey(), false), 1.6);
         if (Page <= CaelumConstants.CREATION_PAGE_HEIGHT) DrawBasicPage();
         else if (Page == CaelumConstants.CREATION_PAGE_LAYERS) DrawLayerPage();
         else if (Page == CaelumConstants.CREATION_PAGE_ATTRIBUTES) DrawAttributePage();
         else DrawSummaryPage();
-
-        DrawTextCentered(
-            SmallTextFont, Font.CR_GRAY, 164,
-            StringTable.Localize(PageHelpKey(), false)
-        );
+        DrawContext();
+        Center(SmallTextFont, Font.CR_GRAY, 516, StringTable.Localize(PageHelpKey(), false), 1.4);
         String navigation = Page == CaelumConstants.CREATION_PAGE_SUMMARY
             ? "CA_CREATION_SUMMARY_NAVIGATION_HELP"
             : (Page >= CaelumConstants.CREATION_PAGE_LAYERS
-                ? "CA_CREATION_ALLOCATION_NAVIGATION_HELP"
-                : "CA_CREATION_NAVIGATION_HELP");
-        DrawTextCentered(
-            SmallTextFont, Font.CR_GREEN, 182,
-            StringTable.Localize(navigation, false)
-        );
+                ? "CA_CREATION_ALLOCATION_NAVIGATION_HELP" : "CA_CREATION_NAVIGATION_HELP");
+        Center(SmallTextFont, Font.CR_GREEN, 560, StringTable.Localize(navigation, false), 1.4);
     }
 
     void SetDraft(Name name, int value)

@@ -1,6 +1,14 @@
 CAELUM ARGENTEUM — STORY AND MAP01
 
-Documentation version: **4.37.22** — 2026-10-05.
+Documentation version: **4.37.23** — 2026-10-05.
+
+## 4.37.23 - Contextual character creation (#112)
+
+The pre-game creator gains explanatory text and combined-profession labels.
+Only valid final confirmation opens the accepted #103 introduction and then
+starts MAP01. No map, story, dialogue, starter loadout or save boundary changes.
+The corrected Social/Mental preview uses the existing actual profile data.
+Evidence: assets/validation_43723/RESULTS.json.
 
 ## 4.37.22 - First-person shields (#106)
 

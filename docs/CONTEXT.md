@@ -1,13 +1,12 @@
 # CONTEXT.md — Ultra-condensed summary of Caelum Argenteum
 
-Documentation version: **4.37.22** — 2026-10-05.
+Documentation version: **4.37.23** — 2026-10-05.
 
-**4.37.22/#106:** accepted shield art; gauntlet guard. Evidence: validation_43722;
-pending_test.txt. Gameplay/saves unchanged.
+**4.37.23/#112:** contextual creation/professions; authorized preview correction.
+Evidence: validation_43723. #106 accepted/merged (#113); validation_43722.
+**#103 accepted:** single-page introduction, actual controls, CA_MUS01;
+second key starts MAP01/CA_MUS02. Art farewell; saves unchanged.
 
-**#103 / 4.37.21:** approved banner/art; new-character single-page typewriter
-intro, actual bindings/survival, CA_MUS01; second key starts MAP01/CA_MUS02.
-Normal quit has art farewell; no Doom ENDOOM. Saves unchanged. All author tests passed.
 **#98/#96/#91/#89 accepted, closed, merged:** dummy model, necklace/shield names,
 crafting/Tarot UI, Pico and shared gathering feedback. Evidence: validation_43717-20.
 

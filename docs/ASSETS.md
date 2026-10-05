@@ -1,6 +1,24 @@
 # Caelum Argenteum — Audio and art
 
-Documentation version: **4.37.22** — 2026-10-05.
+Documentation version: **4.37.23** — 2026-10-05.
+
+## 4.37.23 - Character-creation text and layout (#112)
+
+The existing native ListMenu and project fonts use a two-column layout on the
+accepted 600-high adaptive canvas. Content is capped at 1040 logical pixels,
+with 32-pixel outer margins; the left portion holds choices/point rows and the
+right portion wraps contextual text. Font fitting uses actual font metrics,
+keeps descriptions inside the panel and leaves separate help/navigation rows.
+All twelve attributes remain visible while navigating and allocating points.
+The menu retains the existing background and adds no raster asset.
+
+LANGUAGE is the authoritative text source: 37 new contextual keys have English
+and Spanish equivalents. Base-class and profession labels reuse existing
+localized names. A single profile combination function drives the second-step
+labels, descriptions and summary. The author allowed general, concrete wording
+consistent with implemented rules; planned abilities remain visibly qualified.
+Native captures, wrapping checks, inputs and qualifications are retained in
+assets/validation_43723. No development IWAD or test fixture enters the PK3.
 
 ## 4.37.22 - Equipped first-person shield artwork (#106)
 
