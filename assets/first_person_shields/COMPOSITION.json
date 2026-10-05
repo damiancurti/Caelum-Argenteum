@@ -182,5 +182,23 @@
       ]
     }
   ],
-  "gauntlet_framing": "320x200 view; original gauntlet block origin (160,20), centered guard from y40 to the bottom; original idle/attack images unchanged."
+  "gauntlet_framing": "320x200 view; original gauntlet block origin (160,20), centered guard from y40 to the bottom; original idle/attack images unchanged.",
+  "gauntlet_icons": [
+    {
+      "tier": 1,
+      "runtime": "graphics/caelum/gauntlet_icons/tier1.png",
+      "icon": "graphics/caelum/icons/ca_giant_gauntlets.png"
+    },
+    {
+      "tier": 2,
+      "runtime": "graphics/caelum/gauntlet_icons/tier2.png",
+      "icon": "graphics/caelum/icons/ca_giant_gauntlets_t2.png"
+    },
+    {
+      "tier": 3,
+      "runtime": "graphics/caelum/gauntlet_icons/tier3.png",
+      "icon": "graphics/caelum/icons/ca_giant_gauntlets_t3.png"
+    }
+  ],
+  "gauntlet_revision": "Author 2026-10-05: wider, chunkier guard matching original attack poses; replace three-hand inventory silhouette with exactly two detached closed-fist gauntlets. Icon native logical size remains 128x128."
 }

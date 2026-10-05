@@ -22,6 +22,10 @@ New visual caches are transient. Source/provenance: assets/first_person_shields.
 
 The author extended this issue on 2026-10-05: giant gauntlets must also show
 blocking, with elbows closed and the edges of both hands together like a boxer.
+The author then requested wider forms matching the attack sprites and reported
+three hands in the inventory icon. All three guards were redrawn with thicker
+fists/bracers; new tier-specific inventory art shows exactly two closed fists.
+Native aliases preserve icon dimensions and original source files.
 Three tier-specific original guard sprites reference their existing art. New
 separate states preserve historical state indices and use the existing real
 block mode; original idle/attack sprites remain byte-identical.
@@ -36,6 +40,12 @@ Qualification: approval concerns the design, positions and colors shown in the
 comparison captures; the full aspect-ratio/transition matrix is agent evidence.
 The confirmed art entry is removed from pending_test.txt in this update.
 CA-43722-SHIELD-PLAY-01 remains pending for author gameplay confirmation.
+Author acceptance, 2026-10-05: CA-43722-GAUNTLET-ART-01 (origin 4.37.22 /
+#106 author extension) passed. After requesting wider attack-like proportions
+and fixing the three-hand icon, the author explicitly approved the revised
+T1-T3 guard and two-glove inventory gallery. This confirms those visuals;
+independent manual gameplay/save acceptance remains pending. The confirmed
+gauntlet art entry is removed from pending_test.txt in this update.
 
 ## 4.37.21 - Narrative artwork, single-page introduction and farewell (#103)
 

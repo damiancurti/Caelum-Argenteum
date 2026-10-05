@@ -3,7 +3,7 @@
   "issue": 106,
   "baseline_commit": "539e6bfc",
   "native_registration_deterministic_twice": true,
-  "textures_sha256": "ea9778595dd2b0dcdc8b82aaf03b14fe48d049b4ce428b8a2f09786fe57848d3",
+  "textures_sha256": "212717565732b5fd6973bd1f68b3a814f98dc6e1099b23ceb786402a9c954463",
   "protected_files": [
     {
       "path": "src/sprites/DSHDA0.png",

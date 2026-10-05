@@ -195,12 +195,13 @@
     "Shield matrix/aspect captures use the shield_candidate package; those assets, native registration and shield controller bytes are unchanged in the final package. Final transitions, input, gauntlet and old-save checks use final_with_gauntlets.",
     "Saved QA counters are cumulative. passes_in_this_log counts only assertions actually executed in that process.",
     "Earlier local fixture mistakes (initial weapon raise wait, integer TEXTURES offsets, serialized cfg waits and save path handling) were corrected before passing runs. Intermediate logs remain in ignored build/issue106.",
-    "No engine binary, IWAD, saves or QA fixture is shipped. Capture backgrounds come from the installed development IWAD and are test evidence, not runtime art."
+    "No engine binary, IWAD, saves or QA fixture is shipped. Capture backgrounds come from the installed development IWAD and are test evidence, not runtime art.",
+    "Initial narrow-guard screenshots and source hashes are historical. Revised guard/icon captures and package hash are in author_revision; gameplay and view state logic were unchanged by this art correction."
   ],
   "author_acceptance": {
     "CA-43722-SHIELD-ART-01": "Passed 2026-10-05: explicit approval of sprites, positions and final muted palette.",
     "CA-43722-SHIELD-PLAY-01": "Pending manual gameplay confirmation.",
-    "CA-43722-GAUNTLET-ART-01": "Pending approval of the new three-tier boxer guard."
+    "CA-43722-GAUNTLET-ART-01": "Passed 2026-10-05: explicit approval of revised thicker guards and corrected two-glove inventory icons, T1-T3; manual gameplay is separate."
   },
   "captures": [
     {
@@ -361,6 +362,101 @@
     }
   ],
   "final_build": {
+    "path": "build/caelum_argenteum_dev.pk3",
+    "sha256": "3bb6656b567799b22386539896e372172609afbc9e8a737f8fc08fe8522e4dab",
+    "files": 6181,
+    "all_entries_byte_identical_to_tested_revised_package": true,
+    "validator_errors": []
+  },
+  "author_revision": {
+    "request": "2026-10-05: wider guard matching attacks; inventory has only two gloves.",
+    "package_sha256": "902dfd31a42bcee19a1c9be7d333c1f469c5c2b8c33ef3e8a3a093c02d6361a1",
+    "native": [
+      {
+        "log": "revised_16x9.log",
+        "passes_in_this_log": 32,
+        "failures": 0
+      },
+      {
+        "log": "revised_4x3.log",
+        "passes_in_this_log": 32,
+        "failures": 0
+      },
+      {
+        "log": "revised_21x9.log",
+        "passes_in_this_log": 32,
+        "failures": 0
+      },
+      {
+        "log": "revised_reload.log",
+        "passes_in_this_log": 7,
+        "failures": 0
+      }
+    ],
+    "captures": [
+      {
+        "file": "revised_16x9_t1_block.png",
+        "sha256": "f2653386b9f1ab40ac56b9d1b3984177b0dddaaa091b7c8834f7691e8d9f9680"
+      },
+      {
+        "file": "revised_16x9_t1_idle.png",
+        "sha256": "f367399342e596429fbfe9ec593fc95d77ae78621093ebe9e1b23e5d138bb655"
+      },
+      {
+        "file": "revised_16x9_t1_inventory.png",
+        "sha256": "e676c01578ed3b36fa6ad4ee99801c4143ecc112390405eb660f3c455ba58e12"
+      },
+      {
+        "file": "revised_16x9_t2_block.png",
+        "sha256": "559b5e8f719a0fc39f43067dd0c1fbd4d44538b4a983ae7ae603adf0bf189805"
+      },
+      {
+        "file": "revised_16x9_t2_idle.png",
+        "sha256": "17875b62aa3cd9579fc18c3e542e55f99c1a728a07588e1b7c8957ce426e7eee"
+      },
+      {
+        "file": "revised_16x9_t2_inventory.png",
+        "sha256": "e974dbf08d43a88b71a433ae56f634cd1655522fb3c0ac7c194ce490bb156238"
+      },
+      {
+        "file": "revised_16x9_t3_block.png",
+        "sha256": "d20aa83891b4f9a56dd84831e49efa0c8e9b21fba7223b3f77e87dd62cefce69"
+      },
+      {
+        "file": "revised_16x9_t3_idle.png",
+        "sha256": "f6a93763504718df3e88e4d3bb3d19ea07d6ee05b444548699fcd985a9746fca"
+      },
+      {
+        "file": "revised_16x9_t3_inventory.png",
+        "sha256": "ff327fc4a71145bc7f54016b6e27862bff54d8efdd114d62c3afbd406803ee0e"
+      },
+      {
+        "file": "revised_21x9_t3_block.png",
+        "sha256": "c10950ea1cf8a53934feac7f2131a0544f6b9c51eba22b9914403b8346832c6b"
+      },
+      {
+        "file": "revised_21x9_t3_idle.png",
+        "sha256": "b107616b08d116c083c180f4fb0282881e75794ffa2f9a66994c7ca6f5eb8c86"
+      },
+      {
+        "file": "revised_21x9_t3_inventory.png",
+        "sha256": "1f0ebb57ee75d2fbd78fd21c1b18608d734936ff7a1c88c5df1052c55c06d331"
+      },
+      {
+        "file": "revised_4x3_t3_block.png",
+        "sha256": "aa0b04dcc93c0da87afd3db4f00f85d04347238adc7dcf51c814b9dfb0a3de24"
+      },
+      {
+        "file": "revised_4x3_t3_idle.png",
+        "sha256": "b3117264055de2cba1087f6c2639efe3fb105914f6623c6a85138443227e3702"
+      },
+      {
+        "file": "revised_4x3_t3_inventory.png",
+        "sha256": "3084faf6075f39c0f6142b40a99a07cde18ef8d945a24b97f1e1cbbe7a7397c9"
+      }
+    ]
+  },
+  "previous_build": {
     "path": "build/caelum_argenteum_dev.pk3",
     "sha256": "206a9946a4ad7e668386faf6cd1a045577b754abd21e43e73dd5f699807c5b6a",
     "files": 6178,

@@ -12,36 +12,6 @@
   },
   "sources": [
     {
-      "path": "src/graphics/caelum/first_person/gauntlet_guards/tier1.png",
-      "sha256": "dafc3081b24d1f2cf15c3a9ff8eead15b23803387de9bc1536a878293289f65b",
-      "size": [
-        1536,
-        1024
-      ],
-      "format": "RGBA PNG, original generated alpha retained",
-      "transformation": "None on bitmap. Native texture crop/scale/offset and author-requested existing greatsword palette are documented in COMPOSITION.json."
-    },
-    {
-      "path": "src/graphics/caelum/first_person/gauntlet_guards/tier2.png",
-      "sha256": "65f04576271a86759ce07fff531ff02ecd269f73ec3d3c110618f2a77e30f159",
-      "size": [
-        1536,
-        1024
-      ],
-      "format": "RGBA PNG, original generated alpha retained",
-      "transformation": "None on bitmap. Native texture crop/scale/offset and author-requested existing greatsword palette are documented in COMPOSITION.json."
-    },
-    {
-      "path": "src/graphics/caelum/first_person/gauntlet_guards/tier3.png",
-      "sha256": "50eb393368f708fe6c8aebb5346eaa709cc9c69ab814d76785dbb4ea5143ebb9",
-      "size": [
-        1536,
-        1024
-      ],
-      "format": "RGBA PNG, original generated alpha retained",
-      "transformation": "None on bitmap. Native texture crop/scale/offset and author-requested existing greatsword palette are documented in COMPOSITION.json."
-    },
-    {
       "path": "src/graphics/caelum/first_person/shields/kite.png",
       "sha256": "7753ed11779b8ab620da6cc5a2aed428f032297390ed0a9776fb8476fd14c5d6",
       "size": [
@@ -70,6 +40,66 @@
       ],
       "format": "RGBA PNG, original generated alpha retained",
       "transformation": "None on bitmap. Native texture crop/scale/offset and author-requested existing greatsword palette are documented in COMPOSITION.json."
+    },
+    {
+      "path": "src/graphics/caelum/first_person/gauntlet_guards/tier1.png",
+      "sha256": "d567c5abad5c767940e9a4ba263611c612b67d5d72cbe019093cb132a098c11e",
+      "size": [
+        1536,
+        1024
+      ],
+      "format": "RGBA PNG, original generated alpha retained",
+      "transformation": "Native TEXTURES scale/offset/palette only; bitmap unedited."
+    },
+    {
+      "path": "src/graphics/caelum/first_person/gauntlet_guards/tier2.png",
+      "sha256": "65a37c4d2c71294fabbc85dc8172fa2581afe21cc1ede3104cd1464e5d405525",
+      "size": [
+        1536,
+        1024
+      ],
+      "format": "RGBA PNG, original generated alpha retained",
+      "transformation": "Native TEXTURES scale/offset/palette only; bitmap unedited."
+    },
+    {
+      "path": "src/graphics/caelum/first_person/gauntlet_guards/tier3.png",
+      "sha256": "f93e207f0e33deabd22f0306b48478763fdda845de6fa788cc345a9cda589a43",
+      "size": [
+        1536,
+        1024
+      ],
+      "format": "RGBA PNG, original generated alpha retained",
+      "transformation": "Native TEXTURES scale/offset/palette only; bitmap unedited."
+    },
+    {
+      "path": "src/graphics/caelum/gauntlet_icons/tier1.png",
+      "sha256": "122d5fba58368a40d93e3ea6844a872f39f0192bbfb69bcd3e0e962970f96382",
+      "size": [
+        1280,
+        1280
+      ],
+      "format": "RGBA PNG, original generated alpha retained",
+      "transformation": "Native TEXTURES scale/offset/palette only; bitmap unedited."
+    },
+    {
+      "path": "src/graphics/caelum/gauntlet_icons/tier2.png",
+      "sha256": "708ae7aa1576e4d9987b5c12fe10edea121ee1bbf4a133dad063931c016197d4",
+      "size": [
+        1280,
+        1280
+      ],
+      "format": "RGBA PNG, original generated alpha retained",
+      "transformation": "Native TEXTURES scale/offset/palette only; bitmap unedited."
+    },
+    {
+      "path": "src/graphics/caelum/gauntlet_icons/tier3.png",
+      "sha256": "4b727c15b04e758316cd89dfa2725c103260f5fe1a682ad7b72355a4aefc5ac7",
+      "size": [
+        1280,
+        1280
+      ],
+      "format": "RGBA PNG, original generated alpha retained",
+      "transformation": "Native TEXTURES scale/offset/palette only; bitmap unedited."
     }
   ],
   "references": [
@@ -176,10 +206,55 @@
     {
       "path": "src/graphics/caelum/icons/ca_shield_tower_t3.png",
       "sha256": "d679b7451564040e10ef56a500962eb19a57ae78f53a5085b32f2998cd6b7c6b"
+    },
+    {
+      "path": "src/graphics/caelum/icons/ca_giant_gauntlets.png",
+      "sha256": "e3cfbaa6f9bfeafdbc1041cd186909c307ecee127275032ed744a1ccf29cd752"
+    },
+    {
+      "path": "src/graphics/caelum/icons/ca_giant_gauntlets_t2.png",
+      "sha256": "95fbda2750858a10422ec26a76559867fd1ac7eb4c9226c44c446903d2f66a8f"
+    },
+    {
+      "path": "src/graphics/caelum/icons/ca_giant_gauntlets_t3.png",
+      "sha256": "320ae4058507061a984afd345dcb81ac3a77b34231f7c3e7dc29f18ed3114d4a"
     }
   ],
   "prompts": "GAUNTLET_PROMPTS.json for the author-requested three-tier boxer guard; PROMPTS.json; one two-pose sheet per type. Kite includes a transparent-cutout refinement.",
   "approved_geometry": "Author, 2026-10-05: sprites and positions are very good; colors should be slightly more muted, like existing project sprites.",
   "palette": "Native TEXTURES Desaturate 20 / RGB multiply 205,198,188, identical to existing greatsword treatment. No new balance or material data.",
-  "generator": "assets/generators/generate_first_person_shields.py; deterministic registration of immutable sheets, not AI regeneration."
+  "generator": "assets/generators/generate_first_person_shields.py; deterministic registration of immutable sheets, not AI regeneration.",
+  "superseded_guard_sources": [
+    {
+      "path": "src/graphics/caelum/first_person/gauntlet_guards/tier1.png",
+      "sha256": "dafc3081b24d1f2cf15c3a9ff8eead15b23803387de9bc1536a878293289f65b",
+      "size": [
+        1536,
+        1024
+      ],
+      "format": "RGBA PNG, original generated alpha retained",
+      "transformation": "None on bitmap. Native texture crop/scale/offset and author-requested existing greatsword palette are documented in COMPOSITION.json."
+    },
+    {
+      "path": "src/graphics/caelum/first_person/gauntlet_guards/tier2.png",
+      "sha256": "65f04576271a86759ce07fff531ff02ecd269f73ec3d3c110618f2a77e30f159",
+      "size": [
+        1536,
+        1024
+      ],
+      "format": "RGBA PNG, original generated alpha retained",
+      "transformation": "None on bitmap. Native texture crop/scale/offset and author-requested existing greatsword palette are documented in COMPOSITION.json."
+    },
+    {
+      "path": "src/graphics/caelum/first_person/gauntlet_guards/tier3.png",
+      "sha256": "50eb393368f708fe6c8aebb5346eaa709cc9c69ab814d76785dbb4ea5143ebb9",
+      "size": [
+        1536,
+        1024
+      ],
+      "format": "RGBA PNG, original generated alpha retained",
+      "transformation": "None on bitmap. Native texture crop/scale/offset and author-requested existing greatsword palette are documented in COMPOSITION.json."
+    }
+  ],
+  "revision": "2026-10-05 author correction: thicker attack-like guard and exactly two hands in inventory. Earlier guard source bytes remain in commit f304778b. Prompts: GAUNTLET_REVISION_PROMPTS.json."
 }

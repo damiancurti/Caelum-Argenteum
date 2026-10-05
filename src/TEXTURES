@@ -789,7 +789,7 @@ Sprite "CSTFA0", 128, 128 { Offset 64, 120 Patch "graphics/caelum/icons/ca_staff
 Sprite "CAXEA0", 128, 128 { Offset 64, 114 Patch "graphics/caelum/icons/ca_axe.png", 0, 0 }
 Sprite "CDAGA0", 128, 128 { Offset 64, 120 Patch "graphics/caelum/icons/ca_dagger.png", 0, 0 }
 Sprite "CFLAA0", 128, 128 { Offset 64, 109 Patch "graphics/caelum/icons/ca_flail.png", 0, 0 }
-Sprite "CGAUA0", 128, 128 { Offset 64, 120 Patch "graphics/caelum/icons/ca_giant_gauntlets.png", 0, 0 }
+Sprite "CGAUA0", 1280, 1280 { XScale 10 YScale 10 Offset 640, 1200 Graphic "CA_GAUNTLET_ICON_1_MUTED", 0, 0 }
 Sprite "CGRSA0", 1254, 1254 { XScale 9.796875 YScale 9.796875 Offset 627, 1176 Graphic "CA_GSICON1_M", 0, 0 }
 Sprite "CHALA0", 128, 128 { Offset 64, 111 Patch "graphics/caelum/icons/ca_halberd.png", 0, 0 }
 Sprite "CHATA0", 128, 128 { Offset 64, 120 Patch "graphics/caelum/icons/ca_hatchet.png", 0, 0 }
@@ -5679,4 +5679,46 @@ Sprite "GGB3A0", 1536, 1024
     YScale 6.4
     Offset 768, -128
     Graphic "GGB3_D", 0, 0 { Blend 205, 198, 188 }
+}
+Graphic "CA_GAUNTLET_ICON_1_MUTED_D", 1280, 1280
+{
+    Patch "graphics/caelum/gauntlet_icons/tier1.png", 0, 0 { Translation "Desaturate", 20 }
+}
+Graphic "CA_GAUNTLET_ICON_1_MUTED", 1280, 1280
+{
+    Graphic "CA_GAUNTLET_ICON_1_MUTED_D", 0, 0 { Blend 205, 198, 188 }
+}
+Graphic "graphics/caelum/icons/ca_giant_gauntlets.png", 1280, 1280
+{
+    XScale 10
+    YScale 10
+    Graphic "CA_GAUNTLET_ICON_1_MUTED", 0, 0
+}
+Graphic "CA_GAUNTLET_ICON_2_MUTED_D", 1280, 1280
+{
+    Patch "graphics/caelum/gauntlet_icons/tier2.png", 0, 0 { Translation "Desaturate", 20 }
+}
+Graphic "CA_GAUNTLET_ICON_2_MUTED", 1280, 1280
+{
+    Graphic "CA_GAUNTLET_ICON_2_MUTED_D", 0, 0 { Blend 205, 198, 188 }
+}
+Graphic "graphics/caelum/icons/ca_giant_gauntlets_t2.png", 1280, 1280
+{
+    XScale 10
+    YScale 10
+    Graphic "CA_GAUNTLET_ICON_2_MUTED", 0, 0
+}
+Graphic "CA_GAUNTLET_ICON_3_MUTED_D", 1280, 1280
+{
+    Patch "graphics/caelum/gauntlet_icons/tier3.png", 0, 0 { Translation "Desaturate", 20 }
+}
+Graphic "CA_GAUNTLET_ICON_3_MUTED", 1280, 1280
+{
+    Graphic "CA_GAUNTLET_ICON_3_MUTED_D", 0, 0 { Blend 205, 198, 188 }
+}
+Graphic "graphics/caelum/icons/ca_giant_gauntlets_t3.png", 1280, 1280
+{
+    XScale 10
+    YScale 10
+    Graphic "CA_GAUNTLET_ICON_3_MUTED", 0, 0
 }

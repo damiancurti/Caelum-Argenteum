@@ -8,12 +8,3 @@ Save/reload while using a shield; compare equipped type, durability and inventor
 Expected: one coherent left hand, stable held pose, correct return/right weapon,
 no stale or round-shield flash, and unchanged equipment/gameplay state.
 Native matrix/save evidence is recorded separately; author confirmation pending.
-
-CA-43722-GAUNTLET-ART-01
-Origin: 4.37.22 / issue #106, author scope extension on 2026-10-05.
-Prerequisites: current build and giant gauntlets, or the comparison gallery
-in assets/validation_43722/gallery.html.
-Steps: review T1-T3 idle and block comparisons; toggle block in game.
-Expected: a closed boxer guard with elbows and hand edges together, matching
-the existing tier materials and muted project colors; normal poses on release.
-Author visual acceptance is pending; native tests are recorded separately.

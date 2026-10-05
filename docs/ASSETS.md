@@ -42,6 +42,16 @@ and attack images and gameplay remain untouched. The guard follows actual
 block-source validity, survives loading and ends on cancellation/breakage.
 Composition, source hashes and GAUNTLET_PROMPTS.json preserve this extension.
 
+Author revision, 2026-10-05: the initial guard was too thin. Its three source
+PNGs were revised using the original B/C attack fists as proportion references.
+The inventory icon also appeared to have three hands; new T1-T3 sources in
+`src/graphics/caelum/gauntlet_icons/` show exactly two detached closed fists.
+Native TEXTURES replaces the existing icon names at the same logical 128x128
+size, with the same muted palette, and updates the shared CGAUA0 pickup image.
+Original small icon PNGs remain available; no unrelated asset is deleted.
+GAUNTLET_REVISION_PROMPTS.json records this correction. Initial gauntlet
+captures remain historical evidence; gallery_revised.html shows the revision.
+
 Native layers 44/45 hold body/left hand. Existing 46-53 weapon layers are cleared
 only during real shield block, then restored by their normal controller. The
 type comes from FindActiveNativeShield, with existing compatibility and model
@@ -61,6 +71,9 @@ visible at 4:3, 16:9 and 21:9. Evidence and qualifications:
 and final muted palette, based on the comparison captures. Aspect-ratio and
 transition checks remain agent engine evidence. CA-43722-SHIELD-PLAY-01 remains
 in pending_test.txt for manual gameplay acceptance.
+
+The author accepted the revised gauntlet guard and two-glove icons on 2026-10-05
+(CA-43722-GAUNTLET-ART-01). Manual gameplay confirmation remains pending.
 
 ## 4.37.21 - Approved narrative artwork sources and presentation (#103)
 

@@ -16,6 +16,10 @@ Shared native layers cover equip/lower, rest, attacks and held block across
 supported tiers/sizes and compatible equipment, including fists. Gameplay and
 save schemas are unchanged. The author also requested a closed boxer guard
 for giant gauntlets; all three tiers now have a dedicated held-block sprite.
+His follow-up adds thicker attack-like proportions and two-glove inventory icons.
+The author accepted the revised gauntlet guard and two-glove icons on 2026-10-05
+(CA-43722-GAUNTLET-ART-01). Manual gameplay confirmation remains pending.
+
 The author approved the sprites and positions;
 the final muted palette was also explicitly accepted on 2026-10-05.
 Sources: [shield composition](assets/first_person_shields/COMPOSITION.json).

@@ -43,6 +43,17 @@ def generate():
             f"    XScale {scale}", f"    YScale {scale}", f"    Offset {ox}, {oy}",
             f'    Graphic "{item["sprite"]}_D", 0, 0 {{ Blend {rgb} }}', "}",
         ])
+    for item in data.get("gauntlet_icons", []):
+        muted = f'CA_GAUNTLET_ICON_{item["tier"]}_MUTED'
+        textures.extend([
+            f'Graphic "{muted}_D", 1280, 1280', "{",
+            f'    Patch "{item["runtime"]}", 0, 0 {{ Translation "Desaturate", {palette["desaturate"]} }}', "}",
+            f'Graphic "{muted}", 1280, 1280', "{",
+            f'    Graphic "{muted}_D", 0, 0 {{ Blend {rgb} }}', "}",
+            f'Graphic "{item["icon"]}", 1280, 1280', "{",
+            "    XScale 10", "    YScale 10",
+            f'    Graphic "{muted}", 0, 0', "}",
+        ])
     path = ROOT / "src/TEXTURES"
     original = path.read_text(encoding="utf-8").split(MARKER)[0].rstrip()
     path.write_text(original + "\n\n" + "\n".join(textures) + "\n", encoding="utf-8", newline="\n")
