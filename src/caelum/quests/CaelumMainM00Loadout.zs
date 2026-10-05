@@ -1,5 +1,5 @@
 // Palomo registra el plan; Ronnie enseña y habilita los mismos cupos de oficio.
-// No se crean objetos por elegir y los campos anteriores siguen siendo la autoridad.
+// El collar de #96 es el único regalo; el resto conserva sus elecciones y oficios.
 class CaelumMainM00Loadout : Object play
 {
     const CONVERSATION = 43630;
@@ -178,9 +178,10 @@ class CaelumMainM00Loadout : Object play
             let shield = new("CaelumShieldModel");
             shield.ShieldType = type; shield.Tier = 1; shield.Size = size;
             shield.Equipped = true; shield.Durability = shield.GetMaximumDurability();
-            user.MainM00LoadoutDescriptions[45 + type] = Text(CaelumDisplayNames.GetShieldKey(type)) .. "\n"
+            user.MainM00LoadoutDescriptions[45 + type] = CaelumDisplayNames.FormatShieldName(type, 1) .. "\n"
                 .. Text(String.Format("CA_LOADOUT_SHIELD_%d", type));
-            user.MainM00LoadoutStats[45 + type] = String.Format(Text("CA_LOADOUT_SHIELD_STATS"), shield.GetWeight(),
+            user.MainM00LoadoutStats[45 + type] = CaelumDisplayNames.FormatShieldName(type, 1) .. "\n"
+                .. String.Format(Text("CA_LOADOUT_SHIELD_STATS"), shield.GetWeight(),
                     shield.GetDefense(0), shield.GetDefense(1), shield.GetCoverageDegrees())
                 .. "\n" .. Text("CA_LOADOUT_SHIELD_USE");
         }
@@ -196,7 +197,8 @@ class CaelumMainM00Loadout : Object play
             r.MainM00StarterChosen ? CaelumMainM00StarterRules.GetName(r.MainM00StarterOption) : pending,
             r.MainM00ArmorChosen ? Text(String.Format("CA_M01_ARMOR_NAME_%d", r.MainM00ArmorType)) : pending,
             r.MainM00SealChoice > 0 ? Text(CaelumDisplayNames.GetSealKey(r.MainM00SealChoice - 1)) : pending,
-            r.MainM00ShieldChoice > 0 ? Text(CaelumDisplayNames.GetShieldKey(r.MainM00ShieldChoice - 1)) : pending);
+            r.MainM00ShieldChoice > 0 ? CaelumDisplayNames.FormatShieldName(r.MainM00ShieldChoice - 1, 1) : pending);
+        CaelumMainM00Necklace.Refresh(user);
     }
 }
 

@@ -1,10 +1,11 @@
 # CONTEXT.md — Ultra-condensed summary of Caelum Argenteum
 
-Documentation version: **4.37.18** — 2026-10-04.
+Documentation version: **4.37.19** — 2026-10-04.
 
-**#91 / 4.37.18:** Craft/Repair/Dismantle; known recipes, owned weapon IDs,
-Pickaxe repair. Tarot's three fields scroll; powers/timers unchanged.
-Transient browser; save/rollback: validation_43718. Author accepted all tests.
+**#96 / 4.37.19:** Palomo chooses/gives one existing T1 amulet; Caella teaches
+its recipe. Native capacity, no auto-equip/duplicates, old-save revision 1.
+Canonical shield names; evidence: validation_43719. All author tests accepted.
+**#91 accepted/closed; PR #108 merged:** Craft/Repair/Dismantle and Tarot fields.
 
 **#89 accepted/closed, PR #107 merged:** owned T1 Pico, axe recipe, ×10/×100
 yield, all-tool sounds/centered feedback, 20° rest pose. Evidence: validation_43717.

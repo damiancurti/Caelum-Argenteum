@@ -1,6 +1,20 @@
 # TASKS.md — Active tasks
 
-Documentation version: **4.37.18** — 2026-10-04.
+Documentation version: **4.37.19** — 2026-10-04.
+
+## Issue #96 - Palomo necklace and shield names (4.37.19)
+
+- Implemented the author's four-choice T1 gift with Palomo and same-recipe
+  teaching by Caella. No automatic accessory replacement or new balance.
+- Native capacity, actual item identity, no duplicate on repeat/reload, owned
+  T1 recognition and deferred active crafting use grant revision 1.
+- Kept the four original crafting choices, accepted trials and saved dialogue
+  indices; old Caella pages teach/refer without changing a selection.
+- All four shields use canonical inventory names in both languages, including
+  previews, confirmation and summary; item mapping and statistics are retained.
+- Evidence: assets/validation_43719. The author accepted CA-43719-NECKLACE-01,
+  CA-43719-SHIELDS-01 and CA-43719-SAVE-01 on 2026-10-04 without reported
+  qualifications, and authorized #96 closure and PR #109 merge.
 
 ## Issue #91 - Crafting sections and Tarot fields (4.37.18)
 

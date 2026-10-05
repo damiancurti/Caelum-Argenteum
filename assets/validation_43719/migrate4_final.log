@@ -1,0 +1,30 @@
+Vulkan device: NVIDIA GeForce RTX 3070 Ti
+Resolution: 1520 x 825
+script parsing took 936.85 ms
+MAP01 - La mansión
+MAP01 - La mansión
+CA96 PASS migration preserves choice and quest stage
+CA96 PASS migration preserves issued allowance
+CA96 PASS active old amulet task defers gift
+CA96 STATE choice=2 stage=20 count=0 task=1 recipe=53 issuedWood=111 issuedLeather=222
+CA96 ITEM id=1 kind=2 type=20 tier=1 wear=10000 box=0 equipped=0 flags=0
+Partida guardada.
+MAP01 - La mansión
+CA96 PASS migration preserves choice and quest stage
+CA96 PASS migration preserves issued allowance
+CA96 PASS active old amulet task defers gift
+CA96 STATE choice=2 stage=20 count=0 task=1 recipe=53 issuedWood=111 issuedLeather=222
+CA96 ITEM id=1 kind=2 type=20 tier=1 wear=10000 box=0 equipped=0 flags=0
+CA96 PASS old active task survives migration
+CA96 PASS old native craft produces one T1 recognized as gift
+CA96 STATE choice=2 stage=20 count=1 task=0 recipe=0 issuedWood=111 issuedLeather=222
+CA96 ITEM id=2 kind=8 type=1 tier=1 wear=0 box=0 equipped=0 flags=0
+CA96 ITEM id=1 kind=2 type=20 tier=1 wear=10000 box=0 equipped=0 flags=0
+Partida guardada.
+MAP01 - La mansión
+CA96 PASS migration preserves choice and quest stage
+CA96 PASS migration preserves issued allowance
+CA96 PASS selected save settles one idempotent T1 grant
+CA96 STATE choice=2 stage=20 count=1 task=0 recipe=0 issuedWood=111 issuedLeather=222
+CA96 ITEM id=2 kind=8 type=1 tier=1 wear=0 box=0 equipped=0 flags=0
+CA96 ITEM id=1 kind=2 type=20 tier=1 wear=10000 box=0 equipped=0 flags=0

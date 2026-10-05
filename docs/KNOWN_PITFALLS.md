@@ -99,7 +99,7 @@ dragging at the intended DPI. Evidence: assets/validation_43716/RESULTS.json.
 ## CA-KP-033 — Refresh dialogue text after successful-open rewards
 
 Status/evidence: CODE-VERIFIED / ENGINE-VERIFIED.
-First recorded / last checked: 2026-10-04. Issue #97 / 4.37.14.
+First recorded / last checked: 2026-10-04. Issues #97 / 4.37.14 and #96 / 4.37.19.
 Baseline: bbf79f87 plus the #97 working tree; GZDoom 4.14.2, Windows 11/Vulkan.
 Scope: OpenPalomoDialogue and CaelumMainM00ConversationMenu.
 
@@ -117,6 +117,19 @@ the first displayed message and reply positions, then retry and reopen. Final
 EN/ES captures and native checks: [4.37.14 evidence](../assets/validation_43714/RESULTS.json).
 Author acceptance CA-43714-DECK-01 passed on 2026-10-04. This verifies the
 two tested layouts, not arbitrary font overrides or resolutions.
+
+#96 extension (baseline 466a0734 plus the #96 working tree): an old save inside
+Caella's amulet preview correctly retained native node 160, but displayed only
+"." because its newly added player text snapshot was empty. The resumed paused
+menu could open before the periodic WorldTick refresh. In
+CaelumConversationResume, refresh the Palomo/Caella loadout text and derived
+tokens before StartConversation; never call the gift or a reply from this
+presentation hook. The same original 4.37.18 save then displays the Palomo
+referral and remains unchosen, with no reward. Before/after native logs and
+package hashes: [4.37.19 evidence](../assets/validation_43719/RESULTS.json).
+ENGINE-VERIFIED in GZDoom 4.14.2, Windows 11/Vulkan; all #96 author checks
+passed 2026-10-04. Regression: save on an old page, load the new build and inspect
+both the restored text and unchanged choice, rather than only its node number.
 
 ## CA-KP-032 — Test ability input through the native ready weapon
 

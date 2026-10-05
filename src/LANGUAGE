@@ -3154,7 +3154,7 @@ CA_M01_SEALS_ASK = "Can I choose a seal and amulet?";
 CA_M01_SEALS_OFFER = "Choose one T1 seal and one T1 amulet. I will teach each selected recipe and its components. Their finite supplies are calculated at 100% efficiency. Existing items and knowledge remain yours.";
 CA_M01_SEALS_LEARN = "Choose my seal";
 CA_M01_SEALS_LATER = "I will come back later.";
-CA_M01_SEALS_READY = "Your confirmed choice is recorded. Craft it at my Workbench or upstairs. You can also choose one amulet. Ask me about materials or equipping.";
+CA_M01_SEALS_READY = "Your confirmed choice is recorded. Craft your Seal at my Workbench or upstairs. Palomo lets you choose a T1 amulet and gives it to you; I can teach its recipe. Ask me about materials or equipping.";
 CA_M01_SEALS_RESOURCES = "The recipes show the copper, tin, gems, raw silver and leather still needed for your chosen equipment. Work at 100% in every layer. Ask Palomo where to gather them; use your Pickaxe for gathering.";
 CA_M01_SEALS_USE_ASK = "How do I equip and use a seal?";
 CA_M01_SEALS_USE = "Equip a seal from Inventory > Accessories. Only one can be equipped at a time. Use the Channel control, User2, to activate it; Channel spends Adrenaline.\n\nThe HUD shows the equipped element and its availability. You can change seals in your inventory. Crafting them is optional and does not repeat the rune trial.";
@@ -3169,7 +3169,7 @@ CA_M01_SEALS_ASK = "¿Puedo elegir un sello y un amuleto?";
 CA_M01_SEALS_OFFER = "Elegí un sello y un amuleto T1. Te enseño cada receta elegida y sus componentes. Sus materiales tienen un cupo finito al 100% de eficiencia. Conservás tus objetos y conocimientos anteriores.";
 CA_M01_SEALS_LEARN = "Elegir mi sello";
 CA_M01_SEALS_LATER = "Volveré más tarde.";
-CA_M01_SEALS_READY = "Tu elección confirmada está registrada. Fabricá la pieza en mi Banco de Trabajo o arriba. También podés elegir un amuleto. Preguntame por los materiales o cómo equiparlos.";
+CA_M01_SEALS_READY = "Tu elección confirmada está registrada. Fabricá tu Sello en mi Banco de Trabajo o arriba. Palomo te deja elegir un amuleto T1 y te lo entrega; yo puedo enseñarte su receta. Preguntame por los materiales o cómo equiparlos.";
 CA_M01_SEALS_RESOURCES = "Las recetas indican el cobre, estaño, gemas, plata bruta y cuero que todavía requiere tu equipo. Trabajá al 100% en cada capa. Palomo te dirá dónde reunirlos; usá tu Pico para recolectar.";
 CA_M01_SEALS_USE_ASK = "¿Cómo equipo y uso un sello?";
 CA_M01_SEALS_USE = "Equipá un sello desde Inventario > Accesorios. Sólo podés tener uno equipado a la vez. Activá el control Channel, User2, para usarlo; canalizar gasta Adrenalina.\n\nEl HUD muestra el elemento equipado y su disponibilidad. Podés cambiar de sello desde el inventario. Fabricarlos es opcional y no repite la prueba de las runas.";
@@ -3190,7 +3190,7 @@ CA_WATER_ASK = "How do I collect water?";
 CA_WATER_ACCEPT = "Receive canteen / retry delivery";
 CA_WATER_RONNIE = "A thirst for knowledge is admirable. The other kind needs water. I can give you one empty 2.5-liter canteen. Submerge your head in the pool behind the mansion to drink and fill containers outside the Box, provided you can carry the water. Drink from Inventory > Consumables. Come back if you could not carry the canteen.";
 CA_WATER_DETAIL = "Water: pool behind the mansion; submerge your head to recover Thirst and fill or top up the canteen outside the Box. Enter in Consumables: 10 points in 10 seconds, spending body mass / 500 liters. Filled: %FILLED%. Used: %DRANK%.";
-CA_AF_AMULET_ASK = "Choose my T1 amulet";
+CA_AF_AMULET_ASK = "Learn my T1 amulet recipe";
 CA_AF_CHOOSE_SEAL = "Choose one T1 seal. I teach its recipe and components; supplies cover only that seal at 100% efficiency. Confirm on the next page to lock your choice.";
 CA_AF_CHOOSE_AMULET = "Choose one T1 amulet. I teach its recipe and components. The required silver will be in the basement chest; its gemstone comes from the back-wall veins. Confirm on the next page.";
 CA_AF_CONFIRM = "Confirm this choice";
@@ -3227,7 +3227,7 @@ CA_WATER_ASK = "¿Cómo recolecto agua?";
 CA_WATER_ACCEPT = "Recibir cantimplora / reintentar entrega";
 CA_WATER_RONNIE = "La sed de saber es admirable. La otra se arregla con agua. Puedo darle una cantimplora vacía de 2,5 litros, una sola vez. Sumerja la cabeza en la piscina detrás de la mansión para beber y llenar recipientes fuera de la Caja, si puede cargar el agua. Beba desde Inventario > Consumibles. Si no pudo cargar la cantimplora, vuelva a pedírmela.";
 CA_WATER_DETAIL = "Agua: piscina detrás de la mansión; sumergir la cabeza para recuperar Sed y llenar o completar la cantimplora fuera de la Caja. Enter en Consumibles: 10 puntos en 10 segundos, usando masa corporal / 500 litros. Llenado: %FILLED%. Uso: %DRANK%.";
-CA_AF_AMULET_ASK = "Elegir mi amuleto T1";
+CA_AF_AMULET_ASK = "Aprender la receta de mi amuleto T1";
 CA_AF_CHOOSE_SEAL = "Elegí un sello T1. Te enseño su receta y componentes; los materiales cubren sólo ese sello al 100% de eficiencia. La elección se confirma en la siguiente página y queda fija.";
 CA_AF_CHOOSE_AMULET = "Elegí un amuleto T1. Te enseño su receta y componentes. La plata necesaria estará en el cofre del sótano; su gema está en las vetas del fondo. Confirmá tu elección en la siguiente página.";
 CA_AF_CONFIRM = "Confirmar esta elección";
@@ -4353,7 +4353,7 @@ CA_M01_MAGIC_ANIMA_DONE = "Gasto de Ánima registrado.";
 
 [enu default]
 // #63: Palomo equipment planning.
-CA_LOADOUT_INTRO = "Choose a weapon, armor, a Seal and a shield. Read their characteristics and costs, then confirm each choice. I record your plan; after Caella, Ronnie teaches you to craft it. Confirmed choices remain fixed.";
+CA_LOADOUT_INTRO = "Choose a weapon, armor, a Seal and a shield for Ronnie's crafting lessons after Caella. I also give you one T1 amulet of your choice. Read each description before confirming; confirmed choices remain fixed.";
 CA_LOADOUT_WEAPON = "Review weapons";
 CA_LOADOUT_ARMOR = "Review armor";
 CA_LOADOUT_SEAL = "Review Seals";
@@ -4416,7 +4416,7 @@ CA_LOADOUT_ACTION_19 = "Statuette: both attacks launch an explosive projectile; 
 
 [es]
 // #63: Palomo equipment planning.
-CA_LOADOUT_INTRO = "Elija un arma, armadura, un Sello y un escudo. Lea sus características y costes, y confirme cada elección. Yo registro el plan; después de Caella, Ronnie le enseña a fabricarlo. Las elecciones confirmadas quedan fijas.";
+CA_LOADOUT_INTRO = "Elija arma, armadura, Sello y escudo para las lecciones de oficio de Ronnie después de Caella. También le entrego un amuleto T1 a elección. Lea cada descripción antes de confirmar; las elecciones confirmadas quedan fijas.";
 CA_LOADOUT_WEAPON = "Revisar armas";
 CA_LOADOUT_ARMOR = "Revisar armaduras";
 CA_LOADOUT_SEAL = "Revisar Sellos";
@@ -4438,11 +4438,11 @@ CA_LOADOUT_ARMOR_STATS = "Conjunto T1 de cuatro piezas: %.3f kg. Absorción en l
 CA_LOADOUT_SHIELD_STATS = "T1: %.3f kg; absorción física %d%% / mágica %d%%; cobertura frontal de %d grados.";
 CA_LOADOUT_SHIELD_USE = "Mantené Zoom con un arma compatible: bloquear gasta Aire y durabilidad. Armas grandes, a distancia y guanteletes usan su propia acción de Zoom. Ronnie prepara el plan de bronce y cuero.";
 CA_LOADOUT_SEAL_USE = "Peso T1: %.3f kg. Equipá el Sello y mantené Canalizar: %.3f de Adrenalina/segundo y luego %.1f segundos de espera. Canalizar te inmoviliza e impide atacar y bloquear; soltá para terminar.";
-CA_LOADOUT_SHIELD_NAME_0 = "Broquel";
+CA_LOADOUT_SHIELD_NAME_0 = "Rodela";
 CA_LOADOUT_SHIELD_0 = "El escudo físico más liviano; favorece el bloqueo acrobático y reduce la masa de combate.";
-CA_LOADOUT_SHIELD_NAME_1 = "Escudo cometa";
+CA_LOADOUT_SHIELD_NAME_1 = "Escudo de lágrima";
 CA_LOADOUT_SHIELD_1 = "Cobertura intermedia; los bloqueos exitosos aumentan más la Adrenalina.";
-CA_LOADOUT_SHIELD_NAME_2 = "Pavés";
+CA_LOADOUT_SHIELD_NAME_2 = "Escudo de torre";
 CA_LOADOUT_SHIELD_2 = "El más pesado, con mayor cobertura y absorción física; aumenta la masa de combate.";
 CA_LOADOUT_SHIELD_NAME_3 = "Escudo mágico";
 CA_LOADOUT_SHIELD_3 = "Liviano y más eficaz contra magia; al bloquear refleja proyectiles que llegan de frente.";
@@ -4871,3 +4871,42 @@ CA_TAROT_DETAIL_TRUCAZO_FIGURE = "Valor de Envido: cero sola. Despierta copia a 
 CA_TAROT_DETAIL_TRUCAZO_NUMBER = "Aporte al Envido: %d normal, %d despierta.";
 CA_TAROT_DETAIL_TRUCAZO_AWAKE = "Una esencia capturada está despierta desde el inicio de la partida, independientemente de los poderes elegidos para el mundo. El Truco tradicional no usa efectos de esencias.";
 CA_TAROT_DETAIL_HELP = "Izq/Der: carta | Arr/Ab o rueda: efectos | Enter / clic en carta: elegir | Tab: cerrar";
+
+// #96: entrega de Palomo y enseñanza de Caella.
+[enu default]
+CA_PALOMO_NECKLACE_ASK = "Choose or receive my T1 amulet";
+CA_PALOMO_NECKLACE_INTRO = "Choose one T1 amulet. I will give it to you; Caella can teach you its recipe. Your choice is final. If you already chose one, I will keep that choice and recognize an existing T1 of the same type.";
+CA_PALOMO_NECKLACE_WEIGHT = "T1 | Weight: %.3f kg";
+CA_PALOMO_NECKLACE_EFFECT_0 = "While equipped: +%d to each physical attribute, +%d to each technical and social attribute, +%d to each mental attribute.";
+CA_PALOMO_NECKLACE_EFFECT_1 = "While equipped: +%d to each mental attribute, +%d to each technical and social attribute, +%d to each physical attribute.";
+CA_PALOMO_NECKLACE_EFFECT_2 = "While equipped: +%d to each technical attribute, +%d to each physical and mental attribute, +%d to each social attribute.";
+CA_PALOMO_NECKLACE_EFFECT_3 = "While equipped: +%d to each social attribute, +%d to each physical and mental attribute, +%d to each technical attribute.";
+CA_PALOMO_NECKLACE_CONFIRM = "Confirm to receive it once. It will not replace your equipped amulet. Caella teaches its recipe.";
+CA_PALOMO_NECKLACE_DELIVERED = "This gift has been delivered, or a T1 you already owned was recognized. No second copy is granted. Manage your amulets in Inventory; Caella teaches the recipe.";
+CA_PALOMO_NECKLACE_CRAFTING = "You are already crafting this T1. Finish or cancel that task to settle the gift without creating a duplicate.";
+CA_PALOMO_NECKLACE_ROOM = "Your choice is saved, but the amulet has not been delivered. Make room in your carried inventory or owned Box; delivery will retry when space is available.";
+CA_PALOMO_NECKLACE_RETRY = "Try to receive the amulet";
+CA_PALOMO_NECKLACE_BACK = "Back to equipment";
+CA_CAELLA_NECKLACE_TEACH = "Learn this amulet recipe";
+CA_CAELLA_NECKLACE_KNOWN = "You already know this amulet recipe. You can consult it in Crafting.";
+CA_CAELLA_NECKLACE_LESSON = "I can teach you the recipe for the amulet you chose with Palomo, including its components. A piece you already own needs no additional tutorial materials.";
+CA_CAELLA_NECKLACE_REFERRAL = "Choose your T1 amulet with Palomo first. He gives it to you; I will teach you the recipe for that same amulet.";
+
+[es]
+CA_PALOMO_NECKLACE_ASK = "Elegir o recibir mi amuleto T1";
+CA_PALOMO_NECKLACE_INTRO = "Elija un amuleto T1. Yo se lo entrego; Caella puede enseñarle su receta. La elección es definitiva. Si ya eligió uno, conservaré esa elección y reconoceré un T1 del mismo tipo que ya sea suyo.";
+CA_PALOMO_NECKLACE_WEIGHT = "T1 | Peso: %.3f kg";
+CA_PALOMO_NECKLACE_EFFECT_0 = "Al equiparlo: +%d a cada atributo físico, +%d a cada atributo técnico y social, +%d a cada atributo mental.";
+CA_PALOMO_NECKLACE_EFFECT_1 = "Al equiparlo: +%d a cada atributo mental, +%d a cada atributo técnico y social, +%d a cada atributo físico.";
+CA_PALOMO_NECKLACE_EFFECT_2 = "Al equiparlo: +%d a cada atributo técnico, +%d a cada atributo físico y mental, +%d a cada atributo social.";
+CA_PALOMO_NECKLACE_EFFECT_3 = "Al equiparlo: +%d a cada atributo social, +%d a cada atributo físico y mental, +%d a cada atributo técnico.";
+CA_PALOMO_NECKLACE_CONFIRM = "Confirme para recibirlo una sola vez. No reemplazará su amuleto equipado. Caella enseña su receta.";
+CA_PALOMO_NECKLACE_DELIVERED = "El regalo ya fue entregado, o se reconoció un T1 que ya era suyo. No se entrega otra copia. Administre sus amuletos en Inventario; Caella enseña la receta.";
+CA_PALOMO_NECKLACE_CRAFTING = "Ya está fabricando este T1. Termine o cancele esa tarea para resolver la entrega sin crear un duplicado.";
+CA_PALOMO_NECKLACE_ROOM = "Su elección está guardada, pero el amuleto aún no fue entregado. Haga lugar en su inventario o en su Caja; la entrega se reintentará cuando haya espacio.";
+CA_PALOMO_NECKLACE_RETRY = "Intentar recibir el amuleto";
+CA_PALOMO_NECKLACE_BACK = "Volver al equipo";
+CA_CAELLA_NECKLACE_TEACH = "Aprender la receta de este amuleto";
+CA_CAELLA_NECKLACE_KNOWN = "Ya conocés la receta de este amuleto. Podés consultarla en Fabricación.";
+CA_CAELLA_NECKLACE_LESSON = "Puedo enseñarte la receta del amuleto que elegiste con Palomo, incluidos sus componentes. Una pieza que ya es tuya no necesita materiales adicionales del tutorial.";
+CA_CAELLA_NECKLACE_REFERRAL = "Primero elegí tu amuleto T1 con Palomo. Él te lo entrega; yo te enseñaré la receta de ese mismo amuleto.";

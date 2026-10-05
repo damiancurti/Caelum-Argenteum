@@ -52,6 +52,11 @@ class CaelumConversationResume : StaticEventHandler
                 continue;
             }
             if (!speaker.HasConversation()) continue;
+            // #96: la pausa del diálogo puede impedir el refresco periódico.
+            // Reconstruir texto/tokens nuevos antes de restaurar una página
+            // antigua de equipo o de Caella, sin ejecutar la entrega.
+            if (speaker is "CaelumPalomo" || speaker is "CaelumCaella")
+                CaelumMainM00Loadout.Refresh(user);
             // Conserva el nodo nativo guardado y el ángulo original. No llama
             // a Used ni ejecuta respuestas, recompensas o flags de la misión.
             speaker.StartConversation(user, user.player.ConversationFaceTalker, false);

@@ -285,6 +285,10 @@ class CaelumPlayer : DoomPlayer
     String MainM00LoadoutDescriptions[49];
     String MainM00LoadoutStats[49];
     String MainM00LoadoutSummary;
+    String MainM00NecklaceStatus;
+    String MainM00AmuletLessonText;
+    transient int MainM00NecklaceMenuRequest;
+    transient Actor MainM00NecklaceMenuSpeaker;
     double EquipmentSelectionAirCost;
     double EquipmentSelectionAnimaCost;
     int EquipmentSelectionAttackTics;

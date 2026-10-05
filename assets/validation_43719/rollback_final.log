@@ -1,0 +1,8 @@
+Vulkan device: NVIDIA GeForce RTX 3070 Ti
+Resolution: 1520 x 825
+script parsing took 945.93 ms
+MAP01 - La mansión
+MAP01 - La mansión
+CA96 STATE choice=2 stage=20 count=1 task=0 recipe=0 issuedWood=111 issuedLeather=222
+CA96 ITEM id=3 kind=8 type=3 tier=2 wear=37 box=0 equipped=1 flags=0
+CA96 ITEM id=2 kind=8 type=1 tier=1 wear=37 box=1 equipped=0 flags=0

@@ -1,6 +1,26 @@
 CAELUM ARGENTEUM — STORY AND MAP01
 
-Documentation version: **4.37.18** — 2026-10-04.
+Documentation version: **4.37.19** — 2026-10-04.
+
+## 4.37.19 - Palomo gives the chosen necklace; Caella teaches it (#96)
+
+The author's 2026-10-04 clarification moves the four existing T1 amulet choices
+from Caella to Palomo's upstairs equipment dialogue. Confirming grants that
+actual owned amulet once, with native carry/Box capacity and honest pending
+feedback. It stays unequipped. Caella's later lesson teaches its existing
+recipe and components; she refers unchosen characters back to Palomo.
+Previous choices remain authoritative, and an already owned matching T1 is
+recognized rather than duplicated. Pending same-T1 crafting is allowed to
+finish or be cancelled normally. Completed old tutorials are not restarted.
+The necklace remains optional; Ronnie still requires the original four choices
+and an actually crafted first weapon. Palomo's later final/Box/Fool pages also
+offer the necklace entry. No geometry, route or loan lifecycle changes.
+
+All four shield labels, descriptions, confirmation pages and summary now share
+the canonical inventory names in English and Spanish, retaining type IDs.
+Original dialogue page indices remain stable; the new necklace conversation is
+appended. SYSTEMS owns capacity, grant revision 1 and rollback rules. Native
+evidence: assets/validation_43719. All three author checks passed 2026-10-04.
 
 4.37.18 / issue #91: the Journal separates Craft, Repair and Dismantle. Ronnie's
 owned Pickaxe and learned recipe appear through the same weapon/recipe rules.
@@ -188,7 +208,8 @@ shield, with review/backtracking and a separate summary of confirmed choices.
 Ronnie consumes that plan after Caella's trial for recipes, finite materials
 and native crafting, without offering a second selection menu. The first
 weapon remains a crafting task. The former Seal chooser was Caella in the
-runtime; it moves to Palomo as #63 requires. Caella retains amulet selection.
+runtime; it moves to Palomo as #63 requires. The amulet selection retained by
+Caella at #63 moves to Palomo with a one-time gift in #96.
 The food-source explanation states that Palomo replenishes the tables and
 that food and water are always available there (coordination with #65).
 

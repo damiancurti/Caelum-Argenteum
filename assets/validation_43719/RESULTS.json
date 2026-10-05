@@ -1,0 +1,187 @@
+{
+  "issue": 96,
+  "release": "4.37.19",
+  "date": "2026-10-04",
+  "base_commit": "466a07343a216d0f80ce565cae8dbb09ce9d6aaf",
+  "status": "Accepted by the author on 2026-10-04; all three author checks passed without reported qualifications.",
+  "author_decision": "Choose and receive the existing T1 amulet with Palomo; Caella teaches that recipe. Preserve prior choices and recognize an owned matching T1 without duplication.",
+  "static": {
+    "project_validator": "PROJECT_VALIDATION.json",
+    "focused_checks": "STATIC.json",
+    "diff_check": "git diff --check passed",
+    "runtime_source_sha256": {
+      "src/CAPALOMO": "d7b13598e8ffedad61ea03b9ddad47b9a8282d2b16f7dbe9ad8287dca7936753",
+      "src/LANGUAGE": "e6fc43fe9d74bcef0cca8f3c08114ab53b99506488e7b708c5bdf4af99456282",
+      "src/ZSCRIPT": "ee0e49d8441ca867dd7680d14a8a8e74086e0c82abc9288f5c6db13c13badec5",
+      "src/caelum/dialogue/CaelumMainM00SocialDialogue.zs": "fba973a3fc3ed037c759792c319bd71ffebaaee465e9fe7900a77f832e07b0ed",
+      "src/caelum/equipment/CaelumPersistentCharacterState.zs": "ec30de7ba4dd5cbbc5ebf07838f8caf0db216f735a070a4eb4eb57d5b6f50917",
+      "src/caelum/player/CaelumPlayer.zs": "cd8d6438afeeb74f5fb5ee2bc6d3648954c45d9f8e9b445814e278bee3d99be5",
+      "src/caelum/quests/CaelumMainM00Loadout.zs": "6e6722da040f294a7f88cf3deb12214c30154d2a56f99d6447734f49a806ebc9",
+      "src/caelum/quests/CaelumMainM00MagicTrial.zs": "cc823e7fcd097ea3c5561dbd2ed6fdac8190b9e56421af3f2bb8cf5bd1a5cc72",
+      "src/caelum/quests/CaelumMainM00Necklace.zs": "226e360ca05131263268587972ec3269f3f4f12d95fc7ae983882d20a612b4fa",
+      "src/caelum/quests/CaelumMainM00QuestController.zs": "1014b9cf7ee5bf77afb45a2e0c4787ba8104dbf5a76e0035ba3549818df52fea",
+      "src/caelum/ui/CaelumConversationResume.zs": "10c4023e7ab415fabc9b762ec665f9459d1cd48a617c673f83fe1cdb23d68329",
+      "src/caelum/world/CaelumPhysicalHazards.zs": "4b4a7867325fc8ff3ca1c53cafba4934a106160ab7ddb11e6f5bd5d6e06e884d",
+      "src/caelum/world/CaelumSewerMaze.zs": "d3dba5cd4c50c6dc9f42fa9ffd527c2d7438488a664449b8a3f4586229b7a450"
+    }
+  },
+  "package": {
+    "name": "caelum_argenteum_dev.pk3",
+    "sha256": "936cdeb6b825f180732cbc5bae78a164561d3d7f203def4de4ac963b94cdbe03",
+    "bytes": 433188337,
+    "files": 6167
+  },
+  "native": {
+    "engine": "GZDoom 4.14.2, Windows 11, Vulkan; local Doom II development IWAD",
+    "dependencies": "Engine, development WADs, native save files and test fixtures are not distributed.",
+    "logs": {
+      "final_matrix.log": {
+        "passed": 64,
+        "failed": 0,
+        "exit_code": 0,
+        "package_sha256": "936cdeb6b825f180732cbc5bae78a164561d3d7f203def4de4ac963b94cdbe03",
+        "sha256": "811c8b18c0746d767bd8deea751d47a792ee900daa253de5914afe2d5448742d"
+      },
+      "final_flow_es.log": {
+        "passed": 20,
+        "failed": 0,
+        "exit_code": 0,
+        "package_sha256": "936cdeb6b825f180732cbc5bae78a164561d3d7f203def4de4ac963b94cdbe03",
+        "sha256": "5758e737436b60b180ab1d205348e871baba5458a94e6a20c0011d46c6491dce"
+      },
+      "final_flow_enu.log": {
+        "passed": 20,
+        "failed": 0,
+        "exit_code": 0,
+        "package_sha256": "936cdeb6b825f180732cbc5bae78a164561d3d7f203def4de4ac963b94cdbe03",
+        "sha256": "11bc5eb4f2aa0bcea0f68cb3d160b2990909e9b869d3af68f29bb2a7324d342e"
+      },
+      "migrate0_final.log": {
+        "passed": 6,
+        "failed": 0,
+        "exit_code": 0,
+        "package_sha256": "4516125d56e25ebd1359aa718738d2d88015ead80e5c1da3bccbc67b3ecaa471",
+        "sha256": "0d8c024c4fd151ee385a90148af7fdcee293ff0b58cf33ebca66c1e3edb9c775"
+      },
+      "migrate1_final.log": {
+        "passed": 6,
+        "failed": 0,
+        "exit_code": 0,
+        "package_sha256": "4516125d56e25ebd1359aa718738d2d88015ead80e5c1da3bccbc67b3ecaa471",
+        "sha256": "4a4b1ee6efc01f637f4fbd0d3a3a4ec56e46679311fc3e37362788c0b908f5bd"
+      },
+      "migrate2_final.log": {
+        "passed": 6,
+        "failed": 0,
+        "exit_code": 0,
+        "package_sha256": "4516125d56e25ebd1359aa718738d2d88015ead80e5c1da3bccbc67b3ecaa471",
+        "sha256": "2819939d7220727273baa6015fc94357db0769eb02da9176bf752a7c442beff3"
+      },
+      "migrate3_final.log": {
+        "passed": 6,
+        "failed": 0,
+        "exit_code": 0,
+        "package_sha256": "4516125d56e25ebd1359aa718738d2d88015ead80e5c1da3bccbc67b3ecaa471",
+        "sha256": "ea6a3a04300687611370146e9983ae479d0b554f2a3b40b0762f0bc9796c0ea4"
+      },
+      "migrate4_final.log": {
+        "passed": 11,
+        "failed": 0,
+        "exit_code": 0,
+        "package_sha256": "4516125d56e25ebd1359aa718738d2d88015ead80e5c1da3bccbc67b3ecaa471",
+        "sha256": "1d87f9fd4c4b8b2b9810977913d7eac5595916e1c3f6d1d6c75e3eeaa6de8396"
+      },
+      "cancel4_final.log": {
+        "passed": 2,
+        "failed": 0,
+        "exit_code": 0,
+        "package_sha256": "4516125d56e25ebd1359aa718738d2d88015ead80e5c1da3bccbc67b3ecaa471",
+        "sha256": "51ee5f89e38e0e0b53b0a557ecb997b86f7ed3462fc00088537abc6ee848899f"
+      },
+      "migrate_caella_fixed.log": {
+        "passed": 3,
+        "failed": 0,
+        "exit_code": 0,
+        "package_sha256": "936cdeb6b825f180732cbc5bae78a164561d3d7f203def4de4ac963b94cdbe03",
+        "sha256": "dcfd5e484671302eb3906edb8b252053077091461a832f28ea7c4501b1f8fe7d"
+      },
+      "rollback_final.log": {
+        "passed": 0,
+        "failed": 0,
+        "exit_code": 0,
+        "package_sha256": "f063f737f14126106b115fde75a8131250ec4637e4ad5e7f8979e9083b622c19",
+        "sha256": "29c4ab886f3faf1e9b0cef462cbca2292d381a0a21dc52d5d1fa701aaea8391a"
+      },
+      "newsave_final.log": {
+        "passed": 2,
+        "failed": 0,
+        "exit_code": 0,
+        "package_sha256": "936cdeb6b825f180732cbc5bae78a164561d3d7f203def4de4ac963b94cdbe03",
+        "sha256": "8b3185f08d89282b7d356329d3fd70bb479a2044d4e5f0e7682989b704a101e3"
+      },
+      "smoke_final.log": {
+        "passed": 0,
+        "failed": 0,
+        "exit_code": 0,
+        "package_sha256": "936cdeb6b825f180732cbc5bae78a164561d3d7f203def4de4ac963b94cdbe03",
+        "sha256": "fee83dee65e5df7c991e84ab6eaac66e2f048f6995b879b35c75ed0d23a1bd46"
+      }
+    },
+    "total_passes": 146,
+    "build_scope": "The matrix, bilingual dialogue flows, new-save round trip, MAP02 smoke and old Caella-page regression use the final package. Non-conversation migrations/crafting/cancel used the preceding package; the only later runtime change refreshes Palomo/Caella presentation before resuming an active saved conversation. Their reward/crafting implementation is byte-identical. Original-save rollback uses 4.37.18.",
+    "coverage": [
+      "Four actual owned T1 grants; immutable choice, repeat/loss idempotence, native weight, no auto-equip, no recipe or trial skip.",
+      "Full carried inventory keeps grant pending; capacity retry, owned Box fallback and full Box rejection.",
+      "Recognize carried, boxed and equipped T1 identity/wear/placement; preserve other type/T2 and equipped accessories.",
+      "Caella referral without a choice; all four existing recipes and dependency graphs; preserve issued supplies, repeat lesson and legacy action restrictions.",
+      "Native ordinary upstairs Palomo entry, menu handoff, all four necklace previews/confirmations and acquired items in both languages.",
+      "All four native shield reply labels, preview/stats pages, confirmation-to-type mapping and plan names in both languages; inventory shared formatter unchanged.",
+      "Native Caella lesson and known-recipe state; late Palomo final/Fool entries; appended pages leave all 399 previous CAPALOMO page slots unchanged.",
+      "Old unchosen, selected/missing, already owned and completed tutorial saves; new save/reload and identity preservation.",
+      "Native same-T1 crafting reservation survives old/new save; completion recognized once, cancellation permits one gift, issued allowances preserved.",
+      "Old active Caella preview stays on node 160 and shows an honest referral; the restored presentation executes no choice/reward.",
+      "Original-save/original-package rollback retains owned ID 2 Sapphire T1 in the Box and ID 3 equipped Topaz T2, both wear 37."
+    ],
+    "legacy_original_save_sha256": {
+      "legacy0.zds": "903ba9876f16bca2ced841e49ce1552432d8f78d80a7ef29b0e3f354c758d1f6",
+      "legacy1.zds": "9e2085f3b25c12de544412b9fcb28d871d7059896df977151da2947fdfd925ce",
+      "legacy2.zds": "254ff82f1488ce71bf64b041fb590777edb2c4ed74d574ed15d246d239373bea",
+      "legacy3.zds": "ed22260547a28bd959207185120fdf7f748a8b9f7fa4effc010c0bcb329ab645",
+      "legacy4_final.zds": "cfd6a5e19033c903a60b1207b655f247961fff4f8b9d61194c27d63088ad5331",
+      "legacy_caella_page.zds": "676a86fbf52d730b28ff127ea3022976a862f85c785b1df2265cd251e293117d"
+    },
+    "legacy_package_sha256": "f063f737f14126106b115fde75a8131250ec4637e4ad5e7f8979e9083b622c19",
+    "reproduced_and_fixed": {
+      "symptom": "Old paused Caella page restored its native node but showed only a dot because new text snapshots were empty.",
+      "before": "dialogue_before.log",
+      "after": "migrate_caella_fixed.log",
+      "fix": "Refresh loadout presentation/tokens before native conversation restoration; do not execute grant/actions.",
+      "lesson": "CA-KP-033"
+    },
+    "exploratory_harness_notes": [
+      "The initial unchanged 4.37.18 baseline process exited -1073740940 while creating several MAP01 saves by repeated map commands. Cause not established. Required remaining original saves were created successfully in separate fresh processes; no repeated-map stability claim is made.",
+      "Fixture boundary setup was corrected to reset capacity after native inventory refresh and to enable the existing Ronnie crafting stage before starting an amulet task. Old-save assertions use a static handler so they also run after restoring older event-handler lists."
+    ]
+  },
+  "live_ui": {
+    "method": "computer-use:computer-use (@oai/sky), actual GZDoom window and physical-key injection",
+    "observed": [
+      "Spanish upstairs equipment root, 1520x825 client: necklace entry and original choices readable.",
+      "Key 1 opened necklace list; key 2 showed Sapphire name, T1, 1 kg and existing +6/+2/+1 attributes.",
+      "Key 1 confirmed one received Sapphire T1; load increased by 1 kg, equipped bonuses did not change.",
+      "Back returned to equipment; shields displayed rodela, escudo de lagrima, escudo de torre and escudo magico (accented in game)."
+    ],
+    "qualification": "Observed on the same implementation before the final formal-address wording adjustment and saved-dialogue refresh. Final bilingual scripted native flows verify the final text/state. These are agent observations, not author acceptance."
+  },
+  "author_acceptance": {
+    "status": "PASSED",
+    "checks": [
+      "CA-43719-NECKLACE-01",
+      "CA-43719-SHIELDS-01",
+      "CA-43719-SAVE-01"
+    ],
+    "source": "docs/HISTORY.md; explicit author confirmation in the implementation session.",
+    "date": "2026-10-04",
+    "qualifications": "None reported."
+  }
+}

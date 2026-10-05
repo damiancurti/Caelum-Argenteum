@@ -1,6 +1,59 @@
 # Caelum Argenteum — Current systems and rules
 
-Documentation version: **4.37.18** — 2026-10-04.
+Documentation version: **4.37.19** — 2026-10-04.
+
+## 4.37.19 - Palomo's necklace and canonical shield names (#96)
+
+Author decision, 2026-10-04: choose and receive the T1 amulet with Palomo;
+Caella teaches its existing recipe. This supersedes the amulet role assignment
+in #63 and older sections. The other four equipment choices still require
+their established crafting flow; the necklace adds no progression gate.
+
+After following Palomo upstairs, his equipment menu offers the four existing
+T1 amulets: Ruby, Sapphire, Emerald and Topaz. Review the canonical name,
+catalogue weight and equipped attribute bonuses before confirming. Confirmation
+fixes MainM00AmuletChoice and delivers the matching actual CaelumAmuletPickup
+once, without equipping it or replacing another accessory. No new recipe,
+bonus, weight, art or item type is introduced. Later Palomo final/Box/Fool
+pages also expose this choice so a still-unchosen MAP01 character can return.
+
+Native capacity checks prefer carried inventory and then an accessible owned
+Box with both slot and weight capacity. If neither fits, the choice remains
+saved while delivery is pending; the dialogue states that nothing was delivered.
+The pending grant retries on confirmation or the periodic migration check once
+there is room. The normal acquired-item notification occurs only for a newly
+attached item. Selling, dropping, transferring or losing an already settled
+gift never creates a replacement. Existing owned equipment survives departure
+under #63, including this gift; the first weapon must still be crafted.
+
+Caella's post-trial amulet page teaches only the selected existing recipe and
+its component dependencies. Before selection it refers to Palomo; afterward it
+reports learned/pending knowledge. She cannot pick or change the amulet. A new
+gift already owned when learning requires no extra tutorial raw-material quota.
+Already learned recipes, issued supplies and active task reservations retain
+their previous state. Repeated teaching is idempotent.
+
+Save migration: MainM00NecklaceRevision defaults to 0 and reaches 1 only after
+successful delivery or recognition; MainM00NecklaceItemId stores the settled
+native identity. An existing selected T1 owned by the player is recognized in
+carried inventory, equipped or in the Box without changing its ID, condition or
+placement. A different type, a T2 or a loan does not substitute for it. Old
+selected saves without that T1 receive it when capacity allows, including an
+already completed tutorial. Unchosen saves remain unchosen. An active task for
+that same T1 defers creation until completion (recognize its output) or cancel
+(retry the pending grant); no task or reservation is cancelled by migration.
+All old USDF page slots remain at their original indices; new conversation
+43633 is appended. Legacy Caella preview slots become recipe/referral pages.
+The handoff between Palomo menus is transient. Rollback uses the preserved
+original save with its original package, not a newly saved file downgraded to
+the old build.
+
+Shield options 0-3 use the same localization keys as inventory: buckler / kite
+shield / tower shield / magic shield; Spanish: rodela / escudo de lagrima /
+escudo de torre / escudo magico (accented in game). Preview, confirmation and
+plan summary use FormatShieldName. Type IDs, stats and crafting are unchanged.
+Evidence: assets/validation_43719. All three author checks passed 2026-10-04;
+HISTORY records their IDs and qualifications.
 
 ## 4.37.18 - Craft, Repair, Dismantle and Tarot details (#91)
 
@@ -604,13 +657,14 @@ apply. Seal Channel keeps its actual Adrenaline cost and cooldown.
 
 The existing persistent weapon, armor and Seal fields remain authoritative;
 the shield adds MainM00ShieldChoice and MainM00ShieldCrafted. Palomo only records
-choices. Choosing grants no equipment, recipes or supplies and does not advance
+these four choices. They grant no equipment, recipes or supplies and do not advance
 Caella or Ronnie. After Caella's trial and the four confirmations, Ronnie starts
 the existing crafting stage, teaches the selected recipes/dependencies, and
 opens the finite raw-material allowance. A legacy already-started tutorial can
 continue without filling new choices or repeating its start. Adding a missing
 choice to that legacy plan teaches its dependencies without resetting issued
-stock, existing tasks or progress. Caella still chooses/teaches the amulet.
+stock, existing tasks or progress. At #63 Caella chose/taught the amulet;
+#96 supersedes that assignment: Palomo gives it, Caella teaches its recipe.
 
 Shield materials expand from established plate/strap recipes at the same 100%
 layer efficiency and recorded size as the starter plan. All four T1 shields

@@ -1,0 +1,601 @@
+Vulkan device: NVIDIA GeForce RTX 3070 Ti
+Resolution: 1520 x 825
+script parsing took 935.47 ms
+MAP01 - The Mansion
+CA96 STATE choice=0 stage=20 count=0 task=0 recipe=0 issuedWood=0 issuedLeather=0
+CA96 PASS ordinary upstairs Palomo entry
+CA96 PAGE loadout_root node=286 visible=8
+CA96 REPLY 0 Choose or receive my T1 amulet
+CA96 REPLY 1 Review weapons
+CA96 REPLY 2 Review armor
+CA96 REPLY 3 Review Seals
+CA96 REPLY 4 Review shields
+CA96 REPLY 5 Review my confirmed plan
+CA96 REPLY 6 How do I look after myself?
+CA96 REPLY 7 [I will return later.]
+CA96 TEXT The deck is yours: 78 physical cards for Trucazo.
+CA96 TEXT Their powers require captured essences.
+CA96 TEXT
+CA96 TEXT Choose a weapon, armor, a Seal and a shield for Ronnie's crafting lessons after Caella.
+CA96 TEXT I also give you one T1 amulet of your choice. Read each description before confirming;
+CA96 TEXT confirmed choices remain fixed.
+CA96 PAGE palomo_necklaces node=416 visible=6
+CA96 REPLY 0 Ruby Amulet
+CA96 REPLY 1 Sapphire Amulet
+CA96 REPLY 2 Emerald Amulet
+CA96 REPLY 3 Topaz Amulet
+CA96 REPLY 4 Back to equipment
+CA96 REPLY 5 [I will return later.]
+CA96 TEXT Choose one T1 amulet. I will give it to you; Caella can teach you its recipe. Your
+CA96 TEXT choice is final. If you already chose one, I will keep that choice and recognize an
+CA96 TEXT existing T1 of the same type.
+CA96 PAGE palomo_necklace_0 node=417 visible=3
+CA96 REPLY 0 Confirm this choice
+CA96 REPLY 1 Back to choices
+CA96 REPLY 2 [I will return later.]
+CA96 TEXT Ruby Amulet
+CA96 TEXT T1 | Weight: 1.000 kg
+CA96 TEXT While equipped: +6 to each physical attribute, +2 to each technical and social
+CA96 TEXT attribute, +1 to each mental attribute.
+CA96 TEXT Confirm to receive it once. It will not replace your equipped amulet. Caella teaches its
+CA96 TEXT recipe.
+CA96 PAGE palomo_necklace_status node=421 visible=2
+CA96 REPLY 0 Back to equipment
+CA96 REPLY 1 [I will return later.]
+CA96 TEXT Ruby Amulet
+CA96 TEXT This gift has been delivered, or a T1 you already owned was recognized. No second
+CA96 TEXT copy is granted. Manage your amulets in Inventory; Caella teaches the recipe.
+CA96 PASS native dialogue delivered selected T1 once
+CA96 PAGE palomo_necklace_status node=421 visible=2
+CA96 REPLY 0 Back to equipment
+CA96 REPLY 1 [I will return later.]
+CA96 TEXT Ruby Amulet
+CA96 TEXT This gift has been delivered, or a T1 you already owned was recognized. No second
+CA96 TEXT copy is granted. Manage your amulets in Inventory; Caella teaches the recipe.
+CA96 PAGE loadout_root node=286 visible=8
+CA96 REPLY 0 Choose or receive my T1 amulet
+CA96 REPLY 1 Review weapons
+CA96 REPLY 2 Review armor
+CA96 REPLY 3 Review Seals
+CA96 REPLY 4 Review shields
+CA96 REPLY 5 Review my confirmed plan
+CA96 REPLY 6 How do I look after myself?
+CA96 REPLY 7 [I will return later.]
+CA96 TEXT The deck is yours: 78 physical cards for Trucazo.
+CA96 TEXT Their powers require captured essences.
+CA96 TEXT
+CA96 TEXT Choose a weapon, armor, a Seal and a shield for Ronnie's crafting lessons after Caella.
+CA96 TEXT I also give you one T1 amulet of your choice. Read each description before confirming;
+CA96 TEXT confirmed choices remain fixed.
+CA96 PASS native four shield reply labels equal inventory keys
+CA96 PAGE loadout_shields node=344 visible=6
+CA96 REPLY 0 buckler
+CA96 REPLY 1 kite shield
+CA96 REPLY 2 tower shield
+CA96 REPLY 3 magic shield
+CA96 REPLY 4 Back to choices
+CA96 REPLY 5 [I will return later.]
+CA96 TEXT Confirm only if this is your choice. Back returns to the catalogue. If this category is
+CA96 TEXT already confirmed, you can still review it.
+CA96 PAGE loadout_preview_45 node=345 visible=3
+CA96 REPLY 0 Weight, costs and confirmation
+CA96 REPLY 1 Back to choices
+CA96 REPLY 2 [I will return later.]
+CA96 TEXT buckler
+CA96 TEXT Lightest physical shield; supports acrobatic blocking and reduced combat mass.
+CA96 PAGE loadout_stats_45 node=408 visible=3
+CA96 REPLY 0 Confirm this choice
+CA96 REPLY 1 Back to choices
+CA96 REPLY 2 [I will return later.]
+CA96 TEXT buckler
+CA96 TEXT T1: 8.000 kg; 50% physical / 50% magical absorption; 120-degree frontal coverage.
+CA96 TEXT Hold Zoom with a compatible weapon: blocking costs Air and durability. Large/ranged
+CA96 TEXT weapons and gauntlets use their own Zoom action. Ronnie supplies the
+CA96 TEXT bronze-and-leather crafting plan.
+CA96 PAGE loadout_root node=286 visible=8
+CA96 REPLY 0 Choose or receive my T1 amulet
+CA96 REPLY 1 Review weapons
+CA96 REPLY 2 Review armor
+CA96 REPLY 3 Review Seals
+CA96 REPLY 4 Review shields
+CA96 REPLY 5 Review my confirmed plan
+CA96 REPLY 6 How do I look after myself?
+CA96 REPLY 7 [I will return later.]
+CA96 TEXT The deck is yours: 78 physical cards for Trucazo.
+CA96 TEXT Their powers require captured essences.
+CA96 TEXT
+CA96 TEXT Choose a weapon, armor, a Seal and a shield for Ronnie's crafting lessons after Caella.
+CA96 TEXT I also give you one T1 amulet of your choice. Read each description before confirming;
+CA96 TEXT confirmed choices remain fixed.
+CA96 PASS native shield confirmation records corresponding type and name
+CA96 PAGE loadout_summary node=362 visible=2
+CA96 REPLY 0 Back to choices
+CA96 REPLY 1 [I will return later.]
+CA96 TEXT Weapon: Not chosen
+CA96 TEXT Armor: Not chosen
+CA96 TEXT Seal: Not chosen
+CA96 TEXT Shield: buckler
+CA96 PAGE caella_magic_done node=144 visible=3
+CA96 REPLY 0 Where can I craft equipment?
+CA96 REPLY 1 Can I choose a seal and amulet?
+CA96 REPLY 2 [I will return later.]
+CA96 TEXT Thank you for returning my equipment. The wall will still look solid: walk straight
+CA96 TEXT through the four marks. The passage leads to the lift and the cave. Then speak with
+CA96 TEXT Ronnie about preparing your weapon.
+CA96 PAGE caella_seals_ready node=148 visible=4
+CA96 REPLY 0 Learn my T1 amulet recipe
+CA96 REPLY 1 And where are the materials?
+CA96 REPLY 2 How do I equip and use a seal?
+CA96 REPLY 3 [I will return later.]
+CA96 TEXT Your confirmed choice is recorded. Craft your Seal at my Workbench or upstairs.
+CA96 TEXT Palomo lets you choose a T1 amulet and gives it to you; I can teach its recipe. Ask me
+CA96 TEXT about materials or equipping.
+CA96 PAGE caella_choose_amulet node=157 visible=3
+CA96 REPLY 0 Learn this amulet recipe
+CA96 REPLY 1 Back to choices
+CA96 REPLY 2 [I will return later.]
+CA96 TEXT Ruby Amulet
+CA96 TEXT I can teach you the recipe for the amulet you chose with Palomo, including its
+CA96 TEXT components. A piece you already own needs no additional tutorial materials.
+CA96 PAGE caella_choose_amulet node=157 visible=2
+CA96 REPLY 0 Back to choices
+CA96 REPLY 1 [I will return later.]
+CA96 TEXT Ruby Amulet
+CA96 TEXT You already know this amulet recipe. You can consult it in Crafting.
+CA96 PASS native Caella lesson taught only selected recipe
+CA96 PASS ordinary upstairs Palomo entry
+CA96 PAGE loadout_root node=286 visible=8
+CA96 REPLY 0 Choose or receive my T1 amulet
+CA96 REPLY 1 Review weapons
+CA96 REPLY 2 Review armor
+CA96 REPLY 3 Review Seals
+CA96 REPLY 4 Review shields
+CA96 REPLY 5 Review my confirmed plan
+CA96 REPLY 6 How do I look after myself?
+CA96 REPLY 7 [I will return later.]
+CA96 TEXT The deck is yours: 78 physical cards for Trucazo.
+CA96 TEXT Their powers require captured essences.
+CA96 TEXT
+CA96 TEXT Choose a weapon, armor, a Seal and a shield for Ronnie's crafting lessons after Caella.
+CA96 TEXT I also give you one T1 amulet of your choice. Read each description before confirming;
+CA96 TEXT confirmed choices remain fixed.
+CA96 PAGE palomo_necklaces node=416 visible=6
+CA96 REPLY 0 Ruby Amulet
+CA96 REPLY 1 Sapphire Amulet
+CA96 REPLY 2 Emerald Amulet
+CA96 REPLY 3 Topaz Amulet
+CA96 REPLY 4 Back to equipment
+CA96 REPLY 5 [I will return later.]
+CA96 TEXT Choose one T1 amulet. I will give it to you; Caella can teach you its recipe. Your
+CA96 TEXT choice is final. If you already chose one, I will keep that choice and recognize an
+CA96 TEXT existing T1 of the same type.
+CA96 PAGE palomo_necklace_1 node=418 visible=3
+CA96 REPLY 0 Confirm this choice
+CA96 REPLY 1 Back to choices
+CA96 REPLY 2 [I will return later.]
+CA96 TEXT Sapphire Amulet
+CA96 TEXT T1 | Weight: 1.000 kg
+CA96 TEXT While equipped: +6 to each mental attribute, +2 to each technical and social attribute,
+CA96 TEXT +1 to each physical attribute.
+CA96 TEXT Confirm to receive it once. It will not replace your equipped amulet. Caella teaches its
+CA96 TEXT recipe.
+CA96 PAGE palomo_necklace_status node=421 visible=2
+CA96 REPLY 0 Back to equipment
+CA96 REPLY 1 [I will return later.]
+CA96 TEXT Sapphire Amulet
+CA96 TEXT This gift has been delivered, or a T1 you already owned was recognized. No second
+CA96 TEXT copy is granted. Manage your amulets in Inventory; Caella teaches the recipe.
+CA96 PASS native dialogue delivered selected T1 once
+CA96 PAGE palomo_necklace_status node=421 visible=2
+CA96 REPLY 0 Back to equipment
+CA96 REPLY 1 [I will return later.]
+CA96 TEXT Sapphire Amulet
+CA96 TEXT This gift has been delivered, or a T1 you already owned was recognized. No second
+CA96 TEXT copy is granted. Manage your amulets in Inventory; Caella teaches the recipe.
+CA96 PAGE loadout_root node=286 visible=8
+CA96 REPLY 0 Choose or receive my T1 amulet
+CA96 REPLY 1 Review weapons
+CA96 REPLY 2 Review armor
+CA96 REPLY 3 Review Seals
+CA96 REPLY 4 Review shields
+CA96 REPLY 5 Review my confirmed plan
+CA96 REPLY 6 How do I look after myself?
+CA96 REPLY 7 [I will return later.]
+CA96 TEXT The deck is yours: 78 physical cards for Trucazo.
+CA96 TEXT Their powers require captured essences.
+CA96 TEXT
+CA96 TEXT Choose a weapon, armor, a Seal and a shield for Ronnie's crafting lessons after Caella.
+CA96 TEXT I also give you one T1 amulet of your choice. Read each description before confirming;
+CA96 TEXT confirmed choices remain fixed.
+CA96 PASS native four shield reply labels equal inventory keys
+CA96 PAGE loadout_shields node=344 visible=6
+CA96 REPLY 0 buckler
+CA96 REPLY 1 kite shield
+CA96 REPLY 2 tower shield
+CA96 REPLY 3 magic shield
+CA96 REPLY 4 Back to choices
+CA96 REPLY 5 [I will return later.]
+CA96 TEXT Confirm only if this is your choice. Back returns to the catalogue. If this category is
+CA96 TEXT already confirmed, you can still review it.
+CA96 PAGE loadout_preview_46 node=346 visible=3
+CA96 REPLY 0 Weight, costs and confirmation
+CA96 REPLY 1 Back to choices
+CA96 REPLY 2 [I will return later.]
+CA96 TEXT kite shield
+CA96 TEXT Balanced coverage; successful blocking increases Adrenaline more.
+CA96 PAGE loadout_stats_46 node=409 visible=3
+CA96 REPLY 0 Confirm this choice
+CA96 REPLY 1 Back to choices
+CA96 REPLY 2 [I will return later.]
+CA96 TEXT kite shield
+CA96 TEXT T1: 12.000 kg; 70% physical / 70% magical absorption; 140-degree frontal coverage.
+CA96 TEXT Hold Zoom with a compatible weapon: blocking costs Air and durability. Large/ranged
+CA96 TEXT weapons and gauntlets use their own Zoom action. Ronnie supplies the
+CA96 TEXT bronze-and-leather crafting plan.
+CA96 PAGE loadout_root node=286 visible=8
+CA96 REPLY 0 Choose or receive my T1 amulet
+CA96 REPLY 1 Review weapons
+CA96 REPLY 2 Review armor
+CA96 REPLY 3 Review Seals
+CA96 REPLY 4 Review shields
+CA96 REPLY 5 Review my confirmed plan
+CA96 REPLY 6 How do I look after myself?
+CA96 REPLY 7 [I will return later.]
+CA96 TEXT The deck is yours: 78 physical cards for Trucazo.
+CA96 TEXT Their powers require captured essences.
+CA96 TEXT
+CA96 TEXT Choose a weapon, armor, a Seal and a shield for Ronnie's crafting lessons after Caella.
+CA96 TEXT I also give you one T1 amulet of your choice. Read each description before confirming;
+CA96 TEXT confirmed choices remain fixed.
+CA96 PASS native shield confirmation records corresponding type and name
+CA96 PAGE loadout_summary node=362 visible=2
+CA96 REPLY 0 Back to choices
+CA96 REPLY 1 [I will return later.]
+CA96 TEXT Weapon: Not chosen
+CA96 TEXT Armor: Not chosen
+CA96 TEXT Seal: Fire Seal
+CA96 TEXT Shield: kite shield
+CA96 PAGE caella_magic_done node=144 visible=3
+CA96 REPLY 0 Where can I craft equipment?
+CA96 REPLY 1 Can I choose a seal and amulet?
+CA96 REPLY 2 [I will return later.]
+CA96 TEXT Thank you for returning my equipment. The wall will still look solid: walk straight
+CA96 TEXT through the four marks. The passage leads to the lift and the cave. Then speak with
+CA96 TEXT Ronnie about preparing your weapon.
+CA96 PAGE caella_seals_ready node=148 visible=4
+CA96 REPLY 0 Learn my T1 amulet recipe
+CA96 REPLY 1 And where are the materials?
+CA96 REPLY 2 How do I equip and use a seal?
+CA96 REPLY 3 [I will return later.]
+CA96 TEXT Your confirmed choice is recorded. Craft your Seal at my Workbench or upstairs.
+CA96 TEXT Palomo lets you choose a T1 amulet and gives it to you; I can teach its recipe. Ask me
+CA96 TEXT about materials or equipping.
+CA96 PAGE caella_choose_amulet node=157 visible=3
+CA96 REPLY 0 Learn this amulet recipe
+CA96 REPLY 1 Back to choices
+CA96 REPLY 2 [I will return later.]
+CA96 TEXT Sapphire Amulet
+CA96 TEXT I can teach you the recipe for the amulet you chose with Palomo, including its
+CA96 TEXT components. A piece you already own needs no additional tutorial materials.
+CA96 PAGE caella_choose_amulet node=157 visible=2
+CA96 REPLY 0 Back to choices
+CA96 REPLY 1 [I will return later.]
+CA96 TEXT Sapphire Amulet
+CA96 TEXT You already know this amulet recipe. You can consult it in Crafting.
+CA96 PASS native Caella lesson taught only selected recipe
+CA96 PASS ordinary upstairs Palomo entry
+CA96 PAGE loadout_root node=286 visible=8
+CA96 REPLY 0 Choose or receive my T1 amulet
+CA96 REPLY 1 Review weapons
+CA96 REPLY 2 Review armor
+CA96 REPLY 3 Review Seals
+CA96 REPLY 4 Review shields
+CA96 REPLY 5 Review my confirmed plan
+CA96 REPLY 6 How do I look after myself?
+CA96 REPLY 7 [I will return later.]
+CA96 TEXT The deck is yours: 78 physical cards for Trucazo.
+CA96 TEXT Their powers require captured essences.
+CA96 TEXT
+CA96 TEXT Choose a weapon, armor, a Seal and a shield for Ronnie's crafting lessons after Caella.
+CA96 TEXT I also give you one T1 amulet of your choice. Read each description before confirming;
+CA96 TEXT confirmed choices remain fixed.
+CA96 PAGE palomo_necklaces node=416 visible=6
+CA96 REPLY 0 Ruby Amulet
+CA96 REPLY 1 Sapphire Amulet
+CA96 REPLY 2 Emerald Amulet
+CA96 REPLY 3 Topaz Amulet
+CA96 REPLY 4 Back to equipment
+CA96 REPLY 5 [I will return later.]
+CA96 TEXT Choose one T1 amulet. I will give it to you; Caella can teach you its recipe. Your
+CA96 TEXT choice is final. If you already chose one, I will keep that choice and recognize an
+CA96 TEXT existing T1 of the same type.
+CA96 PAGE palomo_necklace_2 node=419 visible=3
+CA96 REPLY 0 Confirm this choice
+CA96 REPLY 1 Back to choices
+CA96 REPLY 2 [I will return later.]
+CA96 TEXT Emerald Amulet
+CA96 TEXT T1 | Weight: 1.000 kg
+CA96 TEXT While equipped: +6 to each technical attribute, +2 to each physical and mental
+CA96 TEXT attribute, +1 to each social attribute.
+CA96 TEXT Confirm to receive it once. It will not replace your equipped amulet. Caella teaches its
+CA96 TEXT recipe.
+CA96 PAGE palomo_necklace_status node=421 visible=2
+CA96 REPLY 0 Back to equipment
+CA96 REPLY 1 [I will return later.]
+CA96 TEXT Emerald Amulet
+CA96 TEXT This gift has been delivered, or a T1 you already owned was recognized. No second
+CA96 TEXT copy is granted. Manage your amulets in Inventory; Caella teaches the recipe.
+CA96 PASS native dialogue delivered selected T1 once
+CA96 PAGE palomo_necklace_status node=421 visible=2
+CA96 REPLY 0 Back to equipment
+CA96 REPLY 1 [I will return later.]
+CA96 TEXT Emerald Amulet
+CA96 TEXT This gift has been delivered, or a T1 you already owned was recognized. No second
+CA96 TEXT copy is granted. Manage your amulets in Inventory; Caella teaches the recipe.
+CA96 PAGE loadout_root node=286 visible=8
+CA96 REPLY 0 Choose or receive my T1 amulet
+CA96 REPLY 1 Review weapons
+CA96 REPLY 2 Review armor
+CA96 REPLY 3 Review Seals
+CA96 REPLY 4 Review shields
+CA96 REPLY 5 Review my confirmed plan
+CA96 REPLY 6 How do I look after myself?
+CA96 REPLY 7 [I will return later.]
+CA96 TEXT The deck is yours: 78 physical cards for Trucazo.
+CA96 TEXT Their powers require captured essences.
+CA96 TEXT
+CA96 TEXT Choose a weapon, armor, a Seal and a shield for Ronnie's crafting lessons after Caella.
+CA96 TEXT I also give you one T1 amulet of your choice. Read each description before confirming;
+CA96 TEXT confirmed choices remain fixed.
+CA96 PASS native four shield reply labels equal inventory keys
+CA96 PAGE loadout_shields node=344 visible=6
+CA96 REPLY 0 buckler
+CA96 REPLY 1 kite shield
+CA96 REPLY 2 tower shield
+CA96 REPLY 3 magic shield
+CA96 REPLY 4 Back to choices
+CA96 REPLY 5 [I will return later.]
+CA96 TEXT Confirm only if this is your choice. Back returns to the catalogue. If this category is
+CA96 TEXT already confirmed, you can still review it.
+CA96 PAGE loadout_preview_47 node=347 visible=3
+CA96 REPLY 0 Weight, costs and confirmation
+CA96 REPLY 1 Back to choices
+CA96 REPLY 2 [I will return later.]
+CA96 TEXT tower shield
+CA96 TEXT Heaviest shield with the widest coverage and greatest physical absorption; increases
+CA96 TEXT combat mass.
+CA96 PAGE loadout_stats_47 node=410 visible=3
+CA96 REPLY 0 Confirm this choice
+CA96 REPLY 1 Back to choices
+CA96 REPLY 2 [I will return later.]
+CA96 TEXT tower shield
+CA96 TEXT T1: 16.000 kg; 80% physical / 80% magical absorption; 160-degree frontal coverage.
+CA96 TEXT Hold Zoom with a compatible weapon: blocking costs Air and durability. Large/ranged
+CA96 TEXT weapons and gauntlets use their own Zoom action. Ronnie supplies the
+CA96 TEXT bronze-and-leather crafting plan.
+CA96 PAGE loadout_root node=286 visible=8
+CA96 REPLY 0 Choose or receive my T1 amulet
+CA96 REPLY 1 Review weapons
+CA96 REPLY 2 Review armor
+CA96 REPLY 3 Review Seals
+CA96 REPLY 4 Review shields
+CA96 REPLY 5 Review my confirmed plan
+CA96 REPLY 6 How do I look after myself?
+CA96 REPLY 7 [I will return later.]
+CA96 TEXT The deck is yours: 78 physical cards for Trucazo.
+CA96 TEXT Their powers require captured essences.
+CA96 TEXT
+CA96 TEXT Choose a weapon, armor, a Seal and a shield for Ronnie's crafting lessons after Caella.
+CA96 TEXT I also give you one T1 amulet of your choice. Read each description before confirming;
+CA96 TEXT confirmed choices remain fixed.
+CA96 PASS native shield confirmation records corresponding type and name
+CA96 PAGE loadout_summary node=362 visible=2
+CA96 REPLY 0 Back to choices
+CA96 REPLY 1 [I will return later.]
+CA96 TEXT Weapon: Not chosen
+CA96 TEXT Armor: Not chosen
+CA96 TEXT Seal: Fire Seal
+CA96 TEXT Shield: tower shield
+CA96 PAGE caella_magic_done node=144 visible=3
+CA96 REPLY 0 Where can I craft equipment?
+CA96 REPLY 1 Can I choose a seal and amulet?
+CA96 REPLY 2 [I will return later.]
+CA96 TEXT Thank you for returning my equipment. The wall will still look solid: walk straight
+CA96 TEXT through the four marks. The passage leads to the lift and the cave. Then speak with
+CA96 TEXT Ronnie about preparing your weapon.
+CA96 PAGE caella_seals_ready node=148 visible=4
+CA96 REPLY 0 Learn my T1 amulet recipe
+CA96 REPLY 1 And where are the materials?
+CA96 REPLY 2 How do I equip and use a seal?
+CA96 REPLY 3 [I will return later.]
+CA96 TEXT Your confirmed choice is recorded. Craft your Seal at my Workbench or upstairs.
+CA96 TEXT Palomo lets you choose a T1 amulet and gives it to you; I can teach its recipe. Ask me
+CA96 TEXT about materials or equipping.
+CA96 PAGE caella_choose_amulet node=157 visible=3
+CA96 REPLY 0 Learn this amulet recipe
+CA96 REPLY 1 Back to choices
+CA96 REPLY 2 [I will return later.]
+CA96 TEXT Emerald Amulet
+CA96 TEXT I can teach you the recipe for the amulet you chose with Palomo, including its
+CA96 TEXT components. A piece you already own needs no additional tutorial materials.
+CA96 PAGE caella_choose_amulet node=157 visible=2
+CA96 REPLY 0 Back to choices
+CA96 REPLY 1 [I will return later.]
+CA96 TEXT Emerald Amulet
+CA96 TEXT You already know this amulet recipe. You can consult it in Crafting.
+CA96 PASS native Caella lesson taught only selected recipe
+CA96 PASS ordinary upstairs Palomo entry
+CA96 PAGE loadout_root node=286 visible=8
+CA96 REPLY 0 Choose or receive my T1 amulet
+CA96 REPLY 1 Review weapons
+CA96 REPLY 2 Review armor
+CA96 REPLY 3 Review Seals
+CA96 REPLY 4 Review shields
+CA96 REPLY 5 Review my confirmed plan
+CA96 REPLY 6 How do I look after myself?
+CA96 REPLY 7 [I will return later.]
+CA96 TEXT The deck is yours: 78 physical cards for Trucazo.
+CA96 TEXT Their powers require captured essences.
+CA96 TEXT
+CA96 TEXT Choose a weapon, armor, a Seal and a shield for Ronnie's crafting lessons after Caella.
+CA96 TEXT I also give you one T1 amulet of your choice. Read each description before confirming;
+CA96 TEXT confirmed choices remain fixed.
+CA96 PAGE palomo_necklaces node=416 visible=6
+CA96 REPLY 0 Ruby Amulet
+CA96 REPLY 1 Sapphire Amulet
+CA96 REPLY 2 Emerald Amulet
+CA96 REPLY 3 Topaz Amulet
+CA96 REPLY 4 Back to equipment
+CA96 REPLY 5 [I will return later.]
+CA96 TEXT Choose one T1 amulet. I will give it to you; Caella can teach you its recipe. Your
+CA96 TEXT choice is final. If you already chose one, I will keep that choice and recognize an
+CA96 TEXT existing T1 of the same type.
+CA96 PAGE palomo_necklace_3 node=420 visible=3
+CA96 REPLY 0 Confirm this choice
+CA96 REPLY 1 Back to choices
+CA96 REPLY 2 [I will return later.]
+CA96 TEXT Topaz Amulet
+CA96 TEXT T1 | Weight: 1.000 kg
+CA96 TEXT While equipped: +6 to each social attribute, +2 to each physical and mental attribute,
+CA96 TEXT +1 to each technical attribute.
+CA96 TEXT Confirm to receive it once. It will not replace your equipped amulet. Caella teaches its
+CA96 TEXT recipe.
+CA96 PAGE palomo_necklace_status node=421 visible=2
+CA96 REPLY 0 Back to equipment
+CA96 REPLY 1 [I will return later.]
+CA96 TEXT Topaz Amulet
+CA96 TEXT This gift has been delivered, or a T1 you already owned was recognized. No second
+CA96 TEXT copy is granted. Manage your amulets in Inventory; Caella teaches the recipe.
+CA96 PASS native dialogue delivered selected T1 once
+CA96 PAGE palomo_necklace_status node=421 visible=2
+CA96 REPLY 0 Back to equipment
+CA96 REPLY 1 [I will return later.]
+CA96 TEXT Topaz Amulet
+CA96 TEXT This gift has been delivered, or a T1 you already owned was recognized. No second
+CA96 TEXT copy is granted. Manage your amulets in Inventory; Caella teaches the recipe.
+CA96 PAGE loadout_root node=286 visible=8
+CA96 REPLY 0 Choose or receive my T1 amulet
+CA96 REPLY 1 Review weapons
+CA96 REPLY 2 Review armor
+CA96 REPLY 3 Review Seals
+CA96 REPLY 4 Review shields
+CA96 REPLY 5 Review my confirmed plan
+CA96 REPLY 6 How do I look after myself?
+CA96 REPLY 7 [I will return later.]
+CA96 TEXT The deck is yours: 78 physical cards for Trucazo.
+CA96 TEXT Their powers require captured essences.
+CA96 TEXT
+CA96 TEXT Choose a weapon, armor, a Seal and a shield for Ronnie's crafting lessons after Caella.
+CA96 TEXT I also give you one T1 amulet of your choice. Read each description before confirming;
+CA96 TEXT confirmed choices remain fixed.
+CA96 PASS native four shield reply labels equal inventory keys
+CA96 PAGE loadout_shields node=344 visible=6
+CA96 REPLY 0 buckler
+CA96 REPLY 1 kite shield
+CA96 REPLY 2 tower shield
+CA96 REPLY 3 magic shield
+CA96 REPLY 4 Back to choices
+CA96 REPLY 5 [I will return later.]
+CA96 TEXT Confirm only if this is your choice. Back returns to the catalogue. If this category is
+CA96 TEXT already confirmed, you can still review it.
+CA96 PAGE loadout_preview_48 node=348 visible=3
+CA96 REPLY 0 Weight, costs and confirmation
+CA96 REPLY 1 Back to choices
+CA96 REPLY 2 [I will return later.]
+CA96 TEXT magic shield
+CA96 TEXT Lightweight, strongest against magic; blocking reflects missiles from the front.
+CA96 PAGE loadout_stats_48 node=411 visible=3
+CA96 REPLY 0 Confirm this choice
+CA96 REPLY 1 Back to choices
+CA96 REPLY 2 [I will return later.]
+CA96 TEXT magic shield
+CA96 TEXT T1: 4.000 kg; 40% physical / 80% magical absorption; 120-degree frontal coverage.
+CA96 TEXT Hold Zoom with a compatible weapon: blocking costs Air and durability. Large/ranged
+CA96 TEXT weapons and gauntlets use their own Zoom action. Ronnie supplies the
+CA96 TEXT bronze-and-leather crafting plan.
+CA96 PAGE loadout_root node=286 visible=8
+CA96 REPLY 0 Choose or receive my T1 amulet
+CA96 REPLY 1 Review weapons
+CA96 REPLY 2 Review armor
+CA96 REPLY 3 Review Seals
+CA96 REPLY 4 Review shields
+CA96 REPLY 5 Review my confirmed plan
+CA96 REPLY 6 How do I look after myself?
+CA96 REPLY 7 [I will return later.]
+CA96 TEXT The deck is yours: 78 physical cards for Trucazo.
+CA96 TEXT Their powers require captured essences.
+CA96 TEXT
+CA96 TEXT Choose a weapon, armor, a Seal and a shield for Ronnie's crafting lessons after Caella.
+CA96 TEXT I also give you one T1 amulet of your choice. Read each description before confirming;
+CA96 TEXT confirmed choices remain fixed.
+CA96 PASS native shield confirmation records corresponding type and name
+CA96 PAGE loadout_summary node=362 visible=2
+CA96 REPLY 0 Back to choices
+CA96 REPLY 1 [I will return later.]
+CA96 TEXT Weapon: Not chosen
+CA96 TEXT Armor: Not chosen
+CA96 TEXT Seal: Fire Seal
+CA96 TEXT Shield: magic shield
+CA96 PAGE caella_magic_done node=144 visible=3
+CA96 REPLY 0 Where can I craft equipment?
+CA96 REPLY 1 Can I choose a seal and amulet?
+CA96 REPLY 2 [I will return later.]
+CA96 TEXT Thank you for returning my equipment. The wall will still look solid: walk straight
+CA96 TEXT through the four marks. The passage leads to the lift and the cave. Then speak with
+CA96 TEXT Ronnie about preparing your weapon.
+CA96 PAGE caella_seals_ready node=148 visible=4
+CA96 REPLY 0 Learn my T1 amulet recipe
+CA96 REPLY 1 And where are the materials?
+CA96 REPLY 2 How do I equip and use a seal?
+CA96 REPLY 3 [I will return later.]
+CA96 TEXT Your confirmed choice is recorded. Craft your Seal at my Workbench or upstairs.
+CA96 TEXT Palomo lets you choose a T1 amulet and gives it to you; I can teach its recipe. Ask me
+CA96 TEXT about materials or equipping.
+CA96 PAGE caella_choose_amulet node=157 visible=3
+CA96 REPLY 0 Learn this amulet recipe
+CA96 REPLY 1 Back to choices
+CA96 REPLY 2 [I will return later.]
+CA96 TEXT Topaz Amulet
+CA96 TEXT I can teach you the recipe for the amulet you chose with Palomo, including its
+CA96 TEXT components. A piece you already own needs no additional tutorial materials.
+CA96 PAGE caella_choose_amulet node=157 visible=2
+CA96 REPLY 0 Back to choices
+CA96 REPLY 1 [I will return later.]
+CA96 TEXT Topaz Amulet
+CA96 TEXT You already know this amulet recipe. You can consult it in Crafting.
+CA96 PASS native Caella lesson taught only selected recipe
+CA96 PAGE palomo_final node=163 visible=8
+CA96 REPLY 0 Choose or receive my T1 amulet
+CA96 REPLY 1 What now?
+CA96 REPLY 2 Was all of this your idea?
+CA96 REPLY 3 Why can they not leave?
+CA96 REPLY 4 Will you tell me where we are now?
+CA96 REPLY 5 And the voice I heard?
+CA96 REPLY 6 How do I look after myself?
+CA96 REPLY 7 That is all for now.
+CA96 TEXT Curious. Each of them showed you the path they knew, and you had the courtesy not to
+CA96 TEXT mistake any one of them for the whole road.
+CA96 PAGE palomo_necklace_status node=421 visible=2
+CA96 REPLY 0 Back to equipment
+CA96 REPLY 1 [I will return later.]
+CA96 TEXT Topaz Amulet
+CA96 TEXT This gift has been delivered, or a T1 you already owned was recognized. No second
+CA96 TEXT copy is granted. Manage your amulets in Inventory; Caella teaches the recipe.
+CA96 PAGE palomo_fool_received node=203 visible=6
+CA96 REPLY 0 Choose or receive my T1 amulet
+CA96 REPLY 1 Where does the way out lead?
+CA96 REPLY 2 What did the card change?
+CA96 REPLY 3 How do I store my belongings?
+CA96 REPLY 4 How do I look after myself?
+CA96 REPLY 5 That is all for now.
+CA96 TEXT It seems the Box was less empty than we both supposed. Or you were fuller. Simple
+CA96 TEXT measures warrant distrust.
+CA96 TEXT
+CA96 TEXT The Fool has found a place in your collection. You may find its beginning easier to
+CA96 TEXT recognize than its destination.
+CA96 PAGE palomo_necklace_status node=421 visible=2
+CA96 REPLY 0 Back to equipment
+CA96 REPLY 1 [I will return later.]
+CA96 TEXT Topaz Amulet
+CA96 TEXT This gift has been delivered, or a T1 you already owned was recognized. No second
+CA96 TEXT copy is granted. Manage your amulets in Inventory; Caella teaches the recipe.

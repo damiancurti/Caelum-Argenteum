@@ -1,0 +1,69 @@
+Vulkan device: NVIDIA GeForce RTX 3070 Ti
+Resolution: 1520 x 825
+script parsing took 966.83 ms
+MAP01 - La mansión
+CA96 PASS ordinary upstairs Palomo entry
+CA96 PASS choose amulet 0 with Palomo
+CA96 PASS actual owned T1, native weight, unequipped and persistent ID
+CA96 PASS repeat confirmation is idempotent
+CA96 PASS cannot replace prior selection
+CA96 PASS gift does not teach recipe or skip trial
+CA96 PASS loss after delivery never reissues gift
+CA96 PASS choose amulet 1 with Palomo
+CA96 PASS actual owned T1, native weight, unequipped and persistent ID
+CA96 PASS repeat confirmation is idempotent
+CA96 PASS cannot replace prior selection
+CA96 PASS gift does not teach recipe or skip trial
+CA96 PASS loss after delivery never reissues gift
+CA96 PASS choose amulet 2 with Palomo
+CA96 PASS actual owned T1, native weight, unequipped and persistent ID
+CA96 PASS repeat confirmation is idempotent
+CA96 PASS cannot replace prior selection
+CA96 PASS gift does not teach recipe or skip trial
+CA96 PASS loss after delivery never reissues gift
+CA96 PASS choose amulet 3 with Palomo
+CA96 PASS actual owned T1, native weight, unequipped and persistent ID
+CA96 PASS repeat confirmation is idempotent
+CA96 PASS cannot replace prior selection
+CA96 PASS gift does not teach recipe or skip trial
+CA96 PASS loss after delivery never reissues gift
+CA96 PASS full inventory keeps choice without claiming delivery
+CA96 PASS full inventory feedback is truthful
+CA96 PASS capacity retry grants exactly one
+CA96 PASS native pickup falls back to owned Box
+CA96 PASS Box without slots does not bypass capacity
+CA96 PASS reuse exact owned T1 in carried/Box/equipped position
+CA96 PASS other type and T2 equipment unchanged
+CA96 PASS reuse exact owned T1 in carried/Box/equipped position
+CA96 PASS other type and T2 equipment unchanged
+CA96 PASS reuse exact owned T1 in carried/Box/equipped position
+CA96 PASS other type and T2 equipment unchanged
+CA96 PASS same type T2 and different T1 do not substitute chosen T1
+CA96 PASS Caella cannot select an amulet for an unchosen character
+CA96 PASS Caella teaches chosen gift recipe
+CA96 PASS component recipes taught; issued supplies never replenished
+CA96 PASS repeat lesson leaves quota intact
+CA96 PASS old Caella action cannot replace choice
+CA96 PASS Caella teaches chosen gift recipe
+CA96 PASS component recipes taught; issued supplies never replenished
+CA96 PASS repeat lesson leaves quota intact
+CA96 PASS old Caella action cannot replace choice
+CA96 PASS Caella teaches chosen gift recipe
+CA96 PASS component recipes taught; issued supplies never replenished
+CA96 PASS repeat lesson leaves quota intact
+CA96 PASS old Caella action cannot replace choice
+CA96 PASS Caella teaches chosen gift recipe
+CA96 PASS component recipes taught; issued supplies never replenished
+CA96 PASS repeat lesson leaves quota intact
+CA96 PASS old Caella action cannot replace choice
+CA96 PASS selection requires actual Palomo conversation
+CA96 PASS ordinary upstairs Palomo entry
+CA96 PASS shield action accepts corresponding type
+CA96 PASS shield canonical name agrees in preview, confirmation, summary and stored type
+CA96 PASS shield action accepts corresponding type
+CA96 PASS shield canonical name agrees in preview, confirmation, summary and stored type
+CA96 PASS shield action accepts corresponding type
+CA96 PASS shield canonical name agrees in preview, confirmation, summary and stored type
+CA96 PASS shield action accepts corresponding type
+CA96 PASS shield canonical name agrees in preview, confirmation, summary and stored type
+CA96 MATRIX_DONE

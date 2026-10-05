@@ -4,8 +4,17 @@ An independent dark fantasy FPS-RPG inspired by nineteenth-century Argentina.
 Author and game designer: **Damian Curti**. Development target: **GZDoom 4.14.2**
 on Windows 11. The final game is intended to be independent of Doom assets.
 
-**Current release: 4.37.18.** Obtain and update the complete repository, validate
+**Current release: 4.37.19.** Obtain and update the complete repository, validate
 it, then rebuild with `run_dev.bat` as described below.
+
+Issue [#96](https://github.com/damiancurti/Caelum-Argenteum/issues/96) lets you
+choose and receive one existing **T1 amulet from Palomo upstairs**. Caella teaches
+that same amulet's recipe. The gift respects carried/Box capacity, stays
+unequipped and recognizes an already owned matching T1 without duplication.
+Previous choices and active crafting are preserved. All four shield dialogues
+now use the inventory names in English and Spanish. Other equipment keeps its
+existing crafting flow. Evidence: [4.37.19](assets/validation_43719/RESULTS.json).
+The author accepted all three checks on 2026-10-04; results are in HISTORY.
 
 Issue [#91](https://github.com/damiancurti/Caelum-Argenteum/issues/91) separates
 **Craft / Repair / Dismantle** in the Journal. Craft lists learned recipes;
@@ -17,7 +26,8 @@ remain. **Y** still opens time skip. Tarot now labels **Passive**, **Active**
 and **Trucazo** effects separately, with scrolling and unchanged timers.
 The existing silver frames, laurels, fonts and C moon pointer are reused.
 Evidence: [4.37.18](assets/validation_43718/RESULTS.json).
-The author accepted all three checks on 2026-10-04; results are in HISTORY.
+The author accepted all three checks on 2026-10-04; #91 is closed and PR #108
+is merged. Results are in HISTORY.
 
 Issue [#89](https://github.com/damiancurti/Caelum-Argenteum/issues/89) adds the
 **Pickaxe / Pico**, a single-tier T1 tool in weapon family **1**. Primary chops,
