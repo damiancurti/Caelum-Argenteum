@@ -14,8 +14,8 @@ Documentation version: **4.37.18** — 2026-10-04.
 - Reused game art/fonts and native C moon cursor; keyboard, mouse and existing
   controller bindings share the Journal dispatcher. Browser state is transient.
 - Static/native and save compatibility evidence: assets/validation_43718.
-  Author acceptance: CA-43718-CRAFT-01, CA-43718-TAROT-01, CA-43718-UI-01.
-  Keep #91 open until author acceptance; commit/push and linked PR are authorized.
+  Author acceptance on 2026-10-04: CA-43718-CRAFT-01, CA-43718-TAROT-01 and
+  CA-43718-UI-01 PASSED; issue closure and PR #108 merge requested.
 
 ## Issue #89 - Pickaxe and gathering feedback (4.37.17)
 

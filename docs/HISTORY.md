@@ -4,6 +4,14 @@ Documentation version: **4.37.18** — 2026-10-04.
 
 ## 4.37.18 - Crafting browser and three Tarot effect fields (#91)
 
+Author acceptance, 2026-10-04: all tests PASSED without reported qualifications.
+CA-43718-CRAFT-01, CA-43718-TAROT-01 and CA-43718-UI-01 originated in
+4.37.18 / issue #91. The author explicitly confirmed all tests correct and
+requested issue closure and PR #108 merge. This includes the real keyboard
+time-panel check; the controller check remains conditional on normal use as
+originally specified. The three confirmed entries are removed from
+pending_test.txt, retaining the empty file. Runtime and version are unchanged.
+
 Separated Craft, Repair and Dismantle while retaining the station/task backend.
 The browser filters learned recipes and exact owned weapons, including the
 Pickaxe, and rechecks identity on confirmation. A missing learned-recipe lookup
@@ -29,9 +37,9 @@ time-skip completion. Mouse/key interaction confirms mode/instance selection,
 all seven main tabs, Tarot scrolling/toggling and Tab closing. The injector did
 not deliver raw Enter/Q events inside the existing time panel after Y opened
 it; its cursor flags were correctly released and native confirmation completed
-the exact task. Real keyboard confirmation and physical controller use remain
-author checks, not claimed automated passes.
-Author tests CA-43718-CRAFT-01, CA-43718-TAROT-01 and CA-43718-UI-01 remain pending.
+the exact task. Real keyboard confirmation and physical controller use were
+left as author checks, not claimed automated passes. Author acceptance is
+recorded above and does not change the scope of the automated evidence.
 
 ## 4.37.17 - Pickaxe and successful extraction feedback (#89)
 

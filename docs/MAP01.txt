@@ -8,7 +8,7 @@ Craft shows learned recipes; repair/dismantle targets exact owned copies and
 preserves station requirements and tutorial protections. Tarot explains passive,
 world-active and Trucazo effects separately, without new essence grants or powers.
 The mansion, dialogue, grants and progression are unchanged. Native evidence:
-assets/validation_43718; author acceptance remains pending.
+assets/validation_43718; all three author checks passed on 2026-10-04.
 
 4.37.17 / issue #89: Ronnie gives an owned T1 Pickaxe (Pico) and its recipe
 at the gathering lesson, replacing the sword loan. Primary chops, secondary

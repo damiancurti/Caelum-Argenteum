@@ -3,7 +3,7 @@
   "release": "4.37.18",
   "date": "2026-10-04",
   "base_commit": "7c1c2390003f1474cacca2f75d586046f8fde1fd",
-  "status": "Implementation, project validator and isolated native checks passed; author acceptance pending.",
+  "status": "Accepted by the author on 2026-10-04; all static/native and author checks passed.",
   "static": {
     "project_validator": "PROJECT_VALIDATION.json",
     "diff_check": "git diff --check passed",
@@ -112,8 +112,8 @@
       "The existing C moon cursor follows the new hit areas."
     ],
     "earlier_source_ui_check": "The 1520x825 widescreen input test established the projection correction before cursor ownership moved to the static adapter; final captures include 1280x720.",
-    "limitation": "Injected Enter/Q produced no raw InputProcess key event in the time panel. The focus probe confirmed both Journal/static GUI and mouse flags false. Native Start and completion passed; actual keyboard modal confirmation remains CA-43718-UI-01.",
-    "physical_controller": "Not tested; existing bindings retained and author check remains pending."
+    "limitation": "The agent injector did not deliver raw Enter/Q events inside the existing time panel. Native confirmation/completion passed; the author subsequently accepted CA-43718-UI-01 on 2026-10-04. This does not become an automated keyboard pass.",
+    "physical_controller": "Not tested by the agent; the author accepted the conditional controller check on 2026-10-04, without identifying hardware."
   },
   "save_compatibility": {
     "persistent_schema_changed": false,
@@ -396,12 +396,15 @@
     "The unchanged Reputation page has footer overlap at 1024x768. This patch only adds main-tab mouse navigation there; its layout is outside Craft/Tarot scope."
   ],
   "author_acceptance": {
-    "status": "pending",
+    "status": "passed",
     "test_ids": [
       "CA-43718-CRAFT-01",
       "CA-43718-TAROT-01",
       "CA-43718-UI-01"
-    ]
+    ],
+    "date": "2026-10-04",
+    "confirmation": "The author explicitly confirmed all tests correct and requested issue closure and merge.",
+    "qualifications": "No reported exceptions. Physical controller check applied only if normally used."
   },
   "previous_issue": {
     "issue": 89,

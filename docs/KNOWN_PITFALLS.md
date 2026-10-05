@@ -31,7 +31,7 @@ Regression: click both outer main icons as well as a central subsection at
 wide and 4:3 resolutions. Check Escape/Tab and returning keyboard focus, not
 only coordinate arithmetic or a static cursor screenshot. Evidence and the
 tested package hash: assets/validation_43718/RESULTS.json. Author acceptance
-remains pending. This projection choice applies to these Journal draw flags;
+CA-43718-UI-01 passed on 2026-10-04. This projection choice applies to these Journal draw flags;
 other overlays may intentionally use aspect correction.
 
 ## CA-KP-036 - Stamp newly constructed equipment durability revisions

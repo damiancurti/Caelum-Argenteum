@@ -21,7 +21,8 @@ existing C moon pointer and the same coordinate projection as Journal drawing.
 Browser revision 1 is transient and reconstructible; saved equipment, task
 reservations, recipes and Tarot state remain authoritative. Native verification
 includes old-save load and rollback. Evidence: assets/validation_43718.
-Author acceptance is pending; #89 was accepted, closed and merged as PR #107.
+All three author checks passed on 2026-10-04; closure/merge were requested.
+#89 was accepted, closed and merged as PR #107.
 
 ## 4.37.17 - Owned Pickaxe and resource feedback (#89)
 

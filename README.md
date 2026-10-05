@@ -17,7 +17,7 @@ remain. **Y** still opens time skip. Tarot now labels **Passive**, **Active**
 and **Trucazo** effects separately, with scrolling and unchanged timers.
 The existing silver frames, laurels, fonts and C moon pointer are reused.
 Evidence: [4.37.18](assets/validation_43718/RESULTS.json).
-Author acceptance remains in [pending_test.txt](pending_test.txt).
+The author accepted all three checks on 2026-10-04; results are in HISTORY.
 
 Issue [#89](https://github.com/damiancurti/Caelum-Argenteum/issues/89) adds the
 **Pickaxe / Pico**, a single-tier T1 tool in weapon family **1**. Primary chops,
