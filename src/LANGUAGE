@@ -1,5 +1,31 @@
 [enu default]
 
+// #103: author-approved single-page new-character introduction and quit prompt.
+CA_EXIT_CONFIRM = "Quit Caelum Argenteum?";
+CA_INTRO_UNBOUND = "Unbound";
+CA_INTRO_TITLE = "Caelum Argenteum";
+CA_INTRO_WELCOME = "Welcome to Caelum Argenteum. Before you begin, there are a few things you should know.";
+CA_INTRO_MOVEMENT = "Move forward/back: %s / %s; left/right: %s / %s. Look with the mouse. Jump: %s. Run/walk: %s. Talk, open and interact: %s.";
+CA_INTRO_TOOLS = "Primary attack: %s; secondary/aim: %s; reload/charge: %s; block/sweep/ADS: %s (depending on your weapon). Journal and inventory: %s. Skip time while resting or crafting: %s. Change bindings in Options > Customize Controls.";
+CA_INTRO_SURVIVAL = "You must also survive hunger, thirst and sleepiness. Eat, drink and rest; watch your reserves in the HUD and Journal. Exertion consumes Air: pause to recover it. Prepare provisions for your journeys; time passes while you travel, rest and craft.";
+CA_INTRO_AWAKENING = "You begin your adventure waking in a strange land, with little memory of who you are. But stranger still is the figure who appears before you...";
+CA_INTRO_REVEAL = "Press a key to reveal the full text.";
+CA_INTRO_BEGIN = "Press a key to begin your adventure.";
+
+[es]
+CA_EXIT_CONFIRM = "¿Salir de Caelum Argenteum?";
+CA_INTRO_UNBOUND = "Sin asignar";
+CA_INTRO_TITLE = "Caelum Argenteum";
+CA_INTRO_WELCOME = "Bienvenidos a Caelum Argenteum. Antes de empezar, hay algunas cosas que deberías saber";
+CA_INTRO_MOVEMENT = "Avanzar/retroceder: %s / %s; izquierda/derecha: %s / %s. Mira con el ratón. Saltar: %s. Correr/caminar: %s. Hablar, abrir e interactuar: %s.";
+CA_INTRO_TOOLS = "Ataque principal: %s; secundario/apuntar: %s; recargar/cargar: %s; bloquear/barrido/ADS: %s (según el arma). Diario e inventario: %s. Saltar tiempo al descansar o fabricar: %s. Cambia las teclas en Opciones > Personalizar controles.";
+CA_INTRO_SURVIVAL = "También deberás superar el hambre, la sed y el sueño. Come, bebe y descansa; vigila tus reservas en el HUD y el Diario. El esfuerzo consume Aire: detente a recuperarlo. Prepara provisiones para tus viajes; el tiempo avanza mientras viajas, descansas y fabricas.";
+CA_INTRO_AWAKENING = "Comienzas su aventura despertando en una tierra extraña, sin recordar bien quien eres. Pero lo que es aún más extraño es el sujeto que se aparece delante tuyo...";
+CA_INTRO_REVEAL = "Pulsa una tecla para mostrar todo el texto.";
+CA_INTRO_BEGIN = "Pulsa una tecla para comenzar tu aventura.";
+
+[enu default]
+
 // #101: traditional ranked mode, independent from the Trucazo practice.
 CA_TT_CHALLENGE = "Play traditional Truco (ranked).";
 CA_TT_TITLE = "TRUCO | Ranked";

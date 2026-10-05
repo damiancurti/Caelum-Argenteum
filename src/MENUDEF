@@ -37,6 +37,12 @@ ListMenu "CaelumNewCharacterMenu"
     Class "CaelumCharacterCreationMenu"
 }
 
+// Sólo el creador abre la introducción; cargar una partida no la repite.
+ListMenu "CaelumIntroductionMenu"
+{
+    Class "CaelumIntroductionMenu"
+}
+
 // Estos menús deben conservar las clases nativas de carga y guardado.
 ListMenu "LoadGameMenu"
 {

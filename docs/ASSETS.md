@@ -1,6 +1,45 @@
 # Caelum Argenteum — Audio and art
 
-Documentation version: **4.37.20** — 2026-10-04.
+Documentation version: **4.37.21** — 2026-10-04.
+
+## 4.37.21 - Approved narrative artwork sources and presentation (#103)
+
+The author supplied assets/art_source/Caelum Argenteum.png for the README
+banner on 2026-10-04. Its exact bytes are retained there and copied to
+assets/branding/github_banner.png. This title-bearing variant supersedes
+the plain first illustration in the issue's original banner mapping.
+
+Both unmodified 1672 x 941 embedded originals are also retained: slide 1,
+ppt/media/image.png, becomes assets/branding/cover_original.png; slide 3,
+ppt/media/image2.png, becomes assets/branding/intermission_exit.png. Slide 2
+has no illustration. The local source is
+Caelum_Argenteum_Biblia_Narrativa_v1_0.pptx in the author's Documentación folder;
+PROVENANCE.json records its hash and the individual image hashes. Extraction
+copies ZIP member bytes, without rendering slide text, cropping or re-encoding.
+The deck is an art source only and supplies no new narrative canon.
+
+The artwork belongs to Damián Curti's project under LICENSE.md. The sole runtime
+copy is src/graphics/caelum/narrative/intermission_exit.png, byte-identical to the
+second original. GZDoom draws it centered with uniform fit and letter/pillarbox
+bars, never stretching or cropping. Existing Caelum fonts, silver framing and a
+dark overlay keep text legible; type scales to fit one page in both languages.
+
+The author's final request supersedes the initial reservation for future scenes:
+show one typewriter page only after the creator, with manual reveal/advance,
+approved welcome/awakening and current controls/survival. Play the former MAP01
+track CA_MUS01 there; preserve MAP01's CA_MUS02 and the port's completion cue.
+There is no fixed presentation duration, new track, audio edit or sound default.
+
+The same illustration is used for the native quit question and confirmed
+farewell. MessageBoxClass delegates every unrelated message box to its base.
+The retained handler owns QuitSound and shutdown; CaelumExitMenu still starts
+the existing 4.0222-second unmodified strings cue when opening the main-menu
+question. TitlePage/CreditPage and all licenses remain unchanged. Native ENDOOM
+requires exactly 4000 bytes of text/attributes, so GameInfo Endoom is empty and
+the full-color farewell runs before shutdown. See CA-KP-038 and validation_43721.
+Direct native quit/quick exit can bypass the picture; no Doom text follows.
+The author accepted artwork/intro/exit and save checks on 2026-10-04 without
+reported qualifications; the three test IDs and results are recorded in HISTORY.
 
 ## 4.37.20 - Original training mannequin model (#98)
 

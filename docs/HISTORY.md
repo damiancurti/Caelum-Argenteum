@@ -1,6 +1,72 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **4.37.20** — 2026-10-04.
+Documentation version: **4.37.21** — 2026-10-04.
+
+## 4.37.21 - Narrative artwork, single-page introduction and farewell (#103)
+
+Author instructions, 2026-10-04: use assets/art_source/Caelum Argenteum.png as
+the GitHub banner; preserve both original embedded illustrations from the local
+narrative deck. The supplied title-bearing variant overrides the issue's plain
+slide-1 banner mapping. Extraction keeps exact PNG bytes and slide/image hashes.
+Source/README preparation is the separate commit 883ad8f2, as the issue requires.
+
+The author first chose to reserve the intermission background, then explicitly
+requested welcome, basic controls, survival and awakening text. They selected
+new characters only, after the creator, then corrected the presentation to one
+Doom-style page with gradual lettering, a key to reveal all and the next key
+to continue. They then requested the former MAP01 music, CA_MUS01. This later
+instruction supersedes the earlier opening exclusion; MAP01 keeps CA_MUS02.
+The Spanish quotations are retained exactly, with an English localization.
+No deck text, new lore, gameplay timing or survival values are inferred.
+
+The runtime shares one fitted image for introduction, quit confirmation and
+farewell. Native GZDoom 4.14.2 ENDOOM cannot display PNG; its required 4000-byte
+text surface is suppressed with the per-game Endoom setting. A MessageBoxMenu
+subclass identifies the unique project quit question, preserves cancellation
+and defers the original native affirmative callback until after the farewell.
+Existing quit cue, licenses and title-loop credits are retained. Port completion,
+maps, saved fields and persistent handlers are unchanged; no migration needed.
+
+Verification is recorded in assets/validation_43721/RESULTS.json, with static
+and native evidence separated from author acceptance. Early tests found
+the virtual text's aspect handling offset and corrected it with DTA_KeepRatio.
+An isolated fixture also confirmed StartGameDirect requires actual native menu
+input, not ConsoleProcess; subsequent new-game checks use real UI input.
+At the author's request, later tests enable all sound with master volume 0.15;
+this is confined to disposable configs and does not change product defaults.
+An additional console-load test found that GZDoom retains the active menu when
+loading outside LoadMenu. The static story handler now discards an outstanding
+introduction and its unconsumed draft on that save-load event; unrelated menus
+remain untouched. No saved fields are added.
+
+Final evidence: project validation, document index and PK3 packaging passed.
+Thirteen retained native sessions contain 110 passing assertions and no script
+warnings/errors; eleven captures cover both languages, 4:3, 16:9, 21:9 and actual
+1920x1080 fullscreen. Real keyboard input verifies reveal/advance; real mouse
+input finishes the confirmed farewell. The final package retests the additional
+save-load cleanup, including a modal above the introduction and an unrelated
+menu that must remain open. All 223 persistent-character fields, five profile
+fields and four allocation fields match across the old save, new resave and
+native rollback save. Package hashes and evidence qualifications are in RESULTS.
+
+#98 follow-through: all three 4.37.20 author checks had passed; acceptance commit
+471293da was pushed, PR #110 merged 2ec2405c and issue #98 closed on 2026-10-04.
+No branch or original file was deleted.
+
+Author acceptance, 2026-10-04: the author confirmed that all tests passed and
+explicitly requested issue #103 closure and PR #111 merge. All three checks
+originating in 4.37.21 / issue #103 passed without reported qualifications:
+
+- CA-43721-INTRO-01: artwork/banner, single-page reveal/advance, bilingual
+  controls/survival text and CA_MUS01-to-CA_MUS02 transition accepted.
+- CA-43721-EXIT-01: confirmation/cancellation, farewell and clean shutdown
+  accepted with the documented native bypass paths.
+- CA-43721-SAVE-01: previous-save loading, unchanged progression and new-slot
+  save/reload accepted without introduction replay.
+
+The confirmed entries are removed from pending_test.txt, which remains tracked
+and empty. This acceptance-only update preserves runtime, assets, save schema
+and release 4.37.21; static/native evidence retains its original qualifications.
 
 ## 4.37.20 - Textured training dummy model (#98)
 

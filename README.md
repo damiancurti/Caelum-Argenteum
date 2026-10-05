@@ -1,11 +1,27 @@
+![Caelum Argenteum](assets/branding/github_banner.png)
+
 # Caelum Argenteum
 
 An independent dark fantasy FPS-RPG inspired by nineteenth-century Argentina.
 Author and game designer: **Damian Curti**. Development target: **GZDoom 4.14.2**
 on Windows 11. The final game is intended to be independent of Doom assets.
 
-**Current release: 4.37.20.** Obtain and update the complete repository, validate
+**Current release: 4.37.21.** Obtain and update the complete repository, validate
 it, then rebuild with `run_dev.bat` as described below.
+
+Issue [#103](https://github.com/damiancurti/Caelum-Argenteum/issues/103) adds
+the author's banner and a **single-page introduction after character creation**.
+Text appears gradually: one key reveals it all, the next starts MAP01. It shows
+your actual controls, survival guidance and the author's awakening text, with
+the former MAP01 music (CA_MUS01). Loading a save never repeats it.
+Normal confirmed exit uses the same approved illustration before shutting down;
+cancel still returns normally. No inherited Doom II ENDOOM follows.
+Sources: [provenance](assets/branding/PROVENANCE.json). Agent verification and
+limits: [4.37.21 evidence](assets/validation_43721/RESULTS.json).
+The author accepted all three checks on 2026-10-04 and authorized issue closure
+and [PR #111](https://github.com/damiancurti/Caelum-Argenteum/pull/111) merge.
+Results are in HISTORY; no author checks remain outstanding.
+#98 is accepted and closed; PR #110 merged as 2ec2405c.
 
 Issue [#98](https://github.com/damiancurti/Caelum-Argenteum/issues/98) replaces
 the training dummy's billboard with an original textured **3D mannequin**.

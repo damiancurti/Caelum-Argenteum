@@ -1,6 +1,36 @@
 # Caelum Argenteum — Current systems and rules
 
-Documentation version: **4.37.20** — 2026-10-04.
+Documentation version: **4.37.21** — 2026-10-04.
+
+## 4.37.21 - New-character introduction and exit (#103)
+
+Author decisions, 2026-10-04: show the welcome only after a valid character
+creation; one page writes its text gradually, using the native GZDoom text-screen
+defaults (10 initial tics, 2 tics per Unicode character). One key or left click
+reveals the whole page without starting play; a subsequent press begins MAP01.
+Keyboard repeat is ignored. Controller A/B follow the same two-stage action;
+repeating controller direction axes do not skip the reading. There is no timed
+advance and no replay on save load, hub return or direct development map load.
+CA_MUS01 plays during the page; MAPINFO restores CA_MUS02 on MAP01 entry.
+A save loaded by console while the page is open discards its pending menu chain
+and unconsumed creation draft; other menus are unaffected. This interface-only
+cleanup is not a saved-state migration.
+
+The text reads up to two current bindings for each basic action, explicitly
+showing unbound actions. Movement, looking, jump, run/walk, Use, weapon actions,
+Journal/inventory and time skip are explained alongside hunger, thirst, sleep,
+Air and journey provisions. These are descriptions of existing rules, not new
+costs or controls. Strings are bilingual; exact author-supplied Spanish opening
+and ending remain in LANGUAGE. No text is imported from the narrative slides.
+
+Main-menu Quit and F10 use the native confirmation with a project prompt.
+No/Escape cancels normally. Yes opens the approved farewell image; the next
+key/left click invokes the retained native callback, QuitSound and shutdown.
+ENDOOM is disabled per game because that legacy surface accepts text, not PNG.
+Direct console quit, m_quickexit and Windows Alt+F4 bypass the presentation; those native paths
+remain available. No global user sound/ENDOOM settings are overwritten.
+The requested 15% master volume, with music/effects enabled, is test configuration
+only. CreditPage/TitlePage, port completion and saved progression are preserved.
 
 ## 4.37.20 - Training target presentation (#98)
 

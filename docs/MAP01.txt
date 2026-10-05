@@ -1,6 +1,24 @@
 CAELUM ARGENTEUM — STORY AND MAP01
 
-Documentation version: **4.37.20** — 2026-10-04.
+Documentation version: **4.37.21** — 2026-10-04.
+
+## 4.37.21 - Author-requested introductory text (#103)
+
+Only a newly confirmed character sees the single-page introduction before MAP01
+starts. It reveals letters gradually, allows a key to reveal all, and another
+key to begin. The opening music is CA_MUS01 at the author's latest request;
+MAP01 itself still starts CA_MUS02 and retains the Unknown Voice/Palomo sequence.
+Loads and hub returns do not replay the introduction. No map, dialogue, character
+record or quest progression is changed.
+
+The exact supplied Spanish welcome is “Bienvenidos a Caelum Argenteum. Antes de
+empezar, hay algunas cosas que deberías saber”. Basic controls and existing
+survival requirements follow. The exact closing is “Comienzas su aventura
+despertando en una tierra extraña, sin recordar bien quien eres. Pero lo que es
+aún más extraño es el sujeto que se aparece delante tuyo...”. LANGUAGE also
+contains the English localization. These author instructions authorize the new
+opening; the art-source deck supplies no narrative canon. The port finale stays
+as its existing completion notice/music, without a new chapter screen.
 
 ## 4.37.20 - Existing practice dummy in 3D (#98)
 

@@ -1,7 +1,7 @@
 // Creador de personaje previo a la partida. Es un menú real de GZDoom: no
 // necesita que MAP01 exista ni que CaelumPlayer haya nacido para editar el
 // borrador. La confirmación copia datos validados a CVars user y arranca el
-// único episodio/dificultad del proyecto mediante StartGameDirect.
+// único episodio/dificultad tras la introducción manual de #103.
 class CaelumCharacterCreationMenu : ListMenu
 {
     int Page;
@@ -415,7 +415,7 @@ class CaelumCharacterCreationMenu : ListMenu
         SetDraft("ca_newchar_attribute11", AttributeBonus[11]);
         SetDraft("ca_newchar_ready", 1);
         MenuSound("caelum/ui/menu_select");
-        Menu.StartGameDirect(true, false, "CaelumPlayer", 0, 0);
+        Menu.SetMenu("CaelumIntroductionMenu");
     }
 
     override bool MenuEvent(int mkey, bool fromcontroller)

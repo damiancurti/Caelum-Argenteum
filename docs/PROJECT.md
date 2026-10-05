@@ -1,6 +1,27 @@
 # Caelum Argenteum — Project, status and roadmap
 
-Documentation version: **4.37.20** — 2026-10-04.
+Documentation version: **4.37.21** — 2026-10-04.
+
+## 4.37.21 - Approved narrative artwork and introduction (#103)
+
+The author's title-bearing PNG is the README banner; the exact two illustrations
+embedded in the supplied narrative deck are preserved separately with hashes.
+No slide text establishes canon. After initially reserving the story background,
+the author requested an opening only after confirming a new character, then
+specified one Doom-style typewriter page and the former MAP01 music, CA_MUS01.
+This explicitly supersedes the earlier no-opening scope in #31 and #103.
+The page contains the exact requested Spanish welcome/awakening, bilingual
+controls from current bindings and existing survival rules. First key reveals;
+next key starts the original MAP01 sequence and its current CA_MUS02 music.
+
+The native quit confirmation/cancellation remains in use. Confirmation shows
+the same image as an in-engine farewell, then a key/click invokes the original
+shutdown callback. GameInfo disables inherited text ENDOOM; unrelated credits,
+audio, port completion and maps are unchanged. No save fields or migration.
+Evidence: assets/validation_43721. The author accepted all three checks on
+2026-10-04 without reported qualifications and authorized issue #103 closure
+and PR #111 merge. No author checks remain outstanding; HISTORY records the IDs.
+#98's three author checks passed, issue closed and PR #110 merged 2ec2405c.
 
 ## 4.37.20 - Training dummy model (#98)
 

@@ -1,0 +1,345 @@
+{
+  "issue": 103,
+  "version": "4.37.21",
+  "date": "2026-10-04",
+  "status": "Implemented, agent-verified and accepted by the author on 2026-10-04.",
+  "base_commit": "2ec2405c41880841e239e20a08af56a4513a4847",
+  "artwork_source_commit": "883ad8f2",
+  "decisions": [
+    "Use the exact author-supplied title-bearing banner variant; preserve both deck originals separately.",
+    "Final author revision: one Doom-style typewriter page only after a valid new character. First press reveals; next starts MAP01. No load replay.",
+    "Use CA_MUS01 during the introduction, with MAP01 restoring its current CA_MUS02.",
+    "Enable sound/music in subsequent tests with master volume 0.15; no product sound defaults changed."
+  ],
+  "static": {
+    "original_png_hashes_verified": true,
+    "banner_exact_supplied_bytes": true,
+    "runtime_image_exact_second_original": true,
+    "readme_banner_at_top": true,
+    "package_members_equal_src": true,
+    "package_members": 6171,
+    "changed_runtime_members_from_4_37_20": [
+      "LANGUAGE",
+      "MAPINFO",
+      "MENUDEF",
+      "MODELDEF",
+      "ZSCRIPT",
+      "caelum/actors/CaelumTrainingDummy.zs",
+      "caelum/character/CaelumCharacterCreationMenu.zs",
+      "caelum/ui/CaelumNarrativeArtwork.zs",
+      "caelum/ui/CaelumStoryIntermission.zs",
+      "caelum/world/CaelumPhysicalHazards.zs",
+      "caelum/world/CaelumSewerMaze.zs",
+      "graphics/caelum/narrative/intermission_exit.png",
+      "models/caelum/actors/training/ca_training_dummy.obj"
+    ],
+    "line_ending_only_differences_from_baseline": [
+      "MODELDEF",
+      "caelum/actors/CaelumTrainingDummy.zs",
+      "models/caelum/actors/training/ca_training_dummy.obj"
+    ],
+    "unchanged_runtime_members": 6158,
+    "no_removed_runtime_members": true,
+    "old_and_resaved_character_records_identical": {
+      "CaelumPersistentCharacterState": 223,
+      "CaelumCharacterProfile": 5,
+      "CaelumCharacterAllocation": 4
+    },
+    "save_schema_change": false,
+    "project_validator": "See validator.json (run after documentation index regeneration)."
+  },
+  "package": {
+    "path": "build/caelum_argenteum_dev.pk3",
+    "sha256": "41be95f10a4bf1c73f33f70fb0f5fc344b4fe32ceff6ac3d332d8f653070a87a",
+    "bytes": 435757985
+  },
+  "native": {
+    "engine": "GZDoom g4.14.2, Windows 11, Vulkan, NVIDIA GeForce RTX 3070 Ti",
+    "behavior_suite_package_sha256": "0c3b2b120d411ab6f3190232467b36965a65582732b3471bf33252f4af5f669d",
+    "delivery_difference": "Added save-load cleanup for an introduction still open during a console load, and removed one trailing blank line. Layout, text animation, artwork and quit code are unchanged. final_delivery.log retests compilation, intro layout/reveal, old load/music and farewell on the delivered PK3; final_load_chain.log also checks a modal above the introduction and preservation of unrelated menus.",
+    "assertions_passed": 110,
+    "script_warnings": 0,
+    "failures": 0,
+    "aspects": [
+      "1024x768 windowed 4:3",
+      "1280x720 windowed 16:9",
+      "1680x720 windowed 21:9",
+      "1920x1080 fullscreen; vid_fullscreen=true"
+    ],
+    "real_ui_input": [
+      "On the behavior-suite package, observed partial text, pressed Space to reveal the full page, pressed Space again to start MAP01. Native arrival assertions confirm character import and CA_MUS02 (final_live_input.log).",
+      "On the behavior-suite package, Enter confirmed the native quit prompt, the artwork remained visible, and a real left click completed shutdown with showendoom=1. GZDoom disappeared without a subsequent ENDOOM window (final_mouse_exit.log).",
+      "Windows Alt+F4 closed an owned source test session directly without the farewell; its UI source was identical to the behavior-suite implementation."
+    ],
+    "other_checks": [
+      "Incomplete creator rejected; valid draft opens intro before MAP01.",
+      "Unicode accent slicing and one-page wrapping in English/Spanish.",
+      "Rebound I for forward and Y for time skip; absent binding remains explicitly unbound.",
+      "First reveal stays on page; full page waits for another key.",
+      "Main-menu Quit and native menu_quit (F10 route), cancellation and deferred original callback.",
+      "Unrelated native end-game confirmation remains separate.",
+      "showendoom=1 still permits clean shutdown; m_quickexit preserves native bypass.",
+      "4.37.20 save loads, saves and reloads in 4.37.21; retained 4.37.20 package loads and saves the new copy."
+    ],
+    "logs": [
+      {
+        "file": "final2_es43.log",
+        "sha256": "77df7f69630e745d732064b5473e5bd19d7629829e041e1b102e7939c57fc055",
+        "assertions_passed": 11,
+        "resolution": [
+          1024,
+          768
+        ]
+      },
+      {
+        "file": "final2_enwide.log",
+        "sha256": "b3154da7e4f37989b3cfc31190e499150b95cee390819a530cc646f443971719",
+        "assertions_passed": 11,
+        "resolution": [
+          1280,
+          720
+        ]
+      },
+      {
+        "file": "final2_ultra.log",
+        "sha256": "b7e78c4a16f4ed0b3962e845863c49d8b44c42f05c3b98affa747713728ee685",
+        "assertions_passed": 11,
+        "resolution": [
+          1680,
+          720
+        ]
+      },
+      {
+        "file": "final3_fullscreen.log",
+        "sha256": "5ce984948cdc0a5de439c1076501fdd6510fd8c28ba1a7b7ca44fd9ed87c3839",
+        "assertions_passed": 11,
+        "resolution": [
+          1920,
+          1080
+        ]
+      },
+      {
+        "file": "final2_quit.log",
+        "sha256": "a5329569984b03796cf35b583ea42536093e7bcd0f7bafdc543fe342fdd6e149",
+        "assertions_passed": 3,
+        "resolution": [
+          1280,
+          720
+        ]
+      },
+      {
+        "file": "final2_oldsave.log",
+        "sha256": "fa1c2bca7c3a2a1b25e50d5971035f54d67cc45267170bb245ce71f410a60734",
+        "assertions_passed": 11,
+        "resolution": [
+          1280,
+          720
+        ]
+      },
+      {
+        "file": "final_live_input.log",
+        "sha256": "25ce3b13b939ca790b303fd9043230afeb3ba65908b81bde40eca6f482768624",
+        "assertions_passed": 6,
+        "resolution": [
+          1280,
+          720
+        ]
+      },
+      {
+        "file": "final_other_prompt.log",
+        "sha256": "5e483dfd1a33e2c7858ce5502f487ed8623e54b5c9bf3d44947c3c9714e3d6db",
+        "assertions_passed": 8,
+        "resolution": [
+          1280,
+          720
+        ]
+      },
+      {
+        "file": "final_quickexit.log",
+        "sha256": "603c2123b7f08a948131b1d812af477303801fcd17a140b52524ceb32373536d",
+        "assertions_passed": 0,
+        "resolution": [
+          1280,
+          720
+        ]
+      },
+      {
+        "file": "final_mouse_exit.log",
+        "sha256": "97b28407e2338a6597c6b78a5b9ed9fa57ef59f3534c623265673b056f478b0f",
+        "assertions_passed": 1,
+        "resolution": [
+          1280,
+          720
+        ]
+      },
+      {
+        "file": "final_rollback.log",
+        "sha256": "be5ebb8eed1f719e05a9a8ffefeb9eae4fd944dd353369172896e099b644302d",
+        "assertions_passed": 0,
+        "resolution": [
+          1280,
+          720
+        ]
+      },
+      {
+        "file": "final_delivery.log",
+        "sha256": "b3624028cd2b4b066014497c05ddbca7109218fe27f90a7e5a955d6b6854c26d",
+        "assertions_passed": 20,
+        "resolution": [
+          1280,
+          720
+        ]
+      },
+      {
+        "file": "final_load_chain.log",
+        "sha256": "5539f68791a9698e15e415544c1262b5b6d6997ea6ec74c6926dd0d0ea8ffe53",
+        "assertions_passed": 17,
+        "resolution": [
+          1280,
+          720
+        ]
+      }
+    ],
+    "captures": [
+      {
+        "file": "final2_typing43.png",
+        "description": "Typewriter in progress at 4:3.",
+        "size": [
+          1024,
+          768
+        ],
+        "sha256": "3222041f1782b4c5a7a0008b4fc4af502360360457e1121a47ce35279ad4fa0b"
+      },
+      {
+        "file": "final2_full43.png",
+        "description": "Complete Spanish page at 4:3, with Y assigned.",
+        "size": [
+          1024,
+          768
+        ],
+        "sha256": "a0b4bbe92bd6b592521d7de1e8ccafc9020da017b26be8e77887ebb5353fd347"
+      },
+      {
+        "file": "final2_en.png",
+        "description": "English page at 16:9; forward rebound to I and time skip to Y.",
+        "size": [
+          1280,
+          720
+        ],
+        "sha256": "636f1a9cb812794db266d00b55ded5a3a5d4f9062e50be988ffbc21c443f44c1"
+      },
+      {
+        "file": "final2_ultra.png",
+        "description": "Complete Spanish page at 21:9; unbound time skip reported honestly.",
+        "size": [
+          1680,
+          720
+        ],
+        "sha256": "8d2ff4e8f29d2b28543449598f40f1ae23072106c37c4f076f7807ec858d6860"
+      },
+      {
+        "file": "final3_fullscreen.png",
+        "description": "Actual fullscreen 1920x1080; vid_fullscreen=true.",
+        "size": [
+          1920,
+          1080
+        ],
+        "sha256": "7b748ea764e479ccb87248b3f79c0f0b64ddc342262fafa9157e90fb4b0a541b"
+      },
+      {
+        "file": "final2_confirm.png",
+        "description": "Native quit prompt with original yes/no interaction.",
+        "size": [
+          1280,
+          720
+        ],
+        "sha256": "cfd412bc98d7fa60078d2f9cf2acbc4e7106e17f8df65701dcf731439e226046"
+      },
+      {
+        "file": "final2_exit.png",
+        "description": "Confirmed farewell before native shutdown.",
+        "size": [
+          1280,
+          720
+        ],
+        "sha256": "55d7e81a29a5732d11881c0e021a1d9da3d0e54033d6d39abc0aa862ea06cbfe"
+      },
+      {
+        "file": "final2_exit_ultra.png",
+        "description": "Ultrawide farewell with centered full-image fit.",
+        "size": [
+          1680,
+          720
+        ],
+        "sha256": "50947995c45cc94a86e509741c211f7a76270bef397d91925db02322f272d5c8"
+      },
+      {
+        "file": "final3_exit_fullscreen.png",
+        "description": "Actual fullscreen farewell.",
+        "size": [
+          1920,
+          1080
+        ],
+        "sha256": "54d2d8f918142d900a1982db29fa1e1de9177ba92cd9da9dd93ebb712b00a121"
+      },
+      {
+        "file": "final_other_prompt.png",
+        "description": "Native end-game message remains unrelated to the farewell.",
+        "size": [
+          1280,
+          720
+        ],
+        "sha256": "e5bdbcb05bb8eaa7ed485a73c4d79b2cedaa6b40bc21ccd9391920215ea51bd8"
+      },
+      {
+        "file": "final2_oldsave.png",
+        "description": "4.37.20 save loaded into 4.37.21 without introduction replay.",
+        "size": [
+          1280,
+          720
+        ],
+        "sha256": "a7b865e90fc7c983bee72b8e36f3d2e987f5841fa9e9f14a3d1c322e68b48057"
+      }
+    ],
+    "prior_test_adjustments": [
+      "A preliminary paginated design was replaced by the author-requested single page.",
+      "Fixed virtual text projection before final layout evidence.",
+      "A console fixture cannot invoke StartGameDirect outside native menu input; real input verifies the route instead.",
+      "A timed input fixture expired before UI input; repeated without the fixture deadline and passed.",
+      "The first fullscreen attempt remained windowed; used vid_fullscreen=true and verified 1920x1080 before recording fullscreen evidence.",
+      "Loading by console while the introduction was open retained that menu; fixed its transient cleanup and tested the nested-modal and unrelated-menu cases."
+    ],
+    "baseline_package_sha256": "874cf22577a07c96b643910ea43beda9696d301539f80ccd02c5443b5f34739c",
+    "save_evidence": [
+      {
+        "name": "issue103_old",
+        "sha256": "ef807818afacc5568cbe7d358e89c4b02f59d15816e99858c8901b3418a56a83"
+      },
+      {
+        "name": "issue103_resaved",
+        "sha256": "a2a8f49a126098e90ff0af133e3cfbcfc4a9f87b7d46f498c4cce16b08872784"
+      },
+      {
+        "name": "issue103_rollback",
+        "sha256": "e3d9e94a77580e77b9bfa646602a1e1b685060119dfc254971270065ddff3676"
+      }
+    ]
+  },
+  "limitations": [
+    "Direct console quit, m_quickexit and Windows Alt+F4 bypass the farewell; no native executable is modified.",
+    "Controller A/B code follows the menu route; no physical gamepad test is claimed.",
+    "Music selection and enabled volumes were verified natively; the author separately accepted the audio/art presentation on 2026-10-04.",
+    "Test fixtures, engine, IWAD and save files remain local and are not distributed."
+  ],
+  "author_acceptance": {
+    "status": "Passed",
+    "date": "2026-10-04",
+    "origin": "4.37.21 / issue #103",
+    "checks": [
+      "CA-43721-INTRO-01",
+      "CA-43721-EXIT-01",
+      "CA-43721-SAVE-01"
+    ],
+    "qualifications": "None reported; issue closure and PR #111 merge explicitly authorized."
+  }
+}

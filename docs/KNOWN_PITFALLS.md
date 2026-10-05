@@ -4,6 +4,36 @@ Status: integrated engineering register (issue #22, patch 4.36.1b).
 Prepared: 2026-09-23. Inherits the project's release after integration.
 Inspected baseline: `1dc390576fa330d37ff543526fc7e69a397fc28f` (PR #7).
 
+## CA-KP-038 - Separate title credits, quit confirmation and text ENDOOM
+
+Status/evidence: CODE-VERIFIED / ENGINE-VERIFIED.
+First recorded / last checked: 2026-10-04. Issue #103 / 4.37.21.
+Baseline: 2ec2405c plus #103; GZDoom 4.14.2 Windows/Vulkan.
+
+CreditPage belongs to the title loop. The native menu_quit command creates a
+MessageBoxMenu with an affirmative callback that plays QuitSound, waits and
+calls M_Quit/ST_Endoom. ENDOOM requires exactly 4000 bytes (80x25 character and
+attribute pairs); it cannot display a PNG. Source: tag g4.14.2,
+src/menu/doommenu.cpp, src/common/startscreen/endoom.cpp and
+src/common/menu/messagebox.cpp. GameInfo supports MessageBoxClass and Endoom.
+
+For #103, keep the native callback in a MessageBoxMenu subclass, recognize only
+the unique project quit prompt, preserve negative results, and defer the true
+callback until after drawing an in-engine farewell. Endoom="" suppresses the
+legacy surface independently of the user's showendoom setting. Forward unrelated
+message boxes to the base class. Direct quit, quick exit and Windows Alt+F4 can
+bypass this UI; changing CreditPage alone cannot implement the exit requirement.
+
+Regression: cancel menu Quit and F10, confirm and inspect farewell, then finish
+through keyboard/mouse and verify process closure even with showendoom=1. Check
+another native message box. Validate 4:3, wide and ultrawide letterboxing.
+Evidence: assets/validation_43721/RESULTS.json; author acceptance remains separate.
+
+The new-game fixture also exposed StartGameDirect's DMenu::InMenu guard: calling
+a menu method from ConsoleProcess is not equivalent to native menu input.
+Test the real user-input route; do not weaken the guard or change production
+code to satisfy a fixture. Native source: doommenu.cpp / StartGameDirect.
+
 ## CA-KP-037 - Match Journal mouse coordinates to its drawing projection
 
 Status/evidence: CODE-VERIFIED / ENGINE-VERIFIED.
