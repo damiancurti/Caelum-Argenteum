@@ -2,6 +2,29 @@
 
 Documentation version: **4.37.20** — 2026-10-04.
 
+## Issue #103 - Approved narrative artwork sources
+
+The author supplied assets/art_source/Caelum Argenteum.png for the README
+banner on 2026-10-04. Its exact bytes are retained there and copied to
+assets/branding/github_banner.png. This title-bearing variant supersedes
+the plain first illustration in the issue's original banner mapping.
+
+Both unmodified 1672 x 941 embedded originals are also retained: slide 1,
+ppt/media/image.png, becomes assets/branding/cover_original.png; slide 3,
+ppt/media/image2.png, becomes assets/branding/intermission_exit.png. Slide 2
+has no illustration. The local source is
+Caelum_Argenteum_Biblia_Narrativa_v1_0.pptx in the author's Documentación folder;
+PROVENANCE.json records its hash and the individual image hashes. Extraction
+copies ZIP member bytes, without rendering slide text, cropping or re-encoding.
+The deck is an art source only and supplies no new narrative canon.
+
+The artwork belongs to Damián Curti's project under LICENSE.md. Runtime
+integration is still pending at this source-preparation commit. After initially
+reserving the story background, the author requested a new-game introduction
+with welcome, controls, survival and awakening text, shown after character
+creation with manual advance and skip. It never repeats when loading a save.
+The existing port completion notice remains unchanged.
+
 ## 4.37.20 - Original training mannequin model (#98)
 
 Inspected the project's existing 48 x 72 CDMYA0 sprite before modeling. The

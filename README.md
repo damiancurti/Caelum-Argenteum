@@ -1,3 +1,5 @@
+![Caelum Argenteum](assets/branding/github_banner.png)
+
 # Caelum Argenteum
 
 An independent dark fantasy FPS-RPG inspired by nineteenth-century Argentina.
