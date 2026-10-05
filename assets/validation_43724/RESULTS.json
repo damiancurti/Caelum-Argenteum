@@ -1,0 +1,442 @@
+{
+  "issue": 82,
+  "version": "4.37.24",
+  "date": "2026-10-05",
+  "baseline_commit": "53dc44102e5b250bccf5428a7abe12409725387a",
+  "status": "Implementation and controlled native checks complete; committed export and author acceptance pending.",
+  "scope": {
+    "campaign": [
+      "MAP01",
+      "MAP02",
+      "MAP06"
+    ],
+    "physical_cards": 78,
+    "campaign_essences": [
+      0,
+      36,
+      60
+    ],
+    "npc_match": "Complete Argento Trucazo, independent of essence count",
+    "future": "V5.0 modular architecture; remaining campaign/cards, awakening, team/network authority",
+    "historical_export": "#17 / 4.36.28 preserved"
+  },
+  "dependency_snapshot": [
+    {
+      "closedAt": "2026-10-05T23:13:20Z",
+      "number": 112,
+      "state": "CLOSED",
+      "title": "[Character creation] Add contextual descriptions and show combined professions in the second class choice"
+    },
+    {
+      "closedAt": "2026-10-05T15:29:37Z",
+      "number": 106,
+      "state": "CLOSED",
+      "title": "[V4.37 / First person] Integrate kite, tower and magic shield sprites"
+    },
+    {
+      "closedAt": "2026-10-04T21:25:06Z",
+      "number": 97,
+      "state": "CLOSED",
+      "title": "[V4.37 / Tarot] Give Palomo's deck on first top-floor conversation after following him"
+    },
+    {
+      "closedAt": "2026-10-04T16:13:05Z",
+      "number": 86,
+      "state": "CLOSED",
+      "title": "[MAP06 / Performance] Profile and improve the full southern siege"
+    },
+    {
+      "closedAt": "2026-10-04T19:51:07Z",
+      "number": 81,
+      "state": "CLOSED",
+      "title": "[V4.37 / Trucazo] Deliver a complete single-player match against one NPC"
+    },
+    {
+      "closedAt": "2026-10-04T19:04:29Z",
+      "number": 80,
+      "state": "CLOSED",
+      "title": "[V4.37 / Tarot] Complete selection and active powers for the three campaign cards"
+    },
+    {
+      "closedAt": "2026-10-04T16:53:29Z",
+      "number": 79,
+      "state": "CLOSED",
+      "title": "[V4.37 / Lore] Establish the protagonist as Barracas al Sud's guard captain with amnesia"
+    },
+    {
+      "closedAt": "2026-10-04T16:13:05Z",
+      "number": 78,
+      "state": "CLOSED",
+      "title": "[V4.37 / Story] Prisoners reveal siege intelligence after their Barracas al Sud reward"
+    },
+    {
+      "closedAt": "2026-10-03T23:21:23Z",
+      "number": 77,
+      "state": "CLOSED",
+      "title": "[V4.37 / Third map] Expand fortified Barracas al Sud with four cardinal exits and corner watchtowers"
+    },
+    {
+      "closedAt": "2026-10-03T02:33:09Z",
+      "number": 75,
+      "state": "CLOSED",
+      "title": "[MAP02] Convert equipment loot to basic crafting materials and move supplies to enemy drops"
+    },
+    {
+      "closedAt": "2026-10-03T01:54:06Z",
+      "number": 74,
+      "state": "CLOSED",
+      "title": "[MAP02] Replace trapdoor ladders with flooded tunnels, four grates and a central return elevator"
+    },
+    {
+      "closedAt": "2026-10-02T14:59:55Z",
+      "number": 73,
+      "state": "CLOSED",
+      "title": "[MAP02] Rebuild around a central start and four cardinal blocks with local progression keys"
+    },
+    {
+      "closedAt": "2026-10-02T00:17:53Z",
+      "number": 68,
+      "state": "CLOSED",
+      "title": "[V4.37.2 / Magic] Reduce base Anima costs tenfold with the Eloquence Type 4 divisor"
+    },
+    {
+      "closedAt": "2026-10-02T04:25:35Z",
+      "number": 65,
+      "state": "CLOSED",
+      "title": "[V4.37 / Tables] Replenish mansion tables daily with 50% food and 50% water"
+    },
+    {
+      "closedAt": "2026-10-02T04:21:42Z",
+      "number": 64,
+      "state": "CLOSED",
+      "title": "[V4.37 / Time] Add date/time skipping with automatic provisions and rest, separate from fast-forward"
+    },
+    {
+      "closedAt": "2026-10-02T01:47:25Z",
+      "number": 63,
+      "state": "CLOSED",
+      "title": "[V4.37 / MAP01] Move starting equipment selection and explanations from Ronnie to Palomo"
+    },
+    {
+      "closedAt": "2026-10-01T23:36:00Z",
+      "number": 62,
+      "state": "CLOSED",
+      "title": "[V4.37 / MAP01] Perform Caella's practical exercises against the training dummy"
+    },
+    {
+      "closedAt": "2026-10-01T22:09:23Z",
+      "number": 61,
+      "state": "CLOSED",
+      "title": "[V4.37 / MAP01] Add rolling exterior terrain, scattered vegetation and filled door tympana"
+    }
+  ],
+  "environment": {
+    "engine": "GZDoom 4.14.2",
+    "system": "Windows 11",
+    "renderer": "Vulkan / NVIDIA RTX 3070 Ti",
+    "iwad": "Existing legal DOOM2.WAD, not redistributed",
+    "config": "Isolated INIs and save directory; -noautoload -nosound",
+    "performance": "No new throughput benchmark; accepted #77/#86 evidence reused"
+  },
+  "packages": {
+    "candidate": {
+      "path": "build/issue82/candidate/caelum_argenteum_dev.pk3",
+      "sha256": "02e6ac8960b0e1095ff5fcc189150f1699cc339ac9e3b9b90e734f660d2cfe68",
+      "members": 6181,
+      "content_manifest_sha256": "d508a87d228e0c7d4a9cc34b5f162b7885a05c1de7b41d3dc4bc59875fc8312d"
+    },
+    "final": {
+      "path": "build/issue82/final/caelum_argenteum_dev.pk3",
+      "sha256": "e61495c87e39388b83f4c8d8ddb3784f99fc5c04df56e8c9c11159de2dc4a1e0",
+      "members": 6181,
+      "content_manifest_sha256": "07bc02f7b1540aa7784b2dfbd3f359e5f4a02fb5b2ed76d2c343a8f5aaf87731"
+    },
+    "candidate_to_final_only_difference": "KEYCONF adds author-approved T; Tarot logic and other members identical"
+  },
+  "native_runs": [
+    {
+      "run": "controls_final",
+      "log": "controls_final.txt",
+      "sha256": "2c13d17e624a699bc156a8e0fe0709a3e6fee5151c8a3c15ea0ec4e2275bd918",
+      "markers": [
+        "\"Tab\" = \"ca_journal_toggle\"",
+        "\"M\" = \"togglemap\"",
+        "\"B\" = \"+user2\"",
+        "\"R\" = \"+reload\"",
+        "\"F\" = \"+zoom\"",
+        "\"T\" = \"+user3\""
+      ],
+      "native_commands": "wait 105; echo CA82_FIRST_DEFAULTS_FINAL; bind Tab; bind M; bind B; bind R; bind F; bind T; bind F \"+attack\"; wait 5; quit",
+      "package": "final"
+    },
+    {
+      "run": "controls_preserved",
+      "log": "controls_preserved.txt",
+      "sha256": "259d7c88aac5895787b436d8c7988d7e2098e5165ac4d2f071f0fd09afb5938b",
+      "markers": [
+        "\"F\" = \"+attack\"",
+        "\"T\" = \"+user3\""
+      ],
+      "native_commands": "wait 105; echo CA82_PERSONALIZED_FINAL; bind Tab; bind M; bind B; bind R; bind F; bind T; wait 5; quit",
+      "package": "final"
+    },
+    {
+      "run": "palomo_trucazo",
+      "log": "palomo_trucazo.txt",
+      "sha256": "28f51fd6b6b3dd2a3544141a0ac5998eb483bbeb11737efa6fd7aa7565ad5f8e",
+      "markers": [
+        "CA81 UI_COMPLETE hands=3 winner=1 steps=63",
+        "CA81 SNAPSHOT equal=1 worldhealth=1 anima=1 time_delta=1 revision=1",
+        "CA97 PASS deck=1 granted=1 box=0 essences=0"
+      ],
+      "native_commands": "language es; wait 70; event ca97_back; wait 35; give CA97Setup; wait 35; netevent ca97_prepare 2; wait 35; netevent ca97_check 0; +use; wait 5; -use; wait 35; netevent ca97_check 1; screenshot build/issue82/palomo_deck.png; wait 5; event ca97_back; wait 20; netevent ca97_snapshot 0; save deck82; wait 10; load deck82.zds; wait 70; netevent ca97_snapshot 1; netevent ca97_check 1; give CA81NormalEntry; wait 10; +use; wait 5; -use; wait 35; event ca81_challenge; wait 35; netevent ca81_report; screenshot build/issue82/trucazo_intro.png; wait 5; event ca81_auto; wait 1400; netevent ca81_report; screenshot build/issue82/trucazo_result.png; wait 5; netevent ca81_snapshot 0; save trucazo82; wait 10; load trucazo82.zds; wait 70; netevent ca81_snapshot 1; netevent ca81_close; wait 35; netevent ca97_check 1; save prologue82; wait 5; quit",
+      "package": "candidate"
+    },
+    {
+      "run": "tarot",
+      "log": "tarot.txt",
+      "sha256": "53b0404c931ecc1a4698260c4dcfac1a458602007ae977c99928c0ae1e9e88cc",
+      "markers": [
+        "power-start checks=23 failures=0",
+        "reload-or-travel checks=4 failures=0",
+        "expiry-reuse checks=7 failures=0"
+      ],
+      "native_commands": "wait 70; give Issue80Powers; wait 5; save powers82; wait 5; load powers82.zds; wait 35; give Issue80Reload; wait 5; give Issue80Expire; wait 5; quit",
+      "package": "candidate"
+    },
+    {
+      "run": "campaign_route",
+      "log": "campaign_route.txt",
+      "sha256": "ee07c05336590bf4357907faa4d16ae47584f04639e2c6c692b1471b60d255c2",
+      "markers": [
+        "CA97 BOX PASS deck_count=1 same_deck=1 box_granted=1",
+        "return-commit checks=2 failures=0",
+        "count=0 checks=18 failures=0"
+      ],
+      "native_commands": "wait 70; load prologue82.zds; wait 70; netevent ca97_box_ready; give CA82AtPalomo; wait 35; +use; wait 5; -use; wait 35; event ca82_reply 1; wait 35; event ca82_box; wait 35; netevent ca97_box_check; event ca97_back; wait 35; give CA82StoreDeck; wait 5; give Issue80FoolUse; wait 35; event qa80_accept; wait 140; give Issue80FoolCheck; wait 5; screenshot build/issue82/fool_captured.png; wait 5; give Issue80ReturnUse; wait 35; event qa80_accept; wait 140; event qa80_back; wait 35; give Issue80ReturnCheck; wait 5; save sewer82; wait 5; give QA77TravelPrepare; wait 20; give QA77Depart; wait 150; give QA77Arrival; wait 5; save port0_82; wait 5; load port0_82.zds; wait 35; give QA77Arrival; wait 5; screenshot build/issue82/port_arrival.png; wait 5; quit",
+      "package": "final"
+    },
+    {
+      "run": "sewer_reload",
+      "log": "sewer_reload.txt",
+      "sha256": "cc59b488b703766ace2f381731a815bb7669328113e977d194d3f230b0aa4a5e",
+      "markers": [
+        "CA82 RELOAD health=1825 map=MAP06",
+        "count=0 checks=27 failures=0"
+      ],
+      "native_commands": "wait 100; event qa80_back; wait 35; give QA77TravelPrepare; wait 5; event qa80_back; wait 20; give QA77Depart; wait 180; give QA77Arrival; wait 5; save port0_stable82; wait 10; event qa80_back; wait 5; load port0_stable82.zds; wait 70; netevent ca82_arrival; wait 35; quit",
+      "package": "final"
+    },
+    {
+      "run": "direct2",
+      "log": "direct2.txt",
+      "sha256": "adec418018361aea7c6a9de351939f3bb2be84b9b0f6d392e77b2c107852276a",
+      "markers": [
+        "count=2 checks=29 failures=0"
+      ],
+      "native_commands": "wait 70; event qa80_back; wait 5; give QA77TravelPartial; wait 5; event qa80_back; wait 20; give QA77Depart; wait 180; give QA77Arrival; wait 5; save direct2_82; wait 10; load direct2_82.zds; wait 70; netevent ca82_arrival; wait 35; quit",
+      "package": "final"
+    },
+    {
+      "run": "direct4",
+      "log": "direct4.txt",
+      "sha256": "8755f9c5c9328a8a91193da2a6cb5fb70ad0d2e73c69b9b2a4c728d9f02800e1",
+      "markers": [
+        "count=4 checks=31 failures=0"
+      ],
+      "native_commands": "wait 70; event qa80_back; wait 5; give QA77TravelAll; wait 5; event qa80_back; wait 20; give QA77Depart; wait 180; give QA77Arrival; wait 5; save direct4_82; wait 10; load direct4_82.zds; wait 70; netevent ca82_arrival; wait 35; quit",
+      "package": "final"
+    },
+    {
+      "run": "sewer_states",
+      "log": "sewer_states.txt",
+      "sha256": "e5bab9938d2862ceee087ae5773a1364ca439d0683595b181311e45cb87ae7b2",
+      "markers": [
+        "QA74_HUB_DONE failures=0 reloads=4",
+        "QA74_STATE_DONE failures=0 reloads=4 followers=4"
+      ],
+      "native_commands": "wait 100; netevent qa74 14; wait 10; +use; wait 1; -use; wait 110; netevent qa74 15; wait 10; +use; wait 1; -use; wait 110; netevent qa74 16; netevent qa74 1; wait 60; netevent qa74 2; wait 60; netevent qa74 3; wait 110; netevent qa74 4; wait 110; save issue74_pit; wait 20; load issue74_pit.zds; wait 40; netevent qa74 5; wait 20; save issue74_tunnel; wait 20; load issue74_tunnel.zds; wait 40; netevent qa74 6; wait 10; +use; wait 1; -use; wait 100; save issue74_grate; wait 20; load issue74_grate.zds; wait 40; screenshot build/issue82/sewer_grate.png; +forward; wait 24; -forward; wait 10; netevent qa74 7; wait 10; +use; wait 1; -use; wait 25; save issue74_motion; wait 20; load issue74_motion.zds; wait 110; netevent qa74 8; wait 100; +use; wait 1; -use; wait 100; netevent qa74 9; wait 120; netevent qa74 10; wait 110; +forward; wait 24; -forward; wait 100; netevent qa74 11; wait 10; +use; wait 1; -use; wait 110; netevent qa74 12; wait 10; +forward; wait 220; -forward; wait 100; netevent qa74 13; screenshot build/issue82/sewer_escort.png; wait 10; quit",
+      "package": "final"
+    },
+    {
+      "run": "captain_final",
+      "log": "captain_final.txt",
+      "sha256": "654312a078f65a7efbee4daeb2f38f3cb744f3b4ac7b8aaf46c036941543a048",
+      "markers": [
+        "full-finish checks=12 failures=0",
+        "repeat checks=20 failures=0"
+      ],
+      "native_commands": "language es; wait 120; event qa79_close; wait 10; give Issue79FullSetup; wait 2; event qa79_close; wait 5; +use; wait 15; -use; wait 35; event qa79_menu; screenshot build/issue82/captain_active.png; wait 35; give Issue79FullFinish; wait 35; event qa79_accept; wait 35; event qa79_close; wait 35; give Issue79Open; wait 35; event qa79_menu; screenshot build/issue82/captain_complete.png; wait 35; event qa79_close; wait 35; give Issue79Check; quit",
+      "package": "final"
+    },
+    {
+      "run": "reward_isolated",
+      "log": "reward_isolated.txt",
+      "sha256": "c1fd12ff60b88df1f12eafd589cd6de4895ef8f5cd38aee6a5dc329f7260ce23",
+      "markers": [
+        "rewards checks=52 failures=0"
+      ],
+      "native_commands": "wait 70; give Issue78Rewards; wait 35; quit",
+      "package": "final"
+    },
+    {
+      "run": "boss_isolated",
+      "log": "boss_isolated.txt",
+      "sha256": "a5be5c265d874ad1b099a65484c5615c2ca619e230c26b9310e8990639e666be",
+      "markers": [
+        "boss-first checks=7 failures=0"
+      ],
+      "native_commands": "wait 70; give Issue78BossFirst; wait 35; quit",
+      "package": "final"
+    },
+    {
+      "run": "machines_isolated",
+      "log": "machines_isolated.txt",
+      "sha256": "2ae122e3572c11b22476450b544ef4aa2696f6f35de4f9997a6b46dffae597c5",
+      "markers": [
+        "machines-first checks=7 failures=0"
+      ],
+      "native_commands": "wait 70; give Issue78MachinesFirst; wait 35; quit",
+      "package": "final"
+    },
+    {
+      "run": "tarot_input_final",
+      "log": "tarot_input_final.txt",
+      "sha256": "9d0afb646dfb6f28003b7b783837688a8bff3b5290944a31f1079df5e24f4340",
+      "markers": [
+        "native-ui-user3 checks=4 failures=0"
+      ],
+      "native_commands": "wait 70; event qa80_back; wait 5; give Issue80InputSetup; wait 35; ca_journal_page 6; ca_journal_open true; ca_journal_tarot_selected 0; wait 5; event qa80_press; wait 5; event qa80_release; ca_journal_tarot_selected 36; wait 5; event qa80_press; wait 5; event qa80_release; ca_journal_tarot_selected 60; wait 5; event qa80_press; wait 5; event qa80_press; wait 5; event qa80_release; event qa80_close; wait 35; +user3; wait 70; -user3; wait 2; give Issue80InputCheck; wait 35; save tarot_input_final82; wait 35; quit",
+      "package": "final"
+    },
+    {
+      "run": "ace_capture",
+      "log": "ace_capture.txt",
+      "sha256": "4204b0151affe81183ec684358be7a08470a0d26ddc6f8b64ffead5a734cb1cb",
+      "markers": [
+        "deck-capture-drop checks=17 failures=0"
+      ],
+      "native_commands": "wait 70; event qa80_back; wait 5; give Issue80DeckTest; wait 35; quit",
+      "package": "final"
+    },
+    {
+      "run": "knight_final",
+      "log": "knight_final.txt",
+      "sha256": "30d01c09f7f65a7bf1509b8baf2132af983a8071dad5e30cef124731d5645088",
+      "markers": [
+        "CA82 PASS actual full encounter completed before isolated Knight capture",
+        "isolated-knight-capture checks=5 failures=0"
+      ],
+      "native_commands": "wait 70; event qa80_back; event qa80_close; wait 5; give CA82CompleteSiege; give Issue80KnightCapture; wait 35; quit",
+      "package": "final"
+    },
+    {
+      "run": "old_save",
+      "log": "old_save.txt",
+      "sha256": "7db83ffe6a315095b959e7a6201ad3969030da58628ebe43316e66502675151d",
+      "markers": [
+        "CA82_43723_SAVE_LOADED",
+        "CA82_43724_SAVE_RELOADED"
+      ],
+      "native_commands": "wait 100; echo CA82_43723_SAVE_LOADED; save migrated43724; wait 10; load migrated43724.zds; wait 100; echo CA82_43724_SAVE_RELOADED; screenshot build/issue82/legacy_save.png; wait 5; quit",
+      "package": "final"
+    }
+  ],
+  "launcher_tests": [
+    {
+      "case": "automatic adjacent discovery",
+      "result": "PASS",
+      "exit_code": 0
+    },
+    {
+      "case": "relative filenames from another directory",
+      "result": "PASS",
+      "exit_code": 0
+    },
+    {
+      "case": "quoted paths with surrounding spaces",
+      "result": "PASS",
+      "exit_code": 0
+    },
+    {
+      "case": "containing folders",
+      "result": "PASS",
+      "exit_code": 0
+    },
+    {
+      "case": "missing engine diagnostic",
+      "result": "PASS",
+      "exit_code": 1
+    },
+    {
+      "case": "engine failure exit propagation",
+      "result": "PASS",
+      "exit_code": 17
+    }
+  ],
+  "saved_game_compatibility": {
+    "old_release": "4.37.23",
+    "original_save_preserved": true,
+    "original_save_sha256": "78c4b1c8123d548bd3b7338dd06ee7b90e988ef855763a83330185d472af9694",
+    "result": "Native load, save and reload pass; no map or save schema changes in #82"
+  },
+  "reused_author_acceptance": {
+    "#73/#74/#75": "HISTORY 4.37.6-8; accepted cardinal key progression, material/drop ledger, flooded returns and elevator. #75 is closed and corrected report mapping, not unimplemented gameplay.",
+    "#77/#86": "HISTORY 4.37.9 and accepted performance refinement; assets/validation_4379/south/COMBAT_RECOVERY.json. Four exits/city geometry unchanged.",
+    "#78/#79": "HISTORY 4.37.10-11; paid intelligence and captain recognition accepted 2026-10-04.",
+    "#80/#81": "HISTORY 4.37.12-13; limited Tarot powers and NPC Trucazo accepted 2026-10-04.",
+    "#97 and refinements": "Earlier upstairs physical deck, later accepted art/UI/Truco refinements remain integrated; no blanket new acceptance inferred."
+  },
+  "qualifications": [
+    "Fixtures are local only, outside src and the export. They seed character/trial/rescue/boss/victory prerequisites. This is not a new ordinary full campaign playthrough.",
+    "campaign_route loads a saved real early-deck/Trucazo state, completes the native Box/Fool/return paths, then uses the actual journey planner. Its second give after reload did not produce a checkpoint; sewer_reload verifies the identical save from engine startup and the resulting zero-rescue port reload.",
+    "direct2/direct4 seed rescue states and boss/Ace eligibility; the native gate, planner, map transition, deployed roster, exact payouts and repeated-claim checks are real. They do not replay the boss fight.",
+    "sewer_states reuses #74 isolated flooded-return/escort fixtures; its MAP03 round trip is diagnostic hub persistence, not the campaign route.",
+    "reward_isolated/boss_isolated/machines_isolated use the preserved pre-siege MAP06 test overlay, as in #78, to isolate transaction and objective logic. captain_final and knight_final use the actual full city, with objective flags injected rather than a normal battle.",
+    "Initial harness attempts are not passing evidence: obsolete Palomo choice indexes, deck left outside the new Box, uncleared arrival conversation, Journal opening timing, and synthetic encounters placed alongside the real full encounter. Corrected runs above retain the actual rules.",
+    "A console load invoked during an open dynamic conversation crashed in native menu drawing/wipe. The author saved CrashReport.zip locally. The same sewer82.zds loads via -loadgame and then passes travel/save/reload; original report and minidump remain local. This does not claim the engine open-menu console-load edge is fixed or extend any map-specific save waiver.",
+    "Regular-menu save/load and fresh exported first-launch controls remain an explicit author check; native bind queries alone do not claim physical keyboard acceptance."
+  ],
+  "crash_investigation": {
+    "local_report": "build/issue82/crash_sewer_reload",
+    "instruction": "Console load while a dynamic conversation is open; use normal game Save/Load menus or close the conversation before test loading.",
+    "symbolized_stack": [
+      "FString::operator=+0x48",
+      "VMCall+0x90",
+      "DMenu::CallDrawer+0x61",
+      "M_Drawer+0x1ff",
+      "DrawOverlays+0x13",
+      "PerformWipe+0x325"
+    ],
+    "save_not_corrupt": "sewer_reload.txt: same save loads and zero-rescue arrival/reload checks=27 failures=0",
+    "remaining_limit": "No production fix or general engine regression claim"
+  },
+  "author_acceptance": {
+    "status": "pending",
+    "test_ids": [
+      "CA-43724-EXPORT-01"
+    ],
+    "defaults_approved": {
+      "Tab": "Journal",
+      "M": "Automap",
+      "B": "Seal",
+      "R": "Reload",
+      "F": "Zoom",
+      "T": "Selected Tarot essences"
+    }
+  },
+  "export": {
+    "status": "Pending committed source"
+  },
+  "captures": [
+    "palomo_deck.png",
+    "trucazo_intro.png",
+    "trucazo_result.png",
+    "fool_captured.png",
+    "sewer_grate.png",
+    "sewer_escort.png",
+    "port_arrival.png",
+    "captain_active.png",
+    "captain_complete.png"
+  ]
+}

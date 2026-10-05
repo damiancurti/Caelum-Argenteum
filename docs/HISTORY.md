@@ -1,6 +1,53 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **4.37.23** — 2026-10-05.
+Documentation version: **4.37.24** — 2026-10-05.
+
+## 4.37.24 — Final V4.37 integration and portable export (#82)
+
+Author request, 2026-10-05: implement the closing release issue now that all
+pending feature work is implemented; export as before, commit/push and perform
+necessary live checks. Requested defaults: Tab Journal, M automap, B Seal,
+R Reload and F Zoom. The author subsequently chose T for selected Tarot powers.
+
+All listed release dependencies are closed and their acceptance stays attached
+to the originating patch. #75 requires administrative reconciliation rather than
+reimplementation. The current scope includes the three-map route, three earned
+essences and a full NPC Trucazo slice; remaining campaign/card/team/network
+expansion stays in V5, beginning with V5.0 modular architecture. No new V4.38
+stage or external publication is authorized. The earlier #17 ZIP stays unchanged.
+
+The new portable launcher applies its dedicated controls file only before its
+own user INI exists, then preserves remapping. The exporter records #82 and the
+direct MAP01 -> MAP02 -> MAP06 route rather than the historical MAP03 connector.
+Current installation guidance no longer calls the implemented Tarot/Trucazo
+slice deferred. No gameplay formula, map geometry or save schema changes.
+
+The initial clean checkout exposed stale documentation-index hashes caused by
+earlier CRLF-authored sources being committed as LF. This delivery writes the
+maintained documentation as LF and regenerates the exact-byte index afterward.
+Final source/build/export identities, native runs, reused acceptance and harness
+qualifications are recorded in assets/validation_43724/RESULTS.json.
+
+Controlled integration checks pass for the mansion/deck/Fool departure, direct
+port travel with zero/two/four survivors and repeat payment rejection, flooded
+returns/elevator state, captain recognition, payment-gated intelligence, both
+siege objective orders, Tarot effects and NPC Trucazo completion/persistence.
+Prerequisites and victory flags are seeded where recorded; this is not a fresh
+ordinary full campaign playthrough or a new performance benchmark. A preserved
+4.37.23 character also loads, saves and reloads with the new runtime.
+
+An automated console load while a dynamic conversation remained open caused a
+native access violation in menu drawing during the wipe. The author retained
+the crash report; symbols locate FString::operator= / DMenu::CallDrawer /
+PerformWipe. The identical target save loads from the engine startup path and
+continues through native travel/save/reload. This isolates the failing harness
+context without claiming that the engine's open-menu console-load edge case is
+fixed. Normal-menu export acceptance remains CA-43724-EXPORT-01; no broad save
+compatibility waiver or author acceptance is inferred from the passing fixtures.
+
+The empty Tarot Journal now describes the accepted early upstairs deck handoff
+and the later Box requirement in both languages; it no longer claims those
+separate handoffs happen together. This corrects help text, not reward timing.
 
 ## 4.37.23 - Contextual creation and combined profession choices (#112)
 

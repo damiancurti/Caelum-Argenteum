@@ -173,6 +173,10 @@ addmenukey "$CA_CONTROL_DEBUG_TEST_SILVER_LOCK" ca_debug_test_silver_lock
 // exteriores y depuración; ambas acciones siguen apareciendo en Controles.
 defaultbind Tab "ca_journal_toggle"
 defaultbind M "togglemap"
+defaultbind B "+user2"
+defaultbind R "+reload"
+defaultbind F "+zoom"
+defaultbind T "+user3"
 alias ca_time_skip "netevent ca_skip_open"
 addmenukey "$CA_SKIP_TITLE" ca_time_skip
 defaultbind Y "ca_time_skip"

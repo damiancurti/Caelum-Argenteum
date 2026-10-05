@@ -7,6 +7,7 @@ $Fixture = Join-Path $OutputDirectory 'Portable game (spaces)'
 $Source = Join-Path $PSScriptRoot '../playtest/launch_playtest.ps1'
 $Launcher = Join-Path $Fixture 'launch_playtest.ps1'
 Copy-Item -LiteralPath $Source -Destination $Launcher
+Copy-Item -LiteralPath (Join-Path $PSScriptRoot '../playtest/default_controls.cfg') -Destination $Fixture
 [IO.File]::WriteAllText((Join-Path $Fixture 'DOOM2.WAD'), 'Local test stub; not an IWAD.')
 [IO.File]::WriteAllText((Join-Path $Fixture 'caelum_argenteum_dev.pk3'), 'Local test stub; not a game package.')
 $Stub = @'
@@ -17,6 +18,8 @@ public class LauncherProbe {
         string root = AppDomain.CurrentDomain.BaseDirectory;
         File.WriteAllLines(Path.Combine(root, "arguments.txt"), args);
         File.WriteAllText(Path.Combine(root, "working_directory.txt"), Environment.CurrentDirectory);
+        string ini = Path.Combine(root, "user", "gzdoom.ini");
+        if (!File.Exists(ini)) File.WriteAllText(ini, "Player-customized bindings sentinel");
         return File.Exists(Path.Combine(root, "fail.flag")) ? 17 : 0;
     }
 }
@@ -48,7 +51,9 @@ try {
         if ($Case.Exit -ne 1) {
             $ActualArguments = [IO.File]::ReadAllLines((Join-Path $Fixture 'arguments.txt'))
             $ExpectedArguments = @('-iwad',(Join-Path $Fixture 'DOOM2.WAD'),'-file',(Join-Path $Fixture 'caelum_argenteum_dev.pk3'),'-config',(Join-Path $Fixture 'user/gzdoom.ini'),'-savedir',(Join-Path $Fixture 'user/saves'),'-noautoload')
+            if ($Results.Count -eq 0) { $ExpectedArguments += @('+exec', (Join-Path $Fixture 'default_controls.cfg')) }
             if (($ActualArguments -join "`n") -ne ($ExpectedArguments -join "`n")) { throw "$($Case.Name): unexpected engine arguments" }
+            if ([IO.File]::ReadAllText((Join-Path $Fixture 'user/gzdoom.ini')) -ne 'Player-customized bindings sentinel') { throw 'Existing player configuration was overwritten' }
             if ([IO.File]::ReadAllText((Join-Path $Fixture 'working_directory.txt')) -ne $Fixture) { throw 'Wrong engine working directory' }
         } elseif (($Output -join "`n") -notlike '*Could not find gzdoom.exe*absent.exe*') {
             throw 'Missing attempted path in error message'

@@ -6,8 +6,17 @@ An independent dark fantasy FPS-RPG inspired by nineteenth-century Argentina.
 Author and game designer: **Damian Curti**. Development target: **GZDoom 4.14.2**
 on Windows 11. The final game is intended to be independent of Doom assets.
 
-**Current release: 4.37.23.** Obtain and update the complete repository, validate
+**Current release: 4.37.24.** Obtain and update the complete repository, validate
 it, then rebuild with `run_dev.bat` as described below.
+
+Issue [#82](https://github.com/damiancurti/Caelum-Argenteum/issues/82) is the
+author-designated closing V4.37 delivery: the integrated MAP01 -> MAP02 -> MAP06
+campaign, physical Tarot deck and three earned essence powers, and NPC Trucazo.
+The new portable export starts with **Tab** Journal, **M** automap, **B** Seal,
+**R** Reload, **F** Zoom and **T** Tarot, then preserves the player's remapping.
+The accepted #17 export remains historical. Remaining campaign/card/team/network
+expansion stays in V5, beginning with V5.0 modular architecture.
+[Closing validation and export identity](assets/validation_43724/RESULTS.json).
 
 Issue [#112](https://github.com/damiancurti/Caelum-Argenteum/issues/112) adds
 **contextual character-creation descriptions** in English and Spanish. Race,
@@ -394,26 +403,33 @@ individual notices in licenses/ retain their terms and attribution.
    SHA256SUMS.txt with the package. Compare its downloaded ZIP SHA-256 with the
    supplied .sha256 file using PowerShell Get-FileHash before opening it.
 2. Keep launch_playtest.bat, launch_playtest.ps1 and caelum_argenteum_dev.pk3
-   together. If gzdoom.exe (with its engine files) and DOOM2.WAD are in that same
-   folder, double-click launch_playtest.bat: both are detected automatically.
+   together with default_controls.cfg. If gzdoom.exe (with its engine files) and
+   DOOM2.WAD are in that same folder, double-click launch_playtest.bat: both are detected automatically.
    Otherwise enter each missing file's full path or containing folder when asked.
    Explicit -Engine and -Iwad arguments are also supported; relative paths resolve
    beside the launcher. Spaces and surrounding double quotes are accepted.
    No Python or source checkout is needed.
 3. The launcher disables autoload and uses user/gzdoom.ini and user/saves within
-   this folder. Start a NEW GAME for this route; do not copy old saves into it.
+   this folder. On the first launch it applies the controls below; later launches
+   preserve your remapping and other settings. Start a NEW GAME for this route;
+   do not copy old saves into it.
    Preserve your original saves/packages. Campaigns that visited earlier MAP02
    or MAP06 geometry still use the repository's documented legacy builds.
-4. Open Options > Customize Controls. Configure movement, look, Jump, Crouch,
-   Use, Fire, AltFire, Reload and Zoom. Fire attacks; AltFire is secondary attack
+4. The first launch sets Tab to Journal/inventory, M to automap, B to the
+   equipped Seal, R to Reload, F to Zoom and T to selected Tarot powers.
+   Review or remap movement, look, Jump, Crouch, Use, Fire and other controls in
+   Options > Customize Controls. Fire attacks; AltFire is secondary attack
    or ranged aim; Reload reloads ranged weapons or charges melee/magic; Zoom
    blocks, sweeps with eligible heavy weapons, or aims down ranged sights.
-   Tab opens the Journal/inventory and M the automap. Configure User2 for the
-   equipped Seal; User3 does not imply the deferred full Tarot activation system.
+   In the Tarot Journal, select up to three captured essences with Enter, then
+   use T (User3) in play. Receiving the physical deck does not grant essences.
    Use interacts with NPCs, doors, chests, repair stations and card appearances.
    Use GZDoom's Save/Load menus for separate named saves at each chapter.
-5. Complete the MAP01 mansion prologue, character creation, first weapon/Box and
-   El Loco capture; take the narrative exit to MAP02. Follow the Journal, progress
+5. Complete character creation and the MAP01 mansion prologue. Palomo gives
+   the physical 78-card deck at the first upstairs conversation. Use it to play
+   a complete Trucazo practice against Argento. Complete the trials, receive the
+   Magic Box and move the deck inside it for El Loco capture; take the narrative
+   exit to MAP02. Follow the Journal, progress
    through four keyed sewer sections, collect fitted T1 equipment, and use beds
    and recipe-based repair stations. Food, water and repair supplies are finite.
 6. Rescue any prisoners you choose and lead them alive to the extraction area
@@ -431,7 +447,8 @@ MAP08 and diagnostic commands remain inherited development content; they are
 not extra finished chapters. Do not use cheats, direct map commands or QA
 overlays for ordinary campaign acceptance.
 
-Known limits: 4.37 Tarot activation/Trucazo is deferred by author decision.
+Known limits: remaining essence acquisition and Major powers, broader awakening,
+Trucazo teams/network play and later campaign content remain V5 work.
 The accepted port enemy zero-resource attack trial remains enabled. Historical
 overall cannon dimensions are unverified; the sleeping-bag icon reuses fabric
 art. The expanded siege has 6,001 attackers, 600 defenders and 48 machines
@@ -1405,7 +1422,7 @@ Follow PROJECT.md for the remaining scope. Potable-water collection is implement
 defined; the existing 3 g bullet mass is unchanged. Bolt crafting is implemented. Food/water, Air/movement, load management and pool breathing are now
 implemented. The author now authorizes additional sewer maps for system
 testing. MAP02 now contains the authorized maze and encounters; MAP03–05
-retain their test spaces. The new three-map playtest slice is planned in
+retain their test spaces. The accepted three-map playtest slice was delivered through
 [#16](https://github.com/damiancurti/Caelum-Argenteum/issues/16); test spaces do
 not count as completed campaign maps. The existing port is MAP06.
 Material coverage uses finite 100% allowances for the chosen loadout and learned seals.
@@ -1421,16 +1438,15 @@ escorts/port rewards and the approved Tarot fronts. Issues #18–#21 add siege
 assets, breakable actor gates, rams and cannons. See [TASKS](docs/TASKS.md)
 and the current author-roadmap section of [PROJECT](docs/PROJECT.md).
 
-Per the 2026-10-01 author decision, export the current three-map content before
-V4.37. The accepted campaign covers the prologue,
-El Loco and two distinct Minors. Verify the exported
-playtest for other players (#17), including installation, controls, the full
-route, saves and issue reporting. The mansion -> maze -> port route is
+The accepted #17 / 4.36.28 playtest predates Tarot activation and Trucazo.
+The author requests a new closing V4.37 export under #82, including those
+implemented systems, installation, controls, route, saves and issue reporting.
+The accepted campaign covers the prologue, El Loco and two distinct Minors. The mansion -> maze -> port route is
 confirmed: the third map is a demon siege, whose commanding Zupay holds
 the Knight of Wands as the second Minor. Freed prisoners use source-character
 combat stats and follow/fight until their living extraction before the MAP02
 boss; they leave for the port and do not participate in that boss fight. After
-the playtest and deferred 4.37 work,
+the closing #82 export,
 **V5.0 reorganizes programming modules**; V5.1 adds thermal exposure and later
 V5 work expands persistent resources and marine biomes. Remaining weapon
 art, loot, faction consequences, perception/formations, general world sieges, co-op/PvP,

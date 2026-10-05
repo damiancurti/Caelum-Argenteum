@@ -1,6 +1,21 @@
 # TASKS.md — Active tasks
 
-Documentation version: **4.37.23** — 2026-10-05.
+Documentation version: **4.37.24** — 2026-10-05.
+
+## Issue #82 — V4.37 closing delivery (4.37.24)
+
+- Scope reconciled against closed dependencies #74, #75, #77, #78, #79, #80 and
+  #81 and their recorded author acceptance. Earlier accepted work and subsequent
+  accepted refinements remain integrated. V5 expansion is not a V4.37 blocker.
+- New export from committed source with accurate three-map route, manifest,
+  hashes, license notices and portable launcher. Historical #17 ZIP preserved.
+- First-start controls: Tab Journal, M automap, B Seal, R Reload, F Zoom, T Tarot.
+  Keep later user remapping; no migration or reset of existing configurations.
+- Final integrated campaign/state, Tarot, NPC Trucazo and export checks are
+  recorded in assets/validation_43724. Native fixtures seed prerequisites where
+  stated; they do not replace the already recorded ordinary-play acceptance.
+- Delivery review and any outstanding author check remain in pending_test.txt;
+  confirmed results belong to HISTORY. Next development scope is V5.0.
 
 ## Issue #112 - Contextual character creation (4.37.23)
 
@@ -20,7 +35,7 @@ Documentation version: **4.37.23** — 2026-10-05.
   ordinary MAP01 startup and author-assisted save/reload. Fifty native captures
   cover both languages and 4:3, 16:9 and 21:9. No outstanding author check.
 
-## Current release status — reconciled 2026-10-05
+## Historical release-status reconciliation before #82 — 2026-10-05
 
 - **Task CA-DOC-RELEASE-STATUS:** correct stale planning labels at the author's
   request. This is an acceptance/status correction, not a new gameplay patch.

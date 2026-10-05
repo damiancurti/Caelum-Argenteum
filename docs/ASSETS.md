@@ -1,6 +1,20 @@
 # Caelum Argenteum — Audio and art
 
-Documentation version: **4.37.23** — 2026-10-05.
+Documentation version: **4.37.24** — 2026-10-05.
+
+## 4.37.24 — Reproducible closing export (#82)
+
+No new artwork or redistributed development dependency is introduced. The
+closing export uses build_playtest.py and committed blobs, fixed ZIP metadata,
+stored entries and complete SHA-256 coverage. assets/playtest/EXPORT.json records
+the current issue, three-map route and first-start configuration; the launcher
+and default_controls.cfg are included beside the PK3. The engine, IWAD, saves,
+QA fixtures, personal INIs and optional source generators remain excluded.
+
+The accepted #17 / 4.36.28 archive and its provenance remain historical evidence.
+The new source revision, package/archive hashes, native captures and exact-content
+verification belong to assets/validation_43724. Local export is authorized;
+external Release/tag publication is not part of this delivery.
 
 ## 4.37.23 - Character-creation text and layout (#112)
 
