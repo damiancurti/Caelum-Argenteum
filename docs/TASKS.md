@@ -20,6 +20,23 @@ Documentation version: **4.37.23** — 2026-10-05.
   ordinary MAP01 startup and author-assisted save/reload. Fifty native captures
   cover both languages and 4:3, 16:9 and 21:9. No outstanding author check.
 
+## Current release status — reconciled 2026-10-05
+
+- **Task CA-DOC-RELEASE-STATUS:** correct stale planning labels at the author's
+  request. This is an acceptance/status correction, not a new gameplay patch.
+- **4.36 is closed.** The author explicitly reconfirmed closure on 2026-10-05.
+  The accepted siege (#16 / 4.36.27) and test export (#17 / 4.36.28) remain
+  complete; historical planning text below must not reopen their release gates.
+- **4.37 remains open, nearing closure.** The author reports only final details
+  remain. Preserve outstanding issue scope; this correction does not declare
+  final release acceptance or invent additional requirements.
+- `pending_test.txt` is empty at this reconciliation. It tracks outstanding
+  author checks, not all development work; an empty queue does not close 4.37.
+- V5 remains future work under `PROJECT.md`, including CA-V5-NATIVE-UI.
+  Deferred environmental features are not reopened 4.36 blockers.
+- Earlier issue entries preserve their original scope, evidence and sequence.
+  Read historical "Next" statements in that context, not as today's work order.
+
 ## Issue #106 - First-person shield sets (4.37.22)
 
 - Shared equipped-item artwork for kite, tower and magic; preserve the round
@@ -742,7 +759,7 @@ all author revisions and acceptance belong to the same issue/PR patch.
   hardness in this patch; those values remain #19-#21. Scale/orientation are
   provisional until the live preview is accepted.
 - **Acceptance:** `CA-43610-SIEGE-ART-01` passed on 2026-09-26, as
-  recorded in HISTORY. The 4.36.14a follow-up has its own pending author check.
+  recorded in HISTORY. The 4.36.14a follow-up was also accepted on 2026-09-26; see its entry above.
 - **Next:** #19 / 4.36.11 owns damageable gates and persistent opening.
 
 ## Issue #15 — Approved Tarot fronts and collection bindings (4.36.9)
@@ -938,12 +955,12 @@ remain tracked. Backlog tasks below are not executable author tests.
 
 ## Author-requested sewer and playtest batch — 2026-09-23
 
-Planned only. Read the current author-roadmap section of PROJECT for the
-canonical scope; each linked issue contains focused entry points and tests.
-Implement one patch per issue after the previous merged version. PR #7's
-documentation update does not implement these features or reset accepted tests.
+Historical batch, delivered during the now-closed 4.36 series. Read PROJECT
+and the individual acceptance entries for canonical scope and evidence.
+The original planning order is preserved; it is not a current pending queue.
+PR #7 itself only updated documentation; subsequent patches delivered the work.
 
-| Patch / stage | Issue | Work and current blocker |
+| Patch / stage | Issue | Delivery and acceptance |
 | --- | --- | --- |
 | 4.36.4 | [#10](https://github.com/damiancurti/Caelum-Argenteum/issues/10) | Implemented and author-accepted on 2026-09-23. Complete T1 catalogue, recipient sizing, chest preview and feedback. |
 | 4.36.5 | [#11](https://github.com/damiancurti/Caelum-Argenteum/issues/11) | Implemented and author-accepted on 2026-09-24; CA-4365-MAZE-01 passed (PR #28). Four sections, keys/cells/beds, recipe-gated repair refuges, widened channels and northern boss room. |
@@ -952,10 +969,10 @@ documentation update does not implement these features or reset accepted tests.
 | 4.36.8 | [#14](https://github.com/damiancurti/Caelum-Argenteum/issues/14) | Implemented and author-accepted on 2026-09-25; CA-4368-RESCUE-01 passed. Follow/fight with source-character stats; extract alive before MAP02 boss; port thanks, +10 own-faction reputation and a fixed 25 gold coins independent of character size once per rescue. |
 | 4.36.9 | [#15](https://github.com/damiancurti/Caelum-Argenteum/issues/15) | Tarot fronts and correct collection bindings. Implemented from the verified local source archive; author-accepted on 2026-09-25 (CA-4369-TAROT-ART-01 passed). |
 | 4.36.14 | [#31](https://github.com/damiancurti/Caelum-Argenteum/issues/31) | Author-selected pain sounds, supplied dialogue-opening cue, local sewer/port/coast music and the reserved chapter-end story intermission. Implemented and author-accepted on 2026-09-25 (CA-43614-AUDIO-01 passed). |
-| 4.36.10 | [#18](https://github.com/damiancurti/Caelum-Argenteum/issues/18) | Siege assets: cannon (replacing catapult), ram and breakable gate. After #15. |
-| 4.36.11 | [#19](https://github.com/damiancurti/Caelum-Argenteum/issues/19) | Damageable actor gates. Structural parameter table needs approval. After #18. |
-| 4.36.12 | [#20](https://github.com/damiancurti/Caelum-Argenteum/issues/20) | Physical ram strikes; approved parameter table and native evidence required. After #19. |
-| 4.36.13 | [#21](https://github.com/damiancurti/Caelum-Argenteum/issues/21) | Native cannon launch/impact at approved 400 m/s; approved parameter table and native evidence required. After #20. |
+| 4.36.10 | [#18](https://github.com/damiancurti/Caelum-Argenteum/issues/18) | Implemented and author-accepted on 2026-09-26; includes the accepted 4.36.14a art correction. |
+| 4.36.11 | [#19](https://github.com/damiancurti/Caelum-Argenteum/issues/19) | Delivered as 4.36.15; CA-43611-GATES-01 passed on 2026-09-26. Original planned label retained in this column. |
+| 4.36.12 | [#20](https://github.com/damiancurti/Caelum-Argenteum/issues/20) | Delivered as 4.36.16; CA-43612-RAM-01 passed on 2026-09-26. Original planned label retained in this column. |
+| 4.36.13 | [#21](https://github.com/damiancurti/Caelum-Argenteum/issues/21) | Delivered as 4.36.17 with final 4.36.19 balance (500 m/s); cannon and balance checks accepted on 2026-09-27. Original planned label retained in this column. |
 | 4.36.27 | [#16](https://github.com/damiancurti/Caelum-Argenteum/issues/16) | Complete MAP06 port siege and Knight of Wands. All author tests passed on 2026-09-30; PR #59 merge and issue closure authorized. |
 | 4.36.28 | [#17](https://github.com/damiancurti/Caelum-Argenteum/issues/17) | Reproducible three-map package and corrected launcher accepted on 2026-10-01; PR #60 merge/closure authorized. Further weekly quota measurement discontinued; 4.37 remains next. |
 
@@ -973,15 +990,13 @@ Work/desktop, resets, concurrent-work and missing-measurement distinctions remai
 Only add actionable author checks to pending_test.txt after implementation;
 missing design/assets belong here and in issues, not in that queue.
 
-## Environmental scope and remaining 4.36 work
+## Environmental scope — closed 4.36 and deferred work
 
-The author's 2026-09-23 clarification in #8 distinguishes covered, deferred
-and still-pending mechanisms. Covered/deferred entries below are not 4.36
-release blockers; remaining integration checks still are.
-According to `docs/PROJECT.md`, 4.36 already includes the trapdoor, the pit,
-the rocks, the approved traps, the ceiling crusher, and the resting-weight
-formula; what remains is to complete the planned bases and validate their
-integration before extracting Impact Physics.
+The author's 2026-09-23 clarification in #8 distinguishes covered mechanisms
+from deferred features. The 4.36 release is closed, explicitly reconfirmed on
+2026-10-05. Its trapdoor, pit, rocks, approved traps, ceiling crusher and
+resting-weight formula remain accepted. Deferred surfaces and avalanches below
+remain future backlog, not reasons to reopen 4.36 or delay closing 4.37.
 
 ### CA-436-01 — Damaging surfaces
 
@@ -1028,9 +1043,14 @@ integration before extracting Impact Physics.
 
 ## Integration and closing of 4.36
 
-- **Status:** Pending.
-- **Reference documents:** `docs/PROJECT.md` (V4.36 roadmap and "What remains
-  to close 4.36").
-- **Acceptance criteria:** validate the integration of the mechanisms in the
-  gallery, persistence, and reset; extract Impact Physics only after
-  validating its use in Caelum. Numerical criteria remain PENDING.
+- **Status:** Closed. Explicitly reconfirmed by the author on 2026-10-05.
+- **References:** `docs/PROJECT.md`, `docs/HISTORY.md` and the accepted
+  #16 / 4.36.27 siege and #17 / 4.36.28 test-export entries above.
+- **Evidence:** #16 author tests passed on 2026-09-30; the reproducible
+  three-map export and corrected launcher were accepted on 2026-10-01.
+  Existing individual physics/integration checks retain their recorded results.
+- **Historical gate:** gallery integration, persistence/reset and validation
+  before any Impact Physics extraction were original planning criteria.
+  This correction records release closure, not a new engine test or a claim
+  that a separate standalone extraction was performed.
+- **Next:** finish the remaining 4.37 details, then follow the V5 roadmap.
