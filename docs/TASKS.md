@@ -1,6 +1,21 @@
 # TASKS.md — Active tasks
 
-Documentation version: **4.37.20** — 2026-10-04.
+Documentation version: **4.37.21** — 2026-10-04.
+
+## Issue #103 - Narrative artwork and introductory page (4.37.21)
+
+- Exact approved sources, supplied title-bearing README banner and provenance
+  are committed separately from runtime changes (883ad8f2).
+- One Unicode typewriter page after new character creation, current bindings,
+  existing survival guidance, exact requested Spanish quotations and English
+  localization. First press reveals all, next begins; CA_MUS01 then MAP01/CA_MUS02.
+- Shared fitted image for intro and native quit/farewell; original confirmation,
+  cancellation and shutdown audio retained, inherited text ENDOOM suppressed.
+- No persistent field/map/progression/port-completion changes. Native direct quit
+  and quick exit remain bypasses. Test sound: all enabled, master 15%, isolated INI.
+- Static/native evidence: assets/validation_43721. Author checks:
+  CA-43721-INTRO-01, CA-43721-EXIT-01 and CA-43721-SAVE-01 in pending_test.txt.
+- Next: review linked PR and author results before closing/merging #103.
 
 ## Issue #98 - Textured training dummy model (4.37.20)
 
@@ -11,8 +26,8 @@ Documentation version: **4.37.20** — 2026-10-04.
 - Evidence: assets/validation_43720 (determinism, native views, real impacts,
   old active/completed saves and new reload). The author accepted
   CA-43720-DUMMY-ART-01, CA-43720-DUMMY-PRACTICE-01 and CA-43720-DUMMY-SAVE-01
-  on 2026-10-04 without reported qualifications; issue closure and PR #110
-  merge are authorized.
+  on 2026-10-04 without reported qualifications; issue #98 is closed and
+  PR #110 merged as 2ec2405c.
 - #96 accepted and closed; PR #109 merged 76757fd7 on 2026-10-04.
 
 ## Issue #96 - Palomo necklace and shield names (4.37.19)

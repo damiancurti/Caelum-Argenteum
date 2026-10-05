@@ -1,0 +1,17 @@
+ID: CA-43721-INTRO-01
+Origin: 4.37.21 / issue #103
+Prerequisites: Rebuild the current package; start New Character and confirm a valid allocation.
+Steps: Read the single introductory page as letters appear. Press a key once, then again. Repeat in English/Spanish and your normal display mode; review the README banner.
+Expected: Approved image and legible full page without crop/stretch; first press reveals all, next begins MAP01. Exact requested welcome/awakening, actual assigned controls and survival guidance. CA_MUS01 during the introduction, CA_MUS02 in MAP01; normal Unknown Voice/Palomo sequence.
+
+ID: CA-43721-EXIT-01
+Origin: 4.37.21 / issue #103
+Prerequisites: Current package, normal windowed/fullscreen display and sound enabled.
+Steps: Choose Quit and cancel. Repeat with F10, confirm, inspect the farewell, then press a key or click. Try your usual window-close shortcut.
+Expected: Cancel returns normally; confirmed normal menu exit shows the approved illustration, then closes with the existing sound and no Doom II ENDOOM. Native direct quit/quick exit may bypass the presentation as documented.
+
+ID: CA-43721-SAVE-01
+Origin: 4.37.21 / issue #103
+Prerequisites: Keep an untouched previous save/package for rollback; use a copied save and matching map compatibility build if required.
+Steps: Load the copied save, inspect character/inventory/quest state and current map music; save to a new slot and reload.
+Expected: No introductory replay or changed progression; normal play, UI and music remain available. No save migration or original save overwrite is required.

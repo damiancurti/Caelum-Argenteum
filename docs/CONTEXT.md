@@ -1,14 +1,12 @@
 # CONTEXT.md — Ultra-condensed summary of Caelum Argenteum
 
-Documentation version: **4.37.20** — 2026-10-04.
+Documentation version: **4.37.21** — 2026-10-04.
 
-**#98 / 4.37.20:** original textured 3D practice mannequin; unchanged actors,
-collision, quests and saves. Evidence: validation_43720. All author checks passed.
-**#96 accepted/closed, PR #109 merged:** Palomo necklace; canonical shield names.
-**#91 accepted/closed, PR #108 merged:** crafting sections and Tarot fields.
-
-**#89 accepted/closed, PR #107 merged:** owned T1 Pico, axe recipe, ×10/×100
-yield, all-tool sounds/centered feedback, 20° rest pose. Evidence: validation_43717.
+**#103 / 4.37.21:** approved banner/art; new-character single-page typewriter
+intro, actual bindings/survival, CA_MUS01; second key starts MAP01/CA_MUS02.
+Normal quit has art farewell; no Doom ENDOOM. Saves unchanged. Author tests pending.
+**#98/#96/#91/#89 accepted, closed, merged:** dummy model, necklace/shield names,
+crafting/Tarot UI, Pico and shared gathering feedback. Evidence: validation_43717-20.
 
 **Accepted 2026-10-04:** #93, #97, #99, #101, #87; all author checks passed.
 Evidence: assets/validation_*. #81 accepted/merged.

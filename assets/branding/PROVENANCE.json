@@ -40,6 +40,11 @@
     "transform": "None; exact supplied bytes."
   },
   "extraction": "Python zipfile reads the slide-1 and slide-3 image relationships and copies their PNG members byte for byte. No re-encoding, slide text, crop, stretch or redraw.",
-  "intermission_decision": "2026-10-04: after initially reserving the background, the author requested a welcome, controls/survival introduction and awakening text. Show it only after confirming a new character, with manual advance and skip; never on loading a save. Keep the existing port completion unchanged.",
-  "runtime_status": "Pending implementation and native verification."
+  "intermission_decision": "2026-10-04: final author request is one Doom-style typewriter page after a valid new character, with actual controls/survival and exact supplied welcome/awakening. First key reveals all; next begins. Play former MAP01 music CA_MUS01, then normal MAP01/CA_MUS02. Never replay on load; keep port completion unchanged.",
+  "runtime_status": "Implemented for 4.37.21; verification in assets/validation_43721/RESULTS.json. Author acceptance pending.",
+  "runtime_asset": {
+    "path": "src/graphics/caelum/narrative/intermission_exit.png",
+    "sha256": "03793f80d694e9188d1e99e7ec62b663b154975f7df11b55b4a475c66304c66d",
+    "transform": "None; exact PNG. Native uniform fit with bars and separate UI overlays."
+  }
 }
