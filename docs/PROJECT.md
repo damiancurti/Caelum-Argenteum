@@ -10,7 +10,7 @@ targets and a round plinth. Both actor classes retain their original identity,
 states, collision, health and placement. No quest, damage or save logic changes.
 Sources and provenance are retained under assets/training_dummy and the model
 generator. Evidence: assets/validation_43720. Static and isolated engine
-checks are distinct from the outstanding author acceptance in pending_test.txt.
+checks are distinct from author acceptance: all three checks passed 2026-10-04.
 The author's #96 acceptance is complete: issue closed, PR #109 merged 76757fd7.
 
 ## 4.37.19 - Palomo necklace reward and shield names (#96)

@@ -4,6 +4,13 @@ Documentation version: **4.37.20** — 2026-10-04.
 
 ## 4.37.20 - Textured training dummy model (#98)
 
+Author acceptance, 2026-10-04: all tests PASSED without reported qualifications.
+CA-43720-DUMMY-ART-01, CA-43720-DUMMY-PRACTICE-01 and CA-43720-DUMMY-SAVE-01
+originated in 4.37.20 / issue #98. The author explicitly confirmed every test
+correct and requested issue closure and PR #110 merge. The three confirmed
+entries are removed from pending_test.txt, retaining the empty tracked file.
+Runtime and release version are unchanged.
+
 Inspected the existing owned CDMYA0 sprite, then rebuilt its articulated
 wood/leather/brass mannequin, colored targets and round plinth as native
 textured geometry. The generator, editable design, provenance and original
@@ -19,7 +26,7 @@ per-face seams. Static and isolated engine evidence, including real practice
 impacts, fixed orientation, old active/completed saves and new reload, is kept
 in assets/validation_43720/RESULTS.json. The original 4.37.19 saves/package
 remain intact for rollback. These agent checks do not establish author approval.
-Author acceptance remains pending under the three CA-43720-DUMMY-* IDs.
+The three CA-43720-DUMMY-* checks were subsequently accepted as recorded above.
 
 Final verification: project validation and PK3 packaging passed; 73 assertions
 passed on the final package in isolated GZDoom 4.14.2 sessions. Eleven native

@@ -37,7 +37,7 @@ Run `python assets/generators/generate_training_dummy_model.py` from the root;
 `--runtime-root` selects an isolated src copy. Only the generated MODELDEF block
 and the two model resources are rewritten. Two runs reproduce identical bytes.
 Native views, impact/state tests and old-save evidence: assets/validation_43720.
-Author art acceptance remains outstanding; native observation is not approval.
+The author accepted art, practice and save checks on 2026-10-04; see HISTORY.
 
 ## 4.37.19 - Existing necklace assets and shield localization (#96)
 

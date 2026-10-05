@@ -3,7 +3,7 @@
   "release": "4.37.20",
   "date": "2026-10-04",
   "base_commit": "76757fd7602fa1fde6088a988fc6150b5c8d9257",
-  "status": "Implemented and technically verified; author art, ordinary tutorial and save checks remain pending.",
+  "status": "Accepted by the author on 2026-10-04; all three author checks passed without reported qualifications.",
   "static": {
     "project_validator": "PROJECT_VALIDATION.json",
     "model_checks": "STATIC.json",
@@ -200,13 +200,15 @@
     }
   },
   "author_acceptance": {
-    "status": "Pending",
+    "status": "Passed",
+    "date": "2026-10-04",
+    "origin": "4.37.20 / issue #98",
     "checks": [
       "CA-43720-DUMMY-ART-01",
       "CA-43720-DUMMY-PRACTICE-01",
       "CA-43720-DUMMY-SAVE-01"
     ],
-    "queue": "pending_test.txt"
+    "qualifications": "None reported; issue closure and PR #110 merge explicitly authorized."
   },
   "limits": "Native probes and agent visual inspection do not constitute author art approval or complete campaign acceptance. No balance, quest, map, collision or saved-state logic changed."
 }

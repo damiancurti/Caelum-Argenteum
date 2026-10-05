@@ -14,7 +14,7 @@ Collision, practice credit and saved progress retain their existing rules.
 Editable sources: [design](assets/training_dummy/DESIGN.json) and
 [generator](assets/generators/generate_training_dummy_model.py).
 Static/native evidence: [4.37.20](assets/validation_43720/RESULTS.json).
-Author visual, practice and save checks remain in [pending_test.txt](pending_test.txt).
+The author accepted all three checks on 2026-10-04; results are in HISTORY.
 
 Issue [#96](https://github.com/damiancurti/Caelum-Argenteum/issues/96) lets you
 choose and receive one existing **T1 amulet from Palomo upstairs**. Caella teaches

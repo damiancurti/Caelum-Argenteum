@@ -11,7 +11,7 @@ are unchanged. The room, route, valid-impact requirements and both tutorials
 retain their accepted behavior. Spawn/Death share the existing static frame;
 no recovery animation or narrative change is introduced. Old active/completed
 practice saves retain the same actor and progress. See ASSETS for sources and
-assets/validation_43720 for native checks; author acceptance remains pending.
+assets/validation_43720 for native checks; author acceptance passed 2026-10-04.
 
 ## 4.37.19 - Palomo gives the chosen necklace; Caella teaches it (#96)
 

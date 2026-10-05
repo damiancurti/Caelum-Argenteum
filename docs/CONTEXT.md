@@ -3,7 +3,7 @@
 Documentation version: **4.37.20** — 2026-10-04.
 
 **#98 / 4.37.20:** original textured 3D practice mannequin; unchanged actors,
-collision, quests and saves. Evidence: validation_43720. Author checks pending.
+collision, quests and saves. Evidence: validation_43720. All author checks passed.
 **#96 accepted/closed, PR #109 merged:** Palomo necklace; canonical shield names.
 **#91 accepted/closed, PR #108 merged:** crafting sections and Tarot fields.
 
