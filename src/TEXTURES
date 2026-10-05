@@ -789,7 +789,7 @@ Sprite "CSTFA0", 128, 128 { Offset 64, 120 Patch "graphics/caelum/icons/ca_staff
 Sprite "CAXEA0", 128, 128 { Offset 64, 114 Patch "graphics/caelum/icons/ca_axe.png", 0, 0 }
 Sprite "CDAGA0", 128, 128 { Offset 64, 120 Patch "graphics/caelum/icons/ca_dagger.png", 0, 0 }
 Sprite "CFLAA0", 128, 128 { Offset 64, 109 Patch "graphics/caelum/icons/ca_flail.png", 0, 0 }
-Sprite "CGAUA0", 128, 128 { Offset 64, 120 Patch "graphics/caelum/icons/ca_giant_gauntlets.png", 0, 0 }
+Sprite "CGAUA0", 1280, 1280 { XScale 10 YScale 10 Offset 640, 1200 Graphic "CA_GAUNTLET_ICON_1_MUTED", 0, 0 }
 Sprite "CGRSA0", 1254, 1254 { XScale 9.796875 YScale 9.796875 Offset 627, 1176 Graphic "CA_GSICON1_M", 0, 0 }
 Sprite "CHALA0", 128, 128 { Offset 64, 111 Patch "graphics/caelum/icons/ca_halberd.png", 0, 0 }
 Sprite "CHATA0", 128, 128 { Offset 64, 120 Patch "graphics/caelum/icons/ca_hatchet.png", 0, 0 }
@@ -5473,4 +5473,252 @@ Sprite "DP89B0", 320, 200 {
     NoTrim
     Offset 216, 160
     Patch "sprites/caelum/pickaxe/pickaxe_body.png", 112, 0 { FlipX }
+}
+
+// #106: generated first-person shield textures.
+Graphic "KSHD_MUTED_D", 1536, 1024
+{
+    Patch "graphics/caelum/first_person/shields/kite.png", 0, 0 { Translation "Desaturate", 20 }
+}
+Graphic "KSHD_MUTED", 1536, 1024
+{
+    Graphic "KSHD_MUTED_D", 0, 0 { Blend 205, 198, 188 }
+}
+Sprite "KSHDA0", 720, 1024
+{
+    NoTrim
+    XScale 4.2
+    YScale 4.2
+    Offset 681, 80
+    Graphic "KSHD_MUTED", 0, 0
+}
+Sprite "KSHDB0", 720, 1024
+{
+    NoTrim
+    XScale 4.2
+    YScale 4.2
+    Offset 685, 75
+    Graphic "KSHD_MUTED", 0, 0
+}
+Sprite "KSHDC0", 720, 1024
+{
+    NoTrim
+    XScale 4.2
+    YScale 4.2
+    Offset 715, 54
+    Graphic "KSHD_MUTED", 0, 0
+}
+Sprite "KSHDD0", 720, 1024
+{
+    NoTrim
+    XScale 4.2
+    YScale 4.2
+    Offset 698, 67
+    Graphic "KSHD_MUTED", 0, 0
+}
+Sprite "KSHDH0", 768, 1024
+{
+    NoTrim
+    XScale 4.2
+    YScale 4.2
+    Offset 449, 175
+    Graphic "KSHD_MUTED", -768, 0
+}
+Sprite "KSHDI0", 768, 1024
+{
+    NoTrim
+    XScale 2.6
+    YScale 2.6
+    Offset 332, 273
+    Graphic "KSHD_MUTED", -768, 0
+}
+Graphic "TSHD_MUTED_D", 1536, 1024
+{
+    Patch "graphics/caelum/first_person/shields/tower.png", 0, 0 { Translation "Desaturate", 20 }
+}
+Graphic "TSHD_MUTED", 1536, 1024
+{
+    Graphic "TSHD_MUTED_D", 0, 0 { Blend 205, 198, 188 }
+}
+Sprite "TSHDA0", 720, 1024
+{
+    NoTrim
+    XScale 4.2
+    YScale 4.2
+    Offset 652, 78
+    Graphic "TSHD_MUTED", 0, 0
+}
+Sprite "TSHDB0", 720, 1024
+{
+    NoTrim
+    XScale 4.2
+    YScale 4.2
+    Offset 656, 73
+    Graphic "TSHD_MUTED", 0, 0
+}
+Sprite "TSHDC0", 720, 1024
+{
+    NoTrim
+    XScale 4.2
+    YScale 4.2
+    Offset 686, 52
+    Graphic "TSHD_MUTED", 0, 0
+}
+Sprite "TSHDD0", 720, 1024
+{
+    NoTrim
+    XScale 4.2
+    YScale 4.2
+    Offset 669, 65
+    Graphic "TSHD_MUTED", 0, 0
+}
+Sprite "TSHDH0", 768, 1024
+{
+    NoTrim
+    XScale 4.2
+    YScale 4.2
+    Offset 483, 190
+    Graphic "TSHD_MUTED", -768, 0
+}
+Sprite "TSHDI0", 768, 1024
+{
+    NoTrim
+    XScale 2.6
+    YScale 2.6
+    Offset 366, 288
+    Graphic "TSHD_MUTED", -768, 0
+}
+Graphic "MSHD_MUTED_D", 1536, 1024
+{
+    Patch "graphics/caelum/first_person/shields/magic.png", 0, 0 { Translation "Desaturate", 20 }
+}
+Graphic "MSHD_MUTED", 1536, 1024
+{
+    Graphic "MSHD_MUTED_D", 0, 0 { Blend 205, 198, 188 }
+}
+Sprite "MSHDA0", 720, 1024
+{
+    NoTrim
+    XScale 4.2
+    YScale 4.2
+    Offset 687, 137
+    Graphic "MSHD_MUTED", 0, 0
+}
+Sprite "MSHDB0", 720, 1024
+{
+    NoTrim
+    XScale 4.2
+    YScale 4.2
+    Offset 691, 132
+    Graphic "MSHD_MUTED", 0, 0
+}
+Sprite "MSHDC0", 720, 1024
+{
+    NoTrim
+    XScale 4.2
+    YScale 4.2
+    Offset 721, 111
+    Graphic "MSHD_MUTED", 0, 0
+}
+Sprite "MSHDD0", 720, 1024
+{
+    NoTrim
+    XScale 4.2
+    YScale 4.2
+    Offset 704, 124
+    Graphic "MSHD_MUTED", 0, 0
+}
+Sprite "MSHDH0", 800, 1024
+{
+    NoTrim
+    XScale 4.2
+    YScale 4.2
+    Offset 488, 238
+    Graphic "MSHD_MUTED", -736, 0
+}
+Sprite "MSHDI0", 800, 1024
+{
+    NoTrim
+    XScale 2.6
+    YScale 2.6
+    Offset 371, 336
+    Graphic "MSHD_MUTED", -736, 0
+}
+Graphic "GGB1_D", 1536, 1024
+{
+    Patch "graphics/caelum/first_person/gauntlet_guards/tier1.png", 0, 0 { Translation "Desaturate", 20 }
+}
+Sprite "GGB1A0", 1536, 1024
+{
+    NoTrim
+    XScale 6.4
+    YScale 6.4
+    Offset 768, -128
+    Graphic "GGB1_D", 0, 0 { Blend 205, 198, 188 }
+}
+Graphic "GGB2_D", 1536, 1024
+{
+    Patch "graphics/caelum/first_person/gauntlet_guards/tier2.png", 0, 0 { Translation "Desaturate", 20 }
+}
+Sprite "GGB2A0", 1536, 1024
+{
+    NoTrim
+    XScale 6.4
+    YScale 6.4
+    Offset 768, -128
+    Graphic "GGB2_D", 0, 0 { Blend 205, 198, 188 }
+}
+Graphic "GGB3_D", 1536, 1024
+{
+    Patch "graphics/caelum/first_person/gauntlet_guards/tier3.png", 0, 0 { Translation "Desaturate", 20 }
+}
+Sprite "GGB3A0", 1536, 1024
+{
+    NoTrim
+    XScale 6.4
+    YScale 6.4
+    Offset 768, -128
+    Graphic "GGB3_D", 0, 0 { Blend 205, 198, 188 }
+}
+Graphic "CA_GAUNTLET_ICON_1_MUTED_D", 1280, 1280
+{
+    Patch "graphics/caelum/gauntlet_icons/tier1.png", 0, 0 { Translation "Desaturate", 20 }
+}
+Graphic "CA_GAUNTLET_ICON_1_MUTED", 1280, 1280
+{
+    Graphic "CA_GAUNTLET_ICON_1_MUTED_D", 0, 0 { Blend 205, 198, 188 }
+}
+Graphic "graphics/caelum/icons/ca_giant_gauntlets.png", 1280, 1280
+{
+    XScale 10
+    YScale 10
+    Graphic "CA_GAUNTLET_ICON_1_MUTED", 0, 0
+}
+Graphic "CA_GAUNTLET_ICON_2_MUTED_D", 1280, 1280
+{
+    Patch "graphics/caelum/gauntlet_icons/tier2.png", 0, 0 { Translation "Desaturate", 20 }
+}
+Graphic "CA_GAUNTLET_ICON_2_MUTED", 1280, 1280
+{
+    Graphic "CA_GAUNTLET_ICON_2_MUTED_D", 0, 0 { Blend 205, 198, 188 }
+}
+Graphic "graphics/caelum/icons/ca_giant_gauntlets_t2.png", 1280, 1280
+{
+    XScale 10
+    YScale 10
+    Graphic "CA_GAUNTLET_ICON_2_MUTED", 0, 0
+}
+Graphic "CA_GAUNTLET_ICON_3_MUTED_D", 1280, 1280
+{
+    Patch "graphics/caelum/gauntlet_icons/tier3.png", 0, 0 { Translation "Desaturate", 20 }
+}
+Graphic "CA_GAUNTLET_ICON_3_MUTED", 1280, 1280
+{
+    Graphic "CA_GAUNTLET_ICON_3_MUTED_D", 0, 0 { Blend 205, 198, 188 }
+}
+Graphic "graphics/caelum/icons/ca_giant_gauntlets_t3.png", 1280, 1280
+{
+    XScale 10
+    YScale 10
+    Graphic "CA_GAUNTLET_ICON_3_MUTED", 0, 0
 }

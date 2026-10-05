@@ -390,6 +390,8 @@ class CaelumFirstPersonView : Object play
     double PreviousCooldown;
     bool PreviousCastCompleted;
     String ViewMap;
+    // Caché visual reconstruida al cargar; no agrega datos al guardado.
+    transient CaelumFirstPersonShield ShieldView;
 
     static clearscope bool OwnsView(Weapon selector)
     {
@@ -489,6 +491,8 @@ class CaelumFirstPersonView : Object play
     void Hide(CaelumPlayer user)
     {
         if (user != null) CaelumFirstPersonLayers.Clear(user);
+        if (user != null) CaelumFirstPersonShield.Clear(user);
+        ShieldView = null;
         Initialized = false; AttackLength = 0;
     }
 
@@ -543,7 +547,10 @@ class CaelumFirstPersonView : Object play
             phase = attack && !blocking ? AttackSide : 0;
         if (kind == CaelumConstants.WEAPON_TYPE_PICKAXE)
             phase = attack && !blocking && user.AttackAnimationSecondary ? 1 : 0;
-        State pose = Pose(kind, Tier, phase);
+        bool gauntletGuard = blocking && kind == CaelumConstants.WEAPON_TYPE_GIANT_GAUNTLETS;
+        State pose = gauntletGuard
+            ? GetDefaultByType("CaelumGauntletGuardFrames").FindStateByString(String.Format("Tier%d", Clamp(Tier,1,3)))
+            : Pose(kind, Tier, phase);
         if (pose == null) { Hide(user); return; }
         let view = user.player.GetPSprite(LAYER);
         if (view == null) return;
@@ -589,6 +596,14 @@ class CaelumFirstPersonView : Object play
             AttackLength=0;
         }
         double lower=Max(0.0,baseView.y-WEAPONTOP);
+        if (ShieldView == null) ShieldView = new("CaelumFirstPersonShield");
+        bool shieldBlocking = ShieldView.Update(user, baseView, outgoing, attack);
+        if (shieldBlocking)
+        {
+            // El bloqueo frontal conserva sólo escudo y mano izquierda.
+            CaelumFirstPersonLayers.Clear(user);
+            return;
+        }
         // Guardado hacia abajo y a la izquierda para todas las familias.
         dx-=lower*0.85;
         if(CaelumFirstPersonLayers.Handles(kind))

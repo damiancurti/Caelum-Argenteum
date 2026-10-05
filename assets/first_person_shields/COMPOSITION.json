@@ -1,0 +1,204 @@
+{
+  "issue": 106,
+  "registration": "Native TEXTURES crops/scales the original RGBA sheet without repainting. Offsets place the grip at the accepted DSHD/LHND anchor. Both hands and all round shield PNGs are unchanged.",
+  "palette": {
+    "desaturate": 20,
+    "multiply_rgb": [
+      205,
+      198,
+      188
+    ],
+    "reference": "Existing CA_GS_MUTED_D / CA_GS_MUTED greatsword palette in TEXTURES; author requested muted colors on 2026-10-05 after accepting the silhouettes and positions."
+  },
+  "poses": {
+    "A": {
+      "source": "idle",
+      "scale": 4.2,
+      "anchor_from_origin": [
+        -30,
+        92
+      ]
+    },
+    "B": {
+      "source": "idle",
+      "scale": 4.2,
+      "anchor_from_origin": [
+        -31,
+        93
+      ]
+    },
+    "C": {
+      "source": "idle",
+      "scale": 4.2,
+      "anchor_from_origin": [
+        -38,
+        98
+      ]
+    },
+    "D": {
+      "source": "idle",
+      "scale": 4.2,
+      "anchor_from_origin": [
+        -34,
+        95
+      ]
+    },
+    "H": {
+      "source": "block",
+      "scale": 4.2,
+      "anchor_from_origin": [
+        21,
+        69
+      ]
+    },
+    "I": {
+      "source": "block",
+      "scale": 2.6,
+      "anchor_from_origin": [
+        79,
+        74
+      ]
+    }
+  },
+  "types": [
+    {
+      "type": "KITE",
+      "sprite": "KSHD",
+      "runtime": "graphics/caelum/first_person/shields/kite.png",
+      "idle": {
+        "left": 0,
+        "width": 720,
+        "height": 1024,
+        "grip": [
+          555,
+          466
+        ]
+      },
+      "block": {
+        "left": 768,
+        "width": 768,
+        "height": 1024,
+        "grip": [
+          537,
+          465
+        ]
+      }
+    },
+    {
+      "type": "TOWER",
+      "sprite": "TSHD",
+      "runtime": "graphics/caelum/first_person/shields/tower.png",
+      "idle": {
+        "left": 0,
+        "width": 720,
+        "height": 1024,
+        "grip": [
+          526,
+          464
+        ]
+      },
+      "block": {
+        "left": 768,
+        "width": 768,
+        "height": 1024,
+        "grip": [
+          571,
+          480
+        ]
+      }
+    },
+    {
+      "type": "MAGIC",
+      "sprite": "MSHD",
+      "runtime": "graphics/caelum/first_person/shields/magic.png",
+      "idle": {
+        "left": 0,
+        "width": 720,
+        "height": 1024,
+        "grip": [
+          561,
+          523
+        ]
+      },
+      "block": {
+        "left": 736,
+        "width": 800,
+        "height": 1024,
+        "grip": [
+          576,
+          528
+        ]
+      }
+    }
+  ],
+  "framing": {
+    "idle": [
+      82,
+      45
+    ],
+    "block": [
+      160,
+      100
+    ],
+    "source": "ASSETS: accepted first-person framing; DSHD/LHND registration"
+  },
+  "timing_tics": {
+    "idle_frame": 8,
+    "raise_frame": 3,
+    "lower_first_frame": 3,
+    "block_entry": 3,
+    "held_block": -1,
+    "attack_accompaniment": 8
+  },
+  "gauntlet_guards": [
+    {
+      "tier": 1,
+      "sprite": "GGB1",
+      "runtime": "graphics/caelum/first_person/gauntlet_guards/tier1.png",
+      "scale": 6.4,
+      "offset": [
+        768,
+        -128
+      ]
+    },
+    {
+      "tier": 2,
+      "sprite": "GGB2",
+      "runtime": "graphics/caelum/first_person/gauntlet_guards/tier2.png",
+      "scale": 6.4,
+      "offset": [
+        768,
+        -128
+      ]
+    },
+    {
+      "tier": 3,
+      "sprite": "GGB3",
+      "runtime": "graphics/caelum/first_person/gauntlet_guards/tier3.png",
+      "scale": 6.4,
+      "offset": [
+        768,
+        -128
+      ]
+    }
+  ],
+  "gauntlet_framing": "320x200 view; original gauntlet block origin (160,20), centered guard from y40 to the bottom; original idle/attack images unchanged.",
+  "gauntlet_icons": [
+    {
+      "tier": 1,
+      "runtime": "graphics/caelum/gauntlet_icons/tier1.png",
+      "icon": "graphics/caelum/icons/ca_giant_gauntlets.png"
+    },
+    {
+      "tier": 2,
+      "runtime": "graphics/caelum/gauntlet_icons/tier2.png",
+      "icon": "graphics/caelum/icons/ca_giant_gauntlets_t2.png"
+    },
+    {
+      "tier": 3,
+      "runtime": "graphics/caelum/gauntlet_icons/tier3.png",
+      "icon": "graphics/caelum/icons/ca_giant_gauntlets_t3.png"
+    }
+  ],
+  "gauntlet_revision": "Author 2026-10-05: wider, chunkier guard matching original attack poses; replace three-hand inventory silhouette with exactly two detached closed-fist gauntlets. Icon native logical size remains 128x128."
+}

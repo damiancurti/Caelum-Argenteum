@@ -5,6 +5,7 @@ class CaelumUnarmedWeapon : Weapon
     int PunchFrame;
     bool Punching;
     bool LeftPunch;
+    transient CaelumFirstPersonShield ShieldView;
 
     Default
     {
@@ -58,9 +59,20 @@ class CaelumUnarmedWeapon : Weapon
         if(user.player.ReadyWeapon!=self || user.health<=0 || !user.CharacterCreationComplete
             || user.CreationWizardOpen || user.EquipmentMenuOpen || user.CraftingMenuOpen
             || CaelumRestState.IsActive(user) || user.ForcedSleepTics>0)
-        {CaelumFirstPersonLayers.Clear(user);return;}
-        user.A_ClearOverlays(10,50);
+        {CaelumFirstPersonLayers.Clear(user);CaelumFirstPersonShield.Clear(user);ShieldView=null;return;}
+        user.A_ClearOverlays(10,40);
+        user.A_ClearOverlays(46,50);
         user.A_ClearOverlays(53,53);
+        if(ShieldView==null)ShieldView=new("CaelumFirstPersonShield");
+        bool outgoing=user.player.PendingWeapon!=null && user.player.PendingWeapon!=WP_NOCHANGE
+            && user.player.PendingWeapon!=self;
+        bool shieldBlocking=ShieldView.Update(user,baseView,outgoing,Punching);
+        if(shieldBlocking)
+        {
+            CaelumFirstPersonLayers.Clear(user);
+            if(Punching && ++PunchFrame>=22)Punching=false;
+            return;
+        }
         double lower=Max(0.0,baseView.y-WEAPONTOP);
         vector2 root=(baseView.x-lower*0.85,lower);
         double pulse=Punching?Sin(Clamp(PunchFrame,0,21)*180.0/22):0;
@@ -68,7 +80,10 @@ class CaelumUnarmedWeapon : Weapon
         vector2 left=(108,163),right=(212,163);
         if(LeftPunch)left+=(pulse*38,-pulse*25);
         else right+=(-pulse*38,-pulse*25);
-        CaelumFirstPersonLayers.Hand(user,51,9,left+root,(0,0),0.90,0);
+        // La mano que ya sujeta el escudo sustituye al puño izquierdo libre.
+        if(user.player.FindPSprite(CaelumFirstPersonShield.BODY_LAYER)!=null)
+            user.A_ClearOverlays(51,51);
+        else CaelumFirstPersonLayers.Hand(user,51,9,left+root,(0,0),0.90,0);
         CaelumFirstPersonLayers.Hand(user,52,10,right+root,(0,0),0.90,0);
         if(Punching && ++PunchFrame>=22)Punching=false;
     }

@@ -1,0 +1,467 @@
+{
+  "release": "4.37.22",
+  "issue": 106,
+  "date": "2026-10-05",
+  "platform": "Windows 11 / GZDoom 4.14.2",
+  "package_sha256": {
+    "shield_candidate": "a04be851926f4eff6e17561b8a64b0ee628aaa5ebc8b43b8b9b9984e417ccd2a",
+    "final_with_gauntlets": "07638ac8683f1c2c9089d137577dd2c91dee3f4010cfa60d7cf16b9a107ec4b6",
+    "old_baseline": "41be95f10a4bf1c73f33f70fb0f5fc344b4fe32ceff6ac3d332d8f653070a87a"
+  },
+  "static": "STATIC.json: generator run twice byte-identically; 51 original art/gameplay/state files match baseline 539e6bfc. Validator and clean build recorded in VALIDATION.log.",
+  "native": [
+    {
+      "log": "matrix.log",
+      "passes_in_this_log": 1381,
+      "failures": 0,
+      "summary": [
+        "CA106 MATRIX DONE checks=1381 failures=0",
+        "CA106 DONE checks=1381 failures=0"
+      ]
+    },
+    {
+      "log": "final_transitions.log",
+      "passes_in_this_log": 242,
+      "failures": 0,
+      "summary": [
+        "CA106 DONE checks=242 failures=0"
+      ]
+    },
+    {
+      "log": "16x9.log",
+      "passes_in_this_log": 74,
+      "failures": 0,
+      "summary": [
+        "CA106 DONE checks=74 failures=0"
+      ]
+    },
+    {
+      "log": "4x3.log",
+      "passes_in_this_log": 74,
+      "failures": 0,
+      "summary": [
+        "CA106 DONE checks=74 failures=0"
+      ]
+    },
+    {
+      "log": "21x9.log",
+      "passes_in_this_log": 74,
+      "failures": 0,
+      "summary": [
+        "CA106 DONE checks=74 failures=0"
+      ]
+    },
+    {
+      "log": "gauntlets.log",
+      "passes_in_this_log": 231,
+      "failures": 0,
+      "summary": [
+        "CA106 DONE checks=231 failures=0"
+      ]
+    },
+    {
+      "log": "gauntlet_reload.log",
+      "passes_in_this_log": 7,
+      "failures": 0,
+      "summary": [
+        "CA106 DONE checks=235 failures=0"
+      ]
+    },
+    {
+      "log": "input.log",
+      "passes_in_this_log": 41,
+      "failures": 0,
+      "summary": [
+        "CA106 DONE checks=41 failures=0"
+      ]
+    },
+    {
+      "log": "guard_4x3.log",
+      "passes_in_this_log": 35,
+      "failures": 0,
+      "summary": [
+        "CA106 DONE checks=35 failures=0"
+      ]
+    },
+    {
+      "log": "guard_21x9.log",
+      "passes_in_this_log": 35,
+      "failures": 0,
+      "summary": [
+        "CA106 DONE checks=35 failures=0"
+      ]
+    },
+    {
+      "log": "oldsave0.log",
+      "passes_in_this_log": 3,
+      "failures": 0,
+      "summary": []
+    },
+    {
+      "log": "final_save0.log",
+      "passes_in_this_log": 11,
+      "failures": 0,
+      "summary": [
+        "CA106 DONE checks=14 failures=0"
+      ]
+    },
+    {
+      "log": "final_resave0.log",
+      "passes_in_this_log": 11,
+      "failures": 0,
+      "summary": [
+        "CA106 DONE checks=20 failures=0"
+      ]
+    },
+    {
+      "log": "oldsave1.log",
+      "passes_in_this_log": 3,
+      "failures": 0,
+      "summary": []
+    },
+    {
+      "log": "final_save1.log",
+      "passes_in_this_log": 11,
+      "failures": 0,
+      "summary": [
+        "CA106 DONE checks=14 failures=0"
+      ]
+    },
+    {
+      "log": "final_resave1.log",
+      "passes_in_this_log": 11,
+      "failures": 0,
+      "summary": [
+        "CA106 DONE checks=20 failures=0"
+      ]
+    },
+    {
+      "log": "oldsave2.log",
+      "passes_in_this_log": 3,
+      "failures": 0,
+      "summary": []
+    },
+    {
+      "log": "final_save2.log",
+      "passes_in_this_log": 11,
+      "failures": 0,
+      "summary": [
+        "CA106 DONE checks=14 failures=0"
+      ]
+    },
+    {
+      "log": "final_resave2.log",
+      "passes_in_this_log": 11,
+      "failures": 0,
+      "summary": [
+        "CA106 DONE checks=20 failures=0"
+      ]
+    },
+    {
+      "log": "oldsave3.log",
+      "passes_in_this_log": 3,
+      "failures": 0,
+      "summary": []
+    },
+    {
+      "log": "final_save3.log",
+      "passes_in_this_log": 11,
+      "failures": 0,
+      "summary": [
+        "CA106 DONE checks=14 failures=0"
+      ]
+    },
+    {
+      "log": "final_resave3.log",
+      "passes_in_this_log": 11,
+      "failures": 0,
+      "summary": [
+        "CA106 DONE checks=20 failures=0"
+      ]
+    }
+  ],
+  "coverage": [
+    "All four shield types, three tiers and five sizes: 60 cases, rest/block/continued hold/return.",
+    "All 21 weapon kinds: native compatibility and gauntlet independence; actual type changes while blocking, attacks, breakage, unequip, menus, compatible unarmed block/release.",
+    "Real +zoom input toggles on/off, sustained hold, +attack native animation clock, +forward movement, boxed suppression and restoration.",
+    "Three gauntlet tiers and five sizes: real +zoom guard/hold/release, broken-source suppression; save/load held T3 and release.",
+    "Exact 960x720, 1280x720 and 1680x720 native screenshots; no crop/repaint applied to captures.",
+    "Four old baseline shield saves (T2/M, each type), final build reload, re-save and reload: held pose and release, equipped identity/type/tier/size/durability/count preserved."
+  ],
+  "qualifications": [
+    "Isolated test fixture creates native items and invokes native equipment actions. It bypasses character size restrictions to cover every sprite combination; the shield matrix refills Air. These are presentation tests, not balance changes or a normal campaign playthrough.",
+    "Source-level protection confirms unchanged gameplay definitions. Air naturally decreases during held-block save tests; it is not expected byte-identical after advancing time.",
+    "Save snapshots cover the equipped shield and reported inventory count, not every unrelated campaign quest. Old persistent state tables are byte-identical; added presentation caches are transient.",
+    "Shield matrix/aspect captures use the shield_candidate package; those assets, native registration and shield controller bytes are unchanged in the final package. Final transitions, input, gauntlet and old-save checks use final_with_gauntlets.",
+    "Saved QA counters are cumulative. passes_in_this_log counts only assertions actually executed in that process.",
+    "Earlier local fixture mistakes (initial weapon raise wait, integer TEXTURES offsets, serialized cfg waits and save path handling) were corrected before passing runs. Intermediate logs remain in ignored build/issue106.",
+    "No engine binary, IWAD, saves or QA fixture is shipped. Capture backgrounds come from the installed development IWAD and are test evidence, not runtime art.",
+    "Initial narrow-guard screenshots and source hashes are historical. Revised guard/icon captures and package hash are in author_revision; gameplay and view state logic were unchanged by this art correction."
+  ],
+  "author_acceptance": {
+    "CA-43722-SHIELD-ART-01": "Passed 2026-10-05: explicit approval of sprites, positions and final muted palette.",
+    "CA-43722-SHIELD-PLAY-01": "Passed 2026-10-05: author explicitly confirms all tests passed and authorizes issue closure/PR merge, with no reported qualifications.",
+    "CA-43722-GAUNTLET-ART-01": "Passed 2026-10-05: explicit approval of revised thicker guards and corrected two-glove inventory icons, T1-T3; manual gameplay is separate."
+  },
+  "captures": [
+    {
+      "file": "4x3_buckler_idle.png",
+      "sha256": "65c9f7aefe1ce6d1874bd44f54c364342555aa9c7c92f5620378a4aad4928ff2"
+    },
+    {
+      "file": "4x3_buckler_block.png",
+      "sha256": "44d882c6913dbc32000c703ce8ece34673d7ae0b0c36a172b2fe9202a2e02c9d"
+    },
+    {
+      "file": "4x3_kite_idle.png",
+      "sha256": "9c41ade61c1e4a28d93d22ffee2a84c8c86539a52803b2c88dddc77dfac405c7"
+    },
+    {
+      "file": "4x3_kite_block.png",
+      "sha256": "9d6bb477f7197df7afc38b1832a2f705e63b42a420d948fbdf7d538f589f086a"
+    },
+    {
+      "file": "4x3_tower_idle.png",
+      "sha256": "a5994ab26ab74debbc3afec2c84991aca64ef83329fe3cf2f88ded01d5295bc9"
+    },
+    {
+      "file": "4x3_tower_block.png",
+      "sha256": "6140b544b8d51e0e5774a7b2dd79d285de13fd890ee5114aa39a9b28428acf8c"
+    },
+    {
+      "file": "4x3_magic_idle.png",
+      "sha256": "d11e16d0af5dfb98c7f33518c547177b4e05cb86d37e82d409efd58f388fef2f"
+    },
+    {
+      "file": "4x3_magic_block.png",
+      "sha256": "cf62ef73fea6ecf8506de161bb602534f20d691e45434e371e4380d35707d209"
+    },
+    {
+      "file": "4x3_hud.png",
+      "sha256": "f6fafdb26a9247111846d3165a63771c8b8c242322e693c701b0100117ea9f86"
+    },
+    {
+      "file": "16x9_buckler_idle.png",
+      "sha256": "2b0854902620c51e18de255a49ebe9a209f225b2eff7498b42602b50aa03e103"
+    },
+    {
+      "file": "16x9_buckler_block.png",
+      "sha256": "4cd534a28ffbfd27f5fa19300fd802ae44402cceb9b9c43dd7b0d845904b0dba"
+    },
+    {
+      "file": "16x9_kite_idle.png",
+      "sha256": "1b3253b5cc343682ba20aac8f8c62b08a7dbed81f20f92ae8dcc7118a88a4e5f"
+    },
+    {
+      "file": "16x9_kite_block.png",
+      "sha256": "c0bcbc5d9ab298f4ef8b4be7cc081119f4e2abdbbf38c5521cc82cf46c935c80"
+    },
+    {
+      "file": "16x9_tower_idle.png",
+      "sha256": "353e94c166c3aba41ff7a9df3364bf65a9b8c3c0e9085bf15d03a8ff2a0a23b2"
+    },
+    {
+      "file": "16x9_tower_block.png",
+      "sha256": "714692596610ac369ee0b0e558d841f9f65d3a345bcf084c6421d931790a8b83"
+    },
+    {
+      "file": "16x9_magic_idle.png",
+      "sha256": "dfc2c48c61795b32d76fec0e62de20026fbfc80e75bcf38a65888f98499684ca"
+    },
+    {
+      "file": "16x9_magic_block.png",
+      "sha256": "74f1ef05a8a66a1e6c7ba76adb9ea69a60ee1de402cefdc524b975d2a6fdebc5"
+    },
+    {
+      "file": "16x9_hud.png",
+      "sha256": "ab21a075a0af960ccdba5fa98a66d546ba3b2ca7260ce8e74f11c82527d1affb"
+    },
+    {
+      "file": "21x9_buckler_idle.png",
+      "sha256": "9de7b2934245bee0792b0a01e2f7821cabd48038968c051ccc5b9c3b4bb9f7e7"
+    },
+    {
+      "file": "21x9_buckler_block.png",
+      "sha256": "8845f9a4e206f1c0864f0c8cfb61282cb6f1cf9fab7511b7073f4f536d861af8"
+    },
+    {
+      "file": "21x9_kite_idle.png",
+      "sha256": "c5a83fd35b143606f7d6b3b2ed8743e941b23ab31ef73d9db24de37e8ae4af01"
+    },
+    {
+      "file": "21x9_kite_block.png",
+      "sha256": "89693da04de40ebcdbb83a5acf8adbdedeb49e504b08e9f9b6e1f21863a710ac"
+    },
+    {
+      "file": "21x9_tower_idle.png",
+      "sha256": "1f5bf30d3510ad010cc92e29050e9633812764b74c3c72ce99d465f30bee4c30"
+    },
+    {
+      "file": "21x9_tower_block.png",
+      "sha256": "ca411c701d4fe225526ff5c4dad905e95636c7442da51ab96162299e1b31b30b"
+    },
+    {
+      "file": "21x9_magic_idle.png",
+      "sha256": "900f991cad35237d142e1d9e54b9889c432c412fffdf3c5ef0a8ae2beaf679de"
+    },
+    {
+      "file": "21x9_magic_block.png",
+      "sha256": "83ad8a5fcdc8842eb4560e1e232c9ddf14fd9af8bffef286d1a6b754e63cefd6"
+    },
+    {
+      "file": "21x9_hud.png",
+      "sha256": "d51d290d32d15cfc16eb58ae834f3a8a6927b43cd7c46a74b0f0fd1316cea3c8"
+    },
+    {
+      "file": "gauntlet_t1_idle.png",
+      "sha256": "0238493f67a2a7a756c766aa0d45cd1df794184b93d73b7289328dd3816ffef4"
+    },
+    {
+      "file": "gauntlet_t1_block.png",
+      "sha256": "0c95567720b0ec14b9537108e87578e54315d1760b89e1243c0f905206d4d4ad"
+    },
+    {
+      "file": "4x3_gauntlet_t1.png",
+      "sha256": "b3939af8e5ad8a06130047d6c3267d48fa6e7517c74ac3212a9ee0f7e64138a8"
+    },
+    {
+      "file": "21x9_gauntlet_t1.png",
+      "sha256": "c742782fa7bfba09813f491d2432d588c2b854874b13757354ea629a520bf3f7"
+    },
+    {
+      "file": "gauntlet_t2_idle.png",
+      "sha256": "b162483aed829a6b34fac1f3d7abcdb59e024a1e1fecbb8bc6a1f7f9b73451ae"
+    },
+    {
+      "file": "gauntlet_t2_block.png",
+      "sha256": "f38832af4fc0ff386d76351150be59da957a05619b0cd10f0714fa5ffe7a424c"
+    },
+    {
+      "file": "4x3_gauntlet_t2.png",
+      "sha256": "91447b6fb77c6bc2797f15a6561de37940ab355386eabc902f9e5c919fa847f6"
+    },
+    {
+      "file": "21x9_gauntlet_t2.png",
+      "sha256": "619c470f49992804fb567f5dff4cb3d638093392d2133d4a1ed752372e7ffe92"
+    },
+    {
+      "file": "gauntlet_t3_idle.png",
+      "sha256": "e27e45c4d568b98bc8b600f24deccee30016bcf823fc0595b8c3228b7d532634"
+    },
+    {
+      "file": "gauntlet_t3_block.png",
+      "sha256": "ff42344c49e8d2d048dc8e960f1738a10d8714e22376cdc55160ce0726aa3bae"
+    },
+    {
+      "file": "4x3_gauntlet_t3.png",
+      "sha256": "0f9f8e79ca7da52b0bf90322ee4f550cabde77760fae5a3b5c6b24f0071e3e4b"
+    },
+    {
+      "file": "21x9_gauntlet_t3.png",
+      "sha256": "6d6331ab4ef8a4a115a21cd5a14e9306ec1b2b835f36277da467ce7ae5c5a0d7"
+    }
+  ],
+  "final_build": {
+    "path": "build/caelum_argenteum_dev.pk3",
+    "sha256": "3bb6656b567799b22386539896e372172609afbc9e8a737f8fc08fe8522e4dab",
+    "files": 6181,
+    "all_entries_byte_identical_to_tested_revised_package": true,
+    "validator_errors": []
+  },
+  "author_revision": {
+    "request": "2026-10-05: wider guard matching attacks; inventory has only two gloves.",
+    "package_sha256": "902dfd31a42bcee19a1c9be7d333c1f469c5c2b8c33ef3e8a3a093c02d6361a1",
+    "native": [
+      {
+        "log": "revised_16x9.log",
+        "passes_in_this_log": 32,
+        "failures": 0
+      },
+      {
+        "log": "revised_4x3.log",
+        "passes_in_this_log": 32,
+        "failures": 0
+      },
+      {
+        "log": "revised_21x9.log",
+        "passes_in_this_log": 32,
+        "failures": 0
+      },
+      {
+        "log": "revised_reload.log",
+        "passes_in_this_log": 7,
+        "failures": 0
+      }
+    ],
+    "captures": [
+      {
+        "file": "revised_16x9_t1_block.png",
+        "sha256": "f2653386b9f1ab40ac56b9d1b3984177b0dddaaa091b7c8834f7691e8d9f9680"
+      },
+      {
+        "file": "revised_16x9_t1_idle.png",
+        "sha256": "f367399342e596429fbfe9ec593fc95d77ae78621093ebe9e1b23e5d138bb655"
+      },
+      {
+        "file": "revised_16x9_t1_inventory.png",
+        "sha256": "e676c01578ed3b36fa6ad4ee99801c4143ecc112390405eb660f3c455ba58e12"
+      },
+      {
+        "file": "revised_16x9_t2_block.png",
+        "sha256": "559b5e8f719a0fc39f43067dd0c1fbd4d44538b4a983ae7ae603adf0bf189805"
+      },
+      {
+        "file": "revised_16x9_t2_idle.png",
+        "sha256": "17875b62aa3cd9579fc18c3e542e55f99c1a728a07588e1b7c8957ce426e7eee"
+      },
+      {
+        "file": "revised_16x9_t2_inventory.png",
+        "sha256": "e974dbf08d43a88b71a433ae56f634cd1655522fb3c0ac7c194ce490bb156238"
+      },
+      {
+        "file": "revised_16x9_t3_block.png",
+        "sha256": "d20aa83891b4f9a56dd84831e49efa0c8e9b21fba7223b3f77e87dd62cefce69"
+      },
+      {
+        "file": "revised_16x9_t3_idle.png",
+        "sha256": "f6a93763504718df3e88e4d3bb3d19ea07d6ee05b444548699fcd985a9746fca"
+      },
+      {
+        "file": "revised_16x9_t3_inventory.png",
+        "sha256": "ff327fc4a71145bc7f54016b6e27862bff54d8efdd114d62c3afbd406803ee0e"
+      },
+      {
+        "file": "revised_21x9_t3_block.png",
+        "sha256": "c10950ea1cf8a53934feac7f2131a0544f6b9c51eba22b9914403b8346832c6b"
+      },
+      {
+        "file": "revised_21x9_t3_idle.png",
+        "sha256": "b107616b08d116c083c180f4fb0282881e75794ffa2f9a66994c7ca6f5eb8c86"
+      },
+      {
+        "file": "revised_21x9_t3_inventory.png",
+        "sha256": "1f0ebb57ee75d2fbd78fd21c1b18608d734936ff7a1c88c5df1052c55c06d331"
+      },
+      {
+        "file": "revised_4x3_t3_block.png",
+        "sha256": "aa0b04dcc93c0da87afd3db4f00f85d04347238adc7dcf51c814b9dfb0a3de24"
+      },
+      {
+        "file": "revised_4x3_t3_idle.png",
+        "sha256": "b3117264055de2cba1087f6c2639efe3fb105914f6623c6a85138443227e3702"
+      },
+      {
+        "file": "revised_4x3_t3_inventory.png",
+        "sha256": "3084faf6075f39c0f6142b40a99a07cde18ef8d945a24b97f1e1cbbe7a7397c9"
+      }
+    ]
+  },
+  "previous_build": {
+    "path": "build/caelum_argenteum_dev.pk3",
+    "sha256": "206a9946a4ad7e668386faf6cd1a045577b754abd21e43e73dd5f699807c5b6a",
+    "files": 6178,
+    "all_entries_byte_identical_to_tested_final_package": true,
+    "validator_errors": [],
+    "git_diff_check": "Passed"
+  }
+}

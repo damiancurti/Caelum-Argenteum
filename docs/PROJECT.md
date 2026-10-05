@@ -1,6 +1,25 @@
 # Caelum Argenteum — Project, status and roadmap
 
-Documentation version: **4.37.21** — 2026-10-04.
+Documentation version: **4.37.22** — 2026-10-05.
+
+## 4.37.22 - Distinct playable first-person shields (#106)
+
+Kite, tower and magic shields have original inward-facing idle/block artwork
+in the shared native view; the round shield keeps its accepted PNGs and framing.
+The actual equipped inventory item selects the set across T1-T3 and XS-XL.
+Compatible physical/magical weapons and unarmed equipment share the accessory;
+existing disallowed combinations and giant-gauntlet blocking stay distinct.
+At the author's request, T1-T3 giant gauntlets also receive a closed boxer-guard
+sprite, preserving their existing blocking rules.
+No gameplay/save schema or map changes. Sources: assets/first_person_shields;
+test results: assets/validation_43722/RESULTS.json.
+
+The author accepted the designs and positions on 2026-10-05, requesting more
+muted colors. The three new sheets now use the existing greatsword palette.
+The author then explicitly accepted the final palette (CA-43722-SHIELD-ART-01).
+The author later confirmed all tests passed on 2026-10-05 and authorized
+merge/closure. CA-43722-SHIELD-PLAY-01 and the revised gauntlet visual check
+are complete; HISTORY records their explicit acceptance. Earlier #103/#98/#96 acceptance remains unchanged.
 
 ## 4.37.21 - Approved narrative artwork and introduction (#103)
 

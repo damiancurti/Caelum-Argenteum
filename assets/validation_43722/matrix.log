@@ -1,0 +1,1627 @@
+CA106 TRACE tick=1
+CA106 TRACE tick=2
+CA106 TRACE tick=3
+CA106 TRACE tick=4
+CA106 PASS native equip CaelumWeaponPickup
+CA106 PASS native equip CaelumShieldPickup
+CA106 PASS matrix 0 rest body/hand visibility
+CA106 PASS matrix 0 rest actual equipped type
+CA106 PASS matrix 0 rest synchronized single left grip
+CA106 PASS matrix 0 rest grip origin registration
+CA106 PASS matrix 0 rest weapon layer restored
+CA106 POSE matrix 0 rest type=0 tier=1 size=0 body=(82.000,45.000) frame=0 tics=2 shield_id=2 durability=40 air=1021.78218
+CA106 PASS matrix 0 block body/hand visibility
+CA106 PASS matrix 0 block actual equipped type
+CA106 PASS matrix 0 block synchronized single left grip
+CA106 PASS matrix 0 block grip origin registration
+CA106 PASS matrix 0 block indefinitely held I frame
+CA106 PASS matrix 0 block right weapon/hand layers hidden
+CA106 POSE matrix 0 block type=0 tier=1 size=0 body=(160.000,100.000) frame=8 tics=-1 shield_id=2 durability=40 air=1021.78218
+CA106 PASS matrix 0 held body/hand visibility
+CA106 PASS matrix 0 held actual equipped type
+CA106 PASS matrix 0 held synchronized single left grip
+CA106 PASS matrix 0 held grip origin registration
+CA106 PASS matrix 0 held indefinitely held I frame
+CA106 PASS matrix 0 held right weapon/hand layers hidden
+CA106 POSE matrix 0 held type=0 tier=1 size=0 body=(160.000,100.000) frame=8 tics=-1 shield_id=2 durability=40 air=1021.78218
+CA106 PASS matrix 0 return body/hand visibility
+CA106 PASS matrix 0 return actual equipped type
+CA106 PASS matrix 0 return synchronized single left grip
+CA106 PASS matrix 0 return grip origin registration
+CA106 PASS matrix 0 return weapon layer restored
+CA106 POSE matrix 0 return type=0 tier=1 size=0 body=(82.000,45.000) frame=0 tics=5 shield_id=2 durability=40 air=1021.78218
+CA106 PASS native equip CaelumShieldPickup
+CA106 PASS matrix 1 rest body/hand visibility
+CA106 PASS matrix 1 rest actual equipped type
+CA106 PASS matrix 1 rest synchronized single left grip
+CA106 PASS matrix 1 rest grip origin registration
+CA106 PASS matrix 1 rest weapon layer restored
+CA106 POSE matrix 1 rest type=0 tier=1 size=1 body=(82.000,45.000) frame=1 tics=4 shield_id=3 durability=60 air=1021.78218
+CA106 PASS matrix 1 block body/hand visibility
+CA106 PASS matrix 1 block actual equipped type
+CA106 PASS matrix 1 block synchronized single left grip
+CA106 PASS matrix 1 block grip origin registration
+CA106 PASS matrix 1 block indefinitely held I frame
+CA106 PASS matrix 1 block right weapon/hand layers hidden
+CA106 POSE matrix 1 block type=0 tier=1 size=1 body=(160.000,100.000) frame=8 tics=-1 shield_id=3 durability=60 air=1021.78218
+CA106 PASS matrix 1 held body/hand visibility
+CA106 PASS matrix 1 held actual equipped type
+CA106 PASS matrix 1 held synchronized single left grip
+CA106 PASS matrix 1 held grip origin registration
+CA106 PASS matrix 1 held indefinitely held I frame
+CA106 PASS matrix 1 held right weapon/hand layers hidden
+CA106 POSE matrix 1 held type=0 tier=1 size=1 body=(160.000,100.000) frame=8 tics=-1 shield_id=3 durability=60 air=1021.78218
+CA106 PASS matrix 1 return body/hand visibility
+CA106 PASS matrix 1 return actual equipped type
+CA106 PASS matrix 1 return synchronized single left grip
+CA106 PASS matrix 1 return grip origin registration
+CA106 PASS matrix 1 return weapon layer restored
+CA106 POSE matrix 1 return type=0 tier=1 size=1 body=(82.000,45.000) frame=0 tics=5 shield_id=3 durability=60 air=1021.78218
+CA106 PASS native equip CaelumShieldPickup
+CA106 PASS matrix 2 rest body/hand visibility
+CA106 PASS matrix 2 rest actual equipped type
+CA106 PASS matrix 2 rest synchronized single left grip
+CA106 PASS matrix 2 rest grip origin registration
+CA106 PASS matrix 2 rest weapon layer restored
+CA106 POSE matrix 2 rest type=0 tier=1 size=2 body=(82.000,45.000) frame=1 tics=4 shield_id=4 durability=80 air=1021.78218
+CA106 PASS matrix 2 block body/hand visibility
+CA106 PASS matrix 2 block actual equipped type
+CA106 PASS matrix 2 block synchronized single left grip
+CA106 PASS matrix 2 block grip origin registration
+CA106 PASS matrix 2 block indefinitely held I frame
+CA106 PASS matrix 2 block right weapon/hand layers hidden
+CA106 POSE matrix 2 block type=0 tier=1 size=2 body=(160.000,100.000) frame=8 tics=-1 shield_id=4 durability=80 air=1021.78218
+CA106 PASS matrix 2 held body/hand visibility
+CA106 PASS matrix 2 held actual equipped type
+CA106 PASS matrix 2 held synchronized single left grip
+CA106 PASS matrix 2 held grip origin registration
+CA106 PASS matrix 2 held indefinitely held I frame
+CA106 PASS matrix 2 held right weapon/hand layers hidden
+CA106 POSE matrix 2 held type=0 tier=1 size=2 body=(160.000,100.000) frame=8 tics=-1 shield_id=4 durability=80 air=1021.78218
+CA106 PASS matrix 2 return body/hand visibility
+CA106 PASS matrix 2 return actual equipped type
+CA106 PASS matrix 2 return synchronized single left grip
+CA106 PASS matrix 2 return grip origin registration
+CA106 PASS matrix 2 return weapon layer restored
+CA106 POSE matrix 2 return type=0 tier=1 size=2 body=(82.000,45.000) frame=0 tics=5 shield_id=4 durability=80 air=1021.78218
+CA106 PASS native equip CaelumShieldPickup
+CA106 PASS matrix 3 rest body/hand visibility
+CA106 PASS matrix 3 rest actual equipped type
+CA106 PASS matrix 3 rest synchronized single left grip
+CA106 PASS matrix 3 rest grip origin registration
+CA106 PASS matrix 3 rest weapon layer restored
+CA106 POSE matrix 3 rest type=0 tier=1 size=3 body=(82.000,45.000) frame=1 tics=4 shield_id=5 durability=100 air=1021.78218
+CA106 PASS matrix 3 block body/hand visibility
+CA106 PASS matrix 3 block actual equipped type
+CA106 PASS matrix 3 block synchronized single left grip
+CA106 PASS matrix 3 block grip origin registration
+CA106 PASS matrix 3 block indefinitely held I frame
+CA106 PASS matrix 3 block right weapon/hand layers hidden
+CA106 POSE matrix 3 block type=0 tier=1 size=3 body=(160.000,100.000) frame=8 tics=-1 shield_id=5 durability=100 air=1021.78218
+CA106 PASS matrix 3 held body/hand visibility
+CA106 PASS matrix 3 held actual equipped type
+CA106 PASS matrix 3 held synchronized single left grip
+CA106 PASS matrix 3 held grip origin registration
+CA106 PASS matrix 3 held indefinitely held I frame
+CA106 PASS matrix 3 held right weapon/hand layers hidden
+CA106 POSE matrix 3 held type=0 tier=1 size=3 body=(160.000,100.000) frame=8 tics=-1 shield_id=5 durability=100 air=1021.78218
+CA106 PASS matrix 3 return body/hand visibility
+CA106 PASS matrix 3 return actual equipped type
+CA106 PASS matrix 3 return synchronized single left grip
+CA106 PASS matrix 3 return grip origin registration
+CA106 PASS matrix 3 return weapon layer restored
+CA106 POSE matrix 3 return type=0 tier=1 size=3 body=(82.000,45.000) frame=0 tics=5 shield_id=5 durability=100 air=1021.78218
+CA106 PASS native equip CaelumShieldPickup
+CA106 PASS matrix 4 rest body/hand visibility
+CA106 PASS matrix 4 rest actual equipped type
+CA106 PASS matrix 4 rest synchronized single left grip
+CA106 PASS matrix 4 rest grip origin registration
+CA106 PASS matrix 4 rest weapon layer restored
+CA106 POSE matrix 4 rest type=0 tier=1 size=4 body=(82.000,45.000) frame=1 tics=4 shield_id=6 durability=120 air=1021.78218
+CA106 PASS matrix 4 block body/hand visibility
+CA106 PASS matrix 4 block actual equipped type
+CA106 PASS matrix 4 block synchronized single left grip
+CA106 PASS matrix 4 block grip origin registration
+CA106 PASS matrix 4 block indefinitely held I frame
+CA106 PASS matrix 4 block right weapon/hand layers hidden
+CA106 POSE matrix 4 block type=0 tier=1 size=4 body=(160.000,100.000) frame=8 tics=-1 shield_id=6 durability=120 air=1021.78218
+CA106 PASS matrix 4 held body/hand visibility
+CA106 PASS matrix 4 held actual equipped type
+CA106 PASS matrix 4 held synchronized single left grip
+CA106 PASS matrix 4 held grip origin registration
+CA106 PASS matrix 4 held indefinitely held I frame
+CA106 PASS matrix 4 held right weapon/hand layers hidden
+CA106 POSE matrix 4 held type=0 tier=1 size=4 body=(160.000,100.000) frame=8 tics=-1 shield_id=6 durability=120 air=1021.78218
+CA106 PASS matrix 4 return body/hand visibility
+CA106 PASS matrix 4 return actual equipped type
+CA106 PASS matrix 4 return synchronized single left grip
+CA106 PASS matrix 4 return grip origin registration
+CA106 PASS matrix 4 return weapon layer restored
+CA106 POSE matrix 4 return type=0 tier=1 size=4 body=(82.000,45.000) frame=0 tics=5 shield_id=6 durability=120 air=1021.78218
+CA106 PASS native equip CaelumShieldPickup
+CA106 PASS matrix 5 rest body/hand visibility
+CA106 PASS matrix 5 rest actual equipped type
+CA106 PASS matrix 5 rest synchronized single left grip
+CA106 PASS matrix 5 rest grip origin registration
+CA106 PASS matrix 5 rest weapon layer restored
+CA106 POSE matrix 5 rest type=0 tier=2 size=0 body=(82.000,45.000) frame=1 tics=4 shield_id=7 durability=120 air=1021.78218
+CA106 PASS matrix 5 block body/hand visibility
+CA106 PASS matrix 5 block actual equipped type
+CA106 PASS matrix 5 block synchronized single left grip
+CA106 PASS matrix 5 block grip origin registration
+CA106 PASS matrix 5 block indefinitely held I frame
+CA106 PASS matrix 5 block right weapon/hand layers hidden
+CA106 POSE matrix 5 block type=0 tier=2 size=0 body=(160.000,100.000) frame=8 tics=-1 shield_id=7 durability=120 air=1021.78218
+CA106 PASS matrix 5 held body/hand visibility
+CA106 PASS matrix 5 held actual equipped type
+CA106 PASS matrix 5 held synchronized single left grip
+CA106 PASS matrix 5 held grip origin registration
+CA106 PASS matrix 5 held indefinitely held I frame
+CA106 PASS matrix 5 held right weapon/hand layers hidden
+CA106 POSE matrix 5 held type=0 tier=2 size=0 body=(160.000,100.000) frame=8 tics=-1 shield_id=7 durability=120 air=1021.78218
+CA106 PASS matrix 5 return body/hand visibility
+CA106 PASS matrix 5 return actual equipped type
+CA106 PASS matrix 5 return synchronized single left grip
+CA106 PASS matrix 5 return grip origin registration
+CA106 PASS matrix 5 return weapon layer restored
+CA106 POSE matrix 5 return type=0 tier=2 size=0 body=(82.000,45.000) frame=0 tics=5 shield_id=7 durability=120 air=1021.78218
+CA106 PASS native equip CaelumShieldPickup
+CA106 PASS matrix 6 rest body/hand visibility
+CA106 PASS matrix 6 rest actual equipped type
+CA106 PASS matrix 6 rest synchronized single left grip
+CA106 PASS matrix 6 rest grip origin registration
+CA106 PASS matrix 6 rest weapon layer restored
+CA106 POSE matrix 6 rest type=0 tier=2 size=1 body=(82.000,45.000) frame=1 tics=4 shield_id=8 durability=180 air=1021.78218
+CA106 PASS matrix 6 block body/hand visibility
+CA106 PASS matrix 6 block actual equipped type
+CA106 PASS matrix 6 block synchronized single left grip
+CA106 PASS matrix 6 block grip origin registration
+CA106 PASS matrix 6 block indefinitely held I frame
+CA106 PASS matrix 6 block right weapon/hand layers hidden
+CA106 POSE matrix 6 block type=0 tier=2 size=1 body=(160.000,100.000) frame=8 tics=-1 shield_id=8 durability=180 air=1021.78218
+CA106 PASS matrix 6 held body/hand visibility
+CA106 PASS matrix 6 held actual equipped type
+CA106 PASS matrix 6 held synchronized single left grip
+CA106 PASS matrix 6 held grip origin registration
+CA106 PASS matrix 6 held indefinitely held I frame
+CA106 PASS matrix 6 held right weapon/hand layers hidden
+CA106 POSE matrix 6 held type=0 tier=2 size=1 body=(160.000,100.000) frame=8 tics=-1 shield_id=8 durability=180 air=1021.78218
+CA106 PASS matrix 6 return body/hand visibility
+CA106 PASS matrix 6 return actual equipped type
+CA106 PASS matrix 6 return synchronized single left grip
+CA106 PASS matrix 6 return grip origin registration
+CA106 PASS matrix 6 return weapon layer restored
+CA106 POSE matrix 6 return type=0 tier=2 size=1 body=(82.000,45.000) frame=0 tics=5 shield_id=8 durability=180 air=1021.78218
+CA106 PASS native equip CaelumShieldPickup
+CA106 PASS matrix 7 rest body/hand visibility
+CA106 PASS matrix 7 rest actual equipped type
+CA106 PASS matrix 7 rest synchronized single left grip
+CA106 PASS matrix 7 rest grip origin registration
+CA106 PASS matrix 7 rest weapon layer restored
+CA106 POSE matrix 7 rest type=0 tier=2 size=2 body=(82.000,45.000) frame=1 tics=4 shield_id=9 durability=240 air=1021.78218
+CA106 PASS matrix 7 block body/hand visibility
+CA106 PASS matrix 7 block actual equipped type
+CA106 PASS matrix 7 block synchronized single left grip
+CA106 PASS matrix 7 block grip origin registration
+CA106 PASS matrix 7 block indefinitely held I frame
+CA106 PASS matrix 7 block right weapon/hand layers hidden
+CA106 POSE matrix 7 block type=0 tier=2 size=2 body=(160.000,100.000) frame=8 tics=-1 shield_id=9 durability=240 air=1021.78218
+CA106 PASS matrix 7 held body/hand visibility
+CA106 PASS matrix 7 held actual equipped type
+CA106 PASS matrix 7 held synchronized single left grip
+CA106 PASS matrix 7 held grip origin registration
+CA106 PASS matrix 7 held indefinitely held I frame
+CA106 PASS matrix 7 held right weapon/hand layers hidden
+CA106 POSE matrix 7 held type=0 tier=2 size=2 body=(160.000,100.000) frame=8 tics=-1 shield_id=9 durability=240 air=1021.78218
+CA106 PASS matrix 7 return body/hand visibility
+CA106 PASS matrix 7 return actual equipped type
+CA106 PASS matrix 7 return synchronized single left grip
+CA106 PASS matrix 7 return grip origin registration
+CA106 PASS matrix 7 return weapon layer restored
+CA106 POSE matrix 7 return type=0 tier=2 size=2 body=(82.000,45.000) frame=0 tics=5 shield_id=9 durability=240 air=1021.78218
+CA106 PASS native equip CaelumShieldPickup
+CA106 PASS matrix 8 rest body/hand visibility
+CA106 PASS matrix 8 rest actual equipped type
+CA106 PASS matrix 8 rest synchronized single left grip
+CA106 PASS matrix 8 rest grip origin registration
+CA106 PASS matrix 8 rest weapon layer restored
+CA106 POSE matrix 8 rest type=0 tier=2 size=3 body=(82.000,45.000) frame=1 tics=4 shield_id=10 durability=300 air=1021.78218
+CA106 PASS matrix 8 block body/hand visibility
+CA106 PASS matrix 8 block actual equipped type
+CA106 PASS matrix 8 block synchronized single left grip
+CA106 PASS matrix 8 block grip origin registration
+CA106 PASS matrix 8 block indefinitely held I frame
+CA106 PASS matrix 8 block right weapon/hand layers hidden
+CA106 POSE matrix 8 block type=0 tier=2 size=3 body=(160.000,100.000) frame=8 tics=-1 shield_id=10 durability=300 air=1021.78218
+CA106 PASS matrix 8 held body/hand visibility
+CA106 PASS matrix 8 held actual equipped type
+CA106 PASS matrix 8 held synchronized single left grip
+CA106 PASS matrix 8 held grip origin registration
+CA106 PASS matrix 8 held indefinitely held I frame
+CA106 PASS matrix 8 held right weapon/hand layers hidden
+CA106 POSE matrix 8 held type=0 tier=2 size=3 body=(160.000,100.000) frame=8 tics=-1 shield_id=10 durability=300 air=1021.78218
+CA106 PASS matrix 8 return body/hand visibility
+CA106 PASS matrix 8 return actual equipped type
+CA106 PASS matrix 8 return synchronized single left grip
+CA106 PASS matrix 8 return grip origin registration
+CA106 PASS matrix 8 return weapon layer restored
+CA106 POSE matrix 8 return type=0 tier=2 size=3 body=(82.000,45.000) frame=0 tics=5 shield_id=10 durability=300 air=1021.78218
+CA106 PASS native equip CaelumShieldPickup
+CA106 PASS matrix 9 rest body/hand visibility
+CA106 PASS matrix 9 rest actual equipped type
+CA106 PASS matrix 9 rest synchronized single left grip
+CA106 PASS matrix 9 rest grip origin registration
+CA106 PASS matrix 9 rest weapon layer restored
+CA106 POSE matrix 9 rest type=0 tier=2 size=4 body=(82.000,45.000) frame=1 tics=4 shield_id=11 durability=360 air=1021.78218
+CA106 PASS matrix 9 block body/hand visibility
+CA106 PASS matrix 9 block actual equipped type
+CA106 PASS matrix 9 block synchronized single left grip
+CA106 PASS matrix 9 block grip origin registration
+CA106 PASS matrix 9 block indefinitely held I frame
+CA106 PASS matrix 9 block right weapon/hand layers hidden
+CA106 POSE matrix 9 block type=0 tier=2 size=4 body=(160.000,100.000) frame=8 tics=-1 shield_id=11 durability=360 air=1021.78218
+CA106 PASS matrix 9 held body/hand visibility
+CA106 PASS matrix 9 held actual equipped type
+CA106 PASS matrix 9 held synchronized single left grip
+CA106 PASS matrix 9 held grip origin registration
+CA106 PASS matrix 9 held indefinitely held I frame
+CA106 PASS matrix 9 held right weapon/hand layers hidden
+CA106 POSE matrix 9 held type=0 tier=2 size=4 body=(160.000,100.000) frame=8 tics=-1 shield_id=11 durability=360 air=1021.78218
+CA106 PASS matrix 9 return body/hand visibility
+CA106 PASS matrix 9 return actual equipped type
+CA106 PASS matrix 9 return synchronized single left grip
+CA106 PASS matrix 9 return grip origin registration
+CA106 PASS matrix 9 return weapon layer restored
+CA106 POSE matrix 9 return type=0 tier=2 size=4 body=(82.000,45.000) frame=0 tics=5 shield_id=11 durability=360 air=1021.78218
+CA106 PASS native equip CaelumShieldPickup
+CA106 PASS matrix 10 rest body/hand visibility
+CA106 PASS matrix 10 rest actual equipped type
+CA106 PASS matrix 10 rest synchronized single left grip
+CA106 PASS matrix 10 rest grip origin registration
+CA106 PASS matrix 10 rest weapon layer restored
+CA106 POSE matrix 10 rest type=0 tier=3 size=0 body=(82.000,45.000) frame=1 tics=4 shield_id=12 durability=360 air=1021.78218
+CA106 PASS matrix 10 block body/hand visibility
+CA106 PASS matrix 10 block actual equipped type
+CA106 PASS matrix 10 block synchronized single left grip
+CA106 PASS matrix 10 block grip origin registration
+CA106 PASS matrix 10 block indefinitely held I frame
+CA106 PASS matrix 10 block right weapon/hand layers hidden
+CA106 POSE matrix 10 block type=0 tier=3 size=0 body=(160.000,100.000) frame=8 tics=-1 shield_id=12 durability=360 air=1021.78218
+CA106 PASS matrix 10 held body/hand visibility
+CA106 PASS matrix 10 held actual equipped type
+CA106 PASS matrix 10 held synchronized single left grip
+CA106 PASS matrix 10 held grip origin registration
+CA106 PASS matrix 10 held indefinitely held I frame
+CA106 PASS matrix 10 held right weapon/hand layers hidden
+CA106 POSE matrix 10 held type=0 tier=3 size=0 body=(160.000,100.000) frame=8 tics=-1 shield_id=12 durability=360 air=1021.78218
+CA106 PASS matrix 10 return body/hand visibility
+CA106 PASS matrix 10 return actual equipped type
+CA106 PASS matrix 10 return synchronized single left grip
+CA106 PASS matrix 10 return grip origin registration
+CA106 PASS matrix 10 return weapon layer restored
+CA106 POSE matrix 10 return type=0 tier=3 size=0 body=(82.000,45.000) frame=0 tics=5 shield_id=12 durability=360 air=1021.78218
+CA106 PASS native equip CaelumShieldPickup
+CA106 PASS matrix 11 rest body/hand visibility
+CA106 PASS matrix 11 rest actual equipped type
+CA106 PASS matrix 11 rest synchronized single left grip
+CA106 PASS matrix 11 rest grip origin registration
+CA106 PASS matrix 11 rest weapon layer restored
+CA106 POSE matrix 11 rest type=0 tier=3 size=1 body=(82.000,45.000) frame=1 tics=4 shield_id=13 durability=540 air=1021.78218
+CA106 PASS matrix 11 block body/hand visibility
+CA106 PASS matrix 11 block actual equipped type
+CA106 PASS matrix 11 block synchronized single left grip
+CA106 PASS matrix 11 block grip origin registration
+CA106 PASS matrix 11 block indefinitely held I frame
+CA106 PASS matrix 11 block right weapon/hand layers hidden
+CA106 POSE matrix 11 block type=0 tier=3 size=1 body=(160.000,100.000) frame=8 tics=-1 shield_id=13 durability=540 air=1021.78218
+CA106 PASS matrix 11 held body/hand visibility
+CA106 PASS matrix 11 held actual equipped type
+CA106 PASS matrix 11 held synchronized single left grip
+CA106 PASS matrix 11 held grip origin registration
+CA106 PASS matrix 11 held indefinitely held I frame
+CA106 PASS matrix 11 held right weapon/hand layers hidden
+CA106 POSE matrix 11 held type=0 tier=3 size=1 body=(160.000,100.000) frame=8 tics=-1 shield_id=13 durability=540 air=1021.78218
+CA106 PASS matrix 11 return body/hand visibility
+CA106 PASS matrix 11 return actual equipped type
+CA106 PASS matrix 11 return synchronized single left grip
+CA106 PASS matrix 11 return grip origin registration
+CA106 PASS matrix 11 return weapon layer restored
+CA106 POSE matrix 11 return type=0 tier=3 size=1 body=(82.000,45.000) frame=0 tics=5 shield_id=13 durability=540 air=1021.78218
+CA106 PASS native equip CaelumShieldPickup
+CA106 PASS matrix 12 rest body/hand visibility
+CA106 PASS matrix 12 rest actual equipped type
+CA106 PASS matrix 12 rest synchronized single left grip
+CA106 PASS matrix 12 rest grip origin registration
+CA106 PASS matrix 12 rest weapon layer restored
+CA106 POSE matrix 12 rest type=0 tier=3 size=2 body=(82.000,45.000) frame=1 tics=4 shield_id=14 durability=720 air=1021.78218
+CA106 PASS matrix 12 block body/hand visibility
+CA106 PASS matrix 12 block actual equipped type
+CA106 PASS matrix 12 block synchronized single left grip
+CA106 PASS matrix 12 block grip origin registration
+CA106 PASS matrix 12 block indefinitely held I frame
+CA106 PASS matrix 12 block right weapon/hand layers hidden
+CA106 POSE matrix 12 block type=0 tier=3 size=2 body=(160.000,100.000) frame=8 tics=-1 shield_id=14 durability=720 air=1021.78218
+CA106 PASS matrix 12 held body/hand visibility
+CA106 PASS matrix 12 held actual equipped type
+CA106 PASS matrix 12 held synchronized single left grip
+CA106 PASS matrix 12 held grip origin registration
+CA106 PASS matrix 12 held indefinitely held I frame
+CA106 PASS matrix 12 held right weapon/hand layers hidden
+CA106 POSE matrix 12 held type=0 tier=3 size=2 body=(160.000,100.000) frame=8 tics=-1 shield_id=14 durability=720 air=1021.78218
+CA106 PASS matrix 12 return body/hand visibility
+CA106 PASS matrix 12 return actual equipped type
+CA106 PASS matrix 12 return synchronized single left grip
+CA106 PASS matrix 12 return grip origin registration
+CA106 PASS matrix 12 return weapon layer restored
+CA106 POSE matrix 12 return type=0 tier=3 size=2 body=(82.000,45.000) frame=0 tics=5 shield_id=14 durability=720 air=1021.78218
+CA106 PASS native equip CaelumShieldPickup
+CA106 PASS matrix 13 rest body/hand visibility
+CA106 PASS matrix 13 rest actual equipped type
+CA106 PASS matrix 13 rest synchronized single left grip
+CA106 PASS matrix 13 rest grip origin registration
+CA106 PASS matrix 13 rest weapon layer restored
+CA106 POSE matrix 13 rest type=0 tier=3 size=3 body=(82.000,45.000) frame=1 tics=4 shield_id=15 durability=900 air=1021.78218
+CA106 PASS matrix 13 block body/hand visibility
+CA106 PASS matrix 13 block actual equipped type
+CA106 PASS matrix 13 block synchronized single left grip
+CA106 PASS matrix 13 block grip origin registration
+CA106 PASS matrix 13 block indefinitely held I frame
+CA106 PASS matrix 13 block right weapon/hand layers hidden
+CA106 POSE matrix 13 block type=0 tier=3 size=3 body=(160.000,100.000) frame=8 tics=-1 shield_id=15 durability=900 air=1021.78218
+CA106 PASS matrix 13 held body/hand visibility
+CA106 PASS matrix 13 held actual equipped type
+CA106 PASS matrix 13 held synchronized single left grip
+CA106 PASS matrix 13 held grip origin registration
+CA106 PASS matrix 13 held indefinitely held I frame
+CA106 PASS matrix 13 held right weapon/hand layers hidden
+CA106 POSE matrix 13 held type=0 tier=3 size=3 body=(160.000,100.000) frame=8 tics=-1 shield_id=15 durability=900 air=1021.78218
+CA106 PASS matrix 13 return body/hand visibility
+CA106 PASS matrix 13 return actual equipped type
+CA106 PASS matrix 13 return synchronized single left grip
+CA106 PASS matrix 13 return grip origin registration
+CA106 PASS matrix 13 return weapon layer restored
+CA106 POSE matrix 13 return type=0 tier=3 size=3 body=(82.000,45.000) frame=0 tics=5 shield_id=15 durability=900 air=1021.78218
+CA106 PASS native equip CaelumShieldPickup
+CA106 PASS matrix 14 rest body/hand visibility
+CA106 PASS matrix 14 rest actual equipped type
+CA106 PASS matrix 14 rest synchronized single left grip
+CA106 PASS matrix 14 rest grip origin registration
+CA106 PASS matrix 14 rest weapon layer restored
+CA106 POSE matrix 14 rest type=0 tier=3 size=4 body=(82.000,45.000) frame=1 tics=4 shield_id=16 durability=1080 air=1021.78218
+CA106 PASS matrix 14 block body/hand visibility
+CA106 PASS matrix 14 block actual equipped type
+CA106 PASS matrix 14 block synchronized single left grip
+CA106 PASS matrix 14 block grip origin registration
+CA106 PASS matrix 14 block indefinitely held I frame
+CA106 PASS matrix 14 block right weapon/hand layers hidden
+CA106 POSE matrix 14 block type=0 tier=3 size=4 body=(160.000,100.000) frame=8 tics=-1 shield_id=16 durability=1080 air=1021.78218
+CA106 PASS matrix 14 held body/hand visibility
+CA106 PASS matrix 14 held actual equipped type
+CA106 PASS matrix 14 held synchronized single left grip
+CA106 PASS matrix 14 held grip origin registration
+CA106 PASS matrix 14 held indefinitely held I frame
+CA106 PASS matrix 14 held right weapon/hand layers hidden
+CA106 POSE matrix 14 held type=0 tier=3 size=4 body=(160.000,100.000) frame=8 tics=-1 shield_id=16 durability=1080 air=1021.78218
+CA106 PASS matrix 14 return body/hand visibility
+CA106 PASS matrix 14 return actual equipped type
+CA106 PASS matrix 14 return synchronized single left grip
+CA106 PASS matrix 14 return grip origin registration
+CA106 PASS matrix 14 return weapon layer restored
+CA106 POSE matrix 14 return type=0 tier=3 size=4 body=(82.000,45.000) frame=0 tics=5 shield_id=16 durability=1080 air=1021.78218
+CA106 PASS native equip CaelumShieldPickup
+CA106 PASS matrix 15 rest body/hand visibility
+CA106 PASS matrix 15 rest actual equipped type
+CA106 PASS matrix 15 rest synchronized single left grip
+CA106 PASS matrix 15 rest grip origin registration
+CA106 PASS matrix 15 rest weapon layer restored
+CA106 POSE matrix 15 rest type=1 tier=1 size=0 body=(82.000,45.000) frame=0 tics=2 shield_id=17 durability=75 air=1021.78218
+CA106 PASS matrix 15 block body/hand visibility
+CA106 PASS matrix 15 block actual equipped type
+CA106 PASS matrix 15 block synchronized single left grip
+CA106 PASS matrix 15 block grip origin registration
+CA106 PASS matrix 15 block indefinitely held I frame
+CA106 PASS matrix 15 block right weapon/hand layers hidden
+CA106 POSE matrix 15 block type=1 tier=1 size=0 body=(160.000,100.000) frame=8 tics=-1 shield_id=17 durability=75 air=1021.78218
+CA106 PASS matrix 15 held body/hand visibility
+CA106 PASS matrix 15 held actual equipped type
+CA106 PASS matrix 15 held synchronized single left grip
+CA106 PASS matrix 15 held grip origin registration
+CA106 PASS matrix 15 held indefinitely held I frame
+CA106 PASS matrix 15 held right weapon/hand layers hidden
+CA106 POSE matrix 15 held type=1 tier=1 size=0 body=(160.000,100.000) frame=8 tics=-1 shield_id=17 durability=75 air=1021.78218
+CA106 PASS matrix 15 return body/hand visibility
+CA106 PASS matrix 15 return actual equipped type
+CA106 PASS matrix 15 return synchronized single left grip
+CA106 PASS matrix 15 return grip origin registration
+CA106 PASS matrix 15 return weapon layer restored
+CA106 POSE matrix 15 return type=1 tier=1 size=0 body=(82.000,45.000) frame=0 tics=5 shield_id=17 durability=75 air=1021.78218
+CA106 PASS native equip CaelumShieldPickup
+CA106 PASS matrix 16 rest body/hand visibility
+CA106 PASS matrix 16 rest actual equipped type
+CA106 PASS matrix 16 rest synchronized single left grip
+CA106 PASS matrix 16 rest grip origin registration
+CA106 PASS matrix 16 rest weapon layer restored
+CA106 POSE matrix 16 rest type=1 tier=1 size=1 body=(82.000,45.000) frame=1 tics=4 shield_id=18 durability=113 air=1021.78218
+CA106 PASS matrix 16 block body/hand visibility
+CA106 PASS matrix 16 block actual equipped type
+CA106 PASS matrix 16 block synchronized single left grip
+CA106 PASS matrix 16 block grip origin registration
+CA106 PASS matrix 16 block indefinitely held I frame
+CA106 PASS matrix 16 block right weapon/hand layers hidden
+CA106 POSE matrix 16 block type=1 tier=1 size=1 body=(160.000,100.000) frame=8 tics=-1 shield_id=18 durability=113 air=1021.78218
+CA106 PASS matrix 16 held body/hand visibility
+CA106 PASS matrix 16 held actual equipped type
+CA106 PASS matrix 16 held synchronized single left grip
+CA106 PASS matrix 16 held grip origin registration
+CA106 PASS matrix 16 held indefinitely held I frame
+CA106 PASS matrix 16 held right weapon/hand layers hidden
+CA106 POSE matrix 16 held type=1 tier=1 size=1 body=(160.000,100.000) frame=8 tics=-1 shield_id=18 durability=113 air=1021.78218
+CA106 PASS matrix 16 return body/hand visibility
+CA106 PASS matrix 16 return actual equipped type
+CA106 PASS matrix 16 return synchronized single left grip
+CA106 PASS matrix 16 return grip origin registration
+CA106 PASS matrix 16 return weapon layer restored
+CA106 POSE matrix 16 return type=1 tier=1 size=1 body=(82.000,45.000) frame=0 tics=5 shield_id=18 durability=113 air=1021.78218
+CA106 PASS native equip CaelumShieldPickup
+CA106 PASS matrix 17 rest body/hand visibility
+CA106 PASS matrix 17 rest actual equipped type
+CA106 PASS matrix 17 rest synchronized single left grip
+CA106 PASS matrix 17 rest grip origin registration
+CA106 PASS matrix 17 rest weapon layer restored
+CA106 POSE matrix 17 rest type=1 tier=1 size=2 body=(82.000,45.000) frame=1 tics=4 shield_id=19 durability=150 air=1021.78218
+CA106 PASS matrix 17 block body/hand visibility
+CA106 PASS matrix 17 block actual equipped type
+CA106 PASS matrix 17 block synchronized single left grip
+CA106 PASS matrix 17 block grip origin registration
+CA106 PASS matrix 17 block indefinitely held I frame
+CA106 PASS matrix 17 block right weapon/hand layers hidden
+CA106 POSE matrix 17 block type=1 tier=1 size=2 body=(160.000,100.000) frame=8 tics=-1 shield_id=19 durability=150 air=1021.78218
+CA106 PASS matrix 17 held body/hand visibility
+CA106 PASS matrix 17 held actual equipped type
+CA106 PASS matrix 17 held synchronized single left grip
+CA106 PASS matrix 17 held grip origin registration
+CA106 PASS matrix 17 held indefinitely held I frame
+CA106 PASS matrix 17 held right weapon/hand layers hidden
+CA106 POSE matrix 17 held type=1 tier=1 size=2 body=(160.000,100.000) frame=8 tics=-1 shield_id=19 durability=150 air=1021.78218
+CA106 PASS matrix 17 return body/hand visibility
+CA106 PASS matrix 17 return actual equipped type
+CA106 PASS matrix 17 return synchronized single left grip
+CA106 PASS matrix 17 return grip origin registration
+CA106 PASS matrix 17 return weapon layer restored
+CA106 POSE matrix 17 return type=1 tier=1 size=2 body=(82.000,45.000) frame=0 tics=5 shield_id=19 durability=150 air=1021.78218
+CA106 PASS native equip CaelumShieldPickup
+CA106 PASS matrix 18 rest body/hand visibility
+CA106 PASS matrix 18 rest actual equipped type
+CA106 PASS matrix 18 rest synchronized single left grip
+CA106 PASS matrix 18 rest grip origin registration
+CA106 PASS matrix 18 rest weapon layer restored
+CA106 POSE matrix 18 rest type=1 tier=1 size=3 body=(82.000,45.000) frame=1 tics=4 shield_id=20 durability=188 air=1021.78218
+CA106 PASS matrix 18 block body/hand visibility
+CA106 PASS matrix 18 block actual equipped type
+CA106 PASS matrix 18 block synchronized single left grip
+CA106 PASS matrix 18 block grip origin registration
+CA106 PASS matrix 18 block indefinitely held I frame
+CA106 PASS matrix 18 block right weapon/hand layers hidden
+CA106 POSE matrix 18 block type=1 tier=1 size=3 body=(160.000,100.000) frame=8 tics=-1 shield_id=20 durability=188 air=1021.78218
+CA106 PASS matrix 18 held body/hand visibility
+CA106 PASS matrix 18 held actual equipped type
+CA106 PASS matrix 18 held synchronized single left grip
+CA106 PASS matrix 18 held grip origin registration
+CA106 PASS matrix 18 held indefinitely held I frame
+CA106 PASS matrix 18 held right weapon/hand layers hidden
+CA106 POSE matrix 18 held type=1 tier=1 size=3 body=(160.000,100.000) frame=8 tics=-1 shield_id=20 durability=188 air=1021.78218
+CA106 PASS matrix 18 return body/hand visibility
+CA106 PASS matrix 18 return actual equipped type
+CA106 PASS matrix 18 return synchronized single left grip
+CA106 PASS matrix 18 return grip origin registration
+CA106 PASS matrix 18 return weapon layer restored
+CA106 POSE matrix 18 return type=1 tier=1 size=3 body=(82.000,45.000) frame=0 tics=5 shield_id=20 durability=188 air=1021.78218
+CA106 PASS native equip CaelumShieldPickup
+CA106 PASS matrix 19 rest body/hand visibility
+CA106 PASS matrix 19 rest actual equipped type
+CA106 PASS matrix 19 rest synchronized single left grip
+CA106 PASS matrix 19 rest grip origin registration
+CA106 PASS matrix 19 rest weapon layer restored
+CA106 POSE matrix 19 rest type=1 tier=1 size=4 body=(82.000,45.000) frame=1 tics=4 shield_id=21 durability=225 air=1021.78218
+CA106 PASS matrix 19 block body/hand visibility
+CA106 PASS matrix 19 block actual equipped type
+CA106 PASS matrix 19 block synchronized single left grip
+CA106 PASS matrix 19 block grip origin registration
+CA106 PASS matrix 19 block indefinitely held I frame
+CA106 PASS matrix 19 block right weapon/hand layers hidden
+CA106 POSE matrix 19 block type=1 tier=1 size=4 body=(160.000,100.000) frame=8 tics=-1 shield_id=21 durability=225 air=1021.78218
+CA106 PASS matrix 19 held body/hand visibility
+CA106 PASS matrix 19 held actual equipped type
+CA106 PASS matrix 19 held synchronized single left grip
+CA106 PASS matrix 19 held grip origin registration
+CA106 PASS matrix 19 held indefinitely held I frame
+CA106 PASS matrix 19 held right weapon/hand layers hidden
+CA106 POSE matrix 19 held type=1 tier=1 size=4 body=(160.000,100.000) frame=8 tics=-1 shield_id=21 durability=225 air=1021.78218
+CA106 PASS matrix 19 return body/hand visibility
+CA106 PASS matrix 19 return actual equipped type
+CA106 PASS matrix 19 return synchronized single left grip
+CA106 PASS matrix 19 return grip origin registration
+CA106 PASS matrix 19 return weapon layer restored
+CA106 POSE matrix 19 return type=1 tier=1 size=4 body=(82.000,45.000) frame=0 tics=5 shield_id=21 durability=225 air=1021.78218
+CA106 PASS native equip CaelumShieldPickup
+CA106 PASS matrix 20 rest body/hand visibility
+CA106 PASS matrix 20 rest actual equipped type
+CA106 PASS matrix 20 rest synchronized single left grip
+CA106 PASS matrix 20 rest grip origin registration
+CA106 PASS matrix 20 rest weapon layer restored
+CA106 POSE matrix 20 rest type=1 tier=2 size=0 body=(82.000,45.000) frame=1 tics=4 shield_id=22 durability=225 air=1021.78218
+CA106 PASS matrix 20 block body/hand visibility
+CA106 PASS matrix 20 block actual equipped type
+CA106 PASS matrix 20 block synchronized single left grip
+CA106 PASS matrix 20 block grip origin registration
+CA106 PASS matrix 20 block indefinitely held I frame
+CA106 PASS matrix 20 block right weapon/hand layers hidden
+CA106 POSE matrix 20 block type=1 tier=2 size=0 body=(160.000,100.000) frame=8 tics=-1 shield_id=22 durability=225 air=1021.78218
+CA106 PASS matrix 20 held body/hand visibility
+CA106 PASS matrix 20 held actual equipped type
+CA106 PASS matrix 20 held synchronized single left grip
+CA106 PASS matrix 20 held grip origin registration
+CA106 PASS matrix 20 held indefinitely held I frame
+CA106 PASS matrix 20 held right weapon/hand layers hidden
+CA106 POSE matrix 20 held type=1 tier=2 size=0 body=(160.000,100.000) frame=8 tics=-1 shield_id=22 durability=225 air=1021.78218
+CA106 PASS matrix 20 return body/hand visibility
+CA106 PASS matrix 20 return actual equipped type
+CA106 PASS matrix 20 return synchronized single left grip
+CA106 PASS matrix 20 return grip origin registration
+CA106 PASS matrix 20 return weapon layer restored
+CA106 POSE matrix 20 return type=1 tier=2 size=0 body=(82.000,45.000) frame=0 tics=5 shield_id=22 durability=225 air=1021.78218
+CA106 PASS native equip CaelumShieldPickup
+CA106 PASS matrix 21 rest body/hand visibility
+CA106 PASS matrix 21 rest actual equipped type
+CA106 PASS matrix 21 rest synchronized single left grip
+CA106 PASS matrix 21 rest grip origin registration
+CA106 PASS matrix 21 rest weapon layer restored
+CA106 POSE matrix 21 rest type=1 tier=2 size=1 body=(82.000,45.000) frame=1 tics=4 shield_id=23 durability=338 air=1021.78218
+CA106 PASS matrix 21 block body/hand visibility
+CA106 PASS matrix 21 block actual equipped type
+CA106 PASS matrix 21 block synchronized single left grip
+CA106 PASS matrix 21 block grip origin registration
+CA106 PASS matrix 21 block indefinitely held I frame
+CA106 PASS matrix 21 block right weapon/hand layers hidden
+CA106 POSE matrix 21 block type=1 tier=2 size=1 body=(160.000,100.000) frame=8 tics=-1 shield_id=23 durability=338 air=1021.78218
+CA106 PASS matrix 21 held body/hand visibility
+CA106 PASS matrix 21 held actual equipped type
+CA106 PASS matrix 21 held synchronized single left grip
+CA106 PASS matrix 21 held grip origin registration
+CA106 PASS matrix 21 held indefinitely held I frame
+CA106 PASS matrix 21 held right weapon/hand layers hidden
+CA106 POSE matrix 21 held type=1 tier=2 size=1 body=(160.000,100.000) frame=8 tics=-1 shield_id=23 durability=338 air=1021.78218
+CA106 PASS matrix 21 return body/hand visibility
+CA106 PASS matrix 21 return actual equipped type
+CA106 PASS matrix 21 return synchronized single left grip
+CA106 PASS matrix 21 return grip origin registration
+CA106 PASS matrix 21 return weapon layer restored
+CA106 POSE matrix 21 return type=1 tier=2 size=1 body=(82.000,45.000) frame=0 tics=5 shield_id=23 durability=338 air=1021.78218
+CA106 PASS native equip CaelumShieldPickup
+CA106 PASS matrix 22 rest body/hand visibility
+CA106 PASS matrix 22 rest actual equipped type
+CA106 PASS matrix 22 rest synchronized single left grip
+CA106 PASS matrix 22 rest grip origin registration
+CA106 PASS matrix 22 rest weapon layer restored
+CA106 POSE matrix 22 rest type=1 tier=2 size=2 body=(82.000,45.000) frame=1 tics=4 shield_id=24 durability=450 air=1021.78218
+CA106 PASS matrix 22 block body/hand visibility
+CA106 PASS matrix 22 block actual equipped type
+CA106 PASS matrix 22 block synchronized single left grip
+CA106 PASS matrix 22 block grip origin registration
+CA106 PASS matrix 22 block indefinitely held I frame
+CA106 PASS matrix 22 block right weapon/hand layers hidden
+CA106 POSE matrix 22 block type=1 tier=2 size=2 body=(160.000,100.000) frame=8 tics=-1 shield_id=24 durability=450 air=1021.78218
+CA106 PASS matrix 22 held body/hand visibility
+CA106 PASS matrix 22 held actual equipped type
+CA106 PASS matrix 22 held synchronized single left grip
+CA106 PASS matrix 22 held grip origin registration
+CA106 PASS matrix 22 held indefinitely held I frame
+CA106 PASS matrix 22 held right weapon/hand layers hidden
+CA106 POSE matrix 22 held type=1 tier=2 size=2 body=(160.000,100.000) frame=8 tics=-1 shield_id=24 durability=450 air=1021.78218
+CA106 PASS matrix 22 return body/hand visibility
+CA106 PASS matrix 22 return actual equipped type
+CA106 PASS matrix 22 return synchronized single left grip
+CA106 PASS matrix 22 return grip origin registration
+CA106 PASS matrix 22 return weapon layer restored
+CA106 POSE matrix 22 return type=1 tier=2 size=2 body=(82.000,45.000) frame=0 tics=5 shield_id=24 durability=450 air=1021.78218
+CA106 PASS native equip CaelumShieldPickup
+CA106 PASS matrix 23 rest body/hand visibility
+CA106 PASS matrix 23 rest actual equipped type
+CA106 PASS matrix 23 rest synchronized single left grip
+CA106 PASS matrix 23 rest grip origin registration
+CA106 PASS matrix 23 rest weapon layer restored
+CA106 POSE matrix 23 rest type=1 tier=2 size=3 body=(82.000,45.000) frame=1 tics=4 shield_id=25 durability=563 air=1021.78218
+CA106 PASS matrix 23 block body/hand visibility
+CA106 PASS matrix 23 block actual equipped type
+CA106 PASS matrix 23 block synchronized single left grip
+CA106 PASS matrix 23 block grip origin registration
+CA106 PASS matrix 23 block indefinitely held I frame
+CA106 PASS matrix 23 block right weapon/hand layers hidden
+CA106 POSE matrix 23 block type=1 tier=2 size=3 body=(160.000,100.000) frame=8 tics=-1 shield_id=25 durability=563 air=1021.78218
+CA106 PASS matrix 23 held body/hand visibility
+CA106 PASS matrix 23 held actual equipped type
+CA106 PASS matrix 23 held synchronized single left grip
+CA106 PASS matrix 23 held grip origin registration
+CA106 PASS matrix 23 held indefinitely held I frame
+CA106 PASS matrix 23 held right weapon/hand layers hidden
+CA106 POSE matrix 23 held type=1 tier=2 size=3 body=(160.000,100.000) frame=8 tics=-1 shield_id=25 durability=563 air=1021.78218
+CA106 PASS matrix 23 return body/hand visibility
+CA106 PASS matrix 23 return actual equipped type
+CA106 PASS matrix 23 return synchronized single left grip
+CA106 PASS matrix 23 return grip origin registration
+CA106 PASS matrix 23 return weapon layer restored
+CA106 POSE matrix 23 return type=1 tier=2 size=3 body=(82.000,45.000) frame=0 tics=5 shield_id=25 durability=563 air=1021.78218
+CA106 PASS native equip CaelumShieldPickup
+CA106 PASS matrix 24 rest body/hand visibility
+CA106 PASS matrix 24 rest actual equipped type
+CA106 PASS matrix 24 rest synchronized single left grip
+CA106 PASS matrix 24 rest grip origin registration
+CA106 PASS matrix 24 rest weapon layer restored
+CA106 POSE matrix 24 rest type=1 tier=2 size=4 body=(82.000,45.000) frame=1 tics=4 shield_id=26 durability=675 air=1021.78218
+CA106 PASS matrix 24 block body/hand visibility
+CA106 PASS matrix 24 block actual equipped type
+CA106 PASS matrix 24 block synchronized single left grip
+CA106 PASS matrix 24 block grip origin registration
+CA106 PASS matrix 24 block indefinitely held I frame
+CA106 PASS matrix 24 block right weapon/hand layers hidden
+CA106 POSE matrix 24 block type=1 tier=2 size=4 body=(160.000,100.000) frame=8 tics=-1 shield_id=26 durability=675 air=1021.78218
+CA106 PASS matrix 24 held body/hand visibility
+CA106 PASS matrix 24 held actual equipped type
+CA106 PASS matrix 24 held synchronized single left grip
+CA106 PASS matrix 24 held grip origin registration
+CA106 PASS matrix 24 held indefinitely held I frame
+CA106 PASS matrix 24 held right weapon/hand layers hidden
+CA106 POSE matrix 24 held type=1 tier=2 size=4 body=(160.000,100.000) frame=8 tics=-1 shield_id=26 durability=675 air=1021.78218
+CA106 PASS matrix 24 return body/hand visibility
+CA106 PASS matrix 24 return actual equipped type
+CA106 PASS matrix 24 return synchronized single left grip
+CA106 PASS matrix 24 return grip origin registration
+CA106 PASS matrix 24 return weapon layer restored
+CA106 POSE matrix 24 return type=1 tier=2 size=4 body=(82.000,45.000) frame=0 tics=5 shield_id=26 durability=675 air=1021.78218
+CA106 PASS native equip CaelumShieldPickup
+CA106 PASS matrix 25 rest body/hand visibility
+CA106 PASS matrix 25 rest actual equipped type
+CA106 PASS matrix 25 rest synchronized single left grip
+CA106 PASS matrix 25 rest grip origin registration
+CA106 PASS matrix 25 rest weapon layer restored
+CA106 POSE matrix 25 rest type=1 tier=3 size=0 body=(82.000,45.000) frame=1 tics=4 shield_id=27 durability=675 air=1021.78218
+CA106 PASS matrix 25 block body/hand visibility
+CA106 PASS matrix 25 block actual equipped type
+CA106 PASS matrix 25 block synchronized single left grip
+CA106 PASS matrix 25 block grip origin registration
+CA106 PASS matrix 25 block indefinitely held I frame
+CA106 PASS matrix 25 block right weapon/hand layers hidden
+CA106 POSE matrix 25 block type=1 tier=3 size=0 body=(160.000,100.000) frame=8 tics=-1 shield_id=27 durability=675 air=1021.78218
+CA106 PASS matrix 25 held body/hand visibility
+CA106 PASS matrix 25 held actual equipped type
+CA106 PASS matrix 25 held synchronized single left grip
+CA106 PASS matrix 25 held grip origin registration
+CA106 PASS matrix 25 held indefinitely held I frame
+CA106 PASS matrix 25 held right weapon/hand layers hidden
+CA106 POSE matrix 25 held type=1 tier=3 size=0 body=(160.000,100.000) frame=8 tics=-1 shield_id=27 durability=675 air=1021.78218
+CA106 PASS matrix 25 return body/hand visibility
+CA106 PASS matrix 25 return actual equipped type
+CA106 PASS matrix 25 return synchronized single left grip
+CA106 PASS matrix 25 return grip origin registration
+CA106 PASS matrix 25 return weapon layer restored
+CA106 POSE matrix 25 return type=1 tier=3 size=0 body=(82.000,45.000) frame=0 tics=5 shield_id=27 durability=675 air=1021.78218
+CA106 PASS native equip CaelumShieldPickup
+CA106 PASS matrix 26 rest body/hand visibility
+CA106 PASS matrix 26 rest actual equipped type
+CA106 PASS matrix 26 rest synchronized single left grip
+CA106 PASS matrix 26 rest grip origin registration
+CA106 PASS matrix 26 rest weapon layer restored
+CA106 POSE matrix 26 rest type=1 tier=3 size=1 body=(82.000,45.000) frame=1 tics=4 shield_id=28 durability=1013 air=1021.78218
+CA106 PASS matrix 26 block body/hand visibility
+CA106 PASS matrix 26 block actual equipped type
+CA106 PASS matrix 26 block synchronized single left grip
+CA106 PASS matrix 26 block grip origin registration
+CA106 PASS matrix 26 block indefinitely held I frame
+CA106 PASS matrix 26 block right weapon/hand layers hidden
+CA106 POSE matrix 26 block type=1 tier=3 size=1 body=(160.000,100.000) frame=8 tics=-1 shield_id=28 durability=1013 air=1021.78218
+CA106 PASS matrix 26 held body/hand visibility
+CA106 PASS matrix 26 held actual equipped type
+CA106 PASS matrix 26 held synchronized single left grip
+CA106 PASS matrix 26 held grip origin registration
+CA106 PASS matrix 26 held indefinitely held I frame
+CA106 PASS matrix 26 held right weapon/hand layers hidden
+CA106 POSE matrix 26 held type=1 tier=3 size=1 body=(160.000,100.000) frame=8 tics=-1 shield_id=28 durability=1013 air=1021.78218
+CA106 PASS matrix 26 return body/hand visibility
+CA106 PASS matrix 26 return actual equipped type
+CA106 PASS matrix 26 return synchronized single left grip
+CA106 PASS matrix 26 return grip origin registration
+CA106 PASS matrix 26 return weapon layer restored
+CA106 POSE matrix 26 return type=1 tier=3 size=1 body=(82.000,45.000) frame=0 tics=5 shield_id=28 durability=1013 air=1021.78218
+CA106 PASS native equip CaelumShieldPickup
+CA106 PASS matrix 27 rest body/hand visibility
+CA106 PASS matrix 27 rest actual equipped type
+CA106 PASS matrix 27 rest synchronized single left grip
+CA106 PASS matrix 27 rest grip origin registration
+CA106 PASS matrix 27 rest weapon layer restored
+CA106 POSE matrix 27 rest type=1 tier=3 size=2 body=(82.000,45.000) frame=1 tics=4 shield_id=29 durability=1350 air=1021.78218
+CA106 PASS matrix 27 block body/hand visibility
+CA106 PASS matrix 27 block actual equipped type
+CA106 PASS matrix 27 block synchronized single left grip
+CA106 PASS matrix 27 block grip origin registration
+CA106 PASS matrix 27 block indefinitely held I frame
+CA106 PASS matrix 27 block right weapon/hand layers hidden
+CA106 POSE matrix 27 block type=1 tier=3 size=2 body=(160.000,100.000) frame=8 tics=-1 shield_id=29 durability=1350 air=1021.78218
+CA106 PASS matrix 27 held body/hand visibility
+CA106 PASS matrix 27 held actual equipped type
+CA106 PASS matrix 27 held synchronized single left grip
+CA106 PASS matrix 27 held grip origin registration
+CA106 PASS matrix 27 held indefinitely held I frame
+CA106 PASS matrix 27 held right weapon/hand layers hidden
+CA106 POSE matrix 27 held type=1 tier=3 size=2 body=(160.000,100.000) frame=8 tics=-1 shield_id=29 durability=1350 air=1021.78218
+CA106 PASS matrix 27 return body/hand visibility
+CA106 PASS matrix 27 return actual equipped type
+CA106 PASS matrix 27 return synchronized single left grip
+CA106 PASS matrix 27 return grip origin registration
+CA106 PASS matrix 27 return weapon layer restored
+CA106 POSE matrix 27 return type=1 tier=3 size=2 body=(82.000,45.000) frame=0 tics=5 shield_id=29 durability=1350 air=1021.78218
+CA106 PASS native equip CaelumShieldPickup
+CA106 PASS matrix 28 rest body/hand visibility
+CA106 PASS matrix 28 rest actual equipped type
+CA106 PASS matrix 28 rest synchronized single left grip
+CA106 PASS matrix 28 rest grip origin registration
+CA106 PASS matrix 28 rest weapon layer restored
+CA106 POSE matrix 28 rest type=1 tier=3 size=3 body=(82.000,45.000) frame=1 tics=4 shield_id=30 durability=1688 air=1021.78218
+CA106 PASS matrix 28 block body/hand visibility
+CA106 PASS matrix 28 block actual equipped type
+CA106 PASS matrix 28 block synchronized single left grip
+CA106 PASS matrix 28 block grip origin registration
+CA106 PASS matrix 28 block indefinitely held I frame
+CA106 PASS matrix 28 block right weapon/hand layers hidden
+CA106 POSE matrix 28 block type=1 tier=3 size=3 body=(160.000,100.000) frame=8 tics=-1 shield_id=30 durability=1688 air=1021.78218
+CA106 PASS matrix 28 held body/hand visibility
+CA106 PASS matrix 28 held actual equipped type
+CA106 PASS matrix 28 held synchronized single left grip
+CA106 PASS matrix 28 held grip origin registration
+CA106 PASS matrix 28 held indefinitely held I frame
+CA106 PASS matrix 28 held right weapon/hand layers hidden
+CA106 POSE matrix 28 held type=1 tier=3 size=3 body=(160.000,100.000) frame=8 tics=-1 shield_id=30 durability=1688 air=1021.78218
+CA106 PASS matrix 28 return body/hand visibility
+CA106 PASS matrix 28 return actual equipped type
+CA106 PASS matrix 28 return synchronized single left grip
+CA106 PASS matrix 28 return grip origin registration
+CA106 PASS matrix 28 return weapon layer restored
+CA106 POSE matrix 28 return type=1 tier=3 size=3 body=(82.000,45.000) frame=0 tics=5 shield_id=30 durability=1688 air=1021.78218
+CA106 PASS native equip CaelumShieldPickup
+CA106 PASS matrix 29 rest body/hand visibility
+CA106 PASS matrix 29 rest actual equipped type
+CA106 PASS matrix 29 rest synchronized single left grip
+CA106 PASS matrix 29 rest grip origin registration
+CA106 PASS matrix 29 rest weapon layer restored
+CA106 POSE matrix 29 rest type=1 tier=3 size=4 body=(82.000,45.000) frame=1 tics=4 shield_id=31 durability=2025 air=1021.78218
+CA106 PASS matrix 29 block body/hand visibility
+CA106 PASS matrix 29 block actual equipped type
+CA106 PASS matrix 29 block synchronized single left grip
+CA106 PASS matrix 29 block grip origin registration
+CA106 PASS matrix 29 block indefinitely held I frame
+CA106 PASS matrix 29 block right weapon/hand layers hidden
+CA106 POSE matrix 29 block type=1 tier=3 size=4 body=(160.000,100.000) frame=8 tics=-1 shield_id=31 durability=2025 air=1021.78218
+CA106 PASS matrix 29 held body/hand visibility
+CA106 PASS matrix 29 held actual equipped type
+CA106 PASS matrix 29 held synchronized single left grip
+CA106 PASS matrix 29 held grip origin registration
+CA106 PASS matrix 29 held indefinitely held I frame
+CA106 PASS matrix 29 held right weapon/hand layers hidden
+CA106 POSE matrix 29 held type=1 tier=3 size=4 body=(160.000,100.000) frame=8 tics=-1 shield_id=31 durability=2025 air=1021.78218
+CA106 PASS matrix 29 return body/hand visibility
+CA106 PASS matrix 29 return actual equipped type
+CA106 PASS matrix 29 return synchronized single left grip
+CA106 PASS matrix 29 return grip origin registration
+CA106 PASS matrix 29 return weapon layer restored
+CA106 POSE matrix 29 return type=1 tier=3 size=4 body=(82.000,45.000) frame=0 tics=5 shield_id=31 durability=2025 air=1021.78218
+CA106 PASS native equip CaelumShieldPickup
+CA106 PASS matrix 30 rest body/hand visibility
+CA106 PASS matrix 30 rest actual equipped type
+CA106 PASS matrix 30 rest synchronized single left grip
+CA106 PASS matrix 30 rest grip origin registration
+CA106 PASS matrix 30 rest weapon layer restored
+CA106 POSE matrix 30 rest type=2 tier=1 size=0 body=(82.000,45.000) frame=0 tics=2 shield_id=32 durability=125 air=1021.78218
+CA106 PASS matrix 30 block body/hand visibility
+CA106 PASS matrix 30 block actual equipped type
+CA106 PASS matrix 30 block synchronized single left grip
+CA106 PASS matrix 30 block grip origin registration
+CA106 PASS matrix 30 block indefinitely held I frame
+CA106 PASS matrix 30 block right weapon/hand layers hidden
+CA106 POSE matrix 30 block type=2 tier=1 size=0 body=(160.000,100.000) frame=8 tics=-1 shield_id=32 durability=125 air=1021.78218
+CA106 PASS matrix 30 held body/hand visibility
+CA106 PASS matrix 30 held actual equipped type
+CA106 PASS matrix 30 held synchronized single left grip
+CA106 PASS matrix 30 held grip origin registration
+CA106 PASS matrix 30 held indefinitely held I frame
+CA106 PASS matrix 30 held right weapon/hand layers hidden
+CA106 POSE matrix 30 held type=2 tier=1 size=0 body=(160.000,100.000) frame=8 tics=-1 shield_id=32 durability=125 air=1021.78218
+CA106 PASS matrix 30 return body/hand visibility
+CA106 PASS matrix 30 return actual equipped type
+CA106 PASS matrix 30 return synchronized single left grip
+CA106 PASS matrix 30 return grip origin registration
+CA106 PASS matrix 30 return weapon layer restored
+CA106 POSE matrix 30 return type=2 tier=1 size=0 body=(82.000,45.000) frame=0 tics=5 shield_id=32 durability=125 air=1021.78218
+CA106 PASS native equip CaelumShieldPickup
+CA106 PASS matrix 31 rest body/hand visibility
+CA106 PASS matrix 31 rest actual equipped type
+CA106 PASS matrix 31 rest synchronized single left grip
+CA106 PASS matrix 31 rest grip origin registration
+CA106 PASS matrix 31 rest weapon layer restored
+CA106 POSE matrix 31 rest type=2 tier=1 size=1 body=(82.000,45.000) frame=1 tics=4 shield_id=33 durability=188 air=1021.78218
+CA106 PASS matrix 31 block body/hand visibility
+CA106 PASS matrix 31 block actual equipped type
+CA106 PASS matrix 31 block synchronized single left grip
+CA106 PASS matrix 31 block grip origin registration
+CA106 PASS matrix 31 block indefinitely held I frame
+CA106 PASS matrix 31 block right weapon/hand layers hidden
+CA106 POSE matrix 31 block type=2 tier=1 size=1 body=(160.000,100.000) frame=8 tics=-1 shield_id=33 durability=188 air=1021.78218
+CA106 PASS matrix 31 held body/hand visibility
+CA106 PASS matrix 31 held actual equipped type
+CA106 PASS matrix 31 held synchronized single left grip
+CA106 PASS matrix 31 held grip origin registration
+CA106 PASS matrix 31 held indefinitely held I frame
+CA106 PASS matrix 31 held right weapon/hand layers hidden
+CA106 POSE matrix 31 held type=2 tier=1 size=1 body=(160.000,100.000) frame=8 tics=-1 shield_id=33 durability=188 air=1021.78218
+CA106 PASS matrix 31 return body/hand visibility
+CA106 PASS matrix 31 return actual equipped type
+CA106 PASS matrix 31 return synchronized single left grip
+CA106 PASS matrix 31 return grip origin registration
+CA106 PASS matrix 31 return weapon layer restored
+CA106 POSE matrix 31 return type=2 tier=1 size=1 body=(82.000,45.000) frame=0 tics=5 shield_id=33 durability=188 air=1021.78218
+CA106 PASS native equip CaelumShieldPickup
+CA106 PASS matrix 32 rest body/hand visibility
+CA106 PASS matrix 32 rest actual equipped type
+CA106 PASS matrix 32 rest synchronized single left grip
+CA106 PASS matrix 32 rest grip origin registration
+CA106 PASS matrix 32 rest weapon layer restored
+CA106 POSE matrix 32 rest type=2 tier=1 size=2 body=(82.000,45.000) frame=1 tics=4 shield_id=34 durability=250 air=1021.78218
+CA106 PASS matrix 32 block body/hand visibility
+CA106 PASS matrix 32 block actual equipped type
+CA106 PASS matrix 32 block synchronized single left grip
+CA106 PASS matrix 32 block grip origin registration
+CA106 PASS matrix 32 block indefinitely held I frame
+CA106 PASS matrix 32 block right weapon/hand layers hidden
+CA106 POSE matrix 32 block type=2 tier=1 size=2 body=(160.000,100.000) frame=8 tics=-1 shield_id=34 durability=250 air=1021.78218
+CA106 PASS matrix 32 held body/hand visibility
+CA106 PASS matrix 32 held actual equipped type
+CA106 PASS matrix 32 held synchronized single left grip
+CA106 PASS matrix 32 held grip origin registration
+CA106 PASS matrix 32 held indefinitely held I frame
+CA106 PASS matrix 32 held right weapon/hand layers hidden
+CA106 POSE matrix 32 held type=2 tier=1 size=2 body=(160.000,100.000) frame=8 tics=-1 shield_id=34 durability=250 air=1021.78218
+CA106 PASS matrix 32 return body/hand visibility
+CA106 PASS matrix 32 return actual equipped type
+CA106 PASS matrix 32 return synchronized single left grip
+CA106 PASS matrix 32 return grip origin registration
+CA106 PASS matrix 32 return weapon layer restored
+CA106 POSE matrix 32 return type=2 tier=1 size=2 body=(82.000,45.000) frame=0 tics=5 shield_id=34 durability=250 air=1021.78218
+CA106 PASS native equip CaelumShieldPickup
+CA106 PASS matrix 33 rest body/hand visibility
+CA106 PASS matrix 33 rest actual equipped type
+CA106 PASS matrix 33 rest synchronized single left grip
+CA106 PASS matrix 33 rest grip origin registration
+CA106 PASS matrix 33 rest weapon layer restored
+CA106 POSE matrix 33 rest type=2 tier=1 size=3 body=(82.000,45.000) frame=1 tics=4 shield_id=35 durability=313 air=1021.78218
+CA106 PASS matrix 33 block body/hand visibility
+CA106 PASS matrix 33 block actual equipped type
+CA106 PASS matrix 33 block synchronized single left grip
+CA106 PASS matrix 33 block grip origin registration
+CA106 PASS matrix 33 block indefinitely held I frame
+CA106 PASS matrix 33 block right weapon/hand layers hidden
+CA106 POSE matrix 33 block type=2 tier=1 size=3 body=(160.000,100.000) frame=8 tics=-1 shield_id=35 durability=313 air=1021.78218
+CA106 PASS matrix 33 held body/hand visibility
+CA106 PASS matrix 33 held actual equipped type
+CA106 PASS matrix 33 held synchronized single left grip
+CA106 PASS matrix 33 held grip origin registration
+CA106 PASS matrix 33 held indefinitely held I frame
+CA106 PASS matrix 33 held right weapon/hand layers hidden
+CA106 POSE matrix 33 held type=2 tier=1 size=3 body=(160.000,100.000) frame=8 tics=-1 shield_id=35 durability=313 air=1021.78218
+CA106 PASS matrix 33 return body/hand visibility
+CA106 PASS matrix 33 return actual equipped type
+CA106 PASS matrix 33 return synchronized single left grip
+CA106 PASS matrix 33 return grip origin registration
+CA106 PASS matrix 33 return weapon layer restored
+CA106 POSE matrix 33 return type=2 tier=1 size=3 body=(82.000,45.000) frame=0 tics=5 shield_id=35 durability=313 air=1021.78218
+CA106 PASS native equip CaelumShieldPickup
+CA106 PASS matrix 34 rest body/hand visibility
+CA106 PASS matrix 34 rest actual equipped type
+CA106 PASS matrix 34 rest synchronized single left grip
+CA106 PASS matrix 34 rest grip origin registration
+CA106 PASS matrix 34 rest weapon layer restored
+CA106 POSE matrix 34 rest type=2 tier=1 size=4 body=(82.000,45.000) frame=1 tics=4 shield_id=36 durability=375 air=1021.78218
+CA106 PASS matrix 34 block body/hand visibility
+CA106 PASS matrix 34 block actual equipped type
+CA106 PASS matrix 34 block synchronized single left grip
+CA106 PASS matrix 34 block grip origin registration
+CA106 PASS matrix 34 block indefinitely held I frame
+CA106 PASS matrix 34 block right weapon/hand layers hidden
+CA106 POSE matrix 34 block type=2 tier=1 size=4 body=(160.000,100.000) frame=8 tics=-1 shield_id=36 durability=375 air=1021.78218
+CA106 PASS matrix 34 held body/hand visibility
+CA106 PASS matrix 34 held actual equipped type
+CA106 PASS matrix 34 held synchronized single left grip
+CA106 PASS matrix 34 held grip origin registration
+CA106 PASS matrix 34 held indefinitely held I frame
+CA106 PASS matrix 34 held right weapon/hand layers hidden
+CA106 POSE matrix 34 held type=2 tier=1 size=4 body=(160.000,100.000) frame=8 tics=-1 shield_id=36 durability=375 air=1021.78218
+CA106 PASS matrix 34 return body/hand visibility
+CA106 PASS matrix 34 return actual equipped type
+CA106 PASS matrix 34 return synchronized single left grip
+CA106 PASS matrix 34 return grip origin registration
+CA106 PASS matrix 34 return weapon layer restored
+CA106 POSE matrix 34 return type=2 tier=1 size=4 body=(82.000,45.000) frame=0 tics=5 shield_id=36 durability=375 air=1021.78218
+CA106 PASS native equip CaelumShieldPickup
+CA106 PASS matrix 35 rest body/hand visibility
+CA106 PASS matrix 35 rest actual equipped type
+CA106 PASS matrix 35 rest synchronized single left grip
+CA106 PASS matrix 35 rest grip origin registration
+CA106 PASS matrix 35 rest weapon layer restored
+CA106 POSE matrix 35 rest type=2 tier=2 size=0 body=(82.000,45.000) frame=1 tics=4 shield_id=37 durability=375 air=1021.78218
+CA106 PASS matrix 35 block body/hand visibility
+CA106 PASS matrix 35 block actual equipped type
+CA106 PASS matrix 35 block synchronized single left grip
+CA106 PASS matrix 35 block grip origin registration
+CA106 PASS matrix 35 block indefinitely held I frame
+CA106 PASS matrix 35 block right weapon/hand layers hidden
+CA106 POSE matrix 35 block type=2 tier=2 size=0 body=(160.000,100.000) frame=8 tics=-1 shield_id=37 durability=375 air=1021.78218
+CA106 PASS matrix 35 held body/hand visibility
+CA106 PASS matrix 35 held actual equipped type
+CA106 PASS matrix 35 held synchronized single left grip
+CA106 PASS matrix 35 held grip origin registration
+CA106 PASS matrix 35 held indefinitely held I frame
+CA106 PASS matrix 35 held right weapon/hand layers hidden
+CA106 POSE matrix 35 held type=2 tier=2 size=0 body=(160.000,100.000) frame=8 tics=-1 shield_id=37 durability=375 air=1021.78218
+CA106 PASS matrix 35 return body/hand visibility
+CA106 PASS matrix 35 return actual equipped type
+CA106 PASS matrix 35 return synchronized single left grip
+CA106 PASS matrix 35 return grip origin registration
+CA106 PASS matrix 35 return weapon layer restored
+CA106 POSE matrix 35 return type=2 tier=2 size=0 body=(82.000,45.000) frame=0 tics=5 shield_id=37 durability=375 air=1021.78218
+CA106 PASS native equip CaelumShieldPickup
+CA106 PASS matrix 36 rest body/hand visibility
+CA106 PASS matrix 36 rest actual equipped type
+CA106 PASS matrix 36 rest synchronized single left grip
+CA106 PASS matrix 36 rest grip origin registration
+CA106 PASS matrix 36 rest weapon layer restored
+CA106 POSE matrix 36 rest type=2 tier=2 size=1 body=(82.000,45.000) frame=1 tics=4 shield_id=38 durability=563 air=1021.78218
+CA106 PASS matrix 36 block body/hand visibility
+CA106 PASS matrix 36 block actual equipped type
+CA106 PASS matrix 36 block synchronized single left grip
+CA106 PASS matrix 36 block grip origin registration
+CA106 PASS matrix 36 block indefinitely held I frame
+CA106 PASS matrix 36 block right weapon/hand layers hidden
+CA106 POSE matrix 36 block type=2 tier=2 size=1 body=(160.000,100.000) frame=8 tics=-1 shield_id=38 durability=563 air=1021.78218
+CA106 PASS matrix 36 held body/hand visibility
+CA106 PASS matrix 36 held actual equipped type
+CA106 PASS matrix 36 held synchronized single left grip
+CA106 PASS matrix 36 held grip origin registration
+CA106 PASS matrix 36 held indefinitely held I frame
+CA106 PASS matrix 36 held right weapon/hand layers hidden
+CA106 POSE matrix 36 held type=2 tier=2 size=1 body=(160.000,100.000) frame=8 tics=-1 shield_id=38 durability=563 air=1021.78218
+CA106 PASS matrix 36 return body/hand visibility
+CA106 PASS matrix 36 return actual equipped type
+CA106 PASS matrix 36 return synchronized single left grip
+CA106 PASS matrix 36 return grip origin registration
+CA106 PASS matrix 36 return weapon layer restored
+CA106 POSE matrix 36 return type=2 tier=2 size=1 body=(82.000,45.000) frame=0 tics=5 shield_id=38 durability=563 air=1021.78218
+CA106 PASS native equip CaelumShieldPickup
+CA106 PASS matrix 37 rest body/hand visibility
+CA106 PASS matrix 37 rest actual equipped type
+CA106 PASS matrix 37 rest synchronized single left grip
+CA106 PASS matrix 37 rest grip origin registration
+CA106 PASS matrix 37 rest weapon layer restored
+CA106 POSE matrix 37 rest type=2 tier=2 size=2 body=(82.000,45.000) frame=1 tics=4 shield_id=39 durability=750 air=1021.78218
+CA106 PASS matrix 37 block body/hand visibility
+CA106 PASS matrix 37 block actual equipped type
+CA106 PASS matrix 37 block synchronized single left grip
+CA106 PASS matrix 37 block grip origin registration
+CA106 PASS matrix 37 block indefinitely held I frame
+CA106 PASS matrix 37 block right weapon/hand layers hidden
+CA106 POSE matrix 37 block type=2 tier=2 size=2 body=(160.000,100.000) frame=8 tics=-1 shield_id=39 durability=750 air=1021.78218
+CA106 PASS matrix 37 held body/hand visibility
+CA106 PASS matrix 37 held actual equipped type
+CA106 PASS matrix 37 held synchronized single left grip
+CA106 PASS matrix 37 held grip origin registration
+CA106 PASS matrix 37 held indefinitely held I frame
+CA106 PASS matrix 37 held right weapon/hand layers hidden
+CA106 POSE matrix 37 held type=2 tier=2 size=2 body=(160.000,100.000) frame=8 tics=-1 shield_id=39 durability=750 air=1021.78218
+CA106 PASS matrix 37 return body/hand visibility
+CA106 PASS matrix 37 return actual equipped type
+CA106 PASS matrix 37 return synchronized single left grip
+CA106 PASS matrix 37 return grip origin registration
+CA106 PASS matrix 37 return weapon layer restored
+CA106 POSE matrix 37 return type=2 tier=2 size=2 body=(82.000,45.000) frame=0 tics=5 shield_id=39 durability=750 air=1021.78218
+CA106 PASS native equip CaelumShieldPickup
+CA106 PASS matrix 38 rest body/hand visibility
+CA106 PASS matrix 38 rest actual equipped type
+CA106 PASS matrix 38 rest synchronized single left grip
+CA106 PASS matrix 38 rest grip origin registration
+CA106 PASS matrix 38 rest weapon layer restored
+CA106 POSE matrix 38 rest type=2 tier=2 size=3 body=(82.000,45.000) frame=1 tics=4 shield_id=40 durability=938 air=1021.78218
+CA106 PASS matrix 38 block body/hand visibility
+CA106 PASS matrix 38 block actual equipped type
+CA106 PASS matrix 38 block synchronized single left grip
+CA106 PASS matrix 38 block grip origin registration
+CA106 PASS matrix 38 block indefinitely held I frame
+CA106 PASS matrix 38 block right weapon/hand layers hidden
+CA106 POSE matrix 38 block type=2 tier=2 size=3 body=(160.000,100.000) frame=8 tics=-1 shield_id=40 durability=938 air=1021.78218
+CA106 PASS matrix 38 held body/hand visibility
+CA106 PASS matrix 38 held actual equipped type
+CA106 PASS matrix 38 held synchronized single left grip
+CA106 PASS matrix 38 held grip origin registration
+CA106 PASS matrix 38 held indefinitely held I frame
+CA106 PASS matrix 38 held right weapon/hand layers hidden
+CA106 POSE matrix 38 held type=2 tier=2 size=3 body=(160.000,100.000) frame=8 tics=-1 shield_id=40 durability=938 air=1021.78218
+CA106 PASS matrix 38 return body/hand visibility
+CA106 PASS matrix 38 return actual equipped type
+CA106 PASS matrix 38 return synchronized single left grip
+CA106 PASS matrix 38 return grip origin registration
+CA106 PASS matrix 38 return weapon layer restored
+CA106 POSE matrix 38 return type=2 tier=2 size=3 body=(82.000,45.000) frame=0 tics=5 shield_id=40 durability=938 air=1021.78218
+CA106 PASS native equip CaelumShieldPickup
+CA106 PASS matrix 39 rest body/hand visibility
+CA106 PASS matrix 39 rest actual equipped type
+CA106 PASS matrix 39 rest synchronized single left grip
+CA106 PASS matrix 39 rest grip origin registration
+CA106 PASS matrix 39 rest weapon layer restored
+CA106 POSE matrix 39 rest type=2 tier=2 size=4 body=(82.000,45.000) frame=1 tics=4 shield_id=41 durability=1125 air=1021.78218
+CA106 PASS matrix 39 block body/hand visibility
+CA106 PASS matrix 39 block actual equipped type
+CA106 PASS matrix 39 block synchronized single left grip
+CA106 PASS matrix 39 block grip origin registration
+CA106 PASS matrix 39 block indefinitely held I frame
+CA106 PASS matrix 39 block right weapon/hand layers hidden
+CA106 POSE matrix 39 block type=2 tier=2 size=4 body=(160.000,100.000) frame=8 tics=-1 shield_id=41 durability=1125 air=1021.78218
+CA106 PASS matrix 39 held body/hand visibility
+CA106 PASS matrix 39 held actual equipped type
+CA106 PASS matrix 39 held synchronized single left grip
+CA106 PASS matrix 39 held grip origin registration
+CA106 PASS matrix 39 held indefinitely held I frame
+CA106 PASS matrix 39 held right weapon/hand layers hidden
+CA106 POSE matrix 39 held type=2 tier=2 size=4 body=(160.000,100.000) frame=8 tics=-1 shield_id=41 durability=1125 air=1021.78218
+CA106 PASS matrix 39 return body/hand visibility
+CA106 PASS matrix 39 return actual equipped type
+CA106 PASS matrix 39 return synchronized single left grip
+CA106 PASS matrix 39 return grip origin registration
+CA106 PASS matrix 39 return weapon layer restored
+CA106 POSE matrix 39 return type=2 tier=2 size=4 body=(82.000,45.000) frame=0 tics=5 shield_id=41 durability=1125 air=1021.78218
+CA106 PASS native equip CaelumShieldPickup
+CA106 PASS matrix 40 rest body/hand visibility
+CA106 PASS matrix 40 rest actual equipped type
+CA106 PASS matrix 40 rest synchronized single left grip
+CA106 PASS matrix 40 rest grip origin registration
+CA106 PASS matrix 40 rest weapon layer restored
+CA106 POSE matrix 40 rest type=2 tier=3 size=0 body=(82.000,45.000) frame=1 tics=4 shield_id=42 durability=1125 air=1021.78218
+CA106 PASS matrix 40 block body/hand visibility
+CA106 PASS matrix 40 block actual equipped type
+CA106 PASS matrix 40 block synchronized single left grip
+CA106 PASS matrix 40 block grip origin registration
+CA106 PASS matrix 40 block indefinitely held I frame
+CA106 PASS matrix 40 block right weapon/hand layers hidden
+CA106 POSE matrix 40 block type=2 tier=3 size=0 body=(160.000,100.000) frame=8 tics=-1 shield_id=42 durability=1125 air=1021.78218
+CA106 PASS matrix 40 held body/hand visibility
+CA106 PASS matrix 40 held actual equipped type
+CA106 PASS matrix 40 held synchronized single left grip
+CA106 PASS matrix 40 held grip origin registration
+CA106 PASS matrix 40 held indefinitely held I frame
+CA106 PASS matrix 40 held right weapon/hand layers hidden
+CA106 POSE matrix 40 held type=2 tier=3 size=0 body=(160.000,100.000) frame=8 tics=-1 shield_id=42 durability=1125 air=1021.78218
+CA106 PASS matrix 40 return body/hand visibility
+CA106 PASS matrix 40 return actual equipped type
+CA106 PASS matrix 40 return synchronized single left grip
+CA106 PASS matrix 40 return grip origin registration
+CA106 PASS matrix 40 return weapon layer restored
+CA106 POSE matrix 40 return type=2 tier=3 size=0 body=(82.000,45.000) frame=0 tics=5 shield_id=42 durability=1125 air=1021.78218
+CA106 PASS native equip CaelumShieldPickup
+CA106 PASS matrix 41 rest body/hand visibility
+CA106 PASS matrix 41 rest actual equipped type
+CA106 PASS matrix 41 rest synchronized single left grip
+CA106 PASS matrix 41 rest grip origin registration
+CA106 PASS matrix 41 rest weapon layer restored
+CA106 POSE matrix 41 rest type=2 tier=3 size=1 body=(82.000,45.000) frame=1 tics=4 shield_id=43 durability=1688 air=1021.78218
+CA106 PASS matrix 41 block body/hand visibility
+CA106 PASS matrix 41 block actual equipped type
+CA106 PASS matrix 41 block synchronized single left grip
+CA106 PASS matrix 41 block grip origin registration
+CA106 PASS matrix 41 block indefinitely held I frame
+CA106 PASS matrix 41 block right weapon/hand layers hidden
+CA106 POSE matrix 41 block type=2 tier=3 size=1 body=(160.000,100.000) frame=8 tics=-1 shield_id=43 durability=1688 air=1021.78218
+CA106 PASS matrix 41 held body/hand visibility
+CA106 PASS matrix 41 held actual equipped type
+CA106 PASS matrix 41 held synchronized single left grip
+CA106 PASS matrix 41 held grip origin registration
+CA106 PASS matrix 41 held indefinitely held I frame
+CA106 PASS matrix 41 held right weapon/hand layers hidden
+CA106 POSE matrix 41 held type=2 tier=3 size=1 body=(160.000,100.000) frame=8 tics=-1 shield_id=43 durability=1688 air=1021.78218
+CA106 PASS matrix 41 return body/hand visibility
+CA106 PASS matrix 41 return actual equipped type
+CA106 PASS matrix 41 return synchronized single left grip
+CA106 PASS matrix 41 return grip origin registration
+CA106 PASS matrix 41 return weapon layer restored
+CA106 POSE matrix 41 return type=2 tier=3 size=1 body=(82.000,45.000) frame=0 tics=5 shield_id=43 durability=1688 air=1021.78218
+CA106 PASS native equip CaelumShieldPickup
+CA106 PASS matrix 42 rest body/hand visibility
+CA106 PASS matrix 42 rest actual equipped type
+CA106 PASS matrix 42 rest synchronized single left grip
+CA106 PASS matrix 42 rest grip origin registration
+CA106 PASS matrix 42 rest weapon layer restored
+CA106 POSE matrix 42 rest type=2 tier=3 size=2 body=(82.000,45.000) frame=1 tics=4 shield_id=44 durability=2250 air=1021.78218
+CA106 PASS matrix 42 block body/hand visibility
+CA106 PASS matrix 42 block actual equipped type
+CA106 PASS matrix 42 block synchronized single left grip
+CA106 PASS matrix 42 block grip origin registration
+CA106 PASS matrix 42 block indefinitely held I frame
+CA106 PASS matrix 42 block right weapon/hand layers hidden
+CA106 POSE matrix 42 block type=2 tier=3 size=2 body=(160.000,100.000) frame=8 tics=-1 shield_id=44 durability=2250 air=1021.78218
+CA106 PASS matrix 42 held body/hand visibility
+CA106 PASS matrix 42 held actual equipped type
+CA106 PASS matrix 42 held synchronized single left grip
+CA106 PASS matrix 42 held grip origin registration
+CA106 PASS matrix 42 held indefinitely held I frame
+CA106 PASS matrix 42 held right weapon/hand layers hidden
+CA106 POSE matrix 42 held type=2 tier=3 size=2 body=(160.000,100.000) frame=8 tics=-1 shield_id=44 durability=2250 air=1021.78218
+CA106 PASS matrix 42 return body/hand visibility
+CA106 PASS matrix 42 return actual equipped type
+CA106 PASS matrix 42 return synchronized single left grip
+CA106 PASS matrix 42 return grip origin registration
+CA106 PASS matrix 42 return weapon layer restored
+CA106 POSE matrix 42 return type=2 tier=3 size=2 body=(82.000,45.000) frame=0 tics=5 shield_id=44 durability=2250 air=1021.78218
+CA106 PASS native equip CaelumShieldPickup
+CA106 PASS matrix 43 rest body/hand visibility
+CA106 PASS matrix 43 rest actual equipped type
+CA106 PASS matrix 43 rest synchronized single left grip
+CA106 PASS matrix 43 rest grip origin registration
+CA106 PASS matrix 43 rest weapon layer restored
+CA106 POSE matrix 43 rest type=2 tier=3 size=3 body=(82.000,45.000) frame=1 tics=4 shield_id=45 durability=2813 air=1021.78218
+CA106 PASS matrix 43 block body/hand visibility
+CA106 PASS matrix 43 block actual equipped type
+CA106 PASS matrix 43 block synchronized single left grip
+CA106 PASS matrix 43 block grip origin registration
+CA106 PASS matrix 43 block indefinitely held I frame
+CA106 PASS matrix 43 block right weapon/hand layers hidden
+CA106 POSE matrix 43 block type=2 tier=3 size=3 body=(160.000,100.000) frame=8 tics=-1 shield_id=45 durability=2813 air=1021.78218
+CA106 PASS matrix 43 held body/hand visibility
+CA106 PASS matrix 43 held actual equipped type
+CA106 PASS matrix 43 held synchronized single left grip
+CA106 PASS matrix 43 held grip origin registration
+CA106 PASS matrix 43 held indefinitely held I frame
+CA106 PASS matrix 43 held right weapon/hand layers hidden
+CA106 POSE matrix 43 held type=2 tier=3 size=3 body=(160.000,100.000) frame=8 tics=-1 shield_id=45 durability=2813 air=1021.78218
+CA106 PASS matrix 43 return body/hand visibility
+CA106 PASS matrix 43 return actual equipped type
+CA106 PASS matrix 43 return synchronized single left grip
+CA106 PASS matrix 43 return grip origin registration
+CA106 PASS matrix 43 return weapon layer restored
+CA106 POSE matrix 43 return type=2 tier=3 size=3 body=(82.000,45.000) frame=0 tics=5 shield_id=45 durability=2813 air=1021.78218
+CA106 PASS native equip CaelumShieldPickup
+CA106 PASS matrix 44 rest body/hand visibility
+CA106 PASS matrix 44 rest actual equipped type
+CA106 PASS matrix 44 rest synchronized single left grip
+CA106 PASS matrix 44 rest grip origin registration
+CA106 PASS matrix 44 rest weapon layer restored
+CA106 POSE matrix 44 rest type=2 tier=3 size=4 body=(82.000,45.000) frame=1 tics=4 shield_id=46 durability=3375 air=1021.78218
+CA106 PASS matrix 44 block body/hand visibility
+CA106 PASS matrix 44 block actual equipped type
+CA106 PASS matrix 44 block synchronized single left grip
+CA106 PASS matrix 44 block grip origin registration
+CA106 PASS matrix 44 block indefinitely held I frame
+CA106 PASS matrix 44 block right weapon/hand layers hidden
+CA106 POSE matrix 44 block type=2 tier=3 size=4 body=(160.000,100.000) frame=8 tics=-1 shield_id=46 durability=3375 air=1021.78218
+CA106 PASS matrix 44 held body/hand visibility
+CA106 PASS matrix 44 held actual equipped type
+CA106 PASS matrix 44 held synchronized single left grip
+CA106 PASS matrix 44 held grip origin registration
+CA106 PASS matrix 44 held indefinitely held I frame
+CA106 PASS matrix 44 held right weapon/hand layers hidden
+CA106 POSE matrix 44 held type=2 tier=3 size=4 body=(160.000,100.000) frame=8 tics=-1 shield_id=46 durability=3375 air=1021.78218
+CA106 PASS matrix 44 return body/hand visibility
+CA106 PASS matrix 44 return actual equipped type
+CA106 PASS matrix 44 return synchronized single left grip
+CA106 PASS matrix 44 return grip origin registration
+CA106 PASS matrix 44 return weapon layer restored
+CA106 POSE matrix 44 return type=2 tier=3 size=4 body=(82.000,45.000) frame=0 tics=5 shield_id=46 durability=3375 air=1021.78218
+CA106 PASS native equip CaelumShieldPickup
+CA106 PASS matrix 45 rest body/hand visibility
+CA106 PASS matrix 45 rest actual equipped type
+CA106 PASS matrix 45 rest synchronized single left grip
+CA106 PASS matrix 45 rest grip origin registration
+CA106 PASS matrix 45 rest weapon layer restored
+CA106 POSE matrix 45 rest type=3 tier=1 size=0 body=(82.000,45.000) frame=0 tics=2 shield_id=47 durability=50 air=1021.78218
+CA106 PASS matrix 45 block body/hand visibility
+CA106 PASS matrix 45 block actual equipped type
+CA106 PASS matrix 45 block synchronized single left grip
+CA106 PASS matrix 45 block grip origin registration
+CA106 PASS matrix 45 block indefinitely held I frame
+CA106 PASS matrix 45 block right weapon/hand layers hidden
+CA106 POSE matrix 45 block type=3 tier=1 size=0 body=(160.000,100.000) frame=8 tics=-1 shield_id=47 durability=50 air=1021.78218
+CA106 PASS matrix 45 held body/hand visibility
+CA106 PASS matrix 45 held actual equipped type
+CA106 PASS matrix 45 held synchronized single left grip
+CA106 PASS matrix 45 held grip origin registration
+CA106 PASS matrix 45 held indefinitely held I frame
+CA106 PASS matrix 45 held right weapon/hand layers hidden
+CA106 POSE matrix 45 held type=3 tier=1 size=0 body=(160.000,100.000) frame=8 tics=-1 shield_id=47 durability=50 air=1021.78218
+CA106 PASS matrix 45 return body/hand visibility
+CA106 PASS matrix 45 return actual equipped type
+CA106 PASS matrix 45 return synchronized single left grip
+CA106 PASS matrix 45 return grip origin registration
+CA106 PASS matrix 45 return weapon layer restored
+CA106 POSE matrix 45 return type=3 tier=1 size=0 body=(82.000,45.000) frame=0 tics=5 shield_id=47 durability=50 air=1021.78218
+CA106 PASS native equip CaelumShieldPickup
+CA106 PASS matrix 46 rest body/hand visibility
+CA106 PASS matrix 46 rest actual equipped type
+CA106 PASS matrix 46 rest synchronized single left grip
+CA106 PASS matrix 46 rest grip origin registration
+CA106 PASS matrix 46 rest weapon layer restored
+CA106 POSE matrix 46 rest type=3 tier=1 size=1 body=(82.000,45.000) frame=1 tics=4 shield_id=48 durability=75 air=1021.78218
+CA106 PASS matrix 46 block body/hand visibility
+CA106 PASS matrix 46 block actual equipped type
+CA106 PASS matrix 46 block synchronized single left grip
+CA106 PASS matrix 46 block grip origin registration
+CA106 PASS matrix 46 block indefinitely held I frame
+CA106 PASS matrix 46 block right weapon/hand layers hidden
+CA106 POSE matrix 46 block type=3 tier=1 size=1 body=(160.000,100.000) frame=8 tics=-1 shield_id=48 durability=75 air=1021.78218
+CA106 PASS matrix 46 held body/hand visibility
+CA106 PASS matrix 46 held actual equipped type
+CA106 PASS matrix 46 held synchronized single left grip
+CA106 PASS matrix 46 held grip origin registration
+CA106 PASS matrix 46 held indefinitely held I frame
+CA106 PASS matrix 46 held right weapon/hand layers hidden
+CA106 POSE matrix 46 held type=3 tier=1 size=1 body=(160.000,100.000) frame=8 tics=-1 shield_id=48 durability=75 air=1021.78218
+CA106 PASS matrix 46 return body/hand visibility
+CA106 PASS matrix 46 return actual equipped type
+CA106 PASS matrix 46 return synchronized single left grip
+CA106 PASS matrix 46 return grip origin registration
+CA106 PASS matrix 46 return weapon layer restored
+CA106 POSE matrix 46 return type=3 tier=1 size=1 body=(82.000,45.000) frame=0 tics=5 shield_id=48 durability=75 air=1021.78218
+CA106 PASS native equip CaelumShieldPickup
+CA106 PASS matrix 47 rest body/hand visibility
+CA106 PASS matrix 47 rest actual equipped type
+CA106 PASS matrix 47 rest synchronized single left grip
+CA106 PASS matrix 47 rest grip origin registration
+CA106 PASS matrix 47 rest weapon layer restored
+CA106 POSE matrix 47 rest type=3 tier=1 size=2 body=(82.000,45.000) frame=1 tics=4 shield_id=49 durability=100 air=1021.78218
+CA106 PASS matrix 47 block body/hand visibility
+CA106 PASS matrix 47 block actual equipped type
+CA106 PASS matrix 47 block synchronized single left grip
+CA106 PASS matrix 47 block grip origin registration
+CA106 PASS matrix 47 block indefinitely held I frame
+CA106 PASS matrix 47 block right weapon/hand layers hidden
+CA106 POSE matrix 47 block type=3 tier=1 size=2 body=(160.000,100.000) frame=8 tics=-1 shield_id=49 durability=100 air=1021.78218
+CA106 PASS matrix 47 held body/hand visibility
+CA106 PASS matrix 47 held actual equipped type
+CA106 PASS matrix 47 held synchronized single left grip
+CA106 PASS matrix 47 held grip origin registration
+CA106 PASS matrix 47 held indefinitely held I frame
+CA106 PASS matrix 47 held right weapon/hand layers hidden
+CA106 POSE matrix 47 held type=3 tier=1 size=2 body=(160.000,100.000) frame=8 tics=-1 shield_id=49 durability=100 air=1021.78218
+CA106 PASS matrix 47 return body/hand visibility
+CA106 PASS matrix 47 return actual equipped type
+CA106 PASS matrix 47 return synchronized single left grip
+CA106 PASS matrix 47 return grip origin registration
+CA106 PASS matrix 47 return weapon layer restored
+CA106 POSE matrix 47 return type=3 tier=1 size=2 body=(82.000,45.000) frame=0 tics=5 shield_id=49 durability=100 air=1021.78218
+CA106 PASS native equip CaelumShieldPickup
+CA106 PASS matrix 48 rest body/hand visibility
+CA106 PASS matrix 48 rest actual equipped type
+CA106 PASS matrix 48 rest synchronized single left grip
+CA106 PASS matrix 48 rest grip origin registration
+CA106 PASS matrix 48 rest weapon layer restored
+CA106 POSE matrix 48 rest type=3 tier=1 size=3 body=(82.000,45.000) frame=1 tics=4 shield_id=50 durability=125 air=1021.78218
+CA106 PASS matrix 48 block body/hand visibility
+CA106 PASS matrix 48 block actual equipped type
+CA106 PASS matrix 48 block synchronized single left grip
+CA106 PASS matrix 48 block grip origin registration
+CA106 PASS matrix 48 block indefinitely held I frame
+CA106 PASS matrix 48 block right weapon/hand layers hidden
+CA106 POSE matrix 48 block type=3 tier=1 size=3 body=(160.000,100.000) frame=8 tics=-1 shield_id=50 durability=125 air=1021.78218
+CA106 PASS matrix 48 held body/hand visibility
+CA106 PASS matrix 48 held actual equipped type
+CA106 PASS matrix 48 held synchronized single left grip
+CA106 PASS matrix 48 held grip origin registration
+CA106 PASS matrix 48 held indefinitely held I frame
+CA106 PASS matrix 48 held right weapon/hand layers hidden
+CA106 POSE matrix 48 held type=3 tier=1 size=3 body=(160.000,100.000) frame=8 tics=-1 shield_id=50 durability=125 air=1021.78218
+CA106 PASS matrix 48 return body/hand visibility
+CA106 PASS matrix 48 return actual equipped type
+CA106 PASS matrix 48 return synchronized single left grip
+CA106 PASS matrix 48 return grip origin registration
+CA106 PASS matrix 48 return weapon layer restored
+CA106 POSE matrix 48 return type=3 tier=1 size=3 body=(82.000,45.000) frame=0 tics=5 shield_id=50 durability=125 air=1021.78218
+CA106 PASS native equip CaelumShieldPickup
+CA106 PASS matrix 49 rest body/hand visibility
+CA106 PASS matrix 49 rest actual equipped type
+CA106 PASS matrix 49 rest synchronized single left grip
+CA106 PASS matrix 49 rest grip origin registration
+CA106 PASS matrix 49 rest weapon layer restored
+CA106 POSE matrix 49 rest type=3 tier=1 size=4 body=(82.000,45.000) frame=1 tics=4 shield_id=51 durability=150 air=1021.78218
+CA106 PASS matrix 49 block body/hand visibility
+CA106 PASS matrix 49 block actual equipped type
+CA106 PASS matrix 49 block synchronized single left grip
+CA106 PASS matrix 49 block grip origin registration
+CA106 PASS matrix 49 block indefinitely held I frame
+CA106 PASS matrix 49 block right weapon/hand layers hidden
+CA106 POSE matrix 49 block type=3 tier=1 size=4 body=(160.000,100.000) frame=8 tics=-1 shield_id=51 durability=150 air=1021.78218
+CA106 PASS matrix 49 held body/hand visibility
+CA106 PASS matrix 49 held actual equipped type
+CA106 PASS matrix 49 held synchronized single left grip
+CA106 PASS matrix 49 held grip origin registration
+CA106 PASS matrix 49 held indefinitely held I frame
+CA106 PASS matrix 49 held right weapon/hand layers hidden
+CA106 POSE matrix 49 held type=3 tier=1 size=4 body=(160.000,100.000) frame=8 tics=-1 shield_id=51 durability=150 air=1021.78218
+CA106 PASS matrix 49 return body/hand visibility
+CA106 PASS matrix 49 return actual equipped type
+CA106 PASS matrix 49 return synchronized single left grip
+CA106 PASS matrix 49 return grip origin registration
+CA106 PASS matrix 49 return weapon layer restored
+CA106 POSE matrix 49 return type=3 tier=1 size=4 body=(82.000,45.000) frame=0 tics=5 shield_id=51 durability=150 air=1021.78218
+CA106 PASS native equip CaelumShieldPickup
+CA106 PASS matrix 50 rest body/hand visibility
+CA106 PASS matrix 50 rest actual equipped type
+CA106 PASS matrix 50 rest synchronized single left grip
+CA106 PASS matrix 50 rest grip origin registration
+CA106 PASS matrix 50 rest weapon layer restored
+CA106 POSE matrix 50 rest type=3 tier=2 size=0 body=(82.000,45.000) frame=1 tics=4 shield_id=52 durability=150 air=1021.78218
+CA106 PASS matrix 50 block body/hand visibility
+CA106 PASS matrix 50 block actual equipped type
+CA106 PASS matrix 50 block synchronized single left grip
+CA106 PASS matrix 50 block grip origin registration
+CA106 PASS matrix 50 block indefinitely held I frame
+CA106 PASS matrix 50 block right weapon/hand layers hidden
+CA106 POSE matrix 50 block type=3 tier=2 size=0 body=(160.000,100.000) frame=8 tics=-1 shield_id=52 durability=150 air=1021.78218
+CA106 PASS matrix 50 held body/hand visibility
+CA106 PASS matrix 50 held actual equipped type
+CA106 PASS matrix 50 held synchronized single left grip
+CA106 PASS matrix 50 held grip origin registration
+CA106 PASS matrix 50 held indefinitely held I frame
+CA106 PASS matrix 50 held right weapon/hand layers hidden
+CA106 POSE matrix 50 held type=3 tier=2 size=0 body=(160.000,100.000) frame=8 tics=-1 shield_id=52 durability=150 air=1021.78218
+CA106 PASS matrix 50 return body/hand visibility
+CA106 PASS matrix 50 return actual equipped type
+CA106 PASS matrix 50 return synchronized single left grip
+CA106 PASS matrix 50 return grip origin registration
+CA106 PASS matrix 50 return weapon layer restored
+CA106 POSE matrix 50 return type=3 tier=2 size=0 body=(82.000,45.000) frame=0 tics=5 shield_id=52 durability=150 air=1021.78218
+CA106 PASS native equip CaelumShieldPickup
+CA106 PASS matrix 51 rest body/hand visibility
+CA106 PASS matrix 51 rest actual equipped type
+CA106 PASS matrix 51 rest synchronized single left grip
+CA106 PASS matrix 51 rest grip origin registration
+CA106 PASS matrix 51 rest weapon layer restored
+CA106 POSE matrix 51 rest type=3 tier=2 size=1 body=(82.000,45.000) frame=1 tics=4 shield_id=53 durability=225 air=1021.78218
+CA106 PASS matrix 51 block body/hand visibility
+CA106 PASS matrix 51 block actual equipped type
+CA106 PASS matrix 51 block synchronized single left grip
+CA106 PASS matrix 51 block grip origin registration
+CA106 PASS matrix 51 block indefinitely held I frame
+CA106 PASS matrix 51 block right weapon/hand layers hidden
+CA106 POSE matrix 51 block type=3 tier=2 size=1 body=(160.000,100.000) frame=8 tics=-1 shield_id=53 durability=225 air=1021.78218
+CA106 PASS matrix 51 held body/hand visibility
+CA106 PASS matrix 51 held actual equipped type
+CA106 PASS matrix 51 held synchronized single left grip
+CA106 PASS matrix 51 held grip origin registration
+CA106 PASS matrix 51 held indefinitely held I frame
+CA106 PASS matrix 51 held right weapon/hand layers hidden
+CA106 POSE matrix 51 held type=3 tier=2 size=1 body=(160.000,100.000) frame=8 tics=-1 shield_id=53 durability=225 air=1021.78218
+CA106 PASS matrix 51 return body/hand visibility
+CA106 PASS matrix 51 return actual equipped type
+CA106 PASS matrix 51 return synchronized single left grip
+CA106 PASS matrix 51 return grip origin registration
+CA106 PASS matrix 51 return weapon layer restored
+CA106 POSE matrix 51 return type=3 tier=2 size=1 body=(82.000,45.000) frame=0 tics=5 shield_id=53 durability=225 air=1021.78218
+CA106 PASS native equip CaelumShieldPickup
+CA106 PASS matrix 52 rest body/hand visibility
+CA106 PASS matrix 52 rest actual equipped type
+CA106 PASS matrix 52 rest synchronized single left grip
+CA106 PASS matrix 52 rest grip origin registration
+CA106 PASS matrix 52 rest weapon layer restored
+CA106 POSE matrix 52 rest type=3 tier=2 size=2 body=(82.000,45.000) frame=1 tics=4 shield_id=54 durability=300 air=1021.78218
+CA106 PASS matrix 52 block body/hand visibility
+CA106 PASS matrix 52 block actual equipped type
+CA106 PASS matrix 52 block synchronized single left grip
+CA106 PASS matrix 52 block grip origin registration
+CA106 PASS matrix 52 block indefinitely held I frame
+CA106 PASS matrix 52 block right weapon/hand layers hidden
+CA106 POSE matrix 52 block type=3 tier=2 size=2 body=(160.000,100.000) frame=8 tics=-1 shield_id=54 durability=300 air=1021.78218
+CA106 PASS matrix 52 held body/hand visibility
+CA106 PASS matrix 52 held actual equipped type
+CA106 PASS matrix 52 held synchronized single left grip
+CA106 PASS matrix 52 held grip origin registration
+CA106 PASS matrix 52 held indefinitely held I frame
+CA106 PASS matrix 52 held right weapon/hand layers hidden
+CA106 POSE matrix 52 held type=3 tier=2 size=2 body=(160.000,100.000) frame=8 tics=-1 shield_id=54 durability=300 air=1021.78218
+CA106 PASS matrix 52 return body/hand visibility
+CA106 PASS matrix 52 return actual equipped type
+CA106 PASS matrix 52 return synchronized single left grip
+CA106 PASS matrix 52 return grip origin registration
+CA106 PASS matrix 52 return weapon layer restored
+CA106 POSE matrix 52 return type=3 tier=2 size=2 body=(82.000,45.000) frame=0 tics=5 shield_id=54 durability=300 air=1021.78218
+CA106 PASS native equip CaelumShieldPickup
+CA106 PASS matrix 53 rest body/hand visibility
+CA106 PASS matrix 53 rest actual equipped type
+CA106 PASS matrix 53 rest synchronized single left grip
+CA106 PASS matrix 53 rest grip origin registration
+CA106 PASS matrix 53 rest weapon layer restored
+CA106 POSE matrix 53 rest type=3 tier=2 size=3 body=(82.000,45.000) frame=1 tics=4 shield_id=55 durability=375 air=1021.78218
+CA106 PASS matrix 53 block body/hand visibility
+CA106 PASS matrix 53 block actual equipped type
+CA106 PASS matrix 53 block synchronized single left grip
+CA106 PASS matrix 53 block grip origin registration
+CA106 PASS matrix 53 block indefinitely held I frame
+CA106 PASS matrix 53 block right weapon/hand layers hidden
+CA106 POSE matrix 53 block type=3 tier=2 size=3 body=(160.000,100.000) frame=8 tics=-1 shield_id=55 durability=375 air=1021.78218
+CA106 PASS matrix 53 held body/hand visibility
+CA106 PASS matrix 53 held actual equipped type
+CA106 PASS matrix 53 held synchronized single left grip
+CA106 PASS matrix 53 held grip origin registration
+CA106 PASS matrix 53 held indefinitely held I frame
+CA106 PASS matrix 53 held right weapon/hand layers hidden
+CA106 POSE matrix 53 held type=3 tier=2 size=3 body=(160.000,100.000) frame=8 tics=-1 shield_id=55 durability=375 air=1021.78218
+CA106 PASS matrix 53 return body/hand visibility
+CA106 PASS matrix 53 return actual equipped type
+CA106 PASS matrix 53 return synchronized single left grip
+CA106 PASS matrix 53 return grip origin registration
+CA106 PASS matrix 53 return weapon layer restored
+CA106 POSE matrix 53 return type=3 tier=2 size=3 body=(82.000,45.000) frame=0 tics=5 shield_id=55 durability=375 air=1021.78218
+CA106 PASS native equip CaelumShieldPickup
+CA106 PASS matrix 54 rest body/hand visibility
+CA106 PASS matrix 54 rest actual equipped type
+CA106 PASS matrix 54 rest synchronized single left grip
+CA106 PASS matrix 54 rest grip origin registration
+CA106 PASS matrix 54 rest weapon layer restored
+CA106 POSE matrix 54 rest type=3 tier=2 size=4 body=(82.000,45.000) frame=1 tics=4 shield_id=56 durability=450 air=1021.78218
+CA106 PASS matrix 54 block body/hand visibility
+CA106 PASS matrix 54 block actual equipped type
+CA106 PASS matrix 54 block synchronized single left grip
+CA106 PASS matrix 54 block grip origin registration
+CA106 PASS matrix 54 block indefinitely held I frame
+CA106 PASS matrix 54 block right weapon/hand layers hidden
+CA106 POSE matrix 54 block type=3 tier=2 size=4 body=(160.000,100.000) frame=8 tics=-1 shield_id=56 durability=450 air=1021.78218
+CA106 PASS matrix 54 held body/hand visibility
+CA106 PASS matrix 54 held actual equipped type
+CA106 PASS matrix 54 held synchronized single left grip
+CA106 PASS matrix 54 held grip origin registration
+CA106 PASS matrix 54 held indefinitely held I frame
+CA106 PASS matrix 54 held right weapon/hand layers hidden
+CA106 POSE matrix 54 held type=3 tier=2 size=4 body=(160.000,100.000) frame=8 tics=-1 shield_id=56 durability=450 air=1021.78218
+CA106 PASS matrix 54 return body/hand visibility
+CA106 PASS matrix 54 return actual equipped type
+CA106 PASS matrix 54 return synchronized single left grip
+CA106 PASS matrix 54 return grip origin registration
+CA106 PASS matrix 54 return weapon layer restored
+CA106 POSE matrix 54 return type=3 tier=2 size=4 body=(82.000,45.000) frame=0 tics=5 shield_id=56 durability=450 air=1021.78218
+CA106 PASS native equip CaelumShieldPickup
+CA106 PASS matrix 55 rest body/hand visibility
+CA106 PASS matrix 55 rest actual equipped type
+CA106 PASS matrix 55 rest synchronized single left grip
+CA106 PASS matrix 55 rest grip origin registration
+CA106 PASS matrix 55 rest weapon layer restored
+CA106 POSE matrix 55 rest type=3 tier=3 size=0 body=(82.000,45.000) frame=1 tics=4 shield_id=57 durability=450 air=1021.78218
+CA106 PASS matrix 55 block body/hand visibility
+CA106 PASS matrix 55 block actual equipped type
+CA106 PASS matrix 55 block synchronized single left grip
+CA106 PASS matrix 55 block grip origin registration
+CA106 PASS matrix 55 block indefinitely held I frame
+CA106 PASS matrix 55 block right weapon/hand layers hidden
+CA106 POSE matrix 55 block type=3 tier=3 size=0 body=(160.000,100.000) frame=8 tics=-1 shield_id=57 durability=450 air=1021.78218
+CA106 PASS matrix 55 held body/hand visibility
+CA106 PASS matrix 55 held actual equipped type
+CA106 PASS matrix 55 held synchronized single left grip
+CA106 PASS matrix 55 held grip origin registration
+CA106 PASS matrix 55 held indefinitely held I frame
+CA106 PASS matrix 55 held right weapon/hand layers hidden
+CA106 POSE matrix 55 held type=3 tier=3 size=0 body=(160.000,100.000) frame=8 tics=-1 shield_id=57 durability=450 air=1021.78218
+CA106 PASS matrix 55 return body/hand visibility
+CA106 PASS matrix 55 return actual equipped type
+CA106 PASS matrix 55 return synchronized single left grip
+CA106 PASS matrix 55 return grip origin registration
+CA106 PASS matrix 55 return weapon layer restored
+CA106 POSE matrix 55 return type=3 tier=3 size=0 body=(82.000,45.000) frame=0 tics=5 shield_id=57 durability=450 air=1021.78218
+CA106 PASS native equip CaelumShieldPickup
+CA106 PASS matrix 56 rest body/hand visibility
+CA106 PASS matrix 56 rest actual equipped type
+CA106 PASS matrix 56 rest synchronized single left grip
+CA106 PASS matrix 56 rest grip origin registration
+CA106 PASS matrix 56 rest weapon layer restored
+CA106 POSE matrix 56 rest type=3 tier=3 size=1 body=(82.000,45.000) frame=1 tics=4 shield_id=58 durability=675 air=1021.78218
+CA106 PASS matrix 56 block body/hand visibility
+CA106 PASS matrix 56 block actual equipped type
+CA106 PASS matrix 56 block synchronized single left grip
+CA106 PASS matrix 56 block grip origin registration
+CA106 PASS matrix 56 block indefinitely held I frame
+CA106 PASS matrix 56 block right weapon/hand layers hidden
+CA106 POSE matrix 56 block type=3 tier=3 size=1 body=(160.000,100.000) frame=8 tics=-1 shield_id=58 durability=675 air=1021.78218
+CA106 PASS matrix 56 held body/hand visibility
+CA106 PASS matrix 56 held actual equipped type
+CA106 PASS matrix 56 held synchronized single left grip
+CA106 PASS matrix 56 held grip origin registration
+CA106 PASS matrix 56 held indefinitely held I frame
+CA106 PASS matrix 56 held right weapon/hand layers hidden
+CA106 POSE matrix 56 held type=3 tier=3 size=1 body=(160.000,100.000) frame=8 tics=-1 shield_id=58 durability=675 air=1021.78218
+CA106 PASS matrix 56 return body/hand visibility
+CA106 PASS matrix 56 return actual equipped type
+CA106 PASS matrix 56 return synchronized single left grip
+CA106 PASS matrix 56 return grip origin registration
+CA106 PASS matrix 56 return weapon layer restored
+CA106 POSE matrix 56 return type=3 tier=3 size=1 body=(82.000,45.000) frame=0 tics=5 shield_id=58 durability=675 air=1021.78218
+CA106 PASS native equip CaelumShieldPickup
+CA106 PASS matrix 57 rest body/hand visibility
+CA106 PASS matrix 57 rest actual equipped type
+CA106 PASS matrix 57 rest synchronized single left grip
+CA106 PASS matrix 57 rest grip origin registration
+CA106 PASS matrix 57 rest weapon layer restored
+CA106 POSE matrix 57 rest type=3 tier=3 size=2 body=(82.000,45.000) frame=1 tics=4 shield_id=59 durability=900 air=1021.78218
+CA106 PASS matrix 57 block body/hand visibility
+CA106 PASS matrix 57 block actual equipped type
+CA106 PASS matrix 57 block synchronized single left grip
+CA106 PASS matrix 57 block grip origin registration
+CA106 PASS matrix 57 block indefinitely held I frame
+CA106 PASS matrix 57 block right weapon/hand layers hidden
+CA106 POSE matrix 57 block type=3 tier=3 size=2 body=(160.000,100.000) frame=8 tics=-1 shield_id=59 durability=900 air=1021.78218
+CA106 PASS matrix 57 held body/hand visibility
+CA106 PASS matrix 57 held actual equipped type
+CA106 PASS matrix 57 held synchronized single left grip
+CA106 PASS matrix 57 held grip origin registration
+CA106 PASS matrix 57 held indefinitely held I frame
+CA106 PASS matrix 57 held right weapon/hand layers hidden
+CA106 POSE matrix 57 held type=3 tier=3 size=2 body=(160.000,100.000) frame=8 tics=-1 shield_id=59 durability=900 air=1021.78218
+CA106 PASS matrix 57 return body/hand visibility
+CA106 PASS matrix 57 return actual equipped type
+CA106 PASS matrix 57 return synchronized single left grip
+CA106 PASS matrix 57 return grip origin registration
+CA106 PASS matrix 57 return weapon layer restored
+CA106 POSE matrix 57 return type=3 tier=3 size=2 body=(82.000,45.000) frame=0 tics=5 shield_id=59 durability=900 air=1021.78218
+CA106 PASS native equip CaelumShieldPickup
+CA106 PASS matrix 58 rest body/hand visibility
+CA106 PASS matrix 58 rest actual equipped type
+CA106 PASS matrix 58 rest synchronized single left grip
+CA106 PASS matrix 58 rest grip origin registration
+CA106 PASS matrix 58 rest weapon layer restored
+CA106 POSE matrix 58 rest type=3 tier=3 size=3 body=(82.000,45.000) frame=1 tics=4 shield_id=60 durability=1125 air=1021.78218
+CA106 PASS matrix 58 block body/hand visibility
+CA106 PASS matrix 58 block actual equipped type
+CA106 PASS matrix 58 block synchronized single left grip
+CA106 PASS matrix 58 block grip origin registration
+CA106 PASS matrix 58 block indefinitely held I frame
+CA106 PASS matrix 58 block right weapon/hand layers hidden
+CA106 POSE matrix 58 block type=3 tier=3 size=3 body=(160.000,100.000) frame=8 tics=-1 shield_id=60 durability=1125 air=1021.78218
+CA106 PASS matrix 58 held body/hand visibility
+CA106 PASS matrix 58 held actual equipped type
+CA106 PASS matrix 58 held synchronized single left grip
+CA106 PASS matrix 58 held grip origin registration
+CA106 PASS matrix 58 held indefinitely held I frame
+CA106 PASS matrix 58 held right weapon/hand layers hidden
+CA106 POSE matrix 58 held type=3 tier=3 size=3 body=(160.000,100.000) frame=8 tics=-1 shield_id=60 durability=1125 air=1021.78218
+CA106 PASS matrix 58 return body/hand visibility
+CA106 PASS matrix 58 return actual equipped type
+CA106 PASS matrix 58 return synchronized single left grip
+CA106 PASS matrix 58 return grip origin registration
+CA106 PASS matrix 58 return weapon layer restored
+CA106 POSE matrix 58 return type=3 tier=3 size=3 body=(82.000,45.000) frame=0 tics=5 shield_id=60 durability=1125 air=1021.78218
+CA106 PASS native equip CaelumShieldPickup
+CA106 PASS matrix 59 rest body/hand visibility
+CA106 PASS matrix 59 rest actual equipped type
+CA106 PASS matrix 59 rest synchronized single left grip
+CA106 PASS matrix 59 rest grip origin registration
+CA106 PASS matrix 59 rest weapon layer restored
+CA106 POSE matrix 59 rest type=3 tier=3 size=4 body=(82.000,45.000) frame=1 tics=4 shield_id=61 durability=1350 air=1021.78218
+CA106 PASS matrix 59 block body/hand visibility
+CA106 PASS matrix 59 block actual equipped type
+CA106 PASS matrix 59 block synchronized single left grip
+CA106 PASS matrix 59 block grip origin registration
+CA106 PASS matrix 59 block indefinitely held I frame
+CA106 PASS matrix 59 block right weapon/hand layers hidden
+CA106 POSE matrix 59 block type=3 tier=3 size=4 body=(160.000,100.000) frame=8 tics=-1 shield_id=61 durability=1350 air=1021.78218
+CA106 PASS matrix 59 held body/hand visibility
+CA106 PASS matrix 59 held actual equipped type
+CA106 PASS matrix 59 held synchronized single left grip
+CA106 PASS matrix 59 held grip origin registration
+CA106 PASS matrix 59 held indefinitely held I frame
+CA106 PASS matrix 59 held right weapon/hand layers hidden
+CA106 POSE matrix 59 held type=3 tier=3 size=4 body=(160.000,100.000) frame=8 tics=-1 shield_id=61 durability=1350 air=1021.78218
+CA106 PASS matrix 59 return body/hand visibility
+CA106 PASS matrix 59 return actual equipped type
+CA106 PASS matrix 59 return synchronized single left grip
+CA106 PASS matrix 59 return grip origin registration
+CA106 PASS matrix 59 return weapon layer restored
+CA106 POSE matrix 59 return type=3 tier=3 size=4 body=(82.000,45.000) frame=0 tics=5 shield_id=61 durability=1350 air=1021.78218
+CA106 MATRIX DONE checks=1381 failures=0
+CA106 DONE checks=1381 failures=0

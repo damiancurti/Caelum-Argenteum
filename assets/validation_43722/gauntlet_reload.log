@@ -1,0 +1,9 @@
+CA106 PASS gauntlet layer exists
+CA106 PASS gauntlet native guard/rest tier
+CA106 PASS gauntlet held guard with actual source
+CA106 PASS gauntlets no external shield
+CA106 BLOCK 0
+CA106 PASS gauntlet layer exists
+CA106 PASS gauntlet native guard/rest tier
+CA106 PASS gauntlets no external shield
+CA106 DONE checks=235 failures=0

@@ -1,0 +1,313 @@
+CA106 TRACE tick=1
+CA106 TRACE tick=2
+CA106 TRACE tick=3
+CA106 TRACE tick=4
+CA106 PASS native equip CaelumWeaponPickup
+CA106 PASS native equip CaelumShieldPickup
+CA106 PASS native equip CaelumWeaponPickup
+CA106 PASS manual body/hand visibility
+CA106 PASS manual actual equipped type
+CA106 PASS manual synchronized single left grip
+CA106 PASS manual grip origin registration
+CA106 PASS manual weapon layer restored
+CA106 POSE manual type=0 tier=1 size=2 body=(82.000,45.000) frame=0 tics=5 shield_id=2 durability=80 air=1021.78218
+CA106 BLOCK 1
+CA106 PASS manual body/hand visibility
+CA106 PASS manual actual equipped type
+CA106 PASS manual synchronized single left grip
+CA106 PASS manual grip origin registration
+CA106 PASS manual indefinitely held I frame
+CA106 PASS manual right weapon/hand layers hidden
+CA106 POSE manual type=0 tier=1 size=2 body=(160.000,100.000) frame=8 tics=-1 shield_id=2 durability=80 air=1021.52272
+CA106 BLOCK 0
+CA106 PASS native equip CaelumWeaponPickup
+CA106 PASS manual body/hand visibility
+CA106 PASS manual actual equipped type
+CA106 PASS manual synchronized single left grip
+CA106 PASS manual grip origin registration
+CA106 PASS manual weapon layer restored
+CA106 POSE manual type=0 tier=1 size=2 body=(82.000,45.000) frame=0 tics=1 shield_id=2 durability=80 air=1021.78218
+CA106 BLOCK 1
+CA106 PASS manual body/hand visibility
+CA106 PASS manual actual equipped type
+CA106 PASS manual synchronized single left grip
+CA106 PASS manual grip origin registration
+CA106 PASS manual indefinitely held I frame
+CA106 PASS manual right weapon/hand layers hidden
+CA106 POSE manual type=0 tier=1 size=2 body=(160.000,100.000) frame=8 tics=-1 shield_id=2 durability=80 air=1021.51390
+CA106 BLOCK 0
+CA106 PASS native equip CaelumWeaponPickup
+CA106 PASS manual body/hand visibility
+CA106 PASS native equip CaelumWeaponPickup
+CA106 PASS manual body/hand visibility
+CA106 PASS manual actual equipped type
+CA106 PASS manual synchronized single left grip
+CA106 PASS manual grip origin registration
+CA106 PASS manual weapon layer restored
+CA106 POSE manual type=0 tier=1 size=2 body=(82.000,45.000) frame=1 tics=3 shield_id=2 durability=80 air=1021.78218
+CA106 BLOCK 1
+CA106 PASS manual body/hand visibility
+CA106 PASS manual actual equipped type
+CA106 PASS manual synchronized single left grip
+CA106 PASS manual grip origin registration
+CA106 PASS manual indefinitely held I frame
+CA106 PASS manual right weapon/hand layers hidden
+CA106 POSE manual type=0 tier=1 size=2 body=(160.000,100.000) frame=8 tics=-1 shield_id=2 durability=80 air=1021.48301
+CA106 BLOCK 0
+CA106 PASS native equip CaelumWeaponPickup
+CA106 PASS manual body/hand visibility
+CA106 PASS manual actual equipped type
+CA106 PASS manual synchronized single left grip
+CA106 PASS manual grip origin registration
+CA106 PASS manual weapon layer restored
+CA106 POSE manual type=0 tier=1 size=2 body=(82.000,45.000) frame=1 tics=3 shield_id=2 durability=80 air=1021.78218
+CA106 BLOCK 1
+CA106 PASS manual body/hand visibility
+CA106 PASS manual actual equipped type
+CA106 PASS manual synchronized single left grip
+CA106 PASS manual grip origin registration
+CA106 PASS manual indefinitely held I frame
+CA106 PASS manual right weapon/hand layers hidden
+CA106 POSE manual type=0 tier=1 size=2 body=(160.000,100.000) frame=8 tics=-1 shield_id=2 durability=80 air=1021.47639
+CA106 BLOCK 0
+CA106 PASS native equip CaelumWeaponPickup
+CA106 PASS manual body/hand visibility
+CA106 PASS manual actual equipped type
+CA106 PASS manual synchronized single left grip
+CA106 PASS manual grip origin registration
+CA106 PASS manual weapon layer restored
+CA106 POSE manual type=0 tier=1 size=2 body=(82.000,45.000) frame=1 tics=3 shield_id=2 durability=80 air=1021.78218
+CA106 BLOCK 1
+CA106 PASS manual body/hand visibility
+CA106 PASS manual actual equipped type
+CA106 PASS manual synchronized single left grip
+CA106 PASS manual grip origin registration
+CA106 PASS manual indefinitely held I frame
+CA106 PASS manual right weapon/hand layers hidden
+CA106 POSE manual type=0 tier=1 size=2 body=(160.000,100.000) frame=8 tics=-1 shield_id=2 durability=80 air=1021.46977
+CA106 BLOCK 0
+CA106 PASS native equip CaelumWeaponPickup
+CA106 PASS manual body/hand visibility
+CA106 PASS manual actual equipped type
+CA106 PASS manual synchronized single left grip
+CA106 PASS manual grip origin registration
+CA106 PASS manual weapon layer restored
+CA106 POSE manual type=0 tier=1 size=2 body=(82.000,45.000) frame=1 tics=3 shield_id=2 durability=80 air=1021.78218
+CA106 BLOCK 1
+CA106 PASS manual body/hand visibility
+CA106 PASS manual actual equipped type
+CA106 PASS manual synchronized single left grip
+CA106 PASS manual grip origin registration
+CA106 PASS manual indefinitely held I frame
+CA106 PASS manual right weapon/hand layers hidden
+CA106 POSE manual type=0 tier=1 size=2 body=(160.000,100.000) frame=8 tics=-1 shield_id=2 durability=80 air=1021.46095
+CA106 BLOCK 0
+CA106 PASS native equip CaelumWeaponPickup
+CA106 PASS manual body/hand visibility
+CA106 PASS manual actual equipped type
+CA106 PASS manual synchronized single left grip
+CA106 PASS manual grip origin registration
+CA106 PASS manual weapon layer restored
+CA106 POSE manual type=0 tier=1 size=2 body=(82.000,45.000) frame=1 tics=3 shield_id=2 durability=80 air=1021.78218
+CA106 BLOCK 1
+CA106 PASS manual body/hand visibility
+CA106 PASS manual actual equipped type
+CA106 PASS manual synchronized single left grip
+CA106 PASS manual grip origin registration
+CA106 PASS manual indefinitely held I frame
+CA106 PASS manual right weapon/hand layers hidden
+CA106 POSE manual type=0 tier=1 size=2 body=(160.000,100.000) frame=8 tics=-1 shield_id=2 durability=80 air=1021.44330
+CA106 BLOCK 0
+CA106 PASS native equip CaelumWeaponPickup
+CA106 PASS manual body/hand visibility
+CA106 PASS manual actual equipped type
+CA106 PASS manual synchronized single left grip
+CA106 PASS manual grip origin registration
+CA106 PASS manual weapon layer restored
+CA106 POSE manual type=0 tier=1 size=2 body=(82.000,45.000) frame=1 tics=3 shield_id=2 durability=80 air=1021.78218
+CA106 BLOCK 1
+CA106 PASS manual body/hand visibility
+CA106 PASS manual actual equipped type
+CA106 PASS manual synchronized single left grip
+CA106 PASS manual grip origin registration
+CA106 PASS manual indefinitely held I frame
+CA106 PASS manual right weapon/hand layers hidden
+CA106 POSE manual type=0 tier=1 size=2 body=(160.000,100.000) frame=8 tics=-1 shield_id=2 durability=80 air=1021.42565
+CA106 BLOCK 0
+CA106 PASS native equip CaelumWeaponPickup
+CA106 PASS manual body/hand visibility
+CA106 PASS manual actual equipped type
+CA106 PASS manual synchronized single left grip
+CA106 PASS manual grip origin registration
+CA106 PASS manual weapon layer restored
+CA106 POSE manual type=0 tier=1 size=2 body=(82.000,45.000) frame=1 tics=3 shield_id=2 durability=80 air=1021.78218
+CA106 BLOCK 1
+CA106 PASS manual body/hand visibility
+CA106 PASS manual actual equipped type
+CA106 PASS manual synchronized single left grip
+CA106 PASS manual grip origin registration
+CA106 PASS manual indefinitely held I frame
+CA106 PASS manual right weapon/hand layers hidden
+CA106 POSE manual type=0 tier=1 size=2 body=(160.000,100.000) frame=8 tics=-1 shield_id=2 durability=80 air=1021.41020
+CA106 BLOCK 0
+CA106 PASS native equip CaelumWeaponPickup
+CA106 PASS manual body/hand visibility
+CA106 PASS native equip CaelumWeaponPickup
+CA106 PASS manual body/hand visibility
+CA106 PASS native equip CaelumWeaponPickup
+CA106 PASS manual body/hand visibility
+CA106 PASS native equip CaelumWeaponPickup
+CA106 PASS manual body/hand visibility
+CA106 PASS native equip CaelumWeaponPickup
+CA106 PASS manual body/hand visibility
+CA106 PASS native equip CaelumWeaponPickup
+CA106 PASS manual body/hand visibility
+CA106 PASS native equip CaelumWeaponPickup
+CA106 PASS manual body/hand visibility
+CA106 PASS native equip CaelumWeaponPickup
+CA106 PASS manual body/hand visibility
+CA106 PASS manual actual equipped type
+CA106 PASS manual synchronized single left grip
+CA106 PASS manual grip origin registration
+CA106 PASS manual weapon layer restored
+CA106 POSE manual type=0 tier=1 size=2 body=(82.000,45.000) frame=1 tics=3 shield_id=2 durability=80 air=1021.78218
+CA106 BLOCK 1
+CA106 PASS manual body/hand visibility
+CA106 PASS manual actual equipped type
+CA106 PASS manual synchronized single left grip
+CA106 PASS manual grip origin registration
+CA106 PASS manual indefinitely held I frame
+CA106 PASS manual right weapon/hand layers hidden
+CA106 POSE manual type=0 tier=1 size=2 body=(160.000,100.000) frame=8 tics=-1 shield_id=2 durability=80 air=1020.98375
+CA106 BLOCK 0
+CA106 PASS native equip CaelumWeaponPickup
+CA106 PASS manual body/hand visibility
+CA106 PASS manual actual equipped type
+CA106 PASS manual synchronized single left grip
+CA106 PASS manual grip origin registration
+CA106 PASS manual weapon layer restored
+CA106 POSE manual type=0 tier=1 size=2 body=(82.000,45.000) frame=1 tics=3 shield_id=2 durability=80 air=1021.78218
+CA106 BLOCK 1
+CA106 PASS manual body/hand visibility
+CA106 PASS manual actual equipped type
+CA106 PASS manual synchronized single left grip
+CA106 PASS manual grip origin registration
+CA106 PASS manual indefinitely held I frame
+CA106 PASS manual right weapon/hand layers hidden
+CA106 POSE manual type=0 tier=1 size=2 body=(160.000,100.000) frame=8 tics=-1 shield_id=2 durability=80 air=1020.95728
+CA106 BLOCK 0
+CA106 PASS native equip CaelumWeaponPickup
+CA106 PASS manual body/hand visibility
+CA106 PASS manual actual equipped type
+CA106 PASS manual synchronized single left grip
+CA106 PASS manual grip origin registration
+CA106 PASS manual weapon layer restored
+CA106 POSE manual type=0 tier=1 size=2 body=(82.000,45.000) frame=1 tics=3 shield_id=2 durability=80 air=1021.78218
+CA106 BLOCK 1
+CA106 PASS manual body/hand visibility
+CA106 PASS manual actual equipped type
+CA106 PASS manual synchronized single left grip
+CA106 PASS manual grip origin registration
+CA106 PASS manual indefinitely held I frame
+CA106 PASS manual right weapon/hand layers hidden
+CA106 POSE manual type=0 tier=1 size=2 body=(160.000,100.000) frame=8 tics=-1 shield_id=2 durability=80 air=1020.92198
+CA106 BLOCK 0
+CA106 PASS native equip CaelumWeaponPickup
+CA106 PASS manual body/hand visibility
+CA106 PASS manual actual equipped type
+CA106 PASS manual synchronized single left grip
+CA106 PASS manual grip origin registration
+CA106 PASS manual weapon layer restored
+CA106 POSE manual type=0 tier=1 size=2 body=(82.000,45.000) frame=1 tics=3 shield_id=2 durability=80 air=1021.78218
+CA106 BLOCK 1
+CA106 PASS manual body/hand visibility
+CA106 PASS manual actual equipped type
+CA106 PASS manual synchronized single left grip
+CA106 PASS manual grip origin registration
+CA106 PASS manual indefinitely held I frame
+CA106 PASS manual right weapon/hand layers hidden
+CA106 POSE manual type=0 tier=1 size=2 body=(160.000,100.000) frame=8 tics=-1 shield_id=2 durability=80 air=1020.88668
+CA106 BLOCK 0
+CA106 PASS native equip CaelumWeaponPickup
+CA106 PASS manual body/hand visibility
+CA106 PASS manual actual equipped type
+CA106 PASS manual synchronized single left grip
+CA106 PASS manual grip origin registration
+CA106 PASS manual weapon layer restored
+CA106 POSE manual type=0 tier=1 size=2 body=(82.000,45.000) frame=0 tics=6 shield_id=2 durability=80 air=1021.78218
+CA106 PASS manual body/hand visibility
+CA106 PASS manual actual equipped type
+CA106 PASS manual synchronized single left grip
+CA106 PASS manual grip origin registration
+CA106 PASS manual weapon layer restored
+CA106 POSE manual type=0 tier=1 size=2 body=(82.000,45.000) frame=0 tics=2 shield_id=2 durability=80 air=1004.01772
+CA106 BLOCK 1
+CA106 PASS native equip CaelumShieldPickup
+CA106 PASS manual body/hand visibility
+CA106 PASS manual actual equipped type
+CA106 PASS manual synchronized single left grip
+CA106 PASS manual grip origin registration
+CA106 PASS manual indefinitely held I frame
+CA106 PASS manual right weapon/hand layers hidden
+CA106 POSE manual type=1 tier=2 size=2 body=(160.000,100.000) frame=8 tics=-1 shield_id=23 durability=450 air=1000.92864
+CA106 PASS native equip CaelumShieldPickup
+CA106 PASS manual body/hand visibility
+CA106 PASS manual actual equipped type
+CA106 PASS manual synchronized single left grip
+CA106 PASS manual grip origin registration
+CA106 PASS manual indefinitely held I frame
+CA106 PASS manual right weapon/hand layers hidden
+CA106 POSE manual type=2 tier=3 size=2 body=(160.000,100.000) frame=8 tics=-1 shield_id=24 durability=2250 air=996.46416
+CA106 PASS native equip CaelumShieldPickup
+CA106 PASS manual body/hand visibility
+CA106 PASS manual actual equipped type
+CA106 PASS manual synchronized single left grip
+CA106 PASS manual grip origin registration
+CA106 PASS manual indefinitely held I frame
+CA106 PASS manual right weapon/hand layers hidden
+CA106 POSE manual type=3 tier=1 size=2 body=(160.000,100.000) frame=8 tics=-1 shield_id=25 durability=100 air=995.89728
+CA106 PASS manual body/hand visibility
+CA106 PASS native equip CaelumShieldPickup
+CA106 PASS manual body/hand visibility
+CA106 PASS manual actual equipped type
+CA106 PASS manual synchronized single left grip
+CA106 PASS manual grip origin registration
+CA106 PASS manual weapon layer restored
+CA106 POSE manual type=0 tier=1 size=2 body=(82.000,45.000) frame=0 tics=1 shield_id=2 durability=80 air=996.68794
+CA106 PASS manual body/hand visibility
+CA106 PASS native equip CaelumShieldPickup
+CA106 PASS manual body/hand visibility
+CA106 PASS manual actual equipped type
+CA106 PASS manual synchronized single left grip
+CA106 PASS manual grip origin registration
+CA106 PASS manual weapon layer restored
+CA106 POSE manual type=1 tier=1 size=2 body=(82.000,45.000) frame=0 tics=1 shield_id=26 durability=150 air=997.47861
+CA106 PASS manual body/hand visibility
+CA106 PASS manual body/hand visibility
+CA106 PASS manual actual equipped type
+CA106 PASS manual synchronized single left grip
+CA106 PASS manual grip origin registration
+CA106 PASS manual weapon layer restored
+CA106 POSE manual type=1 tier=1 size=2 body=(82.000,45.000) frame=0 tics=1 shield_id=26 durability=150 air=998.26927
+CA106 PASS manual body/hand visibility
+CA106 PASS manual actual equipped type
+CA106 PASS manual synchronized single left grip
+CA106 PASS manual grip origin registration
+CA106 PASS manual weapon layer restored
+CA106 POSE manual type=1 tier=1 size=2 body=(82.000,45.000) frame=0 tics=1 shield_id=26 durability=150 air=1001.00619
+CA106 BLOCK 1
+CA106 PASS manual body/hand visibility
+CA106 PASS manual actual equipped type
+CA106 PASS manual synchronized single left grip
+CA106 PASS manual grip origin registration
+CA106 PASS manual indefinitely held I frame
+CA106 PASS manual right weapon/hand layers hidden
+CA106 POSE manual type=1 tier=1 size=2 body=(160.000,100.000) frame=8 tics=-1 shield_id=26 durability=150 air=999.58212
+CA106 BLOCK 0
+CA106 PASS manual body/hand visibility
+CA106 PASS manual actual equipped type
+CA106 PASS manual synchronized single left grip
+CA106 PASS manual grip origin registration
+CA106 PASS manual weapon layer restored
+CA106 POSE manual type=1 tier=1 size=2 body=(82.000,45.000) frame=0 tics=1 shield_id=26 durability=150 air=1000.06869
+CA106 DONE checks=242 failures=0

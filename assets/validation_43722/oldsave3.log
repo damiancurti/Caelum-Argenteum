@@ -1,0 +1,9 @@
+CA106 TRACE tick=1
+CA106 TRACE tick=2
+CA106 TRACE tick=3
+CA106 TRACE tick=4
+CA106 PASS native equip CaelumWeaponPickup
+CA106 PASS native equip CaelumShieldPickup
+CA106 PASS native equip CaelumShieldPickup
+CA106 BLOCK 1
+CA106 SNAPSHOT id=3 type=3 tier=2 size=2 durability=300 count=1 block=1 air=1021.536752

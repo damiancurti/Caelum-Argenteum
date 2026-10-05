@@ -1,6 +1,79 @@
 # Caelum Argenteum — Audio and art
 
-Documentation version: **4.37.21** — 2026-10-04.
+Documentation version: **4.37.22** — 2026-10-05.
+
+## 4.37.22 - Equipped first-person shield artwork (#106)
+
+Kite, tower and magic shields now use their own inward-facing artwork in the
+shared native presentation. The round shield's DSHD and LHND source PNGs remain
+byte-identical. Its accepted rest (82,45), block (160,100), three-tic H and held
+I framing is retained. The old sword rig remains available for saved states;
+its methods are no longer the active playable renderer. Before this patch the
+shared weapon controller cleared that rig and the HUD displayed world icons
+only during block; adding states to the old sword alone would not implement #106.
+
+The three original 1536 x 1024 RGBA sheets live in
+`src/graphics/caelum/first_person/shields/`. Each has two inward-facing poses:
+three-quarter idle and frontal block, with a left forearm strap and right grip.
+They reference the existing type-specific icons and the accepted round shield.
+The original left glove/bracer is reused independently, never painted twice.
+Kite retains its tapered blue-edged wood, tower its broad rectangular iron/wood
+back, and magic its faceted blue crystal and aged gold rim.
+
+On 2026-10-05 the author explicitly accepted the sprites and their positions,
+then requested slightly muted colors. Native TEXTURES applies the existing
+greatsword palette (Desaturate 20, multiply RGB 205/198/188) to these three sheets;
+it does not repaint their silhouettes, grips or alpha, or recolor the broquel.
+`assets/first_person_shields/COMPOSITION.json` holds sheet coordinates, grip
+registration, source references, timing and palette. Its deterministic generator
+`assets/generators/generate_first_person_shields.py` updates only its marked
+TEXTURES fragment. The source sheets are generated artwork, not reproducible AI
+outputs; deterministic regeneration concerns their fixed native registration.
+PROMPTS.json and PROVENANCE.json retain the built-in image_gen instructions,
+reference/source hashes and rights. Only runtime sheets, generated TEXTURES entries and shared code enter the PK3.
+
+The author extended #106 on 2026-10-05 with giant-gauntlet blocking artwork: a
+boxer guard with the elbows closed and both hand edges protecting the front.
+Three original guard PNGs in `src/graphics/caelum/first_person/gauntlet_guards/`
+reference the existing T1-T3 gauntlets, retaining their bronze/orange, iron/red
+and brass/pale-rune identities. They use the same muted treatment. Native
+GGB1-GGB3 states replace only the held-block pose on layer 50; original rest
+and attack images and gameplay remain untouched. The guard follows actual
+block-source validity, survives loading and ends on cancellation/breakage.
+Composition, source hashes and GAUNTLET_PROMPTS.json preserve this extension.
+
+Author revision, 2026-10-05: the initial guard was too thin. Its three source
+PNGs were revised using the original B/C attack fists as proportion references.
+The inventory icon also appeared to have three hands; new T1-T3 sources in
+`src/graphics/caelum/gauntlet_icons/` show exactly two detached closed fists.
+Native TEXTURES replaces the existing icon names at the same logical 128x128
+size, with the same muted palette, and updates the shared CGAUA0 pickup image.
+Original small icon PNGs remain available; no unrelated asset is deleted.
+GAUNTLET_REVISION_PROMPTS.json records this correction. Initial gauntlet
+captures remain historical evidence; gallery_revised.html shows the revision.
+
+Native layers 44/45 hold body/left hand. Existing 46-53 weapon layers are cleared
+only during real shield block, then restored by their normal controller. The
+type comes from FindActiveNativeShield, with existing compatibility and model
+durability checks; giant gauntlets remain their own block source. Unequipping,
+broken/boxed/missing items and incompatible weapons clear the accessory. The
+unarmed renderer replaces its free left fist when holding a usable shield.
+Raising/lowering follows the native weapon position, idle A/B loops every eight
+tics, attack accompaniment lasts eight, and H transitions in three to indefinite
+I. Switching types refreshes both layers together. Menus, rest and death use
+the existing view-visibility conditions. Transient caches rebuild on load.
+
+All T1-T3/XS-XL items share one set per type. Shield proportions express shape,
+not new coverage or physical size statistics. Lower edges intentionally continue
+below the viewport like the accepted round shield; top edges and the grip remain
+visible at 4:3, 16:9 and 21:9. Evidence and qualifications:
+`assets/validation_43722/RESULTS.json`. The author accepted CA-43722-SHIELD-ART-01 on 2026-10-05: sprites, positions
+and final muted palette, based on the comparison captures. Aspect-ratio and
+transition checks remain agent engine evidence. CA-43722-SHIELD-PLAY-01 also passed by explicit author confirmation on
+2026-10-05; no #106 author check remains pending.
+
+The author accepted the revised gauntlet guard and two-glove icons on 2026-10-05
+(CA-43722-GAUNTLET-ART-01). Manual gameplay confirmation also passed on 2026-10-05.
 
 ## 4.37.21 - Approved narrative artwork sources and presentation (#103)
 

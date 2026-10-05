@@ -6,8 +6,25 @@ An independent dark fantasy FPS-RPG inspired by nineteenth-century Argentina.
 Author and game designer: **Damian Curti**. Development target: **GZDoom 4.14.2**
 on Windows 11. The final game is intended to be independent of Doom assets.
 
-**Current release: 4.37.21.** Obtain and update the complete repository, validate
+**Current release: 4.37.22.** Obtain and update the complete repository, validate
 it, then rebuild with `run_dev.bat` as described below.
+
+Issue [#106](https://github.com/damiancurti/Caelum-Argenteum/issues/106) gives
+the kite, tower and magic shields distinct **first-person interiors and grips**,
+selected from the real equipped item. The round shield keeps its approved art.
+Shared native layers cover equip/lower, rest, attacks and held block across
+supported tiers/sizes and compatible equipment, including fists. Gameplay and
+save schemas are unchanged. The author also requested a closed boxer guard
+for giant gauntlets; all three tiers now have a dedicated held-block sprite.
+His follow-up adds thicker attack-like proportions and two-glove inventory icons.
+The author accepted the revised gauntlet guard and two-glove icons on 2026-10-05
+(CA-43722-GAUNTLET-ART-01). Manual gameplay confirmation also passed on 2026-10-05.
+
+The author approved the sprites and positions;
+the final muted palette was also explicitly accepted on 2026-10-05.
+Sources: [shield composition](assets/first_person_shields/COMPOSITION.json).
+Tests: [4.37.22 evidence](assets/validation_43722/RESULTS.json).
+All #106 author checks passed on 2026-10-05; merge and closure authorized.
 
 Issue [#103](https://github.com/damiancurti/Caelum-Argenteum/issues/103) adds
 the author's banner and a **single-page introduction after character creation**.
@@ -20,7 +37,7 @@ Sources: [provenance](assets/branding/PROVENANCE.json). Agent verification and
 limits: [4.37.21 evidence](assets/validation_43721/RESULTS.json).
 The author accepted all three checks on 2026-10-04 and authorized issue closure
 and [PR #111](https://github.com/damiancurti/Caelum-Argenteum/pull/111) merge.
-Results are in HISTORY; no author checks remain outstanding.
+Results are in HISTORY; no #103 author checks remain outstanding.
 #98 is accepted and closed; PR #110 merged as 2ec2405c.
 
 Issue [#98](https://github.com/damiancurti/Caelum-Argenteum/issues/98) replaces
