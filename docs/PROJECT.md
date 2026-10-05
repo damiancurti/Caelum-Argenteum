@@ -3108,6 +3108,59 @@ content extensions and the pending previous versions are returned to V5.
 | V5.1: thermal exposure | Model of heat/cold based on climate, zones, activity, persistent humidity, wind and real equipment; Resilience, consumables, shelters, drying, rest and acclimatization. Numerical curves await the author's balance decisions. |
 | V5.x: marine resources and biomes | Persistent 3D sources, melee extraction slashing/piercing, toughness/rarity/depth/region/skill, exhaustion and regeneration. Marine biomes, algae/iodine and non-potable waters; stores maintain access to remote materials. |
 
+### V5 native menus, character setup and exploration — approved 2026-10-05
+
+Planning task: CA-V5-NATIVE-UI. The author approved this scope for version 5
+on 2026-10-05, explicitly requesting a roadmap update only and no GitHub
+issues while 4.37 is being closed. This is planned work, not an implemented
+feature or a new 4.37 release/blocker. Preserve the V5.0 architecture and
+V5.1 thermal milestones; assign implementation issues and patch numbers later.
+
+- **Unified character creation:** make the game's creator authoritative for
+  race, sex/gender and profession. Integrate compatible native appearance,
+  clothing/accessory colors, player sounds and a character preview using
+  authored resources. Native PlayerClass is an engine player type, not an
+  automatic equivalent of the game's combined profession. Hide or reconcile
+  redundant stock selectors. Global preferences may initialize a new character;
+  loading a save must restore that character without overwriting identity from
+  global settings. Limit in-game editing to permitted cosmetic changes.
+- **Local exploration automap:** reuse native discovery, zoom, pan, follow,
+  rotation, overlay and numbered marks. Add discovered beds, stations,
+  merchants, exits and transport, plus mission locations only after discovery
+  or information from an NPC. Named/category marks and conditional icons need
+  project integration. Use a nineteenth-century paper/cartographic style,
+  readable symbols, location name and integrated game time/current objective.
+  Keep local exploration separate from the world travel map. Check overlapping
+  floors in the mansion; do not assume a ready-made floor selector.
+- **Map-specific presentation:** mansion rooms/stations without exposing its
+  secret room; explored sewer routes and reminders of locked grates; fortified
+  Barracas al Sud's four exits, towers and services. Siege-sector warnings
+  require authored event integration. Do not automatically reveal undiscovered
+  enemies, chests, keys or secrets. Ability/card/NPC-based discovery is a future
+  extension whose exact rules and powers still require authored definitions.
+- **Strife-derived dialogue and Journal integration:** extend existing Use/USDF,
+  transactions, quest conditions and Journal rather than introducing a second
+  implementation. Reuse native response/item checks, rewards, actions, voice
+  and readable text; connect attribute/reputation/progress conditions through
+  the shared game systems. Adapt relevant mission/inventory/key-screen controls
+  into clear Journal, Inventory and Keys/Documents access. Preserve existing
+  main/side and active/completed filters and clues; extend history and tracking
+  as needed. Native menu options alone do not supply a complete quest journal.
+- **Controls, readability and comfort:** group remappable interaction, block,
+  Tarot, class ability, Journal, inventory and automap controls; make the custom
+  interface respect relevant UI/message scaling and crosshair size/color/
+  visibility preferences. Expose appropriate camera/weapon-motion settings
+  and respect them in custom animations. Retain native save/load screens and
+  integrate narrative autosaves with progression under the existing saving plan.
+- **Implementation and acceptance boundaries:** first audit actual GZDoom
+  4.14.2 support and current project integrations. Distinguish native settings
+  from custom logic and missing art/sound assets. Prioritize character identity
+  consistency, then automap/Journal usability. Preserve accepted systems,
+  bilingual UI and save compatibility; verify persistence across save/load and
+  hub travel and multiplayer authority when the relevant mode is implemented.
+  This roadmap edit needs no new author gameplay test and claims no runtime
+  validation.
+
 ### Inherited and cross-cutting work: V5, after export
 
 Except for the narrowly authorized three-map playtest slice above, commitments
