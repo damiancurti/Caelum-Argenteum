@@ -18,7 +18,9 @@ The native quit confirmation/cancellation remains in use. Confirmation shows
 the same image as an in-engine farewell, then a key/click invokes the original
 shutdown callback. GameInfo disables inherited text ENDOOM; unrelated credits,
 audio, port completion and maps are unchanged. No save fields or migration.
-Evidence: assets/validation_43721; author approval remains in pending_test.txt.
+Evidence: assets/validation_43721. The author accepted all three checks on
+2026-10-04 without reported qualifications and authorized issue #103 closure
+and PR #111 merge. No author checks remain outstanding; HISTORY records the IDs.
 #98's three author checks passed, issue closed and PR #110 merged 2ec2405c.
 
 ## 4.37.20 - Training dummy model (#98)

@@ -4,7 +4,7 @@ Documentation version: **4.37.21** — 2026-10-04.
 
 **#103 / 4.37.21:** approved banner/art; new-character single-page typewriter
 intro, actual bindings/survival, CA_MUS01; second key starts MAP01/CA_MUS02.
-Normal quit has art farewell; no Doom ENDOOM. Saves unchanged. Author tests pending.
+Normal quit has art farewell; no Doom ENDOOM. Saves unchanged. All author tests passed.
 **#98/#96/#91/#89 accepted, closed, merged:** dummy model, necklace/shield names,
 crafting/Tarot UI, Pico and shared gathering feedback. Evidence: validation_43717-20.
 

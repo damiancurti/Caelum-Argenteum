@@ -13,9 +13,11 @@ Documentation version: **4.37.21** — 2026-10-04.
   cancellation and shutdown audio retained, inherited text ENDOOM suppressed.
 - No persistent field/map/progression/port-completion changes. Native direct quit
   and quick exit remain bypasses. Test sound: all enabled, master 15%, isolated INI.
-- Static/native evidence: assets/validation_43721. Author checks:
-  CA-43721-INTRO-01, CA-43721-EXIT-01 and CA-43721-SAVE-01 in pending_test.txt.
-- Next: review linked PR and author results before closing/merging #103.
+- Static/native evidence: assets/validation_43721. The author accepted
+  CA-43721-INTRO-01, CA-43721-EXIT-01 and CA-43721-SAVE-01 on 2026-10-04
+  without reported qualifications; issue #103 closure and PR #111 merge authorized.
+- Implementation and author acceptance are complete. No #103 checks remain
+  outstanding; HISTORY records the results. Runtime and release stay unchanged.
 
 ## Issue #98 - Textured training dummy model (4.37.20)
 

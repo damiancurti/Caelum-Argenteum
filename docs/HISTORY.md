@@ -28,7 +28,7 @@ Existing quit cue, licenses and title-loop credits are retained. Port completion
 maps, saved fields and persistent handlers are unchanged; no migration needed.
 
 Verification is recorded in assets/validation_43721/RESULTS.json, with static
-and native evidence separated from pending author acceptance. Early tests found
+and native evidence separated from author acceptance. Early tests found
 the virtual text's aspect handling offset and corrected it with DTA_KeepRatio.
 An isolated fixture also confirmed StartGameDirect requires actual native menu
 input, not ConsoleProcess; subsequent new-game checks use real UI input.
@@ -51,7 +51,22 @@ native rollback save. Package hashes and evidence qualifications are in RESULTS.
 
 #98 follow-through: all three 4.37.20 author checks had passed; acceptance commit
 471293da was pushed, PR #110 merged 2ec2405c and issue #98 closed on 2026-10-04.
-No branch or original file was deleted. The new #103 author checks remain pending.
+No branch or original file was deleted.
+
+Author acceptance, 2026-10-04: the author confirmed that all tests passed and
+explicitly requested issue #103 closure and PR #111 merge. All three checks
+originating in 4.37.21 / issue #103 passed without reported qualifications:
+
+- CA-43721-INTRO-01: artwork/banner, single-page reveal/advance, bilingual
+  controls/survival text and CA_MUS01-to-CA_MUS02 transition accepted.
+- CA-43721-EXIT-01: confirmation/cancellation, farewell and clean shutdown
+  accepted with the documented native bypass paths.
+- CA-43721-SAVE-01: previous-save loading, unchanged progression and new-slot
+  save/reload accepted without introduction replay.
+
+The confirmed entries are removed from pending_test.txt, which remains tracked
+and empty. This acceptance-only update preserves runtime, assets, save schema
+and release 4.37.21; static/native evidence retains its original qualifications.
 
 ## 4.37.20 - Textured training dummy model (#98)
 

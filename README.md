@@ -18,7 +18,9 @@ Normal confirmed exit uses the same approved illustration before shutting down;
 cancel still returns normally. No inherited Doom II ENDOOM follows.
 Sources: [provenance](assets/branding/PROVENANCE.json). Agent verification and
 limits: [4.37.21 evidence](assets/validation_43721/RESULTS.json).
-Author checks remain in [pending_test.txt](pending_test.txt).
+The author accepted all three checks on 2026-10-04 and authorized issue closure
+and [PR #111](https://github.com/damiancurti/Caelum-Argenteum/pull/111) merge.
+Results are in HISTORY; no author checks remain outstanding.
 #98 is accepted and closed; PR #110 merged as 2ec2405c.
 
 Issue [#98](https://github.com/damiancurti/Caelum-Argenteum/issues/98) replaces

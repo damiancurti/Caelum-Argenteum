@@ -38,7 +38,8 @@ question. TitlePage/CreditPage and all licenses remain unchanged. Native ENDOOM
 requires exactly 4000 bytes of text/attributes, so GameInfo Endoom is empty and
 the full-color farewell runs before shutdown. See CA-KP-038 and validation_43721.
 Direct native quit/quick exit can bypass the picture; no Doom text follows.
-Author artwork/intro/exit acceptance remains pending.
+The author accepted artwork/intro/exit and save checks on 2026-10-04 without
+reported qualifications; the three test IDs and results are recorded in HISTORY.
 
 ## 4.37.20 - Original training mannequin model (#98)
 

@@ -2,7 +2,7 @@
   "issue": 103,
   "version": "4.37.21",
   "date": "2026-10-04",
-  "status": "Implemented and agent-verified. Author acceptance remains pending.",
+  "status": "Implemented, agent-verified and accepted by the author on 2026-10-04.",
   "base_commit": "2ec2405c41880841e239e20a08af56a4513a4847",
   "artwork_source_commit": "883ad8f2",
   "decisions": [
@@ -328,15 +328,18 @@
   "limitations": [
     "Direct console quit, m_quickexit and Windows Alt+F4 bypass the farewell; no native executable is modified.",
     "Controller A/B code follows the menu route; no physical gamepad test is claimed.",
-    "Music selection and enabled volumes were verified natively; subjective audio/art acceptance remains with the author.",
+    "Music selection and enabled volumes were verified natively; the author separately accepted the audio/art presentation on 2026-10-04.",
     "Test fixtures, engine, IWAD and save files remain local and are not distributed."
   ],
   "author_acceptance": {
-    "status": "Pending",
+    "status": "Passed",
+    "date": "2026-10-04",
+    "origin": "4.37.21 / issue #103",
     "checks": [
       "CA-43721-INTRO-01",
       "CA-43721-EXIT-01",
       "CA-43721-SAVE-01"
-    ]
+    ],
+    "qualifications": "None reported; issue closure and PR #111 merge explicitly authorized."
   }
 }
