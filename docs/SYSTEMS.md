@@ -1,6 +1,18 @@
 # Caelum Argenteum — Current systems and rules
 
-Documentation version: **4.37.19** — 2026-10-04.
+Documentation version: **4.37.20** — 2026-10-04.
+
+## 4.37.20 - Training target presentation (#98)
+
+The shared Caella/Rulo dummy now renders as a textured 3D model. Its actor
+collision remains Radius 21 / Height 72, independent of the visible mesh.
+The base actor retains Health 1000000 and its original Spawn/Death frame;
+the MAP01 practice subclass still ignores damage, movement and wear.
+There are no new hit, recovery, destruction or reward mechanics. Actual valid
+impacts still determine practice credit; misses and unrelated targets do not.
+Existing quest flags, loan IDs, completion gates and save fields are unchanged.
+Old saved actors acquire the model through MODELDEF without respawn, migration
+or a new schema revision. Original saves/packages remain the rollback path.
 
 ## 4.37.19 - Palomo's necklace and canonical shield names (#96)
 

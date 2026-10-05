@@ -1,6 +1,42 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **4.37.19** — 2026-10-04.
+Documentation version: **4.37.20** — 2026-10-04.
+
+## 4.37.20 - Textured training dummy model (#98)
+
+Author acceptance, 2026-10-04: all tests PASSED without reported qualifications.
+CA-43720-DUMMY-ART-01, CA-43720-DUMMY-PRACTICE-01 and CA-43720-DUMMY-SAVE-01
+originated in 4.37.20 / issue #98. The author explicitly confirmed every test
+correct and requested issue closure and PR #110 merge. The three confirmed
+entries are removed from pending_test.txt, retaining the empty tracked file.
+Runtime and release version are unchanged.
+
+Inspected the existing owned CDMYA0 sprite, then rebuilt its articulated
+wood/leather/brass mannequin, colored targets and round plinth as native
+textured geometry. The generator, editable design, provenance and original
+sprite are retained. One atlas and one material surface keep the asset bounded.
+MODELDEF covers both existing actors and their shared Spawn/Death frame;
+there are no new animations, gameplay fields, actors or migration routines.
+The visual height compensates MAP01 pixel stretch while collision remains
+Radius 21 / Height 72. No accepted quest, damage, equipment or map data changes.
+
+The initial native art check exposed target discs intersecting curved body
+parts; the final model moves the discs outside the body. Continuous UVs avoid
+per-face seams. Static and isolated engine evidence, including real practice
+impacts, fixed orientation, old active/completed saves and new reload, is kept
+in assets/validation_43720/RESULTS.json. The original 4.37.19 saves/package
+remain intact for rollback. These agent checks do not establish author approval.
+The three CA-43720-DUMMY-* checks were subsequently accepted as recorded above.
+
+Final verification: project validation and PK3 packaging passed; 73 assertions
+passed on the final package in isolated GZDoom 4.14.2 sessions. Eleven native
+captures cover all sides, distance, visible states and old saved actors. The
+retained 4.37.19 package also loads the newly saved completed practice for
+rollback. No development engine, IWAD, save or fixture is distributed.
+
+Author request during testing, 2026-10-04: launch this issue's remaining tests
+without music unless needed. Only the isolated test configuration is muted
+(snd_musicvolume=0); effects and normal player settings are unchanged.
 
 ## 4.37.19 - Palomo necklace reward and shield naming (#96)
 
@@ -8,6 +44,7 @@ Author acceptance, 2026-10-04: all tests PASSED without reported qualifications.
 CA-43719-NECKLACE-01, CA-43719-SHIELDS-01 and CA-43719-SAVE-01 originated in
 4.37.19 / issue #96. The author explicitly confirmed all tests correct,
 requested commit/push and then authorized issue closure and PR #109 merge.
+Issue #96 closed and PR #109 merged on 2026-10-04 (76757fd7).
 The three confirmed entries are removed from pending_test.txt, retaining
 the empty tracked file. Runtime and release version are unchanged.
 

@@ -1,0 +1,36 @@
+{
+  "issue": 98,
+  "vertices": 8152,
+  "triangles": 3384,
+  "material_surfaces": 1,
+  "bounds_obj": [
+    [
+      -18.65,
+      18.65
+    ],
+    [
+      0.0,
+      70.0
+    ],
+    [
+      -18.65,
+      18.65
+    ]
+  ],
+  "max_horizontal_radius": 18.650000000000002,
+  "atlas_size": [
+    512,
+    256
+  ],
+  "sha256": {
+    "ca_training_dummy.obj": "06529c2d66cdee2f07f4370313aadcf162bab48bc0d4a03081403acfbce9d5a7",
+    "ca_training_dummy.png": "4ae89bf07aaab273bb9bcafad283ab2e56fb3d87d6dd2f86e6a1329855dd8cff"
+  },
+  "deterministic_two_runs": true,
+  "other_modeldef_blocks_unchanged": true,
+  "degenerate_triangles": 0,
+  "uvs_in_bounds": true,
+  "actor_gameplay_unchanged": true,
+  "original_sprite_unchanged": true,
+  "python": "3.12.10"
+}

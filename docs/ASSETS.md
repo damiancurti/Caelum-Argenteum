@@ -1,6 +1,43 @@
 # Caelum Argenteum — Audio and art
 
-Documentation version: **4.37.19** — 2026-10-04.
+Documentation version: **4.37.20** — 2026-10-04.
+
+## 4.37.20 - Original training mannequin model (#98)
+
+Inspected the project's existing 48 x 72 CDMYA0 sprite before modeling. The
+new volume preserves its articulated chestnut/oxblood body, aged brass joints,
+colored concentric targets on head/chest/wrists/shins and round plinth. The
+original sprite and TEXTURES declaration remain intact as provenance and the
+native fallback when models are disabled. No external art or Doom asset is used.
+
+Editable part coordinates, material palette, target colors, seed and native
+bindings live in assets/training_dummy/DESIGN.json. The deterministic Python
+generator assets/generators/generate_training_dummy_model.py is the editable
+mesh/texture source, using the established environment Mesh container. Its OBJ
+and PNG outputs are also directly editable. PROVENANCE.json records ownership,
+source hashes, tool version and reproduction. Pillow 12.1.0 is an optional
+editing dependency; neither Pillow nor a generator is needed to build or play.
+
+Runtime assets: src/models/caelum/actors/training/ca_training_dummy.obj and
+ca_training_dummy.png. One 512 x 256 RGB atlas, one material surface, 3,384
+triangles and 8,152 exported position/UV entries; no animation or extra actors.
+Continuous spherical UVs and restrained painted relief make the parts readable
+under sector lighting. Target discs sit outside the curved body without
+coplanar overlap. The material surface stays below the native limit (CA-KP-020).
+
+OBJ axes are X width, Y height, positive Z front. Geometry reaches Y=0..70,
+with a maximum horizontal radius of 18.65. Scale 1 / 1 / 1.2 with
+CorrectPixelStretch compensates MAP01's native height transform (CA-KP-023),
+inside the unchanged Radius 21 / Height 72. Native front is map south at actor
+angle zero. MODELDEF explicitly binds CaelumTrainingDummy and its practice
+subclass CaelumM00TrainingDummy to CDMY A; Spawn and Death already use that
+same frame. There is no camera-facing flag and no new hit/recovery animation.
+
+Run `python assets/generators/generate_training_dummy_model.py` from the root;
+`--runtime-root` selects an isolated src copy. Only the generated MODELDEF block
+and the two model resources are rewritten. Two runs reproduce identical bytes.
+Native views, impact/state tests and old-save evidence: assets/validation_43720.
+The author accepted art, practice and save checks on 2026-10-04; see HISTORY.
 
 ## 4.37.19 - Existing necklace assets and shield localization (#96)
 

@@ -1,6 +1,19 @@
 # TASKS.md — Active tasks
 
-Documentation version: **4.37.19** — 2026-10-04.
+Documentation version: **4.37.20** — 2026-10-04.
+
+## Issue #98 - Textured training dummy model (4.37.20)
+
+- Recreated the existing articulated mannequin and six targets as original
+  textured volume, retaining editable sources and project provenance.
+- Bound both existing actor classes and all visible frames; kept the accepted
+  collision, location, health, practice logic and save schema.
+- Evidence: assets/validation_43720 (determinism, native views, real impacts,
+  old active/completed saves and new reload). The author accepted
+  CA-43720-DUMMY-ART-01, CA-43720-DUMMY-PRACTICE-01 and CA-43720-DUMMY-SAVE-01
+  on 2026-10-04 without reported qualifications; issue closure and PR #110
+  merge are authorized.
+- #96 accepted and closed; PR #109 merged 76757fd7 on 2026-10-04.
 
 ## Issue #96 - Palomo necklace and shield names (4.37.19)
 

@@ -1,6 +1,17 @@
 # Caelum Argenteum — Project, status and roadmap
 
-Documentation version: **4.37.19** — 2026-10-04.
+Documentation version: **4.37.20** — 2026-10-04.
+
+## 4.37.20 - Training dummy model (#98)
+
+The existing practice dummy is now an original textured OBJ mannequin derived
+from CDMYA0: wooden limbs, oxblood padding, brass joints, painted concentric
+targets and a round plinth. Both actor classes retain their original identity,
+states, collision, health and placement. No quest, damage or save logic changes.
+Sources and provenance are retained under assets/training_dummy and the model
+generator. Evidence: assets/validation_43720. Static and isolated engine
+checks are distinct from author acceptance: all three checks passed 2026-10-04.
+The author's #96 acceptance is complete: issue closed, PR #109 merged 76757fd7.
 
 ## 4.37.19 - Palomo necklace reward and shield names (#96)
 
@@ -14,8 +25,8 @@ are preserved. Shield dialogue uses the same bilingual names as inventory.
 The other equipment categories keep their accepted crafting and trial rules.
 
 Static/native verification and save evidence: assets/validation_43719.
-All three author checks passed on 2026-10-04; #96 closure and PR #109 merge
-were authorized. #91 was accepted, closed and merged as PR #108
+All three author checks passed on 2026-10-04; #96 is closed and PR #109 merged
+(76757fd7). #91 was accepted, closed and merged as PR #108
 on 2026-10-04 (merge 466a0734).
 
 ## 4.37.18 - Crafting sections and complete Tarot descriptions (#91)

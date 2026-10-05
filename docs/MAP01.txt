@@ -1,6 +1,17 @@
 CAELUM ARGENTEUM — STORY AND MAP01
 
-Documentation version: **4.37.19** — 2026-10-04.
+Documentation version: **4.37.20** — 2026-10-04.
+
+## 4.37.20 - Existing practice dummy in 3D (#98)
+
+The shared Caella and Rulo target at the accepted practice position
+(368, 480, 0) now has an original textured mannequin model based on CDMYA0.
+Its orientation, actor identity, placement, collision and indestructibility
+are unchanged. The room, route, valid-impact requirements and both tutorials
+retain their accepted behavior. Spawn/Death share the existing static frame;
+no recovery animation or narrative change is introduced. Old active/completed
+practice saves retain the same actor and progress. See ASSETS for sources and
+assets/validation_43720 for native checks; author acceptance passed 2026-10-04.
 
 ## 4.37.19 - Palomo gives the chosen necklace; Caella teaches it (#96)
 

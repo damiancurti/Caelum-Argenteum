@@ -1,0 +1,26 @@
+{
+  "issue": 98,
+  "release": "4.37.20",
+  "created": "2026-10-04",
+  "owner": "Damián Curti / Caelum Argenteum",
+  "license": "Project-owned original work; repository LICENSE.md applies.",
+  "reference": "Existing project CDMYA0 sprite, inspected before modeling; unchanged.",
+  "creation": "Original procedural OBJ geometry and painted diffuse atlas derived from editable DESIGN.json. No external asset, Doom material or generative image input.",
+  "editable_sources": [
+    "DESIGN.json",
+    "../generators/generate_training_dummy_model.py"
+  ],
+  "dependency": "Python 3.12, Pillow 12.1.0; existing generate_environment_models.Mesh/math helpers.",
+  "reproduce": "python assets/generators/generate_training_dummy_model.py",
+  "runtime": [
+    "src/models/caelum/actors/training/ca_training_dummy.obj",
+    "src/models/caelum/actors/training/ca_training_dummy.png",
+    "src/MODELDEF (generated training dummy block only)"
+  ],
+  "source_sha256": {
+    "src/sprites/caelum/actors/training/CDMYA0.png": "f85293051b8b98c4442c7b43a907623ab5a5ffc6eb696faee4a2c5b9db9fa1f8",
+    "assets/training_dummy/DESIGN.json": "0d6f9fd9ecdd5e661337a166dc5201803b7e8ebae46f1a850e16f8e586d333a0",
+    "assets/generators/generate_training_dummy_model.py": "199bbb7b9848b16b2b32513e97ab0910041b93dc4286b4d064cd5d2d0d154d3a"
+  },
+  "save_compatibility": "Pure presentation binding; original class/state names and fields unchanged. No schema or migration required."
+}

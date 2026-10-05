@@ -4,8 +4,17 @@ An independent dark fantasy FPS-RPG inspired by nineteenth-century Argentina.
 Author and game designer: **Damian Curti**. Development target: **GZDoom 4.14.2**
 on Windows 11. The final game is intended to be independent of Doom assets.
 
-**Current release: 4.37.19.** Obtain and update the complete repository, validate
+**Current release: 4.37.20.** Obtain and update the complete repository, validate
 it, then rebuild with `run_dev.bat` as described below.
+
+Issue [#98](https://github.com/damiancurti/Caelum-Argenteum/issues/98) replaces
+the training dummy's billboard with an original textured **3D mannequin**.
+Its colored targets, articulated body and round base follow the existing art.
+Collision, practice credit and saved progress retain their existing rules.
+Editable sources: [design](assets/training_dummy/DESIGN.json) and
+[generator](assets/generators/generate_training_dummy_model.py).
+Static/native evidence: [4.37.20](assets/validation_43720/RESULTS.json).
+The author accepted all three checks on 2026-10-04; results are in HISTORY.
 
 Issue [#96](https://github.com/damiancurti/Caelum-Argenteum/issues/96) lets you
 choose and receive one existing **T1 amulet from Palomo upstairs**. Caella teaches
@@ -14,7 +23,8 @@ unequipped and recognizes an already owned matching T1 without duplication.
 Previous choices and active crafting are preserved. All four shield dialogues
 now use the inventory names in English and Spanish. Other equipment keeps its
 existing crafting flow. Evidence: [4.37.19](assets/validation_43719/RESULTS.json).
-The author accepted all three checks on 2026-10-04; results are in HISTORY.
+The author accepted all three checks on 2026-10-04; #96 is closed and PR #109
+is merged (76757fd7). Results are in HISTORY.
 
 Issue [#91](https://github.com/damiancurti/Caelum-Argenteum/issues/91) separates
 **Craft / Repair / Dismantle** in the Journal. Craft lists learned recipes;
