@@ -5474,3 +5474,209 @@ Sprite "DP89B0", 320, 200 {
     Offset 216, 160
     Patch "sprites/caelum/pickaxe/pickaxe_body.png", 112, 0 { FlipX }
 }
+
+// #106: generated first-person shield textures.
+Graphic "KSHD_MUTED_D", 1536, 1024
+{
+    Patch "graphics/caelum/first_person/shields/kite.png", 0, 0 { Translation "Desaturate", 20 }
+}
+Graphic "KSHD_MUTED", 1536, 1024
+{
+    Graphic "KSHD_MUTED_D", 0, 0 { Blend 205, 198, 188 }
+}
+Sprite "KSHDA0", 720, 1024
+{
+    NoTrim
+    XScale 4.2
+    YScale 4.2
+    Offset 681, 80
+    Graphic "KSHD_MUTED", 0, 0
+}
+Sprite "KSHDB0", 720, 1024
+{
+    NoTrim
+    XScale 4.2
+    YScale 4.2
+    Offset 685, 75
+    Graphic "KSHD_MUTED", 0, 0
+}
+Sprite "KSHDC0", 720, 1024
+{
+    NoTrim
+    XScale 4.2
+    YScale 4.2
+    Offset 715, 54
+    Graphic "KSHD_MUTED", 0, 0
+}
+Sprite "KSHDD0", 720, 1024
+{
+    NoTrim
+    XScale 4.2
+    YScale 4.2
+    Offset 698, 67
+    Graphic "KSHD_MUTED", 0, 0
+}
+Sprite "KSHDH0", 768, 1024
+{
+    NoTrim
+    XScale 4.2
+    YScale 4.2
+    Offset 449, 175
+    Graphic "KSHD_MUTED", -768, 0
+}
+Sprite "KSHDI0", 768, 1024
+{
+    NoTrim
+    XScale 2.6
+    YScale 2.6
+    Offset 332, 273
+    Graphic "KSHD_MUTED", -768, 0
+}
+Graphic "TSHD_MUTED_D", 1536, 1024
+{
+    Patch "graphics/caelum/first_person/shields/tower.png", 0, 0 { Translation "Desaturate", 20 }
+}
+Graphic "TSHD_MUTED", 1536, 1024
+{
+    Graphic "TSHD_MUTED_D", 0, 0 { Blend 205, 198, 188 }
+}
+Sprite "TSHDA0", 720, 1024
+{
+    NoTrim
+    XScale 4.2
+    YScale 4.2
+    Offset 652, 78
+    Graphic "TSHD_MUTED", 0, 0
+}
+Sprite "TSHDB0", 720, 1024
+{
+    NoTrim
+    XScale 4.2
+    YScale 4.2
+    Offset 656, 73
+    Graphic "TSHD_MUTED", 0, 0
+}
+Sprite "TSHDC0", 720, 1024
+{
+    NoTrim
+    XScale 4.2
+    YScale 4.2
+    Offset 686, 52
+    Graphic "TSHD_MUTED", 0, 0
+}
+Sprite "TSHDD0", 720, 1024
+{
+    NoTrim
+    XScale 4.2
+    YScale 4.2
+    Offset 669, 65
+    Graphic "TSHD_MUTED", 0, 0
+}
+Sprite "TSHDH0", 768, 1024
+{
+    NoTrim
+    XScale 4.2
+    YScale 4.2
+    Offset 483, 190
+    Graphic "TSHD_MUTED", -768, 0
+}
+Sprite "TSHDI0", 768, 1024
+{
+    NoTrim
+    XScale 2.6
+    YScale 2.6
+    Offset 366, 288
+    Graphic "TSHD_MUTED", -768, 0
+}
+Graphic "MSHD_MUTED_D", 1536, 1024
+{
+    Patch "graphics/caelum/first_person/shields/magic.png", 0, 0 { Translation "Desaturate", 20 }
+}
+Graphic "MSHD_MUTED", 1536, 1024
+{
+    Graphic "MSHD_MUTED_D", 0, 0 { Blend 205, 198, 188 }
+}
+Sprite "MSHDA0", 720, 1024
+{
+    NoTrim
+    XScale 4.2
+    YScale 4.2
+    Offset 687, 137
+    Graphic "MSHD_MUTED", 0, 0
+}
+Sprite "MSHDB0", 720, 1024
+{
+    NoTrim
+    XScale 4.2
+    YScale 4.2
+    Offset 691, 132
+    Graphic "MSHD_MUTED", 0, 0
+}
+Sprite "MSHDC0", 720, 1024
+{
+    NoTrim
+    XScale 4.2
+    YScale 4.2
+    Offset 721, 111
+    Graphic "MSHD_MUTED", 0, 0
+}
+Sprite "MSHDD0", 720, 1024
+{
+    NoTrim
+    XScale 4.2
+    YScale 4.2
+    Offset 704, 124
+    Graphic "MSHD_MUTED", 0, 0
+}
+Sprite "MSHDH0", 800, 1024
+{
+    NoTrim
+    XScale 4.2
+    YScale 4.2
+    Offset 488, 238
+    Graphic "MSHD_MUTED", -736, 0
+}
+Sprite "MSHDI0", 800, 1024
+{
+    NoTrim
+    XScale 2.6
+    YScale 2.6
+    Offset 371, 336
+    Graphic "MSHD_MUTED", -736, 0
+}
+Graphic "GGB1_D", 1536, 1024
+{
+    Patch "graphics/caelum/first_person/gauntlet_guards/tier1.png", 0, 0 { Translation "Desaturate", 20 }
+}
+Sprite "GGB1A0", 1536, 1024
+{
+    NoTrim
+    XScale 6.4
+    YScale 6.4
+    Offset 768, -128
+    Graphic "GGB1_D", 0, 0 { Blend 205, 198, 188 }
+}
+Graphic "GGB2_D", 1536, 1024
+{
+    Patch "graphics/caelum/first_person/gauntlet_guards/tier2.png", 0, 0 { Translation "Desaturate", 20 }
+}
+Sprite "GGB2A0", 1536, 1024
+{
+    NoTrim
+    XScale 6.4
+    YScale 6.4
+    Offset 768, -128
+    Graphic "GGB2_D", 0, 0 { Blend 205, 198, 188 }
+}
+Graphic "GGB3_D", 1536, 1024
+{
+    Patch "graphics/caelum/first_person/gauntlet_guards/tier3.png", 0, 0 { Translation "Desaturate", 20 }
+}
+Sprite "GGB3A0", 1536, 1024
+{
+    NoTrim
+    XScale 6.4
+    YScale 6.4
+    Offset 768, -128
+    Graphic "GGB3_D", 0, 0 { Blend 205, 198, 188 }
+}

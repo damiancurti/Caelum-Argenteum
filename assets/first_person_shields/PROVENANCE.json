@@ -1,0 +1,185 @@
+{
+  "issue": 106,
+  "date": "2026-10-05",
+  "release": "4.37.22",
+  "creator": "OpenAI built-in image_gen, directed for this project from its existing artwork.",
+  "rights": "Original AI-generated shield interiors and gauntlet guards derived from project-owned references. Repository LICENSE.md applies. No Doom art, IWAD or third-party equipment source is imported.",
+  "reference_roles": {
+    "DSHDA0": "Approved inward-facing idle perspective and rendering style.",
+    "DSHDI0": "Approved frontal held-block perspective and rendering style.",
+    "LHND": "Existing separate left hand/bracer reused unchanged.",
+    "ca_shield_*": "Existing type identity, shape and material reference; no change to icons or world sprites."
+  },
+  "sources": [
+    {
+      "path": "src/graphics/caelum/first_person/gauntlet_guards/tier1.png",
+      "sha256": "dafc3081b24d1f2cf15c3a9ff8eead15b23803387de9bc1536a878293289f65b",
+      "size": [
+        1536,
+        1024
+      ],
+      "format": "RGBA PNG, original generated alpha retained",
+      "transformation": "None on bitmap. Native texture crop/scale/offset and author-requested existing greatsword palette are documented in COMPOSITION.json."
+    },
+    {
+      "path": "src/graphics/caelum/first_person/gauntlet_guards/tier2.png",
+      "sha256": "65f04576271a86759ce07fff531ff02ecd269f73ec3d3c110618f2a77e30f159",
+      "size": [
+        1536,
+        1024
+      ],
+      "format": "RGBA PNG, original generated alpha retained",
+      "transformation": "None on bitmap. Native texture crop/scale/offset and author-requested existing greatsword palette are documented in COMPOSITION.json."
+    },
+    {
+      "path": "src/graphics/caelum/first_person/gauntlet_guards/tier3.png",
+      "sha256": "50eb393368f708fe6c8aebb5346eaa709cc9c69ab814d76785dbb4ea5143ebb9",
+      "size": [
+        1536,
+        1024
+      ],
+      "format": "RGBA PNG, original generated alpha retained",
+      "transformation": "None on bitmap. Native texture crop/scale/offset and author-requested existing greatsword palette are documented in COMPOSITION.json."
+    },
+    {
+      "path": "src/graphics/caelum/first_person/shields/kite.png",
+      "sha256": "7753ed11779b8ab620da6cc5a2aed428f032297390ed0a9776fb8476fd14c5d6",
+      "size": [
+        1536,
+        1024
+      ],
+      "format": "RGBA PNG, original generated alpha retained",
+      "transformation": "None on bitmap. Native texture crop/scale/offset and author-requested existing greatsword palette are documented in COMPOSITION.json."
+    },
+    {
+      "path": "src/graphics/caelum/first_person/shields/magic.png",
+      "sha256": "a128609d46929b74cd4d00565b010872caa7f0e8c377fd4feb14e50fa38c362a",
+      "size": [
+        1536,
+        1024
+      ],
+      "format": "RGBA PNG, original generated alpha retained",
+      "transformation": "None on bitmap. Native texture crop/scale/offset and author-requested existing greatsword palette are documented in COMPOSITION.json."
+    },
+    {
+      "path": "src/graphics/caelum/first_person/shields/tower.png",
+      "sha256": "5ba33f286dfb9ecd3b744dc2433f9812159bdb0fc96421bff4db1122e3fd827c",
+      "size": [
+        1536,
+        1024
+      ],
+      "format": "RGBA PNG, original generated alpha retained",
+      "transformation": "None on bitmap. Native texture crop/scale/offset and author-requested existing greatsword palette are documented in COMPOSITION.json."
+    }
+  ],
+  "references": [
+    {
+      "path": "src/sprites/DSHDA0.png",
+      "sha256": "aa5413d6562977c16a0c1f17f2c9b3fa80bff548723b75e08a865a7385d4052f"
+    },
+    {
+      "path": "src/sprites/DSHDI0.png",
+      "sha256": "12ec8075ae9b1fd4e71125bd8e753ea02b487d0f88a3f915ce52feb0e72849af"
+    },
+    {
+      "path": "src/sprites/LHNDA0.png",
+      "sha256": "ac95af827862584b37ca4ad92c241badc77c8f11979fcf7d4fe5939a3ba486d9"
+    },
+    {
+      "path": "src/sprites/LHNDB0.png",
+      "sha256": "95371672a5c9a61075f7ed58a3ab07c44fa847e96a10151180253255a752dde1"
+    },
+    {
+      "path": "src/sprites/LHNDC0.png",
+      "sha256": "2a21978808083cd2d879ad674180345ddd57b910381dabf38126731806803b05"
+    },
+    {
+      "path": "src/sprites/LHNDD0.png",
+      "sha256": "2d9570b1fa6736fe72058761c4be441451c56a70d317228497d3623634aa7788"
+    },
+    {
+      "path": "src/sprites/LHNDE0.png",
+      "sha256": "ac95af827862584b37ca4ad92c241badc77c8f11979fcf7d4fe5939a3ba486d9"
+    },
+    {
+      "path": "src/sprites/LHNDF0.png",
+      "sha256": "ac95af827862584b37ca4ad92c241badc77c8f11979fcf7d4fe5939a3ba486d9"
+    },
+    {
+      "path": "src/sprites/LHNDG0.png",
+      "sha256": "ac95af827862584b37ca4ad92c241badc77c8f11979fcf7d4fe5939a3ba486d9"
+    },
+    {
+      "path": "src/sprites/LHNDH0.png",
+      "sha256": "f49cb9e67f365636820caf90fe6bfca69e249ddcc32ae70c14f4597064458450"
+    },
+    {
+      "path": "src/sprites/LHNDI0.png",
+      "sha256": "82f6b975d4da7234603d8850322e4c998489a57717bb14fbc849a36f8f6ced22"
+    },
+    {
+      "path": "src/sprites/caelum/first_person/v1/giant_gauntlets/F201A0.png",
+      "sha256": "a488020b5f577d8bf39802c814e818847e03bf43c762cb9a2f1ee27e5f0ce8eb"
+    },
+    {
+      "path": "src/sprites/caelum/first_person/v1/giant_gauntlets/F202A0.png",
+      "sha256": "8dfd506cc7d4070e94bb950b22eaf6e0fb31345479bac6b2bb671c136795367e"
+    },
+    {
+      "path": "src/sprites/caelum/first_person/v1/giant_gauntlets/F203A0.png",
+      "sha256": "438176bd7ad95e6de5c6e4da88b9051f8d1d433b0550d6bcc9b8f4ea2eafc522"
+    },
+    {
+      "path": "src/graphics/caelum/icons/ca_shield_buckler.png",
+      "sha256": "37ae1b4346499b3bdda54b794aa53a857d4259c2bd02ca4ea37aa7e340724d9d"
+    },
+    {
+      "path": "src/graphics/caelum/icons/ca_shield_buckler_t2.png",
+      "sha256": "420c34d28071b34c8109ee6d05d214a47e895c6caf85f59291c26ec4ffc3d215"
+    },
+    {
+      "path": "src/graphics/caelum/icons/ca_shield_buckler_t3.png",
+      "sha256": "806e898a8c6425bc96064bf31969fb9e033d6d511dae377273c5f4f7f1211b00"
+    },
+    {
+      "path": "src/graphics/caelum/icons/ca_shield_kite.png",
+      "sha256": "045ee7c9ca599708a0da2e3418bd525e9bf6c81d2c00f0632fe69057e1409964"
+    },
+    {
+      "path": "src/graphics/caelum/icons/ca_shield_kite_t2.png",
+      "sha256": "c6d6e2b8638b1f8615bc014445b27b0aa23978f1bf4f1c40a5df86f05acea25b"
+    },
+    {
+      "path": "src/graphics/caelum/icons/ca_shield_kite_t3.png",
+      "sha256": "ab0f880152c39c00d21caebfc8691cf2be08be8ebb61cad13e8db90ed0827547"
+    },
+    {
+      "path": "src/graphics/caelum/icons/ca_shield_magic.png",
+      "sha256": "ec129df38708d9be7ed9806c5e47652b1bbe3326bd27d29fa8e67151677a2488"
+    },
+    {
+      "path": "src/graphics/caelum/icons/ca_shield_magic_t2.png",
+      "sha256": "ffd922c4a094c685429a95515ca8629a024df150f10b6ce678e5a33bae0d6106"
+    },
+    {
+      "path": "src/graphics/caelum/icons/ca_shield_magic_t3.png",
+      "sha256": "66b45b72e254ab0fc354ec06dbe5f3030b5c21c2ee170ce5b5276fa5c04f24bf"
+    },
+    {
+      "path": "src/graphics/caelum/icons/ca_shield_tower.png",
+      "sha256": "08261880167ba8a0ff4d39606f5246271bead7874714d77db5de0083a121520e"
+    },
+    {
+      "path": "src/graphics/caelum/icons/ca_shield_tower_t2.png",
+      "sha256": "e42b512172f9f1d6faef28dac4ab86ad1659cb1d02eaf8e056ddc1afb94dbf44"
+    },
+    {
+      "path": "src/graphics/caelum/icons/ca_shield_tower_t3.png",
+      "sha256": "d679b7451564040e10ef56a500962eb19a57ae78f53a5085b32f2998cd6b7c6b"
+    }
+  ],
+  "prompts": "GAUNTLET_PROMPTS.json for the author-requested three-tier boxer guard; PROMPTS.json; one two-pose sheet per type. Kite includes a transparent-cutout refinement.",
+  "approved_geometry": "Author, 2026-10-05: sprites and positions are very good; colors should be slightly more muted, like existing project sprites.",
+  "palette": "Native TEXTURES Desaturate 20 / RGB multiply 205,198,188, identical to existing greatsword treatment. No new balance or material data.",
+  "generator": "assets/generators/generate_first_person_shields.py; deterministic registration of immutable sheets, not AI regeneration."
+}
