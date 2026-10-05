@@ -1,11 +1,10 @@
-// A stationary, extremely durable target for repeatable combat tests.
+// Blanco inmóvil y resistente para repetir las prácticas de combate.
 class CaelumTrainingDummy : Actor
 {
     Default
     {
         Health 1000000;
-        // Diameter 42 matches the opaque sprite silhouette inside its
-        // 48-pixel canvas; Height matches the full 72-pixel visual canvas.
+        // Colisión histórica independiente del modelo 3D y del sprite de respaldo.
         Radius 21;
         Height 72;
         Mass 10000;

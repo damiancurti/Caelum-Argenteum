@@ -3688,3 +3688,26 @@ Model CaelumCaveSceneryOpal
     FrameIndex CAVE G 0 0
 }
 // END GENERATED DECORATIVE CAVE
+
+// BEGIN GENERATED TRAINING DUMMY
+Model CaelumTrainingDummy
+{
+    Path "models/caelum/actors/training"
+    Model 0 "ca_training_dummy.obj"
+    Scale 1 1 1.2
+    AngleOffset 0
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CDMY A 0 0
+}
+Model CaelumM00TrainingDummy
+{
+    Path "models/caelum/actors/training"
+    Model 0 "ca_training_dummy.obj"
+    Scale 1 1 1.2
+    AngleOffset 0
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CDMY A 0 0
+}
+// END GENERATED TRAINING DUMMY

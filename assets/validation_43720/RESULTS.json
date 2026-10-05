@@ -1,0 +1,212 @@
+{
+  "issue": 98,
+  "release": "4.37.20",
+  "date": "2026-10-04",
+  "base_commit": "76757fd7602fa1fde6088a988fc6150b5c8d9257",
+  "status": "Implemented and technically verified; author art, ordinary tutorial and save checks remain pending.",
+  "static": {
+    "project_validator": "PROJECT_VALIDATION.json",
+    "model_checks": "STATIC.json",
+    "diff_check": "git diff --check passed",
+    "packaged_runtime_matches_source": true,
+    "runtime_source_sha256": {
+      "src/MODELDEF": "02e423de6e0d91756375820adc51a4103e59b07a46b740c3d74b808d4d1cb7b3",
+      "src/caelum/actors/CaelumTrainingDummy.zs": "dc0f8e27f08bbdc0a211ea84532ebc40e8207a9e1f49c50fa23c8dcc34a87476",
+      "src/models/caelum/actors/training/ca_training_dummy.obj": "06529c2d66cdee2f07f4370313aadcf162bab48bc0d4a03081403acfbce9d5a7",
+      "src/models/caelum/actors/training/ca_training_dummy.png": "4ae89bf07aaab273bb9bcafad283ab2e56fb3d87d6dd2f86e6a1329855dd8cff",
+      "src/caelum/world/CaelumPhysicalHazards.zs": "1e7b8027d8363aee42ed12d36a7ada4e190423b0192ab28bb331881bcf270c72",
+      "src/caelum/world/CaelumSewerMaze.zs": "79784e213934c088f46824a9e45579e30677183e6ead8fb2733cda1788b52e8c"
+    }
+  },
+  "package": {
+    "name": "caelum_argenteum_dev.pk3",
+    "sha256": "874cf22577a07c96b643910ea43beda9696d301539f80ccd02c5443b5f34739c",
+    "bytes": 433367170,
+    "files": 6169
+  },
+  "native": {
+    "engine": "GZDoom 4.14.2, Windows 11, Vulkan, NVIDIA GeForce RTX 3070 Ti, 1520x825",
+    "development_dependencies": "Local Doom II IWAD, id24res, engine support/widescreen resources. Engine, IWADs, native saves and isolated QA fixtures are not distributed.",
+    "music": "After the author request, every final run explicitly logged snd_musicvolume=0 in the isolated issue98 configuration; sound effects and ordinary game settings unchanged.",
+    "commands": "COMMANDS.json",
+    "log_export": "UTF-8 LF; trailing line whitespace and trailing empty lines removed, all diagnostic content preserved.",
+    "fixture": "Local issue98_qa, based on the issue62 native trial harness with additional camera, identity, physical melee, arrow and base-state probes. It calls native attack methods and waits for actual impacts; fixture-only accuracy/resource setup removes random misses.",
+    "fixture_sha256": "f0574775a9c32cbdc70a0597a0e5840a394505c4e2960358dc20d43c324d3d82",
+    "logs": {
+      "old_saves.log": {
+        "passed_assertions": 14,
+        "failed_assertions": 0,
+        "exit_code": 0,
+        "package_sha256": "936cdeb6b825f180732cbc5bae78a164561d3d7f203def4de4ac963b94cdbe03",
+        "sha256": "54c948684f6dfbc17add8f7b1a5b9d066c61f2504e209ef16e7de5377d98f158"
+      },
+      "final_caella.log": {
+        "passed_assertions": 22,
+        "failed_assertions": 0,
+        "exit_code": 0,
+        "package_sha256": "874cf22577a07c96b643910ea43beda9696d301539f80ccd02c5443b5f34739c",
+        "sha256": "856aefd066a50cecffdcdacab70e7af29c9d9361f583a736f725dadc7f1fbd39"
+      },
+      "final_rulo.log": {
+        "passed_assertions": 12,
+        "failed_assertions": 0,
+        "exit_code": 0,
+        "package_sha256": "874cf22577a07c96b643910ea43beda9696d301539f80ccd02c5443b5f34739c",
+        "sha256": "391aa5e62fcfc73c5d15483abc715f7b2fcb62fbd751d32b7039933e7f4b6b0a"
+      },
+      "final_bow_v2.log": {
+        "passed_assertions": 7,
+        "failed_assertions": 0,
+        "exit_code": 0,
+        "package_sha256": "874cf22577a07c96b643910ea43beda9696d301539f80ccd02c5443b5f34739c",
+        "sha256": "dcf9e6f9f9240cbcd79c9f64dca67bfb360f8fa0466cfc86a189dbcc841a2c86"
+      },
+      "final_old_active.log": {
+        "passed_assertions": 9,
+        "failed_assertions": 0,
+        "exit_code": 0,
+        "package_sha256": "874cf22577a07c96b643910ea43beda9696d301539f80ccd02c5443b5f34739c",
+        "sha256": "884c3303ec059b3295c806c60f18b29e80e2a72f2f4982b34d5202270f005342"
+      },
+      "final_old_complete.log": {
+        "passed_assertions": 4,
+        "failed_assertions": 0,
+        "exit_code": 0,
+        "package_sha256": "874cf22577a07c96b643910ea43beda9696d301539f80ccd02c5443b5f34739c",
+        "sha256": "987cb24d377b3e79e4511cc46d67015a650d6c6870ff8ee85c22f731d2aa50c4"
+      },
+      "final_new_active.log": {
+        "passed_assertions": 6,
+        "failed_assertions": 0,
+        "exit_code": 0,
+        "package_sha256": "874cf22577a07c96b643910ea43beda9696d301539f80ccd02c5443b5f34739c",
+        "sha256": "d60b882b7edba9d80340f5a87b59decf59e3593540d1022ec89f22695d9aa7c9"
+      },
+      "final_new_complete.log": {
+        "passed_assertions": 4,
+        "failed_assertions": 0,
+        "exit_code": 0,
+        "package_sha256": "874cf22577a07c96b643910ea43beda9696d301539f80ccd02c5443b5f34739c",
+        "sha256": "27d9c29d89515ad569e8dea295c584f87312e6855e632bf978b96223d8eb677b"
+      },
+      "final_views.log": {
+        "passed_assertions": 2,
+        "failed_assertions": 0,
+        "exit_code": 0,
+        "package_sha256": "874cf22577a07c96b643910ea43beda9696d301539f80ccd02c5443b5f34739c",
+        "sha256": "d963aa3a53d07f976ab4a75b8b22f5abcaea916d6eb74c02c0e0920bde1d6a8d"
+      },
+      "final_distance_light.log": {
+        "passed_assertions": 3,
+        "failed_assertions": 0,
+        "exit_code": 0,
+        "package_sha256": "874cf22577a07c96b643910ea43beda9696d301539f80ccd02c5443b5f34739c",
+        "sha256": "9da975984b071c5c29b77af78efa124e1b9c3988892b8eb21cee992585d76a05"
+      },
+      "final_states.log": {
+        "passed_assertions": 4,
+        "failed_assertions": 0,
+        "exit_code": 0,
+        "package_sha256": "874cf22577a07c96b643910ea43beda9696d301539f80ccd02c5443b5f34739c",
+        "sha256": "dc7761b86aae4027f4af5103781b538a67cb45f73f9f3bd875af1ef4e2c17521"
+      },
+      "final_rollback.log": {
+        "passed_assertions": 4,
+        "failed_assertions": 0,
+        "exit_code": 0,
+        "package_sha256": "936cdeb6b825f180732cbc5bae78a164561d3d7f203def4de4ac963b94cdbe03",
+        "sha256": "6a17bdf2e6021f2d28c4efb4d23112160008824297bc79bee81b8c4372c6edfb"
+      },
+      "final_startup.log": {
+        "passed_assertions": 0,
+        "failed_assertions": 0,
+        "exit_code": 0,
+        "package_sha256": "874cf22577a07c96b643910ea43beda9696d301539f80ccd02c5443b5f34739c",
+        "sha256": "4d105329973063785891839bb9e6f25ac166c3873bbb69a45c24308141a1beb2"
+      }
+    },
+    "current_package_passed_assertions": 73,
+    "scope": [
+      "Caella primary/secondary actual spell impacts, misses, unrelated actor, nonmagic damage, cancelled cast, resource checks, retry, missing-target recovery, five practices, rune ordering and ordinary native completion gates.",
+      "Rulo projectile, primary/secondary/charged melee traces and bow arrow impact; missed melee and arrows do not advance the practice; same shared indestructible actor.",
+      "Original Radius 21, Height 72, Health 1000000, flags and position; tagged actor survives old/new loads without replacement or duplicates.",
+      "Front/back/left/right, close/far/diagonal under MAP01 lighting; stable fixed orientation, intact UVs and grounded base. Base Spawn and Death both visibly render the model.",
+      "Cold startup of the final PK3 without the QA fixture."
+    ],
+    "iteration_notes": [
+      "Initial art captures exposed intersecting target discs; corrected before final captures and packaged tests.",
+      "Preliminary harness runs missed trailing assertions when quitting immediately after queued give commands; final probes wait before quitting and require explicit expected log markers. Multiline/alias startup attempts were discarded. A fixture-only bow enum typo was corrected before the recorded bow run.",
+      "Old-save creation and rollback logs use the retained 4.37.19 baseline package; they are not counted as final-package assertions."
+    ]
+  },
+  "saves": {
+    "baseline_package_sha256": "936cdeb6b825f180732cbc5bae78a164561d3d7f203def4de4ac963b94cdbe03",
+    "schema_change": false,
+    "old_active": "stage 40, primary complete, secondary/channel incomplete, runes 0, weapon ID 2, seal ID 3, target TID 9801.",
+    "old_complete": "stage 45, all five practices and four runes, passage open, loans returned, owned weapon ID 1, one target TID 9801.",
+    "new_reload": "Both saves were loaded in 4.37.20, written to separate new slots and verified after reload. The partial practice continued with an actual secondary impact.",
+    "rollback": "The new completed save also loaded with the retained 4.37.19 package, with completion and tagged target preserved. Original old saves remain untouched.",
+    "local_save_sha256": {
+      "issue98_new_active.zds": "8ffd92dc340c7d83ce33d3bfd3e7c4ed34b5065dbbc4614ed4df03d5ccd8646b",
+      "issue98_new_complete.zds": "ef807818afacc5568cbe7d358e89c4b02f59d15816e99858c8901b3418a56a83",
+      "issue98_old_active.zds": "548b303b1e94830ce21646920031928140566e5f5018f3fa0eebd975b34f2b71",
+      "issue98_old_complete.zds": "0ad515bc043ee52aa1c1906c406ee5e25bc65e3738b89bfea4b7dfc960343950"
+    }
+  },
+  "captures": {
+    "front.png": {
+      "sha256": "22831b0015c34d3612b0f9856182e06bcac979a6f823ce21bd3e54353796881b",
+      "review": "Native GZDoom capture inspected by the agent; not author acceptance."
+    },
+    "right.png": {
+      "sha256": "e56c63a8d77225811820cb673b9fbd27043687a07709322e88878c7912ee8b83",
+      "review": "Native GZDoom capture inspected by the agent; not author acceptance."
+    },
+    "back.png": {
+      "sha256": "dc29253434433f8712d8223c5533c51a470ac6fe6dc0f95ad301891c85059ad1",
+      "review": "Native GZDoom capture inspected by the agent; not author acceptance."
+    },
+    "left.png": {
+      "sha256": "6e4b4fafa40bce5efa8593a6ac4d5f2e8ac9b3989d136a67bc1006f630b416d7",
+      "review": "Native GZDoom capture inspected by the agent; not author acceptance."
+    },
+    "close.png": {
+      "sha256": "a99eeaf1f6cd7ba6bfc551cec4af89131296fb2989c76a9271d2472faaa73aac",
+      "review": "Native GZDoom capture inspected by the agent; not author acceptance."
+    },
+    "far.png": {
+      "sha256": "7f10e9830678b90eaa58a915901af5278c763449bb204499c41ae197c51943dc",
+      "review": "Native GZDoom capture inspected by the agent; not author acceptance."
+    },
+    "diagonal.png": {
+      "sha256": "74c3a54ddbdb38efb3ee3b67fc9ad4c9a945bf73655879aec5a22c8a73ee5bd7",
+      "review": "Native GZDoom capture inspected by the agent; not author acceptance."
+    },
+    "base_spawn.png": {
+      "sha256": "8815c5d92745833bcd2499809d5aa288e1b2754812daa263d7e07b6f38fb3dde",
+      "review": "Native GZDoom capture inspected by the agent; not author acceptance."
+    },
+    "base_death.png": {
+      "sha256": "38613c50a13f659778b76266f2c8b53d3f4e424042714322026fd3bf8a296ef4",
+      "review": "Native GZDoom capture inspected by the agent; not author acceptance."
+    },
+    "old_active_model.png": {
+      "sha256": "902622a5e79520df5019c18ef7d5ea82c4ef2af77011edb75019a2d2aeb9ba00",
+      "review": "Native GZDoom capture inspected by the agent; not author acceptance."
+    },
+    "old_complete_model.png": {
+      "sha256": "cc060d552c7cea379248ff54917ee5971369e595db3eb575728d48104312880f",
+      "review": "Native GZDoom capture inspected by the agent; not author acceptance."
+    }
+  },
+  "author_acceptance": {
+    "status": "Pending",
+    "checks": [
+      "CA-43720-DUMMY-ART-01",
+      "CA-43720-DUMMY-PRACTICE-01",
+      "CA-43720-DUMMY-SAVE-01"
+    ],
+    "queue": "pending_test.txt"
+  },
+  "limits": "Native probes and agent visual inspection do not constitute author art approval or complete campaign acceptance. No balance, quest, map, collision or saved-state logic changed."
+}

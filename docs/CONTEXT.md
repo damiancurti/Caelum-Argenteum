@@ -1,11 +1,11 @@
 # CONTEXT.md — Ultra-condensed summary of Caelum Argenteum
 
-Documentation version: **4.37.19** — 2026-10-04.
+Documentation version: **4.37.20** — 2026-10-04.
 
-**#96 / 4.37.19:** Palomo chooses/gives one existing T1 amulet; Caella teaches
-its recipe. Native capacity, no auto-equip/duplicates, old-save revision 1.
-Canonical shield names; evidence: validation_43719. All author tests accepted.
-**#91 accepted/closed; PR #108 merged:** Craft/Repair/Dismantle and Tarot fields.
+**#98 / 4.37.20:** original textured 3D practice mannequin; unchanged actors,
+collision, quests and saves. Evidence: validation_43720. Author checks pending.
+**#96 accepted/closed, PR #109 merged:** Palomo necklace; canonical shield names.
+**#91 accepted/closed, PR #108 merged:** crafting sections and Tarot fields.
 
 **#89 accepted/closed, PR #107 merged:** owned T1 Pico, axe recipe, ×10/×100
 yield, all-tool sounds/centered feedback, 20° rest pose. Evidence: validation_43717.
