@@ -22,8 +22,8 @@ Documentation version: **5.0.0** — 2026-10-06.
   three native thinker profiles and three diagnostic UI/play/UI round trips.
 - #86 remains closed; the #77 performance evidence is historical. Current native
   measurements do not demonstrate a speedup or justify changing accepted AI rules.
-- No new manual gameplay acceptance is claimed. Outstanding architecture review:
-  assess the proposed next slices and the single-owner boundaries in the linked PR.
+- Author acceptance passed on 2026-10-06: all tests confirmed correct, with
+  PR #122 merge and #116 closure authorized. Continue with #117.
 
 ## Issue #82 — V4.37 closing delivery (4.37.24)
 

@@ -26,7 +26,9 @@ Static/native results, baseline/final package hashes, reproducible MAP06 samples
 measurement limits and any diagnostic failures are recorded in
 `assets/validation_500/RESULTS.json`. The historical #77/#86 performance sample
 is not reused as a current measurement. No improvement is claimed from source
-organization. The author has not confirmed manual acceptance of this delivery.
+organization. On 2026-10-06 the author confirmed that all tests passed and
+authorized merging PR #122 and closing #116. This acceptance covers the delivered
+scope; it does not establish old-save compatibility or a performance improvement.
 
 Validation: the project validator and PK3 build pass. All 604 pawn field
 declarations and 544 method signatures remain; the three moved bodies differ only

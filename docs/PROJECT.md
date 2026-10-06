@@ -131,7 +131,8 @@ passed 35 projection assertions, three explicit load assertions plus three resum
 state assertions, and English/Spanish Journal/Tarot captures. The original runtime
 also passed the same 35 projection assertions. Static validation and package build
 pass; `EXTRACTION.json` distinguishes the method move from two diagnostic-version
-string updates. No external AI review or author acceptance is claimed.
+string updates. No external AI review is claimed. The author confirmed all
+delivery tests passed and authorized merge/closure on 2026-10-06.
 
 #86 is closed. `assets/validation_4379/south/COMBAT_RECOVERY.json` remains historical
 evidence only, including its old 13.5-tic/s sample; it is not this patch's benchmark.

@@ -684,7 +684,7 @@
     "Python default Windows console encoding could not print a Unicode documentation range; subsequent documentation commands use python -X utf8."
   ],
   "text_artifact_storage": "Archived logs and INI files use LF and omit trailing whitespace/blank lines; original native files remain in build/issue116. Normalization changes no diagnostic content.",
-  "author_acceptance": "Not claimed; implementation/static/native evidence only.",
+  "author_acceptance": "2026-10-06: author confirmed all delivery tests passed and authorized PR #122 merge and #116 closure; scoped old-save waiver and measurement limits remain.",
   "reproduce": [
     "Build the accepted 20143c31 runtime into build/issue116/baseline.pk3; keep the original package. prepare_benchmark.py preserves an existing baseline instead of overwriting it.",
     "python assets/validation_500/prepare_benchmark.py",

@@ -19,6 +19,7 @@ player fields are retained, but old-save acceptance is not claimed.
 [state and compatibility contract](docs/SYSTEMS.md#v50-state-ownership-and-compatibility-contract-116),
 and [native/static evidence](assets/validation_500/RESULTS.json).
 MAP06 performance is measured again; this organization change claims no speedup.
+The author confirmed all delivery tests passed on 2026-10-06.
 
 Issue [#82](https://github.com/damiancurti/Caelum-Argenteum/issues/82) is the
 author-accepted closing V4.37 delivery (2026-10-05): the integrated MAP01 -> MAP02 -> MAP06
