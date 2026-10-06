@@ -10,7 +10,7 @@ on Windows 11. The final game is intended to be independent of Doom assets.
 it, then rebuild with `run_dev.bat` as described below.
 
 Issue [#82](https://github.com/damiancurti/Caelum-Argenteum/issues/82) is the
-author-designated closing V4.37 delivery: the integrated MAP01 -> MAP02 -> MAP06
+author-accepted closing V4.37 delivery (2026-10-05): the integrated MAP01 -> MAP02 -> MAP06
 campaign, physical Tarot deck and three earned essence powers, and NPC Trucazo.
 The new portable export starts with **Tab** Journal, **M** automap, **B** Seal,
 **R** Reload, **F** Zoom and **T** Tarot, then preserves the player's remapping.

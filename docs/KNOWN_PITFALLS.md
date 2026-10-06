@@ -22,7 +22,9 @@ assertions. Separate two/four-rescue saves and the preserved 4.37.23 character
 also load. Keep the original report/save, close conversations before scripted
 load tests, and distinguish startup, console and normal Save/Load-menu paths.
 Do not discard a save, waive compatibility, or claim an engine fix from one
-passing alternative path. Ordinary-menu acceptance remains a separate check.
+passing alternative path. The author passed the separate normal-menu/export
+check CA-43724-EXPORT-01 on 2026-10-05 without reported exceptions; this does
+not establish a fix for the automated console-load transition.
 
 Regression: retain the failing transition context, load the same save from
 startup, and check normal-menu save/load before attributing the failure to

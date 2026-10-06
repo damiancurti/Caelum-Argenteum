@@ -42,8 +42,8 @@ the crash report; symbols locate FString::operator= / DMenu::CallDrawer /
 PerformWipe. The identical target save loads from the engine startup path and
 continues through native travel/save/reload. This isolates the failing harness
 context without claiming that the engine's open-menu console-load edge case is
-fixed. Normal-menu export acceptance remains CA-43724-EXPORT-01; no broad save
-compatibility waiver or author acceptance is inferred from the passing fixtures.
+fixed. Normal-menu export acceptance is recorded separately below under
+CA-43724-EXPORT-01; no broad save compatibility waiver is inferred from fixtures.
 
 The empty Tarot Journal now describes the accepted early upstairs deck handoff
 and the later Box requirement in both languages; it no longer claims those
@@ -55,10 +55,23 @@ Independent verification confirms all 6,181 runtime blobs, complete checksums,
 ZIP metadata, allowlisted files and retained licenses. The extracted runtime
 passes six binding queries, MAP01 startup and save/reload. The actual portable
 launcher opens a fresh isolated profile; desktop-injected Escape did not reach
-the game, so physical-key author acceptance stays pending rather than inferred.
+the game, so physical-key acceptance was left to the explicit author check.
 Normal validation passes with no errors; development build matches exported
 runtime content except Git-normalized text line endings. The sole semantic
 change after the integrated native runs is the bilingual empty-Tarot help text.
+
+Author acceptance, 2026-10-05: CA-43724-EXPORT-01 (originating release 4.37.24,
+issue #82) PASSED. The author explicitly confirmed everything correct and
+approved this delivery, merging PR #115 and closing #82. The presented check
+covered fresh exported startup/character entry, Tab/M actions, B/R/F/T control
+assignments, Save/Load through normal menus, and a personalized key surviving
+launcher restart. No exception or additional test log was supplied. Remove the
+confirmed entry from pending_test.txt and keep that tracked file empty.
+
+This closes the accepted V4.37 scope at 4.37.24; V5.0 modular architecture is
+next. The approved ZIP and its source commit/hash above remain unchanged.
+Acceptance does not claim a production fix for the console-load/menu-drawing
+failure (CA-KP-039), a new complete campaign playthrough or broader save waivers.
 
 ## 4.37.23 - Contextual creation and combined profession choices (#112)
 

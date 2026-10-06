@@ -2,7 +2,7 @@
 
 Documentation version: **4.37.24** — 2026-10-05.
 
-**4.37.24/#82:** closing integration/export; Tab/M/B/R/F/T defaults.
+**4.37.24/#82 accepted 2026-10-05:** closing export; Tab/M/B/R/F/T defaults.
 Evidence: validation_43724. #112/#106 merged (#114/#113); V5.0 follows.
 **#103 accepted:** single-page introduction, actual controls, CA_MUS01;
 second key starts MAP01/CA_MUS02. Art farewell; saves unchanged.

@@ -20,7 +20,9 @@ controls are Tab Journal, M automap, B Seal Channel, R Reload, F Zoom and,
 following the author's explicit choice, T selected Tarot powers. Subsequent
 launches preserve player changes and do not touch the installed engine profile.
 Final-source static/native results and export identity are recorded under
-assets/validation_43724; author acceptance is recorded separately in HISTORY.
+assets/validation_43724. On 2026-10-05 the author passed CA-43724-EXPORT-01
+and explicitly approved this delivery, PR #115 merge and #82 closure. HISTORY
+records the manual result separately from controlled native evidence.
 
 V5.0 remains the next modular-architecture stage, with save-preserving adapters
 and one authoritative inventory/player/Tarot implementation. Remaining essence

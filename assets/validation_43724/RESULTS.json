@@ -3,7 +3,7 @@
   "version": "4.37.24",
   "date": "2026-10-05",
   "baseline_commit": "53dc44102e5b250bccf5428a7abe12409725387a",
-  "status": "Implemented, committed export verified and native checks complete; final author acceptance pending.",
+  "status": "Accepted closing V4.37 delivery; author confirms final export check and authorizes PR #115 merge and issue #82 closure.",
   "scope": {
     "campaign": [
       "MAP01",
@@ -402,7 +402,7 @@
     "reward_isolated/boss_isolated/machines_isolated use the preserved pre-siege MAP06 test overlay, as in #78, to isolate transaction and objective logic. captain_final and knight_final use the actual full city, with objective flags injected rather than a normal battle.",
     "Initial harness attempts are not passing evidence: obsolete Palomo choice indexes, deck left outside the new Box, uncleared arrival conversation, Journal opening timing, and synthetic encounters placed alongside the real full encounter. Corrected runs above retain the actual rules.",
     "A console load invoked during an open dynamic conversation crashed in native menu drawing/wipe. The author saved CrashReport.zip locally. The same sewer82.zds loads via -loadgame and then passes travel/save/reload; original report and minidump remain local. This does not claim the engine open-menu console-load edge is fixed or extend any map-specific save waiver.",
-    "Regular-menu save/load and fresh exported first-launch controls remain an explicit author check; native bind queries alone do not claim physical keyboard acceptance."
+    "The author explicitly passed regular-menu save/load and fresh exported first-launch controls on 2026-10-05 (CA-43724-EXPORT-01). Native bind queries alone were not treated as physical keyboard acceptance."
   ],
   "crash_investigation": {
     "local_report": "build/issue82/crash_sewer_reload",
@@ -419,7 +419,7 @@
     "remaining_limit": "No production fix or general engine regression claim"
   },
   "author_acceptance": {
-    "status": "pending",
+    "status": "passed",
     "test_ids": [
       "CA-43724-EXPORT-01"
     ],
@@ -430,7 +430,20 @@
       "R": "Reload",
       "F": "Zoom",
       "T": "Selected Tarot essences"
-    }
+    },
+    "confirmed_on": "2026-10-05",
+    "confirmed_by": "Damian Curti",
+    "originating_version": "4.37.24",
+    "issue": 82,
+    "scope": [
+      "Fresh exported startup and character entry",
+      "Tab Journal and M automap",
+      "B Seal, R Reload, F Zoom and T Tarot assignments",
+      "Save/load through normal menus",
+      "Personalized key preserved after launcher restart"
+    ],
+    "merge_and_closure_authorized": true,
+    "qualification": "Explicit author confirmation of all presented checks without reported exceptions or additional logs. Controlled native evidence retains its limits; no production fix for the automated console-load/menu-drawing edge is claimed."
   },
   "export": {
     "status": "PASS - deterministic committed export, independently verified and loaded in GZDoom",
@@ -456,7 +469,7 @@
     "change_description": "Two localized empty-Tarot help strings, already observed in ES/EN in the exported native runtime. No gameplay logic change.",
     "git_export_line_ending_normalizations": 170,
     "development_build_matches_export_except_checkout_line_endings": true,
-    "launcher_native_first_start": "Actual extracted launch_playtest.ps1 starts GZDoom with its own user/gzdoom.ini and user/saves, -noautoload and +exec default_controls.cfg. Title screen observed. Physical input test pending."
+    "launcher_native_first_start": "Actual extracted launch_playtest.ps1 starts GZDoom with its own user/gzdoom.ini and user/saves, -noautoload and +exec default_controls.cfg. Title screen observed. The author subsequently passed the physical-input/normal-menu/restart check on 2026-10-05."
   },
   "captures": [
     "palomo_deck.png",
@@ -472,7 +485,8 @@
   "normal_validation": {
     "command": "python validate_project.py",
     "errors": [],
-    "context_words": 2471,
-    "result": "PASS"
+    "context_words": 2473,
+    "result": "PASS",
+    "acceptance_documentation_revalidated": true
   }
 }

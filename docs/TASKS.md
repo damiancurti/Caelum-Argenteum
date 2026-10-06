@@ -15,9 +15,10 @@ Documentation version: **4.37.24** — 2026-10-05.
   recorded in assets/validation_43724. Native fixtures seed prerequisites where
   stated; they do not replace the already recorded ordinary-play acceptance.
 - Export from bf12c897 is independently verified and byte-identically reproduced.
-  CA-43724-EXPORT-01 remains the final fresh-package/manual-controls check.
-- Delivery review and any outstanding author check remain in pending_test.txt;
-  confirmed results belong to HISTORY. Next development scope is V5.0.
+  CA-43724-EXPORT-01 passed by explicit author confirmation on 2026-10-05.
+- The author approved the delivery, PR #115 merge and #82 closure. No author
+  check remains pending. HISTORY retains the result and diagnostic limits.
+  V4.37 closes at 4.37.24; next development scope is V5.0.
 
 ## Issue #112 - Contextual character creation (4.37.23)
 
