@@ -1,6 +1,42 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **4.37.24** — 2026-10-05.
+Documentation version: **5.0.0** — 2026-10-06.
+
+## 5.0.0 — Dependency/state audit and first presentation extraction (#116, 2026-10-06)
+
+The author requested implementation, live testing, commit and push of #116.
+After clarification, he explicitly expanded its original audit-only scope to
+begin refactoring without requiring compatibility with earlier saves. That
+authorization is not gameplay acceptance and does not amend unrelated save policy.
+
+The audit records source declarations, runtime includes, concrete callers,
+single state owners, copy direction at travel/load, native input/selector
+boundaries, a reversible first extraction and ordered bounded follow-ups in
+PROJECT and SYSTEMS. The inactive duplicate crafting-station source, the
+single-participant clock guard and initialization inside social snapshot refresh
+are reported rather than silently changed.
+
+`CaelumPlayerPresentation` becomes the sole implementation of the three existing
+HUD/Journal refresh routines; `CaelumPlayer` delegates through its original
+signatures and keeps every field. Existing statements retain their order and
+meaning. No map, balance, dialogue, localization, selector or runtime asset changes.
+This starts V5.0; full modularization and performance optimization remain pending.
+
+Static/native results, baseline/final package hashes, reproducible MAP06 samples,
+measurement limits and any diagnostic failures are recorded in
+`assets/validation_500/RESULTS.json`. The historical #77/#86 performance sample
+is not reused as a current measurement. No improvement is claimed from source
+organization. The author has not confirmed manual acceptance of this delivery.
+
+Validation: the project validator and PK3 build pass. All 604 pawn field
+declarations and 544 method signatures remain; the three moved bodies differ only
+by explicit pawn qualification. Native baseline/final projection checks each pass
+35 assertions; current reload passes three explicit and three resumed-state checks.
+English/Spanish Journal/Tarot captures were visually inspected. The current MAP06
+baseline observes 1,680 tics in 131.424765 wall seconds (12.783 tics/s), separately
+from three single-tic actor profiles and diagnostic UI/play/UI timing. The initial
+reload-path error and configuration/probe corrections are recorded in RESULTS.
+Later tests keep audio enabled at the author's requested 5% master volume.
 
 ## 4.37.24 — Final V4.37 integration and portable export (#82)
 

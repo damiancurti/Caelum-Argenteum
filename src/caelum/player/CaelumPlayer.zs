@@ -826,114 +826,7 @@ class CaelumPlayer : DoomPlayer
 
     void RefreshSocialJournalSnapshot()
     {
-        JournalReputationTrialEnabled = FindInventory("CaelumReputationTrialState") != null;
-        CaelumPersistentCharacterState persistentState =
-            GetPersistentCharacterState(true);
-        MainM00SwimLessonStartedSnapshot = persistentState != null && persistentState.MainM00SwimLessonStarted;
-        MainM00SwimLessonSubmergedSnapshot = persistentState != null && persistentState.MainM00SwimLessonSubmerged;
-        MainM00SwimLessonCompleteSnapshot = persistentState != null && persistentState.MainM00SwimLessonComplete;
-        MainM00LoadLessonStartedSnapshot = persistentState != null && persistentState.MainM00LoadLessonStarted;
-        MainM00LoadLessonCompleteSnapshot = persistentState != null && persistentState.MainM00LoadLessonComplete;
-        MainM00LoadWeightSnapshot = DerivedStats == null ? 0 : DerivedStats.CarriedWeight;
-        MainM00LoadCapacitySnapshot = DerivedStats == null ? 0 : DerivedStats.CarryCapacity;
-        MainM00LoadAirFactorSnapshot = DerivedStats == null ? 1 : DerivedStats.CalculateLoadAirMultiplier(DerivedStats.LoadRatio);
-        MainM00AirLessonStartedSnapshot = persistentState != null && persistentState.MainM00AirLessonStarted;
-        MainM00AirLessonRanSnapshot = persistentState != null && persistentState.MainM00AirLessonRan;
-        MainM00AirLessonCompleteSnapshot = persistentState != null && persistentState.MainM00AirLessonComplete;
-        MainM00NeedsLessonStartedSnapshot = persistentState != null && persistentState.MainM00NeedsLessonStarted;
-        MainM00NeedsFoodUsedSnapshot = persistentState != null && persistentState.MainM00NeedsFoodUsed;
-        MainM00NeedsWaterUsedSnapshot = persistentState != null && persistentState.MainM00NeedsWaterUsed;
-        MainM00RepairLessonOfferedSnapshot = persistentState != null && persistentState.MainM00RepairLessonOffered;
-        MainM00RepairLessonCompleteSnapshot = persistentState != null && persistentState.MainM00RepairLessonComplete;
-        JournalKnownQuestCount = 0;
-        if (persistentState == null) { return; }
-
-        persistentState.EnsureQuestStateInitialized();
-        persistentState.EnsureFactionStateInitialized();
-        for (int questId = 0;
-            questId < CaelumConstants.QUEST_DEFINED_COUNT; questId++)
-        {
-            JournalQuestRewardClaimed[questId] = persistentState.QuestRewardClaimed[questId];
-            JournalQuestCanStart[questId] = CaelumSideQuestRules.CanStart(persistentState, questId);
-            JournalQuestReady[questId] = CaelumSideQuestRules.ObjectivesComplete(persistentState, questId);
-            JournalQuestState[questId] =
-                CaelumQuestCatalogue.State(persistentState, questId);
-            JournalQuestStage[questId] = questId < CaelumConstants.QUEST_SEWERS
-                ? persistentState.QuestStage[questId] : JournalQuestState[questId];
-            if (CaelumQuestCatalogue.IsRescue(questId))
-                JournalQuestRewardClaimed[questId] = persistentState.PrisonerRewardClaimed[
-                    questId - CaelumConstants.QUEST_RESCUE_FIRST];
-            if (JournalQuestState[questId]
-                != CaelumConstants.QUEST_STATE_UNDISCOVERED)
-            {
-                JournalKnownQuestCount++;
-            }
-        }
-        for (int objective = 0;
-            objective
-                < CaelumConstants.QUEST_JOURNAL_OBJECTIVE_STORAGE_COUNT;
-            objective++)
-        {
-            JournalQuestObjectiveKnown[objective] =
-                objective < CaelumConstants.QUEST_SEWERS * CaelumConstants.QUEST_OBJECTIVE_CAPACITY
-                    && persistentState.QuestObjectiveKnown[objective];
-            JournalQuestObjectiveProgress[objective] =
-                persistentState.QuestObjectiveProgress[objective];
-            JournalQuestObjectiveTarget[objective] =
-                persistentState.QuestObjectiveTarget[objective];
-        }
-        CaelumTarotPowers.EnsureRevision(persistentState);
-        for (int card = 0; card < CaelumConstants.TAROT_CARD_COUNT; card++)
-            TarotSelectedSnapshot[card] = persistentState.TarotSelected[card];
-        TarotOwnedCountSnapshot = persistentState.CountTarotCards();
-        TarotAttributeBonusSnapshot = persistentState.GetTarotAttributeBonusPercent();
-        for (int attribute = 0; attribute < CaelumConstants.PRIMARY_ATTRIBUTE_COUNT; attribute++)
-            TarotMinorBaseSnapshot[attribute] = persistentState.GetTarotMinorBaseBonus(attribute);
-        for (int card = 0; card < CaelumConstants.TAROT_CARD_COUNT; card++)
-            TarotOwnedSnapshot[card] = persistentState.HasTarotCard(card);
-        TarotFoolOwnedSnapshot = persistentState.HasTarotCard(CaelumConstants.TAROT_THE_FOOL);
-        TarotCupsAceOwnedSnapshot = persistentState.HasTarotCard(CaelumSewerMaze.CUPS_ACE);
-        MainM00FoolRevealedSnapshot = persistentState.MainM00FoolRevealed;
-        JournalPalomoPlacement = persistentState.ResolvePalomoPlacement();
-        JournalMainM00ArgentoStarted = persistentState.HasMainM00Flag(
-            CaelumConstants.MAIN_M00_FLAG_ARGENTO_STARTED);
-        MainM00ConvincedCountSnapshot = persistentState.CountMainM00ConvincedResidents();
-        MainM00MagicPracticeSnapshot = persistentState.CountMainM00MagicPractice();
-        MainM00RuneSequenceSnapshot = persistentState.MainM00RuneSequenceIndex;
-        CaelumMainM00SealCrafting.EnsureMigration(self);
-        MainM00SealRecipesSnapshot = persistentState.MainM00SealRecipesLearned;
-        MainM00WaterGivenSnapshot = persistentState.MainM00WaterContainerGiven;
-        MainM00WaterFilledSnapshot = persistentState.MainM00WaterFilled;
-        MainM00WaterDrankSnapshot = persistentState.MainM00WaterDrank;
-        MainM00ChosenSealSnapshot = persistentState.MainM00SealChoice - 1;
-        MainM00ChosenAmuletSnapshot = persistentState.MainM00AmuletChoice - 1;
-        MainM00AmuletPreparedSnapshot = persistentState.MainM00AmuletPrepared;
-        MainM00SealsPreparedSnapshot = 0;
-        for (int element = 0; element < CaelumConstants.SEAL_TYPE_COUNT; element++)
-            if (persistentState.MainM00SealsPrepared[element] && persistentState.MainM00SealChoice == element + 1) MainM00SealsPreparedSnapshot++;
-        MainM00ArmorTypeSnapshot = persistentState.MainM00ArmorChosen ? persistentState.MainM00ArmorType : -1;
-        MainM00ArmorPiecesSnapshot = 0;
-        for (int slot = 0; slot < 4; slot++) if (persistentState.MainM00ArmorCrafted[slot]) MainM00ArmorPiecesSnapshot++;
-        MainM00StarterOptionSnapshot = persistentState.MainM00StarterChosen ? persistentState.MainM00StarterOption : -1;
-        MainM00StarterSizeSnapshot = persistentState.MainM00StarterSize;
-        MainM00StarterWeaponSnapshot = persistentState.MainM00StarterWeaponId;
-        MainM00RonnieFinishedSnapshot = persistentState.HasMainM00Flag(CaelumConstants.MAIN_M00_FLAG_RONNIE_COMPLETE);
-        for (int i = 0; i < CaelumConstants.MATERIAL_TYPE_COUNT; i++)
-            MainM00StarterRequiredSnapshot[i] = persistentState.MainM00StarterRequired[i];
-        for (int i = 0; i < 6; i++) MainM00SupplySnapshot[i] = persistentState.MainM00SupplyRemaining[i];
-        JournalMainM00MagicPracticeDone[0] = persistentState.HasMainM00Flag(CaelumConstants.MAIN_M00_FLAG_MAGIC_PRIMARY_USED);
-        JournalMainM00MagicPracticeDone[1] = persistentState.HasMainM00Flag(CaelumConstants.MAIN_M00_FLAG_MAGIC_SECONDARY_USED);
-        JournalMainM00MagicPracticeDone[2] = persistentState.HasMainM00Flag(CaelumConstants.MAIN_M00_FLAG_MAGIC_CHANNEL_USED);
-        JournalMainM00MagicPracticeDone[3] = persistentState.HasMainM00Flag(CaelumConstants.MAIN_M00_FLAG_MAGIC_ANIMA_SPENT);
-        JournalMainM00MagicPracticeDone[4] = persistentState.HasMainM00Flag(CaelumConstants.MAIN_M00_FLAG_MAGIC_ANIMA_RECOVERED);
-        for (int factionId = 0;
-            factionId < CaelumConstants.FACTION_COUNT; factionId++)
-        {
-            JournalFactionMember[factionId] =
-                persistentState.FactionMember[factionId];
-            JournalFactionReputation[factionId] =
-                persistentState.FactionReputation[factionId];
-        }
+        CaelumPlayerPresentation.RefreshSocialJournalSnapshot(self);
     }
 
     bool HasMainM00Flag(int flagId)
@@ -4606,87 +4499,7 @@ class CaelumPlayer : DoomPlayer
     // arma activa. Varias armas pueden seguir equipadas simultaneamente.
     void SyncHUDActiveWeaponState()
     {
-        HUDHasEquippedSeal = false;
-        HUDSealChannelAvailable = CombatChannelModeActive || CanStartSealChannel();
-        HUDEquippedSealType = CaelumConstants.SEAL_FIRE;
-        HUDEquippedSealTier = 0;
-        for (Inventory sealCursor = Inv; sealCursor != null;
-            sealCursor = sealCursor.Inv)
-        {
-            CaelumEquipmentItem equippedSeal =
-                CaelumEquipmentItem(sealCursor);
-            if (equippedSeal != null && equippedSeal.Equipped
-                && equippedSeal.EquipmentKind
-                    == CaelumConstants.EQUIPMENT_KIND_SEAL)
-            {
-                HUDHasEquippedSeal = true;
-                HUDEquippedSealType = Clamp(equippedSeal.ItemType, 0,
-                    CaelumConstants.SEAL_TYPE_COUNT - 1);
-                HUDEquippedSealTier = Clamp(equippedSeal.Tier, 1, 3);
-                break;
-            }
-        }
-        bool hasActiveWeapon = WeaponModel != null
-            && WeaponModel.Equipped
-            && WeaponModel.Durability > 0
-            && HasEquippedNativeWeaponType(WeaponModel.WeaponType)
-            && !(player != null && player.ReadyWeapon is "CaelumUnarmedWeapon");
-        int activeType = hasActiveWeapon ? WeaponModel.WeaponType : -1;
-        int activeTier = hasActiveWeapon ? WeaponModel.Tier : 0;
-        int activeSize = hasActiveWeapon
-            ? WeaponModel.Size : CaelumConstants.EQUIPMENT_SIZE_M;
-        int activeEssenceType = hasActiveWeapon
-            ? Clamp(
-                WeaponModel.EssenceType,
-                0,
-                CaelumConstants.ESSENCE_TYPE_COUNT - 1
-            )
-            : CaelumConstants.ESSENCE_FIRE;
-        int activeItemId = hasActiveWeapon ? ActiveWeaponItemId : 0;
-
-        bool changed = !HUDActiveWeaponStateInitialized
-            || HUDHasActiveWeapon != hasActiveWeapon
-            || HUDActiveWeaponType != activeType
-            || HUDActiveWeaponTier != activeTier
-            || HUDActiveWeaponSize != activeSize
-            || HUDActiveWeaponEssenceType != activeEssenceType
-            || HUDActiveWeaponItemId != activeItemId;
-
-        HUDHasActiveWeapon = hasActiveWeapon;
-        HUDActiveWeaponType = activeType;
-        HUDActiveWeaponTier = activeTier;
-        HUDActiveWeaponSize = activeSize;
-        HUDActiveWeaponEssenceType = activeEssenceType;
-        HUDActiveWeaponItemId = activeItemId;
-        HUDActiveWeaponIsRanged = hasActiveWeapon
-            && IsRangedWeaponType(activeType);
-        HUDRangedMagazineCount = HUDActiveWeaponIsRanged
-            ? GetRangedMagazineCount(activeType) : 0;
-        HUDRangedMagazineCapacity = HUDActiveWeaponIsRanged
-            ? GetRangedMagazineCapacity(activeType) : 0;
-        HUDRangedReserveCount = HUDActiveWeaponIsRanged
-            ? GetEquippedRangedReserveCount() : 0;
-        HUDHasActiveBlockSource = HasActiveBlockSource();
-        HUDCombatBlockActive = CombatBlockModeActive && HUDHasActiveBlockSource;
-        HUDCombatBlockUsesGauntlets = HUDCombatBlockActive
-            && IsGiantGauntletsBlockSource();
-        HUDActiveShieldType = HUDCombatBlockActive
-            && !HUDCombatBlockUsesGauntlets && ShieldModel != null
-            ? ShieldModel.ShieldType : CaelumConstants.SHIELD_TYPE_BUCKLER;
-
-        if (changed)
-        {
-            HUDActiveWeaponNoticeRemaining =
-                CaelumConstants.ACTIVE_WEAPON_NOTICE_SECONDS;
-            HUDActiveWeaponStateInitialized = true;
-        }
-        else
-        {
-            HUDActiveWeaponNoticeRemaining = Max(
-                0.0,
-                HUDActiveWeaponNoticeRemaining - 1.0 / TICRATE
-            );
-        }
+        CaelumPlayerPresentation.SyncHUDActiveWeaponState(self);
     }
 
     bool ActivateFirstEquippedWeapon()
@@ -11789,16 +11602,7 @@ class CaelumPlayer : DoomPlayer
 
     void SyncHUDLoadState()
     {
-        if (DerivedStats == null)
-        {
-            HUDCarriedWeight = 0.0;
-            HUDCarryCapacity = 0.0;
-            HUDLoadRatio = 0.0;
-            return;
-        }
-        HUDCarriedWeight = DerivedStats.CarriedWeight;
-        HUDCarryCapacity = DerivedStats.CarryCapacity;
-        HUDLoadRatio = DerivedStats.LoadRatio;
+        CaelumPlayerPresentation.SyncHUDLoadState(self);
     }
 
     // Solicitud de una salida confirmada por tarot; se consume en el cruce.

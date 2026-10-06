@@ -1,6 +1,142 @@
 # Caelum Argenteum — Project, status and roadmap
 
-Documentation version: **4.37.24** — 2026-10-05.
+Documentation version: **5.0.0** — 2026-10-06.
+
+## 5.0.0 — Architecture audit and first presentation extraction (#116)
+
+Baseline: accepted #82 / 4.37.24, commit `20143c3154617309912a493fa2a7be3c7c2c9ff4`.
+On 2026-10-06 the author explicitly expanded #116 beyond its original audit-only
+acceptance criterion: begin refactoring as well, without requiring compatibility
+with earlier saves. This is a scoped waiver for this work, not a repeal of the
+permanent save policy. The implementation happens to retain all existing player
+field declarations and method signatures; it does not claim old-save acceptance.
+
+The first slice moves `RefreshSocialJournalSnapshot`, `SyncHUDActiveWeaponState`
+and `SyncHUDLoadState` from `CaelumPlayer` to the stateless play-scope
+`CaelumPlayerPresentation` in `src/caelum/player/`. The original methods are thin
+delegating adapters and remain at the same lifecycle call sites. This reduces the
+player implementation by 199 lines, without a second inventory, Tarot system,
+resource owner or HUD state object. No gameplay rule, balance, localization,
+selector, map or runtime asset is changed. Two diagnostic release labels are
+updated to 5.0.0 as required by the validator. This begins V5.0; it does not complete
+the player refactor or claim any performance improvement.
+
+### Responsibility and dependency map
+
+The source inventory is reproducible through
+`assets/validation_500/audit_sources.py`; `SOURCE_AUDIT.json` records concrete
+class/field/method declarations, hashes, include reachability and lexical file
+dependencies. It is a locator, not a compiler-derived call graph. The baseline
+player has 19,731 lines, 544 method definitions and 604 field declarations
+(declarations can contain multiple fields). The semantic boundaries below were
+reviewed separately against callers and lifecycle code.
+
+| Current responsibility and concrete symbols | Callers and dependencies | Target contract / owner |
+| --- | --- | --- |
+| `CaelumPlayer.PostBeginPlay`, `PlayerThink`, `Tick`, `PreTravelled`, `Travelled`, `DamageMobj`, `CollidedWith` | Engine callbacks; profile/allocation/stats, inventory, quests, time, equipment and physics | Pawn remains the engine coordinator; preserve callback ordering while moving one policy at a time. |
+| `CaelumPlayerPresentation.RefreshSocialJournalSnapshot`, `SyncHUDActiveWeaponState`, `SyncHUDLoadState` | Player adapters; `PersistCharacterState`, `Tick`, `CaelumTarotPowers.Select/Activate`, `CaelumDebugOverlay.NetworkProcess`; record, native inventory and equipment models | Implemented first slice: one play-scope projection service writing only existing presentation fields, while preserving inherited initialization calls. Render code reads those fields. |
+| `FindNativeEquipmentItemById`, `EnsureEquipmentItemId`, `RepairActiveEquipmentItemReferences`, `SyncActiveModelsToNativeInventory`, formal inventory methods in `CaelumPlayer` | `CaelumEquipmentItem`, `CaelumSpecialInventoryItem`, pickups, crafting, merchant transactions, Journal events | Future inventory service takes an explicit pawn; native `Actor.Inv` is the item collection. IDs select exact items; never replace them with type/tier/size keys. |
+| `CaelumPlayer.PersistCharacterState`, `RestorePersistentCharacterState`, `StoreCraftingTaskState`, `LoadCraftingTaskState` | Travel hooks and mutations; `CaelumPersistentCharacterState` plus live profile/resources/models | Future persistence adapter documents copy direction per field; do not create an independently authoritative registry. |
+| `UpdateCraftingTask`, `BuildPalomoCurrencyPaymentPlan`, `ApplyPalomoCurrencyPlan`, `EquipSelectedNativeEquipment` | Crafting station/browser, `CaelumCraftingRules`, `CaelumEconomyRules`, equipment IDs and reservations | Extract crafting and trade as separate transactions only after inventory queries. Preserve validation-before-mutation and reserved items/materials. |
+| `AdvancePersonalTimeTic`, `ApplyPhysicalMovement`, `RequestCombatChannelInput`, weapon attack/reload methods | `Tick`, `PlayerThink`, native selectors; shared `CaelumAttackRules`, catalogue, profile and derived stats | Future resource/combat services act on one pawn; native weapon actors keep dispatch and animation state. Do not add another damage route. |
+| `CaelumTarotPowers.Select/Activate/Advance`, `CaelumTarotDeckRules`, `CaelumArcanaProgress` | Journal `ca_tarot_select`, User3, personal-time tick, quest capture | Existing shared implementations stay authoritative; extraction only redirects player adapters. Card ownership/powers belong to the persistent character record, physical deck to inventory. |
+| `CaelumMainM00QuestController`, persistent `MainM00*` methods, `CaelumQuestCatalogue`, `CaelumPrisonerRescue` | World events, dialogue tokens/USDF, player snapshots | Narrative services own transitions against the character record; NPC recreation and display refresh must not grant rewards. |
+| `CaelumWorldClockTicker`, `CaelumWorldClock`, `CaelumCalendarState`, `CaelumScheduleState`, `CaelumJourneyState` | WorldTick, travel, rest/time-skip and weather | Preserve the current single-participant clock guard. Shared multiplayer world authority is a separate design/implementation gate. |
+| `CaelumCombatActor.Tick/CollidedWith`, `ImpactPhysics`, `ImpactContactState` | Native movement, projectiles, environment, player and actor impact adapters | Generic physics mathematics remains below gameplay adapters. Shared contact objects and once-per-tic resolution must survive any later extraction. |
+| `CaelumPortSiege.Tick/AttackerTarget/ElectCommands/RefreshTargets`, `CaelumPortDefender`, `CaelumSiegeEncounter` | Actor AI states, roster, gates, rams/cannons, command and perception refresh | Map-local siege owns roster/deployment/targets. Profile before optimization; preserve accepted targeting, combat and group rules. |
+| `CaelumJournalOverlay`, `CaelumJournalInput`, `CaelumDebugOverlay`, native weapon selector classes | UI input -> events -> requesting pawn; HUD/first-person views read projections/models | UI never becomes the owner of inventory/progress. Preserve event names, player routing, input latches and native slots. |
+
+Target dependency direction: data/catalogues and pure rules -> domain operations
+over explicit existing state owners -> pawn/event adapters -> UI projections and
+rendering. This is a target, not a claim that the current graph is acyclic:
+rules such as Tarot still call player methods, and the new projection service
+reads the pawn. Break those dependencies in later bounded slices, without adding
+parallel stores. `src/ZSCRIPT` remains the sole runtime include entry point.
+
+### Ordered extraction plan and gates
+
+These are scope identifiers, not speculative release numbers. Each subsequent
+implementation needs its own focused issue and evidence; do not combine them into
+a rewrite or silently expand #116 further.
+
+| Slice / prerequisite | Bounded change and adapter | Required acceptance before the next slice |
+| --- | --- | --- |
+| A1 — this issue | Audit ownership/dependencies and MAP06 baseline; extract only the three presentation routines above, retaining pawn fields | Static declaration/body equivalence, native projection checks, current save/reload and bilingual UI observations; record performance limits separately. |
+| A2 — after A1 | Extract exact-item lookup, ID allocation and inventory query helpers behind existing `FindNative*`/`EnsureEquipmentItemId` entry points; keep acquisition and transactions in place | Two identical items retain distinct IDs/durability; acquisition/Box capacity/filter/order and empty inventory agree; no duplicate native objects after refresh/travel. |
+| A3 — after A2 | Separate inventory mutation/equipment reconciliation; keep native pickup/selector classes and existing models as adapters | Equip, unequip, drop, break, projectile wear, exact repair target and Box movement; rollback inventory quantity/identity on rejected actions. |
+| A4 — after A3 | Extract crafting task operations, then merchant transaction operations in separate commits/issues; keep current record/live handoff explicit | Reservations, cancellation, completion and payment/reward exactly once; pause/session loss, travel and reload; no free duplication or lost stock. |
+| A5 — after inventory contracts | Extract resource-time step, then combat dispatch separately; preserve `Tick` ordering and native movement/weapon states | Normal versus accelerated personal time, input press/hold/release, ammunition/resource spending, interruption and exact item wear; existing attack cadence and physics outcomes unchanged. |
+| A6 — after A2 and A5 | Reduce player quest/Tarot methods to existing shared services, one transition family at a time | Capture/select/activate/expire, physical deck/Box gate, quest facts and reward idempotence; no UI refresh grants or timing changes. |
+| A7 — after measured ownership review | Separate map-local targeting, command rebuild and siege adapters individually; do not replace actors or change AI cadence in an organization patch | Same roster/losses/targets/crew and group limits; scene-matched native profiling and responsiveness evidence; performance changes require their own measured purpose. |
+| A8 — after single-player domains stabilize | Isolate shared-session authority and define supported participant model explicitly | Author decisions for shared time/progress/rewards precede implementation; per-player isolation and multi-client tests are mandatory before claiming network support. |
+
+Persistence adapters are checked alongside each slice rather than postponed to a
+final bulk migration. Thermal exposure (V5.1), CA-V5-NATIVE-UI, broader Tarot powers,
+campaign content and team/network play remain outside the implemented scope.
+
+### Audit findings and measurement boundary
+
+- `src/crafting/CaelumCraftingStation.zs` is packaged but not included; the live
+  class is in `src/caelum/crafting/CaelumCraftingStation.zs`. The inactive copy has
+  divergent defaults. Record this discrepancy; do not include both or delete the
+  inactive source without a separate authorized retirement/provenance check.
+- The general description of a persistent global clock does not establish a
+  shared-session clock: `CaelumWorldClock` is pawn-owned inventory and
+  `CaelumWorldClockTicker.WorldTick` returns unless there is exactly one participant.
+- `RefreshSocialJournalSnapshot` is not a pure read: it can obtain/create the
+  character record and run quest/faction/Tarot initialization. The extraction
+  preserves those calls and their ordering; separating initialization is future work.
+- Old ownership arrays, equipped models, persistent snapshots and native items
+  coexist. `NativeEquipmentMigrationComplete` and exact item IDs are essential
+  when interpreting them; they are not four independent inventories.
+- `CaelumMassAIScheduler` describes CADEV02 diagnostic mass AI. Its settings are
+  not evidence that production MAP06 perception and command work are budgeted by
+  that scheduler. Trace `CaelumPortSiege` and the real actor paths instead.
+
+Native current-build measurements, actual settings/hardware, source/package
+hashes and reproducible commands are in `assets/validation_500/RESULTS.json`.
+The pre-refactor primary observation uses Windows 11 Pro 10.0.26200, Ryzen 9
+5950X (16 cores / 32 logical processors), RTX 3070 Ti, Vulkan, development Doom II,
+seed 116, skill 2, reported 1520 × 825, VSync off, 60 FPS cap, background activity
+enabled, mouse disabled and 5% master audio. Only the unchanged accepted runtime
+plus the observation addon is loaded, in an isolated INI/save directory. Native
+support resources loaded by the engine are listed in the raw log. It observes
+direct-map arrival at `(0, 320, 0)`, angle 90, with the briefing open and the full
+siege running; it is not a measurement of every battlefield camera or a campaign save.
+
+| Current pre-refactor measurement | Result and interpretation |
+| --- | --- |
+| Simulation: tics 35–1715, wall time 7,125.776–138,550.541 ms | 1,680 tics in 131.424765 s: **12.783 simulation tics/s** against the engine's nominal 35. This is a new observation, not the old #86 sample. |
+| Population across that interval | Registered attackers 6,001 throughout; live attackers 6,001 -> 5,989, defenders 600 -> 599, groups 64 -> 82. Combat remains active. |
+| 99 render-overlay intervals inside the sampled interval | Median **1,097.204 ms**, p95 **2,452.775 ms**, maximum **2,685.843 ms**. These are callback-spacing observations, not GPU frame times. |
+| Separate native thinker profiles, three individual tics | `CaelumMandinga`: 89.617 / 22.315 / 21.753 ms over 6,000 calls per sample. `CaelumPlayer`: 0.035 / 0.050 / 0.039 ms. Profiling predates the requested audio reduction; its isolated settings are recorded separately. |
+| Separate final-build event-route probe, three requests | UI request -> play handler: **564.728 / 233.452 / 1,009.939 ms**; request -> next overlay after acknowledgement: **1,717.120 / 1,190.295 / 2,102.394 ms**. This measures a scheduled diagnostic event route, not a physical key or device-to-photon delay. |
+
+Measured actor-class costs identify where to investigate, not which internal
+operation is responsible. Candidate measurement boundaries are
+`CaelumPortSiege.AttackerTarget` / `RefreshTargets` for perception,
+`CaelumCombatActor.CollidedWith` / `UpdateImpactContactLatch` and native `A_Chase`
+for movement/contact, actor `Tick` and projectile updates for aggregate simulation,
+`CaelumPortSiege.ElectCommands/RefreshTargets/RefillCrews` for periodic siege work,
+and native renderer CPU/GPU timing for visible models, sprites, lights and HUD.
+The current profiles do not isolate those function costs. Source loops suggest
+possible repeated work; they are hypotheses until individually instrumented.
+
+The sampling distinguishes simulated tics per wall second, intervals between
+render-overlay callbacks, native thinker profiling and input observations.
+Overlay cadence is not GPU frame time or end-to-end input latency. Instrumentation,
+desktop activity, arrival briefing, scene and population changes limit comparisons.
+No speedup is attributed to moving these methods. Final-build native verification
+passed 35 projection assertions, three explicit load assertions plus three resumed
+state assertions, and English/Spanish Journal/Tarot captures. The original runtime
+also passed the same 35 projection assertions. Static validation and package build
+pass; `EXTRACTION.json` distinguishes the method move from two diagnostic-version
+string updates. No external AI review or author acceptance is claimed.
+
+#86 is closed. `assets/validation_4379/south/COMBAT_RECOVERY.json` remains historical
+evidence only, including its old 13.5-tic/s sample; it is not this patch's benchmark.
+The concrete ownership/compatibility contract is in SYSTEMS; tests and outstanding
+work are in TASKS and the evidence record. Agent checks do not imply author acceptance.
 
 ## 4.37.24 — Final V4.37 integration and export (#82)
 
@@ -3173,7 +3309,7 @@ content extensions and the pending previous versions are returned to V5.
 | V4.36: mobile environment and physical hazards | The 0i weight formula, maze, tables, saves and bow art are accepted; #8 is corrected and author-accepted; #9 retains the flail correction. Author-requested #10–#15 add the T1 four-section sewer, rats, prisoner escorts/port rewards and Tarot artwork; #18–#21 supply siege assets, breakable actor gates, rams and cannons (historical catapult task CA-436-04). Rams now have native #20 evidence (4.36.16), with CA-43612-RAM-01 author acceptance confirmed on 2026-09-26; cannon operation now has #21 evidence (4.36.17), with CA-43613-CATAPULT-01 author acceptance confirmed on 2026-09-27. Per the author's #8 clarification, the existing ceiling/elevator cover moving sectors; avalanches are deferred until additional maps and damaging surfaces until temperature effects, so those three are not release blockers. Validate integration/save/reset before extracting Impact Physics; neither assets nor a closed issue substitutes for acceptance. |
 | V4.37: Tarot and Trucazo | Implemented and feature-accepted: physical 78-card deck, three campaign essences with selection/activation, and a complete NPC Trucazo slice. #82 / 4.37.24 owns final integration and export. Remaining acquisition, Major powers, broader awakening and team/network modes stay in V5. |
 | **V4 test export** | #17 / 4.36.28 is accepted historical evidence. #82 / 4.37.24 exports the current integrated MAP01 -> MAP02 -> MAP06 slice with initial controls and final validation. It does not claim full campaign or standalone completion. |
-| **V5.0: modular code architecture** | First block of V5, after closing V4 and exporting the trial version. Separate responsibilities, reduce CaelumPlayer to coordination and migrate with small adapters. One implementation of inventory/player/Tarot; cross-player authority. Preserve saves, inputs and selectors. |
+| **V5.0: modular code architecture** | Started in #116 / 5.0.0 with the dependency/state audit and first HUD/Journal extraction. Ordered A2–A8 slices above continue reducing CaelumPlayer to coordination. One implementation of inventory/player/Tarot; cross-player authority remains pending. Preserve inputs/selectors and apply each issue's explicit save-compatibility contract; #116 carries the author's older-save waiver. |
 | V5.1: thermal exposure | Model of heat/cold based on climate, zones, activity, persistent humidity, wind and real equipment; Resilience, consumables, shelters, drying, rest and acclimatization. Numerical curves await the author's balance decisions. |
 | V5.x: marine resources and biomes | Persistent 3D sources, melee extraction slashing/piercing, toughness/rarity/depth/region/skill, exhaustion and regeneration. Marine biomes, algae/iodine and non-potable waters; stores maintain access to remote materials. |
 

@@ -1,6 +1,10 @@
 # CONTEXT.md — Ultra-condensed summary of Caelum Argenteum
 
-Documentation version: **4.37.24** — 2026-10-05.
+Documentation version: **5.0.0** — 2026-10-06.
+
+**5.0.0/#116:** audit and HUD/Journal extraction; fields retained.
+Author waived older-save compatibility. Contracts/plan: SYSTEMS/PROJECT.
+Evidence: assets/validation_500; no speedup or author acceptance claimed.
 
 **4.37.24/#82 accepted 2026-10-05:** closing export; Tab/M/B/R/F/T defaults.
 Evidence: validation_43724. #112/#106 merged (#114/#113); V5.0 follows.

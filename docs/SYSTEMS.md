@@ -1,6 +1,98 @@
 # Caelum Argenteum — Current systems and rules
 
-Documentation version: **4.37.24** — 2026-10-05.
+Documentation version: **5.0.0** — 2026-10-06.
+
+## V5.0 state ownership and compatibility contract (#116)
+
+The architecture audit starts from #82 / 4.37.24 (`20143c31`). The author expanded
+#116 on 2026-10-06 to begin refactoring without requiring compatibility with older
+saves. This patch introduces no schema migration: `CaelumPlayerPresentation` is
+stateless and the existing pawn fields/classes/method signatures are retained.
+Earlier-save compatibility is not an acceptance claim. Fresh saves made by the
+current implementation must still save/load correctly; the waiver does not
+authorize lost items, duplicated rewards or divergent owners during ordinary play.
+
+### Single-owner state table
+
+Paths use `src/caelum/` unless stated otherwise. All symbols and declared field
+identities are indexed by `assets/validation_500/SOURCE_AUDIT.json`. The table
+distinguishes live authority from travel copies and presentation, including objects
+that the engine serializes even when they are semantically caches.
+
+| State / concrete class and fields | Authoritative owner and lifetime | Readers, copies and mutation boundary |
+| --- | --- | --- |
+| Player identity: `player/CaelumPlayer.CharacterProfile`, `CharacterAllocation`; `CaelumCharacterProfile.Race/FirstClass/SecondClass/Sex/HeightChoice` | Confirmed pawn's live objects | `CaelumCharacterCreationMenu` is a draft. `ConsumeNewCharacterDraft` consumes new-character CVars; `PersistCharacterState` copies into record `Race`, classes, `LayerBonus`, `AttributeBonus`; restoration is explicit. Never reapply global preferences to a loaded character. |
+| `Attributes`, `DerivedStats`, `ArmorModel`, `ShieldModel`, `WeaponModel` | Pawn-owned calculated/equipped working models | Catalogue/rule data computes values. Equipped durability is synchronized with exact native items by `SyncActiveModelsToNativeInventory`; models are not additional item ownership. |
+| Physical equipment: `equipment/CaelumEquipmentItem.ItemId`, `EquipmentKind`, `ItemType`, `Tier`, `EquipmentSize`, `Durability`, `Equipped`, `InMagicBox` | Exact native item attached through `Actor.Inv` | `EnsureEquipmentItemId` allocates from record `NextEquipmentItemId`; IDs and `EquippedArmorItemId[]`, `EquippedShieldItemId`, `ActiveWeaponItemId`, amulet/seal IDs identify instances, not catalogue rows. |
+| Materials, ammo, currency, consumables, deck: `CaelumSpecialInventoryItem`, `CaelumCurrencyItem`, `CaelumTarotDeck`, `Amount`, `InMagicBox` | Native inventory stacks/items owned by the specific pawn | Weight, counts and HUD money are projections. Box content stays in native inventory with routing flags; it is not a second container database. |
+| Box ownership and legacy equipment: `CaelumPersistentCharacterState.MagicBoxOwned`, `MagicBoxItemId`, `NativeEquipmentMigrationComplete`, `SizedOwnedWeaponDurability[]` | Character record owns entitlement, stable ID counter and legacy migration ledger | Pawn `MagicBoxOwned` is a live synchronized value. Historical arrays must not recreate discarded items after native migration completes. Preserve copy direction when moving methods. |
+| Resources: `CaelumPlayer.health`, `CurrentAnima`, `CurrentAir`, `CurrentAdrenaline`, `CurrentLucidity`, `CurrentHunger/Thirst/Sleep`, underwater debt fields | Live pawn / native health | Record `StoredHealth`, `StoredAnima`, `StoredAir`, remaining stored resources and debt are travel snapshots. `AdvancePersonalTimeTic` advances the live resources; HUD refresh must not consume time. |
+| Crafting: pawn `CraftingTaskActive`, task kind/recipe/tier/size, `CraftingTaskTargetItemId`, reservations/output arrays and remaining seconds | Pawn owns active live task; `CaelumPersistentCharacterState` carries explicit travel snapshot | `StoreCraftingTaskState`/`LoadCraftingTaskState` define the handoff. `transient CraftingBrowser` is reconstructed. Selection/preview does not reserve materials twice. |
+| Merchant: record `PalomoMerchantStock[]`, `PalomoMerchantWalletCopper`, `PalomoDiscountGranted` | Persistent character merchant relationship | Pawn session/visible-list/currency-plan fields are mirrors or temporary transaction plans. Relocating Palomo must not reset stock/wallet or negotiations. |
+| Quests/factions/prisoners: record `QuestState[]`, `QuestStage[]`, `QuestObjective*[]`, `QuestRewardClaimed[]`, `MainM00Flag[]`, `FactionMember[]`, `FactionReputation[]`, `PrisonerRescueState[]`, `PrisonerRewardClaimed[]` | `CaelumPersistentCharacterState` attached to the requesting character | Controllers and dialogue transitions mutate the record; `CaelumQuestCatalogue` derives status, NPCs/tokens and `Journal*` display it. Rescue/extraction/payment remain distinct and idempotent. |
+| Tarot: record `TarotOwned[]`, `TarotSelected[]`, `TarotActive[]`, `TarotEffectTics`, `TarotCooldownTics`, `TarotPowerRevision`, `TarotDeckRevision` | One character record; `CaelumTarotPowers` performs powers and `CaelumTarotDeckRules` checks physical deck | `Tarot*Snapshot` and Journal cursor do not own cards or selected powers. Array IDs remain 0–77; Fool 0, Ace 36, Knight 60. Capture, select and activate remain separate operations. |
+| World discovery: record `WorldLocationVisited[]`, `WorldConnectionKnown[]`, `WorldConnectionTraversed[]`, `WorldPendingConnection` | Character record | `CaelumWorldProgress` and world catalogue use stable IDs. The Journal world page is a view, not shared campaign authority. |
+| Clock/calendar/weather/schedule: `world/CaelumWorldClock.CompletedDays/DayTics`, Limbo counters; `CaelumCalendarState`, `CaelumWeatherState`, `CaelumScheduleState` | Separate inventory states on the character | `CaelumWorldClockTicker` runs only with one participant; accelerated time, travel and schedule synchronization call the same existing operations. Shared time across players is unimplemented. |
+| Journey/rest/time skip: `CaelumJourneyState.Sequence/Status/ConnectionId`, `CaelumJourneyPlan`, `CaelumRestState`, `CaelumTimeAdvanceState`, `CaelumTimeSkipState` | Pawn-owned inventory state with map/session references | Begin/confirm/cancel/arrive operations own transitions; UI and temporary camera/freeze state are reconstructed or validated at their existing hooks. |
+| Trucazo/Truco: `trucazo/CaelumTrucazoMatch`, `CaelumTrucoMatch`, deck/hands/phase/score and opponent reference | Match inventory attached to the player | Menus dispatch actions; `CaelumTrucoRules`/`CaelumTrucazoRules` define rules. Do not confuse match decks with owned campaign essences. |
+| MAP06: `CaelumPortSiege.SetupRevision`, `Attackers`, `Defenders`, `Guns`, `Gates`, `Groups`, `CommandDirty`; `CaelumSiegeCombatant.Body/StableIdentity/CommandLeader/CombatTarget`; gate/ram/cannon instance fields | Map-local controller and actual actor instances | Hub revisit/save retains roster, deployment and casualties. `TargetingRevision` rebuilds derived perception; `SetupRevision` prevents redeployment. Character narrative/rewards remain in character state. |
+| Physics contacts: `src/impactphysics/ImpactPhysics.zs: ImpactContactState.FirstActor/SecondActor/LastResolutionTick`; pawn/actor `ImpactContacts` | One shared contact object referenced by both bodies | Impact adapters apply game-specific damage; generic math must not gain dependencies on player, quest or UI classes. Never duplicate a contact's per-tic resolution. |
+| Presentation: pawn `HUD*`, `Journal*`, `Tarot*Snapshot`, lesson snapshots; Journal user CVars | Derived play-scope snapshots plus local UI navigation | New `CaelumPlayerPresentation` fills the existing fields. It retains legacy ensure/init calls in the social refresh; no timer advancement, card grant or independent saved service instance is added. |
+
+### Lifecycle and input/selector boundary
+
+`PostBeginPlay` allocates missing pawn models, attempts record restoration, and only
+then consumes the new-character draft or initializes the direct-map test profile.
+It is not a substitute for save-load handling. `PreTravelled` closes sessions,
+persists the live state, then calls the native hook; `Travelled` calls its native
+hook and restores the record. Normal save/load is native object serialization;
+`WorldLoaded(IsSaveGame/IsReopen)` handlers and per-tic revision guards have their
+own roles. Do not rerun new-character initialization on load or deploy a new siege
+on hub return. `PlayerThink` handles input/latches before normal movement;
+`Tick` retains initialization/migration, native tick, contacts, sessions,
+presentation, resources and time-pump ordering. Moving a method must not reorder it.
+
+Input is part of the public contract:
+
+- `KEYCONF` bindings and aliases, existing `ca_*` event names/arguments and
+  `CVARINFO` user selectors retain their meaning and player ownership. Defaults
+  stay Tab Journal, M automap, B User2/Seal, R Reload, F Zoom, T User3/Tarot;
+  remapped controls remain valid. Fire/AltFire, Use and User1/User4 retain behavior.
+- `CaelumJournalOverlay`/`CaelumJournalInput` own local navigation and send
+  `SendNetworkEvent` requests. `CaelumDebugOverlay.NetworkProcess(ConsoleEvent)`
+  resolves `players[e.Player].mo`; domain operations must receive that pawn,
+  never substitute `consoleplayer` in authoritative play logic. This routing
+  pattern alone does not establish complete multiplayer safety.
+- Native `CaelumEquippedWeapon`, family/physical/magic selector classes in
+  `CaelumPlayableWeapons.zs` use `invoker.Owner`, then the pawn adapters
+  (`ActivateEquippedWeaponFamily`, `PerformFamilyPrimaryAttack`, etc.). Preserve
+  their class names, slot numbers, Ready/Select/Fire/AltFire/reload/zoom states,
+  action signatures, pending/ready-weapon transitions and exact item references.
+- `FormalInventorySelectionIndex` selects a presentation row;
+  `FormalInventoryRowItemId[]` and equipment/crafting target IDs identify exact
+  instances. Journal cursors and filters select presentation rows. Preserve
+  ordering, stable catalogue/faction/quest IDs, page count, English/Spanish keys,
+  press/hold/release latches and session-close behavior. The HUD cannot mutate
+  authoritative gameplay while rendering.
+
+### Migration, reversibility and rollback
+
+This slice keeps existing class/field identities, array sizes, revision fields and
+public signatures; no new migration revision is appropriate for a stateless
+method move. Future schema-changing slices must state what is retained, rebuilt
+or transformed and whether the author's save waiver applies to that specific work.
+Outside that waiver, migrations require a version, idempotent repeat-load tests,
+explicit reverse/backup strategy and affected current/legacy map variants.
+
+Keep the original package and save copies. For a future field move, prefer an old
+serialized field plus a forwarding adapter until migration is validated; do not
+copy ownership into two active registries. For rollback of #116, rebuild commit
+`20143c31` or revert the focused runtime extraction and use the matching original
+package/save copies. Do not downgrade by overwriting the only current save, and do
+not mix regenerated maps with saves that already visited another layout. No
+automatic conversion of legacy MAP02/MAP06 geometry is introduced. The current
+author waiver removes old-save compatibility as this issue's gate, not the need
+to state the rollback boundary honestly.
 
 ## 4.37.24 — Export defaults and final integration contract (#82)
 
