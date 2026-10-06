@@ -1,6 +1,31 @@
 # TASKS.md — Active tasks
 
-Documentation version: **5.0.1** — 2026-10-06.
+Documentation version: **5.0.2** — 2026-10-06.
+
+## Issue #118 — Inventory/equipment consolidation (5.0.2)
+
+- Baseline: #117 accepted, PR #123 merged, issue closed on 2026-10-06.
+- Implemented 157 pawn and three physical Box/deck operations in stateless
+  `CaelumInventoryService`, retaining native ownership, fields and adapters.
+  Shared operations cover identity, equipment, capacity, storage, projections,
+  reservations and inventory commits; SYSTEMS records preconditions and remaining
+  recipe/session/quest/native-I/O boundaries. No save schema or balance changes.
+- Evidence: `assets/validation_502/RESULTS.json`, adjacent source-equivalence
+  manifest, native contracts, save/reload/travel/rollback and before/after timing.
+  Foreign-reference guards are explicit; ordinary valid-owner behavior is compared
+  against 5.0.1. Agent fixtures and author acceptance remain separate.
+- Native inventory/hub checks: 127 per package; nine crafting categories and
+  merchant buy/sell: 79 per package; stack pickup/capacity: 65 per package.
+  Original-save upgrade/travel: 50; fresh/upgraded/original rollback: ten each.
+  Seven extra ownership checks pass; all 592 pawn fields and 23 native-item
+  payloads match. Bilingual inventory captures were inspected.
+- #118 MAP06 regression versus 5.0.1: 12.632/12.160 tics/s (-3.74%);
+  reversed-order 12.967/12.170 (-6.15%), with 49 identical scene observations.
+  Mean native player samples: 0.0417/0.0445 ms and 0.0441/0.0487 ms.
+  Attribution remains unresolved; carry both #117/#118 evidence into #120.
+- Author confirmed CA-502-INVENTORY-01 and all #118 tests passed on 2026-10-06;
+  PR #124 merge and issue closure authorized. Continue with #119 Tarot. #120
+  retains the unresolved performance measurements from #117/#118.
 
 ## Issue #117 — Compatible player domain adapters (5.0.1)
 

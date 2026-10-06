@@ -22,9 +22,7 @@ class CaelumTarotDeckRules : Object play
     const REVISION = 1;
     static CaelumTarotDeck Owned(CaelumPlayer user)
     {
-        if (user == null) return null;
-        let deck = CaelumTarotDeck(user.FindInventory("CaelumTarotDeck"));
-        return deck != null && deck.Owner == user && deck.Amount > 0 ? deck : null;
+        return CaelumInventoryService.FindOwnedTarotDeck(user);
     }
     static bool InOwnedBox(CaelumPlayer user, bool explain = false)
     {
@@ -35,31 +33,7 @@ class CaelumTarotDeckRules : Object play
     }
     static bool Grant(CaelumPlayer user, bool explain = true)
     {
-        let record = user.GetPersistentCharacterState(false);
-        if (record == null) return false;
-        // Una ausencia no autoriza otra entrega de Palomo.
-        if (record.TarotDeckGranted) return true;
-        let deck = Owned(user);
-        if (deck == null)
-        {
-            bool inBox = CaelumMainM00FoolCapture.HasOwnedBox(user)
-                && user.HasNativeMagicBoxSlotAvailable()
-                && user.CanAddRawWeightToMagicBox(CaelumConstants.TAROT_DECK_WEIGHT);
-            if (!inBox && !user.CanAddWeightToPersonalInventory(CaelumConstants.TAROT_DECK_WEIGHT))
-            {
-                if (explain) CaelumTarotPowers.Feedback(user, "CA_TAROT_DECK_MAKE_ROOM");
-                return false;
-            }
-            deck = CaelumTarotDeck(Actor.Spawn("CaelumTarotDeck", user.Pos, NO_REPLACE));
-            if (deck == null) return false;
-            deck.InMagicBox = inBox;
-            deck.AttachToOwner(user);
-        }
-        record.TarotDeckGranted = true;
-        record.TarotDeckRevision = REVISION;
-        user.OnNativeInventoryChanged();
-        if (explain) CaelumTarotPowers.Feedback(user, "CA_TAROT_DECK_RECEIVED");
-        return true;
+        return CaelumInventoryService.GrantTarotDeck(user, explain);
     }
     static void EnsureLegacy(CaelumPlayer user)
     {

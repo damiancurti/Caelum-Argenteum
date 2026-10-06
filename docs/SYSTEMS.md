@@ -1,6 +1,40 @@
 # Caelum Argenteum — Current systems and rules
 
-Documentation version: **5.0.1** — 2026-10-06.
+Documentation version: **5.0.2** — 2026-10-06.
+
+## Inventory and equipment service (#118)
+
+`equipment/CaelumInventoryService` is a stateless `Object play` service taking
+the requesting `CaelumPlayer`. The pawn's 157 compatible adapters and the Box/deck
+entry points delegate to it. All 604 pawn field declarations and 544 signatures
+remain; native serialization, lifecycle ordering and class identities are intact.
+The service adds no fields, singleton, global player lookup or second inventory.
+
+| Boundary | Authority and operation contract |
+| --- | --- |
+| Identity and queries | `Actor.Inv` and each item's native `Owner` own instances. `FindNativeEquipmentItemById` searches that pawn only; `EnsureEquipmentItemId` observes/allocates the existing record counter and resolves collisions. Detached incoming items may obtain identity; foreign owned items cannot. Type/tier/size remain catalogue attributes, never substitutes for an instance ID. |
+| Equipment and wear | Equip/unequip, exact activation and active-reference repair operate on owned instances. `SyncActiveModelsToNativeInventory` writes working-model wear to the exact IDs. Native weapon selectors, attacks and engine inventory copy/toss callbacks retain their roles. Foreign activation is rejected before changing selectors, models or the pawn. |
+| Box and physical deck | Entitlement and migration revisions remain in `CaelumPersistentCharacterState`. `CaelumMagicBox.EnsureOwned` and deck `Owned`/`Grant` forward to the service. `InMagicBox` is location on a native item; weight reduction and slot counts are projections. The deck remains one protected physical item; stored essences and power/capture rules are not moved. |
+| Capacity and acquisition | Shared weight-transition, Box-slot and prepared-output checks include existing reservations. Native pickup callbacks still perform the engine transfer/copy after service preflight, then notify the service. New pickups must be detached or owned by the requester; stack growth requires that requester's existing stack. A rejected capacity preflight allocates no equipment ID. |
+| UI and previews | Formal rows and selection fields remain compatible cached projections. Play events resolve the selected ID/native entry and call the same service operations. Drawing consumes these projections; it has no independent mutable item collection. Foreign selection entries are ignored. Projection refresh retains its existing identity-reconciliation calls; it is not a pure serialization-free function. |
+| Crafting, repair and dismantle | Reservation/count/consume helpers, prepared-output checks and existing output/repair/dismantle commits share the service. Recipe planning, station/session checks, recipe knowledge and time coordination remain with their existing owners and call pawn adapters. Complete reservations are checked before repair consumption. Task completion clears the active task, so repeating completion cannot grant another output. Exact target IDs and per-instance condition survive travel. |
+| Commerce and rewards | Currency plans, weight/slot checks and product add/remove commit operations share the service. Merchant sessions/prices/stock and the prisoner's claimed flag remain their existing coordinators' responsibility. They validate before invoking internal commit helpers and mark reward completion only after payment succeeds. Calling a low-level commit without its coordinator's preconditions is not a new public transaction API. |
+| Authored loans and native I/O | Quest-specific temporary grants/removal and engine `AttachToOwner`/copy/toss remain specialized existing lifecycle operations, not replacement ownership stores. Their existing inventory refresh/identity/capacity adapters now reach the service. This patch does not rewrite tutorial loan rules, native actor callbacks or recipe/catalogue data. |
+
+Ownership guards precede mutation in ID allocation, exact activation, pickup and
+stack preflight, selection and recovered-material merge. The full method/guard
+manifest and token-equivalence proof are in `assets/validation_502/EXTRACTION.json`.
+Apart from those explicit guards, moved statements, literals and call order are
+unchanged. Existing native-equipment/weapon/Box/deck migration gates stay intact;
+there is no new migration revision or parallel owner.
+
+Rollback uses the preserved **original 5.0.1 package and original save together**
+(source baseline `da7d33b8`), with matching historical map layout. Upgraded saves
+are separate files. Native checks load an original save under 5.0.2, reload fresh
+and upgraded saves, traverse MAP03/MAP02/MAP06 and return, and replay the original
+pair. A newer save's downgrade or conversion of obsolete map layouts is not claimed.
+Recorded evidence and limitations are in `assets/validation_502/RESULTS.json`;
+ordinary author acceptance remains separate from these isolated fixtures.
 
 ## Player character and resource adapters (#117)
 

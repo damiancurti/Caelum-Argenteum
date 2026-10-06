@@ -1,6 +1,46 @@
 # Caelum Argenteum — Project, status and roadmap
 
-Documentation version: **5.0.1** — 2026-10-06.
+Documentation version: **5.0.2** — 2026-10-06.
+
+## 5.0.2 — Authoritative inventory/equipment service (#118)
+
+The accepted #117 delivery was merged as PR #123 (`da7d33b8`) on 2026-10-06.
+This next slice implements the inventory ownership contracts through a stateless
+`CaelumInventoryService`. The pawn forwards 157 existing methods; physical Box
+identity and physical-deck query/grant add three compatible forwarding methods.
+The player loses 5,363 implementation lines while retaining every field/signature.
+
+Native inventory instances and their `Owner` remain authoritative. The service
+consolidates identity, equipment, Box routing, capacity, projections, reservations,
+currency/product operations and inventory commits of crafting/repair/dismantle.
+Twelve explicit guards reject foreign owned references before mutation. All other
+moved statements/literals preserve their order and meaning; 387 other pawn method
+bodies are unchanged. Native callbacks/input, travel copies, recipe planning,
+merchant/quest sessions and Tarot powers keep their existing responsibilities.
+SYSTEMS specifies callers, preconditions and which specialized native/quest
+operations remain outside this extraction. No balance, assets or map changes.
+
+No save schema or migration revision changes. Existing migration gates and
+original-package/original-save rollback are exercised with native GZDoom 4.14.2.
+Source equivalence, package boundaries, contract checks, ownership rejection,
+save/travel tests and before/after measurements are recorded in
+`assets/validation_502/RESULTS.json`. These are agent checks, with ordinary author
+acceptance tracked separately. All game launches keep enabled audio at 5%.
+
+This implements A3 below, including the existing inventory commit operations
+needed by its consumers; future transaction work concerns their remaining session,
+planning and orchestration policies. It does not create a competing crafting or
+economy implementation. #119 owns the next Tarot slice. #117's measured MAP06
+4.9–6.0% slowdown remains unresolved evidence for #120; organization is not a
+performance improvement claim.
+
+The #118 comparison also observes a regression against 5.0.1: MAP06 measures
+12.632 -> 12.160 tics/s (-3.74%), then 12.967 -> 12.170 (-6.15%) when repeated
+in reverse order. Each run spans 1,680 tics and all 49 scene observations agree.
+Mean single-tic player samples rise 0.0417 -> 0.0445 ms and 0.0441 -> 0.0487 ms;
+these sparse microsecond differences do not attribute the whole-scene slowdown.
+Input-drift/overlapping attempts are discarded. Current cause and desktop/driver
+variation remain unresolved; carry this measured evidence into #120.
 
 ## 5.0.1 — Player character/resource adapters (#117)
 
@@ -84,9 +124,9 @@ reviewed separately against callers and lifecycle code.
 | --- | --- | --- |
 | `CaelumPlayer.PostBeginPlay`, `PlayerThink`, `Tick`, `PreTravelled`, `Travelled`, `DamageMobj`, `CollidedWith` | Engine callbacks; profile/allocation/stats, inventory, quests, time, equipment and physics | Pawn remains the engine coordinator; preserve callback ordering while moving one policy at a time. |
 | `CaelumPlayerPresentation.RefreshSocialJournalSnapshot`, `SyncHUDActiveWeaponState`, `SyncHUDLoadState` | Player adapters; `PersistCharacterState`, `Tick`, `CaelumTarotPowers.Select/Activate`, `CaelumDebugOverlay.NetworkProcess`; record, native inventory and equipment models | Implemented first slice: one play-scope projection service writing only existing presentation fields, while preserving inherited initialization calls. Render code reads those fields. |
-| `FindNativeEquipmentItemById`, `EnsureEquipmentItemId`, `RepairActiveEquipmentItemReferences`, `SyncActiveModelsToNativeInventory`, formal inventory methods in `CaelumPlayer` | `CaelumEquipmentItem`, `CaelumSpecialInventoryItem`, pickups, crafting, merchant transactions, Journal events | Future inventory service takes an explicit pawn; native `Actor.Inv` is the item collection. IDs select exact items; never replace them with type/tier/size keys. |
+| `FindNativeEquipmentItemById`, `EnsureEquipmentItemId`, `RepairActiveEquipmentItemReferences`, `SyncActiveModelsToNativeInventory`, formal inventory methods in `CaelumPlayer` | `CaelumEquipmentItem`, `CaelumSpecialInventoryItem`, pickups, crafting, merchant transactions, Journal events | Implemented in #118: the stateless inventory service takes an explicit pawn; native `Actor.Inv` is the item collection. IDs select exact items; never replace them with type/tier/size keys. |
 | `CaelumPlayer.PersistCharacterState`, `RestorePersistentCharacterState`, `StoreCraftingTaskState`, `LoadCraftingTaskState` | Travel hooks and mutations; `CaelumPersistentCharacterState` plus live profile/resources/models | Future persistence adapter documents copy direction per field; do not create an independently authoritative registry. |
-| `UpdateCraftingTask`, `BuildPalomoCurrencyPaymentPlan`, `ApplyPalomoCurrencyPlan`, `EquipSelectedNativeEquipment` | Crafting station/browser, `CaelumCraftingRules`, `CaelumEconomyRules`, equipment IDs and reservations | Extract crafting and trade as separate transactions only after inventory queries. Preserve validation-before-mutation and reserved items/materials. |
+| `UpdateCraftingTask`, `BuildPalomoCurrencyPaymentPlan`, `ApplyPalomoCurrencyPlan`, `EquipSelectedNativeEquipment` | Crafting station/browser, `CaelumCraftingRules`, `CaelumEconomyRules`, equipment IDs and reservations | #118 centralizes their inventory commits. Future extraction concerns remaining crafting/trade planning and sessions; preserve validation-before-mutation and reservations. |
 | `AdvancePersonalTimeTic`, `ApplyPhysicalMovement`, `RequestCombatChannelInput`, weapon attack/reload methods | `Tick`, `PlayerThink`, native selectors; shared `CaelumAttackRules`, catalogue, profile and derived stats | Future resource/combat services act on one pawn; native weapon actors keep dispatch and animation state. Do not add another damage route. |
 | `CaelumTarotPowers.Select/Activate/Advance`, `CaelumTarotDeckRules`, `CaelumArcanaProgress` | Journal `ca_tarot_select`, User3, personal-time tick, quest capture | Existing shared implementations stay authoritative; extraction only redirects player adapters. Card ownership/powers belong to the persistent character record, physical deck to inventory. |
 | `CaelumMainM00QuestController`, persistent `MainM00*` methods, `CaelumQuestCatalogue`, `CaelumPrisonerRescue` | World events, dialogue tokens/USDF, player snapshots | Narrative services own transitions against the character record; NPC recreation and display refresh must not grant rewards. |
@@ -112,9 +152,9 @@ a rewrite or silently expand #116 further.
 | --- | --- | --- |
 | A1 — this issue | Audit ownership/dependencies and MAP06 baseline; extract only the three presentation routines above, retaining pawn fields | Static declaration/body equivalence, native projection checks, current save/reload and bilingual UI observations; record performance limits separately. |
 | A2 — #117, after A1 | Delegate draft/profile and resource policies to stateless services; retain fields, native callbacks, input and personal-time ordering | Exact body/declaration equivalence; native profile/resource matrix, old/new save/reload and hub return; selectors/creation retain behavior. |
-| A3 — #118, after A2 | Consolidate exact-item lookup, ID allocation, inventory queries, mutation and equipment reconciliation in bounded steps; retain native pickups/selectors | Two identical items retain IDs/wear; Box capacity, reservations, rejected transactions, equip/drop/break/repair and save/travel neither lose nor duplicate items. |
+| A3 — #118, after A2 | Implemented: exact-item lookup, IDs, queries, mutation, projections and equipment reconciliation in one service; native pickup/selector adapters retained | Two identical items retain IDs/wear; Box capacity, reservations, rejected transactions, equip/drop/break/repair and save/travel neither lose nor duplicate items. |
 | A4 — #119, after A3 | Consolidate Tarot through existing shared services and the inventory contract; keep separate Trucazo/Truco match state | Capture/select/activate/expire, physical deck/Box gate, bonuses and reward idempotence; no UI refresh grants or timing changes. |
-| A5 — after inventory contracts | Extract crafting task operations, then merchant transaction operations in separate focused changes; retain record/live handoff | Reservations, cancellation, completion and payment/reward exactly once; pause/session loss, travel and reload; no free duplication or lost stock. |
+| A5 — after inventory contracts | Extract remaining crafting planning/task coordination and merchant session/transaction coordination in separate changes; reuse #118 inventory commits and retain record/live handoff | Reservations, cancellation, completion and payment/reward exactly once; pause/session loss, travel and reload; no free duplication or lost stock. |
 | A6 — after player/inventory contracts | Further isolate combat dispatch and narrative transitions individually; keep the resource adapters and native movement/weapon states | Press/hold/release, ammunition/resource spending, interruption and exact item wear; attack cadence/physics and quest reward idempotence unchanged. |
 | A7 — after measured ownership review | Separate map-local targeting, command rebuild and siege adapters individually; do not replace actors or change AI cadence in an organization patch | Same roster/losses/targets/crew and group limits; scene-matched native profiling and responsiveness evidence; performance changes require their own measured purpose. |
 | A8 — after single-player domains stabilize | Isolate shared-session authority and define supported participant model explicitly | Author decisions for shared time/progress/rewards precede implementation; per-player isolation and multi-client tests are mandatory before claiming network support. |

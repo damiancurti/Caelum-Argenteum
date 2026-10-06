@@ -1,0 +1,713 @@
+{
+  "issue": 118,
+  "version": "5.0.2",
+  "baseline_commit": "da7d33b88b76241331bd8ddc007773b2e2c8b9f8",
+  "static": "EXTRACTION.json: 604 fields/544 signatures/387 other bodies retained; 160 stateless moves and 12 explicit ownership guards. Re-running the extractor reproduces all four changed runtime sources byte-for-byte.",
+  "native_runs": {
+    "baseline-inventory-2": {
+      "result": "PASS",
+      "checks": 127,
+      "baseline-inventory-2.txt": {
+        "source_sha256": "c67a8ff0bb6a71f91ff9f71a60ed1ea23588ee64f74486cef5b86c29116e8700",
+        "archive_sha256": "8a814216e4f5d72ce65c765c16bb0b9422fd2256e720b9d5495eda2764413436",
+        "omitted_local_input_rows": 0
+      },
+      "baseline-inventory-2.ini": {
+        "source_sha256": "888191bd89c885ffe9fba1767caac404c9699a794c91d31cae1743de66bae55f",
+        "archive_sha256": "a9329b4d7e93840949094cce02d11a2f6fd8689c6491383b7fc55462ccce39bc",
+        "omitted_local_input_rows": 0
+      },
+      "baseline-inventory-2-run.json": {
+        "source_sha256": "f61488d6bf3c3ee9117b56ccca09808d143e0f44c621179431e045f87321622a",
+        "archive_sha256": "ba5c40fec6c4095ef45ebf5ff2e8db583f41ec84993e90fff1b3bdb47e4c83cc",
+        "omitted_local_input_rows": 0
+      }
+    },
+    "current-inventory-final": {
+      "result": "PASS",
+      "checks": 127,
+      "current-inventory-final.txt": {
+        "source_sha256": "568b24d8bf726b161c3c55628ad68d506c4b14dd07548c5787c3900c6ddc0b1a",
+        "archive_sha256": "8778d2146de37d391d1f4675e45fb1385d9211649f1bf5903dd75c5ecd45880b",
+        "omitted_local_input_rows": 0
+      },
+      "current-inventory-final.ini": {
+        "source_sha256": "f589573b51aea81f733b4d2b67fcf492e9ae343bb26c7a54dcaace3764861fdc",
+        "archive_sha256": "b7f1019d1e5f8733705464f783d468088fade389d1a953055503593bf43ab967",
+        "omitted_local_input_rows": 0
+      },
+      "current-inventory-final-run.json": {
+        "source_sha256": "b28a07b7c0f65235ece1b1837bbfb299f39e83269b9aeab9b1cedf1ded4d4871",
+        "archive_sha256": "48146e8874d187344029dd7b0922641beae254f8d6a454810ce5ac3860bb7103",
+        "omitted_local_input_rows": 0
+      }
+    },
+    "old-save-current": {
+      "result": "PASS",
+      "checks": 50,
+      "old-save-current.txt": {
+        "source_sha256": "8bb9dd3875547f8da5b5dae3d5ee726ecff0c10aebceb348c317b6dcfa299922",
+        "archive_sha256": "1110ae7c7892d5b5c789985002fa1192236c2de9bb686898c7f1bc5f443e7d98",
+        "omitted_local_input_rows": 0
+      },
+      "old-save-current.ini": {
+        "source_sha256": "1f37487469af8abc73f335bb224bac76bde2d6b7369bf49dc344b418f2dbbc11",
+        "archive_sha256": "2fdc876ff440f8e299589ce9d6a40556700a842bbf61b1d8dfb05badd1d1e677",
+        "omitted_local_input_rows": 0
+      },
+      "old-save-current-run.json": {
+        "source_sha256": "28217fb2c61cfa35550aa0a2bc8ca54e03d4e69d34772ed0e31ab9aa5dfd1638",
+        "archive_sha256": "8a8cd7ae157ef7bbcdc305154d34bb3979af3ba34f61e6cb00c37b67890685d0",
+        "omitted_local_input_rows": 0
+      }
+    },
+    "baseline-pickups-final": {
+      "result": "PASS",
+      "checks": 65,
+      "baseline-pickups-final.txt": {
+        "source_sha256": "e1d63f86ac35972d61ed6f155816ea5bb256b43744514125f55089143feb9ffa",
+        "archive_sha256": "df49112f43a19a6e63658c368b9129dc84bbc654354e9c4448d86074c7d899f3",
+        "omitted_local_input_rows": 0
+      },
+      "baseline-pickups-final.ini": {
+        "source_sha256": "b140c07320e3acce563f8ea16e45e6b163fb6b356ca2170cbff7ec8c3bc5284c",
+        "archive_sha256": "ac93d2f453243f1a312bd8865a00832cf39dbdb2b3d7b4fd93ebe6973f3ceed9",
+        "omitted_local_input_rows": 0
+      },
+      "baseline-pickups-final-run.json": {
+        "source_sha256": "9b058130d14aeb7c3ddbbd2da8367ce39f39bedac15d9f73e95e5e3b2570c9d3",
+        "archive_sha256": "4763c135c996dbcc6b21097ea210ba28f3fabe66681070199fe7ccc6ad6a93cf",
+        "omitted_local_input_rows": 0
+      }
+    },
+    "current-pickups": {
+      "result": "PASS",
+      "checks": 65,
+      "current-pickups.txt": {
+        "source_sha256": "f2ca0753759bc198f219ff8408468617ed5c5d87b27b5e918a22af819024bb9c",
+        "archive_sha256": "9be2e1eefff9f47d3b0b3df79b482ded2068959813155af0f63506da740fe4ea",
+        "omitted_local_input_rows": 0
+      },
+      "current-pickups.ini": {
+        "source_sha256": "472b9abb7268d63bba33bfec43c4ab7f59cad2745d2797e1fbc3eb5aa31de821",
+        "archive_sha256": "866e224115a5e20a385197f2642cf128b2ba8d328d9635bf2c383cfb1aa885ed",
+        "omitted_local_input_rows": 0
+      },
+      "current-pickups-run.json": {
+        "source_sha256": "61045e805cebea6506e16959c54b75069abd5d5f4d14c74de8f268cf46603127",
+        "archive_sha256": "310e6ef2d6f9ed09a5adcfc8fc121dd146e24a10a455629800d83f4fb79a4013",
+        "omitted_local_input_rows": 0
+      }
+    },
+    "baseline-transactions-4": {
+      "result": "PASS",
+      "checks": 79,
+      "baseline-transactions-4.txt": {
+        "source_sha256": "d596f55a5944b9a69ff89066c27876b8e9844184743a7ac7ae3f275f4b2dfa98",
+        "archive_sha256": "1af0741adbfa2efb99d88791f9d7a0d58829be14cc3559da2e17b17cf6d5fee2",
+        "omitted_local_input_rows": 0
+      },
+      "baseline-transactions-4.ini": {
+        "source_sha256": "a38e56aaaab755ec455cf5d2e2f3fb79e8f279693fd5bc6d56ed85bb011659fb",
+        "archive_sha256": "a91b21d113f2dc8cd9ca42121663e4477c124bcf9dfc73182d3e1b3715376248",
+        "omitted_local_input_rows": 0
+      },
+      "baseline-transactions-4-run.json": {
+        "source_sha256": "9dd4ecf83b4707f6ec4a515925866ac98e5e70442c26d452741e869fe8681ac3",
+        "archive_sha256": "bb4b3ac2ae0cf84241c5b5679bfea70b04cb23e87a4d6df6a00c6a0d706d2f3e",
+        "omitted_local_input_rows": 0
+      }
+    },
+    "current-transactions-final": {
+      "result": "PASS",
+      "checks": 79,
+      "current-transactions-final.txt": {
+        "source_sha256": "32845e90b1a8656d72396fc98e6ba933d637ee2e1d0143835169a2d0f5134673",
+        "archive_sha256": "d1e4e216e08d9da850e71f9fc910457a5e03e1983d1178a905987b64d04e5bc3",
+        "omitted_local_input_rows": 0
+      },
+      "current-transactions-final.ini": {
+        "source_sha256": "c71d801bb06f4bb8a0b68cce1d7e7b48dde7ab11fc82df200ee64133409764e1",
+        "archive_sha256": "1381f8138dbf11fb0689d5831eae174fa562eca501c5c3e2050ad8394a2c6ecc",
+        "omitted_local_input_rows": 0
+      },
+      "current-transactions-final-run.json": {
+        "source_sha256": "7ab622075507820d2d37da69f6a243a3540a6fd9d74286b33e7bf9c05054713d",
+        "archive_sha256": "ceedcb595f911863a80d127ab8c2f1d6eaec0164e70d1faba66d9b9c199297bc",
+        "omitted_local_input_rows": 0
+      }
+    },
+    "ownership-current": {
+      "result": "PASS",
+      "checks": 54,
+      "ownership-current.txt": {
+        "source_sha256": "980485df43b40e96b7256046e09f24838da27c382928db05b79a0dcfb3d0ede4",
+        "archive_sha256": "99138a70e0516c9b187a2ce4db7a30303bc3c08e24c28a7ded06fcd2c462768c",
+        "omitted_local_input_rows": 0
+      },
+      "ownership-current.ini": {
+        "source_sha256": "e95cf15ba007f1bf5a2990d46a6a100587c9936a65854e20981df3c1a388be63",
+        "archive_sha256": "9cca4e451644ba6ab8ecbce36dee9c7c24894bb72560dfb20c479a9c6d128494",
+        "omitted_local_input_rows": 0
+      },
+      "ownership-current-run.json": {
+        "source_sha256": "7174cab66d1ea52a801a9915038324977e270bca134271684b1277f029f48e3b",
+        "archive_sha256": "3daa6f0a3f422dc1a1aaa21759cc35e034c5048d27f0a0c66492808970369341",
+        "omitted_local_input_rows": 0
+      }
+    },
+    "new-save-reload": {
+      "result": "PASS",
+      "checks": 10,
+      "new-save-reload.txt": {
+        "source_sha256": "9c03cb6873969ea3fa0d3ff4e5fcf23a11b5469061a372d1b8cdaadac78ba517",
+        "archive_sha256": "f32864dcce3b9202582701bc2145c9b44ae118903c95127fdc599ddefb24797d",
+        "omitted_local_input_rows": 0
+      },
+      "new-save-reload.ini": {
+        "source_sha256": "fca26b6cae9edc9910abe8279ea082c1ada6b06597444277e62098bc3859f4d5",
+        "archive_sha256": "ce566c8bd7a3e96e60a4147bc1dbb4671d2278ac9e83c23dd4db6744506a184b",
+        "omitted_local_input_rows": 0
+      },
+      "new-save-reload-run.json": {
+        "source_sha256": "028e0cc378d028c6689e1e3c98c5fe678a988f78f070e0880303ea736deab05d",
+        "archive_sha256": "a5e630bc39bd32b5740888c8547fe200c40a8a9cb2d0e27cab5a79a04dcf5371",
+        "omitted_local_input_rows": 0
+      }
+    },
+    "upgraded-save-reload": {
+      "result": "PASS",
+      "checks": 10,
+      "upgraded-save-reload.txt": {
+        "source_sha256": "6552516cecf60e4e6ccd9206d01540067c8eb52bc292ca4029d907db39a81101",
+        "archive_sha256": "cb165e16df74673c9e7ae438c4b379d85705bf0d71e9d9c0bb574c6a8fd72f3f",
+        "omitted_local_input_rows": 0
+      },
+      "upgraded-save-reload.ini": {
+        "source_sha256": "248cab6c56108c5cca23db2e5d42f9aa1ef874d34cd8c5faa1f8989fe808719a",
+        "archive_sha256": "6ca770c33b59fa876d5451410ca6200620f9c60c1772005d13dffb1686fc4b84",
+        "omitted_local_input_rows": 0
+      },
+      "upgraded-save-reload-run.json": {
+        "source_sha256": "ad6e6fe5c9e653849f278dab536a2cd516ee0a5539c9f22afc1e05f84c11e416",
+        "archive_sha256": "578969758a64839d5a59b0a02fec8632d0268809dc758f156caee2e7c9ee9a54",
+        "omitted_local_input_rows": 0
+      }
+    },
+    "original-save-rollback": {
+      "result": "PASS",
+      "checks": 10,
+      "original-save-rollback.txt": {
+        "source_sha256": "7494e5bc4a0eda9d92d2a7aaf0949274622ab425921fbba9fc5623d670664e73",
+        "archive_sha256": "88a4e56e8f43001af6d88d738a53fea405dd4c32e27763022b0dd1c7650f7237",
+        "omitted_local_input_rows": 0
+      },
+      "original-save-rollback.ini": {
+        "source_sha256": "6c5e0aa2c4b29385ea81f938d95ec8a6ed9fe0b8eb6ca25d5448babc767b393f",
+        "archive_sha256": "38740e4dbd574ec1b1cbf687716a578a3d932f40dba50229e2d6f64873c2560c",
+        "omitted_local_input_rows": 0
+      },
+      "original-save-rollback-run.json": {
+        "source_sha256": "b616826b2b926d0b5e603b769630f90f3909d5b3f0c1f2c8e79cc4b49c8641e9",
+        "archive_sha256": "90ea680c5d5f2d104cf54c80ebe8e0d787de09cc4355f0977e24b10e195d34d4",
+        "omitted_local_input_rows": 0
+      }
+    },
+    "baseline-performance-locked": {
+      "result": "MEASURED",
+      "checks": null,
+      "baseline-performance-locked.txt": {
+        "source_sha256": "4ad4158680f7954e3487db8a1fbdd3bdd60533abc4887aa291930cbb9399afcc",
+        "archive_sha256": "2543aff923b6d16f4926a20034bfeb11461bcb6f5dea1be605d34d6a95124a28",
+        "omitted_local_input_rows": 0
+      },
+      "baseline-performance-locked.ini": {
+        "source_sha256": "af44e750cd10083d08ffca3b65804498dd9e9952d58ad58ad9f3a1392866ef85",
+        "archive_sha256": "de3d674014e20ea2aba6d25d6acd0ea722b9e157636d227dc85347aa54be5d08",
+        "omitted_local_input_rows": 0
+      },
+      "baseline-performance-locked-run.json": {
+        "source_sha256": "8cbde5324fd9f5225e239261a5675be653ae1d19f012b7c2409e680caab1d824",
+        "archive_sha256": "aa5f704f08e0262b118217f54df1c4a3c18e2d15329352dfa4bfc029c952dddd",
+        "omitted_local_input_rows": 0
+      }
+    },
+    "current-performance-locked": {
+      "result": "MEASURED",
+      "checks": null,
+      "current-performance-locked.txt": {
+        "source_sha256": "15f6ed82eca49a49bd6af3b533f833c43e509e5dd73e746c834915cd59852c41",
+        "archive_sha256": "de42574b185cadcf5b6c6f47ed6572d7afadb069639ffc35992fbc1ce1569553",
+        "omitted_local_input_rows": 0
+      },
+      "current-performance-locked.ini": {
+        "source_sha256": "171e4caad6ae002140146466dd249323276d9357654ed801ec1c6002a9bae0e0",
+        "archive_sha256": "ffd3443f5093c81d5eab8b8b5966de4b0eb81e2dd638b000d268935c1d17b392",
+        "omitted_local_input_rows": 0
+      },
+      "current-performance-locked-run.json": {
+        "source_sha256": "c0032b4cbc49a369ba111e7e60e37376888b3eff93253096b36b0589f0263515",
+        "archive_sha256": "240c5c3a9c85009cf28748a84192559346d458b0166ef71de57edefa3dd52d75",
+        "omitted_local_input_rows": 0
+      }
+    },
+    "current-performance-repeat": {
+      "result": "MEASURED",
+      "checks": null,
+      "current-performance-repeat.txt": {
+        "source_sha256": "2bbb52f46cca2a0583708d59082f41bf302f5680f5dcf2c6ddd28dff654641a9",
+        "archive_sha256": "4719b8e9944f66c23acfdc9ac9fea0b7c3d0c2c35f9428aec098f6c03cd92ad8",
+        "omitted_local_input_rows": 0
+      },
+      "current-performance-repeat.ini": {
+        "source_sha256": "71506bec801aba61771434f4db916d4231f1f7c2d514c264ee648706804ee247",
+        "archive_sha256": "fcbcd6241778194ac6a91947b6635d6368f82df26477f0b355167e6c1abbef94",
+        "omitted_local_input_rows": 0
+      },
+      "current-performance-repeat-run.json": {
+        "source_sha256": "b8b28b8dbb24c763dd074ed3347723574a2dadbc02c60b87742f4aff04d047b9",
+        "archive_sha256": "02d3a867f64caddb7ed4ab0e45d09570e16b8085d962729dcef804ec839ab5b3",
+        "omitted_local_input_rows": 0
+      }
+    },
+    "baseline-performance-repeat": {
+      "result": "MEASURED",
+      "checks": null,
+      "baseline-performance-repeat.txt": {
+        "source_sha256": "4fed5e0a963c4a9696c19d474e7b0d4839c9143c3952afe68bad00190e474cf0",
+        "archive_sha256": "eddab0fe8e77de17a429e74d368b64725ca87939874136a67d89606369163379",
+        "omitted_local_input_rows": 0
+      },
+      "baseline-performance-repeat.ini": {
+        "source_sha256": "75d3bd351285bbbb7351c011852cddca042929c7564713ea28a8e3a8b6dba67d",
+        "archive_sha256": "317da276c732cf57c799d4151e6696c50c38eb08f3ba4d8b3e84c0f037dcf7c2",
+        "omitted_local_input_rows": 0
+      },
+      "baseline-performance-repeat-run.json": {
+        "source_sha256": "464f5f304c92f54f456cb9017a5122c6f4740e8c45a6295f3724d5c1f9b071ec",
+        "archive_sha256": "17b63a9ff1f627ae02b74353db39d812ab5871361d6095c8102d8f96bc77229d",
+        "omitted_local_input_rows": 0
+      }
+    },
+    "inventory-ui-final-enu": {
+      "result": "PASS",
+      "checks": 47,
+      "inventory-ui-final-enu.txt": {
+        "source_sha256": "b618869d358e7b63f7c4e780d4b140302c8fd03be34695243778d880d3bfa91c",
+        "archive_sha256": "b9ba55971378fd6bac28feaee6c9725c696f69073ff6554b2e6f499d7383fb6e",
+        "omitted_local_input_rows": 0
+      },
+      "inventory-ui-final-enu.ini": {
+        "source_sha256": "992ade4fe953f616d073ab4bc6aba1b09b097a184e4181c785608c5daf3a1a47",
+        "archive_sha256": "305ad67ba5ab489ba8844668864108d4eb17ea4464a976cadc757c38fc2a60aa",
+        "omitted_local_input_rows": 0
+      },
+      "inventory-ui-final-enu-run.json": {
+        "source_sha256": "1c2a6670a97e0e01346b5ab3e774ee3b90b29bb8cb33b14cfa9aae4f403996cf",
+        "archive_sha256": "885ef64bb54729dd90c67f53c2c90457a4e35d07185a6e44235f476fb556bf41",
+        "omitted_local_input_rows": 0
+      }
+    },
+    "inventory-ui-final-es": {
+      "result": "PASS",
+      "checks": 47,
+      "inventory-ui-final-es.txt": {
+        "source_sha256": "efbcb2627501c371532578cf1f390d67f8e767f9c20112b9aec2cdf27b81ffdb",
+        "archive_sha256": "cc1bdbd43cafcde5fd3400d44d40fa6692f82e704dc51c513d7085e96156b111",
+        "omitted_local_input_rows": 0
+      },
+      "inventory-ui-final-es.ini": {
+        "source_sha256": "3edc869b921190e9c2aed41fd31699f83d80570825a9c989e4beeac0bdc95476",
+        "archive_sha256": "671772b7e79b4500fbdb8c6cc9c919dcb9b42f4a56fb84026e77632e1b97359b",
+        "omitted_local_input_rows": 0
+      },
+      "inventory-ui-final-es-run.json": {
+        "source_sha256": "faa25053db05d472939fb11d57591294fcd948f36736d560c8d0f39fbf866269",
+        "archive_sha256": "1d5f1d476a70eba804eb03274b3cd2281628eaa512de4ec46f99b5247f00f510",
+        "omitted_local_input_rows": 0
+      }
+    }
+  },
+  "identical_inventory_value_rows": 9,
+  "identical_crafting_category_rows": 9,
+  "identical_serialized_pawn_fields": 592,
+  "identical_owned_native_item_payloads": 23,
+  "save_checks": [
+    {
+      "save": "ca118_baseline_hub.zds",
+      "sha256": "ba7d133c2c8b187a6c4187d51783e9dbea855ec03c05a390c8e14f422708139e",
+      "run": "old-save-current",
+      "result": "PASS",
+      "serialized_values_checked": 6,
+      "native_assertions": "Exact IDs/owners/wear/Box/deck/essences/reservations/materials/reward and retry checked by fixture"
+    },
+    {
+      "save": "ca118_current_hub.zds",
+      "sha256": "102579310a0a41a822bfe0e018308407749f946f4e69a014aaf66eba3464bd7c",
+      "run": "new-save-reload",
+      "result": "PASS",
+      "serialized_values_checked": 6,
+      "native_assertions": "Exact IDs/owners/wear/Box/deck/essences/reservations/materials/reward and retry checked by fixture"
+    },
+    {
+      "save": "ca118_upgraded.zds",
+      "sha256": "fe134f12751226fa2a928e85ebe88ffa3fafec45e49ae9c8bed3d1c8466785d8",
+      "run": "upgraded-save-reload",
+      "result": "PASS",
+      "serialized_values_checked": 6,
+      "native_assertions": "Exact IDs/owners/wear/Box/deck/essences/reservations/materials/reward and retry checked by fixture"
+    },
+    {
+      "save": "ca118_baseline_hub.zds",
+      "sha256": "ba7d133c2c8b187a6c4187d51783e9dbea855ec03c05a390c8e14f422708139e",
+      "run": "original-save-rollback",
+      "result": "PASS",
+      "serialized_values_checked": 6,
+      "native_assertions": "Exact IDs/owners/wear/Box/deck/essences/reservations/materials/reward and retry checked by fixture"
+    }
+  ],
+  "performance": {
+    "baseline": {
+      "tics": 1680,
+      "wall_seconds": 132.992058,
+      "tics_per_second": 12.63233327812703,
+      "first": {
+        "tic": "35",
+        "ms": "7224.200",
+        "roster": "6001",
+        "attackers": "6001",
+        "defenders": "600",
+        "groups": "64",
+        "x": "0.000",
+        "y": "320.000",
+        "z": "-0.000",
+        "angle": "90.000"
+      },
+      "last": {
+        "tic": "1715",
+        "ms": "140216.258",
+        "roster": "6001",
+        "attackers": "5989",
+        "defenders": "599",
+        "groups": "82",
+        "x": "0.000",
+        "y": "320.000",
+        "z": "-0.000",
+        "angle": "90.000"
+      },
+      "overlay_interval_median_ms": 1108.255,
+      "overlay_interval_max_ms": 2906.844,
+      "overlay_samples": 103,
+      "player_single_tic_profile_ms": [
+        0.04072,
+        0.04263,
+        0.04175
+      ]
+    },
+    "current": {
+      "tics": 1680,
+      "wall_seconds": 138.16253899999998,
+      "tics_per_second": 12.159591247812841,
+      "first": {
+        "tic": "35",
+        "ms": "7783.679",
+        "roster": "6001",
+        "attackers": "6001",
+        "defenders": "600",
+        "groups": "64",
+        "x": "0.000",
+        "y": "320.000",
+        "z": "-0.000",
+        "angle": "90.000"
+      },
+      "last": {
+        "tic": "1715",
+        "ms": "145946.218",
+        "roster": "6001",
+        "attackers": "5989",
+        "defenders": "599",
+        "groups": "82",
+        "x": "0.000",
+        "y": "320.000",
+        "z": "-0.000",
+        "angle": "90.000"
+      },
+      "overlay_interval_median_ms": 1171.454,
+      "overlay_interval_max_ms": 3134.837,
+      "overlay_samples": 103,
+      "player_single_tic_profile_ms": [
+        0.04364,
+        0.04546,
+        0.04444
+      ]
+    },
+    "percent_tics_per_second_change": -3.74231759015371,
+    "reverse_order_repeat": {
+      "baseline": {
+        "tics": 1680,
+        "wall_seconds": 129.55582800000002,
+        "tics_per_second": 12.96738267922613,
+        "first": {
+          "tic": "35",
+          "ms": "7174.343",
+          "roster": "6001",
+          "attackers": "6001",
+          "defenders": "600",
+          "groups": "64",
+          "x": "0.000",
+          "y": "320.000",
+          "z": "-0.000",
+          "angle": "90.000"
+        },
+        "last": {
+          "tic": "1715",
+          "ms": "136730.171",
+          "roster": "6001",
+          "attackers": "5989",
+          "defenders": "599",
+          "groups": "82",
+          "x": "0.000",
+          "y": "320.000",
+          "z": "-0.000",
+          "angle": "90.000"
+        },
+        "overlay_interval_median_ms": 1072.445,
+        "overlay_interval_max_ms": 2920.142,
+        "overlay_samples": 103,
+        "player_single_tic_profile_ms": [
+          0.04679,
+          0.03815,
+          0.04728
+        ]
+      },
+      "current": {
+        "tics": 1680,
+        "wall_seconds": 138.04446,
+        "tics_per_second": 12.169992189472872,
+        "first": {
+          "tic": "35",
+          "ms": "7621.655",
+          "roster": "6001",
+          "attackers": "6001",
+          "defenders": "600",
+          "groups": "64",
+          "x": "0.000",
+          "y": "320.000",
+          "z": "-0.000",
+          "angle": "90.000"
+        },
+        "last": {
+          "tic": "1715",
+          "ms": "145666.115",
+          "roster": "6001",
+          "attackers": "5989",
+          "defenders": "599",
+          "groups": "82",
+          "x": "0.000",
+          "y": "320.000",
+          "z": "-0.000",
+          "angle": "90.000"
+        },
+        "overlay_interval_median_ms": 1147.911,
+        "overlay_interval_max_ms": 2978.272,
+        "overlay_samples": 103,
+        "player_single_tic_profile_ms": [
+          0.04815,
+          0.05182,
+          0.04623
+        ]
+      },
+      "percent_tics_per_second_change": -6.149201496387436
+    },
+    "identical_scene_rows": 49,
+    "inventory_projection_200_calls_ms": {
+      "baseline-inventory-2": [
+        0.9045
+      ],
+      "current-inventory-final": [
+        1.1126
+      ],
+      "old-save-current": [],
+      "baseline-pickups-final": [
+        0.9868
+      ],
+      "current-pickups": [
+        0.9879
+      ],
+      "baseline-transactions-4": [
+        0.9101
+      ],
+      "current-transactions-final": [
+        0.9673
+      ],
+      "ownership-current": [
+        1.0093
+      ],
+      "new-save-reload": [],
+      "upgraded-save-reload": [],
+      "original-save-rollback": [],
+      "inventory-ui-final-enu": [
+        0.9781
+      ],
+      "inventory-ui-final-es": [
+        0.9885
+      ]
+    },
+    "limits": "Simulation throughput and overlay intervals are not GPU frame time or device-to-photon latency. Sparse single-tic profiles and sub-millisecond projection loops cannot isolate full-scene causes. Desktop/GPU/driver load is uncontrolled. No optimization or speedup claim; #117 regression remains evidence for #120."
+  },
+  "environment": "Windows 11 / GZDoom 4.14.2 Vulkan / Ryzen 9 5950X / RTX 3070 Ti; actual renderer 1520x825, seed 116, skill 2, audio enabled at 5% master. Each accepted run is isolated.",
+  "screenshots": [
+    {
+      "file": "inventory-enu.png",
+      "sha256": "1bb0122d6c27fa03e4545a027044e2c964f6d296a5417aeb7bb7bf1b33556242"
+    },
+    {
+      "file": "selection-enu.png",
+      "sha256": "6a1a35456658e1dad24eb1dd2fb88f10aaa4a3b8099780a86ac13c3427f74893"
+    },
+    {
+      "file": "inventory-es.png",
+      "sha256": "c0a031f69577b7cee980e97e37bc8d7a4c7dc6ac87ccea14429237c6ed88595b"
+    },
+    {
+      "file": "selection-es.png",
+      "sha256": "86683204c0386efc31378d4fd89f1cb19dbf6f5f9ab2526b928b0a12deddf2db"
+    }
+  ],
+  "diagnostics": {
+    "compile-1": {
+      "reason": "Initial extraction omitted native AddInventory and pawn constant qualification; corrected in the deterministic extractor before successful native runs.",
+      "log": {
+        "source_sha256": "12d6d1f0d5586bc156655397a9320f84e78317250a91db30caa5ae06da451fe7",
+        "archive_sha256": "b9e19051c5c1aa14000a63ada55cbd10b6b6cdb9e9169f874a9188ba516c4385",
+        "omitted_local_input_rows": 0
+      },
+      "run": {
+        "source_sha256": "de4a8710b7d31f9bc487817080b30ed51b3e1b46184f7c4f3c31906460abb4d6",
+        "archive_sha256": "c8fd1522e993f5637f359e17dda250a8cbcff1ab6ee6ff394389c1cbc790142a",
+        "omitted_local_input_rows": 0
+      }
+    },
+    "baseline-inventory-1": {
+      "reason": "Fixture used nonexistent bow/size names and a UI console callback for play mutations; corrected to canonical names and NetworkProcess.",
+      "log": {
+        "source_sha256": "bffd0380080ad309b1dbf7fbb3dc50d0879400e3c5c46812a7fa725382f979c4",
+        "archive_sha256": "49367604c0e3b5993f1586504879ece77a7ae0ba8647c3c781840adfc4d8b4e9",
+        "omitted_local_input_rows": 0
+      },
+      "run": {
+        "source_sha256": "aa1d4064f90d51ab378229e62753ce20570231ddba892353140b6748ccf045db",
+        "archive_sha256": "292f8c6c22c47f4bd79a02abe3bf9ea6a81e7f99c6f60a76f6b36cfab0adfd30",
+        "omitted_local_input_rows": 0
+      }
+    },
+    "baseline-transactions-1": {
+      "reason": "Fixture dynamic-array literal unsupported; changed to Array.Push.",
+      "log": {
+        "source_sha256": "230581ecfb6202bff33f524392ec6d1a81aefa5955e81aab4292d4c5bcf6e752",
+        "archive_sha256": "3e0628f3ea2f0d194c50cd3da612ae9f433a89392509032a72786375d1055603",
+        "omitted_local_input_rows": 0
+      },
+      "run": {
+        "source_sha256": "d595b50ffb3f55ea47f8d574dfcffac09aff30b8a313133be6382b8caca013fa",
+        "archive_sha256": "fe937aca1224c669d82906e998b2bb68b674d3f949dedd35da10c0b934d9f49f",
+        "omitted_local_input_rows": 0
+      }
+    },
+    "baseline-transactions-2": {
+      "reason": "Fixture did not scan the station network before opening it; all crafting correctly failed infrastructure validation.",
+      "log": {
+        "source_sha256": "5e70a068e54a1837abbc9833aca4763513f7b4cb90e2aec9424b0ce0febb3c11",
+        "archive_sha256": "75e5aabce61aecaa600d40574011d161c5ccb86c617b2dfcb647b950d98e978e",
+        "omitted_local_input_rows": 0
+      },
+      "run": {
+        "source_sha256": "3ac814ab92af49a52b6608500be4ffa98483832f81d9d73adcb6d0df22719700",
+        "archive_sha256": "7826eb93ab9ad6e6097a341d8e65b61287333e0028775ad516a59ef65ee72ca3",
+        "omitted_local_input_rows": 0
+      }
+    },
+    "baseline-transactions-3": {
+      "reason": "Artificial material stock was 100 grams per type, below assembly requirements. Increased fixture stock to 20000; no production values changed.",
+      "log": {
+        "source_sha256": "ddf703f43ea8464c930f5751d983246867e0dfe4c0648777e6043fafed009cdc",
+        "archive_sha256": "1c6d29e887be4b4f9e17fa26bb7c5f45ca6147696800223737e047b5c6fe1b4e",
+        "omitted_local_input_rows": 0
+      },
+      "run": {
+        "source_sha256": "0bb3e4d2485d0909432fdf433f5978b4d37970bc8c8e389a38dc254b44e46e5b",
+        "archive_sha256": "62b94515616289f5db54ada6f0e7b7f554f019ed5c862fc6e1033c7443f35916",
+        "omitted_local_input_rows": 0
+      }
+    },
+    "baseline-pickups": {
+      "reason": "Fixture ternary branches needed an explicit common Inventory cast; fixed before successful stack-pickup runs. Runner prevented a current run overlapping this failed compile.",
+      "log": {
+        "source_sha256": "6f2b1d880e355886ae0b3058764978aac6c17cc73713b637cf7726e2f255d269",
+        "archive_sha256": "f025b3431047e1ac831df3a2984c279306660fab1d12cc03170a2134b1a0bab3",
+        "omitted_local_input_rows": 0
+      },
+      "run": {
+        "source_sha256": "b84f173f124095445c23f993f9598d5dcc974c50d1e88702830b02d89a20ca87",
+        "archive_sha256": "c23081f54a586e624bc0c3bee95d9568701915eaad092df877f0110ac14662d1",
+        "omitted_local_input_rows": 0
+      }
+    },
+    "baseline-performance": {
+      "reason": "DISCARDED: later current-performance launch briefly overlapped before this run exited. Not used for timing conclusions.",
+      "log": {
+        "source_sha256": "d1135170717b0674a24236711ea95b51bd3626a802c929be10774666f4ddc357",
+        "archive_sha256": "23aab7c6f42d75e37b48e2d508cd6f55546299c2c726a8c16bf6f3655f2f6277",
+        "omitted_local_input_rows": 0
+      },
+      "run": {
+        "source_sha256": "e6b3a508108c950893068eb1b94dfe9997f33c5760c0a97394a544dbc6751b88",
+        "archive_sha256": "ca29916c3f2c4a53190cc3cc1a81c555f2c37bbc0345f69c5b3bb92fab78c0aa",
+        "omitted_local_input_rows": 0
+      }
+    },
+    "current-performance": {
+      "reason": "DISCARDED: stopped after detecting overlap. Runner now refuses any launch while another GZDoom process is alive; suite waits for each recorded PID.",
+      "log": {
+        "source_sha256": "b68224c0e1bd956aab3249f877ff1ced7b7509b8fbe19578baf8b39b97ef6e2b",
+        "archive_sha256": "41bc7de995008f98bce5c5fac68836d72efbbd4f93e1215361479cdc7f2c1e37",
+        "omitted_local_input_rows": 0
+      },
+      "run": {
+        "source_sha256": "75b14e4be706708bf5ccbb0ecc98b9002eb13f0e02e1c3716a8cc7510efc9f65",
+        "archive_sha256": "9e33a627c34494d8057534784fefc2130aa3c7b2dc8967d35d60ddf4f6dca2c6",
+        "omitted_local_input_rows": 0
+      }
+    },
+    "baseline-performance-final": {
+      "reason": "DISCARDED: camera moved to x=42.548 during the sample. The final observer consumes local input events; no production input path changed.",
+      "log": {
+        "source_sha256": "94c713ade91593d81185b8248306fcb1ef9556cb5daec59dc35bd8904733cbb2",
+        "archive_sha256": "2199a4393bd96c29910747989498196653a8ae1c01f7ad37b0374228339ee41c",
+        "omitted_local_input_rows": 18
+      },
+      "run": {
+        "source_sha256": "cad2aeeb1888960c6a8f8f5dcac7c3ec0752260200044efada768576723f3063",
+        "archive_sha256": "203864b8b518b6ef4823c95f4329291fabbad384f5001dba7c1ae64107ffc66b",
+        "omitted_local_input_rows": 0
+      }
+    }
+  },
+  "archive_normalization": "UTF-8/LF, trailing whitespace removed; incidental local key-scan rows omitted with counts and original-source hashes. Raw logs remain in build/.",
+  "reproduction": [
+    "Build baseline da7d33b8 separately as build/issue118/baseline.pk3; retain original saves/packages.",
+    "Run extract_inventory.py only to reproduce the move; src/ZSCRIPT includes the service and two diagnostic labels track 5.0.2. Build current package as build/issue118/current.pk3.",
+    "Run prepare_checks.py; run_native.ps1 -Package baseline.pk3/current.pk3 -Addon checks.pk3 -Map MAP03 -Script baseline.cfg/current.cfg with unique labels.",
+    "Use transactions.cfg for all nine recipe kinds and actual merchant buy/sell, ownership.cfg for foreign-reference rejection.",
+    "Keep the original package basename when loading an old save: current-runtime/baseline.pk3 contains current bytes. Run reload.cfg, then reload-only.cfg for original/current/upgraded copies.",
+    "run_suite.ps1 serializes checks/performance and records per-run arguments/settings/hashes. Use ui-enu.cfg/ui-es.cfg and matching Language for native projection captures.",
+    "Preserve original package/save together for rollback; run verify_extraction.py, summarize.py, build_document_index.py and validate_project.py. Engine/IWAD/PK3/saves remain untracked."
+  ],
+  "limitations": [
+    "Fixtures prepare synthetic inventory/reservations; the broader transaction fixture uses actual stations, plans, recipes and commit calls but completes work programmatically. Real physical keypress play remains author acceptance.",
+    "UI fixture normalizes its artificial pending-task total and selects through existing inventory events before capture. No UI strings/layout change.",
+    "Existing internal commit helpers require their established coordinator preconditions. Tutorial loans/native copy-toss lifecycle and later session/planning extractions are documented boundaries.",
+    "No newer-save downgrade or historical map conversion claim. Tests are isolated single-player, not multiplayer acceptance."
+  ],
+  "author_acceptance": "Passed: author confirmed CA-502-INVENTORY-01 and all #118 tests on 2026-10-06; PR #124 merge and issue closure authorized. Measured performance regressions remain unresolved."
+}
