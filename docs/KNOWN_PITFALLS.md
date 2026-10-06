@@ -4,6 +4,31 @@ Status: integrated engineering register (issue #22, patch 4.36.1b).
 Prepared: 2026-09-23. Inherits the project's release after integration.
 Inspected baseline: `1dc390576fa330d37ff543526fc7e69a397fc28f` (PR #7).
 
+## CA-KP-039 - Separate menu-transition failures from corrupt saves
+
+Status/evidence: ENGINE-OBSERVED; cause remains HYPOTHESIS, not a production fix.
+First recorded / last checked: 2026-10-05. Issue #82 / 4.37.24.
+Baseline: 53dc4410 plus #82; GZDoom 4.14.2, Windows 11/Vulkan.
+
+An automated console `load` after starting MAP01 with a dynamic conversation
+open aborted while drawing the transition. The author retained the native
+report. Matching symbols locate FString::operator=, DMenu::CallDrawer,
+M_Drawer and PerformWipe. These frames establish a menu-drawing failure; they
+do not by themselves identify its root cause or prove corrupted save data.
+
+The identical sewer82.zds loads through `-loadgame`, reaches the actual port
+through its journey planner, and passes all 27 zero-rescue arrival/reload
+assertions. Separate two/four-rescue saves and the preserved 4.37.23 character
+also load. Keep the original report/save, close conversations before scripted
+load tests, and distinguish startup, console and normal Save/Load-menu paths.
+Do not discard a save, waive compatibility, or claim an engine fix from one
+passing alternative path. Ordinary-menu acceptance remains a separate check.
+
+Regression: retain the failing transition context, load the same save from
+startup, and check normal-menu save/load before attributing the failure to
+serialization. Evidence and limits: assets/validation_43724/RESULTS.json,
+sewer_reload.txt and old_save.txt; full crash dump stays local.
+
 ## CA-KP-038 - Separate title credits, quit confirmation and text ENDOOM
 
 Status/evidence: CODE-VERIFIED / ENGINE-VERIFIED.
