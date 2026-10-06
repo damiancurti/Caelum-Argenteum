@@ -1,0 +1,27 @@
+{
+  "baseline": "20143c3154617309912a493fa2a7be3c7c2c9ff4",
+  "unchanged_player_field_declarations": 604,
+  "unchanged_player_method_signatures": 544,
+  "moved_methods": [
+    "RefreshSocialJournalSnapshot",
+    "SyncHUDActiveWeaponState",
+    "SyncHUDLoadState"
+  ],
+  "new_service_fields": 0,
+  "runtime_members_added": [
+    "caelum/player/CaelumPlayerPresentation.zs"
+  ],
+  "runtime_members_changed": [
+    "ZSCRIPT",
+    "caelum/player/CaelumPlayer.zs",
+    "caelum/world/CaelumPhysicalHazards.zs",
+    "caelum/world/CaelumSewerMaze.zs"
+  ],
+  "diagnostic_only_version_updates": [
+    "caelum/world/CaelumPhysicalHazards.zs",
+    "caelum/world/CaelumSewerMaze.zs"
+  ],
+  "runtime_members_removed": [],
+  "final_package_sha256": "092dc6ec90a2ec8bcb647a54f12ab2b11b26cdcbe4197b45904242e6eb03b166",
+  "result": "PASS"
+}

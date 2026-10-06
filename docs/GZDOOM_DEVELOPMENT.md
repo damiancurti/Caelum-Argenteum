@@ -246,6 +246,39 @@ assets/validation_43711. Keep conversation pages appended to preserve older inde
 
 ## Evidence levels and minimal test selection
 
+### Architecture extraction and native timing (#116)
+
+At baseline `20143c31`, #116 uses
+`assets/validation_500/verify_extraction.py` to compare pawn field declarations,
+method signatures and the moved method bodies after removing only explicit pawn
+qualification. It also checks package-member changes. This static proof supports
+the narrow move into `CaelumPlayerPresentation`; it does not replace native
+compilation, semantic projection checks or current save/reload. The same native
+contract checks run against original and extracted implementations. The author
+waived older-save compatibility for this issue, not ordinary current-save operation.
+
+For the MAP06 benchmark, `benchmark.zs` is a separate observation addon, never a
+production include. `Object.MSTimeF()` supplies wall milliseconds;
+`WorldTick` samples `level.time` and real population, while `RenderOverlay`
+records callback intervals. Do not call either simulation throughput or overlay
+intervals GPU frame time. The latter includes simulation stalls and instrumentation.
+Input observation needs a separate timestamped route; visual sluggishness alone
+does not quantify device-to-photon latency.
+
+Native `profilethinkers -t 20` reports a **single simulation tic**, sorted by total
+class time, in milliseconds. Several scheduled samples identify expensive actor
+classes but do not isolate the cost of target search, collision, state actions or
+rendering. The verified implementation is GZDoom g4.14.2
+`src/playsim/dthinker.cpp`; API declarations are in the installed
+`gzdoom.pk3:zscript/engine/base.zs` and `zscript/events.zs`.
+Commands, hashes, hardware, actual native resolution, initial/final INI and raw
+logs are recorded with the #116 evidence. Requested window dimensions can differ
+from the renderer's reported resolution; record the latter. Keep audio enabled
+with the author-requested 5% master volume for subsequent live tests unless a
+specific test requires otherwise.
+
+### Evidence categories
+
 | Evidence | What it supports | What it does not establish |
 | --- | --- | --- |
 | Source inspection | Specific code/data facts at a commit | Runtime correctness |

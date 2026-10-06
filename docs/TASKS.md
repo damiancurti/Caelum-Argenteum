@@ -1,6 +1,29 @@
 # TASKS.md — Active tasks
 
-Documentation version: **4.37.24** — 2026-10-05.
+Documentation version: **5.0.0** — 2026-10-06.
+
+## Issue #116 — Architecture audit and first extraction (5.0.0)
+
+- Author expanded the audit-only issue on 2026-10-06 to begin refactoring and
+  waived compatibility with older saves for this work. Existing field identities
+  are nevertheless retained; no old-save acceptance is claimed.
+- PROJECT contains the concrete dependency/responsibility map and ordered A1–A8
+  plan. SYSTEMS contains authoritative owners, lifecycle/input/selector contracts
+  and rollback boundaries. No future patch numbers are assigned.
+- A1 extracts three HUD/Journal projection routines into the stateless
+  `CaelumPlayerPresentation`, retaining pawn adapters and fields. Later inventory,
+  crafting, combat, quest and siege extractions remain separate focused issues.
+- Evidence and reproducible tooling: `assets/validation_500/RESULTS.json` and the
+  adjacent source inventory, native checks and MAP06 measurements. Static checks,
+  native observations and author acceptance remain separate.
+- Completed: static validator/build; identical pawn declarations/signatures and
+  moved-body checks; 35 native projection checks on original and final runtimes;
+  current save/reload; bilingual Journal/Tarot captures; current MAP06 baseline,
+  three native thinker profiles and three diagnostic UI/play/UI round trips.
+- #86 remains closed; the #77 performance evidence is historical. Current native
+  measurements do not demonstrate a speedup or justify changing accepted AI rules.
+- Author acceptance passed on 2026-10-06: all tests confirmed correct, with
+  PR #122 merge and #116 closure authorized. Continue with #117.
 
 ## Issue #82 — V4.37 closing delivery (4.37.24)
 

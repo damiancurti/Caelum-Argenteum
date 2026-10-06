@@ -6,8 +6,20 @@ An independent dark fantasy FPS-RPG inspired by nineteenth-century Argentina.
 Author and game designer: **Damian Curti**. Development target: **GZDoom 4.14.2**
 on Windows 11. The final game is intended to be independent of Doom assets.
 
-**Current release: 4.37.24.** Obtain and update the complete repository, validate
+**Current release: 5.0.0.** Obtain and update the complete repository, validate
 it, then rebuild with `run_dev.bat` as described below.
+
+Issue [#116](https://github.com/damiancurti/Caelum-Argenteum/issues/116) starts V5.0
+with a dependency/state-ownership audit and the first extraction from the player:
+three HUD/Journal routines now share a stateless presentation service. Existing
+game rules, controls, maps and assets remain. The author expanded the original
+audit-only scope and waived older-save compatibility for this work; existing
+player fields are retained, but old-save acceptance is not claimed.
+[Architecture plan](docs/PROJECT.md#500--architecture-audit-and-first-presentation-extraction-116),
+[state and compatibility contract](docs/SYSTEMS.md#v50-state-ownership-and-compatibility-contract-116),
+and [native/static evidence](assets/validation_500/RESULTS.json).
+MAP06 performance is measured again; this organization change claims no speedup.
+The author confirmed all delivery tests passed on 2026-10-06.
 
 Issue [#82](https://github.com/damiancurti/Caelum-Argenteum/issues/82) is the
 author-accepted closing V4.37 delivery (2026-10-05): the integrated MAP01 -> MAP02 -> MAP06

@@ -1,0 +1,764 @@
+{
+  "issue": 116,
+  "release": "5.0.0",
+  "date": "2026-10-06",
+  "baseline_commit": "20143c3154617309912a493fa2a7be3c7c2c9ff4",
+  "scope_amendment": "Author explicitly expanded audit-only issue to begin refactoring and waived older-save compatibility on 2026-10-06.",
+  "runtime_change": {
+    "baseline": "20143c3154617309912a493fa2a7be3c7c2c9ff4",
+    "unchanged_player_field_declarations": 604,
+    "unchanged_player_method_signatures": 544,
+    "moved_methods": [
+      "RefreshSocialJournalSnapshot",
+      "SyncHUDActiveWeaponState",
+      "SyncHUDLoadState"
+    ],
+    "new_service_fields": 0,
+    "runtime_members_added": [
+      "caelum/player/CaelumPlayerPresentation.zs"
+    ],
+    "runtime_members_changed": [
+      "ZSCRIPT",
+      "caelum/player/CaelumPlayer.zs",
+      "caelum/world/CaelumPhysicalHazards.zs",
+      "caelum/world/CaelumSewerMaze.zs"
+    ],
+    "diagnostic_only_version_updates": [
+      "caelum/world/CaelumPhysicalHazards.zs",
+      "caelum/world/CaelumSewerMaze.zs"
+    ],
+    "runtime_members_removed": [],
+    "final_package_sha256": "092dc6ec90a2ec8bcb647a54f12ab2b11b26cdcbe4197b45904242e6eb03b166",
+    "result": "PASS"
+  },
+  "static_checks": {
+    "project_validator": "PASS; errors=[]",
+    "package_build": "PASS; 6182 runtime members",
+    "source_inventory_determinism": "PASS; repeated generation byte-identical",
+    "git_diff_check": "PASS",
+    "independent_ai_review": "Not performed; no review approval claimed"
+  },
+  "final_addon_sha256": {
+    "benchmark.pk3": "54e242eeb8bef86aab01b6a0de675ae9d3d2ce37d3be4a56ffdd86bc813458d3",
+    "checks.pk3": "f83a7f36e79872e1bcba7c3e55dc31d312b1c74b8ced6fd61d154f9b81bfcfe2",
+    "probe.pk3": "f6c7cf6bc69abc7f9aca551bd50eea3f1c7f926e204fe8f4b3a736b043cd5126"
+  },
+  "fixture_history": "The original runtime passed the same 35 projection assertions before the additional reload-observer/resume diagnostics were added. Final current-save and bilingual runs use the final checks addon identified here.",
+  "native_contract_checks": {
+    "checks-baseline": [
+      "CA116 CHECKS done=35 failures=0"
+    ],
+    "contracts-release": [
+      "CA116 CHECKS done=35 failures=0"
+    ],
+    "reload-release": [
+      "CA116 RELOAD checks=3 failures=0",
+      "CA116 RESUME done=38 failures=0"
+    ],
+    "visual-enu-release": [
+      "CA116 CHECKS done=35 failures=0",
+      "CA116 RESUME done=38 failures=0"
+    ],
+    "visual-es-release": [
+      "CA116 CHECKS done=35 failures=0",
+      "CA116 RESUME done=38 failures=0"
+    ]
+  },
+  "current_map06_baseline": {
+    "label": "baseline-quiet",
+    "run": {
+      "label": "baseline-quiet",
+      "started_utc": "2026-10-06T22:26:28.1536403Z",
+      "engine": "C:\\Program Files (x86)\\GZDoom\\gzdoom.exe",
+      "engine_sha256": "EC706C2EA1EF946EEC13BE7B1B461DF8D52EFCD47CAA6C056ED0E0257F7F9FFA",
+      "iwad_sha256": "10D67824B11025DDD9198E8CFC87CA335EE6E2D3E63AF4180FA9B8A471893255",
+      "package_sha256": "32C080489D13CB0D2D50B3AF2387F742675F0D6F11C17214A343833E4C834FDA",
+      "initial_config": "[LastRun]\nVersion=225\n[GlobalSettings]\nvid_preferbackend=1\nvid_vsync=false\nvid_maxfps=60\nvid_activeinbackground=true\ncl_capfps=false\nvid_fullscreen=false\nvid_defwidth=1280\nvid_defheight=720\nuse_mouse=false\nsnd_mastervolume=0.05\nlanguage=enu\n",
+      "arguments": [
+        "-noautoload",
+        "-nomouse",
+        "-iwad",
+        "\"C:\\Program Files (x86)\\Steam\\steamapps\\common\\ultimate doom\\base\\doom2\\DOOM2.WAD\"",
+        "-file",
+        "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue116\\baseline.pk3\"",
+        "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue116\\benchmark.pk3\"",
+        "-config",
+        "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue116\\baseline-quiet.ini\"",
+        "-savedir",
+        "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue116\"",
+        "-width",
+        "1280",
+        "-height",
+        "720",
+        "-window",
+        "-rngseed",
+        "116",
+        "-skill",
+        "2",
+        "+logfile",
+        "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue116\\baseline-quiet.txt\"",
+        "+con_notifytime",
+        "0",
+        "+map",
+        "MAP06",
+        "+exec",
+        "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue116\\baseline.cfg\""
+      ],
+      "cpu": [
+        {
+          "Name": "AMD Ryzen 9 5950X 16-Core Processor            ",
+          "NumberOfCores": 16,
+          "NumberOfLogicalProcessors": 32
+        }
+      ],
+      "gpu": [
+        {
+          "Name": "Parsec Virtual Display Adapter",
+          "DriverVersion": "0.45.0.0"
+        },
+        {
+          "Name": "NVIDIA GeForce RTX 3070 Ti",
+          "DriverVersion": "32.0.15.7688"
+        }
+      ],
+      "os": {
+        "Caption": "Microsoft Windows 11 Pro",
+        "Version": "10.0.26200",
+        "TotalVisibleMemorySize": 33475240
+      },
+      "pid": 15516
+    },
+    "reported_resolution": "1520 x 825",
+    "sample_count": 49,
+    "first": {
+      "tic": 35.0,
+      "ms": 7125.776,
+      "roster": 6001.0,
+      "attackers": 6001.0,
+      "defenders": 600.0,
+      "groups": 64.0,
+      "x": 0.0,
+      "y": 320.0,
+      "z": -0.0,
+      "angle": 90.0
+    },
+    "last": {
+      "tic": 1715.0,
+      "ms": 138550.541,
+      "roster": 6001.0,
+      "attackers": 5989.0,
+      "defenders": 599.0,
+      "groups": 82.0,
+      "x": 0.0,
+      "y": 320.0,
+      "z": -0.0,
+      "angle": 90.0
+    },
+    "observed_wall_seconds": 131.42476499999998,
+    "simulation_tics_per_wall_second": 12.782978915731752,
+    "render_overlay_intervals_ms": {
+      "count": 99,
+      "median": 1097.204,
+      "p95": 2452.7754,
+      "max": 2685.843
+    },
+    "camera_constant": true,
+    "single_tic_thinker_profiles": [],
+    "errors": []
+  },
+  "native_actor_profiles": {
+    "label": "baseline-controlled",
+    "run": {
+      "label": "baseline-controlled",
+      "started_utc": "2026-10-06T22:24:06.0933117Z",
+      "engine": "C:\\Program Files (x86)\\GZDoom\\gzdoom.exe",
+      "engine_sha256": "EC706C2EA1EF946EEC13BE7B1B461DF8D52EFCD47CAA6C056ED0E0257F7F9FFA",
+      "iwad_sha256": "10D67824B11025DDD9198E8CFC87CA335EE6E2D3E63AF4180FA9B8A471893255",
+      "package_sha256": "32C080489D13CB0D2D50B3AF2387F742675F0D6F11C17214A343833E4C834FDA",
+      "initial_config": "[LastRun]\nVersion=225\n[GlobalSettings]\nvid_preferbackend=1\nvid_vsync=false\nvid_maxfps=60\nvid_activeinbackground=true\ncl_capfps=false\nvid_fullscreen=false\nvid_defwidth=1280\nvid_defheight=720\nuse_mouse=false\nlanguage=enu\n",
+      "arguments": [
+        "-noautoload",
+        "-nomouse",
+        "-iwad",
+        "\"C:\\Program Files (x86)\\Steam\\steamapps\\common\\ultimate doom\\base\\doom2\\DOOM2.WAD\"",
+        "-file",
+        "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue116\\baseline.pk3\"",
+        "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue116\\benchmark.pk3\"",
+        "-config",
+        "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue116\\baseline-controlled.ini\"",
+        "-savedir",
+        "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue116\"",
+        "-width",
+        "1280",
+        "-height",
+        "720",
+        "-window",
+        "-rngseed",
+        "116",
+        "-skill",
+        "2",
+        "+logfile",
+        "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue116\\baseline-controlled.txt\"",
+        "+con_notifytime",
+        "0",
+        "+map",
+        "MAP06",
+        "+exec",
+        "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue116\\profile.cfg\""
+      ],
+      "cpu": [
+        {
+          "Name": "AMD Ryzen 9 5950X 16-Core Processor            ",
+          "NumberOfCores": 16,
+          "NumberOfLogicalProcessors": 32
+        }
+      ],
+      "gpu": [
+        {
+          "Name": "Parsec Virtual Display Adapter",
+          "DriverVersion": "0.45.0.0"
+        },
+        {
+          "Name": "NVIDIA GeForce RTX 3070 Ti",
+          "DriverVersion": "32.0.15.7688"
+        }
+      ],
+      "os": {
+        "Caption": "Microsoft Windows 11 Pro",
+        "Version": "10.0.26200",
+        "TotalVisibleMemorySize": 33475240
+      },
+      "pid": 45540
+    },
+    "reported_resolution": "1520 x 825",
+    "sample_count": 20,
+    "first": {
+      "tic": 35.0,
+      "ms": 7179.431,
+      "roster": 6001.0,
+      "attackers": 6001.0,
+      "defenders": 600.0,
+      "groups": 64.0,
+      "x": 0.0,
+      "y": 320.0,
+      "z": -0.0,
+      "angle": 90.0
+    },
+    "last": {
+      "tic": 700.0,
+      "ms": 46834.253,
+      "roster": 6001.0,
+      "attackers": 5997.0,
+      "defenders": 600.0,
+      "groups": 65.0,
+      "x": 0.0,
+      "y": 320.0,
+      "z": -0.0,
+      "angle": 90.0
+    },
+    "observed_wall_seconds": 39.654822,
+    "simulation_tics_per_wall_second": 16.769713403328353,
+    "render_overlay_intervals_ms": {
+      "count": 39,
+      "median": 1015.873,
+      "p95": 1183.9671,
+      "max": 1232.216
+    },
+    "camera_constant": true,
+    "single_tic_thinker_profiles": [
+      [
+        {
+          "class": "CaelumMandinga",
+          "total_ms": 89.617345,
+          "average_ms": 0.014936,
+          "calls": 6000
+        },
+        {
+          "class": "CaelumBatteringRam",
+          "total_ms": 3.182415,
+          "average_ms": 0.530402,
+          "calls": 6
+        },
+        {
+          "class": "CaelumActorSimpleElementalProjectile",
+          "total_ms": 2.857161,
+          "average_ms": 0.002688,
+          "calls": 1063
+        },
+        {
+          "class": "CaelumCannon",
+          "total_ms": 2.459939,
+          "average_ms": 0.05857,
+          "calls": 42
+        },
+        {
+          "class": "CaelumSewerEscapeTarget",
+          "total_ms": 0.945779,
+          "average_ms": 0.000143,
+          "calls": 6601
+        },
+        {
+          "class": "CaelumPortDefender",
+          "total_ms": 0.757527,
+          "average_ms": 0.001263,
+          "calls": 600
+        },
+        {
+          "class": "CaelumCannonBlock",
+          "total_ms": 0.114589,
+          "average_ms": 0.000152,
+          "calls": 756
+        },
+        {
+          "class": "CaelumGateBlocker",
+          "total_ms": 0.102036,
+          "average_ms": 0.00017,
+          "calls": 600
+        },
+        {
+          "class": "CaelumVehiclePart",
+          "total_ms": 0.040394,
+          "average_ms": 0.000416,
+          "calls": 97
+        },
+        {
+          "class": "CaelumPlayer",
+          "total_ms": 0.03531,
+          "average_ms": 0.03531,
+          "calls": 1
+        },
+        {
+          "class": "CaelumRamBlock",
+          "total_ms": 0.026155,
+          "average_ms": 9.1e-05,
+          "calls": 288
+        },
+        {
+          "class": "CaelumBreakableGate",
+          "total_ms": 0.00863,
+          "average_ms": 0.001079,
+          "calls": 8
+        },
+        {
+          "class": "CaelumCannonBarrel",
+          "total_ms": 0.00752,
+          "average_ms": 0.000179,
+          "calls": 42
+        },
+        {
+          "class": "CaelumCannonFrame",
+          "total_ms": 0.00615,
+          "average_ms": 0.000146,
+          "calls": 42
+        },
+        {
+          "class": "CaelumMerchantShip",
+          "total_ms": 0.00501,
+          "average_ms": 0.00501,
+          "calls": 1
+        },
+        {
+          "class": "CaelumPortSiege",
+          "total_ms": 0.00451,
+          "average_ms": 0.00451,
+          "calls": 1
+        },
+        {
+          "class": "CaelumPortCommander",
+          "total_ms": 0.00339,
+          "average_ms": 0.00339,
+          "calls": 1
+        },
+        {
+          "class": "CaelumRamSuspension",
+          "total_ms": 0.002659,
+          "average_ms": 0.000111,
+          "calls": 24
+        },
+        {
+          "class": "CaelumDiningTableSmall",
+          "total_ms": 0.00165,
+          "average_ms": 0.00165,
+          "calls": 1
+        },
+        {
+          "class": "CaelumRestBed",
+          "total_ms": 0.00149,
+          "average_ms": 0.00149,
+          "calls": 1
+        }
+      ],
+      [
+        {
+          "class": "CaelumMandinga",
+          "total_ms": 22.314618,
+          "average_ms": 0.003719,
+          "calls": 6000
+        },
+        {
+          "class": "CaelumBatteringRam",
+          "total_ms": 7.082049,
+          "average_ms": 1.180341,
+          "calls": 6
+        },
+        {
+          "class": "CaelumActorSimpleElementalProjectile",
+          "total_ms": 2.904201,
+          "average_ms": 0.002727,
+          "calls": 1065
+        },
+        {
+          "class": "CaelumCannon",
+          "total_ms": 2.631277,
+          "average_ms": 0.062649,
+          "calls": 42
+        },
+        {
+          "class": "CaelumSewerEscapeTarget",
+          "total_ms": 0.854489,
+          "average_ms": 0.000129,
+          "calls": 6601
+        },
+        {
+          "class": "CaelumPortDefender",
+          "total_ms": 0.457278,
+          "average_ms": 0.000762,
+          "calls": 600
+        },
+        {
+          "class": "CaelumGateBlocker",
+          "total_ms": 0.111421,
+          "average_ms": 0.000186,
+          "calls": 600
+        },
+        {
+          "class": "CaelumCannonBlock",
+          "total_ms": 0.111279,
+          "average_ms": 0.000147,
+          "calls": 756
+        },
+        {
+          "class": "CaelumPlayer",
+          "total_ms": 0.04954,
+          "average_ms": 0.04954,
+          "calls": 1
+        },
+        {
+          "class": "CaelumVehiclePart",
+          "total_ms": 0.044291,
+          "average_ms": 0.000457,
+          "calls": 97
+        },
+        {
+          "class": "CaelumRamBlock",
+          "total_ms": 0.029157,
+          "average_ms": 0.000101,
+          "calls": 288
+        },
+        {
+          "class": "CaelumBreakableGate",
+          "total_ms": 0.00893,
+          "average_ms": 0.001116,
+          "calls": 8
+        },
+        {
+          "class": "CaelumCannonFrame",
+          "total_ms": 0.00705,
+          "average_ms": 0.000168,
+          "calls": 42
+        },
+        {
+          "class": "CaelumCannonBarrel",
+          "total_ms": 0.00702,
+          "average_ms": 0.000167,
+          "calls": 42
+        },
+        {
+          "class": "CaelumMerchantShip",
+          "total_ms": 0.00677,
+          "average_ms": 0.00677,
+          "calls": 1
+        },
+        {
+          "class": "CaelumPortSiege",
+          "total_ms": 0.00529,
+          "average_ms": 0.00529,
+          "calls": 1
+        },
+        {
+          "class": "CaelumPortCommander",
+          "total_ms": 0.00401,
+          "average_ms": 0.00401,
+          "calls": 1
+        },
+        {
+          "class": "CaelumRamSuspension",
+          "total_ms": 0.002849,
+          "average_ms": 0.000119,
+          "calls": 24
+        },
+        {
+          "class": "CaelumSiegeRouteNode",
+          "total_ms": 0.00245,
+          "average_ms": 0.000408,
+          "calls": 6
+        },
+        {
+          "class": "CaelumRamFrameVisual",
+          "total_ms": 0.00232,
+          "average_ms": 0.000387,
+          "calls": 6
+        }
+      ],
+      [
+        {
+          "class": "CaelumMandinga",
+          "total_ms": 21.752979,
+          "average_ms": 0.003625,
+          "calls": 6000
+        },
+        {
+          "class": "CaelumBatteringRam",
+          "total_ms": 2.954085,
+          "average_ms": 0.492348,
+          "calls": 6
+        },
+        {
+          "class": "CaelumCannon",
+          "total_ms": 2.417899,
+          "average_ms": 0.057569,
+          "calls": 42
+        },
+        {
+          "class": "CaelumActorSimpleElementalProjectile",
+          "total_ms": 2.266949,
+          "average_ms": 0.002699,
+          "calls": 840
+        },
+        {
+          "class": "CaelumSewerEscapeTarget",
+          "total_ms": 0.887779,
+          "average_ms": 0.000134,
+          "calls": 6601
+        },
+        {
+          "class": "CaelumPortDefender",
+          "total_ms": 0.444156,
+          "average_ms": 0.00074,
+          "calls": 600
+        },
+        {
+          "class": "CaelumCannonBlock",
+          "total_ms": 0.11035,
+          "average_ms": 0.000146,
+          "calls": 756
+        },
+        {
+          "class": "CaelumGateBlocker",
+          "total_ms": 0.098513,
+          "average_ms": 0.000164,
+          "calls": 600
+        },
+        {
+          "class": "CaelumVehiclePart",
+          "total_ms": 0.03924,
+          "average_ms": 0.000405,
+          "calls": 97
+        },
+        {
+          "class": "CaelumPlayer",
+          "total_ms": 0.03853,
+          "average_ms": 0.03853,
+          "calls": 1
+        },
+        {
+          "class": "CaelumRamBlock",
+          "total_ms": 0.031244,
+          "average_ms": 0.000108,
+          "calls": 288
+        },
+        {
+          "class": "CaelumCannonBarrel",
+          "total_ms": 0.00754,
+          "average_ms": 0.00018,
+          "calls": 42
+        },
+        {
+          "class": "CaelumBreakableGate",
+          "total_ms": 0.006651,
+          "average_ms": 0.000831,
+          "calls": 8
+        },
+        {
+          "class": "CaelumCannonFrame",
+          "total_ms": 0.00633,
+          "average_ms": 0.000151,
+          "calls": 42
+        },
+        {
+          "class": "CaelumMerchantShip",
+          "total_ms": 0.00472,
+          "average_ms": 0.00472,
+          "calls": 1
+        },
+        {
+          "class": "CaelumPortSiege",
+          "total_ms": 0.00403,
+          "average_ms": 0.00403,
+          "calls": 1
+        },
+        {
+          "class": "CaelumRamSuspension",
+          "total_ms": 0.00342,
+          "average_ms": 0.000142,
+          "calls": 24
+        },
+        {
+          "class": "CaelumPortCommander",
+          "total_ms": 0.00258,
+          "average_ms": 0.00258,
+          "calls": 1
+        },
+        {
+          "class": "CaelumDiningTableSmall",
+          "total_ms": 0.00181,
+          "average_ms": 0.00181,
+          "calls": 1
+        },
+        {
+          "class": "CaelumRestBed",
+          "total_ms": 0.00164,
+          "average_ms": 0.00164,
+          "calls": 1
+        }
+      ]
+    ],
+    "errors": []
+  },
+  "native_event_route_probe": {
+    "samples": {
+      "1": {
+        "REQUEST": 19726.214,
+        "PLAY": 20290.942,
+        "ACK": 20290.986,
+        "FRAME": 21443.334,
+        "request_to_play_ms": 564.7279999999992,
+        "request_to_overlay_ms": 1717.119999999999
+      },
+      "2": {
+        "REQUEST": 30824.341,
+        "PLAY": 31057.793,
+        "ACK": 31057.819,
+        "FRAME": 32014.636,
+        "request_to_play_ms": 233.45200000000114,
+        "request_to_overlay_ms": 1190.2949999999983
+      },
+      "3": {
+        "REQUEST": 42466.027,
+        "PLAY": 43475.966,
+        "ACK": 43475.994,
+        "FRAME": 44568.421,
+        "request_to_play_ms": 1009.9389999999985,
+        "request_to_overlay_ms": 2102.3940000000002
+      }
+    },
+    "method": "Scheduled event ca116_probe -> UI ConsoleProcess -> SendNetworkEvent -> play NetworkProcess -> SendInterfaceEvent -> next RenderOverlay. Diagnostic only; no gameplay mutation and no physical key injection."
+  },
+  "historical_only": [
+    "Closed #86",
+    "assets/validation_4379/south/COMBAT_RECOVERY.json"
+  ],
+  "limitations": [
+    "Single Windows workstation; desktop activity was not isolated. Direct-map arrival test profile, briefing open, fixed camera at (0,320,0), angle 90; not normal campaign arrival or every combat view.",
+    "Simulation throughput uses native level.time versus Object.MSTimeF, excluding startup through the first population sample.",
+    "RenderOverlay intervals include simulation stalls and addon/logging overhead; these are not GPU frame times, presentation timestamps, or an end-to-end input latency benchmark.",
+    "35-tic population scans add overhead. Native thinker profiling runs separately and reports only three individual tics, not function-level attribution or a whole-run average.",
+    "Native event route measurements begin at UI ConsoleProcess, not a physical key. No device-to-photon latency measurement. Bilingual UI captures check event-driven page presentation; static hashes protect unchanged input/selectors. Low render cadence limits visible response frequency.",
+    "No speedup claim or controlled before/after causal comparison. Earlier exploratory before/after traces changed camera/settings and are excluded from the primary benchmark.",
+    "Old saves are outside author-waived acceptance. Current save/reload is tested with disposable native fixtures, not the author campaign."
+  ],
+  "diagnostic_corrections": [
+    "Initial INI without LastRun/version was treated as a first-run configuration; actual resolution/settings differed. Final runs use a complete initialized INI and report engine resolution.",
+    "First -loadgame argument was absolute and GZDoom prepended -savedir, producing a duplicated path. Launcher now passes a save filename relative to its isolated -savedir.",
+    "Saved EventHandler did not provide the expected WorldLoaded check. Final reload verification uses StaticEventHandler.WorldLoaded followed by WorldTick and a resumed saved-handler check.",
+    "Python default Windows console encoding could not print a Unicode documentation range; subsequent documentation commands use python -X utf8."
+  ],
+  "text_artifact_storage": "Archived logs and INI files use LF and omit trailing whitespace/blank lines; original native files remain in build/issue116. Normalization changes no diagnostic content.",
+  "author_acceptance": "2026-10-06: author confirmed all delivery tests passed and authorized PR #122 merge and #116 closure; scoped old-save waiver and measurement limits remain.",
+  "reproduce": [
+    "Build the accepted 20143c31 runtime into build/issue116/baseline.pk3; keep the original package. prepare_benchmark.py preserves an existing baseline instead of overwriting it.",
+    "python assets/validation_500/prepare_benchmark.py",
+    "python assets/validation_500/prepare_checks.py",
+    "powershell -NoProfile -ExecutionPolicy Bypass -File assets/validation_500/run_benchmark.ps1 -Label fresh-baseline -Package baseline.pk3 -Script baseline.cfg",
+    "Use -Script profile.cfg in a separate fresh run for three thinker profiles. Engine/IWAD arguments accept local paths; do not distribute those files.",
+    "Copy the final development package to build/issue116/after.pk3. Use -Addon checks.pk3 -Map MAP01 -Script checks.cfg for native contracts, then -LoadGame ca116_snapshot.zds -Script reload.cfg to verify reload.",
+    "For bilingual UI checks use -Map MAP03 -Addon checks.pk3 -Script visual-enu.cfg or visual-es.cfg and matching -Language.",
+    "python assets/validation_500/verify_extraction.py; python assets/validation_500/audit_sources.py; python -X utf8 build_document_index.py; python validate_project.py"
+  ],
+  "native_text_artifacts": {
+    "baseline-controlled.ini": {
+      "original_sha256": "89e5078241e4d592d6f3c1ea877084d75e8e00c0bfcbab1cc071d6d1e9dce045",
+      "archived_sha256": "264f57d3c90f8ab238cf2de3c58cd6d6820599eabbc75276e33d0a865b1e3f26"
+    },
+    "baseline-controlled.txt": {
+      "original_sha256": "8b94fad828b355bc26be9dca1b01b227c38b2c387c67ce945661e685b9de5a34",
+      "archived_sha256": "777f1b0e661ef37e0d58b5c78989f36f644f16387fdb33b2954f826f73ffc295"
+    },
+    "baseline-quiet.ini": {
+      "original_sha256": "b40269ecdafe4c54d481a619f9b1d5002e75ac7dc4ce21b35b2aa424192e5124",
+      "archived_sha256": "658de96f1ddec05c16bfd5a07df4e1847371c87b8eba5705f92b963d3c156214"
+    },
+    "baseline-quiet.txt": {
+      "original_sha256": "73b260b747add15e7d0625f3b1041ffa75fdfba40ca582510e9507b2c53d6c75",
+      "archived_sha256": "ac4f4a535ef2fe1ca26bc4472360b35208c95179a9def3aba25e58722c8a0bc8"
+    },
+    "checks-baseline.ini": {
+      "original_sha256": "d672db385c7cb63454d9ca5e2675898c32d49258071a92066ef994544946758d",
+      "archived_sha256": "7f5f0418811a95447e83924c2077d65e5d169f1bc74b703a21f88e5b0638d1c3"
+    },
+    "checks-baseline.txt": {
+      "original_sha256": "0402b85321e7ce88a7f9c08e78b0394b7c9fa01d1b8db74b3c00979c1610c444",
+      "archived_sha256": "9d845d2dd94827ea88451054ca12637b006218fb845d63d96eb7ba1b8ff23e56"
+    },
+    "contracts-release.ini": {
+      "original_sha256": "3cbf83a9b834710ab16a3f3b76f91a627054e04b9d45dd904f8f4626b45fb385",
+      "archived_sha256": "8a05a86302d9edbfc10dc71dbcdf20d36a2383facf9897634dd41292afa55436"
+    },
+    "contracts-release.txt": {
+      "original_sha256": "383f8fc2c4510861c26dfd9a78524e563557663e6bbf2df3ff6464bdd6154d2c",
+      "archived_sha256": "4e745934cd58babf6339dec90312eca55374457e389aac210649e09d3b386b6d"
+    },
+    "input-release.ini": {
+      "original_sha256": "6820a7175548f5d752b9ce689f381f6a025459ae73106e87a4e4c3526c0e9be4",
+      "archived_sha256": "de6f55d6fd6518ecd37b2cabc2050e539decb1ee5a7f6d533b10b07113b8369f"
+    },
+    "input-release.txt": {
+      "original_sha256": "c5f37a4b3f61b3ec29ffcd31f6c0dd119ad8bef810b01e04eb4576caf2497e13",
+      "archived_sha256": "db1281a2a36cf29ac8b60123a83bb5cbb74e2c472fa83206bd87c72bed3f95a8"
+    },
+    "reload-release.ini": {
+      "original_sha256": "049455b585e783603bf022162d1b596e913062495430fa51b4bf7f77c45b1ece",
+      "archived_sha256": "edd71e60c4e89dd6351fe7ab6f469eee0a242259f2cbb86eb69e0f343e6c8393"
+    },
+    "reload-release.txt": {
+      "original_sha256": "d0e3222af454aa88d784d638fabc239aab978cfb5f46701d3b37e4468cab6392",
+      "archived_sha256": "9174ada04c637e9b8f34a52d6a1b87cc125e7aaa74bd134b6e1650afca4bc98f"
+    },
+    "visual-enu-release.ini": {
+      "original_sha256": "b519e3c550885d861efa19da0fbfbd780cf0d40cf98a8bcf0ccd4d1cf5f6766e",
+      "archived_sha256": "51f9c3e4f7a016a39ed2ea823513770be5d8abd6187b7cc053157d1dd46f612b"
+    },
+    "visual-enu-release.txt": {
+      "original_sha256": "33f3ef5bc16d426a4a517d05d0a1bee67ffab2e5b169d23427c7609c11bd8d16",
+      "archived_sha256": "5fcf05c9eb928c771f86a97da3a8829d00efa7bb78604398bee212c6bd98d34c"
+    },
+    "visual-es-release.ini": {
+      "original_sha256": "fda4e21d350327c04ebd2bb63d77fc0fca90a0205861c3ec88baf2939625f231",
+      "archived_sha256": "9a985c4cf2a31239809d8024bb2ccbf39ea0e96a068cb9bcc526bb1430d0bf56"
+    },
+    "visual-es-release.txt": {
+      "original_sha256": "93ea115d96eda2e6d08fdeac066ddc6820fa472ffcb02431edbe501d2a9841ef",
+      "archived_sha256": "3767d28864882badcf2efd28bb2d5f75580c2aa14cdb173798fff839d03af67e"
+    }
+  }
+}
