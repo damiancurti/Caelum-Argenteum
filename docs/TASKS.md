@@ -4,6 +4,10 @@ Documentation version: **5.0.1** — 2026-10-06.
 
 ## Issue #117 — Compatible player domain adapters (5.0.1)
 
+- Author confirmed all tests and CA-501-PLAYER-01 passed on 2026-10-06;
+  PR #123 merge and issue closure authorized. Performance evidence stays open
+  for attribution in #120; continue inventory consolidation in #118.
+
 - Baseline: accepted #116, PR #122 merged and issue closed on 2026-10-06.
 - Implemented ten character and 29 resource operations in stateless services,
   preserving all pawn fields, signatures, other method bodies and native order.

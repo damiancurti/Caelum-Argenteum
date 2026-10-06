@@ -4,7 +4,7 @@ Documentation version: **5.0.1** — 2026-10-06.
 
 **5.0.1/#117:** 39 character/resource methods extracted; fields retained.
 Evidence: assets/validation_501. MAP06 4.9–6.0% slower; cause unresolved.
-#116 accepted/merged 2026-10-06. Inventory/Tarot follow in #118/#119.
+#116/#117 accepted 2026-10-06. Inventory/Tarot follow in #118/#119.
 
 **4.37.24/#82 accepted 2026-10-05:** closing export; Tab/M/B/R/F/T defaults.
 Evidence: validation_43724. #112/#106 merged (#114/#113); V5.0 follows.

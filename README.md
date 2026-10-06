@@ -18,7 +18,8 @@ Inventory and Tarot extraction remain in #118/#119. See the
 and [validation evidence](assets/validation_501/RESULTS.json). This is an
 organization change with no new gameplay or claimed performance gain.
 Repeated MAP06 samples are **4.9–6.0% slower**; the overall cause remains
-unresolved and is recorded for review with the native evidence.
+unresolved and is recorded for review with the native evidence. The author
+confirmed all #117 tests passed on 2026-10-06 and authorized merge/closure.
 
 Issue [#116](https://github.com/damiancurti/Caelum-Argenteum/issues/116) starts V5.0
 with a dependency/state-ownership audit and the first extraction from the player:

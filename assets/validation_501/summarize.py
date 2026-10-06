@@ -153,7 +153,7 @@ def main():
             'Run checks.pk3 on MAP03 with baseline.cfg/current.cfg. Stage current.pk3 unchanged as current-runtime/baseline.pk3 for the old-save load; keep the original baseline.pk3 for rollback.',
             'Run baseline/current benchmark.cfg sequentially on MAP06, then reverse order with benchmark-profile.cfg. Never overlap engine processes. Run ui-enu.cfg/ui-es.cfg with ui.pk3 for native menu/input captures.',
             'Run summarize.py after completed native runs; logs/settings/manifests are archived, packages/IWAD/executable/save fixtures stay local.'
-        ],author_acceptance='Pending for #117. Author acceptance of #116 recorded separately before merge.')
+        ],author_acceptance='Passed: author confirmed all #117 tests and CA-501-PLAYER-01 on 2026-10-06; PR #123 merge/closure authorized. Measured MAP06 regression remains unresolved.')
     (HERE/'RESULTS.json').write_text(json.dumps(result,indent=2)+'\n',encoding='utf-8')
     print(json.dumps({'native_runs':{k:v['checks'] for k,v in logs.items()},'equivalence':result['equivalence'],'performance':result['performance']},indent=2))
 

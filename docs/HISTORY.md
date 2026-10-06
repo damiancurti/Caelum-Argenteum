@@ -26,8 +26,11 @@ The original and extracted implementations each pass 249 native assertions;
 their 93 profile/resource/travel value rows match exactly. These are isolated
 fixtures, distinct from ordinary author play. Save/reload, original-package
 rollback, input/UI observations and performance results are detailed in RESULTS.
-Audio stays enabled at 5% master volume. No performance gain or author acceptance
-of #117 is claimed; outstanding author checks remain in `pending_test.txt`.
+Audio stays enabled at 5% master volume. On 2026-10-06 the author confirmed
+CA-501-PLAYER-01 (origin 5.0.1 / #117) and all delivery tests passed, and
+authorized merging PR #123 and closing #117. Its entry is removed from the
+author queue. This confirms ordinary play and the menu/save/travel check;
+the measured performance regression and unresolved attribution below remain.
 
 MAP06 regression is explicitly reported: matched 1,680-tic runs measure
 12.546 -> 11.794 tics/s (-5.99%) and reversed-order repeat 12.633 -> 12.017
@@ -40,7 +43,7 @@ Native menu events allocate/confirm the draft in English/Spanish; a console map
 start then consumes that draft at the real MAP01 startup. Calling the final
 introduction start from a console-event callback correctly hit GZDoom's menu
 context guard; it was a fixture error, not a production change. Actual final
-keypress/ordinary-play acceptance stays in the author check. Fixture corrections
+keypress/ordinary-play acceptance was subsequently confirmed by the author. Fixture corrections
 and the initial package-basename and durability-revision errors are retained in
 RESULTS, separately from the successful final runs.
 

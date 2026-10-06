@@ -30,8 +30,9 @@ The #116 proposed A2 inventory slice conflicted with #117's explicit requirement
 to leave inventory and Tarot to following issues. The issue dependency chain
 takes precedence: A2 below now names this player stage, A3 maps to #118 and A4
 to #119. This records the discrepancy instead of silently broadening #117.
-Further transaction/combat/siege/session work remains separate. Author acceptance
-of #117 is pending; #116 acceptance does not extend to this new implementation.
+Further transaction/combat/siege/session work remains separate. The author
+confirmed all #117 tests passed on 2026-10-06 and authorized PR #123 merge
+and issue closure; measured performance limitations below remain.
 
 Native equivalence: 249 assertions on each implementation, 93 identical output
 rows and 592 equivalent serialized pawn fields (object references resolved by
