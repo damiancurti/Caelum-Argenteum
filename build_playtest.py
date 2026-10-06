@@ -1,4 +1,4 @@
-"""Export issue #17 from an explicit Git commit, without engine or IWAD files.
+"""Export a reviewed playtest commit without engine or IWAD files (#17, #82).
 
 Uses committed bytes (not checkout line endings), stable archive metadata and
 stored ZIP entries so reproduction does not depend on a compression library.
@@ -92,7 +92,7 @@ def export(commit, output):
     package = archive_bytes(runtime)
     records = [{"path": name, "size": len(data), "sha256": digest(data)} for name, data in sorted(runtime.items())]
     manifest = {
-        "version": version, "issue": 17, "source_commit": commit,
+        "version": version, "issue": settings["issue"], "source_commit": commit,
         "repository": "https://github.com/damiancurti/Caelum-Argenteum",
         "archive_format": "ZIP_STORED; sorted paths; 1980-01-01; Unix regular files 0644",
         "package": PK3_NAME, "package_sha256": digest(package),
@@ -108,6 +108,11 @@ def export(commit, output):
         "launch_playtest.ps1": files["assets/playtest/launch_playtest.ps1"],
         "launch_playtest.bat": files["assets/playtest/launch_playtest.bat"],
     }
+    defaults = settings.get("default_controls_file")
+    if defaults:
+        if defaults != "default_controls.cfg":
+            raise ValueError(f"Unapproved first-start configuration: {defaults}")
+        payload[defaults] = files["assets/playtest/" + defaults]
     payload.update({name: data for name, data in runtime.items() if name.startswith("licenses/")})
     payload["SHA256SUMS.txt"] = "".join(f"{digest(data)}  {name}\n" for name, data in sorted(payload.items())).encode("ascii")
     bundle = archive_bytes(payload)

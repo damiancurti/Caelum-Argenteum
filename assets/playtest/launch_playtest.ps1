@@ -33,9 +33,19 @@ try {
     $UserDirectory = Join-Path $PSScriptRoot 'user'
     $SaveDirectory = Join-Path $UserDirectory 'saves'
     [IO.Directory]::CreateDirectory($SaveDirectory) | Out-Null
+    $Configuration = Join-Path $UserDirectory 'gzdoom.ini'
+    $EngineArguments = @('-iwad', $Iwad, '-file', $Package, '-config', $Configuration, '-savedir', $SaveDirectory, '-noautoload')
+    # Initialize the portable profile once; later launches preserve player edits.
+    if (-not (Test-Path -LiteralPath $Configuration -PathType Leaf)) {
+        $Defaults = Join-Path $PSScriptRoot 'default_controls.cfg'
+        if (-not (Test-Path -LiteralPath $Defaults -PathType Leaf)) {
+            throw 'First-start controls are missing. Extract the complete playtest ZIP.'
+        }
+        $EngineArguments += @('+exec', $Defaults)
+    }
     Push-Location -LiteralPath $PSScriptRoot
     try {
-        & $Engine -iwad $Iwad -file $Package -config (Join-Path $UserDirectory 'gzdoom.ini') -savedir $SaveDirectory -noautoload
+        & $Engine @EngineArguments
         $EngineExitCode = $LASTEXITCODE
     } finally {
         Pop-Location

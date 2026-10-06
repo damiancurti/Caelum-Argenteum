@@ -1,9 +1,9 @@
 # CONTEXT.md — Ultra-condensed summary of Caelum Argenteum
 
-Documentation version: **4.37.23** — 2026-10-05.
+Documentation version: **4.37.24** — 2026-10-05.
 
-**4.37.23/#112:** contextual creation/professions; authorized preview correction.
-Evidence: validation_43723. #106 accepted/merged (#113); validation_43722.
+**4.37.24/#82 accepted 2026-10-05:** closing export; Tab/M/B/R/F/T defaults.
+Evidence: validation_43724. #112/#106 merged (#114/#113); V5.0 follows.
 **#103 accepted:** single-page introduction, actual controls, CA_MUS01;
 second key starts MAP01/CA_MUS02. Art farewell; saves unchanged.
 
@@ -226,17 +226,16 @@ Pending:
 - Extract Impact Physics only after its separate integration/save/reset closure. Per the author's 2026-09-23 #8 decision,
   existing ceiling/elevator cover moving sectors; avalanches await additional
   maps and damaging surfaces await temperature effects (no acid/lava requested).
-  Those three items do not block 4.36; export is accepted and Tarot remains next.
+  Those three items do not block closed 4.36; remaining expansion stays in V5.
 
 On 2026-09-23 the author accepted the 4.36.0i maze, save/load and table checks
 and bow appearance. The author also confirmed the complete 4.36.1 Windows
 validator/launcher/header check. The bow stall and final flail pose are now accepted;
 detailed results are in HISTORY. PR #7 and the #22 integration PR #23 are merged.
 
-The 2026-10-01 author decision puts the current-content V4 playtest export
-before 4.37 (Tarot/Trucazo); V5 follows the remaining V4 work. The 2026-09-23 author decision requires three complete maps with the
-prologue, confirmed El Loco and two Minors before export (#16/#17). Confirmed
-route under #77: mansion MAP01 -> maze MAP02 -> port MAP06. The accepted
+The accepted #17 export remains historical. #82 closes the implemented
+V4.37 slice with a new export; remaining powers/missions, teams/network play
+and campaign expansion stay in V5, starting with V5.0 architecture. Current route: mansion MAP01 -> maze MAP02 -> port MAP06. The accepted
 port siege replaces the Knight of Wands' provisional #33 appearance condition.
 Prisoners match their source character's combat stats, follow/fight alongside
 the player and extract alive through an exit before the MAP02 boss; they do

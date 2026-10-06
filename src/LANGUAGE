@@ -2872,7 +2872,7 @@ CA_M01_STATE_BOX_RECEIVED = "La Caja Mágica está en tu poder";
 // 4.33.0t: captura y colección de Arcanos.
 CA_JOURNAL_TAROT = "Tarot";
 CA_TAROT_COLLECTION_COUNT = "Essences: %d / %d";
-CA_TAROT_COLLECTION_EMPTY = "You have not captured an essence yet. Physical cards do not unlock powers. Palomo gives you the complete deck with the Magic Box.";
+CA_TAROT_COLLECTION_EMPTY = "You have not captured an essence yet. Physical cards do not unlock powers. Palomo gives you the deck upstairs. Keep it in the Magic Box to capture essences.";
 CA_TAROT_FOOL_NAME = "The Fool";
 CA_TAROT_FOOL_DESCRIPTION = "Major Arcana 0. Air, Chaos, Freedom.\nA beginning without a certain path.\nIts +2% applies to all twelve primary attribute levels and preserves fractions.";
 CA_TAROT_BONUS = "Tarot: +%d%% to attributes";
@@ -2898,7 +2898,7 @@ CA_M01_FOOL_RULO = "You already had strength when you arrived. Against the bull,
 // 4.33.0t: captura y colección de Arcanos.
 CA_JOURNAL_TAROT = "Tarot";
 CA_TAROT_COLLECTION_COUNT = "Esencias: %d / %d";
-CA_TAROT_COLLECTION_EMPTY = "Todavía no capturaste ninguna esencia. Las cartas físicas no otorgan poderes. Palomo te entrega el mazo completo con la Caja Mágica.";
+CA_TAROT_COLLECTION_EMPTY = "Todavía no capturaste ninguna esencia. Las cartas físicas no otorgan poderes. Palomo te entrega el mazo en el segundo piso. Guardalo en la Caja Mágica para capturar esencias.";
 CA_TAROT_FOOL_NAME = "El loco";
 CA_TAROT_FOOL_DESCRIPTION = "Arcano Mayor 0. Aire, Caos, Libertad.\nUn comienzo sin un camino seguro.\nSu +2% se aplica al nivel de los doce atributos primarios y conserva decimales.";
 CA_TAROT_BONUS = "Tarot: +%d%% a los atributos";

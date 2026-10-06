@@ -45,3 +45,7 @@
 
 /assets/validation_43715/*.json text eol=lf
 /assets/validation_43715/*.txt text eol=lf
+
+# Preserve the final V4.37 integration evidence byte-for-byte.
+/assets/validation_43724/*.json text eol=lf
+/assets/validation_43724/*.txt text eol=lf whitespace=-blank-at-eol

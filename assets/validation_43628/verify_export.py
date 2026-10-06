@@ -1,4 +1,4 @@
-"""Independently verify #17 archive hashes and exact committed runtime content."""
+"""Independently verify playtest archive hashes (#17/#82) and exact committed runtime content."""
 import argparse
 import hashlib
 import io
@@ -57,6 +57,12 @@ def main():
             licenses = {name for name in runtime_names if name.startswith('licenses/')}
             allowed = {'caelum_argenteum_dev.pk3','PLAYTEST.txt','LICENSE.md','MANIFEST.json',
                        'launch_playtest.ps1','launch_playtest.bat','SHA256SUMS.txt'} | licenses
+            if manifest['export_settings'].get('default_controls_file'):
+                assert manifest['export_settings']['default_controls_file'] == 'default_controls.cfg'
+                allowed.add('default_controls.cfg')
+                expected_defaults = subprocess.check_output(['git', '-C', str(ROOT), 'show',
+                    commit + ':assets/playtest/default_controls.cfg'])
+                assert bundle.read('default_controls.cfg') == expected_defaults
             assert set(names) == allowed, 'Unreviewed delivery file'
             for name in licenses:
                 assert bundle.read(name) == package.read(name), name

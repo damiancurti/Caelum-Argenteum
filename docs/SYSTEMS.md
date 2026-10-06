@@ -1,6 +1,34 @@
 # Caelum Argenteum — Current systems and rules
 
-Documentation version: **4.37.23** — 2026-10-05.
+Documentation version: **4.37.24** — 2026-10-05.
+
+## 4.37.24 — Export defaults and final integration contract (#82)
+
+The portable export initializes its own user/gzdoom.ini once. Before that file
+exists, the launcher executes default_controls.cfg after loading the package:
+Tab -> ca_journal_toggle; M -> togglemap; B -> +user2 (equipped Seal); R -> +reload;
+F -> +zoom; T -> +user3 (selected captured Tarot essences). T was explicitly
+chosen by the author. Later launches preserve the user's INI and customized
+bindings. KEYCONF also advertises the same defaults for unassigned keys when
+the package is used directly. Native defaultbind does not guarantee overriding
+an existing binding; the portable first-start configuration supplies that role.
+
+These are remappable inputs, not new abilities. Reload retains its ranged reload
+or melee/magic charge behavior; Zoom retains block, eligible sweep or ranged ADS.
+Rest/crafting and Journal contextual input retain their existing dispatch and
+ability restrictions. No allocation, balance, cost/cooldown, save schema or
+campaign geometry changes are made by the closing delivery.
+
+The scope remains MAP01 -> MAP02 -> MAP06; MAP03 is diagnostic. All 78 physical
+cards are distinct from captured essences. The current campaign grants El Loco,
+Ace of Cups and Knight of Wands, with the accepted Box-gated capture and shared
+activation contract. Physical deck ownership permits NPC Trucazo and grants no
+unearned passive bonus, collection percentage or power. Prisoner intelligence
+follows successful payment; siege victory requires both original objectives.
+
+The empty Tarot Journal now describes the accepted early upstairs deck handoff
+and the later Box requirement in both languages; it no longer claims those
+separate handoffs happen together. This corrects help text, not reward timing.
 
 ## 4.37.23 - Creation descriptions and authoritative preview (#112)
 

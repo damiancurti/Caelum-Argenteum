@@ -1,6 +1,18 @@
 CAELUM ARGENTEUM — STORY AND MAP01
 
-Documentation version: **4.37.23** — 2026-10-05.
+Documentation version: **4.37.24** — 2026-10-05.
+
+## 4.37.24 — Closing campaign route (#82)
+
+The closing V4.37 export preserves the accepted mansion MAP01 -> cardinal sewer
+MAP02 -> fortified Barracas al Sud MAP06 route. MAP03 and CADEV02 remain diagnostic
+maps, not an extra chapter or a required connector. No geometry, map identity,
+story revelation, reward amount or encounter roster changes are introduced.
+Native final-integration evidence is kept in assets/validation_43724, alongside
+explicit qualifications for seeded prerequisites and earlier accepted evidence.
+The captain's amnesia, one-time rewards/intelligence, three earned essences and
+both siege objectives retain their canonical rules. Later campaign and Tarot/
+Trucazo expansion remain V5 work, not blockers for the author's V4.37 closure.
 
 ## 4.37.23 - Contextual character creation (#112)
 
