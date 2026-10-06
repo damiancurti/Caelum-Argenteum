@@ -3,7 +3,7 @@
 Documentation version: **5.0.2** — 2026-10-06.
 
 **5.0.2/#118:** stateless inventory/equipment service; fields retained.
-Evidence: assets/validation_502. Author check: pending_test.txt. Tarot follows #119.
+Evidence: assets/validation_502. Author-accepted 2026-10-06. Tarot follows #119.
 #117 accepted/merged 2026-10-06; its MAP06 4.9–6.0% slowdown remains unattributed.
 
 **4.37.24/#82 accepted 2026-10-05:** closing export; Tab/M/B/R/F/T defaults.

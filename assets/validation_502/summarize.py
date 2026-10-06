@@ -137,7 +137,7 @@ def main():
             'UI fixture normalizes its artificial pending-task total and selects through existing inventory events before capture. No UI strings/layout change.',
             'Existing internal commit helpers require their established coordinator preconditions. Tutorial loans/native copy-toss lifecycle and later session/planning extractions are documented boundaries.',
             'No newer-save downgrade or historical map conversion claim. Tests are isolated single-player, not multiplayer acceptance.'],
-        author_acceptance='Pending CA-502-INVENTORY-01. Author acceptance of #117 was recorded before merging PR #123 and does not cover #118.')
+        author_acceptance='Passed: author confirmed CA-502-INVENTORY-01 and all #118 tests on 2026-10-06; PR #124 merge and issue closure authorized. Measured performance regressions remain unresolved.')
     (HERE/'RESULTS.json').write_text(json.dumps(report,indent=2)+'\n',encoding='utf-8')
     print(json.dumps({k:report[k] for k in ['identical_inventory_value_rows','identical_crafting_category_rows','identical_serialized_pawn_fields','identical_owned_native_item_payloads']},indent=2))
     print('MAP06 throughput change: %.3f%%'%report['performance']['percent_tics_per_second_change'])

@@ -23,8 +23,9 @@ Documentation version: **5.0.2** — 2026-10-06.
   reversed-order 12.967/12.170 (-6.15%), with 49 identical scene observations.
   Mean native player samples: 0.0417/0.0445 ms and 0.0441/0.0487 ms.
   Attribution remains unresolved; carry both #117/#118 evidence into #120.
-- CA-502-INVENTORY-01 remains in the author queue. Next architecture slice: #119
-  Tarot; #120 integrates the series and retains #117's unresolved MAP06 regression.
+- Author confirmed CA-502-INVENTORY-01 and all #118 tests passed on 2026-10-06;
+  PR #124 merge and issue closure authorized. Continue with #119 Tarot. #120
+  retains the unresolved performance measurements from #117/#118.
 
 ## Issue #117 — Compatible player domain adapters (5.0.1)
 

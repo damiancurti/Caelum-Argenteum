@@ -18,7 +18,7 @@ share the service. Foreign owned references are rejected before mutation.
 See the [inventory contract](docs/SYSTEMS.md#inventory-and-equipment-service-118)
 and [native/static evidence](assets/validation_502/RESULTS.json). Game rules,
 crafting catalogues and Tarot powers are unchanged; #119 is the next slice.
-Manual acceptance of this new delivery is tracked in `pending_test.txt`.
+The author confirmed all #118 tests passed on 2026-10-06 and authorized merge/closure.
 Matched MAP06 runs observe **3.7–6.1% lower throughput than 5.0.1**, including
 an order-reversed repeat. The cause remains unresolved; this patch claims no
 performance improvement. Exact measurements and limitations accompany the evidence.

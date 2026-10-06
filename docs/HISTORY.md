@@ -22,9 +22,10 @@ serialized service instance, migration revision or competing collection exists.
 Reproducible fixtures, native logs, package identities, settings, static comparison,
 save/travel/rollback results, performance and diagnostic corrections are retained
 in `assets/validation_502/RESULTS.json`. Tests use GZDoom 4.14.2 with audio enabled
-at 5%. Ordinary author acceptance is pending in CA-502-INVENTORY-01; #117's
-acceptance does not extend to this new implementation. Its earlier performance
-regression remains recorded for #120 independently of this delivery's measurements.
+at 5%. On 2026-10-06 the author confirmed CA-502-INVENTORY-01 (origin 5.0.2 /
+#118) and all delivery tests passed, and authorized PR #124 merge and issue
+closure. Its entry is removed from the author queue. The measured performance
+regressions and unresolved attribution remain evidence for #120.
 
 Baseline/current inventory and hub runs each pass 127 assertions and agree on all
 nine value rows. The nine-category crafting/merchant fixtures each pass 79 checks;
