@@ -1374,149 +1374,37 @@ class CaelumPlayer : DoomPlayer
 
     int ReadNewCharacterDraft(Name setting, int fallback)
     {
-        if (player == null) { return fallback; }
-        CVar value = CVar.GetCVar(setting, player);
-        return value == null ? fallback : value.GetInt();
+        return CaelumPlayerCharacter.ReadNewCharacterDraft(self, setting, fallback);
     }
 
     int ReadNewCharacterLayer(int layer)
     {
-        switch (layer)
-        {
-            case 0: return ReadNewCharacterDraft("ca_newchar_layer0", 0);
-            case 1: return ReadNewCharacterDraft("ca_newchar_layer1", 0);
-            case 2: return ReadNewCharacterDraft("ca_newchar_layer2", 0);
-            default: return ReadNewCharacterDraft("ca_newchar_layer3", 0);
-        }
+        return CaelumPlayerCharacter.ReadNewCharacterLayer(self, layer);
     }
 
     int ReadNewCharacterAttribute(int attribute)
     {
-        switch (attribute)
-        {
-            case 0: return ReadNewCharacterDraft("ca_newchar_attribute0", 0);
-            case 1: return ReadNewCharacterDraft("ca_newchar_attribute1", 0);
-            case 2: return ReadNewCharacterDraft("ca_newchar_attribute2", 0);
-            case 3: return ReadNewCharacterDraft("ca_newchar_attribute3", 0);
-            case 4: return ReadNewCharacterDraft("ca_newchar_attribute4", 0);
-            case 5: return ReadNewCharacterDraft("ca_newchar_attribute5", 0);
-            case 6: return ReadNewCharacterDraft("ca_newchar_attribute6", 0);
-            case 7: return ReadNewCharacterDraft("ca_newchar_attribute7", 0);
-            case 8: return ReadNewCharacterDraft("ca_newchar_attribute8", 0);
-            case 9: return ReadNewCharacterDraft("ca_newchar_attribute9", 0);
-            case 10: return ReadNewCharacterDraft("ca_newchar_attribute10", 0);
-            default: return ReadNewCharacterDraft("ca_newchar_attribute11", 0);
-        }
+        return CaelumPlayerCharacter.ReadNewCharacterAttribute(self, attribute);
     }
 
     bool NewCharacterDraftIsReady()
     {
-        if (player == null) { return false; }
-        CVar ready = CVar.GetCVar("ca_newchar_ready", player);
-        return ready != null && ready.GetBool();
+        return CaelumPlayerCharacter.NewCharacterDraftIsReady(self);
     }
 
     void ClearNewCharacterDraftReady()
     {
-        if (player == null) { return; }
-        CVar ready = CVar.GetCVar("ca_newchar_ready", player);
-        if (ready != null) { ready.SetBool(false); }
+        CaelumPlayerCharacter.ClearNewCharacterDraftReady(self);
     }
 
     bool ValidateLoadedNewCharacterDraft()
     {
-        if (CharacterProfile.Race < CaelumConstants.RACE_BEAST_MAN
-            || CharacterProfile.Race > CaelumConstants.RACE_GOBLIN
-            || CharacterProfile.FirstClass < CaelumConstants.CLASS_WARRIOR
-            || CharacterProfile.FirstClass > CaelumConstants.CLASS_MAGE
-            || CharacterProfile.SecondClass < CaelumConstants.CLASS_WARRIOR
-            || CharacterProfile.SecondClass > CaelumConstants.CLASS_MAGE
-            || CharacterProfile.Sex < CaelumConstants.SEX_MALE
-            || CharacterProfile.Sex > CaelumConstants.SEX_FEMALE
-            || CharacterProfile.HeightChoice < CaelumConstants.HEIGHT_SHORT
-            || CharacterProfile.HeightChoice > CaelumConstants.HEIGHT_TALL)
-        {
-            return false;
-        }
-
-        int spentLayers = 0;
-        for (int layer = 0; layer < CaelumConstants.ATTRIBUTE_LAYER_COUNT; layer++)
-        {
-            int bonus = CharacterAllocation.LayerBonus[layer];
-            spentLayers += bonus;
-            if (bonus < 0
-                || CharacterProfile.GetCombinedLayerValue(layer) + bonus
-                    > CaelumConstants.MAX_LAYER_BASE)
-            {
-                return false;
-            }
-        }
-        if (spentLayers != CaelumConstants.FREE_LAYER_POINTS) { return false; }
-
-        int spentAttributes = 0;
-        for (int attribute = 0;
-            attribute < CaelumConstants.PRIMARY_ATTRIBUTE_COUNT; attribute++)
-        {
-            int bonus = CharacterAllocation.AttributeBonus[attribute];
-            spentAttributes += bonus;
-            if (bonus < 0 || bonus > CharacterAllocation.GetMaximumIndividualBonus(
-                CharacterProfile, attribute
-            ))
-            {
-                return false;
-            }
-        }
-        return spentAttributes == CaelumConstants.INDIVIDUAL_ATTRIBUTE_POINTS;
+        return CaelumPlayerCharacter.ValidateLoadedNewCharacterDraft(self);
     }
 
     bool ConsumeNewCharacterDraft()
     {
-        if (!NewCharacterDraftIsReady()) { return false; }
-
-        CharacterProfile.Race = ReadNewCharacterDraft(
-            "ca_newchar_race", CaelumConstants.RACE_HUMAN
-        );
-        CharacterProfile.FirstClass = ReadNewCharacterDraft(
-            "ca_newchar_first_class", CaelumConstants.CLASS_WARRIOR
-        );
-        CharacterProfile.SecondClass = ReadNewCharacterDraft(
-            "ca_newchar_second_class", CaelumConstants.CLASS_MAGE
-        );
-        CharacterProfile.Sex = ReadNewCharacterDraft(
-            "ca_newchar_sex", CaelumConstants.SEX_MALE
-        );
-        CharacterProfile.HeightChoice = ReadNewCharacterDraft(
-            "ca_newchar_height", CaelumConstants.HEIGHT_NORMAL
-        );
-        for (int layer = 0; layer < CaelumConstants.ATTRIBUTE_LAYER_COUNT; layer++)
-        {
-            CharacterAllocation.LayerBonus[layer] = ReadNewCharacterLayer(layer);
-        }
-        for (int attribute = 0;
-            attribute < CaelumConstants.PRIMARY_ATTRIBUTE_COUNT; attribute++)
-        {
-            CharacterAllocation.AttributeBonus[attribute] =
-                ReadNewCharacterAttribute(attribute);
-        }
-
-        if (!ValidateLoadedNewCharacterDraft())
-        {
-            ClearNewCharacterDraftReady();
-            Console.Printf(
-                "[Caelum] Borrador inválido rechazado; se aplicará el perfil "
-                "seguro de ejecución directa."
-            );
-            return false;
-        }
-
-        CharacterCreationComplete = true;
-        CreationWizardOpen = false;
-        CreationProfileBackup = null;
-        CreationAllocationBackup = null;
-        ApplyCharacterProfile();
-        GrantStartingDevelopmentEquipment();
-        ClearNewCharacterDraftReady();
-        return true;
+        return CaelumPlayerCharacter.ConsumeNewCharacterDraft(self);
     }
 
     // `map MAPxx` comienza una partida distinta y no atraviesa el menú. Este
@@ -1524,31 +1412,7 @@ class CaelumPlayer : DoomPlayer
     // asistente dentro de MAP01 o MAP02.
     void InitializeDirectMapCharacter()
     {
-        CharacterProfile.InitializeDefaultTestProfile();
-        CharacterAllocation.ResetAllocations();
-        for (int layer = 0; layer < CaelumConstants.ATTRIBUTE_LAYER_COUNT; layer++)
-        {
-            CharacterAllocation.LayerBonus[layer] = 1;
-        }
-        CharacterAllocation.AttributeBonus[0] = 3;
-        CharacterAllocation.AttributeBonus[1] = 3;
-        CharacterAllocation.AttributeBonus[2] = 2;
-        CharacterAllocation.AttributeBonus[3] = 3;
-        CharacterAllocation.AttributeBonus[4] = 3;
-        CharacterAllocation.AttributeBonus[5] = 2;
-        CharacterAllocation.AttributeBonus[6] = 3;
-        CharacterAllocation.AttributeBonus[7] = 2;
-        CharacterAllocation.AttributeBonus[8] = 2;
-        CharacterAllocation.AttributeBonus[9] = 3;
-        CharacterAllocation.AttributeBonus[10] = 2;
-        CharacterAllocation.AttributeBonus[11] = 2;
-        CharacterCreationComplete = true;
-        CreationWizardOpen = false;
-        ApplyCharacterProfile();
-        GrantStartingDevelopmentEquipment();
-        Console.Printf(
-            "[Caelum] Inicio por comando directo: perfil de prueba seguro aplicado."
-        );
+        CaelumPlayerCharacter.InitializeDirectMapCharacter(self);
     }
 
     void StoreCraftingTaskState(
@@ -17017,118 +16881,12 @@ class CaelumPlayer : DoomPlayer
     // Se reconstruyen una sola vez, sin conceder cartas ni reiniciar recursos.
     void EnsureCurrentAttributeBalance()
     {
-        if (AttributeBalanceVersion >= 3 || !CharacterCreationComplete
-            || Attributes == null || DerivedStats == null) return;
-        ApplyCharacterProfile();
-
+        CaelumPlayerCharacter.EnsureCurrentAttributeBalance(self);
     }
 
     void ApplyCharacterProfile()
     {
-        if (Attributes != null
-            && CharacterProfile != null
-            && CharacterAllocation != null
-            && DerivedStats != null)
-        {
-            // La revisión 3 actualiza el coste guardado y el lanzamiento en curso
-            // antes de pagarlo; conserva el tiempo, los recursos y el progreso.
-            bool migrateBalance = AttributeBalanceVersion < 3;
-            Attributes.InitializeFromCreation(CharacterProfile, CharacterAllocation);
-            if (ArmorModel != null)
-            {
-                ArmorModel.ApplyAttributeBonuses(Attributes);
-            }
-            ApplyJewelryAttributeBonuses(Attributes);
-            if (CharacterProfile.Race == CaelumConstants.RACE_DEBUG)
-            {
-                // La base del perfil rápido usa DEBUG_CREATION_ATTRIBUTE_LEVEL incluso con equipo.
-                // La colección de Tarot se aplica después, como en las demás razas.
-                Attributes.SetAllForDebug(
-                    CaelumConstants.DEBUG_CREATION_ATTRIBUTE_LEVEL
-                );
-            }
-            else if (DebugAttributesAt100)
-            {
-                Attributes.SetAllForDebug(CaelumConstants.DEBUG_ALL_ATTRIBUTES_LEVEL_100);
-            }
-            else if (DebugAttributesAt75)
-            {
-                // La base de prueba sustituye las bonificaciones del equipo;
-                // el porcentaje del Tarot se calcula después.
-                Attributes.SetAllForDebug(CaelumConstants.DEBUG_ALL_ATTRIBUTES_LEVEL_75);
-            }
-            let tarotRecord = GetPersistentCharacterState(false);
-            Attributes.ApplyTarotMinorBonuses(tarotRecord);
-            Attributes.ApplyTarotBonus(tarotRecord == null ? 0 : tarotRecord.GetTarotAttributeBonusPercent());
-            RefreshCarriedInventorySummary();
-            DerivedStats.Recalculate(Attributes, CharacterProfile);
-            // La capacidad de la caja depende de Inteligencia. Una segunda
-            // lectura aplica inmediatamente el nuevo divisor a su contenido;
-            // el recálculo final actualiza masa, movimiento y aire con esa
-            // carga corregida en el mismo tic.
-            RefreshCarriedInventorySummary();
-            DerivedStats.Recalculate(Attributes, CharacterProfile);
-            if (migrateBalance)
-            {
-                if (StaffCastPending && WeaponModel != null)
-                {
-                    double tierFactor = PendingStaffWeaponTier >= 3 ? 2.5
-                        : PendingStaffWeaponTier == 2 ? 1.6 : 1.0;
-                    PendingStaffAnimaCost = WeaponModel.GetAnimaCostFor(PendingStaffWeaponType)
-                        * tierFactor * DerivedStats.StaffAnimaCost / CaelumConstants.DEBUG_STAFF_ANIMA_COST
-                        * (PendingStaffChargedAttack ? CaelumConstants.WEAPON_CHARGED_COST_MULTIPLIER : 1.0);
-                }
-            }
-            AttributeBalanceVersion = 3;
-            SyncHUDLoadState();
-            // La masa nativa representa la masa total para que el motor y los
-            // ataques externos respeten tambien el peso equipado del jugador.
-            Mass = Max(1, int(DerivedStats.TotalMass + 0.5));
-            // Radius es readonly en ZScript; A_SetSize actualiza ambas medidas
-            // y vuelve a enlazar correctamente al jugador en el mundo.
-            A_SetSize(
-                DerivedStats.ActorRadius,
-                DerivedStats.ActorHeight,
-                false
-            );
-            UpdateLucidityAccuracyEffects();
-
-            // Recalculation never grants free healing. Increasing the maximum
-            // leaves current health unchanged; decreasing it only clamps an
-            // amount that no longer fits under the new maximum.
-            if (HealthResourceInitialized)
-            {
-                CaelumMaximumHealth = Max(1, int(DerivedStats.MaximumHealth));
-                health = Min(health, CaelumMaximumHealth);
-
-                if (player != null)
-                {
-                    player.health = health;
-                }
-            }
-
-            // Profile changes never refill Anima for free; they only enforce a
-            // newly reduced capacity, matching the health and air behavior.
-            if (AnimaResourceInitialized)
-            {
-                CurrentAnima = Min(CurrentAnima, DerivedStats.MaximumAnima);
-            }
-
-            if (AdrenalineResourceInitialized)
-            {
-                CurrentAdrenaline = Min(
-                    CurrentAdrenaline,
-                    DerivedStats.MaximumAdrenaline
-                );
-            }
-
-            // A profile change may lower maximum air. Never leave the current
-            // resource above its newly calculated maximum.
-            if (AirResourceInitialized)
-            {
-                CurrentAir = Min(CurrentAir, DerivedStats.MaximumAir);
-            }
-        }
+        CaelumPlayerCharacter.ApplyCharacterProfile(self);
     }
 
     // Spend one provisional action cost after applying the current load
@@ -17178,14 +16936,7 @@ class CaelumPlayer : DoomPlayer
     // Agrega una cantidad positiva sin superar el maximo derivado de Resiliencia.
     void AddAdrenaline(double amount)
     {
-        if (DerivedStats != null)
-        {
-            CurrentAdrenaline = Clamp(
-                CurrentAdrenaline + Max(0.0, amount),
-                0.0,
-                DerivedStats.MaximumAdrenaline
-            );
-        }
+        CaelumPlayerResources.AddAdrenaline(self, amount);
     }
 
     // Health state multiplies only gameplay-earned adrenaline. The manual
@@ -17195,18 +16946,13 @@ class CaelumPlayer : DoomPlayer
         int eventType = CaelumConstants.ADRENALINE_EVENT_OTHER
     )
     {
-        LastAdrenalineEvent = eventType;
-        LastAdrenalineBaseGain = Max(0.0, amount);
-        LastAdrenalineFinalGain = LastAdrenalineBaseGain
-            * HealthAdrenalineGainMultiplier;
-        AddAdrenaline(LastAdrenalineFinalGain);
+        CaelumPlayerResources.AddCombatAdrenaline(self, amount, eventType);
     }
 
     // Every confirmed combat event restarts the entire thirty-second timer.
     void MarkCombatActivity()
     {
-        CaelumRestState.Interrupt(self, "CA_REST_COMBAT");
-        CombatTimeRemaining = CaelumConstants.COMBAT_TIMEOUT_SECONDS;
+        CaelumPlayerResources.MarkCombatActivity(self);
     }
 
     // El tiempo de combate siempre avanza, aun cuando una acción no haya
@@ -17214,27 +16960,7 @@ class CaelumPlayer : DoomPlayer
     // sólo la reserva positiva entra en su decadencia normal de diez por segundo.
     void UpdateAdrenalineDecay()
     {
-        if (!AdrenalineResourceInitialized)
-        {
-            CombatTimeRemaining = Max(0.0, CombatTimeRemaining);
-            return;
-        }
-
-        if (CombatTimeRemaining > 0.0)
-        {
-            CombatTimeRemaining = Max(
-                0.0,
-                CombatTimeRemaining - 1.0 / TICRATE
-            );
-            return;
-        }
-
-        if (CurrentAdrenaline <= 0.0) { return; }
-        CurrentAdrenaline = Max(
-            0.0,
-            CurrentAdrenaline
-                - CaelumConstants.ADRENALINE_DECAY_PER_SECOND / TICRATE
-        );
+        CaelumPlayerResources.UpdateAdrenalineDecay(self);
     }
 
     // Temporary helpers make capacity and timing easy to verify before Tarot
@@ -17279,68 +17005,7 @@ class CaelumPlayer : DoomPlayer
 
     void ApplyConsumableRegenerationPulse(int consumableType, double foodRecovery = -1)
     {
-        if (player == null || player.playerstate != PST_LIVE
-            || DerivedStats == null)
-        {
-            return;
-        }
-        double pulseRatio =
-            CaelumConstants.CONSUMABLE_REGENERATION_PERCENT_PER_SECOND;
-        switch (consumableType)
-        {
-            case CaelumConstants.CONSUMABLE_LIFE_POTION:
-            {
-                int healing = Max(1, int(CaelumMaximumHealth * pulseRatio + 0.5));
-                health = Min(CaelumMaximumHealth, health + healing);
-                player.health = health;
-                UpdateHealthStateEffects();
-                break;
-            }
-            case CaelumConstants.CONSUMABLE_ANIMA_POTION:
-                CurrentAnima = Min(
-                    DerivedStats.MaximumAnima,
-                    CurrentAnima + DerivedStats.MaximumAnima * pulseRatio
-                );
-                break;
-            case CaelumConstants.CONSUMABLE_ENERGY_DRINK:
-                CurrentAir = Min(
-                    DerivedStats.MaximumAir,
-                    CurrentAir + DerivedStats.MaximumAir * pulseRatio
-                );
-                CurrentSleep = Min(
-                    CaelumConstants.SURVIVAL_MAXIMUM,
-                    CurrentSleep
-                        + CaelumConstants.SURVIVAL_MAXIMUM * pulseRatio
-                );
-                UpdateAirStateEffects();
-                UpdateSurvivalStates();
-                break;
-            case CaelumConstants.CONSUMABLE_FOOD_RATION:
-            {
-                // El Powerup guarda la dosis al empezar; llamadas directas
-                // nuevas usan la misma referencia de masa que una ración.
-                if (foodRecovery < 0) foodRecovery = CaelumConstants.SURVIVAL_MAXIMUM
-                    * pulseRatio * CaelumConstants.RATION_REFERENCE_MASS / Max(1, DerivedStats.BaseMass);
-                double recovered=Min(CaelumConstants.SURVIVAL_MAXIMUM-CurrentHunger,
-                    foodRecovery);
-                recovered=Max(0.0,recovered);
-                CurrentHunger+=recovered;
-                // Digestión: sólo el hambre efectivamente saciada tiene coste.
-                CurrentSleep=Max(0.0,CurrentSleep-recovered/4.0);
-                if(CurrentHunger>=CaelumConstants.SURVIVAL_MAXIMUM)CaelumDiningSession.Sated(self,false);
-                UpdateSurvivalStates();
-                break;
-            }
-            case CaelumConstants.CONSUMABLE_WATER_RATION:
-                CurrentThirst = Min(
-                    CaelumConstants.SURVIVAL_MAXIMUM,
-                    CurrentThirst
-                        + CaelumConstants.SURVIVAL_MAXIMUM * pulseRatio
-                );
-                UpdateSurvivalStates();
-                break;
-        }
-        PersistCharacterState();
+        CaelumPlayerResources.ApplyConsumableRegenerationPulse(self, consumableType, foodRecovery);
     }
 
     void CycleDebugPanelPage()
@@ -18183,62 +17848,14 @@ class CaelumPlayer : DoomPlayer
         double defenseRatio
     )
     {
-        LastLocalizedLucidityLoss = 0.0;
-        if (naturalVulnerabilityGrade != CaelumConstants.VULNERABILITY_CRITICAL_POINT
-            || DerivedStats == null)
-        {
-            return;
-        }
-
-        double criticalFactor = 1.0;
-        if (criticalHit)
-        {
-            double normalMultiplier = GetVulnerabilityMultiplier(
-                effectiveVulnerabilityGrade,
-                false
-            );
-            double criticalMultiplier = GetVulnerabilityMultiplier(
-                effectiveVulnerabilityGrade,
-                true
-            );
-            if (normalMultiplier > 0.0)
-            {
-                criticalFactor = criticalMultiplier / normalMultiplier;
-            }
-        }
-
-        LastLocalizedLucidityLoss = Min(
-            CurrentLucidity,
-            CaelumConstants.CRITICAL_POINT_BASE_LUCIDITY_LOSS
-                * criticalFactor
-                * (1.0 - Clamp(defenseRatio, 0.0, 1.0))
-                * DerivedStats.LucidityLossMultiplier
-                * GetLuciditySleepDebuffMultiplier()
-        );
-        CurrentLucidity = Max(0.0, CurrentLucidity - LastLocalizedLucidityLoss);
-        UpdateLucidityState();
+        CaelumPlayerResources.ApplyLocalizedLucidityLoss(self, naturalVulnerabilityGrade, effectiveVulnerabilityGrade, criticalHit, defenseRatio);
     }
 
     // Low sleep doubles and critical sleep quadruples lucidity loss and stun
     // duration. Patience Type 3 mitigates only the harmful amount above x1.
     double GetLuciditySleepDebuffMultiplier()
     {
-        double rawMultiplier = 1.0;
-        if (SleepState == CaelumConstants.SURVIVAL_STATE_CRITICAL)
-        {
-            rawMultiplier = CaelumConstants.LUCIDITY_SLEEP_CRITICAL_INTENSITY_MULTIPLIER;
-        }
-        else if (SleepState == CaelumConstants.SURVIVAL_STATE_LOW)
-        {
-            rawMultiplier = CaelumConstants.LUCIDITY_SLEEP_LOW_INTENSITY_MULTIPLIER;
-        }
-
-        double patienceMultiplier = 1.0;
-        if (DerivedStats != null)
-        {
-            patienceMultiplier = DerivedStats.HealthPenaltyMultiplier;
-        }
-        return 1.0 + (rawMultiplier - 1.0) * patienceMultiplier;
+        return CaelumPlayerResources.GetLuciditySleepDebuffMultiplier(self);
     }
 
     // Provisional loss validates regeneration and thresholds. Dureza is shown
@@ -18281,34 +17898,7 @@ class CaelumPlayer : DoomPlayer
 
     void UpdateLucidityState()
     {
-        int previousState = LucidityState;
-        double ratio = CurrentLucidity / CaelumConstants.MAXIMUM_LUCIDITY;
-
-        if (ratio <= CaelumConstants.LUCIDITY_STUNNED_THRESHOLD)
-        {
-            LucidityState = CaelumConstants.LUCIDITY_STATE_STUNNED;
-        }
-        else if (ratio <= CaelumConstants.LUCIDITY_DIZZY_THRESHOLD)
-        {
-            LucidityState = CaelumConstants.LUCIDITY_STATE_DIZZY;
-        }
-        else
-        {
-            LucidityState = CaelumConstants.LUCIDITY_STATE_NORMAL;
-        }
-
-        UpdateLucidityAccuracyEffects();
-
-        // Trigger once only when entering the critical state from above. The
-        // timer does not restart merely because lucidity remains at or below
-        // ten percent, and it persists through ordinary saves with the player.
-        if (previousState != CaelumConstants.LUCIDITY_STATE_STUNNED
-            && LucidityState == CaelumConstants.LUCIDITY_STATE_STUNNED)
-        {
-            LucidityPhysicalStunRemaining =
-                CaelumConstants.LUCIDITY_PHYSICAL_STUN_SECONDS
-                    * GetLuciditySleepDebuffMultiplier();
-        }
+        CaelumPlayerResources.UpdateLucidityState(self);
     }
 
     // Lucidity owns one reusable accuracy factor. Both dizzy and stunned
@@ -18316,75 +17906,27 @@ class CaelumPlayer : DoomPlayer
     // physical immobilization when the threshold is crossed.
     void UpdateLucidityAccuracyEffects()
     {
-        LucidityAccuracyMultiplier = LucidityState
-            == CaelumConstants.LUCIDITY_STATE_NORMAL
-            ? 1.0
-            : CaelumConstants.LUCIDITY_DIZZY_ACCURACY_MULTIPLIER;
-
-        if (DerivedStats == null)
-        {
-            EffectivePhysicalAccuracyPercent = 0.0;
-            EffectiveMagicalAccuracyPercent = 0.0;
-            return;
-        }
-
-        EffectivePhysicalAccuracyPercent = DerivedStats.PhysicalAccuracyPercent
-            * LucidityAccuracyMultiplier
-            * (ElementalStatus != null
-                ? ElementalStatus.GetAccuracyMultiplier() : 1.0);
-        EffectiveMagicalAccuracyPercent = DerivedStats.MagicalAccuracyPercent
-            * LucidityAccuracyMultiplier
-            * (ElementalStatus != null
-                ? ElementalStatus.GetAccuracyMultiplier() : 1.0);
+        CaelumPlayerResources.UpdateLucidityAccuracyEffects(self);
     }
 
     void UpdateLucidityPhysicalStun()
     {
-        if (LucidityPhysicalStunRemaining > 0.0)
-        {
-            LucidityPhysicalStunRemaining = Max(
-                0.0,
-                LucidityPhysicalStunRemaining - 1.0 / TICRATE
-            );
-        }
+        CaelumPlayerResources.UpdateLucidityPhysicalStun(self);
     }
 
     void UpdatePainImmobilization()
     {
-        if (PainImmobilizationRemaining > 0.0)
-        {
-            PainImmobilizationRemaining = Max(
-                0.0,
-                PainImmobilizationRemaining - 1.0 / TICRATE
-            );
-        }
+        CaelumPlayerResources.UpdatePainImmobilization(self);
     }
 
     int CalculateSurvivalState(double currentValue)
     {
-        double ratio = currentValue / CaelumConstants.SURVIVAL_MAXIMUM;
-        if (ratio <= CaelumConstants.SURVIVAL_CRITICAL_THRESHOLD)
-        {
-            return CaelumConstants.SURVIVAL_STATE_CRITICAL;
-        }
-        if (ratio <= CaelumConstants.SURVIVAL_LOW_THRESHOLD)
-        {
-            return CaelumConstants.SURVIVAL_STATE_LOW;
-        }
-        return CaelumConstants.SURVIVAL_STATE_NORMAL;
+        return CaelumPlayerResources.CalculateSurvivalState(self, currentValue);
     }
 
     double GetSurvivalStateMultiplier(int state)
     {
-        if (state == CaelumConstants.SURVIVAL_STATE_CRITICAL)
-        {
-            return CaelumConstants.SURVIVAL_CRITICAL_PERFORMANCE_MULTIPLIER;
-        }
-        if (state == CaelumConstants.SURVIVAL_STATE_LOW)
-        {
-            return CaelumConstants.SURVIVAL_LOW_PERFORMANCE_MULTIPLIER;
-        }
-        return 1.0;
+        return CaelumPlayerResources.GetSurvivalStateMultiplier(self, state);
     }
 
     // Sólo un volumen marcado por el mapa puede hidratar. WaterLevel 3 exige
@@ -18392,97 +17934,18 @@ class CaelumPlayer : DoomPlayer
     // líquidos peligrosos hereden esta propiedad por accidente.
     bool IsSubmergedInPotableWater()
     {
-        return WaterLevel >= 3
-            && CurSector != null
-            && CurSector.GetUDMFInt('user_ca_potable_water') != 0;
+        return CaelumPlayerResources.IsSubmergedInPotableWater(self);
     }
 
     // Consumo pasivo según tiempo base, masa corporal y divisor Tipo 4.
     void UpdateSurvivalResources()
     {
-        if (!SurvivalResourcesInitialized || DerivedStats == null)
-        {
-            return;
-        }
-
-        // Corrige también los factores serializados de partidas anteriores,
-        // sin reiniciar reservas ni reconstruir el perfil completo.
-        DerivedStats.RefreshSurvivalLossMultipliers(Attributes);
-        CaelumRestState.Validate(self);
-        double restFactor = CaelumRestState.ResourceFactor(self);
-        CurrentHunger = Max(0.0, CurrentHunger
-            - CaelumConstants.SURVIVAL_MAXIMUM
-            / (CaelumConstants.HUNGER_EMPTY_GAME_HOURS
-                * CaelumWorldClock.SecondsPerGameHour(level.MapName))
-            * DerivedStats.HungerThirstLossMultiplier / restFactor / TICRATE);
-        // La piscina hidrata directamente y permite llevar agua en recipientes.
-        for (Inventory cursor = Inv; cursor != null; cursor = cursor.Inv)
-        {
-            let container = CaelumWaterContainer(cursor);
-            if (container != null) container.ObserveImmersion(self);
-        }
-        if (IsSubmergedInPotableWater())
-        {
-            CurrentThirst = Min(
-                CaelumConstants.SURVIVAL_MAXIMUM,
-                CurrentThirst
-                    + CaelumConstants.SURVIVAL_MAXIMUM
-                    * CaelumConstants.POTABLE_WATER_THIRST_RECOVERY_RATIO_PER_SECOND
-                    / TICRATE
-            );
-        }
-        else
-        {
-            CurrentThirst = Max(0.0, CurrentThirst
-                - CaelumConstants.SURVIVAL_MAXIMUM
-                / (CaelumConstants.THIRST_EMPTY_GAME_HOURS
-                    * CaelumWorldClock.SecondsPerGameHour(level.MapName))
-                * DerivedStats.HungerThirstLossMultiplier / restFactor / TICRATE);
-        }
-        // Dormir reemplaza la pérdida pasiva de Sueño por recuperación neta.
-        // Esperar conserva la pérdida de Sueño; el soporte sólo modifica hambre/sed.
-        CaelumRestState.Validate(self);
-        if (CaelumSleepRules.IsSleeping(self))
-        {
-            if (ForcedSleepTics > 0 || CaelumRestState.HasPendingTic(self))
-                CurrentSleep = CaelumRestRules.RecoverSleep(CurrentSleep, CaelumWorldClock.MapTimeScale(level.MapName));
-        }
-        else
-            CurrentSleep = Max(0.0, CurrentSleep
-                - CaelumConstants.SURVIVAL_MAXIMUM
-                / (CaelumConstants.SLEEP_EMPTY_GAME_HOURS
-                    * CaelumWorldClock.SecondsPerGameHour(level.MapName))
-                * DerivedStats.SleepLossMultiplier / TICRATE);
-        UpdateSurvivalStates();
+        CaelumPlayerResources.UpdateSurvivalResources(self);
     }
 
     void UpdateSurvivalStates()
     {
-        HungerState = CalculateSurvivalState(CurrentHunger);
-        ThirstState = CalculateSurvivalState(CurrentThirst);
-        SleepState = CalculateSurvivalState(CurrentSleep);
-        LuciditySleepDebuffMultiplier = GetLuciditySleepDebuffMultiplier();
-
-        SurvivalRawPerformanceMultiplier = GetSurvivalStateMultiplier(HungerState)
-            * GetSurvivalStateMultiplier(ThirstState)
-            * GetSurvivalStateMultiplier(SleepState);
-
-        // Adrenaline ignores the same percentage of the missing performance
-        // as its current share of maximum. Example: raw x0.50 with 50%
-        // adrenaline becomes x0.75.
-        AdrenalinePenaltyIgnoreRatio = 0.0;
-        if (DerivedStats != null && DerivedStats.MaximumAdrenaline > 0.0)
-        {
-            AdrenalinePenaltyIgnoreRatio = Clamp(
-                CurrentAdrenaline / DerivedStats.MaximumAdrenaline,
-                0.0,
-                1.0
-            );
-        }
-        SurvivalPerformanceMultiplier = SurvivalRawPerformanceMultiplier
-            + (1.0 - SurvivalRawPerformanceMultiplier)
-            * AdrenalinePenaltyIgnoreRatio;
-        UpdateEffectiveOffensiveDamageMultiplier();
+        CaelumPlayerResources.UpdateSurvivalStates(self);
     }
 
     void UpdateLowHealthHeartbeat()
@@ -18524,173 +17987,28 @@ class CaelumPlayer : DoomPlayer
     // pain intensity. Beneficial adrenaline gains remain x2/x4.
     void UpdateHealthStateEffects()
     {
-        double healthRatio = 1.0;
-        if (CaelumMaximumHealth > 0)
-        {
-            healthRatio = Clamp(double(health) / CaelumMaximumHealth, 0.0, 1.0);
-        }
-
-        double rawIntensityMultiplier = 1.0;
-        if (healthRatio <= CaelumConstants.HEALTH_BADLY_WOUNDED_THRESHOLD)
-        {
-            HealthState = CaelumConstants.HEALTH_STATE_BADLY_WOUNDED;
-            HealthRawPerformanceMultiplier =
-                CaelumConstants.HEALTH_BADLY_WOUNDED_PERFORMANCE_MULTIPLIER;
-            rawIntensityMultiplier =
-                CaelumConstants.HEALTH_BADLY_WOUNDED_INTENSITY_MULTIPLIER;
-        }
-        else if (healthRatio <= CaelumConstants.HEALTH_WOUNDED_THRESHOLD)
-        {
-            HealthState = CaelumConstants.HEALTH_STATE_WOUNDED;
-            HealthRawPerformanceMultiplier =
-                CaelumConstants.HEALTH_WOUNDED_PERFORMANCE_MULTIPLIER;
-            rawIntensityMultiplier =
-                CaelumConstants.HEALTH_WOUNDED_INTENSITY_MULTIPLIER;
-        }
-        else
-        {
-            HealthState = CaelumConstants.HEALTH_STATE_NORMAL;
-            HealthRawPerformanceMultiplier = 1.0;
-        }
-
-        double adrenalineRatio = 0.0;
-        if (DerivedStats != null && DerivedStats.MaximumAdrenaline > 0.0)
-        {
-            adrenalineRatio = Clamp(
-                CurrentAdrenaline / DerivedStats.MaximumAdrenaline,
-                0.0,
-                1.0
-            );
-        }
-
-        HealthPatienceMitigationMultiplier = 1.0;
-        if (DerivedStats != null)
-        {
-            HealthPatienceMitigationMultiplier =
-                DerivedStats.HealthPenaltyMultiplier;
-        }
-        HealthPatienceMitigatedPerformanceMultiplier = 1.0
-            - (1.0 - HealthRawPerformanceMultiplier)
-                * HealthPatienceMitigationMultiplier;
-        HealthPerformanceMultiplier = HealthPatienceMitigatedPerformanceMultiplier
-            + (1.0 - HealthPatienceMitigatedPerformanceMultiplier)
-                * adrenalineRatio;
-        HealthPainMultiplier = 1.0
-            + (rawIntensityMultiplier - 1.0)
-                * HealthPatienceMitigationMultiplier
-                * (1.0 - adrenalineRatio);
-        HealthAdrenalineGainMultiplier = rawIntensityMultiplier;
-        UpdateEffectiveOffensiveDamageMultiplier();
+        CaelumPlayerResources.UpdateHealthStateEffects(self);
     }
 
     // One stored result keeps every present and future offensive action on the
     // same rule. Health and survival are independent penalties, so they multiply.
     void UpdateEffectiveOffensiveDamageMultiplier()
     {
-        EffectiveOffensiveDamageMultiplier = Clamp(
-            HealthPerformanceMultiplier * SurvivalPerformanceMultiplier,
-            0.0,
-            1.0
-        );
+        CaelumPlayerResources.UpdateEffectiveOffensiveDamageMultiplier(self);
     }
 
     // Cada reserva crítica de Hambre, Sed o Sueño invierte la recuperación base.
     // GZDoom usa vida entera: el daño fraccionario se acumula.
     void ApplyCriticalSurvivalDamage()
     {
-        if (player == null || player.playerstate != PST_LIVE || health <= 0)
-        {
-            return;
-        }
-
-        int criticalResourceCount = 0;
-        if (HungerState == CaelumConstants.SURVIVAL_STATE_CRITICAL) criticalResourceCount++;
-        if (ThirstState == CaelumConstants.SURVIVAL_STATE_CRITICAL) criticalResourceCount++;
-        // La fatiga deja de producir daño mientras se duerme; hambre y sed
-        // siguen siendo peligrosas. Los demás efectos críticos no se borran.
-        if (SleepState == CaelumConstants.SURVIVAL_STATE_CRITICAL
-            && !CaelumSleepRules.IsSleeping(self)) criticalResourceCount++;
-        if (criticalResourceCount <= 0)
-        {
-            // Recuperar las reservas elimina también el daño parcial pendiente.
-            SurvivalDamageAccumulator = 0.0;
-            return;
-        }
-
-        double baseDamagePerSecond = CaelumMaximumHealth
-            / CaelumConstants.HEALTH_BASE_RECOVERY_REAL_SECONDS;
-        SurvivalDamageAccumulator += baseDamagePerSecond
-            * criticalResourceCount / TICRATE;
-        int wholeDamage = int(SurvivalDamageAccumulator);
-        if (wholeDamage <= 0) return;
-
-        SurvivalDamageAccumulator -= wholeDamage;
-        health -= wholeDamage;
-        player.health = health;
-        CaelumRestState.Interrupt(self, "CA_REST_NEEDS");
-
-        // Direct health loss deliberately bypasses armor and this class's
-        // ordinary-damage adrenaline gain. Death still uses GZDoom's pipeline.
-        if (health <= 0)
-        {
-            health = 0;
-            player.health = 0;
-            Die(self, self, 0, 'CaelumSurvival');
-        }
+        CaelumPlayerResources.ApplyCriticalSurvivalDamage(self);
     }
 
     // Hambre, Sed o Sueño críticos detienen la recuperación natural.
     // Resiliencia Tipo 4 cura gastando hambre/sed según la vida restaurada.
     void ApplyNaturalHealthRegeneration()
     {
-        if (player == null
-            || player.playerstate != PST_LIVE
-            || health <= 0
-            || health >= CaelumMaximumHealth
-            || DerivedStats == null)
-        {
-            NaturalHealthRegenerationAccumulator = 0.0;
-            return;
-        }
-
-        if (HungerState == CaelumConstants.SURVIVAL_STATE_CRITICAL
-            || ThirstState == CaelumConstants.SURVIVAL_STATE_CRITICAL
-            || SleepState == CaelumConstants.SURVIVAL_STATE_CRITICAL)
-        {
-            NaturalHealthRegenerationAccumulator = 0.0;
-            return;
-        }
-
-        // Constitución divide también el coste por vida recuperada. No se
-        // reaplica la masa: el coste base ya es proporcional a la vida máxima.
-        double restFactor = CaelumRestState.ResourceFactor(self);
-        // Recuperar F veces más y gastar 1/F por tiempo requiere coste por
-        // unidad recuperada dividido por F²; las reservas siguen limitando.
-        double consumptionMultiplier =
-            DerivedStats.GetHungerThirstConsumptionMultiplier(Attributes)
-                / (restFactor * restFactor);
-        double hungerCostPerHealth = 100.0 * consumptionMultiplier / CaelumMaximumHealth;
-        double thirstCostPerHealth = 50.0 * consumptionMultiplier / CaelumMaximumHealth;
-        double affordableHealth = Min(
-            CurrentHunger / hungerCostPerHealth,
-            CurrentThirst / thirstCostPerHealth
-        );
-        if (affordableHealth <= 0.0) return;
-
-        NaturalHealthRegenerationAccumulator += Min(
-            DerivedStats.HealthRegenerationPerSecond * restFactor / TICRATE,
-            affordableHealth
-        );
-        int wholeHealing = int(NaturalHealthRegenerationAccumulator);
-        wholeHealing = Min(wholeHealing, Min(CaelumMaximumHealth - health, int(Floor(affordableHealth))));
-        if (wholeHealing <= 0) return;
-
-        NaturalHealthRegenerationAccumulator -= wholeHealing;
-        health += wholeHealing;
-        player.health = health;
-        CurrentHunger = Max(0.0, CurrentHunger - wholeHealing * hungerCostPerHealth);
-        CurrentThirst = Max(0.0, CurrentThirst - wholeHealing * thirstCostPerHealth);
-        UpdateSurvivalStates();
+        CaelumPlayerResources.ApplyNaturalHealthRegeneration(self);
     }
 
     // Recuperar 1% de Aire cuesta de base 0,1 de Hambre y 0,2 de Sed,
@@ -18698,57 +18016,7 @@ class CaelumPlayer : DoomPlayer
     // esos mismos costes para no permitir reservas negativas.
     void ApplyAirRegeneration()
     {
-        if (!AirResourceInitialized
-            || DerivedStats == null
-            || WaterLevel >= 3
-            || UnderwaterAirRecoveryDebt > 0.0
-            || UnderwaterAirRecoveryTicsRemaining > 0
-            || UnderwaterAirRecoveryAppliedThisTick
-            || IsSpendingRunningAir
-            || DebugShieldBlocking
-            || CurrentAir >= DerivedStats.MaximumAir
-            || DerivedStats.MaximumAir <= 0.0)
-        {
-            return;
-        }
-
-        double restFactor = CaelumRestState.ResourceFactor(self);
-        // Recuperar F veces más y gastar 1/F por tiempo requiere coste por
-        // unidad recuperada dividido por F²; las reservas siguen limitando.
-        double consumptionMultiplier =
-            DerivedStats.GetHungerThirstConsumptionMultiplier(Attributes)
-                / (restFactor * restFactor);
-        double hungerCostPerAir =
-            CaelumConstants.AIR_FULL_RECOVERY_HUNGER_COST
-            * consumptionMultiplier / DerivedStats.MaximumAir;
-        double thirstCostPerAir =
-            CaelumConstants.AIR_FULL_RECOVERY_THIRST_COST
-            * consumptionMultiplier / DerivedStats.MaximumAir;
-        double affordableAir = Min(
-            CurrentHunger / hungerCostPerAir,
-            CurrentThirst / thirstCostPerAir
-        );
-        if (affordableAir <= 0.0) return;
-
-        double recoveredAir = Min(
-            DerivedStats.AirRegenerationPerSecond
-                * HealthPerformanceMultiplier * restFactor / TICRATE,
-            DerivedStats.MaximumAir - CurrentAir
-        );
-        recoveredAir = Min(recoveredAir, affordableAir);
-        if (recoveredAir <= 0.0) return;
-
-        CurrentAir += recoveredAir;
-        CaelumMainM00RonnieTrial.RecordAirLesson(self, recoveredAir, false);
-        CurrentHunger = Max(
-            0.0,
-            CurrentHunger - recoveredAir * hungerCostPerAir
-        );
-        CurrentThirst = Max(
-            0.0,
-            CurrentThirst - recoveredAir * thirstCostPerAir
-        );
-        UpdateSurvivalStates();
+        CaelumPlayerResources.ApplyAirRegeneration(self);
     }
 
     // Sustituye el contador submarino paralelo de GZDoom. PlayerThink llama
@@ -18761,23 +18029,14 @@ class CaelumPlayer : DoomPlayer
 
     bool HasUnderwaterAirExemption()
     {
-        return bInvulnerable
-            || player == null
-            || (player.cheats & (CF_GODMODE | CF_NOCLIP2))
-            || (player.cheats & CF_GODMODE2);
+        return CaelumPlayerResources.HasUnderwaterAirExemption(self);
     }
 
     // La velocidad base sube por escalones completos de un segundo: 5 durante
     // los primeros 35 tics, 6 durante los siguientes 35, hasta el máximo 20.
     double GetUnderwaterBaseAirCostPerSecond()
     {
-        int completedSeconds = Max(0, (UnderwaterNoBreathTics - 1) / TICRATE);
-        return Min(
-            CaelumConstants.UNDERWATER_AIR_MAX_COST_PER_SECOND,
-            CaelumConstants.UNDERWATER_AIR_INITIAL_COST_PER_SECOND
-                + completedSeconds
-                * CaelumConstants.UNDERWATER_AIR_COST_INCREASE_PER_SECOND
-        );
+        return CaelumPlayerResources.GetUnderwaterBaseAirCostPerSecond(self);
     }
 
     // Distribuye la deuda restante entre los tics restantes. Así, incluso si
@@ -18785,146 +18044,19 @@ class CaelumPlayer : DoomPlayer
     // tic devuelve exactamente el Aire submarino que todavía falta.
     void RecoverUnderwaterAirDebt()
     {
-        UnderwaterAirRecoveryAppliedThisTick = false;
-        if (UnderwaterAirRecoveryDebt <= 0.0
-            || UnderwaterAirRecoveryTicsRemaining <= 0
-            || DerivedStats == null
-            || CurrentAir >= DerivedStats.MaximumAir)
-        {
-            if (UnderwaterAirRecoveryDebt <= 0.0
-                || CurrentAir >= DerivedStats.MaximumAir)
-            {
-                UnderwaterAirRecoveryDebt = 0.0;
-                UnderwaterAirRecoveryTicsRemaining = 0;
-            }
-            return;
-        }
-
-        // El descanso también acelera la recuperación respiratoria pendiente.
-        // El contador conserva unidades de la tasa base para poder cancelar
-        // o cambiar de soporte sin reiniciar ni inventar aire por devolver.
-        int restFactor = CaelumRestState.ResourceFactor(self);
-        double recoveredAir = Min(UnderwaterAirRecoveryDebt, Min(
-            UnderwaterAirRecoveryDebt * restFactor
-                / Max(1, UnderwaterAirRecoveryTicsRemaining),
-            DerivedStats.MaximumAir - CurrentAir
-        ));
-        CurrentAir += recoveredAir;
-        UnderwaterAirRecoveryDebt = Max(
-            0.0, UnderwaterAirRecoveryDebt - recoveredAir
-        );
-        UnderwaterAirRecoveryTicsRemaining = Max(0, UnderwaterAirRecoveryTicsRemaining-restFactor);
-        UnderwaterAirRecoveryAppliedThisTick = recoveredAir > 0.0;
-
-        if (UnderwaterAirRecoveryTicsRemaining <= 0
-            || UnderwaterAirRecoveryDebt <= 0.000001
-            || CurrentAir >= DerivedStats.MaximumAir)
-        {
-            UnderwaterAirRecoveryDebt = 0.0;
-            UnderwaterAirRecoveryTicsRemaining = 0;
-        }
-        CaelumMainM00RonnieTrial.RecordSwimLesson(self, recoveredAir, false);
+        CaelumPlayerResources.RecoverUnderwaterAirDebt(self);
     }
 
     // El parámetro separado permite auditar la regla temporal sin depender de
     // una geometría concreta. El juego normal lo obtiene de WaterLevel.
     void UpdateUnderwaterAirForState(bool withoutOxygen)
     {
-        if (!AirResourceInitialized
-            || DerivedStats == null
-            || player == null
-            || player.playerstate != PST_LIVE)
-        {
-            UnderwaterWithoutOxygen = false;
-            UnderwaterAirRecoveryAppliedThisTick = false;
-            UnderwaterNoBreathTics = 0;
-            UnderwaterDrowningTics = 0;
-            UnderwaterCurrentBaseCostPerSecond =
-                CaelumConstants.UNDERWATER_AIR_INITIAL_COST_PER_SECOND;
-            return;
-        }
-
-        UnderwaterWithoutOxygen = withoutOxygen;
-        if (!UnderwaterWithoutOxygen)
-        {
-            UnderwaterNoBreathTics = 0;
-            UnderwaterDrowningTics = 0;
-            UnderwaterCurrentBaseCostPerSecond =
-                CaelumConstants.UNDERWATER_AIR_INITIAL_COST_PER_SECOND;
-
-            if (UnderwaterAirRecoveryDebt > 0.0
-                && UnderwaterAirRecoveryTicsRemaining <= 0)
-            {
-                UnderwaterAirRecoveryTicsRemaining =
-                    CaelumConstants.UNDERWATER_AIR_RECOVERY_SECONDS * TICRATE;
-            }
-            RecoverUnderwaterAirDebt();
-            return;
-        }
-
-        // Volver a sumergirse pausa la devolución; la deuda acumulada se
-        // conserva y se suma a cualquier pérdida submarina nueva.
-        UnderwaterAirRecoveryAppliedThisTick = false;
-        UnderwaterAirRecoveryTicsRemaining = 0;
-
-        if (HasUnderwaterAirExemption())
-        {
-            UnderwaterNoBreathTics = 0;
-            UnderwaterDrowningTics = 0;
-            UnderwaterCurrentBaseCostPerSecond =
-                CaelumConstants.UNDERWATER_AIR_INITIAL_COST_PER_SECOND;
-            return;
-        }
-
-        UnderwaterNoBreathTics++;
-        UnderwaterCurrentBaseCostPerSecond =
-            GetUnderwaterBaseAirCostPerSecond();
-
-        if (CurrentAir > 0.0)
-        {
-            double underwaterAirCost =
-                UnderwaterCurrentBaseCostPerSecond
-                * DerivedStats.AirConsumptionMultiplier
-                / TICRATE;
-            double removedAir = Min(CurrentAir, underwaterAirCost);
-            CurrentAir -= removedAir;
-            UnderwaterAirRecoveryDebt += removedAir;
-            UnderwaterDrowningTics = 0;
-            CaelumMainM00RonnieTrial.RecordSwimLesson(self, removedAir, true);
-            return;
-        }
-
-        UnderwaterDrowningTics++;
-        if ((UnderwaterDrowningTics
-                % CaelumConstants.DROWNING_DAMAGE_INTERVAL_TICS) != 0)
-        {
-            return;
-        }
-
-        int drowningSecond = Max(1, UnderwaterDrowningTics / TICRATE);
-        double drowningHealthPercent = Min(
-            CaelumConstants.DROWNING_MAX_HEALTH_PERCENT_PER_SECOND,
-            CaelumConstants.DROWNING_INITIAL_HEALTH_PERCENT_PER_SECOND
-                + (drowningSecond - 1)
-                    * CaelumConstants.DROWNING_HEALTH_PERCENT_INCREASE_PER_SECOND
-        );
-        int drowningDamage = Max(
-            1,
-            int(CaelumMaximumHealth * drowningHealthPercent / 100.0 + 0.5)
-        );
-        DamageMobj(
-            null,
-            null,
-            drowningDamage,
-            'Drowning',
-            DMG_NO_ARMOR,
-            Angle
-        );
+        CaelumPlayerResources.UpdateUnderwaterAirForState(self, withoutOxygen);
     }
 
     void UpdateUnderwaterAir()
     {
-        UpdateUnderwaterAirForState(WaterLevel >= 3);
+        CaelumPlayerResources.UpdateUnderwaterAir(self);
     }
 
     void LoseDebugHunger() { CurrentHunger = Max(0.0, CurrentHunger - CaelumConstants.DEBUG_SURVIVAL_LOSS); UpdateSurvivalStates(); }
@@ -18943,15 +18075,7 @@ class CaelumPlayer : DoomPlayer
     // multiplier as every other physical air-consuming action.
     void ConsumeJumpAir()
     {
-        if (DerivedStats == null)
-        {
-            return;
-        }
-
-        double finalCost = CaelumConstants.JUMP_AIR_COST
-            * DerivedStats.AirConsumptionMultiplier;
-        CurrentAir = Max(0.0, CurrentAir - finalCost);
-        UpdateAirStateEffects();
+        CaelumPlayerResources.ConsumeJumpAir(self);
     }
 
     // Keep the temporary debug control routed through the exact same function
@@ -18981,77 +18105,14 @@ class CaelumPlayer : DoomPlayer
 
     double GetAirRatio()
     {
-        if (DerivedStats == null || DerivedStats.MaximumAir <= 0.0)
-        {
-            return 0.0;
-        }
-
-        return CurrentAir / DerivedStats.MaximumAir;
+        return CaelumPlayerResources.GetAirRatio(self);
     }
 
     // Store the state and effective evasion in play scope. The UI reads these
     // fields directly, avoiding forbidden play-to-UI function calls.
     void UpdateAirStateEffects()
     {
-        double ratio = GetAirRatio();
-
-        if (ratio <= CaelumConstants.AIR_BREATHLESS_THRESHOLD)
-        {
-            AirState = CaelumConstants.AIR_STATE_BREATHLESS;
-            AirStatePerformanceMultiplier = CaelumConstants.BREATHLESS_PERFORMANCE_MULTIPLIER;
-        }
-        else if (ratio <= CaelumConstants.AIR_TIRED_THRESHOLD)
-        {
-            AirState = CaelumConstants.AIR_STATE_TIRED;
-            AirStatePerformanceMultiplier = CaelumConstants.TIRED_PERFORMANCE_MULTIPLIER;
-        }
-        else
-        {
-            AirState = CaelumConstants.AIR_STATE_NORMAL;
-            AirStatePerformanceMultiplier = 1.0;
-        }
-
-        // El texto "sin oxígeno" describe la imposibilidad de respirar. Las
-        // penalizaciones de rendimiento continúan dependiendo del Aire real.
-        if (UnderwaterWithoutOxygen)
-        {
-            AirState = CaelumConstants.AIR_STATE_NO_OXYGEN;
-        }
-
-        if (DerivedStats != null)
-        {
-            // La penalización de carga depende únicamente del porcentaje de
-            // capacidad usado. 0% = 100% rendimiento; 50% = 50%;
-            // 100% o más = 0%. La masa corporal absoluta no interviene.
-            double loadPerformanceMultiplier = 1.0 - Clamp(
-                DerivedStats.LoadRatio, 0.0, 1.0
-            );
-
-            EffectiveEvasionChance = DerivedStats.BaseEvasionChance
-                * loadPerformanceMultiplier
-                * AirStatePerformanceMultiplier
-                * HealthPerformanceMultiplier;
-
-            EffectiveMovementPercent = DerivedStats.BaseMovementPercent
-                * loadPerformanceMultiplier
-                * AirStatePerformanceMultiplier
-                * SurvivalPerformanceMultiplier
-                * HealthPerformanceMultiplier;
-
-            // El salto mantiene sqrt(Tipo 1 de Agilidad), pero la penalización
-            // por carga usa la misma regla porcentual nueva que el movimiento.
-            double jumpAgilityTypeOnePercent =
-                DerivedStats.CalculateType1Percent(Attributes.Agility);
-            double jumpAgilityFactor = Sqrt(
-                Max(0.0, jumpAgilityTypeOnePercent / 100.0)
-            );
-            EffectiveJumpHeightPercent = 100.0
-                * jumpAgilityFactor
-                * loadPerformanceMultiplier
-                * AirStatePerformanceMultiplier
-                * SurvivalPerformanceMultiplier
-                * HealthPerformanceMultiplier;
-        }
+        CaelumPlayerResources.UpdateAirStateEffects(self);
     }
 
     void CycleRace()

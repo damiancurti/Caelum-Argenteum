@@ -1,6 +1,55 @@
 # Caelum Argenteum — Project, status and roadmap
 
-Documentation version: **5.0.0** — 2026-10-06.
+Documentation version: **5.0.1** — 2026-10-06.
+
+## 5.0.1 — Player character/resource adapters (#117)
+
+Accepted baseline: #116 / 5.0.0, merged as `6e8f0d66` after the author's
+2026-10-06 confirmation that all tests passed. PR #122 is merged and #116 closed.
+
+This focused stage moves ten draft/profile operations to
+`player/CaelumPlayerCharacter.zs` and 29 resource operations to
+`player/CaelumPlayerResources.zs`. Both are stateless play-scope services taking
+an explicit `CaelumPlayer`. Existing entry points forward parameters and return
+values; the pawn retains all 604 field declarations and 544 method signatures.
+The 505 other method bodies, including native callbacks, input, travel persistence,
+equipment, attack dispatch and the personal-time coordinator, remain unchanged.
+The pawn implementation shrinks by 939 lines; this is not full modularization.
+
+The helpers reuse `CaelumCharacterProfile`, `CaelumCharacterAllocation`,
+`CaelumAttributes`, `CaelumDerivedStats`, and existing rest/sleep/catalogue rules.
+They add no owner, constructor, migration, initialization call or timer step.
+Profile recomputation still calls existing inventory/jewelry/Tarot adapters in
+the original order; resource operations still mutate live pawn values, with
+the existing explicit record snapshots at persistence boundaries. SYSTEMS
+defines the contracts; the exact method list and static proof are in
+`assets/validation_501/EXTRACTION.json`. Native evidence and its limits are in
+`assets/validation_501/RESULTS.json`. No balance, map, asset or UI change is made.
+
+The #116 proposed A2 inventory slice conflicted with #117's explicit requirement
+to leave inventory and Tarot to following issues. The issue dependency chain
+takes precedence: A2 below now names this player stage, A3 maps to #118 and A4
+to #119. This records the discrepancy instead of silently broadening #117.
+Further transaction/combat/siege/session work remains separate. The author
+confirmed all #117 tests passed on 2026-10-06 and authorized PR #123 merge
+and issue closure; measured performance limitations below remain.
+
+Native equivalence: 249 assertions on each implementation, 93 identical output
+rows and 592 equivalent serialized pawn fields (object references resolved by
+value), plus old/new/re-saved loads and original-package rollback. Scripted native
+menu checks confirm the 4+30-point draft and its consumption at MAP01 startup in
+both languages; the final introduction keypress remains an ordinary author check.
+
+Performance is a reported regression, not a passing optimization claim. Each
+MAP06 sample measures the same 1,680 tics; all 49 scene/population observations
+match across four runs. Base/current: 12.546/11.794 tics/s (-5.99%); reversed-order
+repeat: 12.633/12.017 (-4.88%). Three native single-tic player samples average
+0.0381 ms before and 0.0489 ms after (+0.0108 ms). These sparse pawn samples do
+not account for the complete scene delta or isolate its cause. Desktop load,
+renderer/driver and profiling noise are not controlled; no whole-scene causal
+attribution or speedup is claimed. Carry this evidence into #120's integrated
+comparison and any measured performance follow-up; army counts and accepted rules
+remain unchanged.
 
 ## 5.0.0 — Architecture audit and first presentation extraction (#116)
 
@@ -62,11 +111,11 @@ a rewrite or silently expand #116 further.
 | Slice / prerequisite | Bounded change and adapter | Required acceptance before the next slice |
 | --- | --- | --- |
 | A1 — this issue | Audit ownership/dependencies and MAP06 baseline; extract only the three presentation routines above, retaining pawn fields | Static declaration/body equivalence, native projection checks, current save/reload and bilingual UI observations; record performance limits separately. |
-| A2 — after A1 | Extract exact-item lookup, ID allocation and inventory query helpers behind existing `FindNative*`/`EnsureEquipmentItemId` entry points; keep acquisition and transactions in place | Two identical items retain distinct IDs/durability; acquisition/Box capacity/filter/order and empty inventory agree; no duplicate native objects after refresh/travel. |
-| A3 — after A2 | Separate inventory mutation/equipment reconciliation; keep native pickup/selector classes and existing models as adapters | Equip, unequip, drop, break, projectile wear, exact repair target and Box movement; rollback inventory quantity/identity on rejected actions. |
-| A4 — after A3 | Extract crafting task operations, then merchant transaction operations in separate commits/issues; keep current record/live handoff explicit | Reservations, cancellation, completion and payment/reward exactly once; pause/session loss, travel and reload; no free duplication or lost stock. |
-| A5 — after inventory contracts | Extract resource-time step, then combat dispatch separately; preserve `Tick` ordering and native movement/weapon states | Normal versus accelerated personal time, input press/hold/release, ammunition/resource spending, interruption and exact item wear; existing attack cadence and physics outcomes unchanged. |
-| A6 — after A2 and A5 | Reduce player quest/Tarot methods to existing shared services, one transition family at a time | Capture/select/activate/expire, physical deck/Box gate, quest facts and reward idempotence; no UI refresh grants or timing changes. |
+| A2 — #117, after A1 | Delegate draft/profile and resource policies to stateless services; retain fields, native callbacks, input and personal-time ordering | Exact body/declaration equivalence; native profile/resource matrix, old/new save/reload and hub return; selectors/creation retain behavior. |
+| A3 — #118, after A2 | Consolidate exact-item lookup, ID allocation, inventory queries, mutation and equipment reconciliation in bounded steps; retain native pickups/selectors | Two identical items retain IDs/wear; Box capacity, reservations, rejected transactions, equip/drop/break/repair and save/travel neither lose nor duplicate items. |
+| A4 — #119, after A3 | Consolidate Tarot through existing shared services and the inventory contract; keep separate Trucazo/Truco match state | Capture/select/activate/expire, physical deck/Box gate, bonuses and reward idempotence; no UI refresh grants or timing changes. |
+| A5 — after inventory contracts | Extract crafting task operations, then merchant transaction operations in separate focused changes; retain record/live handoff | Reservations, cancellation, completion and payment/reward exactly once; pause/session loss, travel and reload; no free duplication or lost stock. |
+| A6 — after player/inventory contracts | Further isolate combat dispatch and narrative transitions individually; keep the resource adapters and native movement/weapon states | Press/hold/release, ammunition/resource spending, interruption and exact item wear; attack cadence/physics and quest reward idempotence unchanged. |
 | A7 — after measured ownership review | Separate map-local targeting, command rebuild and siege adapters individually; do not replace actors or change AI cadence in an organization patch | Same roster/losses/targets/crew and group limits; scene-matched native profiling and responsiveness evidence; performance changes require their own measured purpose. |
 | A8 — after single-player domains stabilize | Isolate shared-session authority and define supported participant model explicitly | Author decisions for shared time/progress/rewards precede implementation; per-player isolation and multi-client tests are mandatory before claiming network support. |
 

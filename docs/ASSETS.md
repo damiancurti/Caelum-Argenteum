@@ -1,6 +1,6 @@
 # Caelum Argenteum — Audio and art
 
-Documentation version: **5.0.0** — 2026-10-06.
+Documentation version: **5.0.1** — 2026-10-06.
 
 ## 4.37.24 — Reproducible closing export (#82)
 

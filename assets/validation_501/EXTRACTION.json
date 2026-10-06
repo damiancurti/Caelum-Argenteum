@@ -1,0 +1,70 @@
+{
+  "baseline": "6e8f0d66d718740f503a5ccf181241711d20140f",
+  "result": "PASS",
+  "unchanged_field_declarations": 604,
+  "unchanged_signatures": 544,
+  "moved_methods": {
+    "CaelumPlayerCharacter": [
+      "ReadNewCharacterDraft",
+      "ReadNewCharacterLayer",
+      "ReadNewCharacterAttribute",
+      "NewCharacterDraftIsReady",
+      "ClearNewCharacterDraftReady",
+      "ValidateLoadedNewCharacterDraft",
+      "ConsumeNewCharacterDraft",
+      "InitializeDirectMapCharacter",
+      "EnsureCurrentAttributeBalance",
+      "ApplyCharacterProfile"
+    ],
+    "CaelumPlayerResources": [
+      "AddAdrenaline",
+      "AddCombatAdrenaline",
+      "MarkCombatActivity",
+      "UpdateAdrenalineDecay",
+      "ApplyConsumableRegenerationPulse",
+      "ApplyLocalizedLucidityLoss",
+      "GetLuciditySleepDebuffMultiplier",
+      "UpdateLucidityState",
+      "UpdateLucidityAccuracyEffects",
+      "UpdateLucidityPhysicalStun",
+      "UpdatePainImmobilization",
+      "CalculateSurvivalState",
+      "GetSurvivalStateMultiplier",
+      "IsSubmergedInPotableWater",
+      "UpdateSurvivalResources",
+      "UpdateSurvivalStates",
+      "UpdateHealthStateEffects",
+      "UpdateEffectiveOffensiveDamageMultiplier",
+      "ApplyCriticalSurvivalDamage",
+      "ApplyNaturalHealthRegeneration",
+      "ApplyAirRegeneration",
+      "HasUnderwaterAirExemption",
+      "GetUnderwaterBaseAirCostPerSecond",
+      "RecoverUnderwaterAirDebt",
+      "UpdateUnderwaterAirForState",
+      "UpdateUnderwaterAir",
+      "ConsumeJumpAir",
+      "GetAirRatio",
+      "UpdateAirStateEffects"
+    ]
+  },
+  "stateless_services": true,
+  "unchanged_other_method_bodies": 505,
+  "player_lines_removed": 939,
+  "package_members_added": [
+    "caelum/player/CaelumPlayerCharacter.zs",
+    "caelum/player/CaelumPlayerResources.zs"
+  ],
+  "package_members_changed": [
+    "ZSCRIPT",
+    "caelum/player/CaelumPlayer.zs",
+    "caelum/player/CaelumPlayerPresentation.zs",
+    "caelum/world/CaelumPhysicalHazards.zs",
+    "caelum/world/CaelumSewerMaze.zs"
+  ],
+  "package_members_removed": [],
+  "checkout_newline_only_members": [
+    "caelum/player/CaelumPlayerPresentation.zs"
+  ],
+  "package_sha256": "23ac1ba1b0aa08899306d0e53753533a997f8d75b5dfd7e63802e11da3da4d2b"
+}

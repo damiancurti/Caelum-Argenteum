@@ -1,0 +1,568 @@
+{
+  "issue": 117,
+  "release": "5.0.1",
+  "date": "2026-10-06",
+  "baseline_commit": "6e8f0d66d718740f503a5ccf181241711d20140f",
+  "static": {
+    "baseline": "6e8f0d66d718740f503a5ccf181241711d20140f",
+    "result": "PASS",
+    "unchanged_field_declarations": 604,
+    "unchanged_signatures": 544,
+    "moved_methods": {
+      "CaelumPlayerCharacter": [
+        "ReadNewCharacterDraft",
+        "ReadNewCharacterLayer",
+        "ReadNewCharacterAttribute",
+        "NewCharacterDraftIsReady",
+        "ClearNewCharacterDraftReady",
+        "ValidateLoadedNewCharacterDraft",
+        "ConsumeNewCharacterDraft",
+        "InitializeDirectMapCharacter",
+        "EnsureCurrentAttributeBalance",
+        "ApplyCharacterProfile"
+      ],
+      "CaelumPlayerResources": [
+        "AddAdrenaline",
+        "AddCombatAdrenaline",
+        "MarkCombatActivity",
+        "UpdateAdrenalineDecay",
+        "ApplyConsumableRegenerationPulse",
+        "ApplyLocalizedLucidityLoss",
+        "GetLuciditySleepDebuffMultiplier",
+        "UpdateLucidityState",
+        "UpdateLucidityAccuracyEffects",
+        "UpdateLucidityPhysicalStun",
+        "UpdatePainImmobilization",
+        "CalculateSurvivalState",
+        "GetSurvivalStateMultiplier",
+        "IsSubmergedInPotableWater",
+        "UpdateSurvivalResources",
+        "UpdateSurvivalStates",
+        "UpdateHealthStateEffects",
+        "UpdateEffectiveOffensiveDamageMultiplier",
+        "ApplyCriticalSurvivalDamage",
+        "ApplyNaturalHealthRegeneration",
+        "ApplyAirRegeneration",
+        "HasUnderwaterAirExemption",
+        "GetUnderwaterBaseAirCostPerSecond",
+        "RecoverUnderwaterAirDebt",
+        "UpdateUnderwaterAirForState",
+        "UpdateUnderwaterAir",
+        "ConsumeJumpAir",
+        "GetAirRatio",
+        "UpdateAirStateEffects"
+      ]
+    },
+    "stateless_services": true,
+    "unchanged_other_method_bodies": 505,
+    "player_lines_removed": 939,
+    "package_members_added": [
+      "caelum/player/CaelumPlayerCharacter.zs",
+      "caelum/player/CaelumPlayerResources.zs"
+    ],
+    "package_members_changed": [
+      "ZSCRIPT",
+      "caelum/player/CaelumPlayer.zs",
+      "caelum/player/CaelumPlayerPresentation.zs",
+      "caelum/world/CaelumPhysicalHazards.zs",
+      "caelum/world/CaelumSewerMaze.zs"
+    ],
+    "package_members_removed": [],
+    "checkout_newline_only_members": [
+      "caelum/player/CaelumPlayerPresentation.zs"
+    ],
+    "package_sha256": "23ac1ba1b0aa08899306d0e53753533a997f8d75b5dfd7e63802e11da3da4d2b"
+  },
+  "runs": {
+    "baseline-domains-final": {
+      "checks": 249,
+      "result": "PASS",
+      "txt": {
+        "source_sha256": "922cf2ffb2b70068f5b331f9325763f29a1a726c662955f86e15237ab39d3dfe",
+        "archive_sha256": "0d0bd1858e37dfa7bb76aff87f859a435fed1ae32d3de808953b47f7e1044efb"
+      },
+      "ini": {
+        "source_sha256": "f726cc440ac24dcda980e7cb0f82dc3bfe5ef50816ae24c2f89220775d950e0e",
+        "archive_sha256": "926248eb61f1ffb07c91d564f5fe915adaa748f988d315600da1071a5277c93e"
+      },
+      "-run.json": {
+        "source_sha256": "7a7821ee5f5fcbac985c508dd647bbea73ad7f09a673bba0495dd262ea954830",
+        "archive_sha256": "c5ac58e66098b935f28ec7fb6ee5a5e09f7c3617af71f48fdc7a74b9371280ae"
+      }
+    },
+    "current-domains": {
+      "checks": 249,
+      "result": "PASS",
+      "txt": {
+        "source_sha256": "90500b68c0122a9023ca0d471cb775e0ec5130d133f5a2d0496193943f97483a",
+        "archive_sha256": "6820e3e2d0889cab8a1c8fb2cc26469cd3cd18a2917b67d948534e31513ec04a"
+      },
+      "ini": {
+        "source_sha256": "f54434de48d4bf784f56ac68488b79e1efee56a196f293fb7961b43790934a0c",
+        "archive_sha256": "1cd6ab66e66040aeb2efd099091f4751c54005ba595db78519b8154fa7265c05"
+      },
+      "-run.json": {
+        "source_sha256": "f223eede33ab36d34bc5f3fa136ba25461bff610f2fcc13e04f5d195902e3bb1",
+        "archive_sha256": "b46d4ad56c214b45a82e8df877e91d2b08c0b8dde81594f51552c404f6d94973"
+      }
+    },
+    "old-save-current-final": {
+      "checks": 45,
+      "result": "PASS",
+      "txt": {
+        "source_sha256": "4a160c3a0953e92167a19a48d557a4fa1d75ede0e31f7757d77814bebfc4e4c1",
+        "archive_sha256": "b0dfa906fc9f1c0773644fd04ac331cbb33f18961cecf88d2d49a71672e87e9c"
+      },
+      "ini": {
+        "source_sha256": "bcb1d5650e760b4c480bae99b544e75e04d34c0507781b302a030d436eafaa2c",
+        "archive_sha256": "8780888476aa521420f2a5a057fd6190b01b8e264630cd7d2ba9aa9556bf73ab"
+      },
+      "-run.json": {
+        "source_sha256": "2d62ea1402475104d2138532c2626708dc387ab674da231bd34fee314266f079",
+        "archive_sha256": "dcc1b34f5d0de2c13743dcbd9b566e76052d432180c6fbb7153c3b07bf7bae1c"
+      }
+    },
+    "new-save-reload": {
+      "checks": 9,
+      "result": "PASS",
+      "txt": {
+        "source_sha256": "d0eb9533947ca05c16e6052c96852b6ca3ebccdf52e8fae74cd0c943dc01f589",
+        "archive_sha256": "e1a49db866c17d5617bca441cc1c0e0f5507733613744b98cb2581a28aa3f27e"
+      },
+      "ini": {
+        "source_sha256": "34d6e6536da0c3107e105c7d27b7cfe97932573f07f0d5e60916fe7c4eb082d3",
+        "archive_sha256": "646c34f665a1af6bfe66df6a5eb0ee59b7044f4317f52cd1f00abe26156b8a11"
+      },
+      "-run.json": {
+        "source_sha256": "dd4a9e66a736b39788733bd2f8df32ff815d72c25d2ddfba054d2c7569b5ce52",
+        "archive_sha256": "3d86f485aa11170298e3a8bd3e1f29c3486d51aaa7d76965373f2ed9f1a4e160"
+      }
+    },
+    "upgraded-save-reload": {
+      "checks": 9,
+      "result": "PASS",
+      "txt": {
+        "source_sha256": "c732f5f091f93d7c49c83169a64c5efac508b26c7999922bef664b273e239d63",
+        "archive_sha256": "41fa5d1468d1db60c3f31001fe2d19e23b116e87d3632dfeda1c15e375354298"
+      },
+      "ini": {
+        "source_sha256": "25fefe440a7b8392bb48a35bc9afef08ed4a05c67707123e7da5989c0e8735d6",
+        "archive_sha256": "db48544214f2b5ea4c2c3edd5e8db8e741f861bf7a5f330feb2688b2bb2a43a1"
+      },
+      "-run.json": {
+        "source_sha256": "41033d4cde2db2797546bb74dd0d93109f203d71c91171b91a6153e5a6a1cddd",
+        "archive_sha256": "484e043d6e16d5bb79fc224bb5f12776a52e43824ca48634aa973fd8897c98a8"
+      }
+    },
+    "original-save-rollback": {
+      "checks": 9,
+      "result": "PASS",
+      "txt": {
+        "source_sha256": "0e3108afcc8c529456d4d5e29e9d03ab1676be1a09dbc5a8501eab7334857a88",
+        "archive_sha256": "e21399e948739672fe49baa53660ced94fc139249c737b39f4c85baed1c2d26c"
+      },
+      "ini": {
+        "source_sha256": "e1dcff322c480f4146148f3cf1dcc1f88546ae2ff690dbde20b38f49eaea13f7",
+        "archive_sha256": "8619063f77de04463129a223210a49479b95d77502b2e2e526871b6299118dac"
+      },
+      "-run.json": {
+        "source_sha256": "586e0f96e2c9bb57c0a499ac92519f69d4d34b2193f4c17a983eb3e1fc9590db",
+        "archive_sha256": "9873b17a8420a9374c174ec97ca724335b1434d2979b92a879ef76244b067cf0"
+      }
+    },
+    "baseline-performance": {
+      "checks": null,
+      "result": "MEASURED",
+      "txt": {
+        "source_sha256": "d524a2678697889f2d0e23f639f0da5263b6e98af8cb0324e9a94b432dda9553",
+        "archive_sha256": "c690ab8fe95037341e190c862759e2e6c59c58bbaedca73171b380f488b8e0a8"
+      },
+      "ini": {
+        "source_sha256": "818d0ef7a72b4c4e67a288463b04b720338acb42b26c04a5ba0048a93e8b0f94",
+        "archive_sha256": "50fb7409bbae43b97325f6e93b79f3f95ba6a0fdc7b46c0cd8941795450e0a9e"
+      },
+      "-run.json": {
+        "source_sha256": "1358a31b0af519957911c99dd11b10a115281bf69f5592281ec2c217fe55b650",
+        "archive_sha256": "a357b62f8795633ca6e4b206f47f7d996647a3fc58f596d63692e4dfc5ecf213"
+      }
+    },
+    "current-performance": {
+      "checks": null,
+      "result": "MEASURED",
+      "txt": {
+        "source_sha256": "166ae75bc5272bc68b337cc47b94538855264c3c3f08b5000dbcd075ce5fb1ce",
+        "archive_sha256": "fc42c8b3c2a4b1e61066966559951c056513ed3512c56b282db889897a87ad92"
+      },
+      "ini": {
+        "source_sha256": "7e4901ea6158f1362597dc58e92d91025d0207cb9a4d048764b806208a7cf147",
+        "archive_sha256": "479000daef934c7fd98fddbec9297d4dffcfef065efef93dce3e159debf814ac"
+      },
+      "-run.json": {
+        "source_sha256": "ce1916be41da1e663a3e87aeef113c6d5fef788216118ce2b43692dc91700042",
+        "archive_sha256": "5424227b4d849e5c26b88524082636499a5fc4d3202618198bb6fc86b7ff37ea"
+      }
+    },
+    "current-performance-repeat": {
+      "checks": null,
+      "result": "MEASURED",
+      "txt": {
+        "source_sha256": "fee46a9dda003da8b4ae1661d8a1377e83ea2f97f64ca44f75a5fc9a42d7e3bb",
+        "archive_sha256": "e39c39963d2b8fe455641e5d3cc3b506d518ae709dec9cc9666d643abb5a04eb"
+      },
+      "ini": {
+        "source_sha256": "a0959e5d0e2b962ea187f1a30610ec88ef811aee441ce15b6784834242ffd4cf",
+        "archive_sha256": "d96a540e0e90b836a3c6fd136eb08ac03269415e60afd92c0adef76e55ef4dba"
+      },
+      "-run.json": {
+        "source_sha256": "d93f2c409a2573f1b35b3e77c55b066a57c15568b3b503e324a360cb6ed4c3b5",
+        "archive_sha256": "364ef72052cfd56abd4478af6a0daad4fc9abd68a2e9d865586e7b1eed2a2f12"
+      }
+    },
+    "baseline-performance-repeat": {
+      "checks": null,
+      "result": "MEASURED",
+      "txt": {
+        "source_sha256": "f4335779ffe7ced0926e13c5ae46cf35d5e348d958acd959b71e544a3e4e1dba",
+        "archive_sha256": "7b2a335361d7d265069f55f8fb4915ac65cfb19a18f6863906c7dfe9e650f642"
+      },
+      "ini": {
+        "source_sha256": "b3ec30f7fc70439b0f3a47276e906f545ed58b347e646df8409017dde4befda3",
+        "archive_sha256": "5bcbfc33b4fe58872e079a39f830ab229f3435002b7aa2c045fdfb8aaef49f31"
+      },
+      "-run.json": {
+        "source_sha256": "3114c8892db4e55e8ae746c95c743eb623712d994a92157a9ee74b35c3bf002a",
+        "archive_sha256": "ac3c6ee183e4fcc848835a7d8da760701ba3a372ab2d32b8a2bbfe3e0ae56fd3"
+      }
+    },
+    "menu-flow-es-final": {
+      "checks": null,
+      "result": "PASS",
+      "txt": {
+        "source_sha256": "f227f52710a90c95aa31ae18712a8182a5055d153a49e11bca791edf7d09a2c0",
+        "archive_sha256": "92d3bfa0f984adf119a3c8fbd5b340df9336dc41abaae01da142b4bb572fe95f"
+      },
+      "ini": {
+        "source_sha256": "b8db0a13285eb8329f4fe74d7fa999d23bc39bd2355534be66fad0f6b7b0d7eb",
+        "archive_sha256": "a4f783c33cc86edc2f3ec0cb29d31b3d6972644a8f05b8e90e7c7b5de7a48a88"
+      },
+      "-run.json": {
+        "source_sha256": "b990dee1458314002c4920b1bbb9642c59db866fd5e6f1c56311d9507a1452f6",
+        "archive_sha256": "02b94774b150081c434988dda24a5b06c6d7c2b158cdbcd5c7ff02be37dcd13c"
+      }
+    },
+    "menu-flow-enu-final": {
+      "checks": null,
+      "result": "PASS",
+      "txt": {
+        "source_sha256": "8dc77b086febf3811ba622c8d2517262d5ccd475929e99dae8ba177fd06a45c1",
+        "archive_sha256": "4d2e8e78579d66f53d6f30f61cbe8399cf9c8481a2189dce47174f717acf0c42"
+      },
+      "ini": {
+        "source_sha256": "82ed8df6c41da6b22f7cfac10c60a28529f069e3156c0f3d6dfa34e56d7388b5",
+        "archive_sha256": "f0d3673c6f96b6fbf83d9ebb69b1857f866a8c52a9f58ade8863e39d1badfc3a"
+      },
+      "-run.json": {
+        "source_sha256": "8527384f99af9b91d08e227b048cd2e35073886495448335e5b8400d3fce14b5",
+        "archive_sha256": "7a4b8bbf41a5cf9accae0409dccc68cffe94fe0add5285e52b6d026d27bba688"
+      }
+    }
+  },
+  "equivalence": {
+    "matching_value_rows": 93,
+    "profile_combinations": 64,
+    "identical_serialized_pawn_fields_at_fresh_save": 592,
+    "result": "PASS"
+  },
+  "saves": [
+    {
+      "save": "ca117_baseline_hub.zds",
+      "sha256": "2e9aeb10c8b51cc5eb26fd37247b9963d023f173038df4f071aca0a877025e81",
+      "run": "old-save-current-final",
+      "exact_serialized_resource_values_checked": 15,
+      "result": "PASS"
+    },
+    {
+      "save": "ca117_current_hub.zds",
+      "sha256": "3bdcc8b0a06feca7fc2938b0ec5b86738f1d585a90354f008caaed573c62f3c8",
+      "run": "new-save-reload",
+      "exact_serialized_resource_values_checked": 15,
+      "result": "PASS"
+    },
+    {
+      "save": "ca117_upgraded.zds",
+      "sha256": "4b882be7bdd0634278406c7008d1b0b9c499ca3fd0d28c2faa49f3b560f860ca",
+      "run": "upgraded-save-reload",
+      "exact_serialized_resource_values_checked": 15,
+      "result": "PASS"
+    },
+    {
+      "save": "ca117_baseline_hub.zds",
+      "sha256": "2e9aeb10c8b51cc5eb26fd37247b9963d023f173038df4f071aca0a877025e81",
+      "run": "original-save-rollback",
+      "exact_serialized_resource_values_checked": 15,
+      "result": "PASS"
+    }
+  ],
+  "native_menu_flow": {
+    "enu": {
+      "result": "PASS",
+      "profile": {
+        "Race": 2,
+        "FirstClass": 0,
+        "SecondClass": 3,
+        "Sex": 0,
+        "HeightChoice": 1
+      },
+      "allocation": {
+        "LayerBonus": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "AttributeBonus": [
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2
+        ],
+        "SelectedLayer": 0,
+        "SelectedAttribute": 0
+      },
+      "captures": {
+        "journal-enu.png": "8367ae61bdfc7c1e19c6ecb66130490e87f338b29e0283e0d11260e500ca0ed6",
+        "creator-summary-enu.png": "60cb281d2fcd78894dad7fef1d4be79d4a0fd9702724d2e7809e2883beb1c3c7",
+        "created-map01-enu.png": "b883e726c677f6e7b6b0312046ac877639eda4d48beedf7c5689e008f378a96d"
+      },
+      "route": "Native menu events confirm draft; console map MAP01 consumes it through PostBeginPlay. Final physical introduction keypress not covered.",
+      "movement": "Scheduled native +forward/+jump/-forward/-jump commands; physical device latency not measured."
+    },
+    "es": {
+      "result": "PASS",
+      "profile": {
+        "Race": 2,
+        "FirstClass": 0,
+        "SecondClass": 3,
+        "Sex": 0,
+        "HeightChoice": 1
+      },
+      "allocation": {
+        "LayerBonus": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "AttributeBonus": [
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2
+        ],
+        "SelectedLayer": 0,
+        "SelectedAttribute": 0
+      },
+      "captures": {
+        "journal-es.png": "e6f2a4e63273e0be35903d6ba68967cbab056c9e271ef7261e98d30f5134bdb0",
+        "creator-summary-es.png": "412ea051366088479fe17339d6c7c7b2471971004aea178e891dfac8336516ec",
+        "created-map01-es.png": "d06856cb47c9d0e00b34758a6667c1a5886ac0a78f4c0ba1e06ca383d407e977"
+      },
+      "route": "Native menu events confirm draft; console map MAP01 consumes it through PostBeginPlay. Final physical introduction keypress not covered.",
+      "movement": "Scheduled native +forward/+jump/-forward/-jump commands; physical device latency not measured."
+    }
+  },
+  "visual_inspection": "All six archived Journal, creator-summary and created-MAP01 captures inspected in English/Spanish; existing layout/localization retained.",
+  "performance": {
+    "before": {
+      "tics": 1680,
+      "wall_seconds": 133.91004800000002,
+      "tics_per_second": 12.54573517888665,
+      "first": {
+        "tic": "35",
+        "ms": "7821.803",
+        "roster": "6001",
+        "attackers": "6001",
+        "defenders": "600",
+        "groups": "64",
+        "x": "0.000",
+        "y": "320.000",
+        "z": "-0.000",
+        "angle": "90.000"
+      },
+      "last": {
+        "tic": "1715",
+        "ms": "141731.851",
+        "roster": "6001",
+        "attackers": "5989",
+        "defenders": "599",
+        "groups": "82",
+        "x": "0.000",
+        "y": "320.000",
+        "z": "-0.000",
+        "angle": "90.000"
+      },
+      "overlay_interval_median_ms": 1085.606,
+      "overlay_interval_max_ms": 3084.48,
+      "overlay_samples": 103,
+      "player_single_tic_profile_ms": []
+    },
+    "after": {
+      "tics": 1680,
+      "wall_seconds": 142.448011,
+      "tics_per_second": 11.793776467682655,
+      "first": {
+        "tic": "35",
+        "ms": "7651.097",
+        "roster": "6001",
+        "attackers": "6001",
+        "defenders": "600",
+        "groups": "64",
+        "x": "0.000",
+        "y": "320.000",
+        "z": "-0.000",
+        "angle": "90.000"
+      },
+      "last": {
+        "tic": "1715",
+        "ms": "150099.108",
+        "roster": "6001",
+        "attackers": "5989",
+        "defenders": "599",
+        "groups": "82",
+        "x": "0.000",
+        "y": "320.000",
+        "z": "-0.000",
+        "angle": "90.000"
+      },
+      "overlay_interval_median_ms": 1211.041,
+      "overlay_interval_max_ms": 3051.027,
+      "overlay_samples": 103,
+      "player_single_tic_profile_ms": []
+    },
+    "throughput_change_percent": -5.993739709008638,
+    "reversed_order_repeat_before": {
+      "tics": 1680,
+      "wall_seconds": 132.98220299999997,
+      "tics_per_second": 12.633269430797446,
+      "first": {
+        "tic": "35",
+        "ms": "7186.996",
+        "roster": "6001",
+        "attackers": "6001",
+        "defenders": "600",
+        "groups": "64",
+        "x": "0.000",
+        "y": "320.000",
+        "z": "-0.000",
+        "angle": "90.000"
+      },
+      "last": {
+        "tic": "1715",
+        "ms": "140169.199",
+        "roster": "6001",
+        "attackers": "5989",
+        "defenders": "599",
+        "groups": "82",
+        "x": "0.000",
+        "y": "320.000",
+        "z": "-0.000",
+        "angle": "90.000"
+      },
+      "overlay_interval_median_ms": 1101.689,
+      "overlay_interval_max_ms": 2978.303,
+      "overlay_samples": 103,
+      "player_single_tic_profile_ms": [
+        0.03194,
+        0.04361,
+        0.03877
+      ]
+    },
+    "reversed_order_repeat_after": {
+      "tics": 1680,
+      "wall_seconds": 139.80076300000002,
+      "tics_per_second": 12.017101795073893,
+      "first": {
+        "tic": "35",
+        "ms": "8016.718",
+        "roster": "6001",
+        "attackers": "6001",
+        "defenders": "600",
+        "groups": "64",
+        "x": "0.000",
+        "y": "320.000",
+        "z": "-0.000",
+        "angle": "90.000"
+      },
+      "last": {
+        "tic": "1715",
+        "ms": "147817.481",
+        "roster": "6001",
+        "attackers": "5989",
+        "defenders": "599",
+        "groups": "82",
+        "x": "0.000",
+        "y": "320.000",
+        "z": "-0.000",
+        "angle": "90.000"
+      },
+      "overlay_interval_median_ms": 1174.827,
+      "overlay_interval_max_ms": 2909.523,
+      "overlay_samples": 103,
+      "player_single_tic_profile_ms": [
+        0.05342,
+        0.04813,
+        0.04507
+      ]
+    },
+    "repeat_throughput_change_percent": -4.877341048560691,
+    "identical_scene_population_samples_per_run": 49,
+    "player_mean_ms_before": 0.03810666666666667,
+    "player_mean_ms_after": 0.04887333333333333,
+    "result": "OBSERVED REGRESSION: 4.88% to 5.99% lower whole-scene throughput. Full-scene cause unresolved; carry evidence into #120. No speedup claim."
+  },
+  "packages": {
+    "baseline.pk3": "092dc6ec90a2ec8bcb647a54f12ab2b11b26cdcbe4197b45904242e6eb03b166",
+    "current.pk3": "23ac1ba1b0aa08899306d0e53753533a997f8d75b5dfd7e63802e11da3da4d2b",
+    "checks.pk3": "bbca26d87017031d90e674b550a8c517ef6ee2a66384455c44f0c5b4b992403a",
+    "benchmark.pk3": "75740d64a89b30e9ec48aec60bb9d3e7d6cf5ef91c4b3e196c501df5d23b497a",
+    "ui.pk3": "f9e2a911fa7777a1d9d86f241180e45a5403a6fa5762ac5bd3ecc87a8262c508"
+  },
+  "limits": [
+    "Stateless method relocation preserves behavior; this is not full player modularization or a claimed speedup.",
+    "Native tests use disposable synthetic states and actual Windows GZDoom 4.14.2; they are distinct from author gameplay acceptance.",
+    "Save compatibility demonstrated from 5.0.0 with unchanged current map layouts. Original 5.0.0 save/package rollback is tested; newer-save downgrade is not claimed.",
+    "MAP06 comparison uses matching seed 116, scene, population, Vulkan and 5% master audio. Overlay intervals are not GPU frame times or physical input latency; desktop load and instrumentation remain limitations."
+  ],
+  "diagnostics": [
+    "Initial artificial equipment omitted WeaponDurabilityRevision=1; baseline correctly migrated 7 to 70. Fixture corrected before baseline/final acceptance runs; production logic unchanged.",
+    "First cross-version load used different package basenames; GZDoom refused baseline.pk3 as missing. Final load uses current-runtime/baseline.pk3 containing the new package bytes, matching normal stable production naming.",
+    "Git checkout normalized only the unchanged presentation helper from LF to CRLF; verifier identifies that byte-only package difference separately.",
+    "Initial UI observer used incompatible Name/String conditional types, then an unsupported String() cast. Corrected to a boolean ReadyWeapon indicator; production code never changed.",
+    "Desktop input contention prevented a completed physical-key test. Native console inputs and menu events were used; captures come from the engine, not the unrelated desktop.",
+    "Initial menu-flow-es correctly aborted when StartGameDirect was called from ConsoleProcess, outside DMenu::InMenu. Final fixtures confirm the menu draft then use closemenu/map MAP01. Ordinary final keypress is left to CA-501-PLAYER-01."
+  ],
+  "reproduction": [
+    "Build accepted commit 6e8f0d66 in a separate checkout and preserve its PK3 as build/issue117/baseline.pk3; build this revision as current.pk3. Do not overwrite original save copies.",
+    "Run python assets/validation_501/prepare_checks.py and verify_extraction.py. run_native.ps1 accepts -Label, -Package, -Addon, -Map, -Script, -LoadGame; labels must be new.",
+    "Run checks.pk3 on MAP03 with baseline.cfg/current.cfg. Stage current.pk3 unchanged as current-runtime/baseline.pk3 for the old-save load; keep the original baseline.pk3 for rollback.",
+    "Run baseline/current benchmark.cfg sequentially on MAP06, then reverse order with benchmark-profile.cfg. Never overlap engine processes. Run ui-enu.cfg/ui-es.cfg with ui.pk3 for native menu/input captures.",
+    "Run summarize.py after completed native runs; logs/settings/manifests are archived, packages/IWAD/executable/save fixtures stay local."
+  ],
+  "author_acceptance": "Passed: author confirmed all #117 tests and CA-501-PLAYER-01 on 2026-10-06; PR #123 merge/closure authorized. Measured MAP06 regression remains unresolved."
+}

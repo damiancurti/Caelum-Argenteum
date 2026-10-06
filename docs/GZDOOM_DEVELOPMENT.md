@@ -279,6 +279,25 @@ specific test requires otherwise.
 
 ### Evidence categories
 
+For #117, `assets/validation_501/verify_extraction.py` additionally retains quoted
+literals in body comparison and checks all nonmoved methods. The two stateless
+services preserve pawn fields and method signatures; native baseline/final fixtures
+compare profile/resource output and save data, then exercise hub travel. When
+loading the old fixture with new code, preserve the package basename recorded by
+the save (`current-runtime/baseline.pk3` holds the new bytes). GZDoom rejects a
+missing basename before compatibility can be tested. Record package hashes so
+this staging convention cannot be mistaken for loading the old implementation.
+Synthetic equipment must declare its intended `WeaponDurabilityRevision`; leaving
+it at zero correctly invokes the existing legacy migration and is not an extraction
+regression. Keep fixture corrections separate from production fixes.
+The #117 native UI fixture uses real menu methods to produce a draft, then a
+console map start to exercise its consumption. `Menu.StartGameDirect` requires
+`DMenu::InMenu`, which native menu input callbacks establish; invoking the final
+introduction action from `EventHandler.ConsoleProcess` aborts even while a menu
+is displayed. This was verified in GZDoom g4.14.2
+`src/menu/doommenu.cpp:StartGameDirect` and `src/common/menu/menu.cpp` callbacks.
+Do not claim that scripted console calls cover the physical final menu keypress.
+
 | Evidence | What it supports | What it does not establish |
 | --- | --- | --- |
 | Source inspection | Specific code/data facts at a commit | Runtime correctness |

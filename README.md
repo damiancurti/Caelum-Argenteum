@@ -6,8 +6,20 @@ An independent dark fantasy FPS-RPG inspired by nineteenth-century Argentina.
 Author and game designer: **Damian Curti**. Development target: **GZDoom 4.14.2**
 on Windows 11. The final game is intended to be independent of Doom assets.
 
-**Current release: 5.0.0.** Obtain and update the complete repository, validate
+**Current release: 5.0.1.** Obtain and update the complete repository, validate
 it, then rebuild with `run_dev.bat` as described below.
+
+Issue [#117](https://github.com/damiancurti/Caelum-Argenteum/issues/117) moves 39
+character/resource operations behind the existing `CaelumPlayer` adapters.
+The pawn retains every serialized field, native lifecycle hook and input path;
+stateless services reuse the existing profile, attribute and resource rules.
+Inventory and Tarot extraction remain in #118/#119. See the
+[player contracts](docs/SYSTEMS.md#player-character-and-resource-adapters-117)
+and [validation evidence](assets/validation_501/RESULTS.json). This is an
+organization change with no new gameplay or claimed performance gain.
+Repeated MAP06 samples are **4.9–6.0% slower**; the overall cause remains
+unresolved and is recorded for review with the native evidence. The author
+confirmed all #117 tests passed on 2026-10-06 and authorized merge/closure.
 
 Issue [#116](https://github.com/damiancurti/Caelum-Argenteum/issues/116) starts V5.0
 with a dependency/state-ownership audit and the first extraction from the player:
