@@ -1,0 +1,278 @@
+Log started: 2026-10-06 20:51:36
+GZDoom version g4.14.2
+D_DoomInit: Static RNGseed 116 set.
+W_Init: Init WADfiles.
+adding C:/Program Files (x86)/GZDoom/gzdoom.pk3, 692 lumps
+adding C:/Program Files (x86)/GZDoom/game_support.pk3, 3308 lumps
+adding C:/Program Files (x86)/Steam/steamapps/common/ultimate doom/base/doom2/DOOM2.WAD, 2919 lumps
+adding C:/Program Files (x86)/Steam/steamapps/common/Ultimate Doom/rerelease/id24res.wad, 530 lumps
+adding C:/Program Files (x86)/GZDoom/game_widescreen_gfx.pk3, 214 lumps
+adding C:/GZDooMProjects/CaelumArgenteum/build/issue118/baseline.pk3, 6184 lumps
+adding C:/GZDooMProjects/CaelumArgenteum/build/issue118/benchmark.pk3, 3 lumps
+S_Init: Setting up sound.
+I_InitSound: Initializing OpenAL
+  Opened device OpenAL Soft on Altavoces (Trust GXT 363 headset)
+  EFX enabled
+I_InitInput
+I_StartupMouse
+I_StartupKeyboard
+I_StartupXInput
+I_StartupRawPS2
+I_StartupDirectInputJoystick
+Vulkan device: NVIDIA GeForce RTX 3070 Ti
+Vulkan device type: discrete gpu
+Vulkan version: 1.4.303 (api) 576.352.0 (driver)
+Vulkan extensions: VK_KHR_16bit_storage VK_KHR_8bit_storage VK_KHR_acceleration_structure VK_KHR_bind_memory2 VK_KHR_buffer_device_address VK_KHR_calibrated_timestamps VK_KHR_compute_shader_derivatives VK_KHR_cooperative_matrix VK_KHR_copy_commands2 VK_KHR_create_renderpass2 VK_KHR_dedicated_allocation VK_KHR_deferred_host_operations VK_KHR_depth_stencil_resolve VK_KHR_descriptor_update_template VK_KHR_device_group VK_KHR_draw_indirect_count VK_KHR_driver_properties VK_KHR_dynamic_rendering VK_KHR_dynamic_rendering_local_read VK_KHR_external_fence VK_KHR_external_fence_win32 VK_KHR_external_memory VK_KHR_external_memory_win32 VK_KHR_external_semaphore VK_KHR_external_semaphore_win32 VK_KHR_format_feature_flags2 VK_KHR_fragment_shader_barycentric VK_KHR_fragment_shading_rate VK_KHR_get_memory_requirements2 VK_KHR_global_priority VK_KHR_image_format_list VK_KHR_imageless_framebuffer VK_KHR_index_type_uint8 VK_KHR_line_rasterization VK_KHR_load_store_op_none VK_KHR_maintenance1 VK_KHR_maintenance2 VK_KHR_maintenance3 VK_KHR_maintenance4 VK_KHR_maintenance5 VK_KHR_maintenance6 VK_KHR_maintenance7 VK_KHR_map_memory2 VK_KHR_multiview VK_KHR_pipeline_binary VK_KHR_pipeline_executable_properties VK_KHR_pipeline_library VK_KHR_present_id VK_KHR_present_wait VK_KHR_push_descriptor VK_KHR_ray_query VK_KHR_ray_tracing_maintenance1 VK_KHR_ray_tracing_pipeline VK_KHR_ray_tracing_position_fetch VK_KHR_relaxed_block_layout VK_KHR_sampler_mirror_clamp_to_edge VK_KHR_sampler_ycbcr_conversion VK_KHR_separate_depth_stencil_layouts VK_KHR_shader_atomic_int64 VK_KHR_shader_clock VK_KHR_shader_draw_parameters VK_KHR_shader_expect_assume VK_KHR_shader_float16_int8 VK_KHR_shader_float_controls VK_KHR_shader_float_controls2 VK_KHR_shader_integer_dot_product VK_KHR_shader_maximal_reconvergence VK_KHR_shader_non_semantic_info VK_KHR_shader_quad_control VK_KHR_shader_relaxed_extended_instruction VK_KHR_shader_subgroup_extended_types VK_KHR_shader_subgroup_rotate VK_KHR_shader_subgroup_uniform_control_flow VK_KHR_shader_terminate_invocation VK_KHR_spirv_1_4 VK_KHR_storage_buffer_storage_class VK_KHR_swapchain VK_KHR_swapchain_mutable_format VK_KHR_synchronization2 VK_KHR_timeline_semaphore VK_KHR_uniform_buffer_standard_layout VK_KHR_variable_pointers VK_KHR_vertex_attribute_divisor VK_KHR_video_decode_av1 VK_KHR_video_decode_h264 VK_KHR_video_decode_h265 VK_KHR_video_decode_queue VK_KHR_video_encode_h264 VK_KHR_video_encode_h265 VK_KHR_video_encode_quantization_map VK_KHR_video_encode_queue VK_KHR_video_maintenance1 VK_KHR_video_maintenance2 VK_KHR_video_queue VK_KHR_vulkan_memory_model VK_KHR_win32_keyed_mutex VK_KHR_workgroup_memory_explicit_layout VK_KHR_zero_initialize_workgroup_memory VK_EXT_4444_formats VK_EXT_attachment_feedback_loop_dynamic_state VK_EXT_attachment_feedback_loop_layout VK_EXT_blend_operation_advanced VK_EXT_border_color_swizzle VK_EXT_buffer_device_address VK_EXT_calibrated_timestamps VK_EXT_color_write_enable VK_EXT_conditional_rendering VK_EXT_conservative_rasterization VK_EXT_custom_border_color VK_EXT_depth_bias_control VK_EXT_depth_clamp_control VK_EXT_depth_clamp_zero_one VK_EXT_depth_clip_control VK_EXT_depth_clip_enable VK_EXT_depth_range_unrestricted VK_EXT_descriptor_buffer VK_EXT_descriptor_indexing VK_EXT_device_address_binding_report VK_EXT_device_fault VK_EXT_device_generated_commands VK_EXT_discard_rectangles VK_EXT_dynamic_rendering_unused_attachments VK_EXT_extended_dynamic_state VK_EXT_extended_dynamic_state2 VK_EXT_extended_dynamic_state3 VK_EXT_external_memory_host VK_EXT_fragment_shader_interlock VK_EXT_full_screen_exclusive VK_EXT_global_priority VK_EXT_global_priority_query VK_EXT_graphics_pipeline_library VK_EXT_hdr_metadata VK_EXT_host_image_copy VK_EXT_host_query_reset VK_EXT_image_2d_view_of_3d VK_EXT_image_robustness VK_EXT_image_sliced_view_of_3d VK_EXT_image_view_min_lod VK_EXT_index_type_uint8 VK_EXT_inline_uniform_block VK_EXT_legacy_vertex_attributes VK_EXT_line_rasterization VK_EXT_load_store_op_none VK_EXT_memory_budget VK_EXT_memory_priority VK_EXT_mesh_shader VK_EXT_multi_draw VK_EXT_mutable_descriptor_type VK_EXT_nested_command_buffer VK_EXT_non_seamless_cube_map VK_EXT_opacity_micromap VK_EXT_pageable_device_local_memory VK_EXT_pci_bus_info VK_EXT_pipeline_creation_cache_control VK_EXT_pipeline_creation_feedback VK_EXT_pipeline_library_group_handles VK_EXT_pipeline_robustness VK_EXT_post_depth_coverage VK_EXT_present_mode_fifo_latest_ready VK_EXT_primitive_topology_list_restart VK_EXT_primitives_generated_query VK_EXT_private_data VK_EXT_provoking_vertex VK_EXT_queue_family_foreign VK_EXT_robustness2 VK_EXT_sample_locations VK_EXT_sampler_filter_minmax VK_EXT_scalar_block_layout VK_EXT_separate_stencil_usage VK_EXT_shader_atomic_float VK_EXT_shader_demote_to_helper_invocation VK_EXT_shader_image_atomic_int64 VK_EXT_shader_module_identifier VK_EXT_shader_object VK_EXT_shader_replicated_composites VK_EXT_shader_subgroup_ballot VK_EXT_shader_subgroup_vote VK_EXT_shader_viewport_index_layer VK_EXT_subgroup_size_control VK_EXT_swapchain_maintenance1 VK_EXT_texel_buffer_alignment VK_EXT_tooling_info VK_EXT_transform_feedback VK_EXT_vertex_attribute_divisor VK_EXT_vertex_attribute_robustness VK_EXT_vertex_input_dynamic_state VK_EXT_ycbcr_2plane_444_formats VK_EXT_ycbcr_image_arrays VK_NV_acquire_winrt_display VK_NV_clip_space_w_scaling VK_NV_cluster_acceleration_structure VK_NV_compute_shader_derivatives VK_NV_cooperative_matrix VK_NV_cooperative_matrix2 VK_NV_cooperative_vector VK_NV_copy_memory_indirect VK_NV_corner_sampled_image VK_NV_coverage_reduction_mode VK_NV_cuda_kernel_launch VK_NV_dedicated_allocation VK_NV_dedicated_allocation_image_aliasing VK_NV_descriptor_pool_overallocation VK_NV_device_diagnostic_checkpoints VK_NV_device_diagnostics_config VK_NV_device_generated_commands VK_NV_device_generated_commands_compute VK_NV_disk_cache_utils VK_NV_external_memory VK_NV_external_memory_win32 VK_NV_fill_rectangle VK_NV_fragment_coverage_to_color VK_NV_fragment_shader_barycentric VK_NV_fragment_shading_rate_enums VK_NV_framebuffer_mixed_samples VK_NV_geometry_shader_passthrough VK_NV_inherited_viewport_scissor VK_NV_internal_nvpresent VK_NV_linear_color_attachment VK_NV_low_latency VK_NV_low_latency2 VK_NV_memory_decompression VK_NV_mesh_shader VK_NV_optical_flow VK_NV_partitioned_acceleration_structure VK_NV_present_metering VK_NV_raw_access_chains VK_NV_ray_tracing VK_NV_ray_tracing_invocation_reorder VK_NV_ray_tracing_motion_blur VK_NV_representative_fragment_test VK_NV_sample_mask_override_coverage VK_NV_scissor_exclusive VK_NV_shader_atomic_float16_vector VK_NV_shader_image_footprint VK_NV_shader_sm_builtins VK_NV_shader_subgroup_partitioned VK_NV_shading_rate_image VK_NV_viewport_array2 VK_NV_viewport_swizzle VK_NV_win32_keyed_mutex VK_NVX_binary_import VK_NVX_image_view_handle VK_NVX_multiview_per_view_attributes VK_AMD_buffer_marker VK_GOOGLE_hlsl_functionality1 VK_GOOGLE_user_type
+Max. texture size: 32768
+Max. uniform buffer range: 65536
+Min. uniform buffer offset alignment: 64
+Resolution: 1520 x 825
+I_Init: Setting up machine state.
+CPU speed: 3400 MHz
+CPU Vendor ID: AuthenticAMD
+  Name: AMD Ryzen 9 5950X 16-Core Processor
+  Family 25 (25), Model 33, Stepping 0
+  Features: SSE2 SSE3 SSSE3 SSE4.1 SSE4.2 AVX AVX2 F16C FMA3 BMI1 BMI2 HyperThreading
+V_Init: allocate screen.
+ST_Init: Init startup screen.
+Checking cmd-line parameters...
+S_InitData: Load sound definitions.
+G_ParseMapInfo: Load map definitions.
+Texman.Init: Init texture manager.
+ParseTeamInfo: Load team definitions.
+LoadActors: Load actor definitions.
+script parsing took 914.40 ms
+R_Init: Init Doom refresh subsystem.
+DecalLibrary: Load decals.
+M_Init: Init menus.
+P_Init: Init Playloop state.
+ParseSBarInfo: Loading custom status bar definition.
+D_CheckNetGame: Checking network game status.
+player 1 of 1 (1 nodes)
+
+----------------------------------------
+
+MAP06 - Barracas al Sud — fortified port
+
+CA116 LOAD map=MAP06 tic=0 ms=4986.037
+[Caelum] Inicio por comando directo: perfil de prueba seguro aplicado.
+[Caelum] Character creation values loaded. Attribute total: 150.00
+PORT16 deployed Mandingas=6000 commander=1 defenders=600 hostileMachines=12 guns=42
+CA116 FRAME n=2 ms=5880.550 interval=535.531
+CA116 FRAME n=3 ms=6937.556 interval=1057.006
+CA116 SIM tic=35 ms=7174.343 roster=6001 attackers=6001 defenders=600 groups=64 x=0.000 y=320.000 z=-0.000 angle=90.000
+CA116 FRAME n=4 ms=7883.352 interval=945.796
+CA116 FRAME n=5 ms=8756.632 interval=873.281
+CA116 SIM tic=70 ms=9148.908 roster=6001 attackers=6001 defenders=600 groups=64 x=0.000 y=320.000 z=-0.000 angle=90.000
+CA116 FRAME n=6 ms=9690.551 interval=933.919
+CA116 FRAME n=7 ms=10752.630 interval=1062.079
+CA116 SIM tic=105 ms=11108.801 roster=6001 attackers=6001 defenders=600 groups=63 x=0.000 y=320.000 z=-0.000 angle=90.000
+CA116 FRAME n=8 ms=11698.682 interval=946.051
+CA116 FRAME n=9 ms=12589.346 interval=890.664
+CA116 SIM tic=140 ms=13027.298 roster=6001 attackers=6001 defenders=600 groups=64 x=0.000 y=320.000 z=-0.000 angle=90.000
+CA116 FRAME n=10 ms=13620.727 interval=1031.381
+CA116 FRAME n=11 ms=14749.016 interval=1128.289
+CA116 SIM tic=175 ms=15217.368 roster=6001 attackers=6001 defenders=600 groups=61 x=0.000 y=320.000 z=-0.000 angle=90.000
+CA116 FRAME n=12 ms=15669.824 interval=920.808
+CA116 FRAME n=13 ms=16556.930 interval=887.107
+CA116 SIM tic=210 ms=17170.911 roster=6001 attackers=6001 defenders=600 groups=63 x=0.000 y=320.000 z=-0.000 angle=90.000
+CA116 FRAME n=14 ms=17554.635 interval=997.704
+CA116 FRAME n=15 ms=18686.309 interval=1131.675
+CA116 SIM tic=245 ms=19234.125 roster=6001 attackers=6001 defenders=600 groups=68 x=0.000 y=320.000 z=-0.000 angle=90.000
+CA116 FRAME n=16 ms=19624.593 interval=938.284
+CA116 FRAME n=17 ms=20525.466 interval=900.873
+CA116 SIM tic=280 ms=21169.256 roster=6001 attackers=6001 defenders=600 groups=64 x=0.000 y=320.000 z=-0.000 angle=90.000
+CA116 FRAME n=18 ms=21477.175 interval=951.708
+CA116 FRAME n=19 ms=22584.376 interval=1107.202
+CA116 SIM tic=315 ms=23325.904 roster=6001 attackers=6001 defenders=600 groups=63 x=0.000 y=320.000 z=-0.000 angle=90.000
+CA116 FRAME n=20 ms=23572.243 interval=987.867
+CA116 FRAME n=21 ms=24539.144 interval=966.902
+Total, ms   Averg, ms   Calls   Actor class
+----------  ----------  ------  --------------------
+ 90.781258    0.015130    6000  CaelumMandinga
+  3.581836    0.596973       6  CaelumBatteringRam
+  2.754803    0.002592    1063  CaelumActorSimpleElementalProjectile
+  2.476470    0.058964      42  CaelumCannon
+  0.915553    0.000139    6601  CaelumSewerEscapeTarget
+  0.744533    0.001241     600  CaelumPortDefender
+  0.112109    0.000148     756  CaelumCannonBlock
+  0.109990    0.000183     600  CaelumGateBlocker
+  0.046790    0.046790       1  CaelumPlayer
+  0.043903    0.000453      97  CaelumVehiclePart
+  0.026175    0.000091     288  CaelumRamBlock
+  0.007851    0.000981       8  CaelumBreakableGate
+  0.007730    0.000184      42  CaelumCannonBarrel
+  0.007319    0.000174      42  CaelumCannonFrame
+  0.005840    0.005840       1  CaelumMerchantShip
+  0.004750    0.004750       1  CaelumPortSiege
+  0.003260    0.003260       1  CaelumPortCommander
+  0.002850    0.000119      24  CaelumRamSuspension
+  0.002180    0.002180       1  CaelumDiningTableSmall
+  0.001490    0.000248       6  CaelumRamFrameVisual
+CA116 SIM tic=350 ms=25360.455 roster=6001 attackers=6001 defenders=600 groups=66 x=0.000 y=320.000 z=-0.000 angle=90.000
+CA116 FRAME n=22 ms=25726.028 interval=1186.884
+CA116 FRAME n=23 ms=26851.577 interval=1125.549
+CA116 SIM tic=385 ms=27764.581 roster=6001 attackers=5997 defenders=600 groups=66 x=0.000 y=320.000 z=-0.000 angle=90.000
+CA116 FRAME n=24 ms=27941.435 interval=1089.858
+CA116 FRAME n=25 ms=28878.901 interval=937.466
+CA116 SIM tic=420 ms=29773.639 roster=6001 attackers=5997 defenders=600 groups=66 x=0.000 y=320.000 z=-0.000 angle=90.000
+CA116 FRAME n=26 ms=29844.595 interval=965.695
+CA116 FRAME n=27 ms=30913.849 interval=1069.254
+CA116 FRAME n=28 ms=31919.711 interval=1005.861
+CA116 SIM tic=455 ms=31939.521 roster=6001 attackers=5997 defenders=600 groups=66 x=0.000 y=320.000 z=-0.000 angle=90.000
+CA116 FRAME n=29 ms=32909.031 interval=989.320
+CA116 FRAME n=30 ms=33834.529 interval=925.498
+CA116 SIM tic=490 ms=33950.438 roster=6001 attackers=5997 defenders=600 groups=66 x=0.000 y=320.000 z=-0.000 angle=90.000
+CA116 FRAME n=31 ms=34878.275 interval=1043.746
+CA116 FRAME n=32 ms=35858.721 interval=980.445
+Total, ms   Averg, ms   Calls   Actor class
+----------  ----------  ------  --------------------
+ 20.221276    0.003370    6000  CaelumMandinga
+  3.096317    0.516053       6  CaelumBatteringRam
+  2.906014    0.002729    1065  CaelumActorSimpleElementalProjectile
+  2.430449    0.057868      42  CaelumCannon
+  0.893899    0.000135    6601  CaelumSewerEscapeTarget
+  0.428756    0.000715     600  CaelumPortDefender
+  0.115369    0.000153     756  CaelumCannonBlock
+  0.102208    0.000170     600  CaelumGateBlocker
+  0.041652    0.000429      97  CaelumVehiclePart
+  0.038150    0.038150       1  CaelumPlayer
+  0.029745    0.000103     288  CaelumRamBlock
+  0.007940    0.000189      42  CaelumCannonBarrel
+  0.006859    0.000163      42  CaelumCannonFrame
+  0.005941    0.000743       8  CaelumBreakableGate
+  0.005840    0.005840       1  CaelumMerchantShip
+  0.004340    0.004340       1  CaelumPortSiege
+  0.003100    0.003100       1  CaelumPortCommander
+  0.002760    0.000115      24  CaelumRamSuspension
+  0.002040    0.002040       1  CaelumDiningTableSmall
+  0.001500    0.000250       6  CaelumRamFrameVisual
+CA116 SIM tic=525 ms=35959.132 roster=6001 attackers=5997 defenders=600 groups=66 x=0.000 y=320.000 z=-0.000 angle=90.000
+CA116 FRAME n=33 ms=36856.254 interval=997.533
+CA116 FRAME n=34 ms=37800.035 interval=943.781
+CA116 SIM tic=560 ms=37983.194 roster=6001 attackers=5997 defenders=600 groups=65 x=0.000 y=320.000 z=-0.000 angle=90.000
+CA116 FRAME n=35 ms=38809.505 interval=1009.471
+CA116 FRAME n=36 ms=39824.164 interval=1014.658
+CA116 SIM tic=595 ms=40082.040 roster=6001 attackers=5997 defenders=600 groups=66 x=0.000 y=320.000 z=-0.000 angle=90.000
+CA116 FRAME n=37 ms=40855.122 interval=1030.958
+CA116 FRAME n=38 ms=41809.946 interval=954.824
+CA116 SIM tic=630 ms=42136.383 roster=6001 attackers=5997 defenders=600 groups=66 x=0.000 y=320.000 z=-0.000 angle=90.000
+CA116 FRAME n=39 ms=42856.578 interval=1046.631
+CA116 FRAME n=40 ms=43830.305 interval=973.727
+CA116 SIM tic=665 ms=44170.319 roster=6001 attackers=5997 defenders=600 groups=65 x=0.000 y=320.000 z=-0.000 angle=90.000
+CA116 FRAME n=41 ms=44844.594 interval=1014.289
+CA116 FRAME n=42 ms=45795.688 interval=951.095
+Total, ms   Averg, ms   Calls   Actor class
+----------  ----------  ------  --------------------
+ 23.140947    0.003857    6000  CaelumMandinga
+  3.378806    0.563134       6  CaelumBatteringRam
+  2.483211    0.059124      42  CaelumCannon
+  2.433417    0.002897     840  CaelumActorSimpleElementalProjectile
+  0.828397    0.000125    6601  CaelumSewerEscapeTarget
+  0.463439    0.000772     600  CaelumPortDefender
+  0.114149    0.000151     756  CaelumCannonBlock
+  0.104978    0.000175     600  CaelumGateBlocker
+  0.047280    0.047280       1  CaelumPlayer
+  0.042362    0.000437      97  CaelumVehiclePart
+  0.029934    0.000104     288  CaelumRamBlock
+  0.006960    0.000870       8  CaelumBreakableGate
+  0.006850    0.000163      42  CaelumCannonBarrel
+  0.006839    0.000163      42  CaelumCannonFrame
+  0.006400    0.006400       1  CaelumMerchantShip
+  0.005120    0.005120       1  CaelumPortSiege
+  0.003040    0.000127      24  CaelumRamSuspension
+  0.002930    0.002930       1  CaelumPortCommander
+  0.001640    0.001640       1  CaelumDiningTableSmall
+  0.001470    0.000245       6  CaelumSiegeRouteNode
+CA116 SIM tic=700 ms=46275.921 roster=6001 attackers=5997 defenders=600 groups=65 x=0.000 y=320.000 z=-0.000 angle=90.000
+CA116 FRAME n=43 ms=47180.488 interval=1384.799
+CA116 FRAME n=44 ms=48202.603 interval=1022.115
+CA116 SIM tic=735 ms=48693.253 roster=6001 attackers=5994 defenders=600 groups=65 x=0.000 y=320.000 z=-0.000 angle=90.000
+CA116 FRAME n=45 ms=49198.446 interval=995.843
+CA116 FRAME n=46 ms=50150.967 interval=952.521
+CA116 SIM tic=770 ms=50741.873 roster=6001 attackers=5994 defenders=600 groups=65 x=0.000 y=320.000 z=-0.000 angle=90.000
+CA116 FRAME n=47 ms=51225.077 interval=1074.110
+CA116 FRAME n=48 ms=52225.786 interval=1000.709
+CA116 SIM tic=805 ms=52770.554 roster=6001 attackers=5994 defenders=600 groups=66 x=0.000 y=320.000 z=-0.000 angle=90.000
+CA116 FRAME n=49 ms=53192.632 interval=966.847
+CA116 FRAME n=50 ms=54154.529 interval=961.897
+CA116 SIM tic=840 ms=54821.904 roster=6001 attackers=5994 defenders=600 groups=67 x=0.000 y=320.000 z=-0.000 angle=90.000
+CA116 FRAME n=51 ms=55227.519 interval=1072.990
+CA116 FRAME n=52 ms=56249.753 interval=1022.234
+CA116 SIM tic=875 ms=56931.892 roster=6001 attackers=5994 defenders=600 groups=67 x=0.000 y=320.000 z=-0.000 angle=90.000
+CA116 FRAME n=53 ms=57217.657 interval=967.904
+CA116 FRAME n=54 ms=58211.225 interval=993.568
+CA116 SIM tic=910 ms=59034.162 roster=6001 attackers=5994 defenders=600 groups=67 x=0.000 y=320.000 z=-0.000 angle=90.000
+CA116 FRAME n=55 ms=59291.063 interval=1079.838
+CA116 FRAME n=56 ms=60305.112 interval=1014.049
+CA116 SIM tic=945 ms=61083.738 roster=6001 attackers=5994 defenders=600 groups=68 x=0.000 y=320.000 z=-0.000 angle=90.000
+CA116 FRAME n=57 ms=61281.782 interval=976.670
+CA116 FRAME n=58 ms=62326.414 interval=1044.633
+CA116 SIM tic=980 ms=63227.323 roster=6001 attackers=5994 defenders=600 groups=69 x=0.000 y=320.000 z=-0.000 angle=90.000
+CA116 FRAME n=59 ms=63398.859 interval=1072.445
+CA116 FRAME n=60 ms=64407.776 interval=1008.917
+CA116 SIM tic=1015 ms=65297.601 roster=6001 attackers=5994 defenders=600 groups=70 x=0.000 y=320.000 z=-0.000 angle=90.000
+CA116 FRAME n=61 ms=65362.707 interval=954.931
+CA116 FRAME n=62 ms=66395.338 interval=1032.631
+CA116 FRAME n=63 ms=67500.658 interval=1105.320
+CA116 SIM tic=1050 ms=67522.864 roster=6001 attackers=5994 defenders=600 groups=70 x=0.000 y=320.000 z=-0.000 angle=90.000
+CA116 FRAME n=64 ms=68770.167 interval=1269.510
+CA116 FRAME n=65 ms=69827.132 interval=1056.965
+CA116 SIM tic=1085 ms=69895.671 roster=6001 attackers=5992 defenders=600 groups=71 x=0.000 y=320.000 z=-0.000 angle=90.000
+CA116 FRAME n=66 ms=70967.947 interval=1140.815
+CA116 FRAME n=67 ms=72163.961 interval=1196.014
+CA116 SIM tic=1120 ms=72289.312 roster=6001 attackers=5992 defenders=600 groups=72 x=0.000 y=320.000 z=-0.000 angle=90.000
+CA116 FRAME n=68 ms=73268.571 interval=1104.610
+CA116 FRAME n=69 ms=74415.602 interval=1147.031
+CA116 SIM tic=1155 ms=74648.435 roster=6001 attackers=5992 defenders=600 groups=72 x=0.000 y=320.000 z=-0.000 angle=90.000
+CA116 FRAME n=70 ms=75617.044 interval=1201.442
+CA116 FRAME n=71 ms=76880.712 interval=1263.668
+CA116 SIM tic=1190 ms=77156.406 roster=6001 attackers=5992 defenders=600 groups=74 x=0.000 y=320.000 z=-0.000 angle=90.000
+CA116 FRAME n=72 ms=78066.767 interval=1186.055
+CA116 FRAME n=73 ms=79318.808 interval=1252.041
+CA116 SIM tic=1225 ms=79704.733 roster=6001 attackers=5992 defenders=600 groups=74 x=0.000 y=320.000 z=-0.000 angle=90.000
+CA116 FRAME n=74 ms=80628.561 interval=1309.753
+CA116 FRAME n=75 ms=81939.622 interval=1311.061
+CA116 SIM tic=1260 ms=82399.201 roster=6001 attackers=5992 defenders=600 groups=75 x=0.000 y=320.000 z=-0.000 angle=90.000
+CA116 FRAME n=76 ms=83258.993 interval=1319.371
+CA116 FRAME n=77 ms=84669.264 interval=1410.271
+CA116 SIM tic=1295 ms=85276.787 roster=6001 attackers=5992 defenders=600 groups=73 x=0.000 y=320.000 z=-0.000 angle=90.000
+CA116 FRAME n=78 ms=86136.463 interval=1467.199
+CA116 FRAME n=79 ms=87556.671 interval=1420.208
+CA116 SIM tic=1330 ms=88246.963 roster=6001 attackers=5991 defenders=600 groups=72 x=0.000 y=320.000 z=-0.000 angle=90.000
+CA116 FRAME n=80 ms=89065.999 interval=1509.328
+CA116 FRAME n=81 ms=90626.112 interval=1560.113
+CA116 SIM tic=1365 ms=91494.296 roster=6001 attackers=5991 defenders=600 groups=73 x=0.000 y=320.000 z=-0.000 angle=90.000
+CA116 FRAME n=82 ms=92260.194 interval=1634.082
+CA116 FRAME n=83 ms=93846.127 interval=1585.933
+CA116 SIM tic=1400 ms=94837.135 roster=6001 attackers=5991 defenders=600 groups=73 x=0.000 y=320.000 z=-0.000 angle=90.000
+CA116 FRAME n=84 ms=95801.868 interval=1955.741
+CA116 FRAME n=85 ms=97639.996 interval=1838.128
+CA116 SIM tic=1435 ms=98859.860 roster=6001 attackers=5989 defenders=599 groups=74 x=0.000 y=320.000 z=-0.000 angle=90.000
+CA116 FRAME n=86 ms=99482.258 interval=1842.263
+CA116 FRAME n=87 ms=101337.723 interval=1855.465
+CA116 SIM tic=1470 ms=102630.356 roster=6001 attackers=5989 defenders=599 groups=76 x=0.000 y=320.000 z=-0.000 angle=90.000
+CA116 FRAME n=88 ms=103266.715 interval=1928.992
+CA116 FRAME n=89 ms=105308.938 interval=2042.222
+CA116 SIM tic=1505 ms=106829.438 roster=6001 attackers=5989 defenders=599 groups=75 x=0.000 y=320.000 z=-0.000 angle=90.000
+CA116 FRAME n=90 ms=107308.375 interval=1999.438
+CA116 FRAME n=91 ms=109313.774 interval=2005.398
+CA116 SIM tic=1540 ms=111080.576 roster=6001 attackers=5989 defenders=599 groups=77 x=0.000 y=320.000 z=-0.000 angle=90.000
+CA116 FRAME n=92 ms=111456.351 interval=2142.577
+CA116 FRAME n=93 ms=113667.180 interval=2210.829
+CA116 SIM tic=1575 ms=115617.361 roster=6001 attackers=5989 defenders=599 groups=78 x=0.000 y=320.000 z=-0.000 angle=90.000
+CA116 FRAME n=94 ms=115886.030 interval=2218.851
+CA116 FRAME n=95 ms=118217.882 interval=2331.852
+CA116 SIM tic=1610 ms=120510.003 roster=6001 attackers=5989 defenders=599 groups=78 x=0.000 y=320.000 z=-0.000 angle=90.000
+CA116 FRAME n=96 ms=120679.404 interval=2461.522
+CA116 FRAME n=97 ms=123137.755 interval=2458.351
+CA116 FRAME n=98 ms=125568.513 interval=2430.758
+CA116 SIM tic=1645 ms=125578.737 roster=6001 attackers=5989 defenders=599 groups=78 x=0.000 y=320.000 z=-0.000 angle=90.000
+CA116 FRAME n=99 ms=128129.458 interval=2560.945
+CA116 FRAME n=100 ms=130805.305 interval=2675.848
+CA116 SIM tic=1680 ms=130992.522 roster=6001 attackers=5989 defenders=599 groups=80 x=0.000 y=320.000 z=-0.000 angle=90.000
+CA116 FRAME n=101 ms=133684.821 interval=2879.516
+CA116 FRAME n=102 ms=136383.452 interval=2698.631
+CA116 SIM tic=1715 ms=136730.171 roster=6001 attackers=5989 defenders=599 groups=82 x=0.000 y=320.000 z=-0.000 angle=90.000
+CA116 FRAME n=103 ms=139228.585 interval=2845.133
+CA116 FRAME n=104 ms=142148.727 interval=2920.142

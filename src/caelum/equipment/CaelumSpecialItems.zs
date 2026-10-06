@@ -26,26 +26,7 @@ class CaelumMagicBox : Inventory
 
     static CaelumMagicBox EnsureOwned(CaelumPlayer user)
     {
-        if (user == null) return null;
-        let record = user.GetPersistentCharacterState(true);
-        if (record == null || !record.MagicBoxOwned) return null;
-        let box = CaelumMagicBox(user.FindInventory("CaelumMagicBox"));
-        if (box != null && record.MagicBoxItemId > 0 && box.ItemId == record.MagicBoxItemId)
-            return box;
-        if (box == null)
-        {
-            box = CaelumMagicBox(Actor.Spawn("CaelumMagicBox", user.Pos, NO_REPLACE));
-            if (box == null) return null;
-            box.AttachToOwner(user);
-        }
-        // Migrar una Caja anterior sin tocar el contenido ni sus ItemId.
-        user.EnsureAllEquipmentItemIds();
-        if (record.MagicBoxItemId <= 0)
-            record.MagicBoxItemId = record.AllocateEquipmentItemId();
-        record.ObserveEquipmentItemId(record.MagicBoxItemId);
-        box.ItemId = record.MagicBoxItemId;
-        box.Amount = 1;
-        return box;
+        return CaelumInventoryService.EnsureOwnedMagicBox(user);
     }
 }
 

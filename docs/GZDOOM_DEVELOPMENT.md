@@ -277,6 +277,21 @@ from the renderer's reported resolution; record the latter. Keep audio enabled
 with the author-requested 5% master volume for subsequent live tests unless a
 specific test requires otherwise.
 
+#118's runner rejects overlapping GZDoom processes and waits for each recorded
+PID to exit. Its isolated benchmark observer consumes local input events, so a
+stray movement key cannot change the fixed scene. Compare all sampled positions,
+population and group counts before comparing timings; discard overlapping or
+camera-drift samples, as recorded in `assets/validation_502/RESULTS.json`.
+These controls belong to the observation addon, never to production input code.
+
+For inventory extraction, distinguish detached incoming pickups from an existing
+owned stack. Validate `Owner` before mutating either pointer; resolve instance IDs
+inside the requesting pawn's native inventory. #118's stateless service retains
+the original saved fields and coordinator preconditions, and its verifier checks
+every moved body/literal, explicit guard, unchanged body and package member.
+This proof supplements native transaction/save/travel checks; it does not prove
+arbitrary low-level commit calls are valid without their coordinator's checks.
+
 ### Evidence categories
 
 For #117, `assets/validation_501/verify_extraction.py` additionally retains quoted

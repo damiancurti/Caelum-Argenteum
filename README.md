@@ -6,10 +6,24 @@ An independent dark fantasy FPS-RPG inspired by nineteenth-century Argentina.
 Author and game designer: **Damian Curti**. Development target: **GZDoom 4.14.2**
 on Windows 11. The final game is intended to be independent of Doom assets.
 
-**Current release: 5.0.1.** Obtain and update the complete repository, validate
+**Current release: 5.0.2.** Obtain and update the complete repository, validate
 it, then rebuild with `run_dev.bat` as described below.
 
-Issue [#117](https://github.com/damiancurti/Caelum-Argenteum/issues/117) moves 39
+Issue [#118](https://github.com/damiancurti/Caelum-Argenteum/issues/118) consolidates
+inventory and equipment in `CaelumInventoryService`: 157 player operations and
+three physical Box/deck operations retain compatible entry points. Native items
+remain the owned instances; no new collection or save schema is introduced.
+Queries, equipment, storage, projections, reservations and transaction commits
+share the service. Foreign owned references are rejected before mutation.
+See the [inventory contract](docs/SYSTEMS.md#inventory-and-equipment-service-118)
+and [native/static evidence](assets/validation_502/RESULTS.json). Game rules,
+crafting catalogues and Tarot powers are unchanged; #119 is the next slice.
+Manual acceptance of this new delivery is tracked in `pending_test.txt`.
+Matched MAP06 runs observe **3.7–6.1% lower throughput than 5.0.1**, including
+an order-reversed repeat. The cause remains unresolved; this patch claims no
+performance improvement. Exact measurements and limitations accompany the evidence.
+
+The accepted [#117](https://github.com/damiancurti/Caelum-Argenteum/issues/117) moves 39
 character/resource operations behind the existing `CaelumPlayer` adapters.
 The pawn retains every serialized field, native lifecycle hook and input path;
 stateless services reuse the existing profile, attribute and resource rules.

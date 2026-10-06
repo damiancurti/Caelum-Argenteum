@@ -1,0 +1,20 @@
+CA-502-INVENTORY-01 — Inventory/equipment service acceptance
+Origin: 5.0.2 / issue #118.
+Prerequisites: rebuild 5.0.2 for GZDoom 4.14.2; preserve the original 5.0.1
+package/save pair separately and use the matching map layout. Audio may stay at 5%.
+Steps:
+1. Use the Journal in your usual language: collect two identical pieces with
+   different wear, switch/equip/unequip them, store/retrieve with the Box, then
+   drop and pick up one. Check the exact condition and active weapon each time.
+2. At a suitable station, start/cancel/complete a recipe, repair and dismantle;
+   check reserved pieces/materials cannot be spent elsewhere. Buy/sell and retry
+   a capacity failure. Confirm costs and outputs and no free repair/duplication.
+3. Move the physical deck between personal inventory and the Box; its essences
+   remain owned and the deck cannot be dropped. Load a copy of a 5.0.1 save,
+   save to a new slot, reload, travel MAP02/MAP06 and return with equipment and
+   an unfinished crafting task. Confirm items, wear, Box and reservations remain.
+Expected: accepted rules, controls and UI retained; no lost/duplicated item,
+money, reward or free repair, ownership mix-up, error or new interaction delay.
+Report any step not exercised; isolated agent fixtures are separate evidence.
+Known observation to assess: matched MAP06 throughput was 3.7–6.1% lower than
+5.0.1; the full-scene cause remains unresolved. Record any ordinary-play stutter.

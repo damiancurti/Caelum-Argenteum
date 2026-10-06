@@ -1,6 +1,55 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **5.0.1** — 2026-10-06.
+Documentation version: **5.0.2** — 2026-10-06.
+
+## 5.0.2 — Inventory/equipment service (#118, 2026-10-06)
+
+The author confirmed all #117 tests passed and authorized PR #123 merge and
+issue closure. Acceptance was recorded in `450917e2`, then merged as `da7d33b8`.
+The new branch implements #118 with one stateless inventory/equipment service.
+It moves 157 pawn implementations and three physical Box/deck implementations,
+retaining their adapters, all fields and native save/lifecycle contracts.
+Twelve explicit ownership guards reject foreign references before mutation;
+other moved statements and 387 remaining pawn bodies are unchanged. The player
+implementation shrinks by 5,363 lines. No balance, map, art or sound changes.
+
+The service owns inventory operations while native items own their actual state.
+Existing recipe planning, merchant/quest coordination, native copy/toss hooks and
+Tarot powers keep their responsibilities. SYSTEMS records those boundaries,
+call preconditions and the original 5.0.1 package/save rollback path. No new
+serialized service instance, migration revision or competing collection exists.
+
+Reproducible fixtures, native logs, package identities, settings, static comparison,
+save/travel/rollback results, performance and diagnostic corrections are retained
+in `assets/validation_502/RESULTS.json`. Tests use GZDoom 4.14.2 with audio enabled
+at 5%. Ordinary author acceptance is pending in CA-502-INVENTORY-01; #117's
+acceptance does not extend to this new implementation. Its earlier performance
+regression remains recorded for #120 independently of this delivery's measurements.
+
+Baseline/current inventory and hub runs each pass 127 assertions and agree on all
+nine value rows. The nine-category crafting/merchant fixtures each pass 79 checks;
+all nine category/action/output rows match. Ownership rejection passes seven
+additional checks (54 including setup). Original-save loading plus hub return
+passes 50; fresh/upgraded reload and original-pair rollback each pass ten.
+All 592 serialized pawn fields agree after resolving nine model references, as do
+all 23 owned native-item subclass payloads, including the persistent record.
+Four inspected English/Spanish Journal views distinguish the exact worn IDs,
+equipped/Box/reserved status and existing capacity/money projection. These checks
+use artificial stock and programmatic task completion, not physical author play.
+Native ammunition, consumable and material pickups additionally pass 65 checks
+on each package, including repeated stack growth and capacity rejection; the
+three final stack amounts match exactly. The original-save rollback uses the
+unchanged original save file, separately from the newly written upgraded save.
+
+Observed MAP06 regression versus 5.0.1: 12.632 -> 12.160 tics/s (-3.74%);
+reverse-order repeat 12.967 -> 12.170 (-6.15%). All four accepted runs span
+1,680 tics and match every one of 49 camera/population/group observations.
+Mean player single-tic samples are 0.0417/0.0445 ms and 0.0441/0.0487 ms.
+The whole-scene cause remains unresolved; no performance gain is claimed.
+Overlapping and camera-drift attempts were excluded, with logs/hashes retained
+and incidental local key-scan details omitted. The runner now serializes engine
+processes and the isolated benchmark consumes local input. Production input and
+army counts are unchanged. Measurements remain follow-up evidence for #120.
 
 ## 5.0.1 — Compatible player character/resource adapters (#117, 2026-10-06)
 

@@ -1004,76 +1004,19 @@ class CaelumPlayer : DoomPlayer
 
     void SyncLiveMagicBoxOwnershipFromPersistentState()
     {
-        CaelumPersistentCharacterState persistentState =
-            GetPersistentCharacterState(true);
-        if (persistentState == null)
-        {
-            MagicBoxOwned = false;
-            return;
-        }
-        persistentState.EnsureMagicBoxOwnershipInitialized();
-        MagicBoxOwned = persistentState.MagicBoxOwned;
-        if (MagicBoxOwned) CaelumMagicBox.EnsureOwned(self);
+        CaelumInventoryService.SyncLiveMagicBoxOwnershipFromPersistentState(self);
     }
 
     // Un perfil sin la recompensa nunca puede conservar banderas de contenido
     // oculto. También sanea partidas de desarrollo creadas a mitad del cambio.
     void NormalizeUnownedMagicBoxStorage()
     {
-        if (MagicBoxOwned) { return; }
-        for (Inventory cursor = Inv; cursor != null; cursor = cursor.Inv)
-        {
-            CaelumEquipmentItem equipment = CaelumEquipmentItem(cursor);
-            if (equipment != null) { equipment.InMagicBox = false; }
-            CaelumCarbineAmmo ammunition = CaelumCarbineAmmo(cursor);
-            if (ammunition != null) { ammunition.InMagicBox = false; }
-            CaelumConsumableItem consumable = CaelumConsumableItem(cursor);
-            if (consumable != null) { consumable.InMagicBox = false; }
-            CaelumSpecialInventoryItem special =
-                CaelumSpecialInventoryItem(cursor);
-            if (special != null) { special.InMagicBox = false; }
-        }
+        CaelumInventoryService.NormalizeUnownedMagicBoxStorage(self);
     }
 
     bool GrantMagicBoxFromPalomo(bool announce = true)
     {
-        CaelumPersistentCharacterState persistentState =
-            GetPersistentCharacterState(true);
-        if (persistentState == null) { return false; }
-        persistentState.EnsureMagicBoxOwnershipInitialized();
-        SyncLiveMagicBoxOwnershipFromPersistentState();
-        if (MagicBoxOwned)
-        {
-            return false;
-        }
-        if (!persistentState.GrantMagicBoxOwnership())
-        {
-            MagicBoxOwned = persistentState.MagicBoxOwned;
-            return false;
-        }
-
-        MagicBoxOwned = true;
-        if (CaelumMagicBox.EnsureOwned(self) == null)
-        {
-            MagicBoxOwned = false;
-            persistentState.MagicBoxOwned = false;
-            return false;
-        }
-        RefreshSocialJournalSnapshot();
-        ApplyCharacterProfile();
-        RefreshCarriedInventorySummary();
-        RefreshFormalInventorySnapshot();
-        PersistCharacterState();
-        A_StartSound("caelum/items/pickup", CHAN_6, CHANF_LOCAL);
-        if (announce)
-        {
-            Console.Printf(
-                "%s",
-                StringTable.Localize("CA_PALOMO_MAGIC_BOX_RECEIVED", false)
-            );
-        }
-        CaelumNotifications.Acquired(self, FindInventory("CaelumMagicBox"), 1);
-        return true;
+        return CaelumInventoryService.GrantMagicBoxFromPalomo(self, announce);
     }
 
     void SetPalomoDialogueToken(
@@ -1798,105 +1741,36 @@ class CaelumPlayer : DoomPlayer
         int kind, int itemType, int armorSlot, int tier, int equipmentSize
     )
     {
-        for (Inventory cursor = Inv; cursor != null; cursor = cursor.Inv)
-        {
-            CaelumEquipmentItem item = CaelumEquipmentItem(cursor);
-            if (item != null && item.Matches(
-                kind, itemType, armorSlot, tier, equipmentSize
-            ))
-            {
-                return item;
-            }
-        }
-        return null;
+        return CaelumInventoryService.FindNativeEquipmentItem(self, kind, itemType, armorSlot, tier, equipmentSize);
     }
 
     CaelumEquipmentItem FindNativeMagicWeaponItem(
         int weaponType, int essenceType, int tier, int equipmentSize
     )
     {
-        for (Inventory cursor = Inv; cursor != null; cursor = cursor.Inv)
-        {
-            CaelumEquipmentItem item = CaelumEquipmentItem(cursor);
-            if (item != null && item.MatchesMagicWeapon(
-                weaponType, essenceType, tier, equipmentSize
-            ))
-            {
-                return item;
-            }
-        }
-        return null;
+        return CaelumInventoryService.FindNativeMagicWeaponItem(self, weaponType, essenceType, tier, equipmentSize);
     }
 
     CaelumEquipmentItem FindNativeEquipmentItemById(int itemId)
     {
-        if (itemId <= 0) { return null; }
-        for (Inventory cursor = Inv; cursor != null; cursor = cursor.Inv)
-        {
-            CaelumEquipmentItem item = CaelumEquipmentItem(cursor);
-            if (item != null && item.ItemId == itemId) { return item; }
-        }
-        return null;
+        return CaelumInventoryService.FindNativeEquipmentItemById(self, itemId);
     }
 
     CaelumEquipmentItem FindOtherNativeEquipmentItemById(
         int itemId, CaelumEquipmentItem excludedItem
     )
     {
-        if (itemId <= 0) { return null; }
-        for (Inventory cursor = Inv; cursor != null; cursor = cursor.Inv)
-        {
-            CaelumEquipmentItem item = CaelumEquipmentItem(cursor);
-            if (item != null && item != excludedItem
-                && item.ItemId == itemId)
-            {
-                return item;
-            }
-        }
-        return null;
+        return CaelumInventoryService.FindOtherNativeEquipmentItemById(self, itemId, excludedItem);
     }
 
     int EnsureEquipmentItemId(CaelumEquipmentItem item)
     {
-        if (item == null) { return 0; }
-        CaelumPersistentCharacterState persistentState =
-            GetPersistentCharacterState(true);
-        if (persistentState == null) { return 0; }
-
-        if (item.ItemId > 0)
-        {
-            CaelumEquipmentItem collision =
-                FindOtherNativeEquipmentItemById(item.ItemId, item);
-            if (collision == null && (!persistentState.MagicBoxOwned
-                || item.ItemId != persistentState.MagicBoxItemId))
-            {
-                persistentState.ObserveEquipmentItemId(item.ItemId);
-                return item.ItemId;
-            }
-            // Una pieza procedente de otro jugador puede traer un ID que ya
-            // existe en este inventario. Su identidad se reasigna al entrar.
-            item.ItemId = 0;
-        }
-
-        CaelumEquipmentItem allocatedCollision;
-        do
-        {
-            item.ItemId = persistentState.AllocateEquipmentItemId();
-            allocatedCollision = FindOtherNativeEquipmentItemById(
-                item.ItemId, item
-            );
-        }
-        while (allocatedCollision != null);
-        return item.ItemId;
+        return CaelumInventoryService.EnsureEquipmentItemId(self, item);
     }
 
     void EnsureAllEquipmentItemIds()
     {
-        for (Inventory cursor = Inv; cursor != null; cursor = cursor.Inv)
-        {
-            CaelumEquipmentItem item = CaelumEquipmentItem(cursor);
-            if (item != null) { EnsureEquipmentItemId(item); }
-        }
+        CaelumInventoryService.EnsureAllEquipmentItemIds(self);
     }
 
     CaelumEquipmentItem FindEquippedNativeEquipmentItem(
@@ -1904,134 +1778,17 @@ class CaelumPlayer : DoomPlayer
         int essenceType = -1
     )
     {
-        for (Inventory cursor = Inv; cursor != null; cursor = cursor.Inv)
-        {
-            CaelumEquipmentItem item = CaelumEquipmentItem(cursor);
-            if (item == null || !item.Equipped || item.InMagicBox
-                || !item.Matches(
-                    kind, itemType, armorSlot, tier, equipmentSize
-                ))
-            {
-                continue;
-            }
-            if (essenceType >= 0 && item.EssenceType != essenceType)
-            {
-                continue;
-            }
-            return item;
-        }
-        return null;
+        return CaelumInventoryService.FindEquippedNativeEquipmentItem(self, kind, itemType, armorSlot, tier, equipmentSize, essenceType);
     }
 
     void RepairActiveEquipmentItemReferences()
     {
-        EnsureAllEquipmentItemIds();
-        if (ArmorModel != null)
-        {
-            for (int slot = 0; slot < CaelumConstants.ARMOR_SLOT_COUNT; slot++)
-            {
-                CaelumEquipmentItem armor =
-                    FindNativeEquipmentItemById(EquippedArmorItemId[slot]);
-                if (armor == null || !armor.Equipped
-                    || armor.EquipmentKind
-                        != CaelumConstants.EQUIPMENT_KIND_ARMOR
-                    || !armor.Matches(
-                        CaelumConstants.EQUIPMENT_KIND_ARMOR,
-                        ArmorModel.ArmorType[slot], slot,
-                        ArmorModel.Tier[slot], ArmorModel.Size[slot]
-                    ))
-                {
-                    armor = FindEquippedNativeEquipmentItem(
-                        CaelumConstants.EQUIPMENT_KIND_ARMOR,
-                        ArmorModel.ArmorType[slot], slot,
-                        ArmorModel.Tier[slot], ArmorModel.Size[slot]
-                    );
-                    EquippedArmorItemId[slot] =
-                        armor != null ? armor.ItemId : 0;
-                }
-            }
-        }
-
-        RepairActiveShieldReference();
-
-        CaelumEquipmentItem weapon =
-            FindNativeEquipmentItemById(ActiveWeaponItemId);
-        if (weapon == null || !weapon.Equipped
-            || WeaponModel == null || !weapon.Matches(
-                CaelumConstants.EQUIPMENT_KIND_WEAPON,
-                WeaponModel.WeaponType, -1,
-                WeaponModel.Tier, WeaponModel.Size
-            ) || (WeaponModel.IsMagicalType(WeaponModel.WeaponType)
-                && weapon.EssenceType != WeaponModel.EssenceType))
-        {
-            weapon = WeaponModel != null && WeaponModel.Equipped
-                ? FindEquippedNativeEquipmentItem(
-                    CaelumConstants.EQUIPMENT_KIND_WEAPON,
-                    WeaponModel.WeaponType, -1,
-                    WeaponModel.Tier, WeaponModel.Size,
-                    WeaponModel.IsMagicalType(WeaponModel.WeaponType)
-                        ? WeaponModel.EssenceType : -1
-                ) : null;
-            ActiveWeaponItemId = weapon != null ? weapon.ItemId : 0;
-        }
-
-        CaelumEquipmentItem amulet =
-            FindNativeEquipmentItemById(EquippedAmuletItemId);
-        if (amulet == null || !amulet.Equipped
-            || amulet.EquipmentKind != CaelumConstants.EQUIPMENT_KIND_AMULET)
-        {
-            EquippedAmuletItemId = 0;
-            for (Inventory amuletCursor = Inv; amuletCursor != null;
-                amuletCursor = amuletCursor.Inv)
-            {
-                CaelumEquipmentItem candidate =
-                    CaelumEquipmentItem(amuletCursor);
-                if (candidate != null && candidate.Equipped
-                    && candidate.EquipmentKind
-                        == CaelumConstants.EQUIPMENT_KIND_AMULET)
-                {
-                    EquippedAmuletItemId = candidate.ItemId;
-                    break;
-                }
-            }
-        }
-
-        CaelumEquipmentItem seal =
-            FindNativeEquipmentItemById(EquippedSealItemId);
-        if (seal == null || !seal.Equipped
-            || seal.EquipmentKind != CaelumConstants.EQUIPMENT_KIND_SEAL)
-        {
-            EquippedSealItemId = 0;
-            for (Inventory sealCursor = Inv; sealCursor != null;
-                sealCursor = sealCursor.Inv)
-            {
-                CaelumEquipmentItem candidate = CaelumEquipmentItem(sealCursor);
-                if (candidate != null && candidate.Equipped
-                    && candidate.EquipmentKind
-                        == CaelumConstants.EQUIPMENT_KIND_SEAL)
-                {
-                    EquippedSealItemId = candidate.ItemId;
-                    break;
-                }
-            }
-        }
+        CaelumInventoryService.RepairActiveEquipmentItemReferences(self);
     }
 
     bool HasEquippedNativeWeaponType(int weaponType)
     {
-        for (Inventory cursor = Inv; cursor != null; cursor = cursor.Inv)
-        {
-            CaelumEquipmentItem item = CaelumEquipmentItem(cursor);
-            if (item != null
-                && item.EquipmentKind == CaelumConstants.EQUIPMENT_KIND_WEAPON
-                && item.ItemType == weaponType
-                && item.Equipped
-                && !item.InMagicBox)
-            {
-                return true;
-            }
-        }
-        return false;
+        return CaelumInventoryService.HasEquippedNativeWeaponType(self, weaponType);
     }
 
 
@@ -2039,21 +1796,7 @@ class CaelumPlayer : DoomPlayer
         int weaponType, int essenceType, int tier
     )
     {
-        for (Inventory cursor = Inv; cursor != null; cursor = cursor.Inv)
-        {
-            CaelumEquipmentItem item = CaelumEquipmentItem(cursor);
-            if (item != null
-                && item.EquipmentKind == CaelumConstants.EQUIPMENT_KIND_WEAPON
-                && item.ItemType == weaponType
-                && item.EssenceType == essenceType
-                && item.Tier == tier
-                && item.Equipped
-                && !item.InMagicBox)
-            {
-                return true;
-            }
-        }
-        return false;
+        return CaelumInventoryService.HasEquippedNativeMagicWeapon(self, weaponType, essenceType, tier);
     }
 
     bool ActivateEquippedMagicWeapon(
@@ -2062,63 +1805,7 @@ class CaelumPlayer : DoomPlayer
         int requestedTier
     )
     {
-        if (WeaponModel == null) { return false; }
-
-        int weaponType = Clamp(
-            requestedWeaponType, 0, CaelumConstants.WEAPON_TYPE_COUNT - 1
-        );
-        int essenceType = Clamp(
-            requestedEssenceType, 0, CaelumConstants.ESSENCE_TYPE_COUNT - 1
-        );
-        int tier = Clamp(requestedTier, 1, 3);
-
-        if (WeaponModel.Equipped
-            && (WeaponModel.WeaponType != weaponType
-                || WeaponModel.EssenceType != essenceType
-                || WeaponModel.Tier != tier))
-        {
-            CancelWeaponCharge();
-            if (CombatBlockModeActive) { CancelCombatBlockMode(); }
-        }
-
-        if (WeaponModel.Equipped
-            && WeaponModel.WeaponType == weaponType
-            && WeaponModel.EssenceType == essenceType
-            && WeaponModel.Tier == tier
-            && HasEquippedNativeMagicWeapon(weaponType, essenceType, tier))
-        {
-            return true;
-        }
-
-        if (StaffCastPending) { CancelPendingStaffCast(false); }
-
-        for (Inventory cursor = Inv; cursor != null; cursor = cursor.Inv)
-        {
-            CaelumEquipmentItem item = CaelumEquipmentItem(cursor);
-            if (item != null
-                && item.EquipmentKind == CaelumConstants.EQUIPMENT_KIND_WEAPON
-                && item.ItemType == weaponType
-                && item.EssenceType == essenceType
-                && item.Tier == tier
-                && item.Equipped
-                && !item.InMagicBox)
-            {
-                WeaponModel.WeaponType = weaponType;
-                WeaponModel.Tier = tier;
-                WeaponModel.Size = item.EquipmentSize;
-                WeaponModel.Durability = item.Durability;
-                WeaponModel.EssenceType = essenceType;
-                SelectedEssenceType = essenceType;
-                WeaponModel.Equipped = true;
-                ActiveWeaponItemId = item.ItemId;
-                EquippedWeaponCooldownRemaining = 0.0;
-                ApplyCharacterProfile();
-                PersistCharacterState();
-                RefreshEquipmentSelectionPreview();
-                return true;
-            }
-        }
-        return false;
+        return CaelumInventoryService.ActivateEquippedMagicWeapon(self, requestedWeaponType, requestedEssenceType, requestedTier);
     }
 
     void PerformMagicWeaponPrimaryAttack(
@@ -2143,48 +1830,12 @@ class CaelumPlayer : DoomPlayer
 
     int CountNativeMagicBoxSlots()
     {
-        if (!MagicBoxOwned) { return 0; }
-        int total = 0;
-        for (Inventory cursor = Inv; cursor != null; cursor = cursor.Inv)
-        {
-            CaelumEquipmentItem item = CaelumEquipmentItem(cursor);
-            if (item != null && item.InMagicBox) { total++; }
-        }
-        for (Inventory cursor = Inv; cursor != null; cursor = cursor.Inv)
-        {
-            CaelumCarbineAmmo ammunition = CaelumCarbineAmmo(cursor);
-            if (ammunition != null && ammunition.Amount > 0
-                && ammunition.InMagicBox)
-            {
-                total++;
-            }
-        }
-        for (Inventory cursor = Inv; cursor != null; cursor = cursor.Inv)
-        {
-            CaelumConsumableItem consumable = CaelumConsumableItem(cursor);
-            if (consumable != null && consumable.Amount > 0
-                && consumable.InMagicBox)
-            {
-                total++;
-            }
-        }
-        for (Inventory cursor = Inv; cursor != null; cursor = cursor.Inv)
-        {
-            CaelumSpecialInventoryItem specialItem =
-                CaelumSpecialInventoryItem(cursor);
-            if (specialItem != null && specialItem.Amount > 0
-                && specialItem.InMagicBox)
-            {
-                total++;
-            }
-        }
-        return total;
+        return CaelumInventoryService.CountNativeMagicBoxSlots(self);
     }
 
     int GetMagicBoxWeightDivisor()
     {
-        if (!MagicBoxOwned || DerivedStats == null) { return 1; }
-        return Max(1, DerivedStats.MagicBoxCapacity);
+        return CaelumInventoryService.GetMagicBoxWeightDivisor(self);
     }
 
     // Todo el contenido se suma antes de dividir y truncar. Así dos pilas con
@@ -2192,18 +1843,12 @@ class CaelumPlayer : DoomPlayer
     // separar objetos nunca permite aprovechar redondeos independientes.
     double CalculateMagicBoxReducedContentWeight(double rawContentWeight)
     {
-        if (!MagicBoxOwned) { return 0.0; }
-        double precision = CaelumConstants.MAGIC_BOX_WEIGHT_PRECISION;
-        double reducedWeight = Max(0.0, rawContentWeight)
-            / GetMagicBoxWeightDivisor();
-        return Floor(reducedWeight / precision + 0.0000001) * precision;
+        return CaelumInventoryService.CalculateMagicBoxReducedContentWeight(self, rawContentWeight);
     }
 
     double CalculateMagicBoxTotalWeight(double rawContentWeight)
     {
-        if (!MagicBoxOwned) { return 0.0; }
-        return CaelumConstants.MAGIC_BOX_BASE_WEIGHT
-            + CalculateMagicBoxReducedContentWeight(rawContentWeight);
+        return CaelumInventoryService.CalculateMagicBoxTotalWeight(self, rawContentWeight);
     }
 
     // Evalúa una transición completa sin modificar Actor.Inv. personalDelta
@@ -2213,80 +1858,39 @@ class CaelumPlayer : DoomPlayer
         double personalDelta, double boxRawDelta
     )
     {
-        if (DerivedStats == null) { return false; }
-        if (!MagicBoxOwned && boxRawDelta > 0.0) { return false; }
-        double projectedRawWeight = Max(
-            0.0, HUDMagicBoxRawContentWeight + boxRawDelta
-        );
-        double projectedCarriedWeight = DerivedStats.CarriedWeight
-            + personalDelta
-            + CalculateMagicBoxTotalWeight(projectedRawWeight)
-            - HUDMagicBoxTotalWeight;
-        return projectedCarriedWeight
-            <= DerivedStats.CarryCapacity + 0.0005;
+        return CaelumInventoryService.CanApplyInventoryWeightTransition(self, personalDelta, boxRawDelta);
     }
 
     bool CanAddRawWeightToMagicBox(double rawWeight)
     {
-        if (!MagicBoxOwned) { return false; }
-        return CanApplyInventoryWeightTransition(
-            0.0, Max(0.0, rawWeight)
-        );
+        return CaelumInventoryService.CanAddRawWeightToMagicBox(self, rawWeight);
     }
 
     bool CanMoveRawWeightFromMagicBoxToPersonal(double rawWeight)
     {
-        if (!MagicBoxOwned) { return false; }
-        double resolvedWeight = Max(0.0, rawWeight);
-        return CanApplyInventoryWeightTransition(
-            resolvedWeight, -resolvedWeight
-        );
+        return CaelumInventoryService.CanMoveRawWeightFromMagicBoxToPersonal(self, rawWeight);
     }
 
     bool CanMovePersonalStackWithIncomingToMagicBox(
         double existingRawWeight, double incomingRawWeight
     )
     {
-        double existingWeight = Max(0.0, existingRawWeight);
-        double incomingWeight = Max(0.0, incomingRawWeight);
-        return CanApplyInventoryWeightTransition(
-            -existingWeight, existingWeight + incomingWeight
-        );
+        return CaelumInventoryService.CanMovePersonalStackWithIncomingToMagicBox(self, existingRawWeight, incomingRawWeight);
     }
 
     bool HasNativeMagicBoxSlotAvailable()
     {
-        if (!MagicBoxOwned || DerivedStats == null) { return false; }
-        int reserved = CraftingTaskCompleting
-            ? 0 : CraftingTaskReservedBoxSlots;
-        return CountNativeMagicBoxSlots() + reserved
-            < DerivedStats.MagicBoxCapacity;
+        return CaelumInventoryService.HasNativeMagicBoxSlotAvailable(self);
     }
 
     CaelumConsumableItem FindNativeConsumableItem(int consumableType)
     {
-        for (Inventory cursor = Inv; cursor != null; cursor = cursor.Inv)
-        {
-            CaelumConsumableItem item = CaelumConsumableItem(cursor);
-            if (item != null && item.GetConsumableType() == consumableType)
-            {
-                return item;
-            }
-        }
-        return null;
+        return CaelumInventoryService.FindNativeConsumableItem(self, consumableType);
     }
 
     Inventory FindNativeAmmunition(int ammunitionType)
     {
-        if (ammunitionType == CaelumConstants.AMMUNITION_ARROW)
-        {
-            return FindInventory("CaelumArrowAmmo");
-        }
-        if (ammunitionType == CaelumConstants.AMMUNITION_BOLT)
-        {
-            return FindInventory("CaelumBoltAmmo");
-        }
-        return FindInventory("CaelumCarbineAmmo");
+        return CaelumInventoryService.FindNativeAmmunition(self, ammunitionType);
     }
 
 
@@ -2295,117 +1899,29 @@ class CaelumPlayer : DoomPlayer
     // como para el generador DEV, y verifica la pila real antes de informar éxito.
     bool AcquireJavelinAmmunition(int ammunitionType, int incomingAmount)
     {
-        if (incomingAmount <= 0 || DerivedStats == null) { return false; }
-
-        CaelumCarbineAmmo existing = CaelumCarbineAmmo(
-            FindNativeAmmunition(ammunitionType)
-        );
-        bool storeInMagicBox = existing != null && existing.InMagicBox;
-
-        if (existing != null)
-        {
-            if (!PrepareNativeAmmoStackPickup(existing, incomingAmount))
-            {
-                return false;
-            }
-            storeInMagicBox = existing.InMagicBox;
-        }
-        else
-        {
-            RefreshCarriedInventorySummary();
-            double incomingWeight = incomingAmount
-                * GetAmmunitionUnitWeight(ammunitionType);
-            if (!CanAddWeightToPersonalInventory(incomingWeight))
-            {
-                if (!HasNativeMagicBoxSlotAvailable()
-                    || !CanAddRawWeightToMagicBox(incomingWeight))
-                {
-                    return false;
-                }
-                storeInMagicBox = true;
-            }
-        }
-
-        // IMPORTANTE: no usar GiveInventoryType con las clases de jabalina.
-        // Su TryPickup llama nuevamente a AcquireJavelinAmmunition y generaría
-        // recursión infinita (stack overflow). Modificamos la pila directamente.
-        CaelumCarbineAmmo result = existing;
-        bool createdNewStack = false;
-
-        if (result != null)
-        {
-            result.Amount += incomingAmount;
-        }
-        else
-        {
-            Name ammoClass = GetAmmunitionClassName(ammunitionType);
-            result = CaelumCarbineAmmo(Spawn(ammoClass, Pos, NO_REPLACE));
-            if (result == null) { return false; }
-
-            // La clase nace con Amount 1. Sustituimos ese valor por la cantidad
-            // que realmente entra antes de adjuntarla al inventario del jugador.
-            result.Amount = incomingAmount;
-            AddInventory(result);
-            createdNewStack = true;
-        }
-
-        if (result == null || result.Amount <= 0) { return false; }
-        result.InMagicBox = storeInMagicBox;
-        LastEquipmentPickupWasNew = createdNewStack;
-        LastEquipmentPickupWentToMagicBox = storeInMagicBox;
-        OnNativeInventoryChanged();
-        CaelumNotifications.Acquired(self, result, incomingAmount);
-        return true;
+        return CaelumInventoryService.AcquireJavelinAmmunition(self, ammunitionType, incomingAmount);
     }
 
     CaelumSpecialInventoryItem FindNativeSpecialItem(
         int specialCategory, int specialType, int specialTier = 0
     )
     {
-        for (Inventory cursor = Inv; cursor != null; cursor = cursor.Inv)
-        {
-            CaelumSpecialInventoryItem item =
-                CaelumSpecialInventoryItem(cursor);
-            if (item != null
-                && item.GetSpecialCategory() == specialCategory
-                && item.GetSpecialType() == specialType
-                && (specialCategory != CaelumConstants.EQUIPMENT_KIND_MATERIAL
-                    || item.GetSpecialTier()
-                        == CaelumMaterialRules.ResolveTier(
-                            specialType, specialTier
-                        )))
-            {
-                return item;
-            }
-        }
-        return null;
+        return CaelumInventoryService.FindNativeSpecialItem(self, specialCategory, specialType, specialTier);
     }
 
     CaelumCurrencyItem FindNativeCurrency(int currencyType)
     {
-        return CaelumCurrencyItem(FindNativeSpecialItem(
-            CaelumConstants.EQUIPMENT_KIND_CURRENCY,
-            CaelumEconomyRules.ResolveCurrencyType(currencyType)
-        ));
+        return CaelumInventoryService.FindNativeCurrency(self, currencyType);
     }
 
     int GetOwnedCurrencyAmount(int currencyType)
     {
-        CaelumCurrencyItem currency = FindNativeCurrency(currencyType);
-        return currency != null ? Max(0, currency.Amount) : 0;
+        return CaelumInventoryService.GetOwnedCurrencyAmount(self, currencyType);
     }
 
     double GetOwnedMoneyCopperValue()
     {
-        double totalValue = 0.0;
-        for (int currencyType = 0;
-            currencyType < CaelumConstants.CURRENCY_TYPE_COUNT;
-            currencyType++)
-        {
-            totalValue += double(GetOwnedCurrencyAmount(currencyType))
-                * CaelumEconomyRules.GetCurrencyFaceValue(currencyType);
-        }
-        return totalValue;
+        return CaelumInventoryService.GetOwnedMoneyCopperValue(self);
     }
 
     int GetPalomoMerchantQuantityForIndex(int quantityIndex)
@@ -2446,363 +1962,90 @@ class CaelumPlayer : DoomPlayer
 
     Inventory FindPalomoMerchantProduct(int merchantItem)
     {
-        int consumableType = GetPalomoMerchantConsumableType(merchantItem);
-        if (consumableType >= 0)
-        { return FindNativeConsumableItem(consumableType); }
-        int materialType = GetPalomoMerchantMaterialType(merchantItem);
-        if (materialType < 0) { return null; }
-        return FindNativeSpecialItem(
-            CaelumConstants.EQUIPMENT_KIND_MATERIAL, materialType,
-            CaelumMaterialRules.ResolveTier(materialType, 1));
+        return CaelumInventoryService.FindPalomoMerchantProduct(self, merchantItem);
     }
 
     bool IsPalomoMerchantProductInMagicBox(Inventory product)
     {
-        CaelumConsumableItem consumable = CaelumConsumableItem(product);
-        if (consumable != null) { return consumable.InMagicBox; }
-        CaelumSpecialInventoryItem special = CaelumSpecialInventoryItem(product);
-        return special != null && special.InMagicBox;
+        return CaelumInventoryService.IsPalomoMerchantProductInMagicBox(self, product);
     }
 
     int CountPalomoMerchantProduct(int merchantItem, bool includeReserved)
     {
-        int consumableType = GetPalomoMerchantConsumableType(merchantItem);
-        if (consumableType >= 0)
-        {
-            CaelumConsumableItem consumable = FindNativeConsumableItem(consumableType);
-            return consumable != null ? Max(0, consumable.Amount) : 0;
-        }
-        int materialType = GetPalomoMerchantMaterialType(merchantItem);
-        if (materialType < 0) { return 0; }
-        int tier = CaelumMaterialRules.ResolveTier(materialType, 1);
-        return includeReserved ? CountRawCraftingMaterial(materialType, tier)
-            : CountCraftingMaterial(materialType, tier);
+        return CaelumInventoryService.CountPalomoMerchantProduct(self, merchantItem, includeReserved);
     }
 
     double GetPalomoMerchantProductUnitWeight(int merchantItem)
     {
-        return GetPalomoMerchantConsumableType(merchantItem) >= 0
-            ? CaelumConsumableItem.UnitWeightForType(GetPalomoMerchantConsumableType(merchantItem))
-            : CaelumConstants.MATERIAL_UNIT_WEIGHT;
+        return CaelumInventoryService.GetPalomoMerchantProductUnitWeight(self, merchantItem);
     }
 
     void ResetPalomoCurrencyPlan()
     {
-        for (int currencyType = 0;
-            currencyType < CaelumConstants.CURRENCY_TYPE_COUNT; currencyType++)
-        {
-            CaelumCurrencyItem existing = FindNativeCurrency(currencyType);
-            PalomoCurrencyPlanAmount[currencyType] = existing != null
-                ? Max(0, existing.Amount) : 0;
-            PalomoCurrencyPlanInMagicBox[currencyType] = existing != null
-                && existing.InMagicBox;
-        }
+        CaelumInventoryService.ResetPalomoCurrencyPlan(self);
     }
 
     bool BuildPalomoCurrencyPaymentPlan(int copperAmount)
     {
-        if (copperAmount < 0
-            || GetOwnedMoneyCopperValue() + 0.0001 < copperAmount)
-        { return false; }
-        ResetPalomoCurrencyPlan();
-        int remaining = copperAmount;
-        for (int currencyType = CaelumConstants.CURRENCY_TYPE_COUNT - 1;
-            currencyType >= 0 && remaining > 0; currencyType--)
-        {
-            int faceValue = CaelumEconomyRules.GetCurrencyFaceValue(currencyType);
-            int take = Min(PalomoCurrencyPlanAmount[currencyType],
-                remaining / faceValue);
-            PalomoCurrencyPlanAmount[currencyType] -= take;
-            remaining -= take * faceValue;
-        }
-
-        int change = 0;
-        if (remaining > 0)
-        {
-            for (int currencyType = 0;
-                currencyType < CaelumConstants.CURRENCY_TYPE_COUNT; currencyType++)
-            {
-                int faceValue = CaelumEconomyRules.GetCurrencyFaceValue(currencyType);
-                if (PalomoCurrencyPlanAmount[currencyType] <= 0
-                    || faceValue <= remaining) { continue; }
-                PalomoCurrencyPlanAmount[currencyType]--;
-                change = faceValue - remaining;
-                remaining = 0;
-                break;
-            }
-        }
-        if (remaining > 0) { return false; }
-        for (int currencyType = CaelumConstants.CURRENCY_TYPE_COUNT - 1;
-            currencyType >= 0 && change > 0; currencyType--)
-        {
-            int faceValue = CaelumEconomyRules.GetCurrencyFaceValue(currencyType);
-            int returnedCoins = change / faceValue;
-            PalomoCurrencyPlanAmount[currencyType] += returnedCoins;
-            change -= returnedCoins * faceValue;
-        }
-        return change == 0;
+        return CaelumInventoryService.BuildPalomoCurrencyPaymentPlan(self, copperAmount);
     }
 
     bool BuildPalomoCurrencyCreditPlan(int copperAmount)
     {
-        if (copperAmount < 0) { return false; }
-        ResetPalomoCurrencyPlan();
-        int remaining = copperAmount;
-        for (int currencyType = CaelumConstants.CURRENCY_TYPE_COUNT - 1;
-            currencyType >= 0 && remaining > 0; currencyType--)
-        {
-            int faceValue = CaelumEconomyRules.GetCurrencyFaceValue(currencyType);
-            int addedCoins = remaining / faceValue;
-            if (addedCoins <= 0) { continue; }
-            if (PalomoCurrencyPlanAmount[currencyType]
-                > 2147483647 - addedCoins) { return false; }
-            PalomoCurrencyPlanAmount[currencyType] += addedCoins;
-            remaining -= addedCoins * faceValue;
-        }
-        return remaining == 0;
+        return CaelumInventoryService.BuildPalomoCurrencyCreditPlan(self, copperAmount);
     }
 
     void RoutePalomoCurrencyGainsToMagicBox()
     {
-        if (!MagicBoxOwned) { return; }
-        for (int currencyType = 0;
-            currencyType < CaelumConstants.CURRENCY_TYPE_COUNT; currencyType++)
-        {
-            if (PalomoCurrencyPlanAmount[currencyType]
-                > GetOwnedCurrencyAmount(currencyType))
-            { PalomoCurrencyPlanInMagicBox[currencyType] = true; }
-        }
+        CaelumInventoryService.RoutePalomoCurrencyGainsToMagicBox(self);
     }
 
     double GetPalomoCurrencyPlanPersonalWeightDelta()
     {
-        double delta = 0.0;
-        for (int currencyType = 0;
-            currencyType < CaelumConstants.CURRENCY_TYPE_COUNT; currencyType++)
-        {
-            CaelumCurrencyItem existing = FindNativeCurrency(currencyType);
-            int oldAmount = existing != null ? Max(0, existing.Amount) : 0;
-            if (existing != null && !existing.InMagicBox)
-            { delta -= oldAmount * CaelumConstants.CURRENCY_UNIT_WEIGHT; }
-            if (PalomoCurrencyPlanAmount[currencyType] > 0
-                && !PalomoCurrencyPlanInMagicBox[currencyType])
-            { delta += PalomoCurrencyPlanAmount[currencyType]
-                    * CaelumConstants.CURRENCY_UNIT_WEIGHT; }
-        }
-        return delta;
+        return CaelumInventoryService.GetPalomoCurrencyPlanPersonalWeightDelta(self);
     }
 
     double GetPalomoCurrencyPlanBoxRawWeightDelta()
     {
-        double delta = 0.0;
-        for (int currencyType = 0;
-            currencyType < CaelumConstants.CURRENCY_TYPE_COUNT; currencyType++)
-        {
-            CaelumCurrencyItem existing = FindNativeCurrency(currencyType);
-            int oldAmount = existing != null ? Max(0, existing.Amount) : 0;
-            if (existing != null && existing.InMagicBox)
-            { delta -= oldAmount * CaelumConstants.CURRENCY_UNIT_WEIGHT; }
-            if (PalomoCurrencyPlanAmount[currencyType] > 0
-                && PalomoCurrencyPlanInMagicBox[currencyType])
-            { delta += PalomoCurrencyPlanAmount[currencyType]
-                    * CaelumConstants.CURRENCY_UNIT_WEIGHT; }
-        }
-        return delta;
+        return CaelumInventoryService.GetPalomoCurrencyPlanBoxRawWeightDelta(self);
     }
 
     int GetPalomoCurrencyPlanBoxSlotDelta()
     {
-        int delta = 0;
-        for (int currencyType = 0;
-            currencyType < CaelumConstants.CURRENCY_TYPE_COUNT; currencyType++)
-        {
-            CaelumCurrencyItem existing = FindNativeCurrency(currencyType);
-            bool oldSlot = existing != null && existing.Amount > 0
-                && existing.InMagicBox;
-            bool newSlot = PalomoCurrencyPlanAmount[currencyType] > 0
-                && PalomoCurrencyPlanInMagicBox[currencyType];
-            if (oldSlot && !newSlot) { delta--; }
-            else if (!oldSlot && newSlot) { delta++; }
-        }
-        return delta;
+        return CaelumInventoryService.GetPalomoCurrencyPlanBoxSlotDelta(self);
     }
 
     bool PalomoTransactionCapacityFits(
         double personalDelta, double boxRawDelta, int boxSlotDelta)
     {
-        if (!MagicBoxOwned && (boxRawDelta > 0.0 || boxSlotDelta > 0))
-        { return false; }
-        int currentSlots = CountNativeMagicBoxSlots()
-            + (CraftingTaskCompleting ? 0 : CraftingTaskReservedBoxSlots);
-        int projectedSlots = currentSlots + boxSlotDelta;
-        int maximumSlots = MagicBoxOwned && DerivedStats != null
-            ? Max(0, DerivedStats.MagicBoxCapacity) : 0;
-        if (projectedSlots > maximumSlots && projectedSlots > currentSlots)
-        { return false; }
-        return CanApplyInventoryWeightTransition(personalDelta, boxRawDelta);
+        return CaelumInventoryService.PalomoTransactionCapacityFits(self, personalDelta, boxRawDelta, boxSlotDelta);
     }
 
     bool PreparePalomoPurchaseCapacity(
         int merchantItem, int quantity, int price)
     {
-        Inventory product = FindPalomoMerchantProduct(merchantItem);
-        bool productAlreadyBoxed = IsPalomoMerchantProductInMagicBox(product);
-        double unitWeight = GetPalomoMerchantProductUnitWeight(merchantItem);
-        for (int currencyRoute = 0; currencyRoute < 2; currencyRoute++)
-        {
-            if (!BuildPalomoCurrencyPaymentPlan(price)) { return false; }
-            if (currencyRoute == 1)
-            {
-                if (!MagicBoxOwned) { continue; }
-                RoutePalomoCurrencyGainsToMagicBox();
-            }
-            for (int productRoute = 0; productRoute < 2; productRoute++)
-            {
-                bool sendProductToBox = productAlreadyBoxed || productRoute == 1;
-                if (sendProductToBox && !MagicBoxOwned) { continue; }
-                if (productAlreadyBoxed && productRoute == 1) { continue; }
-                double personalDelta = GetPalomoCurrencyPlanPersonalWeightDelta();
-                double boxRawDelta = GetPalomoCurrencyPlanBoxRawWeightDelta();
-                int boxSlotDelta = GetPalomoCurrencyPlanBoxSlotDelta();
-                double incomingWeight = quantity * unitWeight;
-                if (product == null)
-                {
-                    if (sendProductToBox)
-                    { boxRawDelta += incomingWeight; boxSlotDelta++; }
-                    else { personalDelta += incomingWeight; }
-                }
-                else if (productAlreadyBoxed) { boxRawDelta += incomingWeight; }
-                else if (sendProductToBox)
-                {
-                    double oldWeight = Max(0, product.Amount) * unitWeight;
-                    personalDelta -= oldWeight;
-                    boxRawDelta += oldWeight + incomingWeight;
-                    boxSlotDelta++;
-                }
-                else { personalDelta += incomingWeight; }
-                if (PalomoTransactionCapacityFits(
-                    personalDelta, boxRawDelta, boxSlotDelta))
-                {
-                    PalomoIncomingItemInMagicBox = sendProductToBox;
-                    return true;
-                }
-            }
-        }
-        return false;
+        return CaelumInventoryService.PreparePalomoPurchaseCapacity(self, merchantItem, quantity, price);
     }
 
     bool PreparePalomoSaleCapacity(
         int merchantItem, int quantity, int price)
     {
-        Inventory product = FindPalomoMerchantProduct(merchantItem);
-        if (product == null || product.Amount < quantity) { return false; }
-        bool productBoxed = IsPalomoMerchantProductInMagicBox(product);
-        double removedWeight = quantity
-            * GetPalomoMerchantProductUnitWeight(merchantItem);
-        for (int currencyRoute = 0; currencyRoute < 2; currencyRoute++)
-        {
-            if (!BuildPalomoCurrencyCreditPlan(price)) { return false; }
-            if (currencyRoute == 1)
-            {
-                if (!MagicBoxOwned) { continue; }
-                RoutePalomoCurrencyGainsToMagicBox();
-            }
-            double personalDelta = GetPalomoCurrencyPlanPersonalWeightDelta();
-            double boxRawDelta = GetPalomoCurrencyPlanBoxRawWeightDelta();
-            int boxSlotDelta = GetPalomoCurrencyPlanBoxSlotDelta();
-            if (productBoxed)
-            {
-                boxRawDelta -= removedWeight;
-                if (product.Amount == quantity) { boxSlotDelta--; }
-            }
-            else { personalDelta -= removedWeight; }
-            if (PalomoTransactionCapacityFits(
-                personalDelta, boxRawDelta, boxSlotDelta)) { return true; }
-        }
-        return false;
+        return CaelumInventoryService.PreparePalomoSaleCapacity(self, merchantItem, quantity, price);
     }
 
     bool ApplyPalomoCurrencyPlan()
     {
-        for (int currencyType = 0;
-            currencyType < CaelumConstants.CURRENCY_TYPE_COUNT; currencyType++)
-        {
-            CaelumCurrencyItem existing = FindNativeCurrency(currencyType);
-            int previousAmount=existing==null ? 0 : existing.Amount;
-            int finalAmount = PalomoCurrencyPlanAmount[currencyType];
-            if (finalAmount <= 0)
-            {
-                if (existing != null) { existing.Destroy(); }
-                continue;
-            }
-            if (existing == null)
-            {
-                existing = CaelumCurrencyItem(Spawn(
-                    CaelumEconomyRules.GetCurrencyClassName(currencyType),
-                    Pos, NO_REPLACE));
-                if (existing == null) { return false; }
-                existing.Amount = finalAmount;
-                existing.InMagicBox = PalomoCurrencyPlanInMagicBox[currencyType];
-                existing.AttachToOwner(self);
-            }
-            else
-            {
-                existing.Amount = finalAmount;
-                existing.InMagicBox = PalomoCurrencyPlanInMagicBox[currencyType];
-            }
-            CaelumNotifications.Acquired(self, existing, finalAmount-previousAmount);
-        }
-        return true;
+        return CaelumInventoryService.ApplyPalomoCurrencyPlan(self);
     }
 
     bool AddPalomoMerchantProduct(int merchantItem, int quantity)
     {
-        Inventory existing = FindPalomoMerchantProduct(merchantItem);
-        if (existing != null)
-        {
-            existing.Amount += quantity;
-            CaelumConsumableItem consumable = CaelumConsumableItem(existing);
-            if (consumable != null)
-            { consumable.InMagicBox = PalomoIncomingItemInMagicBox; }
-            CaelumSpecialInventoryItem special = CaelumSpecialInventoryItem(existing);
-            if (special != null)
-            { special.InMagicBox = PalomoIncomingItemInMagicBox; }
-            CaelumNotifications.Acquired(self, existing, quantity);
-            return true;
-        }
-        int consumableType = GetPalomoMerchantConsumableType(merchantItem);
-        if (consumableType >= 0)
-        {
-            CaelumConsumableItem created = CaelumConsumableItem(Spawn(
-                GetConsumableClassName(consumableType), Pos, NO_REPLACE));
-            if (created == null) { return false; }
-            created.Amount = quantity;
-            created.InMagicBox = PalomoIncomingItemInMagicBox;
-            created.AttachToOwner(self);
-            CaelumNotifications.Acquired(self, created, quantity);
-            return true;
-        }
-        int materialType = GetPalomoMerchantMaterialType(merchantItem);
-        if (materialType < 0) { return false; }
-        CaelumMaterialPickup material = CaelumMaterialPickup(
-            Spawn("CaelumMaterialPickup", Pos, NO_REPLACE));
-        if (material == null) { return false; }
-        material.args[0] = materialType;
-        material.args[1] = CaelumMaterialRules.ResolveTier(materialType, 1);
-        material.Amount = quantity;
-        material.InMagicBox = PalomoIncomingItemInMagicBox;
-        material.AttachToOwner(self);
-        CaelumNotifications.Acquired(self, material, quantity);
-        return true;
+        return CaelumInventoryService.AddPalomoMerchantProduct(self, merchantItem, quantity);
     }
 
     bool RemovePalomoMerchantProduct(int merchantItem, int quantity)
     {
-        Inventory product = FindPalomoMerchantProduct(merchantItem);
-        if (product == null || product.Amount < quantity) { return false; }
-        product.Amount -= quantity;
-        if (product.Amount <= 0) { product.Destroy(); }
-        return true;
+        return CaelumInventoryService.RemovePalomoMerchantProduct(self, merchantItem, quantity);
     }
 
     bool HasPalomoMerchantReputationDiscount()
@@ -3118,256 +2361,58 @@ class CaelumPlayer : DoomPlayer
 
     CaelumWeightedKey FindNativeKey(int keyType)
     {
-        for (Inventory cursor = Inv; cursor != null; cursor = cursor.Inv)
-        {
-            CaelumWeightedKey keyItem = CaelumWeightedKey(cursor);
-            if (keyItem != null && keyItem.GetKeyType() == keyType)
-            {
-                return keyItem;
-            }
-        }
-        return null;
+        return CaelumInventoryService.FindNativeKey(self, keyType);
     }
 
     bool PrepareNativeEquipmentPickup(CaelumEquipmentItem item)
     {
-        if (item == null || DerivedStats == null) { return false; }
-        RefreshCarriedInventorySummary();
-        item.Equipped = false;
-        item.InMagicBox = false;
-        if (!CanAddWeightToPersonalInventory(item.UnitWeight))
-        {
-            if (!HasNativeMagicBoxSlotAvailable()
-                || !CanAddRawWeightToMagicBox(item.UnitWeight))
-            {
-                return false;
-            }
-            item.InMagicBox = true;
-        }
-        // Sólo una transferencia con capacidad disponible reserva identidad.
-        if (EnsureEquipmentItemId(item) <= 0) { return false; }
-        LastEquipmentPickupWasNew = true;
-        LastEquipmentPickupWentToMagicBox = item.InMagicBox;
-        return true;
+        return CaelumInventoryService.PrepareNativeEquipmentPickup(self, item);
     }
 
     bool PrepareNativeAmmoPickup(CaelumCarbineAmmo ammunition)
     {
-        if (ammunition == null || DerivedStats == null) { return false; }
-        // Si ya existe una pila, HandlePickup decide usando el estado de ella.
-        for (Inventory cursor = Inv; cursor != null; cursor = cursor.Inv)
-        {
-            CaelumCarbineAmmo existing = CaelumCarbineAmmo(cursor);
-            if (existing != null
-                && existing.GetAmmoType() == ammunition.GetAmmoType())
-            {
-                return true;
-            }
-        }
-        RefreshCarriedInventorySummary();
-        ammunition.InMagicBox = false;
-        double incomingWeight = ammunition.Amount * ammunition.GetUnitWeight();
-        if (!CanAddWeightToPersonalInventory(incomingWeight))
-        {
-            if (!HasNativeMagicBoxSlotAvailable()
-                || !CanAddRawWeightToMagicBox(incomingWeight))
-            {
-                return false;
-            }
-            ammunition.InMagicBox = true;
-        }
-        LastEquipmentPickupWasNew = true;
-        LastEquipmentPickupWentToMagicBox = ammunition.InMagicBox;
-        return true;
+        return CaelumInventoryService.PrepareNativeAmmoPickup(self, ammunition);
     }
 
     bool PrepareNativeAmmoStackPickup(
         CaelumCarbineAmmo ammunition, int incomingAmount
     )
     {
-        if (ammunition == null || DerivedStats == null) { return false; }
-        RefreshCarriedInventorySummary();
-        double incomingWeight = Max(0, incomingAmount)
-            * ammunition.GetUnitWeight();
-        if (ammunition.InMagicBox)
-        {
-            return CanAddRawWeightToMagicBox(incomingWeight);
-        }
-        if (CanAddWeightToPersonalInventory(incomingWeight)) { return true; }
-        if (!HasNativeMagicBoxSlotAvailable())
-        {
-            return false;
-        }
-        double existingWeight = ammunition.Amount
-            * ammunition.GetUnitWeight();
-        if (!CanMovePersonalStackWithIncomingToMagicBox(
-                existingWeight, incomingWeight
-            ))
-        {
-            return false;
-        }
-        // La munición es una sola pila: al desbordar, la pila completa pasa a
-        // ocupar un slot y participa del peso agregado reducido de la caja.
-        ammunition.InMagicBox = true;
-        LastEquipmentPickupWentToMagicBox = true;
-        return true;
+        return CaelumInventoryService.PrepareNativeAmmoStackPickup(self, ammunition, incomingAmount);
     }
 
     bool PrepareNativeConsumablePickup(CaelumConsumableItem consumable)
     {
-        if (consumable == null || DerivedStats == null) { return false; }
-        CaelumConsumableItem existing = FindNativeConsumableItem(
-            consumable.GetConsumableType()
-        );
-        if (existing != null)
-        {
-            return PrepareNativeConsumableStackPickup(
-                existing, consumable.Amount
-            );
-        }
-        RefreshCarriedInventorySummary();
-        consumable.InMagicBox = false;
-        if (!CanAddWeightToPersonalInventory(consumable.GetCarriedWeight()))
-        {
-            double incomingWeight = consumable.Amount
-                * consumable.GetUnitWeight();
-            if (!HasNativeMagicBoxSlotAvailable()
-                || !CanAddRawWeightToMagicBox(incomingWeight))
-            {
-                return false;
-            }
-            consumable.InMagicBox = true;
-        }
-        LastEquipmentPickupWasNew = true;
-        LastEquipmentPickupWentToMagicBox = consumable.InMagicBox;
-        return true;
+        return CaelumInventoryService.PrepareNativeConsumablePickup(self, consumable);
     }
 
     bool PrepareNativeConsumableStackPickup(
         CaelumConsumableItem consumable, int incomingAmount
     )
     {
-        if (consumable == null || DerivedStats == null) { return false; }
-        RefreshCarriedInventorySummary();
-        double incomingWeight = Max(0, incomingAmount)
-            * consumable.GetUnitWeight();
-        if (consumable.InMagicBox)
-        {
-            return CanAddRawWeightToMagicBox(incomingWeight);
-        }
-        if (CanAddWeightToPersonalInventory(incomingWeight)) { return true; }
-        if (!HasNativeMagicBoxSlotAvailable())
-        {
-            return false;
-        }
-        double existingWeight = consumable.Amount
-            * consumable.GetUnitWeight();
-        if (!CanMovePersonalStackWithIncomingToMagicBox(
-                existingWeight, incomingWeight
-            ))
-        {
-            return false;
-        }
-        // Una pila completa ocupa un único slot, sin importar su Amount, y su
-        // peso real entra una sola vez en el cálculo agregado de la caja.
-        consumable.InMagicBox = true;
-        LastEquipmentPickupWentToMagicBox = true;
-        return true;
+        return CaelumInventoryService.PrepareNativeConsumableStackPickup(self, consumable, incomingAmount);
     }
 
     bool PrepareNativeSpecialPickup(CaelumSpecialInventoryItem specialItem)
     {
-        if (specialItem == null || DerivedStats == null) { return false; }
-        CaelumSpecialInventoryItem existing = FindNativeSpecialItem(
-            specialItem.GetSpecialCategory(), specialItem.GetSpecialType(),
-            specialItem.GetSpecialTier()
-        );
-        if (existing != null)
-        {
-            if (specialItem.GetSpecialCategory()
-                    == CaelumConstants.EQUIPMENT_KIND_MATERIAL
-                || specialItem.GetSpecialCategory()
-                    == CaelumConstants.EQUIPMENT_KIND_CURRENCY)
-            {
-                return PrepareNativeSpecialStackPickup(
-                    existing, specialItem.Amount
-                );
-            }
-            return true;
-        }
-        RefreshCarriedInventorySummary();
-        specialItem.InMagicBox = false;
-        if (!CanAddWeightToPersonalInventory(specialItem.GetCarriedWeight()))
-        {
-            double incomingWeight = specialItem.Amount
-                * specialItem.GetUnitWeight();
-            if (!HasNativeMagicBoxSlotAvailable()
-                || !CanAddRawWeightToMagicBox(incomingWeight))
-            {
-                return false;
-            }
-            specialItem.InMagicBox = true;
-        }
-        LastEquipmentPickupWasNew = true;
-        LastEquipmentPickupWentToMagicBox = specialItem.InMagicBox;
-        return true;
+        return CaelumInventoryService.PrepareNativeSpecialPickup(self, specialItem);
     }
 
     bool PrepareNativeSpecialStackPickup(
         CaelumSpecialInventoryItem specialItem, int incomingAmount
     )
     {
-        if (specialItem == null || DerivedStats == null) { return false; }
-        RefreshCarriedInventorySummary();
-        double incomingWeight = Max(0, incomingAmount)
-            * specialItem.GetUnitWeight();
-        if (specialItem.InMagicBox)
-        {
-            return CanAddRawWeightToMagicBox(incomingWeight);
-        }
-        if (CanAddWeightToPersonalInventory(incomingWeight)) { return true; }
-        if (!HasNativeMagicBoxSlotAvailable())
-        {
-            return false;
-        }
-        double existingWeight = specialItem.Amount
-            * specialItem.GetUnitWeight();
-        if (!CanMovePersonalStackWithIncomingToMagicBox(
-                existingWeight, incomingWeight
-            ))
-        {
-            return false;
-        }
-        specialItem.InMagicBox = true;
-        LastEquipmentPickupWentToMagicBox = true;
-        return true;
+        return CaelumInventoryService.PrepareNativeSpecialStackPickup(self, specialItem, incomingAmount);
     }
 
     bool PrepareNativeKeyPickup(CaelumWeightedKey keyItem)
     {
-        if (keyItem == null || DerivedStats == null) { return false; }
-        // Key ya impide duplicados por clase. Si existe, el pickup nativo
-        // decide el resultado sin reservar peso otra vez.
-        if (FindNativeKey(keyItem.GetKeyType()) != null) { return true; }
-        RefreshCarriedInventorySummary();
-        if (!CanAddWeightToPersonalInventory(keyItem.GetCarriedWeight()))
-        {
-            return false;
-        }
-        LastEquipmentPickupWasNew = true;
-        LastEquipmentPickupWentToMagicBox = false;
-        return true;
+        return CaelumInventoryService.PrepareNativeKeyPickup(self, keyItem);
     }
 
     void OnNativeInventoryChanged()
     {
-        ApplyCharacterProfile();
-        RefreshEquipmentSelectionPreview();
-        RefreshFormalInventorySnapshot();
-        if (PalomoMerchantMenuOpen) { RefreshPalomoMerchantSnapshot(); }
-        if (CraftingMenuOpen) { RefreshCraftingPreview(); }
-        if (CraftingBrowser != null) CraftingBrowser.Refresh(self);
-        PersistCharacterState();
+        CaelumInventoryService.OnNativeInventoryChanged(self);
     }
 
     // Los pickups de armas que permanecen en el inventario personal se
@@ -3384,209 +2429,19 @@ class CaelumPlayer : DoomPlayer
         bool pickedIntoMagicBox
     )
     {
-        ApplyCharacterProfile();
-        RefreshEquipmentSelectionPreview();
-
-        if (pickedKind != CaelumConstants.EQUIPMENT_KIND_WEAPON
-            || pickedIntoMagicBox
-            || CharacterProfile == null
-            || !CaelumEquipmentRules.IsSizeCompatible(
-                pickedSize,
-                CharacterProfile.GetSizeTier()
-            ))
-        {
-            if (CraftingMenuOpen) { RefreshCraftingPreview(); }
-            PersistCharacterState();
-            return;
-        }
-
-        EquipmentSelectionKind = CaelumConstants.EQUIPMENT_KIND_WEAPON;
-        EquipmentSelectionItemId = pickedItemId;
-        EquipmentSelectionWeaponType = Clamp(
-            pickedType, 0, CaelumConstants.WEAPON_TYPE_COUNT - 1
-        );
-        EquipmentSelectionTier = Clamp(pickedTier, 1, 3);
-        EquipmentSelectionSize = Clamp(
-            pickedSize, 0, CaelumConstants.EQUIPMENT_SIZE_COUNT - 1
-        );
-        EquipmentSelectionWeaponEssenceType = Clamp(
-            pickedEssence, 0, CaelumConstants.ESSENCE_TYPE_COUNT - 1
-        );
-        RefreshEquipmentSelectionPreview();
-
-        CaelumEquipmentItem pickedItem = GetSelectedNativeEquipmentItem();
-        if (pickedItem != null && !pickedItem.InMagicBox)
-        {
-            EquipSelectedNativeEquipment();
-            SelectNativeWeaponConfiguration(
-                pickedType, pickedEssence, pickedTier
-            );
-        }
-        else
-        {
-            PersistCharacterState();
-        }
-
-        if (CraftingMenuOpen) { RefreshCraftingPreview(); }
+        CaelumInventoryService.OnNativeEquipmentPickedUp(self, pickedItemId, pickedKind, pickedType, pickedTier, pickedSize, pickedEssence, pickedIntoMagicBox);
     }
 
     void MigrateLegacyEquipmentToNativeInventory(
         CaelumPersistentCharacterState persistentState
     )
     {
-        if (persistentState == null
-            || persistentState.NativeEquipmentMigrationComplete) { return; }
-        for (Inventory cursor = Inv; cursor != null; cursor = cursor.Inv)
-        {
-            if (CaelumEquipmentItem(cursor) != null)
-            {
-                persistentState.NativeEquipmentMigrationComplete = true;
-                return;
-            }
-        }
-        persistentState.EnsureEquipmentSizeInitialized();
-        persistentState.MigrateWeaponDurability();
-        for (int slot = 0; slot < CaelumConstants.ARMOR_SLOT_COUNT; slot++)
-        {
-            for (int armorType = 0;
-                armorType < CaelumConstants.ARMOR_EQUIPPABLE_TYPE_COUNT;
-                armorType++)
-            {
-                for (int tier = 1; tier <= 3; tier++)
-                {
-                    for (int equipmentSize = 0;
-                        equipmentSize < CaelumConstants.EQUIPMENT_SIZE_COUNT;
-                        equipmentSize++)
-                    {
-                        if (!persistentState.OwnsArmor(
-                            slot, armorType, tier, equipmentSize
-                        )) { continue; }
-                        CaelumEquipmentItem item = CaelumEquipmentItem(
-                            Spawn("CaelumArmorPickup", Pos, NO_REPLACE)
-                        );
-                        if (item == null) { continue; }
-                        item.EquipmentKind = CaelumConstants.EQUIPMENT_KIND_ARMOR;
-                        item.ItemType = armorType;
-                        item.ArmorSlot = slot;
-                        item.Tier = tier;
-                        item.EquipmentSize = equipmentSize;
-                        item.Durability = persistentState.GetOwnedArmorDurability(
-                            slot, armorType, tier, equipmentSize
-                        );
-                        item.UnitWeight = ArmorModel.GetWeightFor(
-                            slot, armorType, tier, equipmentSize
-                        );
-                        item.Equipped = ArmorModel.ArmorType[slot] == armorType
-                            && ArmorModel.Tier[slot] == tier
-                            && ArmorModel.Size[slot] == equipmentSize;
-                        item.InMagicBox = persistentState.IsArmorInMagicBox(
-                            slot, armorType, tier, equipmentSize
-                        );
-                        item.AttachToOwner(self);
-                        EnsureEquipmentItemId(item);
-                    }
-                }
-            }
-        }
-        for (int shieldType = 0;
-            shieldType < CaelumConstants.SHIELD_TYPE_COUNT;
-            shieldType++)
-        {
-            for (int tier = 1; tier <= 3; tier++)
-            {
-                for (int equipmentSize = 0;
-                    equipmentSize < CaelumConstants.EQUIPMENT_SIZE_COUNT;
-                    equipmentSize++)
-                {
-                    if (!persistentState.OwnsShield(
-                        shieldType, tier, equipmentSize
-                    )) { continue; }
-                    CaelumEquipmentItem item = CaelumEquipmentItem(
-                        Spawn("CaelumShieldPickup", Pos, NO_REPLACE)
-                    );
-                    if (item == null) { continue; }
-                    item.EquipmentKind = CaelumConstants.EQUIPMENT_KIND_SHIELD;
-                    item.ItemType = shieldType;
-                    item.ArmorSlot = -1;
-                    item.Tier = tier;
-                    item.EquipmentSize = equipmentSize;
-                    item.Durability = persistentState.GetOwnedShieldDurability(
-                        shieldType, tier, equipmentSize
-                    );
-                    item.UnitWeight = ShieldModel.GetWeightFor(
-                        shieldType, tier, equipmentSize
-                    );
-                    item.Equipped = ShieldModel.Equipped
-                        && ShieldModel.ShieldType == shieldType
-                        && ShieldModel.Tier == tier
-                        && ShieldModel.Size == equipmentSize;
-                    item.InMagicBox = persistentState.IsShieldInMagicBox(
-                        shieldType, tier, equipmentSize
-                    );
-                    item.AttachToOwner(self);
-                    EnsureEquipmentItemId(item);
-                }
-            }
-        }
-        for (int weaponType = 0;
-            weaponType < CaelumConstants.WEAPON_TYPE_COUNT;
-            weaponType++)
-        {
-            for (int tier = 1; tier <= 3; tier++)
-            {
-                for (int equipmentSize = 0;
-                    equipmentSize < CaelumConstants.EQUIPMENT_SIZE_COUNT;
-                    equipmentSize++)
-                {
-                    if (!persistentState.OwnsWeapon(
-                        weaponType, tier, equipmentSize
-                    )) { continue; }
-                    CaelumEquipmentItem item = CaelumEquipmentItem(
-                        Spawn("CaelumWeaponPickup", Pos, NO_REPLACE)
-                    );
-                    if (item == null) { continue; }
-                    item.EquipmentKind = CaelumConstants.EQUIPMENT_KIND_WEAPON;
-                    item.ItemType = weaponType;
-                    item.ArmorSlot = -1;
-                    item.Tier = tier;
-                    item.EquipmentSize = equipmentSize;
-                    item.Durability = persistentState.GetOwnedWeaponDurability(
-                        weaponType, tier, equipmentSize
-                    );
-                    item.EssenceType = persistentState.GetWeaponEssenceType(
-                        weaponType, tier, equipmentSize
-                    );
-                    item.UnitWeight = WeaponModel.GetWeightFor(
-                        weaponType, tier, equipmentSize
-                    );
-                    item.Equipped = persistentState.IsWeaponEquipped(
-                        weaponType, tier, equipmentSize
-                    );
-                    item.InMagicBox = persistentState.IsWeaponInMagicBox(
-                        weaponType, tier, equipmentSize
-                    );
-                    item.AttachToOwner(self);
-                    EnsureEquipmentItemId(item);
-                }
-            }
-        }
-        persistentState.NativeEquipmentMigrationComplete = true;
+        CaelumInventoryService.MigrateLegacyEquipmentToNativeInventory(self, persistentState);
     }
 
     double GetEquippedWeaponLoadWeight()
     {
-        double total = 0.0;
-        for (Inventory cursor = Inv; cursor != null; cursor = cursor.Inv)
-        {
-            CaelumEquipmentItem item = CaelumEquipmentItem(cursor);
-            if (item != null
-                && item.EquipmentKind == CaelumConstants.EQUIPMENT_KIND_WEAPON
-                && item.Equipped && !item.InMagicBox)
-            {
-                total += item.UnitWeight;
-            }
-        }
-        return total;
+        return CaelumInventoryService.GetEquippedWeaponLoadWeight(self);
     }
 
     int GetWeaponFamilyForType(int weaponType)
@@ -3603,36 +2458,12 @@ class CaelumPlayer : DoomPlayer
 
     bool HasEquippedWeaponFamily(int family)
     {
-        for (int weaponType = 0;
-            weaponType < CaelumConstants.WEAPON_TYPE_COUNT; weaponType++)
-        {
-            if (GetWeaponFamilyForType(weaponType) == family
-                && HasEquippedNativeWeaponType(weaponType))
-            {
-                return true;
-            }
-        }
-        return false;
+        return CaelumInventoryService.HasEquippedWeaponFamily(self, family);
     }
 
     bool ActivateEquippedWeaponFamily(int family)
     {
-        if (WeaponModel != null && WeaponModel.Equipped
-            && GetWeaponFamilyForType(WeaponModel.WeaponType) == family
-            && HasEquippedNativeWeaponType(WeaponModel.WeaponType))
-        {
-            return true;
-        }
-        for (int weaponType = 0;
-            weaponType < CaelumConstants.WEAPON_TYPE_COUNT; weaponType++)
-        {
-            if (GetWeaponFamilyForType(weaponType) == family
-                && ActivateEquippedWeaponType(weaponType))
-            {
-                return true;
-            }
-        }
-        return false;
+        return CaelumInventoryService.ActivateEquippedWeaponFamily(self, family);
     }
 
     void EnsurePhysicalWeaponSelector(
@@ -4228,135 +3059,22 @@ class CaelumPlayer : DoomPlayer
 
     bool ActivateEquippedWeaponType(int requestedWeaponType)
     {
-        if (WeaponModel == null) { return false; }
-        int resolvedType = Clamp(
-            requestedWeaponType, 0, CaelumConstants.WEAPON_TYPE_COUNT - 1
-        );
-
-        // Cambiar de arma rompe el bloqueo anterior. Si el jugador mantiene
-        // Zoom, el arma nueva podrá levantar el escudo nuevamente mediante su
-        // propio estado Zoom.
-        if (WeaponModel.Equipped
-            && WeaponModel.WeaponType != resolvedType)
-        {
-            CancelRangedAim();
-            CancelRangedReload();
-            CancelWeaponCharge();
-            if (CombatBlockModeActive)
-            {
-                CancelCombatBlockMode();
-            }
-        }
-
-        if (WeaponModel.Equipped
-            && WeaponModel.WeaponType == resolvedType
-            && HasEquippedNativeWeaponType(resolvedType))
-        {
-            return true;
-        }
-        if (StaffCastPending) { CancelPendingStaffCast(false); }
-        for (Inventory cursor = Inv; cursor != null; cursor = cursor.Inv)
-        {
-            CaelumEquipmentItem item = CaelumEquipmentItem(cursor);
-            if (item != null
-                && item.EquipmentKind == CaelumConstants.EQUIPMENT_KIND_WEAPON
-                && item.ItemType == resolvedType
-                && item.Equipped && !item.InMagicBox)
-            {
-                WeaponModel.WeaponType = resolvedType;
-                WeaponModel.Tier = item.Tier;
-                WeaponModel.Size = item.EquipmentSize;
-                WeaponModel.Durability = item.Durability;
-                WeaponModel.EssenceType = Clamp(
-                    item.EssenceType,
-                    0,
-                    CaelumConstants.ESSENCE_TYPE_COUNT - 1
-                );
-                SelectedEssenceType = WeaponModel.EssenceType;
-                WeaponModel.Equipped = true;
-                ActiveWeaponItemId = item.ItemId;
-                EquippedWeaponCooldownRemaining = 0.0;
-                ApplyCharacterProfile();
-                PersistCharacterState();
-                RefreshEquipmentSelectionPreview();
-                return true;
-            }
-        }
-        return false;
+        return CaelumInventoryService.ActivateEquippedWeaponType(self, requestedWeaponType);
     }
 
     bool ActivateExactEquippedWeapon(CaelumEquipmentItem item)
     {
-        if (item == null || WeaponModel == null || !item.Equipped
-            || item.InMagicBox || item.Durability <= 0
-            || item.EquipmentKind != CaelumConstants.EQUIPMENT_KIND_WEAPON)
-        {
-            return false;
-        }
-        if (ActiveWeaponItemId != item.ItemId)
-        {
-            CancelRangedAim();
-            CancelRangedReload();
-            CancelWeaponCharge();
-            if (CombatBlockModeActive) { CancelCombatBlockMode(); }
-            if (StaffCastPending) { CancelPendingStaffCast(false); }
-        }
-        WeaponModel.WeaponType = item.ItemType;
-        WeaponModel.Tier = item.Tier;
-        WeaponModel.Size = item.EquipmentSize;
-        WeaponModel.Durability = item.Durability;
-        WeaponModel.EssenceType = Clamp(
-            item.EssenceType, 0, CaelumConstants.ESSENCE_TYPE_COUNT - 1
-        );
-        SelectedEssenceType = WeaponModel.EssenceType;
-        WeaponModel.Equipped = true;
-        ActiveWeaponItemId = item.ItemId;
-        EquippedWeaponCooldownRemaining = 0.0;
-        SelectNativeWeaponConfiguration(
-            item.ItemType, item.EssenceType, item.Tier
-        );
-        ApplyCharacterProfile();
-        PersistCharacterState();
-        RefreshEquipmentSelectionPreview();
-        return true;
+        return CaelumInventoryService.ActivateExactEquippedWeapon(self, item);
     }
 
     bool IsWeaponInNativeSlot(CaelumEquipmentItem item, int slot)
     {
-        if (item == null || item.EquipmentKind
-                != CaelumConstants.EQUIPMENT_KIND_WEAPON
-            || !item.Equipped || item.InMagicBox || item.Durability <= 0)
-        {
-            return false;
-        }
-        int catalogueWeapon =
-            CaelumCraftingRules.GetCatalogueWeaponForPlayableType(
-                item.ItemType
-            );
-        return catalogueWeapon >= 0
-            && CaelumWeaponCatalogue.GetFamily(catalogueWeapon) == slot;
+        return CaelumInventoryService.IsWeaponInNativeSlot(self, item, slot);
     }
 
     void CycleEquippedWeaponSlot(int slot)
     {
-        CaelumEquipmentItem first;
-        bool passedActive = false;
-        for (Inventory cursor = Inv; cursor != null; cursor = cursor.Inv)
-        {
-            CaelumEquipmentItem candidate = CaelumEquipmentItem(cursor);
-            if (!IsWeaponInNativeSlot(candidate, slot)) { continue; }
-            if (first == null) { first = candidate; }
-            if (passedActive)
-            {
-                ActivateExactEquippedWeapon(candidate);
-                return;
-            }
-            if (candidate.ItemId == ActiveWeaponItemId)
-            {
-                passedActive = true;
-            }
-        }
-        if (first != null) { ActivateExactEquippedWeapon(first); }
+        CaelumInventoryService.CycleEquippedWeaponSlot(self, slot);
     }
 
     // Mantiene una instantanea segura para UI y detecta cambios reales del
@@ -4368,15 +3086,7 @@ class CaelumPlayer : DoomPlayer
 
     bool ActivateFirstEquippedWeapon()
     {
-        for (int weaponType = 0;
-            weaponType < CaelumConstants.WEAPON_TYPE_COUNT;
-            weaponType++)
-        {
-            if (ActivateEquippedWeaponType(weaponType)) { return true; }
-        }
-        if (WeaponModel != null) { WeaponModel.Equipped = false; }
-        ActiveWeaponItemId = 0;
-        return false;
+        return CaelumInventoryService.ActivateFirstEquippedWeapon(self);
     }
 
     void PerformWeaponFamilyPrimaryAttack(int weaponType)
@@ -4416,1028 +3126,111 @@ class CaelumPlayer : DoomPlayer
     // según la capacidad máxima actual. Las pilas usan Amount.
     void RefreshCarriedInventorySummary()
     {
-        SyncLiveMagicBoxOwnershipFromPersistentState();
-        NormalizeUnownedMagicBoxStorage();
-        PersonalInventoryItemCount = 0;
-        OwnedArmorCount = 0;
-        OwnedShieldCount = 0;
-        OwnedWeaponCount = 0;
-        EquippedItemSlotCount = 0;
-        MagicBoxUsedSlots = 0;
-        MagicBoxMaximumSlots = MagicBoxOwned && DerivedStats != null
-            ? Max(0, DerivedStats.MagicBoxCapacity) : 0;
-        HUDMagicBoxRawContentWeight = 0.0;
-        HUDMagicBoxReducedContentWeight = 0.0;
-        HUDMagicBoxTotalWeight = 0.0;
-        HUDCopperCoinCount = 0;
-        HUDSilverCoinCount = 0;
-        HUDGoldCoinCount = 0;
-        HUDTotalMoneyCopperValue = 0.0;
-        double personalInventoryWeight = 0.0;
-        double carriedItemWeight = 0.0;
-        double armorWeight = 0.0;
-        double shieldWeight = 0.0;
-        double weaponWeight = 0.0;
-        double magicBoxRawContentWeight = 0.0;
-
-        for (Inventory cursor = Inv; cursor != null; cursor = cursor.Inv)
-        {
-            CaelumEquipmentItem item = CaelumEquipmentItem(cursor);
-            if (item == null) { continue; }
-            if (item.EquipmentKind == CaelumConstants.EQUIPMENT_KIND_ARMOR)
-            {
-                OwnedArmorCount++;
-            }
-            else if (item.EquipmentKind == CaelumConstants.EQUIPMENT_KIND_SHIELD)
-            {
-                OwnedShieldCount++;
-            }
-            else if (item.EquipmentKind == CaelumConstants.EQUIPMENT_KIND_WEAPON)
-            {
-                OwnedWeaponCount++;
-            }
-
-            if (item.InMagicBox)
-            {
-                MagicBoxUsedSlots++;
-                magicBoxRawContentWeight += Max(0.0, item.UnitWeight)
-                    * Max(0, item.Amount);
-                continue;
-            }
-
-            double itemWeight = item.GetCarriedWeight();
-            carriedItemWeight += itemWeight;
-            if (item.Equipped)
-            {
-                EquippedItemSlotCount++;
-                if (item.EquipmentKind == CaelumConstants.EQUIPMENT_KIND_ARMOR)
-                {
-                    armorWeight += itemWeight;
-                }
-                else if (item.EquipmentKind == CaelumConstants.EQUIPMENT_KIND_SHIELD)
-                {
-                    shieldWeight += itemWeight;
-                }
-                else if (item.EquipmentKind == CaelumConstants.EQUIPMENT_KIND_WEAPON)
-                {
-                    weaponWeight += itemWeight;
-                }
-            }
-            else
-            {
-                PersonalInventoryItemCount++;
-                personalInventoryWeight += itemWeight;
-            }
-        }
-
-        CarbineAmmoCount = 0;
-        for (Inventory cursor = Inv; cursor != null; cursor = cursor.Inv)
-        {
-            CaelumCarbineAmmo ammunition = CaelumCarbineAmmo(cursor);
-            if (ammunition == null || ammunition.Amount <= 0) { continue; }
-            if (ammunition.GetAmmoType()
-                == CaelumConstants.AMMUNITION_CARBINE)
-            {
-                CarbineAmmoCount = ammunition.Amount;
-            }
-            if (ammunition.InMagicBox)
-            {
-                MagicBoxUsedSlots++;
-                magicBoxRawContentWeight += ammunition.Amount
-                    * ammunition.GetUnitWeight();
-            }
-            else
-            {
-                PersonalInventoryItemCount += ammunition.Amount;
-                double ammunitionWeight = ammunition.GetCarriedWeight();
-                personalInventoryWeight += ammunitionWeight;
-                carriedItemWeight += ammunitionWeight;
-            }
-        }
-
-        Inventory arrowAmmo = FindInventory("CaelumArrowAmmo");
-        if (arrowAmmo != null && arrowAmmo.Amount > 0)
-        {
-            PersonalInventoryItemCount += arrowAmmo.Amount;
-            double arrowWeight = arrowAmmo.Amount
-                * CaelumConstants.ARROW_AMMO_UNIT_WEIGHT;
-            personalInventoryWeight += arrowWeight;
-            carriedItemWeight += arrowWeight;
-        }
-        Inventory boltAmmo = FindInventory("CaelumBoltAmmo");
-        if (boltAmmo != null && boltAmmo.Amount > 0)
-        {
-            PersonalInventoryItemCount += boltAmmo.Amount;
-            double boltWeight = boltAmmo.Amount
-                * CaelumConstants.BOLT_AMMO_UNIT_WEIGHT;
-            personalInventoryWeight += boltWeight;
-            carriedItemWeight += boltWeight;
-        }
-
-        for (Inventory cursor = Inv; cursor != null; cursor = cursor.Inv)
-        {
-            CaelumConsumableItem consumable = CaelumConsumableItem(cursor);
-            if (consumable == null || consumable.Amount <= 0) { continue; }
-            if (consumable.InMagicBox)
-            {
-                MagicBoxUsedSlots++;
-                magicBoxRawContentWeight += consumable.Amount
-                    * consumable.GetUnitWeight();
-                continue;
-            }
-            PersonalInventoryItemCount += consumable.Amount;
-            double consumableWeight = consumable.GetCarriedWeight();
-            personalInventoryWeight += consumableWeight;
-            carriedItemWeight += consumableWeight;
-        }
-
-        for (Inventory cursor = Inv; cursor != null; cursor = cursor.Inv)
-        {
-            CaelumSpecialInventoryItem specialItem =
-                CaelumSpecialInventoryItem(cursor);
-            if (specialItem == null || specialItem.Amount <= 0) { continue; }
-            if (specialItem.GetSpecialCategory()
-                == CaelumConstants.EQUIPMENT_KIND_CURRENCY)
-            {
-                int coinAmount = Max(0, specialItem.Amount);
-                int currencyType = specialItem.GetSpecialType();
-                int currencyMetal =
-                    CaelumEconomyRules.GetCurrencyMetalType(currencyType);
-                if (currencyMetal == CaelumConstants.CURRENCY_METAL_SILVER)
-                {
-                    HUDSilverCoinCount += coinAmount;
-                }
-                else if (currencyMetal
-                    == CaelumConstants.CURRENCY_METAL_GOLD)
-                {
-                    HUDGoldCoinCount += coinAmount;
-                }
-                else
-                {
-                    HUDCopperCoinCount += coinAmount;
-                }
-                HUDTotalMoneyCopperValue += double(coinAmount)
-                    * CaelumEconomyRules.GetCurrencyFaceValue(currencyType);
-            }
-            if (specialItem.InMagicBox)
-            {
-                MagicBoxUsedSlots++;
-                magicBoxRawContentWeight += specialItem.Amount
-                    * specialItem.GetUnitWeight();
-                continue;
-            }
-            PersonalInventoryItemCount += specialItem.Amount;
-            double specialWeight = specialItem.GetCarriedWeight();
-            personalInventoryWeight += specialWeight;
-            carriedItemWeight += specialWeight;
-        }
-
-        for (Inventory cursor = Inv; cursor != null; cursor = cursor.Inv)
-        {
-            CaelumWeightedKey keyItem = CaelumWeightedKey(cursor);
-            if (keyItem == null || keyItem.Amount <= 0) { continue; }
-            PersonalInventoryItemCount++;
-            double keyWeight = keyItem.GetCarriedWeight();
-            personalInventoryWeight += keyWeight;
-            carriedItemWeight += keyWeight;
-        }
-
-        HUDMagicBoxRawContentWeight = Max(0.0, magicBoxRawContentWeight);
-        HUDMagicBoxReducedContentWeight =
-            CalculateMagicBoxReducedContentWeight(
-                HUDMagicBoxRawContentWeight
-            );
-        HUDMagicBoxTotalWeight = MagicBoxOwned
-            ? CaelumConstants.MAGIC_BOX_BASE_WEIGHT
-                + HUDMagicBoxReducedContentWeight
-            : 0.0;
-        personalInventoryWeight += HUDMagicBoxTotalWeight;
-        carriedItemWeight += HUDMagicBoxTotalWeight;
-        if (DerivedStats != null)
-        {
-            DerivedStats.SetCarriedLoadBreakdown(
-                armorWeight,
-                shieldWeight,
-                weaponWeight,
-                personalInventoryWeight,
-                carriedItemWeight
-            );
-            SyncHUDLoadState();
-        }
+        CaelumInventoryService.RefreshCarriedInventorySummary(self);
     }
 
     bool CanAddWeightToPersonalInventory(double additionalWeight)
     {
-        if (DerivedStats == null) { return false; }
-        return DerivedStats.CarriedWeight + Max(0.0, additionalWeight)
-            <= DerivedStats.CarryCapacity + 0.0005;
+        return CaelumInventoryService.CanAddWeightToPersonalInventory(self, additionalWeight);
     }
 
     bool IsSpecialInventoryKind(int k)
-    { return k==CaelumConstants.EQUIPMENT_KIND_MATERIAL || k==CaelumConstants.EQUIPMENT_KIND_KEY || k==CaelumConstants.EQUIPMENT_KIND_KEY_ITEM || k==CaelumConstants.EQUIPMENT_KIND_CURRENCY; }
+    {
+        return CaelumInventoryService.IsSpecialInventoryKind(self, k);
+    }
     bool IsUniversalJewelryKind(int k)
-    { return k==CaelumConstants.EQUIPMENT_KIND_AMULET || k==CaelumConstants.EQUIPMENT_KIND_SEAL; }
+    {
+        return CaelumInventoryService.IsUniversalJewelryKind(self, k);
+    }
 
     int GetFormalInventoryEntryKind(Inventory entry)
     {
-        CaelumEquipmentItem equipment = CaelumEquipmentItem(entry);
-        if (equipment != null) { return equipment.EquipmentKind; }
-        CaelumConsumableItem consumable = CaelumConsumableItem(entry);
-        if (consumable != null)
-        {
-            return CaelumConstants.EQUIPMENT_KIND_CONSUMABLE;
-        }
-        CaelumSpecialInventoryItem specialItem =
-            CaelumSpecialInventoryItem(entry);
-        if (specialItem != null) { return specialItem.GetSpecialCategory(); }
-        if (CaelumCarbineAmmo(entry) != null
-            || CaelumArrowAmmo(entry) != null
-            || CaelumBoltAmmo(entry) != null)
-        {
-            return CaelumConstants.EQUIPMENT_KIND_AMMUNITION;
-        }
-        if (CaelumWeightedKey(entry) != null)
-        {
-            return CaelumConstants.EQUIPMENT_KIND_KEY;
-        }
-        return -1;
+        return CaelumInventoryService.GetFormalInventoryEntryKind(self, entry);
     }
 
     int GetFormalInventoryFilterCategory(int kind)
     {
-        if (kind == CaelumConstants.EQUIPMENT_KIND_WEAPON) { return 1; }
-        if (kind == CaelumConstants.EQUIPMENT_KIND_ARMOR) { return 2; }
-        if (kind == CaelumConstants.EQUIPMENT_KIND_SHIELD) { return 3; }
-        if (kind == CaelumConstants.EQUIPMENT_KIND_AMULET
-            || kind == CaelumConstants.EQUIPMENT_KIND_SEAL) { return 4; }
-        if (kind == CaelumConstants.EQUIPMENT_KIND_CONSUMABLE) { return 5; }
-        if (kind == CaelumConstants.EQUIPMENT_KIND_MATERIAL) { return 6; }
-        if (kind == CaelumConstants.EQUIPMENT_KIND_AMMUNITION) { return 7; }
-        if (kind == CaelumConstants.EQUIPMENT_KIND_KEY
-            || kind == CaelumConstants.EQUIPMENT_KIND_KEY_ITEM) { return 8; }
-        if (kind == CaelumConstants.EQUIPMENT_KIND_CURRENCY) { return 9; }
-        return -1;
+        return CaelumInventoryService.GetFormalInventoryFilterCategory(self, kind);
     }
 
     bool FormalInventoryEntryMatchesFilter(Inventory entry)
     {
-        int kind = GetFormalInventoryEntryKind(entry);
-        if (kind < 0 || entry.Amount <= 0) { return false; }
-        return FormalInventoryFilter == 0
-            || GetFormalInventoryFilterCategory(kind)
-                == FormalInventoryFilter;
+        return CaelumInventoryService.FormalInventoryEntryMatchesFilter(self, entry);
     }
 
     Inventory GetFormalInventoryEntryAt(int requestedIndex)
     {
-        if (requestedIndex < 0) { return null; }
-        int currentIndex = 0;
-        for (Inventory cursor = Inv; cursor != null; cursor = cursor.Inv)
-        {
-            if (!FormalInventoryEntryMatchesFilter(cursor)) { continue; }
-            if (currentIndex == requestedIndex) { return cursor; }
-            currentIndex++;
-        }
-        return null;
+        return CaelumInventoryService.GetFormalInventoryEntryAt(self, requestedIndex);
     }
 
     int CountFormalInventoryEntries()
     {
-        int total = 0;
-        for (Inventory cursor = Inv; cursor != null; cursor = cursor.Inv)
-        {
-            if (FormalInventoryEntryMatchesFilter(cursor)) { total++; }
-        }
-        return total;
+        return CaelumInventoryService.CountFormalInventoryEntries(self);
     }
 
     int GetFormalAmmunitionType(Inventory entry)
     {
-        CaelumCarbineAmmo customAmmo = CaelumCarbineAmmo(entry);
-        if (customAmmo != null) { return customAmmo.GetAmmoType(); }
-        if (CaelumArrowAmmo(entry) != null)
-        {
-            return CaelumConstants.AMMUNITION_ARROW;
-        }
-        if (CaelumBoltAmmo(entry) != null)
-        {
-            return CaelumConstants.AMMUNITION_BOLT;
-        }
-        return CaelumConstants.AMMUNITION_CARBINE;
+        return CaelumInventoryService.GetFormalAmmunitionType(self, entry);
     }
 
     double GetFormalInventoryEntryWeight(Inventory entry)
     {
-        CaelumEquipmentItem equipment = CaelumEquipmentItem(entry);
-        if (equipment != null) { return Max(0.0, equipment.UnitWeight); }
-        CaelumConsumableItem consumable = CaelumConsumableItem(entry);
-        if (consumable != null)
-        {
-            return Max(0, consumable.Amount) * consumable.GetUnitWeight();
-        }
-        CaelumSpecialInventoryItem specialItem =
-            CaelumSpecialInventoryItem(entry);
-        if (specialItem != null)
-        {
-            return Max(0, specialItem.Amount) * specialItem.GetUnitWeight();
-        }
-        CaelumCarbineAmmo customAmmo = CaelumCarbineAmmo(entry);
-        if (customAmmo != null)
-        {
-            return Max(0, customAmmo.Amount) * customAmmo.GetUnitWeight();
-        }
-        if (CaelumArrowAmmo(entry) != null)
-        {
-            return Max(0, entry.Amount)
-                * CaelumConstants.ARROW_AMMO_UNIT_WEIGHT;
-        }
-        if (CaelumBoltAmmo(entry) != null)
-        {
-            return Max(0, entry.Amount)
-                * CaelumConstants.BOLT_AMMO_UNIT_WEIGHT;
-        }
-        CaelumWeightedKey keyItem = CaelumWeightedKey(entry);
-        return keyItem != null ? keyItem.GetCarriedWeight() : 0.0;
+        return CaelumInventoryService.GetFormalInventoryEntryWeight(self, entry);
     }
 
     int GetFormalInventoryMaximumDurability(CaelumEquipmentItem item)
     {
-        if (item == null) { return 0; }
-        if (item.EquipmentKind == CaelumConstants.EQUIPMENT_KIND_ARMOR
-            && ArmorModel != null)
-        {
-            return ArmorModel.GetMaximumDurabilityFor(
-                item.ItemType, item.Tier, item.EquipmentSize
-            );
-        }
-        if (item.EquipmentKind == CaelumConstants.EQUIPMENT_KIND_SHIELD
-            && ShieldModel != null)
-        {
-            return ShieldModel.GetMaximumDurabilityFor(
-                item.ItemType, item.Tier, item.EquipmentSize
-            );
-        }
-        if (item.EquipmentKind == CaelumConstants.EQUIPMENT_KIND_WEAPON
-            && WeaponModel != null)
-        {
-            return WeaponModel.GetMaximumDurabilityFor(
-                item.ItemType, item.Tier, item.EquipmentSize
-            );
-        }
-        return 0;
+        return CaelumInventoryService.GetFormalInventoryMaximumDurability(self, item);
     }
 
     void ClearFormalInventoryRow(int row)
     {
-        FormalInventoryRowKind[row] = -1;
-        FormalInventoryRowType[row] = -1;
-        FormalInventoryRowArmorSlot[row] = -1;
-        FormalInventoryRowTier[row] = 0;
-        FormalInventoryRowSize[row] = CaelumConstants.EQUIPMENT_SIZE_M;
-        FormalInventoryRowEssenceType[row] = CaelumConstants.ESSENCE_FIRE;
-        FormalInventoryRowAmount[row] = 0;
-        FormalInventoryRowItemId[row] = 0;
-        FormalInventoryRowDurability[row] = 0;
-        FormalInventoryRowMaximumDurability[row] = 0;
-        FormalInventoryRowWeight[row] = 0.0;
-        FormalInventoryRowEquipped[row] = false;
-        FormalInventoryRowInMagicBox[row] = false;
-        FormalInventoryRowReservedUnits[row] = 0;
+        CaelumInventoryService.ClearFormalInventoryRow(self, row);
     }
 
     void FillFormalInventoryRow(int row, Inventory entry)
     {
-        ClearFormalInventoryRow(row);
-        if (entry == null) { return; }
-        int kind = GetFormalInventoryEntryKind(entry);
-        FormalInventoryRowKind[row] = kind;
-        FormalInventoryRowWaterLiters[row] = -1;
-        let water = CaelumWaterContainer(entry);
-        if (water != null) FormalInventoryRowWaterLiters[row] = water.WaterLiters;
-        FormalInventoryRowAmount[row] = Max(1, entry.Amount);
-        FormalInventoryRowWeight[row] =
-            GetFormalInventoryEntryWeight(entry);
-
-        CaelumEquipmentItem equipment = CaelumEquipmentItem(entry);
-        if (equipment != null)
-        {
-            FormalInventoryRowType[row] = equipment.ItemType;
-            FormalInventoryRowArmorSlot[row] = equipment.ArmorSlot;
-            FormalInventoryRowTier[row] = equipment.Tier;
-            FormalInventoryRowSize[row] = equipment.EquipmentSize;
-            FormalInventoryRowEssenceType[row] = equipment.EssenceType;
-            FormalInventoryRowAmount[row] = 1;
-            FormalInventoryRowItemId[row] = equipment.ItemId;
-            FormalInventoryRowDurability[row] = equipment.Durability;
-            FormalInventoryRowMaximumDurability[row] =
-                GetFormalInventoryMaximumDurability(equipment);
-            FormalInventoryRowEquipped[row] = equipment.Equipped;
-            FormalInventoryRowInMagicBox[row] = equipment.InMagicBox;
-            if (IsEquipmentItemCraftingLocked(equipment.ItemId))
-            {
-                FormalInventoryRowReservedUnits[row] = 1;
-            }
-            return;
-        }
-
-        CaelumConsumableItem consumable = CaelumConsumableItem(entry);
-        if (consumable != null)
-        {
-            FormalInventoryRowType[row] = consumable.GetConsumableType();
-            FormalInventoryRowInMagicBox[row] = consumable.InMagicBox;
-            return;
-        }
-
-        CaelumSpecialInventoryItem specialItem =
-            CaelumSpecialInventoryItem(entry);
-        if (specialItem != null)
-        {
-            FormalInventoryRowType[row] = specialItem.GetSpecialType();
-            FormalInventoryRowTier[row] = specialItem.GetSpecialTier();
-            FormalInventoryRowInMagicBox[row] = specialItem.InMagicBox;
-            if (kind == CaelumConstants.EQUIPMENT_KIND_MATERIAL)
-            {
-                FormalInventoryRowReservedUnits[row] =
-                    GetReservedCraftingMaterialUnits(
-                        specialItem.GetSpecialType(),
-                        specialItem.GetSpecialTier()
-                    );
-            }
-            return;
-        }
-
-        if (kind == CaelumConstants.EQUIPMENT_KIND_AMMUNITION)
-        {
-            FormalInventoryRowType[row] = GetFormalAmmunitionType(entry);
-            CaelumCarbineAmmo customAmmo = CaelumCarbineAmmo(entry);
-            FormalInventoryRowInMagicBox[row] =
-                customAmmo != null && customAmmo.InMagicBox;
-            return;
-        }
-
-        CaelumWeightedKey keyItem = CaelumWeightedKey(entry);
-        if (keyItem != null)
-        {
-            FormalInventoryRowType[row] = keyItem.GetKeyType();
-        }
+        CaelumInventoryService.FillFormalInventoryRow(self, row, entry);
     }
 
     void ApplyFormalInventorySelection(Inventory entry)
     {
-        EquipmentSelectionItemId = 0;
-        if (entry == null) { return; }
-        int kind = GetFormalInventoryEntryKind(entry);
-        EquipmentSelectionKind = kind;
-
-        CaelumEquipmentItem equipment = CaelumEquipmentItem(entry);
-        if (equipment != null)
-        {
-            EquipmentSelectionItemId = equipment.ItemId;
-            EquipmentSelectionTier = equipment.Tier;
-            EquipmentSelectionSize = equipment.EquipmentSize;
-            if (kind == CaelumConstants.EQUIPMENT_KIND_ARMOR)
-            {
-                EquipmentSelectionArmorType = equipment.ItemType;
-                EquipmentSelectionSlot = equipment.ArmorSlot;
-            }
-            else if (kind == CaelumConstants.EQUIPMENT_KIND_SHIELD)
-            {
-                EquipmentSelectionShieldType = equipment.ItemType;
-            }
-            else if (kind == CaelumConstants.EQUIPMENT_KIND_WEAPON)
-            {
-                EquipmentSelectionWeaponType = equipment.ItemType;
-                EquipmentSelectionWeaponEssenceType = equipment.EssenceType;
-            }
-            else if (kind == CaelumConstants.EQUIPMENT_KIND_AMULET)
-            {
-                EquipmentSelectionAmuletType = equipment.ItemType;
-            }
-            else if (kind == CaelumConstants.EQUIPMENT_KIND_SEAL)
-            {
-                EquipmentSelectionSealType = equipment.ItemType;
-            }
-        }
-        else if (kind == CaelumConstants.EQUIPMENT_KIND_CONSUMABLE)
-        {
-            EquipmentSelectionConsumableType =
-                CaelumConsumableItem(entry).GetConsumableType();
-        }
-        else if (kind == CaelumConstants.EQUIPMENT_KIND_AMMUNITION)
-        {
-            EquipmentSelectionAmmunitionType =
-                GetFormalAmmunitionType(entry);
-        }
-        else
-        {
-            CaelumSpecialInventoryItem specialItem =
-                CaelumSpecialInventoryItem(entry);
-            if (specialItem != null)
-            {
-                EquipmentSelectionSpecialType = specialItem.GetSpecialType();
-                EquipmentSelectionTier = specialItem.GetSpecialTier();
-            }
-            else
-            {
-                CaelumWeightedKey keyItem = CaelumWeightedKey(entry);
-                if (keyItem != null)
-                {
-                    EquipmentSelectionSpecialType = keyItem.GetKeyType();
-                }
-            }
-        }
-        RefreshEquipmentSelectionPreview();
+        CaelumInventoryService.ApplyFormalInventorySelection(self, entry);
     }
 
     void RefreshFormalInventorySnapshot()
     {
-        EnsureAllEquipmentItemIds();
-        FormalInventoryFilter = Clamp(
-            FormalInventoryFilter, 0, FORMAL_INVENTORY_FILTER_COUNT - 1
-        );
-        FormalInventoryEntryCount = CountFormalInventoryEntries();
-        for (int row = 0; row < FORMAL_INVENTORY_VISIBLE_ROWS; row++)
-        {
-            ClearFormalInventoryRow(row);
-        }
-
-        if (FormalInventoryEntryCount <= 0)
-        {
-            FormalInventorySelectionIndex = 0;
-            FormalInventoryVisibleStart = 0;
-            EquipmentSelectionItemId = 0;
-            return;
-        }
-
-        FormalInventorySelectionIndex = Clamp(
-            FormalInventorySelectionIndex, 0,
-            FormalInventoryEntryCount - 1
-        );
-        if (FormalInventorySelectionIndex < FormalInventoryVisibleStart)
-        {
-            FormalInventoryVisibleStart = FormalInventorySelectionIndex;
-        }
-        else if (FormalInventorySelectionIndex
-            >= FormalInventoryVisibleStart + FORMAL_INVENTORY_VISIBLE_ROWS)
-        {
-            FormalInventoryVisibleStart = FormalInventorySelectionIndex
-                - FORMAL_INVENTORY_VISIBLE_ROWS + 1;
-        }
-        FormalInventoryVisibleStart = Clamp(
-            FormalInventoryVisibleStart, 0,
-            Max(0, FormalInventoryEntryCount - FORMAL_INVENTORY_VISIBLE_ROWS)
-        );
-
-        for (int row = 0; row < FORMAL_INVENTORY_VISIBLE_ROWS; row++)
-        {
-            int entryIndex = FormalInventoryVisibleStart + row;
-            if (entryIndex >= FormalInventoryEntryCount) { break; }
-            FillFormalInventoryRow(row, GetFormalInventoryEntryAt(entryIndex));
-        }
-        ApplyFormalInventorySelection(
-            GetFormalInventoryEntryAt(FormalInventorySelectionIndex)
-        );
+        CaelumInventoryService.RefreshFormalInventorySnapshot(self);
     }
 
     void CycleFormalInventorySelection(int direction)
     {
-        RefreshFormalInventorySnapshot();
-        if (FormalInventoryEntryCount <= 0) { return; }
-        FormalInventorySelectionIndex = (
-            FormalInventorySelectionIndex + direction
-                + FormalInventoryEntryCount
-        ) % FormalInventoryEntryCount;
-        LastEquipmentAction = CaelumConstants.EQUIPMENT_ACTION_NONE;
-        RefreshFormalInventorySnapshot();
+        CaelumInventoryService.CycleFormalInventorySelection(self, direction);
     }
 
     void CycleFormalInventoryFilter(int direction = 1)
     {
-        int step = direction < 0 ? -1 : 1;
-        FormalInventoryFilter = (
-            FormalInventoryFilter + step + FORMAL_INVENTORY_FILTER_COUNT
-        ) % FORMAL_INVENTORY_FILTER_COUNT;
-        FormalInventorySelectionIndex = 0;
-        FormalInventoryVisibleStart = 0;
-        LastEquipmentAction = CaelumConstants.EQUIPMENT_ACTION_NONE;
-        RefreshFormalInventorySnapshot();
+        CaelumInventoryService.CycleFormalInventoryFilter(self, direction);
     }
 
     void ActivateFormalInventorySelection()
     {
-        Inventory entry =
-            GetFormalInventoryEntryAt(FormalInventorySelectionIndex);
-        if (entry == null) { return; }
-        ApplyFormalInventorySelection(entry);
-        let bag = CaelumSleepingBag(entry);
-        if (bag != null && !bag.InMagicBox)
-        {
-            bool menuWasOpen = EquipmentMenuOpen;
-            EquipmentMenuOpen = false;
-            if (!bag.Open(self)) EquipmentMenuOpen = menuWasOpen;
-            RefreshFormalInventorySnapshot();
-            return;
-        }
-        CaelumEquipmentItem equipment = CaelumEquipmentItem(entry);
-        if (equipment != null)
-        {
-            if (equipment.InMagicBox) { ToggleSelectedMagicBox(); }
-            else if (equipment.Equipped) { UnequipSelectedNativeEquipment(); }
-            else { EquipSelectedNativeEquipment(); }
-        }
-        else if (CaelumConsumableItem(entry) != null
-            && !CaelumConsumableItem(entry).InMagicBox)
-        {
-            UseSelectedConsumable();
-        }
-        else
-        {
-            ToggleSelectedMagicBox();
-        }
-        RefreshFormalInventorySnapshot();
+        CaelumInventoryService.ActivateFormalInventorySelection(self);
     }
 
     void ToggleFormalInventoryStorage()
     {
-        Inventory entry =
-            GetFormalInventoryEntryAt(FormalInventorySelectionIndex);
-        if (entry == null) { return; }
-        ApplyFormalInventorySelection(entry);
-        ToggleSelectedMagicBox();
-        RefreshFormalInventorySnapshot();
+        CaelumInventoryService.ToggleFormalInventoryStorage(self);
     }
 
     void DropFormalInventorySelection()
     {
-        Inventory entry =
-            GetFormalInventoryEntryAt(FormalInventorySelectionIndex);
-        if (entry == null) { return; }
-        ApplyFormalInventorySelection(entry);
-        DropSelectedEquipment();
-        RefreshFormalInventorySnapshot();
+        CaelumInventoryService.DropFormalInventorySelection(self);
     }
 
     void RefreshEquipmentSelectionPreview()
     {
-        CaelumEquipmentItem identifiedItem =
-            FindNativeEquipmentItemById(EquipmentSelectionItemId);
-        if (EquipmentSelectionItemId > 0 && identifiedItem == null)
-        {
-            EquipmentSelectionItemId = 0;
-        }
-        else if (identifiedItem != null)
-        {
-            EquipmentSelectionKind = identifiedItem.EquipmentKind;
-            EquipmentSelectionTier = identifiedItem.Tier;
-            EquipmentSelectionSize = identifiedItem.EquipmentSize;
-            if (identifiedItem.EquipmentKind
-                == CaelumConstants.EQUIPMENT_KIND_ARMOR)
-            {
-                EquipmentSelectionArmorType = identifiedItem.ItemType;
-                EquipmentSelectionSlot = identifiedItem.ArmorSlot;
-            }
-            else if (identifiedItem.EquipmentKind
-                == CaelumConstants.EQUIPMENT_KIND_SHIELD)
-            {
-                EquipmentSelectionShieldType = identifiedItem.ItemType;
-            }
-            else if (identifiedItem.EquipmentKind
-                == CaelumConstants.EQUIPMENT_KIND_WEAPON)
-            {
-                EquipmentSelectionWeaponType = identifiedItem.ItemType;
-                EquipmentSelectionWeaponEssenceType =
-                    identifiedItem.EssenceType;
-            }
-            else if (identifiedItem.EquipmentKind
-                == CaelumConstants.EQUIPMENT_KIND_AMULET)
-            {
-                EquipmentSelectionAmuletType = identifiedItem.ItemType;
-            }
-            else if (identifiedItem.EquipmentKind
-                == CaelumConstants.EQUIPMENT_KIND_SEAL)
-            {
-                EquipmentSelectionSealType = identifiedItem.ItemType;
-            }
-        }
-        EquipmentSelectionSlot = Clamp(
-            EquipmentSelectionSlot,
-            0,
-            CaelumConstants.ARMOR_SLOT_COUNT - 1
-        );
-        EquipmentSelectionArmorType = Clamp(
-            EquipmentSelectionArmorType,
-            0,
-            CaelumConstants.ARMOR_EQUIPPABLE_TYPE_COUNT - 1
-        );
-        EquipmentSelectionShieldType = Clamp(
-            EquipmentSelectionShieldType,
-            0,
-            CaelumConstants.SHIELD_TYPE_COUNT - 1
-        );
-        EquipmentSelectionWeaponType = Clamp(
-            EquipmentSelectionWeaponType,
-            0,
-            CaelumConstants.WEAPON_TYPE_COUNT - 1
-        );
-        if (EquipmentSelectionKind == CaelumConstants.EQUIPMENT_KIND_WEAPON)
-            EquipmentSelectionTier = CaelumWeaponModel.ResolveTierFor(EquipmentSelectionWeaponType, EquipmentSelectionTier);
-        EquipmentSelectionWeaponEssenceType = Clamp(
-            EquipmentSelectionWeaponEssenceType,
-            0,
-            CaelumConstants.ESSENCE_TYPE_COUNT - 1
-        );
-        EquipmentSelectionAmmunitionType = Clamp(
-            EquipmentSelectionAmmunitionType,
-            0,
-            CaelumConstants.AMMUNITION_TYPE_COUNT - 1
-        );
-        EquipmentSelectionConsumableType = Clamp(
-            EquipmentSelectionConsumableType,
-            0,
-            CaelumConstants.CONSUMABLE_TYPE_COUNT - 1
-        );
-        EquipmentSelectionAmuletType = Clamp(EquipmentSelectionAmuletType,0,CaelumConstants.AMULET_TYPE_COUNT-1);
-        EquipmentSelectionSealType = Clamp(EquipmentSelectionSealType,0,CaelumConstants.SEAL_TYPE_COUNT-1);
-        int specialTypeCount = 1;
-        if (EquipmentSelectionKind == CaelumConstants.EQUIPMENT_KIND_MATERIAL)
-        {
-            specialTypeCount = CaelumConstants.MATERIAL_TYPE_COUNT;
-        }
-        else if (EquipmentSelectionKind == CaelumConstants.EQUIPMENT_KIND_KEY)
-        {
-            specialTypeCount = CaelumConstants.KEY_TYPE_COUNT;
-        }
-        else if (EquipmentSelectionKind
-            == CaelumConstants.EQUIPMENT_KIND_KEY_ITEM)
-        {
-            specialTypeCount = CaelumConstants.KEY_ITEM_TYPE_COUNT;
-        }
-        else if (EquipmentSelectionKind
-            == CaelumConstants.EQUIPMENT_KIND_CURRENCY)
-        {
-            specialTypeCount = CaelumConstants.CURRENCY_TYPE_COUNT;
-        }
-        int firstSpecialType = 0;
-        if (EquipmentSelectionKind == CaelumConstants.EQUIPMENT_KIND_MATERIAL)
-        {
-            firstSpecialType = CaelumConstants.MATERIAL_FIRST_ACTIVE;
-        }
-        EquipmentSelectionSpecialType = Clamp(
-            EquipmentSelectionSpecialType, firstSpecialType, specialTypeCount - 1
-        );
-        EquipmentSelectionTier = Clamp(EquipmentSelectionTier, 1, 3);
-        if (EquipmentSelectionKind == CaelumConstants.EQUIPMENT_KIND_MATERIAL)
-        {
-            EquipmentSelectionTier = CaelumMaterialRules.ResolveTier(
-                EquipmentSelectionSpecialType, EquipmentSelectionTier
-            );
-        }
-        EquipmentSelectionSize = Clamp(
-            EquipmentSelectionSize,
-            0,
-            CaelumConstants.EQUIPMENT_SIZE_COUNT - 1
-        );
-        EquipmentSelectionOwned = false;
-        EquipmentSelectionEquipped = false;
-        EquipmentSelectionInMagicBox = false;
-        EquipmentSelectionSizeCompatible = CharacterProfile != null
-            && CaelumEquipmentRules.IsSizeCompatible(
-                EquipmentSelectionSize,
-                CharacterProfile.GetSizeTier()
-            );
-        EquipmentSelectionDurability = 0;
-        EquipmentSelectionMaximumDurability = 0;
-        EquipmentSelectionWeight = 0.0;
-        EquipmentSelectionDamage = 0.0;
-        EquipmentSelectionAirCost = 0.0;
-        EquipmentSelectionAnimaCost = 0.0;
-        EquipmentSelectionAttackTics = 0;
-        EquipmentSelectionStackAmount = 0;
-        MagicBoxMaximumSlots = MagicBoxOwned && DerivedStats != null
-            ? DerivedStats.MagicBoxCapacity : 0;
-        RefreshCarriedInventorySummary();
-
-        if (EquipmentSelectionKind
-            == CaelumConstants.EQUIPMENT_KIND_AMMUNITION)
-        {
-            Inventory ammunition = FindNativeAmmunition(
-                EquipmentSelectionAmmunitionType
-            );
-            EquipmentSelectionOwned = ammunition != null
-                && ammunition.Amount > 0;
-            EquipmentSelectionInMagicBox = false;
-            EquipmentSelectionSizeCompatible = true;
-            EquipmentSelectionStackAmount = EquipmentSelectionOwned
-                ? ammunition.Amount : 0;
-            EquipmentSelectionWeight = EquipmentSelectionStackAmount
-                * GetAmmunitionUnitWeight(EquipmentSelectionAmmunitionType);
-            CaelumCarbineAmmo carbineStack = CaelumCarbineAmmo(ammunition);
-            if (carbineStack != null)
-            {
-                EquipmentSelectionInMagicBox = carbineStack.InMagicBox;
-                EquipmentSelectionWeight = carbineStack.Amount
-                    * carbineStack.GetUnitWeight();
-            }
-            return;
-        }
-
-        if (EquipmentSelectionKind
-            == CaelumConstants.EQUIPMENT_KIND_CONSUMABLE)
-        {
-            CaelumConsumableItem consumable = FindNativeConsumableItem(
-                EquipmentSelectionConsumableType
-            );
-            EquipmentSelectionOwned = consumable != null
-                && consumable.Amount > 0;
-            EquipmentSelectionInMagicBox = EquipmentSelectionOwned
-                && consumable.InMagicBox;
-            EquipmentSelectionSizeCompatible = true;
-            EquipmentSelectionStackAmount = EquipmentSelectionOwned
-                ? consumable.Amount : 0;
-            double unitWeight = consumable != null
-                ? consumable.GetUnitWeight()
-                : CaelumConsumableItem.UnitWeightForType(EquipmentSelectionConsumableType);
-            EquipmentSelectionWeight = EquipmentSelectionStackAmount
-                * unitWeight;
-            return;
-        }
-
-        if (EquipmentSelectionKind
-                == CaelumConstants.EQUIPMENT_KIND_MATERIAL
-            || EquipmentSelectionKind
-                == CaelumConstants.EQUIPMENT_KIND_KEY_ITEM
-            || EquipmentSelectionKind
-                == CaelumConstants.EQUIPMENT_KIND_CURRENCY)
-        {
-            CaelumSpecialInventoryItem specialItem = FindNativeSpecialItem(
-                EquipmentSelectionKind, EquipmentSelectionSpecialType,
-                EquipmentSelectionTier
-            );
-            EquipmentSelectionOwned = specialItem != null
-                && specialItem.Amount > 0;
-            EquipmentSelectionInMagicBox = EquipmentSelectionOwned
-                && specialItem.InMagicBox;
-            EquipmentSelectionSizeCompatible = true;
-            EquipmentSelectionStackAmount = EquipmentSelectionOwned
-                ? specialItem.Amount : 0;
-            EquipmentSelectionWeight = EquipmentSelectionStackAmount
-                * (specialItem != null
-                    ? specialItem.GetUnitWeight()
-                    : (EquipmentSelectionKind
-                            == CaelumConstants.EQUIPMENT_KIND_CURRENCY
-                        ? CaelumConstants.CURRENCY_UNIT_WEIGHT
-                        : CaelumConstants.SPECIAL_ITEM_DEFAULT_WEIGHT));
-            return;
-        }
-
-        if (EquipmentSelectionKind == CaelumConstants.EQUIPMENT_KIND_KEY)
-        {
-            CaelumWeightedKey keyItem = FindNativeKey(
-                EquipmentSelectionSpecialType
-            );
-            EquipmentSelectionOwned = keyItem != null && keyItem.Amount > 0;
-            EquipmentSelectionSizeCompatible = true;
-            EquipmentSelectionStackAmount = EquipmentSelectionOwned ? 1 : 0;
-            EquipmentSelectionWeight = EquipmentSelectionOwned
-                ? keyItem.GetCarriedWeight()
-                : CaelumConstants.SPECIAL_ITEM_DEFAULT_WEIGHT;
-            return;
-        }
-
-        if (EquipmentSelectionKind == CaelumConstants.EQUIPMENT_KIND_AMULET
-            || EquipmentSelectionKind == CaelumConstants.EQUIPMENT_KIND_SEAL)
-        {
-            int type = EquipmentSelectionKind==CaelumConstants.EQUIPMENT_KIND_AMULET ? EquipmentSelectionAmuletType : EquipmentSelectionSealType;
-            CaelumEquipmentItem item = identifiedItem;
-            if (item == null)
-            {
-                item=FindNativeEquipmentItem(EquipmentSelectionKind,type,-1,EquipmentSelectionTier,CaelumConstants.EQUIPMENT_SIZE_M);
-            }
-            EquipmentSelectionSize=CaelumConstants.EQUIPMENT_SIZE_M; EquipmentSelectionSizeCompatible=true;
-            EquipmentSelectionOwned=item!=null; EquipmentSelectionEquipped=item!=null&&item.Equipped;
-            EquipmentSelectionInMagicBox=item!=null&&item.InMagicBox; EquipmentSelectionDurability=0; EquipmentSelectionMaximumDurability=0;
-            EquipmentSelectionWeight=item!=null ? item.UnitWeight : CaelumCraftingRules.GetJewelryWeight(EquipmentSelectionTier);
-            return;
-        }
-
-        if (EquipmentSelectionKind == CaelumConstants.EQUIPMENT_KIND_WEAPON)
-        {
-            CaelumEquipmentItem item = identifiedItem;
-            if (item == null && WeaponModel != null
-                && WeaponModel.IsMagicalType(EquipmentSelectionWeaponType))
-            {
-                item = FindNativeMagicWeaponItem(
-                    EquipmentSelectionWeaponType,
-                    EquipmentSelectionWeaponEssenceType,
-                    EquipmentSelectionTier,
-                    EquipmentSelectionSize
-                );
-            }
-            else if (item == null)
-            {
-                item = FindNativeEquipmentItem(
-                    CaelumConstants.EQUIPMENT_KIND_WEAPON,
-                    EquipmentSelectionWeaponType,
-                    -1,
-                    EquipmentSelectionTier,
-                    EquipmentSelectionSize
-                );
-            }
-            EquipmentSelectionOwned = item != null;
-            EquipmentSelectionDurability = item != null ? item.Durability : 0;
-            EquipmentSelectionMaximumDurability = WeaponModel != null
-                ? WeaponModel.GetMaximumDurabilityFor(
-                    EquipmentSelectionWeaponType,
-                    EquipmentSelectionTier,
-                    EquipmentSelectionSize
-                ) : 0;
-            EquipmentSelectionWeight = WeaponModel != null
-                ? WeaponModel.GetWeightFor(
-                    EquipmentSelectionWeaponType,
-                    EquipmentSelectionTier,
-                    EquipmentSelectionSize
-                ) : 0.0;
-            EquipmentSelectionDamage = WeaponModel != null
-                ? WeaponModel.GetDamageFor(
-                    EquipmentSelectionWeaponType,
-                    EquipmentSelectionTier
-                ) : 0.0;
-            EquipmentSelectionAirCost = WeaponModel != null
-                ? WeaponModel.GetAirCostFor(EquipmentSelectionWeaponType) : 0.0;
-            EquipmentSelectionAnimaCost = WeaponModel != null
-                ? WeaponModel.GetAnimaCostFor(EquipmentSelectionWeaponType) : 0.0;
-            EquipmentSelectionAttackTics = WeaponModel != null
-                ? WeaponModel.GetAttackTicsFor(EquipmentSelectionWeaponType) : 0;
-            EquipmentSelectionEquipped = item != null && item.Equipped;
-            EquipmentSelectionInMagicBox = item != null && item.InMagicBox;
-            if (WeaponModel != null
-                && WeaponModel.IsMagicalType(EquipmentSelectionWeaponType))
-            {
-                SelectedEssenceType = EquipmentSelectionWeaponEssenceType;
-            }
-            return;
-        }
-
-        if (EquipmentSelectionKind == CaelumConstants.EQUIPMENT_KIND_SHIELD)
-        {
-            CaelumEquipmentItem item = identifiedItem;
-            if (item == null)
-            {
-                item = FindNativeEquipmentItem(
-                    CaelumConstants.EQUIPMENT_KIND_SHIELD,
-                    EquipmentSelectionShieldType,
-                    -1,
-                    EquipmentSelectionTier,
-                    EquipmentSelectionSize
-                );
-            }
-            EquipmentSelectionOwned = item != null;
-            EquipmentSelectionDurability = item != null ? item.Durability : 0;
-            EquipmentSelectionMaximumDurability = ShieldModel != null
-                ? ShieldModel.GetMaximumDurabilityFor(
-                    EquipmentSelectionShieldType,
-                    EquipmentSelectionTier,
-                    EquipmentSelectionSize
-                ) : 0;
-            EquipmentSelectionWeight = ShieldModel != null
-                ? ShieldModel.GetWeightFor(
-                    EquipmentSelectionShieldType,
-                    EquipmentSelectionTier,
-                    EquipmentSelectionSize
-                ) : 0.0;
-            EquipmentSelectionEquipped = item != null && item.Equipped;
-            EquipmentSelectionInMagicBox = item != null && item.InMagicBox;
-            return;
-        }
-
-        CaelumEquipmentItem item = identifiedItem;
-        if (item == null)
-        {
-            item = FindNativeEquipmentItem(
-                CaelumConstants.EQUIPMENT_KIND_ARMOR,
-                EquipmentSelectionArmorType,
-                EquipmentSelectionSlot,
-                EquipmentSelectionTier,
-                EquipmentSelectionSize
-            );
-        }
-        EquipmentSelectionOwned = item != null;
-        EquipmentSelectionDurability = item != null ? item.Durability : 0;
-        EquipmentSelectionMaximumDurability = ArmorModel != null
-            ? ArmorModel.GetMaximumDurabilityFor(
-                EquipmentSelectionArmorType,
-                EquipmentSelectionTier,
-                EquipmentSelectionSize
-            ) : 0;
-        EquipmentSelectionWeight = ArmorModel != null
-            ? ArmorModel.GetWeightFor(
-                EquipmentSelectionSlot,
-                EquipmentSelectionArmorType,
-                EquipmentSelectionTier,
-                EquipmentSelectionSize
-            ) : 0.0;
-        EquipmentSelectionEquipped = item != null && item.Equipped;
-        EquipmentSelectionInMagicBox = item != null && item.InMagicBox;
+        CaelumInventoryService.RefreshEquipmentSelectionPreview(self);
     }
 
     bool AcquireArmorPickup(
@@ -5448,72 +3241,7 @@ class CaelumPlayer : DoomPlayer
         int encodedDurability
     )
     {
-        if (ArmorModel == null) { return false; }
-        int resolvedSlot = Clamp(slot, 0, CaelumConstants.ARMOR_SLOT_COUNT - 1);
-        int resolvedType = Clamp(
-            armorType, 0, CaelumConstants.ARMOR_EQUIPPABLE_TYPE_COUNT - 1
-        );
-        int resolvedTier = Clamp(tier, 1, 3);
-        int resolvedSize = Clamp(
-            equipmentSize, 0, CaelumConstants.EQUIPMENT_SIZE_COUNT - 1
-        );
-        CaelumPersistentCharacterState persistentState =
-            GetPersistentCharacterState(true);
-        if (persistentState == null) { return false; }
-        persistentState.EnsureEquipmentSizeInitialized();
-        persistentState.MigrateWeaponDurability();
-        ApplyCharacterProfile();
-        RefreshEquipmentSelectionPreview();
-        bool alreadyOwned = persistentState.OwnsArmor(
-            resolvedSlot, resolvedType, resolvedTier, resolvedSize
-        );
-        bool sendToMagicBox = false;
-        double pickupWeight = ArmorModel.GetWeightFor(
-            resolvedSlot, resolvedType, resolvedTier, resolvedSize
-        );
-        if (!alreadyOwned
-            && !CanAddWeightToPersonalInventory(pickupWeight))
-        {
-            if (!HasNativeMagicBoxSlotAvailable()
-                || !CanAddRawWeightToMagicBox(pickupWeight))
-            {
-                return false;
-            }
-            sendToMagicBox = true;
-        }
-        int pickupDurability = encodedDurability > 0
-            ? encodedDurability - 1
-            : ArmorModel.GetMaximumDurabilityFor(resolvedType, resolvedTier, resolvedSize);
-        LastEquipmentPickupWasNew = persistentState.RegisterOwnedArmor(
-            resolvedSlot,
-            resolvedType,
-            resolvedTier,
-            resolvedSize,
-            pickupDurability
-        );
-        if (LastEquipmentPickupWasNew)
-        {
-            persistentState.SetArmorInMagicBox(
-                resolvedSlot, resolvedType, resolvedTier, resolvedSize,
-                sendToMagicBox
-            );
-        }
-        LastEquipmentPickupWentToMagicBox = persistentState.IsArmorInMagicBox(
-            resolvedSlot, resolvedType, resolvedTier, resolvedSize
-        );
-        if (ArmorModel.ArmorType[resolvedSlot] == resolvedType
-            && ArmorModel.Tier[resolvedSlot] == resolvedTier
-            && ArmorModel.Size[resolvedSlot] == resolvedSize)
-        {
-            ArmorModel.Durability[resolvedSlot] = ArmorModel.GetMaximumDurabilityFor(
-                resolvedType, resolvedTier, resolvedSize
-            );
-        }
-        OwnedArmorCount = persistentState.CountOwnedArmor();
-        ApplyCharacterProfile();
-        RefreshEquipmentSelectionPreview();
-        PersistCharacterState();
-        return true;
+        return CaelumInventoryService.AcquireArmorPickup(self, slot, armorType, tier, equipmentSize, encodedDurability);
     }
 
     bool AcquireShieldPickup(
@@ -5523,72 +3251,7 @@ class CaelumPlayer : DoomPlayer
         int encodedDurability
     )
     {
-        if (ShieldModel == null) { return false; }
-        int resolvedType = Clamp(
-            shieldType,
-            0,
-            CaelumConstants.SHIELD_TYPE_COUNT - 1
-        );
-        int resolvedTier = Clamp(tier, 1, 3);
-        int resolvedSize = Clamp(
-            equipmentSize, 0, CaelumConstants.EQUIPMENT_SIZE_COUNT - 1
-        );
-        CaelumPersistentCharacterState persistentState =
-            GetPersistentCharacterState(true);
-        if (persistentState == null) { return false; }
-        persistentState.EnsureEquipmentSizeInitialized();
-        persistentState.MigrateWeaponDurability();
-        ApplyCharacterProfile();
-        RefreshEquipmentSelectionPreview();
-        bool alreadyOwned = persistentState.OwnsShield(
-            resolvedType, resolvedTier, resolvedSize
-        );
-        bool sendToMagicBox = false;
-        double pickupWeight = ShieldModel.GetWeightFor(
-            resolvedType, resolvedTier, resolvedSize
-        );
-        if (!alreadyOwned
-            && !CanAddWeightToPersonalInventory(pickupWeight))
-        {
-            if (!HasNativeMagicBoxSlotAvailable()
-                || !CanAddRawWeightToMagicBox(pickupWeight))
-            {
-                return false;
-            }
-            sendToMagicBox = true;
-        }
-        int pickupDurability = encodedDurability > 0
-            ? encodedDurability - 1
-            : ShieldModel.GetMaximumDurabilityFor(resolvedType, resolvedTier, resolvedSize);
-        LastEquipmentPickupWasNew = persistentState.RegisterOwnedShield(
-            resolvedType,
-            resolvedTier,
-            resolvedSize,
-            pickupDurability
-        );
-        if (LastEquipmentPickupWasNew)
-        {
-            persistentState.SetShieldInMagicBox(
-                resolvedType, resolvedTier, resolvedSize, sendToMagicBox
-            );
-        }
-        LastEquipmentPickupWentToMagicBox = persistentState.IsShieldInMagicBox(
-            resolvedType, resolvedTier, resolvedSize
-        );
-        if (ShieldModel.Equipped
-            && ShieldModel.ShieldType == resolvedType
-            && ShieldModel.Tier == resolvedTier
-            && ShieldModel.Size == resolvedSize)
-        {
-            ShieldModel.Durability = ShieldModel.GetMaximumDurabilityFor(
-                resolvedType, resolvedTier, resolvedSize
-            );
-        }
-        OwnedShieldCount = persistentState.CountOwnedShields();
-        ApplyCharacterProfile();
-        RefreshEquipmentSelectionPreview();
-        PersistCharacterState();
-        return true;
+        return CaelumInventoryService.AcquireShieldPickup(self, shieldType, tier, equipmentSize, encodedDurability);
     }
 
     bool AcquireWeaponPickup(
@@ -5598,377 +3261,71 @@ class CaelumPlayer : DoomPlayer
         int encodedDurability
     )
     {
-        if (WeaponModel == null) { return false; }
-        int resolvedType = Clamp(
-            weaponType, 0, CaelumConstants.WEAPON_TYPE_COUNT - 1
-        );
-        int resolvedTier = CaelumWeaponModel.ResolveTierFor(resolvedType, tier);
-        int resolvedSize = Clamp(
-            equipmentSize, 0, CaelumConstants.EQUIPMENT_SIZE_COUNT - 1
-        );
-        CaelumPersistentCharacterState persistentState =
-            GetPersistentCharacterState(true);
-        if (persistentState == null) { return false; }
-        persistentState.EnsureEquipmentSizeInitialized();
-        persistentState.MigrateWeaponDurability();
-        ApplyCharacterProfile();
-        RefreshEquipmentSelectionPreview();
-        bool alreadyOwned = persistentState.OwnsWeapon(
-            resolvedType, resolvedTier, resolvedSize
-        );
-        bool sendToMagicBox = false;
-        double pickupWeight = WeaponModel.GetWeightFor(
-            resolvedType, resolvedTier, resolvedSize
-        );
-        if (!alreadyOwned
-            && !CanAddWeightToPersonalInventory(pickupWeight))
-        {
-            if (!HasNativeMagicBoxSlotAvailable()
-                || !CanAddRawWeightToMagicBox(pickupWeight))
-            {
-                return false;
-            }
-            sendToMagicBox = true;
-        }
-        int pickupDurability = encodedDurability > 0
-            ? encodedDurability - 1
-            : WeaponModel.GetMaximumDurabilityFor(
-                resolvedType, resolvedTier, resolvedSize
-            );
-        LastEquipmentPickupWasNew = persistentState.RegisterOwnedWeapon(
-            resolvedType, resolvedTier, resolvedSize, pickupDurability
-        );
-        if (LastEquipmentPickupWasNew)
-        {
-            persistentState.SetWeaponInMagicBox(
-                resolvedType, resolvedTier, resolvedSize, sendToMagicBox
-            );
-        }
-        LastEquipmentPickupWentToMagicBox = persistentState.IsWeaponInMagicBox(
-            resolvedType, resolvedTier, resolvedSize
-        );
-        if (WeaponModel.Equipped
-            && WeaponModel.WeaponType == resolvedType
-            && WeaponModel.Tier == resolvedTier
-            && WeaponModel.Size == resolvedSize)
-        {
-            WeaponModel.Durability = WeaponModel.GetMaximumDurabilityFor(
-                resolvedType, resolvedTier, resolvedSize
-            );
-        }
-        OwnedWeaponCount = persistentState.CountOwnedWeapons();
-        ApplyCharacterProfile();
-        RefreshEquipmentSelectionPreview();
-        PersistCharacterState();
-        return true;
+        return CaelumInventoryService.AcquireWeaponPickup(self, weaponType, tier, equipmentSize, encodedDurability);
     }
 
     int CountCraftingMaterial(int materialType, int materialTier)
     {
-        CaelumSpecialInventoryItem material = FindNativeSpecialItem(
-            CaelumConstants.EQUIPMENT_KIND_MATERIAL,
-            materialType,
-            materialTier
-        );
-        int actual = material != null ? Max(0, material.Amount) : 0;
-        if (CraftingTaskCompleting) { return actual; }
-        return Max(
-            0,
-            actual - GetReservedCraftingMaterialUnits(
-                materialType, materialTier
-            )
-        );
+        return CaelumInventoryService.CountCraftingMaterial(self, materialType, materialTier);
     }
 
     int CountRawCraftingMaterial(int materialType, int materialTier)
     {
-        CaelumSpecialInventoryItem material = FindNativeSpecialItem(
-            CaelumConstants.EQUIPMENT_KIND_MATERIAL,
-            materialType,
-            materialTier
-        );
-        return material != null ? Max(0, material.Amount) : 0;
+        return CaelumInventoryService.CountRawCraftingMaterial(self, materialType, materialTier);
     }
 
     int GetReservedCraftingMaterialUnits(int materialType, int materialTier)
     {
-        if (!CraftingTaskActive) { return 0; }
-        int reserved = 0;
-        for (int slot = 0;
-            slot < CaelumConstants.CRAFTING_TASK_MATERIAL_SLOT_COUNT; slot++)
-        {
-            if (CraftingTaskReservedUnits[slot] > 0
-                && CraftingTaskReservedType[slot] == materialType
-                && CraftingTaskReservedTier[slot] == materialTier)
-            {
-                reserved += CraftingTaskReservedUnits[slot];
-            }
-        }
-        return reserved;
+        return CaelumInventoryService.GetReservedCraftingMaterialUnits(self, materialType, materialTier);
     }
 
     bool IsEquipmentItemCraftingLocked(int itemId)
     {
-        return CraftingTaskActive && CraftingTaskTargetItemId > 0
-            && CraftingTaskTargetItemId == itemId;
+        return CaelumInventoryService.IsEquipmentItemCraftingLocked(self, itemId);
     }
 
     bool IsSelectedMaterialCraftingLocked()
     {
-        return EquipmentSelectionKind
-                == CaelumConstants.EQUIPMENT_KIND_MATERIAL
-            && GetReservedCraftingMaterialUnits(
-                EquipmentSelectionSpecialType,
-                EquipmentSelectionTier
-            ) > 0;
+        return CaelumInventoryService.IsSelectedMaterialCraftingLocked(self);
     }
 
     void ClearCraftingTaskData()
     {
-        CraftingTaskActive = false;
-        CraftingTaskCompleting = false;
-        CraftingTaskKind = CaelumConstants.CRAFTING_TASK_NONE;
-        CraftingTaskRecipeIndex = 0;
-        CraftingTaskTier = 1;
-        CraftingTaskSize = CaelumConstants.EQUIPMENT_SIZE_M;
-        CraftingTaskBatchIndex = 0;
-        CraftingTaskEfficiencyIndex = 0;
-        CraftingTaskTargetItemId = 0;
-        CraftingTaskNetworkCapabilities = 0;
-        CraftingTaskReservedBoxSlots = 0;
-        CraftingTaskUsesDirectPlan = false;
-        CraftingTaskUsesLimboMaterials = false;
-        CraftingTaskTotalSeconds = 0.0;
-        CraftingTaskRemainingSeconds = 0.0;
-        for (int slot = 0;
-            slot < CaelumConstants.CRAFTING_TASK_MATERIAL_SLOT_COUNT; slot++)
-        {
-            CraftingTaskReservedType[slot] = -1;
-            CraftingTaskReservedTier[slot] = 1;
-            CraftingTaskReservedUnits[slot] = 0;
-            CraftingTaskOutputType[slot] = -1;
-            CraftingTaskOutputTier[slot] = 1;
-            CraftingTaskOutputUnits[slot] = 0;
-        }
+        CaelumInventoryService.ClearCraftingTaskData(self);
     }
 
     bool AddCraftingTaskReservation(
         int materialType, int materialTier, int units
     )
     {
-        if (units <= 0) { return true; }
-        int resolvedTier = CaelumMaterialRules.ResolveTier(
-            materialType, materialTier
-        );
-        for (int slot = 0;
-            slot < CaelumConstants.CRAFTING_TASK_MATERIAL_SLOT_COUNT; slot++)
-        {
-            if (CraftingTaskReservedUnits[slot] > 0
-                && CraftingTaskReservedType[slot] == materialType
-                && CraftingTaskReservedTier[slot] == resolvedTier)
-            {
-                CraftingTaskReservedUnits[slot] += units;
-                return true;
-            }
-        }
-        for (int slot = 0;
-            slot < CaelumConstants.CRAFTING_TASK_MATERIAL_SLOT_COUNT; slot++)
-        {
-            if (CraftingTaskReservedUnits[slot] <= 0)
-            {
-                CraftingTaskReservedType[slot] = materialType;
-                CraftingTaskReservedTier[slot] = resolvedTier;
-                CraftingTaskReservedUnits[slot] = units;
-                return true;
-            }
-        }
-        return false;
+        return CaelumInventoryService.AddCraftingTaskReservation(self, materialType, materialTier, units);
     }
 
     bool AddCraftingTaskOutput(
         int materialType, int materialTier, int units
     )
     {
-        if (units <= 0) { return true; }
-        int resolvedTier = CaelumMaterialRules.ResolveTier(
-            materialType, materialTier
-        );
-        for (int slot = 0;
-            slot < CaelumConstants.CRAFTING_TASK_MATERIAL_SLOT_COUNT; slot++)
-        {
-            if (CraftingTaskOutputUnits[slot] > 0
-                && CraftingTaskOutputType[slot] == materialType
-                && CraftingTaskOutputTier[slot] == resolvedTier)
-            {
-                CraftingTaskOutputUnits[slot] += units;
-                return true;
-            }
-        }
-        for (int slot = 0;
-            slot < CaelumConstants.CRAFTING_TASK_MATERIAL_SLOT_COUNT; slot++)
-        {
-            if (CraftingTaskOutputUnits[slot] <= 0)
-            {
-                CraftingTaskOutputType[slot] = materialType;
-                CraftingTaskOutputTier[slot] = resolvedTier;
-                CraftingTaskOutputUnits[slot] = units;
-                return true;
-            }
-        }
-        return false;
+        return CaelumInventoryService.AddCraftingTaskOutput(self, materialType, materialTier, units);
     }
 
     bool ValidateCraftingTaskReservations()
     {
-        for (int slot = 0;
-            slot < CaelumConstants.CRAFTING_TASK_MATERIAL_SLOT_COUNT; slot++)
-        {
-            if (CraftingTaskReservedUnits[slot] <= 0) { continue; }
-            if (CountRawCraftingMaterial(
-                    CraftingTaskReservedType[slot],
-                    CraftingTaskReservedTier[slot]
-                ) < CraftingTaskReservedUnits[slot])
-            {
-                return false;
-            }
-        }
-        return true;
+        return CaelumInventoryService.ValidateCraftingTaskReservations(self);
     }
 
     bool CanCompletePreparedMaterialOutput(bool outputToMagicBox)
     {
-        if (DerivedStats == null) { return false; }
-        int outputSlot = -1;
-        for (int slot = 0;
-            slot < CaelumConstants.CRAFTING_TASK_MATERIAL_SLOT_COUNT; slot++)
-        {
-            if (CraftingTaskOutputUnits[slot] > 0)
-            {
-                outputSlot = slot;
-                break;
-            }
-        }
-        if (outputSlot < 0) { return false; }
-
-        CaelumSpecialInventoryItem existingOutput = FindNativeSpecialItem(
-            CaelumConstants.EQUIPMENT_KIND_MATERIAL,
-            CraftingTaskOutputType[outputSlot],
-            CraftingTaskOutputTier[outputSlot]
-        );
-        RefreshCarriedInventorySummary();
-        double personalDelta = 0.0;
-        double boxRawDelta = 0.0;
-        for (int slot = 0;
-            slot < CaelumConstants.CRAFTING_TASK_MATERIAL_SLOT_COUNT; slot++)
-        {
-            if (CraftingTaskReservedUnits[slot] <= 0) { continue; }
-            CaelumSpecialInventoryItem inputStack = FindNativeSpecialItem(
-                CaelumConstants.EQUIPMENT_KIND_MATERIAL,
-                CraftingTaskReservedType[slot],
-                CraftingTaskReservedTier[slot]
-            );
-            if (inputStack == null) { return false; }
-            double inputWeight = CraftingTaskReservedUnits[slot]
-                * CaelumConstants.MATERIAL_UNIT_WEIGHT;
-            if (inputStack.InMagicBox)
-            {
-                boxRawDelta -= inputWeight;
-            }
-            else
-            {
-                personalDelta -= inputWeight;
-            }
-        }
-
-        double outputWeight = CraftingTaskOutputUnits[outputSlot]
-            * CaelumConstants.MATERIAL_UNIT_WEIGHT;
-        if (outputToMagicBox)
-        {
-            if (existingOutput != null && !existingOutput.InMagicBox)
-            {
-                int remainingUnits = Max(
-                    0,
-                    existingOutput.Amount - GetReservedCraftingMaterialUnits(
-                        CraftingTaskOutputType[outputSlot],
-                        CraftingTaskOutputTier[outputSlot]
-                    )
-                );
-                double remainingWeight = remainingUnits
-                    * CaelumConstants.MATERIAL_UNIT_WEIGHT;
-                personalDelta -= remainingWeight;
-                boxRawDelta += remainingWeight;
-            }
-            boxRawDelta += outputWeight;
-        }
-        else
-        {
-            if (existingOutput != null && existingOutput.InMagicBox)
-            {
-                boxRawDelta += outputWeight;
-            }
-            else
-            {
-                personalDelta += outputWeight;
-            }
-        }
-        return CanApplyInventoryWeightTransition(
-            personalDelta, boxRawDelta
-        );
+        return CaelumInventoryService.CanCompletePreparedMaterialOutput(self, outputToMagicBox);
     }
 
     int GetPreparedMaterialOutputBoxSlots()
     {
-        int outputSlot = -1;
-        for (int slot = 0;
-            slot < CaelumConstants.CRAFTING_TASK_MATERIAL_SLOT_COUNT; slot++)
-        {
-            if (CraftingTaskOutputUnits[slot] > 0)
-            {
-                outputSlot = slot;
-                break;
-            }
-        }
-        if (outputSlot < 0) { return -1; }
-
-        CaelumSpecialInventoryItem existingOutput = FindNativeSpecialItem(
-            CaelumConstants.EQUIPMENT_KIND_MATERIAL,
-            CraftingTaskOutputType[outputSlot],
-            CraftingTaskOutputTier[outputSlot]
-        );
-        if (existingOutput != null && existingOutput.InMagicBox)
-        {
-            return CanCompletePreparedMaterialOutput(true) ? 0 : -1;
-        }
-        if (CanCompletePreparedMaterialOutput(false)) { return 0; }
-        return CanCompletePreparedMaterialOutput(true) ? 1 : -1;
+        return CaelumInventoryService.GetPreparedMaterialOutputBoxSlots(self);
     }
 
     bool CanCompletePreparedEquipmentOutput(double outputRawWeight)
     {
-        if (DerivedStats == null) { return false; }
-        RefreshCarriedInventorySummary();
-        bool personalOutput = CaelumCraftingRules.GetRecipeAmmunitionType(CraftingSelectionRecipe) >= 0
-            || CaelumMainM00RonnieTrial.CanUsePersonalCraftingOutput(self);
-        double personalDelta = personalOutput ? Max(0.0, outputRawWeight) : 0.0;
-        double boxRawDelta = personalOutput ? 0.0 : Max(0.0, outputRawWeight);
-        for (int slot = 0;
-            slot < CaelumConstants.CRAFTING_TASK_MATERIAL_SLOT_COUNT; slot++)
-        {
-            if (CraftingTaskReservedUnits[slot] <= 0) { continue; }
-            CaelumSpecialInventoryItem inputStack = FindNativeSpecialItem(
-                CaelumConstants.EQUIPMENT_KIND_MATERIAL,
-                CraftingTaskReservedType[slot],
-                CraftingTaskReservedTier[slot]
-            );
-            if (inputStack == null) { return false; }
-            double inputWeight = CraftingTaskReservedUnits[slot]
-                * CaelumConstants.MATERIAL_UNIT_WEIGHT;
-            if (inputStack.InMagicBox) { boxRawDelta -= inputWeight; }
-            else { personalDelta -= inputWeight; }
-        }
-        return CanApplyInventoryWeightTransition(
-            personalDelta, boxRawDelta
-        );
+        return CaelumInventoryService.CanCompletePreparedEquipmentOutput(self, outputRawWeight);
     }
 
     double GetCraftingDexterityPercent()
@@ -6773,21 +4130,7 @@ class CaelumPlayer : DoomPlayer
 
     bool ReservePreparedDirectCraftingPlan()
     {
-        if (!CraftingDirectPlanAvailable) { return false; }
-        for (int slot = 0;
-            slot < CaelumConstants.CRAFTING_TASK_MATERIAL_SLOT_COUNT; slot++)
-        {
-            if (CraftingPlanReservedUnits[slot] <= 0) { continue; }
-            if (!AddCraftingTaskReservation(
-                CraftingPlanReservedType[slot],
-                CraftingPlanReservedTier[slot],
-                CraftingPlanReservedUnits[slot]
-            ))
-            {
-                return false;
-            }
-        }
-        return ValidateCraftingTaskReservations();
+        return CaelumInventoryService.ReservePreparedDirectCraftingPlan(self);
     }
 
     bool HasSelectedWeaponCraftingMaterials()
@@ -6803,21 +4146,7 @@ class CaelumPlayer : DoomPlayer
 
     bool ConsumeSelectedWeaponCraftingMaterials()
     {
-        if (CraftingTaskCompleting && CraftingTaskUsesDirectPlan)
-        {
-            return ConsumeCraftingTaskReservations();
-        }
-        return ConsumeCraftingMaterial(
-                CraftingBasicMaterialType,
-                CraftingBasicMaterialTier,
-                CraftingBasicRequired
-            )
-            && ConsumeCraftingMaterial(
-                CraftingTierMaterialType,
-                CraftingTierMaterialTier,
-                CraftingTierRequired
-            )
-            && ConsumeCraftingFinishMaterials();
+        return CaelumInventoryService.ConsumeSelectedWeaponCraftingMaterials(self);
     }
 
     bool CanStartCraftingTask(bool recipeInfrastructure = true)
@@ -8065,41 +5394,17 @@ class CaelumPlayer : DoomPlayer
         int materialType, int materialTier, int requiredAmount
     )
     {
-        if (requiredAmount <= 0) { return true; }
-        CaelumSpecialInventoryItem material = FindNativeSpecialItem(
-            CaelumConstants.EQUIPMENT_KIND_MATERIAL,
-            materialType,
-            materialTier
-        );
-        if (material == null || material.Amount < requiredAmount)
-        {
-            return false;
-        }
-        material.LimboSupplyUnits = Max(0, material.LimboSupplyUnits - requiredAmount);
-        material.LimboQuestUnits = Max(0, material.LimboQuestUnits - requiredAmount);
-        material.Amount -= requiredAmount;
-        if (material.Amount <= 0) { material.Destroy(); }
-        return true;
+        return CaelumInventoryService.ConsumeCraftingMaterial(self, materialType, materialTier, requiredAmount);
     }
 
     bool HasCraftingFinishMaterials()
     {
-        return CraftingSilverOwned >= CraftingSilverRequired
-            && CraftingGoldOwned >= CraftingGoldRequired;
+        return CaelumInventoryService.HasCraftingFinishMaterials(self);
     }
 
     bool ConsumeCraftingFinishMaterials()
     {
-        return ConsumeCraftingMaterial(
-                CaelumConstants.MATERIAL_SILVER_INGOT,
-                1,
-                CraftingSilverRequired
-            )
-            && ConsumeCraftingMaterial(
-                CaelumConstants.MATERIAL_GOLD_INGOT,
-                1,
-                CraftingGoldRequired
-            );
+        return CaelumInventoryService.ConsumeCraftingFinishMaterials(self);
     }
 
     void SpawnSelectedCraftingMaterials()
@@ -8181,680 +5486,37 @@ class CaelumPlayer : DoomPlayer
 
     void CraftSelectedProcessingRecipe()
     {
-        RefreshCraftingPreview();
-        if (CraftingSelectedRecipeKind
-                != CaelumConstants.CRAFTING_RECIPE_KIND_PROCESSING
-            && CraftingSelectedRecipeKind
-                != CaelumConstants.CRAFTING_RECIPE_KIND_COMPONENT)
-        {
-            LastCraftingAction = CaelumConstants.CRAFTING_ACTION_FAILED_STATION;
-            return;
-        }
-        if (!CraftingSelectedInfrastructureAvailable)
-        {
-            LastCraftingAction =
-                CaelumConstants.CRAFTING_ACTION_FAILED_INFRASTRUCTURE;
-            return;
-        }
-        if (CraftingBasicOwned < CraftingBasicRequired
-            || CraftingTierOwned < CraftingTierRequired
-            || !HasCraftingFinishMaterials())
-        {
-            LastCraftingAction =
-                CaelumConstants.CRAFTING_ACTION_FAILED_MATERIALS;
-            return;
-        }
-
-        CaelumSpecialInventoryItem existingOutput = FindNativeSpecialItem(
-            CaelumConstants.EQUIPMENT_KIND_MATERIAL,
-            CraftingOutputMaterialType,
-            CraftingOutputMaterialTier
-        );
-        bool sendOutputToMagicBox = existingOutput != null
-            && existingOutput.InMagicBox;
-        int outputBoxSlots = GetPreparedMaterialOutputBoxSlots();
-        if (outputBoxSlots < 0)
-        {
-            LastCraftingAction =
-                CaelumConstants.CRAFTING_ACTION_FAILED_CARRY_CAPACITY;
-            return;
-        }
-        if (!sendOutputToMagicBox && outputBoxSlots > 0)
-        {
-            if (DerivedStats == null
-                || CountNativeMagicBoxSlots()
-                    >= DerivedStats.MagicBoxCapacity)
-            {
-                LastCraftingAction =
-                    CaelumConstants.CRAFTING_ACTION_FAILED_BOX_FULL;
-                return;
-            }
-            sendOutputToMagicBox = true;
-        }
-        CaelumMaterialPickup detachedOutput;
-        if (existingOutput == null)
-        {
-            detachedOutput = CreateDetachedMaterialStack(
-                CraftingOutputMaterialType,
-                CraftingOutputMaterialTier,
-                CraftingOutputAmount
-            );
-            if (detachedOutput == null)
-            {
-                LastCraftingAction =
-                    CaelumConstants.CRAFTING_ACTION_FAILED_MATERIALS;
-                return;
-            }
-        }
-
-        if (!ConsumeCraftingMaterial(
-                CraftingBasicMaterialType,
-                CraftingBasicMaterialTier,
-                CraftingBasicRequired
-            )
-            || !ConsumeCraftingMaterial(
-                CraftingTierMaterialType,
-                CraftingTierMaterialTier,
-                CraftingTierRequired
-            )
-            || !ConsumeCraftingFinishMaterials())
-        {
-            if (detachedOutput != null) { detachedOutput.Destroy(); }
-            LastCraftingAction =
-                CaelumConstants.CRAFTING_ACTION_FAILED_MATERIALS;
-            return;
-        }
-
-        if (existingOutput != null)
-        {
-            existingOutput.Amount += CraftingOutputAmount;
-            if (CraftingTaskUsesLimboMaterials) existingOutput.LimboQuestUnits += CraftingOutputAmount;
-            if (sendOutputToMagicBox) { existingOutput.InMagicBox = true; }
-        }
-        else
-        {
-            if (CraftingTaskUsesLimboMaterials) detachedOutput.LimboQuestUnits = CraftingOutputAmount;
-            detachedOutput.InMagicBox = sendOutputToMagicBox;
-            detachedOutput.AttachToOwner(self);
-        }
-        if (existingOutput!=null)
-            CaelumNotifications.Acquired(self,existingOutput,CraftingOutputAmount);
-        else CaelumNotifications.Acquired(self,detachedOutput,CraftingOutputAmount);
-        LastCraftingAction = CaelumConstants.CRAFTING_ACTION_PROCESSED;
-        ApplyCharacterProfile();
-        PersistCharacterState();
-        RefreshEquipmentSelectionPreview();
-        RefreshCraftingPreview();
+        CaelumInventoryService.CraftSelectedProcessingRecipe(self);
     }
 
     void CraftSelectedArmorRecipe()
     {
-        if (ArmorModel == null) { return; }
-        RefreshCraftingPreview();
-
-        if (CraftingSelectedRecipeKind
-            != CaelumConstants.CRAFTING_RECIPE_KIND_ARMOR)
-        {
-            LastCraftingAction = CaelumConstants.CRAFTING_ACTION_FAILED_STATION;
-            return;
-        }
-        if (!CraftingSelectedInfrastructureAvailable)
-        {
-            LastCraftingAction =
-                CaelumConstants.CRAFTING_ACTION_FAILED_INFRASTRUCTURE;
-            return;
-        }
-        if (!CaelumMainM00RonnieTrial.CanUsePersonalCraftingOutput(self) && !HasNativeMagicBoxSlotAvailable())
-        {
-            LastCraftingAction =
-                CaelumConstants.CRAFTING_ACTION_FAILED_BOX_FULL;
-            return;
-        }
-        if (!HasSelectedWeaponCraftingMaterials())
-        {
-            LastCraftingAction =
-                CaelumConstants.CRAFTING_ACTION_FAILED_MATERIALS;
-            return;
-        }
-
-        CaelumEquipmentItem result = CaelumEquipmentItem(
-            Spawn("CaelumArmorPickup", Pos, NO_REPLACE)
-        );
-        if (result == null)
-        {
-            LastCraftingAction =
-                CaelumConstants.CRAFTING_ACTION_FAILED_MATERIALS;
-            return;
-        }
-
-        if (!ConsumeSelectedWeaponCraftingMaterials())
-        {
-            result.Destroy();
-            LastCraftingAction =
-                CaelumConstants.CRAFTING_ACTION_FAILED_MATERIALS;
-            return;
-        }
-
-        result.EquipmentKind = CaelumConstants.EQUIPMENT_KIND_ARMOR;
-        result.ItemType = CraftingSelectedArmorType;
-        result.ArmorSlot = CraftingSelectedArmorSlot;
-        result.Tier = CraftingSelectionTier;
-        result.EquipmentSize = CraftingSelectionSize;
-        result.Durability = ArmorModel.GetMaximumDurabilityFor(
-            CraftingSelectedArmorType,
-            CraftingSelectionTier,
-            CraftingSelectionSize
-        );
-        result.EssenceType = CaelumConstants.ESSENCE_FIRE;
-        result.UnitWeight = ArmorModel.GetWeightFor(
-            CraftingSelectedArmorSlot,
-            CraftingSelectedArmorType,
-            CraftingSelectionTier,
-            CraftingSelectionSize
-        );
-        result.Equipped = false;
-        result.InMagicBox = !CaelumMainM00RonnieTrial.CanUsePersonalCraftingOutput(self);
-        result.PickupDataInitialized = true;
-        result.AttachToOwner(self);
-        EnsureEquipmentItemId(result);
-        CaelumNotifications.Acquired(self, result, 1);
-
-        CaelumPersistentCharacterState persistentState =
-            GetPersistentCharacterState(true);
-        if (persistentState != null)
-        {
-            persistentState.RegisterOwnedArmor(
-                CraftingSelectedArmorSlot,
-                CraftingSelectedArmorType,
-                CraftingSelectionTier,
-                CraftingSelectionSize,
-                result.Durability
-            );
-            persistentState.SetArmorInMagicBox(
-                CraftingSelectedArmorSlot,
-                CraftingSelectedArmorType,
-                CraftingSelectionTier,
-                CraftingSelectionSize,
-                result.InMagicBox
-            );
-        }
-
-        CaelumMainM00SupplyRules.RecordArmor(self, result);
-        LastCraftingAction = CaelumConstants.CRAFTING_ACTION_CREATED;
-        ApplyCharacterProfile();
-        PersistCharacterState();
-        RefreshEquipmentSelectionPreview();
-        RefreshCraftingPreview();
+        CaelumInventoryService.CraftSelectedArmorRecipe(self);
     }
 
     void CraftSelectedShieldRecipe()
     {
-        if (ShieldModel == null) { return; }
-        RefreshCraftingPreview();
-
-        if (CraftingSelectedRecipeKind
-            != CaelumConstants.CRAFTING_RECIPE_KIND_SHIELD)
-        {
-            LastCraftingAction = CaelumConstants.CRAFTING_ACTION_FAILED_STATION;
-            return;
-        }
-        if (!CraftingSelectedInfrastructureAvailable)
-        {
-            LastCraftingAction =
-                CaelumConstants.CRAFTING_ACTION_FAILED_INFRASTRUCTURE;
-            return;
-        }
-        if (!CaelumMainM00RonnieTrial.CanUsePersonalCraftingOutput(self) && !HasNativeMagicBoxSlotAvailable())
-        {
-            LastCraftingAction =
-                CaelumConstants.CRAFTING_ACTION_FAILED_BOX_FULL;
-            return;
-        }
-        if (!HasSelectedWeaponCraftingMaterials())
-        {
-            LastCraftingAction =
-                CaelumConstants.CRAFTING_ACTION_FAILED_MATERIALS;
-            return;
-        }
-
-        CaelumEquipmentItem result = CaelumEquipmentItem(
-            Spawn("CaelumShieldPickup", Pos, NO_REPLACE)
-        );
-        if (result == null || CaelumShieldPickup(result) == null)
-        {
-            if (result != null) { result.Destroy(); }
-            LastCraftingAction =
-                CaelumConstants.CRAFTING_ACTION_FAILED_STATION;
-            return;
-        }
-
-        if (!ConsumeSelectedWeaponCraftingMaterials())
-        {
-            result.Destroy();
-            LastCraftingAction =
-                CaelumConstants.CRAFTING_ACTION_FAILED_MATERIALS;
-            return;
-        }
-
-        result.EquipmentKind = CaelumConstants.EQUIPMENT_KIND_SHIELD;
-        result.ItemType = CraftingSelectedShieldType;
-        result.ArmorSlot = -1;
-        result.Tier = CraftingSelectionTier;
-        result.EquipmentSize = CraftingSelectionSize;
-        result.Durability = ShieldModel.GetMaximumDurabilityFor(
-            CraftingSelectedShieldType,
-            CraftingSelectionTier,
-            CraftingSelectionSize
-        );
-        result.EssenceType = CaelumConstants.ESSENCE_FIRE;
-        result.UnitWeight = ShieldModel.GetWeightFor(
-            CraftingSelectedShieldType,
-            CraftingSelectionTier,
-            CraftingSelectionSize
-        );
-        result.Equipped = false;
-        result.InMagicBox = !CaelumMainM00RonnieTrial.CanUsePersonalCraftingOutput(self);
-        result.PickupDataInitialized = true;
-        result.AttachToOwner(self);
-        EnsureEquipmentItemId(result);
-        CaelumNotifications.Acquired(self, result, 1);
-
-        CaelumPersistentCharacterState persistentState =
-            GetPersistentCharacterState(true);
-        if (persistentState != null)
-        {
-            persistentState.RegisterOwnedShield(
-                CraftingSelectedShieldType,
-                CraftingSelectionTier,
-                CraftingSelectionSize,
-                result.Durability
-            );
-            persistentState.SetShieldInMagicBox(
-                CraftingSelectedShieldType,
-                CraftingSelectionTier,
-                CraftingSelectionSize,
-                result.InMagicBox
-            );
-        }
-
-        CaelumMainM00Loadout.RecordShield(self, result);
-        LastCraftingAction = CaelumConstants.CRAFTING_ACTION_CREATED;
-        ApplyCharacterProfile();
-        PersistCharacterState();
-        RefreshEquipmentSelectionPreview();
-        RefreshCraftingPreview();
+        CaelumInventoryService.CraftSelectedShieldRecipe(self);
     }
 
     void CraftSelectedEssenceWeaponRecipe()
     {
-        if (WeaponModel == null) { return; }
-        RefreshCraftingPreview();
-
-        if (CraftingSelectedRecipeKind
-            != CaelumConstants.CRAFTING_RECIPE_KIND_ESSENCE_WEAPON)
-        {
-            LastCraftingAction = CaelumConstants.CRAFTING_ACTION_FAILED_STATION;
-            return;
-        }
-        if (!CraftingSelectedInfrastructureAvailable)
-        {
-            LastCraftingAction =
-                CaelumConstants.CRAFTING_ACTION_FAILED_INFRASTRUCTURE;
-            return;
-        }
-        if (!CaelumMainM00RonnieTrial.CanUsePersonalCraftingOutput(self) && !HasNativeMagicBoxSlotAvailable())
-        {
-            LastCraftingAction =
-                CaelumConstants.CRAFTING_ACTION_FAILED_BOX_FULL;
-            return;
-        }
-        if (!HasSelectedWeaponCraftingMaterials())
-        {
-            LastCraftingAction =
-                CaelumConstants.CRAFTING_ACTION_FAILED_MATERIALS;
-            return;
-        }
-
-        CaelumEquipmentItem result = CaelumEquipmentItem(
-            Spawn("CaelumWeaponPickup", Pos, NO_REPLACE)
-        );
-        if (result == null)
-        {
-            LastCraftingAction =
-                CaelumConstants.CRAFTING_ACTION_FAILED_MATERIALS;
-            return;
-        }
-
-        if (!ConsumeSelectedWeaponCraftingMaterials())
-        {
-            result.Destroy();
-            LastCraftingAction =
-                CaelumConstants.CRAFTING_ACTION_FAILED_MATERIALS;
-            return;
-        }
-
-        result.EquipmentKind = CaelumConstants.EQUIPMENT_KIND_WEAPON;
-        result.ItemType = CraftingSelectedEssenceWeaponType;
-        result.ArmorSlot = -1;
-        result.Tier = CraftingSelectionTier;
-        result.EquipmentSize = CraftingSelectionSize;
-        result.Durability = WeaponModel.GetMaximumDurabilityFor(
-            CraftingSelectedEssenceWeaponType,
-            CraftingSelectionTier,
-            CraftingSelectionSize
-        );
-        result.EssenceType = CraftingSelectedEssenceType;
-        result.UnitWeight = WeaponModel.GetWeightFor(
-            CraftingSelectedEssenceWeaponType,
-            CraftingSelectionTier,
-            CraftingSelectionSize
-        );
-        result.Equipped = false;
-        result.InMagicBox = !CaelumMainM00RonnieTrial.CanUsePersonalCraftingOutput(self);
-        result.PickupDataInitialized = true;
-        result.AttachToOwner(self);
-        EnsureEquipmentItemId(result);
-        CaelumNotifications.Acquired(self, result, 1);
-
-        CaelumPersistentCharacterState persistentState =
-            GetPersistentCharacterState(true);
-        if (persistentState != null)
-        {
-            persistentState.RegisterOwnedWeapon(
-                CraftingSelectedEssenceWeaponType,
-                CraftingSelectionTier,
-                CraftingSelectionSize,
-                result.Durability
-            );
-            persistentState.SetWeaponInMagicBox(
-                CraftingSelectedEssenceWeaponType,
-                CraftingSelectionTier,
-                CraftingSelectionSize,
-                result.InMagicBox
-            );
-            persistentState.SetWeaponEquipped(
-                CraftingSelectedEssenceWeaponType,
-                CraftingSelectionTier,
-                CraftingSelectionSize,
-                false
-            );
-        }
-
-        CaelumMainM00RonnieTrial.RecordCraft(self, result);
-        LastCraftingAction = CaelumConstants.CRAFTING_ACTION_CREATED;
-        ApplyCharacterProfile();
-        PersistCharacterState();
-        RefreshEquipmentSelectionPreview();
-        RefreshCraftingPreview();
+        CaelumInventoryService.CraftSelectedEssenceWeaponRecipe(self);
     }
 
     void CraftSelectedJewelry(bool seal)
     {
-        RefreshCraftingPreview();
-        int expected = seal ? CaelumConstants.CRAFTING_RECIPE_KIND_SEAL
-            : CaelumConstants.CRAFTING_RECIPE_KIND_AMULET;
-        if (CraftingSelectedRecipeKind != expected) return;
-        if (!CraftingSelectedInfrastructureAvailable)
-        { LastCraftingAction = CaelumConstants.CRAFTING_ACTION_FAILED_INFRASTRUCTURE; return; }
-        int kind = seal ? CaelumConstants.EQUIPMENT_KIND_SEAL : CaelumConstants.EQUIPMENT_KIND_AMULET;
-        int type = seal ? CraftingSelectedSealType : CraftingSelectedAmuletType;
-        bool personalOutput = CaelumMainM00RonnieTrial.CanUsePersonalCraftingOutput(self);
-        if (!personalOutput && !HasNativeMagicBoxSlotAvailable())
-        { LastCraftingAction = CaelumConstants.CRAFTING_ACTION_FAILED_BOX_FULL; return; }
-        if (!HasSelectedWeaponCraftingMaterials())
-        { LastCraftingAction = CaelumConstants.CRAFTING_ACTION_FAILED_MATERIALS; return; }
-
-        CaelumEquipmentItem result;
-        if (seal)
-        {
-            result = CaelumEquipmentItem(
-                Spawn("CaelumSealPickup", Pos, NO_REPLACE)
-            );
-        }
-        else
-        {
-            result = CaelumEquipmentItem(
-                Spawn("CaelumAmuletPickup", Pos, NO_REPLACE)
-            );
-        }
-        if (result == null) { LastCraftingAction = CaelumConstants.CRAFTING_ACTION_FAILED_MATERIALS; return; }
-        // La transacción nunca puede degradarse silenciosamente a una pieza de
-        // armadura aunque exista una colisión o reemplazo de clases externos.
-        if ((seal && CaelumSealPickup(result) == null)
-            || (!seal && CaelumAmuletPickup(result) == null))
-        {
-            result.Destroy();
-            LastCraftingAction = CaelumConstants.CRAFTING_ACTION_FAILED_STATION;
-            return;
-        }
-        if (!ConsumeSelectedWeaponCraftingMaterials())
-        { result.Destroy(); LastCraftingAction = CaelumConstants.CRAFTING_ACTION_FAILED_MATERIALS; return; }
-
-        result.EquipmentKind=kind; result.ItemType=type; result.ArmorSlot=-1;
-        result.Tier=CraftingSelectionTier; result.EquipmentSize=CaelumConstants.EQUIPMENT_SIZE_M;
-        result.Durability=0; result.EssenceType=seal ? type : CaelumConstants.ESSENCE_FIRE;
-        result.UnitWeight=CaelumCraftingRules.GetJewelryWeight(CraftingSelectionTier);
-        result.Equipped=false; result.InMagicBox=!personalOutput; result.PickupDataInitialized=true; result.AttachToOwner(self);
-        EnsureEquipmentItemId(result);
-        CaelumNotifications.Acquired(self, result, 1);
-        CaelumMainM00SealCrafting.RecordCraft(self, result);
-        LastCraftingAction=CaelumConstants.CRAFTING_ACTION_CREATED;
-        ApplyCharacterProfile();
-        PersistCharacterState();
-        RefreshCraftingPreview();
-        // Se aplica al final de la transacción, después de toda sincronización,
-        // para que ninguna actualización intermedia restaure Cabeza/Armadura.
-        EquipmentSelectionKind = kind;
-        EquipmentSelectionTier = CraftingSelectionTier;
-        EquipmentSelectionSize = CaelumConstants.EQUIPMENT_SIZE_M;
-        if (seal) { EquipmentSelectionSealType = type; }
-        else { EquipmentSelectionAmuletType = type; }
-        RefreshEquipmentSelectionPreview();
+        CaelumInventoryService.CraftSelectedJewelry(self, seal);
     }
 
     void CraftSelectedAmmunition()
     {
-        if (!CraftingTaskCompleting || !CraftingSelectedInfrastructureAvailable
-            || !ValidateCraftingTaskReservations())
-        { LastCraftingAction = CaelumConstants.CRAFTING_ACTION_FAILED_MATERIALS; return; }
-        int ammoType = CaelumCraftingRules.GetRecipeAmmunitionType(CraftingSelectionRecipe);
-        int batch = CaelumCraftingRules.GetRecipeAmmunitionBatch(CraftingSelectionRecipe);
-        if (ammoType < 0 || batch <= 0) return;
-        Name ammoClass = GetAmmunitionClassName(ammoType);
-        let ammunition = Inventory(FindInventory(ammoClass));
-        bool created = ammunition == null;
-        if (created) ammunition = Inventory(Spawn(ammoClass, Pos, NO_REPLACE));
-        if (ammunition == null) return;
-        int oldAmount = created ? 0 : ammunition.Amount;
-        if (oldAmount > ammunition.MaxAmount - batch
-            || !ConsumeCraftingTaskReservations())
-        {
-            if (created) ammunition.Destroy();
-            LastCraftingAction = CaelumConstants.CRAFTING_ACTION_FAILED_MATERIALS; return;
-        }
-        ammunition.Amount = oldAmount + batch;
-        if (created) ammunition.AttachToOwner(self);
-        CaelumNotifications.Acquired(self, ammunition, batch);
-        // Munición no cuenta como primera arma ni sustituye su ItemId.
-        LastCraftingAction = CaelumConstants.CRAFTING_ACTION_CREATED;
-        OnNativeInventoryChanged();
+        CaelumInventoryService.CraftSelectedAmmunition(self);
     }
 
     void CraftSelectedPhysicalWeapon()
     {
-        RefreshCraftingPreview();
-
-        if (!CraftingTaskCompleting)
-        {
-            BeginSelectedCraftingTask();
-            return;
-        }
-
-        if (!CraftingSelectedRecipeKnown)
-        {
-            LastCraftingAction =
-                CaelumConstants.CRAFTING_ACTION_FAILED_RECIPE_LOCKED;
-            return;
-        }
-
-        if (CraftingSelectedRecipeKind
-                != CaelumConstants.CRAFTING_RECIPE_KIND_PROCESSING
-            && CraftingSelectedRecipeKind
-                != CaelumConstants.CRAFTING_RECIPE_KIND_COMPONENT
-            && !CanCompletePreparedEquipmentOutput(CraftingFinalWeight))
-        {
-            LastCraftingAction =
-                CaelumConstants.CRAFTING_ACTION_FAILED_CARRY_CAPACITY;
-            return;
-        }
-
-        if (CraftingSelectedRecipeKind == CaelumConstants.CRAFTING_RECIPE_KIND_AMMUNITION)
-        { CraftSelectedAmmunition(); return; }
-        if (CraftingSelectedRecipeKind
-            == CaelumConstants.CRAFTING_RECIPE_KIND_ARMOR)
-        {
-            CraftSelectedArmorRecipe();
-            return;
-        }
-        if (CraftingSelectedRecipeKind
-            == CaelumConstants.CRAFTING_RECIPE_KIND_SHIELD)
-        {
-            CraftSelectedShieldRecipe();
-            return;
-        }
-        if (CraftingSelectedRecipeKind
-            == CaelumConstants.CRAFTING_RECIPE_KIND_ESSENCE_WEAPON)
-        {
-            CraftSelectedEssenceWeaponRecipe();
-            return;
-        }
-        if (CraftingSelectedRecipeKind == CaelumConstants.CRAFTING_RECIPE_KIND_AMULET)
-        { CraftSelectedJewelry(false); return; }
-        if (CraftingSelectedRecipeKind == CaelumConstants.CRAFTING_RECIPE_KIND_SEAL)
-        { CraftSelectedJewelry(true); return; }
-        if (CraftingSelectedRecipeKind
-                == CaelumConstants.CRAFTING_RECIPE_KIND_PROCESSING
-            || CraftingSelectedRecipeKind
-                == CaelumConstants.CRAFTING_RECIPE_KIND_COMPONENT)
-        {
-            CraftSelectedProcessingRecipe();
-            return;
-        }
-
-        if (CraftingSelectedWeapon < 0)
-        {
-            LastCraftingAction = CaelumConstants.CRAFTING_ACTION_FAILED_STATION;
-            return;
-        }
-        if (!CaelumCraftingRules.CanNetworkCraftWeapon(
-            CraftingNetworkCapabilities,
-            CraftingSelectionTier,
-            CraftingSelectedWeapon
-        ))
-        {
-            CraftingMissingStationType =
-                CaelumCraftingRules.GetMissingNetworkStation(
-                    CraftingNetworkCapabilities,
-                    CraftingSelectionTier,
-                    CraftingSelectedWeapon
-                );
-            CraftingSelectedInfrastructureAvailable = false;
-            LastCraftingAction =
-                CaelumConstants.CRAFTING_ACTION_FAILED_INFRASTRUCTURE;
-            return;
-        }
-        int playableWeaponType = CaelumCraftingRules.GetPlayableWeaponType(
-            CraftingSelectedWeapon
-        );
-        if (playableWeaponType < 0 || WeaponModel == null) { return; }
-        if (!CaelumMainM00RonnieTrial.CanUsePersonalCraftingOutput(self) && !HasNativeMagicBoxSlotAvailable())
-        {
-            LastCraftingAction =
-                CaelumConstants.CRAFTING_ACTION_FAILED_BOX_FULL;
-            return;
-        }
-        if (!HasSelectedWeaponCraftingMaterials())
-        {
-            LastCraftingAction =
-                CaelumConstants.CRAFTING_ACTION_FAILED_MATERIALS;
-            return;
-        }
-
-        CaelumEquipmentItem result = CaelumEquipmentItem(
-            Spawn("CaelumWeaponPickup", Pos, NO_REPLACE)
-        );
-        if (result == null)
-        {
-            LastCraftingAction =
-                CaelumConstants.CRAFTING_ACTION_FAILED_MATERIALS;
-            return;
-        }
-
-        // La validación completa ocurre antes de modificar pilas. Como los
-        // componentes de estas recetas son distintos, ambas restas son una
-        // única transacción lógica y nunca dejan un crafteo parcial.
-        if (!ConsumeSelectedWeaponCraftingMaterials())
-        {
-            result.Destroy();
-            LastCraftingAction =
-                CaelumConstants.CRAFTING_ACTION_FAILED_MATERIALS;
-            return;
-        }
-        result.EquipmentKind = CaelumConstants.EQUIPMENT_KIND_WEAPON;
-        result.ItemType = playableWeaponType;
-        result.ArmorSlot = -1;
-        result.Tier = CraftingSelectionTier;
-        result.EquipmentSize = CraftingSelectionSize;
-        result.Durability = WeaponModel.GetMaximumDurabilityFor(
-            playableWeaponType,
-            CraftingSelectionTier,
-            CraftingSelectionSize
-        );
-        result.EssenceType = CaelumConstants.ESSENCE_FIRE;
-        result.UnitWeight = WeaponModel.GetWeightFor(
-            playableWeaponType,
-            CraftingSelectionTier,
-            CraftingSelectionSize
-        );
-        // La pieza nace con durabilidad actual; no debe migrarse como un save antiguo.
-        result.WeaponDurabilityRevision = CaelumAttackRules.DURABILITY_REVISION;
-        result.Equipped = false;
-        result.InMagicBox = !CaelumMainM00RonnieTrial.CanUsePersonalCraftingOutput(self);
-        result.PickupDataInitialized = true;
-        result.AttachToOwner(self);
-        EnsureEquipmentItemId(result);
-        CaelumNotifications.Acquired(self, result, 1);
-
-        CaelumPersistentCharacterState persistentState =
-            GetPersistentCharacterState(true);
-        if (persistentState != null)
-        {
-            persistentState.RegisterOwnedWeapon(
-                playableWeaponType,
-                CraftingSelectionTier,
-                CraftingSelectionSize,
-                result.Durability
-            );
-            persistentState.SetWeaponInMagicBox(
-                playableWeaponType,
-                CraftingSelectionTier,
-                CraftingSelectionSize,
-                result.InMagicBox
-            );
-            persistentState.SetWeaponEquipped(
-                playableWeaponType,
-                CraftingSelectionTier,
-                CraftingSelectionSize,
-                false
-            );
-        }
-
-        CaelumMainM00RonnieTrial.RecordCraft(self, result);
-        LastCraftingAction = CaelumConstants.CRAFTING_ACTION_CREATED;
-        ApplyCharacterProfile();
-        PersistCharacterState();
-        RefreshEquipmentSelectionPreview();
-        RefreshCraftingPreview();
+        CaelumInventoryService.CraftSelectedPhysicalWeapon(self);
     }
 
     void ToggleEquipmentMenu()
@@ -8900,111 +5562,27 @@ class CaelumPlayer : DoomPlayer
 
     Name GetConsumableClassName(int consumableType)
     {
-        switch (consumableType)
-        {
-            case CaelumConstants.CONSUMABLE_ANIMA_POTION:
-                return 'CaelumAnimaPotion';
-            case CaelumConstants.CONSUMABLE_ENERGY_DRINK:
-                return 'CaelumEnergyDrink';
-            case CaelumConstants.CONSUMABLE_FOOD_RATION:
-                return 'CaelumFoodRation';
-            case CaelumConstants.CONSUMABLE_WATER_RATION:
-                return 'CaelumWaterRation';
-            case 5: return 'CaelumBottleSmall';
-            case 6: return 'CaelumBottleNormal';
-            case 7: return 'CaelumBottleLarge';
-            case 8: return 'CaelumCanteenSmall';
-            case 9: return 'CaelumCanteenNormal';
-            case 10: return 'CaelumCanteenLarge';
-            default:
-                return 'CaelumLifePotion';
-        }
+        return CaelumInventoryService.GetConsumableClassName(self, consumableType);
     }
 
     double GetAmmunitionUnitWeight(int ammunitionType)
     {
-        switch (ammunitionType)
-        {
-            case CaelumConstants.AMMUNITION_ARROW:
-                return CaelumConstants.ARROW_AMMO_UNIT_WEIGHT;
-            case CaelumConstants.AMMUNITION_BOLT:
-                return CaelumConstants.BOLT_AMMO_UNIT_WEIGHT;
-            case CaelumConstants.AMMUNITION_JAVELIN_TIER_ONE:
-                return CaelumConstants.JAVELIN_TIER_ONE_AMMO_UNIT_WEIGHT;
-            case CaelumConstants.AMMUNITION_JAVELIN_TIER_TWO:
-                return CaelumConstants.JAVELIN_TIER_TWO_AMMO_UNIT_WEIGHT;
-            case CaelumConstants.AMMUNITION_JAVELIN_TIER_THREE:
-                return CaelumConstants.JAVELIN_TIER_THREE_AMMO_UNIT_WEIGHT;
-            default:
-                return CaelumConstants.CARBINE_AMMO_UNIT_WEIGHT;
-        }
+        return CaelumInventoryService.GetAmmunitionUnitWeight(self, ammunitionType);
     }
 
     Name GetAmmunitionClassName(int ammunitionType)
     {
-        switch (ammunitionType)
-        {
-            case CaelumConstants.AMMUNITION_ARROW:
-                return 'CaelumArrowAmmo';
-            case CaelumConstants.AMMUNITION_BOLT:
-                return 'CaelumBoltAmmo';
-            case CaelumConstants.AMMUNITION_JAVELIN_TIER_ONE:
-                return 'CaelumJavelinTierOneAmmo';
-            case CaelumConstants.AMMUNITION_JAVELIN_TIER_TWO:
-                return 'CaelumJavelinTierTwoAmmo';
-            case CaelumConstants.AMMUNITION_JAVELIN_TIER_THREE:
-                return 'CaelumJavelinTierThreeAmmo';
-            default:
-                return 'CaelumCarbineAmmo';
-        }
+        return CaelumInventoryService.GetAmmunitionClassName(self, ammunitionType);
     }
 
     Name GetSpecialItemClassName(int specialCategory, int specialType)
     {
-        if (specialCategory == CaelumConstants.EQUIPMENT_KIND_CURRENCY)
-        {
-            return CaelumEconomyRules.GetCurrencyClassName(specialType);
-        }
-        if (specialCategory == CaelumConstants.EQUIPMENT_KIND_KEY)
-        {
-            if(specialType==1)return 'CaelumMazeSluiceKey';
-            if(specialType==2)return 'CaelumMazeCryptKey';
-            if(specialType==3)return 'CaelumMazeSanctumKey';
-            return 'CaelumSilverKey';
-        }
-        if (specialCategory == CaelumConstants.EQUIPMENT_KIND_KEY_ITEM)
-        {
-            if (specialType == CaelumConstants.KEY_ITEM_TAROT_DECK) return 'CaelumTarotDeck';
-            if (specialType == CaelumConstants.KEY_ITEM_SLEEPING_BAG) return 'CaelumSleepingBag';
-            if (specialType == CaelumConstants.KEY_ITEM_PROCESSING_MANUAL)
-            {
-                return 'CaelumProcessingManual';
-            }
-            return 'CaelumSealedLetter';
-        }
-        if (specialType == CaelumConstants.MATERIAL_IRON_INGOT)
-        {
-            return 'CaelumIronIngot';
-        }
-        return 'CaelumMaterialPickup';
+        return CaelumInventoryService.GetSpecialItemClassName(self, specialCategory, specialType);
     }
 
     void UseSelectedConsumable()
     {
-        LastEquipmentAction = CaelumConstants.EQUIPMENT_ACTION_FAILED_NOT_OWNED;
-        CaelumConsumableItem consumable = FindNativeConsumableItem(
-            EquipmentSelectionConsumableType
-        );
-        if (consumable == null || consumable.Amount <= 0
-            || consumable.InMagicBox)
-        {
-            return;
-        }
-        let water = CaelumWaterContainer(consumable);
-        if (water != null) { if (!water.Drink()) return; }
-        else if (!UseInventory(consumable)) { return; }
-        OnNativeInventoryChanged();
-        LastEquipmentAction = CaelumConstants.EQUIPMENT_ACTION_USED;
+        CaelumInventoryService.UseSelectedConsumable(self);
     }
 
     void CycleEquipmentSlot(int direction)
@@ -9204,974 +5782,62 @@ class CaelumPlayer : DoomPlayer
 
     void SyncActiveModelsToNativeInventory()
     {
-        if (ArmorModel != null)
-        {
-            for (int slot = 0; slot < CaelumConstants.ARMOR_SLOT_COUNT; slot++)
-            {
-                if (ArmorModel.ArmorType[slot]
-                    == CaelumConstants.ARMOR_TYPE_BASE_CLOTHING)
-                {
-                    continue;
-                }
-                CaelumEquipmentItem armor =
-                    FindNativeEquipmentItemById(EquippedArmorItemId[slot]);
-                if (armor == null || !armor.Equipped || !armor.Matches(
-                    CaelumConstants.EQUIPMENT_KIND_ARMOR,
-                    ArmorModel.ArmorType[slot], slot,
-                    ArmorModel.Tier[slot], ArmorModel.Size[slot]
-                ))
-                {
-                    armor = FindEquippedNativeEquipmentItem(
-                        CaelumConstants.EQUIPMENT_KIND_ARMOR,
-                        ArmorModel.ArmorType[slot], slot,
-                        ArmorModel.Tier[slot], ArmorModel.Size[slot]
-                    );
-                }
-                if (armor != null && armor.Equipped)
-                {
-                    EquippedArmorItemId[slot] = armor.ItemId;
-                    armor.Durability = ArmorModel.Durability[slot];
-                }
-            }
-        }
-        RepairActiveShieldReference();
-        if (ShieldModel != null && ShieldModel.Equipped)
-        {
-            CaelumEquipmentItem shield =
-                FindNativeEquipmentItemById(EquippedShieldItemId);
-            if (shield != null && shield.Equipped)
-            {
-                EquippedShieldItemId = shield.ItemId;
-                shield.Durability = ShieldModel.Durability;
-            }
-        }
-        if (WeaponModel != null && WeaponModel.Equipped)
-        {
-            CaelumEquipmentItem weapon =
-                FindNativeEquipmentItemById(ActiveWeaponItemId);
-            if (weapon == null || !weapon.Equipped || !weapon.Matches(
-                CaelumConstants.EQUIPMENT_KIND_WEAPON,
-                WeaponModel.WeaponType, -1,
-                WeaponModel.Tier, WeaponModel.Size
-            ) || (WeaponModel.IsMagicalType(WeaponModel.WeaponType)
-                && weapon.EssenceType != WeaponModel.EssenceType))
-            {
-                weapon = FindEquippedNativeEquipmentItem(
-                    CaelumConstants.EQUIPMENT_KIND_WEAPON,
-                    WeaponModel.WeaponType, -1,
-                    WeaponModel.Tier, WeaponModel.Size,
-                    WeaponModel.IsMagicalType(WeaponModel.WeaponType)
-                        ? WeaponModel.EssenceType : -1
-                );
-            }
-            if (weapon != null && weapon.Equipped)
-            {
-                ActiveWeaponItemId = weapon.ItemId;
-                weapon.Durability = WeaponModel.Durability;
-
-            }
-        }
+        CaelumInventoryService.SyncActiveModelsToNativeInventory(self);
     }
 
     CaelumEquipmentItem GetSelectedNativeEquipmentItem()
     {
-        CaelumEquipmentItem identifiedItem =
-            FindNativeEquipmentItemById(EquipmentSelectionItemId);
-        if (identifiedItem != null) { return identifiedItem; }
-        if (EquipmentSelectionKind == CaelumConstants.EQUIPMENT_KIND_WEAPON)
-        {
-            if (WeaponModel != null
-                && WeaponModel.IsMagicalType(EquipmentSelectionWeaponType))
-            {
-                return FindNativeMagicWeaponItem(
-                    EquipmentSelectionWeaponType,
-                    EquipmentSelectionWeaponEssenceType,
-                    EquipmentSelectionTier,
-                    EquipmentSelectionSize
-                );
-            }
-            return FindNativeEquipmentItem(
-                CaelumConstants.EQUIPMENT_KIND_WEAPON,
-                EquipmentSelectionWeaponType, -1,
-                EquipmentSelectionTier, EquipmentSelectionSize
-            );
-        }
-        if (EquipmentSelectionKind == CaelumConstants.EQUIPMENT_KIND_SHIELD)
-        {
-            return FindNativeEquipmentItem(
-                CaelumConstants.EQUIPMENT_KIND_SHIELD,
-                EquipmentSelectionShieldType, -1,
-                EquipmentSelectionTier, EquipmentSelectionSize
-            );
-        }
-        if (EquipmentSelectionKind == CaelumConstants.EQUIPMENT_KIND_ARMOR)
-        {
-            return FindNativeEquipmentItem(
-                CaelumConstants.EQUIPMENT_KIND_ARMOR,
-                EquipmentSelectionArmorType, EquipmentSelectionSlot,
-                EquipmentSelectionTier, EquipmentSelectionSize
-            );
-        }
-        if (EquipmentSelectionKind == CaelumConstants.EQUIPMENT_KIND_AMULET)
-            return FindNativeEquipmentItem(EquipmentSelectionKind,EquipmentSelectionAmuletType,-1,EquipmentSelectionTier,CaelumConstants.EQUIPMENT_SIZE_M);
-        if (EquipmentSelectionKind == CaelumConstants.EQUIPMENT_KIND_SEAL)
-            return FindNativeEquipmentItem(EquipmentSelectionKind,EquipmentSelectionSealType,-1,EquipmentSelectionTier,CaelumConstants.EQUIPMENT_SIZE_M);
-        return null;
+        return CaelumInventoryService.GetSelectedNativeEquipmentItem(self);
     }
 
     void EquipSelectedNativeEquipment()
     {
-        LastEquipmentAction = CaelumConstants.EQUIPMENT_ACTION_FAILED_NOT_OWNED;
-        if (EquipmentSelectionKind
-            == CaelumConstants.EQUIPMENT_KIND_CONSUMABLE)
-        {
-            UseSelectedConsumable();
-            return;
-        }
-        if (EquipmentSelectionKind
-            == CaelumConstants.EQUIPMENT_KIND_AMMUNITION)
-        {
-            return;
-        }
-        if (IsSpecialInventoryKind(EquipmentSelectionKind))
-        {
-            return;
-        }
-        if (!EquipmentSelectionSizeCompatible)
-        {
-            LastEquipmentAction = CaelumConstants.EQUIPMENT_ACTION_FAILED_SIZE;
-            return;
-        }
-        SyncActiveModelsToNativeInventory();
-        RefreshCarriedInventorySummary();
-        CaelumEquipmentItem item = GetSelectedNativeEquipmentItem();
-        if (item == null) { return; }
-        if (IsEquipmentItemCraftingLocked(item.ItemId))
-        {
-            LastEquipmentAction =
-                CaelumConstants.EQUIPMENT_ACTION_FAILED_RESERVED;
-            return;
-        }
-        if (item.InMagicBox
-            && !CanMoveRawWeightFromMagicBoxToPersonal(item.UnitWeight))
-        {
-            LastEquipmentAction =
-                CaelumConstants.EQUIPMENT_ACTION_FAILED_CARRY_CAPACITY;
-            return;
-        }
-        item.InMagicBox = false;
-
-        if (item.EquipmentKind == CaelumConstants.EQUIPMENT_KIND_ARMOR)
-        {
-            for (Inventory cursor = Inv; cursor != null; cursor = cursor.Inv)
-            {
-                CaelumEquipmentItem other = CaelumEquipmentItem(cursor);
-                if (other != null
-                    && other.EquipmentKind == CaelumConstants.EQUIPMENT_KIND_ARMOR
-                    && other.ArmorSlot == item.ArmorSlot)
-                {
-                    other.Equipped = false;
-                }
-            }
-            item.Equipped = true;
-            EquippedArmorItemId[item.ArmorSlot] = item.ItemId;
-            ArmorModel.ArmorType[item.ArmorSlot] = item.ItemType;
-            ArmorModel.Tier[item.ArmorSlot] = item.Tier;
-            ArmorModel.Size[item.ArmorSlot] = item.EquipmentSize;
-            ArmorModel.Durability[item.ArmorSlot] = item.Durability;
-            ArmorModel.SelectedSlot = item.ArmorSlot;
-        }
-        else if (item.EquipmentKind == CaelumConstants.EQUIPMENT_KIND_SHIELD)
-        {
-            for (Inventory cursor = Inv; cursor != null; cursor = cursor.Inv)
-            {
-                CaelumEquipmentItem other = CaelumEquipmentItem(cursor);
-                if (other != null
-                    && other.EquipmentKind == CaelumConstants.EQUIPMENT_KIND_SHIELD)
-                {
-                    other.Equipped = false;
-                }
-            }
-            item.Equipped = true;
-            EquippedShieldItemId = item.ItemId;
-            ShieldModel.ShieldType = item.ItemType;
-            ShieldModel.Tier = item.Tier;
-            ShieldModel.Size = item.EquipmentSize;
-            ShieldModel.Durability = item.Durability;
-            ShieldModel.Equipped = true;
-            DebugShieldBlocking = false;
-        }
-        else if (IsUniversalJewelryKind(item.EquipmentKind))
-        {
-            for (Inventory c=Inv;c!=null;c=c.Inv)
-            {
-                CaelumEquipmentItem other=CaelumEquipmentItem(c);
-                if (other!=null && other.EquipmentKind==item.EquipmentKind) other.Equipped=false;
-            }
-            item.Equipped=true;
-            if (item.EquipmentKind == CaelumConstants.EQUIPMENT_KIND_AMULET)
-            {
-                EquippedAmuletItemId = item.ItemId;
-            }
-            else { EquippedSealItemId = item.ItemId; }
-        }
-        else
-        {
-            // Cada arma física o mágica es una instancia independiente.
-            // Equipar Bastón/Fuego no cambia ningún otro Bastón.
-            item.Equipped = true;
-            ActiveWeaponItemId = item.ItemId;
-            WeaponModel.WeaponType = item.ItemType;
-            WeaponModel.Tier = item.Tier;
-            WeaponModel.Size = item.EquipmentSize;
-            WeaponModel.Durability = item.Durability;
-            WeaponModel.EssenceType = Clamp(
-                item.EssenceType,
-                0,
-                CaelumConstants.ESSENCE_TYPE_COUNT - 1
-            );
-            SelectedEssenceType = WeaponModel.EssenceType;
-            EquipmentSelectionWeaponEssenceType = WeaponModel.EssenceType;
-            WeaponModel.Equipped = true;
-            EnsureWeaponFamilySelectors();
-            EquippedWeaponCooldownRemaining = 0.0;
-        }
-        ApplyCharacterProfile();
-        PersistCharacterState();
-        RefreshEquipmentSelectionPreview();
-        LastEquipmentAction = CaelumConstants.EQUIPMENT_ACTION_EQUIPPED;
+        CaelumInventoryService.EquipSelectedNativeEquipment(self);
     }
 
     void UnequipSelectedNativeEquipment()
     {
-        LastEquipmentAction = CaelumConstants.EQUIPMENT_ACTION_FAILED_NOT_OWNED;
-        SyncActiveModelsToNativeInventory();
-        CaelumEquipmentItem item = GetSelectedNativeEquipmentItem();
-        if (item == null || !item.Equipped) { return; }
-        if (IsEquipmentItemCraftingLocked(item.ItemId))
-        {
-            LastEquipmentAction =
-                CaelumConstants.EQUIPMENT_ACTION_FAILED_RESERVED;
-            return;
-        }
-        item.Equipped = false;
-        if (item.EquipmentKind == CaelumConstants.EQUIPMENT_KIND_ARMOR)
-        {
-            if (EquippedArmorItemId[item.ArmorSlot] == item.ItemId)
-            {
-                EquippedArmorItemId[item.ArmorSlot] = 0;
-            }
-            ArmorModel.ArmorType[item.ArmorSlot] =
-                CaelumConstants.ARMOR_TYPE_BASE_CLOTHING;
-            ArmorModel.Tier[item.ArmorSlot] = 1;
-            ArmorModel.Size[item.ArmorSlot] = CaelumConstants.EQUIPMENT_SIZE_M;
-            ArmorModel.Durability[item.ArmorSlot] = 0;
-        }
-        else if (item.EquipmentKind == CaelumConstants.EQUIPMENT_KIND_SHIELD)
-        {
-            if (EquippedShieldItemId == item.ItemId)
-            {
-                EquippedShieldItemId = 0;
-            }
-            ShieldModel.Equipped = false;
-            CancelCombatBlockMode();
-        }
-        else if (IsUniversalJewelryKind(item.EquipmentKind))
-        {
-            if (item.EquipmentKind == CaelumConstants.EQUIPMENT_KIND_AMULET
-                && EquippedAmuletItemId == item.ItemId)
-            {
-                EquippedAmuletItemId = 0;
-            }
-            else if (item.EquipmentKind == CaelumConstants.EQUIPMENT_KIND_SEAL
-                && EquippedSealItemId == item.ItemId)
-            {
-                EquippedSealItemId = 0;
-            }
-        }
-        else
-        {
-            bool wasActive = WeaponModel.Equipped
-                && (ActiveWeaponItemId > 0
-                    ? ActiveWeaponItemId == item.ItemId
-                    : (WeaponModel.WeaponType == item.ItemType
-                        && WeaponModel.Tier == item.Tier
-                        && WeaponModel.Size == item.EquipmentSize
-                        && (!WeaponModel.IsMagicalType(item.ItemType)
-                            || WeaponModel.EssenceType
-                                == item.EssenceType)));
-            if (wasActive)
-            {
-                CancelPendingStaffCast(false);
-                WeaponModel.Equipped = false;
-                ActiveWeaponItemId = 0;
-            }
-            EnsureWeaponFamilySelectors();
-            if (wasActive) { ActivateFirstEquippedWeapon(); }
-        }
-        ApplyCharacterProfile();
-        PersistCharacterState();
-        RefreshEquipmentSelectionPreview();
-        LastEquipmentAction = CaelumConstants.EQUIPMENT_ACTION_UNEQUIPPED;
+        CaelumInventoryService.UnequipSelectedNativeEquipment(self);
     }
 
     void ToggleSelectedMagicBox()
     {
-        RefreshCarriedInventorySummary();
-        double previousWeight = DerivedStats == null ? 0 : DerivedStats.CarriedItemWeight;
-        int selectedId = EquipmentSelectionItemId;
-        ToggleSelectedMagicBoxNative();
-        CaelumMainM00RonnieTrial.RecordLoadLesson(self, previousWeight, selectedId);
+        CaelumInventoryService.ToggleSelectedMagicBox(self);
     }
 
     void ToggleSelectedMagicBoxNative()
     {
-        if (EquipmentSelectionKind == CaelumConstants.EQUIPMENT_KIND_MATERIAL)
-        {
-            let material = FindNativeSpecialItem(EquipmentSelectionKind, EquipmentSelectionSpecialType, EquipmentSelectionTier);
-            if (material != null && material.LimboQuestUnits > 0)
-            { LastEquipmentAction = CaelumConstants.EQUIPMENT_ACTION_FAILED_RESERVED;
-              CaelumMainM00RonnieTrial.Feedback(self, "CA_M01_SUPPLY_RESERVED"); return; }
-        }
-
-        let loan = GetSelectedNativeEquipmentItem();
-        if (loan != null && loan.IsLimboTemporary())
-        {
-            LastEquipmentAction = CaelumConstants.EQUIPMENT_ACTION_FAILED_RESERVED;
-            CaelumMainM00MagicTrial.Feedback(self, "CA_M01_LOAN_RESERVED", true);
-            return;
-        }
-        LastEquipmentAction = CaelumConstants.EQUIPMENT_ACTION_FAILED_NOT_OWNED;
-        SyncLiveMagicBoxOwnershipFromPersistentState();
-        if (!MagicBoxOwned)
-        {
-            LastEquipmentAction =
-                CaelumConstants.EQUIPMENT_ACTION_FAILED_MAGIC_BOX_UNOWNED;
-            return;
-        }
-        RefreshCarriedInventorySummary();
-        if (IsSelectedMaterialCraftingLocked()
-            || IsEquipmentItemCraftingLocked(EquipmentSelectionItemId))
-        {
-            LastEquipmentAction =
-                CaelumConstants.EQUIPMENT_ACTION_FAILED_RESERVED;
-            return;
-        }
-        if (EquipmentSelectionKind == CaelumConstants.EQUIPMENT_KIND_KEY)
-        {
-            LastEquipmentAction =
-                CaelumConstants.EQUIPMENT_ACTION_FAILED_KEY_STORAGE;
-            return;
-        }
-        if (EquipmentSelectionKind
-                == CaelumConstants.EQUIPMENT_KIND_MATERIAL
-            || EquipmentSelectionKind
-                == CaelumConstants.EQUIPMENT_KIND_KEY_ITEM
-            || EquipmentSelectionKind
-                == CaelumConstants.EQUIPMENT_KIND_CURRENCY)
-        {
-            CaelumSpecialInventoryItem specialItem = FindNativeSpecialItem(
-                EquipmentSelectionKind, EquipmentSelectionSpecialType,
-                EquipmentSelectionTier
-            );
-            if (specialItem == null || specialItem.Amount <= 0) { return; }
-            double stackWeight = specialItem.Amount
-                * specialItem.GetUnitWeight();
-            if (specialItem.InMagicBox)
-            {
-                if (!CanMoveRawWeightFromMagicBoxToPersonal(stackWeight))
-                {
-                    LastEquipmentAction =
-                        CaelumConstants.EQUIPMENT_ACTION_FAILED_CARRY_CAPACITY;
-                    return;
-                }
-                specialItem.InMagicBox = false;
-                LastEquipmentAction =
-                    CaelumConstants.EQUIPMENT_ACTION_RETRIEVED_FROM_MAGIC_BOX;
-            }
-            else
-            {
-                if (!HasNativeMagicBoxSlotAvailable())
-                {
-                    LastEquipmentAction =
-                        CaelumConstants.EQUIPMENT_ACTION_FAILED_BOX_FULL;
-                    return;
-                }
-                specialItem.InMagicBox = true;
-                LastEquipmentAction =
-                    CaelumConstants.EQUIPMENT_ACTION_STORED_IN_MAGIC_BOX;
-            }
-            ApplyCharacterProfile();
-            PersistCharacterState();
-            RefreshEquipmentSelectionPreview();
-            return;
-        }
-        if (EquipmentSelectionKind
-            == CaelumConstants.EQUIPMENT_KIND_CONSUMABLE)
-        {
-            CaelumConsumableItem consumable = FindNativeConsumableItem(
-                EquipmentSelectionConsumableType
-            );
-            if (consumable == null || consumable.Amount <= 0) { return; }
-            double stackWeight = consumable.Amount
-                * consumable.GetUnitWeight();
-            if (consumable.InMagicBox)
-            {
-                if (!CanMoveRawWeightFromMagicBoxToPersonal(stackWeight))
-                {
-                    LastEquipmentAction =
-                        CaelumConstants.EQUIPMENT_ACTION_FAILED_CARRY_CAPACITY;
-                    return;
-                }
-                consumable.InMagicBox = false;
-                LastEquipmentAction =
-                    CaelumConstants.EQUIPMENT_ACTION_RETRIEVED_FROM_MAGIC_BOX;
-            }
-            else
-            {
-                if (!HasNativeMagicBoxSlotAvailable())
-                {
-                    LastEquipmentAction =
-                        CaelumConstants.EQUIPMENT_ACTION_FAILED_BOX_FULL;
-                    return;
-                }
-                consumable.InMagicBox = true;
-                LastEquipmentAction =
-                    CaelumConstants.EQUIPMENT_ACTION_STORED_IN_MAGIC_BOX;
-            }
-            ApplyCharacterProfile();
-            PersistCharacterState();
-            RefreshEquipmentSelectionPreview();
-            return;
-        }
-        if (EquipmentSelectionKind
-            == CaelumConstants.EQUIPMENT_KIND_AMMUNITION)
-        {
-            Inventory ammunition = FindNativeAmmunition(
-                EquipmentSelectionAmmunitionType
-            );
-            if (ammunition == null || ammunition.Amount <= 0) { return; }
-
-            // Flechas y virotes son Ammo nativa independiente. De momento
-            // permanecen en inventario personal; la Caja Mágica especial sólo
-            // se aplica a la pila personalizada de carabina.
-            CaelumCarbineAmmo carbineStack = CaelumCarbineAmmo(ammunition);
-            if (carbineStack == null)
-            {
-                LastEquipmentAction =
-                    CaelumConstants.EQUIPMENT_ACTION_FAILED_STORAGE;
-                return;
-            }
-
-            double stackWeight = carbineStack.Amount
-                * carbineStack.GetUnitWeight();
-            if (carbineStack.InMagicBox)
-            {
-                if (!CanMoveRawWeightFromMagicBoxToPersonal(stackWeight))
-                {
-                    LastEquipmentAction =
-                        CaelumConstants.EQUIPMENT_ACTION_FAILED_CARRY_CAPACITY;
-                    return;
-                }
-                carbineStack.InMagicBox = false;
-                LastEquipmentAction =
-                    CaelumConstants.EQUIPMENT_ACTION_RETRIEVED_FROM_MAGIC_BOX;
-            }
-            else
-            {
-                if (!HasNativeMagicBoxSlotAvailable())
-                {
-                    LastEquipmentAction =
-                        CaelumConstants.EQUIPMENT_ACTION_FAILED_BOX_FULL;
-                    return;
-                }
-                carbineStack.InMagicBox = true;
-                LastEquipmentAction =
-                    CaelumConstants.EQUIPMENT_ACTION_STORED_IN_MAGIC_BOX;
-            }
-            ApplyCharacterProfile();
-            PersistCharacterState();
-            RefreshEquipmentSelectionPreview();
-            return;
-        }
-
-        CaelumEquipmentItem item = GetSelectedNativeEquipmentItem();
-        if (item == null) { return; }
-        if (item.InMagicBox)
-        {
-            if (!CanMoveRawWeightFromMagicBoxToPersonal(item.UnitWeight))
-            {
-                LastEquipmentAction =
-                    CaelumConstants.EQUIPMENT_ACTION_FAILED_CARRY_CAPACITY;
-                return;
-            }
-            item.InMagicBox = false;
-            LastEquipmentAction =
-                CaelumConstants.EQUIPMENT_ACTION_RETRIEVED_FROM_MAGIC_BOX;
-        }
-        else
-        {
-            if (!HasNativeMagicBoxSlotAvailable())
-            {
-                LastEquipmentAction =
-                    CaelumConstants.EQUIPMENT_ACTION_FAILED_BOX_FULL;
-                return;
-            }
-            if (item.Equipped)
-            {
-                UnequipSelectedNativeEquipment();
-                item = GetSelectedNativeEquipmentItem();
-                if (item == null) { return; }
-            }
-            item.InMagicBox = true;
-            LastEquipmentAction =
-                CaelumConstants.EQUIPMENT_ACTION_STORED_IN_MAGIC_BOX;
-        }
-        ApplyCharacterProfile();
-        PersistCharacterState();
-        RefreshEquipmentSelectionPreview();
+        CaelumInventoryService.ToggleSelectedMagicBoxNative(self);
     }
 
     void EquipSelectedEquipment()
     {
-        EquipSelectedNativeEquipment();
-        return;
-        LastEquipmentAction = CaelumConstants.EQUIPMENT_ACTION_FAILED_NOT_OWNED;
-        CaelumPersistentCharacterState persistentState =
-            GetPersistentCharacterState(false);
-        if (persistentState == null) { return; }
-        persistentState.EnsureEquipmentSizeInitialized();
-        persistentState.MigrateWeaponDurability();
-        if (!EquipmentSelectionSizeCompatible)
-        {
-            LastEquipmentAction = CaelumConstants.EQUIPMENT_ACTION_FAILED_SIZE;
-            return;
-        }
-        ApplyCharacterProfile();
-        if (EquipmentSelectionInMagicBox
-            && !CanMoveRawWeightFromMagicBoxToPersonal(
-                EquipmentSelectionWeight
-            ))
-        {
-            LastEquipmentAction =
-                CaelumConstants.EQUIPMENT_ACTION_FAILED_CARRY_CAPACITY;
-            return;
-        }
-
-        if (EquipmentSelectionKind == CaelumConstants.EQUIPMENT_KIND_WEAPON)
-        {
-            if (WeaponModel == null || !persistentState.OwnsWeapon(
-                EquipmentSelectionWeaponType,
-                EquipmentSelectionTier,
-                EquipmentSelectionSize
-            ))
-            {
-                return;
-            }
-            persistentState.SetWeaponEquipped(
-                EquipmentSelectionWeaponType,
-                EquipmentSelectionTier,
-                EquipmentSelectionSize,
-                true
-            );
-            persistentState.SetWeaponInMagicBox(
-                EquipmentSelectionWeaponType,
-                EquipmentSelectionTier,
-                EquipmentSelectionSize,
-                false
-            );
-            // Equipar prepara el arma sin sustituir la activa. Solo se activa
-            // inmediatamente cuando el personaje no tenía ninguna en uso.
-            if (!WeaponModel.Equipped)
-            {
-                ActivateEquippedWeaponType(EquipmentSelectionWeaponType);
-            }
-            EnsureWeaponFamilySelectors();
-            EquippedWeaponCooldownRemaining = 0.0;
-        }
-        else if (EquipmentSelectionKind == CaelumConstants.EQUIPMENT_KIND_SHIELD)
-        {
-            if (ShieldModel == null || !persistentState.OwnsShield(
-                EquipmentSelectionShieldType,
-                EquipmentSelectionTier,
-                EquipmentSelectionSize
-            ))
-            {
-                return;
-            }
-            if (ShieldModel.Equipped)
-            {
-                persistentState.RegisterOwnedShield(
-                    ShieldModel.ShieldType,
-                    ShieldModel.Tier,
-                    ShieldModel.Size,
-                    ShieldModel.Durability
-                );
-                persistentState.StoreOwnedShieldDurability(
-                    ShieldModel.ShieldType,
-                    ShieldModel.Tier,
-                    ShieldModel.Size,
-                    ShieldModel.Durability
-                );
-                persistentState.SetShieldInMagicBox(
-                    ShieldModel.ShieldType,
-                    ShieldModel.Tier,
-                    ShieldModel.Size,
-                    false
-                );
-            }
-            ShieldModel.ShieldType = EquipmentSelectionShieldType;
-            ShieldModel.Tier = EquipmentSelectionTier;
-            ShieldModel.Size = EquipmentSelectionSize;
-            ShieldModel.Durability = persistentState.GetOwnedShieldDurability(
-                EquipmentSelectionShieldType,
-                EquipmentSelectionTier,
-                EquipmentSelectionSize
-            );
-            ShieldModel.Equipped = true;
-            persistentState.SetShieldInMagicBox(
-                EquipmentSelectionShieldType,
-                EquipmentSelectionTier,
-                EquipmentSelectionSize,
-                false
-            );
-            DebugShieldBlocking = false;
-        }
-        else
-        {
-            if (ArmorModel == null || !persistentState.OwnsArmor(
-                EquipmentSelectionSlot,
-                EquipmentSelectionArmorType,
-                EquipmentSelectionTier,
-                EquipmentSelectionSize
-            ))
-            {
-                return;
-            }
-            if (ArmorModel.ArmorType[EquipmentSelectionSlot]
-                != CaelumConstants.ARMOR_TYPE_BASE_CLOTHING)
-            {
-                persistentState.RegisterOwnedArmor(
-                    EquipmentSelectionSlot,
-                    ArmorModel.ArmorType[EquipmentSelectionSlot],
-                    ArmorModel.Tier[EquipmentSelectionSlot],
-                    ArmorModel.Size[EquipmentSelectionSlot],
-                    ArmorModel.Durability[EquipmentSelectionSlot]
-                );
-                persistentState.StoreOwnedArmorDurability(
-                    EquipmentSelectionSlot,
-                    ArmorModel.ArmorType[EquipmentSelectionSlot],
-                    ArmorModel.Tier[EquipmentSelectionSlot],
-                    ArmorModel.Size[EquipmentSelectionSlot],
-                    ArmorModel.Durability[EquipmentSelectionSlot]
-                );
-                persistentState.SetArmorInMagicBox(
-                    EquipmentSelectionSlot,
-                    ArmorModel.ArmorType[EquipmentSelectionSlot],
-                    ArmorModel.Tier[EquipmentSelectionSlot],
-                    ArmorModel.Size[EquipmentSelectionSlot],
-                    false
-                );
-            }
-            ArmorModel.ArmorType[EquipmentSelectionSlot] =
-                EquipmentSelectionArmorType;
-            ArmorModel.Tier[EquipmentSelectionSlot] = EquipmentSelectionTier;
-            ArmorModel.Size[EquipmentSelectionSlot] = EquipmentSelectionSize;
-            ArmorModel.Durability[EquipmentSelectionSlot] =
-                persistentState.GetOwnedArmorDurability(
-                    EquipmentSelectionSlot,
-                    EquipmentSelectionArmorType,
-                    EquipmentSelectionTier,
-                    EquipmentSelectionSize
-                );
-            ArmorModel.SelectedSlot = EquipmentSelectionSlot;
-            persistentState.SetArmorInMagicBox(
-                EquipmentSelectionSlot,
-                EquipmentSelectionArmorType,
-                EquipmentSelectionTier,
-                EquipmentSelectionSize,
-                false
-            );
-        }
-
-        ApplyCharacterProfile();
-        PersistCharacterState();
-        RefreshEquipmentSelectionPreview();
-        LastEquipmentAction = CaelumConstants.EQUIPMENT_ACTION_EQUIPPED;
+        CaelumInventoryService.EquipSelectedEquipment(self);
     }
 
     void UnequipSelectedEquipment()
     {
-        UnequipSelectedNativeEquipment();
-        return;
-        LastEquipmentAction = CaelumConstants.EQUIPMENT_ACTION_FAILED_NOT_OWNED;
-        CaelumPersistentCharacterState persistentState =
-            GetPersistentCharacterState(true);
-        if (persistentState == null) { return; }
-        persistentState.EnsureEquipmentSizeInitialized();
-        persistentState.MigrateWeaponDurability();
-
-        if (EquipmentSelectionKind == CaelumConstants.EQUIPMENT_KIND_WEAPON)
-        {
-            if (WeaponModel == null || !persistentState.IsWeaponEquipped(
-                EquipmentSelectionWeaponType,
-                EquipmentSelectionTier,
-                EquipmentSelectionSize
-            )) { return; }
-            bool removingActiveWeapon = WeaponModel.Equipped
-                && WeaponModel.WeaponType == EquipmentSelectionWeaponType
-                && WeaponModel.Tier == EquipmentSelectionTier
-                && WeaponModel.Size == EquipmentSelectionSize;
-            if (removingActiveWeapon)
-            {
-                persistentState.StoreOwnedWeaponDurability(
-                    WeaponModel.WeaponType,
-                    WeaponModel.Tier,
-                    WeaponModel.Size,
-                    WeaponModel.Durability
-                );
-            }
-            persistentState.SetWeaponEquipped(
-                EquipmentSelectionWeaponType,
-                EquipmentSelectionTier,
-                EquipmentSelectionSize,
-                false
-            );
-            persistentState.SetWeaponInMagicBox(
-                EquipmentSelectionWeaponType,
-                EquipmentSelectionTier,
-                EquipmentSelectionSize,
-                false
-            );
-            if (removingActiveWeapon) { ActivateFirstEquippedWeapon(); }
-            EnsureWeaponFamilySelectors();
-            EquippedWeaponCooldownRemaining = 0.0;
-        }
-        else if (EquipmentSelectionKind == CaelumConstants.EQUIPMENT_KIND_SHIELD)
-        {
-            if (ShieldModel == null || !ShieldModel.Equipped) { return; }
-            persistentState.RegisterOwnedShield(
-                ShieldModel.ShieldType,
-                ShieldModel.Tier,
-                ShieldModel.Size,
-                ShieldModel.Durability
-            );
-            persistentState.StoreOwnedShieldDurability(
-                ShieldModel.ShieldType,
-                ShieldModel.Tier,
-                ShieldModel.Size,
-                ShieldModel.Durability
-            );
-            persistentState.SetShieldInMagicBox(
-                ShieldModel.ShieldType,
-                ShieldModel.Tier,
-                ShieldModel.Size,
-                false
-            );
-            ShieldModel.Equipped = false;
-            DebugShieldBlocking = false;
-        }
-        else
-        {
-            if (ArmorModel == null) { return; }
-            int slot = EquipmentSelectionSlot;
-            if (ArmorModel.ArmorType[slot]
-                == CaelumConstants.ARMOR_TYPE_BASE_CLOTHING)
-            {
-                return;
-            }
-            persistentState.RegisterOwnedArmor(
-                slot,
-                ArmorModel.ArmorType[slot],
-                ArmorModel.Tier[slot],
-                ArmorModel.Size[slot],
-                ArmorModel.Durability[slot]
-            );
-            persistentState.StoreOwnedArmorDurability(
-                slot,
-                ArmorModel.ArmorType[slot],
-                ArmorModel.Tier[slot],
-                ArmorModel.Size[slot],
-                ArmorModel.Durability[slot]
-            );
-            persistentState.SetArmorInMagicBox(
-                slot,
-                ArmorModel.ArmorType[slot],
-                ArmorModel.Tier[slot],
-                ArmorModel.Size[slot],
-                false
-            );
-            ArmorModel.ArmorType[slot] = CaelumConstants.ARMOR_TYPE_BASE_CLOTHING;
-            ArmorModel.Tier[slot] = 1;
-            ArmorModel.Size[slot] = CaelumConstants.EQUIPMENT_SIZE_M;
-            ArmorModel.Durability[slot] = 0;
-            ArmorModel.SelectedSlot = slot;
-        }
-
-        ApplyCharacterProfile();
-        PersistCharacterState();
-        RefreshEquipmentSelectionPreview();
-        LastEquipmentAction = CaelumConstants.EQUIPMENT_ACTION_UNEQUIPPED;
+        CaelumInventoryService.UnequipSelectedEquipment(self);
     }
 
     void SpawnSelectedNativePickupOnFloor()
     {
-        if (player == null || player.playerstate != PST_LIVE) { return; }
-        Vector3 spawnPos = Pos + (
-            Cos(Angle) * 56.0,
-            Sin(Angle) * 56.0,
-            8.0
-        );
-        Actor pickup;
-        if (IsSpecialInventoryKind(EquipmentSelectionKind))
-        {
-            Name specialClass = GetSpecialItemClassName(
-                EquipmentSelectionKind, EquipmentSelectionSpecialType
-            );
-            pickup = Spawn(specialClass, spawnPos, NO_REPLACE);
-            if (pickup != null
-                && EquipmentSelectionKind
-                    == CaelumConstants.EQUIPMENT_KIND_MATERIAL)
-            {
-                pickup.args[0] = EquipmentSelectionSpecialType;
-                pickup.args[1] = EquipmentSelectionTier;
-                Inventory(pickup).Amount = 10;
-            }
-            else if (pickup != null
-                && EquipmentSelectionKind
-                    == CaelumConstants.EQUIPMENT_KIND_CURRENCY)
-            {
-                Inventory(pickup).Amount = 100;
-            }
-        }
-        else if (EquipmentSelectionKind
-            == CaelumConstants.EQUIPMENT_KIND_CONSUMABLE)
-        {
-            Name consumableClass = GetConsumableClassName(
-                EquipmentSelectionConsumableType
-            );
-            pickup = Spawn(consumableClass, spawnPos, NO_REPLACE);
-            if (pickup != null) { Inventory(pickup).Amount = 5; }
-        }
-        else if (EquipmentSelectionKind
-            == CaelumConstants.EQUIPMENT_KIND_AMMUNITION)
-        {
-            pickup = Spawn(
-                GetAmmunitionClassName(EquipmentSelectionAmmunitionType),
-                spawnPos,
-                NO_REPLACE
-            );
-            if (pickup != null)
-            {
-                bool isJavelin = EquipmentSelectionAmmunitionType
-                    >= CaelumConstants.AMMUNITION_JAVELIN_TIER_ONE;
-                Inventory(pickup).Amount = isJavelin ? 5 : 100;
-            }
-        }
-        else if (EquipmentSelectionKind == CaelumConstants.EQUIPMENT_KIND_WEAPON)
-        {
-            pickup = Spawn("CaelumWeaponPickup", spawnPos, NO_REPLACE);
-            if (pickup != null)
-            {
-                pickup.args[0] = EquipmentSelectionWeaponType;
-                pickup.args[1] = EquipmentSelectionTier;
-                pickup.args[2] = EquipmentSelectionSize + 1;
-                pickup.args[4] = SelectedEssenceType + 1;
-            }
-        }
-        else if (EquipmentSelectionKind == CaelumConstants.EQUIPMENT_KIND_SHIELD)
-        {
-            pickup = Spawn("CaelumShieldPickup", spawnPos, NO_REPLACE);
-            if (pickup != null)
-            {
-                pickup.args[0] = EquipmentSelectionShieldType;
-                pickup.args[1] = EquipmentSelectionTier;
-                pickup.args[2] = EquipmentSelectionSize + 1;
-            }
-        }
-        else if (EquipmentSelectionKind
-            == CaelumConstants.EQUIPMENT_KIND_AMULET)
-        {
-            pickup = Spawn("CaelumAmuletPickup", spawnPos, NO_REPLACE);
-            if (pickup != null)
-            {
-                pickup.args[0] = EquipmentSelectionAmuletType;
-                pickup.args[1] = EquipmentSelectionTier;
-            }
-        }
-        else if (EquipmentSelectionKind
-            == CaelumConstants.EQUIPMENT_KIND_SEAL)
-        {
-            pickup = Spawn("CaelumSealPickup", spawnPos, NO_REPLACE);
-            if (pickup != null)
-            {
-                pickup.args[0] = EquipmentSelectionSealType;
-                pickup.args[1] = EquipmentSelectionTier;
-            }
-        }
-        else
-        {
-            // Sólo ARMOR llega a este fallback. Antes Amulet y Seal también
-            // caían aquí y la herramienta de desarrollo creaba un casco.
-            pickup = Spawn("CaelumArmorPickup", spawnPos, NO_REPLACE);
-            if (pickup != null)
-            {
-                pickup.args[0] = EquipmentSelectionSlot;
-                pickup.args[1] = EquipmentSelectionArmorType;
-                pickup.args[2] = EquipmentSelectionTier;
-                pickup.args[3] = EquipmentSelectionSize + 1;
-            }
-        }
-        let authoredEquipment=CaelumEquipmentItem(pickup);
-        if (authoredEquipment!=null)
-            authoredEquipment.SizePolicy=CaelumEquipmentRules.FIXED_SIZE;
-        LastEquipmentAction = pickup != null
-            ? CaelumConstants.EQUIPMENT_ACTION_SPAWNED_ON_FLOOR
-            : CaelumConstants.EQUIPMENT_ACTION_FAILED_NOT_OWNED;
-        RefreshEquipmentSelectionPreview();
+        CaelumInventoryService.SpawnSelectedNativePickupOnFloor(self);
     }
 
     bool IsDurabilityTaskEquipment(CaelumEquipmentItem item)
     {
-        return item != null && !item.IsLimboTemporary()
-            && (item.EquipmentKind == CaelumConstants.EQUIPMENT_KIND_WEAPON
-                || item.EquipmentKind
-                    == CaelumConstants.EQUIPMENT_KIND_ARMOR
-                || item.EquipmentKind
-                    == CaelumConstants.EQUIPMENT_KIND_SHIELD);
+        return CaelumInventoryService.IsDurabilityTaskEquipment(self, item);
     }
 
     int GetEquipmentTaskMaximumDurability(CaelumEquipmentItem item)
     {
-        return GetFormalInventoryMaximumDurability(item);
+        return CaelumInventoryService.GetEquipmentTaskMaximumDurability(self, item);
     }
 
     double GetEquipmentTaskWeight(CaelumEquipmentItem item)
     {
-        if (item == null) { return 0.0; }
-        if (item.EquipmentKind == CaelumConstants.EQUIPMENT_KIND_WEAPON
-            && WeaponModel != null)
-        {
-            return WeaponModel.GetWeightFor(
-                item.ItemType, item.Tier, item.EquipmentSize
-            );
-        }
-        if (item.EquipmentKind == CaelumConstants.EQUIPMENT_KIND_ARMOR
-            && ArmorModel != null)
-        {
-            return ArmorModel.GetWeightFor(
-                item.ArmorSlot, item.ItemType,
-                item.Tier, item.EquipmentSize
-            );
-        }
-        if (item.EquipmentKind == CaelumConstants.EQUIPMENT_KIND_SHIELD
-            && ShieldModel != null)
-        {
-            return ShieldModel.GetWeightFor(
-                item.ItemType, item.Tier, item.EquipmentSize
-            );
-        }
-        return item.UnitWeight;
+        return CaelumInventoryService.GetEquipmentTaskWeight(self, item);
     }
 
     bool AddScaledEquipmentTaskMaterial(
@@ -10179,275 +5845,41 @@ class CaelumPlayer : DoomPlayer
         double durabilityFraction, bool recovery, CaelumCraftingBrowser preview = null
     )
     {
-        int units = recovery
-            ? CaelumCraftingRules.GetRecoveredMaterialUnits(
-                fullUnits, durabilityFraction
-            )
-            : CaelumCraftingRules.GetProportionalInputUnits(
-                fullUnits, durabilityFraction
-            );
-        if (!recovery)
-        {
-            units = CaelumCraftingRules.GetEfficiencyAdjustedInputUnits(
-                units, CraftingEfficiencyIndex
-            );
-        }
-        if (preview != null) { preview.AddMaterial(materialType, materialTier, units); return true; }
-        if (recovery)
-        {
-            return AddCraftingTaskOutput(
-                materialType, materialTier, units
-            );
-        }
-        // Reparar comparte el resolvedor recursivo de fabricacion: primero
-        // usa componentes existentes y completa solo lo faltante desde crudos.
-        CraftingPreparedEquipmentInputUnits += units;
-        return RequireDirectCraftingMaterial(
-            materialType, materialTier, units
-        );
+        return CaelumInventoryService.AddScaledEquipmentTaskMaterial(self, materialType, materialTier, fullUnits, durabilityFraction, recovery, preview);
     }
 
     bool BuildEquipmentTaskMaterials(
         CaelumEquipmentItem item, double durabilityFraction, bool recovery, CaelumCraftingBrowser preview = null
     )
     {
-        if (!IsDurabilityTaskEquipment(item)) { return false; }
-        double finalWeight = GetEquipmentTaskWeight(item);
-        int basicType;
-        int basicTier = 1;
-        int basicUnits;
-        int tierType;
-        int tierTier;
-        int tierUnits;
-
-        if (item.EquipmentKind == CaelumConstants.EQUIPMENT_KIND_WEAPON)
-        {
-            if (WeaponModel != null
-                && WeaponModel.IsMagicalType(item.ItemType))
-            {
-                basicType = CaelumCraftingRules.GetEssenceBaseMaterial(
-                    item.ItemType
-                );
-                tierType = CaelumCraftingRules.GetEssenceMaterial(
-                    item.EssenceType
-                );
-                basicUnits =
-                    CaelumCraftingRules.GetRequiredEssenceBaseUnits(
-                        finalWeight
-                    );
-                tierUnits = CaelumCraftingRules.GetRequiredEssenceUnits(
-                    finalWeight
-                );
-            }
-            else
-            {
-                int catalogueWeapon =
-                    CaelumCraftingRules.GetCatalogueWeaponForPlayableType(
-                        item.ItemType
-                    );
-                if (catalogueWeapon < 0) { return false; }
-                basicType = CaelumCraftingRules.GetBasicMaterial(
-                    catalogueWeapon
-                );
-                tierType = CaelumCraftingRules.GetTierMaterial(
-                    catalogueWeapon
-                );
-                basicUnits =
-                    CaelumCraftingRules.GetRequiredBasicMaterialUnits(
-                        catalogueWeapon, finalWeight
-                    );
-                tierUnits =
-                    CaelumCraftingRules.GetRequiredTierMaterialUnits(
-                        catalogueWeapon, finalWeight
-                    );
-            }
-        }
-        else if (item.EquipmentKind
-            == CaelumConstants.EQUIPMENT_KIND_ARMOR)
-        {
-            basicType = CaelumConstants.MATERIAL_STRAP;
-            tierType = CaelumConstants.MATERIAL_LEATHER;
-            basicUnits = CaelumCraftingRules.GetRequiredArmorBaseUnits(
-                item.ArmorSlot, finalWeight
-            );
-            tierUnits = CaelumCraftingRules.GetRequiredArmorTierUnits(
-                item.ArmorSlot, finalWeight
-            );
-        }
-        else
-        {
-            basicType = CaelumConstants.MATERIAL_STRAP;
-            tierType = CaelumCraftingRules.GetShieldPlateMaterial(
-                item.ItemType
-            );
-            basicUnits =
-                CaelumCraftingRules.GetRequiredShieldStrapUnits(finalWeight);
-            tierUnits =
-                CaelumCraftingRules.GetRequiredShieldPlateUnits(finalWeight);
-        }
-
-        basicTier = CaelumMaterialRules.ResolveTier(basicType, 1);
-        tierTier = CaelumMaterialRules.ResolveTier(tierType, item.Tier);
-        if (!AddScaledEquipmentTaskMaterial(
-                basicType, basicTier, basicUnits,
-                durabilityFraction, recovery, preview
-            )
-            || !AddScaledEquipmentTaskMaterial(
-                tierType, tierTier, tierUnits,
-                durabilityFraction, recovery, preview
-            )
-            || !AddScaledEquipmentTaskMaterial(
-                CaelumConstants.MATERIAL_SILVER_INGOT, 1,
-                CaelumCraftingRules.GetRequiredSilverDetailUnits(
-                    finalWeight, item.Tier
-                ),
-                durabilityFraction, recovery, preview
-            )
-            || !AddScaledEquipmentTaskMaterial(
-                CaelumConstants.MATERIAL_GOLD_INGOT, 1,
-                CaelumCraftingRules.GetRequiredGoldDetailUnits(
-                    finalWeight, item.Tier
-                ),
-                durabilityFraction, recovery, preview
-            ))
-        {
-            return false;
-        }
-        return true;
+        return CaelumInventoryService.BuildEquipmentTaskMaterials(self, item, durabilityFraction, recovery, preview);
     }
 
     int GetMissingEquipmentTaskStation(CaelumEquipmentItem item)
     {
-        if (!IsDurabilityTaskEquipment(item))
-        {
-            return CaelumConstants.CRAFTING_STATION_NONE;
-        }
-        if (item.EquipmentKind == CaelumConstants.EQUIPMENT_KIND_ARMOR)
-        {
-            return CaelumCraftingRules.GetMissingArmorStation(
-                CraftingNetworkCapabilities, item.Tier, item.ItemType
-            );
-        }
-        if (item.EquipmentKind == CaelumConstants.EQUIPMENT_KIND_SHIELD)
-        {
-            return CaelumCraftingRules.GetMissingShieldStation(
-                CraftingNetworkCapabilities, item.Tier
-            );
-        }
-        if (WeaponModel != null && WeaponModel.IsMagicalType(item.ItemType))
-        {
-            return CaelumCraftingRules.GetMissingEssenceStation(
-                CraftingNetworkCapabilities, item.Tier
-            );
-        }
-        int catalogueWeapon =
-            CaelumCraftingRules.GetCatalogueWeaponForPlayableType(
-                item.ItemType
-            );
-        if (catalogueWeapon < 0)
-        {
-            return CaelumConstants.CRAFTING_STATION_WORKBENCH;
-        }
-        return CaelumCraftingRules.GetMissingNetworkStation(
-            CraftingNetworkCapabilities, item.Tier, catalogueWeapon
-        );
+        return CaelumInventoryService.GetMissingEquipmentTaskStation(self, item);
     }
 
     bool CanCompletePreparedDismantle(
         CaelumEquipmentItem target, bool sendOutputsToMagicBox, CaelumCraftingBrowser preview = null
     )
     {
-        if (target == null || DerivedStats == null) { return false; }
-        RefreshCarriedInventorySummary();
-        double personalDelta = 0.0;
-        double boxRawDelta = 0.0;
-        double targetWeight = Max(0.0, target.UnitWeight)
-            * Max(0, target.Amount);
-        if (target.InMagicBox) { boxRawDelta -= targetWeight; }
-        else { personalDelta -= targetWeight; }
-
-        for (int slot = 0;
-            slot < CaelumConstants.CRAFTING_TASK_MATERIAL_SLOT_COUNT; slot++)
-        {
-            if ((preview == null ? CraftingTaskOutputUnits[slot] : slot < preview.MaterialUnits.Size() ? preview.MaterialUnits[slot] : 0) <= 0) { continue; }
-            CaelumSpecialInventoryItem existing = FindNativeSpecialItem(
-                CaelumConstants.EQUIPMENT_KIND_MATERIAL,
-                (preview == null ? CraftingTaskOutputType[slot] : preview.MaterialTypes[slot]),
-                (preview == null ? CraftingTaskOutputTier[slot] : preview.MaterialTiers[slot])
-            );
-            double outputWeight = (preview == null ? CraftingTaskOutputUnits[slot] : slot < preview.MaterialUnits.Size() ? preview.MaterialUnits[slot] : 0)
-                * CaelumConstants.MATERIAL_UNIT_WEIGHT;
-            if (sendOutputsToMagicBox)
-            {
-                if (existing != null && !existing.InMagicBox)
-                {
-                    double existingWeight = existing.Amount
-                        * existing.GetUnitWeight();
-                    personalDelta -= existingWeight;
-                    boxRawDelta += existingWeight;
-                }
-                boxRawDelta += outputWeight;
-            }
-            else if (existing != null && existing.InMagicBox)
-            {
-                boxRawDelta += outputWeight;
-            }
-            else
-            {
-                personalDelta += outputWeight;
-            }
-        }
-        return CanApplyInventoryWeightTransition(
-            personalDelta, boxRawDelta
-        );
+        return CaelumInventoryService.CanCompletePreparedDismantle(self, target, sendOutputsToMagicBox, preview);
     }
 
     int GetDismantleNetBoxSlots(CaelumEquipmentItem target, CaelumCraftingBrowser preview = null)
     {
-        if (target == null || DerivedStats == null) { return -1; }
-        if (CanCompletePreparedDismantle(target, false, preview)) { return 0; }
-        if (!CanCompletePreparedDismantle(target, true, preview)) { return -1; }
-
-        int requiredSlots = 0;
-        for (int slot = 0;
-            slot < CaelumConstants.CRAFTING_TASK_MATERIAL_SLOT_COUNT; slot++)
-        {
-            if ((preview == null ? CraftingTaskOutputUnits[slot] : slot < preview.MaterialUnits.Size() ? preview.MaterialUnits[slot] : 0) <= 0) { continue; }
-            CaelumSpecialInventoryItem existing = FindNativeSpecialItem(
-                CaelumConstants.EQUIPMENT_KIND_MATERIAL,
-                (preview == null ? CraftingTaskOutputType[slot] : preview.MaterialTypes[slot]),
-                (preview == null ? CraftingTaskOutputTier[slot] : preview.MaterialTiers[slot])
-            );
-            if (existing == null || !existing.InMagicBox) { requiredSlots++; }
-        }
-        int freedSlots = target.InMagicBox ? 1 : 0;
-        return Max(0, requiredSlots - freedSlots);
+        return CaelumInventoryService.GetDismantleNetBoxSlots(self, target, preview);
     }
 
     int GetCraftingTaskReservedUnitTotal()
     {
-        int total = 0;
-        for (int slot = 0;
-            slot < CaelumConstants.CRAFTING_TASK_MATERIAL_SLOT_COUNT; slot++)
-        {
-            total += Max(0, CraftingTaskReservedUnits[slot]);
-        }
-        return total;
+        return CaelumInventoryService.GetCraftingTaskReservedUnitTotal(self);
     }
 
     int GetEquipmentTaskComplexityTics(CaelumEquipmentItem item)
     {
-        if (item == null)
-        {
-            return CaelumConstants.CRAFTING_SIMPLE_TICS_PER_MATERIAL;
-        }
-        bool essenceWeapon = item.EquipmentKind
-                == CaelumConstants.EQUIPMENT_KIND_WEAPON
-            && WeaponModel != null
-            && WeaponModel.IsMagicalType(item.ItemType);
-        return CaelumCraftingRules.GetEquipmentComplexityTics(
-            item.EquipmentKind, item.ItemType, essenceWeapon
-        );
+        return CaelumInventoryService.GetEquipmentTaskComplexityTics(self, item);
     }
 
     double GetEquipmentTaskSeconds(
@@ -10455,356 +5887,48 @@ class CaelumPlayer : DoomPlayer
         int efficiencyIndex
     )
     {
-        return GetCraftingMaterialWorkSeconds(
-            employedMaterialUnits,
-            GetEquipmentTaskComplexityTics(item),
-            efficiencyIndex
-        );
+        return CaelumInventoryService.GetEquipmentTaskSeconds(self, item, employedMaterialUnits, efficiencyIndex);
     }
 
     bool KnowsWeaponRepairRecipe(CaelumEquipmentItem item)
     {
-        if (item == null || item.EquipmentKind != CaelumConstants.EQUIPMENT_KIND_WEAPON)
-            return false;
-        int physical = CaelumCraftingRules.GetCatalogueWeaponForPlayableType(item.ItemType);
-        if (physical >= 0)
-            return DirectCraftingRecipeKnown(CaelumCraftingRules.FindUnifiedPhysicalRecipeIndex(physical));
-        // La receta del arma completa autoriza la reparación; tener sus
-        // componentes no sustituye ese conocimiento. La esencia distingue variantes.
-        for (int option = 0; option < CaelumMainM00StarterRules.OPTION_COUNT; option++)
-        {
-            if (CaelumMainM00StarterRules.GetWeaponType(option) != item.ItemType) continue;
-            int recipe = CaelumMainM00StarterRules.GetRecipe(option);
-            if (CaelumCraftingRules.GetUnifiedRecipeKind(recipe)
-                    == CaelumConstants.CRAFTING_RECIPE_KIND_ESSENCE_WEAPON
-                && CaelumCraftingRules.GetUnifiedEssenceType(recipe) != item.EssenceType)
-                continue;
-            return DirectCraftingRecipeKnown(recipe);
-        }
-        return false;
+        return CaelumInventoryService.KnowsWeaponRepairRecipe(self, item);
     }
 
     // Misma validación para la vista previa y la transacción autoritativa.
     int GetEquipmentTaskBlockReason(CaelumEquipmentItem target, bool dismantle)
     {
-        if (target == null || target.Owner != self || !IsDurabilityTaskEquipment(target))
-            return target != null && target.IsLimboTemporary()
-                ? CaelumConstants.EQUIPMENT_ACTION_FAILED_RESERVED : CaelumConstants.EQUIPMENT_ACTION_FAILED_NOT_OWNED;
-        if (CraftingTaskActive) return CaelumConstants.EQUIPMENT_ACTION_FAILED_CRAFTING_TASK;
-        if (CombatTimeRemaining > 0) return CaelumConstants.EQUIPMENT_ACTION_FAILED_COMBAT;
-        if (!dismantle && target.EquipmentKind == CaelumConstants.EQUIPMENT_KIND_WEAPON && !KnowsWeaponRepairRecipe(target))
-            return CaelumConstants.EQUIPMENT_ACTION_FAILED_RECIPE_LOCKED;
-        if (dismantle && target.IsLimboFirstWeapon()) return CaelumConstants.EQUIPMENT_ACTION_FAILED_RESERVED;
-        if (target.Equipped) return CaelumConstants.EQUIPMENT_ACTION_FAILED_EQUIPPED;
-        if (!dismantle && (GetEquipmentTaskMaximumDurability(target) <= 0 || target.Durability >= GetEquipmentTaskMaximumDurability(target)))
-            return CaelumConstants.EQUIPMENT_ACTION_FAILED_DURABILITY;
-        if (!CraftingMenuOpen || ActiveCraftingStationType != CaelumConstants.CRAFTING_STATION_WORKBENCH
-            || GetMissingEquipmentTaskStation(target) != CaelumConstants.CRAFTING_STATION_NONE)
-            return CaelumConstants.EQUIPMENT_ACTION_FAILED_INFRASTRUCTURE;
-        return CaelumConstants.EQUIPMENT_ACTION_NONE;
+        return CaelumInventoryService.GetEquipmentTaskBlockReason(self, target, dismantle);
     }
 
     void BeginRepairSelectedEquipment(int targetItemId = 0)
     {
-        LastCraftingAction = CaelumConstants.CRAFTING_ACTION_NONE;
-        if (!CanStartCraftingTask(false))
-        {
-            LastEquipmentAction = CombatTimeRemaining > 0
-                ? CaelumConstants.EQUIPMENT_ACTION_FAILED_COMBAT
-                : !CraftingMenuOpen ? CaelumConstants.EQUIPMENT_ACTION_FAILED_INFRASTRUCTURE
-                : CaelumConstants.EQUIPMENT_ACTION_FAILED_CRAFTING_TASK;
-            return;
-        }
-        let target = targetItemId > 0 ? FindNativeEquipmentItemById(targetItemId) : GetSelectedNativeEquipmentItem();
-        LastEquipmentAction = GetEquipmentTaskBlockReason(target, false);
-        if (LastEquipmentAction != CaelumConstants.EQUIPMENT_ACTION_NONE) return;
-        int maximum = GetEquipmentTaskMaximumDurability(target);
-
-        double missingFraction = Clamp(
-            (maximum - target.Durability) / double(maximum),
-            0.0, 1.0
-        );
-        ClearDirectCraftingPlan();
-        CraftingMissingStationType = CaelumConstants.CRAFTING_STATION_NONE;
-        bool repairPlanReady = BuildEquipmentTaskMaterials(
-            target, missingFraction, false
-        );
-        CraftingDirectPlanAvailable = repairPlanReady;
-        if (!repairPlanReady)
-        {
-            LastEquipmentAction = CraftingMissingStationType
-                    != CaelumConstants.CRAFTING_STATION_NONE
-                ? CaelumConstants.EQUIPMENT_ACTION_FAILED_INFRASTRUCTURE
-                : CaelumConstants.EQUIPMENT_ACTION_FAILED_MATERIALS;
-            ClearDirectCraftingPlan();
-            return;
-        }
-        double repairSeconds = GetEquipmentTaskSeconds(
-            target,
-            CraftingPreparedEquipmentInputUnits,
-            CraftingEfficiencyIndex
-        );
-        for (int step = 0;
-            step < CraftingDirectPlanStepCount; step++)
-        {
-            repairSeconds += CraftingPlanStepSeconds[step];
-        }
-        ClearCraftingTaskData();
-        if (!ReservePreparedDirectCraftingPlan())
-        {
-            ClearCraftingTaskData();
-            LastEquipmentAction =
-                CaelumConstants.EQUIPMENT_ACTION_FAILED_MATERIALS;
-            return;
-        }
-        CraftingTaskUsesDirectPlan = true;
-        CraftingTaskTargetItemId = target.ItemId;
-        LastEquipmentAction =
-            CaelumConstants.EQUIPMENT_ACTION_REPAIR_STARTED;
-        StartPreparedCraftingTask(
-            CaelumConstants.CRAFTING_TASK_REPAIR,
-            repairSeconds
-        );
+        CaelumInventoryService.BeginRepairSelectedEquipment(self, targetItemId);
     }
 
     void BeginDismantleSelectedEquipment(int targetItemId = 0)
     {
-        LastCraftingAction = CaelumConstants.CRAFTING_ACTION_NONE;
-        if (!CanStartCraftingTask(false))
-        {
-            LastEquipmentAction = CombatTimeRemaining > 0
-                ? CaelumConstants.EQUIPMENT_ACTION_FAILED_COMBAT
-                : !CraftingMenuOpen ? CaelumConstants.EQUIPMENT_ACTION_FAILED_INFRASTRUCTURE
-                : CaelumConstants.EQUIPMENT_ACTION_FAILED_CRAFTING_TASK;
-            return;
-        }
-        let target = targetItemId > 0 ? FindNativeEquipmentItemById(targetItemId) : GetSelectedNativeEquipmentItem();
-        LastEquipmentAction = GetEquipmentTaskBlockReason(target, true);
-        if (LastEquipmentAction != CaelumConstants.EQUIPMENT_ACTION_NONE) return;
-
-        int maximum = Max(1, GetEquipmentTaskMaximumDurability(target));
-        double remainingFraction = Clamp(
-            target.Durability / double(maximum), 0.0, 1.0
-        );
-        ClearCraftingTaskData();
-        if (!BuildEquipmentTaskMaterials(target, remainingFraction, true))
-        {
-            ClearCraftingTaskData();
-            LastEquipmentAction =
-                CaelumConstants.EQUIPMENT_ACTION_FAILED_DISMANTLE_UNSUPPORTED;
-            return;
-        }
-        CraftingTaskTargetItemId = target.ItemId;
-        CraftingTaskReservedBoxSlots = GetDismantleNetBoxSlots(target);
-        if (CraftingTaskReservedBoxSlots < 0)
-        {
-            ClearCraftingTaskData();
-            LastEquipmentAction =
-                CaelumConstants.EQUIPMENT_ACTION_FAILED_CARRY_CAPACITY;
-            return;
-        }
-        RefreshCarriedInventorySummary();
-        if (MagicBoxUsedSlots + CraftingTaskReservedBoxSlots
-            > MagicBoxMaximumSlots)
-        {
-            ClearCraftingTaskData();
-            LastEquipmentAction =
-                CaelumConstants.EQUIPMENT_ACTION_FAILED_STORAGE;
-            return;
-        }
-        LastEquipmentAction =
-            CaelumConstants.EQUIPMENT_ACTION_DISMANTLE_STARTED;
-        StartPreparedCraftingTask(
-            CaelumConstants.CRAFTING_TASK_DISMANTLE,
-            GetEquipmentTaskSeconds(
-                target,
-                CaelumCraftingRules.GetRoundedMaterialUnits(
-                    GetEquipmentTaskWeight(target), 1.0
-                ),
-                0
-            )
-        );
+        CaelumInventoryService.BeginDismantleSelectedEquipment(self, targetItemId);
     }
 
     bool ConsumeCraftingTaskReservations()
     {
-        if (!ValidateCraftingTaskReservations()) { return false; }
-        for (int slot = 0;
-            slot < CaelumConstants.CRAFTING_TASK_MATERIAL_SLOT_COUNT; slot++)
-        {
-            if (CraftingTaskReservedUnits[slot] <= 0) { continue; }
-            if (!ConsumeCraftingMaterial(
-                CraftingTaskReservedType[slot],
-                CraftingTaskReservedTier[slot],
-                CraftingTaskReservedUnits[slot]
-            ))
-            {
-                return false;
-            }
-        }
-        return true;
+        return CaelumInventoryService.ConsumeCraftingTaskReservations(self);
     }
 
     bool CompleteRepairTask()
     {
-        CaelumEquipmentItem target = FindNativeEquipmentItemById(
-            CraftingTaskTargetItemId
-        );
-        if (!IsDurabilityTaskEquipment(target) || target.Equipped)
-        {
-            LastEquipmentAction =
-                CaelumConstants.EQUIPMENT_ACTION_FAILED_CRAFTING_TASK;
-            return false;
-        }
-        if (!ConsumeCraftingTaskReservations())
-        {
-            LastEquipmentAction =
-                CaelumConstants.EQUIPMENT_ACTION_FAILED_CRAFTING_TASK;
-            return false;
-        }
-        int previousDurability = target.Durability;
-        target.Durability = GetEquipmentTaskMaximumDurability(target);
-        CaelumMainM00RonnieTrial.RecordRepairLesson(self, target, previousDurability);
-        LastEquipmentAction = CaelumConstants.EQUIPMENT_ACTION_REPAIRED;
-        LastCraftingAction = CaelumConstants.CRAFTING_ACTION_REPAIRED;
-        ApplyCharacterProfile();
-        return true;
+        return CaelumInventoryService.CompleteRepairTask(self);
     }
 
     bool CompleteDismantleTask()
     {
-        CaelumEquipmentItem target = FindNativeEquipmentItemById(
-            CraftingTaskTargetItemId
-        );
-        if (!IsDurabilityTaskEquipment(target) || target.Equipped)
-        {
-            LastEquipmentAction =
-                CaelumConstants.EQUIPMENT_ACTION_FAILED_CRAFTING_TASK;
-            return false;
-        }
-        int netSlots = GetDismantleNetBoxSlots(target);
-        if (netSlots < 0)
-        {
-            LastEquipmentAction =
-                CaelumConstants.EQUIPMENT_ACTION_FAILED_CARRY_CAPACITY;
-            return false;
-        }
-        RefreshCarriedInventorySummary();
-        if (MagicBoxUsedSlots + netSlots > MagicBoxMaximumSlots)
-        {
-            LastEquipmentAction =
-                CaelumConstants.EQUIPMENT_ACTION_FAILED_STORAGE;
-            return false;
-        }
-
-        bool sendToMagicBox =
-            !CanCompletePreparedDismantle(target, false);
-
-        CaelumPersistentCharacterState persistentState =
-            GetPersistentCharacterState(false);
-        if (persistentState != null)
-        {
-            if (target.EquipmentKind
-                == CaelumConstants.EQUIPMENT_KIND_WEAPON)
-            {
-                persistentState.RemoveOwnedWeapon(
-                    target.ItemType, target.Tier, target.EquipmentSize
-                );
-            }
-            else if (target.EquipmentKind
-                == CaelumConstants.EQUIPMENT_KIND_SHIELD)
-            {
-                persistentState.RemoveOwnedShield(
-                    target.ItemType, target.Tier, target.EquipmentSize
-                );
-            }
-            else
-            {
-                persistentState.RemoveOwnedArmor(
-                    target.ArmorSlot, target.ItemType,
-                    target.Tier, target.EquipmentSize
-                );
-            }
-        }
-        target.Destroy();
-
-        for (int slot = 0;
-            slot < CaelumConstants.CRAFTING_TASK_MATERIAL_SLOT_COUNT; slot++)
-        {
-            if (CraftingTaskOutputUnits[slot] <= 0) { continue; }
-            CaelumSpecialInventoryItem existing = FindNativeSpecialItem(
-                CaelumConstants.EQUIPMENT_KIND_MATERIAL,
-                CraftingTaskOutputType[slot],
-                CraftingTaskOutputTier[slot]
-            );
-            CaelumMaterialPickup detached;
-            if (existing == null)
-            {
-                detached = CreateDetachedMaterialStack(
-                    CraftingTaskOutputType[slot],
-                    CraftingTaskOutputTier[slot],
-                    CraftingTaskOutputUnits[slot]
-                );
-            }
-            AddRecoveredMaterial(
-                existing,
-                detached,
-                CraftingTaskOutputUnits[slot],
-                sendToMagicBox
-            );
-        }
-        EquipmentSelectionItemId = 0;
-        LastEquipmentAction =
-            CaelumConstants.EQUIPMENT_ACTION_DISMANTLED;
-        LastCraftingAction = CaelumConstants.CRAFTING_ACTION_DISMANTLED;
-        ApplyCharacterProfile();
-        return true;
+        return CaelumInventoryService.CompleteDismantleTask(self);
     }
 
     void CompleteCraftingTask()
     {
-        if (!CraftingTaskActive) { return; }
-        int completedKind = CraftingTaskKind;
-        int oldStation = ActiveCraftingStationType;
-        int oldCapabilities = CraftingNetworkCapabilities;
-        bool menuWasOpen = CraftingMenuOpen;
-
-        if (completedKind == CaelumConstants.CRAFTING_TASK_REPAIR)
-        {
-            CraftingTaskCompleting = true;
-            CompleteRepairTask();
-            CraftingTaskCompleting = false;
-        }
-        else if (completedKind
-            == CaelumConstants.CRAFTING_TASK_DISMANTLE)
-        {
-            CraftingTaskCompleting = true;
-            CompleteDismantleTask();
-            CraftingTaskCompleting = false;
-        }
-        else
-        {
-            CraftingSelectionRecipe = CraftingTaskRecipeIndex;
-            CraftingSelectionTier = CraftingTaskTier;
-            CraftingSelectionSize = CraftingTaskSize;
-            CraftingProcessingBatchIndex = CraftingTaskBatchIndex;
-            CraftingEfficiencyIndex = CraftingTaskEfficiencyIndex;
-            CraftingNetworkCapabilities = CraftingTaskNetworkCapabilities;
-            ActiveCraftingStationType =
-                CaelumConstants.CRAFTING_STATION_WORKBENCH;
-            CraftingTaskCompleting = true;
-            CraftSelectedPhysicalWeapon();
-            CraftingTaskCompleting = false;
-        }
-
-        ClearCraftingTaskData();
-        CraftingMenuOpen = menuWasOpen;
-        ActiveCraftingStationType = oldStation;
-        CraftingNetworkCapabilities = oldCapabilities;
-        PersistCharacterState();
-        RefreshEquipmentSelectionPreview();
-        RefreshFormalInventorySnapshot();
-        if (CraftingMenuOpen) { RefreshCraftingPreview(); }
+        CaelumInventoryService.CompleteCraftingTask(self);
     }
 
     void AdvanceDebugCraftingTime()
@@ -10854,60 +5978,14 @@ class CaelumPlayer : DoomPlayer
 
     void BreakSelectedNativeEquipment()
     {
-        LastEquipmentAction = CaelumConstants.EQUIPMENT_ACTION_FAILED_NOT_OWNED;
-        if (EquipmentSelectionKind
-                == CaelumConstants.EQUIPMENT_KIND_CONSUMABLE
-            || EquipmentSelectionKind
-                == CaelumConstants.EQUIPMENT_KIND_AMMUNITION
-            || EquipmentSelectionKind
-                >= CaelumConstants.EQUIPMENT_KIND_MATERIAL) { return; }
-        CaelumEquipmentItem item = GetSelectedNativeEquipmentItem();
-        if (item == null) { return; }
-        if (item.EquipmentKind == CaelumConstants.EQUIPMENT_KIND_WEAPON)
-        {
-            DismantleSelectedNativeWeapon();
-            return;
-        }
-        item.Durability = 0;
-        if (item.Equipped)
-        {
-            if (item.EquipmentKind == CaelumConstants.EQUIPMENT_KIND_ARMOR)
-            {
-                ArmorModel.Durability[item.ArmorSlot] = 0;
-            }
-            else if (item.EquipmentKind == CaelumConstants.EQUIPMENT_KIND_SHIELD)
-            {
-                ShieldModel.Durability = 0;
-                DebugShieldBlocking = false;
-            }
-            else if (WeaponModel.Equipped
-                && WeaponModel.WeaponType == item.ItemType
-                && WeaponModel.Tier == item.Tier
-                && WeaponModel.Size == item.EquipmentSize)
-            {
-                WeaponModel.Durability = 0;
-                EquippedWeaponCooldownRemaining = 0.0;
-            }
-        }
-        ApplyCharacterProfile();
-        PersistCharacterState();
-        RefreshEquipmentSelectionPreview();
-        LastEquipmentAction = CaelumConstants.EQUIPMENT_ACTION_BROKEN;
+        CaelumInventoryService.BreakSelectedNativeEquipment(self);
     }
 
     CaelumMaterialPickup CreateDetachedMaterialStack(
         int materialType, int materialTier, int materialAmount
     )
     {
-        CaelumMaterialPickup material = CaelumMaterialPickup(
-            Spawn("CaelumMaterialPickup", Pos, NO_REPLACE)
-        );
-        if (material == null) { return null; }
-        material.args[0] = materialType;
-        material.args[1] = materialTier;
-        material.Amount = Max(1, materialAmount);
-        material.InMagicBox = false;
-        return material;
+        return CaelumInventoryService.CreateDetachedMaterialStack(self, materialType, materialTier, materialAmount);
     }
 
     void AddRecoveredMaterial(
@@ -10917,323 +5995,17 @@ class CaelumPlayer : DoomPlayer
         bool sendToMagicBox
     )
     {
-        if (existing != null)
-        {
-            existing.Amount += recoveredAmount;
-            if (sendToMagicBox) { existing.InMagicBox = true; }
-            if (detached != null) { detached.Destroy(); }
-            CaelumNotifications.Acquired(self, existing, recoveredAmount);
-            return;
-        }
-        if (detached == null) { return; }
-        detached.InMagicBox = sendToMagicBox;
-        detached.AttachToOwner(self);
-        CaelumNotifications.Acquired(self, detached, detached.Amount);
+        CaelumInventoryService.AddRecoveredMaterial(self, existing, detached, recoveredAmount, sendToMagicBox);
     }
 
     void DismantleSelectedNativeWeapon()
     {
-        LastEquipmentAction = CaelumConstants.EQUIPMENT_ACTION_FAILED_NOT_OWNED;
-        LastDismantledBasicUnits = 0;
-        LastDismantledTierUnits = 0;
-        CaelumEquipmentItem weapon = GetSelectedNativeEquipmentItem();
-        if (weapon == null || weapon.IsLimboTemporary() || weapon.IsLimboFirstWeapon()
-            || weapon.EquipmentKind != CaelumConstants.EQUIPMENT_KIND_WEAPON)
-        {
-            return;
-        }
-        if (weapon.Equipped)
-        {
-            LastEquipmentAction =
-                CaelumConstants.EQUIPMENT_ACTION_FAILED_EQUIPPED;
-            return;
-        }
-
-        int catalogueWeapon =
-            CaelumCraftingRules.GetCatalogueWeaponForPlayableType(
-                weapon.ItemType
-            );
-        if (catalogueWeapon < 0)
-        {
-            LastEquipmentAction =
-                CaelumConstants.EQUIPMENT_ACTION_FAILED_DISMANTLE_UNSUPPORTED;
-            return;
-        }
-        double finalWeight = WeaponModel.GetWeightFor(
-            weapon.ItemType, weapon.Tier, weapon.EquipmentSize
-        );
-        int basicType = CaelumCraftingRules.GetBasicMaterial(catalogueWeapon);
-        int tierType = CaelumCraftingRules.GetTierMaterial(catalogueWeapon);
-        int basicTier = CaelumMaterialRules.ResolveTier(basicType, 1);
-        int tierTier = CaelumMaterialRules.ResolveTier(tierType, weapon.Tier);
-        int basicAmount = CaelumCraftingRules.GetRecoveredMaterialUnits(
-            CaelumCraftingRules.GetRequiredBasicMaterialUnits(
-                catalogueWeapon, finalWeight
-            )
-        );
-        int tierAmount = CaelumCraftingRules.GetRecoveredMaterialUnits(
-            CaelumCraftingRules.GetRequiredTierMaterialUnits(
-                catalogueWeapon, finalWeight
-            )
-        );
-        CaelumSpecialInventoryItem existingBasic = FindNativeSpecialItem(
-            CaelumConstants.EQUIPMENT_KIND_MATERIAL,
-            basicType,
-            basicTier
-        );
-        CaelumSpecialInventoryItem existingTier = FindNativeSpecialItem(
-            CaelumConstants.EQUIPMENT_KIND_MATERIAL,
-            tierType,
-            tierTier
-        );
-
-        RefreshCarriedInventorySummary();
-        double weaponWeight = Max(0.0, weapon.UnitWeight)
-            * Max(0, weapon.Amount);
-        double basicWeight = basicAmount
-            * CaelumConstants.MATERIAL_UNIT_WEIGHT;
-        double tierWeight = tierAmount
-            * CaelumConstants.MATERIAL_UNIT_WEIGHT;
-        double personalDelta = weapon.InMagicBox ? 0.0 : -weaponWeight;
-        double boxRawDelta = weapon.InMagicBox ? -weaponWeight : 0.0;
-        if (existingBasic != null && existingBasic.InMagicBox)
-        {
-            boxRawDelta += basicWeight;
-        }
-        else { personalDelta += basicWeight; }
-        if (existingTier != null && existingTier.InMagicBox)
-        {
-            boxRawDelta += tierWeight;
-        }
-        else { personalDelta += tierWeight; }
-        bool sendToMagicBox = !CanApplyInventoryWeightTransition(
-            personalDelta, boxRawDelta
-        );
-
-        if (sendToMagicBox)
-        {
-            personalDelta = weapon.InMagicBox ? 0.0 : -weaponWeight;
-            boxRawDelta = weapon.InMagicBox ? -weaponWeight : 0.0;
-            if (existingBasic != null && !existingBasic.InMagicBox)
-            {
-                double existingBasicWeight = existingBasic.Amount
-                    * existingBasic.GetUnitWeight();
-                personalDelta -= existingBasicWeight;
-                boxRawDelta += existingBasicWeight;
-            }
-            if (existingTier != null && !existingTier.InMagicBox)
-            {
-                double existingTierWeight = existingTier.Amount
-                    * existingTier.GetUnitWeight();
-                personalDelta -= existingTierWeight;
-                boxRawDelta += existingTierWeight;
-            }
-            boxRawDelta += basicWeight + tierWeight;
-            if (!CanApplyInventoryWeightTransition(
-                    personalDelta, boxRawDelta
-                ))
-            {
-                LastEquipmentAction =
-                    CaelumConstants.EQUIPMENT_ACTION_FAILED_CARRY_CAPACITY;
-                return;
-            }
-        }
-
-        int requiredBoxSlots = 0;
-        if (sendToMagicBox)
-        {
-            if (existingBasic == null || !existingBasic.InMagicBox)
-            {
-                requiredBoxSlots++;
-            }
-            if (existingTier == null || !existingTier.InMagicBox)
-            {
-                requiredBoxSlots++;
-            }
-        }
-        int freedBoxSlots = weapon.InMagicBox ? 1 : 0;
-        if (MagicBoxUsedSlots - freedBoxSlots + requiredBoxSlots
-            > MagicBoxMaximumSlots)
-        {
-            LastEquipmentAction =
-                CaelumConstants.EQUIPMENT_ACTION_FAILED_STORAGE;
-            return;
-        }
-
-        CaelumMaterialPickup detachedBasic;
-        CaelumMaterialPickup detachedTier;
-        if (existingBasic == null)
-        {
-            detachedBasic = CreateDetachedMaterialStack(
-                basicType, basicTier, basicAmount
-            );
-            if (detachedBasic == null)
-            {
-                LastEquipmentAction =
-                    CaelumConstants.EQUIPMENT_ACTION_FAILED_STORAGE;
-                return;
-            }
-        }
-        if (existingTier == null)
-        {
-            detachedTier = CreateDetachedMaterialStack(
-                tierType, tierTier, tierAmount
-            );
-            if (detachedTier == null)
-            {
-                if (detachedBasic != null) { detachedBasic.Destroy(); }
-                LastEquipmentAction =
-                    CaelumConstants.EQUIPMENT_ACTION_FAILED_STORAGE;
-                return;
-            }
-        }
-
-        CaelumPersistentCharacterState persistentState =
-            GetPersistentCharacterState(false);
-        if (persistentState != null)
-        {
-            persistentState.RemoveOwnedWeapon(
-                weapon.ItemType, weapon.Tier, weapon.EquipmentSize
-            );
-        }
-        weapon.Destroy();
-        AddRecoveredMaterial(
-            existingBasic, detachedBasic, basicAmount, sendToMagicBox
-        );
-        AddRecoveredMaterial(
-            existingTier, detachedTier, tierAmount, sendToMagicBox
-        );
-
-        LastDismantledBasicMaterialType = basicType;
-        LastDismantledBasicUnits = basicAmount;
-        LastDismantledTierMaterialType = tierType;
-        LastDismantledTierUnits = tierAmount;
-        LastEquipmentAction = CaelumConstants.EQUIPMENT_ACTION_DISMANTLED;
-        ApplyCharacterProfile();
-        PersistCharacterState();
-        RefreshEquipmentSelectionPreview();
+        CaelumInventoryService.DismantleSelectedNativeWeapon(self);
     }
 
     void DropSelectedNativeInventoryItem()
     {
-        if (EquipmentSelectionKind == CaelumConstants.EQUIPMENT_KIND_KEY_ITEM
-            && EquipmentSelectionSpecialType == CaelumConstants.KEY_ITEM_TAROT_DECK)
-        {
-            LastEquipmentAction = CaelumConstants.EQUIPMENT_ACTION_FAILED_PROTECTED;
-            return;
-        }
-        let training = GetPersistentCharacterState(false);
-        if (EquipmentSelectionKind == CaelumConstants.EQUIPMENT_KIND_AMMUNITION
-            && training != null && training.MainM00AmmoLoanRemaining > 0
-            && EquipmentSelectionAmmunitionType == training.MainM00AmmoLoanType)
-        {
-            LastEquipmentAction = CaelumConstants.EQUIPMENT_ACTION_FAILED_RESERVED;
-            CaelumMainM00MagicTrial.Feedback(self, "CA_M01_RULO_AMMO_RESERVED", true);
-            return;
-        }
-        if (EquipmentSelectionKind == CaelumConstants.EQUIPMENT_KIND_MATERIAL)
-        {
-            let material = FindNativeSpecialItem(EquipmentSelectionKind, EquipmentSelectionSpecialType, EquipmentSelectionTier);
-            if (material != null && material.LimboQuestUnits > 0)
-            { LastEquipmentAction = CaelumConstants.EQUIPMENT_ACTION_FAILED_RESERVED;
-              CaelumMainM00RonnieTrial.Feedback(self, "CA_M01_SUPPLY_RESERVED"); return; }
-        }
-
-        let loan = GetSelectedNativeEquipmentItem();
-        if (loan != null && loan.IsLimboTemporary())
-        {
-            LastEquipmentAction = CaelumConstants.EQUIPMENT_ACTION_FAILED_RESERVED;
-            CaelumMainM00MagicTrial.Feedback(self, "CA_M01_LOAN_RESERVED", true);
-            return;
-        }
-        LastEquipmentAction = CaelumConstants.EQUIPMENT_ACTION_FAILED_NOT_OWNED;
-        if (IsSelectedMaterialCraftingLocked()
-            || IsEquipmentItemCraftingLocked(EquipmentSelectionItemId))
-        {
-            LastEquipmentAction =
-                CaelumConstants.EQUIPMENT_ACTION_FAILED_RESERVED;
-            return;
-        }
-        Inventory selected;
-        if (EquipmentSelectionKind == CaelumConstants.EQUIPMENT_KIND_KEY)
-        {
-            CaelumWeightedKey keyItem = FindNativeKey(
-                EquipmentSelectionSpecialType
-            );
-            if (keyItem == null || keyItem.Amount <= 0) { return; }
-            selected = keyItem.CreateTossable(1);
-        }
-        else if (EquipmentSelectionKind
-                == CaelumConstants.EQUIPMENT_KIND_MATERIAL
-            || EquipmentSelectionKind
-                == CaelumConstants.EQUIPMENT_KIND_KEY_ITEM
-            || EquipmentSelectionKind
-                == CaelumConstants.EQUIPMENT_KIND_CURRENCY)
-        {
-            CaelumSpecialInventoryItem specialItem = FindNativeSpecialItem(
-                EquipmentSelectionKind, EquipmentSelectionSpecialType,
-                EquipmentSelectionTier
-            );
-            if (specialItem == null || specialItem.Amount <= 0) { return; }
-            specialItem.InMagicBox = false;
-            selected = specialItem.CreateTossable(specialItem.Amount);
-        }
-        else if (EquipmentSelectionKind
-            == CaelumConstants.EQUIPMENT_KIND_CONSUMABLE)
-        {
-            CaelumConsumableItem consumable = FindNativeConsumableItem(
-                EquipmentSelectionConsumableType
-            );
-            if (consumable == null || consumable.Amount <= 0) { return; }
-            consumable.InMagicBox = false;
-            selected = consumable.CreateTossable(consumable.Amount);
-        }
-        else if (EquipmentSelectionKind
-            == CaelumConstants.EQUIPMENT_KIND_AMMUNITION)
-        {
-            Inventory ammunition = FindNativeAmmunition(
-                EquipmentSelectionAmmunitionType
-            );
-            if (ammunition == null || ammunition.Amount <= 0) { return; }
-            CaelumCarbineAmmo carbineStack = CaelumCarbineAmmo(ammunition);
-            if (carbineStack != null) { carbineStack.InMagicBox = false; }
-            selected = ammunition.CreateTossable(ammunition.Amount);
-        }
-        else
-        {
-            CaelumEquipmentItem item = GetSelectedNativeEquipmentItem();
-            if (item == null) { return; }
-            if (item.Equipped)
-            {
-                UnequipSelectedNativeEquipment();
-                item = GetSelectedNativeEquipmentItem();
-                if (item == null) { return; }
-            }
-            item.InMagicBox = false;
-            selected = item.CreateTossable(1);
-        }
-        if (selected == null) { return; }
-        Vector3 spawnPos = Pos + (
-            Cos(Angle) * 48.0,
-            Sin(Angle) * 48.0,
-            8.0
-        );
-        selected.SetOrigin(spawnPos, false);
-        selected.TossItem();
-
-        // Jewelry was visibly launched upward by Inventory.TossItem().
-        // Preserve the horizontal toss, but make seals/amulets begin falling
-        // immediately from the small +8 MU spawn offset.
-        if (EquipmentSelectionKind == CaelumConstants.EQUIPMENT_KIND_AMULET
-            || EquipmentSelectionKind == CaelumConstants.EQUIPMENT_KIND_SEAL)
-        {
-            selected.Vel.Z = -0.25;
-        }
-
-        ApplyCharacterProfile();
-        PersistCharacterState();
-        RefreshEquipmentSelectionPreview();
-        LastEquipmentAction = CaelumConstants.EQUIPMENT_ACTION_DROPPED;
+        CaelumInventoryService.DropSelectedNativeInventoryItem(self);
     }
 
     void SpawnDebugEquipmentPickup()
@@ -11302,140 +6074,12 @@ class CaelumPlayer : DoomPlayer
 
     void BreakSelectedEquipment()
     {
-        BeginDismantleSelectedEquipment();
-        return;
-        LastEquipmentAction = CaelumConstants.EQUIPMENT_ACTION_FAILED_NOT_OWNED;
-        CaelumPersistentCharacterState persistentState =
-            GetPersistentCharacterState(false);
-        if (persistentState == null || !EquipmentSelectionOwned) { return; }
-        persistentState.EnsureEquipmentSizeInitialized();
-        persistentState.MigrateWeaponDurability();
-        if (EquipmentSelectionKind == CaelumConstants.EQUIPMENT_KIND_WEAPON)
-        {
-            persistentState.StoreOwnedWeaponDurability(
-                EquipmentSelectionWeaponType,
-                EquipmentSelectionTier,
-                EquipmentSelectionSize,
-                0
-            );
-            if (EquipmentSelectionEquipped && WeaponModel != null
-                && WeaponModel.Equipped
-                && WeaponModel.WeaponType == EquipmentSelectionWeaponType
-                && WeaponModel.Tier == EquipmentSelectionTier
-                && WeaponModel.Size == EquipmentSelectionSize)
-            {
-                WeaponModel.Durability = 0;
-                EquippedWeaponCooldownRemaining = 0.0;
-            }
-        }
-        else if (EquipmentSelectionKind == CaelumConstants.EQUIPMENT_KIND_SHIELD)
-        {
-            persistentState.StoreOwnedShieldDurability(
-                EquipmentSelectionShieldType,
-                EquipmentSelectionTier,
-                EquipmentSelectionSize,
-                0
-            );
-            if (EquipmentSelectionEquipped && ShieldModel != null)
-            {
-                ShieldModel.Durability = 0;
-                DebugShieldBlocking = false;
-            }
-        }
-        else
-        {
-            persistentState.StoreOwnedArmorDurability(
-                EquipmentSelectionSlot,
-                EquipmentSelectionArmorType,
-                EquipmentSelectionTier,
-                EquipmentSelectionSize,
-                0
-            );
-            if (EquipmentSelectionEquipped && ArmorModel != null)
-            {
-                ArmorModel.Durability[EquipmentSelectionSlot] = 0;
-            }
-        }
-        ApplyCharacterProfile();
-        PersistCharacterState();
-        RefreshEquipmentSelectionPreview();
-        LastEquipmentAction = CaelumConstants.EQUIPMENT_ACTION_BROKEN;
+        CaelumInventoryService.BreakSelectedEquipment(self);
     }
 
     void DropSelectedEquipment()
     {
-        RefreshCarriedInventorySummary();
-        double previousWeight = DerivedStats == null ? 0 : DerivedStats.CarriedItemWeight;
-        int selectedId = EquipmentSelectionItemId;
-        DropSelectedNativeInventoryItem();
-        CaelumMainM00RonnieTrial.RecordLoadLesson(self, previousWeight, selectedId);
-        return;
-        LastEquipmentAction = CaelumConstants.EQUIPMENT_ACTION_FAILED_NOT_OWNED;
-        if (!EquipmentSelectionOwned) { return; }
-        CaelumPersistentCharacterState persistentState =
-            GetPersistentCharacterState(false);
-        if (persistentState == null) { return; }
-        // Tirar un objeto equipado primero lo retira de su ranura. Esto evita
-        // que el control parezca inactivo y actualiza su peso en el mismo tic.
-        if (EquipmentSelectionEquipped)
-        {
-            UnequipSelectedEquipment();
-            RefreshEquipmentSelectionPreview();
-            if (EquipmentSelectionEquipped || !EquipmentSelectionOwned) { return; }
-        }
-        Vector3 spawnPos = Pos + (Cos(Angle) * 48.0, Sin(Angle) * 48.0, 8.0);
-        Actor pickup;
-        if (EquipmentSelectionKind == CaelumConstants.EQUIPMENT_KIND_WEAPON)
-        {
-            pickup = Spawn("CaelumWeaponPickup", spawnPos, NO_REPLACE);
-            if (pickup == null) { return; }
-            pickup.args[0] = EquipmentSelectionWeaponType;
-            pickup.args[1] = EquipmentSelectionTier;
-            pickup.args[2] = EquipmentSelectionSize + 1;
-            pickup.args[3] = EquipmentSelectionDurability + 1;
-            persistentState.RemoveOwnedWeapon(
-                EquipmentSelectionWeaponType,
-                EquipmentSelectionTier,
-                EquipmentSelectionSize
-            );
-        }
-        else if (EquipmentSelectionKind == CaelumConstants.EQUIPMENT_KIND_SHIELD)
-        {
-            pickup = Spawn("CaelumShieldPickup", spawnPos, NO_REPLACE);
-            if (pickup == null) { return; }
-            pickup.args[0] = EquipmentSelectionShieldType;
-            pickup.args[1] = EquipmentSelectionTier;
-            pickup.args[2] = EquipmentSelectionSize + 1;
-            pickup.args[3] = EquipmentSelectionDurability + 1;
-            persistentState.RemoveOwnedShield(
-                EquipmentSelectionShieldType,
-                EquipmentSelectionTier,
-                EquipmentSelectionSize
-            );
-        }
-        else
-        {
-            pickup = Spawn("CaelumArmorPickup", spawnPos, NO_REPLACE);
-            if (pickup == null) { return; }
-            pickup.args[0] = EquipmentSelectionSlot;
-            pickup.args[1] = EquipmentSelectionArmorType;
-            pickup.args[2] = EquipmentSelectionTier;
-            pickup.args[3] = EquipmentSelectionSize + 1;
-            pickup.args[4] = EquipmentSelectionDurability + 1;
-            persistentState.RemoveOwnedArmor(
-                EquipmentSelectionSlot,
-                EquipmentSelectionArmorType,
-                EquipmentSelectionTier,
-                EquipmentSelectionSize
-            );
-        }
-        OwnedArmorCount = persistentState.CountOwnedArmor();
-        OwnedShieldCount = persistentState.CountOwnedShields();
-        OwnedWeaponCount = persistentState.CountOwnedWeapons();
-        ApplyCharacterProfile();
-        PersistCharacterState();
-        RefreshEquipmentSelectionPreview();
-        LastEquipmentAction = CaelumConstants.EQUIPMENT_ACTION_DROPPED;
+        CaelumInventoryService.DropSelectedEquipment(self);
     }
 
     // Mantiene la barra sincronizada incluso si otro sistema cambia una pieza
@@ -14806,14 +9450,7 @@ class CaelumPlayer : DoomPlayer
 
     void MigrateWeaponDurability(int revision = 1)
     {
-        if (WeaponModel != null) WeaponModel.MigrateDurability(revision);
-        let persistent = GetPersistentCharacterState(false);
-        if (persistent != null) persistent.MigrateWeaponDurability(revision);
-        for (Inventory cursor=Inv; cursor!=null; cursor=cursor.Inv)
-        {
-            let item=CaelumEquipmentItem(cursor);
-            if (item!=null) item.MigrateWeaponDurability(revision);
-        }
+        CaelumInventoryService.MigrateWeaponDurability(self, revision);
     }
 
     void PerformEquippedWeaponPrimaryAttack()
