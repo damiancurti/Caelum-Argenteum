@@ -1,6 +1,48 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **5.0.0** — 2026-10-06.
+Documentation version: **5.0.1** — 2026-10-06.
+
+## 5.0.1 — Compatible player character/resource adapters (#117, 2026-10-06)
+
+The author confirmed all #116 tests passed, authorized merging PR #122/closing
+#116, and requested #117 implementation, necessary live tests, commit and push.
+The acceptance record was committed before merging; the #117 branch starts at
+merge commit `6e8f0d66`. The separate #116 old-save waiver remains scoped.
+
+Ten draft/profile methods and 29 resource methods now live in stateless
+`CaelumPlayerCharacter`/`CaelumPlayerResources`. The pawn keeps all 604 field
+declarations, 544 signatures, native lifecycle/input and personal-time ordering;
+its 505 other method bodies are unchanged. Existing rules, records and models
+remain authoritative. No balance, layout, runtime asset, inventory/Tarot owner
+or save schema changes. The player implementation is reduced by 939 lines.
+
+PROJECT explicitly reconciles the audit's proposed inventory-first follow-up
+with #117's inventory/Tarot exclusions and the #118/#119 dependency chain.
+SYSTEMS documents operations, side effects, caller preconditions and rollback
+using the original package/save pair. The complete method list, reproducible
+native fixtures, logs and measured comparisons live in `assets/validation_501`.
+
+The original and extracted implementations each pass 249 native assertions;
+their 93 profile/resource/travel value rows match exactly. These are isolated
+fixtures, distinct from ordinary author play. Save/reload, original-package
+rollback, input/UI observations and performance results are detailed in RESULTS.
+Audio stays enabled at 5% master volume. No performance gain or author acceptance
+of #117 is claimed; outstanding author checks remain in `pending_test.txt`.
+
+MAP06 regression is explicitly reported: matched 1,680-tic runs measure
+12.546 -> 11.794 tics/s (-5.99%) and reversed-order repeat 12.633 -> 12.017
+(-4.88%). All 49 scene/population rows agree across the four runs. Three
+single-tic pawn samples average 0.0381 -> 0.0489 ms (+0.0108 ms); whole-scene
+attribution remains unresolved. No army reduction or gameplay shortcut was used.
+This evidence carries forward to #120 rather than being labelled a speedup.
+
+Native menu events allocate/confirm the draft in English/Spanish; a console map
+start then consumes that draft at the real MAP01 startup. Calling the final
+introduction start from a console-event callback correctly hit GZDoom's menu
+context guard; it was a fixture error, not a production change. Actual final
+keypress/ordinary-play acceptance stays in the author check. Fixture corrections
+and the initial package-basename and durability-revision errors are retained in
+RESULTS, separately from the successful final runs.
 
 ## 5.0.0 — Dependency/state audit and first presentation extraction (#116, 2026-10-06)
 

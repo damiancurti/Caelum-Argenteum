@@ -1,6 +1,43 @@
 # Caelum Argenteum — Current systems and rules
 
-Documentation version: **5.0.0** — 2026-10-06.
+Documentation version: **5.0.1** — 2026-10-06.
+
+## Player character and resource adapters (#117)
+
+The pawn remains the serialized/native identity. `CaelumPlayerCharacter` and
+`CaelumPlayerResources` are stateless `Object play` classes with static operations
+taking the requesting pawn. They require the same live pawn/preconditions as the
+original methods; they neither find `consoleplayer` nor allocate service instances.
+The original signatures, defaults and return values remain callable on the pawn.
+
+| Service / operations | State read or written / contract |
+| --- | --- |
+| Character: `ReadNewCharacter*`, `NewCharacterDraftIsReady`, `ClearNewCharacterDraftReady`, `ValidateLoadedNewCharacterDraft`, `ConsumeNewCharacterDraft`, `InitializeDirectMapCharacter` | Native per-player CVar draft and the pawn's existing profile/allocation objects. Invalid draft is cleared; valid draft is consumed once. Startup alone chooses restore versus creation; service loading never creates a character. Starting equipment uses the existing pawn adapter. |
+| Character: `EnsureCurrentAttributeBalance`, `ApplyCharacterProfile` | Existing profile, attributes and derived models; same jewelry/Tarot/inventory calls and balance revision 3. Recalculation clamps reduced capacities without free health/Anima/Air. Native size/mass updates remain at the same point. No new migration revision. |
+| Resources: adrenaline gain/decay/combat activity; consumable pulse; localized lucidity loss, accuracy, stun and pain timers | Live pawn fields. Shared constants and existing rest/dining/record operations remain authoritative. Existing events restart the combat timer, and the lucidity stun starts only on crossing its threshold. |
+| Resources: survival state/consumption, health penalties, critical damage and natural regeneration | Existing hunger/thirst/sleep and fractional damage/healing accumulators. Rest/sleep, potable water, Constitution costs and native death path retain their ordering. Native health and `player.health` remain synchronized. |
+| Resources: air regeneration, underwater cost/debt/recovery, jump cost and air performance | Existing Air and debt/timer fields; the same water-level/exemption checks and lesson callbacks. The pawn's native `CheckAirSupply` override still suppresses the parallel engine breath counter. |
+
+`PostBeginPlay`, `PlayerThink`, `Tick`, `PreTravelled`, `Travelled`, `DamageMobj`,
+`CheckAirSupply` and `AdvancePersonalTimeTic` retain their exact bodies. In
+particular, personal time still orders Tarot/elemental state, resource operations,
+combat timers and rest/time pumps once; the extracted methods add no extra tick.
+Inventory, Tarot, attack dispatch, input latches and native selectors remain behind
+their existing adapters for #118/#119 and later focused work. UI still reads the
+existing projections and does not call resource operations while drawing.
+
+All pawn fields, class names, method signatures and array identities are retained.
+Native serialization and the explicit live-to-record/record-to-live copies below
+continue to own persistence. The #116 old-save waiver is not used as #117 evidence:
+the #117 harness creates a save with the accepted 5.0.0 package and loads it with
+5.0.1, alongside fresh/reloaded saves and hub travel. Scope and actual outcomes
+are recorded in `assets/validation_501/RESULTS.json`; this does not promise every
+historical map layout is compatible.
+
+Rollback: preserve the original 5.0.0 package and original save copies together;
+restore both (or rebuild commit `6e8f0d66` with the matching map layout). Keep
+5.0.1 saves separate. The native original-package/original-save replay is recorded
+in the evidence; downgrading a 5.0.1 save is not a supported migration claim.
 
 ## V5.0 state ownership and compatibility contract (#116)
 

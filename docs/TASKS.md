@@ -1,6 +1,27 @@
 # TASKS.md — Active tasks
 
-Documentation version: **5.0.0** — 2026-10-06.
+Documentation version: **5.0.1** — 2026-10-06.
+
+## Issue #117 — Compatible player domain adapters (5.0.1)
+
+- Baseline: accepted #116, PR #122 merged and issue closed on 2026-10-06.
+- Implemented ten character and 29 resource operations in stateless services,
+  preserving all pawn fields, signatures, other method bodies and native order.
+  PROJECT reconciles the audit sequence with #117/#118/#119 scope; SYSTEMS
+  documents preconditions, owner/copy direction and original-save rollback.
+- Static equivalence covers moved bodies including literals, unchanged methods,
+  declarations and package contents. Native before/after fixtures exercise 64
+  race/class combinations, draft consume/reject, resource thresholds, personal
+  time, air debt, consumables, selectors and MAP03/MAP02/MAP06 hub travel.
+- Evidence, current/previous package identities, save-load/rollback and matched
+  MAP06 measurements: `assets/validation_501/RESULTS.json`. No performance gain
+  or author acceptance is inferred from source organization or agent checks.
+- Observed performance regression: MAP06 base/current 12.546/11.794 tics/s;
+  reversed-order repeat 12.633/12.017 (-4.88% to -5.99%). Player samples average
+  0.0381/0.0489 ms per tic. Whole-scene attribution remains unresolved; carry the
+  measurements into #120's integrated comparison, without changing army/game rules.
+- Inventory/Box/crafting transaction extraction belongs to #118; Tarot to #119.
+  Native input/UI overhaul, thermal exposure and broader gameplay remain separate.
 
 ## Issue #116 — Architecture audit and first extraction (5.0.0)
 
