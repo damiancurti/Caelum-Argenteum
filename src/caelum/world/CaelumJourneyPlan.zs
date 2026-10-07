@@ -22,6 +22,13 @@ class CaelumJourneyRules : Object play
     static clearscope int SleepCount(int walkTics)
     { return walkTics > 0 ? (walkTics - 1) / (WALK_HOURS * CaelumWorldClock.TicsPerHour()) : 0; }
 
+    static clearscope int MovingTics(int elapsed,int mode)
+    {
+        if(mode==CaelumJourneyState.MODE_SHIP)return elapsed;
+        int hour=CaelumWorldClock.TicsPerHour();
+        return elapsed/(24*hour)*WALK_HOURS*hour+Min(elapsed%(24*hour),WALK_HOURS*hour);
+    }
+
     static clearscope bool ValidMode(int id, int mode)
     {
         return mode == CaelumJourneyState.MODE_FOOT || mode == CaelumJourneyState.MODE_CARAVAN
@@ -128,7 +135,7 @@ class CaelumJourneyModel : Object play
         double passive = d.BaseMassMultiplier * Consumption;
         HungerLoss = 100.0 * passive / (CaelumConstants.HUNGER_EMPTY_GAME_HOURS * CaelumWorldClock.TicsPerHour());
         ThirstLoss = 100.0 * passive / (CaelumConstants.THIRST_EMPTY_GAME_HOURS * CaelumWorldClock.TicsPerHour());
-        SleepLoss = 100.0 * (100.0 / d.CalculateType4Percent(Max(0.0, user.Attributes.Resilience)))
+        SleepLoss = 100.0 * Consumption
             / (CaelumConstants.SLEEP_EMPTY_GAME_HOURS * CaelumWorldClock.TicsPerHour());
         HealthRate = d.HealthRegenerationPerSecond / TICRATE;
         AirRate = d.AirRegenerationPerSecond / TICRATE;
@@ -324,7 +331,8 @@ class CaelumJourneyPlan : Inventory
         PlannedSleepTics = mode == CaelumJourneyState.MODE_SHIP ? CaelumJourneyRules.ShipSleepTics(PlannedWalkTics)
             : CaelumJourneyRules.SleepCount(PlannedWalkTics) * 8 * CaelumWorldClock.TicsPerHour();
         ThermalForecast=new("CaelumThermalJourney");
-        if(!ThermalForecast.Forecast(user,mode,TotalTics(),speed))
+        int destinationRegion=CaelumWeatherRules.RegionForLocation(CaelumWorldCatalogue.ConnectionDestination(id));
+        if(!ThermalForecast.Forecast(user,mode,TotalTics(),speed,destinationRegion))
         {CaelumNotifications.Notify(user,StringTable.Localize(ThermalForecast.Failure,false));return false;}
         Needed = new("CaelumJourneyModel"); Needed.Capture(user, true); Needed.Simulate(PlannedWalkTics,mode);
         Available = new("CaelumJourneyModel"); Available.Capture(user, false); Available.Simulate(PlannedWalkTics,mode);

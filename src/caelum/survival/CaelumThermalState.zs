@@ -4,6 +4,7 @@ class CaelumThermalState : Object play
 {
     int Revision;
     double Exposure,Acclimation,ActivityWatts,DamageRemainder;
+    double AcclimationMultiplier;
     double BaseWaterKg[4];
     double ActorWaterKg[4];
     double Coverage[4];
@@ -41,6 +42,7 @@ class CaelumThermalState : Object play
         copy.Revision=Revision;
         copy.Exposure=Exposure;
         copy.Acclimation=Acclimation;
+        copy.AcclimationMultiplier=AcclimationMultiplier;
         copy.ActivityWatts=ActivityWatts;
         copy.DamageRemainder=DamageRemainder;
         for(int i=0;i<4;i++)copy.BaseWaterKg[i]=BaseWaterKg[i];
@@ -97,10 +99,16 @@ class CaelumThermalState : Object play
     void Initialize()
     {
         if(Revision>=CaelumThermalData.REVISION)return;
-        LastEnvironmentTic=-TICRATE;
-        LastSubmergedFraction=-1;
-        LastRealTic=level.maptime;
-        SourceMap=level.MapName;
+        if(Revision<1)
+        {
+            LastEnvironmentTic=-TICRATE;
+            LastSubmergedFraction=-1;
+            LastRealTic=level.maptime;
+            SourceMap=level.MapName;
+        }
+        // Revisión 2: sólo añade una proyección derivada. No reinicia reservas,
+        // exposición ni la aclimatación ganada bajo el contrato anterior.
+        AcclimationMultiplier=1;
         Revision=CaelumThermalData.REVISION;
     }
 

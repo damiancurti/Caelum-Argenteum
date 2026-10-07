@@ -90,14 +90,13 @@ class CaelumDerivedStats : Object
     }
 
     // El consumo pasivo se divide por Tipo 4: /1 a 0 y /3 a 100.
-    // Hambre/Sed conservan su factor de masa corporal; Sueño usa Resiliencia.
+    // Constitución gobierna las tres reservas; sólo Hambre/Sed usan la masa.
     void RefreshSurvivalLossMultipliers(CaelumAttributes attributes)
     {
         if (attributes == null) { return; }
         HungerThirstLossMultiplier = BaseMassMultiplier
             * GetHungerThirstConsumptionMultiplier(attributes);
-        SleepLossMultiplier = 100.0
-            / CalculateType4Percent(Max(0.0, attributes.Resilience));
+        SleepLossMultiplier = GetHungerThirstConsumptionMultiplier(attributes);
     }
 
     double CalculateType2Percent(double level)

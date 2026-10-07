@@ -2,7 +2,9 @@
 // Procedencia física y decisiones del autor en SYSTEMS, sección V5.1 térmica.
 class CaelumThermalData : Object
 {
-    const REVISION=1;
+    const REVISION=2;
+    static clearscope double ExposureThreshold(int tier)
+    {return tier==1 ? 10.0 : tier==2 ? 20.0 : 30.0;}
     const LIGHT_CLOTH=0;
     const THICK_CLOTH=1;
     const LEATHER=2;
