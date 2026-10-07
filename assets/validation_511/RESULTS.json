@@ -2,15 +2,15 @@
   "issue": 131,
   "release": "5.1.1",
   "baseline_commit": "524baaf0da4e385c81c54823ff5938921538652b",
-  "status": "implemented and agent-verified; author acceptance pending CA131-01/02",
+  "status": "gameplay and prior HUD checks author-accepted on 2026-10-07; revised icon alone pending CA131-01",
   "engine": "GZDoom 4.14.2, Windows/Vulkan, RNG 116, cap 60, 5% audio, background unpaused",
-  "production_sha256": "dcaba0f3f845119b4280933ced54a22ae18a6f03f721f4676285d224f1038478",
-  "standard_build_sha256": "0c3fd637f3ca7486058bb5c1713ece6fded69566e816e8f578e6cd345ba14957",
+  "production_sha256": "04b7433070652719effee1943345b3902ed13b7f45706be1a489f27413ff3f34",
+  "standard_build_sha256": "baee2f5ec70a78632fbe0df1ac6bb4efd47ac3a703e10aa731af6f3e12827ae7",
   "standard_build_members_identical": 6202,
   "repeat_fixture_hashes_identical": true,
   "deterministic_fixture_manifest": {
     "baseline_commit": "524baaf0da4e385c81c54823ff5938921538652b",
-    "production": "dcaba0f3f845119b4280933ced54a22ae18a6f03f721f4676285d224f1038478",
+    "production": "04b7433070652719effee1943345b3902ed13b7f45706be1a489f27413ff3f34",
     "baseline": "1a49135b5e2aae03126fdd6498e840273681084958b83d2517fab76c652ea709",
     "checks": "dc96e17f24c3c4fec6ce4cace58dc2a70e48d131aedbd73871f679bf5abe0bad",
     "visual": "020bc4bbef082dd657a96abb2ddddb1450db998c5948b9a787b2937f087df48b",
@@ -22,6 +22,20 @@
   "unique_functional_assertions": 47,
   "viewed_player_native_check": "native second player bot, cinematic fallback, no ownership mutation",
   "runs": [
+    {
+      "label": "icon-v2-visible",
+      "package_sha256": "04B7433070652719EFFEE1943345B3902ED13B7F45706BE1A489F27413FF3F34",
+      "addon_sha256": "020BC4BBEF082DD657A96ABB2DDDDB1450DB998C5948B9A787B2937F087DF48B",
+      "log_sha256": "562daffa61d60cbe06608ce916fbc1acc1cba3f86c7c3a5e1f26ae4b2154bcab",
+      "config_sha256": "6e751c8f47dc56fa4da5ff3b190a4adb1d84c8a6b5512686843f30957456566e"
+    },
+    {
+      "label": "icon-v2-visible-43",
+      "package_sha256": "04B7433070652719EFFEE1943345B3902ED13B7F45706BE1A489F27413FF3F34",
+      "addon_sha256": "020BC4BBEF082DD657A96ABB2DDDDB1450DB998C5948B9A787B2937F087DF48B",
+      "log_sha256": "a2534f517233c04e0c4a5805d0e0d1fc1d38e1422cb2ce6e37bf85850f627dba",
+      "config_sha256": "1a0ab6d43490864498350df734e4cf06a3ea09b8c16d038c71442f27e7a382f1"
+    },
     {
       "label": "final-authority-build",
       "package_sha256": "0C3FD637F3CA7486058BB5C1713ECE6FDED69566E816E8F578E6CD345BA14957",
@@ -212,203 +226,203 @@
       "width": 1280,
       "height": 720,
       "sha256": "d17b8e09f05bf220aa882e9516db69db47623eda5df06d9b7ca6207ee8ca1ba3",
-      "status": "final icon/HUD"
+      "status": "original icon/HUD; retained evidence"
     },
     {
       "file": "ca131-enu-01.png",
       "width": 1280,
       "height": 720,
       "sha256": "92d6b3fd5ea8202089dc824171aa44cb8d5c0eaf59ea4fef570b4c6aac7b01d6",
-      "status": "final icon/HUD"
+      "status": "original icon/HUD; retained evidence"
     },
     {
       "file": "ca131-enu-02.png",
       "width": 1280,
       "height": 720,
       "sha256": "e98034dabaabe7f98d75fcae9bde2d25c8b26dc9270ee70becba38033c1fa8fc",
-      "status": "final icon/HUD"
+      "status": "original icon/HUD; retained evidence"
     },
     {
       "file": "ca131-enu-03.png",
       "width": 1280,
       "height": 720,
       "sha256": "cbf3c86956eb400d5b2e040644932e311199dbedaaee966c43a9eb02585897ae",
-      "status": "final icon/HUD"
+      "status": "original icon/HUD; retained evidence"
     },
     {
       "file": "ca131-enu-04.png",
       "width": 1280,
       "height": 720,
       "sha256": "6b4906e707b005b6a57b7823b5e17c552cdfa7c18187de8e404d636919922278",
-      "status": "final icon/HUD"
+      "status": "original icon/HUD; retained evidence"
     },
     {
       "file": "ca131-enu-05.png",
       "width": 1280,
       "height": 720,
       "sha256": "7a7b8d557bd9a944489dc53a393a2bb41bc09710858cb878c7c7b727c9df03e7",
-      "status": "final icon/HUD"
+      "status": "original icon/HUD; retained evidence"
     },
     {
       "file": "ca131-enu-06.png",
       "width": 1280,
       "height": 720,
       "sha256": "f6726e3aef767ba4bb21c4b250695217635bcb57253a15cd69ecbf93f75bd6e8",
-      "status": "final icon/HUD"
+      "status": "original icon/HUD; retained evidence"
     },
     {
       "file": "ca131-enu-07.png",
       "width": 1280,
       "height": 720,
       "sha256": "d69713247d2d046fb54ffd975ec63918a532f36eb102775d15146fa1f9d45baf",
-      "status": "final icon/HUD"
+      "status": "original icon/HUD; retained evidence"
     },
     {
       "file": "ca131-enu-08.png",
       "width": 1280,
       "height": 720,
       "sha256": "8c4462accf7927951081e6c6c9690bc2bdada42830e46b3a8163f9e53c43e03c",
-      "status": "final icon/HUD"
+      "status": "original icon/HUD; retained evidence"
     },
     {
       "file": "ca131-enu-09.png",
       "width": 1280,
       "height": 720,
       "sha256": "6fd13a94f3ff183a681998f9f0e531e645becd65562a7a4d6b999f4f480aac27",
-      "status": "final icon/HUD"
+      "status": "original icon/HUD; retained evidence"
     },
     {
       "file": "ca131-enu-10.png",
       "width": 1280,
       "height": 720,
       "sha256": "7580d2bb05f55e1408b7f9316961508ac991386e4e491884abf7f82014bebeee",
-      "status": "final icon/HUD"
+      "status": "original icon/HUD; retained evidence"
     },
     {
       "file": "ca131-enu-11.png",
       "width": 1280,
       "height": 720,
       "sha256": "9c2a9f1fa6788db9fc5b2ee98b579b9512225a6abb3a7a29e86d34ace90927dc",
-      "status": "final icon/HUD"
+      "status": "original icon/HUD; retained evidence"
     },
     {
       "file": "ca131-enu-journal.png",
       "width": 1280,
       "height": 720,
       "sha256": "e9a29e5a2fd44af1e88a1bd9868a49890c57d9dcafea84a0fba2b79d18766ae6",
-      "status": "final icon/HUD"
+      "status": "original icon/HUD; retained evidence"
     },
     {
       "file": "ca131-es-00.png",
       "width": 1280,
       "height": 720,
       "sha256": "49a7d56043d4f012b4528c089974d6d648c778b4a5e7f8ad487f8aa54bca3b43",
-      "status": "final icon/HUD"
+      "status": "original icon/HUD; retained evidence"
     },
     {
       "file": "ca131-es-01.png",
       "width": 1280,
       "height": 720,
       "sha256": "334ef21f0f7ffdc39c94d0d0cc2bf2e77035a7860b803b368675501548badb53",
-      "status": "final icon/HUD"
+      "status": "original icon/HUD; retained evidence"
     },
     {
       "file": "ca131-es-02.png",
       "width": 1280,
       "height": 720,
       "sha256": "325c9cb7afbd6d49b409e2ca9c0c9ee5802f464fa430d3edb5bff3904aaac485",
-      "status": "final icon/HUD"
+      "status": "original icon/HUD; retained evidence"
     },
     {
       "file": "ca131-es-03.png",
       "width": 1280,
       "height": 720,
       "sha256": "e65f84c28877a5a86ec9e8d1e53135927a58d26f302518b68c98dd326f3632e6",
-      "status": "final icon/HUD"
+      "status": "original icon/HUD; retained evidence"
     },
     {
       "file": "ca131-es-04.png",
       "width": 1280,
       "height": 720,
       "sha256": "0b1e2cdb97f8b58b4421c66b7d846fefb22e2e90051b1707fdeb131b2534d3f0",
-      "status": "final icon/HUD"
+      "status": "original icon/HUD; retained evidence"
     },
     {
       "file": "ca131-es-05.png",
       "width": 1280,
       "height": 720,
       "sha256": "cff55c99984264a6f4be93a423ce752b12c5c90e3dfbedddab973df45d31e4cd",
-      "status": "final icon/HUD"
+      "status": "original icon/HUD; retained evidence"
     },
     {
       "file": "ca131-es-06.png",
       "width": 1280,
       "height": 720,
       "sha256": "d43b4e9d353274bd5239b21433c417b0102620772cca4e6c215e1612b5373823",
-      "status": "final icon/HUD"
+      "status": "original icon/HUD; retained evidence"
     },
     {
       "file": "ca131-es-07.png",
       "width": 1280,
       "height": 720,
       "sha256": "acb0a685da41b9aa9e216386b49c113f570532edd7b8391e521afaaaef180562",
-      "status": "final icon/HUD"
+      "status": "original icon/HUD; retained evidence"
     },
     {
       "file": "ca131-es-08.png",
       "width": 1280,
       "height": 720,
       "sha256": "ee121fca3c4b2f259fd96d6a6dffd05d6fd6f8130761741230dc081e650a3917",
-      "status": "final icon/HUD"
+      "status": "original icon/HUD; retained evidence"
     },
     {
       "file": "ca131-es-09.png",
       "width": 1280,
       "height": 720,
       "sha256": "459163991113a9e38df6f4fbfb114e3dcad5f0c5b37822c151b1552c12779d8d",
-      "status": "final icon/HUD"
+      "status": "original icon/HUD; retained evidence"
     },
     {
       "file": "ca131-es-10.png",
       "width": 1280,
       "height": 720,
       "sha256": "c604f1fe29b8c2b7d8629f957063056f9d29c564542dbef6d7338c79bcfd4ed0",
-      "status": "final icon/HUD"
+      "status": "original icon/HUD; retained evidence"
     },
     {
       "file": "ca131-es-11.png",
       "width": 1280,
       "height": 720,
       "sha256": "fe1233fdf4efc7d59eec22f8384fc7952dc8a0490c32865ee171d888ccf775d5",
-      "status": "final icon/HUD"
+      "status": "original icon/HUD; retained evidence"
     },
     {
       "file": "ca131-es-journal.png",
       "width": 1280,
       "height": 720,
       "sha256": "c974320702fcd3dd8ad2ccd89e3003284f09592bffd2a568639b2e9733a25b9c",
-      "status": "final icon/HUD"
+      "status": "original icon/HUD; retained evidence"
     },
     {
       "file": "ca131-wide-sb10.png",
       "width": 1680,
       "height": 720,
       "sha256": "1d518679c5a1ad540d731f059010a0e810a2430d21aed58ba8aa45765d035ea5",
-      "status": "final icon/HUD"
+      "status": "original icon/HUD; retained evidence"
     },
     {
       "file": "ca131-wide-sb11.png",
       "width": 1680,
       "height": 720,
       "sha256": "fded47040a4afe715aa830690bd86cc353b08a70dba7bf98e8460f3e1c2ce799",
-      "status": "final icon/HUD"
+      "status": "original icon/HUD; retained evidence"
     },
     {
       "file": "ca131-wide-sb12.png",
       "width": 1680,
       "height": 720,
       "sha256": "7129821674976a6984dbb21c0c5dd168a340ffc77d6d36c275dcea6915808abe",
-      "status": "final icon/HUD"
+      "status": "original icon/HUD; retained evidence"
     },
     {
       "file": "final-43.png",
@@ -422,7 +436,28 @@
       "width": 1024,
       "height": 768,
       "sha256": "ac0bd2562bb526bcc1ab03ebbaaff5bfc6188edcb4c3b74eee24c6ccf8928949",
-      "status": "final icon/HUD"
+      "status": "original icon/HUD; retained evidence"
+    },
+    {
+      "file": "icon-v2-43.png",
+      "width": 1024,
+      "height": 768,
+      "sha256": "0e958fe11f2dd817c181530d6ca4f7ea1ea219733762217ec2eb504ce86cb7db",
+      "status": "revised diagonal icon"
+    },
+    {
+      "file": "icon-v2-cold.png",
+      "width": 1280,
+      "height": 720,
+      "sha256": "e167e7df16f56dedc5598bbce7da44c122a81a32e3abbcb3dbe3e4ca6f01a204",
+      "status": "revised diagonal icon"
+    },
+    {
+      "file": "icon-v2-normal.png",
+      "width": 1280,
+      "height": 720,
+      "sha256": "fcf6a611b54e7c55d4abf669a832bf872343207c615942d94ebce61192056d02",
+      "status": "revised diagonal icon"
     }
   ],
   "hud": "Neutral, six harmful states, recovery, Toughness boundaries, extreme overflow, signed localized text, icon, notification, sword and Journal. Native 1024x768, 1280x720 and 1680x720; screenblocks 10/11/12 and hud_scale 0/2/3. Fixed prior fill/frame mismatch with the native coordinate projection. Static Draw path has no thermal mutation, geometry/weather query or serialized duplicate.",
@@ -442,9 +477,30 @@
   "corrections": "The copied save fixture omitted WeaponDurabilityRevision, accidentally triggering the old x10 migration before hub restore; the corrected verified-save chain initializes that metadata and compares every equipment field. Early multi-line console scripts quit before their waits; recorded final scripts use one command chain. Initial unsafe walking fixture could heat from exertion; changed to a sheltered cold ship route, preserving production rules. Native multi-value projection helper needed explicit unpack/return. Windows client sizes verified from PNG headers. Before-fix 4:3 capture retained explicitly.",
   "reproduce": "python assets/validation_511/prepare.py; powershell -NoProfile -ExecutionPolicy Bypass -File assets/validation_511/run_check.ps1 with the label/package/addon/map/script/language/dimensions recorded in each *-run.json. Use unique labels. For viewed.cfg first run prepare_bots.py and pass the isolated engine path. Standard package: build_dev.ps1. Generate this summary with collect_results.py.",
   "author_pending": [
-    "CA131-01",
-    "CA131-02"
+    "CA131-01"
   ],
+  "author_acceptance": {
+    "date": "2026-10-07",
+    "passed": [
+      "CA131-02"
+    ],
+    "qualified_pass": "All prior CA131-01 functional/layout checks passed; only the requested diagonal icon revision needs approval."
+  },
+  "icon_revision_2": {
+    "manifest": "assets/manifests/thermal_icon_511_v2.json",
+    "scope": "Only the thermal PNG and its draw order change. No simulation or saved values change; prior functional evidence remains applicable. Native revised-icon runs cover 1280x720 and 1024x768.",
+    "keep_awake": {
+      "started_utc": "2026-10-07T23:46:38.2037146Z",
+      "pid": 7552,
+      "active_plan_before": "GUID de plan de energía: 381b4222-f694-41f0-9685-ff5bb260df2e  (Equilibrado)",
+      "mechanism": "Thread-scoped ES_CONTINUOUS | ES_SYSTEM_REQUIRED | ES_DISPLAY_REQUIRED; no power-plan mutation",
+      "maximum_hours": 1,
+      "previous_thread_state": 2147483648,
+      "release_result": 2147483651,
+      "released_utc": "2026-10-07T23:53:13.2371306Z",
+      "active_plan_after": "GUID de plan de energía: 381b4222-f694-41f0-9685-ff5bb260df2e  (Equilibrado)"
+    }
+  },
   "keep_awake": {
     "started_utc": "2026-10-07T23:06:30.3834225Z",
     "pid": 25216,

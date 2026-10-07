@@ -1,24 +1,7 @@
-CA131-01 | Origin: 5.1.1 / issue #131 | Thermal HUD and presentation
-Prerequisites: build 5.1.1, normal game; keep a separate save slot.
-Steps: inspect the new bar above Load in your usual resolution/HUD settings;
-play through neutral, cold/heat and recovery, change Toughness-bearing equipment,
-open/close Journal > World > T, and save/load or travel. Review the supplied
-English/Spanish screenshots for all six adverse states and 4:3/16:9/ultrawide.
-Expected: clear sign/marker/state; thresholds refresh with Toughness; no stale
-state, clipping or overlap; resources and first-person equipment remain usable.
-The bar shows exposure, while Journal keeps air/comfort/wetness separate.
-
-CA131-02 | Origin: 5.1.1 / issue #131 | Attributes, adaptation and long travel
-Prerequisites: separate 5.1.0 save backup or fresh character, 5.1.1 build.
-Steps: review Constitution/Resilience descriptions, compare passive Sleep loss
-when each effective attribute changes, and observe climate adaptation in the
-Journal. Compare safe/unsafe long-journey previews and successful arrival;
-check saved exposure, wetness, equipment and quest progress after reload.
-Review native evidence for accelerated five-day limits, gradual return after
-Resilience decreases and the isolated route between distinct regional climates
-(current shipped destinations all share Buenos Aires).
-Expected: Constitution reduces Sleep like Hunger/Thirst; Resilience 100 gives
-3 C/world day and +/-15 C from the racial base, five days to either distant
-limit. Existing acclimatization returns gradually after a lower cap. Long
-travel accounts for route climate and passenger shelter, rejects harmful
-forecasts without spending provisions, and invents no real-time thermal damage.
+CA131-01 | Origin: 5.1.1 / issue #131 | Revised thermal icon only
+Author confirmed all other HUD and gameplay checks passed on 2026-10-07.
+Prerequisites: current PR #138 build, normal HUD at your preferred resolution.
+Steps: inspect the grey icon to the left of the thermal bar above Load.
+Expected: snowflake upper left and flame lower right, separated and recognizable
+at the normal HUD size; neither symbol hidden by the frame ornament.
+Only approval of this revised icon remains. CA131-02 passed; see HISTORY.

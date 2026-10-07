@@ -217,7 +217,7 @@ Generated packages, development IWADs, engine and saves are not distributed.
 Journal > World > **T** displays air, adapted comfort, signed exposure, first
 harmful threshold, wetness, humidity, acclimatization and current penalties in
 English/Spanish. The 5.1.1/#131 HUD adds a read-only bar directly above Load:
-a grey flame/snowflake icon at its left, a neutral center, cold/hot bands and
+a grey icon with snowflake upper left and flame lower right, a neutral center, cold/hot bands and
 ticks at the actual Toughness-scaled
 thresholds, a signed value and localized severity. Its visual span is +/-30*s;
 overflow pins the marker and prints < or > with the extreme state, without
@@ -229,7 +229,8 @@ It follows a valid viewed live player,
 falling back to the local pawn for non-player cameras; this is not new network
 multiplayer support. Draw calls never sample climate/geometry or mutate state.
 Air temperature, wetness and comfort remain separate Journal details. This is
-not core temperature. #131 author checks are tracked separately in pending_test.txt.
+not core temperature. #131 gameplay and prior HUD checks are author-accepted; only revised-icon
+approval remains in pending_test.txt.
 Native evidence, exact package/config hashes, migration comparisons, drying fit
 and bilingual captures are in [5.1.0 results](../assets/validation_510/RESULTS.json).
 The author accepted CA130-01/02/03 on 2026-10-07; HISTORY records the results

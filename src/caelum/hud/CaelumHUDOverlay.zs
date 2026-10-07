@@ -504,7 +504,6 @@ class CaelumHUDOverlay : EventHandler
         DrawHUDTexture(root .. "ca_hud_icon_anima.png", 2.0, 273.0, 18.0, 18.0);
         DrawHUDTexture(root .. "ca_hud_icon_health.png", 2.0, 297.0, 18.0, 18.0);
         DrawHUDTexture(root .. "ca_hud_icon_air.png", 2.0, 321.0, 18.0, 18.0);
-        DrawHUDTexture(root .. "ca_hud_icon_thermal.png", 422.0, 225.0, 18.0, 18.0);
         DrawHUDTexture(root .. "ca_hud_icon_load.png", 422.0, 249.0, 18.0, 18.0);
         DrawHUDTexture(root .. "ca_hud_icon_hunger.png", 422.0, 273.0, 18.0, 18.0);
         DrawHUDTexture(root .. "ca_hud_icon_thirst.png", 422.0, 297.0, 18.0, 18.0);
@@ -769,6 +768,8 @@ class CaelumHUDOverlay : EventHandler
         }
         Screen.DrawText(HUDFont,textColor,CaelumThermalHUD.BAR_X,CaelumThermalHUD.LABEL_Y,label,
             DTA_VIRTUALWIDTHF,640.0,DTA_VIRTUALHEIGHTF,360.0,DTA_KEEPRATIO,true,DTA_SHADOW,true);
+        // La llama desplazada no debe quedar tapada por el laurel del marco.
+        DrawHUDTexture("graphics/caelum/ui/hud/icons/ca_hud_icon_thermal.png",422.0,225.0,18.0,18.0);
     }
 
     // A restrained full-screen tint plus opposed color bands represents the

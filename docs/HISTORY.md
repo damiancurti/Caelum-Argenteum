@@ -21,7 +21,17 @@ and bilingual HUD/Journal captures in three aspect ratios. Tests found the old
 HUD projection mismatch (CA-KP-051) and a missing legacy durability revision in
 the copied save fixture; the corrected chain passes without production inventory
 changes. Standard build matches the tested source package, with no script errors.
-Agent verification is distinct from author acceptance; CA131-01/02 remain pending.
+**Author confirmation, 2026-10-07:** the author states that all other tests
+passed and requests more separation between the snowflake and flame. CA131-02
+(attributes, adaptation, long travel and persistence), originating in 5.1.1/#131,
+is passed without a reported exception and removed from pending_test.txt.
+The previous functional/layout portions of CA131-01 are accepted. Its entry
+remains narrowed to the revised icon, which places the snowflake upper left
+and flame lower right with a visible gap. The original art remains preserved.
+The icon is drawn after the frame laurel to keep the lower-right flame visible.
+Native checks at 1280x720 and 1024x768 verify the revised composition in game;
+final author approval of that composition remains pending. No simulation,
+attribute, journey or save behavior changes during this review revision.
 The author later adds a grey flame/snowflake icon; generation provenance is
 recorded in ASSETS and the icon manifest. No new audio, recipes or encounter
 content. The temporary keep-awake helper

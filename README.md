@@ -17,7 +17,8 @@ Long journeys transition between endpoint climates by distance, preserving
 passenger shelter and stopping walking progress while asleep. See the
 [thermal contract](docs/SYSTEMS.md#thermal-exposure-and-energy-transfer-130),
 [5.1.1 evidence](assets/validation_511/RESULTS.json) and
-[pending author checks](pending_test.txt). Author acceptance remains pending.
+[pending author check](pending_test.txt). Gameplay and the rest of the HUD are
+author-accepted; only the revised diagonal flame/snowflake icon awaits approval.
 
 Issue [#130](https://github.com/damiancurti/Caelum-Argenteum/issues/130) adds
 thermal exposure, persistent wetness, clothing insulation, activity heat and

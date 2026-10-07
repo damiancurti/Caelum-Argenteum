@@ -3,7 +3,7 @@
 Documentation version: **5.1.1** — 2026-10-07.
 
 **5.1.1/#131:** thermal HUD, Constitution Sleep, Resilience adaptation, route climate.
-Native evidence: validation_511; author checks pending. #130/#128 accepted.
+Gameplay/HUD accepted; revised icon pending. Evidence: validation_511. #130/#128 accepted.
 Full army retained; fluency/multiplayer pending. Rules: SYSTEMS.
 
 **4.37.24/#82 accepted 2026-10-05:** closing export; Tab/M/B/R/F/T defaults.

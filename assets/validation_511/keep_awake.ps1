@@ -1,7 +1,7 @@
-param([int]$MaximumHours = 4, [string]$RecordName = 'power-request')
+param([int]$MaximumHours = 4, [string]$RecordName = 'power-request', [string]$ReleaseName = 'release-awake.signal')
 $ErrorActionPreference = 'Stop'
 $work = Join-Path (Split-Path (Split-Path $PSScriptRoot)) 'build/issue131'
-$release = Join-Path $work 'release-awake.signal'
+$release = Join-Path $work $ReleaseName
 if (Test-Path -LiteralPath $release) { throw 'Use a fresh release marker before starting a new request.' }
 Add-Type @'
 using System.Runtime.InteropServices;

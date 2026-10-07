@@ -28,7 +28,7 @@ def save_objects(phase):
 
 
 manifest=json.loads((WORK/'MANIFEST.json').read_text())
-labels=['final-authority-build','final-checks','viewed-b','final-authority-ui','icon-visual-en',
+labels=['icon-v2-visible','icon-v2-visible-43','final-authority-build','final-checks','viewed-b','final-authority-ui','icon-visual-en',
         'icon-visual-43','icon-visual-wide',
         *['verified-save-'+phase for phase in ['baseline','upgrade','reload','hub','rollback','reupgrade']],
         'performance-baseline','performance-current','final-visual-43']
@@ -85,14 +85,14 @@ with zipfile.ZipFile(standard) as built,zipfile.ZipFile(WORK/'production.pk3') a
     members=len(tested.namelist())
 screenshots=[]
 for path in sorted(HERE.glob('*.png')):
-    if not path.name.startswith(('ca131-','icon-43','final-43')):continue
+    if not path.name.startswith(('ca131-','icon-43','icon-v2-','final-43')):continue
     width,height=struct.unpack('>II',path.read_bytes()[16:24])
     screenshots.append({'file':path.name,'width':width,'height':height,'sha256':digest(path),
-        'status':'superseded before aspect fix' if path.name=='final-43.png' else 'final icon/HUD'})
+        'status':'superseded before aspect fix' if path.name=='final-43.png' else 'revised diagonal icon' if path.name.startswith('icon-v2-') else 'original icon/HUD; retained evidence'})
 
 result={
     'issue':131,'release':'5.1.1','baseline_commit':manifest['baseline_commit'],
-    'status':'implemented and agent-verified; author acceptance pending CA131-01/02',
+    'status':'gameplay and prior HUD checks author-accepted on 2026-10-07; revised icon alone pending CA131-01',
     'engine':'GZDoom 4.14.2, Windows/Vulkan, RNG 116, cap 60, 5% audio, background unpaused',
     'production_sha256':manifest['production'],'standard_build_sha256':digest(standard),
     'standard_build_members_identical':members,'repeat_fixture_hashes_identical':True,'deterministic_fixture_manifest':manifest,
@@ -107,7 +107,9 @@ result={
         'qualification':'One short arrival pair, not statistical evidence of improvement or late-battle FPS. Functional source includes HUD projection correction; final later changes add the fixed thermal icon and extract unchanged 10/20/30 boundaries into shared data/helpers used by simulation, HUD bands and Journal. The final standard build reruns all 47 checks and Spanish UI states. No AI/population policy changed; no new per-frame scan.'},
     'corrections':'The copied save fixture omitted WeaponDurabilityRevision, accidentally triggering the old x10 migration before hub restore; the corrected verified-save chain initializes that metadata and compares every equipment field. Early multi-line console scripts quit before their waits; recorded final scripts use one command chain. Initial unsafe walking fixture could heat from exertion; changed to a sheltered cold ship route, preserving production rules. Native multi-value projection helper needed explicit unpack/return. Windows client sizes verified from PNG headers. Before-fix 4:3 capture retained explicitly.',
     'reproduce':'python assets/validation_511/prepare.py; powershell -NoProfile -ExecutionPolicy Bypass -File assets/validation_511/run_check.ps1 with the label/package/addon/map/script/language/dimensions recorded in each *-run.json. Use unique labels. For viewed.cfg first run prepare_bots.py and pass the isolated engine path. Standard package: build_dev.ps1. Generate this summary with collect_results.py.',
-    'author_pending':['CA131-01','CA131-02'],
+    'author_pending':['CA131-01'],
+    'author_acceptance':{'date':'2026-10-07','passed':['CA131-02'],'qualified_pass':'All prior CA131-01 functional/layout checks passed; only the requested diagonal icon revision needs approval.'},
+    'icon_revision_2':{'manifest':'assets/manifests/thermal_icon_511_v2.json','scope':'Only the thermal PNG and its draw order change. No simulation or saved values change; prior functional evidence remains applicable. Native revised-icon runs cover 1280x720 and 1024x768.'},
 }
 power=WORK/'power-request.json'
 if power.exists():
@@ -115,6 +117,10 @@ if power.exists():
     if result['keep_awake'].get('released_utc'):
         assert result['keep_awake']['release_result'] and result['keep_awake']['active_plan_before']==result['keep_awake']['active_plan_after']
         shutil.copy2(power,HERE/power.name)
+icon_power=WORK/'power-icon-v2.json'
+if icon_power.exists():
+    result['icon_revision_2']['keep_awake']=json.loads(icon_power.read_text(encoding='utf-8-sig'))
+    if result['icon_revision_2']['keep_awake'].get('released_utc'):shutil.copy2(icon_power,HERE/icon_power.name)
 (HERE/'RESULTS.json').write_text(json.dumps(result,indent=2,ensure_ascii=False)+'\n',encoding='utf-8')
 (HERE/'MANIFEST.json').write_text(json.dumps(manifest,indent=2)+'\n',encoding='utf-8')
 print(f'Verified {len(runs)} native runs, {len(save_results)} saves, {members} matching package members; {len(screenshots)} screenshots.')
