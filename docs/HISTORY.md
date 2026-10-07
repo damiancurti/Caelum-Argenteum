@@ -4,6 +4,14 @@ Documentation version: **5.0.5** — 2026-10-07.
 
 ## 5.0.5 — Siege profiling and combined diagnostic experiments (#121, 2026-10-07)
 
+Author acceptance on 2026-10-07: the author considers the demonstrated fluency
+"close enough" for this stage and authorizes closing #121 and merging PR #127.
+Further fluency measurements are deferred to future work. This accepts the
+diagnosis/prototype delivery; it does not reinterpret the recorded frame/tic
+rates as meeting the original 35-tic/30-FPS target or move experimental AI into
+production. No additional manual test was claimed or removed from the empty
+pending queue. Version remains 5.0.5 for acceptance of the same patch.
+
 The author accepted every pending #119/#120 check, authorized closure/merge,
 and requested #121 with live tests, commit and push. PR #125 merged as
 `84a82dec00b844168dff41918e1546677956bf08`; PR #126 merged as
@@ -63,8 +71,8 @@ the native minimize action. The keep-awake API request releases successfully
 at 03:49:53 UTC; the original Balanced plan identifier is unchanged. Generated
 packages, engine/IWAD copies and private test saves stay outside the commit.
 The existing author-owned art-source deletion is left outside this patch.
-There are no new outstanding manual test entries; author review/acceptance of
-the diagnosis and any future optimization semantics remains separate.
+There are no new outstanding manual test entries. The later author acceptance
+is recorded above; future production optimization semantics remain separate.
 
 ## 5.0.4 — Per-player authority and integrated closure (#120, 2026-10-06)
 

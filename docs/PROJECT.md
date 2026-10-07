@@ -4,6 +4,11 @@ Documentation version: **5.0.5** — 2026-10-07.
 
 ## 5.0.5 — Siege subsystem diagnosis and shared-group experiments (#121)
 
+Accepted by the author on 2026-10-07 as sufficiently close for this stage,
+with #121 closure and PR #127 merge authorized. Further fluency tests remain
+future work. The measured results and original 35-tic/30-FPS reference are
+retained; acceptance does not promote diagnostic interventions into production.
+
 The complete accepted MAP06 army is measured on baseline `bc086979` / 5.0.4:
 6,000 Mandingas, one commander and 600 defenders. The original 4.37.24 baseline
 and earlier migration measurements remain evidence. This detailed diagnosis
@@ -194,8 +199,8 @@ Production changes are limited to two release-label diagnostics. All test
 instrumentation stays outside the shipping include tree. Static verification
 checks 3,799 original method bodies after removing known probes and 1,979 field
 declarations; current source differs only in release text and checkout line
-endings. Native checks and author acceptance remain distinct: #121 is a measured
-diagnosis and prototype delivery, not an accepted siege performance fix.
+endings. The author accepts #121's measured diagnosis and prototype delivery;
+production optimization and further fluency validation remain future work.
 Final validation includes 21 completed comparison runs, two separate GPU/visual
 runs and a production-package smoke/background check. All 15 diagnostic packages
 reconstruct byte-identically in two passes from pinned Git content. The final

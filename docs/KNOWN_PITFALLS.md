@@ -109,7 +109,9 @@ Reproduce with `assets/validation_505/prepare.py` and the matched/formation
 scripts through `run_suite.ps1`. [Results](../assets/validation_505/RESULTS.json)
 retain repeated pairs, populations, callback tails, formation displacement and
 nested scope costs. The author's target is stable 35 tics/s and at least 30 FPS;
-the shared-perception runs do not meet it. Author playability acceptance: pending.
+the shared-perception runs do not meet it. On 2026-10-07 the author accepts the
+diagnostic/prototype stage as close enough for now and authorizes #121 closure.
+The recorded metrics and the need for future production work remain unchanged.
 
 ## CA-KP-041 - Background rendering alone does not keep simulation running
 

@@ -2,8 +2,8 @@
 
 Documentation version: **5.0.5** — 2026-10-07.
 
-**5.0.5/#121:** profiles/combinations; target/visibility dominate.
-Trials miss 35 tics/s +30 FPS. Evidence: validation_505; PROJECT/KNOWN_PITFALLS.
+**5.0.5/#121:** profiles/combinations accepted; further fluency work deferred.
+Measured target unmet. Evidence: validation_505; PROJECT/KNOWN_PITFALLS.
 Production/saves unchanged. #119/#120 accepted/merged; bounded V5.0 complete.
 Multiplayer pending.
 

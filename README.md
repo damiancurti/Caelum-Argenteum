@@ -24,6 +24,9 @@ The combined combat prototype improves late simulation from about 3 to 24–25
 tics/s. The combined march reaches about 35, with 20–23 frame callbacks/s;
 neither meets the author's stable 35-tic/30-FPS target. Positive findings and
 their limits are retained in [KNOWN_PITFALLS](docs/KNOWN_PITFALLS.md).
+The author accepted this diagnostic stage on 2026-10-07 as sufficiently close
+for now and authorized #121 closure / PR #127 merge. Further fluency work is
+deferred; the recorded measurements and production boundary remain unchanged.
 
 Issue [#120](https://github.com/damiancurti/Caelum-Argenteum/issues/120) completes
 the bounded five-issue architecture implementation with explicit per-player

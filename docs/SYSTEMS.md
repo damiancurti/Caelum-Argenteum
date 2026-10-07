@@ -38,6 +38,9 @@ shared perception plus spatial guards and the three-factor combination.
 No diagnostic field, cache, formation controller or altered targeting rule is
 included by production ZSCRIPT. The author's comparison target is stable native
 35 tics/s with at least 30 displayed frames/s at the current resolution/population.
+On 2026-10-07 the author accepts the demonstrated fluency as sufficiently close
+for this diagnostic stage and defers further tests. The numeric reference and
+production contract remain unchanged; acceptance does not install the prototypes.
 
 ## Per-player authority and modular migration boundary (#120)
 

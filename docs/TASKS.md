@@ -4,6 +4,9 @@ Documentation version: **5.0.5** — 2026-10-07.
 
 ## Issue #121 — Siege subsystem diagnosis and combined experiments (5.0.5)
 
+- Accepted on 2026-10-07: the author considers the demonstrated fluency close
+  enough for this stage and authorizes #121 closure / PR #127 merge. Further
+  fluency tests are future work; experimental AI remains outside production.
 - Implementation and agent validation complete: 21 comparison runs plus two
   GPU/visual controls and the final production/background smoke check. Exact
   source/package checks and two-pass reconstruction of 15 diagnostic packages
@@ -24,11 +27,12 @@ Documentation version: **5.0.5** — 2026-10-07.
   distinguish scope-time percentages from whole-process/wall/GPU cost.
 - Test the author's aligned groups of 100 against independent march, then
   normal shared perception, spatial guards, cannon retries and combinations.
-  Disclose altered movement/awareness/acquisition and interactions. Success
-  means stable 35 tics/s and at least 30 FPS, not merely a positive speed ratio.
+  Disclose altered movement/awareness/acquisition and interactions. The original
+  35-tic/30-FPS target remains a measurement reference, not a fulfilled metric
+  or a blocker to the author's accepted closure of this diagnostic stage.
 - Keep production behavior/save fields unchanged. Evidence lives in
   `assets/validation_505`; measured interpretation is in PROJECT and confirmed
-  reusable findings in KNOWN_PITFALLS. #121 author acceptance remains pending.
+  reusable findings in KNOWN_PITFALLS. #121 author acceptance is recorded in HISTORY.
 - Next focused optimization candidates: preserve member-specific target/LOS
   semantics while reducing repeated perception; exact spatial guard queries;
   explicit cannon acquisition retry policy; renderer submission cost. Design
