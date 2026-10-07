@@ -1,0 +1,48 @@
+// Adaptadores de consecuencias: los costes nominales siguen en sus catálogos.
+class CaelumThermalEffects : Object play
+{
+    static int Incoming(Actor body,Actor inflictor,Actor source,int damage,Name mod)
+    {
+        if(damage<=0 || mod=='CaelumImpact' || mod=='Crush' || mod=='CaelumWeight'
+            || mod=='Drowning' || mod=='CaelumThermal')return damage;
+        if(!(source is 'CaelumPlayer') && !(source is 'CaelumCombatActor')
+            && !(inflictor is 'CaelumActorProjectile'))return damage;
+        let thermal=CaelumThermalBody.Get(body);
+        if(thermal==null)return damage;
+        let user=CaelumPlayer(source);let npc=CaelumCombatActor(source);
+        bool blunt=!(inflictor is 'CaelumActorProjectile')
+            && ((user!=null && user.ThermalBluntDelivery) || (npc!=null && npc.ThermalBluntDelivery));
+        return int(damage*CaelumThermalRules.ColdAttack(thermal.Exposure,thermal.Toughness,blunt)+0.5);
+    }
+
+    static double HeatCost(Actor body)
+    {
+        let thermal=CaelumThermalBody.Get(body);
+        return thermal==null ? 1 : CaelumThermalRules.HeatCost(thermal.Exposure,thermal.Toughness);
+    }
+
+    static double Speed(Actor body)
+    {
+        let thermal=CaelumThermalBody.Get(body);
+        return thermal==null ? 1 : CaelumThermalRules.Speed(thermal.Exposure,thermal.Toughness);
+    }
+
+    static double NominalJumpAir(Actor body)
+    {
+        let user=CaelumPlayer(body);let npc=CaelumCombatActor(body);
+        if(user!=null && user.DerivedStats!=null)
+            return CaelumConstants.JUMP_AIR_COST*user.DerivedStats.AirConsumptionMultiplier;
+        return npc!=null ? npc.GetEffectiveAttackAir(CaelumConstants.JUMP_AIR_COST) : 0;
+    }
+
+    static void RecordAction(Actor body,double nominalAir)
+    { CaelumThermalService.ProfiledAction(body,nominalAir,NominalJumpAir(body)); }
+
+    static double EffortWatts(Actor body,double nominalAirPerSecond)
+    {
+        let thermal=CaelumThermalBody.Get(body,true);
+        if(thermal==null)return 0;
+        return CaelumThermalRules.ProfiledActionHeat(thermal.ReferenceJumpHeat,
+            nominalAirPerSecond,NominalJumpAir(body));
+    }
+}

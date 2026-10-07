@@ -137,6 +137,8 @@ class CaelumEquipmentItem : Inventory
     int EquipmentSize;
     int Durability;
     int WeaponDurabilityRevision;
+    // La humedad sigue a esta pieza al equiparla, guardarla o soltarla.
+    double ThermalWaterKg;
 
     override void PostBeginPlay()
     {
@@ -407,6 +409,7 @@ class CaelumEquipmentItem : Inventory
             copy.EquipmentSize = EquipmentSize;
             copy.Durability = Durability;
             copy.WeaponDurabilityRevision = WeaponDurabilityRevision;
+            copy.ThermalWaterKg = ThermalWaterKg;
             copy.EssenceType = EssenceType;
             copy.UnitWeight = UnitWeight;
             copy.Equipped = Equipped;
@@ -437,6 +440,7 @@ class CaelumEquipmentItem : Inventory
             copy.EquipmentSize = EquipmentSize;
             copy.Durability = Durability;
             copy.WeaponDurabilityRevision = WeaponDurabilityRevision;
+            copy.ThermalWaterKg = ThermalWaterKg;
             copy.EssenceType = EssenceType;
             copy.UnitWeight = UnitWeight;
             copy.Equipped = false;

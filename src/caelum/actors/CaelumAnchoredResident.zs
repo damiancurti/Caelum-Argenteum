@@ -368,6 +368,7 @@ class CaelumAnchoredResident : CaelumCombatActor abstract
             / CaelumConstants.GZDOOM_BASE_MAX_WALK_SPEED);
         Vel.X = Cos(Angle) * speed;
         Vel.Y = Sin(Angle) * speed;
+        CaelumThermalMotion.SetVelocity(self);
     }
 
     void MoveEscortPrisonerTowardLeader(CaelumPlayer leader)
@@ -384,6 +385,7 @@ class CaelumAnchoredResident : CaelumCombatActor abstract
             distance - CaelumConstants.PRISONER_FOLLOW_DISTANCE));
         Vel.X = Cos(Angle) * resolvedSpeed;
         Vel.Y = Sin(Angle) * resolvedSpeed;
+        CaelumThermalMotion.SetVelocity(self);
     }
 
     void TeleportEscortPrisonerToLeader(CaelumPlayer leader)
@@ -629,7 +631,7 @@ class CaelumAnchoredResident : CaelumCombatActor abstract
             {
                 resident.Target = resident.RuloPartyBull;
                 if (resident is "CaelumRulo" || resident is "CaelumRonnie")
-                    resident.A_Chase("Melee", null);
+                    resident.ThermalChase("Melee", null);
                 else resident.A_CaelumBudgetedChase();
             }
             else resident.Target = null;
@@ -648,7 +650,7 @@ class CaelumAnchoredResident : CaelumCombatActor abstract
             {
                 resident.Target = resident.RuloPartyBull;
                 if (resident is "CaelumRulo" || resident is "CaelumRonnie")
-                    resident.A_Chase("Melee", null);
+                    resident.ThermalChase("Melee", null);
                 else resident.A_CaelumBudgetedChase();
             }
             else resident.Target = null;
@@ -795,5 +797,6 @@ class CaelumAnchoredResident : CaelumCombatActor abstract
         Angle = returnDirection;
         Vel.X = Cos(returnDirection) * resolvedSpeed;
         Vel.Y = Sin(returnDirection) * resolvedSpeed;
+        CaelumThermalMotion.SetVelocity(self);
     }
 }

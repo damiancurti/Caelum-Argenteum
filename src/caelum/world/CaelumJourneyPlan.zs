@@ -61,7 +61,7 @@ class CaelumJourneyRules : Object play
         // TweakSpeeds: entrada normal * ForwardMove1 * Speed / 256.
         // El desplazamiento incluye el impulso anterior a la fricción nativa.
         // No usar Vel ni la aceleración inicial: parado no significa incapaz.
-        double factor = CaelumConstants.GZDOOM_BASE_MOVEMENT
+        double factor = CaelumConstants.GZDOOM_BASE_MOVEMENT * CaelumThermalEffects.Speed(user)
             * Max(0.0, user.EffectiveMovementPercent / 100.0);
         if (user.ElementalStatus != null) factor *= user.ElementalStatus.GetMovementMultiplier();
         if (!user.Alternative)
@@ -86,6 +86,8 @@ class CaelumJourneyRules : Object play
         if (s != null && (s.BurnRemaining > 0 || s.CutRemaining > 0 || s.PoisonRemaining > 0
             || s.FreezeRemaining > 0 || s.DazzleRemaining > 0 || s.EarthPenaltyRemaining > 0
             || s.LightningStunRemaining > 0)) return "CA_JOURNEY_BUSY";
+        let thermal=CaelumThermalBody.Get(user);
+        if(thermal!=null && thermal.DrinkRemaining>0)return "CA_JOURNEY_EFFECT";
         // No extender, borrar ni simular arbitrariamente efectos externos.
         let record = user.GetPersistentCharacterState(false);
         if (record != null && CaelumTarotService.EffectTics(record) > 0) return "CA_JOURNEY_EFFECT";
@@ -288,6 +290,7 @@ class CaelumJourneyPlan : Inventory
     String OriginMap;
     vector3 OriginPosition;
     CaelumJourneyModel Needed, Available;
+    CaelumThermalJourney ThermalForecast;
     CaelumTravelVehicle SourceVehicle;
 
     clearscope int TotalTics()
@@ -320,6 +323,9 @@ class CaelumJourneyPlan : Inventory
         PlannedWalkTics = Max(1, int(Ceil(hours * CaelumWorldClock.TicsPerHour() - 0.0000001)));
         PlannedSleepTics = mode == CaelumJourneyState.MODE_SHIP ? CaelumJourneyRules.ShipSleepTics(PlannedWalkTics)
             : CaelumJourneyRules.SleepCount(PlannedWalkTics) * 8 * CaelumWorldClock.TicsPerHour();
+        ThermalForecast=new("CaelumThermalJourney");
+        if(!ThermalForecast.Forecast(user,mode,TotalTics(),speed))
+        {CaelumNotifications.Notify(user,StringTable.Localize(ThermalForecast.Failure,false));return false;}
         Needed = new("CaelumJourneyModel"); Needed.Capture(user, true); Needed.Simulate(PlannedWalkTics,mode);
         Available = new("CaelumJourneyModel"); Available.Capture(user, false); Available.Simulate(PlannedWalkTics,mode);
         return true;
@@ -362,7 +368,7 @@ class CaelumJourneyPlan : Inventory
             || fresh.Available.WaterStock != plan.Available.WaterStock
             || Abs(fresh.Available.ContainerStock - plan.Available.ContainerStock) > 0.000001;
         plan.SpeedKmh = fresh.SpeedKmh; plan.PlannedWalkTics = fresh.PlannedWalkTics; plan.PlannedSleepTics = fresh.PlannedSleepTics;
-        plan.Needed = fresh.Needed; plan.Available = fresh.Available; fresh.Destroy();
+        plan.Needed = fresh.Needed; plan.Available = fresh.Available; plan.ThermalForecast=fresh.ThermalForecast; fresh.Destroy();
         if (changed) { CaelumNotifications.Notify(user,StringTable.Localize("CA_JOURNEY_REVISED", false)); return false; }
         return CaelumTravelService.Commit(user, plan.ConnectionId, plan.TravelMode, plan);
     }
@@ -403,6 +409,7 @@ class CaelumJourneyPlan : Inventory
         user.CurrentAdrenaline = model.Adrenaline; user.health = model.Health; user.player.health = model.Health;
         user.NaturalHealthRegenerationAccumulator = model.HealingFraction;
         user.SurvivalDamageAccumulator = model.DamageFraction;
+        if(ThermalForecast!=null)CaelumThermalService.CommitForecast(user,ThermalForecast.Result);
         double seconds = double(model.ElapsedTics) / TICRATE;
         user.IlluminationRemaining = Max(0.0, user.IlluminationRemaining - seconds);
         user.StaffCastCooldownRemaining = Max(0.0, user.StaffCastCooldownRemaining - seconds);

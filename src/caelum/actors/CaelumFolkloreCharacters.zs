@@ -233,6 +233,7 @@ class CaelumPalomo : CaelumInteractiveFolkloreActor
         Angle = VectorAngle(offset.X,offset.Y);
         double pace = Min(8.0,offset.Length());
         Vel.X = Cos(Angle)*pace; Vel.Y = Sin(Angle)*pace;
+        CaelumThermalMotion.SetVelocity(self);
     }
 
     action void A_EnablePalomoWander()
@@ -331,6 +332,7 @@ class CaelumPalomo : CaelumInteractiveFolkloreActor
             Angle = returnDirection;
             Vel.X = Cos(returnDirection) * resolvedSpeed;
             Vel.Y = Sin(returnDirection) * resolvedSpeed;
+        CaelumThermalMotion.SetVelocity(self);
             return;
         }
 
@@ -362,6 +364,7 @@ class CaelumPalomo : CaelumInteractiveFolkloreActor
         Angle = WanderDirection;
         Vel.X = Cos(WanderDirection) * Speed;
         Vel.Y = Sin(WanderDirection) * Speed;
+        CaelumThermalMotion.SetVelocity(self);
     }
 
     override bool InteractWithCaelumPlayer(CaelumPlayer caelumPlayer)
@@ -632,7 +635,7 @@ class CaelumZupayColossus : CaelumFolkloreCombatActor
         boss.target = boss.SewerEscapeTarget;
         boss.Speed = boss.CombatBaseSpeed * CaelumConstants.SEWER_ZUPAY_FLEE_SPEED_MULTIPLIER;
         // Navegación nativa sin ataques; misma cadencia que la carrera normal.
-        boss.A_Chase(null, null, CHF_DONTLOOKALLAROUND);
+        boss.ThermalChase(null, null, CHF_DONTLOOKALLAROUND);
     }
 
     override void OnDestroy()
@@ -708,7 +711,7 @@ class CaelumZupayColossus : CaelumFolkloreCombatActor
             CaelumConstants.ZUPAY_SLAM_RADIUS_MAP_UNITS,
             CaelumConstants.ZUPAY_SLAM_VERTICAL_SPEED
         );
-        ZUPY E 32;
+        ZUPY E 32 A_CaelumThermalAttackFrame;
         Goto See;
     Missile:
         TNT1 A 0 A_StopSound(CHAN_7);

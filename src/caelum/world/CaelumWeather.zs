@@ -2,7 +2,7 @@
 // Datos observados y supuestos de simulación se distinguen en SYSTEMS.md.
 class CaelumWeatherRules : Object
 {
-    const REVISION=2;
+    const REVISION=3;
     const PROFILE_NONE=0;
     const PROFILE_LIMBO=1;
     const PROFILE_SEWERS=2;
@@ -108,17 +108,11 @@ class CaelumWeatherShelter : Object play
     static int Resolve(CaelumPlayer user,int profile)
     {
         if(profile==CaelumWeatherRules.PROFILE_LIMBO)return CaelumWeatherRules.LIMBO;
-        if(CaelumVehicleWorld.UnderRoof(user))return CaelumWeatherRules.CANOPY;
-        FLineTraceData hit;
-        double z=user.Pos.Z+Min(48.0,user.Height*0.75);
-        // Traza geométrica: ignora actores, respeta techos, pendientes y pisos 3D.
-        bool roof=user.LineTrace(0,65536,-90,TRF_THRUACTORS|TRF_ABSPOSITION|TRF_NOSKY,z,user.Pos.X,user.Pos.Y,hit);
-        if(!roof || hit.HitType==FLineTraceData.TRACE_HasHitSky)return CaelumWeatherRules.OPEN;
+        if(CaelumVehicleWorld.UnderRoof(user))return CaelumWeatherRules.INDOOR;
+        bool roof=CaelumThermalShelter.Roof(user);
+        if(!roof)return CaelumWeatherRules.OPEN;
         if(profile>=2 && profile<=4)return CaelumWeatherRules.UNDERGROUND;
-        int walls=0;
-        for(int i=0;i<4;i++)
-            if(user.LineTrace(i*90,1024,0,TRF_THRUACTORS|TRF_ABSPOSITION|TRF_NOSKY,z,user.Pos.X,user.Pos.Y,hit))walls++;
-        return walls>=3?CaelumWeatherRules.INDOOR:CaelumWeatherRules.CANOPY;
+        return CaelumThermalShelter.WindBlocked(user)?CaelumWeatherRules.INDOOR:CaelumWeatherRules.CANOPY;
     }
 }
 
@@ -215,7 +209,7 @@ class CaelumWeatherSample : Object
         if(shelter==CaelumWeatherRules.CANOPY)
         { AirTemperatureC=NormalMeanC+(AirTemperatureC-NormalMeanC)*0.95;WindSpeedKmh*=0.65; }
         if(shelter==CaelumWeatherRules.INDOOR)
-        { AirTemperatureC=NormalMeanC+(AirTemperatureC-NormalMeanC)*0.45;WindSpeedKmh*=0.1; }
+        { AirTemperatureC=NormalMeanC+(AirTemperatureC-NormalMeanC)*0.45;WindSpeedKmh=0;WindFromDegrees=0; }
         if(shelter==CaelumWeatherRules.UNDERGROUND)
         { AirTemperatureC=GroundTemperatureC;WindSpeedKmh=0;WindFromDegrees=0; }
         RelativeHumidityPercent=Clamp(vapor/CaelumWeatherRules.Saturation(AirTemperatureC)*100,0,100);
@@ -242,6 +236,7 @@ class CaelumWeatherState : Inventory
     vector3 SamplePosition;
     CaelumClimateRegion RegionMarker;
     int MarkerCheckedTic;
+    bool WindSheltered;
     String SourceMap;
     CaelumWeatherSample Current,Outside;
     static CaelumWeatherState Get(CaelumPlayer user,bool create=false)
@@ -293,9 +288,11 @@ class CaelumWeatherState : Inventory
         if(positionChanged)
         {
             weather.Shelter=CaelumWeatherShelter.Resolve(user,profile);
+            weather.WindSheltered=CaelumThermalShelter.WindBlocked(user);
             weather.SamplePosition=user.Pos;weather.GeometryCheckedTic=level.maptime;
         }
         weather.Current.ApplyShelter(weather.Outside,weather.Shelter,profile);
+        if(weather.WindSheltered){weather.Current.WindSpeedKmh=0;weather.Current.WindFromDegrees=0;}
         weather.SourceMap=level.MapName;weather.LocationId=location;weather.Profile=profile;weather.Region=region;
         weather.SampleDate=serial;weather.SampleMinute=minute;weather.Revision=CaelumWeatherRules.REVISION;
     }

@@ -252,6 +252,8 @@ class CaelumChannelEffect : Actor
             if (!IsAuthorizedTarget(candidate)
                 || !IsInside(candidate, Pos, EffectRadius)) continue;
             affectedCount++;
+            if(SealType==CaelumConstants.SEAL_FIRE && ChannelOwner!=null && ChannelOwner.DerivedStats!=null)
+                CaelumThermalMagic.Continuous(candidate,100.0*ChannelOwner.DerivedStats.MagicalPushMultiplier,1.0/TICRATE);
             double combinedPower = ChannelOwner != null
                 && ChannelOwner.DerivedStats != null
                 ? ChannelOwner.DerivedStats.PhysicalPushMultiplier

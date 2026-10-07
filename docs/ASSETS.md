@@ -1,6 +1,18 @@
 # Caelum Argenteum — Audio and art
 
-Documentation version: **5.0.6** — 2026-10-07.
+Documentation version: **5.1.0** — 2026-10-07.
+
+## 5.1.0 — Thermal validation sources (#130)
+
+`assets/validation_510` contains deterministic isolated map/PK3 generators,
+native test sources, raw logs/settings, source/package fingerprints, drying
+calibration, migration/rollback tooling and English/Spanish UI captures.
+Generated maps, gameplay packages and saves stay in ignored `build/issue130`;
+neither development IWAD nor engine is distributed. No new art/audio is added
+and no recipe material is reinterpreted from appearance. Physical references
+and authored calibration are distinguished in SYSTEMS. Optional fire markers
+require explicit power and physical dimensions; existing decorative sprites
+do not imply a rating. Unrelated local source-art deletion is excluded.
 
 ## 5.0.6 — Normal high-density AI evidence (#128)
 

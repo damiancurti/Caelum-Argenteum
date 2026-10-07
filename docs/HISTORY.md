@@ -1,6 +1,41 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **5.0.6** — 2026-10-07.
+Documentation version: **5.1.0** — 2026-10-07.
+
+## 5.1.0 — Thermal survival (#130, 2026-10-07)
+
+The author requests implementation, live tests, clarification, commit/push and
+temporary prevention of machine sleep. Successive issue amendments and answers
+approve thermal armor mapping without recipe changes; ground-temperature water
+fallback; demons at 32 C; furry bulls/rats at 17 C; enclosed carts/ships;
+dangerous journey rejection; mass-based inertia; Minetti descent braking;
+logical journey effort; nominal Air action profiles anchored to jump work;
+provisional swimming/blocked walking profiles and 0.95 fire absorption.
+SYSTEMS consolidates the final contract and sources rather than treating the
+superseded Air-depletion/met model as current behavior.
+
+Delivery adds independent versioned state, regional heat/moisture exchange,
+world/real clock separation, combat/resource effects, activity work, journey
+forecasting and bilingual presentation. Testing found and corrected one-tic
+jump detection, double/global environment work, native stacked water coverage,
+natural attack timing and stale hub sampling clocks. Coupled drying capacities
+were fitted and verified against all four approved reference times.
+
+Agent evidence: native formula/integration/geometry/live checks; ordinary and
+Limbo clocks; full-army arrival and seeded harmful-state stress; visual review
+in both languages; baseline/current/hub/rollback saves with inventory and quest
+fields. The old-runtime control matches every prior persistent-record field.
+Raw GZDoom cannot deserialize the new class in unmodified 5.0.6; the tested
+reproducible bridge preserves inert thermal data for reversible return.
+Exact builds, logs, settings, corrections and limits are in
+[5.1.0 results](../assets/validation_510/RESULTS.json).
+
+**Not author acceptance:** CA130-01, CA130-02 and CA130-03 originate here and
+remain outstanding. No earlier generic confirmation applies to this new patch.
+Thermal calibration and exceptional geometry/action cases remain explicitly
+qualified in SYSTEMS. No new art/audio assets, recipes or encounters are added.
+Keep-awake uses thread-scoped Windows execution requests, not power-plan edits;
+release evidence is recorded with the validation artifacts at task completion.
 
 ## 5.0.6 — Automatic normal high-density AI (#128, 2026-10-07)
 

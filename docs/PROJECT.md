@@ -1,6 +1,61 @@
 # Caelum Argenteum — Project, status and roadmap
 
-Documentation version: **5.0.6** — 2026-10-07.
+Documentation version: **5.1.0** — 2026-10-07.
+
+## 5.1.0 — Thermal exposure and energy transfer (#130)
+
+Implemented for review, with native GZDoom 4.14.2 evidence; **author acceptance
+is pending**. The canonical [thermal contract](SYSTEMS.md#thermal-exposure-and-energy-transfer-130)
+records every mapping, coefficient, time domain and approximation. Players and
+approved humanoid/furry NPC profiles have independent exposure, water,
+acclimatization, effort heat and fractional damage. Weather, anatomy, actual
+equipment, water volumes, shelter, combat and journey authority remain shared
+with existing systems. Recipes, campaign maps and army AI policies are unchanged.
+
+Author decisions include demon comfort at 32 C, furry animal comfort at 17 C,
+thermal materials by armor type, ground-temperature fallback for water,
+four-wall/roof protection during cart/ship travel, unsafe departure rejection,
+Minetti descent braking, jump-referenced nominal action profiles and provisional
+0.95 fire absorption. Unsupported decorative fire ratings and hot/cold item
+assignments are not invented. Species-specific moisture capacities, irregular
+shelter geometry and exceptional-speed activity remain calibration limits.
+
+Isolated native checks cover formulas and exact boundaries, coupled drying at
+60/120/180/300 world minutes, body/animal ratios, layered water volumes,
+shelter/fire obstruction, actual resource and magic routes, native walking/jump,
+voluntary/passive motion and real-time damage. Limbo verifies 1:1 simulation
+and frozen civil time; extra personal time produces no extra real HP damage.
+English and Spanish Journal captures were visually inspected. Save tests cover
+5.0.6 migration, inventory/quest preservation, current reload, hub return and
+an explicit reversible schema bridge. All preexisting persistent-record fields
+match an old-runtime control; thermal state survives old-runtime rollback
+without being simulated there. Evidence and qualifications:
+[RESULTS.json](../assets/validation_510/RESULTS.json).
+
+**Demon sewer consequence:** a fixed native-model projection at 1889-11-03
+09:00, seed 1, sewer air 17.899416 C / RH 89.842612%, dry base clothing and
+initial E/acclimatization zero reaches first cold for a 66 kg / D6 Mandinga
+after 24 world minutes and a 666 kg / D33 Zupay after 73. At four world hours,
+E is -13.947/-13.883, both tier 1. Thus these conditions can cause cold damage
+once real simulation continues. This is a controlled projection, not four
+hours of observed gameplay; movement, equipment, weather and acclimatization
+can change the result. No offline HP damage is invented.
+
+**Incremental performance:** same Windows/Vulkan machine, 1280x720, 60 FPS cap,
+background unpaused, 5% audio, RNG seed 116, full MAP06 roster 6,001 attackers
+and 600 defenders. Tics 105–700 give 34.48/34.95 tics/s in accepted 5.0.6 and
+33.62/34.15 with thermal simulation. These are short arrival samples, not late
+battle or sustained 30-FPS proof. The current observer also reads one thermal
+aggregate per second, so the comparison includes that small diagnostic cost.
+An initial implementation achieved only 9.05 tics/s; removing per-body global
+ranch searches and avoiding redundant attribute/environment work restored the
+reported throughput. NPC updates are staggered, not disabled offscreen.
+A separate seeded extreme-cold army stress run exercises harmful updates on
+6,597 surviving NPCs; it is not a baseline-matched gameplay trajectory.
+
+Next: author checks CA130-01 through CA130-03, then review/merge only on author
+instruction. Preserve existing campaign/network and late-battle performance
+roadmap work; implementation evidence is not author acceptance.
 
 ## 5.0.6 — Automatic high-density AI and shared work (#128)
 
@@ -3747,7 +3802,7 @@ content extensions and the pending previous versions are returned to V5.
 | V4.37: Tarot and Trucazo | Implemented and feature-accepted: physical 78-card deck, three campaign essences with selection/activation, and a complete NPC Trucazo slice. #82 / 4.37.24 owns final integration and export. Remaining acquisition, Major powers, broader awakening and team/network modes stay in V5. |
 | **V4 test export** | #17 / 4.36.28 is accepted historical evidence. #82 / 4.37.24 exports the current integrated MAP01 -> MAP02 -> MAP06 slice with initial controls and final validation. It does not claim full campaign or standalone completion. |
 | **V5.0: modular code architecture** | The bounded #116–#120 series is implemented: player services/adapters, authoritative inventory and Tarot operations, explicit per-player contracts and integrated native validation. #119/#120 author acceptance passed on 2026-10-06. Compatible inputs/selectors/save adapters remain; further F1–F4 coordination/performance/network work is separate and full multiplayer is not claimed. |
-| V5.1: thermal exposure | Model of heat/cold based on climate, zones, activity, persistent humidity, wind and real equipment; Resilience, consumables, shelters, drying, rest and acclimatization. Numerical curves await the author's balance decisions. |
+| V5.1: thermal exposure | #130 / 5.1.0 implements the author-approved exposure, wetness, energy, Toughness, shelter, effort and travel model with native evidence. Author acceptance remains pending; see the current thermal contract and calibration limits. |
 | V5.x: marine resources and biomes | Persistent 3D sources, melee extraction slashing/piercing, toughness/rarity/depth/region/skill, exhaustion and regeneration. Marine biomes, algae/iodine and non-potable waters; stores maintain access to remote materials. |
 
 ### V5 native menus, character setup and exploration — approved 2026-10-05

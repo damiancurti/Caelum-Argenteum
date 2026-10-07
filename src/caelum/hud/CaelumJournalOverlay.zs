@@ -4,6 +4,7 @@
 class CaelumJournalOverlay : EventHandler
 {
     const JOURNAL_PAGE_COUNT = 7;
+    ui bool ThermalDetailsOpen;
 
     Font TitleFont;
     Font TextFont;
@@ -68,6 +69,7 @@ class CaelumJournalOverlay : EventHandler
                 SetJournalPage(next);
                 SendNetworkEvent("ca_journal_menu_select_sound");
             }
+            else if (page==2 && x>=440 && x<612 && y>=104 && y<126)ThermalDetailsOpen=!ThermalDetailsOpen;
             else if (page == 3) CaelumCraftingUI.Click(self,user,x,y);
             else if (page == 6 && x >= 64 && x < 184 && y >= 150 && y < 310) RequestTarotSelection();
             return true;
@@ -2076,8 +2078,33 @@ class CaelumJournalOverlay : EventHandler
                 StringTable.Localize(CaelumWeatherRules.ShelterKey(weather.Shelter), false)));
     }
 
+    ui void DrawThermalPage(CaelumPlayer localPlayer)
+    {
+        let record=CaelumPersistentCharacterState(localPlayer.FindInventory("CaelumPersistentCharacterState"));
+        let thermal=record!=null ? record.ThermalState : null;
+        if(thermal==null)return;
+        DrawTextLine(TextFont,Font.CR_GOLD,48,134,StringTable.Localize(
+            CaelumThermalRules.StateKey(thermal.Exposure,thermal.Toughness),false));
+        DrawTextLine(SmallFont,Font.CR_WHITE,48,156,String.Format(StringTable.Localize("CA_THERMAL_ENV",false),
+            thermal.AirC,thermal.ComfortC+thermal.Acclimation));
+        DrawTextLine(SmallFont,Font.CR_WHITE,48,172,String.Format(StringTable.Localize("CA_THERMAL_EXPOSURE",false),
+            thermal.Exposure,10*CaelumThermalRules.ThresholdScale(thermal.Toughness)));
+        DrawTextLine(SmallFont,Font.CR_WHITE,48,188,String.Format(StringTable.Localize("CA_THERMAL_WET",false),
+            thermal.WetnessPercent,thermal.Humidity,thermal.Acclimation));
+        DrawTextLine(SmallFont,Font.CR_WHITE,48,210,String.Format(StringTable.Localize("CA_THERMAL_COST",false),
+            CaelumThermalRules.HeatCost(thermal.Exposure,thermal.Toughness),100*CaelumThermalRules.Speed(thermal.Exposure,thermal.Toughness)));
+        DrawTextLine(SmallFont,Font.CR_WHITE,48,226,String.Format(StringTable.Localize("CA_THERMAL_ATTACK",false),
+            CaelumThermalRules.ColdAttack(thermal.Exposure,thermal.Toughness,true),CaelumThermalRules.ColdAttack(thermal.Exposure,thermal.Toughness,false)));
+        DrawTextLine(SmallFont,Font.CR_WHITE,48,242,String.Format(StringTable.Localize("CA_THERMAL_DAMAGE",false),
+            thermal.Severity*(1-CaelumThermalRules.DamageResistance(thermal.Toughness))));
+        DrawTextLine(SmallFont,Font.CR_GRAY,48,268,StringTable.Localize("CA_THERMAL_EXPLAIN",false));
+        DrawTextLine(SmallFont,Font.CR_GRAY,48,284,StringTable.Localize("CA_THERMAL_HELP",false));
+    }
+
     ui void DrawWorldPage(CaelumPlayer localPlayer)
     {
+        DrawTextLine(SmallFont,Font.CR_CYAN,440,110,StringTable.Localize("CA_THERMAL_TOGGLE",false));
+        if(ThermalDetailsOpen){DrawThermalPage(localPlayer);return;}
         // Dos columnas para las visitas y las salidas de la ubicación actual.
         // La UI sólo consulta el Inventory; no descubre ni ejecuta viajes.
         let record = CaelumPersistentCharacterState(localPlayer.FindInventory("CaelumPersistentCharacterState"));
@@ -2561,6 +2588,8 @@ class CaelumJournalOverlay : EventHandler
         }
 
         int currentPage = GetJournalPage();
+        if(currentPage==2 && (keyString ~== "t" || character==116 || character==84))
+        {ThermalDetailsOpen=!ThermalDetailsOpen;return true;}
         bool craftingSession = currentPage == 3
             && localPlayer != null && localPlayer.CraftingMenuOpen;
 
