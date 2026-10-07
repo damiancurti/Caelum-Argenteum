@@ -1,6 +1,6 @@
 # AGENTS.md — Caelum Argenteum
 
-Documentation version: **5.0.5** — 2026-10-07.
+Documentation version: **5.0.6** — 2026-10-07.
 
 Startup guide for AI agents and human contributors. This file describes **how
 to work** on the project, not what balance or design it contains. Balance
@@ -128,6 +128,21 @@ Premises 11 to 20 were added on request by the author.
 
 ## Expected workflow
 
+### Standing performance policy (#128)
+
+The author requires accepted performance improvements to be integrated into
+normal gameplay and activated automatically when the entire map contains at
+least 500 living combatants, including offscreen bodies. Keep the threshold
+definition in SYSTEMS and its shared runtime constant authoritative. Isolated
+diagnostic prototypes remain useful evidence; they are not a completed
+production delivery. Apply each optimization to the subsystem it supports;
+do not invent faction, civilian, targeting or combat rules for unrelated AI.
+Retain individual combat/resources/collision unless the author explicitly
+changes that policy. Native tests run unpaused in the background at 5% audio;
+temporary keep-awake requests must be released afterward.
+
+### Patch workflow
+
 1. **Read context.** Start with `docs/CONTEXT.md`, then the canonical document
    for the task per the table above, using selective reading to open only the
    relevant sections.
@@ -238,4 +253,3 @@ lifecycle permits removing confirmed entries, not deleting unrelated files.
 When there are no pending tests, keep the tracked file empty; no boilerplate.
 Agent-only checks and development backlog belong in PR evidence and TASKS,
 respectively, rather than the author queue.
-

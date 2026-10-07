@@ -1,0 +1,1204 @@
+Log started: 2026-10-07 03:53:22
+GZDoom version g4.14.2
+D_DoomInit: Static RNGseed 116 set.
+W_Init: Init WADfiles.
+adding C:/Program Files (x86)/GZDoom/gzdoom.pk3, 692 lumps
+adding C:/Program Files (x86)/GZDoom/game_support.pk3, 3308 lumps
+adding C:/Program Files (x86)/Steam/steamapps/common/ultimate doom/base/doom2/DOOM2.WAD, 2919 lumps
+adding C:/Program Files (x86)/Steam/steamapps/common/Ultimate Doom/rerelease/id24res.wad, 530 lumps
+adding C:/Program Files (x86)/GZDoom/game_widescreen_gfx.pk3, 214 lumps
+adding C:/GZDooMProjects/CaelumArgenteum/build/issue128/counters-pruned-cannon.pk3, 6189 lumps
+adding C:/GZDooMProjects/CaelumArgenteum/build/issue128/counters.pk3, 5 lumps
+S_Init: Setting up sound.
+I_InitSound: Initializing OpenAL
+  Opened device OpenAL Soft on G27F (NVIDIA High Definition Audio)
+  EFX enabled
+I_InitInput
+I_StartupMouse
+I_StartupKeyboard
+I_StartupXInput
+I_StartupRawPS2
+I_StartupDirectInputJoystick
+Vulkan device: NVIDIA GeForce RTX 3070 Ti
+Vulkan device type: discrete gpu
+Vulkan version: 1.4.303 (api) 576.352.0 (driver)
+Vulkan extensions: VK_KHR_16bit_storage VK_KHR_8bit_storage VK_KHR_acceleration_structure VK_KHR_bind_memory2 VK_KHR_buffer_device_address VK_KHR_calibrated_timestamps VK_KHR_compute_shader_derivatives VK_KHR_cooperative_matrix VK_KHR_copy_commands2 VK_KHR_create_renderpass2 VK_KHR_dedicated_allocation VK_KHR_deferred_host_operations VK_KHR_depth_stencil_resolve VK_KHR_descriptor_update_template VK_KHR_device_group VK_KHR_draw_indirect_count VK_KHR_driver_properties VK_KHR_dynamic_rendering VK_KHR_dynamic_rendering_local_read VK_KHR_external_fence VK_KHR_external_fence_win32 VK_KHR_external_memory VK_KHR_external_memory_win32 VK_KHR_external_semaphore VK_KHR_external_semaphore_win32 VK_KHR_format_feature_flags2 VK_KHR_fragment_shader_barycentric VK_KHR_fragment_shading_rate VK_KHR_get_memory_requirements2 VK_KHR_global_priority VK_KHR_image_format_list VK_KHR_imageless_framebuffer VK_KHR_index_type_uint8 VK_KHR_line_rasterization VK_KHR_load_store_op_none VK_KHR_maintenance1 VK_KHR_maintenance2 VK_KHR_maintenance3 VK_KHR_maintenance4 VK_KHR_maintenance5 VK_KHR_maintenance6 VK_KHR_maintenance7 VK_KHR_map_memory2 VK_KHR_multiview VK_KHR_pipeline_binary VK_KHR_pipeline_executable_properties VK_KHR_pipeline_library VK_KHR_present_id VK_KHR_present_wait VK_KHR_push_descriptor VK_KHR_ray_query VK_KHR_ray_tracing_maintenance1 VK_KHR_ray_tracing_pipeline VK_KHR_ray_tracing_position_fetch VK_KHR_relaxed_block_layout VK_KHR_sampler_mirror_clamp_to_edge VK_KHR_sampler_ycbcr_conversion VK_KHR_separate_depth_stencil_layouts VK_KHR_shader_atomic_int64 VK_KHR_shader_clock VK_KHR_shader_draw_parameters VK_KHR_shader_expect_assume VK_KHR_shader_float16_int8 VK_KHR_shader_float_controls VK_KHR_shader_float_controls2 VK_KHR_shader_integer_dot_product VK_KHR_shader_maximal_reconvergence VK_KHR_shader_non_semantic_info VK_KHR_shader_quad_control VK_KHR_shader_relaxed_extended_instruction VK_KHR_shader_subgroup_extended_types VK_KHR_shader_subgroup_rotate VK_KHR_shader_subgroup_uniform_control_flow VK_KHR_shader_terminate_invocation VK_KHR_spirv_1_4 VK_KHR_storage_buffer_storage_class VK_KHR_swapchain VK_KHR_swapchain_mutable_format VK_KHR_synchronization2 VK_KHR_timeline_semaphore VK_KHR_uniform_buffer_standard_layout VK_KHR_variable_pointers VK_KHR_vertex_attribute_divisor VK_KHR_video_decode_av1 VK_KHR_video_decode_h264 VK_KHR_video_decode_h265 VK_KHR_video_decode_queue VK_KHR_video_encode_h264 VK_KHR_video_encode_h265 VK_KHR_video_encode_quantization_map VK_KHR_video_encode_queue VK_KHR_video_maintenance1 VK_KHR_video_maintenance2 VK_KHR_video_queue VK_KHR_vulkan_memory_model VK_KHR_win32_keyed_mutex VK_KHR_workgroup_memory_explicit_layout VK_KHR_zero_initialize_workgroup_memory VK_EXT_4444_formats VK_EXT_attachment_feedback_loop_dynamic_state VK_EXT_attachment_feedback_loop_layout VK_EXT_blend_operation_advanced VK_EXT_border_color_swizzle VK_EXT_buffer_device_address VK_EXT_calibrated_timestamps VK_EXT_color_write_enable VK_EXT_conditional_rendering VK_EXT_conservative_rasterization VK_EXT_custom_border_color VK_EXT_depth_bias_control VK_EXT_depth_clamp_control VK_EXT_depth_clamp_zero_one VK_EXT_depth_clip_control VK_EXT_depth_clip_enable VK_EXT_depth_range_unrestricted VK_EXT_descriptor_buffer VK_EXT_descriptor_indexing VK_EXT_device_address_binding_report VK_EXT_device_fault VK_EXT_device_generated_commands VK_EXT_discard_rectangles VK_EXT_dynamic_rendering_unused_attachments VK_EXT_extended_dynamic_state VK_EXT_extended_dynamic_state2 VK_EXT_extended_dynamic_state3 VK_EXT_external_memory_host VK_EXT_fragment_shader_interlock VK_EXT_full_screen_exclusive VK_EXT_global_priority VK_EXT_global_priority_query VK_EXT_graphics_pipeline_library VK_EXT_hdr_metadata VK_EXT_host_image_copy VK_EXT_host_query_reset VK_EXT_image_2d_view_of_3d VK_EXT_image_robustness VK_EXT_image_sliced_view_of_3d VK_EXT_image_view_min_lod VK_EXT_index_type_uint8 VK_EXT_inline_uniform_block VK_EXT_legacy_vertex_attributes VK_EXT_line_rasterization VK_EXT_load_store_op_none VK_EXT_memory_budget VK_EXT_memory_priority VK_EXT_mesh_shader VK_EXT_multi_draw VK_EXT_mutable_descriptor_type VK_EXT_nested_command_buffer VK_EXT_non_seamless_cube_map VK_EXT_opacity_micromap VK_EXT_pageable_device_local_memory VK_EXT_pci_bus_info VK_EXT_pipeline_creation_cache_control VK_EXT_pipeline_creation_feedback VK_EXT_pipeline_library_group_handles VK_EXT_pipeline_robustness VK_EXT_post_depth_coverage VK_EXT_present_mode_fifo_latest_ready VK_EXT_primitive_topology_list_restart VK_EXT_primitives_generated_query VK_EXT_private_data VK_EXT_provoking_vertex VK_EXT_queue_family_foreign VK_EXT_robustness2 VK_EXT_sample_locations VK_EXT_sampler_filter_minmax VK_EXT_scalar_block_layout VK_EXT_separate_stencil_usage VK_EXT_shader_atomic_float VK_EXT_shader_demote_to_helper_invocation VK_EXT_shader_image_atomic_int64 VK_EXT_shader_module_identifier VK_EXT_shader_object VK_EXT_shader_replicated_composites VK_EXT_shader_subgroup_ballot VK_EXT_shader_subgroup_vote VK_EXT_shader_viewport_index_layer VK_EXT_subgroup_size_control VK_EXT_swapchain_maintenance1 VK_EXT_texel_buffer_alignment VK_EXT_tooling_info VK_EXT_transform_feedback VK_EXT_vertex_attribute_divisor VK_EXT_vertex_attribute_robustness VK_EXT_vertex_input_dynamic_state VK_EXT_ycbcr_2plane_444_formats VK_EXT_ycbcr_image_arrays VK_NV_acquire_winrt_display VK_NV_clip_space_w_scaling VK_NV_cluster_acceleration_structure VK_NV_compute_shader_derivatives VK_NV_cooperative_matrix VK_NV_cooperative_matrix2 VK_NV_cooperative_vector VK_NV_copy_memory_indirect VK_NV_corner_sampled_image VK_NV_coverage_reduction_mode VK_NV_cuda_kernel_launch VK_NV_dedicated_allocation VK_NV_dedicated_allocation_image_aliasing VK_NV_descriptor_pool_overallocation VK_NV_device_diagnostic_checkpoints VK_NV_device_diagnostics_config VK_NV_device_generated_commands VK_NV_device_generated_commands_compute VK_NV_disk_cache_utils VK_NV_external_memory VK_NV_external_memory_win32 VK_NV_fill_rectangle VK_NV_fragment_coverage_to_color VK_NV_fragment_shader_barycentric VK_NV_fragment_shading_rate_enums VK_NV_framebuffer_mixed_samples VK_NV_geometry_shader_passthrough VK_NV_inherited_viewport_scissor VK_NV_internal_nvpresent VK_NV_linear_color_attachment VK_NV_low_latency VK_NV_low_latency2 VK_NV_memory_decompression VK_NV_mesh_shader VK_NV_optical_flow VK_NV_partitioned_acceleration_structure VK_NV_present_metering VK_NV_raw_access_chains VK_NV_ray_tracing VK_NV_ray_tracing_invocation_reorder VK_NV_ray_tracing_motion_blur VK_NV_representative_fragment_test VK_NV_sample_mask_override_coverage VK_NV_scissor_exclusive VK_NV_shader_atomic_float16_vector VK_NV_shader_image_footprint VK_NV_shader_sm_builtins VK_NV_shader_subgroup_partitioned VK_NV_shading_rate_image VK_NV_viewport_array2 VK_NV_viewport_swizzle VK_NV_win32_keyed_mutex VK_NVX_binary_import VK_NVX_image_view_handle VK_NVX_multiview_per_view_attributes VK_AMD_buffer_marker VK_GOOGLE_hlsl_functionality1 VK_GOOGLE_user_type
+Max. texture size: 32768
+Max. uniform buffer range: 65536
+Min. uniform buffer offset alignment: 64
+Resolution: 1520 x 825
+I_Init: Setting up machine state.
+CPU speed: 3400 MHz
+CPU Vendor ID: AuthenticAMD
+  Name: AMD Ryzen 9 5950X 16-Core Processor 
+  Family 25 (25), Model 33, Stepping 0
+  Features: SSE2 SSE3 SSSE3 SSE4.1 SSE4.2 AVX AVX2 F16C FMA3 BMI1 BMI2 HyperThreading
+V_Init: allocate screen.
+ST_Init: Init startup screen.
+Checking cmd-line parameters...
+S_InitData: Load sound definitions.
+G_ParseMapInfo: Load map definitions.
+Texman.Init: Init texture manager.
+ParseTeamInfo: Load team definitions.
+LoadActors: Load actor definitions.
+script parsing took 915.64 ms
+R_Init: Init Doom refresh subsystem.
+DecalLibrary: Load decals.
+M_Init: Init menus.
+P_Init: Init Playloop state.
+ParseSBarInfo: Loading custom status bar definition.
+D_CheckNetGame: Checking network game status.
+player 1 of 1 (1 nodes)
+
+----------------------------------------
+
+MAP06 - Barracas al Sud — fortified port
+
+CA128 BATTLE tic=0 living=5 active=0 revision=0 groups=0 reduced=0 incomplete=0 damage=0 deaths=0 projectiles=0 cannonShots=0
+CA128 WORK tic=-1 queries=0 lists=0 visits=0 cannonQueries=0 cannonSight=0
+[Caelum] Inicio por comando directo: perfil de prueba seguro aplicado.
+[Caelum] Character creation values loaded. Attribute total: 150.00
+PORT16 deployed Mandingas=6000 commander=1 defenders=600 hostileMachines=12 guns=42
+CA121 COUNT tic=0 candidates=0 sight=0 decisions=0 commands=0
+CA128 WORK tic=0 queries=0 lists=0 visits=0 cannonQueries=0 cannonSight=0
+CA128 WORK tic=1 queries=0 lists=0 visits=0 cannonQueries=0 cannonSight=0
+CA128 WORK tic=2 queries=0 lists=0 visits=0 cannonQueries=0 cannonSight=0
+CA128 WORK tic=3 queries=0 lists=0 visits=0 cannonQueries=0 cannonSight=0
+CA128 WORK tic=4 queries=0 lists=0 visits=0 cannonQueries=0 cannonSight=0
+CA128 WORK tic=5 queries=0 lists=0 visits=0 cannonQueries=0 cannonSight=0
+CA128 WORK tic=6 queries=0 lists=0 visits=0 cannonQueries=0 cannonSight=0
+CA128 WORK tic=7 queries=0 lists=0 visits=0 cannonQueries=0 cannonSight=0
+CA128 WORK tic=8 queries=0 lists=0 visits=0 cannonQueries=0 cannonSight=0
+CA128 WORK tic=9 queries=64 lists=1 visits=38464 cannonQueries=0 cannonSight=0
+CA121 FRAME tic=11 ms=5542.650900 interval=181.685800
+CA128 WORK tic=10 queries=0 lists=0 visits=0 cannonQueries=0 cannonSight=0
+CA128 WORK tic=11 queries=0 lists=0 visits=0 cannonQueries=0 cannonSight=0
+CA128 WORK tic=12 queries=0 lists=0 visits=0 cannonQueries=0 cannonSight=0
+CA128 WORK tic=13 queries=0 lists=0 visits=0 cannonQueries=0 cannonSight=0
+CA128 WORK tic=14 queries=0 lists=0 visits=0 cannonQueries=0 cannonSight=0
+CA128 WORK tic=15 queries=0 lists=0 visits=0 cannonQueries=0 cannonSight=0
+CA121 FRAME tic=17 ms=5658.493900 interval=115.843000
+CA128 WORK tic=16 queries=0 lists=0 visits=0 cannonQueries=0 cannonSight=0
+CA128 WORK tic=17 queries=64 lists=1 visits=38464 cannonQueries=0 cannonSight=0
+CA128 WORK tic=18 queries=0 lists=0 visits=0 cannonQueries=0 cannonSight=0
+CA128 WORK tic=19 queries=0 lists=0 visits=0 cannonQueries=0 cannonSight=0
+CA121 FRAME tic=21 ms=5743.977800 interval=85.483900
+CA128 WORK tic=20 queries=0 lists=0 visits=0 cannonQueries=0 cannonSight=0
+CA128 WORK tic=21 queries=0 lists=0 visits=0 cannonQueries=0 cannonSight=0
+CA128 WORK tic=22 queries=0 lists=0 visits=0 cannonQueries=0 cannonSight=0
+CA121 FRAME tic=24 ms=5859.844800 interval=115.867000
+CA128 WORK tic=23 queries=0 lists=0 visits=0 cannonQueries=0 cannonSight=0
+CA128 WORK tic=24 queries=0 lists=0 visits=0 cannonQueries=0 cannonSight=0
+CA128 WORK tic=25 queries=64 lists=1 visits=38464 cannonQueries=0 cannonSight=0
+CA128 WORK tic=26 queries=0 lists=0 visits=0 cannonQueries=0 cannonSight=0
+CA121 FRAME tic=28 ms=5953.170000 interval=93.325200
+CA128 WORK tic=27 queries=0 lists=0 visits=0 cannonQueries=0 cannonSight=0
+CA128 WORK tic=28 queries=0 lists=0 visits=0 cannonQueries=0 cannonSight=0
+CA128 WORK tic=29 queries=0 lists=0 visits=0 cannonQueries=0 cannonSight=0
+CA121 FRAME tic=31 ms=6013.229800 interval=60.059800
+CA128 WORK tic=30 queries=0 lists=0 visits=0 cannonQueries=0 cannonSight=0
+CA128 WORK tic=31 queries=0 lists=0 visits=0 cannonQueries=0 cannonSight=0
+CA121 FRAME tic=33 ms=6051.351700 interval=38.121900
+CA128 WORK tic=32 queries=0 lists=0 visits=0 cannonQueries=0 cannonSight=0
+CA128 WORK tic=33 queries=64 lists=1 visits=38464 cannonQueries=0 cannonSight=0
+CA121 FRAME tic=35 ms=6109.991700 interval=58.640000
+CA128 BATTLE tic=35 living=6602 active=1 revision=2 groups=64 reduced=0 incomplete=0 damage=0 deaths=0 projectiles=0 cannonShots=0
+CA128 WORK tic=34 queries=0 lists=0 visits=0 cannonQueries=0 cannonSight=0
+CA121 SIM tic=35 ms=6117.830100 roster=6001 attackers=6001 defenders=600 groups=64 moving=0 blocked=0 x=0.000 y=320.000 z=-0.000 angle=90.000
+CA121 MOTION tic=35 displaced=0 distance=0.000000 contacts=0
+CA121 SETTINGS pause=0 lower=0 render=1 sound=1 volume=0.050000
+CA128 WORK tic=35 queries=0 lists=0 visits=0 cannonQueries=0 cannonSight=0
+CA121 FRAME tic=37 ms=6161.320500 interval=51.328800
+CA128 WORK tic=36 queries=0 lists=0 visits=0 cannonQueries=0 cannonSight=0
+CA121 FRAME tic=38 ms=6208.555600 interval=47.235100
+CA121 COUNT tic=37 candidates=0 sight=0 decisions=0 commands=0
+CA128 WORK tic=37 queries=31 lists=1 visits=18631 cannonQueries=0 cannonSight=0
+CA128 WORK tic=38 queries=0 lists=0 visits=0 cannonQueries=0 cannonSight=0
+CA121 FRAME tic=40 ms=6248.692400 interval=40.136800
+CA128 WORK tic=39 queries=0 lists=0 visits=0 cannonQueries=0 cannonSight=0
+CA128 WORK tic=40 queries=0 lists=0 visits=0 cannonQueries=0 cannonSight=0
+CA121 FRAME tic=42 ms=6304.365100 interval=55.672700
+CA128 WORK tic=41 queries=34 lists=1 visits=20434 cannonQueries=0 cannonSight=0
+CA128 WORK tic=42 queries=1 lists=1 visits=601 cannonQueries=0 cannonSight=0
+CA121 FRAME tic=44 ms=6371.268500 interval=66.903400
+CA128 WORK tic=43 queries=0 lists=0 visits=0 cannonQueries=0 cannonSight=0
+CA128 WORK tic=44 queries=0 lists=0 visits=0 cannonQueries=0 cannonSight=0
+CA121 FRAME tic=46 ms=6451.248100 interval=79.979600
+CA128 WORK tic=45 queries=31 lists=1 visits=18631 cannonQueries=0 cannonSight=0
+CA128 WORK tic=46 queries=0 lists=0 visits=0 cannonQueries=0 cannonSight=0
+CA128 WORK tic=47 queries=0 lists=0 visits=0 cannonQueries=0 cannonSight=0
+CA121 FRAME tic=49 ms=6502.036700 interval=50.788600
+CA128 WORK tic=48 queries=0 lists=0 visits=0 cannonQueries=0 cannonSight=0
+CA128 WORK tic=49 queries=34 lists=1 visits=20434 cannonQueries=0 cannonSight=0
+CA121 FRAME tic=51 ms=6590.916600 interval=88.879900
+CA128 WORK tic=50 queries=1 lists=1 visits=601 cannonQueries=0 cannonSight=0
+CA128 WORK tic=51 queries=0 lists=0 visits=0 cannonQueries=0 cannonSight=0
+CA128 WORK tic=52 queries=0 lists=0 visits=0 cannonQueries=0 cannonSight=0
+CA121 FRAME tic=54 ms=6673.251200 interval=82.334600
+CA128 WORK tic=53 queries=31 lists=1 visits=18631 cannonQueries=0 cannonSight=0
+CA128 WORK tic=54 queries=0 lists=0 visits=0 cannonQueries=0 cannonSight=0
+CA128 WORK tic=55 queries=0 lists=0 visits=0 cannonQueries=0 cannonSight=0
+CA121 FRAME tic=57 ms=6731.514100 interval=58.262900
+CA128 WORK tic=56 queries=0 lists=0 visits=0 cannonQueries=0 cannonSight=0
+CA121 FRAME tic=58 ms=6782.306900 interval=50.792800
+CA128 WORK tic=57 queries=34 lists=1 visits=20434 cannonQueries=0 cannonSight=0
+CA128 WORK tic=58 queries=1 lists=1 visits=601 cannonQueries=0 cannonSight=0
+CA121 FRAME tic=60 ms=6830.308100 interval=48.001200
+CA128 WORK tic=59 queries=0 lists=0 visits=0 cannonQueries=0 cannonSight=0
+CA128 WORK tic=60 queries=0 lists=0 visits=0 cannonQueries=0 cannonSight=0
+CA121 FRAME tic=62 ms=6887.886800 interval=57.578700
+CA128 WORK tic=61 queries=31 lists=1 visits=18631 cannonQueries=0 cannonSight=0
+CA128 WORK tic=62 queries=0 lists=0 visits=0 cannonQueries=0 cannonSight=0
+CA121 FRAME tic=64 ms=6937.798700 interval=49.911900
+CA128 WORK tic=63 queries=0 lists=0 visits=0 cannonQueries=0 cannonSight=0
+CA128 WORK tic=64 queries=0 lists=0 visits=0 cannonQueries=0 cannonSight=0
+CA121 FRAME tic=66 ms=6997.303800 interval=59.505100
+CA128 WORK tic=65 queries=34 lists=1 visits=20434 cannonQueries=0 cannonSight=0
+CA128 WORK tic=66 queries=1 lists=1 visits=601 cannonQueries=0 cannonSight=0
+CA121 FRAME tic=68 ms=7037.815400 interval=40.511600
+CA128 WORK tic=67 queries=0 lists=0 visits=0 cannonQueries=0 cannonSight=0
+CA121 FRAME tic=69 ms=7069.450200 interval=31.634800
+CA128 WORK tic=68 queries=0 lists=0 visits=0 cannonQueries=0 cannonSight=0
+CA121 FRAME tic=70 ms=7110.719600 interval=41.269400
+CA128 BATTLE tic=70 living=6602 active=1 revision=2 groups=66 reduced=0 incomplete=0 damage=0 deaths=0 projectiles=241 cannonShots=0
+CA128 WORK tic=69 queries=31 lists=1 visits=18631 cannonQueries=0 cannonSight=0
+CA121 SIM tic=70 ms=7118.760700 roster=6001 attackers=6001 defenders=600 groups=66 moving=0 blocked=0 x=0.000 y=320.000 z=-0.000 angle=90.000
+CA121 MOTION tic=70 displaced=5989 distance=429858.785220 contacts=0
+CA128 WORK tic=70 queries=12 lists=1 visits=7212 cannonQueries=0 cannonSight=0
+CA121 FRAME tic=72 ms=7166.182000 interval=55.462400
+CA128 WORK tic=71 queries=0 lists=0 visits=0 cannonQueries=0 cannonSight=0
+CA128 WORK tic=72 queries=14 lists=1 visits=8414 cannonQueries=0 cannonSight=0
+CA121 FRAME tic=74 ms=7230.642100 interval=64.460100
+CA128 WORK tic=73 queries=34 lists=1 visits=20434 cannonQueries=0 cannonSight=0
+CA121 COUNT tic=74 candidates=0 sight=0 decisions=0 commands=0
+CA128 WORK tic=74 queries=1 lists=1 visits=601 cannonQueries=0 cannonSight=0
+CA121 FRAME tic=76 ms=7271.053400 interval=40.411300
+CA128 WORK tic=75 queries=0 lists=0 visits=0 cannonQueries=0 cannonSight=0
+CA121 FRAME tic=77 ms=7307.876400 interval=36.823000
+CA128 WORK tic=76 queries=0 lists=0 visits=0 cannonQueries=0 cannonSight=0
+CA128 WORK tic=77 queries=2 lists=1 visits=1202 cannonQueries=0 cannonSight=0
+CA121 FRAME tic=79 ms=7392.216200 interval=84.339800
+CA128 WORK tic=78 queries=12 lists=1 visits=7212 cannonQueries=0 cannonSight=0
+CA128 WORK tic=79 queries=0 lists=0 visits=0 cannonQueries=0 cannonSight=0
+CA128 WORK tic=80 queries=14 lists=1 visits=8414 cannonQueries=0 cannonSight=0
+CA121 FRAME tic=82 ms=7507.224600 interval=115.008400
+CA128 WORK tic=81 queries=34 lists=1 visits=20434 cannonQueries=0 cannonSight=0
+CA128 WORK tic=82 queries=1 lists=1 visits=601 cannonQueries=0 cannonSight=0
+CA128 WORK tic=83 queries=0 lists=0 visits=0 cannonQueries=0 cannonSight=0
+CA128 WORK tic=84 queries=0 lists=0 visits=0 cannonQueries=0 cannonSight=0
+CA121 FRAME tic=86 ms=7582.221200 interval=74.996600
+CA128 WORK tic=85 queries=2 lists=1 visits=1202 cannonQueries=0 cannonSight=0
+CA128 WORK tic=86 queries=12 lists=1 visits=7212 cannonQueries=0 cannonSight=0
+CA121 FRAME tic=88 ms=7623.688200 interval=41.467000
+CA128 WORK tic=87 queries=0 lists=0 visits=0 cannonQueries=0 cannonSight=0
+CA128 WORK tic=88 queries=14 lists=1 visits=8414 cannonQueries=0 cannonSight=0
+CA121 FRAME tic=90 ms=7678.760000 interval=55.071800
+CA128 WORK tic=89 queries=34 lists=1 visits=20434 cannonQueries=0 cannonSight=0
+CA128 WORK tic=90 queries=1 lists=1 visits=601 cannonQueries=0 cannonSight=0
+CA121 FRAME tic=92 ms=7721.076800 interval=42.316800
+CA128 WORK tic=91 queries=0 lists=0 visits=0 cannonQueries=0 cannonSight=0
+CA121 FRAME tic=93 ms=7755.071500 interval=33.994700
+CA128 WORK tic=92 queries=0 lists=0 visits=0 cannonQueries=0 cannonSight=0
+CA121 FRAME tic=94 ms=7794.974700 interval=39.903200
+CA128 WORK tic=93 queries=2 lists=1 visits=1202 cannonQueries=0 cannonSight=0
+CA128 WORK tic=94 queries=12 lists=1 visits=7212 cannonQueries=0 cannonSight=0
+CA121 FRAME tic=96 ms=7839.032100 interval=44.057400
+CA128 WORK tic=95 queries=0 lists=0 visits=0 cannonQueries=0 cannonSight=0
+CA121 FRAME tic=97 ms=7871.943100 interval=32.911000
+CA128 WORK tic=96 queries=14 lists=1 visits=8414 cannonQueries=0 cannonSight=0
+CA121 FRAME tic=98 ms=7920.130600 interval=48.187500
+CA128 WORK tic=97 queries=34 lists=1 visits=20434 cannonQueries=0 cannonSight=0
+CA128 WORK tic=98 queries=1 lists=1 visits=601 cannonQueries=0 cannonSight=0
+CA121 FRAME tic=100 ms=7990.686000 interval=70.555400
+CA128 WORK tic=99 queries=0 lists=0 visits=0 cannonQueries=0 cannonSight=0
+CA128 WORK tic=100 queries=0 lists=0 visits=0 cannonQueries=0 cannonSight=0
+CA128 WORK tic=101 queries=2 lists=1 visits=1202 cannonQueries=0 cannonSight=0
+CA121 FRAME tic=103 ms=8087.440400 interval=96.754400
+CA128 WORK tic=102 queries=12 lists=1 visits=7212 cannonQueries=0 cannonSight=0
+CA128 WORK tic=103 queries=0 lists=0 visits=0 cannonQueries=0 cannonSight=0
+CA128 BATTLE tic=105 living=6602 active=1 revision=2 groups=63 reduced=0 incomplete=0 damage=0 deaths=0 projectiles=621 cannonShots=0
+CA128 WORK tic=104 queries=14 lists=1 visits=8414 cannonQueries=0 cannonSight=0
+CA121 SIM tic=105 ms=8128.690800 roster=6001 attackers=6001 defenders=600 groups=63 moving=0 blocked=0 x=0.000 y=320.000 z=-0.000 angle=90.000
+CA121 MOTION tic=105 displaced=5987 distance=385586.710224 contacts=0
+CA121 FRAME tic=106 ms=8172.545000 interval=85.104600
+CA128 WORK tic=105 queries=47 lists=1 visits=28247 cannonQueries=0 cannonSight=0
+CA128 WORK tic=106 queries=1 lists=1 visits=601 cannonQueries=0 cannonSight=0
+CA128 WORK tic=107 queries=0 lists=0 visits=0 cannonQueries=0 cannonSight=0
+CA121 FRAME tic=109 ms=8231.455400 interval=58.910400
+CA128 WORK tic=108 queries=0 lists=0 visits=0 cannonQueries=0 cannonSight=0
+CA128 WORK tic=109 queries=1 lists=1 visits=601 cannonQueries=0 cannonSight=0
+CA121 FRAME tic=111 ms=8281.714400 interval=50.259000
+CA128 WORK tic=110 queries=4 lists=1 visits=2404 cannonQueries=0 cannonSight=0
+CA121 COUNT tic=111 candidates=0 sight=0 decisions=0 commands=0
+CA128 WORK tic=111 queries=1 lists=1 visits=601 cannonQueries=0 cannonSight=0
+CA121 FRAME tic=113 ms=8327.195100 interval=45.480700
+CA128 WORK tic=112 queries=10 lists=1 visits=6010 cannonQueries=0 cannonSight=0
+CA121 FRAME tic=114 ms=8369.669900 interval=42.474800
+CA128 WORK tic=113 queries=47 lists=1 visits=28247 cannonQueries=0 cannonSight=0
+CA128 WORK tic=114 queries=1 lists=1 visits=601 cannonQueries=0 cannonSight=0
+CA121 FRAME tic=116 ms=8414.856200 interval=45.186300
+CA128 WORK tic=115 queries=0 lists=0 visits=0 cannonQueries=0 cannonSight=0
+CA121 FRAME tic=117 ms=8447.232900 interval=32.376700
+CA128 WORK tic=116 queries=0 lists=0 visits=0 cannonQueries=0 cannonSight=0
+CA121 FRAME tic=118 ms=8484.603300 interval=37.370400
+CA128 WORK tic=117 queries=1 lists=1 visits=601 cannonQueries=0 cannonSight=0
+CA128 WORK tic=118 queries=4 lists=1 visits=2404 cannonQueries=0 cannonSight=0
+CA121 FRAME tic=120 ms=8528.612000 interval=44.008700
+CA128 WORK tic=119 queries=1 lists=1 visits=601 cannonQueries=0 cannonSight=0
+CA121 FRAME tic=121 ms=8561.537500 interval=32.925500
+CA128 WORK tic=120 queries=10 lists=1 visits=6010 cannonQueries=0 cannonSight=0
+CA121 FRAME tic=122 ms=8603.897700 interval=42.360200
+CA128 WORK tic=121 queries=47 lists=1 visits=28247 cannonQueries=0 cannonSight=0
+CA128 WORK tic=122 queries=1 lists=1 visits=601 cannonQueries=0 cannonSight=0
+CA121 FRAME tic=124 ms=8648.944600 interval=45.046900
+CA128 WORK tic=123 queries=0 lists=0 visits=0 cannonQueries=0 cannonSight=0
+CA128 WORK tic=124 queries=0 lists=0 visits=0 cannonQueries=0 cannonSight=0
+CA121 FRAME tic=126 ms=8699.212100 interval=50.267500
+CA128 WORK tic=125 queries=1 lists=1 visits=601 cannonQueries=0 cannonSight=0
+CA121 FRAME tic=127 ms=8730.526100 interval=31.314000
+CA128 WORK tic=126 queries=4 lists=1 visits=2404 cannonQueries=0 cannonSight=0
+CA121 FRAME tic=128 ms=8761.329300 interval=30.803200
+CA128 WORK tic=127 queries=1 lists=1 visits=601 cannonQueries=0 cannonSight=0
+CA128 WORK tic=128 queries=10 lists=1 visits=6010 cannonQueries=0 cannonSight=0
+CA121 FRAME tic=130 ms=8820.387400 interval=59.058100
+CA128 WORK tic=129 queries=47 lists=1 visits=28247 cannonQueries=0 cannonSight=0
+CA128 WORK tic=130 queries=1 lists=1 visits=601 cannonQueries=0 cannonSight=0
+CA121 FRAME tic=132 ms=8868.208000 interval=47.820600
+CA128 WORK tic=131 queries=0 lists=0 visits=0 cannonQueries=0 cannonSight=0
+CA121 FRAME tic=133 ms=8902.714200 interval=34.506200
+CA128 WORK tic=132 queries=0 lists=0 visits=0 cannonQueries=0 cannonSight=0
+CA128 WORK tic=133 queries=1 lists=1 visits=601 cannonQueries=0 cannonSight=0
+CA121 FRAME tic=135 ms=8956.697400 interval=53.983200
+CA128 WORK tic=134 queries=4 lists=1 visits=2404 cannonQueries=0 cannonSight=0
+CA121 FRAME tic=136 ms=8988.915600 interval=32.218200
+CA128 WORK tic=135 queries=1 lists=1 visits=601 cannonQueries=0 cannonSight=0
+CA121 FRAME tic=137 ms=9023.966400 interval=35.050800
+CA128 WORK tic=136 queries=10 lists=1 visits=6010 cannonQueries=0 cannonSight=0
+CA128 WORK tic=137 queries=47 lists=1 visits=28247 cannonQueries=0 cannonSight=0
+CA121 FRAME tic=139 ms=9088.072900 interval=64.106500
+CA128 WORK tic=138 queries=1 lists=1 visits=601 cannonQueries=0 cannonSight=0
+CA128 BATTLE tic=140 living=6602 active=1 revision=2 groups=64 reduced=0 incomplete=0 damage=0 deaths=0 projectiles=997 cannonShots=0
+CA128 WORK tic=139 queries=0 lists=0 visits=0 cannonQueries=0 cannonSight=0
+CA121 SIM tic=140 ms=9130.380000 roster=6001 attackers=6001 defenders=600 groups=64 moving=0 blocked=0 x=0.000 y=320.000 z=-0.000 angle=90.000
+CA121 MOTION tic=140 displaced=5987 distance=423952.021765 contacts=0
+CA121 FRAME tic=141 ms=9179.898100 interval=91.825200
+CA128 WORK tic=140 queries=13 lists=1 visits=7813 cannonQueries=0 cannonSight=0
+CA128 WORK tic=141 queries=20 lists=1 visits=12020 cannonQueries=0 cannonSight=0
+CA128 WORK tic=142 queries=2 lists=1 visits=1202 cannonQueries=0 cannonSight=0
+CA128 WORK tic=143 queries=1 lists=1 visits=601 cannonQueries=0 cannonSight=0
+CA121 FRAME tic=145 ms=9311.020700 interval=131.122600
+CA128 WORK tic=144 queries=7 lists=1 visits=4207 cannonQueries=0 cannonSight=0
+CA128 WORK tic=145 queries=19 lists=1 visits=11419 cannonQueries=0 cannonSight=0
+CA128 WORK tic=146 queries=1 lists=1 visits=601 cannonQueries=0 cannonSight=0
+CA128 WORK tic=147 queries=0 lists=0 visits=0 cannonQueries=0 cannonSight=0
+CA121 FRAME tic=149 ms=9432.567900 interval=121.547200
+CA121 COUNT tic=148 candidates=0 sight=0 decisions=0 commands=0
+CA128 WORK tic=148 queries=13 lists=1 visits=7813 cannonQueries=0 cannonSight=0
+CA128 WORK tic=149 queries=20 lists=1 visits=12020 cannonQueries=0 cannonSight=0
+CA128 WORK tic=150 queries=2 lists=1 visits=1202 cannonQueries=0 cannonSight=0
+CA128 WORK tic=151 queries=1 lists=1 visits=601 cannonQueries=0 cannonSight=0
+CA121 FRAME tic=153 ms=9527.608000 interval=95.040100
+CA128 WORK tic=152 queries=7 lists=1 visits=4207 cannonQueries=0 cannonSight=0
+CA128 WORK tic=153 queries=19 lists=1 visits=11419 cannonQueries=0 cannonSight=0
+CA128 WORK tic=154 queries=1 lists=1 visits=601 cannonQueries=0 cannonSight=0
+CA121 FRAME tic=156 ms=9627.209700 interval=99.601700
+CA128 WORK tic=155 queries=0 lists=0 visits=0 cannonQueries=0 cannonSight=0
+CA128 WORK tic=156 queries=13 lists=1 visits=7813 cannonQueries=0 cannonSight=0
+CA128 WORK tic=157 queries=20 lists=1 visits=12020 cannonQueries=0 cannonSight=0
+CA128 WORK tic=158 queries=2 lists=1 visits=1202 cannonQueries=0 cannonSight=0
+CA121 FRAME tic=160 ms=9737.172000 interval=109.962300
+CA128 WORK tic=159 queries=1 lists=1 visits=601 cannonQueries=0 cannonSight=0
+CA128 WORK tic=160 queries=7 lists=1 visits=4207 cannonQueries=0 cannonSight=0
+CA128 WORK tic=161 queries=19 lists=1 visits=11419 cannonQueries=0 cannonSight=0
+CA128 WORK tic=162 queries=1 lists=1 visits=601 cannonQueries=0 cannonSight=0
+CA121 FRAME tic=164 ms=9822.405500 interval=85.233500
+CA128 WORK tic=163 queries=0 lists=0 visits=0 cannonQueries=0 cannonSight=0
+CA128 WORK tic=164 queries=13 lists=1 visits=7813 cannonQueries=0 cannonSight=0
+CA128 WORK tic=165 queries=20 lists=1 visits=12020 cannonQueries=0 cannonSight=0
+CA121 FRAME tic=167 ms=9892.204400 interval=69.798900
+CA128 WORK tic=166 queries=2 lists=1 visits=1202 cannonQueries=0 cannonSight=0
+CA128 WORK tic=167 queries=1 lists=1 visits=601 cannonQueries=0 cannonSight=0
+CA121 FRAME tic=169 ms=9940.323600 interval=48.119200
+CA128 WORK tic=168 queries=7 lists=1 visits=4207 cannonQueries=0 cannonSight=0
+CA128 WORK tic=169 queries=19 lists=1 visits=11419 cannonQueries=0 cannonSight=0
+CA121 FRAME tic=171 ms=9995.971800 interval=55.648200
+CA128 WORK tic=170 queries=1 lists=1 visits=601 cannonQueries=0 cannonSight=0
+CA128 WORK tic=171 queries=0 lists=0 visits=0 cannonQueries=0 cannonSight=0
+CA121 FRAME tic=173 ms=10045.105800 interval=49.134000
+CA128 WORK tic=172 queries=13 lists=1 visits=7813 cannonQueries=0 cannonSight=0
+CA121 FRAME tic=174 ms=10085.819100 interval=40.713300
+CA128 WORK tic=173 queries=20 lists=1 visits=12020 cannonQueries=0 cannonSight=0
+CA128 BATTLE tic=175 living=6602 active=1 revision=2 groups=63 reduced=0 incomplete=0 damage=0 deaths=0 projectiles=1420 cannonShots=0
+CA128 WORK tic=174 queries=2 lists=1 visits=1202 cannonQueries=0 cannonSight=0
+CA121 SIM tic=175 ms=10110.637800 roster=6001 attackers=6001 defenders=600 groups=63 moving=0 blocked=0 x=0.000 y=320.000 z=-0.000 angle=90.000
+CA121 MOTION tic=175 displaced=5988 distance=425953.717579 contacts=0
+CA121 FRAME tic=176 ms=10146.648200 interval=60.829100
+CA128 WORK tic=175 queries=13 lists=1 visits=7813 cannonQueries=0 cannonSight=0
+CA128 WORK tic=176 queries=12 lists=1 visits=7212 cannonQueries=0 cannonSight=0
+CA121 FRAME tic=178 ms=10207.074900 interval=60.426700
+CA128 WORK tic=177 queries=35 lists=1 visits=21035 cannonQueries=0 cannonSight=0
+CA128 WORK tic=178 queries=1 lists=1 visits=601 cannonQueries=0 cannonSight=0
+CA121 FRAME tic=180 ms=10255.991500 interval=48.916600
+CA128 WORK tic=179 queries=0 lists=0 visits=0 cannonQueries=0 cannonSight=0
+CA128 WORK tic=180 queries=2 lists=1 visits=1202 cannonQueries=0 cannonSight=0
+CA121 FRAME tic=182 ms=10311.539400 interval=55.547900
+CA128 WORK tic=181 queries=1 lists=1 visits=601 cannonQueries=0 cannonSight=0
+CA128 WORK tic=182 queries=2 lists=1 visits=1202 cannonQueries=0 cannonSight=0
+CA121 FRAME tic=184 ms=10358.298200 interval=46.758800
+CA128 WORK tic=183 queries=13 lists=1 visits=7813 cannonQueries=0 cannonSight=0
+CA121 FRAME tic=185 ms=10395.258700 interval=36.960500
+CA128 WORK tic=184 queries=12 lists=1 visits=7212 cannonQueries=0 cannonSight=0
+CA121 COUNT tic=185 candidates=0 sight=0 decisions=0 commands=0
+CA128 WORK tic=185 queries=35 lists=1 visits=21035 cannonQueries=0 cannonSight=0
+CA121 FRAME tic=187 ms=10452.391700 interval=57.133000
+CA128 WORK tic=186 queries=1 lists=1 visits=601 cannonQueries=0 cannonSight=0
+CA128 WORK tic=187 queries=0 lists=0 visits=0 cannonQueries=0 cannonSight=0
+CA121 FRAME tic=189 ms=10503.866600 interval=51.474900
+CA128 WORK tic=188 queries=2 lists=1 visits=1202 cannonQueries=0 cannonSight=0
+CA128 WORK tic=189 queries=1 lists=1 visits=601 cannonQueries=0 cannonSight=0
+CA121 FRAME tic=191 ms=10559.050700 interval=55.184100
+CA128 WORK tic=190 queries=2 lists=1 visits=1202 cannonQueries=0 cannonSight=0
+CA121 FRAME tic=192 ms=10594.500800 interval=35.450100
+CA128 WORK tic=191 queries=13 lists=1 visits=7813 cannonQueries=0 cannonSight=0
+CA128 WORK tic=192 queries=12 lists=1 visits=7212 cannonQueries=0 cannonSight=0
+CA121 FRAME tic=194 ms=10653.845000 interval=59.344200
+CA128 WORK tic=193 queries=35 lists=1 visits=21035 cannonQueries=0 cannonSight=0
+CA128 WORK tic=194 queries=1 lists=1 visits=601 cannonQueries=0 cannonSight=0
+CA121 FRAME tic=196 ms=10702.125700 interval=48.280700
+CA128 WORK tic=195 queries=0 lists=0 visits=0 cannonQueries=0 cannonSight=0
+CA121 FRAME tic=197 ms=10736.368300 interval=34.242600
+CA128 WORK tic=196 queries=2 lists=1 visits=1202 cannonQueries=0 cannonSight=0
+CA128 WORK tic=197 queries=1 lists=1 visits=601 cannonQueries=0 cannonSight=0
+CA121 FRAME tic=199 ms=10791.563500 interval=55.195200
+CA128 WORK tic=198 queries=2 lists=1 visits=1202 cannonQueries=0 cannonSight=0
+CA128 WORK tic=199 queries=13 lists=1 visits=7813 cannonQueries=0 cannonSight=0
+CA121 FRAME tic=201 ms=10842.575500 interval=51.012000
+CA128 WORK tic=200 queries=12 lists=1 visits=7212 cannonQueries=0 cannonSight=0
+CA121 FRAME tic=202 ms=10891.094800 interval=48.519300
+CA128 WORK tic=201 queries=35 lists=1 visits=21035 cannonQueries=0 cannonSight=0
+CA128 WORK tic=202 queries=1 lists=1 visits=601 cannonQueries=0 cannonSight=0
+CA121 FRAME tic=204 ms=10941.889100 interval=50.794300
+CA128 WORK tic=203 queries=0 lists=0 visits=0 cannonQueries=0 cannonSight=0
+CA128 WORK tic=204 queries=2 lists=1 visits=1202 cannonQueries=0 cannonSight=0
+CA121 FRAME tic=206 ms=11022.529900 interval=80.640800
+CA128 WORK tic=205 queries=1 lists=1 visits=601 cannonQueries=0 cannonSight=0
+CA128 WORK tic=206 queries=2 lists=1 visits=1202 cannonQueries=0 cannonSight=0
+CA128 WORK tic=207 queries=13 lists=1 visits=7813 cannonQueries=0 cannonSight=0
+CA121 FRAME tic=209 ms=11119.206500 interval=96.676600
+CA128 WORK tic=208 queries=12 lists=1 visits=7212 cannonQueries=0 cannonSight=0
+CA128 BATTLE tic=210 living=6602 active=1 revision=2 groups=66 reduced=0 incomplete=0 damage=0 deaths=0 projectiles=1859 cannonShots=0
+CA128 WORK tic=209 queries=35 lists=1 visits=21035 cannonQueries=0 cannonSight=0
+CA121 SIM tic=210 ms=11169.784200 roster=6001 attackers=6001 defenders=600 groups=66 moving=0 blocked=0 x=0.000 y=320.000 z=-0.000 angle=90.000
+CA121 MOTION tic=210 displaced=5988 distance=424430.483951 contacts=0
+CA128 WORK tic=210 queries=12 lists=1 visits=7212 cannonQueries=0 cannonSight=0
+CA121 FRAME tic=212 ms=11233.537300 interval=114.330800
+CA128 WORK tic=211 queries=0 lists=0 visits=0 cannonQueries=0 cannonSight=0
+CA128 WORK tic=212 queries=3 lists=1 visits=1803 cannonQueries=0 cannonSight=0
+CA128 WORK tic=213 queries=24 lists=1 visits=14424 cannonQueries=0 cannonSight=0
+CA128 WORK tic=214 queries=2 lists=1 visits=1202 cannonQueries=0 cannonSight=0
+CA121 FRAME tic=216 ms=11350.595000 interval=117.057700
+CA128 WORK tic=215 queries=9 lists=1 visits=5409 cannonQueries=0 cannonSight=0
+CA128 WORK tic=216 queries=6 lists=1 visits=3606 cannonQueries=0 cannonSight=0
+CA128 WORK tic=217 queries=11 lists=1 visits=6611 cannonQueries=0 cannonSight=0
+CA128 WORK tic=218 queries=12 lists=1 visits=7212 cannonQueries=0 cannonSight=0
+CA121 FRAME tic=220 ms=11470.627800 interval=120.032800
+CA128 WORK tic=219 queries=0 lists=0 visits=0 cannonQueries=0 cannonSight=0
+CA128 WORK tic=220 queries=2 lists=1 visits=1202 cannonQueries=0 cannonSight=0
+CA128 WORK tic=221 queries=25 lists=1 visits=15025 cannonQueries=0 cannonSight=0
+CA121 COUNT tic=222 candidates=0 sight=0 decisions=0 commands=0
+CA128 WORK tic=222 queries=2 lists=1 visits=1202 cannonQueries=0 cannonSight=0
+CA121 FRAME tic=224 ms=11581.661800 interval=111.034000
+CA128 WORK tic=223 queries=9 lists=1 visits=5409 cannonQueries=0 cannonSight=0
+CA128 WORK tic=224 queries=6 lists=1 visits=3606 cannonQueries=0 cannonSight=0
+CA128 WORK tic=225 queries=11 lists=1 visits=6611 cannonQueries=0 cannonSight=0
+CA128 WORK tic=226 queries=12 lists=1 visits=7212 cannonQueries=0 cannonSight=0
+CA121 FRAME tic=228 ms=11700.810700 interval=119.148900
+CA128 WORK tic=227 queries=0 lists=0 visits=0 cannonQueries=0 cannonSight=0
+CA128 WORK tic=228 queries=2 lists=1 visits=1202 cannonQueries=0 cannonSight=0
+CA128 WORK tic=229 queries=25 lists=1 visits=15025 cannonQueries=0 cannonSight=0
+CA128 WORK tic=230 queries=2 lists=1 visits=1202 cannonQueries=0 cannonSight=0
+CA128 WORK tic=231 queries=9 lists=1 visits=5409 cannonQueries=0 cannonSight=0
+CA121 FRAME tic=233 ms=11821.385400 interval=120.574700
+CA128 WORK tic=232 queries=6 lists=1 visits=3606 cannonQueries=0 cannonSight=0
+CA128 WORK tic=233 queries=11 lists=1 visits=6611 cannonQueries=0 cannonSight=0
+CA128 WORK tic=234 queries=12 lists=1 visits=7212 cannonQueries=0 cannonSight=0
+CA128 WORK tic=235 queries=0 lists=0 visits=0 cannonQueries=0 cannonSight=0
+CA121 FRAME tic=237 ms=11912.539500 interval=91.154100
+CA128 WORK tic=236 queries=2 lists=1 visits=1202 cannonQueries=0 cannonSight=0
+CA128 WORK tic=237 queries=25 lists=1 visits=15025 cannonQueries=0 cannonSight=0
+CA128 WORK tic=238 queries=2 lists=1 visits=1202 cannonQueries=0 cannonSight=0
+CA121 FRAME tic=240 ms=11986.754200 interval=74.214700
+CA128 WORK tic=239 queries=9 lists=1 visits=5409 cannonQueries=0 cannonSight=0
+CA128 WORK tic=240 queries=6 lists=1 visits=3606 cannonQueries=0 cannonSight=0
+CA121 FRAME tic=242 ms=12049.380300 interval=62.626100
+CA128 WORK tic=241 queries=11 lists=1 visits=6611 cannonQueries=0 cannonSight=0
+CA128 WORK tic=242 queries=12 lists=1 visits=7212 cannonQueries=0 cannonSight=0
+CA128 WORK tic=243 queries=0 lists=0 visits=0 cannonQueries=0 cannonSight=0
+CA121 FRAME tic=245 ms=12114.432800 interval=65.052500
+CA128 BATTLE tic=245 living=6602 active=1 revision=2 groups=67 reduced=0 incomplete=0 damage=0 deaths=0 projectiles=2278 cannonShots=0
+CA128 WORK tic=244 queries=2 lists=1 visits=1202 cannonQueries=0 cannonSight=0
+CA121 SIM tic=245 ms=12124.700900 roster=6001 attackers=6001 defenders=600 groups=67 moving=0 blocked=0 x=0.000 y=320.000 z=-0.000 angle=90.000
+CA121 MOTION tic=245 displaced=5989 distance=388143.044508 contacts=0
+CA128 WORK tic=245 queries=41 lists=1 visits=24641 cannonQueries=0 cannonSight=0
+CA121 FRAME tic=247 ms=12186.479300 interval=72.046500
+CA128 WORK tic=246 queries=2 lists=1 visits=1202 cannonQueries=0 cannonSight=0
+CA128 WORK tic=247 queries=2 lists=1 visits=1202 cannonQueries=0 cannonSight=0
+CA121 FRAME tic=249 ms=12241.901400 interval=55.422100
+CA128 WORK tic=248 queries=3 lists=1 visits=1803 cannonQueries=0 cannonSight=0
+CA128 WORK tic=249 queries=11 lists=1 visits=6611 cannonQueries=0 cannonSight=0
+CA121 FRAME tic=251 ms=12297.722000 interval=55.820600
+CA128 WORK tic=250 queries=4 lists=1 visits=2404 cannonQueries=0 cannonSight=0
+CA128 WORK tic=251 queries=0 lists=0 visits=0 cannonQueries=0 cannonSight=0
+CA121 FRAME tic=253 ms=12345.230100 interval=47.508100
+CA128 WORK tic=252 queries=1 lists=1 visits=601 cannonQueries=0 cannonSight=0
+CA128 WORK tic=253 queries=41 lists=1 visits=24641 cannonQueries=0 cannonSight=0
+CA121 FRAME tic=255 ms=12400.984500 interval=55.754400
+CA128 WORK tic=254 queries=2 lists=1 visits=1202 cannonQueries=0 cannonSight=0
+CA128 WORK tic=255 queries=2 lists=1 visits=1202 cannonQueries=0 cannonSight=0
+CA121 FRAME tic=257 ms=12449.952700 interval=48.968200
+CA128 WORK tic=256 queries=3 lists=1 visits=1803 cannonQueries=0 cannonSight=0
+CA128 WORK tic=257 queries=11 lists=1 visits=6611 cannonQueries=0 cannonSight=0
+CA121 FRAME tic=259 ms=12505.666400 interval=55.713700
+CA128 WORK tic=258 queries=4 lists=1 visits=2404 cannonQueries=0 cannonSight=0
+CA121 COUNT tic=259 candidates=0 sight=0 decisions=0 commands=0
+CA128 WORK tic=259 queries=0 lists=0 visits=0 cannonQueries=0 cannonSight=0
+CA121 FRAME tic=261 ms=12556.035000 interval=50.368600
+CA128 WORK tic=260 queries=1 lists=1 visits=601 cannonQueries=0 cannonSight=0
+CA121 FRAME tic=262 ms=12599.089400 interval=43.054400
+CA128 WORK tic=261 queries=41 lists=1 visits=24641 cannonQueries=0 cannonSight=0
+CA128 WORK tic=262 queries=2 lists=1 visits=1202 cannonQueries=0 cannonSight=0
+CA121 FRAME tic=264 ms=12647.776700 interval=48.687300
+CA128 WORK tic=263 queries=2 lists=1 visits=1202 cannonQueries=0 cannonSight=0
+CA121 FRAME tic=265 ms=12683.462400 interval=35.685700
+CA128 WORK tic=264 queries=3 lists=1 visits=1803 cannonQueries=0 cannonSight=0
+CA128 WORK tic=265 queries=11 lists=1 visits=6611 cannonQueries=0 cannonSight=0
+CA121 FRAME tic=267 ms=12741.828200 interval=58.365800
+CA128 WORK tic=266 queries=4 lists=1 visits=2404 cannonQueries=0 cannonSight=0
+CA128 WORK tic=267 queries=0 lists=0 visits=0 cannonQueries=0 cannonSight=0
+CA121 FRAME tic=269 ms=12796.653000 interval=54.824800
+CA128 WORK tic=268 queries=1 lists=1 visits=601 cannonQueries=0 cannonSight=0
+CA128 WORK tic=269 queries=41 lists=1 visits=24641 cannonQueries=0 cannonSight=0
+CA121 FRAME tic=271 ms=12860.908200 interval=64.255200
+CA128 WORK tic=270 queries=2 lists=1 visits=1202 cannonQueries=0 cannonSight=0
+CA128 WORK tic=271 queries=2 lists=1 visits=1202 cannonQueries=0 cannonSight=0
+CA121 FRAME tic=273 ms=12913.294400 interval=52.386200
+CA128 WORK tic=272 queries=3 lists=1 visits=1803 cannonQueries=0 cannonSight=0
+CA128 WORK tic=273 queries=11 lists=1 visits=6611 cannonQueries=0 cannonSight=0
+CA121 FRAME tic=275 ms=12980.628100 interval=67.333700
+CA128 WORK tic=274 queries=4 lists=1 visits=2404 cannonQueries=0 cannonSight=0
+CA128 WORK tic=275 queries=0 lists=0 visits=0 cannonQueries=0 cannonSight=0
+CA121 FRAME tic=277 ms=13044.324900 interval=63.696800
+CA128 WORK tic=276 queries=1 lists=1 visits=601 cannonQueries=0 cannonSight=0
+CA128 WORK tic=277 queries=41 lists=1 visits=24641 cannonQueries=0 cannonSight=0
+CA121 FRAME tic=279 ms=13116.090200 interval=71.765300
+CA128 WORK tic=278 queries=2 lists=1 visits=1202 cannonQueries=0 cannonSight=0
+CA128 BATTLE tic=280 living=6602 active=1 revision=2 groups=64 reduced=0 incomplete=0 damage=0 deaths=0 projectiles=2735 cannonShots=0
+CA128 WORK tic=279 queries=2 lists=1 visits=1202 cannonQueries=0 cannonSight=0
+CA121 SIM tic=280 ms=13159.203500 roster=6001 attackers=6001 defenders=600 groups=64 moving=0 blocked=0 x=0.000 y=320.000 z=-0.000 angle=90.000
+CA121 MOTION tic=280 displaced=5989 distance=415151.902958 contacts=0
+CA128 WORK tic=280 queries=18 lists=1 visits=10818 cannonQueries=0 cannonSight=0
+CA121 FRAME tic=282 ms=13230.556800 interval=114.466600
+CA128 WORK tic=281 queries=34 lists=1 visits=20434 cannonQueries=0 cannonSight=0
+CA128 WORK tic=282 queries=4 lists=1 visits=2404 cannonQueries=0 cannonSight=0
+CA128 WORK tic=283 queries=0 lists=0 visits=0 cannonQueries=0 cannonSight=0
+CA128 WORK tic=284 queries=0 lists=0 visits=0 cannonQueries=0 cannonSight=0
+CA121 FRAME tic=286 ms=13332.822700 interval=102.265900
+CA128 WORK tic=285 queries=8 lists=1 visits=4808 cannonQueries=0 cannonSight=0
+CA128 WORK tic=286 queries=2 lists=1 visits=1202 cannonQueries=0 cannonSight=0
+CA128 WORK tic=287 queries=0 lists=0 visits=0 cannonQueries=0 cannonSight=0
+CA128 WORK tic=288 queries=18 lists=1 visits=10818 cannonQueries=0 cannonSight=0
+CA121 FRAME tic=290 ms=13441.133300 interval=108.310600
+CA128 WORK tic=289 queries=34 lists=1 visits=20434 cannonQueries=0 cannonSight=0
+CA128 WORK tic=290 queries=4 lists=1 visits=2404 cannonQueries=0 cannonSight=0
+CA128 WORK tic=291 queries=0 lists=0 visits=0 cannonQueries=0 cannonSight=0
+CA121 FRAME tic=293 ms=13517.114000 interval=75.980700
+CA128 WORK tic=292 queries=0 lists=0 visits=0 cannonQueries=0 cannonSight=0
+CA128 WORK tic=293 queries=8 lists=1 visits=4808 cannonQueries=0 cannonSight=0
+CA128 WORK tic=294 queries=2 lists=1 visits=1202 cannonQueries=0 cannonSight=0
+CA121 FRAME tic=296 ms=13602.417500 interval=85.303500
+CA128 WORK tic=295 queries=0 lists=0 visits=0 cannonQueries=0 cannonSight=0
+CA121 COUNT tic=296 candidates=0 sight=0 decisions=0 commands=0
+CA128 WORK tic=296 queries=18 lists=1 visits=10818 cannonQueries=0 cannonSight=0
+CA128 WORK tic=297 queries=34 lists=1 visits=20434 cannonQueries=0 cannonSight=0
+CA121 FRAME tic=299 ms=13693.338900 interval=90.921400
+CA128 WORK tic=298 queries=4 lists=1 visits=2404 cannonQueries=0 cannonSight=0
+CA128 WORK tic=299 queries=0 lists=0 visits=0 cannonQueries=0 cannonSight=0
+CA128 WORK tic=300 queries=0 lists=0 visits=0 cannonQueries=0 cannonSight=0
+CA121 FRAME tic=302 ms=13778.089700 interval=84.750800
+CA128 WORK tic=301 queries=8 lists=1 visits=4808 cannonQueries=0 cannonSight=0
+CA128 WORK tic=302 queries=2 lists=1 visits=1202 cannonQueries=0 cannonSight=0
+CA128 WORK tic=303 queries=0 lists=0 visits=0 cannonQueries=0 cannonSight=0
+CA121 FRAME tic=305 ms=13856.293000 interval=78.203300
+CA128 WORK tic=304 queries=18 lists=1 visits=10818 cannonQueries=0 cannonSight=0
+CA128 WORK tic=305 queries=34 lists=1 visits=20434 cannonQueries=0 cannonSight=0
+CA128 WORK tic=306 queries=4 lists=1 visits=2404 cannonQueries=0 cannonSight=0
+CA121 FRAME tic=308 ms=13946.031400 interval=89.738400
+CA128 WORK tic=307 queries=0 lists=0 visits=0 cannonQueries=0 cannonSight=0
+CA128 WORK tic=308 queries=0 lists=0 visits=0 cannonQueries=0 cannonSight=0
+CA128 WORK tic=309 queries=8 lists=1 visits=4808 cannonQueries=0 cannonSight=0
+CA121 FRAME tic=311 ms=14034.480600 interval=88.449200
+CA128 WORK tic=310 queries=2 lists=1 visits=1202 cannonQueries=0 cannonSight=0
+CA128 WORK tic=311 queries=0 lists=0 visits=0 cannonQueries=0 cannonSight=0
+CA128 WORK tic=312 queries=18 lists=1 visits=10818 cannonQueries=0 cannonSight=0
+CA121 FRAME tic=314 ms=14144.282700 interval=109.802100
+CA128 WORK tic=313 queries=34 lists=1 visits=20434 cannonQueries=0 cannonSight=0
+CA128 BATTLE tic=315 living=6602 active=1 revision=2 groups=66 reduced=0 incomplete=0 damage=0 deaths=0 projectiles=3229 cannonShots=0
+CA128 WORK tic=314 queries=4 lists=1 visits=2404 cannonQueries=0 cannonSight=0
+CA121 SIM tic=315 ms=14177.246100 roster=6001 attackers=6001 defenders=600 groups=66 moving=0 blocked=0 x=0.000 y=320.000 z=-0.000 angle=90.000
+CA121 MOTION tic=315 displaced=5989 distance=410650.655326 contacts=0
+CA128 WORK tic=315 queries=15 lists=1 visits=9015 cannonQueries=0 cannonSight=0
+CA128 WORK tic=316 queries=2 lists=1 visits=1202 cannonQueries=0 cannonSight=0
+CA121 FRAME tic=318 ms=14259.780300 interval=115.497600
+CA128 WORK tic=317 queries=24 lists=1 visits=14424 cannonQueries=0 cannonSight=0
+CA128 WORK tic=318 queries=2 lists=1 visits=1202 cannonQueries=0 cannonSight=0
+CA128 WORK tic=319 queries=0 lists=0 visits=0 cannonQueries=0 cannonSight=0
+CA128 WORK tic=320 queries=8 lists=1 visits=4808 cannonQueries=0 cannonSight=0
+CA121 FRAME tic=322 ms=14368.459600 interval=108.679300
+CA128 WORK tic=321 queries=13 lists=1 visits=7813 cannonQueries=0 cannonSight=0
+CA128 WORK tic=322 queries=1 lists=1 visits=601 cannonQueries=0 cannonSight=0
+CA128 WORK tic=323 queries=15 lists=1 visits=9015 cannonQueries=0 cannonSight=0
+CA128 WORK tic=324 queries=2 lists=1 visits=1202 cannonQueries=0 cannonSight=0
+CA121 FRAME tic=326 ms=14472.052100 interval=103.592500
+CA128 WORK tic=325 queries=24 lists=1 visits=14424 cannonQueries=0 cannonSight=0
+CA128 WORK tic=326 queries=2 lists=1 visits=1202 cannonQueries=0 cannonSight=0
+CA128 WORK tic=327 queries=0 lists=0 visits=0 cannonQueries=0 cannonSight=0
+CA121 FRAME tic=329 ms=14539.625800 interval=67.573700
+CA128 WORK tic=328 queries=8 lists=1 visits=4808 cannonQueries=0 cannonSight=0
+CA128 WORK tic=329 queries=13 lists=1 visits=7813 cannonQueries=0 cannonSight=0
+CA128 WORK tic=330 queries=1 lists=1 visits=601 cannonQueries=0 cannonSight=0
+CA121 FRAME tic=332 ms=14621.408900 interval=81.783100
+CA128 WORK tic=331 queries=15 lists=1 visits=9015 cannonQueries=0 cannonSight=0
+CA128 WORK tic=332 queries=2 lists=1 visits=1202 cannonQueries=0 cannonSight=0
+CA121 COUNT tic=333 candidates=0 sight=0 decisions=0 commands=0
+CA128 WORK tic=333 queries=24 lists=1 visits=14424 cannonQueries=0 cannonSight=0
+CA121 FRAME tic=335 ms=14698.774500 interval=77.365600
+CA128 WORK tic=334 queries=2 lists=1 visits=1202 cannonQueries=0 cannonSight=0
+CA128 WORK tic=335 queries=0 lists=0 visits=0 cannonQueries=0 cannonSight=0
+CA121 FRAME tic=337 ms=14748.521700 interval=49.747200
+CA128 WORK tic=336 queries=8 lists=1 visits=4808 cannonQueries=0 cannonSight=0
+CA128 WORK tic=337 queries=13 lists=1 visits=7813 cannonQueries=0 cannonSight=0
+CA121 FRAME tic=339 ms=14803.761100 interval=55.239400
+CA128 WORK tic=338 queries=1 lists=1 visits=601 cannonQueries=0 cannonSight=0
+CA128 WORK tic=339 queries=15 lists=1 visits=9015 cannonQueries=0 cannonSight=0
+CA121 FRAME tic=341 ms=14856.369100 interval=52.608000
+CA128 WORK tic=340 queries=2 lists=1 visits=1202 cannonQueries=0 cannonSight=0
+CA128 WORK tic=341 queries=24 lists=1 visits=14424 cannonQueries=0 cannonSight=0
+CA121 FRAME tic=343 ms=14915.969100 interval=59.600000
+CA128 WORK tic=342 queries=2 lists=1 visits=1202 cannonQueries=0 cannonSight=0
+CA128 WORK tic=343 queries=0 lists=0 visits=0 cannonQueries=0 cannonSight=0
+CA121 FRAME tic=345 ms=14976.470900 interval=60.501800
+CA128 WORK tic=344 queries=8 lists=1 visits=4808 cannonQueries=0 cannonSight=0
+CA128 WORK tic=345 queries=13 lists=1 visits=7813 cannonQueries=0 cannonSight=0
+CA121 FRAME tic=347 ms=15046.470400 interval=69.999500
+CA128 WORK tic=346 queries=1 lists=1 visits=601 cannonQueries=0 cannonSight=0
+CA128 WORK tic=347 queries=15 lists=1 visits=9015 cannonQueries=0 cannonSight=0
+CA128 WORK tic=348 queries=2 lists=1 visits=1202 cannonQueries=0 cannonSight=0
+CA121 FRAME tic=350 ms=15133.287100 interval=86.816700
+CA128 BATTLE tic=350 living=6602 active=1 revision=2 groups=65 reduced=0 incomplete=0 damage=0 deaths=0 projectiles=3694 cannonShots=0
+CA128 WORK tic=349 queries=24 lists=1 visits=14424 cannonQueries=0 cannonSight=0
+CA121 SIM tic=350 ms=15155.932500 roster=6001 attackers=6001 defenders=600 groups=65 moving=0 blocked=0 x=0.000 y=320.000 z=-0.000 angle=90.000
+CA121 MOTION tic=350 displaced=5987 distance=412195.964336 contacts=0
+CA128 WORK tic=350 queries=24 lists=1 visits=14424 cannonQueries=0 cannonSight=0
+CA128 WORK tic=351 queries=2 lists=1 visits=1202 cannonQueries=18 cannonSight=303
+CA121 FRAME tic=353 ms=15254.725900 interval=121.438800
+CA128 WORK tic=352 queries=2 lists=1 visits=1202 cannonQueries=0 cannonSight=0
+CA128 WORK tic=353 queries=29 lists=1 visits=17429 cannonQueries=0 cannonSight=0
+CA128 WORK tic=354 queries=10 lists=1 visits=6010 cannonQueries=0 cannonSight=0
+CA128 WORK tic=355 queries=2 lists=1 visits=1202 cannonQueries=0 cannonSight=0
+CA121 FRAME tic=357 ms=15391.607500 interval=136.881600
+CA128 WORK tic=356 queries=1 lists=1 visits=601 cannonQueries=0 cannonSight=0
+CA128 WORK tic=357 queries=12 lists=1 visits=7212 cannonQueries=0 cannonSight=0
+CA128 WORK tic=358 queries=16 lists=1 visits=9616 cannonQueries=0 cannonSight=0
+CA128 WORK tic=359 queries=2 lists=1 visits=1202 cannonQueries=0 cannonSight=0
+CA128 WORK tic=360 queries=2 lists=1 visits=1202 cannonQueries=0 cannonSight=0
+CA121 FRAME tic=362 ms=15532.207900 interval=140.600400
+CA128 WORK tic=361 queries=18 lists=1 visits=10818 cannonQueries=0 cannonSight=0
+CA128 WORK tic=362 queries=10 lists=1 visits=6010 cannonQueries=0 cannonSight=0
+CA128 WORK tic=363 queries=2 lists=1 visits=1202 cannonQueries=0 cannonSight=0
+CA128 WORK tic=364 queries=1 lists=1 visits=601 cannonQueries=0 cannonSight=0
+CA128 WORK tic=365 queries=12 lists=1 visits=7212 cannonQueries=0 cannonSight=0
+CA121 FRAME tic=367 ms=15654.862300 interval=122.654400
+CA128 WORK tic=366 queries=16 lists=1 visits=9616 cannonQueries=0 cannonSight=0
+CA128 WORK tic=367 queries=2 lists=1 visits=1202 cannonQueries=0 cannonSight=0
+CA128 WORK tic=368 queries=2 lists=1 visits=1202 cannonQueries=0 cannonSight=0
+CA128 WORK tic=369 queries=18 lists=1 visits=10818 cannonQueries=0 cannonSight=0
+CA121 FRAME tic=371 ms=15766.404800 interval=111.542500
+CA121 COUNT tic=370 candidates=0 sight=0 decisions=0 commands=0
+CA128 WORK tic=370 queries=10 lists=1 visits=6010 cannonQueries=0 cannonSight=0
+CA128 WORK tic=371 queries=2 lists=1 visits=1202 cannonQueries=0 cannonSight=0
+CA128 WORK tic=372 queries=1 lists=1 visits=601 cannonQueries=0 cannonSight=0
+CA128 WORK tic=373 queries=12 lists=1 visits=7212 cannonQueries=0 cannonSight=0
+CA121 FRAME tic=375 ms=15867.152200 interval=100.747400
+CA128 WORK tic=374 queries=16 lists=1 visits=9616 cannonQueries=0 cannonSight=0
+CA128 WORK tic=375 queries=2 lists=1 visits=1202 cannonQueries=0 cannonSight=0
+CA128 WORK tic=376 queries=2 lists=1 visits=1202 cannonQueries=0 cannonSight=0
+CA121 FRAME tic=378 ms=15962.599600 interval=95.447400
+CA128 WORK tic=377 queries=18 lists=1 visits=10818 cannonQueries=0 cannonSight=0
+CA128 WORK tic=378 queries=10 lists=1 visits=6010 cannonQueries=0 cannonSight=0
+CA128 WORK tic=379 queries=2 lists=1 visits=1202 cannonQueries=0 cannonSight=0
+CA128 WORK tic=380 queries=1 lists=1 visits=601 cannonQueries=0 cannonSight=0
+CA121 FRAME tic=382 ms=16062.190800 interval=99.591200
+CA128 WORK tic=381 queries=12 lists=1 visits=7212 cannonQueries=0 cannonSight=0
+CA128 WORK tic=382 queries=15 lists=1 visits=9015 cannonQueries=0 cannonSight=0
+CA128 WORK tic=383 queries=3 lists=1 visits=1803 cannonQueries=0 cannonSight=0
+CA121 FRAME tic=385 ms=16152.570000 interval=90.379200
+CA128 BATTLE tic=385 living=6598 active=1 revision=2 groups=63 reduced=0 incomplete=0 damage=10 deaths=4 projectiles=4174 cannonShots=18
+CA128 WORK tic=384 queries=2 lists=1 visits=1202 cannonQueries=0 cannonSight=0
+CA121 SIM tic=385 ms=16172.066700 roster=6001 attackers=5997 defenders=600 groups=63 moving=0 blocked=0 x=0.000 y=320.000 z=-0.000 angle=90.000
+CA121 MOTION tic=385 displaced=5967 distance=378835.932912 contacts=0
+CA128 WORK tic=385 queries=47 lists=1 visits=28247 cannonQueries=0 cannonSight=0
+CA128 WORK tic=386 queries=5 lists=1 visits=3005 cannonQueries=0 cannonSight=0
+CA121 FRAME tic=388 ms=16265.908200 interval=113.338200
+CA128 WORK tic=387 queries=0 lists=0 visits=0 cannonQueries=0 cannonSight=0
+CA128 WORK tic=388 queries=0 lists=0 visits=0 cannonQueries=0 cannonSight=0
+CA128 WORK tic=389 queries=1 lists=1 visits=601 cannonQueries=0 cannonSight=0
+CA128 WORK tic=390 queries=10 lists=1 visits=6010 cannonQueries=0 cannonSight=0
+CA121 FRAME tic=392 ms=16367.387400 interval=101.479200
+CA128 WORK tic=391 queries=0 lists=0 visits=0 cannonQueries=0 cannonSight=0
+CA128 WORK tic=392 queries=2 lists=1 visits=1202 cannonQueries=0 cannonSight=0
+CA128 WORK tic=393 queries=47 lists=1 visits=28247 cannonQueries=0 cannonSight=0
+CA128 WORK tic=394 queries=5 lists=1 visits=3005 cannonQueries=0 cannonSight=0
+CA121 FRAME tic=396 ms=16473.661000 interval=106.273600
+CA128 WORK tic=395 queries=0 lists=0 visits=0 cannonQueries=0 cannonSight=0
+CA128 WORK tic=396 queries=0 lists=0 visits=0 cannonQueries=0 cannonSight=0
+CA128 WORK tic=397 queries=1 lists=1 visits=601 cannonQueries=0 cannonSight=0
+CA121 FRAME tic=399 ms=16545.069900 interval=71.408900
+CA128 WORK tic=398 queries=10 lists=1 visits=6010 cannonQueries=0 cannonSight=0
+CA128 WORK tic=399 queries=0 lists=0 visits=0 cannonQueries=0 cannonSight=0
+CA128 WORK tic=400 queries=2 lists=1 visits=1202 cannonQueries=0 cannonSight=0
+CA121 FRAME tic=402 ms=16619.319700 interval=74.249800
+CA128 WORK tic=401 queries=47 lists=1 visits=28247 cannonQueries=0 cannonSight=0
+CA128 WORK tic=402 queries=5 lists=1 visits=3005 cannonQueries=0 cannonSight=0
+CA128 WORK tic=403 queries=0 lists=0 visits=0 cannonQueries=0 cannonSight=0
+CA121 FRAME tic=405 ms=16685.185500 interval=65.865800
+CA128 WORK tic=404 queries=0 lists=0 visits=0 cannonQueries=0 cannonSight=0
+CA128 WORK tic=405 queries=1 lists=1 visits=601 cannonQueries=0 cannonSight=0
+CA121 FRAME tic=407 ms=16747.728800 interval=62.543300
+CA128 WORK tic=406 queries=10 lists=1 visits=6010 cannonQueries=0 cannonSight=0
+CA121 COUNT tic=407 candidates=0 sight=0 decisions=0 commands=0
+CA128 WORK tic=407 queries=0 lists=0 visits=0 cannonQueries=0 cannonSight=0
+CA121 FRAME tic=409 ms=16802.483400 interval=54.754600
+CA128 WORK tic=408 queries=2 lists=1 visits=1202 cannonQueries=0 cannonSight=0
+CA128 WORK tic=409 queries=47 lists=1 visits=28247 cannonQueries=0 cannonSight=0
+CA121 FRAME tic=411 ms=16875.730900 interval=73.247500
+CA128 WORK tic=410 queries=5 lists=1 visits=3005 cannonQueries=0 cannonSight=0
+CA128 WORK tic=411 queries=0 lists=0 visits=0 cannonQueries=0 cannonSight=0
+CA128 WORK tic=412 queries=0 lists=0 visits=0 cannonQueries=0 cannonSight=0
+CA121 FRAME tic=414 ms=16968.657000 interval=92.926100
+CA128 WORK tic=413 queries=1 lists=1 visits=601 cannonQueries=0 cannonSight=0
+CA128 WORK tic=414 queries=10 lists=1 visits=6010 cannonQueries=0 cannonSight=0
+CA128 WORK tic=415 queries=0 lists=0 visits=0 cannonQueries=0 cannonSight=0
+CA121 FRAME tic=417 ms=17050.535000 interval=81.878000
+CA128 WORK tic=416 queries=2 lists=1 visits=1202 cannonQueries=0 cannonSight=0
+CA128 WORK tic=417 queries=47 lists=1 visits=28247 cannonQueries=0 cannonSight=0
+CA128 WORK tic=418 queries=5 lists=1 visits=3005 cannonQueries=0 cannonSight=0
+CA121 FRAME tic=420 ms=17144.330700 interval=93.795700
+CA128 BATTLE tic=420 living=6598 active=1 revision=2 groups=65 reduced=0 incomplete=0 damage=10 deaths=4 projectiles=4719 cannonShots=18
+CA128 WORK tic=419 queries=0 lists=0 visits=0 cannonQueries=0 cannonSight=0
+CA121 SIM tic=420 ms=17159.862800 roster=6001 attackers=5997 defenders=600 groups=65 moving=0 blocked=1 x=0.000 y=320.000 z=-0.000 angle=90.000
+CA121 MOTION tic=420 displaced=5964 distance=402080.941837 contacts=0
+CA128 WORK tic=420 queries=23 lists=1 visits=13823 cannonQueries=0 cannonSight=0
+CA128 WORK tic=421 queries=20 lists=1 visits=12020 cannonQueries=0 cannonSight=0
+CA121 FRAME tic=423 ms=17244.811700 interval=100.481000
+CA128 WORK tic=422 queries=5 lists=1 visits=3005 cannonQueries=0 cannonSight=0
+CA128 WORK tic=423 queries=0 lists=0 visits=0 cannonQueries=0 cannonSight=0
+CA128 WORK tic=424 queries=1 lists=1 visits=601 cannonQueries=0 cannonSight=0
+CA121 FRAME tic=426 ms=17334.891100 interval=90.079400
+CA128 WORK tic=425 queries=13 lists=1 visits=7813 cannonQueries=0 cannonSight=0
+CA128 WORK tic=426 queries=3 lists=1 visits=1803 cannonQueries=0 cannonSight=0
+CA128 WORK tic=427 queries=0 lists=0 visits=0 cannonQueries=0 cannonSight=0
+CA128 WORK tic=428 queries=23 lists=1 visits=13823 cannonQueries=0 cannonSight=0
+CA121 FRAME tic=430 ms=17447.358100 interval=112.467000
+CA128 WORK tic=429 queries=20 lists=1 visits=12020 cannonQueries=0 cannonSight=0
+CA128 WORK tic=430 queries=5 lists=1 visits=3005 cannonQueries=0 cannonSight=0
+CA128 WORK tic=431 queries=0 lists=0 visits=0 cannonQueries=0 cannonSight=0
+CA128 WORK tic=432 queries=1 lists=1 visits=601 cannonQueries=0 cannonSight=0
+CA121 FRAME tic=434 ms=17550.850500 interval=103.492400
+CA128 WORK tic=433 queries=13 lists=1 visits=7813 cannonQueries=0 cannonSight=0
+CA128 WORK tic=434 queries=3 lists=1 visits=1803 cannonQueries=0 cannonSight=0
+CA128 WORK tic=435 queries=0 lists=0 visits=0 cannonQueries=0 cannonSight=0
+CA121 FRAME tic=437 ms=17634.613800 interval=83.763300
+CA128 WORK tic=436 queries=23 lists=1 visits=13823 cannonQueries=0 cannonSight=0
+CA128 WORK tic=437 queries=20 lists=1 visits=12020 cannonQueries=0 cannonSight=0
+CA128 WORK tic=438 queries=5 lists=1 visits=3005 cannonQueries=0 cannonSight=0
+CA121 FRAME tic=440 ms=17722.582700 interval=87.968900
+CA128 WORK tic=439 queries=0 lists=0 visits=0 cannonQueries=0 cannonSight=0
+CA128 WORK tic=440 queries=1 lists=1 visits=601 cannonQueries=0 cannonSight=0
+CA128 WORK tic=441 queries=13 lists=1 visits=7813 cannonQueries=0 cannonSight=0
+CA121 FRAME tic=443 ms=17807.371100 interval=84.788400
+CA128 WORK tic=442 queries=3 lists=1 visits=1803 cannonQueries=0 cannonSight=0
+CA128 WORK tic=443 queries=0 lists=0 visits=0 cannonQueries=0 cannonSight=0
+CA121 COUNT tic=444 candidates=0 sight=0 decisions=0 commands=0
+CA128 WORK tic=444 queries=23 lists=1 visits=13823 cannonQueries=0 cannonSight=0
+CA121 FRAME tic=446 ms=17899.528300 interval=92.157200
+CA128 WORK tic=445 queries=20 lists=1 visits=12020 cannonQueries=0 cannonSight=0
+CA128 WORK tic=446 queries=5 lists=1 visits=3005 cannonQueries=0 cannonSight=0
+CA128 WORK tic=447 queries=0 lists=0 visits=0 cannonQueries=0 cannonSight=0
+CA128 WORK tic=448 queries=1 lists=1 visits=601 cannonQueries=0 cannonSight=0
+CA121 FRAME tic=450 ms=18004.488300 interval=104.960000
+CA128 WORK tic=449 queries=13 lists=1 visits=7813 cannonQueries=0 cannonSight=0
+CA128 WORK tic=450 queries=3 lists=1 visits=1803 cannonQueries=0 cannonSight=0
+CA128 WORK tic=451 queries=0 lists=0 visits=0 cannonQueries=0 cannonSight=0
+CA121 FRAME tic=453 ms=18078.963600 interval=74.475300
+CA128 WORK tic=452 queries=23 lists=1 visits=13823 cannonQueries=0 cannonSight=0
+CA128 WORK tic=453 queries=20 lists=1 visits=12020 cannonQueries=0 cannonSight=0
+CA128 BATTLE tic=455 living=6598 active=1 revision=2 groups=65 reduced=0 incomplete=0 damage=10 deaths=4 projectiles=5220 cannonShots=18
+CA128 WORK tic=454 queries=5 lists=1 visits=3005 cannonQueries=0 cannonSight=0
+CA121 SIM tic=455 ms=18124.041800 roster=6001 attackers=5997 defenders=600 groups=65 moving=0 blocked=0 x=0.000 y=320.000 z=-0.000 angle=90.000
+CA121 MOTION tic=455 displaced=5962 distance=398373.108657 contacts=0
+CA121 FRAME tic=456 ms=18161.081700 interval=82.118100
+CA128 WORK tic=455 queries=21 lists=1 visits=12621 cannonQueries=0 cannonSight=0
+CA128 WORK tic=456 queries=5 lists=1 visits=3005 cannonQueries=0 cannonSight=0
+CA121 FRAME tic=458 ms=18220.006600 interval=58.924900
+CA128 WORK tic=457 queries=23 lists=1 visits=13823 cannonQueries=0 cannonSight=0
+CA128 WORK tic=458 queries=3 lists=1 visits=1803 cannonQueries=0 cannonSight=0
+CA128 WORK tic=459 queries=0 lists=0 visits=0 cannonQueries=0 cannonSight=0
+CA121 FRAME tic=461 ms=18293.266200 interval=73.259600
+CA128 WORK tic=460 queries=7 lists=1 visits=4207 cannonQueries=0 cannonSight=0
+CA128 WORK tic=461 queries=2 lists=1 visits=1202 cannonQueries=0 cannonSight=0
+CA121 FRAME tic=463 ms=18349.558600 interval=56.292400
+CA128 WORK tic=462 queries=2 lists=1 visits=1202 cannonQueries=0 cannonSight=0
+CA128 WORK tic=463 queries=21 lists=1 visits=12621 cannonQueries=0 cannonSight=0
+CA121 FRAME tic=465 ms=18400.238500 interval=50.679900
+CA128 WORK tic=464 queries=5 lists=1 visits=3005 cannonQueries=0 cannonSight=0
+CA128 WORK tic=465 queries=23 lists=1 visits=13823 cannonQueries=0 cannonSight=0
+CA121 FRAME tic=467 ms=18458.418500 interval=58.180000
+CA128 WORK tic=466 queries=3 lists=1 visits=1803 cannonQueries=0 cannonSight=0
+CA128 WORK tic=467 queries=0 lists=0 visits=0 cannonQueries=0 cannonSight=0
+CA121 FRAME tic=469 ms=18508.827300 interval=50.408800
+CA128 WORK tic=468 queries=7 lists=1 visits=4207 cannonQueries=0 cannonSight=0
+CA128 WORK tic=469 queries=2 lists=1 visits=1202 cannonQueries=0 cannonSight=0
+CA121 FRAME tic=471 ms=18563.728900 interval=54.901600
+CA128 WORK tic=470 queries=2 lists=1 visits=1202 cannonQueries=0 cannonSight=0
+CA128 WORK tic=471 queries=21 lists=1 visits=12621 cannonQueries=0 cannonSight=0
+CA121 FRAME tic=473 ms=18625.355400 interval=61.626500
+CA128 WORK tic=472 queries=5 lists=1 visits=3005 cannonQueries=0 cannonSight=0
+CA128 WORK tic=473 queries=23 lists=1 visits=13823 cannonQueries=0 cannonSight=0
+CA121 FRAME tic=475 ms=18695.053100 interval=69.697700
+CA128 WORK tic=474 queries=3 lists=1 visits=1803 cannonQueries=0 cannonSight=0
+CA128 WORK tic=475 queries=0 lists=0 visits=0 cannonQueries=0 cannonSight=0
+CA121 FRAME tic=477 ms=18758.825600 interval=63.772500
+CA128 WORK tic=476 queries=7 lists=1 visits=4207 cannonQueries=0 cannonSight=0
+CA128 WORK tic=477 queries=2 lists=1 visits=1202 cannonQueries=0 cannonSight=0
+CA121 FRAME tic=479 ms=18825.193800 interval=66.368200
+CA128 WORK tic=478 queries=2 lists=1 visits=1202 cannonQueries=0 cannonSight=0
+CA128 WORK tic=479 queries=21 lists=1 visits=12621 cannonQueries=0 cannonSight=0
+CA128 WORK tic=480 queries=5 lists=1 visits=3005 cannonQueries=0 cannonSight=0
+CA121 FRAME tic=482 ms=18916.276200 interval=91.082400
+CA121 COUNT tic=481 candidates=0 sight=0 decisions=0 commands=0
+CA128 WORK tic=481 queries=23 lists=1 visits=13823 cannonQueries=0 cannonSight=0
+CA128 WORK tic=482 queries=3 lists=1 visits=1803 cannonQueries=0 cannonSight=0
+CA128 WORK tic=483 queries=0 lists=0 visits=0 cannonQueries=0 cannonSight=0
+CA121 FRAME tic=485 ms=18998.825600 interval=82.549400
+CA128 WORK tic=484 queries=7 lists=1 visits=4207 cannonQueries=0 cannonSight=0
+CA128 WORK tic=485 queries=2 lists=1 visits=1202 cannonQueries=0 cannonSight=0
+CA128 WORK tic=486 queries=2 lists=1 visits=1202 cannonQueries=0 cannonSight=0
+CA121 FRAME tic=488 ms=19083.031700 interval=84.206100
+CA128 WORK tic=487 queries=20 lists=1 visits=12020 cannonQueries=0 cannonSight=0
+CA128 WORK tic=488 queries=6 lists=1 visits=3606 cannonQueries=0 cannonSight=0
+CA128 BATTLE tic=490 living=6598 active=1 revision=2 groups=63 reduced=0 incomplete=0 damage=10 deaths=4 projectiles=5759 cannonShots=18
+CA128 WORK tic=489 queries=23 lists=1 visits=13823 cannonQueries=0 cannonSight=0
+CA121 SIM tic=490 ms=19146.980500 roster=6001 attackers=5997 defenders=600 groups=63 moving=0 blocked=1 x=0.000 y=320.000 z=-0.000 angle=90.000
+CA121 MOTION tic=490 displaced=5962 distance=394079.195207 contacts=0
+CA121 FRAME tic=491 ms=19188.598500 interval=105.566800
+CA128 WORK tic=490 queries=33 lists=1 visits=19833 cannonQueries=0 cannonSight=0
+CA128 WORK tic=491 queries=0 lists=0 visits=0 cannonQueries=0 cannonSight=0
+CA128 WORK tic=492 queries=5 lists=1 visits=3005 cannonQueries=0 cannonSight=0
+CA121 FRAME tic=494 ms=19271.546400 interval=82.947900
+CA128 WORK tic=493 queries=15 lists=1 visits=9015 cannonQueries=0 cannonSight=0
+CA128 WORK tic=494 queries=1 lists=1 visits=601 cannonQueries=0 cannonSight=0
+CA128 WORK tic=495 queries=3 lists=1 visits=1803 cannonQueries=0 cannonSight=0
+CA121 FRAME tic=497 ms=19354.759900 interval=83.213500
+CA128 WORK tic=496 queries=1 lists=1 visits=601 cannonQueries=0 cannonSight=0
+CA128 WORK tic=497 queries=5 lists=1 visits=3005 cannonQueries=0 cannonSight=0
+CA128 WORK tic=498 queries=33 lists=1 visits=19833 cannonQueries=0 cannonSight=0
+CA121 FRAME tic=500 ms=19444.306500 interval=89.546600
+CA128 WORK tic=499 queries=0 lists=0 visits=0 cannonQueries=0 cannonSight=0
+CA128 WORK tic=500 queries=4 lists=1 visits=2404 cannonQueries=0 cannonSight=0
+CA128 WORK tic=501 queries=16 lists=1 visits=9616 cannonQueries=0 cannonSight=0
+CA121 FRAME tic=503 ms=19532.954800 interval=88.648300
+CA128 WORK tic=502 queries=1 lists=1 visits=601 cannonQueries=0 cannonSight=0
+CA128 WORK tic=503 queries=3 lists=1 visits=1803 cannonQueries=0 cannonSight=0
+CA128 WORK tic=504 queries=1 lists=1 visits=601 cannonQueries=0 cannonSight=0
+CA128 WORK tic=505 queries=5 lists=1 visits=3005 cannonQueries=0 cannonSight=0
+CA121 FRAME tic=507 ms=19647.095200 interval=114.140400
+CA128 WORK tic=506 queries=33 lists=1 visits=19833 cannonQueries=0 cannonSight=0
+CA128 WORK tic=507 queries=0 lists=0 visits=0 cannonQueries=0 cannonSight=0
+CA128 WORK tic=508 queries=4 lists=1 visits=2404 cannonQueries=0 cannonSight=0
+CA128 WORK tic=509 queries=16 lists=1 visits=9616 cannonQueries=0 cannonSight=0
+CA121 FRAME tic=511 ms=19750.605000 interval=103.509800
+CA128 WORK tic=510 queries=1 lists=1 visits=601 cannonQueries=0 cannonSight=0
+CA128 WORK tic=511 queries=3 lists=1 visits=1803 cannonQueries=0 cannonSight=0
+CA128 WORK tic=512 queries=1 lists=1 visits=601 cannonQueries=0 cannonSight=0
+CA121 FRAME tic=514 ms=19834.008600 interval=83.403600
+CA128 WORK tic=513 queries=5 lists=1 visits=3005 cannonQueries=0 cannonSight=0
+CA128 WORK tic=514 queries=33 lists=1 visits=19833 cannonQueries=0 cannonSight=0
+CA128 WORK tic=515 queries=0 lists=0 visits=0 cannonQueries=0 cannonSight=0
+CA121 FRAME tic=517 ms=19911.473100 interval=77.464500
+CA128 WORK tic=516 queries=4 lists=1 visits=2404 cannonQueries=0 cannonSight=0
+CA128 WORK tic=517 queries=16 lists=1 visits=9616 cannonQueries=0 cannonSight=0
+CA121 COUNT tic=518 candidates=0 sight=0 decisions=0 commands=0
+CA128 WORK tic=518 queries=1 lists=1 visits=601 cannonQueries=0 cannonSight=0
+CA121 FRAME tic=520 ms=19983.415500 interval=71.942400
+CA128 WORK tic=519 queries=3 lists=1 visits=1803 cannonQueries=0 cannonSight=0
+CA128 WORK tic=520 queries=1 lists=1 visits=601 cannonQueries=0 cannonSight=0
+CA121 FRAME tic=522 ms=20044.531500 interval=61.116000
+CA128 WORK tic=521 queries=5 lists=1 visits=3005 cannonQueries=0 cannonSight=0
+CA128 WORK tic=522 queries=33 lists=1 visits=19833 cannonQueries=0 cannonSight=0
+CA121 FRAME tic=524 ms=20095.234500 interval=50.703000
+CA128 WORK tic=523 queries=0 lists=0 visits=0 cannonQueries=0 cannonSight=0
+CA128 BATTLE tic=525 living=6598 active=1 revision=2 groups=63 reduced=0 incomplete=0 damage=10 deaths=4 projectiles=6336 cannonShots=18
+CA128 WORK tic=524 queries=4 lists=1 visits=2404 cannonQueries=0 cannonSight=0
+CA121 SIM tic=525 ms=20119.967300 roster=6001 attackers=5997 defenders=600 groups=63 moving=0 blocked=2 x=0.000 y=320.000 z=-0.000 angle=90.000
+CA121 MOTION tic=525 displaced=5954 distance=366895.251587 contacts=0
+CA121 FRAME tic=526 ms=20164.211900 interval=68.977400
+CA128 WORK tic=525 queries=51 lists=1 visits=30651 cannonQueries=0 cannonSight=0
+CA128 WORK tic=526 queries=1 lists=1 visits=601 cannonQueries=0 cannonSight=0
+CA128 WORK tic=527 queries=1 lists=1 visits=601 cannonQueries=0 cannonSight=0
+CA121 FRAME tic=529 ms=20228.075800 interval=63.863900
+CA128 WORK tic=528 queries=1 lists=1 visits=601 cannonQueries=0 cannonSight=0
+CA128 WORK tic=529 queries=4 lists=1 visits=2404 cannonQueries=0 cannonSight=0
+CA121 FRAME tic=531 ms=20283.466400 interval=55.390600
+CA128 WORK tic=530 queries=7 lists=1 visits=4207 cannonQueries=0 cannonSight=0
+CA128 WORK tic=531 queries=0 lists=0 visits=0 cannonQueries=0 cannonSight=0
+CA121 FRAME tic=533 ms=20340.611700 interval=57.145300
+CA128 WORK tic=532 queries=2 lists=1 visits=1202 cannonQueries=0 cannonSight=0
+CA128 WORK tic=533 queries=50 lists=1 visits=30050 cannonQueries=0 cannonSight=0
+CA121 FRAME tic=535 ms=20410.585300 interval=69.973600
+CA128 WORK tic=534 queries=1 lists=1 visits=601 cannonQueries=0 cannonSight=0
+CA128 WORK tic=535 queries=1 lists=1 visits=601 cannonQueries=0 cannonSight=0
+CA121 FRAME tic=537 ms=20471.948100 interval=61.362800
+CA128 WORK tic=536 queries=2 lists=1 visits=1202 cannonQueries=0 cannonSight=0
+CA128 WORK tic=537 queries=4 lists=1 visits=2404 cannonQueries=0 cannonSight=0
+CA121 FRAME tic=539 ms=20540.274300 interval=68.326200
+CA128 WORK tic=538 queries=7 lists=1 visits=4207 cannonQueries=0 cannonSight=0
+CA128 WORK tic=539 queries=0 lists=0 visits=0 cannonQueries=0 cannonSight=0
+CA128 WORK tic=540 queries=2 lists=1 visits=1202 cannonQueries=0 cannonSight=0
+CA121 FRAME tic=542 ms=20628.046000 interval=87.771700
+CA128 WORK tic=541 queries=50 lists=1 visits=30050 cannonQueries=0 cannonSight=0
+CA128 WORK tic=542 queries=1 lists=1 visits=601 cannonQueries=0 cannonSight=0
+CA128 WORK tic=543 queries=1 lists=1 visits=601 cannonQueries=0 cannonSight=0
+CA121 FRAME tic=545 ms=20707.842600 interval=79.796600
+CA128 WORK tic=544 queries=2 lists=1 visits=1202 cannonQueries=0 cannonSight=0
+CA128 WORK tic=545 queries=4 lists=1 visits=2404 cannonQueries=0 cannonSight=0
+CA128 WORK tic=546 queries=7 lists=1 visits=4207 cannonQueries=0 cannonSight=0
+CA121 FRAME tic=548 ms=20788.517800 interval=80.675200
+CA128 WORK tic=547 queries=0 lists=0 visits=0 cannonQueries=0 cannonSight=0
+CA128 WORK tic=548 queries=2 lists=1 visits=1202 cannonQueries=0 cannonSight=0
+CA128 WORK tic=549 queries=50 lists=1 visits=30050 cannonQueries=0 cannonSight=0
+CA121 FRAME tic=551 ms=20876.472800 interval=87.955000
+CA128 WORK tic=550 queries=1 lists=1 visits=601 cannonQueries=0 cannonSight=0
+CA128 WORK tic=551 queries=1 lists=1 visits=601 cannonQueries=0 cannonSight=0
+CA128 WORK tic=552 queries=2 lists=1 visits=1202 cannonQueries=0 cannonSight=0
+CA121 FRAME tic=554 ms=20965.870800 interval=89.398000
+CA128 WORK tic=553 queries=4 lists=1 visits=2404 cannonQueries=0 cannonSight=0
+CA128 WORK tic=554 queries=7 lists=1 visits=4207 cannonQueries=0 cannonSight=0
+CA121 COUNT tic=555 candidates=0 sight=0 decisions=0 commands=0
+CA128 WORK tic=555 queries=0 lists=0 visits=0 cannonQueries=0 cannonSight=0
+CA121 FRAME tic=557 ms=21045.919900 interval=80.049100
+CA128 WORK tic=556 queries=2 lists=1 visits=1202 cannonQueries=0 cannonSight=0
+CA128 WORK tic=557 queries=50 lists=1 visits=30050 cannonQueries=0 cannonSight=0
+CA128 WORK tic=558 queries=1 lists=1 visits=601 cannonQueries=0 cannonSight=0
+CA121 FRAME tic=560 ms=21136.798500 interval=90.878600
+CA128 BATTLE tic=560 living=6598 active=1 revision=2 groups=67 reduced=0 incomplete=0 damage=10 deaths=4 projectiles=6942 cannonShots=18
+CA128 WORK tic=559 queries=1 lists=1 visits=601 cannonQueries=0 cannonSight=0
+CA121 SIM tic=560 ms=21151.492200 roster=6001 attackers=5997 defenders=600 groups=67 moving=0 blocked=0 x=0.000 y=320.000 z=-0.000 angle=90.000
+CA121 MOTION tic=560 displaced=5957 distance=384214.118332 contacts=0
+CA128 WORK tic=560 queries=25 lists=1 visits=15025 cannonQueries=0 cannonSight=0
+CA128 WORK tic=561 queries=21 lists=1 visits=12621 cannonQueries=0 cannonSight=0
+CA121 FRAME tic=563 ms=21237.578900 interval=100.780400
+CA128 WORK tic=562 queries=4 lists=1 visits=2404 cannonQueries=0 cannonSight=0
+CA128 WORK tic=563 queries=0 lists=0 visits=0 cannonQueries=0 cannonSight=0
+CA128 WORK tic=564 queries=1 lists=1 visits=601 cannonQueries=0 cannonSight=0
+CA121 FRAME tic=566 ms=21340.356400 interval=102.777500
+CA128 WORK tic=565 queries=12 lists=1 visits=7212 cannonQueries=0 cannonSight=0
+CA128 WORK tic=566 queries=1 lists=1 visits=601 cannonQueries=0 cannonSight=0
+CA128 WORK tic=567 queries=1 lists=1 visits=601 cannonQueries=0 cannonSight=0
+CA128 WORK tic=568 queries=24 lists=1 visits=14424 cannonQueries=0 cannonSight=0
+CA121 FRAME tic=570 ms=21452.778000 interval=112.421600
+CA128 WORK tic=569 queries=21 lists=1 visits=12621 cannonQueries=0 cannonSight=0
+CA128 WORK tic=570 queries=5 lists=1 visits=3005 cannonQueries=0 cannonSight=0
+CA128 WORK tic=571 queries=0 lists=0 visits=0 cannonQueries=0 cannonSight=0
+CA128 WORK tic=572 queries=1 lists=1 visits=601 cannonQueries=0 cannonSight=0
+CA121 FRAME tic=574 ms=21549.802500 interval=97.024500
+CA128 WORK tic=573 queries=12 lists=1 visits=7212 cannonQueries=0 cannonSight=0
+CA128 WORK tic=574 queries=1 lists=1 visits=601 cannonQueries=0 cannonSight=0
+CA128 WORK tic=575 queries=1 lists=1 visits=601 cannonQueries=0 cannonSight=0
+CA121 FRAME tic=577 ms=21618.515800 interval=68.713300
+CA128 WORK tic=576 queries=24 lists=1 visits=14424 cannonQueries=0 cannonSight=0
+CA128 WORK tic=577 queries=21 lists=1 visits=12621 cannonQueries=0 cannonSight=0
+CA121 FRAME tic=579 ms=21677.991900 interval=59.476100
+CA128 WORK tic=578 queries=5 lists=1 visits=3005 cannonQueries=0 cannonSight=0
+CA128 WORK tic=579 queries=0 lists=0 visits=0 cannonQueries=0 cannonSight=0
+CA128 WORK tic=580 queries=1 lists=1 visits=601 cannonQueries=0 cannonSight=0
+CA121 FRAME tic=582 ms=21749.843500 interval=71.851600
+CA128 WORK tic=581 queries=12 lists=1 visits=7212 cannonQueries=0 cannonSight=0
+CA128 WORK tic=582 queries=1 lists=1 visits=601 cannonQueries=0 cannonSight=0
+CA121 FRAME tic=584 ms=21815.582600 interval=65.739100
+CA128 WORK tic=583 queries=1 lists=1 visits=601 cannonQueries=0 cannonSight=0
+CA128 WORK tic=584 queries=24 lists=1 visits=14424 cannonQueries=0 cannonSight=0
+CA121 FRAME tic=586 ms=21880.489100 interval=64.906500
+CA128 WORK tic=585 queries=21 lists=1 visits=12621 cannonQueries=0 cannonSight=0
+CA128 WORK tic=586 queries=5 lists=1 visits=3005 cannonQueries=0 cannonSight=0
+CA128 WORK tic=587 queries=0 lists=0 visits=0 cannonQueries=0 cannonSight=0
+CA121 FRAME tic=589 ms=21950.728500 interval=70.239400
+CA128 WORK tic=588 queries=1 lists=1 visits=601 cannonQueries=0 cannonSight=0
+CA128 WORK tic=589 queries=12 lists=1 visits=7212 cannonQueries=0 cannonSight=0
+CA121 FRAME tic=591 ms=22009.278500 interval=58.550000
+CA128 WORK tic=590 queries=1 lists=1 visits=601 cannonQueries=0 cannonSight=0
+CA128 WORK tic=591 queries=1 lists=1 visits=601 cannonQueries=0 cannonSight=0
+CA121 FRAME tic=593 ms=22062.182800 interval=52.904300
+CA121 COUNT tic=592 candidates=0 sight=0 decisions=0 commands=0
+CA128 WORK tic=592 queries=24 lists=1 visits=14424 cannonQueries=0 cannonSight=0
+CA128 WORK tic=593 queries=21 lists=1 visits=12621 cannonQueries=0 cannonSight=0
+CA121 FRAME tic=595 ms=22119.179800 interval=56.997000
+CA128 BATTLE tic=595 living=6598 active=1 revision=2 groups=65 reduced=0 incomplete=0 damage=10 deaths=4 projectiles=7527 cannonShots=18
+CA128 WORK tic=594 queries=5 lists=1 visits=3005 cannonQueries=0 cannonSight=0
+CA121 SIM tic=595 ms=22131.504200 roster=6001 attackers=5997 defenders=600 groups=65 moving=0 blocked=0 x=0.000 y=320.000 z=-0.000 angle=90.000
+CA121 MOTION tic=595 displaced=5956 distance=383785.202783 contacts=0
+CA128 WORK tic=595 queries=19 lists=1 visits=11419 cannonQueries=0 cannonSight=0
+CA121 FRAME tic=597 ms=22186.823300 interval=67.643500
+CA128 WORK tic=596 queries=5 lists=1 visits=3005 cannonQueries=0 cannonSight=0
+CA128 WORK tic=597 queries=20 lists=1 visits=12020 cannonQueries=0 cannonSight=0
+CA121 FRAME tic=599 ms=22258.047800 interval=71.224500
+CA128 WORK tic=598 queries=1 lists=1 visits=601 cannonQueries=0 cannonSight=0
+CA128 WORK tic=599 queries=1 lists=1 visits=601 cannonQueries=0 cannonSight=0
+CA128 WORK tic=600 queries=12 lists=1 visits=7212 cannonQueries=0 cannonSight=0
+CA121 FRAME tic=602 ms=22349.120300 interval=91.072500
+CA128 WORK tic=601 queries=5 lists=1 visits=3005 cannonQueries=0 cannonSight=0
+CA128 WORK tic=602 queries=3 lists=1 visits=1803 cannonQueries=0 cannonSight=0
+CA128 WORK tic=603 queries=19 lists=1 visits=11419 cannonQueries=0 cannonSight=0
+CA121 FRAME tic=605 ms=22440.284600 interval=91.164300
+CA128 WORK tic=604 queries=5 lists=1 visits=3005 cannonQueries=0 cannonSight=0
+CA128 WORK tic=605 queries=20 lists=1 visits=12020 cannonQueries=0 cannonSight=0
+CA128 WORK tic=606 queries=1 lists=1 visits=601 cannonQueries=0 cannonSight=0
+CA121 FRAME tic=608 ms=22527.622000 interval=87.337400
+CA128 WORK tic=607 queries=1 lists=1 visits=601 cannonQueries=0 cannonSight=0
+CA128 WORK tic=608 queries=12 lists=1 visits=7212 cannonQueries=0 cannonSight=0
+CA128 WORK tic=609 queries=5 lists=1 visits=3005 cannonQueries=0 cannonSight=0
+CA121 FRAME tic=611 ms=22615.858800 interval=88.236800
+CA128 WORK tic=610 queries=3 lists=1 visits=1803 cannonQueries=0 cannonSight=0
+CA128 WORK tic=611 queries=19 lists=1 visits=11419 cannonQueries=0 cannonSight=0
+CA128 WORK tic=612 queries=5 lists=1 visits=3005 cannonQueries=0 cannonSight=0
+CA128 WORK tic=613 queries=20 lists=1 visits=12020 cannonQueries=0 cannonSight=0
+CA121 FRAME tic=615 ms=22721.557400 interval=105.698600
+CA128 WORK tic=614 queries=1 lists=1 visits=601 cannonQueries=0 cannonSight=0
+CA128 WORK tic=615 queries=1 lists=1 visits=601 cannonQueries=0 cannonSight=0
+CA128 WORK tic=616 queries=12 lists=1 visits=7212 cannonQueries=0 cannonSight=0
+CA121 FRAME tic=618 ms=22812.924700 interval=91.367300
+CA128 WORK tic=617 queries=5 lists=1 visits=3005 cannonQueries=0 cannonSight=0
+CA128 WORK tic=618 queries=3 lists=1 visits=1803 cannonQueries=0 cannonSight=0
+CA128 WORK tic=619 queries=19 lists=1 visits=11419 cannonQueries=0 cannonSight=0
+CA121 FRAME tic=621 ms=22895.613300 interval=82.688600
+CA128 WORK tic=620 queries=5 lists=1 visits=3005 cannonQueries=0 cannonSight=0
+CA128 WORK tic=621 queries=20 lists=1 visits=12020 cannonQueries=0 cannonSight=0
+CA128 WORK tic=622 queries=1 lists=1 visits=601 cannonQueries=0 cannonSight=0
+CA121 FRAME tic=624 ms=22983.661200 interval=88.047900
+CA128 WORK tic=623 queries=1 lists=1 visits=601 cannonQueries=0 cannonSight=0
+CA128 WORK tic=624 queries=12 lists=1 visits=7212 cannonQueries=0 cannonSight=0
+CA128 WORK tic=625 queries=5 lists=1 visits=3005 cannonQueries=0 cannonSight=0
+CA121 FRAME tic=627 ms=23074.005800 interval=90.344600
+CA128 WORK tic=626 queries=3 lists=1 visits=1803 cannonQueries=0 cannonSight=0
+CA128 WORK tic=627 queries=19 lists=1 visits=11419 cannonQueries=0 cannonSight=0
+CA128 WORK tic=628 queries=5 lists=1 visits=3005 cannonQueries=0 cannonSight=0
+CA121 COUNT tic=629 candidates=0 sight=0 decisions=0 commands=0
+CA128 BATTLE tic=630 living=6598 active=1 revision=2 groups=66 reduced=0 incomplete=0 damage=10 deaths=4 projectiles=8131 cannonShots=18
+CA128 WORK tic=629 queries=20 lists=1 visits=12020 cannonQueries=0 cannonSight=0
+CA121 SIM tic=630 ms=23153.322100 roster=6001 attackers=5997 defenders=600 groups=66 moving=0 blocked=1 x=0.000 y=320.000 z=-0.000 angle=90.000
+CA121 MOTION tic=630 displaced=5954 distance=381356.054754 contacts=0
+CA121 FRAME tic=631 ms=23195.802400 interval=121.796600
+CA128 WORK tic=630 queries=19 lists=1 visits=11419 cannonQueries=0 cannonSight=0
+CA128 WORK tic=631 queries=1 lists=1 visits=601 cannonQueries=0 cannonSight=0
+CA128 WORK tic=632 queries=9 lists=1 visits=5409 cannonQueries=0 cannonSight=0
+CA128 WORK tic=633 queries=20 lists=1 visits=12020 cannonQueries=0 cannonSight=0
+CA121 FRAME tic=635 ms=23305.595100 interval=109.792700
+CA128 WORK tic=634 queries=3 lists=1 visits=1803 cannonQueries=0 cannonSight=0
+CA128 WORK tic=635 queries=7 lists=1 visits=4207 cannonQueries=0 cannonSight=0
+CA128 WORK tic=636 queries=1 lists=1 visits=601 cannonQueries=0 cannonSight=0
+CA128 WORK tic=637 queries=4 lists=1 visits=2404 cannonQueries=0 cannonSight=0
+CA121 FRAME tic=639 ms=23410.995500 interval=105.400400
+CA128 WORK tic=638 queries=19 lists=1 visits=11419 cannonQueries=0 cannonSight=0
+CA128 WORK tic=639 queries=1 lists=1 visits=601 cannonQueries=0 cannonSight=0
+CA128 WORK tic=640 queries=9 lists=1 visits=5409 cannonQueries=0 cannonSight=0
+CA121 FRAME tic=642 ms=23491.497200 interval=80.501700
+CA128 WORK tic=641 queries=20 lists=1 visits=12020 cannonQueries=0 cannonSight=0
+CA128 WORK tic=642 queries=3 lists=1 visits=1803 cannonQueries=0 cannonSight=0
+CA128 WORK tic=643 queries=7 lists=1 visits=4207 cannonQueries=0 cannonSight=0
+CA121 FRAME tic=645 ms=23557.127800 interval=65.630600
+CA128 WORK tic=644 queries=1 lists=1 visits=601 cannonQueries=0 cannonSight=0
+CA128 WORK tic=645 queries=4 lists=1 visits=2404 cannonQueries=0 cannonSight=0
+CA121 FRAME tic=647 ms=23615.078600 interval=57.950800
+CA128 WORK tic=646 queries=19 lists=1 visits=11419 cannonQueries=0 cannonSight=0
+CA128 WORK tic=647 queries=1 lists=1 visits=601 cannonQueries=0 cannonSight=0
+CA121 FRAME tic=649 ms=23665.574300 interval=50.495700
+CA128 WORK tic=648 queries=9 lists=1 visits=5409 cannonQueries=0 cannonSight=0
+CA128 WORK tic=649 queries=20 lists=1 visits=12020 cannonQueries=0 cannonSight=0
+CA121 FRAME tic=651 ms=23727.312700 interval=61.738400
+CA128 WORK tic=650 queries=3 lists=1 visits=1803 cannonQueries=0 cannonSight=0
+CA128 WORK tic=651 queries=7 lists=1 visits=4207 cannonQueries=0 cannonSight=0
+CA121 FRAME tic=653 ms=23780.777700 interval=53.465000
+CA128 WORK tic=652 queries=1 lists=1 visits=601 cannonQueries=0 cannonSight=0
+CA128 WORK tic=653 queries=4 lists=1 visits=2404 cannonQueries=0 cannonSight=0
+CA121 FRAME tic=655 ms=23844.539200 interval=63.761500
+CA128 WORK tic=654 queries=19 lists=1 visits=11419 cannonQueries=0 cannonSight=0
+CA128 WORK tic=655 queries=1 lists=1 visits=601 cannonQueries=0 cannonSight=0
+CA128 WORK tic=656 queries=9 lists=1 visits=5409 cannonQueries=0 cannonSight=0
+CA121 FRAME tic=658 ms=23923.500100 interval=78.960900
+CA128 WORK tic=657 queries=20 lists=1 visits=12020 cannonQueries=0 cannonSight=0
+CA128 WORK tic=658 queries=3 lists=1 visits=1803 cannonQueries=0 cannonSight=0
+CA121 FRAME tic=660 ms=23977.836900 interval=54.336800
+CA128 WORK tic=659 queries=7 lists=1 visits=4207 cannonQueries=0 cannonSight=0
+CA128 WORK tic=660 queries=1 lists=1 visits=601 cannonQueries=0 cannonSight=0
+CA121 FRAME tic=662 ms=24035.370800 interval=57.533900
+CA128 WORK tic=661 queries=4 lists=1 visits=2404 cannonQueries=0 cannonSight=0
+CA128 WORK tic=662 queries=19 lists=1 visits=11419 cannonQueries=0 cannonSight=0
+CA121 FRAME tic=664 ms=24099.346900 interval=63.976100
+CA128 WORK tic=663 queries=1 lists=1 visits=601 cannonQueries=0 cannonSight=0
+CA128 BATTLE tic=665 living=6598 active=1 revision=2 groups=64 reduced=0 incomplete=0 damage=10 deaths=4 projectiles=8751 cannonShots=18
+CA128 WORK tic=664 queries=9 lists=1 visits=5409 cannonQueries=0 cannonSight=0
+CA121 SIM tic=665 ms=24136.892400 roster=6001 attackers=5997 defenders=600 groups=64 moving=0 blocked=3 x=0.000 y=320.000 z=-0.000 angle=90.000
+CA121 MOTION tic=665 displaced=5955 distance=358698.303225 contacts=0
+CA128 WORK tic=665 queries=35 lists=1 visits=21035 cannonQueries=0 cannonSight=0
+CA121 FRAME tic=667 ms=24204.221000 interval=104.874100
+CA121 COUNT tic=666 candidates=0 sight=0 decisions=0 commands=0
+CA128 WORK tic=666 queries=3 lists=1 visits=1803 cannonQueries=0 cannonSight=0
+CA128 WORK tic=667 queries=3 lists=1 visits=1803 cannonQueries=0 cannonSight=0
+CA128 WORK tic=668 queries=1 lists=1 visits=601 cannonQueries=0 cannonSight=0
+CA121 FRAME tic=670 ms=24290.792100 interval=86.571100
+CA128 WORK tic=669 queries=2 lists=1 visits=1202 cannonQueries=0 cannonSight=0
+CA128 WORK tic=670 queries=11 lists=1 visits=6611 cannonQueries=0 cannonSight=0
+CA128 WORK tic=671 queries=1 lists=1 visits=601 cannonQueries=0 cannonSight=0
+CA121 FRAME tic=673 ms=24373.884000 interval=83.091900
+CA128 WORK tic=672 queries=7 lists=1 visits=4207 cannonQueries=0 cannonSight=0
+CA128 WORK tic=673 queries=35 lists=1 visits=21035 cannonQueries=0 cannonSight=0
+CA128 WORK tic=674 queries=3 lists=1 visits=1803 cannonQueries=0 cannonSight=0
+CA121 FRAME tic=676 ms=24467.149400 interval=93.265400
+CA128 WORK tic=675 queries=3 lists=1 visits=1803 cannonQueries=0 cannonSight=0
+CA128 WORK tic=676 queries=1 lists=1 visits=601 cannonQueries=0 cannonSight=0
+CA128 WORK tic=677 queries=2 lists=1 visits=1202 cannonQueries=0 cannonSight=0
+CA121 FRAME tic=679 ms=24552.132000 interval=84.982600
+CA128 WORK tic=678 queries=11 lists=1 visits=6611 cannonQueries=0 cannonSight=0
+CA128 WORK tic=679 queries=1 lists=1 visits=601 cannonQueries=0 cannonSight=0
+CA128 WORK tic=680 queries=7 lists=1 visits=4207 cannonQueries=0 cannonSight=0
+CA121 FRAME tic=682 ms=24640.387100 interval=88.255100
+CA128 WORK tic=681 queries=35 lists=1 visits=21035 cannonQueries=0 cannonSight=0
+CA128 WORK tic=682 queries=3 lists=1 visits=1803 cannonQueries=0 cannonSight=0
+CA128 WORK tic=683 queries=3 lists=1 visits=1803 cannonQueries=0 cannonSight=0
+CA121 FRAME tic=685 ms=24718.839100 interval=78.452000
+CA128 WORK tic=684 queries=1 lists=1 visits=601 cannonQueries=0 cannonSight=0
+CA128 WORK tic=685 queries=2 lists=1 visits=1202 cannonQueries=0 cannonSight=0
+CA128 WORK tic=686 queries=11 lists=1 visits=6611 cannonQueries=0 cannonSight=0
+CA121 FRAME tic=688 ms=24801.928900 interval=83.089800
+CA128 WORK tic=687 queries=1 lists=1 visits=601 cannonQueries=0 cannonSight=0
+CA128 WORK tic=688 queries=7 lists=1 visits=4207 cannonQueries=0 cannonSight=0
+CA128 WORK tic=689 queries=35 lists=1 visits=21035 cannonQueries=0 cannonSight=0
+CA121 FRAME tic=691 ms=24891.875000 interval=89.946100
+CA128 WORK tic=690 queries=3 lists=1 visits=1803 cannonQueries=0 cannonSight=0
+CA128 WORK tic=691 queries=3 lists=1 visits=1803 cannonQueries=0 cannonSight=0
+CA128 WORK tic=692 queries=1 lists=1 visits=601 cannonQueries=0 cannonSight=0
+CA121 FRAME tic=694 ms=24977.942600 interval=86.067600
+CA128 WORK tic=693 queries=2 lists=1 visits=1202 cannonQueries=0 cannonSight=0
+CA128 WORK tic=694 queries=11 lists=1 visits=6611 cannonQueries=0 cannonSight=0
+CA128 WORK tic=695 queries=1 lists=1 visits=601 cannonQueries=0 cannonSight=0
+CA121 FRAME tic=697 ms=25062.097000 interval=84.154400
+CA128 WORK tic=696 queries=7 lists=1 visits=4207 cannonQueries=0 cannonSight=0
+CA128 WORK tic=697 queries=35 lists=1 visits=21035 cannonQueries=0 cannonSight=0
+CA128 WORK tic=698 queries=3 lists=1 visits=1803 cannonQueries=0 cannonSight=0
+CA121 FRAME tic=700 ms=25148.266100 interval=86.169100
+CA128 BATTLE tic=700 living=6598 active=1 revision=2 groups=63 reduced=0 incomplete=0 damage=10 deaths=4 projectiles=9365 cannonShots=18
+CA128 WORK tic=699 queries=3 lists=1 visits=1803 cannonQueries=0 cannonSight=0
+CA121 SIM tic=700 ms=25161.719900 roster=6001 attackers=5997 defenders=600 groups=63 moving=0 blocked=2 x=0.000 y=320.000 z=-0.000 angle=90.000
+CA121 MOTION tic=700 displaced=5951 distance=375468.584878 contacts=0
+CA128 WORK tic=700 queries=27 lists=1 visits=16227 cannonQueries=0 cannonSight=0
+CA128 WORK tic=701 queries=16 lists=1 visits=9616 cannonQueries=0 cannonSight=0
+CA121 FRAME tic=703 ms=25260.398400 interval=112.132300
+CA128 WORK tic=702 queries=2 lists=1 visits=1202 cannonQueries=15 cannonSight=275
+CA121 COUNT tic=703 candidates=0 sight=0 decisions=0 commands=0
+CA128 WORK tic=703 queries=0 lists=0 visits=0 cannonQueries=0 cannonSight=0
+CA128 WORK tic=704 queries=5 lists=1 visits=3005 cannonQueries=0 cannonSight=0
+CA128 WORK tic=705 queries=27 lists=1 visits=16227 cannonQueries=0 cannonSight=0
+CA121 FRAME tic=707 ms=25368.817700 interval=108.419300
+CA128 WORK tic=706 queries=3 lists=1 visits=1803 cannonQueries=0 cannonSight=0
+CA128 WORK tic=707 queries=10 lists=1 visits=6010 cannonQueries=0 cannonSight=0
+CA128 WORK tic=708 queries=17 lists=1 visits=10217 cannonQueries=0 cannonSight=0
+CA128 WORK tic=709 queries=14 lists=1 visits=8414 cannonQueries=0 cannonSight=0
+CA121 FRAME tic=711 ms=25484.115300 interval=115.297600
+CA128 WORK tic=710 queries=1 lists=1 visits=601 cannonQueries=0 cannonSight=0
+CA128 WORK tic=711 queries=0 lists=0 visits=0 cannonQueries=0 cannonSight=0
+CA128 WORK tic=712 queries=4 lists=1 visits=2404 cannonQueries=0 cannonSight=0
+CA128 WORK tic=713 queries=18 lists=1 visits=10818 cannonQueries=0 cannonSight=0
+CA121 FRAME tic=715 ms=25578.163200 interval=94.047900
+CA128 WORK tic=714 queries=3 lists=1 visits=1803 cannonQueries=0 cannonSight=0
+CA128 WORK tic=715 queries=8 lists=1 visits=4808 cannonQueries=0 cannonSight=0
+CA128 WORK tic=716 queries=17 lists=1 visits=10217 cannonQueries=0 cannonSight=0
+CA121 FRAME tic=718 ms=25651.798300 interval=73.635100
+CA128 WORK tic=717 queries=14 lists=1 visits=8414 cannonQueries=0 cannonSight=0
+CA128 WORK tic=718 queries=1 lists=1 visits=601 cannonQueries=0 cannonSight=0
+CA128 WORK tic=719 queries=0 lists=0 visits=0 cannonQueries=0 cannonSight=0
+CA121 FRAME tic=721 ms=25727.873100 interval=76.074800
+CA128 WORK tic=720 queries=4 lists=1 visits=2404 cannonQueries=0 cannonSight=0
+CA128 WORK tic=721 queries=18 lists=1 visits=10818 cannonQueries=0 cannonSight=0
+CA121 FRAME tic=723 ms=25793.926100 interval=66.053000
+CA128 WORK tic=722 queries=3 lists=1 visits=1803 cannonQueries=0 cannonSight=0
+CA128 WORK tic=723 queries=8 lists=1 visits=4808 cannonQueries=0 cannonSight=0
+CA128 WORK tic=724 queries=16 lists=1 visits=9616 cannonQueries=0 cannonSight=0
+CA121 FRAME tic=726 ms=25877.524500 interval=83.598400
+CA128 WORK tic=725 queries=15 lists=1 visits=9015 cannonQueries=0 cannonSight=0
+CA128 WORK tic=726 queries=1 lists=1 visits=601 cannonQueries=0 cannonSight=0
+CA128 WORK tic=727 queries=0 lists=0 visits=0 cannonQueries=0 cannonSight=0
+CA121 FRAME tic=729 ms=25959.538200 interval=82.013700
+CA128 WORK tic=728 queries=4 lists=1 visits=2404 cannonQueries=0 cannonSight=0
+CA128 WORK tic=729 queries=18 lists=1 visits=10818 cannonQueries=0 cannonSight=0
+CA128 WORK tic=730 queries=3 lists=1 visits=1803 cannonQueries=0 cannonSight=0
+CA121 FRAME tic=732 ms=26053.585500 interval=94.047300
+CA128 WORK tic=731 queries=8 lists=1 visits=4808 cannonQueries=0 cannonSight=0
+CA128 WORK tic=732 queries=16 lists=1 visits=9616 cannonQueries=0 cannonSight=0
+CA128 WORK tic=733 queries=15 lists=1 visits=9015 cannonQueries=0 cannonSight=0
+CA121 FRAME tic=735 ms=26141.375400 interval=87.789900
+CA128 BATTLE tic=735 living=6593 active=1 revision=2 groups=65 reduced=0 incomplete=0 damage=19 deaths=9 projectiles=10013 cannonShots=33
+CA128 WORK tic=734 queries=1 lists=1 visits=601 cannonQueries=0 cannonSight=0
+CA121 SIM tic=735 ms=26157.593300 roster=6001 attackers=5992 defenders=600 groups=65 moving=0 blocked=2 x=0.000 y=320.000 z=-0.000 angle=90.000
+CA121 MOTION tic=735 displaced=5949 distance=366223.937121 contacts=0
+CA128 WORK tic=735 queries=19 lists=1 visits=11419 cannonQueries=0 cannonSight=0
+CA128 WORK tic=736 queries=9 lists=1 visits=5409 cannonQueries=0 cannonSight=0
+CA121 FRAME tic=738 ms=26245.357200 interval=103.981800
+CA128 WORK tic=737 queries=22 lists=1 visits=13222 cannonQueries=0 cannonSight=0
+CA128 WORK tic=738 queries=3 lists=1 visits=1803 cannonQueries=0 cannonSight=0
+CA128 WORK tic=739 queries=2 lists=1 visits=1202 cannonQueries=0 cannonSight=0
+CA121 COUNT tic=740 candidates=0 sight=0 decisions=0 commands=0
+CA128 WORK tic=740 queries=8 lists=1 visits=4808 cannonQueries=0 cannonSight=0
+CA121 FRAME tic=742 ms=26350.779900 interval=105.422700
+CA128 WORK tic=741 queries=2 lists=1 visits=1202 cannonQueries=0 cannonSight=0
+CA128 WORK tic=742 queries=1 lists=1 visits=601 cannonQueries=0 cannonSight=0
+CA128 WORK tic=743 queries=19 lists=1 visits=11419 cannonQueries=0 cannonSight=0
+CA121 FRAME tic=745 ms=26449.541200 interval=98.761300
+CA128 WORK tic=744 queries=9 lists=1 visits=5409 cannonQueries=0 cannonSight=0
+CA128 WORK tic=745 queries=22 lists=1 visits=13222 cannonQueries=0 cannonSight=0
+CA128 WORK tic=746 queries=3 lists=1 visits=1803 cannonQueries=0 cannonSight=0
+CA128 WORK tic=747 queries=2 lists=1 visits=1202 cannonQueries=0 cannonSight=0
+CA121 FRAME tic=749 ms=26575.361700 interval=125.820500
+CA128 WORK tic=748 queries=8 lists=1 visits=4808 cannonQueries=0 cannonSight=0
+CA128 WORK tic=749 queries=2 lists=1 visits=1202 cannonQueries=0 cannonSight=0
+CA128 WORK tic=750 queries=1 lists=1 visits=601 cannonQueries=0 cannonSight=0
+CA128 WORK tic=751 queries=19 lists=1 visits=11419 cannonQueries=0 cannonSight=0
+CA121 FRAME tic=753 ms=26680.889500 interval=105.527800
+CA128 WORK tic=752 queries=9 lists=1 visits=5409 cannonQueries=0 cannonSight=0
+CA128 WORK tic=753 queries=22 lists=1 visits=13222 cannonQueries=0 cannonSight=0
+CA128 WORK tic=754 queries=3 lists=1 visits=1803 cannonQueries=0 cannonSight=0
+CA128 WORK tic=755 queries=2 lists=1 visits=1202 cannonQueries=0 cannonSight=0
+CA121 FRAME tic=757 ms=26792.852400 interval=111.962900
+CA128 WORK tic=756 queries=8 lists=1 visits=4808 cannonQueries=0 cannonSight=0
+CA128 WORK tic=757 queries=2 lists=1 visits=1202 cannonQueries=0 cannonSight=0
+CA128 WORK tic=758 queries=1 lists=1 visits=601 cannonQueries=0 cannonSight=0
+CA128 WORK tic=759 queries=19 lists=1 visits=11419 cannonQueries=0 cannonSight=0
+CA121 FRAME tic=761 ms=26901.592000 interval=108.739600
+CA128 WORK tic=760 queries=8 lists=1 visits=4808 cannonQueries=0 cannonSight=0
+CA128 WORK tic=761 queries=23 lists=1 visits=13823 cannonQueries=0 cannonSight=0
+CA128 WORK tic=762 queries=3 lists=1 visits=1803 cannonQueries=0 cannonSight=0
+CA121 FRAME tic=764 ms=26992.208100 interval=90.616100
+CA128 WORK tic=763 queries=2 lists=1 visits=1202 cannonQueries=0 cannonSight=0
+CA128 WORK tic=764 queries=8 lists=1 visits=4808 cannonQueries=0 cannonSight=0
+CA128 WORK tic=765 queries=2 lists=1 visits=1202 cannonQueries=0 cannonSight=0
+CA128 WORK tic=766 queries=1 lists=1 visits=601 cannonQueries=0 cannonSight=0
+CA121 FRAME tic=768 ms=27097.992400 interval=105.784300
+CA128 WORK tic=767 queries=19 lists=1 visits=11419 cannonQueries=0 cannonSight=0

@@ -1,6 +1,89 @@
 # Caelum Argenteum — Project, status and roadmap
 
-Documentation version: **5.0.5** — 2026-10-07.
+Documentation version: **5.0.6** — 2026-10-07.
+
+## 5.0.6 — Automatic high-density AI and shared work (#128)
+
+Implementation and agent validation are complete on the focused #128 branch.
+The author authorizes normal gameplay optimizations at 500 living map
+combatants and explicitly chooses the leader's target for group members.
+This is a production follow-up to #121's accepted diagnostic evidence.
+The population count includes offscreen combatants; the full army, individual
+combat, collision, resource recovery and status updates remain simulated.
+The current contract and save boundary are in SYSTEMS, with native evidence
+and reproducible fixtures under `assets/validation_506`.
+
+The selected implementation uses shared leader decisions and candidate lists
+on demand, exact spatial guard queries including NOBLOCKMAP registration, and
+bounded negative cannon retries plus safe priority/distance pruning before
+sight. It retains native attacks, individual collision, resources and status.
+Background group staggering is rejected: its congestion p95 callback gaps are
+341–413 ms versus 267–268 ms on demand. Candidate sharing alone has no resolved
+independent speed gain, although it avoids repeated list construction.
+
+All comparisons use ordinary combat with 6,001 attackers plus 600 defenders,
+seed 116, skill 2, the fixed initial MAP06 camera/conversation, GZDoom 4.14.2,
+Vulkan, native 1520-by-825 rendering, background simulation enabled and 5%
+audio. The first 35 tics are warmup. `production-c/d` are the final-source
+repetitions; earlier `current-a/b` are the rejected staggered experiment.
+
+| Window | 5.0.5 production baseline | #121 combined algorithm, repeated | Final 5.0.6, repeated |
+| --- | ---: | ---: | ---: |
+| Early, 35–700: tics/s | 14.146 | 34.916–34.924 | 34.917–34.954 |
+| Congestion, 700–1750: tics/s | 10.196 | 34.188–34.229 | 34.776–34.798 |
+| Later, 1750–3500: tics/s | 3.266 | 26.174–26.309 | 26.639–27.035 |
+| Common, 35–2100: tics/s | 9.336 | 33.469–33.574 | 33.999–34.157 |
+| Common: frame callbacks/s | 0.552 | 7.407–7.850 | 8.089–8.658 |
+| Common: p95 callback gap, ms | 3657.771 | 489.922–506.019 | 296.239–316.428 |
+| Later: frame callbacks/s | 0.192 | 1.542–1.554 | 1.575–1.601 |
+
+The direct #121-algorithm controls use the same normal population service and
+observation overhead. Matched-order final pairs improve common simulation by
+1.58–1.74%, callback rate by 9.20–10.29%, and p95 gaps by 37.47–39.53%.
+These are modest additional improvements; the much larger baseline delta
+mostly comes from promoting the previously tested shared targeting/spatial
+queries/retries. Target sharing changes trajectories and later combat, so the
+baseline delta is not a same-behavior causal breakdown. Desktop load is not
+exclusive. Callback intervals are not GPU/presentation time. **Stable 35 tics/s
+and 30 FPS are not achieved**; the final late native screenshot reports 1 FPS.
+
+Separate 700-tic work counters measure 6,412 candidate-list constructions
+without sharing versus 700 with it. On-demand groups need 6,026 decisions
+versus 6,412 background-scheduled decisions. Cannon pruning reduces 143,979
+sight calls to 578 for the same 33 queries in the matched counter route.
+These large work reductions are not equivalent whole-game speed percentages.
+
+Native verification: 38 functional checks; 499/500/501, offscreen counting,
+death/removal/revival and mode transitions; individual versus leader targets;
+attack range/visibility; crew priority and ties; remembered/vertical/unlinked
+guards and one-time neutralization. The before-fix negative control fails
+only the same-tic NOBLOCKMAP registration case. The full guard oracle retains
+1,212 periodic rows across all 12 machines through tic 3535 with no omissions;
+160 cannon queries match the original selector through tic 3510, with no skips.
+All 96 special visibility cases also match the native sight RNG stream.
+
+Cold load and hub return retain 500 → 1 → 500 combatants. The old full-army
+save upgrades, reloads and rolls back using its unchanged original copy,
+without redeployment. The final observation records 88 damage events, 41
+deaths and 160 cannon shots; every living attacker retains full RPG objects
+and the ordinary simulation path. Source verification checks 3,789 unaffected
+method bodies, exact low-density targeting, unchanged maps/assets and all
+6,188 final package members against source. A separate relocated-player control
+retains ordinary NPC placement/combat and measures 34.874 tics/s and 27.925
+callbacks/s over tics 70–1050; a native screenshot reads 31 FPS. The initially
+elevated invulnerable observer falls under normal player physics and reaches
+the ground among attacking Mandingas. This shorter, different camera/target
+trajectory is excluded from matched comparisons and does not establish stable
+30 FPS across the longer siege. Images and positions are in VISUAL_CHECKS.
+
+Reproduction, hashes and raw evidence are in `assets/validation_506`; positive
+findings and limitations are integrated in KNOWN_PITFALLS CA-KP-046–048.
+The bounded Windows execution-state request is released after testing without
+changing the power plan. The author confirmed CA128-01 passed on 2026-10-07
+and authorized PR #129 merge / #128 closure. The measured fluency limits remain.
+Further fluency work must preserve the
+standing normal-game/500-combatant policy and profile the remaining perception,
+individual actor work and rendering costs separately.
 
 ## 5.0.5 — Siege subsystem diagnosis and shared-group experiments (#121)
 

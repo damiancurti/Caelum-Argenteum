@@ -1,11 +1,10 @@
 # CONTEXT.md — Ultra-condensed summary of Caelum Argenteum
 
-Documentation version: **5.0.5** — 2026-10-07.
+Documentation version: **5.0.6** — 2026-10-07.
 
-**5.0.5/#121:** profiles/combinations accepted; further fluency work deferred.
-Measured target unmet. Evidence: validation_505; PROJECT/KNOWN_PITFALLS.
-Production/saves unchanged. #119/#120 accepted/merged; bounded V5.0 complete.
-Multiplayer pending.
+**5.0.6/#128 accepted:** normal AI at 500 living combatants; leader targets.
+CA128-01 passed 2026-10-07; merge authorized. Evidence: validation_506.
+Fluency target unmet; multiplayer pending.
 
 **4.37.24/#82 accepted 2026-10-05:** closing export; Tab/M/B/R/F/T defaults.
 Evidence: validation_43724. #112/#106 merged (#114/#113); V5.0 follows.

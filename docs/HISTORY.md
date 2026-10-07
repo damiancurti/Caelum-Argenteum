@@ -1,6 +1,52 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **5.0.5** — 2026-10-07.
+Documentation version: **5.0.6** — 2026-10-07.
+
+## 5.0.6 — Automatic normal high-density AI (#128, 2026-10-07)
+
+The author requests a production follow-up to #121's performance alternatives,
+native tests, commit/push and a temporary keep-awake request. Clarifications:
+count living combatants across the complete map, including offscreen actors;
+at 500 or more, group members adopt their leader's target even when another
+opponent is nearer to them. The latter explicitly overrides #77's
+individual-nearest policy within high-density mode. No population cut or
+removal of ordinary combat is authorized or implemented.
+
+The production implementation selects on-demand leader perception/candidates,
+spatial guard queries with immediate NOBLOCKMAP registration, bounded negative
+cannon retries and priority/distance sight pruning that retains invisibility
+RNG. Background group staggering is rejected after two repetitions show
+worse congestion frame-time tails. The intermediate experimental commit is
+`031c8877`; final production excludes its background group scheduler.
+
+Agent evidence: 38 passing boundary/behavior checks; an expected before-fix
+failure isolates late NOBLOCKMAP registration; 96 exact target/native-RNG
+comparisons; 1,212 periodic full-guard oracle rows and 160 exact cannon queries;
+cold-load/hub population 500 → 1 → 500; old-save upgrade/reload/rollback without
+redeployment or modifying the original save. Normal combat observation records
+damage, deaths, shots and complete actor RPG objects. Source/package checks
+retain 3,789 unaffected method bodies and all 6,188 source members.
+
+Final repeated native comparisons: early 34.917–34.954, congested
+34.776–34.798 and late 26.639–27.035 tics/s. The old production baseline is
+14.146/10.196/3.266 respectively. Direct #121 combined-algorithm controls show
+a further 1.58–1.74% common simulation gain and 9.20–10.29% callback gain,
+with p95 gaps improving 37.47–39.53%. Late callback rate remains only
+1.575–1.601/s; 35 tics/s plus 30 FPS is not achieved. A separate short
+relocated-player combat control measures 34.874 tics/s and 27.925 callbacks/s,
+with 31 FPS in a native snapshot; the camera/target trajectory differs and
+does not replace the longer matched measurements. Full scene/clock caveats,
+counter reductions, raw logs, native images and reproduction live in PROJECT
+and `assets/validation_506`; CA-KP-046–048 preserve the reusable lessons.
+
+Author acceptance on 2026-10-07: CA128-01 (origin 5.0.6 / issue #128), normal
+high-density combat, passed. The author explicitly confirmed all pending tests
+were correct and authorized PR #129 merge and #128 closure. Its entry is removed
+from pending_test.txt, which is now empty. This confirms the gameplay acceptance;
+it does not reinterpret the measured limits as stable 35-tic/30-FPS fluency.
+No earlier accepted manual test is reopened. This acceptance-only update retains
+5.0.6 and changes no runtime behavior; existing native evidence still applies.
+The temporary keep-awake request is released; the power plan is unchanged.
 
 ## 5.0.5 — Siege profiling and combined diagnostic experiments (#121, 2026-10-07)
 

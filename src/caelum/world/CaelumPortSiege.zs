@@ -48,6 +48,10 @@ class CaelumPortSiege : CaelumSiegeEncounter
     int SetupRevision, SetupTick, Groups;
     int TargetingRevision;
     bool CommandDirty, Aftermath;
+    bool HighDensity;
+    Array<Actor> TargetCandidates;
+    int CandidateTic;
+    bool CandidatesValid;
 
     static CaelumPortSiege Get()
     { return CaelumPortSiege(ThinkerIterator.Create("CaelumPortSiege").Next()); }
@@ -206,15 +210,92 @@ class CaelumPortSiege : CaelumSiegeEncounter
 
     void EnsureTargetingRevision()
     {
-        if(TargetingRevision>=1)return;
+        if(TargetingRevision>=2)return;
         // Sólo se reconstruye la percepción derivada; se conservan las
         // identidades, los puestos, las bajas y los mandos guardados.
+        ResetPerception();CommandDirty=true;
+        TargetingRevision=2;
+    }
+
+    void ResetPerception()
+    {
         for(int i=0;i<Attackers.Size();i++)
-        {Attackers[i].CombatTarget=null;Attackers[i].TargetRefreshTic=0;}
-        TargetingRevision=1;
+        {
+            let entry=Attackers[i];
+            entry.CombatTarget=null;entry.TargetRefreshTic=0;
+            entry.SharedTarget=null;entry.SharedTargetValid=false;
+            entry.NextSharedTargetTic=0;
+        }
+        CandidatesValid=false;TargetCandidates.Clear();
+        for(int i=0;i<Guns.Size();i++)if(Guns[i]!=null)Guns[i].NextTargetQuery=0;
+    }
+
+    void RefreshDensity()
+    {
+        EnsureTargetingRevision();
+        let population=CaelumPopulationState.Get();
+        bool active=population!=null && population.HighDensity;
+        if(active==HighDensity)return;
+        HighDensity=active;ResetPerception();CommandDirty=true;
+    }
+
+    void RefreshCandidates()
+    {
+        if(CandidatesValid && CandidateTic==level.time)return;
+        TargetCandidates.Clear();
+        for(int p=0;p<MAXPLAYERS;p++)
+        {
+            let candidate=playeringame[p] ? players[p].mo : null;
+            if(candidate!=null && candidate.health>0 && candidate.bShootable)
+                TargetCandidates.Push(candidate);
+        }
+        for(int i=0;i<Defenders.Size();i++)
+        {
+            let candidate=Defenders[i];
+            if(candidate!=null && candidate.health>0 && candidate.bShootable)
+                TargetCandidates.Push(candidate);
+        }
+        CandidateTic=level.time;CandidatesValid=true;
+    }
+
+    Actor LeaderTarget(CaelumSiegeCombatant leader)
+    {
+        RefreshCandidates();
+        Actor victim;double best=1e30;
+        for(int i=0;i<TargetCandidates.Size();i++)
+        {
+            let candidate=TargetCandidates[i];
+            if(candidate==null || candidate.health<=0 || !candidate.bShootable)continue;
+            double distance=leader.Body.Distance2D(candidate);
+            if(distance<best && leader.Body.CheckSight(candidate))
+            {victim=candidate;best=distance;}
+        }
+        leader.CombatTarget=victim;
+        return victim!=null ? victim : AttackingTarget[leader.Lane];
+    }
+
+    void UpdateSharedTarget(CaelumSiegeCombatant leader)
+    {
+        leader.SharedTarget=LeaderTarget(leader);
+        leader.SharedTargetValid=true;
+        // Se consulta al actuar un miembro; no se mantiene una segunda agenda
+        // que haga pensar también a grupos sin actividad de combate.
+        leader.NextSharedTargetTic=level.time+CaelumPortData.TARGET_UPDATE_TICS;
     }
 
     Actor AttackerTarget(CaelumSiegeCombatant entry)
+    {
+        if(!HighDensity)return IndividualAttackerTarget(entry);
+        let leader=entry.CommandLeader;
+        if(leader==null || !ActiveEntry(leader))leader=entry;
+        if(!leader.SharedTargetValid || level.time>=leader.NextSharedTargetTic)
+            UpdateSharedTarget(leader);
+        let victim=leader.SharedTarget;
+        // Una baja nunca se adopta como blanco vivo entre turnos de percepción.
+        return victim!=null && victim.health>0 && victim.bShootable ? victim : null;
+    }
+
+    Actor IndividualAttackerTarget(CaelumSiegeCombatant entry)
     {
         EnsureTargetingRevision();
         let body=entry.Body;
@@ -350,8 +431,14 @@ class CaelumPortSiege : CaelumSiegeEncounter
                 let soldier=Defenders[i];if(soldier==null || soldier.health<=0)continue;
                 candidate=soldier;crew=soldier.Gun!=null;
             }
-            if(!gun.EligibleTarget(candidate) || gun.Barrel==null || !gun.Barrel.CheckSight(candidate))continue;
+            if(!gun.EligibleTarget(candidate) || gun.Barrel==null)continue;
             double distance=(candidate.Pos-gun.Pos).Length();
+            bool competitive=chosen==null || (crew && !chosenCrew) || (crew==chosenCrew && distance<best);
+            // CheckSight usa azar con invisibilidad. Sólo se omiten consultas
+            // puras de candidatos normales que ya no pueden ganar la selección.
+            if(HighDensity && !competitive && candidate.GetRenderStyle()==STYLE_Normal
+                && candidate.Alpha>0 && !candidate.bInvisible && !candidate.bMInvisible)continue;
+            if(!gun.Barrel.CheckSight(candidate))continue;
             if(chosen==null || (crew && !chosenCrew) || (crew==chosenCrew && distance<best))
             {chosen=candidate;chosenCrew=crew;best=distance;}
         }
@@ -373,7 +460,14 @@ class CaelumPortSiege : CaelumSiegeEncounter
             let gun=Guns[i];if(gun==null || gun.Neutralized || !gun.Armed)continue;
             if(gun.Phase!=CaelumCannon.LOADED)continue;
             if(gun.Requested && gun.EligibleTarget(gun.IntendedTarget))continue;
-            gun.CancelShot();let victim=CannonTarget(gun);if(victim==null)continue;
+            if(HighDensity && level.time<gun.NextTargetQuery)continue;
+            gun.CancelShot();let victim=CannonTarget(gun);
+            if(victim==null)
+            {
+                if(HighDensity)gun.NextTargetQuery=level.time+CaelumPortData.TARGET_UPDATE_TICS;
+                continue;
+            }
+            gun.NextTargetQuery=0;
             vector3 point=victim.Pos+(0,0,victim.Height/2);
             if(victim is "CaelumBreakableGate")point.Z=victim.Pos.Z+CaelumCannonData.PIVOT_Z;
             double t=(point-gun.Pos).Length()/CaelumCannonData.SPEED;
@@ -483,6 +577,7 @@ class CaelumPortSiege : CaelumSiegeEncounter
     override void Tick()
     {
         if(SetupRevision==0){Deploy();return;}
+        RefreshDensity();
         if(!RosterSealed)
         {
             if(level.time<=SetupTick)return;

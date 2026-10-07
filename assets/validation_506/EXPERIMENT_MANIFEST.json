@@ -1,0 +1,12 @@
+{
+  "baseline_commit": "0e2b9eab9e93096993f04beab5d5ef94d69ca0e3",
+  "variants": {
+    "current": "0d95c4ac8edaac8d6ed1eb3bc41e3d55f3dd5089f2ca353a2e023973d4beea14",
+    "no-candidates": "fb734ce58aae939245d94fc099dc12ad573b4f8bfa8136141ebb0c760d526c86",
+    "no-stagger": "6fb3e3f8f177a1276dfc73d1921f9ebf0e27b09dee06c677deeea47401c84a32",
+    "neither": "65c42bac9cf64c89fd74bbf061091b1eea064748ed33085b6507c3ae3e5f287b"
+  },
+  "observer_sha256": "4c122f394aa9030f202eaea043dfee6e14148c58ebc7327bdd852c68b7a3d5eb",
+  "source_commit": "031c8877636a7dfd50fefb7fcf117f956b25d886",
+  "note": "Exact first-pass Windows package hashes; canonical runtime content is used to reproduce across line endings."
+}

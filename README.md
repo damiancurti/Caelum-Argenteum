@@ -6,8 +6,25 @@ An independent dark fantasy FPS-RPG inspired by nineteenth-century Argentina.
 Author and game designer: **Damian Curti**. Development target: **GZDoom 4.14.2**
 on Windows 11. The final game is intended to be independent of Doom assets.
 
-**Current release: 5.0.5.** Obtain and update the complete repository, validate
+**Current release: 5.0.6.** Obtain and update the complete repository, validate
 it, then rebuild with `run_dev.bat` as described below.
+
+Issue [#128](https://github.com/damiancurti/Caelum-Argenteum/issues/128) brings
+high-density optimizations into normal gameplay at 500 living combatants
+across the map. Siege members follow their leader's target while retaining
+individual combat, movement, collision and resource updates. Candidate reuse,
+spatial guards and bounded/pruned cannon queries are selected; background group
+staggering is rejected after repeated measurements. Final late simulation
+improves from 3.27 to 26.64–27.04 tics/s versus production 5.0.5, but the extreme
+late scene still falls to about 1–2 FPS. Compared directly with #121's combined
+algorithm, common simulation improves about 1.6–1.7% and frame callback rate
+about 9–10%; stable 35-tic/30-FPS fluency remains future work.
+Native boundary, target/RNG, guard, save and travel checks pass. See the
+[contract](docs/SYSTEMS.md#automatic-high-density-ai-128),
+[measurements](docs/PROJECT.md#506--automatic-high-density-ai-and-shared-work-128)
+and [evidence](assets/validation_506/NATIVE_VERIFICATION.json).
+The author confirmed CA128-01 passed on 2026-10-07 and authorized merging
+PR #129 and closing #128. The recorded performance limits remain unchanged.
 
 Issue [#121](https://github.com/damiancurti/Caelum-Argenteum/issues/121) profiles
 the complete MAP06 army and tests the author's shared groups of 100 in isolated
@@ -16,10 +33,10 @@ slowdown. The experiment records both CPU savings and changed trajectories,
 formation breakdown and artillery interactions. See the
 [diagnosis](docs/PROJECT.md#505--siege-subsystem-diagnosis-and-shared-group-experiments-121)
 and [recorded measurements](assets/validation_505/RESULTS.json).
-The production game keeps its existing AI, population, balance and save state.
+That diagnostic release kept its existing AI, population, balance and save state.
 The test launcher runs in the background without pausing or reducing priority,
 with audio enabled at 5%. This delivery supplies evidence and focused next steps;
-it does not ship a siege performance fix.
+it did not ship a siege performance fix. #128 above is its production follow-up.
 The combined combat prototype improves late simulation from about 3 to 24–25
 tics/s. The combined march reaches about 35, with 20–23 frame callbacks/s;
 neither meets the author's stable 35-tic/30-FPS target. Positive findings and

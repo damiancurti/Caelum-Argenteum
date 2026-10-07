@@ -4,6 +4,90 @@ Status: integrated engineering register (issue #22, patch 4.36.1b).
 Prepared: 2026-09-23. Inherits the project's release after integration.
 Inspected baseline: `1dc390576fa330d37ff543526fc7e69a397fc28f` (PR #7).
 
+## CA-KP-048 - Preserve native visibility RNG when pruning cannon candidates
+
+Status/evidence: CODE-VERIFIED / ENGINE-VERIFIED; normal-game implementation.
+First recorded / last checked: 2026-10-07. Issue #128 / 5.0.6.
+Environment: GZDoom 4.14.2, Windows 11/Vulkan, full normal MAP06 combat.
+
+Once a cannon has a target, a farther candidate of the same priority, or a
+non-crew candidate behind a crew target, cannot win. Rejecting such candidates
+before native sight saves work while preserving priority and strict-distance
+ties. This shortcut is gated by the automatic 500-combatant mode.
+
+Native `P_CheckSight` consumes its `CheckSight` random stream for some invisible
+targets. The production shortcut therefore applies only to normal render
+style, positive alpha and neither invisibility flag. Other candidates retain
+the native call even when they cannot win. The isolated 96-case comparison
+matches both target identities and the next native sight RNG value exactly,
+covering crew changes, deaths, occlusion, invisibility and transparency.
+Separate matched 700-tic counters retain the same 33 cannon queries while
+reducing native cannon sight calls from 143,979 to 578. This subsystem saving
+does not imply a proportional frame-rate increase.
+The full-battle oracle separately compares every target-query result against
+the original search; its extra work excludes it from speed measurements.
+Reproduce with `cannon_study.zs`, `prepare_checks.py` and the #128 runners.
+Evidence: [native verification](../assets/validation_506/NATIVE_VERIFICATION.json),
+[source boundary](../assets/validation_506/SOURCE_VERIFICATION.json) and raw logs.
+
+## CA-KP-047 - Less duplicated work does not guarantee better frame tails
+
+Status/evidence: CODE-VERIFIED / ENGINE-VERIFIED; comparative native experiment.
+First recorded / last checked: 2026-10-07. Issue #128 / 5.0.6.
+
+Reusing candidate lists removes repeated eligibility enumeration. A separate
+eight-tic background group schedule distributes perception phases but also
+queries groups without an active member request. In two normal-combat runs,
+the staggered variant's congestion p95 callback gap is 341–413 ms versus
+267–268 ms for shared perception on demand. Late throughput differs by about
+one percent; this does not justify shipping the worse congestion tail.
+
+Keep the shared decision and candidate cache on demand. Candidate sharing
+alone has no resolved independent throughput gain in these repetitions;
+report reduced enumeration separately from speed. Exact cannon pruning adds
+a modest improvement: congestion callbacks rise from 7.55–7.59/s to
+8.17–8.20/s, with p95 gaps falling from 267–268 to 245–265 ms in the isolated
+pairs. Desktop load is not exclusive and these are callback observations,
+not GPU/presentation timings. The 35-tic/30-FPS goal remains unmet.
+The shared-candidate counter builds 700 lists versus 6,412; both perform
+6,412 leader decisions in that factor comparison. On-demand scheduling uses
+6,026 decisions in the same 700-tic window, while both schedules still peak
+at 51 decisions in a tic. Initial/re-elected leaders still create bursts.
+
+Reproduce the pinned experimental commit using `prepare.py --baseline` and
+the forward/reverse labels in `run_suite.ps1`. Evidence:
+[results](../assets/validation_506/RESULTS.json); work counters and selected
+final production measurements are retained separately from the oracles.
+
+## CA-KP-046 - Rebuild the population gate on the simulation clock
+
+Status/evidence: CODE-VERIFIED / ENGINE-VERIFIED; normal-game implementation.
+First recorded / last checked: 2026-10-07. Issue #128 / 5.0.6.
+
+A per-map native-actor census before thinkers detects spawn, death, removal,
+revival and shootability changes without depending on camera visibility or
+incomplete lifecycle callbacks. Keep the census stable for the tic and use
+one shared threshold source. Native checks cover 499/500/501, death/removal,
+revival and both threshold directions. Cold load and hub travel produce
+500 → 1 → 500 living combatants; the old full-army save upgrades without
+redeployment and the untouched original still loads in the old package.
+
+The blockmap fallback must also cover a NOBLOCKMAP guard registered after the
+census in the same tic: registration appends that entry immediately. Keep
+the original exact 3D predicate and remembered-death history. Dynamic flag
+changes otherwise appear at the next census; existing production combatants
+do not toggle this flag within a tic. The full guard oracle checks all
+eligible entries against the spatial result on every applicable call.
+
+The regular saved EventHandler did not emit `WorldLoaded` during the cold-load
+probe. A static lifecycle observer plus subsequent `WorldTick` checks verifies
+actual reconstructed state; do not accept a missing observer callback as a
+game-state failure. Hub level time also continues across travel, so checks
+must be relative to arrival, not assume `level.time == 2` on every map.
+Evidence: [native verification](../assets/validation_506/NATIVE_VERIFICATION.json)
+and the adjacent final-check/load/travel/upgrade/rollback logs. Separate author
+combat acceptance CA128-01 (5.0.6 / #128) passed on 2026-10-07; see HISTORY.
+
 ## CA-KP-045 - Native GPU statistics may expose only selected effects
 
 Status/evidence: CODE-VERIFIED / ENGINE-VERIFIED.

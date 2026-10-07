@@ -1,0 +1,19 @@
+{
+  "cases": 96,
+  "targets_and_native_sight_rng_equal": true,
+  "controls": [
+    "cannon-reference-a",
+    "cannon-final-a"
+  ],
+  "coverage": [
+    "crew priority",
+    "nearest target",
+    "neutralized crew",
+    "dead actors",
+    "occlusion",
+    "RF_INVISIBLE",
+    "MF8_MINVISIBLE",
+    "zero alpha",
+    "translucent render style"
+  ]
+}

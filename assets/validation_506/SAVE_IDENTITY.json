@@ -1,0 +1,7 @@
+{
+  "original_path": "build/issue121/ca121_late_baseline-c.zds",
+  "copied_path": "build/issue128/ca121_late_baseline-c.zds",
+  "sha256": "2fddea9d2aa4c1bf727e26176c945978199cbae7ae91888113568581e6218dce",
+  "original_package": "assets/validation_505/BASELINE_IDENTITY.json",
+  "rollback": "Reload the untouched original save with baseline.pk3; upgraded saves use a separate name."
+}
