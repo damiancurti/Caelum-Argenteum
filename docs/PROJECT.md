@@ -12,8 +12,8 @@ fallback. Canonical records, owned equipment and pawn-held crafting previews
 cannot be supplied from another player. GZDoom retains native state and execution
 authority. No fields, schemas, controls, maps, balance or actor counts change.
 
-This closes the implemented scope of #116–#120 subject to author acceptance of
-#119/#120. It does not mean all remaining pawn policy has been extracted or that
+The author accepted all #119/#120 tests on 2026-10-06 and authorized merge/closure.
+This closes the implemented scope of #116–#120. It does not mean all remaining pawn policy has been extracted or that
 the broader V5 roadmap is complete. The older audit's speculative A5–A8 follow-ups
 are renamed F1–F4 below to avoid confusing them with Architecture 5 / #120.
 Crafting/session coordination, combat/narrative dispatch and measured siege work
@@ -28,7 +28,8 @@ save/hub/rollback and matched original-Architecture-1 measurements are retained 
 `assets/validation_504/RESULTS.json`. Earlier #117/#118 measured regressions remain
 historical evidence; organization alone does not establish a speed improvement.
 
-PR #125 delivers #119; #120 is a separate branch/PR stacked on it until acceptance.
+PR #125 delivers #119; PR #126 delivers #120. Both received author acceptance
+on 2026-10-06, with merge and issue closure authorized.
 The existing save adapters are retained. Their later removal requires an explicit
 retirement/migration issue, tested saves and the original-pair recovery path.
 
@@ -55,7 +56,7 @@ MAP01 despite an active saved Fool timer. Travel/personal-time reconciliation
 now restores that instance idempotently without payment or renewed duration.
 This bounded persistence fix is distinguished from the mechanical extraction.
 The SYSTEMS contract and `assets/validation_503/RESULTS.json` record evidence,
-rollback and limitations. Author acceptance remains pending. The author also
+rollback and limitations. Author acceptance passed on 2026-10-06. The author also
 requested continuing with #120 after this delivery; its owner/integration work
 and the unresolved #117/#118 performance attribution stay separate.
 
@@ -3457,7 +3458,7 @@ content extensions and the pending previous versions are returned to V5.
 | V4.36: mobile environment and physical hazards | The 0i weight formula, maze, tables, saves and bow art are accepted; #8 is corrected and author-accepted; #9 retains the flail correction. Author-requested #10–#15 add the T1 four-section sewer, rats, prisoner escorts/port rewards and Tarot artwork; #18–#21 supply siege assets, breakable actor gates, rams and cannons (historical catapult task CA-436-04). Rams now have native #20 evidence (4.36.16), with CA-43612-RAM-01 author acceptance confirmed on 2026-09-26; cannon operation now has #21 evidence (4.36.17), with CA-43613-CATAPULT-01 author acceptance confirmed on 2026-09-27. Per the author's #8 clarification, the existing ceiling/elevator cover moving sectors; avalanches are deferred until additional maps and damaging surfaces until temperature effects, so those three are not release blockers. Validate integration/save/reset before extracting Impact Physics; neither assets nor a closed issue substitutes for acceptance. |
 | V4.37: Tarot and Trucazo | Implemented and feature-accepted: physical 78-card deck, three campaign essences with selection/activation, and a complete NPC Trucazo slice. #82 / 4.37.24 owns final integration and export. Remaining acquisition, Major powers, broader awakening and team/network modes stay in V5. |
 | **V4 test export** | #17 / 4.36.28 is accepted historical evidence. #82 / 4.37.24 exports the current integrated MAP01 -> MAP02 -> MAP06 slice with initial controls and final validation. It does not claim full campaign or standalone completion. |
-| **V5.0: modular code architecture** | The bounded #116–#120 series is implemented: player services/adapters, authoritative inventory and Tarot operations, explicit per-player contracts and integrated native validation. #119/#120 author acceptance remains pending. Compatible inputs/selectors/save adapters remain; further F1–F4 coordination/performance/network work is separate and full multiplayer is not claimed. |
+| **V5.0: modular code architecture** | The bounded #116–#120 series is implemented: player services/adapters, authoritative inventory and Tarot operations, explicit per-player contracts and integrated native validation. #119/#120 author acceptance passed on 2026-10-06. Compatible inputs/selectors/save adapters remain; further F1–F4 coordination/performance/network work is separate and full multiplayer is not claimed. |
 | V5.1: thermal exposure | Model of heat/cold based on climate, zones, activity, persistent humidity, wind and real equipment; Resilience, consumables, shelters, drying, rest and acclimatization. Numerical curves await the author's balance decisions. |
 | V5.x: marine resources and biomes | Persistent 3D sources, melee extraction slashing/piercing, toughness/rarity/depth/region/skill, exhaustion and regeneration. Marine biomes, algae/iodine and non-potable waters; stores maintain access to remote materials. |
 

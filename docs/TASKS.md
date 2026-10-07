@@ -25,9 +25,9 @@ Documentation version: **5.0.4** — 2026-10-06.
   4.37.24, with 49 identical scene rows each. One incomplete run is excluded and
   retained diagnostically. Desktop/GPU load and focus are uncontrolled; no stable
   gain or whole-scene cause is established. HISTORY records separate timing types.
-- CA-503-TAROT-01 remains pending; CA-504-AUTHORITY-01 adds ordinary integrated
-  author acceptance. #119 is PR #125; #120 remains a separate stacked delivery.
-  Do not remove compatibility adapters or infer acceptance from agent checks.
+- The author confirmed CA-503-TAROT-01 and CA-504-AUTHORITY-01 passed on
+  2026-10-06 and authorized #119/#120 closure and PR #125/#126 merge.
+  Compatibility adapters remain; measured performance limitations are unchanged.
 - Follow-up boundaries: shared clock/progress/reward/session policy and native
   multi-client lifecycle tests; separate crafting/session and combat/narrative
   coordination issues; thermal exposure, native UI and campaign expansion.
@@ -55,9 +55,9 @@ Documentation version: **5.0.4** — 2026-10-06.
   Old/new/upgraded reload, original rollback and native menu key actions pass.
   MAP06: 12.997/13.091 tics/s (+0.72%), 49 scene-identical rows; no meaningful
   speedup is inferred from this single pair.
-- Author check CA-503-TAROT-01 is pending. The author requested continuing with
-  #120 after commit/push, preserving separate issue/PR scope and earlier measured
-  performance regressions. No new multiplayer support is claimed.
+- Author check CA-503-TAROT-01 passed on 2026-10-06; merge/closure authorized.
+  The separate #120 delivery is also accepted. Earlier performance regressions
+  remain evidence; #121 profiles contributors. No new multiplayer support is claimed.
 
 ## Issue #118 — Inventory/equipment consolidation (5.0.2)
 

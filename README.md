@@ -17,7 +17,7 @@ handlers resolve the requesting player without fallback; saved fields, input
 bindings and compatible adapters remain. See the
 [authority contract](docs/SYSTEMS.md#per-player-authority-and-modular-migration-boundary-120)
 and [integrated evidence](assets/validation_504/RESULTS.json).
-Author acceptance of #119/#120 remains pending. Native two-pawn owner checks use
+The author accepted all #119/#120 tests on 2026-10-06 and authorized merge/closure. Native two-pawn owner checks use
 a local player plus a bot; full co-op/PvP, network lifecycle and shared campaign
 time are not implemented. Thermal/UI/campaign expansion and measured AI
 optimization remain separate work. Architecture organization claims no speedup.
@@ -30,7 +30,7 @@ saved fields and compatible adapters. It also restores an already-active Fool
 flight after map travel if the engine removed its native instance, without a
 new payment or timer reset. Physical inventory and both card-game match states
 keep their own authority. See the [contract](docs/SYSTEMS.md#tarot-service-and-retained-save-contract-119)
-and [evidence](assets/validation_503/RESULTS.json). Author acceptance is pending;
+and [evidence](assets/validation_503/RESULTS.json). Author acceptance passed on 2026-10-06;
 #120 adds integrated authority checks above. Earlier performance regressions
 remain recorded below.
 Native before/after checks match all 936 card/attribute contributions and the

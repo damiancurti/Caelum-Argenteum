@@ -4,8 +4,14 @@ Documentation version: **5.0.4** — 2026-10-06.
 
 ## 5.0.4 — Per-player authority and integrated closure (#120, 2026-10-06)
 
+Author confirmation on 2026-10-06: **CA-504-AUTHORITY-01**, originating in
+5.0.4 / #120, **passed**. The author confirmed every pending check and
+authorized PR #126 merge and #120 closure. The entry is removed from the
+pending queue. This acceptance does not assert full multiplayer support or
+a measured speedup; the documented limitations remain. Continue diagnosis in #121.
+
 The author requested #120 after #119 with live checks, commit and push. #119 was
-delivered as commit `c4b717c7`, PR #125, and remains open for author acceptance.
+delivered as commit `c4b717c7`, PR #125, initially pending author acceptance.
 This separate patch adds a stateless authority contract, 203 operation guards,
 canonical record/owned preview checks and explicit event-player resolution.
 Fields, public signatures, existing method bodies, schemas and adapters remain;
@@ -34,7 +40,7 @@ original MAP03 context tests unrestricted stacks without changing Limbo rules.
 Evidence is retained in `assets/validation_504/RESULTS.json` with exact hashes,
 commands, initial settings, normalized logs and fixture sources. Audio remains
 enabled at 5%. Static, isolated native and author evidence remain distinct.
-CA-503-TAROT-01 is carried forward and CA-504-AUTHORITY-01 remains pending.
+At delivery CA-503-TAROT-01 was carried forward and CA-504-AUTHORITY-01 was pending.
 The bounded #116–#120 implementation is complete; shared multiplayer lifecycle,
 thermal/UI/campaign work and further coordination/performance slices remain
 separate tasks. Compatible adapters are not retired by this closure.
@@ -76,6 +82,12 @@ controller methods called from actor ticks. Prior #117/#118 regressions remain.
 
 ## 5.0.3 — Tarot domain service (#119, 2026-10-06)
 
+Author confirmation on 2026-10-06: **CA-503-TAROT-01**, originating in
+5.0.3 / #119, **passed**, including the pending ordinary-play Tarot, save/travel
+and card-menu checks. The author authorized PR #125 merge and #119 closure.
+The confirmed entry is removed from the pending queue; no version increment
+is made for acceptance of this existing patch.
+
 Following explicit acceptance of all #118 tests, commit `06a062fa` recorded
 CA-502-INVENTORY-01 as passed. PR #124 merged as `135ae0f9` and #118 closed.
 This patch consolidates 24 Tarot implementations and the existing Journal
@@ -95,7 +107,7 @@ uses MAP02/MAP06/MAP02 for actual hub return. Original diagnostic logs remain.
 Evidence: `assets/validation_503/RESULTS.json`, source/manifest verification,
 native GZDoom 4.14.2 logs, package hashes and initial/final configuration. Audio
 stays enabled at 5%. Agent checks and author acceptance are distinct; the new
-CA-503-TAROT-01 remains in `pending_test.txt`. The author requested #120 next,
+CA-503-TAROT-01 was initially recorded in `pending_test.txt`. The author requested #120 next,
 with a separate commit/PR and live verification. Prior measured regressions are
 preserved; source organization alone is not a performance claim.
 

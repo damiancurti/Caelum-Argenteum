@@ -3,7 +3,7 @@
 Documentation version: **5.0.4** — 2026-10-06.
 
 **5.0.4/#120:** per-player authority; bounded V5.0 implemented.
-#119 PR #125 and #120 await author acceptance; evidence: validation_504.
+#119/#120 accepted 2026-10-06; merge authorized. Evidence: validation_504.
 #118 accepted/merged 2026-10-06. MAP06 regressions remain unexplained.
 Multiplayer remains pending.
 
