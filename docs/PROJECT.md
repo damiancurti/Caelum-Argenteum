@@ -79,8 +79,9 @@ trajectory is excluded from matched comparisons and does not establish stable
 Reproduction, hashes and raw evidence are in `assets/validation_506`; positive
 findings and limitations are integrated in KNOWN_PITFALLS CA-KP-046–048.
 The bounded Windows execution-state request is released after testing without
-changing the power plan. Author combat acceptance remains pending as CA128-01;
-the issue/PR stay open for that review. Further fluency work must preserve the
+changing the power plan. The author confirmed CA128-01 passed on 2026-10-07
+and authorized PR #129 merge / #128 closure. The measured fluency limits remain.
+Further fluency work must preserve the
 standing normal-game/500-combatant policy and profile the remaining perception,
 individual actor work and rendering costs separately.
 

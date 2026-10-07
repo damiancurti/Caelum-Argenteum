@@ -23,7 +23,8 @@ Native boundary, target/RNG, guard, save and travel checks pass. See the
 [contract](docs/SYSTEMS.md#automatic-high-density-ai-128),
 [measurements](docs/PROJECT.md#506--automatic-high-density-ai-and-shared-work-128)
 and [evidence](assets/validation_506/NATIVE_VERIFICATION.json).
-Author combat acceptance is pending in CA128-01; #128 remains open for review.
+The author confirmed CA128-01 passed on 2026-10-07 and authorized merging
+PR #129 and closing #128. The recorded performance limits remain unchanged.
 
 Issue [#121](https://github.com/damiancurti/Caelum-Argenteum/issues/121) profiles
 the complete MAP06 army and tests the author's shared groups of 100 in isolated

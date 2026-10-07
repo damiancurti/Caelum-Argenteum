@@ -39,10 +39,14 @@ does not replace the longer matched measurements. Full scene/clock caveats,
 counter reductions, raw logs, native images and reproduction live in PROJECT
 and `assets/validation_506`; CA-KP-046–048 preserve the reusable lessons.
 
-No earlier accepted manual test is reopened. New author combat acceptance
-remains unconfirmed as CA128-01; commit/push and a linked PR deliver the patch,
-while merge/issue closure await the author's later instruction. The temporary
-keep-awake request is released after native tests; the power plan is unchanged.
+Author acceptance on 2026-10-07: CA128-01 (origin 5.0.6 / issue #128), normal
+high-density combat, passed. The author explicitly confirmed all pending tests
+were correct and authorized PR #129 merge and #128 closure. Its entry is removed
+from pending_test.txt, which is now empty. This confirms the gameplay acceptance;
+it does not reinterpret the measured limits as stable 35-tic/30-FPS fluency.
+No earlier accepted manual test is reopened. This acceptance-only update retains
+5.0.6 and changes no runtime behavior; existing native evidence still applies.
+The temporary keep-awake request is released; the power plan is unchanged.
 
 ## 5.0.5 — Siege profiling and combined diagnostic experiments (#121, 2026-10-07)
 

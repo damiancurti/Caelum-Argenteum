@@ -7,8 +7,9 @@ Documentation version: **5.0.6** — 2026-10-07.
 - Implemented and agent-verified. Final source passes 38 functional checks,
   96 target/native-RNG comparisons, full guard/cannon oracles, cold load,
   hub travel and old-save upgrade/reload/rollback. Source/package verification
-  retains all native combat/physics/resources and maps. CA128-01 is the only
-  outstanding author check; issue/PR remain open for review.
+  retains all native combat/physics/resources and maps. The author confirmed
+  CA128-01 passed on 2026-10-07 and authorized PR #129 merge / #128 closure.
+  No author checks remain pending for this delivery.
 - Selected: on-demand leader decisions/candidates, spatial guards including
   same-tic NOBLOCKMAP registration, negative cannon retry and safe sight
   pruning. Rejected: background staggering, whose congestion tail is worse.
@@ -32,7 +33,7 @@ Documentation version: **5.0.6** — 2026-10-07.
 - Keep background simulation active, audio at 5%, and the machine awake with
   a bounded request. Release it and verify the original power plan afterward.
 - Update consolidated docs, validate, commit, push and deliver a linked PR.
-  Author acceptance, merge and closure are not yet requested for #128.
+  Author acceptance is complete; merge and closure are authorized for #128.
 
 ## Issue #121 — Siege subsystem diagnosis and combined experiments (5.0.5)
 

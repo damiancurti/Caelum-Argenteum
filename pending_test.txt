@@ -1,5 +1,0 @@
-[CA128-01] Normal high-density combat acceptance
-Origin: 5.0.6 / issue #128.
-Prerequisites: rebuild the current branch; GZDoom 4.14.2; fresh MAP06 with the full authored army. Use the normal production package, without validation addons.
-Steps: leave the initial conversation, approach the battle and observe several command groups and their machines. Move to a different position, draw attacks, and observe target changes, obstacle navigation, crew activity and resource recovery.
-Expected: the author accepts members following the leader's target, including when another opponent is nearer to the member. Each body still moves and attacks physically, pays its own costs and reacts to damage. Report any unacceptable behavior or perceived response; measured fluency limits are recorded in PROJECT.

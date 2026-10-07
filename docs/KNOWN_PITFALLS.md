@@ -85,8 +85,8 @@ actual reconstructed state; do not accept a missing observer callback as a
 game-state failure. Hub level time also continues across travel, so checks
 must be relative to arrival, not assume `level.time == 2` on every map.
 Evidence: [native verification](../assets/validation_506/NATIVE_VERIFICATION.json)
-and the adjacent final-check/load/travel/upgrade/rollback logs. Author combat
-acceptance remains separate in CA128-01.
+and the adjacent final-check/load/travel/upgrade/rollback logs. Separate author
+combat acceptance CA128-01 (5.0.6 / #128) passed on 2026-10-07; see HISTORY.
 
 ## CA-KP-045 - Native GPU statistics may expose only selected effects
 
