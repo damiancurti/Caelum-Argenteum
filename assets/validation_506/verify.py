@@ -32,7 +32,8 @@ assert set(base)<=set(current),'A production member was removed'
 allowed_methods={('CaelumMassAIScheduler','WorldLoaded'),('CaelumMassAIScheduler','WorldTick'),
                  ('CaelumPortSiege','ElectCommands'),('CaelumPortSiege','EnsureTargetingRevision'),
                  ('CaelumPortSiege','AttackerTarget'),('CaelumPortSiege','OrderGuns'),('CaelumPortSiege','Tick'),
-                 ('CaelumHostileMachine','ObserveGuards')}
+                 ('CaelumPortSiege','CannonTarget'),
+                 ('CaelumHostileMachine','ObserveGuards'),('CaelumSiegeEncounter','RegisterAttacker')}
 unchanged_methods=0
 for path in base:
     if not path.endswith('.zs'):continue
@@ -48,7 +49,7 @@ assert before['CaelumPortSiege','AttackerTarget']==after['CaelumPortSiege','Indi
 with zipfile.ZipFile(ROOT/'build/caelum_argenteum_dev.pk3') as z:
     packaged={n:z.read(n) for n in z.namelist()}
 assert packaged==current,'Rebuild production PK3 after the last src change'
-with zipfile.ZipFile(WORK/'current.pk3') as z:
+with zipfile.ZipFile(WORK/'production.pk3') as z:
     tested={n:z.read(n) for n in z.namelist()}
 assert set(tested)==set(current)
 assert all(canonical(tested[n])==canonical(current[n]) for n in current),'Final test package does not match source'
@@ -58,7 +59,7 @@ result={'baseline_commit':BASE,'changed_members':changed,'added_members':sorted(
         'normal_actor_tick_attacks_resources_unchanged':True,'map_assets_unchanged':True,
         'production_package_exact_src':True,'production_members':len(current),
         'production_sha256':digest((ROOT/'build/caelum_argenteum_dev.pk3').read_bytes()),
-        'tested_current_sha256':digest((WORK/'current.pk3').read_bytes()),
+        'tested_production_sha256':digest((WORK/'production.pk3').read_bytes()),
         'map06_sha256':digest(current['maps/MAP06.wad']),
         'no_diagnostic_fixtures_in_production':True}
 (HERE/'SOURCE_VERIFICATION.json').write_text(json.dumps(result,indent=2)+'\n',encoding='utf-8')

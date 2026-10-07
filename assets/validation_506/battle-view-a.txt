@@ -1,0 +1,1042 @@
+Log started: 2026-10-07 04:02:47
+GZDoom version g4.14.2
+D_DoomInit: Static RNGseed 116 set.
+W_Init: Init WADfiles.
+adding C:/Program Files (x86)/GZDoom/gzdoom.pk3, 692 lumps
+adding C:/Program Files (x86)/GZDoom/game_support.pk3, 3308 lumps
+adding C:/Program Files (x86)/Steam/steamapps/common/ultimate doom/base/doom2/DOOM2.WAD, 2919 lumps
+adding C:/Program Files (x86)/Steam/steamapps/common/Ultimate Doom/rerelease/id24res.wad, 530 lumps
+adding C:/Program Files (x86)/GZDoom/game_widescreen_gfx.pk3, 214 lumps
+adding C:/GZDooMProjects/CaelumArgenteum/build/issue128/production.pk3, 6188 lumps
+adding C:/GZDooMProjects/CaelumArgenteum/build/issue128/view.pk3, 6 lumps
+S_Init: Setting up sound.
+I_InitSound: Initializing OpenAL
+  Opened device OpenAL Soft on G27F (NVIDIA High Definition Audio)
+  EFX enabled
+I_InitInput
+I_StartupMouse
+I_StartupKeyboard
+I_StartupXInput
+I_StartupRawPS2
+I_StartupDirectInputJoystick
+Vulkan device: NVIDIA GeForce RTX 3070 Ti
+Vulkan device type: discrete gpu
+Vulkan version: 1.4.303 (api) 576.352.0 (driver)
+Vulkan extensions: VK_KHR_16bit_storage VK_KHR_8bit_storage VK_KHR_acceleration_structure VK_KHR_bind_memory2 VK_KHR_buffer_device_address VK_KHR_calibrated_timestamps VK_KHR_compute_shader_derivatives VK_KHR_cooperative_matrix VK_KHR_copy_commands2 VK_KHR_create_renderpass2 VK_KHR_dedicated_allocation VK_KHR_deferred_host_operations VK_KHR_depth_stencil_resolve VK_KHR_descriptor_update_template VK_KHR_device_group VK_KHR_draw_indirect_count VK_KHR_driver_properties VK_KHR_dynamic_rendering VK_KHR_dynamic_rendering_local_read VK_KHR_external_fence VK_KHR_external_fence_win32 VK_KHR_external_memory VK_KHR_external_memory_win32 VK_KHR_external_semaphore VK_KHR_external_semaphore_win32 VK_KHR_format_feature_flags2 VK_KHR_fragment_shader_barycentric VK_KHR_fragment_shading_rate VK_KHR_get_memory_requirements2 VK_KHR_global_priority VK_KHR_image_format_list VK_KHR_imageless_framebuffer VK_KHR_index_type_uint8 VK_KHR_line_rasterization VK_KHR_load_store_op_none VK_KHR_maintenance1 VK_KHR_maintenance2 VK_KHR_maintenance3 VK_KHR_maintenance4 VK_KHR_maintenance5 VK_KHR_maintenance6 VK_KHR_maintenance7 VK_KHR_map_memory2 VK_KHR_multiview VK_KHR_pipeline_binary VK_KHR_pipeline_executable_properties VK_KHR_pipeline_library VK_KHR_present_id VK_KHR_present_wait VK_KHR_push_descriptor VK_KHR_ray_query VK_KHR_ray_tracing_maintenance1 VK_KHR_ray_tracing_pipeline VK_KHR_ray_tracing_position_fetch VK_KHR_relaxed_block_layout VK_KHR_sampler_mirror_clamp_to_edge VK_KHR_sampler_ycbcr_conversion VK_KHR_separate_depth_stencil_layouts VK_KHR_shader_atomic_int64 VK_KHR_shader_clock VK_KHR_shader_draw_parameters VK_KHR_shader_expect_assume VK_KHR_shader_float16_int8 VK_KHR_shader_float_controls VK_KHR_shader_float_controls2 VK_KHR_shader_integer_dot_product VK_KHR_shader_maximal_reconvergence VK_KHR_shader_non_semantic_info VK_KHR_shader_quad_control VK_KHR_shader_relaxed_extended_instruction VK_KHR_shader_subgroup_extended_types VK_KHR_shader_subgroup_rotate VK_KHR_shader_subgroup_uniform_control_flow VK_KHR_shader_terminate_invocation VK_KHR_spirv_1_4 VK_KHR_storage_buffer_storage_class VK_KHR_swapchain VK_KHR_swapchain_mutable_format VK_KHR_synchronization2 VK_KHR_timeline_semaphore VK_KHR_uniform_buffer_standard_layout VK_KHR_variable_pointers VK_KHR_vertex_attribute_divisor VK_KHR_video_decode_av1 VK_KHR_video_decode_h264 VK_KHR_video_decode_h265 VK_KHR_video_decode_queue VK_KHR_video_encode_h264 VK_KHR_video_encode_h265 VK_KHR_video_encode_quantization_map VK_KHR_video_encode_queue VK_KHR_video_maintenance1 VK_KHR_video_maintenance2 VK_KHR_video_queue VK_KHR_vulkan_memory_model VK_KHR_win32_keyed_mutex VK_KHR_workgroup_memory_explicit_layout VK_KHR_zero_initialize_workgroup_memory VK_EXT_4444_formats VK_EXT_attachment_feedback_loop_dynamic_state VK_EXT_attachment_feedback_loop_layout VK_EXT_blend_operation_advanced VK_EXT_border_color_swizzle VK_EXT_buffer_device_address VK_EXT_calibrated_timestamps VK_EXT_color_write_enable VK_EXT_conditional_rendering VK_EXT_conservative_rasterization VK_EXT_custom_border_color VK_EXT_depth_bias_control VK_EXT_depth_clamp_control VK_EXT_depth_clamp_zero_one VK_EXT_depth_clip_control VK_EXT_depth_clip_enable VK_EXT_depth_range_unrestricted VK_EXT_descriptor_buffer VK_EXT_descriptor_indexing VK_EXT_device_address_binding_report VK_EXT_device_fault VK_EXT_device_generated_commands VK_EXT_discard_rectangles VK_EXT_dynamic_rendering_unused_attachments VK_EXT_extended_dynamic_state VK_EXT_extended_dynamic_state2 VK_EXT_extended_dynamic_state3 VK_EXT_external_memory_host VK_EXT_fragment_shader_interlock VK_EXT_full_screen_exclusive VK_EXT_global_priority VK_EXT_global_priority_query VK_EXT_graphics_pipeline_library VK_EXT_hdr_metadata VK_EXT_host_image_copy VK_EXT_host_query_reset VK_EXT_image_2d_view_of_3d VK_EXT_image_robustness VK_EXT_image_sliced_view_of_3d VK_EXT_image_view_min_lod VK_EXT_index_type_uint8 VK_EXT_inline_uniform_block VK_EXT_legacy_vertex_attributes VK_EXT_line_rasterization VK_EXT_load_store_op_none VK_EXT_memory_budget VK_EXT_memory_priority VK_EXT_mesh_shader VK_EXT_multi_draw VK_EXT_mutable_descriptor_type VK_EXT_nested_command_buffer VK_EXT_non_seamless_cube_map VK_EXT_opacity_micromap VK_EXT_pageable_device_local_memory VK_EXT_pci_bus_info VK_EXT_pipeline_creation_cache_control VK_EXT_pipeline_creation_feedback VK_EXT_pipeline_library_group_handles VK_EXT_pipeline_robustness VK_EXT_post_depth_coverage VK_EXT_present_mode_fifo_latest_ready VK_EXT_primitive_topology_list_restart VK_EXT_primitives_generated_query VK_EXT_private_data VK_EXT_provoking_vertex VK_EXT_queue_family_foreign VK_EXT_robustness2 VK_EXT_sample_locations VK_EXT_sampler_filter_minmax VK_EXT_scalar_block_layout VK_EXT_separate_stencil_usage VK_EXT_shader_atomic_float VK_EXT_shader_demote_to_helper_invocation VK_EXT_shader_image_atomic_int64 VK_EXT_shader_module_identifier VK_EXT_shader_object VK_EXT_shader_replicated_composites VK_EXT_shader_subgroup_ballot VK_EXT_shader_subgroup_vote VK_EXT_shader_viewport_index_layer VK_EXT_subgroup_size_control VK_EXT_swapchain_maintenance1 VK_EXT_texel_buffer_alignment VK_EXT_tooling_info VK_EXT_transform_feedback VK_EXT_vertex_attribute_divisor VK_EXT_vertex_attribute_robustness VK_EXT_vertex_input_dynamic_state VK_EXT_ycbcr_2plane_444_formats VK_EXT_ycbcr_image_arrays VK_NV_acquire_winrt_display VK_NV_clip_space_w_scaling VK_NV_cluster_acceleration_structure VK_NV_compute_shader_derivatives VK_NV_cooperative_matrix VK_NV_cooperative_matrix2 VK_NV_cooperative_vector VK_NV_copy_memory_indirect VK_NV_corner_sampled_image VK_NV_coverage_reduction_mode VK_NV_cuda_kernel_launch VK_NV_dedicated_allocation VK_NV_dedicated_allocation_image_aliasing VK_NV_descriptor_pool_overallocation VK_NV_device_diagnostic_checkpoints VK_NV_device_diagnostics_config VK_NV_device_generated_commands VK_NV_device_generated_commands_compute VK_NV_disk_cache_utils VK_NV_external_memory VK_NV_external_memory_win32 VK_NV_fill_rectangle VK_NV_fragment_coverage_to_color VK_NV_fragment_shader_barycentric VK_NV_fragment_shading_rate_enums VK_NV_framebuffer_mixed_samples VK_NV_geometry_shader_passthrough VK_NV_inherited_viewport_scissor VK_NV_internal_nvpresent VK_NV_linear_color_attachment VK_NV_low_latency VK_NV_low_latency2 VK_NV_memory_decompression VK_NV_mesh_shader VK_NV_optical_flow VK_NV_partitioned_acceleration_structure VK_NV_present_metering VK_NV_raw_access_chains VK_NV_ray_tracing VK_NV_ray_tracing_invocation_reorder VK_NV_ray_tracing_motion_blur VK_NV_representative_fragment_test VK_NV_sample_mask_override_coverage VK_NV_scissor_exclusive VK_NV_shader_atomic_float16_vector VK_NV_shader_image_footprint VK_NV_shader_sm_builtins VK_NV_shader_subgroup_partitioned VK_NV_shading_rate_image VK_NV_viewport_array2 VK_NV_viewport_swizzle VK_NV_win32_keyed_mutex VK_NVX_binary_import VK_NVX_image_view_handle VK_NVX_multiview_per_view_attributes VK_AMD_buffer_marker VK_GOOGLE_hlsl_functionality1 VK_GOOGLE_user_type
+Max. texture size: 32768
+Max. uniform buffer range: 65536
+Min. uniform buffer offset alignment: 64
+Resolution: 1520 x 825
+I_Init: Setting up machine state.
+CPU speed: 3400 MHz
+CPU Vendor ID: AuthenticAMD
+  Name: AMD Ryzen 9 5950X 16-Core Processor 
+  Family 25 (25), Model 33, Stepping 0
+  Features: SSE2 SSE3 SSSE3 SSE4.1 SSE4.2 AVX AVX2 F16C FMA3 BMI1 BMI2 HyperThreading
+V_Init: allocate screen.
+ST_Init: Init startup screen.
+Checking cmd-line parameters...
+S_InitData: Load sound definitions.
+G_ParseMapInfo: Load map definitions.
+Texman.Init: Init texture manager.
+ParseTeamInfo: Load team definitions.
+LoadActors: Load actor definitions.
+script parsing took 910.27 ms
+R_Init: Init Doom refresh subsystem.
+DecalLibrary: Load decals.
+M_Init: Init menus.
+P_Init: Init Playloop state.
+ParseSBarInfo: Loading custom status bar definition.
+D_CheckNetGame: Checking network game status.
+player 1 of 1 (1 nodes)
+
+----------------------------------------
+
+MAP06 - Barracas al Sud — fortified port
+
+CA128 BATTLE tic=0 living=5 active=0 revision=0 groups=0 reduced=0 incomplete=0 damage=0 deaths=0 projectiles=0 cannonShots=0
+[Caelum] Inicio por comando directo: perfil de prueba seguro aplicado.
+[Caelum] Character creation values loaded. Attribute total: 150.00
+PORT16 deployed Mandingas=6000 commander=1 defenders=600 hostileMachines=12 guns=42
+CA121 COUNT tic=0 candidates=0 sight=0 decisions=0 commands=0
+CA121 FRAME tic=11 ms=5519.704200 interval=185.478800
+CA121 FRAME tic=17 ms=5638.935100 interval=119.230900
+CA121 FRAME tic=21 ms=5729.885000 interval=90.949900
+CA121 FRAME tic=25 ms=5852.561600 interval=122.676600
+CA121 FRAME tic=29 ms=5942.041400 interval=89.479800
+CA121 FRAME tic=32 ms=6010.171200 interval=68.129800
+CA121 FRAME tic=34 ms=6068.633600 interval=58.462400
+CA128 BATTLE tic=35 living=6602 active=1 revision=2 groups=64 reduced=0 incomplete=0 damage=0 deaths=0 projectiles=0 cannonShots=0
+CA121 SIM tic=35 ms=6087.449600 roster=6001 attackers=6001 defenders=600 groups=64 moving=0 blocked=0 x=0.000 y=320.000 z=-0.000 angle=90.000
+CA121 MOTION tic=35 displaced=0 distance=0.000000 contacts=0
+CA121 SETTINGS pause=0 lower=0 render=1 sound=1 volume=0.050000
+CA128 VIEW camera_only=1 npc_relocation=0 attacks_replaced=0
+CA121 FRAME tic=36 ms=6124.219900 interval=55.586300
+CA121 FRAME tic=38 ms=6192.777000 interval=68.557100
+CA121 COUNT tic=37 candidates=0 sight=0 decisions=0 commands=0
+CA121 FRAME tic=41 ms=6241.180600 interval=48.403600
+CA121 FRAME tic=42 ms=6272.919500 interval=31.738900
+CA121 FRAME tic=43 ms=6304.949700 interval=32.030200
+CA121 FRAME tic=45 ms=6377.031000 interval=72.081300
+CA121 FRAME tic=47 ms=6417.398800 interval=40.367800
+CA121 FRAME tic=48 ms=6437.725600 interval=20.326800
+CA121 FRAME tic=49 ms=6458.238100 interval=20.512500
+CA121 FRAME tic=50 ms=6511.080000 interval=52.841900
+CA121 FRAME tic=52 ms=6547.412700 interval=36.332700
+CA121 FRAME tic=53 ms=6569.890200 interval=22.477500
+CA121 FRAME tic=54 ms=6611.787900 interval=41.897700
+CA121 FRAME tic=55 ms=6637.245300 interval=25.457400
+CA121 FRAME tic=56 ms=6656.676100 interval=19.430800
+CA121 FRAME tic=57 ms=6676.069500 interval=19.393400
+CA121 FRAME tic=57 ms=6694.444100 interval=18.374600
+CA121 FRAME tic=58 ms=6728.415800 interval=33.971700
+CA121 FRAME tic=59 ms=6751.586200 interval=23.170400
+CA121 FRAME tic=60 ms=6772.014500 interval=20.428300
+CA121 FRAME tic=61 ms=6791.525000 interval=19.510500
+CA121 FRAME tic=62 ms=6820.488600 interval=28.963600
+CA121 FRAME tic=63 ms=6840.109900 interval=19.621300
+CA121 FRAME tic=63 ms=6859.028900 interval=18.919000
+CA121 FRAME tic=64 ms=6880.504600 interval=21.475700
+CA121 FRAME tic=65 ms=6904.375700 interval=23.871100
+CA121 FRAME tic=66 ms=6941.162100 interval=36.786400
+CA121 FRAME tic=67 ms=6961.568300 interval=20.406200
+CA121 FRAME tic=68 ms=6983.513100 interval=21.944800
+CA121 FRAME tic=68 ms=7005.444400 interval=21.931300
+CA121 FRAME tic=69 ms=7029.868400 interval=24.424000
+CA121 FRAME tic=70 ms=7067.923500 interval=38.055100
+CA128 BATTLE tic=70 living=6602 active=1 revision=2 groups=66 reduced=0 incomplete=0 damage=0 deaths=0 projectiles=258 cannonShots=0
+CA121 SIM tic=70 ms=7079.498600 roster=6001 attackers=6001 defenders=600 groups=66 moving=0 blocked=0 x=-16064.000 y=-15140.000 z=207.548 angle=270.000
+CA121 MOTION tic=70 displaced=5989 distance=429058.833557 contacts=0
+CA121 FRAME tic=71 ms=7108.212100 interval=40.288600
+CA121 FRAME tic=73 ms=7149.192300 interval=40.980200
+CA121 FRAME tic=74 ms=7181.374900 interval=32.182600
+CA121 FRAME tic=75 ms=7203.360600 interval=21.985700
+CA121 COUNT tic=74 candidates=0 sight=0 decisions=0 commands=0
+CA121 FRAME tic=76 ms=7224.088300 interval=20.727700
+CA121 FRAME tic=77 ms=7247.523200 interval=23.434900
+CA121 FRAME tic=78 ms=7296.828000 interval=49.304800
+CA121 FRAME tic=79 ms=7340.016200 interval=43.188200
+CA121 FRAME tic=81 ms=7405.238500 interval=65.222300
+CA121 FRAME tic=83 ms=7464.192200 interval=58.953700
+CA121 FRAME tic=85 ms=7498.385200 interval=34.193000
+CA121 FRAME tic=86 ms=7526.276400 interval=27.891200
+CA121 FRAME tic=87 ms=7546.044300 interval=19.767900
+CA121 FRAME tic=88 ms=7568.797500 interval=22.753200
+CA121 FRAME tic=89 ms=7594.643500 interval=25.846000
+CA121 FRAME tic=90 ms=7626.733300 interval=32.089800
+CA121 FRAME tic=91 ms=7648.631200 interval=21.897900
+CA121 FRAME tic=92 ms=7670.937100 interval=22.305900
+CA121 FRAME tic=92 ms=7691.448700 interval=20.511600
+CA121 FRAME tic=93 ms=7712.332300 interval=20.883600
+CA121 FRAME tic=94 ms=7743.946700 interval=31.614400
+CA121 FRAME tic=95 ms=7764.223200 interval=20.276500
+CA121 FRAME tic=96 ms=7786.095300 interval=21.872100
+CA121 FRAME tic=96 ms=7806.081100 interval=19.985800
+CA121 FRAME tic=97 ms=7828.780300 interval=22.699200
+CA121 FRAME tic=98 ms=7866.130100 interval=37.349800
+CA121 FRAME tic=99 ms=7904.172400 interval=38.042300
+CA121 FRAME tic=101 ms=7960.822200 interval=56.649800
+CA121 FRAME tic=103 ms=8025.543500 interval=64.721300
+CA121 FRAME tic=105 ms=8072.539700 interval=46.996200
+CA128 BATTLE tic=105 living=6602 active=1 revision=2 groups=63 reduced=0 incomplete=0 damage=0 deaths=0 projectiles=685 cannonShots=0
+CA121 SIM tic=105 ms=8079.674100 roster=6001 attackers=6001 defenders=600 groups=63 moving=0 blocked=0 x=-16064.000 y=-15140.000 z=0.000 angle=270.000
+CA121 MOTION tic=105 displaced=5988 distance=382943.405501 contacts=0
+CA121 FRAME tic=106 ms=8113.014400 interval=40.474700
+CA121 FRAME tic=108 ms=8146.769100 interval=33.754700
+CA121 FRAME tic=109 ms=8171.406600 interval=24.637500
+CA121 FRAME tic=110 ms=8199.757200 interval=28.350600
+CA121 FRAME tic=111 ms=8221.109600 interval=21.352400
+CA121 FRAME tic=112 ms=8242.235600 interval=21.126000
+CA121 FRAME tic=112 ms=8262.686100 interval=20.450500
+CA121 COUNT tic=111 candidates=0 sight=0 decisions=0 commands=0
+CA121 FRAME tic=113 ms=8292.915100 interval=30.229000
+CA121 FRAME tic=114 ms=8326.170100 interval=33.255000
+CA121 FRAME tic=115 ms=8347.302400 interval=21.132300
+CA121 FRAME tic=116 ms=8374.363700 interval=27.061300
+CA121 FRAME tic=117 ms=8395.818100 interval=21.454400
+CA121 FRAME tic=118 ms=8429.550700 interval=33.732600
+CA121 FRAME tic=119 ms=8454.152700 interval=24.602000
+CA121 FRAME tic=120 ms=8473.615500 interval=19.462800
+CA121 FRAME tic=120 ms=8493.314200 interval=19.698700
+CA121 FRAME tic=121 ms=8518.011800 interval=24.697600
+CA121 FRAME tic=122 ms=8550.065800 interval=32.054000
+CA121 FRAME tic=123 ms=8570.405700 interval=20.339900
+CA121 FRAME tic=124 ms=8589.839800 interval=19.434100
+CA121 FRAME tic=125 ms=8613.074200 interval=23.234400
+CA121 FRAME tic=125 ms=8636.373000 interval=23.298800
+CA121 FRAME tic=126 ms=8663.236700 interval=26.863700
+CA121 FRAME tic=127 ms=8686.560400 interval=23.323700
+CA121 FRAME tic=128 ms=8708.109300 interval=21.548900
+CA121 FRAME tic=129 ms=8728.723700 interval=20.614400
+CA121 FRAME tic=129 ms=8753.955900 interval=25.232200
+CA121 FRAME tic=130 ms=8786.260100 interval=32.304200
+CA121 FRAME tic=131 ms=8807.166700 interval=20.906600
+CA121 FRAME tic=132 ms=8827.483300 interval=20.316600
+CA121 FRAME tic=133 ms=8849.342700 interval=21.859400
+CA121 FRAME tic=134 ms=8877.455400 interval=28.112700
+CA121 FRAME tic=135 ms=8897.940400 interval=20.485000
+CA121 FRAME tic=135 ms=8920.294900 interval=22.354500
+CA121 FRAME tic=136 ms=8943.067500 interval=22.772600
+CA121 FRAME tic=137 ms=8965.443400 interval=22.375900
+CA121 FRAME tic=138 ms=9003.585500 interval=38.142100
+CA121 FRAME tic=139 ms=9036.727800 interval=33.142300
+CA121 FRAME tic=140 ms=9072.167100 interval=35.439300
+CA128 BATTLE tic=140 living=6602 active=1 revision=2 groups=65 reduced=0 incomplete=0 damage=0 deaths=0 projectiles=1074 cannonShots=0
+CA121 SIM tic=140 ms=9089.370300 roster=6001 attackers=6001 defenders=600 groups=65 moving=0 blocked=0 x=-16064.000 y=-15140.000 z=0.000 angle=270.000
+CA121 MOTION tic=140 displaced=5988 distance=423853.603461 contacts=0
+CA121 FRAME tic=142 ms=9148.357700 interval=76.190600
+CA121 FRAME tic=144 ms=9209.367700 interval=61.010000
+CA121 FRAME tic=146 ms=9271.229500 interval=61.861800
+CA121 FRAME tic=148 ms=9322.416400 interval=51.186900
+CA121 COUNT tic=148 candidates=0 sight=0 decisions=0 commands=0
+CA121 FRAME tic=150 ms=9371.565500 interval=49.149100
+CA121 FRAME tic=152 ms=9406.672400 interval=35.106900
+CA121 FRAME tic=153 ms=9441.254500 interval=34.582100
+CA121 FRAME tic=155 ms=9507.973800 interval=66.719300
+CA121 FRAME tic=157 ms=9564.684900 interval=56.711100
+CA121 FRAME tic=159 ms=9622.291700 interval=57.606800
+CA121 FRAME tic=161 ms=9665.833800 interval=43.542100
+CA121 FRAME tic=162 ms=9697.093000 interval=31.259200
+CA121 FRAME tic=163 ms=9721.063800 interval=23.970800
+CA121 FRAME tic=164 ms=9741.778200 interval=20.714400
+CA121 FRAME tic=165 ms=9764.908400 interval=23.130200
+CA121 FRAME tic=166 ms=9794.487300 interval=29.578900
+CA121 FRAME tic=167 ms=9817.671800 interval=23.184500
+CA121 FRAME tic=167 ms=9839.005500 interval=21.333700
+CA121 FRAME tic=168 ms=9860.901300 interval=21.895800
+CA121 FRAME tic=169 ms=9883.538900 interval=22.637600
+CA121 FRAME tic=170 ms=9916.905600 interval=33.366700
+CA121 FRAME tic=171 ms=9938.536900 interval=21.631300
+CA121 FRAME tic=172 ms=9959.589700 interval=21.052800
+CA121 FRAME tic=172 ms=9980.292000 interval=20.702300
+CA121 FRAME tic=173 ms=10007.493900 interval=27.201900
+CA121 FRAME tic=174 ms=10036.552200 interval=29.058300
+CA121 FRAME tic=175 ms=10057.911000 interval=21.358800
+CA128 BATTLE tic=175 living=6602 active=1 revision=2 groups=65 reduced=0 incomplete=0 damage=0 deaths=0 projectiles=1524 cannonShots=0
+CA121 SIM tic=175 ms=10065.415600 roster=6001 attackers=6001 defenders=600 groups=65 moving=0 blocked=0 x=-16064.000 y=-15140.000 z=0.000 angle=270.000
+CA121 MOTION tic=175 displaced=5987 distance=423849.987594 contacts=0
+CA121 FRAME tic=176 ms=10091.418600 interval=33.507600
+CA121 FRAME tic=177 ms=10113.750700 interval=22.332100
+CA121 FRAME tic=178 ms=10147.829200 interval=34.078500
+CA121 FRAME tic=179 ms=10172.417000 interval=24.587800
+CA121 FRAME tic=180 ms=10195.369900 interval=22.952900
+CA121 FRAME tic=181 ms=10223.701600 interval=28.331700
+CA121 FRAME tic=182 ms=10251.211400 interval=27.509800
+CA121 FRAME tic=183 ms=10273.582000 interval=22.370600
+CA121 FRAME tic=183 ms=10296.028000 interval=22.446000
+CA121 FRAME tic=184 ms=10326.504700 interval=30.476700
+CA121 FRAME tic=185 ms=10349.833300 interval=23.328600
+CA121 FRAME tic=186 ms=10381.439500 interval=31.606200
+CA121 COUNT tic=185 candidates=0 sight=0 decisions=0 commands=0
+CA121 FRAME tic=187 ms=10404.423600 interval=22.984100
+CA121 FRAME tic=188 ms=10426.427200 interval=22.003600
+CA121 FRAME tic=189 ms=10448.637800 interval=22.210600
+CA121 FRAME tic=190 ms=10478.742500 interval=30.104700
+CA121 FRAME tic=191 ms=10504.079800 interval=25.337300
+CA121 FRAME tic=191 ms=10525.645900 interval=21.566100
+CA121 FRAME tic=192 ms=10549.836000 interval=24.190100
+CA121 FRAME tic=193 ms=10572.423800 interval=22.587800
+CA121 FRAME tic=194 ms=10603.465600 interval=31.041800
+CA121 FRAME tic=195 ms=10624.795700 interval=21.330100
+CA121 FRAME tic=196 ms=10648.745900 interval=23.950200
+CA121 FRAME tic=197 ms=10672.993400 interval=24.247500
+CA121 FRAME tic=197 ms=10696.648900 interval=23.655500
+CA121 FRAME tic=198 ms=10728.673200 interval=32.024300
+CA121 FRAME tic=199 ms=10754.119100 interval=25.445900
+CA121 FRAME tic=200 ms=10777.238600 interval=23.119500
+CA121 FRAME tic=201 ms=10800.076700 interval=22.838100
+CA121 FRAME tic=202 ms=10834.330000 interval=34.253300
+CA121 FRAME tic=203 ms=10860.200500 interval=25.870500
+CA121 FRAME tic=204 ms=10890.779300 interval=30.578800
+CA121 FRAME tic=205 ms=10922.618000 interval=31.838700
+CA121 FRAME tic=206 ms=10957.320200 interval=34.702200
+CA121 FRAME tic=207 ms=10986.870100 interval=29.549900
+CA121 FRAME tic=208 ms=11016.299800 interval=29.429700
+CA121 FRAME tic=209 ms=11044.999400 interval=28.699600
+CA128 BATTLE tic=210 living=6602 active=1 revision=2 groups=66 reduced=0 incomplete=0 damage=0 deaths=0 projectiles=1981 cannonShots=0
+CA121 SIM tic=210 ms=11084.764200 roster=6001 attackers=6001 defenders=600 groups=66 moving=0 blocked=0 x=-16064.000 y=-15140.000 z=0.000 angle=270.000
+CA121 MOTION tic=210 displaced=5988 distance=421129.381159 contacts=0
+CA121 FRAME tic=211 ms=11112.155900 interval=67.156500
+CA121 FRAME tic=213 ms=11157.457700 interval=45.301800
+CA121 FRAME tic=214 ms=11193.328100 interval=35.870400
+CA121 FRAME tic=216 ms=11247.706200 interval=54.378100
+CA121 FRAME tic=218 ms=11302.029000 interval=54.322800
+CA121 FRAME tic=220 ms=11342.772400 interval=40.743400
+CA121 FRAME tic=221 ms=11370.133200 interval=27.360800
+CA121 FRAME tic=222 ms=11404.656600 interval=34.523400
+CA121 FRAME tic=223 ms=11432.838100 interval=28.181500
+CA121 COUNT tic=222 candidates=0 sight=0 decisions=0 commands=0
+CA121 FRAME tic=224 ms=11461.304600 interval=28.466500
+CA121 FRAME tic=225 ms=11496.868500 interval=35.563900
+CA121 FRAME tic=226 ms=11534.013600 interval=37.145100
+CA121 FRAME tic=228 ms=11575.295400 interval=41.281800
+CA121 FRAME tic=229 ms=11603.758900 interval=28.463500
+CA121 FRAME tic=230 ms=11638.860200 interval=35.101300
+CA121 FRAME tic=231 ms=11666.731300 interval=27.871100
+CA121 FRAME tic=232 ms=11696.365000 interval=29.633700
+CA121 FRAME tic=233 ms=11728.630500 interval=32.265500
+CA121 FRAME tic=234 ms=11767.190800 interval=38.560300
+CA121 FRAME tic=236 ms=11812.702100 interval=45.511300
+CA121 FRAME tic=237 ms=11844.358600 interval=31.656500
+CA121 FRAME tic=239 ms=11897.056600 interval=52.698000
+CA121 FRAME tic=240 ms=11927.651300 interval=30.594700
+CA121 FRAME tic=242 ms=11983.622700 interval=55.971400
+CA121 FRAME tic=243 ms=12012.575500 interval=28.952800
+CA121 FRAME tic=244 ms=12041.513600 interval=28.938100
+CA121 FRAME tic=245 ms=12071.163300 interval=29.649700
+CA128 BATTLE tic=245 living=6602 active=1 revision=2 groups=65 reduced=0 incomplete=0 damage=0 deaths=0 projectiles=2405 cannonShots=0
+CA121 SIM tic=245 ms=12080.845500 roster=6001 attackers=6001 defenders=600 groups=65 moving=0 blocked=0 x=-16064.000 y=-15140.000 z=0.000 angle=270.000
+CA121 MOTION tic=245 displaced=5986 distance=389833.557469 contacts=0
+CA121 FRAME tic=246 ms=12114.655100 interval=43.491800
+CA121 FRAME tic=248 ms=12160.211600 interval=45.556500
+CA121 FRAME tic=249 ms=12193.428300 interval=33.216700
+CA121 FRAME tic=251 ms=12246.043200 interval=52.614900
+CA121 FRAME tic=253 ms=12296.118400 interval=50.075200
+CA121 FRAME tic=254 ms=12336.440000 interval=40.321600
+CA121 FRAME tic=256 ms=12376.429500 interval=39.989500
+CA121 FRAME tic=257 ms=12401.011300 interval=24.581800
+CA121 FRAME tic=258 ms=12443.285900 interval=42.274600
+CA121 FRAME tic=259 ms=12468.102700 interval=24.816800
+CA121 FRAME tic=260 ms=12491.831000 interval=23.728300
+CA121 COUNT tic=259 candidates=0 sight=0 decisions=0 commands=0
+CA121 FRAME tic=261 ms=12516.146800 interval=24.315800
+CA121 FRAME tic=262 ms=12547.054000 interval=30.907200
+CA121 FRAME tic=263 ms=12576.593400 interval=29.539400
+CA121 FRAME tic=264 ms=12601.627500 interval=25.034100
+CA121 FRAME tic=265 ms=12626.937200 interval=25.309700
+CA121 FRAME tic=266 ms=12658.142600 interval=31.205400
+CA121 FRAME tic=267 ms=12681.015500 interval=22.872900
+CA121 FRAME tic=268 ms=12707.866700 interval=26.851200
+CA121 FRAME tic=269 ms=12732.519100 interval=24.652400
+CA121 FRAME tic=270 ms=12763.808700 interval=31.289600
+CA121 FRAME tic=271 ms=12789.007900 interval=25.199200
+CA121 FRAME tic=271 ms=12811.621100 interval=22.613200
+CA121 FRAME tic=272 ms=12840.565400 interval=28.944300
+CA121 FRAME tic=273 ms=12867.931700 interval=27.366300
+CA121 FRAME tic=274 ms=12903.952200 interval=36.020500
+CA121 FRAME tic=276 ms=12949.202600 interval=45.250400
+CA121 FRAME tic=277 ms=12979.618300 interval=30.415700
+CA121 FRAME tic=278 ms=13016.663500 interval=37.045200
+CA121 FRAME tic=279 ms=13046.908000 interval=30.244500
+CA128 BATTLE tic=280 living=6602 active=1 revision=2 groups=66 reduced=0 incomplete=0 damage=0 deaths=0 projectiles=2879 cannonShots=0
+CA121 SIM tic=280 ms=13077.575900 roster=6001 attackers=6001 defenders=600 groups=66 moving=0 blocked=0 x=-16064.000 y=-15140.000 z=0.000 angle=270.000
+CA121 MOTION tic=280 displaced=5986 distance=413579.666747 contacts=0
+CA121 FRAME tic=281 ms=13106.749000 interval=59.841000
+CA121 FRAME tic=283 ms=13160.565300 interval=53.816300
+CA121 FRAME tic=285 ms=13209.735200 interval=49.169900
+CA121 FRAME tic=286 ms=13245.425100 interval=35.689900
+CA121 FRAME tic=288 ms=13293.893100 interval=48.468000
+CA121 FRAME tic=289 ms=13326.664900 interval=32.771800
+CA121 FRAME tic=290 ms=13368.259100 interval=41.594200
+CA121 FRAME tic=292 ms=13410.829000 interval=42.569900
+CA121 FRAME tic=293 ms=13439.506400 interval=28.677400
+CA121 FRAME tic=294 ms=13471.946100 interval=32.439700
+CA121 FRAME tic=295 ms=13501.013000 interval=29.066900
+CA121 FRAME tic=296 ms=13532.273300 interval=31.260300
+CA121 COUNT tic=296 candidates=0 sight=0 decisions=0 commands=0
+CA121 FRAME tic=298 ms=13593.675800 interval=61.402500
+CA121 FRAME tic=300 ms=13638.225400 interval=44.549600
+CA121 FRAME tic=301 ms=13663.872000 interval=25.646600
+CA121 FRAME tic=302 ms=13698.554700 interval=34.682700
+CA121 FRAME tic=303 ms=13728.903800 interval=30.349100
+CA121 FRAME tic=304 ms=13758.502200 interval=29.598400
+CA121 FRAME tic=305 ms=13788.230500 interval=29.728300
+CA121 FRAME tic=306 ms=13824.668600 interval=36.438100
+CA121 FRAME tic=308 ms=13871.297100 interval=46.628500
+CA121 FRAME tic=309 ms=13900.584300 interval=29.287200
+CA121 FRAME tic=310 ms=13933.728900 interval=33.144600
+CA121 FRAME tic=312 ms=13980.319700 interval=46.590800
+CA121 FRAME tic=313 ms=14012.691500 interval=32.371800
+CA121 FRAME tic=314 ms=14050.770800 interval=38.079300
+CA128 BATTLE tic=315 living=6602 active=1 revision=2 groups=62 reduced=0 incomplete=0 damage=0 deaths=0 projectiles=3389 cannonShots=0
+CA121 SIM tic=315 ms=14074.204800 roster=6001 attackers=6001 defenders=600 groups=62 moving=0 blocked=0 x=-16064.000 y=-15140.000 z=0.000 angle=270.000
+CA121 MOTION tic=315 displaced=5984 distance=411286.851639 contacts=0
+CA121 FRAME tic=316 ms=14103.234800 interval=52.464000
+CA121 FRAME tic=318 ms=14154.921400 interval=51.686600
+CA121 FRAME tic=319 ms=14183.934000 interval=29.012600
+CA121 FRAME tic=320 ms=14210.420100 interval=26.486100
+CA121 FRAME tic=321 ms=14239.720600 interval=29.300500
+CA121 FRAME tic=322 ms=14272.271500 interval=32.550900
+CA121 FRAME tic=323 ms=14297.194200 interval=24.922700
+CA121 FRAME tic=325 ms=14343.900000 interval=46.705800
+CA121 FRAME tic=326 ms=14374.304700 interval=30.404700
+CA121 FRAME tic=327 ms=14398.320900 interval=24.016200
+CA121 FRAME tic=328 ms=14434.342600 interval=36.021700
+CA121 FRAME tic=329 ms=14457.875600 interval=23.533000
+CA121 FRAME tic=330 ms=14486.882500 interval=29.006900
+CA121 FRAME tic=331 ms=14511.004900 interval=24.122400
+CA121 FRAME tic=332 ms=14535.886800 interval=24.881900
+CA121 FRAME tic=333 ms=14558.471800 interval=22.585000
+CA121 FRAME tic=333 ms=14581.163000 interval=22.691200
+CA121 FRAME tic=334 ms=14612.170500 interval=31.007500
+CA121 COUNT tic=333 candidates=0 sight=0 decisions=0 commands=0
+CA121 FRAME tic=335 ms=14638.444800 interval=26.274300
+CA121 FRAME tic=336 ms=14661.558600 interval=23.113800
+CA121 FRAME tic=337 ms=14688.319000 interval=26.760400
+CA121 FRAME tic=338 ms=14717.491100 interval=29.172100
+CA121 FRAME tic=339 ms=14740.174500 interval=22.683400
+CA121 FRAME tic=340 ms=14765.844100 interval=25.669600
+CA121 FRAME tic=341 ms=14794.608800 interval=28.764700
+CA121 FRAME tic=342 ms=14832.155000 interval=37.546200
+CA121 FRAME tic=343 ms=14862.468700 interval=30.313700
+CA121 FRAME tic=344 ms=14892.841400 interval=30.372700
+CA121 FRAME tic=345 ms=14925.865700 interval=33.024300
+CA121 FRAME tic=346 ms=14962.669700 interval=36.804000
+CA121 FRAME tic=348 ms=15008.328600 interval=45.658900
+CA121 FRAME tic=349 ms=15037.904000 interval=29.575400
+CA121 FRAME tic=350 ms=15072.059200 interval=34.155200
+Captured ca128-battle-early.png
+CA128 BATTLE tic=350 living=6602 active=1 revision=2 groups=64 reduced=0 incomplete=0 damage=0 deaths=0 projectiles=3891 cannonShots=0
+CA121 SIM tic=350 ms=15174.818800 roster=6001 attackers=6001 defenders=600 groups=64 moving=0 blocked=0 x=-16064.000 y=-15140.000 z=0.000 angle=270.000
+CA121 MOTION tic=350 displaced=5982 distance=407239.993762 contacts=0
+CA121 FRAME tic=351 ms=15205.057800 interval=132.998600
+CA121 FRAME tic=356 ms=15351.745900 interval=146.688100
+CA121 FRAME tic=361 ms=15450.793600 interval=99.047700
+CA121 FRAME tic=365 ms=15539.025700 interval=88.232100
+CA121 FRAME tic=368 ms=15607.036600 interval=68.010900
+CA121 FRAME tic=370 ms=15657.381800 interval=50.345200
+CA121 COUNT tic=370 candidates=0 sight=0 decisions=0 commands=0
+CA121 FRAME tic=372 ms=15704.973200 interval=47.591400
+CA121 FRAME tic=374 ms=15757.533700 interval=52.560500
+CA121 FRAME tic=375 ms=15787.180900 interval=29.647200
+CA121 FRAME tic=376 ms=15815.829200 interval=28.648300
+CA121 FRAME tic=377 ms=15847.223600 interval=31.394400
+CA121 FRAME tic=379 ms=15900.758200 interval=53.534600
+CA121 FRAME tic=380 ms=15929.870100 interval=29.111900
+CA121 FRAME tic=381 ms=15959.365800 interval=29.495700
+CA121 FRAME tic=383 ms=16011.908000 interval=52.542200
+CA121 FRAME tic=384 ms=16040.705000 interval=28.797000
+CA121 FRAME tic=385 ms=16067.300800 interval=26.595800
+CA128 BATTLE tic=385 living=6599 active=1 revision=2 groups=65 reduced=0 incomplete=0 damage=9 deaths=3 projectiles=4396 cannonShots=18
+CA121 SIM tic=385 ms=16079.590900 roster=6001 attackers=5998 defenders=600 groups=65 moving=0 blocked=0 x=-16064.000 y=-15140.000 z=0.000 angle=270.000
+CA121 MOTION tic=385 displaced=5976 distance=378574.999547 contacts=0
+CA121 FRAME tic=386 ms=16117.143900 interval=49.843100
+CA121 FRAME tic=388 ms=16163.289800 interval=46.145900
+CA121 FRAME tic=390 ms=16212.240800 interval=48.951000
+CA121 FRAME tic=391 ms=16239.371800 interval=27.131000
+CA121 FRAME tic=392 ms=16262.552900 interval=23.181100
+CA121 FRAME tic=393 ms=16289.907700 interval=27.354800
+CA121 FRAME tic=394 ms=16323.667800 interval=33.760100
+CA121 FRAME tic=395 ms=16347.759800 interval=24.092000
+CA121 FRAME tic=396 ms=16372.736700 interval=24.976900
+CA121 FRAME tic=397 ms=16396.490700 interval=23.754000
+CA121 FRAME tic=398 ms=16428.617400 interval=32.126700
+CA121 FRAME tic=399 ms=16452.367900 interval=23.750500
+CA121 FRAME tic=400 ms=16475.575400 interval=23.207500
+CA121 FRAME tic=400 ms=16498.959900 interval=23.384500
+CA121 FRAME tic=401 ms=16526.125100 interval=27.165200
+CA121 FRAME tic=402 ms=16559.109400 interval=32.984300
+CA121 FRAME tic=403 ms=16582.710000 interval=23.600600
+CA121 FRAME tic=404 ms=16607.779300 interval=25.069300
+CA121 FRAME tic=405 ms=16636.087400 interval=28.308100
+CA121 FRAME tic=406 ms=16671.028300 interval=34.940900
+CA121 FRAME tic=407 ms=16700.634300 interval=29.606000
+CA121 FRAME tic=408 ms=16730.383500 interval=29.749200
+CA121 COUNT tic=407 candidates=0 sight=0 decisions=0 commands=0
+CA121 FRAME tic=409 ms=16761.659400 interval=31.275900
+CA121 FRAME tic=411 ms=16817.483600 interval=55.824200
+CA121 FRAME tic=413 ms=16864.910700 interval=47.427100
+CA121 FRAME tic=414 ms=16901.670300 interval=36.759600
+CA121 FRAME tic=415 ms=16931.421200 interval=29.750900
+CA121 FRAME tic=416 ms=16961.581500 interval=30.160300
+CA121 FRAME tic=418 ms=17016.275600 interval=54.694100
+CA121 FRAME tic=420 ms=17064.077100 interval=47.801500
+CA128 BATTLE tic=420 living=6599 active=1 revision=2 groups=62 reduced=0 incomplete=0 damage=9 deaths=3 projectiles=4943 cannonShots=18
+CA121 SIM tic=420 ms=17075.591300 roster=6001 attackers=5998 defenders=600 groups=62 moving=0 blocked=1 x=-16064.000 y=-15140.000 z=0.000 angle=270.000
+CA121 MOTION tic=420 displaced=5979 distance=399851.167996 contacts=0
+CA121 FRAME tic=421 ms=17106.069900 interval=41.992800
+CA121 FRAME tic=423 ms=17156.879700 interval=50.809800
+CA121 FRAME tic=424 ms=17186.844500 interval=29.964800
+CA121 FRAME tic=425 ms=17214.927100 interval=28.082600
+CA121 FRAME tic=427 ms=17270.447500 interval=55.520400
+CA121 FRAME tic=428 ms=17299.675400 interval=29.227900
+CA121 FRAME tic=429 ms=17338.273200 interval=38.597800
+CA121 FRAME tic=431 ms=17396.127100 interval=57.853900
+CA121 FRAME tic=433 ms=17458.463000 interval=62.335900
+CA121 FRAME tic=435 ms=17513.868000 interval=55.405000
+CA121 FRAME tic=437 ms=17565.522700 interval=51.654700
+CA121 FRAME tic=439 ms=17616.262900 interval=50.740200
+CA121 FRAME tic=440 ms=17646.770600 interval=30.507700
+CA121 FRAME tic=442 ms=17703.346800 interval=56.576200
+CA121 FRAME tic=444 ms=17748.888500 interval=45.541700
+CA121 FRAME tic=445 ms=17780.318400 interval=31.429900
+CA121 COUNT tic=444 candidates=0 sight=0 decisions=0 commands=0
+CA121 FRAME tic=446 ms=17813.294800 interval=32.976400
+CA121 FRAME tic=447 ms=17842.640400 interval=29.345600
+CA121 FRAME tic=448 ms=17872.882000 interval=30.241600
+CA121 FRAME tic=449 ms=17899.149400 interval=26.267400
+CA121 FRAME tic=450 ms=17936.919800 interval=37.770400
+CA121 FRAME tic=452 ms=17982.680700 interval=45.760900
+CA121 FRAME tic=453 ms=18012.413500 interval=29.732800
+CA121 FRAME tic=454 ms=18046.651200 interval=34.237700
+CA128 BATTLE tic=455 living=6599 active=1 revision=2 groups=68 reduced=0 incomplete=0 damage=9 deaths=3 projectiles=5475 cannonShots=18
+CA121 SIM tic=455 ms=18077.270000 roster=6001 attackers=5998 defenders=600 groups=68 moving=0 blocked=2 x=-16064.000 y=-15140.000 z=0.000 angle=270.000
+CA121 MOTION tic=455 displaced=5979 distance=398603.943208 contacts=0
+CA121 FRAME tic=456 ms=18107.510600 interval=60.859400
+CA121 FRAME tic=458 ms=18156.759600 interval=49.249000
+CA121 FRAME tic=459 ms=18181.810700 interval=25.051100
+CA121 FRAME tic=460 ms=18210.220200 interval=28.409500
+CA121 FRAME tic=461 ms=18237.975400 interval=27.755200
+CA121 FRAME tic=462 ms=18266.526000 interval=28.550600
+CA121 FRAME tic=463 ms=18289.138400 interval=22.612400
+CA121 FRAME tic=464 ms=18316.567800 interval=27.429400
+CA121 FRAME tic=465 ms=18341.089800 interval=24.522000
+CA121 FRAME tic=466 ms=18370.721500 interval=29.631700
+CA121 FRAME tic=467 ms=18394.642200 interval=23.920700
+CA121 FRAME tic=468 ms=18424.676200 interval=30.034000
+CA121 FRAME tic=469 ms=18454.809600 interval=30.133400
+CA121 FRAME tic=470 ms=18489.289700 interval=34.480100
+CA121 FRAME tic=471 ms=18519.351500 interval=30.061800
+CA121 FRAME tic=472 ms=18552.273000 interval=32.921500
+CA121 FRAME tic=473 ms=18583.278200 interval=31.005200
+CA121 FRAME tic=474 ms=18623.062800 interval=39.784600
+CA121 FRAME tic=476 ms=18670.712000 interval=47.649200
+CA121 FRAME tic=477 ms=18701.097300 interval=30.385300
+CA121 FRAME tic=478 ms=18735.090700 interval=33.993400
+CA121 FRAME tic=480 ms=18781.193500 interval=46.102800
+CA121 FRAME tic=481 ms=18808.610600 interval=27.417100
+CA121 FRAME tic=482 ms=18843.697800 interval=35.087200
+CA121 COUNT tic=481 candidates=0 sight=0 decisions=0 commands=0
+CA121 FRAME tic=484 ms=18892.870700 interval=49.172900
+CA121 FRAME tic=485 ms=18926.622800 interval=33.752100
+CA121 FRAME tic=486 ms=18963.561700 interval=36.938900
+CA121 FRAME tic=488 ms=19007.145600 interval=43.583900
+CA121 FRAME tic=489 ms=19036.274800 interval=29.129200
+CA121 FRAME tic=490 ms=19073.184600 interval=36.909800
+CA128 BATTLE tic=490 living=6599 active=1 revision=2 groups=68 reduced=0 incomplete=0 damage=9 deaths=3 projectiles=6040 cannonShots=18
+CA121 SIM tic=490 ms=19085.328000 roster=6001 attackers=5998 defenders=600 groups=68 moving=0 blocked=2 x=-16064.000 y=-15140.000 z=0.000 angle=270.000
+CA121 MOTION tic=490 displaced=5977 distance=392716.371374 contacts=0
+CA121 FRAME tic=491 ms=19115.530200 interval=42.345600
+CA121 FRAME tic=493 ms=19161.756700 interval=46.226500
+CA121 FRAME tic=495 ms=19214.619900 interval=52.863200
+CA121 FRAME tic=496 ms=19244.959600 interval=30.339700
+CA121 FRAME tic=498 ms=19299.763400 interval=54.803800
+CA121 FRAME tic=499 ms=19332.331800 interval=32.568400
+CA121 FRAME tic=501 ms=19379.637500 interval=47.305700
+CA121 FRAME tic=502 ms=19413.196100 interval=33.558600
+CA121 FRAME tic=503 ms=19443.917400 interval=30.721300
+CA121 FRAME tic=505 ms=19489.643100 interval=45.725700
+CA121 FRAME tic=506 ms=19518.030800 interval=28.387700
+CA121 FRAME tic=507 ms=19542.271000 interval=24.240200
+CA121 FRAME tic=508 ms=19567.538900 interval=25.267900
+CA121 FRAME tic=509 ms=19590.928000 interval=23.389100
+CA121 FRAME tic=510 ms=19621.923400 interval=30.995400
+CA121 FRAME tic=511 ms=19644.953000 interval=23.029600
+CA121 FRAME tic=512 ms=19671.658200 interval=26.705200
+CA121 FRAME tic=512 ms=19694.723900 interval=23.065700
+CA121 FRAME tic=513 ms=19719.832100 interval=25.108200
+CA121 FRAME tic=514 ms=19749.292600 interval=29.460500
+CA121 FRAME tic=515 ms=19775.266800 interval=25.974200
+CA121 FRAME tic=516 ms=19798.169200 interval=22.902400
+CA121 FRAME tic=517 ms=19822.954100 interval=24.784900
+CA121 FRAME tic=518 ms=19851.756000 interval=28.801900
+CA121 FRAME tic=519 ms=19874.316900 interval=22.560900
+CA121 FRAME tic=519 ms=19897.446300 interval=23.129400
+CA121 COUNT tic=518 candidates=0 sight=0 decisions=0 commands=0
+CA121 FRAME tic=520 ms=19926.246400 interval=28.800100
+CA121 FRAME tic=521 ms=19949.769500 interval=23.523100
+CA121 FRAME tic=522 ms=19979.185600 interval=29.416100
+CA121 FRAME tic=523 ms=20006.970000 interval=27.784400
+CA121 FRAME tic=524 ms=20030.886000 interval=23.916000
+CA121 FRAME tic=525 ms=20062.988600 interval=32.102600
+CA128 BATTLE tic=525 living=6599 active=1 revision=2 groups=64 reduced=0 incomplete=0 damage=9 deaths=3 projectiles=6642 cannonShots=18
+CA121 SIM tic=525 ms=20077.641800 roster=6001 attackers=5998 defenders=600 groups=64 moving=0 blocked=0 x=-16064.000 y=-15140.000 z=0.000 angle=270.000
+CA121 MOTION tic=525 displaced=5976 distance=368808.334092 contacts=0
+CA121 FRAME tic=526 ms=20110.683000 interval=47.694400
+CA121 FRAME tic=528 ms=20156.010100 interval=45.327100
+CA121 FRAME tic=529 ms=20180.324100 interval=24.314000
+CA121 FRAME tic=530 ms=20218.254000 interval=37.929900
+CA121 FRAME tic=532 ms=20261.842800 interval=43.588800
+CA121 FRAME tic=533 ms=20292.227100 interval=30.384300
+CA121 FRAME tic=534 ms=20329.231400 interval=37.004300
+CA121 FRAME tic=535 ms=20363.449200 interval=34.217800
+CA121 FRAME tic=537 ms=20411.174200 interval=47.725000
+CA121 FRAME tic=538 ms=20451.157900 interval=39.983700
+CA121 FRAME tic=540 ms=20497.712500 interval=46.554600
+CA121 FRAME tic=541 ms=20526.751400 interval=29.038900
+CA121 FRAME tic=542 ms=20565.706500 interval=38.955100
+CA121 FRAME tic=544 ms=20612.815500 interval=47.109000
+CA121 FRAME tic=545 ms=20644.035700 interval=31.220200
+CA121 FRAME tic=546 ms=20676.231600 interval=32.195900
+CA121 FRAME tic=548 ms=20722.547400 interval=46.315800
+CA121 FRAME tic=549 ms=20751.739900 interval=29.192500
+CA121 FRAME tic=550 ms=20787.201800 interval=35.461900
+CA121 FRAME tic=551 ms=20818.499700 interval=31.297900
+CA121 FRAME tic=553 ms=20861.629500 interval=43.129800
+CA121 FRAME tic=554 ms=20898.236100 interval=36.606600
+CA121 FRAME tic=555 ms=20932.668100 interval=34.432000
+CA121 COUNT tic=555 candidates=0 sight=0 decisions=0 commands=0
+CA121 FRAME tic=557 ms=20978.930000 interval=46.261900
+CA121 FRAME tic=558 ms=21015.467000 interval=36.537000
+CA121 FRAME tic=559 ms=21044.867100 interval=29.400100
+CA128 BATTLE tic=560 living=6599 active=1 revision=2 groups=65 reduced=0 incomplete=0 damage=9 deaths=3 projectiles=7242 cannonShots=18
+CA121 SIM tic=560 ms=21076.627800 roster=6001 attackers=5998 defenders=600 groups=65 moving=0 blocked=0 x=-16064.000 y=-15140.000 z=0.000 angle=270.000
+CA121 MOTION tic=560 displaced=5972 distance=386332.751394 contacts=0
+CA121 FRAME tic=561 ms=21106.231200 interval=61.364100
+CA121 FRAME tic=563 ms=21158.872900 interval=52.641700
+CA121 FRAME tic=564 ms=21189.977000 interval=31.104100
+CA121 FRAME tic=566 ms=21238.962900 interval=48.985900
+CA121 FRAME tic=567 ms=21266.896300 interval=27.933400
+CA121 FRAME tic=568 ms=21296.469100 interval=29.572800
+CA121 FRAME tic=569 ms=21327.535200 interval=31.066100
+CA121 FRAME tic=571 ms=21380.650300 interval=53.115100
+CA121 FRAME tic=572 ms=21406.965400 interval=26.315100
+CA121 FRAME tic=573 ms=21431.911800 interval=24.946400
+CA121 FRAME tic=574 ms=21460.783800 interval=28.872000
+CA121 FRAME tic=575 ms=21483.582100 interval=22.798300
+CA121 FRAME tic=576 ms=21508.740600 interval=25.158500
+CA121 FRAME tic=577 ms=21532.762900 interval=24.022300
+CA121 FRAME tic=577 ms=21557.535000 interval=24.772100
+CA121 FRAME tic=578 ms=21591.140500 interval=33.605500
+CA121 FRAME tic=580 ms=21632.944900 interval=41.804400
+CA121 FRAME tic=581 ms=21656.791800 interval=23.846900
+CA121 FRAME tic=582 ms=21684.284900 interval=27.493100
+CA121 FRAME tic=583 ms=21710.800300 interval=26.515400
+CA121 FRAME tic=584 ms=21734.190500 interval=23.390200
+CA121 FRAME tic=585 ms=21759.828100 interval=25.637600
+CA121 FRAME tic=585 ms=21784.476500 interval=24.648400
+CA121 FRAME tic=586 ms=21815.976200 interval=31.499700
+CA121 FRAME tic=587 ms=21840.202000 interval=24.225800
+CA121 FRAME tic=588 ms=21863.065800 interval=22.863800
+CA121 FRAME tic=589 ms=21888.365500 interval=25.299700
+CA121 FRAME tic=590 ms=21916.592000 interval=28.226500
+CA121 FRAME tic=591 ms=21942.852600 interval=26.260600
+CA121 FRAME tic=592 ms=21965.425100 interval=22.572500
+CA121 FRAME tic=593 ms=21993.534300 interval=28.109200
+CA121 COUNT tic=592 candidates=0 sight=0 decisions=0 commands=0
+CA121 FRAME tic=594 ms=22024.329200 interval=30.794900
+CA121 FRAME tic=595 ms=22047.853100 interval=23.523900
+CA128 BATTLE tic=595 living=6599 active=1 revision=2 groups=65 reduced=0 incomplete=0 damage=9 deaths=3 projectiles=7841 cannonShots=18
+CA121 SIM tic=595 ms=22058.275000 roster=6001 attackers=5998 defenders=600 groups=65 moving=0 blocked=4 x=-16064.000 y=-15140.000 z=0.000 angle=270.000
+CA121 MOTION tic=595 displaced=5971 distance=381516.137244 contacts=0
+CA121 FRAME tic=596 ms=22087.457600 interval=39.604500
+CA121 FRAME tic=597 ms=22116.375400 interval=28.917800
+CA121 FRAME tic=598 ms=22151.523500 interval=35.148100
+CA121 FRAME tic=599 ms=22181.890500 interval=30.367000
+CA121 FRAME tic=600 ms=22211.806600 interval=29.916100
+CA121 FRAME tic=601 ms=22244.412300 interval=32.605700
+CA121 FRAME tic=603 ms=22301.167600 interval=56.755300
+CA121 FRAME tic=604 ms=22334.133000 interval=32.965400
+CA121 FRAME tic=606 ms=22387.283800 interval=53.150800
+CA121 FRAME tic=607 ms=22419.406800 interval=32.123000
+CA121 FRAME tic=609 ms=22470.757200 interval=51.350400
+CA121 FRAME tic=610 ms=22512.454400 interval=41.697200
+CA121 FRAME tic=612 ms=22571.470400 interval=59.016000
+CA121 FRAME tic=614 ms=22623.039500 interval=51.569100
+CA121 FRAME tic=616 ms=22668.625100 interval=45.585600
+CA121 FRAME tic=617 ms=22698.931800 interval=30.306700
+CA121 FRAME tic=618 ms=22734.702800 interval=35.771000
+CA121 FRAME tic=620 ms=22781.381000 interval=46.678200
+CA121 FRAME tic=621 ms=22809.790200 interval=28.409200
+CA121 FRAME tic=622 ms=22846.360200 interval=36.570000
+CA121 FRAME tic=624 ms=22900.613700 interval=54.253500
+CA121 FRAME tic=626 ms=22962.474400 interval=61.860700
+CA121 FRAME tic=628 ms=23014.259300 interval=51.784900
+CA121 FRAME tic=630 ms=23069.603300 interval=55.344000
+CA121 COUNT tic=629 candidates=0 sight=0 decisions=0 commands=0
+CA128 BATTLE tic=630 living=6599 active=1 revision=2 groups=66 reduced=0 incomplete=0 damage=9 deaths=3 projectiles=8445 cannonShots=18
+CA121 SIM tic=630 ms=23082.208100 roster=6001 attackers=5998 defenders=600 groups=66 moving=0 blocked=4 x=-16064.000 y=-15140.000 z=0.000 angle=270.000
+CA121 MOTION tic=630 displaced=5969 distance=378017.956129 contacts=0
+CA121 FRAME tic=631 ms=23112.750700 interval=43.147400
+CA121 FRAME tic=633 ms=23160.011900 interval=47.261200
+CA121 FRAME tic=635 ms=23215.250200 interval=55.238300
+CA121 FRAME tic=636 ms=23246.163400 interval=30.913200
+CA121 FRAME tic=638 ms=23294.740400 interval=48.577000
+CA121 FRAME tic=639 ms=23326.718500 interval=31.978100
+CA121 FRAME tic=640 ms=23362.244400 interval=35.525900
+CA121 FRAME tic=642 ms=23416.946400 interval=54.702000
+CA121 FRAME tic=643 ms=23441.802000 interval=24.855600
+CA121 FRAME tic=644 ms=23465.866400 interval=24.064400
+CA121 FRAME tic=645 ms=23489.785800 interval=23.919400
+CA121 FRAME tic=646 ms=23516.945800 interval=27.160000
+CA121 FRAME tic=647 ms=23542.015900 interval=25.070100
+CA121 FRAME tic=648 ms=23565.135800 interval=23.119900
+CA121 FRAME tic=649 ms=23590.710200 interval=25.574400
+CA121 FRAME tic=649 ms=23614.721900 interval=24.011700
+CA121 FRAME tic=650 ms=23648.415400 interval=33.693500
+CA121 FRAME tic=652 ms=23692.290200 interval=43.874800
+CA121 FRAME tic=653 ms=23717.388200 interval=25.098000
+CA121 FRAME tic=654 ms=23745.241600 interval=27.853400
+CA121 FRAME tic=655 ms=23772.065600 interval=26.824000
+CA121 FRAME tic=656 ms=23794.799200 interval=22.733600
+CA121 FRAME tic=657 ms=23823.018500 interval=28.219300
+CA121 FRAME tic=658 ms=23852.145300 interval=29.126800
+CA121 FRAME tic=659 ms=23874.452500 interval=22.307200
+CA121 FRAME tic=659 ms=23899.270300 interval=24.817800
+CA121 FRAME tic=660 ms=23925.724500 interval=26.454200
+CA121 FRAME tic=661 ms=23952.039200 interval=26.314700
+CA121 FRAME tic=662 ms=23980.971600 interval=28.932400
+CA121 FRAME tic=663 ms=24009.267000 interval=28.295400
+CA121 FRAME tic=664 ms=24039.098200 interval=29.831200
+CA121 FRAME tic=665 ms=24068.616200 interval=29.518000
+CA128 BATTLE tic=665 living=6599 active=1 revision=2 groups=64 reduced=0 incomplete=0 damage=9 deaths=3 projectiles=9055 cannonShots=18
+CA121 SIM tic=665 ms=24080.976000 roster=6001 attackers=5998 defenders=600 groups=64 moving=0 blocked=2 x=-16064.000 y=-15140.000 z=0.000 angle=270.000
+CA121 MOTION tic=665 displaced=5969 distance=357966.339191 contacts=0
+CA121 FRAME tic=666 ms=24119.083900 interval=50.467700
+CA121 COUNT tic=666 candidates=0 sight=0 decisions=0 commands=0
+CA121 FRAME tic=668 ms=24166.355800 interval=47.271900
+CA121 FRAME tic=670 ms=24218.294700 interval=51.938900
+CA121 FRAME tic=672 ms=24265.951300 interval=47.656600
+CA121 FRAME tic=673 ms=24295.976500 interval=30.025200
+CA121 FRAME tic=674 ms=24334.954200 interval=38.977700
+CA121 FRAME tic=676 ms=24381.140900 interval=46.186700
+CA121 FRAME tic=677 ms=24411.623300 interval=30.482400
+CA121 FRAME tic=678 ms=24449.188000 interval=37.564700
+CA121 FRAME tic=680 ms=24492.229200 interval=43.041200
+CA121 FRAME tic=681 ms=24520.519000 interval=28.289800
+CA121 FRAME tic=682 ms=24557.024300 interval=36.505300
+CA121 FRAME tic=683 ms=24587.206100 interval=30.181800
+CA121 FRAME tic=685 ms=24637.958700 interval=50.752600
+CA121 FRAME tic=686 ms=24669.283800 interval=31.325100
+CA121 FRAME tic=687 ms=24696.765600 interval=27.481800
+CA121 FRAME tic=688 ms=24726.691500 interval=29.925900
+CA121 FRAME tic=689 ms=24758.974200 interval=32.282700
+CA121 FRAME tic=691 ms=24816.938500 interval=57.964300
+CA121 FRAME tic=693 ms=24865.788900 interval=48.850400
+CA121 FRAME tic=694 ms=24902.991300 interval=37.202400
+CA121 FRAME tic=696 ms=24954.102400 interval=51.111100
+CA121 FRAME tic=697 ms=24986.315100 interval=32.212700
+CA121 FRAME tic=698 ms=25023.165800 interval=36.850700
+CA121 FRAME tic=700 ms=25071.781100 interval=48.615300
+CA128 BATTLE tic=700 living=6599 active=1 revision=2 groups=62 reduced=0 incomplete=0 damage=9 deaths=3 projectiles=9687 cannonShots=18
+CA121 SIM tic=700 ms=25082.084900 roster=6001 attackers=5998 defenders=600 groups=62 moving=0 blocked=2 x=-16064.000 y=-15140.000 z=0.000 angle=270.000
+CA121 MOTION tic=700 displaced=5974 distance=370174.512580 contacts=0
+CA121 FRAME tic=701 ms=25110.518600 interval=38.737500
+CA121 FRAME tic=703 ms=25179.206100 interval=68.687500
+CA121 COUNT tic=703 candidates=0 sight=0 decisions=0 commands=0
+CA121 FRAME tic=705 ms=25232.253500 interval=53.047400
+CA121 FRAME tic=707 ms=25295.858400 interval=63.604900
+CA121 FRAME tic=709 ms=25358.712900 interval=62.854500
+CA121 FRAME tic=711 ms=25406.810500 interval=48.097600
+CA121 FRAME tic=713 ms=25447.451100 interval=40.640600
+CA121 FRAME tic=715 ms=25494.345100 interval=46.894000
+CA121 FRAME tic=716 ms=25519.666100 interval=25.321000
+CA121 FRAME tic=717 ms=25543.863100 interval=24.197000
+CA121 FRAME tic=718 ms=25572.223700 interval=28.360600
+CA121 FRAME tic=719 ms=25595.253100 interval=23.029400
+CA121 FRAME tic=720 ms=25627.100100 interval=31.847000
+CA121 FRAME tic=721 ms=25653.681400 interval=26.581300
+CA121 FRAME tic=722 ms=25683.849700 interval=30.168300
+CA121 FRAME tic=723 ms=25707.521200 interval=23.671500
+CA121 FRAME tic=724 ms=25730.882100 interval=23.360900
+CA121 FRAME tic=724 ms=25755.776700 interval=24.894600
+CA121 FRAME tic=725 ms=25780.763700 interval=24.987000
+CA121 FRAME tic=726 ms=25812.086200 interval=31.322500
+CA121 FRAME tic=727 ms=25841.915400 interval=29.829200
+CA121 FRAME tic=728 ms=25871.847900 interval=29.932500
+CA121 FRAME tic=729 ms=25901.857800 interval=30.009900
+CA121 FRAME tic=730 ms=25937.551500 interval=35.693700
+CA121 FRAME tic=732 ms=25986.293300 interval=48.741800
+CA121 FRAME tic=733 ms=26016.987000 interval=30.693700
+CA121 FRAME tic=734 ms=26051.894600 interval=34.907600
+CA128 BATTLE tic=735 living=6595 active=1 revision=2 groups=62 reduced=0 incomplete=0 damage=17 deaths=7 projectiles=10338 cannonShots=33
+CA121 SIM tic=735 ms=26081.455400 roster=6001 attackers=5994 defenders=600 groups=62 moving=0 blocked=3 x=-16064.000 y=-15140.000 z=0.000 angle=270.000
+CA121 MOTION tic=735 displaced=5968 distance=364456.175283 contacts=0
+CA121 FRAME tic=736 ms=26110.680300 interval=58.785700
+CA121 FRAME tic=738 ms=26169.543500 interval=58.863200
+CA121 FRAME tic=740 ms=26217.346600 interval=47.803100
+CA121 COUNT tic=740 candidates=0 sight=0 decisions=0 commands=0
+CA121 FRAME tic=742 ms=26269.900500 interval=52.553900
+CA121 FRAME tic=743 ms=26295.871800 interval=25.971300
+CA121 FRAME tic=744 ms=26330.121200 interval=34.249400
+CA121 FRAME tic=745 ms=26361.711800 interval=31.590600
+CA121 FRAME tic=747 ms=26421.174300 interval=59.462500
+CA121 FRAME tic=749 ms=26468.852200 interval=47.677900
+CA121 FRAME tic=750 ms=26500.257100 interval=31.404900
+CA121 FRAME tic=751 ms=26529.688300 interval=29.431200
+CA121 FRAME tic=753 ms=26579.102400 interval=49.414100
+CA121 FRAME tic=754 ms=26618.104600 interval=39.002200
+CA121 FRAME tic=756 ms=26667.024200 interval=48.919600
+CA121 FRAME tic=757 ms=26699.032000 interval=32.007800
+CA121 FRAME tic=758 ms=26733.648400 interval=34.616400
+CA121 FRAME tic=760 ms=26781.702000 interval=48.053600
+CA121 FRAME tic=761 ms=26814.299100 interval=32.597100
+CA121 FRAME tic=762 ms=26850.234300 interval=35.935200
+CA121 FRAME tic=764 ms=26893.656700 interval=43.422400
+CA121 FRAME tic=765 ms=26926.572900 interval=32.916200
+CA121 FRAME tic=766 ms=26964.542400 interval=37.969500
+CA121 FRAME tic=768 ms=27006.133300 interval=41.590900
+CA121 FRAME tic=769 ms=27029.916600 interval=23.783300
+CA121 FRAME tic=770 ms=27066.517200 interval=36.600600
+CA128 BATTLE tic=770 living=6595 active=1 revision=2 groups=66 reduced=0 incomplete=0 damage=17 deaths=7 projectiles=10988 cannonShots=33
+CA121 SIM tic=770 ms=27078.536500 roster=6001 attackers=5994 defenders=600 groups=66 moving=0 blocked=14 x=-16064.000 y=-15140.000 z=0.000 angle=270.000
+CA121 MOTION tic=770 displaced=5973 distance=364694.766594 contacts=0
+CA121 FRAME tic=771 ms=27106.665300 interval=40.148100
+CA121 FRAME tic=773 ms=27147.220100 interval=40.554800
+CA121 FRAME tic=774 ms=27183.238800 interval=36.018700
+CA121 FRAME tic=776 ms=27231.637900 interval=48.399100
+CA121 FRAME tic=777 ms=27259.409400 interval=27.771500
+CA121 FRAME tic=778 ms=27288.824500 interval=29.415100
+CA121 COUNT tic=777 candidates=0 sight=0 decisions=0 commands=0
+CA121 FRAME tic=779 ms=27313.563500 interval=24.739000
+CA121 FRAME tic=780 ms=27338.916700 interval=25.353200
+CA121 FRAME tic=781 ms=27361.849300 interval=22.932600
+CA121 FRAME tic=782 ms=27394.005100 interval=32.155800
+CA121 FRAME tic=783 ms=27417.857800 interval=23.852700
+CA121 FRAME tic=783 ms=27442.131600 interval=24.273800
+CA121 FRAME tic=784 ms=27468.916300 interval=26.784700
+CA121 FRAME tic=785 ms=27495.684400 interval=26.768100
+CA121 FRAME tic=786 ms=27528.500200 interval=32.815800
+CA121 FRAME tic=787 ms=27556.797800 interval=28.297600
+CA121 FRAME tic=788 ms=27581.717300 interval=24.919500
+CA121 FRAME tic=789 ms=27614.319700 interval=32.602400
+CA121 FRAME tic=790 ms=27654.415000 interval=40.095300
+CA121 FRAME tic=792 ms=27701.590600 interval=47.175600
+CA121 FRAME tic=793 ms=27732.137000 interval=30.546400
+CA121 FRAME tic=795 ms=27791.540200 interval=59.403200
+CA121 FRAME tic=797 ms=27843.832600 interval=52.292400
+CA121 FRAME tic=799 ms=27898.919400 interval=55.086800
+CA121 FRAME tic=800 ms=27930.209100 interval=31.289700
+CA121 FRAME tic=801 ms=27962.059400 interval=31.850300
+CA121 FRAME tic=803 ms=28019.768800 interval=57.709400
+CA121 FRAME tic=805 ms=28068.176900 interval=48.408100
+CA128 BATTLE tic=805 living=6595 active=1 revision=2 groups=64 reduced=0 incomplete=0 damage=17 deaths=7 projectiles=11636 cannonShots=33
+CA121 SIM tic=805 ms=28081.596800 roster=6001 attackers=5994 defenders=600 groups=64 moving=0 blocked=6 x=-16064.000 y=-15140.000 z=0.000 angle=270.000
+CA121 MOTION tic=805 displaced=5971 distance=345485.093537 contacts=0
+CA121 FRAME tic=806 ms=28116.550500 interval=48.373600
+CA121 FRAME tic=808 ms=28165.331700 interval=48.781200
+CA121 FRAME tic=810 ms=28216.771100 interval=51.439400
+CA121 FRAME tic=811 ms=28249.145100 interval=32.374000
+CA121 FRAME tic=813 ms=28298.440000 interval=49.294900
+CA121 FRAME tic=814 ms=28337.776700 interval=39.336700
+CA121 COUNT tic=814 candidates=0 sight=0 decisions=0 commands=0
+CA121 FRAME tic=816 ms=28382.678900 interval=44.902200
+CA121 FRAME tic=817 ms=28410.645600 interval=27.966700
+CA121 FRAME tic=818 ms=28449.274500 interval=38.628900
+CA121 FRAME tic=820 ms=28499.428300 interval=50.153800
+CA121 FRAME tic=821 ms=28532.242900 interval=32.814600
+CA121 FRAME tic=823 ms=28586.925000 interval=54.682100
+CA121 FRAME tic=824 ms=28618.350100 interval=31.425100
+CA121 FRAME tic=826 ms=28673.519500 interval=55.169400
+CA121 FRAME tic=827 ms=28706.438200 interval=32.918700
+CA121 FRAME tic=829 ms=28755.992200 interval=49.554000
+CA121 FRAME tic=830 ms=28791.066600 interval=35.074400
+CA121 FRAME tic=832 ms=28845.551800 interval=54.485200
+CA121 FRAME tic=834 ms=28894.940400 interval=49.388600
+CA121 FRAME tic=835 ms=28925.213200 interval=30.272800
+CA121 FRAME tic=836 ms=28952.101800 interval=26.888600
+CA121 FRAME tic=837 ms=28980.025200 interval=27.923400
+CA121 FRAME tic=838 ms=29014.314400 interval=34.289200
+CA121 FRAME tic=840 ms=29061.038000 interval=46.723600
+CA128 BATTLE tic=840 living=6595 active=1 revision=2 groups=63 reduced=0 incomplete=0 damage=18 deaths=7 projectiles=12338 cannonShots=34
+CA121 SIM tic=840 ms=29076.338400 roster=6001 attackers=5994 defenders=600 groups=63 moving=0 blocked=5 x=-16064.000 y=-15140.000 z=0.000 angle=270.000
+CA121 MOTION tic=840 displaced=5972 distance=356546.916076 contacts=0
+CA121 FRAME tic=841 ms=29105.227000 interval=44.189000
+CA121 FRAME tic=843 ms=29152.539700 interval=47.312700
+CA121 FRAME tic=844 ms=29180.082300 interval=27.542600
+CA121 FRAME tic=846 ms=29236.488000 interval=56.405700
+CA121 FRAME tic=847 ms=29260.650900 interval=24.162900
+CA121 FRAME tic=848 ms=29284.923600 interval=24.272700
+CA121 FRAME tic=849 ms=29311.237700 interval=26.314100
+CA121 FRAME tic=850 ms=29345.434900 interval=34.197200
+CA121 FRAME tic=851 ms=29372.810400 interval=27.375500
+CA121 FRAME tic=852 ms=29396.853600 interval=24.043200
+CA121 COUNT tic=851 candidates=0 sight=0 decisions=0 commands=0
+CA121 FRAME tic=853 ms=29423.779000 interval=26.925400
+CA121 FRAME tic=854 ms=29452.206200 interval=28.427200
+CA121 FRAME tic=855 ms=29475.762800 interval=23.556600
+CA121 FRAME tic=855 ms=29500.431900 interval=24.669100
+CA121 FRAME tic=856 ms=29528.310700 interval=27.878800
+CA121 FRAME tic=857 ms=29559.338800 interval=31.028100
+CA121 FRAME tic=858 ms=29595.784200 interval=36.445400
+CA121 FRAME tic=860 ms=29645.681300 interval=49.897100
+CA121 FRAME tic=862 ms=29701.421500 interval=55.740200
+CA121 FRAME tic=863 ms=29732.465300 interval=31.043800
+CA121 FRAME tic=865 ms=29783.303400 interval=50.838100
+CA121 FRAME tic=866 ms=29825.708000 interval=42.404600
+CA121 FRAME tic=868 ms=29877.682200 interval=51.974200
+CA121 FRAME tic=870 ms=29933.465900 interval=55.783700
+CA121 FRAME tic=872 ms=29980.888900 interval=47.423000
+CA121 FRAME tic=873 ms=30013.639000 interval=32.750100
+CA121 FRAME tic=874 ms=30049.530300 interval=35.891300
+CA128 BATTLE tic=875 living=6595 active=1 revision=2 groups=63 reduced=0 incomplete=0 damage=19 deaths=7 projectiles=12992 cannonShots=35
+CA121 SIM tic=875 ms=30079.437600 roster=6001 attackers=5994 defenders=600 groups=63 moving=0 blocked=6 x=-16064.000 y=-15140.000 z=0.000 angle=270.000
+CA121 MOTION tic=875 displaced=5962 distance=353153.555681 contacts=0
+CA121 FRAME tic=876 ms=30108.600200 interval=59.069900
+CA121 FRAME tic=878 ms=30159.910900 interval=51.310700
+CA121 FRAME tic=880 ms=30211.256400 interval=51.345500
+CA121 FRAME tic=881 ms=30246.104900 interval=34.848500
+CA121 FRAME tic=883 ms=30299.108400 interval=53.003500
+CA121 FRAME tic=884 ms=30331.241800 interval=32.133400
+CA121 FRAME tic=885 ms=30363.846000 interval=32.604200
+CA121 FRAME tic=887 ms=30419.424400 interval=55.578400
+CA121 FRAME tic=889 ms=30470.606800 interval=51.182400
+CA121 COUNT tic=888 candidates=0 sight=0 decisions=0 commands=0
+CA121 FRAME tic=890 ms=30508.468500 interval=37.861700
+CA121 FRAME tic=892 ms=30563.979900 interval=55.511400
+CA121 FRAME tic=894 ms=30614.269700 interval=50.289800
+CA121 FRAME tic=895 ms=30649.266300 interval=34.996600
+CA121 FRAME tic=897 ms=30699.372000 interval=50.105700
+CA121 FRAME tic=898 ms=30728.917900 interval=29.545900
+CA121 FRAME tic=899 ms=30756.771100 interval=27.853200
+CA121 FRAME tic=900 ms=30781.252100 interval=24.481000
+CA121 FRAME tic=901 ms=30807.551600 interval=26.299500
+CA121 FRAME tic=902 ms=30835.121800 interval=27.570200
+CA121 FRAME tic=903 ms=30858.457500 interval=23.335700
+CA121 FRAME tic=904 ms=30881.847200 interval=23.389700
+CA121 FRAME tic=905 ms=30907.194600 interval=25.347400
+CA121 FRAME tic=906 ms=30937.979200 interval=30.784600
+CA121 FRAME tic=907 ms=30967.212900 interval=29.233700
+CA121 FRAME tic=908 ms=30992.980800 interval=25.767900
+CA121 FRAME tic=909 ms=31018.180900 interval=25.200100
+CA121 FRAME tic=909 ms=31042.487800 interval=24.306900
+CA121 FRAME tic=910 ms=31072.697200 interval=30.209400
+CA128 BATTLE tic=910 living=6595 active=1 revision=2 groups=65 reduced=0 incomplete=0 damage=19 deaths=7 projectiles=13644 cannonShots=35
+CA121 SIM tic=910 ms=31081.063300 roster=6001 attackers=5994 defenders=600 groups=65 moving=0 blocked=18 x=-16064.000 y=-15140.000 z=0.000 angle=270.000
+CA121 MOTION tic=910 displaced=5958 distance=351344.131425 contacts=0
+CA121 FRAME tic=911 ms=31109.261700 interval=36.564500
+CA121 FRAME tic=913 ms=31150.227000 interval=40.965300
+CA121 FRAME tic=914 ms=31181.493100 interval=31.266100
+CA121 FRAME tic=915 ms=31213.060100 interval=31.567000
+CA121 FRAME tic=916 ms=31248.547100 interval=35.487000
+CA121 FRAME tic=918 ms=31305.335000 interval=56.787900
+CA121 FRAME tic=920 ms=31350.918600 interval=45.583600
+CA121 FRAME tic=921 ms=31380.115100 interval=29.196500
+CA121 FRAME tic=922 ms=31416.339400 interval=36.224300
+CA121 FRAME tic=923 ms=31451.909800 interval=35.570400
+CA121 FRAME tic=925 ms=31513.554200 interval=61.644400
+CA121 COUNT tic=925 candidates=0 sight=0 decisions=0 commands=0
+CA121 FRAME tic=927 ms=31580.386500 interval=66.832300
+CA121 FRAME tic=929 ms=31638.506600 interval=58.120100
+CA121 FRAME tic=931 ms=31704.409400 interval=65.902800
+CA121 FRAME tic=934 ms=31791.043700 interval=86.634300
+CA121 FRAME tic=937 ms=31867.416700 interval=76.373000
+CA121 FRAME tic=939 ms=31916.232600 interval=48.815900
+CA121 FRAME tic=941 ms=31965.073600 interval=48.841000
+CA121 FRAME tic=943 ms=32019.961900 interval=54.888300
+CA121 FRAME tic=945 ms=32068.028400 interval=48.066500
+CA128 BATTLE tic=945 living=6595 active=1 revision=2 groups=63 reduced=0 incomplete=0 damage=19 deaths=7 projectiles=14320 cannonShots=35
+CA121 SIM tic=945 ms=32079.981500 roster=6001 attackers=5994 defenders=600 groups=63 moving=0 blocked=8 x=-16064.000 y=-15140.000 z=0.000 angle=270.000
+CA121 MOTION tic=945 displaced=5956 distance=332385.020414 contacts=0
+CA121 FRAME tic=946 ms=32115.884100 interval=47.855700
+CA121 FRAME tic=948 ms=32167.682500 interval=51.798400
+CA121 FRAME tic=950 ms=32222.910000 interval=55.227500
+CA121 FRAME tic=952 ms=32274.234700 interval=51.324700
+CA121 FRAME tic=954 ms=32332.824500 interval=58.589800
+CA121 FRAME tic=956 ms=32385.109300 interval=52.284800
+CA121 FRAME tic=957 ms=32418.022600 interval=32.913300
+CA121 FRAME tic=959 ms=32470.088700 interval=52.066100
+CA121 FRAME tic=960 ms=32499.808800 interval=29.720100
+CA121 FRAME tic=961 ms=32534.953000 interval=35.144200
+CA121 FRAME tic=963 ms=32595.363200 interval=60.410200
+CA121 COUNT tic=962 candidates=0 sight=0 decisions=0 commands=0
+CA121 FRAME tic=965 ms=32644.781100 interval=49.417900
+CA121 FRAME tic=967 ms=32695.071200 interval=50.290100
+CA121 FRAME tic=968 ms=32724.294300 interval=29.223100
+CA121 FRAME tic=969 ms=32754.291000 interval=29.996700
+CA121 FRAME tic=970 ms=32793.117900 interval=38.826900
+CA121 FRAME tic=972 ms=32841.374300 interval=48.256400
+CA121 FRAME tic=973 ms=32873.760200 interval=32.385900
+CA121 FRAME tic=974 ms=32904.920100 interval=31.159900
+CA121 FRAME tic=976 ms=32948.039300 interval=43.119200
+CA121 FRAME tic=977 ms=32974.855400 interval=26.816100
+CA121 FRAME tic=978 ms=33004.737500 interval=29.882100
+CA121 FRAME tic=979 ms=33032.068600 interval=27.331100
+CA121 FRAME tic=980 ms=33057.646400 interval=25.577800
+CA128 BATTLE tic=980 living=6595 active=1 revision=2 groups=65 reduced=0 incomplete=0 damage=19 deaths=7 projectiles=14971 cannonShots=35
+CA121 SIM tic=980 ms=33066.213200 roster=6001 attackers=5994 defenders=600 groups=65 moving=0 blocked=6 x=-16064.000 y=-15140.000 z=0.000 angle=270.000
+CA121 MOTION tic=980 displaced=5959 distance=340161.035970 contacts=0
+CA121 FRAME tic=981 ms=33094.027700 interval=36.381300
+CA121 FRAME tic=982 ms=33127.341300 interval=33.313600
+CA121 FRAME tic=983 ms=33155.776500 interval=28.435200
+CA121 FRAME tic=984 ms=33181.010400 interval=25.233900
+CA121 FRAME tic=985 ms=33211.291200 interval=30.280800
+CA121 FRAME tic=986 ms=33250.198000 interval=38.906800
+CA121 FRAME tic=988 ms=33299.478900 interval=49.280900
+CA121 FRAME tic=989 ms=33332.499500 interval=33.020600
+CA121 FRAME tic=991 ms=33385.635200 interval=53.135700
+CA121 FRAME tic=992 ms=33418.494200 interval=32.859000
+CA121 FRAME tic=994 ms=33472.580000 interval=54.085800
+CA121 FRAME tic=995 ms=33505.191900 interval=32.611900
+CA121 FRAME tic=997 ms=33556.640500 interval=51.448600
+CA121 FRAME tic=998 ms=33592.994900 interval=36.354400
+CA121 FRAME tic=1000 ms=33644.087700 interval=51.092800
+CA121 COUNT tic=999 candidates=0 sight=0 decisions=0 commands=0
+CA121 FRAME tic=1002 ms=33701.395100 interval=57.307400
+CA121 FRAME tic=1003 ms=33734.125200 interval=32.730100
+CA121 FRAME tic=1005 ms=33786.506200 interval=52.381000
+CA121 FRAME tic=1006 ms=33819.698400 interval=33.192200
+CA121 FRAME tic=1008 ms=33868.074400 interval=48.376000
+CA121 FRAME tic=1009 ms=33900.216700 interval=32.142300
+CA121 FRAME tic=1010 ms=33936.634700 interval=36.418000
+CA121 FRAME tic=1012 ms=33985.683700 interval=49.049000
+CA121 FRAME tic=1013 ms=34020.527800 interval=34.844100
+CA121 FRAME tic=1015 ms=34077.086600 interval=56.558800
+CA128 BATTLE tic=1015 living=6595 active=1 revision=2 groups=66 reduced=0 incomplete=0 damage=19 deaths=7 projectiles=15691 cannonShots=35
+CA121 SIM tic=1015 ms=34094.812400 roster=6001 attackers=5994 defenders=600 groups=66 moving=0 blocked=8 x=-16064.000 y=-15140.000 z=0.000 angle=270.000
+CA121 MOTION tic=1015 displaced=5958 distance=335723.213270 contacts=0
+CA121 FRAME tic=1017 ms=34142.586400 interval=65.499800
+CA121 FRAME tic=1019 ms=34195.308600 interval=52.722200
+CA121 FRAME tic=1021 ms=34246.113600 interval=50.805000
+CA121 FRAME tic=1023 ms=34292.992000 interval=46.878400
+CA121 FRAME tic=1024 ms=34319.353400 interval=26.361400
+CA121 FRAME tic=1025 ms=34343.979200 interval=24.625800
+CA121 FRAME tic=1026 ms=34373.898200 interval=29.919000
+CA121 FRAME tic=1027 ms=34398.638400 interval=24.740200
+CA121 FRAME tic=1028 ms=34425.089700 interval=26.451300
+CA121 FRAME tic=1029 ms=34450.418800 interval=25.329100
+CA121 FRAME tic=1030 ms=34479.740700 interval=29.321900
+CA121 FRAME tic=1031 ms=34506.993600 interval=27.252900
+CA121 FRAME tic=1032 ms=34533.098300 interval=26.104700
+CA121 FRAME tic=1033 ms=34558.637300 interval=25.539000
+CA121 FRAME tic=1033 ms=34584.270400 interval=25.633100
+CA121 FRAME tic=1034 ms=34616.663200 interval=32.392800
+CA121 FRAME tic=1035 ms=34641.841100 interval=25.177900
+CA121 FRAME tic=1036 ms=34666.241100 interval=24.400000
+CA121 FRAME tic=1037 ms=34691.989200 interval=25.748100
+CA121 COUNT tic=1036 candidates=0 sight=0 decisions=0 commands=0
+CA121 FRAME tic=1038 ms=34721.675600 interval=29.686400
+CA121 FRAME tic=1039 ms=34746.119600 interval=24.444000
+CA121 FRAME tic=1040 ms=34774.288400 interval=28.168800
+CA121 FRAME tic=1041 ms=34799.425300 interval=25.136900
+CA121 FRAME tic=1042 ms=34829.943100 interval=30.517800
+CA121 FRAME tic=1043 ms=34857.698900 interval=27.755800
+CA121 FRAME tic=1044 ms=34882.285100 interval=24.586200
+CA121 FRAME tic=1045 ms=34907.629500 interval=25.344400
+CA121 FRAME tic=1046 ms=34938.113700 interval=30.484200
+CA121 FRAME tic=1047 ms=34967.403000 interval=29.289300
+CA121 FRAME tic=1048 ms=35000.634800 interval=33.231800
+CA121 FRAME tic=1049 ms=35034.438800 interval=33.804000
+CA121 FRAME tic=1050 ms=35071.976300 interval=37.537500
+Captured ca128-battle-later.png
+CA128 BATTLE tic=1050 living=6595 active=1 revision=2 groups=66 reduced=0 incomplete=0 damage=19 deaths=7 projectiles=16400 cannonShots=35
+CA121 SIM tic=1050 ms=35180.832000 roster=6001 attackers=5994 defenders=600 groups=66 moving=0 blocked=21 x=-16064.000 y=-15140.000 z=0.000 angle=270.000
+CA121 MOTION tic=1050 displaced=5958 distance=335479.054744 contacts=0
+CA121 FRAME tic=1051 ms=35214.138400 interval=142.162100
+CA121 FRAME tic=1057 ms=35383.521100 interval=169.382700
+CA121 FRAME tic=1062 ms=35527.269900 interval=143.748800
+CA121 FRAME tic=1068 ms=35659.414600 interval=132.144700
+CA121 FRAME tic=1072 ms=35758.550900 interval=99.136300
+CA121 COUNT tic=1073 candidates=0 sight=0 decisions=0 commands=0
+CA121 FRAME tic=1076 ms=35855.258300 interval=96.707400
+CA121 FRAME tic=1079 ms=35938.092900 interval=82.834600
+CA121 FRAME tic=1082 ms=36012.335800 interval=74.242900
+CA121 FRAME tic=1084 ms=36069.482300 interval=57.146500
+CA128 BATTLE tic=1085 living=6590 active=1 revision=2 groups=67 reduced=0 incomplete=0 damage=28 deaths=12 projectiles=17100 cannonShots=50
+CA121 SIM tic=1085 ms=36103.300500 roster=6001 attackers=5989 defenders=600 groups=67 moving=0 blocked=17 x=-16064.000 y=-15140.000 z=0.000 angle=270.000
+CA121 MOTION tic=1085 displaced=5950 distance=322140.258190 contacts=0
+CA121 FRAME tic=1086 ms=36140.743200 interval=71.260900
+CA121 FRAME tic=1089 ms=36218.514000 interval=77.770800
+CA121 FRAME tic=1092 ms=36289.578700 interval=71.064700
+CA121 FRAME tic=1094 ms=36349.960600 interval=60.381900
+CA121 FRAME tic=1096 ms=36398.889800 interval=48.929200
+CA121 FRAME tic=1098 ms=36447.309300 interval=48.419500
+CA121 FRAME tic=1100 ms=36490.544200 interval=43.234900
+CA121 FRAME tic=1101 ms=36516.748500 interval=26.204300
+CA121 FRAME tic=1102 ms=36547.134800 interval=30.386300
+CA121 FRAME tic=1103 ms=36573.412500 interval=26.277700
+CA121 FRAME tic=1104 ms=36599.844100 interval=26.431600
+CA121 FRAME tic=1105 ms=36627.182700 interval=27.338600
+CA121 FRAME tic=1106 ms=36658.213500 interval=31.030800
+CA121 FRAME tic=1107 ms=36684.325600 interval=26.112100
+CA121 FRAME tic=1108 ms=36709.888600 interval=25.563000
+CA121 FRAME tic=1109 ms=36741.796200 interval=31.907600
+CA121 FRAME tic=1110 ms=36772.057300 interval=30.261100
+CA121 FRAME tic=1111 ms=36797.398100 interval=25.340800
+CA121 COUNT tic=1110 candidates=0 sight=0 decisions=0 commands=0
+CA121 FRAME tic=1112 ms=36826.923200 interval=29.525100
+CA121 FRAME tic=1113 ms=36862.805800 interval=35.882600
+CA121 FRAME tic=1114 ms=36901.375400 interval=38.569600
+CA121 FRAME tic=1116 ms=36956.785100 interval=55.409700
+CA121 FRAME tic=1117 ms=36990.847200 interval=34.062100
+CA121 FRAME tic=1119 ms=37055.183400 interval=64.336200

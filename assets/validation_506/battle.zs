@@ -27,6 +27,6 @@ class CA128Battle : StaticEventHandler
             if(b.AnatomyProfile==null || b.CombatArmor==null || b.ElementalStatus==null)incomplete++;
         }
         for(int i=0;i<port.Guns.Size();i++)if(port.Guns[i]!=null)shots+=port.Guns[i].Shots;
-        Console.Printf("CA128 BATTLE tic=%d living=%d active=%d revision=%d leaders=%d reduced=%d incomplete=%d damage=%d deaths=%d projectiles=%d cannonShots=%d",level.time,population.LivingCombatants,port.HighDensity,port.TargetingRevision,port.Commanders.Size(),reduced,incomplete,DamageEvents,Deaths,Projectiles,shots);
+        Console.Printf("CA128 BATTLE tic=%d living=%d active=%d revision=%d groups=%d reduced=%d incomplete=%d damage=%d deaths=%d projectiles=%d cannonShots=%d",level.time,population.LivingCombatants,port.HighDensity,port.TargetingRevision,port.Groups,reduced,incomplete,DamageEvents,Deaths,Projectiles,shots);
     }
 }

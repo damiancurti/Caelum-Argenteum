@@ -1,0 +1,26 @@
+{
+  "baseline_commit": "0e2b9eab9e93096993f04beab5d5ef94d69ca0e3",
+  "changed_members": [
+    "ZSCRIPT",
+    "caelum/actors/CaelumMassAIScheduler.zs",
+    "caelum/core/CaelumConstants.zs",
+    "caelum/world/CaelumCannon.zs",
+    "caelum/world/CaelumPhysicalHazards.zs",
+    "caelum/world/CaelumPortSiege.zs",
+    "caelum/world/CaelumSewerMaze.zs",
+    "caelum/world/CaelumSiegeEncounter.zs"
+  ],
+  "added_members": [
+    "caelum/actors/CaelumPopulationState.zs"
+  ],
+  "unchanged_method_bodies": 3789,
+  "individual_target_body_exact": true,
+  "normal_actor_tick_attacks_resources_unchanged": true,
+  "map_assets_unchanged": true,
+  "production_package_exact_src": true,
+  "production_members": 6188,
+  "production_sha256": "93513cd6c0e4ac0167d01f69cd8a9d2d89d82c912c33bd0ffd31db945e6568fa",
+  "tested_production_sha256": "8dd99892be5b395854c473459c4c72a50acdd98943af4ae545e2585ea332aca3",
+  "map06_sha256": "84f0c18fdb4be7a91eff146845f78dda5082d5b0c9d996928f0652d7c6fc7efd",
+  "no_diagnostic_fixtures_in_production": true
+}

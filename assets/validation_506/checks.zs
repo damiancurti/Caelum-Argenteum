@@ -106,15 +106,16 @@ class CA128Checks : EventHandler
         Port.UpdateSharedTarget(Leader);
         Check(Leader.NextSharedTargetTic>level.time && Leader.NextSharedTargetTic<=level.time+8,"large group ID cannot extend period");
         Leader.CommandGroup=0;
-        Port.Commanders.Push(Leader);Port.Commanders.Push(Follower);
         Follower.CommandGroup=1;Follower.CommandLeader=Follower;
         Port.UpdateSharedTarget(Follower);
-        Check(Leader.NextSharedTargetTic%8==0 && Follower.NextSharedTargetTic%8==1,"neighboring groups have distinct perception phases");
+        Check(Leader.NextSharedTargetTic==level.time+8 && Follower.NextSharedTargetTic==level.time+8,"demand cache uses authored interval without background queries");
 
         Machine=CaelumHostileMachine(Actor.Spawn("CaelumHostileMachine",(0,0,0),NO_REPLACE));
         Machine.Encounter=Port;Machine.GuardRadius=256;Machine.Armed=true;
         let unlinked=CaelumCombatActor(Actor.Spawn("CA128Unlinked",(0,128,0),NO_REPLACE));
         let extra=Port.RegisterAttacker(unlinked);
+        Machine.ObserveGuards();
+        Check((extra.NearbyMachines&1)!=0,"NOBLOCKMAP registration after census is observed in the same tic");
         let elevated=Port.RegisterAttacker(Bodies[3]);
         Bodies[3].SetOrigin((0,0,384),false);
         CaelumPopulationState.Get().Refresh();
@@ -137,6 +138,12 @@ class CA128Checks : EventHandler
         Check(gun.Requested && gun.IntendedTarget==Leader.Body,"expired retry acquires a valid crew target");
         let intended=gun.IntendedTarget;Port.OrderGuns();
         Check(gun.Requested && gun.IntendedTarget==intended,"pending positive cannon order retained");
+        Follower.CrewMachine=Machine;
+        Check(Port.CannonTarget(gun)==Follower.Body,"equally prioritized cannon crews retain nearest selection");
+        Bodies[0].SetOrigin((1000,200,0),false);Bodies[1].SetOrigin((1000,-200,0),false);
+        Check(Port.CannonTarget(gun)==Leader.Body,"equal-distance cannon tie retains original roster order");
+        Bodies[0].SetOrigin((0,0,0),false);Bodies[1].SetOrigin((800,0,0),false);
+        Follower.CrewMachine=null;
         gun.Destroy();Leader.CrewMachine=null;
         Bodies[0].SetOrigin((2048,0,0),false);unlinked.SetOrigin((2048,128,0),false);
         Machine.ObserveGuards();

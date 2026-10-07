@@ -26,7 +26,10 @@ def main():
     for a,b in [('baseline-a','current-a'),('baseline-a','current-b'),
                 ('neither-a','no-stagger-a'),('neither-a','no-candidates-a'),
                 ('no-stagger-a','current-a'),('no-candidates-a','current-a'),
-                ('no-stagger-b','current-b'),('no-candidates-b','current-b')]:
+                ('no-stagger-b','current-b'),('no-candidates-b','current-b'),
+                ('no-stagger-a','pruned-cannon-a'),('no-stagger-b','pruned-cannon-b'),
+                ('legacy-shared-a','production-c'),('legacy-shared-b','production-d'),
+                ('baseline-a','production-c'),('baseline-a','production-d')]:
         if a not in runs or b not in runs:continue
         for window in ['early','congested','later','common']:
             pairs[f'{a}__{b}__{window}']=previous.compare(runs[a],runs[b],window)

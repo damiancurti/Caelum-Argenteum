@@ -1,0 +1,1962 @@
+Log started: 2026-10-07 03:47:31
+GZDoom version g4.14.2
+D_DoomInit: Static RNGseed 116 set.
+W_Init: Init WADfiles.
+adding C:/Program Files (x86)/GZDoom/gzdoom.pk3, 692 lumps
+adding C:/Program Files (x86)/GZDoom/game_support.pk3, 3308 lumps
+adding C:/Program Files (x86)/Steam/steamapps/common/ultimate doom/base/doom2/DOOM2.WAD, 2919 lumps
+adding C:/Program Files (x86)/Steam/steamapps/common/Ultimate Doom/rerelease/id24res.wad, 530 lumps
+adding C:/Program Files (x86)/GZDoom/game_widescreen_gfx.pk3, 214 lumps
+adding C:/GZDooMProjects/CaelumArgenteum/build/issue128/guard-oracle.pk3, 6188 lumps
+adding C:/GZDooMProjects/CaelumArgenteum/build/issue128/battle.pk3, 5 lumps
+S_Init: Setting up sound.
+I_InitSound: Initializing OpenAL
+  Opened device OpenAL Soft on G27F (NVIDIA High Definition Audio)
+  EFX enabled
+I_InitInput
+I_StartupMouse
+I_StartupKeyboard
+I_StartupXInput
+I_StartupRawPS2
+I_StartupDirectInputJoystick
+Vulkan device: NVIDIA GeForce RTX 3070 Ti
+Vulkan device type: discrete gpu
+Vulkan version: 1.4.303 (api) 576.352.0 (driver)
+Vulkan extensions: VK_KHR_16bit_storage VK_KHR_8bit_storage VK_KHR_acceleration_structure VK_KHR_bind_memory2 VK_KHR_buffer_device_address VK_KHR_calibrated_timestamps VK_KHR_compute_shader_derivatives VK_KHR_cooperative_matrix VK_KHR_copy_commands2 VK_KHR_create_renderpass2 VK_KHR_dedicated_allocation VK_KHR_deferred_host_operations VK_KHR_depth_stencil_resolve VK_KHR_descriptor_update_template VK_KHR_device_group VK_KHR_draw_indirect_count VK_KHR_driver_properties VK_KHR_dynamic_rendering VK_KHR_dynamic_rendering_local_read VK_KHR_external_fence VK_KHR_external_fence_win32 VK_KHR_external_memory VK_KHR_external_memory_win32 VK_KHR_external_semaphore VK_KHR_external_semaphore_win32 VK_KHR_format_feature_flags2 VK_KHR_fragment_shader_barycentric VK_KHR_fragment_shading_rate VK_KHR_get_memory_requirements2 VK_KHR_global_priority VK_KHR_image_format_list VK_KHR_imageless_framebuffer VK_KHR_index_type_uint8 VK_KHR_line_rasterization VK_KHR_load_store_op_none VK_KHR_maintenance1 VK_KHR_maintenance2 VK_KHR_maintenance3 VK_KHR_maintenance4 VK_KHR_maintenance5 VK_KHR_maintenance6 VK_KHR_maintenance7 VK_KHR_map_memory2 VK_KHR_multiview VK_KHR_pipeline_binary VK_KHR_pipeline_executable_properties VK_KHR_pipeline_library VK_KHR_present_id VK_KHR_present_wait VK_KHR_push_descriptor VK_KHR_ray_query VK_KHR_ray_tracing_maintenance1 VK_KHR_ray_tracing_pipeline VK_KHR_ray_tracing_position_fetch VK_KHR_relaxed_block_layout VK_KHR_sampler_mirror_clamp_to_edge VK_KHR_sampler_ycbcr_conversion VK_KHR_separate_depth_stencil_layouts VK_KHR_shader_atomic_int64 VK_KHR_shader_clock VK_KHR_shader_draw_parameters VK_KHR_shader_expect_assume VK_KHR_shader_float16_int8 VK_KHR_shader_float_controls VK_KHR_shader_float_controls2 VK_KHR_shader_integer_dot_product VK_KHR_shader_maximal_reconvergence VK_KHR_shader_non_semantic_info VK_KHR_shader_quad_control VK_KHR_shader_relaxed_extended_instruction VK_KHR_shader_subgroup_extended_types VK_KHR_shader_subgroup_rotate VK_KHR_shader_subgroup_uniform_control_flow VK_KHR_shader_terminate_invocation VK_KHR_spirv_1_4 VK_KHR_storage_buffer_storage_class VK_KHR_swapchain VK_KHR_swapchain_mutable_format VK_KHR_synchronization2 VK_KHR_timeline_semaphore VK_KHR_uniform_buffer_standard_layout VK_KHR_variable_pointers VK_KHR_vertex_attribute_divisor VK_KHR_video_decode_av1 VK_KHR_video_decode_h264 VK_KHR_video_decode_h265 VK_KHR_video_decode_queue VK_KHR_video_encode_h264 VK_KHR_video_encode_h265 VK_KHR_video_encode_quantization_map VK_KHR_video_encode_queue VK_KHR_video_maintenance1 VK_KHR_video_maintenance2 VK_KHR_video_queue VK_KHR_vulkan_memory_model VK_KHR_win32_keyed_mutex VK_KHR_workgroup_memory_explicit_layout VK_KHR_zero_initialize_workgroup_memory VK_EXT_4444_formats VK_EXT_attachment_feedback_loop_dynamic_state VK_EXT_attachment_feedback_loop_layout VK_EXT_blend_operation_advanced VK_EXT_border_color_swizzle VK_EXT_buffer_device_address VK_EXT_calibrated_timestamps VK_EXT_color_write_enable VK_EXT_conditional_rendering VK_EXT_conservative_rasterization VK_EXT_custom_border_color VK_EXT_depth_bias_control VK_EXT_depth_clamp_control VK_EXT_depth_clamp_zero_one VK_EXT_depth_clip_control VK_EXT_depth_clip_enable VK_EXT_depth_range_unrestricted VK_EXT_descriptor_buffer VK_EXT_descriptor_indexing VK_EXT_device_address_binding_report VK_EXT_device_fault VK_EXT_device_generated_commands VK_EXT_discard_rectangles VK_EXT_dynamic_rendering_unused_attachments VK_EXT_extended_dynamic_state VK_EXT_extended_dynamic_state2 VK_EXT_extended_dynamic_state3 VK_EXT_external_memory_host VK_EXT_fragment_shader_interlock VK_EXT_full_screen_exclusive VK_EXT_global_priority VK_EXT_global_priority_query VK_EXT_graphics_pipeline_library VK_EXT_hdr_metadata VK_EXT_host_image_copy VK_EXT_host_query_reset VK_EXT_image_2d_view_of_3d VK_EXT_image_robustness VK_EXT_image_sliced_view_of_3d VK_EXT_image_view_min_lod VK_EXT_index_type_uint8 VK_EXT_inline_uniform_block VK_EXT_legacy_vertex_attributes VK_EXT_line_rasterization VK_EXT_load_store_op_none VK_EXT_memory_budget VK_EXT_memory_priority VK_EXT_mesh_shader VK_EXT_multi_draw VK_EXT_mutable_descriptor_type VK_EXT_nested_command_buffer VK_EXT_non_seamless_cube_map VK_EXT_opacity_micromap VK_EXT_pageable_device_local_memory VK_EXT_pci_bus_info VK_EXT_pipeline_creation_cache_control VK_EXT_pipeline_creation_feedback VK_EXT_pipeline_library_group_handles VK_EXT_pipeline_robustness VK_EXT_post_depth_coverage VK_EXT_present_mode_fifo_latest_ready VK_EXT_primitive_topology_list_restart VK_EXT_primitives_generated_query VK_EXT_private_data VK_EXT_provoking_vertex VK_EXT_queue_family_foreign VK_EXT_robustness2 VK_EXT_sample_locations VK_EXT_sampler_filter_minmax VK_EXT_scalar_block_layout VK_EXT_separate_stencil_usage VK_EXT_shader_atomic_float VK_EXT_shader_demote_to_helper_invocation VK_EXT_shader_image_atomic_int64 VK_EXT_shader_module_identifier VK_EXT_shader_object VK_EXT_shader_replicated_composites VK_EXT_shader_subgroup_ballot VK_EXT_shader_subgroup_vote VK_EXT_shader_viewport_index_layer VK_EXT_subgroup_size_control VK_EXT_swapchain_maintenance1 VK_EXT_texel_buffer_alignment VK_EXT_tooling_info VK_EXT_transform_feedback VK_EXT_vertex_attribute_divisor VK_EXT_vertex_attribute_robustness VK_EXT_vertex_input_dynamic_state VK_EXT_ycbcr_2plane_444_formats VK_EXT_ycbcr_image_arrays VK_NV_acquire_winrt_display VK_NV_clip_space_w_scaling VK_NV_cluster_acceleration_structure VK_NV_compute_shader_derivatives VK_NV_cooperative_matrix VK_NV_cooperative_matrix2 VK_NV_cooperative_vector VK_NV_copy_memory_indirect VK_NV_corner_sampled_image VK_NV_coverage_reduction_mode VK_NV_cuda_kernel_launch VK_NV_dedicated_allocation VK_NV_dedicated_allocation_image_aliasing VK_NV_descriptor_pool_overallocation VK_NV_device_diagnostic_checkpoints VK_NV_device_diagnostics_config VK_NV_device_generated_commands VK_NV_device_generated_commands_compute VK_NV_disk_cache_utils VK_NV_external_memory VK_NV_external_memory_win32 VK_NV_fill_rectangle VK_NV_fragment_coverage_to_color VK_NV_fragment_shader_barycentric VK_NV_fragment_shading_rate_enums VK_NV_framebuffer_mixed_samples VK_NV_geometry_shader_passthrough VK_NV_inherited_viewport_scissor VK_NV_internal_nvpresent VK_NV_linear_color_attachment VK_NV_low_latency VK_NV_low_latency2 VK_NV_memory_decompression VK_NV_mesh_shader VK_NV_optical_flow VK_NV_partitioned_acceleration_structure VK_NV_present_metering VK_NV_raw_access_chains VK_NV_ray_tracing VK_NV_ray_tracing_invocation_reorder VK_NV_ray_tracing_motion_blur VK_NV_representative_fragment_test VK_NV_sample_mask_override_coverage VK_NV_scissor_exclusive VK_NV_shader_atomic_float16_vector VK_NV_shader_image_footprint VK_NV_shader_sm_builtins VK_NV_shader_subgroup_partitioned VK_NV_shading_rate_image VK_NV_viewport_array2 VK_NV_viewport_swizzle VK_NV_win32_keyed_mutex VK_NVX_binary_import VK_NVX_image_view_handle VK_NVX_multiview_per_view_attributes VK_AMD_buffer_marker VK_GOOGLE_hlsl_functionality1 VK_GOOGLE_user_type
+Max. texture size: 32768
+Max. uniform buffer range: 65536
+Min. uniform buffer offset alignment: 64
+Resolution: 1520 x 825
+I_Init: Setting up machine state.
+CPU speed: 3400 MHz
+CPU Vendor ID: AuthenticAMD
+  Name: AMD Ryzen 9 5950X 16-Core Processor 
+  Family 25 (25), Model 33, Stepping 0
+  Features: SSE2 SSE3 SSSE3 SSE4.1 SSE4.2 AVX AVX2 F16C FMA3 BMI1 BMI2 HyperThreading
+V_Init: allocate screen.
+ST_Init: Init startup screen.
+Checking cmd-line parameters...
+S_InitData: Load sound definitions.
+G_ParseMapInfo: Load map definitions.
+Texman.Init: Init texture manager.
+ParseTeamInfo: Load team definitions.
+LoadActors: Load actor definitions.
+script parsing took 915.85 ms
+R_Init: Init Doom refresh subsystem.
+DecalLibrary: Load decals.
+M_Init: Init menus.
+P_Init: Init Playloop state.
+ParseSBarInfo: Loading custom status bar definition.
+D_CheckNetGame: Checking network game status.
+player 1 of 1 (1 nodes)
+
+----------------------------------------
+
+MAP06 - Barracas al Sud — fortified port
+
+CA128 BATTLE tic=0 living=5 active=0 revision=0 groups=0 reduced=0 incomplete=0 damage=0 deaths=0 projectiles=0 cannonShots=0
+[Caelum] Inicio por comando directo: perfil de prueba seguro aplicado.
+[Caelum] Character creation values loaded. Attribute total: 150.00
+PORT16 deployed Mandingas=6000 commander=1 defenders=600 hostileMachines=12 guns=42
+CA121 COUNT tic=0 candidates=0 sight=0 decisions=0 commands=0
+CA121 FRAME tic=11 ms=5563.178600 interval=231.847100
+CA121 FRAME tic=19 ms=5752.115900 interval=188.937300
+CA121 FRAME tic=25 ms=5941.968800 interval=189.852900
+CA121 FRAME tic=32 ms=6088.176600 interval=146.207800
+CA128 BATTLE tic=35 living=6602 active=1 revision=2 groups=64 reduced=0 incomplete=0 damage=0 deaths=0 projectiles=0 cannonShots=0
+CA121 SIM tic=35 ms=6158.984800 roster=6001 attackers=6001 defenders=600 groups=64 moving=0 blocked=0 x=0.000 y=320.000 z=-0.000 angle=90.000
+CA121 MOTION tic=35 displaced=0 distance=0.000000 contacts=0
+CA121 SETTINGS pause=0 lower=0 render=1 sound=1 volume=0.050000
+CA128 GUARD_VERIFIED tic=35 machine=0 expected=9
+CA128 GUARD_VERIFIED tic=35 machine=1 expected=12
+CA128 GUARD_VERIFIED tic=35 machine=2 expected=12
+CA128 GUARD_VERIFIED tic=35 machine=3 expected=12
+CA128 GUARD_VERIFIED tic=35 machine=4 expected=25
+CA128 GUARD_VERIFIED tic=35 machine=5 expected=41
+CA128 GUARD_VERIFIED tic=35 machine=6 expected=2
+CA128 GUARD_VERIFIED tic=35 machine=7 expected=3
+CA128 GUARD_VERIFIED tic=35 machine=8 expected=4
+CA128 GUARD_VERIFIED tic=35 machine=9 expected=4
+CA128 GUARD_VERIFIED tic=35 machine=10 expected=3
+CA128 GUARD_VERIFIED tic=35 machine=11 expected=2
+CA121 FRAME tic=37 ms=6218.272200 interval=130.095600
+CA121 COUNT tic=37 candidates=0 sight=0 decisions=0 commands=0
+CA121 FRAME tic=42 ms=6351.086100 interval=132.813900
+CA121 FRAME tic=46 ms=6501.970900 interval=150.884800
+CA121 FRAME tic=52 ms=6655.519500 interval=153.548600
+CA121 FRAME tic=57 ms=6784.543100 interval=129.023600
+CA121 FRAME tic=62 ms=6930.891200 interval=146.348100
+CA121 FRAME tic=66 ms=7046.296400 interval=115.405200
+CA121 FRAME tic=70 ms=7159.683500 interval=113.387100
+CA128 BATTLE tic=70 living=6602 active=1 revision=2 groups=66 reduced=0 incomplete=0 damage=0 deaths=0 projectiles=241 cannonShots=0
+CA121 SIM tic=70 ms=7171.608600 roster=6001 attackers=6001 defenders=600 groups=66 moving=0 blocked=0 x=0.000 y=320.000 z=-0.000 angle=90.000
+CA121 MOTION tic=70 displaced=5989 distance=429858.785220 contacts=0
+CA128 GUARD_VERIFIED tic=70 machine=0 expected=9
+CA128 GUARD_VERIFIED tic=70 machine=1 expected=12
+CA128 GUARD_VERIFIED tic=70 machine=2 expected=12
+CA128 GUARD_VERIFIED tic=70 machine=3 expected=13
+CA128 GUARD_VERIFIED tic=70 machine=4 expected=24
+CA128 GUARD_VERIFIED tic=70 machine=5 expected=41
+CA128 GUARD_VERIFIED tic=70 machine=6 expected=2
+CA128 GUARD_VERIFIED tic=70 machine=7 expected=3
+CA128 GUARD_VERIFIED tic=70 machine=8 expected=4
+CA128 GUARD_VERIFIED tic=70 machine=9 expected=4
+CA128 GUARD_VERIFIED tic=70 machine=10 expected=3
+CA128 GUARD_VERIFIED tic=70 machine=11 expected=2
+CA121 FRAME tic=74 ms=7280.072700 interval=120.389200
+CA121 COUNT tic=74 candidates=0 sight=0 decisions=0 commands=0
+CA121 FRAME tic=79 ms=7421.614200 interval=141.541500
+CA121 FRAME tic=84 ms=7613.766000 interval=192.151800
+CA121 FRAME tic=90 ms=7754.976900 interval=141.210900
+CA121 FRAME tic=95 ms=7862.939900 interval=107.963000
+CA121 FRAME tic=99 ms=7976.126000 interval=113.186100
+CA121 FRAME tic=103 ms=8131.047200 interval=154.921200
+CA128 BATTLE tic=105 living=6602 active=1 revision=2 groups=63 reduced=0 incomplete=0 damage=0 deaths=0 projectiles=621 cannonShots=0
+CA121 SIM tic=105 ms=8180.264900 roster=6001 attackers=6001 defenders=600 groups=63 moving=0 blocked=0 x=0.000 y=320.000 z=-0.000 angle=90.000
+CA121 MOTION tic=105 displaced=5987 distance=385586.710224 contacts=0
+CA128 GUARD_VERIFIED tic=105 machine=0 expected=9
+CA128 GUARD_VERIFIED tic=105 machine=1 expected=12
+CA128 GUARD_VERIFIED tic=105 machine=2 expected=12
+CA128 GUARD_VERIFIED tic=105 machine=3 expected=12
+CA128 GUARD_VERIFIED tic=105 machine=4 expected=25
+CA128 GUARD_VERIFIED tic=105 machine=5 expected=41
+CA128 GUARD_VERIFIED tic=105 machine=6 expected=2
+CA128 GUARD_VERIFIED tic=105 machine=7 expected=3
+CA128 GUARD_VERIFIED tic=105 machine=8 expected=4
+CA128 GUARD_VERIFIED tic=105 machine=9 expected=4
+CA128 GUARD_VERIFIED tic=105 machine=10 expected=3
+CA128 GUARD_VERIFIED tic=105 machine=11 expected=2
+CA121 FRAME tic=109 ms=8279.431400 interval=148.384200
+CA121 COUNT tic=111 candidates=0 sight=0 decisions=0 commands=0
+CA121 FRAME tic=114 ms=8419.423800 interval=139.992400
+CA121 FRAME tic=119 ms=8533.429400 interval=114.005600
+CA121 FRAME tic=123 ms=8646.939700 interval=113.510300
+CA121 FRAME tic=126 ms=8738.516200 interval=91.576500
+CA121 FRAME tic=130 ms=8857.818500 interval=119.302300
+CA121 FRAME tic=134 ms=8959.982700 interval=102.164200
+CA121 FRAME tic=137 ms=9032.911800 interval=72.929100
+CA121 FRAME tic=140 ms=9151.179800 interval=118.268000
+CA128 BATTLE tic=140 living=6602 active=1 revision=2 groups=64 reduced=0 incomplete=0 damage=0 deaths=0 projectiles=997 cannonShots=0
+CA121 SIM tic=140 ms=9177.486000 roster=6001 attackers=6001 defenders=600 groups=64 moving=0 blocked=0 x=0.000 y=320.000 z=-0.000 angle=90.000
+CA121 MOTION tic=140 displaced=5987 distance=423952.021765 contacts=0
+CA128 GUARD_VERIFIED tic=140 machine=0 expected=9
+CA128 GUARD_VERIFIED tic=140 machine=1 expected=12
+CA128 GUARD_VERIFIED tic=140 machine=2 expected=12
+CA128 GUARD_VERIFIED tic=140 machine=3 expected=12
+CA128 GUARD_VERIFIED tic=140 machine=4 expected=25
+CA128 GUARD_VERIFIED tic=140 machine=5 expected=41
+CA128 GUARD_VERIFIED tic=140 machine=6 expected=2
+CA128 GUARD_VERIFIED tic=140 machine=7 expected=3
+CA128 GUARD_VERIFIED tic=140 machine=8 expected=4
+CA128 GUARD_VERIFIED tic=140 machine=9 expected=4
+CA128 GUARD_VERIFIED tic=140 machine=10 expected=3
+CA128 GUARD_VERIFIED tic=140 machine=11 expected=2
+CA121 FRAME tic=144 ms=9331.170600 interval=179.990800
+CA121 COUNT tic=148 candidates=0 sight=0 decisions=0 commands=0
+CA121 FRAME tic=151 ms=9537.683200 interval=206.512600
+CA121 FRAME tic=158 ms=9755.764000 interval=218.080800
+CA121 FRAME tic=166 ms=9964.180700 interval=208.416700
+CA121 FRAME tic=173 ms=10121.909400 interval=157.728700
+CA128 BATTLE tic=175 living=6602 active=1 revision=2 groups=63 reduced=0 incomplete=0 damage=0 deaths=0 projectiles=1420 cannonShots=0
+CA121 SIM tic=175 ms=10176.766900 roster=6001 attackers=6001 defenders=600 groups=63 moving=0 blocked=0 x=0.000 y=320.000 z=-0.000 angle=90.000
+CA121 MOTION tic=175 displaced=5988 distance=425953.717579 contacts=0
+CA128 GUARD_VERIFIED tic=175 machine=0 expected=9
+CA128 GUARD_VERIFIED tic=175 machine=1 expected=12
+CA128 GUARD_VERIFIED tic=175 machine=2 expected=12
+CA128 GUARD_VERIFIED tic=175 machine=3 expected=12
+CA128 GUARD_VERIFIED tic=175 machine=4 expected=25
+CA128 GUARD_VERIFIED tic=175 machine=5 expected=41
+CA128 GUARD_VERIFIED tic=175 machine=6 expected=2
+CA128 GUARD_VERIFIED tic=175 machine=7 expected=3
+CA128 GUARD_VERIFIED tic=175 machine=8 expected=4
+CA128 GUARD_VERIFIED tic=175 machine=9 expected=4
+CA128 GUARD_VERIFIED tic=175 machine=10 expected=3
+CA128 GUARD_VERIFIED tic=175 machine=11 expected=2
+CA121 FRAME tic=178 ms=10264.131800 interval=142.222400
+CA121 FRAME tic=183 ms=10384.982100 interval=120.850300
+CA121 COUNT tic=185 candidates=0 sight=0 decisions=0 commands=0
+CA121 FRAME tic=187 ms=10493.058300 interval=108.076200
+CA121 FRAME tic=191 ms=10592.577800 interval=99.519500
+CA121 FRAME tic=195 ms=10700.586700 interval=108.008900
+CA121 FRAME tic=198 ms=10788.720900 interval=88.134200
+CA121 FRAME tic=201 ms=10868.941300 interval=80.220400
+CA121 FRAME tic=204 ms=10962.631200 interval=93.689900
+CA121 FRAME tic=208 ms=11106.185400 interval=143.554200
+CA128 BATTLE tic=210 living=6602 active=1 revision=2 groups=66 reduced=0 incomplete=0 damage=0 deaths=0 projectiles=1859 cannonShots=0
+CA121 SIM tic=210 ms=11196.889700 roster=6001 attackers=6001 defenders=600 groups=66 moving=0 blocked=0 x=0.000 y=320.000 z=-0.000 angle=90.000
+CA121 MOTION tic=210 displaced=5988 distance=424430.483951 contacts=0
+CA128 GUARD_VERIFIED tic=210 machine=0 expected=9
+CA128 GUARD_VERIFIED tic=210 machine=1 expected=12
+CA128 GUARD_VERIFIED tic=210 machine=2 expected=12
+CA128 GUARD_VERIFIED tic=210 machine=3 expected=12
+CA128 GUARD_VERIFIED tic=210 machine=4 expected=24
+CA128 GUARD_VERIFIED tic=210 machine=5 expected=41
+CA128 GUARD_VERIFIED tic=210 machine=6 expected=2
+CA128 GUARD_VERIFIED tic=210 machine=7 expected=3
+CA128 GUARD_VERIFIED tic=210 machine=8 expected=4
+CA128 GUARD_VERIFIED tic=210 machine=9 expected=4
+CA128 GUARD_VERIFIED tic=210 machine=10 expected=3
+CA128 GUARD_VERIFIED tic=210 machine=11 expected=2
+CA121 FRAME tic=213 ms=11297.600700 interval=191.415300
+CA121 FRAME tic=220 ms=11527.845500 interval=230.244800
+CA121 COUNT tic=222 candidates=0 sight=0 decisions=0 commands=0
+CA121 FRAME tic=228 ms=11794.740600 interval=266.895100
+CA121 FRAME tic=237 ms=12012.377400 interval=217.636800
+CA121 FRAME tic=244 ms=12192.778300 interval=180.400900
+CA128 BATTLE tic=245 living=6602 active=1 revision=2 groups=67 reduced=0 incomplete=0 damage=0 deaths=0 projectiles=2278 cannonShots=0
+CA121 SIM tic=245 ms=12224.759200 roster=6001 attackers=6001 defenders=600 groups=67 moving=0 blocked=0 x=0.000 y=320.000 z=-0.000 angle=90.000
+CA121 MOTION tic=245 displaced=5989 distance=388143.044508 contacts=0
+CA128 GUARD_VERIFIED tic=245 machine=0 expected=9
+CA128 GUARD_VERIFIED tic=245 machine=1 expected=12
+CA128 GUARD_VERIFIED tic=245 machine=2 expected=12
+CA128 GUARD_VERIFIED tic=245 machine=3 expected=12
+CA128 GUARD_VERIFIED tic=245 machine=4 expected=24
+CA128 GUARD_VERIFIED tic=245 machine=5 expected=41
+CA128 GUARD_VERIFIED tic=245 machine=6 expected=2
+CA128 GUARD_VERIFIED tic=245 machine=7 expected=3
+CA128 GUARD_VERIFIED tic=245 machine=8 expected=4
+CA128 GUARD_VERIFIED tic=245 machine=9 expected=4
+CA128 GUARD_VERIFIED tic=245 machine=10 expected=3
+CA128 GUARD_VERIFIED tic=245 machine=11 expected=2
+CA121 FRAME tic=251 ms=12384.294700 interval=191.516400
+CA121 FRAME tic=257 ms=12542.940700 interval=158.646000
+CA121 COUNT tic=259 candidates=0 sight=0 decisions=0 commands=0
+CA121 FRAME tic=263 ms=12725.902600 interval=182.961900
+CA121 FRAME tic=269 ms=12884.352200 interval=158.449600
+CA121 FRAME tic=275 ms=13055.892600 interval=171.540400
+CA128 BATTLE tic=280 living=6602 active=1 revision=2 groups=64 reduced=0 incomplete=0 damage=0 deaths=0 projectiles=2735 cannonShots=0
+CA121 SIM tic=280 ms=13212.279900 roster=6001 attackers=6001 defenders=600 groups=64 moving=0 blocked=0 x=0.000 y=320.000 z=-0.000 angle=90.000
+CA121 MOTION tic=280 displaced=5989 distance=415151.902958 contacts=0
+CA128 GUARD_VERIFIED tic=280 machine=0 expected=9
+CA128 GUARD_VERIFIED tic=280 machine=1 expected=12
+CA128 GUARD_VERIFIED tic=280 machine=2 expected=12
+CA128 GUARD_VERIFIED tic=280 machine=3 expected=12
+CA128 GUARD_VERIFIED tic=280 machine=4 expected=24
+CA128 GUARD_VERIFIED tic=280 machine=5 expected=41
+CA128 GUARD_VERIFIED tic=280 machine=6 expected=2
+CA128 GUARD_VERIFIED tic=280 machine=7 expected=3
+CA128 GUARD_VERIFIED tic=280 machine=8 expected=4
+CA128 GUARD_VERIFIED tic=280 machine=9 expected=4
+CA128 GUARD_VERIFIED tic=280 machine=10 expected=3
+CA128 GUARD_VERIFIED tic=280 machine=11 expected=2
+CA121 FRAME tic=281 ms=13259.592800 interval=203.700200
+CA121 FRAME tic=288 ms=13491.393200 interval=231.800400
+CA121 FRAME tic=296 ms=13730.029200 interval=238.636000
+CA121 COUNT tic=296 candidates=0 sight=0 decisions=0 commands=0
+CA121 FRAME tic=305 ms=14003.171100 interval=273.141900
+CA121 FRAME tic=314 ms=14226.257000 interval=223.085900
+CA128 BATTLE tic=315 living=6602 active=1 revision=2 groups=66 reduced=0 incomplete=0 damage=0 deaths=0 projectiles=3229 cannonShots=0
+CA121 SIM tic=315 ms=14257.202200 roster=6001 attackers=6001 defenders=600 groups=66 moving=0 blocked=0 x=0.000 y=320.000 z=-0.000 angle=90.000
+CA121 MOTION tic=315 displaced=5989 distance=410650.655326 contacts=0
+CA128 GUARD_VERIFIED tic=315 machine=0 expected=9
+CA128 GUARD_VERIFIED tic=315 machine=1 expected=11
+CA128 GUARD_VERIFIED tic=315 machine=2 expected=12
+CA128 GUARD_VERIFIED tic=315 machine=3 expected=12
+CA128 GUARD_VERIFIED tic=315 machine=4 expected=25
+CA128 GUARD_VERIFIED tic=315 machine=5 expected=41
+CA128 GUARD_VERIFIED tic=315 machine=6 expected=2
+CA128 GUARD_VERIFIED tic=315 machine=7 expected=3
+CA128 GUARD_VERIFIED tic=315 machine=8 expected=4
+CA128 GUARD_VERIFIED tic=315 machine=9 expected=4
+CA128 GUARD_VERIFIED tic=315 machine=10 expected=3
+CA128 GUARD_VERIFIED tic=315 machine=11 expected=2
+CA121 FRAME tic=322 ms=14437.261300 interval=211.004300
+CA121 FRAME tic=329 ms=14613.350400 interval=176.089100
+CA121 COUNT tic=333 candidates=0 sight=0 decisions=0 commands=0
+CA121 FRAME tic=335 ms=14781.057300 interval=167.706900
+CA121 FRAME tic=342 ms=14973.774300 interval=192.717000
+CA121 FRAME tic=348 ms=15145.236200 interval=171.461900
+CA128 BATTLE tic=350 living=6602 active=1 revision=2 groups=65 reduced=0 incomplete=0 damage=0 deaths=0 projectiles=3694 cannonShots=0
+CA121 SIM tic=350 ms=15234.893800 roster=6001 attackers=6001 defenders=600 groups=65 moving=0 blocked=0 x=0.000 y=320.000 z=-0.000 angle=90.000
+CA121 MOTION tic=350 displaced=5987 distance=412195.964336 contacts=0
+CA128 GUARD_VERIFIED tic=350 machine=0 expected=9
+CA128 GUARD_VERIFIED tic=350 machine=1 expected=11
+CA128 GUARD_VERIFIED tic=350 machine=2 expected=11
+CA128 GUARD_VERIFIED tic=350 machine=3 expected=12
+CA128 GUARD_VERIFIED tic=350 machine=4 expected=24
+CA128 GUARD_VERIFIED tic=350 machine=5 expected=41
+CA128 GUARD_VERIFIED tic=350 machine=6 expected=2
+CA128 GUARD_VERIFIED tic=350 machine=7 expected=3
+CA128 GUARD_VERIFIED tic=350 machine=8 expected=4
+CA128 GUARD_VERIFIED tic=350 machine=9 expected=4
+CA128 GUARD_VERIFIED tic=350 machine=10 expected=3
+CA128 GUARD_VERIFIED tic=350 machine=11 expected=2
+CA121 FRAME tic=354 ms=15389.495200 interval=244.259000
+CA121 FRAME tic=363 ms=15691.267300 interval=301.772100
+CA121 COUNT tic=370 candidates=0 sight=0 decisions=0 commands=0
+CA121 FRAME tic=373 ms=15993.867700 interval=302.600400
+CA121 FRAME tic=384 ms=16304.029800 interval=310.162100
+CA128 BATTLE tic=385 living=6598 active=1 revision=2 groups=63 reduced=0 incomplete=0 damage=10 deaths=4 projectiles=4174 cannonShots=18
+CA121 SIM tic=385 ms=16336.800900 roster=6001 attackers=5997 defenders=600 groups=63 moving=0 blocked=0 x=0.000 y=320.000 z=-0.000 angle=90.000
+CA121 MOTION tic=385 displaced=5967 distance=378835.932912 contacts=0
+CA128 GUARD_VERIFIED tic=385 machine=0 expected=8
+CA128 GUARD_VERIFIED tic=385 machine=1 expected=11
+CA128 GUARD_VERIFIED tic=385 machine=2 expected=11
+CA128 GUARD_VERIFIED tic=385 machine=3 expected=12
+CA128 GUARD_VERIFIED tic=385 machine=4 expected=24
+CA128 GUARD_VERIFIED tic=385 machine=5 expected=40
+CA128 GUARD_VERIFIED tic=385 machine=6 expected=1
+CA128 GUARD_VERIFIED tic=385 machine=7 expected=3
+CA128 GUARD_VERIFIED tic=385 machine=8 expected=4
+CA128 GUARD_VERIFIED tic=385 machine=9 expected=4
+CA128 GUARD_VERIFIED tic=385 machine=10 expected=3
+CA128 GUARD_VERIFIED tic=385 machine=11 expected=1
+CA121 FRAME tic=394 ms=16553.372900 interval=249.343100
+CA121 FRAME tic=403 ms=16767.630700 interval=214.257800
+CA121 COUNT tic=407 candidates=0 sight=0 decisions=0 commands=0
+CA121 FRAME tic=411 ms=16976.503400 interval=208.872700
+CA121 FRAME tic=418 ms=17159.311300 interval=182.807900
+CA128 BATTLE tic=420 living=6598 active=1 revision=2 groups=65 reduced=0 incomplete=0 damage=10 deaths=4 projectiles=4719 cannonShots=18
+CA121 SIM tic=420 ms=17224.058300 roster=6001 attackers=5997 defenders=600 groups=65 moving=0 blocked=1 x=0.000 y=320.000 z=-0.000 angle=90.000
+CA121 MOTION tic=420 displaced=5964 distance=402080.941837 contacts=0
+CA128 GUARD_VERIFIED tic=420 machine=0 expected=8
+CA128 GUARD_VERIFIED tic=420 machine=1 expected=11
+CA128 GUARD_VERIFIED tic=420 machine=2 expected=11
+CA128 GUARD_VERIFIED tic=420 machine=3 expected=12
+CA128 GUARD_VERIFIED tic=420 machine=4 expected=24
+CA128 GUARD_VERIFIED tic=420 machine=5 expected=40
+CA128 GUARD_VERIFIED tic=420 machine=6 expected=1
+CA128 GUARD_VERIFIED tic=420 machine=7 expected=3
+CA128 GUARD_VERIFIED tic=420 machine=8 expected=4
+CA128 GUARD_VERIFIED tic=420 machine=9 expected=4
+CA128 GUARD_VERIFIED tic=420 machine=10 expected=3
+CA128 GUARD_VERIFIED tic=420 machine=11 expected=1
+CA121 FRAME tic=424 ms=17350.360000 interval=191.048700
+CA121 FRAME tic=431 ms=17564.671500 interval=214.311500
+CA121 FRAME tic=439 ms=17798.850700 interval=234.179200
+CA121 COUNT tic=444 candidates=0 sight=0 decisions=0 commands=0
+CA121 FRAME tic=447 ms=18058.771900 interval=259.921200
+CA128 BATTLE tic=455 living=6598 active=1 revision=2 groups=65 reduced=0 incomplete=0 damage=10 deaths=4 projectiles=5220 cannonShots=18
+CA121 SIM tic=455 ms=18271.062100 roster=6001 attackers=5997 defenders=600 groups=65 moving=0 blocked=0 x=0.000 y=320.000 z=-0.000 angle=90.000
+CA121 MOTION tic=455 displaced=5962 distance=398373.108657 contacts=0
+CA128 GUARD_VERIFIED tic=455 machine=0 expected=8
+CA128 GUARD_VERIFIED tic=455 machine=1 expected=11
+CA128 GUARD_VERIFIED tic=455 machine=2 expected=11
+CA128 GUARD_VERIFIED tic=455 machine=3 expected=12
+CA128 GUARD_VERIFIED tic=455 machine=4 expected=23
+CA128 GUARD_VERIFIED tic=455 machine=5 expected=40
+CA128 GUARD_VERIFIED tic=455 machine=6 expected=1
+CA128 GUARD_VERIFIED tic=455 machine=7 expected=3
+CA128 GUARD_VERIFIED tic=455 machine=8 expected=4
+CA128 GUARD_VERIFIED tic=455 machine=9 expected=4
+CA128 GUARD_VERIFIED tic=455 machine=10 expected=3
+CA128 GUARD_VERIFIED tic=455 machine=11 expected=1
+CA121 FRAME tic=456 ms=18318.380000 interval=259.608100
+CA121 FRAME tic=465 ms=18580.823300 interval=262.443300
+CA121 FRAME tic=475 ms=18854.934800 interval=274.111500
+CA121 COUNT tic=481 candidates=0 sight=0 decisions=0 commands=0
+CA121 FRAME tic=484 ms=19062.985400 interval=208.050600
+CA128 BATTLE tic=490 living=6598 active=1 revision=2 groups=63 reduced=0 incomplete=0 damage=10 deaths=4 projectiles=5759 cannonShots=18
+CA121 SIM tic=490 ms=19215.866700 roster=6001 attackers=5997 defenders=600 groups=63 moving=0 blocked=1 x=0.000 y=320.000 z=-0.000 angle=90.000
+CA121 MOTION tic=490 displaced=5962 distance=394079.195207 contacts=0
+CA128 GUARD_VERIFIED tic=490 machine=0 expected=8
+CA128 GUARD_VERIFIED tic=490 machine=1 expected=11
+CA128 GUARD_VERIFIED tic=490 machine=2 expected=11
+CA128 GUARD_VERIFIED tic=490 machine=3 expected=12
+CA128 GUARD_VERIFIED tic=490 machine=4 expected=23
+CA128 GUARD_VERIFIED tic=490 machine=5 expected=40
+CA128 GUARD_VERIFIED tic=490 machine=6 expected=1
+CA128 GUARD_VERIFIED tic=490 machine=7 expected=3
+CA128 GUARD_VERIFIED tic=490 machine=8 expected=5
+CA128 GUARD_VERIFIED tic=490 machine=9 expected=4
+CA128 GUARD_VERIFIED tic=490 machine=10 expected=3
+CA128 GUARD_VERIFIED tic=490 machine=11 expected=1
+CA121 FRAME tic=491 ms=19264.524500 interval=201.539100
+CA121 FRAME tic=498 ms=19478.422500 interval=213.898000
+CA121 FRAME tic=506 ms=19707.174600 interval=228.752100
+CA121 FRAME tic=514 ms=19935.489500 interval=228.314900
+CA121 COUNT tic=518 candidates=0 sight=0 decisions=0 commands=0
+CA121 FRAME tic=522 ms=20155.543800 interval=220.054300
+CA128 BATTLE tic=525 living=6598 active=1 revision=2 groups=63 reduced=0 incomplete=0 damage=10 deaths=4 projectiles=6336 cannonShots=18
+CA121 SIM tic=525 ms=20246.054900 roster=6001 attackers=5997 defenders=600 groups=63 moving=0 blocked=2 x=0.000 y=320.000 z=-0.000 angle=90.000
+CA121 MOTION tic=525 displaced=5954 distance=366895.251587 contacts=0
+CA128 GUARD_VERIFIED tic=525 machine=0 expected=8
+CA128 GUARD_VERIFIED tic=525 machine=1 expected=11
+CA128 GUARD_VERIFIED tic=525 machine=2 expected=10
+CA128 GUARD_VERIFIED tic=525 machine=3 expected=11
+CA128 GUARD_VERIFIED tic=525 machine=4 expected=24
+CA128 GUARD_VERIFIED tic=525 machine=5 expected=40
+CA128 GUARD_VERIFIED tic=525 machine=6 expected=2
+CA128 GUARD_VERIFIED tic=525 machine=7 expected=3
+CA128 GUARD_VERIFIED tic=525 machine=8 expected=5
+CA128 GUARD_VERIFIED tic=525 machine=9 expected=4
+CA128 GUARD_VERIFIED tic=525 machine=10 expected=3
+CA128 GUARD_VERIFIED tic=525 machine=11 expected=2
+CA121 FRAME tic=529 ms=20372.644100 interval=217.100300
+CA121 FRAME tic=537 ms=20608.996100 interval=236.352000
+CA121 FRAME tic=545 ms=20812.576700 interval=203.580600
+CA121 FRAME tic=552 ms=20995.367700 interval=182.791000
+CA121 COUNT tic=555 candidates=0 sight=0 decisions=0 commands=0
+CA121 FRAME tic=559 ms=21195.393400 interval=200.025700
+CA128 BATTLE tic=560 living=6598 active=1 revision=2 groups=67 reduced=0 incomplete=0 damage=10 deaths=4 projectiles=6942 cannonShots=18
+CA121 SIM tic=560 ms=21252.807400 roster=6001 attackers=5997 defenders=600 groups=67 moving=0 blocked=0 x=0.000 y=320.000 z=-0.000 angle=90.000
+CA121 MOTION tic=560 displaced=5957 distance=384214.118332 contacts=0
+CA128 GUARD_VERIFIED tic=560 machine=0 expected=8
+CA128 GUARD_VERIFIED tic=560 machine=1 expected=11
+CA128 GUARD_VERIFIED tic=560 machine=2 expected=9
+CA128 GUARD_VERIFIED tic=560 machine=3 expected=11
+CA128 GUARD_VERIFIED tic=560 machine=4 expected=23
+CA128 GUARD_VERIFIED tic=560 machine=5 expected=40
+CA128 GUARD_VERIFIED tic=560 machine=6 expected=2
+CA128 GUARD_VERIFIED tic=560 machine=7 expected=4
+CA128 GUARD_VERIFIED tic=560 machine=8 expected=5
+CA128 GUARD_VERIFIED tic=560 machine=9 expected=4
+CA128 GUARD_VERIFIED tic=560 machine=10 expected=3
+CA128 GUARD_VERIFIED tic=560 machine=11 expected=2
+CA121 FRAME tic=566 ms=21445.474400 interval=250.081000
+CA121 FRAME tic=575 ms=21714.657700 interval=269.183300
+CA121 FRAME tic=584 ms=21978.837400 interval=264.179700
+CA121 COUNT tic=592 candidates=0 sight=0 decisions=0 commands=0
+CA121 FRAME tic=594 ms=22284.354200 interval=305.516800
+CA128 BATTLE tic=595 living=6598 active=1 revision=2 groups=65 reduced=0 incomplete=0 damage=10 deaths=4 projectiles=7527 cannonShots=18
+CA121 SIM tic=595 ms=22331.871000 roster=6001 attackers=5997 defenders=600 groups=65 moving=0 blocked=0 x=0.000 y=320.000 z=-0.000 angle=90.000
+CA121 MOTION tic=595 displaced=5956 distance=383785.202783 contacts=0
+CA128 GUARD_VERIFIED tic=595 machine=0 expected=8
+CA128 GUARD_VERIFIED tic=595 machine=1 expected=11
+CA128 GUARD_VERIFIED tic=595 machine=2 expected=9
+CA128 GUARD_VERIFIED tic=595 machine=3 expected=12
+CA128 GUARD_VERIFIED tic=595 machine=4 expected=24
+CA128 GUARD_VERIFIED tic=595 machine=5 expected=40
+CA128 GUARD_VERIFIED tic=595 machine=6 expected=2
+CA128 GUARD_VERIFIED tic=595 machine=7 expected=4
+CA128 GUARD_VERIFIED tic=595 machine=8 expected=6
+CA128 GUARD_VERIFIED tic=595 machine=9 expected=4
+CA128 GUARD_VERIFIED tic=595 machine=10 expected=3
+CA128 GUARD_VERIFIED tic=595 machine=11 expected=2
+CA121 FRAME tic=604 ms=22569.947200 interval=285.593000
+CA121 FRAME tic=614 ms=22807.792700 interval=237.845500
+CA121 FRAME tic=622 ms=23028.080700 interval=220.288000
+CA121 FRAME tic=630 ms=23275.736700 interval=247.656000
+CA121 COUNT tic=629 candidates=0 sight=0 decisions=0 commands=0
+CA128 BATTLE tic=630 living=6598 active=1 revision=2 groups=66 reduced=0 incomplete=0 damage=10 deaths=4 projectiles=8131 cannonShots=18
+CA121 SIM tic=630 ms=23294.011600 roster=6001 attackers=5997 defenders=600 groups=66 moving=0 blocked=1 x=0.000 y=320.000 z=-0.000 angle=90.000
+CA121 MOTION tic=630 displaced=5954 distance=381356.054754 contacts=0
+CA128 GUARD_VERIFIED tic=630 machine=0 expected=8
+CA128 GUARD_VERIFIED tic=630 machine=1 expected=11
+CA128 GUARD_VERIFIED tic=630 machine=2 expected=9
+CA128 GUARD_VERIFIED tic=630 machine=3 expected=12
+CA128 GUARD_VERIFIED tic=630 machine=4 expected=23
+CA128 GUARD_VERIFIED tic=630 machine=5 expected=40
+CA128 GUARD_VERIFIED tic=630 machine=6 expected=2
+CA128 GUARD_VERIFIED tic=630 machine=7 expected=4
+CA128 GUARD_VERIFIED tic=630 machine=8 expected=5
+CA128 GUARD_VERIFIED tic=630 machine=9 expected=4
+CA128 GUARD_VERIFIED tic=630 machine=10 expected=3
+CA128 GUARD_VERIFIED tic=630 machine=11 expected=2
+CA121 FRAME tic=639 ms=23546.183300 interval=270.446600
+CA121 FRAME tic=648 ms=23797.574100 interval=251.390800
+CA121 FRAME tic=657 ms=24058.612900 interval=261.038800
+CA128 BATTLE tic=665 living=6598 active=1 revision=2 groups=64 reduced=0 incomplete=0 damage=10 deaths=4 projectiles=8751 cannonShots=18
+CA121 SIM tic=665 ms=24265.781200 roster=6001 attackers=5997 defenders=600 groups=64 moving=0 blocked=3 x=0.000 y=320.000 z=-0.000 angle=90.000
+CA121 MOTION tic=665 displaced=5955 distance=358698.303225 contacts=0
+CA128 GUARD_VERIFIED tic=665 machine=0 expected=8
+CA128 GUARD_VERIFIED tic=665 machine=1 expected=11
+CA128 GUARD_VERIFIED tic=665 machine=2 expected=10
+CA128 GUARD_VERIFIED tic=665 machine=3 expected=12
+CA128 GUARD_VERIFIED tic=665 machine=4 expected=21
+CA128 GUARD_VERIFIED tic=665 machine=5 expected=40
+CA128 GUARD_VERIFIED tic=665 machine=6 expected=2
+CA128 GUARD_VERIFIED tic=665 machine=7 expected=5
+CA128 GUARD_VERIFIED tic=665 machine=8 expected=5
+CA128 GUARD_VERIFIED tic=665 machine=9 expected=6
+CA128 GUARD_VERIFIED tic=665 machine=10 expected=3
+CA128 GUARD_VERIFIED tic=665 machine=11 expected=2
+CA121 FRAME tic=666 ms=24318.369800 interval=259.756900
+CA121 COUNT tic=666 candidates=0 sight=0 decisions=0 commands=0
+CA121 FRAME tic=675 ms=24547.664400 interval=229.294600
+CA121 FRAME tic=683 ms=24747.913700 interval=200.249300
+CA121 FRAME tic=690 ms=24964.561800 interval=216.648100
+CA121 FRAME tic=698 ms=25212.620600 interval=248.058800
+CA128 BATTLE tic=700 living=6598 active=1 revision=2 groups=63 reduced=0 incomplete=0 damage=10 deaths=4 projectiles=9365 cannonShots=18
+CA121 SIM tic=700 ms=25280.262000 roster=6001 attackers=5997 defenders=600 groups=63 moving=0 blocked=2 x=0.000 y=320.000 z=-0.000 angle=90.000
+CA121 MOTION tic=700 displaced=5951 distance=375468.584878 contacts=0
+CA128 GUARD_VERIFIED tic=700 machine=0 expected=8
+CA128 GUARD_VERIFIED tic=700 machine=1 expected=11
+CA128 GUARD_VERIFIED tic=700 machine=2 expected=10
+CA128 GUARD_VERIFIED tic=700 machine=3 expected=12
+CA128 GUARD_VERIFIED tic=700 machine=4 expected=21
+CA128 GUARD_VERIFIED tic=700 machine=5 expected=40
+CA128 GUARD_VERIFIED tic=700 machine=6 expected=2
+CA128 GUARD_VERIFIED tic=700 machine=7 expected=5
+CA128 GUARD_VERIFIED tic=700 machine=8 expected=8
+CA128 GUARD_VERIFIED tic=700 machine=9 expected=6
+CA128 GUARD_VERIFIED tic=700 machine=10 expected=3
+CA128 GUARD_VERIFIED tic=700 machine=11 expected=2
+CA121 COUNT tic=703 candidates=0 sight=0 decisions=0 commands=0
+CA121 FRAME tic=707 ms=25511.926000 interval=299.305400
+CA121 FRAME tic=717 ms=25818.570300 interval=306.644300
+CA121 FRAME tic=728 ms=26129.278300 interval=310.708000
+CA128 BATTLE tic=735 living=6593 active=1 revision=2 groups=65 reduced=0 incomplete=0 damage=19 deaths=9 projectiles=10013 cannonShots=33
+CA121 SIM tic=735 ms=26294.494900 roster=6001 attackers=5992 defenders=600 groups=65 moving=0 blocked=2 x=0.000 y=320.000 z=-0.000 angle=90.000
+CA121 MOTION tic=735 displaced=5949 distance=366223.937121 contacts=0
+CA128 GUARD_VERIFIED tic=735 machine=0 expected=7
+CA128 GUARD_VERIFIED tic=735 machine=1 expected=11
+CA128 GUARD_VERIFIED tic=735 machine=2 expected=10
+CA128 GUARD_VERIFIED tic=735 machine=3 expected=10
+CA128 GUARD_VERIFIED tic=735 machine=4 expected=19
+CA128 GUARD_VERIFIED tic=735 machine=5 expected=38
+CA128 GUARD_VERIFIED tic=735 machine=6 expected=1
+CA128 GUARD_VERIFIED tic=735 machine=7 expected=6
+CA128 GUARD_VERIFIED tic=735 machine=8 expected=9
+CA128 GUARD_VERIFIED tic=735 machine=9 expected=8
+CA128 GUARD_VERIFIED tic=735 machine=10 expected=3
+CA128 GUARD_VERIFIED tic=735 machine=11 expected=1
+CA121 FRAME tic=738 ms=26391.607500 interval=262.329200
+CA121 COUNT tic=740 candidates=0 sight=0 decisions=0 commands=0
+CA121 FRAME tic=748 ms=26644.766200 interval=253.158700
+CA121 FRAME tic=757 ms=26914.455700 interval=269.689500
+CA121 FRAME tic=766 ms=27183.327100 interval=268.871400
+CA128 BATTLE tic=770 living=6593 active=1 revision=2 groups=66 reduced=0 incomplete=0 damage=19 deaths=9 projectiles=10616 cannonShots=33
+CA121 SIM tic=770 ms=27297.772000 roster=6001 attackers=5992 defenders=600 groups=66 moving=0 blocked=16 x=0.000 y=320.000 z=-0.000 angle=90.000
+CA121 MOTION tic=770 displaced=5951 distance=372006.299670 contacts=0
+CA128 GUARD_VERIFIED tic=770 machine=0 expected=7
+CA128 GUARD_VERIFIED tic=770 machine=1 expected=11
+CA128 GUARD_VERIFIED tic=770 machine=2 expected=10
+CA128 GUARD_VERIFIED tic=770 machine=3 expected=10
+CA128 GUARD_VERIFIED tic=770 machine=4 expected=19
+CA128 GUARD_VERIFIED tic=770 machine=5 expected=38
+CA128 GUARD_VERIFIED tic=770 machine=6 expected=1
+CA128 GUARD_VERIFIED tic=770 machine=7 expected=5
+CA128 GUARD_VERIFIED tic=770 machine=8 expected=9
+CA128 GUARD_VERIFIED tic=770 machine=9 expected=8
+CA128 GUARD_VERIFIED tic=770 machine=10 expected=3
+CA128 GUARD_VERIFIED tic=770 machine=11 expected=1
+CA121 FRAME tic=775 ms=27449.835400 interval=266.508300
+CA121 COUNT tic=777 candidates=0 sight=0 decisions=0 commands=0
+CA121 FRAME tic=785 ms=27734.282800 interval=284.447400
+CA121 FRAME tic=795 ms=28008.363400 interval=274.080600
+CA121 FRAME tic=804 ms=28243.066500 interval=234.703100
+CA128 BATTLE tic=805 living=6593 active=1 revision=2 groups=67 reduced=0 incomplete=0 damage=19 deaths=9 projectiles=11237 cannonShots=33
+CA121 SIM tic=805 ms=28280.811100 roster=6001 attackers=5992 defenders=600 groups=67 moving=0 blocked=3 x=0.000 y=320.000 z=-0.000 angle=90.000
+CA121 MOTION tic=805 displaced=5950 distance=351977.389449 contacts=0
+CA128 GUARD_VERIFIED tic=805 machine=0 expected=7
+CA128 GUARD_VERIFIED tic=805 machine=1 expected=10
+CA128 GUARD_VERIFIED tic=805 machine=2 expected=10
+CA128 GUARD_VERIFIED tic=805 machine=3 expected=10
+CA128 GUARD_VERIFIED tic=805 machine=4 expected=20
+CA128 GUARD_VERIFIED tic=805 machine=5 expected=39
+CA128 GUARD_VERIFIED tic=805 machine=6 expected=2
+CA128 GUARD_VERIFIED tic=805 machine=7 expected=5
+CA128 GUARD_VERIFIED tic=805 machine=8 expected=7
+CA128 GUARD_VERIFIED tic=805 machine=9 expected=8
+CA128 GUARD_VERIFIED tic=805 machine=10 expected=3
+CA128 GUARD_VERIFIED tic=805 machine=11 expected=1
+CA121 FRAME tic=812 ms=28475.308200 interval=232.241700
+CA121 COUNT tic=814 candidates=0 sight=0 decisions=0 commands=0
+CA121 FRAME tic=821 ms=28752.553400 interval=277.245200
+CA121 FRAME tic=830 ms=29025.319900 interval=272.766500
+CA121 FRAME tic=840 ms=29313.403600 interval=288.083700
+CA128 BATTLE tic=840 living=6593 active=1 revision=2 groups=66 reduced=0 incomplete=0 damage=20 deaths=9 projectiles=11942 cannonShots=34
+CA121 SIM tic=840 ms=29340.894300 roster=6001 attackers=5992 defenders=600 groups=66 moving=0 blocked=2 x=0.000 y=320.000 z=-0.000 angle=90.000
+CA121 MOTION tic=840 displaced=5952 distance=359550.532341 contacts=0
+CA128 GUARD_VERIFIED tic=840 machine=0 expected=8
+CA128 GUARD_VERIFIED tic=840 machine=1 expected=10
+CA128 GUARD_VERIFIED tic=840 machine=2 expected=9
+CA128 GUARD_VERIFIED tic=840 machine=3 expected=10
+CA128 GUARD_VERIFIED tic=840 machine=4 expected=21
+CA128 GUARD_VERIFIED tic=840 machine=5 expected=39
+CA128 GUARD_VERIFIED tic=840 machine=6 expected=2
+CA128 GUARD_VERIFIED tic=840 machine=7 expected=5
+CA128 GUARD_VERIFIED tic=840 machine=8 expected=6
+CA128 GUARD_VERIFIED tic=840 machine=9 expected=7
+CA128 GUARD_VERIFIED tic=840 machine=10 expected=3
+CA128 GUARD_VERIFIED tic=840 machine=11 expected=1
+CA121 FRAME tic=850 ms=29632.070600 interval=318.667000
+CA121 COUNT tic=851 candidates=0 sight=0 decisions=0 commands=0
+CA121 FRAME tic=861 ms=29945.123100 interval=313.052500
+CA121 FRAME tic=872 ms=30252.856200 interval=307.733100
+CA128 BATTLE tic=875 living=6593 active=1 revision=2 groups=63 reduced=0 incomplete=0 damage=21 deaths=9 projectiles=12598 cannonShots=35
+CA121 SIM tic=875 ms=30341.827900 roster=6001 attackers=5992 defenders=600 groups=63 moving=0 blocked=6 x=0.000 y=320.000 z=-0.000 angle=90.000
+CA121 MOTION tic=875 displaced=5953 distance=356720.477335 contacts=0
+CA128 GUARD_VERIFIED tic=875 machine=0 expected=9
+CA128 GUARD_VERIFIED tic=875 machine=1 expected=10
+CA128 GUARD_VERIFIED tic=875 machine=2 expected=9
+CA128 GUARD_VERIFIED tic=875 machine=3 expected=9
+CA128 GUARD_VERIFIED tic=875 machine=4 expected=19
+CA128 GUARD_VERIFIED tic=875 machine=5 expected=39
+CA128 GUARD_VERIFIED tic=875 machine=6 expected=2
+CA128 GUARD_VERIFIED tic=875 machine=7 expected=5
+CA128 GUARD_VERIFIED tic=875 machine=8 expected=5
+CA128 GUARD_VERIFIED tic=875 machine=9 expected=6
+CA128 GUARD_VERIFIED tic=875 machine=10 expected=3
+CA128 GUARD_VERIFIED tic=875 machine=11 expected=1
+CA121 FRAME tic=883 ms=30577.470600 interval=324.614400
+CA121 COUNT tic=888 candidates=0 sight=0 decisions=0 commands=0
+CA121 FRAME tic=894 ms=30903.174300 interval=325.703700
+CA121 FRAME tic=906 ms=31247.147100 interval=343.972800
+CA128 BATTLE tic=910 living=6593 active=1 revision=2 groups=66 reduced=0 incomplete=0 damage=21 deaths=9 projectiles=13228 cannonShots=35
+CA121 SIM tic=910 ms=31371.974100 roster=6001 attackers=5992 defenders=600 groups=66 moving=0 blocked=17 x=0.000 y=320.000 z=-0.000 angle=90.000
+CA121 MOTION tic=910 displaced=5952 distance=355785.135257 contacts=0
+CA128 GUARD_VERIFIED tic=910 machine=0 expected=9
+CA128 GUARD_VERIFIED tic=910 machine=1 expected=9
+CA128 GUARD_VERIFIED tic=910 machine=2 expected=9
+CA128 GUARD_VERIFIED tic=910 machine=3 expected=10
+CA128 GUARD_VERIFIED tic=910 machine=4 expected=19
+CA128 GUARD_VERIFIED tic=910 machine=5 expected=39
+CA128 GUARD_VERIFIED tic=910 machine=6 expected=2
+CA128 GUARD_VERIFIED tic=910 machine=7 expected=4
+CA128 GUARD_VERIFIED tic=910 machine=8 expected=5
+CA128 GUARD_VERIFIED tic=910 machine=9 expected=6
+CA128 GUARD_VERIFIED tic=910 machine=10 expected=3
+CA128 GUARD_VERIFIED tic=910 machine=11 expected=2
+CA121 FRAME tic=918 ms=31601.760800 interval=354.613700
+CA121 COUNT tic=925 candidates=0 sight=0 decisions=0 commands=0
+CA121 FRAME tic=930 ms=31904.472400 interval=302.711600
+CA121 FRAME tic=940 ms=32152.886200 interval=248.413800
+CA128 BATTLE tic=945 living=6593 active=1 revision=2 groups=67 reduced=0 incomplete=0 damage=21 deaths=9 projectiles=13904 cannonShots=35
+CA121 SIM tic=945 ms=32308.810100 roster=6001 attackers=5992 defenders=600 groups=67 moving=0 blocked=10 x=0.000 y=320.000 z=-0.000 angle=90.000
+CA121 MOTION tic=945 displaced=5953 distance=336369.032889 contacts=0
+CA128 GUARD_VERIFIED tic=945 machine=0 expected=9
+CA128 GUARD_VERIFIED tic=945 machine=1 expected=9
+CA128 GUARD_VERIFIED tic=945 machine=2 expected=9
+CA128 GUARD_VERIFIED tic=945 machine=3 expected=10
+CA128 GUARD_VERIFIED tic=945 machine=4 expected=19
+CA128 GUARD_VERIFIED tic=945 machine=5 expected=39
+CA128 GUARD_VERIFIED tic=945 machine=6 expected=2
+CA128 GUARD_VERIFIED tic=945 machine=7 expected=4
+CA128 GUARD_VERIFIED tic=945 machine=8 expected=5
+CA128 GUARD_VERIFIED tic=945 machine=9 expected=6
+CA128 GUARD_VERIFIED tic=945 machine=10 expected=4
+CA128 GUARD_VERIFIED tic=945 machine=11 expected=2
+CA121 FRAME tic=949 ms=32444.998600 interval=292.112400
+CA121 FRAME tic=960 ms=32781.775900 interval=336.777300
+CA121 COUNT tic=962 candidates=0 sight=0 decisions=0 commands=0
+CA121 FRAME tic=971 ms=33108.354500 interval=326.578600
+CA128 BATTLE tic=980 living=6593 active=1 revision=2 groups=65 reduced=0 incomplete=0 damage=21 deaths=9 projectiles=14555 cannonShots=35
+CA121 SIM tic=980 ms=33387.828800 roster=6001 attackers=5992 defenders=600 groups=65 moving=0 blocked=10 x=0.000 y=320.000 z=-0.000 angle=90.000
+CA121 MOTION tic=980 displaced=5950 distance=344453.834300 contacts=0
+CA128 GUARD_VERIFIED tic=980 machine=0 expected=9
+CA128 GUARD_VERIFIED tic=980 machine=1 expected=9
+CA128 GUARD_VERIFIED tic=980 machine=2 expected=8
+CA128 GUARD_VERIFIED tic=980 machine=3 expected=10
+CA128 GUARD_VERIFIED tic=980 machine=4 expected=18
+CA128 GUARD_VERIFIED tic=980 machine=5 expected=39
+CA128 GUARD_VERIFIED tic=980 machine=6 expected=2
+CA128 GUARD_VERIFIED tic=980 machine=7 expected=4
+CA128 GUARD_VERIFIED tic=980 machine=8 expected=6
+CA128 GUARD_VERIFIED tic=980 machine=9 expected=6
+CA128 GUARD_VERIFIED tic=980 machine=10 expected=4
+CA128 GUARD_VERIFIED tic=980 machine=11 expected=2
+CA121 FRAME tic=983 ms=33495.193800 interval=386.839300
+CA121 FRAME tic=997 ms=33843.065600 interval=347.871800
+CA121 COUNT tic=999 candidates=0 sight=0 decisions=0 commands=0
+CA121 FRAME tic=1008 ms=34182.497400 interval=339.431800
+CA128 BATTLE tic=1015 living=6593 active=1 revision=2 groups=63 reduced=0 incomplete=0 damage=21 deaths=9 projectiles=15239 cannonShots=35
+CA121 SIM tic=1015 ms=34399.059900 roster=6001 attackers=5992 defenders=600 groups=63 moving=0 blocked=11 x=0.000 y=320.000 z=-0.000 angle=90.000
+CA121 MOTION tic=1015 displaced=5950 distance=340149.492616 contacts=0
+CA128 GUARD_VERIFIED tic=1015 machine=0 expected=9
+CA128 GUARD_VERIFIED tic=1015 machine=1 expected=9
+CA128 GUARD_VERIFIED tic=1015 machine=2 expected=10
+CA128 GUARD_VERIFIED tic=1015 machine=3 expected=10
+CA128 GUARD_VERIFIED tic=1015 machine=4 expected=17
+CA128 GUARD_VERIFIED tic=1015 machine=5 expected=39
+CA128 GUARD_VERIFIED tic=1015 machine=6 expected=2
+CA128 GUARD_VERIFIED tic=1015 machine=7 expected=4
+CA128 GUARD_VERIFIED tic=1015 machine=8 expected=6
+CA128 GUARD_VERIFIED tic=1015 machine=9 expected=4
+CA128 GUARD_VERIFIED tic=1015 machine=10 expected=4
+CA128 GUARD_VERIFIED tic=1015 machine=11 expected=2
+CA121 FRAME tic=1020 ms=34554.558000 interval=372.060600
+CA121 FRAME tic=1033 ms=34928.718000 interval=374.160000
+CA121 COUNT tic=1036 candidates=0 sight=0 decisions=0 commands=0
+CA121 FRAME tic=1047 ms=35312.976400 interval=384.258400
+CA128 BATTLE tic=1050 living=6593 active=1 revision=2 groups=64 reduced=0 incomplete=0 damage=21 deaths=9 projectiles=15934 cannonShots=35
+CA121 SIM tic=1050 ms=35395.304900 roster=6001 attackers=5992 defenders=600 groups=64 moving=0 blocked=21 x=0.000 y=320.000 z=-0.000 angle=90.000
+CA121 MOTION tic=1050 displaced=5964 distance=333710.565173 contacts=0
+CA128 GUARD_VERIFIED tic=1050 machine=0 expected=9
+CA128 GUARD_VERIFIED tic=1050 machine=1 expected=9
+CA128 GUARD_VERIFIED tic=1050 machine=2 expected=10
+CA128 GUARD_VERIFIED tic=1050 machine=3 expected=10
+CA128 GUARD_VERIFIED tic=1050 machine=4 expected=16
+CA128 GUARD_VERIFIED tic=1050 machine=5 expected=40
+CA128 GUARD_VERIFIED tic=1050 machine=6 expected=2
+CA128 GUARD_VERIFIED tic=1050 machine=7 expected=4
+CA128 GUARD_VERIFIED tic=1050 machine=8 expected=6
+CA128 GUARD_VERIFIED tic=1050 machine=9 expected=6
+CA128 GUARD_VERIFIED tic=1050 machine=10 expected=4
+CA128 GUARD_VERIFIED tic=1050 machine=11 expected=2
+CA121 FRAME tic=1060 ms=35697.552400 interval=384.576000
+CA121 FRAME tic=1073 ms=36062.158900 interval=364.606500
+CA121 COUNT tic=1073 candidates=0 sight=0 decisions=0 commands=0
+CA128 BATTLE tic=1085 living=6589 active=1 revision=2 groups=66 reduced=0 incomplete=0 damage=29 deaths=14 projectiles=16632 cannonShots=50
+CA121 SIM tic=1085 ms=36410.017600 roster=6001 attackers=5987 defenders=600 groups=66 moving=0 blocked=11 x=0.000 y=320.000 z=-0.000 angle=90.000
+CA121 MOTION tic=1085 displaced=5967 distance=317101.819923 contacts=0
+CA128 GUARD_VERIFIED tic=1085 machine=0 expected=9
+CA128 GUARD_VERIFIED tic=1085 machine=1 expected=9
+CA128 GUARD_VERIFIED tic=1085 machine=2 expected=10
+CA128 GUARD_VERIFIED tic=1085 machine=3 expected=12
+CA128 GUARD_VERIFIED tic=1085 machine=4 expected=17
+CA128 GUARD_VERIFIED tic=1085 machine=5 expected=39
+CA128 GUARD_VERIFIED tic=1085 machine=6 expected=1
+CA128 GUARD_VERIFIED tic=1085 machine=7 expected=3
+CA128 GUARD_VERIFIED tic=1085 machine=8 expected=6
+CA128 GUARD_VERIFIED tic=1085 machine=9 expected=7
+CA128 GUARD_VERIFIED tic=1085 machine=10 expected=3
+CA128 GUARD_VERIFIED tic=1085 machine=11 expected=1
+CA121 FRAME tic=1087 ms=36491.836400 interval=429.677500
+CA121 FRAME tic=1102 ms=36928.829900 interval=436.993500
+CA121 COUNT tic=1110 candidates=0 sight=0 decisions=0 commands=0
+CA121 FRAME tic=1117 ms=37325.261000 interval=396.431100
+CA128 BATTLE tic=1120 living=6588 active=1 revision=2 groups=68 reduced=0 incomplete=0 damage=29 deaths=14 projectiles=17276 cannonShots=50
+CA121 SIM tic=1120 ms=37404.436100 roster=6001 attackers=5987 defenders=600 groups=68 moving=0 blocked=13 x=0.000 y=320.000 z=-0.000 angle=90.000
+CA121 MOTION tic=1120 displaced=5953 distance=335133.579846 contacts=0
+CA128 GUARD_VERIFIED tic=1120 machine=0 expected=9
+CA128 GUARD_VERIFIED tic=1120 machine=1 expected=9
+CA128 GUARD_VERIFIED tic=1120 machine=2 expected=11
+CA128 GUARD_VERIFIED tic=1120 machine=3 expected=12
+CA128 GUARD_VERIFIED tic=1120 machine=4 expected=15
+CA128 GUARD_VERIFIED tic=1120 machine=5 expected=39
+CA128 GUARD_VERIFIED tic=1120 machine=6 expected=1
+CA128 GUARD_VERIFIED tic=1120 machine=7 expected=3
+CA128 GUARD_VERIFIED tic=1120 machine=8 expected=5
+CA128 GUARD_VERIFIED tic=1120 machine=9 expected=6
+CA128 GUARD_VERIFIED tic=1120 machine=10 expected=3
+CA128 GUARD_VERIFIED tic=1120 machine=11 expected=1
+CA121 FRAME tic=1130 ms=37669.989500 interval=344.728500
+CA121 FRAME tic=1142 ms=38041.378400 interval=371.388900
+CA121 COUNT tic=1147 candidates=0 sight=0 decisions=0 commands=0
+CA121 FRAME tic=1155 ms=38428.948400 interval=387.570000
+CA128 BATTLE tic=1155 living=6588 active=1 revision=2 groups=67 reduced=0 incomplete=0 damage=29 deaths=14 projectiles=17930 cannonShots=50
+CA121 SIM tic=1155 ms=38454.746100 roster=6001 attackers=5987 defenders=600 groups=67 moving=0 blocked=12 x=0.000 y=320.000 z=-0.000 angle=90.000
+CA121 MOTION tic=1155 displaced=5949 distance=332722.388921 contacts=0
+CA128 GUARD_VERIFIED tic=1155 machine=0 expected=9
+CA128 GUARD_VERIFIED tic=1155 machine=1 expected=10
+CA128 GUARD_VERIFIED tic=1155 machine=2 expected=10
+CA128 GUARD_VERIFIED tic=1155 machine=3 expected=12
+CA128 GUARD_VERIFIED tic=1155 machine=4 expected=15
+CA128 GUARD_VERIFIED tic=1155 machine=5 expected=39
+CA128 GUARD_VERIFIED tic=1155 machine=6 expected=1
+CA128 GUARD_VERIFIED tic=1155 machine=7 expected=3
+CA128 GUARD_VERIFIED tic=1155 machine=8 expected=5
+CA128 GUARD_VERIFIED tic=1155 machine=9 expected=6
+CA128 GUARD_VERIFIED tic=1155 machine=10 expected=3
+CA128 GUARD_VERIFIED tic=1155 machine=11 expected=1
+CA121 FRAME tic=1169 ms=38881.686600 interval=452.738200
+CA121 FRAME tic=1185 ms=39295.009200 interval=413.322600
+CA121 COUNT tic=1184 candidates=0 sight=0 decisions=0 commands=0
+CA128 BATTLE tic=1190 living=6588 active=1 revision=2 groups=68 reduced=0 incomplete=0 damage=29 deaths=14 projectiles=18591 cannonShots=50
+CA121 SIM tic=1190 ms=39431.831500 roster=6001 attackers=5987 defenders=600 groups=68 moving=0 blocked=35 x=0.000 y=320.000 z=-0.000 angle=90.000
+CA121 MOTION tic=1190 displaced=5947 distance=324617.736597 contacts=0
+CA128 GUARD_VERIFIED tic=1190 machine=0 expected=9
+CA128 GUARD_VERIFIED tic=1190 machine=1 expected=10
+CA128 GUARD_VERIFIED tic=1190 machine=2 expected=12
+CA128 GUARD_VERIFIED tic=1190 machine=3 expected=12
+CA128 GUARD_VERIFIED tic=1190 machine=4 expected=16
+CA128 GUARD_VERIFIED tic=1190 machine=5 expected=39
+CA128 GUARD_VERIFIED tic=1190 machine=6 expected=2
+CA128 GUARD_VERIFIED tic=1190 machine=7 expected=3
+CA128 GUARD_VERIFIED tic=1190 machine=8 expected=4
+CA128 GUARD_VERIFIED tic=1190 machine=9 expected=5
+CA128 GUARD_VERIFIED tic=1190 machine=10 expected=3
+CA128 GUARD_VERIFIED tic=1190 machine=11 expected=2
+CA121 FRAME tic=1199 ms=39705.123600 interval=410.114400
+CA121 FRAME tic=1214 ms=40165.702500 interval=460.578900
+CA121 COUNT tic=1221 candidates=0 sight=0 decisions=0 commands=0
+CA128 BATTLE tic=1225 living=6588 active=1 revision=2 groups=66 reduced=0 incomplete=0 damage=29 deaths=14 projectiles=19246 cannonShots=50
+CA121 SIM tic=1225 ms=40480.521200 roster=6001 attackers=5987 defenders=600 groups=66 moving=0 blocked=15 x=0.000 y=320.000 z=-0.000 angle=90.000
+CA121 MOTION tic=1225 displaced=5951 distance=311319.221121 contacts=0
+CA128 GUARD_VERIFIED tic=1225 machine=0 expected=10
+CA128 GUARD_VERIFIED tic=1225 machine=1 expected=10
+CA128 GUARD_VERIFIED tic=1225 machine=2 expected=13
+CA128 GUARD_VERIFIED tic=1225 machine=3 expected=12
+CA128 GUARD_VERIFIED tic=1225 machine=4 expected=16
+CA128 GUARD_VERIFIED tic=1225 machine=5 expected=40
+CA128 GUARD_VERIFIED tic=1225 machine=6 expected=2
+CA128 GUARD_VERIFIED tic=1225 machine=7 expected=3
+CA128 GUARD_VERIFIED tic=1225 machine=8 expected=4
+CA128 GUARD_VERIFIED tic=1225 machine=9 expected=6
+CA128 GUARD_VERIFIED tic=1225 machine=10 expected=3
+CA128 GUARD_VERIFIED tic=1225 machine=11 expected=2
+CA121 FRAME tic=1230 ms=40637.700500 interval=471.998000
+CA121 FRAME tic=1246 ms=41033.881100 interval=396.180600
+CA121 COUNT tic=1258 candidates=0 sight=0 decisions=0 commands=0
+CA121 FRAME tic=1260 ms=41394.828000 interval=360.946900
+CA128 BATTLE tic=1260 living=6588 active=1 revision=2 groups=67 reduced=0 incomplete=0 damage=30 deaths=14 projectiles=19959 cannonShots=51
+CA121 SIM tic=1260 ms=41422.828200 roster=6001 attackers=5987 defenders=600 groups=67 moving=0 blocked=18 x=0.000 y=320.000 z=-0.000 angle=90.000
+CA121 MOTION tic=1260 displaced=5957 distance=318716.929985 contacts=0
+CA128 GUARD_VERIFIED tic=1260 machine=0 expected=10
+CA128 GUARD_VERIFIED tic=1260 machine=1 expected=10
+CA128 GUARD_VERIFIED tic=1260 machine=2 expected=14
+CA128 GUARD_VERIFIED tic=1260 machine=3 expected=11
+CA128 GUARD_VERIFIED tic=1260 machine=4 expected=16
+CA128 GUARD_VERIFIED tic=1260 machine=5 expected=40
+CA128 GUARD_VERIFIED tic=1260 machine=6 expected=2
+CA128 GUARD_VERIFIED tic=1260 machine=7 expected=3
+CA128 GUARD_VERIFIED tic=1260 machine=8 expected=5
+CA128 GUARD_VERIFIED tic=1260 machine=9 expected=6
+CA128 GUARD_VERIFIED tic=1260 machine=10 expected=3
+CA128 GUARD_VERIFIED tic=1260 machine=11 expected=2
+CA121 FRAME tic=1273 ms=41832.680600 interval=437.852600
+CA121 FRAME tic=1288 ms=42294.137100 interval=461.456500
+CA128 BATTLE tic=1295 living=6588 active=1 revision=2 groups=66 reduced=0 incomplete=0 damage=31 deaths=14 projectiles=20631 cannonShots=52
+CA121 SIM tic=1295 ms=42510.313600 roster=6001 attackers=5987 defenders=600 groups=66 moving=0 blocked=19 x=0.000 y=320.000 z=-0.000 angle=90.000
+CA121 MOTION tic=1295 displaced=5958 distance=319274.461887 contacts=0
+CA128 GUARD_VERIFIED tic=1295 machine=0 expected=10
+CA128 GUARD_VERIFIED tic=1295 machine=1 expected=12
+CA128 GUARD_VERIFIED tic=1295 machine=2 expected=14
+CA128 GUARD_VERIFIED tic=1295 machine=3 expected=11
+CA128 GUARD_VERIFIED tic=1295 machine=4 expected=18
+CA128 GUARD_VERIFIED tic=1295 machine=5 expected=40
+CA128 GUARD_VERIFIED tic=1295 machine=6 expected=2
+CA128 GUARD_VERIFIED tic=1295 machine=7 expected=3
+CA128 GUARD_VERIFIED tic=1295 machine=8 expected=6
+CA128 GUARD_VERIFIED tic=1295 machine=9 expected=6
+CA128 GUARD_VERIFIED tic=1295 machine=10 expected=3
+CA128 GUARD_VERIFIED tic=1295 machine=11 expected=2
+CA121 COUNT tic=1295 candidates=0 sight=0 decisions=0 commands=0
+CA121 FRAME tic=1305 ms=42775.024300 interval=480.887200
+CA121 FRAME tic=1321 ms=43177.910000 interval=402.885700
+CA128 BATTLE tic=1330 living=6588 active=1 revision=2 groups=64 reduced=0 incomplete=0 damage=31 deaths=14 projectiles=21290 cannonShots=53
+CA121 SIM tic=1330 ms=43471.553100 roster=6001 attackers=5987 defenders=600 groups=64 moving=0 blocked=49 x=0.000 y=320.000 z=-0.000 angle=90.000
+CA121 MOTION tic=1330 displaced=5957 distance=320791.753410 contacts=0
+CA128 GUARD_VERIFIED tic=1330 machine=0 expected=11
+CA128 GUARD_VERIFIED tic=1330 machine=1 expected=12
+CA128 GUARD_VERIFIED tic=1330 machine=2 expected=14
+CA128 GUARD_VERIFIED tic=1330 machine=3 expected=11
+CA128 GUARD_VERIFIED tic=1330 machine=4 expected=18
+CA128 GUARD_VERIFIED tic=1330 machine=5 expected=40
+CA128 GUARD_VERIFIED tic=1330 machine=6 expected=2
+CA128 GUARD_VERIFIED tic=1330 machine=7 expected=3
+CA128 GUARD_VERIFIED tic=1330 machine=8 expected=6
+CA128 GUARD_VERIFIED tic=1330 machine=9 expected=5
+CA128 GUARD_VERIFIED tic=1330 machine=10 expected=3
+CA128 GUARD_VERIFIED tic=1330 machine=11 expected=2
+CA121 COUNT tic=1332 candidates=0 sight=0 decisions=0 commands=0
+CA121 FRAME tic=1336 ms=43663.182700 interval=485.272700
+CA121 FRAME tic=1352 ms=44175.385200 interval=512.202500
+CA128 BATTLE tic=1365 living=6588 active=1 revision=2 groups=68 reduced=0 incomplete=0 damage=31 deaths=14 projectiles=21936 cannonShots=53
+CA121 SIM tic=1365 ms=44530.647300 roster=6001 attackers=5987 defenders=600 groups=68 moving=0 blocked=22 x=0.000 y=320.000 z=-0.000 angle=90.000
+CA121 MOTION tic=1365 displaced=5955 distance=308468.933382 contacts=0
+CA128 GUARD_VERIFIED tic=1365 machine=0 expected=11
+CA128 GUARD_VERIFIED tic=1365 machine=1 expected=13
+CA128 GUARD_VERIFIED tic=1365 machine=2 expected=15
+CA128 GUARD_VERIFIED tic=1365 machine=3 expected=13
+CA128 GUARD_VERIFIED tic=1365 machine=4 expected=19
+CA128 GUARD_VERIFIED tic=1365 machine=5 expected=41
+CA128 GUARD_VERIFIED tic=1365 machine=6 expected=2
+CA128 GUARD_VERIFIED tic=1365 machine=7 expected=3
+CA128 GUARD_VERIFIED tic=1365 machine=8 expected=6
+CA128 GUARD_VERIFIED tic=1365 machine=9 expected=5
+CA128 GUARD_VERIFIED tic=1365 machine=10 expected=3
+CA128 GUARD_VERIFIED tic=1365 machine=11 expected=2
+CA121 FRAME tic=1369 ms=44661.119800 interval=485.734600
+CA121 COUNT tic=1369 candidates=0 sight=0 decisions=0 commands=0
+CA121 FRAME tic=1386 ms=45141.254500 interval=480.134700
+CA128 BATTLE tic=1400 living=6588 active=1 revision=2 groups=66 reduced=0 incomplete=0 damage=31 deaths=14 projectiles=22546 cannonShots=53
+CA121 SIM tic=1400 ms=45568.319000 roster=6001 attackers=5987 defenders=600 groups=66 moving=0 blocked=14 x=0.000 y=320.000 z=-0.000 angle=90.000
+CA121 MOTION tic=1400 displaced=5958 distance=316541.376098 contacts=0
+CA128 GUARD_VERIFIED tic=1400 machine=0 expected=11
+CA128 GUARD_VERIFIED tic=1400 machine=1 expected=13
+CA128 GUARD_VERIFIED tic=1400 machine=2 expected=15
+CA128 GUARD_VERIFIED tic=1400 machine=3 expected=15
+CA128 GUARD_VERIFIED tic=1400 machine=4 expected=19
+CA128 GUARD_VERIFIED tic=1400 machine=5 expected=40
+CA128 GUARD_VERIFIED tic=1400 machine=6 expected=2
+CA128 GUARD_VERIFIED tic=1400 machine=7 expected=4
+CA128 GUARD_VERIFIED tic=1400 machine=8 expected=5
+CA128 GUARD_VERIFIED tic=1400 machine=9 expected=5
+CA128 GUARD_VERIFIED tic=1400 machine=10 expected=3
+CA128 GUARD_VERIFIED tic=1400 machine=11 expected=2
+CA121 FRAME tic=1403 ms=45692.845700 interval=551.591200
+CA121 COUNT tic=1406 candidates=0 sight=0 decisions=0 commands=0
+CA121 FRAME tic=1420 ms=46285.822400 interval=592.976700
+CA128 BATTLE tic=1435 living=6583 active=1 revision=2 groups=65 reduced=0 incomplete=0 damage=39 deaths=19 projectiles=23138 cannonShots=67
+CA121 SIM tic=1435 ms=46675.818900 roster=6001 attackers=5983 defenders=599 groups=65 moving=0 blocked=14 x=0.000 y=320.000 z=-0.000 angle=90.000
+CA121 MOTION tic=1435 displaced=5956 distance=315371.968655 contacts=0
+CA128 GUARD_VERIFIED tic=1435 machine=0 expected=11
+CA128 GUARD_VERIFIED tic=1435 machine=1 expected=14
+CA128 GUARD_VERIFIED tic=1435 machine=2 expected=14
+CA128 GUARD_VERIFIED tic=1435 machine=3 expected=14
+CA128 GUARD_VERIFIED tic=1435 machine=4 expected=19
+CA128 GUARD_VERIFIED tic=1435 machine=5 expected=41
+CA128 GUARD_VERIFIED tic=1435 machine=6 expected=1
+CA128 GUARD_VERIFIED tic=1435 machine=7 expected=4
+CA128 GUARD_VERIFIED tic=1435 machine=8 expected=4
+CA128 GUARD_VERIFIED tic=1435 machine=9 expected=5
+CA128 GUARD_VERIFIED tic=1435 machine=10 expected=3
+CA128 GUARD_VERIFIED tic=1435 machine=11 expected=1
+CA121 FRAME tic=1437 ms=46753.211400 interval=467.389000
+CA121 COUNT tic=1443 candidates=0 sight=0 decisions=0 commands=0
+CA121 FRAME tic=1453 ms=47197.788600 interval=444.577200
+CA121 FRAME tic=1469 ms=47713.976200 interval=516.187600
+CA128 BATTLE tic=1470 living=6582 active=1 revision=2 groups=66 reduced=0 incomplete=0 damage=40 deaths=20 projectiles=23659 cannonShots=68
+CA121 SIM tic=1470 ms=47774.313600 roster=6001 attackers=5982 defenders=599 groups=66 moving=0 blocked=25 x=0.000 y=320.000 z=-0.000 angle=90.000
+CA121 MOTION tic=1470 displaced=5954 distance=327265.818908 contacts=0
+CA128 GUARD_VERIFIED tic=1470 machine=0 expected=11
+CA128 GUARD_VERIFIED tic=1470 machine=1 expected=14
+CA128 GUARD_VERIFIED tic=1470 machine=2 expected=14
+CA128 GUARD_VERIFIED tic=1470 machine=3 expected=14
+CA128 GUARD_VERIFIED tic=1470 machine=4 expected=19
+CA128 GUARD_VERIFIED tic=1470 machine=5 expected=40
+CA128 GUARD_VERIFIED tic=1470 machine=6 expected=1
+CA128 GUARD_VERIFIED tic=1470 machine=7 expected=4
+CA128 GUARD_VERIFIED tic=1470 machine=8 expected=5
+CA128 GUARD_VERIFIED tic=1470 machine=9 expected=5
+CA128 GUARD_VERIFIED tic=1470 machine=10 expected=3
+CA128 GUARD_VERIFIED tic=1470 machine=11 expected=1
+CA121 COUNT tic=1480 candidates=0 sight=0 decisions=0 commands=0
+CA121 FRAME tic=1486 ms=48261.072400 interval=547.096200
+CA121 FRAME tic=1503 ms=48710.997900 interval=449.925500
+CA128 BATTLE tic=1505 living=6582 active=1 revision=2 groups=66 reduced=0 incomplete=0 damage=40 deaths=20 projectiles=24175 cannonShots=68
+CA121 SIM tic=1505 ms=48770.489700 roster=6001 attackers=5982 defenders=599 groups=66 moving=0 blocked=16 x=0.000 y=320.000 z=-0.000 angle=90.000
+CA121 MOTION tic=1505 displaced=5948 distance=323620.976817 contacts=0
+CA128 GUARD_VERIFIED tic=1505 machine=0 expected=12
+CA128 GUARD_VERIFIED tic=1505 machine=1 expected=13
+CA128 GUARD_VERIFIED tic=1505 machine=2 expected=14
+CA128 GUARD_VERIFIED tic=1505 machine=3 expected=14
+CA128 GUARD_VERIFIED tic=1505 machine=4 expected=19
+CA128 GUARD_VERIFIED tic=1505 machine=5 expected=40
+CA128 GUARD_VERIFIED tic=1505 machine=6 expected=2
+CA128 GUARD_VERIFIED tic=1505 machine=7 expected=5
+CA128 GUARD_VERIFIED tic=1505 machine=8 expected=6
+CA128 GUARD_VERIFIED tic=1505 machine=9 expected=5
+CA128 GUARD_VERIFIED tic=1505 machine=10 expected=3
+CA128 GUARD_VERIFIED tic=1505 machine=11 expected=1
+CA121 COUNT tic=1517 candidates=0 sight=0 decisions=0 commands=0
+CA121 FRAME tic=1519 ms=49230.803300 interval=519.805400
+CA121 FRAME tic=1536 ms=49811.515600 interval=580.712300
+CA128 BATTLE tic=1540 living=6582 active=1 revision=2 groups=64 reduced=0 incomplete=0 damage=40 deaths=20 projectiles=24628 cannonShots=68
+CA121 SIM tic=1540 ms=49979.080000 roster=6001 attackers=5982 defenders=599 groups=64 moving=0 blocked=17 x=0.000 y=320.000 z=-0.000 angle=90.000
+CA121 MOTION tic=1540 displaced=5942 distance=327564.068695 contacts=0
+CA128 GUARD_VERIFIED tic=1540 machine=0 expected=12
+CA128 GUARD_VERIFIED tic=1540 machine=1 expected=14
+CA128 GUARD_VERIFIED tic=1540 machine=2 expected=14
+CA128 GUARD_VERIFIED tic=1540 machine=3 expected=14
+CA128 GUARD_VERIFIED tic=1540 machine=4 expected=19
+CA128 GUARD_VERIFIED tic=1540 machine=5 expected=41
+CA128 GUARD_VERIFIED tic=1540 machine=6 expected=2
+CA128 GUARD_VERIFIED tic=1540 machine=7 expected=6
+CA128 GUARD_VERIFIED tic=1540 machine=8 expected=6
+CA128 GUARD_VERIFIED tic=1540 machine=9 expected=4
+CA128 GUARD_VERIFIED tic=1540 machine=10 expected=3
+CA128 GUARD_VERIFIED tic=1540 machine=11 expected=2
+CA121 FRAME tic=1553 ms=50413.990100 interval=602.474500
+CA121 COUNT tic=1554 candidates=0 sight=0 decisions=0 commands=0
+CA121 FRAME tic=1570 ms=50911.410200 interval=497.420100
+CA128 BATTLE tic=1575 living=6582 active=1 revision=2 groups=67 reduced=0 incomplete=0 damage=40 deaths=20 projectiles=25150 cannonShots=68
+CA121 SIM tic=1575 ms=51064.784100 roster=6001 attackers=5982 defenders=599 groups=67 moving=0 blocked=15 x=0.000 y=320.000 z=-0.000 angle=90.000
+CA121 MOTION tic=1575 displaced=5951 distance=324754.956613 contacts=0
+CA128 GUARD_VERIFIED tic=1575 machine=0 expected=14
+CA128 GUARD_VERIFIED tic=1575 machine=1 expected=14
+CA128 GUARD_VERIFIED tic=1575 machine=2 expected=13
+CA128 GUARD_VERIFIED tic=1575 machine=3 expected=15
+CA128 GUARD_VERIFIED tic=1575 machine=4 expected=23
+CA128 GUARD_VERIFIED tic=1575 machine=5 expected=44
+CA128 GUARD_VERIFIED tic=1575 machine=6 expected=2
+CA128 GUARD_VERIFIED tic=1575 machine=7 expected=6
+CA128 GUARD_VERIFIED tic=1575 machine=8 expected=6
+CA128 GUARD_VERIFIED tic=1575 machine=9 expected=4
+CA128 GUARD_VERIFIED tic=1575 machine=10 expected=3
+CA128 GUARD_VERIFIED tic=1575 machine=11 expected=2
+CA121 FRAME tic=1587 ms=51477.199000 interval=565.788800
+CA121 COUNT tic=1591 candidates=0 sight=0 decisions=0 commands=0
+CA121 FRAME tic=1604 ms=52062.688400 interval=585.489400
+CA128 BATTLE tic=1610 living=6582 active=1 revision=2 groups=67 reduced=0 incomplete=0 damage=40 deaths=20 projectiles=25642 cannonShots=68
+CA121 SIM tic=1610 ms=52289.213700 roster=6001 attackers=5982 defenders=599 groups=67 moving=0 blocked=26 x=0.000 y=320.000 z=-0.000 angle=90.000
+CA121 MOTION tic=1610 displaced=5941 distance=324694.410039 contacts=0
+CA128 GUARD_VERIFIED tic=1610 machine=0 expected=15
+CA128 GUARD_VERIFIED tic=1610 machine=1 expected=14
+CA128 GUARD_VERIFIED tic=1610 machine=2 expected=10
+CA128 GUARD_VERIFIED tic=1610 machine=3 expected=16
+CA128 GUARD_VERIFIED tic=1610 machine=4 expected=22
+CA128 GUARD_VERIFIED tic=1610 machine=5 expected=44
+CA128 GUARD_VERIFIED tic=1610 machine=6 expected=2
+CA128 GUARD_VERIFIED tic=1610 machine=7 expected=6
+CA128 GUARD_VERIFIED tic=1610 machine=8 expected=6
+CA128 GUARD_VERIFIED tic=1610 machine=9 expected=4
+CA128 GUARD_VERIFIED tic=1610 machine=10 expected=3
+CA128 GUARD_VERIFIED tic=1610 machine=11 expected=2
+CA121 FRAME tic=1621 ms=52630.504600 interval=567.816200
+CA121 COUNT tic=1628 candidates=0 sight=0 decisions=0 commands=0
+CA121 FRAME tic=1638 ms=53129.516400 interval=499.011800
+CA128 BATTLE tic=1645 living=6581 active=1 revision=2 groups=65 reduced=0 incomplete=0 damage=41 deaths=21 projectiles=26098 cannonShots=69
+CA121 SIM tic=1645 ms=53349.493900 roster=6001 attackers=5982 defenders=598 groups=65 moving=0 blocked=17 x=0.000 y=320.000 z=-0.000 angle=90.000
+CA121 MOTION tic=1645 displaced=5943 distance=327693.445480 contacts=0
+CA128 GUARD_VERIFIED tic=1645 machine=0 expected=14
+CA128 GUARD_VERIFIED tic=1645 machine=1 expected=14
+CA128 GUARD_VERIFIED tic=1645 machine=2 expected=9
+CA128 GUARD_VERIFIED tic=1645 machine=3 expected=16
+CA128 GUARD_VERIFIED tic=1645 machine=4 expected=25
+CA128 GUARD_VERIFIED tic=1645 machine=5 expected=45
+CA128 GUARD_VERIFIED tic=1645 machine=6 expected=2
+CA128 GUARD_VERIFIED tic=1645 machine=7 expected=4
+CA128 GUARD_VERIFIED tic=1645 machine=8 expected=6
+CA128 GUARD_VERIFIED tic=1645 machine=9 expected=4
+CA128 GUARD_VERIFIED tic=1645 machine=10 expected=3
+CA128 GUARD_VERIFIED tic=1645 machine=11 expected=2
+CA121 FRAME tic=1655 ms=53702.580000 interval=573.063600
+CA121 COUNT tic=1665 candidates=0 sight=0 decisions=0 commands=0
+CA121 FRAME tic=1672 ms=54302.651500 interval=600.071500
+CA128 BATTLE tic=1680 living=6581 active=1 revision=2 groups=65 reduced=0 incomplete=0 damage=41 deaths=21 projectiles=26589 cannonShots=69
+CA121 SIM tic=1680 ms=54567.712800 roster=6001 attackers=5982 defenders=598 groups=65 moving=0 blocked=14 x=0.000 y=320.000 z=-0.000 angle=90.000
+CA121 MOTION tic=1680 displaced=5944 distance=332738.499841 contacts=0
+CA128 GUARD_VERIFIED tic=1680 machine=0 expected=14
+CA128 GUARD_VERIFIED tic=1680 machine=1 expected=14
+CA128 GUARD_VERIFIED tic=1680 machine=2 expected=9
+CA128 GUARD_VERIFIED tic=1680 machine=3 expected=13
+CA128 GUARD_VERIFIED tic=1680 machine=4 expected=25
+CA128 GUARD_VERIFIED tic=1680 machine=5 expected=46
+CA128 GUARD_VERIFIED tic=1680 machine=6 expected=2
+CA128 GUARD_VERIFIED tic=1680 machine=7 expected=5
+CA128 GUARD_VERIFIED tic=1680 machine=8 expected=5
+CA128 GUARD_VERIFIED tic=1680 machine=9 expected=4
+CA128 GUARD_VERIFIED tic=1680 machine=10 expected=3
+CA128 GUARD_VERIFIED tic=1680 machine=11 expected=2
+CA121 FRAME tic=1689 ms=54847.255000 interval=544.603500
+CA121 COUNT tic=1702 candidates=0 sight=0 decisions=0 commands=0
+CA121 FRAME tic=1706 ms=55329.798600 interval=482.543600
+CA128 BATTLE tic=1715 living=6580 active=1 revision=2 groups=69 reduced=0 incomplete=0 damage=42 deaths=22 projectiles=27121 cannonShots=70
+CA121 SIM tic=1715 ms=55643.650800 roster=6001 attackers=5982 defenders=597 groups=69 moving=0 blocked=13 x=0.000 y=320.000 z=-0.000 angle=90.000
+CA121 MOTION tic=1715 displaced=5940 distance=323851.814727 contacts=0
+CA128 GUARD_VERIFIED tic=1715 machine=0 expected=14
+CA128 GUARD_VERIFIED tic=1715 machine=1 expected=14
+CA128 GUARD_VERIFIED tic=1715 machine=2 expected=10
+CA128 GUARD_VERIFIED tic=1715 machine=3 expected=12
+CA128 GUARD_VERIFIED tic=1715 machine=4 expected=23
+CA128 GUARD_VERIFIED tic=1715 machine=5 expected=46
+CA128 GUARD_VERIFIED tic=1715 machine=6 expected=2
+CA128 GUARD_VERIFIED tic=1715 machine=7 expected=5
+CA128 GUARD_VERIFIED tic=1715 machine=8 expected=5
+CA128 GUARD_VERIFIED tic=1715 machine=9 expected=4
+CA128 GUARD_VERIFIED tic=1715 machine=10 expected=3
+CA128 GUARD_VERIFIED tic=1715 machine=11 expected=2
+CA121 FRAME tic=1723 ms=55944.543000 interval=614.744400
+CA121 FRAME tic=1740 ms=56563.582400 interval=619.039400
+CA121 COUNT tic=1739 candidates=0 sight=0 decisions=0 commands=0
+CA128 BATTLE tic=1750 living=6580 active=1 revision=2 groups=67 reduced=0 incomplete=0 damage=42 deaths=22 projectiles=27593 cannonShots=70
+CA121 SIM tic=1750 ms=56881.694400 roster=6001 attackers=5982 defenders=597 groups=67 moving=0 blocked=31 x=0.000 y=320.000 z=-0.000 angle=90.000
+CA121 MOTION tic=1750 displaced=5944 distance=332259.962323 contacts=0
+CA128 GUARD_VERIFIED tic=1750 machine=0 expected=13
+CA128 GUARD_VERIFIED tic=1750 machine=1 expected=14
+CA128 GUARD_VERIFIED tic=1750 machine=2 expected=10
+CA128 GUARD_VERIFIED tic=1750 machine=3 expected=12
+CA128 GUARD_VERIFIED tic=1750 machine=4 expected=25
+CA128 GUARD_VERIFIED tic=1750 machine=5 expected=45
+CA128 GUARD_VERIFIED tic=1750 machine=6 expected=2
+CA128 GUARD_VERIFIED tic=1750 machine=7 expected=5
+CA128 GUARD_VERIFIED tic=1750 machine=8 expected=5
+CA128 GUARD_VERIFIED tic=1750 machine=9 expected=4
+CA128 GUARD_VERIFIED tic=1750 machine=10 expected=3
+CA128 GUARD_VERIFIED tic=1750 machine=11 expected=2
+CA121 FRAME tic=1757 ms=57128.883500 interval=565.301100
+CA121 FRAME tic=1774 ms=57721.589500 interval=592.706000
+CA121 COUNT tic=1776 candidates=0 sight=0 decisions=0 commands=0
+CA128 BATTLE tic=1785 living=6577 active=1 revision=2 groups=70 reduced=0 incomplete=0 damage=47 deaths=25 projectiles=28087 cannonShots=82
+CA121 SIM tic=1785 ms=58145.950300 roster=6001 attackers=5980 defenders=596 groups=70 moving=0 blocked=13 x=0.000 y=320.000 z=-0.000 angle=90.000
+CA121 MOTION tic=1785 displaced=5943 distance=326116.765499 contacts=0
+CA128 GUARD_VERIFIED tic=1785 machine=0 expected=13
+CA128 GUARD_VERIFIED tic=1785 machine=1 expected=14
+CA128 GUARD_VERIFIED tic=1785 machine=2 expected=11
+CA128 GUARD_VERIFIED tic=1785 machine=3 expected=12
+CA128 GUARD_VERIFIED tic=1785 machine=4 expected=25
+CA128 GUARD_VERIFIED tic=1785 machine=5 expected=43
+CA128 GUARD_VERIFIED tic=1785 machine=6 expected=2
+CA128 GUARD_VERIFIED tic=1785 machine=7 expected=5
+CA128 GUARD_VERIFIED tic=1785 machine=8 expected=5
+CA128 GUARD_VERIFIED tic=1785 machine=9 expected=4
+CA128 GUARD_VERIFIED tic=1785 machine=10 expected=3
+CA128 GUARD_VERIFIED tic=1785 machine=11 expected=2
+CA121 FRAME tic=1791 ms=58383.766400 interval=662.176900
+CA121 FRAME tic=1808 ms=59010.596200 interval=626.829800
+CA121 COUNT tic=1813 candidates=0 sight=0 decisions=0 commands=0
+CA128 BATTLE tic=1820 living=6577 active=1 revision=2 groups=68 reduced=0 incomplete=0 damage=48 deaths=26 projectiles=28507 cannonShots=83
+CA121 SIM tic=1820 ms=59439.060100 roster=6001 attackers=5979 defenders=596 groups=68 moving=0 blocked=23 x=0.000 y=320.000 z=-0.000 angle=90.000
+CA121 MOTION tic=1820 displaced=5941 distance=338947.052298 contacts=0
+CA128 GUARD_VERIFIED tic=1820 machine=0 expected=12
+CA128 GUARD_VERIFIED tic=1820 machine=1 expected=13
+CA128 GUARD_VERIFIED tic=1820 machine=2 expected=11
+CA128 GUARD_VERIFIED tic=1820 machine=3 expected=15
+CA128 GUARD_VERIFIED tic=1820 machine=4 expected=23
+CA128 GUARD_VERIFIED tic=1820 machine=5 expected=43
+CA128 GUARD_VERIFIED tic=1820 machine=6 expected=2
+CA128 GUARD_VERIFIED tic=1820 machine=7 expected=4
+CA128 GUARD_VERIFIED tic=1820 machine=8 expected=5
+CA128 GUARD_VERIFIED tic=1820 machine=9 expected=4
+CA128 GUARD_VERIFIED tic=1820 machine=10 expected=3
+CA128 GUARD_VERIFIED tic=1820 machine=11 expected=1
+CA121 FRAME tic=1825 ms=59611.521900 interval=600.925700
+CA121 FRAME tic=1842 ms=60197.617600 interval=586.095700
+CA121 COUNT tic=1850 candidates=0 sight=0 decisions=0 commands=0
+CA128 BATTLE tic=1855 living=6576 active=1 revision=2 groups=64 reduced=0 incomplete=0 damage=48 deaths=26 projectiles=28926 cannonShots=83
+CA121 SIM tic=1855 ms=60677.835000 roster=6001 attackers=5979 defenders=596 groups=64 moving=0 blocked=20 x=0.000 y=320.000 z=-0.000 angle=90.000
+CA121 MOTION tic=1855 displaced=5930 distance=339015.343817 contacts=0
+CA128 GUARD_VERIFIED tic=1855 machine=0 expected=12
+CA128 GUARD_VERIFIED tic=1855 machine=1 expected=13
+CA128 GUARD_VERIFIED tic=1855 machine=2 expected=11
+CA128 GUARD_VERIFIED tic=1855 machine=3 expected=14
+CA128 GUARD_VERIFIED tic=1855 machine=4 expected=25
+CA128 GUARD_VERIFIED tic=1855 machine=5 expected=42
+CA128 GUARD_VERIFIED tic=1855 machine=6 expected=2
+CA128 GUARD_VERIFIED tic=1855 machine=7 expected=4
+CA128 GUARD_VERIFIED tic=1855 machine=8 expected=5
+CA128 GUARD_VERIFIED tic=1855 machine=9 expected=4
+CA128 GUARD_VERIFIED tic=1855 machine=10 expected=3
+CA128 GUARD_VERIFIED tic=1855 machine=11 expected=1
+CA121 FRAME tic=1859 ms=60846.908500 interval=649.290900
+CA121 FRAME tic=1876 ms=61506.802300 interval=659.893800
+CA121 COUNT tic=1887 candidates=0 sight=0 decisions=0 commands=0
+CA128 BATTLE tic=1890 living=6576 active=1 revision=2 groups=67 reduced=0 incomplete=0 damage=48 deaths=26 projectiles=29381 cannonShots=83
+CA121 SIM tic=1890 ms=61983.989500 roster=6001 attackers=5979 defenders=596 groups=67 moving=0 blocked=28 x=0.000 y=320.000 z=-0.000 angle=90.000
+CA121 MOTION tic=1890 displaced=5932 distance=337748.624295 contacts=0
+CA128 GUARD_VERIFIED tic=1890 machine=0 expected=12
+CA128 GUARD_VERIFIED tic=1890 machine=1 expected=13
+CA128 GUARD_VERIFIED tic=1890 machine=2 expected=11
+CA128 GUARD_VERIFIED tic=1890 machine=3 expected=14
+CA128 GUARD_VERIFIED tic=1890 machine=4 expected=23
+CA128 GUARD_VERIFIED tic=1890 machine=5 expected=42
+CA128 GUARD_VERIFIED tic=1890 machine=6 expected=2
+CA128 GUARD_VERIFIED tic=1890 machine=7 expected=4
+CA128 GUARD_VERIFIED tic=1890 machine=8 expected=5
+CA128 GUARD_VERIFIED tic=1890 machine=9 expected=4
+CA128 GUARD_VERIFIED tic=1890 machine=10 expected=3
+CA128 GUARD_VERIFIED tic=1890 machine=11 expected=1
+CA121 FRAME tic=1893 ms=62113.074900 interval=606.272600
+CA121 FRAME tic=1910 ms=62759.229800 interval=646.154900
+CA121 COUNT tic=1924 candidates=0 sight=0 decisions=0 commands=0
+CA128 BATTLE tic=1925 living=6575 active=1 revision=2 groups=66 reduced=0 incomplete=0 damage=49 deaths=27 projectiles=29753 cannonShots=84
+CA121 SIM tic=1925 ms=63369.079800 roster=6001 attackers=5978 defenders=596 groups=66 moving=0 blocked=17 x=0.000 y=320.000 z=-0.000 angle=90.000
+CA121 MOTION tic=1925 displaced=5937 distance=339418.405250 contacts=0
+CA128 GUARD_VERIFIED tic=1925 machine=0 expected=12
+CA128 GUARD_VERIFIED tic=1925 machine=1 expected=14
+CA128 GUARD_VERIFIED tic=1925 machine=2 expected=11
+CA128 GUARD_VERIFIED tic=1925 machine=3 expected=14
+CA128 GUARD_VERIFIED tic=1925 machine=4 expected=22
+CA128 GUARD_VERIFIED tic=1925 machine=5 expected=42
+CA128 GUARD_VERIFIED tic=1925 machine=6 expected=1
+CA128 GUARD_VERIFIED tic=1925 machine=7 expected=4
+CA128 GUARD_VERIFIED tic=1925 machine=8 expected=5
+CA128 GUARD_VERIFIED tic=1925 machine=9 expected=4
+CA128 GUARD_VERIFIED tic=1925 machine=10 expected=3
+CA128 GUARD_VERIFIED tic=1925 machine=11 expected=1
+CA121 FRAME tic=1927 ms=63463.416200 interval=704.186400
+CA121 FRAME tic=1944 ms=64113.838300 interval=650.422100
+CA128 BATTLE tic=1960 living=6575 active=1 revision=2 groups=65 reduced=0 incomplete=0 damage=49 deaths=27 projectiles=30103 cannonShots=84
+CA121 SIM tic=1960 ms=64665.795600 roster=6001 attackers=5978 defenders=596 groups=65 moving=0 blocked=27 x=0.000 y=320.000 z=-0.000 angle=90.000
+CA121 MOTION tic=1960 displaced=5932 distance=346076.840767 contacts=0
+CA128 GUARD_VERIFIED tic=1960 machine=0 expected=12
+CA128 GUARD_VERIFIED tic=1960 machine=1 expected=13
+CA128 GUARD_VERIFIED tic=1960 machine=2 expected=11
+CA128 GUARD_VERIFIED tic=1960 machine=3 expected=13
+CA128 GUARD_VERIFIED tic=1960 machine=4 expected=24
+CA128 GUARD_VERIFIED tic=1960 machine=5 expected=42
+CA128 GUARD_VERIFIED tic=1960 machine=6 expected=1
+CA128 GUARD_VERIFIED tic=1960 machine=7 expected=4
+CA128 GUARD_VERIFIED tic=1960 machine=8 expected=4
+CA128 GUARD_VERIFIED tic=1960 machine=9 expected=5
+CA128 GUARD_VERIFIED tic=1960 machine=10 expected=3
+CA128 GUARD_VERIFIED tic=1960 machine=11 expected=2
+CA121 FRAME tic=1961 ms=64727.460700 interval=613.622400
+CA121 COUNT tic=1961 candidates=0 sight=0 decisions=0 commands=0
+CA121 FRAME tic=1978 ms=65346.989800 interval=619.529100
+CA121 FRAME tic=1995 ms=65988.605300 interval=641.615500
+CA128 BATTLE tic=1995 living=6575 active=1 revision=2 groups=66 reduced=0 incomplete=0 damage=49 deaths=27 projectiles=30529 cannonShots=84
+CA121 SIM tic=1995 ms=66009.477900 roster=6001 attackers=5978 defenders=596 groups=66 moving=0 blocked=18 x=0.000 y=320.000 z=-0.000 angle=90.000
+CA121 MOTION tic=1995 displaced=5928 distance=343528.368268 contacts=0
+CA128 GUARD_VERIFIED tic=1995 machine=0 expected=12
+CA128 GUARD_VERIFIED tic=1995 machine=1 expected=13
+CA128 GUARD_VERIFIED tic=1995 machine=2 expected=11
+CA128 GUARD_VERIFIED tic=1995 machine=3 expected=13
+CA128 GUARD_VERIFIED tic=1995 machine=4 expected=23
+CA128 GUARD_VERIFIED tic=1995 machine=5 expected=42
+CA128 GUARD_VERIFIED tic=1995 machine=6 expected=1
+CA128 GUARD_VERIFIED tic=1995 machine=7 expected=3
+CA128 GUARD_VERIFIED tic=1995 machine=8 expected=4
+CA128 GUARD_VERIFIED tic=1995 machine=9 expected=5
+CA128 GUARD_VERIFIED tic=1995 machine=10 expected=3
+CA128 GUARD_VERIFIED tic=1995 machine=11 expected=2
+CA121 COUNT tic=1998 candidates=0 sight=0 decisions=0 commands=0
+CA121 FRAME tic=2012 ms=66630.748200 interval=642.142900
+CA121 FRAME tic=2029 ms=67198.253000 interval=567.504800
+CA128 BATTLE tic=2030 living=6575 active=1 revision=2 groups=72 reduced=0 incomplete=0 damage=49 deaths=27 projectiles=30919 cannonShots=84
+CA121 SIM tic=2030 ms=67249.881200 roster=6001 attackers=5978 defenders=596 groups=72 moving=0 blocked=17 x=0.000 y=320.000 z=-0.000 angle=90.000
+CA121 MOTION tic=2030 displaced=5929 distance=345044.679893 contacts=0
+CA128 GUARD_VERIFIED tic=2030 machine=0 expected=11
+CA128 GUARD_VERIFIED tic=2030 machine=1 expected=13
+CA128 GUARD_VERIFIED tic=2030 machine=2 expected=11
+CA128 GUARD_VERIFIED tic=2030 machine=3 expected=13
+CA128 GUARD_VERIFIED tic=2030 machine=4 expected=25
+CA128 GUARD_VERIFIED tic=2030 machine=5 expected=42
+CA128 GUARD_VERIFIED tic=2030 machine=6 expected=1
+CA128 GUARD_VERIFIED tic=2030 machine=7 expected=3
+CA128 GUARD_VERIFIED tic=2030 machine=8 expected=4
+CA128 GUARD_VERIFIED tic=2030 machine=9 expected=6
+CA128 GUARD_VERIFIED tic=2030 machine=10 expected=4
+CA128 GUARD_VERIFIED tic=2030 machine=11 expected=2
+CA121 COUNT tic=2035 candidates=0 sight=0 decisions=0 commands=0
+CA121 FRAME tic=2046 ms=67880.011200 interval=681.758200
+CA121 FRAME tic=2063 ms=68557.204300 interval=677.193100
+CA128 BATTLE tic=2065 living=6575 active=1 revision=2 groups=65 reduced=0 incomplete=0 damage=50 deaths=27 projectiles=31308 cannonShots=85
+CA121 SIM tic=2065 ms=68649.281300 roster=6001 attackers=5978 defenders=596 groups=65 moving=0 blocked=20 x=0.000 y=320.000 z=-0.000 angle=90.000
+CA121 MOTION tic=2065 displaced=5930 distance=343014.437080 contacts=0
+CA128 GUARD_VERIFIED tic=2065 machine=0 expected=11
+CA128 GUARD_VERIFIED tic=2065 machine=1 expected=13
+CA128 GUARD_VERIFIED tic=2065 machine=2 expected=11
+CA128 GUARD_VERIFIED tic=2065 machine=3 expected=11
+CA128 GUARD_VERIFIED tic=2065 machine=4 expected=24
+CA128 GUARD_VERIFIED tic=2065 machine=5 expected=40
+CA128 GUARD_VERIFIED tic=2065 machine=6 expected=1
+CA128 GUARD_VERIFIED tic=2065 machine=7 expected=3
+CA128 GUARD_VERIFIED tic=2065 machine=8 expected=4
+CA128 GUARD_VERIFIED tic=2065 machine=9 expected=6
+CA128 GUARD_VERIFIED tic=2065 machine=10 expected=4
+CA128 GUARD_VERIFIED tic=2065 machine=11 expected=2
+CA121 COUNT tic=2072 candidates=0 sight=0 decisions=0 commands=0
+CA121 FRAME tic=2080 ms=69173.618000 interval=616.413700
+CA121 FRAME tic=2097 ms=69764.923000 interval=591.305000
+CA128 BATTLE tic=2100 living=6575 active=1 revision=2 groups=66 reduced=0 incomplete=0 damage=50 deaths=27 projectiles=31645 cannonShots=85
+CA121 SIM tic=2100 ms=69921.008100 roster=6001 attackers=5978 defenders=596 groups=66 moving=0 blocked=25 x=0.000 y=320.000 z=-0.000 angle=90.000
+CA121 MOTION tic=2100 displaced=5934 distance=346704.815941 contacts=0
+CA128 GUARD_VERIFIED tic=2100 machine=0 expected=11
+CA128 GUARD_VERIFIED tic=2100 machine=1 expected=13
+CA128 GUARD_VERIFIED tic=2100 machine=2 expected=11
+CA128 GUARD_VERIFIED tic=2100 machine=3 expected=11
+CA128 GUARD_VERIFIED tic=2100 machine=4 expected=25
+CA128 GUARD_VERIFIED tic=2100 machine=5 expected=40
+CA128 GUARD_VERIFIED tic=2100 machine=6 expected=1
+CA128 GUARD_VERIFIED tic=2100 machine=7 expected=3
+CA128 GUARD_VERIFIED tic=2100 machine=8 expected=4
+CA128 GUARD_VERIFIED tic=2100 machine=9 expected=6
+CA128 GUARD_VERIFIED tic=2100 machine=10 expected=4
+CA128 GUARD_VERIFIED tic=2100 machine=11 expected=2
+CA121 COUNT tic=2109 candidates=0 sight=0 decisions=0 commands=0
+CA121 FRAME tic=2114 ms=70544.709100 interval=779.786100
+CA121 FRAME tic=2131 ms=71249.878000 interval=705.168900
+CA128 BATTLE tic=2135 living=6574 active=1 revision=2 groups=68 reduced=0 incomplete=0 damage=56 deaths=28 projectiles=32065 cannonShots=98
+CA121 SIM tic=2135 ms=71395.374800 roster=6001 attackers=5977 defenders=596 groups=68 moving=1 blocked=18 x=0.000 y=320.000 z=-0.000 angle=90.000
+CA121 MOTION tic=2135 displaced=5924 distance=339998.090117 contacts=0
+CA128 GUARD_VERIFIED tic=2135 machine=0 expected=11
+CA128 GUARD_VERIFIED tic=2135 machine=1 expected=13
+CA128 GUARD_VERIFIED tic=2135 machine=2 expected=11
+CA128 GUARD_VERIFIED tic=2135 machine=3 expected=11
+CA128 GUARD_VERIFIED tic=2135 machine=4 expected=24
+CA128 GUARD_VERIFIED tic=2135 machine=5 expected=40
+CA128 GUARD_VERIFIED tic=2135 machine=6 expected=2
+CA128 GUARD_VERIFIED tic=2135 machine=7 expected=3
+CA128 GUARD_VERIFIED tic=2135 machine=8 expected=4
+CA128 GUARD_VERIFIED tic=2135 machine=9 expected=6
+CA128 GUARD_VERIFIED tic=2135 machine=10 expected=3
+CA128 GUARD_VERIFIED tic=2135 machine=11 expected=2
+CA121 COUNT tic=2146 candidates=0 sight=0 decisions=0 commands=0
+CA121 FRAME tic=2148 ms=71890.689700 interval=640.811700
+CA121 FRAME tic=2165 ms=72543.383700 interval=652.694000
+CA128 BATTLE tic=2170 living=6574 active=1 revision=2 groups=66 reduced=0 incomplete=0 damage=56 deaths=28 projectiles=32488 cannonShots=98
+CA121 SIM tic=2170 ms=72787.996300 roster=6001 attackers=5977 defenders=596 groups=66 moving=1 blocked=28 x=0.000 y=320.000 z=-0.000 angle=90.000
+CA121 MOTION tic=2170 displaced=5921 distance=339128.606610 contacts=0
+CA128 GUARD_VERIFIED tic=2170 machine=0 expected=11
+CA128 GUARD_VERIFIED tic=2170 machine=1 expected=13
+CA128 GUARD_VERIFIED tic=2170 machine=2 expected=11
+CA128 GUARD_VERIFIED tic=2170 machine=3 expected=12
+CA128 GUARD_VERIFIED tic=2170 machine=4 expected=23
+CA128 GUARD_VERIFIED tic=2170 machine=5 expected=40
+CA128 GUARD_VERIFIED tic=2170 machine=6 expected=2
+CA128 GUARD_VERIFIED tic=2170 machine=7 expected=3
+CA128 GUARD_VERIFIED tic=2170 machine=8 expected=4
+CA128 GUARD_VERIFIED tic=2170 machine=9 expected=4
+CA128 GUARD_VERIFIED tic=2170 machine=10 expected=3
+CA128 GUARD_VERIFIED tic=2170 machine=11 expected=2
+CA121 FRAME tic=2182 ms=73278.746000 interval=735.362300
+CA121 COUNT tic=2183 candidates=0 sight=0 decisions=0 commands=0
+CA121 FRAME tic=2199 ms=73943.992000 interval=665.246000
+CA128 BATTLE tic=2205 living=6574 active=1 revision=2 groups=70 reduced=0 incomplete=0 damage=56 deaths=28 projectiles=32877 cannonShots=99
+CA121 SIM tic=2205 ms=74169.640400 roster=6001 attackers=5977 defenders=596 groups=70 moving=0 blocked=25 x=0.000 y=320.000 z=-0.000 angle=90.000
+CA121 MOTION tic=2205 displaced=5923 distance=332985.370654 contacts=0
+CA128 GUARD_VERIFIED tic=2205 machine=0 expected=11
+CA128 GUARD_VERIFIED tic=2205 machine=1 expected=13
+CA128 GUARD_VERIFIED tic=2205 machine=2 expected=11
+CA128 GUARD_VERIFIED tic=2205 machine=3 expected=11
+CA128 GUARD_VERIFIED tic=2205 machine=4 expected=22
+CA128 GUARD_VERIFIED tic=2205 machine=5 expected=37
+CA128 GUARD_VERIFIED tic=2205 machine=6 expected=2
+CA128 GUARD_VERIFIED tic=2205 machine=7 expected=3
+CA128 GUARD_VERIFIED tic=2205 machine=8 expected=4
+CA128 GUARD_VERIFIED tic=2205 machine=9 expected=4
+CA128 GUARD_VERIFIED tic=2205 machine=10 expected=3
+CA128 GUARD_VERIFIED tic=2205 machine=11 expected=2
+CA121 FRAME tic=2216 ms=74595.706200 interval=651.714200
+CA121 COUNT tic=2220 candidates=0 sight=0 decisions=0 commands=0
+CA121 FRAME tic=2233 ms=75267.078900 interval=671.372700
+CA128 BATTLE tic=2240 living=6574 active=1 revision=2 groups=70 reduced=0 incomplete=0 damage=56 deaths=28 projectiles=33297 cannonShots=99
+CA121 SIM tic=2240 ms=75573.369800 roster=6001 attackers=5977 defenders=596 groups=70 moving=0 blocked=43 x=0.000 y=320.000 z=-0.000 angle=90.000
+CA121 MOTION tic=2240 displaced=5923 distance=329337.177181 contacts=0
+CA128 GUARD_VERIFIED tic=2240 machine=0 expected=10
+CA128 GUARD_VERIFIED tic=2240 machine=1 expected=12
+CA128 GUARD_VERIFIED tic=2240 machine=2 expected=11
+CA128 GUARD_VERIFIED tic=2240 machine=3 expected=12
+CA128 GUARD_VERIFIED tic=2240 machine=4 expected=24
+CA128 GUARD_VERIFIED tic=2240 machine=5 expected=36
+CA128 GUARD_VERIFIED tic=2240 machine=6 expected=2
+CA128 GUARD_VERIFIED tic=2240 machine=7 expected=3
+CA128 GUARD_VERIFIED tic=2240 machine=8 expected=4
+CA128 GUARD_VERIFIED tic=2240 machine=9 expected=4
+CA128 GUARD_VERIFIED tic=2240 machine=10 expected=3
+CA128 GUARD_VERIFIED tic=2240 machine=11 expected=2
+CA121 FRAME tic=2250 ms=75993.789700 interval=726.710800
+CA121 COUNT tic=2257 candidates=0 sight=0 decisions=0 commands=0
+CA121 FRAME tic=2267 ms=76681.274500 interval=687.484800
+CA128 BATTLE tic=2275 living=6574 active=1 revision=2 groups=73 reduced=0 incomplete=0 damage=56 deaths=28 projectiles=33692 cannonShots=99
+CA121 SIM tic=2275 ms=76980.188700 roster=6001 attackers=5977 defenders=596 groups=73 moving=0 blocked=41 x=0.000 y=320.000 z=-0.000 angle=90.000
+CA121 MOTION tic=2275 displaced=5914 distance=331952.056884 contacts=0
+CA128 GUARD_VERIFIED tic=2275 machine=0 expected=10
+CA128 GUARD_VERIFIED tic=2275 machine=1 expected=13
+CA128 GUARD_VERIFIED tic=2275 machine=2 expected=11
+CA128 GUARD_VERIFIED tic=2275 machine=3 expected=11
+CA128 GUARD_VERIFIED tic=2275 machine=4 expected=23
+CA128 GUARD_VERIFIED tic=2275 machine=5 expected=35
+CA128 GUARD_VERIFIED tic=2275 machine=6 expected=2
+CA128 GUARD_VERIFIED tic=2275 machine=7 expected=3
+CA128 GUARD_VERIFIED tic=2275 machine=8 expected=4
+CA128 GUARD_VERIFIED tic=2275 machine=9 expected=5
+CA128 GUARD_VERIFIED tic=2275 machine=10 expected=3
+CA128 GUARD_VERIFIED tic=2275 machine=11 expected=2
+CA121 FRAME tic=2284 ms=77347.889200 interval=666.614700
+CA121 COUNT tic=2294 candidates=0 sight=0 decisions=0 commands=0
+CA121 FRAME tic=2301 ms=78040.461100 interval=692.571900
+CA128 BATTLE tic=2310 living=6574 active=1 revision=2 groups=73 reduced=0 incomplete=0 damage=56 deaths=28 projectiles=34064 cannonShots=99
+CA121 SIM tic=2310 ms=78440.664200 roster=6001 attackers=5977 defenders=596 groups=73 moving=0 blocked=36 x=0.000 y=320.000 z=-0.000 angle=90.000
+CA121 MOTION tic=2310 displaced=5903 distance=328890.579979 contacts=0
+CA128 GUARD_VERIFIED tic=2310 machine=0 expected=10
+CA128 GUARD_VERIFIED tic=2310 machine=1 expected=13
+CA128 GUARD_VERIFIED tic=2310 machine=2 expected=12
+CA128 GUARD_VERIFIED tic=2310 machine=3 expected=11
+CA128 GUARD_VERIFIED tic=2310 machine=4 expected=24
+CA128 GUARD_VERIFIED tic=2310 machine=5 expected=35
+CA128 GUARD_VERIFIED tic=2310 machine=6 expected=2
+CA128 GUARD_VERIFIED tic=2310 machine=7 expected=3
+CA128 GUARD_VERIFIED tic=2310 machine=8 expected=4
+CA128 GUARD_VERIFIED tic=2310 machine=9 expected=5
+CA128 GUARD_VERIFIED tic=2310 machine=10 expected=3
+CA128 GUARD_VERIFIED tic=2310 machine=11 expected=2
+CA121 FRAME tic=2318 ms=78786.978800 interval=746.517700
+CA121 COUNT tic=2331 candidates=0 sight=0 decisions=0 commands=0
+CA121 FRAME tic=2335 ms=79480.545500 interval=693.566700
+CA128 BATTLE tic=2345 living=6574 active=1 revision=2 groups=72 reduced=0 incomplete=0 damage=56 deaths=28 projectiles=34516 cannonShots=99
+CA121 SIM tic=2345 ms=79861.966600 roster=6001 attackers=5977 defenders=596 groups=72 moving=0 blocked=32 x=0.000 y=320.000 z=-0.000 angle=90.000
+CA121 MOTION tic=2345 displaced=5907 distance=325153.274536 contacts=0
+CA128 GUARD_VERIFIED tic=2345 machine=0 expected=10
+CA128 GUARD_VERIFIED tic=2345 machine=1 expected=13
+CA128 GUARD_VERIFIED tic=2345 machine=2 expected=11
+CA128 GUARD_VERIFIED tic=2345 machine=3 expected=11
+CA128 GUARD_VERIFIED tic=2345 machine=4 expected=24
+CA128 GUARD_VERIFIED tic=2345 machine=5 expected=34
+CA128 GUARD_VERIFIED tic=2345 machine=6 expected=2
+CA128 GUARD_VERIFIED tic=2345 machine=7 expected=3
+CA128 GUARD_VERIFIED tic=2345 machine=8 expected=4
+CA128 GUARD_VERIFIED tic=2345 machine=9 expected=5
+CA128 GUARD_VERIFIED tic=2345 machine=10 expected=3
+CA128 GUARD_VERIFIED tic=2345 machine=11 expected=2
+CA121 FRAME tic=2352 ms=80132.000700 interval=651.455200
+CA121 FRAME tic=2369 ms=80857.443300 interval=725.442600
+CA121 COUNT tic=2368 candidates=0 sight=0 decisions=0 commands=0
+CA128 BATTLE tic=2380 living=6574 active=1 revision=2 groups=71 reduced=0 incomplete=0 damage=56 deaths=28 projectiles=34956 cannonShots=99
+CA121 SIM tic=2380 ms=81339.432200 roster=6001 attackers=5977 defenders=596 groups=71 moving=0 blocked=48 x=0.000 y=320.000 z=-0.000 angle=90.000
+CA121 MOTION tic=2380 displaced=5896 distance=329104.721092 contacts=0
+CA128 GUARD_VERIFIED tic=2380 machine=0 expected=11
+CA128 GUARD_VERIFIED tic=2380 machine=1 expected=13
+CA128 GUARD_VERIFIED tic=2380 machine=2 expected=11
+CA128 GUARD_VERIFIED tic=2380 machine=3 expected=13
+CA128 GUARD_VERIFIED tic=2380 machine=4 expected=23
+CA128 GUARD_VERIFIED tic=2380 machine=5 expected=34
+CA128 GUARD_VERIFIED tic=2380 machine=6 expected=2
+CA128 GUARD_VERIFIED tic=2380 machine=7 expected=3
+CA128 GUARD_VERIFIED tic=2380 machine=8 expected=4
+CA128 GUARD_VERIFIED tic=2380 machine=9 expected=5
+CA128 GUARD_VERIFIED tic=2380 machine=10 expected=4
+CA128 GUARD_VERIFIED tic=2380 machine=11 expected=2
+CA121 FRAME tic=2386 ms=81613.032700 interval=755.589400
+CA121 FRAME tic=2403 ms=82315.623000 interval=702.590300
+CA121 COUNT tic=2405 candidates=0 sight=0 decisions=0 commands=0
+CA128 BATTLE tic=2415 living=6574 active=1 revision=2 groups=74 reduced=0 incomplete=0 damage=56 deaths=28 projectiles=35343 cannonShots=99
+CA121 SIM tic=2415 ms=82791.210200 roster=6001 attackers=5977 defenders=596 groups=74 moving=0 blocked=41 x=0.000 y=320.000 z=-0.000 angle=90.000
+CA121 MOTION tic=2415 displaced=5897 distance=329412.563918 contacts=0
+CA128 GUARD_VERIFIED tic=2415 machine=0 expected=12
+CA128 GUARD_VERIFIED tic=2415 machine=1 expected=13
+CA128 GUARD_VERIFIED tic=2415 machine=2 expected=12
+CA128 GUARD_VERIFIED tic=2415 machine=3 expected=12
+CA128 GUARD_VERIFIED tic=2415 machine=4 expected=23
+CA128 GUARD_VERIFIED tic=2415 machine=5 expected=34
+CA128 GUARD_VERIFIED tic=2415 machine=6 expected=2
+CA128 GUARD_VERIFIED tic=2415 machine=7 expected=3
+CA128 GUARD_VERIFIED tic=2415 machine=8 expected=4
+CA128 GUARD_VERIFIED tic=2415 machine=9 expected=4
+CA128 GUARD_VERIFIED tic=2415 machine=10 expected=4
+CA128 GUARD_VERIFIED tic=2415 machine=11 expected=2
+CA121 FRAME tic=2420 ms=83024.101200 interval=708.478200
+CA121 FRAME tic=2437 ms=83777.313500 interval=753.212300
+CA121 COUNT tic=2442 candidates=0 sight=0 decisions=0 commands=0
+CA128 BATTLE tic=2450 living=6574 active=1 revision=2 groups=72 reduced=0 incomplete=0 damage=57 deaths=28 projectiles=35740 cannonShots=100
+CA121 SIM tic=2450 ms=84351.867700 roster=6001 attackers=5977 defenders=596 groups=72 moving=0 blocked=59 x=0.000 y=320.000 z=-0.000 angle=90.000
+CA121 MOTION tic=2450 displaced=5896 distance=324355.786160 contacts=0
+CA128 GUARD_VERIFIED tic=2450 machine=0 expected=13
+CA128 GUARD_VERIFIED tic=2450 machine=1 expected=14
+CA128 GUARD_VERIFIED tic=2450 machine=2 expected=11
+CA128 GUARD_VERIFIED tic=2450 machine=3 expected=12
+CA128 GUARD_VERIFIED tic=2450 machine=4 expected=22
+CA128 GUARD_VERIFIED tic=2450 machine=5 expected=34
+CA128 GUARD_VERIFIED tic=2450 machine=6 expected=2
+CA128 GUARD_VERIFIED tic=2450 machine=7 expected=3
+CA128 GUARD_VERIFIED tic=2450 machine=8 expected=4
+CA128 GUARD_VERIFIED tic=2450 machine=9 expected=5
+CA128 GUARD_VERIFIED tic=2450 machine=10 expected=4
+CA128 GUARD_VERIFIED tic=2450 machine=11 expected=2
+CA121 FRAME tic=2454 ms=84549.187400 interval=771.873900
+CA121 FRAME tic=2471 ms=85267.872700 interval=718.685300
+CA121 COUNT tic=2479 candidates=0 sight=0 decisions=0 commands=0
+CA128 BATTLE tic=2485 living=6573 active=1 revision=2 groups=71 reduced=0 incomplete=0 damage=63 deaths=29 projectiles=36122 cannonShots=113
+CA121 SIM tic=2485 ms=85865.909800 roster=6001 attackers=5976 defenders=596 groups=71 moving=0 blocked=52 x=0.000 y=320.000 z=-0.000 angle=90.000
+CA121 MOTION tic=2485 displaced=5915 distance=328316.493097 contacts=0
+CA128 GUARD_VERIFIED tic=2485 machine=0 expected=13
+CA128 GUARD_VERIFIED tic=2485 machine=1 expected=14
+CA128 GUARD_VERIFIED tic=2485 machine=2 expected=11
+CA128 GUARD_VERIFIED tic=2485 machine=3 expected=12
+CA128 GUARD_VERIFIED tic=2485 machine=4 expected=22
+CA128 GUARD_VERIFIED tic=2485 machine=5 expected=34
+CA128 GUARD_VERIFIED tic=2485 machine=6 expected=1
+CA128 GUARD_VERIFIED tic=2485 machine=7 expected=3
+CA128 GUARD_VERIFIED tic=2485 machine=8 expected=4
+CA128 GUARD_VERIFIED tic=2485 machine=9 expected=5
+CA128 GUARD_VERIFIED tic=2485 machine=10 expected=4
+CA128 GUARD_VERIFIED tic=2485 machine=11 expected=2
+CA121 FRAME tic=2488 ms=86022.952100 interval=755.079400
+CA121 FRAME tic=2505 ms=86815.280400 interval=792.328300
+CA121 COUNT tic=2516 candidates=0 sight=0 decisions=0 commands=0
+CA128 BATTLE tic=2520 living=6573 active=1 revision=2 groups=70 reduced=0 incomplete=0 damage=63 deaths=29 projectiles=36476 cannonShots=113
+CA121 SIM tic=2520 ms=87461.463200 roster=6001 attackers=5976 defenders=596 groups=70 moving=0 blocked=34 x=0.000 y=320.000 z=-0.000 angle=90.000
+CA121 MOTION tic=2520 displaced=5918 distance=328447.736427 contacts=0
+CA128 GUARD_VERIFIED tic=2520 machine=0 expected=13
+CA128 GUARD_VERIFIED tic=2520 machine=1 expected=14
+CA128 GUARD_VERIFIED tic=2520 machine=2 expected=12
+CA128 GUARD_VERIFIED tic=2520 machine=3 expected=12
+CA128 GUARD_VERIFIED tic=2520 machine=4 expected=22
+CA128 GUARD_VERIFIED tic=2520 machine=5 expected=33
+CA128 GUARD_VERIFIED tic=2520 machine=6 expected=1
+CA128 GUARD_VERIFIED tic=2520 machine=7 expected=3
+CA128 GUARD_VERIFIED tic=2520 machine=8 expected=4
+CA128 GUARD_VERIFIED tic=2520 machine=9 expected=6
+CA128 GUARD_VERIFIED tic=2520 machine=10 expected=4
+CA128 GUARD_VERIFIED tic=2520 machine=11 expected=2
+CA121 FRAME tic=2522 ms=87567.566200 interval=752.285800
+CA121 FRAME tic=2539 ms=88243.666400 interval=676.100200
+CA121 COUNT tic=2553 candidates=0 sight=0 decisions=0 commands=0
+CA128 BATTLE tic=2555 living=6573 active=1 revision=2 groups=71 reduced=0 incomplete=0 damage=63 deaths=29 projectiles=36831 cannonShots=113
+CA121 SIM tic=2555 ms=88900.934400 roster=6001 attackers=5976 defenders=596 groups=71 moving=0 blocked=39 x=0.000 y=320.000 z=-0.000 angle=90.000
+CA121 MOTION tic=2555 displaced=5919 distance=323622.194005 contacts=0
+CA128 GUARD_VERIFIED tic=2555 machine=0 expected=13
+CA128 GUARD_VERIFIED tic=2555 machine=1 expected=14
+CA128 GUARD_VERIFIED tic=2555 machine=2 expected=12
+CA128 GUARD_VERIFIED tic=2555 machine=3 expected=12
+CA128 GUARD_VERIFIED tic=2555 machine=4 expected=22
+CA128 GUARD_VERIFIED tic=2555 machine=5 expected=33
+CA128 GUARD_VERIFIED tic=2555 machine=6 expected=1
+CA128 GUARD_VERIFIED tic=2555 machine=7 expected=3
+CA128 GUARD_VERIFIED tic=2555 machine=8 expected=4
+CA128 GUARD_VERIFIED tic=2555 machine=9 expected=7
+CA128 GUARD_VERIFIED tic=2555 machine=10 expected=4
+CA128 GUARD_VERIFIED tic=2555 machine=11 expected=2
+CA121 FRAME tic=2556 ms=88982.785100 interval=739.118700
+CA121 FRAME tic=2573 ms=89723.682000 interval=740.896900
+CA121 FRAME tic=2590 ms=90446.700700 interval=723.018700
+CA128 BATTLE tic=2590 living=6573 active=1 revision=2 groups=71 reduced=0 incomplete=0 damage=63 deaths=29 projectiles=37197 cannonShots=113
+CA121 SIM tic=2590 ms=90458.639700 roster=6001 attackers=5976 defenders=596 groups=71 moving=0 blocked=53 x=0.000 y=320.000 z=-0.000 angle=90.000
+CA121 MOTION tic=2590 displaced=5918 distance=321316.478271 contacts=0
+CA128 GUARD_VERIFIED tic=2590 machine=0 expected=13
+CA128 GUARD_VERIFIED tic=2590 machine=1 expected=13
+CA128 GUARD_VERIFIED tic=2590 machine=2 expected=13
+CA128 GUARD_VERIFIED tic=2590 machine=3 expected=13
+CA128 GUARD_VERIFIED tic=2590 machine=4 expected=22
+CA128 GUARD_VERIFIED tic=2590 machine=5 expected=33
+CA128 GUARD_VERIFIED tic=2590 machine=6 expected=1
+CA128 GUARD_VERIFIED tic=2590 machine=7 expected=3
+CA128 GUARD_VERIFIED tic=2590 machine=8 expected=4
+CA128 GUARD_VERIFIED tic=2590 machine=9 expected=6
+CA128 GUARD_VERIFIED tic=2590 machine=10 expected=5
+CA128 GUARD_VERIFIED tic=2590 machine=11 expected=2
+CA121 COUNT tic=2590 candidates=0 sight=0 decisions=0 commands=0
+CA121 FRAME tic=2607 ms=91103.836700 interval=657.136000
+CA121 FRAME tic=2624 ms=91846.389800 interval=742.553100
+CA128 BATTLE tic=2625 living=6572 active=1 revision=2 groups=73 reduced=0 incomplete=0 damage=64 deaths=30 projectiles=37587 cannonShots=114
+CA121 SIM tic=2625 ms=91911.385400 roster=6001 attackers=5975 defenders=596 groups=73 moving=0 blocked=60 x=0.000 y=320.000 z=-0.000 angle=90.000
+CA121 MOTION tic=2625 displaced=5912 distance=317865.820867 contacts=0
+CA128 GUARD_VERIFIED tic=2625 machine=0 expected=13
+CA128 GUARD_VERIFIED tic=2625 machine=1 expected=15
+CA128 GUARD_VERIFIED tic=2625 machine=2 expected=13
+CA128 GUARD_VERIFIED tic=2625 machine=3 expected=12
+CA128 GUARD_VERIFIED tic=2625 machine=4 expected=22
+CA128 GUARD_VERIFIED tic=2625 machine=5 expected=33
+CA128 GUARD_VERIFIED tic=2625 machine=6 expected=1
+CA128 GUARD_VERIFIED tic=2625 machine=7 expected=3
+CA128 GUARD_VERIFIED tic=2625 machine=8 expected=4
+CA128 GUARD_VERIFIED tic=2625 machine=9 expected=6
+CA128 GUARD_VERIFIED tic=2625 machine=10 expected=5
+CA128 GUARD_VERIFIED tic=2625 machine=11 expected=1
+CA121 COUNT tic=2627 candidates=0 sight=0 decisions=0 commands=0
+CA121 FRAME tic=2641 ms=92613.631300 interval=767.241500
+CA121 FRAME tic=2658 ms=93325.037100 interval=711.405800
+CA128 BATTLE tic=2660 living=6572 active=1 revision=2 groups=74 reduced=0 incomplete=0 damage=64 deaths=30 projectiles=37946 cannonShots=114
+CA121 SIM tic=2660 ms=93415.877400 roster=6001 attackers=5975 defenders=596 groups=74 moving=0 blocked=67 x=0.000 y=320.000 z=-0.000 angle=90.000
+CA121 MOTION tic=2660 displaced=5902 distance=318233.891039 contacts=0
+CA128 GUARD_VERIFIED tic=2660 machine=0 expected=13
+CA128 GUARD_VERIFIED tic=2660 machine=1 expected=16
+CA128 GUARD_VERIFIED tic=2660 machine=2 expected=13
+CA128 GUARD_VERIFIED tic=2660 machine=3 expected=10
+CA128 GUARD_VERIFIED tic=2660 machine=4 expected=22
+CA128 GUARD_VERIFIED tic=2660 machine=5 expected=33
+CA128 GUARD_VERIFIED tic=2660 machine=6 expected=1
+CA128 GUARD_VERIFIED tic=2660 machine=7 expected=3
+CA128 GUARD_VERIFIED tic=2660 machine=8 expected=4
+CA128 GUARD_VERIFIED tic=2660 machine=9 expected=6
+CA128 GUARD_VERIFIED tic=2660 machine=10 expected=5
+CA128 GUARD_VERIFIED tic=2660 machine=11 expected=1
+CA121 COUNT tic=2664 candidates=0 sight=0 decisions=0 commands=0
+CA121 FRAME tic=2675 ms=94029.467700 interval=704.430600
+CA121 FRAME tic=2692 ms=94798.395900 interval=768.928200
+CA128 BATTLE tic=2695 living=6571 active=1 revision=2 groups=73 reduced=0 incomplete=0 damage=65 deaths=31 projectiles=38269 cannonShots=115
+CA121 SIM tic=2695 ms=94964.443100 roster=6001 attackers=5974 defenders=596 groups=73 moving=0 blocked=72 x=0.000 y=320.000 z=-0.000 angle=90.000
+CA121 MOTION tic=2695 displaced=5885 distance=313525.589101 contacts=0
+CA128 GUARD_VERIFIED tic=2695 machine=0 expected=12
+CA128 GUARD_VERIFIED tic=2695 machine=1 expected=16
+CA128 GUARD_VERIFIED tic=2695 machine=2 expected=13
+CA128 GUARD_VERIFIED tic=2695 machine=3 expected=10
+CA128 GUARD_VERIFIED tic=2695 machine=4 expected=23
+CA128 GUARD_VERIFIED tic=2695 machine=5 expected=34
+CA128 GUARD_VERIFIED tic=2695 machine=6 expected=1
+CA128 GUARD_VERIFIED tic=2695 machine=7 expected=3
+CA128 GUARD_VERIFIED tic=2695 machine=8 expected=4
+CA128 GUARD_VERIFIED tic=2695 machine=9 expected=6
+CA128 GUARD_VERIFIED tic=2695 machine=10 expected=5
+CA128 GUARD_VERIFIED tic=2695 machine=11 expected=1
+CA121 COUNT tic=2701 candidates=0 sight=0 decisions=0 commands=0
+CA121 FRAME tic=2709 ms=95598.606600 interval=800.210700
+CA121 FRAME tic=2726 ms=96301.845900 interval=703.239300
+CA128 BATTLE tic=2730 living=6571 active=1 revision=2 groups=77 reduced=0 incomplete=0 damage=65 deaths=31 projectiles=38586 cannonShots=115
+CA121 SIM tic=2730 ms=96488.561900 roster=6001 attackers=5974 defenders=596 groups=77 moving=0 blocked=71 x=0.000 y=320.000 z=-0.000 angle=90.000
+CA121 MOTION tic=2730 displaced=5884 distance=310290.721766 contacts=0
+CA128 GUARD_VERIFIED tic=2730 machine=0 expected=13
+CA128 GUARD_VERIFIED tic=2730 machine=1 expected=16
+CA128 GUARD_VERIFIED tic=2730 machine=2 expected=12
+CA128 GUARD_VERIFIED tic=2730 machine=3 expected=10
+CA128 GUARD_VERIFIED tic=2730 machine=4 expected=22
+CA128 GUARD_VERIFIED tic=2730 machine=5 expected=34
+CA128 GUARD_VERIFIED tic=2730 machine=6 expected=1
+CA128 GUARD_VERIFIED tic=2730 machine=7 expected=3
+CA128 GUARD_VERIFIED tic=2730 machine=8 expected=4
+CA128 GUARD_VERIFIED tic=2730 machine=9 expected=5
+CA128 GUARD_VERIFIED tic=2730 machine=10 expected=6
+CA128 GUARD_VERIFIED tic=2730 machine=11 expected=1
+CA121 COUNT tic=2738 candidates=0 sight=0 decisions=0 commands=0
+CA121 FRAME tic=2743 ms=97010.292800 interval=708.446900
+CA121 FRAME tic=2760 ms=97777.690700 interval=767.397900
+CA128 BATTLE tic=2765 living=6571 active=1 revision=2 groups=71 reduced=0 incomplete=0 damage=65 deaths=31 projectiles=38886 cannonShots=115
+CA121 SIM tic=2765 ms=98005.467400 roster=6001 attackers=5974 defenders=596 groups=71 moving=0 blocked=78 x=0.000 y=320.000 z=-0.000 angle=90.000
+CA121 MOTION tic=2765 displaced=5862 distance=305348.359027 contacts=0
+CA128 GUARD_VERIFIED tic=2765 machine=0 expected=12
+CA128 GUARD_VERIFIED tic=2765 machine=1 expected=15
+CA128 GUARD_VERIFIED tic=2765 machine=2 expected=12
+CA128 GUARD_VERIFIED tic=2765 machine=3 expected=10
+CA128 GUARD_VERIFIED tic=2765 machine=4 expected=22
+CA128 GUARD_VERIFIED tic=2765 machine=5 expected=35
+CA128 GUARD_VERIFIED tic=2765 machine=6 expected=1
+CA128 GUARD_VERIFIED tic=2765 machine=7 expected=3
+CA128 GUARD_VERIFIED tic=2765 machine=8 expected=4
+CA128 GUARD_VERIFIED tic=2765 machine=9 expected=5
+CA128 GUARD_VERIFIED tic=2765 machine=10 expected=6
+CA128 GUARD_VERIFIED tic=2765 machine=11 expected=1
+CA121 COUNT tic=2775 candidates=0 sight=0 decisions=0 commands=0
+CA121 FRAME tic=2777 ms=98560.362700 interval=782.672000
+CA121 FRAME tic=2794 ms=99222.139400 interval=661.776700
+CA128 BATTLE tic=2800 living=6571 active=1 revision=2 groups=72 reduced=0 incomplete=0 damage=65 deaths=31 projectiles=39220 cannonShots=115
+CA121 SIM tic=2800 ms=99467.613700 roster=6001 attackers=5974 defenders=596 groups=72 moving=0 blocked=101 x=0.000 y=320.000 z=-0.000 angle=90.000
+CA121 MOTION tic=2800 displaced=5858 distance=305814.465171 contacts=0
+CA128 GUARD_VERIFIED tic=2800 machine=0 expected=12
+CA128 GUARD_VERIFIED tic=2800 machine=1 expected=16
+CA128 GUARD_VERIFIED tic=2800 machine=2 expected=11
+CA128 GUARD_VERIFIED tic=2800 machine=3 expected=10
+CA128 GUARD_VERIFIED tic=2800 machine=4 expected=23
+CA128 GUARD_VERIFIED tic=2800 machine=5 expected=36
+CA128 GUARD_VERIFIED tic=2800 machine=6 expected=1
+CA128 GUARD_VERIFIED tic=2800 machine=7 expected=3
+CA128 GUARD_VERIFIED tic=2800 machine=8 expected=4
+CA128 GUARD_VERIFIED tic=2800 machine=9 expected=5
+CA128 GUARD_VERIFIED tic=2800 machine=10 expected=7
+CA128 GUARD_VERIFIED tic=2800 machine=11 expected=1
+CA121 FRAME tic=2811 ms=99961.080100 interval=738.940700
+CA121 COUNT tic=2812 candidates=0 sight=0 decisions=0 commands=0
+CA121 FRAME tic=2828 ms=100759.315700 interval=798.235600
+CA128 BATTLE tic=2835 living=6571 active=1 revision=2 groups=74 reduced=0 incomplete=0 damage=71 deaths=31 projectiles=39510 cannonShots=127
+CA121 SIM tic=2835 ms=101100.208600 roster=6001 attackers=5974 defenders=596 groups=74 moving=1 blocked=88 x=0.000 y=320.000 z=-0.000 angle=90.000
+CA121 MOTION tic=2835 displaced=5868 distance=304035.621402 contacts=0
+CA128 GUARD_VERIFIED tic=2835 machine=0 expected=14
+CA128 GUARD_VERIFIED tic=2835 machine=1 expected=15
+CA128 GUARD_VERIFIED tic=2835 machine=2 expected=10
+CA128 GUARD_VERIFIED tic=2835 machine=3 expected=10
+CA128 GUARD_VERIFIED tic=2835 machine=4 expected=22
+CA128 GUARD_VERIFIED tic=2835 machine=5 expected=36
+CA128 GUARD_VERIFIED tic=2835 machine=6 expected=2
+CA128 GUARD_VERIFIED tic=2835 machine=7 expected=3
+CA128 GUARD_VERIFIED tic=2835 machine=8 expected=4
+CA128 GUARD_VERIFIED tic=2835 machine=9 expected=6
+CA128 GUARD_VERIFIED tic=2835 machine=10 expected=7
+CA128 GUARD_VERIFIED tic=2835 machine=11 expected=2
+CA121 FRAME tic=2845 ms=101510.899700 interval=751.584000
+CA121 COUNT tic=2849 candidates=0 sight=0 decisions=0 commands=0
+CA121 FRAME tic=2862 ms=102227.067200 interval=716.167500
+CA128 BATTLE tic=2870 living=6571 active=1 revision=2 groups=74 reduced=0 incomplete=0 damage=71 deaths=31 projectiles=39786 cannonShots=127
+CA121 SIM tic=2870 ms=102563.759100 roster=6001 attackers=5974 defenders=596 groups=74 moving=1 blocked=92 x=0.000 y=320.000 z=-0.000 angle=90.000
+CA121 MOTION tic=2870 displaced=5852 distance=310148.651678 contacts=0
+CA128 GUARD_VERIFIED tic=2870 machine=0 expected=15
+CA128 GUARD_VERIFIED tic=2870 machine=1 expected=15
+CA128 GUARD_VERIFIED tic=2870 machine=2 expected=10
+CA128 GUARD_VERIFIED tic=2870 machine=3 expected=9
+CA128 GUARD_VERIFIED tic=2870 machine=4 expected=22
+CA128 GUARD_VERIFIED tic=2870 machine=5 expected=38
+CA128 GUARD_VERIFIED tic=2870 machine=6 expected=2
+CA128 GUARD_VERIFIED tic=2870 machine=7 expected=3
+CA128 GUARD_VERIFIED tic=2870 machine=8 expected=4
+CA128 GUARD_VERIFIED tic=2870 machine=9 expected=6
+CA128 GUARD_VERIFIED tic=2870 machine=10 expected=5
+CA128 GUARD_VERIFIED tic=2870 machine=11 expected=2
+CA121 FRAME tic=2879 ms=102999.293100 interval=772.225900
+CA121 COUNT tic=2886 candidates=0 sight=0 decisions=0 commands=0
+CA121 FRAME tic=2896 ms=103790.876300 interval=791.583200
+CA128 BATTLE tic=2905 living=6571 active=1 revision=2 groups=72 reduced=0 incomplete=0 damage=72 deaths=31 projectiles=40043 cannonShots=128
+CA121 SIM tic=2905 ms=104196.071700 roster=6001 attackers=5974 defenders=596 groups=72 moving=0 blocked=80 x=0.000 y=320.000 z=-0.000 angle=90.000
+CA121 MOTION tic=2905 displaced=5860 distance=309108.333490 contacts=0
+CA128 GUARD_VERIFIED tic=2905 machine=0 expected=16
+CA128 GUARD_VERIFIED tic=2905 machine=1 expected=14
+CA128 GUARD_VERIFIED tic=2905 machine=2 expected=10
+CA128 GUARD_VERIFIED tic=2905 machine=3 expected=9
+CA128 GUARD_VERIFIED tic=2905 machine=4 expected=21
+CA128 GUARD_VERIFIED tic=2905 machine=5 expected=38
+CA128 GUARD_VERIFIED tic=2905 machine=6 expected=2
+CA128 GUARD_VERIFIED tic=2905 machine=7 expected=3
+CA128 GUARD_VERIFIED tic=2905 machine=8 expected=4
+CA128 GUARD_VERIFIED tic=2905 machine=9 expected=7
+CA128 GUARD_VERIFIED tic=2905 machine=10 expected=4
+CA128 GUARD_VERIFIED tic=2905 machine=11 expected=2
+CA121 FRAME tic=2913 ms=104530.790500 interval=739.914200
+CA121 COUNT tic=2923 candidates=0 sight=0 decisions=0 commands=0
+CA121 FRAME tic=2930 ms=105229.032300 interval=698.241800
+CA128 BATTLE tic=2940 living=6571 active=1 revision=2 groups=73 reduced=0 incomplete=0 damage=72 deaths=31 projectiles=40308 cannonShots=128
+CA121 SIM tic=2940 ms=105709.537500 roster=6001 attackers=5974 defenders=596 groups=73 moving=0 blocked=104 x=0.000 y=320.000 z=-0.000 angle=90.000
+CA121 MOTION tic=2940 displaced=5832 distance=303881.915776 contacts=0
+CA128 GUARD_VERIFIED tic=2940 machine=0 expected=16
+CA128 GUARD_VERIFIED tic=2940 machine=1 expected=12
+CA128 GUARD_VERIFIED tic=2940 machine=2 expected=10
+CA128 GUARD_VERIFIED tic=2940 machine=3 expected=10
+CA128 GUARD_VERIFIED tic=2940 machine=4 expected=23
+CA128 GUARD_VERIFIED tic=2940 machine=5 expected=38
+CA128 GUARD_VERIFIED tic=2940 machine=6 expected=2
+CA128 GUARD_VERIFIED tic=2940 machine=7 expected=3
+CA128 GUARD_VERIFIED tic=2940 machine=8 expected=4
+CA128 GUARD_VERIFIED tic=2940 machine=9 expected=6
+CA128 GUARD_VERIFIED tic=2940 machine=10 expected=4
+CA128 GUARD_VERIFIED tic=2940 machine=11 expected=2
+CA121 FRAME tic=2947 ms=106048.744800 interval=819.712500
+CA121 COUNT tic=2960 candidates=0 sight=0 decisions=0 commands=0
+CA121 FRAME tic=2964 ms=106836.663500 interval=787.918700
+CA128 BATTLE tic=2975 living=6571 active=1 revision=2 groups=71 reduced=0 incomplete=0 damage=73 deaths=31 projectiles=40546 cannonShots=129
+CA121 SIM tic=2975 ms=107303.948400 roster=6001 attackers=5974 defenders=596 groups=71 moving=0 blocked=97 x=0.000 y=320.000 z=-0.000 angle=90.000
+CA121 MOTION tic=2975 displaced=5836 distance=307051.238178 contacts=0
+CA128 GUARD_VERIFIED tic=2975 machine=0 expected=14
+CA128 GUARD_VERIFIED tic=2975 machine=1 expected=13
+CA128 GUARD_VERIFIED tic=2975 machine=2 expected=10
+CA128 GUARD_VERIFIED tic=2975 machine=3 expected=10
+CA128 GUARD_VERIFIED tic=2975 machine=4 expected=23
+CA128 GUARD_VERIFIED tic=2975 machine=5 expected=38
+CA128 GUARD_VERIFIED tic=2975 machine=6 expected=2
+CA128 GUARD_VERIFIED tic=2975 machine=7 expected=3
+CA128 GUARD_VERIFIED tic=2975 machine=8 expected=4
+CA128 GUARD_VERIFIED tic=2975 machine=9 expected=6
+CA128 GUARD_VERIFIED tic=2975 machine=10 expected=4
+CA128 GUARD_VERIFIED tic=2975 machine=11 expected=2
+CA121 FRAME tic=2981 ms=107574.178300 interval=737.514800
+CA121 FRAME tic=2998 ms=108278.757800 interval=704.579500
+CA121 COUNT tic=2997 candidates=0 sight=0 decisions=0 commands=0
+CA128 BATTLE tic=3010 living=6571 active=1 revision=2 groups=70 reduced=0 incomplete=0 damage=73 deaths=31 projectiles=40798 cannonShots=129
+CA121 SIM tic=3010 ms=108850.472000 roster=6001 attackers=5974 defenders=596 groups=70 moving=0 blocked=103 x=0.000 y=320.000 z=-0.000 angle=90.000
+CA121 MOTION tic=3010 displaced=5846 distance=304240.358258 contacts=0
+CA128 GUARD_VERIFIED tic=3010 machine=0 expected=13
+CA128 GUARD_VERIFIED tic=3010 machine=1 expected=13
+CA128 GUARD_VERIFIED tic=3010 machine=2 expected=10
+CA128 GUARD_VERIFIED tic=3010 machine=3 expected=11
+CA128 GUARD_VERIFIED tic=3010 machine=4 expected=24
+CA128 GUARD_VERIFIED tic=3010 machine=5 expected=38
+CA128 GUARD_VERIFIED tic=3010 machine=6 expected=2
+CA128 GUARD_VERIFIED tic=3010 machine=7 expected=3
+CA128 GUARD_VERIFIED tic=3010 machine=8 expected=4
+CA128 GUARD_VERIFIED tic=3010 machine=9 expected=6
+CA128 GUARD_VERIFIED tic=3010 machine=10 expected=4
+CA128 GUARD_VERIFIED tic=3010 machine=11 expected=2
+CA121 FRAME tic=3015 ms=109094.277100 interval=815.519300
+CA121 FRAME tic=3032 ms=109862.897800 interval=768.620700
+CA121 COUNT tic=3034 candidates=0 sight=0 decisions=0 commands=0
+CA128 BATTLE tic=3045 living=6571 active=1 revision=2 groups=76 reduced=0 incomplete=0 damage=73 deaths=31 projectiles=41044 cannonShots=129
+CA121 SIM tic=3045 ms=110383.611300 roster=6001 attackers=5974 defenders=596 groups=76 moving=0 blocked=110 x=0.000 y=320.000 z=-0.000 angle=90.000
+CA121 MOTION tic=3045 displaced=5850 distance=299829.627908 contacts=0
+CA128 GUARD_VERIFIED tic=3045 machine=0 expected=11
+CA128 GUARD_VERIFIED tic=3045 machine=1 expected=13
+CA128 GUARD_VERIFIED tic=3045 machine=2 expected=10
+CA128 GUARD_VERIFIED tic=3045 machine=3 expected=11
+CA128 GUARD_VERIFIED tic=3045 machine=4 expected=23
+CA128 GUARD_VERIFIED tic=3045 machine=5 expected=38
+CA128 GUARD_VERIFIED tic=3045 machine=6 expected=2
+CA128 GUARD_VERIFIED tic=3045 machine=7 expected=3
+CA128 GUARD_VERIFIED tic=3045 machine=8 expected=4
+CA128 GUARD_VERIFIED tic=3045 machine=9 expected=6
+CA128 GUARD_VERIFIED tic=3045 machine=10 expected=3
+CA128 GUARD_VERIFIED tic=3045 machine=11 expected=2
+CA121 FRAME tic=3049 ms=110613.298100 interval=750.400300
+CA121 FRAME tic=3066 ms=111357.556600 interval=744.258500
+CA121 COUNT tic=3071 candidates=0 sight=0 decisions=0 commands=0
+CA128 BATTLE tic=3080 living=6569 active=1 revision=2 groups=69 reduced=0 incomplete=0 damage=75 deaths=33 projectiles=41271 cannonShots=131
+CA121 SIM tic=3080 ms=112039.233400 roster=6001 attackers=5972 defenders=596 groups=69 moving=0 blocked=125 x=0.000 y=320.000 z=-0.000 angle=90.000
+CA121 MOTION tic=3080 displaced=5843 distance=290829.858431 contacts=0
+CA128 GUARD_VERIFIED tic=3080 machine=0 expected=11
+CA128 GUARD_VERIFIED tic=3080 machine=1 expected=13
+CA128 GUARD_VERIFIED tic=3080 machine=2 expected=10
+CA128 GUARD_VERIFIED tic=3080 machine=3 expected=11
+CA128 GUARD_VERIFIED tic=3080 machine=4 expected=24
+CA128 GUARD_VERIFIED tic=3080 machine=5 expected=38
+CA128 GUARD_VERIFIED tic=3080 machine=6 expected=1
+CA128 GUARD_VERIFIED tic=3080 machine=7 expected=3
+CA128 GUARD_VERIFIED tic=3080 machine=8 expected=5
+CA128 GUARD_VERIFIED tic=3080 machine=9 expected=6
+CA128 GUARD_VERIFIED tic=3080 machine=10 expected=3
+CA128 GUARD_VERIFIED tic=3080 machine=11 expected=2
+CA121 FRAME tic=3083 ms=112194.978200 interval=837.421600
+CA121 FRAME tic=3100 ms=112939.159100 interval=744.180900
+CA121 COUNT tic=3108 candidates=0 sight=0 decisions=0 commands=0
+CA128 BATTLE tic=3115 living=6568 active=1 revision=2 groups=72 reduced=0 incomplete=0 damage=77 deaths=34 projectiles=41512 cannonShots=132
+CA121 SIM tic=3115 ms=113577.654000 roster=6001 attackers=5971 defenders=596 groups=72 moving=0 blocked=123 x=0.000 y=320.000 z=-0.000 angle=90.000
+CA121 MOTION tic=3115 displaced=5836 distance=290958.989061 contacts=0
+CA128 GUARD_VERIFIED tic=3115 machine=0 expected=11
+CA128 GUARD_VERIFIED tic=3115 machine=1 expected=12
+CA128 GUARD_VERIFIED tic=3115 machine=2 expected=10
+CA128 GUARD_VERIFIED tic=3115 machine=3 expected=12
+CA128 GUARD_VERIFIED tic=3115 machine=4 expected=23
+CA128 GUARD_VERIFIED tic=3115 machine=5 expected=38
+CA128 GUARD_VERIFIED tic=3115 machine=6 expected=1
+CA128 GUARD_VERIFIED tic=3115 machine=7 expected=3
+CA128 GUARD_VERIFIED tic=3115 machine=8 expected=5
+CA128 GUARD_VERIFIED tic=3115 machine=9 expected=5
+CA128 GUARD_VERIFIED tic=3115 machine=10 expected=3
+CA128 GUARD_VERIFIED tic=3115 machine=11 expected=1
+CA121 FRAME tic=3117 ms=113682.307600 interval=743.148500
+CA121 FRAME tic=3134 ms=114493.107400 interval=810.799800
+CA121 COUNT tic=3145 candidates=0 sight=0 decisions=0 commands=0
+CA128 BATTLE tic=3150 living=6568 active=1 revision=2 groups=74 reduced=0 incomplete=0 damage=77 deaths=34 projectiles=41735 cannonShots=132
+CA121 SIM tic=3150 ms=115253.518100 roster=6001 attackers=5971 defenders=596 groups=74 moving=0 blocked=111 x=0.000 y=320.000 z=-0.000 angle=90.000
+CA121 MOTION tic=3150 displaced=5843 distance=286185.184131 contacts=0
+CA128 GUARD_VERIFIED tic=3150 machine=0 expected=10
+CA128 GUARD_VERIFIED tic=3150 machine=1 expected=13
+CA128 GUARD_VERIFIED tic=3150 machine=2 expected=11
+CA128 GUARD_VERIFIED tic=3150 machine=3 expected=12
+CA128 GUARD_VERIFIED tic=3150 machine=4 expected=23
+CA128 GUARD_VERIFIED tic=3150 machine=5 expected=37
+CA128 GUARD_VERIFIED tic=3150 machine=6 expected=1
+CA128 GUARD_VERIFIED tic=3150 machine=7 expected=3
+CA128 GUARD_VERIFIED tic=3150 machine=8 expected=5
+CA128 GUARD_VERIFIED tic=3150 machine=9 expected=6
+CA128 GUARD_VERIFIED tic=3150 machine=10 expected=3
+CA128 GUARD_VERIFIED tic=3150 machine=11 expected=1
+CA121 FRAME tic=3151 ms=115330.427600 interval=837.320200
+CA121 FRAME tic=3168 ms=116101.418700 interval=770.991100
+CA121 COUNT tic=3182 candidates=0 sight=0 decisions=0 commands=0
+CA121 FRAME tic=3185 ms=116861.560600 interval=760.141900
+CA128 BATTLE tic=3185 living=6565 active=1 revision=2 groups=73 reduced=0 incomplete=0 damage=80 deaths=37 projectiles=41924 cannonShots=144
+CA121 SIM tic=3185 ms=116887.278900 roster=6001 attackers=5969 defenders=595 groups=73 moving=0 blocked=128 x=0.000 y=320.000 z=-0.000 angle=90.000
+CA121 MOTION tic=3185 displaced=5848 distance=279449.649327 contacts=0
+CA128 GUARD_VERIFIED tic=3185 machine=0 expected=10
+CA128 GUARD_VERIFIED tic=3185 machine=1 expected=13
+CA128 GUARD_VERIFIED tic=3185 machine=2 expected=11
+CA128 GUARD_VERIFIED tic=3185 machine=3 expected=10
+CA128 GUARD_VERIFIED tic=3185 machine=4 expected=22
+CA128 GUARD_VERIFIED tic=3185 machine=5 expected=38
+CA128 GUARD_VERIFIED tic=3185 machine=6 expected=2
+CA128 GUARD_VERIFIED tic=3185 machine=7 expected=3
+CA128 GUARD_VERIFIED tic=3185 machine=8 expected=4
+CA128 GUARD_VERIFIED tic=3185 machine=9 expected=6
+CA128 GUARD_VERIFIED tic=3185 machine=10 expected=3
+CA128 GUARD_VERIFIED tic=3185 machine=11 expected=1
+CA121 FRAME tic=3202 ms=117731.370000 interval=869.809400
+CA121 FRAME tic=3219 ms=118539.993000 interval=808.623000
+CA121 COUNT tic=3219 candidates=0 sight=0 decisions=0 commands=0
+CA128 BATTLE tic=3220 living=6565 active=1 revision=2 groups=74 reduced=0 incomplete=0 damage=80 deaths=37 projectiles=42054 cannonShots=144
+CA121 SIM tic=3220 ms=118586.355600 roster=6001 attackers=5969 defenders=595 groups=74 moving=0 blocked=139 x=0.000 y=320.000 z=-0.000 angle=90.000
+CA121 MOTION tic=3220 displaced=5842 distance=286217.975821 contacts=0
+CA128 GUARD_VERIFIED tic=3220 machine=0 expected=10
+CA128 GUARD_VERIFIED tic=3220 machine=1 expected=13
+CA128 GUARD_VERIFIED tic=3220 machine=2 expected=10
+CA128 GUARD_VERIFIED tic=3220 machine=3 expected=10
+CA128 GUARD_VERIFIED tic=3220 machine=4 expected=21
+CA128 GUARD_VERIFIED tic=3220 machine=5 expected=42
+CA128 GUARD_VERIFIED tic=3220 machine=6 expected=2
+CA128 GUARD_VERIFIED tic=3220 machine=7 expected=3
+CA128 GUARD_VERIFIED tic=3220 machine=8 expected=4
+CA128 GUARD_VERIFIED tic=3220 machine=9 expected=6
+CA128 GUARD_VERIFIED tic=3220 machine=10 expected=4
+CA128 GUARD_VERIFIED tic=3220 machine=11 expected=2
+CA121 FRAME tic=3236 ms=119259.911900 interval=719.918900
+CA121 FRAME tic=3253 ms=120032.375100 interval=772.463200
+CA128 BATTLE tic=3255 living=6565 active=1 revision=2 groups=73 reduced=0 incomplete=0 damage=80 deaths=37 projectiles=42178 cannonShots=144
+CA121 SIM tic=3255 ms=120153.756500 roster=6001 attackers=5969 defenders=595 groups=73 moving=0 blocked=129 x=0.000 y=320.000 z=-0.000 angle=90.000
+CA121 MOTION tic=3255 displaced=5820 distance=279543.965807 contacts=0
+CA128 GUARD_VERIFIED tic=3255 machine=0 expected=10
+CA128 GUARD_VERIFIED tic=3255 machine=1 expected=14
+CA128 GUARD_VERIFIED tic=3255 machine=2 expected=10
+CA128 GUARD_VERIFIED tic=3255 machine=3 expected=10
+CA128 GUARD_VERIFIED tic=3255 machine=4 expected=22
+CA128 GUARD_VERIFIED tic=3255 machine=5 expected=44
+CA128 GUARD_VERIFIED tic=3255 machine=6 expected=2
+CA128 GUARD_VERIFIED tic=3255 machine=7 expected=3
+CA128 GUARD_VERIFIED tic=3255 machine=8 expected=4
+CA128 GUARD_VERIFIED tic=3255 machine=9 expected=6
+CA128 GUARD_VERIFIED tic=3255 machine=10 expected=4
+CA128 GUARD_VERIFIED tic=3255 machine=11 expected=2
+CA121 COUNT tic=3256 candidates=0 sight=0 decisions=0 commands=0
+CA121 FRAME tic=3270 ms=120878.498100 interval=846.123000
+CA121 FRAME tic=3287 ms=121661.123300 interval=782.625200
+CA128 BATTLE tic=3290 living=6565 active=1 revision=2 groups=74 reduced=0 incomplete=0 damage=80 deaths=37 projectiles=42307 cannonShots=144
+CA121 SIM tic=3290 ms=121805.041900 roster=6001 attackers=5969 defenders=595 groups=74 moving=0 blocked=147 x=0.000 y=320.000 z=-0.000 angle=90.000
+CA121 MOTION tic=3290 displaced=5790 distance=275974.871903 contacts=0
+CA128 GUARD_VERIFIED tic=3290 machine=0 expected=10
+CA128 GUARD_VERIFIED tic=3290 machine=1 expected=13
+CA128 GUARD_VERIFIED tic=3290 machine=2 expected=10
+CA128 GUARD_VERIFIED tic=3290 machine=3 expected=9
+CA128 GUARD_VERIFIED tic=3290 machine=4 expected=21
+CA128 GUARD_VERIFIED tic=3290 machine=5 expected=44
+CA128 GUARD_VERIFIED tic=3290 machine=6 expected=2
+CA128 GUARD_VERIFIED tic=3290 machine=7 expected=4
+CA128 GUARD_VERIFIED tic=3290 machine=8 expected=4
+CA128 GUARD_VERIFIED tic=3290 machine=9 expected=5
+CA128 GUARD_VERIFIED tic=3290 machine=10 expected=5
+CA128 GUARD_VERIFIED tic=3290 machine=11 expected=2
+CA121 COUNT tic=3293 candidates=0 sight=0 decisions=0 commands=0
+CA121 FRAME tic=3304 ms=122410.654400 interval=749.531100
+CA121 FRAME tic=3321 ms=123193.240000 interval=782.585600
+CA128 BATTLE tic=3325 living=6565 active=1 revision=2 groups=73 reduced=0 incomplete=0 damage=81 deaths=37 projectiles=42415 cannonShots=145
+CA121 SIM tic=3325 ms=123403.472600 roster=6001 attackers=5969 defenders=595 groups=73 moving=0 blocked=157 x=0.000 y=320.000 z=-0.000 angle=90.000
+CA121 MOTION tic=3325 displaced=5806 distance=277516.515977 contacts=0
+CA128 GUARD_VERIFIED tic=3325 machine=0 expected=10
+CA128 GUARD_VERIFIED tic=3325 machine=1 expected=14
+CA128 GUARD_VERIFIED tic=3325 machine=2 expected=10
+CA128 GUARD_VERIFIED tic=3325 machine=3 expected=9
+CA128 GUARD_VERIFIED tic=3325 machine=4 expected=22
+CA128 GUARD_VERIFIED tic=3325 machine=5 expected=44
+CA128 GUARD_VERIFIED tic=3325 machine=6 expected=2
+CA128 GUARD_VERIFIED tic=3325 machine=7 expected=4
+CA128 GUARD_VERIFIED tic=3325 machine=8 expected=4
+CA128 GUARD_VERIFIED tic=3325 machine=9 expected=4
+CA128 GUARD_VERIFIED tic=3325 machine=10 expected=5
+CA128 GUARD_VERIFIED tic=3325 machine=11 expected=2
+CA121 COUNT tic=3330 candidates=0 sight=0 decisions=0 commands=0
+CA121 FRAME tic=3338 ms=124016.682200 interval=823.442200
+CA121 FRAME tic=3355 ms=124778.509800 interval=761.827600
+CA128 BATTLE tic=3360 living=6565 active=1 revision=2 groups=73 reduced=0 incomplete=0 damage=82 deaths=37 projectiles=42530 cannonShots=146
+CA121 SIM tic=3360 ms=125008.968900 roster=6001 attackers=5969 defenders=595 groups=73 moving=0 blocked=164 x=0.000 y=320.000 z=-0.000 angle=90.000
+CA121 MOTION tic=3360 displaced=5840 distance=272653.589517 contacts=0
+CA128 GUARD_VERIFIED tic=3360 machine=0 expected=10
+CA128 GUARD_VERIFIED tic=3360 machine=1 expected=14
+CA128 GUARD_VERIFIED tic=3360 machine=2 expected=10
+CA128 GUARD_VERIFIED tic=3360 machine=3 expected=11
+CA128 GUARD_VERIFIED tic=3360 machine=4 expected=22
+CA128 GUARD_VERIFIED tic=3360 machine=5 expected=44
+CA128 GUARD_VERIFIED tic=3360 machine=6 expected=2
+CA128 GUARD_VERIFIED tic=3360 machine=7 expected=4
+CA128 GUARD_VERIFIED tic=3360 machine=8 expected=4
+CA128 GUARD_VERIFIED tic=3360 machine=9 expected=4
+CA128 GUARD_VERIFIED tic=3360 machine=10 expected=4
+CA128 GUARD_VERIFIED tic=3360 machine=11 expected=2
+CA121 COUNT tic=3367 candidates=0 sight=0 decisions=0 commands=0
+CA121 FRAME tic=3372 ms=125516.355200 interval=737.845400
+CA121 FRAME tic=3389 ms=126323.418700 interval=807.063500
+CA128 BATTLE tic=3395 living=6565 active=1 revision=2 groups=75 reduced=0 incomplete=0 damage=82 deaths=37 projectiles=42629 cannonShots=146
+CA121 SIM tic=3395 ms=126611.912300 roster=6001 attackers=5969 defenders=595 groups=75 moving=0 blocked=159 x=0.000 y=320.000 z=-0.000 angle=90.000
+CA121 MOTION tic=3395 displaced=5796 distance=262080.219531 contacts=0
+CA128 GUARD_VERIFIED tic=3395 machine=0 expected=14
+CA128 GUARD_VERIFIED tic=3395 machine=1 expected=14
+CA128 GUARD_VERIFIED tic=3395 machine=2 expected=10
+CA128 GUARD_VERIFIED tic=3395 machine=3 expected=12
+CA128 GUARD_VERIFIED tic=3395 machine=4 expected=23
+CA128 GUARD_VERIFIED tic=3395 machine=5 expected=44
+CA128 GUARD_VERIFIED tic=3395 machine=6 expected=2
+CA128 GUARD_VERIFIED tic=3395 machine=7 expected=3
+CA128 GUARD_VERIFIED tic=3395 machine=8 expected=4
+CA128 GUARD_VERIFIED tic=3395 machine=9 expected=4
+CA128 GUARD_VERIFIED tic=3395 machine=10 expected=4
+CA128 GUARD_VERIFIED tic=3395 machine=11 expected=2
+CA121 COUNT tic=3404 candidates=0 sight=0 decisions=0 commands=0
+CA121 FRAME tic=3406 ms=127156.084900 interval=832.666200
+CA121 FRAME tic=3423 ms=127875.846600 interval=719.761700
+CA128 BATTLE tic=3430 living=6564 active=1 revision=2 groups=74 reduced=0 incomplete=0 damage=83 deaths=38 projectiles=42752 cannonShots=147
+CA121 SIM tic=3430 ms=128180.691000 roster=6001 attackers=5968 defenders=595 groups=74 moving=0 blocked=166 x=0.000 y=320.000 z=-0.000 angle=90.000
+CA121 MOTION tic=3430 displaced=5782 distance=261663.456920 contacts=0
+CA128 GUARD_VERIFIED tic=3430 machine=0 expected=14
+CA128 GUARD_VERIFIED tic=3430 machine=1 expected=14
+CA128 GUARD_VERIFIED tic=3430 machine=2 expected=11
+CA128 GUARD_VERIFIED tic=3430 machine=3 expected=12
+CA128 GUARD_VERIFIED tic=3430 machine=4 expected=22
+CA128 GUARD_VERIFIED tic=3430 machine=5 expected=42
+CA128 GUARD_VERIFIED tic=3430 machine=6 expected=1
+CA128 GUARD_VERIFIED tic=3430 machine=7 expected=3
+CA128 GUARD_VERIFIED tic=3430 machine=8 expected=4
+CA128 GUARD_VERIFIED tic=3430 machine=9 expected=4
+CA128 GUARD_VERIFIED tic=3430 machine=10 expected=4
+CA128 GUARD_VERIFIED tic=3430 machine=11 expected=2
+CA121 FRAME tic=3440 ms=128626.508700 interval=750.662100
+CA121 COUNT tic=3441 candidates=0 sight=0 decisions=0 commands=0
+CA121 FRAME tic=3457 ms=129463.127700 interval=836.619000
+CA128 BATTLE tic=3465 living=6563 active=1 revision=2 groups=73 reduced=0 incomplete=0 damage=84 deaths=39 projectiles=42869 cannonShots=148
+CA121 SIM tic=3465 ms=129880.670100 roster=6001 attackers=5967 defenders=595 groups=73 moving=0 blocked=178 x=0.000 y=320.000 z=-0.000 angle=90.000
+CA121 MOTION tic=3465 displaced=5777 distance=260346.835134 contacts=0
+CA128 GUARD_VERIFIED tic=3465 machine=0 expected=14
+CA128 GUARD_VERIFIED tic=3465 machine=1 expected=13
+CA128 GUARD_VERIFIED tic=3465 machine=2 expected=11
+CA128 GUARD_VERIFIED tic=3465 machine=3 expected=12
+CA128 GUARD_VERIFIED tic=3465 machine=4 expected=22
+CA128 GUARD_VERIFIED tic=3465 machine=5 expected=42
+CA128 GUARD_VERIFIED tic=3465 machine=6 expected=1
+CA128 GUARD_VERIFIED tic=3465 machine=7 expected=3
+CA128 GUARD_VERIFIED tic=3465 machine=8 expected=4
+CA128 GUARD_VERIFIED tic=3465 machine=9 expected=4
+CA128 GUARD_VERIFIED tic=3465 machine=10 expected=4
+CA128 GUARD_VERIFIED tic=3465 machine=11 expected=1
+CA121 FRAME tic=3474 ms=130291.312500 interval=828.184800
+CA121 COUNT tic=3478 candidates=0 sight=0 decisions=0 commands=0
+CA121 FRAME tic=3491 ms=131011.018700 interval=719.706200
+CA128 BATTLE tic=3500 living=6563 active=1 revision=2 groups=75 reduced=0 incomplete=0 damage=85 deaths=39 projectiles=42979 cannonShots=148
+CA121 SIM tic=3500 ms=131412.203900 roster=6001 attackers=5967 defenders=595 groups=75 moving=0 blocked=189 x=0.000 y=320.000 z=-0.000 angle=90.000
+CA121 MOTION tic=3500 displaced=5773 distance=258470.837003 contacts=0
+CA121 COMPLETE tic=3500
+CA128 GUARD_VERIFIED tic=3500 machine=0 expected=14
+CA128 GUARD_VERIFIED tic=3500 machine=1 expected=13
+CA128 GUARD_VERIFIED tic=3500 machine=2 expected=11
+CA128 GUARD_VERIFIED tic=3500 machine=3 expected=12
+CA128 GUARD_VERIFIED tic=3500 machine=4 expected=21
+CA128 GUARD_VERIFIED tic=3500 machine=5 expected=42
+CA128 GUARD_VERIFIED tic=3500 machine=6 expected=1
+CA128 GUARD_VERIFIED tic=3500 machine=7 expected=3
+CA128 GUARD_VERIFIED tic=3500 machine=8 expected=4
+CA128 GUARD_VERIFIED tic=3500 machine=9 expected=4
+CA128 GUARD_VERIFIED tic=3500 machine=10 expected=4
+CA128 GUARD_VERIFIED tic=3500 machine=11 expected=1
+CA121 FRAME tic=3508 ms=131829.597600 interval=818.578900
+CA121 COUNT tic=3515 candidates=0 sight=0 decisions=0 commands=0
+CA121 FRAME tic=3525 ms=132741.924100 interval=912.326500
+CA128 BATTLE tic=3535 living=6561 active=1 revision=2 groups=76 reduced=0 incomplete=0 damage=88 deaths=41 projectiles=43100 cannonShots=160
+CA121 SIM tic=3535 ms=133188.571300 roster=6001 attackers=5965 defenders=595 groups=76 moving=0 blocked=173 x=0.000 y=320.000 z=-0.000 angle=90.000
+CA121 MOTION tic=3535 displaced=5775 distance=249040.968761 contacts=0
+CA128 GUARD_VERIFIED tic=3535 machine=0 expected=14
+CA128 GUARD_VERIFIED tic=3535 machine=1 expected=12
+CA128 GUARD_VERIFIED tic=3535 machine=2 expected=11
+CA128 GUARD_VERIFIED tic=3535 machine=3 expected=12
+CA128 GUARD_VERIFIED tic=3535 machine=4 expected=22
+CA128 GUARD_VERIFIED tic=3535 machine=5 expected=40
+CA128 GUARD_VERIFIED tic=3535 machine=6 expected=2
+CA128 GUARD_VERIFIED tic=3535 machine=7 expected=3
+CA128 GUARD_VERIFIED tic=3535 machine=8 expected=4
+CA128 GUARD_VERIFIED tic=3535 machine=9 expected=4
+CA128 GUARD_VERIFIED tic=3535 machine=10 expected=4
+CA128 GUARD_VERIFIED tic=3535 machine=11 expected=2
+CA121 FRAME tic=3542 ms=133508.881100 interval=766.957000
+CA121 COUNT tic=3552 candidates=0 sight=0 decisions=0 commands=0
+CA121 FRAME tic=3559 ms=134205.654700 interval=696.773600

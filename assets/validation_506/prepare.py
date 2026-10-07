@@ -10,6 +10,7 @@ ROOT = Path(__file__).resolve().parents[2]
 HERE = Path(__file__).resolve().parent
 OUT = ROOT / 'build/issue128'
 BASE = '0e2b9eab9e93096993f04beab5d5ef94d69ca0e3'
+EXPERIMENT = '031c8877636a7dfd50fefb7fcf117f956b25d886'
 parser = argparse.ArgumentParser(description=__doc__)
 parser.add_argument('--baseline', action='store_true')
 args = parser.parse_args()
@@ -30,7 +31,10 @@ if args.baseline:
         baseline = {n.removeprefix('src/'): z.read(n) for n in z.namelist() if not n.endswith('/')}
     package('baseline.pk3', baseline)
 
-current = {p.relative_to(ROOT/'src').as_posix():p.read_bytes() for p in (ROOT/'src').rglob('*') if p.is_file()}
+production = {p.relative_to(ROOT/'src').as_posix():p.read_bytes() for p in (ROOT/'src').rglob('*') if p.is_file()}
+subprocess.run(['git','archive','--format=zip','--output',str(OUT/'experiment-source.zip'),EXPERIMENT,'src'],check=True,cwd=ROOT)
+with zipfile.ZipFile(OUT/'experiment-source.zip') as z:
+    current={n.removeprefix('src/'):z.read(n) for n in z.namelist() if not n.endswith('/')}
 port = 'caelum/world/CaelumPortSiege.zs'
 text = current[port].decode('utf-8-sig').replace('\r\n', '\n')
 variants = {'current': text}
@@ -72,11 +76,12 @@ replacement='''            if(!gun.EligibleTarget(candidate) || gun.Barrel==null
             if(!gun.Barrel.CheckSight(candidate))continue;'''
 assert variants['no-stagger'].count(needle)==1
 variants['pruned-cannon']=variants['no-stagger'].replace(needle,replacement)
-manifest = {'baseline_commit': BASE, 'variants': {}}
+manifest = {'baseline_commit': BASE, 'experiment_commit':EXPERIMENT, 'variants': {}}
 for name, source in variants.items():
     members = dict(current)
     members[port] = source.encode('utf-8')
     manifest['variants'][name] = package(name+'.pk3', members)
+manifest['production_sha256']=package('production.pk3',production)
 observer = (ROOT/'assets/validation_505/observer.zs').read_bytes()
 addon = {'ZSCRIPT': b'version "4.14"\n#include "observer.zs"\n#include "input_probe.zs"\n',
          'MAPINFO': b'GameInfo { AddEventHandlers = "CA121Profiler", "CA121Observer", "CA116InputProbe" }\n',

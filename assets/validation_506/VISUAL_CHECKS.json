@@ -1,0 +1,136 @@
+{
+  "fixed_camera": {
+    "resolution": [
+      1520,
+      825
+    ],
+    "early": {
+      "image": "ca128-early.png",
+      "native_fps_snapshot": 15,
+      "think_ms_snapshot": 17.09
+    },
+    "late": {
+      "image": "ca128-late.png",
+      "native_fps_snapshot": 1,
+      "think_ms_snapshot": 31.44
+    }
+  },
+  "relocated_player_control": {
+    "images": [
+      "ca128-battle-early.png",
+      "ca128-battle-later.png"
+    ],
+    "requested_position": [
+      -16064,
+      -15140,
+      768.5
+    ],
+    "invulnerable_observer": true,
+    "native_player_physics_not_disabled": true,
+    "npc_relocation": false,
+    "attacks_replaced": false,
+    "window": {
+      "tics": [
+        70,
+        1050
+      ],
+      "elapsed_ms": 28101.333400000003,
+      "simulation_tics_per_second": 34.873790010263356,
+      "wall_ms_per_tic": 28.674830000000004,
+      "35_tic_window_ms_per_tic": {
+        "n": 28,
+        "mean": 28.674830000000004,
+        "median": 28.547949999999922,
+        "p95": 30.454927428571462,
+        "min": 25.850631428571432,
+        "max": 31.446114285714273
+      },
+      "frame_callback_interval_ms": {
+        "n": 782,
+        "mean": 35.81080920716113,
+        "median": 31.42749999999978,
+        "p95": 57.70427000000317,
+        "min": 19.4341000000004,
+        "max": 146.6880999999994
+      },
+      "callback_fps": 27.924529552379646,
+      "tics_between_callbacks": {
+        "n": 782,
+        "mean": 1.2531969309462916,
+        "median": 1.0,
+        "p95": 2.0,
+        "min": 0,
+        "max": 5
+      },
+      "start_scene": {
+        "tic": 70,
+        "ms": 7079.4986,
+        "roster": 6001,
+        "attackers": 6001,
+        "defenders": 600,
+        "groups": 66,
+        "moving": 0,
+        "blocked": 0,
+        "x": -16064.0,
+        "y": -15140.0,
+        "z": 207.548,
+        "angle": 270.0
+      },
+      "end_scene": {
+        "tic": 1050,
+        "ms": 35180.832,
+        "roster": 6001,
+        "attackers": 5994,
+        "defenders": 600,
+        "groups": 66,
+        "moving": 0,
+        "blocked": 21,
+        "x": -16064.0,
+        "y": -15140.0,
+        "z": 0.0,
+        "angle": 270.0
+      },
+      "sampled_tics": 27,
+      "measured_exclusive_ms_per_sampled_tic": 0,
+      "categories": {},
+      "derived_native_los_ms_by_parent": {},
+      "every_call_rare_scopes": {},
+      "frequencies": {
+        "candidates": {
+          "n": 27,
+          "mean": 0,
+          "median": 0,
+          "p95": 0.0,
+          "min": 0,
+          "max": 0
+        },
+        "sight": {
+          "n": 27,
+          "mean": 0,
+          "median": 0,
+          "p95": 0.0,
+          "min": 0,
+          "max": 0
+        },
+        "decisions": {
+          "n": 27,
+          "mean": 0,
+          "median": 0,
+          "p95": 0.0,
+          "min": 0,
+          "max": 0
+        },
+        "commands": {
+          "n": 27,
+          "mean": 0,
+          "median": 0,
+          "p95": 0.0,
+          "min": 0,
+          "max": 0
+        }
+      }
+    },
+    "late_native_fps_snapshot": 31,
+    "interpretation": "Live ordinary combat is visible. Native player authority/physics moves the initially elevated observer; this is a different camera/target trajectory and shorter route, excluded from matched performance comparisons."
+  }
+}

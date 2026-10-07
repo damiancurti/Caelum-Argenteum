@@ -5,6 +5,7 @@ param(
     [string]$Map = 'QA128A',
     [string]$Script = 'checks.cfg',
     [string]$LoadGame = '',
+    [int]$MinimumTic = 0,
     [string]$Expected = 'CA128 COMPLETE checks=\d+ failures=0'
 )
 $ErrorActionPreference = 'Stop'
@@ -27,7 +28,18 @@ while ($owned -and !$owned.HasExited) {
     }
 }
 $raw = [IO.File]::ReadAllText((Join-Path $work "$Label.txt"))
+if ($raw -match 'Script error,|VM execution aborted|Unable to resolve all fields|CA128 FAIL') { throw "Native error in completed log: $Label" }
 if ($raw -notmatch $Expected) { throw "Missing expected completion in $Label" }
+if ($MinimumTic -gt 0) {
+    $ticks = @([regex]::Matches($raw, 'CA121 SIM tic=(\d+)') | ForEach-Object { [int]$_.Groups[1].Value })
+    if (!$ticks.Count -or $ticks[-1] -lt $MinimumTic) { throw "Native run did not reach tic $MinimumTic : $Label" }
+    $record | Add-Member -NotePropertyName last_observed_tic -NotePropertyValue $ticks[-1] -Force
+}
+$exitDeadline = [DateTime]::UtcNow.AddSeconds(5)
+while (Get-Process -Id $record.pid -ErrorAction SilentlyContinue) {
+    if ([DateTime]::UtcNow -gt $exitDeadline) { throw "Owned engine PID has not left the process list: $Label" }
+    Start-Sleep -Milliseconds 100
+}
 $record | Add-Member -NotePropertyName completed_utc -NotePropertyValue ([DateTime]::UtcNow.ToString('o')) -Force
 $record | Add-Member -NotePropertyName expected -NotePropertyValue $Expected -Force
 $record | ConvertTo-Json -Depth 8 | Set-Content -LiteralPath (Join-Path $work "$Label-run.json") -Encoding utf8

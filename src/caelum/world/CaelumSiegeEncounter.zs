@@ -19,7 +19,7 @@ class CaelumSiegeCombatant : Object play
     int TargetRefreshTic;
     // Caché del mando; la revisión del puerto reconstruye sólo estos datos.
     Actor SharedTarget;
-    int SharedTargetTic, NextSharedTargetTic;
+    int NextSharedTargetTic;
     bool SharedTargetValid;
     Actor NavigationTarget;
     vector3 CrewOffset;
@@ -136,6 +136,13 @@ class CaelumSiegeEncounter : Actor
         entry.CommandPriority = body is "CaelumZupayColossus" ? 1 : 2;
         body.SiegeCombatant = entry;
         Attackers.Push(entry);
+        // Un guardia sin blockmap puede registrarse después del censo de este
+        // tic. Debe estar disponible antes de observar o neutralizar máquinas.
+        if(body.bNoBlockmap)
+        {
+            let population=CaelumPopulationState.Get();
+            if(population!=null)population.UnlinkedGuards.Push(entry);
+        }
         return entry;
     }
 

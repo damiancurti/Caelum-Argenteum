@@ -1,0 +1,160 @@
+{
+  "issue": 128,
+  "functional_checks": 38,
+  "functional_failures": 0,
+  "same_tic_registration_negative_control_verified": true,
+  "keep_awake_released_power_plan_unchanged": true,
+  "thresholds": [
+    499,
+    500,
+    501
+  ],
+  "native_death_removal_revival_verified": true,
+  "cold_load_and_hub_return": [
+    500,
+    1,
+    500
+  ],
+  "old_save_upgrade_reload_rollback": true,
+  "old_save_sha256_unchanged": "2fddea9d2aa4c1bf727e26176c945978199cbae7ae91888113568581e6218dce",
+  "guard_oracle": {
+    "periodic_rows": 1212,
+    "machines": 12,
+    "last_tic": 3535,
+    "omitted": 0
+  },
+  "cannon_oracle": {
+    "queries": 160,
+    "last_query_tic": 3510,
+    "mismatches": 0,
+    "skipped": 0
+  },
+  "cannon_invisibility_cases_and_native_rng_equal": 96,
+  "work_counts": {
+    "count-current-a": {
+      "queries": {
+        "total": 6412,
+        "peak_per_tic": 51,
+        "mean_per_tic": 9.16
+      },
+      "lists": {
+        "total": 700,
+        "peak_per_tic": 1,
+        "mean_per_tic": 1
+      },
+      "visits": {
+        "total": 3853612,
+        "peak_per_tic": 30651,
+        "mean_per_tic": 5505.16
+      },
+      "cannonQueries": {
+        "total": 33,
+        "peak_per_tic": 18,
+        "mean_per_tic": 0.047142857142857146
+      },
+      "cannonSight": {
+        "total": 143990,
+        "peak_per_tic": 75612,
+        "mean_per_tic": 205.7
+      }
+    },
+    "count-demand-a": {
+      "queries": {
+        "total": 6026,
+        "peak_per_tic": 51,
+        "mean_per_tic": 8.608571428571429
+      },
+      "lists": {
+        "total": 581,
+        "peak_per_tic": 1,
+        "mean_per_tic": 0.83
+      },
+      "visits": {
+        "total": 3621626,
+        "peak_per_tic": 30651,
+        "mean_per_tic": 5173.751428571429
+      },
+      "cannonQueries": {
+        "total": 33,
+        "peak_per_tic": 18,
+        "mean_per_tic": 0.047142857142857146
+      },
+      "cannonSight": {
+        "total": 143979,
+        "peak_per_tic": 75612,
+        "mean_per_tic": 205.68428571428572
+      }
+    },
+    "count-unshared-a": {
+      "queries": {
+        "total": 6412,
+        "peak_per_tic": 51,
+        "mean_per_tic": 9.16
+      },
+      "lists": {
+        "total": 6412,
+        "peak_per_tic": 51,
+        "mean_per_tic": 9.16
+      },
+      "visits": {
+        "total": 3853612,
+        "peak_per_tic": 30651,
+        "mean_per_tic": 5505.16
+      },
+      "cannonQueries": {
+        "total": 33,
+        "peak_per_tic": 18,
+        "mean_per_tic": 0.047142857142857146
+      },
+      "cannonSight": {
+        "total": 143990,
+        "peak_per_tic": 75612,
+        "mean_per_tic": 205.7
+      }
+    },
+    "count-pruned-a": {
+      "queries": {
+        "total": 6026,
+        "peak_per_tic": 51,
+        "mean_per_tic": 8.608571428571429
+      },
+      "lists": {
+        "total": 581,
+        "peak_per_tic": 1,
+        "mean_per_tic": 0.83
+      },
+      "visits": {
+        "total": 3621626,
+        "peak_per_tic": 30651,
+        "mean_per_tic": 5173.751428571429
+      },
+      "cannonQueries": {
+        "total": 33,
+        "peak_per_tic": 18,
+        "mean_per_tic": 0.047142857142857146
+      },
+      "cannonSight": {
+        "total": 578,
+        "peak_per_tic": 303,
+        "mean_per_tic": 0.8257142857142857
+      }
+    }
+  },
+  "final_battle": {
+    "tic": 3535,
+    "living": 6561,
+    "active": 1,
+    "revision": 2,
+    "groups": 76,
+    "reduced": 0,
+    "incomplete": 0,
+    "damage": 88,
+    "deaths": 41,
+    "projectiles": 43100,
+    "cannonShots": 160
+  },
+  "test_limitations": [
+    "Work-count and oracle runs are not performance measurements.",
+    "Author acceptance is separate from native automated checks."
+  ]
+}

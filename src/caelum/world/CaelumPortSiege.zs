@@ -49,7 +49,6 @@ class CaelumPortSiege : CaelumSiegeEncounter
     int TargetingRevision;
     bool CommandDirty, Aftermath;
     bool HighDensity;
-    Array<CaelumSiegeCombatant> Commanders;
     Array<Actor> TargetCandidates;
     int CandidateTic;
     bool CandidatesValid;
@@ -153,7 +152,7 @@ class CaelumPortSiege : CaelumSiegeEncounter
 
     void ElectCommands()
     {
-        Groups=0;CommandDirty=false;Commanders.Clear();
+        Groups=0;CommandDirty=false;
         for(int i=0;i<Attackers.Size();i++){Attackers[i].CommandGroup=-1;Attackers[i].CommandLeader=null;}
         Array<CaelumSiegeCombatant> queue;
         for(int seed=0;seed<Attackers.Size();seed++)
@@ -182,7 +181,7 @@ class CaelumPortSiege : CaelumSiegeEncounter
                 }
             }
             for(int i=0;i<queue.Size();i++)queue[i].CommandLeader=leader;
-            Commanders.Push(leader);Groups++;
+            Groups++;
         }
     }
 
@@ -225,7 +224,7 @@ class CaelumPortSiege : CaelumSiegeEncounter
             let entry=Attackers[i];
             entry.CombatTarget=null;entry.TargetRefreshTic=0;
             entry.SharedTarget=null;entry.SharedTargetValid=false;
-            entry.SharedTargetTic=0;entry.NextSharedTargetTic=0;
+            entry.NextSharedTargetTic=0;
         }
         CandidatesValid=false;TargetCandidates.Clear();
         for(int i=0;i<Guns.Size();i++)if(Guns[i]!=null)Guns[i].NextTargetQuery=0;
@@ -278,22 +277,10 @@ class CaelumPortSiege : CaelumSiegeEncounter
     void UpdateSharedTarget(CaelumSiegeCombatant leader)
     {
         leader.SharedTarget=LeaderTarget(leader);
-        leader.SharedTargetValid=true;leader.SharedTargetTic=level.time;
-        // Misma cadencia de percepción; cada grupo ocupa una fase distinta.
-        int interval=CaelumPortData.TARGET_UPDATE_TICS;
-        leader.NextSharedTargetTic=level.time+interval
-            -(level.time%interval-leader.CommandGroup%interval+interval)%interval;
-    }
-
-    void ScheduleGroupTargets()
-    {
-        if(!HighDensity)return;
-        for(int i=0;i<Commanders.Size();i++)
-        {
-            let leader=Commanders[i];
-            if(ActiveEntry(leader) && (!leader.SharedTargetValid
-                || level.time>=leader.NextSharedTargetTic))UpdateSharedTarget(leader);
-        }
+        leader.SharedTargetValid=true;
+        // Se consulta al actuar un miembro; no se mantiene una segunda agenda
+        // que haga pensar también a grupos sin actividad de combate.
+        leader.NextSharedTargetTic=level.time+CaelumPortData.TARGET_UPDATE_TICS;
     }
 
     Actor AttackerTarget(CaelumSiegeCombatant entry)
@@ -444,8 +431,14 @@ class CaelumPortSiege : CaelumSiegeEncounter
                 let soldier=Defenders[i];if(soldier==null || soldier.health<=0)continue;
                 candidate=soldier;crew=soldier.Gun!=null;
             }
-            if(!gun.EligibleTarget(candidate) || gun.Barrel==null || !gun.Barrel.CheckSight(candidate))continue;
+            if(!gun.EligibleTarget(candidate) || gun.Barrel==null)continue;
             double distance=(candidate.Pos-gun.Pos).Length();
+            bool competitive=chosen==null || (crew && !chosenCrew) || (crew==chosenCrew && distance<best);
+            // CheckSight usa azar con invisibilidad. Sólo se omiten consultas
+            // puras de candidatos normales que ya no pueden ganar la selección.
+            if(HighDensity && !competitive && candidate.GetRenderStyle()==STYLE_Normal
+                && candidate.Alpha>0 && !candidate.bInvisible && !candidate.bMInvisible)continue;
+            if(!gun.Barrel.CheckSight(candidate))continue;
             if(chosen==null || (crew && !chosenCrew) || (crew==chosenCrew && distance<best))
             {chosen=candidate;chosenCrew=crew;best=distance;}
         }
@@ -604,7 +597,6 @@ class CaelumPortSiege : CaelumSiegeEncounter
         if(!Victory)
         {
             if(CommandDirty || level.time%CaelumPortData.COMMAND_UPDATE_TICS==0){RefillCrews();ElectCommands();RefreshTargets();}
-            ScheduleGroupTargets();
             OrderGuns();
         }
         for(int i=0;i<MAXPLAYERS;i++)if(playeringame[i] && players[i].mo!=null)Calendar(CaelumPlayer(players[i].mo));

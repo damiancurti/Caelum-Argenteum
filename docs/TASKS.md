@@ -4,6 +4,19 @@ Documentation version: **5.0.6** — 2026-10-07.
 
 ## Issue #128 — Automatic normal high-density AI (5.0.6)
 
+- Implemented and agent-verified. Final source passes 38 functional checks,
+  96 target/native-RNG comparisons, full guard/cannon oracles, cold load,
+  hub travel and old-save upgrade/reload/rollback. Source/package verification
+  retains all native combat/physics/resources and maps. CA128-01 is the only
+  outstanding author check; issue/PR remain open for review.
+- Selected: on-demand leader decisions/candidates, spatial guards including
+  same-tic NOBLOCKMAP registration, negative cannon retry and safe sight
+  pruning. Rejected: background staggering, whose congestion tail is worse.
+- Final late throughput is 26.639–27.035 tics/s versus baseline 3.266, with
+  only 1.575–1.601 frame callbacks/s. The 35-tic/30-FPS reference is unmet.
+  Direct #121-combination controls show a modest additional common-window
+  gain: 1.58–1.74% simulation, 9.20–10.29% callbacks, shorter p95 gaps.
+- Retain the following scope/acceptance contract and reproducible evidence.
 - Implement the author's map-wide 500-living-combatant threshold and explicit
   leader-target policy. Retain individual movement, attacks, collision,
   resource/status updates and the full army.

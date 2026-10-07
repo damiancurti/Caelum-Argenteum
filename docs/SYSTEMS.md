@@ -24,20 +24,31 @@ Actual attack preparation/release still checks each member's own range, line
 of sight and resource costs. Sharing an order does not authorize attacks
 through a wall or disable recovery, individual movement, collision or status.
 
-Perception uses the existing eight-tic period, with different command groups
-assigned different phases. A group's first query is immediate; subsequent
-position/visibility changes are observed within eight tics. Dead or destroyed
-targets are rejected immediately and reacquired on the next perception turn.
+Perception reuses a group decision for the existing eight-tic period. The
+first active member queries immediately; after expiry, the next requesting
+member refreshes it once for the group. Groups with no requests do no background
+perception work. Visibility/position changes can remain cached until that
+refresh; individual attacks still validate their own current conditions.
+Dead or destroyed targets are never returned by the selector and are reacquired
+on the next expired query. The tested background staggering alternative is
+not shipped because it worsened congestion frame-time tails.
 An inactive leader falls back to the live member until ordinary regrouping.
 The roster of living target candidates is reused among leaders in the same
 tic; positions, health, shootability and visibility remain live query inputs.
 
 Armed hostile machines use a native blockmap broad phase followed by the same
 exact 3D guard predicate. A once-per-tic list covers guards flagged NOBLOCKMAP.
-Previously remembered guards, confirmed deaths, retreat and one-time
+New NOBLOCKMAP guards registered after that census enter the fallback list
+immediately, before a machine can observe or neutralize. Other flag changes
+are reflected by the next census; current production combatants do not toggle
+NOBLOCKMAP during a tic. Previously remembered guards, confirmed deaths, retreat and one-time
 neutralization remain authoritative. A loaded cannon with no eligible target
-retries after the existing eight-tic perception interval; successful shots,
-crew priority, ammunition, ballistics and reload timing are unchanged.
+retries after the existing eight-tic perception interval. Its target search
+skips sight only when a normal visible candidate cannot beat the already
+selected crew-priority/nearest target. Ties retain roster order. Invisible,
+zero-alpha and special-render-style candidates retain native sight calls,
+including their random-stream effects. Successful shots, crew priority,
+ammunition, ballistics and reload timing are unchanged.
 
 Below the threshold, per-member targeting and full guard scans resume and
 negative cannon searches have no added retry delay. Mode transitions clear

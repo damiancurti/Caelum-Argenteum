@@ -12,8 +12,37 @@ opponent is nearer to them. The latter explicitly overrides #77's
 individual-nearest policy within high-density mode. No population cut or
 removal of ordinary combat is authorized or implemented.
 
-Implementation/native validation are in progress; author acceptance remains
-unconfirmed. No earlier accepted manual test is reopened by this entry.
+The production implementation selects on-demand leader perception/candidates,
+spatial guard queries with immediate NOBLOCKMAP registration, bounded negative
+cannon retries and priority/distance sight pruning that retains invisibility
+RNG. Background group staggering is rejected after two repetitions show
+worse congestion frame-time tails. The intermediate experimental commit is
+`031c8877`; final production excludes its background group scheduler.
+
+Agent evidence: 38 passing boundary/behavior checks; an expected before-fix
+failure isolates late NOBLOCKMAP registration; 96 exact target/native-RNG
+comparisons; 1,212 periodic full-guard oracle rows and 160 exact cannon queries;
+cold-load/hub population 500 → 1 → 500; old-save upgrade/reload/rollback without
+redeployment or modifying the original save. Normal combat observation records
+damage, deaths, shots and complete actor RPG objects. Source/package checks
+retain 3,789 unaffected method bodies and all 6,188 source members.
+
+Final repeated native comparisons: early 34.917–34.954, congested
+34.776–34.798 and late 26.639–27.035 tics/s. The old production baseline is
+14.146/10.196/3.266 respectively. Direct #121 combined-algorithm controls show
+a further 1.58–1.74% common simulation gain and 9.20–10.29% callback gain,
+with p95 gaps improving 37.47–39.53%. Late callback rate remains only
+1.575–1.601/s; 35 tics/s plus 30 FPS is not achieved. A separate short
+relocated-player combat control measures 34.874 tics/s and 27.925 callbacks/s,
+with 31 FPS in a native snapshot; the camera/target trajectory differs and
+does not replace the longer matched measurements. Full scene/clock caveats,
+counter reductions, raw logs, native images and reproduction live in PROJECT
+and `assets/validation_506`; CA-KP-046–048 preserve the reusable lessons.
+
+No earlier accepted manual test is reopened. New author combat acceptance
+remains unconfirmed as CA128-01; commit/push and a linked PR deliver the patch,
+while merge/issue closure await the author's later instruction. The temporary
+keep-awake request is released after native tests; the power plan is unchanged.
 
 ## 5.0.5 — Siege profiling and combined diagnostic experiments (#121, 2026-10-07)
 

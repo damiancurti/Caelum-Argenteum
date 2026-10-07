@@ -1,0 +1,65 @@
+{
+  "identical_build_passes": 2,
+  "packages_sha256": {
+    "baseline": "233d730e39a2eca2a79992281ffec2fccabf3734248c0eba7fa6566df1d0a90b",
+    "current": "1db620f12314ac384dccc66164a2e6e4176cc07b7abd98e959b4020c8b1b61fe",
+    "no-candidates": "7077c49be173e8d1185ce67fd2d6c13e253f5450701a18c45a5770229eb25ab1",
+    "no-stagger": "dc8b112160f5febb1935ca11377b458eecab9bcd1190e119a855d7fa104c77cf",
+    "neither": "d3ecc8812c9686ae80059d763c334842d1607eaf114f69dc8642fa0007d84951",
+    "legacy-shared": "cf55a3b4a1aba73df0a5f67f7b73b8c04e4a4bf7de56444827c12125891d2d39",
+    "pruned-cannon": "0d4cb1707a0d0284f7de8d36cfc1e684d880837fee55cffdc0aec35a3ff29b6b",
+    "production": "8dd99892be5b395854c473459c4c72a50acdd98943af4ae545e2585ea332aca3",
+    "observer": "4c122f394aa9030f202eaea043dfee6e14148c58ebc7327bdd852c68b7a3d5eb",
+    "checks": "d43077453df3f18b25cea37dce754a716385b3fbc9893bb146328dd0c1e942bd",
+    "cannon-study": "cd457e04ea4bcef4ae97fa04e5e0f333907e3fb39c870d53aab4369c88e9fbde",
+    "battle": "e0f515df0a4f94b9d5543af97ce036e64b2b23af22cc7a7f01ccaa526faeb6c7",
+    "guard-oracle": "eaec9c50d79617f7c0ed87c6ffded3ee2b61c9be75bf6bb5b4b67f6bfc0f03bd",
+    "cannon-oracle": "86639cdb522cb56877d2aaa6b05d244e054bdc121db547affbd2ebc5f3265e48",
+    "counters": "9cfe6a65377bc47ba2a1fb9feae4bb0f7c5ca11331c3dd2558f3069e9e0dd6e2",
+    "counters-current": "6e6c0acb5265e066d635befa094d3060e6fe99a8fe12505c70518b32e554a960",
+    "counters-no-stagger": "7b543eda6a8433e9fb21d4b322a35c7d03c1c7f2cef51f341c9dfbc56ddb9299",
+    "counters-no-candidates": "287225fa6af775aabbd546fe6da6d90c1f677f7fdc8ba151c146a65babc43433",
+    "counters-pruned-cannon": "1c22f476af780506cbe3416e1daf8eee2ecea171a10a143b5b161b1d92146b72",
+    "view": "ee8c3e0af5cd9c43cfd25c5d304d497259c571f976628b8fb73e768af2bae70c"
+  },
+  "exact_native_run_identities": {
+    "production-c": {
+      "package": "production",
+      "addon": "observer"
+    },
+    "production-d": {
+      "package": "production",
+      "addon": "observer"
+    },
+    "final-checks-b": {
+      "package": "production",
+      "addon": "checks"
+    },
+    "final-load-b": {
+      "package": "production",
+      "addon": "checks"
+    },
+    "final-travel-b": {
+      "package": "production",
+      "addon": "checks"
+    },
+    "final-guard-a": {
+      "package": "guard-oracle",
+      "addon": "battle"
+    },
+    "final-cannon-a": {
+      "package": "cannon-oracle",
+      "addon": "battle"
+    },
+    "final-visual-a": {
+      "package": "production",
+      "addon": "battle"
+    },
+    "battle-view-a": {
+      "package": "production",
+      "addon": "view"
+    }
+  },
+  "historical_experiment_commit": "031c8877636a7dfd50fefb7fcf117f956b25d886",
+  "historical_limit": "First-pass Windows package byte hashes are retained in EXPERIMENT_MANIFEST.json. Git archive normalizes text line endings; the pinned experiment reproduces canonical runtime content."
+}

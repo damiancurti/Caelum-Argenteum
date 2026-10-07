@@ -2,9 +2,9 @@
 
 Documentation version: **5.0.6** — 2026-10-07.
 
-**5.0.6/#128:** automatic AI at 500 living map combatants; shared leader targets.
-Tests: validation_506. #121 accepted; 35-tic/30-FPS unmet. #119/#120 merged;
-multiplayer pending.
+**5.0.6/#128:** normal AI at 500 living combatants; shared leader targets.
+Agent tests pass; CA128-01 pending. Evidence: validation_506. Fluency
+unmet. #121 accepted; #119/#120 merged; multiplayer pending.
 
 **4.37.24/#82 accepted 2026-10-05:** closing export; Tab/M/B/R/F/T defaults.
 Evidence: validation_43724. #112/#106 merged (#114/#113); V5.0 follows.

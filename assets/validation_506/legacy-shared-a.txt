@@ -1,0 +1,1266 @@
+Log started: 2026-10-07 03:22:28
+GZDoom version g4.14.2
+D_DoomInit: Static RNGseed 116 set.
+W_Init: Init WADfiles.
+adding C:/Program Files (x86)/GZDoom/gzdoom.pk3, 692 lumps
+adding C:/Program Files (x86)/GZDoom/game_support.pk3, 3308 lumps
+adding C:/Program Files (x86)/Steam/steamapps/common/ultimate doom/base/doom2/DOOM2.WAD, 2919 lumps
+adding C:/Program Files (x86)/Steam/steamapps/common/Ultimate Doom/rerelease/id24res.wad, 530 lumps
+adding C:/Program Files (x86)/GZDoom/game_widescreen_gfx.pk3, 214 lumps
+adding C:/GZDooMProjects/CaelumArgenteum/build/issue128/legacy-shared.pk3, 6188 lumps
+adding C:/GZDooMProjects/CaelumArgenteum/build/issue128/observer.pk3, 4 lumps
+S_Init: Setting up sound.
+I_InitSound: Initializing OpenAL
+  Opened device OpenAL Soft on G27F (NVIDIA High Definition Audio)
+  EFX enabled
+I_InitInput
+I_StartupMouse
+I_StartupKeyboard
+I_StartupXInput
+I_StartupRawPS2
+I_StartupDirectInputJoystick
+Vulkan device: NVIDIA GeForce RTX 3070 Ti
+Vulkan device type: discrete gpu
+Vulkan version: 1.4.303 (api) 576.352.0 (driver)
+Vulkan extensions: VK_KHR_16bit_storage VK_KHR_8bit_storage VK_KHR_acceleration_structure VK_KHR_bind_memory2 VK_KHR_buffer_device_address VK_KHR_calibrated_timestamps VK_KHR_compute_shader_derivatives VK_KHR_cooperative_matrix VK_KHR_copy_commands2 VK_KHR_create_renderpass2 VK_KHR_dedicated_allocation VK_KHR_deferred_host_operations VK_KHR_depth_stencil_resolve VK_KHR_descriptor_update_template VK_KHR_device_group VK_KHR_draw_indirect_count VK_KHR_driver_properties VK_KHR_dynamic_rendering VK_KHR_dynamic_rendering_local_read VK_KHR_external_fence VK_KHR_external_fence_win32 VK_KHR_external_memory VK_KHR_external_memory_win32 VK_KHR_external_semaphore VK_KHR_external_semaphore_win32 VK_KHR_format_feature_flags2 VK_KHR_fragment_shader_barycentric VK_KHR_fragment_shading_rate VK_KHR_get_memory_requirements2 VK_KHR_global_priority VK_KHR_image_format_list VK_KHR_imageless_framebuffer VK_KHR_index_type_uint8 VK_KHR_line_rasterization VK_KHR_load_store_op_none VK_KHR_maintenance1 VK_KHR_maintenance2 VK_KHR_maintenance3 VK_KHR_maintenance4 VK_KHR_maintenance5 VK_KHR_maintenance6 VK_KHR_maintenance7 VK_KHR_map_memory2 VK_KHR_multiview VK_KHR_pipeline_binary VK_KHR_pipeline_executable_properties VK_KHR_pipeline_library VK_KHR_present_id VK_KHR_present_wait VK_KHR_push_descriptor VK_KHR_ray_query VK_KHR_ray_tracing_maintenance1 VK_KHR_ray_tracing_pipeline VK_KHR_ray_tracing_position_fetch VK_KHR_relaxed_block_layout VK_KHR_sampler_mirror_clamp_to_edge VK_KHR_sampler_ycbcr_conversion VK_KHR_separate_depth_stencil_layouts VK_KHR_shader_atomic_int64 VK_KHR_shader_clock VK_KHR_shader_draw_parameters VK_KHR_shader_expect_assume VK_KHR_shader_float16_int8 VK_KHR_shader_float_controls VK_KHR_shader_float_controls2 VK_KHR_shader_integer_dot_product VK_KHR_shader_maximal_reconvergence VK_KHR_shader_non_semantic_info VK_KHR_shader_quad_control VK_KHR_shader_relaxed_extended_instruction VK_KHR_shader_subgroup_extended_types VK_KHR_shader_subgroup_rotate VK_KHR_shader_subgroup_uniform_control_flow VK_KHR_shader_terminate_invocation VK_KHR_spirv_1_4 VK_KHR_storage_buffer_storage_class VK_KHR_swapchain VK_KHR_swapchain_mutable_format VK_KHR_synchronization2 VK_KHR_timeline_semaphore VK_KHR_uniform_buffer_standard_layout VK_KHR_variable_pointers VK_KHR_vertex_attribute_divisor VK_KHR_video_decode_av1 VK_KHR_video_decode_h264 VK_KHR_video_decode_h265 VK_KHR_video_decode_queue VK_KHR_video_encode_h264 VK_KHR_video_encode_h265 VK_KHR_video_encode_quantization_map VK_KHR_video_encode_queue VK_KHR_video_maintenance1 VK_KHR_video_maintenance2 VK_KHR_video_queue VK_KHR_vulkan_memory_model VK_KHR_win32_keyed_mutex VK_KHR_workgroup_memory_explicit_layout VK_KHR_zero_initialize_workgroup_memory VK_EXT_4444_formats VK_EXT_attachment_feedback_loop_dynamic_state VK_EXT_attachment_feedback_loop_layout VK_EXT_blend_operation_advanced VK_EXT_border_color_swizzle VK_EXT_buffer_device_address VK_EXT_calibrated_timestamps VK_EXT_color_write_enable VK_EXT_conditional_rendering VK_EXT_conservative_rasterization VK_EXT_custom_border_color VK_EXT_depth_bias_control VK_EXT_depth_clamp_control VK_EXT_depth_clamp_zero_one VK_EXT_depth_clip_control VK_EXT_depth_clip_enable VK_EXT_depth_range_unrestricted VK_EXT_descriptor_buffer VK_EXT_descriptor_indexing VK_EXT_device_address_binding_report VK_EXT_device_fault VK_EXT_device_generated_commands VK_EXT_discard_rectangles VK_EXT_dynamic_rendering_unused_attachments VK_EXT_extended_dynamic_state VK_EXT_extended_dynamic_state2 VK_EXT_extended_dynamic_state3 VK_EXT_external_memory_host VK_EXT_fragment_shader_interlock VK_EXT_full_screen_exclusive VK_EXT_global_priority VK_EXT_global_priority_query VK_EXT_graphics_pipeline_library VK_EXT_hdr_metadata VK_EXT_host_image_copy VK_EXT_host_query_reset VK_EXT_image_2d_view_of_3d VK_EXT_image_robustness VK_EXT_image_sliced_view_of_3d VK_EXT_image_view_min_lod VK_EXT_index_type_uint8 VK_EXT_inline_uniform_block VK_EXT_legacy_vertex_attributes VK_EXT_line_rasterization VK_EXT_load_store_op_none VK_EXT_memory_budget VK_EXT_memory_priority VK_EXT_mesh_shader VK_EXT_multi_draw VK_EXT_mutable_descriptor_type VK_EXT_nested_command_buffer VK_EXT_non_seamless_cube_map VK_EXT_opacity_micromap VK_EXT_pageable_device_local_memory VK_EXT_pci_bus_info VK_EXT_pipeline_creation_cache_control VK_EXT_pipeline_creation_feedback VK_EXT_pipeline_library_group_handles VK_EXT_pipeline_robustness VK_EXT_post_depth_coverage VK_EXT_present_mode_fifo_latest_ready VK_EXT_primitive_topology_list_restart VK_EXT_primitives_generated_query VK_EXT_private_data VK_EXT_provoking_vertex VK_EXT_queue_family_foreign VK_EXT_robustness2 VK_EXT_sample_locations VK_EXT_sampler_filter_minmax VK_EXT_scalar_block_layout VK_EXT_separate_stencil_usage VK_EXT_shader_atomic_float VK_EXT_shader_demote_to_helper_invocation VK_EXT_shader_image_atomic_int64 VK_EXT_shader_module_identifier VK_EXT_shader_object VK_EXT_shader_replicated_composites VK_EXT_shader_subgroup_ballot VK_EXT_shader_subgroup_vote VK_EXT_shader_viewport_index_layer VK_EXT_subgroup_size_control VK_EXT_swapchain_maintenance1 VK_EXT_texel_buffer_alignment VK_EXT_tooling_info VK_EXT_transform_feedback VK_EXT_vertex_attribute_divisor VK_EXT_vertex_attribute_robustness VK_EXT_vertex_input_dynamic_state VK_EXT_ycbcr_2plane_444_formats VK_EXT_ycbcr_image_arrays VK_NV_acquire_winrt_display VK_NV_clip_space_w_scaling VK_NV_cluster_acceleration_structure VK_NV_compute_shader_derivatives VK_NV_cooperative_matrix VK_NV_cooperative_matrix2 VK_NV_cooperative_vector VK_NV_copy_memory_indirect VK_NV_corner_sampled_image VK_NV_coverage_reduction_mode VK_NV_cuda_kernel_launch VK_NV_dedicated_allocation VK_NV_dedicated_allocation_image_aliasing VK_NV_descriptor_pool_overallocation VK_NV_device_diagnostic_checkpoints VK_NV_device_diagnostics_config VK_NV_device_generated_commands VK_NV_device_generated_commands_compute VK_NV_disk_cache_utils VK_NV_external_memory VK_NV_external_memory_win32 VK_NV_fill_rectangle VK_NV_fragment_coverage_to_color VK_NV_fragment_shader_barycentric VK_NV_fragment_shading_rate_enums VK_NV_framebuffer_mixed_samples VK_NV_geometry_shader_passthrough VK_NV_inherited_viewport_scissor VK_NV_internal_nvpresent VK_NV_linear_color_attachment VK_NV_low_latency VK_NV_low_latency2 VK_NV_memory_decompression VK_NV_mesh_shader VK_NV_optical_flow VK_NV_partitioned_acceleration_structure VK_NV_present_metering VK_NV_raw_access_chains VK_NV_ray_tracing VK_NV_ray_tracing_invocation_reorder VK_NV_ray_tracing_motion_blur VK_NV_representative_fragment_test VK_NV_sample_mask_override_coverage VK_NV_scissor_exclusive VK_NV_shader_atomic_float16_vector VK_NV_shader_image_footprint VK_NV_shader_sm_builtins VK_NV_shader_subgroup_partitioned VK_NV_shading_rate_image VK_NV_viewport_array2 VK_NV_viewport_swizzle VK_NV_win32_keyed_mutex VK_NVX_binary_import VK_NVX_image_view_handle VK_NVX_multiview_per_view_attributes VK_AMD_buffer_marker VK_GOOGLE_hlsl_functionality1 VK_GOOGLE_user_type
+Max. texture size: 32768
+Max. uniform buffer range: 65536
+Min. uniform buffer offset alignment: 64
+Resolution: 1520 x 825
+I_Init: Setting up machine state.
+CPU speed: 3400 MHz
+CPU Vendor ID: AuthenticAMD
+  Name: AMD Ryzen 9 5950X 16-Core Processor 
+  Family 25 (25), Model 33, Stepping 0
+  Features: SSE2 SSE3 SSSE3 SSE4.1 SSE4.2 AVX AVX2 F16C FMA3 BMI1 BMI2 HyperThreading
+V_Init: allocate screen.
+ST_Init: Init startup screen.
+Checking cmd-line parameters...
+S_InitData: Load sound definitions.
+G_ParseMapInfo: Load map definitions.
+Texman.Init: Init texture manager.
+ParseTeamInfo: Load team definitions.
+LoadActors: Load actor definitions.
+script parsing took 916.29 ms
+R_Init: Init Doom refresh subsystem.
+DecalLibrary: Load decals.
+M_Init: Init menus.
+P_Init: Init Playloop state.
+ParseSBarInfo: Loading custom status bar definition.
+D_CheckNetGame: Checking network game status.
+player 1 of 1 (1 nodes)
+Usage: stat <statistics>
+Available stats:
+  VM
+  gpu
+  shadowmap
+  lightstats
+  renderstats
+  rendertimes
+  gc
+  music
+  sound
+  think
+  sight
+  velocity
+  statistics
+  sounddebug
+  psprites
+  ACS
+  interpolations
+  fps
+  bots
+  wallcycles
+  swfps_accumulated
+  swfps
+acsprofile
+profilethinkers
+2 commands
+bench
+1 commands
+
+----------------------------------------
+
+MAP06 - Barracas al Sud — fortified port
+
+[Caelum] Inicio por comando directo: perfil de prueba seguro aplicado.
+[Caelum] Character creation values loaded. Attribute total: 150.00
+PORT16 deployed Mandingas=6000 commander=1 defenders=600 hostileMachines=12 guns=42
+CA121 COUNT tic=0 candidates=0 sight=0 decisions=0 commands=0
+CA121 FRAME tic=11 ms=5592.889100 interval=185.890800
+CA121 FRAME tic=18 ms=5725.152300 interval=132.263200
+CA121 FRAME tic=22 ms=5848.757100 interval=123.604800
+CA121 FRAME tic=27 ms=5958.284500 interval=109.527400
+CA121 FRAME tic=30 ms=6024.062100 interval=65.777600
+CA121 FRAME tic=32 ms=6077.593500 interval=53.531400
+CA121 FRAME tic=35 ms=6154.190900 interval=76.597400
+CA121 SIM tic=35 ms=6164.093300 roster=6001 attackers=6001 defenders=600 groups=64 moving=0 blocked=0 x=0.000 y=320.000 z=-0.000 angle=90.000
+CA121 MOTION tic=35 displaced=0 distance=0.000000 contacts=0
+CA121 SETTINGS pause=0 lower=0 render=1 sound=1 volume=0.050000
+CA121 FRAME tic=37 ms=6205.530300 interval=51.339400
+CA121 COUNT tic=37 candidates=0 sight=0 decisions=0 commands=0
+CA121 FRAME tic=39 ms=6263.913800 interval=58.383500
+CA121 FRAME tic=41 ms=6305.314600 interval=41.400800
+CA121 FRAME tic=42 ms=6352.120200 interval=46.805600
+CA121 FRAME tic=44 ms=6416.439800 interval=64.319600
+CA121 FRAME tic=47 ms=6511.420000 interval=94.980200
+CA121 FRAME tic=50 ms=6601.036600 interval=89.616600
+CA121 FRAME tic=53 ms=6656.255500 interval=55.218900
+CA121 FRAME tic=54 ms=6712.869400 interval=56.613900
+CA121 FRAME tic=57 ms=6771.499200 interval=58.629800
+CA121 FRAME tic=58 ms=6819.063500 interval=47.564300
+CA121 FRAME tic=60 ms=6861.919300 interval=42.855800
+CA121 FRAME tic=62 ms=6918.725200 interval=56.805900
+CA121 FRAME tic=64 ms=6964.603700 interval=45.878500
+CA121 FRAME tic=65 ms=7000.558800 interval=35.955100
+CA121 FRAME tic=66 ms=7046.588900 interval=46.030100
+CA121 FRAME tic=68 ms=7091.777400 interval=45.188500
+CA121 FRAME tic=70 ms=7142.669600 interval=50.892200
+CA121 SIM tic=70 ms=7151.255300 roster=6001 attackers=6001 defenders=600 groups=66 moving=0 blocked=0 x=0.000 y=320.000 z=-0.000 angle=90.000
+CA121 MOTION tic=70 displaced=5989 distance=429858.785220 contacts=0
+CA121 FRAME tic=71 ms=7184.836500 interval=42.166900
+CA121 FRAME tic=73 ms=7226.383200 interval=41.546700
+CA121 FRAME tic=74 ms=7267.990200 interval=41.607000
+CA121 COUNT tic=74 candidates=0 sight=0 decisions=0 commands=0
+CA121 FRAME tic=76 ms=7309.476700 interval=41.486500
+CA121 FRAME tic=77 ms=7344.691400 interval=35.214700
+CA121 FRAME tic=79 ms=7429.721700 interval=85.030300
+CA121 FRAME tic=82 ms=7541.543700 interval=111.822000
+CA121 FRAME tic=86 ms=7624.408700 interval=82.865000
+CA121 FRAME tic=88 ms=7667.218000 interval=42.809300
+CA121 FRAME tic=90 ms=7721.240100 interval=54.022100
+CA121 FRAME tic=92 ms=7763.886300 interval=42.646200
+CA121 FRAME tic=93 ms=7798.521800 interval=34.635500
+CA121 FRAME tic=94 ms=7837.225700 interval=38.703900
+CA121 FRAME tic=96 ms=7880.827400 interval=43.601700
+CA121 FRAME tic=97 ms=7915.058100 interval=34.230700
+CA121 FRAME tic=99 ms=7980.360600 interval=65.302500
+CA121 FRAME tic=101 ms=8060.630000 interval=80.269400
+CA121 FRAME tic=104 ms=8160.681200 interval=100.051200
+CA121 SIM tic=105 ms=8192.206300 roster=6001 attackers=6001 defenders=600 groups=63 moving=0 blocked=0 x=0.000 y=320.000 z=-0.000 angle=90.000
+CA121 MOTION tic=105 displaced=5987 distance=385586.710224 contacts=0
+CA121 FRAME tic=107 ms=8248.066900 interval=87.385700
+CA121 FRAME tic=110 ms=8312.191600 interval=64.124700
+CA121 FRAME tic=112 ms=8357.653200 interval=45.461600
+CA121 COUNT tic=111 candidates=0 sight=0 decisions=0 commands=0
+CA121 FRAME tic=114 ms=8414.076700 interval=56.423500
+CA121 FRAME tic=116 ms=8463.312400 interval=49.235700
+CA121 FRAME tic=118 ms=8517.884200 interval=54.571800
+CA121 FRAME tic=120 ms=8566.763600 interval=48.879400
+CA121 FRAME tic=121 ms=8602.006700 interval=35.243100
+CA121 FRAME tic=123 ms=8659.307900 interval=57.301200
+CA121 FRAME tic=125 ms=8710.296200 interval=50.988300
+CA121 FRAME tic=126 ms=8751.594500 interval=41.298300
+CA121 FRAME tic=128 ms=8797.099900 interval=45.505400
+CA121 FRAME tic=129 ms=8831.052800 interval=33.952900
+CA121 FRAME tic=131 ms=8888.789200 interval=57.736400
+CA121 FRAME tic=133 ms=8938.397600 interval=49.608400
+CA121 FRAME tic=134 ms=8980.667300 interval=42.269700
+CA121 FRAME tic=136 ms=9029.201600 interval=48.534300
+CA121 FRAME tic=138 ms=9091.443900 interval=62.242300
+CA121 FRAME tic=140 ms=9164.997000 interval=73.553100
+CA121 SIM tic=140 ms=9185.787300 roster=6001 attackers=6001 defenders=600 groups=64 moving=0 blocked=0 x=0.000 y=320.000 z=-0.000 angle=90.000
+CA121 MOTION tic=140 displaced=5987 distance=423952.021765 contacts=0
+CA121 FRAME tic=142 ms=9256.568800 interval=91.571800
+CA121 FRAME tic=146 ms=9380.209000 interval=123.640200
+CA121 COUNT tic=148 candidates=0 sight=0 decisions=0 commands=0
+CA121 FRAME tic=150 ms=9485.573000 interval=105.364000
+CA121 FRAME tic=154 ms=9587.413200 interval=101.840200
+CA121 FRAME tic=157 ms=9684.908000 interval=97.494800
+CA121 FRAME tic=161 ms=9808.442600 interval=123.534600
+CA121 FRAME tic=165 ms=9901.000000 interval=92.557400
+CA121 FRAME tic=168 ms=9968.777700 interval=67.777700
+CA121 FRAME tic=170 ms=10027.334400 interval=58.556700
+CA121 FRAME tic=173 ms=10104.886600 interval=77.552200
+CA121 FRAME tic=175 ms=10160.157700 interval=55.271100
+CA121 SIM tic=175 ms=10169.976000 roster=6001 attackers=6001 defenders=600 groups=63 moving=0 blocked=0 x=0.000 y=320.000 z=-0.000 angle=90.000
+CA121 MOTION tic=175 displaced=5988 distance=425953.717579 contacts=0
+CA121 FRAME tic=177 ms=10223.887100 interval=63.729400
+CA121 FRAME tic=179 ms=10285.571300 interval=61.684200
+CA121 FRAME tic=181 ms=10334.142700 interval=48.571400
+CA121 FRAME tic=183 ms=10391.902900 interval=57.760200
+CA121 FRAME tic=185 ms=10441.341100 interval=49.438200
+CA121 COUNT tic=185 candidates=0 sight=0 decisions=0 commands=0
+CA121 FRAME tic=187 ms=10496.891100 interval=55.550000
+CA121 FRAME tic=189 ms=10546.902500 interval=50.011400
+CA121 FRAME tic=191 ms=10604.827800 interval=57.925300
+CA121 FRAME tic=193 ms=10654.456800 interval=49.629000
+CA121 FRAME tic=194 ms=10698.152800 interval=43.696000
+CA121 FRAME tic=196 ms=10747.217700 interval=49.064900
+CA121 FRAME tic=198 ms=10805.718900 interval=58.501200
+CA121 FRAME tic=200 ms=10854.202900 interval=48.484000
+CA121 FRAME tic=201 ms=10890.039500 interval=35.836600
+CA121 FRAME tic=203 ms=10954.505800 interval=64.466300
+CA121 FRAME tic=205 ms=11025.057500 interval=70.551700
+CA121 FRAME tic=208 ms=11124.274500 interval=99.217000
+CA121 SIM tic=210 ms=11202.449800 roster=6001 attackers=6001 defenders=600 groups=66 moving=0 blocked=0 x=0.000 y=320.000 z=-0.000 angle=90.000
+CA121 MOTION tic=210 displaced=5988 distance=424430.483951 contacts=0
+CA121 FRAME tic=211 ms=11246.925200 interval=122.650700
+CA121 FRAME tic=215 ms=11360.747700 interval=113.822500
+CA121 FRAME tic=219 ms=11472.123100 interval=111.375400
+CA121 FRAME tic=223 ms=11587.141500 interval=115.018400
+CA121 COUNT tic=222 candidates=0 sight=0 decisions=0 commands=0
+CA121 FRAME tic=227 ms=11700.724300 interval=113.582800
+CA121 FRAME tic=231 ms=11792.472400 interval=91.748100
+CA121 FRAME tic=234 ms=11865.934100 interval=73.461700
+CA121 FRAME tic=237 ms=11940.374000 interval=74.439900
+CA121 FRAME tic=239 ms=12008.619900 interval=68.245900
+CA121 FRAME tic=242 ms=12105.496300 interval=96.876400
+CA121 FRAME tic=245 ms=12190.387500 interval=84.891200
+CA121 SIM tic=245 ms=12205.695700 roster=6001 attackers=6001 defenders=600 groups=67 moving=0 blocked=0 x=0.000 y=320.000 z=-0.000 angle=90.000
+CA121 MOTION tic=245 displaced=5989 distance=388143.044508 contacts=0
+CA121 FRAME tic=248 ms=12288.999700 interval=98.612200
+CA121 FRAME tic=252 ms=12377.412900 interval=88.413200
+CA121 FRAME tic=255 ms=12449.074000 interval=71.661100
+CA121 FRAME tic=257 ms=12503.089500 interval=54.015500
+CA121 FRAME tic=259 ms=12563.057000 interval=59.967500
+CA121 COUNT tic=259 candidates=0 sight=0 decisions=0 commands=0
+CA121 FRAME tic=261 ms=12618.138100 interval=55.081100
+CA121 FRAME tic=263 ms=12674.404300 interval=56.266200
+CA121 FRAME tic=265 ms=12725.319700 interval=50.915400
+CA121 FRAME tic=267 ms=12786.073200 interval=60.753500
+CA121 FRAME tic=269 ms=12838.185600 interval=52.112400
+CA121 FRAME tic=271 ms=12896.524600 interval=58.339000
+CA121 FRAME tic=273 ms=12966.303900 interval=69.779300
+CA121 FRAME tic=275 ms=13044.193000 interval=77.889100
+CA121 FRAME tic=278 ms=13141.136900 interval=96.943900
+CA121 SIM tic=280 ms=13198.035700 roster=6001 attackers=6001 defenders=600 groups=64 moving=0 blocked=0 x=0.000 y=320.000 z=-0.000 angle=90.000
+CA121 MOTION tic=280 displaced=5989 distance=415151.902958 contacts=0
+CA121 FRAME tic=282 ms=13263.659900 interval=122.523000
+CA121 FRAME tic=286 ms=13368.337500 interval=104.677600
+CA121 FRAME tic=289 ms=13447.415200 interval=79.077700
+CA121 FRAME tic=292 ms=13538.152400 interval=90.737200
+CA121 FRAME tic=295 ms=13620.550500 interval=82.398100
+CA121 COUNT tic=296 candidates=0 sight=0 decisions=0 commands=0
+CA121 FRAME tic=298 ms=13710.132400 interval=89.581900
+CA121 FRAME tic=302 ms=13828.875700 interval=118.743300
+CA121 FRAME tic=306 ms=13941.020300 interval=112.144600
+CA121 FRAME tic=310 ms=14041.121900 interval=100.101600
+CA121 FRAME tic=313 ms=14142.729200 interval=101.607300
+CA121 SIM tic=315 ms=14199.669400 roster=6001 attackers=6001 defenders=600 groups=66 moving=0 blocked=0 x=0.000 y=320.000 z=-0.000 angle=90.000
+CA121 MOTION tic=315 displaced=5989 distance=410375.021261 contacts=0
+CA121 FRAME tic=317 ms=14257.945400 interval=115.216200
+CA121 FRAME tic=321 ms=14349.729300 interval=91.783900
+CA121 FRAME tic=324 ms=14430.635400 interval=80.906100
+CA121 FRAME tic=327 ms=14505.228400 interval=74.593000
+CA121 FRAME tic=329 ms=14559.879600 interval=54.651200
+CA121 FRAME tic=331 ms=14615.139600 interval=55.260000
+CA121 FRAME tic=333 ms=14668.510100 interval=53.370500
+CA121 COUNT tic=333 candidates=0 sight=0 decisions=0 commands=0
+CA121 FRAME tic=335 ms=14725.202600 interval=56.692500
+CA121 FRAME tic=337 ms=14776.961700 interval=51.759100
+CA121 FRAME tic=339 ms=14834.253000 interval=57.291300
+CA121 FRAME tic=341 ms=14889.340100 interval=55.087100
+CA121 FRAME tic=343 ms=14958.066700 interval=68.726600
+CA121 FRAME tic=345 ms=15023.936200 interval=65.869500
+CA121 FRAME tic=347 ms=15095.921100 interval=71.984900
+CA116 PROBE_REQUEST id=1 ms=15144.832
+Total, ms   Averg, ms   Calls   Actor class
+----------  ----------  ------  --------------------
+ 11.288149    0.001881    6000  CaelumMandinga
+  2.434895    0.002467     987  CaelumActorSimpleElementalProjectile
+  0.968408    0.000147    6601  CaelumSewerEscapeTarget
+  0.734197    0.001224     600  CaelumPortDefender
+  0.428840    0.071473       6  CaelumBatteringRam
+  0.116329    0.000154     756  CaelumCannonBlock
+  0.100811    0.000168     600  CaelumGateBlocker
+  0.046480    0.046480       1  CaelumPlayer
+  0.040828    0.000421      97  CaelumVehiclePart
+  0.029403    0.000700      42  CaelumCannon
+  0.019922    0.000069     288  CaelumRamBlock
+  0.007930    0.000189      42  CaelumCannonBarrel
+  0.007170    0.000896       8  CaelumBreakableGate
+  0.007140    0.000170      42  CaelumCannonFrame
+  0.005100    0.005100       1  CaelumPortSiege
+  0.005080    0.005080       1  CaelumMerchantShip
+  0.002920    0.002920       1  CaelumPortCommander
+  0.002520    0.000105      24  CaelumRamSuspension
+  0.002040    0.002040       1  CaelumDiningTableSmall
+  0.001580    0.001580       1  CaelumRestBed
+  0.001300    0.001300       1  CaelumTreePlainsTalaYoung
+  0.001060    0.000177       6  CaelumSiegeRouteNode
+  0.001010    0.001010       1  CaelumWorkbenchStation
+  0.000960    0.000480       2  CaelumTimeAdvanceZone
+  0.000930    0.000155       6  CaelumRamFrameVisual
+  0.000700    0.000700       1  BasicArmor
+  0.000650    0.000650       1  CaelumNotificationInbox
+  0.000620    0.000155       4  CaelumSiegeGateReinforced
+  0.000580    0.000290       2  CaelumSiegeGate
+  0.000540    0.000540       1  CaelumPortCompletion
+  0.000490    0.000082       6  CaelumRamHead
+  0.000420    0.000210       2  CaelumRestChair
+  0.000380    0.000380       1  HexenArmor
+  0.000340    0.000340       1  CaelumCoveredCart
+  0.000330    0.000165       2  CaelumSiegeGateArmored
+  0.000230    0.000230       1  CaelumVehicleRanch
+  0.000220    0.000220       1  CaelumDemoVoiceSpeaker
+  0.000170    0.000170       1  CaelumWorldClock
+  0.000130    0.000130       1  CaelumClimateRegion
+  0.000120    0.000120       1  CaelumCalendarState
+  0.000120    0.000120       1  CaelumUnarmedWeapon
+  0.000120    0.000120       1  CaelumPersistentCharacterState
+  0.000120    0.000120       1  CaelumWeatherState
+  0.000020    0.000020       1  CaelumScheduleState
+  0.000010         Inf       0  InternalDynamicLight
+CA121 FRAME tic=350 ms=15187.504300 interval=91.583200
+CA116 PROBE_PLAY id=1 ms=15195.103 tic=350
+CA116 PROBE_ACK id=1 ms=15195.242
+CA121 SIM tic=350 ms=15204.386700 roster=6001 attackers=6001 defenders=600 groups=65 moving=0 blocked=0 x=0.000 y=320.000 z=-0.000 angle=90.000
+CA121 MOTION tic=350 displaced=5986 distance=409275.973374 contacts=0
+CA121 FRAME tic=353 ms=15525.793400 interval=338.289100
+CA116 PROBE_FRAME id=1 ms=15525.829
+CA121 FRAME tic=365 ms=15794.911400 interval=269.118000
+CA121 COUNT tic=370 candidates=0 sight=0 decisions=0 commands=0
+CA121 FRAME tic=374 ms=15999.621000 interval=204.709600
+CA121 FRAME tic=382 ms=16181.052800 interval=181.431800
+CA121 SIM tic=385 ms=16249.954200 roster=6001 attackers=5998 defenders=600 groups=63 moving=0 blocked=0 x=0.000 y=320.000 z=-0.000 angle=90.000
+CA121 MOTION tic=385 displaced=5979 distance=378240.120967 contacts=0
+CA121 FRAME tic=388 ms=16338.159100 interval=157.106300
+CA121 FRAME tic=393 ms=16463.338000 interval=125.178900
+CA121 FRAME tic=398 ms=16596.309000 interval=132.971000
+CA121 FRAME tic=403 ms=16713.279200 interval=116.970200
+CA121 FRAME tic=407 ms=16807.715700 interval=94.436500
+CA121 COUNT tic=407 candidates=0 sight=0 decisions=0 commands=0
+CA121 FRAME tic=410 ms=16888.168800 interval=80.453100
+CA121 FRAME tic=413 ms=16974.843500 interval=86.674700
+CA121 FRAME tic=416 ms=17073.883500 interval=99.040000
+CA121 FRAME tic=419 ms=17167.098700 interval=93.215200
+CA121 SIM tic=420 ms=17202.016800 roster=6001 attackers=5998 defenders=600 groups=64 moving=0 blocked=1 x=0.000 y=320.000 z=-0.000 angle=90.000
+CA121 MOTION tic=420 displaced=5980 distance=399527.608764 contacts=0
+CA121 FRAME tic=422 ms=17269.168800 interval=102.070100
+CA121 FRAME tic=426 ms=17375.995700 interval=106.826900
+CA121 FRAME tic=430 ms=17480.628100 interval=104.632400
+CA121 FRAME tic=433 ms=17562.221300 interval=81.593200
+CA121 FRAME tic=436 ms=17642.450800 interval=80.229500
+CA121 FRAME tic=439 ms=17731.422500 interval=88.971700
+CA121 FRAME tic=442 ms=17820.420400 interval=88.997900
+CA121 FRAME tic=445 ms=17901.970300 interval=81.549900
+CA121 COUNT tic=444 candidates=0 sight=0 decisions=0 commands=0
+CA121 FRAME tic=448 ms=17991.208800 interval=89.238500
+CA121 FRAME tic=451 ms=18081.352200 interval=90.143400
+CA121 FRAME tic=454 ms=18170.892900 interval=89.540700
+CA121 SIM tic=455 ms=18197.401400 roster=6001 attackers=5998 defenders=600 groups=66 moving=0 blocked=0 x=0.000 y=320.000 z=-0.000 angle=90.000
+CA121 MOTION tic=455 displaced=5979 distance=399179.410254 contacts=0
+CA121 FRAME tic=458 ms=18273.228300 interval=102.335400
+CA121 FRAME tic=461 ms=18339.751700 interval=66.523400
+CA121 FRAME tic=463 ms=18397.572300 interval=57.820600
+CA121 FRAME tic=465 ms=18452.163000 interval=54.590700
+CA121 FRAME tic=467 ms=18510.569900 interval=58.406900
+CA121 FRAME tic=469 ms=18561.521100 interval=50.951200
+CA121 FRAME tic=471 ms=18621.575400 interval=60.054300
+CA121 FRAME tic=473 ms=18676.363100 interval=54.787700
+CA121 FRAME tic=475 ms=18748.549700 interval=72.186600
+CA121 FRAME tic=478 ms=18838.944000 interval=90.394300
+CA121 FRAME tic=481 ms=18931.907100 interval=92.963100
+CA121 COUNT tic=481 candidates=0 sight=0 decisions=0 commands=0
+CA121 FRAME tic=484 ms=19029.210100 interval=97.303000
+CA121 FRAME tic=488 ms=19133.377900 interval=104.167800
+CA121 SIM tic=490 ms=19193.905200 roster=6001 attackers=5998 defenders=600 groups=66 moving=0 blocked=2 x=0.000 y=320.000 z=-0.000 angle=90.000
+CA121 MOTION tic=490 displaced=5979 distance=392890.482186 contacts=0
+CA121 FRAME tic=491 ms=19234.379300 interval=101.001400
+CA121 FRAME tic=495 ms=19338.256400 interval=103.877100
+CA121 FRAME tic=498 ms=19428.160300 interval=89.903900
+CA121 FRAME tic=502 ms=19536.552100 interval=108.391800
+CA121 FRAME tic=505 ms=19624.862600 interval=88.310500
+CA121 FRAME tic=508 ms=19711.579400 interval=86.716800
+CA121 FRAME tic=512 ms=19816.226100 interval=104.646700
+CA121 FRAME tic=515 ms=19891.482800 interval=75.256700
+CA121 FRAME tic=518 ms=19962.117100 interval=70.634300
+CA121 COUNT tic=518 candidates=0 sight=0 decisions=0 commands=0
+CA121 FRAME tic=520 ms=20017.350200 interval=55.233100
+CA121 FRAME tic=522 ms=20075.114500 interval=57.764300
+CA121 FRAME tic=524 ms=20125.806800 interval=50.692300
+CA121 SIM tic=525 ms=20153.484900 roster=6001 attackers=5998 defenders=600 groups=63 moving=0 blocked=0 x=0.000 y=320.000 z=-0.000 angle=90.000
+CA121 MOTION tic=525 displaced=5978 distance=367461.123080 contacts=0
+CA121 FRAME tic=526 ms=20196.064900 interval=70.258100
+Benchmark info saved
+CA121 FRAME tic=528 ms=20249.519700 interval=53.454800
+CA121 FRAME tic=530 ms=20308.320800 interval=58.801100
+CA121 FRAME tic=532 ms=20359.654100 interval=51.333300
+CA121 FRAME tic=534 ms=20421.145700 interval=61.491600
+CA121 FRAME tic=536 ms=20483.981200 interval=62.835500
+CA121 FRAME tic=539 ms=20572.603800 interval=88.622600
+CA121 FRAME tic=542 ms=20659.871300 interval=87.267500
+CA121 FRAME tic=545 ms=20746.067800 interval=86.196500
+CA121 FRAME tic=548 ms=20841.567600 interval=95.499800
+CA121 FRAME tic=551 ms=20938.177000 interval=96.609400
+CA121 FRAME tic=554 ms=21026.884900 interval=88.707900
+CA121 COUNT tic=555 candidates=0 sight=0 decisions=0 commands=0
+CA121 FRAME tic=558 ms=21129.663400 interval=102.778500
+CA121 SIM tic=560 ms=21182.768400 roster=6001 attackers=5998 defenders=600 groups=65 moving=0 blocked=1 x=0.000 y=320.000 z=-0.000 angle=90.000
+CA121 MOTION tic=560 displaced=5978 distance=386182.436245 contacts=0
+CA121 FRAME tic=561 ms=21225.582900 interval=95.919500
+CA121 FRAME tic=565 ms=21339.782200 interval=114.199300
+CA121 FRAME tic=569 ms=21452.656000 interval=112.873800
+CA121 FRAME tic=572 ms=21542.890700 interval=90.234700
+CA121 FRAME tic=576 ms=21645.435900 interval=102.545200
+CA121 FRAME tic=579 ms=21725.052300 interval=79.616400
+CA121 FRAME tic=582 ms=21797.420400 interval=72.368100
+CA121 FRAME tic=584 ms=21852.967600 interval=55.547200
+CA121 FRAME tic=586 ms=21913.627200 interval=60.659600
+CA121 FRAME tic=589 ms=21984.082300 interval=70.455100
+CA121 FRAME tic=591 ms=22042.594500 interval=58.512200
+CA121 FRAME tic=593 ms=22095.970200 interval=53.375700
+CA121 COUNT tic=592 candidates=0 sight=0 decisions=0 commands=0
+CA121 FRAME tic=595 ms=22158.645500 interval=62.675300
+CA121 SIM tic=595 ms=22169.193100 roster=6001 attackers=5998 defenders=600 groups=64 moving=0 blocked=0 x=0.000 y=320.000 z=-0.000 angle=90.000
+CA121 MOTION tic=595 displaced=5980 distance=383194.091268 contacts=0
+CA121 FRAME tic=597 ms=22225.141100 interval=66.495600
+CA121 FRAME tic=599 ms=22284.899100 interval=59.758000
+CA121 FRAME tic=602 ms=22372.273500 interval=87.374400
+CA121 FRAME tic=605 ms=22458.255600 interval=85.982100
+CA121 FRAME tic=608 ms=22555.916400 interval=97.660800
+CA121 FRAME tic=611 ms=22646.128800 interval=90.212400
+CA121 FRAME tic=614 ms=22735.315900 interval=89.187100
+CA121 FRAME tic=617 ms=22813.144200 interval=77.828300
+CA121 FRAME tic=620 ms=22908.901100 interval=95.756900
+CA121 FRAME tic=624 ms=23023.961200 interval=115.060100
+CA121 FRAME tic=628 ms=23141.477200 interval=117.516000
+CA121 COUNT tic=629 candidates=0 sight=0 decisions=0 commands=0
+CA121 SIM tic=630 ms=23213.404900 roster=6001 attackers=5998 defenders=600 groups=63 moving=0 blocked=11 x=0.000 y=320.000 z=-0.000 angle=90.000
+CA121 MOTION tic=630 displaced=5977 distance=380688.461238 contacts=0
+CA121 FRAME tic=632 ms=23273.411500 interval=131.934300
+CA121 FRAME tic=636 ms=23385.495900 interval=112.084400
+CA121 FRAME tic=640 ms=23488.653900 interval=103.158000
+CA121 FRAME tic=644 ms=23583.701900 interval=95.048000
+CA121 FRAME tic=647 ms=23655.041900 interval=71.340000
+CA121 FRAME tic=649 ms=23708.219400 interval=53.177500
+CA121 FRAME tic=651 ms=23766.397200 interval=58.177800
+CA121 FRAME tic=653 ms=23818.083100 interval=51.685900
+CA121 FRAME tic=655 ms=23877.166000 interval=59.082900
+CA121 FRAME tic=657 ms=23930.623800 interval=53.457800
+CA121 FRAME tic=659 ms=23994.044900 interval=63.421100
+CA121 FRAME tic=661 ms=24053.955000 interval=59.910100
+CA121 FRAME tic=663 ms=24121.904000 interval=67.949000
+CA121 SIM tic=665 ms=24179.273300 roster=6001 attackers=5998 defenders=600 groups=64 moving=0 blocked=3 x=0.000 y=320.000 z=-0.000 angle=90.000
+CA121 MOTION tic=665 displaced=5974 distance=359085.120883 contacts=0
+CA121 FRAME tic=666 ms=24233.515500 interval=111.611500
+CA121 COUNT tic=666 candidates=0 sight=0 decisions=0 commands=0
+CA121 FRAME tic=670 ms=24342.997700 interval=109.482200
+CA121 FRAME tic=674 ms=24458.635700 interval=115.638000
+CA121 FRAME tic=678 ms=24570.202000 interval=111.566300
+CA121 FRAME tic=682 ms=24676.730900 interval=106.528900
+CA121 FRAME tic=685 ms=24764.091600 interval=87.360700
+CA121 FRAME tic=688 ms=24847.481500 interval=83.389900
+CA121 FRAME tic=691 ms=24934.438800 interval=86.957300
+CA121 FRAME tic=694 ms=25024.032500 interval=89.593700
+CA121 FRAME tic=698 ms=25140.463900 interval=116.431400
+Total, ms   Averg, ms   Calls   Actor class
+----------  ----------  ------  --------------------
+  6.411921    0.001069    6000  CaelumMandinga
+  2.316296    0.002403     964  CaelumActorSimpleElementalProjectile
+  0.989169    0.000150    6601  CaelumSewerEscapeTarget
+  0.448022    0.000747     600  CaelumPortDefender
+  0.290330    0.048388       6  CaelumBatteringRam
+  0.115878    0.000153     756  CaelumCannonBlock
+  0.101650    0.000169     600  CaelumGateBlocker
+  0.038814    0.000400      97  CaelumVehiclePart
+  0.036110    0.036110       1  CaelumPlayer
+  0.032063    0.000763      42  CaelumCannon
+  0.031244    0.000108     288  CaelumRamBlock
+  0.007460    0.000178      42  CaelumCannonBarrel
+  0.007150    0.000170      42  CaelumCannonFrame
+  0.005531    0.000691       8  CaelumBreakableGate
+  0.004480    0.004480       1  CaelumPortSiege
+  0.004020    0.004020       1  CaelumMerchantShip
+  0.002890    0.000120      24  CaelumRamSuspension
+  0.002620    0.002620       1  CaelumPortCommander
+  0.001910    0.001910       1  CaelumDiningTableSmall
+  0.001370    0.001370       1  CaelumRestBed
+  0.001100    0.001100       1  CaelumTreePlainsTalaYoung
+  0.000990    0.000165       6  CaelumSiegeRouteNode
+  0.000980    0.000163       6  CaelumRamFrameVisual
+  0.000820    0.000820       1  CaelumWorkbenchStation
+  0.000740    0.000370       2  CaelumTimeAdvanceZone
+  0.000670    0.000670       1  BasicArmor
+  0.000650    0.000162       4  CaelumSiegeGateReinforced
+  0.000460    0.000230       2  CaelumSiegeGate
+  0.000410    0.000205       2  CaelumRestChair
+  0.000400    0.000400       1  HexenArmor
+  0.000350    0.000350       1  CaelumNotificationInbox
+  0.000350    0.000350       1  CaelumDemoVoiceSpeaker
+  0.000270    0.000270       1  CaelumPortCompletion
+  0.000270    0.000135       2  CaelumSiegeGateArmored
+  0.000260    0.000043       6  CaelumRamHead
+  0.000250    0.000250       1  CaelumCoveredCart
+  0.000240    0.000240       1  CaelumVehicleRanch
+  0.000150    0.000150       1  CaelumClimateRegion
+  0.000120    0.000120       1  CaelumWeatherState
+  0.000110    0.000110       1  CaelumPersistentCharacterState
+  0.000110    0.000110       1  CaelumUnarmedWeapon
+  0.000080    0.000080       1  CaelumWorldClock
+  0.000080    0.000080       1  CaelumCalendarState
+  0.000020    0.000020       1  CaelumScheduleState
+  0.000010         Inf       0  InternalDynamicLight
+CA121 SIM tic=700 ms=25205.364300 roster=6001 attackers=5998 defenders=600 groups=64 moving=0 blocked=3 x=0.000 y=320.000 z=-0.000 angle=90.000
+CA121 MOTION tic=700 displaced=5963 distance=372716.832314 contacts=0
+CA121 FRAME tic=702 ms=25273.365400 interval=132.901500
+CA121 COUNT tic=703 candidates=0 sight=0 decisions=0 commands=0
+CA121 FRAME tic=706 ms=25628.874900 interval=355.509500
+CA121 FRAME tic=719 ms=25878.798500 interval=249.923600
+CA121 FRAME tic=727 ms=26044.284100 interval=165.485600
+CA121 FRAME tic=733 ms=26194.766200 interval=150.482100
+CA121 SIM tic=735 ms=26257.700800 roster=6001 attackers=5995 defenders=600 groups=62 moving=0 blocked=2 x=0.000 y=320.000 z=-0.000 angle=90.000
+CA121 MOTION tic=735 displaced=5971 distance=366903.492426 contacts=0
+CA121 FRAME tic=739 ms=26365.523900 interval=170.757700
+CA121 COUNT tic=740 candidates=0 sight=0 decisions=0 commands=0
+CA121 FRAME tic=744 ms=26493.879300 interval=128.355400
+CA121 FRAME tic=749 ms=26620.910700 interval=127.031400
+CA121 FRAME tic=753 ms=26725.679000 interval=104.768300
+CA121 FRAME tic=757 ms=26838.488600 interval=112.809600
+CA121 FRAME tic=761 ms=26947.528500 interval=109.039900
+CA121 FRAME tic=765 ms=27056.922300 interval=109.393800
+CA121 FRAME tic=769 ms=27164.573200 interval=107.650900
+CA121 SIM tic=770 ms=27208.782400 roster=6001 attackers=5995 defenders=600 groups=64 moving=0 blocked=13 x=0.000 y=320.000 z=-0.000 angle=90.000
+CA121 MOTION tic=770 displaced=5957 distance=368584.524624 contacts=0
+CA121 FRAME tic=772 ms=27270.557100 interval=105.983900
+CA121 FRAME tic=776 ms=27361.379100 interval=90.822000
+CA121 COUNT tic=777 candidates=0 sight=0 decisions=0 commands=0
+CA121 FRAME tic=779 ms=27440.379000 interval=78.999900
+CA121 FRAME tic=782 ms=27512.089900 interval=71.710900
+CA121 FRAME tic=785 ms=27585.045900 interval=72.956000
+CA121 FRAME tic=787 ms=27645.260400 interval=60.214500
+CA121 FRAME tic=789 ms=27702.928700 interval=57.668300
+CA121 FRAME tic=791 ms=27762.569500 interval=59.640800
+CA121 FRAME tic=793 ms=27830.443900 interval=67.874400
+CA121 FRAME tic=796 ms=27922.730500 interval=92.286600
+CA121 FRAME tic=799 ms=28011.451600 interval=88.721100
+CA121 FRAME tic=802 ms=28104.040400 interval=92.588800
+CA121 FRAME tic=805 ms=28188.767100 interval=84.726700
+CA121 SIM tic=805 ms=28203.737500 roster=6001 attackers=5995 defenders=600 groups=63 moving=0 blocked=10 x=0.000 y=320.000 z=-0.000 angle=90.000
+CA121 MOTION tic=805 displaced=5953 distance=345510.729451 contacts=0
+CA121 FRAME tic=808 ms=28290.934600 interval=102.167500
+CA121 FRAME tic=812 ms=28409.268400 interval=118.333800
+CA121 COUNT tic=814 candidates=0 sight=0 decisions=0 commands=0
+CA121 FRAME tic=816 ms=28528.076000 interval=118.807600
+CA121 FRAME tic=820 ms=28645.878600 interval=117.802600
+CA121 FRAME tic=824 ms=28758.638100 interval=112.759500
+CA121 FRAME tic=828 ms=28870.318900 interval=111.680800
+CA121 FRAME tic=832 ms=28970.240700 interval=99.921800
+CA121 FRAME tic=835 ms=29043.922900 interval=73.682200
+CA121 FRAME tic=838 ms=29119.319200 interval=75.396300
+CA121 SIM tic=840 ms=29168.902800 roster=6001 attackers=5995 defenders=600 groups=66 moving=0 blocked=3 x=0.000 y=320.000 z=-0.000 angle=90.000
+CA121 MOTION tic=840 displaced=5964 distance=354873.666434 contacts=0
+CA121 FRAME tic=841 ms=29212.828600 interval=93.509400
+CA121 FRAME tic=844 ms=29308.229600 interval=95.401000
+CA121 FRAME tic=847 ms=29388.981200 interval=80.751600
+CA121 FRAME tic=850 ms=29464.473200 interval=75.492000
+CA121 COUNT tic=851 candidates=0 sight=0 decisions=0 commands=0
+CA121 FRAME tic=853 ms=29537.878000 interval=73.404800
+CA121 FRAME tic=855 ms=29608.697000 interval=70.819000
+CA121 FRAME tic=858 ms=29710.646900 interval=101.949900
+CA121 FRAME tic=862 ms=29822.081600 interval=111.434700
+CA121 FRAME tic=865 ms=29910.044100 interval=87.962500
+CA121 FRAME tic=869 ms=30017.037800 interval=106.993700
+CA121 FRAME tic=872 ms=30108.734500 interval=91.696700
+CA121 FRAME tic=875 ms=30196.610800 interval=87.876300
+Benchmark info saved
+CA121 SIM tic=875 ms=30215.480100 roster=6001 attackers=5995 defenders=600 groups=64 moving=0 blocked=8 x=0.000 y=320.000 z=-0.000 angle=90.000
+CA121 MOTION tic=875 displaced=5961 distance=351548.133658 contacts=0
+CA121 FRAME tic=878 ms=30300.658600 interval=104.047800
+CA121 FRAME tic=882 ms=30420.891400 interval=120.232800
+CA121 FRAME tic=886 ms=30537.575600 interval=116.684200
+CA121 COUNT tic=888 candidates=0 sight=0 decisions=0 commands=0
+CA121 FRAME tic=890 ms=30653.419400 interval=115.843800
+CA121 FRAME tic=894 ms=30748.009100 interval=94.589700
+CA121 FRAME tic=898 ms=30844.695900 interval=96.686800
+CA121 FRAME tic=901 ms=30918.195600 interval=73.499700
+CA121 FRAME tic=904 ms=30991.500100 interval=73.304500
+CA121 FRAME tic=906 ms=31050.421100 interval=58.921000
+CA121 FRAME tic=908 ms=31103.958800 interval=53.537700
+CA121 FRAME tic=910 ms=31158.691500 interval=54.732700
+CA121 SIM tic=910 ms=31167.975500 roster=6001 attackers=5995 defenders=600 groups=64 moving=0 blocked=14 x=0.000 y=320.000 z=-0.000 angle=90.000
+CA121 MOTION tic=910 displaced=5956 distance=352545.817517 contacts=0
+CA121 FRAME tic=912 ms=31223.604600 interval=64.913100
+CA121 FRAME tic=914 ms=31284.268900 interval=60.664300
+CA121 FRAME tic=916 ms=31340.880900 interval=56.612000
+CA121 FRAME tic=918 ms=31411.937500 interval=71.056600
+CA121 FRAME tic=921 ms=31500.247300 interval=88.309800
+CA121 FRAME tic=924 ms=31593.965100 interval=93.717800
+CA121 COUNT tic=925 candidates=0 sight=0 decisions=0 commands=0
+CA121 FRAME tic=927 ms=31689.423600 interval=95.458500
+CA121 FRAME tic=931 ms=31796.088900 interval=106.665300
+CA121 FRAME tic=934 ms=31887.357700 interval=91.268800
+CA121 FRAME tic=938 ms=31995.261100 interval=107.903400
+CA121 FRAME tic=941 ms=32080.368600 interval=85.107500
+CA121 FRAME tic=944 ms=32174.369200 interval=94.000600
+CA121 SIM tic=945 ms=32212.882600 roster=6001 attackers=5995 defenders=600 groups=65 moving=0 blocked=4 x=0.000 y=320.000 z=-0.000 angle=90.000
+CA121 MOTION tic=945 displaced=5955 distance=335934.650491 contacts=0
+CA121 FRAME tic=948 ms=32301.055700 interval=126.686500
+CA121 FRAME tic=952 ms=32404.972400 interval=103.916700
+CA121 FRAME tic=956 ms=32504.705700 interval=99.733300
+CA121 FRAME tic=959 ms=32577.990600 interval=73.284900
+CA121 FRAME tic=962 ms=32660.372700 interval=82.382100
+CA121 COUNT tic=962 candidates=0 sight=0 decisions=0 commands=0
+CA121 FRAME tic=965 ms=32740.968300 interval=80.595600
+CA121 FRAME tic=968 ms=32825.715200 interval=84.746900
+CA121 FRAME tic=970 ms=32891.671000 interval=65.955800
+CA121 FRAME tic=973 ms=32963.837400 interval=72.166400
+CA121 FRAME tic=975 ms=33028.402000 interval=64.564600
+CA121 FRAME tic=978 ms=33105.704000 interval=77.302000
+CA121 FRAME tic=980 ms=33161.148400 interval=55.444400
+CA121 SIM tic=980 ms=33178.247200 roster=6001 attackers=5995 defenders=600 groups=67 moving=0 blocked=7 x=0.000 y=320.000 z=-0.000 angle=90.000
+CA121 MOTION tic=980 displaced=5954 distance=346243.675552 contacts=0
+CA121 FRAME tic=982 ms=33245.751200 interval=84.602800
+CA121 FRAME tic=985 ms=33333.464100 interval=87.712900
+CA121 FRAME tic=988 ms=33428.147300 interval=94.683200
+CA121 FRAME tic=992 ms=33539.809500 interval=111.662200
+CA121 FRAME tic=995 ms=33627.704500 interval=87.895000
+CA121 FRAME tic=999 ms=33741.583500 interval=113.879000
+CA121 COUNT tic=999 candidates=0 sight=0 decisions=0 commands=0
+CA121 FRAME tic=1003 ms=33851.431100 interval=109.847600
+CA121 FRAME tic=1006 ms=33943.876100 interval=92.445000
+CA121 FRAME tic=1010 ms=34059.658700 interval=115.782600
+CA121 FRAME tic=1014 ms=34171.087100 interval=111.428400
+CA121 SIM tic=1015 ms=34206.679500 roster=6001 attackers=5995 defenders=600 groups=64 moving=0 blocked=11 x=0.000 y=320.000 z=-0.000 angle=90.000
+CA121 MOTION tic=1015 displaced=5956 distance=341530.182876 contacts=0
+CA121 FRAME tic=1018 ms=34305.976500 interval=134.889400
+CA121 FRAME tic=1022 ms=34410.602400 interval=104.625900
+CA121 FRAME tic=1026 ms=34510.216400 interval=99.614000
+CA121 FRAME tic=1029 ms=34582.401900 interval=72.185500
+CA121 FRAME tic=1032 ms=34656.834900 interval=74.433000
+CA121 FRAME tic=1034 ms=34721.283200 interval=64.448300
+CA121 FRAME tic=1037 ms=34793.337400 interval=72.054200
+CA121 COUNT tic=1036 candidates=0 sight=0 decisions=0 commands=0
+CA121 FRAME tic=1039 ms=34857.546600 interval=64.209200
+CA121 FRAME tic=1042 ms=34938.550900 interval=81.004300
+CA121 FRAME tic=1044 ms=34998.685600 interval=60.134700
+CA121 FRAME tic=1047 ms=35089.979300 interval=91.293700
+CA121 FRAME tic=1050 ms=35182.436700 interval=92.457400
+CA121 SIM tic=1050 ms=35200.595700 roster=6001 attackers=5995 defenders=600 groups=63 moving=0 blocked=20 x=0.000 y=320.000 z=-0.000 angle=90.000
+CA121 MOTION tic=1050 displaced=5948 distance=333285.207205 contacts=0
+CA121 FRAME tic=1053 ms=35289.450600 interval=107.013900
+CA121 FRAME tic=1057 ms=35646.914200 interval=357.463600
+CA121 FRAME tic=1069 ms=35945.472100 interval=298.557900
+CA121 COUNT tic=1073 candidates=0 sight=0 decisions=0 commands=0
+CA121 FRAME tic=1080 ms=36222.379200 interval=276.907100
+CA121 SIM tic=1085 ms=36342.784900 roster=6001 attackers=5990 defenders=600 groups=65 moving=0 blocked=13 x=0.000 y=320.000 z=-0.000 angle=90.000
+CA121 MOTION tic=1085 displaced=5948 distance=319542.398284 contacts=0
+CA121 FRAME tic=1089 ms=36453.596200 interval=231.217000
+CA121 FRAME tic=1097 ms=36617.586700 interval=163.990500
+CA121 FRAME tic=1103 ms=36745.404300 interval=127.817600
+CA121 FRAME tic=1108 ms=36860.542100 interval=115.137800
+CA121 COUNT tic=1110 candidates=0 sight=0 decisions=0 commands=0
+CA121 FRAME tic=1112 ms=36981.424100 interval=120.882000
+CA121 FRAME tic=1116 ms=37110.455000 interval=129.030900
+CA121 SIM tic=1120 ms=37234.623700 roster=6001 attackers=5990 defenders=600 groups=68 moving=0 blocked=9 x=0.000 y=320.000 z=-0.000 angle=90.000
+CA121 MOTION tic=1120 displaced=5948 distance=334896.566083 contacts=0
+CA121 FRAME tic=1121 ms=37286.626100 interval=176.171100
+CA121 FRAME tic=1127 ms=37448.263200 interval=161.637100
+CA121 FRAME tic=1132 ms=37590.278800 interval=142.015600
+CA121 FRAME tic=1137 ms=37728.758900 interval=138.480100
+CA121 FRAME tic=1142 ms=37871.440700 interval=142.681800
+CA121 FRAME tic=1147 ms=38011.522400 interval=140.081700
+CA121 COUNT tic=1147 candidates=0 sight=0 decisions=0 commands=0
+CA121 FRAME tic=1152 ms=38126.502800 interval=114.980400
+CA121 SIM tic=1155 ms=38195.678800 roster=6001 attackers=5990 defenders=600 groups=64 moving=0 blocked=3 x=0.000 y=320.000 z=-0.000 angle=90.000
+CA121 MOTION tic=1155 displaced=5950 distance=332981.636089 contacts=0
+CA121 FRAME tic=1156 ms=38236.579400 interval=110.076600
+CA121 FRAME tic=1160 ms=38328.576300 interval=91.996900
+CA121 FRAME tic=1163 ms=38412.282100 interval=83.705800
+CA121 FRAME tic=1166 ms=38490.988400 interval=78.706300
+CA121 FRAME tic=1169 ms=38574.451000 interval=83.462600
+CA121 FRAME tic=1172 ms=38664.915700 interval=90.464700
+CA121 FRAME tic=1175 ms=38759.521100 interval=94.605400
+CA121 FRAME tic=1178 ms=38863.274800 interval=103.753700
+CA121 FRAME tic=1182 ms=38981.672700 interval=118.397900
+CA121 COUNT tic=1184 candidates=0 sight=0 decisions=0 commands=0
+CA121 FRAME tic=1186 ms=39097.611200 interval=115.938500
+CA121 FRAME tic=1190 ms=39207.954000 interval=110.342800
+CA121 SIM tic=1190 ms=39218.663700 roster=6001 attackers=5990 defenders=600 groups=63 moving=0 blocked=27 x=0.000 y=320.000 z=-0.000 angle=90.000
+CA121 MOTION tic=1190 displaced=5946 distance=327878.669814 contacts=0
+CA121 FRAME tic=1194 ms=39325.105300 interval=117.151300
+CA121 FRAME tic=1198 ms=39458.690700 interval=133.585400
+CA121 FRAME tic=1203 ms=39632.608700 interval=173.918000
+CA121 FRAME tic=1209 ms=39790.992900 interval=158.384200
+CA121 FRAME tic=1214 ms=39907.292300 interval=116.299400
+CA121 FRAME tic=1218 ms=40003.335600 interval=96.043300
+CA121 FRAME tic=1222 ms=40094.059200 interval=90.723600
+CA121 COUNT tic=1221 candidates=0 sight=0 decisions=0 commands=0
+CA121 FRAME tic=1225 ms=40176.797900 interval=82.738700
+CA121 SIM tic=1225 ms=40189.117000 roster=6001 attackers=5990 defenders=600 groups=65 moving=0 blocked=14 x=0.000 y=320.000 z=-0.000 angle=90.000
+CA121 MOTION tic=1225 displaced=5947 distance=315196.882821 contacts=0
+CA121 FRAME tic=1228 ms=40267.020600 interval=90.222700
+CA121 FRAME tic=1231 ms=40346.932200 interval=79.911600
+CA121 FRAME tic=1234 ms=40428.387500 interval=81.455300
+CA121 FRAME tic=1237 ms=40524.380600 interval=95.993100
+CA121 FRAME tic=1240 ms=40624.233600 interval=99.853000
+CA121 FRAME tic=1244 ms=40748.346200 interval=124.112600
+CA121 FRAME tic=1248 ms=40859.429100 interval=111.082900
+CA121 FRAME tic=1252 ms=40981.847400 interval=122.418300
+CA121 FRAME tic=1256 ms=41090.351300 interval=108.503900
+CA121 COUNT tic=1258 candidates=0 sight=0 decisions=0 commands=0
+CA121 FRAME tic=1260 ms=41207.135400 interval=116.784100
+CA121 SIM tic=1260 ms=41226.143600 roster=6001 attackers=5990 defenders=600 groups=64 moving=0 blocked=9 x=0.000 y=320.000 z=-0.000 angle=90.000
+CA121 MOTION tic=1260 displaced=5942 distance=318708.903587 contacts=0
+CA121 FRAME tic=1264 ms=41338.785700 interval=131.650300
+CA121 FRAME tic=1268 ms=41452.322000 interval=113.536300
+CA121 FRAME tic=1272 ms=41545.526300 interval=93.204300
+CA121 FRAME tic=1276 ms=41650.155900 interval=104.629600
+CA121 FRAME tic=1279 ms=41724.606500 interval=74.450600
+CA121 FRAME tic=1282 ms=41801.773200 interval=77.166700
+CA121 FRAME tic=1285 ms=41873.449900 interval=71.676700
+CA121 FRAME tic=1287 ms=41931.561000 interval=58.111100
+CA121 FRAME tic=1289 ms=41993.583000 interval=62.022000
+CA121 FRAME tic=1291 ms=42069.901900 interval=76.318900
+CA121 FRAME tic=1294 ms=42146.088900 interval=76.187000
+CA121 SIM tic=1295 ms=42184.575000 roster=6001 attackers=5990 defenders=600 groups=66 moving=0 blocked=21 x=0.000 y=320.000 z=-0.000 angle=90.000
+CA121 MOTION tic=1295 displaced=5943 distance=319240.836198 contacts=0
+CA121 COUNT tic=1295 candidates=0 sight=0 decisions=0 commands=0
+CA121 FRAME tic=1297 ms=42247.270600 interval=101.181700
+CA121 FRAME tic=1300 ms=42345.799000 interval=98.528400
+CA121 FRAME tic=1304 ms=42467.361300 interval=121.562300
+CA121 FRAME tic=1308 ms=42588.372200 interval=121.010900
+CA121 FRAME tic=1312 ms=42701.288100 interval=112.915900
+CA121 FRAME tic=1316 ms=42814.099900 interval=112.811800
+CA121 FRAME tic=1320 ms=42927.245500 interval=113.145600
+CA121 FRAME tic=1324 ms=43043.995800 interval=116.750300
+CA121 FRAME tic=1328 ms=43158.241500 interval=114.245700
+CA121 SIM tic=1330 ms=43220.153000 roster=6001 attackers=5990 defenders=600 groups=64 moving=0 blocked=21 x=0.000 y=320.000 z=-0.000 angle=90.000
+CA121 MOTION tic=1330 displaced=5947 distance=318047.999383 contacts=0
+CA121 FRAME tic=1332 ms=43275.687200 interval=117.445700
+CA121 COUNT tic=1332 candidates=0 sight=0 decisions=0 commands=0
+CA121 FRAME tic=1336 ms=43368.245500 interval=92.558300
+CA121 FRAME tic=1339 ms=43444.580900 interval=76.335400
+CA121 FRAME tic=1342 ms=43521.270900 interval=76.690000
+CA121 FRAME tic=1345 ms=43595.888100 interval=74.617200
+CA121 FRAME tic=1347 ms=43657.624600 interval=61.736500
+CA121 FRAME tic=1350 ms=43731.801500 interval=74.176900
+CA121 FRAME tic=1352 ms=43790.023400 interval=58.221900
+CA121 FRAME tic=1354 ms=43851.558400 interval=61.535000
+CA121 FRAME tic=1356 ms=43908.736700 interval=57.178300
+CA121 FRAME tic=1358 ms=43964.950900 interval=56.214200
+CA121 FRAME tic=1360 ms=44025.835700 interval=60.884800
+CA121 FRAME tic=1363 ms=44138.221300 interval=112.385600
+CA121 SIM tic=1365 ms=44201.042800 roster=6001 attackers=5990 defenders=600 groups=65 moving=0 blocked=15 x=0.000 y=320.000 z=-0.000 angle=90.000
+CA121 MOTION tic=1365 displaced=5944 distance=306040.231885 contacts=0
+CA121 FRAME tic=1366 ms=44249.094100 interval=110.872800
+CA121 FRAME tic=1370 ms=44373.039400 interval=123.945300
+CA121 COUNT tic=1369 candidates=0 sight=0 decisions=0 commands=0
+CA121 FRAME tic=1375 ms=44507.948000 interval=134.908600
+CA121 FRAME tic=1379 ms=44643.745700 interval=135.797700
+CA121 FRAME tic=1384 ms=44784.503600 interval=140.757900
+CA121 FRAME tic=1389 ms=44925.001600 interval=140.498000
+CA121 FRAME tic=1394 ms=45067.571400 interval=142.569800
+CA121 FRAME tic=1399 ms=45192.837300 interval=125.265900
+CA121 SIM tic=1400 ms=45222.142400 roster=6001 attackers=5990 defenders=600 groups=68 moving=0 blocked=17 x=0.000 y=320.000 z=-0.000 angle=90.000
+CA121 MOTION tic=1400 displaced=5943 distance=319031.419326 contacts=0
+CA121 FRAME tic=1403 ms=45315.354700 interval=122.517400
+CA121 COUNT tic=1406 candidates=0 sight=0 decisions=0 commands=0
+CA121 FRAME tic=1408 ms=45676.174400 interval=360.819700
+CA121 FRAME tic=1420 ms=45949.775100 interval=273.600700
+CA121 FRAME tic=1430 ms=46208.322800 interval=258.547700
+CA121 SIM tic=1435 ms=46358.662600 roster=6001 attackers=5986 defenders=599 groups=65 moving=0 blocked=10 x=0.000 y=320.000 z=-0.000 angle=90.000
+CA121 MOTION tic=1435 displaced=5943 distance=321096.720603 contacts=0
+CA121 FRAME tic=1439 ms=46512.729900 interval=304.407100
+CA121 COUNT tic=1443 candidates=0 sight=0 decisions=0 commands=0
+CA121 FRAME tic=1450 ms=46884.076200 interval=371.346300
+CA121 FRAME tic=1463 ms=47235.936500 interval=351.860300
+CA121 SIM tic=1470 ms=47407.059900 roster=6001 attackers=5986 defenders=599 groups=66 moving=0 blocked=24 x=0.000 y=320.000 z=-0.000 angle=90.000
+CA121 MOTION tic=1470 displaced=5944 distance=324701.778170 contacts=0
+CA121 FRAME tic=1475 ms=47542.779900 interval=306.843400
+CA121 COUNT tic=1480 candidates=0 sight=0 decisions=0 commands=0
+CA121 FRAME tic=1485 ms=47777.873200 interval=235.093300
+CA121 FRAME tic=1494 ms=48030.421500 interval=252.548300
+CA121 FRAME tic=1503 ms=48306.793000 interval=276.371500
+CA121 SIM tic=1505 ms=48386.468900 roster=6001 attackers=5986 defenders=599 groups=67 moving=0 blocked=18 x=0.000 y=320.000 z=-0.000 angle=90.000
+CA121 MOTION tic=1505 displaced=5939 distance=316300.765957 contacts=0
+CA121 FRAME tic=1512 ms=48610.510600 interval=303.717600
+CA121 COUNT tic=1517 candidates=0 sight=0 decisions=0 commands=0
+CA121 FRAME tic=1523 ms=48945.220200 interval=334.709600
+CA121 FRAME tic=1535 ms=49277.084700 interval=331.864500
+CA121 SIM tic=1540 ms=49405.395000 roster=6001 attackers=5986 defenders=599 groups=63 moving=0 blocked=21 x=0.000 y=320.000 z=-0.000 angle=90.000
+CA121 MOTION tic=1540 displaced=5945 distance=324631.708603 contacts=0
+CA121 FRAME tic=1546 ms=49592.831000 interval=315.746300
+CA121 COUNT tic=1554 candidates=0 sight=0 decisions=0 commands=0
+CA121 FRAME tic=1557 ms=49892.142900 interval=299.311900
+CA121 FRAME tic=1568 ms=50248.137400 interval=355.994500
+CA121 SIM tic=1575 ms=50466.878600 roster=6001 attackers=5986 defenders=599 groups=65 moving=0 blocked=13 x=0.000 y=320.000 z=-0.000 angle=90.000
+CA121 MOTION tic=1575 displaced=5943 distance=329676.874239 contacts=0
+CA121 FRAME tic=1580 ms=50625.079300 interval=376.941900
+CA121 COUNT tic=1591 candidates=0 sight=0 decisions=0 commands=0
+CA121 FRAME tic=1594 ms=51090.388800 interval=465.309500
+CA121 FRAME tic=1610 ms=51503.500700 interval=413.111900
+CA121 SIM tic=1610 ms=51514.852100 roster=6001 attackers=5986 defenders=599 groups=67 moving=0 blocked=32 x=0.000 y=320.000 z=-0.000 angle=90.000
+CA121 MOTION tic=1610 displaced=5941 distance=334219.913839 contacts=0
+CA121 FRAME tic=1624 ms=51912.890500 interval=409.389800
+CA121 COUNT tic=1628 candidates=0 sight=0 decisions=0 commands=0
+CA121 FRAME tic=1639 ms=52381.533700 interval=468.643200
+CA121 SIM tic=1645 ms=52550.866000 roster=6001 attackers=5986 defenders=598 groups=66 moving=0 blocked=15 x=0.000 y=320.000 z=-0.000 angle=90.000
+CA121 MOTION tic=1645 displaced=5936 distance=328545.636621 contacts=0
+CA121 FRAME tic=1655 ms=52901.863100 interval=520.329400
+CA121 COUNT tic=1665 candidates=0 sight=0 decisions=0 commands=0
+CA121 FRAME tic=1672 ms=53392.047300 interval=490.184200
+CA121 SIM tic=1680 ms=53620.136600 roster=6001 attackers=5986 defenders=597 groups=70 moving=0 blocked=14 x=0.000 y=320.000 z=-0.000 angle=90.000
+CA121 MOTION tic=1680 displaced=5938 distance=338765.442242 contacts=0
+CA121 FRAME tic=1689 ms=53931.895300 interval=539.848000
+CA121 COUNT tic=1702 candidates=0 sight=0 decisions=0 commands=0
+CA121 FRAME tic=1706 ms=54487.552400 interval=555.657100
+CA121 SIM tic=1715 ms=54791.586400 roster=6001 attackers=5986 defenders=597 groups=70 moving=0 blocked=24 x=0.000 y=320.000 z=-0.000 angle=90.000
+CA121 MOTION tic=1715 displaced=5939 distance=339851.787023 contacts=0
+CA121 FRAME tic=1723 ms=55094.944000 interval=607.391600
+CA121 FRAME tic=1740 ms=55579.888500 interval=484.944500
+CA121 COUNT tic=1739 candidates=0 sight=0 decisions=0 commands=0
+CA116 PROBE_REQUEST id=2 ms=55838.692
+Total, ms   Averg, ms   Calls   Actor class
+----------  ----------  ------  --------------------
+ 20.918856    0.003486    6000  CaelumMandinga
+  1.250168    0.002816     444  CaelumActorSimpleElementalProjectile
+  0.859838    0.000130    6601  CaelumSewerEscapeTarget
+  0.722735    0.001205     600  CaelumPortDefender
+  0.257010    0.042835       6  CaelumBatteringRam
+  0.126519    0.000167     756  CaelumCannonBlock
+  0.104484    0.000174     600  CaelumGateBlocker
+  0.040980    0.040980       1  CaelumPlayer
+  0.040132    0.000414      97  CaelumVehiclePart
+  0.034357    0.000119     288  CaelumRamBlock
+  0.031513    0.000750      42  CaelumCannon
+  0.008260    0.000197      42  CaelumCannonBarrel
+  0.008010    0.008010       1  CaelumActorExplosiveElementalProjectile
+  0.006860    0.000163      42  CaelumCannonFrame
+  0.006601    0.000825       8  CaelumBreakableGate
+  0.004840    0.004840       1  CaelumMerchantShip
+  0.004090    0.004090       1  CaelumPortSiege
+  0.003490    0.000145      24  CaelumRamSuspension
+  0.002440    0.002440       1  CaelumPortCommander
+  0.002190    0.002190       1  CaelumDiningTableSmall
+  0.001940    0.001940       1  CaelumRestBed
+  0.001350    0.000225       6  CaelumSiegeRouteNode
+  0.001310    0.000218       6  CaelumRamFrameVisual
+  0.001240    0.000620       2  CaelumTimeAdvanceZone
+  0.001090    0.001090       1  CaelumTreePlainsTalaYoung
+  0.001040    0.000260       4  CaelumSiegeGateReinforced
+  0.000860    0.000860       1  CaelumWorkbenchStation
+  0.000740    0.000370       2  CaelumRestChair
+  0.000680    0.000680       1  BasicArmor
+  0.000560    0.000280       2  CaelumSiegeGate
+  0.000460    0.000460       1  HexenArmor
+  0.000390    0.000065       6  CaelumRamHead
+  0.000360    0.000360       1  CaelumCoveredCart
+  0.000350    0.000350       1  CaelumPortCompletion
+  0.000340    0.000340       1  CaelumNotificationInbox
+  0.000250    0.000125       2  CaelumSiegeGateArmored
+  0.000250    0.000250       1  CaelumVehicleRanch
+  0.000200    0.000200       1  CaelumWeatherState
+  0.000200    0.000200       1  CaelumDemoVoiceSpeaker
+  0.000160    0.000160       1  CaelumClimateRegion
+  0.000130    0.000130       1  CaelumUnarmedWeapon
+  0.000110    0.000110       1  CaelumWorldClock
+  0.000110    0.000110       1  CaelumPersistentCharacterState
+  0.000090    0.000090       1  CaelumCalendarState
+  0.000020    0.000020       1  CaelumScheduleState
+  0.000010         Inf       0  InternalDynamicLight
+CA121 SIM tic=1750 ms=55881.153500 roster=6001 attackers=5986 defenders=597 groups=70 moving=0 blocked=29 x=0.000 y=320.000 z=-0.000 angle=90.000
+CA121 MOTION tic=1750 displaced=5932 distance=338989.192822 contacts=0
+CA121 FRAME tic=1757 ms=56346.610200 interval=766.721700
+CA116 PROBE_PLAY id=2 ms=56364.299 tic=1757
+CA116 PROBE_ACK id=2 ms=56364.331
+CA121 FRAME tic=1774 ms=56929.560100 interval=582.949900
+CA116 PROBE_FRAME id=2 ms=56929.586
+CA121 COUNT tic=1776 candidates=0 sight=0 decisions=0 commands=0
+CA121 SIM tic=1785 ms=57309.837800 roster=6001 attackers=5984 defenders=596 groups=68 moving=0 blocked=14 x=0.000 y=320.000 z=-0.000 angle=90.000
+CA121 MOTION tic=1785 displaced=5929 distance=332971.336291 contacts=0
+CA121 FRAME tic=1791 ms=57504.689500 interval=575.129400
+CA121 FRAME tic=1808 ms=57996.967100 interval=492.277600
+CA121 COUNT tic=1813 candidates=0 sight=0 decisions=0 commands=0
+CA121 SIM tic=1820 ms=58387.803500 roster=6001 attackers=5984 defenders=596 groups=69 moving=0 blocked=15 x=0.000 y=320.000 z=-0.000 angle=90.000
+CA121 MOTION tic=1820 displaced=5936 distance=347354.070700 contacts=0
+CA121 FRAME tic=1825 ms=58603.687100 interval=606.720000
+CA121 FRAME tic=1842 ms=59206.871900 interval=603.184800
+CA121 COUNT tic=1850 candidates=0 sight=0 decisions=0 commands=0
+CA121 SIM tic=1855 ms=59620.855200 roster=6001 attackers=5983 defenders=596 groups=64 moving=0 blocked=15 x=0.000 y=320.000 z=-0.000 angle=90.000
+CA121 MOTION tic=1855 displaced=5931 distance=345131.585746 contacts=0
+CA121 FRAME tic=1859 ms=59761.338800 interval=554.466900
+CA121 FRAME tic=1876 ms=60259.967800 interval=498.629000
+CA121 COUNT tic=1887 candidates=0 sight=0 decisions=0 commands=0
+CA121 SIM tic=1890 ms=60755.422200 roster=6001 attackers=5982 defenders=596 groups=68 moving=0 blocked=20 x=0.000 y=320.000 z=-0.000 angle=90.000
+CA121 MOTION tic=1890 displaced=5924 distance=338581.666404 contacts=0
+CA121 FRAME tic=1893 ms=60858.248900 interval=598.281100
+Benchmark info saved
+CA121 FRAME tic=1910 ms=61391.728900 interval=533.480000
+CA121 COUNT tic=1924 candidates=0 sight=0 decisions=0 commands=0
+CA121 SIM tic=1925 ms=61804.514200 roster=6001 attackers=5982 defenders=596 groups=64 moving=0 blocked=17 x=0.000 y=320.000 z=-0.000 angle=90.000
+CA121 MOTION tic=1925 displaced=5928 distance=339926.096741 contacts=0
+CA121 FRAME tic=1927 ms=61893.125800 interval=501.396900
+CA121 FRAME tic=1944 ms=62409.464700 interval=516.338900
+CA121 SIM tic=1960 ms=62933.712300 roster=6001 attackers=5982 defenders=596 groups=66 moving=0 blocked=18 x=0.000 y=320.000 z=-0.000 angle=90.000
+CA121 MOTION tic=1960 displaced=5929 distance=333857.934660 contacts=0
+CA121 FRAME tic=1961 ms=62994.013300 interval=584.548600
+CA121 COUNT tic=1961 candidates=0 sight=0 decisions=0 commands=0
+CA121 FRAME tic=1978 ms=63590.169100 interval=596.155800
+CA121 FRAME tic=1995 ms=64073.737300 interval=483.568200
+CA121 SIM tic=1995 ms=64089.313200 roster=6001 attackers=5982 defenders=596 groups=67 moving=0 blocked=24 x=0.000 y=320.000 z=-0.000 angle=90.000
+CA121 MOTION tic=1995 displaced=5924 distance=337256.566936 contacts=0
+CA121 COUNT tic=1998 candidates=0 sight=0 decisions=0 commands=0
+CA121 FRAME tic=2012 ms=64629.486400 interval=555.749100
+CA121 FRAME tic=2029 ms=65213.193000 interval=583.706600
+CA121 SIM tic=2030 ms=65266.977800 roster=6001 attackers=5982 defenders=596 groups=68 moving=0 blocked=17 x=0.000 y=320.000 z=-0.000 angle=90.000
+CA121 MOTION tic=2030 displaced=5928 distance=341777.833213 contacts=0
+CA121 COUNT tic=2035 candidates=0 sight=0 decisions=0 commands=0
+CA121 FRAME tic=2046 ms=65808.464600 interval=595.271600
+CA121 FRAME tic=2063 ms=66322.727800 interval=514.263200
+CA121 SIM tic=2065 ms=66399.816700 roster=6001 attackers=5982 defenders=596 groups=65 moving=0 blocked=27 x=0.000 y=320.000 z=-0.000 angle=90.000
+CA121 MOTION tic=2065 displaced=5932 distance=343341.635037 contacts=0
+CA121 COUNT tic=2072 candidates=0 sight=0 decisions=0 commands=0
+CA121 FRAME tic=2080 ms=66918.356000 interval=595.628200
+CA121 FRAME tic=2097 ms=67557.913700 interval=639.557700
+Total, ms   Averg, ms   Calls   Actor class
+----------  ----------  ------  --------------------
+ 16.362827    0.002727    6000  CaelumMandinga
+  0.909092    0.002755     330  CaelumActorSimpleElementalProjectile
+  0.886195    0.000134    6601  CaelumSewerEscapeTarget
+  0.438644    0.000731     600  CaelumPortDefender
+  0.111909    0.000148     756  CaelumCannonBlock
+  0.109841    0.018307       6  CaelumBatteringRam
+  0.098059    0.000163     600  CaelumGateBlocker
+  0.043120    0.043120       1  CaelumPlayer
+  0.041456    0.000144     288  CaelumRamBlock
+  0.038920    0.000401      97  CaelumVehiclePart
+  0.029792    0.000709      42  CaelumCannon
+  0.007410    0.000176      42  CaelumCannonBarrel
+  0.006840    0.000163      42  CaelumCannonFrame
+  0.006040    0.006040       1  CaelumActorExplosiveElementalProjectile
+  0.005561    0.000695       8  CaelumBreakableGate
+  0.005020    0.005020       1  CaelumMerchantShip
+  0.004830    0.004830       1  CaelumPortSiege
+  0.003700    0.000154      24  CaelumRamSuspension
+  0.002900    0.002900       1  CaelumPortCommander
+  0.002150    0.002150       1  CaelumDiningTableSmall
+  0.001460    0.000243       6  CaelumSiegeRouteNode
+  0.001280    0.001280       1  CaelumRestBed
+  0.001260    0.001260       1  CaelumTreePlainsTalaYoung
+  0.001130    0.000188       6  CaelumRamFrameVisual
+  0.001060    0.001060       1  CaelumWorkbenchStation
+  0.000880    0.000440       2  CaelumTimeAdvanceZone
+  0.000700    0.000175       4  CaelumSiegeGateReinforced
+  0.000640    0.000640       1  BasicArmor
+  0.000560    0.000280       2  CaelumRestChair
+  0.000550    0.000092       6  CaelumRamHead
+  0.000490    0.000490       1  CaelumUnarmedWeapon
+  0.000470    0.000235       2  CaelumSiegeGate
+  0.000380    0.000380       1  HexenArmor
+  0.000360    0.000360       1  CaelumNotificationInbox
+  0.000340    0.000340       1  CaelumCoveredCart
+  0.000330    0.000330       1  CaelumDemoVoiceSpeaker
+  0.000330    0.000330       1  CaelumVehicleRanch
+  0.000280    0.000280       1  CaelumPortCompletion
+  0.000220    0.000220       1  CaelumClimateRegion
+  0.000210    0.000105       2  CaelumSiegeGateArmored
+  0.000120    0.000120       1  CaelumPersistentCharacterState
+  0.000110    0.000110       1  CaelumWorldClock
+  0.000080    0.000080       1  CaelumCalendarState
+  0.000060    0.000060       1  CaelumWeatherState
+  0.000020    0.000020       1  CaelumScheduleState
+  0.000010         Inf       0  InternalDynamicLight
+CA121 SIM tic=2100 ms=67670.505000 roster=6001 attackers=5982 defenders=596 groups=67 moving=0 blocked=13 x=0.000 y=320.000 z=-0.000 angle=90.000
+CA121 MOTION tic=2100 displaced=5929 distance=346703.208416 contacts=0
+CA121 COUNT tic=2109 candidates=0 sight=0 decisions=0 commands=0
+CA121 FRAME tic=2114 ms=68395.451200 interval=837.537500
+CA121 FRAME tic=2131 ms=68946.289400 interval=550.838200
+CA121 SIM tic=2135 ms=69091.512700 roster=6001 attackers=5982 defenders=596 groups=66 moving=0 blocked=17 x=0.000 y=320.000 z=-0.000 angle=90.000
+CA121 MOTION tic=2135 displaced=5928 distance=346783.384722 contacts=0
+CA121 COUNT tic=2146 candidates=0 sight=0 decisions=0 commands=0
+CA121 FRAME tic=2148 ms=69580.277500 interval=633.988100
+CA121 FRAME tic=2165 ms=70197.581200 interval=617.303700
+CA121 SIM tic=2170 ms=70411.952000 roster=6001 attackers=5982 defenders=596 groups=67 moving=0 blocked=18 x=0.000 y=320.000 z=-0.000 angle=90.000
+CA121 MOTION tic=2170 displaced=5922 distance=341756.039274 contacts=0
+CA121 FRAME tic=2182 ms=70819.736900 interval=622.155700
+CA121 COUNT tic=2183 candidates=0 sight=0 decisions=0 commands=0
+CA121 FRAME tic=2199 ms=71369.456000 interval=549.719100
+CA121 SIM tic=2205 ms=71593.305800 roster=6001 attackers=5982 defenders=596 groups=67 moving=0 blocked=24 x=0.000 y=320.000 z=-0.000 angle=90.000
+CA121 MOTION tic=2205 displaced=5923 distance=342294.180031 contacts=0
+CA121 FRAME tic=2216 ms=72011.916200 interval=642.460200
+CA121 COUNT tic=2220 candidates=0 sight=0 decisions=0 commands=0
+CA121 FRAME tic=2233 ms=72613.747700 interval=601.831500
+CA121 SIM tic=2240 ms=72835.580700 roster=6001 attackers=5982 defenders=596 groups=69 moving=0 blocked=21 x=0.000 y=320.000 z=-0.000 angle=90.000
+CA121 MOTION tic=2240 displaced=5928 distance=339115.363798 contacts=0
+CA121 FRAME tic=2250 ms=73162.579400 interval=548.831700
+Benchmark info saved
+CA121 COUNT tic=2257 candidates=0 sight=0 decisions=0 commands=0
+CA121 FRAME tic=2267 ms=73709.657400 interval=547.078000
+CA121 SIM tic=2275 ms=74024.110500 roster=6001 attackers=5982 defenders=596 groups=68 moving=0 blocked=33 x=0.000 y=320.000 z=-0.000 angle=90.000
+CA121 MOTION tic=2275 displaced=5924 distance=336493.910831 contacts=0
+CA121 FRAME tic=2284 ms=74353.207900 interval=643.550500
+CA121 COUNT tic=2294 candidates=0 sight=0 decisions=0 commands=0
+CA121 FRAME tic=2301 ms=74976.900500 interval=623.692600
+CA121 SIM tic=2310 ms=75249.211200 roster=6001 attackers=5982 defenders=596 groups=68 moving=0 blocked=28 x=0.000 y=320.000 z=-0.000 angle=90.000
+CA121 MOTION tic=2310 displaced=5923 distance=331325.372488 contacts=0
+CA121 FRAME tic=2318 ms=75538.996800 interval=562.096300
+CA121 COUNT tic=2331 candidates=0 sight=0 decisions=0 commands=0
+CA121 FRAME tic=2335 ms=76136.553100 interval=597.556300
+CA121 SIM tic=2345 ms=76512.752300 roster=6001 attackers=5982 defenders=596 groups=68 moving=0 blocked=33 x=0.000 y=320.000 z=-0.000 angle=90.000
+CA121 MOTION tic=2345 displaced=5914 distance=328897.841634 contacts=0
+CA121 FRAME tic=2352 ms=76780.058700 interval=643.505600
+CA121 FRAME tic=2369 ms=77362.477300 interval=582.418600
+CA121 COUNT tic=2368 candidates=0 sight=0 decisions=0 commands=0
+CA121 SIM tic=2380 ms=77704.898300 roster=6001 attackers=5982 defenders=596 groups=69 moving=0 blocked=45 x=0.000 y=320.000 z=-0.000 angle=90.000
+CA121 MOTION tic=2380 displaced=5912 distance=326477.478519 contacts=0
+CA121 FRAME tic=2386 ms=77939.957500 interval=577.480200
+CA121 FRAME tic=2403 ms=78556.563900 interval=616.606400
+CA121 COUNT tic=2405 candidates=0 sight=0 decisions=0 commands=0
+CA121 SIM tic=2415 ms=79007.721300 roster=6001 attackers=5982 defenders=596 groups=68 moving=0 blocked=50 x=0.000 y=320.000 z=-0.000 angle=90.000
+CA121 MOTION tic=2415 displaced=5901 distance=326719.966924 contacts=0
+CA121 FRAME tic=2420 ms=79223.829800 interval=667.265900
+CA121 FRAME tic=2437 ms=79826.658600 interval=602.828800
+CA121 COUNT tic=2442 candidates=0 sight=0 decisions=0 commands=0
+CA121 SIM tic=2450 ms=80282.932800 roster=6001 attackers=5982 defenders=596 groups=67 moving=0 blocked=46 x=0.000 y=320.000 z=-0.000 angle=90.000
+CA121 MOTION tic=2450 displaced=5909 distance=324205.622005 contacts=0
+CA121 FRAME tic=2454 ms=80443.395000 interval=616.736400
+CA121 FRAME tic=2471 ms=81423.788700 interval=980.393700
+CA121 COUNT tic=2479 candidates=0 sight=0 decisions=0 commands=0
+CA121 SIM tic=2485 ms=81982.776300 roster=6001 attackers=5979 defenders=596 groups=69 moving=0 blocked=49 x=0.000 y=320.000 z=-0.000 angle=90.000
+CA121 MOTION tic=2485 displaced=5910 distance=326428.451639 contacts=0
+CA121 FRAME tic=2488 ms=82156.684700 interval=732.896000
+CA121 FRAME tic=2505 ms=82774.214600 interval=617.529900
+CA121 COUNT tic=2516 candidates=0 sight=0 decisions=0 commands=0
+CA121 SIM tic=2520 ms=83244.085600 roster=6001 attackers=5979 defenders=596 groups=69 moving=0 blocked=46 x=0.000 y=320.000 z=-0.000 angle=90.000
+CA121 MOTION tic=2520 displaced=5905 distance=329273.933137 contacts=0
+CA121 FRAME tic=2522 ms=83360.088300 interval=585.873700
+CA121 FRAME tic=2539 ms=84026.105400 interval=666.017100
+CA121 COUNT tic=2553 candidates=0 sight=0 decisions=0 commands=0
+CA121 SIM tic=2555 ms=84628.181800 roster=6001 attackers=5979 defenders=596 groups=70 moving=0 blocked=55 x=0.000 y=320.000 z=-0.000 angle=90.000
+CA121 MOTION tic=2555 displaced=5900 distance=320218.130759 contacts=0
+CA121 FRAME tic=2556 ms=84702.434900 interval=676.329500
+CA121 FRAME tic=2573 ms=85260.317400 interval=557.882500
+CA121 FRAME tic=2590 ms=85858.357000 interval=598.039600
+CA121 SIM tic=2590 ms=85879.509300 roster=6001 attackers=5979 defenders=596 groups=67 moving=0 blocked=53 x=0.000 y=320.000 z=-0.000 angle=90.000
+CA121 MOTION tic=2590 displaced=5900 distance=324814.259331 contacts=0
+CA121 COUNT tic=2590 candidates=0 sight=0 decisions=0 commands=0
+CA121 FRAME tic=2607 ms=86541.788300 interval=683.431300
+CA121 FRAME tic=2624 ms=87175.973500 interval=634.185200
+CA121 SIM tic=2625 ms=87221.474800 roster=6001 attackers=5979 defenders=596 groups=70 moving=0 blocked=63 x=0.000 y=320.000 z=-0.000 angle=90.000
+CA121 MOTION tic=2625 displaced=5876 distance=313439.822740 contacts=0
+CA121 COUNT tic=2627 candidates=0 sight=0 decisions=0 commands=0
+CA121 FRAME tic=2641 ms=87792.271200 interval=616.297700
+CA121 FRAME tic=2658 ms=88435.877000 interval=643.605800
+CA121 SIM tic=2660 ms=88533.223700 roster=6001 attackers=5977 defenders=596 groups=69 moving=0 blocked=61 x=0.000 y=320.000 z=-0.000 angle=90.000
+CA121 MOTION tic=2660 displaced=5871 distance=316901.694027 contacts=0
+CA121 COUNT tic=2664 candidates=0 sight=0 decisions=0 commands=0
+CA121 FRAME tic=2675 ms=89106.157700 interval=670.280700
+CA121 FRAME tic=2692 ms=89711.801200 interval=605.643500
+CA121 SIM tic=2695 ms=89831.289800 roster=6001 attackers=5977 defenders=596 groups=66 moving=0 blocked=67 x=0.000 y=320.000 z=-0.000 angle=90.000
+CA121 MOTION tic=2695 displaced=5846 distance=311395.134954 contacts=0
+CA121 COUNT tic=2701 candidates=0 sight=0 decisions=0 commands=0
+CA121 FRAME tic=2709 ms=90325.206700 interval=613.405500
+CA121 FRAME tic=2726 ms=91007.794900 interval=682.588200
+CA121 SIM tic=2730 ms=91177.739200 roster=6001 attackers=5977 defenders=596 groups=72 moving=0 blocked=67 x=0.000 y=320.000 z=-0.000 angle=90.000
+CA121 MOTION tic=2730 displaced=5885 distance=305558.074123 contacts=0
+CA121 COUNT tic=2738 candidates=0 sight=0 decisions=0 commands=0
+CA121 FRAME tic=2743 ms=91743.063700 interval=735.268800
+CA121 FRAME tic=2760 ms=92323.939800 interval=580.876100
+CA121 SIM tic=2765 ms=92504.008800 roster=6001 attackers=5977 defenders=596 groups=71 moving=0 blocked=88 x=0.000 y=320.000 z=-0.000 angle=90.000
+CA121 MOTION tic=2765 displaced=5879 distance=300639.006666 contacts=0
+CA121 COUNT tic=2775 candidates=0 sight=0 decisions=0 commands=0
+CA121 FRAME tic=2777 ms=92907.074500 interval=583.134700
+CA121 FRAME tic=2794 ms=93561.936500 interval=654.862000
+CA121 SIM tic=2800 ms=93792.859800 roster=6001 attackers=5977 defenders=596 groups=73 moving=0 blocked=79 x=0.000 y=320.000 z=-0.000 angle=90.000
+CA121 MOTION tic=2800 displaced=5870 distance=296839.134376 contacts=0
+CA121 FRAME tic=2811 ms=94476.028900 interval=914.092400
+CA121 COUNT tic=2812 candidates=0 sight=0 decisions=0 commands=0
+CA121 FRAME tic=2828 ms=95076.113000 interval=600.084100
+CA121 SIM tic=2835 ms=95310.093400 roster=6001 attackers=5976 defenders=595 groups=69 moving=1 blocked=58 x=0.000 y=320.000 z=-0.000 angle=90.000
+CA121 MOTION tic=2835 displaced=5818 distance=263259.182217 contacts=0
+CA121 FRAME tic=2845 ms=95719.825400 interval=643.712400
+CA121 COUNT tic=2849 candidates=0 sight=0 decisions=0 commands=0
+CA121 FRAME tic=2862 ms=96396.650400 interval=676.825000
+CA121 SIM tic=2870 ms=96715.439600 roster=6001 attackers=5976 defenders=595 groups=66 moving=1 blocked=83 x=0.000 y=320.000 z=-0.000 angle=90.000
+CA121 MOTION tic=2870 displaced=5841 distance=285801.429820 contacts=0
+CA121 FRAME tic=2879 ms=97055.763900 interval=659.113500
+CA121 COUNT tic=2886 candidates=0 sight=0 decisions=0 commands=0
+CA121 FRAME tic=2896 ms=97644.757700 interval=588.993800
+CA121 SIM tic=2905 ms=97980.687900 roster=6001 attackers=5976 defenders=595 groups=70 moving=0 blocked=102 x=0.000 y=320.000 z=-0.000 angle=90.000
+CA121 MOTION tic=2905 displaced=5845 distance=279766.583036 contacts=0
+CA121 FRAME tic=2913 ms=98335.598900 interval=690.841200
+CA121 COUNT tic=2923 candidates=0 sight=0 decisions=0 commands=0
+CA121 FRAME tic=2930 ms=98991.625400 interval=656.026500
+CA121 SIM tic=2940 ms=99355.001700 roster=6001 attackers=5976 defenders=595 groups=71 moving=0 blocked=113 x=0.000 y=320.000 z=-0.000 angle=90.000
+CA121 MOTION tic=2940 displaced=5845 distance=277841.771574 contacts=0
+CA121 FRAME tic=2947 ms=99629.564000 interval=637.938600
+CA121 COUNT tic=2960 candidates=0 sight=0 decisions=0 commands=0
+CA121 FRAME tic=2964 ms=100221.018900 interval=591.454900
+CA121 SIM tic=2975 ms=100652.396100 roster=6001 attackers=5976 defenders=595 groups=69 moving=0 blocked=113 x=0.000 y=320.000 z=-0.000 angle=90.000
+CA121 MOTION tic=2975 displaced=5841 distance=277000.140869 contacts=0
+CA121 FRAME tic=2981 ms=100939.575800 interval=718.556900
+CA121 FRAME tic=2998 ms=101672.286900 interval=732.711100
+CA121 COUNT tic=2997 candidates=0 sight=0 decisions=0 commands=0
+CA121 SIM tic=3010 ms=102130.267500 roster=6001 attackers=5976 defenders=595 groups=74 moving=0 blocked=121 x=0.000 y=320.000 z=-0.000 angle=90.000
+CA121 MOTION tic=3010 displaced=5839 distance=277780.594251 contacts=0
+CA121 FRAME tic=3015 ms=102346.227600 interval=673.940700
+CA121 FRAME tic=3032 ms=102945.315000 interval=599.087400
+CA121 COUNT tic=3034 candidates=0 sight=0 decisions=0 commands=0
+CA121 SIM tic=3045 ms=103500.177600 roster=6001 attackers=5976 defenders=595 groups=69 moving=0 blocked=91 x=0.000 y=320.000 z=-0.000 angle=90.000
+CA121 MOTION tic=3045 displaced=5841 distance=273462.294124 contacts=0
+CA121 FRAME tic=3049 ms=103690.625900 interval=745.310900
+CA121 FRAME tic=3066 ms=104423.031000 interval=732.405100
+CA121 COUNT tic=3071 candidates=0 sight=0 decisions=0 commands=0
+CA121 SIM tic=3080 ms=104951.430300 roster=6001 attackers=5974 defenders=595 groups=68 moving=0 blocked=117 x=0.000 y=320.000 z=-0.000 angle=90.000
+CA121 MOTION tic=3080 displaced=5851 distance=272795.783940 contacts=0
+CA121 FRAME tic=3083 ms=105088.023900 interval=664.992900
+CA121 FRAME tic=3100 ms=105744.509000 interval=656.485100
+CA121 COUNT tic=3108 candidates=0 sight=0 decisions=0 commands=0
+CA121 SIM tic=3115 ms=106370.475700 roster=6001 attackers=5974 defenders=595 groups=69 moving=0 blocked=114 x=0.000 y=320.000 z=-0.000 angle=90.000
+CA121 MOTION tic=3115 displaced=5841 distance=282134.677124 contacts=0
+CA121 FRAME tic=3117 ms=106489.638200 interval=745.129200
+CA121 FRAME tic=3134 ms=107173.465000 interval=683.826800
+CA121 COUNT tic=3145 candidates=0 sight=0 decisions=0 commands=0
+CA116 PROBE_REQUEST id=3 ms=107708.840
+Total, ms   Averg, ms   Calls   Actor class
+----------  ----------  ------  --------------------
+ 26.405597    0.004401    6000  CaelumMandinga
+  0.921597    0.000140    6601  CaelumSewerEscapeTarget
+  0.717871    0.001196     600  CaelumPortDefender
+  0.437372    0.003339     131  CaelumActorSimpleElementalProjectile
+  0.173750    0.028958       6  CaelumBatteringRam
+  0.115349    0.000153     756  CaelumCannonBlock
+  0.099631    0.000166     600  CaelumGateBlocker
+  0.042000    0.042000       1  CaelumPlayer
+  0.039273    0.000405      97  CaelumVehiclePart
+  0.039193    0.000136     288  CaelumRamBlock
+  0.033193    0.000790      42  CaelumCannon
+  0.008960    0.000213      42  CaelumCannonBarrel
+  0.006660    0.006660       1  CaelumActorExplosiveElementalProjectile
+  0.006280    0.000150      42  CaelumCannonFrame
+  0.005611    0.000701       8  CaelumBreakableGate
+  0.005390    0.005390       1  CaelumPortSiege
+  0.005280    0.005280       1  CaelumMerchantShip
+  0.004040    0.000168      24  CaelumRamSuspension
+  0.002750    0.002750       1  CaelumPortCommander
+  0.002330    0.002330       1  CaelumDiningTableSmall
+  0.001530    0.001530       1  CaelumRestBed
+  0.001250    0.000625       2  CaelumTimeAdvanceZone
+  0.001210    0.001210       1  CaelumTreePlainsTalaYoung
+  0.001190    0.000198       6  CaelumSiegeRouteNode
+  0.001160    0.000193       6  CaelumRamFrameVisual
+  0.001030    0.001030       1  CaelumWorkbenchStation
+  0.000650    0.000650       1  BasicArmor
+  0.000620    0.000155       4  CaelumSiegeGateReinforced
+  0.000570    0.000095       6  CaelumRamHead
+  0.000520    0.000260       2  CaelumRestChair
+  0.000490    0.000245       2  CaelumSiegeGate
+  0.000360    0.000360       1  CaelumNotificationInbox
+  0.000360    0.000360       1  CaelumPortCompletion
+  0.000360    0.000360       1  HexenArmor
+  0.000340    0.000340       1  CaelumPersistentCharacterState
+  0.000320    0.000320       1  CaelumCoveredCart
+  0.000270    0.000135       2  CaelumSiegeGateArmored
+  0.000270    0.000270       1  CaelumVehicleRanch
+  0.000210    0.000210       1  CaelumDemoVoiceSpeaker
+  0.000160    0.000160       1  CaelumWorldClock
+  0.000140    0.000140       1  CaelumClimateRegion
+  0.000130    0.000130       1  CaelumCalendarState
+  0.000120    0.000120       1  CaelumUnarmedWeapon
+  0.000120    0.000120       1  CaelumWeatherState
+  0.000020    0.000020       1  CaelumScheduleState
+  0.000010         Inf       0  InternalDynamicLight
+CA121 SIM tic=3150 ms=107753.086700 roster=6001 attackers=5974 defenders=595 groups=68 moving=0 blocked=122 x=0.000 y=320.000 z=-0.000 angle=90.000
+CA121 MOTION tic=3150 displaced=5820 distance=279549.676455 contacts=0
+CA121 FRAME tic=3151 ms=107825.095600 interval=651.630600
+CA116 PROBE_PLAY id=3 ms=107827.918 tic=3151
+CA116 PROBE_ACK id=3 ms=107827.940
+CA121 FRAME tic=3168 ms=108762.764300 interval=937.668700
+CA116 PROBE_FRAME id=3 ms=108762.806
+CA121 COUNT tic=3182 candidates=0 sight=0 decisions=0 commands=0
+CA121 FRAME tic=3185 ms=109480.563400 interval=717.799100
+CA121 SIM tic=3185 ms=109506.121800 roster=6001 attackers=5972 defenders=595 groups=70 moving=0 blocked=133 x=0.000 y=320.000 z=-0.000 angle=90.000
+CA121 MOTION tic=3185 displaced=5812 distance=273650.280226 contacts=0
+CA121 FRAME tic=3202 ms=110189.787700 interval=709.224300
+CA121 FRAME tic=3219 ms=110776.315400 interval=586.527700
+CA121 COUNT tic=3219 candidates=0 sight=0 decisions=0 commands=0
+CA121 SIM tic=3220 ms=110834.751100 roster=6001 attackers=5971 defenders=595 groups=65 moving=0 blocked=139 x=0.000 y=320.000 z=-0.000 angle=90.000
+CA121 MOTION tic=3220 displaced=5792 distance=270871.076486 contacts=0
+CA121 FRAME tic=3236 ms=111535.547300 interval=759.231900
+CA121 FRAME tic=3253 ms=112241.805700 interval=706.258400
+CA121 SIM tic=3255 ms=112344.412900 roster=6001 attackers=5971 defenders=595 groups=67 moving=0 blocked=157 x=0.000 y=320.000 z=-0.000 angle=90.000
+CA121 MOTION tic=3255 displaced=5796 distance=277653.959160 contacts=0
+CA121 COUNT tic=3256 candidates=0 sight=0 decisions=0 commands=0
+CA121 FRAME tic=3270 ms=112910.276400 interval=668.470700
+Benchmark info saved
+CA121 FRAME tic=3287 ms=113555.829600 interval=645.553200
+CA121 SIM tic=3290 ms=113711.399900 roster=6001 attackers=5971 defenders=595 groups=67 moving=0 blocked=153 x=0.000 y=320.000 z=-0.000 angle=90.000
+CA121 MOTION tic=3290 displaced=5792 distance=269496.209902 contacts=0
+CA121 COUNT tic=3293 candidates=0 sight=0 decisions=0 commands=0
+CA121 FRAME tic=3304 ms=114302.706700 interval=746.877100
+CA121 FRAME tic=3321 ms=114962.908500 interval=660.201800
+CA121 SIM tic=3325 ms=115104.792900 roster=6001 attackers=5971 defenders=595 groups=72 moving=0 blocked=146 x=0.000 y=320.000 z=-0.000 angle=90.000
+CA121 MOTION tic=3325 displaced=5764 distance=261808.113017 contacts=0
+CA121 COUNT tic=3330 candidates=0 sight=0 decisions=0 commands=0
+CA121 FRAME tic=3338 ms=115616.215500 interval=653.307000
+CA121 FRAME tic=3355 ms=116310.772400 interval=694.556900
+CA121 SIM tic=3360 ms=116537.696800 roster=6001 attackers=5971 defenders=595 groups=73 moving=0 blocked=184 x=0.000 y=320.000 z=-0.000 angle=90.000
+CA121 MOTION tic=3360 displaced=5772 distance=256416.015841 contacts=0
+CA121 COUNT tic=3367 candidates=0 sight=0 decisions=0 commands=0
+CA121 FRAME tic=3372 ms=117095.358900 interval=784.586500
+CA121 FRAME tic=3389 ms=117751.729600 interval=656.370700
+CA121 SIM tic=3395 ms=117979.845000 roster=6001 attackers=5971 defenders=595 groups=70 moving=0 blocked=200 x=0.000 y=320.000 z=-0.000 angle=90.000
+CA121 MOTION tic=3395 displaced=5749 distance=250453.221310 contacts=0
+CA121 COUNT tic=3404 candidates=0 sight=0 decisions=0 commands=0
+CA121 FRAME tic=3406 ms=118408.488000 interval=656.758400
+CA121 FRAME tic=3423 ms=119210.404600 interval=801.916600
+CA121 SIM tic=3430 ms=119521.512700 roster=6001 attackers=5969 defenders=595 groups=67 moving=0 blocked=196 x=0.000 y=320.000 z=-0.000 angle=90.000
+CA121 MOTION tic=3430 displaced=5719 distance=240095.287108 contacts=0
+CA121 FRAME tic=3440 ms=119970.411200 interval=760.006600
+CA121 COUNT tic=3441 candidates=0 sight=0 decisions=0 commands=0
+CA121 FRAME tic=3457 ms=120579.747900 interval=609.336700
+CA121 SIM tic=3465 ms=120878.703700 roster=6001 attackers=5969 defenders=595 groups=68 moving=0 blocked=198 x=0.000 y=320.000 z=-0.000 angle=90.000
+CA121 MOTION tic=3465 displaced=5727 distance=241751.248872 contacts=0
+CA121 FRAME tic=3474 ms=121255.003600 interval=675.255700
+CA121 COUNT tic=3478 candidates=0 sight=0 decisions=0 commands=0
+CA121 FRAME tic=3491 ms=122002.310500 interval=747.306900
+Total, ms   Averg, ms   Calls   Actor class
+----------  ----------  ------  --------------------
+ 27.355375    0.004559    6000  CaelumMandinga
+  0.851384    0.000129    6601  CaelumSewerEscapeTarget
+  0.467252    0.000779     600  CaelumPortDefender
+  0.372491    0.003386     110  CaelumActorSimpleElementalProjectile
+  0.158120    0.026353       6  CaelumBatteringRam
+  0.116068    0.000154     756  CaelumCannonBlock
+  0.098930    0.000165     600  CaelumGateBlocker
+  0.041870    0.041870       1  CaelumPlayer
+  0.039183    0.000404      97  CaelumVehiclePart
+  0.038474    0.000134     288  CaelumRamBlock
+  0.030792    0.000733      42  CaelumCannon
+  0.007700    0.007700       1  CaelumPortCommander
+  0.007370    0.000175      42  CaelumCannonFrame
+  0.007110    0.000169      42  CaelumCannonBarrel
+  0.006221    0.000778       8  CaelumBreakableGate
+  0.005510    0.005510       1  CaelumMerchantShip
+  0.004500    0.004500       1  CaelumPortSiege
+  0.003929    0.000164      24  CaelumRamSuspension
+  0.001970    0.001970       1  CaelumDiningTableSmall
+  0.001390    0.000232       6  CaelumSiegeRouteNode
+  0.001370    0.001370       1  CaelumTreePlainsTalaYoung
+  0.001350    0.001350       1  CaelumRestBed
+  0.001260    0.000630       2  CaelumTimeAdvanceZone
+  0.001220    0.001220       1  CaelumWorkbenchStation
+  0.001020    0.000170       6  CaelumRamFrameVisual
+  0.000620    0.000620       1  BasicArmor
+  0.000520    0.000087       6  CaelumRamHead
+  0.000490    0.000490       1  HexenArmor
+  0.000490    0.000122       4  CaelumSiegeGateReinforced
+  0.000460    0.000460       1  CaelumNotificationInbox
+  0.000420    0.000210       2  CaelumRestChair
+  0.000370    0.000185       2  CaelumSiegeGateArmored
+  0.000360    0.000360       1  CaelumVehicleRanch
+  0.000350    0.000350       1  CaelumCoveredCart
+  0.000330    0.000330       1  CaelumPortCompletion
+  0.000290    0.000290       1  CaelumDemoVoiceSpeaker
+  0.000280    0.000140       2  CaelumSiegeGate
+  0.000160    0.000160       1  CaelumWorldClock
+  0.000130    0.000130       1  CaelumClimateRegion
+  0.000120    0.000120       1  CaelumUnarmedWeapon
+  0.000120    0.000120       1  CaelumWeatherState
+  0.000110    0.000110       1  CaelumPersistentCharacterState
+  0.000110    0.000110       1  CaelumCalendarState
+  0.000020    0.000020       1  CaelumScheduleState
+  0.000010         Inf       0  InternalDynamicLight
+CA121 SIM tic=3500 ms=122399.131900 roster=6001 attackers=5969 defenders=595 groups=67 moving=0 blocked=192 x=0.000 y=320.000 z=-0.000 angle=90.000
+CA121 MOTION tic=3500 displaced=5703 distance=230911.022754 contacts=0
+CA121 COMPLETE tic=3500
+CA121 FRAME tic=3508 ms=122722.607300 interval=720.296800
+CA121 COUNT tic=3515 candidates=0 sight=0 decisions=0 commands=0
+CA121 FRAME tic=3525 ms=123605.335000 interval=882.727700
+CA121 SIM tic=3535 ms=123999.217700 roster=6001 attackers=5967 defenders=595 groups=69 moving=0 blocked=240 x=0.000 y=320.000 z=-0.000 angle=90.000
+CA121 MOTION tic=3535 displaced=5737 distance=233137.256834 contacts=0
+CA121 FRAME tic=3542 ms=124306.527900 interval=701.192900
+CA121 COUNT tic=3552 candidates=0 sight=0 decisions=0 commands=0
+CA121 FRAME tic=3559 ms=125037.080400 interval=730.552500

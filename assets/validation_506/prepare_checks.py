@@ -35,13 +35,14 @@ def package(name,members):
 maps={'maps/QA128A.wad':room_map('QA128A'),'maps/QA128B.wad':room_map('QA128B')}
 info=b'map QA128A "Population authority trial" { levelnum=1281 cluster=128 next="QA128B" }\nmap QA128B "Population travel trial" { levelnum=1282 cluster=128 next="QA128A" }\ncluster 128 { hub }\n'
 package('checks.pk3',dict(maps,**{'MAPINFO':info+b'GameInfo { AddEventHandlers="CA128Checks", "CA128Lifecycle" }\n','ZSCRIPT':b'version "4.14"\n#include "checks.zs"\n','checks.zs':(HERE/'checks.zs').read_bytes()}))
+package('cannon-study.pk3',dict(maps,**{'MAPINFO':info+b'GameInfo { AddEventHandlers="CA128CannonStudy" }\n','ZSCRIPT':b'version "4.14"\n#include "checks.zs"\n#include "cannon_study.zs"\n','checks.zs':(HERE/'checks.zs').read_bytes(),'cannon_study.zs':(HERE/'cannon_study.zs').read_bytes()}))
 with zipfile.ZipFile(OUT/'observer.pk3') as z:
     observer={n:z.read(n) for n in z.namelist()}
 observer['ZSCRIPT']+=b'\n#include "battle.zs"\n'
 observer['MAPINFO']=b'GameInfo { AddEventHandlers="CA121Profiler", "CA121Observer", "CA116InputProbe", "CA128Battle" }\n'
 observer['battle.zs']=(HERE/'battle.zs').read_bytes()
 package('battle.pk3',observer)
-with zipfile.ZipFile(OUT/'current.pk3') as z:
+with zipfile.ZipFile(OUT/'production.pk3') as z:
     guarded={n:z.read(n) for n in z.namelist()}
 path='caelum/world/CaelumSiegeEncounter.zs'
 source=guarded[path].decode('utf-8-sig').replace('\r\n','\n')
@@ -64,13 +65,45 @@ source=source.replace('        if (LocalGuards.Size() == 0) return;', '''       
         if (LocalGuards.Size() == 0) return;''')
 guarded[path]=source.encode('utf-8')
 package('guard-oracle.pk3',guarded)
-for variant in ['current','no-stagger','no-candidates']:
+with zipfile.ZipFile(OUT/'pruned-cannon.pk3') as z:
+    oracle={n:z.read(n) for n in z.namelist()}
+path='caelum/world/CaelumPortSiege.zs'
+pruned=oracle[path].decode('utf-8-sig').replace('\r\n','\n')
+with zipfile.ZipFile(OUT/'current.pk3') as z:
+    original=z.read(path).decode('utf-8-sig').replace('\r\n','\n')
+a=original.index('    Actor CannonTarget(');b=original.index('    void OrderGuns()',a)
+reference=original[a:b].replace('Actor CannonTarget(', 'Actor ReferenceCannonTarget(')
+wrapper='''    bool OraclePlain(Actor candidate)
+    {
+        return candidate==null || candidate.health<=0 || (candidate.GetRenderStyle()==STYLE_Normal
+            && candidate.Alpha>0 && !candidate.bInvisible && !candidate.bMInvisible);
+    }
+    Actor CannonTarget(CaelumCannon gun)
+    {
+        let actual=PrunedCannonTarget(gun);
+        bool safe=true;
+        for(int i=0;i<Attackers.Size();i++)if(!OraclePlain(Attackers[i].Body))safe=false;
+        for(int i=0;i<Defenders.Size();i++)if(!OraclePlain(Defenders[i]))safe=false;
+        for(int i=0;i<MAXPLAYERS;i++)if(playeringame[i] && !OraclePlain(players[i].mo))safe=false;
+        if(!safe){Console.Printf("CA128 CANNON_ORACLE_SKIP tic=%d",level.time);return actual;}
+        let expected=ReferenceCannonTarget(gun);
+        if(actual!=expected)ThrowAbortException("CA128 cannon oracle returned a different target");
+        Console.Printf("CA128 CANNON_VERIFIED tic=%d defending=%d selected=%d",level.time,gun.Defending,actual!=null);
+        return actual;
+    }
+'''
+pruned=pruned.replace('    Actor CannonTarget(',reference+wrapper+'    Actor PrunedCannonTarget(',1)
+oracle[path]=pruned.encode('utf-8')
+package('cannon-oracle.pk3',oracle)
+for variant in ['current','no-stagger','no-candidates','pruned-cannon']:
     with zipfile.ZipFile(OUT/(variant+'.pk3')) as z:
         counted={n:z.read(n) for n in z.namelist()}
     path='caelum/world/CaelumPortSiege.zs'
     source=counted[path].decode('utf-8-sig').replace('\r\n','\n')
     source=source.replace('        TargetCandidates.Clear();\n        for(int p=', '        CA128Counters.Get().Lists++;TargetCandidates.Clear();\n        for(int p=')
     source=source.replace('        RefreshCandidates();\n        Actor victim;', '        RefreshCandidates();\n        CA128Counters.Get().Queries++;CA128Counters.Get().CandidateVisits+=TargetCandidates.Size();\n        Actor victim;')
+    source=source.replace('Actor chosen;bool chosenCrew=false;double best=1e30;', 'CA128Counters.Get().CannonQueries++;Actor chosen;bool chosenCrew=false;double best=1e30;')
+    source=source.replace('gun.Barrel.CheckSight(candidate)','CA128Counters.CannonSight(gun.Barrel,candidate)')
     counted[path]=source.encode('utf-8')
     counted['ZSCRIPT']+=b'\n#include "ca128_counters.zs"\n'
     counted['ca128_counters.zs']=(HERE/'counters.zs').read_bytes()
@@ -80,6 +113,7 @@ counter_addon['MAPINFO']=b'GameInfo { AddEventHandlers="CA121Profiler", "CA121Ob
 package('counters.pk3',counter_addon)
 (OUT/'checks.cfg').write_text('wait 35; save ca128_checks; wait 35; quit\n')
 (OUT/'counters.cfg').write_text('wait 770; quit\n')
+(OUT/'oracle.cfg').write_text('wait 3570; quit\n')
 for name in ['visual.cfg','upgrade.cfg','rollback.cfg','travel.cfg','load-checks.cfg']:
     (OUT/name).write_bytes((HERE/name).read_bytes())
 print('Prepared isolated threshold, leader, occlusion and guard tests')

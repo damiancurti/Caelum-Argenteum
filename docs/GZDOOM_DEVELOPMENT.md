@@ -317,6 +317,31 @@ The implementations are `src/playsim/p_sight.cpp`,
 `src/common/engine/stats.h` and
 `src/common/rendering/vulkan/system/vk_commandbuffer.cpp` at tag `g4.14.2`.
 
+For #128, `assets/validation_506/prepare.py --baseline` reconstructs the pinned
+5.0.5 baseline and the first experimental source commit, then packages current
+`src/` separately as `production.pk3`. The historical `current-a/b` labels mean
+the first staggered experiment, not the selected production implementation.
+`prepare_checks.py` emits isolated native maps, work counters and full-search
+guard/cannon oracles. `run_suite.ps1 -Labels label-a,label-b` runs normal-combat
+comparisons serially; `run_validation.ps1` handles boundary/save/travel/oracle
+checks. All runners reject overlapping engines and preserve unique labels.
+Use a fresh ignored work directory for a complete replay, and retain the old
+save identified by SAVE_IDENTITY for the historical upgrade/rollback route.
+The functional fixtures can create their own new saves on any clean checkout.
+
+`summarize.py`, `verify_native.py` and `verify.py` summarize completed native
+evidence, check exact target/random-stream traces and compare final package
+content with source. `cannon_study.zs` compares 96 target selections and the
+native `CheckSight` RNG stream; an invisible uncompetitive candidate can still
+consume that stream. Never assume all native visibility calls are pure.
+After closing the engines, `verify_reproduction.py` builds the diagnostic
+packages twice and checks their byte hashes against the final native runs;
+`REPRODUCTION.json` separates those exact identities from the first Windows
+experiment's line-ending differences, retained in EXPERIMENT_MANIFEST.
+`keep_awake.ps1` makes a bounded thread-local execution-state request without
+editing the power plan. Start it hidden, create `build/issue128/release-awake.signal`
+after testing, and retain the returned release result and before/after plan.
+
 Reproduce #121 with `python assets/validation_505/prepare.py --from-git`, then
 `powershell -NoProfile -ExecutionPolicy Bypass -File assets/validation_505/run_suite.ps1`.
 The preparer uses the pinned accepted commit and verifies a canonical runtime
