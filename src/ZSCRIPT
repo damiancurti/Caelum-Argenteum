@@ -6,6 +6,7 @@ version "4.14"
 // test, and maintain as it grows.
 #include "caelum/core/CaelumConstants.zs"
 #include "caelum/core/CaelumTarotArt.zs"
+#include "caelum/player/CaelumPlayerAuthority.zs"
 #include "caelum/core/CaelumTarotService.zs"
 #include "caelum/core/CaelumTarotPowers.zs"
 #include "caelum/core/CaelumTarotDetails.zs"

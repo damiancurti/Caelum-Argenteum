@@ -1,6 +1,44 @@
 # TASKS.md — Active tasks
 
-Documentation version: **5.0.3** — 2026-10-06.
+Documentation version: **5.0.4** — 2026-10-06.
+
+## Issue #120 — Per-player authority and integrated closure (5.0.4)
+
+- Implemented a stateless current-pawn/prediction/record authority helper, 203
+  explicit operation guards and bounds-checked Journal/Trucazo/Truco event
+  routing. Native fields, schemas, inputs and compatible adapters are retained.
+- Source verification checks exact guards, remaining bodies/signatures/fields
+  and the final package boundary. Evidence: `assets/validation_504/RESULTS.json`.
+  Native tests cover player resources, inventory/crafting, Tarot, save/upgrade/
+  repeat-load/original rollback and the MAP01/MAP02/MAP06/hub path.
+- Passed per package: 249 player, 127 inventory, 93 Tarot, 79 transaction and
+  65 pickup assertions. Old/current/upgraded/original-rollback saves pass, as
+  does the 5.0.0 save path. Native creation passes in both languages; actual
+  keyboard/window checks confirm Journal selection and both restored matches.
+- Two native participants (human plus bot) pass 36 isolation checks, including
+  foreign records/previews, prediction rejection and actual drop/pickup with an
+  ID collision. This is not a multi-client transport or lifecycle validation.
+- The original Architecture 1 baseline is compared with the integrated build;
+  simulation throughput, overlay intervals and synthetic UI/play/UI event timing
+  remain separate measurements. Earlier #117/#118 regressions remain evidence.
+- Complete matched pairs measure +4.09% and -8.72% simulation throughput versus
+  4.37.24, with 49 identical scene rows each. One incomplete run is excluded and
+  retained diagnostically. Desktop/GPU load and focus are uncontrolled; no stable
+  gain or whole-scene cause is established. HISTORY records separate timing types.
+- CA-503-TAROT-01 remains pending; CA-504-AUTHORITY-01 adds ordinary integrated
+  author acceptance. #119 is PR #125; #120 remains a separate stacked delivery.
+  Do not remove compatibility adapters or infer acceptance from agent checks.
+- Follow-up boundaries: shared clock/progress/reward/session policy and native
+  multi-client lifecycle tests; separate crafting/session and combat/narrative
+  coordination issues; thermal exposure, native UI and campaign expansion.
+  Measured mass-AI costs require a focused performance issue without changing
+  accepted army counts or rules. Historical #86 stays closed.
+- Measured performance candidate: native thinker profiles charge the dominant
+  actor work to 6,000 `CaelumMandinga` instances. A focused follow-up should
+  instrument resource recovery, `CaelumPortSiege.Pulse/AttackerTarget`, sight
+  queries and native chase separately before selecting an optimization. The
+  siege controller's own Tick sample excludes work called through actors;
+  class-level timing alone cannot identify which internal operation dominates.
 
 ## Issue #119 — Tarot consolidation (5.0.3)
 

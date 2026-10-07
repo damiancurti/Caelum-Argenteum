@@ -23,8 +23,10 @@ class CaelumTrucazoEvents : StaticEventHandler
     }
     override void NetworkProcess(ConsoleEvent e)
     {
-        if(e.Name!="ca_trucazo" || e.Player<0 || e.Player>=MAXPLAYERS || !playeringame[e.Player])return;
-        let match=CaelumTrucazoMatch.Get(CaelumPlayer(players[e.Player].mo));
+        if(e.Name!="ca_trucazo")return;
+        let user=CaelumPlayerAuthority.FromNetworkPlayer(e.Player);
+        if(user==null)return;
+        let match=CaelumTrucazoMatch.Get(user);
         if(match!=null)match.Dispatch(e.Args[0],e.Args[1],e.Args[2]);
     }
 }

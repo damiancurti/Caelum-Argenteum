@@ -812,10 +812,12 @@ class CaelumPlayer : DoomPlayer
 
     CaelumPersistentCharacterState GetPersistentCharacterState(bool createState)
     {
+        if (!CaelumPlayerAuthority.CanRead(self)) return null;
         CaelumPersistentCharacterState persistentState = CaelumPersistentCharacterState(
             FindInventory("CaelumPersistentCharacterState")
         );
-        if (persistentState == null && createState)
+        if (persistentState != null && persistentState.Owner != self) return null;
+        if (persistentState == null && createState && CaelumPlayerAuthority.CanMutate(self))
         {
             persistentState = CaelumPersistentCharacterState(
                 GiveInventoryType("CaelumPersistentCharacterState")

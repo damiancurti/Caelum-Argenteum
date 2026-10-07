@@ -6,6 +6,7 @@ class CaelumTarotService : Object play
 
     static void EnsureRevision(CaelumPersistentCharacterState record)
     {
+        if (record == null || !CaelumPlayerAuthority.OwnsRecord(CaelumPlayer(record.Owner), record)) return;
         if (record == null || record.TarotPowerRevision >= REVISION) return;
         // Los saves anteriores no tenían carta equipada: no interpretar el
         // cero predeterminado ni el cursor local como una elección de El loco.
@@ -18,6 +19,7 @@ class CaelumTarotService : Object play
 
     static bool ValidUser(CaelumPlayer user)
     {
+        if (!CaelumPlayerAuthority.CanMutate(user)) return false;
         return user != null && user.player != null && user.health > 0
             && user.player.playerstate == PST_LIVE
             && user.CharacterCreationComplete && !user.CreationWizardOpen
@@ -106,6 +108,7 @@ class CaelumTarotService : Object play
 
     static void Advance(CaelumPlayer user, int elapsedTics = 1)
     {
+        if (!CaelumPlayerAuthority.CanMutate(user)) return;
         let record = user.GetPersistentCharacterState(false);
         if (record == null || elapsedTics <= 0
             || (user.player != null && (user.player.cheats & CF_PREDICTING))) return;
@@ -129,11 +132,13 @@ class CaelumTarotService : Object play
 
     static clearscope bool HasTarotCard(CaelumPersistentCharacterState record, int card)
     {
+        if (record == null) return false;
         return card >= 0 && card < CaelumConstants.TAROT_CARD_COUNT && record.TarotOwned[card];
     }
 
     static clearscope int CountTarotCards(CaelumPersistentCharacterState record)
     {
+        if (record == null) return 0;
         int count = 0;
         for (int card = 0; card < CaelumConstants.TAROT_CARD_COUNT; card++)
             if (record.TarotOwned[card]) count++;
@@ -142,6 +147,7 @@ class CaelumTarotService : Object play
 
     static clearscope int GetTarotAttributeBonusPercent(CaelumPersistentCharacterState record)
     {
+        if (record == null) return 0;
         int percent = 0;
         for (int card = 0; card < CaelumConstants.TAROT_CARD_COUNT; card++)
             if (record.TarotOwned[card]) percent += card < CaelumConstants.TAROT_MAJOR_COUNT
@@ -151,6 +157,7 @@ class CaelumTarotService : Object play
 
     static clearscope double GetTarotMinorBaseBonus(CaelumPersistentCharacterState record, int attribute)
     {
+        if (record == null) return 0;
         int tenths = 0;
         for (int card = CaelumConstants.TAROT_MAJOR_COUNT; card < CaelumConstants.TAROT_CARD_COUNT; card++)
         {
@@ -164,6 +171,7 @@ class CaelumTarotService : Object play
 
     static bool CanCaptureMainM00Fool(CaelumPersistentCharacterState record)
     {
+        if (record == null || !CaelumPlayerAuthority.OwnsRecord(CaelumPlayer(record.Owner), record)) return false;
         record.EnsureQuestStateInitialized();
         return record.MagicBoxOwned && record.MagicBoxItemId > 0
             && record.QuestState[CaelumConstants.QUEST_MAIN_M00_THE_FOOL] == CaelumConstants.QUEST_STATE_ACTIVE
@@ -179,6 +187,7 @@ class CaelumTarotService : Object play
 
     static bool RecordMainM00FoolCapture(CaelumPersistentCharacterState record)
     {
+        if (record == null || !CaelumPlayerAuthority.OwnsRecord(CaelumPlayer(record.Owner), record)) return false;
         if (!CanCaptureMainM00Fool(record) || !record.MainM00FoolRevealed) return false;
         if (!record.TryAdvanceMainM00State(CaelumConstants.MAIN_M00_STATE_BOX_RECEIVED,
             CaelumConstants.MAIN_M00_STATE_FOOL_CAPTURED)) return false;
@@ -231,6 +240,7 @@ class CaelumTarotService : Object play
 
     static bool CanApproach(CaelumPlayer user, CaelumM00FoolEssence essence)
     {
+        if (!CaelumPlayerAuthority.CanMutate(user)) return false;
         if (user == null || user.player == null || user.health <= 0
             || !user.CharacterCreationComplete || user.CreationWizardOpen
             || (user.player.cheats & CF_PREDICTING)
@@ -261,6 +271,7 @@ class CaelumTarotService : Object play
 
     static bool IsAvailable(CaelumM00FoolEssence essence, CaelumPlayer user)
     {
+        if (essence == null || !CaelumPlayerAuthority.CanRead(user)) return false;
         if (user == null) return false;
         let record = user.GetPersistentCharacterState(false);
         if (record == null || HasTarotCard(record, essence.CardId())) return false;
@@ -271,12 +282,14 @@ class CaelumTarotService : Object play
 
     static bool IsRevealedFor(CaelumM00FoolEssence essence, CaelumPersistentCharacterState record)
     {
+        if (essence == null || record == null) return false;
         return essence.CardId() == CaelumConstants.TAROT_THE_FOOL
             ? record.MainM00FoolRevealed : record.ArcanaRevealed[essence.CardId()];
     }
 
     static bool RecordCapture(CaelumM00FoolEssence essence, CaelumPersistentCharacterState record)
     {
+        if (essence == null || !CaelumPlayerAuthority.OwnsRecord(essence.CaptureUser, record)) return false;
         if (!IsRevealedFor(essence, record)) return false;
         if (essence.CardId() == CaelumConstants.TAROT_THE_FOOL) return RecordMainM00FoolCapture(record);
         if (!CanCaptureArcana(record, essence.CardId())) return false;
@@ -302,6 +315,7 @@ class CaelumTarotService : Object play
     // efecto pagado: reponer sólo la instancia ausente, sin pagar ni reiniciar.
     static void RestoreNativeEffect(CaelumPlayer user)
     {
+        if (!CaelumPlayerAuthority.CanMutate(user)) return;
         if (user == null || user.player == null || user.health <= 0
             || (user.player.cheats & CF_PREDICTING)) return;
         let record = user.GetPersistentCharacterState(false);
@@ -312,11 +326,14 @@ class CaelumTarotService : Object play
 
     static void Reveal(CaelumPersistentCharacterState record, int card)
     {
+        if (record == null || !CaelumPlayerAuthority.OwnsRecord(CaelumPlayer(record.Owner), record)
+            || card < 0 || card >= CaelumConstants.TAROT_CARD_COUNT) return;
         if (card == CaelumConstants.TAROT_THE_FOOL) record.MainM00FoolRevealed = true;
         else record.ArcanaRevealed[card] = true;
     }
     static void RefreshJournalSnapshot(CaelumPlayer user, CaelumPersistentCharacterState persistentState)
     {
+        if (!CaelumPlayerAuthority.OwnsRecord(user, persistentState)) return;
         EnsureRevision(persistentState);
         for (int card = 0; card < CaelumConstants.TAROT_CARD_COUNT; card++)
             user.TarotSelectedSnapshot[card] = persistentState.TarotSelected[card];

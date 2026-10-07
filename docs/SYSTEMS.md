@@ -1,6 +1,39 @@
 # Caelum Argenteum — Current systems and rules
 
-Documentation version: **5.0.3** — 2026-10-06.
+Documentation version: **5.0.4** — 2026-10-06.
+
+## Per-player authority and modular migration boundary (#120)
+
+`player/CaelumPlayerAuthority` defines the common receiver contract without
+owning state. Reads require an explicit pawn whose native `player.mo` still
+points to that pawn. Commands additionally reject `CF_PREDICTING`. Native play
+execution and event transport remain GZDoom's responsibility; this helper is
+not a new server or a complete multiplayer authorization layer.
+
+| Boundary | Authoritative state and supported operation |
+| --- | --- |
+| Player/profile/resources | Existing pawn fields and profile/allocation objects. Character/resource/presentation operations take that pawn explicitly; null, detached and stale receivers cannot mutate them. Read-only inventory lookup remains available during prediction. |
+| Inventory/equipment | Native `Inv` chain and item `Owner`. Numeric IDs are scoped to the owner; two players may have the same ID. Mutation rejects foreign owned items. A legitimate native drop releases ownership; pickup by another player applies that player's existing collision/reassignment rules without transferring unrelated wear or selection. |
+| Tarot/persistence | The requesting pawn's canonical `CaelumPersistentCharacterState`, found in its inventory, owns cards, selected/paid-active sets and clocks. Record writes require that identity and owner. A foreign record cannot initialize revisions or overwrite the requester's Journal projection. Essence commit also requires its recorded capture user to own the destination record. Pure record queries add no owner or mutation. |
+| Crafting projections | A non-null preview must be the exact `user.CraftingBrowser` object. It is a pawn-held projection, not a second inventory. Repair/dismantle targets retain owned-item preconditions. Legacy capacity/recipe queries that refresh state route through mutation guards. |
+| UI and requests | Journal page, cursor, scroll and menu selection remain local UI state. Commands cross `SendNetworkEvent`; Journal, Trucazo and Truco handlers resolve the event's player through `FromNetworkPlayer`, checking bounds, participation and current pawn before indexing/mutation. They never fall back to `consoleplayer` or player zero. Menus retain their own match serial/action validation. |
+| Shared world | MAP06 siege roster, actors, command groups, gates and physics contacts remain map-local shared state. Per-player records contain personal discovery/reward progress. This patch does not clone world controllers per player or assign one player's inventory authority over another. |
+| Campaign time/session | Existing clock/calendar/weather/journey inventories still belong to a pawn; the clock ticker runs only with one participant. There is no supported shared campaign-time, joint rest/travel, reward distribution or networked card-match lifecycle. Join/leave/reconnect/respawn and ownership transfer policies require their own design and native multi-client tests. |
+
+The source manifest records 203 entry guards and their read/command distinction.
+All retained statements, serialized fields, signatures, input bindings, selectors,
+maps and assets remain. `CaelumTarotPowers.REVISION` aliases the service's revision
+instead of duplicating the value. No new schema, migration counter or service
+instance is introduced. Existing adapters and migration gates are retained;
+completion of #116–#120 is not authorization to delete them.
+
+Validation uses original 5.0.3/current saves for each domain and a preserved
+5.0.0 Architecture 1 save. Original-save upgrades, separate re-saves, repeat
+loads and original-package/original-save rollback are recorded in
+`assets/validation_504/RESULTS.json`. Two native player pawns (human plus bot)
+exercise owner isolation in one process. This does not establish two-client
+transport, full co-op/PvP or networked Trucazo. Ordinary author acceptance stays
+in `pending_test.txt`; unsupported network lifecycle is a development task.
 
 ## Tarot service and retained save contract (#119)
 
@@ -131,7 +164,7 @@ that the engine serializes even when they are semantically caches.
 | Crafting: pawn `CraftingTaskActive`, task kind/recipe/tier/size, `CraftingTaskTargetItemId`, reservations/output arrays and remaining seconds | Pawn owns active live task; `CaelumPersistentCharacterState` carries explicit travel snapshot | `StoreCraftingTaskState`/`LoadCraftingTaskState` define the handoff. `transient CraftingBrowser` is reconstructed. Selection/preview does not reserve materials twice. |
 | Merchant: record `PalomoMerchantStock[]`, `PalomoMerchantWalletCopper`, `PalomoDiscountGranted` | Persistent character merchant relationship | Pawn session/visible-list/currency-plan fields are mirrors or temporary transaction plans. Relocating Palomo must not reset stock/wallet or negotiations. |
 | Quests/factions/prisoners: record `QuestState[]`, `QuestStage[]`, `QuestObjective*[]`, `QuestRewardClaimed[]`, `MainM00Flag[]`, `FactionMember[]`, `FactionReputation[]`, `PrisonerRescueState[]`, `PrisonerRewardClaimed[]` | `CaelumPersistentCharacterState` attached to the requesting character | Controllers and dialogue transitions mutate the record; `CaelumQuestCatalogue` derives status, NPCs/tokens and `Journal*` display it. Rescue/extraction/payment remain distinct and idempotent. |
-| Tarot: record `TarotOwned[]`, `TarotSelected[]`, `TarotActive[]`, `TarotEffectTics`, `TarotCooldownTics`, `TarotPowerRevision`, `TarotDeckRevision` | One character record; `CaelumTarotPowers` performs powers and `CaelumTarotDeckRules` checks physical deck | `Tarot*Snapshot` and Journal cursor do not own cards or selected powers. Array IDs remain 0–77; Fool 0, Ace 36, Knight 60. Capture, select and activate remain separate operations. |
+| Tarot: record `TarotOwned[]`, `TarotSelected[]`, `TarotActive[]`, `TarotEffectTics`, `TarotCooldownTics`, `TarotPowerRevision`, `TarotDeckRevision` | One canonical character record; `CaelumTarotService` implements powers behind retained adapters; physical deck ownership uses `CaelumInventoryService` | `Tarot*Snapshot` and Journal cursor do not own cards or selected powers. Array IDs remain 0–77; Fool 0, Ace 36, Knight 60. Capture, select and activate remain separate operations. |
 | World discovery: record `WorldLocationVisited[]`, `WorldConnectionKnown[]`, `WorldConnectionTraversed[]`, `WorldPendingConnection` | Character record | `CaelumWorldProgress` and world catalogue use stable IDs. The Journal world page is a view, not shared campaign authority. |
 | Clock/calendar/weather/schedule: `world/CaelumWorldClock.CompletedDays/DayTics`, Limbo counters; `CaelumCalendarState`, `CaelumWeatherState`, `CaelumScheduleState` | Separate inventory states on the character | `CaelumWorldClockTicker` runs only with one participant; accelerated time, travel and schedule synchronization call the same existing operations. Shared time across players is unimplemented. |
 | Journey/rest/time skip: `CaelumJourneyState.Sequence/Status/ConnectionId`, `CaelumJourneyPlan`, `CaelumRestState`, `CaelumTimeAdvanceState`, `CaelumTimeSkipState` | Pawn-owned inventory state with map/session references | Begin/confirm/cancel/arrive operations own transitions; UI and temporary camera/freeze state are reconstructed or validated at their existing hooks. |
@@ -161,7 +194,8 @@ Input is part of the public contract:
   remapped controls remain valid. Fire/AltFire, Use and User1/User4 retain behavior.
 - `CaelumJournalOverlay`/`CaelumJournalInput` own local navigation and send
   `SendNetworkEvent` requests. `CaelumDebugOverlay.NetworkProcess(ConsoleEvent)`
-  resolves `players[e.Player].mo`; domain operations must receive that pawn,
+  resolves the event's current pawn through `CaelumPlayerAuthority.FromNetworkPlayer`;
+  domain operations must receive that pawn,
   never substitute `consoleplayer` in authoritative play logic. This routing
   pattern alone does not establish complete multiplayer safety.
 - Native `CaelumEquippedWeapon`, family/physical/magic selector classes in

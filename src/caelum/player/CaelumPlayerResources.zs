@@ -4,6 +4,7 @@ class CaelumPlayerResources : Object play
 {
     static void AddAdrenaline(CaelumPlayer user, double amount)
     {
+        if (!CaelumPlayerAuthority.CanMutate(user)) return;
         if (user.DerivedStats != null)
         {
             user.CurrentAdrenaline = Clamp(
@@ -16,6 +17,7 @@ class CaelumPlayerResources : Object play
 
     static void AddCombatAdrenaline(CaelumPlayer user, double amount, int eventType = CaelumConstants.ADRENALINE_EVENT_OTHER)
     {
+        if (!CaelumPlayerAuthority.CanMutate(user)) return;
         user.LastAdrenalineEvent = eventType;
         user.LastAdrenalineBaseGain = Max(0.0, amount);
         user.LastAdrenalineFinalGain = user.LastAdrenalineBaseGain
@@ -25,12 +27,14 @@ class CaelumPlayerResources : Object play
 
     static void MarkCombatActivity(CaelumPlayer user)
     {
+        if (!CaelumPlayerAuthority.CanMutate(user)) return;
         CaelumRestState.Interrupt(user, "CA_REST_COMBAT");
         user.CombatTimeRemaining = CaelumConstants.COMBAT_TIMEOUT_SECONDS;
     }
 
     static void UpdateAdrenalineDecay(CaelumPlayer user)
     {
+        if (!CaelumPlayerAuthority.CanMutate(user)) return;
         if (!user.AdrenalineResourceInitialized)
         {
             user.CombatTimeRemaining = Max(0.0, user.CombatTimeRemaining);
@@ -56,6 +60,7 @@ class CaelumPlayerResources : Object play
 
     static void ApplyConsumableRegenerationPulse(CaelumPlayer user, int consumableType, double foodRecovery = -1)
     {
+        if (!CaelumPlayerAuthority.CanMutate(user)) return;
         if (user.player == null || user.player.playerstate != PST_LIVE
             || user.DerivedStats == null)
         {
@@ -122,6 +127,7 @@ class CaelumPlayerResources : Object play
 
     static void ApplyLocalizedLucidityLoss(CaelumPlayer user, int naturalVulnerabilityGrade, int effectiveVulnerabilityGrade, bool criticalHit, double defenseRatio)
     {
+        if (!CaelumPlayerAuthority.CanMutate(user)) return;
         user.LastLocalizedLucidityLoss = 0.0;
         if (naturalVulnerabilityGrade != CaelumConstants.VULNERABILITY_CRITICAL_POINT
             || user.DerivedStats == null)
@@ -160,6 +166,7 @@ class CaelumPlayerResources : Object play
 
     static double GetLuciditySleepDebuffMultiplier(CaelumPlayer user)
     {
+        if (!CaelumPlayerAuthority.CanRead(user)) return 0;
         double rawMultiplier = 1.0;
         if (user.SleepState == CaelumConstants.SURVIVAL_STATE_CRITICAL)
         {
@@ -180,6 +187,7 @@ class CaelumPlayerResources : Object play
 
     static void UpdateLucidityState(CaelumPlayer user)
     {
+        if (!CaelumPlayerAuthority.CanMutate(user)) return;
         int previousState = user.LucidityState;
         double ratio = user.CurrentLucidity / CaelumConstants.MAXIMUM_LUCIDITY;
 
@@ -212,6 +220,7 @@ class CaelumPlayerResources : Object play
 
     static void UpdateLucidityAccuracyEffects(CaelumPlayer user)
     {
+        if (!CaelumPlayerAuthority.CanMutate(user)) return;
         user.LucidityAccuracyMultiplier = user.LucidityState
             == CaelumConstants.LUCIDITY_STATE_NORMAL
             ? 1.0
@@ -236,6 +245,7 @@ class CaelumPlayerResources : Object play
 
     static void UpdateLucidityPhysicalStun(CaelumPlayer user)
     {
+        if (!CaelumPlayerAuthority.CanMutate(user)) return;
         if (user.LucidityPhysicalStunRemaining > 0.0)
         {
             user.LucidityPhysicalStunRemaining = Max(
@@ -247,6 +257,7 @@ class CaelumPlayerResources : Object play
 
     static void UpdatePainImmobilization(CaelumPlayer user)
     {
+        if (!CaelumPlayerAuthority.CanMutate(user)) return;
         if (user.PainImmobilizationRemaining > 0.0)
         {
             user.PainImmobilizationRemaining = Max(
@@ -285,6 +296,7 @@ class CaelumPlayerResources : Object play
 
     static bool IsSubmergedInPotableWater(CaelumPlayer user)
     {
+        if (!CaelumPlayerAuthority.CanRead(user)) return false;
         return user.WaterLevel >= 3
             && user.CurSector != null
             && user.CurSector.GetUDMFInt('user_ca_potable_water') != 0;
@@ -292,6 +304,7 @@ class CaelumPlayerResources : Object play
 
     static void UpdateSurvivalResources(CaelumPlayer user)
     {
+        if (!CaelumPlayerAuthority.CanMutate(user)) return;
         if (!user.SurvivalResourcesInitialized || user.DerivedStats == null)
         {
             return;
@@ -350,6 +363,7 @@ class CaelumPlayerResources : Object play
 
     static void UpdateSurvivalStates(CaelumPlayer user)
     {
+        if (!CaelumPlayerAuthority.CanMutate(user)) return;
         user.HungerState = user.CalculateSurvivalState(user.CurrentHunger);
         user.ThirstState = user.CalculateSurvivalState(user.CurrentThirst);
         user.SleepState = user.CalculateSurvivalState(user.CurrentSleep);
@@ -379,6 +393,7 @@ class CaelumPlayerResources : Object play
 
     static void UpdateHealthStateEffects(CaelumPlayer user)
     {
+        if (!CaelumPlayerAuthority.CanMutate(user)) return;
         double healthRatio = 1.0;
         if (user.CaelumMaximumHealth > 0)
         {
@@ -440,6 +455,7 @@ class CaelumPlayerResources : Object play
 
     static void UpdateEffectiveOffensiveDamageMultiplier(CaelumPlayer user)
     {
+        if (!CaelumPlayerAuthority.CanMutate(user)) return;
         user.EffectiveOffensiveDamageMultiplier = Clamp(
             user.HealthPerformanceMultiplier * user.SurvivalPerformanceMultiplier,
             0.0,
@@ -449,6 +465,7 @@ class CaelumPlayerResources : Object play
 
     static void ApplyCriticalSurvivalDamage(CaelumPlayer user)
     {
+        if (!CaelumPlayerAuthority.CanMutate(user)) return;
         if (user.player == null || user.player.playerstate != PST_LIVE || user.health <= 0)
         {
             return;
@@ -492,6 +509,7 @@ class CaelumPlayerResources : Object play
 
     static void ApplyNaturalHealthRegeneration(CaelumPlayer user)
     {
+        if (!CaelumPlayerAuthority.CanMutate(user)) return;
         if (user.player == null
             || user.player.playerstate != PST_LIVE
             || user.health <= 0
@@ -544,6 +562,7 @@ class CaelumPlayerResources : Object play
 
     static void ApplyAirRegeneration(CaelumPlayer user)
     {
+        if (!CaelumPlayerAuthority.CanMutate(user)) return;
         if (!user.AirResourceInitialized
             || user.DerivedStats == null
             || user.WaterLevel >= 3
@@ -599,6 +618,7 @@ class CaelumPlayerResources : Object play
 
     static bool HasUnderwaterAirExemption(CaelumPlayer user)
     {
+        if (!CaelumPlayerAuthority.CanRead(user)) return false;
         return user.bInvulnerable
             || user.player == null
             || (user.player.cheats & (CF_GODMODE | CF_NOCLIP2))
@@ -607,6 +627,7 @@ class CaelumPlayerResources : Object play
 
     static double GetUnderwaterBaseAirCostPerSecond(CaelumPlayer user)
     {
+        if (!CaelumPlayerAuthority.CanRead(user)) return 0;
         int completedSeconds = Max(0, (user.UnderwaterNoBreathTics - 1) / TICRATE);
         return Min(
             CaelumConstants.UNDERWATER_AIR_MAX_COST_PER_SECOND,
@@ -618,6 +639,7 @@ class CaelumPlayerResources : Object play
 
     static void RecoverUnderwaterAirDebt(CaelumPlayer user)
     {
+        if (!CaelumPlayerAuthority.CanMutate(user)) return;
         user.UnderwaterAirRecoveryAppliedThisTick = false;
         if (user.UnderwaterAirRecoveryDebt <= 0.0
             || user.UnderwaterAirRecoveryTicsRemaining <= 0
@@ -661,6 +683,7 @@ class CaelumPlayerResources : Object play
 
     static void UpdateUnderwaterAirForState(CaelumPlayer user, bool withoutOxygen)
     {
+        if (!CaelumPlayerAuthority.CanMutate(user)) return;
         if (!user.AirResourceInitialized
             || user.DerivedStats == null
             || user.player == null
@@ -755,11 +778,13 @@ class CaelumPlayerResources : Object play
 
     static void UpdateUnderwaterAir(CaelumPlayer user)
     {
+        if (!CaelumPlayerAuthority.CanMutate(user)) return;
         user.UpdateUnderwaterAirForState(user.WaterLevel >= 3);
     }
 
     static void ConsumeJumpAir(CaelumPlayer user)
     {
+        if (!CaelumPlayerAuthority.CanMutate(user)) return;
         if (user.DerivedStats == null)
         {
             return;
@@ -773,6 +798,7 @@ class CaelumPlayerResources : Object play
 
     static double GetAirRatio(CaelumPlayer user)
     {
+        if (!CaelumPlayerAuthority.CanRead(user)) return 0;
         if (user.DerivedStats == null || user.DerivedStats.MaximumAir <= 0.0)
         {
             return 0.0;
@@ -783,6 +809,7 @@ class CaelumPlayerResources : Object play
 
     static void UpdateAirStateEffects(CaelumPlayer user)
     {
+        if (!CaelumPlayerAuthority.CanMutate(user)) return;
         double ratio = user.GetAirRatio();
 
         if (ratio <= CaelumConstants.AIR_BREATHLESS_THRESHOLD)

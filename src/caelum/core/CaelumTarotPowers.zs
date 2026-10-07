@@ -2,7 +2,7 @@
 // del Diario sólo solicita una selección; nunca concede esencias ni poderes.
 class CaelumTarotPowers : Object play
 {
-    const REVISION = 1;
+    const REVISION = CaelumTarotService.REVISION;
 
     static void EnsureRevision(CaelumPersistentCharacterState record)
     { CaelumTarotService.EnsureRevision(record); }

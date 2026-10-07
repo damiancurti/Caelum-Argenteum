@@ -1,0 +1,1423 @@
+[
+  {
+    "path": "src/caelum/player/CaelumPlayerCharacter.zs",
+    "cls": "CaelumPlayerCharacter",
+    "name": "ReadNewCharacterDraft",
+    "query": true,
+    "guard": "if (!CaelumPlayerAuthority.CanRead(user)) return fallback;"
+  },
+  {
+    "path": "src/caelum/player/CaelumPlayerCharacter.zs",
+    "cls": "CaelumPlayerCharacter",
+    "name": "ReadNewCharacterLayer",
+    "query": true,
+    "guard": "if (!CaelumPlayerAuthority.CanRead(user)) return 0;"
+  },
+  {
+    "path": "src/caelum/player/CaelumPlayerCharacter.zs",
+    "cls": "CaelumPlayerCharacter",
+    "name": "ReadNewCharacterAttribute",
+    "query": true,
+    "guard": "if (!CaelumPlayerAuthority.CanRead(user)) return 0;"
+  },
+  {
+    "path": "src/caelum/player/CaelumPlayerCharacter.zs",
+    "cls": "CaelumPlayerCharacter",
+    "name": "NewCharacterDraftIsReady",
+    "query": true,
+    "guard": "if (!CaelumPlayerAuthority.CanRead(user)) return false;"
+  },
+  {
+    "path": "src/caelum/player/CaelumPlayerCharacter.zs",
+    "cls": "CaelumPlayerCharacter",
+    "name": "ClearNewCharacterDraftReady",
+    "query": false,
+    "guard": "if (!CaelumPlayerAuthority.CanMutate(user)) return;"
+  },
+  {
+    "path": "src/caelum/player/CaelumPlayerCharacter.zs",
+    "cls": "CaelumPlayerCharacter",
+    "name": "ValidateLoadedNewCharacterDraft",
+    "query": true,
+    "guard": "if (!CaelumPlayerAuthority.CanRead(user)) return false;\n        if (user.CharacterProfile == null || user.CharacterAllocation == null) return false;"
+  },
+  {
+    "path": "src/caelum/player/CaelumPlayerCharacter.zs",
+    "cls": "CaelumPlayerCharacter",
+    "name": "ConsumeNewCharacterDraft",
+    "query": false,
+    "guard": "if (!CaelumPlayerAuthority.CanMutate(user)) return false;"
+  },
+  {
+    "path": "src/caelum/player/CaelumPlayerCharacter.zs",
+    "cls": "CaelumPlayerCharacter",
+    "name": "InitializeDirectMapCharacter",
+    "query": false,
+    "guard": "if (!CaelumPlayerAuthority.CanMutate(user)) return;"
+  },
+  {
+    "path": "src/caelum/player/CaelumPlayerCharacter.zs",
+    "cls": "CaelumPlayerCharacter",
+    "name": "EnsureCurrentAttributeBalance",
+    "query": false,
+    "guard": "if (!CaelumPlayerAuthority.CanMutate(user)) return;"
+  },
+  {
+    "path": "src/caelum/player/CaelumPlayerCharacter.zs",
+    "cls": "CaelumPlayerCharacter",
+    "name": "ApplyCharacterProfile",
+    "query": false,
+    "guard": "if (!CaelumPlayerAuthority.CanMutate(user)) return;"
+  },
+  {
+    "path": "src/caelum/player/CaelumPlayerResources.zs",
+    "cls": "CaelumPlayerResources",
+    "name": "AddAdrenaline",
+    "query": false,
+    "guard": "if (!CaelumPlayerAuthority.CanMutate(user)) return;"
+  },
+  {
+    "path": "src/caelum/player/CaelumPlayerResources.zs",
+    "cls": "CaelumPlayerResources",
+    "name": "AddCombatAdrenaline",
+    "query": false,
+    "guard": "if (!CaelumPlayerAuthority.CanMutate(user)) return;"
+  },
+  {
+    "path": "src/caelum/player/CaelumPlayerResources.zs",
+    "cls": "CaelumPlayerResources",
+    "name": "MarkCombatActivity",
+    "query": false,
+    "guard": "if (!CaelumPlayerAuthority.CanMutate(user)) return;"
+  },
+  {
+    "path": "src/caelum/player/CaelumPlayerResources.zs",
+    "cls": "CaelumPlayerResources",
+    "name": "UpdateAdrenalineDecay",
+    "query": false,
+    "guard": "if (!CaelumPlayerAuthority.CanMutate(user)) return;"
+  },
+  {
+    "path": "src/caelum/player/CaelumPlayerResources.zs",
+    "cls": "CaelumPlayerResources",
+    "name": "ApplyConsumableRegenerationPulse",
+    "query": false,
+    "guard": "if (!CaelumPlayerAuthority.CanMutate(user)) return;"
+  },
+  {
+    "path": "src/caelum/player/CaelumPlayerResources.zs",
+    "cls": "CaelumPlayerResources",
+    "name": "ApplyLocalizedLucidityLoss",
+    "query": false,
+    "guard": "if (!CaelumPlayerAuthority.CanMutate(user)) return;"
+  },
+  {
+    "path": "src/caelum/player/CaelumPlayerResources.zs",
+    "cls": "CaelumPlayerResources",
+    "name": "GetLuciditySleepDebuffMultiplier",
+    "query": true,
+    "guard": "if (!CaelumPlayerAuthority.CanRead(user)) return 0;"
+  },
+  {
+    "path": "src/caelum/player/CaelumPlayerResources.zs",
+    "cls": "CaelumPlayerResources",
+    "name": "UpdateLucidityState",
+    "query": false,
+    "guard": "if (!CaelumPlayerAuthority.CanMutate(user)) return;"
+  },
+  {
+    "path": "src/caelum/player/CaelumPlayerResources.zs",
+    "cls": "CaelumPlayerResources",
+    "name": "UpdateLucidityAccuracyEffects",
+    "query": false,
+    "guard": "if (!CaelumPlayerAuthority.CanMutate(user)) return;"
+  },
+  {
+    "path": "src/caelum/player/CaelumPlayerResources.zs",
+    "cls": "CaelumPlayerResources",
+    "name": "UpdateLucidityPhysicalStun",
+    "query": false,
+    "guard": "if (!CaelumPlayerAuthority.CanMutate(user)) return;"
+  },
+  {
+    "path": "src/caelum/player/CaelumPlayerResources.zs",
+    "cls": "CaelumPlayerResources",
+    "name": "UpdatePainImmobilization",
+    "query": false,
+    "guard": "if (!CaelumPlayerAuthority.CanMutate(user)) return;"
+  },
+  {
+    "path": "src/caelum/player/CaelumPlayerResources.zs",
+    "cls": "CaelumPlayerResources",
+    "name": "IsSubmergedInPotableWater",
+    "query": true,
+    "guard": "if (!CaelumPlayerAuthority.CanRead(user)) return false;"
+  },
+  {
+    "path": "src/caelum/player/CaelumPlayerResources.zs",
+    "cls": "CaelumPlayerResources",
+    "name": "UpdateSurvivalResources",
+    "query": false,
+    "guard": "if (!CaelumPlayerAuthority.CanMutate(user)) return;"
+  },
+  {
+    "path": "src/caelum/player/CaelumPlayerResources.zs",
+    "cls": "CaelumPlayerResources",
+    "name": "UpdateSurvivalStates",
+    "query": false,
+    "guard": "if (!CaelumPlayerAuthority.CanMutate(user)) return;"
+  },
+  {
+    "path": "src/caelum/player/CaelumPlayerResources.zs",
+    "cls": "CaelumPlayerResources",
+    "name": "UpdateHealthStateEffects",
+    "query": false,
+    "guard": "if (!CaelumPlayerAuthority.CanMutate(user)) return;"
+  },
+  {
+    "path": "src/caelum/player/CaelumPlayerResources.zs",
+    "cls": "CaelumPlayerResources",
+    "name": "UpdateEffectiveOffensiveDamageMultiplier",
+    "query": false,
+    "guard": "if (!CaelumPlayerAuthority.CanMutate(user)) return;"
+  },
+  {
+    "path": "src/caelum/player/CaelumPlayerResources.zs",
+    "cls": "CaelumPlayerResources",
+    "name": "ApplyCriticalSurvivalDamage",
+    "query": false,
+    "guard": "if (!CaelumPlayerAuthority.CanMutate(user)) return;"
+  },
+  {
+    "path": "src/caelum/player/CaelumPlayerResources.zs",
+    "cls": "CaelumPlayerResources",
+    "name": "ApplyNaturalHealthRegeneration",
+    "query": false,
+    "guard": "if (!CaelumPlayerAuthority.CanMutate(user)) return;"
+  },
+  {
+    "path": "src/caelum/player/CaelumPlayerResources.zs",
+    "cls": "CaelumPlayerResources",
+    "name": "ApplyAirRegeneration",
+    "query": false,
+    "guard": "if (!CaelumPlayerAuthority.CanMutate(user)) return;"
+  },
+  {
+    "path": "src/caelum/player/CaelumPlayerResources.zs",
+    "cls": "CaelumPlayerResources",
+    "name": "HasUnderwaterAirExemption",
+    "query": true,
+    "guard": "if (!CaelumPlayerAuthority.CanRead(user)) return false;"
+  },
+  {
+    "path": "src/caelum/player/CaelumPlayerResources.zs",
+    "cls": "CaelumPlayerResources",
+    "name": "GetUnderwaterBaseAirCostPerSecond",
+    "query": true,
+    "guard": "if (!CaelumPlayerAuthority.CanRead(user)) return 0;"
+  },
+  {
+    "path": "src/caelum/player/CaelumPlayerResources.zs",
+    "cls": "CaelumPlayerResources",
+    "name": "RecoverUnderwaterAirDebt",
+    "query": false,
+    "guard": "if (!CaelumPlayerAuthority.CanMutate(user)) return;"
+  },
+  {
+    "path": "src/caelum/player/CaelumPlayerResources.zs",
+    "cls": "CaelumPlayerResources",
+    "name": "UpdateUnderwaterAirForState",
+    "query": false,
+    "guard": "if (!CaelumPlayerAuthority.CanMutate(user)) return;"
+  },
+  {
+    "path": "src/caelum/player/CaelumPlayerResources.zs",
+    "cls": "CaelumPlayerResources",
+    "name": "UpdateUnderwaterAir",
+    "query": false,
+    "guard": "if (!CaelumPlayerAuthority.CanMutate(user)) return;"
+  },
+  {
+    "path": "src/caelum/player/CaelumPlayerResources.zs",
+    "cls": "CaelumPlayerResources",
+    "name": "ConsumeJumpAir",
+    "query": false,
+    "guard": "if (!CaelumPlayerAuthority.CanMutate(user)) return;"
+  },
+  {
+    "path": "src/caelum/player/CaelumPlayerResources.zs",
+    "cls": "CaelumPlayerResources",
+    "name": "GetAirRatio",
+    "query": true,
+    "guard": "if (!CaelumPlayerAuthority.CanRead(user)) return 0;"
+  },
+  {
+    "path": "src/caelum/player/CaelumPlayerResources.zs",
+    "cls": "CaelumPlayerResources",
+    "name": "UpdateAirStateEffects",
+    "query": false,
+    "guard": "if (!CaelumPlayerAuthority.CanMutate(user)) return;"
+  },
+  {
+    "path": "src/caelum/player/CaelumPlayerPresentation.zs",
+    "cls": "CaelumPlayerPresentation",
+    "name": "RefreshSocialJournalSnapshot",
+    "query": false,
+    "guard": "if (!CaelumPlayerAuthority.CanMutate(user)) return;"
+  },
+  {
+    "path": "src/caelum/player/CaelumPlayerPresentation.zs",
+    "cls": "CaelumPlayerPresentation",
+    "name": "SyncHUDActiveWeaponState",
+    "query": false,
+    "guard": "if (!CaelumPlayerAuthority.CanMutate(user)) return;"
+  },
+  {
+    "path": "src/caelum/player/CaelumPlayerPresentation.zs",
+    "cls": "CaelumPlayerPresentation",
+    "name": "SyncHUDLoadState",
+    "query": false,
+    "guard": "if (!CaelumPlayerAuthority.CanMutate(user)) return;"
+  },
+  {
+    "path": "src/caelum/equipment/CaelumInventoryService.zs",
+    "cls": "CaelumInventoryService",
+    "name": "SyncLiveMagicBoxOwnershipFromPersistentState",
+    "query": false,
+    "guard": "if (!CaelumPlayerAuthority.CanMutate(user)) return;"
+  },
+  {
+    "path": "src/caelum/equipment/CaelumInventoryService.zs",
+    "cls": "CaelumInventoryService",
+    "name": "NormalizeUnownedMagicBoxStorage",
+    "query": false,
+    "guard": "if (!CaelumPlayerAuthority.CanMutate(user)) return;"
+  },
+  {
+    "path": "src/caelum/equipment/CaelumInventoryService.zs",
+    "cls": "CaelumInventoryService",
+    "name": "GrantMagicBoxFromPalomo",
+    "query": false,
+    "guard": "if (!CaelumPlayerAuthority.CanMutate(user)) return false;"
+  },
+  {
+    "path": "src/caelum/equipment/CaelumInventoryService.zs",
+    "cls": "CaelumInventoryService",
+    "name": "FindNativeEquipmentItem",
+    "query": true,
+    "guard": "if (!CaelumPlayerAuthority.CanRead(user)) return null;"
+  },
+  {
+    "path": "src/caelum/equipment/CaelumInventoryService.zs",
+    "cls": "CaelumInventoryService",
+    "name": "FindNativeMagicWeaponItem",
+    "query": true,
+    "guard": "if (!CaelumPlayerAuthority.CanRead(user)) return null;"
+  },
+  {
+    "path": "src/caelum/equipment/CaelumInventoryService.zs",
+    "cls": "CaelumInventoryService",
+    "name": "FindNativeEquipmentItemById",
+    "query": true,
+    "guard": "if (!CaelumPlayerAuthority.CanRead(user)) return null;"
+  },
+  {
+    "path": "src/caelum/equipment/CaelumInventoryService.zs",
+    "cls": "CaelumInventoryService",
+    "name": "FindOtherNativeEquipmentItemById",
+    "query": true,
+    "guard": "if (!CaelumPlayerAuthority.CanRead(user)) return null;"
+  },
+  {
+    "path": "src/caelum/equipment/CaelumInventoryService.zs",
+    "cls": "CaelumInventoryService",
+    "name": "EnsureEquipmentItemId",
+    "query": false,
+    "guard": "if (!CaelumPlayerAuthority.CanMutate(user)) return 0;"
+  },
+  {
+    "path": "src/caelum/equipment/CaelumInventoryService.zs",
+    "cls": "CaelumInventoryService",
+    "name": "EnsureAllEquipmentItemIds",
+    "query": false,
+    "guard": "if (!CaelumPlayerAuthority.CanMutate(user)) return;"
+  },
+  {
+    "path": "src/caelum/equipment/CaelumInventoryService.zs",
+    "cls": "CaelumInventoryService",
+    "name": "FindEquippedNativeEquipmentItem",
+    "query": true,
+    "guard": "if (!CaelumPlayerAuthority.CanRead(user)) return null;"
+  },
+  {
+    "path": "src/caelum/equipment/CaelumInventoryService.zs",
+    "cls": "CaelumInventoryService",
+    "name": "RepairActiveEquipmentItemReferences",
+    "query": false,
+    "guard": "if (!CaelumPlayerAuthority.CanMutate(user)) return;"
+  },
+  {
+    "path": "src/caelum/equipment/CaelumInventoryService.zs",
+    "cls": "CaelumInventoryService",
+    "name": "HasEquippedNativeWeaponType",
+    "query": true,
+    "guard": "if (!CaelumPlayerAuthority.CanRead(user)) return false;"
+  },
+  {
+    "path": "src/caelum/equipment/CaelumInventoryService.zs",
+    "cls": "CaelumInventoryService",
+    "name": "HasEquippedNativeMagicWeapon",
+    "query": true,
+    "guard": "if (!CaelumPlayerAuthority.CanRead(user)) return false;"
+  },
+  {
+    "path": "src/caelum/equipment/CaelumInventoryService.zs",
+    "cls": "CaelumInventoryService",
+    "name": "ActivateEquippedMagicWeapon",
+    "query": false,
+    "guard": "if (!CaelumPlayerAuthority.CanMutate(user)) return false;"
+  },
+  {
+    "path": "src/caelum/equipment/CaelumInventoryService.zs",
+    "cls": "CaelumInventoryService",
+    "name": "CountNativeMagicBoxSlots",
+    "query": true,
+    "guard": "if (!CaelumPlayerAuthority.CanRead(user)) return 0;"
+  },
+  {
+    "path": "src/caelum/equipment/CaelumInventoryService.zs",
+    "cls": "CaelumInventoryService",
+    "name": "GetMagicBoxWeightDivisor",
+    "query": true,
+    "guard": "if (!CaelumPlayerAuthority.CanRead(user)) return 1;"
+  },
+  {
+    "path": "src/caelum/equipment/CaelumInventoryService.zs",
+    "cls": "CaelumInventoryService",
+    "name": "CalculateMagicBoxReducedContentWeight",
+    "query": true,
+    "guard": "if (!CaelumPlayerAuthority.CanRead(user)) return 0;"
+  },
+  {
+    "path": "src/caelum/equipment/CaelumInventoryService.zs",
+    "cls": "CaelumInventoryService",
+    "name": "CalculateMagicBoxTotalWeight",
+    "query": true,
+    "guard": "if (!CaelumPlayerAuthority.CanRead(user)) return 0;"
+  },
+  {
+    "path": "src/caelum/equipment/CaelumInventoryService.zs",
+    "cls": "CaelumInventoryService",
+    "name": "CanApplyInventoryWeightTransition",
+    "query": true,
+    "guard": "if (!CaelumPlayerAuthority.CanRead(user)) return false;"
+  },
+  {
+    "path": "src/caelum/equipment/CaelumInventoryService.zs",
+    "cls": "CaelumInventoryService",
+    "name": "CanAddRawWeightToMagicBox",
+    "query": true,
+    "guard": "if (!CaelumPlayerAuthority.CanRead(user)) return false;"
+  },
+  {
+    "path": "src/caelum/equipment/CaelumInventoryService.zs",
+    "cls": "CaelumInventoryService",
+    "name": "CanMoveRawWeightFromMagicBoxToPersonal",
+    "query": true,
+    "guard": "if (!CaelumPlayerAuthority.CanRead(user)) return false;"
+  },
+  {
+    "path": "src/caelum/equipment/CaelumInventoryService.zs",
+    "cls": "CaelumInventoryService",
+    "name": "CanMovePersonalStackWithIncomingToMagicBox",
+    "query": true,
+    "guard": "if (!CaelumPlayerAuthority.CanRead(user)) return false;"
+  },
+  {
+    "path": "src/caelum/equipment/CaelumInventoryService.zs",
+    "cls": "CaelumInventoryService",
+    "name": "HasNativeMagicBoxSlotAvailable",
+    "query": true,
+    "guard": "if (!CaelumPlayerAuthority.CanRead(user)) return false;"
+  },
+  {
+    "path": "src/caelum/equipment/CaelumInventoryService.zs",
+    "cls": "CaelumInventoryService",
+    "name": "FindNativeConsumableItem",
+    "query": true,
+    "guard": "if (!CaelumPlayerAuthority.CanRead(user)) return null;"
+  },
+  {
+    "path": "src/caelum/equipment/CaelumInventoryService.zs",
+    "cls": "CaelumInventoryService",
+    "name": "FindNativeAmmunition",
+    "query": true,
+    "guard": "if (!CaelumPlayerAuthority.CanRead(user)) return null;"
+  },
+  {
+    "path": "src/caelum/equipment/CaelumInventoryService.zs",
+    "cls": "CaelumInventoryService",
+    "name": "AcquireJavelinAmmunition",
+    "query": false,
+    "guard": "if (!CaelumPlayerAuthority.CanMutate(user)) return false;"
+  },
+  {
+    "path": "src/caelum/equipment/CaelumInventoryService.zs",
+    "cls": "CaelumInventoryService",
+    "name": "FindNativeSpecialItem",
+    "query": true,
+    "guard": "if (!CaelumPlayerAuthority.CanRead(user)) return null;"
+  },
+  {
+    "path": "src/caelum/equipment/CaelumInventoryService.zs",
+    "cls": "CaelumInventoryService",
+    "name": "FindNativeCurrency",
+    "query": true,
+    "guard": "if (!CaelumPlayerAuthority.CanRead(user)) return null;"
+  },
+  {
+    "path": "src/caelum/equipment/CaelumInventoryService.zs",
+    "cls": "CaelumInventoryService",
+    "name": "GetOwnedCurrencyAmount",
+    "query": true,
+    "guard": "if (!CaelumPlayerAuthority.CanRead(user)) return 0;"
+  },
+  {
+    "path": "src/caelum/equipment/CaelumInventoryService.zs",
+    "cls": "CaelumInventoryService",
+    "name": "GetOwnedMoneyCopperValue",
+    "query": true,
+    "guard": "if (!CaelumPlayerAuthority.CanRead(user)) return 0;"
+  },
+  {
+    "path": "src/caelum/equipment/CaelumInventoryService.zs",
+    "cls": "CaelumInventoryService",
+    "name": "FindPalomoMerchantProduct",
+    "query": true,
+    "guard": "if (!CaelumPlayerAuthority.CanRead(user)) return null;"
+  },
+  {
+    "path": "src/caelum/equipment/CaelumInventoryService.zs",
+    "cls": "CaelumInventoryService",
+    "name": "CountPalomoMerchantProduct",
+    "query": true,
+    "guard": "if (!CaelumPlayerAuthority.CanRead(user)) return 0;"
+  },
+  {
+    "path": "src/caelum/equipment/CaelumInventoryService.zs",
+    "cls": "CaelumInventoryService",
+    "name": "GetPalomoMerchantProductUnitWeight",
+    "query": true,
+    "guard": "if (!CaelumPlayerAuthority.CanRead(user)) return 0;"
+  },
+  {
+    "path": "src/caelum/equipment/CaelumInventoryService.zs",
+    "cls": "CaelumInventoryService",
+    "name": "ResetPalomoCurrencyPlan",
+    "query": false,
+    "guard": "if (!CaelumPlayerAuthority.CanMutate(user)) return;"
+  },
+  {
+    "path": "src/caelum/equipment/CaelumInventoryService.zs",
+    "cls": "CaelumInventoryService",
+    "name": "BuildPalomoCurrencyPaymentPlan",
+    "query": false,
+    "guard": "if (!CaelumPlayerAuthority.CanMutate(user)) return false;"
+  },
+  {
+    "path": "src/caelum/equipment/CaelumInventoryService.zs",
+    "cls": "CaelumInventoryService",
+    "name": "BuildPalomoCurrencyCreditPlan",
+    "query": false,
+    "guard": "if (!CaelumPlayerAuthority.CanMutate(user)) return false;"
+  },
+  {
+    "path": "src/caelum/equipment/CaelumInventoryService.zs",
+    "cls": "CaelumInventoryService",
+    "name": "RoutePalomoCurrencyGainsToMagicBox",
+    "query": false,
+    "guard": "if (!CaelumPlayerAuthority.CanMutate(user)) return;"
+  },
+  {
+    "path": "src/caelum/equipment/CaelumInventoryService.zs",
+    "cls": "CaelumInventoryService",
+    "name": "GetPalomoCurrencyPlanPersonalWeightDelta",
+    "query": true,
+    "guard": "if (!CaelumPlayerAuthority.CanRead(user)) return 0;"
+  },
+  {
+    "path": "src/caelum/equipment/CaelumInventoryService.zs",
+    "cls": "CaelumInventoryService",
+    "name": "GetPalomoCurrencyPlanBoxRawWeightDelta",
+    "query": true,
+    "guard": "if (!CaelumPlayerAuthority.CanRead(user)) return 0;"
+  },
+  {
+    "path": "src/caelum/equipment/CaelumInventoryService.zs",
+    "cls": "CaelumInventoryService",
+    "name": "GetPalomoCurrencyPlanBoxSlotDelta",
+    "query": true,
+    "guard": "if (!CaelumPlayerAuthority.CanRead(user)) return 0;"
+  },
+  {
+    "path": "src/caelum/equipment/CaelumInventoryService.zs",
+    "cls": "CaelumInventoryService",
+    "name": "PalomoTransactionCapacityFits",
+    "query": true,
+    "guard": "if (!CaelumPlayerAuthority.CanRead(user)) return false;"
+  },
+  {
+    "path": "src/caelum/equipment/CaelumInventoryService.zs",
+    "cls": "CaelumInventoryService",
+    "name": "PreparePalomoPurchaseCapacity",
+    "query": false,
+    "guard": "if (!CaelumPlayerAuthority.CanMutate(user)) return false;"
+  },
+  {
+    "path": "src/caelum/equipment/CaelumInventoryService.zs",
+    "cls": "CaelumInventoryService",
+    "name": "PreparePalomoSaleCapacity",
+    "query": false,
+    "guard": "if (!CaelumPlayerAuthority.CanMutate(user)) return false;"
+  },
+  {
+    "path": "src/caelum/equipment/CaelumInventoryService.zs",
+    "cls": "CaelumInventoryService",
+    "name": "ApplyPalomoCurrencyPlan",
+    "query": false,
+    "guard": "if (!CaelumPlayerAuthority.CanMutate(user)) return false;"
+  },
+  {
+    "path": "src/caelum/equipment/CaelumInventoryService.zs",
+    "cls": "CaelumInventoryService",
+    "name": "AddPalomoMerchantProduct",
+    "query": false,
+    "guard": "if (!CaelumPlayerAuthority.CanMutate(user)) return false;"
+  },
+  {
+    "path": "src/caelum/equipment/CaelumInventoryService.zs",
+    "cls": "CaelumInventoryService",
+    "name": "RemovePalomoMerchantProduct",
+    "query": false,
+    "guard": "if (!CaelumPlayerAuthority.CanMutate(user)) return false;"
+  },
+  {
+    "path": "src/caelum/equipment/CaelumInventoryService.zs",
+    "cls": "CaelumInventoryService",
+    "name": "FindNativeKey",
+    "query": true,
+    "guard": "if (!CaelumPlayerAuthority.CanRead(user)) return null;"
+  },
+  {
+    "path": "src/caelum/equipment/CaelumInventoryService.zs",
+    "cls": "CaelumInventoryService",
+    "name": "PrepareNativeEquipmentPickup",
+    "query": false,
+    "guard": "if (!CaelumPlayerAuthority.CanMutate(user)) return false;"
+  },
+  {
+    "path": "src/caelum/equipment/CaelumInventoryService.zs",
+    "cls": "CaelumInventoryService",
+    "name": "PrepareNativeAmmoPickup",
+    "query": false,
+    "guard": "if (!CaelumPlayerAuthority.CanMutate(user)) return false;"
+  },
+  {
+    "path": "src/caelum/equipment/CaelumInventoryService.zs",
+    "cls": "CaelumInventoryService",
+    "name": "PrepareNativeAmmoStackPickup",
+    "query": false,
+    "guard": "if (!CaelumPlayerAuthority.CanMutate(user)) return false;"
+  },
+  {
+    "path": "src/caelum/equipment/CaelumInventoryService.zs",
+    "cls": "CaelumInventoryService",
+    "name": "PrepareNativeConsumablePickup",
+    "query": false,
+    "guard": "if (!CaelumPlayerAuthority.CanMutate(user)) return false;"
+  },
+  {
+    "path": "src/caelum/equipment/CaelumInventoryService.zs",
+    "cls": "CaelumInventoryService",
+    "name": "PrepareNativeConsumableStackPickup",
+    "query": false,
+    "guard": "if (!CaelumPlayerAuthority.CanMutate(user)) return false;"
+  },
+  {
+    "path": "src/caelum/equipment/CaelumInventoryService.zs",
+    "cls": "CaelumInventoryService",
+    "name": "PrepareNativeSpecialPickup",
+    "query": false,
+    "guard": "if (!CaelumPlayerAuthority.CanMutate(user)) return false;"
+  },
+  {
+    "path": "src/caelum/equipment/CaelumInventoryService.zs",
+    "cls": "CaelumInventoryService",
+    "name": "PrepareNativeSpecialStackPickup",
+    "query": false,
+    "guard": "if (!CaelumPlayerAuthority.CanMutate(user)) return false;"
+  },
+  {
+    "path": "src/caelum/equipment/CaelumInventoryService.zs",
+    "cls": "CaelumInventoryService",
+    "name": "PrepareNativeKeyPickup",
+    "query": false,
+    "guard": "if (!CaelumPlayerAuthority.CanMutate(user)) return false;"
+  },
+  {
+    "path": "src/caelum/equipment/CaelumInventoryService.zs",
+    "cls": "CaelumInventoryService",
+    "name": "OnNativeInventoryChanged",
+    "query": false,
+    "guard": "if (!CaelumPlayerAuthority.CanMutate(user)) return;"
+  },
+  {
+    "path": "src/caelum/equipment/CaelumInventoryService.zs",
+    "cls": "CaelumInventoryService",
+    "name": "OnNativeEquipmentPickedUp",
+    "query": false,
+    "guard": "if (!CaelumPlayerAuthority.CanMutate(user)) return;"
+  },
+  {
+    "path": "src/caelum/equipment/CaelumInventoryService.zs",
+    "cls": "CaelumInventoryService",
+    "name": "MigrateLegacyEquipmentToNativeInventory",
+    "query": false,
+    "guard": "if (!CaelumPlayerAuthority.CanMutate(user)) return;\n        if (!CaelumPlayerAuthority.OwnsRecord(user, persistentState)) return;"
+  },
+  {
+    "path": "src/caelum/equipment/CaelumInventoryService.zs",
+    "cls": "CaelumInventoryService",
+    "name": "GetEquippedWeaponLoadWeight",
+    "query": true,
+    "guard": "if (!CaelumPlayerAuthority.CanRead(user)) return 0;"
+  },
+  {
+    "path": "src/caelum/equipment/CaelumInventoryService.zs",
+    "cls": "CaelumInventoryService",
+    "name": "HasEquippedWeaponFamily",
+    "query": true,
+    "guard": "if (!CaelumPlayerAuthority.CanRead(user)) return false;"
+  },
+  {
+    "path": "src/caelum/equipment/CaelumInventoryService.zs",
+    "cls": "CaelumInventoryService",
+    "name": "ActivateEquippedWeaponFamily",
+    "query": false,
+    "guard": "if (!CaelumPlayerAuthority.CanMutate(user)) return false;"
+  },
+  {
+    "path": "src/caelum/equipment/CaelumInventoryService.zs",
+    "cls": "CaelumInventoryService",
+    "name": "ActivateEquippedWeaponType",
+    "query": false,
+    "guard": "if (!CaelumPlayerAuthority.CanMutate(user)) return false;"
+  },
+  {
+    "path": "src/caelum/equipment/CaelumInventoryService.zs",
+    "cls": "CaelumInventoryService",
+    "name": "ActivateExactEquippedWeapon",
+    "query": false,
+    "guard": "if (!CaelumPlayerAuthority.CanMutate(user)) return false;"
+  },
+  {
+    "path": "src/caelum/equipment/CaelumInventoryService.zs",
+    "cls": "CaelumInventoryService",
+    "name": "CycleEquippedWeaponSlot",
+    "query": false,
+    "guard": "if (!CaelumPlayerAuthority.CanMutate(user)) return;"
+  },
+  {
+    "path": "src/caelum/equipment/CaelumInventoryService.zs",
+    "cls": "CaelumInventoryService",
+    "name": "ActivateFirstEquippedWeapon",
+    "query": false,
+    "guard": "if (!CaelumPlayerAuthority.CanMutate(user)) return false;"
+  },
+  {
+    "path": "src/caelum/equipment/CaelumInventoryService.zs",
+    "cls": "CaelumInventoryService",
+    "name": "RefreshCarriedInventorySummary",
+    "query": false,
+    "guard": "if (!CaelumPlayerAuthority.CanMutate(user)) return;"
+  },
+  {
+    "path": "src/caelum/equipment/CaelumInventoryService.zs",
+    "cls": "CaelumInventoryService",
+    "name": "CanAddWeightToPersonalInventory",
+    "query": true,
+    "guard": "if (!CaelumPlayerAuthority.CanRead(user)) return false;"
+  },
+  {
+    "path": "src/caelum/equipment/CaelumInventoryService.zs",
+    "cls": "CaelumInventoryService",
+    "name": "FormalInventoryEntryMatchesFilter",
+    "query": true,
+    "guard": "if (!CaelumPlayerAuthority.CanRead(user)) return false;"
+  },
+  {
+    "path": "src/caelum/equipment/CaelumInventoryService.zs",
+    "cls": "CaelumInventoryService",
+    "name": "GetFormalInventoryEntryAt",
+    "query": true,
+    "guard": "if (!CaelumPlayerAuthority.CanRead(user)) return null;"
+  },
+  {
+    "path": "src/caelum/equipment/CaelumInventoryService.zs",
+    "cls": "CaelumInventoryService",
+    "name": "CountFormalInventoryEntries",
+    "query": true,
+    "guard": "if (!CaelumPlayerAuthority.CanRead(user)) return 0;"
+  },
+  {
+    "path": "src/caelum/equipment/CaelumInventoryService.zs",
+    "cls": "CaelumInventoryService",
+    "name": "GetFormalInventoryMaximumDurability",
+    "query": true,
+    "guard": "if (!CaelumPlayerAuthority.CanRead(user)) return 0;"
+  },
+  {
+    "path": "src/caelum/equipment/CaelumInventoryService.zs",
+    "cls": "CaelumInventoryService",
+    "name": "ClearFormalInventoryRow",
+    "query": false,
+    "guard": "if (!CaelumPlayerAuthority.CanMutate(user)) return;"
+  },
+  {
+    "path": "src/caelum/equipment/CaelumInventoryService.zs",
+    "cls": "CaelumInventoryService",
+    "name": "FillFormalInventoryRow",
+    "query": false,
+    "guard": "if (!CaelumPlayerAuthority.CanMutate(user)) return;\n        if (entry != null && entry.Owner != user) return;"
+  },
+  {
+    "path": "src/caelum/equipment/CaelumInventoryService.zs",
+    "cls": "CaelumInventoryService",
+    "name": "ApplyFormalInventorySelection",
+    "query": false,
+    "guard": "if (!CaelumPlayerAuthority.CanMutate(user)) return;"
+  },
+  {
+    "path": "src/caelum/equipment/CaelumInventoryService.zs",
+    "cls": "CaelumInventoryService",
+    "name": "RefreshFormalInventorySnapshot",
+    "query": false,
+    "guard": "if (!CaelumPlayerAuthority.CanMutate(user)) return;"
+  },
+  {
+    "path": "src/caelum/equipment/CaelumInventoryService.zs",
+    "cls": "CaelumInventoryService",
+    "name": "CycleFormalInventorySelection",
+    "query": false,
+    "guard": "if (!CaelumPlayerAuthority.CanMutate(user)) return;"
+  },
+  {
+    "path": "src/caelum/equipment/CaelumInventoryService.zs",
+    "cls": "CaelumInventoryService",
+    "name": "CycleFormalInventoryFilter",
+    "query": false,
+    "guard": "if (!CaelumPlayerAuthority.CanMutate(user)) return;"
+  },
+  {
+    "path": "src/caelum/equipment/CaelumInventoryService.zs",
+    "cls": "CaelumInventoryService",
+    "name": "ActivateFormalInventorySelection",
+    "query": false,
+    "guard": "if (!CaelumPlayerAuthority.CanMutate(user)) return;"
+  },
+  {
+    "path": "src/caelum/equipment/CaelumInventoryService.zs",
+    "cls": "CaelumInventoryService",
+    "name": "ToggleFormalInventoryStorage",
+    "query": false,
+    "guard": "if (!CaelumPlayerAuthority.CanMutate(user)) return;"
+  },
+  {
+    "path": "src/caelum/equipment/CaelumInventoryService.zs",
+    "cls": "CaelumInventoryService",
+    "name": "DropFormalInventorySelection",
+    "query": false,
+    "guard": "if (!CaelumPlayerAuthority.CanMutate(user)) return;"
+  },
+  {
+    "path": "src/caelum/equipment/CaelumInventoryService.zs",
+    "cls": "CaelumInventoryService",
+    "name": "RefreshEquipmentSelectionPreview",
+    "query": false,
+    "guard": "if (!CaelumPlayerAuthority.CanMutate(user)) return;"
+  },
+  {
+    "path": "src/caelum/equipment/CaelumInventoryService.zs",
+    "cls": "CaelumInventoryService",
+    "name": "AcquireArmorPickup",
+    "query": false,
+    "guard": "if (!CaelumPlayerAuthority.CanMutate(user)) return false;"
+  },
+  {
+    "path": "src/caelum/equipment/CaelumInventoryService.zs",
+    "cls": "CaelumInventoryService",
+    "name": "AcquireShieldPickup",
+    "query": false,
+    "guard": "if (!CaelumPlayerAuthority.CanMutate(user)) return false;"
+  },
+  {
+    "path": "src/caelum/equipment/CaelumInventoryService.zs",
+    "cls": "CaelumInventoryService",
+    "name": "AcquireWeaponPickup",
+    "query": false,
+    "guard": "if (!CaelumPlayerAuthority.CanMutate(user)) return false;"
+  },
+  {
+    "path": "src/caelum/equipment/CaelumInventoryService.zs",
+    "cls": "CaelumInventoryService",
+    "name": "CountCraftingMaterial",
+    "query": true,
+    "guard": "if (!CaelumPlayerAuthority.CanRead(user)) return 0;"
+  },
+  {
+    "path": "src/caelum/equipment/CaelumInventoryService.zs",
+    "cls": "CaelumInventoryService",
+    "name": "CountRawCraftingMaterial",
+    "query": true,
+    "guard": "if (!CaelumPlayerAuthority.CanRead(user)) return 0;"
+  },
+  {
+    "path": "src/caelum/equipment/CaelumInventoryService.zs",
+    "cls": "CaelumInventoryService",
+    "name": "GetReservedCraftingMaterialUnits",
+    "query": true,
+    "guard": "if (!CaelumPlayerAuthority.CanRead(user)) return 0;"
+  },
+  {
+    "path": "src/caelum/equipment/CaelumInventoryService.zs",
+    "cls": "CaelumInventoryService",
+    "name": "IsEquipmentItemCraftingLocked",
+    "query": true,
+    "guard": "if (!CaelumPlayerAuthority.CanRead(user)) return false;"
+  },
+  {
+    "path": "src/caelum/equipment/CaelumInventoryService.zs",
+    "cls": "CaelumInventoryService",
+    "name": "IsSelectedMaterialCraftingLocked",
+    "query": true,
+    "guard": "if (!CaelumPlayerAuthority.CanRead(user)) return false;"
+  },
+  {
+    "path": "src/caelum/equipment/CaelumInventoryService.zs",
+    "cls": "CaelumInventoryService",
+    "name": "ClearCraftingTaskData",
+    "query": false,
+    "guard": "if (!CaelumPlayerAuthority.CanMutate(user)) return;"
+  },
+  {
+    "path": "src/caelum/equipment/CaelumInventoryService.zs",
+    "cls": "CaelumInventoryService",
+    "name": "AddCraftingTaskReservation",
+    "query": false,
+    "guard": "if (!CaelumPlayerAuthority.CanMutate(user)) return false;"
+  },
+  {
+    "path": "src/caelum/equipment/CaelumInventoryService.zs",
+    "cls": "CaelumInventoryService",
+    "name": "AddCraftingTaskOutput",
+    "query": false,
+    "guard": "if (!CaelumPlayerAuthority.CanMutate(user)) return false;"
+  },
+  {
+    "path": "src/caelum/equipment/CaelumInventoryService.zs",
+    "cls": "CaelumInventoryService",
+    "name": "ValidateCraftingTaskReservations",
+    "query": false,
+    "guard": "if (!CaelumPlayerAuthority.CanMutate(user)) return false;"
+  },
+  {
+    "path": "src/caelum/equipment/CaelumInventoryService.zs",
+    "cls": "CaelumInventoryService",
+    "name": "CanCompletePreparedMaterialOutput",
+    "query": false,
+    "guard": "if (!CaelumPlayerAuthority.CanMutate(user)) return false;"
+  },
+  {
+    "path": "src/caelum/equipment/CaelumInventoryService.zs",
+    "cls": "CaelumInventoryService",
+    "name": "GetPreparedMaterialOutputBoxSlots",
+    "query": true,
+    "guard": "if (!CaelumPlayerAuthority.CanRead(user)) return 0;"
+  },
+  {
+    "path": "src/caelum/equipment/CaelumInventoryService.zs",
+    "cls": "CaelumInventoryService",
+    "name": "CanCompletePreparedEquipmentOutput",
+    "query": false,
+    "guard": "if (!CaelumPlayerAuthority.CanMutate(user)) return false;"
+  },
+  {
+    "path": "src/caelum/equipment/CaelumInventoryService.zs",
+    "cls": "CaelumInventoryService",
+    "name": "ReservePreparedDirectCraftingPlan",
+    "query": false,
+    "guard": "if (!CaelumPlayerAuthority.CanMutate(user)) return false;"
+  },
+  {
+    "path": "src/caelum/equipment/CaelumInventoryService.zs",
+    "cls": "CaelumInventoryService",
+    "name": "ConsumeSelectedWeaponCraftingMaterials",
+    "query": false,
+    "guard": "if (!CaelumPlayerAuthority.CanMutate(user)) return false;"
+  },
+  {
+    "path": "src/caelum/equipment/CaelumInventoryService.zs",
+    "cls": "CaelumInventoryService",
+    "name": "ConsumeCraftingMaterial",
+    "query": false,
+    "guard": "if (!CaelumPlayerAuthority.CanMutate(user)) return false;"
+  },
+  {
+    "path": "src/caelum/equipment/CaelumInventoryService.zs",
+    "cls": "CaelumInventoryService",
+    "name": "HasCraftingFinishMaterials",
+    "query": true,
+    "guard": "if (!CaelumPlayerAuthority.CanRead(user)) return false;"
+  },
+  {
+    "path": "src/caelum/equipment/CaelumInventoryService.zs",
+    "cls": "CaelumInventoryService",
+    "name": "ConsumeCraftingFinishMaterials",
+    "query": false,
+    "guard": "if (!CaelumPlayerAuthority.CanMutate(user)) return false;"
+  },
+  {
+    "path": "src/caelum/equipment/CaelumInventoryService.zs",
+    "cls": "CaelumInventoryService",
+    "name": "CraftSelectedProcessingRecipe",
+    "query": false,
+    "guard": "if (!CaelumPlayerAuthority.CanMutate(user)) return;"
+  },
+  {
+    "path": "src/caelum/equipment/CaelumInventoryService.zs",
+    "cls": "CaelumInventoryService",
+    "name": "CraftSelectedArmorRecipe",
+    "query": false,
+    "guard": "if (!CaelumPlayerAuthority.CanMutate(user)) return;"
+  },
+  {
+    "path": "src/caelum/equipment/CaelumInventoryService.zs",
+    "cls": "CaelumInventoryService",
+    "name": "CraftSelectedShieldRecipe",
+    "query": false,
+    "guard": "if (!CaelumPlayerAuthority.CanMutate(user)) return;"
+  },
+  {
+    "path": "src/caelum/equipment/CaelumInventoryService.zs",
+    "cls": "CaelumInventoryService",
+    "name": "CraftSelectedEssenceWeaponRecipe",
+    "query": false,
+    "guard": "if (!CaelumPlayerAuthority.CanMutate(user)) return;"
+  },
+  {
+    "path": "src/caelum/equipment/CaelumInventoryService.zs",
+    "cls": "CaelumInventoryService",
+    "name": "CraftSelectedJewelry",
+    "query": false,
+    "guard": "if (!CaelumPlayerAuthority.CanMutate(user)) return;"
+  },
+  {
+    "path": "src/caelum/equipment/CaelumInventoryService.zs",
+    "cls": "CaelumInventoryService",
+    "name": "CraftSelectedAmmunition",
+    "query": false,
+    "guard": "if (!CaelumPlayerAuthority.CanMutate(user)) return;"
+  },
+  {
+    "path": "src/caelum/equipment/CaelumInventoryService.zs",
+    "cls": "CaelumInventoryService",
+    "name": "CraftSelectedPhysicalWeapon",
+    "query": false,
+    "guard": "if (!CaelumPlayerAuthority.CanMutate(user)) return;"
+  },
+  {
+    "path": "src/caelum/equipment/CaelumInventoryService.zs",
+    "cls": "CaelumInventoryService",
+    "name": "UseSelectedConsumable",
+    "query": false,
+    "guard": "if (!CaelumPlayerAuthority.CanMutate(user)) return;"
+  },
+  {
+    "path": "src/caelum/equipment/CaelumInventoryService.zs",
+    "cls": "CaelumInventoryService",
+    "name": "SyncActiveModelsToNativeInventory",
+    "query": false,
+    "guard": "if (!CaelumPlayerAuthority.CanMutate(user)) return;"
+  },
+  {
+    "path": "src/caelum/equipment/CaelumInventoryService.zs",
+    "cls": "CaelumInventoryService",
+    "name": "GetSelectedNativeEquipmentItem",
+    "query": true,
+    "guard": "if (!CaelumPlayerAuthority.CanRead(user)) return null;"
+  },
+  {
+    "path": "src/caelum/equipment/CaelumInventoryService.zs",
+    "cls": "CaelumInventoryService",
+    "name": "EquipSelectedNativeEquipment",
+    "query": false,
+    "guard": "if (!CaelumPlayerAuthority.CanMutate(user)) return;"
+  },
+  {
+    "path": "src/caelum/equipment/CaelumInventoryService.zs",
+    "cls": "CaelumInventoryService",
+    "name": "UnequipSelectedNativeEquipment",
+    "query": false,
+    "guard": "if (!CaelumPlayerAuthority.CanMutate(user)) return;"
+  },
+  {
+    "path": "src/caelum/equipment/CaelumInventoryService.zs",
+    "cls": "CaelumInventoryService",
+    "name": "ToggleSelectedMagicBox",
+    "query": false,
+    "guard": "if (!CaelumPlayerAuthority.CanMutate(user)) return;"
+  },
+  {
+    "path": "src/caelum/equipment/CaelumInventoryService.zs",
+    "cls": "CaelumInventoryService",
+    "name": "ToggleSelectedMagicBoxNative",
+    "query": false,
+    "guard": "if (!CaelumPlayerAuthority.CanMutate(user)) return;"
+  },
+  {
+    "path": "src/caelum/equipment/CaelumInventoryService.zs",
+    "cls": "CaelumInventoryService",
+    "name": "EquipSelectedEquipment",
+    "query": false,
+    "guard": "if (!CaelumPlayerAuthority.CanMutate(user)) return;"
+  },
+  {
+    "path": "src/caelum/equipment/CaelumInventoryService.zs",
+    "cls": "CaelumInventoryService",
+    "name": "UnequipSelectedEquipment",
+    "query": false,
+    "guard": "if (!CaelumPlayerAuthority.CanMutate(user)) return;"
+  },
+  {
+    "path": "src/caelum/equipment/CaelumInventoryService.zs",
+    "cls": "CaelumInventoryService",
+    "name": "SpawnSelectedNativePickupOnFloor",
+    "query": false,
+    "guard": "if (!CaelumPlayerAuthority.CanMutate(user)) return;"
+  },
+  {
+    "path": "src/caelum/equipment/CaelumInventoryService.zs",
+    "cls": "CaelumInventoryService",
+    "name": "GetEquipmentTaskMaximumDurability",
+    "query": true,
+    "guard": "if (!CaelumPlayerAuthority.CanRead(user)) return 0;"
+  },
+  {
+    "path": "src/caelum/equipment/CaelumInventoryService.zs",
+    "cls": "CaelumInventoryService",
+    "name": "GetEquipmentTaskWeight",
+    "query": true,
+    "guard": "if (!CaelumPlayerAuthority.CanRead(user)) return 0;"
+  },
+  {
+    "path": "src/caelum/equipment/CaelumInventoryService.zs",
+    "cls": "CaelumInventoryService",
+    "name": "AddScaledEquipmentTaskMaterial",
+    "query": false,
+    "guard": "if (!CaelumPlayerAuthority.CanMutate(user)) return false;\n        if (preview != null && preview != user.CraftingBrowser) return false;"
+  },
+  {
+    "path": "src/caelum/equipment/CaelumInventoryService.zs",
+    "cls": "CaelumInventoryService",
+    "name": "BuildEquipmentTaskMaterials",
+    "query": false,
+    "guard": "if (!CaelumPlayerAuthority.CanMutate(user)) return false;\n        if (preview != null && preview != user.CraftingBrowser) return false;\n        if (item == null || item.Owner != user) return false;"
+  },
+  {
+    "path": "src/caelum/equipment/CaelumInventoryService.zs",
+    "cls": "CaelumInventoryService",
+    "name": "GetMissingEquipmentTaskStation",
+    "query": true,
+    "guard": "if (!CaelumPlayerAuthority.CanRead(user)) return 0;"
+  },
+  {
+    "path": "src/caelum/equipment/CaelumInventoryService.zs",
+    "cls": "CaelumInventoryService",
+    "name": "CanCompletePreparedDismantle",
+    "query": false,
+    "guard": "if (!CaelumPlayerAuthority.CanMutate(user)) return false;\n        if (preview != null && preview != user.CraftingBrowser) return false;"
+  },
+  {
+    "path": "src/caelum/equipment/CaelumInventoryService.zs",
+    "cls": "CaelumInventoryService",
+    "name": "GetDismantleNetBoxSlots",
+    "query": true,
+    "guard": "if (!CaelumPlayerAuthority.CanRead(user)) return 0;\n        if (preview != null && preview != user.CraftingBrowser) return 0;"
+  },
+  {
+    "path": "src/caelum/equipment/CaelumInventoryService.zs",
+    "cls": "CaelumInventoryService",
+    "name": "GetCraftingTaskReservedUnitTotal",
+    "query": true,
+    "guard": "if (!CaelumPlayerAuthority.CanRead(user)) return 0;"
+  },
+  {
+    "path": "src/caelum/equipment/CaelumInventoryService.zs",
+    "cls": "CaelumInventoryService",
+    "name": "GetEquipmentTaskComplexityTics",
+    "query": true,
+    "guard": "if (!CaelumPlayerAuthority.CanRead(user)) return 0;"
+  },
+  {
+    "path": "src/caelum/equipment/CaelumInventoryService.zs",
+    "cls": "CaelumInventoryService",
+    "name": "GetEquipmentTaskSeconds",
+    "query": true,
+    "guard": "if (!CaelumPlayerAuthority.CanRead(user)) return 0;"
+  },
+  {
+    "path": "src/caelum/equipment/CaelumInventoryService.zs",
+    "cls": "CaelumInventoryService",
+    "name": "KnowsWeaponRepairRecipe",
+    "query": false,
+    "guard": "if (!CaelumPlayerAuthority.CanMutate(user)) return false;"
+  },
+  {
+    "path": "src/caelum/equipment/CaelumInventoryService.zs",
+    "cls": "CaelumInventoryService",
+    "name": "GetEquipmentTaskBlockReason",
+    "query": false,
+    "guard": "if (!CaelumPlayerAuthority.CanMutate(user)) return CaelumConstants.EQUIPMENT_ACTION_FAILED_NOT_OWNED;"
+  },
+  {
+    "path": "src/caelum/equipment/CaelumInventoryService.zs",
+    "cls": "CaelumInventoryService",
+    "name": "BeginRepairSelectedEquipment",
+    "query": false,
+    "guard": "if (!CaelumPlayerAuthority.CanMutate(user)) return;"
+  },
+  {
+    "path": "src/caelum/equipment/CaelumInventoryService.zs",
+    "cls": "CaelumInventoryService",
+    "name": "BeginDismantleSelectedEquipment",
+    "query": false,
+    "guard": "if (!CaelumPlayerAuthority.CanMutate(user)) return;"
+  },
+  {
+    "path": "src/caelum/equipment/CaelumInventoryService.zs",
+    "cls": "CaelumInventoryService",
+    "name": "ConsumeCraftingTaskReservations",
+    "query": false,
+    "guard": "if (!CaelumPlayerAuthority.CanMutate(user)) return false;"
+  },
+  {
+    "path": "src/caelum/equipment/CaelumInventoryService.zs",
+    "cls": "CaelumInventoryService",
+    "name": "CompleteRepairTask",
+    "query": false,
+    "guard": "if (!CaelumPlayerAuthority.CanMutate(user)) return false;"
+  },
+  {
+    "path": "src/caelum/equipment/CaelumInventoryService.zs",
+    "cls": "CaelumInventoryService",
+    "name": "CompleteDismantleTask",
+    "query": false,
+    "guard": "if (!CaelumPlayerAuthority.CanMutate(user)) return false;"
+  },
+  {
+    "path": "src/caelum/equipment/CaelumInventoryService.zs",
+    "cls": "CaelumInventoryService",
+    "name": "CompleteCraftingTask",
+    "query": false,
+    "guard": "if (!CaelumPlayerAuthority.CanMutate(user)) return;"
+  },
+  {
+    "path": "src/caelum/equipment/CaelumInventoryService.zs",
+    "cls": "CaelumInventoryService",
+    "name": "BreakSelectedNativeEquipment",
+    "query": false,
+    "guard": "if (!CaelumPlayerAuthority.CanMutate(user)) return;"
+  },
+  {
+    "path": "src/caelum/equipment/CaelumInventoryService.zs",
+    "cls": "CaelumInventoryService",
+    "name": "CreateDetachedMaterialStack",
+    "query": false,
+    "guard": "if (!CaelumPlayerAuthority.CanMutate(user)) return null;"
+  },
+  {
+    "path": "src/caelum/equipment/CaelumInventoryService.zs",
+    "cls": "CaelumInventoryService",
+    "name": "AddRecoveredMaterial",
+    "query": false,
+    "guard": "if (!CaelumPlayerAuthority.CanMutate(user)) return;"
+  },
+  {
+    "path": "src/caelum/equipment/CaelumInventoryService.zs",
+    "cls": "CaelumInventoryService",
+    "name": "DismantleSelectedNativeWeapon",
+    "query": false,
+    "guard": "if (!CaelumPlayerAuthority.CanMutate(user)) return;"
+  },
+  {
+    "path": "src/caelum/equipment/CaelumInventoryService.zs",
+    "cls": "CaelumInventoryService",
+    "name": "DropSelectedNativeInventoryItem",
+    "query": false,
+    "guard": "if (!CaelumPlayerAuthority.CanMutate(user)) return;"
+  },
+  {
+    "path": "src/caelum/equipment/CaelumInventoryService.zs",
+    "cls": "CaelumInventoryService",
+    "name": "BreakSelectedEquipment",
+    "query": false,
+    "guard": "if (!CaelumPlayerAuthority.CanMutate(user)) return;"
+  },
+  {
+    "path": "src/caelum/equipment/CaelumInventoryService.zs",
+    "cls": "CaelumInventoryService",
+    "name": "DropSelectedEquipment",
+    "query": false,
+    "guard": "if (!CaelumPlayerAuthority.CanMutate(user)) return;"
+  },
+  {
+    "path": "src/caelum/equipment/CaelumInventoryService.zs",
+    "cls": "CaelumInventoryService",
+    "name": "MigrateWeaponDurability",
+    "query": false,
+    "guard": "if (!CaelumPlayerAuthority.CanMutate(user)) return;"
+  },
+  {
+    "path": "src/caelum/equipment/CaelumInventoryService.zs",
+    "cls": "CaelumInventoryService",
+    "name": "EnsureOwnedMagicBox",
+    "query": false,
+    "guard": "if (!CaelumPlayerAuthority.CanMutate(user)) return null;"
+  },
+  {
+    "path": "src/caelum/equipment/CaelumInventoryService.zs",
+    "cls": "CaelumInventoryService",
+    "name": "FindOwnedTarotDeck",
+    "query": true,
+    "guard": "if (!CaelumPlayerAuthority.CanRead(user)) return null;"
+  },
+  {
+    "path": "src/caelum/equipment/CaelumInventoryService.zs",
+    "cls": "CaelumInventoryService",
+    "name": "GrantTarotDeck",
+    "query": false,
+    "guard": "if (!CaelumPlayerAuthority.CanMutate(user)) return false;"
+  },
+  {
+    "path": "src/caelum/core/CaelumTarotService.zs",
+    "cls": "CaelumTarotService",
+    "name": "EnsureRevision",
+    "guard": "if (record == null || !CaelumPlayerAuthority.OwnsRecord(CaelumPlayer(record.Owner), record)) return;",
+    "query": false
+  },
+  {
+    "path": "src/caelum/core/CaelumTarotService.zs",
+    "cls": "CaelumTarotService",
+    "name": "ValidUser",
+    "guard": "if (!CaelumPlayerAuthority.CanMutate(user)) return false;",
+    "query": false
+  },
+  {
+    "path": "src/caelum/core/CaelumTarotService.zs",
+    "cls": "CaelumTarotService",
+    "name": "Advance",
+    "guard": "if (!CaelumPlayerAuthority.CanMutate(user)) return;",
+    "query": false
+  },
+  {
+    "path": "src/caelum/core/CaelumTarotService.zs",
+    "cls": "CaelumTarotService",
+    "name": "HasTarotCard",
+    "guard": "if (record == null) return false;",
+    "query": true
+  },
+  {
+    "path": "src/caelum/core/CaelumTarotService.zs",
+    "cls": "CaelumTarotService",
+    "name": "CountTarotCards",
+    "guard": "if (record == null) return 0;",
+    "query": true
+  },
+  {
+    "path": "src/caelum/core/CaelumTarotService.zs",
+    "cls": "CaelumTarotService",
+    "name": "GetTarotAttributeBonusPercent",
+    "guard": "if (record == null) return 0;",
+    "query": true
+  },
+  {
+    "path": "src/caelum/core/CaelumTarotService.zs",
+    "cls": "CaelumTarotService",
+    "name": "GetTarotMinorBaseBonus",
+    "guard": "if (record == null) return 0;",
+    "query": true
+  },
+  {
+    "path": "src/caelum/core/CaelumTarotService.zs",
+    "cls": "CaelumTarotService",
+    "name": "CanCaptureMainM00Fool",
+    "guard": "if (record == null || !CaelumPlayerAuthority.OwnsRecord(CaelumPlayer(record.Owner), record)) return false;",
+    "query": false
+  },
+  {
+    "path": "src/caelum/core/CaelumTarotService.zs",
+    "cls": "CaelumTarotService",
+    "name": "RecordMainM00FoolCapture",
+    "guard": "if (record == null || !CaelumPlayerAuthority.OwnsRecord(CaelumPlayer(record.Owner), record)) return false;",
+    "query": false
+  },
+  {
+    "path": "src/caelum/core/CaelumTarotService.zs",
+    "cls": "CaelumTarotService",
+    "name": "CanApproach",
+    "guard": "if (!CaelumPlayerAuthority.CanMutate(user)) return false;",
+    "query": false
+  },
+  {
+    "path": "src/caelum/core/CaelumTarotService.zs",
+    "cls": "CaelumTarotService",
+    "name": "IsAvailable",
+    "guard": "if (essence == null || !CaelumPlayerAuthority.CanRead(user)) return false;",
+    "query": true
+  },
+  {
+    "path": "src/caelum/core/CaelumTarotService.zs",
+    "cls": "CaelumTarotService",
+    "name": "IsRevealedFor",
+    "guard": "if (essence == null || record == null) return false;",
+    "query": true
+  },
+  {
+    "path": "src/caelum/core/CaelumTarotService.zs",
+    "cls": "CaelumTarotService",
+    "name": "RecordCapture",
+    "guard": "if (essence == null || !CaelumPlayerAuthority.OwnsRecord(essence.CaptureUser, record)) return false;",
+    "query": false
+  },
+  {
+    "path": "src/caelum/core/CaelumTarotService.zs",
+    "cls": "CaelumTarotService",
+    "name": "RestoreNativeEffect",
+    "guard": "if (!CaelumPlayerAuthority.CanMutate(user)) return;",
+    "query": false
+  },
+  {
+    "path": "src/caelum/core/CaelumTarotService.zs",
+    "cls": "CaelumTarotService",
+    "name": "Reveal",
+    "guard": "if (record == null || !CaelumPlayerAuthority.OwnsRecord(CaelumPlayer(record.Owner), record)\n            || card < 0 || card >= CaelumConstants.TAROT_CARD_COUNT) return;",
+    "query": false
+  },
+  {
+    "path": "src/caelum/core/CaelumTarotService.zs",
+    "cls": "CaelumTarotService",
+    "name": "RefreshJournalSnapshot",
+    "guard": "if (!CaelumPlayerAuthority.OwnsRecord(user, persistentState)) return;",
+    "query": false
+  }
+]
