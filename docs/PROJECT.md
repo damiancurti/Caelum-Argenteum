@@ -3747,8 +3747,50 @@ content extensions and the pending previous versions are returned to V5.
 | V4.37: Tarot and Trucazo | Implemented and feature-accepted: physical 78-card deck, three campaign essences with selection/activation, and a complete NPC Trucazo slice. #82 / 4.37.24 owns final integration and export. Remaining acquisition, Major powers, broader awakening and team/network modes stay in V5. |
 | **V4 test export** | #17 / 4.36.28 is accepted historical evidence. #82 / 4.37.24 exports the current integrated MAP01 -> MAP02 -> MAP06 slice with initial controls and final validation. It does not claim full campaign or standalone completion. |
 | **V5.0: modular code architecture** | The bounded #116–#120 series is implemented: player services/adapters, authoritative inventory and Tarot operations, explicit per-player contracts and integrated native validation. #119/#120 author acceptance passed on 2026-10-06. Compatible inputs/selectors/save adapters remain; further F1–F4 coordination/performance/network work is separate and full multiplayer is not claimed. |
-| V5.1: thermal exposure | Model of heat/cold based on climate, zones, activity, persistent humidity, wind and real equipment; Resilience, consumables, shelters, drying, rest and acclimatization. Numerical curves await the author's balance decisions. |
-| V5.x: marine resources and biomes | Persistent 3D sources, melee extraction slashing/piercing, toughness/rarity/depth/region/skill, exhaustion and regeneration. Marine biomes, algae/iodine and non-potable waters; stores maintain access to remote materials. |
+| V5.1: thermal exposure and HUD | Author-approved 2026-10-07 rules and initial coefficients are specified in [#130](https://github.com/damiancurti/Caelum-Argenteum/issues/130): racial comfort, proportional Toughness resistance, heat/cold penalties, wetness, insulation, activity, magic and distinct clocks. [#131](https://github.com/damiancurti/Caelum-Argenteum/issues/131) adds the thermal bar directly above the load bar. Both are planned; remaining integration checkpoints are explicit in #130. |
+| V5.7: resources and biomes | Persistent 3D sources, melee extraction slashing/piercing, toughness/rarity/depth/region/skill, exhaustion and regeneration. Marine biomes, algae/iodine and non-potable waters; stores maintain access to remote materials. Detailed sequencing is below. |
+
+### Numbered V5 delivery sequence — author request 2026-10-07
+
+Planning task: CA-V5-SEQUENCE. The author requests approximate version numbers
+for all remaining V5 roadmap areas, ordered by dependencies. These are minor
+version targets, not GitHub issue numbers, deadlines or a promise that each block
+fits into one patch. Each block may contain multiple focused issues and numeric
+patches. Only the separately requested thermal HUD issue is opened in this
+roadmap update; the other future areas remain planning entries.
+
+V5.0's bounded architecture work is accepted; #121 diagnosis and #128 normal
+high-density AI extend that accepted line through 5.0.6. Its fluency target and
+full multiplayer remain unproven, not retroactively completed. V5.1 retains its
+existing position. Preserve accepted work and historical numbering.
+
+| Target | Delivery block | Scope and dependency order |
+| --- | --- | --- |
+| **V5.0** | Architecture and initial measured performance | Accepted #116–#120 services/authority, #121 diagnosis and #128 production high-density coordination. Remaining F1–F4 work is assigned below, not silently added as a new V5.0 closure gate. |
+| **V5.1** | Thermal exposure and its HUD | #130 thermal systems and #131 exposure bar directly above load. Includes the approved weather/equipment/wetness/heat model and explicit integration checkpoints. |
+| **V5.2** | Character identity, native menus and accessibility | Unified race/sex/appearance/profession setup, compatible native options/preview, remappable grouped controls, UI/messages/crosshair scaling and camera/weapon comfort. Reuse accepted creation descriptions and single saved identity. |
+| **V5.3** | Local exploration, automap and Journal access | Discovered geometry/POIs/manual markers, readable local cartography, known objectives, separate world-travel view, and consistent Journal/Inventory/Keys-Documents access. Preserve existing quest filters and secrecy; later content consumes these interfaces. |
+| **V5.4** | Attributes, racial/class abilities and Seals | Audit implemented versus planned attribute effects, complete authored User1/User4 powers, and climate-dependent Seal extensions on V5.1. Retain the approved input mapping and ask for still-missing ability/balance decisions. |
+| **V5.5** | Combat integration and physical interactions | Remaining weapon-family matrix, combat dispatch portion of F2, impacts/contacts/thrust/crushing/anatomy, bullet composition and defined material interactions. Thermal/damaging-surface integration builds on V5.1; future melee-energy rules require authored numbers. Avalanches require suitable maps. |
+| **V5.6** | Crafting, economy, loot and ownership | Remaining crafting/task and merchant/session coordination (F1), recipe acquisition/learning/bonuses, authored shops, loot tables, containers/capacity/ownership/theft/replenishment and resource acquisition rules. Preserve accepted inventory transaction authority. |
+| **V5.7** | Resource sources, water and biomes | Persistent 3D land/marine resources, extraction/rarity/depth/region/skill, exhaustion/regeneration, algae/iodine and water potability/treatment. Uses V5.5 interactions and V5.6 economy; no automatic authorization of missing harvest values. |
+| **V5.8** | Survival, world persistence and travel | Camps/properties/shelters/rest quality, remaining oxygen/altitude rules, connected water volumes, calendar compensation for unloaded areas, vehicle types/routes/schedules and travel encounters/storms/failures. Builds on thermal/resource foundations and exposes later narrative/siege hooks. |
+| **V5.9** | Quests, social dialogue, factions and secrecy | Authored main/side chains, rewards/failure/abandonment/composite conditions, reputation ranks/relationships, private emotions and faction outcomes; narrative-transition portion of F2. Reuse Strife-derived dialogue/transactions and V5.3 Journal instead of a second quest system. |
+| **V5.10** | Perception and stealth | Visual/acoustic sensing, detection/loss/reacquisition/memory, noise and shared communication. Establish authored parameters before broader group and siege behavior. |
+| **V5.11** | Groups, companions and measured mass-AI work | Formations/leaders/offsets/dynamic membership/shared memory, NPC companions and measured targeting/movement/contact/controller/renderer work (F3). Preserve #128's accepted policy; retain staged active-population evidence and avoid claiming passive spawns prove active AI performance. |
+| **V5.12** | Persistent profiles and cooperative/PvP foundation | Native saves plus external profiles, narrative autosaves and shared-world/session authority (F4); authored clock/progress/reward policy and real multi-client join/leave/reconnect/respawn/transfer tests for the 2–8-player target. Network ownership contracts must inform earlier modules even before this dedicated delivery. |
+| **V5.13** | Remaining Tarot powers and awakening | Remaining authored Major powers, collection/acquisition hooks and essence-weapon awakening; reuse accepted deck, Minor passives and activation. Campaign placement continues in V5.16 rather than claiming all 78 acquisitions already exist. |
+| **V5.14** | Expanded Trucazo and network teams | Remaining Major modifiers, Magic Senses, wagers/consequences and casual/ranked/team modes up to 4v4, on Tarot and multiplayer authority. Preserve the accepted NPC slice. |
+| **V5.15** | Dynamic sieges and world consequences | Battle director, reinforcements/tactics/commanders, machines/barricades/sabotage, alternative routes and permanent city/faction/travel consequences. Depends on physics, calendar/world, quests/factions and group AI; network behavior uses V5.12 contracts. |
+| **V5.16** | Campaign and world expansion | Authored chapters, maps, encounters, memories/revelations and complete card-acquisition content toward the existing 78-card/at-least-78-map target. Integrate geographic/biome/travel/faction systems without rewriting canon or making that target a condition for every earlier playtest. |
+| **V5.17** | Art, audio and presentation completion | Remaining first-person views, map/character/effect assets, regional/hour/weather emitters, typography/icons/credits and replacement of temporary stock resources. Assets required by earlier blocks are delivered with those blocks; this is the completion pass, not a ban on earlier art work. |
+| **V5.18** | Independent distribution and release validation | Complete removal of distributable Doom dependencies, provenance/licenses/own packaging, clean installation/startup and integrated campaign/save/game-mode checks. Version numbering alone does not certify standalone readiness or complete content. |
+
+Cross-cutting work (save migration, bilingual UI, performance checks, required
+assets and ownership contracts) accompanies every relevant block. A prerequisite
+slice may be implemented earlier through a focused issue without moving an entire
+milestone or reopening accepted releases. Unapproved balance/canon remains an
+author decision; this numbering assigns sequence, not new mechanics.
 
 ### V5 native menus, character setup and exploration — approved 2026-10-05
 
@@ -3756,7 +3798,10 @@ Planning task: CA-V5-NATIVE-UI. The author approved this scope for version 5
 on 2026-10-05, explicitly requesting a roadmap update only and no GitHub
 issues while 4.37 is being closed. This is planned work, not an implemented
 feature or a new 4.37 release/blocker. Preserve the V5.0 architecture and
-V5.1 thermal milestones; assign implementation issues and patch numbers later.
+V5.1 thermal milestones. Under the 2026-10-07 sequence, character/menu work is
+V5.2, exploration/Journal access V5.3, broader social dialogue V5.9 and narrative
+autosaves/shared persistence V5.12; implementation issues and patch numbers follow
+when each bounded task is authorized.
 
 - **Unified character creation:** make the game's creator authoritative for
   race, sex/gender and profession. Integrate compatible native appearance,
@@ -3810,42 +3855,44 @@ in this table remain assigned to V5 by decision of the author. They also pass
 to V5 the pending combat matrix, learning and recipe bonuses,
 loot/containers/ownership, merchant and later stores, remaining first person,
 quests/factions enlargement, postponing attributes audit, bullet composition and
-water treatment. Their dependencies will determine the internal order; they do not invent
-patch numbers or values not yet defined.
+water treatment. Their minor-version targets are now assigned in the 2026-10-07 sequence above;
+focused patch numbers and missing balance values remain unassigned.
 
 When an area shares name with 4.34–4.37, V4 completes its intended base and V5 develops
 the following broad scope. The code architecture is reorganized into V5.0; the thermal
 exposure maintains V5.1. The exported test is an earlier milestone, other than completing
 the independent distribution.
 
-| Area (V5) | Planned scope and current boundaries |
-| --- | --- |
-| Campaign and World | Target: 78 cards (22 Major and 56 Minor Arcana) and at least 78 maps; geography inspired by Argentina, coasts/Antarctica/deep sea, aerial cities and supernatural regions. Chapters, encounters, political outcomes and revelations follow canon. The first release remains focused on MAP01. |
-| Quests | Main/side, requirements, objectives, chains/dependencies, failure and abandonment; item/money/reputation/unlock rewards The record has 32 slots and eight objectives per mission; 0aj adds offer and abandonment to the four original states, with unique requirements and rewards. The broad content, composite conditions and other types of rewards require development. Majors for main quests, Minors for side quests; assignments/events/rumors/contracts are not automatically another card. Do not introduce combat XP: Canonic progression depends on the Tarot. |
-| Factions and secrecy | Unitarians, Federals, Free Peoples, Caelith, Cult of the Tarot and Sun Warriors. Seven ranks of reputation, changing relationships and consequences in prices, access, missions, hostility and sieges; membership/secrecy of Cult as future content. |
-| Social dialogue | Reputation applied to rolls and thresholds, private emotions, combat/events interruption and conversations with multiple NPCs in sequence. MAP01 only uses the approved values for your tutorial; do not assign new factions or difficulties by default. |
-| Travel | Carriage, ship, archaic submarine, aircraft, magic ship and portals; encounters, attacks, storms and mechanical failures. Global time, locations, routes and permanent changes of the world are dependencies. |
-| Survival and rest | Action Rest with food/drink and time advance; camps/properties/shelters, recovery and quality of rest. Integrate thermal exposure; oxygen limits, height, water and future breathing capabilities according to cards. |
-| Water and simulation off-map | Extend potability markers to marine/contaminated waters; network of volumes to different levels is technical capacity not yet built. Define resources/weather/events compensation when returning to unloaded maps by global calendar. |
-| Perception and stealth | PerceptionCore, visual/acoustic sensors, stealth, detection/loss/reacquisition/memory and shared communication. The diagnosis of groups/perception is not the final AI; solve fields of vision, angular formulas, states/times, action/surface/cadence noise and stealth drift before assigning values. |
-| Groups and companions | Playable formations, dynamic belonging, movement leaders, local offsets, distance sleep and shared memory. NPC fill-ins for incomplete party: accompanying/fighting without deciding dialogues. The diagnostic group baseline of 16 does not impose fixed size on visual formations. |
-| Massive AI and performance | Maintain perception/targets step budget and space filters; resolve shared locomotion, contacts and step-by-step 1.875 testing → 3.750 → 7.500 → 15.000 active according to the latest approved gate. Load 15.000 passive actors does not test 15.000 fully active AIs. |
-| Sieges | Director of battle, reinforcements, tactics, commanders, allies, machines/artillery/barricades, sabotage and alternative routes; time limit and permanent consequences on cities, routes and factions. It depends on AI, physics, world and stable calendar. |
-| Physics | Complete multiple impacts/contacts validation, sustained thrust, crushing and anatomy/armor. Future melee impact physics requires speed, effective mass, area/edge, defined material, penetration and technique; do not replace accepted combat without that design. |
-| Abilities | Racial User1 and class User4 effects were defined on 2026-09-14 and recorded in SYSTEMS.md; Arcanist Sleep implemented in 0g, the rest pending. The Pilgrim uses Amparo (50% less environmental damage), not Bless Food. User2 retains Seals; User3 retains Tarot. Do not invent powers or values to fill existing hooks. |
-| Tarot | Persistent collection/global percentage and all Minor passives remain. #80 adds up to three selected essences, shared User3 activation, Fool flight and doubled fixed Minor bonuses under the authored 1000-Anima/60-second/600-second rule. Remaining Major powers, acquisition of the other cards and essence-weapon awakening need authored content and later issues. |
-| Trucazo | Truco with Tarot: Major modifiers, playable Minors/rows, Envido/Truco/Retruco/Vale 4, damage and health, Magic Senses, bets and consequences; casual/ranked and teams from 1v1 to 4v4. Implement layered after Tarot base rules and multiplayer authority. |
-| Cooperative and PvP | Target 2–8 players, host authority, ownership/validation/synchronization, shared missions and world, travel, connection/disconnection and peers. Current individual persistence does not credit these modes. |
-| Saving |  Keep native save and traveling Inventory. Independent external profile, narrative autosaves and world-shared state remain pending; test compatibility before removing V5 adapters. |
-| Art, audio and interface | Remaining first-person views, visual content of maps, effects/emitters by region/hour/weather and adaptation of stock assets to scenes. Store accepted typography, icons and rigs; update inventory and credits with each resource. |
-| Independent distribution | Replace any final art/audio/fonts/maps dependency from Doom, complete attributions and own packaging, validate startup/saves/maps and game modes. The IWAD development does not enter patches. |
+| Target | Area (V5) | Planned scope and current boundaries |
+| --- | --- | --- |
+| V5.16 | Campaign and World | Target: 78 cards (22 Major and 56 Minor Arcana) and at least 78 maps; geography inspired by Argentina, coasts/Antarctica/deep sea, aerial cities and supernatural regions. Chapters, encounters, political outcomes and revelations follow canon. The first release remains focused on MAP01. |
+| V5.9 | Quests | Main/side, requirements, objectives, chains/dependencies, failure and abandonment; item/money/reputation/unlock rewards The record has 32 slots and eight objectives per mission; 0aj adds offer and abandonment to the four original states, with unique requirements and rewards. The broad content, composite conditions and other types of rewards require development. Majors for main quests, Minors for side quests; assignments/events/rumors/contracts are not automatically another card. Do not introduce combat XP: Canonic progression depends on the Tarot. |
+| V5.9 | Factions and secrecy | Unitarians, Federals, Free Peoples, Caelith, Cult of the Tarot and Sun Warriors. Seven ranks of reputation, changing relationships and consequences in prices, access, missions, hostility and sieges; membership/secrecy of Cult as future content. |
+| V5.9 | Social dialogue | Reputation applied to rolls and thresholds, private emotions, combat/events interruption and conversations with multiple NPCs in sequence. MAP01 only uses the approved values for your tutorial; do not assign new factions or difficulties by default. |
+| V5.8 | Travel | Carriage, ship, archaic submarine, aircraft, magic ship and portals; encounters, attacks, storms and mechanical failures. Global time, locations, routes and permanent changes of the world are dependencies. |
+| V5.1 / V5.8 | Survival and rest | Action Rest with food/drink and time advance; camps/properties/shelters, recovery and quality of rest. Integrate thermal exposure; oxygen limits, height, water and future breathing capabilities according to cards. |
+| V5.7 / V5.8 | Water and simulation off-map | Extend potability markers to marine/contaminated waters; network of volumes to different levels is technical capacity not yet built. Define resources/weather/events compensation when returning to unloaded maps by global calendar. |
+| V5.10 | Perception and stealth | PerceptionCore, visual/acoustic sensors, stealth, detection/loss/reacquisition/memory and shared communication. The diagnosis of groups/perception is not the final AI; solve fields of vision, angular formulas, states/times, action/surface/cadence noise and stealth drift before assigning values. |
+| V5.11 | Groups and companions | Playable formations, dynamic belonging, movement leaders, local offsets, distance sleep and shared memory. NPC fill-ins for incomplete party: accompanying/fighting without deciding dialogues. The diagnostic group baseline of 16 does not impose fixed size on visual formations. |
+| V5.11 (cross-cutting) | Massive AI and performance | Maintain perception/targets step budget and space filters; resolve shared locomotion, contacts and step-by-step 1.875 testing → 3.750 → 7.500 → 15.000 active according to the latest approved gate. Load 15.000 passive actors does not test 15.000 fully active AIs. |
+| V5.15 | Sieges | Director of battle, reinforcements, tactics, commanders, allies, machines/artillery/barricades, sabotage and alternative routes; time limit and permanent consequences on cities, routes and factions. It depends on AI, physics, world and stable calendar. |
+| V5.5 | Physics | Complete multiple impacts/contacts validation, sustained thrust, crushing and anatomy/armor. Future melee impact physics requires speed, effective mass, area/edge, defined material, penetration and technique; do not replace accepted combat without that design. |
+| V5.4 | Abilities | Racial User1 and class User4 effects were defined on 2026-09-14 and recorded in SYSTEMS.md; Arcanist Sleep implemented in 0g, the rest pending. The Pilgrim uses Amparo (50% less environmental damage), not Bless Food. User2 retains Seals; User3 retains Tarot. Do not invent powers or values to fill existing hooks. |
+| V5.13 | Tarot | Persistent collection/global percentage and all Minor passives remain. #80 adds up to three selected essences, shared User3 activation, Fool flight and doubled fixed Minor bonuses under the authored 1000-Anima/60-second/600-second rule. Remaining Major powers, acquisition of the other cards and essence-weapon awakening need authored content and later issues. |
+| V5.14 | Trucazo | Truco with Tarot: Major modifiers, playable Minors/rows, Envido/Truco/Retruco/Vale 4, damage and health, Magic Senses, bets and consequences; casual/ranked and teams from 1v1 to 4v4. Implement layered after Tarot base rules and multiplayer authority. |
+| V5.12 | Cooperative and PvP | Target 2–8 players, host authority, ownership/validation/synchronization, shared missions and world, travel, connection/disconnection and peers. Current individual persistence does not credit these modes. |
+| V5.12 (cross-cutting) | Saving |  Keep native save and traveling Inventory. Independent external profile, narrative autosaves and world-shared state remain pending; test compatibility before removing V5 adapters. |
+| V5.2 / V5.3 / V5.17 | Art, audio and interface | Remaining first-person views, visual content of maps, effects/emitters by region/hour/weather and adaptation of stock assets to scenes. Store accepted typography, icons and rigs; update inventory and credits with each resource. |
+| V5.18 | Independent distribution | Replace any final art/audio/fonts/maps dependency from Doom, complete attributions and own packaging, validate startup/saves/maps and game modes. The IWAD development does not enter patches. |
 
 ### Decisions that still require author design
 
 Complete balance of cards, racial/class abilities, economy and resources; tables/rules
 harvesting and loot; container content and ownership; definitive sources of
 recipes/components; final sensors and stealth; regional climate, encounters and
-consequences of factions; thermal and melee-physics values. Historical documents
+consequences of factions; remaining #130 thermal integration checkpoints and
+melee-physics values. Thermal rules and initial coefficients were approved on
+2026-10-07; do not treat that approved table as undecided. Historical documents
 contain proposals: they are checked before implementation. The progress already accepted
 is not reopened.
 
