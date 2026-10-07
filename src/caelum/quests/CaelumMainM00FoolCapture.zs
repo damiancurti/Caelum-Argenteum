@@ -5,14 +5,7 @@ class CaelumMainM00FoolCapture : Object play
     static Vector3 GetSpot() { return (1420, 1050, -370); }
 
     static bool CanApproach(CaelumPlayer user, CaelumM00FoolEssence essence)
-    {
-        if (user == null || user.player == null || user.health <= 0
-            || !user.CharacterCreationComplete || user.CreationWizardOpen
-            || (user.player.cheats & CF_PREDICTING)
-            || essence == null || !essence.IsAvailable(user)) return false;
-        return user.Distance2D(essence) <= 128 && Abs(user.Pos.Z-essence.Pos.Z) <= 48
-            && user.CheckSight(essence);
-    }
+    { return CaelumTarotService.CanApproach(user, essence); }
 
     static bool HasOwnedBox(CaelumPlayer user)
     {
@@ -110,24 +103,7 @@ class CaelumMainM00FoolCapture : Object play
     }
 
     static bool CommitCapture(CaelumPlayer user, CaelumM00FoolEssence essence)
-    {
-        if (!CanApproach(user, essence) || essence.CaptureUser != user
-            || essence.CaptureTics < CaelumConstants.MAIN_M00_FOOL_CAPTURE_TICS
-            || essence.CaptureImage == null || !HasOwnedBox(user)) return false;
-        let record = user.GetPersistentCharacterState(false);
-        if (record == null || record.MagicBoxItemId != essence.CaptureBoxId
-            || !CaelumTarotDeckRules.InOwnedBox(user, true)
-            || !essence.RecordCapture(record)) return false;
-        user.ApplyCharacterProfile();
-        user.RefreshSocialJournalSnapshot();
-        user.RefreshFormalInventorySnapshot();
-        user.SyncPalomoDialogueTokens();
-        user.PersistCharacterState();
-        EventHandler.SendInterfaceEvent(user.PlayerNumber(), "ca_tarot_capture");
-        CaelumNotifications.Notify(user, String.Format(StringTable.Localize("CA_ARCANA_OBTAINED", false),
-            StringTable.Localize(CaelumTarotArt.NameKey(essence.CardId()), false)));
-        return true;
-    }
+    { return CaelumTarotService.CommitCapture(user, essence); }
 }
 
 class CaelumM00FoolEssence : Actor
@@ -142,29 +118,13 @@ class CaelumM00FoolEssence : Actor
     virtual int CardId() { return CaelumConstants.TAROT_THE_FOOL; }
 
     bool IsAvailable(CaelumPlayer user)
-    {
-        if (user == null) return false;
-        let record = user.GetPersistentCharacterState(false);
-        if (record == null || record.HasTarotCard(CardId())) return false;
-        if (CardId() == CaelumConstants.TAROT_THE_FOOL)
-            return level.MapName == "MAP01" && StoryPlaced && record.CanCaptureMainM00Fool();
-        return CaelumArcanaProgress.CanCapture(record, CardId());
-    }
+    { return CaelumTarotService.IsAvailable(self, user); }
 
     bool IsRevealedFor(CaelumPersistentCharacterState record)
-    {
-        return CardId() == CaelumConstants.TAROT_THE_FOOL
-            ? record.MainM00FoolRevealed : record.ArcanaRevealed[CardId()];
-    }
+    { return CaelumTarotService.IsRevealedFor(self, record); }
 
     bool RecordCapture(CaelumPersistentCharacterState record)
-    {
-        if (!IsRevealedFor(record)) return false;
-        if (CardId() == CaelumConstants.TAROT_THE_FOOL) return record.RecordMainM00FoolCapture();
-        if (!CaelumArcanaProgress.CanCapture(record, CardId())) return false;
-        record.TarotOwned[CardId()] = true;
-        return true;
-    }
+    { return CaelumTarotService.RecordCapture(self, record); }
 
     void SetRevealed(bool value)
     {
@@ -192,8 +152,7 @@ class CaelumM00FoolEssence : Actor
         if (!HasConversation() || !StartConversation(user, true, true)) return false;
         if (!IsRevealedFor(record))
         {
-            if (CardId() == CaelumConstants.TAROT_THE_FOOL) record.MainM00FoolRevealed = true;
-            else record.ArcanaRevealed[CardId()] = true;
+            CaelumTarotService.Reveal(record, CardId());
             user.RefreshSocialJournalSnapshot();
             user.PersistCharacterState();
             // El acorde acompaña la primera revelación, no la recompensa.

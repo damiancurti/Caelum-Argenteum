@@ -1,0 +1,556 @@
+{
+  "issue": 119,
+  "version": "5.0.3",
+  "baseline_commit": "135ae0f91de84a7d4f4b3c0f803da254aeacd0ad",
+  "source_proof": "EXTRACTION.json: 24 extracted implementations, retained schemas/signatures, explicit adapter routes and all remaining code checked; one added runtime service, no removed members.",
+  "native_runs": {
+    "baseline-tarot-final": {
+      "result": "PASS",
+      "checks": 93,
+      "baseline-tarot-final.txt": {
+        "source_sha256": "258ee56651b7c5fb29a357b04b3c376db7c5dd51406bf30639bcdcf2f8543a06",
+        "archive_sha256": "18cd44367b47623ccd68d5613082b9e105c097c1dbff0e593482a1ce384a2e6f",
+        "omitted_input_rows": 0
+      },
+      "baseline-tarot-final.ini": {
+        "source_sha256": "a916e76946100abd50b2ed925053cc9b719da0b6518db3dc20d768adda50ab0b",
+        "archive_sha256": "d99dfad5c461b352a450319422076115909db0ae36d1442a8581966614dac2c5",
+        "omitted_input_rows": 0
+      },
+      "baseline-tarot-final-run.json": {
+        "source_sha256": "cb49cdf4067f978578033a4d5e68eb85eb25450ecce550b5a65044d36fc65f4c",
+        "archive_sha256": "987ff5dca666c95263edc5b7c2f1cd440e80ac5e0a338f42d2d71e0f54501e18",
+        "omitted_input_rows": 0
+      }
+    },
+    "current-tarot-final": {
+      "result": "PASS",
+      "checks": 93,
+      "current-tarot-final.txt": {
+        "source_sha256": "b1af7a93acdda189476b6e50cdc58768fdb88262bad467abdcaf38f48c4c9b69",
+        "archive_sha256": "9031af8eb4f3eb26db32054cda5fc6e4952f962e949dd82660af949d5689e28f",
+        "omitted_input_rows": 0
+      },
+      "current-tarot-final.ini": {
+        "source_sha256": "e528c39b9e19277e0295f418a65660dce38d37bf13b1af657f21f6fde937db1a",
+        "archive_sha256": "77eed2072d673edb7e4ceb9e0baa6c664a2d11ccd498c7eb9d88e4170482022c",
+        "omitted_input_rows": 0
+      },
+      "current-tarot-final-run.json": {
+        "source_sha256": "6bab783b48a45e9bb75d8c1674420b967c5109f71aa4ee336585290cfbe98e93",
+        "archive_sha256": "e869de65fb033497a74793e3ab6b9e9e7f3646c06b390252dfe2f56bb6e21b7e",
+        "omitted_input_rows": 0
+      }
+    },
+    "old-save-current-final2": {
+      "result": "PASS",
+      "checks": 10,
+      "old-save-current-final2.txt": {
+        "source_sha256": "dc8c85d5c91bb1e8b5dcebffdf0bae849241f7e587d1003398b460a5bd8b486f",
+        "archive_sha256": "3b420ffe76e9373533576401d92381eb73ea0d3f7e58351fdf7e36a7f44038fe",
+        "omitted_input_rows": 0
+      },
+      "old-save-current-final2.ini": {
+        "source_sha256": "f7a85b777e1d4cba434cb52fc0a1df601aa8d375c2b1ff7ce584fc84af40768a",
+        "archive_sha256": "303fcb3c73c0dd8714d476dcb1d9dd8f2eee4f56975000f5647a1d4430e33adf",
+        "omitted_input_rows": 0
+      },
+      "old-save-current-final2-run.json": {
+        "source_sha256": "c90e91073f7dd74a056e482a0da22f791c377a261ac6103ce8e9df3ee5ab82e9",
+        "archive_sha256": "e29398088abee69f8b1a7af29af48d80162adb0737544a92b93dbec60c5e4fe5",
+        "omitted_input_rows": 0
+      }
+    },
+    "current-save-reload-final2": {
+      "result": "PASS",
+      "checks": 10,
+      "current-save-reload-final2.txt": {
+        "source_sha256": "dd32c9d8bf02eecbf55254e198124c8a5e59a63a375d1bb3fa9b8e03291177de",
+        "archive_sha256": "932ec84f8147bd4e0d7231686e95ac2dcff2b5fe87e89b6b786a1d483b1df0e5",
+        "omitted_input_rows": 0
+      },
+      "current-save-reload-final2.ini": {
+        "source_sha256": "97d71e1f55dae8a9c4e8b5e4d32e8d4fb0fed7dccbcc9a5199e662aded009edc",
+        "archive_sha256": "4ad5b8d8361aac1d68301a6ba4b1b74d920ed525da57af855502c1b5a9b26be2",
+        "omitted_input_rows": 0
+      },
+      "current-save-reload-final2-run.json": {
+        "source_sha256": "86b56503811abba8c7eab9675b4cfd68d382d6dd4f4da61cfa1e480dcf8deba9",
+        "archive_sha256": "0d1e8774413a861db1ebfc97586ec7b10a0120332f503c39604ef403a2f6005f",
+        "omitted_input_rows": 0
+      }
+    },
+    "upgraded-save-reload-final2": {
+      "result": "PASS",
+      "checks": 10,
+      "upgraded-save-reload-final2.txt": {
+        "source_sha256": "a81b577ad168a3d2e58ec6356145d5114a3df5d3ab558d5ef936557373e4dfd6",
+        "archive_sha256": "000e47291ff7c75fbce16cdb5c334e1b0d8c07e439ad879bcef0e6c516a6cb1b",
+        "omitted_input_rows": 0
+      },
+      "upgraded-save-reload-final2.ini": {
+        "source_sha256": "5adf2c2d2b1968a79c3614e5674aa8c0ed761d87fb4b11f609b187aad79c724e",
+        "archive_sha256": "2b787585525e4ad96fcdd98d5878791b3d784734b424d0dff6f2a365ba89543e",
+        "omitted_input_rows": 0
+      },
+      "upgraded-save-reload-final2-run.json": {
+        "source_sha256": "8e2b08eb83a27c454f1ec8cd93e2807c668fe9ce794037df2ac726b5c4ccc54a",
+        "archive_sha256": "8a5a68a301847ebf48ad7be83b733b44063554733b8e559c263ad8027c23aba7",
+        "omitted_input_rows": 0
+      }
+    },
+    "original-save-rollback-final2": {
+      "result": "PASS",
+      "checks": 10,
+      "original-save-rollback-final2.txt": {
+        "source_sha256": "7060823873f3c1d3c22d4e6c3f735934f11f8157ffaf5b6dc279b1537c66cd2e",
+        "archive_sha256": "ac90eca0d455ad4c7c30328591d9dde416728f5e9d3399d7f789f6ec9a747c9a",
+        "omitted_input_rows": 0
+      },
+      "original-save-rollback-final2.ini": {
+        "source_sha256": "505892b25ba9c2001c3108337fdeae7e4f7b556d611d7c9d75051072612c5562",
+        "archive_sha256": "d453fc2040b9b5edee3e85b696aac246676f9538c6d98d65f8f085343ddbb0b4",
+        "omitted_input_rows": 0
+      },
+      "original-save-rollback-final2-run.json": {
+        "source_sha256": "0bc154a11a59f132da801293ff3d8f25434ce89b112c4d1a5e803c3e6ea00b26",
+        "archive_sha256": "a4b04eaa6930bf542928eb89dc62150beb782a648985a20afecd38e27488e2fd",
+        "omitted_input_rows": 0
+      }
+    },
+    "tarot-ui-enu-final2": {
+      "result": "PASS",
+      "checks": 51,
+      "tarot-ui-enu-final2.txt": {
+        "source_sha256": "995d34cf7ca514dd9ffcf7d41f9c116eb758f045876968d80774f99efb8aff28",
+        "archive_sha256": "648d56f7ed6264cfe4049136443c0de75e54020cd138a533093fd6b0d17a3ea6",
+        "omitted_input_rows": 0
+      },
+      "tarot-ui-enu-final2.ini": {
+        "source_sha256": "62e28da9e43ff9e58473f12419bea85aad66fc4d6653ed694ad927486585a893",
+        "archive_sha256": "bfb5d097f444caaead276cdeae1ed55052542c612ec1c195c9ae28cc79203c57",
+        "omitted_input_rows": 0
+      },
+      "tarot-ui-enu-final2-run.json": {
+        "source_sha256": "8ff7bc778584472952bd67c537d8fe39c3b74def60daae115fdcd65398d4bf2c",
+        "archive_sha256": "4f7c6165a187074efb82dcec7b3cd26ea26a916404c7faf573e2c357c55163c9",
+        "omitted_input_rows": 0
+      }
+    },
+    "tarot-ui-es-final2": {
+      "result": "PASS",
+      "checks": 51,
+      "tarot-ui-es-final2.txt": {
+        "source_sha256": "4789fd0eb8bec4c381bd667aef308d77ac105744ae53f3ccd6960f6ef1979c13",
+        "archive_sha256": "8b91668eb51f1d36c3bf9d537946e70a06d8191343bf53e99ec17418ea034d90",
+        "omitted_input_rows": 0
+      },
+      "tarot-ui-es-final2.ini": {
+        "source_sha256": "c8402a553fe7283ba7186d49d70b1411280559b03652e0e08df4a44ca663f3cc",
+        "archive_sha256": "f7ac8ea5c7b476563299cc6e12ccc3e505389919b7de03dac97663c4fa7d04d9",
+        "omitted_input_rows": 0
+      },
+      "tarot-ui-es-final2-run.json": {
+        "source_sha256": "1cab33cfd4246623581b52f8b552acd433cdce0cd20356cadf8c5a0457de2bfc",
+        "archive_sha256": "dfa4aab3929f5b536ec6f42f4f6cf3ba0269434f2c1a1b28d00c2bd81c8e1187",
+        "omitted_input_rows": 0
+      }
+    },
+    "baseline-performance-final": {
+      "result": "MEASURED",
+      "checks": null,
+      "baseline-performance-final.txt": {
+        "source_sha256": "ae6eb06cf1140c3d5c6e406d60dad6297c33d41233f0c186cc49512e96a1e81b",
+        "archive_sha256": "d5d97e9ddd392cf6dd12cecbac2727f0dcf60da5d476f9823fa3902339a152e0",
+        "omitted_input_rows": 0
+      },
+      "baseline-performance-final.ini": {
+        "source_sha256": "eaf20c01b828777d48754a0852b886c62b14b595288706c063550c44666e9707",
+        "archive_sha256": "e5c60fb69f3dd36da54a993bbe194366e9ca931986e7e0a832c6aabe608448e7",
+        "omitted_input_rows": 0
+      },
+      "baseline-performance-final-run.json": {
+        "source_sha256": "c0349359510973d1c6b3fa9a2348deaab5afc7578d434a726438428e84c44a7a",
+        "archive_sha256": "dda067a575a37208f8b970428dde400e322a34a78f7750c96ee5fc5edf9b1ec7",
+        "omitted_input_rows": 0
+      }
+    },
+    "current-performance-final": {
+      "result": "MEASURED",
+      "checks": null,
+      "current-performance-final.txt": {
+        "source_sha256": "671de974d6b8637bbac29de1b6cc787cada42f8b93633bc3b0fcbb8f053a70f1",
+        "archive_sha256": "b37b860e77836476e71f702b04e8bf4208fcd0beac19c17c273bbfceee75d294",
+        "omitted_input_rows": 0
+      },
+      "current-performance-final.ini": {
+        "source_sha256": "b9f95935580dc6eaaa99b3ba71131f60471880dd63ae605c508b0cf0dadb7779",
+        "archive_sha256": "555d57dd25961e44c77b39c5f17b72c75e8c74a60516debcf13150e074c7dadf",
+        "omitted_input_rows": 0
+      },
+      "current-performance-final-run.json": {
+        "source_sha256": "af4b0d8c39151fcc0ae2ae97027d3f34eb513509ec8c84082c48f72ae6e4b260",
+        "archive_sha256": "96b28f5b3408a53b621be19d385265f21cb9fe34a1d41948b4348335c4c708dc",
+        "omitted_input_rows": 0
+      }
+    },
+    "baseline-menus-final2": {
+      "result": "PASS",
+      "checks": 51,
+      "baseline-menus-final2.txt": {
+        "source_sha256": "6066c78a0248a52d25bce632e26316905a4715d194c17fd7b00f4ec809c431a5",
+        "archive_sha256": "41b9c456189363510df32ec28a2fabe07fa15076fbb74021090621a2896054b3",
+        "omitted_input_rows": 0
+      },
+      "baseline-menus-final2.ini": {
+        "source_sha256": "c55445ad912c4c72dfc80db2ce58a93fd7e54ff9250aff3ddfd40de475e82a07",
+        "archive_sha256": "1eb63c8b189cd274babd6227564fed4ee28c5d22be8236890204e3262342e2c5",
+        "omitted_input_rows": 0
+      },
+      "baseline-menus-final2-run.json": {
+        "source_sha256": "73bb43f94599b4e8df524b3c499865a641820598d6d6028ba97603d4595abaf2",
+        "archive_sha256": "8f21ff022ab89dfc49a3c1e12a5765f69186a627cce8a50d97163707090b98dd",
+        "omitted_input_rows": 0
+      }
+    },
+    "current-menus-enu-final2": {
+      "result": "PASS",
+      "checks": 51,
+      "current-menus-enu-final2.txt": {
+        "source_sha256": "0f975a0b000976ecbafc3228d31c388a86ac2d18501129b45451b84e85b04f81",
+        "archive_sha256": "77ed3e893537f8646c26bdec71fe7b1c6115c275c56a18f05484feab6c3d5a7b",
+        "omitted_input_rows": 0
+      },
+      "current-menus-enu-final2.ini": {
+        "source_sha256": "9203cd60fc1fe8920adc28a7c214762004819b3031c2da3fccb0a84a6573fa40",
+        "archive_sha256": "0dc29935273d08f8398af290c2a46f02d79a5229eb778798844c6eb5d253f2f1",
+        "omitted_input_rows": 0
+      },
+      "current-menus-enu-final2-run.json": {
+        "source_sha256": "9f618418d5489e7ce3f091821c74da1e7cc5fba825de2a116bc3b24b304eb1c8",
+        "archive_sha256": "6887356b84cffa98a10e47dadcfe23413da4a1ebb66c28c69040ec6ff4a09f1a",
+        "omitted_input_rows": 0
+      }
+    },
+    "current-menus-es-final2": {
+      "result": "PASS",
+      "checks": 51,
+      "current-menus-es-final2.txt": {
+        "source_sha256": "579a68b9f5aaabbed900ae09442f698685c0f0e13e89ecb275d13ff6573243a1",
+        "archive_sha256": "5237f8c08bb742f0025e2e87e1e84124089f3add06f5a74d33166d15eebda75b",
+        "omitted_input_rows": 0
+      },
+      "current-menus-es-final2.ini": {
+        "source_sha256": "de08e2be28d356203051b431ef78459616862bd31144054feafd4c9ce5857507",
+        "archive_sha256": "8abf7598cfdbcf1e33388a97b1636d1a64864bab04434d7f9d87850257cf1d3d",
+        "omitted_input_rows": 0
+      },
+      "current-menus-es-final2-run.json": {
+        "source_sha256": "1e1d92539131f90e3cc924e9400fa93ca101f9af60b68c22b9a0603faf49b131",
+        "archive_sha256": "3b97a96d505e1626cf2ff65cb97c270484894503f42fc9e023876e6a75b91fa2",
+        "omitted_input_rows": 0
+      }
+    },
+    "old-trucazo-menu-final2": {
+      "result": "PASS",
+      "checks": 5,
+      "old-trucazo-menu-final2.txt": {
+        "source_sha256": "7e032e07b18a90ba2fde62245a95893b160c8571bce570975ac19454b3e81fc0",
+        "archive_sha256": "2ca9081839a0251462fbbe5cd45a33f45b7205801b5f096008576b09c5fd8ef9",
+        "omitted_input_rows": 0
+      },
+      "old-trucazo-menu-final2.ini": {
+        "source_sha256": "2cbfa5d620c52d276472abc035b5dba79c2582e73a2ab6e1f321f0a87d10a39e",
+        "archive_sha256": "ef380d56cf750ae2de6a91b803ec1734233b1ebe1e87947a5497fd48db6f6dd1",
+        "omitted_input_rows": 0
+      },
+      "old-trucazo-menu-final2-run.json": {
+        "source_sha256": "a76a2ad4072dec8cb77a721772e7c5a898add9c02f4fe80113bb242eb9a86829",
+        "archive_sha256": "c22af502240d669a5b21066b6dca9bc116ea350b62456919bc544b6c1b703325",
+        "omitted_input_rows": 0
+      }
+    },
+    "old-truco-menu-final2": {
+      "result": "PASS",
+      "checks": 5,
+      "old-truco-menu-final2.txt": {
+        "source_sha256": "cfef566691fd2712e7b89e18f8b446f47320aedef7ff711e59249b33ce24e388",
+        "archive_sha256": "bb789a7b595a1447433d45c23b981155ff504d887471fd9b4a98a5391eb7f00c",
+        "omitted_input_rows": 0
+      },
+      "old-truco-menu-final2.ini": {
+        "source_sha256": "2c128da843df2b78b324db5d226e69c9110cc7bd610ee16fb9eb7acff6db8e51",
+        "archive_sha256": "203e8901bf3edf769e2e303ace26fc24a07a0df9a8e46824791b277beee0663a",
+        "omitted_input_rows": 0
+      },
+      "old-truco-menu-final2-run.json": {
+        "source_sha256": "359a949a0ea9a7314e7a34c4d2ec47996e03f5fb1c00d6bea8288045356e381c",
+        "archive_sha256": "37a00f01456951ef70b9cbc8e71131108ed2c5bab256ddf5029fa08ff7383a02",
+        "omitted_input_rows": 0
+      }
+    },
+    "live-trucazo-verified": {
+      "result": "PASS",
+      "checks": 5,
+      "live-trucazo-verified.txt": {
+        "source_sha256": "cbb3588b271b5174acee7c8e1cce0fa84a9a8548c3803cca8133849ddb08b99c",
+        "archive_sha256": "028755f358595d0e3aacd686f568cccf2958fc97b4d5398c99c60481f2fae6ff",
+        "omitted_input_rows": 0
+      },
+      "live-trucazo-verified.ini": {
+        "source_sha256": "b884c2f494c8d2991ba3a45cce82471d035e70f723a3e385dd6d19da15a7cc59",
+        "archive_sha256": "b884c2f494c8d2991ba3a45cce82471d035e70f723a3e385dd6d19da15a7cc59",
+        "omitted_input_rows": 0
+      },
+      "live-trucazo-verified-run.json": {
+        "source_sha256": "cae2720c935531b730c3a924b5e5b91086eaac5cd905b11c128ed9bcf56c9c68",
+        "archive_sha256": "67d0df83f00eea7a549d3677012e8ebeea2bb7b5d82ff1c13e9da5c568fdda34",
+        "omitted_input_rows": 0
+      }
+    },
+    "live-truco-verified": {
+      "result": "PASS",
+      "checks": 5,
+      "live-truco-verified.txt": {
+        "source_sha256": "380c93e3278a748508dd85e4c9a75a0c773eafd78d0ed70e250675115f7e3299",
+        "archive_sha256": "a87a3da5ade70a1db357582e9513fae93e733bc6fc71aa4777588f97c99febeb",
+        "omitted_input_rows": 0
+      },
+      "live-truco-verified.ini": {
+        "source_sha256": "a867b7a19bcf9c9ddf4b25eca7a56d54ae5b9d36e8a82192fd3df38d79a4cf48",
+        "archive_sha256": "a867b7a19bcf9c9ddf4b25eca7a56d54ae5b9d36e8a82192fd3df38d79a4cf48",
+        "omitted_input_rows": 0
+      },
+      "live-truco-verified-run.json": {
+        "source_sha256": "66e1c4e83873fcae7bfea2e93852e37401a47edf8d510743614532ee9b644bfe",
+        "archive_sha256": "a2bd30d8beddf7b9fe29678faa2dae348d4a1ee6e28514835a9daf5a156852d6",
+        "omitted_input_rows": 0
+      }
+    }
+  },
+  "identical_card_attribute_rows": 936,
+  "identical_value_rows_except_native_flight": 7,
+  "identical_initial_record": true,
+  "identical_initial_matches": [
+    "CaelumTrucazoMatch",
+    "CaelumTrucoMatch"
+  ],
+  "persistence_fix": "Baseline loses native flight on non-hub travel with the paid Fool effect still active. Current travel and old-save personal-time recovery restore exactly one native instance without resetting selection/timers or charging Anima.",
+  "performance": {
+    "baseline": {
+      "tics": 1680,
+      "wall_seconds": 129.259702,
+      "tics_per_second": 12.997090152660261,
+      "first": {
+        "tic": "35",
+        "ms": "7140.605",
+        "roster": "6001",
+        "attackers": "6001",
+        "defenders": "600",
+        "groups": "64",
+        "x": "0.000",
+        "y": "320.000",
+        "z": "-0.000",
+        "angle": "90.000"
+      },
+      "last": {
+        "tic": "1715",
+        "ms": "136400.307",
+        "roster": "6001",
+        "attackers": "5989",
+        "defenders": "599",
+        "groups": "82",
+        "x": "0.000",
+        "y": "320.000",
+        "z": "-0.000",
+        "angle": "90.000"
+      },
+      "overlay_interval_median_ms": 1062.638,
+      "overlay_interval_max_ms": 2920.866,
+      "player_single_tic_profile_ms": [
+        0.04083,
+        0.04608,
+        0.03866
+      ]
+    },
+    "current": {
+      "tics": 1680,
+      "wall_seconds": 128.33613400000002,
+      "tics_per_second": 13.090623409304193,
+      "first": {
+        "tic": "35",
+        "ms": "7573.077",
+        "roster": "6001",
+        "attackers": "6001",
+        "defenders": "600",
+        "groups": "64",
+        "x": "0.000",
+        "y": "320.000",
+        "z": "-0.000",
+        "angle": "90.000"
+      },
+      "last": {
+        "tic": "1715",
+        "ms": "135909.211",
+        "roster": "6001",
+        "attackers": "5989",
+        "defenders": "599",
+        "groups": "82",
+        "x": "0.000",
+        "y": "320.000",
+        "z": "-0.000",
+        "angle": "90.000"
+      },
+      "overlay_interval_median_ms": 1064.789,
+      "overlay_interval_max_ms": 2864.769,
+      "player_single_tic_profile_ms": [
+        0.05288,
+        0.04014,
+        0.04692
+      ]
+    },
+    "percent_tics_per_second_change": 0.719647671481205,
+    "identical_scene_rows": 49,
+    "limits": "One matched pair; no meaningful speedup claim. Overlay intervals are not GPU frame times, and no physical-input latency was measured. Desktop/GPU load is uncontrolled. Earlier #117/#118 regressions remain separate evidence for #120."
+  },
+  "environment": "Windows 11 / GZDoom 4.14.2 / Vulkan / Ryzen 9 5950X / RTX 3070 Ti; actual renderer 1520x825; seed 116; skill 2; audio enabled at 5%; runs serialized.",
+  "saves": {
+    "ca119_baseline.zds": {
+      "sha256": "4e196608536024a50ae8319d7f51fd3e7dac97a5325a5d23a8c776761d5d59b5",
+      "distributed": false
+    },
+    "ca119_baseline_hub.zds": {
+      "sha256": "e5586c730e01b07d7e2bfc215d649cdadaa5851b09a1aa24926011a8211b6118",
+      "distributed": false
+    },
+    "ca119_current.zds": {
+      "sha256": "a6686044e9a8285f526c72d66128ba32f33ccafb918e66a1021d7b265646b152",
+      "distributed": false
+    },
+    "ca119_current_hub.zds": {
+      "sha256": "d4ef073e3461559fa7f5b97850955f50af7ffbbdaafcbefc98851633f77af45b",
+      "distributed": false
+    },
+    "ca119_upgraded.zds": {
+      "sha256": "c53c96baa02e913003900b461e76f207fda1678ba508ff9926e079b542818c02",
+      "distributed": false
+    },
+    "ca119_baseline_tc.zds": {
+      "sha256": "a6bd651a27e46601f39993de821ab794d9f0872c7b3e953c40dcfdff2235cd1b",
+      "distributed": false
+    },
+    "ca119_baseline_tr.zds": {
+      "sha256": "03bc68b09afe7466425e919b70fb45c3b7f2544bc2e82b59c9a9914f9078b2b8",
+      "distributed": false
+    }
+  },
+  "screenshots": [
+    {
+      "file": "tarot-enu.png",
+      "sha256": "2bf96c7ba467cad259d80316d8385b5df189f7b5c946de2e14bce5ca39076e5c"
+    },
+    {
+      "file": "tarot-es.png",
+      "sha256": "a5c88e2fb0bac0a2e48d5391f2b88ce154d5399ea009092b454655d6ae453458"
+    },
+    {
+      "file": "trucazo-window-enu.png",
+      "sha256": "3ad286df192cead7546e1dd415478a5866ec98d40f0ccdb656e4094ddb924408",
+      "method": "Windows.Graphics.Capture through Computer Use; actual native menu and keyboard action inspected"
+    },
+    {
+      "file": "trucazo-play-window-enu.png",
+      "sha256": "ef3d88ec24c4fa92808e4bcea432aa60a349cb0e6bf9bf3d1b6da86b02a096df",
+      "method": "Windows.Graphics.Capture through Computer Use; actual native menu and keyboard action inspected"
+    },
+    {
+      "file": "truco-window-es.png",
+      "sha256": "ebcb086576ae1eced791ed5e7d052e8d90268ff9d7e7e7e1e4abb381a6e291fc",
+      "method": "Windows.Graphics.Capture through Computer Use; actual native menu and keyboard action inspected"
+    },
+    {
+      "file": "truco-play-window-es.png",
+      "sha256": "722f3867aadc91c8863f89e9400e7d7048e56770c1804f71bdf0e116d68c57c6",
+      "method": "Windows.Graphics.Capture through Computer Use; actual native menu and keyboard action inspected"
+    }
+  ],
+  "diagnostics": {
+    "baseline-tarot": {
+      "reason": "Initial fixture spawned an invisible Ace and attempted capture before the ordinary visibility update. Fixed the fixture; production visibility unchanged.",
+      "log": {
+        "source_sha256": "43e9dce3479c4083c39ddc73fdc9abd10143d3eaf8a9fd7af5a12a8c7707b8f5",
+        "archive_sha256": "e2ac86224eff8a5f42dc5252e13507b4d12a3d143fbda09233eecfddebeff2a1",
+        "omitted_input_rows": 0
+      }
+    },
+    "baseline-tarot-fixed": {
+      "reason": "Corrected captures pass. Scripted return to the one-way mansion did not produce the intended hub save; replaced with the actual MAP02/MAP06/MAP02 hub route.",
+      "log": {
+        "source_sha256": "e3a54669473018358df29d5ca5422ed50cf4e474db2525502b19b474f89bfa6b",
+        "archive_sha256": "d6840ba3c0911625bf015689ee4b6ddbf057152f8f980de78bf069455d20e45c",
+        "omitted_input_rows": 0
+      }
+    },
+    "old-save-current-final": {
+      "reason": "Five startup wait tics let the command sequence finish without the intended post-load event/save. Increased startup delay to 105 tics; final2 logs prove the requested event and save.",
+      "log": {
+        "source_sha256": "10fa2506ecd841f70e8238dcdb10740f3341990aec97cfc3828584244c353fca",
+        "archive_sha256": "c6e5e75e9cd20fe979252707182cdd478b18447cfdb182121209e369e40feefc",
+        "omitted_input_rows": 0
+      }
+    },
+    "upgraded-save-reload-final": {
+      "reason": "Rejected missing upgraded save from that short startup schedule; retained diagnostic, corrected schedule and verified actual file before later reload.",
+      "log": {
+        "source_sha256": "5ea98767fd6b8c66f579744bdc7d55f1ab5ac4ba380374348bac321d5d0bdc30",
+        "archive_sha256": "d9492a2a2b27aad54ad5db633caaca0f924f0f3885213896dcf0a112d48e46c5",
+        "omitted_input_rows": 0
+      }
+    },
+    "tarot-ui-enu-final2": {
+      "reason": "Tarot page rendered correctly; the internal screenshot command omits native menus. Diagnostic UI logging confirms the menu is open. Actual window captures replace the world-only images.",
+      "log": {
+        "source_sha256": "995d34cf7ca514dd9ffcf7d41f9c116eb758f045876968d80774f99efb8aff28",
+        "archive_sha256": "648d56f7ed6264cfe4049136443c0de75e54020cd138a533093fd6b0d17a3ea6",
+        "omitted_input_rows": 0
+      }
+    },
+    "baseline-menus-final": {
+      "reason": "Synthetic replacement opponent set StoryAnchored before deferred PostBeginPlay, which resets it from args[0]. Final2 fixture sets the canonical anchored spawn argument; production NPC behavior unchanged.",
+      "log": {
+        "source_sha256": "24bb64b87a3b78f8338d6fb0b5a8a48522712bdbc99f244a7300d0e0da7178a0",
+        "archive_sha256": "7f828c4fe139bdae0dfcf5d17827eccc0cc8d1b3a27d1362dc75a2282dfedf7b",
+        "omitted_input_rows": 0
+      }
+    },
+    "menu-diagnostic": {
+      "reason": "Diagnostic fixture mixed String/Name ternary operands; corrected to two Name operands.",
+      "log": {
+        "source_sha256": "a5c2b8dbfb36ea2d84031d507768f140c73f488d19ef828f7e6f13aa07076f2e",
+        "archive_sha256": "0607fb7af50352492b012229cb78874b27c7ddea42392c2ee5a8ac1d1fa8ac85",
+        "omitted_input_rows": 0
+      }
+    },
+    "menu-diagnostic2": {
+      "reason": "Both native handlers and the real Trucazo menu exist, but the internal screenshot still shows the world. Window capture confirms native menu rendering.",
+      "log": {
+        "source_sha256": "2a3f34933ad47612175a41561e93d05733e5461a3a043ae131b5d5049b1231f2",
+        "archive_sha256": "d14e9cd735e1821e505189cdfbc17577b66eaec6efb07488e6859fbfb1839459",
+        "omitted_input_rows": 0
+      }
+    }
+  },
+  "author_acceptance": "Pending CA-503-TAROT-01; agent-only evidence is not author play.",
+  "reproduction": [
+    "Retain original 5.0.2 package/save pair for rollback. Build current source separately; stage current bytes under current-runtime/baseline.pk3 when loading the original basename.",
+    "prepare_checks.py creates deterministic fixture addons/configs under build/issue119. run_native.ps1 and run_suite.ps1 record args, hashes, settings and isolated native launches.",
+    "Use the normal MAP01/MAP02/MAP06 route and MAP02 hub return. Start reload scripts after 105 tics so the requested play event/save actually occurs.",
+    "verify_extraction.py checks bodies, declarations, adapters and package boundary. summarize.py asserts native rows/save payloads and archives normalized UTF-8 evidence.",
+    "The production service has no fields. All test sources and synthetic state remain in the separate addon, outside src. Do not distribute engine, IWAD, PK3 or saves."
+  ],
+  "limitations": [
+    "Fixtures create synthetic collection/progress and dispatch gameplay methods/events. They do not claim complete campaign or physical-key acceptance.",
+    "No new acquisition content, other Major powers, host/networked matches or multiplayer lifecycle support is implemented.",
+    "Archive normalization removes trailing whitespace and incidental local key-scan rows; original logs and hashes remain local."
+  ]
+}

@@ -1,6 +1,35 @@
 # Caelum Argenteum — Current systems and rules
 
-Documentation version: **5.0.2** — 2026-10-06.
+Documentation version: **5.0.3** — 2026-10-06.
+
+## Tarot service and retained save contract (#119)
+
+`core/CaelumTarotService` is the stateless domain implementation. The travelling
+`CaelumPersistentCharacterState` remains the sole saved owner of collection,
+selected/activated arrays, revisions and remaining tics. No fields, IDs, array
+sizes or native class names move. Existing record, power, essence and rule
+methods remain compatible adapters; they do not maintain a second collection.
+
+| Boundary | Contract |
+| --- | --- |
+| Collection and bonuses | One implementation counts owned cards and derives integer-tenths Minor contributions and collection percentage. Card suit/rank belongs to Tarot; Trucazo retains its separate ranking/scoring rules. Character rebuilds consume these queries without accumulating bonuses. |
+| Selection and activation | Player input and Journal requests enter the service with the requesting pawn. Owned/implemented cards, the three-card limit, activity, Anima and cooldown checks precede payment. Selected cards describe the next activation; active cards are the paid snapshot. |
+| Time and native effect | Existing personal-time/journey calls advance the saved clock once. HUD, Journal and flight read it without advancing it. Expiry clears only active contributions. A missing native flight instance is restored after travel or the next personal tic only while the saved Fool effect remains active; restoration neither pays nor resets either timer. |
+| Capture commit | The service rechecks live context, map/progress, range/sight, animation completion, same Box identity, physical deck in that Box, revelation and absence of the essence. Only then does it write collection/quest progress and refresh/persist projections. Low-level record adapters retain their coordinator preconditions; callers must use the commit entry point for an acquisition transaction. |
+| Physical inventory | The existing deck/Box rules and `CaelumInventoryService` retain native ownership and storage authority. A physical deck grants no essence. Activation requires captured essences, not a deck stored in the Box. |
+| Presentation and matches | Tarot descriptions, selectors and timers consume domain queries. Existing pawn snapshots remain UI projections. Trucazo copies captured-Minor ownership into its own match-start awakening snapshot; ordinary Truco has separate match state and no new powers. Both match entry points check the physical deck through the inventory contract. |
+
+Native 5.0.2 evidence exposed a retained timer with missing flight after crossing
+from MAP01 into the hub: native `PowerFlight` is a hub power. The idempotent
+restoration above fixes that existing contract violation without a save-schema
+migration. Old saves missing the instance recover from the already-paid record.
+Revision 1 initialization and physical-deck recovery retain their existing rules.
+
+Rollback uses the original **5.0.2 package and original save together**, baseline
+`135ae0f9`, with matching map geometry. Keep upgraded saves separate. Reproducible
+before/after, old/new reload, hub return, original-pair rollback and bilingual
+menu evidence is recorded in `assets/validation_503/RESULTS.json`. These isolated
+engine fixtures do not replace author acceptance or establish multiplayer support.
 
 ## Inventory and equipment service (#118)
 
@@ -53,7 +82,8 @@ The original signatures, defaults and return values remain callable on the pawn.
 | Resources: air regeneration, underwater cost/debt/recovery, jump cost and air performance | Existing Air and debt/timer fields; the same water-level/exemption checks and lesson callbacks. The pawn's native `CheckAirSupply` override still suppresses the parallel engine breath counter. |
 
 `PostBeginPlay`, `PlayerThink`, `Tick`, `PreTravelled`, `Travelled`, `DamageMobj`,
-`CheckAirSupply` and `AdvancePersonalTimeTic` retain their exact bodies. In
+`CheckAirSupply` and `AdvancePersonalTimeTic` retained their bodies in #117. #119
+routes Tarot calls to its service and restores the native effect after travel. In
 particular, personal time still orders Tarot/elemental state, resource operations,
 combat timers and rest/time pumps once; the extracted methods add no extra tick.
 Inventory, Tarot, attack dispatch, input latches and native selectors remain behind

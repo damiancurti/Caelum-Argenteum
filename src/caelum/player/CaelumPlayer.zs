@@ -6138,6 +6138,7 @@ class CaelumPlayer : DoomPlayer
     {
         Super.Travelled();
         RestorePersistentCharacterState();
+        CaelumTarotService.RestoreNativeEffect(self);
     }
 
     // PostBeginPlay runs after this player actor has entered the game world.
@@ -9010,7 +9011,7 @@ class CaelumPlayer : DoomPlayer
     // recorre las mismas tasas y umbrales que un tic de juego normal.
     void AdvancePersonalTimeTic()
     {
-        CaelumTarotPowers.Advance(self);
+        CaelumTarotService.Advance(self);
         if (ElementalStatus != null) { ElementalStatus.Tick(self); }
         IlluminationRemaining = Max(
             0.0, IlluminationRemaining - 1.0 / TICRATE
@@ -11177,7 +11178,7 @@ class CaelumPlayer : DoomPlayer
     {
         if (CombatTarotInputReserved) return;
         CombatTarotInputReserved = true;
-        CaelumTarotPowers.Activate(self);
+        CaelumTarotService.Activate(self);
     }
 
     void ReserveClassAbilityInput()

@@ -1,6 +1,25 @@
 # TASKS.md — Active tasks
 
-Documentation version: **5.0.2** — 2026-10-06.
+Documentation version: **5.0.3** — 2026-10-06.
+
+## Issue #119 — Tarot consolidation (5.0.3)
+
+- Implemented one stateless service for collection, bonuses, powers, capture
+  checks and Journal projection; 24 compatible method adapters and all saved
+  fields remain. Physical inventory and separate match state retain ownership.
+- Corrected the pre-existing loss of native flight across non-hub travel while
+  preserving paid selection, remaining timers and resources. SYSTEMS documents
+  the explicit behavioral correction and original-pair rollback.
+- Evidence: `assets/validation_503/RESULTS.json`; before/after native contracts,
+  old/new saves, hub return, match/UI checks and bounded MAP06 comparison.
+- Passed: 93 route/capture/power assertions per package; 936 identical fixed-bonus
+  rows; 223 identical initial record fields and both initial match payloads.
+  Old/new/upgraded reload, original rollback and native menu key actions pass.
+  MAP06: 12.997/13.091 tics/s (+0.72%), 49 scene-identical rows; no meaningful
+  speedup is inferred from this single pair.
+- Author check CA-503-TAROT-01 is pending. The author requested continuing with
+  #120 after commit/push, preserving separate issue/PR scope and earlier measured
+  performance regressions. No new multiplayer support is claimed.
 
 ## Issue #118 — Inventory/equipment consolidation (5.0.2)
 

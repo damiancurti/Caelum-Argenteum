@@ -1,6 +1,25 @@
 # Caelum Argenteum — Project, status and roadmap
 
-Documentation version: **5.0.2** — 2026-10-06.
+Documentation version: **5.0.3** — 2026-10-06.
+
+## 5.0.3 — Authoritative Tarot service (#119)
+
+The author accepted all #118 tests on 2026-10-06; acceptance commit `06a062fa`
+was merged through PR #124 as `135ae0f9`, closing #118. Tarot now has one
+stateless implementation for collection, bonuses, selection/activation, clocks,
+capture checks and projections. Twenty-four existing methods remain adapters;
+serialized state and separate Trucazo/Truco inventories retain their identities.
+The physical deck remains under the inventory contract. No acquisition content,
+power balance, UI layout, map, art or audio changes are introduced.
+
+The comparison exposed an existing missing native flight instance after leaving
+MAP01 despite an active saved Fool timer. Travel/personal-time reconciliation
+now restores that instance idempotently without payment or renewed duration.
+This bounded persistence fix is distinguished from the mechanical extraction.
+The SYSTEMS contract and `assets/validation_503/RESULTS.json` record evidence,
+rollback and limitations. Author acceptance remains pending. The author also
+requested continuing with #120 after this delivery; its owner/integration work
+and the unresolved #117/#118 performance attribution stay separate.
 
 ## 5.0.2 — Authoritative inventory/equipment service (#118)
 
@@ -128,7 +147,7 @@ reviewed separately against callers and lifecycle code.
 | `CaelumPlayer.PersistCharacterState`, `RestorePersistentCharacterState`, `StoreCraftingTaskState`, `LoadCraftingTaskState` | Travel hooks and mutations; `CaelumPersistentCharacterState` plus live profile/resources/models | Future persistence adapter documents copy direction per field; do not create an independently authoritative registry. |
 | `UpdateCraftingTask`, `BuildPalomoCurrencyPaymentPlan`, `ApplyPalomoCurrencyPlan`, `EquipSelectedNativeEquipment` | Crafting station/browser, `CaelumCraftingRules`, `CaelumEconomyRules`, equipment IDs and reservations | #118 centralizes their inventory commits. Future extraction concerns remaining crafting/trade planning and sessions; preserve validation-before-mutation and reservations. |
 | `AdvancePersonalTimeTic`, `ApplyPhysicalMovement`, `RequestCombatChannelInput`, weapon attack/reload methods | `Tick`, `PlayerThink`, native selectors; shared `CaelumAttackRules`, catalogue, profile and derived stats | Future resource/combat services act on one pawn; native weapon actors keep dispatch and animation state. Do not add another damage route. |
-| `CaelumTarotPowers.Select/Activate/Advance`, `CaelumTarotDeckRules`, `CaelumArcanaProgress` | Journal `ca_tarot_select`, User3, personal-time tick, quest capture | Existing shared implementations stay authoritative; extraction only redirects player adapters. Card ownership/powers belong to the persistent character record, physical deck to inventory. |
+| `CaelumTarotService`, compatible `CaelumTarotPowers`/record/essence adapters, `CaelumTarotDeckRules`, `CaelumArcanaProgress` | Journal `ca_tarot_select`, User3, personal-time tick, quest capture and match queries | #119 centralizes Tarot operations; the saved character record retains ownership/powers and native inventory retains the physical deck. Campaign availability observes world/quest progress; match state stays separate. |
 | `CaelumMainM00QuestController`, persistent `MainM00*` methods, `CaelumQuestCatalogue`, `CaelumPrisonerRescue` | World events, dialogue tokens/USDF, player snapshots | Narrative services own transitions against the character record; NPC recreation and display refresh must not grant rewards. |
 | `CaelumWorldClockTicker`, `CaelumWorldClock`, `CaelumCalendarState`, `CaelumScheduleState`, `CaelumJourneyState` | WorldTick, travel, rest/time-skip and weather | Preserve the current single-participant clock guard. Shared multiplayer world authority is a separate design/implementation gate. |
 | `CaelumCombatActor.Tick/CollidedWith`, `ImpactPhysics`, `ImpactContactState` | Native movement, projectiles, environment, player and actor impact adapters | Generic physics mathematics remains below gameplay adapters. Shared contact objects and once-per-tic resolution must survive any later extraction. |
@@ -153,7 +172,7 @@ a rewrite or silently expand #116 further.
 | A1 — this issue | Audit ownership/dependencies and MAP06 baseline; extract only the three presentation routines above, retaining pawn fields | Static declaration/body equivalence, native projection checks, current save/reload and bilingual UI observations; record performance limits separately. |
 | A2 — #117, after A1 | Delegate draft/profile and resource policies to stateless services; retain fields, native callbacks, input and personal-time ordering | Exact body/declaration equivalence; native profile/resource matrix, old/new save/reload and hub return; selectors/creation retain behavior. |
 | A3 — #118, after A2 | Implemented: exact-item lookup, IDs, queries, mutation, projections and equipment reconciliation in one service; native pickup/selector adapters retained | Two identical items retain IDs/wear; Box capacity, reservations, rejected transactions, equip/drop/break/repair and save/travel neither lose nor duplicate items. |
-| A4 — #119, after A3 | Consolidate Tarot through existing shared services and the inventory contract; keep separate Trucazo/Truco match state | Capture/select/activate/expire, physical deck/Box gate, bonuses and reward idempotence; no UI refresh grants or timing changes. |
+| A4 — #119, after A3 | Implemented: one stateless Tarot service with saved record and compatible adapters; separate Trucazo/Truco state and physical inventory contract | Capture/select/activate/expire, physical deck/Box gate, bonuses and reward idempotence; no UI refresh grants or timer reset. Restore the missing native flight instance across non-hub travel. |
 | A5 — after inventory contracts | Extract remaining crafting planning/task coordination and merchant session/transaction coordination in separate changes; reuse #118 inventory commits and retain record/live handoff | Reservations, cancellation, completion and payment/reward exactly once; pause/session loss, travel and reload; no free duplication or lost stock. |
 | A6 — after player/inventory contracts | Further isolate combat dispatch and narrative transitions individually; keep the resource adapters and native movement/weapon states | Press/hold/release, ammunition/resource spending, interruption and exact item wear; attack cadence/physics and quest reward idempotence unchanged. |
 | A7 — after measured ownership review | Separate map-local targeting, command rebuild and siege adapters individually; do not replace actors or change AI cadence in an organization patch | Same roster/losses/targets/crew and group limits; scene-matched native profiling and responsiveness evidence; performance changes require their own measured purpose. |

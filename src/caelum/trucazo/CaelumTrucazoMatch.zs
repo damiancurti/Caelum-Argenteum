@@ -64,8 +64,8 @@ class CaelumTrucazoMatch : Inventory
             || user.player.ConversationNPC!=opponent || !opponent.StoryAnchored
             || level.MapName!="MAP01" || multiplayer || CaelumRestState.IsActive(user)
             || CaelumTimeSkipState.IsOpen(user))return false;
-        if(!CaelumTarotDeckRules.Owned(user))
-        { CaelumTarotPowers.Feedback(user,"CA_TC_NEED_DECK");return false; }
+        if(!CaelumTarotService.HasPhysicalDeck(user))
+        { CaelumTarotService.Feedback(user,"CA_TC_NEED_DECK");return false; }
         let match=Get(user,true);
         if(!match.Active())
         {
@@ -91,7 +91,7 @@ class CaelumTrucazoMatch : Inventory
         for(int side=0;side<2;side++)Sides[side]=new("CaelumTrucazoSide");
         let record=user.GetPersistentCharacterState(false);
         for(int card=CaelumConstants.TAROT_MAJOR_COUNT;card<CaelumConstants.TAROT_CARD_COUNT;card++)
-            Sides[0].Awake[card]=record!=null && record.HasTarotCard(card);
+            Sides[0].Awake[card]=record!=null && CaelumTarotService.HasTarotCard(record, card);
         Sides[0].MaximumHealth=CaelumTrucazoRules.Health(user.Attributes.Patience);
         Sides[0].Intelligence=user.Attributes.Intelligence;
         Sides[1].MaximumHealth=CaelumTrucazoRules.Health(Opponent.CombatPatience
@@ -297,8 +297,8 @@ class CaelumTrucazoMatch : Inventory
             if(Active())Act(0,CaelumTrucazoRules.FORFEIT);
             Visible=false;Serial++;return;
         }
-        if(operation==CaelumTrucazoRules.BEGIN && !CaelumTarotDeckRules.Owned(CaelumPlayer(Owner)))
-        {CaelumTarotPowers.Feedback(CaelumPlayer(Owner),"CA_TC_NEED_DECK");Serial++;return;}
+        if(operation==CaelumTrucazoRules.BEGIN && !CaelumTarotService.HasPhysicalDeck(CaelumPlayer(Owner)))
+        {CaelumTarotService.Feedback(CaelumPlayer(Owner),"CA_TC_NEED_DECK");Serial++;return;}
         if(operation==CaelumTrucazoRules.NPC_STEP)NPCAction();else Act(0,operation,index);
         // Aun el rechazo confirma recepción: el menú puede corregir su orden
         // sin quedar esperando una revisión que nunca llegará. No usa azar.

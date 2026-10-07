@@ -983,72 +983,24 @@ class CaelumPersistentCharacterState : Inventory
     }
 
     bool HasTarotCard(int card)
-    {
-        return card >= 0 && card < CaelumConstants.TAROT_CARD_COUNT && TarotOwned[card];
-    }
+    { return CaelumTarotService.HasTarotCard(self, card); }
 
     int CountTarotCards()
-    {
-        int count = 0;
-        for (int card = 0; card < CaelumConstants.TAROT_CARD_COUNT; card++)
-            if (TarotOwned[card]) count++;
-        return count;
-    }
+    { return CaelumTarotService.CountTarotCards(self); }
 
     int GetTarotAttributeBonusPercent()
-    {
-        int percent = 0;
-        for (int card = 0; card < CaelumConstants.TAROT_CARD_COUNT; card++)
-            if (TarotOwned[card]) percent += card < CaelumConstants.TAROT_MAJOR_COUNT
-                ? CaelumConstants.TAROT_MAJOR_ATTRIBUTE_PERCENT : CaelumConstants.TAROT_MINOR_ATTRIBUTE_PERCENT;
-        return percent;
-    }
+    { return CaelumTarotService.GetTarotAttributeBonusPercent(self); }
 
     // Se deriva de las cartas poseídas; no acumula bonos al cargar o equipar.
     // Las décimas enteras evitan que un palo completo quede en 2,999... .
     double GetTarotMinorBaseBonus(int attribute)
-    {
-        int tenths = 0;
-        for (int card = CaelumConstants.TAROT_MAJOR_COUNT; card < CaelumConstants.TAROT_CARD_COUNT; card++)
-        {
-            if (!HasTarotCard(card)) continue;
-            int contribution = CaelumTarotDetails.MinorTenths(card, attribute);
-            tenths += contribution;
-            if (TarotEffectTics > 0 && TarotActive[card]) tenths += contribution;
-        }
-        return tenths / 10.0;
-    }
+    { return CaelumTarotService.GetTarotMinorBaseBonus(self, attribute); }
 
     bool CanCaptureMainM00Fool()
-    {
-        EnsureQuestStateInitialized();
-        return MagicBoxOwned && MagicBoxItemId > 0
-            && QuestState[CaelumConstants.QUEST_MAIN_M00_THE_FOOL] == CaelumConstants.QUEST_STATE_ACTIVE
-            && QuestStage[CaelumConstants.QUEST_MAIN_M00_THE_FOOL] == CaelumConstants.MAIN_M00_STATE_BOX_RECEIVED
-            && HasMainM00Flag(CaelumConstants.MAIN_M00_FLAG_MAGIC_BOX_GRANTED)
-            && HasMainM00Flag(CaelumConstants.MAIN_M00_FLAG_ARGENTO_COMPLETE)
-            && HasMainM00Flag(CaelumConstants.MAIN_M00_FLAG_CAELLA_COMPLETE)
-            && HasMainM00Flag(CaelumConstants.MAIN_M00_FLAG_RONNIE_COMPLETE)
-            && HasMainM00Flag(CaelumConstants.MAIN_M00_FLAG_RULO_COMPLETE)
-            && !HasMainM00Flag(CaelumConstants.MAIN_M00_FLAG_THE_FOOL_CAPTURED)
-            && !HasTarotCard(CaelumConstants.TAROT_THE_FOOL);
-    }
+    { return CaelumTarotService.CanCaptureMainM00Fool(self); }
 
     bool RecordMainM00FoolCapture()
-    {
-        if (!CanCaptureMainM00Fool() || !MainM00FoolRevealed) return false;
-        if (!TryAdvanceMainM00State(CaelumConstants.MAIN_M00_STATE_BOX_RECEIVED,
-            CaelumConstants.MAIN_M00_STATE_FOOL_CAPTURED)) return false;
-        TarotOwned[CaelumConstants.TAROT_THE_FOOL] = true;
-        SetMainM00Flag(CaelumConstants.MAIN_M00_FLAG_THE_FOOL_CAPTURED);
-        SetMainM00Flag(CaelumConstants.MAIN_M00_FLAG_EXIT_READY);
-        int objective = GetQuestObjectiveStorageIndex(CaelumConstants.QUEST_MAIN_M00_THE_FOOL,
-            CaelumConstants.MAIN_M00_OBJECTIVE_CAPTURE_FOOL);
-        QuestObjectiveKnown[objective] = true;
-        QuestObjectiveTarget[objective] = 1;
-        QuestObjectiveProgress[objective] = 1;
-        return true;
-    }
+    { return CaelumTarotService.RecordMainM00FoolCapture(self); }
 
     bool CanReceiveMainM00MagicBox()
     {

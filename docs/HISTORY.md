@@ -1,6 +1,55 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **5.0.2** — 2026-10-06.
+Documentation version: **5.0.3** — 2026-10-06.
+
+## 5.0.3 — Tarot domain service (#119, 2026-10-06)
+
+Following explicit acceptance of all #118 tests, commit `06a062fa` recorded
+CA-502-INVENTORY-01 as passed. PR #124 merged as `135ae0f9` and #118 closed.
+This patch consolidates 24 Tarot implementations and the existing Journal
+projection in a stateless service. Original fields, arrays, classes and adapter
+signatures remain. Physical deck ownership stays in inventory; match state stays
+in the separate native Trucazo and ordinary Truco inventories.
+
+The original 5.0.2 package loses native PowerFlight when leaving MAP01 while
+preserving the paid active-card set and timers. The service restores a missing
+instance after travel/personal time without payment, duration reset or duplicate
+bonuses. This is an explicit persistence correction, not a silent equivalence
+claim. A first fixture also needed the ordinary essence visibility update before
+checking sight against a newly spawned Ace. Unsupported scripted return to the
+one-way mansion did not produce the intended final save; the corrected fixture
+uses MAP02/MAP06/MAP02 for actual hub return. Original diagnostic logs remain.
+
+Evidence: `assets/validation_503/RESULTS.json`, source/manifest verification,
+native GZDoom 4.14.2 logs, package hashes and initial/final configuration. Audio
+stays enabled at 5%. Agent checks and author acceptance are distinct; the new
+CA-503-TAROT-01 remains in `pending_test.txt`. The author requested #120 next,
+with a separate commit/PR and live verification. Prior measured regressions are
+preserved; source organization alone is not a performance claim.
+
+The completed comparison passes 93 capture/power/persistence assertions per
+package and matches all 936 card/attribute rows. Seven route-state observations
+match except the intentional native-flight restoration. All 223 serialized
+character-record fields and both initial match payloads agree. Old/new/upgraded
+reload and original rollback pass; current and upgraded saves contain exactly
+one flight instance, while the original defective hub save contains none.
+The original save recovers flight after loading without resetting its timers.
+
+The native Tarot page was inspected in English and Spanish. Window captures of
+old-save Trucazo in English and ordinary Truco in Spanish verify menu restoration,
+card selection, a completed Trucazo trick and a Truco bid after the player's card.
+The internal screenshot command omits the native menu layer, so world-only
+images were not used as menu evidence. The synthetic replacement NPC also needed
+the canonical anchored spawn argument before deferred PostBeginPlay; that fixture
+correction is separate from production behavior. A short startup load schedule
+did not create its requested upgraded save; the final 105-tic schedule records
+the post-load event and save before attempting a subsequent load.
+
+Matched MAP06 throughput is 12.997 -> 13.091 tics/s (+0.72%) over 1,680 tics,
+with 49 identical camera/population/group observations. This single pair does
+not establish a meaningful speedup. Overlay intervals and sparse native thinker
+samples remain distinct from GPU frame times and physical-input latency. The
+earlier #117/#118 regressions remain evidence for #120's integrated comparison.
 
 ## 5.0.2 — Inventory/equipment service (#118, 2026-10-06)
 
