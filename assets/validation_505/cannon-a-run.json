@@ -1,0 +1,67 @@
+﻿{
+    "label":  "cannon-a",
+    "started_utc":  "2026-10-07T03:27:04.0564273Z",
+    "engine":  "C:\\Program Files (x86)\\GZDoom\\gzdoom.exe",
+    "engine_sha256":  "EC706C2EA1EF946EEC13BE7B1B461DF8D52EFCD47CAA6C056ED0E0257F7F9FFA",
+    "iwad_sha256":  "10D67824B11025DDD9198E8CFC87CA335EE6E2D3E63AF4180FA9B8A471893255",
+    "package_sha256":  "8F408DDA02857219F903121D415AFFA64217D45079B733D1AC3FF957BC15706D",
+    "addon_sha256":  "6B55A78AD34D3C1DA164F702FAA70B2BCD2F50986AA0AE125FB0C0B4F91041D3",
+    "initial_config":  "[LastRun]\nVersion=225\n[GlobalSettings]\nvid_preferbackend=1\nvid_vsync=false\nvid_maxfps=60\nvid_activeinbackground=true\ni_pauseinbackground=false\nvid_lowerinbackground=false\ni_soundinbackground=true\ncl_capfps=false\nvid_fullscreen=false\nvid_defwidth=1280\nvid_defheight=720\nuse_mouse=false\nsnd_mastervolume=0.05\nlanguage=enu\n",
+    "arguments":  [
+                      "-noautoload",
+                      "-nomouse",
+                      "-iwad",
+                      "\"C:\\Program Files (x86)\\Steam\\steamapps\\common\\ultimate doom\\base\\doom2\\DOOM2.WAD\"",
+                      "-file",
+                      "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue121\\cannon-retry.pk3\"",
+                      "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue121\\instrument-observer.pk3\"",
+                      "-config",
+                      "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue121\\cannon-a.ini\"",
+                      "-savedir",
+                      "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue121\"",
+                      "-width",
+                      "1280",
+                      "-height",
+                      "720",
+                      "-window",
+                      "-rngseed",
+                      "116",
+                      "-skill",
+                      "2",
+                      "+logfile",
+                      "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue121\\cannon-a.txt\"",
+                      "+con_notifytime",
+                      "0",
+                      "+map",
+                      "MAP06",
+                      "+exec",
+                      "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue121\\cannon-a-exec.cfg\""
+                  ],
+    "benchmark_offset":  48386,
+    "command_script":  "stat rendertimes; stat think; wait 350; profilethinkers -t; bench; event ca116_probe; wait 350; profilethinkers -t; bench; wait 700; profilethinkers -t; bench; event ca116_probe; wait 350; profilethinkers -t; bench; wait 350; profilethinkers -t; bench; event ca116_probe; save ca121_late_cannon-a; wait 140; quit\r\n",
+    "cpu":  [
+                {
+                    "Name":  "AMD Ryzen 9 5950X 16-Core Processor            ",
+                    "NumberOfCores":  16,
+                    "NumberOfLogicalProcessors":  32
+                }
+            ],
+    "gpu":  [
+                {
+                    "Name":  "Parsec Virtual Display Adapter",
+                    "DriverVersion":  "0.45.0.0"
+                },
+                {
+                    "Name":  "NVIDIA GeForce RTX 3070 Ti",
+                    "DriverVersion":  "32.0.15.7688"
+                }
+            ],
+    "os":  {
+               "Caption":  "Microsoft Windows 11 Pro",
+               "Version":  "10.0.26200",
+               "TotalVisibleMemorySize":  33475240
+           },
+    "pid":  22540,
+    "completed_utc":  "2026-10-07T03:31:30.2693278Z",
+    "last_sim_tic":  2205
+}

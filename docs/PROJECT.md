@@ -1,6 +1,211 @@
 # Caelum Argenteum — Project, status and roadmap
 
-Documentation version: **5.0.4** — 2026-10-06.
+Documentation version: **5.0.5** — 2026-10-07.
+
+## 5.0.5 — Siege subsystem diagnosis and shared-group experiments (#121)
+
+Accepted by the author on 2026-10-07 as sufficiently close for this stage,
+with #121 closure and PR #127 merge authorized. Further fluency tests remain
+future work. The measured results and original 35-tic/30-FPS reference are
+retained; acceptance does not promote diagnostic interventions into production.
+
+The complete accepted MAP06 army is measured on baseline `bc086979` / 5.0.4:
+6,000 Mandingas, one commander and 600 defenders. The original 4.37.24 baseline
+and earlier migration measurements remain evidence. This detailed diagnosis
+follows the completed architecture series; it is not retroactively presented
+as a pre-extraction investigation. CombatActor, PortSiege, SiegeEncounter and
+Cannon source bodies are unchanged since the original architecture baseline.
+
+GZDoom 4.14.2 runs on the Ryzen 9 5950X / RTX 3070 Ti, Vulkan, native reported
+1520-by-825 rendering, seed 116 and skill 2. Each main run starts fresh on MAP06,
+with the player fixed at (0, 320, 0), angle 90, no movement input and the same
+initial siege conversation. The first 35 simulation tics are warmup. Pausing
+and priority reduction in the background are disabled; audio stays active at
+5%. Desktop load is not exclusively controlled. Package/engine/IWAD hashes,
+commands, configurations, populations and raw logs accompany each run in
+`assets/validation_505`. Test packages and saves remain in ignored `build/`.
+
+The first matched full-length pair shows progressive simulation slowdown:
+
+| Simulation window | Accepted baseline, tics/s | Instrumented copy, tics/s |
+| --- | ---: | ---: |
+| Initial approach, tics 35–700 | 16.043 | 16.513 |
+| Congested approach, 700–1750 | 10.286 | 10.466 |
+| Later battle, 1750–3500 | 3.014 | 3.057 |
+
+Nominal simulation is 35 tics/s. These are throughput measurements, not display
+FPS. The first full pair has identical sampled scene rows. The two main pairs
+reverse run order and separately measure the effect of instrumentation.
+Callback intervals, 35-tic wall-time windows, native thinker samples and
+synthetic UI/play/UI/next-overlay timing retain their own medians and tails.
+The synthetic route does not measure physical input-to-photon latency.
+
+On the common 35–2100 window, baseline/instrumented throughput is
+9.421/9.575 in the first pair and 9.594/9.373 in reversed order. The resulting
++1.63% and -2.31% differences establish a few-percent noise/overhead envelope,
+not an instrumentation speedup. Both ordinary pairs have identical sampled
+scene rows. The ordinary later overlay-callback median is 5,859.93 ms and p95
+7,483.98 ms (0.177 callbacks/s); 35-tic wall windows have median 347.12 and
+p95 447.95 ms/tic. Simulation catch-up batches about 17 tics before drawing.
+These stalls already preclude the author's stable-35-tics/s, at-least-30-FPS
+target without needing to equate callbacks to physical display presentation.
+
+Every 37th tic samples nested elapsed method scopes. Representative exclusive
+means from the full instrumented run are below; the denominator for the final
+column is the **329.86 ms sum of measured exclusive scopes per sampled late
+tic**, not total process CPU, wall time or GPU time. Scopes contain probe
+overhead and possible OS preemption. Uninstrumented work remains in parents.
+
+| Scope | Initial ms/tic | Congested ms/tic | Later ms/tic | Later measured share |
+| --- | ---: | ---: | ---: | ---: |
+| Port-script native `CheckSight` queries | 1.432 | 35.368 | 268.000 | 81.25% |
+| `AttackerTarget`, excluding timed sight children | 32.362 | 29.888 | 35.702 | 10.82% |
+| Hostile-machine `ObserveGuards` | 5.373 | 5.523 | 5.865 | 1.78% |
+| Port native `A_Chase`, excluding timed children | 2.005 | 3.342 | 5.104 | 1.55% |
+| Remaining CombatActor Tick scope | 4.614 | 4.815 | 5.058 | 1.53% |
+| Remaining native Actor Tick scope | 1.987 | 2.041 | 2.179 | 0.66% |
+
+The target scope includes its sight children: its inclusive late mean is
+303.683 ms/tic. Do not add that to the 268.000 ms sight row. Port sight calls
+grow from about 3,386 to 68,649 per sampled tic; recorded target/lane/group
+candidate visits remain roughly 487,200 and 445,710 respectively. Those
+candidate counters exclude artillery and machine loops. The late native
+sight time attributed through target scope nesting is 267.981 ms/tic.
+The code repeatedly scans eligible defenders and validates visibility as
+members move into occluded/congested approaches; sharing command membership
+alone does not remove that per-member work.
+
+Collision callbacks/contact maintenance, resource/status/statistic methods,
+magic/cannon projectiles, crew/group/lane coordination and player Tick are
+separately represented in the category manifest and raw costs. Sparse controller
+and cannon-target bursts require the additional every-call probe; a short
+coprime sampling interval can miss them. Player/inventory/Tarot work is not a
+leading measured cost in this route. The profile is not an exhaustive trace of
+all engine, sound, GC, menu/event or global work; no residual is forced to zero.
+
+For scale, the late sample records 6,601 CombatActor Ticks per tic; their
+exclusive remainder is about 0.000766 ms per call. Native `A_Chase` averages
+1,591 calls/tic and 0.003367 inclusive ms/call. The 68,649 sight calls average
+0.003904 ms each; target queries average 2,139 calls/tic and 0.141955 inclusive
+ms/call. Contact callbacks cost 0.253 ms/tic, contact-latch maintenance 0.183,
+health/status updates 1.442, offensive statistics 0.937, recovery pulse 0.399,
+recovery-active predicates 0.772, recognition sound 0.437 and elemental status
+0.532. Their denominators/call frequencies are in RESULTS, including nested
+resource predicates. Player Tick is 0.050 inclusive ms/tic on this fixed route;
+inventory, Tarot and card menus are not separately exercised by the siege.
+
+The independent every-call run catches operations missed by sparse sampling.
+Over tics 35–2100, command election averages 7.703 ms/call (p95 9.316), lane
+refresh 2.737 (p95 3.067), crew refill 0.203 (p95 1.674), and cannon selection
+14.057 (p95 78.903). Their inclusive amortized costs are respectively 0.246,
+0.087, 0.006 and 0.572 ms/tic. This run agrees with the normal sampled scene
+rows; logging overhead is separate and its nested totals are not added to the
+main profile. In changed formation workloads, cannon selection is much larger.
+
+Native `bench` reports CPU-side renderer stages separately. Six baseline
+samples span 21.356–32.629 ms for its All value, median 26.615 ms per rendered
+frame. Worker/render/setup stages overlap and must not be summed. Separate
+native captures show 347.5 and 443.0 ms on the global sight counter, confirming
+the large visibility cost without equating different samples/query subsets.
+`stat gpu` is available but publishes no range in the original configuration:
+the inspected Vulkan call sites time selected postprocess effects, not the
+whole scene. An isolated FXAA control publishes 0.76 and 0.75 ms for **FXAA
+only**. Retrieving timestamp results can wait on the GPU, and enabling the
+effect changes rendering; these captures are excluded from main comparisons.
+Whole-scene GPU execution remains **unmeasured by the available native scopes**.
+Overlay intervals include batches of simulation tics and cannot be renamed GPU
+frame time. VISUAL_CHECKS and ENGINE_CAPABILITIES retain the source boundaries.
+
+Native bench scene counters show 18,528 walls, 597 flat primitives and roughly
+7,600–7,800 sprite submissions in the early normal view. Its wall/flat/sprite
+CPU stages help locate submission work, but do not identify one model, effect,
+material or individual actor's GPU contribution. Native range queries cannot
+supply those missing per-object causal costs; selective render suppression
+would be another changed-workload experiment. Rendering, collision internals,
+OS scheduling and work outside the instrumented scopes are not assigned a
+fabricated residual percentage.
+
+The author's additional experiment compares 6,000 individual formation decisions
+with sixty decisions for groups of 100, using the same initial placement and
+four-tic movement cadence. SYSTEMS defines its altered march behavior. Another
+diagnostic shares only leader perception while preserving normal placement,
+combat and native movement. These are isolated interventions, not accepted
+gameplay or additive causal percentages. Results, variability, formation error,
+failed native moves and changed populations remain in the evidence.
+
+Repeated formation controls measure 18.303/18.041 tics/s for independent
+decisions and 13.330/13.115 for shared groups over tics 35–1715. The early
+shared phase reaches nominal 35, versus 18.919/18.610, but later repeated cannon
+sight searches reverse the advantage. In formation100-e, cannon-selection
+children account for 48.856 ms/tic of sight work, versus 0.494 under attacker
+targeting. The final mean relative formation error is 922.947 map units;
+17,824 of 47,952 movement attempts succeed in the last logged 35-tic window.
+Its error denominator excludes blocks whose original first member died, so it
+cannot serve as an unbiased cohesion score across variants. The actual aerial
+capture is `assets/validation_505/formation100-early.png`.
+
+Sharing only leader perception in the normal placement/combat route instead
+measures 30.130/30.415 tics/s over tics 35–2100, versus 9.575/9.373 with ordinary
+instrumentation. The observed 1.858/2.150 overlay callbacks/s still fail the
+author's visual fluency target. Guard spatial queries and failed-cannon-query
+caching are additional isolated factors; combined results are assessed without
+adding separate percentage gains or treating changed combat outcomes as equal.
+
+The spatial-guard factor alone measures 10.442 tics/s, with the same sampled
+scene rows as the normal instrumented run. `ObserveGuards` falls to 0.116 ms/tic
+over the common window. A separate oracle run checks every applicable query
+against the original population scan, with 756 periodic machine records and no
+omitted eligible guard through tic 2205. This positive result is scoped to the
+tested actors/route; future NOBLOCKMAP bodies and broader victory/save cases
+still require a shipping implementation's boundary tests.
+
+In the normal battle, perception plus spatial guards measures 33.033 tics/s
+and 5.432 callbacks/s over tics 35–2100. Adding cannon retry gives repeated
+32.368/32.985 tics/s and 4.764/5.111 callbacks/s; there is no measured extra
+benefit from that factor in this window. Cannon retry alone gives 9.416 tics/s
+with unchanged sampled scene rows, within the ordinary noise envelope.
+The three-factor later window improves to 23.686/25.209 tics/s compared with
+the ordinary 3.057, but only 1.395/1.488 callbacks/s. Its p95 callback gaps are
+902.145/835.627 ms. A large relative simulation gain still fails both the
+stable-rate and visual-frame target. The baseline synthetic request/play/ack/
+frame probes take 1,727/6,034/9,078 ms at the three scheduled points; combined-a
+reduces these to 459/1,040/1,597 ms without establishing physical input latency.
+
+The march combinations isolate the interaction and preserve matching sampled
+scene/movement observations within that synthetic workload:
+
+| March variant, tics 35–1715 | Repeated tics/s | Overlay callbacks/s | Limitation |
+| --- | ---: | ---: | --- |
+| Groups of 100 only | 13.115–13.330 | About 3 | Cannon searches dominate after approach |
+| Groups + failed-cannon-query retry | 32.644–32.825 | 12.430–12.586 | Up to seven tics of acquisition delay |
+| Groups + retry + spatial guards | 34.865–34.989 | 20.243–22.818 | p95 frame-callback gaps 128.496–209.216 ms |
+
+The final combination approaches nominal simulation rate but fails the
+at-least-30-FPS target. Per-body movement, contact checks and status/combat
+Ticks remain; formation alignment still breaks around blocked bodies. No
+population suppression or offscreen simulation cut is used to claim a gain.
+
+The next optimization should first address `CaelumPortSiege.AttackerTarget`
+and its sight-query workload while preserving each member's nearest-visible
+target semantics. Shared candidate-position data or an exact spatial query
+can reduce repeated enumeration; caching visibility needs explicit invalidation
+for movement, death, geometry and player changes. Blindly inheriting a leader's
+vision changes awareness/target choice. Machine guard scans are a separate,
+smaller candidate: a bounded spatial query must retain guard history and the
+existing neutralization/victory rules. Formation navigation, cohesion and
+cannon retry behavior require their own focused design/optimization issues.
+
+Production changes are limited to two release-label diagnostics. All test
+instrumentation stays outside the shipping include tree. Static verification
+checks 3,799 original method bodies after removing known probes and 1,979 field
+declarations; current source differs only in release text and checkout line
+endings. The author accepts #121's measured diagnosis and prototype delivery;
+production optimization and further fluency validation remain future work.
+Final validation includes 21 completed comparison runs, two separate GPU/visual
+runs and a production-package smoke/background check. All 15 diagnostic packages
+reconstruct byte-identically in two passes from pinned Git content. The final
+6,187-member production package matches `src/` exactly. The temporary Windows
+keep-awake request is released and the Balanced power plan remains unchanged.
 
 ## 5.0.4 — Per-player authority and bounded V5.0 closure (#120)
 
@@ -29,7 +234,7 @@ save/hub/rollback and matched original-Architecture-1 measurements are retained 
 historical evidence; organization alone does not establish a speed improvement.
 
 PR #125 delivers #119; PR #126 delivers #120. Both received author acceptance
-on 2026-10-06, with merge and issue closure authorized.
+on 2026-10-06 and are merged, with both issues closed.
 The existing save adapters are retained. Their later removal requires an explicit
 retirement/migration issue, tested saves and the original-pair recovery path.
 

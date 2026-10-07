@@ -1,0 +1,116 @@
+{
+  "checks": [
+    {
+      "run": "baseline-b",
+      "last_tic": 3815,
+      "hash_and_settings_verified": true
+    },
+    {
+      "run": "instrument-a",
+      "last_tic": 3535,
+      "hash_and_settings_verified": true
+    },
+    {
+      "run": "instrument-b",
+      "last_tic": 2205,
+      "hash_and_settings_verified": true
+    },
+    {
+      "run": "baseline-c",
+      "last_tic": 2205,
+      "hash_and_settings_verified": true
+    },
+    {
+      "run": "formation100-e",
+      "last_tic": 1715,
+      "hash_and_settings_verified": true
+    },
+    {
+      "run": "formation1-a",
+      "last_tic": 1715,
+      "hash_and_settings_verified": true
+    },
+    {
+      "run": "formation1-b",
+      "last_tic": 1715,
+      "hash_and_settings_verified": true
+    },
+    {
+      "run": "formation100-f",
+      "last_tic": 1715,
+      "hash_and_settings_verified": true
+    },
+    {
+      "run": "shared-a",
+      "last_tic": 2205,
+      "hash_and_settings_verified": true
+    },
+    {
+      "run": "shared-b",
+      "last_tic": 2205,
+      "hash_and_settings_verified": true
+    },
+    {
+      "run": "events-a",
+      "last_tic": 2205,
+      "hash_and_settings_verified": true
+    },
+    {
+      "run": "guard-check-a",
+      "last_tic": 2205,
+      "hash_and_settings_verified": true
+    },
+    {
+      "run": "guards-a",
+      "last_tic": 2205,
+      "hash_and_settings_verified": true
+    },
+    {
+      "run": "cannon-a",
+      "last_tic": 2205,
+      "hash_and_settings_verified": true
+    },
+    {
+      "run": "formation-retry-a",
+      "last_tic": 1715,
+      "hash_and_settings_verified": true
+    },
+    {
+      "run": "shared-guards-a",
+      "last_tic": 2205,
+      "hash_and_settings_verified": true
+    },
+    {
+      "run": "combined-a",
+      "last_tic": 3535,
+      "hash_and_settings_verified": true
+    },
+    {
+      "run": "combined-b",
+      "last_tic": 3535,
+      "hash_and_settings_verified": true
+    },
+    {
+      "run": "formation-retry-b",
+      "last_tic": 1715,
+      "hash_and_settings_verified": true
+    },
+    {
+      "run": "formation-all-a",
+      "last_tic": 1715,
+      "hash_and_settings_verified": true
+    },
+    {
+      "run": "formation-all-b",
+      "last_tic": 1715,
+      "hash_and_settings_verified": true
+    }
+  ],
+  "ordinary_scene_comparisons": 4,
+  "guard_oracle_rows": 756,
+  "guard_mismatches": 0,
+  "additional_visual_and_production_runs": 3,
+  "power_request_released": true,
+  "author_acceptance": false,
+  "qualification": "Scene-row equality is not a full-state/save proof. Diagnostic changes remain outside production."
+}

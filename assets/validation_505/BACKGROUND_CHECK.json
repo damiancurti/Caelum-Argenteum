@@ -1,0 +1,14 @@
+{
+  "run": "production-a",
+  "action": "Clicked the observed native title-bar minimize button through Computer Use; refresh succeeded without screenshot.",
+  "before": "CA121 SIM tic=245 ms=19970.373500 roster=6001 attackers=6001 defenders=600 groups=68 moving=0 blocked=0 x=0.000 y=320.000 z=-0.000 angle=90.000",
+  "after": "CA121 SIM tic=1015 ms=66477.525100 roster=6001 attackers=5994 defenders=600 groups=70 moving=0 blocked=11 x=0.000 y=320.000 z=-0.000 angle=90.000",
+  "settings": {
+    "i_pauseinbackground": false,
+    "vid_activeinbackground": true,
+    "vid_lowerinbackground": false,
+    "i_soundinbackground": true,
+    "snd_mastervolume": 0.05
+  },
+  "qualification": "Tests continued simulation after the minimize action; it is not a claim about physical presentation while minimized."
+}

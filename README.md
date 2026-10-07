@@ -6,8 +6,27 @@ An independent dark fantasy FPS-RPG inspired by nineteenth-century Argentina.
 Author and game designer: **Damian Curti**. Development target: **GZDoom 4.14.2**
 on Windows 11. The final game is intended to be independent of Doom assets.
 
-**Current release: 5.0.4.** Obtain and update the complete repository, validate
+**Current release: 5.0.5.** Obtain and update the complete repository, validate
 it, then rebuild with `run_dev.bat` as described below.
+
+Issue [#121](https://github.com/damiancurti/Caelum-Argenteum/issues/121) profiles
+the complete MAP06 army and tests the author's shared groups of 100 in isolated
+packages. Repeated target searches and visibility checks dominate the measured
+slowdown. The experiment records both CPU savings and changed trajectories,
+formation breakdown and artillery interactions. See the
+[diagnosis](docs/PROJECT.md#505--siege-subsystem-diagnosis-and-shared-group-experiments-121)
+and [recorded measurements](assets/validation_505/RESULTS.json).
+The production game keeps its existing AI, population, balance and save state.
+The test launcher runs in the background without pausing or reducing priority,
+with audio enabled at 5%. This delivery supplies evidence and focused next steps;
+it does not ship a siege performance fix.
+The combined combat prototype improves late simulation from about 3 to 24–25
+tics/s. The combined march reaches about 35, with 20–23 frame callbacks/s;
+neither meets the author's stable 35-tic/30-FPS target. Positive findings and
+their limits are retained in [KNOWN_PITFALLS](docs/KNOWN_PITFALLS.md).
+The author accepted this diagnostic stage on 2026-10-07 as sufficiently close
+for now and authorized #121 closure / PR #127 merge. Further fluency work is
+deferred; the recorded measurements and production boundary remain unchanged.
 
 Issue [#120](https://github.com/damiancurti/Caelum-Argenteum/issues/120) completes
 the bounded five-issue architecture implementation with explicit per-player
@@ -17,7 +36,8 @@ handlers resolve the requesting player without fallback; saved fields, input
 bindings and compatible adapters remain. See the
 [authority contract](docs/SYSTEMS.md#per-player-authority-and-modular-migration-boundary-120)
 and [integrated evidence](assets/validation_504/RESULTS.json).
-The author accepted all #119/#120 tests on 2026-10-06 and authorized merge/closure. Native two-pawn owner checks use
+The author accepted all #119/#120 tests on 2026-10-06; PRs #125/#126 are merged
+and both issues are closed. Native two-pawn owner checks use
 a local player plus a bot; full co-op/PvP, network lifecycle and shared campaign
 time are not implemented. Thermal/UI/campaign expansion and measured AI
 optimization remain separate work. Architecture organization claims no speedup.

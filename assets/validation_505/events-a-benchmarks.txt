@@ -1,0 +1,90 @@
+Map MAP06: "Barracas al Sud — fortified port",
+x = 0.0000, y = 320.0000, z = 41.0000, angle = 90.0000, pitch = 0.0000
+1 fps
+
+Walls: 18528 (0 splits, 0 t-splits, 32584 vertices)
+Flats: 597 (597 primitives, 187974 vertices)
+Sprites: 7817, Decals=0, Portals: 4, Command buffers: 21
+BSP = 0.803, Clip=3.603
+W: Render=3.795, Setup=5.835
+F: Render=0.252, Setup=0.136
+S: Render=5.283, Setup=3.034
+2D: 0.305 Finish3D: 0.007
+Main thread total=9.417, Main thread waiting=5.012 Worker thread total=9.398, Worker thread waiting=0.394
+All=24.112, Render=11.125, Setup=9.439, Portal=0.534, Drawcalls=4.497, Postprocess=0.028, Finish=2.828
+DLight - Walls: 0 processed, 0 rendered - Flats: 0 processed, 0 rendered
+
+
+
+Map MAP06: "Barracas al Sud — fortified port",
+x = 0.0000, y = 320.0000, z = 41.0000, angle = 90.0000, pitch = 0.0000
+1 fps
+
+Walls: 18528 (0 splits, 0 t-splits, 32584 vertices)
+Flats: 597 (597 primitives, 187974 vertices)
+Sprites: 7623, Decals=0, Portals: 4, Command buffers: 20
+BSP = 0.834, Clip=3.920
+W: Render=3.720, Setup=5.099
+F: Render=0.222, Setup=0.130
+S: Render=3.624, Setup=3.135
+2D: 0.460 Finish3D: 0.005
+Main thread total=8.863, Main thread waiting=4.108 Worker thread total=8.843, Worker thread waiting=0.479
+All=20.497, Render=8.693, Setup=8.883, Portal=0.280, Drawcalls=2.963, Postprocess=0.030, Finish=2.410
+DLight - Walls: 0 processed, 0 rendered - Flats: 0 processed, 0 rendered
+
+
+
+Map MAP06: "Barracas al Sud — fortified port",
+x = 0.0000, y = 320.0000, z = 41.0000, angle = 90.0000, pitch = 0.0000
+0 fps
+
+Walls: 18528 (0 splits, 0 t-splits, 32584 vertices)
+Flats: 597 (597 primitives, 187974 vertices)
+Sprites: 7071, Decals=0, Portals: 4, Command buffers: 21
+BSP = 0.675, Clip=3.553
+W: Render=3.354, Setup=5.367
+F: Render=0.274, Setup=0.122
+S: Render=7.558, Setup=6.753
+2D: 0.325 Finish3D: 0.004
+Main thread total=12.699, Main thread waiting=8.471 Worker thread total=12.679, Worker thread waiting=0.437
+All=36.441, Render=12.180, Setup=12.719, Portal=0.383, Drawcalls=7.346, Postprocess=0.022, Finish=10.986
+DLight - Walls: 0 processed, 0 rendered - Flats: 0 processed, 0 rendered
+
+
+
+Map MAP06: "Barracas al Sud — fortified port",
+x = 0.0000, y = 320.0000, z = 41.0000, angle = 90.0000, pitch = 0.0000
+0 fps
+
+Walls: 18528 (0 splits, 0 t-splits, 32584 vertices)
+Flats: 597 (597 primitives, 187974 vertices)
+Sprites: 7028, Decals=0, Portals: 4, Command buffers: 22
+BSP = 0.662, Clip=3.229
+W: Render=3.262, Setup=7.342
+F: Render=0.246, Setup=0.130
+S: Render=7.149, Setup=3.756
+2D: 0.319 Finish3D: 0.005
+Main thread total=11.619, Main thread waiting=7.728 Worker thread total=11.598, Worker thread waiting=0.371
+All=27.502, Render=11.757, Setup=11.640, Portal=0.317, Drawcalls=6.851, Postprocess=0.030, Finish=3.600
+DLight - Walls: 0 processed, 0 rendered - Flats: 0 processed, 0 rendered
+
+
+
+Map MAP06: "Barracas al Sud — fortified port",
+x = 0.0000, y = 320.0000, z = 41.0000, angle = 90.0000, pitch = 0.0000
+0 fps
+
+Walls: 18528 (0 splits, 0 t-splits, 32584 vertices)
+Flats: 597 (597 primitives, 187974 vertices)
+Sprites: 7058, Decals=0, Portals: 4, Command buffers: 20
+BSP = 0.669, Clip=3.297
+W: Render=3.074, Setup=5.848
+F: Render=0.202, Setup=0.121
+S: Render=5.012, Setup=3.032
+2D: 0.349 Finish3D: 0.005
+Main thread total=9.465, Main thread waiting=5.499 Worker thread total=9.444, Worker thread waiting=0.443
+All=24.025, Render=9.374, Setup=9.484, Portal=0.335, Drawcalls=4.597, Postprocess=0.023, Finish=4.653
+DLight - Walls: 0 processed, 0 rendered - Flats: 0 processed, 0 rendered
+
+
+

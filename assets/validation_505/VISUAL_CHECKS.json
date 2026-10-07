@@ -1,0 +1,72 @@
+{
+  "capture_method": "Actual GZDoom target window through Computer Use; raw PNGs, no image editing.",
+  "captures": [
+    {
+      "file": "formation100-early.png",
+      "run": "formation100-e",
+      "finding": "Aligned shared groups at the start; original formation prototype.",
+      "sha256": "6324b34233807f8b27761a374d2389c84131bdb35f4e0e5f98355dddbd340d60"
+    },
+    {
+      "file": "formation-all-live.png",
+      "run": "formation-all-a",
+      "finding": "Visible aligned formations in the three-factor march experiment. Native thinker sample 9.37 ms; CPU renderer All 7.544 ms.",
+      "sha256": "d44dc519887104862f0e47e51d62cf362dce0a32b96d1c8e1871ea88694c6885"
+    },
+    {
+      "file": "gpu-late-view1.png",
+      "run": "gpu-late-a",
+      "native_sight_ms": 443.0,
+      "native_frame_indicator_ms": 5326,
+      "native_integer_fps": 0,
+      "native_cpu_renderer_all_ms": 26.922,
+      "gpu_range_listing": "empty",
+      "sha256": "6160d8089e10ee66b11730d08c8b549ca95bcff2e55ee5cc5b7cf3f08424ef02"
+    },
+    {
+      "file": "gpu-late-view2.png",
+      "run": "gpu-late-a",
+      "native_sight_ms": 347.5,
+      "native_frame_indicator_ms": 7142,
+      "native_integer_fps": 0,
+      "native_cpu_renderer_all_ms": 26.922,
+      "gpu_range_listing": "empty",
+      "sha256": "30fd5bb34249ee8ac797d459aff931564a8d6617dc4d39d23bc8f58743c2baf1"
+    },
+    {
+      "file": "gpu-formation-default.png",
+      "run": "gpu-formation-a",
+      "native_integer_fps": 38,
+      "gpu_range_listing": "empty",
+      "qualification": "Early phase, before FXAA control; not a full-window rate.",
+      "sha256": "dcd90f4c904edbac280471cdcbe81be9b176ff46311c4a7bf78b80ebfdbb7105"
+    },
+    {
+      "file": "gpu-formation-fxaa1.png",
+      "run": "gpu-formation-a",
+      "gpu_fxaa_ms": 0.76,
+      "native_integer_fps": 14,
+      "sha256": "176970e00eab2fbeca6f8db9f10b37d7fec331f10e170ff34a4271ed848e503c"
+    },
+    {
+      "file": "gpu-formation-fxaa2.png",
+      "run": "gpu-formation-a",
+      "gpu_fxaa_ms": 0.75,
+      "native_integer_fps": 11,
+      "sha256": "18d120c55b19d715241a836a71c5b941b30819b8c38ff701de1f11f2f466f1f0"
+    },
+    {
+      "file": "production-before-minimize.png",
+      "run": "production-a",
+      "sha256": "e92858961eba3c4acd4c5ec5f34a10295f910fdb19b15fc79b4b6558e0605533",
+      "finding": "Final production package entered the full siege; subsequent native title-bar minimize is recorded in BACKGROUND_CHECK.json."
+    }
+  ],
+  "limitations": [
+    "GPU range times only the enabled postprocess effect; whole-scene GPU time unavailable in these native scopes.",
+    "FXAA is deliberately enabled after the tic-700 bench in a separate run; altered rendering and query-result waits exclude it from matched comparisons.",
+    "Global native sight scope and nested script probes are different query sets and different samples.",
+    "One activation timed out during cold save loading; refreshed-window retry succeeded.",
+    "A later minimize attempt found the formation GPU process already closing; it does not establish a background check."
+  ]
+}

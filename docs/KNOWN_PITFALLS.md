@@ -4,6 +4,146 @@ Status: integrated engineering register (issue #22, patch 4.36.1b).
 Prepared: 2026-09-23. Inherits the project's release after integration.
 Inspected baseline: `1dc390576fa330d37ff543526fc7e69a397fc28f` (PR #7).
 
+## CA-KP-045 - Native GPU statistics may expose only selected effects
+
+Status/evidence: CODE-VERIFIED / ENGINE-VERIFIED.
+First recorded / last checked: 2026-10-07. Issue #121 / 5.0.5.
+Environment: GZDoom 4.14.2, Vulkan, RTX 3070 Ti, 1520-by-825 rendering.
+
+The presence of `stat gpu` does not establish a whole-frame GPU timer. In the
+tested default siege configuration its listing remains empty. The inspected
+Vulkan `PushGroup` call sites are in postprocess rendering; `PPFXAA::Render`
+returns before creating a range when `gl_fxaa` is zero. An isolated control
+enabling `gl_fxaa 1` produces `fxaa=0.76 ms` and `fxaa=0.75 ms`, establishing
+that this effect's timestamp path works on the hardware. It does not measure
+world geometry, actor drawing or total GPU cost.
+
+Native `bench`/`stat rendertimes` report CPU-side stages. Vulkan query retrieval
+uses `WAIT_BIT`, so the GPU-control run and changed postprocessing stay separate
+from performance comparisons. Keep empty/unsupported scope results explicit,
+preserve raw captures and never infer zero GPU load from no displayed range.
+Evidence: [visual readings](../assets/validation_505/VISUAL_CHECKS.json) and
+[pinned engine sources](../assets/validation_505/ENGINE_CAPABILITIES.json).
+Whole-scene GPU time remains unmeasured with these available native scopes.
+
+## CA-KP-044 - Combine measured savings and recheck the frame-time tail
+
+Status/evidence: CODE-VERIFIED / ENGINE-VERIFIED; isolated diagnostic success.
+First recorded / last checked: 2026-10-07. Issue #121 / 5.0.5.
+Baseline: `bc086979`, GZDoom 4.14.2, Windows 11/Vulkan, full MAP06 army.
+
+The grouped march makes repeated negative cannon searches expensive.
+Caching only failed searches for the existing eight-tic target-update period
+raises its repeated whole-window throughput from 13.115–13.330 to
+32.644–32.825 tics/s. Adding spatial guard queries raises it to 34.865–34.989.
+These comparisons retain the same sampled scene rows; their final movement
+success/error observations also match. This is a positive interaction result,
+but the shared march still replaces Mandinga combat and cannot preserve rigid
+alignment when native collision blocks individual members.
+
+The final march combination yields only 20.243–22.818 overlay callbacks/s,
+with p95 gaps of 128.496–209.216 ms. Normal combat with shared perception,
+spatial guards and cannon retry improves late simulation from 3.057 to
+23.686–25.209 tics/s, yet has 835.627–902.145 ms p95 callback gaps. Neither
+meets the author's stable-35-tics/s, at-least-30-FPS target. Cannon retry alone
+has no resolved benefit in the normal common window. Do not add independent
+percentage gains, assume a saved AI query removes per-body collision/Tick cost,
+or substitute average simulation rate for frame pacing.
+
+Reproduce the single factors before their combinations using the #121 suite.
+[Results](../assets/validation_505/RESULTS.json) retain raw windows and repeated
+pairs. A shipping retry policy must explicitly accept up to seven tics of added
+acquisition latency; production policy remains unchanged here.
+
+## CA-KP-043 - A spatial broad phase can preserve remembered machine guards
+
+Status/evidence: CODE-VERIFIED / ENGINE-VERIFIED; isolated diagnostic success.
+First recorded / last checked: 2026-10-07. Issue #121 / 5.0.5.
+Baseline: `bc086979`, GZDoom 4.14.2, Windows 11/Vulkan, full MAP06 army.
+Scope: `CaelumHostileMachine.ObserveGuards` in SiegeEncounter.
+
+Scanning all 6,001 attacker records for every armed hostile machine costs
+roughly 5.5 ms/tic. A `BlockThingsIterator` broad phase at the existing
+`GuardRadius`, followed by the original exact 3D `IsNearby` predicate and
+encounter check, reduces the sampled common-window scope to 0.116 ms/tic.
+Keep `RememberGuard`, prior `LocalGuards`, confirmed-death and boss-retreat
+rules; replacing historical membership with only today's neighbors would
+change machine neutralization/victory behavior.
+
+The guard-check fixture runs both searches on every applicable call and
+reports any eligible full-scan entry omitted by the iterator. It completed
+through tic 2205 with 756 periodic machine verification rows and zero missing
+guards. The separate timing fixture reaches 10.442 tics/s versus 9.575 with
+ordinary instrumentation; sampled scene rows are identical. The oracle itself
+retains the expensive scan and must not be used as the optimization timing.
+
+Reproduce via `guard-check-a` and `guards-a` in the #121 suite. Evidence:
+[results](../assets/validation_505/RESULTS.json) and adjacent raw logs. This
+validates current eligible bodies in this route, not future NOBLOCKMAP enemies,
+all possible vertical geometry, serialized guard order or every victory state.
+Production remains unchanged; a shipping follow-up needs those boundary checks.
+
+## CA-KP-042 - Share perception only with explicit gameplay semantics
+
+Status/evidence: CODE-VERIFIED / ENGINE-VERIFIED; isolated diagnostic success.
+First recorded / last checked: 2026-10-07. Issue #121 / 5.0.5.
+Baseline: `bc086979`, GZDoom 4.14.2, Windows 11/Vulkan, seed 116, full MAP06 army.
+
+Command groups of 100 already exist, but `CaelumPortSiege.AttackerTarget` still
+does repeated per-member enumeration and sight checks. Sharing one leader's
+query per tic, while retaining normal placement, individual attacks and native
+movement, raises throughput from 9.373–9.575 to 30.130–30.415 tics/s over
+tics 35–2100. Target-selection exclusive cost drops to 0.661 ms/tic in shared-a;
+the ordinary later target scope reaches 303.683 ms/tic including its sight calls.
+This is positive evidence for reducing repeated perception, not a shipping fix:
+followers inherit a different position's visibility and nearest target.
+
+The aligned march prototype confirms the interaction risk. Sixty shared plans
+reach nominal 35 tics/s early versus 18.610–18.919 with 6,000 independent plans.
+Across tics 35–1715 it is instead 27.2–27.3% slower: its changed trajectories
+provoke expensive repeated cannon searches. Native movement still runs for each
+body, blocked moves break alignment, and the prototype replaces Mandinga attacks.
+Neither percentage is an additive causal share of the original battle.
+
+Reproduce with `assets/validation_505/prepare.py` and the matched/formation
+scripts through `run_suite.ps1`. [Results](../assets/validation_505/RESULTS.json)
+retain repeated pairs, populations, callback tails, formation displacement and
+nested scope costs. The author's target is stable 35 tics/s and at least 30 FPS;
+the shared-perception runs do not meet it. On 2026-10-07 the author accepts the
+diagnostic/prototype stage as close enough for now and authorizes #121 closure.
+The recorded metrics and the need for future production work remain unchanged.
+
+## CA-KP-041 - Background rendering alone does not keep simulation running
+
+Status/evidence: CODE-VERIFIED / ENGINE-VERIFIED.
+First recorded / last checked: 2026-10-07. Issue #121 / 5.0.5.
+Baseline: `bc086979` diagnostic copies; GZDoom 4.14.2, Windows 11/Vulkan.
+
+`vid_activeinbackground=true` enables rendering but leaves the independent
+`i_pauseinbackground` setting in force. Tests appeared stalled after losing
+focus until that setting was disabled. The native menu calls it "Pause in
+background". For unattended measurements use `i_pauseinbackground=false`,
+`vid_lowerinbackground=false` and `vid_activeinbackground=true`; preserve audio
+with `i_soundinbackground=true`. The #121 runner uses a separate configuration,
+echoes all settings from the engine and sets master volume to 0.05.
+
+The final production-package check advanced from tic 245 to 1015 after clicking
+the native title-bar minimize button. [Background evidence](../assets/validation_505/BACKGROUND_CHECK.json)
+links the exact log rows and configuration. This proves simulation continuation,
+not hidden-window presentation FPS. Do not compare a paused/focus-throttled
+sample with a foreground sample. Preliminary focus-setting experiments are
+excluded from final performance pairs.
+
+Windows sleep is a separate concern. `keep_awake.ps1` holds a bounded,
+thread-scoped `SetThreadExecutionState` request and resets it in `finally` when
+the release marker arrives. It changes no power-plan values; process exit also
+releases the request. API success is recorded. Listing all system power requests
+requires administrator privileges on this machine and was unavailable; no
+elevation or persistent power-setting change was used. See the final power
+record alongside the run evidence for release and unchanged plan verification.
+The request was released successfully on 2026-10-07 at 03:49:53 UTC; both plan
+identifiers are `381b4222-f694-41f0-9685-ff5bb260df2e` (Balanced).
+
 ## CA-KP-040 - A saved active effect may outlive its native hub power
 
 Status/evidence: CODE-VERIFIED / ENGINE-VERIFIED.

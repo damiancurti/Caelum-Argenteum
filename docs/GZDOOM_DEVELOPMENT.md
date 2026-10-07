@@ -284,6 +284,66 @@ population and group counts before comparing timings; discard overlapping or
 camera-drift samples, as recorded in `assets/validation_502/RESULTS.json`.
 These controls belong to the observation addon, never to production input code.
 
+For #121 and subsequent Windows measurements, explicitly set
+`i_pauseinbackground=false`, `vid_activeinbackground=true` and
+`vid_lowerinbackground=false`. The second setting enables rendering, not
+simulation. Keep `i_soundinbackground=true` and `snd_mastervolume=0.05` for
+the requested audio condition. Record the values read by the running engine,
+initial/final configuration and any menu or focus intervention. A minimized
+window continuing to render is not itself proof that `level.time` advances.
+
+The #121 probes wrap original methods only in ignored diagnostic packages.
+`verify.py` removes the known instrumentation and compares original body tokens
+and field declarations. The main timer samples every 37th tic with a nested
+stack: inclusive scopes contain their children; exclusive scopes subtract
+instrumented children. Uninstrumented work and probe overhead remain inside
+the enclosing scope. Sparse periodic operations need separate burst evidence;
+a short coprime sampling window can still miss an operation entirely.
+`eventprobe.pk3` therefore records every command-election, lane-refresh,
+crew-refill and cannon-target call. It is a separate diagnostic run.
+
+GZDoom 4.14.2 also exposes `stat sight`, `stat rendertimes`, `bench` and
+`stat gpu`. `bench` appends native rendering **CPU-side** timing and scene
+counts to `benchmarks.txt`; preserve each run's byte range before the next run.
+`stat gpu` uses Vulkan timestamp query ranges on this hardware, with a wait
+when retrieving results. Capture that overlay in separate runs and preserve
+the screenshots; GPU ranges may nest and are not whole-frame/presentation time.
+The Vulkan range call sites inspected for #121 cover selected postprocessing
+effects. The default scene produces an empty GPU listing; enabling only FXAA
+in a separate control exposes its range (0.75–0.76 ms), not scene GPU time.
+Do not infer zero GPU cost from an empty listing or rename CPU `All` as GPU time.
+The implementations are `src/playsim/p_sight.cpp`,
+`src/common/rendering/hwrenderer/data/hw_clock.cpp`,
+`src/common/engine/stats.h` and
+`src/common/rendering/vulkan/system/vk_commandbuffer.cpp` at tag `g4.14.2`.
+
+Reproduce #121 with `python assets/validation_505/prepare.py --from-git`, then
+`powershell -NoProfile -ExecutionPolicy Bypass -File assets/validation_505/run_suite.ps1`.
+The preparer uses the pinned accepted commit and verifies a canonical runtime
+content fingerprint; a rebuilt ZIP may have different metadata/line endings
+from the original recorded package. Engine and IWAD paths are parameters of
+`run_native.ps1`; neither binary, saves nor generated packages are distributed.
+Run packages serially, with unique labels. Keep input/camera fixed, compare
+scene rows, and distinguish ordinary observer overhead from the deliberately
+different formation and shared-perception workloads. `summarize.py` produces
+the measured windows and `verify.py` checks the source boundary.
+
+`guard-check.pk3` retains an every-call full-population oracle alongside the
+spatial broad phase; any `CA121 GUARD_MISMATCH` invalidates that check. Its
+timings are not the spatial-query speed measurement. Run the query-only package
+separately. Likewise, assess the cannon retry alone before combining it with
+shared targeting or formation: movement changes which negative searches repeat.
+The eight-tic diagnostic retry reuses `TARGET_UPDATE_TICS` but intentionally
+changes acquisition latency, so it must not silently enter production.
+
+For an unattended session, launch `assets/validation_505/keep_awake.ps1` in a
+hidden PowerShell process. It makes a bounded Windows execution-state request,
+not a power-plan edit. Finish by creating `build/issue121/release-awake.signal`,
+wait for the helper to exit and inspect `power-request.json` for successful
+release and equal before/after plan identifiers. Preserve prior markers/evidence
+under distinct names before a new session; never overwrite a previous result.
+An execution-state request does not defeat an explicit user sleep command.
+
 For inventory extraction, distinguish detached incoming pickups from an existing
 owned stack. Validate `Owner` before mutating either pointer; resolve instance IDs
 inside the requesting pawn's native inventory. #118's stateless service retains

@@ -1,0 +1,48 @@
+{
+  "method_bodies_verified": 3799,
+  "field_declarations_verified": 1979,
+  "instrumented_methods": 26,
+  "runtime_changes": [
+    "caelum/world/CaelumPhysicalHazards.zs",
+    "caelum/world/CaelumSewerMaze.zs"
+  ],
+  "checkout_line_endings_only": [
+    "caelum/core/CaelumTarotDetails.zs",
+    "caelum/core/CaelumTarotPowers.zs",
+    "caelum/core/CaelumTarotService.zs",
+    "caelum/equipment/CaelumInventoryService.zs",
+    "caelum/equipment/CaelumPersistentCharacterState.zs",
+    "caelum/hud/CaelumHUDOverlay.zs",
+    "caelum/hud/CaelumJournalOverlay.zs",
+    "caelum/player/CaelumPlayer.zs",
+    "caelum/player/CaelumPlayerAuthority.zs",
+    "caelum/player/CaelumPlayerCharacter.zs",
+    "caelum/player/CaelumPlayerPresentation.zs",
+    "caelum/player/CaelumPlayerResources.zs",
+    "caelum/quests/CaelumArcanaProgress.zs",
+    "caelum/quests/CaelumMainM00FoolCapture.zs",
+    "caelum/trucazo/CaelumTrucazoMatch.zs",
+    "caelum/trucazo/CaelumTrucazoMenu.zs",
+    "caelum/trucazo/CaelumTrucazoRules.zs",
+    "caelum/trucazo/CaelumTrucoMatch.zs",
+    "caelum/trucazo/CaelumTrucoMenu.zs",
+    "caelum/world/CaelumJourneyPlan.zs",
+    "ZSCRIPT"
+  ],
+  "production_test_includes": false,
+  "baseline": {
+    "source_commit": "bc086979bc2adc2f66e498b66f96a8fe755ed0ea",
+    "accepted_archive_sha256": "f8b8d1ba14da0d9db7624eb1ba5e7ebcb6269e1d47e59bb810fecb0c4c6ea695",
+    "runtime_tree_sha256": "dcb074ab0a6476510ddbaf554c6d71da97dc96067e5d0b6f839d99205c3e221c",
+    "canonical_runtime_tree_sha256": "2631ed875efa64cfe24b2947fe17b18016c623e12818ba23db1622042cc73d5d",
+    "runtime_members": 6187,
+    "map06_sha256": "84f0c18fdb4be7a91eff146845f78dda5082d5b0c9d996928f0652d7c6fc7efd"
+  },
+  "tested_baseline_archive_sha256": "f8b8d1ba14da0d9db7624eb1ba5e7ebcb6269e1d47e59bb810fecb0c4c6ea695",
+  "tested_baseline_runtime_tree_sha256": "dcb074ab0a6476510ddbaf554c6d71da97dc96067e5d0b6f839d99205c3e221c",
+  "production": {
+    "archive_sha256": "3f699900d264587050296b12fb3ea390780cee8697488a2eff4e84ccd1ddfc0f",
+    "members": 6187,
+    "all_members_equal_current_src": true
+  }
+}

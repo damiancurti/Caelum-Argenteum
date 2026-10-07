@@ -1,6 +1,43 @@
 # TASKS.md — Active tasks
 
-Documentation version: **5.0.4** — 2026-10-06.
+Documentation version: **5.0.5** — 2026-10-07.
+
+## Issue #121 — Siege subsystem diagnosis and combined experiments (5.0.5)
+
+- Accepted on 2026-10-07: the author considers the demonstrated fluency close
+  enough for this stage and authorizes #121 closure / PR #127 merge. Further
+  fluency tests are future work; experimental AI remains outside production.
+- Implementation and agent validation complete: 21 comparison runs plus two
+  GPU/visual controls and the final production/background smoke check. Exact
+  source/package checks and two-pass reconstruction of 15 diagnostic packages
+  pass. The temporary keep-awake request is released with no power-plan change.
+- Positive findings: shared perception, exact spatial guard broad phase, and
+  failed-query retry within the changed formation workload. The combined march
+  reaches nominal simulation rate but averages only 20–23 frame callbacks/s;
+  normal combat still slows to 24–25 tics/s late. The 35-tic/30-FPS target is
+  **not met**. KNOWN_PITFALLS CA-KP-041–045 preserve tested results and boundaries.
+- Record the accepted 5.0.4 full-army baseline, representative approach,
+  congestion and late battle, exact source/package identity, native settings,
+  camera, hardware, populations and independent timing domains.
+- Rank target enumeration/sight, movement/contact work, per-actor updates,
+  group/controller scans, artillery/projectiles, player and rendering costs.
+  Use nested 37-tic samples plus every-call sparse-event probes; preserve
+  native thinker, CPU renderer and separate GPU-range evidence.
+- Validate observer overhead in reversed-order, scene-identical pairs;
+  distinguish scope-time percentages from whole-process/wall/GPU cost.
+- Test the author's aligned groups of 100 against independent march, then
+  normal shared perception, spatial guards, cannon retries and combinations.
+  Disclose altered movement/awareness/acquisition and interactions. The original
+  35-tic/30-FPS target remains a measurement reference, not a fulfilled metric
+  or a blocker to the author's accepted closure of this diagnostic stage.
+- Keep production behavior/save fields unchanged. Evidence lives in
+  `assets/validation_505`; measured interpretation is in PROJECT and confirmed
+  reusable findings in KNOWN_PITFALLS. #121 author acceptance is recorded in HISTORY.
+- Next focused optimization candidates: preserve member-specific target/LOS
+  semantics while reducing repeated perception; exact spatial guard queries;
+  explicit cannon acquisition retry policy; renderer submission cost. Design
+  cohesive formations separately from per-body collision and individual combat.
+  Historical #86 remains closed; #121 does not authorize a silent population cut.
 
 ## Issue #120 — Per-player authority and integrated closure (5.0.4)
 
