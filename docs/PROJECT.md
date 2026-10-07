@@ -1,6 +1,45 @@
 # Caelum Argenteum — Project, status and roadmap
 
-Documentation version: **5.0.3** — 2026-10-06.
+Documentation version: **5.0.4** — 2026-10-06.
+
+## 5.0.4 — Per-player authority and bounded V5.0 closure (#120)
+
+The five-issue architecture series now has compatible player coordination,
+one inventory/equipment implementation, one Tarot implementation and explicit
+receiver/owner boundaries. A stateless authority helper checks the current native
+pawn, rejects prediction-time commands and resolves event player slots without
+fallback. Canonical records, owned equipment and pawn-held crafting previews
+cannot be supplied from another player. GZDoom retains native state and execution
+authority. No fields, schemas, controls, maps, balance or actor counts change.
+
+The author accepted all #119/#120 tests on 2026-10-06 and authorized merge/closure.
+This closes the implemented scope of #116–#120. It does not mean all remaining pawn policy has been extracted or that
+the broader V5 roadmap is complete. The older audit's speculative A5–A8 follow-ups
+are renamed F1–F4 below to avoid confusing them with Architecture 5 / #120.
+Crafting/session coordination, combat/narrative dispatch and measured siege work
+need separate issues. Thermal exposure, native UI/creation redesign, campaign
+expansion and multiplayer design remain separate milestones.
+
+The SYSTEMS contract distinguishes player state, local presentation and shared
+map state. Shared campaign time and network lifecycle remain unsupported. Native
+owner tests use two actual player slots with a local human and a native bot; they
+do not claim two-client transport or networked card play. Integrated domain,
+save/hub/rollback and matched original-Architecture-1 measurements are retained in
+`assets/validation_504/RESULTS.json`. Earlier #117/#118 measured regressions remain
+historical evidence; organization alone does not establish a speed improvement.
+
+PR #125 delivers #119; PR #126 delivers #120. Both received author acceptance
+on 2026-10-06, with merge and issue closure authorized.
+The existing save adapters are retained. Their later removal requires an explicit
+retirement/migration issue, tested saves and the original-pair recovery path.
+
+Integrated MAP06 results versus the original 4.37.24 reference are 11.113/11.567
+tics/s (+4.09%) and, in reversed order, 11.790/10.762 (-8.72%). Each uses the same
+1,680-tic window and 49 matching scene rows. This variability establishes no
+stable gain; frame callbacks, synthetic input-event routes and native thinker
+samples are reported separately in HISTORY and the evidence. A complete repeat
+replaces one run that exited before the required window. F3 remains a measured
+follow-up, preserving army counts and accepted rules.
 
 ## 5.0.3 — Authoritative Tarot service (#119)
 
@@ -17,7 +56,7 @@ MAP01 despite an active saved Fool timer. Travel/personal-time reconciliation
 now restores that instance idempotently without payment or renewed duration.
 This bounded persistence fix is distinguished from the mechanical extraction.
 The SYSTEMS contract and `assets/validation_503/RESULTS.json` record evidence,
-rollback and limitations. Author acceptance remains pending. The author also
+rollback and limitations. Author acceptance passed on 2026-10-06. The author also
 requested continuing with #120 after this delivery; its owner/integration work
 and the unresolved #117/#118 performance attribution stay separate.
 
@@ -173,10 +212,11 @@ a rewrite or silently expand #116 further.
 | A2 — #117, after A1 | Delegate draft/profile and resource policies to stateless services; retain fields, native callbacks, input and personal-time ordering | Exact body/declaration equivalence; native profile/resource matrix, old/new save/reload and hub return; selectors/creation retain behavior. |
 | A3 — #118, after A2 | Implemented: exact-item lookup, IDs, queries, mutation, projections and equipment reconciliation in one service; native pickup/selector adapters retained | Two identical items retain IDs/wear; Box capacity, reservations, rejected transactions, equip/drop/break/repair and save/travel neither lose nor duplicate items. |
 | A4 — #119, after A3 | Implemented: one stateless Tarot service with saved record and compatible adapters; separate Trucazo/Truco state and physical inventory contract | Capture/select/activate/expire, physical deck/Box gate, bonuses and reward idempotence; no UI refresh grants or timer reset. Restore the missing native flight instance across non-hub travel. |
-| A5 — after inventory contracts | Extract remaining crafting planning/task coordination and merchant session/transaction coordination in separate changes; reuse #118 inventory commits and retain record/live handoff | Reservations, cancellation, completion and payment/reward exactly once; pause/session loss, travel and reload; no free duplication or lost stock. |
-| A6 — after player/inventory contracts | Further isolate combat dispatch and narrative transitions individually; keep the resource adapters and native movement/weapon states | Press/hold/release, ammunition/resource spending, interruption and exact item wear; attack cadence/physics and quest reward idempotence unchanged. |
-| A7 — after measured ownership review | Separate map-local targeting, command rebuild and siege adapters individually; do not replace actors or change AI cadence in an organization patch | Same roster/losses/targets/crew and group limits; scene-matched native profiling and responsiveness evidence; performance changes require their own measured purpose. |
-| A8 — after single-player domains stabilize | Isolate shared-session authority and define supported participant model explicitly | Author decisions for shared time/progress/rewards precede implementation; per-player isolation and multi-client tests are mandatory before claiming network support. |
+| A5 — #120, after A4 | Implemented: explicit per-player receiver/record/item/preview contracts, guarded native event routing and integrated validation; retain all adapters | Native two-pawn owner isolation, current/old/re-saved loads and original-pair rollback; integrated MAP01/MAP02/MAP06 path; original Architecture 1 performance comparison with separate simulation/overlay/input evidence. |
+| F1 — future focused issues | Extract remaining crafting planning/task coordination and merchant session/transaction coordination; reuse #118 inventory commits and retain record/live handoff | Reservations, cancellation, completion and payment/reward exactly once; pause/session loss, travel and reload; no free duplication or lost stock. |
+| F2 — future focused issues | Further isolate combat dispatch and narrative transitions individually; keep resource adapters and native movement/weapon states | Press/hold/release, ammunition/resource spending, interruption and exact item wear; attack cadence/physics and quest reward idempotence unchanged. |
+| F3 — measured performance follow-up | Isolate measured map-local targeting, command rebuild and siege costs individually; no actor replacement or AI cadence change in an organization patch | Same roster/losses/targets/crew and group limits; scene-matched native profiling and responsiveness evidence; each optimization needs its own measured purpose. |
+| F4 — explicit multiplayer design | Define shared-session authority and supported participant model | Author decisions for shared time/progress/rewards precede implementation; native multi-client join/leave/reconnect/respawn/transfer tests are mandatory before claiming network support. |
 
 Persistence adapters are checked alongside each slice rather than postponed to a
 final bulk migration. Thermal exposure (V5.1), CA-V5-NATIVE-UI, broader Tarot powers,
@@ -3418,7 +3458,7 @@ content extensions and the pending previous versions are returned to V5.
 | V4.36: mobile environment and physical hazards | The 0i weight formula, maze, tables, saves and bow art are accepted; #8 is corrected and author-accepted; #9 retains the flail correction. Author-requested #10–#15 add the T1 four-section sewer, rats, prisoner escorts/port rewards and Tarot artwork; #18–#21 supply siege assets, breakable actor gates, rams and cannons (historical catapult task CA-436-04). Rams now have native #20 evidence (4.36.16), with CA-43612-RAM-01 author acceptance confirmed on 2026-09-26; cannon operation now has #21 evidence (4.36.17), with CA-43613-CATAPULT-01 author acceptance confirmed on 2026-09-27. Per the author's #8 clarification, the existing ceiling/elevator cover moving sectors; avalanches are deferred until additional maps and damaging surfaces until temperature effects, so those three are not release blockers. Validate integration/save/reset before extracting Impact Physics; neither assets nor a closed issue substitutes for acceptance. |
 | V4.37: Tarot and Trucazo | Implemented and feature-accepted: physical 78-card deck, three campaign essences with selection/activation, and a complete NPC Trucazo slice. #82 / 4.37.24 owns final integration and export. Remaining acquisition, Major powers, broader awakening and team/network modes stay in V5. |
 | **V4 test export** | #17 / 4.36.28 is accepted historical evidence. #82 / 4.37.24 exports the current integrated MAP01 -> MAP02 -> MAP06 slice with initial controls and final validation. It does not claim full campaign or standalone completion. |
-| **V5.0: modular code architecture** | Started in #116 / 5.0.0 with the dependency/state audit and first HUD/Journal extraction. Ordered A2–A8 slices above continue reducing CaelumPlayer to coordination. One implementation of inventory/player/Tarot; cross-player authority remains pending. Preserve inputs/selectors and apply each issue's explicit save-compatibility contract; #116 carries the author's older-save waiver. |
+| **V5.0: modular code architecture** | The bounded #116–#120 series is implemented: player services/adapters, authoritative inventory and Tarot operations, explicit per-player contracts and integrated native validation. #119/#120 author acceptance passed on 2026-10-06. Compatible inputs/selectors/save adapters remain; further F1–F4 coordination/performance/network work is separate and full multiplayer is not claimed. |
 | V5.1: thermal exposure | Model of heat/cold based on climate, zones, activity, persistent humidity, wind and real equipment; Resilience, consumables, shelters, drying, rest and acclimatization. Numerical curves await the author's balance decisions. |
 | V5.x: marine resources and biomes | Persistent 3D sources, melee extraction slashing/piercing, toughness/rarity/depth/region/skill, exhaustion and regeneration. Marine biomes, algae/iodine and non-potable waters; stores maintain access to remote materials. |
 

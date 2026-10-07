@@ -1,8 +1,92 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **5.0.3** — 2026-10-06.
+Documentation version: **5.0.4** — 2026-10-06.
+
+## 5.0.4 — Per-player authority and integrated closure (#120, 2026-10-06)
+
+Author confirmation on 2026-10-06: **CA-504-AUTHORITY-01**, originating in
+5.0.4 / #120, **passed**. The author confirmed every pending check and
+authorized PR #126 merge and #120 closure. The entry is removed from the
+pending queue. This acceptance does not assert full multiplayer support or
+a measured speedup; the documented limitations remain. Continue diagnosis in #121.
+
+The author requested #120 after #119 with live checks, commit and push. #119 was
+delivered as commit `c4b717c7`, PR #125, initially pending author acceptance.
+This separate patch adds a stateless authority contract, 203 operation guards,
+canonical record/owned preview checks and explicit event-player resolution.
+Fields, public signatures, existing method bodies, schemas and adapters remain;
+the Tarot compatibility revision now aliases its authoritative service constant.
+No balance, map, asset, input binding or population change is introduced.
+
+The Journal handler previously indexed an unchecked event player slot. The
+shared resolver now rejects out-of-range/inactive slots and non-current or
+predicted pawns before play mutations. Other guards reject foreign migration
+records, Tarot projection records and crafting preview objects. A native two-slot
+test passes 36 checks for ownership, prediction, null/orphan receivers, separate
+resources/Tarot clocks and legitimate native drop/pickup with ID reassignment.
+The second participant is a GZDoom bot, not a remote client. The existing shared
+campaign-clock limitation is reproduced rather than presented as multiplayer.
+
+The first bot fixture used an incorrect field name and was corrected. A second
+attempt could not spawn a bot because the installed engine lacked bots.cfg.
+The final test copies the installed engine to an ignored local test directory,
+checks identical executable bytes and supplies one local zcajun/bots.cfg entry.
+The installed engine is untouched and no engine/IWAD/save is distributed.
+The generic stack-pickup fixture initially ran on MAP01, where accepted Limbo
+material quotas correctly rejected its raw-wood assumptions. Repeating the old
+wait timing confirmed this was not a timing failure. Restoring the fixture's
+original MAP03 context tests unrestricted stacks without changing Limbo rules.
+
+Evidence is retained in `assets/validation_504/RESULTS.json` with exact hashes,
+commands, initial settings, normalized logs and fixture sources. Audio remains
+enabled at 5%. Static, isolated native and author evidence remain distinct.
+At delivery CA-503-TAROT-01 was carried forward and CA-504-AUTHORITY-01 was pending.
+The bounded #116–#120 implementation is complete; shared multiplayer lifecycle,
+thermal/UI/campaign work and further coordination/performance slices remain
+separate tasks. Compatible adapters are not retired by this closure.
+
+Integrated native comparisons pass 249 player, 127 inventory and 93 Tarot
+assertions per package. They match 93/9/7 domain output rows, all 936
+card/attribute rows, 593 serialized pawn fields in both player/inventory fixtures,
+10/23 owned inventory payloads, 223 Tarot-record fields and two match payloads.
+Weather object-table indices are resolved to their values with alias identity
+retained; a different serialization index is not a gameplay-state difference.
+Original/current/upgraded saves and original-pair rollback pass for all domains;
+an original 5.0.0 save also passes upgrade, repeat load and original rollback.
+Nine crafting categories plus merchant buy/sell pass 79 checks per package;
+generic stack pickup/capacity passes 65 per package. English/Spanish native
+creation callbacks allocate the 4+30-point draft and MAP01 startup consumes it.
+Actual Windows target-window captures after native keyboard input confirm the
+Spanish Journal's Ace selection (2/3 -> 3/3), an English Trucazo trick won with
+the selected 7 of Coins, and Spanish Truco's King of Swords play followed by
+Argento's bid. Both matches load original 5.0.2 saves. The paused UI does not
+advance the WorldTick observer; post-action UI evidence is visual inspection,
+not an invented after-action log assertion. These remain agent checks.
+
+Four complete performance samples retain identical 49 scene observations and
+measure tics 35–1715 against the original pre-extraction 4.37.24 package:
+11.113 -> 11.567 tics/s (+4.09%), then 11.790 -> 10.762 (-8.72%) in reversed
+order. No stable gain or whole-scene cause is established. One earlier repeat
+ended after 45 observations; its cause was not isolated, it was excluded, and
+a longer command window supplied the complete replacement. Extra end tics are
+excluded from all metrics. Desktop/GPU load and window focus are uncontrolled.
+
+Overlay callback medians within those same windows are 1224.96/1153.02 ms and
+1223.23/1276.97 ms. These are callback intervals, not GPU frame timings. Three
+synthetic UI/play/UI requests per run record 1.23–4.50 s to the next observed
+overlay; this excludes physical-device/OS/display latency. Native single-tic
+profiles charge 20.97–99.55 ms to the 6,000 Mandinga instances across samples.
+The measured follow-up is finer attribution of actor resource recovery,
+target/sight and chase work; a small controller Tick sample does not exclude
+controller methods called from actor ticks. Prior #117/#118 regressions remain.
 
 ## 5.0.3 — Tarot domain service (#119, 2026-10-06)
+
+Author confirmation on 2026-10-06: **CA-503-TAROT-01**, originating in
+5.0.3 / #119, **passed**, including the pending ordinary-play Tarot, save/travel
+and card-menu checks. The author authorized PR #125 merge and #119 closure.
+The confirmed entry is removed from the pending queue; no version increment
+is made for acceptance of this existing patch.
 
 Following explicit acceptance of all #118 tests, commit `06a062fa` recorded
 CA-502-INVENTORY-01 as passed. PR #124 merged as `135ae0f9` and #118 closed.
@@ -23,7 +107,7 @@ uses MAP02/MAP06/MAP02 for actual hub return. Original diagnostic logs remain.
 Evidence: `assets/validation_503/RESULTS.json`, source/manifest verification,
 native GZDoom 4.14.2 logs, package hashes and initial/final configuration. Audio
 stays enabled at 5%. Agent checks and author acceptance are distinct; the new
-CA-503-TAROT-01 remains in `pending_test.txt`. The author requested #120 next,
+CA-503-TAROT-01 was initially recorded in `pending_test.txt`. The author requested #120 next,
 with a separate commit/PR and live verification. Prior measured regressions are
 preserved; source organization alone is not a performance claim.
 

@@ -6,8 +6,23 @@ An independent dark fantasy FPS-RPG inspired by nineteenth-century Argentina.
 Author and game designer: **Damian Curti**. Development target: **GZDoom 4.14.2**
 on Windows 11. The final game is intended to be independent of Doom assets.
 
-**Current release: 5.0.3.** Obtain and update the complete repository, validate
+**Current release: 5.0.4.** Obtain and update the complete repository, validate
 it, then rebuild with `run_dev.bat` as described below.
+
+Issue [#120](https://github.com/damiancurti/Caelum-Argenteum/issues/120) completes
+the bounded five-issue architecture implementation with explicit per-player
+authority across player, inventory and Tarot services. Invalid/predicted commands
+and foreign records, items or crafting previews are rejected. Native event
+handlers resolve the requesting player without fallback; saved fields, input
+bindings and compatible adapters remain. See the
+[authority contract](docs/SYSTEMS.md#per-player-authority-and-modular-migration-boundary-120)
+and [integrated evidence](assets/validation_504/RESULTS.json).
+The author accepted all #119/#120 tests on 2026-10-06 and authorized merge/closure. Native two-pawn owner checks use
+a local player plus a bot; full co-op/PvP, network lifecycle and shared campaign
+time are not implemented. Thermal/UI/campaign expansion and measured AI
+optimization remain separate work. Architecture organization claims no speedup.
+Matched MAP06 pairs versus the original Architecture 1 reference vary from
++4.09% to -8.72% throughput; no stable improvement is established.
 
 Issue [#119](https://github.com/damiancurti/Caelum-Argenteum/issues/119) centralizes
 Tarot collection, powers and capture checks in `CaelumTarotService`, retaining
@@ -15,8 +30,8 @@ saved fields and compatible adapters. It also restores an already-active Fool
 flight after map travel if the engine removed its native instance, without a
 new payment or timer reset. Physical inventory and both card-game match states
 keep their own authority. See the [contract](docs/SYSTEMS.md#tarot-service-and-retained-save-contract-119)
-and [evidence](assets/validation_503/RESULTS.json). Author acceptance is pending;
-#120 follows with integrated authority checks. Earlier performance regressions
+and [evidence](assets/validation_503/RESULTS.json). Author acceptance passed on 2026-10-06;
+#120 adds integrated authority checks above. Earlier performance regressions
 remain recorded below.
 Native before/after checks match all 936 card/attribute contributions and the
 saved record/match state. MAP06 measures 12.997/13.091 tics/s (+0.72%); this
@@ -40,7 +55,7 @@ The accepted [#117](https://github.com/damiancurti/Caelum-Argenteum/issues/117) 
 character/resource operations behind the existing `CaelumPlayer` adapters.
 The pawn retains every serialized field, native lifecycle hook and input path;
 stateless services reuse the existing profile, attribute and resource rules.
-Inventory and Tarot follow in #118/#119. See the
+Inventory and Tarot were consolidated in #118/#119. See the
 [player contracts](docs/SYSTEMS.md#player-character-and-resource-adapters-117)
 and [validation evidence](assets/validation_501/RESULTS.json). This is an
 organization change with no new gameplay or claimed performance gain.

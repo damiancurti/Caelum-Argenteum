@@ -2771,7 +2771,7 @@ class CaelumJournalOverlay : EventHandler
 
     override void NetworkProcess(ConsoleEvent e)
     {
-        CaelumPlayer requestingPlayer = CaelumPlayer(players[e.Player].mo);
+        CaelumPlayer requestingPlayer = CaelumPlayerAuthority.FromNetworkPlayer(e.Player);
         if (requestingPlayer == null) { return; }
         if (e.Name == "ca_crafting_browser_mode")
         { CaelumCraftingBrowser.Get(requestingPlayer).SetMode(requestingPlayer,e.Args[0]); return; }

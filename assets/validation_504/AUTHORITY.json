@@ -1,0 +1,85 @@
+{
+  "result": "PASS",
+  "baseline": "c4b717c7e8ab49e0cbe1a6f67e7f15f18c850b52",
+  "guarded_operations": 203,
+  "stateless_authority": true,
+  "retained_schemas": {
+    "CaelumTarotPowers": {
+      "fields": 0,
+      "methods": 8
+    },
+    "CaelumTarotFlight": {
+      "fields": 0,
+      "methods": 2
+    },
+    "CaelumTarotService": {
+      "fields": 0,
+      "methods": 32
+    },
+    "CaelumInventoryService": {
+      "fields": 0,
+      "methods": 160
+    },
+    "CaelumJournalOverlay": {
+      "fields": 4,
+      "methods": 78
+    },
+    "CaelumJournalInput": {
+      "fields": 0,
+      "methods": 4
+    },
+    "CaelumPlayer": {
+      "fields": 604,
+      "methods": 544
+    },
+    "CaelumPlayerCharacter": {
+      "fields": 0,
+      "methods": 10
+    },
+    "CaelumPlayerPresentation": {
+      "fields": 0,
+      "methods": 3
+    },
+    "CaelumPlayerResources": {
+      "fields": 0,
+      "methods": 29
+    },
+    "CaelumTrucazoEvents": {
+      "fields": 1,
+      "methods": 4
+    },
+    "CaelumTrucazoMenu": {
+      "fields": 7,
+      "methods": 22
+    },
+    "CaelumTrucoEvents": {
+      "fields": 1,
+      "methods": 4
+    },
+    "CaelumTrucoMenu": {
+      "fields": 7,
+      "methods": 21
+    }
+  },
+  "complete_remaining_bodies_checked": true,
+  "package_added": [
+    "caelum/player/CaelumPlayerAuthority.zs"
+  ],
+  "package_removed": [],
+  "package_changed": [
+    "ZSCRIPT",
+    "caelum/core/CaelumTarotPowers.zs",
+    "caelum/core/CaelumTarotService.zs",
+    "caelum/equipment/CaelumInventoryService.zs",
+    "caelum/hud/CaelumJournalOverlay.zs",
+    "caelum/player/CaelumPlayer.zs",
+    "caelum/player/CaelumPlayerCharacter.zs",
+    "caelum/player/CaelumPlayerPresentation.zs",
+    "caelum/player/CaelumPlayerResources.zs",
+    "caelum/trucazo/CaelumTrucazoMenu.zs",
+    "caelum/trucazo/CaelumTrucoMenu.zs",
+    "caelum/world/CaelumPhysicalHazards.zs",
+    "caelum/world/CaelumSewerMaze.zs"
+  ],
+  "package_sha256": "f8b8d1ba14da0d9db7624eb1ba5e7ebcb6269e1d47e59bb810fecb0c4c6ea695"
+}

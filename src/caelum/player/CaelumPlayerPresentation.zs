@@ -4,6 +4,7 @@ class CaelumPlayerPresentation : Object play
 {
     static void RefreshSocialJournalSnapshot(CaelumPlayer user)
     {
+        if (!CaelumPlayerAuthority.CanMutate(user)) return;
         user.JournalReputationTrialEnabled = user.FindInventory("CaelumReputationTrialState") != null;
         CaelumPersistentCharacterState persistentState =
             user.GetPersistentCharacterState(true);
@@ -105,6 +106,7 @@ class CaelumPlayerPresentation : Object play
 
     static void SyncHUDActiveWeaponState(CaelumPlayer user)
     {
+        if (!CaelumPlayerAuthority.CanMutate(user)) return;
         user.HUDHasEquippedSeal = false;
         user.HUDSealChannelAvailable = user.CombatChannelModeActive || user.CanStartSealChannel();
         user.HUDEquippedSealType = CaelumConstants.SEAL_FIRE;
@@ -190,6 +192,7 @@ class CaelumPlayerPresentation : Object play
 
     static void SyncHUDLoadState(CaelumPlayer user)
     {
+        if (!CaelumPlayerAuthority.CanMutate(user)) return;
         if (user.DerivedStats == null)
         {
             user.HUDCarriedWeight = 0.0;

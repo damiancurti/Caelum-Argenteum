@@ -4,6 +4,7 @@ class CaelumPlayerCharacter : Object play
 {
     static int ReadNewCharacterDraft(CaelumPlayer user, Name setting, int fallback)
     {
+        if (!CaelumPlayerAuthority.CanRead(user)) return fallback;
         if (user.player == null) { return fallback; }
         CVar value = CVar.GetCVar(setting, user.player);
         return value == null ? fallback : value.GetInt();
@@ -11,6 +12,7 @@ class CaelumPlayerCharacter : Object play
 
     static int ReadNewCharacterLayer(CaelumPlayer user, int layer)
     {
+        if (!CaelumPlayerAuthority.CanRead(user)) return 0;
         switch (layer)
         {
             case 0: return user.ReadNewCharacterDraft("ca_newchar_layer0", 0);
@@ -22,6 +24,7 @@ class CaelumPlayerCharacter : Object play
 
     static int ReadNewCharacterAttribute(CaelumPlayer user, int attribute)
     {
+        if (!CaelumPlayerAuthority.CanRead(user)) return 0;
         switch (attribute)
         {
             case 0: return user.ReadNewCharacterDraft("ca_newchar_attribute0", 0);
@@ -41,6 +44,7 @@ class CaelumPlayerCharacter : Object play
 
     static bool NewCharacterDraftIsReady(CaelumPlayer user)
     {
+        if (!CaelumPlayerAuthority.CanRead(user)) return false;
         if (user.player == null) { return false; }
         CVar ready = CVar.GetCVar("ca_newchar_ready", user.player);
         return ready != null && ready.GetBool();
@@ -48,6 +52,7 @@ class CaelumPlayerCharacter : Object play
 
     static void ClearNewCharacterDraftReady(CaelumPlayer user)
     {
+        if (!CaelumPlayerAuthority.CanMutate(user)) return;
         if (user.player == null) { return; }
         CVar ready = CVar.GetCVar("ca_newchar_ready", user.player);
         if (ready != null) { ready.SetBool(false); }
@@ -55,6 +60,8 @@ class CaelumPlayerCharacter : Object play
 
     static bool ValidateLoadedNewCharacterDraft(CaelumPlayer user)
     {
+        if (!CaelumPlayerAuthority.CanRead(user)) return false;
+        if (user.CharacterProfile == null || user.CharacterAllocation == null) return false;
         if (user.CharacterProfile.Race < CaelumConstants.RACE_BEAST_MAN
             || user.CharacterProfile.Race > CaelumConstants.RACE_GOBLIN
             || user.CharacterProfile.FirstClass < CaelumConstants.CLASS_WARRIOR
@@ -101,6 +108,7 @@ class CaelumPlayerCharacter : Object play
 
     static bool ConsumeNewCharacterDraft(CaelumPlayer user)
     {
+        if (!CaelumPlayerAuthority.CanMutate(user)) return false;
         if (!user.NewCharacterDraftIsReady()) { return false; }
 
         user.CharacterProfile.Race = user.ReadNewCharacterDraft(
@@ -151,6 +159,7 @@ class CaelumPlayerCharacter : Object play
 
     static void InitializeDirectMapCharacter(CaelumPlayer user)
     {
+        if (!CaelumPlayerAuthority.CanMutate(user)) return;
         user.CharacterProfile.InitializeDefaultTestProfile();
         user.CharacterAllocation.ResetAllocations();
         for (int layer = 0; layer < CaelumConstants.ATTRIBUTE_LAYER_COUNT; layer++)
@@ -180,6 +189,7 @@ class CaelumPlayerCharacter : Object play
 
     static void EnsureCurrentAttributeBalance(CaelumPlayer user)
     {
+        if (!CaelumPlayerAuthority.CanMutate(user)) return;
         if (user.AttributeBalanceVersion >= 3 || !user.CharacterCreationComplete
             || user.Attributes == null || user.DerivedStats == null) return;
         user.ApplyCharacterProfile();
@@ -188,6 +198,7 @@ class CaelumPlayerCharacter : Object play
 
     static void ApplyCharacterProfile(CaelumPlayer user)
     {
+        if (!CaelumPlayerAuthority.CanMutate(user)) return;
         if (user.Attributes != null
             && user.CharacterProfile != null
             && user.CharacterAllocation != null

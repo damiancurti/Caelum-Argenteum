@@ -4,6 +4,7 @@ class CaelumInventoryService : Object play
 {
     static void SyncLiveMagicBoxOwnershipFromPersistentState(CaelumPlayer user)
     {
+        if (!CaelumPlayerAuthority.CanMutate(user)) return;
         CaelumPersistentCharacterState persistentState =
             user.GetPersistentCharacterState(true);
         if (persistentState == null)
@@ -18,6 +19,7 @@ class CaelumInventoryService : Object play
 
     static void NormalizeUnownedMagicBoxStorage(CaelumPlayer user)
     {
+        if (!CaelumPlayerAuthority.CanMutate(user)) return;
         if (user.MagicBoxOwned) { return; }
         for (Inventory cursor = user.Inv; cursor != null; cursor = cursor.Inv)
         {
@@ -35,6 +37,7 @@ class CaelumInventoryService : Object play
 
     static bool GrantMagicBoxFromPalomo(CaelumPlayer user, bool announce = true)
     {
+        if (!CaelumPlayerAuthority.CanMutate(user)) return false;
         CaelumPersistentCharacterState persistentState =
             user.GetPersistentCharacterState(true);
         if (persistentState == null) { return false; }
@@ -76,6 +79,7 @@ class CaelumInventoryService : Object play
 
     static CaelumEquipmentItem FindNativeEquipmentItem(CaelumPlayer user, int kind, int itemType, int armorSlot, int tier, int equipmentSize)
     {
+        if (!CaelumPlayerAuthority.CanRead(user)) return null;
         for (Inventory cursor = user.Inv; cursor != null; cursor = cursor.Inv)
         {
             CaelumEquipmentItem item = CaelumEquipmentItem(cursor);
@@ -91,6 +95,7 @@ class CaelumInventoryService : Object play
 
     static CaelumEquipmentItem FindNativeMagicWeaponItem(CaelumPlayer user, int weaponType, int essenceType, int tier, int equipmentSize)
     {
+        if (!CaelumPlayerAuthority.CanRead(user)) return null;
         for (Inventory cursor = user.Inv; cursor != null; cursor = cursor.Inv)
         {
             CaelumEquipmentItem item = CaelumEquipmentItem(cursor);
@@ -106,6 +111,7 @@ class CaelumInventoryService : Object play
 
     static CaelumEquipmentItem FindNativeEquipmentItemById(CaelumPlayer user, int itemId)
     {
+        if (!CaelumPlayerAuthority.CanRead(user)) return null;
         if (itemId <= 0) { return null; }
         for (Inventory cursor = user.Inv; cursor != null; cursor = cursor.Inv)
         {
@@ -117,6 +123,7 @@ class CaelumInventoryService : Object play
 
     static CaelumEquipmentItem FindOtherNativeEquipmentItemById(CaelumPlayer user, int itemId, CaelumEquipmentItem excludedItem)
     {
+        if (!CaelumPlayerAuthority.CanRead(user)) return null;
         if (itemId <= 0) { return null; }
         for (Inventory cursor = user.Inv; cursor != null; cursor = cursor.Inv)
         {
@@ -132,6 +139,7 @@ class CaelumInventoryService : Object play
 
     static int EnsureEquipmentItemId(CaelumPlayer user, CaelumEquipmentItem item)
     {
+        if (!CaelumPlayerAuthority.CanMutate(user)) return 0;
         if (item != null && item.Owner != null && item.Owner != user) return 0;
         if (item == null) { return 0; }
         CaelumPersistentCharacterState persistentState =
@@ -167,6 +175,7 @@ class CaelumInventoryService : Object play
 
     static void EnsureAllEquipmentItemIds(CaelumPlayer user)
     {
+        if (!CaelumPlayerAuthority.CanMutate(user)) return;
         for (Inventory cursor = user.Inv; cursor != null; cursor = cursor.Inv)
         {
             CaelumEquipmentItem item = CaelumEquipmentItem(cursor);
@@ -176,6 +185,7 @@ class CaelumInventoryService : Object play
 
     static CaelumEquipmentItem FindEquippedNativeEquipmentItem(CaelumPlayer user, int kind, int itemType, int armorSlot, int tier, int equipmentSize, int essenceType = -1)
     {
+        if (!CaelumPlayerAuthority.CanRead(user)) return null;
         for (Inventory cursor = user.Inv; cursor != null; cursor = cursor.Inv)
         {
             CaelumEquipmentItem item = CaelumEquipmentItem(cursor);
@@ -197,6 +207,7 @@ class CaelumInventoryService : Object play
 
     static void RepairActiveEquipmentItemReferences(CaelumPlayer user)
     {
+        if (!CaelumPlayerAuthority.CanMutate(user)) return;
         user.EnsureAllEquipmentItemIds();
         if (user.ArmorModel != null)
         {
@@ -291,6 +302,7 @@ class CaelumInventoryService : Object play
 
     static bool HasEquippedNativeWeaponType(CaelumPlayer user, int weaponType)
     {
+        if (!CaelumPlayerAuthority.CanRead(user)) return false;
         for (Inventory cursor = user.Inv; cursor != null; cursor = cursor.Inv)
         {
             CaelumEquipmentItem item = CaelumEquipmentItem(cursor);
@@ -308,6 +320,7 @@ class CaelumInventoryService : Object play
 
     static bool HasEquippedNativeMagicWeapon(CaelumPlayer user, int weaponType, int essenceType, int tier)
     {
+        if (!CaelumPlayerAuthority.CanRead(user)) return false;
         for (Inventory cursor = user.Inv; cursor != null; cursor = cursor.Inv)
         {
             CaelumEquipmentItem item = CaelumEquipmentItem(cursor);
@@ -327,6 +340,7 @@ class CaelumInventoryService : Object play
 
     static bool ActivateEquippedMagicWeapon(CaelumPlayer user, int requestedWeaponType, int requestedEssenceType, int requestedTier)
     {
+        if (!CaelumPlayerAuthority.CanMutate(user)) return false;
         if (user.WeaponModel == null) { return false; }
 
         int weaponType = Clamp(
@@ -388,6 +402,7 @@ class CaelumInventoryService : Object play
 
     static int CountNativeMagicBoxSlots(CaelumPlayer user)
     {
+        if (!CaelumPlayerAuthority.CanRead(user)) return 0;
         if (!user.MagicBoxOwned) { return 0; }
         int total = 0;
         for (Inventory cursor = user.Inv; cursor != null; cursor = cursor.Inv)
@@ -428,12 +443,14 @@ class CaelumInventoryService : Object play
 
     static int GetMagicBoxWeightDivisor(CaelumPlayer user)
     {
+        if (!CaelumPlayerAuthority.CanRead(user)) return 1;
         if (!user.MagicBoxOwned || user.DerivedStats == null) { return 1; }
         return Max(1, user.DerivedStats.MagicBoxCapacity);
     }
 
     static double CalculateMagicBoxReducedContentWeight(CaelumPlayer user, double rawContentWeight)
     {
+        if (!CaelumPlayerAuthority.CanRead(user)) return 0;
         if (!user.MagicBoxOwned) { return 0.0; }
         double precision = CaelumConstants.MAGIC_BOX_WEIGHT_PRECISION;
         double reducedWeight = Max(0.0, rawContentWeight)
@@ -443,6 +460,7 @@ class CaelumInventoryService : Object play
 
     static double CalculateMagicBoxTotalWeight(CaelumPlayer user, double rawContentWeight)
     {
+        if (!CaelumPlayerAuthority.CanRead(user)) return 0;
         if (!user.MagicBoxOwned) { return 0.0; }
         return CaelumConstants.MAGIC_BOX_BASE_WEIGHT
             + user.CalculateMagicBoxReducedContentWeight(rawContentWeight);
@@ -450,6 +468,7 @@ class CaelumInventoryService : Object play
 
     static bool CanApplyInventoryWeightTransition(CaelumPlayer user, double personalDelta, double boxRawDelta)
     {
+        if (!CaelumPlayerAuthority.CanRead(user)) return false;
         if (user.DerivedStats == null) { return false; }
         if (!user.MagicBoxOwned && boxRawDelta > 0.0) { return false; }
         double projectedRawWeight = Max(
@@ -465,6 +484,7 @@ class CaelumInventoryService : Object play
 
     static bool CanAddRawWeightToMagicBox(CaelumPlayer user, double rawWeight)
     {
+        if (!CaelumPlayerAuthority.CanRead(user)) return false;
         if (!user.MagicBoxOwned) { return false; }
         return user.CanApplyInventoryWeightTransition(
             0.0, Max(0.0, rawWeight)
@@ -473,6 +493,7 @@ class CaelumInventoryService : Object play
 
     static bool CanMoveRawWeightFromMagicBoxToPersonal(CaelumPlayer user, double rawWeight)
     {
+        if (!CaelumPlayerAuthority.CanRead(user)) return false;
         if (!user.MagicBoxOwned) { return false; }
         double resolvedWeight = Max(0.0, rawWeight);
         return user.CanApplyInventoryWeightTransition(
@@ -482,6 +503,7 @@ class CaelumInventoryService : Object play
 
     static bool CanMovePersonalStackWithIncomingToMagicBox(CaelumPlayer user, double existingRawWeight, double incomingRawWeight)
     {
+        if (!CaelumPlayerAuthority.CanRead(user)) return false;
         double existingWeight = Max(0.0, existingRawWeight);
         double incomingWeight = Max(0.0, incomingRawWeight);
         return user.CanApplyInventoryWeightTransition(
@@ -491,6 +513,7 @@ class CaelumInventoryService : Object play
 
     static bool HasNativeMagicBoxSlotAvailable(CaelumPlayer user)
     {
+        if (!CaelumPlayerAuthority.CanRead(user)) return false;
         if (!user.MagicBoxOwned || user.DerivedStats == null) { return false; }
         int reserved = user.CraftingTaskCompleting
             ? 0 : user.CraftingTaskReservedBoxSlots;
@@ -500,6 +523,7 @@ class CaelumInventoryService : Object play
 
     static CaelumConsumableItem FindNativeConsumableItem(CaelumPlayer user, int consumableType)
     {
+        if (!CaelumPlayerAuthority.CanRead(user)) return null;
         for (Inventory cursor = user.Inv; cursor != null; cursor = cursor.Inv)
         {
             CaelumConsumableItem item = CaelumConsumableItem(cursor);
@@ -513,6 +537,7 @@ class CaelumInventoryService : Object play
 
     static Inventory FindNativeAmmunition(CaelumPlayer user, int ammunitionType)
     {
+        if (!CaelumPlayerAuthority.CanRead(user)) return null;
         if (ammunitionType == CaelumConstants.AMMUNITION_ARROW)
         {
             return user.FindInventory("CaelumArrowAmmo");
@@ -526,6 +551,7 @@ class CaelumInventoryService : Object play
 
     static bool AcquireJavelinAmmunition(CaelumPlayer user, int ammunitionType, int incomingAmount)
     {
+        if (!CaelumPlayerAuthority.CanMutate(user)) return false;
         if (incomingAmount <= 0 || user.DerivedStats == null) { return false; }
 
         CaelumCarbineAmmo existing = CaelumCarbineAmmo(
@@ -591,6 +617,7 @@ class CaelumInventoryService : Object play
 
     static CaelumSpecialInventoryItem FindNativeSpecialItem(CaelumPlayer user, int specialCategory, int specialType, int specialTier = 0)
     {
+        if (!CaelumPlayerAuthority.CanRead(user)) return null;
         for (Inventory cursor = user.Inv; cursor != null; cursor = cursor.Inv)
         {
             CaelumSpecialInventoryItem item =
@@ -612,6 +639,7 @@ class CaelumInventoryService : Object play
 
     static CaelumCurrencyItem FindNativeCurrency(CaelumPlayer user, int currencyType)
     {
+        if (!CaelumPlayerAuthority.CanRead(user)) return null;
         return CaelumCurrencyItem(user.FindNativeSpecialItem(
             CaelumConstants.EQUIPMENT_KIND_CURRENCY,
             CaelumEconomyRules.ResolveCurrencyType(currencyType)
@@ -620,12 +648,14 @@ class CaelumInventoryService : Object play
 
     static int GetOwnedCurrencyAmount(CaelumPlayer user, int currencyType)
     {
+        if (!CaelumPlayerAuthority.CanRead(user)) return 0;
         CaelumCurrencyItem currency = user.FindNativeCurrency(currencyType);
         return currency != null ? Max(0, currency.Amount) : 0;
     }
 
     static double GetOwnedMoneyCopperValue(CaelumPlayer user)
     {
+        if (!CaelumPlayerAuthority.CanRead(user)) return 0;
         double totalValue = 0.0;
         for (int currencyType = 0;
             currencyType < CaelumConstants.CURRENCY_TYPE_COUNT;
@@ -639,6 +669,7 @@ class CaelumInventoryService : Object play
 
     static Inventory FindPalomoMerchantProduct(CaelumPlayer user, int merchantItem)
     {
+        if (!CaelumPlayerAuthority.CanRead(user)) return null;
         int consumableType = user.GetPalomoMerchantConsumableType(merchantItem);
         if (consumableType >= 0)
         { return user.FindNativeConsumableItem(consumableType); }
@@ -659,6 +690,7 @@ class CaelumInventoryService : Object play
 
     static int CountPalomoMerchantProduct(CaelumPlayer user, int merchantItem, bool includeReserved)
     {
+        if (!CaelumPlayerAuthority.CanRead(user)) return 0;
         int consumableType = user.GetPalomoMerchantConsumableType(merchantItem);
         if (consumableType >= 0)
         {
@@ -674,6 +706,7 @@ class CaelumInventoryService : Object play
 
     static double GetPalomoMerchantProductUnitWeight(CaelumPlayer user, int merchantItem)
     {
+        if (!CaelumPlayerAuthority.CanRead(user)) return 0;
         return user.GetPalomoMerchantConsumableType(merchantItem) >= 0
             ? CaelumConsumableItem.UnitWeightForType(user.GetPalomoMerchantConsumableType(merchantItem))
             : CaelumConstants.MATERIAL_UNIT_WEIGHT;
@@ -681,6 +714,7 @@ class CaelumInventoryService : Object play
 
     static void ResetPalomoCurrencyPlan(CaelumPlayer user)
     {
+        if (!CaelumPlayerAuthority.CanMutate(user)) return;
         for (int currencyType = 0;
             currencyType < CaelumConstants.CURRENCY_TYPE_COUNT; currencyType++)
         {
@@ -694,6 +728,7 @@ class CaelumInventoryService : Object play
 
     static bool BuildPalomoCurrencyPaymentPlan(CaelumPlayer user, int copperAmount)
     {
+        if (!CaelumPlayerAuthority.CanMutate(user)) return false;
         if (copperAmount < 0
             || user.GetOwnedMoneyCopperValue() + 0.0001 < copperAmount)
         { return false; }
@@ -738,6 +773,7 @@ class CaelumInventoryService : Object play
 
     static bool BuildPalomoCurrencyCreditPlan(CaelumPlayer user, int copperAmount)
     {
+        if (!CaelumPlayerAuthority.CanMutate(user)) return false;
         if (copperAmount < 0) { return false; }
         user.ResetPalomoCurrencyPlan();
         int remaining = copperAmount;
@@ -757,6 +793,7 @@ class CaelumInventoryService : Object play
 
     static void RoutePalomoCurrencyGainsToMagicBox(CaelumPlayer user)
     {
+        if (!CaelumPlayerAuthority.CanMutate(user)) return;
         if (!user.MagicBoxOwned) { return; }
         for (int currencyType = 0;
             currencyType < CaelumConstants.CURRENCY_TYPE_COUNT; currencyType++)
@@ -769,6 +806,7 @@ class CaelumInventoryService : Object play
 
     static double GetPalomoCurrencyPlanPersonalWeightDelta(CaelumPlayer user)
     {
+        if (!CaelumPlayerAuthority.CanRead(user)) return 0;
         double delta = 0.0;
         for (int currencyType = 0;
             currencyType < CaelumConstants.CURRENCY_TYPE_COUNT; currencyType++)
@@ -787,6 +825,7 @@ class CaelumInventoryService : Object play
 
     static double GetPalomoCurrencyPlanBoxRawWeightDelta(CaelumPlayer user)
     {
+        if (!CaelumPlayerAuthority.CanRead(user)) return 0;
         double delta = 0.0;
         for (int currencyType = 0;
             currencyType < CaelumConstants.CURRENCY_TYPE_COUNT; currencyType++)
@@ -805,6 +844,7 @@ class CaelumInventoryService : Object play
 
     static int GetPalomoCurrencyPlanBoxSlotDelta(CaelumPlayer user)
     {
+        if (!CaelumPlayerAuthority.CanRead(user)) return 0;
         int delta = 0;
         for (int currencyType = 0;
             currencyType < CaelumConstants.CURRENCY_TYPE_COUNT; currencyType++)
@@ -822,6 +862,7 @@ class CaelumInventoryService : Object play
 
     static bool PalomoTransactionCapacityFits(CaelumPlayer user, double personalDelta, double boxRawDelta, int boxSlotDelta)
     {
+        if (!CaelumPlayerAuthority.CanRead(user)) return false;
         if (!user.MagicBoxOwned && (boxRawDelta > 0.0 || boxSlotDelta > 0))
         { return false; }
         int currentSlots = user.CountNativeMagicBoxSlots()
@@ -836,6 +877,7 @@ class CaelumInventoryService : Object play
 
     static bool PreparePalomoPurchaseCapacity(CaelumPlayer user, int merchantItem, int quantity, int price)
     {
+        if (!CaelumPlayerAuthority.CanMutate(user)) return false;
         Inventory product = user.FindPalomoMerchantProduct(merchantItem);
         bool productAlreadyBoxed = user.IsPalomoMerchantProductInMagicBox(product);
         double unitWeight = user.GetPalomoMerchantProductUnitWeight(merchantItem);
@@ -884,6 +926,7 @@ class CaelumInventoryService : Object play
 
     static bool PreparePalomoSaleCapacity(CaelumPlayer user, int merchantItem, int quantity, int price)
     {
+        if (!CaelumPlayerAuthority.CanMutate(user)) return false;
         Inventory product = user.FindPalomoMerchantProduct(merchantItem);
         if (product == null || product.Amount < quantity) { return false; }
         bool productBoxed = user.IsPalomoMerchantProductInMagicBox(product);
@@ -914,6 +957,7 @@ class CaelumInventoryService : Object play
 
     static bool ApplyPalomoCurrencyPlan(CaelumPlayer user)
     {
+        if (!CaelumPlayerAuthority.CanMutate(user)) return false;
         for (int currencyType = 0;
             currencyType < CaelumConstants.CURRENCY_TYPE_COUNT; currencyType++)
         {
@@ -947,6 +991,7 @@ class CaelumInventoryService : Object play
 
     static bool AddPalomoMerchantProduct(CaelumPlayer user, int merchantItem, int quantity)
     {
+        if (!CaelumPlayerAuthority.CanMutate(user)) return false;
         Inventory existing = user.FindPalomoMerchantProduct(merchantItem);
         if (existing != null)
         {
@@ -988,6 +1033,7 @@ class CaelumInventoryService : Object play
 
     static bool RemovePalomoMerchantProduct(CaelumPlayer user, int merchantItem, int quantity)
     {
+        if (!CaelumPlayerAuthority.CanMutate(user)) return false;
         Inventory product = user.FindPalomoMerchantProduct(merchantItem);
         if (product == null || product.Amount < quantity) { return false; }
         product.Amount -= quantity;
@@ -997,6 +1043,7 @@ class CaelumInventoryService : Object play
 
     static CaelumWeightedKey FindNativeKey(CaelumPlayer user, int keyType)
     {
+        if (!CaelumPlayerAuthority.CanRead(user)) return null;
         for (Inventory cursor = user.Inv; cursor != null; cursor = cursor.Inv)
         {
             CaelumWeightedKey keyItem = CaelumWeightedKey(cursor);
@@ -1010,6 +1057,7 @@ class CaelumInventoryService : Object play
 
     static bool PrepareNativeEquipmentPickup(CaelumPlayer user, CaelumEquipmentItem item)
     {
+        if (!CaelumPlayerAuthority.CanMutate(user)) return false;
         if (item != null && item.Owner != null && item.Owner != user) return false;
         if (item == null || user.DerivedStats == null) { return false; }
         user.RefreshCarriedInventorySummary();
@@ -1033,6 +1081,7 @@ class CaelumInventoryService : Object play
 
     static bool PrepareNativeAmmoPickup(CaelumPlayer user, CaelumCarbineAmmo ammunition)
     {
+        if (!CaelumPlayerAuthority.CanMutate(user)) return false;
         if (ammunition != null && ammunition.Owner != null && ammunition.Owner != user) return false;
         if (ammunition == null || user.DerivedStats == null) { return false; }
         // Si ya existe una pila, HandlePickup decide usando el estado de ella.
@@ -1064,6 +1113,7 @@ class CaelumInventoryService : Object play
 
     static bool PrepareNativeAmmoStackPickup(CaelumPlayer user, CaelumCarbineAmmo ammunition, int incomingAmount)
     {
+        if (!CaelumPlayerAuthority.CanMutate(user)) return false;
         if (ammunition != null && ammunition.Owner != user) return false;
         if (ammunition == null || user.DerivedStats == null) { return false; }
         user.RefreshCarriedInventorySummary();
@@ -1095,6 +1145,7 @@ class CaelumInventoryService : Object play
 
     static bool PrepareNativeConsumablePickup(CaelumPlayer user, CaelumConsumableItem consumable)
     {
+        if (!CaelumPlayerAuthority.CanMutate(user)) return false;
         if (consumable != null && consumable.Owner != null && consumable.Owner != user) return false;
         if (consumable == null || user.DerivedStats == null) { return false; }
         CaelumConsumableItem existing = user.FindNativeConsumableItem(
@@ -1126,6 +1177,7 @@ class CaelumInventoryService : Object play
 
     static bool PrepareNativeConsumableStackPickup(CaelumPlayer user, CaelumConsumableItem consumable, int incomingAmount)
     {
+        if (!CaelumPlayerAuthority.CanMutate(user)) return false;
         if (consumable != null && consumable.Owner != user) return false;
         if (consumable == null || user.DerivedStats == null) { return false; }
         user.RefreshCarriedInventorySummary();
@@ -1157,6 +1209,7 @@ class CaelumInventoryService : Object play
 
     static bool PrepareNativeSpecialPickup(CaelumPlayer user, CaelumSpecialInventoryItem specialItem)
     {
+        if (!CaelumPlayerAuthority.CanMutate(user)) return false;
         if (specialItem != null && specialItem.Owner != null && specialItem.Owner != user) return false;
         if (specialItem == null || user.DerivedStats == null) { return false; }
         CaelumSpecialInventoryItem existing = user.FindNativeSpecialItem(
@@ -1196,6 +1249,7 @@ class CaelumInventoryService : Object play
 
     static bool PrepareNativeSpecialStackPickup(CaelumPlayer user, CaelumSpecialInventoryItem specialItem, int incomingAmount)
     {
+        if (!CaelumPlayerAuthority.CanMutate(user)) return false;
         if (specialItem != null && specialItem.Owner != user) return false;
         if (specialItem == null || user.DerivedStats == null) { return false; }
         user.RefreshCarriedInventorySummary();
@@ -1225,6 +1279,7 @@ class CaelumInventoryService : Object play
 
     static bool PrepareNativeKeyPickup(CaelumPlayer user, CaelumWeightedKey keyItem)
     {
+        if (!CaelumPlayerAuthority.CanMutate(user)) return false;
         if (keyItem != null && keyItem.Owner != null && keyItem.Owner != user) return false;
         if (keyItem == null || user.DerivedStats == null) { return false; }
         // Key ya impide duplicados por clase. Si existe, el pickup nativo
@@ -1242,6 +1297,7 @@ class CaelumInventoryService : Object play
 
     static void OnNativeInventoryChanged(CaelumPlayer user)
     {
+        if (!CaelumPlayerAuthority.CanMutate(user)) return;
         user.ApplyCharacterProfile();
         user.RefreshEquipmentSelectionPreview();
         user.RefreshFormalInventorySnapshot();
@@ -1253,6 +1309,7 @@ class CaelumInventoryService : Object play
 
     static void OnNativeEquipmentPickedUp(CaelumPlayer user, int pickedItemId, int pickedKind, int pickedType, int pickedTier, int pickedSize, int pickedEssence, bool pickedIntoMagicBox)
     {
+        if (!CaelumPlayerAuthority.CanMutate(user)) return;
         user.ApplyCharacterProfile();
         user.RefreshEquipmentSelectionPreview();
 
@@ -1301,6 +1358,8 @@ class CaelumInventoryService : Object play
 
     static void MigrateLegacyEquipmentToNativeInventory(CaelumPlayer user, CaelumPersistentCharacterState persistentState)
     {
+        if (!CaelumPlayerAuthority.CanMutate(user)) return;
+        if (!CaelumPlayerAuthority.OwnsRecord(user, persistentState)) return;
         if (persistentState == null
             || persistentState.NativeEquipmentMigrationComplete) { return; }
         for (Inventory cursor = user.Inv; cursor != null; cursor = cursor.Inv)
@@ -1442,6 +1501,7 @@ class CaelumInventoryService : Object play
 
     static double GetEquippedWeaponLoadWeight(CaelumPlayer user)
     {
+        if (!CaelumPlayerAuthority.CanRead(user)) return 0;
         double total = 0.0;
         for (Inventory cursor = user.Inv; cursor != null; cursor = cursor.Inv)
         {
@@ -1458,6 +1518,7 @@ class CaelumInventoryService : Object play
 
     static bool HasEquippedWeaponFamily(CaelumPlayer user, int family)
     {
+        if (!CaelumPlayerAuthority.CanRead(user)) return false;
         for (int weaponType = 0;
             weaponType < CaelumConstants.WEAPON_TYPE_COUNT; weaponType++)
         {
@@ -1472,6 +1533,7 @@ class CaelumInventoryService : Object play
 
     static bool ActivateEquippedWeaponFamily(CaelumPlayer user, int family)
     {
+        if (!CaelumPlayerAuthority.CanMutate(user)) return false;
         if (user.WeaponModel != null && user.WeaponModel.Equipped
             && user.GetWeaponFamilyForType(user.WeaponModel.WeaponType) == family
             && user.HasEquippedNativeWeaponType(user.WeaponModel.WeaponType))
@@ -1492,6 +1554,7 @@ class CaelumInventoryService : Object play
 
     static bool ActivateEquippedWeaponType(CaelumPlayer user, int requestedWeaponType)
     {
+        if (!CaelumPlayerAuthority.CanMutate(user)) return false;
         if (user.WeaponModel == null) { return false; }
         int resolvedType = Clamp(
             requestedWeaponType, 0, CaelumConstants.WEAPON_TYPE_COUNT - 1
@@ -1551,6 +1614,7 @@ class CaelumInventoryService : Object play
 
     static bool ActivateExactEquippedWeapon(CaelumPlayer user, CaelumEquipmentItem item)
     {
+        if (!CaelumPlayerAuthority.CanMutate(user)) return false;
         if (item != null && item.Owner != user) return false;
         if (item == null || user.WeaponModel == null || !item.Equipped
             || item.InMagicBox || item.Durability <= 0
@@ -1604,6 +1668,7 @@ class CaelumInventoryService : Object play
 
     static void CycleEquippedWeaponSlot(CaelumPlayer user, int slot)
     {
+        if (!CaelumPlayerAuthority.CanMutate(user)) return;
         CaelumEquipmentItem first;
         bool passedActive = false;
         for (Inventory cursor = user.Inv; cursor != null; cursor = cursor.Inv)
@@ -1626,6 +1691,7 @@ class CaelumInventoryService : Object play
 
     static bool ActivateFirstEquippedWeapon(CaelumPlayer user)
     {
+        if (!CaelumPlayerAuthority.CanMutate(user)) return false;
         for (int weaponType = 0;
             weaponType < CaelumConstants.WEAPON_TYPE_COUNT;
             weaponType++)
@@ -1639,6 +1705,7 @@ class CaelumInventoryService : Object play
 
     static void RefreshCarriedInventorySummary(CaelumPlayer user)
     {
+        if (!CaelumPlayerAuthority.CanMutate(user)) return;
         user.SyncLiveMagicBoxOwnershipFromPersistentState();
         user.NormalizeUnownedMagicBoxStorage();
         user.PersonalInventoryItemCount = 0;
@@ -1851,6 +1918,7 @@ class CaelumInventoryService : Object play
 
     static bool CanAddWeightToPersonalInventory(CaelumPlayer user, double additionalWeight)
     {
+        if (!CaelumPlayerAuthority.CanRead(user)) return false;
         if (user.DerivedStats == null) { return false; }
         return user.DerivedStats.CarriedWeight + Max(0.0, additionalWeight)
             <= user.DerivedStats.CarryCapacity + 0.0005;
@@ -1905,6 +1973,7 @@ class CaelumInventoryService : Object play
 
     static bool FormalInventoryEntryMatchesFilter(CaelumPlayer user, Inventory entry)
     {
+        if (!CaelumPlayerAuthority.CanRead(user)) return false;
         int kind = user.GetFormalInventoryEntryKind(entry);
         if (kind < 0 || entry.Amount <= 0) { return false; }
         return user.FormalInventoryFilter == 0
@@ -1914,6 +1983,7 @@ class CaelumInventoryService : Object play
 
     static Inventory GetFormalInventoryEntryAt(CaelumPlayer user, int requestedIndex)
     {
+        if (!CaelumPlayerAuthority.CanRead(user)) return null;
         if (requestedIndex < 0) { return null; }
         int currentIndex = 0;
         for (Inventory cursor = user.Inv; cursor != null; cursor = cursor.Inv)
@@ -1927,6 +1997,7 @@ class CaelumInventoryService : Object play
 
     static int CountFormalInventoryEntries(CaelumPlayer user)
     {
+        if (!CaelumPlayerAuthority.CanRead(user)) return 0;
         int total = 0;
         for (Inventory cursor = user.Inv; cursor != null; cursor = cursor.Inv)
         {
@@ -1986,6 +2057,7 @@ class CaelumInventoryService : Object play
 
     static int GetFormalInventoryMaximumDurability(CaelumPlayer user, CaelumEquipmentItem item)
     {
+        if (!CaelumPlayerAuthority.CanRead(user)) return 0;
         if (item == null) { return 0; }
         if (item.EquipmentKind == CaelumConstants.EQUIPMENT_KIND_ARMOR
             && user.ArmorModel != null)
@@ -2013,6 +2085,7 @@ class CaelumInventoryService : Object play
 
     static void ClearFormalInventoryRow(CaelumPlayer user, int row)
     {
+        if (!CaelumPlayerAuthority.CanMutate(user)) return;
         user.FormalInventoryRowKind[row] = -1;
         user.FormalInventoryRowType[row] = -1;
         user.FormalInventoryRowArmorSlot[row] = -1;
@@ -2031,6 +2104,8 @@ class CaelumInventoryService : Object play
 
     static void FillFormalInventoryRow(CaelumPlayer user, int row, Inventory entry)
     {
+        if (!CaelumPlayerAuthority.CanMutate(user)) return;
+        if (entry != null && entry.Owner != user) return;
         user.ClearFormalInventoryRow(row);
         if (entry == null) { return; }
         int kind = user.GetFormalInventoryEntryKind(entry);
@@ -2108,6 +2183,7 @@ class CaelumInventoryService : Object play
 
     static void ApplyFormalInventorySelection(CaelumPlayer user, Inventory entry)
     {
+        if (!CaelumPlayerAuthority.CanMutate(user)) return;
         if (entry != null && entry.Owner != user) return;
         user.EquipmentSelectionItemId = 0;
         if (entry == null) { return; }
@@ -2176,6 +2252,7 @@ class CaelumInventoryService : Object play
 
     static void RefreshFormalInventorySnapshot(CaelumPlayer user)
     {
+        if (!CaelumPlayerAuthority.CanMutate(user)) return;
         user.EnsureAllEquipmentItemIds();
         user.FormalInventoryFilter = Clamp(
             user.FormalInventoryFilter, 0, CaelumPlayer.FORMAL_INVENTORY_FILTER_COUNT - 1
@@ -2226,6 +2303,7 @@ class CaelumInventoryService : Object play
 
     static void CycleFormalInventorySelection(CaelumPlayer user, int direction)
     {
+        if (!CaelumPlayerAuthority.CanMutate(user)) return;
         user.RefreshFormalInventorySnapshot();
         if (user.FormalInventoryEntryCount <= 0) { return; }
         user.FormalInventorySelectionIndex = (
@@ -2238,6 +2316,7 @@ class CaelumInventoryService : Object play
 
     static void CycleFormalInventoryFilter(CaelumPlayer user, int direction = 1)
     {
+        if (!CaelumPlayerAuthority.CanMutate(user)) return;
         int step = direction < 0 ? -1 : 1;
         user.FormalInventoryFilter = (
             user.FormalInventoryFilter + step + CaelumPlayer.FORMAL_INVENTORY_FILTER_COUNT
@@ -2250,6 +2329,7 @@ class CaelumInventoryService : Object play
 
     static void ActivateFormalInventorySelection(CaelumPlayer user)
     {
+        if (!CaelumPlayerAuthority.CanMutate(user)) return;
         Inventory entry =
             user.GetFormalInventoryEntryAt(user.FormalInventorySelectionIndex);
         if (entry == null) { return; }
@@ -2284,6 +2364,7 @@ class CaelumInventoryService : Object play
 
     static void ToggleFormalInventoryStorage(CaelumPlayer user)
     {
+        if (!CaelumPlayerAuthority.CanMutate(user)) return;
         Inventory entry =
             user.GetFormalInventoryEntryAt(user.FormalInventorySelectionIndex);
         if (entry == null) { return; }
@@ -2294,6 +2375,7 @@ class CaelumInventoryService : Object play
 
     static void DropFormalInventorySelection(CaelumPlayer user)
     {
+        if (!CaelumPlayerAuthority.CanMutate(user)) return;
         Inventory entry =
             user.GetFormalInventoryEntryAt(user.FormalInventorySelectionIndex);
         if (entry == null) { return; }
@@ -2304,6 +2386,7 @@ class CaelumInventoryService : Object play
 
     static void RefreshEquipmentSelectionPreview(CaelumPlayer user)
     {
+        if (!CaelumPlayerAuthority.CanMutate(user)) return;
         CaelumEquipmentItem identifiedItem =
             user.FindNativeEquipmentItemById(user.EquipmentSelectionItemId);
         if (user.EquipmentSelectionItemId > 0 && identifiedItem == null)
@@ -2667,6 +2750,7 @@ class CaelumInventoryService : Object play
 
     static bool AcquireArmorPickup(CaelumPlayer user, int slot, int armorType, int tier, int equipmentSize, int encodedDurability)
     {
+        if (!CaelumPlayerAuthority.CanMutate(user)) return false;
         if (user.ArmorModel == null) { return false; }
         int resolvedSlot = Clamp(slot, 0, CaelumConstants.ARMOR_SLOT_COUNT - 1);
         int resolvedType = Clamp(
@@ -2737,6 +2821,7 @@ class CaelumInventoryService : Object play
 
     static bool AcquireShieldPickup(CaelumPlayer user, int shieldType, int tier, int equipmentSize, int encodedDurability)
     {
+        if (!CaelumPlayerAuthority.CanMutate(user)) return false;
         if (user.ShieldModel == null) { return false; }
         int resolvedType = Clamp(
             shieldType,
@@ -2807,6 +2892,7 @@ class CaelumInventoryService : Object play
 
     static bool AcquireWeaponPickup(CaelumPlayer user, int weaponType, int tier, int equipmentSize, int encodedDurability)
     {
+        if (!CaelumPlayerAuthority.CanMutate(user)) return false;
         if (user.WeaponModel == null) { return false; }
         int resolvedType = Clamp(
             weaponType, 0, CaelumConstants.WEAPON_TYPE_COUNT - 1
@@ -2874,6 +2960,7 @@ class CaelumInventoryService : Object play
 
     static int CountCraftingMaterial(CaelumPlayer user, int materialType, int materialTier)
     {
+        if (!CaelumPlayerAuthority.CanRead(user)) return 0;
         CaelumSpecialInventoryItem material = user.FindNativeSpecialItem(
             CaelumConstants.EQUIPMENT_KIND_MATERIAL,
             materialType,
@@ -2891,6 +2978,7 @@ class CaelumInventoryService : Object play
 
     static int CountRawCraftingMaterial(CaelumPlayer user, int materialType, int materialTier)
     {
+        if (!CaelumPlayerAuthority.CanRead(user)) return 0;
         CaelumSpecialInventoryItem material = user.FindNativeSpecialItem(
             CaelumConstants.EQUIPMENT_KIND_MATERIAL,
             materialType,
@@ -2901,6 +2989,7 @@ class CaelumInventoryService : Object play
 
     static int GetReservedCraftingMaterialUnits(CaelumPlayer user, int materialType, int materialTier)
     {
+        if (!CaelumPlayerAuthority.CanRead(user)) return 0;
         if (!user.CraftingTaskActive) { return 0; }
         int reserved = 0;
         for (int slot = 0;
@@ -2918,12 +3007,14 @@ class CaelumInventoryService : Object play
 
     static bool IsEquipmentItemCraftingLocked(CaelumPlayer user, int itemId)
     {
+        if (!CaelumPlayerAuthority.CanRead(user)) return false;
         return user.CraftingTaskActive && user.CraftingTaskTargetItemId > 0
             && user.CraftingTaskTargetItemId == itemId;
     }
 
     static bool IsSelectedMaterialCraftingLocked(CaelumPlayer user)
     {
+        if (!CaelumPlayerAuthority.CanRead(user)) return false;
         return user.EquipmentSelectionKind
                 == CaelumConstants.EQUIPMENT_KIND_MATERIAL
             && user.GetReservedCraftingMaterialUnits(
@@ -2934,6 +3025,7 @@ class CaelumInventoryService : Object play
 
     static void ClearCraftingTaskData(CaelumPlayer user)
     {
+        if (!CaelumPlayerAuthority.CanMutate(user)) return;
         user.CraftingTaskActive = false;
         user.CraftingTaskCompleting = false;
         user.CraftingTaskKind = CaelumConstants.CRAFTING_TASK_NONE;
@@ -2963,6 +3055,7 @@ class CaelumInventoryService : Object play
 
     static bool AddCraftingTaskReservation(CaelumPlayer user, int materialType, int materialTier, int units)
     {
+        if (!CaelumPlayerAuthority.CanMutate(user)) return false;
         if (units <= 0) { return true; }
         int resolvedTier = CaelumMaterialRules.ResolveTier(
             materialType, materialTier
@@ -2994,6 +3087,7 @@ class CaelumInventoryService : Object play
 
     static bool AddCraftingTaskOutput(CaelumPlayer user, int materialType, int materialTier, int units)
     {
+        if (!CaelumPlayerAuthority.CanMutate(user)) return false;
         if (units <= 0) { return true; }
         int resolvedTier = CaelumMaterialRules.ResolveTier(
             materialType, materialTier
@@ -3025,6 +3119,7 @@ class CaelumInventoryService : Object play
 
     static bool ValidateCraftingTaskReservations(CaelumPlayer user)
     {
+        if (!CaelumPlayerAuthority.CanMutate(user)) return false;
         for (int slot = 0;
             slot < CaelumConstants.CRAFTING_TASK_MATERIAL_SLOT_COUNT; slot++)
         {
@@ -3042,6 +3137,7 @@ class CaelumInventoryService : Object play
 
     static bool CanCompletePreparedMaterialOutput(CaelumPlayer user, bool outputToMagicBox)
     {
+        if (!CaelumPlayerAuthority.CanMutate(user)) return false;
         if (user.DerivedStats == null) { return false; }
         int outputSlot = -1;
         for (int slot = 0;
@@ -3123,6 +3219,7 @@ class CaelumInventoryService : Object play
 
     static int GetPreparedMaterialOutputBoxSlots(CaelumPlayer user)
     {
+        if (!CaelumPlayerAuthority.CanRead(user)) return 0;
         int outputSlot = -1;
         for (int slot = 0;
             slot < CaelumConstants.CRAFTING_TASK_MATERIAL_SLOT_COUNT; slot++)
@@ -3150,6 +3247,7 @@ class CaelumInventoryService : Object play
 
     static bool CanCompletePreparedEquipmentOutput(CaelumPlayer user, double outputRawWeight)
     {
+        if (!CaelumPlayerAuthority.CanMutate(user)) return false;
         if (user.DerivedStats == null) { return false; }
         user.RefreshCarriedInventorySummary();
         bool personalOutput = CaelumCraftingRules.GetRecipeAmmunitionType(user.CraftingSelectionRecipe) >= 0
@@ -3178,6 +3276,7 @@ class CaelumInventoryService : Object play
 
     static bool ReservePreparedDirectCraftingPlan(CaelumPlayer user)
     {
+        if (!CaelumPlayerAuthority.CanMutate(user)) return false;
         if (!user.CraftingDirectPlanAvailable) { return false; }
         for (int slot = 0;
             slot < CaelumConstants.CRAFTING_TASK_MATERIAL_SLOT_COUNT; slot++)
@@ -3197,6 +3296,7 @@ class CaelumInventoryService : Object play
 
     static bool ConsumeSelectedWeaponCraftingMaterials(CaelumPlayer user)
     {
+        if (!CaelumPlayerAuthority.CanMutate(user)) return false;
         if (user.CraftingTaskCompleting && user.CraftingTaskUsesDirectPlan)
         {
             return user.ConsumeCraftingTaskReservations();
@@ -3216,6 +3316,7 @@ class CaelumInventoryService : Object play
 
     static bool ConsumeCraftingMaterial(CaelumPlayer user, int materialType, int materialTier, int requiredAmount)
     {
+        if (!CaelumPlayerAuthority.CanMutate(user)) return false;
         if (requiredAmount <= 0) { return true; }
         CaelumSpecialInventoryItem material = user.FindNativeSpecialItem(
             CaelumConstants.EQUIPMENT_KIND_MATERIAL,
@@ -3235,12 +3336,14 @@ class CaelumInventoryService : Object play
 
     static bool HasCraftingFinishMaterials(CaelumPlayer user)
     {
+        if (!CaelumPlayerAuthority.CanRead(user)) return false;
         return user.CraftingSilverOwned >= user.CraftingSilverRequired
             && user.CraftingGoldOwned >= user.CraftingGoldRequired;
     }
 
     static bool ConsumeCraftingFinishMaterials(CaelumPlayer user)
     {
+        if (!CaelumPlayerAuthority.CanMutate(user)) return false;
         return user.ConsumeCraftingMaterial(
                 CaelumConstants.MATERIAL_SILVER_INGOT,
                 1,
@@ -3255,6 +3358,7 @@ class CaelumInventoryService : Object play
 
     static void CraftSelectedProcessingRecipe(CaelumPlayer user)
     {
+        if (!CaelumPlayerAuthority.CanMutate(user)) return;
         user.RefreshCraftingPreview();
         if (user.CraftingSelectedRecipeKind
                 != CaelumConstants.CRAFTING_RECIPE_KIND_PROCESSING
@@ -3363,6 +3467,7 @@ class CaelumInventoryService : Object play
 
     static void CraftSelectedArmorRecipe(CaelumPlayer user)
     {
+        if (!CaelumPlayerAuthority.CanMutate(user)) return;
         if (user.ArmorModel == null) { return; }
         user.RefreshCraftingPreview();
 
@@ -3463,6 +3568,7 @@ class CaelumInventoryService : Object play
 
     static void CraftSelectedShieldRecipe(CaelumPlayer user)
     {
+        if (!CaelumPlayerAuthority.CanMutate(user)) return;
         if (user.ShieldModel == null) { return; }
         user.RefreshCraftingPreview();
 
@@ -3561,6 +3667,7 @@ class CaelumInventoryService : Object play
 
     static void CraftSelectedEssenceWeaponRecipe(CaelumPlayer user)
     {
+        if (!CaelumPlayerAuthority.CanMutate(user)) return;
         if (user.WeaponModel == null) { return; }
         user.RefreshCraftingPreview();
 
@@ -3664,6 +3771,7 @@ class CaelumInventoryService : Object play
 
     static void CraftSelectedJewelry(CaelumPlayer user, bool seal)
     {
+        if (!CaelumPlayerAuthority.CanMutate(user)) return;
         user.RefreshCraftingPreview();
         int expected = seal ? CaelumConstants.CRAFTING_RECIPE_KIND_SEAL
             : CaelumConstants.CRAFTING_RECIPE_KIND_AMULET;
@@ -3728,6 +3836,7 @@ class CaelumInventoryService : Object play
 
     static void CraftSelectedAmmunition(CaelumPlayer user)
     {
+        if (!CaelumPlayerAuthority.CanMutate(user)) return;
         if (!user.CraftingTaskCompleting || !user.CraftingSelectedInfrastructureAvailable
             || !user.ValidateCraftingTaskReservations())
         { user.LastCraftingAction = CaelumConstants.CRAFTING_ACTION_FAILED_MATERIALS; return; }
@@ -3756,6 +3865,7 @@ class CaelumInventoryService : Object play
 
     static void CraftSelectedPhysicalWeapon(CaelumPlayer user)
     {
+        if (!CaelumPlayerAuthority.CanMutate(user)) return;
         user.RefreshCraftingPreview();
 
         if (!user.CraftingTaskCompleting)
@@ -4024,6 +4134,7 @@ class CaelumInventoryService : Object play
 
     static void UseSelectedConsumable(CaelumPlayer user)
     {
+        if (!CaelumPlayerAuthority.CanMutate(user)) return;
         user.LastEquipmentAction = CaelumConstants.EQUIPMENT_ACTION_FAILED_NOT_OWNED;
         CaelumConsumableItem consumable = user.FindNativeConsumableItem(
             user.EquipmentSelectionConsumableType
@@ -4042,6 +4153,7 @@ class CaelumInventoryService : Object play
 
     static void SyncActiveModelsToNativeInventory(CaelumPlayer user)
     {
+        if (!CaelumPlayerAuthority.CanMutate(user)) return;
         if (user.ArmorModel != null)
         {
             for (int slot = 0; slot < CaelumConstants.ARMOR_SLOT_COUNT; slot++)
@@ -4113,6 +4225,7 @@ class CaelumInventoryService : Object play
 
     static CaelumEquipmentItem GetSelectedNativeEquipmentItem(CaelumPlayer user)
     {
+        if (!CaelumPlayerAuthority.CanRead(user)) return null;
         CaelumEquipmentItem identifiedItem =
             user.FindNativeEquipmentItemById(user.EquipmentSelectionItemId);
         if (identifiedItem != null) { return identifiedItem; }
@@ -4159,6 +4272,7 @@ class CaelumInventoryService : Object play
 
     static void EquipSelectedNativeEquipment(CaelumPlayer user)
     {
+        if (!CaelumPlayerAuthority.CanMutate(user)) return;
         user.LastEquipmentAction = CaelumConstants.EQUIPMENT_ACTION_FAILED_NOT_OWNED;
         if (user.EquipmentSelectionKind
             == CaelumConstants.EQUIPMENT_KIND_CONSUMABLE)
@@ -4282,6 +4396,7 @@ class CaelumInventoryService : Object play
 
     static void UnequipSelectedNativeEquipment(CaelumPlayer user)
     {
+        if (!CaelumPlayerAuthority.CanMutate(user)) return;
         user.LastEquipmentAction = CaelumConstants.EQUIPMENT_ACTION_FAILED_NOT_OWNED;
         user.SyncActiveModelsToNativeInventory();
         CaelumEquipmentItem item = user.GetSelectedNativeEquipmentItem();
@@ -4355,6 +4470,7 @@ class CaelumInventoryService : Object play
 
     static void ToggleSelectedMagicBox(CaelumPlayer user)
     {
+        if (!CaelumPlayerAuthority.CanMutate(user)) return;
         user.RefreshCarriedInventorySummary();
         double previousWeight = user.DerivedStats == null ? 0 : user.DerivedStats.CarriedItemWeight;
         int selectedId = user.EquipmentSelectionItemId;
@@ -4364,6 +4480,7 @@ class CaelumInventoryService : Object play
 
     static void ToggleSelectedMagicBoxNative(CaelumPlayer user)
     {
+        if (!CaelumPlayerAuthority.CanMutate(user)) return;
         if (user.EquipmentSelectionKind == CaelumConstants.EQUIPMENT_KIND_MATERIAL)
         {
             let material = user.FindNativeSpecialItem(user.EquipmentSelectionKind, user.EquipmentSelectionSpecialType, user.EquipmentSelectionTier);
@@ -4572,6 +4689,7 @@ class CaelumInventoryService : Object play
 
     static void EquipSelectedEquipment(CaelumPlayer user)
     {
+        if (!CaelumPlayerAuthority.CanMutate(user)) return;
         user.EquipSelectedNativeEquipment();
         return;
         user.LastEquipmentAction = CaelumConstants.EQUIPMENT_ACTION_FAILED_NOT_OWNED;
@@ -4740,6 +4858,7 @@ class CaelumInventoryService : Object play
 
     static void UnequipSelectedEquipment(CaelumPlayer user)
     {
+        if (!CaelumPlayerAuthority.CanMutate(user)) return;
         user.UnequipSelectedNativeEquipment();
         return;
         user.LastEquipmentAction = CaelumConstants.EQUIPMENT_ACTION_FAILED_NOT_OWNED;
@@ -4854,6 +4973,7 @@ class CaelumInventoryService : Object play
 
     static void SpawnSelectedNativePickupOnFloor(CaelumPlayer user)
     {
+        if (!CaelumPlayerAuthority.CanMutate(user)) return;
         if (user.player == null || user.player.playerstate != PST_LIVE) { return; }
         Vector3 spawnPos = user.Pos + (
             Cos(user.Angle) * 56.0,
@@ -4981,11 +5101,13 @@ class CaelumInventoryService : Object play
 
     static int GetEquipmentTaskMaximumDurability(CaelumPlayer user, CaelumEquipmentItem item)
     {
+        if (!CaelumPlayerAuthority.CanRead(user)) return 0;
         return user.GetFormalInventoryMaximumDurability(item);
     }
 
     static double GetEquipmentTaskWeight(CaelumPlayer user, CaelumEquipmentItem item)
     {
+        if (!CaelumPlayerAuthority.CanRead(user)) return 0;
         if (item == null) { return 0.0; }
         if (item.EquipmentKind == CaelumConstants.EQUIPMENT_KIND_WEAPON
             && user.WeaponModel != null)
@@ -5014,6 +5136,8 @@ class CaelumInventoryService : Object play
 
     static bool AddScaledEquipmentTaskMaterial(CaelumPlayer user, int materialType, int materialTier, int fullUnits, double durabilityFraction, bool recovery, CaelumCraftingBrowser preview = null)
     {
+        if (!CaelumPlayerAuthority.CanMutate(user)) return false;
+        if (preview != null && preview != user.CraftingBrowser) return false;
         int units = recovery
             ? CaelumCraftingRules.GetRecoveredMaterialUnits(
                 fullUnits, durabilityFraction
@@ -5044,6 +5168,9 @@ class CaelumInventoryService : Object play
 
     static bool BuildEquipmentTaskMaterials(CaelumPlayer user, CaelumEquipmentItem item, double durabilityFraction, bool recovery, CaelumCraftingBrowser preview = null)
     {
+        if (!CaelumPlayerAuthority.CanMutate(user)) return false;
+        if (preview != null && preview != user.CraftingBrowser) return false;
+        if (item == null || item.Owner != user) return false;
         if (!user.IsDurabilityTaskEquipment(item)) { return false; }
         double finalWeight = user.GetEquipmentTaskWeight(item);
         int basicType;
@@ -5151,6 +5278,7 @@ class CaelumInventoryService : Object play
 
     static int GetMissingEquipmentTaskStation(CaelumPlayer user, CaelumEquipmentItem item)
     {
+        if (!CaelumPlayerAuthority.CanRead(user)) return 0;
         if (!user.IsDurabilityTaskEquipment(item))
         {
             return CaelumConstants.CRAFTING_STATION_NONE;
@@ -5188,6 +5316,8 @@ class CaelumInventoryService : Object play
 
     static bool CanCompletePreparedDismantle(CaelumPlayer user, CaelumEquipmentItem target, bool sendOutputsToMagicBox, CaelumCraftingBrowser preview = null)
     {
+        if (!CaelumPlayerAuthority.CanMutate(user)) return false;
+        if (preview != null && preview != user.CraftingBrowser) return false;
         if (target == null || user.DerivedStats == null) { return false; }
         user.RefreshCarriedInventorySummary();
         double personalDelta = 0.0;
@@ -5235,6 +5365,8 @@ class CaelumInventoryService : Object play
 
     static int GetDismantleNetBoxSlots(CaelumPlayer user, CaelumEquipmentItem target, CaelumCraftingBrowser preview = null)
     {
+        if (!CaelumPlayerAuthority.CanRead(user)) return 0;
+        if (preview != null && preview != user.CraftingBrowser) return 0;
         if (target == null || user.DerivedStats == null) { return -1; }
         if (user.CanCompletePreparedDismantle(target, false, preview)) { return 0; }
         if (!user.CanCompletePreparedDismantle(target, true, preview)) { return -1; }
@@ -5257,6 +5389,7 @@ class CaelumInventoryService : Object play
 
     static int GetCraftingTaskReservedUnitTotal(CaelumPlayer user)
     {
+        if (!CaelumPlayerAuthority.CanRead(user)) return 0;
         int total = 0;
         for (int slot = 0;
             slot < CaelumConstants.CRAFTING_TASK_MATERIAL_SLOT_COUNT; slot++)
@@ -5268,6 +5401,7 @@ class CaelumInventoryService : Object play
 
     static int GetEquipmentTaskComplexityTics(CaelumPlayer user, CaelumEquipmentItem item)
     {
+        if (!CaelumPlayerAuthority.CanRead(user)) return 0;
         if (item == null)
         {
             return CaelumConstants.CRAFTING_SIMPLE_TICS_PER_MATERIAL;
@@ -5283,6 +5417,7 @@ class CaelumInventoryService : Object play
 
     static double GetEquipmentTaskSeconds(CaelumPlayer user, CaelumEquipmentItem item, int employedMaterialUnits, int efficiencyIndex)
     {
+        if (!CaelumPlayerAuthority.CanRead(user)) return 0;
         return user.GetCraftingMaterialWorkSeconds(
             employedMaterialUnits,
             user.GetEquipmentTaskComplexityTics(item),
@@ -5292,6 +5427,7 @@ class CaelumInventoryService : Object play
 
     static bool KnowsWeaponRepairRecipe(CaelumPlayer user, CaelumEquipmentItem item)
     {
+        if (!CaelumPlayerAuthority.CanMutate(user)) return false;
         if (item == null || item.EquipmentKind != CaelumConstants.EQUIPMENT_KIND_WEAPON)
             return false;
         int physical = CaelumCraftingRules.GetCatalogueWeaponForPlayableType(item.ItemType);
@@ -5314,6 +5450,7 @@ class CaelumInventoryService : Object play
 
     static int GetEquipmentTaskBlockReason(CaelumPlayer user, CaelumEquipmentItem target, bool dismantle)
     {
+        if (!CaelumPlayerAuthority.CanMutate(user)) return CaelumConstants.EQUIPMENT_ACTION_FAILED_NOT_OWNED;
         if (target == null || target.Owner != user || !user.IsDurabilityTaskEquipment(target))
             return target != null && target.IsLimboTemporary()
                 ? CaelumConstants.EQUIPMENT_ACTION_FAILED_RESERVED : CaelumConstants.EQUIPMENT_ACTION_FAILED_NOT_OWNED;
@@ -5333,6 +5470,7 @@ class CaelumInventoryService : Object play
 
     static void BeginRepairSelectedEquipment(CaelumPlayer user, int targetItemId = 0)
     {
+        if (!CaelumPlayerAuthority.CanMutate(user)) return;
         user.LastCraftingAction = CaelumConstants.CRAFTING_ACTION_NONE;
         if (!user.CanStartCraftingTask(false))
         {
@@ -5396,6 +5534,7 @@ class CaelumInventoryService : Object play
 
     static void BeginDismantleSelectedEquipment(CaelumPlayer user, int targetItemId = 0)
     {
+        if (!CaelumPlayerAuthority.CanMutate(user)) return;
         user.LastCraftingAction = CaelumConstants.CRAFTING_ACTION_NONE;
         if (!user.CanStartCraftingTask(false))
         {
@@ -5455,6 +5594,7 @@ class CaelumInventoryService : Object play
 
     static bool ConsumeCraftingTaskReservations(CaelumPlayer user)
     {
+        if (!CaelumPlayerAuthority.CanMutate(user)) return false;
         if (!user.ValidateCraftingTaskReservations()) { return false; }
         for (int slot = 0;
             slot < CaelumConstants.CRAFTING_TASK_MATERIAL_SLOT_COUNT; slot++)
@@ -5474,6 +5614,7 @@ class CaelumInventoryService : Object play
 
     static bool CompleteRepairTask(CaelumPlayer user)
     {
+        if (!CaelumPlayerAuthority.CanMutate(user)) return false;
         CaelumEquipmentItem target = user.FindNativeEquipmentItemById(
             user.CraftingTaskTargetItemId
         );
@@ -5500,6 +5641,7 @@ class CaelumInventoryService : Object play
 
     static bool CompleteDismantleTask(CaelumPlayer user)
     {
+        if (!CaelumPlayerAuthority.CanMutate(user)) return false;
         CaelumEquipmentItem target = user.FindNativeEquipmentItemById(
             user.CraftingTaskTargetItemId
         );
@@ -5590,6 +5732,7 @@ class CaelumInventoryService : Object play
 
     static void CompleteCraftingTask(CaelumPlayer user)
     {
+        if (!CaelumPlayerAuthority.CanMutate(user)) return;
         if (!user.CraftingTaskActive) { return; }
         int completedKind = user.CraftingTaskKind;
         int oldStation = user.ActiveCraftingStationType;
@@ -5636,6 +5779,7 @@ class CaelumInventoryService : Object play
 
     static void BreakSelectedNativeEquipment(CaelumPlayer user)
     {
+        if (!CaelumPlayerAuthority.CanMutate(user)) return;
         user.LastEquipmentAction = CaelumConstants.EQUIPMENT_ACTION_FAILED_NOT_OWNED;
         if (user.EquipmentSelectionKind
                 == CaelumConstants.EQUIPMENT_KIND_CONSUMABLE
@@ -5679,6 +5823,7 @@ class CaelumInventoryService : Object play
 
     static CaelumMaterialPickup CreateDetachedMaterialStack(CaelumPlayer user, int materialType, int materialTier, int materialAmount)
     {
+        if (!CaelumPlayerAuthority.CanMutate(user)) return null;
         CaelumMaterialPickup material = CaelumMaterialPickup(
             Actor.Spawn("CaelumMaterialPickup", user.Pos, NO_REPLACE)
         );
@@ -5692,6 +5837,7 @@ class CaelumInventoryService : Object play
 
     static void AddRecoveredMaterial(CaelumPlayer user, CaelumSpecialInventoryItem existing, CaelumMaterialPickup detached, int recoveredAmount, bool sendToMagicBox)
     {
+        if (!CaelumPlayerAuthority.CanMutate(user)) return;
         if ((existing != null && existing.Owner != user) || (detached != null && detached.Owner != null && detached.Owner != user)) return;
         if (existing != null)
         {
@@ -5709,6 +5855,7 @@ class CaelumInventoryService : Object play
 
     static void DismantleSelectedNativeWeapon(CaelumPlayer user)
     {
+        if (!CaelumPlayerAuthority.CanMutate(user)) return;
         user.LastEquipmentAction = CaelumConstants.EQUIPMENT_ACTION_FAILED_NOT_OWNED;
         user.LastDismantledBasicUnits = 0;
         user.LastDismantledTierUnits = 0;
@@ -5892,6 +6039,7 @@ class CaelumInventoryService : Object play
 
     static void DropSelectedNativeInventoryItem(CaelumPlayer user)
     {
+        if (!CaelumPlayerAuthority.CanMutate(user)) return;
         if (user.EquipmentSelectionKind == CaelumConstants.EQUIPMENT_KIND_KEY_ITEM
             && user.EquipmentSelectionSpecialType == CaelumConstants.KEY_ITEM_TAROT_DECK)
         {
@@ -6014,6 +6162,7 @@ class CaelumInventoryService : Object play
 
     static void BreakSelectedEquipment(CaelumPlayer user)
     {
+        if (!CaelumPlayerAuthority.CanMutate(user)) return;
         user.BeginDismantleSelectedEquipment();
         return;
         user.LastEquipmentAction = CaelumConstants.EQUIPMENT_ACTION_FAILED_NOT_OWNED;
@@ -6076,6 +6225,7 @@ class CaelumInventoryService : Object play
 
     static void DropSelectedEquipment(CaelumPlayer user)
     {
+        if (!CaelumPlayerAuthority.CanMutate(user)) return;
         user.RefreshCarriedInventorySummary();
         double previousWeight = user.DerivedStats == null ? 0 : user.DerivedStats.CarriedItemWeight;
         int selectedId = user.EquipmentSelectionItemId;
@@ -6152,6 +6302,7 @@ class CaelumInventoryService : Object play
 
     static void MigrateWeaponDurability(CaelumPlayer user, int revision = 1)
     {
+        if (!CaelumPlayerAuthority.CanMutate(user)) return;
         if (user.WeaponModel != null) user.WeaponModel.MigrateDurability(revision);
         let persistent = user.GetPersistentCharacterState(false);
         if (persistent != null) persistent.MigrateWeaponDurability(revision);
@@ -6164,6 +6315,7 @@ class CaelumInventoryService : Object play
 
     static CaelumMagicBox EnsureOwnedMagicBox(CaelumPlayer user)
     {
+        if (!CaelumPlayerAuthority.CanMutate(user)) return null;
         if (user == null) return null;
         let record = user.GetPersistentCharacterState(true);
         if (record == null || !record.MagicBoxOwned) return null;
@@ -6188,6 +6340,7 @@ class CaelumInventoryService : Object play
 
     static CaelumTarotDeck FindOwnedTarotDeck(CaelumPlayer user)
     {
+        if (!CaelumPlayerAuthority.CanRead(user)) return null;
         if (user == null) return null;
         let deck = CaelumTarotDeck(user.FindInventory("CaelumTarotDeck"));
         return deck != null && deck.Owner == user && deck.Amount > 0 ? deck : null;
@@ -6195,6 +6348,7 @@ class CaelumInventoryService : Object play
 
     static bool GrantTarotDeck(CaelumPlayer user, bool explain = true)
     {
+        if (!CaelumPlayerAuthority.CanMutate(user)) return false;
         let record = user.GetPersistentCharacterState(false);
         if (record == null) return false;
         // Una ausencia no autoriza otra entrega de Palomo.

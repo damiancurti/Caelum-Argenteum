@@ -1,0 +1,2659 @@
+{
+  "issue": 120,
+  "version": "5.0.4",
+  "baseline_commit": "c4b717c7e8ab49e0cbe1a6f67e7f15f18c850b52",
+  "architecture1_baseline_commit": "20143c3154617309912a493fa2a7be3c7c2c9ff4",
+  "source_proof": "AUTHORITY.json: 203 exact guards; unchanged fields/signatures/remaining bodies; focused package boundary; one stateless authority helper.",
+  "package_sha256": {
+    "architecture1.pk3": "32c080489d13cb0d2d50b3af2387f742675f0d6f11c17214a343833e4c834fda",
+    "baseline.pk3": "1a030c41a29c5ba5a741e004b034212a79b1669520805ee53b2a20e6493b979a",
+    "current.pk3": "f8b8d1ba14da0d9db7624eb1ba5e7ebcb6269e1d47e59bb810fecb0c4c6ea695"
+  },
+  "native_runs": {
+    "player-baseline-final": {
+      "result": "PASS",
+      "checks": 249,
+      "player-baseline-final.txt": {
+        "source_sha256": "4f3ba932eeecd1e9cd901d48ba05e905e435268489912221c9e65a2f98bb4808",
+        "archive_sha256": "778b4f0f7d78557a895e2ca9a0260fc74ff93105292f9b59318e485af06608e6",
+        "omitted_local_input_rows": 0,
+        "unwrapped_powershell_script_metadata": false
+      },
+      "player-baseline-final.ini": {
+        "source_sha256": "18ce5bd87f0d0acb72ce1f57d32006432b414609601a34cce485ec1269fffc99",
+        "archive_sha256": "50b97e1f3e0828ef335b53b65628a7afcbbd2539e53a6d96b1a07d7e26ccbacb",
+        "omitted_local_input_rows": 0,
+        "unwrapped_powershell_script_metadata": false
+      },
+      "player-baseline-final-run.json": {
+        "source_sha256": "60128b28a05386eb0f68cff12441cdba061bc6f87f246a12f44253b4556f5bcf",
+        "archive_sha256": "6cbfbfbb1f8ee30e658d63d981a8f98e04d28a828b3bdd46baf1b9b0f4f1bc97",
+        "omitted_local_input_rows": 0,
+        "unwrapped_powershell_script_metadata": false
+      }
+    },
+    "player-current-final": {
+      "result": "PASS",
+      "checks": 249,
+      "player-current-final.txt": {
+        "source_sha256": "035ebb8685b37f555f5e43213a9215ae25ae604eb09f0fdf8d114fef4c76b794",
+        "archive_sha256": "2315bb09a89a39127b83f39d7f50dd3ec579e4219f8a5f091ef833fbfaa80e17",
+        "omitted_local_input_rows": 0,
+        "unwrapped_powershell_script_metadata": false
+      },
+      "player-current-final.ini": {
+        "source_sha256": "8ef4b0a213ddba19657e308f3c2f9d8f970766ea4bd33856c05ac6568900f4c5",
+        "archive_sha256": "07f552645af71cb31b3ea2158857c530320bfbe08ee2599194b9039b51cd8d5f",
+        "omitted_local_input_rows": 0,
+        "unwrapped_powershell_script_metadata": false
+      },
+      "player-current-final-run.json": {
+        "source_sha256": "97c9c2c568b90e5201e78ad369bdb8cb1da08532036f526d80ea5e5e349e1cd7",
+        "archive_sha256": "3d921d75830431684ccb8309339d343116f931b0774c8e0d6f7a6ac44956a1c5",
+        "omitted_local_input_rows": 0,
+        "unwrapped_powershell_script_metadata": false
+      }
+    },
+    "player-old-save-final": {
+      "result": "PASS",
+      "checks": 9,
+      "player-old-save-final.txt": {
+        "source_sha256": "01b087b07055860d770e48486b7d38c7e2c2ac0e7889b56b7be6aad6bb0375e4",
+        "archive_sha256": "34b7d20695062532000c4daa1ff156eeca5c0642e4cd3c9c25481cc20b450a22",
+        "omitted_local_input_rows": 0,
+        "unwrapped_powershell_script_metadata": false
+      },
+      "player-old-save-final.ini": {
+        "source_sha256": "0f15784dbf2bcb4a4b19347ddd25d6522db1929de060b4e451a8efde9a73f120",
+        "archive_sha256": "aeb1352d129cf920e3d26b031dc465052da1bcb7b7cac27ced8fd153bde85d83",
+        "omitted_local_input_rows": 0,
+        "unwrapped_powershell_script_metadata": false
+      },
+      "player-old-save-final-run.json": {
+        "source_sha256": "19dedd81f60c335198e66ab934f4d2a44a4cccb5b03270f0306fe86a8d4dfbd3",
+        "archive_sha256": "5a3d9ccaf0520b7ac791002353a6601dd15fd3d74b4c2858f81e839884c8d345",
+        "omitted_local_input_rows": 0,
+        "unwrapped_powershell_script_metadata": false
+      }
+    },
+    "player-new-save-final": {
+      "result": "PASS",
+      "checks": 9,
+      "player-new-save-final.txt": {
+        "source_sha256": "fe453bf09f6f6ffe806588c1dc68150c9da98258a8189a982a5ddb3e35a6e266",
+        "archive_sha256": "520cb49b284bf1f2415beac589c8c79d158d043f88bd0b50516aafec3812a3ef",
+        "omitted_local_input_rows": 0,
+        "unwrapped_powershell_script_metadata": false
+      },
+      "player-new-save-final.ini": {
+        "source_sha256": "76b1f810390edae900b09149786c9b2f6f8015a3ec7d6d59cd25201479f2d20a",
+        "archive_sha256": "7400cb3315b378eef17a37f11a4446f0651343e32c25470f4e0a4840ac55f2c7",
+        "omitted_local_input_rows": 0,
+        "unwrapped_powershell_script_metadata": false
+      },
+      "player-new-save-final-run.json": {
+        "source_sha256": "77456830bba0f2d19382909b2d78552f6d66c52ca48231c1f690fe5f0a9973a7",
+        "archive_sha256": "bd871b35ae70af99f63887df2d0bc1bb16174cb6024cc57f013a41c4f6560b65",
+        "omitted_local_input_rows": 0,
+        "unwrapped_powershell_script_metadata": false
+      }
+    },
+    "player-upgraded-save-final": {
+      "result": "PASS",
+      "checks": 9,
+      "player-upgraded-save-final.txt": {
+        "source_sha256": "d18a344c74a97cb80f84744176e1cb7a9d81aae0bd2aad9fe119ce6836477c98",
+        "archive_sha256": "ac3a55cde85068bde7ece227341e72189d331d2ea1457329e7624752da2f23cc",
+        "omitted_local_input_rows": 0,
+        "unwrapped_powershell_script_metadata": false
+      },
+      "player-upgraded-save-final.ini": {
+        "source_sha256": "7f74a67c719c5b2400dd1ac8c8bdb71beb1871f3cbab0c58d1c78e441cddd76a",
+        "archive_sha256": "68366311a8dd8ce7965fb6acd49b207c044ea8a8778b8763b2847693cb22a4a0",
+        "omitted_local_input_rows": 0,
+        "unwrapped_powershell_script_metadata": false
+      },
+      "player-upgraded-save-final-run.json": {
+        "source_sha256": "9991e15d03b1e74a22ed71d82adbe80350b44f4c6daf58e9d9a65e0926d50fb8",
+        "archive_sha256": "7ab2b9471ab0adc342c4f2f23182f688db3cd3267188f7cfd0b5269a0c93945b",
+        "omitted_local_input_rows": 0,
+        "unwrapped_powershell_script_metadata": false
+      }
+    },
+    "player-original-rollback-final": {
+      "result": "PASS",
+      "checks": 9,
+      "player-original-rollback-final.txt": {
+        "source_sha256": "de6bbedb8f15be81517cfcbf91f59acffaf49633cb53a418749aac7d137e906d",
+        "archive_sha256": "74d71d33881b1d091cc3906fb2256aec3658c743c29ebeb93ca18a0cd727b264",
+        "omitted_local_input_rows": 0,
+        "unwrapped_powershell_script_metadata": false
+      },
+      "player-original-rollback-final.ini": {
+        "source_sha256": "51d2e5b65b9f870a0d8697427b5f83b399bcbb862fa22c47a8ca2e4039576081",
+        "archive_sha256": "2bce9f26b7d51bcd1a022c2a43c1f62f2488ab0ffb003e82435312bbdf117f36",
+        "omitted_local_input_rows": 0,
+        "unwrapped_powershell_script_metadata": false
+      },
+      "player-original-rollback-final-run.json": {
+        "source_sha256": "aa426849acec95a5ee3dea32d91bfa7f57cd80b73829abd5596b51d16f90db47",
+        "archive_sha256": "1a53da5f8aae45dc43107cd5c09caa54d679607f796efbb03400f163c9ba87bc",
+        "omitted_local_input_rows": 0,
+        "unwrapped_powershell_script_metadata": false
+      }
+    },
+    "inventory-baseline-final": {
+      "result": "PASS",
+      "checks": 127,
+      "inventory-baseline-final.txt": {
+        "source_sha256": "c9736991c17380944dbb0df80cb3ad27b342b7f834501ce7387f350980a414b5",
+        "archive_sha256": "f5a0d249753701fcb7622bdf754c1244ad1e4ce7d35de18a5ae3a159e01a168a",
+        "omitted_local_input_rows": 0,
+        "unwrapped_powershell_script_metadata": false
+      },
+      "inventory-baseline-final.ini": {
+        "source_sha256": "9d2733990257da16b2ff3f53b74b6733e015a877e32f6a32cc800cf4ddbe546a",
+        "archive_sha256": "118f25972668cbc151ef784849ca4e0f1335ee4f7955cb50feaaa4c333235699",
+        "omitted_local_input_rows": 0,
+        "unwrapped_powershell_script_metadata": false
+      },
+      "inventory-baseline-final-run.json": {
+        "source_sha256": "f3563a37e2165804fd79c9ec2596d5a2d6fdf336124566e918efaef62d7357b5",
+        "archive_sha256": "b1bb576246e2a642f7658472729f127b083a2ef2e020e182d3b8ac42ee52cc62",
+        "omitted_local_input_rows": 0,
+        "unwrapped_powershell_script_metadata": false
+      }
+    },
+    "inventory-current-final": {
+      "result": "PASS",
+      "checks": 127,
+      "inventory-current-final.txt": {
+        "source_sha256": "2fbca356ef27cc325d9970a487137ee053e8c9f12c4c1940391db66772b7b5c4",
+        "archive_sha256": "260ff3578517d425d445fd0a305587960c2e4ed8efc5389c50ffa9d794b3e776",
+        "omitted_local_input_rows": 0,
+        "unwrapped_powershell_script_metadata": false
+      },
+      "inventory-current-final.ini": {
+        "source_sha256": "b40eb99535102de46c00c3884d4d1293c4774d96a971acbf1ba5f3ec3f3c5661",
+        "archive_sha256": "ae91ba51798f80a0ea37a1418febf253f74fea8fdf25159b91cee3e8b4d71612",
+        "omitted_local_input_rows": 0,
+        "unwrapped_powershell_script_metadata": false
+      },
+      "inventory-current-final-run.json": {
+        "source_sha256": "5b134077bd031fc86c0d49403bdcd9ed9cdabba64fee320960186603e0ae2fc8",
+        "archive_sha256": "6784feb2e68ff16d432c5cdb57fe3a2928291bb4e26ef41f5e3201ed0ddbf0c6",
+        "omitted_local_input_rows": 0,
+        "unwrapped_powershell_script_metadata": false
+      }
+    },
+    "inventory-old-save-final": {
+      "result": "PASS",
+      "checks": 10,
+      "inventory-old-save-final.txt": {
+        "source_sha256": "c9d53965df5a15d383e19948844bccd3b9cd67c06530e52428211fc3a51fc3db",
+        "archive_sha256": "2fe30cd47d97ad53a8a560d83b1d3d311cfdf4ab07fe4b2c38cfcb9c1c48d305",
+        "omitted_local_input_rows": 0,
+        "unwrapped_powershell_script_metadata": false
+      },
+      "inventory-old-save-final.ini": {
+        "source_sha256": "1eb5088ecaabe995358b717efc58e1618765d5b54c2d36ec03c2bfbd6d92a282",
+        "archive_sha256": "e45a0b8292a475c62e431fe66d93bd47281bb36519e73918e27621d001a57c8f",
+        "omitted_local_input_rows": 0,
+        "unwrapped_powershell_script_metadata": false
+      },
+      "inventory-old-save-final-run.json": {
+        "source_sha256": "9cd5d37d03251cc71bc373d806a17e6f71265acb45d00d7ec78965959606c683",
+        "archive_sha256": "07c135b4f32a4458344f04e8c20f0f250d614209cdb1358a28bb6e46b3330067",
+        "omitted_local_input_rows": 0,
+        "unwrapped_powershell_script_metadata": false
+      }
+    },
+    "inventory-new-save-final": {
+      "result": "PASS",
+      "checks": 10,
+      "inventory-new-save-final.txt": {
+        "source_sha256": "bbb01544bd16b647f74d01e68f0a8e63c917db15499be3167d145ed8893791c1",
+        "archive_sha256": "720c4615cc3c00785a2de28483c0a7e957e2a1138711f5f9788bd839b977d3b8",
+        "omitted_local_input_rows": 0,
+        "unwrapped_powershell_script_metadata": false
+      },
+      "inventory-new-save-final.ini": {
+        "source_sha256": "fc8e43d568bba35b8068faa85e9bacd1bf634449cef8e7b95451b72fbcee5e77",
+        "archive_sha256": "910d41ca21d8102c6535c6267865a430b237a8b4413c136d4f7f8fc98b749d69",
+        "omitted_local_input_rows": 0,
+        "unwrapped_powershell_script_metadata": false
+      },
+      "inventory-new-save-final-run.json": {
+        "source_sha256": "a18fafa4d22112dd3a589b6cd96ae6878cc058eedcfce65d896ae2f0dfb99d73",
+        "archive_sha256": "5421d6ae7ef4a831e67dcc4e038c780cd5cfbb6b354b5646557b01188ba7e461",
+        "omitted_local_input_rows": 0,
+        "unwrapped_powershell_script_metadata": false
+      }
+    },
+    "inventory-upgraded-save-final": {
+      "result": "PASS",
+      "checks": 10,
+      "inventory-upgraded-save-final.txt": {
+        "source_sha256": "bcb98341f8bde424bc80a3c9b325361f2145ed6610309860c0f6c778dff763db",
+        "archive_sha256": "0e9704dba1e563a9c5c669345056cf35d0629a0799c16f731c8c0eeaed7f3017",
+        "omitted_local_input_rows": 0,
+        "unwrapped_powershell_script_metadata": false
+      },
+      "inventory-upgraded-save-final.ini": {
+        "source_sha256": "0405ddbf2f48211da1e73ec4fda520b657b91296431e9331d59a10191c8ac37a",
+        "archive_sha256": "2780bcf71011c58a4c5a9b67244c2fd0fcc7f13627a741b19a68ba704e153e8d",
+        "omitted_local_input_rows": 0,
+        "unwrapped_powershell_script_metadata": false
+      },
+      "inventory-upgraded-save-final-run.json": {
+        "source_sha256": "557f416739af49f5bc7e2c228cf388c2b366fdb16152bbac759b66e36217f4ac",
+        "archive_sha256": "ce8f7e5ccecc10d6228949c0f044cd0d773355453a0f93dca52b8f822ffd6782",
+        "omitted_local_input_rows": 0,
+        "unwrapped_powershell_script_metadata": false
+      }
+    },
+    "inventory-original-rollback-final": {
+      "result": "PASS",
+      "checks": 10,
+      "inventory-original-rollback-final.txt": {
+        "source_sha256": "1fa7d8cdfe48a9917d7ab974d55038f71a5b46f8fc5ea8e7e7de45c1e98f517e",
+        "archive_sha256": "0fb511b716d611cb53f54b5ef2f8af0085ced78a3528e691ed0b8ddc605515a6",
+        "omitted_local_input_rows": 0,
+        "unwrapped_powershell_script_metadata": false
+      },
+      "inventory-original-rollback-final.ini": {
+        "source_sha256": "e006a051c5cafff5ca75c8d2f63d063d60294d76cd7486d04dde3f0c3d56a893",
+        "archive_sha256": "0f0c36d715ba6ee1f015ab475e654d0ad3d8dbb50ca77ce3f9d875473ca61810",
+        "omitted_local_input_rows": 0,
+        "unwrapped_powershell_script_metadata": false
+      },
+      "inventory-original-rollback-final-run.json": {
+        "source_sha256": "8b5393135570ddcf59b1e1656467c9bb08e4c5dae95995cd03c2752f69c913cf",
+        "archive_sha256": "20d1c09ce796ab14c62b7e0a53f0bfb0b116707ea98101ce38159ad1b1477dfc",
+        "omitted_local_input_rows": 0,
+        "unwrapped_powershell_script_metadata": false
+      }
+    },
+    "tarot-baseline-final": {
+      "result": "PASS",
+      "checks": 93,
+      "tarot-baseline-final.txt": {
+        "source_sha256": "e7ca6077a62f194489dbaf1aebca5c61263fe2afb78618cc60517804f61d3397",
+        "archive_sha256": "3f9fda6a6c926b928fac4d784b43710d5626825970d97a3969640bce8451e095",
+        "omitted_local_input_rows": 0,
+        "unwrapped_powershell_script_metadata": false
+      },
+      "tarot-baseline-final.ini": {
+        "source_sha256": "da7b2ae90d65623481b35347c8df80f1fd2418db12be4699f5f6058a729da76d",
+        "archive_sha256": "f8a62ba581624a1f98480394a0f9782a381c4d7b02e57cbc0a02f5dc85ad9fd5",
+        "omitted_local_input_rows": 0,
+        "unwrapped_powershell_script_metadata": false
+      },
+      "tarot-baseline-final-run.json": {
+        "source_sha256": "373ed6b10862310890bb064187800a1e26b3d3fe58617d2f3adb1a8940cbca85",
+        "archive_sha256": "bded401920cda5b5b4f8daaadd6812831c29995171a3697be6491aed25d11cf5",
+        "omitted_local_input_rows": 0,
+        "unwrapped_powershell_script_metadata": false
+      }
+    },
+    "tarot-current-final": {
+      "result": "PASS",
+      "checks": 93,
+      "tarot-current-final.txt": {
+        "source_sha256": "95ab6c5ea79ae46240445a7d55dd25e59ccb6a2c1f955656f76d0dc6ac8d5952",
+        "archive_sha256": "da53971202000c381272d1ca8f281e34465da73220e470e8d76900bf7625ec3c",
+        "omitted_local_input_rows": 0,
+        "unwrapped_powershell_script_metadata": false
+      },
+      "tarot-current-final.ini": {
+        "source_sha256": "4a368663a0432f4202cc7f1099563781634a642a92e3852d0cc41f527e6bada5",
+        "archive_sha256": "414b5aaf6e06311d3257a32d1d6ea46746d8203c7c45a0cce42f5756161ee518",
+        "omitted_local_input_rows": 0,
+        "unwrapped_powershell_script_metadata": false
+      },
+      "tarot-current-final-run.json": {
+        "source_sha256": "63390448fd2171de4758f2926fc9624ea43e8ae9b672840f26580b67bd36a001",
+        "archive_sha256": "9255868ee8541dfa7f484d1f488b6ab7061f3e295ee24c603d305ea1026ca0a2",
+        "omitted_local_input_rows": 0,
+        "unwrapped_powershell_script_metadata": false
+      }
+    },
+    "tarot-old-save-final": {
+      "result": "PASS",
+      "checks": 5,
+      "tarot-old-save-final.txt": {
+        "source_sha256": "22cd2178bdb0b5629f266db21d5bb2cd13127ad1a2f01a6ea6f6da6ee9694eab",
+        "archive_sha256": "8ed695c4f71532c154647679e6d6344105d0fc6c80b37261eec7dd6967d3c6ec",
+        "omitted_local_input_rows": 0,
+        "unwrapped_powershell_script_metadata": false
+      },
+      "tarot-old-save-final.ini": {
+        "source_sha256": "412b707eea2bf4e0ca4a41a062ed41f165cda3d0c0e1532fd4ba2b67846cb066",
+        "archive_sha256": "f93adcfcfa407ec6efee6777db457071af7f49f7b6c3a173e337de1c7215f61f",
+        "omitted_local_input_rows": 0,
+        "unwrapped_powershell_script_metadata": false
+      },
+      "tarot-old-save-final-run.json": {
+        "source_sha256": "f60efa6379b4aca642acd406f5a548cbb7cb88535eb211be5b29e67af87b464c",
+        "archive_sha256": "3452e8971a4ef0f5f73e5f53f716ae9df78267b26297f38ec5a5e6f107c54df9",
+        "omitted_local_input_rows": 0,
+        "unwrapped_powershell_script_metadata": false
+      }
+    },
+    "tarot-new-save-final": {
+      "result": "PASS",
+      "checks": 5,
+      "tarot-new-save-final.txt": {
+        "source_sha256": "7ef353e4c43a9da54fac776c9448c9a5d41b3ef03945db528a17b9ca0dbe7cd9",
+        "archive_sha256": "2668f03d8cf9df4830283e8cc92a002cc07eca2a6a1ebbe95e2738fab79307f0",
+        "omitted_local_input_rows": 0,
+        "unwrapped_powershell_script_metadata": false
+      },
+      "tarot-new-save-final.ini": {
+        "source_sha256": "866971a7361453758423338e08cc1819a963b6f2a47a308ba3b8448a26d96681",
+        "archive_sha256": "55452052a0939d46bfbd41852ecb1dcb218f9136c488aa47961623e8d1b42b4a",
+        "omitted_local_input_rows": 0,
+        "unwrapped_powershell_script_metadata": false
+      },
+      "tarot-new-save-final-run.json": {
+        "source_sha256": "051242410b57f4fe1fad94ef5ddd55684732495fbe84740e2474d5e8e6577887",
+        "archive_sha256": "ec7bac23d3ebbe9261a97dc6ba846900c7f3b712c2edf05da7f6e735b66893af",
+        "omitted_local_input_rows": 0,
+        "unwrapped_powershell_script_metadata": false
+      }
+    },
+    "tarot-upgraded-save-final": {
+      "result": "PASS",
+      "checks": 5,
+      "tarot-upgraded-save-final.txt": {
+        "source_sha256": "3a5e06d03ad18db80ac5eb4cc6c28fb2783a7303c6565f0274aafecb279db08f",
+        "archive_sha256": "284c205638609452de6fc464cc38ec98e711de2ddf6cb5f15adc339c090ba882",
+        "omitted_local_input_rows": 0,
+        "unwrapped_powershell_script_metadata": false
+      },
+      "tarot-upgraded-save-final.ini": {
+        "source_sha256": "b32e56bd0147a32707a20d9f34e28fdaf80879f6ffce040a429895e52c21a47d",
+        "archive_sha256": "e665ede8d9e7ba1d0e1a2557dd006cd4da17711466acd8548c4096e8193bea5b",
+        "omitted_local_input_rows": 0,
+        "unwrapped_powershell_script_metadata": false
+      },
+      "tarot-upgraded-save-final-run.json": {
+        "source_sha256": "c98a4897c9a6e9c5ae01eb4ef7faffb9293897b299e4d4013d7c0151b6eabc03",
+        "archive_sha256": "306b958e72f78240cdc3dd0df9f5eeeb4b42457cc6c4e43006f1aac024365778",
+        "omitted_local_input_rows": 0,
+        "unwrapped_powershell_script_metadata": false
+      }
+    },
+    "tarot-original-rollback-final": {
+      "result": "PASS",
+      "checks": 5,
+      "tarot-original-rollback-final.txt": {
+        "source_sha256": "9e990b73b67ec65c2748afeab49345371b2e33931a4957580d2905e8fbf16044",
+        "archive_sha256": "53fafecaec01f742a8d23a91e563abd1660bfb972a4d295b34b2a5461abf17fb",
+        "omitted_local_input_rows": 0,
+        "unwrapped_powershell_script_metadata": false
+      },
+      "tarot-original-rollback-final.ini": {
+        "source_sha256": "4eb1086b1cb2ca06e603d70afdee693e2e286a380d5aaadf19956d09317cdafa",
+        "archive_sha256": "8c7bb35264740c5ac95e6a8c7da81765ebb832edaf7f911827b00e49e262d21f",
+        "omitted_local_input_rows": 0,
+        "unwrapped_powershell_script_metadata": false
+      },
+      "tarot-original-rollback-final-run.json": {
+        "source_sha256": "a03c6aca7b525320e4ae5f4f8f292c53168305817ea84e43c71e276aa4636b4f",
+        "archive_sha256": "07c1dea1dbb497f22ed9f77c432e8db092b36c3513d06167988fc666495d631c",
+        "omitted_local_input_rows": 0,
+        "unwrapped_powershell_script_metadata": false
+      }
+    },
+    "transactions-baseline-final": {
+      "result": "PASS",
+      "checks": 79,
+      "transactions-baseline-final.txt": {
+        "source_sha256": "d386cc23d6b41cceb246fdf6169f029055082e4ca55fb1354c3d0b4c510425fa",
+        "archive_sha256": "66a1dad40e96568710860a1e68f42fb8cf662991d6eded2a7eed9901b52c843f",
+        "omitted_local_input_rows": 0,
+        "unwrapped_powershell_script_metadata": false
+      },
+      "transactions-baseline-final.ini": {
+        "source_sha256": "9ff0513df5b10edc3ecfd9d87e35ba0af5c0447802385526e8edbe83d56c6796",
+        "archive_sha256": "cafd22f7dd8e2654eec72e7026538c4abfdc41e1beb83e6ebbadeab8fc443591",
+        "omitted_local_input_rows": 0,
+        "unwrapped_powershell_script_metadata": false
+      },
+      "transactions-baseline-final-run.json": {
+        "source_sha256": "2a976ed3ed7a02f6a8d41f5f0ef5288acc8ca9dc7abd2c2b306d96910d526420",
+        "archive_sha256": "82cf8323ec9be30cc233b80c1a0fa08ba0fec2d5186536ecbbc7c17498ebe79e",
+        "omitted_local_input_rows": 0,
+        "unwrapped_powershell_script_metadata": true
+      }
+    },
+    "transactions-current-final": {
+      "result": "PASS",
+      "checks": 79,
+      "transactions-current-final.txt": {
+        "source_sha256": "85d33d0f085b980acf787c815b2a853704b8da5bfa2b3720a094ef6d366268a9",
+        "archive_sha256": "6ba12e145308be2de7ef0664ad16435a5815bcf104deebaf17f6e64c44df68ae",
+        "omitted_local_input_rows": 0,
+        "unwrapped_powershell_script_metadata": false
+      },
+      "transactions-current-final.ini": {
+        "source_sha256": "1df8a85c780198c7b3d67703b290ecd9db08075b4fd7d6be5a159cc921a41372",
+        "archive_sha256": "c790109b76c038add3b42532a2bec2a8d65f0b32dd1cd78f2a88a18256760b96",
+        "omitted_local_input_rows": 0,
+        "unwrapped_powershell_script_metadata": false
+      },
+      "transactions-current-final-run.json": {
+        "source_sha256": "b3e83618f08df682bdf5594e4a637cb086dc62578c689d74c59f87e9808100b8",
+        "archive_sha256": "39a91822599c415d1d981b8db73cea75179a417d6964929759645d68560e9187",
+        "omitted_local_input_rows": 0,
+        "unwrapped_powershell_script_metadata": true
+      }
+    },
+    "pickups-baseline-final2": {
+      "result": "PASS",
+      "checks": 65,
+      "pickups-baseline-final2.txt": {
+        "source_sha256": "7f6d34494153fa3134c4300f7bcf78c62574fc02069ed82953c462ca904be107",
+        "archive_sha256": "e7b8def67513710ff4f31fa7e465a45afc49151b800c1ef3e98cc82ace485685",
+        "omitted_local_input_rows": 0,
+        "unwrapped_powershell_script_metadata": false
+      },
+      "pickups-baseline-final2.ini": {
+        "source_sha256": "567cfc6bf9e5b686878c3ca1d4a5575b41d3d6263b592605a91c14393920856e",
+        "archive_sha256": "72bff0718dbe2753aa8b26cec7a7e79fd55e171fc9da80e7de6a524fe4285f1d",
+        "omitted_local_input_rows": 0,
+        "unwrapped_powershell_script_metadata": false
+      },
+      "pickups-baseline-final2-run.json": {
+        "source_sha256": "3a181c350b187a4b7d04c6cb273a02d8ed3b0bde44747d364ef7b0eace86db61",
+        "archive_sha256": "33a63f6553b7ec0a0f8f6976090689859d2f3fd858b4028ac5765c125dd3a5c2",
+        "omitted_local_input_rows": 0,
+        "unwrapped_powershell_script_metadata": true
+      }
+    },
+    "pickups-current-final2": {
+      "result": "PASS",
+      "checks": 65,
+      "pickups-current-final2.txt": {
+        "source_sha256": "5ca32ef30dd366d5e6f5d19ef9e31f9d35b3e8f19e955885a4e6f0562d210faa",
+        "archive_sha256": "6d68137f687acc60d1771067775b2366b379927fda38bc889d3ea4196b423731",
+        "omitted_local_input_rows": 0,
+        "unwrapped_powershell_script_metadata": false
+      },
+      "pickups-current-final2.ini": {
+        "source_sha256": "9e536cc606c0ecbd0efd5ac22584bf5c53107f458550649df0c1f22cf2d789e6",
+        "archive_sha256": "e92e92a904154dc2f55bb9f3517053ed2baa1f46716823a8e7d1dfa44e4e90a0",
+        "omitted_local_input_rows": 0,
+        "unwrapped_powershell_script_metadata": false
+      },
+      "pickups-current-final2-run.json": {
+        "source_sha256": "e231a590b6c6fd2799339216b1e4a68e0df714ce17bad229b23b302a15bbcfc0",
+        "archive_sha256": "57b815b4dcd140a8f1a413f90897e027c7d33b24584c06b6589b0757652f592e",
+        "omitted_local_input_rows": 0,
+        "unwrapped_powershell_script_metadata": true
+      }
+    },
+    "architecture1-old-save-final": {
+      "result": "PASS",
+      "checks": 3,
+      "architecture1-old-save-final.txt": {
+        "source_sha256": "2b92d18b31df655958f4910fffa8d297e1e2852bd683166ac76e88105cb5d59d",
+        "archive_sha256": "0817cae64ddedd62dfe12fdc2198c3ef05d80df299a70931a3b311e0f7e10041",
+        "omitted_local_input_rows": 0,
+        "unwrapped_powershell_script_metadata": false
+      },
+      "architecture1-old-save-final.ini": {
+        "source_sha256": "1681396a5e4d5f6be49454ffd508028b85c568500ccd6db89cd00cb6d729e93e",
+        "archive_sha256": "7d0bad782dc8a1101ab9df2869d840e37a33a2dd062b760cc46278cee3917ba8",
+        "omitted_local_input_rows": 0,
+        "unwrapped_powershell_script_metadata": false
+      },
+      "architecture1-old-save-final-run.json": {
+        "source_sha256": "87b1ca5d4b1f4b1ef14cf3211345144a0387ae2c0088fa98c451be7b43587fdf",
+        "archive_sha256": "414be536883163d330f8b831fbc72c06dd738e9bec879bedc8734203b8361f19",
+        "omitted_local_input_rows": 0,
+        "unwrapped_powershell_script_metadata": true
+      }
+    },
+    "architecture1-upgraded-save-final": {
+      "result": "PASS",
+      "checks": 3,
+      "architecture1-upgraded-save-final.txt": {
+        "source_sha256": "b0a3e9de5f3d6f1179c02490507b446e8aa84cfbb5bb2d9425d076e8879b79f6",
+        "archive_sha256": "c5f7756d121756bf3987235c49bf1a77fb20caae315c0d846b9bcb155e403a06",
+        "omitted_local_input_rows": 0,
+        "unwrapped_powershell_script_metadata": false
+      },
+      "architecture1-upgraded-save-final.ini": {
+        "source_sha256": "2b304e5b0e28a0e73c5a74ae1091bcf799210a4cb554184d4fb14a712645cf09",
+        "archive_sha256": "a60f74932361d0855a4ac3cd4b7725297bb1a453ae02490a1b53b60107b07dd9",
+        "omitted_local_input_rows": 0,
+        "unwrapped_powershell_script_metadata": false
+      },
+      "architecture1-upgraded-save-final-run.json": {
+        "source_sha256": "19dff813d3db1e477fad3a90d09caa86d88481228de4706f2e5242aef677dcd3",
+        "archive_sha256": "f98f1aea8be8b38b66c9db55ce1e2c1e0631647888230c47c4d0ada094ccc91b",
+        "omitted_local_input_rows": 0,
+        "unwrapped_powershell_script_metadata": true
+      }
+    },
+    "architecture1-original-rollback-final": {
+      "result": "PASS",
+      "checks": 3,
+      "architecture1-original-rollback-final.txt": {
+        "source_sha256": "9760f1b5c936e1f0ab7cb9ab516a2bd40356e9072c9415e2fd11e65df3c7b23b",
+        "archive_sha256": "5f6382580c8128fb52ddca2ac2a029f317e41cfc989a73afb3121f13be100f88",
+        "omitted_local_input_rows": 0,
+        "unwrapped_powershell_script_metadata": false
+      },
+      "architecture1-original-rollback-final.ini": {
+        "source_sha256": "3fade0f1ac5c68c6c30061f4c8a709d86045599d123d72d55b15f9c9711250cf",
+        "archive_sha256": "e5ea9bfbe054f415bd7fb304937e64000f8be4066476159854c528d6984d2400",
+        "omitted_local_input_rows": 0,
+        "unwrapped_powershell_script_metadata": false
+      },
+      "architecture1-original-rollback-final-run.json": {
+        "source_sha256": "2c41136772cd6228a66a859aba02ffe29803416c7483f469f09207aa036da06e",
+        "archive_sha256": "bd0809c4c1781254259cec34d25c687ae1f9daa364b755143f9d28fe71597f2b",
+        "omitted_local_input_rows": 0,
+        "unwrapped_powershell_script_metadata": true
+      }
+    },
+    "bot-authority-configured": {
+      "result": "PASS",
+      "checks": 36,
+      "bot-authority-configured.txt": {
+        "source_sha256": "a2586bc958aae34ba06e833861318dbe56ffc4335116d086f9801ec3c4f3e5ad",
+        "archive_sha256": "31150faf8b7b401381d7854900c8260a11071855dfff8926334cf77ba40b3a23",
+        "omitted_local_input_rows": 0,
+        "unwrapped_powershell_script_metadata": false
+      },
+      "bot-authority-configured.ini": {
+        "source_sha256": "c53d7e14fb375cfbd08bbf78e2277733697f1e266a3ec109d2c94a3261bbb2bf",
+        "archive_sha256": "ae0bd165ec20a899897d07c7b94c615a22e50dbf61534da6a56c0d0b4f2c61ab",
+        "omitted_local_input_rows": 0,
+        "unwrapped_powershell_script_metadata": false
+      },
+      "bot-authority-configured-run.json": {
+        "source_sha256": "605521d33779e99ad4eb4509bd90d50e0e3b38f03da3702ae4d6cc4d2423e3b5",
+        "archive_sha256": "80529fbc09e9a677321a08902ae96d77285fdced4882d3bfbcd11df79c0f8488",
+        "omitted_local_input_rows": 0,
+        "unwrapped_powershell_script_metadata": false
+      }
+    },
+    "creation-enu-final": {
+      "result": "PASS",
+      "checks": null,
+      "creation-enu-final.txt": {
+        "source_sha256": "111d3030391f076483855ea8f7a8519f7753e71e20a5bc2c7914ad3dc0d0af50",
+        "archive_sha256": "bb9fbfe2253a544038d74eaa0f755096720f98446636a369ff281b3dd1bef513",
+        "omitted_local_input_rows": 0,
+        "unwrapped_powershell_script_metadata": false
+      },
+      "creation-enu-final.ini": {
+        "source_sha256": "006818c040d80b3decd20603c350eb7abd46d322de20f47ab9f79bd05ebe7809",
+        "archive_sha256": "997d80c38ebc0c472285be6903e44b78d663fa557c9d1cfdbd315199cf8d5ea3",
+        "omitted_local_input_rows": 0,
+        "unwrapped_powershell_script_metadata": false
+      },
+      "creation-enu-final-run.json": {
+        "source_sha256": "34a8e978b0ae16a2e346f26d0490667d8fe782cb0182a93c02cb7101ff365ede",
+        "archive_sha256": "0719c052e6ddbf16051bc3ddd4c2c04a65c85f9fab46b8413046d714dd619800",
+        "omitted_local_input_rows": 0,
+        "unwrapped_powershell_script_metadata": true
+      }
+    },
+    "creation-es-final": {
+      "result": "PASS",
+      "checks": null,
+      "creation-es-final.txt": {
+        "source_sha256": "7c7efc65984ee9aca2a41374f1e9210520e518184246c637c7edced80da9685b",
+        "archive_sha256": "942dc868035b6f1f48c409be0c578a6834730cbcd701c3c94f9766bb5dd65151",
+        "omitted_local_input_rows": 0,
+        "unwrapped_powershell_script_metadata": false
+      },
+      "creation-es-final.ini": {
+        "source_sha256": "a3d11a1d45d9ca45a390528ac9aa3b5c7d92d810e0b4b2c5e3c5c1bf513b1ada",
+        "archive_sha256": "3c85d69ff53fa9b3540b2d759d8d04b93419b358439044a97bd53fdcb83c5bd1",
+        "omitted_local_input_rows": 0,
+        "unwrapped_powershell_script_metadata": false
+      },
+      "creation-es-final-run.json": {
+        "source_sha256": "99711127477c2f7ef2a0b103da4b975b0b783ecdc75347f3ba0eefb6420b5f7c",
+        "archive_sha256": "f3ba2d5e2835e19123ef6db0e25408d71a7684a4b5e97d12315ba22de1c77f50",
+        "omitted_local_input_rows": 0,
+        "unwrapped_powershell_script_metadata": true
+      }
+    },
+    "live-journal-final": {
+      "result": "PASS",
+      "checks": 5,
+      "live-journal-final.txt": {
+        "source_sha256": "11d8a52d6af48368d95b9defb4c8ffc371e27d5dc7dbdeb080cab98efc5d7986",
+        "archive_sha256": "4b55c7d8695be1d0d5a7817d2a019b7ee13e8f652c0f0040a7ee7275c5d70718",
+        "omitted_local_input_rows": 0,
+        "unwrapped_powershell_script_metadata": false
+      },
+      "live-journal-final.ini": {
+        "source_sha256": "a867b7a19bcf9c9ddf4b25eca7a56d54ae5b9d36e8a82192fd3df38d79a4cf48",
+        "archive_sha256": "a867b7a19bcf9c9ddf4b25eca7a56d54ae5b9d36e8a82192fd3df38d79a4cf48",
+        "omitted_local_input_rows": 0,
+        "unwrapped_powershell_script_metadata": false
+      },
+      "live-journal-final-run.json": {
+        "source_sha256": "53e9a91013e6ef47e2731325f3916a88642466c91f86fd93190de57f5cee029c",
+        "archive_sha256": "677508d57ec9f6f3c2452d031bdc0c8f65c4ef84ef14d27609af75ddc181e3d3",
+        "omitted_local_input_rows": 0,
+        "unwrapped_powershell_script_metadata": true
+      }
+    },
+    "live-trucazo-final": {
+      "result": "PASS",
+      "checks": 5,
+      "live-trucazo-final.txt": {
+        "source_sha256": "d1c0ab11dd000be24107f0ef21538e736027c1bd06bcc5cf6d0455458e594be9",
+        "archive_sha256": "32f01ebbcac91d798e2bea9ba3d3c33b9d931fcb6286a70bac71bb89e578de8c",
+        "omitted_local_input_rows": 0,
+        "unwrapped_powershell_script_metadata": false
+      },
+      "live-trucazo-final.ini": {
+        "source_sha256": "b884c2f494c8d2991ba3a45cce82471d035e70f723a3e385dd6d19da15a7cc59",
+        "archive_sha256": "b884c2f494c8d2991ba3a45cce82471d035e70f723a3e385dd6d19da15a7cc59",
+        "omitted_local_input_rows": 0,
+        "unwrapped_powershell_script_metadata": false
+      },
+      "live-trucazo-final-run.json": {
+        "source_sha256": "a333c3bf7e326c07936812f5bc19912dfa93236b9be03a303a1be98d7abe1c4a",
+        "archive_sha256": "3099afb88a2872368d8b6011fbfb1e765124757b9cf251c2a9766375fb87b571",
+        "omitted_local_input_rows": 0,
+        "unwrapped_powershell_script_metadata": false
+      }
+    },
+    "live-truco-final": {
+      "result": "PASS",
+      "checks": 5,
+      "live-truco-final.txt": {
+        "source_sha256": "35be2fca90a22c8e857c58000fa2525c68de74f40c35419bddc43e81de35cf48",
+        "archive_sha256": "e2361c155f4d67d8400168f5203c6836ea72037bd5841535543a544349e0538a",
+        "omitted_local_input_rows": 0,
+        "unwrapped_powershell_script_metadata": false
+      },
+      "live-truco-final.ini": {
+        "source_sha256": "a867b7a19bcf9c9ddf4b25eca7a56d54ae5b9d36e8a82192fd3df38d79a4cf48",
+        "archive_sha256": "a867b7a19bcf9c9ddf4b25eca7a56d54ae5b9d36e8a82192fd3df38d79a4cf48",
+        "omitted_local_input_rows": 0,
+        "unwrapped_powershell_script_metadata": false
+      },
+      "live-truco-final-run.json": {
+        "source_sha256": "2285a8a68e4febcbc0132388a5000f39980bc776538b217db33082af0f134493",
+        "archive_sha256": "f0e27646b1209a69c38b6031a21675f4a72b527bf7dae3acccb2c9b36535f8f1",
+        "omitted_local_input_rows": 0,
+        "unwrapped_powershell_script_metadata": false
+      }
+    },
+    "architecture1-performance-final": {
+      "result": "MEASURED",
+      "checks": null,
+      "architecture1-performance-final.txt": {
+        "source_sha256": "191c94ab8cb6353998f700c5e75353c46abfab37f6567db0f063c4d236f7a340",
+        "archive_sha256": "6904243e47d14c6c7f34a265f4748362ce621953add34588385f4e0be9e07066",
+        "omitted_local_input_rows": 3,
+        "unwrapped_powershell_script_metadata": false
+      },
+      "architecture1-performance-final.ini": {
+        "source_sha256": "a016b31b625c4ab9407425757d426b4118031ba5ba4dd87c4fc4521467f779fe",
+        "archive_sha256": "519b2cdacb6f3309e719e0fbc61f21747c07391d329e6538d596ebcd19632a31",
+        "omitted_local_input_rows": 0,
+        "unwrapped_powershell_script_metadata": false
+      },
+      "architecture1-performance-final-run.json": {
+        "source_sha256": "652424a7061c08d1c2103e7151d2995709a9c279d55f13a296f6f7f924b59d81",
+        "archive_sha256": "bf17dd60e254a2ef9b73381b6a9f4d4370d7831b29c216415486e2e4ddf469e1",
+        "omitted_local_input_rows": 0,
+        "unwrapped_powershell_script_metadata": false
+      }
+    },
+    "current-performance-final": {
+      "result": "MEASURED",
+      "checks": null,
+      "current-performance-final.txt": {
+        "source_sha256": "87df7f7cb451fe9073fbfd98feafcfc08c3b639efde8be4ea33a89a5821b9a50",
+        "archive_sha256": "7120341f36662859eac6f67503e522c68d5a4e03f28e117d39fde7784d5040d1",
+        "omitted_local_input_rows": 0,
+        "unwrapped_powershell_script_metadata": false
+      },
+      "current-performance-final.ini": {
+        "source_sha256": "5d924d6107c2d6799c538780d0ac1ba3ca2321e7f3889eba2bf2db1613f5401b",
+        "archive_sha256": "b1cfa1fa8151065f050f7a42a24f414e188a9e6d5c987456790f2d4147f4a13d",
+        "omitted_local_input_rows": 0,
+        "unwrapped_powershell_script_metadata": false
+      },
+      "current-performance-final-run.json": {
+        "source_sha256": "cdf8d26c5b4b70f5c3671fc6554c89cea9289f0b895fa2c500783ec0cf0ace0f",
+        "archive_sha256": "54bae6d71c82987f02d48c5bf99224822633ee19d34615703b1f466ed62fa24d",
+        "omitted_local_input_rows": 0,
+        "unwrapped_powershell_script_metadata": false
+      }
+    },
+    "current-performance-repeat-final": {
+      "result": "MEASURED",
+      "checks": null,
+      "current-performance-repeat-final.txt": {
+        "source_sha256": "270109fa37ed560e4632f3f1a5f254db24b7cb0fcf2a875ba14bd6eebff711d2",
+        "archive_sha256": "4e55ed3d101a2d61098cced7995bec84d19336172f68de3774c65935e69375fa",
+        "omitted_local_input_rows": 0,
+        "unwrapped_powershell_script_metadata": false
+      },
+      "current-performance-repeat-final.ini": {
+        "source_sha256": "5e012405adc3219c761b9fb159b401e764465ae682ab6ebd54e080b184e9b5dc",
+        "archive_sha256": "4eb90ac509a1313a8556a4f00c34e135f0ee85c8729de370d341c5736731ac5e",
+        "omitted_local_input_rows": 0,
+        "unwrapped_powershell_script_metadata": false
+      },
+      "current-performance-repeat-final-run.json": {
+        "source_sha256": "7450f46ee48f5d37772f6d3307764a03083d19cc12a3470a1773ac4849a53a6e",
+        "archive_sha256": "2d19e852822b0121d6e54b479ce36e5b6b7925d9f146abb3e1ebce61f28b1101",
+        "omitted_local_input_rows": 0,
+        "unwrapped_powershell_script_metadata": false
+      }
+    },
+    "architecture1-performance-repeat-complete": {
+      "result": "MEASURED",
+      "checks": null,
+      "architecture1-performance-repeat-complete.txt": {
+        "source_sha256": "9b55eedfb54eb75e53ec7ec2a41e6a55e84c1f386eb99dd4dcf194bf4ea60f32",
+        "archive_sha256": "a2551da23026be393ce151ce10c7ff621f90aa829159353ef2db00fee81e8a45",
+        "omitted_local_input_rows": 0,
+        "unwrapped_powershell_script_metadata": false
+      },
+      "architecture1-performance-repeat-complete.ini": {
+        "source_sha256": "c7219d6efa6f8a2c7474bfe1f3da99fce58f5b7b5d96b1ad01e6f5512068ca52",
+        "archive_sha256": "a238b3e0c62762b3c9d16ea255df851c41b0a1786edb3c2414fbd1b7116a3d57",
+        "omitted_local_input_rows": 0,
+        "unwrapped_powershell_script_metadata": false
+      },
+      "architecture1-performance-repeat-complete-run.json": {
+        "source_sha256": "87f5ea2f8eac24d161138aed49d3ae7b17efb13c9678e29a2809edd34938deb9",
+        "archive_sha256": "dbc52262b3e5be316d049e9a158a097503c4041c9136e84f648289ffd2cb4623",
+        "omitted_local_input_rows": 0,
+        "unwrapped_powershell_script_metadata": false
+      }
+    }
+  },
+  "identical_output_rows": {
+    "player CA117 VALUE": 93,
+    "inventory CA118 VALUE": 9,
+    "tarot CA119 VALUE": 7,
+    "tarot CA119 TABLE": 936,
+    "transactions CA118 CRAFT": 9,
+    "pickups CA118 PICKUP ": 3
+  },
+  "serialized_comparisons": {
+    "player": {
+      "identical_pawn_fields": 593,
+      "identical_inventory_payloads": 10
+    },
+    "inventory": {
+      "identical_pawn_fields": 593,
+      "identical_inventory_payloads": 23
+    },
+    "tarot": {
+      "identical_record_fields": 223,
+      "identical_matches": 2
+    }
+  },
+  "authority": "36 assertions with two actual native player pawns/records (local player plus native GZDoom bot). Explicit routing, owner isolation, prediction rejection, null/orphan safety, foreign record/preview rejection and legitimate drop/pickup ID collision handling pass. This is not a two-client network test.",
+  "persistence": "Three domains: original 5.0.3 saves loaded under 5.0.4, current saves, upgraded re-saves and original-pair rollback. A 5.0.0 Architecture 1 save also loads/re-saves/reloads under 5.0.4; original 5.0.0 pair replays. No schema change, no downgrade of upgraded saves claimed.",
+  "performance": {
+    "runs": {
+      "architecture1-performance-final": {
+        "tics": 1680,
+        "wall_seconds": 151.18052399999996,
+        "tics_per_second": 11.112542512420452,
+        "first": {
+          "tic": "35",
+          "ms": "9287.257",
+          "roster": "6001",
+          "attackers": "6001",
+          "defenders": "600",
+          "groups": "64",
+          "x": "0.000",
+          "y": "320.000",
+          "z": "-0.000",
+          "angle": "90.000"
+        },
+        "last": {
+          "tic": "1715",
+          "ms": "160467.781",
+          "roster": "6001",
+          "attackers": "5989",
+          "defenders": "599",
+          "groups": "82",
+          "x": "0.000",
+          "y": "320.000",
+          "z": "-0.000",
+          "angle": "90.000"
+        },
+        "player_single_tic_profile_ms": [
+          0.04398,
+          0.04822,
+          0.04618
+        ],
+        "overlay_interval_median_ms": 1224.963,
+        "overlay_interval_max_ms": 3590.962,
+        "overlay_samples": 97,
+        "overlay_window": "Only intervals wholly inside the same 1680-tic simulation observation window.",
+        "synthetic_input_event_route_ms": [
+          {
+            "id": "1",
+            "request_to_play": 677.5469999999987,
+            "request_to_ack": 677.5789999999979,
+            "request_to_overlay": 1840.923999999999
+          },
+          {
+            "id": "2",
+            "request_to_play": 219.06200000000536,
+            "request_to_ack": 219.1030000000028,
+            "request_to_overlay": 1372.4750000000058
+          },
+          {
+            "id": "3",
+            "request_to_play": 2047.5559999999969,
+            "request_to_ack": 2047.6080000000075,
+            "request_to_overlay": 4496.274000000005
+          }
+        ],
+        "thinker_profiles": [
+          {
+            "total_ms": 92.556742,
+            "each_ms": 0.015426,
+            "instances": 6000,
+            "cls": "CaelumMandinga"
+          },
+          {
+            "total_ms": 3.835255,
+            "each_ms": 0.639209,
+            "instances": 6,
+            "cls": "CaelumBatteringRam"
+          },
+          {
+            "total_ms": 2.877365,
+            "each_ms": 0.002707,
+            "instances": 1063,
+            "cls": "CaelumActorSimpleElementalProjectile"
+          },
+          {
+            "total_ms": 2.477279,
+            "each_ms": 0.058983,
+            "instances": 42,
+            "cls": "CaelumCannon"
+          },
+          {
+            "total_ms": 0.876493,
+            "each_ms": 0.000133,
+            "instances": 6601,
+            "cls": "CaelumSewerEscapeTarget"
+          },
+          {
+            "total_ms": 0.784739,
+            "each_ms": 0.001308,
+            "instances": 600,
+            "cls": "CaelumPortDefender"
+          },
+          {
+            "total_ms": 0.11083,
+            "each_ms": 0.000185,
+            "instances": 600,
+            "cls": "CaelumGateBlocker"
+          },
+          {
+            "total_ms": 0.108208,
+            "each_ms": 0.000143,
+            "instances": 756,
+            "cls": "CaelumCannonBlock"
+          },
+          {
+            "total_ms": 0.04398,
+            "each_ms": 0.04398,
+            "instances": 1,
+            "cls": "CaelumPlayer"
+          },
+          {
+            "total_ms": 0.043862,
+            "each_ms": 0.000452,
+            "instances": 97,
+            "cls": "CaelumVehiclePart"
+          },
+          {
+            "total_ms": 0.026847,
+            "each_ms": 9.3e-05,
+            "instances": 288,
+            "cls": "CaelumRamBlock"
+          },
+          {
+            "total_ms": 0.00706,
+            "each_ms": 0.000883,
+            "instances": 8,
+            "cls": "CaelumBreakableGate"
+          },
+          {
+            "total_ms": 0.00685,
+            "each_ms": 0.000163,
+            "instances": 42,
+            "cls": "CaelumCannonFrame"
+          },
+          {
+            "total_ms": 0.00668,
+            "each_ms": 0.000159,
+            "instances": 42,
+            "cls": "CaelumCannonBarrel"
+          },
+          {
+            "total_ms": 0.00646,
+            "each_ms": 0.00646,
+            "instances": 1,
+            "cls": "CaelumMerchantShip"
+          },
+          {
+            "total_ms": 0.00543,
+            "each_ms": 0.00543,
+            "instances": 1,
+            "cls": "CaelumPortSiege"
+          },
+          {
+            "total_ms": 0.00313,
+            "each_ms": 0.00313,
+            "instances": 1,
+            "cls": "CaelumPortCommander"
+          },
+          {
+            "total_ms": 0.00304,
+            "each_ms": 0.000127,
+            "instances": 24,
+            "cls": "CaelumRamSuspension"
+          },
+          {
+            "total_ms": 0.00211,
+            "each_ms": 0.00211,
+            "instances": 1,
+            "cls": "CaelumRestBed"
+          },
+          {
+            "total_ms": 0.00199,
+            "each_ms": 0.00199,
+            "instances": 1,
+            "cls": "CaelumDiningTableSmall"
+          },
+          {
+            "total_ms": 21.128372,
+            "each_ms": 0.003521,
+            "instances": 6000,
+            "cls": "CaelumMandinga"
+          },
+          {
+            "total_ms": 3.782935,
+            "each_ms": 0.630489,
+            "instances": 6,
+            "cls": "CaelumBatteringRam"
+          },
+          {
+            "total_ms": 2.804418,
+            "each_ms": 0.002633,
+            "instances": 1065,
+            "cls": "CaelumActorSimpleElementalProjectile"
+          },
+          {
+            "total_ms": 2.530659,
+            "each_ms": 0.060254,
+            "instances": 42,
+            "cls": "CaelumCannon"
+          },
+          {
+            "total_ms": 0.853864,
+            "each_ms": 0.000129,
+            "instances": 6601,
+            "cls": "CaelumSewerEscapeTarget"
+          },
+          {
+            "total_ms": 0.429445,
+            "each_ms": 0.000716,
+            "instances": 600,
+            "cls": "CaelumPortDefender"
+          },
+          {
+            "total_ms": 0.115849,
+            "each_ms": 0.000153,
+            "instances": 756,
+            "cls": "CaelumCannonBlock"
+          },
+          {
+            "total_ms": 0.108309,
+            "each_ms": 0.000181,
+            "instances": 600,
+            "cls": "CaelumGateBlocker"
+          },
+          {
+            "total_ms": 0.04822,
+            "each_ms": 0.04822,
+            "instances": 1,
+            "cls": "CaelumPlayer"
+          },
+          {
+            "total_ms": 0.045321,
+            "each_ms": 0.000467,
+            "instances": 97,
+            "cls": "CaelumVehiclePart"
+          },
+          {
+            "total_ms": 0.030896,
+            "each_ms": 0.000107,
+            "instances": 288,
+            "cls": "CaelumRamBlock"
+          },
+          {
+            "total_ms": 0.00786,
+            "each_ms": 0.000187,
+            "instances": 42,
+            "cls": "CaelumCannonFrame"
+          },
+          {
+            "total_ms": 0.00762,
+            "each_ms": 0.000181,
+            "instances": 42,
+            "cls": "CaelumCannonBarrel"
+          },
+          {
+            "total_ms": 0.0071,
+            "each_ms": 0.0071,
+            "instances": 1,
+            "cls": "CaelumMerchantShip"
+          },
+          {
+            "total_ms": 0.007091,
+            "each_ms": 0.000886,
+            "instances": 8,
+            "cls": "CaelumBreakableGate"
+          },
+          {
+            "total_ms": 0.00569,
+            "each_ms": 0.00569,
+            "instances": 1,
+            "cls": "CaelumPortSiege"
+          },
+          {
+            "total_ms": 0.00475,
+            "each_ms": 0.00475,
+            "instances": 1,
+            "cls": "CaelumDiningTableSmall"
+          },
+          {
+            "total_ms": 0.00316,
+            "each_ms": 0.00316,
+            "instances": 1,
+            "cls": "CaelumPortCommander"
+          },
+          {
+            "total_ms": 0.00298,
+            "each_ms": 0.000124,
+            "instances": 24,
+            "cls": "CaelumRamSuspension"
+          },
+          {
+            "total_ms": 0.00176,
+            "each_ms": 0.000293,
+            "instances": 6,
+            "cls": "CaelumSiegeRouteNode"
+          },
+          {
+            "total_ms": 25.775709,
+            "each_ms": 0.004296,
+            "instances": 6000,
+            "cls": "CaelumMandinga"
+          },
+          {
+            "total_ms": 3.850515,
+            "each_ms": 0.641753,
+            "instances": 6,
+            "cls": "CaelumBatteringRam"
+          },
+          {
+            "total_ms": 2.776119,
+            "each_ms": 0.066098,
+            "instances": 42,
+            "cls": "CaelumCannon"
+          },
+          {
+            "total_ms": 2.434874,
+            "each_ms": 0.002899,
+            "instances": 840,
+            "cls": "CaelumActorSimpleElementalProjectile"
+          },
+          {
+            "total_ms": 1.118407,
+            "each_ms": 0.000169,
+            "instances": 6601,
+            "cls": "CaelumSewerEscapeTarget"
+          },
+          {
+            "total_ms": 0.685775,
+            "each_ms": 0.001143,
+            "instances": 600,
+            "cls": "CaelumPortDefender"
+          },
+          {
+            "total_ms": 0.412578,
+            "each_ms": 0.000546,
+            "instances": 756,
+            "cls": "CaelumCannonBlock"
+          },
+          {
+            "total_ms": 0.128751,
+            "each_ms": 0.000215,
+            "instances": 600,
+            "cls": "CaelumGateBlocker"
+          },
+          {
+            "total_ms": 0.04618,
+            "each_ms": 0.04618,
+            "instances": 1,
+            "cls": "CaelumPlayer"
+          },
+          {
+            "total_ms": 0.044791,
+            "each_ms": 0.000462,
+            "instances": 97,
+            "cls": "CaelumVehiclePart"
+          },
+          {
+            "total_ms": 0.030816,
+            "each_ms": 0.000107,
+            "instances": 288,
+            "cls": "CaelumRamBlock"
+          },
+          {
+            "total_ms": 0.02529,
+            "each_ms": 0.000602,
+            "instances": 42,
+            "cls": "CaelumCannonFrame"
+          },
+          {
+            "total_ms": 0.02477,
+            "each_ms": 0.00059,
+            "instances": 42,
+            "cls": "CaelumCannonBarrel"
+          },
+          {
+            "total_ms": 0.00738,
+            "each_ms": 0.000923,
+            "instances": 8,
+            "cls": "CaelumBreakableGate"
+          },
+          {
+            "total_ms": 0.00624,
+            "each_ms": 0.00624,
+            "instances": 1,
+            "cls": "CaelumMerchantShip"
+          },
+          {
+            "total_ms": 0.00572,
+            "each_ms": 0.00572,
+            "instances": 1,
+            "cls": "CaelumPortSiege"
+          },
+          {
+            "total_ms": 0.00359,
+            "each_ms": 0.00359,
+            "instances": 1,
+            "cls": "CaelumPortCommander"
+          },
+          {
+            "total_ms": 0.00288,
+            "each_ms": 0.00012,
+            "instances": 24,
+            "cls": "CaelumRamSuspension"
+          },
+          {
+            "total_ms": 0.00247,
+            "each_ms": 0.00247,
+            "instances": 1,
+            "cls": "CaelumDiningTableSmall"
+          },
+          {
+            "total_ms": 0.00207,
+            "each_ms": 0.001035,
+            "instances": 2,
+            "cls": "CaelumTimeAdvanceZone"
+          }
+        ]
+      },
+      "current-performance-final": {
+        "tics": 1680,
+        "wall_seconds": 145.242288,
+        "tics_per_second": 11.566879199809906,
+        "first": {
+          "tic": "35",
+          "ms": "7407.237",
+          "roster": "6001",
+          "attackers": "6001",
+          "defenders": "600",
+          "groups": "64",
+          "x": "0.000",
+          "y": "320.000",
+          "z": "-0.000",
+          "angle": "90.000"
+        },
+        "last": {
+          "tic": "1715",
+          "ms": "152649.525",
+          "roster": "6001",
+          "attackers": "5989",
+          "defenders": "599",
+          "groups": "82",
+          "x": "0.000",
+          "y": "320.000",
+          "z": "-0.000",
+          "angle": "90.000"
+        },
+        "player_single_tic_profile_ms": [
+          0.04577,
+          0.04727,
+          0.04324
+        ],
+        "overlay_interval_median_ms": 1153.0215,
+        "overlay_interval_max_ms": 3515.866,
+        "overlay_samples": 98,
+        "overlay_window": "Only intervals wholly inside the same 1680-tic simulation observation window.",
+        "synthetic_input_event_route_ms": [
+          {
+            "id": "1",
+            "request_to_play": 471.9609999999957,
+            "request_to_ack": 471.987000000001,
+            "request_to_overlay": 1542.5689999999959
+          },
+          {
+            "id": "2",
+            "request_to_play": 1061.8369999999995,
+            "request_to_ack": 1061.8669999999984,
+            "request_to_overlay": 2152.198000000004
+          },
+          {
+            "id": "3",
+            "request_to_play": 1173.4149999999936,
+            "request_to_ack": 1173.4400000000023,
+            "request_to_overlay": 3255.680999999997
+          }
+        ],
+        "thinker_profiles": [
+          {
+            "total_ms": 93.641696,
+            "each_ms": 0.015607,
+            "instances": 6000,
+            "cls": "CaelumMandinga"
+          },
+          {
+            "total_ms": 3.794584,
+            "each_ms": 0.632431,
+            "instances": 6,
+            "cls": "CaelumBatteringRam"
+          },
+          {
+            "total_ms": 2.691962,
+            "each_ms": 0.002532,
+            "instances": 1063,
+            "cls": "CaelumActorSimpleElementalProjectile"
+          },
+          {
+            "total_ms": 2.507749,
+            "each_ms": 0.059708,
+            "instances": 42,
+            "cls": "CaelumCannon"
+          },
+          {
+            "total_ms": 0.814487,
+            "each_ms": 0.000123,
+            "instances": 6601,
+            "cls": "CaelumSewerEscapeTarget"
+          },
+          {
+            "total_ms": 0.72825,
+            "each_ms": 0.001214,
+            "instances": 600,
+            "cls": "CaelumPortDefender"
+          },
+          {
+            "total_ms": 0.117089,
+            "each_ms": 0.000155,
+            "instances": 756,
+            "cls": "CaelumCannonBlock"
+          },
+          {
+            "total_ms": 0.100613,
+            "each_ms": 0.000168,
+            "instances": 600,
+            "cls": "CaelumGateBlocker"
+          },
+          {
+            "total_ms": 0.04577,
+            "each_ms": 0.04577,
+            "instances": 1,
+            "cls": "CaelumPlayer"
+          },
+          {
+            "total_ms": 0.040943,
+            "each_ms": 0.000422,
+            "instances": 97,
+            "cls": "CaelumVehiclePart"
+          },
+          {
+            "total_ms": 0.025065,
+            "each_ms": 8.7e-05,
+            "instances": 288,
+            "cls": "CaelumRamBlock"
+          },
+          {
+            "total_ms": 0.0081,
+            "each_ms": 0.000193,
+            "instances": 42,
+            "cls": "CaelumCannonBarrel"
+          },
+          {
+            "total_ms": 0.00671,
+            "each_ms": 0.00016,
+            "instances": 42,
+            "cls": "CaelumCannonFrame"
+          },
+          {
+            "total_ms": 0.006231,
+            "each_ms": 0.000779,
+            "instances": 8,
+            "cls": "CaelumBreakableGate"
+          },
+          {
+            "total_ms": 0.00498,
+            "each_ms": 0.00498,
+            "instances": 1,
+            "cls": "CaelumPortSiege"
+          },
+          {
+            "total_ms": 0.00493,
+            "each_ms": 0.00493,
+            "instances": 1,
+            "cls": "CaelumMerchantShip"
+          },
+          {
+            "total_ms": 0.0032,
+            "each_ms": 0.0032,
+            "instances": 1,
+            "cls": "CaelumPortCommander"
+          },
+          {
+            "total_ms": 0.00293,
+            "each_ms": 0.000122,
+            "instances": 24,
+            "cls": "CaelumRamSuspension"
+          },
+          {
+            "total_ms": 0.00159,
+            "each_ms": 0.00159,
+            "instances": 1,
+            "cls": "CaelumDiningTableSmall"
+          },
+          {
+            "total_ms": 0.00132,
+            "each_ms": 0.00132,
+            "instances": 1,
+            "cls": "CaelumRestBed"
+          },
+          {
+            "total_ms": 20.969508,
+            "each_ms": 0.003495,
+            "instances": 6000,
+            "cls": "CaelumMandinga"
+          },
+          {
+            "total_ms": 4.040504,
+            "each_ms": 0.673417,
+            "instances": 6,
+            "cls": "CaelumBatteringRam"
+          },
+          {
+            "total_ms": 2.720763,
+            "each_ms": 0.002555,
+            "instances": 1065,
+            "cls": "CaelumActorSimpleElementalProjectile"
+          },
+          {
+            "total_ms": 2.538519,
+            "each_ms": 0.060441,
+            "instances": 42,
+            "cls": "CaelumCannon"
+          },
+          {
+            "total_ms": 0.986968,
+            "each_ms": 0.00015,
+            "instances": 6601,
+            "cls": "CaelumSewerEscapeTarget"
+          },
+          {
+            "total_ms": 0.4385,
+            "each_ms": 0.000731,
+            "instances": 600,
+            "cls": "CaelumPortDefender"
+          },
+          {
+            "total_ms": 0.110768,
+            "each_ms": 0.000147,
+            "instances": 756,
+            "cls": "CaelumCannonBlock"
+          },
+          {
+            "total_ms": 0.106078,
+            "each_ms": 0.000177,
+            "instances": 600,
+            "cls": "CaelumGateBlocker"
+          },
+          {
+            "total_ms": 0.04727,
+            "each_ms": 0.04727,
+            "instances": 1,
+            "cls": "CaelumPlayer"
+          },
+          {
+            "total_ms": 0.042494,
+            "each_ms": 0.000438,
+            "instances": 97,
+            "cls": "CaelumVehiclePart"
+          },
+          {
+            "total_ms": 0.029605,
+            "each_ms": 0.000103,
+            "instances": 288,
+            "cls": "CaelumRamBlock"
+          },
+          {
+            "total_ms": 0.007761,
+            "each_ms": 0.00097,
+            "instances": 8,
+            "cls": "CaelumBreakableGate"
+          },
+          {
+            "total_ms": 0.00756,
+            "each_ms": 0.00018,
+            "instances": 42,
+            "cls": "CaelumCannonBarrel"
+          },
+          {
+            "total_ms": 0.00628,
+            "each_ms": 0.00015,
+            "instances": 42,
+            "cls": "CaelumCannonFrame"
+          },
+          {
+            "total_ms": 0.00537,
+            "each_ms": 0.00537,
+            "instances": 1,
+            "cls": "CaelumMerchantShip"
+          },
+          {
+            "total_ms": 0.00516,
+            "each_ms": 0.00516,
+            "instances": 1,
+            "cls": "CaelumPortSiege"
+          },
+          {
+            "total_ms": 0.00293,
+            "each_ms": 0.00293,
+            "instances": 1,
+            "cls": "CaelumPortCommander"
+          },
+          {
+            "total_ms": 0.00292,
+            "each_ms": 0.000122,
+            "instances": 24,
+            "cls": "CaelumRamSuspension"
+          },
+          {
+            "total_ms": 0.00216,
+            "each_ms": 0.00216,
+            "instances": 1,
+            "cls": "CaelumDiningTableSmall"
+          },
+          {
+            "total_ms": 0.00157,
+            "each_ms": 0.00157,
+            "instances": 1,
+            "cls": "CaelumRestBed"
+          },
+          {
+            "total_ms": 22.405585,
+            "each_ms": 0.003734,
+            "instances": 6000,
+            "cls": "CaelumMandinga"
+          },
+          {
+            "total_ms": 4.051024,
+            "each_ms": 0.675171,
+            "instances": 6,
+            "cls": "CaelumBatteringRam"
+          },
+          {
+            "total_ms": 2.381887,
+            "each_ms": 0.056712,
+            "instances": 42,
+            "cls": "CaelumCannon"
+          },
+          {
+            "total_ms": 2.247676,
+            "each_ms": 0.002676,
+            "instances": 840,
+            "cls": "CaelumActorSimpleElementalProjectile"
+          },
+          {
+            "total_ms": 0.953418,
+            "each_ms": 0.000144,
+            "instances": 6601,
+            "cls": "CaelumSewerEscapeTarget"
+          },
+          {
+            "total_ms": 0.456061,
+            "each_ms": 0.00076,
+            "instances": 600,
+            "cls": "CaelumPortDefender"
+          },
+          {
+            "total_ms": 0.112449,
+            "each_ms": 0.000149,
+            "instances": 756,
+            "cls": "CaelumCannonBlock"
+          },
+          {
+            "total_ms": 0.102201,
+            "each_ms": 0.00017,
+            "instances": 600,
+            "cls": "CaelumGateBlocker"
+          },
+          {
+            "total_ms": 0.04324,
+            "each_ms": 0.04324,
+            "instances": 1,
+            "cls": "CaelumPlayer"
+          },
+          {
+            "total_ms": 0.038723,
+            "each_ms": 0.000399,
+            "instances": 97,
+            "cls": "CaelumVehiclePart"
+          },
+          {
+            "total_ms": 0.027663,
+            "each_ms": 9.6e-05,
+            "instances": 288,
+            "cls": "CaelumRamBlock"
+          },
+          {
+            "total_ms": 0.00786,
+            "each_ms": 0.000187,
+            "instances": 42,
+            "cls": "CaelumCannonBarrel"
+          },
+          {
+            "total_ms": 0.00689,
+            "each_ms": 0.000164,
+            "instances": 42,
+            "cls": "CaelumCannonFrame"
+          },
+          {
+            "total_ms": 0.006541,
+            "each_ms": 0.000818,
+            "instances": 8,
+            "cls": "CaelumBreakableGate"
+          },
+          {
+            "total_ms": 0.0051,
+            "each_ms": 0.0051,
+            "instances": 1,
+            "cls": "CaelumPortSiege"
+          },
+          {
+            "total_ms": 0.00471,
+            "each_ms": 0.00471,
+            "instances": 1,
+            "cls": "CaelumMerchantShip"
+          },
+          {
+            "total_ms": 0.00385,
+            "each_ms": 0.00016,
+            "instances": 24,
+            "cls": "CaelumRamSuspension"
+          },
+          {
+            "total_ms": 0.00241,
+            "each_ms": 0.00241,
+            "instances": 1,
+            "cls": "CaelumPortCommander"
+          },
+          {
+            "total_ms": 0.00164,
+            "each_ms": 0.00164,
+            "instances": 1,
+            "cls": "CaelumDiningTableSmall"
+          },
+          {
+            "total_ms": 0.00159,
+            "each_ms": 0.00159,
+            "instances": 1,
+            "cls": "CaelumRestBed"
+          }
+        ]
+      },
+      "current-performance-repeat-final": {
+        "tics": 1680,
+        "wall_seconds": 156.109867,
+        "tics_per_second": 10.761651600151577,
+        "first": {
+          "tic": "35",
+          "ms": "7987.888",
+          "roster": "6001",
+          "attackers": "6001",
+          "defenders": "600",
+          "groups": "64",
+          "x": "0.000",
+          "y": "320.000",
+          "z": "-0.000",
+          "angle": "90.000"
+        },
+        "last": {
+          "tic": "1715",
+          "ms": "164097.755",
+          "roster": "6001",
+          "attackers": "5989",
+          "defenders": "599",
+          "groups": "82",
+          "x": "0.000",
+          "y": "320.000",
+          "z": "-0.000",
+          "angle": "90.000"
+        },
+        "player_single_tic_profile_ms": [
+          0.04966,
+          0.05437,
+          0.15892
+        ],
+        "overlay_interval_median_ms": 1276.9655,
+        "overlay_interval_max_ms": 3597.692,
+        "overlay_samples": 98,
+        "overlay_window": "Only intervals wholly inside the same 1680-tic simulation observation window.",
+        "synthetic_input_event_route_ms": [
+          {
+            "id": "1",
+            "request_to_play": 639.2900000000009,
+            "request_to_ack": 639.4110000000001,
+            "request_to_overlay": 1814.864999999998
+          },
+          {
+            "id": "2",
+            "request_to_play": 76.69499999999243,
+            "request_to_ack": 76.87900000000081,
+            "request_to_overlay": 1229.5529999999999
+          },
+          {
+            "id": "3",
+            "request_to_play": 1611.7979999999952,
+            "request_to_ack": 1611.827999999994,
+            "request_to_overlay": 4199.277000000002
+          }
+        ],
+        "thinker_profiles": [
+          {
+            "total_ms": 99.550211,
+            "each_ms": 0.016592,
+            "instances": 6000,
+            "cls": "CaelumMandinga"
+          },
+          {
+            "total_ms": 3.997284,
+            "each_ms": 0.666214,
+            "instances": 6,
+            "cls": "CaelumBatteringRam"
+          },
+          {
+            "total_ms": 3.29871,
+            "each_ms": 0.003103,
+            "instances": 1063,
+            "cls": "CaelumActorSimpleElementalProjectile"
+          },
+          {
+            "total_ms": 2.449549,
+            "each_ms": 0.058323,
+            "instances": 42,
+            "cls": "CaelumCannon"
+          },
+          {
+            "total_ms": 0.882936,
+            "each_ms": 0.001472,
+            "instances": 600,
+            "cls": "CaelumPortDefender"
+          },
+          {
+            "total_ms": 0.851255,
+            "each_ms": 0.000129,
+            "instances": 6601,
+            "cls": "CaelumSewerEscapeTarget"
+          },
+          {
+            "total_ms": 0.300329,
+            "each_ms": 0.000397,
+            "instances": 756,
+            "cls": "CaelumCannonBlock"
+          },
+          {
+            "total_ms": 0.160458,
+            "each_ms": 0.000267,
+            "instances": 600,
+            "cls": "CaelumGateBlocker"
+          },
+          {
+            "total_ms": 0.04966,
+            "each_ms": 0.04966,
+            "instances": 1,
+            "cls": "CaelumPlayer"
+          },
+          {
+            "total_ms": 0.04179,
+            "each_ms": 0.000431,
+            "instances": 97,
+            "cls": "CaelumVehiclePart"
+          },
+          {
+            "total_ms": 0.038915,
+            "each_ms": 0.000135,
+            "instances": 288,
+            "cls": "CaelumRamBlock"
+          },
+          {
+            "total_ms": 0.01742,
+            "each_ms": 0.000415,
+            "instances": 42,
+            "cls": "CaelumCannonBarrel"
+          },
+          {
+            "total_ms": 0.01565,
+            "each_ms": 0.000373,
+            "instances": 42,
+            "cls": "CaelumCannonFrame"
+          },
+          {
+            "total_ms": 0.010461,
+            "each_ms": 0.001308,
+            "instances": 8,
+            "cls": "CaelumBreakableGate"
+          },
+          {
+            "total_ms": 0.00633,
+            "each_ms": 0.00633,
+            "instances": 1,
+            "cls": "CaelumMerchantShip"
+          },
+          {
+            "total_ms": 0.00548,
+            "each_ms": 0.00548,
+            "instances": 1,
+            "cls": "CaelumPortSiege"
+          },
+          {
+            "total_ms": 0.005059,
+            "each_ms": 0.000211,
+            "instances": 24,
+            "cls": "CaelumRamSuspension"
+          },
+          {
+            "total_ms": 0.00389,
+            "each_ms": 0.00389,
+            "instances": 1,
+            "cls": "CaelumPortCommander"
+          },
+          {
+            "total_ms": 0.00216,
+            "each_ms": 0.00216,
+            "instances": 1,
+            "cls": "CaelumDiningTableSmall"
+          },
+          {
+            "total_ms": 0.00186,
+            "each_ms": 0.00186,
+            "instances": 1,
+            "cls": "CaelumRestBed"
+          },
+          {
+            "total_ms": 24.971919,
+            "each_ms": 0.004162,
+            "instances": 6000,
+            "cls": "CaelumMandinga"
+          },
+          {
+            "total_ms": 4.103124,
+            "each_ms": 0.683854,
+            "instances": 6,
+            "cls": "CaelumBatteringRam"
+          },
+          {
+            "total_ms": 2.951883,
+            "each_ms": 0.002772,
+            "instances": 1065,
+            "cls": "CaelumActorSimpleElementalProjectile"
+          },
+          {
+            "total_ms": 2.414818,
+            "each_ms": 0.057496,
+            "instances": 42,
+            "cls": "CaelumCannon"
+          },
+          {
+            "total_ms": 0.881784,
+            "each_ms": 0.000134,
+            "instances": 6601,
+            "cls": "CaelumSewerEscapeTarget"
+          },
+          {
+            "total_ms": 0.440235,
+            "each_ms": 0.000734,
+            "instances": 600,
+            "cls": "CaelumPortDefender"
+          },
+          {
+            "total_ms": 0.131379,
+            "each_ms": 0.000174,
+            "instances": 756,
+            "cls": "CaelumCannonBlock"
+          },
+          {
+            "total_ms": 0.113524,
+            "each_ms": 0.000189,
+            "instances": 600,
+            "cls": "CaelumGateBlocker"
+          },
+          {
+            "total_ms": 0.05437,
+            "each_ms": 0.05437,
+            "instances": 1,
+            "cls": "CaelumPlayer"
+          },
+          {
+            "total_ms": 0.04632,
+            "each_ms": 0.000478,
+            "instances": 97,
+            "cls": "CaelumVehiclePart"
+          },
+          {
+            "total_ms": 0.033375,
+            "each_ms": 0.000116,
+            "instances": 288,
+            "cls": "CaelumRamBlock"
+          },
+          {
+            "total_ms": 0.007751,
+            "each_ms": 0.000969,
+            "instances": 8,
+            "cls": "CaelumBreakableGate"
+          },
+          {
+            "total_ms": 0.00727,
+            "each_ms": 0.000173,
+            "instances": 42,
+            "cls": "CaelumCannonBarrel"
+          },
+          {
+            "total_ms": 0.00672,
+            "each_ms": 0.00672,
+            "instances": 1,
+            "cls": "CaelumMerchantShip"
+          },
+          {
+            "total_ms": 0.00653,
+            "each_ms": 0.000155,
+            "instances": 42,
+            "cls": "CaelumCannonFrame"
+          },
+          {
+            "total_ms": 0.00564,
+            "each_ms": 0.00564,
+            "instances": 1,
+            "cls": "CaelumPortSiege"
+          },
+          {
+            "total_ms": 0.00413,
+            "each_ms": 0.00413,
+            "instances": 1,
+            "cls": "CaelumPortCommander"
+          },
+          {
+            "total_ms": 0.00294,
+            "each_ms": 0.000122,
+            "instances": 24,
+            "cls": "CaelumRamSuspension"
+          },
+          {
+            "total_ms": 0.00226,
+            "each_ms": 0.00226,
+            "instances": 1,
+            "cls": "CaelumDiningTableSmall"
+          },
+          {
+            "total_ms": 0.00193,
+            "each_ms": 0.00193,
+            "instances": 1,
+            "cls": "CaelumRestBed"
+          },
+          {
+            "total_ms": 26.61576,
+            "each_ms": 0.004436,
+            "instances": 6000,
+            "cls": "CaelumMandinga"
+          },
+          {
+            "total_ms": 4.184184,
+            "each_ms": 0.697364,
+            "instances": 6,
+            "cls": "CaelumBatteringRam"
+          },
+          {
+            "total_ms": 2.677108,
+            "each_ms": 0.063741,
+            "instances": 42,
+            "cls": "CaelumCannon"
+          },
+          {
+            "total_ms": 2.45789,
+            "each_ms": 0.002926,
+            "instances": 840,
+            "cls": "CaelumActorSimpleElementalProjectile"
+          },
+          {
+            "total_ms": 0.955381,
+            "each_ms": 0.000145,
+            "instances": 6601,
+            "cls": "CaelumSewerEscapeTarget"
+          },
+          {
+            "total_ms": 0.734321,
+            "each_ms": 0.001224,
+            "instances": 600,
+            "cls": "CaelumPortDefender"
+          },
+          {
+            "total_ms": 0.628119,
+            "each_ms": 0.000831,
+            "instances": 756,
+            "cls": "CaelumCannonBlock"
+          },
+          {
+            "total_ms": 0.15892,
+            "each_ms": 0.15892,
+            "instances": 1,
+            "cls": "CaelumPlayer"
+          },
+          {
+            "total_ms": 0.124532,
+            "each_ms": 0.000208,
+            "instances": 600,
+            "cls": "CaelumGateBlocker"
+          },
+          {
+            "total_ms": 0.110674,
+            "each_ms": 0.001141,
+            "instances": 97,
+            "cls": "CaelumVehiclePart"
+          },
+          {
+            "total_ms": 0.039,
+            "each_ms": 0.000929,
+            "instances": 42,
+            "cls": "CaelumCannonBarrel"
+          },
+          {
+            "total_ms": 0.03413,
+            "each_ms": 0.000813,
+            "instances": 42,
+            "cls": "CaelumCannonFrame"
+          },
+          {
+            "total_ms": 0.031786,
+            "each_ms": 0.00011,
+            "instances": 288,
+            "cls": "CaelumRamBlock"
+          },
+          {
+            "total_ms": 0.019,
+            "each_ms": 0.019,
+            "instances": 1,
+            "cls": "CaelumMerchantShip"
+          },
+          {
+            "total_ms": 0.00935,
+            "each_ms": 0.00935,
+            "instances": 1,
+            "cls": "CaelumPortSiege"
+          },
+          {
+            "total_ms": 0.008751,
+            "each_ms": 0.001094,
+            "instances": 8,
+            "cls": "CaelumBreakableGate"
+          },
+          {
+            "total_ms": 0.00573,
+            "each_ms": 0.00573,
+            "instances": 1,
+            "cls": "CaelumRestBed"
+          },
+          {
+            "total_ms": 0.00371,
+            "each_ms": 0.000155,
+            "instances": 24,
+            "cls": "CaelumRamSuspension"
+          },
+          {
+            "total_ms": 0.00346,
+            "each_ms": 0.00346,
+            "instances": 1,
+            "cls": "CaelumWorkbenchStation"
+          },
+          {
+            "total_ms": 0.00336,
+            "each_ms": 0.00336,
+            "instances": 1,
+            "cls": "CaelumPortCommander"
+          }
+        ]
+      },
+      "architecture1-performance-repeat-complete": {
+        "tics": 1680,
+        "wall_seconds": 142.49457499999997,
+        "tics_per_second": 11.789922528629601,
+        "first": {
+          "tic": "35",
+          "ms": "7939.442",
+          "roster": "6001",
+          "attackers": "6001",
+          "defenders": "600",
+          "groups": "64",
+          "x": "0.000",
+          "y": "320.000",
+          "z": "-0.000",
+          "angle": "90.000"
+        },
+        "last": {
+          "tic": "1715",
+          "ms": "150434.017",
+          "roster": "6001",
+          "attackers": "5989",
+          "defenders": "599",
+          "groups": "82",
+          "x": "0.000",
+          "y": "320.000",
+          "z": "-0.000",
+          "angle": "90.000"
+        },
+        "player_single_tic_profile_ms": [
+          0.04268,
+          0.04573,
+          0.05147
+        ],
+        "overlay_interval_median_ms": 1223.228,
+        "overlay_interval_max_ms": 2832.476,
+        "overlay_samples": 98,
+        "overlay_window": "Only intervals wholly inside the same 1680-tic simulation observation window.",
+        "synthetic_input_event_route_ms": [
+          {
+            "id": "1",
+            "request_to_play": 533.1529999999984,
+            "request_to_ack": 533.1869999999981,
+            "request_to_overlay": 1705.645000000004
+          },
+          {
+            "id": "2",
+            "request_to_play": 1069.1699999999983,
+            "request_to_ack": 1069.2109999999957,
+            "request_to_overlay": 2187.648000000001
+          },
+          {
+            "id": "3",
+            "request_to_play": 1183.8729999999923,
+            "request_to_ack": 1183.9159999999974,
+            "request_to_overlay": 3283.4850000000006
+          }
+        ],
+        "thinker_profiles": [
+          {
+            "total_ms": 92.889798,
+            "each_ms": 0.015482,
+            "instances": 6000,
+            "cls": "CaelumMandinga"
+          },
+          {
+            "total_ms": 3.341745,
+            "each_ms": 0.556958,
+            "instances": 6,
+            "cls": "CaelumBatteringRam"
+          },
+          {
+            "total_ms": 2.802207,
+            "each_ms": 0.002636,
+            "instances": 1063,
+            "cls": "CaelumActorSimpleElementalProjectile"
+          },
+          {
+            "total_ms": 2.457758,
+            "each_ms": 0.058518,
+            "instances": 42,
+            "cls": "CaelumCannon"
+          },
+          {
+            "total_ms": 0.86736,
+            "each_ms": 0.000131,
+            "instances": 6601,
+            "cls": "CaelumSewerEscapeTarget"
+          },
+          {
+            "total_ms": 0.757429,
+            "each_ms": 0.001262,
+            "instances": 600,
+            "cls": "CaelumPortDefender"
+          },
+          {
+            "total_ms": 0.130557,
+            "each_ms": 0.000173,
+            "instances": 756,
+            "cls": "CaelumCannonBlock"
+          },
+          {
+            "total_ms": 0.101894,
+            "each_ms": 0.00017,
+            "instances": 600,
+            "cls": "CaelumGateBlocker"
+          },
+          {
+            "total_ms": 0.044037,
+            "each_ms": 0.000454,
+            "instances": 97,
+            "cls": "CaelumVehiclePart"
+          },
+          {
+            "total_ms": 0.04268,
+            "each_ms": 0.04268,
+            "instances": 1,
+            "cls": "CaelumPlayer"
+          },
+          {
+            "total_ms": 0.023744,
+            "each_ms": 8.2e-05,
+            "instances": 288,
+            "cls": "CaelumRamBlock"
+          },
+          {
+            "total_ms": 0.00845,
+            "each_ms": 0.000201,
+            "instances": 42,
+            "cls": "CaelumCannonBarrel"
+          },
+          {
+            "total_ms": 0.00775,
+            "each_ms": 0.000185,
+            "instances": 42,
+            "cls": "CaelumCannonFrame"
+          },
+          {
+            "total_ms": 0.007331,
+            "each_ms": 0.000916,
+            "instances": 8,
+            "cls": "CaelumBreakableGate"
+          },
+          {
+            "total_ms": 0.00637,
+            "each_ms": 0.00637,
+            "instances": 1,
+            "cls": "CaelumMerchantShip"
+          },
+          {
+            "total_ms": 0.00543,
+            "each_ms": 0.00543,
+            "instances": 1,
+            "cls": "CaelumPortSiege"
+          },
+          {
+            "total_ms": 0.00358,
+            "each_ms": 0.000149,
+            "instances": 24,
+            "cls": "CaelumRamSuspension"
+          },
+          {
+            "total_ms": 0.00274,
+            "each_ms": 0.00274,
+            "instances": 1,
+            "cls": "CaelumPortCommander"
+          },
+          {
+            "total_ms": 0.00212,
+            "each_ms": 0.000353,
+            "instances": 6,
+            "cls": "CaelumSiegeRouteNode"
+          },
+          {
+            "total_ms": 0.00208,
+            "each_ms": 0.00208,
+            "instances": 1,
+            "cls": "CaelumDiningTableSmall"
+          },
+          {
+            "total_ms": 22.265161,
+            "each_ms": 0.003711,
+            "instances": 6000,
+            "cls": "CaelumMandinga"
+          },
+          {
+            "total_ms": 3.829684,
+            "each_ms": 0.003596,
+            "instances": 1065,
+            "cls": "CaelumActorSimpleElementalProjectile"
+          },
+          {
+            "total_ms": 3.272845,
+            "each_ms": 0.545474,
+            "instances": 6,
+            "cls": "CaelumBatteringRam"
+          },
+          {
+            "total_ms": 2.586107,
+            "each_ms": 0.061574,
+            "instances": 42,
+            "cls": "CaelumCannon"
+          },
+          {
+            "total_ms": 0.938164,
+            "each_ms": 0.000142,
+            "instances": 6601,
+            "cls": "CaelumSewerEscapeTarget"
+          },
+          {
+            "total_ms": 0.494254,
+            "each_ms": 0.000824,
+            "instances": 600,
+            "cls": "CaelumPortDefender"
+          },
+          {
+            "total_ms": 0.267359,
+            "each_ms": 0.000354,
+            "instances": 756,
+            "cls": "CaelumCannonBlock"
+          },
+          {
+            "total_ms": 0.127475,
+            "each_ms": 0.000212,
+            "instances": 600,
+            "cls": "CaelumGateBlocker"
+          },
+          {
+            "total_ms": 0.046632,
+            "each_ms": 0.000481,
+            "instances": 97,
+            "cls": "CaelumVehiclePart"
+          },
+          {
+            "total_ms": 0.04573,
+            "each_ms": 0.04573,
+            "instances": 1,
+            "cls": "CaelumPlayer"
+          },
+          {
+            "total_ms": 0.031684,
+            "each_ms": 0.00011,
+            "instances": 288,
+            "cls": "CaelumRamBlock"
+          },
+          {
+            "total_ms": 0.01688,
+            "each_ms": 0.000402,
+            "instances": 42,
+            "cls": "CaelumCannonBarrel"
+          },
+          {
+            "total_ms": 0.01657,
+            "each_ms": 0.000395,
+            "instances": 42,
+            "cls": "CaelumCannonFrame"
+          },
+          {
+            "total_ms": 0.00949,
+            "each_ms": 0.001186,
+            "instances": 8,
+            "cls": "CaelumBreakableGate"
+          },
+          {
+            "total_ms": 0.00685,
+            "each_ms": 0.00685,
+            "instances": 1,
+            "cls": "CaelumMerchantShip"
+          },
+          {
+            "total_ms": 0.00611,
+            "each_ms": 0.00611,
+            "instances": 1,
+            "cls": "CaelumPortSiege"
+          },
+          {
+            "total_ms": 0.00369,
+            "each_ms": 0.00369,
+            "instances": 1,
+            "cls": "CaelumPortCommander"
+          },
+          {
+            "total_ms": 0.00319,
+            "each_ms": 0.000133,
+            "instances": 24,
+            "cls": "CaelumRamSuspension"
+          },
+          {
+            "total_ms": 0.00202,
+            "each_ms": 0.00202,
+            "instances": 1,
+            "cls": "CaelumDiningTableSmall"
+          },
+          {
+            "total_ms": 0.00202,
+            "each_ms": 0.000337,
+            "instances": 6,
+            "cls": "CaelumSiegeRouteNode"
+          },
+          {
+            "total_ms": 24.998863,
+            "each_ms": 0.004166,
+            "instances": 6000,
+            "cls": "CaelumMandinga"
+          },
+          {
+            "total_ms": 8.096448,
+            "each_ms": 1.349408,
+            "instances": 6,
+            "cls": "CaelumBatteringRam"
+          },
+          {
+            "total_ms": 2.526822,
+            "each_ms": 0.003008,
+            "instances": 840,
+            "cls": "CaelumActorSimpleElementalProjectile"
+          },
+          {
+            "total_ms": 2.507236,
+            "each_ms": 0.059696,
+            "instances": 42,
+            "cls": "CaelumCannon"
+          },
+          {
+            "total_ms": 1.872677,
+            "each_ms": 0.000284,
+            "instances": 6601,
+            "cls": "CaelumSewerEscapeTarget"
+          },
+          {
+            "total_ms": 0.574013,
+            "each_ms": 0.000957,
+            "instances": 600,
+            "cls": "CaelumPortDefender"
+          },
+          {
+            "total_ms": 0.126609,
+            "each_ms": 0.000167,
+            "instances": 756,
+            "cls": "CaelumCannonBlock"
+          },
+          {
+            "total_ms": 0.111136,
+            "each_ms": 0.000185,
+            "instances": 600,
+            "cls": "CaelumGateBlocker"
+          },
+          {
+            "total_ms": 0.05147,
+            "each_ms": 0.05147,
+            "instances": 1,
+            "cls": "CaelumPlayer"
+          },
+          {
+            "total_ms": 0.04492,
+            "each_ms": 0.000463,
+            "instances": 97,
+            "cls": "CaelumVehiclePart"
+          },
+          {
+            "total_ms": 0.030626,
+            "each_ms": 0.000106,
+            "instances": 288,
+            "cls": "CaelumRamBlock"
+          },
+          {
+            "total_ms": 0.009781,
+            "each_ms": 0.001223,
+            "instances": 8,
+            "cls": "CaelumBreakableGate"
+          },
+          {
+            "total_ms": 0.00943,
+            "each_ms": 0.00943,
+            "instances": 1,
+            "cls": "CaelumPortCommander"
+          },
+          {
+            "total_ms": 0.00834,
+            "each_ms": 0.000199,
+            "instances": 42,
+            "cls": "CaelumCannonBarrel"
+          },
+          {
+            "total_ms": 0.00701,
+            "each_ms": 0.00701,
+            "instances": 1,
+            "cls": "CaelumMerchantShip"
+          },
+          {
+            "total_ms": 0.00687,
+            "each_ms": 0.000164,
+            "instances": 42,
+            "cls": "CaelumCannonFrame"
+          },
+          {
+            "total_ms": 0.00619,
+            "each_ms": 0.00619,
+            "instances": 1,
+            "cls": "CaelumPortSiege"
+          },
+          {
+            "total_ms": 0.00457,
+            "each_ms": 0.00019,
+            "instances": 24,
+            "cls": "CaelumRamSuspension"
+          },
+          {
+            "total_ms": 0.00402,
+            "each_ms": 0.00201,
+            "instances": 2,
+            "cls": "CaelumTimeAdvanceZone"
+          },
+          {
+            "total_ms": 0.00278,
+            "each_ms": 0.000463,
+            "instances": 6,
+            "cls": "CaelumRamFrameVisual"
+          }
+        ]
+      }
+    },
+    "identical_scene_rows": 49,
+    "percent_tics_per_second_changes": [
+      4.088503480473915,
+      -8.721608865376872
+    ],
+    "limits": "Original Architecture 1 pre-extraction 4.37.24 versus final 5.0.4, then reversed order. Fixed seed/camera/populations, 1680 tics each. Overlay callback intervals are not GPU frame times; UI/play/UI diagnostic events are not physical device-to-photon latency. Desktop/GPU load and window focus are uncontrolled; every launch uses the same hidden/windowed configuration. Earlier #117/#118 regressions remain recorded; no causal attribution or speedup claim."
+  },
+  "saves": {
+    "ca120_created_enu.zds": {
+      "sha256": "b28e96b9202edcdcdce5108dd84d7393cc86aa8bf8e30c63a63bf5f319fc6875",
+      "distributed": false
+    },
+    "ca120_created_es.zds": {
+      "sha256": "24b9b0a738f99d13429a9dc99cd4f50c9caf91bdeabd84800aba45d5c4b4d0e1",
+      "distributed": false
+    },
+    "ca120_inventory_baseline.zds": {
+      "sha256": "2642b7198a1154fc83e110827fb07970c13938b7b639beb1ef007728c3f928cd",
+      "distributed": false
+    },
+    "ca120_inventory_baseline_hub.zds": {
+      "sha256": "6f202acb4cf6b0da9baf71f63baa593a10c53452bef1d1dc76a69c08b103e758",
+      "distributed": false
+    },
+    "ca120_inventory_current.zds": {
+      "sha256": "7ed9a8bf8cf8db7bd136dead38cd3d38f7d4f0f9c2a0a9cc8b0f34768329cf9a",
+      "distributed": false
+    },
+    "ca120_inventory_current_hub.zds": {
+      "sha256": "d154c669fbb1ec992fef7deeb8b2a294bacacdada77b0cd654e5168678bfeaf1",
+      "distributed": false
+    },
+    "ca120_inventory_upgraded.zds": {
+      "sha256": "934e298c2ed0cc61dc43682ad50f41ec01ccef4f4333b7245c93b047806d12aa",
+      "distributed": false
+    },
+    "ca120_player_baseline.zds": {
+      "sha256": "ba77ec44818eb63e6a9a0c2f8ac3239dd3e3abd2e8e4ea6fd78431806db57444",
+      "distributed": false
+    },
+    "ca120_player_baseline_hub.zds": {
+      "sha256": "b22783787f64b116078008529c13f60e77ff78f78c7e63d947b38d6a8d290e34",
+      "distributed": false
+    },
+    "ca120_player_current.zds": {
+      "sha256": "4329eca870207fa8becde28f17e07218be8a3a034a181f9ece1be96c93550281",
+      "distributed": false
+    },
+    "ca120_player_current_hub.zds": {
+      "sha256": "3f8e8ba12a6e8744e0e56cb4bfabf641af1ea7f004549e23276d2bb46c503e17",
+      "distributed": false
+    },
+    "ca120_player_upgraded.zds": {
+      "sha256": "81b33290c1ad3181dd2e32fd0bddc56f42cbb1d851e469d6a61cde11ce1a857e",
+      "distributed": false
+    },
+    "ca120_projection_upgraded.zds": {
+      "sha256": "483a8a985691b5f6735bef342c4eb1da4a1acb1abad8f66cc18508799dd50f2f",
+      "distributed": false
+    },
+    "ca120_tarot_baseline.zds": {
+      "sha256": "4673cbbd916f022df23045e629f75f9b9d8a873a69a166b40ff7c094002b9db7",
+      "distributed": false
+    },
+    "ca120_tarot_baseline_hub.zds": {
+      "sha256": "7468323e3626c9b9cf9ca06452c0495f029b30156136e90ad0fbb25d3ae47618",
+      "distributed": false
+    },
+    "ca120_tarot_current.zds": {
+      "sha256": "a6154fc7c28638c3306b9f871a486b47a7fc1e857832f4b77755af60b032e640",
+      "distributed": false
+    },
+    "ca120_tarot_current_hub.zds": {
+      "sha256": "80d921ae02cc1e364796996b4dbb36f3fe2865b23c5d60b4f3effc7a7780c605",
+      "distributed": false
+    },
+    "ca120_tarot_upgraded.zds": {
+      "sha256": "9af98e0aeee582e6a73122035da0a85644d86a163775c5919f9d2e9dab8411b5",
+      "distributed": false
+    },
+    "ca116_snapshot.zds": {
+      "sha256": "680a0f3f2c580ae801a993f14ff3f658b0cb2e8e98ac277d88fdc89fddd2f981",
+      "distributed": false
+    },
+    "ca119_baseline_tc.zds": {
+      "sha256": "a6bd651a27e46601f39993de821ab794d9f0872c7b3e953c40dcfdff2235cd1b",
+      "distributed": false
+    },
+    "ca119_baseline_tr.zds": {
+      "sha256": "03bc68b09afe7466425e919b70fb45c3b7f2544bc2e82b59c9a9914f9078b2b8",
+      "distributed": false
+    }
+  },
+  "diagnostics": {
+    "bot-authority-first": {
+      "reason": "Fixture used the wrong selection field name; corrected to EquipmentSelectionItemId. Not passing evidence.",
+      "log": {
+        "source_sha256": "33daf13ffd89274259f6516c33851e38d0dd0b0ba809af6503ef69a23e8a4739",
+        "archive_sha256": "cf50371e948d8bd9962b9d946d3c1e0677e3779b40807e7c1bf795870fa7b387",
+        "omitted_local_input_rows": 0,
+        "unwrapped_powershell_script_metadata": false
+      }
+    },
+    "bot-authority-second": {
+      "reason": "Installed engine had no zcajun/bots.cfg, so addbot created no participant. Final run uses an identical local engine copy with a test-only bot definition; installed files untouched.",
+      "log": {
+        "source_sha256": "22ac5928bfc5b899ba70f360a4e0e1ad8cb11f9eef614677b6637ba504dca58b",
+        "archive_sha256": "b2906c0756f8be5455c1dcff127ad829bcfd3df098ca67c8a3b7007e4d40bf83",
+        "omitted_local_input_rows": 0,
+        "unwrapped_powershell_script_metadata": false
+      }
+    },
+    "pickups-baseline-final": {
+      "reason": "Generic stack-pickup fixture was mistakenly run in MAP01, whose accepted Limbo raw-material quota rejects those pickups. The #118 source schedule uses MAP03; restored that fixture map. Production quota/ownership rules are unchanged.",
+      "log": {
+        "source_sha256": "1424e26f903f39ac7f910be4cecd4fa4706dc2582fd9ed554c4f243c3295f9b5",
+        "archive_sha256": "583939f7a27aa96ce2d4f6e488a6618854248c7e1ff101b1f6579e2be75d0897",
+        "omitted_local_input_rows": 0,
+        "unwrapped_powershell_script_metadata": false
+      }
+    },
+    "pickups-baseline-timing": {
+      "reason": "Repeating with the original 35-tic wait also fails on MAP01; timing is not the cause. MAP03 is the correct generic-pickup fixture context.",
+      "log": {
+        "source_sha256": "f26b47a6d0f012f3f761678441b6a02f6d06236e869ed0529e79aa386730ff1d",
+        "archive_sha256": "ab008abf749ff75950068a7818346bf088c0a938073db9c6fa45b42a97b12c4c",
+        "omitted_local_input_rows": 0,
+        "unwrapped_powershell_script_metadata": false
+      }
+    },
+    "architecture1-performance-repeat-final": {
+      "reason": "Process exited after only 45 scene samples (35..1575), short of the required 1680-tic window. No native error was logged; exit cause was not isolated. Discarded as a complete comparison and repeated with a longer final wait. All accepted performance runs use only samples 35..1715.",
+      "log": {
+        "source_sha256": "84c0536c32432b6d884968fde3d648f91f4ca7e68c15d30e60cb03ccb2e6ed18",
+        "archive_sha256": "d6c7aa49a0dca2ced433ce91b0b0074ad43a1ffafe9d0866c75f1caf5ce67333",
+        "omitted_local_input_rows": 22,
+        "unwrapped_powershell_script_metadata": false
+      }
+    }
+  },
+  "ui": {
+    "creation": "Native menu callbacks allocate the accepted 4+30-point draft in English/Spanish; MAP01 PostBeginPlay consumes it into a completed character. Console map startup is used; this does not claim a physical final introduction keypress.",
+    "live": "Agent visual inspection of actual target-window captures after native Enter/Right keys: the Spanish Journal changes Ace of Cups from unselected (2/3) to selected (3/3); Trucazo shows the played 7 of Coins winning a trick; Truco shows the played King of Swords and Argento bidding Truco. Observer logs confirm the canonical player record at load. The WorldTick observer does not advance during paused UI, so after-action evidence is the inspected native menu, not a claimed log/serial assertion. Image hashes only identify those inspected artifacts.",
+    "screenshots": {
+      "journal-before.png": "cd0708e083169beb74dc54820f0a184aedc4e80b0bb2ed0f520175a399026e96",
+      "journal-after.png": "6dc62702571d23874f50a7b1d6d3f707503df0b0ead253191325d9db6e61c716",
+      "trucazo-before.png": "2f1d627bdbf132c59f70aeaf28e16f8032a61963b505c93dff47042312209362",
+      "trucazo-after.png": "509887769f6d3cf7059d18a3ea8988aa349dcdca94aa3278579bd6b5ac788a1a",
+      "truco-before.png": "6add7c84daa7763ee68cb181fc25a6fe5ebedaa3510b60b212935f9acfe43c46",
+      "truco-after.png": "9222581c8c6e4a8a3d926ed86a8c26946ea0786395154155a706e94a891fd710"
+    }
+  },
+  "environment": "GZDoom 4.14.2 / Windows 11 / Vulkan / Ryzen 9 5950X / RTX 3070 Ti; seed116/skill2; audio enabled at 5%; serial launches.",
+  "author_acceptance": "Pending CA-503-TAROT-01 and CA-504-AUTHORITY-01. Agent fixtures do not establish author acceptance.",
+  "reproduction": [
+    "Build baseline/current separately; prepare_checks.py creates deterministic test addons outside src. Stage current package under baseline.pk3/after-final.pk3 for native historical save basenames; preserve originals.",
+    "run_suite.ps1 -Group fresh, reload, transactions, projection, performance, repeat launches serialized runs; each run records exact args, package/addon/engine/IWAD hashes and initial settings.",
+    "The complete replacement performance run uses run_native.ps1 -Label architecture1-performance-repeat-complete -Package architecture1.pk3 -Script benchmark-long.cfg. Compare only tic35..1715; extra final-wait tics are excluded.",
+    "run_suite.ps1 -Group creation exercises both languages. For live UI, load the current Tarot save or original #119 ca119_baseline_tc/tr saves with ui/checks.pk3; ui-journal.cfg opens the Ace page. Observe the actual target window, then press Enter or Right/Enter and capture the changed selection/played card.",
+    "prepare_bot_engine.ps1 copies the installed engine locally and adds one bot definition. run_native.ps1 with that engine, authority/checks.pk3, MAP03 and bots.cfg runs the two-pawn test.",
+    "verify_authority.py verifies source contracts; summarize.py compares values/save payloads and archives UTF-8 text. Never distribute engine, IWAD, PK3, saves or local fixtures in src."
+  ],
+  "limitations": [
+    "No coop/PvP, networked Trucazo, join/leave/reconnect/respawn/session ownership transfer or shared campaign-clock contract is implemented.",
+    "The existing campaign clock deliberately stops with multiple participants. Map-local siege controllers/actors remain shared map state, not per-player copies.",
+    "No gameplay, balance, map, art, controls or actor count changed. Thermal exposure, native UI redesign, campaign expansion and measured mass-AI optimization remain separate work.",
+    "Archive normalization removes trailing whitespace and incidental local key-scan rows. PowerShell Get-Content script values are unwrapped from redundant provider metadata; actual script text, args, hashes and hardware remain. Original logs/metadata and their hashes remain local."
+  ]
+}

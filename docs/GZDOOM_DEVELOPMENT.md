@@ -306,6 +306,21 @@ deferred PostBeginPlay; setting only the derived `StoryAnchored` flag is reset
 by initialization. Require the intended save file and post-load event in the
 log before treating an automated startup schedule as completed persistence QA.
 
+#120 distinguishes a current native player pawn from a merely non-null actor:
+use the explicit receiver contract, then verify canonical record/item/preview
+ownership before mutation. Native event player slots must be checked before
+array indexing; never use a local-player fallback in domain commands. Preserve
+read-only lookup during prediction, while rejecting writes and query helpers
+that initialize/refresh authoritative state.
+Its two-player fixture uses native `addbot` and actual PlayerInfo/pawn slots.
+On Windows GZDoom reads `zcajun/bots.cfg` under the executable directory; a
+test-only copy of the installed engine can supply this file without modifying
+the installation. Assert that a second participant actually joined before
+claiming owner isolation. This one-process fixture proves neither two-client
+transport nor join/reconnect/respawn/session behavior. The existing world-clock
+single-participant gate must remain documented as an unsupported shared-time
+boundary, not quietly removed to make a test pass.
+
 ### Evidence categories
 
 For #117, `assets/validation_501/verify_extraction.py` additionally retains quoted
