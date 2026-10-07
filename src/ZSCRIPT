@@ -178,3 +178,21 @@ version "4.14"
 #include "caelum/trucazo/CaelumTrucoRules.zs"
 #include "caelum/trucazo/CaelumTrucoMatch.zs"
 #include "caelum/trucazo/CaelumTrucoMenu.zs"
+
+#include "caelum/survival/CaelumThermalData.zs"
+#include "caelum/survival/CaelumThermalRules.zs"
+#include "caelum/survival/CaelumThermalState.zs"
+#include "caelum/survival/CaelumThermalBody.zs"
+#include "caelum/survival/CaelumThermalService.zs"
+#include "caelum/survival/CaelumThermalEnvironment.zs"
+#include "caelum/survival/CaelumThermalRuntime.zs"
+
+#include "caelum/survival/CaelumThermalEffects.zs"
+
+#include "caelum/survival/CaelumThermalMotion.zs"
+
+#include "caelum/survival/CaelumThermalMagic.zs"
+
+#include "caelum/survival/CaelumThermalJourney.zs"
+
+#include "caelum/survival/CaelumThermalFire.zs"

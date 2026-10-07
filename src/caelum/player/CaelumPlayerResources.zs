@@ -342,7 +342,7 @@ class CaelumPlayerResources : Object play
                 - CaelumConstants.SURVIVAL_MAXIMUM
                 / (CaelumConstants.THIRST_EMPTY_GAME_HOURS
                     * CaelumWorldClock.SecondsPerGameHour(level.MapName))
-                * user.DerivedStats.HungerThirstLossMultiplier / restFactor / TICRATE);
+                * user.DerivedStats.HungerThirstLossMultiplier * CaelumThermalEffects.HeatCost(user) / restFactor / TICRATE);
         }
         // Dormir reemplaza la pérdida pasiva de Sueño por recuperación neta.
         // Esperar conserva la pérdida de Sueño; el soporte sólo modifica hambre/sed.
@@ -537,7 +537,8 @@ class CaelumPlayerResources : Object play
             user.DerivedStats.GetHungerThirstConsumptionMultiplier(user.Attributes)
                 / (restFactor * restFactor);
         double hungerCostPerHealth = 100.0 * consumptionMultiplier / user.CaelumMaximumHealth;
-        double thirstCostPerHealth = 50.0 * consumptionMultiplier / user.CaelumMaximumHealth;
+        double thirstCostPerHealth = 50.0 * consumptionMultiplier / user.CaelumMaximumHealth
+            * CaelumThermalEffects.HeatCost(user);
         double affordableHealth = Min(
             user.CurrentHunger / hungerCostPerHealth,
             user.CurrentThirst / thirstCostPerHealth
@@ -588,7 +589,7 @@ class CaelumPlayerResources : Object play
             * consumptionMultiplier / user.DerivedStats.MaximumAir;
         double thirstCostPerAir =
             CaelumConstants.AIR_FULL_RECOVERY_THIRST_COST
-            * consumptionMultiplier / user.DerivedStats.MaximumAir;
+            * consumptionMultiplier / user.DerivedStats.MaximumAir * CaelumThermalEffects.HeatCost(user);
         double affordableAir = Min(
             user.CurrentHunger / hungerCostPerAir,
             user.CurrentThirst / thirstCostPerAir
@@ -792,7 +793,7 @@ class CaelumPlayerResources : Object play
 
         double finalCost = CaelumConstants.JUMP_AIR_COST
             * user.DerivedStats.AirConsumptionMultiplier;
-        user.CurrentAir = Max(0.0, user.CurrentAir - finalCost);
+        user.CurrentAir = Max(0.0, user.CurrentAir - finalCost * CaelumThermalEffects.HeatCost(user));
         user.UpdateAirStateEffects();
     }
 

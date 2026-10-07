@@ -1,6 +1,30 @@
 # TASKS.md — Active tasks
 
-Documentation version: **5.0.6** — 2026-10-07.
+Documentation version: **5.1.0** — 2026-10-07.
+
+## Issue #130 — Thermal survival (5.1.0)
+
+Implemented in [PR #134](https://github.com/damiancurti/Caelum-Argenteum/pull/134).
+The author confirmed CA130-01/02/03 passed on 2026-10-07 and authorized merge
+and issue closure. Native verification remains separately recorded in
+[5.1.0 evidence](../assets/validation_510/RESULTS.json).
+
+- Authoritative per-character exposure, moisture, acclimatization and damage
+  fractions; effective Toughness thresholds and heat/cold consequences.
+- Actual regional equipment coverage, rain/evaporation/immersion, explicit
+  water temperatures, shelter, optional rated fires and native magic energy.
+- Sourced locomotion/jump heat and author-approved action profiles; separate
+  world/real time and safe time-advance/journey integration.
+- Revision-1 migration, preserved inventory/quests, save/reload/hub evidence,
+  reversible 5.0.6 bridge and bilingual status.
+- Full-army cost measured with normal AI; no population or offscreen exemption.
+
+No author checks remain for #130; HISTORY records all three accepted IDs.
+Follow-up refinements: actual hot/cold consumable metadata, ratings for authored
+decorative fires, species-specific moisture, complex support/room geometry,
+late-battle frame cost and broader multiplayer remain separate scoped work.
+Do not invent missing follow-up data. The separately planned #131 owns the
+thermal HUD bar; this acceptance does not implement that next issue.
 
 ## Issue #128 — Automatic normal high-density AI (5.0.6)
 

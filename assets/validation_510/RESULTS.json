@@ -1,0 +1,366 @@
+{
+  "issue": 130,
+  "release": "5.1.0",
+  "status": "implemented, agent-verified and author-accepted; merge and closure authorized",
+  "baseline_commit": "45f16371d49c38894e6d256d32d8101d4b06cd4c",
+  "engine": "GZDoom 4.14.2",
+  "settings": "Windows/Vulkan, 1280x720, cap 60, RNG 116, 5% volume, background unpaused",
+  "production_sha256": "4b1858a5ee6ae26ef508ae833933602d0d21e0da3da961b3d126792494c24423",
+  "standard_build_sha256": "cd7e674d9ed75f108db20d0fb9f305325cf90d2eb822ae1ace225b5b7b0f3ee0",
+  "standard_build_members_identical": true,
+  "post_functional_changes": "Only diagnostic release strings and line endings in caelum/world/CaelumPhysicalHazards.zs, caelum/world/CaelumSewerMaze.zs",
+  "runs": [
+    {
+      "label": "final-math-b",
+      "package_sha256": "f5034473866c777c68bc9bf5a4d14674e5c0aea989d8015fc2bd466a73aaa491",
+      "addon_sha256": "226833fa8e2722f0732fd787e5e3642906d5dd586ea52659da6622ab2515d1da",
+      "checks": 82,
+      "failures": 0,
+      "log_sha256": "7227b2b5bc8e0a6995b76f78e560f852e8aef011b11c5fd483b4556a75ddbd31",
+      "config_sha256": "948b310a4270ac4bb122b831023038a350d815f9b1323cef8856a671d66ea255"
+    },
+    {
+      "label": "final-geometry",
+      "package_sha256": "f5034473866c777c68bc9bf5a4d14674e5c0aea989d8015fc2bd466a73aaa491",
+      "addon_sha256": "f553455ee06b531e45745371ccfe387d6a7cf5a6c20347dfb32db3ade997b11e",
+      "checks": 20,
+      "failures": 0,
+      "log_sha256": "32f2586202b67dbfe9dea4b3faf663e6cae4f15e53e56514231c550f4b576b0d",
+      "config_sha256": "fb995fe0ee05bfc804dc029c5b026e55d9b30e78ce62e1c597168a37dc34f19a"
+    },
+    {
+      "label": "delivery-effects-d",
+      "package_sha256": "4b1858a5ee6ae26ef508ae833933602d0d21e0da3da961b3d126792494c24423",
+      "addon_sha256": "8497aa1a6012ba227b5f85f1a987d6a7176f2b6b4d294d26cde23952636c2013",
+      "checks": 39,
+      "failures": 0,
+      "log_sha256": "7baf31c52848f0b285ba7fc55e8682f1a0bd79d7d412af5b7f01953aaf66617a",
+      "config_sha256": "217fa54af9929743daf92acded28532fd619f74d9b6efe0f00695fff88868801"
+    },
+    {
+      "label": "final-live",
+      "package_sha256": "f5034473866c777c68bc9bf5a4d14674e5c0aea989d8015fc2bd466a73aaa491",
+      "addon_sha256": "4170a37e3e591b96efb86486692c55b55dd4d901e27190aa415e09eafcb63ee0",
+      "checks": 7,
+      "failures": 0,
+      "log_sha256": "548061eb5f4aa5775659bc881bc243a4e5ea1b1ec18045fd9c75a051fad72a61",
+      "config_sha256": "15fb967cb6e5dbcfa8868c391fde6c76bba8f40be6654e0eb3dd121847e1179e"
+    },
+    {
+      "label": "final-limbo-b",
+      "package_sha256": "f5034473866c777c68bc9bf5a4d14674e5c0aea989d8015fc2bd466a73aaa491",
+      "addon_sha256": "39932239c6a4cd3a13d775dac2074b0d05e8ca01a270d6e77704c63824e8b0b3",
+      "checks": 8,
+      "failures": 0,
+      "log_sha256": "58bbe950a6197572a183cc3c3e1267132c5f51cc117b48b99617f99fe8a71bf1",
+      "config_sha256": "bcceaa519acc1c8e307d524c7c54b506bd219640eeb89132ff726b85d86d9e2e"
+    },
+    {
+      "label": "delivery-build",
+      "package_sha256": "cd7e674d9ed75f108db20d0fb9f305325cf90d2eb822ae1ace225b5b7b0f3ee0",
+      "addon_sha256": "226833fa8e2722f0732fd787e5e3642906d5dd586ea52659da6622ab2515d1da",
+      "checks": 82,
+      "failures": 0,
+      "log_sha256": "ed787b03523f102099de3d6ccdccfdd3a8379291997bdaf09021d0c3cfc7f0c2",
+      "config_sha256": "291e9707b5926fe820b6291b13761179bc0d458a0c55980cd64535dbfa8967b3"
+    },
+    {
+      "label": "final-ui-enu",
+      "package_sha256": "f5034473866c777c68bc9bf5a4d14674e5c0aea989d8015fc2bd466a73aaa491",
+      "addon_sha256": "9bb023ead2e5bd8efb394e0dc4a8e9a8263c8df5f860e72d1188b23df1a99414",
+      "checks": null,
+      "failures": 0,
+      "log_sha256": "2f62de4ef0f8b26b3f462455e6e0824eef91db0f9c8faab85e866367f7ac8766",
+      "config_sha256": "17a682d92342db0313e69c5467a3c3316f8916af7264f56367dbe8e1ff0b729c"
+    },
+    {
+      "label": "final-ui-esp",
+      "package_sha256": "f5034473866c777c68bc9bf5a4d14674e5c0aea989d8015fc2bd466a73aaa491",
+      "addon_sha256": "9bb023ead2e5bd8efb394e0dc4a8e9a8263c8df5f860e72d1188b23df1a99414",
+      "checks": null,
+      "failures": 0,
+      "log_sha256": "9c23bf88e47cafb21e46fd87ca2b9cf871cdd451a3c4267ce33ac9be76ad2c4c",
+      "config_sha256": "78479ea9749a615517402b9e1f359bb7642a84fe47d5198b5a555796e7a67953"
+    },
+    {
+      "label": "final-save-baseline",
+      "package_sha256": "5555f8f7444ac07e39cd96bf138bf5072e328f694271df23fa316e1e52e9a581",
+      "addon_sha256": "5e2a1563c82c0891aba9c2dacd5619a32f6f653a32034fcd430eff9874194979",
+      "checks": null,
+      "failures": 0,
+      "log_sha256": "09c307a3e8281ed5675feb91560d9013e52f3a4a71aa721bd0aca883309916d7",
+      "config_sha256": "6accd1797657d212e417820d4b2c8e1c71de2cc6dabe8638a28f92bbad45fc6c"
+    },
+    {
+      "label": "final-save-upgrade-b",
+      "package_sha256": "f5034473866c777c68bc9bf5a4d14674e5c0aea989d8015fc2bd466a73aaa491",
+      "addon_sha256": "26859545abb8928cb587802ba680dfa72779a769a2493d0caedfd6ca432ed02c",
+      "checks": null,
+      "failures": 0,
+      "log_sha256": "8232111cf5e2e7c205a26c6f9a86d4b3fbab3d05efc2f636c5c8384f2cf6e2be",
+      "config_sha256": "f1d0cdb58eab3e949fd27ef5e6f8005d188ce272373d47453860b1cca17e3522"
+    },
+    {
+      "label": "final-save-control",
+      "package_sha256": "5555f8f7444ac07e39cd96bf138bf5072e328f694271df23fa316e1e52e9a581",
+      "addon_sha256": "5e2a1563c82c0891aba9c2dacd5619a32f6f653a32034fcd430eff9874194979",
+      "checks": null,
+      "failures": 0,
+      "log_sha256": "25cb3a3298698acc9ece0be27d457938f0eb71bdfc86934c9032d464f0dd2617",
+      "config_sha256": "440097945285e28cb06a02801a0f39e764596649be1ff9da4ca5b6d5feec0989"
+    },
+    {
+      "label": "final-save-current",
+      "package_sha256": "f5034473866c777c68bc9bf5a4d14674e5c0aea989d8015fc2bd466a73aaa491",
+      "addon_sha256": "26859545abb8928cb587802ba680dfa72779a769a2493d0caedfd6ca432ed02c",
+      "checks": null,
+      "failures": 0,
+      "log_sha256": "6738e7f3a7c23fe88753753a1b9dbfc17e6c073583a4abcd6b7eabf65a0173aa",
+      "config_sha256": "924848e93733af0cb343e43243e9cd3e3009eba2355f9c84bc6dcdb9981cf691"
+    },
+    {
+      "label": "final-save-hub",
+      "package_sha256": "f5034473866c777c68bc9bf5a4d14674e5c0aea989d8015fc2bd466a73aaa491",
+      "addon_sha256": "26859545abb8928cb587802ba680dfa72779a769a2493d0caedfd6ca432ed02c",
+      "checks": null,
+      "failures": 0,
+      "log_sha256": "106d68e0cce4fb16c54bfb687caa1aad366c521ff7167cb00fae956d46800842",
+      "config_sha256": "3d094b4e228b68aa9452db8240214c0c8c166a6e57fef47b929f3c6d7b9fa626"
+    },
+    {
+      "label": "final-save-rollback",
+      "package_sha256": "59d4ac853ee461c5528f417e8120fba78bc82295c72ae107d073c63fe42042ea",
+      "addon_sha256": "5e2a1563c82c0891aba9c2dacd5619a32f6f653a32034fcd430eff9874194979",
+      "checks": null,
+      "failures": 0,
+      "log_sha256": "a2f9a282ccbd7afba3cb47bff5e1a9df486a4f644697f6107360cf3219025796",
+      "config_sha256": "574bba032e2e3d742b3a22f3dc71f6991909879144e104d4c9cde5deb9f72119"
+    },
+    {
+      "label": "final-save-reupgrade",
+      "package_sha256": "f5034473866c777c68bc9bf5a4d14674e5c0aea989d8015fc2bd466a73aaa491",
+      "addon_sha256": "26859545abb8928cb587802ba680dfa72779a769a2493d0caedfd6ca432ed02c",
+      "checks": null,
+      "failures": 0,
+      "log_sha256": "fcac40d19a71cf1c3f4d44ad5b3d80a7f74f0965d5bbce92c8c5c333e3d9012a",
+      "config_sha256": "49d961dfe660acf225adda9387a73c0fcdd1c4b904a69e90815d1e427e2bcbdd"
+    },
+    {
+      "label": "final-perf-a",
+      "package_sha256": "a2928e7e6fdfa4044ec9662cc4e536e838797cd83f48b0cc8a861dca888948ea",
+      "addon_sha256": "173297a455af3e4c7048727a47f99a7c4dca27345df9cb4d32ef2d6956a8f3a9",
+      "checks": null,
+      "failures": 0,
+      "log_sha256": "937a84596a36426d29722500cba53b4cb40f4435877599d47e66d95d00f9de2e",
+      "config_sha256": "8f71917723b1fddfaef7d62da367f2d20de2d1b8cdff0b80a4ad2e5f9f4e30c9"
+    },
+    {
+      "label": "final-perf-baseline",
+      "package_sha256": "5555f8f7444ac07e39cd96bf138bf5072e328f694271df23fa316e1e52e9a581",
+      "addon_sha256": "3defdf83e5e9e1467c5c5825091f82d9424707fe9d7de99e8fdc5ff01b7a293f",
+      "checks": null,
+      "failures": 0,
+      "log_sha256": "db52e45facff6314b9abcfc42a48b6048bcea97815a4b746bb2aed04e296a52f",
+      "config_sha256": "5529d830c58cafc6d6977679f0c3081b3958502a215afa579b81fc7247539541"
+    },
+    {
+      "label": "final-perf-b",
+      "package_sha256": "f5034473866c777c68bc9bf5a4d14674e5c0aea989d8015fc2bd466a73aaa491",
+      "addon_sha256": "173297a455af3e4c7048727a47f99a7c4dca27345df9cb4d32ef2d6956a8f3a9",
+      "checks": null,
+      "failures": 0,
+      "log_sha256": "c632fc86cf6a0848e013ca06c0529eea61bd4f0a9ec9d090ef1cd35e4ee9e526",
+      "config_sha256": "3708dd26149c54d01de7af5f8f5b43d7d7cb7827a824b7408653e9542d6268b7"
+    },
+    {
+      "label": "final-stress",
+      "package_sha256": "f5034473866c777c68bc9bf5a4d14674e5c0aea989d8015fc2bd466a73aaa491",
+      "addon_sha256": "df4358e309ec73a157231f4c5a814d8423a4949226a7d6d042aced857295ca7b",
+      "checks": null,
+      "failures": 0,
+      "log_sha256": "3dd368e7d00b18a93cfbeaa5f45c7256c6ba401a0f36130ad7e5da3ac4d618c7",
+      "config_sha256": "61d6c5652e64dccb0e0274362bd46282817dff83e27c0573b597d9a184764038"
+    }
+  ],
+  "performance": [
+    {
+      "label": "perf-baseline-a",
+      "interval": [
+        105,
+        700
+      ],
+      "tics": 595,
+      "elapsed_ms": 17257.4902,
+      "tics_per_second": 34.47778287018816,
+      "package_sha256": "5555f8f7444ac07e39cd96bf138bf5072e328f694271df23fa316e1e52e9a581"
+    },
+    {
+      "label": "perf-current-a",
+      "interval": [
+        105,
+        700
+      ],
+      "tics": 595,
+      "elapsed_ms": 65758.5369,
+      "tics_per_second": 9.048254843395092,
+      "package_sha256": "f27cf55b8aeb6d8af335a28a09146a05c8279531a01edb707c49d90a3590f0e9"
+    },
+    {
+      "label": "perf-cache-a",
+      "interval": [
+        105,
+        700
+      ],
+      "tics": 595,
+      "elapsed_ms": 21198.4594,
+      "tics_per_second": 28.068077437740595,
+      "package_sha256": "1afdd839200c5948352bd5b71169fc8407ce5889e46b9b492e1798f11e0f2f3b"
+    },
+    {
+      "label": "perf-cache-b",
+      "interval": [
+        105,
+        700
+      ],
+      "tics": 595,
+      "elapsed_ms": 18162.0419,
+      "tics_per_second": 32.760633593737055,
+      "package_sha256": "f171af8fb44bb557b3cb63d6cf242d997c89f3267f5c3d32d8735d8ff5904e8a"
+    },
+    {
+      "label": "final-perf-a",
+      "interval": [
+        105,
+        700
+      ],
+      "tics": 595,
+      "elapsed_ms": 17697.1414,
+      "tics_per_second": 33.621249135750254,
+      "package_sha256": "a2928e7e6fdfa4044ec9662cc4e536e838797cd83f48b0cc8a861dca888948ea"
+    },
+    {
+      "label": "final-perf-baseline",
+      "interval": [
+        105,
+        700
+      ],
+      "tics": 595,
+      "elapsed_ms": 17022.704400000002,
+      "tics_per_second": 34.9533179933501,
+      "package_sha256": "5555f8f7444ac07e39cd96bf138bf5072e328f694271df23fa316e1e52e9a581"
+    },
+    {
+      "label": "final-perf-b",
+      "interval": [
+        105,
+        700
+      ],
+      "tics": 595,
+      "elapsed_ms": 17425.1994,
+      "tics_per_second": 34.145950720081856,
+      "package_sha256": "f5034473866c777c68bc9bf5a4d14674e5c0aea989d8015fc2bd466a73aaa491"
+    },
+    {
+      "label": "final-stress",
+      "interval": [
+        105,
+        700
+      ],
+      "tics": 595,
+      "elapsed_ms": 18536.620899999998,
+      "tics_per_second": 32.098622678311344,
+      "package_sha256": "f5034473866c777c68bc9bf5a4d14674e5c0aea989d8015fc2bd466a73aaa491"
+    }
+  ],
+  "performance_scope": "Short MAP06 arrival, not late battle or sustained FPS; current observer also aggregates thermal state once per second.",
+  "army": "6001 attackers + 600 defenders; full normal high-density AI. Seeded stress ends with 6597 supported surviving NPCs in harmful cold.",
+  "persistence": {
+    "prior_record_fields_checked": 223,
+    "changed_prior_fields": [],
+    "unchanged_resources": [
+      "CurrentAir",
+      "CurrentThirst",
+      "CurrentHunger",
+      "CurrentSleep",
+      "ActiveWeaponItemId"
+    ],
+    "unchanged_weapon_fields": [
+      "ItemId",
+      "itemtype",
+      "Durability"
+    ],
+    "rollback_preserved": [
+      "Exposure",
+      "Acclimation",
+      "ActivityWatts",
+      "DamageRemainder",
+      "BaseWaterKg",
+      "ActorWaterKg"
+    ],
+    "hub_fraction": 0.3125,
+    "quest_progress": 7,
+    "source_saves_modified": false,
+    "save_fingerprints": {
+      "baseline": "2f72a4aadcd35f3310a778cc15f1e237ce70d62a2aafd882b19af5543a811f4f",
+      "control": "4c6c8c31d5605a55cdf3c7614626437aad1240e8e53530a989d357fe82389267",
+      "upgraded": "8d12893380fb350d981554d205554de2fe1602ac8f19a307be163889cac8c821",
+      "current": "154a7e52085aec96493aa4d046d1a63d134f95534a2cc5794e18ca52610063a3",
+      "rollback": "ab94374b64f95ac0a487ecc0637e29509810c74e579fa26e5cfd7808bf2374f7",
+      "reloaded": "55674d03b328a9d208f2e84723da0ea120448b5960a486b699923deab2be04ea",
+      "hub": "aeb788aa101470a9f8fb786b2ca6a207a8aab4e98c5ee762ed64b1e832217ea0"
+    },
+    "limitations": "Controlled seeded inventory/quest fixture, not every historical author save; retain originals and map-addon basenames."
+  },
+  "drying": "DRYING_CALIBRATION.json; coupled native drying checks pass at 3600/7200/10800/18000 world seconds.",
+  "visual_review": [
+    "thermal-ui-enu.png",
+    "thermal-ui-es.png"
+  ],
+  "qualifications": [
+    "Intermediate logs retain earlier partial builds, including superseded activity/drying contracts; final run list takes precedence.",
+    "Native shield test explicitly sets durability multiplier and a guaranteed-breaking 2000-HP input; delivered thermal energy is 32.5 J from 100 J through 50% shield and 35% gear defense.",
+    "Failed local fixtures were corrected: shield 1000-HP input did not guarantee durability loss, Limbo civil time must be queried through calendar anchors, and -loadgame resolves relative to engine workdir.",
+    "Formula, seeded engine, visual inspection and author acceptance are distinct evidence levels.",
+    "No decorative fire rating or new hot/cold consumable invented; service/source hooks tested with isolated fixtures.",
+    "Irregular shelters, combined knockback/support motion, exceptional locomotion speeds and species moisture capacities remain documented approximations.",
+    "Full network multiplayer and every late-battle frame regime are not established by these tests."
+  ],
+  "pending_author_checks": [],
+  "power_requests": [
+    {
+      "started_utc": "2026-10-07T13:21:14.7216738Z",
+      "pid": 32652,
+      "active_plan_before": "GUID de plan de energía: 381b4222-f694-41f0-9685-ff5bb260df2e  (Equilibrado)",
+      "mechanism": "Thread-scoped ES_CONTINUOUS | ES_SYSTEM_REQUIRED | ES_DISPLAY_REQUIRED; no power-plan mutation",
+      "maximum_hours": 4,
+      "previous_thread_state": 2147483648,
+      "release_result": 2147483651,
+      "released_utc": "2026-10-07T16:30:20.7128427Z",
+      "active_plan_after": "GUID de plan de energía: 381b4222-f694-41f0-9685-ff5bb260df2e  (Equilibrado)"
+    },
+    {
+      "started_utc": "2026-10-07T15:35:57.6463107Z",
+      "pid": 12212,
+      "active_plan_before": "GUID de plan de energía: 381b4222-f694-41f0-9685-ff5bb260df2e  (Equilibrado)",
+      "mechanism": "Thread-scoped ES_CONTINUOUS | ES_SYSTEM_REQUIRED | ES_DISPLAY_REQUIRED; no power-plan mutation",
+      "maximum_hours": 12,
+      "previous_thread_state": 2147483648,
+      "release_result": 2147483651,
+      "released_utc": "2026-10-07T16:30:20.9829115Z",
+      "active_plan_after": "GUID de plan de energía: 381b4222-f694-41f0-9685-ff5bb260df2e  (Equilibrado)"
+    }
+  ],
+  "author_acceptance": {
+    "date": "2026-10-07",
+    "issue": 130,
+    "originating_release": "5.1.0",
+    "checks": [
+      "CA130-01",
+      "CA130-02",
+      "CA130-03"
+    ],
+    "result": "passed",
+    "authorization": "Author explicitly confirmed all pending tests passed and requested issue closure and PR merge.",
+    "qualifications": "No reported exceptions; documented calibration/performance limits and multiplayer scope remain unchanged."
+  }
+}

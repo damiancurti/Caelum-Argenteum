@@ -3,6 +3,7 @@
 // evasion, dolor, adrenalina y efectos de los estados de salud.
 class CaelumCombatActor : Actor
 {
+    bool ThermalBluntDelivery;
     // Nulo en campañas anteriores y fuera del encuentro optativo de #20.
     CaelumSiegeCombatant SiegeCombatant;
     bool NextRangedSecondaryElement;
@@ -11,6 +12,7 @@ class CaelumCombatActor : Actor
     CaelumAnatomyProfile AnatomyProfile;
     CaelumArmorModel CombatArmor;
     CaelumElementalStatus ElementalStatus;
+    CaelumThermalState ThermalState;
     int CombatMaximumHealth;
     int CombatToughness;
     int CombatResilience;
@@ -540,7 +542,7 @@ class CaelumCombatActor : Actor
             return;
         }
         if (!combatActor.BeginCaelumDiagnosticChase()) { return; }
-        combatActor.A_Chase();
+        combatActor.ThermalChase();
     }
 
     void RunCaelumMassFollowerPulse()
@@ -588,6 +590,7 @@ class CaelumCombatActor : Actor
             );
             Vel.X = Cos(Angle) * localSpeed;
             Vel.Y = Sin(Angle) * localSpeed;
+        CaelumThermalMotion.SetVelocity(self);
             ImpactDiagnosticFollowerMoveUpdates++;
             return;
         }
@@ -943,7 +946,7 @@ class CaelumCombatActor : Actor
             if(RecoveryGoal==null)RecoveryGoal=Spawn("CaelumSewerEscapeTarget",destination,NO_REPLACE);
             else RecoveryGoal.SetOrigin(destination,false);
             target=RecoveryGoal;LastEnemy=null;Vel.X=0;Vel.Y=0;
-            A_Chase(null,null,CHF_DONTLOOKALLAROUND);
+            ThermalChase(null,null,CHF_DONTLOOKALLAROUND);
         }
         else {target=null;LastEnemy=null;Vel.X=0;Vel.Y=0;}
         return true;
@@ -986,14 +989,15 @@ class CaelumCombatActor : Actor
         else attribute+=GetCombatArmorAttributeBonus(CaelumConstants.ATTRIBUTE_DEXTERITY);
         double capacity=Mass*CalculateActorType4Percent(CombatStrength)/100.0;
         return CaelumAttackRules.Duration(100.0/CalculateActorType4Percent(attribute),
-            model.GetWeightFor(weaponType,1,CaelumConstants.EQUIPMENT_SIZE_M),gloves,capacity);
+            model.GetWeightFor(weaponType,1,CaelumConstants.EQUIPMENT_SIZE_M),gloves,capacity)
+            / CaelumThermalEffects.Speed(self);
     }
 
     bool HasAttackResource()
     {
         if(AttackResourceWeapon>=0 && GetProfileWeaponDuration(AttackResourceWeapon)<=0)return false;
         return AttackResourceMagical ? CurrentCombatAnima>=GetTierOneMagicAnimaCost(AttackResourceWeapon)
-            : CurrentCombatAir>=GetEffectiveAttackAir(AttackResourceBaseCost);
+            : CurrentCombatAir>=GetEffectiveAttackAir(AttackResourceBaseCost)*CaelumThermalEffects.HeatCost(self);
     }
 
     void WaitForAttackResource()
@@ -1040,7 +1044,7 @@ class CaelumCombatActor : Actor
         actor.AttackResourceResume=magical?actor.MissileState:actor.MeleeState;
         if(!actor.HasAttackResource()){actor.WaitForAttackResource();return;}
         actor.AttackResourceWaiting=false;
-        if(slam)actor.tics=CaelumAttackRules.SLAM_PREPARATION_TICS;
+        if(slam)actor.tics=int(Ceil(CaelumAttackRules.SLAM_PREPARATION_TICS/CaelumThermalEffects.Speed(actor)));
         else if(weaponType>=0)
         {
             actor.WeaponCycleTics=actor.GetProfileWeaponDuration(weaponType);
@@ -1050,8 +1054,12 @@ class CaelumCombatActor : Actor
             actor.WeaponCycleWindFrame=1;
             actor.tics=actor.WeaponCyclePreparationTics;
         }
+        else actor.tics=int(Ceil(actor.tics/CaelumThermalEffects.Speed(actor)));
         actor.A_FaceTarget();
     }
+
+    action void A_CaelumThermalAttackFrame()
+    {tics=int(Ceil(tics/CaelumThermalEffects.Speed(self)));}
 
     action void A_CaelumMagicWindFrame()
     {
@@ -1089,12 +1097,13 @@ class CaelumCombatActor : Actor
         AttackResourceResume=self is "CaelumBull" ? CurState : MeleeState;
         if(!TrySpendCombatAir(GetEffectiveAttackAir(baseAir)))
         {WaitForAttackResource();return false;}
+        CaelumThermalEffects.RecordAction(self,GetEffectiveAttackAir(baseAir));
         return true;
     }
 
     bool TrySpendCombatAir(double requestedAmount)
     {
-        double amount = Max(0.0, requestedAmount);
+        double amount = Max(0.0, requestedAmount)*CaelumThermalEffects.HeatCost(self);
         if (CurrentCombatAir < amount) { return false; }
         CurrentCombatAir = Max(0.0, CurrentCombatAir - amount);
         return true;
@@ -1463,6 +1472,7 @@ class CaelumCombatActor : Actor
         // A_Explode aplica caída lineal hasta el radio solicitado. Se elimina
         // su empuje nativo para que la elevación sea exactamente +8 MU/tic y
         // atraviese de forma controlada NODAMAGETHRUST del sistema Caelum.
+        combatActor.ThermalBluntDelivery=true;
         combatActor.BeginCombatAreaExplosion(radius);
         combatActor.LaunchActorsInGroundRadius(radius, verticalSpeed);
         combatActor.A_Explode(
@@ -1472,6 +1482,7 @@ class CaelumCombatActor : Actor
             false
         );
         combatActor.EndCombatAreaExplosion();
+        combatActor.ThermalBluntDelivery=false;
         combatActor.PendingCombatCriticalDelivery = false;
     }
 
@@ -2866,6 +2877,8 @@ class CaelumCombatActor : Actor
             }
         }
 
+        damage=CaelumThermalEffects.Incoming(self,inflictor,source,damage,mod);
+
         if (flags & DMG_EXPLOSION)
         {
             PendingLocalizedImpact = false;
@@ -2890,7 +2903,7 @@ class CaelumCombatActor : Actor
             ? LastAnatomyVulnerabilityGrade
             : CaelumConstants.VULNERABILITY_SENSITIVE_POINT;
         bool localizedCriticalHit = PendingLocalizedCriticalHit;
-        ResolveActorArmorImpact(damage, CaelumArmorRules.IsMagical(inflictor, mod));
+        ResolveActorArmorImpact(damage, CaelumArmorRules.IsMagical(inflictor, mod),inflictor);
         PendingLocalizedCriticalHit = false;
         int retainedDamage = Max(
             0,
@@ -3002,6 +3015,7 @@ class CaelumCombatActor : Actor
             explosionRadius
         );
         if (touchedRegionMask == 0) { return 0; }
+        CaelumThermalMagic.Impact(self,inflictor,CaelumThermalMagic.AreaRetention(self,touchedRegionMask));
 
         CaelumActorProjectile attackProjectile = CaelumActorProjectile(inflictor);
         CaelumCombatActor areaAttacker = CaelumCombatActor(source);
@@ -3246,7 +3260,7 @@ class CaelumCombatActor : Actor
         }
     }
 
-    void ResolveActorArmorImpact(int incomingDamage, bool magical = false)
+    void ResolveActorArmorImpact(int incomingDamage, bool magical = false,Actor inflictor=null)
     {
         bool hadLocalizedImpact = PendingLocalizedImpact;
         LastCombatArmorIncomingDamage = Max(0, incomingDamage);
@@ -3281,6 +3295,7 @@ class CaelumCombatActor : Actor
         }
 
         LastCombatArmorSlot = GetArmorSlotForLocation(LastAnatomyLocation);
+        CaelumThermalMagic.Impact(self,inflictor,CaelumThermalMagic.ArmorRetention(self,LastCombatArmorSlot));
         LastCombatToughnessDamageMultiplier = CaelumArmorRules.ToughnessMultiplier(
             LastCombatArmorIncomingDamage, GetImpactMaximumHealth(), CombatToughness);
         LastCombatArmorIncomingDamage = CaelumArmorRules.AfterToughnessDamage(
@@ -3512,7 +3527,7 @@ class CaelumCombatActor : Actor
         EffectiveCombatEvasionChance = baseEvasion
             * massMultiplier
             * CombatHealthPerformanceMultiplier;
-        Speed = CombatBaseSpeed * CombatHealthPerformanceMultiplier
+        Speed = CombatBaseSpeed * CombatHealthPerformanceMultiplier * CaelumThermalEffects.Speed(self)
             * (ElementalStatus != null
                 ? ElementalStatus.GetMovementMultiplier() : 1.0);
     }
@@ -3587,6 +3602,21 @@ class CaelumCombatActor : Actor
         if(SiegeCombatant!=null)CaelumSiegeCombatant.ConfirmDeath(self);
     }
 
+    void ThermalChase(statelabel melee='_a_chase_default',statelabel missile='_a_chase_default',int flags=0)
+    {
+        vector3 before=Pos;
+        A_Chase(melee,missile,flags);
+        if(Pos.Z<=FloorZ+0.01)CaelumThermalMotion.Path(self,before,Pos,false);
+    }
+
+    bool ThermalTryMove(vector2 destination)
+    {
+        vector3 before=Pos;
+        bool moved=TryMove(destination,0);
+        if(moved && Pos.Z<=FloorZ+0.01)CaelumThermalMotion.Path(self,before,Pos,false);
+        return moved;
+    }
+
     override void Tick()
     {
         ResourceRecoveryActive();
@@ -3602,10 +3632,17 @@ class CaelumCombatActor : Actor
             if (!InStateSequence(CurState,FindState("SiegeWithdrawal")))
                 SetStateLabel("SiegeWithdrawal");
             SiegeCombatant.WithdrawTick();
-            if (!SiegeCombatant.Exited) Super.Tick();
+            if (!SiegeCombatant.Exited) { Super.Tick();CaelumThermalRuntime.NPCStep(self); }
             return;
         }
         Vector3 prePhysicsVelocity = Vel;
+        vector3 thermalBefore=Pos;
+        Sector thermalSector=CurSector;
+        let thermalSupport=CaelumThermalMotion.Support(self);
+        double thermalSupportHeight=CaelumThermalMotion.SupportHeight(thermalSector,thermalSupport,Pos.XY);
+        let thermalMotion=ThermalState;
+        vector2 thermalPropulsion=thermalMotion!=null ? thermalMotion.PropelledVelocity : (0,0);
+        bool thermalGrounded=Pos.Z<=FloorZ+0.01;
         bool sleeping = ForcedSleepTics > 0;
         if (sleeping) { tics = -1; Vel = (0,0,0); }
         Super.Tick();
@@ -3617,6 +3654,8 @@ class CaelumCombatActor : Actor
             if (ForcedSleepTics <= 0) tics = Max(1, SleepSavedTics);
         }
         UpdateCaelumRecognitionSound();
+        CaelumThermalMotion.Physics(self,thermalBefore,prePhysicsVelocity,thermalGrounded,thermalPropulsion,thermalSector,thermalSupport,thermalSupportHeight);
+        CaelumThermalRuntime.NPCStep(self);
 
         // Los actores diagnósticos conservan estados nativos, A_Look, A_Chase
         // y ataques, pero no recalculan estadísticas, estados elementales ni

@@ -29,6 +29,7 @@ class CaelumSilentDetectionPuff : BulletPuff
 // dependencies while allowing the receiver to inspect the result at impact.
 class CaelumActorProjectile : Actor
 {
+    Array<Actor> ThermalRecipients;
     bool CaelumAttackPrepared;
     bool MainM00ChargedPractice;
     bool MainM00MobilePractice;

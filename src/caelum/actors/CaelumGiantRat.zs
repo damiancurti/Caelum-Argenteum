@@ -56,7 +56,7 @@ class CaelumGiantRat : CaelumCombatActor
     Melee:
         RATG D 6 A_CaelumBeginResourceAttack(CaelumAttackRules.NaturalAir());
         RATG D 0 A_CaelumMeleeAttack(60);
-        RATG A 8;
+        RATG A 8 A_CaelumThermalAttackFrame;
         Goto See;
     Pain:
         RATG E 6 A_Pain;

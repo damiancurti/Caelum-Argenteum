@@ -489,12 +489,12 @@ class CaelumPortSiege : CaelumSiegeEncounter
             if(delta.Length()>0)
             {
                 body.Angle=VectorAngle(delta.X,delta.Y);
-                if(body.TryMove(body.Pos.XY+delta.Unit()*Min(body.Speed,delta.Length()),0))return;
+                if(body.ThermalTryMove(body.Pos.XY+delta.Unit()*Min(body.Speed,delta.Length())))return;
             }
-            body.A_Chase(null,null,CHF_DONTLOOKALLAROUND|CHF_NORANDOMTURN|CHF_NOPOSTATTACKTURN);
+            body.ThermalChase(null,null,CHF_DONTLOOKALLAROUND|CHF_NORANDOMTURN|CHF_NOPOSTATTACKTURN);
             return;
         }
-        body.A_Chase(null,null,CHF_DONTLOOKALLAROUND);
+        body.ThermalChase(null,null,CHF_DONTLOOKALLAROUND);
     }
 
     static bool Pulse(CaelumCombatActor body)
@@ -537,14 +537,14 @@ class CaelumPortSiege : CaelumSiegeEncounter
         if(!body.InStateSequence(body.CurState,body.SeeState))body.SetState(body.SeeState);
         else if(hasPost && !nearEnemy)
         {
-            if(soldier!=null)body.A_Chase(null,null,CHF_DONTMOVE|CHF_DONTLOOKALLAROUND);
-            else if(canCast)body.A_Chase(null,"Missile",CHF_DONTMOVE|CHF_DONTLOOKALLAROUND);
-            else body.A_Chase(null,null,CHF_DONTMOVE|CHF_DONTLOOKALLAROUND);
+            if(soldier!=null)body.ThermalChase(null,null,CHF_DONTMOVE|CHF_DONTLOOKALLAROUND);
+            else if(canCast)body.ThermalChase(null,"Missile",CHF_DONTMOVE|CHF_DONTLOOKALLAROUND);
+            else body.ThermalChase(null,null,CHF_DONTMOVE|CHF_DONTLOOKALLAROUND);
         }
         else
         {
-            if(canCast)body.A_Chase("Melee","Missile");
-            else body.A_Chase("Melee",null);
+            if(canCast)body.ThermalChase("Melee","Missile");
+            else body.ThermalChase("Melee",null);
         }
         return true;
     }

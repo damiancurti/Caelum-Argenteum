@@ -5,6 +5,7 @@
 // These inherited resources will be replaced by original assets later.
 class CaelumPlayer : DoomPlayer
 {
+    bool ThermalBluntDelivery;
     const FORMAL_INVENTORY_VISIBLE_ROWS = 6;
     const FORMAL_INVENTORY_FILTER_COUNT = 10;
 
@@ -7843,6 +7844,8 @@ class CaelumPlayer : DoomPlayer
             }
         }
 
+        damage=CaelumThermalEffects.Incoming(self,inflictor,source,damage,mod);
+
         if (flags & DMG_EXPLOSION)
         {
             return ApplyExplosionDefense(
@@ -8012,6 +8015,7 @@ class CaelumPlayer : DoomPlayer
             LastExplosionRadius
         );
         if (LastExplosionTouchedRegionMask == 0) { return 0; }
+        CaelumThermalMagic.Impact(self,inflictor,CaelumThermalMagic.AreaRetention(self,LastExplosionTouchedRegionMask));
 
         bool magical = CaelumArmorRules.IsMagical(inflictor, mod);
         bool criticalHit = ResolveIncomingActorCritical(inflictor, source);
@@ -8254,6 +8258,9 @@ class CaelumPlayer : DoomPlayer
             source
         );
         LastIncomingArmorSlot = ResolveIncomingArmorSlot(inflictor, source);
+        double thermalShield=LastShieldBlockedAttack
+            ? 1-Clamp(GetActiveBlockDefense(CaelumConstants.SHIELD_DAMAGE_MAGICAL)/100.0,0.0,1.0) : 1;
+        CaelumThermalMagic.Impact(self,inflictor,thermalShield*CaelumThermalMagic.ArmorRetention(self,LastIncomingArmorSlot));
         PrepareRealArmorDamage(
             damageAfterShield,
             incomingActorCritical,
@@ -8801,6 +8808,13 @@ class CaelumPlayer : DoomPlayer
 
     // Bloquea las acciones normales mientras el creador ocupa la pantalla.
     // Los comandos del creador viajan por eventos de red independientes.
+    override void MovePlayer()
+    {
+        vector2 before=Vel.XY;
+        Super.MovePlayer();
+        CaelumThermalMotion.PlayerInput(self,before);
+    }
+
     override void PlayerThink()
     {
         let journeyPlan = CaelumJourneyPlan.Get(self);
@@ -8858,6 +8872,13 @@ class CaelumPlayer : DoomPlayer
         EnsureCurrentAttributeBalance();
         MigrateWeaponDurability();
         Vector3 prePhysicsVelocity = Vel;
+        vector3 thermalBefore=Pos;
+        Sector thermalSector=CurSector;
+        let thermalSupport=CaelumThermalMotion.Support(self);
+        double thermalSupportHeight=CaelumThermalMotion.SupportHeight(thermalSector,thermalSupport,Pos.XY);
+        let thermalMotion=CaelumThermalBody.Get(self);
+        vector2 thermalPropulsion=thermalMotion!=null ? thermalMotion.PropelledVelocity : (0,0);
+        bool thermalGrounded=player!=null && player.onground;
 
         // Los saves antiguos pueden conservar el modelo sin su objeto. Se
         // reconcilia antes de actualizar la vista, el peso y el bloqueo.
@@ -8988,6 +9009,7 @@ class CaelumPlayer : DoomPlayer
         HUDInteractionHint=CaelumInteractionHint.Find(self);
         SyncHUDActiveWeaponState();
 
+        CaelumThermalMotion.Physics(self,thermalBefore,prePhysicsVelocity,thermalGrounded,thermalPropulsion,thermalSector,thermalSupport,thermalSupportHeight);
         IsSpendingRunningAir = IsRunningOnGround();
         UpdateCrouchEffects();
         UpdateMovementNoise();
@@ -8997,7 +9019,6 @@ class CaelumPlayer : DoomPlayer
         UpdateAirStateEffects();
         UpdateMovementAcceleration();
         ApplyPhysicalMovement();
-        DetectAndChargePhysicalJump();
         ConsumeRunningAir();
         ConsumeShieldBlockingAir();
         HUDAbilitySuccessRemaining = Max(
@@ -9011,8 +9032,9 @@ class CaelumPlayer : DoomPlayer
 
     // Este paso no mueve actores ni llama Super.Tick. Cada intervalo simulado
     // recorre las mismas tasas y umbrales que un tic de juego normal.
-    void AdvancePersonalTimeTic()
+    void AdvancePersonalTimeTic(bool realStep=true)
     {
+        CaelumThermalRuntime.PlayerStep(self,realStep);
         CaelumTarotService.Advance(self);
         if (ElementalStatus != null) { ElementalStatus.Tick(self); }
         IlluminationRemaining = Max(
@@ -9392,6 +9414,7 @@ class CaelumPlayer : DoomPlayer
             *DerivedStats.AirConsumptionMultiplier;
         if(sweep)cost*=CaelumConstants.LARGE_SWEEP_AIR_MULTIPLIER;
         if(WeaponChargedStateActive && !ranged)cost*=CaelumConstants.WEAPON_CHARGED_COST_MULTIPLIER;
+        cost*=CaelumThermalEffects.HeatCost(self);
         if(CurrentAir<cost)return false;
         if(ranged)
         {
@@ -9448,7 +9471,8 @@ class CaelumPlayer : DoomPlayer
         // vuelve a sumar el peso de WeaponModel como si fuera otro guante.
         double factor = WeaponModel.IsMagicalType(WeaponModel.WeaponType)
             ? DerivedStats.CastingDurationMultiplier : DerivedStats.AttackDurationMultiplier;
-        return CaelumAttackRules.Duration(factor, WeaponModel.GetWeight(), gloves, DerivedStats.CarryCapacity);
+        return CaelumAttackRules.Duration(factor, WeaponModel.GetWeight(), gloves, DerivedStats.CarryCapacity)
+            / CaelumThermalEffects.Speed(self);
     }
 
     void MigrateWeaponDurability(int revision = 1)
@@ -9790,6 +9814,8 @@ class CaelumPlayer : DoomPlayer
         {
             airCost *= CaelumConstants.WEAPON_CHARGED_COST_MULTIPLIER;
         }
+        double nominalAirCost=airCost;
+        airCost*=CaelumThermalEffects.HeatCost(self);
         if (CurrentAir < airCost) { return; }
 
         UpdateLucidityAccuracyEffects();
@@ -9942,6 +9968,7 @@ class CaelumPlayer : DoomPlayer
             WeaponModel.Size
         );
 
+        CaelumThermalEffects.RecordAction(self,nominalAirCost);
         CurrentAir = Max(0.0, CurrentAir - airCost);
         UpdateAirStateEffects();
         EquippedWeaponCooldownRemaining = GetEquippedAttackDurationTics()
@@ -10294,6 +10321,8 @@ class CaelumPlayer : DoomPlayer
             catalogueWeapon
         )
             * DerivedStats.AirConsumptionMultiplier;
+        double nominalAirCost=airCost;
+        airCost*=CaelumThermalEffects.HeatCost(self);
         LastCarbineHadEnoughAir = CurrentAir >= airCost;
         if (!LastCarbineHadEnoughAir) { return; }
 
@@ -10417,6 +10446,7 @@ class CaelumPlayer : DoomPlayer
         {
             CarbineAmmoCount = CarbineMagazine;
         }
+        CaelumThermalEffects.RecordAction(self,nominalAirCost);
         CurrentAir = Max(0.0, CurrentAir - airCost);
         UpdateAirStateEffects();
         LastCarbineFired = true;
@@ -10838,7 +10868,7 @@ class CaelumPlayer : DoomPlayer
         double finalCostPerSecond = CaelumConstants.RUN_AIR_COST_PER_SECOND
             * DerivedStats.AirConsumptionMultiplier;
         double previousAir = CurrentAir;
-        CurrentAir = Max(0.0, CurrentAir - finalCostPerSecond / TICRATE);
+        CurrentAir = Max(0.0, CurrentAir - finalCostPerSecond * CaelumThermalEffects.HeatCost(self) / TICRATE);
         CaelumMainM00RonnieTrial.RecordAirLesson(self, previousAir - CurrentAir, true);
         UpdateAirStateEffects();
     }
@@ -11221,7 +11251,7 @@ class CaelumPlayer : DoomPlayer
             CancelCombatBlockMode();
             return;
         }
-        CurrentAir = Max(0.0, CurrentAir - CurrentShieldAirCostPerSecond / TICRATE);
+        CurrentAir = Max(0.0, CurrentAir - CurrentShieldAirCostPerSecond * CaelumThermalEffects.HeatCost(self) / TICRATE);
         if (CurrentAir <= 0.0) { CancelCombatBlockMode(); }
         UpdateAirStateEffects();
     }
@@ -11335,35 +11365,22 @@ class CaelumPlayer : DoomPlayer
     // the ground, is now airborne, is rising, and pressed the jump control.
     // The prediction guard prevents client-side prediction from charging the
     // persistent resource in addition to the authoritative game tic.
-    void DetectAndChargePhysicalJump()
+    override void CheckJump()
     {
-        if (player == null || player.playerstate != PST_LIVE)
-        {
-            return;
-        }
-
-        bool isGroundedNow = player.onground;
-
-        if (!JumpTrackingInitialized)
-        {
-            WasGroundedLastTick = isGroundedNow;
-            JumpTrackingInitialized = true;
-            return;
-        }
-
-        bool jumpPressed = (player.cmd.buttons & BT_JUMP) != 0;
-        bool startedRising = WasGroundedLastTick
-            && !isGroundedNow
-            && Vel.Z > 0.0;
-
-        if (startedRising
-            && jumpPressed
-            && !(player.cheats & CF_PREDICTING))
+        double before=Vel.Z;
+        bool eligible=player!=null && player.onground && player.jumpTics==0
+            && WaterLevel<2 && !bNoGravity && !(player.cheats & CF_PREDICTING);
+        Super.CheckJump();
+        // Observar el lanzamiento nativo evita depender de que la tecla siga
+        // pulsada cuando onground se actualiza en el tic siguiente.
+        if(eligible && player.jumpTics==-1 && Vel.Z>before)
         {
             ConsumeJumpAir();
+            if(DerivedStats!=null)
+                CaelumThermalService.Impulse(self,CaelumThermalRules.JumpHeat(DerivedStats.TotalMass,
+                    before*TICRATE/CaelumJourneyRules.MAP_UNITS_PER_METER,
+                    Vel.Z*TICRATE/CaelumJourneyRules.MAP_UNITS_PER_METER),true);
         }
-
-        WasGroundedLastTick = isGroundedNow;
     }
 
     void UpdateMovementAcceleration()
@@ -11404,7 +11421,7 @@ class CaelumPlayer : DoomPlayer
     // Forward/backward, sideways, swimming, and flight share this movement.
     void ApplyPhysicalMovement()
     {
-        double movementFactor = Max(0.0, EffectiveMovementPercent / 100.0);
+        double movementFactor = Max(0.0, EffectiveMovementPercent / 100.0) * CaelumThermalEffects.Speed(self);
         double jumpFactor = Max(0.0, EffectiveJumpHeightPercent / 100.0);
         if (ElementalStatus != null)
         {
@@ -11540,7 +11557,7 @@ class CaelumPlayer : DoomPlayer
 
         double finalCost = CaelumConstants.DEBUG_AIR_ACTION_COST
             * DerivedStats.AirConsumptionMultiplier;
-        CurrentAir = Max(0.0, CurrentAir - finalCost);
+        CurrentAir = Max(0.0, CurrentAir - finalCost * CaelumThermalEffects.HeatCost(self));
         UpdateAirStateEffects();
     }
 
@@ -11814,6 +11831,8 @@ class CaelumPlayer : DoomPlayer
             LastMeleeAirCost *=
                 CaelumConstants.WEAPON_CHARGED_COST_MULTIPLIER;
         }
+        double nominalMeleeAir=LastMeleeAirCost;
+        LastMeleeAirCost*=CaelumThermalEffects.HeatCost(self);
         if (CurrentAir < LastMeleeAirCost)
         {
             return;
@@ -11821,6 +11840,7 @@ class CaelumPlayer : DoomPlayer
 
         LastMeleeHadEnoughAir = true;
         if (chargedAttack) { ConsumeWeaponChargedState(); }
+        CaelumThermalEffects.RecordAction(self,nominalMeleeAir);
         CurrentAir = Max(0.0, CurrentAir - LastMeleeAirCost);
         UpdateAirStateEffects();
 
@@ -11946,6 +11966,8 @@ class CaelumPlayer : DoomPlayer
                 CaelumConstants.WEAPON_CHARGED_DAMAGE_MULTIPLIER;
         }
         int integerDamage = Max(1, int(LastMeleeCalculatedDamage + 0.5));
+        ThermalBluntDelivery=(secondaryAttack ? CaelumWeaponCatalogue.GetSecondaryDamageType(catalogueWeapon)
+            : CaelumWeaponCatalogue.GetPrimaryDamageType(catalogueWeapon))==CaelumConstants.CATALOGUE_DAMAGE_BLUNT;
 
         Actor puff;
         int actualDamage;
@@ -11961,6 +11983,7 @@ class CaelumPlayer : DoomPlayer
             LAF_ISMELEEATTACK,
             targetData
         );
+        ThermalBluntDelivery=false;
         LastMeleeActualDamage = actualDamage;
 
         int harvestDamageKind = secondaryAttack
@@ -12097,9 +12120,11 @@ class CaelumPlayer : DoomPlayer
             LastMeleeCalculatedDamage = DerivedStats.DebugSwordDamage * damageScale
                 * LastMeleeLocationMultiplier * EffectiveOffensiveDamageMultiplier
                 * (chargedAttack ? CaelumConstants.WEAPON_CHARGED_DAMAGE_MULTIPLIER : 1.0);
+            ThermalBluntDelivery=CaelumWeaponCatalogue.GetPrimaryDamageType(catalogueWeapon)==CaelumConstants.CATALOGUE_DAMAGE_BLUNT;
             int actualDamage = candidate.DamageMobj(self, self,
                 Max(1, int(LastMeleeCalculatedDamage + 0.5)), 'CaelumMeleeTest',
                 DMG_THRUSTLESS | DMG_PLAYERATTACK | DMG_USEANGLE, attackAngle);
+            ThermalBluntDelivery=false;
             totalDamage += Max(0, actualDamage);
             if (actualDamage > 0)
                 ApplyAttackPushToTarget(candidate, attackAngle, DerivedStats.PhysicalPushMultiplier);

@@ -1,6 +1,212 @@
 # Caelum Argenteum — Current systems and rules
 
-Documentation version: **5.0.6** — 2026-10-07.
+Documentation version: **5.1.0** — 2026-10-07.
+
+## Thermal exposure and energy transfer (#130)
+
+V5.1.0 implements the author's 2026-10-07 contract. These are provisional game
+coefficients, not a clinical body-temperature model. The signed personal value
+`E` measures accumulated **equivalent exposure degrees**; negative means cold.
+`CaelumThermalState` revision 1 belongs to the player's persistent character
+record, or to each supported NPC. Shared services under `caelum/survival` own
+the calculations; environment caches never own another character's exposure.
+
+Humans and duendes have a 22 C comfort center; Beast Men and Caelith have 17 C.
+Furry bulls and giant rats share the 17 C category without another fur bonus,
+while retaining their own biological mass, size and attributes. Animal surface
+uses a collision-cylinder approximation, not a humanoid height formula.
+Mandingas and Zupay use 32 C. Acclimatization shifts the original center by up
+to +/-5 C, toward sustained local climate at 1 C per world day. It never also
+shifts stored E. Transient fire, drinks and magic are not acclimatization targets.
+Players, anchored residents, folklore combatants, bulls and giant rats are
+supported; unrelated actors without an approved physiology remain outside it.
+
+For effective Toughness `D=max(0,D)`, `R=D*(D+1)/101` percentage points and
+`s=1+R/100`. Harmful thresholds are `10s`, `20s`, and **past** `30s`: exactly
+`30s` remains tier 2. Numerical boundary tolerance is 1e-9. Threshold widening
+is uncapped; HP mitigation alone clamps `R/100` to [0,1]. Tier 1/2/3 costs
+1/2/3% maximum HP per **real simulation second**, multiplied by `1-R/100`.
+Fractions persist. This direct environmental loss bypasses ordinary subtractive
+Toughness, equipment, shields, native armor and adrenaline/reward paths.
+At D=100, thresholds are 20/40/60 and thermal HP damage is zero.
+
+| Consequence | Tier 1 | Tier 2 | Tier 3 |
+| --- | ---: | ---: | ---: |
+| Heat: qualifying Air and Thirst costs | x2 | x3 | x4 |
+| Cold: blunt incoming attacks | x1.5 | x2.25 | x3.375 |
+| Cold: other incoming attacks | x1.25 | x1.625 | x2.1875 |
+| Cold: movement and attack speed | /1.25 | /1.625 | /2.1875 |
+
+Cold vulnerability enters once before existing defensive resolution, including
+localized attacks; it does not increase hazard damage or thermal joules. Natural
+NPC attack frames use the same slowdown. Weapon charge preparation keeps its
+existing contract. Heat affects existing physical Air expenditure and Thirst
+depletion, including the Thirst cost of regeneration; it creates no resting Air
+drain and does not multiply Anima or hypoxia into exertion heat.
+
+### Clothing, water and shelter
+
+Author-approved thermal mapping does **not** change leather-based recipes:
+
+| Current equipment | Whole-outfit clo | Evaporation accessibility |
+| --- | ---: | ---: |
+| Base clothing: light cloth | 0.5 | 0.90 |
+| Magical armor: thick cloth | 1.0 | 0.75 |
+| Light armor: ordinary leather | 1.2 | 0.45 |
+| Medium/heavy: metal over light cloth | 0.6 | 0.60 |
+| Thick/demon leather calibration, no new assigned item | 1.8 | 0.30 |
+
+One clo is 0.155 m² K/W. These include underclothes and are apportioned by a
+16x16 sample of actual anatomical regions. They are parallel regional paths,
+not a full outfit bonus per item. Broken equipped pieces retain physical
+insulation; their ordinary magical defense remains zero. Wet outer pieces own
+their water mass through equipment identity and copy/drop paths. The character
+owns base-layer water. Unequipped pieces retain their moisture without passive
+drying; Box contents remain sealed. This is an explicit first-model storage
+rule, not a new waterproof treatment. Metal's outer moisture capacity is zero;
+its included cloth retains water.
+
+Air exchange uses `Fwet=1+0.02*wetnessPercent`; it already includes the approved
+wet insulation loss. There is no second loss multiplier. Rain adds 2 percentage
+points/minute per mm/hour on uncovered worn surfaces, bounded by capacity, while
+evaporation continues. No extra treated-leather coefficient is invented.
+Submerged anatomical rows saturate and exchange with water at 100 W/m² K,
+replacing their air path without multiplying water exchange by Fwet. Native
+height sectors and stacked swimmable 3D floors are sampled separately, including
+volumes above dry feet. A volume/model sector may declare
+`user_ca_water_temperature_defined=1` and `user_ca_water_temperature_c`, including
+zero. Otherwise the explicit fallback is climate **ground** temperature.
+
+Evaporation uses positive vapor-pressure gradient, permeability, a Lewis factor
+16.5013576 K/kPa, available water, and 2,450,000 J/kg latent heat once. Runoff
+does not cool. Clothing surface temperature follows its coupled resistance and
+exposure, rather than staying fixed at 22 C. Saturation capacities derived by
+`assets/validation_510/calibrate_drying.py` are 0.1923361193, 0.3323679408,
+0.3469835350 and 0.4208696971 kg/m² for light cloth, thick cloth, leather and
+thick leather. At 22 C / RH 50% / wind 1 m/s, an initially neutral 80 kg,
+1.75 m reference dries from saturation to <=0.0001% in 60/120/180/300 world
+minutes. These are calibrated capacities, not measured fabric properties.
+The bare-animal surface uses the light-cloth moisture-capacity reference without
+adding clo; species-specific water storage remains a refinement.
+
+Air convection is `max(3 approximately,8.6*v^0.53)` W/m² K, with a 0.137 m/s
+natural-convection velocity floor and 4.7 W/m² K radiation. Relative motion
+contributes to convection. Exchange follows the temperature gradient: wind can
+warm a colder body. Eight local traces within 1024 map units identify at least
+three connected wall planes, blocking exterior wind; two walls do not. Roof
+testing is independent and stops rain. Authored ranch roofs are also supported.
+This finite geometry sampler is an approximation for irregular/segmented rooms.
+
+### Energy, effort and clocks
+
+Humanoid area is `0.202*m^0.425*height^0.725` m². The 80 kg / 1.75 m reference
+area is 1.951493905 m². Reference clothed conductance is approximately
+9.409829238 W/K and exposure inertia is 11,291.795086 J/equivalent degree,
+calibrated to a 1,200-world-second response. Inertia scales with biological
+mass alone, not height or carried load. Equal absorbed 100 J gives E changes
+0.01771198 / 0.00885599 / 0.00442799 at 40/80/160 kg. At equal height, changing
+area gives response times approximately 13.43/20/29.79 world minutes.
+Resting 58.2 W/m² is balanced in the neutral reference; it creates no neutral
+drift. The constant-coefficient solver integrates exchange and threshold dose
+analytically: `C*dE=(B-G*E)*dt_world + P_real*dt_real + Q`.
+
+Voluntary walking/running use net ACSM oxygen equations with S in m/min:
+walking `0.1*S+1.8*S*grade`, running `0.2*S+0.9*S*grade`, moved mass and
+20.1 J/mL O2. Positive external ascent work is subtracted once from metabolic
+power. Moderate descents use the published Minetti cost curve with braking;
+below its fitted -0.45 grade, retain the boundary value, never extrapolate to
+vertical falling. Exceptional character speeds remain an explicit ACSM
+extrapolation. 80 kg at 5 km/h walking produces 223.333 W; running at 10 km/h
+produces 893.333 W; adding 20 kg load makes walking 279.167 W without changing
+thermal inertia. The conversion is 32 map units/m and actual engine gravity,
+not a change to native physics.
+
+Positive added jump kinetic energy uses 25% work efficiency, giving three times
+positive launch work as internal heat. An 80 kg, 0.5 m Earth-gravity reference
+gives 1,177.2 J. Native jump acceptance records this once, even for a one-tic
+key press. Ground steps subtract moving-support translation; teleports, falls,
+passive impulses and platform transport create no walking heat. Native command
+propulsion is separated from external velocity; combined collision/knockback
+remains an approximation requiring further tuning in unusual physics scenes.
+
+As explicitly approved, unsupported physical actions use nominal Air ratios:
+`Q_action=Q_reference_jump*nominal_action_Air/nominal_jump_Air`. Sustained
+blocking uses nominal Air/second. Active swimming and walking into an obstacle
+use the nominal running rate only as a provisional thermal profile; actual Air
+rules stay unchanged. Never use clipped/spent Air, heat surcharges, hypoxia or
+regeneration as heat. Discrete actions have no duplicated recovery tail.
+Continuous effort decays with a 120-world-second half-life and one integrated
+recovery budget; there is no old 8-met cap.
+
+Fire-primary and ice-secondary projectiles carry the existing Type-1 snapshot,
+`100+Intelligence*(Intelligence+1)/2` joules. Only actual intercepted shield and
+contacted gear magical defenses determine absorption once; final HP damage,
+innate defenses, cold vulnerability and subtractive Toughness do not convert
+joules. Explosions use weighted contacted coverage once per recipient. Existing
+continuous fire-seal recipients receive power per real second. Projectile
+recipient latches prevent repeated callbacks from repeating energy.
+
+Optional `CaelumThermalFireSource` map actors require args[0] profile 1..4
+(1/5/20/80 kW), args[1] physical flame radius and args[2] height in map units.
+Unspecified sources emit no invented thermal power. Flux is `0.35*P/(4*pi*r²)`
+times visible projected body area and author-approved provisional absorptivity
+0.95; physical source dimensions bound near-field distance. A 4x4 visibility
+sample checks obstruction. This is a point-source approximation, not a fire
+fluid model. Existing decorative fires receive no guessed profile.
+No existing hot/cold consumable had approved metadata: the tested service hook
+applies +/-10 C forcing for ten real seconds, refreshing rather than stacking;
+it does not invent new items or instantly change E by ten degrees.
+
+Climate response, moisture and acclimatization follow world time. Real HP,
+continuous spell energy and drink expiry follow simulation ticks. Extra personal
+time steps advance world response with zero extra real damage or action energy.
+Paused simulation advances neither. Limbo retains local 1:1 time and a frozen
+civil calendar; ordinary maps retain 20:1. Harmful thermal states interrupt
+safe accelerated rest/crafting/sleep. Unloaded hub maps do not simulate NPC
+physiology; reopening resets local sampling clocks while preserving E, water,
+acclimatization and damage fractions. Offscreen actors on a loaded map remain
+fully supported, with staggered one-second updates and actual elapsed time.
+
+Journey previews integrate minute-sized weather/activity steps on an isolated
+copy. Foot/caravan uses actual speed/load and the existing 16 hours walking /
+8 hours sleeping cycle. Cart/ship passengers rest inside four walls and a roof,
+using the existing indoor microclimate, zero exterior wind/rain and no invented
+heating. Nearby parked vehicles do not confer this journey shelter. Reject any
+forecast reaching harmful cold/heat, explain the cause, and consume no provisions.
+Successful travel commits exposure/moisture/acclimatization and logical activity
+without inventing real HP damage. Active drinks prevent instantaneous travel.
+
+### Persistence, presentation and evidence
+
+Missing revision-1 state initializes idempotently without resetting old records.
+GZDoom cannot load new class instances in an unmodified old executable package:
+`python assets/validation_510/prepare_rollback.py` reproducibly builds
+`build/issue130/rollback-506.pk3` from accepted commit `45f1637`. Use it in place
+of the gameplay PK3 to return to 5.0.6 behavior while retaining inert thermal
+serialization for a later 5.1 reload. Keep original saves and the same map-addon
+basenames; save to a new slot. This bridge changes no original save file.
+Generated packages, development IWADs, engine and saves are not distributed.
+
+Journal > World > **T** displays air, adapted comfort, signed exposure, first
+harmful threshold, wetness, humidity, acclimatization and current penalties in
+English/Spanish. HUD shows active harmful states. This is not core temperature.
+Native evidence, exact package/config hashes, migration comparisons, drying fit
+and bilingual captures are in [5.1.0 results](../assets/validation_510/RESULTS.json).
+The author accepted CA130-01/02/03 on 2026-10-07; HISTORY records the results
+separately from native evidence. No author checks remain for this patch.
+
+Physical sources: [EnergyPlus thermal comfort](https://energyplus.readthedocs.io/en/latest/guides/engineering-reference/19.1-occupant-thermal-comfort.html),
+[NIOSH heat guidance](https://www.cdc.gov/niosh/docs/2016-106/),
+[NIST wet clothing](https://www.nist.gov/publications/thermal-performance-fire-fighters-protective-clothing-1-numerical-study-transient-heat),
+[NIST fire radiation SP1169](https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.1169.pdf),
+[ACSM walking](https://pmc.ncbi.nlm.nih.gov/articles/PMC7896743/),
+[ACSM running](https://pmc.ncbi.nlm.nih.gov/articles/PMC3743617/),
+[Minetti downhill](https://pubmed.ncbi.nlm.nih.gov/12183501/),
+[muscle work efficiency](https://pmc.ncbi.nlm.nih.gov/articles/PMC2269891/),
+[load carriage](https://pmc.ncbi.nlm.nih.gov/articles/PMC3922835/),
+[oxygen conversion](https://pmc.ncbi.nlm.nih.gov/articles/PMC5504009/).
+The author's outfit profiles, response times, consequences, racial shifts and
+action proxies are game calibration, distinct from those physical sources.
 
 ## Automatic high-density AI (#128)
 
@@ -3746,7 +3952,8 @@ implementation in 0e. The engine's CVar API restricts its setters to mod variabl
 i_timescale is not modified by that API or altered the player's settings. Technical
 Reference: [GZDoom CVar](https://zdoom-docs.github.io/staging/Api/Base/CVar.html).Camps,
 properties, broader quality factors and automatic eating away from tables remain in V5,
-along with thermal exposure and skills not yet implemented. The safe advance was
+along with skills not yet implemented. Thermal exposure is now implemented in
+5.1.0/#130 above. The safe advance was
 incorporated into 0g and the repeat on tables in 0h.
 
 ## Civil calendar, campaign and Limbo (4.35.0b–0c)
@@ -3823,7 +4030,8 @@ World shows southern date and monthly season: summer December–February; autumn
 March–May; winter June–August; spring September–November. This convention remains a
 test; November 1889 is shown as spring, without determining equinoxes, climate,
 temperature, light or thermal exposure. Rest, temporary advancement and environmental
-status continue in V4.35; thermal exposure of the character preserves V5.1.
+status were added in V4.35; character thermal exposure is implemented in
+5.1.0/#130 above.
 
 ## Class and racial abilities: agreed design; Sleep implemented in 0g
 

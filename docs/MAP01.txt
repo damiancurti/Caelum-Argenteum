@@ -1,6 +1,18 @@
 CAELUM ARGENTEUM — STORY AND MAP01
 
-Documentation version: **5.0.6** — 2026-10-07.
+Documentation version: **5.1.0** — 2026-10-07.
+
+## 5.1.0 — Thermal integration boundary (#130)
+
+The accepted MAP01 -> MAP02 -> MAP06 route, story and geometry remain unchanged.
+Thermal simulation follows MAP01's local 1:1 Limbo clock without advancing the
+civil calendar. MAP02 uses the existing sewer microclimate and explicit ground
+temperature as fallback for unannotated water. Demons have 32 C comfort and can
+become cold there; PROJECT records a qualified fixed-weather projection.
+MAP06 retains the complete accepted army and normal high-density AI; thermal
+state updates include offscreen supported combatants. No decorative fire is
+assigned invented power and no parked cart gains an area shelter aura.
+Cart/ship journey protection applies during their enclosed passenger forecast.
 
 ## 4.37.24 — Closing campaign route (#82)
 

@@ -73,6 +73,9 @@ class CaelumTimeAdvanceState : Inventory
             || user.WaterLevel != 0 || !user.player.onground || user.Vel.Length() > 0.1) return "CA_FAST_UNSAFE";
         if (user.CurrentHunger <= 10 || user.CurrentThirst <= 10
             || (!skipping && user.CurrentSleep <= 10 && !CaelumRestState.IsSleeping(user))) return "CA_REST_NEEDS";
+        let thermal=CaelumThermalBody.Get(user);
+        if(thermal!=null && CaelumThermalRules.Severity(thermal.Exposure,user.Attributes.Toughness)>0)
+            return "CA_REST_THERMAL";
         let status = user.ElementalStatus;
         if (status != null && (status.BurnRemaining > 0 || status.PoisonRemaining > 0
             || status.CutRemaining > 0 || status.IsLightningStunned())) return "CA_FAST_UNSAFE";
@@ -168,7 +171,7 @@ class CaelumTimeAdvanceState : Inventory
         CaelumWeatherState.Sync(user,clock,CaelumCalendarState.Get(user));
         AdvancePowers(user);
         user.UpdateCraftingTask();
-        user.AdvancePersonalTimeTic();
+        user.AdvancePersonalTimeTic(false);
         user.HUDAbilitySuccessRemaining=Max(0.0,user.HUDAbilitySuccessRemaining-1.0/TICRATE);
         CaelumRestState.Advance(user);
     }

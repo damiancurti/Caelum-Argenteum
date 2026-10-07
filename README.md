@@ -6,8 +6,21 @@ An independent dark fantasy FPS-RPG inspired by nineteenth-century Argentina.
 Author and game designer: **Damian Curti**. Development target: **GZDoom 4.14.2**
 on Windows 11. The final game is intended to be independent of Doom assets.
 
-**Current release: 5.0.6.** Obtain and update the complete repository, validate
+**Current release: 5.1.0.** Obtain and update the complete repository, validate
 it, then rebuild with `run_dev.bat` as described below.
+
+Issue [#130](https://github.com/damiancurti/Caelum-Argenteum/issues/130) adds
+thermal exposure, persistent wetness, clothing insulation, activity heat and
+fire/ice energy for players and supported NPCs. Journal > World > **T** shows
+the thermal state in English/Spanish. Dangerous journey forecasts prevent
+departure; carts and ships provide enclosed shelter. See the
+[thermal contract](docs/SYSTEMS.md#thermal-exposure-and-energy-transfer-130)
+and [native evidence](assets/validation_510/RESULTS.json).
+Old character records migrate without resetting inventory, quests or resources;
+the contract documents a tested 5.0.6 rollback bridge. The author confirmed
+CA130-01/02/03 passed on 2026-10-07 and authorized PR #134 merge and issue #130
+closure; no author checks remain for this patch. Normal army AI and populations
+remain active; this feature does not claim a performance improvement.
 
 Issue [#128](https://github.com/damiancurti/Caelum-Argenteum/issues/128) brings
 high-density optimizations into normal gameplay at 500 living combatants
@@ -56,7 +69,7 @@ and [integrated evidence](assets/validation_504/RESULTS.json).
 The author accepted all #119/#120 tests on 2026-10-06; PRs #125/#126 are merged
 and both issues are closed. Native two-pawn owner checks use
 a local player plus a bot; full co-op/PvP, network lifecycle and shared campaign
-time are not implemented. Thermal/UI/campaign expansion and measured AI
+time are not implemented. Native UI/campaign expansion and measured AI
 optimization remain separate work. Architecture organization claims no speedup.
 Matched MAP06 pairs versus the original Architecture 1 reference vary from
 +4.09% to -8.72% throughput; no stable improvement is established.

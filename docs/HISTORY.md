@@ -1,6 +1,49 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **5.0.6** — 2026-10-07.
+Documentation version: **5.1.0** — 2026-10-07.
+
+## 5.1.0 — Thermal survival (#130, 2026-10-07)
+
+The author requests implementation, live tests, clarification, commit/push and
+temporary prevention of machine sleep. Successive issue amendments and answers
+approve thermal armor mapping without recipe changes; ground-temperature water
+fallback; demons at 32 C; furry bulls/rats at 17 C; enclosed carts/ships;
+dangerous journey rejection; mass-based inertia; Minetti descent braking;
+logical journey effort; nominal Air action profiles anchored to jump work;
+provisional swimming/blocked walking profiles and 0.95 fire absorption.
+SYSTEMS consolidates the final contract and sources rather than treating the
+superseded Air-depletion/met model as current behavior.
+
+Delivery adds independent versioned state, regional heat/moisture exchange,
+world/real clock separation, combat/resource effects, activity work, journey
+forecasting and bilingual presentation. Testing found and corrected one-tic
+jump detection, double/global environment work, native stacked water coverage,
+natural attack timing and stale hub sampling clocks. Coupled drying capacities
+were fitted and verified against all four approved reference times.
+
+Agent evidence: native formula/integration/geometry/live checks; ordinary and
+Limbo clocks; full-army arrival and seeded harmful-state stress; visual review
+in both languages; baseline/current/hub/rollback saves with inventory and quest
+fields. The old-runtime control matches every prior persistent-record field.
+Raw GZDoom cannot deserialize the new class in unmodified 5.0.6; the tested
+reproducible bridge preserves inert thermal data for reversible return.
+Exact builds, logs, settings, corrections and limits are in
+[5.1.0 results](../assets/validation_510/RESULTS.json).
+
+**Author acceptance, 2026-10-07:** the author explicitly confirmed all pending
+tests passed and requested PR #134 merge and issue #130 closure. CA130-01
+(thermal state/protection), CA130-02 (combat/journey integration) and CA130-03
+(persistence/populated gameplay), all originating in 5.1.0/#130, passed with no
+reported exceptions and were removed from the pending queue. This confirmation
+is distinct from agent evidence. Thermal calibration, exceptional geometry/action
+cases and measured performance limits remain qualified in SYSTEMS/PROJECT;
+acceptance does not claim sustained 35-tic/30-FPS performance or multiplayer.
+The acceptance update also preserves main's numbered V5 sequence and the
+separate planned thermal HUD issue #131. No runtime change is introduced.
+No new art/audio assets, recipes or encounters are added.
+Keep-awake used thread-scoped Windows execution requests, not power-plan edits.
+Both requests were released at 16:30 UTC on 2026-10-07; the Balanced plan's GUID
+matches before and after. Release records are retained in validation_510.
 
 ## 5.0.6 — Automatic normal high-density AI (#128, 2026-10-07)
 

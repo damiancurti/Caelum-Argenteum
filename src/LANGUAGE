@@ -1,4 +1,27 @@
 [enu default]
+CA_THERMAL_SAFE = "No harmful thermal exposure";
+CA_THERMAL_COLD = "Cold";
+CA_THERMAL_HYPO = "Hypothermia";
+CA_THERMAL_EXTREME_COLD = "Extreme cold";
+CA_THERMAL_HEAT = "Heat";
+CA_THERMAL_HYPER = "Hyperthermia";
+CA_THERMAL_EXTREME_HEAT = "Extreme heat";
+CA_THERMAL_TOGGLE = "[T] Thermal state / World";
+CA_THERMAL_ENV = "Air: %.1f C | Adapted comfort: %.1f C";
+CA_THERMAL_EXPOSURE = "Exposure: %+.2f | First harmful threshold: +/- %.2f";
+CA_THERMAL_WET = "Wetness: %.1f%% | Air humidity: %.1f%% | Acclimation: %+.1f C";
+CA_THERMAL_COST = "Air / Thirst costs: x%.1f | Movement / attack speed: %.1f%%";
+CA_THERMAL_ATTACK = "Incoming blunt damage: x%.3f | Other attacks: x%.3f";
+CA_THERMAL_DAMAGE = "Thermal damage: %.3f%% of maximum health per second";
+CA_THERMAL_EXPLAIN = "Exposure is accumulated cold or heat, not body temperature.";
+CA_THERMAL_HELP = "Shelter, dry clothing and lower effort can change your exposure.";
+
+CA_JOURNEY_THERMAL_UNKNOWN = "The route has no valid climate forecast.";
+CA_JOURNEY_COLD = "This journey would cause harmful cold exposure. Improve your protection or choose sheltered transport.";
+CA_JOURNEY_HEAT = "This journey would cause harmful heat exposure. Adjust your clothing or wait for cooler weather.";
+
+
+CA_REST_THERMAL = "Cold or heat exposure prevents safe time advancement. Improve shelter or protection first.";
 
 // #103: author-approved single-page new-character introduction and quit prompt.
 CA_EXIT_CONFIRM = "Quit Caelum Argenteum?";
@@ -13,6 +36,29 @@ CA_INTRO_REVEAL = "Press a key to reveal the full text.";
 CA_INTRO_BEGIN = "Press a key to begin your adventure.";
 
 [es]
+CA_THERMAL_SAFE = "Sin exposición térmica dañina";
+CA_THERMAL_COLD = "Frío";
+CA_THERMAL_HYPO = "Hipotermia";
+CA_THERMAL_EXTREME_COLD = "Frío extremo";
+CA_THERMAL_HEAT = "Calor";
+CA_THERMAL_HYPER = "Hipertermia";
+CA_THERMAL_EXTREME_HEAT = "Calor extremo";
+CA_THERMAL_TOGGLE = "[T] Estado térmico / Mundo";
+CA_THERMAL_ENV = "Aire: %.1f C | Confort adaptado: %.1f C";
+CA_THERMAL_EXPOSURE = "Exposición: %+.2f | Primer umbral dañino: +/- %.2f";
+CA_THERMAL_WET = "Mojado: %.1f%% | Humedad del aire: %.1f%% | Aclimatación: %+.1f C";
+CA_THERMAL_COST = "Costes Aire / Sed: x%.1f | Velocidad marcha / ataques: %.1f%%";
+CA_THERMAL_ATTACK = "Daño contundente recibido: x%.3f | Otros ataques: x%.3f";
+CA_THERMAL_DAMAGE = "Daño térmico: %.3f%% de vida máxima por segundo";
+CA_THERMAL_EXPLAIN = "La exposición acumula frío o calor; no es la temperatura corporal.";
+CA_THERMAL_HELP = "El refugio, la ropa seca y el esfuerzo modifican tu exposición.";
+
+CA_JOURNEY_THERMAL_UNKNOWN = "No hay una previsión climática válida para la ruta.";
+CA_JOURNEY_COLD = "Este viaje produciría una exposición dañina al frío. Mejora tu protección o elige un transporte con refugio.";
+CA_JOURNEY_HEAT = "Este viaje produciría una exposición dañina al calor. Ajusta tu ropa o espera a que refresque.";
+
+
+CA_REST_THERMAL = "La exposición al frío o al calor impide adelantar el tiempo con seguridad. Mejorá primero el refugio o la protección.";
 CA_EXIT_CONFIRM = "¿Salir de Caelum Argenteum?";
 CA_INTRO_UNBOUND = "Sin asignar";
 CA_INTRO_TITLE = "Caelum Argenteum";

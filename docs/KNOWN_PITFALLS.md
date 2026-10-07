@@ -4,6 +4,53 @@ Status: integrated engineering register (issue #22, patch 4.36.1b).
 Prepared: 2026-09-23. Inherits the project's release after integration.
 Inspected baseline: `1dc390576fa330d37ff543526fc7e69a397fc28f` (PR #7).
 
+## CA-KP-050 - Adding serialized classes needs an explicit old-runtime bridge
+
+Status/evidence: ENGINE-VERIFIED. First recorded / checked: 2026-10-07.
+Issue #130 / 5.1.0; baseline `45f1637`, Windows/GZDoom 4.14.2.
+Scope: thermal state, equipment moisture and GZDoom save restoration.
+
+Adding a nullable versioned state is forward-migratable, but plain 5.0.6 cannot
+deserialize a later `CaelumThermalState` instance. A tested rollback package
+retains the new fields/classes as inert schema in the accepted old gameplay.
+It preserves E, acclimatization, activity, water and fractional damage exactly;
+derived sampling caches are invalidated before returning to the new runtime.
+Original saves remain untouched. Map addons must keep their recorded basename,
+even when replacing their implementation during a migration test.
+
+Reproduce with `assets/validation_510/prepare_rollback.py` and the save harness;
+the baseline/current/hub/rollback/re-upgrade chain and all prior record fields
+are checked in [5.1.0 evidence](../assets/validation_510/RESULTS.json).
+The bridge is specific to this schema/baseline, not a universal downgrade tool.
+Author acceptance: CA130-03 passed on 2026-10-07, without reported exceptions.
+No save or development IWAD is distributed.
+
+## CA-KP-049 - A filtered global iterator per NPC can still become quadratic
+
+Status/evidence: RESOLVED-VERIFIED. First recorded / checked: 2026-10-07.
+Issue #130 / 5.1.0; dirty implementation over `45f1637`, exact per-run package
+hashes in [5.1.0 evidence](../assets/validation_510/RESULTS.json).
+Environment: Windows/GZDoom 4.14.2/Vulkan, full normal MAP06 army, 5% audio,
+background unpaused. Scope: `CaelumThermalWorld` and shelter/body sampling.
+
+The initial per-body roof query constructed a filtered `ThinkerIterator` for
+vehicle ranches. The native search still walked the global thinker population;
+doing this for thousands of bodies reduced tics 105–700 to 9.05 tics/s.
+Caching the small source/ranch lists once per real second restored 28.07.
+Reusing the NPC's due time before climate/attribute lookups, caching mass/area,
+and removing repeated health recomputation restored 32.76 in that intermediate
+build. Matched intermediate logs retain identical exposure aggregates and
+populations: this saving did not exempt offscreen actors or drop elapsed time.
+Final arrival samples reach 33.62–34.15, versus 34.48–34.95 in the accepted
+baseline; later motion/load corrections slightly change final heat aggregates.
+
+Regression check: deterministic full-roster performance fixture plus the seeded
+extreme-cold stress variant. Measure elapsed simulation time, roster, supported
+body count and aggregate state, not only a faster isolated helper. These short
+arrival samples do not establish late-battle FPS. CA130-03 was author-accepted
+on 2026-10-07 without reported exceptions;
+the performance limitation is reported rather than described as a speedup.
+
 ## CA-KP-048 - Preserve native visibility RNG when pruning cannon candidates
 
 Status/evidence: CODE-VERIFIED / ENGINE-VERIFIED; normal-game implementation.

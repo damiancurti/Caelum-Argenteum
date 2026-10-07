@@ -1,0 +1,67 @@
+﻿{
+    "label":  "final-math-a",
+    "started_utc":  "2026-10-07T15:55:47.1041054Z",
+    "engine":  "C:\\Program Files (x86)\\GZDoom\\gzdoom.exe",
+    "engine_sha256":  "EC706C2EA1EF946EEC13BE7B1B461DF8D52EFCD47CAA6C056ED0E0257F7F9FFA",
+    "iwad_sha256":  "10D67824B11025DDD9198E8CFC87CA335EE6E2D3E63AF4180FA9B8A471893255",
+    "package_sha256":  "A2928E7E6FDFA4044EC9662CC4E536E838797CD83F48B0CC8A861DCA888948EA",
+    "addon_sha256":  "226833FA8E2722F0732FD787E5E3642906D5DD586EA52659DA6622AB2515D1DA",
+    "initial_config":  "[LastRun]\nVersion=225\n[GlobalSettings]\nvid_preferbackend=1\nvid_vsync=false\nvid_maxfps=60\nvid_activeinbackground=true\ni_pauseinbackground=false\nvid_lowerinbackground=false\ni_soundinbackground=true\ncl_capfps=false\nvid_fullscreen=false\nvid_defwidth=1280\nvid_defheight=720\nuse_mouse=false\nsnd_mastervolume=0.05\nlanguage=enu\n",
+    "arguments":  [
+                      "-noautoload",
+                      "-nomouse",
+                      "-iwad",
+                      "\"C:\\Program Files (x86)\\Steam\\steamapps\\common\\ultimate doom\\base\\doom2\\DOOM2.WAD\"",
+                      "-file",
+                      "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue130\\production.pk3\"",
+                      "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue130\\checks.pk3\"",
+                      "-config",
+                      "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue130\\final-math-a.ini\"",
+                      "-savedir",
+                      "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue130\"",
+                      "-width",
+                      "1280",
+                      "-height",
+                      "720",
+                      "-window",
+                      "-rngseed",
+                      "116",
+                      "-skill",
+                      "2",
+                      "+logfile",
+                      "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue130\\final-math-a.txt\"",
+                      "+con_notifytime",
+                      "0",
+                      "+map",
+                      "QA130A",
+                      "+exec",
+                      "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue130\\final-math-a-exec.cfg\""
+                  ],
+    "benchmark_offset":  0,
+    "command_script":  "wait 10; quit\r\n",
+    "cpu":  [
+                {
+                    "Name":  "AMD Ryzen 9 5950X 16-Core Processor            ",
+                    "NumberOfCores":  16,
+                    "NumberOfLogicalProcessors":  32
+                }
+            ],
+    "gpu":  [
+                {
+                    "Name":  "Parsec Virtual Display Adapter",
+                    "DriverVersion":  "0.45.0.0"
+                },
+                {
+                    "Name":  "NVIDIA GeForce RTX 3070 Ti",
+                    "DriverVersion":  "32.0.15.7688"
+                }
+            ],
+    "os":  {
+               "Caption":  "Microsoft Windows 11 Pro",
+               "Version":  "10.0.26200",
+               "TotalVisibleMemorySize":  33475240
+           },
+    "pid":  38688,
+    "completed_utc":  "2026-10-07T15:55:52.4123612Z",
+    "expected":  "CA130 COMPLETE checks=\\d+ failures=0"
+}

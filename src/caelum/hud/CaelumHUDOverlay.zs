@@ -1031,6 +1031,15 @@ class CaelumHUDOverlay : EventHandler
         CaelumCompass.Draw(event, localPlayer, HUDFont);
         DrawSealIndicator(localPlayer);
         DrawTarotIndicator(localPlayer);
+        let thermalOwner=CaelumPersistentCharacterState(localPlayer.FindInventory("CaelumPersistentCharacterState"));
+        let thermal=thermalOwner!=null ? thermalOwner.ThermalState : null;
+        if(thermal!=null && thermal.Severity>0)
+        {
+            String warning=StringTable.Localize(CaelumThermalRules.StateKey(thermal.Exposure,thermal.Toughness),false);
+            Screen.DrawText(HUDFont,thermal.Exposure<0 ? Font.CR_CYAN : Font.CR_RED,
+                320-HUDFont.StringWidth(warning)*0.5,88,warning,
+                DTA_VIRTUALWIDTHF,640.0,DTA_VIRTUALHEIGHTF,360.0,DTA_KEEPRATIO,true,DTA_SHADOW,true);
+        }
 
         if (localPlayer.HUDAbilitySuccessRemaining > 0.0)
         {

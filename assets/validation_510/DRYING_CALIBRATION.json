@@ -1,0 +1,30 @@
+[
+  {
+    "material": "light_cloth",
+    "target_world_seconds": 3600,
+    "water_capacity_kg_per_m2": 0.19233611932428546,
+    "practically_dry_percent": 0.0001,
+    "reference_step_seconds": 1
+  },
+  {
+    "material": "thick_cloth",
+    "target_world_seconds": 7200,
+    "water_capacity_kg_per_m2": 0.332367940848569,
+    "practically_dry_percent": 0.0001,
+    "reference_step_seconds": 1
+  },
+  {
+    "material": "leather",
+    "target_world_seconds": 10800,
+    "water_capacity_kg_per_m2": 0.3469835350018551,
+    "practically_dry_percent": 0.0001,
+    "reference_step_seconds": 1
+  },
+  {
+    "material": "thick_leather",
+    "target_world_seconds": 18000,
+    "water_capacity_kg_per_m2": 0.420869697057457,
+    "practically_dry_percent": 0.0001,
+    "reference_step_seconds": 1
+  }
+]

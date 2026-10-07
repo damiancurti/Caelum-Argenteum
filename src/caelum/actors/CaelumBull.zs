@@ -36,7 +36,7 @@ class CaelumBull : CaelumCombatActor
     void BeginBullCharge()
     {
         double firstTicCost = GetBullRunningAirCostPerSecond() / TICRATE;
-        if (CurrentCombatAir < firstTicCost)
+        if (CurrentCombatAir < firstTicCost*CaelumThermalEffects.HeatCost(self))
         {
             StopBullCharge();
             AttackResourceMagical=false;AttackResourceWeapon=-1;AttackResourceBaseCost=CaelumAttackRules.NaturalAir();
@@ -49,6 +49,7 @@ class CaelumBull : CaelumCombatActor
             CaelumConstants.SHIELD_TOWER_COMBAT_MASS_MULTIPLIER;
         Vel.X = Cos(Angle) * BullRunningSpeed;
         Vel.Y = Sin(Angle) * BullRunningSpeed;
+        CaelumThermalMotion.SetVelocity(self);
     }
 
     // Inicia una embestida física en la dirección ya fijada por A_FaceTarget.
@@ -64,6 +65,7 @@ class CaelumBull : CaelumCombatActor
             bull.StopBullCharge();
             return;
         }
+        bull.tics=int(Ceil(bull.tics/CaelumThermalEffects.Speed(bull)));
         bull.BeginBullCharge();
     }
 
