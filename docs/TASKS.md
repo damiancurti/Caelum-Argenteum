@@ -4,7 +4,8 @@ Documentation version: **5.1.0** — 2026-10-07.
 
 ## Issue #130 — Thermal survival (5.1.0)
 
-Implemented for review on `issue-130-thermal-survival`; native verification is
+Implemented for review in [PR #134](https://github.com/damiancurti/Caelum-Argenteum/pull/134)
+on `issue-130-thermal-survival`; native verification is
 recorded in [5.1.0 evidence](../assets/validation_510/RESULTS.json). Author
 acceptance is pending, not implied by automated checks or the delivery PR.
 

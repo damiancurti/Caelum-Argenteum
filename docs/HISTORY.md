@@ -34,8 +34,9 @@ Exact builds, logs, settings, corrections and limits are in
 remain outstanding. No earlier generic confirmation applies to this new patch.
 Thermal calibration and exceptional geometry/action cases remain explicitly
 qualified in SYSTEMS. No new art/audio assets, recipes or encounters are added.
-Keep-awake uses thread-scoped Windows execution requests, not power-plan edits;
-release evidence is recorded with the validation artifacts at task completion.
+Keep-awake used thread-scoped Windows execution requests, not power-plan edits.
+Both requests were released at 16:30 UTC on 2026-10-07; the Balanced plan's GUID
+matches before and after. Release records are retained in validation_510.
 
 ## 5.0.6 — Automatic normal high-density AI (#128, 2026-10-07)
 
