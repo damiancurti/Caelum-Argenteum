@@ -9,7 +9,8 @@
     "Machine proximity uses existing accepted physical-scale guard radii. Crew posts follow current machine positions.",
     "Existing port buildings, docks and prisoner positions are retained. The battle district extends north.",
     "Author 2026-10-03, issue #77: cap each port command group at 100 enemies including its leader; preserve rank priority and the full army.",
-    "Author 2026-10-03, issue #77: Mandingas select the nearest visible player or port guard. A leader's order must not hide a closer opponent; no guard-first priority or damage rebalance. The existing target_update_tics owns the perception cache cadence."
+    "Author 2026-10-03, issue #77: Mandingas select the nearest visible player or port guard. A leader's order must not hide a closer opponent; no guard-first priority or damage rebalance. The existing target_update_tics owns the perception cache cadence.",
+    "Author 2026-10-07, issue #128: at 500 or more living combatants across the entire map, command members adopt their leader's target even if another opponent is nearer to the member. This overrides the preceding individual-nearest rule only in high-density mode. Keep the existing group limit, perception cadence, individual attacks, movement, resources and collisions."
   ],
   "mandingas": 1000,
   "defenders": 100,

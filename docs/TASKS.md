@@ -1,6 +1,25 @@
 # TASKS.md — Active tasks
 
-Documentation version: **5.0.5** — 2026-10-07.
+Documentation version: **5.0.6** — 2026-10-07.
+
+## Issue #128 — Automatic normal high-density AI (5.0.6)
+
+- Implement the author's map-wide 500-living-combatant threshold and explicit
+  leader-target policy. Retain individual movement, attacks, collision,
+  resource/status updates and the full army.
+- Promote spatial guards with NOBLOCKMAP coverage and bounded negative cannon
+  retries. Evaluate shared candidates and staggered group perception separately
+  and combined. Do not ship diagnostic march/reduced-actor shortcuts.
+- Validate 499/500/501, offscreen counting, death/removal/revival, mode exits,
+  target/leader loss, occlusion, remembered guards, neutralization, save/load,
+  old-save upgrade/rollback and map travel with real GZDoom 4.14.2.
+- Measure baseline and repeated normal-combat variants through early,
+  congested and late windows; retain callback tails and native thinker/render
+  evidence. Record positive results and limits in KNOWN_PITFALLS.
+- Keep background simulation active, audio at 5%, and the machine awake with
+  a bounded request. Release it and verify the original power plan afterward.
+- Update consolidated docs, validate, commit, push and deliver a linked PR.
+  Author acceptance, merge and closure are not yet requested for #128.
 
 ## Issue #121 — Siege subsystem diagnosis and combined experiments (5.0.5)
 

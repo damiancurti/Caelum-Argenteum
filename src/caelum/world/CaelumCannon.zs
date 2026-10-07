@@ -31,6 +31,7 @@ class CaelumCannon : CaelumHostileMachine
     bool Initialized, Defending, Requested;
     bool UnlimitedAmmunition;
     int CycleRevision;
+    int NextTargetQuery;
     int Phase, Work, Ammunition, ShotSerial, Shots, Contacts, LastDamage;
     vector3 AimPoint, LastContactVelocity, LastLaunchVelocity;
     Actor IntendedTarget, LastContact, LastOperator;

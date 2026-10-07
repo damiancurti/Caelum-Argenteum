@@ -3,6 +3,8 @@
 // many different source files.
 class CaelumConstants : Object
 {
+    // Autor, #128: combatientes vivos del mapa completo, incluidos jugadores.
+    const HIGH_DENSITY_COMBATANTS = 500;
     const DEBUG_ALL_ATTRIBUTES_LEVEL_75 = 75;
     const DEBUG_ALL_ATTRIBUTES_LEVEL_100 = 100;
     // The design document defines twelve primary character attributes.

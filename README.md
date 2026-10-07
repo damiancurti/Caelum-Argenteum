@@ -6,8 +6,14 @@ An independent dark fantasy FPS-RPG inspired by nineteenth-century Argentina.
 Author and game designer: **Damian Curti**. Development target: **GZDoom 4.14.2**
 on Windows 11. The final game is intended to be independent of Doom assets.
 
-**Current release: 5.0.5.** Obtain and update the complete repository, validate
+**Current release: 5.0.6.** Obtain and update the complete repository, validate
 it, then rebuild with `run_dev.bat` as described below.
+
+Issue [#128](https://github.com/damiancurti/Caelum-Argenteum/issues/128) brings
+high-density optimizations into normal gameplay at 500 living combatants
+across the map. Siege members follow their leader's target while retaining
+individual combat, movement, collision and resource updates. Native validation
+is in progress; see the [current contract](docs/SYSTEMS.md#automatic-high-density-ai-128).
 
 Issue [#121](https://github.com/damiancurti/Caelum-Argenteum/issues/121) profiles
 the complete MAP06 army and tests the author's shared groups of 100 in isolated
@@ -16,10 +22,10 @@ slowdown. The experiment records both CPU savings and changed trajectories,
 formation breakdown and artillery interactions. See the
 [diagnosis](docs/PROJECT.md#505--siege-subsystem-diagnosis-and-shared-group-experiments-121)
 and [recorded measurements](assets/validation_505/RESULTS.json).
-The production game keeps its existing AI, population, balance and save state.
+That diagnostic release kept its existing AI, population, balance and save state.
 The test launcher runs in the background without pausing or reducing priority,
 with audio enabled at 5%. This delivery supplies evidence and focused next steps;
-it does not ship a siege performance fix.
+it did not ship a siege performance fix. #128 above is its production follow-up.
 The combined combat prototype improves late simulation from about 3 to 24–25
 tics/s. The combined march reaches about 35, with 20–23 frame callbacks/s;
 neither meets the author's stable 35-tic/30-FPS target. Positive findings and

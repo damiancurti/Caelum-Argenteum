@@ -1,6 +1,15 @@
 # Caelum Argenteum — Audio and art
 
-Documentation version: **5.0.5** — 2026-10-07.
+Documentation version: **5.0.6** — 2026-10-07.
+
+## 5.0.6 — Normal high-density AI evidence (#128)
+
+`assets/validation_506` contains deterministic isolated trial generators,
+native runners, raw logs/configuration, summaries and source/package records.
+Fixtures, generated packages and saves remain under ignored `build/issue128`;
+they are not game assets. No IWAD or engine is distributed. The patch changes
+normal AI code and records the author's policy in the existing port data notes;
+it changes no map, artwork, sound, attribution or asset license.
 
 ## 5.0.5 — Siege profiling evidence (#121)
 

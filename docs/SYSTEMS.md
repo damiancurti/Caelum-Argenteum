@@ -1,8 +1,57 @@
 # Caelum Argenteum — Current systems and rules
 
-Documentation version: **5.0.5** — 2026-10-07.
+Documentation version: **5.0.6** — 2026-10-07.
+
+## Automatic high-density AI (#128)
+
+Author decision, 2026-10-07: activate the applicable normal AI optimizations
+at **500 living combatants in the entire map**, including those offscreen.
+`CaelumPopulationState` counts living, shootable `CaelumCombatActor` NPCs and
+active players' living, shootable pawns. Projectiles, props, helpers, corpses
+and inactive/non-player pawn copies do not contribute. The existing map event
+handler refreshes this derived snapshot before thinkers each simulation tic;
+spawn, death, removal, revival and shootability changes appear by the next tic.
+Exactly 500 enables it; 499 disables it. Camera movement does not affect it.
+
+The mode is automatic, with no player setting or diagnostic CVar. Existing
+siege command groups still contain at most 100 members, use the authored
+connectivity/rank rules and retain the full army. In high-density mode each
+member **adopts the leader's target**, even if another target is closer to the
+member. This explicitly supersedes #77's individual-nearest rule only while
+the threshold is met. Leaders select the nearest visible living player or
+port defender; absent a visible opponent they retain their lane approach goal.
+Actual attack preparation/release still checks each member's own range, line
+of sight and resource costs. Sharing an order does not authorize attacks
+through a wall or disable recovery, individual movement, collision or status.
+
+Perception uses the existing eight-tic period, with different command groups
+assigned different phases. A group's first query is immediate; subsequent
+position/visibility changes are observed within eight tics. Dead or destroyed
+targets are rejected immediately and reacquired on the next perception turn.
+An inactive leader falls back to the live member until ordinary regrouping.
+The roster of living target candidates is reused among leaders in the same
+tic; positions, health, shootability and visibility remain live query inputs.
+
+Armed hostile machines use a native blockmap broad phase followed by the same
+exact 3D guard predicate. A once-per-tic list covers guards flagged NOBLOCKMAP.
+Previously remembered guards, confirmed deaths, retreat and one-time
+neutralization remain authoritative. A loaded cannon with no eligible target
+retries after the existing eight-tic perception interval; successful shots,
+crew priority, ammunition, ballistics and reload timing are unchanged.
+
+Below the threshold, per-member targeting and full guard scans resume and
+negative cannon searches have no added retry delay. Mode transitions clear
+only derived perception/deadline caches. Targeting revision 2 initializes the
+new caches idempotently; population revision 1 is rebuilt from native actors
+on load/travel and each tic. Rosters, identities, casualties, crews, resources
+and saved inventory/Tarot state are not reconstructed. The population gate is
+map-wide; group targeting applies to existing port command groups and spatial
+guard queries to siege machines. This does not invent command groups for
+unrelated civilian/faction AI or activate CADEV02's reduced actor simulation.
 
 ## Siege profiling and group experiment boundary (#121)
+
+Historical boundary of 5.0.5; #128's production policy above supersedes it.
 
 The accepted siege retains 6,000 Mandingas, its commander and 600 defenders.
 Production command groups already contain at most 100 members. Membership and
@@ -750,7 +799,7 @@ refresh; no roster, geometry or save-schema replacement is required.
 
 Further author decisions, 2026-10-03, apply to the shared combat actors:
 
-- Mandingas in the siege choose the nearest visible living player or guard.
+- Below #128's high-density threshold, Mandingas in the siege choose the nearest visible living player or guard.
   A leader's candidate cannot hide a closer opponent. Perception uses the
   existing eight-tic data cadence, staggered by identity; death or lost sight
   invalidates the cached target. Hidden lane goals remain approach destinations.

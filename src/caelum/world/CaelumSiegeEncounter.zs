@@ -17,6 +17,10 @@ class CaelumSiegeCombatant : Object play
     // Caché de percepción del puerto; revisión propia en CaelumPortSiege.
     Actor CombatTarget;
     int TargetRefreshTic;
+    // Caché del mando; la revisión del puerto reconstruye sólo estos datos.
+    Actor SharedTarget;
+    int SharedTargetTic, NextSharedTargetTic;
+    bool SharedTargetValid;
     Actor NavigationTarget;
     vector3 CrewOffset;
     int Lane;
@@ -255,11 +259,32 @@ class CaelumHostileMachine : Actor
     void ObserveGuards()
     {
         if (!Armed || Neutralized || Encounter == null) return;
-        for (int i = 0; i < Encounter.Attackers.Size(); i++)
+        let population=CaelumPopulationState.Get();
+        if(population!=null && population.HighDensity)
         {
-            let entry = Encounter.Attackers[i];
-            if (!IsNearby(entry)) continue;
-            RememberGuard(entry);
+            let nearby=BlockThingsIterator.Create(self,GuardRadius);
+            while(nearby.Next())
+            {
+                let body=CaelumCombatActor(nearby.thing);
+                if(body==null || body.SiegeCombatant==null)continue;
+                let entry=body.SiegeCombatant;
+                if(entry.Encounter==Encounter && IsNearby(entry))RememberGuard(entry);
+            }
+            // Los actores excluidos de la blockmap conservan el mismo radio
+            // tridimensional y la misma memoria de guardias que los demás.
+            for(int i=0;i<population.UnlinkedGuards.Size();i++)
+            {
+                let entry=population.UnlinkedGuards[i];
+                if(entry.Encounter==Encounter && IsNearby(entry))RememberGuard(entry);
+            }
+        }
+        else
+        {
+            for (int i = 0; i < Encounter.Attackers.Size(); i++)
+            {
+                let entry = Encounter.Attackers[i];
+                if (IsNearby(entry)) RememberGuard(entry);
+            }
         }
         if (LocalGuards.Size() == 0) return;
         for (int i = 0; i < LocalGuards.Size(); i++)

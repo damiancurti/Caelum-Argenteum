@@ -1,8 +1,17 @@
 // Coordinador determinista de la IA masiva de CADEV02. El EventHandler existe
 // una sola vez por partida y permite imponer un techo real a A_Chase sin que
 // cada actor tenga que buscar o recorrer a los demas miembros del campo.
+// #128 reutiliza su ciclo de mapa para actualizar Population; las opciones
+// diagnósticas y sus atajos siguen separados de la IA normal.
 class CaelumMassAIScheduler : EventHandler
 {
+    CaelumPopulationState Population;
+
+    void RefreshPopulation()
+    {
+        if(Population==null)Population=new("CaelumPopulationState");
+        Population.Refresh();
+    }
     bool MassAttacksEnabled;
     bool MassLookEnabled;
     bool MassChaseEnabled;
@@ -93,6 +102,7 @@ class CaelumMassAIScheduler : EventHandler
 
     override void WorldLoaded(WorldEvent event)
     {
+        RefreshPopulation();
         RefreshSettings();
         LookUpdatesThisTic = 0;
         PeakLookUpdatesPerTic = 0;
@@ -107,6 +117,7 @@ class CaelumMassAIScheduler : EventHandler
 
     override void WorldTick()
     {
+        RefreshPopulation();
         // WorldTick corre antes de los Thinkers. Cerrar aqui el tic anterior
         // mantiene un limite determinista y no depende de los FPS del cliente.
         // La configuración es inmutable durante el mapa: no se consultan CVars

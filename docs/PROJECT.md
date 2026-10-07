@@ -1,6 +1,24 @@
 # Caelum Argenteum — Project, status and roadmap
 
-Documentation version: **5.0.5** — 2026-10-07.
+Documentation version: **5.0.6** — 2026-10-07.
+
+## 5.0.6 — Automatic high-density AI and shared work (#128)
+
+Implementation and validation are in progress on the focused #128 branch.
+The author authorizes normal gameplay optimizations at 500 living map
+combatants and explicitly chooses the leader's target for group members.
+This is a production follow-up to #121's accepted diagnostic evidence.
+The population count includes offscreen combatants; the full army, individual
+combat, collision, resource recovery and status updates remain simulated.
+The current contract and save boundary are in SYSTEMS, with native evidence
+and reproducible fixtures under `assets/validation_506`.
+
+The experiment compares shared candidate enumeration and staggered eight-tic
+group perception separately and together, using ordinary combat rather than
+#121's march-only formation prototype. Native baseline, threshold/lifecycle,
+guard, target, save/travel and repeated full-army measurements are required
+before reporting performance. Agent verification and author acceptance remain
+separate. The temporary Windows keep-awake request must be released at the end.
 
 ## 5.0.5 — Siege subsystem diagnosis and shared-group experiments (#121)
 

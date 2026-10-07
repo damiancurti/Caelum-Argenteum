@@ -1,6 +1,19 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **5.0.5** — 2026-10-07.
+Documentation version: **5.0.6** — 2026-10-07.
+
+## 5.0.6 — Automatic normal high-density AI (#128, 2026-10-07)
+
+The author requests a production follow-up to #121's performance alternatives,
+native tests, commit/push and a temporary keep-awake request. Clarifications:
+count living combatants across the complete map, including offscreen actors;
+at 500 or more, group members adopt their leader's target even when another
+opponent is nearer to them. The latter explicitly overrides #77's
+individual-nearest policy within high-density mode. No population cut or
+removal of ordinary combat is authorized or implemented.
+
+Implementation/native validation are in progress; author acceptance remains
+unconfirmed. No earlier accepted manual test is reopened by this entry.
 
 ## 5.0.5 — Siege profiling and combined diagnostic experiments (#121, 2026-10-07)
 
