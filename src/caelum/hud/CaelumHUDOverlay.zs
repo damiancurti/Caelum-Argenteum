@@ -826,10 +826,10 @@ class CaelumHUDOverlay : EventHandler
         if (record == null) return;
         bool selected = false;
         for (int card = 0; card < CaelumConstants.TAROT_CARD_COUNT; card++)
-            selected = selected || record.TarotSelected[card];
-        bool active = record.TarotEffectTics > 0;
-        if (!selected && !active && record.TarotCooldownTics <= 0) return;
-        bool available = active || (selected && record.TarotCooldownTics <= 0
+            selected = selected || CaelumTarotService.IsSelected(record, card);
+        bool active = CaelumTarotService.EffectTics(record) > 0;
+        if (!selected && !active && CaelumTarotService.CooldownTics(record) <= 0) return;
+        bool available = active || (selected && CaelumTarotService.CooldownTics(record) <= 0
             && localPlayer.CurrentAnima >= CaelumConstants.TAROT_ACTIVATION_ANIMA);
         let icon = TexMan.CheckForTexture("graphics/caelum/icons/ca_tarot_back.png", TexMan.Type_Any);
         if (!icon.IsValid()) return;
@@ -842,15 +842,15 @@ class CaelumHUDOverlay : EventHandler
         if (active)
         {
             String duration = String.Format(StringTable.Localize("CA_TAROT_HUD_DURATION", false),
-                (record.TarotEffectTics + TICRATE - 1) / TICRATE);
+                (CaelumTarotService.EffectTics(record) + TICRATE - 1) / TICRATE);
             Screen.DrawText(HUDFont, Font.CR_CYAN, 624.0 - HUDFont.StringWidth(duration), 102.0, duration,
                 DTA_VIRTUALWIDTHF, 640.0, DTA_VIRTUALHEIGHTF, 360.0,
                 DTA_KEEPRATIO, true, DTA_SHADOW, true);
         }
-        if (record.TarotCooldownTics > 0)
+        if (CaelumTarotService.CooldownTics(record) > 0)
         {
             String cooldown = String.Format(StringTable.Localize("CA_TAROT_HUD_COOLDOWN", false),
-                (record.TarotCooldownTics + TICRATE - 1) / TICRATE);
+                (CaelumTarotService.CooldownTics(record) + TICRATE - 1) / TICRATE);
             Screen.DrawText(HUDFont, Font.CR_WHITE, 624.0 - HUDFont.StringWidth(cooldown), 116.0, cooldown,
                 DTA_VIRTUALWIDTHF, 640.0, DTA_VIRTUALHEIGHTF, 360.0,
                 DTA_KEEPRATIO, true, DTA_SHADOW, true);

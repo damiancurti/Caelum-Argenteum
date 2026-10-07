@@ -4,6 +4,31 @@ Status: integrated engineering register (issue #22, patch 4.36.1b).
 Prepared: 2026-09-23. Inherits the project's release after integration.
 Inspected baseline: `1dc390576fa330d37ff543526fc7e69a397fc28f` (PR #7).
 
+## CA-KP-040 - A saved active effect may outlive its native hub power
+
+Status/evidence: CODE-VERIFIED / ENGINE-VERIFIED.
+First recorded / last checked: 2026-10-06. Issue #119 / 5.0.3.
+Baseline: `135ae0f9` (5.0.2); GZDoom 4.14.2, Windows 11/Vulkan.
+
+Native `PowerFlight` carries `INVENTORY.HUBPOWER`. Leaving the mansion for MAP02
+removes the native Tarot flight instance even though the character record keeps
+the activated Fool and positive effect/cooldown tics. Baseline logs show flight
+1 at departure and 0 at arrival; collection, selected/active arrays and timers
+otherwise survive. Saving that state also preserves the missing-instance defect.
+
+`CaelumTarotService.RestoreNativeEffect` reconciles the missing native instance
+after travel and personal time. It derives permission only from the already-paid
+saved active set, checks the requesting pawn and prediction, and never resets
+timers or charges Anima. Existing flight is left alone. Expiry remains owned by
+the single personal-time clock; rendering never repairs or advances state.
+
+Regression: cross MAP01/MAP02 with active Fool, return within the MAP02/MAP06
+hub, load the original defective 5.0.2 save, and verify recovery with the same
+remaining timer and no duplicate instance/payment. Keep the original package
+and original save for rollback. Evidence: assets/validation_503/RESULTS.json
+and the adjacent before/after, reload and original-pair logs. This establishes
+the tested native power lifecycle, not arbitrary historical map compatibility.
+
 ## CA-KP-039 - Separate menu-transition failures from corrupt saves
 
 Status/evidence: ENGINE-OBSERVED; cause remains HYPOTHESIS, not a production fix.

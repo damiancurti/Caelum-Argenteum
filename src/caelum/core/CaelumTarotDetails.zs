@@ -2,20 +2,7 @@
 class CaelumTarotDetails : Object
 {
     static int MinorTenths(int card, int attribute)
-    {
-        if (!CaelumTrucazoRules.Minor(card) || attribute < 0 || attribute >= CaelumConstants.PRIMARY_ATTRIBUTE_COUNT) return 0;
-        int family = attribute / 3;
-        int suit = family == CaelumConstants.LAYER_PHYSICAL ? CaelumConstants.TAROT_SUIT_WANDS
-            : family == CaelumConstants.LAYER_TECHNICAL ? CaelumConstants.TAROT_SUIT_COINS
-            : family == CaelumConstants.LAYER_SOCIAL ? CaelumConstants.TAROT_SUIT_CUPS : CaelumConstants.TAROT_SUIT_SWORDS;
-        if (CaelumTrucazoRules.Suit(card) != suit) return 0;
-        int rank = CaelumTrucazoRules.Rank(card), position = attribute % 3;
-        if (rank == 0) return 10;
-        if (rank == 13) return 5;
-        if (rank >= 10 && rank - 10 == position) return 6;
-        if (rank <= 9 && (rank - 1) / 3 == position) return 3;
-        return 0;
-    }
+    { return CaelumTarotService.MinorTenths(card, attribute); }
     static String L(String key) { return StringTable.Localize(key, false); }
     static String AttributeKey(int attribute)
     {

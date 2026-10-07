@@ -24,11 +24,11 @@ class CaelumTrucazoRules : Object
         DAMAGE_EVENT, FORFEIT_EVENT };
 
     static int Suit(int card)
-    { return (card-CaelumConstants.TAROT_MAJOR_COUNT)/CaelumConstants.TAROT_MINOR_RANK_COUNT; }
+    { return CaelumTarotService.Suit(card); }
     static int Rank(int card)
-    { return (card-CaelumConstants.TAROT_MAJOR_COUNT)%CaelumConstants.TAROT_MINOR_RANK_COUNT; }
+    { return CaelumTarotService.Rank(card); }
     static bool Minor(int card)
-    { return card>=CaelumConstants.TAROT_MAJOR_COUNT && card<CaelumConstants.TAROT_CARD_COUNT; }
+    { return CaelumTarotService.Minor(card); }
     static bool Playable(int card)
     { return Minor(card) && Rank(card)!=7 && Rank(card)!=8 && Rank(card)!=9 && Rank(card)!=12; }
 

@@ -72,8 +72,8 @@ class CaelumTrucoMatch : Inventory
             || user.player.ConversationNPC!=opponent || !opponent.StoryAnchored
             || level.MapName!="MAP01" || multiplayer || CaelumRestState.IsActive(user)
             || CaelumTimeSkipState.IsOpen(user))return false;
-        if(!CaelumTarotDeckRules.Owned(user))
-        { CaelumTarotPowers.Feedback(user,"CA_TC_NEED_DECK");return false; }
+        if(!CaelumTarotService.HasPhysicalDeck(user))
+        { CaelumTarotService.Feedback(user,"CA_TC_NEED_DECK");return false; }
         let match=Get(user,true);
         if(!match.Active())
         {
@@ -342,8 +342,8 @@ class CaelumTrucoMatch : Inventory
             if(Active())Act(0,CaelumTrucoRules.FORFEIT);
             Visible=false;Serial++;return;
         }
-        if(operation==CaelumTrucoRules.BEGIN && !CaelumTarotDeckRules.Owned(CaelumPlayer(Owner)))
-        {CaelumTarotPowers.Feedback(CaelumPlayer(Owner),"CA_TC_NEED_DECK");Serial++;return;}
+        if(operation==CaelumTrucoRules.BEGIN && !CaelumTarotService.HasPhysicalDeck(CaelumPlayer(Owner)))
+        {CaelumTarotService.Feedback(CaelumPlayer(Owner),"CA_TC_NEED_DECK");Serial++;return;}
         if(operation==CaelumTrucoRules.NPC_STEP)NPCAction();else Act(0,operation,index);
         // Aun el rechazo confirma recepción: el menú puede corregir su orden
         // sin quedar esperando una revisión que nunca llegará. No usa azar.

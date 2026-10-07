@@ -60,18 +60,7 @@ class CaelumPlayerPresentation : Object play
             user.JournalQuestObjectiveTarget[objective] =
                 persistentState.QuestObjectiveTarget[objective];
         }
-        CaelumTarotPowers.EnsureRevision(persistentState);
-        for (int card = 0; card < CaelumConstants.TAROT_CARD_COUNT; card++)
-            user.TarotSelectedSnapshot[card] = persistentState.TarotSelected[card];
-        user.TarotOwnedCountSnapshot = persistentState.CountTarotCards();
-        user.TarotAttributeBonusSnapshot = persistentState.GetTarotAttributeBonusPercent();
-        for (int attribute = 0; attribute < CaelumConstants.PRIMARY_ATTRIBUTE_COUNT; attribute++)
-            user.TarotMinorBaseSnapshot[attribute] = persistentState.GetTarotMinorBaseBonus(attribute);
-        for (int card = 0; card < CaelumConstants.TAROT_CARD_COUNT; card++)
-            user.TarotOwnedSnapshot[card] = persistentState.HasTarotCard(card);
-        user.TarotFoolOwnedSnapshot = persistentState.HasTarotCard(CaelumConstants.TAROT_THE_FOOL);
-        user.TarotCupsAceOwnedSnapshot = persistentState.HasTarotCard(CaelumSewerMaze.CUPS_ACE);
-        user.MainM00FoolRevealedSnapshot = persistentState.MainM00FoolRevealed;
+        CaelumTarotService.RefreshJournalSnapshot(user, persistentState);
         user.JournalPalomoPlacement = persistentState.ResolvePalomoPlacement();
         user.JournalMainM00ArgentoStarted = persistentState.HasMainM00Flag(
             CaelumConstants.MAIN_M00_FLAG_ARGENTO_STARTED);

@@ -1,0 +1,263 @@
+[
+  {
+    "path": "src/caelum/core/CaelumTarotPowers.zs",
+    "cls": "CaelumTarotPowers",
+    "name": "EnsureRevision",
+    "target": "EnsureRevision",
+    "receiver": null,
+    "pure": false,
+    "replacements": []
+  },
+  {
+    "path": "src/caelum/core/CaelumTarotPowers.zs",
+    "cls": "CaelumTarotPowers",
+    "name": "ValidUser",
+    "target": "ValidUser",
+    "receiver": null,
+    "pure": false,
+    "replacements": []
+  },
+  {
+    "path": "src/caelum/core/CaelumTarotPowers.zs",
+    "cls": "CaelumTarotPowers",
+    "name": "Feedback",
+    "target": "Feedback",
+    "receiver": null,
+    "pure": false,
+    "replacements": []
+  },
+  {
+    "path": "src/caelum/core/CaelumTarotPowers.zs",
+    "cls": "CaelumTarotPowers",
+    "name": "Implemented",
+    "target": "Implemented",
+    "receiver": null,
+    "pure": true,
+    "replacements": []
+  },
+  {
+    "path": "src/caelum/core/CaelumTarotPowers.zs",
+    "cls": "CaelumTarotPowers",
+    "name": "SelectedCount",
+    "target": "SelectedCount",
+    "receiver": null,
+    "pure": true,
+    "replacements": []
+  },
+  {
+    "path": "src/caelum/core/CaelumTarotPowers.zs",
+    "cls": "CaelumTarotPowers",
+    "name": "Select",
+    "target": "Select",
+    "receiver": null,
+    "pure": false,
+    "replacements": []
+  },
+  {
+    "path": "src/caelum/core/CaelumTarotPowers.zs",
+    "cls": "CaelumTarotPowers",
+    "name": "Activate",
+    "target": "Activate",
+    "receiver": null,
+    "pure": false,
+    "replacements": []
+  },
+  {
+    "path": "src/caelum/core/CaelumTarotPowers.zs",
+    "cls": "CaelumTarotPowers",
+    "name": "Advance",
+    "target": "Advance",
+    "receiver": null,
+    "pure": false,
+    "replacements": []
+  },
+  {
+    "path": "src/caelum/equipment/CaelumPersistentCharacterState.zs",
+    "cls": "CaelumPersistentCharacterState",
+    "name": "HasTarotCard",
+    "target": "HasTarotCard",
+    "receiver": "record",
+    "pure": true,
+    "replacements": [
+      [
+        "CaelumTarotDetails.MinorTenths(",
+        "MinorTenths("
+      ]
+    ]
+  },
+  {
+    "path": "src/caelum/equipment/CaelumPersistentCharacterState.zs",
+    "cls": "CaelumPersistentCharacterState",
+    "name": "CountTarotCards",
+    "target": "CountTarotCards",
+    "receiver": "record",
+    "pure": true,
+    "replacements": [
+      [
+        "CaelumTarotDetails.MinorTenths(",
+        "MinorTenths("
+      ]
+    ]
+  },
+  {
+    "path": "src/caelum/equipment/CaelumPersistentCharacterState.zs",
+    "cls": "CaelumPersistentCharacterState",
+    "name": "GetTarotAttributeBonusPercent",
+    "target": "GetTarotAttributeBonusPercent",
+    "receiver": "record",
+    "pure": true,
+    "replacements": [
+      [
+        "CaelumTarotDetails.MinorTenths(",
+        "MinorTenths("
+      ]
+    ]
+  },
+  {
+    "path": "src/caelum/equipment/CaelumPersistentCharacterState.zs",
+    "cls": "CaelumPersistentCharacterState",
+    "name": "GetTarotMinorBaseBonus",
+    "target": "GetTarotMinorBaseBonus",
+    "receiver": "record",
+    "pure": true,
+    "replacements": [
+      [
+        "CaelumTarotDetails.MinorTenths(",
+        "MinorTenths("
+      ]
+    ]
+  },
+  {
+    "path": "src/caelum/equipment/CaelumPersistentCharacterState.zs",
+    "cls": "CaelumPersistentCharacterState",
+    "name": "CanCaptureMainM00Fool",
+    "target": "CanCaptureMainM00Fool",
+    "receiver": "record",
+    "pure": false,
+    "replacements": [
+      [
+        "CaelumTarotDetails.MinorTenths(",
+        "MinorTenths("
+      ]
+    ]
+  },
+  {
+    "path": "src/caelum/equipment/CaelumPersistentCharacterState.zs",
+    "cls": "CaelumPersistentCharacterState",
+    "name": "RecordMainM00FoolCapture",
+    "target": "RecordMainM00FoolCapture",
+    "receiver": "record",
+    "pure": false,
+    "replacements": [
+      [
+        "CaelumTarotDetails.MinorTenths(",
+        "MinorTenths("
+      ]
+    ]
+  },
+  {
+    "path": "src/caelum/trucazo/CaelumTrucazoRules.zs",
+    "cls": "CaelumTrucazoRules",
+    "name": "Suit",
+    "target": "Suit",
+    "receiver": null,
+    "pure": true,
+    "replacements": []
+  },
+  {
+    "path": "src/caelum/trucazo/CaelumTrucazoRules.zs",
+    "cls": "CaelumTrucazoRules",
+    "name": "Rank",
+    "target": "Rank",
+    "receiver": null,
+    "pure": true,
+    "replacements": []
+  },
+  {
+    "path": "src/caelum/trucazo/CaelumTrucazoRules.zs",
+    "cls": "CaelumTrucazoRules",
+    "name": "Minor",
+    "target": "Minor",
+    "receiver": null,
+    "pure": true,
+    "replacements": []
+  },
+  {
+    "path": "src/caelum/core/CaelumTarotDetails.zs",
+    "cls": "CaelumTarotDetails",
+    "name": "MinorTenths",
+    "target": "MinorTenths",
+    "receiver": null,
+    "pure": true,
+    "replacements": [
+      [
+        "CaelumTrucazoRules.",
+        ""
+      ]
+    ]
+  },
+  {
+    "path": "src/caelum/quests/CaelumArcanaProgress.zs",
+    "cls": "CaelumArcanaProgress",
+    "name": "CanCapture",
+    "target": "CanCaptureArcana",
+    "receiver": null,
+    "pure": false,
+    "replacements": []
+  },
+  {
+    "path": "src/caelum/quests/CaelumMainM00FoolCapture.zs",
+    "cls": "CaelumMainM00FoolCapture",
+    "name": "CanApproach",
+    "target": "CanApproach",
+    "receiver": null,
+    "pure": false,
+    "replacements": [
+      [
+        "HasOwnedBox(user)",
+        "CaelumMainM00FoolCapture.HasOwnedBox(user)"
+      ]
+    ]
+  },
+  {
+    "path": "src/caelum/quests/CaelumMainM00FoolCapture.zs",
+    "cls": "CaelumMainM00FoolCapture",
+    "name": "CommitCapture",
+    "target": "CommitCapture",
+    "receiver": null,
+    "pure": false,
+    "replacements": [
+      [
+        "HasOwnedBox(user)",
+        "CaelumMainM00FoolCapture.HasOwnedBox(user)"
+      ]
+    ]
+  },
+  {
+    "path": "src/caelum/quests/CaelumMainM00FoolCapture.zs",
+    "cls": "CaelumM00FoolEssence",
+    "name": "IsAvailable",
+    "target": "IsAvailable",
+    "receiver": "essence",
+    "pure": false,
+    "replacements": []
+  },
+  {
+    "path": "src/caelum/quests/CaelumMainM00FoolCapture.zs",
+    "cls": "CaelumM00FoolEssence",
+    "name": "IsRevealedFor",
+    "target": "IsRevealedFor",
+    "receiver": "essence",
+    "pure": false,
+    "replacements": []
+  },
+  {
+    "path": "src/caelum/quests/CaelumMainM00FoolCapture.zs",
+    "cls": "CaelumM00FoolEssence",
+    "name": "RecordCapture",
+    "target": "RecordCapture",
+    "receiver": "essence",
+    "pure": false,
+    "replacements": []
+  }
+]

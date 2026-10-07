@@ -53,15 +53,7 @@ class CaelumArcanaProgress : Object play
     }
 
     static bool CanCapture(CaelumPersistentCharacterState record, int card)
-    {
-        if (record == null || record.HasTarotCard(card)) return false;
-        if (card == CaelumConstants.TAROT_CUPS_ACE)
-            return level.MapName == "MAP02" && record.SewerZupayDefeated;
-        if (card == CaelumConstants.TAROT_WANDS_KNIGHT)
-            return level.MapName == "MAP06" && record.ArcanaAvailable[card]
-                && CaelumDemoNarrative.PortCardReady(record);
-        return false;
-    }
+    { return CaelumTarotService.CanCaptureArcana(record, card); }
 
     static void UpdateEssence(CaelumM00FoolEssence essence)
     {

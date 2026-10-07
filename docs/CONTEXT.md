@@ -1,10 +1,11 @@
 # CONTEXT.md — Ultra-condensed summary of Caelum Argenteum
 
-Documentation version: **5.0.2** — 2026-10-06.
+Documentation version: **5.0.3** — 2026-10-06.
 
-**5.0.2/#118:** stateless inventory/equipment service; fields retained.
-Evidence: assets/validation_502. Author-accepted 2026-10-06. Tarot follows #119.
-#117 accepted/merged 2026-10-06; its MAP06 4.9–6.0% slowdown remains unattributed.
+**5.0.3/#119:** stateless Tarot service; saved fields/adapters retained.
+Evidence: assets/validation_503. Native evidence; author check pending.
+#118 accepted/merged 2026-10-06. #120 follows; #117/#118 MAP06 regressions
+retain unresolved attribution.
 
 **4.37.24/#82 accepted 2026-10-05:** closing export; Tab/M/B/R/F/T defaults.
 Evidence: validation_43724. #112/#106 merged (#114/#113); V5.0 follows.

@@ -292,6 +292,20 @@ every moved body/literal, explicit guard, unchanged body and package member.
 This proof supplements native transaction/save/travel checks; it does not prove
 arbitrary low-level commit calls are valid without their coordinator's checks.
 
+#119 retains the Tarot record and adapters and checks all 936 card/attribute
+contributions on both packages. Its native non-hub travel exposed a missing
+PowerFlight instance despite a positive saved effect timer; CA-KP-040 records
+the idempotent restoration and old-save regression test.
+For UI evidence, GZDoom's internal `screenshot` command can capture the world
+without the native menu layer even while `Menu.GetCurrentMenu()` reports the
+correct open menu. Inspect an actual target-window capture before claiming
+menu rendering or interaction. The #119 window evidence also exercises native
+card-selection/confirmation keys after old-save loading.
+When synthesizing an anchored NPC, set its canonical spawn argument before
+deferred PostBeginPlay; setting only the derived `StoryAnchored` flag is reset
+by initialization. Require the intended save file and post-load event in the
+log before treating an automated startup schedule as completed persistence QA.
+
 ### Evidence categories
 
 For #117, `assets/validation_501/verify_extraction.py` additionally retains quoted

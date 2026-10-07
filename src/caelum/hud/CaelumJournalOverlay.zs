@@ -1518,7 +1518,7 @@ class CaelumJournalOverlay : EventHandler
         DrawTextLine(SmallFont, Font.CR_GOLD, 210, 170,
             StringTable.Localize(preview >= 0 ? "CA_TAROT_DETAIL_PREVIEW"
                 : !captured ? "CA_TAROT_POWER_UNOWNED"
-                : !CaelumTarotPowers.Implemented(selected) ? "CA_TAROT_POWER_UNIMPLEMENTED"
+                : !CaelumTarotService.Implemented(selected) ? "CA_TAROT_POWER_UNIMPLEMENTED"
                 : localPlayer.TarotSelectedSnapshot[selected]
                     ? "CA_TAROT_POWER_EQUIPPED" : "CA_TAROT_POWER_SELECT_HINT", false));
         String details = "\c[Gold]" .. CaelumTarotDetails.L("CA_TAROT_DETAIL_PASSIVE_LABEL") .. "\c-: "
@@ -1528,15 +1528,15 @@ class CaelumJournalOverlay : EventHandler
             .. "\n\n\c[Gold]" .. CaelumTarotDetails.L("CA_TAROT_DETAIL_TRUCAZO_LABEL") .. "\c-: "
             .. CaelumTarotDetails.Trucazo(selected,captured);
         CaelumCraftingUI.Paragraph(self,details,210,189,358,7,"ca_journal_tarot_scroll");
-        bool active = record != null && record.TarotEffectTics > 0 && record.TarotActive[selected];
+        bool active = record != null && CaelumTarotService.EffectTics(record) > 0 && CaelumTarotService.IsActive(record, selected);
         DrawTextLine(SmallFont, active ? Font.CR_CYAN : Font.CR_GRAY, 210, 282,
             active ? String.Format(StringTable.Localize("CA_TAROT_POWER_ACTIVE_TIME", false),
-                (record.TarotEffectTics + TICRATE - 1) / TICRATE)
+                (CaelumTarotService.EffectTics(record) + TICRATE - 1) / TICRATE)
                 : StringTable.Localize("CA_TAROT_POWER_INACTIVE", false));
         DrawTextLine(SmallFont, Font.CR_GOLD, 210, 297,
             String.Format(StringTable.Localize("CA_TAROT_POWER_GROUP_STATUS", false),
                 selectedCount, CaelumConstants.TAROT_SELECTED_LIMIT,
-                record == null ? 0 : (record.TarotCooldownTics + TICRATE - 1) / TICRATE));
+                record == null ? 0 : (CaelumTarotService.CooldownTics(record) + TICRATE - 1) / TICRATE));
         DrawCenteredText(SmallFont,Font.CR_GRAY,320,318,
             CaelumTarotDetails.L(preview >= 0 ? "CA_TAROT_DETAIL_PREVIEW_HELP" : "CA_TAROT_DETAIL_HELP"));
         DrawCenteredText(SmallFont,Font.CR_GRAY,320,330,CaelumTarotDetails.L("CA_JOURNAL_EDGE_HELP"));
@@ -2781,7 +2781,7 @@ class CaelumJournalOverlay : EventHandler
         { CaelumCraftingBrowser.Get(requestingPlayer).Select(requestingPlayer,e.Args[0],e.Args[1]); return; }
         if (e.Name == "ca_crafting_browser_confirm")
         { CaelumCraftingBrowser.Get(requestingPlayer).Confirm(requestingPlayer,e.Args[0],e.Args[1],e.Args[2]); return; }
-        if (e.Name == "ca_tarot_select") { CaelumTarotPowers.Select(requestingPlayer, e.Args[0]); }
+        if (e.Name == "ca_tarot_select") { CaelumTarotService.Select(requestingPlayer, e.Args[0]); }
         else if (e.Name == "ca_event_action") { CaelumScheduleState.Act(requestingPlayer, e.Args[0]); }
         else if (e.Name == "ca_debug_events_report") { CaelumScheduleState.Report(requestingPlayer); }
         else if (e.Name == "ca_debug_events_trial") { CaelumScheduleTrial.Enable(requestingPlayer); }

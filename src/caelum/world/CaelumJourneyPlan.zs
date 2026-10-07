@@ -88,7 +88,7 @@ class CaelumJourneyRules : Object play
             || s.LightningStunRemaining > 0)) return "CA_JOURNEY_BUSY";
         // No extender, borrar ni simular arbitrariamente efectos externos.
         let record = user.GetPersistentCharacterState(false);
-        if (record != null && record.TarotEffectTics > 0) return "CA_JOURNEY_EFFECT";
+        if (record != null && CaelumTarotService.EffectTics(record) > 0) return "CA_JOURNEY_EFFECT";
         for (Inventory item = user.Inv; item != null; item = item.Inv)
             if (Powerup(item) != null) return "CA_JOURNEY_EFFECT";
         return "";
@@ -409,7 +409,7 @@ class CaelumJourneyPlan : Inventory
         user.EquippedWeaponCooldownRemaining = Max(0.0, user.EquippedWeaponCooldownRemaining - seconds);
         user.ClassSleepCooldownRemaining = Max(0.0, user.ClassSleepCooldownRemaining - seconds);
         user.CombatChannelCooldownRemaining = Max(0.0, user.CombatChannelCooldownRemaining - seconds);
-        CaelumTarotPowers.Advance(user, model.ElapsedTics);
+        CaelumTarotService.Advance(user, model.ElapsedTics);
         user.HUDAbilitySuccessRemaining = Max(0.0, user.HUDAbilitySuccessRemaining - seconds);
         user.PainImmobilizationRemaining = Max(0.0, user.PainImmobilizationRemaining - seconds);
         user.UpdateSurvivalStates(); user.UpdateHealthStateEffects(); user.UpdateLucidityState();
