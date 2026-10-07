@@ -1,7 +1,7 @@
 {
   "issue": 130,
   "release": "5.1.0",
-  "status": "implemented and agent-verified; author acceptance pending",
+  "status": "implemented, agent-verified and author-accepted; merge and closure authorized",
   "baseline_commit": "45f16371d49c38894e6d256d32d8101d4b06cd4c",
   "engine": "GZDoom 4.14.2",
   "settings": "Windows/Vulkan, 1280x720, cap 60, RNG 116, 5% volume, background unpaused",
@@ -325,11 +325,7 @@
     "Irregular shelters, combined knockback/support motion, exceptional locomotion speeds and species moisture capacities remain documented approximations.",
     "Full network multiplayer and every late-battle frame regime are not established by these tests."
   ],
-  "pending_author_checks": [
-    "CA130-01",
-    "CA130-02",
-    "CA130-03"
-  ],
+  "pending_author_checks": [],
   "power_requests": [
     {
       "started_utc": "2026-10-07T13:21:14.7216738Z",
@@ -353,5 +349,18 @@
       "released_utc": "2026-10-07T16:30:20.9829115Z",
       "active_plan_after": "GUID de plan de energía: 381b4222-f694-41f0-9685-ff5bb260df2e  (Equilibrado)"
     }
-  ]
+  ],
+  "author_acceptance": {
+    "date": "2026-10-07",
+    "issue": 130,
+    "originating_release": "5.1.0",
+    "checks": [
+      "CA130-01",
+      "CA130-02",
+      "CA130-03"
+    ],
+    "result": "passed",
+    "authorization": "Author explicitly confirmed all pending tests passed and requested issue closure and PR merge.",
+    "qualifications": "No reported exceptions; documented calibration/performance limits and multiplayer scope remain unchanged."
+  }
 }

@@ -17,8 +17,9 @@ departure; carts and ships provide enclosed shelter. See the
 [thermal contract](docs/SYSTEMS.md#thermal-exposure-and-energy-transfer-130)
 and [native evidence](assets/validation_510/RESULTS.json).
 Old character records migrate without resetting inventory, quests or resources;
-the contract documents a tested 5.0.6 rollback bridge. Author playtest acceptance
-is pending in [pending_test.txt](pending_test.txt). Normal army AI and populations
+the contract documents a tested 5.0.6 rollback bridge. The author confirmed
+CA130-01/02/03 passed on 2026-10-07 and authorized PR #134 merge and issue #130
+closure; no author checks remain for this patch. Normal army AI and populations
 remain active; this feature does not claim a performance improvement.
 
 Issue [#128](https://github.com/damiancurti/Caelum-Argenteum/issues/128) brings

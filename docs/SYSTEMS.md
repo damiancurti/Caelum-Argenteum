@@ -192,7 +192,8 @@ harmful threshold, wetness, humidity, acclimatization and current penalties in
 English/Spanish. HUD shows active harmful states. This is not core temperature.
 Native evidence, exact package/config hashes, migration comparisons, drying fit
 and bilingual captures are in [5.1.0 results](../assets/validation_510/RESULTS.json).
-Author acceptance remains separate in `pending_test.txt`.
+The author accepted CA130-01/02/03 on 2026-10-07; HISTORY records the results
+separately from native evidence. No author checks remain for this patch.
 
 Physical sources: [EnergyPlus thermal comfort](https://energyplus.readthedocs.io/en/latest/guides/engineering-reference/19.1-occupant-thermal-comfort.html),
 [NIOSH heat guidance](https://www.cdc.gov/niosh/docs/2016-106/),

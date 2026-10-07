@@ -22,7 +22,8 @@ Reproduce with `assets/validation_510/prepare_rollback.py` and the save harness;
 the baseline/current/hub/rollback/re-upgrade chain and all prior record fields
 are checked in [5.1.0 evidence](../assets/validation_510/RESULTS.json).
 The bridge is specific to this schema/baseline, not a universal downgrade tool.
-Author acceptance: pending CA130-03. No save or development IWAD is distributed.
+Author acceptance: CA130-03 passed on 2026-10-07, without reported exceptions.
+No save or development IWAD is distributed.
 
 ## CA-KP-049 - A filtered global iterator per NPC can still become quadratic
 
@@ -46,7 +47,8 @@ baseline; later motion/load corrections slightly change final heat aggregates.
 Regression check: deterministic full-roster performance fixture plus the seeded
 extreme-cold stress variant. Measure elapsed simulation time, roster, supported
 body count and aggregate state, not only a faster isolated helper. These short
-arrival samples do not establish late-battle FPS. Author acceptance pending;
+arrival samples do not establish late-battle FPS. CA130-03 was author-accepted
+on 2026-10-07 without reported exceptions;
 the performance limitation is reported rather than described as a speedup.
 
 ## CA-KP-048 - Preserve native visibility RNG when pruning cannon candidates

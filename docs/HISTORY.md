@@ -30,10 +30,17 @@ reproducible bridge preserves inert thermal data for reversible return.
 Exact builds, logs, settings, corrections and limits are in
 [5.1.0 results](../assets/validation_510/RESULTS.json).
 
-**Not author acceptance:** CA130-01, CA130-02 and CA130-03 originate here and
-remain outstanding. No earlier generic confirmation applies to this new patch.
-Thermal calibration and exceptional geometry/action cases remain explicitly
-qualified in SYSTEMS. No new art/audio assets, recipes or encounters are added.
+**Author acceptance, 2026-10-07:** the author explicitly confirmed all pending
+tests passed and requested PR #134 merge and issue #130 closure. CA130-01
+(thermal state/protection), CA130-02 (combat/journey integration) and CA130-03
+(persistence/populated gameplay), all originating in 5.1.0/#130, passed with no
+reported exceptions and were removed from the pending queue. This confirmation
+is distinct from agent evidence. Thermal calibration, exceptional geometry/action
+cases and measured performance limits remain qualified in SYSTEMS/PROJECT;
+acceptance does not claim sustained 35-tic/30-FPS performance or multiplayer.
+The acceptance update also preserves main's numbered V5 sequence and the
+separate planned thermal HUD issue #131. No runtime change is introduced.
+No new art/audio assets, recipes or encounters are added.
 Keep-awake used thread-scoped Windows execution requests, not power-plan edits.
 Both requests were released at 16:30 UTC on 2026-10-07; the Balanced plan's GUID
 matches before and after. Release records are retained in validation_510.

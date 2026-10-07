@@ -2,8 +2,8 @@
 
 Documentation version: **5.1.0** — 2026-10-07.
 
-**5.1.0/#130 implemented; author acceptance pending:** thermal survival,
-wetness, effort, travel and saves. Contract: SYSTEMS; evidence: validation_510; checks: pending_test.txt.
+**5.1.0/#130 accepted 2026-10-07:** CA130-01/02/03 passed; merge/closure authorized.
+Thermal survival, wetness, effort, travel and saves. Contract: SYSTEMS; evidence: validation_510.
 #128 accepted; full army retained. Fluency/multiplayer pending.
 
 **4.37.24/#82 accepted 2026-10-05:** closing export; Tab/M/B/R/F/T defaults.

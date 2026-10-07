@@ -4,10 +4,10 @@ Documentation version: **5.1.0** — 2026-10-07.
 
 ## Issue #130 — Thermal survival (5.1.0)
 
-Implemented for review in [PR #134](https://github.com/damiancurti/Caelum-Argenteum/pull/134)
-on `issue-130-thermal-survival`; native verification is
-recorded in [5.1.0 evidence](../assets/validation_510/RESULTS.json). Author
-acceptance is pending, not implied by automated checks or the delivery PR.
+Implemented in [PR #134](https://github.com/damiancurti/Caelum-Argenteum/pull/134).
+The author confirmed CA130-01/02/03 passed on 2026-10-07 and authorized merge
+and issue closure. Native verification remains separately recorded in
+[5.1.0 evidence](../assets/validation_510/RESULTS.json).
 
 - Authoritative per-character exposure, moisture, acclimatization and damage
   fractions; effective Toughness thresholds and heat/cold consequences.
@@ -19,11 +19,12 @@ acceptance is pending, not implied by automated checks or the delivery PR.
   reversible 5.0.6 bridge and bilingual status.
 - Full-army cost measured with normal AI; no population or offscreen exemption.
 
-Pending author checks are only CA130-01/02/03 in the root `pending_test.txt`.
+No author checks remain for #130; HISTORY records all three accepted IDs.
 Follow-up refinements: actual hot/cold consumable metadata, ratings for authored
 decorative fires, species-specific moisture, complex support/room geometry,
 late-battle frame cost and broader multiplayer remain separate scoped work.
-Do not invent those data or mark #130 author-accepted before confirmation.
+Do not invent missing follow-up data. The separately planned #131 owns the
+thermal HUD bar; this acceptance does not implement that next issue.
 
 ## Issue #128 — Automatic normal high-density AI (5.0.6)
 

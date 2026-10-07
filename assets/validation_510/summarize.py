@@ -127,6 +127,12 @@ def main():
             'Full network multiplayer and every late-battle frame regime are not established by these tests.'
         ], pending_author_checks=['CA130-01','CA130-02','CA130-03'],
         power_requests=[read_json(WORK/name) for name in ['power-request.json','power-request-renewed.json']])
+    # Native evidence regeneration must preserve later explicit author acceptance.
+    previous = read_json(HERE/'RESULTS.json') if (HERE/'RESULTS.json').exists() else {}
+    if previous.get('author_acceptance'):
+        result['author_acceptance'] = previous['author_acceptance']
+        result['pending_author_checks'] = []
+        result['status'] = previous['status']
     (HERE/'RESULTS.json').write_text(json.dumps(result, indent=2, ensure_ascii=False)+'\n', encoding='utf-8')
     print(json.dumps(dict(runs=len(runs), prior_fields=len(old), save_checks='passed', static_errors=static['errors']), indent=2))
 
