@@ -1,4 +1,9 @@
 [enu default]
+CA_HUD_THERMAL_SAFE = "Normal";
+CA_HUD_THERMAL_UNAVAILABLE = "Exposure: --";
+CA_HUD_THERMAL_VALUE = "Exposure %s: %s";
+CA_HUD_THERMAL_BELOW = "Exposure < %s: %s";
+CA_HUD_THERMAL_ABOVE = "Exposure > %s: %s";
 CA_THERMAL_SAFE = "No harmful thermal exposure";
 CA_THERMAL_COLD = "Cold";
 CA_THERMAL_HYPO = "Hypothermia";
@@ -36,6 +41,11 @@ CA_INTRO_REVEAL = "Press a key to reveal the full text.";
 CA_INTRO_BEGIN = "Press a key to begin your adventure.";
 
 [es]
+CA_HUD_THERMAL_SAFE = "Normal";
+CA_HUD_THERMAL_UNAVAILABLE = "Exposición: --";
+CA_HUD_THERMAL_VALUE = "Exposición %s: %s";
+CA_HUD_THERMAL_BELOW = "Exposición < %s: %s";
+CA_HUD_THERMAL_ABOVE = "Exposición > %s: %s";
 CA_THERMAL_SAFE = "Sin exposición térmica dañina";
 CA_THERMAL_COLD = "Frío";
 CA_THERMAL_HYPO = "Hipotermia";
