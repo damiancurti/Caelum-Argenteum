@@ -1,0 +1,459 @@
+{
+  "issue": 131,
+  "release": "5.1.1",
+  "baseline_commit": "524baaf0da4e385c81c54823ff5938921538652b",
+  "status": "implemented and agent-verified; author acceptance pending CA131-01/02",
+  "engine": "GZDoom 4.14.2, Windows/Vulkan, RNG 116, cap 60, 5% audio, background unpaused",
+  "production_sha256": "dcaba0f3f845119b4280933ced54a22ae18a6f03f721f4676285d224f1038478",
+  "standard_build_sha256": "0c3fd637f3ca7486058bb5c1713ece6fded69566e816e8f578e6cd345ba14957",
+  "standard_build_members_identical": 6202,
+  "repeat_fixture_hashes_identical": true,
+  "deterministic_fixture_manifest": {
+    "baseline_commit": "524baaf0da4e385c81c54823ff5938921538652b",
+    "production": "dcaba0f3f845119b4280933ced54a22ae18a6f03f721f4676285d224f1038478",
+    "baseline": "1a49135b5e2aae03126fdd6498e840273681084958b83d2517fab76c652ea709",
+    "checks": "dc96e17f24c3c4fec6ce4cace58dc2a70e48d131aedbd73871f679bf5abe0bad",
+    "visual": "020bc4bbef082dd657a96abb2ddddb1450db998c5948b9a787b2937f087df48b",
+    "viewed": "cc1fa86962e687ae2123870c5b821a38f8841ac8f4fdebad2b1255ee2fc03959",
+    "persistence": "0b80a272d64b1128b9a5d2d2d356ebea2abccf726975ff10e4680ef624568975",
+    "performance": "5b0057686dfcfbb7e289571a884ffbf1cd15d29bb325f3b956bfcefa5e57a4d7"
+  },
+  "post_functional_changes": "Save/viewed/English/aspect evidence predates only the behavior-preserving extraction of existing threshold literals into shared data and helpers. Final-authority-build reruns all 47 assertions on the standard final PK3; final-authority-ui exercises all states and Journal with those helpers.",
+  "unique_functional_assertions": 47,
+  "viewed_player_native_check": "native second player bot, cinematic fallback, no ownership mutation",
+  "runs": [
+    {
+      "label": "final-authority-build",
+      "package_sha256": "0C3FD637F3CA7486058BB5C1713ECE6FDED69566E816E8F578E6CD345BA14957",
+      "addon_sha256": "DC96E17F24C3C4FEC6CE4CACE58DC2A70E48D131AEDBD73871F679BF5ABE0BAD",
+      "log_sha256": "9c7e16dd1ceb99bd7195f935a824c7df609b8961829a55b2cf4d34daa4e30503",
+      "config_sha256": "dbbeb74f00435de6cc9b89ab2ab825a195f467d7dda970ac1bf724f619ff0220",
+      "checks": 47
+    },
+    {
+      "label": "final-checks",
+      "package_sha256": "4F37719DADD2AD656B2052DD5B9A2BE459F4B169E57F159B7B794CEB80F9FA53",
+      "addon_sha256": "DC96E17F24C3C4FEC6CE4CACE58DC2A70E48D131AEDBD73871F679BF5ABE0BAD",
+      "log_sha256": "d2c43e69f651281234c42e2a0c2d2d662f0e4a2803aa40bf1b35e908365b9598",
+      "config_sha256": "400a2f20517a901050615a3d299e31b7d51d354bb588137d5f6a00e5d801324a",
+      "checks": 47
+    },
+    {
+      "label": "viewed-b",
+      "package_sha256": "4F37719DADD2AD656B2052DD5B9A2BE459F4B169E57F159B7B794CEB80F9FA53",
+      "addon_sha256": "CC1FA86962E687AE2123870C5B821A38F8841AC8F4FDEBAD2B1255EE2FC03959",
+      "log_sha256": "8518e5757f411df813aeff08aa06ab5940e4e86ad4308ecd9a685ae0f2f70572",
+      "config_sha256": "c2891bc1da4ee815a677a0d3c4323163fc3efa11da29e9c5e911075ca78be2ba"
+    },
+    {
+      "label": "final-authority-ui",
+      "package_sha256": "DCABA0F3F845119B4280933CED54A22AE18A6F03F721F4676285D224F1038478",
+      "addon_sha256": "020BC4BBEF082DD657A96ABB2DDDDB1450DB998C5948B9A787B2937F087DF48B",
+      "log_sha256": "32a11d62fcbbde5e486fceb0490fce20ef6b6e65a9d8cf2e5fa8c41ab3cd3b39",
+      "config_sha256": "e46917124abdcf662e73613f8d97c36fc6dcdb4d7432a46063b556a61f2c3191"
+    },
+    {
+      "label": "icon-visual-en",
+      "package_sha256": "67C26576C46AB62517F93853081AE9F054485BE4B76F1EA06DAC09E68EE4F691",
+      "addon_sha256": "020BC4BBEF082DD657A96ABB2DDDDB1450DB998C5948B9A787B2937F087DF48B",
+      "log_sha256": "4a223a88abdd66ba4bc47225bd002290b33ad9f1cec2efc3eb435c431b54eef9",
+      "config_sha256": "d0f598eac47355039ed576c8a91aac8ac39a3c6039f8dfa135fe5e3e11ebed0b"
+    },
+    {
+      "label": "icon-visual-43",
+      "package_sha256": "67C26576C46AB62517F93853081AE9F054485BE4B76F1EA06DAC09E68EE4F691",
+      "addon_sha256": "020BC4BBEF082DD657A96ABB2DDDDB1450DB998C5948B9A787B2937F087DF48B",
+      "log_sha256": "f90efc9a8cc256ff0985fcdd4401d626cb8f7ba79ea627bfcacaff66079ff797",
+      "config_sha256": "109b0f512f6fcd2871d7dcdb7ee8128d230825bef269d80675726707027d1f90"
+    },
+    {
+      "label": "icon-visual-wide",
+      "package_sha256": "67C26576C46AB62517F93853081AE9F054485BE4B76F1EA06DAC09E68EE4F691",
+      "addon_sha256": "020BC4BBEF082DD657A96ABB2DDDDB1450DB998C5948B9A787B2937F087DF48B",
+      "log_sha256": "f5080f966786e92c7ec367a3b42936cd3ef1a866803cf78f0d5f04d815097aff",
+      "config_sha256": "350abf63b58b1b92afd00f4a56f995f8163f78f2975199c22304aac578488b34"
+    },
+    {
+      "label": "verified-save-baseline",
+      "package_sha256": "1A49135B5E2AAE03126FDD6498E840273681084958B83D2517FAB76C652EA709",
+      "addon_sha256": "0B80A272D64B1128B9A5D2D2D356EBEA2ABCCF726975FF10E4680EF624568975",
+      "log_sha256": "3fbabd675507d738aa033c42f3f55ba2d005833b04f51a30113bab4ba032c8e6",
+      "config_sha256": "f915fec5d0bd51129568eb669700d8da18a70b72a4b3368c046c6b5ca3cead23"
+    },
+    {
+      "label": "verified-save-upgrade",
+      "package_sha256": "67C26576C46AB62517F93853081AE9F054485BE4B76F1EA06DAC09E68EE4F691",
+      "addon_sha256": "0B80A272D64B1128B9A5D2D2D356EBEA2ABCCF726975FF10E4680EF624568975",
+      "log_sha256": "f9262d36ce1f13ee00a2526e4122f290375f7a7ffc7e129af6935162f31e7001",
+      "config_sha256": "fd7f26e8f1ccf76a9cfdb0d2faf03984ce9e7fb2a4fb0a0778d422608ee69965"
+    },
+    {
+      "label": "verified-save-reload",
+      "package_sha256": "67C26576C46AB62517F93853081AE9F054485BE4B76F1EA06DAC09E68EE4F691",
+      "addon_sha256": "0B80A272D64B1128B9A5D2D2D356EBEA2ABCCF726975FF10E4680EF624568975",
+      "log_sha256": "2b5569eb2aa4e15a1c565174817b115324c878c2fa861bfaeedf8e83042d30c6",
+      "config_sha256": "f95481275ce7a10aaa293b36344fdccfc277fcc6e49d6d045bc86d0e97c7cad4"
+    },
+    {
+      "label": "verified-save-hub",
+      "package_sha256": "67C26576C46AB62517F93853081AE9F054485BE4B76F1EA06DAC09E68EE4F691",
+      "addon_sha256": "0B80A272D64B1128B9A5D2D2D356EBEA2ABCCF726975FF10E4680EF624568975",
+      "log_sha256": "bf398b56e4d927ceea017d229bb1e2d42469d60982aa5dd95a91553dc1d41db4",
+      "config_sha256": "e7b07b06e20f184040c743a6d1546632b2e2f3c5d8f5b4973932382aeda3ad3a"
+    },
+    {
+      "label": "verified-save-rollback",
+      "package_sha256": "1A49135B5E2AAE03126FDD6498E840273681084958B83D2517FAB76C652EA709",
+      "addon_sha256": "0B80A272D64B1128B9A5D2D2D356EBEA2ABCCF726975FF10E4680EF624568975",
+      "log_sha256": "a36c7aa3cbb7d8a90d6e12b0fb1bc5a5b4256ad0544b3055daec233805030099",
+      "config_sha256": "64a0cd29e9009bfaab557d539d355a5329341ca47e8bf6f22a0e2f8ba29f821f"
+    },
+    {
+      "label": "verified-save-reupgrade",
+      "package_sha256": "67C26576C46AB62517F93853081AE9F054485BE4B76F1EA06DAC09E68EE4F691",
+      "addon_sha256": "0B80A272D64B1128B9A5D2D2D356EBEA2ABCCF726975FF10E4680EF624568975",
+      "log_sha256": "9389adfafb620878d1df24c0d94de63ed8e349e7226f15dd03539e93014ee19f",
+      "config_sha256": "99e969e200968641bac88820b77c0fd28a8aecc63b1ec1b5177d9e359c83e858"
+    },
+    {
+      "label": "performance-baseline",
+      "package_sha256": "1A49135B5E2AAE03126FDD6498E840273681084958B83D2517FAB76C652EA709",
+      "addon_sha256": "5B0057686DFCFBB7E289571A884FFBF1CD15D29BB325F3B956BFCEFA5E57A4D7",
+      "log_sha256": "7c18c9d5d97d53f4fda5385684d037ba5c1d76e756c9afd2cc67581f11859f27",
+      "config_sha256": "6eba6862e031ccb224b353881483ccdfe49fe83820297228db24f15850090a72"
+    },
+    {
+      "label": "performance-current",
+      "package_sha256": "4F37719DADD2AD656B2052DD5B9A2BE459F4B169E57F159B7B794CEB80F9FA53",
+      "addon_sha256": "5B0057686DFCFBB7E289571A884FFBF1CD15D29BB325F3B956BFCEFA5E57A4D7",
+      "log_sha256": "a1717678d5a623615bb71c86df6996adb4b16fd424ed7e54d0118c078abbf5e4",
+      "config_sha256": "e36499cec1521b95b9e3281114614582204abaa02be113023a127db2f127da7d"
+    },
+    {
+      "label": "final-visual-43",
+      "package_sha256": "48F209458914F20BDCD401387F9C4589D85A7BD8A4CA2D68E6718CEDA562021B",
+      "addon_sha256": "020BC4BBEF082DD657A96ABB2DDDDB1450DB998C5948B9A787B2937F087DF48B",
+      "log_sha256": "12a7ab8fe9ee597a6f69fbd4779f55568610a7a7379e8c46ccff323097424e5c",
+      "config_sha256": "af09ad16f35527b4f38910727e4a2fc1e96fcf7bd847a1f48ad5517ad41c5487"
+    }
+  ],
+  "saves": [
+    {
+      "phase": "baseline",
+      "save_sha256": "34272ef3b44a59308d6eb1ccfbaa29ce7ce839b580baa50a565c70190f20cab1",
+      "preserved_record_fields": 220,
+      "equipment_fields_identical": 18,
+      "revision": 1,
+      "exposure": 6.30862971559457,
+      "acclimation": 4.499821428571436,
+      "damage_fraction": 0.3125,
+      "derived_multiplier": null
+    },
+    {
+      "phase": "upgraded",
+      "save_sha256": "25df5836d3a3ff04b9e45251956397402a796267a33efef45c42be2bc16e14a0",
+      "preserved_record_fields": 220,
+      "equipment_fields_identical": 18,
+      "revision": 2,
+      "exposure": 5.386676816057324,
+      "acclimation": 4.4995781471004355,
+      "damage_fraction": 0.3125,
+      "derived_multiplier": 1.0217821782178218
+    },
+    {
+      "phase": "reloaded",
+      "save_sha256": "e1bd14a7fff6d4abbeafd767ffa3660507a20c12600e2b7bcfe8e95866ec2c1f",
+      "preserved_record_fields": 220,
+      "equipment_fields_identical": 18,
+      "revision": 2,
+      "exposure": 4.985527570305347,
+      "acclimation": 4.499334865629435,
+      "damage_fraction": 0.3125,
+      "derived_multiplier": 1.0217821782178218
+    },
+    {
+      "phase": "hub",
+      "save_sha256": "dfeb9bf38ac8bebd00ddb15f751cf81d75656819a06f2a31869e04aac5c461d6",
+      "preserved_record_fields": 220,
+      "equipment_fields_identical": 18,
+      "revision": 2,
+      "exposure": 4.643781107400024,
+      "acclimation": 4.499098341977073,
+      "damage_fraction": 0.3125,
+      "derived_multiplier": 1.0217821782178218
+    },
+    {
+      "phase": "rollback",
+      "save_sha256": "9ea506a0460b9f1fe7b6bd2d5aa0e92052de4ae578e938266d44de447b60093b",
+      "preserved_record_fields": 220,
+      "equipment_fields_identical": 18,
+      "revision": 2,
+      "exposure": 4.299037191901565,
+      "acclimation": 4.498860246738988,
+      "damage_fraction": 0.3125,
+      "derived_multiplier": null
+    },
+    {
+      "phase": "reupgraded",
+      "save_sha256": "2c5ac9f7dad0d221f5379071ce0c1f9984cb082ab5fe58827a965ff94f04dbf3",
+      "preserved_record_fields": 220,
+      "equipment_fields_identical": 18,
+      "revision": 2,
+      "exposure": 3.9618876278185766,
+      "acclimation": 4.4986169652679875,
+      "damage_fraction": 0.3125,
+      "derived_multiplier": 1.0217821782178218
+    }
+  ],
+  "save_qualifications": "220 of 224 prior record fields remain identical throughout. Three reserve values naturally decrease with simulation and the ThermalState object index changes on hub travel. The entire equipment record remains identical. E/activity/acclimatization/moisture continue simulating; small seeded moisture is already dry by the first saved snapshot. Exact nonzero water preservation across idempotent revision migration is separately asserted in checks.zs. Rolling back restores old gameplay; re-upgrade reconstructs the derived multiplier even with revision 2 retained.",
+  "screenshots": [
+    {
+      "file": "ca131-enu-00.png",
+      "width": 1280,
+      "height": 720,
+      "sha256": "d17b8e09f05bf220aa882e9516db69db47623eda5df06d9b7ca6207ee8ca1ba3",
+      "status": "final icon/HUD"
+    },
+    {
+      "file": "ca131-enu-01.png",
+      "width": 1280,
+      "height": 720,
+      "sha256": "92d6b3fd5ea8202089dc824171aa44cb8d5c0eaf59ea4fef570b4c6aac7b01d6",
+      "status": "final icon/HUD"
+    },
+    {
+      "file": "ca131-enu-02.png",
+      "width": 1280,
+      "height": 720,
+      "sha256": "e98034dabaabe7f98d75fcae9bde2d25c8b26dc9270ee70becba38033c1fa8fc",
+      "status": "final icon/HUD"
+    },
+    {
+      "file": "ca131-enu-03.png",
+      "width": 1280,
+      "height": 720,
+      "sha256": "cbf3c86956eb400d5b2e040644932e311199dbedaaee966c43a9eb02585897ae",
+      "status": "final icon/HUD"
+    },
+    {
+      "file": "ca131-enu-04.png",
+      "width": 1280,
+      "height": 720,
+      "sha256": "6b4906e707b005b6a57b7823b5e17c552cdfa7c18187de8e404d636919922278",
+      "status": "final icon/HUD"
+    },
+    {
+      "file": "ca131-enu-05.png",
+      "width": 1280,
+      "height": 720,
+      "sha256": "7a7b8d557bd9a944489dc53a393a2bb41bc09710858cb878c7c7b727c9df03e7",
+      "status": "final icon/HUD"
+    },
+    {
+      "file": "ca131-enu-06.png",
+      "width": 1280,
+      "height": 720,
+      "sha256": "f6726e3aef767ba4bb21c4b250695217635bcb57253a15cd69ecbf93f75bd6e8",
+      "status": "final icon/HUD"
+    },
+    {
+      "file": "ca131-enu-07.png",
+      "width": 1280,
+      "height": 720,
+      "sha256": "d69713247d2d046fb54ffd975ec63918a532f36eb102775d15146fa1f9d45baf",
+      "status": "final icon/HUD"
+    },
+    {
+      "file": "ca131-enu-08.png",
+      "width": 1280,
+      "height": 720,
+      "sha256": "8c4462accf7927951081e6c6c9690bc2bdada42830e46b3a8163f9e53c43e03c",
+      "status": "final icon/HUD"
+    },
+    {
+      "file": "ca131-enu-09.png",
+      "width": 1280,
+      "height": 720,
+      "sha256": "6fd13a94f3ff183a681998f9f0e531e645becd65562a7a4d6b999f4f480aac27",
+      "status": "final icon/HUD"
+    },
+    {
+      "file": "ca131-enu-10.png",
+      "width": 1280,
+      "height": 720,
+      "sha256": "7580d2bb05f55e1408b7f9316961508ac991386e4e491884abf7f82014bebeee",
+      "status": "final icon/HUD"
+    },
+    {
+      "file": "ca131-enu-11.png",
+      "width": 1280,
+      "height": 720,
+      "sha256": "9c2a9f1fa6788db9fc5b2ee98b579b9512225a6abb3a7a29e86d34ace90927dc",
+      "status": "final icon/HUD"
+    },
+    {
+      "file": "ca131-enu-journal.png",
+      "width": 1280,
+      "height": 720,
+      "sha256": "e9a29e5a2fd44af1e88a1bd9868a49890c57d9dcafea84a0fba2b79d18766ae6",
+      "status": "final icon/HUD"
+    },
+    {
+      "file": "ca131-es-00.png",
+      "width": 1280,
+      "height": 720,
+      "sha256": "49a7d56043d4f012b4528c089974d6d648c778b4a5e7f8ad487f8aa54bca3b43",
+      "status": "final icon/HUD"
+    },
+    {
+      "file": "ca131-es-01.png",
+      "width": 1280,
+      "height": 720,
+      "sha256": "334ef21f0f7ffdc39c94d0d0cc2bf2e77035a7860b803b368675501548badb53",
+      "status": "final icon/HUD"
+    },
+    {
+      "file": "ca131-es-02.png",
+      "width": 1280,
+      "height": 720,
+      "sha256": "325c9cb7afbd6d49b409e2ca9c0c9ee5802f464fa430d3edb5bff3904aaac485",
+      "status": "final icon/HUD"
+    },
+    {
+      "file": "ca131-es-03.png",
+      "width": 1280,
+      "height": 720,
+      "sha256": "e65f84c28877a5a86ec9e8d1e53135927a58d26f302518b68c98dd326f3632e6",
+      "status": "final icon/HUD"
+    },
+    {
+      "file": "ca131-es-04.png",
+      "width": 1280,
+      "height": 720,
+      "sha256": "0b1e2cdb97f8b58b4421c66b7d846fefb22e2e90051b1707fdeb131b2534d3f0",
+      "status": "final icon/HUD"
+    },
+    {
+      "file": "ca131-es-05.png",
+      "width": 1280,
+      "height": 720,
+      "sha256": "cff55c99984264a6f4be93a423ce752b12c5c90e3dfbedddab973df45d31e4cd",
+      "status": "final icon/HUD"
+    },
+    {
+      "file": "ca131-es-06.png",
+      "width": 1280,
+      "height": 720,
+      "sha256": "d43b4e9d353274bd5239b21433c417b0102620772cca4e6c215e1612b5373823",
+      "status": "final icon/HUD"
+    },
+    {
+      "file": "ca131-es-07.png",
+      "width": 1280,
+      "height": 720,
+      "sha256": "acb0a685da41b9aa9e216386b49c113f570532edd7b8391e521afaaaef180562",
+      "status": "final icon/HUD"
+    },
+    {
+      "file": "ca131-es-08.png",
+      "width": 1280,
+      "height": 720,
+      "sha256": "ee121fca3c4b2f259fd96d6a6dffd05d6fd6f8130761741230dc081e650a3917",
+      "status": "final icon/HUD"
+    },
+    {
+      "file": "ca131-es-09.png",
+      "width": 1280,
+      "height": 720,
+      "sha256": "459163991113a9e38df6f4fbfb114e3dcad5f0c5b37822c151b1552c12779d8d",
+      "status": "final icon/HUD"
+    },
+    {
+      "file": "ca131-es-10.png",
+      "width": 1280,
+      "height": 720,
+      "sha256": "c604f1fe29b8c2b7d8629f957063056f9d29c564542dbef6d7338c79bcfd4ed0",
+      "status": "final icon/HUD"
+    },
+    {
+      "file": "ca131-es-11.png",
+      "width": 1280,
+      "height": 720,
+      "sha256": "fe1233fdf4efc7d59eec22f8384fc7952dc8a0490c32865ee171d888ccf775d5",
+      "status": "final icon/HUD"
+    },
+    {
+      "file": "ca131-es-journal.png",
+      "width": 1280,
+      "height": 720,
+      "sha256": "c974320702fcd3dd8ad2ccd89e3003284f09592bffd2a568639b2e9733a25b9c",
+      "status": "final icon/HUD"
+    },
+    {
+      "file": "ca131-wide-sb10.png",
+      "width": 1680,
+      "height": 720,
+      "sha256": "1d518679c5a1ad540d731f059010a0e810a2430d21aed58ba8aa45765d035ea5",
+      "status": "final icon/HUD"
+    },
+    {
+      "file": "ca131-wide-sb11.png",
+      "width": 1680,
+      "height": 720,
+      "sha256": "fded47040a4afe715aa830690bd86cc353b08a70dba7bf98e8460f3e1c2ce799",
+      "status": "final icon/HUD"
+    },
+    {
+      "file": "ca131-wide-sb12.png",
+      "width": 1680,
+      "height": 720,
+      "sha256": "7129821674976a6984dbb21c0c5dd168a340ffc77d6d36c275dcea6915808abe",
+      "status": "final icon/HUD"
+    },
+    {
+      "file": "final-43.png",
+      "width": 1024,
+      "height": 768,
+      "sha256": "7222a01172960f2a8216d8f1d6440be38e1326ad92f253e22ec573c5b3aa6369",
+      "status": "superseded before aspect fix"
+    },
+    {
+      "file": "icon-43.png",
+      "width": 1024,
+      "height": 768,
+      "sha256": "ac0bd2562bb526bcc1ab03ebbaaff5bfc6188edcb4c3b74eee24c6ccf8928949",
+      "status": "final icon/HUD"
+    }
+  ],
+  "hud": "Neutral, six harmful states, recovery, Toughness boundaries, extreme overflow, signed localized text, icon, notification, sword and Journal. Native 1024x768, 1280x720 and 1680x720; screenblocks 10/11/12 and hud_scale 0/2/3. Fixed prior fill/frame mismatch with the native coordinate projection. Static Draw path has no thermal mutation, geometry/weather query or serialized duplicate.",
+  "journeys": "Actual destination region is passed by the journey planner; both endpoint weather samples advance with civil time. Blend by moving distance, pausing foot/cart progress during sleep and continuing ships. Native region 1 -> 9 forecast changes exposure and adaptation; harmful route rejected, unknown destination rejected, copy remains separate and no real-time damage invented. Shipped destinations currently all share region 1; catalogue and map markers must stay consistent when adding future regions.",
+  "performance": {
+    "window_tics": [
+      105,
+      700
+    ],
+    "simulation_tics_per_second": {
+      "baseline": 31.000175705869836,
+      "current": 33.44413966996694
+    },
+    "roster": "6001 attackers + 600 defenders + player",
+    "qualification": "One short arrival pair, not statistical evidence of improvement or late-battle FPS. Functional source includes HUD projection correction; final later changes add the fixed thermal icon and extract unchanged 10/20/30 boundaries into shared data/helpers used by simulation, HUD bands and Journal. The final standard build reruns all 47 checks and Spanish UI states. No AI/population policy changed; no new per-frame scan."
+  },
+  "corrections": "The copied save fixture omitted WeaponDurabilityRevision, accidentally triggering the old x10 migration before hub restore; the corrected verified-save chain initializes that metadata and compares every equipment field. Early multi-line console scripts quit before their waits; recorded final scripts use one command chain. Initial unsafe walking fixture could heat from exertion; changed to a sheltered cold ship route, preserving production rules. Native multi-value projection helper needed explicit unpack/return. Windows client sizes verified from PNG headers. Before-fix 4:3 capture retained explicitly.",
+  "reproduce": "python assets/validation_511/prepare.py; powershell -NoProfile -ExecutionPolicy Bypass -File assets/validation_511/run_check.ps1 with the label/package/addon/map/script/language/dimensions recorded in each *-run.json. Use unique labels. For viewed.cfg first run prepare_bots.py and pass the isolated engine path. Standard package: build_dev.ps1. Generate this summary with collect_results.py.",
+  "author_pending": [
+    "CA131-01",
+    "CA131-02"
+  ],
+  "keep_awake": {
+    "started_utc": "2026-10-07T23:06:30.3834225Z",
+    "pid": 25216,
+    "active_plan_before": "GUID de plan de energía: 381b4222-f694-41f0-9685-ff5bb260df2e  (Equilibrado)",
+    "mechanism": "Thread-scoped ES_CONTINUOUS | ES_SYSTEM_REQUIRED | ES_DISPLAY_REQUIRED; no power-plan mutation",
+    "maximum_hours": 12,
+    "previous_thread_state": 2147483648,
+    "release_result": 2147483651,
+    "released_utc": "2026-10-07T23:42:39.2222414Z",
+    "active_plan_after": "GUID de plan de energía: 381b4222-f694-41f0-9685-ff5bb260df2e  (Equilibrado)"
+  }
+}

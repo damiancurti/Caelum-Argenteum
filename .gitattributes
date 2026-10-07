@@ -64,3 +64,8 @@
 /assets/validation_510/* -text whitespace=cr-at-eol
 /assets/validation_510/*.txt whitespace=-blank-at-eol,-blank-at-eof,cr-at-eol
 /assets/validation_510/*.ini whitespace=-blank-at-eof,cr-at-eol
+
+# Preserve #131 fixture and native evidence fingerprints exactly.
+/assets/validation_511/* -text whitespace=cr-at-eol
+/assets/validation_511/*.txt whitespace=-blank-at-eol,-blank-at-eof,cr-at-eol
+/assets/validation_511/*.ini whitespace=-blank-at-eof,cr-at-eol

@@ -1,6 +1,21 @@
 # Caelum Argenteum — Audio and art
 
-Documentation version: **5.1.0** — 2026-10-07.
+Documentation version: **5.1.1** — 2026-10-07.
+
+## 5.1.1 - Thermal HUD verification sources (#131)
+
+The thermal bar reuses the existing resource frame, laurels and CaelumMono font;
+its bands/marker are native draw primitives. The author also requests a grey
+flame/snowflake icon, aligned to the left like the other resource icons. Built-in
+image_gen generated the silver-relief PNG with genuine alpha; original pixels
+are retained in `assets/art_source/thermal_icon_511.png` and copied unchanged to
+`src/graphics/caelum/ui/hud/icons/ca_hud_icon_thermal.png`. Full prompt, source,
+format and hash: [icon manifest](../assets/manifests/thermal_icon_511.json).
+It is drawn at the existing 18x18 virtual icon size. No external image or Doom
+asset was used in generation. No new audio.
+`assets/validation_511/` contains deterministic isolated fixture sources, native
+logs/configuration fingerprints, screenshots and a results manifest. Generated
+packages, saves, test maps, engine and development IWAD stay outside distribution.
 
 ## 5.1.0 — Thermal validation sources (#130)
 

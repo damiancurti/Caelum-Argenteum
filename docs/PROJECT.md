@@ -1,6 +1,25 @@
 # Caelum Argenteum — Project, status and roadmap
 
-Documentation version: **5.1.0** — 2026-10-07.
+Documentation version: **5.1.1** — 2026-10-07.
+
+## 5.1.1 - Thermal HUD and climate adaptation (#131)
+
+The author expands #131 with Constitution-based Sleep depletion, Type-4
+Resilience adaptation rate/range, gradual return after an attribute decrease,
+and distance-based climate transitions during long journeys. The thermal bar
+reads the viewed character's authoritative state directly above Load.
+Canonical rules: [SYSTEMS](SYSTEMS.md#thermal-exposure-and-energy-transfer-130).
+Native evidence: [validation_511](../assets/validation_511/RESULTS.json).
+Agent evidence: 47 unique native assertions plus a native second-player camera
+check; six actual save/load/hub/rollback stages, all 18 equipment fields and 220
+stable character fields; bilingual status/overflow/Journal captures at verified
+4:3, 16:9 and ultrawide sizes; standard build parity and deterministic fixtures.
+The aspect matrix exposed and corrected the previous frame/fill mismatch.
+A short full-roster arrival pair gives 31.00 tics/s in 5.1.0 and 33.44 in this
+patch before the final static icon/threshold-helper extraction. This is a smoke
+comparison, not a speedup claim or late-battle FPS validation.
+Author visual/gameplay acceptance remains pending; #131 stays open for review.
+The existing V5.2+ roadmap and accepted #130 calibration limits remain.
 
 ## 5.1.0 — Thermal exposure and energy transfer (#130)
 
@@ -57,7 +76,7 @@ A separate seeded extreme-cold army stress run exercises harmful updates on
 The author confirmed all three checks passed without reported exceptions.
 The recorded calibration and performance limits remain; acceptance does not
 establish sustained 35-tic/30-FPS performance or full multiplayer. Next thermal
-UI work is the separately planned #131; preserve the numbered V5 roadmap.
+UI and attribute work continues in #131 above; preserve the numbered V5 roadmap.
 
 ## 5.0.6 — Automatic high-density AI and shared work (#128)
 
@@ -3804,7 +3823,7 @@ content extensions and the pending previous versions are returned to V5.
 | V4.37: Tarot and Trucazo | Implemented and feature-accepted: physical 78-card deck, three campaign essences with selection/activation, and a complete NPC Trucazo slice. #82 / 4.37.24 owns final integration and export. Remaining acquisition, Major powers, broader awakening and team/network modes stay in V5. |
 | **V4 test export** | #17 / 4.36.28 is accepted historical evidence. #82 / 4.37.24 exports the current integrated MAP01 -> MAP02 -> MAP06 slice with initial controls and final validation. It does not claim full campaign or standalone completion. |
 | **V5.0: modular code architecture** | The bounded #116–#120 series is implemented: player services/adapters, authoritative inventory and Tarot operations, explicit per-player contracts and integrated native validation. #119/#120 author acceptance passed on 2026-10-06. Compatible inputs/selectors/save adapters remain; further F1–F4 coordination/performance/network work is separate and full multiplayer is not claimed. |
-| V5.1: thermal exposure and HUD | Author-approved 2026-10-07 rules and initial coefficients are specified in [#130](https://github.com/damiancurti/Caelum-Argenteum/issues/130): racial comfort, proportional Toughness resistance, heat/cold penalties, wetness, insulation, activity, magic and distinct clocks. [#131](https://github.com/damiancurti/Caelum-Argenteum/issues/131) adds the thermal bar directly above the load bar. #130 / 5.1.0 is implemented and author-accepted on 2026-10-07; #131 remains planned. The thermal contract records the implemented integration and remaining calibration limits. |
+| V5.1: thermal exposure and HUD | Author-approved 2026-10-07 rules and initial coefficients are specified in [#130](https://github.com/damiancurti/Caelum-Argenteum/issues/130): racial comfort, proportional Toughness resistance, heat/cold penalties, wetness, insulation, activity, magic and distinct clocks. [#131](https://github.com/damiancurti/Caelum-Argenteum/issues/131) adds the thermal bar directly above the load bar. #130 / 5.1.0 is implemented and author-accepted on 2026-10-07; #131 / 5.1.1 is implemented with author acceptance pending. The thermal contract records the implemented integration and remaining calibration limits. |
 | V5.7: resources and biomes | Persistent 3D sources, melee extraction slashing/piercing, toughness/rarity/depth/region/skill, exhaustion and regeneration. Marine biomes, algae/iodine and non-potable waters; stores maintain access to remote materials. Detailed sequencing is below. |
 
 ### Numbered V5 delivery sequence — author request 2026-10-07

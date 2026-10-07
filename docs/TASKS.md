@@ -1,6 +1,20 @@
 # TASKS.md — Active tasks
 
-Documentation version: **5.1.0** — 2026-10-07.
+Documentation version: **5.1.1** — 2026-10-07.
+
+## Issue #131 - Thermal HUD and attribute adaptation (5.1.1)
+
+Implemented and agent-verified: exposure bar above Load, bilingual read-only presentation,
+Constitution Sleep loss, Type-4 Resilience adaptation and gradual limit return.
+Long travel blends endpoint climate by distance at the current journey time;
+walking sleep pauses distance and ships continue. Retain forecast rejection,
+vehicle shelter and no invented real-time damage.
+
+47 native assertions, viewed-pawn ownership, save/hub/rollback, aspect/scale
+and bilingual checks pass; evidence belongs to validation_511. Review the linked PR
+and outstanding CA131-01/02 in pending_test.txt before author acceptance,
+issue closure or merge. Future region assignments must remain consistent
+between the destination catalogue and authored map markers.
 
 ## Issue #130 — Thermal survival (5.1.0)
 
@@ -23,8 +37,8 @@ No author checks remain for #130; HISTORY records all three accepted IDs.
 Follow-up refinements: actual hot/cold consumable metadata, ratings for authored
 decorative fires, species-specific moisture, complex support/room geometry,
 late-battle frame cost and broader multiplayer remain separate scoped work.
-Do not invent missing follow-up data. The separately planned #131 owns the
-thermal HUD bar; this acceptance does not implement that next issue.
+Do not invent missing follow-up data. #131 has its own implementation and
+acceptance entry above; #130 acceptance does not accept that later patch.
 
 ## Issue #128 — Automatic normal high-density AI (5.0.6)
 

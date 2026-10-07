@@ -4,6 +4,31 @@ Status: integrated engineering register (issue #22, patch 4.36.1b).
 Prepared: 2026-09-23. Inherits the project's release after integration.
 Inspected baseline: `1dc390576fa330d37ff543526fc7e69a397fc28f` (PR #7).
 
+## CA-KP-051 - Match native virtual-coordinate projection for HUD fills
+
+Status/evidence: RESOLVED-VERIFIED / ENGINE-VERIFIED. First checked: 2026-10-07.
+Issue #131 / 5.1.1; Windows/GZDoom 4.14.2/Vulkan.
+Scope: resource and thermal bars in CaelumHUDOverlay.
+
+The old Screen.Dim fills manually centered a uniformly scaled 640x360 canvas,
+while the frame/text used DTA_KEEPRATIO with virtual coordinates. At 16:9 they
+coincided, hiding the mismatch; actual 1024x768 and 1680x720 captures showed
+fills outside the frames. Use the same native Screen.VirtualToRealCoords
+projection with handleaspect=false for these DTA_KEEPRATIO draw calls. The
+shared ResourceRect now aligns every affected fill without changing resource
+values or redesigning the HUD. Multivalue native returns must be unpacked
+before forwarding them from a ZScript helper.
+
+Reproduce with validation_511/run_check.ps1, visual.pk3 and the recorded
+icon-visual-43 / icon-visual-wide command scripts and configurations.
+Inspect actual PNG dimensions, not only -width/-height: on Windows the saved
+win_w/win_h can determine the client size instead. Final native captures verify
+1024x768, 1280x720 and 1680x720; screenblocks 10/11/12 and hud_scale 0/2/3 retain
+the existing resource-overlay policy. Earlier captures remain explicitly
+superseded evidence. [Results](../assets/validation_511/RESULTS.json).
+Author visual acceptance remains pending (CA131-01); this does not establish
+support for every arbitrary viewport or a new HUD visibility policy.
+
 ## CA-KP-050 - Adding serialized classes needs an explicit old-runtime bridge
 
 Status/evidence: ENGINE-VERIFIED. First recorded / checked: 2026-10-07.
