@@ -1,6 +1,70 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **5.0.4** — 2026-10-06.
+Documentation version: **5.0.5** — 2026-10-07.
+
+## 5.0.5 — Siege profiling and combined diagnostic experiments (#121, 2026-10-07)
+
+The author accepted every pending #119/#120 check, authorized closure/merge,
+and requested #121 with live tests, commit and push. PR #125 merged as
+`84a82dec00b844168dff41918e1546677956bf08`; PR #126 merged as
+`bc086979bc2adc2f66e498b66f96a8fe755ed0ea`. Both issues are closed. This patch
+uses that accepted 5.0.4 source and preserves earlier architecture baselines.
+
+The author expanded the diagnosis with an aligned, synchronized group-of-100
+experiment and then requested combinations of positive findings. The comparison
+target is **stable 35 simulation tics/s and at least 30 FPS**, current resolution,
+6,001 attackers and 600 defenders. Background simulation and sound remain active
+at 5%; `i_pauseinbackground=false` resolves the independently enabled background
+pause. A temporary Windows execution-state request prevents automatic sleep
+during remaining tests without changing the power plan. Positive reusable
+findings are recorded in KNOWN_PITFALLS, as requested.
+
+All interventions are generated outside `src/`: nested subsystem timing,
+every-call rare-event timing, shared leader perception, individual/group march,
+spatial guard queries with a full-scan oracle, failed cannon-query retry and
+combinations. Production differences are two release-label diagnostics only;
+no gameplay fields, saves, counts, ranges, damage, map or AI rule changes.
+PROJECT contains the ranked measured costs, phases, repeated comparisons and
+limitations. `assets/validation_505` retains fixture sources, hashes, native
+logs/configurations, renderer benches, visual evidence and generated summaries.
+
+The normal matched pairs are scene-identical, with +1.63%/-2.31% throughput
+variation from adding probes. The original battle falls to 3.014 tics/s late;
+port-script sight queries account for 268.000 of 329.86 measured exclusive
+ms/tic. Shared perception reaches 30.130–30.415 tics/s in the common window,
+but does not establish visual fluency or preserve follower target semantics.
+The synchronized march reaches nominal rate early and becomes about 27% slower
+than independent march over the full window because its artillery workload
+changes. These results justify focused optimization work, not a production fix.
+
+Preliminary compiler failures in timer/formation fixtures were corrected before
+final measurements; their labels are not included in the successful run matrix.
+An early baseline was interrupted by physical Escape; an earlier formation had
+background pausing and was used only for background-setting diagnosis. Final
+comparisons use completed fresh runs and the corrected lane assignment/aerial
+camera. No failed or partial preliminary run is counted as a passed comparison.
+Agent engine observations do not constitute author playability acceptance.
+
+Final engine evidence: **21 completed comparison runs**, two independent
+GPU/visual runs and a final production-package/background smoke check. The
+combined march reaches 34.865–34.989 tics/s but only 20.243–22.818 callbacks/s;
+the combat combination reaches 23.686–25.209 tics/s late. Neither meets the
+agreed 35-tic/30-FPS target. The guard oracle has 756 periodic verification rows
+with no omitted eligible guard; its separate timing falls to 0.116 ms/tic.
+The native GPU listing is empty under default effects. FXAA-only control
+ranges of 0.75–0.76 ms demonstrate that timer's limited scope, not whole-scene
+GPU cost. Two actual native sight readings are 347.5 and 443.0 ms.
+
+Static/source verification retains 3,799 method bodies and 1,979 fields; all
+6,187 final package members match current `src/`. Fifteen diagnostic packages
+reconstruct byte-identically in two passes from pinned accepted Git content.
+Final live startup passes, and simulation advances from tic 245 to 1015 after
+the native minimize action. The keep-awake API request releases successfully
+at 03:49:53 UTC; the original Balanced plan identifier is unchanged. Generated
+packages, engine/IWAD copies and private test saves stay outside the commit.
+The existing author-owned art-source deletion is left outside this patch.
+There are no new outstanding manual test entries; author review/acceptance of
+the diagnosis and any future optimization semantics remains separate.
 
 ## 5.0.4 — Per-player authority and integrated closure (#120, 2026-10-06)
 

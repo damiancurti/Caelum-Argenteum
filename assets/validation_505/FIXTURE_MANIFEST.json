@@ -1,0 +1,43 @@
+{
+  "native_run_metadata_verified": [
+    "baseline-b-run.json",
+    "baseline-c-run.json",
+    "cannon-a-run.json",
+    "combined-a-run.json",
+    "combined-b-run.json",
+    "events-a-run.json",
+    "formation-all-a-run.json",
+    "formation-all-b-run.json",
+    "formation-retry-a-run.json",
+    "formation-retry-b-run.json",
+    "formation1-a-run.json",
+    "formation1-b-run.json",
+    "formation100-e-run.json",
+    "formation100-f-run.json",
+    "gpu-formation-a-run.json",
+    "gpu-late-a-run.json",
+    "guard-check-a-run.json",
+    "guards-a-run.json",
+    "instrument-a-run.json",
+    "instrument-b-run.json",
+    "production-a-run.json",
+    "shared-a-run.json",
+    "shared-b-run.json",
+    "shared-guards-a-run.json"
+  ],
+  "distinct_package_hashes_verified": 16,
+  "fixture_sha256": {
+    "collect_extra.py": "6f0b434436e49bced07eb5e0e0f785be64af088205c31532aadaa701808f896d",
+    "formation.zs": "d82c5069f1372e4a8240841c700eef418b0bbee1d1fba8cbc035ceaf3a744394",
+    "keep_awake.ps1": "3ad78d5bda036a885ee2073de477c33155494303c8b82337a54c77077020e952",
+    "observer.zs": "8a2dabdecdff40df2c9dcaa5b10951aee1924c88eb75d62dc7b2d952dd472082",
+    "prepare.py": "f92bb5c6f60cea0023caf27a3d294d9234e8fa49195caf8c1765baefec7a476d",
+    "reproduce.py": "f05f9b21b4cd440b39cfa94fdd5c11ffc0366451ae41d4b4aa082bc1b312af88",
+    "run_native.ps1": "9281795e1782db6c9f9ec9d1a06705dcc49618139f6e8adc2c967ac1cea45bbe",
+    "run_suite.ps1": "5fea2731a7643a1949a2dbf77040a42a6800ae724eaf3f05dc19faddc0ba46d8",
+    "runtime_identity.py": "af16d217ef89066149817de62ca91fd3686861993decdc1be96b261cbef22435",
+    "summarize.py": "619bc3a7089878d01bd5a9b1eaeb63de45e259698b1341c4242b41cb0ba327ef",
+    "verify.py": "bf8bb32f40d17dc9faba751cd34f2951f8467e72940f0eb07f41df9864fb5b82",
+    "verify_evidence.py": "c499b21c9e2381a0792172e2d3d8c8787a34f13b4ed2fc8e0140d5d5fefb1462"
+  }
+}

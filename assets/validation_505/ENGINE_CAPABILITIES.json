@@ -1,0 +1,77 @@
+{
+  "engine_tag": "g4.14.2",
+  "sources": [
+    {
+      "path": "src/playsim/dthinker.cpp",
+      "url": "https://github.com/ZDoom/gzdoom/blob/g4.14.2/src/playsim/dthinker.cpp",
+      "sha256": "326cfdfdce85c476363322eead6252833d6b9cabcd79c2dd4cb35225fe9de01d"
+    },
+    {
+      "path": "src/playsim/p_sight.cpp",
+      "url": "https://github.com/ZDoom/gzdoom/blob/g4.14.2/src/playsim/p_sight.cpp",
+      "sha256": "24d3b0df3e395e148e59bc2aeba33d0ef60e04cf60209d591e0c813ac2736ff1"
+    },
+    {
+      "path": "src/common/rendering/hwrenderer/data/hw_clock.cpp",
+      "url": "https://github.com/ZDoom/gzdoom/blob/g4.14.2/src/common/rendering/hwrenderer/data/hw_clock.cpp",
+      "sha256": "53cddb87fb5237ce0e8f8bd9220c44f145a185ba51c9c0e34ed4c5b6b6d9de5a"
+    },
+    {
+      "path": "src/common/engine/stats.h",
+      "url": "https://github.com/ZDoom/gzdoom/blob/g4.14.2/src/common/engine/stats.h",
+      "sha256": "257492477d71d428181cae70b832ecdd428ca396aa8d99c8df5195167ce99b88"
+    },
+    {
+      "path": "src/common/rendering/hwrenderer/postprocessing/hw_postprocess.cpp",
+      "url": "https://github.com/ZDoom/gzdoom/blob/g4.14.2/src/common/rendering/hwrenderer/postprocessing/hw_postprocess.cpp",
+      "sha256": "1e6ab4f1ee0a77750a9e60386b82ec82fa4da53a6b6d6175c4308fce5e05c36f"
+    },
+    {
+      "path": "src/common/rendering/vulkan/system/vk_commandbuffer.cpp",
+      "url": "https://github.com/ZDoom/gzdoom/blob/g4.14.2/src/common/rendering/vulkan/system/vk_commandbuffer.cpp",
+      "sha256": "69d291a75e0990741fd06f78221b6af9c86f2c099d16ef51d8c82e47b6ea311d"
+    },
+    {
+      "path": "src/common/platform/win32/i_mainwindow.cpp",
+      "url": "https://github.com/ZDoom/gzdoom/blob/g4.14.2/src/common/platform/win32/i_mainwindow.cpp",
+      "sha256": "63ef6601dabea9dc5ae866342ecd055fdc3864223cd3af80334ca3b688f64bb5"
+    },
+    {
+      "path": "src/d_main.cpp",
+      "url": "https://github.com/ZDoom/gzdoom/blob/g4.14.2/src/d_main.cpp",
+      "sha256": "eaacfd9446066e1e4f7b439b63c7c601fbee24519d932584530a26304bd57703"
+    },
+    {
+      "path": "src/p_tick.cpp",
+      "url": "https://github.com/ZDoom/gzdoom/blob/g4.14.2/src/p_tick.cpp",
+      "sha256": "f71aac210136a4bcd15133fec55d50522ddff1bb1605bc6df1064353c28e7108"
+    },
+    {
+      "path": "src/common/rendering/vulkan/renderer/vk_pprenderstate.cpp",
+      "url": "https://github.com/ZDoom/gzdoom/blob/g4.14.2/src/common/rendering/vulkan/renderer/vk_pprenderstate.cpp",
+      "sha256": "29a73a2795487769b87ef293806650ff1cc6ae7adf312ccf4a447e4928144e36"
+    },
+    {
+      "path": "src/common/rendering/hwrenderer/postprocessing/hw_postprocess.h",
+      "url": "https://github.com/ZDoom/gzdoom/blob/g4.14.2/src/common/rendering/hwrenderer/postprocessing/hw_postprocess.h",
+      "sha256": "c7fae9a567b57675db2e8d3c55413bcdc0494f66b865a402cfa716343a6ccdaa"
+    },
+    {
+      "path": "libraries/ZVulkan/src/vulkanbuilders.cpp",
+      "url": "https://github.com/ZDoom/gzdoom/blob/g4.14.2/libraries/ZVulkan/src/vulkanbuilders.cpp",
+      "sha256": "495994c6f0587b9c83c3491fda8d2cf61d0dc6502a3f047f2ef6222dcc5ecea8"
+    }
+  ],
+  "verified_native_commands": [
+    "profilethinkers -t",
+    "stat sight",
+    "stat rendertimes",
+    "stat gpu",
+    "bench"
+  ],
+  "cpu_timer": "cycle_t CPU performance counter; native renderer worker scopes overlap",
+  "gpu_timer": "Vulkan COLOR_ATTACHMENT_OUTPUT timestamp queries with device timestampPeriod; query retrieval uses WAIT_BIT and may stall CPU. Named ranges may nest.",
+  "sight_timer": "Native CheckSight CPU timing/counters reset each simulation tic; separate from port-script query wrapper",
+  "power_request_inventory": "powercfg /requests refused without administrator rights. Thread-scoped API success and release are recorded without elevation.",
+  "gpu_scope_observed": "Default configuration: no reported range. Enabling FXAA in a separate control: fxaa=0.76 ms and 0.75 ms. Vulkan PushGroup call sites cover selected postprocess effects; whole-scene GPU time is unmeasured."
+}

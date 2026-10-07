@@ -1,6 +1,16 @@
 # Caelum Argenteum — Audio and art
 
-Documentation version: **5.0.4** — 2026-10-06.
+Documentation version: **5.0.5** — 2026-10-07.
+
+## 5.0.5 — Siege profiling evidence (#121)
+
+`assets/validation_505` contains diagnostic ZScript, deterministic package
+preparation, native launch/collection scripts, source verification, timing
+summaries, logs/configurations and captured game views. These are development
+evidence and remain outside `src/`. Engine-source references are pinned to
+GZDoom `g4.14.2`; locally inspected source copies, generated PK3s and saves stay
+under ignored `build/issue121`. No engine, IWAD, art/audio source or extracted
+Doom asset is added to the distribution. Existing asset provenance is retained.
 
 ## 4.37.24 — Reproducible closing export (#82)
 

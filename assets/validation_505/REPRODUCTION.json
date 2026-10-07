@@ -1,0 +1,24 @@
+{
+  "source_commit": "bc086979bc2adc2f66e498b66f96a8fe755ed0ea",
+  "iterations": 2,
+  "identical_package_bytes": true,
+  "canonical_runtime_tree_sha256": "2631ed875efa64cfe24b2947fe17b18016c623e12818ba23db1622042cc73d5d",
+  "package_sha256": {
+    "baseline.pk3": "33f184a07ff73d9158bc18e9d17efec5537528c683f6cc723dcf63f56c335ca6",
+    "cannon-retry.pk3": "e4b0d87b8cca6086a174b0182896169468584f687f088b742a668e7013737c97",
+    "combined.pk3": "ad0980604cfcf8ef8f9fab9e5d75c06535b3bf2fa64a21d9ac0388d29bc0b6cc",
+    "eventprobe.pk3": "fa353740095be65c3308f64d6ec38ba759c5f79e03fc1574b79b4802eab43cb2",
+    "formation-all.pk3": "4c59fe70511ffd635a3a08525ee7abfd5cbf5c4b7c34c6c57f28c7692e9cb06e",
+    "formation-observer.pk3": "36d3f7aeb3166283ee49e3dbc642a6714425dcd7979adb07e6ef9e0547dd5744",
+    "formation-retry.pk3": "967e4a5954c791c787f8cea2372c5ed9e3df9769b14efa7f849351201fdbff84",
+    "formation.pk3": "547293383a609d56e10bef2b74d7f347588247fbd5177f5cc3a81752e86eac63",
+    "guard-check.pk3": "04b84d02105ca9198595f9136c74364657d3c0e0a5b4e4ed4bfbcd407c3c3ac5",
+    "instrument-observer.pk3": "6b55a78ad34d3c1da164f702faa70b2bcd2f50986aa0ae125fb0c0b4f91041d3",
+    "instrumented.pk3": "d09044a23cbecf7b43121ba63ee9457ca7dae5b2094ea60a8e41310160a8bc07",
+    "observer.pk3": "4c122f394aa9030f202eaea043dfee6e14148c58ebc7327bdd852c68b7a3d5eb",
+    "shared-guards.pk3": "c9446b87a2b00063a009e5b2b343d8eb4cf6fba7457756727987db969f38d198",
+    "shared-target.pk3": "ca189621602b1e525a25583edd5f15c1bbdd8b933bba3a6bc1e14fd8eb793f3a",
+    "spatial-guards.pk3": "4be615607fd3123e267fa369e6689222978837f86f7497cc43f4023748fadbfc"
+  },
+  "qualification": "Git reconstruction can differ from the original accepted ZIP in metadata and text line endings; canonical runtime content must match."
+}

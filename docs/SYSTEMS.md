@@ -1,6 +1,43 @@
 # Caelum Argenteum — Current systems and rules
 
-Documentation version: **5.0.4** — 2026-10-06.
+Documentation version: **5.0.5** — 2026-10-07.
+
+## Siege profiling and group experiment boundary (#121)
+
+The accepted siege retains 6,000 Mandingas, its commander and 600 defenders.
+Production command groups already contain at most 100 members. Membership and
+leadership do not replace each member's nearest-visible-target search, native
+movement, individual combat, resources, collision or damage.
+
+`assets/validation_505` builds isolated diagnostic copies. Its formation test
+places all 6,000 Mandingas into sixty 10-by-10 blocks on the existing 200-column
+formation footprint, recalculates their lanes, synchronizes their initial run
+animation and issues movement through native `TryMove` every four tics. Mode 1
+chooses a target/direction independently for every soldier; mode 100 chooses
+once per group and applies that direction to its surviving members. Native
+collision can block individual members and break the formation; the probe
+records successful moves and deviation from initial relative positions.
+
+This is a march experiment. It relocates machine crews and replaces Mandinga
+attack/chase actions. The commander, defenders, machines, body Ticks, health,
+resources and native collisions continue. A separate shared-target diagnostic
+keeps the original placement and native combat/movement but gives followers
+their command leader's cached perception for the current tic. That changes
+individual visibility and nearest-target semantics. Both interventions change
+the workload; their timing differences cannot be added together or adopted as
+accepted combat rules. Production populations, geometry, hierarchy, victory,
+balance and save fields retain their existing contract.
+
+The combined diagnostics also test a native spatial broad phase for machine
+guards, retaining the existing exact 3D radius, remembered guards and death
+predicate. A separate full-scan oracle checks omitted eligible guards. Another
+test caches failed cannon target searches for the existing eight-tic target
+update period; this can delay acquisition by seven tics and is a deliberate
+behavior change. These factors are measured alone and together, including
+shared perception plus spatial guards and the three-factor combination.
+No diagnostic field, cache, formation controller or altered targeting rule is
+included by production ZSCRIPT. The author's comparison target is stable native
+35 tics/s with at least 30 displayed frames/s at the current resolution/population.
 
 ## Per-player authority and modular migration boundary (#120)
 
