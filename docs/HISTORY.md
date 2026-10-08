@@ -43,7 +43,28 @@ confirm 836,062.5 J of action heat and 2,202 HP of thermal damage per soldier.
 This follows the existing author-approved #130 jump/Air conversion, not a new
 thermal formula or duplicate thermal surcharge. The report separates active
 firing from later attrition/corpse workload; cheap post-death rendering is not
-presented as successful sustained combat. Thermal calibration remains open.
+presented as successful sustained combat. This is the retained pre-sweating
+control, not evidence for the later extension.
+
+On 2026-10-08 the author retains carbine action heat and authorizes regulated
+sweating: a surface-scaled 2 L/world-hour reference ceiling, linear E=0..5
+response, and hydration-limited production below 20 Thirst points. All humanoids
+share the initial profile; animal physiology remains distinct. Sweat consumes
+actual water, with cooling only from evaporation. The old heat-related Thirst
+multiplier is replaced, and Air recovery no longer costs Thirst. Revision 3 adds
+idempotent persistent NPC hydration without refilling player reserves. Travel
+projections couple water provisions with the same thermal calculation.
+
+The extension passes 33 native thermal/provisions checks, 15 carbine checks,
+revision-two save migration, reload, hub return and original-save rollback.
+The 600-body volley control retains all soldiers through tic 3500, versus none
+by tic 1400 before sweating. Each secretes about 342 mL; the resulting wet-clothing
+cold leaves 270/2168 HP at the endpoint. This remains an explicit balance limit.
+The combined later battle records 31.21 tics/s and 5.57 background render callbacks/s,
+with 598 defenders surviving; it is not presented-FPS evidence or a fluency pass.
+The author also requests half-Health Hunger costs for Air/Anima recovery; the
+per-bar/per-point interpretation and NPC Hunger scope are still awaiting answers.
+Temporary keep-awake request 3 is released with the original power plan intact.
 
 ## 5.1.2 - Staged siege experiment (#132, 2026-10-07)
 

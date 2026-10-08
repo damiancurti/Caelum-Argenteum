@@ -1,0 +1,914 @@
+{
+  "issue": 133,
+  "version": "5.1.3",
+  "baseline_commit": "b00201098a26582c8820a5424a2a75986b022abf",
+  "production_package_sha256": "de2c3e709bce6007b9ec2d9005b7aa6bb23b0246f9e9e22bdad2e2b3cfb2838d",
+  "production_matches_current_src_byte_for_byte": true,
+  "default_build_sha256": "7f5d997196885449cee2e1e5dbfd47d279860b375f14e9c3372acc9465634495",
+  "compatible_build_sha256": "b902bdeb914b07575d7c49d75d65b1fd6fbedaa1d93f5fc7dcf297b7e55eec8c",
+  "compatible_build_only_runtime_difference": "maps/MAP06.wad replaced with exact legacy_512 bytes",
+  "changed_runtime_sources": {
+    "src/LANGUAGE": "48be35ddb930f3bb79fb10477a5cac03e4b74db6b48f45a3f63fb27e753850c6",
+    "src/TEXTURES": "fcbb0a7231a85edad85fd5a66674db60a6c42188ce65e4039a1afa12028b3ff5",
+    "src/ZSCRIPT": "3170698c692695b4a798964104cc9af04de32564345f3767cfe2508d698c40e9",
+    "src/caelum/core/CaelumConstants.zs": "fc105ba66adefa617fe5d4f56d4596316a8ab1895e601deb2701c0f9a53c9ee6",
+    "src/caelum/equipment/CaelumCityTrade.zs": "2ed05342dcfb04805bfd72503a2e3f31c5c6f0d6db354fa6eb16f90956c05eaa",
+    "src/caelum/equipment/CaelumEconomy.zs": "6bd160bab92fa5bc51d0becdc88461167a463e44c1160e9359a5103401e200c4",
+    "src/caelum/equipment/CaelumEquipmentPickups.zs": "6dbc4dd98696b6878b6b89516a2617446f0361dbb4ddb71829cbc7ed66ae2539",
+    "src/caelum/equipment/CaelumPlayableWeapons.zs": "462cbd84b787b607c2ffe57928a178cbee111e82a1bea6f705d4ac0b88dfea91",
+    "src/caelum/equipment/CaelumRangedRules.zs": "35850178253d82ddcf8376e6a71eff9c9574d5b5689d9bb03c78bbc138426ebb",
+    "src/caelum/hud/CaelumJournalOverlay.zs": "db862ebedf3fe588070c7d88dc4ee7eddec58057c7a38c5a0d43b343566947fe",
+    "src/caelum/player/CaelumPlayer.zs": "4424dd3647ba98806f15dd406e3921d582d878f6ce18830cd16982c80cbb124d",
+    "src/caelum/world/CaelumCityData.zs": "3be13b063325da0ae22d51b67587351555668388492db780e531787673012f56",
+    "src/caelum/world/CaelumCityNavigation.zs": "b3b467ca7bb920105106b1223de8009183c8e4f3121598483d6a1162c4423153",
+    "src/caelum/world/CaelumCityRoutes.zs": "472c81cffae27b4cef40c6757d1bfa1b1bafb2b7658692fb5cedfae90f2b05a5",
+    "src/caelum/world/CaelumCityWorld.zs": "0a147b72959a3d163d90560649e53f0452b1b8517843865499e370175983e8ab",
+    "src/caelum/world/CaelumDining.zs": "095a42bba113ed2956f37aefe7b8e27441189dbaf3657c4a799a17adabeaa9b5",
+    "src/caelum/world/CaelumPhysicalHazards.zs": "a8198a6d4da14da6d782f1da5f6e8ae495d9af95139fd5fcc2bd133db75ba28a",
+    "src/caelum/world/CaelumPortDefender.zs": "159cd7b0059288e479d60fbc6950f3869bfddcab420ea2bb9c68f1cec2fa8336",
+    "src/caelum/world/CaelumPortSiege.zs": "ef7481f5f2fe4d6287e9df8592dcd1e9b29a065e23e1436a0f464a9e33f178be",
+    "src/caelum/world/CaelumSewerMaze.zs": "c56f0861e8ca1a73ca8160b2276121b3499398cc58f59a93c61280d4b828a53d",
+    "src/graphics/caelum/carbine_world.textures": "440fe4e3434d4350b775d86630c1776dca034017a75d718a720a64014d9be7aa",
+    "src/maps/MAP06.wad": "8d62ef32ad584ed43e21613bc216cdfac4423469481eba8ce594da3e0b3ed26c",
+    "src/sprites/caelum/carbine_world/atlas.png": "6d703f2b8c3da2c114c25bc22e4296fe5eb1a0bef8816ef83cee603a4c7b5930"
+  },
+  "completed_records": {
+    "carbine-compile-b-run.json": {
+      "sha256": "1192c3ac64000ec69e252c4615fb88c372bdf67875b0e7f826387a7903ff07f5",
+      "package_sha256": "C5278F5C484AF6EC844A19D148C3F523CD54E1C80C76D5EFEBFE944747370BC7",
+      "addon_sha256": "A165AA0367B694CE0629F1DC4142953C353A6619D2B0354C4ED37AB2C424EF57",
+      "expected": "CA133 COMPLETE checks=\\d+ failures=0",
+      "matches_final_production": false
+    },
+    "carbine-native-d-run.json": {
+      "sha256": "a62e4cfdddba60e560a1012aa2979d18edff76d021b61afbd4c86b14206e35a8",
+      "package_sha256": "2DCB7FB5B908775BF2FD4F36FB4B7C5E8CC6B14A3BAAF7591F05FAB1F8616AED",
+      "addon_sha256": "2D4430EF43383C68493E38E8A8246817C997633A54CF0B2BAB030BE8CB3B2F10",
+      "expected": "CA133 COMPLETE checks=\\d+ failures=0",
+      "matches_final_production": false
+    },
+    "carbine-player-a-run.json": {
+      "sha256": "c6372bafeab4ae4ecf780f51fdb189435e592c4351e27dc044b9be8a0218862b",
+      "package_sha256": "A423A23862B6A90BFDE30F085A5D63BB11F57770D5A82CAAC16E67135A09BA66",
+      "addon_sha256": "D406F59ECBEA3F931B752CDD25A1F1DF113A2AFCD19C93F3B84D82CA24F01B00",
+      "expected": "CA133 COMPLETE checks=\\d+ failures=0",
+      "matches_final_production": false
+    },
+    "collision-replay-b-run.json": {
+      "sha256": "e234787fb4965a1c3955bedc7d111113f8831c2078d50c8dedaa4fc5b15ec66a",
+      "package_sha256": "5A1B7F1B32ED4986015B705E54BC20F6EA1DFB98D03942B7D864721F83D78742",
+      "addon_sha256": "071AA134286CDD2E7B1171B15A4816ED78751F54B8C5EF205AC535648A2EB98F",
+      "expected": "CA133 REPLAY_COMPLETE",
+      "matches_final_production": false
+    },
+    "collision-replay-c-run.json": {
+      "sha256": "9e88080fd58c2e3a9c9f97f3dc91d373dd6d9f200bae6beeb39ef246e33446f0",
+      "package_sha256": "5A1B7F1B32ED4986015B705E54BC20F6EA1DFB98D03942B7D864721F83D78742",
+      "addon_sha256": "7533984FDF6AC77EC223A891FE6D63A47051F21A84F0CA1545CC4682F78CD0AC",
+      "expected": "CA133 REPLAY_COMPLETE",
+      "matches_final_production": false
+    },
+    "commerce-compile-b-run.json": {
+      "sha256": "ecd6f455b7e15ecbed234656147e3de0729199818a3f92d43ad9e27f8953b3e3",
+      "package_sha256": "49D8AFC284CE48A9466FECD4BB3270990D2C07C39BDA65797530331B7D016DC0",
+      "addon_sha256": "7E2FEAE582B325E564CF11A3B7023644187813B68787C402153F7AFE74083E16",
+      "expected": "CITY133 housed=600",
+      "matches_final_production": false
+    },
+    "delivery-carbine-run.json": {
+      "sha256": "f8581f2b80aa868bd4d59d0181eceb19b2e99e4491df9598213590380b48214b",
+      "package_sha256": "8E7F11E626D6DF2CB12E88D430D478D5E56B060DD0C800113D64D0C077DB9557",
+      "addon_sha256": "D406F59ECBEA3F931B752CDD25A1F1DF113A2AFCD19C93F3B84D82CA24F01B00",
+      "expected": "CA133 COMPLETE checks=\\d+ failures=0",
+      "matches_final_production": false
+    },
+    "delivery-deployment-hub-run.json": {
+      "sha256": "49c4661abf7e97cd2f86b5d3753d3d40ed103e102215fb6b336d05133d1deaf4",
+      "package_sha256": "8E7F11E626D6DF2CB12E88D430D478D5E56B060DD0C800113D64D0C077DB9557",
+      "addon_sha256": "D47220F14EBC4F489E3A99771C22A359C5ACC756F12BA386E6325E0923622B74",
+      "expected": "CA133 DEPLOYMENT_PERSIST_COMPLETE failures=0",
+      "matches_final_production": false
+    },
+    "delivery-deployment-reload-run.json": {
+      "sha256": "9501a57a41670e11ae1322759eca309575c4d46ad4343f6bffa1f40c47efc0ea",
+      "package_sha256": "8E7F11E626D6DF2CB12E88D430D478D5E56B060DD0C800113D64D0C077DB9557",
+      "addon_sha256": "D47220F14EBC4F489E3A99771C22A359C5ACC756F12BA386E6325E0923622B74",
+      "expected": "CA133 DEPLOYMENT_PERSIST_COMPLETE failures=0",
+      "matches_final_production": false
+    },
+    "delivery-deployment-save-run.json": {
+      "sha256": "9aae1cdeb9e4ad299c4427102e47286d0bafe1f5d1fdb23ef4f961f72e4c8940",
+      "package_sha256": "8E7F11E626D6DF2CB12E88D430D478D5E56B060DD0C800113D64D0C077DB9557",
+      "addon_sha256": "D47220F14EBC4F489E3A99771C22A359C5ACC756F12BA386E6325E0923622B74",
+      "expected": "CA133 DEPLOYMENT_SEEDED",
+      "matches_final_production": false
+    },
+    "delivery-factories-run.json": {
+      "sha256": "348e28ee3aed19ac565ed5aa3e6a4deb52f0985c4d75967285648681fdb5545e",
+      "package_sha256": "DE2C3E709BCE6007B9EC2D9005B7AA6BB23B0246F9E9E22BDAD2E2B3CFB2838D",
+      "addon_sha256": "7B357C888210AB307D752E634A45A224B0B3C2C3366B0E230FAB324189738966",
+      "expected": "CA133 COMPLETE checks=\\d+ failures=0",
+      "matches_final_production": true
+    },
+    "delivery-furniture-run.json": {
+      "sha256": "fad602ec4ad102fa2ab9ba6ac59ae9e98dd6d8db777ea604a4972420b8e93e5c",
+      "package_sha256": "DE2C3E709BCE6007B9EC2D9005B7AA6BB23B0246F9E9E22BDAD2E2B3CFB2838D",
+      "addon_sha256": "B55FFCC22F088305329FA1E8D9501C677C2E6E0BA245F712E6923773DE401F17",
+      "expected": "CA133 COMPLETE checks=\\d+ failures=0",
+      "matches_final_production": true
+    },
+    "delivery-legacy-hub-run.json": {
+      "sha256": "88dfe0e5876800b585cb10de40693dc086a47b00743196da7a92d43cb462b679",
+      "package_sha256": "03B77D73B93754155777F3D93042716748E42778FF22F0254A37058586515480",
+      "addon_sha256": "D07FE566D5FB9447784F17272D757F3BF831092C64F363D87846B429455DD930",
+      "expected": "CA133 LEGACY_COMPLETE",
+      "matches_final_production": false
+    },
+    "delivery-legacy-reload-run.json": {
+      "sha256": "d9cada8c598635f34621690d966b5bda15047dd3b829e505ccdeab4ca50250c2",
+      "package_sha256": "03B77D73B93754155777F3D93042716748E42778FF22F0254A37058586515480",
+      "addon_sha256": "D07FE566D5FB9447784F17272D757F3BF831092C64F363D87846B429455DD930",
+      "expected": "CA133 LEGACY_COMPLETE",
+      "matches_final_production": false
+    },
+    "delivery-legacy-rollback-run.json": {
+      "sha256": "3b1e7e2602b91c2bf884c15e94af5e424488a8a3604a3219029583c4c57ca16a",
+      "package_sha256": "2FA2F14735DCEA8BE5C01D35C55E69E453F372355A97FBD2B3E06F6BF2352B80",
+      "addon_sha256": "D07FE566D5FB9447784F17272D757F3BF831092C64F363D87846B429455DD930",
+      "expected": "CA133 LEGACY_COMPLETE",
+      "matches_final_production": false
+    },
+    "delivery-legacy-seed-run.json": {
+      "sha256": "969754231885260c6d9e64082fddefca14f19ee1fd9723ea0b49dfc34092cbc9",
+      "package_sha256": "2FA2F14735DCEA8BE5C01D35C55E69E453F372355A97FBD2B3E06F6BF2352B80",
+      "addon_sha256": "D07FE566D5FB9447784F17272D757F3BF831092C64F363D87846B429455DD930",
+      "expected": "CA133 LEGACY_SEEDED",
+      "matches_final_production": false
+    },
+    "delivery-legacy-upgrade-run.json": {
+      "sha256": "72345e7ba4907f556bad58f794a2decc3da2fdc93d6af3eed809fd758b474207",
+      "package_sha256": "03B77D73B93754155777F3D93042716748E42778FF22F0254A37058586515480",
+      "addon_sha256": "D07FE566D5FB9447784F17272D757F3BF831092C64F363D87846B429455DD930",
+      "expected": "CA133 LEGACY_COMPLETE",
+      "matches_final_production": false
+    },
+    "delivery-obstruction-run.json": {
+      "sha256": "97d4f35bde8322b483f4796014a25e6eafa359da9f3e1a85b0464e6d1409b0d6",
+      "package_sha256": "8E7F11E626D6DF2CB12E88D430D478D5E56B060DD0C800113D64D0C077DB9557",
+      "addon_sha256": "35D7F82C05C7FE86900F252ADCFE8686CDC13E0379C91498B37A05115E13BAB7",
+      "expected": "CA133 OBSTRUCTION_COMPLETE failures=0",
+      "matches_final_production": false
+    },
+    "delivery-trade-hub-run.json": {
+      "sha256": "9324c6133d1d6f394c449ef758a6e360e488dcfc8a78dc559439b903de98a8b8",
+      "package_sha256": "DE2C3E709BCE6007B9EC2D9005B7AA6BB23B0246F9E9E22BDAD2E2B3CFB2838D",
+      "addon_sha256": "9FEDD900143F0DA6ABCAEFCD301293144642B6CC5D7E47042D4944053834FC7B",
+      "expected": "CA133 PERSIST_COMPLETE",
+      "matches_final_production": true
+    },
+    "delivery-trade-reload-run.json": {
+      "sha256": "af92057e2b00c3f93c7656dcd816c3f89ae70b915117fd33f7d36c1c2abefd06",
+      "package_sha256": "DE2C3E709BCE6007B9EC2D9005B7AA6BB23B0246F9E9E22BDAD2E2B3CFB2838D",
+      "addon_sha256": "9FEDD900143F0DA6ABCAEFCD301293144642B6CC5D7E47042D4944053834FC7B",
+      "expected": "CA133 PERSIST_COMPLETE",
+      "matches_final_production": true
+    },
+    "delivery-trade-run.json": {
+      "sha256": "1aed24ee17077c33ca1b89ab796afaad90779cd184d81ef141db5bfcd1432875",
+      "package_sha256": "DE2C3E709BCE6007B9EC2D9005B7AA6BB23B0246F9E9E22BDAD2E2B3CFB2838D",
+      "addon_sha256": "9FEDD900143F0DA6ABCAEFCD301293144642B6CC5D7E47042D4944053834FC7B",
+      "expected": "CA133 COMPLETE checks=\\d+ failures=0",
+      "matches_final_production": true
+    },
+    "delivery-visual-run.json": {
+      "sha256": "520c34e382e8b42062b6c87ef839512757761b283e27bf06d420f578f7737dc5",
+      "package_sha256": "8E7F11E626D6DF2CB12E88D430D478D5E56B060DD0C800113D64D0C077DB9557",
+      "addon_sha256": "1237E507F694FA0504E74F7D71CA51D099F6945991909F9734B4F56657FBC8F5",
+      "expected": "CA133 VISUAL scene=4 ready",
+      "matches_final_production": false
+    },
+    "deployment-k-run.json": {
+      "sha256": "f1707a989e08803e6a5d23bc3a5f82efcf7ec1b8342167a2dfea1b70c862f3c5",
+      "package_sha256": "75B22D21B9E497E898A09A56A5E90772294E1F8A5238A853000DD34F9A4C36F7",
+      "addon_sha256": "7E2FEAE582B325E564CF11A3B7023644187813B68787C402153F7AFE74083E16",
+      "expected": "CA133 COMPLETE checks=\\d+ failures=0",
+      "matches_final_production": false
+    },
+    "factories-a-run.json": {
+      "sha256": "1406551a10f560894792c7ab4c0df4abc678a2e31f82d17520f2e9683f532d09",
+      "package_sha256": "37BFF62259DDB3FA81896626853069D923A060192394E9D8267F20FA972BA0AF",
+      "addon_sha256": "59BA9472FEB7C277B10B8F3C2496E591ACBD0E5A1BE83676AC30E1D4E39D23C7",
+      "expected": "CA133 COMPLETE checks=\\d+ failures=0",
+      "matches_final_production": false
+    },
+    "factories-named-a-run.json": {
+      "sha256": "ee67e8b53b9c6df0a257670b572d3ce542d9fa3282110d3a2cffd7e2afffc2e8",
+      "package_sha256": "B252E485CD91F29ED01937175FA79B1064EA11816E7EE8B3BF1E2D0328B0A1D3",
+      "addon_sha256": "7B357C888210AB307D752E634A45A224B0B3C2C3366B0E230FAB324189738966",
+      "expected": "CA133 COMPLETE checks=\\d+ failures=0",
+      "matches_final_production": false
+    },
+    "final-carbine-run.json": {
+      "sha256": "95934bcfa3583e173d0fdc1687d3bf1ec94bbbc4917add70b0ea6e226fe38370",
+      "package_sha256": "DE2C3E709BCE6007B9EC2D9005B7AA6BB23B0246F9E9E22BDAD2E2B3CFB2838D",
+      "addon_sha256": "D406F59ECBEA3F931B752CDD25A1F1DF113A2AFCD19C93F3B84D82CA24F01B00",
+      "expected": "CA133 COMPLETE checks=\\d+ failures=0",
+      "matches_final_production": true
+    },
+    "final-checks-run.json": {
+      "sha256": "035446b6047ff0eb0d95e6091133ca7606b4616cb8dba1ab64738b31d9f53a14",
+      "package_sha256": "DE2C3E709BCE6007B9EC2D9005B7AA6BB23B0246F9E9E22BDAD2E2B3CFB2838D",
+      "addon_sha256": "7E2FEAE582B325E564CF11A3B7023644187813B68787C402153F7AFE74083E16",
+      "expected": "CA133 COMPLETE checks=\\d+ failures=0",
+      "matches_final_production": true
+    },
+    "final-deployment-hub-run.json": {
+      "sha256": "ebf69caad0add94336605b33a87fb5e18aba5d1b9d549228556ce5d1f9de01ce",
+      "package_sha256": "DE2C3E709BCE6007B9EC2D9005B7AA6BB23B0246F9E9E22BDAD2E2B3CFB2838D",
+      "addon_sha256": "DC8570CD51C327D47112E1B4DF50284042F5D674ADCE72A9014E5326EAFCA766",
+      "expected": "CA133 DEPLOYMENT_PERSIST_COMPLETE failures=0",
+      "matches_final_production": true
+    },
+    "final-deployment-reload-run.json": {
+      "sha256": "cb33226b8ae2d4c1865ed11a84db79bd285ef106e2dcad767aa33779cd012645",
+      "package_sha256": "DE2C3E709BCE6007B9EC2D9005B7AA6BB23B0246F9E9E22BDAD2E2B3CFB2838D",
+      "addon_sha256": "DC8570CD51C327D47112E1B4DF50284042F5D674ADCE72A9014E5326EAFCA766",
+      "expected": "CA133 DEPLOYMENT_PERSIST_COMPLETE failures=0",
+      "matches_final_production": true
+    },
+    "final-deployment-save-run.json": {
+      "sha256": "112bc59bdbe0b7f2f7887f3cf9869ce63b20aaa560b59754f6db02aff98281c0",
+      "package_sha256": "DE2C3E709BCE6007B9EC2D9005B7AA6BB23B0246F9E9E22BDAD2E2B3CFB2838D",
+      "addon_sha256": "DC8570CD51C327D47112E1B4DF50284042F5D674ADCE72A9014E5326EAFCA766",
+      "expected": "CA133 DEPLOYMENT_SEEDED",
+      "matches_final_production": true
+    },
+    "final-legacy-hub-run.json": {
+      "sha256": "e7db88e75ecfbe469c3a51d6c542a497b564fa71a176390cc980d6c7ccfacb30",
+      "package_sha256": "B902BDEB914B07575D7C49D75D65B1FD6FBEDAA1D93F5FC7DCF297B7E55EEC8C",
+      "addon_sha256": "D07FE566D5FB9447784F17272D757F3BF831092C64F363D87846B429455DD930",
+      "expected": "CA133 LEGACY_COMPLETE",
+      "matches_final_production": false
+    },
+    "final-legacy-upgrade-run.json": {
+      "sha256": "13fd28341dd92b85192b16321c7ddfdec81d5ce8e976d6991f86656292f5dc53",
+      "package_sha256": "B902BDEB914B07575D7C49D75D65B1FD6FBEDAA1D93F5FC7DCF297B7E55EEC8C",
+      "addon_sha256": "D07FE566D5FB9447784F17272D757F3BF831092C64F363D87846B429455DD930",
+      "expected": "CA133 LEGACY_COMPLETE",
+      "matches_final_production": false
+    },
+    "final-obstruction-run.json": {
+      "sha256": "db94328b0a0c550cd2f5bd190dc7eb483c16b018d46c01b45e5af6b142c52337",
+      "package_sha256": "DE2C3E709BCE6007B9EC2D9005B7AA6BB23B0246F9E9E22BDAD2E2B3CFB2838D",
+      "addon_sha256": "35D7F82C05C7FE86900F252ADCFE8686CDC13E0379C91498B37A05115E13BAB7",
+      "expected": "CA133 OBSTRUCTION_COMPLETE failures=0",
+      "matches_final_production": true
+    },
+    "final-player-shot-run.json": {
+      "sha256": "6f114dacd30ce9a3aa401982e06ec18303c48b8cfa20f9ea372b7b079c491693",
+      "package_sha256": "DE2C3E709BCE6007B9EC2D9005B7AA6BB23B0246F9E9E22BDAD2E2B3CFB2838D",
+      "addon_sha256": "1237E507F694FA0504E74F7D71CA51D099F6945991909F9734B4F56657FBC8F5",
+      "expected": "CA133 PLAYER_VISUAL .*frame=3 magazine=9",
+      "matches_final_production": true
+    },
+    "final-replacement-run.json": {
+      "sha256": "e45ef2c4ddb6bfe762a9677cbeb4b06a504811688de02ab5baec50e41b17dc91",
+      "package_sha256": "DE2C3E709BCE6007B9EC2D9005B7AA6BB23B0246F9E9E22BDAD2E2B3CFB2838D",
+      "addon_sha256": "27513DEA1843B569F45E5BE9CEC0E0AFF6E10640D72260B0A4C93681DCDEA566",
+      "expected": "CA133 REPLACEMENT_COMPLETE elapsed=\\d+ failures=0",
+      "matches_final_production": true
+    },
+    "final-visual-run.json": {
+      "sha256": "2bee2e4b2d71dfa118ed7b0b51dda83f675c49175ab8691f28498055b6c4666c",
+      "package_sha256": "DE2C3E709BCE6007B9EC2D9005B7AA6BB23B0246F9E9E22BDAD2E2B3CFB2838D",
+      "addon_sha256": "1237E507F694FA0504E74F7D71CA51D099F6945991909F9734B4F56657FBC8F5",
+      "expected": "CA133 VISUAL scene=4 ready",
+      "matches_final_production": true
+    },
+    "furniture-a-run.json": {
+      "sha256": "53956d670c52b910b9f248648bc38f6985516421f7a9fd3dc3a43e319c3ff0f9",
+      "package_sha256": "B252E485CD91F29ED01937175FA79B1064EA11816E7EE8B3BF1E2D0328B0A1D3",
+      "addon_sha256": "B55FFCC22F088305329FA1E8D9501C677C2E6E0BA245F712E6923773DE401F17",
+      "expected": "CA133 COMPLETE checks=\\d+ failures=0",
+      "matches_final_production": false
+    },
+    "interiors-a-run.json": {
+      "sha256": "80c61ede9595f2bac6621ecdabc467ba1cbd72664e56cba113a5d9b1e05e85b6",
+      "package_sha256": "DD816D00A7B462753D71DC85726093C5138F4218484A0146BC0D732DC59BC3AB",
+      "addon_sha256": "0CD2FA16BDE24D810CC0B5B8770CA7D8AC9B13C1FE7D4B67A8CB14D57C5EA6D5",
+      "expected": "CA133 COMPLETE checks=\\d+ failures=0",
+      "matches_final_production": false
+    },
+    "manual-smoke-run.json": {
+      "sha256": "314ceaa1ea3a2963aa8cad5b2f34df776f3c808a8921288af18ca483d7369c3a",
+      "package_sha256": "DE2C3E709BCE6007B9EC2D9005B7AA6BB23B0246F9E9E22BDAD2E2B3CFB2838D",
+      "addon_sha256": "8CE28FF4D258C1D99FA226217446319B0F050450CF7DA833E6E1940AD32DE5CA",
+      "expected": "CA133 MANUAL_DATE_SET",
+      "matches_final_production": true
+    },
+    "perf-city-staged-run.json": {
+      "sha256": "0a08cfd598e1756a873aabecc756361d2d95feaff5140714392ad011376470a7",
+      "package_sha256": "DE2C3E709BCE6007B9EC2D9005B7AA6BB23B0246F9E9E22BDAD2E2B3CFB2838D",
+      "addon_sha256": "0FF5135440064DD088EF4247FB0D23D49E07A0EB302F72FA04B8821C34C9A85C",
+      "expected": "CA132 PERFORMANCE COMPLETE",
+      "matches_final_production": true
+    },
+    "perf-legacy-full-run.json": {
+      "sha256": "84ff8101a7ec600dd762f38852e5327ff8306dc0815a13968d34d511d00212da",
+      "package_sha256": "B902BDEB914B07575D7C49D75D65B1FD6FBEDAA1D93F5FC7DCF297B7E55EEC8C",
+      "addon_sha256": "15C2F214D02B00439B4D1EE309A267D409E5FCF82538447513171270312CE313",
+      "expected": "CA132 PERFORMANCE COMPLETE",
+      "matches_final_production": false
+    },
+    "perf-legacy-staged-run.json": {
+      "sha256": "93c19413d13d37fcce90b1c807768222528a3cfcc5f70229373a6e3b9ae64b23",
+      "package_sha256": "B902BDEB914B07575D7C49D75D65B1FD6FBEDAA1D93F5FC7DCF297B7E55EEC8C",
+      "addon_sha256": "15C2F214D02B00439B4D1EE309A267D409E5FCF82538447513171270312CE313",
+      "expected": "CA132 PERFORMANCE COMPLETE",
+      "matches_final_production": false
+    },
+    "perf-volleys-run.json": {
+      "sha256": "e66ae41a955f43bfc26b694b22151225382a7b22ac8a840b8855a2adb0c39193",
+      "package_sha256": "DE2C3E709BCE6007B9EC2D9005B7AA6BB23B0246F9E9E22BDAD2E2B3CFB2838D",
+      "addon_sha256": "6C83D8D66B2F686DD361EDA9FD2143441EC92C79D1FC3A347DBE2FDD053C300E",
+      "expected": "CA133 VOLLEY_COMPLETE",
+      "matches_final_production": true
+    },
+    "route-control-a-run.json": {
+      "sha256": "f8d33cd498c160e37f088376a4469f43ba4d8caeaea747cd54881f2af2e5114d",
+      "package_sha256": "78A33BE566387A2E53939E338C2216A41AF13E98A031AE45C2E20314354DE70F",
+      "addon_sha256": "6D32B5435D73DA200F07F9160B7D4B44EACF2C94914EA639522F1FC6B15370E1",
+      "expected": "CA133 ROUTE_CONTROL_COMPLETE",
+      "matches_final_production": false
+    },
+    "route-control-b-run.json": {
+      "sha256": "e0ca6c9c14ce96ff07b7f2ce952a99f9490d3c4da2b20b65ce8018ee32470b34",
+      "package_sha256": "4361F299E4CAD8F6DC6AE42D8E43D6EA4072614694320D8F0DE9A26BD2F8AB1A",
+      "addon_sha256": "6D32B5435D73DA200F07F9160B7D4B44EACF2C94914EA639522F1FC6B15370E1",
+      "expected": "CA133 ROUTE_PROGRESS tic=14000",
+      "matches_final_production": false
+    },
+    "route-crew-final-b-run.json": {
+      "sha256": "f7e98abe7686ef56efaf3c918adf0b5d2f610a8bce9e2856643f73f051470bd2",
+      "package_sha256": "DE2C3E709BCE6007B9EC2D9005B7AA6BB23B0246F9E9E22BDAD2E2B3CFB2838D",
+      "addon_sha256": "0D205E7207108783A671D7C6A4E6F6F402CECFA62BC45EE4885DA4D793230733",
+      "expected": "CA133 ROUTE_VERIFIED",
+      "matches_final_production": true
+    },
+    "route-delivery-run.json": {
+      "sha256": "fdc715c591056f28f26bdbdd54af404b9a3ad6a0d5ff7cd5246bd2ec780369d3",
+      "package_sha256": "DE2C3E709BCE6007B9EC2D9005B7AA6BB23B0246F9E9E22BDAD2E2B3CFB2838D",
+      "addon_sha256": "0D205E7207108783A671D7C6A4E6F6F402CECFA62BC45EE4885DA4D793230733",
+      "expected": "CA133 ROUTE_VERIFIED",
+      "matches_final_production": true
+    },
+    "route-detour-a-run.json": {
+      "sha256": "00fa5cf8ba668bd410083950822a0d97ce6ac2d5f0bb1d932dcea9175cb7d98d",
+      "package_sha256": "37BFF62259DDB3FA81896626853069D923A060192394E9D8267F20FA972BA0AF",
+      "addon_sha256": "6D32B5435D73DA200F07F9160B7D4B44EACF2C94914EA639522F1FC6B15370E1",
+      "expected": "CA133 ROUTE_CONTROL_COMPLETE",
+      "matches_final_production": false
+    },
+    "route-final-approach-run.json": {
+      "sha256": "a026c07658e6dff0720613487029facd7a7336a778bd5f9120c3ea4258c00b11",
+      "package_sha256": "2AB9DDCFE533F6DB287C4E1DA3414FCA0EB9E509F82B4A9E480010042E51CB41",
+      "addon_sha256": "AE00E381A6DCF708263E33A8A86BFA3C2150BADDB2469D4CAF8490A227D609C0",
+      "expected": "CA133 ROUTE_CONTROL_COMPLETE",
+      "matches_final_production": false
+    },
+    "route-fresh-ground-run.json": {
+      "sha256": "03e770896c59b096bae31bc776d273b27bd563ad9a30bcdd336c991f8482f9eb",
+      "package_sha256": "E1AC51413187424AFEB3A7A0C3856BB09F71FC058F522C40A455DD87997CE2AF",
+      "addon_sha256": "52C705D80E2E6C751CC3AEA0439972D88A1ADE7B2ECD837445F4C780FCCF2A2C",
+      "expected": "CA133 ROUTE_VERIFIED",
+      "matches_final_production": false
+    },
+    "route-fresh-path-run.json": {
+      "sha256": "d3b393e3c0043ab7df0673814d9b87895a8508f3159ed33f519aa7bde474d071",
+      "package_sha256": "4D5923D0D6F2416FB4D33074010A029158A7F7E037261D8F968F38F4BAABC8B3",
+      "addon_sha256": "546C33D5FBE1185FE343C2618D0BA5990AFA8CBFEA4A68B865D0DA77A8C213B7",
+      "expected": "CA133 ROUTE_PROGRESS tic=21000",
+      "matches_final_production": false
+    },
+    "route-lateral-run.json": {
+      "sha256": "7f1e8bee675a158358f840dedc2ea5fe679b910bea760921e7f23e64521524fe",
+      "package_sha256": "AB7BD6BEA6CD016F430C870035566A58B6D9798DCAF7E69F459AF4BE85296BCE",
+      "addon_sha256": "AE00E381A6DCF708263E33A8A86BFA3C2150BADDB2469D4CAF8490A227D609C0",
+      "expected": "CA133 ROUTE_CONTROL_COMPLETE",
+      "matches_final_production": false
+    },
+    "route-native-edge-run.json": {
+      "sha256": "cdacfa2fc3ca2089c18f65863602b73a725ea8325e9a2180db29ed6efa743321",
+      "package_sha256": "35827EC412673E1B906D7D6E178657E8B3E2F956D78E9E55542735AE7F60DFEB",
+      "addon_sha256": "3858A801BABC56557F1E94DFEFFA5CC2553075CEE51140D18F2B915C50253E5D",
+      "expected": "CA133 ROUTE_VERIFIED",
+      "matches_final_production": false
+    },
+    "route-path-d-run.json": {
+      "sha256": "6a204785171f4dac467ea4b4037b42ed9baceac0f511852c95a5f05b121707db",
+      "package_sha256": "53CC8CB9CEF3797631FBC9B402FEB96905096B30B1D7250081B438A179708A07",
+      "addon_sha256": "6D32B5435D73DA200F07F9160B7D4B44EACF2C94914EA639522F1FC6B15370E1",
+      "expected": "CA133 ROUTE_CONTROL_COMPLETE",
+      "matches_final_production": false
+    },
+    "route-path-diag-run.json": {
+      "sha256": "7107d0181823bd8801d98c3ffe2d0bb909b73301a13e6653abebeddda8e6e9d7",
+      "package_sha256": "53CC8CB9CEF3797631FBC9B402FEB96905096B30B1D7250081B438A179708A07",
+      "addon_sha256": "546C33D5FBE1185FE343C2618D0BA5990AFA8CBFEA4A68B865D0DA77A8C213B7",
+      "expected": "CA133 ROUTE_CONTROL_COMPLETE",
+      "matches_final_production": false
+    },
+    "route-path-fixed-run.json": {
+      "sha256": "0d46a1cf6d0247248cb375cf0ac3fd820ace54f475b612ce76c7bbcd2edf9b9c",
+      "package_sha256": "4393BE1EE5C9515AC53F3BD6AF297000FD0D60AE118F4A1452F98A6F6CCF2C8A",
+      "addon_sha256": "546C33D5FBE1185FE343C2618D0BA5990AFA8CBFEA4A68B865D0DA77A8C213B7",
+      "expected": "CA133 ROUTE_PROGRESS tic=17500",
+      "matches_final_production": false
+    },
+    "route-path-resume-run.json": {
+      "sha256": "1d85e8d75bb584de9e1c29aced3e2388fdb92dbb2b4333d6fb24937dbe252bc0",
+      "package_sha256": "D0B0C73FCA082CD988544E580313008194497064A69B64F8C79DD30775A0ED7E",
+      "addon_sha256": "546C33D5FBE1185FE343C2618D0BA5990AFA8CBFEA4A68B865D0DA77A8C213B7",
+      "expected": "CA133 ROUTE_CONTROL_COMPLETE",
+      "matches_final_production": false
+    },
+    "route-precision-run.json": {
+      "sha256": "d7500758ff925709dcea43b7ae04320fd47e7c72813467cff2a3c341e2862491",
+      "package_sha256": "0E9D7D79D82EE9AA6A58109ADAB4C5083EA2235D3DB30494091733AAE40B7680",
+      "addon_sha256": "4F266B790E2FF5A7A1CBAD58548E21B677CE3AEA41FD9F2D7AB310BFC317057E",
+      "expected": "CA133 ROUTE_CONTROL_COMPLETE",
+      "matches_final_production": false
+    },
+    "route-resume-a-run.json": {
+      "sha256": "3dd7ba02857fc2df0d85320dc6d2799a003f21de9928c61749076aec1dd1abb2",
+      "package_sha256": "8320A20165D2728558D56D6F2A045EABB8C0FC1174DDE15817F3CAD249A192E9",
+      "addon_sha256": "6D32B5435D73DA200F07F9160B7D4B44EACF2C94914EA639522F1FC6B15370E1",
+      "expected": "CA133 ROUTE_CONTROL_COMPLETE",
+      "matches_final_production": false
+    },
+    "route-yield-a-run.json": {
+      "sha256": "6a00db8cb09083215ce4f6909ca99bacaf2955f8b54719fa868d86475ea3e0e1",
+      "package_sha256": "5FA15ACD86D4759CBCFB764DDDAE35FC27A3EBEF28F869F7A8EC49D967D95D30",
+      "addon_sha256": "6D32B5435D73DA200F07F9160B7D4B44EACF2C94914EA639522F1FC6B15370E1",
+      "expected": "CA133 ROUTE_CONTROL_COMPLETE",
+      "matches_final_production": false
+    },
+    "route-yield-b-run.json": {
+      "sha256": "e60d8f5278a12a90304ac9217233767767780c34a30aa8c445a37c78634522fc",
+      "package_sha256": "711D0AE25831E752C09F904D68F82FA283ECD9E9D4CEF6400983B1149B8B52CE",
+      "addon_sha256": "6D32B5435D73DA200F07F9160B7D4B44EACF2C94914EA639522F1FC6B15370E1",
+      "expected": "CA133 ROUTE_CONTROL_COMPLETE",
+      "matches_final_production": false
+    },
+    "routes-compile-a-run.json": {
+      "sha256": "2490304ca132913350d6dbecabe148ff5e890957d85c6fe218752b7498324507",
+      "package_sha256": "F8ECBAA8539DC2698B30BB8D3765F9587F81164BD3D38654A28206B90F053314",
+      "addon_sha256": "0CD2FA16BDE24D810CC0B5B8770CA7D8AC9B13C1FE7D4B67A8CB14D57C5EA6D5",
+      "expected": "CA133 COMPLETE checks=\\d+ failures=0",
+      "matches_final_production": false
+    },
+    "routing-probe-a-run.json": {
+      "sha256": "083778955c0c99277e1fac6576c8e24ab3ff91e2a76f7dfda8dba7a80701245a",
+      "package_sha256": "E99298A22228311277186037FB2CDD229F1F85E41273409F368226707E9B527F",
+      "addon_sha256": "C8D6470C90F8D7A30F0686C206E6B21F2C0837776EE64F425B33BA187C688409",
+      "expected": "CA133 MOVE",
+      "matches_final_production": false
+    },
+    "routing-probe-b-run.json": {
+      "sha256": "b715b516168eae85030f7262ae600e8a333174544463db2b78037e78447ed4d4",
+      "package_sha256": "0C6DBC96869B29AD6E24A1707AB3A22C35FC5325B0AAE0C404D65EC3B32401F7",
+      "addon_sha256": "9DB1BD8845AFFA74A8C9C90CC1558EF9A606F7A353ACA47253B9885E9D8539C0",
+      "expected": "CA133 TRYMOVE",
+      "matches_final_production": false
+    },
+    "trade-final-a-run.json": {
+      "sha256": "bb9ac0077f700e15b5763504833df499b45a7d8eb27dca8a9795765075ea7645",
+      "package_sha256": "37BFF62259DDB3FA81896626853069D923A060192394E9D8267F20FA972BA0AF",
+      "addon_sha256": "EF88A72322DC1E70FC2B2A1D8DE7E175AE58C1CA3C77805215728B39B1B1D9B7",
+      "expected": "CA133 COMPLETE checks=\\d+ failures=0",
+      "matches_final_production": false
+    },
+    "trade-hub-a-run.json": {
+      "sha256": "b1ce78f7827280052e7c82be7441050d80ee47319e10ef4cc1f5f87c2ada7b6d",
+      "package_sha256": "B252E485CD91F29ED01937175FA79B1064EA11816E7EE8B3BF1E2D0328B0A1D3",
+      "addon_sha256": "9FEDD900143F0DA6ABCAEFCD301293144642B6CC5D7E47042D4944053834FC7B",
+      "expected": "CA133 PERSIST_COMPLETE",
+      "matches_final_production": false
+    },
+    "trade-persistence-b-run.json": {
+      "sha256": "f84fdeaa21d8e71c172a6e94d126605ff75a52d321fc4853fec54bc5b35a8092",
+      "package_sha256": "9AE4CDFFBE4C079C0F3E03114214F13C93F6E3E086941FBFF8AFA67824FEA92D",
+      "addon_sha256": "9FEDD900143F0DA6ABCAEFCD301293144642B6CC5D7E47042D4944053834FC7B",
+      "expected": "CA133 COMPLETE checks=\\d+ failures=0",
+      "matches_final_production": false
+    },
+    "trade-pickup-a-run.json": {
+      "sha256": "02661ec7659c70f3fee2b357d76550a26e43fdd5b831a61ebe4a997f24974009",
+      "package_sha256": "711D0AE25831E752C09F904D68F82FA283ECD9E9D4CEF6400983B1149B8B52CE",
+      "addon_sha256": "EF88A72322DC1E70FC2B2A1D8DE7E175AE58C1CA3C77805215728B39B1B1D9B7",
+      "expected": "CA133 COMPLETE checks=\\d+ failures=0",
+      "matches_final_production": false
+    },
+    "trade-reload-a-run.json": {
+      "sha256": "b737e9af708ae7bc6d5f1027b2a1dffe6fd10feda45e1c9dd169f83f9d0abf65",
+      "package_sha256": "B252E485CD91F29ED01937175FA79B1064EA11816E7EE8B3BF1E2D0328B0A1D3",
+      "addon_sha256": "9FEDD900143F0DA6ABCAEFCD301293144642B6CC5D7E47042D4944053834FC7B",
+      "expected": "CA133 PERSIST_COMPLETE",
+      "matches_final_production": false
+    },
+    "ui-shop-es-a-run.json": {
+      "sha256": "affdbd5db5c2eb3400773805bdd38322b274ecb875ab045b42cd923662856532",
+      "package_sha256": "B252E485CD91F29ED01937175FA79B1064EA11816E7EE8B3BF1E2D0328B0A1D3",
+      "addon_sha256": "0E0B64A52CCC739D31B40DFF2F8F38F3AFBDF93F7D6A81A25FBB2C09119CDCF5",
+      "expected": "CA133 VISUAL scene=0 ready",
+      "matches_final_production": false
+    },
+    "visual-sweep-a-run.json": {
+      "sha256": "597ffdcdaadd37122b7d56d5036550f630a6a46b3c96b5e1f785bab0cefd0edc",
+      "package_sha256": "B252E485CD91F29ED01937175FA79B1064EA11816E7EE8B3BF1E2D0328B0A1D3",
+      "addon_sha256": "0E0B64A52CCC739D31B40DFF2F8F38F3AFBDF93F7D6A81A25FBB2C09119CDCF5",
+      "expected": "CA133 PLAYER_VISUAL",
+      "matches_final_production": false
+    },
+    "visual-sweep-b-run.json": {
+      "sha256": "f1951bc549c21f91bffc37aa8cb937e6353156432bf0f9e37d7bfca23f5aef7b",
+      "package_sha256": "B252E485CD91F29ED01937175FA79B1064EA11816E7EE8B3BF1E2D0328B0A1D3",
+      "addon_sha256": "0E0B64A52CCC739D31B40DFF2F8F38F3AFBDF93F7D6A81A25FBB2C09119CDCF5",
+      "expected": "CA133 PLAYER_VISUAL",
+      "matches_final_production": false
+    },
+    "visual-sweep-c-run.json": {
+      "sha256": "4653b0134c3f4602404f54148b9d7bb1b3470e56769807f64c372d9149b09159",
+      "package_sha256": "D0B0C73FCA082CD988544E580313008194497064A69B64F8C79DD30775A0ED7E",
+      "addon_sha256": "9BCCE9B8B1E3B801BE9D242557D0A0913EC4E06D61D1426C6AB0EE854893C805",
+      "expected": "CA133 VISUAL scene=4 ready",
+      "matches_final_production": false
+    },
+    "volley-cause-run.json": {
+      "sha256": "76988e508139249c6491bb5ef4e3a8796b61a8a7a4772414c51cfccf2573ceb2",
+      "package_sha256": "DE2C3E709BCE6007B9EC2D9005B7AA6BB23B0246F9E9E22BDAD2E2B3CFB2838D",
+      "addon_sha256": "6C83D8D66B2F686DD361EDA9FD2143441EC92C79D1FC3A347DBE2FDD053C300E",
+      "expected": "CA133 VOLLEY tic=1435",
+      "matches_final_production": true
+    }
+  },
+  "native_visual_captures": {
+    "final-visual-home.png": {
+      "sha256": "62f346ccb6be81fd9a635342ca6abd8c43fcbe6d96d8844230983a027417add2",
+      "retained": true
+    },
+    "final-visual-player-after-fire.png": {
+      "sha256": "0e366a2bceef3dc4588d50fe53bc9562a5dd8f77683c754250fd8a0c3f4c2725",
+      "retained": false
+    },
+    "final-visual-player-crouch.png": {
+      "sha256": "286aca3b4fc62c45cf3e0de8e9738114477c4e8696737ca5f7523aa1de59fa24",
+      "retained": true
+    },
+    "final-visual-player-fire.png": {
+      "sha256": "ee82a763d23b2acb6698a0060fa1a35f99eaebf69456cb5122475d310cbba318",
+      "retained": true
+    },
+    "final-visual-player-idle.png": {
+      "sha256": "4d66423ae5869b9a0a0bb13ef97c911a8696f3db88373d64e0b7bf78a585ed1c",
+      "retained": false
+    },
+    "final-visual-player-reloaded.png": {
+      "sha256": "03488c2a11e773628f19fe320e7cb4eb97920d195d6e686ad742c553f8178895",
+      "retained": false
+    },
+    "final-visual-player-sword.png": {
+      "sha256": "519de86896f928b83979856260000023198baaabd7d4c45a14d5346618a50b58",
+      "retained": true
+    },
+    "final-visual-pose-0-0.png": {
+      "sha256": "c071d8b3d27651870e1e58c23001ce211de55750de26695451f7701f0e0190d3",
+      "retained": true
+    },
+    "final-visual-pose-0-1.png": {
+      "sha256": "5cb9b794008e6afa9655b41efb2dcea5c177ea7dc50601d9deb14667e52bf337",
+      "retained": true
+    },
+    "final-visual-pose-0-2.png": {
+      "sha256": "b42bda02fbc84e1d4bfd49c30b591307e4c47ec2f4a0a56b2b4ba4b783c976ce",
+      "retained": true
+    },
+    "final-visual-pose-0-3.png": {
+      "sha256": "817e477d71a639b49734cc779087a472971821b44c88dc824c7c400ed1b3fede",
+      "retained": true
+    },
+    "final-visual-pose-0-4.png": {
+      "sha256": "e9ea4df3990c77d4824e3c8d07bd6760c3e89448df4cc52aa8b71f5266b2f76e",
+      "retained": true
+    },
+    "final-visual-pose-0-5.png": {
+      "sha256": "8dcb02df11d5c195bf6e3117a2b8d03db468480d2bcd9b4efe3f6454167a5f42",
+      "retained": true
+    },
+    "final-visual-pose-0-6.png": {
+      "sha256": "102a3300b685c11bad1d97760b8de69ea345ca1ad5714d24b56472e4b88d8f84",
+      "retained": true
+    },
+    "final-visual-pose-0-7.png": {
+      "sha256": "4a03f1bd77eeefea994f0c75b06942c2f58673be578de967c93663839b955147",
+      "retained": true
+    },
+    "final-visual-pose-1-0.png": {
+      "sha256": "8b3583a472dadcfca83dce64d09a097426949cbb7b577c2509cea2542b486ef1",
+      "retained": true
+    },
+    "final-visual-pose-1-1.png": {
+      "sha256": "865f53d6b97d11d9932b9ff68bca86c028aa35cb1322e8dad63921a2c755cef0",
+      "retained": false
+    },
+    "final-visual-pose-1-2.png": {
+      "sha256": "2c2e3eb9cb5d30e5b063b0d192652e681b086044ab88f8a4f1b166b2554daa91",
+      "retained": false
+    },
+    "final-visual-pose-1-3.png": {
+      "sha256": "6d489d009697cd4a47d148f3791d5506e0e1dacf451f3135de16e77e8aa5910d",
+      "retained": false
+    },
+    "final-visual-pose-1-4.png": {
+      "sha256": "83299d1171c268711feddc7fac2fc0d34cea0028f92afb96d5173d6e345a0de0",
+      "retained": false
+    },
+    "final-visual-pose-1-5.png": {
+      "sha256": "18965f8f2c18b29928bc82e105c0b444031473382dda89877f5283f3fc6462e2",
+      "retained": false
+    },
+    "final-visual-pose-1-6.png": {
+      "sha256": "e1e3b6dc001938ec9be0c787df7d112394fe85104617f293950bbd5261ac93ca",
+      "retained": false
+    },
+    "final-visual-pose-1-7.png": {
+      "sha256": "208b5b6dead564621d17f63f89221f08d0e4e5dca42760aab62cb68654fdfc62",
+      "retained": false
+    },
+    "final-visual-pose-2-0.png": {
+      "sha256": "0b1e215c07f2ba375270fdd2201deb0366195ae34107f7b316a077447118ee67",
+      "retained": true
+    },
+    "final-visual-pose-2-1.png": {
+      "sha256": "81af41f117722998934b89f2c9044cfd903607938273b00d0f9a673a95797531",
+      "retained": false
+    },
+    "final-visual-pose-2-2.png": {
+      "sha256": "a0da5f6ba04a0a558d193a10107db608a5209f99ddd1b3c897b258b4bb444d6a",
+      "retained": false
+    },
+    "final-visual-pose-2-3.png": {
+      "sha256": "37866262ab32bfc48d1c50146cc70d5070e755040f5380e18e7301019ee48ce4",
+      "retained": false
+    },
+    "final-visual-pose-2-4.png": {
+      "sha256": "a8804f0c906bf88899977150488e1dbad60691d87ffa268524044e8355430054",
+      "retained": false
+    },
+    "final-visual-pose-2-5.png": {
+      "sha256": "aa50ba2cfed454c96a52f166d35a97347fcfa90eec375bb0868de4e9c7be8ed0",
+      "retained": false
+    },
+    "final-visual-pose-2-6.png": {
+      "sha256": "9cefc2f9ae7a534c5cab7880d9e5c0562831d4b1618bd18263170cd7e425318d",
+      "retained": false
+    },
+    "final-visual-pose-2-7.png": {
+      "sha256": "d65ecd6cde3668570f11aefde0f7eec15238c8c882991efc9318ba75eac29115",
+      "retained": false
+    },
+    "final-visual-pose-3-0.png": {
+      "sha256": "3ba246485c8d6376234d4b804c628bf678e742eb1fe34b0e47c824ac3023db63",
+      "retained": true
+    },
+    "final-visual-pose-3-1.png": {
+      "sha256": "375b3d73f42562113d316537960918192a85e6ad7f0f6d62ab5e93312a47c2e4",
+      "retained": false
+    },
+    "final-visual-pose-3-2.png": {
+      "sha256": "f8147477da2f44acf4d69666b8b52d4a5b274510c46fb938cb10639ddcadbd2b",
+      "retained": true
+    },
+    "final-visual-pose-3-3.png": {
+      "sha256": "b2f802396607f0930c41325c59457a6950a73e5cec76e3d70dbb42c116a7141b",
+      "retained": false
+    },
+    "final-visual-pose-3-4.png": {
+      "sha256": "966d11503e52caddf2a9937e053db0b8a4e87e2269677be4b6fe611515fba0a1",
+      "retained": true
+    },
+    "final-visual-pose-3-5.png": {
+      "sha256": "0947c9f494da45af7c466de1205cc28ff64e9f0b73cbb680cc6fc050310a0660",
+      "retained": false
+    },
+    "final-visual-pose-3-6.png": {
+      "sha256": "14a1600996997cf7f9ed64fc687f1f554a366039fe69407f6d3a739e05ef62ea",
+      "retained": true
+    },
+    "final-visual-pose-3-7.png": {
+      "sha256": "6b9d001e2c72c3d464165abffab58887b3ac04310ccdcbf713dfdf7acd7566d3",
+      "retained": false
+    },
+    "final-visual-pose-4-0.png": {
+      "sha256": "7e07a3825e42ba0b273925a05e95f471a814f069efc52ff75e1a3c16f5b5cf8e",
+      "retained": true
+    },
+    "final-visual-pose-4-1.png": {
+      "sha256": "c48f38a4ffc529f0474a83b6ce4fa4d8afb01ba274499edc232882996cdc171c",
+      "retained": false
+    },
+    "final-visual-pose-4-2.png": {
+      "sha256": "484eba0eddfa31a28764676925390f7945336da55bf619cc701677c3002c37b1",
+      "retained": false
+    },
+    "final-visual-pose-4-3.png": {
+      "sha256": "5ce4f1cc7fcf9171299c523be6039068b551f2b6cc21fa0478ff53cd6765d25c",
+      "retained": false
+    },
+    "final-visual-pose-4-4.png": {
+      "sha256": "eb19b9afa76532d320b3c99e809efb11d86db2de2e72b7e48741be47d4971021",
+      "retained": false
+    },
+    "final-visual-pose-4-5.png": {
+      "sha256": "2d28921e08eccab98ff2654e836f63445eecb3042e899ece3b97a51ea9e564a4",
+      "retained": false
+    },
+    "final-visual-pose-4-6.png": {
+      "sha256": "eab8989f4198092e66b4422e918c258d7294d654b6d4c26598bb96176c5785b0",
+      "retained": false
+    },
+    "final-visual-pose-4-7.png": {
+      "sha256": "f4894a08a7d67a6b82720fc1affdb57ae7b2736d3e9f1016a2b1a095307e19db",
+      "retained": false
+    },
+    "final-visual-pose-5-0.png": {
+      "sha256": "8937fe59f5a00233c7ab86a805e0270b0a9e1052e8f0e6d4d2c933ae26280caa",
+      "retained": true
+    },
+    "final-visual-pose-5-1.png": {
+      "sha256": "71fe539b608d80e050319f81db9dc7327597cf8e01b027e5f00fd0ded9a8c607",
+      "retained": false
+    },
+    "final-visual-pose-5-2.png": {
+      "sha256": "f6f2b398097cfc0173a0c011f5bd34e8ed20238b2997a9058873d5a256bc2d40",
+      "retained": false
+    },
+    "final-visual-pose-5-3.png": {
+      "sha256": "77ebdc0ac5a90035c4a7eab31b1dda1701d9da764998b095f26501f26ad29d4a",
+      "retained": false
+    },
+    "final-visual-pose-5-4.png": {
+      "sha256": "81eabe4b34de99e424487aa269307d6b304cf6d6048480aa8e20ce41514f66a6",
+      "retained": false
+    },
+    "final-visual-pose-5-5.png": {
+      "sha256": "c40db9359af78a37d24a8ba54330f5d7f325a48833cf6f3b3a131cc0828a3bc1",
+      "retained": false
+    },
+    "final-visual-pose-5-6.png": {
+      "sha256": "0e915f90dac2ff2885a090af12a177af64f16d38fbc18c7f0d101d885b52cfae",
+      "retained": false
+    },
+    "final-visual-pose-5-7.png": {
+      "sha256": "688b0a8f8b38d14b0d650e981087ff72e8bb376194aee6d980543ca9973cd25b",
+      "retained": false
+    },
+    "final-visual-shop-en.png": {
+      "sha256": "48322c543256150055fc7b03253556a56d79b4e365a94f52e156a1f648ad5fb9",
+      "retained": true
+    },
+    "final-visual-shop-first.png": {
+      "sha256": "694714986cec2413bd2d0f0ebdc5862b51fe9834797238178474fb7620b8ff93",
+      "retained": true
+    },
+    "final-visual-shop-last.png": {
+      "sha256": "6968bc8a114446da3627adae904fd6a9a9c8b43b634692d00b528dfe6eea9c06",
+      "retained": true
+    },
+    "final-visual-shop-no-money.png": {
+      "sha256": "2ac0756e267f030935c19b95acd4867d0e804d35c00392b45ce011ea7a0a878c",
+      "retained": false
+    },
+    "final-visual-shop-sell.png": {
+      "sha256": "0ba213de758ff03fcf1a48a228156a6e66675d9d8592651894e953d11e0cf47b",
+      "retained": false
+    }
+  },
+  "implementation_commit": "f4c2bdfe",
+  "committed_runtime_binding": {
+    "src/LANGUAGE": {
+      "git_blob_sha256": "66b66c966b3dfdea545283c7f026d855a62b8c5a053605d8e78439ab80c68df5",
+      "working_tree_equivalence": "CRLF/LF only"
+    },
+    "src/TEXTURES": {
+      "git_blob_sha256": "c2d61927d26bd6a5fa5d413a08cd34e8296019f52117ca174ad0be0bc360b27d",
+      "working_tree_equivalence": "CRLF/LF only"
+    },
+    "src/ZSCRIPT": {
+      "git_blob_sha256": "7fa7f7c8967d45381e8931cb1efa85c3b21800c765984f46bcf974a52759f4ef",
+      "working_tree_equivalence": "CRLF/LF only"
+    },
+    "src/caelum/core/CaelumConstants.zs": {
+      "git_blob_sha256": "359bdbe092dc5dbdfd6e15f3e5af229aa8f99374599a2abf4a93366323ed0c5c",
+      "working_tree_equivalence": "CRLF/LF only"
+    },
+    "src/caelum/equipment/CaelumCityTrade.zs": {
+      "git_blob_sha256": "2ed05342dcfb04805bfd72503a2e3f31c5c6f0d6db354fa6eb16f90956c05eaa",
+      "working_tree_equivalence": "exact"
+    },
+    "src/caelum/equipment/CaelumEconomy.zs": {
+      "git_blob_sha256": "6183995d604a7699ebbfa384bca75f0f4766fc951b07e347117fb4e86139a6b0",
+      "working_tree_equivalence": "CRLF/LF only"
+    },
+    "src/caelum/equipment/CaelumEquipmentPickups.zs": {
+      "git_blob_sha256": "78a478f36633bc22d77413057549a7195b47f74f58dfadb89492c4aaf2b69404",
+      "working_tree_equivalence": "CRLF/LF only"
+    },
+    "src/caelum/equipment/CaelumPlayableWeapons.zs": {
+      "git_blob_sha256": "729f3ba915b8e73e777dd3704581896df5add79fc9226ecff4b91ec696db0715",
+      "working_tree_equivalence": "CRLF/LF only"
+    },
+    "src/caelum/equipment/CaelumRangedRules.zs": {
+      "git_blob_sha256": "35850178253d82ddcf8376e6a71eff9c9574d5b5689d9bb03c78bbc138426ebb",
+      "working_tree_equivalence": "exact"
+    },
+    "src/caelum/hud/CaelumJournalOverlay.zs": {
+      "git_blob_sha256": "c0289b71af7f9efdfafccda8cebce0ced09af2e66406a803ea6f1f8eee16ecaa",
+      "working_tree_equivalence": "CRLF/LF only"
+    },
+    "src/caelum/player/CaelumPlayer.zs": {
+      "git_blob_sha256": "cc9b57b83607c8d7e95e452103c04094b9e6bf9244c8f9d32deb3fa08423690b",
+      "working_tree_equivalence": "CRLF/LF only"
+    },
+    "src/caelum/world/CaelumCityData.zs": {
+      "git_blob_sha256": "a550b41b5316fa513298ff934df2968ced8a38f2c20a8cdaadc0c34c128b627c",
+      "working_tree_equivalence": "CRLF/LF only"
+    },
+    "src/caelum/world/CaelumCityNavigation.zs": {
+      "git_blob_sha256": "cd67195b41a3944eb1b28f1599186fb443c83bfb118c23f8abe75637b5d62f88",
+      "working_tree_equivalence": "CRLF/LF only"
+    },
+    "src/caelum/world/CaelumCityRoutes.zs": {
+      "git_blob_sha256": "2f94116d39c0869b465342884ffd58ffa9c3f9130f58a7f8d0c4345dbc2854e3",
+      "working_tree_equivalence": "CRLF/LF only"
+    },
+    "src/caelum/world/CaelumCityWorld.zs": {
+      "git_blob_sha256": "0a147b72959a3d163d90560649e53f0452b1b8517843865499e370175983e8ab",
+      "working_tree_equivalence": "exact"
+    },
+    "src/caelum/world/CaelumDining.zs": {
+      "git_blob_sha256": "7ac89bf95bba9a7c8f3cf26fa58e01f5b260c5fe9b603b910ad8b85ddf4805d5",
+      "working_tree_equivalence": "CRLF/LF only"
+    },
+    "src/caelum/world/CaelumPhysicalHazards.zs": {
+      "git_blob_sha256": "cb16e70a0410816e2edfa1d0762683597115c94a34588ba8bbe5ea6610c12154",
+      "working_tree_equivalence": "CRLF/LF only"
+    },
+    "src/caelum/world/CaelumPortDefender.zs": {
+      "git_blob_sha256": "a5b87b6067bbebd44f8bac3bc048bb2b34d4d2c8e90a0f3ffe7b230b43cda9cd",
+      "working_tree_equivalence": "CRLF/LF only"
+    },
+    "src/caelum/world/CaelumPortSiege.zs": {
+      "git_blob_sha256": "31ee7cbb6a81e7f850d62bf9cff1b44e33a09d7d2b5da88842d40595f9178ec1",
+      "working_tree_equivalence": "CRLF/LF only"
+    },
+    "src/caelum/world/CaelumSewerMaze.zs": {
+      "git_blob_sha256": "03f488dd88e85033997b4253e774453639814e5085bc3a71ff6bef1bfcec0a11",
+      "working_tree_equivalence": "CRLF/LF only"
+    },
+    "src/graphics/caelum/carbine_world.textures": {
+      "git_blob_sha256": "2f8460edfb744b1aa726736471272674de8161b15e811f264e3c2bbb068ffab6",
+      "working_tree_equivalence": "CRLF/LF only"
+    },
+    "src/maps/MAP06.wad": {
+      "git_blob_sha256": "8d62ef32ad584ed43e21613bc216cdfac4423469481eba8ce594da3e0b3ed26c",
+      "working_tree_equivalence": "exact"
+    },
+    "src/sprites/caelum/carbine_world/atlas.png": {
+      "git_blob_sha256": "6d703f2b8c3da2c114c25bc22e4296fe5eb1a0bef8816ef83cee603a4c7b5930",
+      "working_tree_equivalence": "exact"
+    }
+  },
+  "supplemental_single_shot_capture": {
+    "name": "final-player-shot-player-single-shot.png",
+    "sha256": "e5a0d88dd5e9545a9876c0c7ebbcaec6d28393e840b1a739ce087abfe237357b"
+  },
+  "verified_probe_packages": {
+    "checks.pk3": "7e2feae582b325e564cf11a3b7023644187813b68787c402153f7afe74083e16",
+    "routes.pk3": "0d205e7207108783a671d7c6a4e6f6f402cecfa62bc45ee4885da4d793230733",
+    "trade.pk3": "9fedd900143f0da6abcaefcd301293144642b6cc5d7e47042d4944053834fc7b",
+    "carbine.pk3": "d406f59ecbea3f931b752cdd25a1f1df113a2afcd19c93f3b84d82ca24f01b00",
+    "factories.pk3": "7b357c888210ab307d752e634a45a224b0b3c2c3366b0e230fab324189738966",
+    "visual.pk3": "1237e507f694fa0504e74f7d71ca51d099f6945991909f9734b4f56657fbc8f5",
+    "furniture.pk3": "b55ffcc22f088305329fa1e8d9501c677c2e6e0ba245f712e6923773de401f17",
+    "obstruction.pk3": "35d7f82c05c7fe86900f252adcfe8686cdc13e0379c91498b37a05115e13bab7",
+    "legacy.pk3": "d07fe566d5fb9447784f17272d757f3bf831092c64f363d87846b429455dd930",
+    "deployment.pk3": "dc8570cd51c327d47112e1b4df50284042f5d674adce72a9014e5326eafca766",
+    "manual.pk3": "8ce28ff4d258c1d99fa226217446319b0f050450cf7da833e6e1940ad32de5ca",
+    "observer.pk3": "15c2f214d02b00439b4d1ee309a267d409e5fcf82538447513171270312ce313",
+    "combined.pk3": "0ff5135440064dd088ef4247fb0d23d49e07a0eb302f72fa04b8821c34c9a85c",
+    "volleys.pk3": "6c83d8d66b2f686dd361eda9fd2143441ec92c79d1fc3a347dbe2fdd053c300e",
+    "replacement/routes.pk3": "27513dea1843b569f45e5be9cec0e0aff6e10640d72260b0a4c93681dcdea566"
+  },
+  "qualification": "Per-run package hashes identify earlier component builds. Final source reuse is explained in RESULTS.md; a completed exploratory counter is not an acceptance pass."
+}

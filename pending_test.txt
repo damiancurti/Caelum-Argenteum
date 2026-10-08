@@ -37,3 +37,16 @@ soldiers reload real magazines without physical infinite ammo stacks. This is
 author visual/gameplay acceptance, not a claim of stable full-battle 35 tics/s
 and 30 presented FPS. The default fixture uses #132's staged attack; a separate
 fresh launch with -Staged 0 retains the full-army alternative.
+
+CA133-03 | 5.1.3 | Issue #133 | Sweating and post-exertion cooling
+Prerequisites: the same fresh session as CA133-01; a carbine and finite ammunition.
+Steps: observe Thermal and Thirst before and after firing several rounds. Stop
+and allow cooling; inspect equipment wetness, then compare a sheltered location
+and an exposed one. Save/reload while wet and continue observing. Recover Air
+without firing, running or blocking, distinguishing passive thirst/sweat from
+the regeneration itself.
+Expected: shots retain action heat; positive exposure can produce sweat that
+costs actual Thirst and wets clothing. Evaporation continues after exertion;
+wet-clothing cold remains possible. Save/load preserves accumulated state.
+Air recovery itself consumes no Thirst. This check does not presume that the
+existing per-shot heat is a balanced sustained-fire profile.

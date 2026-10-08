@@ -13,7 +13,9 @@ it, then rebuild with `run_dev.bat` as described below.
 64 independent shops and 600 housed soldiers. The siege starts on 15 November
 1889 at 13:00; surviving soldiers walk to their posts and use normal carbine
 magazines with infinite reserve. Original world sprites also follow the player's
-equipped carbine. [Native evidence](assets/validation_513/RESULTS.md) and
+equipped carbine. The authorized extension adds regulated humanoid sweating,
+finite hydration and coupled travel water forecasts; carbine action heat remains.
+[Native evidence](assets/validation_513/RESULTS.md) and
 [outstanding author checks](pending_test.txt) distinguish validation from acceptance.
 For a save that already visited the 5.1.2 southern city, build with
 `-LegacyMap06SouthCity`; keep the original package/save pair for rollback.

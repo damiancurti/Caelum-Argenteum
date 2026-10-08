@@ -18,9 +18,16 @@ The author sets the shop/pricing and calendar decisions recorded in SYSTEMS.
 Follow-up design finding from #133: the unchanged #130 action-heat profile makes
 the 600-body continuous-fire control stop at 14 shots and one reload per soldier;
 all then die from thermal damage by tic 1400. HEAT_LIMIT.json confirms the native
-state and cause. Sustained firearm combat needs an explicit thermal calibration
-decision; no soldier exemption, resource refill or approved balance change was
-silently introduced. This remains a limitation for author review.
+state and cause. The author subsequently approved surface-scaled sweating and
+actual water loss, retaining carbine heat rather than exempting firearms.
+The first new native control retains 600 living soldiers at tic 3500 but exposes
+post-exertion cold from wet clothing. Do not equate added cooling with accepted
+sustained-fire balance. The sweat extension passes native math/provisions,
+persistence/migration and carbine checks; final combined simulation/render rates
+are 31.21/5.57, with 598 surviving defenders and a different workload from the
+pre-sweat control. The requested half-Health Hunger cost for Air/Anima awaits
+per-bar/per-point clarification and NPC Hunger scope. No unconfirmed food-cost
+value has been applied. Agent validation is distinct from CA133-01/02/03 acceptance.
 
 ## Issue #132 - Staged siege performance test (5.1.2)
 

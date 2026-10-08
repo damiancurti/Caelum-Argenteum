@@ -37,7 +37,7 @@ $raw = [IO.File]::ReadAllText((Join-Path $work "$Label.txt"))
 if ($raw -match 'This savegame needs these files:|Not in a saveable game.|Script error,|VM execution aborted|Unable to resolve all fields|DIED WITH FATAL ERROR|Unknown command|CA133 FAIL') { throw "Native error in completed log: $Label" }
 if ($raw -notmatch $Expected) { throw "Missing expected completion in $Label" }
 if ($MinimumTic -gt 0) {
-    $ticks = @([regex]::Matches($raw, 'CA(?:121|132) SIM tic=(\d+)') | ForEach-Object { [int]$_.Groups[1].Value })
+    $ticks = @([regex]::Matches($raw, 'CA(?:(?:121|132) SIM|133 (?:CITY|VOLLEY)) tic=(\d+)') | ForEach-Object { [int]$_.Groups[1].Value })
     if (!$ticks.Count -or $ticks[-1] -lt $MinimumTic) { throw "Native run did not reach tic $MinimumTic : $Label" }
     $record | Add-Member -NotePropertyName last_observed_tic -NotePropertyValue $ticks[-1] -Force
 }

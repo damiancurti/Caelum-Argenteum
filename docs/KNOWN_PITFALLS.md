@@ -4,6 +4,39 @@ Status: integrated engineering register (issue #22, patch 4.36.1b).
 Prepared: 2026-09-23. Inherits the project's release after integration.
 Inspected baseline: `1dc390576fa330d37ff543526fc7e69a397fc28f` (PR #7).
 
+## CA-KP-055 - Sweat must share both the water budget and the thermal solver
+
+Status/evidence: ENGINE-VERIFIED. First checked: 2026-10-08.
+Issue #133 / 5.1.3; GZDoom 4.14.2. Author gameplay acceptance pending.
+
+Charge secreted water, not only evaporated water. Add retained sweat to the
+existing clothing/base-layer moisture balance and remove latent heat only where
+that balance actually evaporates water. Immersion/runoff cost hydration without
+evaporative cooling. Do not apply the former abstract heat-related Thirst
+multiplier on top of the same sweat loss. Hydration limits production, whereas
+humidity/permeability/wind limit evaporation; these are different constraints.
+
+An independent thermal journey pass cannot assume unlimited cooling while a
+separate provisions pass omits its water cost. Couple the numerical copies and
+retain the player reserve as the sole live authority. Native control sweat-final
+checks conservation, weather/clothing effects, migration, isolated forecasts and
+water-free Air recovery. Its one-hour walking forecast uses about 244 mL of sweat
+and one more water ration than the previous provisions-only model. This is a
+specific sampled route, not a universal hourly consumption rate.
+
+Persist new NPC reserves with an idempotent revision gate; never initialize a
+player's existing Thirst from the NPC default. Native original-save upgrade,
+reload and original-package/original-save rollback pass. For load-time evidence,
+use a StaticEventHandler and inspect before the first restored actor Tick;
+ordinary EventHandler WorldLoaded did not provide that callback in this probe.
+
+Evidence: [native checks](../assets/validation_513/sweat-final.txt),
+[upgrade](../assets/validation_513/sweat-upgrade-a.txt),
+[reload](../assets/validation_513/sweat-upgrade-reload-a.txt), and
+[rollback](../assets/validation_513/sweat-rollback-a.txt).
+Preserve per-run package hashes; later thermal/resource controls must not be
+presented as byte-identical to these earlier component runs.
+
 ## CA-KP-054 - Native city validation: inventory, scripts and sprite registration
 
 Status/evidence: ENGINE-VERIFIED. First checked: 2026-10-08.
@@ -48,7 +81,7 @@ Positive measured control: the occupied new city with 600 housed soldiers runs
 at 35.01 tics/s and 59.96 render callbacks/s; the matched legacy staged army gives
 34.99/57.82 versus 27.16/1.69 for the full army. The later combined new-city battle
 falls to 32.25/14.07. These are engine callbacks, not displayed FPS. Do not average
-the firearm control after its soldiers die: the inherited action-heat profile
+the pre-sweating firearm control after its soldiers die: the inherited action-heat profile
 kills all 600 after fourteen shots each. Native saved thermal state confirms the
 cause; the active-fire and post-death phases are separated in PERFORMANCE.json.
 

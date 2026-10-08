@@ -3,7 +3,7 @@
 Documentation version: **5.1.3** — 2026-10-08.
 
 **5.1.3/#133:** usable MAP06 homes, T1 factories/shops, housed soldiers;
-siege 1889-11-15 13:00. Rules: SYSTEMS; evidence: validation_513. CA133-01/02 pending.
+siege 1889-11-15 13:00; sweating. Rules: SYSTEMS; evidence: validation_513. CA133-01/02/03 pending.
 **#132 accepted, closed; PR #139 merged b0020109.**
 
 **5.1.2/#132:** opt-in MAP06 groups: 100/350 tics, 2,000 alive, 6,000 total.

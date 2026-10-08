@@ -71,7 +71,7 @@ accepted sword behavior for matched #132 comparison and compatibility.
 V5.1.0 implements the author's 2026-10-07 contract. These are provisional game
 coefficients, not a clinical body-temperature model. The signed personal value
 `E` measures accumulated **equivalent exposure degrees**; negative means cold.
-`CaelumThermalState` revision 2 belongs to the player's persistent character
+`CaelumThermalState` revision 3 belongs to the player's persistent character
 record, or to each supported NPC. Shared services under `caelum/survival` own
 the calculations; environment caches never own another character's exposure.
 
@@ -104,7 +104,7 @@ At D=100, thresholds are 20/40/60 and thermal HP damage is zero.
 
 | Consequence | Tier 1 | Tier 2 | Tier 3 |
 | --- | ---: | ---: | ---: |
-| Heat: qualifying Air and Thirst costs | x2 | x3 | x4 |
+| Heat: qualifying Air costs | x2 | x3 | x4 |
 | Cold: blunt incoming attacks | x1.5 | x2.25 | x3.375 |
 | Cold: other incoming attacks | x1.25 | x1.625 | x2.1875 |
 | Cold: movement and attack speed | /1.25 | /1.625 | /2.1875 |
@@ -112,9 +112,52 @@ At D=100, thresholds are 20/40/60 and thermal HP damage is zero.
 Cold vulnerability enters once before existing defensive resolution, including
 localized attacks; it does not increase hazard damage or thermal joules. Natural
 NPC attack frames use the same slowdown. Weapon charge preparation keeps its
-existing contract. Heat affects existing physical Air expenditure and Thirst
-depletion, including the Thirst cost of regeneration; it creates no resting Air
-drain and does not multiply Anima or hypoxia into exertion heat.
+existing contract. Heat affects existing physical Air expenditure; it creates no
+resting Air drain and does not multiply Anima or hypoxia into exertion heat.
+The author-approved #133 sweat extension replaces the former thermal Thirst
+multiplier with actual secreted water. Regenerating Air no longer consumes Thirst.
+
+### Regulated sweating (#133, 2026-10-08)
+
+All supported humanoids, including Mandingas and Zupay, share the initial sweat
+profile while retaining their racial comfort. Bulls and giant rats retain heat
+exchange and existing wetness, without an invented animal sweating profile.
+The 80 kg / 1.75 m reference produces at most 2 kg (approximately 2 L) per world
+hour. Scale by actual surface area / 1.951493905 m², not carried load. Production
+is `2*A/Aref*clamp(E/5,0,1)*clamp(Hydration/20,0,1)` kg/world-hour: zero at E<=0,
+full thermal response at E>=5, full hydration response at >=20 Thirst points and
+linear reduction to zero below 20. These E thresholds and the hydration curve
+are explicitly approved game calibration, not clinical core temperatures.
+The reference sweat ceiling is consistent with the 1.5-2 L/hour endurance-work
+range described by [NIOSH](https://www.cdc.gov/niosh/docs/2016-106/pdfs/2016-106.pdf),
+but is not claimed to be a universal human maximum.
+
+Charge all secreted water using the inverse of the existing drinking rule:
+`points/kg = 400*10/bodyMassKg`, or 10 Thirst points for 200 mL at 80 kg.
+Constitution and rest do not make a measured litre of sweat cost less water.
+The player's authoritative reserve remains CurrentThirst; thermal hydration is
+a working projection. Each supported NPC owns a finite persistent reserve,
+initially 100, without automatic refills or newly invented drinking AI. Zero is
+an exhausted gameplay reserve, not absence of all water in the body.
+
+Sweat is distributed by anatomical coverage into the existing worn/base-layer
+moisture balance. Only actual evaporation removes the existing 2.45 MJ/kg latent
+heat, once; runoff and submerged secretion still cost hydration but do not give
+evaporative cooling. Humidity, relative wind, insulation, permeability and exposed
+area constrain evaporation. Wet clothing can continue cooling after secretion
+stops, including after entry into a cold place. Numerical substeps of at most
+two world seconds resolve the coupled response; they add no simulation time.
+Metabolic/action heat, signed environmental exchange and evaporation jointly
+determine the energy balance. Equilibrium does not mean a living body must equal
+air temperature. Carbine shots retain their existing nominal-Air heat conversion.
+
+Revision 3 initializes only the new NPC reserve once, preserving exposure,
+acclimatization, damage fractions and clothing moisture. Player migration reads
+existing Thirst instead of refilling it. Journey previews advance their own
+supplies and sweat together, including consumed water and the reduced cooling
+of a depleted reserve; applying the thermal projection does not charge water
+again. They retain changing regional weather, passenger shelter and zero invented
+real-time thermal damage.
 
 ### Clothing, water and shelter
 
@@ -4765,10 +4808,11 @@ The new fields start empty in 0ai: loading does not enable the test or reset the
 profile, attributes, previous quests, containers or choices. Persistence uses native
 save and the same Traveler Inventory. Automated test modes remain out of delivery.
 
-## Survival consumption and regeneration - current in 5.1.1 (#131)
+## Survival consumption and regeneration - current in 5.1.3 (#131/#133)
 
 Constitution controls passive Hunger, Thirst and Sleep consumption, as well as
-Hunger/Thirst expense from regenerating health/Air. The author reassigned Sleep
+Hunger expense from regenerating health/Air and Thirst spent on health. Air
+recovery no longer consumes water in #133. The author reassigned Sleep
 from Resilience in #131; the Type-4 divisor and original mass rules remain.
 Resilience now controls climate adaptation rate/range and retains its existing
 combat benefits (maximum Air/Adrenaline and health regeneration).
@@ -4801,7 +4845,7 @@ consumption is not applied again.
 | Natural recovery | Base cost of Hunger | Thirst base cost | With Constitution 100 |
 | --- | ---: | ---: | --- |
 | Maximum health 1% | 1 point | 0,5 points | 0,3333 / 0,1667 points |
-| Maximum Air 1% | 0,1 points | 0,2 points | 0,0333 / 0,0667 points |
+| Maximum Air 1% | 0,1 points | 0 points | 0,0333 / 0 points |
 
 Each cost is divided by D(Constitución), also when calculating how much can be recovered
 with the available reserves. Only the recovered amount is charged, with non-negative

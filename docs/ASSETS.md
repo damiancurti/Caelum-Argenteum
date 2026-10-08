@@ -19,6 +19,10 @@ gaps and foot pivots. `register_carbine_world.py` reads pixels to measure these
 boundaries but never edits the bitmap. Verification covers native third-person
 poses and actual player fire/reload; visual author acceptance remains separate.
 
+The sweating extension reuses existing character/clothing visuals and thermal
+HUD. Isolated fixtures, migration controls and native evidence remain under
+assets/validation_513; local packages and saved games are not distributed.
+
 ## 5.1.2 - Siege reinforcement evidence (#132)
 
 No new runtime art, audio, map geometry or external gameplay assets.

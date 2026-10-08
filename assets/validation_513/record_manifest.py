@@ -1,4 +1,4 @@
-"""Bind retained evidence to exact runtime sources and native package contents."""
+"""Historical pre-sweat binding at df49f40b; current work uses record_sweat_manifest.py."""
 from pathlib import Path
 import hashlib
 import json

@@ -34,6 +34,8 @@ class CA133Carbine : EventHandler
             Target.SetOrigin((3584,4096,0),false);
             double air=Body.CurrentCombatAir;int durability=Body.Carbine.Weapon.Durability;
             Body.Carbine.Attack(Body,Target);
+            let firstHeat=CaelumThermalBody.Get(Body);
+            Check(firstHeat!=null && firstHeat.ActionJoules>0,"NPC carbine retains authored action heat alongside sweat cooling");
             MinimumInterval=Body.Carbine.NextShotTic-level.time;
             Check(Body.Carbine.ShotCount==1 && Body.Carbine.Magazine==9 && Body.CurrentCombatAir<air,"first live projectile spends one round and physical Air");
             Check(MinimumInterval==int(Ceil(Body.GetProfileWeaponDuration(CaelumConstants.WEAPON_TYPE_CARBINE))),"firing interval uses shared physical duration and load");
@@ -87,8 +89,11 @@ class CA133Carbine : EventHandler
             u.EquipmentSelectionWeaponType=CaelumConstants.WEAPON_TYPE_CARBINE;u.EquipmentSelectionTier=1;u.EquipmentSelectionSize=size;
             u.RefreshEquipmentSelectionPreview();u.EquipSelectedNativeEquipment();
             let ammo=CaelumCarbineAmmo(Actor.Spawn("CaelumCarbineAmmo",u.Pos));ammo.Amount=2;ammo.AttachToOwner(u);
-            u.CarbineMagazine=2;u.OnNativeInventoryChanged();u.PerformCarbineAttack();
+            u.CarbineMagazine=2;u.OnNativeInventoryChanged();
+            let playerHeat=CaelumThermalBody.Get(u,true);double beforeHeat=playerHeat.ActionJoules;
+            u.PerformCarbineAttack();
             Check(u.LastCarbineFired && ammo.Amount==1 && u.CarbineMagazine==1,"shared projectile path preserves finite player ammo");
+            Check(playerHeat.ActionJoules>beforeHeat,"player carbine retains authored action heat");
             ammo.Amount=0;u.CarbineMagazine=0;u.CancelRangedReload();u.RequestRangedReload(CaelumConstants.WEAPON_TYPE_CARBINE);u.PerformCarbineAttack();
             Check(!u.RangedReloadActive && !u.LastCarbineFired && u.CarbineMagazine==0,"empty player reserve cannot reload or fire");
             Console.Printf("CA133 COMPLETE checks=%d failures=%d",Checks,Failures);

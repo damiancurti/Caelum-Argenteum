@@ -33,15 +33,19 @@ class CA133Volleys : EventHandler
         }
         if(level.time%35!=0)return;
         int alive=0,shots=0,reloads=0,reloading=0,hits=0,projectiles=0;
+        double sweat=0,minHydration=100,maxExposure=-1e9,thermalHP=0;
         for(int i=0;i<port.Defenders.Size();i++)
         {
             let b=port.Defenders[i];if(b==null)continue;
             if(b.health>0)alive++;shots+=b.Carbine.ShotCount;reloads+=b.Carbine.ReloadCount;
             if(b.Carbine.ReloadRemaining>0)reloading++;
+            let thermal=CaelumThermalBody.Get(b);
+            if(thermal!=null){sweat+=thermal.SweatKg;minHydration=Min(minHydration,thermal.Hydration);maxExposure=Max(maxExposure,thermal.Exposure);thermalHP+=thermal.AppliedDamageHP;}
         }
         for(int i=0;i<Targets.Size();i++)if(Targets[i]!=null)hits+=Targets[i].Hits;
         let it=ThinkerIterator.Create("CaelumCarbineProjectile");while(it.Next()!=null)projectiles++;
         Console.Printf("CA133 VOLLEY tic=%d ms=%.6f alive=%d shots=%d reloads=%d reloading=%d hits=%d projectiles=%d",level.time,MSTimeF(),alive,shots,reloads,reloading,hits,projectiles);
+        Console.Printf("CA133 SWEAT_VOLLEY tic=%d sweatKg=%.9f minHydration=%.6f maxExposure=%.6f thermalHP=%.1f",level.time,sweat,minHydration,maxExposure,thermalHP);
         if(level.time==3500)Console.Printf("CA133 VOLLEY_COMPLETE");
     }
 }

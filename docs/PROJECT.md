@@ -20,10 +20,12 @@ soldiers deploy physically while the attack begins. Shared carbine services reta
 normal magazines, combat resources, projectiles and wear; only NPC reserve is
 infinite. Original directional world art also follows the player's actual weapon.
 Validation and performance limits: [native evidence](../assets/validation_513/RESULTS.md).
-CA133-01/02 in pending_test.txt still require author visual/gameplay acceptance.
-The intensive firearm control also exposes a balance limit in the retained #130
-action-heat profile: 14 shots per soldier lead to fatal accumulated heat. See
-HEAT_LIMIT.json; sustained-fire calibration remains an explicit design decision.
+CA133-01/02/03 in pending_test.txt still require author visual/gameplay acceptance.
+The pre-sweating firearm control exposes a balance limit in the retained #130
+action-heat profile: 14 shots per soldier lead to fatal accumulated heat
+(HEAT_LIMIT.json). The author then approved regulated humanoid sweat, finite
+hydration and coupled travel-water forecasts. Wet-clothing cold remains possible;
+the extension does not itself establish accepted sustained-fire balance.
 
 ## 5.1.2 - Staged siege performance experiment (#132)
 

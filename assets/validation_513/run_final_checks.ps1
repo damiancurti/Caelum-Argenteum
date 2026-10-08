@@ -1,4 +1,6 @@
 param([switch]$WaitForPrevious, [string]$RecoverySave = '')
+# Historical pre-sweat fixed-label batch, reproduced from commit df49f40b.
+# The current thermal extension uses run_sweat_checks.ps1 with a fresh prefix.
 $ErrorActionPreference = 'Stop'
 $repo = (Resolve-Path (Join-Path $PSScriptRoot '..\..')).Path
 $work = Join-Path $repo 'build/issue133'

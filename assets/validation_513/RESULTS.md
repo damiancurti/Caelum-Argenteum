@@ -1,8 +1,77 @@
 # #133 / 5.1.3 city, commerce and deployment validation
 
-Implementation and agent validation delivered for review. CA133-01/02 still
-require author acceptance. The continuous-fire experiment exposes an inherited
-thermal balance limit; it is explicitly not a successful sustained-fire test.
+Implementation and agent validation delivered for review. CA133-01/02/03 still
+require author acceptance. The original continuous-fire experiment exposes an
+inherited thermal balance limit. The author subsequently approves sweating and
+water-free Air recovery; the new Hunger-cost clarification remains pending.
+
+## Authorized sweat extension
+
+The shared thermal service now produces surface-scaled humanoid sweat up to the
+approved 2 L/world-hour reference, ramping over E=0..5 and fading with hydration
+below 20 points. All secreted water costs the inverse of the existing drinking
+conversion. Retained moisture enters the same equipment/base-layer balance;
+runoff and submerged secretion do not provide latent cooling. Carbine action
+heat remains unchanged. The old thermal Thirst multiplier is removed, and Air
+recovery no longer consumes Thirst. Finite NPC hydration has no automatic refill.
+
+Thermal revision 3 preserves prior exposure, acclimatization, damage fractions
+and moisture. The player reserve remains CurrentThirst. Journey water provisions
+and thermal projections advance together; forecast and commit do not spend live
+water twice or invent real-time thermal damage. A supplied walking control is
+safe while the identical dry control is rejected for heat.
+
+The final numerical control `sweat-final` passes 33 assertions; a one-hour walking
+sample produces 244.4 mL of sweat and uses two water rations versus one without
+the new loss. The initial five-world-second integration step differed from a
+0.5-second control by 0.2084 exposure degrees. The final two-second bound reduces
+that difference to 0.06916 degrees and 0.328 mL. These are numerical convergence
+checks, not a clinical calibration. `sweat-carbine-final` passes 15 checks,
+including actual player/NPC action heat, finite player ammo, 59 native hits and
+five reloads. Reload and hub checks retain the new budgets; the hub check accounts
+for the final ordinary source-map passive-Thirst tic after WorldUnloaded.
+
+Original-package seeding, revision-two upgrade, upgraded reload and original-save
+rollback pass in `sweat-seed-a`, `sweat-upgrade-a`, `sweat-upgrade-reload-a` and
+`sweat-rollback-a`; `sweat-upgrade-final` and `sweat-upgrade-reload-final` repeat
+the upgrade/reload against the final production bytes. `sweat-routes-a` reaches
+all 600 original posts and ends at tic 35000 with no unfinished routes/yields,
+all 600 at maximum health/Air, no action heat and zero thermal damage. It uses
+the five-second numerical bound; routing, collision and migration logic are
+unchanged by the later two-second refinement. Per-run hashes retain this scope.
+
+`MANIFEST_CITY.json` preserves the complete previous city/art/source evidence.
+Earlier geometry, furniture, commerce, recipes and artwork checks remain scoped
+to those unchanged subsystems; they are not relabelled as a current-package run.
+The new manifest binds the sweat extension and records each actual package.
+The requested Air/Anima Hunger rebalance awaits clarification of per-bar versus
+per-point cost and whether NPCs gain a finite Hunger reserve. No unconfirmed
+amount or NPC food rule is inferred.
+
+The final 600-body volley control still fires 8,400 rounds and completes 600
+reloads, then waits for Air. At tics 500, 1450 and 3500 all 600 remain alive;
+the old control had zero survivors by tic 1400. Each soldier has secreted about
+341.5 mL at tic 3500, retaining 82.92 hydration points. Action heat is still
+836,062.5 J each. Exposure moves from +40.34 at the first snapshot to -15.19
+at the last: wet-clothing cold follows the initial heat. Remaining health is
+270/2168, with native healing and thermal damage both active. This establishes
+working regulation, not accepted sustained-fire balance or an infinite resource.
+
+| Final native phase | Tics/s | Render callbacks/s |
+| --- | ---: | ---: |
+| 600-body firing, tics 70-490 | 35.03 | 49.34 |
+| Later living volley roster, tics 1400-3500 | 34.88 | 56.74 |
+| Occupied peaceful city | 35.00 | 59.80 |
+| Scheduled exit | 34.96 | 41.76 |
+| Deployment/buildup | 34.99 | 17.08 |
+| Later combined battle | 31.21 | 5.57 |
+
+These are background engine/render callbacks, not displayed FPS. The combined
+endpoint has 598 defenders, 1,645 living Mandingas, 857 corpses, 282 carbine shots
+and 19 reloads; 2,500 attackers have spawned, with 28 placement retries and zero
+scripted deaths. It differs from the old 579/1,636 living-body workload, so the
+timing difference cannot isolate the cost of the sweat solver. Final phase
+endpoints, package hashes and saved-state budgets are in SWEAT_RESULTS.json.
 
 ## Scope and reproduction
 
@@ -22,10 +91,18 @@ source package and creates persistence probes. Build the compatible update with
 `build_dev.ps1 -LegacyMap06SouthCity -Destination build/issue133/upgrade/baseline.pk3`.
 `prepare_visual.py final-visual` writes short chained native command scripts;
 `run_final_checks.ps1` executes fresh deployment, components, persistence, visuals
-and performance. Its optional `-RecoverySave` is only for a retained exploratory
+and performance for the historical pre-sweat revision df49f40b. Its optional `-RecoverySave` is only for a retained exploratory
 checkpoint; the fresh route is independent of it. `run_delivery_checks.ps1`
 also reproduces original-package seed/reload/hub/rollback controls. Use fresh
 labels/directories for repeats; never overwrite an active engine package.
+
+For the current extension, use `run_sweat_checks.ps1 -Prefix <fresh-label>`;
+`-FullDeployment` adds the complete fresh 35000-tic route control. It rebuilds
+isolated probes and runs math/resources, persistence, carbine and population
+controls. `prepare_sweat_saves.py` retains the local pre-sweat package or rebuilds
+the df49f40b source reference if absent. Current source binding is generated by
+`record_sweat_manifest.py` after the implementation commit and normal/compatible
+builds; the preceding `record_manifest.py` is retained for historical reproduction.
 
 ## Established component results
 
@@ -85,18 +162,19 @@ It never teleports defenders, replenishes their resources or removes blockers.
 final-visual captures 48 directional/action poses and 12 UI/home/player views.
 The pose is held both before and after screenshot requests so deferred rendering
 cannot change its label. Representative unedited native captures are retained in
-captures/; MANIFEST.json records all 60 original hashes. The player burst includes
+captures/; MANIFEST_CITY.json records all 60 original hashes. The player burst includes
 normal short gaps between shot poses; final-player-shot separately captures a
 single real discharge. Native logs also verify shot/reload frame changes, finite
 magazines, crouching and restoration of the existing sword appearance.
 
 MANIFEST.json compares production.pk3 and the normal build against every src byte;
-the compatible build differs only by the exact archived MAP06. Final production
-is bound to the source in implementation commit f4c2bdfe. Each retained run has
+the compatible build differs only by the exact archived MAP06. The preceding city
+implementation f4c2bdfe retains its original binding in MANIFEST_CITY.json; the
+current extension is bound by record_sweat_manifest.py. Each retained run has
 its own package/addon hash; earlier exploratory records are not relabelled as
 final-source results or author acceptance. No test fixture is packaged in src.
 
-## Performance and thermal limit
+## Performance and thermal limit before sweating
 
 PERFORMANCE.md/JSON separate matched old-geometry full/staged armies, occupied
 peaceful city, scheduled exit, combined deployment/combat and the firearm control.
@@ -147,8 +225,10 @@ while physical keyboard and visual author acceptance remain distinct.
 ## Outstanding author work
 
 CA133-01 covers physical interior/trade controls and bilingual readability;
-CA133-02 covers ordinary deployment/combat and visual carbine acceptance. Both
-remain in the root pending_test.txt. Thermal sustained-fire calibration is a
-design follow-up in TASKS, not a claimed passed author test. Build/static checks
-pass; temporary keep-awake requests are released with matching before/after
-power plans in power-request.json and power-request-2.json.
+CA133-02 covers ordinary deployment/combat and visual carbine acceptance;
+CA133-03 covers sweating and post-exertion cooling. All remain in the root
+pending_test.txt. Thermal sustained-fire calibration is a design follow-up in
+TASKS, not a claimed passed author test. The completed original power requests
+are recorded in power-request.json and power-request-2.json. The extension's
+third thread-scoped request was released at 2026-10-08 10:41:06 UTC; its process
+exited and the Balanced plan GUID is unchanged (power-request-3.json).
