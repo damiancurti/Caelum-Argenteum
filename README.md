@@ -15,6 +15,9 @@ it, then rebuild with `run_dev.bat` as described below.
 magazines with infinite reserve. Original world sprites also follow the player's
 equipped carbine. The authorized extension adds regulated humanoid sweating,
 finite hydration and coupled travel water forecasts; carbine action heat remains.
+The author authorized #133 closure and [PR #141](https://github.com/damiancurti/Caelum-Argenteum/pull/141)
+merge on 2026-10-08, carrying thermal follow-up into
+[#140](https://github.com/damiancurti/Caelum-Argenteum/issues/140).
 [Native evidence](assets/validation_513/RESULTS.md) and
 [outstanding author checks](pending_test.txt) distinguish validation from acceptance.
 For a save that already visited the 5.1.2 southern city, build with

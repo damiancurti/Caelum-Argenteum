@@ -34,8 +34,8 @@ full-roster deployment, obstructions and persistence evidence are consolidated i
 controls remain separate from the combined new-city workload. Rendering callbacks
 are not presented FPS. Existing visited 5.1.2 cities use the exact legacy geometry
 build selector; original-save/original-package rollback is retained and tested.
-CA133-01/02 remain outstanding author visual/gameplay checks. This delivery does
-not mark #133 accepted, close the issue or merge its PR.
+At initial delivery, CA133-01/02 remain outstanding author visual/gameplay checks;
+closure and merge have not yet been authorized at that stage.
 
 The full-roster firearm control fires 8,400 shots and completes 600 reloads, then
 stops. All 600 die from accumulated thermal damage by tic 1400; native snapshots
@@ -65,6 +65,14 @@ with 598 defenders surviving; it is not presented-FPS evidence or a fluency pass
 The author also requests half-Health Hunger costs for Air/Anima recovery; the
 per-bar/per-point interpretation and NPC Hunger scope are still awaiting answers.
 Temporary keep-awake request 3 is released with the original power plan intact.
+
+Later on 2026-10-08, the author explicitly authorizes closing #133 and merging
+PR #141, moving the remaining heat work to #140. The thermal survival and
+performance findings remain limitations, not passed balance/fluency claims.
+CA133-01/02/03 (origin 5.1.3/#133) remain unconfirmed: this instruction authorizes
+integration but does not state that those manual tests passed. The pending
+Air/Anima Hunger interpretation and NPC scope are carried forward as unfinished
+resource-design work. No version increment or runtime change accompanies closure.
 
 ## 5.1.2 - Staged siege experiment (#132, 2026-10-07)
 

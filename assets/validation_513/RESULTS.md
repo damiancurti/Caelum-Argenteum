@@ -1,9 +1,11 @@
 # #133 / 5.1.3 city, commerce and deployment validation
 
-Implementation and agent validation delivered for review. CA133-01/02/03 still
-require author acceptance. The original continuous-fire experiment exposes an
-inherited thermal balance limit. The author subsequently approves sweating and
-water-free Air recovery; the new Hunger-cost clarification remains pending.
+Implementation and agent validation delivered. On 2026-10-08 the author authorizes
+#133 closure and PR #141 merge, moving the remaining thermal work to #140.
+CA133-01/02/03 still require explicit manual-test confirmation. The original
+continuous-fire experiment exposes an inherited thermal balance limit. The
+author subsequently approves sweating and water-free Air recovery; the new
+Hunger-cost clarification remains a deferred task, not completed functionality.
 
 ## Authorized sweat extension
 
@@ -227,8 +229,8 @@ while physical keyboard and visual author acceptance remain distinct.
 CA133-01 covers physical interior/trade controls and bilingual readability;
 CA133-02 covers ordinary deployment/combat and visual carbine acceptance;
 CA133-03 covers sweating and post-exertion cooling. All remain in the root
-pending_test.txt. Thermal sustained-fire calibration is a design follow-up in
-TASKS, not a claimed passed author test. The completed original power requests
+pending_test.txt. Thermal sustained-fire calibration is carried to #140 by the
+author's closure instruction and recorded in TASKS, not a claimed passed test. The completed original power requests
 are recorded in power-request.json and power-request-2.json. The extension's
 third thread-scoped request was released at 2026-10-08 10:41:06 UTC; its process
 exited and the Balanced plan GUID is unchanged (power-request-3.json).

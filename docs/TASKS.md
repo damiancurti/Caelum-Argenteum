@@ -2,7 +2,7 @@
 
 Documentation version: **5.1.3** — 2026-10-08.
 
-## Issue #133 - City interiors and deployment (5.1.3, author acceptance pending)
+## Issue #133 - City interiors and deployment (5.1.3, closure and merge authorized)
 
 Implemented: revision-3 interiors and factory networks; 160 furnished homes,
 64 independent T1 shops, the 600 housed soldiers and authoritative siege date;
@@ -11,8 +11,9 @@ geometry backup/build selector. Commerce, furniture and recipe probes pass.
 The fresh routing control reaches all 600 posts, including crew stairs and return
 from temporary access yields. Compatibility/save/hub controls and combined
 performance are recorded with their exact scope in validation_513/RESULTS.md.
-Remaining author checks: CA133-01 interiors/trade physical controls and CA133-02
-deployment/combat/world-art appearance. Keep the issue/PR open until acceptance.
+On 2026-10-08 the author authorizes issue closure and PR #141 merge, assigning
+the remaining thermal work to #140. CA133-01/02/03 remain in pending_test.txt
+because closure authorization does not report individual manual tests passed.
 The author sets the shop/pricing and calendar decisions recorded in SYSTEMS.
 
 Follow-up design finding from #133: the unchanged #130 action-heat profile makes
@@ -27,7 +28,18 @@ persistence/migration and carbine checks; final combined simulation/render rates
 are 31.21/5.57, with 598 surviving defenders and a different workload from the
 pre-sweat control. The requested half-Health Hunger cost for Air/Anima awaits
 per-bar/per-point clarification and NPC Hunger scope. No unconfirmed food-cost
-value has been applied. Agent validation is distinct from CA133-01/02/03 acceptance.
+value has been applied. This resource-design request remains a deferred task,
+not a completed part of #133. Agent validation is distinct from CA133-01/02/03 acceptance.
+
+## Issue #140 - Thermal optimization and carried-forward heat findings
+
+The author moves the remaining heat work from #133 here on 2026-10-08. Preserve
+the source-bound 600-body firing control and combined-battle measurements as
+baselines. Investigate action-heat calibration and wet-clothing cooling alongside
+the existing per-actor coefficient caching, invalidation and bounded flux-update
+scope. The scope transfer approves investigation, not new numerical balance
+values. Separate measured performance changes from altered survival/workload;
+retain water/energy accounting, migration and real/world-time semantics.
 
 ## Issue #132 - Staged siege performance test (5.1.2)
 

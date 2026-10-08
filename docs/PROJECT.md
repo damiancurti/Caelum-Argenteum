@@ -2,12 +2,14 @@
 
 Documentation version: **5.1.3** — 2026-10-08.
 
-## 5.1.3 - Functional port city (#133, author acceptance pending)
+## 5.1.3 - Functional port city (#133, closure and merge authorized)
 
 #132 was accepted on 2026-10-07, closed, and merged through PR #139
 (b00201098a26582c8820a5424a2a75986b022abf). #133 now integrates usable
 homes, T1 factory networks, specialized merchants, housed soldier deployment,
-and shared world carbine artwork. Author acceptance of #133 is still pending.
+and shared world carbine artwork. On 2026-10-08 the author authorizes #133 closure
+and PR #141 merge, deferring the thermal findings to #140. This authorization does
+not independently confirm the outstanding manual tests.
 Fresh MAP06 geometry uses revision 3; already visited revision-2 ports require
 `build_dev.ps1 -LegacyMap06SouthCity` and retain their active siege behavior.
 The exact authored 5.1.2 geometry and provenance are in assets/map06_port/legacy_512.
