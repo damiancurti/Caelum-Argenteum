@@ -1,0 +1,17 @@
+{
+  "command": "powershell -NoProfile -ExecutionPolicy Bypass -File build_dev.ps1",
+  "exit_code": 0,
+  "packages": {
+    "build/caelum_argenteum_dev.pk3": {
+      "sha256": "b0e41a656051590069c14fb38e773715ea4de175e84f3d01ee3c0012bb7be628",
+      "files": 6231,
+      "matches_final_src": true
+    },
+    "build/issue135/production.pk3": {
+      "sha256": "aea7fdaaa0088f5362426ff2d436dd14b86efb46b62739568faad291cbd4b26f",
+      "files": 6231,
+      "matches_final_src": true
+    }
+  },
+  "checked_utc": "2026-10-08T19:27:15.747559+00:00"
+}

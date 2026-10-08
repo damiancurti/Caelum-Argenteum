@@ -1,0 +1,57 @@
+## Objective
+Author request (2026-10-07): add a demon racial fire-breath ability and finite demon potion supplies, automatic consumption and weighted single-item death loot. Applies to Mandingas and Zupay.
+
+Follow AGENTS.md and current docs/CONTEXT.md, SYSTEMS.md and ASSETS.md. Coordinate thermal behavior with #130 (and HUD #131), siege workload with #128/#132. This issue records design; implementation requires a focused branch and linked PR.
+
+## Racial ability: fire breath
+- Sustained exhaled fire costs **10 Anima per real simulation second before applicable cost reductions**.
+- Apply the existing Anima cost-reduction pipeline exactly once, including applicable shared derived modifiers. Using this ability **does not interrupt natural Anima regeneration**; regeneration and spending run concurrently.
+- Direct flame contact applies the existing burn status. The breath also emits heat through the authoritative thermal system; heat exposure alone is not an automatic direct-hit burn.
+- Mandingas and Zupay can use the ability. They automatically exhale when their authoritative thermal state indicates cold, to raise their own temperature.
+- Stop when the cold condition clears or the next cost cannot be paid; preserve normal death/interruption handling and avoid negative resources. Do not invent an extra cooldown or a fixed activation cost.
+- Reuse established fire/burn, heat propagation and AI services. Do not fake warming only visually. Keep flame origin/direction and actual collision consistent with the actor.
+- Unspecified values must be reused from applicable approved definitions or requested before implementation: breath range/cone, direct damage if any beyond burn, burn magnitude/duration, heat output and combat-use selection. No new numeric balance is authorized here.
+
+## Potion inventory and use
+Each demon starts with **6 health potions (medikits), 6 Anima potions and 6 energy potions**, finite individual inventory (18 total).
+- Mandingas use **small** potions.
+- Define all three sizes for all three resource families:
+
+| Size | Total restoration, as percentage of maximum corresponding resource | Duration |
+| --- | --- | --- |
+| Small | 10% | 10 seconds |
+| Medium | 22.5% | 10 seconds |
+| Large | 50% | 10 seconds |
+
+Restoration is spread across the full duration, not granted instantly or as the listed percentage each second. Reuse the existing energizer's authoritative resource mapping; do not silently redefine it.
+- Automatically use the matching available potion when that resource is **strictly below 50%**. At exactly 50%, do not activate.
+- Subtract one unit on actual consumption, clamp restoration at maximum and never consume nonexistent supplies.
+- Reuse approved active-effect/stacking rules. If none exist, resolve repeat-use while already under that potion effect before coding; the threshold must not accidentally consume all six in successive ticks.
+- **Author confirmation (2026-10-07): Zupay uses large potions for all three resource families**: 6 large health, 6 large Anima and 6 large energy potions, each restoring 50% over 10 seconds. Mandingas retain small potions; medium-potion enemy allocation remains unspecified.
+
+## Death loot: at most one item
+- Preserve a predefined enemy drop when present; no additional potion in that case.
+- Otherwise, if any potions remain, drop **exactly one potion unit**, sampled uniformly from all remaining potion units (equivalently, type probability = remaining count / total remaining count).
+- Consumed potions cannot drop. Preserve the selected unit's actual type and size.
+- Examples: 6/6/6 => 1/3 each; 0/6/6 => 0%/50%/50%; 6/3/3 => 50%/25%/25%.
+- With no predefined drop and no potions left, this rule produces no drop.
+- Never drop a full stack, one of each type, or a potion plus the predefined item. Retain the **one object per defeated enemy** rule.
+- Zupay's scripted retreat is not death and must not trigger death loot.
+
+## Integration and acceptance
+- [ ] Both demon types can exhale; direct contact burns, heat propagates and cold-triggered use actually warms the user.
+- [ ] Base spending is 10 Anima/s, approved reductions apply once, and natural regeneration continues.
+- [ ] Finite 6/6/6 inventory, all potion sizes and 10-second total restoration are correct.
+- [ ] Threshold boundary, empty inventory, active-effect repeat use and simultaneous low resources are verified.
+- [ ] Predefined-drop priority, all weighted examples, exhausted inventory and single-unit/single-object limits pass focused checks.
+- [ ] Save/load and hub travel preserve inventories, ongoing effects and ability state without refills/duplication; existing-save migration is explicit, versioned and reversible.
+- [ ] Dense battles retain individual resources and accepted #128 behavior; measure incremental thermal/flame/potion cost without changing population rules.
+- [ ] Original project-compatible visuals/localization and affected canonical documentation/index accompany the implementation; native evidence and pending author visual/gameplay acceptance are recorded separately.
+
+## Author decisions during implementation (2026-10-08)
+- Breath: 4 m / 128 MU contact range, 60-degree cone, 20 kW total flame output. Radiation continues beyond contact range with distance attenuation and wall occlusion. Direct contact reuses T1 fire-spell burn without an additional direct-damage hit. Use both for cold regulation and combat.
+- Each potion family waits for its own active ten-second effect to finish before automatic reuse. Different families may run simultaneously.
+- All nine variants weigh 0.25 kg. Medium and large prices are respectively 2.25 and 5 times the small potion base price.
+- NPC energy potions restore Air. Player energy potions retain Air plus Sleep; no NPC Sleep reserve is added.
+- Dedicated medium sprites have silver fittings; large sprites have both silver and gold fittings, including medikits. Keep the small originals.
+- Additional author request: dedicated animated exhalation gestures for both demons, with the visible flame aligned to the mouth. Review the reported possible inversion of Zupay sprite directions using fixed-angle native captures; do not infer acceptance from agent checks.

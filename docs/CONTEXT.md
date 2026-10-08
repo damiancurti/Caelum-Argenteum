@@ -1,10 +1,11 @@
 # CONTEXT.md — Caelum Argenteum
 
-Documentation version: **5.1.4** — 2026-10-08.
+Documentation version: **5.1.5** — 2026-10-08.
 
-**5.1.4/#140:** cached thermal coefficients, animal sweat, panting/audio,
-quarter-Health costs, firearm effort/shivering. Native checks pass.
-Rules/evidence: SYSTEMS/validation_514. #133 merged; CA133-01/02/03 pending.
+**5.1.5/#135:** finite typed potions, weighted loot and racial fire breath.
+Accepted 2026-10-08; PR #144 merge/closure authorized.
+#140 merged 5f9202ad. #133 merged; CA133-01/02/03 accepted.
+#143 soldier crouched aiming follows #135.
 **#132 accepted, closed; PR #139 merged b0020109.**
 
 **5.1.2/#132:** opt-in MAP06 groups: 100/350 tics, 2,000 alive, 6,000 total.
@@ -104,7 +105,7 @@ thrusts (30 down, 60 advance, 16/16/48/20% phases). Weapon durability ×10 migra
 proportional wear once; projectile wear follows the exact item. Authored enemies
 spend shared resources, idle/recover when exhausted, and retain the 80-tic Zupay
 slam exception. Native rules/cycles, persistence and visual evidence:
-assets/validation_43626. Both author checks passed 2026-09-30; merge/closure authorized.
+assets/validation_43626. Author checks passed 2026-09-30; merge authorized.
 
 ## Current status
 
@@ -304,12 +305,11 @@ Use DOCUMENT_INDEX for long documents; follow the engineering guides.
 
 The authoritative list is in `AGENTS.md` and `docs/PROJECT.md`.
 
-Work plans issues; Codex implements/tests; the author confirms manual acceptance.
-Keep implementation, static/native evidence and author acceptance distinct.
+Work plans; Codex implements/tests; authors confirm acceptance. Keep evidence distinct.
 
 [pending_test.txt](../pending_test.txt) holds outstanding author tests across
 versions. Only author-confirmed passes move their ID, version/issue, result,
 date and qualifications to [HISTORY.md](HISTORY.md); remove the entry together.
 Partial, failed and unconfirmed checks remain. An empty tracked queue is valid.
-All seven docs and AGENTS declare the current version; ancillary guides without
-a header inherit README's version. Historical labels retain their original meaning.
+Docs and AGENTS declare the current version; ancillary guides inherit README.
+Historical labels retain their meaning.

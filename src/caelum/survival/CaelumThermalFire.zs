@@ -26,6 +26,14 @@ class CaelumThermalFire : Object play
         if(source==null || source.Watts()<=0)return 0;
         double units=CaelumJourneyRules.MAP_UNITS_PER_METER;
         vector3 origin=source.Pos+(0,0,source.args[2]/2.0);
+        return AbsorbedAt(body,thermal,source,origin,source.Watts(),Max(source.args[1],source.args[2]/2.0)/units);
+    }
+
+    // La misma proyección y oclusión sirve a llamas con origen orientable.
+    static double AbsorbedAt(Actor body,CaelumThermalState thermal,Actor tracer,
+        vector3 origin,double watts,double sourceRadius)
+    {
+        double units=CaelumJourneyRules.MAP_UNITS_PER_METER;
         vector3 center=body.Pos+(0,0,body.Height/2);
         vector3 offset=origin-center;
         double distance=offset.Length();
@@ -48,11 +56,10 @@ class CaelumThermalFire : Object play
             vector3 targetPoint=(point.X,point.Y,body.Pos.Z+body.Height*(z+0.5)/count);
             vector3 ray=targetPoint-origin;
             FLineTraceData hit;
-            if(!source.LineTrace(VectorAngle(ray.X,ray.Y),ray.Length(),-VectorAngle(ray.XY.Length(),ray.Z),
+            if(!tracer.LineTrace(VectorAngle(ray.X,ray.Y),ray.Length(),-VectorAngle(ray.XY.Length(),ray.Z),
                 TRF_THRUACTORS|TRF_ABSPOSITION,origin.Z,origin.X,origin.Y,hit))visible++;
         }
-        double sourceRadius=Max(source.args[1],source.args[2]/2.0)/units;
-        return CaelumThermalRules.FireFlux(source.Watts(),distance/units,sourceRadius)
+        return CaelumThermalRules.FireFlux(watts,distance/units,sourceRadius)
             *projected*visible/(count*count)*CaelumThermalData.FIRE_ABSORPTIVITY;
     }
 

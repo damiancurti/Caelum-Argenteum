@@ -38,6 +38,8 @@ class CaelumMazeLayout : Object play
         if((tid>=47072 && tid<47096) || (tid>=48144 && tid<48192))return CreateDeathDrop3(tid);
         return null;
     }
+    static bool HasDeathDrop(int tid)
+    {return (tid>=47000 && tid<47096) || (tid>=48000 && tid<48192);}
     static Inventory CreateDeathDrop0(int tid)
     {
         Inventory item;

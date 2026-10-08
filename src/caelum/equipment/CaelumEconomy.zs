@@ -739,10 +739,9 @@ class CaelumEconomyRules : Object
 
     static double GetConsumableUnitBaseValue(int consumableType)
     {
-        if(consumableType==CaelumConstants.CONSUMABLE_LIFE_POTION
-            || consumableType==CaelumConstants.CONSUMABLE_ANIMA_POTION
-            || consumableType==CaelumConstants.CONSUMABLE_ENERGY_DRINK)
-            return CaelumConstants.ECONOMY_FOOD_RATION_VALUE*CaelumConstants.ECONOMY_RECOVERY_RATION_MULTIPLIER;
+        if(CaelumPotionRules.IsPotion(consumableType))
+            return CaelumConstants.ECONOMY_FOOD_RATION_VALUE*CaelumConstants.ECONOMY_RECOVERY_RATION_MULTIPLIER
+                *CaelumPotionRules.TotalRatio(CaelumPotionRules.Size(consumableType))/CaelumPotionRules.TotalRatio(CaelumPotionRules.SMALL);
         if (consumableType == CaelumConstants.CONSUMABLE_FOOD_RATION)
         {
             return CaelumConstants.ECONOMY_FOOD_RATION_VALUE;

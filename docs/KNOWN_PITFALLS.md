@@ -4,6 +4,80 @@ Status: integrated engineering register (issue #22, patch 4.36.1b).
 Prepared: 2026-09-23. Inherits the project's release after integration.
 Inspected baseline: `1dc390576fa330d37ff543526fc7e69a397fc28f` (PR #7).
 
+## CA-KP-059 - Check sprite rotation order for every animation family
+
+Status/evidence: RESOLVED-VERIFIED, #135 / 5.1.5, 2026-10-08.
+Affected baseline: 5f9202ad; GZDoom 4.14.2 Windows/Vulkan.
+Scope: Zupay ZUPY D/E/F/M..R native TEXTURES registrations.
+
+The author reported an inverted ground slam. Idle and locomotion directions
+were correct, but action PNGs numbered 3 faced right and 7 faced left, opposite
+to the idle family. A passing idle-only orbit did not cover the attack poses.
+Registration now assigns 2/3/4/6/7/8 to source 8/7/6/4/3/2, retaining front/back
+and all original PNGs. Do not globally reverse the actor or unrelated poses.
+The deterministic generator derives each assignment from the native sprite
+name, so rerunning it cannot swap corrected views back.
+
+Evidence: validation_515/orientation-fixed-a (24 native fixed-angle captures,
+three groups of four poses), ART_DETERMINISM.json and the source mapping in
+art_source/demon_breath_515/ZUPAY_DIRECTIONS.json. For registration inspection,
+freeze the fixture's native actor Tick; merely setting tics=-1 can still allow
+resource/AI helpers to select another state. Gameplay attacks retain their
+original state timing and angle. Author visual acceptance remains pending.
+
+## CA-KP-058 - Actor destruction must not resume gameplay states
+
+Status/evidence: RESOLVED-VERIFIED, #135 / 5.1.5, GZDoom 4.14.2 Windows 11.
+First recorded / last checked: 2026-10-08 / 2026-10-08.
+Affected baseline: working demon breath cleanup after 5f9202ad.
+
+The author supplied the crash report from integration-b. Gameplay assertions
+passed, then engine shutdown raised C0000005 while reading address 0x10c.
+Official matching PDB symbols resolve ClearLevelData -> DestroyAllThinkers ->
+SetState -> A_Look -> P_LookForPlayers -> isTargetablePlayer. OnDestroy called
+the normal breath-stop helper, which restored Spawn and executed its immediate
+look action after player teardown. Destructor cleanup now only detaches and
+destroys owned flame/visual objects; it does not resume AI or integrate heat.
+Ordinary live interruption/death still settles paid radiation normally.
+
+Evidence: validation_515/CRASH_ANALYSIS.json, integration-art-a and
+ability-reload-art-a, both explicit exit code 0, followed by ability-hub-art-a.
+The original integration-b and ability-reload-a are rejected as clean runs.
+Regression: quit while breath remains active, save/reload that state, change
+maps and return. Require clean process exit as well as script assertions.
+The runner retains its process handle (Get-Process alone lost ExitCode),
+detects native crash dialogs and rejects nonzero exits. A passing log marker
+does not override a native crash. Raw minidumps remain local.
+Limitations: this diagnoses the supplied shutdown fault, not every engine crash.
+Author acceptance of the full patch remains pending.
+
+## CA-KP-057 - Native Powerup expiry can precede the tenth recovery pulse
+
+Status/evidence: RESOLVED-VERIFIED for new potion doses in #135.
+First recorded / last checked: 2026-10-08 / 2026-10-08.
+Affected baseline: 5f9202ad plus the working 5.1.5 consumable changes.
+Environment: Windows 11, GZDoom 4.14.2, isolated native room, real 35-Hz tics.
+Scope: CaelumRegenerationPower and all three potion families and sizes.
+
+A 350-tic Powerup and a pulse every 35 owner DoEffect calls delivered only nine
+pulses: the engine decrements the power's lifetime and destroys it before the
+last owner callback. The three Anima totals were 108.9/245.025/544.5 instead of
+121/272.25/605 for a 1210-point bar. This is native ordering, not a dose-table
+or floating-point error. New potion metadata records delivered pulses;
+natural expiry completes a missing tenth only after nine were delivered.
+Early destruction, death and manual refresh do not receive an expiry bonus.
+Health keeps a fractional accumulator and loses less than one indivisible HP.
+Older saved effects with zero metadata keep their previous behavior.
+
+Evidence: assets/validation_515/potions-save-b.txt (27 passing assertions) and
+potions-reload-c.txt (28, including partial-dose/current-save preservation).
+The original failing c trial remains local; it is not counted as a pass.
+Regression: use each size with empty Anima, observe no instant grant, let ten
+real seconds elapse, compare total restoration and repeat across save/load.
+Final dose evidence: potions-final-a (37 assertions), potions-reload-final-a
+(38, all nine doses and player Air/Sleep), plus consumption-b for early cancel
+and finite exhaustion. Author acceptance: pending for the whole issue.
+
 ## CA-KP-056 - Cache thermal coefficients, keep flux and physiology live
 
 Status/evidence: ENGINE-VERIFIED. First checked: 2026-10-08.

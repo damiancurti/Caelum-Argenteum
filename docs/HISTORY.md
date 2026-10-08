@@ -1,6 +1,57 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **5.1.4** — 2026-10-08.
+Documentation version: **5.1.5** — 2026-10-08.
+
+## 5.1.5 - Demon breath and finite potions (#135, 2026-10-08)
+
+The author requested this patch after #140 / PR #142 merged as 5f9202ad.
+Approved decisions: 4 m / 60-degree contact cone, 20 kW emitted flame, radiation
+beyond contact range, T1 burn without extra direct damage, cold and combat use;
+per-family ten-second potion waiting; 0.25 kg all sizes and prices proportional
+to recovery; NPC Energy restores Air, player Energy Air plus Sleep. Medium
+sprites have silver details and large sprites silver plus gold, including kits.
+The author then requested dedicated exhalation gestures for both demons and
+reported potentially inverted Zupay directions. New original eight-direction,
+four-phase atlases replace the provisional held pose. Fixed-angle idle checks
+showed no global inversion. The author's more specific ground-slam report then
+identified reversed D/E/F and M..R action-source rotations. Native registration
+corrects those views without changing PNGs, attack timing or AI angles.
+
+Native inventory owns six units of each family, small for Mandinga and large
+for Zupay. Appended type IDs preserve old IDs. Supply revision 1 migrates living
+demons once without replenishing spent stacks; dead bodies receive no supplies.
+Death selects one remaining unit unless a predefined drop has priority. Retreat
+is not death. Small/medium/large total doses are 10/22.5/50% over ten real seconds.
+Native Powerup expiry exposed a missing tenth pulse, fixed for new-dose metadata;
+older effects retain their original behavior. Setup/counter/timing fixture
+failures are retained locally and do not count as passing evidence.
+
+The first breath contact trial found a case-insensitive local/member shadow
+that left its direction zero; the corrected native test distinguishes contact
+burn from radiation. A later author-supplied CrashReport.zip identified native
+shutdown failure after integration-b's passing markers. Official g4.14.2 PDB
+symbols resolve the chain through ClearLevelData, DestroyAllThinkers, SetState,
+A_Look and isTargetablePlayer: restoring Spawn inside OnDestroy executed AI after
+player teardown. Destructor cleanup now releases owned effects without state
+actions or heat integration. integration-b and ability-reload-a are explicitly
+rejected as clean runs; final runners retain handles, detect crash dialogs and
+require exit code zero. CRASH_ANALYSIS.json records hashes and the symbol trace;
+the raw minidump/report remain local and are not distributed.
+
+Final evidence is maintained in assets/validation_515/RESULTS.md and its
+manifest. Static analysis, native behavior, clean process exit and author
+acceptance are separate. Original 5.1.4 save/runtime pairs are retained and
+natively reloaded for rollback; rollback restores that checkpoint, not progress
+made in newer saves containing classes absent from 5.1.4. No direct backward
+loading of a 5.1.5 save into unmodified 5.1.4 is promised.
+
+**Author acceptance, 2026-10-08:** CA135-01 and CA135-02 (origin 5.1.5/#135)
+passed: the author explicitly confirmed every test in pending_test.txt and
+authorized PR #144 merge and #135 closure. The two accepted entries are removed
+from the queue. This confirms the listed visual/gameplay, interaction and
+persistence checks; it does not claim mass-siege fluency or presented FPS.
+The added soldier posture/aim request continues separately in issue #143 and
+is not included in this acceptance.
 
 ## 5.1.4 - Cached thermal physiology and breathing (#140, 2026-10-08)
 
@@ -144,6 +195,16 @@ CA133-01/02/03 (origin 5.1.3/#133) remain unconfirmed: this instruction authoriz
 integration but does not state that those manual tests passed. The pending
 Air/Anima Hunger interpretation and NPC scope are carried forward as unfinished
 resource-design work. No version increment or runtime change accompanies closure.
+
+**Subsequent author acceptance, 2026-10-08:** CA133-01, CA133-02 and CA133-03
+(origin 5.1.3/#133) passed when the author explicitly confirmed every remaining
+entry in pending_test.txt. They are removed from the queue. This accepts city
+interiors/trade controls, deployment/shared carbine artwork and the listed
+sweating/cooling observations in the current runtime. CA133-03 uses #140
+(5.1.4 onward) quarter-Health full-bar Hunger/Thirst recovery costs; it does not
+reinstate the superseded 5.1.3 no-Thirst rule. Earlier failed thermal controls
+and measured performance limits remain evidence with their original scope.
+Soldier crouched aiming under #143 is a separate, not-yet-accepted change.
 
 ## 5.1.2 - Staged siege experiment (#132, 2026-10-07)
 

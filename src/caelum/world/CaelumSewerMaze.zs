@@ -311,7 +311,7 @@ class CaelumSewerMaze : Object play
         while((enemy=Actor(enemies.Next()))!=null)if(enemy.health>0)mandingas++;
         let ratIt=ThinkerIterator.Create("CaelumGiantRat");Actor rat;
         while((rat=Actor(ratIt.Next()))!=null)if(rat.health>0)rats++;
-        Console.Printf("[Caelum 5.1.4] Laberinto MAP02: cofres=%d objetos heredados restantes=%d Mandingas vivos=%d ratas vivas=%d Zupay vivo=%d",chests,objects,mandingas,rats,BossAlive());
+        Console.Printf("[Caelum 5.1.5] Laberinto MAP02: cofres=%d objetos heredados restantes=%d Mandingas vivos=%d ratas vivas=%d Zupay vivo=%d",chests,objects,mandingas,rats,BossAlive());
         if(CaelumMazeLayout.IsCardinal())Console.Printf("Contenido inicial: 39 cofres de materiales equivalentes a 65 piezas T1, 96 Mandingas, 192 ratas, 45 trampas; drops: 96 comida, 96 agua, 240 flechas, 120 virotes, 120 balas. Carta: índice %d.",CUPS_ACE);
         for(int i=0;i<MAXPLAYERS;i++)if(playeringame[i])
         {

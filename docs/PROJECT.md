@@ -1,6 +1,26 @@
 # Caelum Argenteum — Project, status and roadmap
 
-Documentation version: **5.1.4** — 2026-10-08.
+Documentation version: **5.1.5** — 2026-10-08.
+
+## 5.1.5 - Demon supplies and fire breath (#135)
+
+PR #142 merged as 5f9202ad and #140 closed on 2026-10-08, including thermal
+label colors. The #135 branch adds owned finite potion supplies, all nine
+size/family combinations, automatic use and weighted single-unit death loot.
+Mandingas use small doses and Zupay large; active families wait ten seconds.
+The approved racial breath serves cold regulation and close combat, spending
+Anima concurrently with regeneration. SYSTEMS holds its approved profile.
+
+Native evidence covers exact doses, resource thresholds, contact versus heat,
+wall occlusion, ordinary cold regulation, retreat, persistence and migration.
+A reported native shutdown crash was traced with official engine symbols to
+state restoration during destruction; teardown now releases effects without
+executing state actions. Passing gameplay markers alone are not clean-exit
+proof. On 2026-10-08 the author explicitly confirmed CA135-01/02 passed and
+authorized PR #144 merge and #135 closure. HISTORY records acceptance separately
+from the native evidence; no #135 author checks remain pending.
+The author's additional crouched/aimed soldier request is tracked separately
+as #143, with its own code, artwork, tests and delivery.
 
 ## 5.1.4 - Thermal coefficients, breathing and recovery (#140)
 
@@ -26,7 +46,7 @@ follow-up calibration has its own evidence. A 100-kg human with 40-kg T1 heavy a
 nine actual jumps and 40 seconds of rest without water or thermal damage in
 a 19-20 C climate (peak E +1.73; damage threshold +10.18). This is a bounded
 exertion result, not immunity to overheating. Exact conditions and limitations: assets/validation_514/RESULTS.md.
-#133 is closed and PR #141 merged as dd8e18bd; its manual checks remain pending.
+#133 is closed and PR #141 merged as dd8e18bd; CA133-01/02/03 are author-accepted.
 
 ## 5.1.3 - Functional port city (#133, closure and merge authorized)
 
@@ -35,7 +55,8 @@ exertion result, not immunity to overheating. Exact conditions and limitations: 
 homes, T1 factory networks, specialized merchants, housed soldier deployment,
 and shared world carbine artwork. On 2026-10-08 the author authorizes #133 closure
 and PR #141 merge, deferring the thermal findings to #140. This authorization does
-not independently confirm the outstanding manual tests.
+not independently confirm the manual tests at that stage. The later explicit
+confirmation on 2026-10-08 accepts CA133-01/02/03, as recorded in HISTORY.
 Fresh MAP06 geometry uses revision 3; already visited revision-2 ports require
 `build_dev.ps1 -LegacyMap06SouthCity` and retain their active siege behavior.
 The exact authored 5.1.2 geometry and provenance are in assets/map06_port/legacy_512.
@@ -48,7 +69,8 @@ soldiers deploy physically while the attack begins. Shared carbine services reta
 normal magazines, combat resources, projectiles and wear; only NPC reserve is
 infinite. Original directional world art also follows the player's actual weapon.
 Validation and performance limits: [native evidence](../assets/validation_513/RESULTS.md).
-CA133-01/02/03 in pending_test.txt still require author visual/gameplay acceptance.
+CA133-01/02/03 passed by explicit author confirmation on 2026-10-08. Their
+acceptance does not turn earlier failed thermal or performance controls into passes.
 The pre-sweating firearm control exposes a balance limit in the retained #130
 action-heat profile: 14 shots per soldier lead to fatal accumulated heat
 (HEAT_LIMIT.json). The author then approved regulated humanoid sweat, finite

@@ -13,6 +13,7 @@ class CaelumCombatActor : Actor
     CaelumArmorModel CombatArmor;
     CaelumElementalStatus ElementalStatus;
     CaelumThermalState ThermalState;
+    CaelumDemonBreath DemonBreath;
     int CombatMaximumHealth;
     int CombatToughness;
     int CombatResilience;
@@ -969,6 +970,8 @@ class CaelumCombatActor : Actor
         {
             let item=CaelumEquipmentItem(cursor);
             if (item!=null && !item.InMagicBox) weight+=item.UnitWeight*item.Amount;
+            let consumable=CaelumConsumableItem(cursor);
+            if(consumable!=null)weight+=consumable.GetCarriedWeight();
         }
         return weight;
     }
@@ -1128,12 +1131,15 @@ class CaelumCombatActor : Actor
     }
 
     double GetTierOneMagicAnimaCost(int weaponType)
+    {return GetMagicAnimaCost(GetTierOneMagicBaseAnimaCost(weaponType));}
+
+    double GetMagicAnimaCost(double baseCost)
     {
         int effectiveEloquence = CombatEloquence
             + GetCombatArmorAttributeBonus(
                 CaelumConstants.ATTRIBUTE_ELOQUENCE
             );
-        return GetTierOneMagicBaseAnimaCost(weaponType) * 100.0
+        return Max(0.0,baseCost) * 100.0
             / CalculateActorType4Percent(Max(0, effectiveEloquence));
     }
 
@@ -3587,6 +3593,8 @@ class CaelumCombatActor : Actor
     }
 
     bool MazeDropReleased;
+    int DemonSupplyRevision;
+    bool DemonDeathLootReleased;
 
     override void Die(Actor source, Actor inflictor, int dmgflags, Name MeansOfDeath)
     {
@@ -3596,6 +3604,8 @@ class CaelumCombatActor : Actor
             MazeDropReleased=true;
             CaelumMazeLayout.CreateDeathDrop(tid);
         }
+        CaelumDemonService.ReleaseLoot(self,CaelumMazeLayout.IsCardinal() && CaelumMazeLayout.HasDeathDrop(tid));
+        CaelumDemonService.StopBreath(self);
         CaelumBreathing.StopAudio(self);
         Super.Die(source,inflictor,dmgflags,MeansOfDeath);
         // Los saves previos retienen sus EventHandlers. La misma confirmación
@@ -3620,8 +3630,10 @@ class CaelumCombatActor : Actor
 
     override void Tick()
     {
+        CaelumDemonService.Initialize(self);
         CaelumBreathing.UpdateSound(self);
         ResourceRecoveryActive();
+        CaelumDemonService.UpdateBreath(self);
         // Los valores base quedan intactos: reconstruir evita restas acumuladas.
         if (ArmorBalanceRevision < 1 && CombatProfileInitialized)
         {
@@ -3658,6 +3670,8 @@ class CaelumCombatActor : Actor
         UpdateCaelumRecognitionSound();
         CaelumThermalMotion.Physics(self,thermalBefore,prePhysicsVelocity,thermalGrounded,thermalPropulsion,thermalSector,thermalSupport,thermalSupportHeight);
         CaelumThermalRuntime.NPCStep(self);
+
+        CaelumDemonService.UpdatePotions(self);
 
         // Los actores diagnósticos conservan estados nativos, A_Look, A_Chase
         // y ataques, pero no recalculan estadísticas, estados elementales ni
@@ -3823,6 +3837,9 @@ class CaelumCombatActor : Actor
 
     override void OnDestroy()
     {
+        // ClearLevelData también destruye actores: no ejecutar A_Look ni
+        // consultar geometría cuando el motor ya desmontó el mundo.
+        CaelumDemonService.StopBreath(self,false,false);
         if(RecoveryGoal!=null)RecoveryGoal.Destroy();
         Super.OnDestroy();
     }

@@ -1,0 +1,449 @@
+// Generated native clipping of unchanged #135 exhalation artwork.
+Sprite "MDBRA1", 229, 234
+{
+    XScale 0.980468750
+    YScale 0.980468750
+    Offset 114, 225
+    Patch "sprites/caelum/demon_breath/mandinga.png", 0, 0
+}
+Sprite "MDBRA2", 222, 234
+{
+    XScale 0.980468750
+    YScale 0.980468750
+    Offset 109, 226
+    Patch "sprites/caelum/demon_breath/mandinga.png", -229, 0
+}
+Sprite "MDBRA3", 221, 234
+{
+    XScale 0.980468750
+    YScale 0.980468750
+    Offset 111, 227
+    Patch "sprites/caelum/demon_breath/mandinga.png", -451, 0
+}
+Sprite "MDBRA4", 217, 234
+{
+    XScale 0.980468750
+    YScale 0.980468750
+    Offset 114, 228
+    Patch "sprites/caelum/demon_breath/mandinga.png", -672, 0
+}
+Sprite "MDBRA5", 220, 234
+{
+    XScale 0.980468750
+    YScale 0.980468750
+    Offset 109, 226
+    Patch "sprites/caelum/demon_breath/mandinga.png", -889, 0
+}
+Sprite "MDBRA6", 215, 234
+{
+    XScale 0.980468750
+    YScale 0.980468750
+    Offset 100, 227
+    Patch "sprites/caelum/demon_breath/mandinga.png", -1109, 0
+}
+Sprite "MDBRA7", 221, 234
+{
+    XScale 0.980468750
+    YScale 0.980468750
+    Offset 108, 227
+    Patch "sprites/caelum/demon_breath/mandinga.png", -1324, 0
+}
+Sprite "MDBRA8", 229, 234
+{
+    XScale 0.980468750
+    YScale 0.980468750
+    Offset 117, 226
+    Patch "sprites/caelum/demon_breath/mandinga.png", -1545, 0
+}
+Sprite "MDBRB1", 228, 222
+{
+    XScale 0.980468750
+    YScale 0.980468750
+    Offset 114, 213
+    Patch "sprites/caelum/demon_breath/mandinga.png", 0, -234
+}
+Sprite "MDBRB2", 222, 222
+{
+    XScale 0.980468750
+    YScale 0.980468750
+    Offset 110, 214
+    Patch "sprites/caelum/demon_breath/mandinga.png", -228, -234
+}
+Sprite "MDBRB3", 221, 222
+{
+    XScale 0.980468750
+    YScale 0.980468750
+    Offset 112, 215
+    Patch "sprites/caelum/demon_breath/mandinga.png", -450, -234
+}
+Sprite "MDBRB4", 219, 222
+{
+    XScale 0.980468750
+    YScale 0.980468750
+    Offset 115, 215
+    Patch "sprites/caelum/demon_breath/mandinga.png", -671, -234
+}
+Sprite "MDBRB5", 216, 222
+{
+    XScale 0.980468750
+    YScale 0.980468750
+    Offset 107, 214
+    Patch "sprites/caelum/demon_breath/mandinga.png", -890, -234
+}
+Sprite "MDBRB6", 218, 222
+{
+    XScale 0.980468750
+    YScale 0.980468750
+    Offset 102, 215
+    Patch "sprites/caelum/demon_breath/mandinga.png", -1106, -234
+}
+Sprite "MDBRB7", 222, 222
+{
+    XScale 0.980468750
+    YScale 0.980468750
+    Offset 108, 215
+    Patch "sprites/caelum/demon_breath/mandinga.png", -1324, -234
+}
+Sprite "MDBRB8", 228, 222
+{
+    XScale 0.980468750
+    YScale 0.980468750
+    Offset 116, 214
+    Patch "sprites/caelum/demon_breath/mandinga.png", -1546, -234
+}
+Sprite "MDBRC1", 225, 218
+{
+    XScale 0.980468750
+    YScale 0.980468750
+    Offset 114, 211
+    Patch "sprites/caelum/demon_breath/mandinga.png", 0, -456
+}
+Sprite "MDBRC2", 223, 218
+{
+    XScale 0.980468750
+    YScale 0.980468750
+    Offset 113, 213
+    Patch "sprites/caelum/demon_breath/mandinga.png", -225, -456
+}
+Sprite "MDBRC3", 223, 218
+{
+    XScale 0.980468750
+    YScale 0.980468750
+    Offset 114, 213
+    Patch "sprites/caelum/demon_breath/mandinga.png", -448, -456
+}
+Sprite "MDBRC4", 220, 218
+{
+    XScale 0.980468750
+    YScale 0.980468750
+    Offset 115, 213
+    Patch "sprites/caelum/demon_breath/mandinga.png", -671, -456
+}
+Sprite "MDBRC5", 215, 218
+{
+    XScale 0.980468750
+    YScale 0.980468750
+    Offset 106, 212
+    Patch "sprites/caelum/demon_breath/mandinga.png", -891, -456
+}
+Sprite "MDBRC6", 218, 218
+{
+    XScale 0.980468750
+    YScale 0.980468750
+    Offset 102, 213
+    Patch "sprites/caelum/demon_breath/mandinga.png", -1106, -456
+}
+Sprite "MDBRC7", 223, 218
+{
+    XScale 0.980468750
+    YScale 0.980468750
+    Offset 108, 213
+    Patch "sprites/caelum/demon_breath/mandinga.png", -1324, -456
+}
+Sprite "MDBRC8", 227, 218
+{
+    XScale 0.980468750
+    YScale 0.980468750
+    Offset 115, 212
+    Patch "sprites/caelum/demon_breath/mandinga.png", -1547, -456
+}
+Sprite "MDBRD1", 229, 213
+{
+    XScale 0.980468750
+    YScale 0.980468750
+    Offset 114, 213
+    Patch "sprites/caelum/demon_breath/mandinga.png", 0, -674
+}
+Sprite "MDBRD2", 221, 213
+{
+    XScale 0.980468750
+    YScale 0.980468750
+    Offset 109, 213
+    Patch "sprites/caelum/demon_breath/mandinga.png", -229, -674
+}
+Sprite "MDBRD3", 221, 213
+{
+    XScale 0.980468750
+    YScale 0.980468750
+    Offset 112, 213
+    Patch "sprites/caelum/demon_breath/mandinga.png", -450, -674
+}
+Sprite "MDBRD4", 219, 213
+{
+    XScale 0.980468750
+    YScale 0.980468750
+    Offset 115, 213
+    Patch "sprites/caelum/demon_breath/mandinga.png", -671, -674
+}
+Sprite "MDBRD5", 216, 213
+{
+    XScale 0.980468750
+    YScale 0.980468750
+    Offset 108, 213
+    Patch "sprites/caelum/demon_breath/mandinga.png", -890, -674
+}
+Sprite "MDBRD6", 219, 213
+{
+    XScale 0.980468750
+    YScale 0.980468750
+    Offset 102, 213
+    Patch "sprites/caelum/demon_breath/mandinga.png", -1106, -674
+}
+Sprite "MDBRD7", 221, 213
+{
+    XScale 0.980468750
+    YScale 0.980468750
+    Offset 107, 213
+    Patch "sprites/caelum/demon_breath/mandinga.png", -1325, -674
+}
+Sprite "MDBRD8", 228, 213
+{
+    XScale 0.980468750
+    YScale 0.980468750
+    Offset 116, 213
+    Patch "sprites/caelum/demon_breath/mandinga.png", -1546, -674
+}
+Sprite "ZUBRA1", 244, 237
+{
+    XScale 0.600464191
+    YScale 0.600464191
+    Offset 120, 235
+    Patch "sprites/caelum/demon_breath/zupay.png", 0, 0
+}
+Sprite "ZUBRA2", 208, 237
+{
+    XScale 0.600464191
+    YScale 0.600464191
+    Offset 108, 235
+    Patch "sprites/caelum/demon_breath/zupay.png", -244, 0
+}
+Sprite "ZUBRA3", 196, 237
+{
+    XScale 0.600464191
+    YScale 0.600464191
+    Offset 106, 235
+    Patch "sprites/caelum/demon_breath/zupay.png", -452, 0
+}
+Sprite "ZUBRA4", 221, 237
+{
+    XScale 0.600464191
+    YScale 0.600464191
+    Offset 124, 235
+    Patch "sprites/caelum/demon_breath/zupay.png", -648, 0
+}
+Sprite "ZUBRA5", 238, 237
+{
+    XScale 0.600464191
+    YScale 0.600464191
+    Offset 120, 235
+    Patch "sprites/caelum/demon_breath/zupay.png", -869, 0
+}
+Sprite "ZUBRA6", 220, 237
+{
+    XScale 0.600464191
+    YScale 0.600464191
+    Offset 91, 235
+    Patch "sprites/caelum/demon_breath/zupay.png", -1107, 0
+}
+Sprite "ZUBRA7", 210, 237
+{
+    XScale 0.600464191
+    YScale 0.600464191
+    Offset 95, 235
+    Patch "sprites/caelum/demon_breath/zupay.png", -1327, 0
+}
+Sprite "ZUBRA8", 237, 237
+{
+    XScale 0.600464191
+    YScale 0.600464191
+    Offset 104, 235
+    Patch "sprites/caelum/demon_breath/zupay.png", -1537, 0
+}
+Sprite "ZUBRB1", 244, 225
+{
+    XScale 0.600464191
+    YScale 0.600464191
+    Offset 121, 222
+    Patch "sprites/caelum/demon_breath/zupay.png", 0, -237
+}
+Sprite "ZUBRB2", 208, 225
+{
+    XScale 0.600464191
+    YScale 0.600464191
+    Offset 108, 223
+    Patch "sprites/caelum/demon_breath/zupay.png", -244, -237
+}
+Sprite "ZUBRB3", 195, 225
+{
+    XScale 0.600464191
+    YScale 0.600464191
+    Offset 106, 223
+    Patch "sprites/caelum/demon_breath/zupay.png", -452, -237
+}
+Sprite "ZUBRB4", 223, 225
+{
+    XScale 0.600464191
+    YScale 0.600464191
+    Offset 126, 223
+    Patch "sprites/caelum/demon_breath/zupay.png", -647, -237
+}
+Sprite "ZUBRB5", 237, 225
+{
+    XScale 0.600464191
+    YScale 0.600464191
+    Offset 119, 223
+    Patch "sprites/caelum/demon_breath/zupay.png", -870, -237
+}
+Sprite "ZUBRB6", 221, 225
+{
+    XScale 0.600464191
+    YScale 0.600464191
+    Offset 91, 223
+    Patch "sprites/caelum/demon_breath/zupay.png", -1107, -237
+}
+Sprite "ZUBRB7", 208, 225
+{
+    XScale 0.600464191
+    YScale 0.600464191
+    Offset 94, 223
+    Patch "sprites/caelum/demon_breath/zupay.png", -1328, -237
+}
+Sprite "ZUBRB8", 238, 225
+{
+    XScale 0.600464191
+    YScale 0.600464191
+    Offset 104, 223
+    Patch "sprites/caelum/demon_breath/zupay.png", -1536, -237
+}
+Sprite "ZUBRC1", 244, 218
+{
+    XScale 0.600464191
+    YScale 0.600464191
+    Offset 120, 216
+    Patch "sprites/caelum/demon_breath/zupay.png", 0, -462
+}
+Sprite "ZUBRC2", 208, 218
+{
+    XScale 0.600464191
+    YScale 0.600464191
+    Offset 108, 216
+    Patch "sprites/caelum/demon_breath/zupay.png", -244, -462
+}
+Sprite "ZUBRC3", 194, 218
+{
+    XScale 0.600464191
+    YScale 0.600464191
+    Offset 106, 216
+    Patch "sprites/caelum/demon_breath/zupay.png", -452, -462
+}
+Sprite "ZUBRC4", 224, 218
+{
+    XScale 0.600464191
+    YScale 0.600464191
+    Offset 128, 216
+    Patch "sprites/caelum/demon_breath/zupay.png", -646, -462
+}
+Sprite "ZUBRC5", 237, 218
+{
+    XScale 0.600464191
+    YScale 0.600464191
+    Offset 119, 216
+    Patch "sprites/caelum/demon_breath/zupay.png", -870, -462
+}
+Sprite "ZUBRC6", 221, 218
+{
+    XScale 0.600464191
+    YScale 0.600464191
+    Offset 91, 216
+    Patch "sprites/caelum/demon_breath/zupay.png", -1107, -462
+}
+Sprite "ZUBRC7", 208, 218
+{
+    XScale 0.600464191
+    YScale 0.600464191
+    Offset 94, 216
+    Patch "sprites/caelum/demon_breath/zupay.png", -1328, -462
+}
+Sprite "ZUBRC8", 238, 218
+{
+    XScale 0.600464191
+    YScale 0.600464191
+    Offset 104, 216
+    Patch "sprites/caelum/demon_breath/zupay.png", -1536, -462
+}
+Sprite "ZUBRD1", 244, 207
+{
+    XScale 0.600464191
+    YScale 0.600464191
+    Offset 120, 203
+    Patch "sprites/caelum/demon_breath/zupay.png", 0, -680
+}
+Sprite "ZUBRD2", 208, 207
+{
+    XScale 0.600464191
+    YScale 0.600464191
+    Offset 108, 204
+    Patch "sprites/caelum/demon_breath/zupay.png", -244, -680
+}
+Sprite "ZUBRD3", 194, 207
+{
+    XScale 0.600464191
+    YScale 0.600464191
+    Offset 106, 204
+    Patch "sprites/caelum/demon_breath/zupay.png", -452, -680
+}
+Sprite "ZUBRD4", 223, 207
+{
+    XScale 0.600464191
+    YScale 0.600464191
+    Offset 126, 204
+    Patch "sprites/caelum/demon_breath/zupay.png", -646, -680
+}
+Sprite "ZUBRD5", 237, 207
+{
+    XScale 0.600464191
+    YScale 0.600464191
+    Offset 121, 204
+    Patch "sprites/caelum/demon_breath/zupay.png", -869, -680
+}
+Sprite "ZUBRD6", 221, 207
+{
+    XScale 0.600464191
+    YScale 0.600464191
+    Offset 92, 204
+    Patch "sprites/caelum/demon_breath/zupay.png", -1106, -680
+}
+Sprite "ZUBRD7", 209, 207
+{
+    XScale 0.600464191
+    YScale 0.600464191
+    Offset 95, 204
+    Patch "sprites/caelum/demon_breath/zupay.png", -1327, -680
+}
+Sprite "ZUBRD8", 238, 207
+{
+    XScale 0.600464191
+    YScale 0.600464191
+    Offset 105, 204
+    Patch "sprites/caelum/demon_breath/zupay.png", -1536, -680
+}

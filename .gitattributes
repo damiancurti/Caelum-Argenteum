@@ -79,3 +79,11 @@
 /assets/validation_513/* -text whitespace=cr-at-eol
 /assets/validation_513/*.txt whitespace=-blank-at-eol,-blank-at-eof,cr-at-eol
 /assets/validation_513/*.ini whitespace=-blank-at-eof,cr-at-eol
+
+# Preserve #135 crash, native configuration and fixture evidence byte-for-byte.
+/assets/validation_515/* -text whitespace=cr-at-eol
+/assets/validation_515/*.txt whitespace=-blank-at-eol,-blank-at-eof,cr-at-eol
+/assets/validation_515/*.ini whitespace=-blank-at-eof,cr-at-eol
+/assets/art_source/demon_breath_515/*.json text eol=lf
+/assets/art_source/potions_515/*.json text eol=lf
+/src/graphics/caelum/demon_breath.textures text eol=lf

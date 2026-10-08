@@ -41,7 +41,7 @@ class CaelumCityMerchant : Actor
             return Category==3 && (kind==CaelumConstants.EQUIPMENT_KIND_AMULET || kind==CaelumConstants.EQUIPMENT_KIND_SEAL);
         }
         let consumable=CaelumConsumableItem(item);
-        if(consumable!=null)return Category==0 && consumable.GetConsumableType()<=CaelumConstants.CONSUMABLE_WATER_RATION;
+        if(consumable!=null)return Category==0 && CaelumPotionRules.Family(consumable.GetConsumableType())<=CaelumConstants.CONSUMABLE_WATER_RATION;
         let ammo=CaelumCarbineAmmo(item);
         if(item is "CaelumArrowAmmo" || item is "CaelumBoltAmmo")return Category==2;
         return Category==2 && ammo!=null && ammo.GetAmmoType()<=CaelumConstants.AMMUNITION_BOLT;

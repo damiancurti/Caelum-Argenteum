@@ -1,0 +1,11 @@
+{
+  "reported_archive_sha256": "ef84df211d0fa4647d78a796ff8f27593d564fce84e64d48244fd8c138cab009",
+  "run": "integration-b",
+  "exception": "C0000005; read address 0x10c",
+  "stage": "P_Shutdown -> ClearLevelData -> DestroyAllThinkers -> OnDestroy -> SetState -> A_Look -> P_LookForPlayers -> isTargetablePlayer",
+  "root_cause": "Demon cleanup restored Spawn during actor destruction; Spawn executes A_Look after player teardown. Destructor must release owned flame/visuals without state actions or thermal integration.",
+  "symbol_source": "https://github.com/ZDoom/gzdoom/releases/download/g4.14.2/gzdoom-4-14-2-windows-pdb.7z",
+  "pdb_sha256": "1848d794eb7b6625b71d56947c9e7d24eb0bcabb966f602bd3cae515b77acf0c",
+  "symbols": "Loaded symbols 0x10000000 0\n0x259533 isTargetablePlayer 0x23\n0x2572c8 P_LookForPlayers 0x3f8\n0x251fa2 AF_AActor_A_Look 0x282\n0x50db37 VMNativeFunction::NativeScriptCall 0x37\n0x50de30 VMCall 0x90\n0x2e258d FState::CallAction 0x27d\n0x28e493 AActor::SetState 0x243\n0x27e3ac AF_AActor_SetState 0x2c\n0x4a7e31 DObject::Destroy 0x71\n0x308f18 FThinkerList::DoDestroyThinkers 0x108\n0x308d78 FThinkerCollection::DestroyAllThinkers 0x38\n0x29bf81 FLevelLocals::ClearLevelData 0xa1\n0x29df81 P_Shutdown 0x41\n0x1f1761 D_Cleanup 0x51\n0x1f5f2c GameMain 0x8c\n0xa2e80 DoMain 0x430\n0xa327c wWinMain 0xec\n0x733b2e __scrt_common_main_seh 0x106\n",
+  "status": "Fixed and engine verified: integration-art-a, ability-reload-art-a and ability-hub-art-a all exit 0 with active-source regression assertions. Rejected original runs remain identified."
+}

@@ -1270,13 +1270,15 @@ class CaelumDebugOverlay : EventHandler
         }
         if (localPlayer.EquipmentSelectionKind == CaelumConstants.EQUIPMENT_KIND_CONSUMABLE)
         {
+            if(CaelumPotionRules.IsPotion(localPlayer.EquipmentSelectionConsumableType))
+                return CaelumPotionRules.Icon(localPlayer.EquipmentSelectionConsumableType);
             if (localPlayer.EquipmentSelectionConsumableType == 5) return "graphics/caelum/icons/water/bottle_small.png";
             if (localPlayer.EquipmentSelectionConsumableType == 6) return "graphics/caelum/icons/water/bottle_normal.png";
             if (localPlayer.EquipmentSelectionConsumableType == 7) return "graphics/caelum/icons/water/bottle_large.png";
             if (localPlayer.EquipmentSelectionConsumableType == 8) return "graphics/caelum/icons/water/canteen_small.png";
             if (localPlayer.EquipmentSelectionConsumableType == 9) return "graphics/caelum/icons/water/canteen_normal.png";
             if (localPlayer.EquipmentSelectionConsumableType == 10) return "graphics/caelum/icons/water/canteen_large.png";
-            switch (localPlayer.EquipmentSelectionConsumableType)
+            switch (CaelumPotionRules.Family(localPlayer.EquipmentSelectionConsumableType))
             {
                 case CaelumConstants.CONSUMABLE_LIFE_POTION: return "graphics/caelum/icons/ca_medikit.png";
                 case CaelumConstants.CONSUMABLE_ANIMA_POTION: return "graphics/caelum/icons/ca_anima_potion.png";

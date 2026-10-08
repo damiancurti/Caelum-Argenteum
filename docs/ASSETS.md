@@ -1,6 +1,38 @@
 # Caelum Argenteum — Audio and art
 
-Documentation version: **5.1.4** — 2026-10-08.
+Documentation version: **5.1.5** — 2026-10-08.
+
+## 5.1.5 - Demon breath and potion tiers (#135)
+
+Six dedicated transparent potion variants were created with the built-in
+ImageGen tool from the project's existing icons. Medium fittings are silver;
+large fittings combine silver and gold, including medikits. Small originals
+are preserved. Source artwork, reference paths, prompt specifications and hashes:
+`assets/art_source/potions_515/PROVENANCE.json`. The deterministic
+`assets/generators/export_potion_tiers.ps1` exports 128x128 runtime icons;
+TEXTURES registers matching world sprites. All nine identities have EN/ES names.
+
+The author additionally requested dedicated exhalation gestures. Mandinga and
+Zupay each receive an original 32-frame atlas: four sustained open-mouth phases
+in eight directions, with braced shoulders and slight forward lean. Built-in
+ImageGen reference edits, exact prompts and originals are preserved under
+`assets/art_source/demon_breath_515`. `register_demon_breath.py` measures alpha
+and registers native clipping/foot pivots; it never changes the PNG pixels.
+The 64 frames loop with the engine's existing three-tic fire animation cadence.
+
+The author's directional report identified reversed source order in Zupay's
+ground-slam windup/impact, pain and six rock-cast poses (ZUPY D/E/F/M..R).
+`register_zupay_directions.py` maps rotations 2/3/4/6/7/8 to source 8/7/6/4/3/2;
+front/back, idle/walk/run and original PNG bytes remain intact. The mapping and
+source hashes are recorded in `demon_breath_515/ZUPAY_DIRECTIONS.json`.
+
+Breath reuses the original CEFB flame frames with additive light blending and
+four owned visual samples following the same mouth/direction/wall checks as its
+thermal source. No Doom
+art is introduced. Native fixtures, logs, crash diagnosis and captures live in
+`assets/validation_515`, outside the runtime package. Author visual acceptance
+remains separate. The requested Domingo crouched carbine atlas belongs to the
+separate follow-up #143 and is not part of this demon patch.
 
 ## 5.1.4 - Breathing recordings and native evidence (#140)
 
