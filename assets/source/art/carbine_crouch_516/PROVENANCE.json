@@ -1,0 +1,12 @@
+{
+  "issue": 143,
+  "release": "5.1.6",
+  "created": "2026-10-08",
+  "method": "Built-in image_gen; transparent project-reference edit. Original output copied unchanged; native TEXTURES clips individual frames without altering PNG pixels.",
+  "reference": "src/sprites/caelum/carbine_world/atlas.png",
+  "generated_file": "exec-1eb916ff-b7f8-42c4-863b-d531455294ef.png",
+  "prompt_specification": "Preserve Domingo's long dark hair, beard, steel armor with bronze details, red scarf, blue tunic and wooden-stock carbine. Thirty-two separate full-body sprites: eight directions per row, four rows for crouched aim, crouched firing without painted muzzle flash, reload start and reload completion. Deep crouch with one knee down, shouldered carbine and cheek at the stock. Directions: front, front-left, left, rear-left, back, rear-right, right, front-right. Consistent scale and ground pivots, transparent gutters/background, no labels or shadows.",
+  "attribution": "Original project-specific generated artwork based on the project's original Domingo/carbine design. No Doom sprite asset. Source PNG retained alongside this record.",
+  "source_sha256": "8e9d04b085d3367301daba8aa928ba71f4f7e898300974fed3f1463ad6521d5b",
+  "reference_sha256": "6d703f2b8c3da2c114c25bc22e4296fe5eb1a0bef8816ef83cee603a4c7b5930"
+}

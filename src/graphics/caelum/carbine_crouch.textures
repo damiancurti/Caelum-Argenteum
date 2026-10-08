@@ -1,0 +1,225 @@
+// Generated: original crouched atlas, native clipping and foot pivots.
+Sprite "CAGCA1", 204, 250
+{
+    XScale 1.909090909
+    YScale 1.909090909
+    Offset 138, 227
+    Patch "sprites/caelum/carbine_crouch/atlas.png", 0, 0
+}
+Sprite "CAGCA2", 207, 250
+{
+    XScale 1.909090909
+    YScale 1.909090909
+    Offset 118, 225
+    Patch "sprites/caelum/carbine_crouch/atlas.png", -204, 0
+}
+Sprite "CAGCA3", 243, 250
+{
+    XScale 1.909090909
+    YScale 1.909090909
+    Offset 150, 225
+    Patch "sprites/caelum/carbine_crouch/atlas.png", -411, 0
+}
+Sprite "CAGCA4", 238, 250
+{
+    XScale 1.909090909
+    YScale 1.909090909
+    Offset 126, 226
+    Patch "sprites/caelum/carbine_crouch/atlas.png", -654, 0
+}
+Sprite "CAGCA5", 190, 250
+{
+    XScale 1.909090909
+    YScale 1.909090909
+    Offset 86, 226
+    Patch "sprites/caelum/carbine_crouch/atlas.png", -892, 0
+}
+Sprite "CAGCA6", 249, 250
+{
+    XScale 1.909090909
+    YScale 1.909090909
+    Offset 118, 225
+    Patch "sprites/caelum/carbine_crouch/atlas.png", -1082, 0
+}
+Sprite "CAGCA7", 246, 250
+{
+    XScale 1.909090909
+    YScale 1.909090909
+    Offset 100, 225
+    Patch "sprites/caelum/carbine_crouch/atlas.png", -1331, 0
+}
+Sprite "CAGCA8", 197, 250
+{
+    XScale 1.909090909
+    YScale 1.909090909
+    Offset 129, 226
+    Patch "sprites/caelum/carbine_crouch/atlas.png", -1577, 0
+}
+Sprite "CAGCB1", 207, 203
+{
+    XScale 1.909090909
+    YScale 1.909090909
+    Offset 138, 197
+    Patch "sprites/caelum/carbine_crouch/atlas.png", 0, -250
+}
+Sprite "CAGCB2", 203, 203
+{
+    XScale 1.909090909
+    YScale 1.909090909
+    Offset 113, 194
+    Patch "sprites/caelum/carbine_crouch/atlas.png", -207, -250
+}
+Sprite "CAGCB3", 243, 203
+{
+    XScale 1.909090909
+    YScale 1.909090909
+    Offset 150, 194
+    Patch "sprites/caelum/carbine_crouch/atlas.png", -410, -250
+}
+Sprite "CAGCB4", 238, 203
+{
+    XScale 1.909090909
+    YScale 1.909090909
+    Offset 127, 195
+    Patch "sprites/caelum/carbine_crouch/atlas.png", -653, -250
+}
+Sprite "CAGCB5", 191, 203
+{
+    XScale 1.909090909
+    YScale 1.909090909
+    Offset 87, 195
+    Patch "sprites/caelum/carbine_crouch/atlas.png", -891, -250
+}
+Sprite "CAGCB6", 248, 203
+{
+    XScale 1.909090909
+    YScale 1.909090909
+    Offset 118, 195
+    Patch "sprites/caelum/carbine_crouch/atlas.png", -1082, -250
+}
+Sprite "CAGCB7", 251, 203
+{
+    XScale 1.909090909
+    YScale 1.909090909
+    Offset 100, 194
+    Patch "sprites/caelum/carbine_crouch/atlas.png", -1330, -250
+}
+Sprite "CAGCB8", 193, 203
+{
+    XScale 1.909090909
+    YScale 1.909090909
+    Offset 125, 197
+    Patch "sprites/caelum/carbine_crouch/atlas.png", -1581, -250
+}
+Sprite "CAGCC1", 211, 228
+{
+    XScale 1.909090909
+    YScale 1.909090909
+    Offset 139, 212
+    Patch "sprites/caelum/carbine_crouch/atlas.png", 0, -453
+}
+Sprite "CAGCC2", 211, 228
+{
+    XScale 1.909090909
+    YScale 1.909090909
+    Offset 109, 211
+    Patch "sprites/caelum/carbine_crouch/atlas.png", -211, -453
+}
+Sprite "CAGCC3", 237, 228
+{
+    XScale 1.909090909
+    YScale 1.909090909
+    Offset 128, 210
+    Patch "sprites/caelum/carbine_crouch/atlas.png", -422, -453
+}
+Sprite "CAGCC4", 231, 228
+{
+    XScale 1.909090909
+    YScale 1.909090909
+    Offset 119, 211
+    Patch "sprites/caelum/carbine_crouch/atlas.png", -659, -453
+}
+Sprite "CAGCC5", 196, 228
+{
+    XScale 1.909090909
+    YScale 1.909090909
+    Offset 89, 211
+    Patch "sprites/caelum/carbine_crouch/atlas.png", -890, -453
+}
+Sprite "CAGCC6", 243, 228
+{
+    XScale 1.909090909
+    YScale 1.909090909
+    Offset 120, 211
+    Patch "sprites/caelum/carbine_crouch/atlas.png", -1086, -453
+}
+Sprite "CAGCC7", 236, 228
+{
+    XScale 1.909090909
+    YScale 1.909090909
+    Offset 105, 210
+    Patch "sprites/caelum/carbine_crouch/atlas.png", -1329, -453
+}
+Sprite "CAGCC8", 209, 228
+{
+    XScale 1.909090909
+    YScale 1.909090909
+    Offset 135, 213
+    Patch "sprites/caelum/carbine_crouch/atlas.png", -1565, -453
+}
+Sprite "CAGCD1", 206, 206
+{
+    XScale 1.909090909
+    YScale 1.909090909
+    Offset 138, 188
+    Patch "sprites/caelum/carbine_crouch/atlas.png", 0, -681
+}
+Sprite "CAGCD2", 205, 206
+{
+    XScale 1.909090909
+    YScale 1.909090909
+    Offset 115, 186
+    Patch "sprites/caelum/carbine_crouch/atlas.png", -206, -681
+}
+Sprite "CAGCD3", 241, 206
+{
+    XScale 1.909090909
+    YScale 1.909090909
+    Offset 150, 186
+    Patch "sprites/caelum/carbine_crouch/atlas.png", -411, -681
+}
+Sprite "CAGCD4", 240, 206
+{
+    XScale 1.909090909
+    YScale 1.909090909
+    Offset 128, 187
+    Patch "sprites/caelum/carbine_crouch/atlas.png", -652, -681
+}
+Sprite "CAGCD5", 191, 206
+{
+    XScale 1.909090909
+    YScale 1.909090909
+    Offset 86, 187
+    Patch "sprites/caelum/carbine_crouch/atlas.png", -892, -681
+}
+Sprite "CAGCD6", 249, 206
+{
+    XScale 1.909090909
+    YScale 1.909090909
+    Offset 117, 187
+    Patch "sprites/caelum/carbine_crouch/atlas.png", -1083, -681
+}
+Sprite "CAGCD7", 249, 206
+{
+    XScale 1.909090909
+    YScale 1.909090909
+    Offset 98, 186
+    Patch "sprites/caelum/carbine_crouch/atlas.png", -1332, -681
+}
+Sprite "CAGCD8", 193, 206
+{
+    XScale 1.909090909
+    YScale 1.909090909
+    Offset 125, 188
+    Patch "sprites/caelum/carbine_crouch/atlas.png", -1581, -681
+}
