@@ -43,8 +43,15 @@ manifest. Static analysis, native behavior, clean process exit and author
 acceptance are separate. Original 5.1.4 save/runtime pairs are retained and
 natively reloaded for rollback; rollback restores that checkpoint, not progress
 made in newer saves containing classes absent from 5.1.4. No direct backward
-loading of a 5.1.5 save into unmodified 5.1.4 is promised. #135 is not accepted
-or merged yet. The added soldier posture/aim request continues in issue #143.
+loading of a 5.1.5 save into unmodified 5.1.4 is promised.
+
+**Author acceptance, 2026-10-08:** CA135-01 and CA135-02 (origin 5.1.5/#135)
+passed: the author explicitly confirmed every test in pending_test.txt and
+authorized PR #144 merge and #135 closure. The two accepted entries are removed
+from the queue. This confirms the listed visual/gameplay, interaction and
+persistence checks; it does not claim mass-siege fluency or presented FPS.
+The added soldier posture/aim request continues separately in issue #143 and
+is not included in this acceptance.
 
 ## 5.1.4 - Cached thermal physiology and breathing (#140, 2026-10-08)
 
@@ -188,6 +195,16 @@ CA133-01/02/03 (origin 5.1.3/#133) remain unconfirmed: this instruction authoriz
 integration but does not state that those manual tests passed. The pending
 Air/Anima Hunger interpretation and NPC scope are carried forward as unfinished
 resource-design work. No version increment or runtime change accompanies closure.
+
+**Subsequent author acceptance, 2026-10-08:** CA133-01, CA133-02 and CA133-03
+(origin 5.1.3/#133) passed when the author explicitly confirmed every remaining
+entry in pending_test.txt. They are removed from the queue. This accepts city
+interiors/trade controls, deployment/shared carbine artwork and the listed
+sweating/cooling observations in the current runtime. CA133-03 uses #140
+(5.1.4 onward) quarter-Health full-bar Hunger/Thirst recovery costs; it does not
+reinstate the superseded 5.1.3 no-Thirst rule. Earlier failed thermal controls
+and measured performance limits remain evidence with their original scope.
+Soldier crouched aiming under #143 is a separate, not-yet-accepted change.
 
 ## 5.1.2 - Staged siege experiment (#132, 2026-10-07)
 

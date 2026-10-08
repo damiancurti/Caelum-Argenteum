@@ -3,8 +3,8 @@
 Documentation version: **5.1.5** — 2026-10-08.
 
 **5.1.5/#135:** finite typed potions, weighted loot and racial fire breath.
-Native mechanics/persistence verified; final gates: TASKS.
-#140 closed, PR #142 merged 5f9202ad. #133 merged; CA133-01/02/03 pending.
+Accepted 2026-10-08; PR #144 merge/closure authorized.
+#140 merged 5f9202ad. #133 merged; CA133-01/02/03 accepted.
 #143 soldier crouched aiming follows #135.
 **#132 accepted, closed; PR #139 merged b0020109.**
 

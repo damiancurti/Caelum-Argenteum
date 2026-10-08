@@ -1,8 +1,10 @@
 # Issue 135 / 5.1.5 validation
 
 Baseline: `5f9202ad42f3dd0750f5368e2e15b28d98fac4a5` (#140 / PR #142).
-Implemented on the focused issue-135-demon-breath-potions branch. Author
-acceptance and merge/closure remain pending; see CA135-01/02 in pending_test.txt.
+Implemented on the focused issue-135-demon-breath-potions branch. The author
+confirmed CA135-01/02 passed on 2026-10-08 and authorized PR #144 merge and issue
+closure. HISTORY records acceptance separately from the native measurements.
+The separate #143 soldier posture work is not included in this acceptance.
 
 ## Environment and boundaries
 
@@ -63,7 +65,7 @@ attack timing and AI angles are unchanged. `orientation-fixed-a` produced
 24 fixed-angle captures across three groups of four poses; representative
 cardinal captures are retained as zupay-actions-*.png. Idle orbit captures
 remain as zupay-orientation-*.png. This corrects the identified registration
-error; final subjective animation/direction acceptance is still the author's.
+error; the author subsequently accepted animation/directions as CA135-01.
 
 ## Reported native shutdown crash
 

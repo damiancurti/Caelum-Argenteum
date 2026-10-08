@@ -15,7 +15,9 @@ and weighted single-unit death loot. Both demons have dedicated exhalation
 animations; Zupay's reversed action directions are corrected. Nine potion
 variants share exact timed doses and distinct tier artwork. Native behavior, persistence, reported-crash
 regression and final gates are recorded in [evidence](assets/validation_515/RESULTS.md).
-Author acceptance and PR integration remain separate; 5.1.4 is the merged baseline.
+The author accepted CA135-01/02 on 2026-10-08 and authorized
+[PR #144](https://github.com/damiancurti/Caelum-Argenteum/pull/144) integration
+and issue closure. Soldier crouched aiming continues separately in #143.
 
 **#140 is closed; [PR #142](https://github.com/damiancurti/Caelum-Argenteum/pull/142)
 was merged as `5f9202ad` on 2026-10-08**, including the requested thermal label colors.
@@ -43,8 +45,9 @@ finite hydration and coupled travel water forecasts; carbine action heat remains
 The author authorized #133 closure and [PR #141](https://github.com/damiancurti/Caelum-Argenteum/pull/141)
 merge on 2026-10-08, carrying thermal follow-up into
 [#140](https://github.com/damiancurti/Caelum-Argenteum/issues/140).
-[Native evidence](assets/validation_513/RESULTS.md) and
-[outstanding author checks](pending_test.txt) distinguish validation from acceptance.
+[Native evidence](assets/validation_513/RESULTS.md) retains its measured limits.
+The author confirmed CA133-01/02/03 passed on 2026-10-08;
+[HISTORY](docs/HISTORY.md) records their scope and current recovery rules.
 For a save that already visited the 5.1.2 southern city, build with
 `-LegacyMap06SouthCity`; keep the original package/save pair for rollback.
 

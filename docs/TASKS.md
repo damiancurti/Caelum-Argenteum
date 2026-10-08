@@ -17,11 +17,12 @@ and bounded incremental-cost checks pass. Final source-bound results and
 static/package gates are recorded in validation_515. No mass siege retest is
 requested. The reported shutdown crash has a targeted teardown fix;
 only runs with explicit clean exit codes count as final clean-exit proof.
-Author acceptance remains pending; do not merge/close #135 without authorization.
+Author confirmation, 2026-10-08: CA135-01/02 passed; PR #144 merge and #135
+closure authorized. No #135 author checks remain pending.
 Next authorized work: #143 crouched and aimed soldiers, original Domingo poses,
 focused native verification, commit/push and separate linked PR.
 
-#140 is closed; PR #142 merged 5f9202ad. CA133-01/02/03 remain pending.
+#140 is closed; PR #142 merged 5f9202ad. CA133-01/02/03 were accepted on 2026-10-08.
 
 ## Issue #133 - City interiors and deployment (5.1.3, closure and merge authorized)
 
@@ -33,8 +34,9 @@ The fresh routing control reaches all 600 posts, including crew stairs and retur
 from temporary access yields. Compatibility/save/hub controls and combined
 performance are recorded with their exact scope in validation_513/RESULTS.md.
 On 2026-10-08 the author authorizes issue closure and PR #141 merge, assigning
-the remaining thermal work to #140. CA133-01/02/03 remain in pending_test.txt
-because closure authorization does not report individual manual tests passed.
+the remaining thermal work to #140. Later that day the author explicitly
+confirmed CA133-01/02/03 passed. HISTORY records the original version and
+current thermal-rule qualifications; no #133 author checks remain pending.
 The author sets the shop/pricing and calendar decisions recorded in SYSTEMS.
 
 Follow-up design finding from #133: the unchanged #130 action-heat profile makes
