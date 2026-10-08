@@ -1,0 +1,15 @@
+Create an original production GAME SPRITE ATLAS for Caelum Argenteum, matching the provided original character reference and wooden carbine reference. Reference 1 is the character appearance (Domingo); reference 2 the tier-1 wooden-stock carbine shape (ignore the reference sheet labels, hands and spare cartridges). Keep this adult man's long dark hair, beard, russet scarf, weathered brown/leather/steel armor, navy tunic, belt and tall boots. Remove the sword and shield completely. He holds this compact period wooden carbine right-handed with BOTH hands. Keep consistent dark fantasy hand-painted pixel-art appearance, crisp silhouettes, no background, no text.
+
+STRICT ATLAS: exactly 8 equal columns and 6 equal rows, 48 separate complete full-body character sprites, transparent background. Output 2048x1536 if possible: each cell 256x256. Never overlap cells. In EVERY cell center the feet at local x=128, baseline y=244, head near y=68, matching the scale and pivot of reference 1. Transparent padding around each full character and weapon. No cast ground shadows, grid lines, labels or extra props.
+
+The 8 columns repeat SAME rotation order in EVERY row: 1 facing viewer/front; 2 front three-quarter facing screen LEFT; 3 profile facing screen LEFT; 4 back three-quarter facing screen LEFT; 5 back facing away; 6 back three-quarter facing screen RIGHT; 7 profile facing screen RIGHT; 8 front three-quarter facing screen RIGHT. Turn the full body and weapon coherently; right hand trigger, left hand under barrel remains anatomically correct even when rotated. This is an orthographic billboard game sheet, no perspective camera tilt.
+
+Rows, exactly six:
+1: stationary ready/carry stance, carbine across torso at low ready.
+2: walking left leg forward, right leg back, carbine securely carried.
+3: walking right leg forward, left leg back, carbine securely carried.
+4: aimed firing/recoil pose, butt against right shoulder, sight down barrel; no muzzle flash painted into this sheet (engine supplies effects).
+5: reloading first phase, weapon supported by left hand and right hand taking a cartridge near belt, muzzle safely angled slightly upward.
+6: reloading second phase, right hand inserting cartridge at the breech near the action, left hand supporting fore-end.
+
+Preserve the reference's head/body proportions, wardrobe, palette and human anatomy across all 48 cells. Show actual different walk and reload poses. Every required direction present, same height and feet anchor. Genuine alpha transparency.

@@ -1,0 +1,13 @@
+{
+  "issue": 133,
+  "origin_release": "5.1.2",
+  "origin_commit": "b00201098a26582c8820a5424a2a75986b022abf",
+  "purpose": "Exact authored MAP06 geometry and generator inputs before #133; matching legacy runtime policy uses controller revision 2. Original package and save remain the rollback pair.",
+  "files": {
+    "CITY.json": "06282795525e61c8c47179c7f9d18b9eb426f6ecc5f0af5a1986c7702bf067df",
+    "generate_map06_port.py": "493749b86bd15752d8e1427160b368f725e06834e4455019e644912be5740546",
+    "generate_port_city.py": "4bd8f05b5aba134c0f9a1e0881cde8cffbe510baa954b53a77e42a97b8afd777",
+    "MAP06.wad": "84f0c18fdb4be7a91eff146845f78dda5082d5b0c9d996928f0652d7c6fc7efd",
+    "SOUTH.json": "580f72e0d7dc6f49b44cbead1aa8749228a4f63fd2346ea5b78b97a6e4f04e6f"
+  }
+}

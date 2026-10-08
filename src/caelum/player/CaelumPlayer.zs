@@ -76,6 +76,8 @@ class CaelumPlayer : DoomPlayer
     bool CraftingMenuOpen;
     transient CaelumCraftingBrowser CraftingBrowser;
     bool PalomoMerchantMenuOpen;
+    CaelumCityTradeSession CityTrade;
+    int WorldCarbineShotUntil;
     bool PalomoMerchantDiscountGranted;
     bool PalomoMerchantReputationDiscount;
     CaelumFactionCondition ActivePalomoMerchantRequirement;
@@ -2060,6 +2062,7 @@ class CaelumPlayer : DoomPlayer
 
     void RefreshPalomoMerchantSnapshot()
     {
+        if(CityTrade!=null){CityTrade.Refresh(self);return;}
         PalomoMerchantSelection = Clamp(PalomoMerchantSelection, 0,
             CaelumConstants.PALOMO_MERCHANT_ITEM_COUNT - 1);
         PalomoMerchantMode = Clamp(PalomoMerchantMode,
@@ -2168,6 +2171,7 @@ class CaelumPlayer : DoomPlayer
 
     void ClosePalomoMerchant()
     {
+        CityTrade=null;
         PalomoMerchantMenuOpen = false;
         ActivePalomoMerchant = null;
         ActivePalomoMerchantRequirement = null;
@@ -2205,6 +2209,7 @@ class CaelumPlayer : DoomPlayer
     void CyclePalomoMerchantSelection(int direction)
     {
         if (!IsActivePalomoMerchantSessionValid()) { return; }
+        if(CityTrade!=null){CityTrade.Cycle(self,direction);return;}
         RefreshPalomoMerchantSnapshot();
         if (PalomoMerchantVisibleItemCount <= 0) { return; }
         int currentVisibleIndex = 0;
@@ -2252,6 +2257,7 @@ class CaelumPlayer : DoomPlayer
 
     void ExecutePalomoMerchantTransaction()
     {
+        if(CityTrade!=null){CityTrade.Execute(self);return;}
         if (!IsActivePalomoMerchantSessionValid())
         {
             CaelumFactionCondition.Require(self, ActivePalomoMerchantRequirement);
@@ -4955,8 +4961,8 @@ class CaelumPlayer : DoomPlayer
                 * CaelumCraftingRules.GetRecipeAmmunitionBatch(CraftingSelectionRecipe);
             CraftingBasicMaterialType = CaelumConstants.MATERIAL_SHAFT;
             CraftingTierMaterialType = CaelumConstants.MATERIAL_POINT;
-            CraftingBasicRequired = CaelumCraftingRules.GetRoundedMaterialUnits(CraftingFinalWeight, 0.7);
-            CraftingTierRequired = CaelumCraftingRules.GetRoundedMaterialUnits(CraftingFinalWeight, 0.3);
+            CraftingBasicRequired = CaelumCraftingRules.GetRoundedMaterialUnits(CraftingFinalWeight, CaelumConstants.AMMUNITION_SHAFT_SHARE);
+            CraftingTierRequired = CaelumCraftingRules.GetRoundedMaterialUnits(CraftingFinalWeight, CaelumConstants.AMMUNITION_POINT_SHARE);
             CraftingMissingStationType = CaelumCraftingRules.GetMissingNetworkStation(
                 CraftingNetworkCapabilities, 1, CaelumConstants.CATALOGUE_WEAPON_STANDARD_BOW);
         }
@@ -6130,6 +6136,7 @@ class CaelumPlayer : DoomPlayer
         else if (mode == CaelumJourneyState.MODE_CART || mode == CaelumJourneyState.MODE_CARAVAN) { wipe=3; cue=1; }
         EventHandler.SendInterfaceEvent(PlayerNumber(), "ca_map_depart", wipe, cue);
         PendingTravelWipe = 0;
+        WorldCarbineShotUntil = 0;
         EquipmentMenuOpen = false;
         CloseCraftingStationSession();
         ClosePalomoMerchant();
@@ -8868,6 +8875,7 @@ class CaelumPlayer : DoomPlayer
     // regeneration that also pauses when the game itself is paused.
     override void Tick()
     {
+        CaelumCarbineWorld.Restore(self);
         CaelumTarotDeckRules.EnsureLegacy(self);
         EnsureCurrentAttributeBalance();
         MigrateWeaponDurability();
@@ -9172,9 +9180,26 @@ class CaelumPlayer : DoomPlayer
         if (!InStateSequence(CurState, wanted)) SetState(wanted);
     }
 
+    void UpdateWorldCarbineVisual()
+    {
+        CaelumCarbineWorld.Apply(self,WeaponModel!=null && WeaponModel.Equipped
+            && WeaponModel.WeaponType==CaelumConstants.WEAPON_TYPE_CARBINE,
+            Vel.XY.Length()>0.01,level.time<WorldCarbineShotUntil,
+            RangedReloadActive ? RangedReloadRemainingSeconds : 0,RangedReloadTotalSeconds);
+    }
+
+    override void PlayAttacking()
+    {
+        Super.PlayAttacking();
+        // El arma nativa puede volver a aplicar Missile después de Tick.
+        // La pose depende del disparo real o de la recarga, nunca del botón.
+        UpdateWorldCarbineVisual();
+    }
+
     void UpdateCrouchEffects()
     {
         UpdateCrouchVisual();
+        UpdateWorldCarbineVisual();
         IsCrouching = player != null && player.crouchfactor < 0.99;
         CrouchAccuracyMultiplier = IsCrouching
             ? CaelumConstants.CROUCH_ACCURACY_MULTIPLIER
@@ -9987,14 +10012,7 @@ class CaelumPlayer : DoomPlayer
 
     int GetRangedMagazineCapacity(int weaponType)
     {
-        if (weaponType == CaelumConstants.WEAPON_TYPE_CARBINE) { return 10; }
-        if (weaponType == CaelumConstants.WEAPON_TYPE_CROSSBOW) { return 20; }
-        if (weaponType == CaelumConstants.WEAPON_TYPE_STANDARD_BOW
-            || weaponType == CaelumConstants.WEAPON_TYPE_LONGBOW)
-        {
-            return 50;
-        }
-        return 0;
+        return CaelumRangedRules.MagazineCapacity(weaponType);
     }
 
     int GetRangedMagazineCount(int weaponType)
@@ -10034,14 +10052,7 @@ class CaelumPlayer : DoomPlayer
 
     double GetRangedBaseReloadSeconds(int weaponType)
     {
-        if (weaponType == CaelumConstants.WEAPON_TYPE_CARBINE) { return 5.0; }
-        if (weaponType == CaelumConstants.WEAPON_TYPE_CROSSBOW) { return 5.0; }
-        if (weaponType == CaelumConstants.WEAPON_TYPE_STANDARD_BOW
-            || weaponType == CaelumConstants.WEAPON_TYPE_LONGBOW)
-        {
-            return 3.0;
-        }
-        return 0.0;
+        return CaelumRangedRules.BaseReloadSeconds(weaponType);
     }
 
     double GetRangedEffectiveReloadSeconds(int weaponType)
@@ -10059,9 +10070,7 @@ class CaelumPlayer : DoomPlayer
 
     double GetRangedTierCriticalMultiplier(int tier)
     {
-        if (tier <= 1) { return 1.0; }
-        if (tier == 2) { return 1.60; }
-        return 2.50;
+        return CaelumRangedRules.TierCriticalMultiplier(tier);
     }
 
     void CancelRangedAim()
@@ -10375,55 +10384,10 @@ class CaelumPlayer : DoomPlayer
         LastCarbineDamage = WeaponModel.GetDamage()
             * EffectiveOffensiveDamageMultiplier;
 
-        double attackAngle = Angle + LastCarbineYawOffset;
-        double attackPitch = Pitch + LastCarbinePitchOffset;
-        Vector3 spawnPos = Pos + (
-            Cos(attackAngle) * 32.0,
-            Sin(attackAngle) * 32.0,
-            Height * 0.65
-        );
-        Name projectileClass = "CaelumCarbineProjectile";
-        if (requiredAmmoType == CaelumConstants.AMMUNITION_ARROW)
-        {
-            projectileClass = "CaelumArrowProjectile";
-        }
-        else if (requiredAmmoType == CaelumConstants.AMMUNITION_BOLT)
-        {
-            projectileClass = "CaelumBoltProjectile";
-        }
-
-        CaelumCarbineProjectile projectile = CaelumCarbineProjectile(
-            Spawn(projectileClass, spawnPos, NO_REPLACE)
-        );
-        if (projectile == null) { return; }
-
-        projectile.Target = self;
-        projectile.Angle = attackAngle;
-        projectile.Pitch = attackPitch;
-        projectile.ConfigureCaelumTravelDistance(WeaponModel.GetRangedRangeFor(WeaponModel.WeaponType));
-        double rangedProjectileSpeed = WeaponModel.WeaponType
-                == CaelumConstants.WEAPON_TYPE_CARBINE
-            ? CaelumConstants.WEAPON_CARBINE_PROJECTILE_SPEED
-            : CaelumConstants.PROJECTILE_SPEED_VERY_FAST;
-        projectile.Vel = (
-            Cos(attackPitch) * Cos(attackAngle)
-                * rangedProjectileSpeed,
-            Cos(attackPitch) * Sin(attackAngle)
-                * rangedProjectileSpeed,
-            -Sin(attackPitch) * rangedProjectileSpeed
-        );
-        projectile.StoreCaelumAttackResult(
-            Max(1, int(LastCarbineDamage + 0.5)),
-            true,
-            LastCarbineCriticalHit,
-            false,
-            DerivedStats.PhysicalPushMultiplier
-        );
-        projectile.StoreCaelumWeaponWearIdentity(
-            WeaponModel.WeaponType,
-            WeaponModel.Tier,
-            WeaponModel.Size
-        );
+        let projectile=CaelumRangedRules.Fire(self,WeaponModel,LastCarbineDamage,
+            LastCarbineCriticalHit,DerivedStats.PhysicalPushMultiplier,
+            Angle+LastCarbineYawOffset,Pitch+LastCarbinePitchOffset);
+        if(projectile==null)return;
 
         if (WeaponModel.WeaponType == CaelumConstants.WEAPON_TYPE_CARBINE)
         {
@@ -10450,6 +10414,9 @@ class CaelumPlayer : DoomPlayer
         CurrentAir = Max(0.0, CurrentAir - airCost);
         UpdateAirStateEffects();
         LastCarbineFired = true;
+        if(WeaponModel.WeaponType==CaelumConstants.WEAPON_TYPE_CARBINE)
+            WorldCarbineShotUntil=level.time+GetEquippedAttackDurationTics();
+        UpdateWorldCarbineVisual();
         EquippedWeaponCooldownRemaining = GetEquippedAttackDurationTics()
             / double(TICRATE);
         MarkCombatActivity();

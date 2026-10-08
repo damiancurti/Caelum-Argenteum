@@ -342,7 +342,7 @@ class CaelumPlayerResources : Object play
                 - CaelumConstants.SURVIVAL_MAXIMUM
                 / (CaelumConstants.THIRST_EMPTY_GAME_HOURS
                     * CaelumWorldClock.SecondsPerGameHour(level.MapName))
-                * user.DerivedStats.HungerThirstLossMultiplier * CaelumThermalEffects.HeatCost(user) / restFactor / TICRATE);
+                * user.DerivedStats.HungerThirstLossMultiplier / restFactor / TICRATE);
         }
         // Dormir reemplaza la pérdida pasiva de Sueño por recuperación neta.
         // Esperar conserva la pérdida de Sueño; el soporte sólo modifica hambre/sed.
@@ -537,8 +537,7 @@ class CaelumPlayerResources : Object play
             user.DerivedStats.GetHungerThirstConsumptionMultiplier(user.Attributes)
                 / (restFactor * restFactor);
         double hungerCostPerHealth = 100.0 * consumptionMultiplier / user.CaelumMaximumHealth;
-        double thirstCostPerHealth = 50.0 * consumptionMultiplier / user.CaelumMaximumHealth
-            * CaelumThermalEffects.HeatCost(user);
+        double thirstCostPerHealth = 50.0 * consumptionMultiplier / user.CaelumMaximumHealth;
         double affordableHealth = Min(
             user.CurrentHunger / hungerCostPerHealth,
             user.CurrentThirst / thirstCostPerHealth
@@ -587,13 +586,7 @@ class CaelumPlayerResources : Object play
         double hungerCostPerAir =
             CaelumConstants.AIR_FULL_RECOVERY_HUNGER_COST
             * consumptionMultiplier / user.DerivedStats.MaximumAir;
-        double thirstCostPerAir =
-            CaelumConstants.AIR_FULL_RECOVERY_THIRST_COST
-            * consumptionMultiplier / user.DerivedStats.MaximumAir * CaelumThermalEffects.HeatCost(user);
-        double affordableAir = Min(
-            user.CurrentHunger / hungerCostPerAir,
-            user.CurrentThirst / thirstCostPerAir
-        );
+        double affordableAir = user.CurrentHunger / hungerCostPerAir;
         if (affordableAir <= 0.0) return;
 
         double recoveredAir = Min(
@@ -609,10 +602,6 @@ class CaelumPlayerResources : Object play
         user.CurrentHunger = Max(
             0.0,
             user.CurrentHunger - recoveredAir * hungerCostPerAir
-        );
-        user.CurrentThirst = Max(
-            0.0,
-            user.CurrentThirst - recoveredAir * thirstCostPerAir
         );
         user.UpdateSurvivalStates();
     }

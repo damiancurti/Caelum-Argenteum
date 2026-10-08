@@ -1,6 +1,27 @@
 # Caelum Argenteum — Audio and art
 
-Documentation version: **5.1.2** — 2026-10-07.
+Documentation version: **5.1.3** — 2026-10-08.
+
+## 5.1.3 - City interiors and world carbine artwork (#133)
+
+Original map generator inputs are in assets/map06_port/INTERIORS.json; existing
+native hinged doors, dining furniture, beds and crafting station art are reused.
+The two historical harbor shells are rebuilt west of their old footprint on the
+free apron; docks, arrival, campaign actors and narrative access are preserved.
+Exact previous geometry/source inputs are retained in assets/map06_port/legacy_512.
+
+New original carbine artwork is generated with the built-in image_gen tool using
+project Domingo/carbine references. Masters, both prompts and provenance live
+in assets/source/art/carbine_world_513. The existing character and first-person
+assets are preserved. The runtime PNG is byte-identical to the source atlas;
+native TEXTURES registers 48 directional/action cells with measured transparent
+gaps and foot pivots. `register_carbine_world.py` reads pixels to measure these
+boundaries but never edits the bitmap. Verification covers native third-person
+poses and actual player fire/reload; visual author acceptance remains separate.
+
+The sweating extension reuses existing character/clothing visuals and thermal
+HUD. Isolated fixtures, migration controls and native evidence remain under
+assets/validation_513; local packages and saved games are not distributed.
 
 ## 5.1.2 - Siege reinforcement evidence (#132)
 

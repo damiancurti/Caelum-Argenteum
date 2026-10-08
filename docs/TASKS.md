@@ -1,6 +1,45 @@
 # TASKS.md — Active tasks
 
-Documentation version: **5.1.2** — 2026-10-07.
+Documentation version: **5.1.3** — 2026-10-08.
+
+## Issue #133 - City interiors and deployment (5.1.3, closure and merge authorized)
+
+Implemented: revision-3 interiors and factory networks; 160 furnished homes,
+64 independent T1 shops, the 600 housed soldiers and authoritative siege date;
+native carbine combat and 48 shared world sprite frames; exact revision-2
+geometry backup/build selector. Commerce, furniture and recipe probes pass.
+The fresh routing control reaches all 600 posts, including crew stairs and return
+from temporary access yields. Compatibility/save/hub controls and combined
+performance are recorded with their exact scope in validation_513/RESULTS.md.
+On 2026-10-08 the author authorizes issue closure and PR #141 merge, assigning
+the remaining thermal work to #140. CA133-01/02/03 remain in pending_test.txt
+because closure authorization does not report individual manual tests passed.
+The author sets the shop/pricing and calendar decisions recorded in SYSTEMS.
+
+Follow-up design finding from #133: the unchanged #130 action-heat profile makes
+the 600-body continuous-fire control stop at 14 shots and one reload per soldier;
+all then die from thermal damage by tic 1400. HEAT_LIMIT.json confirms the native
+state and cause. The author subsequently approved surface-scaled sweating and
+actual water loss, retaining carbine heat rather than exempting firearms.
+The first new native control retains 600 living soldiers at tic 3500 but exposes
+post-exertion cold from wet clothing. Do not equate added cooling with accepted
+sustained-fire balance. The sweat extension passes native math/provisions,
+persistence/migration and carbine checks; final combined simulation/render rates
+are 31.21/5.57, with 598 surviving defenders and a different workload from the
+pre-sweat control. The requested half-Health Hunger cost for Air/Anima awaits
+per-bar/per-point clarification and NPC Hunger scope. No unconfirmed food-cost
+value has been applied. This resource-design request remains a deferred task,
+not a completed part of #133. Agent validation is distinct from CA133-01/02/03 acceptance.
+
+## Issue #140 - Thermal optimization and carried-forward heat findings
+
+The author moves the remaining heat work from #133 here on 2026-10-08. Preserve
+the source-bound 600-body firing control and combined-battle measurements as
+baselines. Investigate action-heat calibration and wet-clothing cooling alongside
+the existing per-actor coefficient caching, invalidation and bounded flux-update
+scope. The scope transfer approves investigation, not new numerical balance
+values. Separate measured performance changes from altered survival/workload;
+retain water/energy accounting, migration and real/world-time semantics.
 
 ## Issue #132 - Staged siege performance test (5.1.2)
 

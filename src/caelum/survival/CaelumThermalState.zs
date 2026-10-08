@@ -11,6 +11,10 @@ class CaelumThermalState : Object play
     int Material[4];
     double WorkWaterKg[4];
     bool Bare;
+    // En jugador Hydration sólo es copia de trabajo; CurrentThirst es su dueño.
+    // En NPC esta reserva persistente no tiene reposición automática.
+    bool Sweats;
+    double Hydration,SweatKg,SweatRunoffKg,SweatRateKgHour;
     double SubmergedCoverage[4];
     double SubmergedTemperatureC[4];
     double WaterRowC[16];
@@ -51,6 +55,8 @@ class CaelumThermalState : Object play
         for(int i=0;i<4;i++)copy.Material[i]=Material[i];
         for(int i=0;i<4;i++)copy.WorkWaterKg[i]=WorkWaterKg[i];
         copy.Bare=Bare;
+        copy.Sweats=Sweats;copy.Hydration=Hydration;copy.SweatKg=SweatKg;
+        copy.SweatRunoffKg=SweatRunoffKg;copy.SweatRateKgHour=SweatRateKgHour;
         for(int i=0;i<4;i++)
         {copy.SubmergedCoverage[i]=SubmergedCoverage[i];copy.SubmergedTemperatureC[i]=SubmergedTemperatureC[i];}
         for(int i=0;i<16;i++)copy.WaterRowC[i]=WaterRowC[i];
@@ -108,7 +114,10 @@ class CaelumThermalState : Object play
         }
         // Revisión 2: sólo añade una proyección derivada. No reinicia reservas,
         // exposición ni la aclimatación ganada bajo el contrato anterior.
-        AcclimationMultiplier=1;
+        if(Revision<2)AcclimationMultiplier=1;
+        // Revisión 3: la nueva reserva NPC empieza llena una sola vez.
+        // El adaptador del jugador siempre recupera su Sed existente.
+        if(Revision<3)Hydration=CaelumConstants.SURVIVAL_MAXIMUM;
         Revision=CaelumThermalData.REVISION;
     }
 

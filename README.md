@@ -6,11 +6,25 @@ An independent dark fantasy FPS-RPG inspired by nineteenth-century Argentina.
 Author and game designer: **Damian Curti**. Development target: **GZDoom 4.14.2**
 on Windows 11. The final game is intended to be independent of Doom assets.
 
-**Current release: 5.1.2.** Obtain and update the complete repository, validate
+**Current release: 5.1.3.** Obtain and update the complete repository, validate
 it, then rebuild with `run_dev.bat` as described below.
 
+**5.1.3 / #133:** 160 furnished homes, 24 factories covering T1 production,
+64 independent shops and 600 housed soldiers. The siege starts on 15 November
+1889 at 13:00; surviving soldiers walk to their posts and use normal carbine
+magazines with infinite reserve. Original world sprites also follow the player's
+equipped carbine. The authorized extension adds regulated humanoid sweating,
+finite hydration and coupled travel water forecasts; carbine action heat remains.
+The author authorized #133 closure and [PR #141](https://github.com/damiancurti/Caelum-Argenteum/pull/141)
+merge on 2026-10-08, carrying thermal follow-up into
+[#140](https://github.com/damiancurti/Caelum-Argenteum/issues/140).
+[Native evidence](assets/validation_513/RESULTS.md) and
+[outstanding author checks](pending_test.txt) distinguish validation from acceptance.
+For a save that already visited the 5.1.2 southern city, build with
+`-LegacyMap06SouthCity`; keep the original package/save pair for rollback.
+
 Issue [#132](https://github.com/damiancurti/Caelum-Argenteum/issues/132) adds an
-opt-in MAP06 reinforcement test: 100 Mandingas immediately, then one group per
+opt-in MAP06 reinforcement test: 100 Mandingas when the siege begins, then one group per
 350 simulation tics, at most 2,000 alive and 6,000 successfully spawned overall.
 The 74 initial machine operators are included in the first group. In the console,
 enter `ca_test_siege_reinforcements true`, then `map MAP06` for a fresh test.

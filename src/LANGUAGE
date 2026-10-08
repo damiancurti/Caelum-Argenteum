@@ -1,4 +1,11 @@
 [enu default]
+CA_CITY_SHOPKEEPER = "Shopkeeper";
+CA_CITY_SHOP_0 = "Food and provisions";
+CA_CITY_SHOP_1 = "Melee weapons";
+CA_CITY_SHOP_2 = "Ranged weapons and ammunition";
+CA_CITY_SHOP_3 = "Jewelry and seals";
+CA_CITY_SHOP_4 = "Armor and shields";
+CA_CITY_SHOP_5 = "Magical weapons and armor";
 CA_HUD_THERMAL_SAFE = "Normal";
 CA_HUD_THERMAL_UNAVAILABLE = "Exposure: --";
 CA_HUD_THERMAL_VALUE = "Exposure %s: %s";
@@ -41,6 +48,13 @@ CA_INTRO_REVEAL = "Press a key to reveal the full text.";
 CA_INTRO_BEGIN = "Press a key to begin your adventure.";
 
 [es]
+CA_CITY_SHOPKEEPER = "Comerciante";
+CA_CITY_SHOP_0 = "Alimentos y provisiones";
+CA_CITY_SHOP_1 = "Armas cuerpo a cuerpo";
+CA_CITY_SHOP_2 = "Armas a distancia y munición";
+CA_CITY_SHOP_3 = "Collares y sellos";
+CA_CITY_SHOP_4 = "Armaduras y escudos";
+CA_CITY_SHOP_5 = "Armas y armaduras mágicas";
 CA_HUD_THERMAL_SAFE = "Normal";
 CA_HUD_THERMAL_UNAVAILABLE = "Exposición: --";
 CA_HUD_THERMAL_VALUE = "Exposición %s: %s";

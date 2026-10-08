@@ -1,0 +1,10 @@
+﻿{
+  "save": "build\\issue133\\route-delivery.zds",
+  "save_sha256": "e818fb36abf9995e614c43b91fc33a3abc06c80255d43affab059861ff1370c4",
+  "roster": 600,
+  "complete": 600,
+  "formed32": 600,
+  "yielding": 0,
+  "following_crew_routes": 0,
+  "pending": []
+}

@@ -1,0 +1,373 @@
+{
+  "issue": 133,
+  "schema_revision": 1,
+  "area_policy": "Usable floor includes the exterior threshold and internal doorway circulation, excludes all solid wall and window-sill cells. Living/dining 123 cells (60.000%), bedroom 62 (30.244%), empty bathroom 20 (9.756%); 64-MU grid rounding.",
+  "house_size": [
+    960,
+    1216
+  ],
+  "headroom": 160,
+  "height": 184,
+  "roof": "CMTB04",
+  "window_sill": 64,
+  "window_head": 128,
+  "forecourt_depth": 256,
+  "door_group_base": 5000,
+  "door_inset": 32,
+  "leaf_half_width": 32,
+  "rooms": {
+    "living": [
+      448,
+      64,
+      896,
+      1152
+    ],
+    "bedroom": [
+      64,
+      64,
+      384,
+      832
+    ],
+    "bathroom": [
+      64,
+      896,
+      384,
+      1152
+    ]
+  },
+  "entrance": [
+    896,
+    320,
+    960,
+    448
+  ],
+  "doorways": [
+    [
+      384,
+      320,
+      448,
+      448
+    ],
+    [
+      128,
+      832,
+      256,
+      896
+    ]
+  ],
+  "windows": [
+    [
+      576,
+      0,
+      640,
+      64
+    ],
+    [
+      768,
+      0,
+      832,
+      64
+    ],
+    [
+      576,
+      1152,
+      640,
+      1216
+    ],
+    [
+      768,
+      1152,
+      832,
+      1216
+    ],
+    [
+      192,
+      0,
+      256,
+      64
+    ]
+  ],
+  "table": [
+    672,
+    832,
+    0
+  ],
+  "bed": [
+    256,
+    640,
+    0
+  ],
+  "door_inside": [
+    800,
+    384,
+    0
+  ],
+  "door_outside": [
+    1056,
+    384,
+    0
+  ],
+  "house_road": [
+    1280,
+    384,
+    0
+  ],
+  "house_road_overrides": {
+    "159": [1408, 384, 0]
+  },
+  "occupancy": [
+    [
+      528,
+      160,
+      0
+    ],
+    [
+      656,
+      160,
+      0
+    ],
+    [
+      784,
+      160,
+      0
+    ],
+    [
+      528,
+      288,
+      0
+    ]
+  ],
+  "retired_house_shells": [
+    [
+      -1216,
+      384,
+      -448,
+      1152
+    ],
+    [
+      -1088,
+      1280,
+      -512,
+      1984
+    ]
+  ],
+  "retained_houses": [
+    {
+      "id": 300,
+      "kind": "house",
+      "bounds": [
+        -2048,
+        0,
+        -1088,
+        1216
+      ],
+      "door_y": 320,
+      "tag": 201,
+      "wall": "CVCI01",
+      "floor": "CVPO01"
+    },
+    {
+      "id": 301,
+      "kind": "house",
+      "bounds": [
+        -2048,
+        1280,
+        -1088,
+        2496
+      ],
+      "door_y": 1600,
+      "tag": 202,
+      "wall": "CVCI02",
+      "floor": "CVCI03"
+    }
+  ],
+  "vendor_offset": [
+    384,
+    320
+  ],
+  "station_positions": [
+    [
+      640,
+      320
+    ],
+    [
+      736,
+      320
+    ],
+    [
+      832,
+      320
+    ],
+    [
+      928,
+      320
+    ],
+    [
+      1024,
+      320
+    ],
+    [
+      1120,
+      320
+    ]
+  ],
+  "station_editors": {
+    "forge": 18000,
+    "ranged": 18001,
+    "armor": 18002,
+    "altar": 18003,
+    "workbench": 18004,
+    "anvil": 18005,
+    "sawmill": 18006,
+    "sewing": 18007,
+    "jeweler": 18009,
+    "fine_tools": 18011
+  },
+  "factory_profiles": [
+    {
+      "name": "metal",
+      "stations": [
+        "workbench",
+        "forge",
+        "anvil",
+        "fine_tools"
+      ]
+    },
+    {
+      "name": "ranged",
+      "stations": [
+        "workbench",
+        "ranged",
+        "sawmill",
+        "forge",
+        "fine_tools"
+      ]
+    },
+    {
+      "name": "textile",
+      "stations": [
+        "workbench",
+        "armor",
+        "sewing"
+      ]
+    },
+    {
+      "name": "magic",
+      "stations": [
+        "workbench",
+        "altar",
+        "jeweler"
+      ]
+    },
+    {
+      "name": "jewelry",
+      "stations": [
+        "workbench",
+        "jeweler",
+        "fine_tools",
+        "forge",
+        "altar"
+      ]
+    },
+    {
+      "name": "processing",
+      "stations": [
+        "workbench",
+        "sawmill",
+        "sewing",
+        "forge"
+      ]
+    }
+  ],
+  "constants": {
+    "LAYOUT_REVISION": 3,
+    "PERSISTENCE_REVISION": 1,
+    "SIEGE_YEAR": 1889,
+    "SIEGE_MONTH": 11,
+    "SIEGE_DAY": 15,
+    "SIEGE_HOUR": 13,
+    "SHOP_TIER": 1,
+    "EQUIPMENT_STOCK": 1,
+    "CONSUMABLE_STOCK": 20,
+    "AMMUNITION_STOCK": 100,
+    "MERCHANT_COPPER": 200,
+    "SHOP_CATEGORIES": 6,
+    "FURNITURE_SLOT_BASE": 6000,
+    "TRANSIT_WAYPOINT_REACH": 64
+  },
+  "window_tag_base": 8000,
+  "guard_station_corrections": {
+    "140": [
+      -29456,
+      -12840,
+      0
+    ],
+    "141": [
+      -29496,
+      -12840,
+      0
+    ],
+    "142": [
+      -29536,
+      -12840,
+      0
+    ],
+    "143": [
+      -29576,
+      -12840,
+      0
+    ],
+    "144": [
+      -29616,
+      -12840,
+      0
+    ],
+    "145": [
+      -29456,
+      -12800,
+      0
+    ],
+    "146": [
+      -29496,
+      -12800,
+      0
+    ],
+    "147": [
+      -29536,
+      -12800,
+      0
+    ],
+    "148": [
+      -29576,
+      -12800,
+      0
+    ],
+    "149": [
+      -29616,
+      -12800,
+      0
+    ],
+    "150": [
+      -29456,
+      -12760,
+      0
+    ],
+    "151": [
+      -29496,
+      -12760,
+      0
+    ],
+    "152": [
+      -29536,
+      -12760,
+      0
+    ],
+    "153": [
+      -29576,
+      -12760,
+      0
+    ]
+  },
+  "guard_correction_reason": "Move the 14-person west tower reserve formation 256 MU east as one group: the original grid intersects wall cells and extends outside the city. Preserve its 40-MU spacing and all individual assignments; new geometry only.",
+  "transit_reach_reason": "One native 64-MU map grid cell for shared transit waypoints; exact formation posts retain the original individual body-radius arrival rule. Outside threshold is 96 MU beyond the facade, leaving collision clearance even at the near edge."
+}

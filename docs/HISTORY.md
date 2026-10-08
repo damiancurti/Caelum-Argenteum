@@ -1,6 +1,78 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **5.1.2** — 2026-10-07.
+Documentation version: **5.1.3** — 2026-10-08.
+
+## 5.1.3 - Port interiors, commerce and deployment (#133, 2026-10-08)
+
+The author accepts CA132-01 without exceptions on 2026-10-07 and authorizes
+issue #132 closure and PR #139 merge (b00201098a26582c8820a5424a2a75986b022abf).
+#133 then receives explicit native-test, commit and push authorization.
+Decisions: siege 1889-11-15 13:00; shop equipment T1 only; one equipment variant,
+20 consumables, 100 ammunition and 200 copper per vendor, no replenishment.
+Cartridge base value is four arrows; recovery drinks/potions/medikit equal
+three food rations. Current contract lives in SYSTEMS.
+
+The new city has 160 furnished homes, 24 factory networks, 64 independent T1
+merchants and the same 600 soldiers housed before the date. Vendors are static
+non-combat actors, as chosen by the author. Native inventories preserve purchased
+equipment identity, size, wear and wetness; wallets/stock belong to each merchant.
+The 64-MU floor grid yields living/bedroom/bathroom shares of 60.000/30.244/9.756%.
+Factories cover 132 existing recipes/dependencies without free inputs or knowledge.
+
+Soldiers leave through native doors and retain collision/resources while walking
+to their original posts. Fair bounded local path queries, floor-height constraints,
+precise destination approach and temporary formation access resolve congestion.
+The old harbor bed is preserved with a road-point override; the west tower's
+14-post reserve grid moves 256 MU east to clear a wall while retaining spacing.
+Carbines share player projectile/magazine rules; only soldier reserve is infinite.
+Original 48-frame directional world art follows actual carrying, movement, shots
+and reloads for both the soldier and player; first-person art remains unchanged.
+
+Static geometry/determinism, native furniture, recipe coverage, commerce, carbine,
+full-roster deployment, obstructions and persistence evidence are consolidated in
+[validation_513](../assets/validation_513/RESULTS.md). Matching old-city full/staged
+controls remain separate from the combined new-city workload. Rendering callbacks
+are not presented FPS. Existing visited 5.1.2 cities use the exact legacy geometry
+build selector; original-save/original-package rollback is retained and tested.
+At initial delivery, CA133-01/02 remain outstanding author visual/gameplay checks;
+closure and merge have not yet been authorized at that stage.
+
+The full-roster firearm control fires 8,400 shots and completes 600 reloads, then
+stops. All 600 die from accumulated thermal damage by tic 1400; native snapshots
+confirm 836,062.5 J of action heat and 2,202 HP of thermal damage per soldier.
+This follows the existing author-approved #130 jump/Air conversion, not a new
+thermal formula or duplicate thermal surcharge. The report separates active
+firing from later attrition/corpse workload; cheap post-death rendering is not
+presented as successful sustained combat. This is the retained pre-sweating
+control, not evidence for the later extension.
+
+On 2026-10-08 the author retains carbine action heat and authorizes regulated
+sweating: a surface-scaled 2 L/world-hour reference ceiling, linear E=0..5
+response, and hydration-limited production below 20 Thirst points. All humanoids
+share the initial profile; animal physiology remains distinct. Sweat consumes
+actual water, with cooling only from evaporation. The old heat-related Thirst
+multiplier is replaced, and Air recovery no longer costs Thirst. Revision 3 adds
+idempotent persistent NPC hydration without refilling player reserves. Travel
+projections couple water provisions with the same thermal calculation.
+
+The extension passes 33 native thermal/provisions checks, 15 carbine checks,
+revision-two save migration, reload, hub return and original-save rollback.
+The 600-body volley control retains all soldiers through tic 3500, versus none
+by tic 1400 before sweating. Each secretes about 342 mL; the resulting wet-clothing
+cold leaves 270/2168 HP at the endpoint. This remains an explicit balance limit.
+The combined later battle records 31.21 tics/s and 5.57 background render callbacks/s,
+with 598 defenders surviving; it is not presented-FPS evidence or a fluency pass.
+The author also requests half-Health Hunger costs for Air/Anima recovery; the
+per-bar/per-point interpretation and NPC Hunger scope are still awaiting answers.
+Temporary keep-awake request 3 is released with the original power plan intact.
+
+Later on 2026-10-08, the author explicitly authorizes closing #133 and merging
+PR #141, moving the remaining heat work to #140. The thermal survival and
+performance findings remain limitations, not passed balance/fluency claims.
+CA133-01/02/03 (origin 5.1.3/#133) remain unconfirmed: this instruction authorizes
+integration but does not state that those manual tests passed. The pending
+Air/Anima Hunger interpretation and NPC scope are carried forward as unfinished
+resource-design work. No version increment or runtime change accompanies closure.
 
 ## 5.1.2 - Staged siege experiment (#132, 2026-10-07)
 

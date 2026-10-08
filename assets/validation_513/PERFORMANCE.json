@@ -1,0 +1,653 @@
+{
+  "evidence": "Engine simulation and RenderOverlay callbacks in background; not presented/displayed FPS. Actor/projectile counts are sampled every 35 tics, not instantaneous peaks. Different new-city calendar, geometry and carbine behavior are a combined workload, not an isolated geometry delta.",
+  "phases": [
+    {
+      "run": "perf-legacy-full",
+      "phase": "full army, old geometry",
+      "tic_range": [
+        350,
+        3500
+      ],
+      "package_sha256": "B902BDEB914B07575D7C49D75D65B1FD6FBEDAA1D93F5FC7DCF297B7E55EEC8C",
+      "tics_per_second": 27.163433305613147,
+      "render_callbacks_per_second": 1.691649871151129,
+      "render_interval_median_ms": 616.74755,
+      "render_interval_p95_ms": 798.1733750000021,
+      "render_samples": 197,
+      "ranges": {
+        "alive": [
+          5961.0,
+          6000.0
+        ],
+        "total": [
+          6000.0,
+          6000.0
+        ],
+        "remaining": [
+          0.0,
+          0.0
+        ],
+        "pending": [
+          0.0,
+          0.0
+        ],
+        "combatants": [
+          6558.0,
+          6602.0
+        ],
+        "defenders": [
+          595.0,
+          600.0
+        ],
+        "corpses": [
+          0.0,
+          44.0
+        ],
+        "projectiles": [
+          110.0,
+          1102.0
+        ],
+        "groups": [
+          63.0,
+          78.0
+        ],
+        "failed": [
+          0.0,
+          0.0
+        ],
+        "scriptedDeaths": [
+          0.0,
+          0.0
+        ],
+        "victory": [
+          0.0,
+          0.0
+        ],
+        "view": [
+          0.0,
+          2.0
+        ]
+      },
+      "first": {
+        "tic": 350.0,
+        "ms": 15351.4697,
+        "alive": 6000.0,
+        "total": 6000.0,
+        "remaining": 0.0,
+        "pending": 0.0,
+        "combatants": 6602.0,
+        "defenders": 600.0,
+        "corpses": 0.0,
+        "projectiles": 965.0,
+        "groups": 65.0,
+        "failed": 0.0,
+        "scriptedDeaths": 0.0,
+        "victory": 0.0,
+        "view": 0.0
+      },
+      "last": {
+        "tic": 3500.0,
+        "ms": 131316.192,
+        "alive": 5961.0,
+        "total": 6000.0,
+        "remaining": 0.0,
+        "pending": 0.0,
+        "combatants": 6558.0,
+        "defenders": 595.0,
+        "corpses": 44.0,
+        "projectiles": 113.0,
+        "groups": 70.0,
+        "failed": 0.0,
+        "scriptedDeaths": 0.0,
+        "victory": 0.0,
+        "view": 2.0
+      }
+    },
+    {
+      "run": "perf-legacy-staged",
+      "phase": "staged army, old geometry",
+      "tic_range": [
+        350,
+        3500
+      ],
+      "package_sha256": "B902BDEB914B07575D7C49D75D65B1FD6FBEDAA1D93F5FC7DCF297B7E55EEC8C",
+      "tics_per_second": 34.994855095287065,
+      "render_callbacks_per_second": 57.819084590857045,
+      "render_interval_median_ms": 16.60160000000178,
+      "render_interval_p95_ms": 24.805780000000965,
+      "render_samples": 5206,
+      "ranges": {
+        "alive": [
+          100.0,
+          962.0
+        ],
+        "total": [
+          100.0,
+          1000.0
+        ],
+        "remaining": [
+          5000.0,
+          5900.0
+        ],
+        "pending": [
+          0.0,
+          0.0
+        ],
+        "combatants": [
+          702.0,
+          1562.0
+        ],
+        "defenders": [
+          598.0,
+          600.0
+        ],
+        "corpses": [
+          0.0,
+          40.0
+        ],
+        "projectiles": [
+          54.0,
+          171.0
+        ],
+        "groups": [
+          4.0,
+          18.0
+        ],
+        "failed": [
+          28.0,
+          28.0
+        ],
+        "scriptedDeaths": [
+          0.0,
+          0.0
+        ],
+        "victory": [
+          0.0,
+          0.0
+        ],
+        "view": [
+          0.0,
+          2.0
+        ]
+      },
+      "first": {
+        "tic": 350.0,
+        "ms": 15140.8963,
+        "alive": 100.0,
+        "total": 100.0,
+        "remaining": 5900.0,
+        "pending": 0.0,
+        "combatants": 702.0,
+        "defenders": 600.0,
+        "corpses": 0.0,
+        "projectiles": 54.0,
+        "groups": 4.0,
+        "failed": 28.0,
+        "scriptedDeaths": 0.0,
+        "victory": 0.0,
+        "view": 0.0
+      },
+      "last": {
+        "tic": 3500.0,
+        "ms": 105154.128,
+        "alive": 962.0,
+        "total": 1000.0,
+        "remaining": 5000.0,
+        "pending": 0.0,
+        "combatants": 1562.0,
+        "defenders": 598.0,
+        "corpses": 40.0,
+        "projectiles": 98.0,
+        "groups": 16.0,
+        "failed": 28.0,
+        "scriptedDeaths": 0.0,
+        "victory": 0.0,
+        "view": 2.0
+      }
+    },
+    {
+      "run": "perf-city-staged",
+      "phase": "occupied peaceful city",
+      "tic_range": [
+        350,
+        1715
+      ],
+      "package_sha256": "DE2C3E709BCE6007B9EC2D9005B7AA6BB23B0246F9E9E22BDAD2E2B3CFB2838D",
+      "tics_per_second": 35.007494296663666,
+      "render_callbacks_per_second": 59.96172073485608,
+      "render_interval_median_ms": 16.597499999999854,
+      "render_interval_p95_ms": 17.910469999998895,
+      "render_samples": 2340,
+      "ranges": {
+        "alive": [
+          600.0,
+          600.0
+        ],
+        "left": [
+          0.0,
+          0.0
+        ],
+        "arrived": [
+          0.0,
+          0.0
+        ],
+        "shots": [
+          0.0,
+          0.0
+        ],
+        "reloads": [
+          0.0,
+          0.0
+        ],
+        "reloading": [
+          0.0,
+          0.0
+        ],
+        "pathQueue": [
+          0.0,
+          0.0
+        ]
+      },
+      "first": {
+        "tic": 350.0,
+        "ms": 15044.1949,
+        "alive": 600.0,
+        "left": 0.0,
+        "arrived": 0.0,
+        "shots": 0.0,
+        "reloads": 0.0,
+        "reloading": 0.0,
+        "pathQueue": 0.0
+      },
+      "last": {
+        "tic": 1715.0,
+        "ms": 54035.8459,
+        "alive": 600.0,
+        "left": 0.0,
+        "arrived": 0.0,
+        "shots": 0.0,
+        "reloads": 0.0,
+        "reloading": 0.0,
+        "pathQueue": 0.0
+      }
+    },
+    {
+      "run": "perf-city-staged",
+      "phase": "scheduled exit",
+      "tic_range": [
+        1750,
+        3500
+      ],
+      "package_sha256": "DE2C3E709BCE6007B9EC2D9005B7AA6BB23B0246F9E9E22BDAD2E2B3CFB2838D",
+      "tics_per_second": 34.89762078012212,
+      "render_callbacks_per_second": 47.64284882443853,
+      "render_interval_median_ms": 17.06865000000107,
+      "render_interval_p95_ms": 34.69614000000073,
+      "render_samples": 2391,
+      "ranges": {
+        "alive": [
+          600.0,
+          600.0
+        ],
+        "left": [
+          0.0,
+          600.0
+        ],
+        "arrived": [
+          0.0,
+          7.0
+        ],
+        "shots": [
+          0.0,
+          9.0
+        ],
+        "reloads": [
+          0.0,
+          0.0
+        ],
+        "reloading": [
+          0.0,
+          0.0
+        ],
+        "pathQueue": [
+          0.0,
+          373.0
+        ]
+      },
+      "first": {
+        "tic": 1750.0,
+        "ms": 55036.1092,
+        "alive": 600.0,
+        "left": 0.0,
+        "arrived": 0.0,
+        "shots": 0.0,
+        "reloads": 0.0,
+        "reloading": 0.0,
+        "pathQueue": 0.0
+      },
+      "last": {
+        "tic": 3500.0,
+        "ms": 105182.7943,
+        "alive": 600.0,
+        "left": 600.0,
+        "arrived": 7.0,
+        "shots": 9.0,
+        "reloads": 0.0,
+        "reloading": 0.0,
+        "pathQueue": 0.0
+      }
+    },
+    {
+      "run": "perf-city-staged",
+      "phase": "deployment and buildup",
+      "tic_range": [
+        3500,
+        7000
+      ],
+      "package_sha256": "DE2C3E709BCE6007B9EC2D9005B7AA6BB23B0246F9E9E22BDAD2E2B3CFB2838D",
+      "tics_per_second": 35.0022908999394,
+      "render_callbacks_per_second": 23.457239669321915,
+      "render_interval_median_ms": 25.15129999999772,
+      "render_interval_p95_ms": 132.72352500000125,
+      "render_samples": 2347,
+      "ranges": {
+        "alive": [
+          585.0,
+          600.0
+        ],
+        "left": [
+          600.0,
+          600.0
+        ],
+        "arrived": [
+          7.0,
+          95.0
+        ],
+        "shots": [
+          9.0,
+          262.0
+        ],
+        "reloads": [
+          0.0,
+          18.0
+        ],
+        "reloading": [
+          0.0,
+          3.0
+        ],
+        "pathQueue": [
+          0.0,
+          6.0
+        ]
+      },
+      "first": {
+        "tic": 3500.0,
+        "ms": 105182.7943,
+        "alive": 600.0,
+        "left": 600.0,
+        "arrived": 7.0,
+        "shots": 9.0,
+        "reloads": 0.0,
+        "reloading": 0.0,
+        "pathQueue": 0.0
+      },
+      "last": {
+        "tic": 7000.0,
+        "ms": 205176.2493,
+        "alive": 585.0,
+        "left": 600.0,
+        "arrived": 95.0,
+        "shots": 262.0,
+        "reloads": 18.0,
+        "reloading": 1.0,
+        "pathQueue": 1.0
+      }
+    },
+    {
+      "run": "perf-city-staged",
+      "phase": "later combined workload",
+      "tic_range": [
+        7000,
+        10500
+      ],
+      "package_sha256": "DE2C3E709BCE6007B9EC2D9005B7AA6BB23B0246F9E9E22BDAD2E2B3CFB2838D",
+      "tics_per_second": 32.25140021757716,
+      "render_callbacks_per_second": 14.071202141785239,
+      "render_interval_median_ms": 39.92005000000063,
+      "render_interval_p95_ms": 219.7524249999915,
+      "render_samples": 1527,
+      "ranges": {
+        "alive": [
+          579.0,
+          585.0
+        ],
+        "left": [
+          600.0,
+          600.0
+        ],
+        "arrived": [
+          95.0,
+          200.0
+        ],
+        "shots": [
+          262.0,
+          266.0
+        ],
+        "reloads": [
+          18.0,
+          19.0
+        ],
+        "reloading": [
+          0.0,
+          1.0
+        ],
+        "pathQueue": [
+          0.0,
+          3.0
+        ]
+      },
+      "first": {
+        "tic": 7000.0,
+        "ms": 205176.2493,
+        "alive": 585.0,
+        "left": 600.0,
+        "arrived": 95.0,
+        "shots": 262.0,
+        "reloads": 18.0,
+        "reloading": 1.0,
+        "pathQueue": 1.0
+      },
+      "last": {
+        "tic": 10500.0,
+        "ms": 313698.6693,
+        "alive": 579.0,
+        "left": 600.0,
+        "arrived": 200.0,
+        "shots": 266.0,
+        "reloads": 19.0,
+        "reloading": 0.0,
+        "pathQueue": 0.0
+      }
+    },
+    {
+      "run": "perf-volleys",
+      "phase": "600 living firearm component: fire and reload",
+      "tic_range": [
+        70,
+        490
+      ],
+      "package_sha256": "DE2C3E709BCE6007B9EC2D9005B7AA6BB23B0246F9E9E22BDAD2E2B3CFB2838D",
+      "tics_per_second": 35.01652517364257,
+      "render_callbacks_per_second": 51.60638696626427,
+      "render_interval_median_ms": 16.668550000000323,
+      "render_interval_p95_ms": 26.7779200000003,
+      "render_samples": 621,
+      "ranges": {
+        "alive": [
+          600.0,
+          600.0
+        ],
+        "shots": [
+          150.0,
+          8400.0
+        ],
+        "reloads": [
+          0.0,
+          600.0
+        ],
+        "reloading": [
+          0.0,
+          600.0
+        ],
+        "hits": [
+          0.0,
+          2056.0
+        ],
+        "projectiles": [
+          0.0,
+          611.0
+        ]
+      },
+      "first": {
+        "tic": 70.0,
+        "ms": 7025.3693,
+        "alive": 600.0,
+        "shots": 150.0,
+        "reloads": 0.0,
+        "reloading": 0.0,
+        "hits": 0.0,
+        "projectiles": 150.0
+      },
+      "last": {
+        "tic": 490.0,
+        "ms": 19019.7062,
+        "alive": 600.0,
+        "shots": 8400.0,
+        "reloads": 600.0,
+        "reloading": 0.0,
+        "hits": 2056.0,
+        "projectiles": 0.0
+      }
+    },
+    {
+      "run": "perf-volleys",
+      "phase": "thermal attrition after firing stops",
+      "tic_range": [
+        490,
+        1400
+      ],
+      "package_sha256": "DE2C3E709BCE6007B9EC2D9005B7AA6BB23B0246F9E9E22BDAD2E2B3CFB2838D",
+      "tics_per_second": 35.00064508881256,
+      "render_callbacks_per_second": 58.73594307712171,
+      "render_interval_median_ms": 16.640049999998155,
+      "render_interval_p95_ms": 20.407359999997603,
+      "render_samples": 1529,
+      "ranges": {
+        "alive": [
+          0.0,
+          600.0
+        ],
+        "shots": [
+          8400.0,
+          8400.0
+        ],
+        "reloads": [
+          600.0,
+          600.0
+        ],
+        "reloading": [
+          0.0,
+          0.0
+        ],
+        "hits": [
+          2056.0,
+          2056.0
+        ],
+        "projectiles": [
+          0.0,
+          0.0
+        ]
+      },
+      "first": {
+        "tic": 490.0,
+        "ms": 19019.7062,
+        "alive": 600.0,
+        "shots": 8400.0,
+        "reloads": 600.0,
+        "reloading": 0.0,
+        "hits": 2056.0,
+        "projectiles": 0.0
+      },
+      "last": {
+        "tic": 1400.0,
+        "ms": 45019.227,
+        "alive": 0.0,
+        "shots": 8400.0,
+        "reloads": 600.0,
+        "reloading": 0.0,
+        "hits": 2056.0,
+        "projectiles": 0.0
+      }
+    },
+    {
+      "run": "perf-volleys",
+      "phase": "post-attrition corpses; not sustained fire",
+      "tic_range": [
+        1400,
+        3500
+      ],
+      "package_sha256": "DE2C3E709BCE6007B9EC2D9005B7AA6BB23B0246F9E9E22BDAD2E2B3CFB2838D",
+      "tics_per_second": 35.00078926779799,
+      "render_callbacks_per_second": 60.002089359063845,
+      "render_interval_median_ms": 16.6336999999985,
+      "render_interval_p95_ms": 17.695699999996577,
+      "render_samples": 3602,
+      "ranges": {
+        "alive": [
+          0.0,
+          0.0
+        ],
+        "shots": [
+          8400.0,
+          8400.0
+        ],
+        "reloads": [
+          600.0,
+          600.0
+        ],
+        "reloading": [
+          0.0,
+          0.0
+        ],
+        "hits": [
+          2056.0,
+          2056.0
+        ],
+        "projectiles": [
+          0.0,
+          0.0
+        ]
+      },
+      "first": {
+        "tic": 1400.0,
+        "ms": 45019.227,
+        "alive": 0.0,
+        "shots": 8400.0,
+        "reloads": 600.0,
+        "reloading": 0.0,
+        "hits": 2056.0,
+        "projectiles": 0.0
+      },
+      "last": {
+        "tic": 3500.0,
+        "ms": 105017.874,
+        "alive": 0.0,
+        "shots": 8400.0,
+        "reloads": 600.0,
+        "reloading": 0.0,
+        "hits": 2056.0,
+        "projectiles": 0.0
+      }
+    }
+  ]
+}

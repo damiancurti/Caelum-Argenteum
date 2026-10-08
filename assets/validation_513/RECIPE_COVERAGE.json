@@ -1,0 +1,1462 @@
+{
+  "issue": 133,
+  "source": "Native authoritative CaelumCraftingRules and actual workbench network scans",
+  "tier": 1,
+  "log": "delivery-factories.txt",
+  "log_sha256": "0e7b9d047f54c7e720fcd5ea901c61a172c4e46f4461700dc7bd507cb7d5ac52",
+  "package_sha256": "DE2C3E709BCE6007B9EC2D9005B7AA6BB23B0246F9E9E22BDAD2E2B3CFB2838D",
+  "recipes": [
+    {
+      "id": 0,
+      "kind": 0,
+      "covered": true,
+      "workbench": [
+        -27520.0,
+        -12608.0
+      ],
+      "network_capabilities": 1073,
+      "name": "dagger"
+    },
+    {
+      "id": 1,
+      "kind": 0,
+      "covered": true,
+      "workbench": [
+        -27520.0,
+        -12608.0
+      ],
+      "network_capabilities": 1073,
+      "name": "hatchet"
+    },
+    {
+      "id": 2,
+      "kind": 0,
+      "covered": true,
+      "workbench": [
+        -27520.0,
+        -12608.0
+      ],
+      "network_capabilities": 1073,
+      "name": "machete"
+    },
+    {
+      "id": 3,
+      "kind": 0,
+      "covered": true,
+      "workbench": [
+        -27520.0,
+        -12608.0
+      ],
+      "network_capabilities": 1073,
+      "name": "javelin"
+    },
+    {
+      "id": 4,
+      "kind": 0,
+      "covered": true,
+      "workbench": [
+        -27520.0,
+        -12608.0
+      ],
+      "network_capabilities": 1073,
+      "name": "sword"
+    },
+    {
+      "id": 5,
+      "kind": 0,
+      "covered": true,
+      "workbench": [
+        -27520.0,
+        -12608.0
+      ],
+      "network_capabilities": 1073,
+      "name": "axe"
+    },
+    {
+      "id": 6,
+      "kind": 0,
+      "covered": true,
+      "workbench": [
+        -27520.0,
+        -12608.0
+      ],
+      "network_capabilities": 1073,
+      "name": "flail"
+    },
+    {
+      "id": 7,
+      "kind": 0,
+      "covered": true,
+      "workbench": [
+        -27520.0,
+        -12608.0
+      ],
+      "network_capabilities": 1073,
+      "name": "spear"
+    },
+    {
+      "id": 8,
+      "kind": 0,
+      "covered": true,
+      "workbench": [
+        -27520.0,
+        -12608.0
+      ],
+      "network_capabilities": 1073,
+      "name": "greatsword"
+    },
+    {
+      "id": 9,
+      "kind": 0,
+      "covered": true,
+      "workbench": [
+        -27520.0,
+        -12608.0
+      ],
+      "network_capabilities": 1073,
+      "name": "war axe"
+    },
+    {
+      "id": 10,
+      "kind": 0,
+      "covered": true,
+      "workbench": [
+        -27520.0,
+        -12608.0
+      ],
+      "network_capabilities": 1073,
+      "name": "halberd"
+    },
+    {
+      "id": 11,
+      "kind": 0,
+      "covered": true,
+      "workbench": [
+        -27520.0,
+        -12608.0
+      ],
+      "network_capabilities": 1073,
+      "name": "giant gauntlets"
+    },
+    {
+      "id": 12,
+      "kind": 0,
+      "covered": true,
+      "workbench": [
+        -25984.0,
+        -12608.0
+      ],
+      "network_capabilities": 1107,
+      "name": "standard bow"
+    },
+    {
+      "id": 13,
+      "kind": 0,
+      "covered": true,
+      "workbench": [
+        -25984.0,
+        -12608.0
+      ],
+      "network_capabilities": 1107,
+      "name": "carbine"
+    },
+    {
+      "id": 14,
+      "kind": 0,
+      "covered": true,
+      "workbench": [
+        -25984.0,
+        -12608.0
+      ],
+      "network_capabilities": 1107,
+      "name": "longbow"
+    },
+    {
+      "id": 15,
+      "kind": 0,
+      "covered": true,
+      "workbench": [
+        -25984.0,
+        -12608.0
+      ],
+      "network_capabilities": 1107,
+      "name": "crossbow"
+    },
+    {
+      "id": 16,
+      "kind": 1,
+      "covered": true,
+      "workbench": [
+        -24448.0,
+        -12608.0
+      ],
+      "network_capabilities": 148,
+      "name": "magic armor \u00b7 head"
+    },
+    {
+      "id": 17,
+      "kind": 1,
+      "covered": true,
+      "workbench": [
+        -24448.0,
+        -12608.0
+      ],
+      "network_capabilities": 148,
+      "name": "magic armor \u00b7 body"
+    },
+    {
+      "id": 18,
+      "kind": 1,
+      "covered": true,
+      "workbench": [
+        -24448.0,
+        -12608.0
+      ],
+      "network_capabilities": 148,
+      "name": "magic armor \u00b7 hands"
+    },
+    {
+      "id": 19,
+      "kind": 1,
+      "covered": true,
+      "workbench": [
+        -24448.0,
+        -12608.0
+      ],
+      "network_capabilities": 148,
+      "name": "magic armor \u00b7 feet"
+    },
+    {
+      "id": 20,
+      "kind": 1,
+      "covered": true,
+      "workbench": [
+        -24448.0,
+        -12608.0
+      ],
+      "network_capabilities": 148,
+      "name": "light armor \u00b7 head"
+    },
+    {
+      "id": 21,
+      "kind": 1,
+      "covered": true,
+      "workbench": [
+        -24448.0,
+        -12608.0
+      ],
+      "network_capabilities": 148,
+      "name": "light armor \u00b7 body"
+    },
+    {
+      "id": 22,
+      "kind": 1,
+      "covered": true,
+      "workbench": [
+        -24448.0,
+        -12608.0
+      ],
+      "network_capabilities": 148,
+      "name": "light armor \u00b7 hands"
+    },
+    {
+      "id": 23,
+      "kind": 1,
+      "covered": true,
+      "workbench": [
+        -24448.0,
+        -12608.0
+      ],
+      "network_capabilities": 148,
+      "name": "light armor \u00b7 feet"
+    },
+    {
+      "id": 24,
+      "kind": 1,
+      "covered": true,
+      "workbench": [
+        -27520.0,
+        -12608.0
+      ],
+      "network_capabilities": 1073,
+      "name": "medium armor \u00b7 head"
+    },
+    {
+      "id": 25,
+      "kind": 1,
+      "covered": true,
+      "workbench": [
+        -27520.0,
+        -12608.0
+      ],
+      "network_capabilities": 1073,
+      "name": "medium armor \u00b7 body"
+    },
+    {
+      "id": 26,
+      "kind": 1,
+      "covered": true,
+      "workbench": [
+        -27520.0,
+        -12608.0
+      ],
+      "network_capabilities": 1073,
+      "name": "medium armor \u00b7 hands"
+    },
+    {
+      "id": 27,
+      "kind": 1,
+      "covered": true,
+      "workbench": [
+        -27520.0,
+        -12608.0
+      ],
+      "network_capabilities": 1073,
+      "name": "medium armor \u00b7 feet"
+    },
+    {
+      "id": 28,
+      "kind": 1,
+      "covered": true,
+      "workbench": [
+        -27520.0,
+        -12608.0
+      ],
+      "network_capabilities": 1073,
+      "name": "heavy armor \u00b7 head"
+    },
+    {
+      "id": 29,
+      "kind": 1,
+      "covered": true,
+      "workbench": [
+        -27520.0,
+        -12608.0
+      ],
+      "network_capabilities": 1073,
+      "name": "heavy armor \u00b7 body"
+    },
+    {
+      "id": 30,
+      "kind": 1,
+      "covered": true,
+      "workbench": [
+        -27520.0,
+        -12608.0
+      ],
+      "network_capabilities": 1073,
+      "name": "heavy armor \u00b7 hands"
+    },
+    {
+      "id": 31,
+      "kind": 1,
+      "covered": true,
+      "workbench": [
+        -27520.0,
+        -12608.0
+      ],
+      "network_capabilities": 1073,
+      "name": "heavy armor \u00b7 feet"
+    },
+    {
+      "id": 32,
+      "kind": 3,
+      "covered": true,
+      "workbench": [
+        -22912.0,
+        -12608.0
+      ],
+      "network_capabilities": 536,
+      "name": "staff \u00b7 fire essence"
+    },
+    {
+      "id": 33,
+      "kind": 3,
+      "covered": true,
+      "workbench": [
+        -22912.0,
+        -12608.0
+      ],
+      "network_capabilities": 536,
+      "name": "staff \u00b7 water essence"
+    },
+    {
+      "id": 34,
+      "kind": 3,
+      "covered": true,
+      "workbench": [
+        -22912.0,
+        -12608.0
+      ],
+      "network_capabilities": 536,
+      "name": "staff \u00b7 earth essence"
+    },
+    {
+      "id": 35,
+      "kind": 3,
+      "covered": true,
+      "workbench": [
+        -22912.0,
+        -12608.0
+      ],
+      "network_capabilities": 536,
+      "name": "staff \u00b7 wind essence"
+    },
+    {
+      "id": 36,
+      "kind": 3,
+      "covered": true,
+      "workbench": [
+        -22912.0,
+        -12608.0
+      ],
+      "network_capabilities": 536,
+      "name": "staff \u00b7 quintessence"
+    },
+    {
+      "id": 37,
+      "kind": 3,
+      "covered": true,
+      "workbench": [
+        -22912.0,
+        -12608.0
+      ],
+      "network_capabilities": 536,
+      "name": "bell \u00b7 fire essence"
+    },
+    {
+      "id": 38,
+      "kind": 3,
+      "covered": true,
+      "workbench": [
+        -22912.0,
+        -12608.0
+      ],
+      "network_capabilities": 536,
+      "name": "bell \u00b7 water essence"
+    },
+    {
+      "id": 39,
+      "kind": 3,
+      "covered": true,
+      "workbench": [
+        -22912.0,
+        -12608.0
+      ],
+      "network_capabilities": 536,
+      "name": "bell \u00b7 earth essence"
+    },
+    {
+      "id": 40,
+      "kind": 3,
+      "covered": true,
+      "workbench": [
+        -22912.0,
+        -12608.0
+      ],
+      "network_capabilities": 536,
+      "name": "bell \u00b7 wind essence"
+    },
+    {
+      "id": 41,
+      "kind": 3,
+      "covered": true,
+      "workbench": [
+        -22912.0,
+        -12608.0
+      ],
+      "network_capabilities": 536,
+      "name": "bell \u00b7 quintessence"
+    },
+    {
+      "id": 42,
+      "kind": 3,
+      "covered": true,
+      "workbench": [
+        -22912.0,
+        -12608.0
+      ],
+      "network_capabilities": 536,
+      "name": "book \u00b7 fire essence"
+    },
+    {
+      "id": 43,
+      "kind": 3,
+      "covered": true,
+      "workbench": [
+        -22912.0,
+        -12608.0
+      ],
+      "network_capabilities": 536,
+      "name": "book \u00b7 water essence"
+    },
+    {
+      "id": 44,
+      "kind": 3,
+      "covered": true,
+      "workbench": [
+        -22912.0,
+        -12608.0
+      ],
+      "network_capabilities": 536,
+      "name": "book \u00b7 earth essence"
+    },
+    {
+      "id": 45,
+      "kind": 3,
+      "covered": true,
+      "workbench": [
+        -22912.0,
+        -12608.0
+      ],
+      "network_capabilities": 536,
+      "name": "book \u00b7 wind essence"
+    },
+    {
+      "id": 46,
+      "kind": 3,
+      "covered": true,
+      "workbench": [
+        -22912.0,
+        -12608.0
+      ],
+      "network_capabilities": 536,
+      "name": "book \u00b7 quintessence"
+    },
+    {
+      "id": 47,
+      "kind": 3,
+      "covered": true,
+      "workbench": [
+        -22912.0,
+        -12608.0
+      ],
+      "network_capabilities": 536,
+      "name": "statuette \u00b7 fire essence"
+    },
+    {
+      "id": 48,
+      "kind": 3,
+      "covered": true,
+      "workbench": [
+        -22912.0,
+        -12608.0
+      ],
+      "network_capabilities": 536,
+      "name": "statuette \u00b7 water essence"
+    },
+    {
+      "id": 49,
+      "kind": 3,
+      "covered": true,
+      "workbench": [
+        -22912.0,
+        -12608.0
+      ],
+      "network_capabilities": 536,
+      "name": "statuette \u00b7 earth essence"
+    },
+    {
+      "id": 50,
+      "kind": 3,
+      "covered": true,
+      "workbench": [
+        -22912.0,
+        -12608.0
+      ],
+      "network_capabilities": 536,
+      "name": "statuette \u00b7 wind essence"
+    },
+    {
+      "id": 51,
+      "kind": 3,
+      "covered": true,
+      "workbench": [
+        -22912.0,
+        -12608.0
+      ],
+      "network_capabilities": 536,
+      "name": "statuette \u00b7 quintessence"
+    },
+    {
+      "id": 52,
+      "kind": 4,
+      "covered": true,
+      "workbench": [
+        -22912.0,
+        -12608.0
+      ],
+      "network_capabilities": 536,
+      "name": "Ruby Amulet"
+    },
+    {
+      "id": 53,
+      "kind": 4,
+      "covered": true,
+      "workbench": [
+        -22912.0,
+        -12608.0
+      ],
+      "network_capabilities": 536,
+      "name": "Sapphire Amulet"
+    },
+    {
+      "id": 54,
+      "kind": 4,
+      "covered": true,
+      "workbench": [
+        -22912.0,
+        -12608.0
+      ],
+      "network_capabilities": 536,
+      "name": "Emerald Amulet"
+    },
+    {
+      "id": 55,
+      "kind": 4,
+      "covered": true,
+      "workbench": [
+        -22912.0,
+        -12608.0
+      ],
+      "network_capabilities": 536,
+      "name": "Topaz Amulet"
+    },
+    {
+      "id": 56,
+      "kind": 5,
+      "covered": true,
+      "workbench": [
+        -22912.0,
+        -12608.0
+      ],
+      "network_capabilities": 536,
+      "name": "Fire Seal"
+    },
+    {
+      "id": 57,
+      "kind": 5,
+      "covered": true,
+      "workbench": [
+        -22912.0,
+        -12608.0
+      ],
+      "network_capabilities": 536,
+      "name": "Water Seal"
+    },
+    {
+      "id": 58,
+      "kind": 5,
+      "covered": true,
+      "workbench": [
+        -22912.0,
+        -12608.0
+      ],
+      "network_capabilities": 536,
+      "name": "Earth Seal"
+    },
+    {
+      "id": 59,
+      "kind": 5,
+      "covered": true,
+      "workbench": [
+        -22912.0,
+        -12608.0
+      ],
+      "network_capabilities": 536,
+      "name": "Air Seal"
+    },
+    {
+      "id": 60,
+      "kind": 5,
+      "covered": true,
+      "workbench": [
+        -22912.0,
+        -12608.0
+      ],
+      "network_capabilities": 536,
+      "name": "Quintessence Seal"
+    },
+    {
+      "id": 61,
+      "kind": 2,
+      "covered": true,
+      "workbench": [
+        -27520.0,
+        -12608.0
+      ],
+      "network_capabilities": 1073,
+      "name": "buckler"
+    },
+    {
+      "id": 62,
+      "kind": 2,
+      "covered": true,
+      "workbench": [
+        -27520.0,
+        -12608.0
+      ],
+      "network_capabilities": 1073,
+      "name": "kite shield"
+    },
+    {
+      "id": 63,
+      "kind": 2,
+      "covered": true,
+      "workbench": [
+        -27520.0,
+        -12608.0
+      ],
+      "network_capabilities": 1073,
+      "name": "tower shield"
+    },
+    {
+      "id": 64,
+      "kind": 2,
+      "covered": true,
+      "workbench": [
+        -27520.0,
+        -12608.0
+      ],
+      "network_capabilities": 1073,
+      "name": "magic shield"
+    },
+    {
+      "id": 65,
+      "kind": 6,
+      "covered": true,
+      "workbench": [
+        -27520.0,
+        -12608.0
+      ],
+      "network_capabilities": 1073,
+      "name": "Copper Ingot"
+    },
+    {
+      "id": 66,
+      "kind": 6,
+      "covered": true,
+      "workbench": [
+        -27520.0,
+        -12608.0
+      ],
+      "network_capabilities": 1073,
+      "name": "Tin Ingot"
+    },
+    {
+      "id": 67,
+      "kind": 6,
+      "covered": true,
+      "workbench": [
+        -27520.0,
+        -12608.0
+      ],
+      "network_capabilities": 1073,
+      "name": "iron ingot"
+    },
+    {
+      "id": 68,
+      "kind": 6,
+      "covered": true,
+      "workbench": [
+        -27520.0,
+        -12608.0
+      ],
+      "network_capabilities": 1073,
+      "name": "Silver Ingot"
+    },
+    {
+      "id": 69,
+      "kind": 6,
+      "covered": true,
+      "workbench": [
+        -27520.0,
+        -12608.0
+      ],
+      "network_capabilities": 1073,
+      "name": "Gold Ingot"
+    },
+    {
+      "id": 70,
+      "kind": 6,
+      "covered": true,
+      "workbench": [
+        -27520.0,
+        -12608.0
+      ],
+      "network_capabilities": 1073,
+      "name": "Bronze Ingot"
+    },
+    {
+      "id": 71,
+      "kind": 6,
+      "covered": true,
+      "workbench": [
+        -27520.0,
+        -12608.0
+      ],
+      "network_capabilities": 1073,
+      "name": "Steel Ingot"
+    },
+    {
+      "id": 72,
+      "kind": 6,
+      "covered": true,
+      "workbench": [
+        -24448.0,
+        -12608.0
+      ],
+      "network_capabilities": 148,
+      "name": "fabric material"
+    },
+    {
+      "id": 73,
+      "kind": 6,
+      "covered": true,
+      "workbench": [
+        -24448.0,
+        -12608.0
+      ],
+      "network_capabilities": 148,
+      "name": "fabric material"
+    },
+    {
+      "id": 74,
+      "kind": 6,
+      "covered": true,
+      "workbench": [
+        -24448.0,
+        -12608.0
+      ],
+      "network_capabilities": 148,
+      "name": "fabric material"
+    },
+    {
+      "id": 75,
+      "kind": 6,
+      "covered": true,
+      "workbench": [
+        -24448.0,
+        -12608.0
+      ],
+      "network_capabilities": 148,
+      "name": "Rope"
+    },
+    {
+      "id": 76,
+      "kind": 6,
+      "covered": true,
+      "workbench": [
+        -24448.0,
+        -12608.0
+      ],
+      "network_capabilities": 148,
+      "name": "leather material"
+    },
+    {
+      "id": 77,
+      "kind": 6,
+      "covered": true,
+      "workbench": [
+        -24448.0,
+        -12608.0
+      ],
+      "network_capabilities": 148,
+      "name": "leather material"
+    },
+    {
+      "id": 78,
+      "kind": 6,
+      "covered": true,
+      "workbench": [
+        -24448.0,
+        -12608.0
+      ],
+      "network_capabilities": 148,
+      "name": "leather material"
+    },
+    {
+      "id": 79,
+      "kind": 7,
+      "covered": true,
+      "workbench": [
+        -27520.0,
+        -12608.0
+      ],
+      "network_capabilities": 1073,
+      "name": "blade material"
+    },
+    {
+      "id": 80,
+      "kind": 7,
+      "covered": true,
+      "workbench": [
+        -27520.0,
+        -12608.0
+      ],
+      "network_capabilities": 1073,
+      "name": "small-blade material"
+    },
+    {
+      "id": 81,
+      "kind": 7,
+      "covered": true,
+      "workbench": [
+        -27520.0,
+        -12608.0
+      ],
+      "network_capabilities": 1073,
+      "name": "curved-blade material"
+    },
+    {
+      "id": 82,
+      "kind": 7,
+      "covered": true,
+      "workbench": [
+        -27520.0,
+        -12608.0
+      ],
+      "network_capabilities": 1073,
+      "name": "long-blade material"
+    },
+    {
+      "id": 83,
+      "kind": 7,
+      "covered": true,
+      "workbench": [
+        -27520.0,
+        -12608.0
+      ],
+      "network_capabilities": 1073,
+      "name": "broad-blade material"
+    },
+    {
+      "id": 84,
+      "kind": 7,
+      "covered": true,
+      "workbench": [
+        -27520.0,
+        -12608.0
+      ],
+      "network_capabilities": 1073,
+      "name": "shaft material"
+    },
+    {
+      "id": 85,
+      "kind": 7,
+      "covered": true,
+      "workbench": [
+        -25984.0,
+        -12608.0
+      ],
+      "network_capabilities": 1107,
+      "name": "frame material"
+    },
+    {
+      "id": 86,
+      "kind": 7,
+      "covered": true,
+      "workbench": [
+        -25984.0,
+        -12608.0
+      ],
+      "network_capabilities": 1107,
+      "name": "long-frame material"
+    },
+    {
+      "id": 87,
+      "kind": 7,
+      "covered": true,
+      "workbench": [
+        -27520.0,
+        -12608.0
+      ],
+      "network_capabilities": 1073,
+      "name": "weapon-head material"
+    },
+    {
+      "id": 88,
+      "kind": 7,
+      "covered": true,
+      "workbench": [
+        -27520.0,
+        -12608.0
+      ],
+      "network_capabilities": 1073,
+      "name": "round-head material"
+    },
+    {
+      "id": 89,
+      "kind": 7,
+      "covered": true,
+      "workbench": [
+        -27520.0,
+        -12608.0
+      ],
+      "network_capabilities": 1073,
+      "name": "plate material"
+    },
+    {
+      "id": 90,
+      "kind": 7,
+      "covered": true,
+      "workbench": [
+        -27520.0,
+        -12608.0
+      ],
+      "network_capabilities": 1073,
+      "name": "round-plate material"
+    },
+    {
+      "id": 91,
+      "kind": 7,
+      "covered": true,
+      "workbench": [
+        -27520.0,
+        -12608.0
+      ],
+      "network_capabilities": 1073,
+      "name": "kite-plate material"
+    },
+    {
+      "id": 92,
+      "kind": 7,
+      "covered": true,
+      "workbench": [
+        -27520.0,
+        -12608.0
+      ],
+      "network_capabilities": 1073,
+      "name": "tower-plate material"
+    },
+    {
+      "id": 93,
+      "kind": 7,
+      "covered": true,
+      "workbench": [
+        -27520.0,
+        -12608.0
+      ],
+      "network_capabilities": 1073,
+      "name": "magic-plate material"
+    },
+    {
+      "id": 94,
+      "kind": 7,
+      "covered": true,
+      "workbench": [
+        -27520.0,
+        -12608.0
+      ],
+      "network_capabilities": 1073,
+      "name": "large-plate material"
+    },
+    {
+      "id": 95,
+      "kind": 7,
+      "covered": true,
+      "workbench": [
+        -24448.0,
+        -12608.0
+      ],
+      "network_capabilities": 148,
+      "name": "chainmail material"
+    },
+    {
+      "id": 96,
+      "kind": 7,
+      "covered": true,
+      "workbench": [
+        -22912.0,
+        -12608.0
+      ],
+      "network_capabilities": 536,
+      "name": "fire-essence material"
+    },
+    {
+      "id": 97,
+      "kind": 7,
+      "covered": true,
+      "workbench": [
+        -22912.0,
+        -12608.0
+      ],
+      "network_capabilities": 536,
+      "name": "water-essence material"
+    },
+    {
+      "id": 98,
+      "kind": 7,
+      "covered": true,
+      "workbench": [
+        -22912.0,
+        -12608.0
+      ],
+      "network_capabilities": 536,
+      "name": "earth-essence material"
+    },
+    {
+      "id": 99,
+      "kind": 7,
+      "covered": true,
+      "workbench": [
+        -22912.0,
+        -12608.0
+      ],
+      "network_capabilities": 536,
+      "name": "wind-essence material"
+    },
+    {
+      "id": 100,
+      "kind": 7,
+      "covered": true,
+      "workbench": [
+        -22912.0,
+        -12608.0
+      ],
+      "network_capabilities": 536,
+      "name": "quintessence material"
+    },
+    {
+      "id": 101,
+      "kind": 7,
+      "covered": true,
+      "workbench": [
+        -27520.0,
+        -12608.0
+      ],
+      "network_capabilities": 1073,
+      "name": "hilt material"
+    },
+    {
+      "id": 102,
+      "kind": 7,
+      "covered": true,
+      "workbench": [
+        -27520.0,
+        -12608.0
+      ],
+      "network_capabilities": 1073,
+      "name": "long-hilt material"
+    },
+    {
+      "id": 103,
+      "kind": 7,
+      "covered": true,
+      "workbench": [
+        -27520.0,
+        -12608.0
+      ],
+      "network_capabilities": 1073,
+      "name": "point material"
+    },
+    {
+      "id": 104,
+      "kind": 7,
+      "covered": true,
+      "workbench": [
+        -27520.0,
+        -12608.0
+      ],
+      "network_capabilities": 1073,
+      "name": "handle material"
+    },
+    {
+      "id": 105,
+      "kind": 7,
+      "covered": true,
+      "workbench": [
+        -27520.0,
+        -12608.0
+      ],
+      "network_capabilities": 1073,
+      "name": "long-handle material"
+    },
+    {
+      "id": 106,
+      "kind": 7,
+      "covered": true,
+      "workbench": [
+        -25984.0,
+        -12608.0
+      ],
+      "network_capabilities": 1107,
+      "name": "bowstring material"
+    },
+    {
+      "id": 107,
+      "kind": 7,
+      "covered": true,
+      "workbench": [
+        -25984.0,
+        -12608.0
+      ],
+      "network_capabilities": 1107,
+      "name": "reinforced-bowstring material"
+    },
+    {
+      "id": 108,
+      "kind": 7,
+      "covered": true,
+      "workbench": [
+        -24448.0,
+        -12608.0
+      ],
+      "network_capabilities": 148,
+      "name": "strap material"
+    },
+    {
+      "id": 109,
+      "kind": 7,
+      "covered": true,
+      "workbench": [
+        -27520.0,
+        -12608.0
+      ],
+      "network_capabilities": 1073,
+      "name": "reinforced-strap material"
+    },
+    {
+      "id": 110,
+      "kind": 7,
+      "covered": true,
+      "workbench": [
+        -25984.0,
+        -12608.0
+      ],
+      "network_capabilities": 1107,
+      "name": "barrel material"
+    },
+    {
+      "id": 111,
+      "kind": 7,
+      "covered": true,
+      "workbench": [
+        -25984.0,
+        -12608.0
+      ],
+      "network_capabilities": 1107,
+      "name": "mechanism material"
+    },
+    {
+      "id": 112,
+      "kind": 7,
+      "covered": true,
+      "workbench": [
+        -22912.0,
+        -12608.0
+      ],
+      "network_capabilities": 536,
+      "name": "staff material"
+    },
+    {
+      "id": 113,
+      "kind": 7,
+      "covered": true,
+      "workbench": [
+        -22912.0,
+        -12608.0
+      ],
+      "network_capabilities": 536,
+      "name": "bell material"
+    },
+    {
+      "id": 114,
+      "kind": 7,
+      "covered": true,
+      "workbench": [
+        -22912.0,
+        -12608.0
+      ],
+      "network_capabilities": 536,
+      "name": "book material"
+    },
+    {
+      "id": 115,
+      "kind": 7,
+      "covered": true,
+      "workbench": [
+        -22912.0,
+        -12608.0
+      ],
+      "network_capabilities": 536,
+      "name": "statuette material"
+    },
+    {
+      "id": 116,
+      "kind": 7,
+      "covered": true,
+      "workbench": [
+        -27520.0,
+        -12608.0
+      ],
+      "network_capabilities": 1073,
+      "name": "small weapon-head material"
+    },
+    {
+      "id": 117,
+      "kind": 7,
+      "covered": true,
+      "workbench": [
+        -27520.0,
+        -12608.0
+      ],
+      "network_capabilities": 1073,
+      "name": "chain material"
+    },
+    {
+      "id": 118,
+      "kind": 7,
+      "covered": true,
+      "workbench": [
+        -22912.0,
+        -12608.0
+      ],
+      "network_capabilities": 536,
+      "name": "fine-silver-chain material"
+    },
+    {
+      "id": 119,
+      "kind": 7,
+      "covered": true,
+      "workbench": [
+        -22912.0,
+        -12608.0
+      ],
+      "network_capabilities": 536,
+      "name": "seal-base material"
+    },
+    {
+      "id": 120,
+      "kind": 7,
+      "covered": true,
+      "workbench": [
+        -22912.0,
+        -12608.0
+      ],
+      "network_capabilities": 536,
+      "name": "ruby-pendant material"
+    },
+    {
+      "id": 121,
+      "kind": 7,
+      "covered": true,
+      "workbench": [
+        -22912.0,
+        -12608.0
+      ],
+      "network_capabilities": 536,
+      "name": "sapphire-pendant material"
+    },
+    {
+      "id": 122,
+      "kind": 7,
+      "covered": true,
+      "workbench": [
+        -22912.0,
+        -12608.0
+      ],
+      "network_capabilities": 536,
+      "name": "emerald-pendant material"
+    },
+    {
+      "id": 123,
+      "kind": 7,
+      "covered": true,
+      "workbench": [
+        -22912.0,
+        -12608.0
+      ],
+      "network_capabilities": 536,
+      "name": "topaz-pendant material"
+    },
+    {
+      "id": 124,
+      "kind": 7,
+      "covered": true,
+      "workbench": [
+        -22912.0,
+        -12608.0
+      ],
+      "network_capabilities": 536,
+      "name": "cut-ruby material"
+    },
+    {
+      "id": 125,
+      "kind": 7,
+      "covered": true,
+      "workbench": [
+        -22912.0,
+        -12608.0
+      ],
+      "network_capabilities": 536,
+      "name": "cut-sapphire material"
+    },
+    {
+      "id": 126,
+      "kind": 7,
+      "covered": true,
+      "workbench": [
+        -22912.0,
+        -12608.0
+      ],
+      "network_capabilities": 536,
+      "name": "cut-emerald material"
+    },
+    {
+      "id": 127,
+      "kind": 7,
+      "covered": true,
+      "workbench": [
+        -22912.0,
+        -12608.0
+      ],
+      "network_capabilities": 536,
+      "name": "cut-topaz material"
+    },
+    {
+      "id": 128,
+      "kind": 7,
+      "covered": true,
+      "workbench": [
+        -22912.0,
+        -12608.0
+      ],
+      "network_capabilities": 536,
+      "name": "opal-brooch material"
+    },
+    {
+      "id": 129,
+      "kind": 8,
+      "covered": true,
+      "workbench": [
+        -25984.0,
+        -12608.0
+      ],
+      "network_capabilities": 1107,
+      "name": "10 arrows"
+    },
+    {
+      "id": 130,
+      "kind": 8,
+      "covered": true,
+      "workbench": [
+        -25984.0,
+        -12608.0
+      ],
+      "network_capabilities": 1107,
+      "name": "10 bolts"
+    },
+    {
+      "id": 131,
+      "kind": 0,
+      "covered": true,
+      "workbench": [
+        -27520.0,
+        -12608.0
+      ],
+      "network_capabilities": 1073,
+      "name": "Pickaxe"
+    }
+  ]
+}

@@ -1,6 +1,11 @@
 # CONTEXT.md — Ultra-condensed summary of Caelum Argenteum
 
-Documentation version: **5.1.2** — 2026-10-07.
+Documentation version: **5.1.3** — 2026-10-08.
+
+**5.1.3/#133:** closure/merge authorized, PR #141; thermal follow-up #140.
+MAP06 interiors/commerce/deployment/carbines/sweating. CA133-01/02/03 unconfirmed.
+Rules: SYSTEMS; evidence: validation_513.
+**#132 accepted, closed; PR #139 merged b0020109.**
 
 **5.1.2/#132:** opt-in MAP06 groups: 100/350 tics, 2,000 alive, 6,000 total.
 Old/full armies retained. CA132-01 accepted 2026-10-07; merge authorized.
@@ -256,17 +261,11 @@ usage evidence remains preserved.
 
 ## Repository structure (summarized)
 
-- `src/`: everything packaged into the PK3 (maps, ZScript, sprites, models,
-  fonts, sounds, music, graphics, licenses).
-- `docs/`: the five canonical documents plus `CONTEXT.md` and `TASKS.md`, the
-  engineering guides `GZDOOM_DEVELOPMENT.md` and `KNOWN_PITFALLS.md`, and the
-  generated `DOCUMENT_INDEX.md`.
-- `assets/`: art/audio sources, climate, first-person views, optional
-  generators, and manifests; not packaged at runtime.
-- `build/`: regenerable PK3.
-- `archive/`: backups of previous versions.
-- Root: `README.md`, `build_dev.ps1`, `run_dev.bat`, `validate_project.py`,
-  `build_document_index.py`.
+- `src/`: packaged runtime code, maps, media and licenses.
+- `docs/`: canonical/working documents, engineering guides and generated index.
+- `assets/`: sources, generators, manifests and validation; outside runtime.
+- `build/`: regenerable PK3; `archive/`: historical backups.
+- Root: README, build/launch scripts and validators. Full map: AGENTS.md.
 
 Use DOCUMENT_INDEX for long documents; follow the engineering guides.
 

@@ -1,0 +1,72 @@
+﻿{
+    "label":  "visual-sweep-a",
+    "started_utc":  "2026-10-08T04:31:13.7199132Z",
+    "engine":  "C:\\Program Files (x86)\\GZDoom\\gzdoom.exe",
+    "engine_sha256":  "EC706C2EA1EF946EEC13BE7B1B461DF8D52EFCD47CAA6C056ED0E0257F7F9FFA",
+    "iwad_sha256":  "10D67824B11025DDD9198E8CFC87CA335EE6E2D3E63AF4180FA9B8A471893255",
+    "package_sha256":  "B252E485CD91F29ED01937175FA79B1064EA11816E7EE8B3BF1E2D0328B0A1D3",
+    "addon_sha256":  "0E0B64A52CCC739D31B40DFF2F8F38F3AFBDF93F7D6A81A25FBB2C09119CDCF5",
+    "initial_config":  "[LastRun]\nVersion=225\n[GlobalSettings]\nvid_preferbackend=1\nvid_vsync=false\nvid_maxfps=60\nvid_activeinbackground=true\ni_pauseinbackground=false\nvid_lowerinbackground=false\ni_soundinbackground=true\ncl_capfps=false\nvid_fullscreen=false\nvid_defwidth=1280\nwin_w=1296\nwin_h=759\nwin_maximized=false\nvid_defheight=720\nuse_mouse=false\nsnd_mastervolume=0.05\nlanguage=es\n",
+    "arguments":  [
+                      "-noautoload",
+                      "-nomouse",
+                      "-iwad",
+                      "\"C:\\Program Files (x86)\\Steam\\steamapps\\common\\ultimate doom\\base\\doom2\\DOOM2.WAD\"",
+                      "-file",
+                      "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue133\\production.pk3\"",
+                      "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue133\\visual.pk3\"",
+                      "-config",
+                      "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue133\\visual-sweep-a.ini\"",
+                      "-savedir",
+                      "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue133\"",
+                      "-width",
+                      1280,
+                      "-height",
+                      720,
+                      "-window",
+                      "-rngseed",
+                      "116",
+                      "-skill",
+                      "2",
+                      "+logfile",
+                      "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue133\\visual-sweep-a.txt\"",
+                      "+con_notifytime",
+                      "0",
+                      "+set",
+                      "ca_test_siege_reinforcements",
+                      1,
+                      "+map",
+                      "MAP06",
+                      "+exec",
+                      "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue133\\visual-sweep-a-exec.cfg\""
+                  ],
+    "benchmark_offset":  0,
+    "command_script":  "wait 90; +use; wait 3; -use; wait 5; screenshot visual-sweep-a-shop-first.png; netevent ca_palomo_merchant_previous; wait 5; screenshot visual-sweep-a-shop-last.png; netevent ca_palomo_merchant_transact; wait 5; screenshot visual-sweep-a-shop-no-money.png; netevent ca_palomo_merchant_mode; wait 5; screenshot visual-sweep-a-shop-sell.png; language enu; netevent ca_palomo_merchant_mode; wait 5; screenshot visual-sweep-a-shop-en.png; netevent ca_palomo_merchant_close; ca133_view 1; wait 5; screenshot visual-sweep-a-home.png; ca133_view 2; wait 5; ca133_pose 0; ca133_angle 0; wait 4; screenshot visual-sweep-a-pose-0-0.png; ca133_pose 0; ca133_angle 1; wait 4; screenshot visual-sweep-a-pose-0-1.png; ca133_pose 0; ca133_angle 2; wait 4; screenshot visual-sweep-a-pose-0-2.png; ca133_pose 0; ca133_angle 3; wait 4; screenshot visual-sweep-a-pose-0-3.png; ca133_pose 0; ca133_angle 4; wait 4; screenshot visual-sweep-a-pose-0-4.png; ca133_pose 0; ca133_angle 5; wait 4; screenshot visual-sweep-a-pose-0-5.png; ca133_pose 0; ca133_angle 6; wait 4; screenshot visual-sweep-a-pose-0-6.png; ca133_pose 0; ca133_angle 7; wait 4; screenshot visual-sweep-a-pose-0-7.png; ca133_pose 1; ca133_angle 0; wait 4; screenshot visual-sweep-a-pose-1-0.png; ca133_pose 1; ca133_angle 1; wait 4; screenshot visual-sweep-a-pose-1-1.png; ca133_pose 1; ca133_angle 2; wait 4; screenshot visual-sweep-a-pose-1-2.png; ca133_pose 1; ca133_angle 3; wait 4; screenshot visual-sweep-a-pose-1-3.png; ca133_pose 1; ca133_angle 4; wait 4; screenshot visual-sweep-a-pose-1-4.png; ca133_pose 1; ca133_angle 5; wait 4; screenshot visual-sweep-a-pose-1-5.png; ca133_pose 1; ca133_angle 6; wait 4; screenshot visual-sweep-a-pose-1-6.png; ca133_pose 1; ca133_angle 7; wait 4; screenshot visual-sweep-a-pose-1-7.png; ca133_pose 2; ca133_angle 0; wait 4; screenshot visual-sweep-a-pose-2-0.png; ca133_pose 2; ca133_angle 1; wait 4; screenshot visual-sweep-a-pose-2-1.png; ca133_pose 2; ca133_angle 2; wait 4; screenshot visual-sweep-a-pose-2-2.png; ca133_pose 2; ca133_angle 3; wait 4; screenshot visual-sweep-a-pose-2-3.png; ca133_pose 2; ca133_angle 4; wait 4; screenshot visual-sweep-a-pose-2-4.png; ca133_pose 2; ca133_angle 5; wait 4; screenshot visual-sweep-a-pose-2-5.png; ca133_pose 2; ca133_angle 6; wait 4; screenshot visual-sweep-a-pose-2-6.png; ca133_pose 2; ca133_angle 7; wait 4; screenshot visual-sweep-a-pose-2-7.png; ca133_pose 3; ca133_angle 0; wait 4; screenshot visual-sweep-a-pose-3-0.png; ca133_pose 3; ca133_angle 1; wait 4; screenshot visual-sweep-a-pose-3-1.png; ca133_pose 3; ca133_angle 2; wait 4; screenshot visual-sweep-a-pose-3-2.png; ca133_pose 3; ca133_angle 3; wait 4; screenshot visual-sweep-a-pose-3-3.png; ca133_pose 3; ca133_angle 4; wait 4; screenshot visual-sweep-a-pose-3-4.png; ca133_pose 3; ca133_angle 5; wait 4; screenshot visual-sweep-a-pose-3-5.png; ca133_pose 3; ca133_angle 6; wait 4; screenshot visual-sweep-a-pose-3-6.png; ca133_pose 3; ca133_angle 7; wait 4; screenshot visual-sweep-a-pose-3-7.png; ca133_pose 4; ca133_angle 0; wait 4; screenshot visual-sweep-a-pose-4-0.png; ca133_pose 4; ca133_angle 1; wait 4; screenshot visual-sweep-a-pose-4-1.png; ca133_pose 4; ca133_angle 2; wait 4; screenshot visual-sweep-a-pose-4-2.png; ca133_pose 4; ca133_angle 3; wait 4; screenshot visual-sweep-a-pose-4-3.png; ca133_pose 4; ca133_angle 4; wait 4; screenshot visual-sweep-a-pose-4-4.png; ca133_pose 4; ca133_angle 5; wait 4; screenshot visual-sweep-a-pose-4-5.png; ca133_pose 4; ca133_angle 6; wait 4; screenshot visual-sweep-a-pose-4-6.png; ca133_pose 4; ca133_angle 7; wait 4; screenshot visual-sweep-a-pose-4-7.png; ca133_pose 5; ca133_angle 0; wait 4; screenshot visual-sweep-a-pose-5-0.png; ca133_pose 5; ca133_angle 1; wait 4; screenshot visual-sweep-a-pose-5-1.png; ca133_pose 5; ca133_angle 2; wait 4; screenshot visual-sweep-a-pose-5-2.png; ca133_pose 5; ca133_angle 3; wait 4; screenshot visual-sweep-a-pose-5-3.png; ca133_pose 5; ca133_angle 4; wait 4; screenshot visual-sweep-a-pose-5-4.png; ca133_pose 5; ca133_angle 5; wait 4; screenshot visual-sweep-a-pose-5-5.png; ca133_pose 5; ca133_angle 6; wait 4; screenshot visual-sweep-a-pose-5-6.png; ca133_pose 5; ca133_angle 7; wait 4; screenshot visual-sweep-a-pose-5-7.png; ca133_view 3; wait 10; chase; wait 10; screenshot visual-sweep-a-player-idle.png; +attack; wait 8; screenshot visual-sweep-a-player-fire.png; wait 280; -attack; wait 5; screenshot visual-sweep-a-player-after-fire.png; +crouch; wait 20; screenshot visual-sweep-a-player-crouch.png; -crouch; wait 5; quit\r\n",
+    "cpu":  [
+                {
+                    "Name":  "AMD Ryzen 9 5950X 16-Core Processor            ",
+                    "NumberOfCores":  16,
+                    "NumberOfLogicalProcessors":  32
+                }
+            ],
+    "gpu":  [
+                {
+                    "Name":  "Parsec Virtual Display Adapter",
+                    "DriverVersion":  "0.45.0.0"
+                },
+                {
+                    "Name":  "NVIDIA GeForce RTX 3070 Ti",
+                    "DriverVersion":  "32.0.15.7688"
+                }
+            ],
+    "os":  {
+               "Caption":  "Microsoft Windows 11 Pro",
+               "Version":  "10.0.26200",
+               "TotalVisibleMemorySize":  33475240
+           },
+    "pid":  29304,
+    "qpc_ms":  1317295786.1457,
+    "epoch_ms":  1791433875665.011,
+    "completed_utc":  "2026-10-08T04:31:31.0784951Z",
+    "expected":  "CA133 PLAYER_VISUAL"
+}

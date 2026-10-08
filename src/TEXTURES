@@ -5716,6 +5716,8 @@ Graphic "CA_GAUNTLET_ICON_3_MUTED", 1280, 1280
 {
     Graphic "CA_GAUNTLET_ICON_3_MUTED_D", 0, 0 { Blend 205, 198, 188 }
 }
+#include "graphics/caelum/carbine_world.textures"
+
 Graphic "graphics/caelum/icons/ca_giant_gauntlets_t3.png", 1280, 1280
 {
     XScale 10

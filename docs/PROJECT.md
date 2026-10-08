@@ -1,13 +1,40 @@
 # Caelum Argenteum — Project, status and roadmap
 
-Documentation version: **5.1.2** — 2026-10-07.
+Documentation version: **5.1.3** — 2026-10-08.
+
+## 5.1.3 - Functional port city (#133, closure and merge authorized)
+
+#132 was accepted on 2026-10-07, closed, and merged through PR #139
+(b00201098a26582c8820a5424a2a75986b022abf). #133 now integrates usable
+homes, T1 factory networks, specialized merchants, housed soldier deployment,
+and shared world carbine artwork. On 2026-10-08 the author authorizes #133 closure
+and PR #141 merge, deferring the thermal findings to #140. This authorization does
+not independently confirm the outstanding manual tests.
+Fresh MAP06 geometry uses revision 3; already visited revision-2 ports require
+`build_dev.ps1 -LegacyMap06SouthCity` and retain their active siege behavior.
+The exact authored 5.1.2 geometry and provenance are in assets/map06_port/legacy_512.
+Keep the original save and package together for rollback.
+
+160 homes contain usable doors, rooms, tables/chairs and beds; 24 factories cover
+the existing T1 production catalogue. The 64 vendors retain independent native
+stock and cash. At the authored 15 November 1889 13:00 boundary, surviving housed
+soldiers deploy physically while the attack begins. Shared carbine services retain
+normal magazines, combat resources, projectiles and wear; only NPC reserve is
+infinite. Original directional world art also follows the player's actual weapon.
+Validation and performance limits: [native evidence](../assets/validation_513/RESULTS.md).
+CA133-01/02/03 in pending_test.txt still require author visual/gameplay acceptance.
+The pre-sweating firearm control exposes a balance limit in the retained #130
+action-heat profile: 14 shots per soldier lead to fatal accumulated heat
+(HEAT_LIMIT.json). The author then approved regulated humanoid sweat, finite
+hydration and coupled travel-water forecasts. Wet-clothing cold remains possible;
+the extension does not itself establish accepted sustained-fire balance.
 
 ## 5.1.2 - Staged siege performance experiment (#132)
 
 An opt-in MAP06 controller stages 100 Mandingas every 350 simulation tics,
 with a 2,000-living cap and 6,000 successful-spawn budget. Existing saves retain
 their armies; the accepted full deployment remains reproducible and default.
-The author has not yet accepted this new scenario. The #131 predecessor is fully
+The author accepted this scenario on 2026-10-07. The #131 predecessor is fully
 accepted, issue closed and PR #138 merged as 72eba5fb.
 Canonical scope: [SYSTEMS](SYSTEMS.md#staged-siege-reinforcement-test-132).
 Native evidence: [validation_512](../assets/validation_512/RESULTS.md), including

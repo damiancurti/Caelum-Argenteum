@@ -73,3 +73,9 @@
 /assets/validation_512/* -text whitespace=cr-at-eol
 /assets/validation_512/*.txt whitespace=-blank-at-eol,-blank-at-eof,cr-at-eol
 /assets/validation_512/*.ini whitespace=-blank-at-eof,cr-at-eol
+
+# Preserve #133 compatibility sources and native evidence fingerprints.
+/assets/map06_port/legacy_512/* -text whitespace=cr-at-eol
+/assets/validation_513/* -text whitespace=cr-at-eol
+/assets/validation_513/*.txt whitespace=-blank-at-eol,-blank-at-eof,cr-at-eol
+/assets/validation_513/*.ini whitespace=-blank-at-eof,cr-at-eol

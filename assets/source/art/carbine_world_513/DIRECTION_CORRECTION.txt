@@ -1,0 +1,15 @@
+Edit the attached 8-column, 6-row transparent game sprite atlas. Preserve its EXACT 1448x1086 dimensions, regular 181x181 cells, character appearance, colors, alpha, feet positions and all the existing 48 figures. No text, grid, shadow or background.
+
+Correct direction ONLY. The full character should have distinct eight rotations per row: front, front-left 45 degrees, full left profile, rear-left 45 degrees, full back, rear-right 45 degrees, full right profile, front-right 45 degrees. In particular the first two columns currently look too similar; make column 1 strictly symmetrical front facing the viewer and column 2 clearly three-quarter facing to SCREEN LEFT.
+
+MOST CRITICAL: fourth row is firing, so each rifle must aim in the same forward direction as its character, firmly shouldered with anatomically correct right trigger hand and left support hand:
+row4 column1 muzzle points DIRECTLY OUT OF IMAGE TOWARD CAMERA, heavily foreshortened, circular muzzle visible, NOT sideways.
+row4 column2 muzzle points diagonally toward camera and SCREEN LEFT.
+row4 column3 shoots SCREEN LEFT in full profile.
+row4 column4 shoots diagonally AWAY and SCREEN LEFT.
+row4 column5 shoots DIRECTLY AWAY FROM CAMERA, rifle foreshortened and partially hidden by the character, not pointing sideways across his back.
+row4 column6 shoots diagonally AWAY and SCREEN RIGHT.
+row4 column7 shoots SCREEN RIGHT in full profile.
+row4 column8 shoots diagonally TOWARD camera and SCREEN RIGHT.
+
+Preserve other poses (row1 low ready, rows2-3 opposite walking legs, rows5-6 reloading phases), with only the first two columns' rotation corrected as requested. Keep genuine transparent alpha.

@@ -1,0 +1,11 @@
+{
+  "issue": 133,
+  "created": "2026-10-08",
+  "tool": "built-in image_gen",
+  "references": [
+    "src/sprites/caelum/domingo/DOIDA1.png",
+    "assets/first_person_v1/references/carbine_tiers.png"
+  ],
+  "source_sha256": "6d703f2b8c3da2c114c25bc22e4296fe5eb1a0bef8816ef83cee603a4c7b5930",
+  "notes": "Original project-specific generated character carbine atlas, two direction-correction iterations. Original characters and first-person art preserved. Runtime TEXTURES clips the unmodified atlas; no Python bitmap edits."
+}

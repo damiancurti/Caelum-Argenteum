@@ -25,6 +25,11 @@ class CaelumThermalService : Object play
         live.Exposure=projection.Exposure;live.Acclimation=projection.Acclimation;
         live.ActivityWatts=projection.ActivityWatts;live.ActivityJoules=projection.ActivityJoules;
         live.EvaporatedKg=projection.EvaporatedKg;live.EvaporationJoules=projection.EvaporationJoules;
+        live.SweatKg=projection.SweatKg;live.SweatRunoffKg=projection.SweatRunoffKg;
+        live.SweatRateKgHour=projection.SweatRateKgHour;
+        // La previsión de provisiones ya aplicó la misma pérdida al jugador.
+        let user=CaelumPlayer(body);
+        live.Hydration=user!=null ? user.CurrentThirst : projection.Hydration;
         live.Severity=projection.Severity;live.WetnessPercent=projection.WetnessPercent;
         for(int slot=0;slot<4;slot++)CaelumThermalBody.SetWater(body,live,slot,projection.WorkWaterKg[slot]);
         // La geometría y el reloj del destino se muestrean al llegar.
@@ -97,6 +102,12 @@ class CaelumThermalService : Object play
         }
         thermal.Bare=CaelumThermalBody.FurryAnimal(body);
         double severitySeconds=Integrate(thermal,worldSeconds,realSeconds,activityWatts,magicWatts,fireWatts);
+        let user=CaelumPlayer(body);
+        if(user!=null)
+        {
+            user.CurrentThirst=thermal.Hydration;
+            user.UpdateSurvivalStates();
+        }
         for(int slot=0;slot<4;slot++)CaelumThermalBody.SetWater(body,thermal,slot,thermal.WorkWaterKg[slot]);
         ApplyDamage(body,thermal,severitySeconds);
     }
@@ -106,8 +117,20 @@ class CaelumThermalService : Object play
     static double Integrate(CaelumThermalState thermal,double worldSeconds,double realSeconds,
         double activityWatts=0,double magicWatts=0,double fireWatts=0,double logicalActivitySeconds=0)
     {
+        if(thermal==null)return 0;
+        int steps=thermal.Sweats && thermal.Available ? Max(1,int(Ceil(Max(0.0,worldSeconds)/CaelumThermalData.SWEAT_STEP_SECONDS))) : 1;
+        double dose=0;
+        for(int i=0;i<steps;i++)dose+=IntegrateStep(thermal,worldSeconds/steps,realSeconds/steps,
+            activityWatts,magicWatts,fireWatts,logicalActivitySeconds/steps);
+        return dose;
+    }
+
+    static double IntegrateStep(CaelumThermalState thermal,double worldSeconds,double realSeconds,
+        double activityWatts=0,double magicWatts=0,double fireWatts=0,double logicalActivitySeconds=0)
+    {
         if(thermal==null || thermal.Inertia<=0)return 0;
         double dw=Max(0.0,worldSeconds),dr=Max(0.0,realSeconds);
+        thermal.SweatRateKgHour=0;
         if(!thermal.Available)
         {
             // Un mapa sin clima no inventa aire ni recuperación ambiental.
@@ -139,6 +162,12 @@ class CaelumThermalService : Object play
         double nodeC=center+referenceOffset+thermal.Exposure;
         double conductance=0,imbalance=rest+Max(0.0,fireWatts),wetness=0;
         double evaporated=0;
+        double points=CaelumThermalRules.HydrationPointsPerKg(thermal.BodyMassKg);
+        double sweat=thermal.Sweats ? Min(Max(0.0,thermal.Hydration)/points,
+            CaelumThermalRules.SweatRate(thermal.Exposure,area,thermal.Hydration)*dw/3600.0) : 0;
+        thermal.Hydration=Max(0.0,thermal.Hydration-sweat*points);
+        thermal.SweatKg+=sweat;
+        if(dw>0)thermal.SweatRateKgHour=sweat*3600.0/dw;
         for(int slot=0;slot<4;slot++)
         {
             int material=thermal.Material[slot];
@@ -154,6 +183,11 @@ class CaelumThermalService : Object play
             if(dw>0 && !thermal.Roof && fraction>0)
                 water=Min(capacity,water+capacity*exposed/fraction*Max(0.0,thermal.RainMmHour)
                     *CaelumThermalData.RAIN_PERCENT_PER_MINUTE_MM*dw/6000.0);
+            // El sudor se paga completo, incluso sumergido o si escurre. Sólo
+            // el agua que efectivamente evapora retira energía una vez.
+            double retained=Min(Max(0.0,capacity-water),sweat*exposed);
+            water+=retained;
+            thermal.SweatRunoffKg+=sweat*fraction-retained;
             // Superficie exterior de la ropa sobre la resistencia total. La
             // evaporación retira calor una vez del nodo, sin otro factor mojado.
             double surfaceC=thermal.AirC+(nodeC-thermal.AirC)

@@ -1,0 +1,420 @@
+Log started: 2026-10-08 03:31:10
+GZDoom version g4.14.2
+D_DoomInit: Static RNGseed 116 set.
+W_Init: Init WADfiles.
+adding C:/Program Files (x86)/GZDoom/gzdoom.pk3, 692 lumps
+adding C:/Program Files (x86)/GZDoom/game_support.pk3, 3308 lumps
+adding C:/Program Files (x86)/Steam/steamapps/common/ultimate doom/base/doom2/DOOM2.WAD, 2919 lumps
+adding C:/Program Files (x86)/Steam/steamapps/common/Ultimate Doom/rerelease/id24res.wad, 530 lumps
+adding C:/Program Files (x86)/GZDoom/game_widescreen_gfx.pk3, 214 lumps
+adding C:/GZDooMProjects/CaelumArgenteum/build/issue133/upgrade/baseline.pk3, 6211 lumps
+adding C:/GZDooMProjects/CaelumArgenteum/build/issue133/observer.pk3, 4 lumps
+S_Init: Setting up sound.
+I_InitSound: Initializing OpenAL
+  Opened device OpenAL Soft on G27F (NVIDIA High Definition Audio)
+  EFX enabled
+I_InitInput
+I_StartupMouse
+I_StartupKeyboard
+I_StartupXInput
+I_StartupRawPS2
+I_StartupDirectInputJoystick
+Vulkan device: NVIDIA GeForce RTX 3070 Ti
+Vulkan device type: discrete gpu
+Vulkan version: 1.4.303 (api) 576.352.0 (driver)
+Vulkan extensions: VK_KHR_16bit_storage VK_KHR_8bit_storage VK_KHR_acceleration_structure VK_KHR_bind_memory2 VK_KHR_buffer_device_address VK_KHR_calibrated_timestamps VK_KHR_compute_shader_derivatives VK_KHR_cooperative_matrix VK_KHR_copy_commands2 VK_KHR_create_renderpass2 VK_KHR_dedicated_allocation VK_KHR_deferred_host_operations VK_KHR_depth_stencil_resolve VK_KHR_descriptor_update_template VK_KHR_device_group VK_KHR_draw_indirect_count VK_KHR_driver_properties VK_KHR_dynamic_rendering VK_KHR_dynamic_rendering_local_read VK_KHR_external_fence VK_KHR_external_fence_win32 VK_KHR_external_memory VK_KHR_external_memory_win32 VK_KHR_external_semaphore VK_KHR_external_semaphore_win32 VK_KHR_format_feature_flags2 VK_KHR_fragment_shader_barycentric VK_KHR_fragment_shading_rate VK_KHR_get_memory_requirements2 VK_KHR_global_priority VK_KHR_image_format_list VK_KHR_imageless_framebuffer VK_KHR_index_type_uint8 VK_KHR_line_rasterization VK_KHR_load_store_op_none VK_KHR_maintenance1 VK_KHR_maintenance2 VK_KHR_maintenance3 VK_KHR_maintenance4 VK_KHR_maintenance5 VK_KHR_maintenance6 VK_KHR_maintenance7 VK_KHR_map_memory2 VK_KHR_multiview VK_KHR_pipeline_binary VK_KHR_pipeline_executable_properties VK_KHR_pipeline_library VK_KHR_present_id VK_KHR_present_wait VK_KHR_push_descriptor VK_KHR_ray_query VK_KHR_ray_tracing_maintenance1 VK_KHR_ray_tracing_pipeline VK_KHR_ray_tracing_position_fetch VK_KHR_relaxed_block_layout VK_KHR_sampler_mirror_clamp_to_edge VK_KHR_sampler_ycbcr_conversion VK_KHR_separate_depth_stencil_layouts VK_KHR_shader_atomic_int64 VK_KHR_shader_clock VK_KHR_shader_draw_parameters VK_KHR_shader_expect_assume VK_KHR_shader_float16_int8 VK_KHR_shader_float_controls VK_KHR_shader_float_controls2 VK_KHR_shader_integer_dot_product VK_KHR_shader_maximal_reconvergence VK_KHR_shader_non_semantic_info VK_KHR_shader_quad_control VK_KHR_shader_relaxed_extended_instruction VK_KHR_shader_subgroup_extended_types VK_KHR_shader_subgroup_rotate VK_KHR_shader_subgroup_uniform_control_flow VK_KHR_shader_terminate_invocation VK_KHR_spirv_1_4 VK_KHR_storage_buffer_storage_class VK_KHR_swapchain VK_KHR_swapchain_mutable_format VK_KHR_synchronization2 VK_KHR_timeline_semaphore VK_KHR_uniform_buffer_standard_layout VK_KHR_variable_pointers VK_KHR_vertex_attribute_divisor VK_KHR_video_decode_av1 VK_KHR_video_decode_h264 VK_KHR_video_decode_h265 VK_KHR_video_decode_queue VK_KHR_video_encode_h264 VK_KHR_video_encode_h265 VK_KHR_video_encode_quantization_map VK_KHR_video_encode_queue VK_KHR_video_maintenance1 VK_KHR_video_maintenance2 VK_KHR_video_queue VK_KHR_vulkan_memory_model VK_KHR_win32_keyed_mutex VK_KHR_workgroup_memory_explicit_layout VK_KHR_zero_initialize_workgroup_memory VK_EXT_4444_formats VK_EXT_attachment_feedback_loop_dynamic_state VK_EXT_attachment_feedback_loop_layout VK_EXT_blend_operation_advanced VK_EXT_border_color_swizzle VK_EXT_buffer_device_address VK_EXT_calibrated_timestamps VK_EXT_color_write_enable VK_EXT_conditional_rendering VK_EXT_conservative_rasterization VK_EXT_custom_border_color VK_EXT_depth_bias_control VK_EXT_depth_clamp_control VK_EXT_depth_clamp_zero_one VK_EXT_depth_clip_control VK_EXT_depth_clip_enable VK_EXT_depth_range_unrestricted VK_EXT_descriptor_buffer VK_EXT_descriptor_indexing VK_EXT_device_address_binding_report VK_EXT_device_fault VK_EXT_device_generated_commands VK_EXT_discard_rectangles VK_EXT_dynamic_rendering_unused_attachments VK_EXT_extended_dynamic_state VK_EXT_extended_dynamic_state2 VK_EXT_extended_dynamic_state3 VK_EXT_external_memory_host VK_EXT_fragment_shader_interlock VK_EXT_full_screen_exclusive VK_EXT_global_priority VK_EXT_global_priority_query VK_EXT_graphics_pipeline_library VK_EXT_hdr_metadata VK_EXT_host_image_copy VK_EXT_host_query_reset VK_EXT_image_2d_view_of_3d VK_EXT_image_robustness VK_EXT_image_sliced_view_of_3d VK_EXT_image_view_min_lod VK_EXT_index_type_uint8 VK_EXT_inline_uniform_block VK_EXT_legacy_vertex_attributes VK_EXT_line_rasterization VK_EXT_load_store_op_none VK_EXT_memory_budget VK_EXT_memory_priority VK_EXT_mesh_shader VK_EXT_multi_draw VK_EXT_mutable_descriptor_type VK_EXT_nested_command_buffer VK_EXT_non_seamless_cube_map VK_EXT_opacity_micromap VK_EXT_pageable_device_local_memory VK_EXT_pci_bus_info VK_EXT_pipeline_creation_cache_control VK_EXT_pipeline_creation_feedback VK_EXT_pipeline_library_group_handles VK_EXT_pipeline_robustness VK_EXT_post_depth_coverage VK_EXT_present_mode_fifo_latest_ready VK_EXT_primitive_topology_list_restart VK_EXT_primitives_generated_query VK_EXT_private_data VK_EXT_provoking_vertex VK_EXT_queue_family_foreign VK_EXT_robustness2 VK_EXT_sample_locations VK_EXT_sampler_filter_minmax VK_EXT_scalar_block_layout VK_EXT_separate_stencil_usage VK_EXT_shader_atomic_float VK_EXT_shader_demote_to_helper_invocation VK_EXT_shader_image_atomic_int64 VK_EXT_shader_module_identifier VK_EXT_shader_object VK_EXT_shader_replicated_composites VK_EXT_shader_subgroup_ballot VK_EXT_shader_subgroup_vote VK_EXT_shader_viewport_index_layer VK_EXT_subgroup_size_control VK_EXT_swapchain_maintenance1 VK_EXT_texel_buffer_alignment VK_EXT_tooling_info VK_EXT_transform_feedback VK_EXT_vertex_attribute_divisor VK_EXT_vertex_attribute_robustness VK_EXT_vertex_input_dynamic_state VK_EXT_ycbcr_2plane_444_formats VK_EXT_ycbcr_image_arrays VK_NV_acquire_winrt_display VK_NV_clip_space_w_scaling VK_NV_cluster_acceleration_structure VK_NV_compute_shader_derivatives VK_NV_cooperative_matrix VK_NV_cooperative_matrix2 VK_NV_cooperative_vector VK_NV_copy_memory_indirect VK_NV_corner_sampled_image VK_NV_coverage_reduction_mode VK_NV_cuda_kernel_launch VK_NV_dedicated_allocation VK_NV_dedicated_allocation_image_aliasing VK_NV_descriptor_pool_overallocation VK_NV_device_diagnostic_checkpoints VK_NV_device_diagnostics_config VK_NV_device_generated_commands VK_NV_device_generated_commands_compute VK_NV_disk_cache_utils VK_NV_external_memory VK_NV_external_memory_win32 VK_NV_fill_rectangle VK_NV_fragment_coverage_to_color VK_NV_fragment_shader_barycentric VK_NV_fragment_shading_rate_enums VK_NV_framebuffer_mixed_samples VK_NV_geometry_shader_passthrough VK_NV_inherited_viewport_scissor VK_NV_internal_nvpresent VK_NV_linear_color_attachment VK_NV_low_latency VK_NV_low_latency2 VK_NV_memory_decompression VK_NV_mesh_shader VK_NV_optical_flow VK_NV_partitioned_acceleration_structure VK_NV_present_metering VK_NV_raw_access_chains VK_NV_ray_tracing VK_NV_ray_tracing_invocation_reorder VK_NV_ray_tracing_motion_blur VK_NV_representative_fragment_test VK_NV_sample_mask_override_coverage VK_NV_scissor_exclusive VK_NV_shader_atomic_float16_vector VK_NV_shader_image_footprint VK_NV_shader_sm_builtins VK_NV_shader_subgroup_partitioned VK_NV_shading_rate_image VK_NV_viewport_array2 VK_NV_viewport_swizzle VK_NV_win32_keyed_mutex VK_NVX_binary_import VK_NVX_image_view_handle VK_NVX_multiview_per_view_attributes VK_AMD_buffer_marker VK_GOOGLE_hlsl_functionality1 VK_GOOGLE_user_type
+Max. texture size: 32768
+Max. uniform buffer range: 65536
+Min. uniform buffer offset alignment: 64
+Resolution: 1280 x 720
+I_Init: Setting up machine state.
+CPU speed: 3400 MHz
+CPU Vendor ID: AuthenticAMD
+  Name: AMD Ryzen 9 5950X 16-Core Processor 
+  Family 25 (25), Model 33, Stepping 0
+  Features: SSE2 SSE3 SSSE3 SSE4.1 SSE4.2 AVX AVX2 F16C FMA3 BMI1 BMI2 HyperThreading
+V_Init: allocate screen.
+ST_Init: Init startup screen.
+Checking cmd-line parameters...
+S_InitData: Load sound definitions.
+G_ParseMapInfo: Load map definitions.
+Texman.Init: Init texture manager.
+ParseTeamInfo: Load team definitions.
+LoadActors: Load actor definitions.
+script parsing took 1049.29 ms
+R_Init: Init Doom refresh subsystem.
+DecalLibrary: Load decals.
+M_Init: Init menus.
+P_Init: Init Playloop state.
+ParseSBarInfo: Loading custom status bar definition.
+D_CheckNetGame: Checking network game status.
+player 1 of 1 (1 nodes)
+
+----------------------------------------
+
+MAP06 - Barracas al Sud — fortified port
+
+[Caelum] Inicio por comando directo: perfil de prueba seguro aplicado.
+[Caelum] Character creation values loaded. Attribute total: 150.00
+PORT16 deployed Mandingas=6000 commander=1 defenders=600 hostileMachines=12 guns=42
+CA132 FRAME tic=14 ms=5813.729700 interval=343.512600 epoch=1791441076
+CA132 FRAME tic=24 ms=6072.913100 interval=259.183400 epoch=1791441076
+CA132 FRAME tic=33 ms=6257.303400 interval=184.390300 epoch=1791441077
+CA132 SIM tic=35 ms=6318.097500 alive=6000 total=6000 remaining=0 pending=0 combatants=6602 defenders=600 corpses=0 projectiles=0 groups=64 failed=0 scriptedDeaths=0 victory=0 view=0
+CA132 SPAWN tic=35 total=6000
+CA132 SETTINGS pause=0 lower=0 render=1 sound=1 volume=0.050000 diagnostic=0
+CA132 FRAME tic=40 ms=6446.178400 interval=188.875000 epoch=1791441077
+CA132 FRAME tic=46 ms=6644.080500 interval=197.902100 epoch=1791441077
+CA132 FRAME tic=53 ms=6823.630700 interval=179.550200 epoch=1791441077
+CA132 FRAME tic=60 ms=6997.209500 interval=173.578800 epoch=1791441077
+CA132 FRAME tic=65 ms=7105.848400 interval=108.638900 epoch=1791441077
+CA132 FRAME tic=69 ms=7204.980400 interval=99.132000 epoch=1791441077
+CA132 SIM tic=70 ms=7251.912800 alive=6000 total=6000 remaining=0 pending=0 combatants=6602 defenders=600 corpses=0 projectiles=169 groups=66 failed=0 scriptedDeaths=0 victory=0 view=0
+CA132 FRAME tic=73 ms=7326.465900 interval=121.485500 epoch=1791441078
+CA132 FRAME tic=77 ms=7433.194300 interval=106.728400 epoch=1791441078
+CA132 FRAME tic=81 ms=7555.168600 interval=121.974300 epoch=1791441078
+CA132 FRAME tic=85 ms=7712.225200 interval=157.056600 epoch=1791441078
+CA132 FRAME tic=90 ms=7842.139800 interval=129.914600 epoch=1791441078
+CA132 FRAME tic=95 ms=7957.768100 interval=115.628300 epoch=1791441078
+CA132 FRAME tic=99 ms=8055.265000 interval=97.496900 epoch=1791441078
+CA132 FRAME tic=103 ms=8177.583500 interval=122.318500 epoch=1791441078
+CA132 SIM tic=105 ms=8270.199600 alive=6000 total=6000 remaining=0 pending=0 combatants=6602 defenders=600 corpses=0 projectiles=387 groups=63 failed=0 scriptedDeaths=0 victory=0 view=0
+CA132 FRAME tic=107 ms=8347.602700 interval=170.019200 epoch=1791441079
+CA132 FRAME tic=113 ms=8472.772400 interval=125.169700 epoch=1791441079
+CA132 FRAME tic=117 ms=8573.399500 interval=100.627100 epoch=1791441079
+CA132 FRAME tic=121 ms=8670.675000 interval=97.275500 epoch=1791441079
+CA132 FRAME tic=124 ms=8757.547400 interval=86.872400 epoch=1791441079
+CA132 FRAME tic=127 ms=8844.797900 interval=87.250500 epoch=1791441079
+CA132 FRAME tic=130 ms=8929.736700 interval=84.938800 epoch=1791441079
+CA132 FRAME tic=133 ms=8995.279500 interval=65.542800 epoch=1791441079
+CA132 FRAME tic=135 ms=9052.276800 interval=56.997300 epoch=1791441079
+CA132 FRAME tic=138 ms=9146.903500 interval=94.626700 epoch=1791441079
+CA132 SIM tic=140 ms=9198.006200 alive=6000 total=6000 remaining=0 pending=0 combatants=6602 defenders=600 corpses=0 projectiles=614 groups=64 failed=0 scriptedDeaths=0 victory=0 view=0
+CA132 FRAME tic=141 ms=9236.912800 interval=90.009300 epoch=1791441080
+CA132 FRAME tic=144 ms=9361.770700 interval=124.857900 epoch=1791441080
+CA132 FRAME tic=148 ms=9513.585900 interval=151.815200 epoch=1791441080
+CA132 FRAME tic=154 ms=9695.096300 interval=181.510400 epoch=1791441080
+CA132 FRAME tic=160 ms=9850.187400 interval=155.091100 epoch=1791441080
+CA132 FRAME tic=166 ms=10062.056800 interval=211.869400 epoch=1791441080
+CA132 FRAME tic=173 ms=10228.329000 interval=166.272200 epoch=1791441081
+CA132 SIM tic=175 ms=10283.052900 alive=6000 total=6000 remaining=0 pending=0 combatants=6602 defenders=600 corpses=0 projectiles=835 groups=63 failed=0 scriptedDeaths=0 victory=0 view=0
+CA132 FRAME tic=179 ms=10384.689100 interval=156.360100 epoch=1791441081
+CA132 FRAME tic=184 ms=10502.343800 interval=117.654700 epoch=1791441081
+CA132 FRAME tic=188 ms=10604.789900 interval=102.446100 epoch=1791441081
+CA132 FRAME tic=192 ms=10713.294600 interval=108.504700 epoch=1791441081
+CA132 FRAME tic=195 ms=10804.135700 interval=90.841100 epoch=1791441081
+CA132 FRAME tic=199 ms=10905.265700 interval=101.130000 epoch=1791441081
+CA132 FRAME tic=202 ms=11002.019900 interval=96.754200 epoch=1791441081
+CA132 FRAME tic=206 ms=11096.804600 interval=94.784700 epoch=1791441081
+CA132 FRAME tic=209 ms=11188.569200 interval=91.764600 epoch=1791441081
+CA132 SIM tic=210 ms=11252.659100 alive=6000 total=6000 remaining=0 pending=0 combatants=6602 defenders=600 corpses=0 projectiles=936 groups=66 failed=0 scriptedDeaths=0 victory=0 view=0
+CA132 FRAME tic=212 ms=11316.028300 interval=127.459100 epoch=1791441082
+CA132 FRAME tic=217 ms=11495.122700 interval=179.094400 epoch=1791441082
+CA132 FRAME tic=223 ms=11685.118000 interval=189.995300 epoch=1791441082
+CA132 FRAME tic=230 ms=11930.837700 interval=245.719700 epoch=1791441082
+CA132 FRAME tic=238 ms=12146.016800 interval=215.179100 epoch=1791441082
+CA132 SIM tic=245 ms=12316.910500 alive=6000 total=6000 remaining=0 pending=0 combatants=6602 defenders=600 corpses=0 projectiles=956 groups=67 failed=0 scriptedDeaths=0 victory=0 view=0
+CA132 FRAME tic=246 ms=12365.986000 interval=219.969200 epoch=1791441083
+CA132 FRAME tic=253 ms=12552.463200 interval=186.477200 epoch=1791441083
+CA132 FRAME tic=260 ms=12732.332600 interval=179.869400 epoch=1791441083
+CA132 FRAME tic=266 ms=12902.604400 interval=170.271800 epoch=1791441083
+CA132 FRAME tic=272 ms=13045.810300 interval=143.205900 epoch=1791441083
+CA132 FRAME tic=277 ms=13178.909600 interval=133.099300 epoch=1791441083
+CA132 SIM tic=280 ms=13272.906500 alive=6000 total=6000 remaining=0 pending=0 combatants=6602 defenders=600 corpses=0 projectiles=951 groups=64 failed=0 scriptedDeaths=0 victory=0 view=0
+CA132 FRAME tic=282 ms=13365.021000 interval=186.111400 epoch=1791441084
+CA132 FRAME tic=289 ms=13620.502900 interval=255.481900 epoch=1791441084
+CA132 FRAME tic=298 ms=13947.742000 interval=327.239100 epoch=1791441084
+CA132 FRAME tic=309 ms=14283.421000 interval=335.679000 epoch=1791441085
+CA132 SIM tic=315 ms=14461.784000 alive=6000 total=6000 remaining=0 pending=0 combatants=6602 defenders=600 corpses=0 projectiles=982 groups=66 failed=0 scriptedDeaths=0 victory=0 view=0
+CA132 FRAME tic=321 ms=14612.387700 interval=328.966700 epoch=1791441085
+CA132 FRAME tic=332 ms=14895.750700 interval=283.363000 epoch=1791441085
+CA132 FRAME tic=342 ms=15146.195500 interval=250.444800 epoch=1791441085
+CA132 SIM tic=350 ms=15351.469700 alive=6000 total=6000 remaining=0 pending=0 combatants=6602 defenders=600 corpses=0 projectiles=965 groups=65 failed=0 scriptedDeaths=0 victory=0 view=0
+CA132 FRAME tic=351 ms=15386.997000 interval=240.801500 epoch=1791441086
+CA132 FRAME tic=359 ms=15666.114200 interval=279.117200 epoch=1791441086
+CA132 FRAME tic=369 ms=15987.900200 interval=321.786000 epoch=1791441086
+CA132 FRAME tic=380 ms=16328.664700 interval=340.764500 epoch=1791441087
+CA132 SIM tic=385 ms=16483.035800 alive=5996 total=6000 remaining=0 pending=0 combatants=6598 defenders=600 corpses=4 projectiles=1030 groups=63 failed=0 scriptedDeaths=0 victory=0 view=0
+CA132 FRAME tic=392 ms=16686.244200 interval=357.579500 epoch=1791441087
+CA132 FRAME tic=405 ms=17021.933800 interval=335.689600 epoch=1791441087
+CA132 FRAME tic=416 ms=17302.225000 interval=280.291200 epoch=1791441088
+CA132 SIM tic=420 ms=17407.527000 alive=5996 total=6000 remaining=0 pending=0 combatants=6598 defenders=600 corpses=4 projectiles=1043 groups=65 failed=0 scriptedDeaths=0 victory=0 view=0
+CA132 FRAME tic=426 ms=17583.789100 interval=281.564100 epoch=1791441088
+CA132 FRAME tic=436 ms=17896.148200 interval=312.359100 epoch=1791441088
+CA132 FRAME tic=447 ms=18230.946100 interval=334.797900 epoch=1791441089
+CA132 SIM tic=455 ms=18455.209400 alive=5996 total=6000 remaining=0 pending=0 combatants=6598 defenders=600 corpses=4 projectiles=1040 groups=65 failed=0 scriptedDeaths=0 victory=0 view=0
+CA132 FRAME tic=459 ms=18581.378100 interval=350.432000 epoch=1791441089
+CA132 FRAME tic=471 ms=18930.017100 interval=348.639000 epoch=1791441089
+CA132 FRAME tic=483 ms=19264.725300 interval=334.708200 epoch=1791441090
+CA132 SIM tic=490 ms=19441.918900 alive=5996 total=6000 remaining=0 pending=0 combatants=6598 defenders=600 corpses=4 projectiles=1064 groups=63 failed=0 scriptedDeaths=0 victory=0 view=0
+CA132 FRAME tic=495 ms=19571.904900 interval=307.179600 epoch=1791441090
+CA132 FRAME tic=506 ms=19897.383700 interval=325.478800 epoch=1791441090
+CA132 FRAME tic=517 ms=20221.234400 interval=323.850700 epoch=1791441090
+CA132 SIM tic=525 ms=20451.488400 alive=5996 total=6000 remaining=0 pending=0 combatants=6598 defenders=600 corpses=4 projectiles=1077 groups=63 failed=0 scriptedDeaths=0 victory=0 view=0
+CA132 FRAME tic=528 ms=20546.172900 interval=324.938500 epoch=1791441091
+CA132 FRAME tic=540 ms=20895.997800 interval=349.824900 epoch=1791441091
+CA132 FRAME tic=552 ms=21234.789300 interval=338.791500 epoch=1791441092
+CA132 SIM tic=560 ms=21432.993200 alive=5996 total=6000 remaining=0 pending=0 combatants=6598 defenders=600 corpses=4 projectiles=1102 groups=67 failed=0 scriptedDeaths=0 victory=0 view=0
+CA132 FRAME tic=564 ms=21549.257200 interval=314.467900 epoch=1791441092
+CA132 FRAME tic=575 ms=21895.514800 interval=346.257600 epoch=1791441092
+CA132 FRAME tic=587 ms=22247.495700 interval=351.980900 epoch=1791441093
+CA132 SIM tic=595 ms=22474.764200 alive=5996 total=6000 remaining=0 pending=0 combatants=6598 defenders=600 corpses=4 projectiles=1089 groups=65 failed=0 scriptedDeaths=0 victory=0 view=0
+CA132 FRAME tic=599 ms=22597.597400 interval=350.101700 epoch=1791441093
+CA132 FRAME tic=612 ms=23003.281700 interval=405.684300 epoch=1791441093
+CA132 FRAME tic=626 ms=23345.850700 interval=342.569000 epoch=1791441094
+CA132 SIM tic=630 ms=23465.099400 alive=5996 total=6000 remaining=0 pending=0 combatants=6598 defenders=600 corpses=4 projectiles=1087 groups=66 failed=0 scriptedDeaths=0 victory=0 view=0
+CA132 FRAME tic=638 ms=23712.520900 interval=366.670200 epoch=1791441094
+CA132 FRAME tic=651 ms=24095.408200 interval=382.887300 epoch=1791441094
+CA132 FRAME tic=664 ms=24467.463300 interval=372.055100 epoch=1791441095
+CA132 SIM tic=665 ms=24520.534300 alive=5996 total=6000 remaining=0 pending=0 combatants=6598 defenders=600 corpses=4 projectiles=1043 groups=64 failed=0 scriptedDeaths=0 victory=0 view=0
+CA132 FRAME tic=677 ms=24849.963900 interval=382.500600 epoch=1791441095
+CA132 FRAME tic=691 ms=25212.048500 interval=362.084600 epoch=1791441095
+CA132 SIM tic=700 ms=25471.728500 alive=5996 total=6000 remaining=0 pending=0 combatants=6598 defenders=600 corpses=4 projectiles=1026 groups=63 failed=0 scriptedDeaths=0 victory=0 view=0
+CA132 FRAME tic=703 ms=25588.434100 interval=376.385600 epoch=1791441096
+CA132 FRAME tic=716 ms=26016.259500 interval=427.825400 epoch=1791441096
+CA132 FRAME tic=731 ms=26482.307400 interval=466.047900 epoch=1791441097
+CA132 SIM tic=735 ms=26609.259400 alive=5991 total=6000 remaining=0 pending=0 combatants=6593 defenders=600 corpses=9 projectiles=1055 groups=65 failed=0 scriptedDeaths=0 victory=0 view=0
+CA132 FRAME tic=747 ms=26916.579100 interval=434.271700 epoch=1791441097
+CA132 FRAME tic=763 ms=27334.434700 interval=417.855600 epoch=1791441098
+CA132 SIM tic=770 ms=27562.480600 alive=5991 total=6000 remaining=0 pending=0 combatants=6593 defenders=600 corpses=9 projectiles=1076 groups=66 failed=0 scriptedDeaths=0 victory=0 view=0
+CA132 FRAME tic=777 ms=27769.708700 interval=435.274000 epoch=1791441098
+CA132 FRAME tic=793 ms=28266.374400 interval=496.665700 epoch=1791441099
+CA132 SIM tic=805 ms=28625.818600 alive=5991 total=6000 remaining=0 pending=0 combatants=6593 defenders=600 corpses=9 projectiles=1040 groups=67 failed=0 scriptedDeaths=0 victory=0 view=0
+CA132 FRAME tic=810 ms=28768.525500 interval=502.151100 epoch=1791441099
+CA132 FRAME tic=827 ms=29197.556200 interval=429.030700 epoch=1791441099
+CA132 SIM tic=840 ms=29590.688600 alive=5991 total=6000 remaining=0 pending=0 combatants=6593 defenders=600 corpses=9 projectiles=1010 groups=66 failed=0 scriptedDeaths=0 victory=0 view=0
+CA132 FRAME tic=842 ms=29674.123400 interval=476.567200 epoch=1791441100
+CA132 FRAME tic=859 ms=30179.032000 interval=504.908600 epoch=1791441100
+CA132 SIM tic=875 ms=30632.581400 alive=5991 total=6000 remaining=0 pending=0 combatants=6593 defenders=600 corpses=9 projectiles=1004 groups=63 failed=0 scriptedDeaths=0 victory=0 view=0
+CA132 FRAME tic=876 ms=30671.953700 interval=492.921700 epoch=1791441101
+CA132 FRAME tic=893 ms=31112.676400 interval=440.722700 epoch=1791441101
+CA132 FRAME tic=909 ms=31599.548500 interval=486.872100 epoch=1791441102
+CA132 SIM tic=910 ms=31657.791100 alive=5991 total=6000 remaining=0 pending=0 combatants=6593 defenders=600 corpses=9 projectiles=1023 groups=66 failed=0 scriptedDeaths=0 victory=0 view=0
+CA132 FRAME tic=926 ms=32156.791500 interval=557.243000 epoch=1791441102
+CA132 FRAME tic=943 ms=32672.877400 interval=516.085900 epoch=1791441103
+CA132 SIM tic=945 ms=32733.142900 alive=5991 total=6000 remaining=0 pending=0 combatants=6593 defenders=600 corpses=9 projectiles=977 groups=67 failed=0 scriptedDeaths=0 victory=0 view=0
+CA132 FRAME tic=960 ms=33168.134600 interval=495.257200 epoch=1791441103
+CA132 FRAME tic=977 ms=33689.557300 interval=521.422700 epoch=1791441104
+CA132 SIM tic=980 ms=33795.354400 alive=5991 total=6000 remaining=0 pending=0 combatants=6593 defenders=600 corpses=9 projectiles=945 groups=65 failed=0 scriptedDeaths=0 victory=0 view=0
+CA132 FRAME tic=994 ms=34234.011900 interval=544.454600 epoch=1791441105
+CA132 FRAME tic=1011 ms=34683.849900 interval=449.838000 epoch=1791441105
+CA132 SIM tic=1015 ms=34791.162000 alive=5991 total=6000 remaining=0 pending=0 combatants=6593 defenders=600 corpses=9 projectiles=873 groups=63 failed=0 scriptedDeaths=0 victory=0 view=0
+CA132 FRAME tic=1026 ms=35096.157700 interval=412.307800 epoch=1791441105
+CA132 FRAME tic=1041 ms=35548.992000 interval=452.834300 epoch=1791441106
+CA132 SIM tic=1050 ms=35840.735000 alive=5991 total=6000 remaining=0 pending=0 combatants=6593 defenders=600 corpses=9 projectiles=817 groups=64 failed=0 scriptedDeaths=0 victory=0 view=0
+CA132 FRAME tic=1057 ms=36095.601600 interval=546.609600 epoch=1791441106
+CA132 FRAME tic=1074 ms=36568.740700 interval=473.139100 epoch=1791441107
+CA132 SIM tic=1085 ms=36851.075100 alive=5986 total=6000 remaining=0 pending=0 combatants=6588 defenders=600 corpses=14 projectiles=787 groups=66 failed=0 scriptedDeaths=0 victory=0 view=0
+CA132 FRAME tic=1090 ms=37011.870600 interval=443.129900 epoch=1791441107
+CA132 FRAME tic=1106 ms=37533.225300 interval=521.354700 epoch=1791441108
+CA132 SIM tic=1120 ms=37968.205500 alive=5986 total=6000 remaining=0 pending=0 combatants=6588 defenders=600 corpses=14 projectiles=772 groups=68 failed=0 scriptedDeaths=0 victory=0 view=0
+CA132 FRAME tic=1123 ms=38084.470500 interval=551.245200 epoch=1791441108
+CA132 FRAME tic=1140 ms=38550.094100 interval=465.623600 epoch=1791441109
+CA132 SIM tic=1155 ms=38955.000700 alive=5986 total=6000 remaining=0 pending=0 combatants=6588 defenders=600 corpses=14 projectiles=788 groups=67 failed=0 scriptedDeaths=0 victory=0 view=0
+CA132 FRAME tic=1156 ms=38997.059500 interval=446.965400 epoch=1791441109
+CA132 FRAME tic=1172 ms=39511.922900 interval=514.863400 epoch=1791441110
+CA132 FRAME tic=1189 ms=40045.736000 interval=533.813100 epoch=1791441110
+CA132 SIM tic=1190 ms=40100.389600 alive=5986 total=6000 remaining=0 pending=0 combatants=6588 defenders=600 corpses=14 projectiles=785 groups=69 failed=0 scriptedDeaths=0 victory=0 view=0
+CA132 FRAME tic=1206 ms=40534.865500 interval=489.129500 epoch=1791441111
+CA132 FRAME tic=1223 ms=41017.837900 interval=482.972400 epoch=1791441111
+CA132 SIM tic=1225 ms=41104.974300 alive=5986 total=6000 remaining=0 pending=0 combatants=6588 defenders=600 corpses=14 projectiles=698 groups=69 failed=0 scriptedDeaths=0 victory=0 view=0
+CA132 FRAME tic=1240 ms=41578.485300 interval=560.647400 epoch=1791441112
+CA132 FRAME tic=1257 ms=42135.967100 interval=557.481800 epoch=1791441112
+CA132 SIM tic=1260 ms=42239.664500 alive=5986 total=6000 remaining=0 pending=0 combatants=6588 defenders=600 corpses=14 projectiles=671 groups=67 failed=0 scriptedDeaths=0 victory=0 view=0
+CA132 FRAME tic=1274 ms=42646.064700 interval=510.097600 epoch=1791441113
+CA132 FRAME tic=1291 ms=43130.761100 interval=484.696400 epoch=1791441113
+CA132 SIM tic=1295 ms=43295.870100 alive=5986 total=6000 remaining=0 pending=0 combatants=6588 defenders=600 corpses=14 projectiles=676 groups=65 failed=0 scriptedDeaths=0 victory=0 view=0
+CA132 FRAME tic=1308 ms=43713.858900 interval=583.097800 epoch=1791441114
+CA132 FRAME tic=1325 ms=44250.784400 interval=536.925500 epoch=1791441115
+CA132 SIM tic=1330 ms=44392.274200 alive=5986 total=6000 remaining=0 pending=0 combatants=6588 defenders=600 corpses=14 projectiles=642 groups=65 failed=0 scriptedDeaths=0 victory=0 view=0
+CA132 FRAME tic=1342 ms=44704.572200 interval=453.787800 epoch=1791441115
+CA132 FRAME tic=1358 ms=45161.822900 interval=457.250700 epoch=1791441115
+CA132 SIM tic=1365 ms=45402.881100 alive=5986 total=6000 remaining=0 pending=0 combatants=6588 defenders=600 corpses=14 projectiles=621 groups=67 failed=0 scriptedDeaths=0 victory=0 view=0
+CA132 FRAME tic=1374 ms=45705.297100 interval=543.474200 epoch=1791441116
+CA132 FRAME tic=1391 ms=46250.188700 interval=544.891600 epoch=1791441117
+CA132 SIM tic=1400 ms=46484.166300 alive=5986 total=6000 remaining=0 pending=0 combatants=6588 defenders=600 corpses=14 projectiles=536 groups=67 failed=0 scriptedDeaths=0 victory=0 view=0
+CA132 FRAME tic=1408 ms=46738.925600 interval=488.736900 epoch=1791441117
+CA132 FRAME tic=1425 ms=47287.491400 interval=548.565800 epoch=1791441118
+CA132 SIM tic=1435 ms=47636.512300 alive=5982 total=6000 remaining=0 pending=0 combatants=6583 defenders=599 corpses=19 projectiles=526 groups=66 failed=0 scriptedDeaths=0 victory=0 view=0
+CA132 FRAME tic=1442 ms=47870.826100 interval=583.334700 epoch=1791441118
+CA132 FRAME tic=1459 ms=48446.324300 interval=575.498200 epoch=1791441119
+CA132 SIM tic=1470 ms=48765.276300 alive=5981 total=6000 remaining=0 pending=0 combatants=6582 defenders=599 corpses=20 projectiles=486 groups=66 failed=0 scriptedDeaths=0 victory=0 view=0
+CA132 FRAME tic=1476 ms=48945.602700 interval=499.278400 epoch=1791441119
+CA132 FRAME tic=1493 ms=49556.669900 interval=611.067200 epoch=1791441120
+CA132 SIM tic=1505 ms=50026.638700 alive=5981 total=6000 remaining=0 pending=0 combatants=6582 defenders=599 corpses=20 projectiles=469 groups=65 failed=0 scriptedDeaths=0 victory=0 view=0
+CA132 FRAME tic=1510 ms=50207.236300 interval=650.566400 epoch=1791441120
+CA132 FRAME tic=1527 ms=50771.060600 interval=563.824300 epoch=1791441121
+CA132 SIM tic=1540 ms=51165.850800 alive=5981 total=6000 remaining=0 pending=0 combatants=6582 defenders=599 corpses=20 projectiles=457 groups=68 failed=0 scriptedDeaths=0 victory=0 view=0
+CA132 FRAME tic=1544 ms=51294.921000 interval=523.860400 epoch=1791441122
+CA132 FRAME tic=1561 ms=51842.433400 interval=547.512400 epoch=1791441122
+CA132 SIM tic=1575 ms=52341.971900 alive=5981 total=6000 remaining=0 pending=0 combatants=6582 defenders=599 corpses=20 projectiles=412 groups=66 failed=0 scriptedDeaths=0 victory=0 view=0
+CA132 FRAME tic=1578 ms=52453.394900 interval=610.961500 epoch=1791441123
+CA132 FRAME tic=1595 ms=53013.208200 interval=559.813300 epoch=1791441123
+CA132 SIM tic=1610 ms=53478.753300 alive=5981 total=6000 remaining=0 pending=0 combatants=6582 defenders=599 corpses=20 projectiles=450 groups=67 failed=0 scriptedDeaths=0 victory=0 view=0
+CA132 FRAME tic=1612 ms=53561.175900 interval=547.967700 epoch=1791441124
+CA132 FRAME tic=1629 ms=54127.327500 interval=566.151600 epoch=1791441124
+CA132 SIM tic=1645 ms=54699.325800 alive=5981 total=6000 remaining=0 pending=0 combatants=6581 defenders=598 corpses=21 projectiles=418 groups=67 failed=0 scriptedDeaths=0 victory=0 view=0
+CA132 FRAME tic=1646 ms=54761.541000 interval=634.213500 epoch=1791441125
+CA132 FRAME tic=1663 ms=55344.474500 interval=582.933500 epoch=1791441126
+CA132 FRAME tic=1680 ms=55885.628600 interval=541.154100 epoch=1791441126
+CA132 SIM tic=1680 ms=55902.838900 alive=5981 total=6000 remaining=0 pending=0 combatants=6581 defenders=598 corpses=21 projectiles=415 groups=66 failed=0 scriptedDeaths=0 victory=0 view=0
+CA132 FRAME tic=1697 ms=56505.504700 interval=619.876100 epoch=1791441127
+CA132 FRAME tic=1714 ms=57133.897400 interval=628.392700 epoch=1791441127
+CA132 SIM tic=1715 ms=57201.928500 alive=5981 total=6000 remaining=0 pending=0 combatants=6581 defenders=598 corpses=21 projectiles=407 groups=66 failed=0 scriptedDeaths=0 victory=0 view=0
+CA132 FRAME tic=1731 ms=57719.540200 interval=585.642800 epoch=1791441128
+CA132 FRAME tic=1748 ms=58272.414100 interval=552.873900 epoch=1791441129
+CA132 SIM tic=1750 ms=58349.274500 alive=5981 total=6000 remaining=0 pending=0 combatants=6580 defenders=597 corpses=22 projectiles=443 groups=73 failed=0 scriptedDeaths=0 victory=0 view=1
+CA132 FRAME tic=1765 ms=58950.261800 interval=677.847700 epoch=1791441129
+CA132 FRAME tic=1782 ms=59598.049700 interval=647.787900 epoch=1791441130
+CA132 SIM tic=1785 ms=59733.847300 alive=5979 total=6000 remaining=0 pending=0 combatants=6577 defenders=596 corpses=25 projectiles=439 groups=70 failed=0 scriptedDeaths=0 victory=0 view=1
+CA132 FRAME tic=1799 ms=60214.088500 interval=616.038800 epoch=1791441130
+CA132 FRAME tic=1816 ms=60765.073400 interval=550.984900 epoch=1791441131
+CA132 SIM tic=1820 ms=60923.802400 alive=5978 total=6000 remaining=0 pending=0 combatants=6576 defenders=596 corpses=26 projectiles=451 groups=70 failed=0 scriptedDeaths=0 victory=0 view=1
+CA132 FRAME tic=1833 ms=61430.851800 interval=665.778400 epoch=1791441132
+CA132 FRAME tic=1850 ms=62095.248100 interval=664.396300 epoch=1791441132
+CA132 SIM tic=1855 ms=62291.162400 alive=5978 total=6000 remaining=0 pending=0 combatants=6576 defenders=596 corpses=26 projectiles=439 groups=69 failed=0 scriptedDeaths=0 victory=0 view=1
+CA132 FRAME tic=1867 ms=62695.838200 interval=600.590100 epoch=1791441133
+CA132 FRAME tic=1884 ms=63263.915400 interval=568.077200 epoch=1791441134
+CA132 SIM tic=1890 ms=63500.933400 alive=5977 total=6000 remaining=0 pending=0 combatants=6575 defenders=596 corpses=27 projectiles=401 groups=69 failed=0 scriptedDeaths=0 victory=0 view=1
+CA132 FRAME tic=1901 ms=63946.090600 interval=682.175200 epoch=1791441134
+CA132 FRAME tic=1918 ms=64611.142900 interval=665.052300 epoch=1791441135
+CA132 SIM tic=1925 ms=64873.362500 alive=5977 total=6000 remaining=0 pending=0 combatants=6575 defenders=596 corpses=27 projectiles=357 groups=69 failed=0 scriptedDeaths=0 victory=0 view=1
+CA132 FRAME tic=1935 ms=65218.144200 interval=607.001300 epoch=1791441135
+CA132 FRAME tic=1952 ms=65780.666000 interval=562.521800 epoch=1791441136
+CA132 SIM tic=1960 ms=66069.135500 alive=5977 total=6000 remaining=0 pending=0 combatants=6575 defenders=596 corpses=27 projectiles=365 groups=69 failed=0 scriptedDeaths=0 victory=0 view=1
+CA132 FRAME tic=1969 ms=66432.549200 interval=651.883200 epoch=1791441137
+CA132 FRAME tic=1986 ms=67085.443800 interval=652.894600 epoch=1791441137
+CA132 SIM tic=1995 ms=67412.017100 alive=5977 total=6000 remaining=0 pending=0 combatants=6575 defenders=596 corpses=27 projectiles=359 groups=68 failed=0 scriptedDeaths=0 victory=0 view=1
+CA132 FRAME tic=2003 ms=67680.177800 interval=594.734000 epoch=1791441138
+CA132 FRAME tic=2020 ms=68245.462100 interval=565.284300 epoch=1791441139
+CA132 SIM tic=2030 ms=68608.968300 alive=5977 total=6000 remaining=0 pending=0 combatants=6575 defenders=596 corpses=27 projectiles=354 groups=67 failed=0 scriptedDeaths=0 victory=0 view=1
+CA132 FRAME tic=2037 ms=68912.069200 interval=666.607100 epoch=1791441139
+CA132 FRAME tic=2054 ms=69598.946700 interval=686.877500 epoch=1791441140
+CA132 SIM tic=2065 ms=70016.713900 alive=5977 total=6000 remaining=0 pending=0 combatants=6575 defenders=596 corpses=27 projectiles=328 groups=68 failed=0 scriptedDeaths=0 victory=0 view=1
+CA132 FRAME tic=2071 ms=70223.887700 interval=624.941000 epoch=1791441141
+CA132 FRAME tic=2088 ms=70798.318700 interval=574.431000 epoch=1791441141
+CA132 SIM tic=2100 ms=71261.012500 alive=5977 total=6000 remaining=0 pending=0 combatants=6575 defenders=596 corpses=27 projectiles=300 groups=69 failed=0 scriptedDeaths=0 victory=0 view=1
+CA132 FRAME tic=2105 ms=71478.527600 interval=680.208900 epoch=1791441142
+CA132 FRAME tic=2122 ms=72233.244500 interval=754.716900 epoch=1791441143
+CA132 SIM tic=2135 ms=72719.897200 alive=5975 total=6000 remaining=0 pending=0 combatants=6573 defenders=596 corpses=29 projectiles=287 groups=67 failed=0 scriptedDeaths=0 victory=0 view=1
+CA132 FRAME tic=2139 ms=72880.195200 interval=646.950700 epoch=1791441143
+CA132 FRAME tic=2156 ms=73497.651500 interval=617.456300 epoch=1791441144
+CA132 SIM tic=2170 ms=74076.500000 alive=5975 total=6000 remaining=0 pending=0 combatants=6573 defenders=596 corpses=29 projectiles=322 groups=71 failed=0 scriptedDeaths=0 victory=0 view=1
+CA132 FRAME tic=2173 ms=74212.133700 interval=714.482200 epoch=1791441144
+CA132 FRAME tic=2190 ms=74936.105900 interval=723.972200 epoch=1791441145
+CA132 SIM tic=2205 ms=75530.335300 alive=5974 total=6000 remaining=0 pending=0 combatants=6572 defenders=596 corpses=30 projectiles=318 groups=71 failed=0 scriptedDeaths=0 victory=0 view=1
+CA132 FRAME tic=2207 ms=75628.450500 interval=692.344600 epoch=1791441146
+CA132 FRAME tic=2224 ms=76257.079100 interval=628.628600 epoch=1791441147
+CA132 SIM tic=2240 ms=76917.768300 alive=5974 total=6000 remaining=0 pending=0 combatants=6572 defenders=596 corpses=30 projectiles=330 groups=70 failed=0 scriptedDeaths=0 victory=0 view=1
+CA132 FRAME tic=2241 ms=76991.458200 interval=734.379100 epoch=1791441147
+CA132 FRAME tic=2258 ms=77716.822300 interval=725.364100 epoch=1791441148
+CA132 FRAME tic=2275 ms=78375.584300 interval=658.762000 epoch=1791441149
+CA132 SIM tic=2275 ms=78394.343900 alive=5974 total=6000 remaining=0 pending=0 combatants=6572 defenders=596 corpses=30 projectiles=310 groups=71 failed=0 scriptedDeaths=0 victory=0 view=1
+CA132 FRAME tic=2292 ms=79047.692800 interval=672.108500 epoch=1791441149
+CA132 FRAME tic=2309 ms=79778.073000 interval=730.380200 epoch=1791441150
+CA132 SIM tic=2310 ms=79853.660600 alive=5974 total=6000 remaining=0 pending=0 combatants=6572 defenders=596 corpses=30 projectiles=316 groups=72 failed=0 scriptedDeaths=0 victory=0 view=1
+CA132 FRAME tic=2326 ms=80533.261200 interval=755.188200 epoch=1791441151
+CA132 FRAME tic=2343 ms=81271.925600 interval=738.664400 epoch=1791441152
+CA132 SIM tic=2345 ms=81357.286600 alive=5974 total=6000 remaining=0 pending=0 combatants=6572 defenders=596 corpses=30 projectiles=297 groups=70 failed=0 scriptedDeaths=0 victory=0 view=1
+CA132 FRAME tic=2360 ms=81913.890000 interval=641.964400 epoch=1791441152
+CA132 FRAME tic=2377 ms=82635.197800 interval=721.307800 epoch=1791441153
+CA132 SIM tic=2380 ms=82789.999900 alive=5974 total=6000 remaining=0 pending=0 combatants=6572 defenders=596 corpses=30 projectiles=296 groups=72 failed=0 scriptedDeaths=0 victory=0 view=1
+CA132 FRAME tic=2394 ms=83411.491000 interval=776.293200 epoch=1791441154
+CA132 FRAME tic=2411 ms=84080.524500 interval=669.033500 epoch=1791441154
+CA132 SIM tic=2415 ms=84251.006900 alive=5974 total=6000 remaining=0 pending=0 combatants=6572 defenders=596 corpses=30 projectiles=303 groups=70 failed=0 scriptedDeaths=0 victory=0 view=1
+CA132 FRAME tic=2428 ms=84747.229900 interval=666.705400 epoch=1791441155
+CA132 FRAME tic=2445 ms=85472.003200 interval=724.773300 epoch=1791441156
+CA132 SIM tic=2450 ms=85714.028600 alive=5974 total=6000 remaining=0 pending=0 combatants=6572 defenders=596 corpses=30 projectiles=327 groups=69 failed=0 scriptedDeaths=0 victory=0 view=1
+CA132 FRAME tic=2462 ms=86253.405600 interval=781.402400 epoch=1791441157
+CA132 FRAME tic=2479 ms=86938.861700 interval=685.456100 epoch=1791441157
+CA132 SIM tic=2485 ms=87177.757000 alive=5972 total=6000 remaining=0 pending=0 combatants=6570 defenders=596 corpses=32 projectiles=342 groups=69 failed=0 scriptedDeaths=0 victory=0 view=1
+CA132 FRAME tic=2496 ms=87620.533200 interval=681.671500 epoch=1791441158
+CA132 FRAME tic=2513 ms=88356.310500 interval=735.777300 epoch=1791441159
+CA132 SIM tic=2520 ms=88668.128700 alive=5972 total=6000 remaining=0 pending=0 combatants=6570 defenders=596 corpses=32 projectiles=355 groups=69 failed=0 scriptedDeaths=0 victory=0 view=1
+CA132 FRAME tic=2530 ms=89119.975400 interval=763.664900 epoch=1791441159
+CA132 FRAME tic=2547 ms=89814.664700 interval=694.689300 epoch=1791441160
+CA132 SIM tic=2555 ms=90118.995900 alive=5972 total=6000 remaining=0 pending=0 combatants=6570 defenders=596 corpses=32 projectiles=309 groups=72 failed=0 scriptedDeaths=0 victory=0 view=1
+CA132 FRAME tic=2564 ms=90497.220800 interval=682.556100 epoch=1791441161
+CA132 FRAME tic=2581 ms=91205.489500 interval=708.268700 epoch=1791441161
+CA132 SIM tic=2590 ms=91597.855000 alive=5971 total=6000 remaining=0 pending=0 combatants=6569 defenders=596 corpses=33 projectiles=315 groups=66 failed=0 scriptedDeaths=0 victory=0 view=1
+CA132 FRAME tic=2598 ms=91959.766200 interval=754.276700 epoch=1791441162
+CA132 FRAME tic=2615 ms=92645.481100 interval=685.714900 epoch=1791441163
+CA132 SIM tic=2625 ms=93020.571800 alive=5971 total=6000 remaining=0 pending=0 combatants=6569 defenders=596 corpses=33 projectiles=333 groups=71 failed=0 scriptedDeaths=0 victory=0 view=1
+CA132 FRAME tic=2632 ms=93282.949100 interval=637.468000 epoch=1791441164
+CA132 FRAME tic=2649 ms=94027.676600 interval=744.727500 epoch=1791441164
+CA132 SIM tic=2660 ms=94531.792900 alive=5971 total=6000 remaining=0 pending=0 combatants=6569 defenders=596 corpses=33 projectiles=321 groups=71 failed=0 scriptedDeaths=0 victory=0 view=1
+CA132 FRAME tic=2666 ms=94828.908400 interval=801.231800 epoch=1791441165
+CA132 FRAME tic=2683 ms=95539.545800 interval=710.637400 epoch=1791441166
+CA132 SIM tic=2695 ms=96021.469900 alive=5970 total=6000 remaining=0 pending=0 combatants=6568 defenders=596 corpses=34 projectiles=305 groups=70 failed=0 scriptedDeaths=0 victory=0 view=1
+CA132 FRAME tic=2700 ms=96231.103800 interval=691.558000 epoch=1791441167
+CA132 FRAME tic=2717 ms=96996.510700 interval=765.406900 epoch=1791441167
+CA132 SIM tic=2730 ms=97598.771200 alive=5970 total=6000 remaining=0 pending=0 combatants=6568 defenders=596 corpses=34 projectiles=292 groups=72 failed=0 scriptedDeaths=0 victory=0 view=1
+CA132 FRAME tic=2734 ms=97778.481500 interval=781.970800 epoch=1791441168
+CA132 FRAME tic=2751 ms=98454.367400 interval=675.885900 epoch=1791441169
+CA132 SIM tic=2765 ms=99016.670400 alive=5970 total=6000 remaining=0 pending=0 combatants=6568 defenders=596 corpses=34 projectiles=269 groups=72 failed=0 scriptedDeaths=0 victory=0 view=1
+CA132 FRAME tic=2768 ms=99177.863900 interval=723.496500 epoch=1791441169
+CA132 FRAME tic=2785 ms=99994.565800 interval=816.701900 epoch=1791441170
+CA132 SIM tic=2800 ms=100668.483000 alive=5970 total=6000 remaining=0 pending=0 combatants=6568 defenders=596 corpses=34 projectiles=256 groups=70 failed=0 scriptedDeaths=0 victory=0 view=1
+CA132 FRAME tic=2802 ms=100766.437400 interval=771.871600 epoch=1791441171
+CA132 FRAME tic=2819 ms=101471.363700 interval=704.926300 epoch=1791441172
+CA132 SIM tic=2835 ms=102142.811600 alive=5968 total=6000 remaining=0 pending=0 combatants=6566 defenders=596 corpses=36 projectiles=282 groups=69 failed=0 scriptedDeaths=0 victory=0 view=1
+CA132 FRAME tic=2836 ms=102219.028200 interval=747.664500 epoch=1791441172
+CA132 FRAME tic=2853 ms=102985.735300 interval=766.707100 epoch=1791441173
+CA132 FRAME tic=2870 ms=103697.848800 interval=712.113500 epoch=1791441174
+CA132 SIM tic=2870 ms=103707.216200 alive=5968 total=6000 remaining=0 pending=0 combatants=6566 defenders=596 corpses=36 projectiles=269 groups=70 failed=0 scriptedDeaths=0 victory=0 view=1
+CA132 FRAME tic=2887 ms=104366.073900 interval=668.225100 epoch=1791441175
+CA132 FRAME tic=2904 ms=105032.385500 interval=666.311600 epoch=1791441175
+CA132 SIM tic=2905 ms=105107.440300 alive=5968 total=6000 remaining=0 pending=0 combatants=6566 defenders=596 corpses=36 projectiles=263 groups=71 failed=0 scriptedDeaths=0 victory=0 view=1
+CA132 FRAME tic=2921 ms=105811.436600 interval=779.051100 epoch=1791441176
+CA132 FRAME tic=2938 ms=106539.585900 interval=728.149300 epoch=1791441177
+CA132 SIM tic=2940 ms=106639.213400 alive=5968 total=6000 remaining=0 pending=0 combatants=6566 defenders=596 corpses=36 projectiles=241 groups=71 failed=0 scriptedDeaths=0 victory=0 view=1
+CA132 FRAME tic=2955 ms=107211.350200 interval=671.764300 epoch=1791441177
+CA132 FRAME tic=2972 ms=107906.380800 interval=695.030600 epoch=1791441178
+CA132 SIM tic=2975 ms=108071.701600 alive=5967 total=6000 remaining=0 pending=0 combatants=6565 defenders=596 corpses=37 projectiles=226 groups=73 failed=0 scriptedDeaths=0 victory=0 view=1
+CA132 FRAME tic=2989 ms=108662.030900 interval=755.650100 epoch=1791441179
+CA132 FRAME tic=3006 ms=109385.052500 interval=723.021600 epoch=1791441180
+CA132 SIM tic=3010 ms=109548.014900 alive=5967 total=6000 remaining=0 pending=0 combatants=6565 defenders=596 corpses=37 projectiles=231 groups=72 failed=0 scriptedDeaths=0 victory=0 view=1
+CA132 FRAME tic=3023 ms=110060.991900 interval=675.939400 epoch=1791441180
+CA132 FRAME tic=3040 ms=110744.237100 interval=683.245200 epoch=1791441181
+CA132 SIM tic=3045 ms=110996.841000 alive=5967 total=6000 remaining=0 pending=0 combatants=6565 defenders=596 corpses=37 projectiles=204 groups=70 failed=0 scriptedDeaths=0 victory=0 view=1
+CA132 FRAME tic=3057 ms=111538.489600 interval=794.252500 epoch=1791441182
+CA132 FRAME tic=3074 ms=112277.814900 interval=739.325300 epoch=1791441183
+CA132 SIM tic=3080 ms=112518.375800 alive=5965 total=6000 remaining=0 pending=0 combatants=6563 defenders=596 corpses=39 projectiles=186 groups=72 failed=0 scriptedDeaths=0 victory=0 view=1
+CA132 FRAME tic=3091 ms=112945.347200 interval=667.532300 epoch=1791441183
+CA132 FRAME tic=3108 ms=113627.150500 interval=681.803300 epoch=1791441184
+CA132 SIM tic=3115 ms=113971.969800 alive=5965 total=6000 remaining=0 pending=0 combatants=6563 defenders=596 corpses=39 projectiles=189 groups=71 failed=0 scriptedDeaths=0 victory=0 view=1
+CA132 FRAME tic=3125 ms=114435.724700 interval=808.574200 epoch=1791441185
+CA132 FRAME tic=3142 ms=115152.790100 interval=717.065400 epoch=1791441185
+CA132 SIM tic=3150 ms=115483.844400 alive=5965 total=6000 remaining=0 pending=0 combatants=6563 defenders=596 corpses=39 projectiles=179 groups=72 failed=0 scriptedDeaths=0 victory=0 view=1
+CA132 FRAME tic=3159 ms=115879.551500 interval=726.761400 epoch=1791441186
+CA132 FRAME tic=3176 ms=116734.161600 interval=854.610100 epoch=1791441187
+CA132 SIM tic=3185 ms=117182.036000 alive=5963 total=6000 remaining=0 pending=0 combatants=6560 defenders=595 corpses=42 projectiles=171 groups=76 failed=0 scriptedDeaths=0 victory=0 view=1
+CA132 FRAME tic=3193 ms=117565.797600 interval=831.636000 epoch=1791441188
+CA132 FRAME tic=3210 ms=118296.750800 interval=730.953200 epoch=1791441189
+CA132 SIM tic=3220 ms=118698.977500 alive=5963 total=6000 remaining=0 pending=0 combatants=6560 defenders=595 corpses=42 projectiles=165 groups=78 failed=0 scriptedDeaths=0 victory=0 view=1
+CA132 FRAME tic=3227 ms=118993.748000 interval=696.997200 epoch=1791441189
+CA132 FRAME tic=3244 ms=119812.058700 interval=818.310700 epoch=1791441190
+CA132 SIM tic=3255 ms=120374.575200 alive=5963 total=6000 remaining=0 pending=0 combatants=6560 defenders=595 corpses=42 projectiles=142 groups=77 failed=0 scriptedDeaths=0 victory=0 view=1
+CA132 FRAME tic=3261 ms=120680.877700 interval=868.819000 epoch=1791441191
+CA132 FRAME tic=3278 ms=121377.477900 interval=696.600200 epoch=1791441192
+CA132 SIM tic=3290 ms=121887.118900 alive=5963 total=6000 remaining=0 pending=0 combatants=6560 defenders=595 corpses=42 projectiles=131 groups=76 failed=0 scriptedDeaths=0 victory=0 view=1
+CA132 FRAME tic=3295 ms=122096.675900 interval=719.198000 epoch=1791441192
+CA132 FRAME tic=3312 ms=122918.234200 interval=821.558300 epoch=1791441193
+CA132 SIM tic=3325 ms=123533.507600 alive=5963 total=6000 remaining=0 pending=0 combatants=6560 defenders=595 corpses=42 projectiles=115 groups=71 failed=0 scriptedDeaths=0 victory=0 view=1
+CA132 FRAME tic=3329 ms=123719.814000 interval=801.579800 epoch=1791441194
+CA132 FRAME tic=3346 ms=124399.846800 interval=680.032800 epoch=1791441195
+CA132 SIM tic=3360 ms=125018.697700 alive=5963 total=6000 remaining=0 pending=0 combatants=6560 defenders=595 corpses=42 projectiles=119 groups=73 failed=0 scriptedDeaths=0 victory=0 view=1
+CA132 FRAME tic=3363 ms=125197.000700 interval=797.153900 epoch=1791441195
+CA132 FRAME tic=3380 ms=125993.932400 interval=796.931700 epoch=1791441196
+CA132 SIM tic=3395 ms=126641.504100 alive=5963 total=6000 remaining=0 pending=0 combatants=6560 defenders=595 corpses=42 projectiles=110 groups=71 failed=0 scriptedDeaths=0 victory=0 view=1
+CA132 FRAME tic=3397 ms=126730.658400 interval=736.726000 epoch=1791441197
+CA132 FRAME tic=3414 ms=127409.846800 interval=679.188400 epoch=1791441198
+CA132 SIM tic=3430 ms=128129.009700 alive=5961 total=6000 remaining=0 pending=0 combatants=6558 defenders=595 corpses=44 projectiles=128 groups=72 failed=0 scriptedDeaths=0 victory=0 view=1
+CA132 FRAME tic=3431 ms=128188.359200 interval=778.512400 epoch=1791441198
+CA132 FRAME tic=3448 ms=129010.585900 interval=822.226700 epoch=1791441199
+CA132 FRAME tic=3465 ms=129752.481100 interval=741.895200 epoch=1791441200
+CA132 SIM tic=3465 ms=129767.639200 alive=5961 total=6000 remaining=0 pending=0 combatants=6558 defenders=595 corpses=44 projectiles=128 groups=72 failed=0 scriptedDeaths=0 victory=0 view=1
+CA132 FRAME tic=3482 ms=130477.415300 interval=724.934200 epoch=1791441201
+CA132 FRAME tic=3499 ms=131250.216300 interval=772.801000 epoch=1791441202
+CA132 SIM tic=3500 ms=131316.192000 alive=5961 total=6000 remaining=0 pending=0 combatants=6558 defenders=595 corpses=44 projectiles=113 groups=70 failed=0 scriptedDeaths=0 victory=0 view=2
+CA132 PERFORMANCE COMPLETE tic=3500 total=6000 remaining=0

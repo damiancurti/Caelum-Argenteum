@@ -739,6 +739,10 @@ class CaelumEconomyRules : Object
 
     static double GetConsumableUnitBaseValue(int consumableType)
     {
+        if(consumableType==CaelumConstants.CONSUMABLE_LIFE_POTION
+            || consumableType==CaelumConstants.CONSUMABLE_ANIMA_POTION
+            || consumableType==CaelumConstants.CONSUMABLE_ENERGY_DRINK)
+            return CaelumConstants.ECONOMY_FOOD_RATION_VALUE*CaelumConstants.ECONOMY_RECOVERY_RATION_MULTIPLIER;
         if (consumableType == CaelumConstants.CONSUMABLE_FOOD_RATION)
         {
             return CaelumConstants.ECONOMY_FOOD_RATION_VALUE;
@@ -750,9 +754,26 @@ class CaelumEconomyRules : Object
         return 0.0;
     }
 
+    static double GetAmmunitionUnitBaseValue(int kind)
+    {
+        if(kind==CaelumConstants.AMMUNITION_CARBINE)
+            return GetAmmunitionUnitBaseValue(CaelumConstants.AMMUNITION_ARROW)*CaelumConstants.ECONOMY_CARTRIDGE_ARROW_MULTIPLIER;
+        if(kind!=CaelumConstants.AMMUNITION_ARROW && kind!=CaelumConstants.AMMUNITION_BOLT)return 0;
+        int recipe=kind==CaelumConstants.AMMUNITION_ARROW ? CaelumConstants.CRAFTING_ARROW_RECIPE : CaelumConstants.CRAFTING_BOLT_RECIPE;
+        int batch=CaelumCraftingRules.GetRecipeAmmunitionBatch(recipe);
+        double weight=(kind==CaelumConstants.AMMUNITION_ARROW ? CaelumConstants.ARROW_AMMO_UNIT_WEIGHT : CaelumConstants.BOLT_AMMO_UNIT_WEIGHT)*batch;
+        double material=CaelumCraftingRules.GetRoundedMaterialUnits(weight,CaelumConstants.AMMUNITION_SHAFT_SHARE)*GetMaterialUnitBaseValue(CaelumConstants.MATERIAL_SHAFT,1)
+            +CaelumCraftingRules.GetRoundedMaterialUnits(weight,CaelumConstants.AMMUNITION_POINT_SHARE)*GetMaterialUnitBaseValue(CaelumConstants.MATERIAL_POINT,1);
+        return FinishManufacturedObjectValue(material,weight,1)/batch;
+    }
+
     play static double GetInventoryUnitBaseValue(Inventory item)
     {
         if (item == null) { return 0.0; }
+        if(item is "CaelumArrowAmmo")return GetAmmunitionUnitBaseValue(CaelumConstants.AMMUNITION_ARROW);
+        if(item is "CaelumBoltAmmo")return GetAmmunitionUnitBaseValue(CaelumConstants.AMMUNITION_BOLT);
+        let ammo=CaelumCarbineAmmo(item);
+        if(ammo!=null)return GetAmmunitionUnitBaseValue(ammo.GetAmmoType());
         CaelumCurrencyItem currency = CaelumCurrencyItem(item);
         if (currency != null) { return currency.GetFaceValue(); }
         CaelumConsumableItem consumable = CaelumConsumableItem(item);
@@ -776,7 +797,7 @@ class CaelumEconomyRules : Object
                 specialItem.GetSpecialType(), specialItem.GetSpecialTier()
             );
         }
-        // Munición, llaves y objetos clave quedan fuera del comercio hasta
+        // Llaves y objetos clave quedan fuera del comercio hasta
         // contar con una receta o un valor base autorizado.
         return 0.0;
     }

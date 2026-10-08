@@ -1,0 +1,379 @@
+{
+  "issue": 133,
+  "scope": "After authorized sweat/resource extension. Engine callbacks, not Windows presented FPS. Same scenario does not mean equal live population or combat workload.",
+  "phases": [
+    {
+      "run": "sweat-volleys-final",
+      "package_sha256": "3C512846E4BABCB8BD8C6CEA39F7D91D1DF1735AD1F563FEC33721AB97CAB904",
+      "tic_range": [
+        70,
+        490
+      ],
+      "tics_per_second": 35.02663629746103,
+      "render_callbacks_per_second": 49.339893791926436,
+      "render_interval_p95_ms": 32.71912000000047,
+      "first": {
+        "tic": 70.0,
+        "ms": 6917.3763,
+        "alive": 600.0,
+        "shots": 150.0,
+        "reloads": 0.0,
+        "reloading": 0.0,
+        "hits": 0.0,
+        "projectiles": 150.0
+      },
+      "last": {
+        "tic": 490.0,
+        "ms": 18908.2508,
+        "alive": 600.0,
+        "shots": 8400.0,
+        "reloads": 600.0,
+        "reloading": 0.0,
+        "hits": 2056.0,
+        "projectiles": 0.0
+      }
+    },
+    {
+      "run": "sweat-volleys-final",
+      "package_sha256": "3C512846E4BABCB8BD8C6CEA39F7D91D1DF1735AD1F563FEC33721AB97CAB904",
+      "tic_range": [
+        490,
+        1400
+      ],
+      "tics_per_second": 34.7329275657162,
+      "render_callbacks_per_second": 55.87915882069878,
+      "render_interval_p95_ms": 29.559480000002075,
+      "first": {
+        "tic": 490.0,
+        "ms": 18908.2508,
+        "alive": 600.0,
+        "shots": 8400.0,
+        "reloads": 600.0,
+        "reloading": 0.0,
+        "hits": 2056.0,
+        "projectiles": 0.0
+      },
+      "last": {
+        "tic": 1400.0,
+        "ms": 45108.173,
+        "alive": 600.0,
+        "shots": 8400.0,
+        "reloads": 600.0,
+        "reloading": 0.0,
+        "hits": 2056.0,
+        "projectiles": 0.0
+      }
+    },
+    {
+      "run": "sweat-volleys-final",
+      "package_sha256": "3C512846E4BABCB8BD8C6CEA39F7D91D1DF1735AD1F563FEC33721AB97CAB904",
+      "tic_range": [
+        1400,
+        3500
+      ],
+      "tics_per_second": 34.88143341510001,
+      "render_callbacks_per_second": 56.74077811243487,
+      "render_interval_p95_ms": 29.300624999996217,
+      "first": {
+        "tic": 1400.0,
+        "ms": 45108.173,
+        "alive": 600.0,
+        "shots": 8400.0,
+        "reloads": 600.0,
+        "reloading": 0.0,
+        "hits": 2056.0,
+        "projectiles": 0.0
+      },
+      "last": {
+        "tic": 3500.0,
+        "ms": 105312.1209,
+        "alive": 600.0,
+        "shots": 8400.0,
+        "reloads": 600.0,
+        "reloading": 0.0,
+        "hits": 2056.0,
+        "projectiles": 0.0
+      }
+    },
+    {
+      "run": "sweat-city-final",
+      "package_sha256": "3C512846E4BABCB8BD8C6CEA39F7D91D1DF1735AD1F563FEC33721AB97CAB904",
+      "tic_range": [
+        350,
+        1715
+      ],
+      "tics_per_second": 35.00041973580283,
+      "render_callbacks_per_second": 59.795404730066664,
+      "render_interval_p95_ms": 18.62818000000261,
+      "first": {
+        "tic": 350.0,
+        "ms": 14941.1557,
+        "alive": 600.0,
+        "left": 0.0,
+        "arrived": 0.0,
+        "shots": 0.0,
+        "reloads": 0.0,
+        "reloading": 0.0,
+        "pathQueue": 0.0
+      },
+      "last": {
+        "tic": 1715.0,
+        "ms": 53940.688,
+        "alive": 600.0,
+        "left": 0.0,
+        "arrived": 0.0,
+        "shots": 0.0,
+        "reloads": 0.0,
+        "reloading": 0.0,
+        "pathQueue": 0.0
+      }
+    },
+    {
+      "run": "sweat-city-final",
+      "package_sha256": "3C512846E4BABCB8BD8C6CEA39F7D91D1DF1735AD1F563FEC33721AB97CAB904",
+      "tic_range": [
+        1750,
+        3500
+      ],
+      "tics_per_second": 34.96311419423,
+      "render_callbacks_per_second": 41.76403819349454,
+      "render_interval_p95_ms": 40.48775000000023,
+      "first": {
+        "tic": 1750.0,
+        "ms": 54940.7841,
+        "alive": 600.0,
+        "left": 0.0,
+        "arrived": 0.0,
+        "shots": 0.0,
+        "reloads": 0.0,
+        "reloading": 0.0,
+        "pathQueue": 0.0
+      },
+      "last": {
+        "tic": 3500.0,
+        "ms": 104993.5337,
+        "alive": 600.0,
+        "left": 600.0,
+        "arrived": 7.0,
+        "shots": 9.0,
+        "reloads": 0.0,
+        "reloading": 0.0,
+        "pathQueue": 0.0
+      }
+    },
+    {
+      "run": "sweat-city-final",
+      "package_sha256": "3C512846E4BABCB8BD8C6CEA39F7D91D1DF1735AD1F563FEC33721AB97CAB904",
+      "tic_range": [
+        3500,
+        7000
+      ],
+      "tics_per_second": 34.99249855310768,
+      "render_callbacks_per_second": 17.076251967608133,
+      "render_interval_p95_ms": 174.72497499999662,
+      "first": {
+        "tic": 3500.0,
+        "ms": 104993.5337,
+        "alive": 600.0,
+        "left": 600.0,
+        "arrived": 7.0,
+        "shots": 9.0,
+        "reloads": 0.0,
+        "reloading": 0.0,
+        "pathQueue": 0.0
+      },
+      "last": {
+        "tic": 7000.0,
+        "ms": 205014.971,
+        "alive": 600.0,
+        "left": 600.0,
+        "arrived": 95.0,
+        "shots": 281.0,
+        "reloads": 19.0,
+        "reloading": 0.0,
+        "pathQueue": 1.0
+      }
+    },
+    {
+      "run": "sweat-city-final",
+      "package_sha256": "3C512846E4BABCB8BD8C6CEA39F7D91D1DF1735AD1F563FEC33721AB97CAB904",
+      "tic_range": [
+        7000,
+        10500
+      ],
+      "tics_per_second": 31.205848405383634,
+      "render_callbacks_per_second": 5.574031015999734,
+      "render_interval_p95_ms": 485.7403549999958,
+      "first": {
+        "tic": 7000.0,
+        "ms": 205014.971,
+        "alive": 600.0,
+        "left": 600.0,
+        "arrived": 95.0,
+        "shots": 281.0,
+        "reloads": 19.0,
+        "reloading": 0.0,
+        "pathQueue": 1.0
+      },
+      "last": {
+        "tic": 10500.0,
+        "ms": 317173.4342,
+        "alive": 598.0,
+        "left": 600.0,
+        "arrived": 200.0,
+        "shots": 282.0,
+        "reloads": 19.0,
+        "reloading": 0.0,
+        "pathQueue": 0.0
+      }
+    }
+  ],
+  "snapshots": [
+    {
+      "name": "sweat-volley-500.zds",
+      "sha256": "19c392ecf4952f6b2e1c76c4dd2471c3c004fb6149dd2bb03fd5109c5c0943e4",
+      "roster": 600,
+      "alive": 600,
+      "ranges": {
+        "health": [
+          1590,
+          1590
+        ],
+        "air": [
+          83.09161766536891,
+          83.4729472268965
+        ],
+        "exposure": [
+          40.33172871998768,
+          40.3360238272859
+        ],
+        "hydration": [
+          93.47883065342069,
+          93.47925184421561
+        ],
+        "sweatkg": [
+          0.13041496311569206,
+          0.1304233869315907
+        ],
+        "sweatrunoffkg": [
+          0.0,
+          0.0
+        ],
+        "evaporatedkg": [
+          0.10521859990910268,
+          0.10523742951463876
+        ],
+        "evaporationjoules": [
+          257785.56977730145,
+          257831.70231086502
+        ],
+        "actionjoules": [
+          836062.5,
+          836062.5
+        ],
+        "applieddamagehp": [
+          579.0,
+          579.0
+        ]
+      }
+    },
+    {
+      "name": "sweat-volley-1450.zds",
+      "sha256": "f8a0a429b2241f6cb5ba02a38645cde1bed002a350ba143ae6371392544882d4",
+      "roster": 600,
+      "alive": 600,
+      "ranges": {
+        "health": [
+          1154,
+          1155
+        ],
+        "air": [
+          203.84597881577744,
+          204.22730837730506
+        ],
+        "exposure": [
+          -4.705093169188405,
+          -4.704084893647984
+        ],
+        "hydration": [
+          82.92331464599002,
+          82.92460838710917
+        ],
+        "sweatkg": [
+          0.34150783225782505,
+          0.3415337070802093
+        ],
+        "sweatrunoffkg": [
+          0.0,
+          0.0
+        ],
+        "evaporatedkg": [
+          0.2422371789635465,
+          0.24226430653761347
+        ],
+        "evaporationjoules": [
+          593481.0884606884,
+          593547.551017152
+        ],
+        "actionjoules": [
+          836062.5,
+          836062.5
+        ],
+        "applieddamagehp": [
+          1049.0,
+          1050.0
+        ]
+      }
+    },
+    {
+      "name": "sweat-volley-3500.zds",
+      "sha256": "3842ee328ccd83c986d39c4f48804425f66e0865f8a0376d88c5f956384fcc0c",
+      "roster": 600,
+      "alive": 600,
+      "ranges": {
+        "health": [
+          270,
+          270
+        ],
+        "air": [
+          464.42117919293906,
+          464.8025087544666
+        ],
+        "exposure": [
+          -15.191706018280529,
+          -15.191684753089087
+        ],
+        "hydration": [
+          82.92331464599002,
+          82.92460838710917
+        ],
+        "sweatkg": [
+          0.34150783225782505,
+          0.3415337070802093
+        ],
+        "sweatrunoffkg": [
+          0.0,
+          0.0
+        ],
+        "evaporatedkg": [
+          0.33334897771506133,
+          0.3333781708191345
+        ],
+        "evaporationjoules": [
+          816704.9954018987,
+          816776.5185068795
+        ],
+        "actionjoules": [
+          836062.5,
+          836062.5
+        ],
+        "applieddamagehp": [
+          2009.0,
+          2009.0
+        ]
+      }
+    }
+  ],
+  "pre_extension_report": "PERFORMANCE.json",
+  "pre_extension_death_control": "HEAT_LIMIT.json"
+}

@@ -40,12 +40,14 @@ class CaelumThermalBody : Object play
 
     static void Refresh(Actor body,CaelumThermalState thermal)
     {
+        thermal.Sweats=!FurryAnimal(body);
         double priorMass=thermal.BodyMassKg,priorHeight=thermal.HeightMeters;
         let user=CaelumPlayer(body);
         let npc=CaelumCombatActor(body);
         int race;
         if(user!=null)
         {
+            thermal.Hydration=user.CurrentThirst;
             if(user.DerivedStats==null || user.CharacterProfile==null || user.Attributes==null)return;
             thermal.BodyMassKg=user.DerivedStats.BaseMass;
             thermal.HeightMeters=user.DerivedStats.BodyHeightMeters;
