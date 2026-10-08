@@ -21,7 +21,7 @@ class CaelumThermalJourney : Object play
         result.CloudFraction=CaelumWeatherRules.Mix(origin.CloudFraction,destination.CloudFraction,p);
     }
 
-    bool Forecast(CaelumPlayer user,int mode,int elapsedTics,double speedKmh,int destinationRegion=-1)
+    bool Forecast(CaelumPlayer user,int mode,int elapsedTics,double speedKmh,int destinationRegion=-1,CaelumJourneyModel supplies=null)
     {
         Result=CaelumThermalService.CaptureForecast(user);Failure="";WorstExposure=0;
         let weather=CaelumWeatherState.Get(user);
@@ -68,10 +68,24 @@ class CaelumThermalJourney : Object play
             double seconds=double(step)*3600.0/hour;
             double effort=CaelumThermalRules.LocomotionHeat(Result.MovedMassKg,speed,0,false,CaelumThermalMotion.Gravity(user));
             // Segundos lógicos de esfuerzo explícitos; dr permanece cero.
-            CaelumThermalService.Integrate(Result,seconds,0,effort,0,0,seconds);
-            if(Abs(Result.Exposure)>Abs(WorstExposure))WorstExposure=Result.Exposure;
-            if(Result.Severity>0)
-            {Failure=Result.Exposure<0 ? "CA_JOURNEY_COLD" : "CA_JOURNEY_HEAT";return false;}
+            int substeps=supplies!=null ? step : 1;
+            for(int t=0;t<substeps;t++)
+            {
+                if(supplies!=null)Result.Hydration=supplies.Thirst;
+                CaelumThermalService.Integrate(Result,seconds/substeps,0,effort,0,0,seconds/substeps);
+                if(Abs(Result.Exposure)>Abs(WorstExposure))WorstExposure=Result.Exposure;
+                if(Result.Severity>0)
+                {Failure=Result.Exposure<0 ? "CA_JOURNEY_COLD" : "CA_JOURNEY_HEAT";return false;}
+                if(supplies!=null)
+                {
+                    // Como AdvancePersonalTimeTic: primero el balance térmico,
+                    // luego provisiones y recuperación. Nunca cobrar dos veces.
+                    supplies.Thirst=Result.Hydration;supplies.Step(sleeping);
+                    supplies.WalkTics+=int(!sleeping || mode==CaelumJourneyState.MODE_SHIP);
+                    supplies.SleepTics+=int(sleeping);Result.Hydration=supplies.Thirst;
+                    if(supplies.Health<=0)return true;
+                }
+            }
             elapsed+=step;
         }
         return true;

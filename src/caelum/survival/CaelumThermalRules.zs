@@ -1,6 +1,20 @@
 // Matemática compartida sin estado de jugador; E no es temperatura corporal.
 class CaelumThermalRules : Object
 {
+    static clearscope double HydrationPointsPerKg(double massKg)
+    {
+        return CaelumConstants.WATER_RECOVERY_PER_LITER_PER_PULSE
+            *CaelumConstants.CONSUMABLE_REGENERATION_SECONDS/Max(0.001,massKg);
+    }
+
+    static clearscope double SweatRate(double exposure,double area,double hydration)
+    {
+        double reference=Area(CaelumThermalData.REFERENCE_MASS_KG,CaelumThermalData.REFERENCE_HEIGHT_METERS);
+        return CaelumThermalData.SWEAT_MAX_KG_HOUR*Max(0.0,area)/reference
+            *Clamp(exposure/CaelumThermalData.SWEAT_FULL_EXPOSURE,0.0,1.0)
+            *Clamp(hydration/CaelumThermalData.SWEAT_HYDRATION_FADE,0.0,1.0);
+    }
+
     static clearscope String StateKey(double exposure,double toughness)
     {
         int severity=Severity(exposure,toughness);

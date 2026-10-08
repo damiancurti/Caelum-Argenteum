@@ -332,10 +332,13 @@ class CaelumJourneyPlan : Inventory
             : CaelumJourneyRules.SleepCount(PlannedWalkTics) * 8 * CaelumWorldClock.TicsPerHour();
         ThermalForecast=new("CaelumThermalJourney");
         int destinationRegion=CaelumWeatherRules.RegionForLocation(CaelumWorldCatalogue.ConnectionDestination(id));
-        if(!ThermalForecast.Forecast(user,mode,TotalTics(),speed,destinationRegion))
+        Needed = new("CaelumJourneyModel"); Needed.Capture(user, true);
+        let neededThermal=new("CaelumThermalJourney");
+        if(!neededThermal.Forecast(user,mode,TotalTics(),speed,destinationRegion,Needed))
+        {CaelumNotifications.Notify(user,StringTable.Localize(neededThermal.Failure,false));return false;}
+        Available = new("CaelumJourneyModel"); Available.Capture(user, false);
+        if(!ThermalForecast.Forecast(user,mode,TotalTics(),speed,destinationRegion,Available))
         {CaelumNotifications.Notify(user,StringTable.Localize(ThermalForecast.Failure,false));return false;}
-        Needed = new("CaelumJourneyModel"); Needed.Capture(user, true); Needed.Simulate(PlannedWalkTics,mode);
-        Available = new("CaelumJourneyModel"); Available.Capture(user, false); Available.Simulate(PlannedWalkTics,mode);
         return true;
     }
 

@@ -2,7 +2,7 @@
 // Procedencia física y decisiones del autor en SYSTEMS, sección V5.1 térmica.
 class CaelumThermalData : Object
 {
-    const REVISION=2;
+    const REVISION=3;
     static clearscope double ExposureThreshold(int tier)
     {return tier==1 ? 10.0 : tier==2 ? 20.0 : 30.0;}
     const LIGHT_CLOTH=0;
@@ -54,6 +54,12 @@ class CaelumThermalData : Object
     // EnergyPlus v25.1.0 ThermalComfort.cc; evaporación de agua ~2,45 MJ/kg.
     const LEWIS_K_PER_KPA=16.5013576;
     const LATENT_J_PER_KG=2450000.0;
+    // #133: sudor humano de referencia, aprobado por el autor; horas del mundo.
+    const SWEAT_MAX_KG_HOUR=2.0;
+    const SWEAT_FULL_EXPOSURE=5.0;
+    const SWEAT_HYDRATION_FADE=20.0;
+    // Resolución numérica del acoplamiento no lineal, no duración de balance.
+    const SWEAT_STEP_SECONDS=2.0;
     // Tolerancias numéricas, no bandas nuevas de balance.
     const THRESHOLD_EPSILON=0.000000001;
     const DRY_PERCENT_TOLERANCE=0.0001;
