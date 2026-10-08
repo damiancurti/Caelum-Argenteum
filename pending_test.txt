@@ -1,0 +1,39 @@
+CA133-01 | 5.1.3 | Issue #133 | City interiors and physical trade controls
+Prerequisites: GZDoom 4.14.2 and the development IWAD installed at the runner's
+documented paths; no other GZDoom process. From the repository run:
+  python -X utf8 assets/validation_513/prepare.py
+  python -X utf8 assets/validation_513/prepare_legacy.py
+  powershell -NoProfile -ExecutionPolicy Bypass -File assets/validation_513/run_native.ps1 -Label author-133-a -Package production.pk3 -Addon manual.pk3 -Interactive -Language es
+This separate inspection fixture grants a Magic Box and 100 gold and relocates
+only the player. It does not alter shop stock/prices or soldier behavior. Use a
+new label for another launch; close the game normally when finished.
+Steps: at the harbor house, operate both door leaves, enter all three rooms,
+use/release chairs and bed, and walk back out. Inspect additional city houses
+and factory workstations without collision traps. In the console use ca133_visit
+1 through 6 to visit each shop category. Press the bound Use key while facing
+the vendor; navigate rows, change quantity/mode, buy, equip/use an item and sell
+another eligible item. Reopen the shop and save/load. Repeat a menu with language
+enu; restore language es if desired. Ordinary campaign entry remains supported
+without the fixture's grants or relocations.
+Expected: usable furnished homes and empty bathrooms; existing station rules;
+Domingo-looking independent static merchants; T1 stock, correct money/quantity,
+readable ES/EN rows, working physical keys, no repeated stock or quest crossover.
+
+CA133-02 | 5.1.3 | Issue #133 | Siege behavior and shared carbine appearance
+Prerequisites: the same fresh inspection session as CA133-01. Buy a matching-size
+carbine/ammunition from shop 3 and equip it through the normal equipment menu.
+Steps: use chase to inspect idle, walking, firing, reloading and crouching, then
+switch to the existing sword. Turn around a soldier to inspect all eight views.
+Enter ca133_attack true to set the authored 15 November 1889 13:00 boundary.
+Observe soldiers exiting houses and moving toward posts; use ca133_visit 7 for
+the southern front. Save during deployment and reload; leave/reopen MAP06 if
+desired. Observe ranged fire/reload and close-range sword selection during combat.
+Expected: the same surviving soldiers move physically through doors, respond to
+combat and reach their posts without duplicates, teleportation or resurrection;
+infantry temporarily yields access and returns. Shared art matches the held
+weapon/action, with acceptable scale, direction, pivots and hand alignment;
+pain/death and other weapon appearance remain intact. Player ammo is finite;
+soldiers reload real magazines without physical infinite ammo stacks. This is
+author visual/gameplay acceptance, not a claim of stable full-battle 35 tics/s
+and 30 presented FPS. The default fixture uses #132's staged attack; a separate
+fresh launch with -Staged 0 retains the full-army alternative.

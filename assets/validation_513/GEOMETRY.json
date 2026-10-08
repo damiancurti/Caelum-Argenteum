@@ -1,0 +1,6539 @@
+{
+  "issue": 133,
+  "map_sha256": "8d62ef32ad584ed43e21613bc216cdfac4423469481eba8ce594da3e0b3ed26c",
+  "usable_floor_map_units_squared": {
+    "living": 503808,
+    "bedroom": 253952,
+    "bathroom": 81920
+  },
+  "percentages": {
+    "living": 60.0,
+    "bedroom": 30.24390243902439,
+    "bathroom": 9.75609756097561
+  },
+  "building_counts": {
+    "factory": 24,
+    "house": 160,
+    "shop": 64,
+    "construction": 40
+  },
+  "checks": [
+    {
+      "check": "Original 160/64/24/40 city building counts",
+      "passed": true
+    },
+    {
+      "check": "Measured usable areas include assigned threshold/internal circulation",
+      "passed": true
+    },
+    {
+      "check": "60/30/10 allocation with <=0.25 percentage-point grid rounding",
+      "passed": true
+    },
+    {
+      "check": "House 0: connected usable living floor",
+      "passed": true
+    },
+    {
+      "check": "House 0: connected usable bedroom floor",
+      "passed": true
+    },
+    {
+      "check": "House 0: connected usable bathroom floor",
+      "passed": true
+    },
+    {
+      "check": "House 0: exterior threshold connected",
+      "passed": true
+    },
+    {
+      "check": "House 0: two native hinged leaves",
+      "passed": true
+    },
+    {
+      "check": "House 0: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 0: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 0: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 0: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 1: connected usable living floor",
+      "passed": true
+    },
+    {
+      "check": "House 1: connected usable bedroom floor",
+      "passed": true
+    },
+    {
+      "check": "House 1: connected usable bathroom floor",
+      "passed": true
+    },
+    {
+      "check": "House 1: exterior threshold connected",
+      "passed": true
+    },
+    {
+      "check": "House 1: two native hinged leaves",
+      "passed": true
+    },
+    {
+      "check": "House 1: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 1: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 1: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 1: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 2: connected usable living floor",
+      "passed": true
+    },
+    {
+      "check": "House 2: connected usable bedroom floor",
+      "passed": true
+    },
+    {
+      "check": "House 2: connected usable bathroom floor",
+      "passed": true
+    },
+    {
+      "check": "House 2: exterior threshold connected",
+      "passed": true
+    },
+    {
+      "check": "House 2: two native hinged leaves",
+      "passed": true
+    },
+    {
+      "check": "House 2: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 2: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 2: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 2: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 3: connected usable living floor",
+      "passed": true
+    },
+    {
+      "check": "House 3: connected usable bedroom floor",
+      "passed": true
+    },
+    {
+      "check": "House 3: connected usable bathroom floor",
+      "passed": true
+    },
+    {
+      "check": "House 3: exterior threshold connected",
+      "passed": true
+    },
+    {
+      "check": "House 3: two native hinged leaves",
+      "passed": true
+    },
+    {
+      "check": "House 3: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 3: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 3: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 3: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 4: connected usable living floor",
+      "passed": true
+    },
+    {
+      "check": "House 4: connected usable bedroom floor",
+      "passed": true
+    },
+    {
+      "check": "House 4: connected usable bathroom floor",
+      "passed": true
+    },
+    {
+      "check": "House 4: exterior threshold connected",
+      "passed": true
+    },
+    {
+      "check": "House 4: two native hinged leaves",
+      "passed": true
+    },
+    {
+      "check": "House 4: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 4: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 4: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 4: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 5: connected usable living floor",
+      "passed": true
+    },
+    {
+      "check": "House 5: connected usable bedroom floor",
+      "passed": true
+    },
+    {
+      "check": "House 5: connected usable bathroom floor",
+      "passed": true
+    },
+    {
+      "check": "House 5: exterior threshold connected",
+      "passed": true
+    },
+    {
+      "check": "House 5: two native hinged leaves",
+      "passed": true
+    },
+    {
+      "check": "House 5: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 5: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 5: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 5: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 6: connected usable living floor",
+      "passed": true
+    },
+    {
+      "check": "House 6: connected usable bedroom floor",
+      "passed": true
+    },
+    {
+      "check": "House 6: connected usable bathroom floor",
+      "passed": true
+    },
+    {
+      "check": "House 6: exterior threshold connected",
+      "passed": true
+    },
+    {
+      "check": "House 6: two native hinged leaves",
+      "passed": true
+    },
+    {
+      "check": "House 6: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 6: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 6: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 6: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 7: connected usable living floor",
+      "passed": true
+    },
+    {
+      "check": "House 7: connected usable bedroom floor",
+      "passed": true
+    },
+    {
+      "check": "House 7: connected usable bathroom floor",
+      "passed": true
+    },
+    {
+      "check": "House 7: exterior threshold connected",
+      "passed": true
+    },
+    {
+      "check": "House 7: two native hinged leaves",
+      "passed": true
+    },
+    {
+      "check": "House 7: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 7: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 7: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 7: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 8: connected usable living floor",
+      "passed": true
+    },
+    {
+      "check": "House 8: connected usable bedroom floor",
+      "passed": true
+    },
+    {
+      "check": "House 8: connected usable bathroom floor",
+      "passed": true
+    },
+    {
+      "check": "House 8: exterior threshold connected",
+      "passed": true
+    },
+    {
+      "check": "House 8: two native hinged leaves",
+      "passed": true
+    },
+    {
+      "check": "House 8: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 8: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 8: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 8: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 9: connected usable living floor",
+      "passed": true
+    },
+    {
+      "check": "House 9: connected usable bedroom floor",
+      "passed": true
+    },
+    {
+      "check": "House 9: connected usable bathroom floor",
+      "passed": true
+    },
+    {
+      "check": "House 9: exterior threshold connected",
+      "passed": true
+    },
+    {
+      "check": "House 9: two native hinged leaves",
+      "passed": true
+    },
+    {
+      "check": "House 9: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 9: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 9: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 9: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 10: connected usable living floor",
+      "passed": true
+    },
+    {
+      "check": "House 10: connected usable bedroom floor",
+      "passed": true
+    },
+    {
+      "check": "House 10: connected usable bathroom floor",
+      "passed": true
+    },
+    {
+      "check": "House 10: exterior threshold connected",
+      "passed": true
+    },
+    {
+      "check": "House 10: two native hinged leaves",
+      "passed": true
+    },
+    {
+      "check": "House 10: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 10: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 10: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 10: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 11: connected usable living floor",
+      "passed": true
+    },
+    {
+      "check": "House 11: connected usable bedroom floor",
+      "passed": true
+    },
+    {
+      "check": "House 11: connected usable bathroom floor",
+      "passed": true
+    },
+    {
+      "check": "House 11: exterior threshold connected",
+      "passed": true
+    },
+    {
+      "check": "House 11: two native hinged leaves",
+      "passed": true
+    },
+    {
+      "check": "House 11: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 11: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 11: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 11: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 12: connected usable living floor",
+      "passed": true
+    },
+    {
+      "check": "House 12: connected usable bedroom floor",
+      "passed": true
+    },
+    {
+      "check": "House 12: connected usable bathroom floor",
+      "passed": true
+    },
+    {
+      "check": "House 12: exterior threshold connected",
+      "passed": true
+    },
+    {
+      "check": "House 12: two native hinged leaves",
+      "passed": true
+    },
+    {
+      "check": "House 12: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 12: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 12: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 12: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 13: connected usable living floor",
+      "passed": true
+    },
+    {
+      "check": "House 13: connected usable bedroom floor",
+      "passed": true
+    },
+    {
+      "check": "House 13: connected usable bathroom floor",
+      "passed": true
+    },
+    {
+      "check": "House 13: exterior threshold connected",
+      "passed": true
+    },
+    {
+      "check": "House 13: two native hinged leaves",
+      "passed": true
+    },
+    {
+      "check": "House 13: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 13: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 13: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 13: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 14: connected usable living floor",
+      "passed": true
+    },
+    {
+      "check": "House 14: connected usable bedroom floor",
+      "passed": true
+    },
+    {
+      "check": "House 14: connected usable bathroom floor",
+      "passed": true
+    },
+    {
+      "check": "House 14: exterior threshold connected",
+      "passed": true
+    },
+    {
+      "check": "House 14: two native hinged leaves",
+      "passed": true
+    },
+    {
+      "check": "House 14: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 14: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 14: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 14: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 15: connected usable living floor",
+      "passed": true
+    },
+    {
+      "check": "House 15: connected usable bedroom floor",
+      "passed": true
+    },
+    {
+      "check": "House 15: connected usable bathroom floor",
+      "passed": true
+    },
+    {
+      "check": "House 15: exterior threshold connected",
+      "passed": true
+    },
+    {
+      "check": "House 15: two native hinged leaves",
+      "passed": true
+    },
+    {
+      "check": "House 15: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 15: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 15: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 15: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 16: connected usable living floor",
+      "passed": true
+    },
+    {
+      "check": "House 16: connected usable bedroom floor",
+      "passed": true
+    },
+    {
+      "check": "House 16: connected usable bathroom floor",
+      "passed": true
+    },
+    {
+      "check": "House 16: exterior threshold connected",
+      "passed": true
+    },
+    {
+      "check": "House 16: two native hinged leaves",
+      "passed": true
+    },
+    {
+      "check": "House 16: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 16: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 16: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 16: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 17: connected usable living floor",
+      "passed": true
+    },
+    {
+      "check": "House 17: connected usable bedroom floor",
+      "passed": true
+    },
+    {
+      "check": "House 17: connected usable bathroom floor",
+      "passed": true
+    },
+    {
+      "check": "House 17: exterior threshold connected",
+      "passed": true
+    },
+    {
+      "check": "House 17: two native hinged leaves",
+      "passed": true
+    },
+    {
+      "check": "House 17: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 17: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 17: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 17: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 18: connected usable living floor",
+      "passed": true
+    },
+    {
+      "check": "House 18: connected usable bedroom floor",
+      "passed": true
+    },
+    {
+      "check": "House 18: connected usable bathroom floor",
+      "passed": true
+    },
+    {
+      "check": "House 18: exterior threshold connected",
+      "passed": true
+    },
+    {
+      "check": "House 18: two native hinged leaves",
+      "passed": true
+    },
+    {
+      "check": "House 18: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 18: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 18: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 18: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 19: connected usable living floor",
+      "passed": true
+    },
+    {
+      "check": "House 19: connected usable bedroom floor",
+      "passed": true
+    },
+    {
+      "check": "House 19: connected usable bathroom floor",
+      "passed": true
+    },
+    {
+      "check": "House 19: exterior threshold connected",
+      "passed": true
+    },
+    {
+      "check": "House 19: two native hinged leaves",
+      "passed": true
+    },
+    {
+      "check": "House 19: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 19: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 19: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 19: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 20: connected usable living floor",
+      "passed": true
+    },
+    {
+      "check": "House 20: connected usable bedroom floor",
+      "passed": true
+    },
+    {
+      "check": "House 20: connected usable bathroom floor",
+      "passed": true
+    },
+    {
+      "check": "House 20: exterior threshold connected",
+      "passed": true
+    },
+    {
+      "check": "House 20: two native hinged leaves",
+      "passed": true
+    },
+    {
+      "check": "House 20: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 20: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 20: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 20: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 21: connected usable living floor",
+      "passed": true
+    },
+    {
+      "check": "House 21: connected usable bedroom floor",
+      "passed": true
+    },
+    {
+      "check": "House 21: connected usable bathroom floor",
+      "passed": true
+    },
+    {
+      "check": "House 21: exterior threshold connected",
+      "passed": true
+    },
+    {
+      "check": "House 21: two native hinged leaves",
+      "passed": true
+    },
+    {
+      "check": "House 21: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 21: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 21: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 21: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 22: connected usable living floor",
+      "passed": true
+    },
+    {
+      "check": "House 22: connected usable bedroom floor",
+      "passed": true
+    },
+    {
+      "check": "House 22: connected usable bathroom floor",
+      "passed": true
+    },
+    {
+      "check": "House 22: exterior threshold connected",
+      "passed": true
+    },
+    {
+      "check": "House 22: two native hinged leaves",
+      "passed": true
+    },
+    {
+      "check": "House 22: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 22: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 22: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 22: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 23: connected usable living floor",
+      "passed": true
+    },
+    {
+      "check": "House 23: connected usable bedroom floor",
+      "passed": true
+    },
+    {
+      "check": "House 23: connected usable bathroom floor",
+      "passed": true
+    },
+    {
+      "check": "House 23: exterior threshold connected",
+      "passed": true
+    },
+    {
+      "check": "House 23: two native hinged leaves",
+      "passed": true
+    },
+    {
+      "check": "House 23: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 23: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 23: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 23: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 24: connected usable living floor",
+      "passed": true
+    },
+    {
+      "check": "House 24: connected usable bedroom floor",
+      "passed": true
+    },
+    {
+      "check": "House 24: connected usable bathroom floor",
+      "passed": true
+    },
+    {
+      "check": "House 24: exterior threshold connected",
+      "passed": true
+    },
+    {
+      "check": "House 24: two native hinged leaves",
+      "passed": true
+    },
+    {
+      "check": "House 24: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 24: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 24: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 24: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 25: connected usable living floor",
+      "passed": true
+    },
+    {
+      "check": "House 25: connected usable bedroom floor",
+      "passed": true
+    },
+    {
+      "check": "House 25: connected usable bathroom floor",
+      "passed": true
+    },
+    {
+      "check": "House 25: exterior threshold connected",
+      "passed": true
+    },
+    {
+      "check": "House 25: two native hinged leaves",
+      "passed": true
+    },
+    {
+      "check": "House 25: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 25: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 25: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 25: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 26: connected usable living floor",
+      "passed": true
+    },
+    {
+      "check": "House 26: connected usable bedroom floor",
+      "passed": true
+    },
+    {
+      "check": "House 26: connected usable bathroom floor",
+      "passed": true
+    },
+    {
+      "check": "House 26: exterior threshold connected",
+      "passed": true
+    },
+    {
+      "check": "House 26: two native hinged leaves",
+      "passed": true
+    },
+    {
+      "check": "House 26: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 26: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 26: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 26: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 27: connected usable living floor",
+      "passed": true
+    },
+    {
+      "check": "House 27: connected usable bedroom floor",
+      "passed": true
+    },
+    {
+      "check": "House 27: connected usable bathroom floor",
+      "passed": true
+    },
+    {
+      "check": "House 27: exterior threshold connected",
+      "passed": true
+    },
+    {
+      "check": "House 27: two native hinged leaves",
+      "passed": true
+    },
+    {
+      "check": "House 27: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 27: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 27: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 27: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 28: connected usable living floor",
+      "passed": true
+    },
+    {
+      "check": "House 28: connected usable bedroom floor",
+      "passed": true
+    },
+    {
+      "check": "House 28: connected usable bathroom floor",
+      "passed": true
+    },
+    {
+      "check": "House 28: exterior threshold connected",
+      "passed": true
+    },
+    {
+      "check": "House 28: two native hinged leaves",
+      "passed": true
+    },
+    {
+      "check": "House 28: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 28: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 28: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 28: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 29: connected usable living floor",
+      "passed": true
+    },
+    {
+      "check": "House 29: connected usable bedroom floor",
+      "passed": true
+    },
+    {
+      "check": "House 29: connected usable bathroom floor",
+      "passed": true
+    },
+    {
+      "check": "House 29: exterior threshold connected",
+      "passed": true
+    },
+    {
+      "check": "House 29: two native hinged leaves",
+      "passed": true
+    },
+    {
+      "check": "House 29: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 29: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 29: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 29: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 30: connected usable living floor",
+      "passed": true
+    },
+    {
+      "check": "House 30: connected usable bedroom floor",
+      "passed": true
+    },
+    {
+      "check": "House 30: connected usable bathroom floor",
+      "passed": true
+    },
+    {
+      "check": "House 30: exterior threshold connected",
+      "passed": true
+    },
+    {
+      "check": "House 30: two native hinged leaves",
+      "passed": true
+    },
+    {
+      "check": "House 30: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 30: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 30: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 30: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 31: connected usable living floor",
+      "passed": true
+    },
+    {
+      "check": "House 31: connected usable bedroom floor",
+      "passed": true
+    },
+    {
+      "check": "House 31: connected usable bathroom floor",
+      "passed": true
+    },
+    {
+      "check": "House 31: exterior threshold connected",
+      "passed": true
+    },
+    {
+      "check": "House 31: two native hinged leaves",
+      "passed": true
+    },
+    {
+      "check": "House 31: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 31: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 31: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 31: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 32: connected usable living floor",
+      "passed": true
+    },
+    {
+      "check": "House 32: connected usable bedroom floor",
+      "passed": true
+    },
+    {
+      "check": "House 32: connected usable bathroom floor",
+      "passed": true
+    },
+    {
+      "check": "House 32: exterior threshold connected",
+      "passed": true
+    },
+    {
+      "check": "House 32: two native hinged leaves",
+      "passed": true
+    },
+    {
+      "check": "House 32: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 32: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 32: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 32: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 33: connected usable living floor",
+      "passed": true
+    },
+    {
+      "check": "House 33: connected usable bedroom floor",
+      "passed": true
+    },
+    {
+      "check": "House 33: connected usable bathroom floor",
+      "passed": true
+    },
+    {
+      "check": "House 33: exterior threshold connected",
+      "passed": true
+    },
+    {
+      "check": "House 33: two native hinged leaves",
+      "passed": true
+    },
+    {
+      "check": "House 33: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 33: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 33: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 33: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 34: connected usable living floor",
+      "passed": true
+    },
+    {
+      "check": "House 34: connected usable bedroom floor",
+      "passed": true
+    },
+    {
+      "check": "House 34: connected usable bathroom floor",
+      "passed": true
+    },
+    {
+      "check": "House 34: exterior threshold connected",
+      "passed": true
+    },
+    {
+      "check": "House 34: two native hinged leaves",
+      "passed": true
+    },
+    {
+      "check": "House 34: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 34: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 34: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 34: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 35: connected usable living floor",
+      "passed": true
+    },
+    {
+      "check": "House 35: connected usable bedroom floor",
+      "passed": true
+    },
+    {
+      "check": "House 35: connected usable bathroom floor",
+      "passed": true
+    },
+    {
+      "check": "House 35: exterior threshold connected",
+      "passed": true
+    },
+    {
+      "check": "House 35: two native hinged leaves",
+      "passed": true
+    },
+    {
+      "check": "House 35: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 35: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 35: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 35: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 36: connected usable living floor",
+      "passed": true
+    },
+    {
+      "check": "House 36: connected usable bedroom floor",
+      "passed": true
+    },
+    {
+      "check": "House 36: connected usable bathroom floor",
+      "passed": true
+    },
+    {
+      "check": "House 36: exterior threshold connected",
+      "passed": true
+    },
+    {
+      "check": "House 36: two native hinged leaves",
+      "passed": true
+    },
+    {
+      "check": "House 36: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 36: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 36: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 36: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 37: connected usable living floor",
+      "passed": true
+    },
+    {
+      "check": "House 37: connected usable bedroom floor",
+      "passed": true
+    },
+    {
+      "check": "House 37: connected usable bathroom floor",
+      "passed": true
+    },
+    {
+      "check": "House 37: exterior threshold connected",
+      "passed": true
+    },
+    {
+      "check": "House 37: two native hinged leaves",
+      "passed": true
+    },
+    {
+      "check": "House 37: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 37: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 37: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 37: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 38: connected usable living floor",
+      "passed": true
+    },
+    {
+      "check": "House 38: connected usable bedroom floor",
+      "passed": true
+    },
+    {
+      "check": "House 38: connected usable bathroom floor",
+      "passed": true
+    },
+    {
+      "check": "House 38: exterior threshold connected",
+      "passed": true
+    },
+    {
+      "check": "House 38: two native hinged leaves",
+      "passed": true
+    },
+    {
+      "check": "House 38: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 38: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 38: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 38: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 39: connected usable living floor",
+      "passed": true
+    },
+    {
+      "check": "House 39: connected usable bedroom floor",
+      "passed": true
+    },
+    {
+      "check": "House 39: connected usable bathroom floor",
+      "passed": true
+    },
+    {
+      "check": "House 39: exterior threshold connected",
+      "passed": true
+    },
+    {
+      "check": "House 39: two native hinged leaves",
+      "passed": true
+    },
+    {
+      "check": "House 39: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 39: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 39: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 39: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 40: connected usable living floor",
+      "passed": true
+    },
+    {
+      "check": "House 40: connected usable bedroom floor",
+      "passed": true
+    },
+    {
+      "check": "House 40: connected usable bathroom floor",
+      "passed": true
+    },
+    {
+      "check": "House 40: exterior threshold connected",
+      "passed": true
+    },
+    {
+      "check": "House 40: two native hinged leaves",
+      "passed": true
+    },
+    {
+      "check": "House 40: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 40: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 40: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 40: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 41: connected usable living floor",
+      "passed": true
+    },
+    {
+      "check": "House 41: connected usable bedroom floor",
+      "passed": true
+    },
+    {
+      "check": "House 41: connected usable bathroom floor",
+      "passed": true
+    },
+    {
+      "check": "House 41: exterior threshold connected",
+      "passed": true
+    },
+    {
+      "check": "House 41: two native hinged leaves",
+      "passed": true
+    },
+    {
+      "check": "House 41: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 41: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 41: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 41: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 42: connected usable living floor",
+      "passed": true
+    },
+    {
+      "check": "House 42: connected usable bedroom floor",
+      "passed": true
+    },
+    {
+      "check": "House 42: connected usable bathroom floor",
+      "passed": true
+    },
+    {
+      "check": "House 42: exterior threshold connected",
+      "passed": true
+    },
+    {
+      "check": "House 42: two native hinged leaves",
+      "passed": true
+    },
+    {
+      "check": "House 42: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 42: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 42: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 42: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 43: connected usable living floor",
+      "passed": true
+    },
+    {
+      "check": "House 43: connected usable bedroom floor",
+      "passed": true
+    },
+    {
+      "check": "House 43: connected usable bathroom floor",
+      "passed": true
+    },
+    {
+      "check": "House 43: exterior threshold connected",
+      "passed": true
+    },
+    {
+      "check": "House 43: two native hinged leaves",
+      "passed": true
+    },
+    {
+      "check": "House 43: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 43: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 43: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 43: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 44: connected usable living floor",
+      "passed": true
+    },
+    {
+      "check": "House 44: connected usable bedroom floor",
+      "passed": true
+    },
+    {
+      "check": "House 44: connected usable bathroom floor",
+      "passed": true
+    },
+    {
+      "check": "House 44: exterior threshold connected",
+      "passed": true
+    },
+    {
+      "check": "House 44: two native hinged leaves",
+      "passed": true
+    },
+    {
+      "check": "House 44: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 44: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 44: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 44: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 45: connected usable living floor",
+      "passed": true
+    },
+    {
+      "check": "House 45: connected usable bedroom floor",
+      "passed": true
+    },
+    {
+      "check": "House 45: connected usable bathroom floor",
+      "passed": true
+    },
+    {
+      "check": "House 45: exterior threshold connected",
+      "passed": true
+    },
+    {
+      "check": "House 45: two native hinged leaves",
+      "passed": true
+    },
+    {
+      "check": "House 45: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 45: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 45: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 45: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 46: connected usable living floor",
+      "passed": true
+    },
+    {
+      "check": "House 46: connected usable bedroom floor",
+      "passed": true
+    },
+    {
+      "check": "House 46: connected usable bathroom floor",
+      "passed": true
+    },
+    {
+      "check": "House 46: exterior threshold connected",
+      "passed": true
+    },
+    {
+      "check": "House 46: two native hinged leaves",
+      "passed": true
+    },
+    {
+      "check": "House 46: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 46: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 46: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 46: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 47: connected usable living floor",
+      "passed": true
+    },
+    {
+      "check": "House 47: connected usable bedroom floor",
+      "passed": true
+    },
+    {
+      "check": "House 47: connected usable bathroom floor",
+      "passed": true
+    },
+    {
+      "check": "House 47: exterior threshold connected",
+      "passed": true
+    },
+    {
+      "check": "House 47: two native hinged leaves",
+      "passed": true
+    },
+    {
+      "check": "House 47: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 47: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 47: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 47: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 48: connected usable living floor",
+      "passed": true
+    },
+    {
+      "check": "House 48: connected usable bedroom floor",
+      "passed": true
+    },
+    {
+      "check": "House 48: connected usable bathroom floor",
+      "passed": true
+    },
+    {
+      "check": "House 48: exterior threshold connected",
+      "passed": true
+    },
+    {
+      "check": "House 48: two native hinged leaves",
+      "passed": true
+    },
+    {
+      "check": "House 48: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 48: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 48: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 48: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 49: connected usable living floor",
+      "passed": true
+    },
+    {
+      "check": "House 49: connected usable bedroom floor",
+      "passed": true
+    },
+    {
+      "check": "House 49: connected usable bathroom floor",
+      "passed": true
+    },
+    {
+      "check": "House 49: exterior threshold connected",
+      "passed": true
+    },
+    {
+      "check": "House 49: two native hinged leaves",
+      "passed": true
+    },
+    {
+      "check": "House 49: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 49: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 49: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 49: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 50: connected usable living floor",
+      "passed": true
+    },
+    {
+      "check": "House 50: connected usable bedroom floor",
+      "passed": true
+    },
+    {
+      "check": "House 50: connected usable bathroom floor",
+      "passed": true
+    },
+    {
+      "check": "House 50: exterior threshold connected",
+      "passed": true
+    },
+    {
+      "check": "House 50: two native hinged leaves",
+      "passed": true
+    },
+    {
+      "check": "House 50: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 50: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 50: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 50: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 51: connected usable living floor",
+      "passed": true
+    },
+    {
+      "check": "House 51: connected usable bedroom floor",
+      "passed": true
+    },
+    {
+      "check": "House 51: connected usable bathroom floor",
+      "passed": true
+    },
+    {
+      "check": "House 51: exterior threshold connected",
+      "passed": true
+    },
+    {
+      "check": "House 51: two native hinged leaves",
+      "passed": true
+    },
+    {
+      "check": "House 51: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 51: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 51: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 51: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 52: connected usable living floor",
+      "passed": true
+    },
+    {
+      "check": "House 52: connected usable bedroom floor",
+      "passed": true
+    },
+    {
+      "check": "House 52: connected usable bathroom floor",
+      "passed": true
+    },
+    {
+      "check": "House 52: exterior threshold connected",
+      "passed": true
+    },
+    {
+      "check": "House 52: two native hinged leaves",
+      "passed": true
+    },
+    {
+      "check": "House 52: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 52: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 52: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 52: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 53: connected usable living floor",
+      "passed": true
+    },
+    {
+      "check": "House 53: connected usable bedroom floor",
+      "passed": true
+    },
+    {
+      "check": "House 53: connected usable bathroom floor",
+      "passed": true
+    },
+    {
+      "check": "House 53: exterior threshold connected",
+      "passed": true
+    },
+    {
+      "check": "House 53: two native hinged leaves",
+      "passed": true
+    },
+    {
+      "check": "House 53: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 53: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 53: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 53: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 54: connected usable living floor",
+      "passed": true
+    },
+    {
+      "check": "House 54: connected usable bedroom floor",
+      "passed": true
+    },
+    {
+      "check": "House 54: connected usable bathroom floor",
+      "passed": true
+    },
+    {
+      "check": "House 54: exterior threshold connected",
+      "passed": true
+    },
+    {
+      "check": "House 54: two native hinged leaves",
+      "passed": true
+    },
+    {
+      "check": "House 54: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 54: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 54: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 54: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 55: connected usable living floor",
+      "passed": true
+    },
+    {
+      "check": "House 55: connected usable bedroom floor",
+      "passed": true
+    },
+    {
+      "check": "House 55: connected usable bathroom floor",
+      "passed": true
+    },
+    {
+      "check": "House 55: exterior threshold connected",
+      "passed": true
+    },
+    {
+      "check": "House 55: two native hinged leaves",
+      "passed": true
+    },
+    {
+      "check": "House 55: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 55: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 55: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 55: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 56: connected usable living floor",
+      "passed": true
+    },
+    {
+      "check": "House 56: connected usable bedroom floor",
+      "passed": true
+    },
+    {
+      "check": "House 56: connected usable bathroom floor",
+      "passed": true
+    },
+    {
+      "check": "House 56: exterior threshold connected",
+      "passed": true
+    },
+    {
+      "check": "House 56: two native hinged leaves",
+      "passed": true
+    },
+    {
+      "check": "House 56: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 56: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 56: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 56: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 57: connected usable living floor",
+      "passed": true
+    },
+    {
+      "check": "House 57: connected usable bedroom floor",
+      "passed": true
+    },
+    {
+      "check": "House 57: connected usable bathroom floor",
+      "passed": true
+    },
+    {
+      "check": "House 57: exterior threshold connected",
+      "passed": true
+    },
+    {
+      "check": "House 57: two native hinged leaves",
+      "passed": true
+    },
+    {
+      "check": "House 57: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 57: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 57: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 57: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 58: connected usable living floor",
+      "passed": true
+    },
+    {
+      "check": "House 58: connected usable bedroom floor",
+      "passed": true
+    },
+    {
+      "check": "House 58: connected usable bathroom floor",
+      "passed": true
+    },
+    {
+      "check": "House 58: exterior threshold connected",
+      "passed": true
+    },
+    {
+      "check": "House 58: two native hinged leaves",
+      "passed": true
+    },
+    {
+      "check": "House 58: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 58: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 58: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 58: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 59: connected usable living floor",
+      "passed": true
+    },
+    {
+      "check": "House 59: connected usable bedroom floor",
+      "passed": true
+    },
+    {
+      "check": "House 59: connected usable bathroom floor",
+      "passed": true
+    },
+    {
+      "check": "House 59: exterior threshold connected",
+      "passed": true
+    },
+    {
+      "check": "House 59: two native hinged leaves",
+      "passed": true
+    },
+    {
+      "check": "House 59: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 59: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 59: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 59: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 60: connected usable living floor",
+      "passed": true
+    },
+    {
+      "check": "House 60: connected usable bedroom floor",
+      "passed": true
+    },
+    {
+      "check": "House 60: connected usable bathroom floor",
+      "passed": true
+    },
+    {
+      "check": "House 60: exterior threshold connected",
+      "passed": true
+    },
+    {
+      "check": "House 60: two native hinged leaves",
+      "passed": true
+    },
+    {
+      "check": "House 60: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 60: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 60: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 60: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 61: connected usable living floor",
+      "passed": true
+    },
+    {
+      "check": "House 61: connected usable bedroom floor",
+      "passed": true
+    },
+    {
+      "check": "House 61: connected usable bathroom floor",
+      "passed": true
+    },
+    {
+      "check": "House 61: exterior threshold connected",
+      "passed": true
+    },
+    {
+      "check": "House 61: two native hinged leaves",
+      "passed": true
+    },
+    {
+      "check": "House 61: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 61: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 61: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 61: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 62: connected usable living floor",
+      "passed": true
+    },
+    {
+      "check": "House 62: connected usable bedroom floor",
+      "passed": true
+    },
+    {
+      "check": "House 62: connected usable bathroom floor",
+      "passed": true
+    },
+    {
+      "check": "House 62: exterior threshold connected",
+      "passed": true
+    },
+    {
+      "check": "House 62: two native hinged leaves",
+      "passed": true
+    },
+    {
+      "check": "House 62: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 62: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 62: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 62: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 63: connected usable living floor",
+      "passed": true
+    },
+    {
+      "check": "House 63: connected usable bedroom floor",
+      "passed": true
+    },
+    {
+      "check": "House 63: connected usable bathroom floor",
+      "passed": true
+    },
+    {
+      "check": "House 63: exterior threshold connected",
+      "passed": true
+    },
+    {
+      "check": "House 63: two native hinged leaves",
+      "passed": true
+    },
+    {
+      "check": "House 63: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 63: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 63: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 63: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 64: connected usable living floor",
+      "passed": true
+    },
+    {
+      "check": "House 64: connected usable bedroom floor",
+      "passed": true
+    },
+    {
+      "check": "House 64: connected usable bathroom floor",
+      "passed": true
+    },
+    {
+      "check": "House 64: exterior threshold connected",
+      "passed": true
+    },
+    {
+      "check": "House 64: two native hinged leaves",
+      "passed": true
+    },
+    {
+      "check": "House 64: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 64: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 64: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 64: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 65: connected usable living floor",
+      "passed": true
+    },
+    {
+      "check": "House 65: connected usable bedroom floor",
+      "passed": true
+    },
+    {
+      "check": "House 65: connected usable bathroom floor",
+      "passed": true
+    },
+    {
+      "check": "House 65: exterior threshold connected",
+      "passed": true
+    },
+    {
+      "check": "House 65: two native hinged leaves",
+      "passed": true
+    },
+    {
+      "check": "House 65: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 65: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 65: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 65: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 66: connected usable living floor",
+      "passed": true
+    },
+    {
+      "check": "House 66: connected usable bedroom floor",
+      "passed": true
+    },
+    {
+      "check": "House 66: connected usable bathroom floor",
+      "passed": true
+    },
+    {
+      "check": "House 66: exterior threshold connected",
+      "passed": true
+    },
+    {
+      "check": "House 66: two native hinged leaves",
+      "passed": true
+    },
+    {
+      "check": "House 66: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 66: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 66: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 66: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 67: connected usable living floor",
+      "passed": true
+    },
+    {
+      "check": "House 67: connected usable bedroom floor",
+      "passed": true
+    },
+    {
+      "check": "House 67: connected usable bathroom floor",
+      "passed": true
+    },
+    {
+      "check": "House 67: exterior threshold connected",
+      "passed": true
+    },
+    {
+      "check": "House 67: two native hinged leaves",
+      "passed": true
+    },
+    {
+      "check": "House 67: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 67: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 67: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 67: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 68: connected usable living floor",
+      "passed": true
+    },
+    {
+      "check": "House 68: connected usable bedroom floor",
+      "passed": true
+    },
+    {
+      "check": "House 68: connected usable bathroom floor",
+      "passed": true
+    },
+    {
+      "check": "House 68: exterior threshold connected",
+      "passed": true
+    },
+    {
+      "check": "House 68: two native hinged leaves",
+      "passed": true
+    },
+    {
+      "check": "House 68: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 68: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 68: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 68: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 69: connected usable living floor",
+      "passed": true
+    },
+    {
+      "check": "House 69: connected usable bedroom floor",
+      "passed": true
+    },
+    {
+      "check": "House 69: connected usable bathroom floor",
+      "passed": true
+    },
+    {
+      "check": "House 69: exterior threshold connected",
+      "passed": true
+    },
+    {
+      "check": "House 69: two native hinged leaves",
+      "passed": true
+    },
+    {
+      "check": "House 69: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 69: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 69: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 69: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 70: connected usable living floor",
+      "passed": true
+    },
+    {
+      "check": "House 70: connected usable bedroom floor",
+      "passed": true
+    },
+    {
+      "check": "House 70: connected usable bathroom floor",
+      "passed": true
+    },
+    {
+      "check": "House 70: exterior threshold connected",
+      "passed": true
+    },
+    {
+      "check": "House 70: two native hinged leaves",
+      "passed": true
+    },
+    {
+      "check": "House 70: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 70: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 70: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 70: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 71: connected usable living floor",
+      "passed": true
+    },
+    {
+      "check": "House 71: connected usable bedroom floor",
+      "passed": true
+    },
+    {
+      "check": "House 71: connected usable bathroom floor",
+      "passed": true
+    },
+    {
+      "check": "House 71: exterior threshold connected",
+      "passed": true
+    },
+    {
+      "check": "House 71: two native hinged leaves",
+      "passed": true
+    },
+    {
+      "check": "House 71: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 71: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 71: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 71: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 72: connected usable living floor",
+      "passed": true
+    },
+    {
+      "check": "House 72: connected usable bedroom floor",
+      "passed": true
+    },
+    {
+      "check": "House 72: connected usable bathroom floor",
+      "passed": true
+    },
+    {
+      "check": "House 72: exterior threshold connected",
+      "passed": true
+    },
+    {
+      "check": "House 72: two native hinged leaves",
+      "passed": true
+    },
+    {
+      "check": "House 72: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 72: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 72: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 72: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 73: connected usable living floor",
+      "passed": true
+    },
+    {
+      "check": "House 73: connected usable bedroom floor",
+      "passed": true
+    },
+    {
+      "check": "House 73: connected usable bathroom floor",
+      "passed": true
+    },
+    {
+      "check": "House 73: exterior threshold connected",
+      "passed": true
+    },
+    {
+      "check": "House 73: two native hinged leaves",
+      "passed": true
+    },
+    {
+      "check": "House 73: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 73: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 73: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 73: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 74: connected usable living floor",
+      "passed": true
+    },
+    {
+      "check": "House 74: connected usable bedroom floor",
+      "passed": true
+    },
+    {
+      "check": "House 74: connected usable bathroom floor",
+      "passed": true
+    },
+    {
+      "check": "House 74: exterior threshold connected",
+      "passed": true
+    },
+    {
+      "check": "House 74: two native hinged leaves",
+      "passed": true
+    },
+    {
+      "check": "House 74: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 74: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 74: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 74: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 75: connected usable living floor",
+      "passed": true
+    },
+    {
+      "check": "House 75: connected usable bedroom floor",
+      "passed": true
+    },
+    {
+      "check": "House 75: connected usable bathroom floor",
+      "passed": true
+    },
+    {
+      "check": "House 75: exterior threshold connected",
+      "passed": true
+    },
+    {
+      "check": "House 75: two native hinged leaves",
+      "passed": true
+    },
+    {
+      "check": "House 75: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 75: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 75: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 75: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 76: connected usable living floor",
+      "passed": true
+    },
+    {
+      "check": "House 76: connected usable bedroom floor",
+      "passed": true
+    },
+    {
+      "check": "House 76: connected usable bathroom floor",
+      "passed": true
+    },
+    {
+      "check": "House 76: exterior threshold connected",
+      "passed": true
+    },
+    {
+      "check": "House 76: two native hinged leaves",
+      "passed": true
+    },
+    {
+      "check": "House 76: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 76: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 76: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 76: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 77: connected usable living floor",
+      "passed": true
+    },
+    {
+      "check": "House 77: connected usable bedroom floor",
+      "passed": true
+    },
+    {
+      "check": "House 77: connected usable bathroom floor",
+      "passed": true
+    },
+    {
+      "check": "House 77: exterior threshold connected",
+      "passed": true
+    },
+    {
+      "check": "House 77: two native hinged leaves",
+      "passed": true
+    },
+    {
+      "check": "House 77: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 77: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 77: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 77: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 78: connected usable living floor",
+      "passed": true
+    },
+    {
+      "check": "House 78: connected usable bedroom floor",
+      "passed": true
+    },
+    {
+      "check": "House 78: connected usable bathroom floor",
+      "passed": true
+    },
+    {
+      "check": "House 78: exterior threshold connected",
+      "passed": true
+    },
+    {
+      "check": "House 78: two native hinged leaves",
+      "passed": true
+    },
+    {
+      "check": "House 78: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 78: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 78: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 78: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 79: connected usable living floor",
+      "passed": true
+    },
+    {
+      "check": "House 79: connected usable bedroom floor",
+      "passed": true
+    },
+    {
+      "check": "House 79: connected usable bathroom floor",
+      "passed": true
+    },
+    {
+      "check": "House 79: exterior threshold connected",
+      "passed": true
+    },
+    {
+      "check": "House 79: two native hinged leaves",
+      "passed": true
+    },
+    {
+      "check": "House 79: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 79: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 79: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 79: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 80: connected usable living floor",
+      "passed": true
+    },
+    {
+      "check": "House 80: connected usable bedroom floor",
+      "passed": true
+    },
+    {
+      "check": "House 80: connected usable bathroom floor",
+      "passed": true
+    },
+    {
+      "check": "House 80: exterior threshold connected",
+      "passed": true
+    },
+    {
+      "check": "House 80: two native hinged leaves",
+      "passed": true
+    },
+    {
+      "check": "House 80: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 80: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 80: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 80: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 81: connected usable living floor",
+      "passed": true
+    },
+    {
+      "check": "House 81: connected usable bedroom floor",
+      "passed": true
+    },
+    {
+      "check": "House 81: connected usable bathroom floor",
+      "passed": true
+    },
+    {
+      "check": "House 81: exterior threshold connected",
+      "passed": true
+    },
+    {
+      "check": "House 81: two native hinged leaves",
+      "passed": true
+    },
+    {
+      "check": "House 81: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 81: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 81: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 81: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 82: connected usable living floor",
+      "passed": true
+    },
+    {
+      "check": "House 82: connected usable bedroom floor",
+      "passed": true
+    },
+    {
+      "check": "House 82: connected usable bathroom floor",
+      "passed": true
+    },
+    {
+      "check": "House 82: exterior threshold connected",
+      "passed": true
+    },
+    {
+      "check": "House 82: two native hinged leaves",
+      "passed": true
+    },
+    {
+      "check": "House 82: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 82: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 82: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 82: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 83: connected usable living floor",
+      "passed": true
+    },
+    {
+      "check": "House 83: connected usable bedroom floor",
+      "passed": true
+    },
+    {
+      "check": "House 83: connected usable bathroom floor",
+      "passed": true
+    },
+    {
+      "check": "House 83: exterior threshold connected",
+      "passed": true
+    },
+    {
+      "check": "House 83: two native hinged leaves",
+      "passed": true
+    },
+    {
+      "check": "House 83: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 83: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 83: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 83: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 84: connected usable living floor",
+      "passed": true
+    },
+    {
+      "check": "House 84: connected usable bedroom floor",
+      "passed": true
+    },
+    {
+      "check": "House 84: connected usable bathroom floor",
+      "passed": true
+    },
+    {
+      "check": "House 84: exterior threshold connected",
+      "passed": true
+    },
+    {
+      "check": "House 84: two native hinged leaves",
+      "passed": true
+    },
+    {
+      "check": "House 84: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 84: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 84: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 84: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 85: connected usable living floor",
+      "passed": true
+    },
+    {
+      "check": "House 85: connected usable bedroom floor",
+      "passed": true
+    },
+    {
+      "check": "House 85: connected usable bathroom floor",
+      "passed": true
+    },
+    {
+      "check": "House 85: exterior threshold connected",
+      "passed": true
+    },
+    {
+      "check": "House 85: two native hinged leaves",
+      "passed": true
+    },
+    {
+      "check": "House 85: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 85: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 85: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 85: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 86: connected usable living floor",
+      "passed": true
+    },
+    {
+      "check": "House 86: connected usable bedroom floor",
+      "passed": true
+    },
+    {
+      "check": "House 86: connected usable bathroom floor",
+      "passed": true
+    },
+    {
+      "check": "House 86: exterior threshold connected",
+      "passed": true
+    },
+    {
+      "check": "House 86: two native hinged leaves",
+      "passed": true
+    },
+    {
+      "check": "House 86: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 86: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 86: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 86: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 87: connected usable living floor",
+      "passed": true
+    },
+    {
+      "check": "House 87: connected usable bedroom floor",
+      "passed": true
+    },
+    {
+      "check": "House 87: connected usable bathroom floor",
+      "passed": true
+    },
+    {
+      "check": "House 87: exterior threshold connected",
+      "passed": true
+    },
+    {
+      "check": "House 87: two native hinged leaves",
+      "passed": true
+    },
+    {
+      "check": "House 87: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 87: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 87: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 87: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 88: connected usable living floor",
+      "passed": true
+    },
+    {
+      "check": "House 88: connected usable bedroom floor",
+      "passed": true
+    },
+    {
+      "check": "House 88: connected usable bathroom floor",
+      "passed": true
+    },
+    {
+      "check": "House 88: exterior threshold connected",
+      "passed": true
+    },
+    {
+      "check": "House 88: two native hinged leaves",
+      "passed": true
+    },
+    {
+      "check": "House 88: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 88: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 88: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 88: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 89: connected usable living floor",
+      "passed": true
+    },
+    {
+      "check": "House 89: connected usable bedroom floor",
+      "passed": true
+    },
+    {
+      "check": "House 89: connected usable bathroom floor",
+      "passed": true
+    },
+    {
+      "check": "House 89: exterior threshold connected",
+      "passed": true
+    },
+    {
+      "check": "House 89: two native hinged leaves",
+      "passed": true
+    },
+    {
+      "check": "House 89: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 89: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 89: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 89: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 90: connected usable living floor",
+      "passed": true
+    },
+    {
+      "check": "House 90: connected usable bedroom floor",
+      "passed": true
+    },
+    {
+      "check": "House 90: connected usable bathroom floor",
+      "passed": true
+    },
+    {
+      "check": "House 90: exterior threshold connected",
+      "passed": true
+    },
+    {
+      "check": "House 90: two native hinged leaves",
+      "passed": true
+    },
+    {
+      "check": "House 90: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 90: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 90: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 90: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 91: connected usable living floor",
+      "passed": true
+    },
+    {
+      "check": "House 91: connected usable bedroom floor",
+      "passed": true
+    },
+    {
+      "check": "House 91: connected usable bathroom floor",
+      "passed": true
+    },
+    {
+      "check": "House 91: exterior threshold connected",
+      "passed": true
+    },
+    {
+      "check": "House 91: two native hinged leaves",
+      "passed": true
+    },
+    {
+      "check": "House 91: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 91: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 91: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 91: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 92: connected usable living floor",
+      "passed": true
+    },
+    {
+      "check": "House 92: connected usable bedroom floor",
+      "passed": true
+    },
+    {
+      "check": "House 92: connected usable bathroom floor",
+      "passed": true
+    },
+    {
+      "check": "House 92: exterior threshold connected",
+      "passed": true
+    },
+    {
+      "check": "House 92: two native hinged leaves",
+      "passed": true
+    },
+    {
+      "check": "House 92: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 92: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 92: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 92: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 93: connected usable living floor",
+      "passed": true
+    },
+    {
+      "check": "House 93: connected usable bedroom floor",
+      "passed": true
+    },
+    {
+      "check": "House 93: connected usable bathroom floor",
+      "passed": true
+    },
+    {
+      "check": "House 93: exterior threshold connected",
+      "passed": true
+    },
+    {
+      "check": "House 93: two native hinged leaves",
+      "passed": true
+    },
+    {
+      "check": "House 93: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 93: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 93: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 93: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 94: connected usable living floor",
+      "passed": true
+    },
+    {
+      "check": "House 94: connected usable bedroom floor",
+      "passed": true
+    },
+    {
+      "check": "House 94: connected usable bathroom floor",
+      "passed": true
+    },
+    {
+      "check": "House 94: exterior threshold connected",
+      "passed": true
+    },
+    {
+      "check": "House 94: two native hinged leaves",
+      "passed": true
+    },
+    {
+      "check": "House 94: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 94: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 94: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 94: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 95: connected usable living floor",
+      "passed": true
+    },
+    {
+      "check": "House 95: connected usable bedroom floor",
+      "passed": true
+    },
+    {
+      "check": "House 95: connected usable bathroom floor",
+      "passed": true
+    },
+    {
+      "check": "House 95: exterior threshold connected",
+      "passed": true
+    },
+    {
+      "check": "House 95: two native hinged leaves",
+      "passed": true
+    },
+    {
+      "check": "House 95: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 95: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 95: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 95: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 96: connected usable living floor",
+      "passed": true
+    },
+    {
+      "check": "House 96: connected usable bedroom floor",
+      "passed": true
+    },
+    {
+      "check": "House 96: connected usable bathroom floor",
+      "passed": true
+    },
+    {
+      "check": "House 96: exterior threshold connected",
+      "passed": true
+    },
+    {
+      "check": "House 96: two native hinged leaves",
+      "passed": true
+    },
+    {
+      "check": "House 96: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 96: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 96: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 96: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 97: connected usable living floor",
+      "passed": true
+    },
+    {
+      "check": "House 97: connected usable bedroom floor",
+      "passed": true
+    },
+    {
+      "check": "House 97: connected usable bathroom floor",
+      "passed": true
+    },
+    {
+      "check": "House 97: exterior threshold connected",
+      "passed": true
+    },
+    {
+      "check": "House 97: two native hinged leaves",
+      "passed": true
+    },
+    {
+      "check": "House 97: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 97: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 97: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 97: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 98: connected usable living floor",
+      "passed": true
+    },
+    {
+      "check": "House 98: connected usable bedroom floor",
+      "passed": true
+    },
+    {
+      "check": "House 98: connected usable bathroom floor",
+      "passed": true
+    },
+    {
+      "check": "House 98: exterior threshold connected",
+      "passed": true
+    },
+    {
+      "check": "House 98: two native hinged leaves",
+      "passed": true
+    },
+    {
+      "check": "House 98: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 98: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 98: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 98: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 99: connected usable living floor",
+      "passed": true
+    },
+    {
+      "check": "House 99: connected usable bedroom floor",
+      "passed": true
+    },
+    {
+      "check": "House 99: connected usable bathroom floor",
+      "passed": true
+    },
+    {
+      "check": "House 99: exterior threshold connected",
+      "passed": true
+    },
+    {
+      "check": "House 99: two native hinged leaves",
+      "passed": true
+    },
+    {
+      "check": "House 99: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 99: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 99: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 99: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 100: connected usable living floor",
+      "passed": true
+    },
+    {
+      "check": "House 100: connected usable bedroom floor",
+      "passed": true
+    },
+    {
+      "check": "House 100: connected usable bathroom floor",
+      "passed": true
+    },
+    {
+      "check": "House 100: exterior threshold connected",
+      "passed": true
+    },
+    {
+      "check": "House 100: two native hinged leaves",
+      "passed": true
+    },
+    {
+      "check": "House 100: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 100: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 100: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 100: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 101: connected usable living floor",
+      "passed": true
+    },
+    {
+      "check": "House 101: connected usable bedroom floor",
+      "passed": true
+    },
+    {
+      "check": "House 101: connected usable bathroom floor",
+      "passed": true
+    },
+    {
+      "check": "House 101: exterior threshold connected",
+      "passed": true
+    },
+    {
+      "check": "House 101: two native hinged leaves",
+      "passed": true
+    },
+    {
+      "check": "House 101: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 101: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 101: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 101: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 102: connected usable living floor",
+      "passed": true
+    },
+    {
+      "check": "House 102: connected usable bedroom floor",
+      "passed": true
+    },
+    {
+      "check": "House 102: connected usable bathroom floor",
+      "passed": true
+    },
+    {
+      "check": "House 102: exterior threshold connected",
+      "passed": true
+    },
+    {
+      "check": "House 102: two native hinged leaves",
+      "passed": true
+    },
+    {
+      "check": "House 102: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 102: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 102: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 102: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 103: connected usable living floor",
+      "passed": true
+    },
+    {
+      "check": "House 103: connected usable bedroom floor",
+      "passed": true
+    },
+    {
+      "check": "House 103: connected usable bathroom floor",
+      "passed": true
+    },
+    {
+      "check": "House 103: exterior threshold connected",
+      "passed": true
+    },
+    {
+      "check": "House 103: two native hinged leaves",
+      "passed": true
+    },
+    {
+      "check": "House 103: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 103: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 103: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 103: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 104: connected usable living floor",
+      "passed": true
+    },
+    {
+      "check": "House 104: connected usable bedroom floor",
+      "passed": true
+    },
+    {
+      "check": "House 104: connected usable bathroom floor",
+      "passed": true
+    },
+    {
+      "check": "House 104: exterior threshold connected",
+      "passed": true
+    },
+    {
+      "check": "House 104: two native hinged leaves",
+      "passed": true
+    },
+    {
+      "check": "House 104: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 104: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 104: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 104: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 105: connected usable living floor",
+      "passed": true
+    },
+    {
+      "check": "House 105: connected usable bedroom floor",
+      "passed": true
+    },
+    {
+      "check": "House 105: connected usable bathroom floor",
+      "passed": true
+    },
+    {
+      "check": "House 105: exterior threshold connected",
+      "passed": true
+    },
+    {
+      "check": "House 105: two native hinged leaves",
+      "passed": true
+    },
+    {
+      "check": "House 105: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 105: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 105: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 105: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 106: connected usable living floor",
+      "passed": true
+    },
+    {
+      "check": "House 106: connected usable bedroom floor",
+      "passed": true
+    },
+    {
+      "check": "House 106: connected usable bathroom floor",
+      "passed": true
+    },
+    {
+      "check": "House 106: exterior threshold connected",
+      "passed": true
+    },
+    {
+      "check": "House 106: two native hinged leaves",
+      "passed": true
+    },
+    {
+      "check": "House 106: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 106: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 106: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 106: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 107: connected usable living floor",
+      "passed": true
+    },
+    {
+      "check": "House 107: connected usable bedroom floor",
+      "passed": true
+    },
+    {
+      "check": "House 107: connected usable bathroom floor",
+      "passed": true
+    },
+    {
+      "check": "House 107: exterior threshold connected",
+      "passed": true
+    },
+    {
+      "check": "House 107: two native hinged leaves",
+      "passed": true
+    },
+    {
+      "check": "House 107: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 107: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 107: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 107: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 108: connected usable living floor",
+      "passed": true
+    },
+    {
+      "check": "House 108: connected usable bedroom floor",
+      "passed": true
+    },
+    {
+      "check": "House 108: connected usable bathroom floor",
+      "passed": true
+    },
+    {
+      "check": "House 108: exterior threshold connected",
+      "passed": true
+    },
+    {
+      "check": "House 108: two native hinged leaves",
+      "passed": true
+    },
+    {
+      "check": "House 108: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 108: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 108: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 108: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 109: connected usable living floor",
+      "passed": true
+    },
+    {
+      "check": "House 109: connected usable bedroom floor",
+      "passed": true
+    },
+    {
+      "check": "House 109: connected usable bathroom floor",
+      "passed": true
+    },
+    {
+      "check": "House 109: exterior threshold connected",
+      "passed": true
+    },
+    {
+      "check": "House 109: two native hinged leaves",
+      "passed": true
+    },
+    {
+      "check": "House 109: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 109: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 109: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 109: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 110: connected usable living floor",
+      "passed": true
+    },
+    {
+      "check": "House 110: connected usable bedroom floor",
+      "passed": true
+    },
+    {
+      "check": "House 110: connected usable bathroom floor",
+      "passed": true
+    },
+    {
+      "check": "House 110: exterior threshold connected",
+      "passed": true
+    },
+    {
+      "check": "House 110: two native hinged leaves",
+      "passed": true
+    },
+    {
+      "check": "House 110: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 110: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 110: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 110: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 111: connected usable living floor",
+      "passed": true
+    },
+    {
+      "check": "House 111: connected usable bedroom floor",
+      "passed": true
+    },
+    {
+      "check": "House 111: connected usable bathroom floor",
+      "passed": true
+    },
+    {
+      "check": "House 111: exterior threshold connected",
+      "passed": true
+    },
+    {
+      "check": "House 111: two native hinged leaves",
+      "passed": true
+    },
+    {
+      "check": "House 111: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 111: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 111: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 111: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 112: connected usable living floor",
+      "passed": true
+    },
+    {
+      "check": "House 112: connected usable bedroom floor",
+      "passed": true
+    },
+    {
+      "check": "House 112: connected usable bathroom floor",
+      "passed": true
+    },
+    {
+      "check": "House 112: exterior threshold connected",
+      "passed": true
+    },
+    {
+      "check": "House 112: two native hinged leaves",
+      "passed": true
+    },
+    {
+      "check": "House 112: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 112: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 112: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 112: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 113: connected usable living floor",
+      "passed": true
+    },
+    {
+      "check": "House 113: connected usable bedroom floor",
+      "passed": true
+    },
+    {
+      "check": "House 113: connected usable bathroom floor",
+      "passed": true
+    },
+    {
+      "check": "House 113: exterior threshold connected",
+      "passed": true
+    },
+    {
+      "check": "House 113: two native hinged leaves",
+      "passed": true
+    },
+    {
+      "check": "House 113: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 113: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 113: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 113: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 114: connected usable living floor",
+      "passed": true
+    },
+    {
+      "check": "House 114: connected usable bedroom floor",
+      "passed": true
+    },
+    {
+      "check": "House 114: connected usable bathroom floor",
+      "passed": true
+    },
+    {
+      "check": "House 114: exterior threshold connected",
+      "passed": true
+    },
+    {
+      "check": "House 114: two native hinged leaves",
+      "passed": true
+    },
+    {
+      "check": "House 114: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 114: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 114: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 114: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 115: connected usable living floor",
+      "passed": true
+    },
+    {
+      "check": "House 115: connected usable bedroom floor",
+      "passed": true
+    },
+    {
+      "check": "House 115: connected usable bathroom floor",
+      "passed": true
+    },
+    {
+      "check": "House 115: exterior threshold connected",
+      "passed": true
+    },
+    {
+      "check": "House 115: two native hinged leaves",
+      "passed": true
+    },
+    {
+      "check": "House 115: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 115: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 115: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 115: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 116: connected usable living floor",
+      "passed": true
+    },
+    {
+      "check": "House 116: connected usable bedroom floor",
+      "passed": true
+    },
+    {
+      "check": "House 116: connected usable bathroom floor",
+      "passed": true
+    },
+    {
+      "check": "House 116: exterior threshold connected",
+      "passed": true
+    },
+    {
+      "check": "House 116: two native hinged leaves",
+      "passed": true
+    },
+    {
+      "check": "House 116: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 116: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 116: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 116: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 117: connected usable living floor",
+      "passed": true
+    },
+    {
+      "check": "House 117: connected usable bedroom floor",
+      "passed": true
+    },
+    {
+      "check": "House 117: connected usable bathroom floor",
+      "passed": true
+    },
+    {
+      "check": "House 117: exterior threshold connected",
+      "passed": true
+    },
+    {
+      "check": "House 117: two native hinged leaves",
+      "passed": true
+    },
+    {
+      "check": "House 117: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 117: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 117: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 117: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 118: connected usable living floor",
+      "passed": true
+    },
+    {
+      "check": "House 118: connected usable bedroom floor",
+      "passed": true
+    },
+    {
+      "check": "House 118: connected usable bathroom floor",
+      "passed": true
+    },
+    {
+      "check": "House 118: exterior threshold connected",
+      "passed": true
+    },
+    {
+      "check": "House 118: two native hinged leaves",
+      "passed": true
+    },
+    {
+      "check": "House 118: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 118: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 118: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 118: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 119: connected usable living floor",
+      "passed": true
+    },
+    {
+      "check": "House 119: connected usable bedroom floor",
+      "passed": true
+    },
+    {
+      "check": "House 119: connected usable bathroom floor",
+      "passed": true
+    },
+    {
+      "check": "House 119: exterior threshold connected",
+      "passed": true
+    },
+    {
+      "check": "House 119: two native hinged leaves",
+      "passed": true
+    },
+    {
+      "check": "House 119: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 119: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 119: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 119: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 120: connected usable living floor",
+      "passed": true
+    },
+    {
+      "check": "House 120: connected usable bedroom floor",
+      "passed": true
+    },
+    {
+      "check": "House 120: connected usable bathroom floor",
+      "passed": true
+    },
+    {
+      "check": "House 120: exterior threshold connected",
+      "passed": true
+    },
+    {
+      "check": "House 120: two native hinged leaves",
+      "passed": true
+    },
+    {
+      "check": "House 120: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 120: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 120: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 120: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 121: connected usable living floor",
+      "passed": true
+    },
+    {
+      "check": "House 121: connected usable bedroom floor",
+      "passed": true
+    },
+    {
+      "check": "House 121: connected usable bathroom floor",
+      "passed": true
+    },
+    {
+      "check": "House 121: exterior threshold connected",
+      "passed": true
+    },
+    {
+      "check": "House 121: two native hinged leaves",
+      "passed": true
+    },
+    {
+      "check": "House 121: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 121: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 121: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 121: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 122: connected usable living floor",
+      "passed": true
+    },
+    {
+      "check": "House 122: connected usable bedroom floor",
+      "passed": true
+    },
+    {
+      "check": "House 122: connected usable bathroom floor",
+      "passed": true
+    },
+    {
+      "check": "House 122: exterior threshold connected",
+      "passed": true
+    },
+    {
+      "check": "House 122: two native hinged leaves",
+      "passed": true
+    },
+    {
+      "check": "House 122: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 122: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 122: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 122: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 123: connected usable living floor",
+      "passed": true
+    },
+    {
+      "check": "House 123: connected usable bedroom floor",
+      "passed": true
+    },
+    {
+      "check": "House 123: connected usable bathroom floor",
+      "passed": true
+    },
+    {
+      "check": "House 123: exterior threshold connected",
+      "passed": true
+    },
+    {
+      "check": "House 123: two native hinged leaves",
+      "passed": true
+    },
+    {
+      "check": "House 123: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 123: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 123: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 123: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 124: connected usable living floor",
+      "passed": true
+    },
+    {
+      "check": "House 124: connected usable bedroom floor",
+      "passed": true
+    },
+    {
+      "check": "House 124: connected usable bathroom floor",
+      "passed": true
+    },
+    {
+      "check": "House 124: exterior threshold connected",
+      "passed": true
+    },
+    {
+      "check": "House 124: two native hinged leaves",
+      "passed": true
+    },
+    {
+      "check": "House 124: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 124: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 124: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 124: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 125: connected usable living floor",
+      "passed": true
+    },
+    {
+      "check": "House 125: connected usable bedroom floor",
+      "passed": true
+    },
+    {
+      "check": "House 125: connected usable bathroom floor",
+      "passed": true
+    },
+    {
+      "check": "House 125: exterior threshold connected",
+      "passed": true
+    },
+    {
+      "check": "House 125: two native hinged leaves",
+      "passed": true
+    },
+    {
+      "check": "House 125: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 125: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 125: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 125: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 126: connected usable living floor",
+      "passed": true
+    },
+    {
+      "check": "House 126: connected usable bedroom floor",
+      "passed": true
+    },
+    {
+      "check": "House 126: connected usable bathroom floor",
+      "passed": true
+    },
+    {
+      "check": "House 126: exterior threshold connected",
+      "passed": true
+    },
+    {
+      "check": "House 126: two native hinged leaves",
+      "passed": true
+    },
+    {
+      "check": "House 126: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 126: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 126: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 126: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 127: connected usable living floor",
+      "passed": true
+    },
+    {
+      "check": "House 127: connected usable bedroom floor",
+      "passed": true
+    },
+    {
+      "check": "House 127: connected usable bathroom floor",
+      "passed": true
+    },
+    {
+      "check": "House 127: exterior threshold connected",
+      "passed": true
+    },
+    {
+      "check": "House 127: two native hinged leaves",
+      "passed": true
+    },
+    {
+      "check": "House 127: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 127: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 127: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 127: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 128: connected usable living floor",
+      "passed": true
+    },
+    {
+      "check": "House 128: connected usable bedroom floor",
+      "passed": true
+    },
+    {
+      "check": "House 128: connected usable bathroom floor",
+      "passed": true
+    },
+    {
+      "check": "House 128: exterior threshold connected",
+      "passed": true
+    },
+    {
+      "check": "House 128: two native hinged leaves",
+      "passed": true
+    },
+    {
+      "check": "House 128: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 128: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 128: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 128: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 129: connected usable living floor",
+      "passed": true
+    },
+    {
+      "check": "House 129: connected usable bedroom floor",
+      "passed": true
+    },
+    {
+      "check": "House 129: connected usable bathroom floor",
+      "passed": true
+    },
+    {
+      "check": "House 129: exterior threshold connected",
+      "passed": true
+    },
+    {
+      "check": "House 129: two native hinged leaves",
+      "passed": true
+    },
+    {
+      "check": "House 129: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 129: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 129: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 129: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 130: connected usable living floor",
+      "passed": true
+    },
+    {
+      "check": "House 130: connected usable bedroom floor",
+      "passed": true
+    },
+    {
+      "check": "House 130: connected usable bathroom floor",
+      "passed": true
+    },
+    {
+      "check": "House 130: exterior threshold connected",
+      "passed": true
+    },
+    {
+      "check": "House 130: two native hinged leaves",
+      "passed": true
+    },
+    {
+      "check": "House 130: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 130: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 130: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 130: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 131: connected usable living floor",
+      "passed": true
+    },
+    {
+      "check": "House 131: connected usable bedroom floor",
+      "passed": true
+    },
+    {
+      "check": "House 131: connected usable bathroom floor",
+      "passed": true
+    },
+    {
+      "check": "House 131: exterior threshold connected",
+      "passed": true
+    },
+    {
+      "check": "House 131: two native hinged leaves",
+      "passed": true
+    },
+    {
+      "check": "House 131: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 131: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 131: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 131: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 132: connected usable living floor",
+      "passed": true
+    },
+    {
+      "check": "House 132: connected usable bedroom floor",
+      "passed": true
+    },
+    {
+      "check": "House 132: connected usable bathroom floor",
+      "passed": true
+    },
+    {
+      "check": "House 132: exterior threshold connected",
+      "passed": true
+    },
+    {
+      "check": "House 132: two native hinged leaves",
+      "passed": true
+    },
+    {
+      "check": "House 132: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 132: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 132: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 132: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 133: connected usable living floor",
+      "passed": true
+    },
+    {
+      "check": "House 133: connected usable bedroom floor",
+      "passed": true
+    },
+    {
+      "check": "House 133: connected usable bathroom floor",
+      "passed": true
+    },
+    {
+      "check": "House 133: exterior threshold connected",
+      "passed": true
+    },
+    {
+      "check": "House 133: two native hinged leaves",
+      "passed": true
+    },
+    {
+      "check": "House 133: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 133: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 133: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 133: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 134: connected usable living floor",
+      "passed": true
+    },
+    {
+      "check": "House 134: connected usable bedroom floor",
+      "passed": true
+    },
+    {
+      "check": "House 134: connected usable bathroom floor",
+      "passed": true
+    },
+    {
+      "check": "House 134: exterior threshold connected",
+      "passed": true
+    },
+    {
+      "check": "House 134: two native hinged leaves",
+      "passed": true
+    },
+    {
+      "check": "House 134: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 134: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 134: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 134: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 135: connected usable living floor",
+      "passed": true
+    },
+    {
+      "check": "House 135: connected usable bedroom floor",
+      "passed": true
+    },
+    {
+      "check": "House 135: connected usable bathroom floor",
+      "passed": true
+    },
+    {
+      "check": "House 135: exterior threshold connected",
+      "passed": true
+    },
+    {
+      "check": "House 135: two native hinged leaves",
+      "passed": true
+    },
+    {
+      "check": "House 135: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 135: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 135: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 135: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 136: connected usable living floor",
+      "passed": true
+    },
+    {
+      "check": "House 136: connected usable bedroom floor",
+      "passed": true
+    },
+    {
+      "check": "House 136: connected usable bathroom floor",
+      "passed": true
+    },
+    {
+      "check": "House 136: exterior threshold connected",
+      "passed": true
+    },
+    {
+      "check": "House 136: two native hinged leaves",
+      "passed": true
+    },
+    {
+      "check": "House 136: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 136: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 136: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 136: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 137: connected usable living floor",
+      "passed": true
+    },
+    {
+      "check": "House 137: connected usable bedroom floor",
+      "passed": true
+    },
+    {
+      "check": "House 137: connected usable bathroom floor",
+      "passed": true
+    },
+    {
+      "check": "House 137: exterior threshold connected",
+      "passed": true
+    },
+    {
+      "check": "House 137: two native hinged leaves",
+      "passed": true
+    },
+    {
+      "check": "House 137: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 137: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 137: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 137: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 138: connected usable living floor",
+      "passed": true
+    },
+    {
+      "check": "House 138: connected usable bedroom floor",
+      "passed": true
+    },
+    {
+      "check": "House 138: connected usable bathroom floor",
+      "passed": true
+    },
+    {
+      "check": "House 138: exterior threshold connected",
+      "passed": true
+    },
+    {
+      "check": "House 138: two native hinged leaves",
+      "passed": true
+    },
+    {
+      "check": "House 138: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 138: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 138: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 138: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 139: connected usable living floor",
+      "passed": true
+    },
+    {
+      "check": "House 139: connected usable bedroom floor",
+      "passed": true
+    },
+    {
+      "check": "House 139: connected usable bathroom floor",
+      "passed": true
+    },
+    {
+      "check": "House 139: exterior threshold connected",
+      "passed": true
+    },
+    {
+      "check": "House 139: two native hinged leaves",
+      "passed": true
+    },
+    {
+      "check": "House 139: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 139: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 139: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 139: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 140: connected usable living floor",
+      "passed": true
+    },
+    {
+      "check": "House 140: connected usable bedroom floor",
+      "passed": true
+    },
+    {
+      "check": "House 140: connected usable bathroom floor",
+      "passed": true
+    },
+    {
+      "check": "House 140: exterior threshold connected",
+      "passed": true
+    },
+    {
+      "check": "House 140: two native hinged leaves",
+      "passed": true
+    },
+    {
+      "check": "House 140: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 140: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 140: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 140: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 141: connected usable living floor",
+      "passed": true
+    },
+    {
+      "check": "House 141: connected usable bedroom floor",
+      "passed": true
+    },
+    {
+      "check": "House 141: connected usable bathroom floor",
+      "passed": true
+    },
+    {
+      "check": "House 141: exterior threshold connected",
+      "passed": true
+    },
+    {
+      "check": "House 141: two native hinged leaves",
+      "passed": true
+    },
+    {
+      "check": "House 141: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 141: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 141: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 141: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 142: connected usable living floor",
+      "passed": true
+    },
+    {
+      "check": "House 142: connected usable bedroom floor",
+      "passed": true
+    },
+    {
+      "check": "House 142: connected usable bathroom floor",
+      "passed": true
+    },
+    {
+      "check": "House 142: exterior threshold connected",
+      "passed": true
+    },
+    {
+      "check": "House 142: two native hinged leaves",
+      "passed": true
+    },
+    {
+      "check": "House 142: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 142: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 142: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 142: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 143: connected usable living floor",
+      "passed": true
+    },
+    {
+      "check": "House 143: connected usable bedroom floor",
+      "passed": true
+    },
+    {
+      "check": "House 143: connected usable bathroom floor",
+      "passed": true
+    },
+    {
+      "check": "House 143: exterior threshold connected",
+      "passed": true
+    },
+    {
+      "check": "House 143: two native hinged leaves",
+      "passed": true
+    },
+    {
+      "check": "House 143: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 143: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 143: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 143: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 144: connected usable living floor",
+      "passed": true
+    },
+    {
+      "check": "House 144: connected usable bedroom floor",
+      "passed": true
+    },
+    {
+      "check": "House 144: connected usable bathroom floor",
+      "passed": true
+    },
+    {
+      "check": "House 144: exterior threshold connected",
+      "passed": true
+    },
+    {
+      "check": "House 144: two native hinged leaves",
+      "passed": true
+    },
+    {
+      "check": "House 144: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 144: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 144: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 144: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 145: connected usable living floor",
+      "passed": true
+    },
+    {
+      "check": "House 145: connected usable bedroom floor",
+      "passed": true
+    },
+    {
+      "check": "House 145: connected usable bathroom floor",
+      "passed": true
+    },
+    {
+      "check": "House 145: exterior threshold connected",
+      "passed": true
+    },
+    {
+      "check": "House 145: two native hinged leaves",
+      "passed": true
+    },
+    {
+      "check": "House 145: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 145: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 145: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 145: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 146: connected usable living floor",
+      "passed": true
+    },
+    {
+      "check": "House 146: connected usable bedroom floor",
+      "passed": true
+    },
+    {
+      "check": "House 146: connected usable bathroom floor",
+      "passed": true
+    },
+    {
+      "check": "House 146: exterior threshold connected",
+      "passed": true
+    },
+    {
+      "check": "House 146: two native hinged leaves",
+      "passed": true
+    },
+    {
+      "check": "House 146: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 146: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 146: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 146: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 147: connected usable living floor",
+      "passed": true
+    },
+    {
+      "check": "House 147: connected usable bedroom floor",
+      "passed": true
+    },
+    {
+      "check": "House 147: connected usable bathroom floor",
+      "passed": true
+    },
+    {
+      "check": "House 147: exterior threshold connected",
+      "passed": true
+    },
+    {
+      "check": "House 147: two native hinged leaves",
+      "passed": true
+    },
+    {
+      "check": "House 147: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 147: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 147: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 147: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 148: connected usable living floor",
+      "passed": true
+    },
+    {
+      "check": "House 148: connected usable bedroom floor",
+      "passed": true
+    },
+    {
+      "check": "House 148: connected usable bathroom floor",
+      "passed": true
+    },
+    {
+      "check": "House 148: exterior threshold connected",
+      "passed": true
+    },
+    {
+      "check": "House 148: two native hinged leaves",
+      "passed": true
+    },
+    {
+      "check": "House 148: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 148: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 148: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 148: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 149: connected usable living floor",
+      "passed": true
+    },
+    {
+      "check": "House 149: connected usable bedroom floor",
+      "passed": true
+    },
+    {
+      "check": "House 149: connected usable bathroom floor",
+      "passed": true
+    },
+    {
+      "check": "House 149: exterior threshold connected",
+      "passed": true
+    },
+    {
+      "check": "House 149: two native hinged leaves",
+      "passed": true
+    },
+    {
+      "check": "House 149: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 149: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 149: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 149: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 150: connected usable living floor",
+      "passed": true
+    },
+    {
+      "check": "House 150: connected usable bedroom floor",
+      "passed": true
+    },
+    {
+      "check": "House 150: connected usable bathroom floor",
+      "passed": true
+    },
+    {
+      "check": "House 150: exterior threshold connected",
+      "passed": true
+    },
+    {
+      "check": "House 150: two native hinged leaves",
+      "passed": true
+    },
+    {
+      "check": "House 150: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 150: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 150: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 150: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 151: connected usable living floor",
+      "passed": true
+    },
+    {
+      "check": "House 151: connected usable bedroom floor",
+      "passed": true
+    },
+    {
+      "check": "House 151: connected usable bathroom floor",
+      "passed": true
+    },
+    {
+      "check": "House 151: exterior threshold connected",
+      "passed": true
+    },
+    {
+      "check": "House 151: two native hinged leaves",
+      "passed": true
+    },
+    {
+      "check": "House 151: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 151: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 151: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 151: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 152: connected usable living floor",
+      "passed": true
+    },
+    {
+      "check": "House 152: connected usable bedroom floor",
+      "passed": true
+    },
+    {
+      "check": "House 152: connected usable bathroom floor",
+      "passed": true
+    },
+    {
+      "check": "House 152: exterior threshold connected",
+      "passed": true
+    },
+    {
+      "check": "House 152: two native hinged leaves",
+      "passed": true
+    },
+    {
+      "check": "House 152: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 152: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 152: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 152: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 153: connected usable living floor",
+      "passed": true
+    },
+    {
+      "check": "House 153: connected usable bedroom floor",
+      "passed": true
+    },
+    {
+      "check": "House 153: connected usable bathroom floor",
+      "passed": true
+    },
+    {
+      "check": "House 153: exterior threshold connected",
+      "passed": true
+    },
+    {
+      "check": "House 153: two native hinged leaves",
+      "passed": true
+    },
+    {
+      "check": "House 153: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 153: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 153: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 153: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 154: connected usable living floor",
+      "passed": true
+    },
+    {
+      "check": "House 154: connected usable bedroom floor",
+      "passed": true
+    },
+    {
+      "check": "House 154: connected usable bathroom floor",
+      "passed": true
+    },
+    {
+      "check": "House 154: exterior threshold connected",
+      "passed": true
+    },
+    {
+      "check": "House 154: two native hinged leaves",
+      "passed": true
+    },
+    {
+      "check": "House 154: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 154: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 154: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 154: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 155: connected usable living floor",
+      "passed": true
+    },
+    {
+      "check": "House 155: connected usable bedroom floor",
+      "passed": true
+    },
+    {
+      "check": "House 155: connected usable bathroom floor",
+      "passed": true
+    },
+    {
+      "check": "House 155: exterior threshold connected",
+      "passed": true
+    },
+    {
+      "check": "House 155: two native hinged leaves",
+      "passed": true
+    },
+    {
+      "check": "House 155: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 155: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 155: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 155: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 156: connected usable living floor",
+      "passed": true
+    },
+    {
+      "check": "House 156: connected usable bedroom floor",
+      "passed": true
+    },
+    {
+      "check": "House 156: connected usable bathroom floor",
+      "passed": true
+    },
+    {
+      "check": "House 156: exterior threshold connected",
+      "passed": true
+    },
+    {
+      "check": "House 156: two native hinged leaves",
+      "passed": true
+    },
+    {
+      "check": "House 156: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 156: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 156: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 156: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 157: connected usable living floor",
+      "passed": true
+    },
+    {
+      "check": "House 157: connected usable bedroom floor",
+      "passed": true
+    },
+    {
+      "check": "House 157: connected usable bathroom floor",
+      "passed": true
+    },
+    {
+      "check": "House 157: exterior threshold connected",
+      "passed": true
+    },
+    {
+      "check": "House 157: two native hinged leaves",
+      "passed": true
+    },
+    {
+      "check": "House 157: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 157: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 157: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 157: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 158: connected usable living floor",
+      "passed": true
+    },
+    {
+      "check": "House 158: connected usable bedroom floor",
+      "passed": true
+    },
+    {
+      "check": "House 158: connected usable bathroom floor",
+      "passed": true
+    },
+    {
+      "check": "House 158: exterior threshold connected",
+      "passed": true
+    },
+    {
+      "check": "House 158: two native hinged leaves",
+      "passed": true
+    },
+    {
+      "check": "House 158: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 158: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 158: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 158: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 159: connected usable living floor",
+      "passed": true
+    },
+    {
+      "check": "House 159: connected usable bedroom floor",
+      "passed": true
+    },
+    {
+      "check": "House 159: connected usable bathroom floor",
+      "passed": true
+    },
+    {
+      "check": "House 159: exterior threshold connected",
+      "passed": true
+    },
+    {
+      "check": "House 159: two native hinged leaves",
+      "passed": true
+    },
+    {
+      "check": "House 159: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 159: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 159: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "House 159: unobstructed housing cell",
+      "passed": true
+    },
+    {
+      "check": "Factory 0: workbench on usable floor",
+      "passed": true
+    },
+    {
+      "check": "Factory 0: forge on usable floor",
+      "passed": true
+    },
+    {
+      "check": "Factory 0: anvil on usable floor",
+      "passed": true
+    },
+    {
+      "check": "Factory 0: fine_tools on usable floor",
+      "passed": true
+    },
+    {
+      "check": "Factory 0: contiguous native workstation network",
+      "passed": true
+    },
+    {
+      "check": "Factory 1: workbench on usable floor",
+      "passed": true
+    },
+    {
+      "check": "Factory 1: ranged on usable floor",
+      "passed": true
+    },
+    {
+      "check": "Factory 1: sawmill on usable floor",
+      "passed": true
+    },
+    {
+      "check": "Factory 1: forge on usable floor",
+      "passed": true
+    },
+    {
+      "check": "Factory 1: fine_tools on usable floor",
+      "passed": true
+    },
+    {
+      "check": "Factory 1: contiguous native workstation network",
+      "passed": true
+    },
+    {
+      "check": "Factory 2: workbench on usable floor",
+      "passed": true
+    },
+    {
+      "check": "Factory 2: armor on usable floor",
+      "passed": true
+    },
+    {
+      "check": "Factory 2: sewing on usable floor",
+      "passed": true
+    },
+    {
+      "check": "Factory 2: contiguous native workstation network",
+      "passed": true
+    },
+    {
+      "check": "Factory 3: workbench on usable floor",
+      "passed": true
+    },
+    {
+      "check": "Factory 3: altar on usable floor",
+      "passed": true
+    },
+    {
+      "check": "Factory 3: jeweler on usable floor",
+      "passed": true
+    },
+    {
+      "check": "Factory 3: contiguous native workstation network",
+      "passed": true
+    },
+    {
+      "check": "Factory 4: workbench on usable floor",
+      "passed": true
+    },
+    {
+      "check": "Factory 4: jeweler on usable floor",
+      "passed": true
+    },
+    {
+      "check": "Factory 4: fine_tools on usable floor",
+      "passed": true
+    },
+    {
+      "check": "Factory 4: forge on usable floor",
+      "passed": true
+    },
+    {
+      "check": "Factory 4: altar on usable floor",
+      "passed": true
+    },
+    {
+      "check": "Factory 4: contiguous native workstation network",
+      "passed": true
+    },
+    {
+      "check": "Factory 5: workbench on usable floor",
+      "passed": true
+    },
+    {
+      "check": "Factory 5: sawmill on usable floor",
+      "passed": true
+    },
+    {
+      "check": "Factory 5: sewing on usable floor",
+      "passed": true
+    },
+    {
+      "check": "Factory 5: forge on usable floor",
+      "passed": true
+    },
+    {
+      "check": "Factory 5: contiguous native workstation network",
+      "passed": true
+    },
+    {
+      "check": "Factory 6: workbench on usable floor",
+      "passed": true
+    },
+    {
+      "check": "Factory 6: forge on usable floor",
+      "passed": true
+    },
+    {
+      "check": "Factory 6: anvil on usable floor",
+      "passed": true
+    },
+    {
+      "check": "Factory 6: fine_tools on usable floor",
+      "passed": true
+    },
+    {
+      "check": "Factory 6: contiguous native workstation network",
+      "passed": true
+    },
+    {
+      "check": "Factory 7: workbench on usable floor",
+      "passed": true
+    },
+    {
+      "check": "Factory 7: ranged on usable floor",
+      "passed": true
+    },
+    {
+      "check": "Factory 7: sawmill on usable floor",
+      "passed": true
+    },
+    {
+      "check": "Factory 7: forge on usable floor",
+      "passed": true
+    },
+    {
+      "check": "Factory 7: fine_tools on usable floor",
+      "passed": true
+    },
+    {
+      "check": "Factory 7: contiguous native workstation network",
+      "passed": true
+    },
+    {
+      "check": "Factory 8: workbench on usable floor",
+      "passed": true
+    },
+    {
+      "check": "Factory 8: armor on usable floor",
+      "passed": true
+    },
+    {
+      "check": "Factory 8: sewing on usable floor",
+      "passed": true
+    },
+    {
+      "check": "Factory 8: contiguous native workstation network",
+      "passed": true
+    },
+    {
+      "check": "Factory 9: workbench on usable floor",
+      "passed": true
+    },
+    {
+      "check": "Factory 9: altar on usable floor",
+      "passed": true
+    },
+    {
+      "check": "Factory 9: jeweler on usable floor",
+      "passed": true
+    },
+    {
+      "check": "Factory 9: contiguous native workstation network",
+      "passed": true
+    },
+    {
+      "check": "Factory 10: workbench on usable floor",
+      "passed": true
+    },
+    {
+      "check": "Factory 10: jeweler on usable floor",
+      "passed": true
+    },
+    {
+      "check": "Factory 10: fine_tools on usable floor",
+      "passed": true
+    },
+    {
+      "check": "Factory 10: forge on usable floor",
+      "passed": true
+    },
+    {
+      "check": "Factory 10: altar on usable floor",
+      "passed": true
+    },
+    {
+      "check": "Factory 10: contiguous native workstation network",
+      "passed": true
+    },
+    {
+      "check": "Factory 11: workbench on usable floor",
+      "passed": true
+    },
+    {
+      "check": "Factory 11: sawmill on usable floor",
+      "passed": true
+    },
+    {
+      "check": "Factory 11: sewing on usable floor",
+      "passed": true
+    },
+    {
+      "check": "Factory 11: forge on usable floor",
+      "passed": true
+    },
+    {
+      "check": "Factory 11: contiguous native workstation network",
+      "passed": true
+    },
+    {
+      "check": "Factory 12: workbench on usable floor",
+      "passed": true
+    },
+    {
+      "check": "Factory 12: forge on usable floor",
+      "passed": true
+    },
+    {
+      "check": "Factory 12: anvil on usable floor",
+      "passed": true
+    },
+    {
+      "check": "Factory 12: fine_tools on usable floor",
+      "passed": true
+    },
+    {
+      "check": "Factory 12: contiguous native workstation network",
+      "passed": true
+    },
+    {
+      "check": "Factory 13: workbench on usable floor",
+      "passed": true
+    },
+    {
+      "check": "Factory 13: ranged on usable floor",
+      "passed": true
+    },
+    {
+      "check": "Factory 13: sawmill on usable floor",
+      "passed": true
+    },
+    {
+      "check": "Factory 13: forge on usable floor",
+      "passed": true
+    },
+    {
+      "check": "Factory 13: fine_tools on usable floor",
+      "passed": true
+    },
+    {
+      "check": "Factory 13: contiguous native workstation network",
+      "passed": true
+    },
+    {
+      "check": "Factory 14: workbench on usable floor",
+      "passed": true
+    },
+    {
+      "check": "Factory 14: armor on usable floor",
+      "passed": true
+    },
+    {
+      "check": "Factory 14: sewing on usable floor",
+      "passed": true
+    },
+    {
+      "check": "Factory 14: contiguous native workstation network",
+      "passed": true
+    },
+    {
+      "check": "Factory 15: workbench on usable floor",
+      "passed": true
+    },
+    {
+      "check": "Factory 15: altar on usable floor",
+      "passed": true
+    },
+    {
+      "check": "Factory 15: jeweler on usable floor",
+      "passed": true
+    },
+    {
+      "check": "Factory 15: contiguous native workstation network",
+      "passed": true
+    },
+    {
+      "check": "Factory 16: workbench on usable floor",
+      "passed": true
+    },
+    {
+      "check": "Factory 16: jeweler on usable floor",
+      "passed": true
+    },
+    {
+      "check": "Factory 16: fine_tools on usable floor",
+      "passed": true
+    },
+    {
+      "check": "Factory 16: forge on usable floor",
+      "passed": true
+    },
+    {
+      "check": "Factory 16: altar on usable floor",
+      "passed": true
+    },
+    {
+      "check": "Factory 16: contiguous native workstation network",
+      "passed": true
+    },
+    {
+      "check": "Factory 17: workbench on usable floor",
+      "passed": true
+    },
+    {
+      "check": "Factory 17: sawmill on usable floor",
+      "passed": true
+    },
+    {
+      "check": "Factory 17: sewing on usable floor",
+      "passed": true
+    },
+    {
+      "check": "Factory 17: forge on usable floor",
+      "passed": true
+    },
+    {
+      "check": "Factory 17: contiguous native workstation network",
+      "passed": true
+    },
+    {
+      "check": "Factory 18: workbench on usable floor",
+      "passed": true
+    },
+    {
+      "check": "Factory 18: forge on usable floor",
+      "passed": true
+    },
+    {
+      "check": "Factory 18: anvil on usable floor",
+      "passed": true
+    },
+    {
+      "check": "Factory 18: fine_tools on usable floor",
+      "passed": true
+    },
+    {
+      "check": "Factory 18: contiguous native workstation network",
+      "passed": true
+    },
+    {
+      "check": "Factory 19: workbench on usable floor",
+      "passed": true
+    },
+    {
+      "check": "Factory 19: ranged on usable floor",
+      "passed": true
+    },
+    {
+      "check": "Factory 19: sawmill on usable floor",
+      "passed": true
+    },
+    {
+      "check": "Factory 19: forge on usable floor",
+      "passed": true
+    },
+    {
+      "check": "Factory 19: fine_tools on usable floor",
+      "passed": true
+    },
+    {
+      "check": "Factory 19: contiguous native workstation network",
+      "passed": true
+    },
+    {
+      "check": "Factory 20: workbench on usable floor",
+      "passed": true
+    },
+    {
+      "check": "Factory 20: armor on usable floor",
+      "passed": true
+    },
+    {
+      "check": "Factory 20: sewing on usable floor",
+      "passed": true
+    },
+    {
+      "check": "Factory 20: contiguous native workstation network",
+      "passed": true
+    },
+    {
+      "check": "Factory 21: workbench on usable floor",
+      "passed": true
+    },
+    {
+      "check": "Factory 21: altar on usable floor",
+      "passed": true
+    },
+    {
+      "check": "Factory 21: jeweler on usable floor",
+      "passed": true
+    },
+    {
+      "check": "Factory 21: contiguous native workstation network",
+      "passed": true
+    },
+    {
+      "check": "Factory 22: workbench on usable floor",
+      "passed": true
+    },
+    {
+      "check": "Factory 22: jeweler on usable floor",
+      "passed": true
+    },
+    {
+      "check": "Factory 22: fine_tools on usable floor",
+      "passed": true
+    },
+    {
+      "check": "Factory 22: forge on usable floor",
+      "passed": true
+    },
+    {
+      "check": "Factory 22: altar on usable floor",
+      "passed": true
+    },
+    {
+      "check": "Factory 22: contiguous native workstation network",
+      "passed": true
+    },
+    {
+      "check": "Factory 23: workbench on usable floor",
+      "passed": true
+    },
+    {
+      "check": "Factory 23: sawmill on usable floor",
+      "passed": true
+    },
+    {
+      "check": "Factory 23: sewing on usable floor",
+      "passed": true
+    },
+    {
+      "check": "Factory 23: forge on usable floor",
+      "passed": true
+    },
+    {
+      "check": "Factory 23: contiguous native workstation network",
+      "passed": true
+    },
+    {
+      "check": "Shop 0: vendor on usable floor clear of counter",
+      "passed": true
+    },
+    {
+      "check": "Shop 1: vendor on usable floor clear of counter",
+      "passed": true
+    },
+    {
+      "check": "Shop 2: vendor on usable floor clear of counter",
+      "passed": true
+    },
+    {
+      "check": "Shop 3: vendor on usable floor clear of counter",
+      "passed": true
+    },
+    {
+      "check": "Shop 4: vendor on usable floor clear of counter",
+      "passed": true
+    },
+    {
+      "check": "Shop 5: vendor on usable floor clear of counter",
+      "passed": true
+    },
+    {
+      "check": "Shop 6: vendor on usable floor clear of counter",
+      "passed": true
+    },
+    {
+      "check": "Shop 7: vendor on usable floor clear of counter",
+      "passed": true
+    },
+    {
+      "check": "Shop 8: vendor on usable floor clear of counter",
+      "passed": true
+    },
+    {
+      "check": "Shop 9: vendor on usable floor clear of counter",
+      "passed": true
+    },
+    {
+      "check": "Shop 10: vendor on usable floor clear of counter",
+      "passed": true
+    },
+    {
+      "check": "Shop 11: vendor on usable floor clear of counter",
+      "passed": true
+    },
+    {
+      "check": "Shop 12: vendor on usable floor clear of counter",
+      "passed": true
+    },
+    {
+      "check": "Shop 13: vendor on usable floor clear of counter",
+      "passed": true
+    },
+    {
+      "check": "Shop 14: vendor on usable floor clear of counter",
+      "passed": true
+    },
+    {
+      "check": "Shop 15: vendor on usable floor clear of counter",
+      "passed": true
+    },
+    {
+      "check": "Shop 16: vendor on usable floor clear of counter",
+      "passed": true
+    },
+    {
+      "check": "Shop 17: vendor on usable floor clear of counter",
+      "passed": true
+    },
+    {
+      "check": "Shop 18: vendor on usable floor clear of counter",
+      "passed": true
+    },
+    {
+      "check": "Shop 19: vendor on usable floor clear of counter",
+      "passed": true
+    },
+    {
+      "check": "Shop 20: vendor on usable floor clear of counter",
+      "passed": true
+    },
+    {
+      "check": "Shop 21: vendor on usable floor clear of counter",
+      "passed": true
+    },
+    {
+      "check": "Shop 22: vendor on usable floor clear of counter",
+      "passed": true
+    },
+    {
+      "check": "Shop 23: vendor on usable floor clear of counter",
+      "passed": true
+    },
+    {
+      "check": "Shop 24: vendor on usable floor clear of counter",
+      "passed": true
+    },
+    {
+      "check": "Shop 25: vendor on usable floor clear of counter",
+      "passed": true
+    },
+    {
+      "check": "Shop 26: vendor on usable floor clear of counter",
+      "passed": true
+    },
+    {
+      "check": "Shop 27: vendor on usable floor clear of counter",
+      "passed": true
+    },
+    {
+      "check": "Shop 28: vendor on usable floor clear of counter",
+      "passed": true
+    },
+    {
+      "check": "Shop 29: vendor on usable floor clear of counter",
+      "passed": true
+    },
+    {
+      "check": "Shop 30: vendor on usable floor clear of counter",
+      "passed": true
+    },
+    {
+      "check": "Shop 31: vendor on usable floor clear of counter",
+      "passed": true
+    },
+    {
+      "check": "Shop 32: vendor on usable floor clear of counter",
+      "passed": true
+    },
+    {
+      "check": "Shop 33: vendor on usable floor clear of counter",
+      "passed": true
+    },
+    {
+      "check": "Shop 34: vendor on usable floor clear of counter",
+      "passed": true
+    },
+    {
+      "check": "Shop 35: vendor on usable floor clear of counter",
+      "passed": true
+    },
+    {
+      "check": "Shop 36: vendor on usable floor clear of counter",
+      "passed": true
+    },
+    {
+      "check": "Shop 37: vendor on usable floor clear of counter",
+      "passed": true
+    },
+    {
+      "check": "Shop 38: vendor on usable floor clear of counter",
+      "passed": true
+    },
+    {
+      "check": "Shop 39: vendor on usable floor clear of counter",
+      "passed": true
+    },
+    {
+      "check": "Shop 40: vendor on usable floor clear of counter",
+      "passed": true
+    },
+    {
+      "check": "Shop 41: vendor on usable floor clear of counter",
+      "passed": true
+    },
+    {
+      "check": "Shop 42: vendor on usable floor clear of counter",
+      "passed": true
+    },
+    {
+      "check": "Shop 43: vendor on usable floor clear of counter",
+      "passed": true
+    },
+    {
+      "check": "Shop 44: vendor on usable floor clear of counter",
+      "passed": true
+    },
+    {
+      "check": "Shop 45: vendor on usable floor clear of counter",
+      "passed": true
+    },
+    {
+      "check": "Shop 46: vendor on usable floor clear of counter",
+      "passed": true
+    },
+    {
+      "check": "Shop 47: vendor on usable floor clear of counter",
+      "passed": true
+    },
+    {
+      "check": "Shop 48: vendor on usable floor clear of counter",
+      "passed": true
+    },
+    {
+      "check": "Shop 49: vendor on usable floor clear of counter",
+      "passed": true
+    },
+    {
+      "check": "Shop 50: vendor on usable floor clear of counter",
+      "passed": true
+    },
+    {
+      "check": "Shop 51: vendor on usable floor clear of counter",
+      "passed": true
+    },
+    {
+      "check": "Shop 52: vendor on usable floor clear of counter",
+      "passed": true
+    },
+    {
+      "check": "Shop 53: vendor on usable floor clear of counter",
+      "passed": true
+    },
+    {
+      "check": "Shop 54: vendor on usable floor clear of counter",
+      "passed": true
+    },
+    {
+      "check": "Shop 55: vendor on usable floor clear of counter",
+      "passed": true
+    },
+    {
+      "check": "Shop 56: vendor on usable floor clear of counter",
+      "passed": true
+    },
+    {
+      "check": "Shop 57: vendor on usable floor clear of counter",
+      "passed": true
+    },
+    {
+      "check": "Shop 58: vendor on usable floor clear of counter",
+      "passed": true
+    },
+    {
+      "check": "Shop 59: vendor on usable floor clear of counter",
+      "passed": true
+    },
+    {
+      "check": "Shop 60: vendor on usable floor clear of counter",
+      "passed": true
+    },
+    {
+      "check": "Shop 61: vendor on usable floor clear of counter",
+      "passed": true
+    },
+    {
+      "check": "Shop 62: vendor on usable floor clear of counter",
+      "passed": true
+    },
+    {
+      "check": "Shop 63: vendor on usable floor clear of counter",
+      "passed": true
+    },
+    {
+      "check": "Exact accepted 5.1.2 layout retained",
+      "passed": true
+    },
+    {
+      "check": "Two independent generations match shipped MAP06 byte for byte",
+      "passed": true
+    }
+  ],
+  "limits": "Static topology does not prove actor traffic, interactions or author visual acceptance."
+}

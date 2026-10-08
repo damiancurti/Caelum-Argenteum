@@ -1,6 +1,70 @@
 # Caelum Argenteum — Current systems and rules
 
-Documentation version: **5.1.2** — 2026-10-07.
+Documentation version: **5.1.3** — 2026-10-08.
+
+## Functional port city contract (#133)
+
+The campaign siege begins **15 November 1889 at 13:00**. New MAP06 starts
+with the same 600 soldiers housed; the surviving actors walk through doors to
+their assigned formations. Attackers start at the calendar boundary without
+waiting for the defenders. Legacy already active sieges are not rewound.
+Unloaded hub maps do not simulate movement: on return, the current civil date
+triggers the still-unstarted event once. No teleport or offline casualty is implied.
+
+Street deployment follows walkable ground and keeps artillery stair routes as a
+separate phase. Soldiers can fight during deployment, wait for blocked doors and
+resume after obstacles clear. Assigned positions retain their original identities;
+front rows temporarily make an access column for deeper posts and then return.
+Local detours use native collision and movement, with a bounded fair query queue;
+they do not ignore bodies or reset resources. A retained harbor bed is avoided
+by an explicit road-point override, not removed. Deployment and carbine state
+remain attached to the individual actor across saves and hub reopen.
+
+Each of 160 homes has a medium table, six native chairs, a native bed and an
+empty bathroom. The 64-MU grid gives 123/62/20 usable cells: **60.000% living,
+30.244% bedroom, 9.756% bathroom**. Wall cells and raised window sills are
+excluded; entrance/internal doorway circulation belongs to the living/bedroom
+areas. INTERIORS.json owns geometry, occupants, factory profiles and coordinates.
+The west tower reserve formation is translated 256 MU east as a group in the
+new revision: the old 14-position grid crossed the wall and exterior. Its
+40-MU spacing, identities and formation role are retained; legacy data stay exact.
+
+Shop equipment is **T1 only**, with one unit per matching equipment variant,
+20 per food/drink type, 100 per ammunition type, and 200 copper per independent
+vendor; **no automatic restocking**. The six specializations are provisions,
+melee, ranged/ammunition, jewelry, physical armor, and magic weapons/armor.
+Existing purchase/sale margins remain 150%/50%, rounded per lot as before.
+Author clarification: medikit/life potion, Anima potion and energy drink each
+have base value **3 x food ration = 12 copper**. A carbine cartridge has base
+value **4 x one arrow**; arrows/bolts use their existing material recipe and
+T1 manufacturing markup, divided by batch size. Prices are not inferred from
+Doom assets. Factories grant no inputs, recipe knowledge or efficiency changes.
+
+Vendors are static, non-combat actors for this patch, as chosen by the author.
+Their native inventories and 200-copper wallets belong to the individual map
+actor, not to Palomo or a visiting player. Initial stock is materialized once
+when first opened; sold equipment remains the same instance with its size,
+identity, durability and water content. Purchases/sales preflight money, load,
+Box slots and all needed native instances before committing. Equipped, reserved
+and flagged equipment cannot be sold. Arrows/bolts retain their existing personal
+inventory storage; the trade service does not invent Box storage for those stacks.
+Catalogue rows per specialization: 5 provision types, 65 melee variants,
+20 ranged weapon variants plus 3 ammunition stacks, 9 jewelry variants,
+75 physical armor/shield variants, and 125 magical weapon/armor/shield variants.
+Sized equipment covers XS through XL; essence weapons cover all five essences.
+Magic shields belong to the magical specialization. Basic clothing is not a
+manufactured stock item. Tiers 2/3, filled water containers and javelin ammunition
+outside the three-type ammunition catalogue are not added to shop stock.
+
+New-city soldiers carry their existing sword/shield and a normal T1/M carbine.
+`CaelumCityCarbine` revision 1 owns that weapon's condition, magazine, reload and
+shot timing. Only reserve availability is infinite: ten-shot magazines, the
+existing Dexterity-scaled five-second base reload, Air/thermal cost, 60-metre
+range, spread, critical chance, damage, projectiles and wear remain authoritative.
+There is no physical infinite ammo stack or added ammunition loot. Melee selection,
+pain, physical stun and death cancel reload without creating rounds. Holding the
+carbine does not simultaneously enable the shield. Legacy defenders retain the
+accepted sword behavior for matched #132 comparison and compatibility.
 
 ## Thermal exposure and energy transfer (#130)
 

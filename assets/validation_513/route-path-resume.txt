@@ -1,0 +1,1051 @@
+Log started: 2026-10-08 01:42:36
+GZDoom version g4.14.2
+D_DoomInit: Static RNGseed 116 set.
+W_Init: Init WADfiles.
+adding C:/Program Files (x86)/GZDoom/gzdoom.pk3, 692 lumps
+adding C:/Program Files (x86)/GZDoom/game_support.pk3, 3308 lumps
+adding C:/Program Files (x86)/Steam/steamapps/common/ultimate doom/base/doom2/DOOM2.WAD, 2919 lumps
+adding C:/Program Files (x86)/Steam/steamapps/common/Ultimate Doom/rerelease/id24res.wad, 530 lumps
+adding C:/Program Files (x86)/GZDoom/game_widescreen_gfx.pk3, 214 lumps
+adding C:/GZDooMProjects/CaelumArgenteum/build/issue133/production.pk3, 6211 lumps
+adding C:/GZDooMProjects/CaelumArgenteum/build/issue133/routes.pk3, 3 lumps
+S_Init: Setting up sound.
+I_InitSound: Initializing OpenAL
+  Opened device OpenAL Soft on G27F (NVIDIA High Definition Audio)
+  EFX enabled
+I_InitInput
+I_StartupMouse
+I_StartupKeyboard
+I_StartupXInput
+I_StartupRawPS2
+I_StartupDirectInputJoystick
+Vulkan device: NVIDIA GeForce RTX 3070 Ti
+Vulkan device type: discrete gpu
+Vulkan version: 1.4.303 (api) 576.352.0 (driver)
+Vulkan extensions: VK_KHR_16bit_storage VK_KHR_8bit_storage VK_KHR_acceleration_structure VK_KHR_bind_memory2 VK_KHR_buffer_device_address VK_KHR_calibrated_timestamps VK_KHR_compute_shader_derivatives VK_KHR_cooperative_matrix VK_KHR_copy_commands2 VK_KHR_create_renderpass2 VK_KHR_dedicated_allocation VK_KHR_deferred_host_operations VK_KHR_depth_stencil_resolve VK_KHR_descriptor_update_template VK_KHR_device_group VK_KHR_draw_indirect_count VK_KHR_driver_properties VK_KHR_dynamic_rendering VK_KHR_dynamic_rendering_local_read VK_KHR_external_fence VK_KHR_external_fence_win32 VK_KHR_external_memory VK_KHR_external_memory_win32 VK_KHR_external_semaphore VK_KHR_external_semaphore_win32 VK_KHR_format_feature_flags2 VK_KHR_fragment_shader_barycentric VK_KHR_fragment_shading_rate VK_KHR_get_memory_requirements2 VK_KHR_global_priority VK_KHR_image_format_list VK_KHR_imageless_framebuffer VK_KHR_index_type_uint8 VK_KHR_line_rasterization VK_KHR_load_store_op_none VK_KHR_maintenance1 VK_KHR_maintenance2 VK_KHR_maintenance3 VK_KHR_maintenance4 VK_KHR_maintenance5 VK_KHR_maintenance6 VK_KHR_maintenance7 VK_KHR_map_memory2 VK_KHR_multiview VK_KHR_pipeline_binary VK_KHR_pipeline_executable_properties VK_KHR_pipeline_library VK_KHR_present_id VK_KHR_present_wait VK_KHR_push_descriptor VK_KHR_ray_query VK_KHR_ray_tracing_maintenance1 VK_KHR_ray_tracing_pipeline VK_KHR_ray_tracing_position_fetch VK_KHR_relaxed_block_layout VK_KHR_sampler_mirror_clamp_to_edge VK_KHR_sampler_ycbcr_conversion VK_KHR_separate_depth_stencil_layouts VK_KHR_shader_atomic_int64 VK_KHR_shader_clock VK_KHR_shader_draw_parameters VK_KHR_shader_expect_assume VK_KHR_shader_float16_int8 VK_KHR_shader_float_controls VK_KHR_shader_float_controls2 VK_KHR_shader_integer_dot_product VK_KHR_shader_maximal_reconvergence VK_KHR_shader_non_semantic_info VK_KHR_shader_quad_control VK_KHR_shader_relaxed_extended_instruction VK_KHR_shader_subgroup_extended_types VK_KHR_shader_subgroup_rotate VK_KHR_shader_subgroup_uniform_control_flow VK_KHR_shader_terminate_invocation VK_KHR_spirv_1_4 VK_KHR_storage_buffer_storage_class VK_KHR_swapchain VK_KHR_swapchain_mutable_format VK_KHR_synchronization2 VK_KHR_timeline_semaphore VK_KHR_uniform_buffer_standard_layout VK_KHR_variable_pointers VK_KHR_vertex_attribute_divisor VK_KHR_video_decode_av1 VK_KHR_video_decode_h264 VK_KHR_video_decode_h265 VK_KHR_video_decode_queue VK_KHR_video_encode_h264 VK_KHR_video_encode_h265 VK_KHR_video_encode_quantization_map VK_KHR_video_encode_queue VK_KHR_video_maintenance1 VK_KHR_video_maintenance2 VK_KHR_video_queue VK_KHR_vulkan_memory_model VK_KHR_win32_keyed_mutex VK_KHR_workgroup_memory_explicit_layout VK_KHR_zero_initialize_workgroup_memory VK_EXT_4444_formats VK_EXT_attachment_feedback_loop_dynamic_state VK_EXT_attachment_feedback_loop_layout VK_EXT_blend_operation_advanced VK_EXT_border_color_swizzle VK_EXT_buffer_device_address VK_EXT_calibrated_timestamps VK_EXT_color_write_enable VK_EXT_conditional_rendering VK_EXT_conservative_rasterization VK_EXT_custom_border_color VK_EXT_depth_bias_control VK_EXT_depth_clamp_control VK_EXT_depth_clamp_zero_one VK_EXT_depth_clip_control VK_EXT_depth_clip_enable VK_EXT_depth_range_unrestricted VK_EXT_descriptor_buffer VK_EXT_descriptor_indexing VK_EXT_device_address_binding_report VK_EXT_device_fault VK_EXT_device_generated_commands VK_EXT_discard_rectangles VK_EXT_dynamic_rendering_unused_attachments VK_EXT_extended_dynamic_state VK_EXT_extended_dynamic_state2 VK_EXT_extended_dynamic_state3 VK_EXT_external_memory_host VK_EXT_fragment_shader_interlock VK_EXT_full_screen_exclusive VK_EXT_global_priority VK_EXT_global_priority_query VK_EXT_graphics_pipeline_library VK_EXT_hdr_metadata VK_EXT_host_image_copy VK_EXT_host_query_reset VK_EXT_image_2d_view_of_3d VK_EXT_image_robustness VK_EXT_image_sliced_view_of_3d VK_EXT_image_view_min_lod VK_EXT_index_type_uint8 VK_EXT_inline_uniform_block VK_EXT_legacy_vertex_attributes VK_EXT_line_rasterization VK_EXT_load_store_op_none VK_EXT_memory_budget VK_EXT_memory_priority VK_EXT_mesh_shader VK_EXT_multi_draw VK_EXT_mutable_descriptor_type VK_EXT_nested_command_buffer VK_EXT_non_seamless_cube_map VK_EXT_opacity_micromap VK_EXT_pageable_device_local_memory VK_EXT_pci_bus_info VK_EXT_pipeline_creation_cache_control VK_EXT_pipeline_creation_feedback VK_EXT_pipeline_library_group_handles VK_EXT_pipeline_robustness VK_EXT_post_depth_coverage VK_EXT_present_mode_fifo_latest_ready VK_EXT_primitive_topology_list_restart VK_EXT_primitives_generated_query VK_EXT_private_data VK_EXT_provoking_vertex VK_EXT_queue_family_foreign VK_EXT_robustness2 VK_EXT_sample_locations VK_EXT_sampler_filter_minmax VK_EXT_scalar_block_layout VK_EXT_separate_stencil_usage VK_EXT_shader_atomic_float VK_EXT_shader_demote_to_helper_invocation VK_EXT_shader_image_atomic_int64 VK_EXT_shader_module_identifier VK_EXT_shader_object VK_EXT_shader_replicated_composites VK_EXT_shader_subgroup_ballot VK_EXT_shader_subgroup_vote VK_EXT_shader_viewport_index_layer VK_EXT_subgroup_size_control VK_EXT_swapchain_maintenance1 VK_EXT_texel_buffer_alignment VK_EXT_tooling_info VK_EXT_transform_feedback VK_EXT_vertex_attribute_divisor VK_EXT_vertex_attribute_robustness VK_EXT_vertex_input_dynamic_state VK_EXT_ycbcr_2plane_444_formats VK_EXT_ycbcr_image_arrays VK_NV_acquire_winrt_display VK_NV_clip_space_w_scaling VK_NV_cluster_acceleration_structure VK_NV_compute_shader_derivatives VK_NV_cooperative_matrix VK_NV_cooperative_matrix2 VK_NV_cooperative_vector VK_NV_copy_memory_indirect VK_NV_corner_sampled_image VK_NV_coverage_reduction_mode VK_NV_cuda_kernel_launch VK_NV_dedicated_allocation VK_NV_dedicated_allocation_image_aliasing VK_NV_descriptor_pool_overallocation VK_NV_device_diagnostic_checkpoints VK_NV_device_diagnostics_config VK_NV_device_generated_commands VK_NV_device_generated_commands_compute VK_NV_disk_cache_utils VK_NV_external_memory VK_NV_external_memory_win32 VK_NV_fill_rectangle VK_NV_fragment_coverage_to_color VK_NV_fragment_shader_barycentric VK_NV_fragment_shading_rate_enums VK_NV_framebuffer_mixed_samples VK_NV_geometry_shader_passthrough VK_NV_inherited_viewport_scissor VK_NV_internal_nvpresent VK_NV_linear_color_attachment VK_NV_low_latency VK_NV_low_latency2 VK_NV_memory_decompression VK_NV_mesh_shader VK_NV_optical_flow VK_NV_partitioned_acceleration_structure VK_NV_present_metering VK_NV_raw_access_chains VK_NV_ray_tracing VK_NV_ray_tracing_invocation_reorder VK_NV_ray_tracing_motion_blur VK_NV_representative_fragment_test VK_NV_sample_mask_override_coverage VK_NV_scissor_exclusive VK_NV_shader_atomic_float16_vector VK_NV_shader_image_footprint VK_NV_shader_sm_builtins VK_NV_shader_subgroup_partitioned VK_NV_shading_rate_image VK_NV_viewport_array2 VK_NV_viewport_swizzle VK_NV_win32_keyed_mutex VK_NVX_binary_import VK_NVX_image_view_handle VK_NVX_multiview_per_view_attributes VK_AMD_buffer_marker VK_GOOGLE_hlsl_functionality1 VK_GOOGLE_user_type
+Max. texture size: 32768
+Max. uniform buffer range: 65536
+Min. uniform buffer offset alignment: 64
+Resolution: 1280 x 720
+I_Init: Setting up machine state.
+CPU speed: 3400 MHz
+CPU Vendor ID: AuthenticAMD
+  Name: AMD Ryzen 9 5950X 16-Core Processor 
+  Family 25 (25), Model 33, Stepping 0
+  Features: SSE2 SSE3 SSSE3 SSE4.1 SSE4.2 AVX AVX2 F16C FMA3 BMI1 BMI2 HyperThreading
+V_Init: allocate screen.
+ST_Init: Init startup screen.
+Checking cmd-line parameters...
+S_InitData: Load sound definitions.
+G_ParseMapInfo: Load map definitions.
+Texman.Init: Init texture manager.
+ParseTeamInfo: Load team definitions.
+LoadActors: Load actor definitions.
+script parsing took 1041.05 ms
+R_Init: Init Doom refresh subsystem.
+DecalLibrary: Load decals.
+M_Init: Init menus.
+P_Init: Init Playloop state.
+ParseSBarInfo: Loading custom status bar definition.
+D_CheckNetGame: Checking network game status.
+player 1 of 1 (1 nodes)
+
+----------------------------------------
+
+MAP06 - Barracas al Sud — fortified port
+
+CA133 ROUTE_PROGRESS tic=19250 alive=600 left=600 ground=459 formed=466
+CA133 ROUTE_PROGRESS tic=21000 alive=600 left=600 ground=474 formed=479
+CA133 ROUTE_PROGRESS tic=22750 alive=600 left=600 ground=477 formed=484
+CA133 ROUTE_PROGRESS tic=24500 alive=600 left=600 ground=481 formed=483
+CA133 ROUTE_PROGRESS tic=26250 alive=600 left=600 ground=482 formed=488
+CA133 ROUTE_PENDING id=20 step=10 complete=0 crew=0/0 pos=-29470.7,-12763.6,0.0 station=-30042.0,-14560.0,384.0
+CA133 ROUTE_DIAG id=20 yield=0 for=-1 goal=-29472.0,-12800.0 next=-29472.0,-12800.0 block=218 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=21 step=9 complete=0 crew=0/0 pos=-29435.3,-12760.2,0.0 station=-29862.0,-14560.0,384.0
+CA133 ROUTE_DIAG id=21 yield=0 for=-1 goal=-29472.0,-12768.0 next=-29472.0,-12768.0 block=20 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=74 step=9 complete=0 crew=0/0 pos=-28091.8,-13347.5,0.0 station=-28096.0,-13352.0,0.0
+CA133 ROUTE_DIAG id=74 yield=0 for=-1 goal=-28064.0,-13344.0 next=-28064.0,-13344.0 block=73 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=82 step=11 complete=1 crew=0/0 pos=-27952.2,-13144.5,0.0 station=-28016.0,-13272.0,0.0
+CA133 ROUTE_DIAG id=82 yield=1 for=74 goal=-27952.0,-13144.0 next=-27952.0,-13144.0 block=-1 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=83 step=11 complete=1 crew=0/0 pos=-27992.0,-13144.0,0.0 station=-28056.0,-13272.0,0.0
+CA133 ROUTE_DIAG id=83 yield=1 for=74 goal=-27992.0,-13144.0 next=-27992.0,-13144.0 block=-1 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=88 step=9 complete=0 crew=0/0 pos=-24253.4,-13342.0,0.0 station=-24256.0,-13352.0,0.0
+CA133 ROUTE_DIAG id=88 yield=0 for=-1 goal=-24224.0,-13344.0 next=-24224.0,-13344.0 block=87 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=92 step=9 complete=0 crew=0/0 pos=-24222.3,-13235.3,0.0 station=-24216.0,-13312.0,0.0
+CA133 ROUTE_DIAG id=92 yield=0 for=-1 goal=-24224.0,-13280.0 next=-24224.0,-13280.0 block=97 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=93 step=9 complete=0 crew=0/0 pos=-24189.0,-13231.7,0.0 station=-24256.0,-13312.0,0.0
+CA133 ROUTE_DIAG id=93 yield=0 for=-1 goal=-24224.0,-13280.0 next=-24224.0,-13280.0 block=92 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=97 step=11 complete=1 crew=0/0 pos=-24216.0,-13272.0,0.0 station=-24216.0,-13272.0,0.0
+CA133 ROUTE_DIAG id=97 yield=1 for=92 goal=-24152.0,-13144.0 next=-24152.0,-13144.0 block=92 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=102 step=9 complete=0 crew=0/0 pos=-20382.9,-13315.5,0.0 station=-20416.0,-13352.0,0.0
+CA133 ROUTE_DIAG id=102 yield=0 for=-1 goal=-20384.0,-13344.0 next=-20384.0,-13344.0 block=101 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=106 step=10 complete=0 crew=0/0 pos=-20382.0,-13279.7,0.0 station=-20376.0,-13312.0,0.0
+CA133 ROUTE_DIAG id=106 yield=0 for=-1 goal=-20376.0,-13312.0 next=-20376.0,-13312.0 block=102 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=107 step=9 complete=0 crew=0/0 pos=-20414.3,-13276.3,0.0 station=-20416.0,-13312.0,0.0
+CA133 ROUTE_DIAG id=107 yield=0 for=-1 goal=-20384.0,-13280.0 next=-20384.0,-13280.0 block=106 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=111 step=7 complete=1 crew=0/0 pos=-20312.0,-13144.0,0.0 station=-20376.0,-13272.0,0.0
+CA133 ROUTE_DIAG id=111 yield=1 for=106 goal=-20312.0,-13144.0 next=-20312.0,-13144.0 block=-1 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=112 step=7 complete=1 crew=0/0 pos=-20415.8,-13239.5,0.0 station=-20416.0,-13272.0,0.0
+CA133 ROUTE_DIAG id=112 yield=1 for=-1 goal=-20416.0,-13272.0 next=-20416.0,-13272.0 block=107 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=126 step=9 complete=0 crew=0/0 pos=-16574.3,-13267.4,0.0 station=-16576.0,-13272.0,0.0
+CA133 ROUTE_DIAG id=126 yield=0 for=-1 goal=-16544.0,-13280.0 next=-16544.0,-13280.0 block=125 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=144 step=9 complete=0 crew=0/0 pos=-8891.7,-13346.9,0.0 station=-8896.0,-13352.0,0.0
+CA133 ROUTE_DIAG id=144 yield=0 for=-1 goal=-8864.0,-13344.0 next=-8864.0,-13344.0 block=143 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=152 step=9 complete=1 crew=0/0 pos=-8752.0,-13144.0,0.0 station=-8816.0,-13272.0,0.0
+CA133 ROUTE_DIAG id=152 yield=1 for=144 goal=-8752.0,-13144.0 next=-8752.0,-13144.0 block=-1 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=153 step=11 complete=1 crew=0/0 pos=-8792.0,-13144.0,0.0 station=-8856.0,-13272.0,0.0
+CA133 ROUTE_DIAG id=153 yield=1 for=144 goal=-8792.0,-13144.0 next=-8792.0,-13144.0 block=-1 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=159 step=2 complete=0 crew=0/0 pos=-842.5,1659.6,0.0 station=-5096.0,-13352.0,0.0
+CA133 ROUTE_DIAG id=159 yield=0 for=-1 goal=0.0,0.0 next=0.0,0.0 block=-1 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=182 step=5 complete=0 crew=0/0 pos=-1212.2,-13267.5,0.0 station=-1216.0,-13272.0,0.0
+CA133 ROUTE_DIAG id=182 yield=0 for=-1 goal=-1184.0,-13280.0 next=-1184.0,-13280.0 block=181 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=191 step=7 complete=0 crew=0/0 pos=-28400.0,14886.8,0.0 station=-28480.0,14880.0,0.0
+CA133 ROUTE_DIAG id=191 yield=0 for=-1 goal=-28448.0,14880.0 next=-28448.0,14880.0 block=196 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=192 step=7 complete=0 crew=0/0 pos=-28432.0,14952.9,0.0 station=-28480.0,14920.0,0.0
+CA133 ROUTE_DIAG id=192 yield=0 for=-1 goal=-28448.0,14944.0 next=-28448.0,14944.0 block=197 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=194 step=9 complete=1 crew=0/0 pos=-28504.0,14672.0,0.0 station=-28440.0,14800.0,0.0
+CA133 ROUTE_DIAG id=194 yield=1 for=192 goal=-28504.0,14672.0 next=-28504.0,14672.0 block=-1 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=201 step=7 complete=0 crew=0/0 pos=-477.7,14926.4,0.0 station=-488.0,14920.0,0.0
+CA133 ROUTE_DIAG id=201 yield=0 for=-1 goal=-480.0,14944.0 next=-480.0,14944.0 block=207 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=206 step=8 complete=0 crew=0/0 pos=-439.4,14922.3,-0.0 station=-448.0,14920.0,0.0
+CA133 ROUTE_DIAG id=206 yield=0 for=-1 goal=-448.0,14920.0 next=-448.0,14920.0 block=201 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=208 step=3 complete=0 crew=0/0 pos=-9805.1,-5474.8,0.0 station=-408.0,14800.0,0.0
+CA133 ROUTE_DIAG id=208 yield=0 for=-1 goal=-9824.0,-5472.0 next=-9824.0,-5472.0 block=528 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=209 step=3 complete=0 crew=0/0 pos=-8269.1,-5474.8,0.0 station=-408.0,14840.0,0.0
+CA133 ROUTE_DIAG id=209 yield=0 for=-1 goal=-8288.0,-5472.0 next=-8288.0,-5472.0 block=529 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=210 step=3 complete=0 crew=0/0 pos=-6733.1,-5474.8,0.0 station=-408.0,14880.0,0.0
+CA133 ROUTE_DIAG id=210 yield=0 for=-1 goal=-6752.0,-5472.0 next=-6752.0,-5472.0 block=530 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=211 step=3 complete=0 crew=0/0 pos=-5197.1,-5474.8,0.0 station=-408.0,14920.0,0.0
+CA133 ROUTE_DIAG id=211 yield=0 for=-1 goal=-5216.0,-5472.0 next=-5216.0,-5472.0 block=531 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=212 step=3 complete=0 crew=0/0 pos=-3661.1,-5474.8,0.0 station=-29456.0,-12840.0,0.0
+CA133 ROUTE_DIAG id=212 yield=0 for=-1 goal=-3680.0,-5472.0 next=-3680.0,-5472.0 block=532 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=213 step=3 complete=0 crew=0/0 pos=-2125.1,-5474.8,0.0 station=-29496.0,-12840.0,0.0
+CA133 ROUTE_DIAG id=213 yield=0 for=-1 goal=-2144.0,-5472.0 next=-2144.0,-5472.0 block=533 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=214 step=3 complete=0 crew=0/0 pos=-589.1,-5474.8,0.0 station=-29536.0,-12840.0,0.0
+CA133 ROUTE_DIAG id=214 yield=0 for=-1 goal=-608.0,-5472.0 next=-608.0,-5472.0 block=534 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=215 step=3 complete=0 crew=0/0 pos=-20557.1,-3746.8,0.0 station=-29576.0,-12840.0,0.0
+CA133 ROUTE_DIAG id=215 yield=0 for=-1 goal=-20576.0,-3744.0 next=-20576.0,-3744.0 block=535 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=222 step=9 complete=0 crew=0/0 pos=-29467.3,-12728.2,0.0 station=-29456.0,-12760.0,0.0
+CA133 ROUTE_DIAG id=222 yield=0 for=-1 goal=-29472.0,-12768.0 next=-29472.0,-12768.0 block=20 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=223 step=9 complete=0 crew=0/0 pos=-29511.1,-12756.9,0.0 station=-29496.0,-12760.0,0.0
+CA133 ROUTE_DIAG id=223 yield=0 for=-1 goal=-29472.0,-12768.0 next=-29472.0,-12768.0 block=20 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=224 step=10 complete=0 crew=0/0 pos=-29549.0,-12764.3,0.0 station=-29536.0,-12760.0,0.0
+CA133 ROUTE_DIAG id=224 yield=0 for=-1 goal=-29536.0,-12760.0 next=-29536.0,-12760.0 block=223 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=225 step=10 complete=0 crew=0/0 pos=-29581.6,-12758.8,0.0 station=-29576.0,-12760.0,0.0
+CA133 ROUTE_DIAG id=225 yield=0 for=-1 goal=-29576.0,-12760.0 next=-29576.0,-12760.0 block=224 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=231 step=7 complete=0 crew=0/0 pos=306.3,-12792.2,0.0 station=304.0,-12800.0,0.0
+CA133 ROUTE_DIAG id=231 yield=0 for=-1 goal=288.0,-12768.0 next=288.0,-12768.0 block=236 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=232 step=7 complete=0 crew=0/0 pos=267.2,-12767.7,0.0 station=264.0,-12800.0,0.0
+CA133 ROUTE_DIAG id=232 yield=0 for=-1 goal=288.0,-12768.0 next=288.0,-12768.0 block=236 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=237 step=7 complete=0 crew=0/0 pos=263.6,-12734.2,0.0 station=264.0,-12760.0,0.0
+CA133 ROUTE_DIAG id=237 yield=0 for=-1 goal=288.0,-12768.0 next=288.0,-12768.0 block=232 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=239 step=9 complete=1 crew=0/0 pos=56.0,-12824.0,0.0 station=184.0,-12760.0,0.0
+CA133 ROUTE_DIAG id=239 yield=1 for=237 goal=56.0,-12824.0 next=56.0,-12824.0 block=-1 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=240 step=11 complete=1 crew=0/0 pos=-27952.0,14680.0,0.0 station=-28016.0,14808.0,0.0
+CA133 ROUTE_DIAG id=240 yield=1 for=249 goal=-27952.0,14680.0 next=-27952.0,14680.0 block=-1 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=241 step=11 complete=1 crew=0/0 pos=-27992.0,14680.0,0.0 station=-28056.0,14808.0,0.0
+CA133 ROUTE_DIAG id=241 yield=1 for=249 goal=-27992.0,14680.0 next=-27992.0,14680.0 block=-1 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=242 step=11 complete=1 crew=0/0 pos=-28032.2,14680.4,0.0 station=-28096.0,14808.0,0.0
+CA133 ROUTE_DIAG id=242 yield=1 for=249 goal=-28032.0,14680.0 next=-28032.0,14680.0 block=-1 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=243 step=11 complete=1 crew=0/0 pos=-28072.3,14680.7,0.0 station=-28136.0,14808.0,0.0
+CA133 ROUTE_DIAG id=243 yield=1 for=249 goal=-28072.0,14680.0 next=-28072.0,14680.0 block=-1 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=244 step=9 complete=1 crew=0/0 pos=-28112.0,14680.0,0.0 station=-28176.0,14808.0,0.0
+CA133 ROUTE_DIAG id=244 yield=1 for=249 goal=-28112.0,14680.0 next=-28112.0,14680.0 block=-1 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=246 step=11 complete=1 crew=0/0 pos=-28120.0,14720.0,0.0 station=-28056.0,14848.0,0.0
+CA133 ROUTE_DIAG id=246 yield=1 for=252 goal=-28120.0,14720.0 next=-28120.0,14720.0 block=-1 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=247 step=11 complete=1 crew=0/0 pos=-28159.8,14720.4,0.0 station=-28096.0,14848.0,0.0
+CA133 ROUTE_DIAG id=247 yield=1 for=252 goal=-28160.0,14720.0 next=-28160.0,14720.0 block=-1 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=248 step=11 complete=1 crew=0/0 pos=-28199.7,14720.7,0.0 station=-28136.0,14848.0,0.0
+CA133 ROUTE_DIAG id=248 yield=1 for=252 goal=-28200.0,14720.0 next=-28200.0,14720.0 block=-1 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=249 step=7 complete=0 crew=0/0 pos=-28191.9,14849.6,0.0 station=-28176.0,14848.0,0.0
+CA133 ROUTE_DIAG id=249 yield=0 for=-1 goal=-28192.0,14880.0 next=-28192.0,14880.0 block=254 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=252 step=9 complete=0 crew=0/0 pos=-28093.2,14879.9,0.0 station=-28096.0,14888.0,0.0
+CA133 ROUTE_DIAG id=252 yield=0 for=-1 goal=-28064.0,14880.0 next=-28064.0,14880.0 block=251 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=255 step=7 complete=1 crew=0/0 pos=-24112.0,14680.0,0.0 station=-24176.0,14808.0,0.0
+CA133 ROUTE_DIAG id=255 yield=1 for=267 goal=-24112.0,14680.0 next=-24112.0,14680.0 block=-1 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=256 step=9 complete=1 crew=0/0 pos=-24152.0,14680.0,0.0 station=-24216.0,14808.0,0.0
+CA133 ROUTE_DIAG id=256 yield=1 for=267 goal=-24152.0,14680.0 next=-24152.0,14680.0 block=-1 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=267 step=9 complete=0 crew=0/0 pos=-24252.6,14883.4,0.0 station=-24256.0,14888.0,0.0
+CA133 ROUTE_DIAG id=267 yield=0 for=-1 goal=-24224.0,14880.0 next=-24224.0,14880.0 block=266 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=271 step=7 complete=1 crew=0/0 pos=-20440.0,14680.0,0.0 station=-20376.0,14808.0,0.0
+CA133 ROUTE_DIAG id=271 yield=1 for=282 goal=-20440.0,14680.0 next=-20440.0,14680.0 block=-1 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=282 step=9 complete=0 crew=0/0 pos=-20411.8,14883.5,0.0 station=-20416.0,14888.0,0.0
+CA133 ROUTE_DIAG id=282 yield=0 for=-1 goal=-20384.0,14880.0 next=-20384.0,14880.0 block=281 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=287 step=9 complete=0 crew=0/0 pos=-16574.3,14803.4,0.0 station=-16576.0,14808.0,0.0
+CA133 ROUTE_DIAG id=287 yield=0 for=-1 goal=-16544.0,14816.0 next=-16544.0,14816.0 block=286 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=290 step=5 complete=0 crew=0/0 pos=-16462.8,14879.6,0.0 station=-16496.0,14848.0,0.0
+CA133 ROUTE_DIAG id=290 yield=0 for=-1 goal=-16480.0,14880.0 next=-16480.0,14880.0 block=295 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=291 step=5 complete=0 crew=0/0 pos=-16549.3,14927.7,0.0 station=-16536.0,14848.0,0.0
+CA133 ROUTE_DIAG id=291 yield=0 for=-1 goal=-16544.0,14880.0 next=-16544.0,14880.0 block=296 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=292 step=5 complete=0 crew=0/0 pos=-16568.6,14879.6,0.0 station=-16576.0,14848.0,0.0
+CA133 ROUTE_DIAG id=292 yield=0 for=-1 goal=-16544.0,14880.0 next=-16544.0,14880.0 block=296 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=297 step=9 complete=0 crew=0/0 pos=-16542.8,14842.4,0.0 station=-16576.0,14888.0,0.0
+CA133 ROUTE_DIAG id=297 yield=0 for=-1 goal=-16544.0,14880.0 next=-16544.0,14880.0 block=292 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=302 step=9 complete=0 crew=0/0 pos=-12733.9,14819.4,0.0 station=-12736.0,14808.0,0.0
+CA133 ROUTE_DIAG id=302 yield=0 for=-1 goal=-12704.0,14816.0 next=-12704.0,14816.0 block=301 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=305 step=5 complete=0 crew=0/0 pos=-12623.8,14879.7,0.0 station=-12656.0,14848.0,0.0
+CA133 ROUTE_DIAG id=305 yield=0 for=-1 goal=-12640.0,14880.0 next=-12640.0,14880.0 block=310 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=306 step=5 complete=0 crew=0/0 pos=-12733.7,14912.2,0.0 station=-12696.0,14848.0,0.0
+CA133 ROUTE_DIAG id=306 yield=0 for=-1 goal=-12704.0,14880.0 next=-12704.0,14880.0 block=311 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=307 step=5 complete=0 crew=0/0 pos=-12738.6,14879.5,0.0 station=-12736.0,14848.0,0.0
+CA133 ROUTE_DIAG id=307 yield=0 for=-1 goal=-12704.0,14880.0 next=-12704.0,14880.0 block=312 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=312 step=9 complete=0 crew=0/0 pos=-12702.9,14851.5,0.0 station=-12736.0,14888.0,0.0
+CA133 ROUTE_DIAG id=312 yield=0 for=-1 goal=-12704.0,14880.0 next=-12704.0,14880.0 block=311 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=319 step=2 complete=0 crew=0/0 pos=-768.7,1743.7,0.0 station=-8976.0,14808.0,0.0
+CA133 ROUTE_DIAG id=319 yield=0 for=-1 goal=0.0,0.0 next=0.0,0.0 block=-1 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=320 step=5 complete=0 crew=0/0 pos=-8777.2,14880.0,-0.0 station=-8816.0,14848.0,0.0
+CA133 ROUTE_DIAG id=320 yield=0 for=-1 goal=-8800.0,14880.0 next=-8800.0,14880.0 block=325 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=321 step=5 complete=0 crew=0/0 pos=-8856.6,14926.5,0.0 station=-8856.0,14848.0,0.0
+CA133 ROUTE_DIAG id=321 yield=0 for=-1 goal=-8864.0,14880.0 next=-8864.0,14880.0 block=326 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=322 step=5 complete=0 crew=0/0 pos=-8867.0,14849.4,-0.0 station=-8896.0,14848.0,0.0
+CA133 ROUTE_DIAG id=322 yield=0 for=-1 goal=-8864.0,14880.0 next=-8864.0,14880.0 block=327 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=335 step=5 complete=0 crew=0/0 pos=-4939.4,14879.7,0.0 station=-4976.0,14848.0,0.0
+CA133 ROUTE_DIAG id=335 yield=0 for=-1 goal=-4960.0,14880.0 next=-4960.0,14880.0 block=340 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=342 step=5 complete=0 crew=0/0 pos=-5053.2,14892.3,-0.0 station=-5056.0,14888.0,0.0
+CA133 ROUTE_DIAG id=342 yield=0 for=-1 goal=-5024.0,14880.0 next=-5024.0,14880.0 block=341 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=353 step=5 complete=0 crew=0/0 pos=-1255.4,14929.1,-0.0 station=-1256.0,14848.0,0.0
+CA133 ROUTE_DIAG id=353 yield=0 for=-1 goal=-1248.0,14880.0 next=-1248.0,14880.0 block=358 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=354 step=5 complete=0 crew=0/0 pos=-1332.9,14880.0,-0.0 station=-1296.0,14848.0,0.0
+CA133 ROUTE_DIAG id=354 yield=0 for=-1 goal=-1312.0,14880.0 next=-1312.0,14880.0 block=359 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=362 step=7 complete=0 crew=0/0 pos=-28527.8,-12859.8,0.0 station=-28520.0,-12864.0,0.0
+CA133 ROUTE_DIAG id=362 yield=0 for=-1 goal=-28512.0,-12832.0 next=-28512.0,-12832.0 block=361 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=372 step=7 complete=0 crew=0/0 pos=-28447.9,-12862.8,0.0 station=-28440.0,-12864.0,0.0
+CA133 ROUTE_DIAG id=372 yield=0 for=-1 goal=-28448.0,-12832.0 next=-28448.0,-12832.0 block=371 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=377 step=7 complete=0 crew=0/0 pos=-28511.8,-9019.1,0.0 station=-28520.0,-9024.0,0.0
+CA133 ROUTE_DIAG id=377 yield=0 for=-1 goal=-28512.0,-8992.0 next=-28512.0,-8992.0 block=376 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=380 step=9 complete=1 crew=0/0 pos=-28352.0,-8880.0,0.0 station=-28480.0,-8944.0,0.0
+CA133 ROUTE_DIAG id=380 yield=1 for=377 goal=-28352.0,-8880.0 next=-28352.0,-8880.0 block=-1 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=381 step=9 complete=1 crew=0/0 pos=-28352.3,-8920.2,0.0 station=-28480.0,-8984.0,0.0
+CA133 ROUTE_DIAG id=381 yield=1 for=377 goal=-28352.0,-8920.0 next=-28352.0,-8920.0 block=-1 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=382 step=8 complete=0 crew=0/0 pos=-28479.0,-9022.5,0.0 station=-28480.0,-9024.0,0.0
+CA133 ROUTE_DIAG id=382 yield=0 for=-1 goal=-28480.0,-9024.0 next=-28480.0,-9024.0 block=377 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=386 step=9 complete=1 crew=0/0 pos=-28312.2,-8920.1,0.0 station=-28440.0,-8984.0,0.0
+CA133 ROUTE_DIAG id=386 yield=1 for=377 goal=-28312.0,-8920.0 next=-28312.0,-8920.0 block=-1 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=387 step=9 complete=1 crew=0/0 pos=-28312.7,-9087.7,0.0 station=-28440.0,-9024.0,0.0
+CA133 ROUTE_DIAG id=387 yield=1 for=382 goal=-28312.0,-9088.0 next=-28312.0,-9088.0 block=-1 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=388 step=9 complete=1 crew=0/0 pos=-28312.7,-9127.7,0.0 station=-28440.0,-9064.0,0.0
+CA133 ROUTE_DIAG id=388 yield=1 for=382 goal=-28312.0,-9128.0 next=-28312.0,-9128.0 block=-1 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=389 step=9 complete=1 crew=0/0 pos=-28312.7,-9167.7,0.0 station=-28440.0,-9104.0,0.0
+CA133 ROUTE_DIAG id=389 yield=1 for=382 goal=-28312.0,-9168.0 next=-28312.0,-9168.0 block=-1 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=392 step=7 complete=0 crew=0/0 pos=-28512.1,-5181.5,0.0 station=-28520.0,-5184.0,0.0
+CA133 ROUTE_DIAG id=392 yield=0 for=-1 goal=-28512.0,-5152.0 next=-28512.0,-5152.0 block=391 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=405 step=6 complete=0 crew=0/0 pos=-28511.2,2608.0,0.0 station=-28520.0,-1264.0,0.0
+CA133 ROUTE_DIAG id=405 yield=0 for=-1 goal=-28512.0,2592.0 next=-28512.0,2592.0 block=420 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=406 step=6 complete=0 crew=0/0 pos=-28473.6,2592.0,0.0 station=-28520.0,-1304.0,0.0
+CA133 ROUTE_DIAG id=406 yield=0 for=-1 goal=-28512.0,2592.0 next=-28512.0,2592.0 block=405 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=407 step=6 complete=0 crew=0/0 pos=-28544.4,2618.4,0.0 station=-28520.0,-1344.0,0.0
+CA133 ROUTE_DIAG id=407 yield=0 for=-1 goal=-28512.0,2592.0 next=-28512.0,2592.0 block=405 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=408 step=6 complete=0 crew=0/0 pos=-28553.3,2578.7,0.0 station=-28520.0,-1384.0,0.0
+CA133 ROUTE_DIAG id=408 yield=0 for=-1 goal=-28512.0,2592.0 next=-28512.0,2592.0 block=420 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=409 step=6 complete=0 crew=0/0 pos=-28513.4,2656.0,0.0 station=-28520.0,-1424.0,0.0
+CA133 ROUTE_DIAG id=409 yield=0 for=-1 goal=-28512.0,2592.0 next=-28512.0,2592.0 block=407 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=410 step=6 complete=0 crew=0/0 pos=-28439.7,2615.6,0.0 station=-28480.0,-1264.0,0.0
+CA133 ROUTE_DIAG id=410 yield=0 for=-1 goal=-28448.0,2592.0 next=-28448.0,2592.0 block=425 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=411 step=6 complete=0 crew=0/0 pos=-28399.1,2592.0,0.0 station=-28480.0,-1304.0,0.0
+CA133 ROUTE_DIAG id=411 yield=0 for=-1 goal=-28448.0,2592.0 next=-28448.0,2592.0 block=425 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=412 step=6 complete=0 crew=0/0 pos=-28474.5,2640.0,0.0 station=-28480.0,-1344.0,0.0
+CA133 ROUTE_DIAG id=412 yield=0 for=-1 goal=-28448.0,2592.0 next=-28448.0,2592.0 block=410 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=413 step=6 complete=0 crew=0/0 pos=-28397.8,2624.0,0.0 station=-28480.0,-1384.0,0.0
+CA133 ROUTE_DIAG id=413 yield=0 for=-1 goal=-28448.0,2592.0 next=-28448.0,2592.0 block=411 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=417 step=7 complete=0 crew=0/0 pos=-28447.8,-1340.1,0.0 station=-28440.0,-1344.0,0.0
+CA133 ROUTE_DIAG id=417 yield=0 for=-1 goal=-28448.0,-1312.0 next=-28448.0,-1312.0 block=416 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=422 step=7 complete=0 crew=0/0 pos=-28518.6,2503.3,0.0 station=-28520.0,2496.0,0.0
+CA133 ROUTE_DIAG id=422 yield=0 for=-1 goal=-28512.0,2528.0 next=-28512.0,2528.0 block=421 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=425 step=8 complete=0 crew=0/0 pos=-28438.4,2576.4,0.0 station=-28480.0,2576.0,0.0
+CA133 ROUTE_DIAG id=425 yield=0 for=-1 goal=-28480.0,2576.0 next=-28480.0,2576.0 block=406 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=426 step=8 complete=0 crew=0/0 pos=-28444.7,2531.2,0.0 station=-28480.0,2536.0,0.0
+CA133 ROUTE_DIAG id=426 yield=0 for=-1 goal=-28480.0,2536.0 next=-28480.0,2536.0 block=432 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=427 step=7 complete=0 crew=0/0 pos=-28432.1,2491.3,0.0 station=-28480.0,2496.0,0.0
+CA133 ROUTE_DIAG id=427 yield=0 for=-1 goal=-28448.0,2528.0 next=-28448.0,2528.0 block=426 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=430 step=7 complete=0 crew=0/0 pos=-28404.9,2546.0,0.0 station=-28440.0,2576.0,0.0
+CA133 ROUTE_DIAG id=430 yield=0 for=-1 goal=-28448.0,2592.0 next=-28448.0,2592.0 block=425 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=431 step=9 complete=1 crew=0/0 pos=-28312.0,2472.0,0.0 station=-28440.0,2536.0,0.0
+CA133 ROUTE_DIAG id=431 yield=1 for=426 goal=-28312.0,2472.0 next=-28312.0,2472.0 block=-1 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=432 step=7 complete=0 crew=0/0 pos=-28479.8,2521.1,0.0 station=-28440.0,2496.0,0.0
+CA133 ROUTE_DIAG id=432 yield=0 for=-1 goal=-28448.0,2528.0 next=-28448.0,2528.0 block=426 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=437 step=7 complete=0 crew=0/0 pos=-28511.4,6341.5,0.0 station=-28520.0,6336.0,0.0
+CA133 ROUTE_DIAG id=437 yield=0 for=-1 goal=-28512.0,6368.0 next=-28512.0,6368.0 block=436 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=440 step=9 complete=1 crew=0/0 pos=-28352.7,6479.7,0.0 station=-28480.0,6416.0,0.0
+CA133 ROUTE_DIAG id=440 yield=1 for=437 goal=-28352.0,6480.0 next=-28352.0,6480.0 block=-1 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=441 step=9 complete=1 crew=0/0 pos=-28352.3,6439.8,0.0 station=-28480.0,6376.0,0.0
+CA133 ROUTE_DIAG id=441 yield=1 for=437 goal=-28352.0,6440.0 next=-28352.0,6440.0 block=-1 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=442 step=8 complete=0 crew=0/0 pos=-28476.8,6340.0,0.0 station=-28480.0,6336.0,0.0
+CA133 ROUTE_DIAG id=442 yield=0 for=-1 goal=-28480.0,6336.0 next=-28480.0,6336.0 block=437 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=447 step=7 complete=0 crew=0/0 pos=-28477.6,6373.5,0.0 station=-28440.0,6336.0,0.0
+CA133 ROUTE_DIAG id=447 yield=0 for=-1 goal=-28448.0,6368.0 next=-28448.0,6368.0 block=446 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=449 step=9 complete=1 crew=0/0 pos=-28312.0,6192.0,0.0 station=-28440.0,6256.0,0.0
+CA133 ROUTE_DIAG id=449 yield=1 for=442 goal=-28312.0,6192.0 next=-28312.0,6192.0 block=-1 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=452 step=7 complete=0 crew=0/0 pos=-28511.6,10183.8,0.0 station=-28520.0,10176.0,0.0
+CA133 ROUTE_DIAG id=452 yield=0 for=-1 goal=-28512.0,10208.0 next=-28512.0,10208.0 block=451 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=456 step=9 complete=1 crew=0/0 pos=-28352.7,10152.3,0.0 station=-28480.0,10216.0,0.0
+CA133 ROUTE_DIAG id=456 yield=1 for=452 goal=-28352.0,10152.0 next=-28352.0,10152.0 block=-1 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=462 step=7 complete=0 crew=0/0 pos=-28447.4,10173.2,0.0 station=-28440.0,10176.0,0.0
+CA133 ROUTE_DIAG id=462 yield=0 for=-1 goal=-28448.0,10208.0 next=-28448.0,10208.0 block=457 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=467 step=7 complete=0 crew=0/0 pos=-28511.9,14020.7,0.0 station=-28520.0,14016.0,0.0
+CA133 ROUTE_DIAG id=467 yield=0 for=-1 goal=-28512.0,14048.0 next=-28512.0,14048.0 block=466 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=472 step=8 complete=0 crew=0/0 pos=-28479.1,14012.4,0.0 station=-28480.0,14016.0,0.0
+CA133 ROUTE_DIAG id=472 yield=0 for=-1 goal=-28480.0,14016.0 next=-28480.0,14016.0 block=467 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=477 step=7 complete=0 crew=0/0 pos=-28435.0,14016.4,0.0 station=-28440.0,14016.0,0.0
+CA133 ROUTE_DIAG id=477 yield=0 for=-1 goal=-28448.0,14048.0 next=-28448.0,14048.0 block=476 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=479 step=2 complete=0 crew=0/0 pos=-688.6,1663.9,0.0 station=-28440.0,13936.0,0.0
+CA133 ROUTE_DIAG id=479 yield=0 for=-1 goal=0.0,0.0 next=0.0,0.0 block=-1 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=485 step=9 complete=0 crew=0/0 pos=-443.9,-12769.3,0.0 station=-448.0,-12784.0,0.0
+CA133 ROUTE_DIAG id=485 yield=0 for=-1 goal=-416.0,-12768.0 next=-416.0,-12768.0 block=490 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=497 step=9 complete=1 crew=0/0 pos=-616.0,-8960.0,0.0 station=-488.0,-9024.0,0.0
+CA133 ROUTE_DIAG id=497 yield=1 for=502 goal=-616.0,-8960.0 next=-616.0,-8960.0 block=-1 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=499 step=9 complete=1 crew=0/0 pos=-616.0,-9040.0,0.0 station=-488.0,-9104.0,0.0
+CA133 ROUTE_DIAG id=499 yield=1 for=504 goal=-616.0,-9040.0 next=-616.0,-9040.0 block=-1 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=502 step=9 complete=0 crew=0/0 pos=-371.7,-8995.8,0.0 station=-448.0,-9024.0,0.0
+CA133 ROUTE_DIAG id=502 yield=0 for=-1 goal=-416.0,-8992.0 next=-416.0,-8992.0 block=507 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=503 step=9 complete=0 crew=0/0 pos=-443.1,-9061.6,0.0 station=-448.0,-9064.0,0.0
+CA133 ROUTE_DIAG id=503 yield=0 for=-1 goal=-416.0,-9056.0 next=-416.0,-9056.0 block=508 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=504 step=9 complete=0 crew=0/0 pos=-410.9,-9139.5,0.0 station=-448.0,-9104.0,0.0
+CA133 ROUTE_DIAG id=504 yield=0 for=-1 goal=-416.0,-9120.0 next=-416.0,-9120.0 block=509 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=511 step=9 complete=1 crew=0/0 pos=-616.0,-5080.0,0.0 station=-488.0,-5144.0,0.0
+CA133 ROUTE_DIAG id=511 yield=1 for=516 goal=-616.0,-5080.0 next=-616.0,-5080.0 block=-1 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=512 step=7 complete=1 crew=0/0 pos=-616.0,-5248.0,0.0 station=-488.0,-5184.0,0.0
+CA133 ROUTE_DIAG id=512 yield=1 for=517 goal=-616.0,-5248.0 next=-616.0,-5248.0 block=-1 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=515 step=7 complete=0 crew=0/0 pos=-416.0,-5070.9,0.0 station=-448.0,-5104.0,0.0
+CA133 ROUTE_DIAG id=515 yield=0 for=-1 goal=-416.0,-5088.0 next=-416.0,-5088.0 block=520 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=516 step=7 complete=0 crew=0/0 pos=-442.9,-5125.1,0.0 station=-448.0,-5144.0,0.0
+CA133 ROUTE_DIAG id=516 yield=0 for=-1 goal=-416.0,-5152.0 next=-416.0,-5152.0 block=521 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=517 step=7 complete=0 crew=0/0 pos=-443.0,-5157.1,0.0 station=-448.0,-5184.0,0.0
+CA133 ROUTE_DIAG id=517 yield=0 for=-1 goal=-416.0,-5152.0 next=-416.0,-5152.0 block=522 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=518 step=7 complete=0 crew=0/0 pos=-442.8,-5217.1,0.0 station=-448.0,-5224.0,0.0
+CA133 ROUTE_DIAG id=518 yield=0 for=-1 goal=-416.0,-5216.0 next=-416.0,-5216.0 block=523 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=528 step=3 complete=0 crew=0/0 pos=-9840.9,-5469.7,0.0 station=-488.0,-1384.0,0.0
+CA133 ROUTE_DIAG id=528 yield=0 for=-1 goal=-9824.0,-5472.0 next=-9824.0,-5472.0 block=208 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=529 step=3 complete=0 crew=0/0 pos=-8304.9,-5469.7,0.0 station=-488.0,-1424.0,0.0
+CA133 ROUTE_DIAG id=529 yield=0 for=-1 goal=-8288.0,-5472.0 next=-8288.0,-5472.0 block=209 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=530 step=3 complete=0 crew=0/0 pos=-6768.9,-5469.7,0.0 station=-448.0,-1264.0,0.0
+CA133 ROUTE_DIAG id=530 yield=0 for=-1 goal=-6752.0,-5472.0 next=-6752.0,-5472.0 block=210 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=531 step=3 complete=0 crew=0/0 pos=-5232.9,-5469.7,0.0 station=-448.0,-1304.0,0.0
+CA133 ROUTE_DIAG id=531 yield=0 for=-1 goal=-5216.0,-5472.0 next=-5216.0,-5472.0 block=211 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=532 step=3 complete=0 crew=0/0 pos=-3696.9,-5469.7,0.0 station=-448.0,-1344.0,0.0
+CA133 ROUTE_DIAG id=532 yield=0 for=-1 goal=-3680.0,-5472.0 next=-3680.0,-5472.0 block=212 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=533 step=3 complete=0 crew=0/0 pos=-2160.9,-5469.7,0.0 station=-448.0,-1384.0,0.0
+CA133 ROUTE_DIAG id=533 yield=0 for=-1 goal=-2144.0,-5472.0 next=-2144.0,-5472.0 block=213 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=534 step=3 complete=0 crew=0/0 pos=-624.9,-5469.7,0.0 station=-448.0,-1424.0,0.0
+CA133 ROUTE_DIAG id=534 yield=0 for=-1 goal=-608.0,-5472.0 next=-608.0,-5472.0 block=214 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=535 step=3 complete=0 crew=0/0 pos=-20592.9,-3741.7,0.0 station=-408.0,-1264.0,0.0
+CA133 ROUTE_DIAG id=535 yield=0 for=-1 goal=-20576.0,-3744.0 next=-20576.0,-3744.0 block=215 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=540 step=7 complete=1 crew=0/0 pos=-615.3,2639.7,0.0 station=-488.0,2576.0,0.0
+CA133 ROUTE_DIAG id=540 yield=1 for=548 goal=-616.0,2640.0 next=-616.0,2640.0 block=-1 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=541 step=7 complete=1 crew=0/0 pos=-616.0,2600.0,0.0 station=-488.0,2536.0,0.0
+CA133 ROUTE_DIAG id=541 yield=1 for=548 goal=-616.0,2600.0 next=-616.0,2600.0 block=-1 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=542 step=7 complete=1 crew=0/0 pos=-616.0,2560.0,0.0 station=-488.0,2496.0,0.0
+CA133 ROUTE_DIAG id=542 yield=1 for=548 goal=-616.0,2560.0 next=-616.0,2560.0 block=-1 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=543 step=11 complete=1 crew=0/0 pos=-616.0,2520.0,0.0 station=-488.0,2456.0,0.0
+CA133 ROUTE_DIAG id=543 yield=1 for=548 goal=-616.0,2520.0 next=-616.0,2520.0 block=-1 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=544 step=9 complete=1 crew=0/0 pos=-616.0,2352.0,0.0 station=-488.0,2416.0,0.0
+CA133 ROUTE_DIAG id=544 yield=1 for=549 goal=-616.0,2352.0 next=-616.0,2352.0 block=-1 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=546 step=5 complete=0 crew=0/0 pos=-367.7,2527.9,0.0 station=-448.0,2536.0,0.0
+CA133 ROUTE_DIAG id=546 yield=0 for=-1 goal=-416.0,2528.0 next=-416.0,2528.0 block=552 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=547 step=5 complete=0 crew=0/0 pos=-443.9,2527.8,0.0 station=-448.0,2496.0,0.0
+CA133 ROUTE_DIAG id=547 yield=0 for=-1 goal=-416.0,2528.0 next=-416.0,2528.0 block=552 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=548 step=9 complete=0 crew=0/0 pos=-444.2,2465.9,0.0 station=-448.0,2456.0,0.0
+CA133 ROUTE_DIAG id=548 yield=0 for=-1 goal=-416.0,2464.0 next=-416.0,2464.0 block=553 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=549 step=9 complete=0 crew=0/0 pos=-443.3,2402.1,0.0 station=-448.0,2416.0,0.0
+CA133 ROUTE_DIAG id=549 yield=0 for=-1 goal=-416.0,2400.0 next=-416.0,2400.0 block=554 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=556 step=9 complete=1 crew=0/0 pos=-616.0,6440.0,0.0 station=-488.0,6376.0,0.0
+CA133 ROUTE_DIAG id=556 yield=1 for=562 goal=-616.0,6440.0 next=-616.0,6440.0 block=-1 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=560 step=7 complete=0 crew=0/0 pos=-416.2,6456.2,0.0 station=-448.0,6416.0,0.0
+CA133 ROUTE_DIAG id=560 yield=0 for=-1 goal=-416.0,6432.0 next=-416.0,6432.0 block=565 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=561 step=7 complete=0 crew=0/0 pos=-446.5,6398.3,0.0 station=-448.0,6376.0,0.0
+CA133 ROUTE_DIAG id=561 yield=0 for=-1 goal=-416.0,6368.0 next=-416.0,6368.0 block=565 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=562 step=7 complete=0 crew=0/0 pos=-442.8,6365.1,0.0 station=-448.0,6336.0,0.0
+CA133 ROUTE_DIAG id=562 yield=0 for=-1 goal=-416.0,6368.0 next=-416.0,6368.0 block=567 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=563 step=7 complete=0 crew=0/0 pos=-442.9,6303.4,0.0 station=-448.0,6296.0,0.0
+CA133 ROUTE_DIAG id=563 yield=0 for=-1 goal=-416.0,6304.0 next=-416.0,6304.0 block=568 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=564 step=7 complete=0 crew=0/0 pos=-411.8,6222.7,0.0 station=-448.0,6256.0,0.0
+CA133 ROUTE_DIAG id=564 yield=0 for=-1 goal=-416.0,6240.0 next=-416.0,6240.0 block=569 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=570 step=9 complete=1 crew=0/0 pos=-616.7,10160.3,0.0 station=-488.0,10256.0,0.0
+CA133 ROUTE_DIAG id=570 yield=1 for=575 goal=-616.0,10192.0 next=-616.0,10192.0 block=573 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=573 step=7 complete=1 crew=0/0 pos=-616.0,10200.0,0.0 station=-488.0,10136.0,0.0
+CA133 ROUTE_DIAG id=573 yield=1 for=578 goal=-616.0,10200.0 next=-616.0,10200.0 block=-1 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=575 step=7 complete=0 crew=0/0 pos=-442.8,10268.0,0.0 station=-448.0,10256.0,0.0
+CA133 ROUTE_DIAG id=575 yield=0 for=-1 goal=-416.0,10272.0 next=-416.0,10272.0 block=580 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=576 step=7 complete=0 crew=0/0 pos=-448.1,10232.5,0.0 station=-448.0,10216.0,0.0
+CA133 ROUTE_DIAG id=576 yield=0 for=-1 goal=-416.0,10208.0 next=-416.0,10208.0 block=577 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=577 step=7 complete=0 crew=0/0 pos=-448.1,10200.4,0.0 station=-448.0,10176.0,0.0
+CA133 ROUTE_DIAG id=577 yield=0 for=-1 goal=-416.0,10208.0 next=-416.0,10208.0 block=582 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=578 step=7 complete=0 crew=0/0 pos=-442.7,10141.2,0.0 station=-448.0,10136.0,0.0
+CA133 ROUTE_DIAG id=578 yield=0 for=-1 goal=-416.0,10144.0 next=-416.0,10144.0 block=583 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=579 step=7 complete=0 crew=0/0 pos=-411.0,10062.7,0.0 station=-448.0,10096.0,0.0
+CA133 ROUTE_DIAG id=579 yield=0 for=-1 goal=-416.0,10080.0 next=-416.0,10080.0 block=584 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=586 step=9 complete=1 crew=0/0 pos=-608.2,13963.9,0.0 station=-488.0,14056.0,0.0
+CA133 ROUTE_DIAG id=586 yield=1 for=591 goal=-616.0,13992.0 next=-616.0,13992.0 block=589 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=587 step=9 complete=1 crew=0/0 pos=-616.0,14080.0,0.0 station=-488.0,14016.0,0.0
+CA133 ROUTE_DIAG id=587 yield=1 for=592 goal=-616.0,14080.0 next=-616.0,14080.0 block=-1 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=589 step=9 complete=1 crew=0/0 pos=-616.0,14000.0,0.0 station=-488.0,13936.0,0.0
+CA133 ROUTE_DIAG id=589 yield=1 for=594 goal=-616.0,14000.0 next=-616.0,14000.0 block=-1 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=591 step=7 complete=0 crew=0/0 pos=-371.6,14044.8,0.0 station=-448.0,14056.0,0.0
+CA133 ROUTE_DIAG id=591 yield=0 for=-1 goal=-416.0,14048.0 next=-416.0,14048.0 block=597 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=592 step=7 complete=0 crew=0/0 pos=-442.8,14045.6,0.0 station=-448.0,14016.0,0.0
+CA133 ROUTE_DIAG id=592 yield=0 for=-1 goal=-416.0,14048.0 next=-416.0,14048.0 block=597 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=593 step=7 complete=0 crew=0/0 pos=-448.0,13976.7,0.0 station=-448.0,13976.0,0.0
+CA133 ROUTE_DIAG id=593 yield=0 for=-1 goal=-416.0,13984.0 next=-416.0,13984.0 block=598 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=594 step=7 complete=0 crew=0/0 pos=-410.6,13901.3,0.0 station=-448.0,13936.0,0.0
+CA133 ROUTE_DIAG id=594 yield=0 for=-1 goal=-416.0,13920.0 next=-416.0,13920.0 block=599 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_CONTROL_COMPLETE alive=600 formed=488
+CA133 ROUTE_PROGRESS tic=28000 alive=600 left=600 ground=482 formed=488
+CA133 ROUTE_PENDING id=20 step=10 complete=0 crew=0/0 pos=-29470.7,-12763.6,0.0 station=-30042.0,-14560.0,384.0
+CA133 ROUTE_DIAG id=20 yield=0 for=-1 goal=-29472.0,-12800.0 next=-29472.0,-12800.0 block=218 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=21 step=9 complete=0 crew=0/0 pos=-29435.3,-12760.2,0.0 station=-29862.0,-14560.0,384.0
+CA133 ROUTE_DIAG id=21 yield=0 for=-1 goal=-29472.0,-12768.0 next=-29472.0,-12768.0 block=20 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=74 step=9 complete=0 crew=0/0 pos=-28091.8,-13347.5,0.0 station=-28096.0,-13352.0,0.0
+CA133 ROUTE_DIAG id=74 yield=0 for=-1 goal=-28064.0,-13344.0 next=-28064.0,-13344.0 block=73 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=82 step=11 complete=1 crew=0/0 pos=-27952.2,-13144.5,0.0 station=-28016.0,-13272.0,0.0
+CA133 ROUTE_DIAG id=82 yield=1 for=74 goal=-27952.0,-13144.0 next=-27952.0,-13144.0 block=-1 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=83 step=11 complete=1 crew=0/0 pos=-27992.0,-13144.0,0.0 station=-28056.0,-13272.0,0.0
+CA133 ROUTE_DIAG id=83 yield=1 for=74 goal=-27992.0,-13144.0 next=-27992.0,-13144.0 block=-1 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=88 step=9 complete=0 crew=0/0 pos=-24253.4,-13342.0,0.0 station=-24256.0,-13352.0,0.0
+CA133 ROUTE_DIAG id=88 yield=0 for=-1 goal=-24224.0,-13344.0 next=-24224.0,-13344.0 block=87 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=92 step=9 complete=0 crew=0/0 pos=-24222.3,-13235.3,0.0 station=-24216.0,-13312.0,0.0
+CA133 ROUTE_DIAG id=92 yield=0 for=-1 goal=-24224.0,-13280.0 next=-24224.0,-13280.0 block=97 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=93 step=9 complete=0 crew=0/0 pos=-24189.0,-13231.7,0.0 station=-24256.0,-13312.0,0.0
+CA133 ROUTE_DIAG id=93 yield=0 for=-1 goal=-24224.0,-13280.0 next=-24224.0,-13280.0 block=92 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=97 step=11 complete=1 crew=0/0 pos=-24216.0,-13272.0,0.0 station=-24216.0,-13272.0,0.0
+CA133 ROUTE_DIAG id=97 yield=1 for=92 goal=-24152.0,-13144.0 next=-24152.0,-13144.0 block=92 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=102 step=9 complete=0 crew=0/0 pos=-20382.9,-13315.5,0.0 station=-20416.0,-13352.0,0.0
+CA133 ROUTE_DIAG id=102 yield=0 for=-1 goal=-20384.0,-13344.0 next=-20384.0,-13344.0 block=101 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=106 step=10 complete=0 crew=0/0 pos=-20382.0,-13279.7,0.0 station=-20376.0,-13312.0,0.0
+CA133 ROUTE_DIAG id=106 yield=0 for=-1 goal=-20376.0,-13312.0 next=-20376.0,-13312.0 block=102 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=107 step=9 complete=0 crew=0/0 pos=-20414.3,-13276.3,0.0 station=-20416.0,-13312.0,0.0
+CA133 ROUTE_DIAG id=107 yield=0 for=-1 goal=-20384.0,-13280.0 next=-20384.0,-13280.0 block=106 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=111 step=7 complete=1 crew=0/0 pos=-20312.0,-13144.0,0.0 station=-20376.0,-13272.0,0.0
+CA133 ROUTE_DIAG id=111 yield=1 for=106 goal=-20312.0,-13144.0 next=-20312.0,-13144.0 block=-1 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=112 step=7 complete=1 crew=0/0 pos=-20415.8,-13239.5,0.0 station=-20416.0,-13272.0,0.0
+CA133 ROUTE_DIAG id=112 yield=1 for=-1 goal=-20416.0,-13272.0 next=-20416.0,-13272.0 block=107 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=126 step=9 complete=0 crew=0/0 pos=-16574.3,-13267.4,0.0 station=-16576.0,-13272.0,0.0
+CA133 ROUTE_DIAG id=126 yield=0 for=-1 goal=-16544.0,-13280.0 next=-16544.0,-13280.0 block=125 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=144 step=9 complete=0 crew=0/0 pos=-8891.7,-13346.9,0.0 station=-8896.0,-13352.0,0.0
+CA133 ROUTE_DIAG id=144 yield=0 for=-1 goal=-8864.0,-13344.0 next=-8864.0,-13344.0 block=143 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=152 step=9 complete=1 crew=0/0 pos=-8752.0,-13144.0,0.0 station=-8816.0,-13272.0,0.0
+CA133 ROUTE_DIAG id=152 yield=1 for=144 goal=-8752.0,-13144.0 next=-8752.0,-13144.0 block=-1 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=153 step=11 complete=1 crew=0/0 pos=-8792.0,-13144.0,0.0 station=-8856.0,-13272.0,0.0
+CA133 ROUTE_DIAG id=153 yield=1 for=144 goal=-8792.0,-13144.0 next=-8792.0,-13144.0 block=-1 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=159 step=2 complete=0 crew=0/0 pos=-842.5,1659.6,0.0 station=-5096.0,-13352.0,0.0
+CA133 ROUTE_DIAG id=159 yield=0 for=-1 goal=0.0,0.0 next=0.0,0.0 block=-1 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=182 step=5 complete=0 crew=0/0 pos=-1212.2,-13267.5,0.0 station=-1216.0,-13272.0,0.0
+CA133 ROUTE_DIAG id=182 yield=0 for=-1 goal=-1184.0,-13280.0 next=-1184.0,-13280.0 block=181 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=191 step=7 complete=0 crew=0/0 pos=-28400.0,14886.8,0.0 station=-28480.0,14880.0,0.0
+CA133 ROUTE_DIAG id=191 yield=0 for=-1 goal=-28448.0,14880.0 next=-28448.0,14880.0 block=196 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=192 step=7 complete=0 crew=0/0 pos=-28432.0,14952.9,0.0 station=-28480.0,14920.0,0.0
+CA133 ROUTE_DIAG id=192 yield=0 for=-1 goal=-28448.0,14944.0 next=-28448.0,14944.0 block=197 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=194 step=9 complete=1 crew=0/0 pos=-28504.0,14672.0,0.0 station=-28440.0,14800.0,0.0
+CA133 ROUTE_DIAG id=194 yield=1 for=192 goal=-28504.0,14672.0 next=-28504.0,14672.0 block=-1 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=201 step=7 complete=0 crew=0/0 pos=-477.7,14926.4,0.0 station=-488.0,14920.0,0.0
+CA133 ROUTE_DIAG id=201 yield=0 for=-1 goal=-480.0,14944.0 next=-480.0,14944.0 block=207 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=206 step=8 complete=0 crew=0/0 pos=-439.4,14922.3,-0.0 station=-448.0,14920.0,0.0
+CA133 ROUTE_DIAG id=206 yield=0 for=-1 goal=-448.0,14920.0 next=-448.0,14920.0 block=201 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=208 step=3 complete=0 crew=0/0 pos=-9805.1,-5474.8,0.0 station=-408.0,14800.0,0.0
+CA133 ROUTE_DIAG id=208 yield=0 for=-1 goal=-9824.0,-5472.0 next=-9824.0,-5472.0 block=528 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=209 step=3 complete=0 crew=0/0 pos=-8269.1,-5474.8,0.0 station=-408.0,14840.0,0.0
+CA133 ROUTE_DIAG id=209 yield=0 for=-1 goal=-8288.0,-5472.0 next=-8288.0,-5472.0 block=529 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=210 step=3 complete=0 crew=0/0 pos=-6733.1,-5474.8,0.0 station=-408.0,14880.0,0.0
+CA133 ROUTE_DIAG id=210 yield=0 for=-1 goal=-6752.0,-5472.0 next=-6752.0,-5472.0 block=530 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=211 step=3 complete=0 crew=0/0 pos=-5197.1,-5474.8,0.0 station=-408.0,14920.0,0.0
+CA133 ROUTE_DIAG id=211 yield=0 for=-1 goal=-5216.0,-5472.0 next=-5216.0,-5472.0 block=531 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=212 step=3 complete=0 crew=0/0 pos=-3661.1,-5474.8,0.0 station=-29456.0,-12840.0,0.0
+CA133 ROUTE_DIAG id=212 yield=0 for=-1 goal=-3680.0,-5472.0 next=-3680.0,-5472.0 block=532 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=213 step=3 complete=0 crew=0/0 pos=-2125.1,-5474.8,0.0 station=-29496.0,-12840.0,0.0
+CA133 ROUTE_DIAG id=213 yield=0 for=-1 goal=-2144.0,-5472.0 next=-2144.0,-5472.0 block=533 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=214 step=3 complete=0 crew=0/0 pos=-589.1,-5474.8,0.0 station=-29536.0,-12840.0,0.0
+CA133 ROUTE_DIAG id=214 yield=0 for=-1 goal=-608.0,-5472.0 next=-608.0,-5472.0 block=534 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=215 step=3 complete=0 crew=0/0 pos=-20557.1,-3746.8,0.0 station=-29576.0,-12840.0,0.0
+CA133 ROUTE_DIAG id=215 yield=0 for=-1 goal=-20576.0,-3744.0 next=-20576.0,-3744.0 block=535 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=222 step=9 complete=0 crew=0/0 pos=-29467.3,-12728.2,0.0 station=-29456.0,-12760.0,0.0
+CA133 ROUTE_DIAG id=222 yield=0 for=-1 goal=-29472.0,-12768.0 next=-29472.0,-12768.0 block=20 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=223 step=9 complete=0 crew=0/0 pos=-29511.1,-12756.9,0.0 station=-29496.0,-12760.0,0.0
+CA133 ROUTE_DIAG id=223 yield=0 for=-1 goal=-29472.0,-12768.0 next=-29472.0,-12768.0 block=20 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=224 step=10 complete=0 crew=0/0 pos=-29549.0,-12764.3,0.0 station=-29536.0,-12760.0,0.0
+CA133 ROUTE_DIAG id=224 yield=0 for=-1 goal=-29536.0,-12760.0 next=-29536.0,-12760.0 block=223 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=225 step=10 complete=0 crew=0/0 pos=-29581.6,-12758.8,0.0 station=-29576.0,-12760.0,0.0
+CA133 ROUTE_DIAG id=225 yield=0 for=-1 goal=-29576.0,-12760.0 next=-29576.0,-12760.0 block=224 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=231 step=7 complete=0 crew=0/0 pos=306.3,-12792.2,0.0 station=304.0,-12800.0,0.0
+CA133 ROUTE_DIAG id=231 yield=0 for=-1 goal=288.0,-12768.0 next=288.0,-12768.0 block=236 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=232 step=7 complete=0 crew=0/0 pos=267.2,-12767.7,0.0 station=264.0,-12800.0,0.0
+CA133 ROUTE_DIAG id=232 yield=0 for=-1 goal=288.0,-12768.0 next=288.0,-12768.0 block=236 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=237 step=7 complete=0 crew=0/0 pos=263.6,-12734.2,0.0 station=264.0,-12760.0,0.0
+CA133 ROUTE_DIAG id=237 yield=0 for=-1 goal=288.0,-12768.0 next=288.0,-12768.0 block=232 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=239 step=9 complete=1 crew=0/0 pos=56.0,-12824.0,0.0 station=184.0,-12760.0,0.0
+CA133 ROUTE_DIAG id=239 yield=1 for=237 goal=56.0,-12824.0 next=56.0,-12824.0 block=-1 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=240 step=11 complete=1 crew=0/0 pos=-27952.0,14680.0,0.0 station=-28016.0,14808.0,0.0
+CA133 ROUTE_DIAG id=240 yield=1 for=249 goal=-27952.0,14680.0 next=-27952.0,14680.0 block=-1 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=241 step=11 complete=1 crew=0/0 pos=-27992.0,14680.0,0.0 station=-28056.0,14808.0,0.0
+CA133 ROUTE_DIAG id=241 yield=1 for=249 goal=-27992.0,14680.0 next=-27992.0,14680.0 block=-1 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=242 step=11 complete=1 crew=0/0 pos=-28032.2,14680.4,0.0 station=-28096.0,14808.0,0.0
+CA133 ROUTE_DIAG id=242 yield=1 for=249 goal=-28032.0,14680.0 next=-28032.0,14680.0 block=-1 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=243 step=11 complete=1 crew=0/0 pos=-28072.3,14680.7,0.0 station=-28136.0,14808.0,0.0
+CA133 ROUTE_DIAG id=243 yield=1 for=249 goal=-28072.0,14680.0 next=-28072.0,14680.0 block=-1 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=244 step=9 complete=1 crew=0/0 pos=-28112.0,14680.0,0.0 station=-28176.0,14808.0,0.0
+CA133 ROUTE_DIAG id=244 yield=1 for=249 goal=-28112.0,14680.0 next=-28112.0,14680.0 block=-1 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=246 step=11 complete=1 crew=0/0 pos=-28120.0,14720.0,0.0 station=-28056.0,14848.0,0.0
+CA133 ROUTE_DIAG id=246 yield=1 for=252 goal=-28120.0,14720.0 next=-28120.0,14720.0 block=-1 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=247 step=11 complete=1 crew=0/0 pos=-28159.8,14720.4,0.0 station=-28096.0,14848.0,0.0
+CA133 ROUTE_DIAG id=247 yield=1 for=252 goal=-28160.0,14720.0 next=-28160.0,14720.0 block=-1 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=248 step=11 complete=1 crew=0/0 pos=-28199.7,14720.7,0.0 station=-28136.0,14848.0,0.0
+CA133 ROUTE_DIAG id=248 yield=1 for=252 goal=-28200.0,14720.0 next=-28200.0,14720.0 block=-1 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=249 step=7 complete=0 crew=0/0 pos=-28191.9,14849.6,0.0 station=-28176.0,14848.0,0.0
+CA133 ROUTE_DIAG id=249 yield=0 for=-1 goal=-28192.0,14880.0 next=-28192.0,14880.0 block=254 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=252 step=9 complete=0 crew=0/0 pos=-28093.2,14879.9,0.0 station=-28096.0,14888.0,0.0
+CA133 ROUTE_DIAG id=252 yield=0 for=-1 goal=-28064.0,14880.0 next=-28064.0,14880.0 block=251 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=255 step=7 complete=1 crew=0/0 pos=-24112.0,14680.0,0.0 station=-24176.0,14808.0,0.0
+CA133 ROUTE_DIAG id=255 yield=1 for=267 goal=-24112.0,14680.0 next=-24112.0,14680.0 block=-1 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=256 step=9 complete=1 crew=0/0 pos=-24152.0,14680.0,0.0 station=-24216.0,14808.0,0.0
+CA133 ROUTE_DIAG id=256 yield=1 for=267 goal=-24152.0,14680.0 next=-24152.0,14680.0 block=-1 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=267 step=9 complete=0 crew=0/0 pos=-24252.6,14883.4,0.0 station=-24256.0,14888.0,0.0
+CA133 ROUTE_DIAG id=267 yield=0 for=-1 goal=-24224.0,14880.0 next=-24224.0,14880.0 block=266 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=271 step=7 complete=1 crew=0/0 pos=-20440.0,14680.0,0.0 station=-20376.0,14808.0,0.0
+CA133 ROUTE_DIAG id=271 yield=1 for=282 goal=-20440.0,14680.0 next=-20440.0,14680.0 block=-1 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=282 step=9 complete=0 crew=0/0 pos=-20411.8,14883.5,0.0 station=-20416.0,14888.0,0.0
+CA133 ROUTE_DIAG id=282 yield=0 for=-1 goal=-20384.0,14880.0 next=-20384.0,14880.0 block=281 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=287 step=9 complete=0 crew=0/0 pos=-16574.3,14803.4,0.0 station=-16576.0,14808.0,0.0
+CA133 ROUTE_DIAG id=287 yield=0 for=-1 goal=-16544.0,14816.0 next=-16544.0,14816.0 block=286 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=290 step=5 complete=0 crew=0/0 pos=-16462.8,14879.6,0.0 station=-16496.0,14848.0,0.0
+CA133 ROUTE_DIAG id=290 yield=0 for=-1 goal=-16480.0,14880.0 next=-16480.0,14880.0 block=295 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=291 step=5 complete=0 crew=0/0 pos=-16549.3,14927.7,0.0 station=-16536.0,14848.0,0.0
+CA133 ROUTE_DIAG id=291 yield=0 for=-1 goal=-16544.0,14880.0 next=-16544.0,14880.0 block=296 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=292 step=5 complete=0 crew=0/0 pos=-16568.6,14879.6,0.0 station=-16576.0,14848.0,0.0
+CA133 ROUTE_DIAG id=292 yield=0 for=-1 goal=-16544.0,14880.0 next=-16544.0,14880.0 block=296 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=297 step=9 complete=0 crew=0/0 pos=-16542.8,14842.4,0.0 station=-16576.0,14888.0,0.0
+CA133 ROUTE_DIAG id=297 yield=0 for=-1 goal=-16544.0,14880.0 next=-16544.0,14880.0 block=292 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=302 step=9 complete=0 crew=0/0 pos=-12733.9,14819.4,0.0 station=-12736.0,14808.0,0.0
+CA133 ROUTE_DIAG id=302 yield=0 for=-1 goal=-12704.0,14816.0 next=-12704.0,14816.0 block=301 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=305 step=5 complete=0 crew=0/0 pos=-12623.8,14879.7,0.0 station=-12656.0,14848.0,0.0
+CA133 ROUTE_DIAG id=305 yield=0 for=-1 goal=-12640.0,14880.0 next=-12640.0,14880.0 block=310 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=306 step=5 complete=0 crew=0/0 pos=-12733.7,14912.2,0.0 station=-12696.0,14848.0,0.0
+CA133 ROUTE_DIAG id=306 yield=0 for=-1 goal=-12704.0,14880.0 next=-12704.0,14880.0 block=311 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=307 step=5 complete=0 crew=0/0 pos=-12738.6,14879.5,0.0 station=-12736.0,14848.0,0.0
+CA133 ROUTE_DIAG id=307 yield=0 for=-1 goal=-12704.0,14880.0 next=-12704.0,14880.0 block=312 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=312 step=9 complete=0 crew=0/0 pos=-12702.9,14851.5,0.0 station=-12736.0,14888.0,0.0
+CA133 ROUTE_DIAG id=312 yield=0 for=-1 goal=-12704.0,14880.0 next=-12704.0,14880.0 block=311 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=319 step=2 complete=0 crew=0/0 pos=-768.7,1743.7,0.0 station=-8976.0,14808.0,0.0
+CA133 ROUTE_DIAG id=319 yield=0 for=-1 goal=0.0,0.0 next=0.0,0.0 block=-1 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=320 step=5 complete=0 crew=0/0 pos=-8777.2,14880.0,-0.0 station=-8816.0,14848.0,0.0
+CA133 ROUTE_DIAG id=320 yield=0 for=-1 goal=-8800.0,14880.0 next=-8800.0,14880.0 block=325 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=321 step=5 complete=0 crew=0/0 pos=-8856.6,14926.5,0.0 station=-8856.0,14848.0,0.0
+CA133 ROUTE_DIAG id=321 yield=0 for=-1 goal=-8864.0,14880.0 next=-8864.0,14880.0 block=326 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=322 step=5 complete=0 crew=0/0 pos=-8867.0,14849.4,-0.0 station=-8896.0,14848.0,0.0
+CA133 ROUTE_DIAG id=322 yield=0 for=-1 goal=-8864.0,14880.0 next=-8864.0,14880.0 block=327 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=335 step=5 complete=0 crew=0/0 pos=-4939.4,14879.7,0.0 station=-4976.0,14848.0,0.0
+CA133 ROUTE_DIAG id=335 yield=0 for=-1 goal=-4960.0,14880.0 next=-4960.0,14880.0 block=340 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=342 step=5 complete=0 crew=0/0 pos=-5053.2,14892.3,-0.0 station=-5056.0,14888.0,0.0
+CA133 ROUTE_DIAG id=342 yield=0 for=-1 goal=-5024.0,14880.0 next=-5024.0,14880.0 block=341 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=353 step=5 complete=0 crew=0/0 pos=-1255.4,14929.1,-0.0 station=-1256.0,14848.0,0.0
+CA133 ROUTE_DIAG id=353 yield=0 for=-1 goal=-1248.0,14880.0 next=-1248.0,14880.0 block=358 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=354 step=5 complete=0 crew=0/0 pos=-1332.9,14880.0,-0.0 station=-1296.0,14848.0,0.0
+CA133 ROUTE_DIAG id=354 yield=0 for=-1 goal=-1312.0,14880.0 next=-1312.0,14880.0 block=359 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=362 step=7 complete=0 crew=0/0 pos=-28527.8,-12859.8,0.0 station=-28520.0,-12864.0,0.0
+CA133 ROUTE_DIAG id=362 yield=0 for=-1 goal=-28512.0,-12832.0 next=-28512.0,-12832.0 block=361 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=372 step=7 complete=0 crew=0/0 pos=-28447.9,-12862.8,0.0 station=-28440.0,-12864.0,0.0
+CA133 ROUTE_DIAG id=372 yield=0 for=-1 goal=-28448.0,-12832.0 next=-28448.0,-12832.0 block=371 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=377 step=7 complete=0 crew=0/0 pos=-28511.8,-9019.1,0.0 station=-28520.0,-9024.0,0.0
+CA133 ROUTE_DIAG id=377 yield=0 for=-1 goal=-28512.0,-8992.0 next=-28512.0,-8992.0 block=376 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=380 step=9 complete=1 crew=0/0 pos=-28352.0,-8880.0,0.0 station=-28480.0,-8944.0,0.0
+CA133 ROUTE_DIAG id=380 yield=1 for=377 goal=-28352.0,-8880.0 next=-28352.0,-8880.0 block=-1 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=381 step=9 complete=1 crew=0/0 pos=-28352.3,-8920.2,0.0 station=-28480.0,-8984.0,0.0
+CA133 ROUTE_DIAG id=381 yield=1 for=377 goal=-28352.0,-8920.0 next=-28352.0,-8920.0 block=-1 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=382 step=8 complete=0 crew=0/0 pos=-28479.0,-9022.5,0.0 station=-28480.0,-9024.0,0.0
+CA133 ROUTE_DIAG id=382 yield=0 for=-1 goal=-28480.0,-9024.0 next=-28480.0,-9024.0 block=377 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=386 step=9 complete=1 crew=0/0 pos=-28312.2,-8920.1,0.0 station=-28440.0,-8984.0,0.0
+CA133 ROUTE_DIAG id=386 yield=1 for=377 goal=-28312.0,-8920.0 next=-28312.0,-8920.0 block=-1 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=387 step=9 complete=1 crew=0/0 pos=-28312.7,-9087.7,0.0 station=-28440.0,-9024.0,0.0
+CA133 ROUTE_DIAG id=387 yield=1 for=382 goal=-28312.0,-9088.0 next=-28312.0,-9088.0 block=-1 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=388 step=9 complete=1 crew=0/0 pos=-28312.7,-9127.7,0.0 station=-28440.0,-9064.0,0.0
+CA133 ROUTE_DIAG id=388 yield=1 for=382 goal=-28312.0,-9128.0 next=-28312.0,-9128.0 block=-1 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=389 step=9 complete=1 crew=0/0 pos=-28312.7,-9167.7,0.0 station=-28440.0,-9104.0,0.0
+CA133 ROUTE_DIAG id=389 yield=1 for=382 goal=-28312.0,-9168.0 next=-28312.0,-9168.0 block=-1 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=392 step=7 complete=0 crew=0/0 pos=-28512.1,-5181.5,0.0 station=-28520.0,-5184.0,0.0
+CA133 ROUTE_DIAG id=392 yield=0 for=-1 goal=-28512.0,-5152.0 next=-28512.0,-5152.0 block=391 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=405 step=6 complete=0 crew=0/0 pos=-28511.2,2608.0,0.0 station=-28520.0,-1264.0,0.0
+CA133 ROUTE_DIAG id=405 yield=0 for=-1 goal=-28512.0,2592.0 next=-28512.0,2592.0 block=420 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=406 step=6 complete=0 crew=0/0 pos=-28473.6,2592.0,0.0 station=-28520.0,-1304.0,0.0
+CA133 ROUTE_DIAG id=406 yield=0 for=-1 goal=-28512.0,2592.0 next=-28512.0,2592.0 block=405 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=407 step=6 complete=0 crew=0/0 pos=-28544.4,2618.4,0.0 station=-28520.0,-1344.0,0.0
+CA133 ROUTE_DIAG id=407 yield=0 for=-1 goal=-28512.0,2592.0 next=-28512.0,2592.0 block=405 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=408 step=6 complete=0 crew=0/0 pos=-28553.3,2578.7,0.0 station=-28520.0,-1384.0,0.0
+CA133 ROUTE_DIAG id=408 yield=0 for=-1 goal=-28512.0,2592.0 next=-28512.0,2592.0 block=420 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=409 step=6 complete=0 crew=0/0 pos=-28513.4,2656.0,0.0 station=-28520.0,-1424.0,0.0
+CA133 ROUTE_DIAG id=409 yield=0 for=-1 goal=-28512.0,2592.0 next=-28512.0,2592.0 block=407 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=410 step=6 complete=0 crew=0/0 pos=-28439.7,2615.6,0.0 station=-28480.0,-1264.0,0.0
+CA133 ROUTE_DIAG id=410 yield=0 for=-1 goal=-28448.0,2592.0 next=-28448.0,2592.0 block=425 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=411 step=6 complete=0 crew=0/0 pos=-28399.1,2592.0,0.0 station=-28480.0,-1304.0,0.0
+CA133 ROUTE_DIAG id=411 yield=0 for=-1 goal=-28448.0,2592.0 next=-28448.0,2592.0 block=425 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=412 step=6 complete=0 crew=0/0 pos=-28474.5,2640.0,0.0 station=-28480.0,-1344.0,0.0
+CA133 ROUTE_DIAG id=412 yield=0 for=-1 goal=-28448.0,2592.0 next=-28448.0,2592.0 block=410 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=413 step=6 complete=0 crew=0/0 pos=-28397.8,2624.0,0.0 station=-28480.0,-1384.0,0.0
+CA133 ROUTE_DIAG id=413 yield=0 for=-1 goal=-28448.0,2592.0 next=-28448.0,2592.0 block=411 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=417 step=7 complete=0 crew=0/0 pos=-28447.8,-1340.1,0.0 station=-28440.0,-1344.0,0.0
+CA133 ROUTE_DIAG id=417 yield=0 for=-1 goal=-28448.0,-1312.0 next=-28448.0,-1312.0 block=416 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=422 step=7 complete=0 crew=0/0 pos=-28518.6,2503.3,0.0 station=-28520.0,2496.0,0.0
+CA133 ROUTE_DIAG id=422 yield=0 for=-1 goal=-28512.0,2528.0 next=-28512.0,2528.0 block=421 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=425 step=8 complete=0 crew=0/0 pos=-28438.4,2576.4,0.0 station=-28480.0,2576.0,0.0
+CA133 ROUTE_DIAG id=425 yield=0 for=-1 goal=-28480.0,2576.0 next=-28480.0,2576.0 block=406 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=426 step=8 complete=0 crew=0/0 pos=-28444.7,2531.2,0.0 station=-28480.0,2536.0,0.0
+CA133 ROUTE_DIAG id=426 yield=0 for=-1 goal=-28480.0,2536.0 next=-28480.0,2536.0 block=432 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=427 step=7 complete=0 crew=0/0 pos=-28432.1,2491.3,0.0 station=-28480.0,2496.0,0.0
+CA133 ROUTE_DIAG id=427 yield=0 for=-1 goal=-28448.0,2528.0 next=-28448.0,2528.0 block=426 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=430 step=7 complete=0 crew=0/0 pos=-28404.9,2546.0,0.0 station=-28440.0,2576.0,0.0
+CA133 ROUTE_DIAG id=430 yield=0 for=-1 goal=-28448.0,2592.0 next=-28448.0,2592.0 block=425 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=431 step=9 complete=1 crew=0/0 pos=-28312.0,2472.0,0.0 station=-28440.0,2536.0,0.0
+CA133 ROUTE_DIAG id=431 yield=1 for=426 goal=-28312.0,2472.0 next=-28312.0,2472.0 block=-1 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=432 step=7 complete=0 crew=0/0 pos=-28479.8,2521.1,0.0 station=-28440.0,2496.0,0.0
+CA133 ROUTE_DIAG id=432 yield=0 for=-1 goal=-28448.0,2528.0 next=-28448.0,2528.0 block=426 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=437 step=7 complete=0 crew=0/0 pos=-28511.4,6341.5,0.0 station=-28520.0,6336.0,0.0
+CA133 ROUTE_DIAG id=437 yield=0 for=-1 goal=-28512.0,6368.0 next=-28512.0,6368.0 block=436 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=440 step=9 complete=1 crew=0/0 pos=-28352.7,6479.7,0.0 station=-28480.0,6416.0,0.0
+CA133 ROUTE_DIAG id=440 yield=1 for=437 goal=-28352.0,6480.0 next=-28352.0,6480.0 block=-1 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=441 step=9 complete=1 crew=0/0 pos=-28352.3,6439.8,0.0 station=-28480.0,6376.0,0.0
+CA133 ROUTE_DIAG id=441 yield=1 for=437 goal=-28352.0,6440.0 next=-28352.0,6440.0 block=-1 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=442 step=8 complete=0 crew=0/0 pos=-28476.8,6340.0,0.0 station=-28480.0,6336.0,0.0
+CA133 ROUTE_DIAG id=442 yield=0 for=-1 goal=-28480.0,6336.0 next=-28480.0,6336.0 block=437 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=447 step=7 complete=0 crew=0/0 pos=-28477.6,6373.5,0.0 station=-28440.0,6336.0,0.0
+CA133 ROUTE_DIAG id=447 yield=0 for=-1 goal=-28448.0,6368.0 next=-28448.0,6368.0 block=446 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=449 step=9 complete=1 crew=0/0 pos=-28312.0,6192.0,0.0 station=-28440.0,6256.0,0.0
+CA133 ROUTE_DIAG id=449 yield=1 for=442 goal=-28312.0,6192.0 next=-28312.0,6192.0 block=-1 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=452 step=7 complete=0 crew=0/0 pos=-28511.6,10183.8,0.0 station=-28520.0,10176.0,0.0
+CA133 ROUTE_DIAG id=452 yield=0 for=-1 goal=-28512.0,10208.0 next=-28512.0,10208.0 block=451 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=456 step=9 complete=1 crew=0/0 pos=-28352.7,10152.3,0.0 station=-28480.0,10216.0,0.0
+CA133 ROUTE_DIAG id=456 yield=1 for=452 goal=-28352.0,10152.0 next=-28352.0,10152.0 block=-1 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=462 step=7 complete=0 crew=0/0 pos=-28447.4,10173.2,0.0 station=-28440.0,10176.0,0.0
+CA133 ROUTE_DIAG id=462 yield=0 for=-1 goal=-28448.0,10208.0 next=-28448.0,10208.0 block=457 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=467 step=7 complete=0 crew=0/0 pos=-28511.9,14020.7,0.0 station=-28520.0,14016.0,0.0
+CA133 ROUTE_DIAG id=467 yield=0 for=-1 goal=-28512.0,14048.0 next=-28512.0,14048.0 block=466 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=472 step=8 complete=0 crew=0/0 pos=-28479.1,14012.4,0.0 station=-28480.0,14016.0,0.0
+CA133 ROUTE_DIAG id=472 yield=0 for=-1 goal=-28480.0,14016.0 next=-28480.0,14016.0 block=467 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=477 step=7 complete=0 crew=0/0 pos=-28435.0,14016.4,0.0 station=-28440.0,14016.0,0.0
+CA133 ROUTE_DIAG id=477 yield=0 for=-1 goal=-28448.0,14048.0 next=-28448.0,14048.0 block=476 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=479 step=2 complete=0 crew=0/0 pos=-688.6,1663.9,0.0 station=-28440.0,13936.0,0.0
+CA133 ROUTE_DIAG id=479 yield=0 for=-1 goal=0.0,0.0 next=0.0,0.0 block=-1 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=485 step=9 complete=0 crew=0/0 pos=-443.9,-12769.3,0.0 station=-448.0,-12784.0,0.0
+CA133 ROUTE_DIAG id=485 yield=0 for=-1 goal=-416.0,-12768.0 next=-416.0,-12768.0 block=490 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=497 step=9 complete=1 crew=0/0 pos=-616.0,-8960.0,0.0 station=-488.0,-9024.0,0.0
+CA133 ROUTE_DIAG id=497 yield=1 for=502 goal=-616.0,-8960.0 next=-616.0,-8960.0 block=-1 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=499 step=9 complete=1 crew=0/0 pos=-616.0,-9040.0,0.0 station=-488.0,-9104.0,0.0
+CA133 ROUTE_DIAG id=499 yield=1 for=504 goal=-616.0,-9040.0 next=-616.0,-9040.0 block=-1 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=502 step=9 complete=0 crew=0/0 pos=-371.7,-8995.8,0.0 station=-448.0,-9024.0,0.0
+CA133 ROUTE_DIAG id=502 yield=0 for=-1 goal=-416.0,-8992.0 next=-416.0,-8992.0 block=507 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=503 step=9 complete=0 crew=0/0 pos=-443.1,-9061.6,0.0 station=-448.0,-9064.0,0.0
+CA133 ROUTE_DIAG id=503 yield=0 for=-1 goal=-416.0,-9056.0 next=-416.0,-9056.0 block=508 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=504 step=9 complete=0 crew=0/0 pos=-410.9,-9139.5,0.0 station=-448.0,-9104.0,0.0
+CA133 ROUTE_DIAG id=504 yield=0 for=-1 goal=-416.0,-9120.0 next=-416.0,-9120.0 block=509 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=511 step=9 complete=1 crew=0/0 pos=-616.0,-5080.0,0.0 station=-488.0,-5144.0,0.0
+CA133 ROUTE_DIAG id=511 yield=1 for=516 goal=-616.0,-5080.0 next=-616.0,-5080.0 block=-1 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=512 step=7 complete=1 crew=0/0 pos=-616.0,-5248.0,0.0 station=-488.0,-5184.0,0.0
+CA133 ROUTE_DIAG id=512 yield=1 for=517 goal=-616.0,-5248.0 next=-616.0,-5248.0 block=-1 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=515 step=7 complete=0 crew=0/0 pos=-416.0,-5070.9,0.0 station=-448.0,-5104.0,0.0
+CA133 ROUTE_DIAG id=515 yield=0 for=-1 goal=-416.0,-5088.0 next=-416.0,-5088.0 block=520 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=516 step=7 complete=0 crew=0/0 pos=-442.9,-5125.1,0.0 station=-448.0,-5144.0,0.0
+CA133 ROUTE_DIAG id=516 yield=0 for=-1 goal=-416.0,-5152.0 next=-416.0,-5152.0 block=521 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=517 step=7 complete=0 crew=0/0 pos=-443.0,-5157.1,0.0 station=-448.0,-5184.0,0.0
+CA133 ROUTE_DIAG id=517 yield=0 for=-1 goal=-416.0,-5152.0 next=-416.0,-5152.0 block=522 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=518 step=7 complete=0 crew=0/0 pos=-442.8,-5217.1,0.0 station=-448.0,-5224.0,0.0
+CA133 ROUTE_DIAG id=518 yield=0 for=-1 goal=-416.0,-5216.0 next=-416.0,-5216.0 block=523 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=528 step=3 complete=0 crew=0/0 pos=-9840.9,-5469.7,0.0 station=-488.0,-1384.0,0.0
+CA133 ROUTE_DIAG id=528 yield=0 for=-1 goal=-9824.0,-5472.0 next=-9824.0,-5472.0 block=208 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=529 step=3 complete=0 crew=0/0 pos=-8304.9,-5469.7,0.0 station=-488.0,-1424.0,0.0
+CA133 ROUTE_DIAG id=529 yield=0 for=-1 goal=-8288.0,-5472.0 next=-8288.0,-5472.0 block=209 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=530 step=3 complete=0 crew=0/0 pos=-6768.9,-5469.7,0.0 station=-448.0,-1264.0,0.0
+CA133 ROUTE_DIAG id=530 yield=0 for=-1 goal=-6752.0,-5472.0 next=-6752.0,-5472.0 block=210 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=531 step=3 complete=0 crew=0/0 pos=-5232.9,-5469.7,0.0 station=-448.0,-1304.0,0.0
+CA133 ROUTE_DIAG id=531 yield=0 for=-1 goal=-5216.0,-5472.0 next=-5216.0,-5472.0 block=211 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=532 step=3 complete=0 crew=0/0 pos=-3696.9,-5469.7,0.0 station=-448.0,-1344.0,0.0
+CA133 ROUTE_DIAG id=532 yield=0 for=-1 goal=-3680.0,-5472.0 next=-3680.0,-5472.0 block=212 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=533 step=3 complete=0 crew=0/0 pos=-2160.9,-5469.7,0.0 station=-448.0,-1384.0,0.0
+CA133 ROUTE_DIAG id=533 yield=0 for=-1 goal=-2144.0,-5472.0 next=-2144.0,-5472.0 block=213 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=534 step=3 complete=0 crew=0/0 pos=-624.9,-5469.7,0.0 station=-448.0,-1424.0,0.0
+CA133 ROUTE_DIAG id=534 yield=0 for=-1 goal=-608.0,-5472.0 next=-608.0,-5472.0 block=214 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=535 step=3 complete=0 crew=0/0 pos=-20592.9,-3741.7,0.0 station=-408.0,-1264.0,0.0
+CA133 ROUTE_DIAG id=535 yield=0 for=-1 goal=-20576.0,-3744.0 next=-20576.0,-3744.0 block=215 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=540 step=7 complete=1 crew=0/0 pos=-615.3,2639.7,0.0 station=-488.0,2576.0,0.0
+CA133 ROUTE_DIAG id=540 yield=1 for=548 goal=-616.0,2640.0 next=-616.0,2640.0 block=-1 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=541 step=7 complete=1 crew=0/0 pos=-616.0,2600.0,0.0 station=-488.0,2536.0,0.0
+CA133 ROUTE_DIAG id=541 yield=1 for=548 goal=-616.0,2600.0 next=-616.0,2600.0 block=-1 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=542 step=7 complete=1 crew=0/0 pos=-616.0,2560.0,0.0 station=-488.0,2496.0,0.0
+CA133 ROUTE_DIAG id=542 yield=1 for=548 goal=-616.0,2560.0 next=-616.0,2560.0 block=-1 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=543 step=11 complete=1 crew=0/0 pos=-616.0,2520.0,0.0 station=-488.0,2456.0,0.0
+CA133 ROUTE_DIAG id=543 yield=1 for=548 goal=-616.0,2520.0 next=-616.0,2520.0 block=-1 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=544 step=9 complete=1 crew=0/0 pos=-616.0,2352.0,0.0 station=-488.0,2416.0,0.0
+CA133 ROUTE_DIAG id=544 yield=1 for=549 goal=-616.0,2352.0 next=-616.0,2352.0 block=-1 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=546 step=5 complete=0 crew=0/0 pos=-367.7,2527.9,0.0 station=-448.0,2536.0,0.0
+CA133 ROUTE_DIAG id=546 yield=0 for=-1 goal=-416.0,2528.0 next=-416.0,2528.0 block=552 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=547 step=5 complete=0 crew=0/0 pos=-443.9,2527.8,0.0 station=-448.0,2496.0,0.0
+CA133 ROUTE_DIAG id=547 yield=0 for=-1 goal=-416.0,2528.0 next=-416.0,2528.0 block=552 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=548 step=9 complete=0 crew=0/0 pos=-444.2,2465.9,0.0 station=-448.0,2456.0,0.0
+CA133 ROUTE_DIAG id=548 yield=0 for=-1 goal=-416.0,2464.0 next=-416.0,2464.0 block=553 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=549 step=9 complete=0 crew=0/0 pos=-443.3,2402.1,0.0 station=-448.0,2416.0,0.0
+CA133 ROUTE_DIAG id=549 yield=0 for=-1 goal=-416.0,2400.0 next=-416.0,2400.0 block=554 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=556 step=9 complete=1 crew=0/0 pos=-616.0,6440.0,0.0 station=-488.0,6376.0,0.0
+CA133 ROUTE_DIAG id=556 yield=1 for=562 goal=-616.0,6440.0 next=-616.0,6440.0 block=-1 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=560 step=7 complete=0 crew=0/0 pos=-416.2,6456.2,0.0 station=-448.0,6416.0,0.0
+CA133 ROUTE_DIAG id=560 yield=0 for=-1 goal=-416.0,6432.0 next=-416.0,6432.0 block=565 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=561 step=7 complete=0 crew=0/0 pos=-446.5,6398.3,0.0 station=-448.0,6376.0,0.0
+CA133 ROUTE_DIAG id=561 yield=0 for=-1 goal=-416.0,6368.0 next=-416.0,6368.0 block=565 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=562 step=7 complete=0 crew=0/0 pos=-442.8,6365.1,0.0 station=-448.0,6336.0,0.0
+CA133 ROUTE_DIAG id=562 yield=0 for=-1 goal=-416.0,6368.0 next=-416.0,6368.0 block=567 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=563 step=7 complete=0 crew=0/0 pos=-442.9,6303.4,0.0 station=-448.0,6296.0,0.0
+CA133 ROUTE_DIAG id=563 yield=0 for=-1 goal=-416.0,6304.0 next=-416.0,6304.0 block=568 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=564 step=7 complete=0 crew=0/0 pos=-411.8,6222.7,0.0 station=-448.0,6256.0,0.0
+CA133 ROUTE_DIAG id=564 yield=0 for=-1 goal=-416.0,6240.0 next=-416.0,6240.0 block=569 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=570 step=9 complete=1 crew=0/0 pos=-616.7,10160.3,0.0 station=-488.0,10256.0,0.0
+CA133 ROUTE_DIAG id=570 yield=1 for=575 goal=-616.0,10192.0 next=-616.0,10192.0 block=573 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=573 step=7 complete=1 crew=0/0 pos=-616.0,10200.0,0.0 station=-488.0,10136.0,0.0
+CA133 ROUTE_DIAG id=573 yield=1 for=578 goal=-616.0,10200.0 next=-616.0,10200.0 block=-1 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=575 step=7 complete=0 crew=0/0 pos=-442.8,10268.0,0.0 station=-448.0,10256.0,0.0
+CA133 ROUTE_DIAG id=575 yield=0 for=-1 goal=-416.0,10272.0 next=-416.0,10272.0 block=580 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=576 step=7 complete=0 crew=0/0 pos=-448.1,10232.5,0.0 station=-448.0,10216.0,0.0
+CA133 ROUTE_DIAG id=576 yield=0 for=-1 goal=-416.0,10208.0 next=-416.0,10208.0 block=577 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=577 step=7 complete=0 crew=0/0 pos=-448.1,10200.4,0.0 station=-448.0,10176.0,0.0
+CA133 ROUTE_DIAG id=577 yield=0 for=-1 goal=-416.0,10208.0 next=-416.0,10208.0 block=582 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=578 step=7 complete=0 crew=0/0 pos=-442.7,10141.2,0.0 station=-448.0,10136.0,0.0
+CA133 ROUTE_DIAG id=578 yield=0 for=-1 goal=-416.0,10144.0 next=-416.0,10144.0 block=583 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=579 step=7 complete=0 crew=0/0 pos=-411.0,10062.7,0.0 station=-448.0,10096.0,0.0
+CA133 ROUTE_DIAG id=579 yield=0 for=-1 goal=-416.0,10080.0 next=-416.0,10080.0 block=584 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=586 step=9 complete=1 crew=0/0 pos=-608.2,13963.9,0.0 station=-488.0,14056.0,0.0
+CA133 ROUTE_DIAG id=586 yield=1 for=591 goal=-616.0,13992.0 next=-616.0,13992.0 block=589 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=587 step=9 complete=1 crew=0/0 pos=-616.0,14080.0,0.0 station=-488.0,14016.0,0.0
+CA133 ROUTE_DIAG id=587 yield=1 for=592 goal=-616.0,14080.0 next=-616.0,14080.0 block=-1 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=589 step=9 complete=1 crew=0/0 pos=-616.0,14000.0,0.0 station=-488.0,13936.0,0.0
+CA133 ROUTE_DIAG id=589 yield=1 for=594 goal=-616.0,14000.0 next=-616.0,14000.0 block=-1 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=591 step=7 complete=0 crew=0/0 pos=-371.6,14044.8,0.0 station=-448.0,14056.0,0.0
+CA133 ROUTE_DIAG id=591 yield=0 for=-1 goal=-416.0,14048.0 next=-416.0,14048.0 block=597 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=592 step=7 complete=0 crew=0/0 pos=-442.8,14045.6,0.0 station=-448.0,14016.0,0.0
+CA133 ROUTE_DIAG id=592 yield=0 for=-1 goal=-416.0,14048.0 next=-416.0,14048.0 block=597 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=593 step=7 complete=0 crew=0/0 pos=-448.0,13976.7,0.0 station=-448.0,13976.0,0.0
+CA133 ROUTE_DIAG id=593 yield=0 for=-1 goal=-416.0,13984.0 next=-416.0,13984.0 block=598 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=594 step=7 complete=0 crew=0/0 pos=-410.6,13901.3,0.0 station=-448.0,13936.0,0.0
+CA133 ROUTE_DIAG id=594 yield=0 for=-1 goal=-416.0,13920.0 next=-416.0,13920.0 block=599 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_CONTROL_COMPLETE alive=600 formed=488
+CA133 ROUTE_PROGRESS tic=29750 alive=600 left=600 ground=482 formed=488
+CA133 ROUTE_PENDING id=20 step=10 complete=0 crew=0/0 pos=-29470.7,-12763.6,0.0 station=-30042.0,-14560.0,384.0
+CA133 ROUTE_DIAG id=20 yield=0 for=-1 goal=-29472.0,-12800.0 next=-29472.0,-12800.0 block=218 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=21 step=9 complete=0 crew=0/0 pos=-29435.3,-12760.2,0.0 station=-29862.0,-14560.0,384.0
+CA133 ROUTE_DIAG id=21 yield=0 for=-1 goal=-29472.0,-12768.0 next=-29472.0,-12768.0 block=20 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=74 step=9 complete=0 crew=0/0 pos=-28091.8,-13347.5,0.0 station=-28096.0,-13352.0,0.0
+CA133 ROUTE_DIAG id=74 yield=0 for=-1 goal=-28064.0,-13344.0 next=-28064.0,-13344.0 block=73 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=82 step=11 complete=1 crew=0/0 pos=-27952.2,-13144.5,0.0 station=-28016.0,-13272.0,0.0
+CA133 ROUTE_DIAG id=82 yield=1 for=74 goal=-27952.0,-13144.0 next=-27952.0,-13144.0 block=-1 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=83 step=11 complete=1 crew=0/0 pos=-27992.0,-13144.0,0.0 station=-28056.0,-13272.0,0.0
+CA133 ROUTE_DIAG id=83 yield=1 for=74 goal=-27992.0,-13144.0 next=-27992.0,-13144.0 block=-1 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=88 step=9 complete=0 crew=0/0 pos=-24253.4,-13342.0,0.0 station=-24256.0,-13352.0,0.0
+CA133 ROUTE_DIAG id=88 yield=0 for=-1 goal=-24224.0,-13344.0 next=-24224.0,-13344.0 block=87 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=92 step=9 complete=0 crew=0/0 pos=-24222.3,-13235.3,0.0 station=-24216.0,-13312.0,0.0
+CA133 ROUTE_DIAG id=92 yield=0 for=-1 goal=-24224.0,-13280.0 next=-24224.0,-13280.0 block=97 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=93 step=9 complete=0 crew=0/0 pos=-24189.0,-13231.7,0.0 station=-24256.0,-13312.0,0.0
+CA133 ROUTE_DIAG id=93 yield=0 for=-1 goal=-24224.0,-13280.0 next=-24224.0,-13280.0 block=92 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=97 step=11 complete=1 crew=0/0 pos=-24216.0,-13272.0,0.0 station=-24216.0,-13272.0,0.0
+CA133 ROUTE_DIAG id=97 yield=1 for=92 goal=-24152.0,-13144.0 next=-24152.0,-13144.0 block=92 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=102 step=9 complete=0 crew=0/0 pos=-20382.9,-13315.5,0.0 station=-20416.0,-13352.0,0.0
+CA133 ROUTE_DIAG id=102 yield=0 for=-1 goal=-20384.0,-13344.0 next=-20384.0,-13344.0 block=101 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=106 step=10 complete=0 crew=0/0 pos=-20382.0,-13279.7,0.0 station=-20376.0,-13312.0,0.0
+CA133 ROUTE_DIAG id=106 yield=0 for=-1 goal=-20376.0,-13312.0 next=-20376.0,-13312.0 block=102 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=107 step=9 complete=0 crew=0/0 pos=-20414.3,-13276.3,0.0 station=-20416.0,-13312.0,0.0
+CA133 ROUTE_DIAG id=107 yield=0 for=-1 goal=-20384.0,-13280.0 next=-20384.0,-13280.0 block=106 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=111 step=7 complete=1 crew=0/0 pos=-20312.0,-13144.0,0.0 station=-20376.0,-13272.0,0.0
+CA133 ROUTE_DIAG id=111 yield=1 for=106 goal=-20312.0,-13144.0 next=-20312.0,-13144.0 block=-1 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=112 step=7 complete=1 crew=0/0 pos=-20415.8,-13239.5,0.0 station=-20416.0,-13272.0,0.0
+CA133 ROUTE_DIAG id=112 yield=1 for=-1 goal=-20416.0,-13272.0 next=-20416.0,-13272.0 block=107 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=126 step=9 complete=0 crew=0/0 pos=-16574.3,-13267.4,0.0 station=-16576.0,-13272.0,0.0
+CA133 ROUTE_DIAG id=126 yield=0 for=-1 goal=-16544.0,-13280.0 next=-16544.0,-13280.0 block=125 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=144 step=9 complete=0 crew=0/0 pos=-8891.7,-13346.9,0.0 station=-8896.0,-13352.0,0.0
+CA133 ROUTE_DIAG id=144 yield=0 for=-1 goal=-8864.0,-13344.0 next=-8864.0,-13344.0 block=143 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=152 step=9 complete=1 crew=0/0 pos=-8752.0,-13144.0,0.0 station=-8816.0,-13272.0,0.0
+CA133 ROUTE_DIAG id=152 yield=1 for=144 goal=-8752.0,-13144.0 next=-8752.0,-13144.0 block=-1 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=153 step=11 complete=1 crew=0/0 pos=-8792.0,-13144.0,0.0 station=-8856.0,-13272.0,0.0
+CA133 ROUTE_DIAG id=153 yield=1 for=144 goal=-8792.0,-13144.0 next=-8792.0,-13144.0 block=-1 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=159 step=2 complete=0 crew=0/0 pos=-842.5,1659.6,0.0 station=-5096.0,-13352.0,0.0
+CA133 ROUTE_DIAG id=159 yield=0 for=-1 goal=0.0,0.0 next=0.0,0.0 block=-1 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=182 step=5 complete=0 crew=0/0 pos=-1212.2,-13267.5,0.0 station=-1216.0,-13272.0,0.0
+CA133 ROUTE_DIAG id=182 yield=0 for=-1 goal=-1184.0,-13280.0 next=-1184.0,-13280.0 block=181 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=191 step=7 complete=0 crew=0/0 pos=-28400.0,14886.8,0.0 station=-28480.0,14880.0,0.0
+CA133 ROUTE_DIAG id=191 yield=0 for=-1 goal=-28448.0,14880.0 next=-28448.0,14880.0 block=196 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=192 step=7 complete=0 crew=0/0 pos=-28432.0,14952.9,0.0 station=-28480.0,14920.0,0.0
+CA133 ROUTE_DIAG id=192 yield=0 for=-1 goal=-28448.0,14944.0 next=-28448.0,14944.0 block=197 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=194 step=9 complete=1 crew=0/0 pos=-28504.0,14672.0,0.0 station=-28440.0,14800.0,0.0
+CA133 ROUTE_DIAG id=194 yield=1 for=192 goal=-28504.0,14672.0 next=-28504.0,14672.0 block=-1 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=201 step=7 complete=0 crew=0/0 pos=-477.7,14926.4,0.0 station=-488.0,14920.0,0.0
+CA133 ROUTE_DIAG id=201 yield=0 for=-1 goal=-480.0,14944.0 next=-480.0,14944.0 block=207 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=206 step=8 complete=0 crew=0/0 pos=-439.4,14922.3,-0.0 station=-448.0,14920.0,0.0
+CA133 ROUTE_DIAG id=206 yield=0 for=-1 goal=-448.0,14920.0 next=-448.0,14920.0 block=201 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=208 step=3 complete=0 crew=0/0 pos=-9805.1,-5474.8,0.0 station=-408.0,14800.0,0.0
+CA133 ROUTE_DIAG id=208 yield=0 for=-1 goal=-9824.0,-5472.0 next=-9824.0,-5472.0 block=528 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=209 step=3 complete=0 crew=0/0 pos=-8269.1,-5474.8,0.0 station=-408.0,14840.0,0.0
+CA133 ROUTE_DIAG id=209 yield=0 for=-1 goal=-8288.0,-5472.0 next=-8288.0,-5472.0 block=529 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=210 step=3 complete=0 crew=0/0 pos=-6733.1,-5474.8,0.0 station=-408.0,14880.0,0.0
+CA133 ROUTE_DIAG id=210 yield=0 for=-1 goal=-6752.0,-5472.0 next=-6752.0,-5472.0 block=530 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=211 step=3 complete=0 crew=0/0 pos=-5197.1,-5474.8,0.0 station=-408.0,14920.0,0.0
+CA133 ROUTE_DIAG id=211 yield=0 for=-1 goal=-5216.0,-5472.0 next=-5216.0,-5472.0 block=531 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=212 step=3 complete=0 crew=0/0 pos=-3661.1,-5474.8,0.0 station=-29456.0,-12840.0,0.0
+CA133 ROUTE_DIAG id=212 yield=0 for=-1 goal=-3680.0,-5472.0 next=-3680.0,-5472.0 block=532 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=213 step=3 complete=0 crew=0/0 pos=-2125.1,-5474.8,0.0 station=-29496.0,-12840.0,0.0
+CA133 ROUTE_DIAG id=213 yield=0 for=-1 goal=-2144.0,-5472.0 next=-2144.0,-5472.0 block=533 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=214 step=3 complete=0 crew=0/0 pos=-589.1,-5474.8,0.0 station=-29536.0,-12840.0,0.0
+CA133 ROUTE_DIAG id=214 yield=0 for=-1 goal=-608.0,-5472.0 next=-608.0,-5472.0 block=534 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=215 step=3 complete=0 crew=0/0 pos=-20557.1,-3746.8,0.0 station=-29576.0,-12840.0,0.0
+CA133 ROUTE_DIAG id=215 yield=0 for=-1 goal=-20576.0,-3744.0 next=-20576.0,-3744.0 block=535 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=222 step=9 complete=0 crew=0/0 pos=-29467.3,-12728.2,0.0 station=-29456.0,-12760.0,0.0
+CA133 ROUTE_DIAG id=222 yield=0 for=-1 goal=-29472.0,-12768.0 next=-29472.0,-12768.0 block=20 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=223 step=9 complete=0 crew=0/0 pos=-29511.1,-12756.9,0.0 station=-29496.0,-12760.0,0.0
+CA133 ROUTE_DIAG id=223 yield=0 for=-1 goal=-29472.0,-12768.0 next=-29472.0,-12768.0 block=20 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=224 step=10 complete=0 crew=0/0 pos=-29549.0,-12764.3,0.0 station=-29536.0,-12760.0,0.0
+CA133 ROUTE_DIAG id=224 yield=0 for=-1 goal=-29536.0,-12760.0 next=-29536.0,-12760.0 block=223 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=225 step=10 complete=0 crew=0/0 pos=-29581.6,-12758.8,0.0 station=-29576.0,-12760.0,0.0
+CA133 ROUTE_DIAG id=225 yield=0 for=-1 goal=-29576.0,-12760.0 next=-29576.0,-12760.0 block=224 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=231 step=7 complete=0 crew=0/0 pos=306.3,-12792.2,0.0 station=304.0,-12800.0,0.0
+CA133 ROUTE_DIAG id=231 yield=0 for=-1 goal=288.0,-12768.0 next=288.0,-12768.0 block=236 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=232 step=7 complete=0 crew=0/0 pos=267.2,-12767.7,0.0 station=264.0,-12800.0,0.0
+CA133 ROUTE_DIAG id=232 yield=0 for=-1 goal=288.0,-12768.0 next=288.0,-12768.0 block=236 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=237 step=7 complete=0 crew=0/0 pos=263.6,-12734.2,0.0 station=264.0,-12760.0,0.0
+CA133 ROUTE_DIAG id=237 yield=0 for=-1 goal=288.0,-12768.0 next=288.0,-12768.0 block=232 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=239 step=9 complete=1 crew=0/0 pos=56.0,-12824.0,0.0 station=184.0,-12760.0,0.0
+CA133 ROUTE_DIAG id=239 yield=1 for=237 goal=56.0,-12824.0 next=56.0,-12824.0 block=-1 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=240 step=11 complete=1 crew=0/0 pos=-27952.0,14680.0,0.0 station=-28016.0,14808.0,0.0
+CA133 ROUTE_DIAG id=240 yield=1 for=249 goal=-27952.0,14680.0 next=-27952.0,14680.0 block=-1 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=241 step=11 complete=1 crew=0/0 pos=-27992.0,14680.0,0.0 station=-28056.0,14808.0,0.0
+CA133 ROUTE_DIAG id=241 yield=1 for=249 goal=-27992.0,14680.0 next=-27992.0,14680.0 block=-1 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=242 step=11 complete=1 crew=0/0 pos=-28032.2,14680.4,0.0 station=-28096.0,14808.0,0.0
+CA133 ROUTE_DIAG id=242 yield=1 for=249 goal=-28032.0,14680.0 next=-28032.0,14680.0 block=-1 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=243 step=11 complete=1 crew=0/0 pos=-28072.3,14680.7,0.0 station=-28136.0,14808.0,0.0
+CA133 ROUTE_DIAG id=243 yield=1 for=249 goal=-28072.0,14680.0 next=-28072.0,14680.0 block=-1 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=244 step=9 complete=1 crew=0/0 pos=-28112.0,14680.0,0.0 station=-28176.0,14808.0,0.0
+CA133 ROUTE_DIAG id=244 yield=1 for=249 goal=-28112.0,14680.0 next=-28112.0,14680.0 block=-1 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=246 step=11 complete=1 crew=0/0 pos=-28120.0,14720.0,0.0 station=-28056.0,14848.0,0.0
+CA133 ROUTE_DIAG id=246 yield=1 for=252 goal=-28120.0,14720.0 next=-28120.0,14720.0 block=-1 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=247 step=11 complete=1 crew=0/0 pos=-28159.8,14720.4,0.0 station=-28096.0,14848.0,0.0
+CA133 ROUTE_DIAG id=247 yield=1 for=252 goal=-28160.0,14720.0 next=-28160.0,14720.0 block=-1 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=248 step=11 complete=1 crew=0/0 pos=-28199.7,14720.7,0.0 station=-28136.0,14848.0,0.0
+CA133 ROUTE_DIAG id=248 yield=1 for=252 goal=-28200.0,14720.0 next=-28200.0,14720.0 block=-1 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=249 step=7 complete=0 crew=0/0 pos=-28191.9,14849.6,0.0 station=-28176.0,14848.0,0.0
+CA133 ROUTE_DIAG id=249 yield=0 for=-1 goal=-28192.0,14880.0 next=-28192.0,14880.0 block=254 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=252 step=9 complete=0 crew=0/0 pos=-28093.2,14879.9,0.0 station=-28096.0,14888.0,0.0
+CA133 ROUTE_DIAG id=252 yield=0 for=-1 goal=-28064.0,14880.0 next=-28064.0,14880.0 block=251 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=255 step=7 complete=1 crew=0/0 pos=-24112.0,14680.0,0.0 station=-24176.0,14808.0,0.0
+CA133 ROUTE_DIAG id=255 yield=1 for=267 goal=-24112.0,14680.0 next=-24112.0,14680.0 block=-1 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=256 step=9 complete=1 crew=0/0 pos=-24152.0,14680.0,0.0 station=-24216.0,14808.0,0.0
+CA133 ROUTE_DIAG id=256 yield=1 for=267 goal=-24152.0,14680.0 next=-24152.0,14680.0 block=-1 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=267 step=9 complete=0 crew=0/0 pos=-24252.6,14883.4,0.0 station=-24256.0,14888.0,0.0
+CA133 ROUTE_DIAG id=267 yield=0 for=-1 goal=-24224.0,14880.0 next=-24224.0,14880.0 block=266 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=271 step=7 complete=1 crew=0/0 pos=-20440.0,14680.0,0.0 station=-20376.0,14808.0,0.0
+CA133 ROUTE_DIAG id=271 yield=1 for=282 goal=-20440.0,14680.0 next=-20440.0,14680.0 block=-1 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=282 step=9 complete=0 crew=0/0 pos=-20411.8,14883.5,0.0 station=-20416.0,14888.0,0.0
+CA133 ROUTE_DIAG id=282 yield=0 for=-1 goal=-20384.0,14880.0 next=-20384.0,14880.0 block=281 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=287 step=9 complete=0 crew=0/0 pos=-16574.3,14803.4,0.0 station=-16576.0,14808.0,0.0
+CA133 ROUTE_DIAG id=287 yield=0 for=-1 goal=-16544.0,14816.0 next=-16544.0,14816.0 block=286 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=290 step=5 complete=0 crew=0/0 pos=-16462.8,14879.6,0.0 station=-16496.0,14848.0,0.0
+CA133 ROUTE_DIAG id=290 yield=0 for=-1 goal=-16480.0,14880.0 next=-16480.0,14880.0 block=295 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=291 step=5 complete=0 crew=0/0 pos=-16549.3,14927.7,0.0 station=-16536.0,14848.0,0.0
+CA133 ROUTE_DIAG id=291 yield=0 for=-1 goal=-16544.0,14880.0 next=-16544.0,14880.0 block=296 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=292 step=5 complete=0 crew=0/0 pos=-16568.6,14879.6,0.0 station=-16576.0,14848.0,0.0
+CA133 ROUTE_DIAG id=292 yield=0 for=-1 goal=-16544.0,14880.0 next=-16544.0,14880.0 block=296 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=297 step=9 complete=0 crew=0/0 pos=-16542.8,14842.4,0.0 station=-16576.0,14888.0,0.0
+CA133 ROUTE_DIAG id=297 yield=0 for=-1 goal=-16544.0,14880.0 next=-16544.0,14880.0 block=292 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=302 step=9 complete=0 crew=0/0 pos=-12733.9,14819.4,0.0 station=-12736.0,14808.0,0.0
+CA133 ROUTE_DIAG id=302 yield=0 for=-1 goal=-12704.0,14816.0 next=-12704.0,14816.0 block=301 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=305 step=5 complete=0 crew=0/0 pos=-12623.8,14879.7,0.0 station=-12656.0,14848.0,0.0
+CA133 ROUTE_DIAG id=305 yield=0 for=-1 goal=-12640.0,14880.0 next=-12640.0,14880.0 block=310 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=306 step=5 complete=0 crew=0/0 pos=-12733.7,14912.2,0.0 station=-12696.0,14848.0,0.0
+CA133 ROUTE_DIAG id=306 yield=0 for=-1 goal=-12704.0,14880.0 next=-12704.0,14880.0 block=311 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=307 step=5 complete=0 crew=0/0 pos=-12738.6,14879.5,0.0 station=-12736.0,14848.0,0.0
+CA133 ROUTE_DIAG id=307 yield=0 for=-1 goal=-12704.0,14880.0 next=-12704.0,14880.0 block=312 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=312 step=9 complete=0 crew=0/0 pos=-12702.9,14851.5,0.0 station=-12736.0,14888.0,0.0
+CA133 ROUTE_DIAG id=312 yield=0 for=-1 goal=-12704.0,14880.0 next=-12704.0,14880.0 block=311 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=319 step=2 complete=0 crew=0/0 pos=-768.7,1743.7,0.0 station=-8976.0,14808.0,0.0
+CA133 ROUTE_DIAG id=319 yield=0 for=-1 goal=0.0,0.0 next=0.0,0.0 block=-1 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=320 step=5 complete=0 crew=0/0 pos=-8777.2,14880.0,-0.0 station=-8816.0,14848.0,0.0
+CA133 ROUTE_DIAG id=320 yield=0 for=-1 goal=-8800.0,14880.0 next=-8800.0,14880.0 block=325 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=321 step=5 complete=0 crew=0/0 pos=-8856.6,14926.5,0.0 station=-8856.0,14848.0,0.0
+CA133 ROUTE_DIAG id=321 yield=0 for=-1 goal=-8864.0,14880.0 next=-8864.0,14880.0 block=326 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=322 step=5 complete=0 crew=0/0 pos=-8867.0,14849.4,-0.0 station=-8896.0,14848.0,0.0
+CA133 ROUTE_DIAG id=322 yield=0 for=-1 goal=-8864.0,14880.0 next=-8864.0,14880.0 block=327 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=335 step=5 complete=0 crew=0/0 pos=-4939.4,14879.7,0.0 station=-4976.0,14848.0,0.0
+CA133 ROUTE_DIAG id=335 yield=0 for=-1 goal=-4960.0,14880.0 next=-4960.0,14880.0 block=340 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=342 step=5 complete=0 crew=0/0 pos=-5053.2,14892.3,-0.0 station=-5056.0,14888.0,0.0
+CA133 ROUTE_DIAG id=342 yield=0 for=-1 goal=-5024.0,14880.0 next=-5024.0,14880.0 block=341 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=353 step=5 complete=0 crew=0/0 pos=-1255.4,14929.1,-0.0 station=-1256.0,14848.0,0.0
+CA133 ROUTE_DIAG id=353 yield=0 for=-1 goal=-1248.0,14880.0 next=-1248.0,14880.0 block=358 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=354 step=5 complete=0 crew=0/0 pos=-1332.9,14880.0,-0.0 station=-1296.0,14848.0,0.0
+CA133 ROUTE_DIAG id=354 yield=0 for=-1 goal=-1312.0,14880.0 next=-1312.0,14880.0 block=359 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=362 step=7 complete=0 crew=0/0 pos=-28527.8,-12859.8,0.0 station=-28520.0,-12864.0,0.0
+CA133 ROUTE_DIAG id=362 yield=0 for=-1 goal=-28512.0,-12832.0 next=-28512.0,-12832.0 block=361 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=372 step=7 complete=0 crew=0/0 pos=-28447.9,-12862.8,0.0 station=-28440.0,-12864.0,0.0
+CA133 ROUTE_DIAG id=372 yield=0 for=-1 goal=-28448.0,-12832.0 next=-28448.0,-12832.0 block=371 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=377 step=7 complete=0 crew=0/0 pos=-28511.8,-9019.1,0.0 station=-28520.0,-9024.0,0.0
+CA133 ROUTE_DIAG id=377 yield=0 for=-1 goal=-28512.0,-8992.0 next=-28512.0,-8992.0 block=376 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=380 step=9 complete=1 crew=0/0 pos=-28352.0,-8880.0,0.0 station=-28480.0,-8944.0,0.0
+CA133 ROUTE_DIAG id=380 yield=1 for=377 goal=-28352.0,-8880.0 next=-28352.0,-8880.0 block=-1 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=381 step=9 complete=1 crew=0/0 pos=-28352.3,-8920.2,0.0 station=-28480.0,-8984.0,0.0
+CA133 ROUTE_DIAG id=381 yield=1 for=377 goal=-28352.0,-8920.0 next=-28352.0,-8920.0 block=-1 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=382 step=8 complete=0 crew=0/0 pos=-28479.0,-9022.5,0.0 station=-28480.0,-9024.0,0.0
+CA133 ROUTE_DIAG id=382 yield=0 for=-1 goal=-28480.0,-9024.0 next=-28480.0,-9024.0 block=377 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=386 step=9 complete=1 crew=0/0 pos=-28312.2,-8920.1,0.0 station=-28440.0,-8984.0,0.0
+CA133 ROUTE_DIAG id=386 yield=1 for=377 goal=-28312.0,-8920.0 next=-28312.0,-8920.0 block=-1 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=387 step=9 complete=1 crew=0/0 pos=-28312.7,-9087.7,0.0 station=-28440.0,-9024.0,0.0
+CA133 ROUTE_DIAG id=387 yield=1 for=382 goal=-28312.0,-9088.0 next=-28312.0,-9088.0 block=-1 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=388 step=9 complete=1 crew=0/0 pos=-28312.7,-9127.7,0.0 station=-28440.0,-9064.0,0.0
+CA133 ROUTE_DIAG id=388 yield=1 for=382 goal=-28312.0,-9128.0 next=-28312.0,-9128.0 block=-1 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=389 step=9 complete=1 crew=0/0 pos=-28312.7,-9167.7,0.0 station=-28440.0,-9104.0,0.0
+CA133 ROUTE_DIAG id=389 yield=1 for=382 goal=-28312.0,-9168.0 next=-28312.0,-9168.0 block=-1 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=392 step=7 complete=0 crew=0/0 pos=-28512.1,-5181.5,0.0 station=-28520.0,-5184.0,0.0
+CA133 ROUTE_DIAG id=392 yield=0 for=-1 goal=-28512.0,-5152.0 next=-28512.0,-5152.0 block=391 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=405 step=6 complete=0 crew=0/0 pos=-28511.2,2608.0,0.0 station=-28520.0,-1264.0,0.0
+CA133 ROUTE_DIAG id=405 yield=0 for=-1 goal=-28512.0,2592.0 next=-28512.0,2592.0 block=420 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=406 step=6 complete=0 crew=0/0 pos=-28473.6,2592.0,0.0 station=-28520.0,-1304.0,0.0
+CA133 ROUTE_DIAG id=406 yield=0 for=-1 goal=-28512.0,2592.0 next=-28512.0,2592.0 block=405 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=407 step=6 complete=0 crew=0/0 pos=-28544.4,2618.4,0.0 station=-28520.0,-1344.0,0.0
+CA133 ROUTE_DIAG id=407 yield=0 for=-1 goal=-28512.0,2592.0 next=-28512.0,2592.0 block=405 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=408 step=6 complete=0 crew=0/0 pos=-28553.3,2578.7,0.0 station=-28520.0,-1384.0,0.0
+CA133 ROUTE_DIAG id=408 yield=0 for=-1 goal=-28512.0,2592.0 next=-28512.0,2592.0 block=420 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=409 step=6 complete=0 crew=0/0 pos=-28513.4,2656.0,0.0 station=-28520.0,-1424.0,0.0
+CA133 ROUTE_DIAG id=409 yield=0 for=-1 goal=-28512.0,2592.0 next=-28512.0,2592.0 block=407 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=410 step=6 complete=0 crew=0/0 pos=-28439.7,2615.6,0.0 station=-28480.0,-1264.0,0.0
+CA133 ROUTE_DIAG id=410 yield=0 for=-1 goal=-28448.0,2592.0 next=-28448.0,2592.0 block=425 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=411 step=6 complete=0 crew=0/0 pos=-28399.1,2592.0,0.0 station=-28480.0,-1304.0,0.0
+CA133 ROUTE_DIAG id=411 yield=0 for=-1 goal=-28448.0,2592.0 next=-28448.0,2592.0 block=425 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=412 step=6 complete=0 crew=0/0 pos=-28474.5,2640.0,0.0 station=-28480.0,-1344.0,0.0
+CA133 ROUTE_DIAG id=412 yield=0 for=-1 goal=-28448.0,2592.0 next=-28448.0,2592.0 block=410 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=413 step=6 complete=0 crew=0/0 pos=-28397.8,2624.0,0.0 station=-28480.0,-1384.0,0.0
+CA133 ROUTE_DIAG id=413 yield=0 for=-1 goal=-28448.0,2592.0 next=-28448.0,2592.0 block=411 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=417 step=7 complete=0 crew=0/0 pos=-28447.8,-1340.1,0.0 station=-28440.0,-1344.0,0.0
+CA133 ROUTE_DIAG id=417 yield=0 for=-1 goal=-28448.0,-1312.0 next=-28448.0,-1312.0 block=416 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=422 step=7 complete=0 crew=0/0 pos=-28518.6,2503.3,0.0 station=-28520.0,2496.0,0.0
+CA133 ROUTE_DIAG id=422 yield=0 for=-1 goal=-28512.0,2528.0 next=-28512.0,2528.0 block=421 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=425 step=8 complete=0 crew=0/0 pos=-28438.4,2576.4,0.0 station=-28480.0,2576.0,0.0
+CA133 ROUTE_DIAG id=425 yield=0 for=-1 goal=-28480.0,2576.0 next=-28480.0,2576.0 block=406 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=426 step=8 complete=0 crew=0/0 pos=-28444.7,2531.2,0.0 station=-28480.0,2536.0,0.0
+CA133 ROUTE_DIAG id=426 yield=0 for=-1 goal=-28480.0,2536.0 next=-28480.0,2536.0 block=432 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=427 step=7 complete=0 crew=0/0 pos=-28432.1,2491.3,0.0 station=-28480.0,2496.0,0.0
+CA133 ROUTE_DIAG id=427 yield=0 for=-1 goal=-28448.0,2528.0 next=-28448.0,2528.0 block=426 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=430 step=7 complete=0 crew=0/0 pos=-28404.9,2546.0,0.0 station=-28440.0,2576.0,0.0
+CA133 ROUTE_DIAG id=430 yield=0 for=-1 goal=-28448.0,2592.0 next=-28448.0,2592.0 block=425 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=431 step=9 complete=1 crew=0/0 pos=-28312.0,2472.0,0.0 station=-28440.0,2536.0,0.0
+CA133 ROUTE_DIAG id=431 yield=1 for=426 goal=-28312.0,2472.0 next=-28312.0,2472.0 block=-1 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=432 step=7 complete=0 crew=0/0 pos=-28479.8,2521.1,0.0 station=-28440.0,2496.0,0.0
+CA133 ROUTE_DIAG id=432 yield=0 for=-1 goal=-28448.0,2528.0 next=-28448.0,2528.0 block=426 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=437 step=7 complete=0 crew=0/0 pos=-28511.4,6341.5,0.0 station=-28520.0,6336.0,0.0
+CA133 ROUTE_DIAG id=437 yield=0 for=-1 goal=-28512.0,6368.0 next=-28512.0,6368.0 block=436 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=440 step=9 complete=1 crew=0/0 pos=-28352.7,6479.7,0.0 station=-28480.0,6416.0,0.0
+CA133 ROUTE_DIAG id=440 yield=1 for=437 goal=-28352.0,6480.0 next=-28352.0,6480.0 block=-1 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=441 step=9 complete=1 crew=0/0 pos=-28352.3,6439.8,0.0 station=-28480.0,6376.0,0.0
+CA133 ROUTE_DIAG id=441 yield=1 for=437 goal=-28352.0,6440.0 next=-28352.0,6440.0 block=-1 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=442 step=8 complete=0 crew=0/0 pos=-28476.8,6340.0,0.0 station=-28480.0,6336.0,0.0
+CA133 ROUTE_DIAG id=442 yield=0 for=-1 goal=-28480.0,6336.0 next=-28480.0,6336.0 block=437 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=447 step=7 complete=0 crew=0/0 pos=-28477.6,6373.5,0.0 station=-28440.0,6336.0,0.0
+CA133 ROUTE_DIAG id=447 yield=0 for=-1 goal=-28448.0,6368.0 next=-28448.0,6368.0 block=446 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=449 step=9 complete=1 crew=0/0 pos=-28312.0,6192.0,0.0 station=-28440.0,6256.0,0.0
+CA133 ROUTE_DIAG id=449 yield=1 for=442 goal=-28312.0,6192.0 next=-28312.0,6192.0 block=-1 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=452 step=7 complete=0 crew=0/0 pos=-28511.6,10183.8,0.0 station=-28520.0,10176.0,0.0
+CA133 ROUTE_DIAG id=452 yield=0 for=-1 goal=-28512.0,10208.0 next=-28512.0,10208.0 block=451 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=456 step=9 complete=1 crew=0/0 pos=-28352.7,10152.3,0.0 station=-28480.0,10216.0,0.0
+CA133 ROUTE_DIAG id=456 yield=1 for=452 goal=-28352.0,10152.0 next=-28352.0,10152.0 block=-1 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=462 step=7 complete=0 crew=0/0 pos=-28447.4,10173.2,0.0 station=-28440.0,10176.0,0.0
+CA133 ROUTE_DIAG id=462 yield=0 for=-1 goal=-28448.0,10208.0 next=-28448.0,10208.0 block=457 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=467 step=7 complete=0 crew=0/0 pos=-28511.9,14020.7,0.0 station=-28520.0,14016.0,0.0
+CA133 ROUTE_DIAG id=467 yield=0 for=-1 goal=-28512.0,14048.0 next=-28512.0,14048.0 block=466 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=472 step=8 complete=0 crew=0/0 pos=-28479.1,14012.4,0.0 station=-28480.0,14016.0,0.0
+CA133 ROUTE_DIAG id=472 yield=0 for=-1 goal=-28480.0,14016.0 next=-28480.0,14016.0 block=467 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=477 step=7 complete=0 crew=0/0 pos=-28435.0,14016.4,0.0 station=-28440.0,14016.0,0.0
+CA133 ROUTE_DIAG id=477 yield=0 for=-1 goal=-28448.0,14048.0 next=-28448.0,14048.0 block=476 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=479 step=2 complete=0 crew=0/0 pos=-688.6,1663.9,0.0 station=-28440.0,13936.0,0.0
+CA133 ROUTE_DIAG id=479 yield=0 for=-1 goal=0.0,0.0 next=0.0,0.0 block=-1 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=485 step=9 complete=0 crew=0/0 pos=-443.9,-12769.3,0.0 station=-448.0,-12784.0,0.0
+CA133 ROUTE_DIAG id=485 yield=0 for=-1 goal=-416.0,-12768.0 next=-416.0,-12768.0 block=490 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=497 step=9 complete=1 crew=0/0 pos=-616.0,-8960.0,0.0 station=-488.0,-9024.0,0.0
+CA133 ROUTE_DIAG id=497 yield=1 for=502 goal=-616.0,-8960.0 next=-616.0,-8960.0 block=-1 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=499 step=9 complete=1 crew=0/0 pos=-616.0,-9040.0,0.0 station=-488.0,-9104.0,0.0
+CA133 ROUTE_DIAG id=499 yield=1 for=504 goal=-616.0,-9040.0 next=-616.0,-9040.0 block=-1 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=502 step=9 complete=0 crew=0/0 pos=-371.7,-8995.8,0.0 station=-448.0,-9024.0,0.0
+CA133 ROUTE_DIAG id=502 yield=0 for=-1 goal=-416.0,-8992.0 next=-416.0,-8992.0 block=507 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=503 step=9 complete=0 crew=0/0 pos=-443.1,-9061.6,0.0 station=-448.0,-9064.0,0.0
+CA133 ROUTE_DIAG id=503 yield=0 for=-1 goal=-416.0,-9056.0 next=-416.0,-9056.0 block=508 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=504 step=9 complete=0 crew=0/0 pos=-410.9,-9139.5,0.0 station=-448.0,-9104.0,0.0
+CA133 ROUTE_DIAG id=504 yield=0 for=-1 goal=-416.0,-9120.0 next=-416.0,-9120.0 block=509 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=511 step=9 complete=1 crew=0/0 pos=-616.0,-5080.0,0.0 station=-488.0,-5144.0,0.0
+CA133 ROUTE_DIAG id=511 yield=1 for=516 goal=-616.0,-5080.0 next=-616.0,-5080.0 block=-1 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=512 step=7 complete=1 crew=0/0 pos=-616.0,-5248.0,0.0 station=-488.0,-5184.0,0.0
+CA133 ROUTE_DIAG id=512 yield=1 for=517 goal=-616.0,-5248.0 next=-616.0,-5248.0 block=-1 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=515 step=7 complete=0 crew=0/0 pos=-416.0,-5070.9,0.0 station=-448.0,-5104.0,0.0
+CA133 ROUTE_DIAG id=515 yield=0 for=-1 goal=-416.0,-5088.0 next=-416.0,-5088.0 block=520 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=516 step=7 complete=0 crew=0/0 pos=-442.9,-5125.1,0.0 station=-448.0,-5144.0,0.0
+CA133 ROUTE_DIAG id=516 yield=0 for=-1 goal=-416.0,-5152.0 next=-416.0,-5152.0 block=521 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=517 step=7 complete=0 crew=0/0 pos=-443.0,-5157.1,0.0 station=-448.0,-5184.0,0.0
+CA133 ROUTE_DIAG id=517 yield=0 for=-1 goal=-416.0,-5152.0 next=-416.0,-5152.0 block=522 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=518 step=7 complete=0 crew=0/0 pos=-442.8,-5217.1,0.0 station=-448.0,-5224.0,0.0
+CA133 ROUTE_DIAG id=518 yield=0 for=-1 goal=-416.0,-5216.0 next=-416.0,-5216.0 block=523 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=528 step=3 complete=0 crew=0/0 pos=-9840.9,-5469.7,0.0 station=-488.0,-1384.0,0.0
+CA133 ROUTE_DIAG id=528 yield=0 for=-1 goal=-9824.0,-5472.0 next=-9824.0,-5472.0 block=208 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=529 step=3 complete=0 crew=0/0 pos=-8304.9,-5469.7,0.0 station=-488.0,-1424.0,0.0
+CA133 ROUTE_DIAG id=529 yield=0 for=-1 goal=-8288.0,-5472.0 next=-8288.0,-5472.0 block=209 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=530 step=3 complete=0 crew=0/0 pos=-6768.9,-5469.7,0.0 station=-448.0,-1264.0,0.0
+CA133 ROUTE_DIAG id=530 yield=0 for=-1 goal=-6752.0,-5472.0 next=-6752.0,-5472.0 block=210 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=531 step=3 complete=0 crew=0/0 pos=-5232.9,-5469.7,0.0 station=-448.0,-1304.0,0.0
+CA133 ROUTE_DIAG id=531 yield=0 for=-1 goal=-5216.0,-5472.0 next=-5216.0,-5472.0 block=211 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=532 step=3 complete=0 crew=0/0 pos=-3696.9,-5469.7,0.0 station=-448.0,-1344.0,0.0
+CA133 ROUTE_DIAG id=532 yield=0 for=-1 goal=-3680.0,-5472.0 next=-3680.0,-5472.0 block=212 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=533 step=3 complete=0 crew=0/0 pos=-2160.9,-5469.7,0.0 station=-448.0,-1384.0,0.0
+CA133 ROUTE_DIAG id=533 yield=0 for=-1 goal=-2144.0,-5472.0 next=-2144.0,-5472.0 block=213 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=534 step=3 complete=0 crew=0/0 pos=-624.9,-5469.7,0.0 station=-448.0,-1424.0,0.0
+CA133 ROUTE_DIAG id=534 yield=0 for=-1 goal=-608.0,-5472.0 next=-608.0,-5472.0 block=214 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=535 step=3 complete=0 crew=0/0 pos=-20592.9,-3741.7,0.0 station=-408.0,-1264.0,0.0
+CA133 ROUTE_DIAG id=535 yield=0 for=-1 goal=-20576.0,-3744.0 next=-20576.0,-3744.0 block=215 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=540 step=7 complete=1 crew=0/0 pos=-615.3,2639.7,0.0 station=-488.0,2576.0,0.0
+CA133 ROUTE_DIAG id=540 yield=1 for=548 goal=-616.0,2640.0 next=-616.0,2640.0 block=-1 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=541 step=7 complete=1 crew=0/0 pos=-616.0,2600.0,0.0 station=-488.0,2536.0,0.0
+CA133 ROUTE_DIAG id=541 yield=1 for=548 goal=-616.0,2600.0 next=-616.0,2600.0 block=-1 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=542 step=7 complete=1 crew=0/0 pos=-616.0,2560.0,0.0 station=-488.0,2496.0,0.0
+CA133 ROUTE_DIAG id=542 yield=1 for=548 goal=-616.0,2560.0 next=-616.0,2560.0 block=-1 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=543 step=11 complete=1 crew=0/0 pos=-616.0,2520.0,0.0 station=-488.0,2456.0,0.0
+CA133 ROUTE_DIAG id=543 yield=1 for=548 goal=-616.0,2520.0 next=-616.0,2520.0 block=-1 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=544 step=9 complete=1 crew=0/0 pos=-616.0,2352.0,0.0 station=-488.0,2416.0,0.0
+CA133 ROUTE_DIAG id=544 yield=1 for=549 goal=-616.0,2352.0 next=-616.0,2352.0 block=-1 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=546 step=5 complete=0 crew=0/0 pos=-367.7,2527.9,0.0 station=-448.0,2536.0,0.0
+CA133 ROUTE_DIAG id=546 yield=0 for=-1 goal=-416.0,2528.0 next=-416.0,2528.0 block=552 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=547 step=5 complete=0 crew=0/0 pos=-443.9,2527.8,0.0 station=-448.0,2496.0,0.0
+CA133 ROUTE_DIAG id=547 yield=0 for=-1 goal=-416.0,2528.0 next=-416.0,2528.0 block=552 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=548 step=9 complete=0 crew=0/0 pos=-444.2,2465.9,0.0 station=-448.0,2456.0,0.0
+CA133 ROUTE_DIAG id=548 yield=0 for=-1 goal=-416.0,2464.0 next=-416.0,2464.0 block=553 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=549 step=9 complete=0 crew=0/0 pos=-443.3,2402.1,0.0 station=-448.0,2416.0,0.0
+CA133 ROUTE_DIAG id=549 yield=0 for=-1 goal=-416.0,2400.0 next=-416.0,2400.0 block=554 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=556 step=9 complete=1 crew=0/0 pos=-616.0,6440.0,0.0 station=-488.0,6376.0,0.0
+CA133 ROUTE_DIAG id=556 yield=1 for=562 goal=-616.0,6440.0 next=-616.0,6440.0 block=-1 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=560 step=7 complete=0 crew=0/0 pos=-416.2,6456.2,0.0 station=-448.0,6416.0,0.0
+CA133 ROUTE_DIAG id=560 yield=0 for=-1 goal=-416.0,6432.0 next=-416.0,6432.0 block=565 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=561 step=7 complete=0 crew=0/0 pos=-446.5,6398.3,0.0 station=-448.0,6376.0,0.0
+CA133 ROUTE_DIAG id=561 yield=0 for=-1 goal=-416.0,6368.0 next=-416.0,6368.0 block=565 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=562 step=7 complete=0 crew=0/0 pos=-442.8,6365.1,0.0 station=-448.0,6336.0,0.0
+CA133 ROUTE_DIAG id=562 yield=0 for=-1 goal=-416.0,6368.0 next=-416.0,6368.0 block=567 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=563 step=7 complete=0 crew=0/0 pos=-442.9,6303.4,0.0 station=-448.0,6296.0,0.0
+CA133 ROUTE_DIAG id=563 yield=0 for=-1 goal=-416.0,6304.0 next=-416.0,6304.0 block=568 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=564 step=7 complete=0 crew=0/0 pos=-411.8,6222.7,0.0 station=-448.0,6256.0,0.0
+CA133 ROUTE_DIAG id=564 yield=0 for=-1 goal=-416.0,6240.0 next=-416.0,6240.0 block=569 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=570 step=9 complete=1 crew=0/0 pos=-616.7,10160.3,0.0 station=-488.0,10256.0,0.0
+CA133 ROUTE_DIAG id=570 yield=1 for=575 goal=-616.0,10192.0 next=-616.0,10192.0 block=573 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=573 step=7 complete=1 crew=0/0 pos=-616.0,10200.0,0.0 station=-488.0,10136.0,0.0
+CA133 ROUTE_DIAG id=573 yield=1 for=578 goal=-616.0,10200.0 next=-616.0,10200.0 block=-1 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=575 step=7 complete=0 crew=0/0 pos=-442.8,10268.0,0.0 station=-448.0,10256.0,0.0
+CA133 ROUTE_DIAG id=575 yield=0 for=-1 goal=-416.0,10272.0 next=-416.0,10272.0 block=580 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=576 step=7 complete=0 crew=0/0 pos=-448.1,10232.5,0.0 station=-448.0,10216.0,0.0
+CA133 ROUTE_DIAG id=576 yield=0 for=-1 goal=-416.0,10208.0 next=-416.0,10208.0 block=577 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=577 step=7 complete=0 crew=0/0 pos=-448.1,10200.4,0.0 station=-448.0,10176.0,0.0
+CA133 ROUTE_DIAG id=577 yield=0 for=-1 goal=-416.0,10208.0 next=-416.0,10208.0 block=582 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=578 step=7 complete=0 crew=0/0 pos=-442.7,10141.2,0.0 station=-448.0,10136.0,0.0
+CA133 ROUTE_DIAG id=578 yield=0 for=-1 goal=-416.0,10144.0 next=-416.0,10144.0 block=583 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=579 step=7 complete=0 crew=0/0 pos=-411.0,10062.7,0.0 station=-448.0,10096.0,0.0
+CA133 ROUTE_DIAG id=579 yield=0 for=-1 goal=-416.0,10080.0 next=-416.0,10080.0 block=584 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=586 step=9 complete=1 crew=0/0 pos=-608.2,13963.9,0.0 station=-488.0,14056.0,0.0
+CA133 ROUTE_DIAG id=586 yield=1 for=591 goal=-616.0,13992.0 next=-616.0,13992.0 block=589 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=587 step=9 complete=1 crew=0/0 pos=-616.0,14080.0,0.0 station=-488.0,14016.0,0.0
+CA133 ROUTE_DIAG id=587 yield=1 for=592 goal=-616.0,14080.0 next=-616.0,14080.0 block=-1 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=589 step=9 complete=1 crew=0/0 pos=-616.0,14000.0,0.0 station=-488.0,13936.0,0.0
+CA133 ROUTE_DIAG id=589 yield=1 for=594 goal=-616.0,14000.0 next=-616.0,14000.0 block=-1 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=591 step=7 complete=0 crew=0/0 pos=-371.6,14044.8,0.0 station=-448.0,14056.0,0.0
+CA133 ROUTE_DIAG id=591 yield=0 for=-1 goal=-416.0,14048.0 next=-416.0,14048.0 block=597 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=592 step=7 complete=0 crew=0/0 pos=-442.8,14045.6,0.0 station=-448.0,14016.0,0.0
+CA133 ROUTE_DIAG id=592 yield=0 for=-1 goal=-416.0,14048.0 next=-416.0,14048.0 block=597 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=593 step=7 complete=0 crew=0/0 pos=-448.0,13976.7,0.0 station=-448.0,13976.0,0.0
+CA133 ROUTE_DIAG id=593 yield=0 for=-1 goal=-416.0,13984.0 next=-416.0,13984.0 block=598 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_PENDING id=594 step=7 complete=0 crew=0/0 pos=-410.6,13901.3,0.0 station=-448.0,13936.0,0.0
+CA133 ROUTE_DIAG id=594 yield=0 for=-1 goal=-416.0,13920.0 next=-416.0,13920.0 block=599 line=-1 air=1067.7 sleep=0
+CA133 ROUTE_CONTROL_COMPLETE alive=600 formed=488
+Game saved.

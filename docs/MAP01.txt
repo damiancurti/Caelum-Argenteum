@@ -1,6 +1,15 @@
 CAELUM ARGENTEUM — STORY AND MAP01
 
-Documentation version: **5.1.2** — 2026-10-07.
+Documentation version: **5.1.3** — 2026-10-08.
+
+## 5.1.3 - Port city revision (#133)
+
+MAP01 narrative and geometry stay unchanged. The author fixes the MAP06 siege
+at 15 November 1889, 13:00, providing a peaceful city phase beforehand.
+Existing soldiers retain identity, life/resources, captain recognition and
+formation roles when leaving their new homes. Merchants reuse Domingo's
+appearance without his quest identity or progression. See SYSTEMS for shops,
+calendar behavior and the compatible old-port package option.
 
 ## 5.1.2 - Optional port reinforcement experiment (#132)
 

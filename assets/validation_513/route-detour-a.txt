@@ -1,0 +1,580 @@
+Log started: 2026-10-08 00:26:05
+GZDoom version g4.14.2
+D_DoomInit: Static RNGseed 116 set.
+W_Init: Init WADfiles.
+adding C:/Program Files (x86)/GZDoom/gzdoom.pk3, 692 lumps
+adding C:/Program Files (x86)/GZDoom/game_support.pk3, 3308 lumps
+adding C:/Program Files (x86)/Steam/steamapps/common/ultimate doom/base/doom2/DOOM2.WAD, 2919 lumps
+adding C:/Program Files (x86)/Steam/steamapps/common/Ultimate Doom/rerelease/id24res.wad, 530 lumps
+adding C:/Program Files (x86)/GZDoom/game_widescreen_gfx.pk3, 214 lumps
+adding C:/GZDooMProjects/CaelumArgenteum/build/issue133/production.pk3, 6210 lumps
+adding C:/GZDooMProjects/CaelumArgenteum/build/issue133/routes.pk3, 3 lumps
+S_Init: Setting up sound.
+I_InitSound: Initializing OpenAL
+  Opened device OpenAL Soft on G27F (NVIDIA High Definition Audio)
+  EFX enabled
+I_InitInput
+I_StartupMouse
+I_StartupKeyboard
+I_StartupXInput
+I_StartupRawPS2
+I_StartupDirectInputJoystick
+Vulkan device: NVIDIA GeForce RTX 3070 Ti
+Vulkan device type: discrete gpu
+Vulkan version: 1.4.303 (api) 576.352.0 (driver)
+Vulkan extensions: VK_KHR_16bit_storage VK_KHR_8bit_storage VK_KHR_acceleration_structure VK_KHR_bind_memory2 VK_KHR_buffer_device_address VK_KHR_calibrated_timestamps VK_KHR_compute_shader_derivatives VK_KHR_cooperative_matrix VK_KHR_copy_commands2 VK_KHR_create_renderpass2 VK_KHR_dedicated_allocation VK_KHR_deferred_host_operations VK_KHR_depth_stencil_resolve VK_KHR_descriptor_update_template VK_KHR_device_group VK_KHR_draw_indirect_count VK_KHR_driver_properties VK_KHR_dynamic_rendering VK_KHR_dynamic_rendering_local_read VK_KHR_external_fence VK_KHR_external_fence_win32 VK_KHR_external_memory VK_KHR_external_memory_win32 VK_KHR_external_semaphore VK_KHR_external_semaphore_win32 VK_KHR_format_feature_flags2 VK_KHR_fragment_shader_barycentric VK_KHR_fragment_shading_rate VK_KHR_get_memory_requirements2 VK_KHR_global_priority VK_KHR_image_format_list VK_KHR_imageless_framebuffer VK_KHR_index_type_uint8 VK_KHR_line_rasterization VK_KHR_load_store_op_none VK_KHR_maintenance1 VK_KHR_maintenance2 VK_KHR_maintenance3 VK_KHR_maintenance4 VK_KHR_maintenance5 VK_KHR_maintenance6 VK_KHR_maintenance7 VK_KHR_map_memory2 VK_KHR_multiview VK_KHR_pipeline_binary VK_KHR_pipeline_executable_properties VK_KHR_pipeline_library VK_KHR_present_id VK_KHR_present_wait VK_KHR_push_descriptor VK_KHR_ray_query VK_KHR_ray_tracing_maintenance1 VK_KHR_ray_tracing_pipeline VK_KHR_ray_tracing_position_fetch VK_KHR_relaxed_block_layout VK_KHR_sampler_mirror_clamp_to_edge VK_KHR_sampler_ycbcr_conversion VK_KHR_separate_depth_stencil_layouts VK_KHR_shader_atomic_int64 VK_KHR_shader_clock VK_KHR_shader_draw_parameters VK_KHR_shader_expect_assume VK_KHR_shader_float16_int8 VK_KHR_shader_float_controls VK_KHR_shader_float_controls2 VK_KHR_shader_integer_dot_product VK_KHR_shader_maximal_reconvergence VK_KHR_shader_non_semantic_info VK_KHR_shader_quad_control VK_KHR_shader_relaxed_extended_instruction VK_KHR_shader_subgroup_extended_types VK_KHR_shader_subgroup_rotate VK_KHR_shader_subgroup_uniform_control_flow VK_KHR_shader_terminate_invocation VK_KHR_spirv_1_4 VK_KHR_storage_buffer_storage_class VK_KHR_swapchain VK_KHR_swapchain_mutable_format VK_KHR_synchronization2 VK_KHR_timeline_semaphore VK_KHR_uniform_buffer_standard_layout VK_KHR_variable_pointers VK_KHR_vertex_attribute_divisor VK_KHR_video_decode_av1 VK_KHR_video_decode_h264 VK_KHR_video_decode_h265 VK_KHR_video_decode_queue VK_KHR_video_encode_h264 VK_KHR_video_encode_h265 VK_KHR_video_encode_quantization_map VK_KHR_video_encode_queue VK_KHR_video_maintenance1 VK_KHR_video_maintenance2 VK_KHR_video_queue VK_KHR_vulkan_memory_model VK_KHR_win32_keyed_mutex VK_KHR_workgroup_memory_explicit_layout VK_KHR_zero_initialize_workgroup_memory VK_EXT_4444_formats VK_EXT_attachment_feedback_loop_dynamic_state VK_EXT_attachment_feedback_loop_layout VK_EXT_blend_operation_advanced VK_EXT_border_color_swizzle VK_EXT_buffer_device_address VK_EXT_calibrated_timestamps VK_EXT_color_write_enable VK_EXT_conditional_rendering VK_EXT_conservative_rasterization VK_EXT_custom_border_color VK_EXT_depth_bias_control VK_EXT_depth_clamp_control VK_EXT_depth_clamp_zero_one VK_EXT_depth_clip_control VK_EXT_depth_clip_enable VK_EXT_depth_range_unrestricted VK_EXT_descriptor_buffer VK_EXT_descriptor_indexing VK_EXT_device_address_binding_report VK_EXT_device_fault VK_EXT_device_generated_commands VK_EXT_discard_rectangles VK_EXT_dynamic_rendering_unused_attachments VK_EXT_extended_dynamic_state VK_EXT_extended_dynamic_state2 VK_EXT_extended_dynamic_state3 VK_EXT_external_memory_host VK_EXT_fragment_shader_interlock VK_EXT_full_screen_exclusive VK_EXT_global_priority VK_EXT_global_priority_query VK_EXT_graphics_pipeline_library VK_EXT_hdr_metadata VK_EXT_host_image_copy VK_EXT_host_query_reset VK_EXT_image_2d_view_of_3d VK_EXT_image_robustness VK_EXT_image_sliced_view_of_3d VK_EXT_image_view_min_lod VK_EXT_index_type_uint8 VK_EXT_inline_uniform_block VK_EXT_legacy_vertex_attributes VK_EXT_line_rasterization VK_EXT_load_store_op_none VK_EXT_memory_budget VK_EXT_memory_priority VK_EXT_mesh_shader VK_EXT_multi_draw VK_EXT_mutable_descriptor_type VK_EXT_nested_command_buffer VK_EXT_non_seamless_cube_map VK_EXT_opacity_micromap VK_EXT_pageable_device_local_memory VK_EXT_pci_bus_info VK_EXT_pipeline_creation_cache_control VK_EXT_pipeline_creation_feedback VK_EXT_pipeline_library_group_handles VK_EXT_pipeline_robustness VK_EXT_post_depth_coverage VK_EXT_present_mode_fifo_latest_ready VK_EXT_primitive_topology_list_restart VK_EXT_primitives_generated_query VK_EXT_private_data VK_EXT_provoking_vertex VK_EXT_queue_family_foreign VK_EXT_robustness2 VK_EXT_sample_locations VK_EXT_sampler_filter_minmax VK_EXT_scalar_block_layout VK_EXT_separate_stencil_usage VK_EXT_shader_atomic_float VK_EXT_shader_demote_to_helper_invocation VK_EXT_shader_image_atomic_int64 VK_EXT_shader_module_identifier VK_EXT_shader_object VK_EXT_shader_replicated_composites VK_EXT_shader_subgroup_ballot VK_EXT_shader_subgroup_vote VK_EXT_shader_viewport_index_layer VK_EXT_subgroup_size_control VK_EXT_swapchain_maintenance1 VK_EXT_texel_buffer_alignment VK_EXT_tooling_info VK_EXT_transform_feedback VK_EXT_vertex_attribute_divisor VK_EXT_vertex_attribute_robustness VK_EXT_vertex_input_dynamic_state VK_EXT_ycbcr_2plane_444_formats VK_EXT_ycbcr_image_arrays VK_NV_acquire_winrt_display VK_NV_clip_space_w_scaling VK_NV_cluster_acceleration_structure VK_NV_compute_shader_derivatives VK_NV_cooperative_matrix VK_NV_cooperative_matrix2 VK_NV_cooperative_vector VK_NV_copy_memory_indirect VK_NV_corner_sampled_image VK_NV_coverage_reduction_mode VK_NV_cuda_kernel_launch VK_NV_dedicated_allocation VK_NV_dedicated_allocation_image_aliasing VK_NV_descriptor_pool_overallocation VK_NV_device_diagnostic_checkpoints VK_NV_device_diagnostics_config VK_NV_device_generated_commands VK_NV_device_generated_commands_compute VK_NV_disk_cache_utils VK_NV_external_memory VK_NV_external_memory_win32 VK_NV_fill_rectangle VK_NV_fragment_coverage_to_color VK_NV_fragment_shader_barycentric VK_NV_fragment_shading_rate_enums VK_NV_framebuffer_mixed_samples VK_NV_geometry_shader_passthrough VK_NV_inherited_viewport_scissor VK_NV_internal_nvpresent VK_NV_linear_color_attachment VK_NV_low_latency VK_NV_low_latency2 VK_NV_memory_decompression VK_NV_mesh_shader VK_NV_optical_flow VK_NV_partitioned_acceleration_structure VK_NV_present_metering VK_NV_raw_access_chains VK_NV_ray_tracing VK_NV_ray_tracing_invocation_reorder VK_NV_ray_tracing_motion_blur VK_NV_representative_fragment_test VK_NV_sample_mask_override_coverage VK_NV_scissor_exclusive VK_NV_shader_atomic_float16_vector VK_NV_shader_image_footprint VK_NV_shader_sm_builtins VK_NV_shader_subgroup_partitioned VK_NV_shading_rate_image VK_NV_viewport_array2 VK_NV_viewport_swizzle VK_NV_win32_keyed_mutex VK_NVX_binary_import VK_NVX_image_view_handle VK_NVX_multiview_per_view_attributes VK_AMD_buffer_marker VK_GOOGLE_hlsl_functionality1 VK_GOOGLE_user_type
+Max. texture size: 32768
+Max. uniform buffer range: 65536
+Min. uniform buffer offset alignment: 64
+Resolution: 1280 x 720
+I_Init: Setting up machine state.
+CPU speed: 3400 MHz
+CPU Vendor ID: AuthenticAMD
+  Name: AMD Ryzen 9 5950X 16-Core Processor 
+  Family 25 (25), Model 33, Stepping 0
+  Features: SSE2 SSE3 SSSE3 SSE4.1 SSE4.2 AVX AVX2 F16C FMA3 BMI1 BMI2 HyperThreading
+V_Init: allocate screen.
+ST_Init: Init startup screen.
+Checking cmd-line parameters...
+S_InitData: Load sound definitions.
+G_ParseMapInfo: Load map definitions.
+Texman.Init: Init texture manager.
+ParseTeamInfo: Load team definitions.
+LoadActors: Load actor definitions.
+script parsing took 1016.73 ms
+R_Init: Init Doom refresh subsystem.
+DecalLibrary: Load decals.
+M_Init: Init menus.
+P_Init: Init Playloop state.
+ParseSBarInfo: Loading custom status bar definition.
+D_CheckNetGame: Checking network game status.
+player 1 of 1 (1 nodes)
+
+----------------------------------------
+
+MAP06 - Barracas al Sud — fortified port
+
+CA133 ROUTE_PROGRESS tic=29750 alive=600 left=600 ground=421 formed=427
+CA133 ROUTE_PENDING id=0 step=6 complete=0 crew=0/0 pos=-23460.7,-12847.9,0.0 station=-27866.0,-14560.0,256.0
+CA133 ROUTE_PENDING id=3 step=6 complete=0 crew=0/0 pos=-23466.2,-12709.1,0.0 station=-23846.0,-14560.0,256.0
+CA133 ROUTE_PENDING id=20 step=8 complete=0 crew=0/0 pos=-29432.5,-12531.7,224.0 station=-30042.0,-14560.0,384.0
+CA133 ROUTE_PENDING id=21 step=8 complete=0 crew=0/0 pos=-29396.9,-12582.0,208.0 station=-29862.0,-14560.0,384.0
+CA133 ROUTE_PENDING id=27 step=7 complete=0 crew=0/0 pos=-23776.1,13050.7,0.0 station=-23846.0,16096.0,256.0
+CA133 ROUTE_PENDING id=30 step=6 complete=0 crew=0/0 pos=-5614.6,-1915.6,0.0 station=-16346.0,16096.0,256.0
+CA133 ROUTE_PENDING id=32 step=7 complete=0 crew=0/0 pos=-17284.5,4463.8,-0.0 station=-12506.0,16096.0,256.0
+CA133 ROUTE_PENDING id=38 step=4 complete=0 crew=0/0 pos=-7328.1,13227.7,-0.0 station=-986.0,16096.0,256.0
+CA133 ROUTE_PENDING id=43 step=6 complete=0 crew=0/0 pos=-20935.2,-8963.0,0.0 station=-29792.0,-8614.0,256.0
+CA133 ROUTE_PENDING id=48 step=7 complete=0 crew=0/0 pos=-27823.5,110.2,-0.0 station=-29792.0,2726.0,256.0
+CA133 ROUTE_PENDING id=49 step=7 complete=0 crew=0/0 pos=-28487.8,2528.4,-0.0 station=-29792.0,2906.0,256.0
+CA133 ROUTE_PENDING id=51 step=6 complete=0 crew=0/0 pos=-28073.8,-4202.7,0.0 station=-29792.0,6746.0,256.0
+CA133 ROUTE_PENDING id=57 step=4 complete=0 crew=0/0 pos=-17071.6,-9002.6,0.0 station=864.0,-12454.0,256.0
+CA133 ROUTE_PENDING id=58 step=4 complete=0 crew=0/0 pos=-10440.3,-6383.4,0.0 station=864.0,-8794.0,256.0
+CA133 ROUTE_PENDING id=59 step=4 complete=0 crew=0/0 pos=-7905.6,-4654.0,0.0 station=864.0,-8614.0,256.0
+CA133 ROUTE_PENDING id=65 step=4 complete=0 crew=0/0 pos=-626.9,59.3,-0.0 station=864.0,2906.0,256.0
+CA133 ROUTE_PENDING id=72 step=6 complete=0 crew=0/0 pos=-25581.7,132.4,-0.0 station=-28016.0,-13352.0,0.0
+CA133 ROUTE_PENDING id=73 step=9 complete=0 crew=0/0 pos=-28059.6,-13278.8,0.0 station=-28056.0,-13352.0,0.0
+CA133 ROUTE_PENDING id=74 step=9 complete=0 crew=0/0 pos=-28128.9,-13266.3,0.0 station=-28096.0,-13352.0,0.0
+CA133 ROUTE_PENDING id=75 step=9 complete=0 crew=0/0 pos=-28177.1,-13277.9,0.0 station=-28136.0,-13352.0,0.0
+CA133 ROUTE_PENDING id=83 step=10 complete=0 crew=0/0 pos=-27992.3,-13239.8,0.0 station=-28056.0,-13272.0,0.0
+CA133 ROUTE_PENDING id=85 step=7 complete=0 crew=0/0 pos=-27694.8,-11500.8,0.0 station=-28136.0,-13272.0,0.0
+CA133 ROUTE_PENDING id=86 step=6 complete=0 crew=0/0 pos=-22443.0,3358.5,-0.0 station=-24176.0,-13352.0,0.0
+CA133 ROUTE_PENDING id=87 step=9 complete=0 crew=0/0 pos=-24249.2,-13239.2,0.0 station=-24216.0,-13352.0,0.0
+CA133 ROUTE_PENDING id=88 step=9 complete=0 crew=0/0 pos=-24328.5,-13275.3,0.0 station=-24256.0,-13352.0,0.0
+CA133 ROUTE_PENDING id=89 step=8 complete=0 crew=0/0 pos=-24355.5,-12843.5,0.0 station=-24296.0,-13352.0,0.0
+CA133 ROUTE_PENDING id=91 step=10 complete=0 crew=0/0 pos=-24201.4,-13200.2,0.0 station=-24176.0,-13312.0,0.0
+CA133 ROUTE_PENDING id=93 step=10 complete=0 crew=0/0 pos=-24238.8,-13194.9,0.0 station=-24256.0,-13312.0,0.0
+CA133 ROUTE_PENDING id=108 step=10 complete=0 crew=0/0 pos=-20510.2,-13266.7,0.0 station=-20456.0,-13312.0,0.0
+CA133 ROUTE_PENDING id=111 step=4 complete=0 crew=0/0 pos=-24000.7,4832.9,-0.0 station=-20376.0,-13272.0,0.0
+CA133 ROUTE_PENDING id=117 step=4 complete=0 crew=0/0 pos=-17071.5,-5550.6,0.0 station=-16616.0,-13352.0,0.0
+CA133 ROUTE_PENDING id=119 step=7 complete=0 crew=0/0 pos=-25888.7,3987.4,-0.0 station=-16496.0,-13312.0,0.0
+CA133 ROUTE_PENDING id=126 step=10 complete=0 crew=0/0 pos=-16497.1,-13319.8,0.0 station=-16576.0,-13272.0,0.0
+CA133 ROUTE_PENDING id=130 step=5 complete=0 crew=0/0 pos=-12728.6,-13276.6,0.0 station=-12736.0,-13352.0,0.0
+CA133 ROUTE_PENDING id=134 step=4 complete=0 crew=0/0 pos=-23522.2,-2859.5,0.0 station=-12696.0,-13312.0,0.0
+CA133 ROUTE_PENDING id=141 step=7 complete=0 crew=0/0 pos=-17105.6,-3244.2,0.0 station=-12776.0,-13272.0,0.0
+CA133 ROUTE_PENDING id=147 step=5 complete=0 crew=0/0 pos=-9042.1,-13276.1,0.0 station=-8816.0,-13312.0,0.0
+CA133 ROUTE_PENDING id=149 step=6 complete=0 crew=0/0 pos=-8950.2,-13276.1,0.0 station=-8896.0,-13312.0,0.0
+CA133 ROUTE_PENDING id=153 step=7 complete=0 crew=0/0 pos=-18207.5,3985.2,-0.0 station=-8856.0,-13272.0,0.0
+CA133 ROUTE_PENDING id=155 step=7 complete=0 crew=0/0 pos=-15028.5,-1519.4,0.0 station=-8936.0,-13272.0,0.0
+CA133 ROUTE_PENDING id=156 step=7 complete=0 crew=0/0 pos=-10417.1,-1514.8,0.0 station=-4976.0,-13352.0,0.0
+CA133 ROUTE_PENDING id=157 step=9 complete=0 crew=0/0 pos=-5128.0,-13244.5,0.0 station=-5016.0,-13352.0,0.0
+CA133 ROUTE_PENDING id=158 step=9 complete=0 crew=0/0 pos=-7612.0,-6379.4,0.0 station=-5056.0,-13352.0,0.0
+CA133 ROUTE_PENDING id=159 step=2 complete=0 crew=0/0 pos=-871.5,1633.5,-0.0 station=-5096.0,-13352.0,0.0
+CA133 ROUTE_PENDING id=162 step=6 complete=0 crew=0/0 pos=-5053.3,-13264.7,0.0 station=-5016.0,-13312.0,0.0
+CA133 ROUTE_PENDING id=164 step=6 complete=0 crew=0/0 pos=-5136.3,-13277.9,0.0 station=-5096.0,-13312.0,0.0
+CA133 ROUTE_PENDING id=168 step=8 complete=0 crew=0/0 pos=-5092.2,-13237.8,0.0 station=-5056.0,-13272.0,0.0
+CA133 ROUTE_PENDING id=171 step=4 complete=0 crew=0/0 pos=-19544.2,-11566.2,0.0 station=-1176.0,-13352.0,0.0
+CA133 ROUTE_PENDING id=172 step=4 complete=0 crew=0/0 pos=-18008.3,-11566.2,0.0 station=-1216.0,-13352.0,0.0
+CA133 ROUTE_PENDING id=173 step=4 complete=0 crew=0/0 pos=-16658.9,-11882.1,0.0 station=-1256.0,-13352.0,0.0
+CA133 ROUTE_PENDING id=174 step=4 complete=0 crew=0/0 pos=-10328.2,-11566.2,0.0 station=-1296.0,-13352.0,0.0
+CA133 ROUTE_PENDING id=175 step=4 complete=0 crew=0/0 pos=-8834.0,-11566.2,0.0 station=-1136.0,-13312.0,0.0
+CA133 ROUTE_PENDING id=176 step=6 complete=0 crew=0/0 pos=-1216.6,-13271.4,0.0 station=-1176.0,-13312.0,0.0
+CA133 ROUTE_PENDING id=182 step=4 complete=0 crew=0/0 pos=-18586.4,-9838.3,0.0 station=-1216.0,-13272.0,0.0
+CA133 ROUTE_PENDING id=187 step=7 complete=0 crew=0/0 pos=-28910.6,14255.0,-0.0 station=-28520.0,14920.0,0.0
+CA133 ROUTE_PENDING id=191 step=6 complete=0 crew=0/0 pos=-20926.1,-8930.9,0.0 station=-28480.0,14880.0,0.0
+CA133 ROUTE_PENDING id=192 step=7 complete=0 crew=0/0 pos=-28494.2,14767.0,-0.0 station=-28480.0,14920.0,0.0
+CA133 ROUTE_PENDING id=197 step=7 complete=0 crew=0/0 pos=-28772.1,14383.0,48.0 station=-28440.0,14920.0,0.0
+CA133 ROUTE_PENDING id=203 step=4 complete=0 crew=0/0 pos=-659.0,61.6,-0.0 station=-448.0,14800.0,0.0
+CA133 ROUTE_PENDING id=206 step=4 complete=0 crew=0/0 pos=-22526.4,6188.7,-0.0 station=-448.0,14920.0,0.0
+CA133 ROUTE_PENDING id=207 step=4 complete=0 crew=0/0 pos=-10927.6,12331.5,8.0 station=-448.0,14960.0,0.0
+CA133 ROUTE_PENDING id=208 step=5 complete=0 crew=0/0 pos=-1262.1,14855.6,-0.0 station=-408.0,14800.0,0.0
+CA133 ROUTE_PENDING id=210 step=6 complete=0 crew=0/0 pos=-375.6,14844.8,-0.0 station=-408.0,14880.0,0.0
+CA133 ROUTE_PENDING id=213 step=8 complete=0 crew=0/0 pos=-29430.6,-12590.0,224.0 station=-29496.0,-12840.0,0.0
+CA133 ROUTE_PENDING id=215 step=8 complete=0 crew=0/0 pos=-29644.3,-12746.3,256.0 station=-29576.0,-12840.0,0.0
+CA133 ROUTE_PENDING id=216 step=8 complete=0 crew=0/0 pos=-29585.9,-12611.1,256.0 station=-29616.0,-12840.0,0.0
+CA133 ROUTE_PENDING id=217 step=6 complete=0 crew=0/0 pos=-23449.6,-4152.3,0.0 station=-29456.0,-12800.0,0.0
+CA133 ROUTE_PENDING id=218 step=8 complete=0 crew=0/0 pos=-29586.6,-12713.9,256.0 station=-29496.0,-12800.0,0.0
+CA133 ROUTE_PENDING id=219 step=8 complete=0 crew=0/0 pos=-29578.2,-12569.1,256.0 station=-29536.0,-12800.0,0.0
+CA133 ROUTE_PENDING id=220 step=8 complete=0 crew=0/0 pos=-29598.4,-12666.5,256.0 station=-29576.0,-12800.0,0.0
+CA133 ROUTE_PENDING id=221 step=6 complete=0 crew=0/0 pos=-19398.9,-5476.3,0.0 station=-29616.0,-12800.0,0.0
+CA133 ROUTE_PENDING id=222 step=6 complete=0 crew=0/0 pos=-23444.8,-4073.0,0.0 station=-29456.0,-12760.0,0.0
+CA133 ROUTE_PENDING id=223 step=8 complete=0 crew=0/0 pos=-29330.3,-12579.9,192.0 station=-29496.0,-12760.0,0.0
+CA133 ROUTE_PENDING id=224 step=8 complete=0 crew=0/0 pos=-29536.0,-12577.6,240.0 station=-29536.0,-12760.0,0.0
+CA133 ROUTE_PENDING id=225 step=8 complete=0 crew=0/0 pos=-29463.5,-12585.5,224.0 station=-29576.0,-12760.0,0.0
+CA133 ROUTE_PENDING id=227 step=4 complete=0 crew=0/0 pos=-12601.2,-2927.2,0.0 station=264.0,-12840.0,0.0
+CA133 ROUTE_PENDING id=230 step=7 complete=0 crew=0/0 pos=-532.0,-12918.2,0.0 station=144.0,-12840.0,0.0
+CA133 ROUTE_PENDING id=231 step=4 complete=0 crew=0/0 pos=-5579.4,-3809.3,0.0 station=304.0,-12800.0,0.0
+CA133 ROUTE_PENDING id=232 step=8 complete=0 crew=0/0 pos=266.0,-12840.0,-0.0 station=264.0,-12800.0,0.0
+CA133 ROUTE_PENDING id=236 step=4 complete=0 crew=0/0 pos=-1226.2,-9838.4,0.0 station=304.0,-12760.0,0.0
+CA133 ROUTE_PENDING id=238 step=8 complete=0 crew=0/0 pos=245.0,-12717.7,-0.0 station=224.0,-12760.0,0.0
+CA133 ROUTE_PENDING id=246 step=9 complete=0 crew=0/0 pos=-28146.3,14762.8,-0.0 station=-28056.0,14848.0,0.0
+CA133 ROUTE_PENDING id=248 step=9 complete=0 crew=0/0 pos=-28080.8,14766.0,-0.0 station=-28136.0,14848.0,0.0
+CA133 ROUTE_PENDING id=251 step=9 complete=0 crew=0/0 pos=-28043.6,14775.8,-0.0 station=-28056.0,14888.0,0.0
+CA133 ROUTE_PENDING id=252 step=9 complete=0 crew=0/0 pos=-28114.3,14770.8,-0.0 station=-28096.0,14888.0,0.0
+CA133 ROUTE_PENDING id=253 step=9 complete=0 crew=0/0 pos=-28190.1,14771.6,-0.0 station=-28136.0,14888.0,0.0
+CA133 ROUTE_PENDING id=256 step=5 complete=0 crew=0/0 pos=-27572.0,7917.7,-0.0 station=-24216.0,14808.0,0.0
+CA133 ROUTE_PENDING id=262 step=9 complete=0 crew=0/0 pos=-24161.8,14766.3,-0.0 station=-24256.0,14848.0,0.0
+CA133 ROUTE_PENDING id=263 step=9 complete=0 crew=0/0 pos=-24274.2,14768.2,-0.0 station=-24296.0,14848.0,0.0
+CA133 ROUTE_PENDING id=266 step=9 complete=0 crew=0/0 pos=-24137.0,14884.6,-0.0 station=-24216.0,14888.0,0.0
+CA133 ROUTE_PENDING id=267 step=9 complete=0 crew=0/0 pos=-24221.6,14811.6,-0.0 station=-24256.0,14888.0,0.0
+CA133 ROUTE_PENDING id=268 step=9 complete=0 crew=0/0 pos=-24241.8,14758.5,-0.0 station=-24296.0,14888.0,0.0
+CA133 ROUTE_PENDING id=271 step=6 complete=0 crew=0/0 pos=-20403.3,14772.5,-0.0 station=-20376.0,14808.0,0.0
+CA133 ROUTE_PENDING id=272 step=4 complete=0 crew=0/0 pos=-26107.2,13229.7,-0.0 station=-20416.0,14808.0,0.0
+CA133 ROUTE_PENDING id=273 step=5 complete=0 crew=0/0 pos=-20459.3,14883.6,-0.0 station=-20456.0,14808.0,0.0
+CA133 ROUTE_PENDING id=281 step=9 complete=0 crew=0/0 pos=-20371.6,14813.1,-0.0 station=-20376.0,14888.0,0.0
+CA133 ROUTE_PENDING id=282 step=9 complete=0 crew=0/0 pos=-20463.9,14802.4,-0.0 station=-20416.0,14888.0,0.0
+CA133 ROUTE_PENDING id=283 step=9 complete=0 crew=0/0 pos=-20403.7,14805.8,-0.0 station=-20456.0,14888.0,0.0
+CA133 ROUTE_PENDING id=287 step=10 complete=0 crew=0/0 pos=-16460.3,14848.0,-0.0 station=-16576.0,14808.0,0.0
+CA133 ROUTE_PENDING id=293 step=4 complete=0 crew=0/0 pos=-18671.0,12383.3,32.0 station=-16616.0,14848.0,0.0
+CA133 ROUTE_PENDING id=298 step=9 complete=0 crew=0/0 pos=-16583.6,14811.8,-0.0 station=-16616.0,14888.0,0.0
+CA133 ROUTE_PENDING id=306 step=6 complete=0 crew=0/0 pos=-12728.9,14896.0,-0.0 station=-12696.0,14848.0,0.0
+CA133 ROUTE_PENDING id=312 step=10 complete=0 crew=0/0 pos=-12694.9,14846.9,-0.0 station=-12736.0,14888.0,0.0
+CA133 ROUTE_PENDING id=319 step=2 complete=0 crew=0/0 pos=-692.2,1771.6,-0.0 station=-8976.0,14808.0,0.0
+CA133 ROUTE_PENDING id=321 step=4 complete=0 crew=0/0 pos=-26050.3,2732.2,-0.0 station=-8856.0,14848.0,0.0
+CA133 ROUTE_PENDING id=326 step=7 complete=0 crew=0/0 pos=-15062.4,2986.9,-0.0 station=-8856.0,14888.0,0.0
+CA133 ROUTE_PENDING id=331 step=5 complete=0 crew=0/0 pos=-4961.8,14930.5,-0.0 station=-5016.0,14808.0,0.0
+CA133 ROUTE_PENDING id=341 step=7 complete=0 crew=0/0 pos=-10593.8,2735.6,-0.0 station=-5016.0,14888.0,0.0
+CA133 ROUTE_PENDING id=345 step=5 complete=0 crew=0/0 pos=-1329.2,14793.6,-0.0 station=-1136.0,14808.0,0.0
+CA133 ROUTE_PENDING id=353 step=6 complete=0 crew=0/0 pos=-1179.7,14931.3,-0.0 station=-1256.0,14848.0,0.0
+CA133 ROUTE_PENDING id=355 step=4 complete=0 crew=0/0 pos=-15535.9,5283.9,-0.0 station=-1136.0,14888.0,0.0
+CA133 ROUTE_PENDING id=357 step=4 complete=0 crew=0/0 pos=-8640.4,6632.0,-0.0 station=-1216.0,14888.0,0.0
+CA133 ROUTE_PENDING id=361 step=8 complete=0 crew=0/0 pos=-28480.6,-12790.2,0.0 station=-28520.0,-12824.0,0.0
+CA133 ROUTE_PENDING id=363 step=7 complete=0 crew=0/0 pos=-28478.4,-12753.4,0.0 station=-28520.0,-12904.0,0.0
+CA133 ROUTE_PENDING id=365 step=6 complete=0 crew=0/0 pos=-23455.3,-5935.9,0.0 station=-28480.0,-12784.0,0.0
+CA133 ROUTE_PENDING id=369 step=7 complete=0 crew=0/0 pos=-28563.1,-12868.9,0.0 station=-28480.0,-12944.0,0.0
+CA133 ROUTE_PENDING id=376 step=6 complete=0 crew=0/0 pos=-23464.1,-4208.0,0.0 station=-28520.0,-8984.0,0.0
+CA133 ROUTE_PENDING id=380 step=8 complete=0 crew=0/0 pos=-28554.0,-9019.0,0.0 station=-28480.0,-8944.0,0.0
+CA133 ROUTE_PENDING id=382 step=7 complete=0 crew=0/0 pos=-28539.2,-8907.7,0.0 station=-28480.0,-9024.0,0.0
+CA133 ROUTE_PENDING id=383 step=7 complete=0 crew=0/0 pos=-28488.0,-5115.7,0.0 station=-28480.0,-9064.0,0.0
+CA133 ROUTE_PENDING id=386 step=7 complete=0 crew=0/0 pos=-25005.3,-4206.9,0.0 station=-28440.0,-8984.0,0.0
+CA133 ROUTE_PENDING id=395 step=8 complete=0 crew=0/0 pos=-28431.1,-5066.3,0.0 station=-28480.0,-5104.0,0.0
+CA133 ROUTE_PENDING id=396 step=8 complete=0 crew=0/0 pos=-28401.8,-5233.6,0.0 station=-28480.0,-5144.0,0.0
+CA133 ROUTE_PENDING id=402 step=8 complete=0 crew=0/0 pos=-28487.8,-5151.2,0.0 station=-28440.0,-5184.0,0.0
+CA133 ROUTE_PENDING id=404 step=7 complete=0 crew=0/0 pos=-27051.7,-2858.1,0.0 station=-28440.0,-5264.0,0.0
+CA133 ROUTE_PENDING id=408 step=6 complete=0 crew=0/0 pos=-21666.0,1839.1,-0.0 station=-28520.0,-1384.0,0.0
+CA133 ROUTE_PENDING id=411 step=8 complete=0 crew=0/0 pos=-28403.8,-1308.2,0.0 station=-28480.0,-1304.0,0.0
+CA133 ROUTE_PENDING id=412 step=8 complete=0 crew=0/0 pos=-28536.8,-1377.0,0.0 station=-28480.0,-1344.0,0.0
+CA133 ROUTE_PENDING id=426 step=8 complete=0 crew=0/0 pos=-28445.6,2584.4,-0.0 station=-28480.0,2536.0,0.0
+CA133 ROUTE_PENDING id=427 step=6 complete=0 crew=0/0 pos=-16323.1,3162.5,-0.0 station=-28480.0,2496.0,0.0
+CA133 ROUTE_PENDING id=428 step=8 complete=0 crew=0/0 pos=-28406.8,2463.0,-0.0 station=-28480.0,2456.0,0.0
+CA133 ROUTE_PENDING id=430 step=8 complete=0 crew=0/0 pos=-28406.7,2570.2,-0.0 station=-28440.0,2576.0,0.0
+CA133 ROUTE_PENDING id=443 step=8 complete=0 crew=0/0 pos=-28446.8,6334.3,-0.0 station=-28480.0,6296.0,0.0
+CA133 ROUTE_PENDING id=446 step=8 complete=0 crew=0/0 pos=-28412.9,6328.0,-0.0 station=-28440.0,6376.0,0.0
+CA133 ROUTE_PENDING id=447 step=8 complete=0 crew=0/0 pos=-28439.2,6384.2,-0.0 station=-28440.0,6336.0,0.0
+CA133 ROUTE_PENDING id=479 step=2 complete=0 crew=0/0 pos=-829.6,1769.1,-0.0 station=-28440.0,13936.0,0.0
+CA133 ROUTE_PENDING id=480 step=10 complete=0 crew=0/0 pos=-398.1,-12751.8,0.0 station=-488.0,-12784.0,0.0
+CA133 ROUTE_PENDING id=481 step=10 complete=0 crew=0/0 pos=-487.3,-12760.0,0.0 station=-488.0,-12824.0,0.0
+CA133 ROUTE_PENDING id=488 step=9 complete=0 crew=0/0 pos=-581.4,-12915.9,0.0 station=-448.0,-12904.0,0.0
+CA133 ROUTE_PENDING id=493 step=7 complete=0 crew=0/0 pos=-485.1,-12832.0,0.0 station=-408.0,-12904.0,0.0
+CA133 ROUTE_PENDING id=495 step=8 complete=0 crew=0/0 pos=-407.1,-8899.1,0.0 station=-488.0,-8944.0,0.0
+CA133 ROUTE_PENDING id=496 step=8 complete=0 crew=0/0 pos=-525.6,-9043.4,0.0 station=-488.0,-8984.0,0.0
+CA133 ROUTE_PENDING id=503 step=9 complete=0 crew=0/0 pos=-533.8,-9009.8,0.0 station=-448.0,-9064.0,0.0
+CA133 ROUTE_PENDING id=506 step=9 complete=0 crew=0/0 pos=-521.4,-9075.6,0.0 station=-408.0,-8984.0,0.0
+CA133 ROUTE_PENDING id=507 step=9 complete=0 crew=0/0 pos=-494.4,-8989.2,0.0 station=-408.0,-9024.0,0.0
+CA133 ROUTE_PENDING id=508 step=9 complete=0 crew=0/0 pos=-482.0,-8955.0,0.0 station=-408.0,-9064.0,0.0
+CA133 ROUTE_PENDING id=513 step=8 complete=0 crew=0/0 pos=-451.3,-5068.7,0.0 station=-488.0,-5224.0,0.0
+CA133 ROUTE_PENDING id=516 step=7 complete=0 crew=0/0 pos=-497.3,-5217.2,0.0 station=-448.0,-5144.0,0.0
+CA133 ROUTE_PENDING id=517 step=7 complete=0 crew=0/0 pos=-520.3,-5144.8,0.0 station=-448.0,-5184.0,0.0
+CA133 ROUTE_PENDING id=525 step=8 complete=0 crew=0/0 pos=-442.2,-1231.9,0.0 station=-488.0,-1264.0,0.0
+CA133 ROUTE_PENDING id=526 step=8 complete=0 crew=0/0 pos=-526.5,-1235.9,0.0 station=-488.0,-1304.0,0.0
+CA133 ROUTE_PENDING id=527 step=4 complete=0 crew=0/0 pos=-10441.8,-4180.8,0.0 station=-488.0,-1344.0,0.0
+CA133 ROUTE_PENDING id=528 step=8 complete=0 crew=0/0 pos=-517.9,-1341.8,0.0 station=-488.0,-1384.0,0.0
+CA133 ROUTE_PENDING id=536 step=7 complete=0 crew=0/0 pos=-481.7,-1289.8,0.0 station=-408.0,-1304.0,0.0
+CA133 ROUTE_PENDING id=537 step=7 complete=0 crew=0/0 pos=-481.3,-1257.7,0.0 station=-408.0,-1344.0,0.0
+CA133 ROUTE_PENDING id=538 step=7 complete=0 crew=0/0 pos=-484.8,-1352.1,0.0 station=-408.0,-1384.0,0.0
+CA133 ROUTE_PENDING id=539 step=7 complete=0 crew=0/0 pos=-485.1,-1391.7,0.0 station=-408.0,-1424.0,0.0
+CA133 ROUTE_PENDING id=540 step=4 complete=0 crew=0/0 pos=-7371.3,1005.0,-0.0 station=-488.0,2576.0,0.0
+CA133 ROUTE_PENDING id=542 step=4 complete=0 crew=0/0 pos=-4783.6,95.9,-0.0 station=-488.0,2496.0,0.0
+CA133 ROUTE_PENDING id=545 step=4 complete=0 crew=0/0 pos=-551.5,71.3,-0.0 station=-448.0,2576.0,0.0
+CA133 ROUTE_PENDING id=546 step=5 complete=0 crew=0/0 pos=-489.6,2501.4,-0.0 station=-448.0,2536.0,0.0
+CA133 ROUTE_PENDING id=574 step=4 complete=0 crew=0/0 pos=-24008.4,6638.4,-0.0 station=-488.0,10096.0,0.0
+CA133 ROUTE_PENDING id=576 step=7 complete=0 crew=0/0 pos=-524.4,10167.1,-0.0 station=-448.0,10216.0,0.0
+CA133 ROUTE_PENDING id=577 step=4 complete=0 crew=0/0 pos=-19398.1,6636.2,-0.0 station=-448.0,10176.0,0.0
+CA133 ROUTE_PENDING id=578 step=8 complete=0 crew=0/0 pos=-431.5,10214.1,-0.0 station=-448.0,10136.0,0.0
+CA133 ROUTE_PENDING id=579 step=4 complete=0 crew=0/0 pos=-17128.8,6187.0,-0.0 station=-448.0,10096.0,0.0
+CA133 ROUTE_PENDING id=580 step=4 complete=0 crew=0/0 pos=-16584.5,7919.9,-0.0 station=-408.0,10256.0,0.0
+CA133 ROUTE_PENDING id=581 step=7 complete=0 crew=0/0 pos=-520.6,10221.2,-0.0 station=-408.0,10216.0,0.0
+CA133 ROUTE_PENDING id=585 step=4 complete=0 crew=0/0 pos=-5574.2,8366.1,-0.0 station=-488.0,14096.0,0.0
+CA133 ROUTE_PENDING id=591 step=7 complete=0 crew=0/0 pos=-527.2,14059.9,-0.0 station=-448.0,14056.0,0.0
+CA133 ROUTE_PENDING id=593 step=7 complete=0 crew=0/0 pos=-530.0,14027.7,-0.0 station=-448.0,13976.0,0.0
+CA133 ROUTE_PENDING id=597 step=7 complete=0 crew=0/0 pos=-480.0,14095.1,-0.0 station=-408.0,14016.0,0.0
+CA133 ROUTE_PENDING id=598 step=7 complete=0 crew=0/0 pos=-525.5,13974.5,-0.0 station=-408.0,13976.0,0.0
+CA133 ROUTE_CONTROL_COMPLETE alive=600 formed=427
+CA133 ROUTE_PROGRESS tic=31500 alive=600 left=600 ground=422 formed=428
+CA133 ROUTE_PENDING id=0 step=6 complete=0 crew=0/0 pos=-23460.0,-12847.9,0.0 station=-27866.0,-14560.0,256.0
+CA133 ROUTE_PENDING id=3 step=6 complete=0 crew=0/0 pos=-23466.2,-12711.1,0.0 station=-23846.0,-14560.0,256.0
+CA133 ROUTE_PENDING id=20 step=8 complete=0 crew=0/0 pos=-29432.4,-12531.7,224.0 station=-30042.0,-14560.0,384.0
+CA133 ROUTE_PENDING id=21 step=8 complete=0 crew=0/0 pos=-29396.9,-12578.3,208.0 station=-29862.0,-14560.0,384.0
+CA133 ROUTE_PENDING id=30 step=6 complete=0 crew=0/0 pos=-5614.6,-1916.1,0.0 station=-16346.0,16096.0,256.0
+CA133 ROUTE_PENDING id=32 step=7 complete=0 crew=0/0 pos=-17283.4,4463.8,-0.0 station=-12506.0,16096.0,256.0
+CA133 ROUTE_PENDING id=38 step=4 complete=0 crew=0/0 pos=-7332.2,13227.7,-0.0 station=-986.0,16096.0,256.0
+CA133 ROUTE_PENDING id=43 step=6 complete=0 crew=0/0 pos=-20935.2,-8963.0,0.0 station=-29792.0,-8614.0,256.0
+CA133 ROUTE_PENDING id=48 step=7 complete=0 crew=0/0 pos=-27823.5,96.9,-0.0 station=-29792.0,2726.0,256.0
+CA133 ROUTE_PENDING id=49 step=7 complete=0 crew=0/0 pos=-28487.8,2527.4,-0.0 station=-29792.0,2906.0,256.0
+CA133 ROUTE_PENDING id=51 step=6 complete=0 crew=0/0 pos=-28073.8,-4193.8,0.0 station=-29792.0,6746.0,256.0
+CA133 ROUTE_PENDING id=57 step=4 complete=0 crew=0/0 pos=-17071.6,-9007.7,0.0 station=864.0,-12454.0,256.0
+CA133 ROUTE_PENDING id=58 step=4 complete=0 crew=0/0 pos=-10444.7,-6383.4,0.0 station=864.0,-8794.0,256.0
+CA133 ROUTE_PENDING id=59 step=4 complete=0 crew=0/0 pos=-7907.8,-4654.0,0.0 station=864.0,-8614.0,256.0
+CA133 ROUTE_PENDING id=65 step=4 complete=0 crew=0/0 pos=-626.9,59.3,-0.0 station=864.0,2906.0,256.0
+CA133 ROUTE_PENDING id=72 step=6 complete=0 crew=0/0 pos=-25581.7,124.1,-0.0 station=-28016.0,-13352.0,0.0
+CA133 ROUTE_PENDING id=73 step=9 complete=0 crew=0/0 pos=-28054.3,-13278.8,0.0 station=-28056.0,-13352.0,0.0
+CA133 ROUTE_PENDING id=74 step=9 complete=0 crew=0/0 pos=-28128.9,-13267.8,0.0 station=-28096.0,-13352.0,0.0
+CA133 ROUTE_PENDING id=75 step=9 complete=0 crew=0/0 pos=-28161.4,-13277.9,0.0 station=-28136.0,-13352.0,0.0
+CA133 ROUTE_PENDING id=83 step=10 complete=0 crew=0/0 pos=-27984.0,-13239.8,0.0 station=-28056.0,-13272.0,0.0
+CA133 ROUTE_PENDING id=85 step=7 complete=0 crew=0/0 pos=-27689.9,-11500.8,0.0 station=-28136.0,-13272.0,0.0
+CA133 ROUTE_PENDING id=86 step=6 complete=0 crew=0/0 pos=-22443.0,3366.9,-0.0 station=-24176.0,-13352.0,0.0
+CA133 ROUTE_PENDING id=87 step=9 complete=0 crew=0/0 pos=-24257.5,-13239.2,0.0 station=-24216.0,-13352.0,0.0
+CA133 ROUTE_PENDING id=88 step=9 complete=0 crew=0/0 pos=-24339.2,-13271.7,0.0 station=-24256.0,-13352.0,0.0
+CA133 ROUTE_PENDING id=89 step=8 complete=0 crew=0/0 pos=-24351.9,-12843.5,0.0 station=-24296.0,-13352.0,0.0
+CA133 ROUTE_PENDING id=91 step=10 complete=0 crew=0/0 pos=-24201.4,-13203.3,0.0 station=-24176.0,-13312.0,0.0
+CA133 ROUTE_PENDING id=93 step=10 complete=0 crew=0/0 pos=-24238.8,-13198.4,0.0 station=-24256.0,-13312.0,0.0
+CA133 ROUTE_PENDING id=108 step=10 complete=0 crew=0/0 pos=-20510.2,-13266.7,0.0 station=-20456.0,-13312.0,0.0
+CA133 ROUTE_PENDING id=111 step=4 complete=0 crew=0/0 pos=-24000.7,4832.9,-0.0 station=-20376.0,-13272.0,0.0
+CA133 ROUTE_PENDING id=117 step=4 complete=0 crew=0/0 pos=-17071.5,-5547.6,0.0 station=-16616.0,-13352.0,0.0
+CA133 ROUTE_PENDING id=119 step=7 complete=0 crew=0/0 pos=-25888.1,3987.4,-0.0 station=-16496.0,-13312.0,0.0
+CA133 ROUTE_PENDING id=126 step=10 complete=0 crew=0/0 pos=-16486.1,-13319.8,0.0 station=-16576.0,-13272.0,0.0
+CA133 ROUTE_PENDING id=130 step=5 complete=0 crew=0/0 pos=-12728.6,-13275.1,0.0 station=-12736.0,-13352.0,0.0
+CA133 ROUTE_PENDING id=134 step=4 complete=0 crew=0/0 pos=-23521.5,-2859.5,0.0 station=-12696.0,-13312.0,0.0
+CA133 ROUTE_PENDING id=141 step=7 complete=0 crew=0/0 pos=-17104.6,-3244.2,0.0 station=-12776.0,-13272.0,0.0
+CA133 ROUTE_PENDING id=147 step=6 complete=0 crew=0/0 pos=-8854.8,-13241.7,0.0 station=-8816.0,-13312.0,0.0
+CA133 ROUTE_PENDING id=149 step=6 complete=0 crew=0/0 pos=-8950.2,-13276.1,0.0 station=-8896.0,-13312.0,0.0
+CA133 ROUTE_PENDING id=153 step=7 complete=0 crew=0/0 pos=-18207.0,3985.2,-0.0 station=-8856.0,-13272.0,0.0
+CA133 ROUTE_PENDING id=155 step=7 complete=0 crew=0/0 pos=-15027.8,-1519.4,0.0 station=-8936.0,-13272.0,0.0
+CA133 ROUTE_PENDING id=156 step=7 complete=0 crew=0/0 pos=-10416.7,-1514.8,0.0 station=-4976.0,-13352.0,0.0
+CA133 ROUTE_PENDING id=157 step=9 complete=0 crew=0/0 pos=-5129.6,-13244.5,0.0 station=-5016.0,-13352.0,0.0
+CA133 ROUTE_PENDING id=158 step=9 complete=0 crew=0/0 pos=-7610.9,-6379.4,0.0 station=-5056.0,-13352.0,0.0
+CA133 ROUTE_PENDING id=159 step=2 complete=0 crew=0/0 pos=-728.3,1748.1,-0.0 station=-5096.0,-13352.0,0.0
+CA133 ROUTE_PENDING id=162 step=6 complete=0 crew=0/0 pos=-5053.3,-13259.5,0.0 station=-5016.0,-13312.0,0.0
+CA133 ROUTE_PENDING id=164 step=6 complete=0 crew=0/0 pos=-5141.2,-13277.9,0.0 station=-5096.0,-13312.0,0.0
+CA133 ROUTE_PENDING id=168 step=8 complete=0 crew=0/0 pos=-5092.2,-13237.8,0.0 station=-5056.0,-13272.0,0.0
+CA133 ROUTE_PENDING id=171 step=4 complete=0 crew=0/0 pos=-19548.2,-11566.2,0.0 station=-1176.0,-13352.0,0.0
+CA133 ROUTE_PENDING id=172 step=4 complete=0 crew=0/0 pos=-18012.2,-11566.2,0.0 station=-1216.0,-13352.0,0.0
+CA133 ROUTE_PENDING id=173 step=4 complete=0 crew=0/0 pos=-16663.6,-11882.1,0.0 station=-1256.0,-13352.0,0.0
+CA133 ROUTE_PENDING id=174 step=4 complete=0 crew=0/0 pos=-10332.2,-11566.2,0.0 station=-1296.0,-13352.0,0.0
+CA133 ROUTE_PENDING id=175 step=4 complete=0 crew=0/0 pos=-8838.1,-11566.2,0.0 station=-1136.0,-13312.0,0.0
+CA133 ROUTE_PENDING id=176 step=6 complete=0 crew=0/0 pos=-1216.6,-13271.4,0.0 station=-1176.0,-13312.0,0.0
+CA133 ROUTE_PENDING id=182 step=4 complete=0 crew=0/0 pos=-18588.3,-9838.3,0.0 station=-1216.0,-13272.0,0.0
+CA133 ROUTE_PENDING id=187 step=7 complete=0 crew=0/0 pos=-28914.4,14255.0,-0.0 station=-28520.0,14920.0,0.0
+CA133 ROUTE_PENDING id=191 step=6 complete=0 crew=0/0 pos=-20925.8,-8930.9,0.0 station=-28480.0,14880.0,0.0
+CA133 ROUTE_PENDING id=192 step=7 complete=0 crew=0/0 pos=-28494.2,14767.0,-0.0 station=-28480.0,14920.0,0.0
+CA133 ROUTE_PENDING id=197 step=7 complete=0 crew=0/0 pos=-28773.0,14383.0,48.0 station=-28440.0,14920.0,0.0
+CA133 ROUTE_PENDING id=203 step=4 complete=0 crew=0/0 pos=-659.0,61.6,-0.0 station=-448.0,14800.0,0.0
+CA133 ROUTE_PENDING id=206 step=4 complete=0 crew=0/0 pos=-22525.2,6188.7,-0.0 station=-448.0,14920.0,0.0
+CA133 ROUTE_PENDING id=207 step=4 complete=0 crew=0/0 pos=-10927.6,12321.8,8.0 station=-448.0,14960.0,0.0
+CA133 ROUTE_PENDING id=208 step=5 complete=0 crew=0/0 pos=-1250.4,14855.6,-0.0 station=-408.0,14800.0,0.0
+CA133 ROUTE_PENDING id=210 step=6 complete=0 crew=0/0 pos=-375.6,14844.8,-0.0 station=-408.0,14880.0,0.0
+CA133 ROUTE_PENDING id=213 step=8 complete=0 crew=0/0 pos=-29430.6,-12586.3,224.0 station=-29496.0,-12840.0,0.0
+CA133 ROUTE_PENDING id=215 step=8 complete=0 crew=0/0 pos=-29602.7,-12595.0,256.0 station=-29576.0,-12840.0,0.0
+CA133 ROUTE_PENDING id=216 step=8 complete=0 crew=0/0 pos=-29608.9,-12640.0,256.0 station=-29616.0,-12840.0,0.0
+CA133 ROUTE_PENDING id=217 step=6 complete=0 crew=0/0 pos=-23449.6,-4152.3,0.0 station=-29456.0,-12800.0,0.0
+CA133 ROUTE_PENDING id=218 step=8 complete=0 crew=0/0 pos=-29586.6,-12709.0,256.0 station=-29496.0,-12800.0,0.0
+CA133 ROUTE_PENDING id=219 step=8 complete=0 crew=0/0 pos=-29569.1,-12583.8,256.0 station=-29536.0,-12800.0,0.0
+CA133 ROUTE_PENDING id=220 step=8 complete=0 crew=0/0 pos=-29598.1,-12673.8,256.0 station=-29576.0,-12800.0,0.0
+CA133 ROUTE_PENDING id=221 step=6 complete=0 crew=0/0 pos=-19398.9,-5476.3,0.0 station=-29616.0,-12800.0,0.0
+CA133 ROUTE_PENDING id=222 step=6 complete=0 crew=0/0 pos=-23444.8,-4065.5,0.0 station=-29456.0,-12760.0,0.0
+CA133 ROUTE_PENDING id=223 step=8 complete=0 crew=0/0 pos=-29330.3,-12579.9,192.0 station=-29496.0,-12760.0,0.0
+CA133 ROUTE_PENDING id=224 step=8 complete=0 crew=0/0 pos=-29536.0,-12577.6,240.0 station=-29536.0,-12760.0,0.0
+CA133 ROUTE_PENDING id=225 step=8 complete=0 crew=0/0 pos=-29463.5,-12585.5,224.0 station=-29576.0,-12760.0,0.0
+CA133 ROUTE_PENDING id=227 step=4 complete=0 crew=0/0 pos=-12601.9,-2927.2,0.0 station=264.0,-12840.0,0.0
+CA133 ROUTE_PENDING id=230 step=7 complete=0 crew=0/0 pos=-532.0,-12918.2,0.0 station=144.0,-12840.0,0.0
+CA133 ROUTE_PENDING id=231 step=4 complete=0 crew=0/0 pos=-5579.4,-3807.9,0.0 station=304.0,-12800.0,0.0
+CA133 ROUTE_PENDING id=232 step=8 complete=0 crew=0/0 pos=266.0,-12835.5,-0.0 station=264.0,-12800.0,0.0
+CA133 ROUTE_PENDING id=236 step=4 complete=0 crew=0/0 pos=-1230.5,-9838.4,0.0 station=304.0,-12760.0,0.0
+CA133 ROUTE_PENDING id=238 step=8 complete=0 crew=0/0 pos=245.0,-12717.7,-0.0 station=224.0,-12760.0,0.0
+CA133 ROUTE_PENDING id=246 step=9 complete=0 crew=0/0 pos=-28146.3,14762.2,-0.0 station=-28056.0,14848.0,0.0
+CA133 ROUTE_PENDING id=248 step=9 complete=0 crew=0/0 pos=-28080.8,14773.5,-0.0 station=-28136.0,14848.0,0.0
+CA133 ROUTE_PENDING id=251 step=9 complete=0 crew=0/0 pos=-28038.7,14775.8,-0.0 station=-28056.0,14888.0,0.0
+CA133 ROUTE_PENDING id=252 step=9 complete=0 crew=0/0 pos=-28114.3,14770.8,-0.0 station=-28096.0,14888.0,0.0
+CA133 ROUTE_PENDING id=253 step=9 complete=0 crew=0/0 pos=-28190.1,14771.6,-0.0 station=-28136.0,14888.0,0.0
+CA133 ROUTE_PENDING id=256 step=5 complete=0 crew=0/0 pos=-27570.9,7917.7,-0.0 station=-24216.0,14808.0,0.0
+CA133 ROUTE_PENDING id=262 step=9 complete=0 crew=0/0 pos=-24161.8,14766.3,-0.0 station=-24256.0,14848.0,0.0
+CA133 ROUTE_PENDING id=263 step=9 complete=0 crew=0/0 pos=-24274.2,14762.4,-0.0 station=-24296.0,14848.0,0.0
+CA133 ROUTE_PENDING id=266 step=9 complete=0 crew=0/0 pos=-24137.0,14884.6,-0.0 station=-24216.0,14888.0,0.0
+CA133 ROUTE_PENDING id=267 step=9 complete=0 crew=0/0 pos=-24213.7,14808.9,-0.0 station=-24256.0,14888.0,0.0
+CA133 ROUTE_PENDING id=268 step=9 complete=0 crew=0/0 pos=-24241.8,14758.5,-0.0 station=-24296.0,14888.0,0.0
+CA133 ROUTE_PENDING id=271 step=6 complete=0 crew=0/0 pos=-20403.3,14772.5,-0.0 station=-20376.0,14808.0,0.0
+CA133 ROUTE_PENDING id=272 step=4 complete=0 crew=0/0 pos=-26102.9,13229.7,-0.0 station=-20416.0,14808.0,0.0
+CA133 ROUTE_PENDING id=273 step=5 complete=0 crew=0/0 pos=-20453.7,14883.6,-0.0 station=-20456.0,14808.0,0.0
+CA133 ROUTE_PENDING id=281 step=9 complete=0 crew=0/0 pos=-20371.6,14815.5,-0.0 station=-20376.0,14888.0,0.0
+CA133 ROUTE_PENDING id=282 step=9 complete=0 crew=0/0 pos=-20463.9,14798.7,-0.0 station=-20416.0,14888.0,0.0
+CA133 ROUTE_PENDING id=283 step=9 complete=0 crew=0/0 pos=-20403.7,14805.4,-0.0 station=-20456.0,14888.0,0.0
+CA133 ROUTE_PENDING id=287 step=10 complete=0 crew=0/0 pos=-16460.3,14845.6,-0.0 station=-16576.0,14808.0,0.0
+CA133 ROUTE_PENDING id=293 step=4 complete=0 crew=0/0 pos=-18671.0,12397.7,32.0 station=-16616.0,14848.0,0.0
+CA133 ROUTE_PENDING id=298 step=9 complete=0 crew=0/0 pos=-16583.6,14811.8,-0.0 station=-16616.0,14888.0,0.0
+CA133 ROUTE_PENDING id=306 step=6 complete=0 crew=0/0 pos=-12728.9,14891.9,-0.0 station=-12696.0,14848.0,0.0
+CA133 ROUTE_PENDING id=312 step=10 complete=0 crew=0/0 pos=-12694.9,14846.9,-0.0 station=-12736.0,14888.0,0.0
+CA133 ROUTE_PENDING id=319 step=2 complete=0 crew=0/0 pos=-718.5,1540.8,-0.0 station=-8976.0,14808.0,0.0
+CA133 ROUTE_PENDING id=321 step=4 complete=0 crew=0/0 pos=-26049.9,2732.2,-0.0 station=-8856.0,14848.0,0.0
+CA133 ROUTE_PENDING id=326 step=7 complete=0 crew=0/0 pos=-15061.8,2986.9,-0.0 station=-8856.0,14888.0,0.0
+CA133 ROUTE_PENDING id=331 step=5 complete=0 crew=0/0 pos=-4961.8,14930.5,-0.0 station=-5016.0,14808.0,0.0
+CA133 ROUTE_PENDING id=341 step=7 complete=0 crew=0/0 pos=-10593.4,2735.6,-0.0 station=-5016.0,14888.0,0.0
+CA133 ROUTE_PENDING id=345 step=5 complete=0 crew=0/0 pos=-1329.2,14797.9,-0.0 station=-1136.0,14808.0,0.0
+CA133 ROUTE_PENDING id=353 step=6 complete=0 crew=0/0 pos=-1179.7,14931.3,-0.0 station=-1256.0,14848.0,0.0
+CA133 ROUTE_PENDING id=355 step=4 complete=0 crew=0/0 pos=-15535.9,5279.5,-0.0 station=-1136.0,14888.0,0.0
+CA133 ROUTE_PENDING id=357 step=4 complete=0 crew=0/0 pos=-8640.4,6632.0,-0.0 station=-1216.0,14888.0,0.0
+CA133 ROUTE_PENDING id=361 step=8 complete=0 crew=0/0 pos=-28480.6,-12790.2,0.0 station=-28520.0,-12824.0,0.0
+CA133 ROUTE_PENDING id=363 step=7 complete=0 crew=0/0 pos=-28482.3,-12753.4,0.0 station=-28520.0,-12904.0,0.0
+CA133 ROUTE_PENDING id=365 step=6 complete=0 crew=0/0 pos=-23454.8,-5935.9,0.0 station=-28480.0,-12784.0,0.0
+CA133 ROUTE_PENDING id=369 step=7 complete=0 crew=0/0 pos=-28563.1,-12868.9,0.0 station=-28480.0,-12944.0,0.0
+CA133 ROUTE_PENDING id=376 step=6 complete=0 crew=0/0 pos=-23463.6,-4208.0,0.0 station=-28520.0,-8984.0,0.0
+CA133 ROUTE_PENDING id=380 step=8 complete=0 crew=0/0 pos=-28554.0,-9019.0,0.0 station=-28480.0,-8944.0,0.0
+CA133 ROUTE_PENDING id=382 step=7 complete=0 crew=0/0 pos=-28538.9,-8907.7,0.0 station=-28480.0,-9024.0,0.0
+CA133 ROUTE_PENDING id=383 step=7 complete=0 crew=0/0 pos=-28488.0,-5104.5,0.0 station=-28480.0,-9064.0,0.0
+CA133 ROUTE_PENDING id=386 step=7 complete=0 crew=0/0 pos=-25000.0,-4206.9,0.0 station=-28440.0,-8984.0,0.0
+CA133 ROUTE_PENDING id=395 step=8 complete=0 crew=0/0 pos=-28431.1,-5066.3,0.0 station=-28480.0,-5104.0,0.0
+CA133 ROUTE_PENDING id=396 step=8 complete=0 crew=0/0 pos=-28401.8,-5244.6,0.0 station=-28480.0,-5144.0,0.0
+CA133 ROUTE_PENDING id=402 step=8 complete=0 crew=0/0 pos=-28488.0,-5151.7,0.0 station=-28440.0,-5184.0,0.0
+CA133 ROUTE_PENDING id=404 step=7 complete=0 crew=0/0 pos=-27054.1,-2858.1,0.0 station=-28440.0,-5264.0,0.0
+CA133 ROUTE_PENDING id=408 step=6 complete=0 crew=0/0 pos=-21672.1,1839.1,-0.0 station=-28520.0,-1384.0,0.0
+CA133 ROUTE_PENDING id=411 step=8 complete=0 crew=0/0 pos=-28403.8,-1306.1,0.0 station=-28480.0,-1304.0,0.0
+CA133 ROUTE_PENDING id=412 step=8 complete=0 crew=0/0 pos=-28532.3,-1377.0,0.0 station=-28480.0,-1344.0,0.0
+CA133 ROUTE_PENDING id=426 step=8 complete=0 crew=0/0 pos=-28445.6,2576.9,-0.0 station=-28480.0,2536.0,0.0
+CA133 ROUTE_PENDING id=427 step=6 complete=0 crew=0/0 pos=-16323.1,3162.5,-0.0 station=-28480.0,2496.0,0.0
+CA133 ROUTE_PENDING id=428 step=8 complete=0 crew=0/0 pos=-28406.8,2457.8,-0.0 station=-28480.0,2456.0,0.0
+CA133 ROUTE_PENDING id=430 step=8 complete=0 crew=0/0 pos=-28406.7,2565.4,-0.0 station=-28440.0,2576.0,0.0
+CA133 ROUTE_PENDING id=443 step=8 complete=0 crew=0/0 pos=-28446.8,6340.2,-0.0 station=-28480.0,6296.0,0.0
+CA133 ROUTE_PENDING id=446 step=8 complete=0 crew=0/0 pos=-28412.8,6328.0,-0.0 station=-28440.0,6376.0,0.0
+CA133 ROUTE_PENDING id=447 step=8 complete=0 crew=0/0 pos=-28437.7,6384.2,-0.0 station=-28440.0,6336.0,0.0
+CA133 ROUTE_PENDING id=479 step=2 complete=0 crew=0/0 pos=-687.2,1662.1,-0.0 station=-28440.0,13936.0,0.0
+CA133 ROUTE_PENDING id=480 step=10 complete=0 crew=0/0 pos=-389.9,-12751.8,0.0 station=-488.0,-12784.0,0.0
+CA133 ROUTE_PENDING id=481 step=10 complete=0 crew=0/0 pos=-487.3,-12760.0,0.0 station=-488.0,-12824.0,0.0
+CA133 ROUTE_PENDING id=488 step=9 complete=0 crew=0/0 pos=-518.3,-12821.3,0.0 station=-448.0,-12904.0,0.0
+CA133 ROUTE_PENDING id=493 step=7 complete=0 crew=0/0 pos=-483.3,-12813.0,0.0 station=-408.0,-12904.0,0.0
+CA133 ROUTE_PENDING id=495 step=8 complete=0 crew=0/0 pos=-407.1,-8899.1,0.0 station=-488.0,-8944.0,0.0
+CA133 ROUTE_PENDING id=496 step=8 complete=0 crew=0/0 pos=-528.4,-9043.4,0.0 station=-488.0,-8984.0,0.0
+CA133 ROUTE_PENDING id=503 step=9 complete=0 crew=0/0 pos=-533.8,-9009.8,0.0 station=-448.0,-9064.0,0.0
+CA133 ROUTE_PENDING id=506 step=9 complete=0 crew=0/0 pos=-521.4,-9075.6,0.0 station=-408.0,-8984.0,0.0
+CA133 ROUTE_PENDING id=507 step=9 complete=0 crew=0/0 pos=-487.7,-8989.2,0.0 station=-408.0,-9024.0,0.0
+CA133 ROUTE_PENDING id=508 step=9 complete=0 crew=0/0 pos=-486.4,-8955.0,0.0 station=-408.0,-9064.0,0.0
+CA133 ROUTE_PENDING id=513 step=8 complete=0 crew=0/0 pos=-445.3,-5068.7,0.0 station=-488.0,-5224.0,0.0
+CA133 ROUTE_PENDING id=516 step=7 complete=0 crew=0/0 pos=-492.9,-5217.2,0.0 station=-448.0,-5144.0,0.0
+CA133 ROUTE_PENDING id=517 step=7 complete=0 crew=0/0 pos=-520.3,-5143.3,0.0 station=-448.0,-5184.0,0.0
+CA133 ROUTE_PENDING id=525 step=8 complete=0 crew=0/0 pos=-436.8,-1231.9,0.0 station=-488.0,-1264.0,0.0
+CA133 ROUTE_PENDING id=526 step=8 complete=0 crew=0/0 pos=-526.5,-1235.9,0.0 station=-488.0,-1304.0,0.0
+CA133 ROUTE_PENDING id=527 step=4 complete=0 crew=0/0 pos=-10446.1,-4180.8,0.0 station=-488.0,-1344.0,0.0
+CA133 ROUTE_PENDING id=528 step=8 complete=0 crew=0/0 pos=-517.9,-1347.3,0.0 station=-488.0,-1384.0,0.0
+CA133 ROUTE_PENDING id=536 step=7 complete=0 crew=0/0 pos=-481.7,-1289.8,0.0 station=-408.0,-1304.0,0.0
+CA133 ROUTE_PENDING id=537 step=7 complete=0 crew=0/0 pos=-481.3,-1244.6,0.0 station=-408.0,-1344.0,0.0
+CA133 ROUTE_PENDING id=538 step=7 complete=0 crew=0/0 pos=-484.8,-1352.1,0.0 station=-408.0,-1384.0,0.0
+CA133 ROUTE_PENDING id=539 step=7 complete=0 crew=0/0 pos=-481.1,-1391.7,0.0 station=-408.0,-1424.0,0.0
+CA133 ROUTE_PENDING id=540 step=4 complete=0 crew=0/0 pos=-7375.7,1005.0,-0.0 station=-488.0,2576.0,0.0
+CA133 ROUTE_PENDING id=542 step=4 complete=0 crew=0/0 pos=-4783.6,101.0,-0.0 station=-488.0,2496.0,0.0
+CA133 ROUTE_PENDING id=545 step=4 complete=0 crew=0/0 pos=-551.5,71.3,-0.0 station=-448.0,2576.0,0.0
+CA133 ROUTE_PENDING id=546 step=5 complete=0 crew=0/0 pos=-489.6,2501.4,-0.0 station=-448.0,2536.0,0.0
+CA133 ROUTE_PENDING id=574 step=4 complete=0 crew=0/0 pos=-24001.8,6638.4,-0.0 station=-488.0,10096.0,0.0
+CA133 ROUTE_PENDING id=576 step=7 complete=0 crew=0/0 pos=-524.4,10170.9,-0.0 station=-448.0,10216.0,0.0
+CA133 ROUTE_PENDING id=577 step=4 complete=0 crew=0/0 pos=-19390.9,6636.2,-0.0 station=-448.0,10176.0,0.0
+CA133 ROUTE_PENDING id=578 step=8 complete=0 crew=0/0 pos=-431.5,10214.1,-0.0 station=-448.0,10136.0,0.0
+CA133 ROUTE_PENDING id=579 step=4 complete=0 crew=0/0 pos=-17117.6,6187.0,-0.0 station=-448.0,10096.0,0.0
+CA133 ROUTE_PENDING id=580 step=4 complete=0 crew=0/0 pos=-16588.9,7919.9,-0.0 station=-408.0,10256.0,0.0
+CA133 ROUTE_PENDING id=581 step=7 complete=0 crew=0/0 pos=-520.6,10217.1,-0.0 station=-408.0,10216.0,0.0
+CA133 ROUTE_PENDING id=585 step=4 complete=0 crew=0/0 pos=-5570.8,8366.1,-0.0 station=-488.0,14096.0,0.0
+CA133 ROUTE_PENDING id=591 step=7 complete=0 crew=0/0 pos=-535.8,14059.9,-0.0 station=-448.0,14056.0,0.0
+CA133 ROUTE_PENDING id=593 step=7 complete=0 crew=0/0 pos=-530.6,14027.7,-0.0 station=-448.0,13976.0,0.0
+CA133 ROUTE_PENDING id=597 step=7 complete=0 crew=0/0 pos=-480.0,14093.2,-0.0 station=-408.0,14016.0,0.0
+CA133 ROUTE_PENDING id=598 step=7 complete=0 crew=0/0 pos=-525.5,13982.1,-0.0 station=-408.0,13976.0,0.0
+CA133 ROUTE_CONTROL_COMPLETE alive=600 formed=428
+CA133 ROUTE_PROGRESS tic=33250 alive=600 left=600 ground=422 formed=428
+CA133 ROUTE_PENDING id=0 step=6 complete=0 crew=0/0 pos=-23468.3,-12847.9,0.0 station=-27866.0,-14560.0,256.0
+CA133 ROUTE_PENDING id=3 step=6 complete=0 crew=0/0 pos=-23466.2,-12709.1,0.0 station=-23846.0,-14560.0,256.0
+CA133 ROUTE_PENDING id=20 step=8 complete=0 crew=0/0 pos=-29432.4,-12540.6,224.0 station=-30042.0,-14560.0,384.0
+CA133 ROUTE_PENDING id=21 step=8 complete=0 crew=0/0 pos=-29396.9,-12582.8,208.0 station=-29862.0,-14560.0,384.0
+CA133 ROUTE_PENDING id=30 step=6 complete=0 crew=0/0 pos=-5614.6,-1912.0,0.0 station=-16346.0,16096.0,256.0
+CA133 ROUTE_PENDING id=32 step=7 complete=0 crew=0/0 pos=-17287.0,4463.8,-0.0 station=-12506.0,16096.0,256.0
+CA133 ROUTE_PENDING id=38 step=4 complete=0 crew=0/0 pos=-7331.9,13227.7,-0.0 station=-986.0,16096.0,256.0
+CA133 ROUTE_PENDING id=43 step=6 complete=0 crew=0/0 pos=-20926.3,-8963.0,0.0 station=-29792.0,-8614.0,256.0
+CA133 ROUTE_PENDING id=48 step=7 complete=0 crew=0/0 pos=-27823.5,110.1,-0.0 station=-29792.0,2726.0,256.0
+CA133 ROUTE_PENDING id=49 step=7 complete=0 crew=0/0 pos=-28487.8,2535.3,-0.0 station=-29792.0,2906.0,256.0
+CA133 ROUTE_PENDING id=51 step=6 complete=0 crew=0/0 pos=-28073.8,-4193.8,0.0 station=-29792.0,6746.0,256.0
+CA133 ROUTE_PENDING id=57 step=4 complete=0 crew=0/0 pos=-17071.6,-9004.1,0.0 station=864.0,-12454.0,256.0
+CA133 ROUTE_PENDING id=58 step=4 complete=0 crew=0/0 pos=-10444.6,-6383.4,0.0 station=864.0,-8794.0,256.0
+CA133 ROUTE_PENDING id=59 step=4 complete=0 crew=0/0 pos=-7905.4,-4654.0,0.0 station=864.0,-8614.0,256.0
+CA133 ROUTE_PENDING id=65 step=4 complete=0 crew=0/0 pos=-626.9,68.2,-0.0 station=864.0,2906.0,256.0
+CA133 ROUTE_PENDING id=72 step=6 complete=0 crew=0/0 pos=-25581.7,125.4,-0.0 station=-28016.0,-13352.0,0.0
+CA133 ROUTE_PENDING id=73 step=9 complete=0 crew=0/0 pos=-28058.3,-13278.8,0.0 station=-28056.0,-13352.0,0.0
+CA133 ROUTE_PENDING id=74 step=9 complete=0 crew=0/0 pos=-28128.9,-13278.1,0.0 station=-28096.0,-13352.0,0.0
+CA133 ROUTE_PENDING id=75 step=9 complete=0 crew=0/0 pos=-28171.5,-13277.9,0.0 station=-28136.0,-13352.0,0.0
+CA133 ROUTE_PENDING id=83 step=10 complete=0 crew=0/0 pos=-27985.3,-13239.8,0.0 station=-28056.0,-13272.0,0.0
+CA133 ROUTE_PENDING id=85 step=7 complete=0 crew=0/0 pos=-27689.6,-11500.8,0.0 station=-28136.0,-13272.0,0.0
+CA133 ROUTE_PENDING id=86 step=6 complete=0 crew=0/0 pos=-22443.0,3366.4,-0.0 station=-24176.0,-13352.0,0.0
+CA133 ROUTE_PENDING id=87 step=9 complete=0 crew=0/0 pos=-24256.2,-13239.2,0.0 station=-24216.0,-13352.0,0.0
+CA133 ROUTE_PENDING id=88 step=9 complete=0 crew=0/0 pos=-24331.6,-13273.4,0.0 station=-24256.0,-13352.0,0.0
+CA133 ROUTE_PENDING id=89 step=8 complete=0 crew=0/0 pos=-24353.0,-12843.5,0.0 station=-24296.0,-13352.0,0.0
+CA133 ROUTE_PENDING id=91 step=10 complete=0 crew=0/0 pos=-24201.4,-13201.2,0.0 station=-24176.0,-13312.0,0.0
+CA133 ROUTE_PENDING id=93 step=10 complete=0 crew=0/0 pos=-24238.8,-13196.7,0.0 station=-24256.0,-13312.0,0.0
+CA133 ROUTE_PENDING id=108 step=10 complete=0 crew=0/0 pos=-20510.2,-13275.6,0.0 station=-20456.0,-13312.0,0.0
+CA133 ROUTE_PENDING id=111 step=4 complete=0 crew=0/0 pos=-24000.7,4824.0,-0.0 station=-20376.0,-13272.0,0.0
+CA133 ROUTE_PENDING id=117 step=4 complete=0 crew=0/0 pos=-17071.5,-5535.8,0.0 station=-16616.0,-13352.0,0.0
+CA133 ROUTE_PENDING id=119 step=7 complete=0 crew=0/0 pos=-25878.7,3987.4,-0.0 station=-16496.0,-13312.0,0.0
+CA133 ROUTE_PENDING id=126 step=10 complete=0 crew=0/0 pos=-16498.5,-13319.8,0.0 station=-16576.0,-13272.0,0.0
+CA133 ROUTE_PENDING id=130 step=5 complete=0 crew=0/0 pos=-12728.6,-13267.1,0.0 station=-12736.0,-13352.0,0.0
+CA133 ROUTE_PENDING id=134 step=4 complete=0 crew=0/0 pos=-23525.5,-2859.5,0.0 station=-12696.0,-13312.0,0.0
+CA133 ROUTE_PENDING id=141 step=7 complete=0 crew=0/0 pos=-17095.0,-3244.2,0.0 station=-12776.0,-13272.0,0.0
+CA133 ROUTE_PENDING id=147 step=6 complete=0 crew=0/0 pos=-8863.7,-13241.7,0.0 station=-8816.0,-13312.0,0.0
+CA133 ROUTE_PENDING id=149 step=6 complete=0 crew=0/0 pos=-8950.2,-13267.2,0.0 station=-8896.0,-13312.0,0.0
+CA133 ROUTE_PENDING id=153 step=7 complete=0 crew=0/0 pos=-18197.6,3985.2,-0.0 station=-8856.0,-13272.0,0.0
+CA133 ROUTE_PENDING id=155 step=7 complete=0 crew=0/0 pos=-15018.3,-1519.4,0.0 station=-8936.0,-13272.0,0.0
+CA133 ROUTE_PENDING id=156 step=7 complete=0 crew=0/0 pos=-10420.7,-1514.8,0.0 station=-4976.0,-13352.0,0.0
+CA133 ROUTE_PENDING id=157 step=9 complete=0 crew=0/0 pos=-5139.0,-13244.5,0.0 station=-5016.0,-13352.0,0.0
+CA133 ROUTE_PENDING id=158 step=9 complete=0 crew=0/0 pos=-7614.0,-6379.4,0.0 station=-5056.0,-13352.0,0.0
+CA133 ROUTE_PENDING id=159 step=2 complete=0 crew=0/0 pos=-586.1,1729.5,-0.0 station=-5096.0,-13352.0,0.0
+CA133 ROUTE_PENDING id=162 step=6 complete=0 crew=0/0 pos=-5053.3,-13263.0,0.0 station=-5016.0,-13312.0,0.0
+CA133 ROUTE_PENDING id=164 step=6 complete=0 crew=0/0 pos=-5136.3,-13277.9,0.0 station=-5096.0,-13312.0,0.0
+CA133 ROUTE_PENDING id=168 step=8 complete=0 crew=0/0 pos=-5092.2,-13228.9,0.0 station=-5056.0,-13272.0,0.0
+CA133 ROUTE_PENDING id=171 step=4 complete=0 crew=0/0 pos=-19547.6,-11566.2,0.0 station=-1176.0,-13352.0,0.0
+CA133 ROUTE_PENDING id=172 step=4 complete=0 crew=0/0 pos=-18011.7,-11566.2,0.0 station=-1216.0,-13352.0,0.0
+CA133 ROUTE_PENDING id=173 step=4 complete=0 crew=0/0 pos=-16663.7,-11882.1,0.0 station=-1256.0,-13352.0,0.0
+CA133 ROUTE_PENDING id=174 step=4 complete=0 crew=0/0 pos=-10331.6,-11566.2,0.0 station=-1296.0,-13352.0,0.0
+CA133 ROUTE_PENDING id=175 step=4 complete=0 crew=0/0 pos=-8837.7,-11566.2,0.0 station=-1136.0,-13312.0,0.0
+CA133 ROUTE_PENDING id=176 step=6 complete=0 crew=0/0 pos=-1210.3,-13277.7,0.0 station=-1176.0,-13312.0,0.0
+CA133 ROUTE_PENDING id=182 step=4 complete=0 crew=0/0 pos=-18585.8,-9838.3,0.0 station=-1216.0,-13272.0,0.0
+CA133 ROUTE_PENDING id=187 step=7 complete=0 crew=0/0 pos=-28908.7,14255.0,-0.0 station=-28520.0,14920.0,0.0
+CA133 ROUTE_PENDING id=191 step=6 complete=0 crew=0/0 pos=-20934.4,-8930.9,0.0 station=-28480.0,14880.0,0.0
+CA133 ROUTE_PENDING id=192 step=7 complete=0 crew=0/0 pos=-28494.2,14758.1,-0.0 station=-28480.0,14920.0,0.0
+CA133 ROUTE_PENDING id=197 step=7 complete=0 crew=0/0 pos=-28778.7,14383.0,48.0 station=-28440.0,14920.0,0.0
+CA133 ROUTE_PENDING id=203 step=4 complete=0 crew=0/0 pos=-659.0,70.5,-0.0 station=-448.0,14800.0,0.0
+CA133 ROUTE_PENDING id=206 step=4 complete=0 crew=0/0 pos=-22528.7,6188.7,-0.0 station=-448.0,14920.0,0.0
+CA133 ROUTE_PENDING id=207 step=4 complete=0 crew=0/0 pos=-10927.6,12321.1,8.0 station=-448.0,14960.0,0.0
+CA133 ROUTE_PENDING id=208 step=5 complete=0 crew=0/0 pos=-1265.2,14855.6,-0.0 station=-408.0,14800.0,0.0
+CA133 ROUTE_PENDING id=210 step=6 complete=0 crew=0/0 pos=-366.7,14844.8,-0.0 station=-408.0,14880.0,0.0
+CA133 ROUTE_PENDING id=213 step=8 complete=0 crew=0/0 pos=-29430.6,-12591.6,224.0 station=-29496.0,-12840.0,0.0
+CA133 ROUTE_PENDING id=215 step=8 complete=0 crew=0/0 pos=-29602.7,-12595.0,256.0 station=-29576.0,-12840.0,0.0
+CA133 ROUTE_PENDING id=216 step=8 complete=0 crew=0/0 pos=-29600.0,-12640.0,256.0 station=-29616.0,-12840.0,0.0
+CA133 ROUTE_PENDING id=217 step=6 complete=0 crew=0/0 pos=-23440.7,-4152.3,0.0 station=-29456.0,-12800.0,0.0
+CA133 ROUTE_PENDING id=218 step=8 complete=0 crew=0/0 pos=-29586.6,-12705.9,256.0 station=-29496.0,-12800.0,0.0
+CA133 ROUTE_PENDING id=219 step=8 complete=0 crew=0/0 pos=-29569.1,-12589.9,256.0 station=-29536.0,-12800.0,0.0
+CA133 ROUTE_PENDING id=220 step=8 complete=0 crew=0/0 pos=-29588.8,-12673.8,256.0 station=-29576.0,-12800.0,0.0
+CA133 ROUTE_PENDING id=221 step=6 complete=0 crew=0/0 pos=-19390.0,-5476.3,0.0 station=-29616.0,-12800.0,0.0
+CA133 ROUTE_PENDING id=222 step=6 complete=0 crew=0/0 pos=-23444.8,-4066.7,0.0 station=-29456.0,-12760.0,0.0
+CA133 ROUTE_PENDING id=223 step=8 complete=0 crew=0/0 pos=-29330.3,-12588.8,192.0 station=-29496.0,-12760.0,0.0
+CA133 ROUTE_PENDING id=224 step=8 complete=0 crew=0/0 pos=-29536.0,-12586.5,240.0 station=-29536.0,-12760.0,0.0
+CA133 ROUTE_PENDING id=225 step=8 complete=0 crew=0/0 pos=-29463.5,-12576.6,224.0 station=-29576.0,-12760.0,0.0
+CA133 ROUTE_PENDING id=227 step=4 complete=0 crew=0/0 pos=-12598.0,-2927.2,0.0 station=264.0,-12840.0,0.0
+CA133 ROUTE_PENDING id=230 step=7 complete=0 crew=0/0 pos=-523.1,-12918.2,0.0 station=144.0,-12840.0,0.0
+CA133 ROUTE_PENDING id=231 step=4 complete=0 crew=0/0 pos=-5579.4,-3815.5,0.0 station=304.0,-12800.0,0.0
+CA133 ROUTE_PENDING id=232 step=8 complete=0 crew=0/0 pos=266.0,-12836.6,-0.0 station=264.0,-12800.0,0.0
+CA133 ROUTE_PENDING id=236 step=4 complete=0 crew=0/0 pos=-1230.3,-9838.4,0.0 station=304.0,-12760.0,0.0
+CA133 ROUTE_PENDING id=238 step=8 complete=0 crew=0/0 pos=245.0,-12726.6,-0.0 station=224.0,-12760.0,0.0
+CA133 ROUTE_PENDING id=246 step=9 complete=0 crew=0/0 pos=-28146.3,14770.5,-0.0 station=-28056.0,14848.0,0.0
+CA133 ROUTE_PENDING id=248 step=9 complete=0 crew=0/0 pos=-28080.8,14772.7,-0.0 station=-28136.0,14848.0,0.0
+CA133 ROUTE_PENDING id=251 step=9 complete=0 crew=0/0 pos=-28042.7,14775.8,-0.0 station=-28056.0,14888.0,0.0
+CA133 ROUTE_PENDING id=252 step=9 complete=0 crew=0/0 pos=-28114.3,14761.9,-0.0 station=-28096.0,14888.0,0.0
+CA133 ROUTE_PENDING id=253 step=9 complete=0 crew=0/0 pos=-28190.1,14762.7,-0.0 station=-28136.0,14888.0,0.0
+CA133 ROUTE_PENDING id=256 step=5 complete=0 crew=0/0 pos=-27574.6,7917.7,-0.0 station=-24216.0,14808.0,0.0
+CA133 ROUTE_PENDING id=262 step=9 complete=0 crew=0/0 pos=-24161.8,14775.2,-0.0 station=-24256.0,14848.0,0.0
+CA133 ROUTE_PENDING id=263 step=9 complete=0 crew=0/0 pos=-24274.2,14765.8,-0.0 station=-24296.0,14848.0,0.0
+CA133 ROUTE_PENDING id=266 step=9 complete=0 crew=0/0 pos=-24128.1,14884.6,-0.0 station=-24216.0,14888.0,0.0
+CA133 ROUTE_PENDING id=267 step=9 complete=0 crew=0/0 pos=-24220.3,14812.6,-0.0 station=-24256.0,14888.0,0.0
+CA133 ROUTE_PENDING id=268 step=9 complete=0 crew=0/0 pos=-24241.8,14767.4,-0.0 station=-24296.0,14888.0,0.0
+CA133 ROUTE_PENDING id=271 step=6 complete=0 crew=0/0 pos=-20403.3,14763.6,-0.0 station=-20376.0,14808.0,0.0
+CA133 ROUTE_PENDING id=272 step=4 complete=0 crew=0/0 pos=-26103.1,13229.7,-0.0 station=-20416.0,14808.0,0.0
+CA133 ROUTE_PENDING id=273 step=5 complete=0 crew=0/0 pos=-20457.1,14883.6,-0.0 station=-20456.0,14808.0,0.0
+CA133 ROUTE_PENDING id=281 step=9 complete=0 crew=0/0 pos=-20371.6,14813.1,-0.0 station=-20376.0,14888.0,0.0
+CA133 ROUTE_PENDING id=282 step=9 complete=0 crew=0/0 pos=-20463.9,14803.5,-0.0 station=-20416.0,14888.0,0.0
+CA133 ROUTE_PENDING id=283 step=9 complete=0 crew=0/0 pos=-20403.7,14813.9,-0.0 station=-20456.0,14888.0,0.0
+CA133 ROUTE_PENDING id=287 step=10 complete=0 crew=0/0 pos=-16460.3,14849.1,-0.0 station=-16576.0,14808.0,0.0
+CA133 ROUTE_PENDING id=293 step=4 complete=0 crew=0/0 pos=-18671.0,12385.6,32.0 station=-16616.0,14848.0,0.0
+CA133 ROUTE_PENDING id=298 step=9 complete=0 crew=0/0 pos=-16583.6,14802.9,-0.0 station=-16616.0,14888.0,0.0
+CA133 ROUTE_PENDING id=306 step=6 complete=0 crew=0/0 pos=-12728.9,14892.4,-0.0 station=-12696.0,14848.0,0.0
+CA133 ROUTE_PENDING id=312 step=10 complete=0 crew=0/0 pos=-12701.2,14853.2,-0.0 station=-12736.0,14888.0,0.0
+CA133 ROUTE_PENDING id=319 step=2 complete=0 crew=0/0 pos=-605.6,1696.2,-0.0 station=-8976.0,14808.0,0.0
+CA133 ROUTE_PENDING id=321 step=4 complete=0 crew=0/0 pos=-26053.9,2732.2,-0.0 station=-8856.0,14848.0,0.0
+CA133 ROUTE_PENDING id=326 step=7 complete=0 crew=0/0 pos=-15065.8,2986.9,-0.0 station=-8856.0,14888.0,0.0
+CA133 ROUTE_PENDING id=331 step=5 complete=0 crew=0/0 pos=-4961.8,14921.6,-0.0 station=-5016.0,14808.0,0.0
+CA133 ROUTE_PENDING id=341 step=7 complete=0 crew=0/0 pos=-10597.0,2735.6,-0.0 station=-5016.0,14888.0,0.0
+CA133 ROUTE_PENDING id=345 step=5 complete=0 crew=0/0 pos=-1329.2,14797.3,-0.0 station=-1136.0,14808.0,0.0
+CA133 ROUTE_PENDING id=353 step=6 complete=0 crew=0/0 pos=-1179.7,14922.4,-0.0 station=-1256.0,14848.0,0.0
+CA133 ROUTE_PENDING id=355 step=4 complete=0 crew=0/0 pos=-15535.9,5283.9,-0.0 station=-1136.0,14888.0,0.0
+CA133 ROUTE_PENDING id=357 step=4 complete=0 crew=0/0 pos=-8640.4,6623.1,-0.0 station=-1216.0,14888.0,0.0
+CA133 ROUTE_PENDING id=361 step=8 complete=0 crew=0/0 pos=-28480.6,-12790.2,0.0 station=-28520.0,-12824.0,0.0
+CA133 ROUTE_PENDING id=363 step=7 complete=0 crew=0/0 pos=-28480.6,-12753.4,0.0 station=-28520.0,-12904.0,0.0
+CA133 ROUTE_PENDING id=365 step=6 complete=0 crew=0/0 pos=-23463.2,-5935.9,0.0 station=-28480.0,-12784.0,0.0
+CA133 ROUTE_PENDING id=369 step=7 complete=0 crew=0/0 pos=-28554.2,-12868.9,0.0 station=-28480.0,-12944.0,0.0
+CA133 ROUTE_PENDING id=376 step=6 complete=0 crew=0/0 pos=-23454.3,-4208.0,0.0 station=-28520.0,-8984.0,0.0
+CA133 ROUTE_PENDING id=380 step=8 complete=0 crew=0/0 pos=-28562.9,-9019.0,0.0 station=-28480.0,-8944.0,0.0
+CA133 ROUTE_PENDING id=382 step=7 complete=0 crew=0/0 pos=-28543.3,-8907.7,0.0 station=-28480.0,-9024.0,0.0
+CA133 ROUTE_PENDING id=383 step=7 complete=0 crew=0/0 pos=-28488.0,-5102.6,0.0 station=-28480.0,-9064.0,0.0
+CA133 ROUTE_PENDING id=386 step=7 complete=0 crew=0/0 pos=-25003.5,-4206.9,0.0 station=-28440.0,-8984.0,0.0
+CA133 ROUTE_PENDING id=395 step=8 complete=0 crew=0/0 pos=-28431.1,-5057.4,0.0 station=-28480.0,-5104.0,0.0
+CA133 ROUTE_PENDING id=396 step=8 complete=0 crew=0/0 pos=-28401.8,-5232.2,0.0 station=-28480.0,-5144.0,0.0
+CA133 ROUTE_PENDING id=402 step=8 complete=0 crew=0/0 pos=-28477.7,-5149.2,0.0 station=-28440.0,-5184.0,0.0
+CA133 ROUTE_PENDING id=404 step=7 complete=0 crew=0/0 pos=-27052.9,-2858.1,0.0 station=-28440.0,-5264.0,0.0
+CA133 ROUTE_PENDING id=408 step=6 complete=0 crew=0/0 pos=-21669.3,1839.1,-0.0 station=-28520.0,-1384.0,0.0
+CA133 ROUTE_PENDING id=411 step=8 complete=0 crew=0/0 pos=-28403.8,-1295.8,0.0 station=-28480.0,-1304.0,0.0
+CA133 ROUTE_PENDING id=412 step=8 complete=0 crew=0/0 pos=-28532.8,-1377.0,0.0 station=-28480.0,-1344.0,0.0
+CA133 ROUTE_PENDING id=426 step=8 complete=0 crew=0/0 pos=-28445.6,2578.2,-0.0 station=-28480.0,2536.0,0.0
+CA133 ROUTE_PENDING id=427 step=6 complete=0 crew=0/0 pos=-16332.0,3162.5,-0.0 station=-28480.0,2496.0,0.0
+CA133 ROUTE_PENDING id=428 step=8 complete=0 crew=0/0 pos=-28406.8,2460.7,-0.0 station=-28480.0,2456.0,0.0
+CA133 ROUTE_PENDING id=430 step=8 complete=0 crew=0/0 pos=-28406.7,2565.4,-0.0 station=-28440.0,2576.0,0.0
+CA133 ROUTE_PENDING id=443 step=8 complete=0 crew=0/0 pos=-28446.8,6337.0,-0.0 station=-28480.0,6296.0,0.0
+CA133 ROUTE_PENDING id=446 step=8 complete=0 crew=0/0 pos=-28403.9,6328.0,-0.0 station=-28440.0,6376.0,0.0
+CA133 ROUTE_PENDING id=447 step=8 complete=0 crew=0/0 pos=-28445.2,6384.2,-0.0 station=-28440.0,6336.0,0.0
+CA133 ROUTE_PENDING id=479 step=2 complete=0 crew=0/0 pos=-639.1,1673.7,-0.0 station=-28440.0,13936.0,0.0
+CA133 ROUTE_PENDING id=480 step=10 complete=0 crew=0/0 pos=-391.4,-12751.8,0.0 station=-488.0,-12784.0,0.0
+CA133 ROUTE_PENDING id=481 step=10 complete=0 crew=0/0 pos=-496.2,-12760.0,0.0 station=-488.0,-12824.0,0.0
+CA133 ROUTE_PENDING id=488 step=9 complete=0 crew=0/0 pos=-518.3,-12827.1,0.0 station=-448.0,-12904.0,0.0
+CA133 ROUTE_PENDING id=493 step=7 complete=0 crew=0/0 pos=-483.3,-12807.0,0.0 station=-408.0,-12904.0,0.0
+CA133 ROUTE_PENDING id=495 step=8 complete=0 crew=0/0 pos=-407.1,-8908.0,0.0 station=-488.0,-8944.0,0.0
+CA133 ROUTE_PENDING id=496 step=8 complete=0 crew=0/0 pos=-522.8,-9043.4,0.0 station=-488.0,-8984.0,0.0
+CA133 ROUTE_PENDING id=503 step=9 complete=0 crew=0/0 pos=-542.7,-9009.8,0.0 station=-448.0,-9064.0,0.0
+CA133 ROUTE_PENDING id=506 step=9 complete=0 crew=0/0 pos=-530.3,-9075.6,0.0 station=-408.0,-8984.0,0.0
+CA133 ROUTE_PENDING id=507 step=9 complete=0 crew=0/0 pos=-498.3,-8989.2,0.0 station=-408.0,-9024.0,0.0
+CA133 ROUTE_PENDING id=508 step=9 complete=0 crew=0/0 pos=-482.0,-8955.0,0.0 station=-408.0,-9064.0,0.0
+CA133 ROUTE_PENDING id=513 step=8 complete=0 crew=0/0 pos=-449.2,-5068.7,0.0 station=-488.0,-5224.0,0.0
+CA133 ROUTE_PENDING id=516 step=7 complete=0 crew=0/0 pos=-493.3,-5217.2,0.0 station=-448.0,-5144.0,0.0
+CA133 ROUTE_PENDING id=517 step=7 complete=0 crew=0/0 pos=-520.3,-5151.1,0.0 station=-448.0,-5184.0,0.0
+CA133 ROUTE_PENDING id=525 step=8 complete=0 crew=0/0 pos=-440.9,-1231.9,0.0 station=-488.0,-1264.0,0.0
+CA133 ROUTE_PENDING id=526 step=8 complete=0 crew=0/0 pos=-517.6,-1235.9,0.0 station=-488.0,-1304.0,0.0
+CA133 ROUTE_PENDING id=527 step=4 complete=0 crew=0/0 pos=-10446.0,-4180.8,0.0 station=-488.0,-1344.0,0.0
+CA133 ROUTE_PENDING id=528 step=8 complete=0 crew=0/0 pos=-517.9,-1344.7,0.0 station=-488.0,-1384.0,0.0
+CA133 ROUTE_PENDING id=536 step=7 complete=0 crew=0/0 pos=-490.6,-1289.8,0.0 station=-408.0,-1304.0,0.0
+CA133 ROUTE_PENDING id=537 step=7 complete=0 crew=0/0 pos=-481.3,-1257.7,0.0 station=-408.0,-1344.0,0.0
+CA133 ROUTE_PENDING id=538 step=7 complete=0 crew=0/0 pos=-484.8,-1343.2,0.0 station=-408.0,-1384.0,0.0
+CA133 ROUTE_PENDING id=539 step=7 complete=0 crew=0/0 pos=-481.7,-1391.7,0.0 station=-408.0,-1424.0,0.0
+CA133 ROUTE_PENDING id=540 step=4 complete=0 crew=0/0 pos=-7375.6,1005.0,-0.0 station=-488.0,2576.0,0.0
+CA133 ROUTE_PENDING id=542 step=4 complete=0 crew=0/0 pos=-4783.6,97.4,-0.0 station=-488.0,2496.0,0.0
+CA133 ROUTE_PENDING id=545 step=4 complete=0 crew=0/0 pos=-551.5,62.4,-0.0 station=-448.0,2576.0,0.0
+CA133 ROUTE_PENDING id=546 step=5 complete=0 crew=0/0 pos=-480.7,2501.4,-0.0 station=-448.0,2536.0,0.0
+CA133 ROUTE_PENDING id=574 step=4 complete=0 crew=0/0 pos=-24004.1,6638.4,-0.0 station=-488.0,10096.0,0.0
+CA133 ROUTE_PENDING id=576 step=7 complete=0 crew=0/0 pos=-524.4,10169.9,-0.0 station=-448.0,10216.0,0.0
+CA133 ROUTE_PENDING id=577 step=4 complete=0 crew=0/0 pos=-19392.5,6636.2,-0.0 station=-448.0,10176.0,0.0
+CA133 ROUTE_PENDING id=578 step=8 complete=0 crew=0/0 pos=-431.5,10223.0,-0.0 station=-448.0,10136.0,0.0
+CA133 ROUTE_PENDING id=579 step=4 complete=0 crew=0/0 pos=-17128.5,6187.0,-0.0 station=-448.0,10096.0,0.0
+CA133 ROUTE_PENDING id=580 step=4 complete=0 crew=0/0 pos=-16588.8,7919.9,-0.0 station=-408.0,10256.0,0.0
+CA133 ROUTE_PENDING id=581 step=7 complete=0 crew=0/0 pos=-520.6,10218.5,-0.0 station=-408.0,10216.0,0.0
+CA133 ROUTE_PENDING id=585 step=4 complete=0 crew=0/0 pos=-5576.5,8366.1,-0.0 station=-488.0,14096.0,0.0
+CA133 ROUTE_PENDING id=591 step=7 complete=0 crew=0/0 pos=-535.5,14059.9,-0.0 station=-448.0,14056.0,0.0
+CA133 ROUTE_PENDING id=593 step=7 complete=0 crew=0/0 pos=-522.3,14027.7,-0.0 station=-448.0,13976.0,0.0
+CA133 ROUTE_PENDING id=597 step=7 complete=0 crew=0/0 pos=-480.0,14099.2,-0.0 station=-408.0,14016.0,0.0
+CA133 ROUTE_PENDING id=598 step=7 complete=0 crew=0/0 pos=-525.5,13972.1,-0.0 station=-408.0,13976.0,0.0
+CA133 ROUTE_CONTROL_COMPLETE alive=600 formed=428
+Game saved.

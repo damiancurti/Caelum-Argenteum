@@ -1,0 +1,193 @@
+Log started: 2026-10-08 03:29:17
+GZDoom version g4.14.2
+D_DoomInit: Static RNGseed 116 set.
+W_Init: Init WADfiles.
+adding C:/Program Files (x86)/GZDoom/gzdoom.pk3, 692 lumps
+adding C:/Program Files (x86)/GZDoom/game_support.pk3, 3308 lumps
+adding C:/Program Files (x86)/Steam/steamapps/common/ultimate doom/base/doom2/DOOM2.WAD, 2919 lumps
+adding C:/Program Files (x86)/Steam/steamapps/common/Ultimate Doom/rerelease/id24res.wad, 530 lumps
+adding C:/Program Files (x86)/GZDoom/game_widescreen_gfx.pk3, 214 lumps
+adding C:/GZDooMProjects/CaelumArgenteum/build/issue133/production.pk3, 6211 lumps
+adding C:/GZDooMProjects/CaelumArgenteum/build/issue133/factories.pk3, 3 lumps
+S_Init: Setting up sound.
+I_InitSound: Initializing OpenAL
+  Opened device OpenAL Soft on G27F (NVIDIA High Definition Audio)
+  EFX enabled
+I_InitInput
+I_StartupMouse
+I_StartupKeyboard
+I_StartupXInput
+I_StartupRawPS2
+I_StartupDirectInputJoystick
+Vulkan device: NVIDIA GeForce RTX 3070 Ti
+Vulkan device type: discrete gpu
+Vulkan version: 1.4.303 (api) 576.352.0 (driver)
+Vulkan extensions: VK_KHR_16bit_storage VK_KHR_8bit_storage VK_KHR_acceleration_structure VK_KHR_bind_memory2 VK_KHR_buffer_device_address VK_KHR_calibrated_timestamps VK_KHR_compute_shader_derivatives VK_KHR_cooperative_matrix VK_KHR_copy_commands2 VK_KHR_create_renderpass2 VK_KHR_dedicated_allocation VK_KHR_deferred_host_operations VK_KHR_depth_stencil_resolve VK_KHR_descriptor_update_template VK_KHR_device_group VK_KHR_draw_indirect_count VK_KHR_driver_properties VK_KHR_dynamic_rendering VK_KHR_dynamic_rendering_local_read VK_KHR_external_fence VK_KHR_external_fence_win32 VK_KHR_external_memory VK_KHR_external_memory_win32 VK_KHR_external_semaphore VK_KHR_external_semaphore_win32 VK_KHR_format_feature_flags2 VK_KHR_fragment_shader_barycentric VK_KHR_fragment_shading_rate VK_KHR_get_memory_requirements2 VK_KHR_global_priority VK_KHR_image_format_list VK_KHR_imageless_framebuffer VK_KHR_index_type_uint8 VK_KHR_line_rasterization VK_KHR_load_store_op_none VK_KHR_maintenance1 VK_KHR_maintenance2 VK_KHR_maintenance3 VK_KHR_maintenance4 VK_KHR_maintenance5 VK_KHR_maintenance6 VK_KHR_maintenance7 VK_KHR_map_memory2 VK_KHR_multiview VK_KHR_pipeline_binary VK_KHR_pipeline_executable_properties VK_KHR_pipeline_library VK_KHR_present_id VK_KHR_present_wait VK_KHR_push_descriptor VK_KHR_ray_query VK_KHR_ray_tracing_maintenance1 VK_KHR_ray_tracing_pipeline VK_KHR_ray_tracing_position_fetch VK_KHR_relaxed_block_layout VK_KHR_sampler_mirror_clamp_to_edge VK_KHR_sampler_ycbcr_conversion VK_KHR_separate_depth_stencil_layouts VK_KHR_shader_atomic_int64 VK_KHR_shader_clock VK_KHR_shader_draw_parameters VK_KHR_shader_expect_assume VK_KHR_shader_float16_int8 VK_KHR_shader_float_controls VK_KHR_shader_float_controls2 VK_KHR_shader_integer_dot_product VK_KHR_shader_maximal_reconvergence VK_KHR_shader_non_semantic_info VK_KHR_shader_quad_control VK_KHR_shader_relaxed_extended_instruction VK_KHR_shader_subgroup_extended_types VK_KHR_shader_subgroup_rotate VK_KHR_shader_subgroup_uniform_control_flow VK_KHR_shader_terminate_invocation VK_KHR_spirv_1_4 VK_KHR_storage_buffer_storage_class VK_KHR_swapchain VK_KHR_swapchain_mutable_format VK_KHR_synchronization2 VK_KHR_timeline_semaphore VK_KHR_uniform_buffer_standard_layout VK_KHR_variable_pointers VK_KHR_vertex_attribute_divisor VK_KHR_video_decode_av1 VK_KHR_video_decode_h264 VK_KHR_video_decode_h265 VK_KHR_video_decode_queue VK_KHR_video_encode_h264 VK_KHR_video_encode_h265 VK_KHR_video_encode_quantization_map VK_KHR_video_encode_queue VK_KHR_video_maintenance1 VK_KHR_video_maintenance2 VK_KHR_video_queue VK_KHR_vulkan_memory_model VK_KHR_win32_keyed_mutex VK_KHR_workgroup_memory_explicit_layout VK_KHR_zero_initialize_workgroup_memory VK_EXT_4444_formats VK_EXT_attachment_feedback_loop_dynamic_state VK_EXT_attachment_feedback_loop_layout VK_EXT_blend_operation_advanced VK_EXT_border_color_swizzle VK_EXT_buffer_device_address VK_EXT_calibrated_timestamps VK_EXT_color_write_enable VK_EXT_conditional_rendering VK_EXT_conservative_rasterization VK_EXT_custom_border_color VK_EXT_depth_bias_control VK_EXT_depth_clamp_control VK_EXT_depth_clamp_zero_one VK_EXT_depth_clip_control VK_EXT_depth_clip_enable VK_EXT_depth_range_unrestricted VK_EXT_descriptor_buffer VK_EXT_descriptor_indexing VK_EXT_device_address_binding_report VK_EXT_device_fault VK_EXT_device_generated_commands VK_EXT_discard_rectangles VK_EXT_dynamic_rendering_unused_attachments VK_EXT_extended_dynamic_state VK_EXT_extended_dynamic_state2 VK_EXT_extended_dynamic_state3 VK_EXT_external_memory_host VK_EXT_fragment_shader_interlock VK_EXT_full_screen_exclusive VK_EXT_global_priority VK_EXT_global_priority_query VK_EXT_graphics_pipeline_library VK_EXT_hdr_metadata VK_EXT_host_image_copy VK_EXT_host_query_reset VK_EXT_image_2d_view_of_3d VK_EXT_image_robustness VK_EXT_image_sliced_view_of_3d VK_EXT_image_view_min_lod VK_EXT_index_type_uint8 VK_EXT_inline_uniform_block VK_EXT_legacy_vertex_attributes VK_EXT_line_rasterization VK_EXT_load_store_op_none VK_EXT_memory_budget VK_EXT_memory_priority VK_EXT_mesh_shader VK_EXT_multi_draw VK_EXT_mutable_descriptor_type VK_EXT_nested_command_buffer VK_EXT_non_seamless_cube_map VK_EXT_opacity_micromap VK_EXT_pageable_device_local_memory VK_EXT_pci_bus_info VK_EXT_pipeline_creation_cache_control VK_EXT_pipeline_creation_feedback VK_EXT_pipeline_library_group_handles VK_EXT_pipeline_robustness VK_EXT_post_depth_coverage VK_EXT_present_mode_fifo_latest_ready VK_EXT_primitive_topology_list_restart VK_EXT_primitives_generated_query VK_EXT_private_data VK_EXT_provoking_vertex VK_EXT_queue_family_foreign VK_EXT_robustness2 VK_EXT_sample_locations VK_EXT_sampler_filter_minmax VK_EXT_scalar_block_layout VK_EXT_separate_stencil_usage VK_EXT_shader_atomic_float VK_EXT_shader_demote_to_helper_invocation VK_EXT_shader_image_atomic_int64 VK_EXT_shader_module_identifier VK_EXT_shader_object VK_EXT_shader_replicated_composites VK_EXT_shader_subgroup_ballot VK_EXT_shader_subgroup_vote VK_EXT_shader_viewport_index_layer VK_EXT_subgroup_size_control VK_EXT_swapchain_maintenance1 VK_EXT_texel_buffer_alignment VK_EXT_tooling_info VK_EXT_transform_feedback VK_EXT_vertex_attribute_divisor VK_EXT_vertex_attribute_robustness VK_EXT_vertex_input_dynamic_state VK_EXT_ycbcr_2plane_444_formats VK_EXT_ycbcr_image_arrays VK_NV_acquire_winrt_display VK_NV_clip_space_w_scaling VK_NV_cluster_acceleration_structure VK_NV_compute_shader_derivatives VK_NV_cooperative_matrix VK_NV_cooperative_matrix2 VK_NV_cooperative_vector VK_NV_copy_memory_indirect VK_NV_corner_sampled_image VK_NV_coverage_reduction_mode VK_NV_cuda_kernel_launch VK_NV_dedicated_allocation VK_NV_dedicated_allocation_image_aliasing VK_NV_descriptor_pool_overallocation VK_NV_device_diagnostic_checkpoints VK_NV_device_diagnostics_config VK_NV_device_generated_commands VK_NV_device_generated_commands_compute VK_NV_disk_cache_utils VK_NV_external_memory VK_NV_external_memory_win32 VK_NV_fill_rectangle VK_NV_fragment_coverage_to_color VK_NV_fragment_shader_barycentric VK_NV_fragment_shading_rate_enums VK_NV_framebuffer_mixed_samples VK_NV_geometry_shader_passthrough VK_NV_inherited_viewport_scissor VK_NV_internal_nvpresent VK_NV_linear_color_attachment VK_NV_low_latency VK_NV_low_latency2 VK_NV_memory_decompression VK_NV_mesh_shader VK_NV_optical_flow VK_NV_partitioned_acceleration_structure VK_NV_present_metering VK_NV_raw_access_chains VK_NV_ray_tracing VK_NV_ray_tracing_invocation_reorder VK_NV_ray_tracing_motion_blur VK_NV_representative_fragment_test VK_NV_sample_mask_override_coverage VK_NV_scissor_exclusive VK_NV_shader_atomic_float16_vector VK_NV_shader_image_footprint VK_NV_shader_sm_builtins VK_NV_shader_subgroup_partitioned VK_NV_shading_rate_image VK_NV_viewport_array2 VK_NV_viewport_swizzle VK_NV_win32_keyed_mutex VK_NVX_binary_import VK_NVX_image_view_handle VK_NVX_multiview_per_view_attributes VK_AMD_buffer_marker VK_GOOGLE_hlsl_functionality1 VK_GOOGLE_user_type
+Max. texture size: 32768
+Max. uniform buffer range: 65536
+Min. uniform buffer offset alignment: 64
+Resolution: 1280 x 720
+I_Init: Setting up machine state.
+CPU speed: 3400 MHz
+CPU Vendor ID: AuthenticAMD
+  Name: AMD Ryzen 9 5950X 16-Core Processor 
+  Family 25 (25), Model 33, Stepping 0
+  Features: SSE2 SSE3 SSSE3 SSE4.1 SSE4.2 AVX AVX2 F16C FMA3 BMI1 BMI2 HyperThreading
+V_Init: allocate screen.
+ST_Init: Init startup screen.
+Checking cmd-line parameters...
+S_InitData: Load sound definitions.
+G_ParseMapInfo: Load map definitions.
+Texman.Init: Init texture manager.
+ParseTeamInfo: Load team definitions.
+LoadActors: Load actor definitions.
+script parsing took 1036.06 ms
+R_Init: Init Doom refresh subsystem.
+DecalLibrary: Load decals.
+M_Init: Init menus.
+P_Init: Init Playloop state.
+ParseSBarInfo: Loading custom status bar definition.
+D_CheckNetGame: Checking network game status.
+player 1 of 1 (1 nodes)
+
+----------------------------------------
+
+MAP06 - Barracas al Sud — fortified port
+
+[Caelum] Inicio por comando directo: perfil de prueba seguro aplicado.
+[Caelum] Character creation values loaded. Attribute total: 150.00
+CITY133 housed=600 attackers=0 revision=3
+CA133 PASS native workbench collision clear
+CA133 RECIPE id=0 kind=0 covered=1 station=-27520,-12608 capabilities=1073 name=dagger
+CA133 RECIPE id=1 kind=0 covered=1 station=-27520,-12608 capabilities=1073 name=hatchet
+CA133 RECIPE id=2 kind=0 covered=1 station=-27520,-12608 capabilities=1073 name=machete
+CA133 RECIPE id=3 kind=0 covered=1 station=-27520,-12608 capabilities=1073 name=javelin
+CA133 RECIPE id=4 kind=0 covered=1 station=-27520,-12608 capabilities=1073 name=sword
+CA133 RECIPE id=5 kind=0 covered=1 station=-27520,-12608 capabilities=1073 name=axe
+CA133 RECIPE id=6 kind=0 covered=1 station=-27520,-12608 capabilities=1073 name=flail
+CA133 RECIPE id=7 kind=0 covered=1 station=-27520,-12608 capabilities=1073 name=spear
+CA133 RECIPE id=8 kind=0 covered=1 station=-27520,-12608 capabilities=1073 name=greatsword
+CA133 RECIPE id=9 kind=0 covered=1 station=-27520,-12608 capabilities=1073 name=war axe
+CA133 RECIPE id=10 kind=0 covered=1 station=-27520,-12608 capabilities=1073 name=halberd
+CA133 RECIPE id=11 kind=0 covered=1 station=-27520,-12608 capabilities=1073 name=giant gauntlets
+CA133 RECIPE id=12 kind=0 covered=1 station=-25984,-12608 capabilities=1107 name=standard bow
+CA133 RECIPE id=13 kind=0 covered=1 station=-25984,-12608 capabilities=1107 name=carbine
+CA133 RECIPE id=14 kind=0 covered=1 station=-25984,-12608 capabilities=1107 name=longbow
+CA133 RECIPE id=15 kind=0 covered=1 station=-25984,-12608 capabilities=1107 name=crossbow
+CA133 RECIPE id=16 kind=1 covered=1 station=-24448,-12608 capabilities=148 name=magic armor · head
+CA133 RECIPE id=17 kind=1 covered=1 station=-24448,-12608 capabilities=148 name=magic armor · body
+CA133 RECIPE id=18 kind=1 covered=1 station=-24448,-12608 capabilities=148 name=magic armor · hands
+CA133 RECIPE id=19 kind=1 covered=1 station=-24448,-12608 capabilities=148 name=magic armor · feet
+CA133 RECIPE id=20 kind=1 covered=1 station=-24448,-12608 capabilities=148 name=light armor · head
+CA133 RECIPE id=21 kind=1 covered=1 station=-24448,-12608 capabilities=148 name=light armor · body
+CA133 RECIPE id=22 kind=1 covered=1 station=-24448,-12608 capabilities=148 name=light armor · hands
+CA133 RECIPE id=23 kind=1 covered=1 station=-24448,-12608 capabilities=148 name=light armor · feet
+CA133 RECIPE id=24 kind=1 covered=1 station=-27520,-12608 capabilities=1073 name=medium armor · head
+CA133 RECIPE id=25 kind=1 covered=1 station=-27520,-12608 capabilities=1073 name=medium armor · body
+CA133 RECIPE id=26 kind=1 covered=1 station=-27520,-12608 capabilities=1073 name=medium armor · hands
+CA133 RECIPE id=27 kind=1 covered=1 station=-27520,-12608 capabilities=1073 name=medium armor · feet
+CA133 RECIPE id=28 kind=1 covered=1 station=-27520,-12608 capabilities=1073 name=heavy armor · head
+CA133 RECIPE id=29 kind=1 covered=1 station=-27520,-12608 capabilities=1073 name=heavy armor · body
+CA133 RECIPE id=30 kind=1 covered=1 station=-27520,-12608 capabilities=1073 name=heavy armor · hands
+CA133 RECIPE id=31 kind=1 covered=1 station=-27520,-12608 capabilities=1073 name=heavy armor · feet
+CA133 RECIPE id=32 kind=3 covered=1 station=-22912,-12608 capabilities=536 name=staff · fire essence
+CA133 RECIPE id=33 kind=3 covered=1 station=-22912,-12608 capabilities=536 name=staff · water essence
+CA133 RECIPE id=34 kind=3 covered=1 station=-22912,-12608 capabilities=536 name=staff · earth essence
+CA133 RECIPE id=35 kind=3 covered=1 station=-22912,-12608 capabilities=536 name=staff · wind essence
+CA133 RECIPE id=36 kind=3 covered=1 station=-22912,-12608 capabilities=536 name=staff · quintessence
+CA133 RECIPE id=37 kind=3 covered=1 station=-22912,-12608 capabilities=536 name=bell · fire essence
+CA133 RECIPE id=38 kind=3 covered=1 station=-22912,-12608 capabilities=536 name=bell · water essence
+CA133 RECIPE id=39 kind=3 covered=1 station=-22912,-12608 capabilities=536 name=bell · earth essence
+CA133 RECIPE id=40 kind=3 covered=1 station=-22912,-12608 capabilities=536 name=bell · wind essence
+CA133 RECIPE id=41 kind=3 covered=1 station=-22912,-12608 capabilities=536 name=bell · quintessence
+CA133 RECIPE id=42 kind=3 covered=1 station=-22912,-12608 capabilities=536 name=book · fire essence
+CA133 RECIPE id=43 kind=3 covered=1 station=-22912,-12608 capabilities=536 name=book · water essence
+CA133 RECIPE id=44 kind=3 covered=1 station=-22912,-12608 capabilities=536 name=book · earth essence
+CA133 RECIPE id=45 kind=3 covered=1 station=-22912,-12608 capabilities=536 name=book · wind essence
+CA133 RECIPE id=46 kind=3 covered=1 station=-22912,-12608 capabilities=536 name=book · quintessence
+CA133 RECIPE id=47 kind=3 covered=1 station=-22912,-12608 capabilities=536 name=statuette · fire essence
+CA133 RECIPE id=48 kind=3 covered=1 station=-22912,-12608 capabilities=536 name=statuette · water essence
+CA133 RECIPE id=49 kind=3 covered=1 station=-22912,-12608 capabilities=536 name=statuette · earth essence
+CA133 RECIPE id=50 kind=3 covered=1 station=-22912,-12608 capabilities=536 name=statuette · wind essence
+CA133 RECIPE id=51 kind=3 covered=1 station=-22912,-12608 capabilities=536 name=statuette · quintessence
+CA133 RECIPE id=52 kind=4 covered=1 station=-22912,-12608 capabilities=536 name=Ruby Amulet
+CA133 RECIPE id=53 kind=4 covered=1 station=-22912,-12608 capabilities=536 name=Sapphire Amulet
+CA133 RECIPE id=54 kind=4 covered=1 station=-22912,-12608 capabilities=536 name=Emerald Amulet
+CA133 RECIPE id=55 kind=4 covered=1 station=-22912,-12608 capabilities=536 name=Topaz Amulet
+CA133 RECIPE id=56 kind=5 covered=1 station=-22912,-12608 capabilities=536 name=Fire Seal
+CA133 RECIPE id=57 kind=5 covered=1 station=-22912,-12608 capabilities=536 name=Water Seal
+CA133 RECIPE id=58 kind=5 covered=1 station=-22912,-12608 capabilities=536 name=Earth Seal
+CA133 RECIPE id=59 kind=5 covered=1 station=-22912,-12608 capabilities=536 name=Air Seal
+CA133 RECIPE id=60 kind=5 covered=1 station=-22912,-12608 capabilities=536 name=Quintessence Seal
+CA133 RECIPE id=61 kind=2 covered=1 station=-27520,-12608 capabilities=1073 name=buckler
+CA133 RECIPE id=62 kind=2 covered=1 station=-27520,-12608 capabilities=1073 name=kite shield
+CA133 RECIPE id=63 kind=2 covered=1 station=-27520,-12608 capabilities=1073 name=tower shield
+CA133 RECIPE id=64 kind=2 covered=1 station=-27520,-12608 capabilities=1073 name=magic shield
+CA133 RECIPE id=65 kind=6 covered=1 station=-27520,-12608 capabilities=1073 name=Copper Ingot
+CA133 RECIPE id=66 kind=6 covered=1 station=-27520,-12608 capabilities=1073 name=Tin Ingot
+CA133 RECIPE id=67 kind=6 covered=1 station=-27520,-12608 capabilities=1073 name=iron ingot
+CA133 RECIPE id=68 kind=6 covered=1 station=-27520,-12608 capabilities=1073 name=Silver Ingot
+CA133 RECIPE id=69 kind=6 covered=1 station=-27520,-12608 capabilities=1073 name=Gold Ingot
+CA133 RECIPE id=70 kind=6 covered=1 station=-27520,-12608 capabilities=1073 name=Bronze Ingot
+CA133 RECIPE id=71 kind=6 covered=1 station=-27520,-12608 capabilities=1073 name=Steel Ingot
+CA133 RECIPE id=72 kind=6 covered=1 station=-24448,-12608 capabilities=148 name=fabric material
+CA133 RECIPE id=73 kind=6 covered=1 station=-24448,-12608 capabilities=148 name=fabric material
+CA133 RECIPE id=74 kind=6 covered=1 station=-24448,-12608 capabilities=148 name=fabric material
+CA133 RECIPE id=75 kind=6 covered=1 station=-24448,-12608 capabilities=148 name=Rope
+CA133 RECIPE id=76 kind=6 covered=1 station=-24448,-12608 capabilities=148 name=leather material
+CA133 RECIPE id=77 kind=6 covered=1 station=-24448,-12608 capabilities=148 name=leather material
+CA133 RECIPE id=78 kind=6 covered=1 station=-24448,-12608 capabilities=148 name=leather material
+CA133 RECIPE id=79 kind=7 covered=1 station=-27520,-12608 capabilities=1073 name=blade material
+CA133 RECIPE id=80 kind=7 covered=1 station=-27520,-12608 capabilities=1073 name=small-blade material
+CA133 RECIPE id=81 kind=7 covered=1 station=-27520,-12608 capabilities=1073 name=curved-blade material
+CA133 RECIPE id=82 kind=7 covered=1 station=-27520,-12608 capabilities=1073 name=long-blade material
+CA133 RECIPE id=83 kind=7 covered=1 station=-27520,-12608 capabilities=1073 name=broad-blade material
+CA133 RECIPE id=84 kind=7 covered=1 station=-27520,-12608 capabilities=1073 name=shaft material
+CA133 RECIPE id=85 kind=7 covered=1 station=-25984,-12608 capabilities=1107 name=frame material
+CA133 RECIPE id=86 kind=7 covered=1 station=-25984,-12608 capabilities=1107 name=long-frame material
+CA133 RECIPE id=87 kind=7 covered=1 station=-27520,-12608 capabilities=1073 name=weapon-head material
+CA133 RECIPE id=88 kind=7 covered=1 station=-27520,-12608 capabilities=1073 name=round-head material
+CA133 RECIPE id=89 kind=7 covered=1 station=-27520,-12608 capabilities=1073 name=plate material
+CA133 RECIPE id=90 kind=7 covered=1 station=-27520,-12608 capabilities=1073 name=round-plate material
+CA133 RECIPE id=91 kind=7 covered=1 station=-27520,-12608 capabilities=1073 name=kite-plate material
+CA133 RECIPE id=92 kind=7 covered=1 station=-27520,-12608 capabilities=1073 name=tower-plate material
+CA133 RECIPE id=93 kind=7 covered=1 station=-27520,-12608 capabilities=1073 name=magic-plate material
+CA133 RECIPE id=94 kind=7 covered=1 station=-27520,-12608 capabilities=1073 name=large-plate material
+CA133 RECIPE id=95 kind=7 covered=1 station=-24448,-12608 capabilities=148 name=chainmail material
+CA133 RECIPE id=96 kind=7 covered=1 station=-22912,-12608 capabilities=536 name=fire-essence material
+CA133 RECIPE id=97 kind=7 covered=1 station=-22912,-12608 capabilities=536 name=water-essence material
+CA133 RECIPE id=98 kind=7 covered=1 station=-22912,-12608 capabilities=536 name=earth-essence material
+CA133 RECIPE id=99 kind=7 covered=1 station=-22912,-12608 capabilities=536 name=wind-essence material
+CA133 RECIPE id=100 kind=7 covered=1 station=-22912,-12608 capabilities=536 name=quintessence material
+CA133 RECIPE id=101 kind=7 covered=1 station=-27520,-12608 capabilities=1073 name=hilt material
+CA133 RECIPE id=102 kind=7 covered=1 station=-27520,-12608 capabilities=1073 name=long-hilt material
+CA133 RECIPE id=103 kind=7 covered=1 station=-27520,-12608 capabilities=1073 name=point material
+CA133 RECIPE id=104 kind=7 covered=1 station=-27520,-12608 capabilities=1073 name=handle material
+CA133 RECIPE id=105 kind=7 covered=1 station=-27520,-12608 capabilities=1073 name=long-handle material
+CA133 RECIPE id=106 kind=7 covered=1 station=-25984,-12608 capabilities=1107 name=bowstring material
+CA133 RECIPE id=107 kind=7 covered=1 station=-25984,-12608 capabilities=1107 name=reinforced-bowstring material
+CA133 RECIPE id=108 kind=7 covered=1 station=-24448,-12608 capabilities=148 name=strap material
+CA133 RECIPE id=109 kind=7 covered=1 station=-27520,-12608 capabilities=1073 name=reinforced-strap material
+CA133 RECIPE id=110 kind=7 covered=1 station=-25984,-12608 capabilities=1107 name=barrel material
+CA133 RECIPE id=111 kind=7 covered=1 station=-25984,-12608 capabilities=1107 name=mechanism material
+CA133 RECIPE id=112 kind=7 covered=1 station=-22912,-12608 capabilities=536 name=staff material
+CA133 RECIPE id=113 kind=7 covered=1 station=-22912,-12608 capabilities=536 name=bell material
+CA133 RECIPE id=114 kind=7 covered=1 station=-22912,-12608 capabilities=536 name=book material
+CA133 RECIPE id=115 kind=7 covered=1 station=-22912,-12608 capabilities=536 name=statuette material
+CA133 RECIPE id=116 kind=7 covered=1 station=-27520,-12608 capabilities=1073 name=small weapon-head material
+CA133 RECIPE id=117 kind=7 covered=1 station=-27520,-12608 capabilities=1073 name=chain material
+CA133 RECIPE id=118 kind=7 covered=1 station=-22912,-12608 capabilities=536 name=fine-silver-chain material
+CA133 RECIPE id=119 kind=7 covered=1 station=-22912,-12608 capabilities=536 name=seal-base material
+CA133 RECIPE id=120 kind=7 covered=1 station=-22912,-12608 capabilities=536 name=ruby-pendant material
+CA133 RECIPE id=121 kind=7 covered=1 station=-22912,-12608 capabilities=536 name=sapphire-pendant material
+CA133 RECIPE id=122 kind=7 covered=1 station=-22912,-12608 capabilities=536 name=emerald-pendant material
+CA133 RECIPE id=123 kind=7 covered=1 station=-22912,-12608 capabilities=536 name=topaz-pendant material
+CA133 RECIPE id=124 kind=7 covered=1 station=-22912,-12608 capabilities=536 name=cut-ruby material
+CA133 RECIPE id=125 kind=7 covered=1 station=-22912,-12608 capabilities=536 name=cut-sapphire material
+CA133 RECIPE id=126 kind=7 covered=1 station=-22912,-12608 capabilities=536 name=cut-emerald material
+CA133 RECIPE id=127 kind=7 covered=1 station=-22912,-12608 capabilities=536 name=cut-topaz material
+CA133 RECIPE id=128 kind=7 covered=1 station=-22912,-12608 capabilities=536 name=opal-brooch material
+CA133 RECIPE id=129 kind=8 covered=1 station=-25984,-12608 capabilities=1107 name=10 arrows
+CA133 RECIPE id=130 kind=8 covered=1 station=-25984,-12608 capabilities=1107 name=10 bolts
+CA133 RECIPE id=131 kind=0 covered=1 station=-27520,-12608 capabilities=1073 name=Pickaxe
+CA133 COMPLETE checks=133 failures=0

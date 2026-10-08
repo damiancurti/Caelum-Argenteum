@@ -1,0 +1,90 @@
+{
+  "issue": 133,
+  "evidence": "Native snapshot confirmation after the unchanged full-roster firearm control",
+  "diagnostic_run": "volley-cause",
+  "scope": "Stationary targets never attack. Normal Air, native collision, friendly bodies, physiology and thermal damage remain enabled.",
+  "finding": "All 600 fire 14 rounds and complete one reload. Action heat is 14 x 4 x the existing jump heat reference; the current #130 Air-to-heat profile is retained without a second heat-cost multiplier. All 600 die from accumulated thermal damage by tic 1400 in the measured control.",
+  "snapshots": [
+    {
+      "save": "volley-500.zds",
+      "sha256": "fd89f12924708a78549aa134054e0cfb1ee34bff54e574422949f06dfb389b7f",
+      "roster": 600,
+      "alive": 600,
+      "ranges": {
+        "health": [
+          1561,
+          1561
+        ],
+        "maximum_health": [
+          2168,
+          2168
+        ],
+        "air": [
+          57.72589066240147,
+          58.10722022392905
+        ],
+        "exposure": [
+          61.761145746789865,
+          61.76876121003193
+        ],
+        "thermal_damage_hp": [
+          608.0,
+          608.0
+        ],
+        "action_heat_joules": [
+          836062.5,
+          836062.5
+        ],
+        "reference_jump_joules": [
+          14929.6875,
+          14929.6875
+        ],
+        "inertia_joules_per_degree": [
+          11291.795086150962,
+          11291.795086150962
+        ]
+      }
+    },
+    {
+      "save": "volley-1450.zds",
+      "sha256": "cc295e5709e4276a47b28ef344d6126b3a4a9e05b3fa7c4281a9f922ef90fe21",
+      "roster": 600,
+      "alive": 0,
+      "ranges": {
+        "health": [
+          0,
+          0
+        ],
+        "maximum_health": [
+          2168,
+          2168
+        ],
+        "air": [
+          170.21811131304204,
+          170.21811131304204
+        ],
+        "exposure": [
+          32.215886497446796,
+          32.22013356117499
+        ],
+        "thermal_damage_hp": [
+          2202.0,
+          2202.0
+        ],
+        "action_heat_joules": [
+          836062.5,
+          836062.5
+        ],
+        "reference_jump_joules": [
+          14929.6875,
+          14929.6875
+        ],
+        "inertia_joules_per_degree": [
+          11291.795086150962,
+          11291.795086150962
+        ]
+      }
+    }
+  ],
+  "policy": "This is a balance limitation, not a sustained-fire performance success. Changing the approved thermal profile requires an explicit design decision; #133 does not silently exempt soldiers or refill their resources."
+}

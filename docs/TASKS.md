@@ -1,6 +1,26 @@
 # TASKS.md — Active tasks
 
-Documentation version: **5.1.2** — 2026-10-07.
+Documentation version: **5.1.3** — 2026-10-08.
+
+## Issue #133 - City interiors and deployment (5.1.3, author acceptance pending)
+
+Implemented: revision-3 interiors and factory networks; 160 furnished homes,
+64 independent T1 shops, the 600 housed soldiers and authoritative siege date;
+native carbine combat and 48 shared world sprite frames; exact revision-2
+geometry backup/build selector. Commerce, furniture and recipe probes pass.
+The fresh routing control reaches all 600 posts, including crew stairs and return
+from temporary access yields. Compatibility/save/hub controls and combined
+performance are recorded with their exact scope in validation_513/RESULTS.md.
+Remaining author checks: CA133-01 interiors/trade physical controls and CA133-02
+deployment/combat/world-art appearance. Keep the issue/PR open until acceptance.
+The author sets the shop/pricing and calendar decisions recorded in SYSTEMS.
+
+Follow-up design finding from #133: the unchanged #130 action-heat profile makes
+the 600-body continuous-fire control stop at 14 shots and one reload per soldier;
+all then die from thermal damage by tic 1400. HEAT_LIMIT.json confirms the native
+state and cause. Sustained firearm combat needs an explicit thermal calibration
+decision; no soldier exemption, resource refill or approved balance change was
+silently introduced. This remains a limitation for author review.
 
 ## Issue #132 - Staged siege performance test (5.1.2)
 

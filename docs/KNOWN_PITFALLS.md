@@ -4,6 +4,61 @@ Status: integrated engineering register (issue #22, patch 4.36.1b).
 Prepared: 2026-09-23. Inherits the project's release after integration.
 Inspected baseline: `1dc390576fa330d37ff543526fc7e69a397fc28f` (PR #7).
 
+## CA-KP-054 - Native city validation: inventory, scripts and sprite registration
+
+Status/evidence: ENGINE-VERIFIED. First checked: 2026-10-08.
+Issue #133 / 5.1.3; GZDoom 4.14.2 on Windows/Vulkan. Author acceptance pending.
+
+Seed tradable equipment using the native pickup subclasses, with fixed authored
+size and initialized pickup data. A base inventory instance can disappear on its
+first Tick; a spawned item still marked DROPPED can preview zero weight. Verify
+after ticking, dropping/repicking, trading, saving and reopening the hub, not only
+immediately after Spawn. The final commerce probe checks identity, durability,
+wetness, stock, cash and atomic capacity rejection.
+
+ZScript identifiers are case-insensitive. A parameter named `goal` shadows the
+field `Goal`: use `self.Goal` for serialized navigation targets. A compiled path
+finder with an unchanged zero goal can look like a collision defect. Queue costly
+path queries fairly: actors with synchronized state phases can repeatedly consume
+a naive global per-tic allowance and starve the rest of the roster.
+
+Street routes need a floor-height constraint as well as XY reachability; an
+otherwise valid local shortcut can climb an artillery stair and strand a guard
+above a ground post. Use native floor/step/dropoff checks. Formation entry also
+needs temporary access through already occupied front rows, held until the
+arriving crew has entered its actual stair route. Test the whole fresh roster;
+recovering a collection of saved blockers does not establish a fresh-run pass.
+
+GZDoom exec lines have a bounded parser buffer. A long wait/action chain can be
+split, making its tail execute immediately. Keep lines short and chain the next
+file with `exec` at the delayed tail; separate physical lines do not preserve the
+wait. Check unknown-command diagnostics and the capture order. Hold each pose
+after its screenshot command so deferred rendering cannot capture the next
+pose under the previous filename; also wait before the final quit.
+
+Native player `PlayAttacking` can replace the world sprite after player Tick.
+Apply the held-weapon projection there as well, while choosing the firing frame
+from the real successful-shot interval and reload frames from the real reload.
+For generated atlases, measure transparent row/column gaps instead of assuming
+perfectly uniform cells; TEXTURES can clip the unchanged PNG and anchor each pose
+at its measured feet. Keep physical keyboard/visual author acceptance distinct
+from native command and network-event probes.
+
+Positive measured control: the occupied new city with 600 housed soldiers runs
+at 35.01 tics/s and 59.96 render callbacks/s; the matched legacy staged army gives
+34.99/57.82 versus 27.16/1.69 for the full army. The later combined new-city battle
+falls to 32.25/14.07. These are engine callbacks, not displayed FPS. Do not average
+the firearm control after its soldiers die: the inherited action-heat profile
+kills all 600 after fourteen shots each. Native saved thermal state confirms the
+cause; the active-fire and post-death phases are separated in PERFORMANCE.json.
+
+Evidence: [commerce log](../assets/validation_513/delivery-trade.txt),
+[hub reopen](../assets/validation_513/delivery-trade-hub.txt),
+[fresh 600-body route](../assets/validation_513/route-delivery.txt),
+[saved final roster](../assets/validation_513/ROUTE_FINAL.json),
+[sprite registration](../assets/generators/register_carbine_world.py), and
+[validation fixtures](../assets/validation_513/).
+
 ## CA-KP-053 - Staging reduces workload; control presentation and natural attrition
 
 Status/evidence: ENGINE-VERIFIED. First checked: 2026-10-07.
