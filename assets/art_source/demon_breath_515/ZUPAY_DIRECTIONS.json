@@ -1,0 +1,378 @@
+{
+  "issue": 135,
+  "author_report": "Ground slam appears reversed; focused inspection also finds the same action-source order in pain and rock casting.",
+  "mapping": {
+    "1": 1,
+    "2": 8,
+    "3": 7,
+    "4": 6,
+    "5": 5,
+    "6": 4,
+    "7": 3,
+    "8": 2
+  },
+  "frames": "DEFMNOPQR",
+  "unchanged": "Idle, walking, running, non-directional death and source PNG pixels.",
+  "records": [
+    {
+      "native": "ZUPYD1",
+      "source": "sprites/caelum/actors/zupay_colossus/ZUPYD1.png",
+      "source_sha256": "191bba6c4a212009333a71e63deed5c447d8d34a5da4a35760de4b1db47f9974"
+    },
+    {
+      "native": "ZUPYE1",
+      "source": "sprites/caelum/actors/zupay_colossus/ZUPYE1.png",
+      "source_sha256": "e5c4dc6691534ba7a7573f656ca06c83e016c9f9dcff06a1fa57dd5bba2bf0c4"
+    },
+    {
+      "native": "ZUPYF1",
+      "source": "sprites/caelum/actors/zupay_colossus/ZUPYF1.png",
+      "source_sha256": "235d50bbf19eab760575cfa877ef2aca31bb1821df5e404889ebd207485003f7"
+    },
+    {
+      "native": "ZUPYM1",
+      "source": "sprites/caelum/actors/zupay_colossus/ZUPYM1.png",
+      "source_sha256": "bb52e3f37f0c9372acb996cac252f13bb7f13e4744ad3a6da6f081deaad26625"
+    },
+    {
+      "native": "ZUPYN1",
+      "source": "sprites/caelum/actors/zupay_colossus/ZUPYN1.png",
+      "source_sha256": "31bf96b2ca2f3fbdd092fb6eb59948c7849160bf69ee66d18e80b3fdd04d01fc"
+    },
+    {
+      "native": "ZUPYO1",
+      "source": "sprites/caelum/actors/zupay_colossus/ZUPYO1.png",
+      "source_sha256": "b1d3664d847224da583b1ad67120c4bf8f451657989887d404470d4aba68382a"
+    },
+    {
+      "native": "ZUPYP1",
+      "source": "sprites/caelum/actors/zupay_colossus/ZUPYP1.png",
+      "source_sha256": "11c14ece592e2ca22f5f28e7115adf69b55e45425099716da4fc9809db52d858"
+    },
+    {
+      "native": "ZUPYQ1",
+      "source": "sprites/caelum/actors/zupay_colossus/ZUPYQ1.png",
+      "source_sha256": "89b5d0c4b40752bab4f5c14ebf86d912bd3e77a1e6ea9f6165fca798a7b8802b"
+    },
+    {
+      "native": "ZUPYR1",
+      "source": "sprites/caelum/actors/zupay_colossus/ZUPYR1.png",
+      "source_sha256": "e46b9642aa612388b592760fafcfc9e36e9081019b44d0776e7ff65c6a6d5812"
+    },
+    {
+      "native": "ZUPYD2",
+      "source": "sprites/caelum/actors/zupay_colossus/ZUPYD8.png",
+      "source_sha256": "f84f479daa09d5e98905fc61c89aaae7da1f99e1aa808e8ef2e7c6188f24ae63"
+    },
+    {
+      "native": "ZUPYE2",
+      "source": "sprites/caelum/actors/zupay_colossus/ZUPYE8.png",
+      "source_sha256": "864321700d33bc9ab1c57a4f40195a56ebb867bcd2db2fd8b0c4dafa16acf4d5"
+    },
+    {
+      "native": "ZUPYF2",
+      "source": "sprites/caelum/actors/zupay_colossus/ZUPYF8.png",
+      "source_sha256": "0e38b0ce92f89252e80462c3297d3993fa9e1512a82b8bcc7fdff74dfd4d353a"
+    },
+    {
+      "native": "ZUPYM2",
+      "source": "sprites/caelum/actors/zupay_colossus/ZUPYM8.png",
+      "source_sha256": "8c5f32fefcfeef3bf79ec25d5cd9aff6857cffaeefd43792ff04bedea0679f81"
+    },
+    {
+      "native": "ZUPYN2",
+      "source": "sprites/caelum/actors/zupay_colossus/ZUPYN8.png",
+      "source_sha256": "80389579371903f89abf601f12cdad9ec5e3aa020b1a2567b2e61559c03719bf"
+    },
+    {
+      "native": "ZUPYO2",
+      "source": "sprites/caelum/actors/zupay_colossus/ZUPYO8.png",
+      "source_sha256": "ffd9c832174371047543410b19ef16f595cae4e1372f8c2588c7aae1604a378b"
+    },
+    {
+      "native": "ZUPYP2",
+      "source": "sprites/caelum/actors/zupay_colossus/ZUPYP8.png",
+      "source_sha256": "305fa126ba3f07ddbb8e51f143e0932779ddb32429c62538eb6a2b7cc77ea74f"
+    },
+    {
+      "native": "ZUPYQ2",
+      "source": "sprites/caelum/actors/zupay_colossus/ZUPYQ8.png",
+      "source_sha256": "194360d2022ec2becb1a374dad96f750a0e1c58893b7ef7d9f035bf5ab321867"
+    },
+    {
+      "native": "ZUPYR2",
+      "source": "sprites/caelum/actors/zupay_colossus/ZUPYR8.png",
+      "source_sha256": "250499d2b4cde7d82d324d349a861eba49f6046f43d673394e17da0b055ea40f"
+    },
+    {
+      "native": "ZUPYD3",
+      "source": "sprites/caelum/actors/zupay_colossus/ZUPYD7.png",
+      "source_sha256": "be57517fb49d787006bef630b6142f187a9e52802ed17b19afcb8ebfe08199ab"
+    },
+    {
+      "native": "ZUPYE3",
+      "source": "sprites/caelum/actors/zupay_colossus/ZUPYE7.png",
+      "source_sha256": "7f7c4d2f0f85bd71d44b705ddc4f7e765920277dc7a8454056d533715274b973"
+    },
+    {
+      "native": "ZUPYF3",
+      "source": "sprites/caelum/actors/zupay_colossus/ZUPYF7.png",
+      "source_sha256": "143b358ee9b38dfb88592a089138b29461dae1fe7d682186b9321f21dba67f49"
+    },
+    {
+      "native": "ZUPYM3",
+      "source": "sprites/caelum/actors/zupay_colossus/ZUPYM7.png",
+      "source_sha256": "c3fc0f23e5af4cdc4df45128121f68ed60fc9ebce1f7fe4730488eb439eb9ecf"
+    },
+    {
+      "native": "ZUPYN3",
+      "source": "sprites/caelum/actors/zupay_colossus/ZUPYN7.png",
+      "source_sha256": "fbbd372dde05966504a173f7a54b3adbc9a8569f0722fb3384495821291a4187"
+    },
+    {
+      "native": "ZUPYO3",
+      "source": "sprites/caelum/actors/zupay_colossus/ZUPYO7.png",
+      "source_sha256": "7be4eb67a7f17c108ca03d14c89c920d8f14523de4ccdba17b090e2b39457010"
+    },
+    {
+      "native": "ZUPYP3",
+      "source": "sprites/caelum/actors/zupay_colossus/ZUPYP7.png",
+      "source_sha256": "ef0d62c5cc29ac9f9cbc6207a0c9c09c9ba0ce5086acbb15b8fd57dd7465836f"
+    },
+    {
+      "native": "ZUPYQ3",
+      "source": "sprites/caelum/actors/zupay_colossus/ZUPYQ7.png",
+      "source_sha256": "b633a6889ae6756214325bbd7a65fc15c8772adcdafac36cc189ad7a465a478b"
+    },
+    {
+      "native": "ZUPYR3",
+      "source": "sprites/caelum/actors/zupay_colossus/ZUPYR7.png",
+      "source_sha256": "28445ccba24757be745f65e5289771cb0a9c71e2672fac353a21129068c36e4e"
+    },
+    {
+      "native": "ZUPYD4",
+      "source": "sprites/caelum/actors/zupay_colossus/ZUPYD6.png",
+      "source_sha256": "e0fa9ea37a38050f80bfc25f5d8899de25f44f7cba08296977eb9183b0a49c48"
+    },
+    {
+      "native": "ZUPYE4",
+      "source": "sprites/caelum/actors/zupay_colossus/ZUPYE6.png",
+      "source_sha256": "c55b10b3df11005a179f94abec9f855b2f6402b9f7b396d815242be39f1d18ec"
+    },
+    {
+      "native": "ZUPYF4",
+      "source": "sprites/caelum/actors/zupay_colossus/ZUPYF6.png",
+      "source_sha256": "8c4fa190be2ced32f842a5a812585098f7d92c3d55e51ce5f32366b36c58a789"
+    },
+    {
+      "native": "ZUPYM4",
+      "source": "sprites/caelum/actors/zupay_colossus/ZUPYM6.png",
+      "source_sha256": "2746e7e47a40717eba9f04747400ff74afda4ce46322765157556d3b618b1586"
+    },
+    {
+      "native": "ZUPYN4",
+      "source": "sprites/caelum/actors/zupay_colossus/ZUPYN6.png",
+      "source_sha256": "9ee60caa2da075d80b17c507aba9a9cf923eabb3c91d5a60aa20d01f57638c16"
+    },
+    {
+      "native": "ZUPYO4",
+      "source": "sprites/caelum/actors/zupay_colossus/ZUPYO6.png",
+      "source_sha256": "d060e46e0cf2abd3d7fb64c9be76ce42c9ea7cbd882a80287dd5422c9f28738f"
+    },
+    {
+      "native": "ZUPYP4",
+      "source": "sprites/caelum/actors/zupay_colossus/ZUPYP6.png",
+      "source_sha256": "d9a5149ff5444caebf7740a3a3792eb61027611d61e8a708ab81e8283d6eccc0"
+    },
+    {
+      "native": "ZUPYQ4",
+      "source": "sprites/caelum/actors/zupay_colossus/ZUPYQ6.png",
+      "source_sha256": "2edc4b02e2d3ab4ba07f0c8a8a3b6c4413340d0da858d03d31ed7e7f10a97545"
+    },
+    {
+      "native": "ZUPYR4",
+      "source": "sprites/caelum/actors/zupay_colossus/ZUPYR6.png",
+      "source_sha256": "fb4d3d76d9d257a5c18364263467b10dfaa3631030c5f84f74320c1202f33fef"
+    },
+    {
+      "native": "ZUPYD5",
+      "source": "sprites/caelum/actors/zupay_colossus/ZUPYD5.png",
+      "source_sha256": "da0c80c16cbb63b9ad79c7d049f835a3a743bdcd342fd907503fe419cec2983a"
+    },
+    {
+      "native": "ZUPYE5",
+      "source": "sprites/caelum/actors/zupay_colossus/ZUPYE5.png",
+      "source_sha256": "d9afdb9275fa9bbcbc6e1c5495540eb26627c46186f200de64f79e3501fbb4a2"
+    },
+    {
+      "native": "ZUPYF5",
+      "source": "sprites/caelum/actors/zupay_colossus/ZUPYF5.png",
+      "source_sha256": "d79f97f42a8961cf9d20b5920e14cdda7a6ac5a3df9d616457465e42ac352c4e"
+    },
+    {
+      "native": "ZUPYM5",
+      "source": "sprites/caelum/actors/zupay_colossus/ZUPYM5.png",
+      "source_sha256": "345ee57bc0237d6dfdb0f7342eab25aaafb33d7c358508c6df2b1ca6a0603e43"
+    },
+    {
+      "native": "ZUPYN5",
+      "source": "sprites/caelum/actors/zupay_colossus/ZUPYN5.png",
+      "source_sha256": "a50ea6fed0c39926f3ad30a690e2d341fd8c5e2f65f2c1cb1a9d6c708ed65266"
+    },
+    {
+      "native": "ZUPYO5",
+      "source": "sprites/caelum/actors/zupay_colossus/ZUPYO5.png",
+      "source_sha256": "349483112b5fd119521145872c6bad0690c81bbbe4bd6e549c05776df8f96bd4"
+    },
+    {
+      "native": "ZUPYP5",
+      "source": "sprites/caelum/actors/zupay_colossus/ZUPYP5.png",
+      "source_sha256": "019109027a373441ba091412b2277fc4863a3feb05c1187222db87ccbc2e570e"
+    },
+    {
+      "native": "ZUPYQ5",
+      "source": "sprites/caelum/actors/zupay_colossus/ZUPYQ5.png",
+      "source_sha256": "907e90b121ec3baf424aa0a7f89297ce15c687e90b42d368ec95496cb53a92a6"
+    },
+    {
+      "native": "ZUPYR5",
+      "source": "sprites/caelum/actors/zupay_colossus/ZUPYR5.png",
+      "source_sha256": "8649d26584c989b720db599a23d2ad1db44db62fd7dec71c18a3f23c65be1a47"
+    },
+    {
+      "native": "ZUPYD6",
+      "source": "sprites/caelum/actors/zupay_colossus/ZUPYD4.png",
+      "source_sha256": "167ace398d0cb23db0b7a5207876ed4e9c1f5f0df500336cf5235bdfa2a2e922"
+    },
+    {
+      "native": "ZUPYE6",
+      "source": "sprites/caelum/actors/zupay_colossus/ZUPYE4.png",
+      "source_sha256": "39db432b0fcc3559fb5ddaeae263feb750a370a6d758824aadc1713cd9946ff4"
+    },
+    {
+      "native": "ZUPYF6",
+      "source": "sprites/caelum/actors/zupay_colossus/ZUPYF4.png",
+      "source_sha256": "950122b5cf58f45e027551e12d30acfd8bb65b97e0fe6cec17372aeec85e5cbf"
+    },
+    {
+      "native": "ZUPYM6",
+      "source": "sprites/caelum/actors/zupay_colossus/ZUPYM4.png",
+      "source_sha256": "cc4aeb582e39f815dcbf76b0c198e87751ea5f6876ee9af138bda77b576969dd"
+    },
+    {
+      "native": "ZUPYN6",
+      "source": "sprites/caelum/actors/zupay_colossus/ZUPYN4.png",
+      "source_sha256": "af81d657a6fc8021ce2c8732579852fe58578704e6d85ed090f45456cb1bfb41"
+    },
+    {
+      "native": "ZUPYO6",
+      "source": "sprites/caelum/actors/zupay_colossus/ZUPYO4.png",
+      "source_sha256": "6cc3b4a7152329031d2abed0ce950c56d722c2c4c700f6437361f9524a5402c7"
+    },
+    {
+      "native": "ZUPYP6",
+      "source": "sprites/caelum/actors/zupay_colossus/ZUPYP4.png",
+      "source_sha256": "8fd4de6cb0ffa38faa4b6ae75f020171187b7f3b81c5b8d9502be4f113202333"
+    },
+    {
+      "native": "ZUPYQ6",
+      "source": "sprites/caelum/actors/zupay_colossus/ZUPYQ4.png",
+      "source_sha256": "c2946204d6b7f425fc48d3b441151c5626286f77ccdb32d7adad90109db66c41"
+    },
+    {
+      "native": "ZUPYR6",
+      "source": "sprites/caelum/actors/zupay_colossus/ZUPYR4.png",
+      "source_sha256": "32bab2e9731a9adf2fe0932b25986a9a4a53b7451a0d57406c4bf468b25b4777"
+    },
+    {
+      "native": "ZUPYD7",
+      "source": "sprites/caelum/actors/zupay_colossus/ZUPYD3.png",
+      "source_sha256": "509e141582fe9d9fa9a0327e0431ea6b02853211eabb6e1cef44f421ac2f7616"
+    },
+    {
+      "native": "ZUPYE7",
+      "source": "sprites/caelum/actors/zupay_colossus/ZUPYE3.png",
+      "source_sha256": "2f19fe4e0d2bb1da1de8c62c07b67d76a4028f1a36c1646b0b5dbfaccdfe9335"
+    },
+    {
+      "native": "ZUPYF7",
+      "source": "sprites/caelum/actors/zupay_colossus/ZUPYF3.png",
+      "source_sha256": "ec922d443bd241ccef88a4ffa3f5cd30f6f665a5a7e45e78e831d037bcd6814f"
+    },
+    {
+      "native": "ZUPYM7",
+      "source": "sprites/caelum/actors/zupay_colossus/ZUPYM3.png",
+      "source_sha256": "4fe7a5af695f6b174406b2008ec8801ac5660d0beaae6f933c940796676eec03"
+    },
+    {
+      "native": "ZUPYN7",
+      "source": "sprites/caelum/actors/zupay_colossus/ZUPYN3.png",
+      "source_sha256": "734ced3bb7dd6fe658ef71759d5f657b287d13d824ed513028a1fa0a82cd62d5"
+    },
+    {
+      "native": "ZUPYO7",
+      "source": "sprites/caelum/actors/zupay_colossus/ZUPYO3.png",
+      "source_sha256": "439bb534d979cf3858b3c6a0697505b33ac527c91039cc9d4ab249c32d80f8db"
+    },
+    {
+      "native": "ZUPYP7",
+      "source": "sprites/caelum/actors/zupay_colossus/ZUPYP3.png",
+      "source_sha256": "bdeef255c00b7bf2ec12e15b8f33d4a0d689b016d14662d6c40097ca08863aaa"
+    },
+    {
+      "native": "ZUPYQ7",
+      "source": "sprites/caelum/actors/zupay_colossus/ZUPYQ3.png",
+      "source_sha256": "1c667d5c56f565d309dc987bbef558126f4b2ffb86e2fdcb25df8636ca8654dd"
+    },
+    {
+      "native": "ZUPYR7",
+      "source": "sprites/caelum/actors/zupay_colossus/ZUPYR3.png",
+      "source_sha256": "8fb82861979cd25a621b2865248b611a6a8fd589f14111a437a2cc25649434e5"
+    },
+    {
+      "native": "ZUPYD8",
+      "source": "sprites/caelum/actors/zupay_colossus/ZUPYD2.png",
+      "source_sha256": "a412cc5bc7a3bf8cc23574fdadd98ffa2465284b3e3a08b03ae54c8d7d894452"
+    },
+    {
+      "native": "ZUPYE8",
+      "source": "sprites/caelum/actors/zupay_colossus/ZUPYE2.png",
+      "source_sha256": "6aa21a8ba381a6241b400b2396eeb13e159ac672d9a2c91069f496ed01e74e1f"
+    },
+    {
+      "native": "ZUPYF8",
+      "source": "sprites/caelum/actors/zupay_colossus/ZUPYF2.png",
+      "source_sha256": "ea1e9ba7fa9f3d5a0f3e593d504e03bf322dec6484ccb338cfa201b0a10eeee4"
+    },
+    {
+      "native": "ZUPYM8",
+      "source": "sprites/caelum/actors/zupay_colossus/ZUPYM2.png",
+      "source_sha256": "9964d914ac97b93bc0f5b53b987b31ebb14f05b7a37261344e84b955fd22d44e"
+    },
+    {
+      "native": "ZUPYN8",
+      "source": "sprites/caelum/actors/zupay_colossus/ZUPYN2.png",
+      "source_sha256": "ec1c48c52a7fd5fcebe38372d84a2c18d2ca8bc025e955a59841ac2d06ff492a"
+    },
+    {
+      "native": "ZUPYO8",
+      "source": "sprites/caelum/actors/zupay_colossus/ZUPYO2.png",
+      "source_sha256": "d7acb14ba5df2bbcb9ea7234bba26d5794baf421b1ce0e858d389cd1bb5ee4ad"
+    },
+    {
+      "native": "ZUPYP8",
+      "source": "sprites/caelum/actors/zupay_colossus/ZUPYP2.png",
+      "source_sha256": "78ba4ed0aefcefa135b267df6bbae0ff0f6fb050056ca305774bb9d45f485f9e"
+    },
+    {
+      "native": "ZUPYQ8",
+      "source": "sprites/caelum/actors/zupay_colossus/ZUPYQ2.png",
+      "source_sha256": "720ceb41e258cb8fda0a691a66daa8ea4f3f9f715129264337cc4442e939751b"
+    },
+    {
+      "native": "ZUPYR8",
+      "source": "sprites/caelum/actors/zupay_colossus/ZUPYR2.png",
+      "source_sha256": "d558f5ad919ea87ef74b7ed54d1acab6f38d790d0373d1d64e997dad66c7ef09"
+    }
+  ]
+}
