@@ -47,6 +47,16 @@ class CaelumPortSiege : CaelumSiegeEncounter
     Actor DefendingTarget[6];
     int SetupRevision, SetupTick, Groups;
     int TargetingRevision;
+    CaelumSiegeReinforcements Reinforcements;
+
+    override bool AllowLateRegistration()
+    { return Reinforcements!=null && Reinforcements.Enabled && !Victory && Reinforcements.Registering; }
+
+    void EnsureReinforcements(bool fresh=false)
+    {
+        if(Reinforcements==null)Reinforcements=new("CaelumSiegeReinforcements");
+        Reinforcements.Initialize(self,fresh);
+    }
     bool CommandDirty, Aftermath;
     bool HighDensity;
     Array<Actor> TargetCandidates;
@@ -66,6 +76,7 @@ class CaelumPortSiege : CaelumSiegeEncounter
 
     void Deploy()
     {
+        EnsureReinforcements(true);
         // La revisión se confirma una vez, antes del sellado y activación.
         for(int lane=0;lane<6;lane++)
         {
@@ -80,7 +91,8 @@ class CaelumPortSiege : CaelumSiegeEncounter
             {
                 vector3 offset=((crew%2==0 ? -1 : 1)*CaelumRamData.TRIAL_CREW_SIDE*ram.SizeFactor,
                     ((crew/2)-(ram.RequiredCrew/2-1)/2.0)*CaelumRamData.TRIAL_CREW_STEP,0);
-                let entry=AddDemon(ram.Pos+offset,lane);entry.CrewOffset=offset;ram.AssignCrew(entry);
+                if(Reinforcements.Enabled)Reinforcements.QueueCrew(ram,ram.Pos+offset,offset,lane);
+                else { let entry=AddDemon(ram.Pos+offset,lane);entry.CrewOffset=offset;ram.AssignCrew(entry); }
             }
             ram.SetRoute(gate,CaelumPortData.AttackAngle());
             ram.AddRoutePoint((x,CaelumPortData.GateY()+CaelumPortData.OutsideSign()*CaelumRamData.TRIAL_CONTACT_DISTANCE*ram.SizeFactor,0));
@@ -112,12 +124,13 @@ class CaelumPortSiege : CaelumSiegeEncounter
                 }
                 else
                 {
-                    let entry=AddDemon(station,lane);entry.CrewOffset=station-spot;gun.AssignOperator(entry.Body);
+                    if(Reinforcements.Enabled)Reinforcements.QueueCrew(gun,station,station-spot,lane);
+                    else { let entry=AddDemon(station,lane);entry.CrewOffset=station-spot;gun.AssignOperator(entry.Body); }
                 }
             }
         }
         int infantry=0;
-        while(Attackers.Size()<CaelumPortData.MandingaCount())
+        while(!Reinforcements.Enabled && Attackers.Size()<CaelumPortData.MandingaCount())
         {
             vector3 spot=CaelumPortData.FormationPosition(infantry);
             AddDemon(spot,NearestLane(spot.X));infantry++;
@@ -132,6 +145,8 @@ class CaelumPortSiege : CaelumSiegeEncounter
         }
         let commander=CaelumPortCommander(Spawn("CaelumPortCommander",CaelumPortData.BossPosition()));
         Boss=RegisterAttacker(commander);Boss.Lane=NearestLane(commander.Pos.X);Boss.ExitNode=Exits[Boss.Lane];
+        if(Reinforcements.Enabled)Reinforcements.Tick(self);
+        else { Reinforcements.Successful=Attackers.Size()-1;Reinforcements.RefreshLiving(self); }
         SetupRevision=int(CaelumPortData.LayoutRevision());SetupTick=level.time;
         Console.Printf("PORT16 deployed Mandingas=%d commander=1 defenders=%d hostileMachines=%d guns=%d",Attackers.Size()-1,Defenders.Size(),Machines.Size(),Guns.Size());
     }
@@ -577,6 +592,7 @@ class CaelumPortSiege : CaelumSiegeEncounter
     override void Tick()
     {
         if(SetupRevision==0){Deploy();return;}
+        EnsureReinforcements();
         RefreshDensity();
         if(!RosterSealed)
         {
@@ -588,6 +604,7 @@ class CaelumPortSiege : CaelumSiegeEncounter
             let zone=Spawn("CaelumTimeAdvanceZone",CaelumPortData.BedPosition());
         }
         Super.Tick();
+        Reinforcements.Tick(self);
         if(Victory && !Aftermath)
         {
             Aftermath=true;

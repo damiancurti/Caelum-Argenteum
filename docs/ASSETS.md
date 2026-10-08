@@ -1,6 +1,15 @@
 # Caelum Argenteum — Audio and art
 
-Documentation version: **5.1.1** — 2026-10-07.
+Documentation version: **5.1.2** — 2026-10-07.
+
+## 5.1.2 - Siege reinforcement evidence (#132)
+
+No new runtime art, audio, map geometry or external gameplay assets.
+The optional controller reuses authored crew stations and formation positions.
+Native fixtures, command scripts and measurement records live in
+assets/validation_512. Local PK3s, executable tooling, IWADs and saves remain
+in build/issue132 and are not distributed. Official PresentMon 2.6.0 is used
+only as a local measurement tool; its URL/hash and scope accompany the evidence.
 
 ## 5.1.1 - Thermal HUD verification sources (#131)
 

@@ -1,6 +1,16 @@
 # Caelum Argenteum — Project, status and roadmap
 
-Documentation version: **5.1.1** — 2026-10-07.
+Documentation version: **5.1.2** — 2026-10-07.
+
+## 5.1.2 - Staged siege performance experiment (#132)
+
+An opt-in MAP06 controller stages 100 Mandingas every 350 simulation tics,
+with a 2,000-living cap and 6,000 successful-spawn budget. Existing saves retain
+their armies; the accepted full deployment remains reproducible and default.
+The author has not yet accepted this new scenario. The #131 predecessor is fully
+accepted, issue closed and PR #138 merged as 72eba5fb.
+Canonical scope: [SYSTEMS](SYSTEMS.md#staged-siege-reinforcement-test-132).
+Native evidence is being collected in assets/validation_512.
 
 ## 5.1.1 - Thermal HUD and climate adaptation (#131)
 

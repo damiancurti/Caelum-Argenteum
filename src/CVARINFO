@@ -98,3 +98,6 @@ user float ca_notification_seconds = 8.0;
 // Filtros locales del diario; no son progreso guardado.
 user int ca_journal_quest_kind = 0;
 user int ca_journal_quest_status = 0;
+
+// #132: prueba optativa, capturada al crear MAP06; no convierte partidas existentes.
+server bool ca_test_siege_reinforcements = false;

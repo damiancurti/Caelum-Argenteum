@@ -1,6 +1,17 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **5.1.1** — 2026-10-07.
+Documentation version: **5.1.2** — 2026-10-07.
+
+## 5.1.2 - Staged siege experiment (#132, 2026-10-07)
+
+The author accepts all remaining #131 tests and authorizes its closure and
+PR #138 merge (72eba5fb), then requests #132 implementation, native tests,
+commit and push. #132 specifies 100-member groups every 350 simulation tics,
+2,000 living Mandingas and a 6,000 cumulative successful-spawn budget.
+The first group includes the original 74 operators. Full-army saves and the
+original deployment remain intact; no new corpse removal or AI simplification.
+Native evidence and final performance results are being collected separately
+from author acceptance. A temporary keep-awake request does not alter the plan.
 
 ## 5.1.1 - Thermal HUD, attributes and journey climate (#131, 2026-10-07)
 

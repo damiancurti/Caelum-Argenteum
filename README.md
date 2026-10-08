@@ -6,8 +6,19 @@ An independent dark fantasy FPS-RPG inspired by nineteenth-century Argentina.
 Author and game designer: **Damian Curti**. Development target: **GZDoom 4.14.2**
 on Windows 11. The final game is intended to be independent of Doom assets.
 
-**Current release: 5.1.1.** Obtain and update the complete repository, validate
+**Current release: 5.1.2.** Obtain and update the complete repository, validate
 it, then rebuild with `run_dev.bat` as described below.
+
+Issue [#132](https://github.com/damiancurti/Caelum-Argenteum/issues/132) adds an
+opt-in MAP06 reinforcement test: 100 Mandingas immediately, then one group per
+350 simulation tics, at most 2,000 alive and 6,000 successfully spawned overall.
+The 74 initial machine operators are included in the first group. In the console,
+enter `ca_test_siege_reinforcements true`, then `map MAP06` for a fresh test.
+Set the switch to `false` before a fresh map to reproduce the full-army setup.
+The choice is saved per encounter; loading an existing army never removes it.
+See the [contract](docs/SYSTEMS.md#staged-siege-reinforcement-test-132).
+Native measurement and author acceptance remain separate; this experiment does
+not adopt a permanent encounter balance or change the automatic 500-combatant AI.
 
 Issue [#131](https://github.com/damiancurti/Caelum-Argenteum/issues/131) adds a
 signed thermal exposure bar directly above Load. Constitution now reduces

@@ -123,13 +123,15 @@ class CaelumSiegeEncounter : Actor
         BossRetreated = true;
     }
 
+    virtual bool AllowLateRegistration() { return false; }
+
     CaelumSiegeCombatant RegisterAttacker(CaelumCombatActor body)
     {
         if (body == null || body.health <= 0 || body.bFriendly
             || (!(body is "CaelumMandinga") && !(body is "CaelumZupayColossus"))) return null;
         for (int i = 0; i < Attackers.Size(); i++)
             if (Attackers[i].Body == body) return Attackers[i];
-        if (RosterSealed || body.SiegeCombatant != null) return null;
+        if ((RosterSealed && !AllowLateRegistration()) || body.SiegeCombatant != null) return null;
         let entry = new("CaelumSiegeCombatant");
         entry.Body = body; entry.Encounter = self;
         entry.StableIdentity = Attackers.Size();

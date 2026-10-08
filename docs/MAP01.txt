@@ -1,6 +1,13 @@
 CAELUM ARGENTEUM — STORY AND MAP01
 
-Documentation version: **5.1.1** — 2026-10-07.
+Documentation version: **5.1.2** — 2026-10-07.
+
+## 5.1.2 - Optional port reinforcement experiment (#132)
+
+MAP01 geometry and campaign progression are unchanged. A fresh MAP06 can
+opt into the staged reinforcement test before deployment; the normal full-army
+encounter and old saves remain intact. No defender/geometry follow-up is bundled.
+See SYSTEMS for the cap, cadence, placement, terminal and persistence contract.
 
 ## 5.1.1 - Attribute and thermal HUD integration (#131)
 
