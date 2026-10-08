@@ -10335,7 +10335,7 @@ class CaelumPlayer : DoomPlayer
             : (IsRunningOnGround()
                 ? CaelumConstants.RUNNING_ACCURACY_MULTIPLIER
                 : 1.0);
-        double aimAccuracyMultiplier = RangedAimModeActive ? 2.0 : 1.0;
+        double aimAccuracyMultiplier = RangedAimModeActive ? CaelumConstants.RANGED_AIM_ACCURACY_MULTIPLIER : 1.0;
         LastCarbineAccuracyPercent = Max(
             1.0,
             EffectivePhysicalAccuracyPercent

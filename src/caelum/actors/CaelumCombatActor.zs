@@ -3,6 +3,8 @@
 // evasion, dolor, adrenalina y efectos de los estados de salud.
 class CaelumCombatActor : Actor
 {
+    // La postura cambia colisión/anatomía, no la talla fisiológica del cuerpo.
+    virtual double GetPhysiologicalHeight() { return Height; }
     bool ThermalBluntDelivery;
     // Nulo en campañas anteriores y fuera del encuentro optativo de #20.
     CaelumSiegeCombatant SiegeCombatant;

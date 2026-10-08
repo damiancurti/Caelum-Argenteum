@@ -1211,6 +1211,16 @@ does not validate the rendered dialogue/capture path. See
 [render correction evidence](../assets/validation_43620/capture_render_fix.json).
 The author confirmed CA-43620-ARCANA-01 passed after the fix on 2026-09-27.
 
+Reverified under #143 / 5.1.6 on 2026-10-08: CAGC posture assignment lacked a
+state registration and froze live/visual rendering. The initial mechanical
+comparison against GetSpriteIndex("CAGC") could accept the same invalid index;
+assert that the index is nonnegative before testing equality. Appending CAGC
+A-D to the registration actor restores native live/render/input completion.
+The final direction gallery waits for world updates and records every pose/view;
+rapid console captures alone do not prove every requested rotation was rendered.
+See assets/validation_516/RESULTS.md. This is engine verification, not CA143-01
+author acceptance.
+
 ## CA-KP-017 — Unregistered NPC secondary-wind sprite freezes rendering
 
 Status/evidence: AUTHOR-REPORTED / ENGINE-VERIFIED correction, #34 / 4.36.22.

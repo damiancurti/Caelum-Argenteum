@@ -111,6 +111,7 @@ class CaelumWorldSpriteRegistry : Actor
         M042 A 1;
         CPIK A 1;
         CAGN ABCDEF 1;
+        CAGC ABCD 1;
         Stop;
     }
 }

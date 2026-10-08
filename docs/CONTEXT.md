@@ -1,11 +1,11 @@
 # CONTEXT.md — Caelum Argenteum
 
-Documentation version: **5.1.5** — 2026-10-08.
+Documentation version: **5.1.6** — 2026-10-08.
 
-**5.1.5/#135:** finite typed potions, weighted loot and racial fire breath.
-Accepted 2026-10-08; PR #144 merge/closure authorized.
-#140 merged 5f9202ad. #133 merged; CA133-01/02/03 accepted.
-#143 soldier crouched aiming follows #135.
+**5.1.6/#143:** crouched aimed soldiers; evidence: validation_516.
+Integration authorized after verification; CA143-01 awaits author review.
+#135 accepted/closed, PR #144 merged 5e550484. #133 checks accepted.
+#140 merged 5f9202ad.
 **#132 accepted, closed; PR #139 merged b0020109.**
 
 **5.1.2/#132:** opt-in MAP06 groups: 100/350 tics, 2,000 alive, 6,000 total.

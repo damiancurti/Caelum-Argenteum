@@ -1,6 +1,27 @@
 # Caelum Argenteum — Audio and art
 
-Documentation version: **5.1.5** — 2026-10-08.
+Documentation version: **5.1.6** — 2026-10-08.
+
+## 5.1.6 - Crouched Domingo carbine poses (#143)
+
+Original transparent artwork was generated with the built-in image_gen tool
+from the project's standing carbine atlas. The unchanged source is retained
+at assets/source/art/carbine_crouch_516/atlas.png with prompt specification,
+reference and attribution in PROVENANCE.json. Its runtime copy is byte-identical.
+No Doom artwork or changed first-person assets are introduced.
+
+Four rows contain eight directions each: crouched aim, fire, reload start and
+reload completion. Native TEXTURES clips the original PNG at measured transparent
+gaps and foot pivots. `register_carbine_crouch.py` measures alpha only; it does
+not rewrite pixels. Explicit newline policy and two repeated exports verify
+byte-for-byte deterministic output. CAGC A-D are appended to the existing
+registration actor so native rendering never lazily initializes an unknown sprite.
+
+The atlas matches half the standing Domingo artwork's height. The same service
+selects these poses for stationary crouched players and soldiers; player moving
+crouch retains the accepted walking art. Native captures and input checks live
+in assets/validation_516. Agent visual review and the outstanding CA143-01
+manual author check remain distinct.
 
 ## 5.1.5 - Demon breath and potion tiers (#135)
 

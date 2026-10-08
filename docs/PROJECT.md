@@ -1,6 +1,24 @@
 # Caelum Argenteum — Project, status and roadmap
 
-Documentation version: **5.1.5** — 2026-10-08.
+Documentation version: **5.1.6** — 2026-10-08.
+
+## 5.1.6 - Crouched and aimed soldiers (#143)
+
+#135 is author-accepted and closed; PR #144 merged as 5e550484 on 2026-10-08.
+The separate #143 follow-up implements the author's crouched carbine request.
+Stationary shots use half-height collision, an artwork-aligned muzzle and the
+existing crouch/aim multipliers once. Movement, melee, recovery and interruptions
+release the pose with native clearance. Physiological height remains invariant.
+Original Domingo aim/fire/reload artwork also serves stationary crouched players.
+
+Native checks cover physical posture, projectile origin, accuracy/critical and
+spread factors, reload rates, obstructions, interrupts, independent player camera,
+ordinary siege AI and actual player inputs. Save/hub and revision-1 migration
+retain magazines, reload progress, condition and resources; rollback restores
+the original save/runtime checkpoint. Evidence and exact bounds: validation_516.
+The author requests commit/push and merge/closure when complete and verified.
+CA143-01 records the separate outstanding manual visual/gameplay confirmation;
+integration does not substitute for that confirmation.
 
 ## 5.1.5 - Demon supplies and fire breath (#135)
 

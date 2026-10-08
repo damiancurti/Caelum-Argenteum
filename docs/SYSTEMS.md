@@ -1,6 +1,38 @@
 # Caelum Argenteum — Current systems and rules
 
-Documentation version: **5.1.5** — 2026-10-08.
+Documentation version: **5.1.6** — 2026-10-08.
+
+## Soldier crouched carbine aim (#143)
+
+Stationary city infantry uses the existing crouch and ranged-aim rules for actual
+carbine shots: accuracy x2 from crouch and x2 from aim, critical chance x2 from
+crouch with the existing 100% cap. Each factor applies once. NPC aiming affects
+its own spread; it never zooms a player's camera. Firing still stops horizontal
+velocity and retains individual target, resource, cadence, damage, wear and reload.
+
+Physical crouch is the native player's half-height floor: a 57.6-MU soldier
+uses 28.8 MU. `A_SetSize(..., true)` tests clearance before restoring height;
+a blocked attempt retains the shorter body and removes aim. Movement, melee
+selection, resource recovery, pain, sleep, physical stun and death interrupt
+crouched aim. Losing the valid visible target releases it. Reload movement and
+progress retain their existing half-speed rule. No crouch walking speed or
+new accuracy balance is introduced.
+
+CAGC provides original directional aim/fire/reload poses. Its registered scale
+is 1.909090909; the firing barrel is measured 116 source pixels above the foot
+pivot. Both player and soldier carbine projectiles use this lowered muzzle
+geometry when crouched. Physiology instead uses stored standing height, so
+bending the body does not reduce biological surface area or heat exchange.
+The player's stationary carbine uses CAGC without a second native sprite
+compression; moving crouched retains its existing compressed walking cycle.
+
+`CaelumCityCarbine` revision 2 records holder, standing height and posture.
+Revision-1 initialization captures the full height once, without refilling or
+resetting magazine, reload, weapon condition, resources or timers. Repeated
+initialization is idempotent. Native save/load and hub reopen retain the shorter
+collision box and original height. Keep the original 5.1.5 save/runtime pair for
+checkpoint rollback; a newer save's direct downgrade is not promised. Legacy
+sword-only defenders remain unchanged.
 
 ## Demon racial ability and finite supplies (#135)
 
@@ -115,7 +147,8 @@ manufactured stock item. Tiers 2/3, filled water containers and javelin ammuniti
 outside the three-type ammunition catalogue are not added to shop stock.
 
 New-city soldiers carry their existing sword/shield and a normal T1/M carbine.
-`CaelumCityCarbine` revision 1 owns that weapon's condition, magazine, reload and
+`CaelumCityCarbine` (revision 1 in #133, revision 2 posture migration in #143)
+owns that weapon's condition, magazine, reload and
 shot timing. Only reserve availability is infinite: ten-shot magazines, the
 existing Dexterity-scaled five-second base reload, Air/thermal cost, 60-metre
 range, spread, critical chance, damage, projectiles and wear remain authoritative.

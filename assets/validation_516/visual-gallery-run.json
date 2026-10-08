@@ -1,0 +1,73 @@
+﻿{
+    "label":  "visual-gallery",
+    "started_utc":  "2026-10-08T20:14:56.1006683Z",
+    "engine":  "C:\\Program Files (x86)\\GZDoom\\gzdoom.exe",
+    "engine_sha256":  "EC706C2EA1EF946EEC13BE7B1B461DF8D52EFCD47CAA6C056ED0E0257F7F9FFA",
+    "iwad_sha256":  "10D67824B11025DDD9198E8CFC87CA335EE6E2D3E63AF4180FA9B8A471893255",
+    "package_sha256":  "65627C9728E933CF81A5A76544E880E4BD15910758F75ABC048C4FB6BCE8E653",
+    "addon_sha256":  "F0AEEE150B3368D62A2C82DD8BDC32C038D13FA09FD98A7C4F28E1E27D9217B8",
+    "initial_config":  "[LastRun]\nVersion=225\n[GlobalSettings]\nvid_preferbackend=1\nvid_vsync=false\nvid_maxfps=60\nvid_activeinbackground=true\ni_pauseinbackground=false\nvid_lowerinbackground=false\ni_soundinbackground=true\ncl_capfps=false\nvid_fullscreen=false\nvid_defwidth=1280\nwin_w=1296\nwin_h=759\nwin_maximized=false\nvid_defheight=720\nuse_mouse=false\nsnd_mastervolume=0.05\nlanguage=enu\n",
+    "arguments":  [
+                      "-noautoload",
+                      "-nomouse",
+                      "-iwad",
+                      "\"C:\\Program Files (x86)\\Steam\\steamapps\\common\\ultimate doom\\base\\doom2\\DOOM2.WAD\"",
+                      "-file",
+                      "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue143\\production.pk3\"",
+                      "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue143\\visual.pk3\"",
+                      "-config",
+                      "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue143\\visual-gallery.ini\"",
+                      "-savedir",
+                      "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue143\"",
+                      "-width",
+                      1280,
+                      "-height",
+                      720,
+                      "-window",
+                      "-rngseed",
+                      "116",
+                      "-skill",
+                      "2",
+                      "+logfile",
+                      "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue143\\visual-gallery.txt\"",
+                      "+con_notifytime",
+                      "0",
+                      "+set",
+                      "ca_test_siege_reinforcements",
+                      1,
+                      "+map",
+                      "CA143",
+                      "+exec",
+                      "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue143\\visual-gallery-exec.cfg\""
+                  ],
+    "benchmark_offset":  0,
+    "command_script":  "unbindall; r_drawplayersprites false; wait 80; ca143_view 0; wait 15; screenshot visual-gallery-soldier-0.png; ca143_view 1; wait 15; screenshot visual-gallery-soldier-1.png; ca143_view 2; wait 15; screenshot visual-gallery-soldier-2.png; ca143_view 3; wait 15; screenshot visual-gallery-soldier-3.png; ca143_view 4; wait 15; screenshot visual-gallery-soldier-4.png; ca143_view 5; wait 15; screenshot visual-gallery-soldier-5.png; ca143_view 6; wait 15; screenshot visual-gallery-soldier-6.png; ca143_view 7; wait 15; screenshot visual-gallery-soldier-7.png; ca143_view 8; wait 15; screenshot visual-gallery-soldier-8.png; ca143_view 9; wait 15; screenshot visual-gallery-soldier-9.png; ca143_view 10; wait 15; screenshot visual-gallery-soldier-10.png; ca143_view 11; wait 15; screenshot visual-gallery-soldier-11.png; ca143_view 12; wait 15; screenshot visual-gallery-soldier-12.png; ca143_view 13; wait 15; screenshot visual-gallery-soldier-13.png; ca143_view 14; wait 15; screenshot visual-gallery-soldier-14.png; ca143_view 15; wait 15; screenshot visual-gallery-soldier-15.png; ca143_view 16; wait 15; screenshot visual-gallery-soldier-16.png; ca143_view 17; wait 15; screenshot visual-gallery-soldier-17.png; ca143_view 18; wait 15; screenshot visual-gallery-soldier-18.png; ca143_view 19; wait 15; screenshot visual-gallery-soldier-19.png; ca143_view 20; wait 15; screenshot visual-gallery-soldier-20.png; ca143_view 21; wait 15; screenshot visual-gallery-soldier-21.png; ca143_view 22; wait 15; screenshot visual-gallery-soldier-22.png; ca143_view 23; wait 15; screenshot visual-gallery-soldier-23.png; ca143_view 24; wait 15; screenshot visual-gallery-soldier-24.png; ca143_view 25; wait 15; screenshot visual-gallery-soldier-25.png; ca143_view 26; wait 15; screenshot visual-gallery-soldier-26.png; ca143_view 27; wait 15; screenshot visual-gallery-soldier-27.png; ca143_view 28; wait 15; screenshot visual-gallery-soldier-28.png; ca143_view 29; wait 15; screenshot visual-gallery-soldier-29.png; ca143_view 30; wait 15; screenshot visual-gallery-soldier-30.png; ca143_view 31; wait 15; screenshot visual-gallery-soldier-31.png; r_drawplayersprites true; wait 10; chase; +crouch; +zoom; wait 20; -zoom; wait 20; +attack; wait 100; -attack; wait 50; screenshot visual-gallery-player-crouch.png; wait 15; -crouch; wait 55; screenshot visual-gallery-player-standing.png; wait 10; quit\r\n",
+    "cpu":  [
+                {
+                    "Name":  "AMD Ryzen 9 5950X 16-Core Processor            ",
+                    "NumberOfCores":  16,
+                    "NumberOfLogicalProcessors":  32
+                }
+            ],
+    "gpu":  [
+                {
+                    "Name":  "Parsec Virtual Display Adapter",
+                    "DriverVersion":  "0.45.0.0"
+                },
+                {
+                    "Name":  "NVIDIA GeForce RTX 3070 Ti",
+                    "DriverVersion":  "32.0.15.7688"
+                }
+            ],
+    "os":  {
+               "Caption":  "Microsoft Windows 11 Pro",
+               "Version":  "10.0.26200",
+               "TotalVisibleMemorySize":  33475240
+           },
+    "pid":  14588,
+    "qpc_ms":  1373919133.4506,
+    "epoch_ms":  1791490498128.8293,
+    "exit_code":  0,
+    "completed_utc":  "2026-10-08T20:15:25.6490459Z",
+    "expected":  "CA143 COMPLETE checks=\\d+ failures=0"
+}
