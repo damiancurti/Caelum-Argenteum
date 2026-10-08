@@ -1,12 +1,16 @@
 """Read-only baseline checks plus two deterministic rebuilds of owned outputs."""
 from pathlib import Path
-import hashlib,json,subprocess,sys
+import argparse,hashlib,json,subprocess,sys
 ROOT=Path(__file__).resolve().parents[2]
 HERE=Path(__file__).resolve().parent
 BASE='abd4f578a698cefc72e91d5176c79458276e6115'
 
 def digest(data):return hashlib.sha256(data).hexdigest()
 def main():
+    parser=argparse.ArgumentParser(description=__doc__)
+    parser.add_argument('--output',default='GENERATORS.json',help='Evidence filename inside this validation directory')
+    args=parser.parse_args()
+    if Path(args.output).name!=args.output:raise SystemExit('Output must be a filename, not a path.')
     if 'gzdoom.exe' in subprocess.check_output(['tasklist','/FI','IMAGENAME eq gzdoom.exe','/NH'],text=True).lower():
         raise SystemExit('Finish native runs before generator verification.')
     paths=['src/graphics/caelum/shotgun.textures','assets/source/art/shotgun_517/REGISTRATION.json',
@@ -36,6 +40,6 @@ def main():
         art[runtime]=digest(src)
     result={'base':BASE,'deterministic_runs':2,'generated':before,'selected_art_sha256':art,
             'existing_drops_preserved':len(old_drops),'new_drops':added,'map02_geometry_unchanged':True}
-    (HERE/'GENERATORS.json').write_text(json.dumps(result,indent=2)+'\n',encoding='utf-8')
+    (HERE/args.output).write_text(json.dumps(result,indent=2)+'\n',encoding='utf-8')
     print(json.dumps({'deterministic_runs':2,'existing_drops_preserved':len(old_drops),'new_stacks':len(added),'cartridges':120,'map02_geometry_unchanged':True}))
 if __name__=='__main__':main()

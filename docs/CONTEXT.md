@@ -5,9 +5,10 @@ Documentation version: **5.1.7** — 2026-10-08.
 **5.1.7/#136:** shortbow -> two-cartridge shotgun; 12 D/10 pellets,
 equipped-only bypass, independent ammo, modular hands/weapon sprites.
 Evidence: validation_517; merge pending.
-CA136-01/CA143-01 await author checks. #143/PR145 merged abd4f578.
+Follow-up: muted gloves, carbine-style aim, action-only heat; saved exposure/HP persist.
+CA136-01/02/CA143-01 pending. #143/PR145 merged abd4f578.
 
-Soldier evidence: validation_516. #135/PR144 accepted/merged (5e550484).
+Soldiers: validation_516. #135/PR144 accepted/merged (5e550484).
 #133 checks accepted. #140 merged 5f9202ad.
 **#132 accepted, closed; PR #139 merged b0020109.**
 
@@ -49,8 +50,8 @@ associations; its old-save waiver stays specific. HISTORY retains acceptance.
 
 ## The game's premise
 
-Caelum Argenteum is an independent dark-fantasy FPS-RPG set in nineteenth-century
-Argentina, built on GZDoom 4.14.2/ZScript. The divided nation faces two invasions.
+Caelum Argenteum: independent Argentine dark-fantasy FPS-RPG, nineteenth century,
+GZDoom 4.14.2/ZScript. The divided nation faces two invasions.
 
 The first invasion is external: the Caelith, original inhabitants of the Moon,
 descend upon the Earth under the command of Queen Selene. The second is

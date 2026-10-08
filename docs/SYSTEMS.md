@@ -68,8 +68,10 @@ old-save/current-save/hub tests cover these boundaries. Keep the original
 of a newly saved 5.1.7 game is not promised.
 
 First-person presentation uses separate complete weapon and foreground hand
-layers with common anchors for ready, aim, recoil and reload. The three weapon
-tiers share the same hand set. Hand-style selection is a future feature; adding
+layers for ready, aim, recoil and reload. Ready/reload hands have the author's
+requested smaller scale and muted colors; aiming reuses the carbine's existing
+hand poses, scale and under-stock placement. The three weapon tiers share the
+same hand set. Hand-style selection is a future feature; adding
 it will not require redrawing the weapon. Equip/holster uses the existing
 lowering motion and shot/reload timing remains controlled by gameplay.
 
@@ -511,12 +513,32 @@ remains an approximation requiring further tuning in unusual physics scenes.
 
 As explicitly approved, unsupported physical actions use nominal Air ratios:
 `Q_action=Q_reference_jump*nominal_action_Air/nominal_jump_Air`. Sustained
-blocking uses nominal Air/second. Active swimming and walking into an obstacle
-use the nominal running rate only as a provisional thermal profile; actual Air
-rules stay unchanged. Never use clipped/spent Air, heat surcharges, hypoxia or
+blocking uses nominal Air/second. The #136 high-attribute follow-up replaces the
+provisional jump-based swimming and walking-into-obstacle profiles: active player
+swimming uses 6 MET total, or 10 MET with the running command; pushing against
+an obstacle without advancing uses 6 MET total. Subtract the 1 MET rest already
+counted and multiply by actual body surface and 58.2 W/m2 per MET. At 100 kg,
+1.80 m (2.189898 m2), these add 637.260/1147.069 W for swimming and 637.260 W for
+pushing. Strength/jump-height bonuses do not multiply these profiles. They are
+author-approved initial effort proxies, not hydrodynamic or measured push-force
+models. Actual Air, movement, jumping and other action rules stay unchanged.
+Never use clipped/spent Air, heat surcharges, hypoxia or
 regeneration as heat. Discrete actions have no duplicated recovery tail.
-Continuous effort decays with a 120-world-second half-life and one integrated
-recovery budget; there is no old 8-met cap.
+Since the author's #136 follow-up, continuous effort produces heat only during
+the action: `Q=P*(real action seconds + explicit logical travel effort seconds)`.
+Stopping, loading a stationary save or advancing personal time without further
+work produces no additional activity heat. Exposure already accumulated remains
+and exchanges heat through the existing environment/sweat/shivering model.
+The earlier 120-world-second peak/recovery tail is removed; there is no 8-met cap.
+Actual actions use the approved locomotion, swimming/pushing and firearm profiles;
+the follow-up changes no Air, sweat or water-transfer values.
+
+Thermal revision 7 clears only the old saved activity-power peak. It preserves
+exposure, damage history/fractions, hydration, acclimatization, gear/base moisture,
+and pending measured work. The migration is idempotent. It cannot reconstruct
+and undo erroneous historical heat from an old peak, so a previously overheated
+save can remain dangerous while cooling. Keep the original save and matching
+package for checkpoint rollback; do not interpret the fix as a health refill.
 
 Fire-primary and ice-secondary projectiles carry the existing Type-1 snapshot,
 `100+Intelligence*(Intelligence+1)/2` joules. Only actual intercepted shield and

@@ -15,9 +15,15 @@ It shares carbine costs, reload, crafting and Maximum spread, with half its rang
 Firearms bypass the approved portion of equipped armor, preserving innate defense
 and Toughness. Independent cartridges are stocked in armories and six MAP02 drops.
 Original weapon and hand sprites are separate reusable first-person layers.
+The inspection follow-up reduces/mutes the gloves and matches carbine aiming.
+It also corrects thermal effort: actions heat only while performed, without the
+old lingering activity peak. Existing saved exposure and health are preserved.
+Swimming now uses the approved 6/10 MET effort and pushing 6 MET, independent
+of amplified jump statistics, with unchanged Air costs.
 Migration, save/hub/rollback and focused native evidence are in
-[validation_517](assets/validation_517/RESULTS.md). Commit/push is requested;
-#136 remains open for review. [CA136-01 and CA143-01](pending_test.txt) await
+[validation_517](assets/validation_517/RESULTS.md). Follow-up reproduction is in
+[FOLLOWUP_RESULTS](assets/validation_517/FOLLOWUP_RESULTS.md). Commit/push is requested;
+#136 remains open for review. [CA136-01/02 and CA143-01](pending_test.txt) await
 author appearance/gameplay confirmation. #143/PR #145 merged as `abd4f578`.
 
 **5.1.6 / [#143](https://github.com/damiancurti/Caelum-Argenteum/issues/143):**

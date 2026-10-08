@@ -44,6 +44,17 @@ class CaelumThermalEffects : Object play
         return Max(0.0,area)*CaelumThermalData.MET_WATTS_M2*Max(0.0,met-1.0);
     }
 
+    static clearscope double SwimmingWatts(double area,bool fast)
+    {
+        double met=fast ? CaelumThermalData.SWIM_FAST_MET : CaelumThermalData.SWIM_MET;
+        return Max(0.0,area)*CaelumThermalData.MET_WATTS_M2*Max(0.0,met-1.0);
+    }
+
+    static clearscope double PushingWatts(double area)
+    {
+        return Max(0.0,area)*CaelumThermalData.MET_WATTS_M2*Max(0.0,CaelumThermalData.PUSH_MET-1.0);
+    }
+
     // Acumular trabajo no fuerza una integración del NPC por cada tic. La
     // siguiente actualización térmica consume la energía persistente una vez.
     static void RecordFirearmWork(Actor body,double seconds,bool reloading)

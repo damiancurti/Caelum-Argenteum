@@ -11,9 +11,16 @@ shares the player/NPC path; revision-1 migration preserves ownership and conditi
 First-person hands and weapons are independent reusable layers, with original
 world/icon/pickup art. Focused mechanics, actual inputs/deaths, migration/save/hub
 and checkpoint rollback have native evidence in assets/validation_517.
+Author inspection also requests smaller/muted hands and carbine-style aiming.
+The reported calor-136 save exposes the old lingering activity-heat peak. The
+author's final rule is heat only during the action, superseding the proposed
+finite recovery filter. Revision 7 preserves accumulated exposure and resources.
+Focused reproduction, action timing and save checks: FOLLOWUP_RESULTS.
+The high-stat follow-up also replaces jump-amplified swimming/pushing with the
+approved 6/10 MET swimming and 6 MET pushing profiles; actual Air is unchanged.
 
 Delivery: commit/push and linked PR. Next: author CA136-01 appearance/gameplay
-review and carried CA143-01. #136 has no merge/close authorization. A future hand
+review, CA136-02 thermal follow-up and carried CA143-01. #136 has no merge/close authorization. A future hand
 appearance selector may reuse these layers; no new race/hand balance is invented.
 
 ## Issue #143 - Crouched aimed soldiers (5.1.6)

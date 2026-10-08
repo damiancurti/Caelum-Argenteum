@@ -139,6 +139,11 @@ class CaelumThermalService : Object play
         {coefficients=CaelumThermalCoefficients.Get(thermal);if(thermal.Available)coefficients.Prepare(thermal);}
         coefficients.FluxUpdates++;
         double dw=Max(0.0,worldSeconds),dr=Max(0.0,realSeconds);
+        // Sólo el trabajo realizado en este intervalo produce calor. El calor
+        // ya absorbido permanece en E; detenerse no crea una cola metabólica.
+        double activity=Max(0.0,activityWatts);
+        thermal.ActivityWatts=activity;
+        thermal.ActivityJoules+=activity*(dr+Max(0.0,logicalActivitySeconds));
         firearmWatts=Max(0.0,firearmWatts);
         thermal.ActionJoules+=firearmWatts*dr;
         double shiverMet=thermal.CanShiver ? CaelumThermalRules.ShiveringExtraMet(thermal.Exposure) : 0;
@@ -156,14 +161,12 @@ class CaelumThermalService : Object play
         {
             // Un mapa sin clima no inventa aire ni recuperación ambiental.
             // La energía real y las consecuencias de E siguen siendo válidas.
-            double activity=CaelumThermalRules.AverageActivityPower(thermal.ActivityWatts,activityWatts,dw);
-            thermal.ActivityWatts=CaelumThermalRules.ActivityPower(thermal.ActivityWatts,activityWatts,dw);
             double logicalPower=shiverWatts+(dw>0 ? activity*Max(0.0,logicalActivitySeconds)/dw : 0);
             double dose=CaelumThermalRules.SeveritySeconds(thermal.Exposure,logicalPower,0,
                 thermal.Inertia,dw,dr,thermal.Toughness,magicWatts+activity+firearmWatts);
             thermal.Exposure=CaelumThermalRules.Advance(thermal.Exposure,logicalPower,0,
                 thermal.Inertia,dw,dr,magicWatts+activity+firearmWatts);
-            thermal.ActivityJoules+=activity*(dr+Max(0.0,logicalActivitySeconds));thermal.AbsorbedContinuousJoules+=magicWatts*dr;
+            thermal.AbsorbedContinuousJoules+=magicWatts*dr;
             thermal.Severity=CaelumThermalRules.Severity(thermal.Exposure,thermal.Toughness);
             thermal.Conductance=0;thermal.Imbalance=0;
             thermal.DrinkRemaining=Max(0.0,thermal.DrinkRemaining-dr);
@@ -235,8 +238,6 @@ class CaelumThermalService : Object play
         double drinkFraction=dr>0 ? Min(dr,thermal.DrinkRemaining)/dr : thermal.DrinkRemaining>0 ? 1 : 0;
         imbalance+=conductance*thermal.DrinkOffset*drinkFraction;
         thermal.DrinkRemaining=Max(0.0,thermal.DrinkRemaining-dr);
-        double activity=CaelumThermalRules.AverageActivityPower(thermal.ActivityWatts,activityWatts,dw);
-        thermal.ActivityWatts=CaelumThermalRules.ActivityPower(thermal.ActivityWatts,activityWatts,dw);
         if(dw>0)imbalance+=activity*Max(0.0,logicalActivitySeconds)/dw;
         double realPower=magicWatts+activity+firearmWatts;
         double after=CaelumThermalRules.Advance(thermal.Exposure,imbalance,
@@ -250,7 +251,6 @@ class CaelumThermalService : Object play
         }
         thermal.Exposure=after;
         thermal.AbsorbedContinuousJoules+=magicWatts*dr;
-        thermal.ActivityJoules+=activity*(dr+Max(0.0,logicalActivitySeconds));
         thermal.Conductance=conductance;thermal.Imbalance=imbalance;thermal.WetnessPercent=wetness;
         thermal.Severity=CaelumThermalRules.Severity(thermal.Exposure,thermal.Toughness);
         return severitySeconds;

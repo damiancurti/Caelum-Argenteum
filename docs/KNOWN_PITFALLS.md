@@ -4,6 +4,41 @@ Status: integrated engineering register (issue #22, patch 4.36.1b).
 Prepared: 2026-09-23. Inherits the project's release after integration.
 Inspected baseline: `1dc390576fa330d37ff543526fc7e69a397fc28f` (PR #7).
 
+## CA-KP-061 - A held activity peak invents heat after a brief action
+
+Status/evidence: RESOLVED-VERIFIED, #136 / 5.1.7 follow-up, 2026-10-08.
+Affected baseline: 0dfa718e; GZDoom 4.14.2. Scope: continuous thermal effort.
+
+The old immediate-rise, exponential-decay filter held the greatest recent
+activity power, including a short push or swim, for a 120-world-second half-life.
+At 1:1 time, one second at 5000 W added 5000 J during effort and could create
+approximately 865617 J more afterward. Testing only sustained exercise or the
+20:1 exterior clock concealed how strongly this affected brief Limbo actions.
+The author's calor-136 checkpoint has a 6393 W peak despite zero input/velocity.
+Native replay detects full immersion and water cooling, but excess production
+still raises exposure. This does not establish the exact preceding input history.
+
+The final author correction requires effort heat only during actual actions.
+Integrate current power with real action seconds, or explicitly supplied logical
+travel effort; never use the prior activity peak as another source. Stored body
+exposure still dissipates through normal exchange. Revision 7 clears the old
+peak once and preserves exposure, HP history, moisture and resources. Keep the
+original save/runtime pair for rollback; do not silently heal a damaged save.
+
+Validation: assets/validation_517/FOLLOWUP_RESULTS.md. Include one-tic action,
+release, no-input reload, 1:1/20:1 clocks, logical travel and paused/personal steps,
+plus native movement, stationary firearms and actual water geometry. Log thermal
+damage separately from contact damage and disclose any HP support in flux probes.
+Historical #130/#140 recovery-tail assertions describe the superseded contract.
+
+The second author checkpoint, with all attributes at 100, separates another
+problem: swimming inherited about 140194 W from a 350485 J enhanced jump reference,
+even after the lingering peak was removed. The final approved proxies are 6/10
+MET total for normal/fast player swimming and 6 MET for blocked pushing, minus
+the 1 MET resting term and scaled by body area. Do not reinstate enhanced jump
+energy in these profiles. Other measured locomotion/jumps and discrete action
+rules remain unchanged. Normal/high-stat native controls are recorded separately.
+
 ## CA-KP-060 - A distinct Ammo subclass can still merge into its parent
 
 Status/evidence: RESOLVED-VERIFIED, #136 / 5.1.7, 2026-10-08.

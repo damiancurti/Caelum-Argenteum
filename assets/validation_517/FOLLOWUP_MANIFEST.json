@@ -1,0 +1,277 @@
+{
+  "issue": 136,
+  "release": "5.1.7",
+  "baseline_commit": "0dfa718e003c4d2f16a78dd41e038698c7cd066b",
+  "contract": "Effort heat only during the action; no recovery production",
+  "payload_sha256": "028a2befd57069f6085cdc4673e173419d1a6790e46ef5c0ee4fe3aab7670d6d",
+  "src_members": 6239,
+  "packages": {
+    "build\\caelum_argenteum_dev.pk3": "505002df31ff829ca09767196c399d53318d2755c743fae7de952e43390de98c",
+    "build\\issue136\\production.pk3": "fd9890c45363260f00f5614c0fd45868a0339be74c5a46ea1279c3f844f18c2a",
+    "build\\issue136\\heat-fixed\\caelum_argenteum_dev.pk3": "fd9890c45363260f00f5614c0fd45868a0339be74c5a46ea1279c3f844f18c2a"
+  },
+  "native_runs": {
+    "activity-delivery": {
+      "package_sha256": "FD9890C45363260F00F5614C0FD45868A0339BE74C5A46EA1279C3F844F18C2A",
+      "addon_sha256": "8ECFE22079A6980DA3D509FA71D6FDAD19418027A519A3BCF930C75BDB50C2E0",
+      "log_sha256": "5513c49dda234a7a455e5693c68e1a67bb977d5f5f31fced4bb161d4e684581f",
+      "exit_code": 0
+    },
+    "heat-delivery": {
+      "package_sha256": "FD9890C45363260F00F5614C0FD45868A0339BE74C5A46EA1279C3F844F18C2A",
+      "addon_sha256": "BA6873B2D8373CBF1EFC33F372AC6BDD218221AFA95C18908E864D497A139FC5",
+      "log_sha256": "2713449a76e003a94c94084d817bb10dc1f159e46a4cf111de014e5b54ce6414",
+      "exit_code": 0
+    },
+    "motion-delivery": {
+      "package_sha256": "FD9890C45363260F00F5614C0FD45868A0339BE74C5A46EA1279C3F844F18C2A",
+      "addon_sha256": "BA6873B2D8373CBF1EFC33F372AC6BDD218221AFA95C18908E864D497A139FC5",
+      "log_sha256": "79b0d80277091c7948862aafd5d95e6493d2baac6e54e23e02c96fcb258de0a8",
+      "exit_code": 0
+    },
+    "fire-delivery": {
+      "package_sha256": "FD9890C45363260F00F5614C0FD45868A0339BE74C5A46EA1279C3F844F18C2A",
+      "addon_sha256": "BA6873B2D8373CBF1EFC33F372AC6BDD218221AFA95C18908E864D497A139FC5",
+      "log_sha256": "46fbc5cf6d24f21e25c71dbdd2ecebd706d58607555635a4449ef8a4b9e10ae2",
+      "exit_code": 0
+    },
+    "swim-high-delivery": {
+      "package_sha256": "FD9890C45363260F00F5614C0FD45868A0339BE74C5A46EA1279C3F844F18C2A",
+      "addon_sha256": "BA6873B2D8373CBF1EFC33F372AC6BDD218221AFA95C18908E864D497A139FC5",
+      "log_sha256": "22c421224a17c9d02ea0d5d314289bb5312d8c302e212e3133260c31c6f70bcd",
+      "exit_code": 0
+    },
+    "swim-normal-delivery": {
+      "package_sha256": "FD9890C45363260F00F5614C0FD45868A0339BE74C5A46EA1279C3F844F18C2A",
+      "addon_sha256": "BA6873B2D8373CBF1EFC33F372AC6BDD218221AFA95C18908E864D497A139FC5",
+      "log_sha256": "19bd001c8232129fb7f1eefe7970b30ab5a9b65a8997969b40f7afe500fbeaa3",
+      "exit_code": 0
+    },
+    "push-high-delivery": {
+      "package_sha256": "FD9890C45363260F00F5614C0FD45868A0339BE74C5A46EA1279C3F844F18C2A",
+      "addon_sha256": "BA6873B2D8373CBF1EFC33F372AC6BDD218221AFA95C18908E864D497A139FC5",
+      "log_sha256": "ae30c6751f92b8ad0ece337f1e02d07a84b6dd0dd72b57fe645edd878ee2e783",
+      "exit_code": 0
+    },
+    "activity-reload-delivery": {
+      "package_sha256": "FD9890C45363260F00F5614C0FD45868A0339BE74C5A46EA1279C3F844F18C2A",
+      "addon_sha256": "28242955689EC073B08D63D6321806BE684CE8312837C39552A6B9AB2A4CE96A",
+      "log_sha256": "664a795fa33daae3765780b697498cf13bb6d3d5efd622b3296e07627d1c324b",
+      "exit_code": 0
+    },
+    "catalogue-followup": {
+      "package_sha256": "FD9890C45363260F00F5614C0FD45868A0339BE74C5A46EA1279C3F844F18C2A",
+      "addon_sha256": "3EF5913428728306EDA5DE1531F79BD93F1C6A188515297C622CDCB0DD1CE06B",
+      "log_sha256": "5710f7cfd94b515d24ff1142be1522805bb3c0a16dbf2dbde8c298451f563632",
+      "exit_code": 0
+    },
+    "fp-final": {
+      "package_sha256": "FD9890C45363260F00F5614C0FD45868A0339BE74C5A46EA1279C3F844F18C2A",
+      "addon_sha256": "0C936700ED837EEEC25CB6369D09C0D53BFBF88673893E4DB71819B5A05BACD2",
+      "log_sha256": "b9e67c1de3269a671a1074fc4c60ad0f161416af08ccc04707a9f922d9183b08",
+      "exit_code": 0
+    },
+    "calor-rollback-final": {
+      "package_sha256": "EC8E25D58CEF2C812ABBF471D8A67703D7D7D75DBB3A4F0703E9EFF75E0233EF",
+      "addon_sha256": "BA6873B2D8373CBF1EFC33F372AC6BDD218221AFA95C18908E864D497A139FC5",
+      "log_sha256": "0211752102d176154aca30d6279e730de5d588d05fc3980ef80725670469e083",
+      "exit_code": 0
+    }
+  },
+  "original_save_sha256": "382e1e870885d566c0e5a3ff56daaaf60838606e8e5cd8fda8569fce4cc0b969",
+  "high_stats_save_sha256": "60bb44714a06202103babbe6adc54feb3bf9d72aedf7a42bcb4940f2dcc06763",
+  "mid_action_save_sha256": "70f50d5f38a36f3293a7908078a8dc3fedea7cde0714bc90bbd0d556b86d687f",
+  "thermal_last_samples": {
+    "heat-baseline-a": {
+      "sec": 50.0,
+      "E": 37.36463,
+      "activity": 4790.400639,
+      "pending": 0.0,
+      "airC": 20.0,
+      "waterC": 17.549,
+      "water": 0.0,
+      "wet": 99.997,
+      "G": 31.828183,
+      "B": -1536.729247,
+      "net": 2064.42312,
+      "actionJ": 5262.985,
+      "motionJ": 740403.299,
+      "hp": 2175.0,
+      "damage": 5036.0,
+      "rescues": 2.0
+    },
+    "heat-delivery": {
+      "sec": 50.0,
+      "E": 19.465894,
+      "activity": 0.0,
+      "pending": 0.0,
+      "airC": 20.0,
+      "waterC": 17.549,
+      "water": 0.0,
+      "wet": 99.998,
+      "G": 31.753149,
+      "B": -952.701279,
+      "net": -1570.804717,
+      "actionJ": 5262.985,
+      "motionJ": 462893.088,
+      "hp": 1004.0,
+      "damage": 3995.0,
+      "rescues": 1.0
+    },
+    "heat-motion-a": {
+      "sec": 50.0,
+      "E": 13.821077,
+      "activity": 4521.26133,
+      "pending": 0.0,
+      "airC": 20.0,
+      "waterC": 17.549,
+      "water": 0.0,
+      "wet": 99.999,
+      "G": 31.753226,
+      "B": -821.503979,
+      "net": 3260.89356,
+      "actionJ": 0.0,
+      "motionJ": 238726.019,
+      "hp": 2332.0,
+      "damage": 364.0,
+      "rescues": 0.0
+    },
+    "motion-delivery": {
+      "sec": 50.0,
+      "E": -0.946539,
+      "activity": 0.0,
+      "pending": 0.0,
+      "airC": 20.0,
+      "waterC": 17.549,
+      "water": 0.0,
+      "wet": 99.172,
+      "G": 31.503273,
+      "B": -467.302874,
+      "net": -437.483802,
+      "actionJ": 0.0,
+      "motionJ": 11957.427,
+      "hp": 2696.0,
+      "damage": 0.0,
+      "rescues": 0.0
+    },
+    "fire-delivery": {
+      "sec": 50.0,
+      "E": 0.070803,
+      "activity": 0.0,
+      "pending": 0.0,
+      "airC": 20.0,
+      "waterC": 17.549,
+      "water": 0.0,
+      "wet": 0.0,
+      "G": 10.559381,
+      "B": -42.746736,
+      "net": -43.49437,
+      "actionJ": 3690.43,
+      "motionJ": 0.0,
+      "hp": 2710.0,
+      "damage": 0.0,
+      "rescues": 0.0
+    },
+    "swim-normal-delivery": {
+      "sec": 50.0,
+      "E": 0.219241,
+      "activity": 0.0,
+      "pending": 0.0,
+      "airC": 20.0,
+      "waterC": 17.549,
+      "water": 3.0,
+      "wet": 100.0,
+      "G": 25.027409,
+      "B": -285.957859,
+      "net": -291.444902,
+      "actionJ": 0.0,
+      "motionJ": 17843.291,
+      "hp": 2710.0,
+      "damage": 0.0,
+      "rescues": 0.0
+    },
+    "swim-high-delivery": {
+      "sec": 50.0,
+      "E": 0.219547,
+      "activity": 0.0,
+      "pending": 0.0,
+      "airC": 20.0,
+      "waterC": 17.549,
+      "water": 3.0,
+      "wet": 100.0,
+      "G": 25.027409,
+      "B": -285.85356,
+      "net": -291.34825,
+      "actionJ": 0.0,
+      "motionJ": 17843.291,
+      "hp": 51500.0,
+      "damage": 0.0,
+      "rescues": 0.0
+    },
+    "push-high-delivery": {
+      "sec": 50.0,
+      "E": 0.352947,
+      "activity": 0.0,
+      "pending": 0.0,
+      "airC": 20.0,
+      "waterC": 17.549,
+      "water": 0.0,
+      "wet": 0.0,
+      "G": 10.559381,
+      "B": -128.946804,
+      "net": -132.673707,
+      "actionJ": 0.0,
+      "motionJ": 12708.793,
+      "hp": 51500.0,
+      "damage": 0.0,
+      "rescues": 0.0
+    }
+  },
+  "validator": {
+    "version": "5.1.7",
+    "documents": 10,
+    "audio_files": 107,
+    "station_models": 12,
+    "spanish_caella_keys": 25,
+    "premise_numbers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20
+    ],
+    "context_words": 2499,
+    "errors": []
+  },
+  "temporary_keep_awake_released": "2026-10-08T22:57:19.4011801Z",
+  "author_acceptance_pending": [
+    "CA136-01",
+    "CA136-02",
+    "CA143-01"
+  ],
+  "capture_sha256": {
+    "fp-final-carbine-aim.png": "5db8fb0c05ca56b732940e780559bcc35169c3c30d6fc5eadaeb574d5a5cb9c0",
+    "fp-final-carbine-ready.png": "38969878a85101799e5a1384e74cb1c19a9afbaad973c1154f5857e7fc2f8cc1",
+    "fp-final-fp-aim.png": "723f72dc24a9e519c0400a1e9103e5cd8c9f606e2116a34e6b39ff728c5478e0",
+    "fp-final-fp-load.png": "c0704aca8b1f9acf13d3f379789dafe8faad267368cd4a6af712a94cd9e99ef9",
+    "fp-final-fp-open.png": "da6db9a1382ca2b4f75ad89e77fced660845217b3f976cb6247eeb74e0a160dc",
+    "fp-final-fp-partial.png": "b4b1d57180581918c3dae2733ed550fe74ed12aed86e61d4520eee11106dc10a",
+    "fp-final-fp-ready.png": "79363fd14f96f80f03c756edaeaca46e14e783593089428c6e91217dfb89d1d3",
+    "fp-final-fp-single.png": "6e293f578bf6ad6dbea6e22c2a27679a28a91d5005b76b460979d83f09deaf48"
+  }
+}

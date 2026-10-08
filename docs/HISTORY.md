@@ -25,6 +25,45 @@ layers for all poses and tiers. Native visual captures cover aim, recoil, open,
 single/partial/full loading and world directions. Author appearance acceptance
 is still outstanding; CA136-01 is added and CA143-01 is carried forward unchanged.
 
+During author inspection, hand size, muted colors and aimed position are revised.
+Built-in image_gen produces hands_muted.png from the retained original atlas;
+ready/reload view scale becomes 0.68. Aiming reuses the carbine's existing gloves,
+0.88 scale and under-stock anchors. fp-final verifies native aim comparison
+and empty/one/partial loading; fp-followup-a exposed and corrected repeated
+overlay recreation and an inspection-script equip timing error. Those preliminary
+captures are not final visual evidence. Author acceptance remains pending.
+
+The author reports hyperthermia despite immersion and provides calor-136.
+An untouched local copy records E +24.268683, activity peak 6393.362475 W,
+462893.088391 activity joules versus 5262.984741 action joules, and almost
+saturated clothing. Native replay confirms water detection and cooling flux,
+but the old lingering activity peak outweighs it. Stationary firearm input does
+not reproduce that activity accumulation. The exact preceding author inputs
+cannot be reconstructed from this save; brief movement/pushing/swimming controls
+reproduce the amplification independently.
+After considering finite recovery energy, the author explicitly chooses heat
+only while the action occurs. The final fix removes recovery heat entirely,
+retains the existing action profiles, and migrates only the obsolete activity
+peak (thermal revision 7). Prior exposure, HP, moisture and supplies are preserved.
+FOLLOWUP_RESULTS separates original-save flux observation with explicit HP
+support from fresh action controls and acceptance; CA136-02 remains outstanding.
+
+The author then updates calor-136 after swimming with all attributes at 100.
+The second checkpoint has E +95.462143 and zero remaining activity power, confirming
+that the recovery tail is gone but active swimming still has an excessive proxy:
+350485.240927 J amplified jump reference implies about 140194 W while swimming.
+The author approves total 6/10 MET for normal/fast swimming and 6 MET for pushing
+against an obstacle, independent of enhanced jumping and minus the existing
+1 MET rest. Air rules remain unchanged. Both original checkpoints are retained
+locally; controlled normal/high-stat water and pushing runs disclose breath
+support and normalized starting health/exposure in FOLLOWUP_RESULTS.
+Final follow-up checks: 36 thermal assertions, 49 shotgun assertions, normal/high
+attribute swimming, blocked pushing, movement/pool controls, stationary firing,
+mid-action save/reload, original-checkpoint rollback and eight native view captures.
+Controlled action runs record no thermal HP damage; the already-overheated save
+is a supported flux probe, not a survival pass. No additional author check is
+marked accepted. The temporary keep-awake request is released after testing.
+
 Rejected setup runs exposed Ammo parent-class stacking, a case-insensitive local
 name shadowing PELLETS, a state-pointer lookup that hid a reload pose, unstamped
 merchant equipment revisions and hub-fixture references to the departed player.

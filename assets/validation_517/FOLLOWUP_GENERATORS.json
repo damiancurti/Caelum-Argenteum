@@ -1,0 +1,93 @@
+{
+  "base": "abd4f578a698cefc72e91d5176c79458276e6115",
+  "deterministic_runs": 2,
+  "generated": {
+    "src/graphics/caelum/shotgun.textures": "48f53a918168fd2c79998d84fcdb3f8db3a02f873c523fc4418cb6cde2e9f000",
+    "assets/source/art/shotgun_517/REGISTRATION.json": "19d2cbd514178d0af55d429b2e720284806b9a7c5265c2cb770ecdc66b5ded76",
+    "src/maps/MAP02.wad": "fc59611c4af051cda3f7b290ffdd8b505dd14606cbd6454e226ff6db81ada91b",
+    "src/caelum/world/CaelumMazeLayout.zs": "8c4fc96bc9142fcc59cd736022c665ddf9d87a204aa2307ed66f478008f66388",
+    "assets/map02_maze/MAP02_MANIFEST.json": "3a1129f908ce16f0dd8a67d87f86b57dc0de42605316d9cd889cf302ac112ba9"
+  },
+  "selected_art_sha256": {
+    "weapon_layer.png": "3a8df1ebdab0c3b76a5a94aecc9989b39bb6b5b22c5fed066dcf2748c2fc3b8c",
+    "hands_layer.png": "7bc0709e8966f98aa562f43b37a132521689611f919271ec62f3fb375932bf5f",
+    "icons.png": "68b20fb01e0c15394ae832ad082d22d121a33f05e8a623685afa8389aa59e9dc",
+    "world.png": "17a9a81f7d51ae53e89478f6c6b21d96a12e22d41a53b9c143d8cdeba8632868"
+  },
+  "existing_drops_preserved": 224,
+  "new_drops": [
+    {
+      "tid": 47007,
+      "zone": 0,
+      "actor": "CaelumMandinga",
+      "cls": "CaelumShotgunAmmo",
+      "amount": 20,
+      "position": [
+        192,
+        -4704,
+        0
+      ]
+    },
+    {
+      "tid": 47008,
+      "zone": 0,
+      "actor": "CaelumMandinga",
+      "cls": "CaelumShotgunAmmo",
+      "amount": 20,
+      "position": [
+        960,
+        -4704,
+        0
+      ]
+    },
+    {
+      "tid": 47030,
+      "zone": 1,
+      "actor": "CaelumMandinga",
+      "cls": "CaelumShotgunAmmo",
+      "amount": 20,
+      "position": [
+        -4320,
+        -960,
+        0
+      ]
+    },
+    {
+      "tid": 47054,
+      "zone": 2,
+      "actor": "CaelumMandinga",
+      "cls": "CaelumShotgunAmmo",
+      "amount": 20,
+      "position": [
+        3168,
+        -960,
+        0
+      ]
+    },
+    {
+      "tid": 47055,
+      "zone": 2,
+      "actor": "CaelumMandinga",
+      "cls": "CaelumShotgunAmmo",
+      "amount": 20,
+      "position": [
+        3936,
+        -960,
+        0
+      ]
+    },
+    {
+      "tid": 47078,
+      "zone": 3,
+      "actor": "CaelumMandinga",
+      "cls": "CaelumShotgunAmmo",
+      "amount": 20,
+      "position": [
+        192,
+        2784,
+        0
+      ]
+    }
+  ],
+  "map02_geometry_unchanged": true
+}

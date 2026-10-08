@@ -14,8 +14,14 @@ bypass preserves innate defense and Toughness. Six eligible MAP02 enemies add
 Original first-person weapon/hand layers are independent, including reload;
 world, inventory and pickup artwork accompanies them. Versioned migration,
 save/hub/rollback and focused native checks are recorded in validation_517.
+The author's inspection follow-up aligns hand size/palette/aim with the carbine
+and removes lingering effort-heat production. Thermal revision 7 retains existing
+exposure/resources while discarding the old peak; FOLLOWUP_RESULTS records the
+copied-save investigation and current action-only heat checks.
+The later high-stat report adds approved 6/10 MET swimming and 6 MET pushing,
+replacing their amplified-jump proxies without changing Air or movement rules.
 Delivery is commit/push and a linked PR, with no #136 merge/closure authorization
-yet. CA136-01 and the carried CA143-01 remain author visual/gameplay checks.
+yet. CA136-01/02 and the carried CA143-01 remain author visual/gameplay checks.
 #143 is merged through PR #145 (abd4f578) and closed; merge is not manual acceptance.
 
 ## 5.1.6 - Crouched and aimed soldiers (#143)

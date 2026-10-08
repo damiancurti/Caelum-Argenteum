@@ -1,5 +1,8 @@
 # Issue #136 - Shotgun, armor bypass and modular first-person layers
 
+Original delivery evidence below is preserved. See [FOLLOWUP_RESULTS.md](FOLLOWUP_RESULTS.md)
+for the subsequent hand-style and thermal corrections, final payload and pending checks.
+
 Release 5.1.7, GZDoom 4.14.2 Windows/Vulkan. Base: abd4f578 (#143).
 The author's final target is the shortbow; longbow/crossbow remain.
 These are agent checks. CA136-01 and carried CA143-01 await author acceptance.

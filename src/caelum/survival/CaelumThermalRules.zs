@@ -121,21 +121,16 @@ class CaelumThermalRules : Object
         return jumpAirCost>0 ? Max(0.0,referenceJumpJoules)*Max(0.0,actionAirCost)/jumpAirCost : 0;
     }
 
-    // Sólo producción continua: los impulsos de salto/golpe no alimentan cola.
+    // Adaptadores del contrato anterior, usados por diagnósticos históricos.
+    // Desde #136 no hay cola: sólo importa el esfuerzo actual, no el pico previo.
     static clearscope double ActivityPower(double previous,double target,double worldSeconds)
     {
-        target=Max(0.0,target);
-        if(target>=previous)return target;
-        return target+(previous-target)*0.5**(Max(0.0,worldSeconds)/CaelumThermalData.ACTIVITY_HALF_LIFE_SECONDS);
+        return Max(0.0,target);
     }
 
     static clearscope double AverageActivityPower(double previous,double target,double worldSeconds)
     {
-        target=Max(0.0,target);
-        if(target>=previous)return target;
-        double exponent=Max(0.0,worldSeconds)*Log(2.0)/CaelumThermalData.ACTIVITY_HALF_LIFE_SECONDS;
-        if(exponent<0.00000001)return previous;
-        return target+(previous-target)*(1.0-Exp(-exponent))/exponent;
+        return Max(0.0,target);
     }
 
     static clearscope double Acclimation(double previous,double climateC,double originalCenter,double worldSeconds,double multiplier=1)
