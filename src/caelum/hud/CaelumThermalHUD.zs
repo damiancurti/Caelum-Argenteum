@@ -23,6 +23,20 @@ class CaelumThermalHUD : Object
     static clearscope double Position(double exposure,double toughness)
     {return 0.5+0.5*Clamp(exposure/Range(toughness),-1.0,1.0);}
 
+    static clearscope int BandColor(int band)
+    {
+        int colors[6]={0x377DAA,0x539FBC,0x789C9F,0xAD9873,0xD18D45,0xBC5743};
+        return colors[Clamp(band,0,5)];
+    }
+
+    static clearscope int ExposureColor(double exposure,double toughness)
+    {
+        double position=Position(exposure,toughness);
+        for(int band=0;band<5;band++)
+            if(position<BandPosition(band+1))return BandColor(band);
+        return BandColor(5);
+    }
+
     static clearscope String StateKey(double exposure,double toughness)
     {return CaelumThermalRules.Severity(exposure,toughness)==0 ? "CA_HUD_THERMAL_SAFE"
         : CaelumThermalRules.StateKey(exposure,toughness);}

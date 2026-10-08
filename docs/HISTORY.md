@@ -1,6 +1,77 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **5.1.3** — 2026-10-08.
+Documentation version: **5.1.4** — 2026-10-08.
+
+## 5.1.4 - Cached thermal physiology and breathing (#140, 2026-10-08)
+
+Author decisions: preserve the equivalent-exposure/linearized-radiation model;
+Air and Anima recovery each cost 25 Hunger / 12.5 Thirst per full bar before
+Constitution/rest modifiers, only for the player. This supersedes the earlier
+half-Health proposal and #133's water-free Air recovery. Remove abstract
+cold/heat Hunger/Thirst surcharges; actual sweat loss remains. The stale
+English/Spanish Journal thermal-cost label now describes physical Air only.
+
+Bulls and giant rats adopt the existing surface-scaled sweat profile provisionally,
+retaining 17 C comfort and finite hydration. Heat tiers 1/2+ or Air below 50%/10%
+select 150%/200% ventilation, using the maximum and strict fatigue thresholds.
+Air recovery follows that factor. Extra respiratory flow uses the author-approved
+6 L/min per 80 kg, 1.2 kg/m3 and 1005 J/kg/K sensible exchange; a hotter ambient
+can warm the character. Underwater breathing is excluded. Supplied male/female
+CC0 recordings provide moderate/high loops; originals and provenance retained.
+
+Per-actor disposable caches hold geometry/material/air coefficients and anatomy
+row weights, not constant heat flux or primary physiology. Revision 4 preserves
+energy, water, acclimation and damage, discarding derived caches on load. Frozen
+5.1.3 comparison: 140 cases / 4,480 intervals and 200 analytical dose comparisons,
+with no displayed error at 12 decimals in the matrix. Native suite: 64 mechanic,
+39 effort and 26 geometry/immersion checks, four audio cues (12 assertions),
+audio reload, old-save migration, new-save reload, original-pair rollback and
+hub return. Repeated dry-solver timing establishes only local calculation cost;
+large-load tests were stopped/deferred by the author, not certified as passing.
+A native heavy-armor control retained full HP after 20 seconds running/nine
+actual jumps and 40 seconds rest: 100-kg human, 40-kg armor, ambient 19-20 C,
+peak E +1.725808, 67.03 mL sweat, no immersion or thermal damage.
+Evidence and qualifications: assets/validation_514/RESULTS.md and MANIFEST.json.
+
+Author confirmation on 2026-10-08: CA140-01 and CA140-02 (origin 5.1.4/#140)
+passed for the mechanics/audio inspected up to that point. Their entries are
+removed from pending_test.txt; this does not accept the subsequent firearm
+recalibration or certify sustained heavy-weapon/post-immersion balance. The
+running-to-empty-Thirst control was explicitly cancelled, not completed.
+CA133-01/02/03 remain unconfirmed. #133 closure/PR #141 integration was completed
+(dd8e18bd); #140 integration follows its expanded native checks.
+
+The author subsequently approved separating carbine muscular heat from its Air
+cost: 2 MET while firing, 2.5 MET while reloading, subtracting the existing
+1 MET rest once and integrating actual action seconds. Primary carbine Air
+now equals dagger Air (2 rather than 20 before modifiers). Other weapons retain
+the approved nominal-Air/jump-reference heat. Revision 5 adds a persistent
+unconsumed firearm-work queue without changing existing energy or water.
+The author also approved cold shivering for all supported physiological actors:
+1-to-5 total MET from E=0 to E=-5, with extra player Hunger proportional to the
+baseline rate and preserved Constitution/rest; NPC Hunger remains excluded.
+Revision 6 preserves earlier queued work and adds the independent shivering
+ledger/projection. The first clean new pool control retained full 1780 HP with
+minimum E -6.506146 after actual 22 C immersion, versus death at 117.77 seconds
+without shivering. Its dry old-model control had zero damage. These controls
+isolate retained moisture, not new sweat or exercise. New firearm, greatsword,
+paced-attack, drying and revision-6 persistence evidence is retained in
+validation_514. All five armor categories have bounded native controls; fire
+and ice mages retain full HP with no thermal damage. Heavy greatsword bursts
+still incur 122 HP (continuous requests) or 66 HP (50%-Air pacing), followed by
+recovery, not the former cold death. Final mechanical checks: 87 assertions,
+39 effort/magic checks and 30 geometry/immersion/drying checks pass. The author
+conditionally authorized commit/push/merge/closure after stable focused tests
+and reiterated that instruction. This does not imply separate manual acceptance
+of every extended scenario or the still-pending CA133 checks.
+
+Final isolated carbine control: 130 shots, 12 reloads, full 2168 HP, no sweat
+or thermal damage over 120 seconds; firearm work totals 16,765.780 J. The last
+author-requested visual follow-up gives the exposure label the bar's exact
+band palette, preserving glyph outlines. Native Spanish captures cover all
+bands, scaled Toughness and overflow; only those two HUD files differ from
+the final mechanics-tested package. Standard/legacy builds and static checks
+pass. Integration and issue closure are explicitly authorized by the author.
 
 ## 5.1.3 - Port interiors, commerce and deployment (#133, 2026-10-08)
 

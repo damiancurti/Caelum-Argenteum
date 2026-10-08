@@ -1,17 +1,17 @@
-# CONTEXT.md — Ultra-condensed summary of Caelum Argenteum
+# CONTEXT.md — Caelum Argenteum
 
-Documentation version: **5.1.3** — 2026-10-08.
+Documentation version: **5.1.4** — 2026-10-08.
 
-**5.1.3/#133:** closure/merge authorized, PR #141; thermal follow-up #140.
-MAP06 interiors/commerce/deployment/carbines/sweating. CA133-01/02/03 unconfirmed.
-Rules: SYSTEMS; evidence: validation_513.
+**5.1.4/#140:** cached thermal coefficients, animal sweat, panting/audio,
+quarter-Health costs, firearm effort/shivering. Native checks pass.
+Rules/evidence: SYSTEMS/validation_514. #133 merged; CA133-01/02/03 pending.
 **#132 accepted, closed; PR #139 merged b0020109.**
 
 **5.1.2/#132:** opt-in MAP06 groups: 100/350 tics, 2,000 alive, 6,000 total.
 Old/full armies retained. CA132-01 accepted 2026-10-07; merge authorized.
 **#131/#130/#128 accepted.** Rules: SYSTEMS. Fluency/multiplayer pending.
 
-**4.37.24/#82 accepted 2026-10-05:** closing export; Tab/M/B/R/F/T defaults.
+**4.37.24/#82 accepted:** closing export; Tab/M/B/R/F/T.
 Evidence: validation_43724. #112/#106 merged (#114/#113); V5.0 follows.
 **#103 accepted:** single-page introduction, actual controls, CA_MUS01;
 second key starts MAP01/CA_MUS02. Art farewell; saves unchanged.

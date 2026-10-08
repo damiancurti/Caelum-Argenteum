@@ -1,0 +1,72 @@
+﻿{
+    "label":  "checks-d",
+    "started_utc":  "2026-10-08T14:08:19.1112283Z",
+    "engine":  "C:\\Program Files (x86)\\GZDoom\\gzdoom.exe",
+    "engine_sha256":  "EC706C2EA1EF946EEC13BE7B1B461DF8D52EFCD47CAA6C056ED0E0257F7F9FFA",
+    "iwad_sha256":  "10D67824B11025DDD9198E8CFC87CA335EE6E2D3E63AF4180FA9B8A471893255",
+    "package_sha256":  "71AFBD027FA206DCC0B35C983E3E38D0324BE03EF1D35583747BEBF7989331D2",
+    "addon_sha256":  "1A4E7D6D3C9FC06F08C9A524D7F03B79243FFFDC521696B63CE14C6C5F6B9681",
+    "initial_config":  "[LastRun]\nVersion=225\n[GlobalSettings]\nvid_preferbackend=1\nvid_vsync=false\nvid_maxfps=60\nvid_activeinbackground=true\ni_pauseinbackground=false\nvid_lowerinbackground=false\ni_soundinbackground=true\ncl_capfps=false\nvid_fullscreen=false\nvid_defwidth=1280\nwin_w=1296\nwin_h=759\nwin_maximized=false\nvid_defheight=720\nuse_mouse=false\nsnd_mastervolume=0.05\nlanguage=enu\n",
+    "arguments":  [
+                      "-noautoload",
+                      "-nomouse",
+                      "-iwad",
+                      "\"C:\\Program Files (x86)\\Steam\\steamapps\\common\\ultimate doom\\base\\doom2\\DOOM2.WAD\"",
+                      "-file",
+                      "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue140\\production.pk3\"",
+                      "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue140\\checks.pk3\"",
+                      "-config",
+                      "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue140\\checks-d.ini\"",
+                      "-savedir",
+                      "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue140\"",
+                      "-width",
+                      1280,
+                      "-height",
+                      720,
+                      "-window",
+                      "-rngseed",
+                      "116",
+                      "-skill",
+                      "2",
+                      "+logfile",
+                      "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue140\\checks-d.txt\"",
+                      "+con_notifytime",
+                      "0",
+                      "+set",
+                      "ca_test_siege_reinforcements",
+                      1,
+                      "+map",
+                      "CA140",
+                      "+exec",
+                      "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue140\\checks-d-exec.cfg\""
+                  ],
+    "benchmark_offset":  0,
+    "command_script":  "wait 130; save ca140-current; wait 10; quit\r\n",
+    "cpu":  [
+                {
+                    "Name":  "AMD Ryzen 9 5950X 16-Core Processor            ",
+                    "NumberOfCores":  16,
+                    "NumberOfLogicalProcessors":  32
+                }
+            ],
+    "gpu":  [
+                {
+                    "Name":  "Parsec Virtual Display Adapter",
+                    "DriverVersion":  "0.45.0.0"
+                },
+                {
+                    "Name":  "NVIDIA GeForce RTX 3070 Ti",
+                    "DriverVersion":  "32.0.15.7688"
+                }
+            ],
+    "os":  {
+               "Caption":  "Microsoft Windows 11 Pro",
+               "Version":  "10.0.26200",
+               "TotalVisibleMemorySize":  33475240
+           },
+    "pid":  43780,
+    "qpc_ms":  1351921797.4049,
+    "epoch_ms":  1791468501017.2764,
+    "completed_utc":  "2026-10-08T14:08:28.3529480Z",
+    "expected":  "CA140 COMPLETE checks=\\d+ failures=0"
+}

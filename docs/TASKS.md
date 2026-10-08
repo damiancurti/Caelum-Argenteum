@@ -1,6 +1,6 @@
 # TASKS.md — Active tasks
 
-Documentation version: **5.1.3** — 2026-10-08.
+Documentation version: **5.1.4** — 2026-10-08.
 
 ## Issue #133 - City interiors and deployment (5.1.3, closure and merge authorized)
 
@@ -26,20 +26,26 @@ post-exertion cold from wet clothing. Do not equate added cooling with accepted
 sustained-fire balance. The sweat extension passes native math/provisions,
 persistence/migration and carbine checks; final combined simulation/render rates
 are 31.21/5.57, with 598 surviving defenders and a different workload from the
-pre-sweat control. The requested half-Health Hunger cost for Air/Anima awaits
-per-bar/per-point clarification and NPC Hunger scope. No unconfirmed food-cost
-value has been applied. This resource-design request remains a deferred task,
-not a completed part of #133. Agent validation is distinct from CA133-01/02/03 acceptance.
+pre-sweat control. The previous half-Health proposal was clarified and superseded
+in #140: quarter-Health full-bar Hunger/Thirst costs, player only. Agent validation
+is distinct from CA133-01/02/03 acceptance.
 
-## Issue #140 - Thermal optimization and carried-forward heat findings
+## Issue #140 - Thermal cache and physiology (5.1.4, implemented)
 
-The author moves the remaining heat work from #133 here on 2026-10-08. Preserve
-the source-bound 600-body firing control and combined-battle measurements as
-baselines. Investigate action-heat calibration and wet-clothing cooling alongside
-the existing per-actor coefficient caching, invalidation and bounded flux-update
-scope. The scope transfer approves investigation, not new numerical balance
-values. Separate measured performance changes from altered survival/workload;
-retain water/energy accounting, migration and real/world-time semantics.
+Implemented: disposable per-actor coefficient/anatomy caches, revision-6 migration,
+quarter-Health player Air/Anima costs, bull/rat sweat, max-selected heat/fatigue
+ventilation, signed respiratory transfer and supplied male/female audio.
+Author follow-up adds dagger-scale carbine Air, separate 2/2.5-MET fire/reload
+heat and 1-to-5-MET cold shivering with proportional player Hunger cost.
+CA140-01/02 were accepted before these follow-ups; newer controls remain separate.
+Native comparison exposed lethal post-exertion/immersion wet-clothing cold
+without shivering. The approved regulation passes clean temperate pool, magic, heavy-weapon pacing,
+firearm and drying controls. Five armor categories are covered by native cases;
+87 mechanic, 39 effort/magic and 30 geometry/immersion/drying assertions pass.
+Author integration/closure is authorized after these stable focused controls.
+Mass performance tests remain explicitly deferred. No full-scene throughput
+improvement is asserted. Movement shedding has no approved new coefficients;
+keep absorbed clothing water separate from any future free-droplet model.
 
 ## Issue #132 - Staged siege performance test (5.1.2)
 

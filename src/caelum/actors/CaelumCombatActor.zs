@@ -3596,6 +3596,7 @@ class CaelumCombatActor : Actor
             MazeDropReleased=true;
             CaelumMazeLayout.CreateDeathDrop(tid);
         }
+        CaelumBreathing.StopAudio(self);
         Super.Die(source,inflictor,dmgflags,MeansOfDeath);
         // Los saves previos retienen sus EventHandlers. La misma confirmación
         // idempotente cubre su muerte nativa sin convertir ausencia en muerte.
@@ -3619,6 +3620,7 @@ class CaelumCombatActor : Actor
 
     override void Tick()
     {
+        CaelumBreathing.UpdateSound(self);
         ResourceRecoveryActive();
         // Los valores base quedan intactos: reconstruir evita restas acumuladas.
         if (ArmorBalanceRevision < 1 && CombatProfileInitialized)
@@ -3749,7 +3751,7 @@ class CaelumCombatActor : Actor
         {
             CurrentCombatAir = Min(
                 MaximumCombatAir,
-                CurrentCombatAir + CombatAirRegenerationPerSecond * idleFactor / TICRATE
+                CurrentCombatAir + CombatAirRegenerationPerSecond * idleFactor * CaelumBreathing.ActorFactor(self) / TICRATE
             );
         }
         if (health > 0 && !sleeping

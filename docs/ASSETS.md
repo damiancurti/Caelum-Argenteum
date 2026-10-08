@@ -1,6 +1,33 @@
 # Caelum Argenteum — Audio and art
 
-Documentation version: **5.1.3** — 2026-10-08.
+Documentation version: **5.1.4** — 2026-10-08.
+
+## 5.1.4 - Breathing recordings and native evidence (#140)
+
+The author supplied the ZIP attached to issue #140. Unmodified originals, the
+attachment, original SOURCES_AND_CREDITS.txt and derived PROVENANCE.json are in
+`assets/source/audio/breathing_514`. Female: Joseph SARDIN, BigSoundBank sound
+1345, CC0 (https://bigsoundbank.com/breathless-woman-s1345.html). Male: Teekee,
+Creazilla/Freesound, CC0 according to the author's source metadata
+(https://creazilla.com/media/audio/15493689/man-breathing-deep-breathe).
+The packaged attribution is `src/licenses/breathing_514.txt`.
+
+`assets/generators/prepare_breathing_audio.py` uses the recorded FFmpeg 7.1
+binary to derive whole-recording mono 22050-Hz PCM16 clips, -23 LUFS / -2 dBTP,
+and 20-ms endpoint fades. High-intensity variants use 4/3 tempo with pitch
+preserved; the moderate source recordings are unchanged in pace. There is no
+voice synthesis. Two runs produced byte-identical runtime files; hashes,
+filters and source provenance are retained. Runtime SNDINFO aliases live under
+caelum/breathing and use CHAN_BODY loops without replacing pain voice, weapons
+or heartbeat. Male/female moderate/high cues pass native playing, switching,
+stop and save/load checks. Subjective mix, source background noise and loop
+quality were accepted under CA140-01 on 2026-10-08, before later thermal
+calibration. No human recordings are assigned to bull/rat;
+their physical sweat and ventilation are active without a new animal sound.
+
+Small isolated fixtures and source-bound results live in assets/validation_514.
+Generated test PK3s, development IWAD/engine and native saves remain local in
+build; they are not distributed as game assets.
 
 ## 5.1.3 - City interiors and world carbine artwork (#133)
 
@@ -2083,7 +2110,7 @@ third party is not rewritten when reorganizing documents.
 
 ## Physical audio inventory
 
-The fully audited project contains 103 runtime files: 100 OGG, 2 MP3 and 1 WAV, including the
+The fully audited project contains 107 runtime files: 100 OGG, 2 MP3 and 5 WAV, including the
 issue #31 pain cues, dialogue-opening cue and three new map-music tracks. `assets/audio_stock`
 preserves 26 source/backup files outside `src`: 10 pack-05 backups and 16 issue-#31
 music/sound masters. Issue #89 preserves four more audio originals under

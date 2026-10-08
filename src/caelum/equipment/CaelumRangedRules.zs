@@ -97,16 +97,20 @@ class CaelumCityCarbine : Object play
     void Tick(CaelumPortDefender owner)
     {
         bool moving=(owner.Pos.XY-PreviousPosition.XY).Length()>0.01;
-        if(owner.health<=0 || owner.ForcedSleepTics>0 || owner.CombatLucidityPhysicalStunRemaining>0
-            || owner.InStateSequence(owner.CurState,owner.FindState("Pain")) || !Held)
+        bool interrupted=owner.health<=0 || owner.ForcedSleepTics>0 || owner.CombatLucidityPhysicalStunRemaining>0
+            || owner.InStateSequence(owner.CurState,owner.FindState("Pain")) || !Held;
+        if(interrupted)
         {ReloadRemaining=0;ReloadTotal=0;}
         if(ReloadRemaining>0)
         {
             double progress=moving ? CaelumConstants.RELOAD_MOVEMENT_AND_PROGRESS_MULTIPLIER : 1;
+            CaelumThermalEffects.RecordFirearmWork(owner,Min(1.0/TICRATE,ReloadRemaining/progress),true);
             ReloadRemaining=Max(0.0,ReloadRemaining-progress/TICRATE);
             owner.Speed*=CaelumConstants.RELOAD_MOVEMENT_AND_PROGRESS_MULTIPLIER;
             if(ReloadRemaining<=0){Magazine=CaelumRangedRules.MagazineCapacity(Weapon.WeaponType);ReloadCount++;}
         }
+        else if(!interrupted && ShotCount>0 && level.time<=NextShotTic)
+            CaelumThermalEffects.RecordFirearmWork(owner,1.0/TICRATE,false);
         PreviousPosition=owner.Pos;
         CaelumCarbineWorld.Apply(owner,Held,moving,ShotCount>0 && level.time<NextShotTic,ReloadRemaining,ReloadTotal);
     }
@@ -150,7 +154,7 @@ class CaelumCityCarbine : Object play
         if(projectile==null)return true;
         double cost=owner.GetEffectiveAttackAir(owner.AttackResourceBaseCost);
         if(!owner.TrySpendCombatAir(cost)){projectile.Destroy();owner.WaitForAttackResource();return true;}
-        CaelumThermalEffects.RecordAction(owner,cost);owner.MarkActorCombatActivity();
+        owner.MarkActorCombatActivity();
         Magazine--;ShotCount++;NextShotTic=level.time+int(Ceil(owner.GetProfileWeaponDuration(Weapon.WeaponType)));
         owner.tics=Max(owner.tics,NextShotTic-level.time);
         owner.A_StartSound("caelum/weapons/carabine_fire",CHAN_WEAPON);return true;

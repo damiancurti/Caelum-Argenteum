@@ -119,10 +119,13 @@ class CaelumJourneyModel : Object play
     double HungerLoss, ThirstLoss, SleepLoss, Consumption;
     double HealthRate, AirRate, AnimaRate, MaxAir, MaxAnima, MaxAdrenaline, HealthPenalty;
     bool Unlimited, Bag;
+    double ThermalExposure,ThermalToughness;
 
     void Capture(CaelumPlayer user, bool useUnlimitedSupplies)
     {
         Unlimited = useUnlimitedSupplies;
+        let thermal=CaelumThermalBody.Get(user);
+        ThermalExposure=thermal!=null ? thermal.Exposure : 0;ThermalToughness=thermal!=null ? thermal.Toughness : 0;
         let d = user.DerivedStats;
         Mass = Max(1, d.BaseMass); FoodPulse = 80.0 / Mass;
         Hunger = user.CurrentHunger; Thirst = user.CurrentThirst; Sleep = user.CurrentSleep;
@@ -226,7 +229,11 @@ class CaelumJourneyModel : Object play
             Stun = CaelumConstants.LUCIDITY_PHYSICAL_STUN_SECONDS
                 * (1.0 + ((Sleep <= 10 ? 4.0 : Sleep <= 50 ? 2.0 : 1.0) - 1.0) * HealthPenalty);
         Adrenaline = Max(0.0, Adrenaline - CaelumConstants.ADRENALINE_DECAY_PER_SECOND / TICRATE);
-        Anima = Min(MaxAnima, Anima + AnimaRate * AnimaComfort(sleeping));
+        double animaRest=AnimaComfort(sleeping),animaCosts=Consumption/(animaRest*animaRest);
+        double recoveredAnima=CaelumRecoveryRules.Affordable(Min(MaxAnima-Anima,AnimaRate*animaRest),MaxAnima,Hunger,Thirst,animaCosts);
+        Anima+=recoveredAnima;
+        Hunger=Max(0.0,Hunger-recoveredAnima*CaelumRecoveryRules.HungerCost(MaxAnima,animaCosts));
+        Thirst=Max(0.0,Thirst-recoveredAnima*CaelumRecoveryRules.ThirstCost(MaxAnima,animaCosts));
         int critical = int(Hunger <= 10) + int(Thirst <= 10) + int(Sleep <= 10 && !sleeping);
         if (critical == 0) DamageFraction = 0;
         else
@@ -239,7 +246,7 @@ class CaelumJourneyModel : Object play
         if (Health >= MaxHealth || Hunger <= 10 || Thirst <= 10 || Sleep <= 10) HealingFraction = 0;
         else
         {
-            double foodCost = 100.0 * costs / MaxHealth, waterCost = 50.0 * costs / MaxHealth;
+            double foodCost = CaelumConstants.HEALTH_FULL_RECOVERY_HUNGER_COST * costs / MaxHealth, waterCost = CaelumConstants.HEALTH_FULL_RECOVERY_THIRST_COST * costs / MaxHealth;
             double affordable = Min(Hunger / foodCost, Thirst / waterCost);
             HealingFraction += Min(HealthRate * comfort, affordable);
             int healing = Min(int(HealingFraction), Min(MaxHealth - Health, int(Floor(affordable))));
@@ -254,9 +261,10 @@ class CaelumJourneyModel : Object play
                 ? CaelumConstants.HEALTH_WOUNDED_PERFORMANCE_MULTIPLIER : 1.0;
             double performance = 1.0 - (1.0 - raw) * HealthPenalty;
             performance += (1.0 - performance) * (MaxAdrenaline > 0 ? AirAdrenaline() / MaxAdrenaline : 0.0);
-            double foodCost = CaelumConstants.AIR_FULL_RECOVERY_HUNGER_COST * costs / MaxAir;
-            double gained = Min(Min(AirRate * performance * comfort, MaxAir - Air), Hunger / foodCost);
-            Air += gained; Hunger = Max(0.0, Hunger - gained * foodCost);
+            double gained = CaelumRecoveryRules.Affordable(Min(AirRate * performance * comfort * CaelumBreathing.Factor(Air/MaxAir,ThermalExposure,ThermalToughness), MaxAir - Air),MaxAir,Hunger,Thirst,costs);
+            Air += gained;
+            Hunger=Max(0.0,Hunger-gained*CaelumRecoveryRules.HungerCost(MaxAir,costs));
+            Thirst=Max(0.0,Thirst-gained*CaelumRecoveryRules.ThirstCost(MaxAir,costs));
         }
         ElapsedTics++;
     }

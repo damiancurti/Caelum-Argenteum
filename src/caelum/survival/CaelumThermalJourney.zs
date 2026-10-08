@@ -71,7 +71,12 @@ class CaelumThermalJourney : Object play
             int substeps=supplies!=null ? step : 1;
             for(int t=0;t<substeps;t++)
             {
-                if(supplies!=null)Result.Hydration=supplies.Thirst;
+                if(supplies!=null)
+                {
+                    Result.Hydration=supplies.Thirst;Result.BreathingAirRatio=supplies.MaxAir>0 ? supplies.Air/supplies.MaxAir : 1;
+                    Result.ShiveringHunger=supplies.Hunger;
+                    Result.ShiveringHungerPerMetSecond=supplies.HungerLoss*hour/3600.0/supplies.Comfort(sleeping);
+                }
                 CaelumThermalService.Integrate(Result,seconds/substeps,0,effort,0,0,seconds/substeps);
                 if(Abs(Result.Exposure)>Abs(WorstExposure))WorstExposure=Result.Exposure;
                 if(Result.Severity>0)
@@ -80,9 +85,11 @@ class CaelumThermalJourney : Object play
                 {
                     // Como AdvancePersonalTimeTic: primero el balance térmico,
                     // luego provisiones y recuperación. Nunca cobrar dos veces.
-                    supplies.Thirst=Result.Hydration;supplies.Step(sleeping);
+                    supplies.Thirst=Result.Hydration;supplies.ThermalExposure=Result.Exposure;
+                    supplies.Hunger=Result.ShiveringHunger;
+                    supplies.ThermalToughness=Result.Toughness;supplies.Step(sleeping);
                     supplies.WalkTics+=int(!sleeping || mode==CaelumJourneyState.MODE_SHIP);
-                    supplies.SleepTics+=int(sleeping);Result.Hydration=supplies.Thirst;
+                    supplies.SleepTics+=int(sleeping);Result.Hydration=supplies.Thirst;Result.ShiveringHunger=supplies.Hunger;
                     if(supplies.Health<=0)return true;
                 }
             }

@@ -38,6 +38,37 @@ class CaelumThermalEffects : Object play
     static void RecordAction(Actor body,double nominalAir)
     { CaelumThermalService.ProfiledAction(body,nominalAir,NominalJumpAir(body)); }
 
+    static clearscope double FirearmWatts(double area,bool reloading)
+    {
+        double met=reloading ? CaelumThermalData.CARBINE_RELOAD_MET : CaelumThermalData.CARBINE_FIRE_MET;
+        return Max(0.0,area)*CaelumThermalData.MET_WATTS_M2*Max(0.0,met-1.0);
+    }
+
+    // Acumular trabajo no fuerza una integración del NPC por cada tic. La
+    // siguiente actualización térmica consume la energía persistente una vez.
+    static void RecordFirearmWork(Actor body,double seconds,bool reloading)
+    {
+        if(body==null || body.health<=0 || seconds<=0)return;
+        let thermal=CaelumThermalBody.Get(body,true);if(thermal==null)return;
+        if(thermal.SurfaceArea<=0)CaelumThermalBody.Refresh(body,thermal);
+        thermal.PendingFirearmJoules+=FirearmWatts(thermal.SurfaceArea,reloading)*seconds;
+    }
+
+    static void PlayerFirearmTic(CaelumPlayer user)
+    {
+        if(user.WeaponModel==null || !user.WeaponModel.Equipped || user.WeaponModel.Durability<=0
+            || user.WeaponModel.WeaponType!=CaelumConstants.WEAPON_TYPE_CARBINE
+            || user.IsPhysicallyImmobilized() || user.CombatBlockModeActive)return;
+        if(user.RangedReloadActive && user.RangedReloadWeaponType==CaelumConstants.WEAPON_TYPE_CARBINE)
+            RecordFirearmWork(user,Min(1.0/TICRATE,user.RangedReloadRemainingSeconds
+                /Max(0.000001,user.GetReloadProgressMultiplier())),true);
+        else if(user.AttackAnimationMap==level.MapName
+            && user.AttackAnimationKind==CaelumConstants.WEAPON_TYPE_CARBINE
+            && user.AttackAnimationItemId==user.ActiveWeaponItemId)
+            RecordFirearmWork(user,Min(1.0/TICRATE,Max(0.0,
+                (user.AttackAnimationStartTic+user.AttackAnimationDurationTics-level.time+1)/TICRATE)),false);
+    }
+
     static double EffortWatts(Actor body,double nominalAirPerSecond)
     {
         let thermal=CaelumThermalBody.Get(body,true);

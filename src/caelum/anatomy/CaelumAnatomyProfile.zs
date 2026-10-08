@@ -6,6 +6,7 @@ class CaelumAnatomyProfile : Object
     const MAXIMUM_REGIONS = 16;
 
     int RegionCount;
+    transient int ShapeGeneration;
     int RegionLocation[16];
     int RegionVulnerability[16];
     double RegionMinimumHeight[16];
@@ -20,6 +21,7 @@ class CaelumAnatomyProfile : Object
     {
         RegionCount = 0;
         UsesDirectionalRegions = false;
+        ShapeGeneration++;
     }
 
     void AddRegion(
@@ -33,6 +35,7 @@ class CaelumAnatomyProfile : Object
     {
         if (RegionCount >= MAXIMUM_REGIONS) { return; }
         int index = RegionCount++;
+        ShapeGeneration++;
         RegionLocation[index] = location;
         RegionVulnerability[index] = Clamp(
             vulnerability,
@@ -68,6 +71,7 @@ class CaelumAnatomyProfile : Object
         RegionMinimumForward[index] = Clamp(minimumForward, -1.0, 1.0);
         RegionMaximumForward[index] = Clamp(maximumForward, -1.0, 1.0);
         UsesDirectionalRegions = true;
+        ShapeGeneration++;
     }
 
     void InitializeHumanoid()

@@ -4,6 +4,59 @@ Status: integrated engineering register (issue #22, patch 4.36.1b).
 Prepared: 2026-09-23. Inherits the project's release after integration.
 Inspected baseline: `1dc390576fa330d37ff543526fc7e69a397fc28f` (PR #7).
 
+## CA-KP-056 - Cache thermal coefficients, keep flux and physiology live
+
+Status/evidence: ENGINE-VERIFIED. First checked: 2026-10-08.
+Issue #140 / 5.1.4; GZDoom 4.14.2. Original CA140-01/02 accepted 2026-10-08;
+later firearm/shivering calibration is separately tested.
+
+Cache geometry, dry material/film conductance and anatomical row weights per
+actor. Key dependencies explicitly: area/mass, anatomy generation, coverage,
+immersion, material, wind and ambient vapor. Exposure, wetness, environmental
+temperature, water temperature, fire and effort must still change the current
+flux. Do not put primary exposure/water in a disposable cache. Native save/load
+discards that cache and rebuilds it without refilling NPC hydration; forecast
+copies own separate caches. Preserve an original save/package pair for rollback.
+
+The frozen 5.1.3 oracle agrees across 4,480 intervals and 200 dose comparisons;
+disable newly approved respiratory exchange and shivering in the old-model
+equivalence comparison, then test each independently with its energy equation.
+Dry-solver microtiming (five alternating-order repetitions, 4,000 steps each)
+reduces the median from 25.982 ms to 9.225 ms, with one geometry build and 3,999
+cache hits. This measures isolated math, not total simulation or presented FPS.
+The author deferred mass-load testing; do not generalize this percentage to a
+siege. Evidence: [mechanics](../assets/validation_514/mechanics-d.txt),
+[migration](../assets/validation_514/migration-upgrade-a.txt),
+[hub return](../assets/validation_514/migration-hub-c.txt) and
+[results](../assets/validation_514/RESULTS.md).
+
+Use a dedicated native sound channel and transient bookkeeping for panting.
+Do not restart the looping recording every Tick or serialize a stale playing
+flag. Native audio controls verify four gender/intensity cues, independent
+pain voice, recovery/death stop and reload reconstruction; actual 3D water
+also stops the sound and respiratory bonus. Perceived mix remains an author
+check (CA140-01 accepted for the original scope). An authoritative physiology state can support animal ventilation without
+mislabeling a human recording as an animal sound.
+
+### Wet-clothing controls and cold regulation follow-up
+
+Evidence: ENGINE-VERIFIED, #140 / 5.1.4. A heavy-armored 100-kg player died from
+cold after one real second in 22 C native 3D water, without sweat or attacks;
+the dry comparator retained full HP for 180 seconds. The cloth layer held
+421.197 mL, while metal itself is not the moisture reservoir. Reducing the sweat
+ceiling alone cannot fix this immersion case. Evaporation continues after
+secretion stops and does not replenish the character's Thirst.
+
+The approved 1-to-5-MET shivering response and proportional player food cost
+kept the clean repeated wet control at 1780 HP, with minimum E -6.506146 against
+threshold -10.180198; native wetness eventually reached zero. Keep this bounded
+temperate result separate from cold-water immunity or universal exertion safety.
+A 50%-Air-paced greatsword control survived but still accumulated 66 thermal HP
+before ordinary regeneration restored full health: final HP alone hides damage.
+Do not label such a run "no thermal damage". Preserve initial/final reserve,
+energy, moisture and cumulative damage records. Uncommanded input contaminated
+pool-wet-b; it was stopped and repeated with isolated unbound test controls.
+
 ## CA-KP-055 - Sweat must share both the water budget and the thermal solver
 
 Status/evidence: ENGINE-VERIFIED. First checked: 2026-10-08.

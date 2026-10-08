@@ -181,6 +181,7 @@ class CaelumThermalEnvironment : Object play
 
     static bool Sample(Actor body,CaelumThermalState thermal,double localMotionMps=0)
     {
+        CaelumThermalCoefficients.Get(thermal).EnvironmentSamples++;
         let user=CaelumPlayer(body);
         let world=CaelumThermalWorld.Get();
         let weather=user!=null ? CaelumWeatherState.Get(user) : world!=null ? world.ReferenceWeather : null;

@@ -1,0 +1,613 @@
+{
+  "issue": 140,
+  "release": "5.1.4",
+  "runs": {
+    "carbine-heat-a": {
+      "package_sha256": "AAC78E4A752E2F7BC9482918A8D5B1784A0B43653FFFAFF1EC48D680624F7445",
+      "log_sha256": "b1853d981e85b664e8076244d0c4142ae1119c020b74aaac7a162bc7c9a0e1f2",
+      "records": [
+        {
+          "marker": "CARBINE_PROFILE",
+          "values": {
+            "hp": 2168.0,
+            "maxHP": 2168.0,
+            "mass": 80.0,
+            "carried": 50.0,
+            "toughness": 18.0,
+            "maxAir": 1067.722772,
+            "threshold": 10.338614
+          }
+        },
+        {
+          "marker": "CARBINE_COMPLETE",
+          "values": {
+            "seconds": 113.6,
+            "alive": 0.0,
+            "hp": 0.0,
+            "shots": 14.0,
+            "reloads": 1.0,
+            "peak": 44.125223,
+            "minimum": -15.375364,
+            "hydration": 82.959985,
+            "sweatMl": 340.800298,
+            "thermalHP": 2297.0
+          }
+        }
+      ]
+    },
+    "carbine-heat-b": {
+      "package_sha256": "94E0F535AB969070D9BA1490CB3070391C2FD6947ED52EFAD616A98422470A97",
+      "log_sha256": "55df03751752934a34419db847ed4bf315412eb3c16b7525f711ffcdb77f84b6",
+      "records": [
+        {
+          "marker": "CARBINE_PROFILE",
+          "values": {
+            "hp": 2168.0,
+            "maxHP": 2168.0,
+            "mass": 80.0,
+            "carried": 50.0,
+            "toughness": 18.0,
+            "maxAir": 1067.722772,
+            "threshold": 10.338614
+          }
+        },
+        {
+          "marker": "CARBINE_COMPLETE",
+          "values": {
+            "seconds": 120.0,
+            "alive": 1.0,
+            "hp": 2168.0,
+            "shots": 130.0,
+            "reloads": 12.0,
+            "peak": 1.428958,
+            "minimum": -0.570801,
+            "hydration": 98.279215,
+            "sweatMl": 34.415703,
+            "thermalHP": 0.0
+          }
+        }
+      ]
+    },
+    "carbine-heat-c": {
+      "package_sha256": "94E0F535AB969070D9BA1490CB3070391C2FD6947ED52EFAD616A98422470A97",
+      "log_sha256": "fd0e88c22f24307929ea394084af47b4b366757a20a87e43710611cc45667574",
+      "records": [
+        {
+          "marker": "CARBINE_PROFILE",
+          "values": {
+            "hp": 2168.0,
+            "maxHP": 2168.0,
+            "mass": 80.0,
+            "carried": 50.0,
+            "toughness": 18.0,
+            "maxAir": 1067.722772,
+            "threshold": 10.338614
+          }
+        },
+        {
+          "marker": "CARBINE_COMPLETE",
+          "values": {
+            "seconds": 120.0,
+            "alive": 1.0,
+            "hp": 2168.0,
+            "shots": 130.0,
+            "reloads": 12.0,
+            "peak": 0.0,
+            "minimum": -0.570801,
+            "hydration": 100.0,
+            "sweatMl": 0.0,
+            "thermalHP": 0.0
+          }
+        }
+      ]
+    },
+    "greatsword-heat-b": {
+      "package_sha256": "AAC78E4A752E2F7BC9482918A8D5B1784A0B43653FFFAFF1EC48D680624F7445",
+      "log_sha256": "eeb2d062abecb15ed4c223070c896cb0c1d4e89f3d9e59886f669397ea33f013",
+      "records": [
+        {
+          "marker": "GREATSWORD_PROFILE",
+          "values": {
+            "hp": 1780.0,
+            "mass": 100.0,
+            "totalKg": 158.0,
+            "armorKg": 40.0,
+            "weaponKg": 18.0,
+            "type": 10.0,
+            "threshold": 10.180198,
+            "maxAir": 1021.782178
+          }
+        },
+        {
+          "marker": "GREATSWORD_COMPLETE",
+          "values": {
+            "seconds": 148.285714,
+            "alive": 0.0,
+            "hp": 0.0,
+            "swings": 67.0,
+            "hits": 14.0,
+            "firstActionJ": 14006.711617,
+            "peak": 12.058072,
+            "minimum": -15.673333,
+            "thirst": 72.686235,
+            "sweatMl": 311.960769,
+            "thermalHP": 1849.0
+          }
+        }
+      ]
+    },
+    "greatsword-regulated-a": {
+      "package_sha256": "5A02C8CCDB82B0BA82ECA278CC7F3BFA7FBB9085DBD59E1680D3E903AE712C13",
+      "log_sha256": "39a1fcf4a34bf6c03014d5d686354336495ac00e770fc6f9c22fa4e7a466e2b6",
+      "records": [
+        {
+          "marker": "GREATSWORD_PROFILE",
+          "values": {
+            "hp": 1780.0,
+            "mass": 100.0,
+            "totalKg": 158.0,
+            "armorKg": 40.0,
+            "weaponKg": 18.0,
+            "type": 10.0,
+            "threshold": 10.180198,
+            "maxAir": 1021.782178
+          }
+        },
+        {
+          "marker": "GREATSWORD_COMPLETE",
+          "values": {
+            "seconds": 180.0,
+            "alive": 1.0,
+            "hp": 1743.0,
+            "swings": 69.0,
+            "hits": 14.0,
+            "firstActionJ": 14006.711617,
+            "peak": 12.061531,
+            "minimum": -4.113606,
+            "thirst": 68.801713,
+            "sweatMl": 312.046622,
+            "thermalHP": 122.0
+          }
+        }
+      ]
+    },
+    "greatsword-paced-a": {
+      "package_sha256": "5A02C8CCDB82B0BA82ECA278CC7F3BFA7FBB9085DBD59E1680D3E903AE712C13",
+      "log_sha256": "66f5e4d3dab3c6f9e3a7cd72f0853e47d830b375a3da4a75a6102da9439a8982",
+      "records": [
+        {
+          "marker": "GREATSWORD_PROFILE",
+          "values": {
+            "hp": 1780.0,
+            "mass": 100.0,
+            "totalKg": 158.0,
+            "armorKg": 40.0,
+            "weaponKg": 18.0,
+            "type": 10.0,
+            "threshold": 10.180198,
+            "maxAir": 1021.782178
+          }
+        },
+        {
+          "marker": "GREATSWORD_COMPLETE",
+          "values": {
+            "seconds": 180.0,
+            "alive": 1.0,
+            "hp": 1780.0,
+            "swings": 43.0,
+            "hits": 9.0,
+            "firstActionJ": 14006.711617,
+            "peak": 12.061531,
+            "minimum": -3.523161,
+            "thirst": 73.680925,
+            "sweatMl": 261.795878,
+            "thermalHP": 66.0
+          }
+        }
+      ]
+    },
+    "pool-wet-a": {
+      "package_sha256": "8AB09A6BE112C488268E5EA02CE4CDAB7E3E0A49CDA600C5605912C76CB3D422",
+      "log_sha256": "9911e3e0fceb5af3a417c3fe4c0d1f7a77b184f79d2c6fb3626d01fb242b7ea3",
+      "records": [
+        {
+          "marker": "GREATSWORD_PROFILE",
+          "values": {
+            "hp": 1780.0,
+            "mass": 100.0,
+            "totalKg": 158.0,
+            "armorKg": 40.0,
+            "weaponKg": 18.0,
+            "type": 10.0,
+            "threshold": 10.180198,
+            "maxAir": 1021.782178
+          }
+        },
+        {
+          "marker": "POOL_EXIT",
+          "values": {
+            "mode": 1.0,
+            "waterLevel": 3.0,
+            "E": -0.301738891,
+            "waterC": 22.0,
+            "hp": 1780.0
+          }
+        },
+        {
+          "marker": "GREATSWORD_COMPLETE",
+          "values": {
+            "seconds": 117.771429,
+            "alive": 0.0,
+            "hp": 0.0,
+            "swings": 0.0,
+            "hits": 0.0,
+            "firstActionJ": 0.0,
+            "peak": 0.0,
+            "minimum": -15.956778,
+            "thirst": 93.20428,
+            "sweatMl": 0.0,
+            "thermalHP": 1832.0
+          }
+        }
+      ]
+    },
+    "pool-dry-a": {
+      "package_sha256": "8AB09A6BE112C488268E5EA02CE4CDAB7E3E0A49CDA600C5605912C76CB3D422",
+      "log_sha256": "1c29bcbf99a0b5248c9a26c10366ef6afc1debca97b513afc213f512c5bbd54f",
+      "records": [
+        {
+          "marker": "GREATSWORD_PROFILE",
+          "values": {
+            "hp": 1780.0,
+            "mass": 100.0,
+            "totalKg": 158.0,
+            "armorKg": 40.0,
+            "weaponKg": 18.0,
+            "type": 10.0,
+            "threshold": 10.180198,
+            "maxAir": 1021.782178
+          }
+        },
+        {
+          "marker": "POOL_EXIT",
+          "values": {
+            "mode": 2.0,
+            "waterLevel": 0.0,
+            "E": -0.251371659,
+            "waterC": 17.869767,
+            "hp": 1780.0
+          }
+        },
+        {
+          "marker": "GREATSWORD_COMPLETE",
+          "values": {
+            "seconds": 180.0,
+            "alive": 1.0,
+            "hp": 1780.0,
+            "swings": 0.0,
+            "hits": 0.0,
+            "firstActionJ": 0.0,
+            "peak": 0.0,
+            "minimum": -4.558524,
+            "thirst": 91.826561,
+            "sweatMl": 0.0,
+            "thermalHP": 0.0
+          }
+        }
+      ]
+    },
+    "pool-wet-c": {
+      "package_sha256": "823C5A3434469552EE9E7A49EC19631395A94ADB15A8B341A623F25A1ED6EC1E",
+      "log_sha256": "33fa36a3741e23ff3277cda18dd415ac78731c7f95e40b4527511df88ba57516",
+      "records": [
+        {
+          "marker": "GREATSWORD_PROFILE",
+          "values": {
+            "hp": 1780.0,
+            "mass": 100.0,
+            "totalKg": 158.0,
+            "armorKg": 40.0,
+            "weaponKg": 18.0,
+            "type": 10.0,
+            "threshold": 10.180198,
+            "maxAir": 1021.782178
+          }
+        },
+        {
+          "marker": "POOL_EXIT",
+          "values": {
+            "mode": 1.0,
+            "waterLevel": 3.0,
+            "E": -0.266493613,
+            "waterC": 22.0,
+            "hp": 1780.0
+          }
+        },
+        {
+          "marker": "GREATSWORD_COMPLETE",
+          "values": {
+            "seconds": 180.0,
+            "alive": 1.0,
+            "hp": 1780.0,
+            "swings": 0.0,
+            "hits": 0.0,
+            "firstActionJ": 0.0,
+            "peak": 0.0,
+            "minimum": -6.506146,
+            "thirst": 91.826561,
+            "sweatMl": 0.0,
+            "thermalHP": 0.0
+          }
+        }
+      ]
+    },
+    "mage-fire-cloth-a": {
+      "package_sha256": "94E0F535AB969070D9BA1490CB3070391C2FD6947ED52EFAD616A98422470A97",
+      "log_sha256": "e9ebe0fc828eec3fab20e9b69e4d8424b712b43e7e189e16a03fa36975a356c0",
+      "records": [
+        {
+          "marker": "GREATSWORD_PROFILE",
+          "values": {
+            "hp": 951.0,
+            "mass": 70.0,
+            "totalKg": 79.0,
+            "armorKg": 5.0,
+            "weaponKg": 4.0,
+            "type": 1.0,
+            "threshold": 10.089109,
+            "maxAir": 1021.782178
+          }
+        },
+        {
+          "marker": "MAGIC_PROFILE",
+          "values": {
+            "mode": 1.0,
+            "armor": 0.0,
+            "maxAnima": 2360.0,
+            "constitution": 8.0,
+            "toughness": 9.0
+          }
+        },
+        {
+          "marker": "GREATSWORD_COMPLETE",
+          "values": {
+            "seconds": 180.0,
+            "alive": 1.0,
+            "hp": 951.0,
+            "swings": 0.0,
+            "hits": 0.0,
+            "firstActionJ": 0.0,
+            "peak": 0.018087,
+            "minimum": -0.157415,
+            "thirst": 89.31388,
+            "sweatMl": 0.768187,
+            "thermalHP": 0.0
+          }
+        },
+        {
+          "marker": "MAGIC_COMPLETE",
+          "values": {
+            "mode": 1.0,
+            "armor": 0.0,
+            "casts": 0.0,
+            "hits": 0.0,
+            "hp": 951.0,
+            "thermalHP": 0.0,
+            "hunger": 87.232181,
+            "thirst": 89.31388,
+            "anima": 314.210949
+          }
+        }
+      ]
+    },
+    "mage-ice-leather-a": {
+      "package_sha256": "94E0F535AB969070D9BA1490CB3070391C2FD6947ED52EFAD616A98422470A97",
+      "log_sha256": "70a5a74d8d94dc06e8d7c0d0f1d59254ae1650d2f4f1c09cfaa09ba5f38de1dc",
+      "records": [
+        {
+          "marker": "GREATSWORD_PROFILE",
+          "values": {
+            "hp": 951.0,
+            "mass": 70.0,
+            "totalKg": 84.0,
+            "armorKg": 10.0,
+            "weaponKg": 4.0,
+            "type": 1.0,
+            "threshold": 10.089109,
+            "maxAir": 1021.782178
+          }
+        },
+        {
+          "marker": "MAGIC_PROFILE",
+          "values": {
+            "mode": 2.0,
+            "armor": 1.0,
+            "maxAnima": 2360.0,
+            "constitution": 8.0,
+            "toughness": 9.0
+          }
+        },
+        {
+          "marker": "GREATSWORD_COMPLETE",
+          "values": {
+            "seconds": 180.0,
+            "alive": 1.0,
+            "hp": 951.0,
+            "swings": 0.0,
+            "hits": 0.0,
+            "firstActionJ": 0.0,
+            "peak": 0.066906,
+            "minimum": -0.008959,
+            "thirst": 88.680359,
+            "sweatMl": 11.854814,
+            "thermalHP": 0.0
+          }
+        },
+        {
+          "marker": "MAGIC_COMPLETE",
+          "values": {
+            "mode": 2.0,
+            "armor": 1.0,
+            "casts": 62.0,
+            "hits": 0.0,
+            "hp": 951.0,
+            "thermalHP": 0.0,
+            "hunger": 87.389072,
+            "thirst": 88.680359,
+            "anima": 314.210949
+          }
+        }
+      ]
+    },
+    "mage-fire-base-a": {
+      "package_sha256": "94E0F535AB969070D9BA1490CB3070391C2FD6947ED52EFAD616A98422470A97",
+      "log_sha256": "6fd9acc26855d56247714284cb80618dd9a0c7f09eca427c98e15032c4b3c019",
+      "records": [
+        {
+          "marker": "GREATSWORD_PROFILE",
+          "values": {
+            "hp": 951.0,
+            "mass": 70.0,
+            "totalKg": 74.0,
+            "armorKg": 0.0,
+            "weaponKg": 4.0,
+            "type": 1.0,
+            "threshold": 10.089109,
+            "maxAir": 1021.782178
+          }
+        },
+        {
+          "marker": "MAGIC_PROFILE",
+          "values": {
+            "mode": 1.0,
+            "armor": 4.0,
+            "maxAnima": 2360.0,
+            "constitution": 8.0,
+            "toughness": 9.0
+          }
+        },
+        {
+          "marker": "GREATSWORD_COMPLETE",
+          "values": {
+            "seconds": 180.0,
+            "alive": 1.0,
+            "hp": 951.0,
+            "swings": 0.0,
+            "hits": 27.0,
+            "firstActionJ": 0.0,
+            "peak": 0.0,
+            "minimum": -0.813484,
+            "thirst": 89.357777,
+            "sweatMl": 0.0,
+            "thermalHP": 0.0
+          }
+        },
+        {
+          "marker": "MAGIC_COMPLETE",
+          "values": {
+            "mode": 1.0,
+            "armor": 4.0,
+            "casts": 62.0,
+            "hits": 27.0,
+            "hp": 951.0,
+            "thermalHP": 0.0,
+            "hunger": 85.828055,
+            "thirst": 89.357777,
+            "anima": 314.210949
+          }
+        }
+      ]
+    },
+    "mage-ice-medium-a": {
+      "package_sha256": "94E0F535AB969070D9BA1490CB3070391C2FD6947ED52EFAD616A98422470A97",
+      "log_sha256": "6ead365aaadd1719686d57c8403c5a6d49ca5aa2218ade0b5d6e780f830f3561",
+      "records": [
+        {
+          "marker": "GREATSWORD_PROFILE",
+          "values": {
+            "hp": 951.0,
+            "mass": 70.0,
+            "totalKg": 94.0,
+            "armorKg": 20.0,
+            "weaponKg": 4.0,
+            "type": 1.0,
+            "threshold": 10.089109,
+            "maxAir": 1021.782178
+          }
+        },
+        {
+          "marker": "MAGIC_PROFILE",
+          "values": {
+            "mode": 2.0,
+            "armor": 2.0,
+            "maxAnima": 2360.0,
+            "constitution": 8.0,
+            "toughness": 9.0
+          }
+        },
+        {
+          "marker": "GREATSWORD_COMPLETE",
+          "values": {
+            "seconds": 180.0,
+            "alive": 1.0,
+            "hp": 951.0,
+            "swings": 0.0,
+            "hits": 27.0,
+            "firstActionJ": 0.0,
+            "peak": 0.0,
+            "minimum": -0.63577,
+            "thirst": 89.357777,
+            "sweatMl": 0.0,
+            "thermalHP": 0.0
+          }
+        },
+        {
+          "marker": "MAGIC_COMPLETE",
+          "values": {
+            "mode": 2.0,
+            "armor": 2.0,
+            "casts": 62.0,
+            "hits": 27.0,
+            "hp": 951.0,
+            "thermalHP": 0.0,
+            "hunger": 86.210248,
+            "thirst": 89.357777,
+            "anima": 314.210949
+          }
+        }
+      ]
+    },
+    "immersion-drying-a": {
+      "package_sha256": "94E0F535AB969070D9BA1490CB3070391C2FD6947ED52EFAD616A98422470A97",
+      "log_sha256": "9ef2012ac2af7d71f2263be1b5a5a0c31f7a0d7415225a970a25073e903ad9d5",
+      "records": [
+        {
+          "marker": "DRYING",
+          "values": {
+            "sourceW": 20000.0,
+            "openW": 7.350389,
+            "distantW": 1.820848,
+            "blockedW": 0.0,
+            "seconds": 1200.0,
+            "suppliedFireJ": 8820.467317,
+            "noFireEvaporatedMl": 189.319291,
+            "fireEvaporatedMl": 190.246839,
+            "noFireShiverJ": 570062.344922,
+            "fireShiverJ": 569619.433467,
+            "retainedMl": 209.753161,
+            "failures": 0.0
+          }
+        }
+      ]
+    }
+  },
+  "qualifications": [
+    "Before-regulation lethal controls are reproduced defects, not survival passes.",
+    "carbine-heat-b allowed late native pursuit/melee; carbine-heat-c freezes state progression while retaining Tick/resources/reload to isolate firearm work.",
+    "Initial fire-cloth cast flag was reset by repeated attack requests; its zero cast counter is invalid. Anima consumption establishes activity; later runs count individual Anima debits.",
+    "pool-wet-b was cancelled after uncommanded attacks; it is excluded.",
+    "Greatsword final full HP can hide earlier thermal damage followed by natural healing.",
+    "These are bounded temperate cases with finite reserves, not universal armor/weather immunity.",
+    "Spellcasting does not automatically deposit the outgoing elemental energy in the caster."
+  ]
+}

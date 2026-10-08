@@ -1,0 +1,42 @@
+{
+  "issue": 140,
+  "license": "CC0, as recorded in the author's SOURCES_AND_CREDITS.txt",
+  "source_attachment": "https://github.com/user-attachments/files/33208310/Caelum_Argenteum_Issue_140_Breathing.zip",
+  "ffmpeg_sha256": "2ce797a0f88d7f067180338fb227f7b1928ea727bd9a4d7a1d022f7c52af71a3",
+  "ffmpeg_version": "ffmpeg version 7.1-essentials_build-www.gyan.dev Copyright (c) 2000-2024 the FFmpeg developers",
+  "processing": "Whole recordings, mono 22050-Hz signed 16-bit PCM; loudness -23 LUFS / -2 dBTP; 20-ms endpoint fades. High level uses 4/3 tempo with pitch preserved. No synthetic or cloned voice.",
+  "clips": {
+    "female": {
+      "source": "HMNBrth_Breathless woman (ID 1345)_BigSoundBank.com.wav",
+      "source_sha256": "2df95a29bc71efed9bf7a0cef50f61896afdeec48655a484753413fffa061239",
+      "runtime": "src/sounds/caelum/breathing/female.wav",
+      "runtime_sha256": "1ddb9fd0edb7c9116fc959d493d57bd1e61b871be18e12f07355eed9602117bd",
+      "duration_seconds": 69.54775510204081,
+      "filters": "aformat=channel_layouts=mono,loudnorm=I=-23:TP=-2:LRA=7,afade=t=in:d=0.02,areverse,afade=t=in:d=0.02,areverse"
+    },
+    "female_high": {
+      "source": "HMNBrth_Breathless woman (ID 1345)_BigSoundBank.com.wav",
+      "source_sha256": "2df95a29bc71efed9bf7a0cef50f61896afdeec48655a484753413fffa061239",
+      "runtime": "src/sounds/caelum/breathing/female_high.wav",
+      "runtime_sha256": "0b2300d9c1ed2bc301ef2684867ac66a251923392b442d967fc4e4fca195a7c4",
+      "duration_seconds": 52.179863945578234,
+      "filters": "aformat=channel_layouts=mono,loudnorm=I=-23:TP=-2:LRA=7,atempo=1.3333333333333333,afade=t=in:d=0.02,areverse,afade=t=in:d=0.02,areverse"
+    },
+    "male": {
+      "source": "man-breathing-deep-breathe-sound.flac",
+      "source_sha256": "dabb2eb4c14b2e65ca1f2363efb7ac9c3bf57bc0a59b1db9e868f2d0413813cb",
+      "runtime": "src/sounds/caelum/breathing/male.wav",
+      "runtime_sha256": "61350765991f9036704d24b43c608bb697ae05091c4721ad1091329da24d5851",
+      "duration_seconds": 12.442766439909297,
+      "filters": "aformat=channel_layouts=mono,loudnorm=I=-23:TP=-2:LRA=7,afade=t=in:d=0.02,areverse,afade=t=in:d=0.02,areverse"
+    },
+    "male_high": {
+      "source": "man-breathing-deep-breathe-sound.flac",
+      "source_sha256": "dabb2eb4c14b2e65ca1f2363efb7ac9c3bf57bc0a59b1db9e868f2d0413813cb",
+      "runtime": "src/sounds/caelum/breathing/male_high.wav",
+      "runtime_sha256": "597ff92b30dd8b0ab81c2d1c97ca1bfb9561e38e38e4112b4c48fa42d3236463",
+      "duration_seconds": 9.33750566893424,
+      "filters": "aformat=channel_layouts=mono,loudnorm=I=-23:TP=-2:LRA=7,atempo=1.3333333333333333,afade=t=in:d=0.02,areverse,afade=t=in:d=0.02,areverse"
+    }
+  }
+}

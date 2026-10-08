@@ -1235,8 +1235,12 @@ class CaelumConstants : Object
     // The design defines a complete air recovery time of eight minutes.
     const AIR_FULL_RECOVERY_SECONDS = 480;
     // Coste por reserva completa, independiente de su capacidad máxima.
-    const AIR_FULL_RECOVERY_HUNGER_COST = 10.0;
-    const AIR_FULL_RECOVERY_THIRST_COST = 0.0;
+    const HEALTH_FULL_RECOVERY_HUNGER_COST = 100.0;
+    const HEALTH_FULL_RECOVERY_THIRST_COST = 50.0;
+    // #140: Aire y Ánima pagan un cuarto de una barra completa de Salud.
+    const RESERVE_RECOVERY_HEALTH_FRACTION = 0.25;
+    const AIR_FULL_RECOVERY_HUNGER_COST = HEALTH_FULL_RECOVERY_HUNGER_COST * RESERVE_RECOVERY_HEALTH_FRACTION;
+    const AIR_FULL_RECOVERY_THIRST_COST = HEALTH_FULL_RECOVERY_THIRST_COST * RESERVE_RECOVERY_HEALTH_FRACTION;
 
     // La falta de respiración empieza en 5 Aire/s y suma 1 Aire/s por cada
     // segundo continuo bajo el agua hasta llegar a 20 Aire/s. La masa y la

@@ -48,5 +48,7 @@ the regeneration itself.
 Expected: shots retain action heat; positive exposure can produce sweat that
 costs actual Thirst and wets clothing. Evaporation continues after exertion;
 wet-clothing cold remains possible. Save/load preserves accumulated state.
-Air recovery itself consumes no Thirst. This check does not presume that the
+For its original 5.1.3 version, Air recovery itself consumes no Thirst. When
+checking in 5.1.4, use #140's explicit quarter-Health recovery costs and distinguish
+them from measured sweating. This outstanding check does not presume that the
 existing per-shot heat is a balanced sustained-fire profile.

@@ -536,8 +536,8 @@ class CaelumPlayerResources : Object play
         double consumptionMultiplier =
             user.DerivedStats.GetHungerThirstConsumptionMultiplier(user.Attributes)
                 / (restFactor * restFactor);
-        double hungerCostPerHealth = 100.0 * consumptionMultiplier / user.CaelumMaximumHealth;
-        double thirstCostPerHealth = 50.0 * consumptionMultiplier / user.CaelumMaximumHealth;
+        double hungerCostPerHealth = CaelumConstants.HEALTH_FULL_RECOVERY_HUNGER_COST * consumptionMultiplier / user.CaelumMaximumHealth;
+        double thirstCostPerHealth = CaelumConstants.HEALTH_FULL_RECOVERY_THIRST_COST * consumptionMultiplier / user.CaelumMaximumHealth;
         double affordableHealth = Min(
             user.CurrentHunger / hungerCostPerHealth,
             user.CurrentThirst / thirstCostPerHealth
@@ -583,15 +583,14 @@ class CaelumPlayerResources : Object play
         double consumptionMultiplier =
             user.DerivedStats.GetHungerThirstConsumptionMultiplier(user.Attributes)
                 / (restFactor * restFactor);
-        double hungerCostPerAir =
-            CaelumConstants.AIR_FULL_RECOVERY_HUNGER_COST
-            * consumptionMultiplier / user.DerivedStats.MaximumAir;
-        double affordableAir = user.CurrentHunger / hungerCostPerAir;
+        double hungerCostPerAir = CaelumRecoveryRules.HungerCost(user.DerivedStats.MaximumAir,consumptionMultiplier);
+        double thirstCostPerAir = CaelumRecoveryRules.ThirstCost(user.DerivedStats.MaximumAir,consumptionMultiplier);
+        double affordableAir = Min(user.CurrentHunger/hungerCostPerAir,user.CurrentThirst/thirstCostPerAir);
         if (affordableAir <= 0.0) return;
 
         double recoveredAir = Min(
             user.DerivedStats.AirRegenerationPerSecond
-                * user.HealthPerformanceMultiplier * restFactor / TICRATE,
+                * user.HealthPerformanceMultiplier * restFactor * CaelumBreathing.ActorFactor(user) / TICRATE,
             user.DerivedStats.MaximumAir - user.CurrentAir
         );
         recoveredAir = Min(recoveredAir, affordableAir);
@@ -603,6 +602,23 @@ class CaelumPlayerResources : Object play
             0.0,
             user.CurrentHunger - recoveredAir * hungerCostPerAir
         );
+        user.CurrentThirst=Max(0.0,user.CurrentThirst-recoveredAir*thirstCostPerAir);
+        user.UpdateSurvivalStates();
+    }
+
+    static void ApplyAnimaRegeneration(CaelumPlayer user)
+    {
+        if(!CaelumPlayerAuthority.CanMutate(user) || user.health<=0 || !user.AnimaResourceInitialized
+            || user.DerivedStats==null || user.DerivedStats.MaximumAnima<=0
+            || user.CurrentAnima>=user.DerivedStats.MaximumAnima)return;
+        double rest=CaelumRestState.IsSeated(user) ? CaelumRestState.ResourceFactor(user) : 1;
+        double consumption=user.DerivedStats.GetHungerThirstConsumptionMultiplier(user.Attributes)/(rest*rest);
+        double gained=CaelumRecoveryRules.Affordable(
+            Min(user.DerivedStats.MaximumAnima-user.CurrentAnima,user.DerivedStats.AnimaRegenerationPerSecond*rest/TICRATE),
+            user.DerivedStats.MaximumAnima,user.CurrentHunger,user.CurrentThirst,consumption);
+        user.CurrentAnima+=gained;
+        user.CurrentHunger=Max(0.0,user.CurrentHunger-gained*CaelumRecoveryRules.HungerCost(user.DerivedStats.MaximumAnima,consumption));
+        user.CurrentThirst=Max(0.0,user.CurrentThirst-gained*CaelumRecoveryRules.ThirstCost(user.DerivedStats.MaximumAnima,consumption));
         user.UpdateSurvivalStates();
     }
 

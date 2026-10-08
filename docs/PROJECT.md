@@ -1,6 +1,32 @@
 # Caelum Argenteum — Project, status and roadmap
 
-Documentation version: **5.1.3** — 2026-10-08.
+Documentation version: **5.1.4** — 2026-10-08.
+
+## 5.1.4 - Thermal coefficients, breathing and recovery (#140)
+
+The author approved retaining the equivalent-exposure physics and linearized
+radiation, adding animal sweat and increased ventilation, and charging player
+Air/Anima recovery one quarter of complete Health-bar Hunger/Thirst costs.
+Stable body/material/air coefficients and anatomical rows are now disposable
+per-actor caches; changing temperatures and moisture still change flux.
+Bull/rat sweat keeps their 17 C comfort and finite individual hydration. Heat
+and fatigue choose the larger 150%/200% breathing level, accelerating Air recovery
+and adding signed sensible respiratory exchange. Human male/female recordings
+are integrated with provenance; animal recordings have not been supplied.
+
+Expanded native validation includes firearm and shivering checks alongside a frozen-baseline comparison
+of 4,480 intervals, 39 effort checks, 26 shelter/water checks, audio channels,
+revision-3 migration, current save/load, native hub return and original-pair
+rollback. No manual author acceptance is inferred. A small dry-solver timing
+shows a lower calculation cost, not measured game FPS. The author suspended
+mass-performance tests; no large-load fluency result is claimed. Later author
+decisions add separate 2/2.5-MET carbine effort, dagger-scale Air and 1-to-5-MET
+shivering with proportional player Hunger. Original CA140-01/02 are accepted;
+follow-up calibration has its own evidence. A 100-kg human with 40-kg T1 heavy armor also survived 20 seconds of running/
+nine actual jumps and 40 seconds of rest without water or thermal damage in
+a 19-20 C climate (peak E +1.73; damage threshold +10.18). This is a bounded
+exertion result, not immunity to overheating. Exact conditions and limitations: assets/validation_514/RESULTS.md.
+#133 is closed and PR #141 merged as dd8e18bd; its manual checks remain pending.
 
 ## 5.1.3 - Functional port city (#133, closure and merge authorized)
 

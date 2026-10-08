@@ -1,0 +1,21 @@
+Breathing audio sources for Caelum Argenteum issue #140
+Original audio files, unmodified.
+
+FEMALE: HMNBrth_Breathless woman (ID 1345)_BigSoundBank.com.wav
+Author: Joseph SARDIN
+Source: https://bigsoundbank.com/breathless-woman-s1345.html
+License: CC0 (public domain).
+Source metadata: 01:10; mono; 48,000 Hz; 24-bit; outdoor recording.
+Equipment: SoundDevices MixPre-3 + Sennheiser ME66.
+Category: Human / Breath (HMNBrth). Sound ID: 1345.
+
+MALE: man-breathing-deep-breathe-sound.flac
+Author: Teekee
+Published by: Creazilla. Original source platform: Freesound.org.
+Source: https://creazilla.com/media/audio/15493689/man-breathing-deep-breathe
+License: CC0 (public domain), as supplied by the project owner from the source page.
+https://creativecommons.org/publicdomain/zero/1.0/
+
+Intended use: increased breathing when characters are tired.
+
+Runtime processing: mono 22050 Hz PCM, loudness normalization, endpoint fades; high-intensity variants use 4/3 tempo without pitch shift. Complete unmodified originals and deterministic generator are retained in the source repository.
