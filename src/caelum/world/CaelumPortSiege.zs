@@ -47,6 +47,9 @@ class CaelumPortSiege : CaelumSiegeEncounter
     Actor DefendingTarget[6];
     int SetupRevision, SetupTick, Groups;
     int TargetingRevision;
+    // Sólo la revisión geométrica 3 tiene fase de paz y viviendas.
+    bool SiegeStarted;
+    Array<CaelumPortDefender> CityPathQueue;
     CaelumSiegeReinforcements Reinforcements;
 
     override bool AllowLateRegistration()
@@ -74,17 +77,24 @@ class CaelumPortSiege : CaelumSiegeEncounter
         return entry;
     }
 
-    void Deploy()
+    void Deploy(bool attackOnly=false)
     {
+        bool city=CaelumCityData.Enabled();
+        bool peaceful=city && !attackOnly;
         EnsureReinforcements(true);
         // La revisión se confirma una vez, antes del sellado y activación.
         for(int lane=0;lane<6;lane++)
         {
             double x=CaelumPortData.GateX(lane);
-            let exitNode=CaelumSiegeRouteNode(Spawn("CaelumSiegeRouteNode",(x,CaelumPortData.ExitY(),0)));
-            exitNode.IsExit=true;exitNode.A_SetSize(CaelumPortData.ROUTE_RADIUS,1);Exits.Push(exitNode);
-            let gate=CaelumBreakableGate(Spawn("CaelumBreakableGate",(x,CaelumPortData.GateY(),0)));
-            gate.args[1]=lane%3;gate.args[2]=1;gate.InitializeGate();Gates.Push(gate);
+            if(!attackOnly)
+            {
+                let exitNode=CaelumSiegeRouteNode(Spawn("CaelumSiegeRouteNode",(x,CaelumPortData.ExitY(),0)));
+                exitNode.IsExit=true;exitNode.A_SetSize(CaelumPortData.ROUTE_RADIUS,1);Exits.Push(exitNode);
+                let gate=CaelumBreakableGate(Spawn("CaelumBreakableGate",(x,CaelumPortData.GateY(),0)));
+                gate.args[1]=lane%3;gate.args[2]=1;gate.InitializeGate();Gates.Push(gate);
+            }
+            if(peaceful)continue;
+            let gate=Gates[lane];
             let ram=CaelumBatteringRam(Spawn("CaelumBatteringRam",(x,CaelumPortData.RamY(),0)));
             ram.Angle=CaelumPortData.AttackAngle();ram.Large=lane==5;ram.InitializeRam();RegisterMachine(ram);
             for(int crew=0;crew<ram.RequiredCrew;crew++)
@@ -97,7 +107,7 @@ class CaelumPortSiege : CaelumSiegeEncounter
             ram.SetRoute(gate,CaelumPortData.AttackAngle());
             ram.AddRoutePoint((x,CaelumPortData.GateY()+CaelumPortData.OutsideSign()*CaelumRamData.TRIAL_CONTACT_DISTANCE*ram.SizeFactor,0));
         }
-        if(CaelumPortData.IsSouth())for(int extra=0;extra<2;extra++)
+        if(!attackOnly && CaelumPortData.IsSouth())for(int extra=0;extra<2;extra++)
         {
             let gate=CaelumBreakableGate(Spawn("CaelumBreakableGate",CaelumPortData.ExtraGate(extra)));
             gate.Angle=CaelumPortData.ExtraGateAngle(extra);gate.args[1]=1;gate.args[2]=1;
@@ -106,20 +116,24 @@ class CaelumPortSiege : CaelumSiegeEncounter
         for(int gunIndex=0;gunIndex<CaelumPortData.GunCount();gunIndex++)
         {
             bool defending=gunIndex>=6;
+            if(attackOnly && defending)continue;
+            if(peaceful && !defending){Guns.Push(null);continue;}
             int lane=defending ? (gunIndex-6)/2 : gunIndex;
             vector3 spot=CaelumPortData.GunPosition(gunIndex);
             if(CaelumPortData.IsSouth())lane=NearestLane(spot.X);
             let gun=CaelumCannon(Spawn("CaelumCannon",spot));
             gun.Angle=CaelumPortData.GunAngle(gunIndex);gun.InitializeCannon(defending);gun.UnlimitedAmmunition=true;
             if(!defending)RegisterMachine(gun);
-            Guns.Push(gun);
+            if(attackOnly)Guns[gunIndex]=gun;else Guns.Push(gun);
             for(int crew=0;crew<CaelumCannonData.CREW;crew++)
             {
                 vector3 station=spot+CaelumPortData.OperatorOffset(gunIndex,crew);
                 if(defending)
                 {
-                    let soldier=CaelumPortDefender(Spawn("CaelumPortDefender",station));
+                    int identity=Defenders.Size();
+                    let soldier=CaelumPortDefender(Spawn("CaelumPortDefender",city ? CaelumCityData.HomePosition(identity) : station));
                     soldier.Port=self;soldier.Gun=gun;soldier.Station=station;soldier.Lane=lane;
+                    if(city)soldier.AssignHome(identity);
                     Defenders.Push(soldier);gun.AssignOperator(soldier);
                 }
                 else
@@ -130,24 +144,32 @@ class CaelumPortSiege : CaelumSiegeEncounter
             }
         }
         int infantry=0;
-        while(!Reinforcements.Enabled && Attackers.Size()<CaelumPortData.MandingaCount())
+        while(!peaceful && !Reinforcements.Enabled && Attackers.Size()<CaelumPortData.MandingaCount())
         {
             vector3 spot=CaelumPortData.FormationPosition(infantry);
             AddDemon(spot,NearestLane(spot.X));infantry++;
         }
         int guard=0;
-        while(Defenders.Size()<CaelumPortData.DefenderCount())
+        while(!attackOnly && Defenders.Size()<CaelumPortData.DefenderCount())
         {
             int lane=guard%6;
-            vector3 station=CaelumPortData.GuardPosition(guard);
-            let soldier=CaelumPortDefender(Spawn("CaelumPortDefender",station));
+            vector3 station=city ? CaelumCityData.GuardStation(guard) : CaelumPortData.GuardPosition(guard);
+            int identity=Defenders.Size();
+            let soldier=CaelumPortDefender(Spawn("CaelumPortDefender",city ? CaelumCityData.HomePosition(identity) : station));
+            if(city)soldier.AssignHome(identity);
             soldier.Port=self;soldier.Lane=lane;soldier.Station=station;Defenders.Push(soldier);guard++;
         }
+        SetupRevision=city ? CaelumCityData.LAYOUT_REVISION : int(CaelumPortData.LayoutRevision());SetupTick=level.time;
+        if(peaceful)
+        {
+            Console.Printf("CITY133 housed=%d attackers=0 revision=%d",Defenders.Size(),SetupRevision);
+            return;
+        }
+        SiegeStarted=true;
         let commander=CaelumPortCommander(Spawn("CaelumPortCommander",CaelumPortData.BossPosition()));
         Boss=RegisterAttacker(commander);Boss.Lane=NearestLane(commander.Pos.X);Boss.ExitNode=Exits[Boss.Lane];
         if(Reinforcements.Enabled)Reinforcements.Tick(self);
         else { Reinforcements.Successful=Attackers.Size()-1;Reinforcements.RefreshLiving(self); }
-        SetupRevision=int(CaelumPortData.LayoutRevision());SetupTick=level.time;
         Console.Printf("PORT16 deployed Mandingas=%d commander=1 defenders=%d hostileMachines=%d guns=%d",Attackers.Size()-1,Defenders.Size(),Machines.Size(),Guns.Size());
     }
 
@@ -418,7 +440,9 @@ class CaelumPortSiege : CaelumSiegeEncounter
 
     static double PhysicalCost(CaelumCombatActor body)
     {
-        if(body is "CaelumPortDefender")return CaelumWeaponCatalogue.GetPrimaryAirCost(CaelumConstants.CATALOGUE_WEAPON_SWORD);
+        let soldier=CaelumPortDefender(body);
+        if(soldier!=null)return CaelumWeaponCatalogue.GetPrimaryAirCost(soldier.Carbine!=null && soldier.Carbine.Held
+            ? CaelumConstants.CATALOGUE_WEAPON_CARBINE : CaelumConstants.CATALOGUE_WEAPON_SWORD);
         if(body is "CaelumZupayColossus")return CaelumAttackRules.SlamAir();
         return CaelumWeaponCatalogue.GetPrimaryAirCost(CaelumConstants.CATALOGUE_WEAPON_MACHETE);
     }
@@ -493,9 +517,22 @@ class CaelumPortSiege : CaelumSiegeEncounter
 
     static void WalkTo(CaelumCombatActor body, Actor goal, vector3 point)
     {
-        goal.SetOrigin(point,false);body.target=goal;body.LastEnemy=null;
         let soldier=CaelumPortDefender(body);
-        if(soldier!=null && soldier.FollowingCrewRoute)
+        vector3 originalPoint=point;
+        vector3 groundApproach=body.Pos;
+        if(soldier!=null && soldier.HomeRevision>0)
+            groundApproach=CaelumCityRoutes.Point(soldier.HomeIdentity,CaelumCityRoutes.Count(soldier.HomeIdentity)-1);
+        bool crewGround=soldier!=null && soldier.HomeRevision>0 && soldier.FollowingCrewRoute
+            && body.FloorZ<=groundApproach.Z;
+        bool cityRoute=soldier!=null && soldier.HomeRevision>0 && (!soldier.DeploymentComplete || soldier.ReturningFromYield || crewGround);
+        if(cityRoute)
+        {
+            if(crewGround)soldier.RequestApproachPassage(groundApproach);
+            if(soldier.CityNavigation==null)soldier.CityNavigation=new("CaelumCityNavigation");
+            vector2 next=soldier.CityNavigation.Next(soldier,point);point.X=next.X;point.Y=next.Y;
+        }
+        goal.SetOrigin(point,false);body.target=goal;body.LastEnemy=null;
+        if(soldier!=null && (soldier.FollowingCrewRoute || soldier.ReturningFromYield || (soldier.HomeRevision>0 && !soldier.DeploymentComplete)))
         {
             // Los relevos siguen cada escalón con colisión nativa, a la misma
             // velocidad y cadencia del estado See. No se modifica Z ni se salta
@@ -504,9 +541,30 @@ class CaelumPortSiege : CaelumSiegeEncounter
             if(delta.Length()>0)
             {
                 body.Angle=VectorAngle(delta.X,delta.Y);
-                if(body.ThermalTryMove(body.Pos.XY+delta.Unit()*Min(body.Speed,delta.Length())))return;
+                vector2 step=delta.Unit()*Min(body.Speed,delta.Length());
+                bool groundStep=true;
+                if(cityRoute)
+                {
+                    FCheckPosition fit;
+                    groundStep=body.CheckPosition(body.Pos.XY+step,false,fit)
+                        && fit.floorz<=Max(originalPoint.Z,body.FloorZ);
+                }
+                if(groundStep && body.ThermalTryMove(body.Pos.XY+step))return;
+                Actor obstruction=body.BlockingMobj;
+                let stopped=CaelumPortDefender(obstruction);
+                if(cityRoute)
+                {
+                    if(stopped!=null)stopped.RequestFormationPassage(soldier.YieldFor!=null ? soldier.YieldFor : soldier);
+                    soldier.CityNavigation.Request(soldier,originalPoint);
+                    return;
+                }
             }
-            body.ThermalChase(null,null,CHF_DONTLOOKALLAROUND|CHF_NORANDOMTURN|CHF_NOPOSTATTACKTURN);
+            // En las calles, conservar un rumbo de esquiva indefinidamente
+            // hace alejarse al último ocupante cuando otro cruza su waypoint.
+            // La ruta de escaleras aceptada conserva su cadencia original.
+            int flags=CHF_DONTLOOKALLAROUND;
+            if(soldier.HomeRevision==0 || soldier.DeploymentComplete)flags|=CHF_NORANDOMTURN|CHF_NOPOSTATTACKTURN;
+            body.ThermalChase(null,null,flags);
             return;
         }
         body.ThermalChase(null,null,CHF_DONTLOOKALLAROUND);
@@ -518,11 +576,41 @@ class CaelumPortSiege : CaelumSiegeEncounter
         let entry=body.SiegeCombatant;
         // El menú nativo no pausa el mundo; sólo este guardia detiene su ruta.
         if(soldier!=null && soldier.bInConversation)return true;
+        if(soldier!=null && soldier.HomeRevision>0 && soldier.Port!=null && !soldier.Port.SiegeStarted)return true;
         CaelumPortSiege port=soldier!=null ? soldier.Port : entry!=null ? CaelumPortSiege(entry.Encounter) : null;
         if(port==null || !port.RosterSealed)return false;
         if(body.PulseResourceRecovery())return true;
         if(body.health<=0 || body.ForcedSleepTics>0 || body.CombatLucidityPhysicalStunRemaining>0)return true;
-        if(port.Victory){body.target=null;return true;}
+        if(soldier!=null && soldier.ReturningFromYield)
+        {
+            Actor threat=port.DefendingTarget[soldier.Lane];
+            bool immediate=threat!=null && threat.health>0 && soldier.Distance2D(threat)<=soldier.MeleeRange+threat.Radius && soldier.CheckSight(threat);
+            if(!port.Victory && !immediate && soldier.Carbine!=null && soldier.Carbine.Attack(soldier,threat))return true;
+            if(!immediate && soldier.FormationPassage())return true;
+        }
+        if(soldier!=null && soldier.HomeRevision>0 && !soldier.DeploymentComplete)
+        {
+            Actor threat=port.DefendingTarget[soldier.Lane];
+            bool immediate=threat!=null && threat.health>0 && soldier.Distance2D(threat)<=soldier.MeleeRange+threat.Radius && soldier.CheckSight(threat);
+            if(soldier.Carbine!=null)soldier.Carbine.Select(!immediate);
+            if(!port.Victory && !immediate && soldier.Carbine!=null && soldier.Carbine.Attack(soldier,threat))return true;
+            if(!immediate && soldier.AdvanceDeployment())return true;
+        }
+        if(port.Victory)
+        {
+            // Ganar antes de llegar no cancela la salida física ni deja a los
+            // operadores a mitad de la escalera. Los cañones siguen desarmados.
+            if(soldier!=null && soldier.HomeRevision>0 && soldier.FollowingCrewRoute)
+            {
+                vector3 point=soldier.CrewPost();
+                if(soldier.FollowingCrewRoute)
+                {
+                    if(soldier.NavigationTarget==null)soldier.NavigationTarget=Actor.Spawn("CaelumSewerEscapeTarget",point);
+                    WalkTo(soldier,soldier.NavigationTarget,point);return true;
+                }
+            }
+            body.target=null;return true;
+        }
         Actor victim;Actor goal;vector3 post;bool hasPost=false;
         if(soldier!=null)
         {
@@ -544,10 +632,12 @@ class CaelumPortSiege : CaelumSiegeEncounter
             goal=entry.NavigationTarget;
         }
         bool nearEnemy=victim!=null && victim.health>0 && body.Distance2D(victim)<=body.MeleeRange+victim.Radius;
+        if(soldier!=null && soldier.Carbine!=null)soldier.Carbine.Select(!nearEnemy);
         if(hasPost && !nearEnemy && (body.Pos-post).Length()>body.Radius)
         {WalkTo(body,goal,post);return true;}
         if(victim==null || victim.health<=0){body.target=null;return true;}
         body.target=victim;
+        if(soldier!=null && soldier.Carbine!=null && !nearEnemy && soldier.Carbine.Attack(soldier,victim))return true;
         bool canCast=soldier==null;
         if(!body.InStateSequence(body.CurState,body.SeeState))body.SetState(body.SeeState);
         else if(hasPost && !nearEnemy)
@@ -582,6 +672,13 @@ class CaelumPortSiege : CaelumSiegeEncounter
     void Calendar(CaelumPlayer user)
     {
         let agenda=CaelumScheduleState.Get(user,true);if(agenda==null)return;
+        if(CaelumCityData.Enabled() && !Victory)
+        {
+            let scheduled=agenda.Add("port16_siege_start",CaelumScheduleRules.SIEGE,"CA_PORT_OBJECTIVES","MAP06",
+                CaelumCityWorld.SiegeDay(),CaelumCityData.SIEGE_HOUR*CaelumWorldClock.TicsPerHour(),0,1,"port16_siege");
+            if(scheduled!=null)scheduled.Value=1;
+            CaelumScheduleState.Sync(user);return;
+        }
         String key=Victory ? "port16_siege_end" : "port16_siege_start";
         if(agenda.FindKey(key)!=null)return;
         let e=agenda.AddAfter(user,key,CaelumScheduleRules.SIEGE,Victory ? "CA_PORT_AFTER" : "CA_PORT_OBJECTIVES","MAP06",0,0,1,"port16_siege");
@@ -591,7 +688,25 @@ class CaelumPortSiege : CaelumSiegeEncounter
 
     override void Tick()
     {
-        if(SetupRevision==0){Deploy();return;}
+        // Cola justa: como máximo una búsqueda local por tic, incluso cuando
+        // centenares de estados See comparten la misma fase de animación.
+        if(CityPathQueue.Size()>0)
+        {
+            let waiting=CityPathQueue[0];CityPathQueue.Delete(0);
+            if(waiting!=null && waiting.CityNavigation!=null)
+            {
+                waiting.CityNavigation.Queued=false;
+                if(waiting.health>0 && (!waiting.DeploymentComplete || waiting.ReturningFromYield || waiting.FollowingCrewRoute))waiting.CityNavigation.Build(waiting);
+            }
+        }
+        if(SetupRevision==0){if(CaelumCityWorld.Prepare())Deploy();return;}
+        if(CaelumCityData.Enabled() && !SiegeStarted)
+        {
+            for(int i=0;i<MAXPLAYERS;i++)if(playeringame[i] && players[i].mo!=null)Calendar(CaelumPlayer(players[i].mo));
+            RefreshDensity();
+            if(CaelumCityWorld.SiegeDue())Deploy(true);
+            return;
+        }
         EnsureReinforcements();
         RefreshDensity();
         if(!RosterSealed)

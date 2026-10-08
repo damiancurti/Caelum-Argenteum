@@ -2228,8 +2228,44 @@ class CaelumJournalOverlay : EventHandler
             DrawCenteredText(SmallFont, Font.CR_GRAY, 320, 126, StringTable.Localize("CA_TABLE_RESERVES",false));
     }
 
+    ui void DrawCityTrade(CaelumPlayer user)
+    {
+        let trade=user.CityTrade;
+        Screen.Dim(0x05070A,0.92,0,0,Screen.GetWidth(),Screen.GetHeight());
+        DrawPanel(16,12,608,336);
+        DrawCenteredText(TitleFont,Font.CR_GOLD,320,20,StringTable.Localize(user.PalomoMerchantTitleKey,false));
+        DrawTextLine(TextFont,Font.CR_GOLD,42,60,StringTable.Localize(trade.Selling ? "CA_MERCHANT_MODE_SELL" : "CA_MERCHANT_MODE_BUY",false));
+        DrawTextLine(InventoryFont,Font.CR_WHITE,42,86,String.Format("%s: %.0f c",StringTable.Localize("CA_PALOMO_MERCHANT_YOUR_MONEY",false),user.HUDTotalMoneyCopperValue));
+        DrawTextLine(InventoryFont,Font.CR_WHITE,355,86,String.Format("%s: %d c",StringTable.Localize("CA_MERCHANT_CASH",false),user.PalomoMerchantWalletCopper));
+        DrawTextLine(SmallFont,Font.CR_GRAY,42,111,StringTable.Localize("CA_PALOMO_MERCHANT_ITEM",false));
+        DrawTextLine(SmallFont,Font.CR_GRAY,461,111,StringTable.Localize("CA_PALOMO_MERCHANT_STOCK",false));
+        DrawTextLine(SmallFont,Font.CR_GRAY,538,111,StringTable.Localize("CA_PALOMO_MERCHANT_UNIT",false));
+        int first=(trade.Selection/5)*5;
+        for(int i=first;i<Min(first+5,trade.Rows.Size());i++)
+        {
+            double y=133+(i-first)*28;
+            int color=i==trade.Selection ? Font.CR_GOLD : Font.CR_WHITE;
+            String label=(i==trade.Selection ? "> " : "  ")..trade.Names[i];
+            // Dividir por anchura real de fuente, sin perder talla ni esencia.
+            int cut=label.Length();
+            while(cut>0 && SmallFont.StringWidth(label.Left(cut))>400)cut--;
+            if(cut<int(label.Length()))while(cut>0 && label.Mid(cut,1)!=" ")cut--;
+            DrawTextLine(SmallFont,color,42,y,label.Left(cut));
+            if(cut<int(label.Length()))DrawTextLine(SmallFont,color,54,y+12,label.Mid(cut+1));
+            DrawTextLine(InventoryFont,color,480,y,String.Format("%d",trade.Quantities[i]));
+            DrawTextLine(InventoryFont,color,538,y,String.Format("%d c",trade.Prices[i]));
+        }
+        if(trade.Rows.Size()==0)DrawCenteredText(InventoryFont,Font.CR_GRAY,320,160,StringTable.Localize("CA_PALOMO_MERCHANT_NOTHING_TO_SELL",false));
+        DrawTextLine(InventoryFont,Font.CR_CYAN,42,280,String.Format("%s: %d | %s: %d c",StringTable.Localize("CA_PALOMO_MERCHANT_QUANTITY",false),user.PalomoMerchantSelectedQuantity,
+            StringTable.Localize("CA_PALOMO_MERCHANT_TOTAL",false),user.PalomoMerchantSelectedLotPrice));
+        DrawTextLine(SmallFont,Font.CR_GRAY,543,280,String.Format("%d/%d",trade.Rows.Size()==0 ? 0 : trade.Selection+1,trade.Rows.Size()));
+        DrawCenteredText(InventoryFont,Font.CR_GOLD,320,306,StringTable.Localize(GetPalomoMerchantActionKey(user.LastPalomoMerchantAction),false));
+        DrawCenteredText(SmallFont,Font.CR_GRAY,320,329,StringTable.Localize("CA_REP_TRIAL_TRADE_HELP",false));
+    }
+
     ui void DrawPalomoMerchant(CaelumPlayer localPlayer)
     {
+        if(localPlayer.CityTrade!=null){DrawCityTrade(localPlayer);return;}
         bool legacyMerchant = localPlayer.PalomoMerchantTitleKey.Length() == 0
             || localPlayer.PalomoMerchantTitleKey == "CA_PALOMO_MERCHANT_TITLE";
         Screen.Dim(0x05070A, 0.92, 0, 0,

@@ -467,7 +467,7 @@ class CaelumDiningWorld : Object play
     {
         // MAP03 queda reservado a la galería, incluso desde el diagnóstico.
         if(level.MapName=="MAP03")return true;
-        if(level.MapName=="MAP06")return Place(601,(-800,800,0),1);
+        if(level.MapName=="MAP06")return CaelumCityData.Enabled() ? CaelumCityWorld.Prepare() : Place(601,(-800,800,0),1);
         if(level.MapName=="MAP07")return Place(701,(-256,1280,0),1);
         if(CaelumMazeLayout.IsCurrent())
         {

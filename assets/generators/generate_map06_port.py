@@ -3,6 +3,7 @@ import json
 from pathlib import Path
 from generate_coastal_trials import generate
 from generate_port_city import expand_city
+import generate_city_interiors as interiors
 
 ROOT = Path(__file__).resolve().parents[2]
 D = json.loads((ROOT/'assets/map06_port/LAYOUT.json').read_text(encoding='utf-8'))
@@ -13,7 +14,9 @@ def extend(port):
     port.room(*S['field_bounds'], flat='CMGR03', wall='CMST01')
     port.room(*S['field_boundary'],floor=D['wall_height'],flat='CMST01')
     expand_city(port)
-    port.prop(31050, *S['controller'][:2], tid=46000,args=(S['revision'],))
+    interiors.apply(port, json.loads((ROOT/'assets/map06_port/CITY.json').read_text(encoding='utf-8')))
+    interiors.runtime(json.loads((ROOT/'assets/map06_port/CITY.json').read_text(encoding='utf-8')),port,S)
+    port.prop(31050, *S['controller'][:2], tid=46000,args=(interiors.DATA['constants']['LAYOUT_REVISION'],))
     port.prop(30987, *D['resource_bed'][:2])
     port.prop(18004, *D['resource_workbench'][:2])
     port.prop(31051, *D['completion_position'][:2])
@@ -83,3 +86,4 @@ def runtime():
 if __name__ == '__main__':
     generate(ROOT/'src/maps', port_extension=extend, include_coast=False)
     runtime()
+    interiors.runtime(json.loads((ROOT/'assets/map06_port/CITY.json').read_text(encoding='utf-8')))
