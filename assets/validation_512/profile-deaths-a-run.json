@@ -1,0 +1,72 @@
+﻿{
+    "label":  "profile-deaths-a",
+    "started_utc":  "2026-10-08T01:14:15.5470597Z",
+    "engine":  "C:\\Program Files (x86)\\GZDoom\\gzdoom.exe",
+    "engine_sha256":  "EC706C2EA1EF946EEC13BE7B1B461DF8D52EFCD47CAA6C056ED0E0257F7F9FFA",
+    "iwad_sha256":  "10D67824B11025DDD9198E8CFC87CA335EE6E2D3E63AF4180FA9B8A471893255",
+    "package_sha256":  "B150B629631B7FAB707E9BD55A5BF858D59063A857AA69019AD4A642957A7810",
+    "addon_sha256":  "2DCAB5E2E77A356E7F55C75005A0868A47F5BF1710906BB2AAC8E5AB1FEA9FB2",
+    "initial_config":  "[LastRun]\nVersion=225\n[GlobalSettings]\nvid_preferbackend=1\nvid_vsync=false\nvid_maxfps=60\nvid_activeinbackground=true\ni_pauseinbackground=false\nvid_lowerinbackground=false\ni_soundinbackground=true\ncl_capfps=false\nvid_fullscreen=false\nvid_defwidth=1280\nwin_w=1296\nwin_h=759\nwin_maximized=false\nvid_defheight=720\nuse_mouse=false\nsnd_mastervolume=0.05\nlanguage=enu\n",
+    "arguments":  [
+                      "-noautoload",
+                      "-nomouse",
+                      "-iwad",
+                      "\"C:\\Program Files (x86)\\Steam\\steamapps\\common\\ultimate doom\\base\\doom2\\DOOM2.WAD\"",
+                      "-file",
+                      "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue132\\profile/baseline.pk3\"",
+                      "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue132\\baseline-observer.pk3\"",
+                      "-config",
+                      "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue132\\profile-deaths-a.ini\"",
+                      "-savedir",
+                      "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue132\"",
+                      "-width",
+                      1280,
+                      "-height",
+                      720,
+                      "-window",
+                      "-rngseed",
+                      "116",
+                      "-skill",
+                      "2",
+                      "+logfile",
+                      "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue132\\profile-deaths-a.txt\"",
+                      "+con_notifytime",
+                      "0",
+                      "+set",
+                      "ca_test_siege_reinforcements",
+                      0,
+                      "-loadgame",
+                      "baseline-pre-collapse.zds",
+                      "+exec",
+                      "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue132\\profile-deaths-a-exec.cfg\""
+                  ],
+    "benchmark_offset":  24754,
+    "command_script":  "wait 1890; quit\n",
+    "cpu":  [
+                {
+                    "Name":  "AMD Ryzen 9 5950X 16-Core Processor            ",
+                    "NumberOfCores":  16,
+                    "NumberOfLogicalProcessors":  32
+                }
+            ],
+    "gpu":  [
+                {
+                    "Name":  "Parsec Virtual Display Adapter",
+                    "DriverVersion":  "0.45.0.0"
+                },
+                {
+                    "Name":  "NVIDIA GeForce RTX 3070 Ti",
+                    "DriverVersion":  "32.0.15.7688"
+                }
+            ],
+    "os":  {
+               "Caption":  "Microsoft Windows 11 Pro",
+               "Version":  "10.0.26200",
+               "TotalVisibleMemorySize":  33475240
+           },
+    "pid":  39424,
+    "qpc_ms":  1305477447.5789,
+    "epoch_ms":  1791422057323.2136,
+    "completed_utc":  "2026-10-08T01:15:46.7401582Z",
+    "expected":  "CA132 DEATH COMPLETE"
+}

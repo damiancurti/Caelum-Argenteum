@@ -17,8 +17,12 @@ enter `ca_test_siege_reinforcements true`, then `map MAP06` for a fresh test.
 Set the switch to `false` before a fresh map to reproduce the full-army setup.
 The choice is saved per encounter; loading an existing army never removes it.
 See the [contract](docs/SYSTEMS.md#staged-siege-reinforcement-test-132).
-Native measurement and author acceptance remain separate; this experiment does
-not adopt a permanent encounter balance or change the automatic 500-combatant AI.
+The [native measurements](assets/validation_512/RESULTS.md) include 22 lifecycle
+assertions, 52 save comparisons and complete-budget/presentation captures.
+Arrival improves substantially; a short foreground cap control reaches 53.1 FPS
+and 34.8 tics/s, but long-run stability is not established. Author acceptance is CA132-01 in
+pending_test.txt. This experiment does not adopt permanent encounter balance
+or change the automatic 500-combatant AI.
 
 Issue [#131](https://github.com/damiancurti/Caelum-Argenteum/issues/131) adds a
 signed thermal exposure bar directly above Load. Constitution now reduces

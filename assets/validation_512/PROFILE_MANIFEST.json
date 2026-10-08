@@ -1,0 +1,369 @@
+{
+  "scope": "Sample every 37th tic. Exclusive time subtracts instrumented children only; isolated copies, never frame-rate comparisons.",
+  "packages": {
+    "baseline": {
+      "sha256": "b150b629631b7fab707e9bd55a5bf858d59063a857aa69019ad4a642957a7810",
+      "methods": [
+        {
+          "class": "CaelumActorProjectile",
+          "method": "Tick",
+          "category": 27,
+          "signature": "override void Tick()"
+        },
+        {
+          "class": "CaelumCombatActor",
+          "method": "ResourceRecoveryActive",
+          "category": 7,
+          "signature": "bool ResourceRecoveryActive()"
+        },
+        {
+          "class": "CaelumCombatActor",
+          "method": "PulseResourceRecovery",
+          "category": 6,
+          "signature": "bool PulseResourceRecovery()"
+        },
+        {
+          "class": "CaelumCombatActor",
+          "method": "UpdateActorOffensiveStatistics",
+          "category": 5,
+          "signature": "void UpdateActorOffensiveStatistics()"
+        },
+        {
+          "class": "CaelumCombatActor",
+          "method": "UpdateImpactContactLatch",
+          "category": 3,
+          "signature": "void UpdateImpactContactLatch()"
+        },
+        {
+          "class": "CaelumCombatActor",
+          "method": "CollidedWith",
+          "category": 2,
+          "signature": "override void CollidedWith(Actor other, bool passive)"
+        },
+        {
+          "class": "CaelumCombatActor",
+          "method": "UpdateCombatHealthEffects",
+          "category": 4,
+          "signature": "void UpdateCombatHealthEffects()"
+        },
+        {
+          "class": "CaelumCombatActor",
+          "method": "Tick",
+          "category": 0,
+          "signature": "override void Tick()"
+        },
+        {
+          "class": "CaelumCombatActor",
+          "method": "CA121NativeTick",
+          "category": 1,
+          "signature": "void CA121NativeTick()"
+        },
+        {
+          "class": "CaelumElementalStatus",
+          "method": "Tick",
+          "category": 24,
+          "signature": "play void Tick(Actor owner)"
+        },
+        {
+          "class": "CaelumActorSimpleElementalProjectile",
+          "method": "Tick",
+          "category": 28,
+          "signature": "override void Tick()"
+        },
+        {
+          "class": "CaelumPlayer",
+          "method": "Tick",
+          "category": 23,
+          "signature": "override void Tick()"
+        },
+        {
+          "class": "CaelumThermalEnvironment",
+          "method": "Sample",
+          "category": 34,
+          "signature": "static bool Sample(Actor body,CaelumThermalState thermal,double localMotionMps=0)"
+        },
+        {
+          "class": "CaelumThermalRuntime",
+          "method": "NPCStep",
+          "category": 32,
+          "signature": "static void NPCStep(CaelumCombatActor npc,bool force=false)"
+        },
+        {
+          "class": "CaelumThermalService",
+          "method": "Advance",
+          "category": 33,
+          "signature": "static void Advance(Actor body,double worldSeconds,double realSeconds, double activityWatts=0,double magicWatts=0,double fireWatts=0)"
+        },
+        {
+          "class": "CaelumThermalService",
+          "method": "Integrate",
+          "category": 35,
+          "signature": "static double Integrate(CaelumThermalState thermal,double worldSeconds,double realSeconds, double activityWatts=0,double magicWatts=0,double fireWatts=0,double logicalActivitySeconds=0)"
+        },
+        {
+          "class": "CaelumCannon",
+          "method": "Tick",
+          "category": 21,
+          "signature": "override void Tick()"
+        },
+        {
+          "class": "CaelumCannonProjectile",
+          "method": "Tick",
+          "category": 22,
+          "signature": "override void Tick()"
+        },
+        {
+          "class": "CaelumPortSiege",
+          "method": "ElectCommands",
+          "category": 11,
+          "signature": "void ElectCommands()"
+        },
+        {
+          "class": "CaelumPortSiege",
+          "method": "RefreshTargets",
+          "category": 13,
+          "signature": "void RefreshTargets()"
+        },
+        {
+          "class": "CaelumPortSiege",
+          "method": "AttackerTarget",
+          "category": 10,
+          "signature": "Actor AttackerTarget(CaelumSiegeCombatant entry)"
+        },
+        {
+          "class": "CaelumPortSiege",
+          "method": "RefillCrews",
+          "category": 14,
+          "signature": "void RefillCrews()"
+        },
+        {
+          "class": "CaelumPortSiege",
+          "method": "CannonTarget",
+          "category": 16,
+          "signature": "Actor CannonTarget(CaelumCannon gun)"
+        },
+        {
+          "class": "CaelumPortSiege",
+          "method": "OrderGuns",
+          "category": 15,
+          "signature": "void OrderGuns()"
+        },
+        {
+          "class": "CaelumPortSiege",
+          "method": "WalkTo",
+          "category": 17,
+          "signature": "static void WalkTo(CaelumCombatActor body, Actor goal, vector3 point)"
+        },
+        {
+          "class": "CaelumPortSiege",
+          "method": "Pulse",
+          "category": 9,
+          "signature": "static bool Pulse(CaelumCombatActor body)"
+        },
+        {
+          "class": "CaelumPortSiege",
+          "method": "Tick",
+          "category": 18,
+          "signature": "override void Tick()"
+        },
+        {
+          "class": "CaelumHostileMachine",
+          "method": "ObserveGuards",
+          "category": 20,
+          "signature": "void ObserveGuards()"
+        }
+      ]
+    },
+    "production": {
+      "sha256": "8fc0a2314a8d8a168a24e929c87d4df532a3fa36de819f12c2d3d3993031d9bc",
+      "methods": [
+        {
+          "class": "CaelumActorProjectile",
+          "method": "Tick",
+          "category": 27,
+          "signature": "override void Tick()"
+        },
+        {
+          "class": "CaelumCombatActor",
+          "method": "ResourceRecoveryActive",
+          "category": 7,
+          "signature": "bool ResourceRecoveryActive()"
+        },
+        {
+          "class": "CaelumCombatActor",
+          "method": "PulseResourceRecovery",
+          "category": 6,
+          "signature": "bool PulseResourceRecovery()"
+        },
+        {
+          "class": "CaelumCombatActor",
+          "method": "UpdateActorOffensiveStatistics",
+          "category": 5,
+          "signature": "void UpdateActorOffensiveStatistics()"
+        },
+        {
+          "class": "CaelumCombatActor",
+          "method": "UpdateImpactContactLatch",
+          "category": 3,
+          "signature": "void UpdateImpactContactLatch()"
+        },
+        {
+          "class": "CaelumCombatActor",
+          "method": "CollidedWith",
+          "category": 2,
+          "signature": "override void CollidedWith(Actor other, bool passive)"
+        },
+        {
+          "class": "CaelumCombatActor",
+          "method": "UpdateCombatHealthEffects",
+          "category": 4,
+          "signature": "void UpdateCombatHealthEffects()"
+        },
+        {
+          "class": "CaelumCombatActor",
+          "method": "Tick",
+          "category": 0,
+          "signature": "override void Tick()"
+        },
+        {
+          "class": "CaelumCombatActor",
+          "method": "CA121NativeTick",
+          "category": 1,
+          "signature": "void CA121NativeTick()"
+        },
+        {
+          "class": "CaelumElementalStatus",
+          "method": "Tick",
+          "category": 24,
+          "signature": "play void Tick(Actor owner)"
+        },
+        {
+          "class": "CaelumActorSimpleElementalProjectile",
+          "method": "Tick",
+          "category": 28,
+          "signature": "override void Tick()"
+        },
+        {
+          "class": "CaelumPlayer",
+          "method": "Tick",
+          "category": 23,
+          "signature": "override void Tick()"
+        },
+        {
+          "class": "CaelumThermalEnvironment",
+          "method": "Sample",
+          "category": 34,
+          "signature": "static bool Sample(Actor body,CaelumThermalState thermal,double localMotionMps=0)"
+        },
+        {
+          "class": "CaelumThermalRuntime",
+          "method": "NPCStep",
+          "category": 32,
+          "signature": "static void NPCStep(CaelumCombatActor npc,bool force=false)"
+        },
+        {
+          "class": "CaelumThermalService",
+          "method": "Advance",
+          "category": 33,
+          "signature": "static void Advance(Actor body,double worldSeconds,double realSeconds, double activityWatts=0,double magicWatts=0,double fireWatts=0)"
+        },
+        {
+          "class": "CaelumThermalService",
+          "method": "Integrate",
+          "category": 35,
+          "signature": "static double Integrate(CaelumThermalState thermal,double worldSeconds,double realSeconds, double activityWatts=0,double magicWatts=0,double fireWatts=0,double logicalActivitySeconds=0)"
+        },
+        {
+          "class": "CaelumCannon",
+          "method": "Tick",
+          "category": 21,
+          "signature": "override void Tick()"
+        },
+        {
+          "class": "CaelumCannonProjectile",
+          "method": "Tick",
+          "category": 22,
+          "signature": "override void Tick()"
+        },
+        {
+          "class": "CaelumPortSiege",
+          "method": "ElectCommands",
+          "category": 11,
+          "signature": "void ElectCommands()"
+        },
+        {
+          "class": "CaelumPortSiege",
+          "method": "RefreshTargets",
+          "category": 13,
+          "signature": "void RefreshTargets()"
+        },
+        {
+          "class": "CaelumPortSiege",
+          "method": "AttackerTarget",
+          "category": 10,
+          "signature": "Actor AttackerTarget(CaelumSiegeCombatant entry)"
+        },
+        {
+          "class": "CaelumPortSiege",
+          "method": "RefillCrews",
+          "category": 14,
+          "signature": "void RefillCrews()"
+        },
+        {
+          "class": "CaelumPortSiege",
+          "method": "CannonTarget",
+          "category": 16,
+          "signature": "Actor CannonTarget(CaelumCannon gun)"
+        },
+        {
+          "class": "CaelumPortSiege",
+          "method": "OrderGuns",
+          "category": 15,
+          "signature": "void OrderGuns()"
+        },
+        {
+          "class": "CaelumPortSiege",
+          "method": "WalkTo",
+          "category": 17,
+          "signature": "static void WalkTo(CaelumCombatActor body, Actor goal, vector3 point)"
+        },
+        {
+          "class": "CaelumPortSiege",
+          "method": "Pulse",
+          "category": 9,
+          "signature": "static bool Pulse(CaelumCombatActor body)"
+        },
+        {
+          "class": "CaelumPortSiege",
+          "method": "Tick",
+          "category": 18,
+          "signature": "override void Tick()"
+        },
+        {
+          "class": "CaelumHostileMachine",
+          "method": "ObserveGuards",
+          "category": 20,
+          "signature": "void ObserveGuards()"
+        },
+        {
+          "class": "CaelumSiegeReinforcements",
+          "method": "RefreshLiving",
+          "category": 29,
+          "signature": "void RefreshLiving(CaelumPortSiege port)"
+        },
+        {
+          "class": "CaelumSiegeReinforcements",
+          "method": "Place",
+          "category": 30,
+          "signature": "bool Place(CaelumPortSiege port, int slot)"
+        },
+        {
+          "class": "CaelumSiegeReinforcements",
+          "method": "Tick",
+          "category": 31,
+          "signature": "void Tick(CaelumPortSiege port)"
+        }
+      ]
+    }
+  }
+}

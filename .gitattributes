@@ -69,3 +69,7 @@
 /assets/validation_511/* -text whitespace=cr-at-eol
 /assets/validation_511/*.txt whitespace=-blank-at-eol,-blank-at-eof,cr-at-eol
 /assets/validation_511/*.ini whitespace=-blank-at-eof,cr-at-eol
+
+/assets/validation_512/* -text whitespace=cr-at-eol
+/assets/validation_512/*.txt whitespace=-blank-at-eol,-blank-at-eof,cr-at-eol
+/assets/validation_512/*.ini whitespace=-blank-at-eof,cr-at-eol

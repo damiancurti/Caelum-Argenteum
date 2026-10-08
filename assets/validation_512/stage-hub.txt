@@ -1,0 +1,175 @@
+Log started: 2026-10-07 21:22:27
+GZDoom version g4.14.2
+D_DoomInit: Static RNGseed 116 set.
+W_Init: Init WADfiles.
+adding C:/Program Files (x86)/GZDoom/gzdoom.pk3, 692 lumps
+adding C:/Program Files (x86)/GZDoom/game_support.pk3, 3308 lumps
+adding C:/Program Files (x86)/Steam/steamapps/common/ultimate doom/base/doom2/DOOM2.WAD, 2919 lumps
+adding C:/Program Files (x86)/Steam/steamapps/common/Ultimate Doom/rerelease/id24res.wad, 530 lumps
+adding C:/Program Files (x86)/GZDoom/game_widescreen_gfx.pk3, 214 lumps
+adding C:/GZDooMProjects/CaelumArgenteum/build/issue132/production.pk3, 6203 lumps
+adding C:/GZDooMProjects/CaelumArgenteum/build/issue132/observer.pk3, 4 lumps
+S_Init: Setting up sound.
+I_InitSound: Initializing OpenAL
+  Opened device OpenAL Soft on Altavoces (Trust GXT 363 headset)
+  EFX enabled
+I_InitInput
+I_StartupMouse
+I_StartupKeyboard
+I_StartupXInput
+I_StartupRawPS2
+I_StartupDirectInputJoystick
+Vulkan device: NVIDIA GeForce RTX 3070 Ti
+Vulkan device type: discrete gpu
+Vulkan version: 1.4.303 (api) 576.352.0 (driver)
+Vulkan extensions: VK_KHR_16bit_storage VK_KHR_8bit_storage VK_KHR_acceleration_structure VK_KHR_bind_memory2 VK_KHR_buffer_device_address VK_KHR_calibrated_timestamps VK_KHR_compute_shader_derivatives VK_KHR_cooperative_matrix VK_KHR_copy_commands2 VK_KHR_create_renderpass2 VK_KHR_dedicated_allocation VK_KHR_deferred_host_operations VK_KHR_depth_stencil_resolve VK_KHR_descriptor_update_template VK_KHR_device_group VK_KHR_draw_indirect_count VK_KHR_driver_properties VK_KHR_dynamic_rendering VK_KHR_dynamic_rendering_local_read VK_KHR_external_fence VK_KHR_external_fence_win32 VK_KHR_external_memory VK_KHR_external_memory_win32 VK_KHR_external_semaphore VK_KHR_external_semaphore_win32 VK_KHR_format_feature_flags2 VK_KHR_fragment_shader_barycentric VK_KHR_fragment_shading_rate VK_KHR_get_memory_requirements2 VK_KHR_global_priority VK_KHR_image_format_list VK_KHR_imageless_framebuffer VK_KHR_index_type_uint8 VK_KHR_line_rasterization VK_KHR_load_store_op_none VK_KHR_maintenance1 VK_KHR_maintenance2 VK_KHR_maintenance3 VK_KHR_maintenance4 VK_KHR_maintenance5 VK_KHR_maintenance6 VK_KHR_maintenance7 VK_KHR_map_memory2 VK_KHR_multiview VK_KHR_pipeline_binary VK_KHR_pipeline_executable_properties VK_KHR_pipeline_library VK_KHR_present_id VK_KHR_present_wait VK_KHR_push_descriptor VK_KHR_ray_query VK_KHR_ray_tracing_maintenance1 VK_KHR_ray_tracing_pipeline VK_KHR_ray_tracing_position_fetch VK_KHR_relaxed_block_layout VK_KHR_sampler_mirror_clamp_to_edge VK_KHR_sampler_ycbcr_conversion VK_KHR_separate_depth_stencil_layouts VK_KHR_shader_atomic_int64 VK_KHR_shader_clock VK_KHR_shader_draw_parameters VK_KHR_shader_expect_assume VK_KHR_shader_float16_int8 VK_KHR_shader_float_controls VK_KHR_shader_float_controls2 VK_KHR_shader_integer_dot_product VK_KHR_shader_maximal_reconvergence VK_KHR_shader_non_semantic_info VK_KHR_shader_quad_control VK_KHR_shader_relaxed_extended_instruction VK_KHR_shader_subgroup_extended_types VK_KHR_shader_subgroup_rotate VK_KHR_shader_subgroup_uniform_control_flow VK_KHR_shader_terminate_invocation VK_KHR_spirv_1_4 VK_KHR_storage_buffer_storage_class VK_KHR_swapchain VK_KHR_swapchain_mutable_format VK_KHR_synchronization2 VK_KHR_timeline_semaphore VK_KHR_uniform_buffer_standard_layout VK_KHR_variable_pointers VK_KHR_vertex_attribute_divisor VK_KHR_video_decode_av1 VK_KHR_video_decode_h264 VK_KHR_video_decode_h265 VK_KHR_video_decode_queue VK_KHR_video_encode_h264 VK_KHR_video_encode_h265 VK_KHR_video_encode_quantization_map VK_KHR_video_encode_queue VK_KHR_video_maintenance1 VK_KHR_video_maintenance2 VK_KHR_video_queue VK_KHR_vulkan_memory_model VK_KHR_win32_keyed_mutex VK_KHR_workgroup_memory_explicit_layout VK_KHR_zero_initialize_workgroup_memory VK_EXT_4444_formats VK_EXT_attachment_feedback_loop_dynamic_state VK_EXT_attachment_feedback_loop_layout VK_EXT_blend_operation_advanced VK_EXT_border_color_swizzle VK_EXT_buffer_device_address VK_EXT_calibrated_timestamps VK_EXT_color_write_enable VK_EXT_conditional_rendering VK_EXT_conservative_rasterization VK_EXT_custom_border_color VK_EXT_depth_bias_control VK_EXT_depth_clamp_control VK_EXT_depth_clamp_zero_one VK_EXT_depth_clip_control VK_EXT_depth_clip_enable VK_EXT_depth_range_unrestricted VK_EXT_descriptor_buffer VK_EXT_descriptor_indexing VK_EXT_device_address_binding_report VK_EXT_device_fault VK_EXT_device_generated_commands VK_EXT_discard_rectangles VK_EXT_dynamic_rendering_unused_attachments VK_EXT_extended_dynamic_state VK_EXT_extended_dynamic_state2 VK_EXT_extended_dynamic_state3 VK_EXT_external_memory_host VK_EXT_fragment_shader_interlock VK_EXT_full_screen_exclusive VK_EXT_global_priority VK_EXT_global_priority_query VK_EXT_graphics_pipeline_library VK_EXT_hdr_metadata VK_EXT_host_image_copy VK_EXT_host_query_reset VK_EXT_image_2d_view_of_3d VK_EXT_image_robustness VK_EXT_image_sliced_view_of_3d VK_EXT_image_view_min_lod VK_EXT_index_type_uint8 VK_EXT_inline_uniform_block VK_EXT_legacy_vertex_attributes VK_EXT_line_rasterization VK_EXT_load_store_op_none VK_EXT_memory_budget VK_EXT_memory_priority VK_EXT_mesh_shader VK_EXT_multi_draw VK_EXT_mutable_descriptor_type VK_EXT_nested_command_buffer VK_EXT_non_seamless_cube_map VK_EXT_opacity_micromap VK_EXT_pageable_device_local_memory VK_EXT_pci_bus_info VK_EXT_pipeline_creation_cache_control VK_EXT_pipeline_creation_feedback VK_EXT_pipeline_library_group_handles VK_EXT_pipeline_robustness VK_EXT_post_depth_coverage VK_EXT_present_mode_fifo_latest_ready VK_EXT_primitive_topology_list_restart VK_EXT_primitives_generated_query VK_EXT_private_data VK_EXT_provoking_vertex VK_EXT_queue_family_foreign VK_EXT_robustness2 VK_EXT_sample_locations VK_EXT_sampler_filter_minmax VK_EXT_scalar_block_layout VK_EXT_separate_stencil_usage VK_EXT_shader_atomic_float VK_EXT_shader_demote_to_helper_invocation VK_EXT_shader_image_atomic_int64 VK_EXT_shader_module_identifier VK_EXT_shader_object VK_EXT_shader_replicated_composites VK_EXT_shader_subgroup_ballot VK_EXT_shader_subgroup_vote VK_EXT_shader_viewport_index_layer VK_EXT_subgroup_size_control VK_EXT_swapchain_maintenance1 VK_EXT_texel_buffer_alignment VK_EXT_tooling_info VK_EXT_transform_feedback VK_EXT_vertex_attribute_divisor VK_EXT_vertex_attribute_robustness VK_EXT_vertex_input_dynamic_state VK_EXT_ycbcr_2plane_444_formats VK_EXT_ycbcr_image_arrays VK_NV_acquire_winrt_display VK_NV_clip_space_w_scaling VK_NV_cluster_acceleration_structure VK_NV_compute_shader_derivatives VK_NV_cooperative_matrix VK_NV_cooperative_matrix2 VK_NV_cooperative_vector VK_NV_copy_memory_indirect VK_NV_corner_sampled_image VK_NV_coverage_reduction_mode VK_NV_cuda_kernel_launch VK_NV_dedicated_allocation VK_NV_dedicated_allocation_image_aliasing VK_NV_descriptor_pool_overallocation VK_NV_device_diagnostic_checkpoints VK_NV_device_diagnostics_config VK_NV_device_generated_commands VK_NV_device_generated_commands_compute VK_NV_disk_cache_utils VK_NV_external_memory VK_NV_external_memory_win32 VK_NV_fill_rectangle VK_NV_fragment_coverage_to_color VK_NV_fragment_shader_barycentric VK_NV_fragment_shading_rate_enums VK_NV_framebuffer_mixed_samples VK_NV_geometry_shader_passthrough VK_NV_inherited_viewport_scissor VK_NV_internal_nvpresent VK_NV_linear_color_attachment VK_NV_low_latency VK_NV_low_latency2 VK_NV_memory_decompression VK_NV_mesh_shader VK_NV_optical_flow VK_NV_partitioned_acceleration_structure VK_NV_present_metering VK_NV_raw_access_chains VK_NV_ray_tracing VK_NV_ray_tracing_invocation_reorder VK_NV_ray_tracing_motion_blur VK_NV_representative_fragment_test VK_NV_sample_mask_override_coverage VK_NV_scissor_exclusive VK_NV_shader_atomic_float16_vector VK_NV_shader_image_footprint VK_NV_shader_sm_builtins VK_NV_shader_subgroup_partitioned VK_NV_shading_rate_image VK_NV_viewport_array2 VK_NV_viewport_swizzle VK_NV_win32_keyed_mutex VK_NVX_binary_import VK_NVX_image_view_handle VK_NVX_multiview_per_view_attributes VK_AMD_buffer_marker VK_GOOGLE_hlsl_functionality1 VK_GOOGLE_user_type
+Max. texture size: 32768
+Max. uniform buffer range: 65536
+Min. uniform buffer offset alignment: 64
+Resolution: 1280 x 720
+I_Init: Setting up machine state.
+CPU speed: 3400 MHz
+CPU Vendor ID: AuthenticAMD
+  Name: AMD Ryzen 9 5950X 16-Core Processor 
+  Family 25 (25), Model 33, Stepping 0
+  Features: SSE2 SSE3 SSSE3 SSE4.1 SSE4.2 AVX AVX2 F16C FMA3 BMI1 BMI2 HyperThreading
+V_Init: allocate screen.
+ST_Init: Init startup screen.
+Checking cmd-line parameters...
+S_InitData: Load sound definitions.
+G_ParseMapInfo: Load map definitions.
+Texman.Init: Init texture manager.
+ParseTeamInfo: Load team definitions.
+LoadActors: Load actor definitions.
+script parsing took 1168.09 ms
+R_Init: Init Doom refresh subsystem.
+DecalLibrary: Load decals.
+M_Init: Init menus.
+P_Init: Init Playloop state.
+ParseSBarInfo: Loading custom status bar definition.
+D_CheckNetGame: Checking network game status.
+player 1 of 1 (1 nodes)
+
+----------------------------------------
+
+MAP06 - Barracas al Sud — fortified port
+
+CA132 FRAME tic=702 ms=5966.474000 interval=-19761.652000 epoch=1791418952
+CA132 FRAME tic=719 ms=7209.981100 interval=1243.507100 epoch=1791418954
+
+----------------------------------------
+
+MAP07 - La Plata river shore
+
+CA132 FRAME tic=733 ms=7643.382500 interval=70.858300 epoch=1791418954
+CA132 FRAME tic=733 ms=7645.474000 interval=2.091500 epoch=1791418954
+CA132 FRAME tic=734 ms=7662.269500 interval=16.795500 epoch=1791418954
+CA132 FRAME tic=734 ms=7678.951000 interval=16.681500 epoch=1791418954
+Game saved.
+CA132 FRAME tic=735 ms=7728.027700 interval=49.076700 epoch=1791418954
+CA132 FRAME tic=735 ms=7763.348800 interval=35.321100 epoch=1791418954
+CA132 FRAME tic=736 ms=7766.180500 interval=2.831700 epoch=1791418954
+CA132 FRAME tic=737 ms=7782.692300 interval=16.511800 epoch=1791418954
+CA132 FRAME tic=738 ms=7799.187100 interval=16.494800 epoch=1791418954
+CA132 FRAME tic=738 ms=7815.948900 interval=16.761800 epoch=1791418954
+CA132 FRAME tic=739 ms=7832.884100 interval=16.935200 epoch=1791418954
+CA132 FRAME tic=739 ms=7849.544100 interval=16.660000 epoch=1791418954
+CA132 FRAME tic=740 ms=7866.103300 interval=16.559200 epoch=1791418954
+CA132 FRAME tic=740 ms=7882.825500 interval=16.722200 epoch=1791418954
+CA132 FRAME tic=741 ms=7899.467000 interval=16.641500 epoch=1791418954
+CA132 FRAME tic=742 ms=7916.129200 interval=16.662200 epoch=1791418954
+CA132 FRAME tic=742 ms=7932.863900 interval=16.734700 epoch=1791418954
+CA132 FRAME tic=743 ms=7949.342100 interval=16.478200 epoch=1791418954
+CA132 FRAME tic=743 ms=7966.105200 interval=16.763100 epoch=1791418954
+CA132 FRAME tic=744 ms=7982.857000 interval=16.751800 epoch=1791418954
+CA132 FRAME tic=745 ms=7999.665200 interval=16.808200 epoch=1791418954
+CA132 FRAME tic=745 ms=8016.198500 interval=16.533300 epoch=1791418955
+CA132 FRAME tic=746 ms=8032.432400 interval=16.233900 epoch=1791418955
+CA132 FRAME tic=746 ms=8049.361800 interval=16.929400 epoch=1791418955
+CA132 FRAME tic=747 ms=8065.815400 interval=16.453600 epoch=1791418955
+CA132 FRAME tic=747 ms=8083.119600 interval=17.304200 epoch=1791418955
+CA132 FRAME tic=748 ms=8099.502700 interval=16.383100 epoch=1791418955
+CA132 FRAME tic=749 ms=8116.060200 interval=16.557500 epoch=1791418955
+CA132 FRAME tic=749 ms=8132.966200 interval=16.906000 epoch=1791418955
+CA132 FRAME tic=750 ms=8149.406000 interval=16.439800 epoch=1791418955
+CA132 FRAME tic=750 ms=8166.347700 interval=16.941700 epoch=1791418955
+CA132 FRAME tic=751 ms=8182.742600 interval=16.394900 epoch=1791418955
+CA132 FRAME tic=752 ms=8199.381700 interval=16.639100 epoch=1791418955
+CA132 FRAME tic=752 ms=8216.143100 interval=16.761400 epoch=1791418955
+CA132 FRAME tic=753 ms=8232.845400 interval=16.702300 epoch=1791418955
+CA132 FRAME tic=753 ms=8249.328900 interval=16.483500 epoch=1791418955
+CA132 FRAME tic=754 ms=8266.621500 interval=17.292600 epoch=1791418955
+CA132 FRAME tic=754 ms=8283.109900 interval=16.488400 epoch=1791418955
+CA132 FRAME tic=755 ms=8299.263600 interval=16.153700 epoch=1791418955
+CA132 FRAME tic=756 ms=8316.519300 interval=17.255700 epoch=1791418955
+CA132 FRAME tic=756 ms=8333.156600 interval=16.637300 epoch=1791418955
+CA132 FRAME tic=757 ms=8349.578200 interval=16.421600 epoch=1791418955
+CA132 FRAME tic=757 ms=8366.449500 interval=16.871300 epoch=1791418955
+CA132 FRAME tic=758 ms=8382.817100 interval=16.367600 epoch=1791418955
+CA132 FRAME tic=759 ms=8399.701100 interval=16.884000 epoch=1791418955
+CA132 FRAME tic=759 ms=8416.644200 interval=16.943100 epoch=1791418955
+CA132 FRAME tic=760 ms=8433.539200 interval=16.895000 epoch=1791418955
+CA132 FRAME tic=760 ms=8450.296500 interval=16.757300 epoch=1791418955
+CA132 FRAME tic=761 ms=8468.233400 interval=17.936900 epoch=1791418955
+CA132 FRAME tic=761 ms=8484.450100 interval=16.216700 epoch=1791418955
+CA132 FRAME tic=762 ms=8499.564900 interval=15.114800 epoch=1791418955
+CA132 FRAME tic=763 ms=8516.221700 interval=16.656800 epoch=1791418955
+CA132 FRAME tic=763 ms=8532.755700 interval=16.534000 epoch=1791418955
+CA132 FRAME tic=764 ms=8549.642400 interval=16.886700 epoch=1791418955
+CA132 FRAME tic=764 ms=8566.190300 interval=16.547900 epoch=1791418955
+CA132 FRAME tic=765 ms=8582.896100 interval=16.705800 epoch=1791418955
+CA132 FRAME tic=766 ms=8599.478600 interval=16.582500 epoch=1791418955
+CA132 FRAME tic=766 ms=8616.087700 interval=16.609100 epoch=1791418955
+CA132 FRAME tic=767 ms=8632.595500 interval=16.507800 epoch=1791418955
+CA132 FRAME tic=767 ms=8649.392600 interval=16.797100 epoch=1791418955
+CA132 FRAME tic=768 ms=8666.273900 interval=16.881300 epoch=1791418955
+CA132 FRAME tic=768 ms=8682.837200 interval=16.563300 epoch=1791418955
+CA132 FRAME tic=769 ms=8700.000600 interval=17.163400 epoch=1791418955
+CA132 FRAME tic=770 ms=8717.000800 interval=17.000200 epoch=1791418955
+CA132 FRAME tic=770 ms=8733.115900 interval=16.115100 epoch=1791418955
+CA132 FRAME tic=771 ms=8750.037600 interval=16.921700 epoch=1791418955
+CA132 FRAME tic=771 ms=8767.199300 interval=17.161700 epoch=1791418955
+CA132 FRAME tic=772 ms=8783.108200 interval=15.908900 epoch=1791418955
+CA132 FRAME tic=773 ms=8799.990400 interval=16.882200 epoch=1791418955
+CA132 FRAME tic=773 ms=8816.211100 interval=16.220700 epoch=1791418955
+CA132 FRAME tic=774 ms=8833.381700 interval=17.170600 epoch=1791418955
+CA132 FRAME tic=774 ms=8850.886600 interval=17.504900 epoch=1791418955
+CA132 FRAME tic=775 ms=8867.682500 interval=16.795900 epoch=1791418955
+CA132 FRAME tic=775 ms=8883.547400 interval=15.864900 epoch=1791418955
+CA132 FRAME tic=776 ms=8899.498300 interval=15.950900 epoch=1791418955
+CA132 FRAME tic=777 ms=8916.022100 interval=16.523800 epoch=1791418955
+CA132 FRAME tic=777 ms=8932.592600 interval=16.570500 epoch=1791418955
+
+----------------------------------------
+
+MAP06 - Barracas al Sud — fortified port
+
+CA132 FRAME tic=778 ms=11596.053100 interval=4386.072000 epoch=1791418958
+CA132 FRAME tic=795 ms=11799.581200 interval=203.528100 epoch=1791418958
+Game saved.
+CA132 FRAME tic=800 ms=12036.238400 interval=236.657200 epoch=1791418959
+CA132 FRAME tic=801 ms=12054.954100 interval=18.715700 epoch=1791418959
+CA132 FRAME tic=802 ms=12067.563800 interval=12.609700 epoch=1791418959
+CA132 FRAME tic=802 ms=12080.944500 interval=13.380700 epoch=1791418959
+CA132 FRAME tic=803 ms=12100.053500 interval=19.109000 epoch=1791418959
+CA132 FRAME tic=804 ms=12121.281600 interval=21.228100 epoch=1791418959
+CA132 FRAME tic=804 ms=12133.430500 interval=12.148900 epoch=1791418959
+CA132 FRAME tic=805 ms=12153.805300 interval=20.374800 epoch=1791418959
+CA132 FRAME tic=805 ms=12166.817300 interval=13.012000 epoch=1791418959
+CA132 SIM tic=805 ms=12176.050500 alive=291 total=300 remaining=5700 pending=0 combatants=893 defenders=600 corpses=9 projectiles=81 groups=5 failed=28 scriptedDeaths=0 victory=0 view=0
+CA132 SPAWN tic=805 total=300
+CA132 FRAME tic=806 ms=12186.522800 interval=19.705500 epoch=1791418959
+CA132 FRAME tic=806 ms=12201.198400 interval=14.675600 epoch=1791418959
+CA132 FRAME tic=807 ms=12220.061200 interval=18.862800 epoch=1791418959
+CA132 FRAME tic=808 ms=12236.072300 interval=16.011100 epoch=1791418959
+CA132 FRAME tic=808 ms=12252.410900 interval=16.338600 epoch=1791418959
+CA132 FRAME tic=809 ms=12267.460700 interval=15.049800 epoch=1791418959
+CA132 FRAME tic=809 ms=12284.612900 interval=17.152200 epoch=1791418959
+CA132 FRAME tic=810 ms=12300.263000 interval=15.650100 epoch=1791418959
+CA132 FRAME tic=810 ms=12316.072300 interval=15.809300 epoch=1791418959
+CA132 FRAME tic=811 ms=12337.214400 interval=21.142100 epoch=1791418959
+CA132 FRAME tic=812 ms=12351.393200 interval=14.178800 epoch=1791418959
+CA132 FRAME tic=812 ms=12366.467300 interval=15.074100 epoch=1791418959
+Game saved.
+CA132 FRAME tic=813 ms=12570.769300 interval=204.302000 epoch=1791418959
+CA132 FRAME tic=813 ms=12769.182600 interval=198.413300 epoch=1791418959

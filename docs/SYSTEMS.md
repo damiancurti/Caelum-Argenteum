@@ -279,7 +279,8 @@ uses the authored 200-column southern formation positions with a saved rolling
 cursor. Native `TestMobjLocation` checks walls, solid actors and vertical fit;
 an additional body-overlap check avoids non-solid combatant corpses. A failed
 candidate is discarded before registration, leaves its slot pending and consumes
-no budget. At most one formation position per missing member is tried per
+no budget or native total-monster statistic (`ClearCounters` before rejection).
+At most one formation position per missing member is tried per
 opportunity (plus the original station for an initial crew member). Successful
 members of partial groups immediately participate in normal combat. No living
 registered attacker is deleted or teleported to free a reinforcement slot.
@@ -296,7 +297,8 @@ machines neutralized. Empty current Mandinga ranks alone never win, even with
 reserves pending. A legitimate victory stops reinforcements before that tic's
 opportunity; the unspawned budget remains recorded as stopped, not consumed.
 Thus a natural battle can finish before all 6,000 enter. A separate complete-budget
-diagnostic protects the commander and applies explicit native-damage casualties;
+diagnostic gives the commander ordinary damage invulnerability and applies
+explicit native-damage casualties (thermal health loss still follows its service);
 it is never used as evidence of an unmodified natural battle or distributed as AI.
 
 Existing full-army saves initialize a disabled revision-1 controller once,

@@ -1,0 +1,59 @@
+{
+  "static_validator": {
+    "version": "5.1.2",
+    "documents": 10,
+    "audio_files": 103,
+    "station_models": 12,
+    "spanish_caella_keys": 25,
+    "premise_numbers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20
+    ],
+    "context_words": 2496,
+    "errors": []
+  },
+  "native_assertions": 22,
+  "native_save_comparisons": 52,
+  "complete_budget_runs": [
+    "staged-long-a",
+    "staged-long-b"
+  ],
+  "profile_runs": [
+    "profile-full-a",
+    "profile-cap-a",
+    "profile-late-a",
+    "profile-deaths-a"
+  ],
+  "native_production_sha256": "a62777eb114208341f505262c8954d829c17cab51d5a88f1cfe8eea5c52313a2",
+  "standard_build_sha256": "3f28e24a6b36ae871affc98b1909b8d6e49721211645484f206f99377e585630",
+  "source_fixture_delivery_members_equal": 6203,
+  "deterministic_fixture_manifest_equal": true,
+  "source_changes": {
+    "ZSCRIPT": "53b078e305690108c2e98508ce7556e62d69d248d820e2c30dfe67a707d891ba",
+    "CVARINFO": "68b9ee6b893202fef7535ca0699a33d3087a7633889d3c419c99ac8791afe347",
+    "caelum/world/CaelumPortSiege.zs": "a5837763640a40a41a10080931cde2152b4caa7ba1addd8f52c33ac00cdbaeeb",
+    "caelum/world/CaelumSiegeEncounter.zs": "cc40bb64a907a478bd55c1a94ed3f392920a7ea4ebcbb37b511cf5bd22172946",
+    "caelum/world/CaelumSiegeReinforcements.zs": "85e048f8b223d23a07ff77a04ecc856388aac32224274dc17d66b22b1d75d55d"
+  },
+  "power_request_released": "2026-10-08T01:18:31.6581811Z",
+  "capture_helper_ended": "2026-10-08T01:18:31.6414516Z",
+  "author_acceptance": "Pending CA132-01; no #132 acceptance inferred"
+}

@@ -1,0 +1,73 @@
+﻿{
+    "label":  "staged-long-b",
+    "started_utc":  "2026-10-08T00:55:45.0109565Z",
+    "engine":  "C:\\Program Files (x86)\\GZDoom\\gzdoom.exe",
+    "engine_sha256":  "EC706C2EA1EF946EEC13BE7B1B461DF8D52EFCD47CAA6C056ED0E0257F7F9FFA",
+    "iwad_sha256":  "10D67824B11025DDD9198E8CFC87CA335EE6E2D3E63AF4180FA9B8A471893255",
+    "package_sha256":  "A62777EB114208341F505262C8954D829C17CAB51D5A88F1CFE8EEA5C52313A2",
+    "addon_sha256":  "BD4B2C39B75F7F6A15E9621BDA25E677453B9ECBB606BBA6528D1DD4D679FCAC",
+    "initial_config":  "[LastRun]\nVersion=225\n[GlobalSettings]\nvid_preferbackend=1\nvid_vsync=false\nvid_maxfps=60\nvid_activeinbackground=true\ni_pauseinbackground=false\nvid_lowerinbackground=false\ni_soundinbackground=true\ncl_capfps=false\nvid_fullscreen=false\nvid_defwidth=1280\nwin_w=1296\nwin_h=759\nwin_maximized=false\nvid_defheight=720\nuse_mouse=false\nsnd_mastervolume=0.05\nlanguage=enu\n",
+    "arguments":  [
+                      "-noautoload",
+                      "-nomouse",
+                      "-iwad",
+                      "\"C:\\Program Files (x86)\\Steam\\steamapps\\common\\ultimate doom\\base\\doom2\\DOOM2.WAD\"",
+                      "-file",
+                      "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue132\\production.pk3\"",
+                      "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue132\\observer.pk3\"",
+                      "-config",
+                      "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue132\\staged-long-b.ini\"",
+                      "-savedir",
+                      "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue132\"",
+                      "-width",
+                      1280,
+                      "-height",
+                      720,
+                      "-window",
+                      "-rngseed",
+                      "116",
+                      "-skill",
+                      "2",
+                      "+logfile",
+                      "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue132\\staged-long-b.txt\"",
+                      "+con_notifytime",
+                      "0",
+                      "+set",
+                      "ca_test_siege_reinforcements",
+                      1,
+                      "+map",
+                      "MAP06",
+                      "+exec",
+                      "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue132\\staged-long-b-exec.cfg\""
+                  ],
+    "benchmark_offset":  16019,
+    "command_script":  "ca132_diagnostic true; ca132_stop_tic 24850; vid_fps true; stat rendertimes; stat think; wait 350; profilethinkers -t; bench; screenshot staged-long-b-long-350.png; wait 3150; profilethinkers -t; bench; screenshot staged-long-b-long-3500.png; wait 3150; profilethinkers -t; bench; screenshot staged-long-b-long-6650.png; wait 350; profilethinkers -t; bench; screenshot staged-long-b-long-7000.png; wait 7000; profilethinkers -t; bench; screenshot staged-long-b-long-14000.png; wait 6650; profilethinkers -t; bench; screenshot staged-long-b-long-20650.png; wait 1400; profilethinkers -t; bench; screenshot staged-long-b-long-22050.png; save final-late; wait 2100; profilethinkers -t; bench; screenshot staged-long-b-long-24150.png; wait 700; profilethinkers -t; bench; screenshot staged-long-b-long-24850.png; wait 35; quit\r\n",
+    "cpu":  [
+                {
+                    "Name":  "AMD Ryzen 9 5950X 16-Core Processor            ",
+                    "NumberOfCores":  16,
+                    "NumberOfLogicalProcessors":  32
+                }
+            ],
+    "gpu":  [
+                {
+                    "Name":  "Parsec Virtual Display Adapter",
+                    "DriverVersion":  "0.45.0.0"
+                },
+                {
+                    "Name":  "NVIDIA GeForce RTX 3070 Ti",
+                    "DriverVersion":  "32.0.15.7688"
+                }
+            ],
+    "os":  {
+               "Caption":  "Microsoft Windows 11 Pro",
+               "Version":  "10.0.26200",
+               "TotalVisibleMemorySize":  33475240
+           },
+    "pid":  39332,
+    "qpc_ms":  1304367045.6821,
+    "epoch_ms":  1791420946924.8743,
+    "completed_utc":  "2026-10-08T01:07:57.7135828Z",
+    "expected":  "CA132 PERFORMANCE COMPLETE tic=24850 total=6000 remaining=0",
+    "presentation_sha256":  "02FA3ABDC136F0D7144EBA93D7893D2901F08F67AE8FF6FECE9E5F7765F9A834"
+}

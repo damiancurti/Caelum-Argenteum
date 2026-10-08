@@ -1,0 +1,1603 @@
+Log started: 2026-10-07 22:13:18
+GZDoom version g4.14.2
+D_DoomInit: Static RNGseed 116 set.
+W_Init: Init WADfiles.
+adding C:/Program Files (x86)/GZDoom/gzdoom.pk3, 692 lumps
+adding C:/Program Files (x86)/GZDoom/game_support.pk3, 3308 lumps
+adding C:/Program Files (x86)/Steam/steamapps/common/ultimate doom/base/doom2/DOOM2.WAD, 2919 lumps
+adding C:/Program Files (x86)/Steam/steamapps/common/Ultimate Doom/rerelease/id24res.wad, 530 lumps
+adding C:/Program Files (x86)/GZDoom/game_widescreen_gfx.pk3, 214 lumps
+adding C:/GZDooMProjects/CaelumArgenteum/build/issue132/profile-production.pk3, 6204 lumps
+adding C:/GZDooMProjects/CaelumArgenteum/build/issue132/cap-observer.pk3, 5 lumps
+S_Init: Setting up sound.
+I_InitSound: Initializing OpenAL
+  Opened device OpenAL Soft on Altavoces (Trust GXT 363 headset)
+  EFX enabled
+I_InitInput
+I_StartupMouse
+I_StartupKeyboard
+I_StartupXInput
+I_StartupRawPS2
+I_StartupDirectInputJoystick
+Vulkan device: NVIDIA GeForce RTX 3070 Ti
+Vulkan device type: discrete gpu
+Vulkan version: 1.4.303 (api) 576.352.0 (driver)
+Vulkan extensions: VK_KHR_16bit_storage VK_KHR_8bit_storage VK_KHR_acceleration_structure VK_KHR_bind_memory2 VK_KHR_buffer_device_address VK_KHR_calibrated_timestamps VK_KHR_compute_shader_derivatives VK_KHR_cooperative_matrix VK_KHR_copy_commands2 VK_KHR_create_renderpass2 VK_KHR_dedicated_allocation VK_KHR_deferred_host_operations VK_KHR_depth_stencil_resolve VK_KHR_descriptor_update_template VK_KHR_device_group VK_KHR_draw_indirect_count VK_KHR_driver_properties VK_KHR_dynamic_rendering VK_KHR_dynamic_rendering_local_read VK_KHR_external_fence VK_KHR_external_fence_win32 VK_KHR_external_memory VK_KHR_external_memory_win32 VK_KHR_external_semaphore VK_KHR_external_semaphore_win32 VK_KHR_format_feature_flags2 VK_KHR_fragment_shader_barycentric VK_KHR_fragment_shading_rate VK_KHR_get_memory_requirements2 VK_KHR_global_priority VK_KHR_image_format_list VK_KHR_imageless_framebuffer VK_KHR_index_type_uint8 VK_KHR_line_rasterization VK_KHR_load_store_op_none VK_KHR_maintenance1 VK_KHR_maintenance2 VK_KHR_maintenance3 VK_KHR_maintenance4 VK_KHR_maintenance5 VK_KHR_maintenance6 VK_KHR_maintenance7 VK_KHR_map_memory2 VK_KHR_multiview VK_KHR_pipeline_binary VK_KHR_pipeline_executable_properties VK_KHR_pipeline_library VK_KHR_present_id VK_KHR_present_wait VK_KHR_push_descriptor VK_KHR_ray_query VK_KHR_ray_tracing_maintenance1 VK_KHR_ray_tracing_pipeline VK_KHR_ray_tracing_position_fetch VK_KHR_relaxed_block_layout VK_KHR_sampler_mirror_clamp_to_edge VK_KHR_sampler_ycbcr_conversion VK_KHR_separate_depth_stencil_layouts VK_KHR_shader_atomic_int64 VK_KHR_shader_clock VK_KHR_shader_draw_parameters VK_KHR_shader_expect_assume VK_KHR_shader_float16_int8 VK_KHR_shader_float_controls VK_KHR_shader_float_controls2 VK_KHR_shader_integer_dot_product VK_KHR_shader_maximal_reconvergence VK_KHR_shader_non_semantic_info VK_KHR_shader_quad_control VK_KHR_shader_relaxed_extended_instruction VK_KHR_shader_subgroup_extended_types VK_KHR_shader_subgroup_rotate VK_KHR_shader_subgroup_uniform_control_flow VK_KHR_shader_terminate_invocation VK_KHR_spirv_1_4 VK_KHR_storage_buffer_storage_class VK_KHR_swapchain VK_KHR_swapchain_mutable_format VK_KHR_synchronization2 VK_KHR_timeline_semaphore VK_KHR_uniform_buffer_standard_layout VK_KHR_variable_pointers VK_KHR_vertex_attribute_divisor VK_KHR_video_decode_av1 VK_KHR_video_decode_h264 VK_KHR_video_decode_h265 VK_KHR_video_decode_queue VK_KHR_video_encode_h264 VK_KHR_video_encode_h265 VK_KHR_video_encode_quantization_map VK_KHR_video_encode_queue VK_KHR_video_maintenance1 VK_KHR_video_maintenance2 VK_KHR_video_queue VK_KHR_vulkan_memory_model VK_KHR_win32_keyed_mutex VK_KHR_workgroup_memory_explicit_layout VK_KHR_zero_initialize_workgroup_memory VK_EXT_4444_formats VK_EXT_attachment_feedback_loop_dynamic_state VK_EXT_attachment_feedback_loop_layout VK_EXT_blend_operation_advanced VK_EXT_border_color_swizzle VK_EXT_buffer_device_address VK_EXT_calibrated_timestamps VK_EXT_color_write_enable VK_EXT_conditional_rendering VK_EXT_conservative_rasterization VK_EXT_custom_border_color VK_EXT_depth_bias_control VK_EXT_depth_clamp_control VK_EXT_depth_clamp_zero_one VK_EXT_depth_clip_control VK_EXT_depth_clip_enable VK_EXT_depth_range_unrestricted VK_EXT_descriptor_buffer VK_EXT_descriptor_indexing VK_EXT_device_address_binding_report VK_EXT_device_fault VK_EXT_device_generated_commands VK_EXT_discard_rectangles VK_EXT_dynamic_rendering_unused_attachments VK_EXT_extended_dynamic_state VK_EXT_extended_dynamic_state2 VK_EXT_extended_dynamic_state3 VK_EXT_external_memory_host VK_EXT_fragment_shader_interlock VK_EXT_full_screen_exclusive VK_EXT_global_priority VK_EXT_global_priority_query VK_EXT_graphics_pipeline_library VK_EXT_hdr_metadata VK_EXT_host_image_copy VK_EXT_host_query_reset VK_EXT_image_2d_view_of_3d VK_EXT_image_robustness VK_EXT_image_sliced_view_of_3d VK_EXT_image_view_min_lod VK_EXT_index_type_uint8 VK_EXT_inline_uniform_block VK_EXT_legacy_vertex_attributes VK_EXT_line_rasterization VK_EXT_load_store_op_none VK_EXT_memory_budget VK_EXT_memory_priority VK_EXT_mesh_shader VK_EXT_multi_draw VK_EXT_mutable_descriptor_type VK_EXT_nested_command_buffer VK_EXT_non_seamless_cube_map VK_EXT_opacity_micromap VK_EXT_pageable_device_local_memory VK_EXT_pci_bus_info VK_EXT_pipeline_creation_cache_control VK_EXT_pipeline_creation_feedback VK_EXT_pipeline_library_group_handles VK_EXT_pipeline_robustness VK_EXT_post_depth_coverage VK_EXT_present_mode_fifo_latest_ready VK_EXT_primitive_topology_list_restart VK_EXT_primitives_generated_query VK_EXT_private_data VK_EXT_provoking_vertex VK_EXT_queue_family_foreign VK_EXT_robustness2 VK_EXT_sample_locations VK_EXT_sampler_filter_minmax VK_EXT_scalar_block_layout VK_EXT_separate_stencil_usage VK_EXT_shader_atomic_float VK_EXT_shader_demote_to_helper_invocation VK_EXT_shader_image_atomic_int64 VK_EXT_shader_module_identifier VK_EXT_shader_object VK_EXT_shader_replicated_composites VK_EXT_shader_subgroup_ballot VK_EXT_shader_subgroup_vote VK_EXT_shader_viewport_index_layer VK_EXT_subgroup_size_control VK_EXT_swapchain_maintenance1 VK_EXT_texel_buffer_alignment VK_EXT_tooling_info VK_EXT_transform_feedback VK_EXT_vertex_attribute_divisor VK_EXT_vertex_attribute_robustness VK_EXT_vertex_input_dynamic_state VK_EXT_ycbcr_2plane_444_formats VK_EXT_ycbcr_image_arrays VK_NV_acquire_winrt_display VK_NV_clip_space_w_scaling VK_NV_cluster_acceleration_structure VK_NV_compute_shader_derivatives VK_NV_cooperative_matrix VK_NV_cooperative_matrix2 VK_NV_cooperative_vector VK_NV_copy_memory_indirect VK_NV_corner_sampled_image VK_NV_coverage_reduction_mode VK_NV_cuda_kernel_launch VK_NV_dedicated_allocation VK_NV_dedicated_allocation_image_aliasing VK_NV_descriptor_pool_overallocation VK_NV_device_diagnostic_checkpoints VK_NV_device_diagnostics_config VK_NV_device_generated_commands VK_NV_device_generated_commands_compute VK_NV_disk_cache_utils VK_NV_external_memory VK_NV_external_memory_win32 VK_NV_fill_rectangle VK_NV_fragment_coverage_to_color VK_NV_fragment_shader_barycentric VK_NV_fragment_shading_rate_enums VK_NV_framebuffer_mixed_samples VK_NV_geometry_shader_passthrough VK_NV_inherited_viewport_scissor VK_NV_internal_nvpresent VK_NV_linear_color_attachment VK_NV_low_latency VK_NV_low_latency2 VK_NV_memory_decompression VK_NV_mesh_shader VK_NV_optical_flow VK_NV_partitioned_acceleration_structure VK_NV_present_metering VK_NV_raw_access_chains VK_NV_ray_tracing VK_NV_ray_tracing_invocation_reorder VK_NV_ray_tracing_motion_blur VK_NV_representative_fragment_test VK_NV_sample_mask_override_coverage VK_NV_scissor_exclusive VK_NV_shader_atomic_float16_vector VK_NV_shader_image_footprint VK_NV_shader_sm_builtins VK_NV_shader_subgroup_partitioned VK_NV_shading_rate_image VK_NV_viewport_array2 VK_NV_viewport_swizzle VK_NV_win32_keyed_mutex VK_NVX_binary_import VK_NVX_image_view_handle VK_NVX_multiview_per_view_attributes VK_AMD_buffer_marker VK_GOOGLE_hlsl_functionality1 VK_GOOGLE_user_type
+Max. texture size: 32768
+Max. uniform buffer range: 65536
+Min. uniform buffer offset alignment: 64
+Resolution: 1280 x 720
+I_Init: Setting up machine state.
+CPU speed: 3400 MHz
+CPU Vendor ID: AuthenticAMD
+  Name: AMD Ryzen 9 5950X 16-Core Processor 
+  Family 25 (25), Model 33, Stepping 0
+  Features: SSE2 SSE3 SSSE3 SSE4.1 SSE4.2 AVX AVX2 F16C FMA3 BMI1 BMI2 HyperThreading
+V_Init: allocate screen.
+ST_Init: Init startup screen.
+Checking cmd-line parameters...
+S_InitData: Load sound definitions.
+G_ParseMapInfo: Load map definitions.
+Texman.Init: Init texture manager.
+ParseTeamInfo: Load team definitions.
+LoadActors: Load actor definitions.
+script parsing took 945.51 ms
+R_Init: Init Doom refresh subsystem.
+DecalLibrary: Load decals.
+M_Init: Init menus.
+P_Init: Init Playloop state.
+ParseSBarInfo: Loading custom status bar definition.
+D_CheckNetGame: Checking network game status.
+player 1 of 1 (1 nodes)
+
+----------------------------------------
+
+MAP06 - Barracas al Sud — fortified port
+
+[Caelum] Inicio por comando directo: perfil de prueba seguro aplicado.
+[Caelum] Character creation values loaded. Attribute total: 150.00
+PORT16 deployed Mandingas=100 commander=1 defenders=600 hostileMachines=12 guns=42
+CA121 COST tic=0 id=0 calls=701 inclusive=1.198400 exclusive=0.539600
+CA121 COST tic=0 id=1 calls=701 inclusive=0.130200 exclusive=0.129400
+CA121 COST tic=0 id=3 calls=701 inclusive=0.016900 exclusive=0.016900
+CA121 COST tic=0 id=4 calls=3416 inclusive=0.443800 exclusive=0.443800
+CA121 COST tic=0 id=5 calls=3416 inclusive=0.457300 exclusive=0.457300
+CA121 COST tic=0 id=6 calls=1 inclusive=0.000600 exclusive=0.000600
+CA121 COST tic=0 id=7 calls=702 inclusive=0.029600 exclusive=0.029600
+CA121 COST tic=0 id=9 calls=1 inclusive=0.000200 exclusive=0.000200
+CA121 COST tic=0 id=18 calls=1 inclusive=4.204000 exclusive=3.637400
+CA121 COST tic=0 id=20 calls=48 inclusive=0.001500 exclusive=0.001500
+CA121 COST tic=0 id=21 calls=42 inclusive=0.013000 exclusive=0.011900
+CA121 COST tic=0 id=23 calls=1 inclusive=0.052400 exclusive=0.051000
+CA121 COST tic=0 id=24 calls=702 inclusive=0.042700 exclusive=0.042700
+CA121 COST tic=0 id=29 calls=2 inclusive=0.000300 exclusive=0.000300
+CA121 COST tic=0 id=30 calls=100 inclusive=0.556600 exclusive=0.556600
+CA121 COST tic=0 id=31 calls=1 inclusive=0.566400 exclusive=0.009700
+CA121 COST tic=0 id=32 calls=701 inclusive=0.065400 exclusive=0.065400
+CA121 COUNT tic=0 candidates=0 sight=0 decisions=0 commands=0
+CA132 CAP CONTROL 2000 native Mandingas; normal damage and 350-tic cadence resume now
+CA132 FRAME tic=8 ms=5389.588300 interval=139.991400 epoch=1791422004
+CA132 FRAME tic=11 ms=5451.964900 interval=62.376600 epoch=1791422004
+CA132 FRAME tic=13 ms=5488.044100 interval=36.079200 epoch=1791422004
+CA132 FRAME tic=15 ms=5537.234400 interval=49.190300 epoch=1791422004
+CA132 FRAME tic=16 ms=5552.902000 interval=15.667600 epoch=1791422004
+CA132 FRAME tic=17 ms=5570.469300 interval=17.567300 epoch=1791422004
+CA132 FRAME tic=17 ms=5587.812500 interval=17.343200 epoch=1791422004
+CA132 FRAME tic=18 ms=5607.518200 interval=19.705700 epoch=1791422004
+CA132 FRAME tic=19 ms=5627.955200 interval=20.437000 epoch=1791422004
+CA132 FRAME tic=20 ms=5648.760700 interval=20.805500 epoch=1791422004
+CA132 FRAME tic=20 ms=5664.806400 interval=16.045700 epoch=1791422004
+CA132 FRAME tic=21 ms=5691.531000 interval=26.724600 epoch=1791422004
+CA132 FRAME tic=22 ms=5709.731300 interval=18.200300 epoch=1791422004
+CA132 FRAME tic=22 ms=5724.352800 interval=14.621500 epoch=1791422004
+CA132 FRAME tic=23 ms=5745.478300 interval=21.125500 epoch=1791422004
+CA132 FRAME tic=24 ms=5761.174900 interval=15.696600 epoch=1791422004
+CA132 FRAME tic=24 ms=5779.198800 interval=18.023900 epoch=1791422004
+CA132 FRAME tic=25 ms=5801.947300 interval=22.748500 epoch=1791422004
+CA132 FRAME tic=25 ms=5820.720400 interval=18.773100 epoch=1791422004
+CA132 FRAME tic=26 ms=5839.906100 interval=19.185700 epoch=1791422004
+CA132 FRAME tic=27 ms=5860.163900 interval=20.257800 epoch=1791422004
+CA132 FRAME tic=28 ms=5875.580400 interval=15.416500 epoch=1791422004
+CA132 FRAME tic=28 ms=5890.014800 interval=14.434400 epoch=1791422004
+CA132 FRAME tic=29 ms=5912.353500 interval=22.338700 epoch=1791422004
+CA132 FRAME tic=29 ms=5935.585900 interval=23.232400 epoch=1791422004
+CA132 FRAME tic=30 ms=5952.551400 interval=16.965500 epoch=1791422004
+CA132 FRAME tic=31 ms=5967.325900 interval=14.774500 epoch=1791422004
+CA132 FRAME tic=31 ms=5981.470800 interval=14.144900 epoch=1791422004
+CA132 FRAME tic=32 ms=5998.306400 interval=16.835600 epoch=1791422004
+CA132 FRAME tic=32 ms=6014.415900 interval=16.109500 epoch=1791422004
+CA132 FRAME tic=33 ms=6033.722900 interval=19.307000 epoch=1791422004
+CA132 FRAME tic=34 ms=6048.250300 interval=14.527400 epoch=1791422004
+CA132 FRAME tic=34 ms=6064.462000 interval=16.211700 epoch=1791422004
+CA132 FRAME tic=35 ms=6081.059600 interval=16.597600 epoch=1791422004
+CA132 FRAME tic=35 ms=6097.482600 interval=16.423000 epoch=1791422004
+CA132 SIM tic=35 ms=6105.267900 alive=2000 total=2000 remaining=4000 pending=0 combatants=2602 defenders=600 corpses=0 projectiles=0 groups=21 failed=28 scriptedDeaths=0 victory=0 view=0
+CA132 SPAWN tic=35 total=2000
+CA132 SETTINGS pause=0 lower=0 render=1 sound=1 volume=0.050000 diagnostic=0
+CA132 FRAME tic=36 ms=6117.732100 interval=20.249500 epoch=1791422004
+CA132 FRAME tic=37 ms=6138.461900 interval=20.729800 epoch=1791422004
+CA132 FRAME tic=37 ms=6157.667700 interval=19.205800 epoch=1791422004
+CA132 FRAME tic=38 ms=6177.496200 interval=19.828500 epoch=1791422004
+CA121 COST tic=37 id=0 calls=2601 inclusive=6.462200 exclusive=2.123300
+CA121 COST tic=37 id=1 calls=2601 inclusive=1.153500 exclusive=0.617600
+CA121 COST tic=37 id=3 calls=2601 inclusive=0.073300 exclusive=0.073300
+CA121 COST tic=37 id=4 calls=2601 inclusive=0.676300 exclusive=0.676300
+CA121 COST tic=37 id=5 calls=2601 inclusive=0.341800 exclusive=0.341800
+CA121 COST tic=37 id=6 calls=1338 inclusive=0.142100 exclusive=0.106300
+CA121 COST tic=37 id=7 calls=3939 inclusive=0.252200 exclusive=0.252200
+CA121 COST tic=37 id=9 calls=669 inclusive=0.464900 exclusive=0.387500
+CA121 COST tic=37 id=10 calls=72 inclusive=0.006300 exclusive=0.006300
+CA121 COST tic=37 id=15 calls=1 inclusive=0.001800 exclusive=0.001800
+CA121 COST tic=37 id=18 calls=1 inclusive=0.091800 exclusive=0.005500
+CA121 COST tic=37 id=20 calls=48 inclusive=0.068000 exclusive=0.068000
+CA121 COST tic=37 id=21 calls=42 inclusive=0.033000 exclusive=0.016000
+CA121 COST tic=37 id=23 calls=1 inclusive=0.072300 exclusive=0.052100
+CA121 COST tic=37 id=24 calls=2602 inclusive=0.192800 exclusive=0.192800
+CA121 COST tic=37 id=29 calls=1 inclusive=0.083700 exclusive=0.083700
+CA121 COST tic=37 id=31 calls=1 inclusive=0.084500 exclusive=0.000800
+CA121 COST tic=37 id=32 calls=2601 inclusive=1.686100 exclusive=0.260300
+CA121 COST tic=37 id=33 calls=76 inclusive=0.557700 exclusive=0.072700
+CA121 COST tic=37 id=34 calls=75 inclusive=0.887000 exclusive=0.887000
+CA121 COST tic=37 id=35 calls=76 inclusive=0.485000 exclusive=0.485000
+CA121 COUNT tic=37 candidates=0 sight=0 decisions=0 commands=0
+CA132 FRAME tic=39 ms=6195.048900 interval=17.552700 epoch=1791422004
+CA132 FRAME tic=39 ms=6210.268000 interval=15.219100 epoch=1791422004
+CA132 FRAME tic=40 ms=6231.161900 interval=20.893900 epoch=1791422005
+CA132 FRAME tic=41 ms=6256.367300 interval=25.205400 epoch=1791422005
+CA132 FRAME tic=41 ms=6274.129000 interval=17.761700 epoch=1791422005
+CA132 FRAME tic=42 ms=6288.652800 interval=14.523800 epoch=1791422005
+CA132 FRAME tic=43 ms=6301.369400 interval=12.716600 epoch=1791422005
+CA132 FRAME tic=43 ms=6317.488400 interval=16.119000 epoch=1791422005
+CA132 FRAME tic=44 ms=6335.570900 interval=18.082500 epoch=1791422005
+CA132 FRAME tic=44 ms=6351.762000 interval=16.191100 epoch=1791422005
+CA132 FRAME tic=45 ms=6374.487100 interval=22.725100 epoch=1791422005
+CA132 FRAME tic=46 ms=6389.248700 interval=14.761600 epoch=1791422005
+CA132 FRAME tic=46 ms=6403.447000 interval=14.198300 epoch=1791422005
+CA132 FRAME tic=47 ms=6420.212100 interval=16.765100 epoch=1791422005
+CA132 FRAME tic=47 ms=6436.664100 interval=16.452000 epoch=1791422005
+CA132 FRAME tic=48 ms=6455.664500 interval=19.000400 epoch=1791422005
+CA132 FRAME tic=49 ms=6478.723700 interval=23.059200 epoch=1791422005
+CA132 FRAME tic=49 ms=6497.273500 interval=18.549800 epoch=1791422005
+CA132 FRAME tic=50 ms=6519.082800 interval=21.809300 epoch=1791422005
+CA132 FRAME tic=51 ms=6537.124900 interval=18.042100 epoch=1791422005
+CA132 FRAME tic=51 ms=6552.683300 interval=15.558400 epoch=1791422005
+CA132 FRAME tic=52 ms=6568.052700 interval=15.369400 epoch=1791422005
+CA132 FRAME tic=52 ms=6583.310900 interval=15.258200 epoch=1791422005
+CA132 FRAME tic=53 ms=6614.732900 interval=31.422000 epoch=1791422005
+CA132 FRAME tic=54 ms=6632.029900 interval=17.297000 epoch=1791422005
+CA132 FRAME tic=55 ms=6647.935900 interval=15.906000 epoch=1791422005
+CA132 FRAME tic=55 ms=6664.374800 interval=16.438900 epoch=1791422005
+CA132 FRAME tic=56 ms=6679.654900 interval=15.280100 epoch=1791422005
+CA132 FRAME tic=56 ms=6694.536800 interval=14.881900 epoch=1791422005
+CA132 FRAME tic=57 ms=6716.346300 interval=21.809500 epoch=1791422005
+CA132 FRAME tic=57 ms=6732.730700 interval=16.384400 epoch=1791422005
+CA132 FRAME tic=58 ms=6747.674600 interval=14.943900 epoch=1791422005
+CA132 FRAME tic=59 ms=6761.710200 interval=14.035600 epoch=1791422005
+CA132 FRAME tic=59 ms=6777.758700 interval=16.048500 epoch=1791422005
+CA132 FRAME tic=60 ms=6795.143600 interval=17.384900 epoch=1791422005
+CA132 FRAME tic=60 ms=6811.314600 interval=16.171000 epoch=1791422005
+CA132 FRAME tic=61 ms=6833.976700 interval=22.662100 epoch=1791422005
+CA132 FRAME tic=62 ms=6849.141100 interval=15.164400 epoch=1791422005
+CA132 FRAME tic=62 ms=6863.566300 interval=14.425200 epoch=1791422005
+CA132 FRAME tic=63 ms=6878.726200 interval=15.159900 epoch=1791422005
+CA132 FRAME tic=63 ms=6895.277300 interval=16.551100 epoch=1791422005
+CA132 FRAME tic=64 ms=6912.308600 interval=17.031300 epoch=1791422005
+CA132 FRAME tic=64 ms=6928.894300 interval=16.585700 epoch=1791422005
+CA132 FRAME tic=65 ms=6949.881000 interval=20.986700 epoch=1791422005
+CA132 FRAME tic=66 ms=6964.797400 interval=14.916400 epoch=1791422005
+CA132 FRAME tic=66 ms=6980.041100 interval=15.243700 epoch=1791422005
+CA132 FRAME tic=67 ms=6997.861500 interval=17.820400 epoch=1791422005
+CA132 FRAME tic=67 ms=7014.668800 interval=16.807300 epoch=1791422005
+CA132 FRAME tic=68 ms=7035.238600 interval=20.569800 epoch=1791422005
+CA132 FRAME tic=69 ms=7055.939000 interval=20.700400 epoch=1791422005
+CA132 FRAME tic=69 ms=7076.499000 interval=20.560000 epoch=1791422005
+CA132 FRAME tic=70 ms=7094.363200 interval=17.864200 epoch=1791422005
+CA132 SIM tic=70 ms=7102.138000 alive=2000 total=2000 remaining=4000 pending=0 combatants=2602 defenders=600 corpses=0 projectiles=146 groups=21 failed=28 scriptedDeaths=0 victory=0 view=0
+CA132 FRAME tic=71 ms=7119.870200 interval=25.507000 epoch=1791422005
+CA132 FRAME tic=72 ms=7149.143100 interval=29.272900 epoch=1791422005
+CA132 FRAME tic=73 ms=7184.497800 interval=35.354700 epoch=1791422005
+CA132 FRAME tic=74 ms=7212.666300 interval=28.168500 epoch=1791422005
+CA132 FRAME tic=75 ms=7233.626800 interval=20.960500 epoch=1791422006
+CA121 COST tic=74 id=0 calls=2601 inclusive=5.921100 exclusive=2.189800
+CA121 COST tic=74 id=1 calls=2601 inclusive=0.592700 exclusive=0.477400
+CA121 COST tic=74 id=2 calls=14 inclusive=0.001100 exclusive=0.001100
+CA121 COST tic=74 id=3 calls=2601 inclusive=0.073500 exclusive=0.073500
+CA121 COST tic=74 id=4 calls=2601 inclusive=0.679600 exclusive=0.679600
+CA121 COST tic=74 id=5 calls=2601 inclusive=0.340800 exclusive=0.340800
+CA121 COST tic=74 id=6 calls=6 inclusive=0.000900 exclusive=0.000700
+CA121 COST tic=74 id=7 calls=2607 inclusive=0.267900 exclusive=0.267900
+CA121 COST tic=74 id=9 calls=3 inclusive=0.121900 exclusive=0.014800
+CA121 COST tic=74 id=10 calls=3 inclusive=0.099600 exclusive=0.099600
+CA121 COST tic=74 id=15 calls=1 inclusive=0.001300 exclusive=0.001300
+CA121 COST tic=74 id=18 calls=1 inclusive=0.095300 exclusive=0.005400
+CA121 COST tic=74 id=20 calls=48 inclusive=0.073900 exclusive=0.073900
+CA121 COST tic=74 id=21 calls=42 inclusive=0.033300 exclusive=0.016700
+CA121 COST tic=74 id=23 calls=1 inclusive=0.062600 exclusive=0.048700
+CA121 COST tic=74 id=24 calls=2602 inclusive=0.200400 exclusive=0.200400
+CA121 COST tic=74 id=27 calls=166 inclusive=0.466700 exclusive=0.465600
+CA121 COST tic=74 id=28 calls=166 inclusive=0.488100 exclusive=0.021400
+CA121 COST tic=74 id=29 calls=1 inclusive=0.088000 exclusive=0.088000
+CA121 COST tic=74 id=31 calls=1 inclusive=0.088600 exclusive=0.000600
+CA121 COST tic=74 id=32 calls=2601 inclusive=1.577500 exclusive=0.222500
+CA121 COST tic=74 id=33 calls=75 inclusive=0.554400 exclusive=0.074000
+CA121 COST tic=74 id=34 calls=74 inclusive=0.813600 exclusive=0.813600
+CA121 COST tic=74 id=35 calls=75 inclusive=0.480400 exclusive=0.480400
+CA121 COUNT tic=74 candidates=0 sight=0 decisions=0 commands=0
+CA132 FRAME tic=76 ms=7251.123300 interval=17.496500 epoch=1791422006
+CA132 FRAME tic=76 ms=7268.152700 interval=17.029400 epoch=1791422006
+CA132 FRAME tic=77 ms=7287.939400 interval=19.786700 epoch=1791422006
+CA132 FRAME tic=78 ms=7302.870300 interval=14.930900 epoch=1791422006
+CA132 FRAME tic=78 ms=7317.500800 interval=14.630500 epoch=1791422006
+CA132 FRAME tic=79 ms=7332.863300 interval=15.362500 epoch=1791422006
+CA132 FRAME tic=79 ms=7349.306200 interval=16.442900 epoch=1791422006
+CA132 FRAME tic=80 ms=7367.802700 interval=18.496500 epoch=1791422006
+CA132 FRAME tic=80 ms=7384.374100 interval=16.571400 epoch=1791422006
+CA132 FRAME tic=81 ms=7405.997600 interval=21.623500 epoch=1791422006
+CA132 FRAME tic=82 ms=7421.885400 interval=15.887800 epoch=1791422006
+CA132 FRAME tic=82 ms=7437.371700 interval=15.486300 epoch=1791422006
+CA132 FRAME tic=83 ms=7454.953900 interval=17.582200 epoch=1791422006
+CA132 FRAME tic=83 ms=7471.105800 interval=16.151900 epoch=1791422006
+CA132 FRAME tic=84 ms=7487.505500 interval=16.399700 epoch=1791422006
+CA132 FRAME tic=85 ms=7506.102100 interval=18.596600 epoch=1791422006
+CA132 FRAME tic=85 ms=7524.829300 interval=18.727200 epoch=1791422006
+CA132 FRAME tic=86 ms=7547.820600 interval=22.991300 epoch=1791422006
+CA132 FRAME tic=87 ms=7564.538000 interval=16.717400 epoch=1791422006
+CA132 FRAME tic=87 ms=7583.727800 interval=19.189800 epoch=1791422006
+CA132 FRAME tic=88 ms=7603.974600 interval=20.246800 epoch=1791422006
+CA132 FRAME tic=89 ms=7623.325300 interval=19.350700 epoch=1791422006
+CA132 FRAME tic=89 ms=7642.861600 interval=19.536300 epoch=1791422006
+CA132 FRAME tic=90 ms=7660.879700 interval=18.018100 epoch=1791422006
+CA132 FRAME tic=91 ms=7683.605900 interval=22.726200 epoch=1791422006
+CA132 FRAME tic=91 ms=7700.402400 interval=16.796500 epoch=1791422006
+CA132 FRAME tic=92 ms=7718.674200 interval=18.271800 epoch=1791422006
+CA132 FRAME tic=93 ms=7738.595000 interval=19.920800 epoch=1791422006
+CA132 FRAME tic=93 ms=7759.055900 interval=20.460900 epoch=1791422006
+CA132 FRAME tic=94 ms=7781.662600 interval=22.606700 epoch=1791422006
+CA132 FRAME tic=95 ms=7798.387900 interval=16.725300 epoch=1791422006
+CA132 FRAME tic=95 ms=7814.709800 interval=16.321900 epoch=1791422006
+CA132 FRAME tic=96 ms=7834.217500 interval=19.507700 epoch=1791422006
+CA132 FRAME tic=97 ms=7852.283800 interval=18.066300 epoch=1791422006
+CA132 FRAME tic=97 ms=7874.333400 interval=22.049600 epoch=1791422006
+CA132 FRAME tic=98 ms=7889.892400 interval=15.559000 epoch=1791422006
+CA132 FRAME tic=99 ms=7905.641200 interval=15.748800 epoch=1791422006
+CA132 FRAME tic=99 ms=7921.648900 interval=16.007700 epoch=1791422006
+CA132 FRAME tic=100 ms=7938.158000 interval=16.509100 epoch=1791422006
+CA132 FRAME tic=100 ms=7954.702200 interval=16.544200 epoch=1791422006
+CA132 FRAME tic=101 ms=7973.583800 interval=18.881600 epoch=1791422006
+CA132 FRAME tic=102 ms=7987.825100 interval=14.241300 epoch=1791422006
+CA132 FRAME tic=102 ms=8002.882200 interval=15.057100 epoch=1791422006
+CA132 FRAME tic=103 ms=8021.934800 interval=19.052600 epoch=1791422006
+CA132 FRAME tic=103 ms=8043.943700 interval=22.008900 epoch=1791422006
+CA132 FRAME tic=104 ms=8069.616900 interval=25.673200 epoch=1791422006
+CA132 FRAME tic=105 ms=8094.133000 interval=24.516100 epoch=1791422006
+CA132 SIM tic=105 ms=8103.004900 alive=2000 total=2000 remaining=4000 pending=0 combatants=2602 defenders=600 corpses=0 projectiles=374 groups=21 failed=28 scriptedDeaths=0 victory=0 view=0
+CA132 FRAME tic=106 ms=8120.570000 interval=26.437000 epoch=1791422006
+CA132 FRAME tic=107 ms=8141.757400 interval=21.187400 epoch=1791422006
+CA132 FRAME tic=107 ms=8158.268900 interval=16.511500 epoch=1791422006
+CA132 FRAME tic=108 ms=8174.597900 interval=16.329000 epoch=1791422006
+CA132 FRAME tic=109 ms=8194.073700 interval=19.475800 epoch=1791422006
+CA132 FRAME tic=109 ms=8213.698500 interval=19.624800 epoch=1791422006
+CA132 FRAME tic=110 ms=8230.852300 interval=17.153800 epoch=1791422007
+CA132 FRAME tic=111 ms=8249.584800 interval=18.732500 epoch=1791422007
+CA132 FRAME tic=111 ms=8267.140900 interval=17.556100 epoch=1791422007
+CA132 FRAME tic=112 ms=8288.620100 interval=21.479200 epoch=1791422007
+CA121 COST tic=111 id=0 calls=2601 inclusive=8.259000 exclusive=2.342300
+CA121 COST tic=111 id=1 calls=2601 inclusive=2.584800 exclusive=0.751300
+CA121 COST tic=111 id=2 calls=19 inclusive=0.002700 exclusive=0.002700
+CA121 COST tic=111 id=3 calls=2601 inclusive=0.067400 exclusive=0.067400
+CA121 COST tic=111 id=4 calls=2614 inclusive=0.666800 exclusive=0.666800
+CA121 COST tic=111 id=5 calls=2614 inclusive=0.364100 exclusive=0.364100
+CA121 COST tic=111 id=6 calls=1380 inclusive=0.158700 exclusive=0.121100
+CA121 COST tic=111 id=7 calls=3981 inclusive=0.299300 exclusive=0.299300
+CA121 COST tic=111 id=9 calls=690 inclusive=2.166500 exclusive=0.947600
+CA121 COST tic=111 id=10 calls=690 inclusive=0.719900 exclusive=0.719900
+CA121 COST tic=111 id=15 calls=1 inclusive=0.001400 exclusive=0.001400
+CA121 COST tic=111 id=18 calls=1 inclusive=0.149000 exclusive=0.007600
+CA121 COST tic=111 id=20 calls=48 inclusive=0.089200 exclusive=0.089200
+CA121 COST tic=111 id=21 calls=42 inclusive=0.038900 exclusive=0.017100
+CA121 COST tic=111 id=23 calls=1 inclusive=0.069900 exclusive=0.051900
+CA121 COST tic=111 id=24 calls=2602 inclusive=0.193700 exclusive=0.193700
+CA121 COST tic=111 id=27 calls=394 inclusive=0.898500 exclusive=0.898400
+CA121 COST tic=111 id=28 calls=394 inclusive=0.939100 exclusive=0.040600
+CA121 COST tic=111 id=29 calls=1 inclusive=0.139200 exclusive=0.139200
+CA121 COST tic=111 id=31 calls=1 inclusive=0.140000 exclusive=0.000800
+CA121 COST tic=111 id=32 calls=2601 inclusive=1.784100 exclusive=0.237800
+CA121 COST tic=111 id=33 calls=76 inclusive=0.592000 exclusive=0.078000
+CA121 COST tic=111 id=34 calls=75 inclusive=0.971100 exclusive=0.971100
+CA121 COST tic=111 id=35 calls=76 inclusive=0.514000 exclusive=0.514000
+CA121 COUNT tic=111 candidates=0 sight=0 decisions=0 commands=0
+CA132 FRAME tic=113 ms=8306.723900 interval=18.103800 epoch=1791422007
+CA132 FRAME tic=113 ms=8325.633500 interval=18.909600 epoch=1791422007
+CA132 FRAME tic=114 ms=8343.231700 interval=17.598200 epoch=1791422007
+CA132 FRAME tic=114 ms=8361.855500 interval=18.623800 epoch=1791422007
+CA132 FRAME tic=115 ms=8383.937500 interval=22.082000 epoch=1791422007
+CA132 FRAME tic=116 ms=8401.322400 interval=17.384900 epoch=1791422007
+CA132 FRAME tic=117 ms=8420.102000 interval=18.779600 epoch=1791422007
+CA132 FRAME tic=117 ms=8438.808800 interval=18.706800 epoch=1791422007
+CA132 FRAME tic=118 ms=8456.138700 interval=17.329900 epoch=1791422007
+CA132 FRAME tic=119 ms=8477.309900 interval=21.171200 epoch=1791422007
+CA132 FRAME tic=119 ms=8494.491400 interval=17.181500 epoch=1791422007
+CA132 FRAME tic=120 ms=8514.503400 interval=20.012000 epoch=1791422007
+CA132 FRAME tic=120 ms=8533.712500 interval=19.209100 epoch=1791422007
+CA132 FRAME tic=121 ms=8553.812300 interval=20.099800 epoch=1791422007
+CA132 FRAME tic=122 ms=8571.764900 interval=17.952600 epoch=1791422007
+CA132 FRAME tic=122 ms=8588.522500 interval=16.757600 epoch=1791422007
+CA132 FRAME tic=123 ms=8606.188300 interval=17.665800 epoch=1791422007
+CA132 FRAME tic=124 ms=8623.318100 interval=17.129800 epoch=1791422007
+CA132 FRAME tic=124 ms=8639.854700 interval=16.536600 epoch=1791422007
+CA132 FRAME tic=125 ms=8659.067600 interval=19.212900 epoch=1791422007
+CA132 FRAME tic=126 ms=8677.368000 interval=18.300400 epoch=1791422007
+CA132 FRAME tic=126 ms=8695.312600 interval=17.944600 epoch=1791422007
+CA132 FRAME tic=127 ms=8711.619300 interval=16.306700 epoch=1791422007
+CA132 FRAME tic=127 ms=8727.725100 interval=16.105800 epoch=1791422007
+CA132 FRAME tic=128 ms=8745.821500 interval=18.096400 epoch=1791422007
+CA132 FRAME tic=129 ms=8763.993400 interval=18.171900 epoch=1791422007
+CA132 FRAME tic=129 ms=8781.907000 interval=17.913600 epoch=1791422007
+CA132 FRAME tic=130 ms=8807.547800 interval=25.640800 epoch=1791422007
+CA132 FRAME tic=131 ms=8824.276200 interval=16.728400 epoch=1791422007
+CA132 FRAME tic=131 ms=8841.501300 interval=17.225100 epoch=1791422007
+CA132 FRAME tic=132 ms=8861.129900 interval=19.628600 epoch=1791422007
+CA132 FRAME tic=133 ms=8881.199200 interval=20.069300 epoch=1791422007
+CA132 FRAME tic=133 ms=8900.230300 interval=19.031100 epoch=1791422007
+CA132 FRAME tic=134 ms=8917.221500 interval=16.991200 epoch=1791422007
+CA132 FRAME tic=135 ms=8933.721600 interval=16.500100 epoch=1791422007
+CA132 FRAME tic=135 ms=8949.584800 interval=15.863200 epoch=1791422007
+CA132 FRAME tic=136 ms=8968.801100 interval=19.216300 epoch=1791422007
+CA132 FRAME tic=137 ms=8992.371100 interval=23.570000 epoch=1791422007
+CA132 FRAME tic=137 ms=9011.458100 interval=19.087000 epoch=1791422007
+CA132 FRAME tic=138 ms=9030.371500 interval=18.913400 epoch=1791422007
+CA132 FRAME tic=139 ms=9047.982000 interval=17.610500 epoch=1791422007
+CA132 FRAME tic=139 ms=9065.368000 interval=17.386000 epoch=1791422007
+CA132 FRAME tic=140 ms=9087.545800 interval=22.177800 epoch=1791422007
+CA132 SIM tic=140 ms=9092.524200 alive=2000 total=2000 remaining=4000 pending=0 combatants=2602 defenders=600 corpses=0 projectiles=555 groups=21 failed=28 scriptedDeaths=0 victory=0 view=0
+CA132 FRAME tic=141 ms=9110.070900 interval=22.525100 epoch=1791422007
+CA132 FRAME tic=142 ms=9135.087800 interval=25.016900 epoch=1791422007
+CA132 FRAME tic=142 ms=9153.359900 interval=18.272100 epoch=1791422007
+CA132 FRAME tic=143 ms=9169.104000 interval=15.744100 epoch=1791422007
+CA132 FRAME tic=143 ms=9184.911400 interval=15.807400 epoch=1791422007
+CA132 FRAME tic=144 ms=9203.278500 interval=18.367100 epoch=1791422007
+CA132 FRAME tic=145 ms=9227.470400 interval=24.191900 epoch=1791422008
+CA132 FRAME tic=145 ms=9245.424300 interval=17.953900 epoch=1791422008
+CA132 FRAME tic=146 ms=9263.112700 interval=17.688400 epoch=1791422008
+CA132 FRAME tic=147 ms=9279.580600 interval=16.467900 epoch=1791422008
+CA132 FRAME tic=147 ms=9295.760000 interval=16.179400 epoch=1791422008
+CA132 FRAME tic=148 ms=9317.897400 interval=22.137400 epoch=1791422008
+CA132 FRAME tic=149 ms=9341.546200 interval=23.648800 epoch=1791422008
+CA121 COST tic=148 id=0 calls=2601 inclusive=9.942300 exclusive=2.470000
+CA121 COST tic=148 id=1 calls=2601 inclusive=4.407700 exclusive=1.013200
+CA121 COST tic=148 id=2 calls=78 inclusive=0.006300 exclusive=0.006300
+CA121 COST tic=148 id=3 calls=2601 inclusive=0.068900 exclusive=0.068900
+CA121 COST tic=148 id=4 calls=2632 inclusive=0.636000 exclusive=0.636000
+CA121 COST tic=148 id=5 calls=2632 inclusive=0.367300 exclusive=0.367300
+CA121 COST tic=148 id=6 calls=4226 inclusive=0.478600 exclusive=0.360500
+CA121 COST tic=148 id=7 calls=6827 inclusive=0.335200 exclusive=0.335200
+CA121 COST tic=148 id=9 calls=2113 inclusive=5.127800 exclusive=2.330000
+CA121 COST tic=148 id=10 calls=2113 inclusive=0.565000 exclusive=0.565000
+CA121 COST tic=148 id=15 calls=1 inclusive=0.001000 exclusive=0.001000
+CA121 COST tic=148 id=18 calls=1 inclusive=0.079300 exclusive=0.003800
+CA121 COST tic=148 id=20 calls=48 inclusive=0.055200 exclusive=0.055200
+CA121 COST tic=148 id=21 calls=42 inclusive=0.028800 exclusive=0.016700
+CA121 COST tic=148 id=23 calls=1 inclusive=0.057500 exclusive=0.044800
+CA121 COST tic=148 id=24 calls=2602 inclusive=0.211100 exclusive=0.211100
+CA121 COST tic=148 id=27 calls=632 inclusive=1.369600 exclusive=1.369500
+CA121 COST tic=148 id=28 calls=632 inclusive=1.438600 exclusive=0.069000
+CA121 COST tic=148 id=29 calls=1 inclusive=0.074000 exclusive=0.074000
+CA121 COST tic=148 id=31 calls=1 inclusive=0.074500 exclusive=0.000500
+CA121 COST tic=148 id=32 calls=2601 inclusive=1.579700 exclusive=0.273400
+CA121 COST tic=148 id=33 calls=76 inclusive=0.562200 exclusive=0.068700
+CA121 COST tic=148 id=34 calls=75 inclusive=0.756000 exclusive=0.756000
+CA121 COST tic=148 id=35 calls=76 inclusive=0.493500 exclusive=0.493500
+CA121 COUNT tic=148 candidates=0 sight=0 decisions=0 commands=0
+CA132 FRAME tic=150 ms=9362.758900 interval=21.212700 epoch=1791422008
+CA132 FRAME tic=150 ms=9380.914000 interval=18.155100 epoch=1791422008
+CA132 FRAME tic=151 ms=9398.453600 interval=17.539600 epoch=1791422008
+CA132 FRAME tic=151 ms=9415.604700 interval=17.151100 epoch=1791422008
+CA132 FRAME tic=152 ms=9436.782900 interval=21.178200 epoch=1791422008
+CA132 FRAME tic=153 ms=9460.925600 interval=24.142700 epoch=1791422008
+CA132 FRAME tic=154 ms=9479.647100 interval=18.721500 epoch=1791422008
+CA132 FRAME tic=154 ms=9504.620400 interval=24.973300 epoch=1791422008
+CA132 FRAME tic=155 ms=9521.934600 interval=17.314200 epoch=1791422008
+CA132 FRAME tic=156 ms=9540.486400 interval=18.551800 epoch=1791422008
+CA132 FRAME tic=156 ms=9559.031500 interval=18.545100 epoch=1791422008
+CA132 FRAME tic=157 ms=9580.260200 interval=21.228700 epoch=1791422008
+CA132 FRAME tic=158 ms=9600.235300 interval=19.975100 epoch=1791422008
+CA132 FRAME tic=158 ms=9617.238800 interval=17.003500 epoch=1791422008
+CA132 FRAME tic=159 ms=9635.673100 interval=18.434300 epoch=1791422008
+CA132 FRAME tic=160 ms=9656.299400 interval=20.626300 epoch=1791422008
+CA132 FRAME tic=160 ms=9674.054500 interval=17.755100 epoch=1791422008
+CA132 FRAME tic=161 ms=9695.957300 interval=21.902800 epoch=1791422008
+CA132 FRAME tic=162 ms=9713.750300 interval=17.793000 epoch=1791422008
+CA132 FRAME tic=163 ms=9735.038200 interval=21.287900 epoch=1791422008
+CA132 FRAME tic=163 ms=9751.852200 interval=16.814000 epoch=1791422008
+CA132 FRAME tic=164 ms=9770.165800 interval=18.313600 epoch=1791422008
+CA132 FRAME tic=164 ms=9787.681500 interval=17.515700 epoch=1791422008
+CA132 FRAME tic=165 ms=9807.882700 interval=20.201200 epoch=1791422008
+CA132 FRAME tic=166 ms=9829.571200 interval=21.688500 epoch=1791422008
+CA132 FRAME tic=167 ms=9846.076100 interval=16.504900 epoch=1791422008
+CA132 FRAME tic=167 ms=9862.710800 interval=16.634700 epoch=1791422008
+CA132 FRAME tic=168 ms=9882.649000 interval=19.938200 epoch=1791422008
+CA132 FRAME tic=168 ms=9901.235500 interval=18.586500 epoch=1791422008
+CA132 FRAME tic=169 ms=9924.058700 interval=22.823200 epoch=1791422008
+CA132 FRAME tic=170 ms=9941.180500 interval=17.121800 epoch=1791422008
+CA132 FRAME tic=170 ms=9958.044400 interval=16.863900 epoch=1791422008
+CA132 FRAME tic=171 ms=9976.519100 interval=18.474700 epoch=1791422008
+CA132 FRAME tic=172 ms=9995.414700 interval=18.895600 epoch=1791422008
+CA132 FRAME tic=172 ms=10018.982600 interval=23.567900 epoch=1791422008
+CA132 FRAME tic=173 ms=10041.275500 interval=22.292900 epoch=1791422008
+CA132 FRAME tic=174 ms=10064.932000 interval=23.656500 epoch=1791422008
+CA132 FRAME tic=175 ms=10081.866400 interval=16.934400 epoch=1791422008
+CA132 FRAME tic=175 ms=10099.093100 interval=17.226700 epoch=1791422008
+CA132 SIM tic=175 ms=10105.078500 alive=2000 total=2000 remaining=4000 pending=0 combatants=2602 defenders=600 corpses=0 projectiles=755 groups=21 failed=28 scriptedDeaths=0 victory=0 view=0
+CA132 FRAME tic=176 ms=10124.265800 interval=25.172700 epoch=1791422008
+CA132 FRAME tic=177 ms=10143.928600 interval=19.662800 epoch=1791422008
+CA132 FRAME tic=178 ms=10163.079600 interval=19.151000 epoch=1791422008
+CA132 FRAME tic=178 ms=10181.989300 interval=18.909700 epoch=1791422008
+CA132 FRAME tic=179 ms=10200.979100 interval=18.989800 epoch=1791422008
+CA132 FRAME tic=179 ms=10219.995100 interval=19.016000 epoch=1791422008
+CA132 FRAME tic=180 ms=10238.761700 interval=18.766600 epoch=1791422009
+CA132 FRAME tic=181 ms=10257.088600 interval=18.326900 epoch=1791422009
+CA132 FRAME tic=182 ms=10277.238800 interval=20.150200 epoch=1791422009
+CA132 FRAME tic=182 ms=10298.544300 interval=21.305500 epoch=1791422009
+CA132 FRAME tic=183 ms=10314.960700 interval=16.416400 epoch=1791422009
+CA132 FRAME tic=183 ms=10332.085500 interval=17.124800 epoch=1791422009
+CA132 FRAME tic=184 ms=10351.439100 interval=19.353600 epoch=1791422009
+CA132 FRAME tic=185 ms=10369.088900 interval=17.649800 epoch=1791422009
+CA132 FRAME tic=185 ms=10390.096100 interval=21.007200 epoch=1791422009
+CA132 FRAME tic=186 ms=10410.585800 interval=20.489700 epoch=1791422009
+CA121 COST tic=185 id=0 calls=2601 inclusive=7.124400 exclusive=2.216800
+CA121 COST tic=185 id=1 calls=2601 inclusive=1.688800 exclusive=0.687200
+CA121 COST tic=185 id=2 calls=10 inclusive=0.000800 exclusive=0.000800
+CA121 COST tic=185 id=3 calls=2601 inclusive=0.066000 exclusive=0.066000
+CA121 COST tic=185 id=4 calls=2604 inclusive=0.687900 exclusive=0.687900
+CA121 COST tic=185 id=5 calls=2603 inclusive=0.346200 exclusive=0.346200
+CA121 COST tic=185 id=6 calls=1500 inclusive=0.167100 exclusive=0.123200
+CA121 COST tic=185 id=7 calls=4101 inclusive=0.308600 exclusive=0.308600
+CA121 COST tic=185 id=9 calls=750 inclusive=1.034100 exclusive=0.471300
+CA121 COST tic=185 id=10 calls=153 inclusive=0.362500 exclusive=0.362500
+CA121 COST tic=185 id=15 calls=1 inclusive=0.001200 exclusive=0.001200
+CA121 COST tic=185 id=18 calls=1 inclusive=0.105000 exclusive=0.005500
+CA121 COST tic=185 id=20 calls=48 inclusive=0.060500 exclusive=0.060500
+CA121 COST tic=185 id=21 calls=42 inclusive=0.030100 exclusive=0.017300
+CA121 COST tic=185 id=23 calls=1 inclusive=0.087600 exclusive=0.053400
+CA121 COST tic=185 id=24 calls=2602 inclusive=0.200300 exclusive=0.200300
+CA121 COST tic=185 id=27 calls=806 inclusive=1.838200 exclusive=1.804400
+CA121 COST tic=185 id=28 calls=806 inclusive=1.914900 exclusive=0.076700
+CA121 COST tic=185 id=29 calls=1 inclusive=0.097800 exclusive=0.097800
+CA121 COST tic=185 id=31 calls=1 inclusive=0.098300 exclusive=0.000500
+CA121 COST tic=185 id=32 calls=2605 inclusive=1.688600 exclusive=0.272300
+CA121 COST tic=185 id=33 calls=80 inclusive=0.619100 exclusive=0.083600
+CA121 COST tic=185 id=34 calls=75 inclusive=0.830200 exclusive=0.830200
+CA121 COST tic=185 id=35 calls=80 inclusive=0.535500 exclusive=0.535500
+CA121 COUNT tic=185 candidates=0 sight=0 decisions=0 commands=0
+CA132 FRAME tic=187 ms=10432.665700 interval=22.079900 epoch=1791422009
+CA132 FRAME tic=188 ms=10451.726800 interval=19.061100 epoch=1791422009
+CA132 FRAME tic=188 ms=10470.185800 interval=18.459000 epoch=1791422009
+CA132 FRAME tic=189 ms=10491.554900 interval=21.369100 epoch=1791422009
+CA132 FRAME tic=190 ms=10509.682700 interval=18.127800 epoch=1791422009
+CA132 FRAME tic=190 ms=10530.869600 interval=21.186900 epoch=1791422009
+CA132 FRAME tic=191 ms=10552.600300 interval=21.730700 epoch=1791422009
+CA132 FRAME tic=192 ms=10581.977800 interval=29.377500 epoch=1791422009
+CA132 FRAME tic=193 ms=10604.902100 interval=22.924300 epoch=1791422009
+CA132 FRAME tic=194 ms=10627.097800 interval=22.195700 epoch=1791422009
+CA132 FRAME tic=195 ms=10653.197900 interval=26.100100 epoch=1791422009
+CA132 FRAME tic=195 ms=10673.356500 interval=20.158600 epoch=1791422009
+CA132 FRAME tic=196 ms=10697.805900 interval=24.449400 epoch=1791422009
+CA132 FRAME tic=197 ms=10723.853700 interval=26.047800 epoch=1791422009
+CA132 FRAME tic=198 ms=10743.289100 interval=19.435400 epoch=1791422009
+CA132 FRAME tic=198 ms=10763.205600 interval=19.916500 epoch=1791422009
+CA132 FRAME tic=199 ms=10786.686500 interval=23.480900 epoch=1791422009
+CA132 FRAME tic=200 ms=10807.065100 interval=20.378600 epoch=1791422009
+CA132 FRAME tic=201 ms=10829.878700 interval=22.813600 epoch=1791422009
+CA132 FRAME tic=202 ms=10855.066400 interval=25.187700 epoch=1791422009
+CA132 FRAME tic=203 ms=10878.914600 interval=23.848200 epoch=1791422009
+CA132 FRAME tic=203 ms=10901.972600 interval=23.058000 epoch=1791422009
+CA132 FRAME tic=204 ms=10930.283000 interval=28.310400 epoch=1791422009
+CA132 FRAME tic=205 ms=10955.317100 interval=25.034100 epoch=1791422009
+CA132 FRAME tic=206 ms=10974.026700 interval=18.709600 epoch=1791422009
+CA132 FRAME tic=207 ms=10992.504800 interval=18.478100 epoch=1791422009
+CA132 FRAME tic=207 ms=11020.378400 interval=27.873600 epoch=1791422009
+CA132 FRAME tic=208 ms=11044.697200 interval=24.318800 epoch=1791422009
+CA132 FRAME tic=209 ms=11071.509500 interval=26.812300 epoch=1791422009
+CA132 FRAME tic=210 ms=11095.582200 interval=24.072700 epoch=1791422009
+CA132 SIM tic=210 ms=11104.909000 alive=2000 total=2000 remaining=4000 pending=0 combatants=2602 defenders=600 corpses=0 projectiles=829 groups=21 failed=28 scriptedDeaths=0 victory=0 view=0
+CA132 FRAME tic=211 ms=11125.434900 interval=29.852700 epoch=1791422009
+CA132 FRAME tic=212 ms=11149.383700 interval=23.948800 epoch=1791422009
+CA132 FRAME tic=213 ms=11175.576600 interval=26.192900 epoch=1791422009
+CA132 FRAME tic=214 ms=11197.010000 interval=21.433400 epoch=1791422009
+CA132 FRAME tic=214 ms=11221.649600 interval=24.639600 epoch=1791422010
+CA132 FRAME tic=215 ms=11244.037100 interval=22.387500 epoch=1791422010
+CA132 FRAME tic=216 ms=11270.012700 interval=25.975600 epoch=1791422010
+CA132 FRAME tic=217 ms=11294.633000 interval=24.620300 epoch=1791422010
+CA132 FRAME tic=218 ms=11318.762300 interval=24.129300 epoch=1791422010
+CA132 FRAME tic=219 ms=11348.517400 interval=29.755100 epoch=1791422010
+CA132 FRAME tic=220 ms=11373.617300 interval=25.099900 epoch=1791422010
+CA132 FRAME tic=221 ms=11397.631800 interval=24.014500 epoch=1791422010
+CA132 FRAME tic=222 ms=11421.722700 interval=24.090900 epoch=1791422010
+CA132 FRAME tic=222 ms=11442.753800 interval=21.031100 epoch=1791422010
+CA132 FRAME tic=223 ms=11473.388400 interval=30.634600 epoch=1791422010
+CA121 COST tic=222 id=0 calls=2601 inclusive=6.728600 exclusive=2.237900
+CA121 COST tic=222 id=1 calls=2601 inclusive=1.444900 exclusive=0.644000
+CA121 COST tic=222 id=2 calls=37 inclusive=0.003200 exclusive=0.003200
+CA121 COST tic=222 id=3 calls=2601 inclusive=0.069800 exclusive=0.069800
+CA121 COST tic=222 id=4 calls=2616 inclusive=0.661200 exclusive=0.661200
+CA121 COST tic=222 id=5 calls=2611 inclusive=0.363000 exclusive=0.363000
+CA121 COST tic=222 id=6 calls=942 inclusive=0.108000 exclusive=0.082100
+CA121 COST tic=222 id=7 calls=3543 inclusive=0.290100 exclusive=0.290100
+CA121 COST tic=222 id=9 calls=471 inclusive=1.050300 exclusive=0.650400
+CA121 COST tic=222 id=10 calls=471 inclusive=0.036500 exclusive=0.036500
+CA121 COST tic=222 id=15 calls=1 inclusive=0.000900 exclusive=0.000900
+CA121 COST tic=222 id=18 calls=1 inclusive=0.092900 exclusive=0.005400
+CA121 COST tic=222 id=20 calls=48 inclusive=0.060100 exclusive=0.060100
+CA121 COST tic=222 id=21 calls=42 inclusive=0.028300 exclusive=0.015600
+CA121 COST tic=222 id=23 calls=1 inclusive=0.072500 exclusive=0.054700
+CA121 COST tic=222 id=24 calls=2602 inclusive=0.192200 exclusive=0.192200
+CA121 COST tic=222 id=27 calls=875 inclusive=2.103000 exclusive=2.018600
+CA121 COST tic=222 id=28 calls=875 inclusive=2.193500 exclusive=0.090500
+CA121 COST tic=222 id=29 calls=1 inclusive=0.086000 exclusive=0.086000
+CA121 COST tic=222 id=31 calls=1 inclusive=0.086600 exclusive=0.000600
+CA121 COST tic=222 id=32 calls=2609 inclusive=1.584000 exclusive=0.225000
+CA121 COST tic=222 id=33 calls=83 inclusive=0.631600 exclusive=0.081100
+CA121 COST tic=222 id=34 calls=75 inclusive=0.743800 exclusive=0.743800
+CA121 COST tic=222 id=35 calls=83 inclusive=0.550500 exclusive=0.550500
+CA121 COUNT tic=222 candidates=0 sight=0 decisions=0 commands=0
+CA132 FRAME tic=224 ms=11497.780200 interval=24.391800 epoch=1791422010
+CA132 FRAME tic=225 ms=11521.992300 interval=24.212100 epoch=1791422010
+CA132 FRAME tic=226 ms=11543.366600 interval=21.374300 epoch=1791422010
+CA132 FRAME tic=227 ms=11568.391200 interval=25.024600 epoch=1791422010
+CA132 FRAME tic=227 ms=11589.625900 interval=21.234700 epoch=1791422010
+CA132 FRAME tic=228 ms=11608.973000 interval=19.347100 epoch=1791422010
+CA132 FRAME tic=229 ms=11629.943200 interval=20.970200 epoch=1791422010
+CA132 FRAME tic=230 ms=11655.236700 interval=25.293500 epoch=1791422010
+CA132 FRAME tic=230 ms=11676.076000 interval=20.839300 epoch=1791422010
+CA132 FRAME tic=231 ms=11698.964000 interval=22.888000 epoch=1791422010
+CA132 FRAME tic=232 ms=11720.920900 interval=21.956900 epoch=1791422010
+CA132 FRAME tic=233 ms=11741.314300 interval=20.393400 epoch=1791422010
+CA132 FRAME tic=233 ms=11763.832300 interval=22.518000 epoch=1791422010
+CA132 FRAME tic=234 ms=11787.983300 interval=24.151000 epoch=1791422010
+CA132 FRAME tic=235 ms=11807.948300 interval=19.965000 epoch=1791422010
+CA132 FRAME tic=236 ms=11827.630500 interval=19.682200 epoch=1791422010
+CA132 FRAME tic=237 ms=11850.606200 interval=22.975700 epoch=1791422010
+CA132 FRAME tic=237 ms=11870.281400 interval=19.675200 epoch=1791422010
+CA132 FRAME tic=238 ms=11890.072900 interval=19.791500 epoch=1791422010
+CA132 FRAME tic=239 ms=11912.424300 interval=22.351400 epoch=1791422010
+CA132 FRAME tic=239 ms=11935.611700 interval=23.187400 epoch=1791422010
+CA132 FRAME tic=240 ms=11958.817000 interval=23.205300 epoch=1791422010
+CA132 FRAME tic=241 ms=11979.351400 interval=20.534400 epoch=1791422010
+CA132 FRAME tic=242 ms=12002.006400 interval=22.655000 epoch=1791422010
+CA132 FRAME tic=243 ms=12021.197500 interval=19.191100 epoch=1791422010
+CA132 FRAME tic=243 ms=12045.028600 interval=23.831100 epoch=1791422010
+CA132 FRAME tic=244 ms=12071.776700 interval=26.748100 epoch=1791422010
+CA132 FRAME tic=245 ms=12095.831600 interval=24.054900 epoch=1791422010
+CA132 SIM tic=245 ms=12104.522900 alive=2000 total=2000 remaining=4000 pending=0 combatants=2602 defenders=600 corpses=0 projectiles=857 groups=21 failed=28 scriptedDeaths=0 victory=0 view=0
+CA132 FRAME tic=246 ms=12123.501300 interval=27.669700 epoch=1791422010
+CA132 FRAME tic=247 ms=12143.024600 interval=19.523300 epoch=1791422010
+CA132 FRAME tic=247 ms=12163.438300 interval=20.413700 epoch=1791422010
+CA132 FRAME tic=248 ms=12189.838300 interval=26.400000 epoch=1791422010
+CA132 FRAME tic=249 ms=12210.622300 interval=20.784000 epoch=1791422010
+CA132 FRAME tic=250 ms=12236.999200 interval=26.376900 epoch=1791422011
+CA132 FRAME tic=251 ms=12258.985200 interval=21.986000 epoch=1791422011
+CA132 FRAME tic=252 ms=12283.899100 interval=24.913900 epoch=1791422011
+CA132 FRAME tic=252 ms=12303.042400 interval=19.143300 epoch=1791422011
+CA132 FRAME tic=253 ms=12326.802300 interval=23.759900 epoch=1791422011
+CA132 FRAME tic=254 ms=12352.070100 interval=25.267800 epoch=1791422011
+CA132 FRAME tic=255 ms=12371.332100 interval=19.262000 epoch=1791422011
+CA132 FRAME tic=255 ms=12389.290200 interval=17.958100 epoch=1791422011
+CA132 FRAME tic=256 ms=12414.128600 interval=24.838400 epoch=1791422011
+CA132 FRAME tic=257 ms=12434.930500 interval=20.801900 epoch=1791422011
+CA132 FRAME tic=258 ms=12459.508000 interval=24.577500 epoch=1791422011
+CA132 FRAME tic=259 ms=12476.742300 interval=17.234300 epoch=1791422011
+CA132 FRAME tic=259 ms=12499.364300 interval=22.622000 epoch=1791422011
+CA132 FRAME tic=260 ms=12526.013000 interval=26.648700 epoch=1791422011
+CA121 COST tic=259 id=0 calls=2601 inclusive=8.975700 exclusive=2.524000
+CA121 COST tic=259 id=1 calls=2601 inclusive=3.026000 exclusive=0.842600
+CA121 COST tic=259 id=2 calls=90 inclusive=0.007900 exclusive=0.007900
+CA121 COST tic=259 id=3 calls=2601 inclusive=0.072600 exclusive=0.072600
+CA121 COST tic=259 id=4 calls=2623 inclusive=0.692700 exclusive=0.692700
+CA121 COST tic=259 id=5 calls=2618 inclusive=0.385300 exclusive=0.385300
+CA121 COST tic=259 id=6 calls=1958 inclusive=0.228800 exclusive=0.170000
+CA121 COST tic=259 id=7 calls=4559 inclusive=0.337400 exclusive=0.337400
+CA121 COST tic=259 id=9 calls=979 inclusive=2.981000 exclusive=1.784700
+CA121 COST tic=259 id=10 calls=976 inclusive=0.076400 exclusive=0.076400
+CA121 COST tic=259 id=15 calls=1 inclusive=0.001400 exclusive=0.001400
+CA121 COST tic=259 id=17 calls=31 inclusive=0.079000 exclusive=0.079000
+CA121 COST tic=259 id=18 calls=1 inclusive=0.099800 exclusive=0.005600
+CA121 COST tic=259 id=20 calls=48 inclusive=0.065700 exclusive=0.065700
+CA121 COST tic=259 id=21 calls=42 inclusive=0.032400 exclusive=0.019200
+CA121 COST tic=259 id=23 calls=1 inclusive=0.071300 exclusive=0.052500
+CA121 COST tic=259 id=24 calls=2602 inclusive=0.198500 exclusive=0.198500
+CA121 COST tic=259 id=27 calls=873 inclusive=2.541800 exclusive=2.470100
+CA121 COST tic=259 id=28 calls=873 inclusive=2.635200 exclusive=0.093400
+CA121 COST tic=259 id=29 calls=1 inclusive=0.092100 exclusive=0.092100
+CA121 COST tic=259 id=31 calls=1 inclusive=0.092800 exclusive=0.000700
+CA121 COST tic=259 id=32 calls=2608 inclusive=1.877500 exclusive=0.255100
+CA121 COST tic=259 id=33 calls=82 inclusive=0.646300 exclusive=0.084700
+CA121 COST tic=259 id=34 calls=74 inclusive=0.993700 exclusive=0.993700
+CA121 COST tic=259 id=35 calls=82 inclusive=0.561600 exclusive=0.561600
+CA121 COUNT tic=259 candidates=0 sight=0 decisions=0 commands=0
+CA132 FRAME tic=261 ms=12550.646500 interval=24.633500 epoch=1791422011
+CA132 FRAME tic=262 ms=12571.175600 interval=20.529100 epoch=1791422011
+CA132 FRAME tic=262 ms=12590.959500 interval=19.783900 epoch=1791422011
+CA132 FRAME tic=263 ms=12610.832400 interval=19.872900 epoch=1791422011
+CA132 FRAME tic=264 ms=12631.516200 interval=20.683800 epoch=1791422011
+CA132 FRAME tic=265 ms=12652.537000 interval=21.020800 epoch=1791422011
+CA132 FRAME tic=265 ms=12674.235900 interval=21.698900 epoch=1791422011
+CA132 FRAME tic=266 ms=12692.810100 interval=18.574200 epoch=1791422011
+CA132 FRAME tic=267 ms=12709.506900 interval=16.696800 epoch=1791422011
+CA132 FRAME tic=267 ms=12727.139900 interval=17.633000 epoch=1791422011
+CA132 FRAME tic=268 ms=12747.217800 interval=20.077900 epoch=1791422011
+CA132 FRAME tic=269 ms=12769.695600 interval=22.477800 epoch=1791422011
+CA132 FRAME tic=269 ms=12789.597900 interval=19.902300 epoch=1791422011
+CA132 FRAME tic=270 ms=12808.322500 interval=18.724600 epoch=1791422011
+CA132 FRAME tic=271 ms=12825.958000 interval=17.635500 epoch=1791422011
+CA132 FRAME tic=271 ms=12843.819200 interval=17.861200 epoch=1791422011
+CA132 FRAME tic=272 ms=12864.321100 interval=20.501900 epoch=1791422011
+CA132 FRAME tic=273 ms=12885.820800 interval=21.499700 epoch=1791422011
+CA132 FRAME tic=273 ms=12905.523900 interval=19.703100 epoch=1791422011
+CA132 FRAME tic=274 ms=12925.251700 interval=19.727800 epoch=1791422011
+CA132 FRAME tic=275 ms=12945.342700 interval=20.091000 epoch=1791422011
+CA132 FRAME tic=276 ms=12967.824000 interval=22.481300 epoch=1791422011
+CA132 FRAME tic=276 ms=12988.493400 interval=20.669400 epoch=1791422011
+CA132 FRAME tic=277 ms=13010.516100 interval=22.022700 epoch=1791422011
+CA132 FRAME tic=278 ms=13033.732900 interval=23.216800 epoch=1791422011
+CA132 FRAME tic=279 ms=13056.536000 interval=22.803100 epoch=1791422011
+CA132 FRAME tic=279 ms=13078.957600 interval=22.421600 epoch=1791422011
+CA132 FRAME tic=280 ms=13099.574800 interval=20.617200 epoch=1791422011
+CA132 SIM tic=280 ms=13105.568900 alive=2000 total=2000 remaining=4000 pending=0 combatants=2602 defenders=600 corpses=0 projectiles=877 groups=21 failed=28 scriptedDeaths=0 victory=0 view=0
+CA132 FRAME tic=281 ms=13123.624400 interval=24.049600 epoch=1791422011
+CA132 FRAME tic=282 ms=13141.641100 interval=18.016700 epoch=1791422011
+CA132 FRAME tic=282 ms=13159.425600 interval=17.784500 epoch=1791422011
+CA132 FRAME tic=283 ms=13179.486500 interval=20.060900 epoch=1791422011
+CA132 FRAME tic=284 ms=13200.569200 interval=21.082700 epoch=1791422011
+CA132 FRAME tic=284 ms=13219.092200 interval=18.523000 epoch=1791422011
+CA132 FRAME tic=285 ms=13238.738600 interval=19.646400 epoch=1791422012
+CA132 FRAME tic=286 ms=13256.912500 interval=18.173900 epoch=1791422012
+CA132 FRAME tic=286 ms=13274.461900 interval=17.549400 epoch=1791422012
+CA132 FRAME tic=287 ms=13292.420200 interval=17.958300 epoch=1791422012
+CA132 FRAME tic=288 ms=13313.243300 interval=20.823100 epoch=1791422012
+CA132 FRAME tic=288 ms=13335.931200 interval=22.687900 epoch=1791422012
+CA132 FRAME tic=289 ms=13357.476400 interval=21.545200 epoch=1791422012
+CA132 FRAME tic=290 ms=13375.721500 interval=18.245100 epoch=1791422012
+CA132 FRAME tic=291 ms=13394.183200 interval=18.461700 epoch=1791422012
+CA132 FRAME tic=291 ms=13415.127700 interval=20.944500 epoch=1791422012
+CA132 FRAME tic=292 ms=13436.089700 interval=20.962000 epoch=1791422012
+CA132 FRAME tic=293 ms=13454.302100 interval=18.212400 epoch=1791422012
+CA132 FRAME tic=293 ms=13472.725200 interval=18.423100 epoch=1791422012
+CA132 FRAME tic=294 ms=13491.440800 interval=18.715600 epoch=1791422012
+CA132 FRAME tic=295 ms=13508.851400 interval=17.410600 epoch=1791422012
+CA132 FRAME tic=295 ms=13526.238500 interval=17.387100 epoch=1791422012
+CA132 FRAME tic=296 ms=13547.533200 interval=21.294700 epoch=1791422012
+CA132 FRAME tic=297 ms=13571.019900 interval=23.486700 epoch=1791422012
+CA132 FRAME tic=297 ms=13592.781800 interval=21.761900 epoch=1791422012
+CA121 COST tic=296 id=0 calls=2601 inclusive=7.958200 exclusive=2.390300
+CA121 COST tic=296 id=1 calls=2601 inclusive=2.413100 exclusive=0.696400
+CA121 COST tic=296 id=2 calls=68 inclusive=0.005200 exclusive=0.005200
+CA121 COST tic=296 id=3 calls=2601 inclusive=0.071600 exclusive=0.071600
+CA121 COST tic=296 id=4 calls=2617 inclusive=0.664700 exclusive=0.664700
+CA121 COST tic=296 id=5 calls=2613 inclusive=0.388300 exclusive=0.388300
+CA121 COST tic=296 id=6 calls=1186 inclusive=0.141900 exclusive=0.108700
+CA121 COST tic=296 id=7 calls=3787 inclusive=0.269200 exclusive=0.269200
+CA121 COST tic=296 id=9 calls=593 inclusive=1.709600 exclusive=1.166900
+CA121 COST tic=296 id=10 calls=593 inclusive=0.398500 exclusive=0.398500
+CA121 COST tic=296 id=15 calls=1 inclusive=0.001300 exclusive=0.001300
+CA121 COST tic=296 id=18 calls=1 inclusive=0.091900 exclusive=0.004700
+CA121 COST tic=296 id=20 calls=48 inclusive=0.069500 exclusive=0.069500
+CA121 COST tic=296 id=21 calls=42 inclusive=0.034100 exclusive=0.016100
+CA121 COST tic=296 id=23 calls=1 inclusive=0.061200 exclusive=0.047400
+CA121 COST tic=296 id=24 calls=2602 inclusive=0.194300 exclusive=0.194300
+CA121 COST tic=296 id=27 calls=891 inclusive=2.242400 exclusive=2.164600
+CA121 COST tic=296 id=28 calls=891 inclusive=2.337500 exclusive=0.095100
+CA121 COST tic=296 id=29 calls=1 inclusive=0.085400 exclusive=0.085400
+CA121 COST tic=296 id=31 calls=1 inclusive=0.085900 exclusive=0.000500
+CA121 COST tic=296 id=32 calls=2608 inclusive=1.682700 exclusive=0.238200
+CA121 COST tic=296 id=33 calls=81 inclusive=0.631500 exclusive=0.077800
+CA121 COST tic=296 id=34 calls=74 inclusive=0.826000 exclusive=0.826000
+CA121 COST tic=296 id=35 calls=81 inclusive=0.553700 exclusive=0.553700
+CA121 COUNT tic=296 candidates=0 sight=0 decisions=0 commands=0
+CA132 FRAME tic=298 ms=13611.916700 interval=19.134900 epoch=1791422012
+CA132 FRAME tic=299 ms=13633.267500 interval=21.350800 epoch=1791422012
+CA132 FRAME tic=300 ms=13652.846600 interval=19.579100 epoch=1791422012
+CA132 FRAME tic=300 ms=13672.987800 interval=20.141200 epoch=1791422012
+CA132 FRAME tic=301 ms=13692.907800 interval=19.920000 epoch=1791422012
+CA132 FRAME tic=302 ms=13713.039900 interval=20.132100 epoch=1791422012
+CA132 FRAME tic=302 ms=13734.978700 interval=21.938800 epoch=1791422012
+CA132 FRAME tic=303 ms=13753.615600 interval=18.636900 epoch=1791422012
+CA132 FRAME tic=304 ms=13772.833500 interval=19.217900 epoch=1791422012
+CA132 FRAME tic=304 ms=13791.527900 interval=18.694400 epoch=1791422012
+CA132 FRAME tic=305 ms=13810.459600 interval=18.931700 epoch=1791422012
+CA132 FRAME tic=306 ms=13828.727600 interval=18.268000 epoch=1791422012
+CA132 FRAME tic=307 ms=13853.250400 interval=24.522800 epoch=1791422012
+CA132 FRAME tic=307 ms=13873.446700 interval=20.196300 epoch=1791422012
+CA132 FRAME tic=308 ms=13892.251000 interval=18.804300 epoch=1791422012
+CA132 FRAME tic=309 ms=13910.670600 interval=18.419600 epoch=1791422012
+CA132 FRAME tic=309 ms=13929.673800 interval=19.003200 epoch=1791422012
+CA132 FRAME tic=310 ms=13952.191100 interval=22.517300 epoch=1791422012
+CA132 FRAME tic=311 ms=13972.697200 interval=20.506100 epoch=1791422012
+CA132 FRAME tic=311 ms=13991.450600 interval=18.753400 epoch=1791422012
+CA132 FRAME tic=312 ms=14011.527100 interval=20.076500 epoch=1791422012
+CA132 FRAME tic=313 ms=14029.577000 interval=18.049900 epoch=1791422012
+CA132 FRAME tic=314 ms=14051.121500 interval=21.544500 epoch=1791422012
+CA132 FRAME tic=314 ms=14070.028400 interval=18.906900 epoch=1791422012
+CA132 FRAME tic=315 ms=14092.945000 interval=22.916600 epoch=1791422012
+CA132 SIM tic=315 ms=14097.575800 alive=2000 total=2000 remaining=4000 pending=0 combatants=2602 defenders=600 corpses=0 projectiles=911 groups=21 failed=28 scriptedDeaths=0 victory=0 view=0
+CA132 FRAME tic=316 ms=14115.239600 interval=22.294600 epoch=1791422012
+CA132 FRAME tic=316 ms=14138.428500 interval=23.188900 epoch=1791422012
+CA132 FRAME tic=317 ms=14159.483400 interval=21.054900 epoch=1791422012
+CA132 FRAME tic=318 ms=14177.282300 interval=17.798900 epoch=1791422012
+CA132 FRAME tic=319 ms=14200.346800 interval=23.064500 epoch=1791422012
+CA132 FRAME tic=319 ms=14218.068200 interval=17.721400 epoch=1791422012
+CA132 FRAME tic=320 ms=14239.831700 interval=21.763500 epoch=1791422013
+CA132 FRAME tic=321 ms=14259.589200 interval=19.757500 epoch=1791422013
+CA132 FRAME tic=322 ms=14277.696700 interval=18.107500 epoch=1791422013
+CA132 FRAME tic=322 ms=14298.164300 interval=20.467600 epoch=1791422013
+CA132 FRAME tic=323 ms=14321.433800 interval=23.269500 epoch=1791422013
+CA132 FRAME tic=324 ms=14340.515200 interval=19.081400 epoch=1791422013
+CA132 FRAME tic=324 ms=14359.314100 interval=18.798900 epoch=1791422013
+CA132 FRAME tic=325 ms=14377.858000 interval=18.543900 epoch=1791422013
+CA132 FRAME tic=326 ms=14398.312200 interval=20.454200 epoch=1791422013
+CA132 FRAME tic=326 ms=14417.208700 interval=18.896500 epoch=1791422013
+CA132 FRAME tic=327 ms=14437.317500 interval=20.108800 epoch=1791422013
+CA132 FRAME tic=328 ms=14456.506800 interval=19.189300 epoch=1791422013
+CA132 FRAME tic=328 ms=14476.544100 interval=20.037300 epoch=1791422013
+CA132 FRAME tic=329 ms=14496.232900 interval=19.688800 epoch=1791422013
+CA132 FRAME tic=330 ms=14517.357000 interval=21.124100 epoch=1791422013
+CA132 FRAME tic=331 ms=14535.789000 interval=18.432000 epoch=1791422013
+CA132 FRAME tic=331 ms=14555.244600 interval=19.455600 epoch=1791422013
+CA132 FRAME tic=332 ms=14574.985700 interval=19.741100 epoch=1791422013
+CA132 FRAME tic=333 ms=14594.306000 interval=19.320300 epoch=1791422013
+CA132 FRAME tic=333 ms=14614.566000 interval=20.260000 epoch=1791422013
+CA132 FRAME tic=334 ms=14636.174000 interval=21.608000 epoch=1791422013
+CA121 COST tic=333 id=0 calls=2601 inclusive=7.547500 exclusive=2.342800
+CA121 COST tic=333 id=1 calls=2601 inclusive=2.026800 exclusive=0.754200
+CA121 COST tic=333 id=2 calls=37 inclusive=0.003600 exclusive=0.003600
+CA121 COST tic=333 id=3 calls=2601 inclusive=0.071500 exclusive=0.071500
+CA121 COST tic=333 id=4 calls=2612 inclusive=0.670200 exclusive=0.670200
+CA121 COST tic=333 id=5 calls=2611 inclusive=0.362500 exclusive=0.362500
+CA121 COST tic=333 id=6 calls=2028 inclusive=0.224200 exclusive=0.164700
+CA121 COST tic=333 id=7 calls=4629 inclusive=0.281500 exclusive=0.281500
+CA121 COST tic=333 id=9 calls=1014 inclusive=1.426200 exclusive=0.912800
+CA121 COST tic=333 id=10 calls=417 inclusive=0.128100 exclusive=0.128100
+CA121 COST tic=333 id=15 calls=1 inclusive=0.001300 exclusive=0.001300
+CA121 COST tic=333 id=18 calls=1 inclusive=0.093900 exclusive=0.005600
+CA121 COST tic=333 id=20 calls=48 inclusive=0.073100 exclusive=0.073100
+CA121 COST tic=333 id=21 calls=42 inclusive=0.031700 exclusive=0.016200
+CA121 COST tic=333 id=23 calls=1 inclusive=0.070900 exclusive=0.055800
+CA121 COST tic=333 id=24 calls=2602 inclusive=0.190300 exclusive=0.190300
+CA121 COST tic=333 id=27 calls=914 inclusive=2.359500 exclusive=2.316600
+CA121 COST tic=333 id=28 calls=914 inclusive=2.454700 exclusive=0.095200
+CA121 COST tic=333 id=29 calls=1 inclusive=0.086400 exclusive=0.086400
+CA121 COST tic=333 id=31 calls=1 inclusive=0.087000 exclusive=0.000600
+CA121 COST tic=333 id=32 calls=2606 inclusive=1.709200 exclusive=0.268400
+CA121 COST tic=333 id=33 calls=80 inclusive=0.610000 exclusive=0.078500
+CA121 COST tic=333 id=34 calls=74 inclusive=0.844900 exclusive=0.844900
+CA121 COST tic=333 id=35 calls=80 inclusive=0.531500 exclusive=0.531500
+CA121 COUNT tic=333 candidates=0 sight=0 decisions=0 commands=0
+CA132 FRAME tic=335 ms=14655.524400 interval=19.350400 epoch=1791422013
+CA132 FRAME tic=335 ms=14674.768700 interval=19.244300 epoch=1791422013
+CA132 FRAME tic=336 ms=14694.128800 interval=19.360100 epoch=1791422013
+CA132 FRAME tic=337 ms=14714.568400 interval=20.439600 epoch=1791422013
+CA132 FRAME tic=337 ms=14734.412200 interval=19.843800 epoch=1791422013
+CA132 FRAME tic=338 ms=14753.035100 interval=18.622900 epoch=1791422013
+CA132 FRAME tic=339 ms=14772.289500 interval=19.254400 epoch=1791422013
+CA132 FRAME tic=339 ms=14790.766400 interval=18.476900 epoch=1791422013
+CA132 FRAME tic=340 ms=14810.198600 interval=19.432200 epoch=1791422013
+CA132 FRAME tic=341 ms=14829.648900 interval=19.450300 epoch=1791422013
+CA132 FRAME tic=342 ms=14851.518700 interval=21.869800 epoch=1791422013
+CA132 FRAME tic=342 ms=14871.881600 interval=20.362900 epoch=1791422013
+CA132 FRAME tic=343 ms=14891.623400 interval=19.741800 epoch=1791422013
+CA132 FRAME tic=344 ms=14911.974200 interval=20.350800 epoch=1791422013
+CA132 FRAME tic=344 ms=14933.444800 interval=21.470600 epoch=1791422013
+CA132 FRAME tic=345 ms=14956.243100 interval=22.798300 epoch=1791422013
+CA132 FRAME tic=346 ms=14977.066200 interval=20.823100 epoch=1791422013
+CA132 FRAME tic=347 ms=14995.586200 interval=18.520000 epoch=1791422013
+CA132 FRAME tic=347 ms=15016.000100 interval=20.413900 epoch=1791422013
+CA132 FRAME tic=348 ms=15036.439900 interval=20.439800 epoch=1791422013
+CA132 FRAME tic=349 ms=15055.129800 interval=18.689900 epoch=1791422013
+CA132 FRAME tic=349 ms=15073.228100 interval=18.098300 epoch=1791422013
+CA132 FRAME tic=350 ms=15092.719600 interval=19.491500 epoch=1791422013
+CA132 SIM tic=350 ms=15097.507600 alive=2000 total=2000 remaining=4000 pending=0 combatants=2602 defenders=600 corpses=0 projectiles=893 groups=21 failed=28 scriptedDeaths=0 victory=0 view=0
+CA132 FRAME tic=351 ms=15115.191200 interval=22.471600 epoch=1791422013
+CA132 FRAME tic=352 ms=15145.502200 interval=30.311000 epoch=1791422013
+CA132 FRAME tic=353 ms=15165.182100 interval=19.679900 epoch=1791422013
+CA132 FRAME tic=353 ms=15184.821800 interval=19.639700 epoch=1791422013
+CA132 FRAME tic=354 ms=15212.732600 interval=27.910800 epoch=1791422013
+CA132 FRAME tic=355 ms=15239.259800 interval=26.527200 epoch=1791422014
+CA132 FRAME tic=356 ms=15263.303300 interval=24.043500 epoch=1791422014
+CA132 FRAME tic=357 ms=15285.873300 interval=22.570000 epoch=1791422014
+CA132 FRAME tic=357 ms=15304.339500 interval=18.466200 epoch=1791422014
+CA132 FRAME tic=358 ms=15331.456800 interval=27.117300 epoch=1791422014
+CA132 FRAME tic=359 ms=15354.118500 interval=22.661700 epoch=1791422014
+CA132 FRAME tic=360 ms=15377.123600 interval=23.005100 epoch=1791422014
+CA132 FRAME tic=361 ms=15400.086700 interval=22.963100 epoch=1791422014
+CA132 FRAME tic=361 ms=15420.111700 interval=20.025000 epoch=1791422014
+CA132 FRAME tic=362 ms=15447.840500 interval=27.728800 epoch=1791422014
+CA132 FRAME tic=363 ms=15470.145000 interval=22.304500 epoch=1791422014
+CA132 FRAME tic=364 ms=15493.707500 interval=23.562500 epoch=1791422014
+CA132 FRAME tic=365 ms=15515.365600 interval=21.658100 epoch=1791422014
+CA132 FRAME tic=365 ms=15535.620800 interval=20.255200 epoch=1791422014
+CA132 FRAME tic=366 ms=15561.755000 interval=26.134200 epoch=1791422014
+CA132 FRAME tic=367 ms=15585.148400 interval=23.393400 epoch=1791422014
+CA132 FRAME tic=368 ms=15611.299600 interval=26.151200 epoch=1791422014
+CA132 FRAME tic=369 ms=15633.999500 interval=22.699900 epoch=1791422014
+CA132 FRAME tic=370 ms=15655.823600 interval=21.824100 epoch=1791422014
+CA132 FRAME tic=370 ms=15677.252600 interval=21.429000 epoch=1791422014
+CA132 FRAME tic=371 ms=15706.235700 interval=28.983100 epoch=1791422014
+CA121 COST tic=370 id=0 calls=2601 inclusive=8.354700 exclusive=2.315700
+CA121 COST tic=370 id=1 calls=2601 inclusive=2.797900 exclusive=0.713100
+CA121 COST tic=370 id=2 calls=81 inclusive=0.007300 exclusive=0.007300
+CA121 COST tic=370 id=3 calls=2601 inclusive=0.072300 exclusive=0.072300
+CA121 COST tic=370 id=4 calls=2611 inclusive=0.658000 exclusive=0.658000
+CA121 COST tic=370 id=5 calls=2609 inclusive=0.375100 exclusive=0.375100
+CA121 COST tic=370 id=6 calls=1558 inclusive=0.176100 exclusive=0.132400
+CA121 COST tic=370 id=7 calls=4159 inclusive=0.302100 exclusive=0.302100
+CA121 COST tic=370 id=9 calls=779 inclusive=2.492000 exclusive=1.099800
+CA121 COST tic=370 id=10 calls=779 inclusive=0.796900 exclusive=0.796900
+CA121 COST tic=370 id=15 calls=1 inclusive=0.001200 exclusive=0.001200
+CA121 COST tic=370 id=17 calls=1 inclusive=0.002200 exclusive=0.002200
+CA121 COST tic=370 id=18 calls=1 inclusive=0.102800 exclusive=0.005800
+CA121 COST tic=370 id=20 calls=48 inclusive=0.075600 exclusive=0.075600
+CA121 COST tic=370 id=21 calls=42 inclusive=0.035800 exclusive=0.020000
+CA121 COST tic=370 id=22 calls=2 inclusive=0.320700 exclusive=0.320700
+CA121 COST tic=370 id=23 calls=1 inclusive=0.068300 exclusive=0.050500
+CA121 COST tic=370 id=24 calls=2602 inclusive=0.181700 exclusive=0.181700
+CA121 COST tic=370 id=27 calls=931 inclusive=2.499000 exclusive=2.463100
+CA121 COST tic=370 id=28 calls=931 inclusive=2.595600 exclusive=0.096600
+CA121 COST tic=370 id=29 calls=1 inclusive=0.095200 exclusive=0.095200
+CA121 COST tic=370 id=31 calls=1 inclusive=0.095800 exclusive=0.000600
+CA121 COST tic=370 id=32 calls=2605 inclusive=1.735100 exclusive=0.229300
+CA121 COST tic=370 id=33 calls=79 inclusive=0.602500 exclusive=0.080000
+CA121 COST tic=370 id=34 calls=74 inclusive=0.920000 exclusive=0.920000
+CA121 COST tic=370 id=35 calls=79 inclusive=0.522500 exclusive=0.522500
+CA121 COUNT tic=370 candidates=0 sight=0 decisions=0 commands=0
+CA132 FRAME tic=372 ms=15733.838200 interval=27.602500 epoch=1791422014
+CA132 FRAME tic=373 ms=15757.287500 interval=23.449300 epoch=1791422014
+CA132 FRAME tic=374 ms=15783.785300 interval=26.497800 epoch=1791422014
+CA132 FRAME tic=375 ms=15805.220800 interval=21.435500 epoch=1791422014
+CA132 FRAME tic=376 ms=15827.043500 interval=21.822700 epoch=1791422014
+CA132 FRAME tic=377 ms=15853.289300 interval=26.245800 epoch=1791422014
+CA132 FRAME tic=377 ms=15876.043800 interval=22.754500 epoch=1791422014
+CA132 FRAME tic=378 ms=15903.900000 interval=27.856200 epoch=1791422014
+CA132 FRAME tic=379 ms=15931.272200 interval=27.372200 epoch=1791422014
+CA132 FRAME tic=380 ms=15954.086700 interval=22.814500 epoch=1791422014
+CA132 FRAME tic=381 ms=15972.974100 interval=18.887400 epoch=1791422014
+CA132 FRAME tic=382 ms=15992.588900 interval=19.614800 epoch=1791422014
+CA132 FRAME tic=382 ms=16014.142300 interval=21.553400 epoch=1791422014
+CA132 FRAME tic=383 ms=16036.283400 interval=22.141100 epoch=1791422014
+CA132 FRAME tic=384 ms=16057.007400 interval=20.724000 epoch=1791422014
+CA132 FRAME tic=384 ms=16077.806600 interval=20.799200 epoch=1791422014
+CA132 FRAME tic=385 ms=16097.722600 interval=19.916000 epoch=1791422014
+CA132 SIM tic=385 ms=16104.525200 alive=1994 total=2000 remaining=4000 pending=0 combatants=2596 defenders=600 corpses=6 projectiles=943 groups=23 failed=28 scriptedDeaths=0 victory=0 view=0
+CA132 FRAME tic=386 ms=16124.434300 interval=26.711700 epoch=1791422014
+CA132 FRAME tic=387 ms=16146.062200 interval=21.627900 epoch=1791422014
+CA132 FRAME tic=388 ms=16168.538100 interval=22.475900 epoch=1791422014
+CA132 FRAME tic=388 ms=16188.770100 interval=20.232000 epoch=1791422014
+CA132 FRAME tic=389 ms=16210.218800 interval=21.448700 epoch=1791422014
+CA132 FRAME tic=390 ms=16237.948900 interval=27.730100 epoch=1791422015
+CA132 FRAME tic=391 ms=16259.093300 interval=21.144400 epoch=1791422015
+CA132 FRAME tic=392 ms=16278.553000 interval=19.459700 epoch=1791422015
+CA132 FRAME tic=392 ms=16300.862800 interval=22.309800 epoch=1791422015
+CA132 FRAME tic=393 ms=16323.638600 interval=22.775800 epoch=1791422015
+CA132 FRAME tic=394 ms=16346.994000 interval=23.355400 epoch=1791422015
+CA132 FRAME tic=395 ms=16369.629900 interval=22.635900 epoch=1791422015
+CA132 FRAME tic=395 ms=16390.252200 interval=20.622300 epoch=1791422015
+CA132 FRAME tic=396 ms=16410.974300 interval=20.722100 epoch=1791422015
+CA132 FRAME tic=397 ms=16431.948800 interval=20.974500 epoch=1791422015
+CA132 FRAME tic=398 ms=16452.298200 interval=20.349400 epoch=1791422015
+CA132 FRAME tic=398 ms=16473.308400 interval=21.010200 epoch=1791422015
+CA132 FRAME tic=399 ms=16494.618600 interval=21.310200 epoch=1791422015
+CA132 FRAME tic=400 ms=16515.135400 interval=20.516800 epoch=1791422015
+CA132 FRAME tic=400 ms=16535.152400 interval=20.017000 epoch=1791422015
+CA132 FRAME tic=401 ms=16557.037100 interval=21.884700 epoch=1791422015
+CA132 FRAME tic=402 ms=16578.131200 interval=21.094100 epoch=1791422015
+CA132 FRAME tic=403 ms=16598.908600 interval=20.777400 epoch=1791422015
+CA132 FRAME tic=403 ms=16621.071700 interval=22.163100 epoch=1791422015
+CA132 FRAME tic=404 ms=16643.758400 interval=22.686700 epoch=1791422015
+CA132 FRAME tic=405 ms=16666.857800 interval=23.099400 epoch=1791422015
+CA132 FRAME tic=406 ms=16687.301200 interval=20.443400 epoch=1791422015
+CA132 FRAME tic=406 ms=16707.022700 interval=19.721500 epoch=1791422015
+CA132 FRAME tic=407 ms=16726.605400 interval=19.582700 epoch=1791422015
+CA132 FRAME tic=408 ms=16752.531200 interval=25.925800 epoch=1791422015
+CA121 COST tic=407 id=0 calls=2601 inclusive=7.739000 exclusive=2.300700
+CA121 COST tic=407 id=1 calls=2601 inclusive=2.279600 exclusive=0.745900
+CA121 COST tic=407 id=2 calls=116 inclusive=0.009700 exclusive=0.009700
+CA121 COST tic=407 id=3 calls=2601 inclusive=0.074100 exclusive=0.074100
+CA121 COST tic=407 id=4 calls=2621 inclusive=0.659200 exclusive=0.659200
+CA121 COST tic=407 id=5 calls=2617 inclusive=0.367700 exclusive=0.367700
+CA121 COST tic=407 id=6 calls=1432 inclusive=0.162800 exclusive=0.124200
+CA121 COST tic=407 id=7 calls=4033 inclusive=0.286300 exclusive=0.286300
+CA121 COST tic=407 id=9 calls=716 inclusive=1.919900 exclusive=1.030000
+CA121 COST tic=407 id=10 calls=715 inclusive=0.320700 exclusive=0.320700
+CA121 COST tic=407 id=15 calls=1 inclusive=0.001300 exclusive=0.001300
+CA121 COST tic=407 id=17 calls=2 inclusive=0.004500 exclusive=0.004500
+CA121 COST tic=407 id=18 calls=1 inclusive=0.085900 exclusive=0.004500
+CA121 COST tic=407 id=20 calls=48 inclusive=0.060500 exclusive=0.060500
+CA121 COST tic=407 id=21 calls=42 inclusive=0.028400 exclusive=0.016000
+CA121 COST tic=407 id=23 calls=1 inclusive=0.062300 exclusive=0.048000
+CA121 COST tic=407 id=24 calls=2602 inclusive=0.191700 exclusive=0.191700
+CA121 COST tic=407 id=27 calls=958 inclusive=2.331100 exclusive=2.246600
+CA121 COST tic=407 id=28 calls=958 inclusive=2.430000 exclusive=0.098900
+CA121 COST tic=407 id=29 calls=1 inclusive=0.079600 exclusive=0.079600
+CA121 COST tic=407 id=31 calls=1 inclusive=0.080100 exclusive=0.000500
+CA121 COST tic=407 id=32 calls=2611 inclusive=1.709600 exclusive=0.225600
+CA121 COST tic=407 id=33 calls=84 inclusive=0.642400 exclusive=0.086400
+CA121 COST tic=407 id=34 calls=73 inclusive=0.855100 exclusive=0.855100
+CA121 COST tic=407 id=35 calls=84 inclusive=0.556000 exclusive=0.556000
+CA121 COUNT tic=407 candidates=0 sight=0 decisions=0 commands=0
+CA132 FRAME tic=409 ms=16773.358500 interval=20.827300 epoch=1791422015
+CA132 FRAME tic=410 ms=16794.258600 interval=20.900100 epoch=1791422015
+CA132 FRAME tic=410 ms=16814.321900 interval=20.063300 epoch=1791422015
+CA132 FRAME tic=411 ms=16833.740700 interval=19.418800 epoch=1791422015
+CA132 FRAME tic=412 ms=16852.608100 interval=18.867400 epoch=1791422015
+CA132 FRAME tic=412 ms=16871.920100 interval=19.312000 epoch=1791422015
+CA132 FRAME tic=413 ms=16891.051500 interval=19.131400 epoch=1791422015
+CA132 FRAME tic=414 ms=16908.732900 interval=17.681400 epoch=1791422015
+CA132 FRAME tic=414 ms=16926.128800 interval=17.395900 epoch=1791422015
+CA132 FRAME tic=415 ms=16944.316800 interval=18.188000 epoch=1791422015
+CA132 FRAME tic=416 ms=16965.201500 interval=20.884700 epoch=1791422015
+CA132 FRAME tic=416 ms=16983.567200 interval=18.365700 epoch=1791422015
+CA132 FRAME tic=417 ms=17001.553500 interval=17.986300 epoch=1791422015
+CA132 FRAME tic=417 ms=17019.270100 interval=17.716600 epoch=1791422015
+CA132 FRAME tic=418 ms=17040.580600 interval=21.310500 epoch=1791422015
+CA132 FRAME tic=419 ms=17058.861900 interval=18.281300 epoch=1791422015
+CA132 FRAME tic=420 ms=17077.192100 interval=18.330200 epoch=1791422015
+CA132 FRAME tic=420 ms=17095.984400 interval=18.792300 epoch=1791422015
+CA132 SIM tic=420 ms=17103.645200 alive=1994 total=2000 remaining=4000 pending=0 combatants=2596 defenders=600 corpses=6 projectiles=941 groups=22 failed=28 scriptedDeaths=0 victory=0 view=0
+CA132 FRAME tic=421 ms=17124.092300 interval=28.107900 epoch=1791422015
+CA132 FRAME tic=422 ms=17142.028400 interval=17.936100 epoch=1791422015
+CA132 FRAME tic=422 ms=17160.030900 interval=18.002500 epoch=1791422015
+CA132 FRAME tic=423 ms=17181.395900 interval=21.365000 epoch=1791422015
+CA132 FRAME tic=424 ms=17199.629200 interval=18.233300 epoch=1791422015
+CA132 FRAME tic=424 ms=17217.332000 interval=17.702800 epoch=1791422015
+CA132 FRAME tic=425 ms=17236.124600 interval=18.792600 epoch=1791422016
+CA132 FRAME tic=426 ms=17256.149800 interval=20.025200 epoch=1791422016
+CA132 FRAME tic=426 ms=17274.863600 interval=18.713800 epoch=1791422016
+CA132 FRAME tic=427 ms=17295.312300 interval=20.448700 epoch=1791422016
+CA132 FRAME tic=428 ms=17314.071900 interval=18.759600 epoch=1791422016
+CA132 FRAME tic=429 ms=17334.770900 interval=20.699000 epoch=1791422016
+CA132 FRAME tic=429 ms=17354.760800 interval=19.989900 epoch=1791422016
+CA132 FRAME tic=430 ms=17374.460700 interval=19.699900 epoch=1791422016
+CA132 FRAME tic=431 ms=17392.490200 interval=18.029500 epoch=1791422016
+CA132 FRAME tic=431 ms=17410.581300 interval=18.091100 epoch=1791422016
+CA132 FRAME tic=432 ms=17432.037700 interval=21.456400 epoch=1791422016
+CA132 FRAME tic=433 ms=17449.700000 interval=17.662300 epoch=1791422016
+CA132 FRAME tic=433 ms=17467.296000 interval=17.596000 epoch=1791422016
+CA132 FRAME tic=434 ms=17486.325100 interval=19.029100 epoch=1791422016
+CA132 FRAME tic=434 ms=17505.628400 interval=19.303300 epoch=1791422016
+CA132 FRAME tic=435 ms=17525.437000 interval=19.808600 epoch=1791422016
+CA132 FRAME tic=436 ms=17543.985000 interval=18.548000 epoch=1791422016
+CA132 FRAME tic=436 ms=17563.082000 interval=19.097000 epoch=1791422016
+CA132 FRAME tic=437 ms=17585.132500 interval=22.050500 epoch=1791422016
+CA132 FRAME tic=438 ms=17604.034500 interval=18.902000 epoch=1791422016
+CA132 FRAME tic=439 ms=17626.922600 interval=22.888100 epoch=1791422016
+CA132 FRAME tic=439 ms=17652.274900 interval=25.352300 epoch=1791422016
+CA132 FRAME tic=440 ms=17674.802700 interval=22.527800 epoch=1791422016
+CA132 FRAME tic=441 ms=17692.668200 interval=17.865500 epoch=1791422016
+CA132 FRAME tic=442 ms=17710.727000 interval=18.058800 epoch=1791422016
+CA132 FRAME tic=442 ms=17731.283900 interval=20.556900 epoch=1791422016
+CA132 FRAME tic=443 ms=17751.614400 interval=20.330500 epoch=1791422016
+CA132 FRAME tic=444 ms=17773.930900 interval=22.316500 epoch=1791422016
+CA132 FRAME tic=445 ms=17793.521300 interval=19.590400 epoch=1791422016
+CA132 FRAME tic=445 ms=17814.180400 interval=20.659100 epoch=1791422016
+CA121 COST tic=444 id=0 calls=2601 inclusive=7.537600 exclusive=2.243800
+CA121 COST tic=444 id=1 calls=2601 inclusive=2.236200 exclusive=0.695100
+CA121 COST tic=444 id=2 calls=71 inclusive=0.005300 exclusive=0.005300
+CA121 COST tic=444 id=3 calls=2601 inclusive=0.070000 exclusive=0.070000
+CA121 COST tic=444 id=4 calls=2609 inclusive=0.643200 exclusive=0.643200
+CA121 COST tic=444 id=5 calls=2608 inclusive=0.358300 exclusive=0.358300
+CA121 COST tic=444 id=6 calls=1524 inclusive=0.171500 exclusive=0.128600
+CA121 COST tic=444 id=7 calls=4125 inclusive=0.269100 exclusive=0.269100
+CA121 COST tic=444 id=9 calls=762 inclusive=2.059900 exclusive=0.908600
+CA121 COST tic=444 id=10 calls=762 inclusive=0.451000 exclusive=0.451000
+CA121 COST tic=444 id=15 calls=1 inclusive=0.001200 exclusive=0.001200
+CA121 COST tic=444 id=17 calls=1 inclusive=0.002300 exclusive=0.002300
+CA121 COST tic=444 id=18 calls=1 inclusive=0.082500 exclusive=0.004300
+CA121 COST tic=444 id=20 calls=48 inclusive=0.058000 exclusive=0.058000
+CA121 COST tic=444 id=21 calls=42 inclusive=0.032500 exclusive=0.017300
+CA121 COST tic=444 id=23 calls=1 inclusive=0.052800 exclusive=0.041400
+CA121 COST tic=444 id=24 calls=2602 inclusive=0.189500 exclusive=0.189500
+CA121 COST tic=444 id=27 calls=909 inclusive=2.035800 exclusive=1.994300
+CA121 COST tic=444 id=28 calls=909 inclusive=2.127200 exclusive=0.091400
+CA121 COST tic=444 id=29 calls=1 inclusive=0.076400 exclusive=0.076400
+CA121 COST tic=444 id=31 calls=1 inclusive=0.077000 exclusive=0.000600
+CA121 COST tic=444 id=32 calls=2606 inclusive=1.614600 exclusive=0.223900
+CA121 COST tic=444 id=33 calls=80 inclusive=0.600200 exclusive=0.078200
+CA121 COST tic=444 id=34 calls=74 inclusive=0.801600 exclusive=0.801600
+CA121 COST tic=444 id=35 calls=80 inclusive=0.522000 exclusive=0.522000
+CA121 COUNT tic=444 candidates=0 sight=0 decisions=0 commands=0
+CA132 FRAME tic=446 ms=17834.817600 interval=20.637200 epoch=1791422016
+CA132 FRAME tic=447 ms=17855.192600 interval=20.375000 epoch=1791422016
+CA132 FRAME tic=447 ms=17873.922100 interval=18.729500 epoch=1791422016
+CA132 FRAME tic=448 ms=17894.756200 interval=20.834100 epoch=1791422016
+CA132 FRAME tic=449 ms=17914.763100 interval=20.006900 epoch=1791422016
+CA132 FRAME tic=449 ms=17934.758900 interval=19.995800 epoch=1791422016
+CA132 FRAME tic=450 ms=17957.275400 interval=22.516500 epoch=1791422016
+CA132 FRAME tic=451 ms=17976.950800 interval=19.675400 epoch=1791422016
+CA132 FRAME tic=452 ms=17995.317100 interval=18.366300 epoch=1791422016
+CA132 FRAME tic=452 ms=18017.191300 interval=21.874200 epoch=1791422016
+CA132 FRAME tic=453 ms=18036.065700 interval=18.874400 epoch=1791422016
+CA132 FRAME tic=454 ms=18054.525300 interval=18.459600 epoch=1791422016
+CA132 FRAME tic=454 ms=18072.780400 interval=18.255100 epoch=1791422016
+CA132 FRAME tic=455 ms=18091.207400 interval=18.427000 epoch=1791422016
+CA132 SIM tic=455 ms=18095.933900 alive=1994 total=2000 remaining=4000 pending=0 combatants=2596 defenders=600 corpses=6 projectiles=882 groups=22 failed=28 scriptedDeaths=0 victory=0 view=0
+CA132 FRAME tic=456 ms=18114.748100 interval=23.540700 epoch=1791422016
+CA132 FRAME tic=456 ms=18139.482100 interval=24.734000 epoch=1791422016
+CA132 FRAME tic=457 ms=18160.241300 interval=20.759200 epoch=1791422016
+CA132 FRAME tic=458 ms=18180.951400 interval=20.710100 epoch=1791422016
+CA132 FRAME tic=459 ms=18204.535100 interval=23.583700 epoch=1791422016
+CA132 FRAME tic=460 ms=18224.991800 interval=20.456700 epoch=1791422017
+CA132 FRAME tic=460 ms=18245.568800 interval=20.577000 epoch=1791422017
+CA132 FRAME tic=461 ms=18266.645100 interval=21.076300 epoch=1791422017
+CA132 FRAME tic=462 ms=18286.618500 interval=19.973400 epoch=1791422017
+CA132 FRAME tic=462 ms=18306.847000 interval=20.228500 epoch=1791422017
+CA132 FRAME tic=463 ms=18325.348500 interval=18.501500 epoch=1791422017
+CA132 FRAME tic=464 ms=18344.550800 interval=19.202300 epoch=1791422017
+CA132 FRAME tic=465 ms=18364.938300 interval=20.387500 epoch=1791422017
+CA132 FRAME tic=465 ms=18383.365400 interval=18.427100 epoch=1791422017
+CA132 FRAME tic=466 ms=18402.353200 interval=18.987800 epoch=1791422017
+CA132 FRAME tic=467 ms=18420.424800 interval=18.071600 epoch=1791422017
+CA132 FRAME tic=467 ms=18437.935300 interval=17.510500 epoch=1791422017
+CA132 FRAME tic=468 ms=18455.466100 interval=17.530800 epoch=1791422017
+CA132 FRAME tic=468 ms=18472.959300 interval=17.493200 epoch=1791422017
+CA132 FRAME tic=469 ms=18491.360600 interval=18.401300 epoch=1791422017
+CA132 FRAME tic=470 ms=18509.810000 interval=18.449400 epoch=1791422017
+CA132 FRAME tic=470 ms=18528.280300 interval=18.470300 epoch=1791422017
+CA132 FRAME tic=471 ms=18549.596600 interval=21.316300 epoch=1791422017
+CA132 FRAME tic=472 ms=18568.289700 interval=18.693100 epoch=1791422017
+CA132 FRAME tic=472 ms=18586.811700 interval=18.522000 epoch=1791422017
+CA132 FRAME tic=473 ms=18605.646000 interval=18.834300 epoch=1791422017
+CA132 FRAME tic=474 ms=18626.498800 interval=20.852800 epoch=1791422017
+CA132 FRAME tic=474 ms=18647.282400 interval=20.783600 epoch=1791422017
+CA132 FRAME tic=475 ms=18669.787600 interval=22.505200 epoch=1791422017
+CA132 FRAME tic=476 ms=18687.568100 interval=17.780500 epoch=1791422017
+CA132 FRAME tic=477 ms=18705.823700 interval=18.255600 epoch=1791422017
+CA132 FRAME tic=477 ms=18723.756300 interval=17.932600 epoch=1791422017
+CA132 FRAME tic=478 ms=18741.881600 interval=18.125300 epoch=1791422017
+CA132 FRAME tic=478 ms=18759.594600 interval=17.713000 epoch=1791422017
+CA132 FRAME tic=479 ms=18778.439000 interval=18.844400 epoch=1791422017
+CA132 FRAME tic=480 ms=18799.623500 interval=21.184500 epoch=1791422017
+CA132 FRAME tic=480 ms=18817.509500 interval=17.886000 epoch=1791422017
+CA132 FRAME tic=481 ms=18837.641500 interval=20.132000 epoch=1791422017
+CA132 FRAME tic=482 ms=18859.501200 interval=21.859700 epoch=1791422017
+CA121 COST tic=481 id=0 calls=2601 inclusive=8.630600 exclusive=2.330200
+CA121 COST tic=481 id=1 calls=2601 inclusive=2.941000 exclusive=0.905900
+CA121 COST tic=481 id=2 calls=93 inclusive=0.007900 exclusive=0.007900
+CA121 COST tic=481 id=3 calls=2601 inclusive=0.075300 exclusive=0.075300
+CA121 COST tic=481 id=4 calls=2628 inclusive=0.698900 exclusive=0.698900
+CA121 COST tic=481 id=5 calls=2621 inclusive=0.379700 exclusive=0.379700
+CA121 COST tic=481 id=6 calls=2448 inclusive=0.278400 exclusive=0.205500
+CA121 COST tic=481 id=7 calls=5049 inclusive=0.318500 exclusive=0.318500
+CA121 COST tic=481 id=9 calls=1224 inclusive=2.355200 exclusive=1.166400
+CA121 COST tic=481 id=10 calls=628 inclusive=0.563700 exclusive=0.563700
+CA121 COST tic=481 id=15 calls=1 inclusive=0.001500 exclusive=0.001500
+CA121 COST tic=481 id=17 calls=2 inclusive=0.011300 exclusive=0.011300
+CA121 COST tic=481 id=18 calls=1 inclusive=0.097700 exclusive=0.005500
+CA121 COST tic=481 id=20 calls=48 inclusive=0.071800 exclusive=0.071800
+CA121 COST tic=481 id=21 calls=42 inclusive=0.037100 exclusive=0.019000
+CA121 COST tic=481 id=23 calls=1 inclusive=0.064800 exclusive=0.050300
+CA121 COST tic=481 id=24 calls=2602 inclusive=0.204200 exclusive=0.204200
+CA121 COST tic=481 id=27 calls=899 inclusive=2.129200 exclusive=2.033200
+CA121 COST tic=481 id=28 calls=899 inclusive=2.222500 exclusive=0.093300
+CA121 COST tic=481 id=29 calls=1 inclusive=0.090100 exclusive=0.090100
+CA121 COST tic=481 id=31 calls=1 inclusive=0.090700 exclusive=0.000600
+CA121 COST tic=481 id=32 calls=2612 inclusive=1.862800 exclusive=0.295200
+CA121 COST tic=481 id=33 calls=86 inclusive=0.655500 exclusive=0.083500
+CA121 COST tic=481 id=34 calls=74 inclusive=0.922900 exclusive=0.922900
+CA121 COST tic=481 id=35 calls=86 inclusive=0.572000 exclusive=0.572000
+CA121 COUNT tic=481 candidates=0 sight=0 decisions=0 commands=0
+CA132 FRAME tic=483 ms=18878.247800 interval=18.746600 epoch=1791422017
+CA132 FRAME tic=483 ms=18899.530200 interval=21.282400 epoch=1791422017
+CA132 FRAME tic=484 ms=18918.888700 interval=19.358500 epoch=1791422017
+CA132 FRAME tic=485 ms=18937.934300 interval=19.045600 epoch=1791422017
+CA132 FRAME tic=485 ms=18955.991500 interval=18.057200 epoch=1791422017
+CA132 FRAME tic=486 ms=18974.943900 interval=18.952400 epoch=1791422017
+CA132 FRAME tic=487 ms=18994.107000 interval=19.163100 epoch=1791422017
+CA132 FRAME tic=487 ms=19014.842200 interval=20.735200 epoch=1791422017
+CA132 FRAME tic=488 ms=19034.276700 interval=19.434500 epoch=1791422017
+CA132 FRAME tic=489 ms=19051.609000 interval=17.332300 epoch=1791422017
+CA132 FRAME tic=489 ms=19069.979300 interval=18.370300 epoch=1791422017
+CA132 FRAME tic=490 ms=19091.417600 interval=21.438300 epoch=1791422017
+CA132 SIM tic=490 ms=19096.190000 alive=1994 total=2000 remaining=4000 pending=0 combatants=2596 defenders=600 corpses=6 projectiles=878 groups=22 failed=28 scriptedDeaths=0 victory=0 view=0
+CA132 FRAME tic=491 ms=19114.944700 interval=23.527100 epoch=1791422017
+CA132 FRAME tic=492 ms=19134.747300 interval=19.802600 epoch=1791422017
+CA132 FRAME tic=492 ms=19152.633200 interval=17.885900 epoch=1791422017
+CA132 FRAME tic=493 ms=19171.825500 interval=19.192300 epoch=1791422017
+CA132 FRAME tic=493 ms=19190.048000 interval=18.222500 epoch=1791422017
+CA132 FRAME tic=494 ms=19208.512400 interval=18.464400 epoch=1791422017
+CA132 FRAME tic=495 ms=19226.433800 interval=17.921400 epoch=1791422018
+CA132 FRAME tic=495 ms=19244.803400 interval=18.369600 epoch=1791422018
+CA132 FRAME tic=496 ms=19266.507900 interval=21.704500 epoch=1791422018
+CA132 FRAME tic=497 ms=19283.719300 interval=17.211400 epoch=1791422018
+CA132 FRAME tic=497 ms=19301.277800 interval=17.558500 epoch=1791422018
+CA132 FRAME tic=498 ms=19320.946100 interval=19.668300 epoch=1791422018
+CA132 FRAME tic=499 ms=19339.359400 interval=18.413300 epoch=1791422018
+CA132 FRAME tic=499 ms=19358.825200 interval=19.465800 epoch=1791422018
+CA132 FRAME tic=500 ms=19378.288800 interval=19.463600 epoch=1791422018
+CA132 FRAME tic=501 ms=19399.190600 interval=20.901800 epoch=1791422018
+CA132 FRAME tic=501 ms=19417.175300 interval=17.984700 epoch=1791422018
+CA132 FRAME tic=502 ms=19435.902100 interval=18.726800 epoch=1791422018
+CA132 FRAME tic=503 ms=19455.048600 interval=19.146500 epoch=1791422018
+CA132 FRAME tic=503 ms=19473.697100 interval=18.648500 epoch=1791422018
+CA132 FRAME tic=504 ms=19492.154700 interval=18.457600 epoch=1791422018
+CA132 FRAME tic=505 ms=19509.352900 interval=17.198200 epoch=1791422018
+CA132 FRAME tic=505 ms=19526.392300 interval=17.039400 epoch=1791422018
+CA132 FRAME tic=506 ms=19546.426800 interval=20.034500 epoch=1791422018
+CA132 FRAME tic=507 ms=19568.065200 interval=21.638400 epoch=1791422018
+CA132 FRAME tic=507 ms=19586.641200 interval=18.576000 epoch=1791422018
+CA132 FRAME tic=508 ms=19605.240800 interval=18.599600 epoch=1791422018
+CA132 FRAME tic=509 ms=19623.913000 interval=18.672200 epoch=1791422018
+CA132 FRAME tic=509 ms=19642.525700 interval=18.612700 epoch=1791422018
+CA132 FRAME tic=510 ms=19662.881600 interval=20.355900 epoch=1791422018
+CA132 FRAME tic=511 ms=19684.678400 interval=21.796800 epoch=1791422018
+CA132 FRAME tic=511 ms=19703.104800 interval=18.426400 epoch=1791422018
+CA132 FRAME tic=512 ms=19721.928400 interval=18.823600 epoch=1791422018
+CA132 FRAME tic=513 ms=19739.299300 interval=17.370900 epoch=1791422018
+CA132 FRAME tic=513 ms=19756.511800 interval=17.212500 epoch=1791422018
+CA132 FRAME tic=514 ms=19777.196200 interval=20.684400 epoch=1791422018
+CA132 FRAME tic=515 ms=19796.020700 interval=18.824500 epoch=1791422018
+CA132 FRAME tic=515 ms=19817.129800 interval=21.109100 epoch=1791422018
+CA132 FRAME tic=516 ms=19835.923700 interval=18.793900 epoch=1791422018
+CA132 FRAME tic=517 ms=19853.934100 interval=18.010400 epoch=1791422018
+CA132 FRAME tic=517 ms=19871.624800 interval=17.690700 epoch=1791422018
+CA132 FRAME tic=518 ms=19890.226500 interval=18.601700 epoch=1791422018
+CA132 FRAME tic=519 ms=19912.088800 interval=21.862300 epoch=1791422018
+CA132 FRAME tic=519 ms=19933.838300 interval=21.749500 epoch=1791422018
+CA121 COST tic=518 id=0 calls=2601 inclusive=7.754200 exclusive=2.331200
+CA121 COST tic=518 id=1 calls=2601 inclusive=2.185500 exclusive=0.755900
+CA121 COST tic=518 id=2 calls=143 inclusive=0.010600 exclusive=0.010600
+CA121 COST tic=518 id=3 calls=2601 inclusive=0.076900 exclusive=0.076900
+CA121 COST tic=518 id=4 calls=2624 inclusive=0.681400 exclusive=0.681400
+CA121 COST tic=518 id=5 calls=2616 inclusive=0.383200 exclusive=0.383200
+CA121 COST tic=518 id=6 calls=1562 inclusive=0.177400 exclusive=0.134200
+CA121 COST tic=518 id=7 calls=4163 inclusive=0.276800 exclusive=0.276800
+CA121 COST tic=518 id=9 calls=781 inclusive=1.908800 exclusive=1.175700
+CA121 COST tic=518 id=10 calls=781 inclusive=0.057500 exclusive=0.057500
+CA121 COST tic=518 id=15 calls=1 inclusive=0.000900 exclusive=0.000900
+CA121 COST tic=518 id=17 calls=1 inclusive=0.002800 exclusive=0.002800
+CA121 COST tic=518 id=18 calls=1 inclusive=0.084600 exclusive=0.004000
+CA121 COST tic=518 id=20 calls=48 inclusive=0.063400 exclusive=0.063400
+CA121 COST tic=518 id=21 calls=42 inclusive=0.034600 exclusive=0.015900
+CA121 COST tic=518 id=23 calls=1 inclusive=0.053500 exclusive=0.042200
+CA121 COST tic=518 id=24 calls=2602 inclusive=0.197700 exclusive=0.197700
+CA121 COST tic=518 id=27 calls=862 inclusive=2.073400 exclusive=1.976300
+CA121 COST tic=518 id=28 calls=862 inclusive=2.163000 exclusive=0.089600
+CA121 COST tic=518 id=29 calls=1 inclusive=0.079300 exclusive=0.079300
+CA121 COST tic=518 id=31 calls=1 inclusive=0.079700 exclusive=0.000400
+CA121 COST tic=518 id=32 calls=2613 inclusive=1.768000 exclusive=0.245000
+CA121 COST tic=518 id=33 calls=87 inclusive=0.665600 exclusive=0.084200
+CA121 COST tic=518 id=34 calls=74 inclusive=0.868100 exclusive=0.868100
+CA121 COST tic=518 id=35 calls=87 inclusive=0.581400 exclusive=0.581400
+CA121 COUNT tic=518 candidates=0 sight=0 decisions=0 commands=0
+CA132 FRAME tic=520 ms=19954.604000 interval=20.765700 epoch=1791422018
+CA132 FRAME tic=521 ms=19974.122700 interval=19.518700 epoch=1791422018
+CA132 FRAME tic=522 ms=19993.931900 interval=19.809200 epoch=1791422018
+CA132 FRAME tic=522 ms=20014.886700 interval=20.954800 epoch=1791422018
+CA132 FRAME tic=523 ms=20038.531700 interval=23.645000 epoch=1791422018
+CA132 FRAME tic=524 ms=20060.032400 interval=21.500700 epoch=1791422018
+CA132 FRAME tic=525 ms=20080.464100 interval=20.431700 epoch=1791422018
+CA132 FRAME tic=525 ms=20101.922000 interval=21.457900 epoch=1791422018
+CA132 SIM tic=525 ms=20108.352700 alive=1994 total=2000 remaining=4000 pending=0 combatants=2596 defenders=600 corpses=6 projectiles=832 groups=22 failed=28 scriptedDeaths=0 victory=0 view=0
+CA132 FRAME tic=526 ms=20129.080100 interval=27.158100 epoch=1791422018
+CA132 FRAME tic=527 ms=20150.242500 interval=21.162400 epoch=1791422018
+CA132 FRAME tic=528 ms=20171.303000 interval=21.060500 epoch=1791422018
+CA132 FRAME tic=528 ms=20191.445900 interval=20.142900 epoch=1791422018
+CA132 FRAME tic=529 ms=20211.797900 interval=20.352000 epoch=1791422018
+CA132 FRAME tic=530 ms=20234.303100 interval=22.505200 epoch=1791422019
+CA132 FRAME tic=531 ms=20255.118800 interval=20.815700 epoch=1791422019
+CA132 FRAME tic=531 ms=20275.333800 interval=20.215000 epoch=1791422019
+CA132 FRAME tic=532 ms=20295.569200 interval=20.235400 epoch=1791422019
+CA132 FRAME tic=533 ms=20317.820200 interval=22.251000 epoch=1791422019
+CA132 FRAME tic=534 ms=20343.482800 interval=25.662600 epoch=1791422019
+CA132 FRAME tic=534 ms=20368.882400 interval=25.399600 epoch=1791422019
+CA132 FRAME tic=535 ms=20392.582200 interval=23.699800 epoch=1791422019
+CA132 FRAME tic=536 ms=20414.557900 interval=21.975700 epoch=1791422019
+CA132 FRAME tic=537 ms=20438.481200 interval=23.923300 epoch=1791422019
+CA132 FRAME tic=538 ms=20459.287900 interval=20.806700 epoch=1791422019
+CA132 FRAME tic=539 ms=20481.696300 interval=22.408400 epoch=1791422019
+CA132 FRAME tic=539 ms=20503.259400 interval=21.563100 epoch=1791422019
+CA132 FRAME tic=540 ms=20526.262000 interval=23.002600 epoch=1791422019
+CA132 FRAME tic=541 ms=20546.815000 interval=20.553000 epoch=1791422019
+CA132 FRAME tic=542 ms=20570.305200 interval=23.490200 epoch=1791422019
+CA132 FRAME tic=542 ms=20592.740200 interval=22.435000 epoch=1791422019
+CA132 FRAME tic=543 ms=20613.711700 interval=20.971500 epoch=1791422019
+CA132 FRAME tic=544 ms=20636.553300 interval=22.841600 epoch=1791422019
+CA132 FRAME tic=545 ms=20657.338000 interval=20.784700 epoch=1791422019
+CA132 FRAME tic=545 ms=20677.912400 interval=20.574400 epoch=1791422019
+CA132 FRAME tic=546 ms=20699.438300 interval=21.525900 epoch=1791422019
+CA132 FRAME tic=547 ms=20718.877000 interval=19.438700 epoch=1791422019
+CA132 FRAME tic=548 ms=20738.554600 interval=19.677600 epoch=1791422019
+CA132 FRAME tic=548 ms=20758.096500 interval=19.541900 epoch=1791422019
+CA132 FRAME tic=549 ms=20778.475400 interval=20.378900 epoch=1791422019
+CA132 FRAME tic=550 ms=20801.850800 interval=23.375400 epoch=1791422019
+CA132 FRAME tic=551 ms=20821.237300 interval=19.386500 epoch=1791422019
+CA132 FRAME tic=551 ms=20840.519300 interval=19.282000 epoch=1791422019
+CA132 FRAME tic=552 ms=20860.692000 interval=20.172700 epoch=1791422019
+CA132 FRAME tic=553 ms=20882.695400 interval=22.003400 epoch=1791422019
+CA132 FRAME tic=553 ms=20901.920300 interval=19.224900 epoch=1791422019
+CA132 FRAME tic=554 ms=20922.626200 interval=20.705900 epoch=1791422019
+CA132 FRAME tic=555 ms=20945.003000 interval=22.376800 epoch=1791422019
+CA132 FRAME tic=556 ms=20970.341800 interval=25.338800 epoch=1791422019
+CA132 FRAME tic=556 ms=20994.704400 interval=24.362600 epoch=1791422019
+CA121 COST tic=555 id=0 calls=2601 inclusive=7.964400 exclusive=2.408900
+CA121 COST tic=555 id=1 calls=2601 inclusive=2.055200 exclusive=0.735800
+CA121 COST tic=555 id=2 calls=135 inclusive=0.010500 exclusive=0.010500
+CA121 COST tic=555 id=3 calls=2601 inclusive=0.076800 exclusive=0.076800
+CA121 COST tic=555 id=4 calls=2613 inclusive=0.694500 exclusive=0.694500
+CA121 COST tic=555 id=5 calls=2610 inclusive=0.383400 exclusive=0.383400
+CA121 COST tic=555 id=6 calls=1316 inclusive=0.158500 exclusive=0.116900
+CA121 COST tic=555 id=7 calls=3917 inclusive=0.311400 exclusive=0.311400
+CA121 COST tic=555 id=9 calls=658 inclusive=1.757500 exclusive=1.086300
+CA121 COST tic=555 id=10 calls=657 inclusive=0.054100 exclusive=0.054100
+CA121 COST tic=555 id=15 calls=1 inclusive=0.001600 exclusive=0.001600
+CA121 COST tic=555 id=17 calls=2 inclusive=0.007700 exclusive=0.006900
+CA121 COST tic=555 id=18 calls=1 inclusive=0.108500 exclusive=0.005500
+CA121 COST tic=555 id=20 calls=48 inclusive=0.084400 exclusive=0.084400
+CA121 COST tic=555 id=21 calls=42 inclusive=0.042000 exclusive=0.017600
+CA121 COST tic=555 id=23 calls=1 inclusive=0.075500 exclusive=0.056400
+CA121 COST tic=555 id=24 calls=2602 inclusive=0.201000 exclusive=0.201000
+CA121 COST tic=555 id=27 calls=836 inclusive=2.064600 exclusive=2.027800
+CA121 COST tic=555 id=28 calls=836 inclusive=2.157100 exclusive=0.092500
+CA121 COST tic=555 id=29 calls=1 inclusive=0.100700 exclusive=0.100700
+CA121 COST tic=555 id=31 calls=1 inclusive=0.101400 exclusive=0.000700
+CA121 COST tic=555 id=32 calls=2605 inclusive=1.915700 exclusive=0.246800
+CA121 COST tic=555 id=33 calls=79 inclusive=0.643000 exclusive=0.087100
+CA121 COST tic=555 id=34 calls=74 inclusive=1.044000 exclusive=1.044000
+CA121 COST tic=555 id=35 calls=79 inclusive=0.555900 exclusive=0.555900
+CA121 COUNT tic=555 candidates=0 sight=0 decisions=0 commands=0
+CA132 FRAME tic=557 ms=21016.090100 interval=21.385700 epoch=1791422019
+CA132 FRAME tic=558 ms=21036.617600 interval=20.527500 epoch=1791422019
+CA132 FRAME tic=559 ms=21055.809600 interval=19.192000 epoch=1791422019
+CA132 FRAME tic=559 ms=21074.997000 interval=19.187400 epoch=1791422019
+CA132 FRAME tic=560 ms=21095.284300 interval=20.287300 epoch=1791422019
+CA132 SIM tic=560 ms=21100.863700 alive=1994 total=2000 remaining=4000 pending=0 combatants=2596 defenders=600 corpses=6 projectiles=815 groups=21 failed=28 scriptedDeaths=0 victory=0 view=0
+CA132 FRAME tic=561 ms=21119.452900 interval=24.168600 epoch=1791422019
+CA132 FRAME tic=562 ms=21141.499900 interval=22.047000 epoch=1791422019
+CA132 FRAME tic=562 ms=21163.448000 interval=21.948100 epoch=1791422019
+CA132 FRAME tic=563 ms=21188.521700 interval=25.073700 epoch=1791422019
+CA132 FRAME tic=564 ms=21208.895600 interval=20.373900 epoch=1791422019
+CA132 FRAME tic=565 ms=21234.311900 interval=25.416300 epoch=1791422020
+CA132 FRAME tic=566 ms=21257.637700 interval=23.325800 epoch=1791422020
+CA132 FRAME tic=566 ms=21279.037800 interval=21.400100 epoch=1791422020
+CA132 FRAME tic=567 ms=21298.939400 interval=19.901600 epoch=1791422020
+CA132 FRAME tic=568 ms=21320.013300 interval=21.073900 epoch=1791422020
+CA132 FRAME tic=569 ms=21339.146300 interval=19.133000 epoch=1791422020
+CA132 FRAME tic=569 ms=21359.218200 interval=20.071900 epoch=1791422020
+CA132 FRAME tic=570 ms=21383.950600 interval=24.732400 epoch=1791422020
+CA132 FRAME tic=571 ms=21405.301400 interval=21.350800 epoch=1791422020
+CA132 FRAME tic=572 ms=21426.785700 interval=21.484300 epoch=1791422020
+CA132 FRAME tic=572 ms=21447.950700 interval=21.165000 epoch=1791422020
+CA132 FRAME tic=573 ms=21470.982500 interval=23.031800 epoch=1791422020
+CA132 FRAME tic=574 ms=21490.316700 interval=19.334200 epoch=1791422020
+CA132 FRAME tic=575 ms=21509.781400 interval=19.464700 epoch=1791422020
+CA132 FRAME tic=575 ms=21529.762500 interval=19.981100 epoch=1791422020
+CA132 FRAME tic=576 ms=21553.179000 interval=23.416500 epoch=1791422020
+CA132 FRAME tic=577 ms=21572.458300 interval=19.279300 epoch=1791422020
+CA132 FRAME tic=577 ms=21590.756500 interval=18.298200 epoch=1791422020
+CA132 FRAME tic=578 ms=21610.187500 interval=19.431000 epoch=1791422020
+CA132 FRAME tic=579 ms=21629.244300 interval=19.056800 epoch=1791422020
+CA132 FRAME tic=580 ms=21650.621400 interval=21.377100 epoch=1791422020
+CA132 FRAME tic=580 ms=21668.692100 interval=18.070700 epoch=1791422020
+CA132 FRAME tic=581 ms=21688.786600 interval=20.094500 epoch=1791422020
+CA132 FRAME tic=582 ms=21707.414800 interval=18.628200 epoch=1791422020
+CA132 FRAME tic=582 ms=21726.020100 interval=18.605300 epoch=1791422020
+CA132 FRAME tic=583 ms=21744.068900 interval=18.048800 epoch=1791422020
+CA132 FRAME tic=584 ms=21765.897000 interval=21.828100 epoch=1791422020
+CA132 FRAME tic=584 ms=21784.366100 interval=18.469100 epoch=1791422020
+CA132 FRAME tic=585 ms=21803.314000 interval=18.947900 epoch=1791422020
+CA132 FRAME tic=586 ms=21821.613900 interval=18.299900 epoch=1791422020
+CA132 FRAME tic=586 ms=21839.679600 interval=18.065700 epoch=1791422020
+CA132 FRAME tic=587 ms=21858.490800 interval=18.811200 epoch=1791422020
+CA132 FRAME tic=587 ms=21876.595100 interval=18.104300 epoch=1791422020
+CA132 FRAME tic=588 ms=21897.121800 interval=20.526700 epoch=1791422020
+CA132 FRAME tic=589 ms=21917.969100 interval=20.847300 epoch=1791422020
+CA132 FRAME tic=590 ms=21936.892700 interval=18.923600 epoch=1791422020
+CA132 FRAME tic=590 ms=21955.698800 interval=18.806100 epoch=1791422020
+CA132 FRAME tic=591 ms=21974.706700 interval=19.007900 epoch=1791422020
+CA132 FRAME tic=592 ms=21992.849300 interval=18.142600 epoch=1791422020
+CA132 FRAME tic=592 ms=22011.338600 interval=18.489300 epoch=1791422020
+CA132 FRAME tic=593 ms=22035.229800 interval=23.891200 epoch=1791422020
+CA121 COST tic=592 id=0 calls=2601 inclusive=7.501900 exclusive=2.273900
+CA121 COST tic=592 id=1 calls=2601 inclusive=2.033600 exclusive=0.658000
+CA121 COST tic=592 id=2 calls=157 inclusive=0.012300 exclusive=0.012300
+CA121 COST tic=592 id=3 calls=2601 inclusive=0.071700 exclusive=0.071700
+CA121 COST tic=592 id=4 calls=2614 inclusive=0.674100 exclusive=0.674100
+CA121 COST tic=592 id=5 calls=2608 inclusive=0.364000 exclusive=0.364000
+CA121 COST tic=592 id=6 calls=1254 inclusive=0.140900 exclusive=0.106000
+CA121 COST tic=592 id=7 calls=3855 inclusive=0.271000 exclusive=0.271000
+CA121 COST tic=592 id=9 calls=627 inclusive=1.666500 exclusive=0.972500
+CA121 COST tic=592 id=10 calls=627 inclusive=0.245200 exclusive=0.245200
+CA121 COST tic=592 id=15 calls=1 inclusive=0.001200 exclusive=0.001200
+CA121 COST tic=592 id=17 calls=1 inclusive=0.003000 exclusive=0.003000
+CA121 COST tic=592 id=18 calls=1 inclusive=0.099600 exclusive=0.005600
+CA121 COST tic=592 id=20 calls=48 inclusive=0.078300 exclusive=0.078300
+CA121 COST tic=592 id=21 calls=42 inclusive=0.037600 exclusive=0.017400
+CA121 COST tic=592 id=23 calls=1 inclusive=0.067900 exclusive=0.051400
+CA121 COST tic=592 id=24 calls=2602 inclusive=0.187900 exclusive=0.187900
+CA121 COST tic=592 id=27 calls=824 inclusive=2.073500 exclusive=1.996300
+CA121 COST tic=592 id=28 calls=824 inclusive=2.164000 exclusive=0.090500
+CA121 COST tic=592 id=29 calls=1 inclusive=0.092300 exclusive=0.092300
+CA121 COST tic=592 id=31 calls=1 inclusive=0.092800 exclusive=0.000500
+CA121 COST tic=592 id=32 calls=2609 inclusive=1.740700 exclusive=0.228400
+CA121 COST tic=592 id=33 calls=82 inclusive=0.628100 exclusive=0.084000
+CA121 COST tic=592 id=34 calls=73 inclusive=0.899500 exclusive=0.899500
+CA121 COST tic=592 id=35 calls=82 inclusive=0.544100 exclusive=0.544100
+CA121 COUNT tic=592 candidates=0 sight=0 decisions=0 commands=0
+CA132 FRAME tic=594 ms=22053.824900 interval=18.595100 epoch=1791422020
+CA132 FRAME tic=594 ms=22072.666400 interval=18.841500 epoch=1791422020
+CA132 FRAME tic=595 ms=22091.244700 interval=18.578300 epoch=1791422020
+CA132 SIM tic=595 ms=22096.076700 alive=1994 total=2000 remaining=4000 pending=0 combatants=2596 defenders=600 corpses=6 projectiles=813 groups=23 failed=28 scriptedDeaths=0 victory=0 view=0
+CA132 FRAME tic=596 ms=22114.187800 interval=22.943100 epoch=1791422020
+CA132 FRAME tic=596 ms=22137.040400 interval=22.852600 epoch=1791422020
+CA132 FRAME tic=597 ms=22156.487500 interval=19.447100 epoch=1791422020
+CA132 FRAME tic=598 ms=22175.319500 interval=18.832000 epoch=1791422020
+CA132 FRAME tic=599 ms=22193.008800 interval=17.689300 epoch=1791422020
+CA132 FRAME tic=599 ms=22210.955200 interval=17.946400 epoch=1791422020
+CA132 FRAME tic=600 ms=22232.552500 interval=21.597300 epoch=1791422021
+CA132 FRAME tic=601 ms=22249.638000 interval=17.085500 epoch=1791422021
+CA132 FRAME tic=601 ms=22267.100800 interval=17.462800 epoch=1791422021
+CA132 FRAME tic=602 ms=22286.676300 interval=19.575500 epoch=1791422021
+CA132 FRAME tic=602 ms=22305.783500 interval=19.107200 epoch=1791422021
+CA132 FRAME tic=603 ms=22324.587100 interval=18.803600 epoch=1791422021
+CA132 FRAME tic=604 ms=22342.201200 interval=17.614100 epoch=1791422021
+CA132 FRAME tic=604 ms=22359.832500 interval=17.631300 epoch=1791422021
+CA132 FRAME tic=605 ms=22381.637800 interval=21.805300 epoch=1791422021
+CA132 FRAME tic=606 ms=22401.195500 interval=19.557700 epoch=1791422021
+CA132 FRAME tic=606 ms=22419.977100 interval=18.781600 epoch=1791422021
+CA132 FRAME tic=607 ms=22438.382400 interval=18.405300 epoch=1791422021
+CA132 FRAME tic=608 ms=22456.771900 interval=18.389500 epoch=1791422021
+CA132 FRAME tic=608 ms=22474.560500 interval=17.788600 epoch=1791422021
+CA132 FRAME tic=609 ms=22492.191400 interval=17.630900 epoch=1791422021
+CA132 FRAME tic=610 ms=22513.832000 interval=21.640600 epoch=1791422021
+CA132 FRAME tic=611 ms=22538.462400 interval=24.630400 epoch=1791422021
+CA132 FRAME tic=611 ms=22561.472700 interval=23.010300 epoch=1791422021
+CA132 FRAME tic=612 ms=22584.260200 interval=22.787500 epoch=1791422021
+CA132 FRAME tic=613 ms=22605.879300 interval=21.619100 epoch=1791422021
+CA132 FRAME tic=614 ms=22626.549700 interval=20.670400 epoch=1791422021
+CA132 FRAME tic=614 ms=22649.429000 interval=22.879300 epoch=1791422021
+CA132 FRAME tic=615 ms=22670.244000 interval=20.815000 epoch=1791422021
+CA132 FRAME tic=616 ms=22691.078600 interval=20.834600 epoch=1791422021
+CA132 FRAME tic=617 ms=22710.310100 interval=19.231500 epoch=1791422021
+CA132 FRAME tic=617 ms=22733.018600 interval=22.708500 epoch=1791422021
+CA132 FRAME tic=618 ms=22755.535700 interval=22.517100 epoch=1791422021
+CA132 FRAME tic=619 ms=22777.031100 interval=21.495400 epoch=1791422021
+CA132 FRAME tic=620 ms=22798.401900 interval=21.370800 epoch=1791422021
+CA132 FRAME tic=620 ms=22819.885400 interval=21.483500 epoch=1791422021
+CA132 FRAME tic=621 ms=22839.515300 interval=19.629900 epoch=1791422021
+CA132 FRAME tic=622 ms=22858.205700 interval=18.690400 epoch=1791422021
+CA132 FRAME tic=622 ms=22876.895800 interval=18.690100 epoch=1791422021
+CA132 FRAME tic=623 ms=22895.849700 interval=18.953900 epoch=1791422021
+CA132 FRAME tic=624 ms=22917.415900 interval=21.566200 epoch=1791422021
+CA132 FRAME tic=625 ms=22935.671500 interval=18.255600 epoch=1791422021
+CA132 FRAME tic=625 ms=22955.325400 interval=19.653900 epoch=1791422021
+CA132 FRAME tic=626 ms=22974.905700 interval=19.580300 epoch=1791422021
+CA132 FRAME tic=627 ms=22992.884000 interval=17.978300 epoch=1791422021
+CA132 FRAME tic=627 ms=23011.052600 interval=18.168600 epoch=1791422021
+CA132 FRAME tic=628 ms=23034.305500 interval=23.252900 epoch=1791422021
+CA132 FRAME tic=629 ms=23054.108900 interval=19.803400 epoch=1791422021
+CA132 FRAME tic=629 ms=23074.453500 interval=20.344600 epoch=1791422021
+CA132 FRAME tic=630 ms=23097.199400 interval=22.745900 epoch=1791422021
+CA121 COST tic=629 id=0 calls=2601 inclusive=8.693500 exclusive=2.409600
+CA121 COST tic=629 id=1 calls=2601 inclusive=2.975900 exclusive=0.883900
+CA121 COST tic=629 id=2 calls=180 inclusive=0.013600 exclusive=0.013600
+CA121 COST tic=629 id=3 calls=2601 inclusive=0.077600 exclusive=0.077600
+CA121 COST tic=629 id=4 calls=2614 inclusive=0.698200 exclusive=0.698200
+CA121 COST tic=629 id=5 calls=2612 inclusive=0.392200 exclusive=0.392200
+CA121 COST tic=629 id=6 calls=2628 inclusive=0.308600 exclusive=0.227600
+CA121 COST tic=629 id=7 calls=5229 inclusive=0.338900 exclusive=0.338900
+CA121 COST tic=629 id=9 calls=1314 inclusive=2.445800 exclusive=1.347900
+CA121 COST tic=629 id=10 calls=715 inclusive=0.320700 exclusive=0.320700
+CA121 COST tic=629 id=15 calls=1 inclusive=0.001300 exclusive=0.001300
+CA121 COST tic=629 id=17 calls=31 inclusive=0.098400 exclusive=0.096500
+CA121 COST tic=629 id=18 calls=1 inclusive=0.095100 exclusive=0.005100
+CA121 COST tic=629 id=20 calls=48 inclusive=0.079600 exclusive=0.079600
+CA121 COST tic=629 id=21 calls=42 inclusive=0.034000 exclusive=0.017200
+CA121 COST tic=629 id=23 calls=1 inclusive=0.071400 exclusive=0.052200
+CA121 COST tic=629 id=24 calls=2602 inclusive=0.197400 exclusive=0.197400
+CA121 COST tic=629 id=27 calls=808 inclusive=1.955900 exclusive=1.904000
+CA121 COST tic=629 id=28 calls=808 inclusive=2.046200 exclusive=0.090300
+CA121 COST tic=629 id=29 calls=1 inclusive=0.088200 exclusive=0.088200
+CA121 COST tic=629 id=31 calls=1 inclusive=0.088700 exclusive=0.000500
+CA121 COST tic=629 id=32 calls=2607 inclusive=1.742900 exclusive=0.284900
+CA121 COST tic=629 id=33 calls=81 inclusive=0.644700 exclusive=0.082200
+CA121 COST tic=629 id=34 calls=74 inclusive=0.830900 exclusive=0.830900
+CA121 COST tic=629 id=35 calls=81 inclusive=0.562500 exclusive=0.562500
+CA121 COUNT tic=629 candidates=0 sight=0 decisions=0 commands=0
+CA132 SIM tic=630 ms=23103.489200 alive=1994 total=2000 remaining=4000 pending=0 combatants=2596 defenders=600 corpses=6 projectiles=797 groups=22 failed=28 scriptedDeaths=0 victory=0 view=0
+CA132 FRAME tic=631 ms=23122.554500 interval=25.355100 epoch=1791422021
+CA132 FRAME tic=632 ms=23140.412600 interval=17.858100 epoch=1791422021
+CA132 FRAME tic=632 ms=23159.082900 interval=18.670300 epoch=1791422021
+CA132 FRAME tic=633 ms=23177.700800 interval=18.617900 epoch=1791422021
+CA132 FRAME tic=634 ms=23196.327600 interval=18.626800 epoch=1791422021
+CA132 FRAME tic=634 ms=23217.337500 interval=21.009900 epoch=1791422021
+CA132 FRAME tic=635 ms=23238.237200 interval=20.899700 epoch=1791422022
+CA132 FRAME tic=636 ms=23256.699700 interval=18.462500 epoch=1791422022
+CA132 FRAME tic=636 ms=23274.659900 interval=17.960200 epoch=1791422022
+CA132 FRAME tic=637 ms=23293.184500 interval=18.524600 epoch=1791422022
+CA132 FRAME tic=638 ms=23315.599400 interval=22.414900 epoch=1791422022
+CA132 FRAME tic=638 ms=23335.814900 interval=20.215500 epoch=1791422022
+CA132 FRAME tic=639 ms=23357.193600 interval=21.378700 epoch=1791422022
+CA132 FRAME tic=640 ms=23375.828000 interval=18.634400 epoch=1791422022
+CA132 FRAME tic=641 ms=23398.099900 interval=22.271900 epoch=1791422022
+CA132 FRAME tic=641 ms=23421.686300 interval=23.586400 epoch=1791422022
+CA132 FRAME tic=642 ms=23442.626600 interval=20.940300 epoch=1791422022
+CA132 FRAME tic=643 ms=23461.589900 interval=18.963300 epoch=1791422022
+CA132 FRAME tic=644 ms=23482.929300 interval=21.339400 epoch=1791422022
+CA132 FRAME tic=644 ms=23500.668400 interval=17.739100 epoch=1791422022
+CA132 FRAME tic=645 ms=23519.245500 interval=18.577100 epoch=1791422022
+CA132 FRAME tic=646 ms=23537.793700 interval=18.548200 epoch=1791422022
+CA132 FRAME tic=646 ms=23556.394900 interval=18.601200 epoch=1791422022
+CA132 FRAME tic=647 ms=23575.628900 interval=19.234000 epoch=1791422022
+CA132 FRAME tic=648 ms=23593.274300 interval=17.645400 epoch=1791422022
+CA132 FRAME tic=648 ms=23612.171000 interval=18.896700 epoch=1791422022
+CA132 FRAME tic=649 ms=23635.578800 interval=23.407800 epoch=1791422022
+CA132 FRAME tic=650 ms=23654.211100 interval=18.632300 epoch=1791422022
+CA132 FRAME tic=650 ms=23673.107700 interval=18.896600 epoch=1791422022
+CA132 FRAME tic=651 ms=23694.302800 interval=21.195100 epoch=1791422022
+CA132 FRAME tic=652 ms=23711.854000 interval=17.551200 epoch=1791422022
+CA132 FRAME tic=652 ms=23732.088300 interval=20.234300 epoch=1791422022
+CA132 FRAME tic=653 ms=23750.982400 interval=18.894100 epoch=1791422022
+CA132 FRAME tic=654 ms=23771.529100 interval=20.546700 epoch=1791422022
+CA132 FRAME tic=654 ms=23789.837000 interval=18.307900 epoch=1791422022
+CA132 FRAME tic=655 ms=23808.408800 interval=18.571800 epoch=1791422022
+CA132 FRAME tic=656 ms=23825.778200 interval=17.369400 epoch=1791422022
+CA132 FRAME tic=656 ms=23842.807500 interval=17.029300 epoch=1791422022
+CA132 FRAME tic=657 ms=23861.069900 interval=18.262400 epoch=1791422022
+CA132 FRAME tic=658 ms=23881.791200 interval=20.721300 epoch=1791422022
+CA132 FRAME tic=658 ms=23899.928100 interval=18.136900 epoch=1791422022
+CA132 FRAME tic=659 ms=23920.115700 interval=20.187600 epoch=1791422022
+CA132 FRAME tic=660 ms=23938.407800 interval=18.292100 epoch=1791422022
+CA132 FRAME tic=660 ms=23956.717700 interval=18.309900 epoch=1791422022
+CA132 FRAME tic=661 ms=23976.146000 interval=19.428300 epoch=1791422022
+CA132 FRAME tic=662 ms=23995.962600 interval=19.816600 epoch=1791422022
+CA132 FRAME tic=662 ms=24017.885300 interval=21.922700 epoch=1791422022
+CA132 FRAME tic=663 ms=24038.431400 interval=20.546100 epoch=1791422022
+CA132 FRAME tic=664 ms=24056.832000 interval=18.400600 epoch=1791422022
+CA132 FRAME tic=664 ms=24074.977400 interval=18.145400 epoch=1791422022
+CA132 FRAME tic=665 ms=24093.366800 interval=18.389400 epoch=1791422022
+CA132 SIM tic=665 ms=24098.886100 alive=1994 total=2000 remaining=4000 pending=0 combatants=2596 defenders=600 corpses=6 projectiles=780 groups=22 failed=28 scriptedDeaths=0 victory=0 view=0
+CA132 FRAME tic=666 ms=24117.628600 interval=24.261800 epoch=1791422022
+CA132 FRAME tic=667 ms=24139.767100 interval=22.138500 epoch=1791422022
+CA132 FRAME tic=667 ms=24160.155000 interval=20.387900 epoch=1791422022
+CA121 COST tic=666 id=0 calls=2601 inclusive=7.693600 exclusive=2.340200
+CA121 COST tic=666 id=1 calls=2601 inclusive=2.180700 exclusive=0.689300
+CA121 COST tic=666 id=2 calls=133 inclusive=0.010400 exclusive=0.010400
+CA121 COST tic=666 id=3 calls=2601 inclusive=0.070200 exclusive=0.070200
+CA121 COST tic=666 id=4 calls=2617 inclusive=0.688900 exclusive=0.688900
+CA121 COST tic=666 id=5 calls=2614 inclusive=0.380700 exclusive=0.380700
+CA121 COST tic=666 id=6 calls=1280 inclusive=0.148500 exclusive=0.111800
+CA121 COST tic=666 id=7 calls=3881 inclusive=0.244200 exclusive=0.244200
+CA121 COST tic=666 id=9 calls=640 inclusive=1.874100 exclusive=0.966400
+CA121 COST tic=666 id=10 calls=640 inclusive=0.359600 exclusive=0.359600
+CA121 COST tic=666 id=15 calls=1 inclusive=0.001200 exclusive=0.001200
+CA121 COST tic=666 id=17 calls=1 inclusive=0.002100 exclusive=0.002100
+CA121 COST tic=666 id=18 calls=1 inclusive=0.068000 exclusive=0.004300
+CA121 COST tic=666 id=20 calls=48 inclusive=0.057700 exclusive=0.057700
+CA121 COST tic=666 id=21 calls=42 inclusive=0.031800 exclusive=0.016700
+CA121 COST tic=666 id=23 calls=1 inclusive=0.054100 exclusive=0.042400
+CA121 COST tic=666 id=24 calls=2602 inclusive=0.198700 exclusive=0.198700
+CA121 COST tic=666 id=27 calls=796 inclusive=1.870700 exclusive=1.797100
+CA121 COST tic=666 id=28 calls=796 inclusive=1.953600 exclusive=0.082900
+CA121 COST tic=666 id=29 calls=1 inclusive=0.062000 exclusive=0.062000
+CA121 COST tic=666 id=31 calls=1 inclusive=0.062500 exclusive=0.000500
+CA121 COST tic=666 id=32 calls=2607 inclusive=1.705500 exclusive=0.244700
+CA121 COST tic=666 id=33 calls=80 inclusive=0.603500 exclusive=0.077100
+CA121 COST tic=666 id=34 calls=75 inclusive=0.868200 exclusive=0.868200
+CA121 COST tic=666 id=35 calls=80 inclusive=0.526400 exclusive=0.526400
+CA121 COUNT tic=666 candidates=0 sight=0 decisions=0 commands=0
+CA132 FRAME tic=668 ms=24184.386600 interval=24.231600 epoch=1791422022
+CA132 FRAME tic=669 ms=24202.303500 interval=17.916900 epoch=1791422022
+CA132 FRAME tic=670 ms=24220.522700 interval=18.219200 epoch=1791422022
+CA132 FRAME tic=670 ms=24238.684500 interval=18.161800 epoch=1791422023
+CA132 FRAME tic=671 ms=24257.193200 interval=18.508700 epoch=1791422023
+CA132 FRAME tic=671 ms=24275.898100 interval=18.704900 epoch=1791422023
+CA132 FRAME tic=672 ms=24294.636200 interval=18.738100 epoch=1791422023
+CA132 FRAME tic=673 ms=24315.230000 interval=20.593800 epoch=1791422023
+CA132 FRAME tic=673 ms=24333.186700 interval=17.956700 epoch=1791422023
+CA132 FRAME tic=674 ms=24352.834300 interval=19.647600 epoch=1791422023
+CA132 FRAME tic=675 ms=24370.818800 interval=17.984500 epoch=1791422023
+CA132 FRAME tic=675 ms=24388.875200 interval=18.056400 epoch=1791422023
+CA132 FRAME tic=676 ms=24408.729600 interval=19.854400 epoch=1791422023
+CA132 FRAME tic=677 ms=24429.165000 interval=20.435400 epoch=1791422023
+CA132 FRAME tic=678 ms=24450.997200 interval=21.832200 epoch=1791422023
+CA132 FRAME tic=678 ms=24471.854400 interval=20.857200 epoch=1791422023
+CA132 FRAME tic=679 ms=24490.524600 interval=18.670200 epoch=1791422023
+CA132 FRAME tic=680 ms=24510.639700 interval=20.115100 epoch=1791422023
+CA132 FRAME tic=680 ms=24527.876200 interval=17.236500 epoch=1791422023
+CA132 FRAME tic=681 ms=24549.498600 interval=21.622400 epoch=1791422023
+CA132 FRAME tic=682 ms=24570.841600 interval=21.343000 epoch=1791422023
+CA132 FRAME tic=682 ms=24590.479200 interval=19.637600 epoch=1791422023
+CA132 FRAME tic=683 ms=24610.580200 interval=20.101000 epoch=1791422023
+CA132 FRAME tic=684 ms=24630.066400 interval=19.486200 epoch=1791422023
+CA132 FRAME tic=685 ms=24651.968300 interval=21.901900 epoch=1791422023
+CA132 FRAME tic=685 ms=24673.675400 interval=21.707100 epoch=1791422023
+CA132 FRAME tic=686 ms=24694.995400 interval=21.320000 epoch=1791422023
+CA132 FRAME tic=687 ms=24715.163800 interval=20.168400 epoch=1791422023
+CA132 FRAME tic=687 ms=24735.062000 interval=19.898200 epoch=1791422023
+CA132 FRAME tic=688 ms=24756.833100 interval=21.771100 epoch=1791422023
+CA132 FRAME tic=689 ms=24776.955400 interval=20.122300 epoch=1791422023
+CA132 FRAME tic=690 ms=24800.186800 interval=23.231400 epoch=1791422023
+CA132 FRAME tic=690 ms=24821.147900 interval=20.961100 epoch=1791422023
+CA132 FRAME tic=691 ms=24843.550500 interval=22.402600 epoch=1791422023
+CA132 FRAME tic=692 ms=24863.655900 interval=20.105400 epoch=1791422023
+CA132 FRAME tic=693 ms=24887.091500 interval=23.435600 epoch=1791422023
+CA132 FRAME tic=693 ms=24907.879800 interval=20.788300 epoch=1791422023
+CA132 FRAME tic=694 ms=24928.512900 interval=20.633100 epoch=1791422023
+CA132 FRAME tic=695 ms=24947.348300 interval=18.835400 epoch=1791422023
+CA132 FRAME tic=696 ms=24969.090500 interval=21.742200 epoch=1791422023
+CA132 FRAME tic=696 ms=24990.102900 interval=21.012400 epoch=1791422023
+CA132 FRAME tic=697 ms=25012.312000 interval=22.209100 epoch=1791422023
+CA132 FRAME tic=698 ms=25034.016900 interval=21.704900 epoch=1791422023
+CA132 FRAME tic=699 ms=25057.583000 interval=23.566100 epoch=1791422023
+CA132 FRAME tic=699 ms=25078.469800 interval=20.886800 epoch=1791422023
+CA132 FRAME tic=700 ms=25099.743000 interval=21.273200 epoch=1791422023
+CA132 SIM tic=700 ms=25106.573900 alive=1994 total=2000 remaining=4000 pending=0 combatants=2596 defenders=600 corpses=6 projectiles=750 groups=23 failed=28 scriptedDeaths=0 victory=0 view=0
+CA132 PERFORMANCE COMPLETE tic=700 total=2000 remaining=4000
+CA132 FRAME tic=701 ms=25127.204600 interval=27.461600 epoch=1791422023
+CA132 FRAME tic=702 ms=25148.789400 interval=21.584800 epoch=1791422023
+CA132 FRAME tic=703 ms=25177.315100 interval=28.525700 epoch=1791422023
+CA132 FRAME tic=704 ms=25201.125600 interval=23.810500 epoch=1791422023
+CA121 COST tic=703 id=0 calls=2601 inclusive=7.333600 exclusive=2.249900
+CA121 COST tic=703 id=1 calls=2601 inclusive=2.014500 exclusive=0.658900
+CA121 COST tic=703 id=2 calls=156 inclusive=0.012500 exclusive=0.012500
+CA121 COST tic=703 id=3 calls=2601 inclusive=0.069900 exclusive=0.069900
+CA121 COST tic=703 id=4 calls=2615 inclusive=0.648600 exclusive=0.648600
+CA121 COST tic=703 id=5 calls=2612 inclusive=0.365300 exclusive=0.365300
+CA121 COST tic=703 id=6 calls=1292 inclusive=0.147000 exclusive=0.111400
+CA121 COST tic=703 id=7 calls=3893 inclusive=0.265500 exclusive=0.265500
+CA121 COST tic=703 id=9 calls=646 inclusive=1.715500 exclusive=0.902800
+CA121 COST tic=703 id=10 calls=645 inclusive=0.284600 exclusive=0.284600
+CA121 COST tic=703 id=15 calls=1 inclusive=0.001100 exclusive=0.001100
+CA121 COST tic=703 id=17 calls=2 inclusive=0.004600 exclusive=0.004600
+CA121 COST tic=703 id=18 calls=1 inclusive=0.065700 exclusive=0.005000
+CA121 COST tic=703 id=20 calls=48 inclusive=0.059800 exclusive=0.059800
+CA121 COST tic=703 id=21 calls=42 inclusive=0.197100 exclusive=0.180800
+CA121 COST tic=703 id=22 calls=15 inclusive=1.554100 exclusive=1.554100
+CA121 COST tic=703 id=23 calls=1 inclusive=0.055100 exclusive=0.043700
+CA121 COST tic=703 id=24 calls=2602 inclusive=0.188700 exclusive=0.188700
+CA121 COST tic=703 id=27 calls=750 inclusive=1.836500 exclusive=1.731000
+CA121 COST tic=703 id=28 calls=750 inclusive=1.915700 exclusive=0.079200
+CA121 COST tic=703 id=29 calls=1 inclusive=0.059000 exclusive=0.059000
+CA121 COST tic=703 id=31 calls=1 inclusive=0.059600 exclusive=0.000600
+CA121 COST tic=703 id=32 calls=2607 inclusive=1.676900 exclusive=0.221300
+CA121 COST tic=703 id=33 calls=80 inclusive=0.598900 exclusive=0.075300
+CA121 COST tic=703 id=34 calls=77 inclusive=0.867600 exclusive=0.867600
+CA121 COST tic=703 id=35 calls=80 inclusive=0.523600 exclusive=0.523600
+CA121 COUNT tic=703 candidates=0 sight=0 decisions=0 commands=0
+CA132 FRAME tic=705 ms=25224.068000 interval=22.942400 epoch=1791422024
+CA132 FRAME tic=705 ms=25245.422600 interval=21.354600 epoch=1791422024
+CA132 FRAME tic=706 ms=25273.449000 interval=28.026400 epoch=1791422024
+CA132 FRAME tic=707 ms=25297.305400 interval=23.856400 epoch=1791422024
+CA132 FRAME tic=708 ms=25321.150400 interval=23.845000 epoch=1791422024
+CA132 FRAME tic=709 ms=25345.889800 interval=24.739400 epoch=1791422024
+CA132 FRAME tic=710 ms=25369.190100 interval=23.300300 epoch=1791422024
+CA132 FRAME tic=710 ms=25389.766800 interval=20.576700 epoch=1791422024
+CA132 FRAME tic=711 ms=25411.158200 interval=21.391400 epoch=1791422024
+CA132 FRAME tic=712 ms=25435.606800 interval=24.448600 epoch=1791422024
+CA132 FRAME tic=713 ms=25456.674500 interval=21.067700 epoch=1791422024
+CA132 FRAME tic=713 ms=25477.423800 interval=20.749300 epoch=1791422024
+CA132 FRAME tic=714 ms=25501.321300 interval=23.897500 epoch=1791422024
+CA132 FRAME tic=715 ms=25521.500100 interval=20.178800 epoch=1791422024
+CA132 FRAME tic=716 ms=25545.751300 interval=24.251200 epoch=1791422024
+CA132 FRAME tic=717 ms=25567.460300 interval=21.709000 epoch=1791422024
+CA132 FRAME tic=717 ms=25589.754800 interval=22.294500 epoch=1791422024
+CA132 FRAME tic=718 ms=25609.728500 interval=19.973700 epoch=1791422024
+CA132 FRAME tic=719 ms=25629.627500 interval=19.899000 epoch=1791422024
+CA132 FRAME tic=720 ms=25653.220300 interval=23.592800 epoch=1791422024
+CA132 FRAME tic=720 ms=25673.617000 interval=20.396700 epoch=1791422024
+CA132 FRAME tic=721 ms=25695.096800 interval=21.479800 epoch=1791422024
+CA132 FRAME tic=722 ms=25716.351400 interval=21.254600 epoch=1791422024
+CA132 FRAME tic=723 ms=25735.838800 interval=19.487400 epoch=1791422024
+CA132 FRAME tic=723 ms=25755.796200 interval=19.957400 epoch=1791422024
+CA132 FRAME tic=724 ms=25775.605800 interval=19.809600 epoch=1791422024
+CA132 FRAME tic=725 ms=25794.851200 interval=19.245400 epoch=1791422024
+CA132 FRAME tic=725 ms=25816.994700 interval=22.143500 epoch=1791422024
+CA132 FRAME tic=726 ms=25837.591800 interval=20.597100 epoch=1791422024
+CA132 FRAME tic=727 ms=25857.004300 interval=19.412500 epoch=1791422024
+CA132 FRAME tic=727 ms=25876.267200 interval=19.262900 epoch=1791422024
+CA132 FRAME tic=728 ms=25897.018100 interval=20.750900 epoch=1791422024
+CA132 FRAME tic=729 ms=25918.898300 interval=21.880200 epoch=1791422024
+CA132 FRAME tic=730 ms=25939.205200 interval=20.306900 epoch=1791422024
+CA132 FRAME tic=730 ms=25959.914400 interval=20.709200 epoch=1791422024
+CA132 FRAME tic=731 ms=25981.242100 interval=21.327700 epoch=1791422024
+CA132 FRAME tic=732 ms=26002.307600 interval=21.065500 epoch=1791422024
+CA132 FRAME tic=733 ms=26026.326800 interval=24.019200 epoch=1791422024
+CA132 FRAME tic=733 ms=26052.741200 interval=26.414400 epoch=1791422024
+CA132 FRAME tic=734 ms=26079.573900 interval=26.832700 epoch=1791422024

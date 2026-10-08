@@ -10,7 +10,14 @@ their armies; the accepted full deployment remains reproducible and default.
 The author has not yet accepted this new scenario. The #131 predecessor is fully
 accepted, issue closed and PR #138 merged as 72eba5fb.
 Canonical scope: [SYSTEMS](SYSTEMS.md#staged-siege-reinforcement-test-132).
-Native evidence is being collected in assets/validation_512.
+Native evidence: [validation_512](../assets/validation_512/RESULTS.md), including
+22 lifecycle assertions, 52 save comparisons and actual presentation captures.
+The arrival workload improves; a short foreground cap control reaches 53.1 FPS
+and 34.8 tics/s, while long-run stability remains unproven. Complete-budget diagnostics retain all corpses and record
+natural/scripted casualties separately. CA132-01 is pending author acceptance.
+Geometry/defender combinations await #133; demon survival behavior belongs to #135.
+An isolated death audit confirms 5,946 cold deaths among 5,961 post-checkpoint
+baseline deaths; this pre-existing physiology changes the late comparison load.
 
 ## 5.1.1 - Thermal HUD and climate adaptation (#131)
 

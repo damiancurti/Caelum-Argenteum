@@ -1,0 +1,15 @@
+CA132-01 | Origin: 5.1.2 / issue #132 | Staged siege gameplay and performance
+Prerequisites: rebuild the current branch with run_dev.bat; GZDoom 4.14.2.
+Keep any original full-army save and its original package for rollback.
+1. In the console enter ca_test_siege_reinforcements true, then map MAP06.
+2. Play the approach and defense. Observe new groups about every 10 simulation
+   seconds; confirm normal movement, collisions, attacks and machine operators.
+3. Save, reload and continue: the army must continue without a sudden duplicate
+   wave or reset. Changing the CVar must not convert that saved encounter.
+4. Set ca_test_siege_reinforcements false and start another fresh MAP06 to compare
+   the original full army from similar views. Report the staged scenario's play
+   feel, visible spawning/placement problems and any stalls in exposed views.
+Expected: the opt-in scenario is playable and preserves combat/ending behavior;
+staging improves arrival, with measured 2,000-alive/late limitations documented
+in assets/validation_512/RESULTS.md. Stable 35 tics/s and 30 FPS everywhere have
+not been established. Author acceptance of the experiment is still outstanding.

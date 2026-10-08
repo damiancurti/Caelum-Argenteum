@@ -1,0 +1,612 @@
+Log started: 2026-10-07 22:12:47
+GZDoom version g4.14.2
+D_DoomInit: Static RNGseed 116 set.
+W_Init: Init WADfiles.
+adding C:/Program Files (x86)/GZDoom/gzdoom.pk3, 692 lumps
+adding C:/Program Files (x86)/GZDoom/game_support.pk3, 3308 lumps
+adding C:/Program Files (x86)/Steam/steamapps/common/ultimate doom/base/doom2/DOOM2.WAD, 2919 lumps
+adding C:/Program Files (x86)/Steam/steamapps/common/Ultimate Doom/rerelease/id24res.wad, 530 lumps
+adding C:/Program Files (x86)/GZDoom/game_widescreen_gfx.pk3, 214 lumps
+adding C:/GZDooMProjects/CaelumArgenteum/build/issue132/profile-baseline.pk3, 6204 lumps
+adding C:/GZDooMProjects/CaelumArgenteum/build/issue132/baseline-observer.pk3, 4 lumps
+S_Init: Setting up sound.
+I_InitSound: Initializing OpenAL
+  Opened device OpenAL Soft on Altavoces (Trust GXT 363 headset)
+  EFX enabled
+I_InitInput
+I_StartupMouse
+I_StartupKeyboard
+I_StartupXInput
+I_StartupRawPS2
+I_StartupDirectInputJoystick
+Vulkan device: NVIDIA GeForce RTX 3070 Ti
+Vulkan device type: discrete gpu
+Vulkan version: 1.4.303 (api) 576.352.0 (driver)
+Vulkan extensions: VK_KHR_16bit_storage VK_KHR_8bit_storage VK_KHR_acceleration_structure VK_KHR_bind_memory2 VK_KHR_buffer_device_address VK_KHR_calibrated_timestamps VK_KHR_compute_shader_derivatives VK_KHR_cooperative_matrix VK_KHR_copy_commands2 VK_KHR_create_renderpass2 VK_KHR_dedicated_allocation VK_KHR_deferred_host_operations VK_KHR_depth_stencil_resolve VK_KHR_descriptor_update_template VK_KHR_device_group VK_KHR_draw_indirect_count VK_KHR_driver_properties VK_KHR_dynamic_rendering VK_KHR_dynamic_rendering_local_read VK_KHR_external_fence VK_KHR_external_fence_win32 VK_KHR_external_memory VK_KHR_external_memory_win32 VK_KHR_external_semaphore VK_KHR_external_semaphore_win32 VK_KHR_format_feature_flags2 VK_KHR_fragment_shader_barycentric VK_KHR_fragment_shading_rate VK_KHR_get_memory_requirements2 VK_KHR_global_priority VK_KHR_image_format_list VK_KHR_imageless_framebuffer VK_KHR_index_type_uint8 VK_KHR_line_rasterization VK_KHR_load_store_op_none VK_KHR_maintenance1 VK_KHR_maintenance2 VK_KHR_maintenance3 VK_KHR_maintenance4 VK_KHR_maintenance5 VK_KHR_maintenance6 VK_KHR_maintenance7 VK_KHR_map_memory2 VK_KHR_multiview VK_KHR_pipeline_binary VK_KHR_pipeline_executable_properties VK_KHR_pipeline_library VK_KHR_present_id VK_KHR_present_wait VK_KHR_push_descriptor VK_KHR_ray_query VK_KHR_ray_tracing_maintenance1 VK_KHR_ray_tracing_pipeline VK_KHR_ray_tracing_position_fetch VK_KHR_relaxed_block_layout VK_KHR_sampler_mirror_clamp_to_edge VK_KHR_sampler_ycbcr_conversion VK_KHR_separate_depth_stencil_layouts VK_KHR_shader_atomic_int64 VK_KHR_shader_clock VK_KHR_shader_draw_parameters VK_KHR_shader_expect_assume VK_KHR_shader_float16_int8 VK_KHR_shader_float_controls VK_KHR_shader_float_controls2 VK_KHR_shader_integer_dot_product VK_KHR_shader_maximal_reconvergence VK_KHR_shader_non_semantic_info VK_KHR_shader_quad_control VK_KHR_shader_relaxed_extended_instruction VK_KHR_shader_subgroup_extended_types VK_KHR_shader_subgroup_rotate VK_KHR_shader_subgroup_uniform_control_flow VK_KHR_shader_terminate_invocation VK_KHR_spirv_1_4 VK_KHR_storage_buffer_storage_class VK_KHR_swapchain VK_KHR_swapchain_mutable_format VK_KHR_synchronization2 VK_KHR_timeline_semaphore VK_KHR_uniform_buffer_standard_layout VK_KHR_variable_pointers VK_KHR_vertex_attribute_divisor VK_KHR_video_decode_av1 VK_KHR_video_decode_h264 VK_KHR_video_decode_h265 VK_KHR_video_decode_queue VK_KHR_video_encode_h264 VK_KHR_video_encode_h265 VK_KHR_video_encode_quantization_map VK_KHR_video_encode_queue VK_KHR_video_maintenance1 VK_KHR_video_maintenance2 VK_KHR_video_queue VK_KHR_vulkan_memory_model VK_KHR_win32_keyed_mutex VK_KHR_workgroup_memory_explicit_layout VK_KHR_zero_initialize_workgroup_memory VK_EXT_4444_formats VK_EXT_attachment_feedback_loop_dynamic_state VK_EXT_attachment_feedback_loop_layout VK_EXT_blend_operation_advanced VK_EXT_border_color_swizzle VK_EXT_buffer_device_address VK_EXT_calibrated_timestamps VK_EXT_color_write_enable VK_EXT_conditional_rendering VK_EXT_conservative_rasterization VK_EXT_custom_border_color VK_EXT_depth_bias_control VK_EXT_depth_clamp_control VK_EXT_depth_clamp_zero_one VK_EXT_depth_clip_control VK_EXT_depth_clip_enable VK_EXT_depth_range_unrestricted VK_EXT_descriptor_buffer VK_EXT_descriptor_indexing VK_EXT_device_address_binding_report VK_EXT_device_fault VK_EXT_device_generated_commands VK_EXT_discard_rectangles VK_EXT_dynamic_rendering_unused_attachments VK_EXT_extended_dynamic_state VK_EXT_extended_dynamic_state2 VK_EXT_extended_dynamic_state3 VK_EXT_external_memory_host VK_EXT_fragment_shader_interlock VK_EXT_full_screen_exclusive VK_EXT_global_priority VK_EXT_global_priority_query VK_EXT_graphics_pipeline_library VK_EXT_hdr_metadata VK_EXT_host_image_copy VK_EXT_host_query_reset VK_EXT_image_2d_view_of_3d VK_EXT_image_robustness VK_EXT_image_sliced_view_of_3d VK_EXT_image_view_min_lod VK_EXT_index_type_uint8 VK_EXT_inline_uniform_block VK_EXT_legacy_vertex_attributes VK_EXT_line_rasterization VK_EXT_load_store_op_none VK_EXT_memory_budget VK_EXT_memory_priority VK_EXT_mesh_shader VK_EXT_multi_draw VK_EXT_mutable_descriptor_type VK_EXT_nested_command_buffer VK_EXT_non_seamless_cube_map VK_EXT_opacity_micromap VK_EXT_pageable_device_local_memory VK_EXT_pci_bus_info VK_EXT_pipeline_creation_cache_control VK_EXT_pipeline_creation_feedback VK_EXT_pipeline_library_group_handles VK_EXT_pipeline_robustness VK_EXT_post_depth_coverage VK_EXT_present_mode_fifo_latest_ready VK_EXT_primitive_topology_list_restart VK_EXT_primitives_generated_query VK_EXT_private_data VK_EXT_provoking_vertex VK_EXT_queue_family_foreign VK_EXT_robustness2 VK_EXT_sample_locations VK_EXT_sampler_filter_minmax VK_EXT_scalar_block_layout VK_EXT_separate_stencil_usage VK_EXT_shader_atomic_float VK_EXT_shader_demote_to_helper_invocation VK_EXT_shader_image_atomic_int64 VK_EXT_shader_module_identifier VK_EXT_shader_object VK_EXT_shader_replicated_composites VK_EXT_shader_subgroup_ballot VK_EXT_shader_subgroup_vote VK_EXT_shader_viewport_index_layer VK_EXT_subgroup_size_control VK_EXT_swapchain_maintenance1 VK_EXT_texel_buffer_alignment VK_EXT_tooling_info VK_EXT_transform_feedback VK_EXT_vertex_attribute_divisor VK_EXT_vertex_attribute_robustness VK_EXT_vertex_input_dynamic_state VK_EXT_ycbcr_2plane_444_formats VK_EXT_ycbcr_image_arrays VK_NV_acquire_winrt_display VK_NV_clip_space_w_scaling VK_NV_cluster_acceleration_structure VK_NV_compute_shader_derivatives VK_NV_cooperative_matrix VK_NV_cooperative_matrix2 VK_NV_cooperative_vector VK_NV_copy_memory_indirect VK_NV_corner_sampled_image VK_NV_coverage_reduction_mode VK_NV_cuda_kernel_launch VK_NV_dedicated_allocation VK_NV_dedicated_allocation_image_aliasing VK_NV_descriptor_pool_overallocation VK_NV_device_diagnostic_checkpoints VK_NV_device_diagnostics_config VK_NV_device_generated_commands VK_NV_device_generated_commands_compute VK_NV_disk_cache_utils VK_NV_external_memory VK_NV_external_memory_win32 VK_NV_fill_rectangle VK_NV_fragment_coverage_to_color VK_NV_fragment_shader_barycentric VK_NV_fragment_shading_rate_enums VK_NV_framebuffer_mixed_samples VK_NV_geometry_shader_passthrough VK_NV_inherited_viewport_scissor VK_NV_internal_nvpresent VK_NV_linear_color_attachment VK_NV_low_latency VK_NV_low_latency2 VK_NV_memory_decompression VK_NV_mesh_shader VK_NV_optical_flow VK_NV_partitioned_acceleration_structure VK_NV_present_metering VK_NV_raw_access_chains VK_NV_ray_tracing VK_NV_ray_tracing_invocation_reorder VK_NV_ray_tracing_motion_blur VK_NV_representative_fragment_test VK_NV_sample_mask_override_coverage VK_NV_scissor_exclusive VK_NV_shader_atomic_float16_vector VK_NV_shader_image_footprint VK_NV_shader_sm_builtins VK_NV_shader_subgroup_partitioned VK_NV_shading_rate_image VK_NV_viewport_array2 VK_NV_viewport_swizzle VK_NV_win32_keyed_mutex VK_NVX_binary_import VK_NVX_image_view_handle VK_NVX_multiview_per_view_attributes VK_AMD_buffer_marker VK_GOOGLE_hlsl_functionality1 VK_GOOGLE_user_type
+Max. texture size: 32768
+Max. uniform buffer range: 65536
+Min. uniform buffer offset alignment: 64
+Resolution: 1280 x 720
+I_Init: Setting up machine state.
+CPU speed: 3400 MHz
+CPU Vendor ID: AuthenticAMD
+  Name: AMD Ryzen 9 5950X 16-Core Processor 
+  Family 25 (25), Model 33, Stepping 0
+  Features: SSE2 SSE3 SSSE3 SSE4.1 SSE4.2 AVX AVX2 F16C FMA3 BMI1 BMI2 HyperThreading
+V_Init: allocate screen.
+ST_Init: Init startup screen.
+Checking cmd-line parameters...
+S_InitData: Load sound definitions.
+G_ParseMapInfo: Load map definitions.
+Texman.Init: Init texture manager.
+ParseTeamInfo: Load team definitions.
+LoadActors: Load actor definitions.
+script parsing took 948.70 ms
+R_Init: Init Doom refresh subsystem.
+DecalLibrary: Load decals.
+M_Init: Init menus.
+P_Init: Init Playloop state.
+ParseSBarInfo: Loading custom status bar definition.
+D_CheckNetGame: Checking network game status.
+player 1 of 1 (1 nodes)
+
+----------------------------------------
+
+MAP06 - Barracas al Sud — fortified port
+
+[Caelum] Inicio por comando directo: perfil de prueba seguro aplicado.
+[Caelum] Character creation values loaded. Attribute total: 150.00
+PORT16 deployed Mandingas=6000 commander=1 defenders=600 hostileMachines=12 guns=42
+CA121 COST tic=0 id=0 calls=6601 inclusive=11.363300 exclusive=5.516800
+CA121 COST tic=0 id=1 calls=6601 inclusive=0.964000 exclusive=0.963200
+CA121 COST tic=0 id=3 calls=6601 inclusive=0.176700 exclusive=0.176700
+CA121 COST tic=0 id=4 calls=27016 inclusive=3.501400 exclusive=3.501400
+CA121 COST tic=0 id=5 calls=27016 inclusive=3.646500 exclusive=3.646500
+CA121 COST tic=0 id=6 calls=1 inclusive=0.000400 exclusive=0.000400
+CA121 COST tic=0 id=7 calls=6602 inclusive=0.276000 exclusive=0.276000
+CA121 COST tic=0 id=9 calls=1 inclusive=0.000400 exclusive=0.000400
+CA121 COST tic=0 id=18 calls=1 inclusive=104.449900 exclusive=104.449900
+CA121 COST tic=0 id=20 calls=48 inclusive=0.002200 exclusive=0.002200
+CA121 COST tic=0 id=21 calls=42 inclusive=0.014200 exclusive=0.012600
+CA121 COST tic=0 id=23 calls=1 inclusive=0.056600 exclusive=0.054800
+CA121 COST tic=0 id=24 calls=6602 inclusive=0.384200 exclusive=0.384200
+CA121 COST tic=0 id=32 calls=6601 inclusive=0.767900 exclusive=0.767900
+CA121 COUNT tic=0 candidates=0 sight=0 decisions=0 commands=0
+CA132 FRAME tic=13 ms=5767.196800 interval=336.698300 epoch=1791421973
+CA132 FRAME tic=23 ms=6102.346800 interval=335.150000 epoch=1791421973
+CA132 FRAME tic=34 ms=6383.232300 interval=280.885500 epoch=1791421974
+CA132 SIM tic=35 ms=6409.800400 alive=6000 total=6000 remaining=0 pending=0 combatants=6602 defenders=600 corpses=0 projectiles=0 groups=64 failed=0 scriptedDeaths=0 victory=0 view=0
+CA132 SPAWN tic=35 total=6000
+CA132 SETTINGS pause=0 lower=0 render=1 sound=1 volume=0.050000 diagnostic=0
+CA121 COST tic=37 id=0 calls=6601 inclusive=32.377300 exclusive=7.116200
+CA121 COST tic=37 id=1 calls=6601 inclusive=17.154900 exclusive=2.841100
+CA121 COST tic=37 id=2 calls=36 inclusive=0.003500 exclusive=0.003500
+CA121 COST tic=37 id=3 calls=6601 inclusive=0.177200 exclusive=0.177200
+CA121 COST tic=37 id=4 calls=6601 inclusive=1.257200 exclusive=1.257200
+CA121 COST tic=37 id=5 calls=6601 inclusive=0.935100 exclusive=0.935100
+CA121 COST tic=37 id=6 calls=13218 inclusive=1.618900 exclusive=1.233700
+CA121 COST tic=37 id=7 calls=19819 inclusive=1.036500 exclusive=1.036500
+CA121 COST tic=37 id=9 calls=6609 inclusive=13.503200 exclusive=9.948000
+CA121 COST tic=37 id=10 calls=6012 inclusive=2.612200 exclusive=2.612200
+CA121 COST tic=37 id=15 calls=1 inclusive=0.001500 exclusive=0.001500
+CA121 COST tic=37 id=17 calls=50 inclusive=0.134700 exclusive=0.131200
+CA121 COST tic=37 id=18 calls=1 inclusive=0.005700 exclusive=0.004200
+CA121 COST tic=37 id=20 calls=48 inclusive=0.086100 exclusive=0.086100
+CA121 COST tic=37 id=21 calls=42 inclusive=0.035700 exclusive=0.019800
+CA121 COST tic=37 id=23 calls=1 inclusive=0.061000 exclusive=0.048900
+CA121 COST tic=37 id=24 calls=6602 inclusive=0.572800 exclusive=0.572800
+CA121 COST tic=37 id=32 calls=6601 inclusive=4.512800 exclusive=0.683000
+CA121 COST tic=37 id=33 calls=190 inclusive=1.399900 exclusive=0.151000
+CA121 COST tic=37 id=34 calls=189 inclusive=2.441800 exclusive=2.441800
+CA121 COST tic=37 id=35 calls=190 inclusive=1.248900 exclusive=1.248900
+CA121 COUNT tic=37 candidates=0 sight=0 decisions=0 commands=0
+CA132 FRAME tic=44 ms=6654.796200 interval=271.563900 epoch=1791421974
+CA132 FRAME tic=54 ms=6972.356700 interval=317.560500 epoch=1791421974
+CA132 FRAME tic=65 ms=7227.999500 interval=255.642800 epoch=1791421974
+CA132 SIM tic=70 ms=7356.969000 alive=6000 total=6000 remaining=0 pending=0 combatants=6602 defenders=600 corpses=0 projectiles=169 groups=66 failed=0 scriptedDeaths=0 victory=0 view=0
+CA132 FRAME tic=74 ms=7466.002700 interval=238.003200 epoch=1791421975
+CA121 COST tic=74 id=0 calls=6601 inclusive=15.508700 exclusive=5.672600
+CA121 COST tic=74 id=1 calls=6601 inclusive=1.475000 exclusive=1.269000
+CA121 COST tic=74 id=2 calls=3 inclusive=0.000600 exclusive=0.000600
+CA121 COST tic=74 id=3 calls=6601 inclusive=0.179000 exclusive=0.179000
+CA121 COST tic=74 id=4 calls=6601 inclusive=1.742300 exclusive=1.742300
+CA121 COST tic=74 id=5 calls=6601 inclusive=0.844200 exclusive=0.844200
+CA121 COST tic=74 id=6 calls=80 inclusive=0.010200 exclusive=0.008000
+CA121 COST tic=74 id=7 calls=6681 inclusive=0.712700 exclusive=0.712700
+CA121 COST tic=74 id=9 calls=40 inclusive=0.229000 exclusive=0.083000
+CA121 COST tic=74 id=10 calls=40 inclusive=0.112800 exclusive=0.112800
+CA121 COST tic=74 id=15 calls=1 inclusive=0.001400 exclusive=0.001400
+CA121 COST tic=74 id=18 calls=1 inclusive=0.005200 exclusive=0.003800
+CA121 COST tic=74 id=20 calls=48 inclusive=0.111000 exclusive=0.111000
+CA121 COST tic=74 id=21 calls=42 inclusive=0.038700 exclusive=0.018000
+CA121 COST tic=74 id=23 calls=1 inclusive=0.072400 exclusive=0.053500
+CA121 COST tic=74 id=24 calls=6602 inclusive=0.509900 exclusive=0.509900
+CA121 COST tic=74 id=27 calls=194 inclusive=0.524200 exclusive=0.523600
+CA121 COST tic=74 id=28 calls=194 inclusive=0.546200 exclusive=0.022000
+CA121 COST tic=74 id=32 calls=6601 inclusive=4.376900 exclusive=0.634400
+CA121 COST tic=74 id=33 calls=190 inclusive=1.394600 exclusive=0.178400
+CA121 COST tic=74 id=34 calls=189 inclusive=2.365100 exclusive=2.365100
+CA121 COST tic=74 id=35 calls=190 inclusive=1.216200 exclusive=1.216200
+CA121 COUNT tic=74 candidates=0 sight=0 decisions=0 commands=0
+CA132 FRAME tic=82 ms=7771.302900 interval=305.300200 epoch=1791421975
+CA132 FRAME tic=93 ms=8040.037200 interval=268.734300 epoch=1791421975
+CA132 FRAME tic=102 ms=8310.256900 interval=270.219700 epoch=1791421976
+CA132 SIM tic=105 ms=8450.353700 alive=6000 total=6000 remaining=0 pending=0 combatants=6602 defenders=600 corpses=0 projectiles=387 groups=63 failed=0 scriptedDeaths=0 victory=0 view=0
+CA132 FRAME tic=112 ms=8633.873500 interval=323.616600 epoch=1791421976
+CA121 COST tic=111 id=0 calls=6601 inclusive=14.251500 exclusive=5.345300
+CA121 COST tic=111 id=1 calls=6601 inclusive=1.454600 exclusive=1.185600
+CA121 COST tic=111 id=2 calls=15 inclusive=0.000900 exclusive=0.000900
+CA121 COST tic=111 id=3 calls=6601 inclusive=0.176100 exclusive=0.176100
+CA121 COST tic=111 id=4 calls=6604 inclusive=1.732000 exclusive=1.732000
+CA121 COST tic=111 id=5 calls=6603 inclusive=0.827000 exclusive=0.827000
+CA121 COST tic=111 id=6 calls=184 inclusive=0.022300 exclusive=0.016400
+CA121 COST tic=111 id=7 calls=6785 inclusive=0.581900 exclusive=0.581900
+CA121 COST tic=111 id=9 calls=92 inclusive=0.309000 exclusive=0.138700
+CA121 COST tic=111 id=10 calls=92 inclusive=0.107200 exclusive=0.107200
+CA121 COST tic=111 id=15 calls=1 inclusive=0.001500 exclusive=0.001500
+CA121 COST tic=111 id=18 calls=1 inclusive=0.005600 exclusive=0.004100
+CA121 COST tic=111 id=20 calls=48 inclusive=0.098600 exclusive=0.098600
+CA121 COST tic=111 id=21 calls=42 inclusive=0.038100 exclusive=0.017400
+CA121 COST tic=111 id=23 calls=1 inclusive=0.052500 exclusive=0.042700
+CA121 COST tic=111 id=24 calls=6602 inclusive=0.494400 exclusive=0.494400
+CA121 COST tic=111 id=27 calls=455 inclusive=1.069400 exclusive=1.039000
+CA121 COST tic=111 id=28 calls=455 inclusive=1.119000 exclusive=0.049600
+CA121 COST tic=111 id=32 calls=6602 inclusive=3.676700 exclusive=0.597100
+CA121 COST tic=111 id=33 calls=191 inclusive=1.404400 exclusive=0.162500
+CA121 COST tic=111 id=34 calls=190 inclusive=1.684700 exclusive=1.684700
+CA121 COST tic=111 id=35 calls=191 inclusive=1.241900 exclusive=1.241900
+CA121 COUNT tic=111 candidates=0 sight=0 decisions=0 commands=0
+CA132 FRAME tic=123 ms=8900.776900 interval=266.903400 epoch=1791421976
+CA132 FRAME tic=132 ms=9114.377300 interval=213.600400 epoch=1791421976
+CA132 FRAME tic=140 ms=9344.271200 interval=229.893900 epoch=1791421977
+CA132 SIM tic=140 ms=9370.859400 alive=6000 total=6000 remaining=0 pending=0 combatants=6602 defenders=600 corpses=0 projectiles=614 groups=64 failed=0 scriptedDeaths=0 victory=0 view=0
+CA132 FRAME tic=148 ms=9649.731100 interval=305.459900 epoch=1791421977
+CA121 COST tic=148 id=0 calls=6601 inclusive=18.133500 exclusive=5.713900
+CA121 COST tic=148 id=1 calls=6601 inclusive=4.178700 exclusive=1.496800
+CA121 COST tic=148 id=2 calls=17 inclusive=0.002300 exclusive=0.002300
+CA121 COST tic=148 id=3 calls=6601 inclusive=0.172500 exclusive=0.172500
+CA121 COST tic=148 id=4 calls=6622 inclusive=1.694600 exclusive=1.694600
+CA121 COST tic=148 id=5 calls=6622 inclusive=0.849600 exclusive=0.849600
+CA121 COST tic=148 id=6 calls=2004 inclusive=0.238500 exclusive=0.183300
+CA121 COST tic=148 id=7 calls=8605 inclusive=0.755500 exclusive=0.755500
+CA121 COST tic=148 id=9 calls=1002 inclusive=3.159700 exclusive=1.388600
+CA121 COST tic=148 id=10 calls=1002 inclusive=1.038500 exclusive=1.038500
+CA121 COST tic=148 id=15 calls=1 inclusive=0.001100 exclusive=0.001100
+CA121 COST tic=148 id=17 calls=1 inclusive=0.004500 exclusive=0.004500
+CA121 COST tic=148 id=18 calls=1 inclusive=0.005200 exclusive=0.004100
+CA121 COST tic=148 id=20 calls=48 inclusive=0.109600 exclusive=0.109600
+CA121 COST tic=148 id=21 calls=42 inclusive=0.041800 exclusive=0.021200
+CA121 COST tic=148 id=23 calls=1 inclusive=0.068600 exclusive=0.051500
+CA121 COST tic=148 id=24 calls=6602 inclusive=0.494500 exclusive=0.494500
+CA121 COST tic=148 id=27 calls=701 inclusive=1.576500 exclusive=1.576400
+CA121 COST tic=148 id=28 calls=701 inclusive=1.656400 exclusive=0.079900
+CA121 COST tic=148 id=32 calls=6601 inclusive=4.340400 exclusive=0.618600
+CA121 COST tic=148 id=33 calls=190 inclusive=1.469700 exclusive=0.167800
+CA121 COST tic=148 id=34 calls=189 inclusive=2.267800 exclusive=2.267800
+CA121 COST tic=148 id=35 calls=190 inclusive=1.301900 exclusive=1.301900
+CA121 COUNT tic=148 candidates=0 sight=0 decisions=0 commands=0
+CA132 FRAME tic=158 ms=9937.482300 interval=287.751200 epoch=1791421977
+CA132 FRAME tic=169 ms=10277.933500 interval=340.451200 epoch=1791421978
+CA132 SIM tic=175 ms=10438.457900 alive=6000 total=6000 remaining=0 pending=0 combatants=6602 defenders=600 corpses=0 projectiles=835 groups=63 failed=0 scriptedDeaths=0 victory=0 view=0
+CA132 FRAME tic=180 ms=10570.843800 interval=292.910300 epoch=1791421978
+CA121 COST tic=185 id=0 calls=6601 inclusive=33.304300 exclusive=6.665500
+CA121 COST tic=185 id=1 calls=6601 inclusive=18.915200 exclusive=3.241100
+CA121 COST tic=185 id=2 calls=230 inclusive=0.022000 exclusive=0.022000
+CA121 COST tic=185 id=3 calls=6601 inclusive=0.181400 exclusive=0.181400
+CA121 COST tic=185 id=4 calls=6623 inclusive=1.402400 exclusive=1.402400
+CA121 COST tic=185 id=5 calls=6623 inclusive=0.917000 exclusive=0.917000
+CA121 COST tic=185 id=6 calls=20028 inclusive=2.376800 exclusive=1.805800
+CA121 COST tic=185 id=7 calls=26629 inclusive=1.137400 exclusive=1.137400
+CA121 COST tic=185 id=9 calls=10014 inclusive=22.935700 exclusive=10.295000
+CA121 COST tic=185 id=10 calls=9417 inclusive=2.893800 exclusive=2.893800
+CA121 COST tic=185 id=15 calls=1 inclusive=0.000900 exclusive=0.000900
+CA121 COST tic=185 id=17 calls=31 inclusive=0.076100 exclusive=0.075700
+CA121 COST tic=185 id=18 calls=1 inclusive=0.004600 exclusive=0.003700
+CA121 COST tic=185 id=20 calls=48 inclusive=0.092000 exclusive=0.092000
+CA121 COST tic=185 id=21 calls=42 inclusive=0.034100 exclusive=0.017500
+CA121 COST tic=185 id=23 calls=1 inclusive=0.051200 exclusive=0.041300
+CA121 COST tic=185 id=24 calls=6602 inclusive=0.570500 exclusive=0.570500
+CA121 COST tic=185 id=27 calls=897 inclusive=2.099400 exclusive=2.081600
+CA121 COST tic=185 id=28 calls=897 inclusive=2.198100 exclusive=0.098700
+CA121 COST tic=185 id=32 calls=6603 inclusive=4.114800 exclusive=0.713900
+CA121 COST tic=185 id=33 calls=191 inclusive=1.413700 exclusive=0.154400
+CA121 COST tic=185 id=34 calls=188 inclusive=1.996800 exclusive=1.996800
+CA121 COST tic=185 id=35 calls=191 inclusive=1.259300 exclusive=1.259300
+CA121 COUNT tic=185 candidates=0 sight=0 decisions=0 commands=0
+CA132 FRAME tic=191 ms=10855.365600 interval=284.521800 epoch=1791421978
+CA132 FRAME tic=201 ms=11110.630700 interval=255.265100 epoch=1791421978
+CA132 FRAME tic=210 ms=11436.579000 interval=325.948300 epoch=1791421979
+CA132 SIM tic=210 ms=11461.425700 alive=6000 total=6000 remaining=0 pending=0 combatants=6602 defenders=600 corpses=0 projectiles=936 groups=66 failed=0 scriptedDeaths=0 victory=0 view=0
+CA132 FRAME tic=221 ms=11827.492000 interval=390.913000 epoch=1791421979
+CA121 COST tic=222 id=0 calls=6601 inclusive=15.074100 exclusive=5.448800
+CA121 COST tic=222 id=1 calls=6601 inclusive=1.812700 exclusive=1.226000
+CA121 COST tic=222 id=2 calls=25 inclusive=0.002200 exclusive=0.002200
+CA121 COST tic=222 id=3 calls=6601 inclusive=0.174400 exclusive=0.174400
+CA121 COST tic=222 id=4 calls=6609 inclusive=1.678600 exclusive=1.678600
+CA121 COST tic=222 id=5 calls=6603 inclusive=0.833500 exclusive=0.833500
+CA121 COST tic=222 id=6 calls=500 inclusive=0.059900 exclusive=0.044700
+CA121 COST tic=222 id=7 calls=7101 inclusive=0.638100 exclusive=0.638100
+CA121 COST tic=222 id=9 calls=250 inclusive=0.726200 exclusive=0.351700
+CA121 COST tic=222 id=10 calls=250 inclusive=0.169100 exclusive=0.169100
+CA121 COST tic=222 id=15 calls=1 inclusive=0.002600 exclusive=0.002600
+CA121 COST tic=222 id=17 calls=1 inclusive=0.003700 exclusive=0.003700
+CA121 COST tic=222 id=18 calls=1 inclusive=0.008900 exclusive=0.006300
+CA121 COST tic=222 id=20 calls=48 inclusive=0.108800 exclusive=0.108800
+CA121 COST tic=222 id=21 calls=42 inclusive=0.035800 exclusive=0.016100
+CA121 COST tic=222 id=23 calls=1 inclusive=0.056600 exclusive=0.046500
+CA121 COST tic=222 id=24 calls=6602 inclusive=0.493000 exclusive=0.493000
+CA121 COST tic=222 id=27 calls=937 inclusive=2.272500 exclusive=2.182800
+CA121 COST tic=222 id=28 calls=937 inclusive=2.370300 exclusive=0.097800
+CA121 COST tic=222 id=32 calls=6612 inclusive=4.100600 exclusive=0.612100
+CA121 COST tic=222 id=33 calls=200 inclusive=1.482100 exclusive=0.174700
+CA121 COST tic=222 id=34 calls=188 inclusive=2.015900 exclusive=2.015900
+CA121 COST tic=222 id=35 calls=200 inclusive=1.307400 exclusive=1.307400
+CA121 COUNT tic=222 candidates=0 sight=0 decisions=0 commands=0
+CA132 FRAME tic=235 ms=12214.378500 interval=386.886500 epoch=1791421979
+CA132 SIM tic=245 ms=12490.035700 alive=6000 total=6000 remaining=0 pending=0 combatants=6602 defenders=600 corpses=0 projectiles=956 groups=67 failed=0 scriptedDeaths=0 victory=0 view=0
+CA132 FRAME tic=248 ms=12586.398100 interval=372.019600 epoch=1791421980
+CA121 COST tic=259 id=0 calls=6601 inclusive=16.092000 exclusive=5.644100
+CA121 COST tic=259 id=1 calls=6601 inclusive=2.610600 exclusive=1.383800
+CA121 COST tic=259 id=2 calls=37 inclusive=0.003300 exclusive=0.003300
+CA121 COST tic=259 id=3 calls=6601 inclusive=0.178500 exclusive=0.178500
+CA121 COST tic=259 id=4 calls=6615 inclusive=1.693700 exclusive=1.693700
+CA121 COST tic=259 id=5 calls=6611 inclusive=0.848400 exclusive=0.848400
+CA121 COST tic=259 id=6 calls=1392 inclusive=0.164200 exclusive=0.124500
+CA121 COST tic=259 id=7 calls=7993 inclusive=0.664600 exclusive=0.664600
+CA121 COST tic=259 id=9 calls=696 inclusive=1.619300 exclusive=1.002700
+CA121 COST tic=259 id=10 calls=693 inclusive=0.037300 exclusive=0.037300
+CA121 COST tic=259 id=15 calls=1 inclusive=0.001100 exclusive=0.001100
+CA121 COST tic=259 id=17 calls=4 inclusive=0.016200 exclusive=0.015900
+CA121 COST tic=259 id=18 calls=1 inclusive=0.004700 exclusive=0.003600
+CA121 COST tic=259 id=20 calls=48 inclusive=0.101400 exclusive=0.101400
+CA121 COST tic=259 id=21 calls=42 inclusive=0.038000 exclusive=0.018200
+CA121 COST tic=259 id=23 calls=1 inclusive=0.054300 exclusive=0.044000
+CA121 COST tic=259 id=24 calls=6602 inclusive=0.487300 exclusive=0.487300
+CA121 COST tic=259 id=27 calls=957 inclusive=2.287000 exclusive=2.221100
+CA121 COST tic=259 id=28 calls=957 inclusive=2.389900 exclusive=0.102900
+CA121 COST tic=259 id=32 calls=6609 inclusive=4.074000 exclusive=0.609600
+CA121 COST tic=259 id=33 calls=197 inclusive=1.453800 exclusive=0.166800
+CA121 COST tic=259 id=34 calls=188 inclusive=2.020700 exclusive=2.020700
+CA121 COST tic=259 id=35 calls=197 inclusive=1.287000 exclusive=1.287000
+CA121 COUNT tic=259 candidates=0 sight=0 decisions=0 commands=0
+CA132 FRAME tic=261 ms=12939.690200 interval=353.292100 epoch=1791421980
+CA132 FRAME tic=274 ms=13344.542000 interval=404.851800 epoch=1791421981
+CA132 SIM tic=280 ms=13552.867900 alive=6000 total=6000 remaining=0 pending=0 combatants=6602 defenders=600 corpses=0 projectiles=951 groups=64 failed=0 scriptedDeaths=0 victory=0 view=0
+CA132 FRAME tic=288 ms=13814.207600 interval=469.665600 epoch=1791421981
+CA121 COST tic=296 id=0 calls=6601 inclusive=21.514700 exclusive=6.174300
+CA121 COST tic=296 id=1 calls=6601 inclusive=5.776100 exclusive=1.881600
+CA121 COST tic=296 id=2 calls=128 inclusive=0.013200 exclusive=0.013200
+CA121 COST tic=296 id=3 calls=6601 inclusive=0.188500 exclusive=0.188500
+CA121 COST tic=296 id=4 calls=6621 inclusive=1.804200 exclusive=1.804200
+CA121 COST tic=296 id=5 calls=6619 inclusive=0.889800 exclusive=0.889800
+CA121 COST tic=296 id=6 calls=2378 inclusive=0.292300 exclusive=0.223400
+CA121 COST tic=296 id=7 calls=8979 inclusive=0.788400 exclusive=0.788400
+CA121 COST tic=296 id=9 calls=1189 inclusive=4.632200 exclusive=1.978400
+CA121 COST tic=296 id=10 calls=1189 inclusive=1.591100 exclusive=1.591100
+CA121 COST tic=296 id=15 calls=1 inclusive=0.001500 exclusive=0.001500
+CA121 COST tic=296 id=17 calls=3 inclusive=0.012400 exclusive=0.012400
+CA121 COST tic=296 id=18 calls=1 inclusive=0.006000 exclusive=0.004500
+CA121 COST tic=296 id=20 calls=48 inclusive=0.122300 exclusive=0.122300
+CA121 COST tic=296 id=21 calls=42 inclusive=0.045600 exclusive=0.022300
+CA121 COST tic=296 id=23 calls=1 inclusive=0.077800 exclusive=0.057600
+CA121 COST tic=296 id=24 calls=6602 inclusive=0.527800 exclusive=0.527800
+CA121 COST tic=296 id=27 calls=963 inclusive=3.557200 exclusive=3.494100
+CA121 COST tic=296 id=28 calls=963 inclusive=3.669100 exclusive=0.111900
+CA121 COST tic=296 id=32 calls=6608 inclusive=5.506100 exclusive=0.835400
+CA121 COST tic=296 id=33 calls=196 inclusive=1.587500 exclusive=0.185500
+CA121 COST tic=296 id=34 calls=188 inclusive=3.102000 exclusive=3.102000
+CA121 COST tic=296 id=35 calls=196 inclusive=1.402000 exclusive=1.402000
+CA121 COUNT tic=296 candidates=0 sight=0 decisions=0 commands=0
+CA132 FRAME tic=304 ms=14469.037700 interval=654.830100 epoch=1791421982
+CA132 SIM tic=315 ms=15020.262200 alive=6000 total=6000 remaining=0 pending=0 combatants=6602 defenders=600 corpses=0 projectiles=982 groups=66 failed=0 scriptedDeaths=0 victory=0 view=0
+CA132 FRAME tic=321 ms=15297.173700 interval=828.136000 epoch=1791421983
+CA121 COST tic=333 id=0 calls=6601 inclusive=30.375500 exclusive=7.141400
+CA121 COST tic=333 id=1 calls=6601 inclusive=14.338300 exclusive=2.655200
+CA121 COST tic=333 id=2 calls=418 inclusive=0.038800 exclusive=0.038800
+CA121 COST tic=333 id=3 calls=6601 inclusive=0.186900 exclusive=0.186900
+CA121 COST tic=333 id=4 calls=6618 inclusive=1.573900 exclusive=1.573900
+CA121 COST tic=333 id=5 calls=6614 inclusive=0.983600 exclusive=0.983600
+CA121 COST tic=333 id=6 calls=9578 inclusive=1.230500 exclusive=0.942900
+CA121 COST tic=333 id=7 calls=16179 inclusive=0.978500 exclusive=0.978500
+CA121 COST tic=333 id=9 calls=4789 inclusive=11.235200 exclusive=8.243100
+CA121 COST tic=333 id=10 calls=4192 inclusive=2.064000 exclusive=2.064000
+CA121 COST tic=333 id=15 calls=1 inclusive=0.002200 exclusive=0.002200
+CA121 COST tic=333 id=17 calls=27 inclusive=0.106500 exclusive=0.101900
+CA121 COST tic=333 id=18 calls=1 inclusive=0.008500 exclusive=0.006300
+CA121 COST tic=333 id=20 calls=48 inclusive=0.140200 exclusive=0.140200
+CA121 COST tic=333 id=21 calls=42 inclusive=0.043300 exclusive=0.020800
+CA121 COST tic=333 id=23 calls=1 inclusive=0.083300 exclusive=0.063900
+CA121 COST tic=333 id=24 calls=6602 inclusive=0.588200 exclusive=0.588200
+CA121 COST tic=333 id=27 calls=988 inclusive=2.723500 exclusive=2.683900
+CA121 COST tic=333 id=28 calls=988 inclusive=2.841100 exclusive=0.117600
+CA121 COST tic=333 id=32 calls=6605 inclusive=4.918200 exclusive=0.749600
+CA121 COST tic=333 id=33 calls=193 inclusive=1.545700 exclusive=0.173700
+CA121 COST tic=333 id=34 calls=188 inclusive=2.640800 exclusive=2.640800
+CA121 COST tic=333 id=35 calls=193 inclusive=1.372000 exclusive=1.372000
+CA121 COUNT tic=333 candidates=0 sight=0 decisions=0 commands=0
+CA132 FRAME tic=338 ms=15978.334900 interval=681.161200 epoch=1791421983
+CA132 SIM tic=350 ms=16447.627200 alive=6000 total=6000 remaining=0 pending=0 combatants=6602 defenders=600 corpses=0 projectiles=965 groups=65 failed=0 scriptedDeaths=0 victory=0 view=0
+CA132 DEATH tic=353 count=1 thermal=0 type=CaelumImpact exposure=-3.771 air=19.377 comfort=32.000 thermalHP=0.000
+CA132 DEATH tic=353 count=2 thermal=0 type=CaelumImpact exposure=-4.069 air=19.377 comfort=32.000 thermalHP=0.000
+CA132 DEATH tic=353 count=3 thermal=0 type=CaelumImpact exposure=-4.033 air=19.377 comfort=32.000 thermalHP=0.000
+CA132 DEATH tic=353 count=4 thermal=0 type=CaelumImpact exposure=-3.764 air=19.377 comfort=32.000 thermalHP=0.000
+CA132 FRAME tic=355 ms=16676.240800 interval=697.905900 epoch=1791421984
+CA121 COST tic=370 id=0 calls=6601 inclusive=18.842800 exclusive=6.147800
+CA121 COST tic=370 id=1 calls=6601 inclusive=3.662000 exclusive=1.560900
+CA121 COST tic=370 id=2 calls=80 inclusive=0.008200 exclusive=0.008200
+CA121 COST tic=370 id=3 calls=6601 inclusive=0.188900 exclusive=0.188900
+CA121 COST tic=370 id=4 calls=6610 inclusive=1.847200 exclusive=1.847200
+CA121 COST tic=370 id=5 calls=6608 inclusive=0.941100 exclusive=0.941100
+CA121 COST tic=370 id=6 calls=1258 inclusive=0.158200 exclusive=0.120400
+CA121 COST tic=370 id=7 calls=7859 inclusive=0.771000 exclusive=0.771000
+CA121 COST tic=370 id=9 calls=629 inclusive=2.510300 exclusive=1.072500
+CA121 COST tic=370 id=10 calls=629 inclusive=0.857900 exclusive=0.857900
+CA121 COST tic=370 id=15 calls=1 inclusive=0.001200 exclusive=0.001200
+CA121 COST tic=370 id=17 calls=1 inclusive=0.002300 exclusive=0.002300
+CA121 COST tic=370 id=18 calls=1 inclusive=0.005300 exclusive=0.004100
+CA121 COST tic=370 id=20 calls=48 inclusive=0.133100 exclusive=0.133100
+CA121 COST tic=370 id=21 calls=42 inclusive=0.036400 exclusive=0.018500
+CA121 COST tic=370 id=22 calls=2 inclusive=0.283800 exclusive=0.283800
+CA121 COST tic=370 id=23 calls=1 inclusive=0.069500 exclusive=0.052100
+CA121 COST tic=370 id=24 calls=6602 inclusive=0.520600 exclusive=0.520600
+CA121 COST tic=370 id=27 calls=1017 inclusive=2.794300 exclusive=2.746600
+CA121 COST tic=370 id=28 calls=1017 inclusive=2.914700 exclusive=0.120400
+CA121 COST tic=370 id=32 calls=6606 inclusive=4.853400 exclusive=0.670200
+CA121 COST tic=370 id=33 calls=194 inclusive=1.552700 exclusive=0.188800
+CA121 COST tic=370 id=34 calls=188 inclusive=2.646200 exclusive=2.646200
+CA121 COST tic=370 id=35 calls=194 inclusive=1.363900 exclusive=1.363900
+CA121 COUNT tic=370 candidates=0 sight=0 decisions=0 commands=0
+CA132 FRAME tic=372 ms=17303.573600 interval=627.332800 epoch=1791421985
+CA132 SIM tic=385 ms=17746.531000 alive=5996 total=6000 remaining=0 pending=0 combatants=6598 defenders=600 corpses=4 projectiles=1030 groups=63 failed=0 scriptedDeaths=0 victory=0 view=0
+CA132 FRAME tic=389 ms=17885.938500 interval=582.364900 epoch=1791421985
+CA132 FRAME tic=406 ms=18381.424700 interval=495.486200 epoch=1791421986
+CA121 COST tic=407 id=0 calls=6601 inclusive=17.604400 exclusive=5.811000
+CA121 COST tic=407 id=1 calls=6601 inclusive=3.322600 exclusive=1.547600
+CA121 COST tic=407 id=2 calls=201 inclusive=0.015900 exclusive=0.015900
+CA121 COST tic=407 id=3 calls=6601 inclusive=0.180800 exclusive=0.180800
+CA121 COST tic=407 id=4 calls=6617 inclusive=1.768600 exclusive=1.768600
+CA121 COST tic=407 id=5 calls=6615 inclusive=0.884000 exclusive=0.884000
+CA121 COST tic=407 id=6 calls=1964 inclusive=0.236700 exclusive=0.178600
+CA121 COST tic=407 id=7 calls=8565 inclusive=0.698400 exclusive=0.698400
+CA121 COST tic=407 id=9 calls=982 inclusive=2.317700 exclusive=1.460800
+CA121 COST tic=407 id=10 calls=980 inclusive=0.046900 exclusive=0.046900
+CA121 COST tic=407 id=15 calls=1 inclusive=0.001400 exclusive=0.001400
+CA121 COST tic=407 id=17 calls=2 inclusive=0.009500 exclusive=0.009500
+CA121 COST tic=407 id=18 calls=1 inclusive=0.008500 exclusive=0.007100
+CA121 COST tic=407 id=20 calls=48 inclusive=0.126000 exclusive=0.126000
+CA121 COST tic=407 id=21 calls=42 inclusive=0.034900 exclusive=0.018000
+CA121 COST tic=407 id=23 calls=1 inclusive=0.058400 exclusive=0.047100
+CA121 COST tic=407 id=24 calls=6602 inclusive=0.501400 exclusive=0.501400
+CA121 COST tic=407 id=27 calls=1044 inclusive=2.737700 exclusive=2.669600
+CA121 COST tic=407 id=28 calls=1044 inclusive=2.853100 exclusive=0.115400
+CA121 COST tic=407 id=32 calls=6609 inclusive=4.569400 exclusive=0.626500
+CA121 COST tic=407 id=33 calls=197 inclusive=1.482500 exclusive=0.177300
+CA121 COST tic=407 id=34 calls=188 inclusive=2.471300 exclusive=2.471300
+CA121 COST tic=407 id=35 calls=197 inclusive=1.305200 exclusive=1.305200
+CA121 COUNT tic=407 candidates=0 sight=0 decisions=0 commands=0
+CA132 SIM tic=420 ms=18792.697200 alive=5996 total=6000 remaining=0 pending=0 combatants=6598 defenders=600 corpses=4 projectiles=1043 groups=65 failed=0 scriptedDeaths=0 victory=0 view=0
+CA132 FRAME tic=423 ms=18901.702100 interval=520.277400 epoch=1791421986
+CA132 FRAME tic=440 ms=19494.658100 interval=592.956000 epoch=1791421987
+CA121 COST tic=444 id=0 calls=6601 inclusive=21.176600 exclusive=6.021300
+CA121 COST tic=444 id=1 calls=6601 inclusive=5.753600 exclusive=1.671100
+CA121 COST tic=444 id=2 calls=254 inclusive=0.023100 exclusive=0.023100
+CA121 COST tic=444 id=3 calls=6601 inclusive=0.180400 exclusive=0.180400
+CA121 COST tic=444 id=4 calls=6615 inclusive=1.805300 exclusive=1.805300
+CA121 COST tic=444 id=5 calls=6615 inclusive=0.912000 exclusive=0.912000
+CA121 COST tic=444 id=6 calls=2178 inclusive=0.270600 exclusive=0.206400
+CA121 COST tic=444 id=7 calls=8779 inclusive=0.767300 exclusive=0.767300
+CA121 COST tic=444 id=9 calls=1089 inclusive=4.761600 exclusive=1.875400
+CA121 COST tic=444 id=10 calls=1089 inclusive=1.885100 exclusive=1.885100
+CA121 COST tic=444 id=15 calls=1 inclusive=0.001600 exclusive=0.001600
+CA121 COST tic=444 id=17 calls=6 inclusive=0.023000 exclusive=0.022600
+CA121 COST tic=444 id=18 calls=1 inclusive=0.006000 exclusive=0.004400
+CA121 COST tic=444 id=20 calls=48 inclusive=0.144000 exclusive=0.144000
+CA121 COST tic=444 id=21 calls=42 inclusive=0.039700 exclusive=0.018300
+CA121 COST tic=444 id=23 calls=1 inclusive=0.065500 exclusive=0.050700
+CA121 COST tic=444 id=24 calls=6602 inclusive=0.513700 exclusive=0.513700
+CA121 COST tic=444 id=27 calls=1072 inclusive=2.907600 exclusive=2.872600
+CA121 COST tic=444 id=28 calls=1072 inclusive=3.032500 exclusive=0.124900
+CA121 COST tic=444 id=32 calls=6605 inclusive=5.328800 exclusive=0.650900
+CA121 COST tic=444 id=33 calls=193 inclusive=1.522600 exclusive=0.181900
+CA121 COST tic=444 id=34 calls=188 inclusive=3.169200 exclusive=3.169200
+CA121 COST tic=444 id=35 calls=193 inclusive=1.340700 exclusive=1.340700
+CA121 COUNT tic=444 candidates=0 sight=0 decisions=0 commands=0
+CA132 SIM tic=455 ms=20008.374300 alive=5996 total=6000 remaining=0 pending=0 combatants=6598 defenders=600 corpses=4 projectiles=1040 groups=65 failed=0 scriptedDeaths=0 victory=0 view=0
+CA132 FRAME tic=457 ms=20069.703900 interval=575.045800 epoch=1791421987
+CA132 FRAME tic=474 ms=20539.503700 interval=469.799800 epoch=1791421988
+CA121 COST tic=481 id=0 calls=6601 inclusive=31.619100 exclusive=6.480500
+CA121 COST tic=481 id=1 calls=6601 inclusive=16.817400 exclusive=2.917700
+CA121 COST tic=481 id=2 calls=989 inclusive=0.075000 exclusive=0.075000
+CA121 COST tic=481 id=3 calls=6601 inclusive=0.182800 exclusive=0.182800
+CA121 COST tic=481 id=4 calls=6625 inclusive=1.534200 exclusive=1.534200
+CA121 COST tic=481 id=5 calls=6623 inclusive=0.942100 exclusive=0.942100
+CA121 COST tic=481 id=6 calls=15956 inclusive=1.929400 exclusive=1.463100
+CA121 COST tic=481 id=7 calls=22557 inclusive=1.027200 exclusive=1.027200
+CA121 COST tic=481 id=9 calls=7978 inclusive=20.828100 exclusive=9.791600
+CA121 COST tic=481 id=10 calls=7383 inclusive=2.024400 exclusive=2.024400
+CA121 COST tic=481 id=15 calls=1 inclusive=0.000900 exclusive=0.000900
+CA121 COST tic=481 id=17 calls=24 inclusive=0.073600 exclusive=0.070500
+CA121 COST tic=481 id=18 calls=1 inclusive=0.004100 exclusive=0.003200
+CA121 COST tic=481 id=20 calls=48 inclusive=0.087700 exclusive=0.087700
+CA121 COST tic=481 id=21 calls=42 inclusive=0.031500 exclusive=0.015800
+CA121 COST tic=481 id=23 calls=1 inclusive=0.044900 exclusive=0.034800
+CA121 COST tic=481 id=24 calls=6602 inclusive=0.652100 exclusive=0.652100
+CA121 COST tic=481 id=27 calls=1058 inclusive=2.751200 exclusive=2.690800
+CA121 COST tic=481 id=28 calls=1058 inclusive=2.869000 exclusive=0.117800
+CA121 COST tic=481 id=32 calls=6608 inclusive=4.518900 exclusive=0.726000
+CA121 COST tic=481 id=33 calls=195 inclusive=1.475700 exclusive=0.163700
+CA121 COST tic=481 id=34 calls=187 inclusive=2.326900 exclusive=2.326900
+CA121 COST tic=481 id=35 calls=195 inclusive=1.312000 exclusive=1.312000
+CA121 COUNT tic=481 candidates=0 sight=0 decisions=0 commands=0
+CA132 SIM tic=490 ms=21006.182500 alive=5996 total=6000 remaining=0 pending=0 combatants=6598 defenders=600 corpses=4 projectiles=1064 groups=63 failed=0 scriptedDeaths=0 victory=0 view=0
+CA132 FRAME tic=491 ms=21051.956500 interval=512.452800 epoch=1791421988
+CA132 FRAME tic=508 ms=21624.956500 interval=573.000000 epoch=1791421989
+CA121 COST tic=518 id=0 calls=6601 inclusive=16.984600 exclusive=5.654100
+CA121 COST tic=518 id=1 calls=6601 inclusive=3.251100 exclusive=1.456100
+CA121 COST tic=518 id=2 calls=258 inclusive=0.020400 exclusive=0.020400
+CA121 COST tic=518 id=3 calls=6601 inclusive=0.174900 exclusive=0.174900
+CA121 COST tic=518 id=4 calls=6623 inclusive=1.720800 exclusive=1.720800
+CA121 COST tic=518 id=5 calls=6619 inclusive=0.869100 exclusive=0.869100
+CA121 COST tic=518 id=6 calls=1870 inclusive=0.223500 exclusive=0.170100
+CA121 COST tic=518 id=7 calls=8471 inclusive=0.667300 exclusive=0.667300
+CA121 COST tic=518 id=9 calls=935 inclusive=2.322600 exclusive=1.417100
+CA121 COST tic=518 id=10 calls=935 inclusive=0.125500 exclusive=0.125500
+CA121 COST tic=518 id=15 calls=1 inclusive=0.001400 exclusive=0.001400
+CA121 COST tic=518 id=17 calls=1 inclusive=0.002100 exclusive=0.002100
+CA121 COST tic=518 id=18 calls=1 inclusive=0.004800 exclusive=0.003400
+CA121 COST tic=518 id=20 calls=48 inclusive=0.111800 exclusive=0.111800
+CA121 COST tic=518 id=21 calls=42 inclusive=0.033600 exclusive=0.015700
+CA121 COST tic=518 id=23 calls=1 inclusive=0.049500 exclusive=0.039700
+CA121 COST tic=518 id=24 calls=6602 inclusive=0.490500 exclusive=0.490500
+CA121 COST tic=518 id=27 calls=1109 inclusive=2.797500 exclusive=2.712600
+CA121 COST tic=518 id=28 calls=1109 inclusive=2.923300 exclusive=0.125800
+CA121 COST tic=518 id=32 calls=6611 inclusive=4.301900 exclusive=0.604300
+CA121 COST tic=518 id=33 calls=198 inclusive=1.485700 exclusive=0.174000
+CA121 COST tic=518 id=34 calls=187 inclusive=2.221400 exclusive=2.221400
+CA121 COST tic=518 id=35 calls=198 inclusive=1.311700 exclusive=1.311700
+CA121 COUNT tic=518 candidates=0 sight=0 decisions=0 commands=0
+CA132 FRAME tic=525 ms=22147.410000 interval=522.453500 epoch=1791421989
+CA132 SIM tic=525 ms=22167.891000 alive=5996 total=6000 remaining=0 pending=0 combatants=6598 defenders=600 corpses=4 projectiles=1077 groups=63 failed=0 scriptedDeaths=0 victory=0 view=0
+CA132 FRAME tic=542 ms=22660.170400 interval=512.760400 epoch=1791421990
+CA121 COST tic=555 id=0 calls=6601 inclusive=16.846400 exclusive=5.620300
+CA121 COST tic=555 id=1 calls=6601 inclusive=3.336900 exclusive=1.432900
+CA121 COST tic=555 id=2 calls=249 inclusive=0.019700 exclusive=0.019700
+CA121 COST tic=555 id=3 calls=6601 inclusive=0.179700 exclusive=0.179700
+CA121 COST tic=555 id=4 calls=6616 inclusive=1.714400 exclusive=1.714400
+CA121 COST tic=555 id=5 calls=6613 inclusive=0.872200 exclusive=0.872200
+CA121 COST tic=555 id=6 calls=2156 inclusive=0.259900 exclusive=0.200400
+CA121 COST tic=555 id=7 calls=8757 inclusive=0.641200 exclusive=0.641200
+CA121 COST tic=555 id=9 calls=1078 inclusive=2.496600 exclusive=1.567800
+CA121 COST tic=555 id=10 calls=1076 inclusive=0.047500 exclusive=0.047500
+CA121 COST tic=555 id=15 calls=1 inclusive=0.000900 exclusive=0.000900
+CA121 COST tic=555 id=17 calls=1 inclusive=0.005200 exclusive=0.005200
+CA121 COST tic=555 id=18 calls=1 inclusive=0.004600 exclusive=0.003700
+CA121 COST tic=555 id=20 calls=48 inclusive=0.102000 exclusive=0.102000
+CA121 COST tic=555 id=21 calls=42 inclusive=0.031200 exclusive=0.014800
+CA121 COST tic=555 id=23 calls=1 inclusive=0.046800 exclusive=0.037000
+CA121 COST tic=555 id=24 calls=6602 inclusive=0.490400 exclusive=0.490400
+CA121 COST tic=555 id=27 calls=1101 inclusive=2.700100 exclusive=2.609500
+CA121 COST tic=555 id=28 calls=1101 inclusive=2.820300 exclusive=0.120200
+CA121 COST tic=555 id=32 calls=6612 inclusive=4.145600 exclusive=0.582500
+CA121 COST tic=555 id=33 calls=199 inclusive=1.484700 exclusive=0.169200
+CA121 COST tic=555 id=34 calls=187 inclusive=2.087900 exclusive=2.087900
+CA121 COST tic=555 id=35 calls=199 inclusive=1.315500 exclusive=1.315500
+CA121 COUNT tic=555 candidates=0 sight=0 decisions=0 commands=0
+CA132 FRAME tic=559 ms=23108.467100 interval=448.296700 epoch=1791421990
+CA132 SIM tic=560 ms=23160.962000 alive=5996 total=6000 remaining=0 pending=0 combatants=6598 defenders=600 corpses=4 projectiles=1102 groups=67 failed=0 scriptedDeaths=0 victory=0 view=0
+CA132 FRAME tic=575 ms=23644.385700 interval=535.918600 epoch=1791421991
+CA132 FRAME tic=592 ms=24166.277800 interval=521.892100 epoch=1791421991
+CA121 COST tic=592 id=0 calls=6601 inclusive=19.985900 exclusive=5.790000
+CA121 COST tic=592 id=1 calls=6601 inclusive=5.570700 exclusive=1.526500
+CA121 COST tic=592 id=2 calls=343 inclusive=0.025400 exclusive=0.025400
+CA121 COST tic=592 id=3 calls=6601 inclusive=0.182900 exclusive=0.182900
+CA121 COST tic=592 id=4 calls=6623 inclusive=1.722700 exclusive=1.722700
+CA121 COST tic=592 id=5 calls=6618 inclusive=0.876000 exclusive=0.876000
+CA121 COST tic=592 id=6 calls=2276 inclusive=0.273700 exclusive=0.212000
+CA121 COST tic=592 id=7 calls=8877 inclusive=0.721600 exclusive=0.721600
+CA121 COST tic=592 id=9 calls=1138 inclusive=4.783000 exclusive=1.828000
+CA121 COST tic=592 id=10 calls=1138 inclusive=1.889800 exclusive=1.889800
+CA121 COST tic=592 id=15 calls=1 inclusive=0.001300 exclusive=0.001300
+CA121 COST tic=592 id=17 calls=5 inclusive=0.023100 exclusive=0.021400
+CA121 COST tic=592 id=18 calls=1 inclusive=0.005200 exclusive=0.003900
+CA121 COST tic=592 id=20 calls=48 inclusive=0.129500 exclusive=0.129500
+CA121 COST tic=592 id=21 calls=42 inclusive=0.037400 exclusive=0.016100
+CA121 COST tic=592 id=23 calls=1 inclusive=0.066400 exclusive=0.050700
+CA121 COST tic=592 id=24 calls=6602 inclusive=0.505700 exclusive=0.505700
+CA121 COST tic=592 id=27 calls=1113 inclusive=2.755800 exclusive=2.685400
+CA121 COST tic=592 id=28 calls=1113 inclusive=2.879000 exclusive=0.123200
+CA121 COST tic=592 id=32 calls=6609 inclusive=4.755400 exclusive=0.606200
+CA121 COST tic=592 id=33 calls=197 inclusive=1.502200 exclusive=0.176500
+CA121 COST tic=592 id=34 calls=188 inclusive=2.661700 exclusive=2.661700
+CA121 COST tic=592 id=35 calls=197 inclusive=1.325700 exclusive=1.325700
+CA121 COUNT tic=592 candidates=0 sight=0 decisions=0 commands=0
+CA132 SIM tic=595 ms=24284.131400 alive=5996 total=6000 remaining=0 pending=0 combatants=6598 defenders=600 corpses=4 projectiles=1089 groups=65 failed=0 scriptedDeaths=0 victory=0 view=0
+CA132 FRAME tic=609 ms=24685.513500 interval=519.235700 epoch=1791421992
+CA132 FRAME tic=626 ms=25151.410300 interval=465.896800 epoch=1791421992
+CA121 COST tic=629 id=0 calls=6601 inclusive=27.672100 exclusive=6.557500
+CA121 COST tic=629 id=1 calls=6601 inclusive=12.596100 exclusive=2.353900
+CA121 COST tic=629 id=2 calls=1231 inclusive=0.089700 exclusive=0.089700
+CA121 COST tic=629 id=3 calls=6601 inclusive=0.179800 exclusive=0.179800
+CA121 COST tic=629 id=4 calls=6624 inclusive=1.549400 exclusive=1.549400
+CA121 COST tic=629 id=5 calls=6621 inclusive=0.938400 exclusive=0.938400
+CA121 COST tic=629 id=6 calls=8756 inclusive=1.060700 exclusive=0.814300
+CA121 COST tic=629 id=7 calls=15357 inclusive=0.853400 exclusive=0.853400
+CA121 COST tic=629 id=9 calls=4378 inclusive=10.252800 exclusive=7.342700
+CA121 COST tic=629 id=10 calls=3780 inclusive=1.664700 exclusive=1.664700
+CA121 COST tic=629 id=15 calls=1 inclusive=0.001200 exclusive=0.001200
+CA121 COST tic=629 id=17 calls=24 inclusive=0.075000 exclusive=0.074100
+CA121 COST tic=629 id=18 calls=1 inclusive=0.005400 exclusive=0.004200
+CA121 COST tic=629 id=20 calls=48 inclusive=0.133000 exclusive=0.133000
+CA121 COST tic=629 id=21 calls=42 inclusive=0.035900 exclusive=0.016200
+CA121 COST tic=629 id=23 calls=1 inclusive=0.053400 exclusive=0.043500
+CA121 COST tic=629 id=24 calls=6602 inclusive=0.540200 exclusive=0.540200
+CA121 COST tic=629 id=27 calls=1105 inclusive=2.879200 exclusive=2.802000
+CA121 COST tic=629 id=28 calls=1105 inclusive=3.009300 exclusive=0.130100
+CA121 COST tic=629 id=32 calls=6610 inclusive=4.791600 exclusive=0.698400
+CA121 COST tic=629 id=33 calls=198 inclusive=1.502100 exclusive=0.163500
+CA121 COST tic=629 id=34 calls=188 inclusive=2.600600 exclusive=2.600600
+CA121 COST tic=629 id=35 calls=198 inclusive=1.338600 exclusive=1.338600
+CA121 COUNT tic=629 candidates=0 sight=0 decisions=0 commands=0
+CA132 SIM tic=630 ms=25305.744900 alive=5996 total=6000 remaining=0 pending=0 combatants=6598 defenders=600 corpses=4 projectiles=1087 groups=66 failed=0 scriptedDeaths=0 victory=0 view=0
+CA132 FRAME tic=642 ms=25686.625900 interval=535.215600 epoch=1791421993
+CA132 FRAME tic=659 ms=26262.420800 interval=575.794900 epoch=1791421994
+CA132 SIM tic=665 ms=26453.912700 alive=5996 total=6000 remaining=0 pending=0 combatants=6598 defenders=600 corpses=4 projectiles=1043 groups=64 failed=0 scriptedDeaths=0 victory=0 view=0
+CA121 COST tic=666 id=0 calls=6601 inclusive=18.268900 exclusive=5.774400
+CA121 COST tic=666 id=1 calls=6601 inclusive=4.017600 exclusive=1.542000
+CA121 COST tic=666 id=2 calls=410 inclusive=0.029200 exclusive=0.029200
+CA121 COST tic=666 id=3 calls=6601 inclusive=0.178300 exclusive=0.178300
+CA121 COST tic=666 id=4 calls=6622 inclusive=1.704800 exclusive=1.704800
+CA121 COST tic=666 id=5 calls=6621 inclusive=0.870300 exclusive=0.870300
+CA121 COST tic=666 id=6 calls=2274 inclusive=0.271600 exclusive=0.207200
+CA121 COST tic=666 id=7 calls=8875 inclusive=0.699600 exclusive=0.699600
+CA121 COST tic=666 id=9 calls=1137 inclusive=3.216200 exclusive=1.817500
+CA121 COST tic=666 id=10 calls=1137 inclusive=0.341400 exclusive=0.341400
+CA121 COST tic=666 id=15 calls=1 inclusive=0.001600 exclusive=0.001600
+CA121 COST tic=666 id=17 calls=2 inclusive=0.008100 exclusive=0.008100
+CA121 COST tic=666 id=18 calls=1 inclusive=0.005600 exclusive=0.004000
+CA121 COST tic=666 id=20 calls=48 inclusive=0.139900 exclusive=0.139900
+CA121 COST tic=666 id=21 calls=42 inclusive=0.039600 exclusive=0.016600
+CA121 COST tic=666 id=23 calls=1 inclusive=0.061700 exclusive=0.048200
+CA121 COST tic=666 id=24 calls=6602 inclusive=0.487100 exclusive=0.487100
+CA121 COST tic=666 id=27 calls=1062 inclusive=2.679300 exclusive=2.543600
+CA121 COST tic=666 id=28 calls=1062 inclusive=2.797000 exclusive=0.117700
+CA121 COST tic=666 id=32 calls=6611 inclusive=4.745600 exclusive=0.623200
+CA121 COST tic=666 id=33 calls=199 inclusive=1.484300 exclusive=0.174800
+CA121 COST tic=666 id=34 calls=192 inclusive=2.650700 exclusive=2.650700
+CA121 COST tic=666 id=35 calls=199 inclusive=1.309500 exclusive=1.309500
+CA121 COUNT tic=666 candidates=0 sight=0 decisions=0 commands=0
+CA132 FRAME tic=676 ms=26798.926600 interval=536.505800 epoch=1791421994
+CA132 FRAME tic=693 ms=27267.476000 interval=468.549400 epoch=1791421995
+CA132 SIM tic=700 ms=27502.773800 alive=5996 total=6000 remaining=0 pending=0 combatants=6598 defenders=600 corpses=4 projectiles=1026 groups=63 failed=0 scriptedDeaths=0 victory=0 view=0
+CA132 PERFORMANCE COMPLETE tic=700 total=6000 remaining=0
+CA121 COST tic=703 id=0 calls=6601 inclusive=18.351200 exclusive=5.795900
+CA121 COST tic=703 id=1 calls=6601 inclusive=3.747200 exclusive=1.504900
+CA121 COST tic=703 id=2 calls=464 inclusive=0.038000 exclusive=0.038000
+CA121 COST tic=703 id=3 calls=6601 inclusive=0.181200 exclusive=0.181200
+CA121 COST tic=703 id=4 calls=6616 inclusive=1.737100 exclusive=1.737100
+CA121 COST tic=703 id=5 calls=6615 inclusive=0.879300 exclusive=0.879300
+CA121 COST tic=703 id=6 calls=2240 inclusive=0.271000 exclusive=0.204100
+CA121 COST tic=703 id=7 calls=8841 inclusive=0.776200 exclusive=0.776200
+CA121 COST tic=703 id=9 calls=1120 inclusive=2.973200 exclusive=1.862000
+CA121 COST tic=703 id=10 calls=1118 inclusive=0.057700 exclusive=0.057700
+CA121 COST tic=703 id=15 calls=1 inclusive=0.001300 exclusive=0.001300
+CA121 COST tic=703 id=17 calls=1 inclusive=0.008200 exclusive=0.008200
+CA121 COST tic=703 id=18 calls=1 inclusive=0.006100 exclusive=0.004800
+CA121 COST tic=703 id=20 calls=48 inclusive=0.151800 exclusive=0.151800
+CA121 COST tic=703 id=21 calls=42 inclusive=0.218500 exclusive=0.197200
+CA121 COST tic=703 id=22 calls=15 inclusive=1.450400 exclusive=1.450400
+CA121 COST tic=703 id=23 calls=1 inclusive=0.059900 exclusive=0.047500
+CA121 COST tic=703 id=24 calls=6602 inclusive=0.499900 exclusive=0.499900
+CA121 COST tic=703 id=27 calls=1050 inclusive=2.753200 exclusive=2.725400
+CA121 COST tic=703 id=28 calls=1050 inclusive=2.872700 exclusive=0.119500
+CA121 COST tic=703 id=32 calls=6604 inclusive=4.835200 exclusive=0.597200
+CA121 COST tic=703 id=33 calls=194 inclusive=1.466800 exclusive=0.171400
+CA121 COST tic=703 id=34 calls=190 inclusive=2.782900 exclusive=2.782900
+CA121 COST tic=703 id=35 calls=194 inclusive=1.295400 exclusive=1.295400
+CA121 COUNT tic=703 candidates=0 sight=0 decisions=0 commands=0
+CA132 DEATH tic=704 count=5 thermal=0 type=CaelumImpact exposure=-6.982 air=19.523 comfort=32.000 thermalHP=0.000
+CA132 DEATH tic=704 count=6 thermal=0 type=CaelumImpact exposure=-6.896 air=19.523 comfort=32.000 thermalHP=0.000
+CA132 DEATH tic=704 count=7 thermal=0 type=CaelumImpact exposure=-7.028 air=19.523 comfort=32.000 thermalHP=0.000
+CA132 DEATH tic=706 count=8 thermal=0 type=CaelumImpact exposure=-7.088 air=19.523 comfort=32.000 thermalHP=0.000
+CA132 FRAME tic=709 ms=27862.649700 interval=595.173700 epoch=1791421995
+CA132 FRAME tic=726 ms=28415.021000 interval=552.371300 epoch=1791421996

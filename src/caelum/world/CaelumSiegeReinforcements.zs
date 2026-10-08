@@ -81,7 +81,7 @@ class CaelumSiegeReinforcements : Object play
         if(body==null){PlacementFailures++;return false;}
         if(!Fits(body))
         {
-            body.Destroy();PlacementFailures++;
+            body.ClearCounters();body.Destroy();PlacementFailures++;
             // El puesto original puede estar ocupado. La misma identidad entra
             // por la formación y camina a su máquina con la IA ya existente.
             if(crew==null)return false;
@@ -89,12 +89,12 @@ class CaelumSiegeReinforcements : Object play
             PlacementCursor=(PlacementCursor+1)%CaelumReinforcementData.TOTAL;
             body=CaelumMandinga(Actor.Spawn("CaelumMandinga",position,NO_REPLACE));
             if(body==null)return false;
-            if(!Fits(body)){body.Destroy();PlacementFailures++;return false;}
+            if(!Fits(body)){body.ClearCounters();body.Destroy();PlacementFailures++;return false;}
         }
         Registering=true;
         let entry=port.RegisterAttacker(body);
         Registering=false;
-        if(entry==null){body.Destroy();PlacementFailures++;return false;}
+        if(entry==null){body.ClearCounters();body.Destroy();PlacementFailures++;return false;}
         entry.Lane=crew!=null ? crew.Lane : port.NearestLane(position.X);
         entry.ExitNode=port.Exits[entry.Lane];
         if(crew!=null)

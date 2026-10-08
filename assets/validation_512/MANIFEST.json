@@ -1,0 +1,9 @@
+{
+  "baseline_commit": "72eba5fb6b4708c9b38fe3aba79ec95acb6df43e",
+  "baseline_sha256": "880a668f609d839e488549d4dbaf15147835e9cbca7469ec3b850dcfe83fa334",
+  "production_sha256": "a62777eb114208341f505262c8954d829c17cab51d5a88f1cfe8eea5c52313a2",
+  "checks": "2937a2a43bde5d4afdba2ee5bb8c795f18b44769eb8dbbcc316710af2df63cf2",
+  "observer": "bd4b2c39b75f7f6a15e9621bda25e677453b9ecbb606bba6528d1dd4d679fcac",
+  "baseline_observer": "2dcab5e2e77a356e7f55c75005a0868a47f5bf1710906bb2aac8e5ab1fea9fb2",
+  "cap_observer": "88c8fc174229fccc60ce83d8493f8b2a481f9c9ce36c2548e8467ad887377e39"
+}
