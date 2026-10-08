@@ -2,7 +2,7 @@
 // Procedencia física y decisiones del autor en SYSTEMS, sección V5.1 térmica.
 class CaelumThermalData : Object
 {
-    const REVISION=3;
+    const REVISION=4;
     static clearscope double ExposureThreshold(int tier)
     {return tier==1 ? 10.0 : tier==2 ? 20.0 : 30.0;}
     const LIGHT_CLOTH=0;
@@ -56,6 +56,11 @@ class CaelumThermalData : Object
     const LATENT_J_PER_KG=2450000.0;
     // #133: sudor humano de referencia, aprobado por el autor; horas del mundo.
     const SWEAT_MAX_KG_HOUR=2.0;
+    const BREATHING_MODERATE=1.5;
+    const BREATHING_HIGH=2.0;
+    const BREATHING_LITERS_MINUTE=6.0;
+    const AIR_DENSITY_KG_M3=1.2;
+    const AIR_SPECIFIC_HEAT_J_KG_K=1005.0;
     const SWEAT_FULL_EXPOSURE=5.0;
     const SWEAT_HYDRATION_FADE=20.0;
     // Resolución numérica del acoplamiento no lineal, no duración de balance.

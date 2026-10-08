@@ -7713,6 +7713,7 @@ class CaelumPlayer : DoomPlayer
     {
         CaelumRestState.Interrupt(self, "CA_REST_DAMAGE");
         if (CaelumMainM00RuloTrial.PreventDefeat(self)) return;
+        CaelumBreathing.StopAudio(self);
         Super.Die(source, inflictor, dmgflags, MeansOfDeath);
     }
 
@@ -8875,6 +8876,7 @@ class CaelumPlayer : DoomPlayer
     // regeneration that also pauses when the game itself is paused.
     override void Tick()
     {
+        CaelumBreathing.UpdateSound(self);
         CaelumCarbineWorld.Restore(self);
         CaelumTarotDeckRules.EnsureLegacy(self);
         EnsureCurrentAttributeBalance();
@@ -9052,17 +9054,8 @@ class CaelumPlayer : DoomPlayer
         UpdateHealthStateEffects();
 
 
-        // El Anima se regenera de forma continua segun Paciencia.
-        if (AnimaResourceInitialized
-            && DerivedStats != null
-            && CurrentAnima < DerivedStats.MaximumAnima)
-        {
-            CurrentAnima = Min(
-                DerivedStats.MaximumAnima,
-                CurrentAnima + DerivedStats.AnimaRegenerationPerSecond
-                    * (CaelumRestState.IsSeated(self) ? CaelumRestState.ResourceFactor(self) : 1) / TICRATE
-            );
-        }
+        // Paciencia conserva la tasa; Constitución/reposo reducen los costes.
+        CaelumPlayerResources.ApplyAnimaRegeneration(self);
 
         UpdateAdrenalineDecay();
         UpdateSealChannel();

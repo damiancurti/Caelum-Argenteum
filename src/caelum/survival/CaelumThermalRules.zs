@@ -165,12 +165,24 @@ class CaelumThermalRules : Object
     {
         if(realSeconds<=0 || inertia<=0)return 0;
         double after=Advance(before,imbalanceWatts,conductance,inertia,worldSeconds,realSeconds,magicWatts);
+        return SeverityBetween(before,after,imbalanceWatts,conductance,inertia,worldSeconds,realSeconds,toughness,magicWatts);
+    }
+
+    static clearscope double SeverityBetween(double before,double after,double imbalanceWatts,double conductance,
+        double inertia,double worldSeconds,double realSeconds,double toughness,double magicWatts=0)
+    {
+        if(realSeconds<=0 || inertia<=0)return 0;
+        // La solución de coeficientes constantes es monótona. Sin cruzar un
+        // umbral, su dosis es exactamente la misma durante todo el intervalo.
+        int first=Severity(before,toughness),last=Severity(after,toughness);
+        if(first==last && (first==0 || before*after>=0))return realSeconds*first;
         double low=Min(before,after),high=Max(before,after);
+        double thresholdScale=ThresholdScale(toughness);
         double fractions[8];int count=1;fractions[0]=0;
         for(int sign=-1;sign<=1;sign+=2)
             for(int tier=1;tier<=3;tier++)
             {
-                double boundary=sign*tier*10.0*ThresholdScale(toughness);
+                double boundary=sign*CaelumThermalData.ExposureThreshold(tier)*thresholdScale;
                 if(boundary<=low || boundary>=high)continue;
                 double fraction;
                 if(worldSeconds<=0 || conductance<=0)

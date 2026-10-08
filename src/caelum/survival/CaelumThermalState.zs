@@ -3,6 +3,7 @@
 class CaelumThermalState : Object play
 {
     int Revision;
+    transient CaelumThermalCoefficients Coefficients;
     double Exposure,Acclimation,ActivityWatts,DamageRemainder;
     double AcclimationMultiplier;
     double BaseWaterKg[4];
@@ -14,6 +15,11 @@ class CaelumThermalState : Object play
     // En jugador Hydration sólo es copia de trabajo; CurrentThirst es su dueño.
     // En NPC esta reserva persistente no tiene reposición automática.
     bool Sweats;
+    bool CanBreathe;
+    double BreathingAirRatio,RespirationJoules;
+    transient bool BreathAudioKnown,BreathAudioActive;
+    transient Sound BreathAudioCue;
+    transient int NextBreathSoundTic;
     double Hydration,SweatKg,SweatRunoffKg,SweatRateKgHour;
     double SubmergedCoverage[4];
     double SubmergedTemperatureC[4];
@@ -56,6 +62,7 @@ class CaelumThermalState : Object play
         for(int i=0;i<4;i++)copy.WorkWaterKg[i]=WorkWaterKg[i];
         copy.Bare=Bare;
         copy.Sweats=Sweats;copy.Hydration=Hydration;copy.SweatKg=SweatKg;
+        copy.CanBreathe=CanBreathe;copy.BreathingAirRatio=BreathingAirRatio;copy.RespirationJoules=RespirationJoules;
         copy.SweatRunoffKg=SweatRunoffKg;copy.SweatRateKgHour=SweatRateKgHour;
         for(int i=0;i<4;i++)
         {copy.SubmergedCoverage[i]=SubmergedCoverage[i];copy.SubmergedTemperatureC[i]=SubmergedTemperatureC[i];}
@@ -118,6 +125,8 @@ class CaelumThermalState : Object play
         // Revisión 3: la nueva reserva NPC empieza llena una sola vez.
         // El adaptador del jugador siempre recupera su Sed existente.
         if(Revision<3)Hydration=CaelumConstants.SURVIVAL_MAXIMUM;
+        // Revisión 4: no migra reservas; sólo invalida proyecciones derivadas.
+        if(Revision<4){Coefficients=null;CanBreathe=true;BreathingAirRatio=1;}
         Revision=CaelumThermalData.REVISION;
     }
 

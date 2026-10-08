@@ -40,7 +40,8 @@ class CaelumThermalBody : Object play
 
     static void Refresh(Actor body,CaelumThermalState thermal)
     {
-        thermal.Sweats=!FurryAnimal(body);
+        thermal.Sweats=true;
+        thermal.CanBreathe=body.WaterLevel<3;
         double priorMass=thermal.BodyMassKg,priorHeight=thermal.HeightMeters;
         let user=CaelumPlayer(body);
         let npc=CaelumCombatActor(body);
@@ -49,6 +50,7 @@ class CaelumThermalBody : Object play
         {
             thermal.Hydration=user.CurrentThirst;
             if(user.DerivedStats==null || user.CharacterProfile==null || user.Attributes==null)return;
+            thermal.BreathingAirRatio=user.DerivedStats.MaximumAir>0 ? user.CurrentAir/user.DerivedStats.MaximumAir : 1;
             thermal.BodyMassKg=user.DerivedStats.BaseMass;
             thermal.HeightMeters=user.DerivedStats.BodyHeightMeters;
             thermal.MovedMassKg=user.DerivedStats.TotalMass;
@@ -60,6 +62,7 @@ class CaelumThermalBody : Object play
         }
         else if(npc!=null)
         {
+            thermal.BreathingAirRatio=npc.MaximumCombatAir>0 ? npc.CurrentCombatAir/npc.MaximumCombatAir : 1;
             thermal.BodyMassKg=Max(0.001,npc.Mass);
             thermal.HeightMeters=npc.Height/CaelumJourneyRules.MAP_UNITS_PER_METER;
             thermal.MovedMassKg=thermal.BodyMassKg+npc.GetAttackCarriedWeight();
@@ -134,21 +137,18 @@ class CaelumThermalBody : Object play
 
     static void SampleCoverage(Actor body,CaelumThermalState thermal,double waterHeight,int rowMask=-1)
     {
-        if(waterHeight<=0 && rowMask<=0 && thermal.LastSubmergedFraction==waterHeight && thermal.LastWaterRowMask==rowMask
-            && thermal.Coverage[0]+thermal.Coverage[1]+thermal.Coverage[2]+thermal.Coverage[3]>0)return;
-        thermal.LastSubmergedFraction=waterHeight;thermal.LastWaterRowMask=rowMask;
         let user=CaelumPlayer(body);let npc=CaelumCombatActor(body);
         let anatomy=user!=null ? user.AnatomyProfile : npc!=null ? npc.AnatomyProfile : null;
+        let coefficients=CaelumThermalCoefficients.Get(thermal);
+        coefficients.PrepareCoverage(anatomy);
+        thermal.LastSubmergedFraction=waterHeight;thermal.LastWaterRowMask=rowMask;
         for(int slot=0;slot<4;slot++){thermal.Coverage[slot]=0;thermal.SubmergedCoverage[slot]=0;thermal.SubmergedTemperatureC[slot]=0;}
         int count=CaelumThermalData.SURFACE_SAMPLES;
-        double weight=1.0/(count*count);
-        for(int z=0;z<count;z++)for(int side=0;side<count;side++)
+        for(int z=0;z<count;z++)for(int slot=0;slot<4;slot++)
         {
-            double height=(z+0.5)/count,lateral=(side+0.5)/count;
-            int region=anatomy!=null ? anatomy.FindRegion(height,lateral) : -1;
-            int slot=region>=0 ? Clamp(anatomy.RegionLocation[region]-1,0,3) : CaelumConstants.ARMOR_SLOT_BODY;
+            double weight=coefficients.RowCoverage[z*4+slot];
             thermal.Coverage[slot]+=weight;
-            if(rowMask>=0 ? (rowMask & (1<<z))!=0 : height<=waterHeight)
+            if(rowMask>=0 ? (rowMask & (1<<z))!=0 : (z+0.5)/count<=waterHeight)
             {
                 thermal.SubmergedCoverage[slot]+=weight;
                 thermal.SubmergedTemperatureC[slot]+=weight*(rowMask>=0 ? thermal.WaterRowC[z] : thermal.WaterC);
