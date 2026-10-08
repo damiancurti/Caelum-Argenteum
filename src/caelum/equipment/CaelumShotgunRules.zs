@@ -122,7 +122,7 @@ class CaelumShotgunView : Object play
 {
     static void Draw(CaelumPlayer user,int tier,double dx,double dy,double rotation)
     {
-        user.A_ClearOverlays(46,49);user.A_ClearOverlays(52,53);
+        user.A_ClearOverlays(46,47);user.A_ClearOverlays(52,53);
         int pose=user.RangedAimModeActive ? 1 : 0;
         if(user.RangedReloadActive)
         {
@@ -132,9 +132,19 @@ class CaelumShotgunView : Object play
             pose=user.RangedReloadRemainingSeconds>user.RangedReloadTotalSeconds*0.5 ? (partial ? 6 : 2) : partial ? 3 : single ? 5 : 4;
         }
         State state=GetDefaultByType("CaelumShotgunFrames").FindStateByString(String.Format("T%d_%d",Clamp(tier,1,3),pose));
-        CaelumFirstPersonLayers.Place(user,50,state,(160+dx,200+dy),(0.5,1.0),1.0,rotation,true);
+        CaelumFirstPersonLayers.Place(user,50,state,(160+dx,200+dy),(0.5,1.0),0.68,rotation,true);
+        if(pose==1)
+        {
+            // Mismo guante, escala y apoyo bajo la culata que la carabina.
+            user.A_ClearOverlays(51,51);
+            vector2 grip=(165+dx,210+dy);
+            CaelumFirstPersonLayers.Hand(user,48,6,grip,(-8,-25),0.88,rotation);
+            CaelumFirstPersonLayers.Hand(user,49,5,grip,(23,-27),0.88,rotation);
+            return;
+        }
+        user.A_ClearOverlays(48,49);
         // Las manos se sustituyen sin duplicar el arma ni alterar su animación.
         State hands=GetDefaultByType("CaelumShotgunHandFrames").FindStateByString(String.Format("Hands_%d",pose));
-        CaelumFirstPersonLayers.Place(user,51,hands,(160+dx,200+dy),(0.5,1.0),1.0,rotation,true);
+        CaelumFirstPersonLayers.Place(user,51,hands,(160+dx,200+dy),(0.5,1.0),0.68,rotation,true);
     }
 }

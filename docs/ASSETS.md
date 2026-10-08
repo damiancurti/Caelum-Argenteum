@@ -11,9 +11,13 @@ The references are project-owned carbine/Domingo artwork. No new Doom art is
 introduced. Runtime PNG copies remain byte-identical to the selected sources.
 
 Following the author's hand-reuse request, weapon_layer.png contains complete
-T1/T2/T3 guns without hands; hands_layer.png contains the foreground gloves,
-forearms and held cartridges. Only its first column is used, shared across tiers.
-Both use fixed 362-pixel canvases, common pivots and native layers 50/51. Twenty-one
+T1/T2/T3 guns without hands; the selected hands_muted.png contains foreground
+gloves, forearms and held cartridges. The original hands_layer.png is retained.
+HAND_STYLE_FOLLOWUP.json records the built-in image_gen color/style edit against
+the existing Domingo glove reference. Only the first column is used across tiers.
+Ready/reload use fixed 362-pixel canvases, common pivots and layers 50/51 at 0.68
+view scale. Aimed hands reuse the carbine's DH05/DH06 poses on layers 48/49,
+with the same 0.88 hand scale and placement below the stock. Twenty-one
 weapon registrations and seven hand registrations cover ready, aim, empty/partial
 opening and one/two-cartridge loading. Recoil and equip/holster transform both
 layers together. New hand variants can replace the hand layer independently.
@@ -24,6 +28,10 @@ poses in eight directions. register_shotgun.py measures alpha and emits native
 TEXTURES clipping without rewriting image pixels. Shared fixed canvases prevent
 independent trimming from misaligning hands and gun. REGISTRATION.json records
 source hashes and rectangles; repeated exports must match byte-for-byte.
+The follow-up native captures compare shotgun/carbine aim and empty, single and
+partial loading. Do not clear and recreate the aimed hand overlays every frame:
+their first-tic positioning differs from established overlays (fp-followup-a).
+The corrected persistent overlays are verified in fp-final.
 
 Native fixtures, selected clean logs/configurations/captures, source hashes and
 reproduction commands are in assets/validation_517. They exercise both actual

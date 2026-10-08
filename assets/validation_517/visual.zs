@@ -20,6 +20,8 @@ class CA136Visual : CA136Checks
         {
             LastMode=mode;
             if(mode==2 || mode==3){Gun.Tier=mode;user.WeaponModel.Tier=mode;user.PersistCharacterState();user.ApplyCharacterProfile();}
+            if(mode==7 || mode==8){Gun=Equip(user,mode==7 ? 2 : 14);user.SetRangedMagazineCount(mode==7 ? 2 : 14,2);}
+            if(mode==9)Console.Printf("CA136 FP COMPLETE");
             if(mode==5 || mode==6)
             {
                 Shells.Amount=mode==5 ? 1 : 10;user.SetRangedMagazineCount(14,mode==5 ? 0 : 1);

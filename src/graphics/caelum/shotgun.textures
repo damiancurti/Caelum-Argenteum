@@ -3,196 +3,196 @@ Sprite "SHF1A0", 362, 312
 {
     XScale 2.200000000
     YScale 2.200000000
-    Offset 181, 306
+    Offset 181, 308
     Patch "graphics/caelum/shotgun/weapon_layer.png", 0, 0
 }
 Sprite "SHF2A0", 362, 312
 {
     XScale 2.200000000
     YScale 2.200000000
-    Offset 181, 306
+    Offset 181, 308
     Patch "graphics/caelum/shotgun/weapon_layer.png", -362, 0
 }
 Sprite "SHF3A0", 362, 312
 {
     XScale 2.200000000
     YScale 2.200000000
-    Offset 181, 306
+    Offset 181, 308
     Patch "graphics/caelum/shotgun/weapon_layer.png", -724, 0
 }
 Sprite "SHHDA0", 362, 312
 {
     XScale 2.200000000
     YScale 2.200000000
-    Offset 181, 306
+    Offset 181, 308
     Patch "graphics/caelum/shotgun/hands_layer.png", 0, 0
 }
 Sprite "SHF1B0", 362, 268
 {
     XScale 2.200000000
     YScale 2.200000000
-    Offset 181, 265
+    Offset 181, 266
     Patch "graphics/caelum/shotgun/weapon_layer.png", 0, -312
 }
 Sprite "SHF2B0", 362, 268
 {
     XScale 2.200000000
     YScale 2.200000000
-    Offset 181, 265
+    Offset 181, 266
     Patch "graphics/caelum/shotgun/weapon_layer.png", -362, -312
 }
 Sprite "SHF3B0", 362, 268
 {
     XScale 2.200000000
     YScale 2.200000000
-    Offset 181, 265
+    Offset 181, 266
     Patch "graphics/caelum/shotgun/weapon_layer.png", -724, -312
 }
 Sprite "SHHDB0", 362, 268
 {
     XScale 2.200000000
     YScale 2.200000000
-    Offset 181, 265
+    Offset 181, 266
     Patch "graphics/caelum/shotgun/hands_layer.png", 0, -312
 }
 Sprite "SHF1C0", 362, 296
 {
     XScale 2.200000000
     YScale 2.200000000
-    Offset 181, 283
+    Offset 181, 284
     Patch "graphics/caelum/shotgun/weapon_layer.png", 0, -580
 }
 Sprite "SHF2C0", 362, 296
 {
     XScale 2.200000000
     YScale 2.200000000
-    Offset 181, 283
+    Offset 181, 284
     Patch "graphics/caelum/shotgun/weapon_layer.png", -362, -580
 }
 Sprite "SHF3C0", 362, 296
 {
     XScale 2.200000000
     YScale 2.200000000
-    Offset 181, 283
+    Offset 181, 284
     Patch "graphics/caelum/shotgun/weapon_layer.png", -724, -580
 }
 Sprite "SHHDC0", 362, 296
 {
     XScale 2.200000000
     YScale 2.200000000
-    Offset 181, 283
+    Offset 181, 284
     Patch "graphics/caelum/shotgun/hands_layer.png", 0, -580
 }
 Sprite "SHF1D0", 362, 280
 {
     XScale 2.200000000
     YScale 2.200000000
-    Offset 181, 272
+    Offset 181, 274
     Patch "graphics/caelum/shotgun/weapon_layer.png", 0, -876
 }
 Sprite "SHF2D0", 362, 280
 {
     XScale 2.200000000
     YScale 2.200000000
-    Offset 181, 272
+    Offset 181, 274
     Patch "graphics/caelum/shotgun/weapon_layer.png", -362, -876
 }
 Sprite "SHF3D0", 362, 280
 {
     XScale 2.200000000
     YScale 2.200000000
-    Offset 181, 272
+    Offset 181, 274
     Patch "graphics/caelum/shotgun/weapon_layer.png", -724, -876
 }
 Sprite "SHHDD0", 362, 280
 {
     XScale 2.200000000
     YScale 2.200000000
-    Offset 181, 272
+    Offset 181, 274
     Patch "graphics/caelum/shotgun/hands_layer.png", 0, -876
 }
 Sprite "SHF1E0", 362, 292
 {
     XScale 2.200000000
     YScale 2.200000000
-    Offset 181, 281
+    Offset 181, 282
     Patch "graphics/caelum/shotgun/weapon_layer.png", 0, -1156
 }
 Sprite "SHF2E0", 362, 292
 {
     XScale 2.200000000
     YScale 2.200000000
-    Offset 181, 281
+    Offset 181, 282
     Patch "graphics/caelum/shotgun/weapon_layer.png", -362, -1156
 }
 Sprite "SHF3E0", 362, 292
 {
     XScale 2.200000000
     YScale 2.200000000
-    Offset 181, 281
+    Offset 181, 282
     Patch "graphics/caelum/shotgun/weapon_layer.png", -724, -1156
 }
 Sprite "SHHDE0", 362, 292
 {
     XScale 2.200000000
     YScale 2.200000000
-    Offset 181, 281
+    Offset 181, 282
     Patch "graphics/caelum/shotgun/hands_layer.png", 0, -1156
 }
 Sprite "SHF1F0", 362, 296
 {
     XScale 2.200000000
     YScale 2.200000000
-    Offset 181, 288
+    Offset 181, 290
     Patch "graphics/caelum/shotgun/weapon_layer.png", 0, -580
 }
 Sprite "SHF2F0", 362, 296
 {
     XScale 2.200000000
     YScale 2.200000000
-    Offset 181, 288
+    Offset 181, 290
     Patch "graphics/caelum/shotgun/weapon_layer.png", -362, -580
 }
 Sprite "SHF3F0", 362, 296
 {
     XScale 2.200000000
     YScale 2.200000000
-    Offset 181, 288
+    Offset 181, 290
     Patch "graphics/caelum/shotgun/weapon_layer.png", -724, -580
 }
 Sprite "SHHDF0", 362, 280
 {
     XScale 2.200000000
     YScale 2.200000000
-    Offset 181, 272
+    Offset 181, 274
     Patch "graphics/caelum/shotgun/hands_layer.png", 0, -876
 }
 Sprite "SHF1G0", 362, 280
 {
     XScale 2.200000000
     YScale 2.200000000
-    Offset 181, 267
+    Offset 181, 268
     Patch "graphics/caelum/shotgun/weapon_layer.png", 0, -876
 }
 Sprite "SHF2G0", 362, 280
 {
     XScale 2.200000000
     YScale 2.200000000
-    Offset 181, 267
+    Offset 181, 268
     Patch "graphics/caelum/shotgun/weapon_layer.png", -362, -876
 }
 Sprite "SHF3G0", 362, 280
 {
     XScale 2.200000000
     YScale 2.200000000
-    Offset 181, 267
+    Offset 181, 268
     Patch "graphics/caelum/shotgun/weapon_layer.png", -724, -876
 }
 Sprite "SHHDG0", 362, 296
 {
     XScale 2.200000000
     YScale 2.200000000
-    Offset 181, 283
+    Offset 181, 284
     Patch "graphics/caelum/shotgun/hands_layer.png", 0, -580
 }
 Graphic "CA_SHOTGUN_T1", 503, 588

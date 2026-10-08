@@ -16,7 +16,7 @@
   },
   "selected_runtime_sources": {
     "weapon_layer.png": "weapon_layer.png",
-    "hands_layer.png": "hands_layer.png",
+    "hands_layer.png": "hands_muted.png",
     "icons.png": "icons_final.png",
     "world.png": "world_final.png"
   },
