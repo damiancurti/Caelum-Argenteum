@@ -1,6 +1,34 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **5.1.1** — 2026-10-07.
+Documentation version: **5.1.2** — 2026-10-07.
+
+## 5.1.2 - Staged siege experiment (#132, 2026-10-07)
+
+The author accepts all remaining #131 tests and authorizes its closure and
+PR #138 merge (72eba5fb), then requests #132 implementation, native tests,
+commit and push. #132 specifies 100-member groups every 350 simulation tics,
+2,000 living Mandingas and a 6,000 cumulative successful-spawn budget.
+The first group includes the original 74 operators. Full-army saves and the
+original deployment remain intact; no new corpse removal or AI simplification.
+22 final native lifecycle assertions and 52 comparisons of actual native saves
+pass, including partial groups, terminal victory, unchanged old armies and
+original-save/package rollback. Complete-budget diagnostics reach exactly 6,000
+without corpse cleanup; presentation measurements distinguish natural arrival,
+the isolated 2,000-alive control and late scripted-casualty runs. Staging improves
+arrival, but does not establish stable 35 tics/s and 30 displayed FPS everywhere.
+The baseline's early natural deaths change its later workload and are not an
+optimization: a native death audit finds 5,946 thermal deaths among 5,961 deaths
+after its checkpoint. The author reserves two minutes for foreground controls:
+the same-view 2,000-alive control gives 53.11 displayed FPS / 34.84 tics/s, versus
+1.94 FPS / 32.58 tics/s for the full army over the short settled window. Earlier
+background captures vary with desktop presentation and remain qualified.
+Evidence, hashes and qualifications: [validation_512](../assets/validation_512/RESULTS.md).
+The author's elevated PresentMon helper corrects an initial capture-exit problem.
+A thread-scoped keep-awake request does not alter the power plan and is released
+after testing. On 2026-10-07 the author explicitly confirmed all tests passed:
+CA132-01 (origin 5.1.2 / #132) is accepted without reported exceptions and removed
+from pending_test.txt. Issue closure and PR #139 merge are authorized. This accepts
+the playable experiment, not a new claim of stable 35/30 throughout the battle.
 
 ## 5.1.1 - Thermal HUD, attributes and journey climate (#131, 2026-10-07)
 

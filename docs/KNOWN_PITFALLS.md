@@ -4,6 +4,73 @@ Status: integrated engineering register (issue #22, patch 4.36.1b).
 Prepared: 2026-09-23. Inherits the project's release after integration.
 Inspected baseline: `1dc390576fa330d37ff543526fc7e69a397fc28f` (PR #7).
 
+## CA-KP-053 - Staging reduces workload; control presentation and natural attrition
+
+Status/evidence: ENGINE-VERIFIED. First checked: 2026-10-07.
+Issue #132 / 5.1.2; Windows/GZDoom 4.14.2/Vulkan, 1280x720, RTX 3070 Ti.
+Author acceptance: CA132-01 passed on 2026-10-07. This accepts the experiment;
+the measurements do not establish permanent balance or full-battle stability.
+
+Positive result: in a short same-camera foreground control, about 2,000 living
+Mandingas give 53.11 displayed FPS and 34.84 tics/s, versus 1.94 FPS and 32.58
+tics/s with about 6,000. Natural staged arrival also restores near-native tic
+throughput. Attribute this to fewer simultaneous native attackers, retaining
+collision, resources, combat and the accepted 500-map-combatant optimizations.
+It does not establish a per-actor efficiency gain or stable full-battle 35/30.
+
+PresentMon display intervals and engine render callbacks are different evidence.
+One background arrival draws 56.58 callbacks/s but presents only 22.43 FPS.
+An occluded game and competing desktop activity change compositor presentation;
+use a reserved foreground control and keep background/full-route qualifications.
+Check pinned PresentMon CSV units: --qpc_time_ms leaves TimeInSeconds as a header
+although that field contains relative milliseconds in the default hybrid output.
+Verify absolute clock origin and consecutive display intervals before phase joins.
+Do not interpret NA display rows as frames or average instantaneous FPS reciprocals.
+
+Retaining corpses is consequential: after 6,000 total spawns, a late captured
+window falls to 29.18 tics/s and 2.20 displayed FPS with thousands of corpses.
+It includes a labelled save and cannot isolate corpse cost from remaining combat,
+target searches or rendering. Sampled late actor Tick/target work remains large;
+do not infer that dead bodies are free or remove them to manufacture a result.
+
+Natural physiology also changes the experiment. The baseline's 5,946 cold deaths
+among 5,961 post-checkpoint deaths occur before the first forced diagnostic death.
+Record cause and living/corpse populations; a later empty battlefield is not a
+successful AI optimization. Recheck after #135 self-warming and #133 geometry.
+
+Native bench samples are deferred. Bound a run's actual output by the next run's
+starting byte offset, not by the number of requested commands: a final sample can
+remain incomplete at quit. Otherwise a later run's first sample is misattributed.
+Evidence and reproduction: [RESULTS](../assets/validation_512/RESULTS.md),
+[tables](../assets/validation_512/MEASUREMENTS.md), and their raw logs/traces.
+
+## CA-KP-052 - Reject blocked reinforcements without consuming either counter
+
+Status/evidence: CODE-VERIFIED / ENGINE-VERIFIED. First checked: 2026-10-07.
+Issue #132 / 5.1.2; native GZDoom 4.14.2 on Windows/Vulkan.
+
+A non-null native `Spawn` result does not prove that a monster fits. Test the
+actual initialized body's collision/vertical placement before registering it.
+When rejecting it, use `ClearCounters()` before `Destroy()`, as the installed
+engine's `zscript/actors/attacks.zs` does for blocked monster spawns. Otherwise
+an unsuccessful placement can still inflate the native total-monster statistic,
+even when the encounter's own successful-spawn counter correctly stays unchanged.
+The engine declaration is in `gzdoom.pk3:zscript/actors/actor.zs`.
+
+Keep partial group identity independently of the count of bodies already placed:
+a saved slot bitmap and deadline let 50 placed/50 blocked members resume without
+repeating the first half. Native checks verify no budget/native-counter increment
+for 100 blocked positions, exactly 50 increments after half clear, completion,
+99 versus 100 vacancies, no banked burst and terminal cancellation. Actual save
+comparisons retain the bitmap, cursor, deadline and original 6,001-entry old army.
+The 74 machine operators belong inside the first 100; counting them separately
+would break both the total budget and initial cap.
+
+Evidence: [native checks](../assets/validation_512/final-boundaries.txt),
+[loaded check](../assets/validation_512/final-pending-reload.txt), and
+[save comparison](../assets/validation_512/SAVE_VERIFICATION.json).
+This lesson establishes lifecycle correctness, not a frame-rate claim.
+
 ## CA-KP-051 - Match native virtual-coordinate projection for HUD fills
 
 Status/evidence: RESOLVED-VERIFIED / ENGINE-VERIFIED. First checked: 2026-10-07.

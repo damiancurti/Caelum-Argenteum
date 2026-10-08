@@ -1,6 +1,18 @@
 # TASKS.md — Active tasks
 
-Documentation version: **5.1.1** — 2026-10-07.
+Documentation version: **5.1.2** — 2026-10-07.
+
+## Issue #132 - Staged siege performance test (5.1.2)
+
+Implemented: 100/350-tic cadence, 2,000-living cap and 6,000 successful-spawn
+total; existing full armies retained. 22 native lifecycle checks and 52 native
+save comparisons pass. Natural arrival/cap controls and complete-budget diagnostic
+captures are recorded in [validation_512](../assets/validation_512/RESULTS.md).
+Staging improves arrival but does not establish stable 35 tics/s plus 30 displayed
+FPS everywhere. The author accepted CA132-01 on 2026-10-07 and authorized
+issue closure and PR #139 merge. No #132 author checks remain pending.
+Combined geometry/defender measurements follow #133, with thermal survival
+and demon self-warming effects kept explicit when #135 changes the workload.
 
 ## Issue #131 - Thermal HUD and attribute adaptation (5.1.1)
 

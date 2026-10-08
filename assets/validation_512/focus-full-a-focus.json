@@ -1,0 +1,7 @@
+﻿{
+    "label":  "focus-full-a",
+    "method":  "Computer Use sky.activate_window; author reserved foreground interval",
+    "analysed_tics":  "700..1050",
+    "activated_utc":  "2026-10-08T01:16:39.5046025Z",
+    "latest_sim":  "CA132 SIM tic=525 ms=20551.102600 alive=5996 total=6000 remaining=0 pending=0 combatants=6598 defenders=600 corpses=4 projectiles=1077 groups=63 failed=0 scriptedDeaths=0 victory=0 view=0"
+}

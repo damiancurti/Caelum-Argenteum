@@ -1,10 +1,10 @@
 # CONTEXT.md — Ultra-condensed summary of Caelum Argenteum
 
-Documentation version: **5.1.1** — 2026-10-07.
+Documentation version: **5.1.2** — 2026-10-07.
 
-**5.1.1/#131:** thermal HUD, Constitution Sleep, Resilience adaptation, route climate.
-All checks accepted 2026-10-07; merge authorized. Evidence: validation_511. #130/#128 accepted.
-Full army retained; fluency/multiplayer pending. Rules: SYSTEMS.
+**5.1.2/#132:** opt-in MAP06 groups: 100/350 tics, 2,000 alive, 6,000 total.
+Old/full armies retained. CA132-01 accepted 2026-10-07; merge authorized.
+**#131/#130/#128 accepted.** Rules: SYSTEMS. Fluency/multiplayer pending.
 
 **4.37.24/#82 accepted 2026-10-05:** closing export; Tab/M/B/R/F/T defaults.
 Evidence: validation_43724. #112/#106 merged (#114/#113); V5.0 follows.

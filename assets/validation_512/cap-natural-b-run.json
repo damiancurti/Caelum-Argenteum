@@ -1,0 +1,73 @@
+﻿{
+    "label":  "cap-natural-b",
+    "started_utc":  "2026-10-08T01:10:56.8259394Z",
+    "engine":  "C:\\Program Files (x86)\\GZDoom\\gzdoom.exe",
+    "engine_sha256":  "EC706C2EA1EF946EEC13BE7B1B461DF8D52EFCD47CAA6C056ED0E0257F7F9FFA",
+    "iwad_sha256":  "10D67824B11025DDD9198E8CFC87CA335EE6E2D3E63AF4180FA9B8A471893255",
+    "package_sha256":  "A62777EB114208341F505262C8954D829C17CAB51D5A88F1CFE8EEA5C52313A2",
+    "addon_sha256":  "88C8FC174229FCCC60CE83D8493F8B2A481F9C9CE36C2548E8467AD887377E39",
+    "initial_config":  "[LastRun]\nVersion=225\n[GlobalSettings]\nvid_preferbackend=1\nvid_vsync=false\nvid_maxfps=60\nvid_activeinbackground=true\ni_pauseinbackground=false\nvid_lowerinbackground=false\ni_soundinbackground=true\ncl_capfps=false\nvid_fullscreen=false\nvid_defwidth=1280\nwin_w=1296\nwin_h=759\nwin_maximized=false\nvid_defheight=720\nuse_mouse=false\nsnd_mastervolume=0.05\nlanguage=enu\n",
+    "arguments":  [
+                      "-noautoload",
+                      "-nomouse",
+                      "-iwad",
+                      "\"C:\\Program Files (x86)\\Steam\\steamapps\\common\\ultimate doom\\base\\doom2\\DOOM2.WAD\"",
+                      "-file",
+                      "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue132\\production.pk3\"",
+                      "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue132\\cap-observer.pk3\"",
+                      "-config",
+                      "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue132\\cap-natural-b.ini\"",
+                      "-savedir",
+                      "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue132\"",
+                      "-width",
+                      1280,
+                      "-height",
+                      720,
+                      "-window",
+                      "-rngseed",
+                      "116",
+                      "-skill",
+                      "2",
+                      "+logfile",
+                      "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue132\\cap-natural-b.txt\"",
+                      "+con_notifytime",
+                      "0",
+                      "+set",
+                      "ca_test_siege_reinforcements",
+                      1,
+                      "+map",
+                      "MAP06",
+                      "+exec",
+                      "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue132\\cap-natural-b-exec.cfg\""
+                  ],
+    "benchmark_offset":  23300,
+    "command_script":  "vid_fps true; stat rendertimes; stat think; wait 350; profilethinkers -t; bench; screenshot cap-natural-b-natural-350.png; wait 1400; profilethinkers -t; bench; screenshot cap-natural-b-natural-1750.png; wait 1750; profilethinkers -t; bench; screenshot cap-natural-b-natural-3500.png; wait 35; quit\r\n",
+    "cpu":  [
+                {
+                    "Name":  "AMD Ryzen 9 5950X 16-Core Processor            ",
+                    "NumberOfCores":  16,
+                    "NumberOfLogicalProcessors":  32
+                }
+            ],
+    "gpu":  [
+                {
+                    "Name":  "Parsec Virtual Display Adapter",
+                    "DriverVersion":  "0.45.0.0"
+                },
+                {
+                    "Name":  "NVIDIA GeForce RTX 3070 Ti",
+                    "DriverVersion":  "32.0.15.7688"
+                }
+            ],
+    "os":  {
+               "Caption":  "Microsoft Windows 11 Pro",
+               "Version":  "10.0.26200",
+               "TotalVisibleMemorySize":  33475240
+           },
+    "pid":  41468,
+    "qpc_ms":  1305278824.8043,
+    "epoch_ms":  1791421858699.834,
+    "completed_utc":  "2026-10-08T01:12:45.4331599Z",
+    "expected":  "CA132 PERFORMANCE COMPLETE tic=3500",
+    "presentation_sha256":  "CFADF710CECE523DC615AD6F29848C3ACFC1F807A0859A537D79277AEEA7114F"
+}

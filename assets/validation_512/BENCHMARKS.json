@@ -1,0 +1,58 @@
+{
+  "baseline-long-a": {
+    "start_byte": 10188,
+    "end_byte": 16019,
+    "requested_samples": 9,
+    "completed_samples": 8,
+    "sha256": "11cfa74ebbda885f1d6136bed906dfe9810d76b92fae9fb1543f2c9f9d1bdbb6"
+  },
+  "baseline-natural-a": {
+    "start_byte": 1454,
+    "end_byte": 2912,
+    "requested_samples": 3,
+    "completed_samples": 2,
+    "sha256": "31320dcf865b8f8d98220f33fdc065ac60f36c89600b5bd4d407e44af1b103ed"
+  },
+  "baseline-natural-b": {
+    "start_byte": 21845,
+    "end_byte": 23300,
+    "requested_samples": 3,
+    "completed_samples": 2,
+    "sha256": "016e45a4e14439256eb080e9b357dccc4867f3364889ea61be134df2a55d29ea"
+  },
+  "cap-natural-a": {
+    "start_byte": 8735,
+    "end_byte": 10188,
+    "requested_samples": 3,
+    "completed_samples": 2,
+    "sha256": "f3d9b0330b2dd867e858856de96a5041361c967db64313f66b6e67b68c845c47"
+  },
+  "cap-natural-b": {
+    "start_byte": 23300,
+    "end_byte": 24754,
+    "requested_samples": 3,
+    "completed_samples": 2,
+    "sha256": "a8c7e07630eefd617b85348c90c19ac1d5923d2f4ea4179c04967d0bdacb4967"
+  },
+  "staged-long-a": {
+    "start_byte": 2912,
+    "end_byte": 8735,
+    "requested_samples": 9,
+    "completed_samples": 8,
+    "sha256": "deda81511788d32ead83049f2b3c839533caa11cb5ccd8c32155d93d23c4b8a9"
+  },
+  "staged-long-b": {
+    "start_byte": 16019,
+    "end_byte": 21845,
+    "requested_samples": 9,
+    "completed_samples": 8,
+    "sha256": "659614170a0a4934f6a3dbb10237ad22d0dde1b32f7b88f2edfecf06acf3795c"
+  },
+  "staged-natural-a": {
+    "start_byte": 0,
+    "end_byte": 1454,
+    "requested_samples": 3,
+    "completed_samples": 2,
+    "sha256": "25aa30db7cb341afd6e1679d7b5011edd688ccbe7b1258f8f6e214822eea7dac"
+  }
+}

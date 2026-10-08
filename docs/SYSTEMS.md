@@ -1,6 +1,6 @@
 # Caelum Argenteum — Current systems and rules
 
-Documentation version: **5.1.1** — 2026-10-07.
+Documentation version: **5.1.2** — 2026-10-07.
 
 ## Thermal exposure and energy transfer (#130)
 
@@ -248,6 +248,66 @@ Physical sources: [EnergyPlus thermal comfort](https://energyplus.readthedocs.io
 [oxygen conversion](https://pmc.ncbi.nlm.nih.gov/articles/PMC5504009/).
 The author's outfit profiles, response times, consequences, racial shifts and
 action proxies are game calibration, distinct from those physical sources.
+
+## Staged siege reinforcement test (#132)
+
+The author requests a separate playable MAP06 performance experiment. The
+accepted full army remains the default. Set server CVar
+`ca_test_siege_reinforcements true` **before a fresh MAP06**; false reproduces the
+original deployment. The southern city layout is supported; legacy port layouts
+retain their populations. This is not permanent adoption of a new encounter.
+
+`CaelumSiegeReinforcements`, owned and saved by `CaelumPortSiege`, holds revision 1,
+successful spawns, living registered Mandingas, unspawned remaining budget, the
+pending group's placed-slot bitmap, formation cursor and next opportunity tic.
+`CaelumReinforcementData` supplies 100/group, 2,000 living, 6,000 total and 350 tics.
+The commander, 600 defenders, 12 hostile machines and all 42 guns retain their
+authored populations; none consumes the Mandinga cap. The 74 attacking operators
+are part of the first 100, not an extra initial population.
+
+The first opportunity is immediate at deployment. Each later opportunity is
+350 simulation tics after the previous one, independent of accelerated calendar
+time. Pauses do not advance `level.time`. At most one group starts per opportunity;
+99 vacancies do not suffice, 100 do. Missed opportunities are not banked. A partial
+group retains its missing members and retries at a later opportunity before any
+new group starts. Only registered, successfully placed native bodies consume the
+budget. Deaths do not undo cumulative spawns; corpses keep their existing lifecycle.
+
+Initial crews try their authored stations, falling back to the existing infantry
+formation if occupied; they walk to their assigned machines normally. Infantry
+uses the authored 200-column southern formation positions with a saved rolling
+cursor. Native `TestMobjLocation` checks walls, solid actors and vertical fit;
+an additional body-overlap check avoids non-solid combatant corpses. A failed
+candidate is discarded before registration, leaves its slot pending and consumes
+no budget or native total-monster statistic (`ClearCounters` before rejection).
+At most one formation position per missing member is tried per
+opportunity (plus the original station for an initial crew member). Successful
+members of partial groups immediately participate in normal combat. No living
+registered attacker is deleted or teleported to free a reinforcement slot.
+
+The current population is refreshed from owned bodies each simulation tic in
+staged mode. The separate #128 map-wide 500-living-combatant census remains
+unchanged, including offscreen combatants and defenders. Existing dynamic
+command membership/leader targets, collision, resources, statuses, individual
+attack validation, crew replacement and machine neutralization remain in force.
+A group becoming eligible does not force it into one permanent command group.
+
+Victory still requires commander defeat/confirmed retreat and all twelve hostile
+machines neutralized. Empty current Mandinga ranks alone never win, even with
+reserves pending. A legitimate victory stops reinforcements before that tic's
+opportunity; the unspawned budget remains recorded as stopped, not consumed.
+Thus a natural battle can finish before all 6,000 enter. A separate complete-budget
+diagnostic gives the commander ordinary damage invulnerability and applies
+explicit native-damage casualties (thermal health loss still follows its service);
+it is never used as evidence of an unmodified natural battle or distributed as AI.
+
+Existing full-army saves initialize a disabled revision-1 controller once,
+retaining the complete saved roster, identities, crews, deaths and victory state.
+Changing the CVar cannot convert an already deployed encounter. Saved staged
+encounters resume the same bitmap, counters and deadline without redeployment,
+including hub returns. Rollback means loading the untouched original full-army
+save with its original package; preserve both. A staged save requires this schema
+and is not promised to open in the old package.
 
 ## Automatic high-density AI (#128)
 
