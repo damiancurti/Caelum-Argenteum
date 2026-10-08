@@ -7,7 +7,8 @@ phases do not establish the reference of stable 35 simulation tics/s and at leas
 30 displayed FPS throughout the battle. This is a workload change, not a demonstrated improvement in
 per-actor efficiency. A short foreground control does reach 53.11 displayed FPS
 and 34.84 tics/s near 2,000 alive; it does not establish full-battle stability.
-Author gameplay acceptance remains CA132-01.
+The author accepted CA132-01 on 2026-10-07 without reported exceptions and
+authorized issue closure and PR #139 merge; the measured limitations remain.
 
 ## Observed result and contributors
 
@@ -239,4 +240,4 @@ or individual collision/resource rules were changed. Geometry/defender work is
 Demon self-warming and supplies are #135. Repeat the same population/camera
 controls after those changes. Do not count earlier thermal deaths as a successful
 optimization. The long-run diagnostic and author assessment are separate evidence
-levels; only the author can accept CA132-01.
+levels; the author accepted CA132-01 separately on 2026-10-07.

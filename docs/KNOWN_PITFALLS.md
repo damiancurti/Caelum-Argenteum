@@ -8,7 +8,8 @@ Inspected baseline: `1dc390576fa330d37ff543526fc7e69a397fc28f` (PR #7).
 
 Status/evidence: ENGINE-VERIFIED. First checked: 2026-10-07.
 Issue #132 / 5.1.2; Windows/GZDoom 4.14.2/Vulkan, 1280x720, RTX 3070 Ti.
-Author acceptance remains pending; these are measurements, not approved balance.
+Author acceptance: CA132-01 passed on 2026-10-07. This accepts the experiment;
+the measurements do not establish permanent balance or full-battle stability.
 
 Positive result: in a short same-camera foreground control, about 2,000 living
 Mandingas give 53.11 displayed FPS and 34.84 tics/s, versus 1.94 FPS and 32.58

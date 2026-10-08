@@ -55,5 +55,5 @@
   },
   "power_request_released": "2026-10-08T01:18:31.6581811Z",
   "capture_helper_ended": "2026-10-08T01:18:31.6414516Z",
-  "author_acceptance": "Pending CA132-01; no #132 acceptance inferred"
+  "author_acceptance": "CA132-01 (5.1.2 / #132) passed; explicitly confirmed 2026-10-07, no reported exceptions"
 }

@@ -63,7 +63,7 @@
     "checks.zs": "01e5d4cd825c5015b22be7996f8b2f307c660966d3eeea8cbb0895c12063b6f6",
     "collect_results.py": "36f10f4bddbd640504137cc8db11a084196fc037a1243c4a7f960476d5f886b9",
     "deaths.zs": "886f444a7ee4517c3c493ace8d33e520d55443b71d412829e61718f5b5cea994",
-    "DELIVERY.json": "2c875ecf3bb5dfaffe48ea995cb872efdcc53813d37de3964d8a7ce687f97715",
+    "DELIVERY.json": "f3bb6112e407339c518811f21583237cb8abe4cfc112d2a9989c5f7c1f77f948",
     "final-boundaries-run.json": "d54d34ab47f657d4bcc4c34847f97baadb8df6de73b1d60942e1402108605ac5",
     "final-boundaries.ini": "a7b6568074262c65819357fe37344252a115a11813624252b7980aa497876c33",
     "final-boundaries.txt": "df8aec574a0a06450adfb32c729af361629dc3f3ffd3813c71fa673075720a65",
@@ -139,7 +139,7 @@
     "PROFILE_RESULTS.json": "3bfa5de1a32cf039cf96b3f667e408a432306059fa4f62199a0e1a65b789de13",
     "render_measurements.py": "cac2fb3ee8f8940b7eb7408c91261dbcbfa723c2813c67f32c5019e64e08046c",
     "restart_capture_admin.ps1": "f08501c79524cb006858817e7a830f4defe3c17777287143e8d08dc43dbdb140",
-    "RESULTS.md": "1de5b71c24307e7a51f13f645cb452bf01055e43cd3a0ee991926355271dcdfe",
+    "RESULTS.md": "58f57ad6087651e70733a00fc426c915c705a6f9808d4be6d248edb4f8d12c59",
     "run_check.ps1": "5481f0cdeecd8a8028bbee4d0a55bafbb5a1ecd48d9fca1d8176c85ad19556ab",
     "run_native.ps1": "3aa1cd458b30dd55c5896fb38acebc8fd882a7229471c3ad1cb48910e581c55f",
     "run_persistence.ps1": "efba684a0a743ac2fb3e602320e1b3cf9cfec2b57c686898708710f1a74d1082",
@@ -187,7 +187,7 @@
     "staged-natural-a.capture-started.json": "211afa417ebaf8274ad1975ad3268c203071222b643e67056b1d6bdde9724b53",
     "staged-natural-a.ini": "6a3b994ffd2124c7eaf236e2f3576a1c888af36fee4474004839262c7cb4ffa2",
     "staged-natural-a.txt": "15328040909d7eee637770b99ce57375d291717b9f2c3eca3f0d4adb32f09b56",
-    "verify_delivery.py": "d6e22f27e15dcfcd06011538998a3863d774ab4334e173d780dc0489d827518a",
+    "verify_delivery.py": "f90e45bb43cd4c58e4b4bd01854e4667749b2860e79168f9fce81771ac4d6bda",
     "verify_saves.py": "2e2a0fb15825cbbc8aaef0aacd309a45351f17e841970c9712df705a0fa6b7a5"
   }
 }

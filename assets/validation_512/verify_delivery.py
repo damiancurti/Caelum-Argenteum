@@ -64,6 +64,6 @@ result = {'static_validator':parsed, 'native_assertions':22, 'native_save_compar
              ['ZSCRIPT','CVARINFO','caelum/world/CaelumPortSiege.zs',
               'caelum/world/CaelumSiegeEncounter.zs','caelum/world/CaelumSiegeReinforcements.zs']},
           'power_request_released':power['released_utc'], 'capture_helper_ended':capture['ended_utc'],
-          'author_acceptance':'Pending CA132-01; no #132 acceptance inferred'}
+          'author_acceptance':'CA132-01 (5.1.2 / #132) passed; explicitly confirmed 2026-10-07, no reported exceptions'}
 (HERE/'DELIVERY.json').write_text(json.dumps(result, indent=2)+'\n', encoding='utf-8')
 print('PASS: final source, measured fixture and standard delivery match across', count, 'members.')

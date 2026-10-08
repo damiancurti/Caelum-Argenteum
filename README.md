@@ -20,8 +20,8 @@ See the [contract](docs/SYSTEMS.md#staged-siege-reinforcement-test-132).
 The [native measurements](assets/validation_512/RESULTS.md) include 22 lifecycle
 assertions, 52 save comparisons and complete-budget/presentation captures.
 Arrival improves substantially; a short foreground cap control reaches 53.1 FPS
-and 34.8 tics/s, but long-run stability is not established. Author acceptance is CA132-01 in
-pending_test.txt. This experiment does not adopt permanent encounter balance
+and 34.8 tics/s, but long-run stability is not established. The author accepted
+CA132-01 on 2026-10-07 and authorized #132 closure and PR #139 merge. This experiment does not adopt permanent encounter balance
 or change the automatic 500-combatant AI.
 
 Issue [#131](https://github.com/damiancurti/Caelum-Argenteum/issues/131) adds a

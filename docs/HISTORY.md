@@ -25,7 +25,10 @@ background captures vary with desktop presentation and remain qualified.
 Evidence, hashes and qualifications: [validation_512](../assets/validation_512/RESULTS.md).
 The author's elevated PresentMon helper corrects an initial capture-exit problem.
 A thread-scoped keep-awake request does not alter the power plan and is released
-after testing. CA132-01 remains pending; no #132 author acceptance is inferred.
+after testing. On 2026-10-07 the author explicitly confirmed all tests passed:
+CA132-01 (origin 5.1.2 / #132) is accepted without reported exceptions and removed
+from pending_test.txt. Issue closure and PR #139 merge are authorized. This accepts
+the playable experiment, not a new claim of stable 35/30 throughout the battle.
 
 ## 5.1.1 - Thermal HUD, attributes and journey climate (#131, 2026-10-07)
 

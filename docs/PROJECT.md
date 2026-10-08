@@ -14,7 +14,7 @@ Native evidence: [validation_512](../assets/validation_512/RESULTS.md), includin
 22 lifecycle assertions, 52 save comparisons and actual presentation captures.
 The arrival workload improves; a short foreground cap control reaches 53.1 FPS
 and 34.8 tics/s, while long-run stability remains unproven. Complete-budget diagnostics retain all corpses and record
-natural/scripted casualties separately. CA132-01 is pending author acceptance.
+natural/scripted casualties separately. CA132-01 passed author acceptance on 2026-10-07; closure and merge authorized.
 Geometry/defender combinations await #133; demon survival behavior belongs to #135.
 An isolated death audit confirms 5,946 cold deaths among 5,961 post-checkpoint
 baseline deaths; this pre-existing physiology changes the late comparison load.
