@@ -6,8 +6,22 @@ An independent dark fantasy FPS-RPG inspired by nineteenth-century Argentina.
 Author and game designer: **Damian Curti**. Development target: **GZDoom 4.14.2**
 on Windows 11. The final game is intended to be independent of Doom assets.
 
-**Current release: 5.1.3.** Obtain and update the complete repository, validate
+**Current release: 5.1.4.** Obtain and update the complete repository, validate
 it, then rebuild with `run_dev.bat` as described below.
+
+**5.1.4 / [#140](https://github.com/damiancurti/Caelum-Argenteum/issues/140):**
+thermal coefficients are cached per actor while heat/water flux remains dynamic.
+Bulls and giant rats now sweat using the approved surface-scaled profile.
+Heat or fatigue increases ventilation and Air recovery to 150% or 200%, with
+male/female breathing audio. Player Air/Anima recovery each costs one quarter
+of a full Health bar's food/water expenditure. Cold shivering adds heat and
+proportional player Hunger use. Carbine fire now has dagger-scale Air cost and
+separate light-effort heat for firing/reloading. Exposure text follows the
+thermal bar's colors. See [rules](docs/SYSTEMS.md#breathing-and-thermal-coefficient-cache-140)
+and [native evidence](assets/validation_514/RESULTS.md).
+Original #140 audio/gameplay checks are author-accepted; expanded firearm,
+shivering and wet-armor controls pass their focused native gates; the author
+authorizes integration and closure. Large-load performance retests were deferred at the author's request.
 
 **5.1.3 / #133:** 160 furnished homes, 24 factories covering T1 production,
 64 independent shops and 600 housed soldiers. The siege starts on 15 November

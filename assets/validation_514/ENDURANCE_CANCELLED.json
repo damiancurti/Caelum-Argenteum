@@ -1,0 +1,17 @@
+{
+  "status": "cancelled_by_author",
+  "completed": false,
+  "reason": "Author explicitly stopped running/endurance control and requested the carbine control instead; water exhaustion was not reached.",
+  "cancelled_utc": "2026-10-08T15:14:15.4994977Z",
+  "last_logged": {
+    "simulation_seconds": "420",
+    "hp": "1780",
+    "air": "0.000000",
+    "thirst": "55.334785",
+    "exposure": "0.289701",
+    "sweat_ml": "605.555392"
+  },
+  "air_empty_simulation_seconds": 190,
+  "foot_speed_kmh": 20.670603313,
+  "thirst_exhaustion_not_observed": true
+}

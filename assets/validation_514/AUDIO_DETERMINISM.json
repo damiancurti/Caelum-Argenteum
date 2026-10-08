@@ -1,0 +1,9 @@
+{
+  "two_runs_identical": true,
+  "sha256": {
+    "female.wav": "1ddb9fd0edb7c9116fc959d493d57bd1e61b871be18e12f07355eed9602117bd",
+    "female_high.wav": "0b2300d9c1ed2bc301ef2684867ac66a251923392b442d967fc4e4fca195a7c4",
+    "male.wav": "61350765991f9036704d24b43c608bb697ae05091c4721ad1091329da24d5851",
+    "male_high.wav": "597ff92b30dd8b0ab81c2d1c97ca1bfb9561e38e38e4112b4c48fa42d3236463"
+  }
+}

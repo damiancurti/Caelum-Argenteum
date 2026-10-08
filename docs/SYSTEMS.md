@@ -1,6 +1,6 @@
 # Caelum Argenteum — Current systems and rules
 
-Documentation version: **5.1.3** — 2026-10-08.
+Documentation version: **5.1.4** — 2026-10-08.
 
 ## Functional port city contract (#133)
 
@@ -115,13 +115,16 @@ NPC attack frames use the same slowdown. Weapon charge preparation keeps its
 existing contract. Heat affects existing physical Air expenditure; it creates no
 resting Air drain and does not multiply Anima or hypoxia into exertion heat.
 The author-approved #133 sweat extension replaces the former thermal Thirst
-multiplier with actual secreted water. Regenerating Air no longer consumes Thirst.
+multiplier with actual secreted water. The later #140 recovery rule charges
+player Air and Anima the quarter-Health costs defined below.
 
 ### Regulated sweating (#133, 2026-10-08)
 
 All supported humanoids, including Mandingas and Zupay, share the initial sweat
-profile while retaining their racial comfort. Bulls and giant rats retain heat
-exchange and existing wetness, without an invented animal sweating profile.
+profile while retaining their racial comfort. In #140 the author also approved
+that same surface-scaled profile provisionally for bulls and giant rats, retaining
+their 17 C comfort and individual hydration. This is gameplay calibration, not
+a claim that rodent or bovine physiology is identical to human physiology.
 The 80 kg / 1.75 m reference produces at most 2 kg (approximately 2 L) per world
 hour. Scale by actual surface area / 1.951493905 m², not carried load. Production
 is `2*A/Aref*clamp(E/5,0,1)*clamp(Hydration/20,0,1)` kg/world-hour: zero at E<=0,
@@ -149,7 +152,9 @@ stops, including after entry into a cold place. Numerical substeps of at most
 two world seconds resolve the coupled response; they add no simulation time.
 Metabolic/action heat, signed environmental exchange and evaporation jointly
 determine the energy balance. Equilibrium does not mean a living body must equal
-air temperature. Carbine shots retain their existing nominal-Air heat conversion.
+air temperature. Since #140, carbine muscular heat has its own approved
+action-duration profile below; other physical attacks retain the nominal-Air
+and jump-reference conversion.
 
 Revision 3 initializes only the new NPC reserve once, preserving exposure,
 acclimatization, damage fractions and clothing moisture. Player migration reads
@@ -158,6 +163,104 @@ supplies and sweat together, including consumed water and the reduced cooling
 of a depleted reserve; applying the thermal projection does not charge water
 again. They retain changing regional weather, passenger shelter and zero invented
 real-time thermal damage.
+
+### Breathing and thermal coefficient cache (#140)
+
+Ventilation uses the larger fatigue/heat factor, never their product. Air strictly
+below 50% gives 1.5; strictly below 10% gives 2. Exactly 50% remains normal and
+exactly 10% remains 1.5. Heat severity 1 gives 1.5 and severity 2 or higher gives 2,
+using existing Toughness-scaled thresholds. Player and supported NPC natural Air
+recovery is multiplied by that factor, preserving existing recovery exclusions.
+Anima has no panting speed bonus. Dead or fully submerged actors receive no
+breathing bonus or panting sound; hypoxia and its recovery debt stay separate.
+
+The approved approximation adds only the extra respiratory sensible exchange:
+`G_extra = (factor-1)*(6/1000/60)*1.2*1005*(bodyMassKg/80)` W/K. Six L/min is
+reference ventilation; density is 1.2 kg/m3 and specific heat 1005 J/kg/K. The
+80-kg reference gains 0.0603 W/K at 150% or 0.1206 W/K at 200%. Flow exchanges
+against the existing equivalent thermal node, not a newly invented clinical
+core temperature: `P_into_body = G_extra*(T_air-T_node)`. It cools only when the
+inhaled air is cooler; hotter ambient air warms. Integrate it with the existing
+world-time energy equation and retain signed RespirationJoules. No extra latent
+respiratory water term is invented, and existing neutral metabolism is not
+charged a second time. This small sensible term does not guarantee safe sustained
+firearm or heavy-melee use; it does not eliminate wet-clothing cold.
+
+Humanoid moderate/high male/female recordings play on CHAN_BODY. Player sex and
+existing NPC voice profiles select the recording. Intensity changes replace the
+loop; death, recovery and full submersion stop it. Voice/weapon/heartbeat channels
+remain separate; an unrelated brief body sound can finish before panting resumes.
+Audio bookkeeping is transient and reconstructed after loading. Animal ventilation
+and sweat work physically; no supplied human voice is used as an animal recording.
+
+The per-actor transient CaelumThermalCoefficients caches stable area/mass,
+material/coverage/immersion, wind-film, ambient vapor and anatomical row weights.
+Temperature, moisture, water temperatures, fire and activity still update energy
+flux; wetness never becomes stale constant wattage. Anatomy constructor generation,
+material/coverage keys and environmental inputs invalidate affected projections.
+Existing bounded environmental sampling still detects shelter/fire changes.
+Revision 4 preserves primary state and discards the cache on loading; revision 5
+adds only a persistent pending-firearm-energy queue. Both migrations are
+idempotent and preserve existing exposure, water and reserves. Independent
+journey copies build their own caches and couple recovery costs with sweat/water.
+The original issue's proposed core/skin and exact Stefan-Boltzmann replacement
+were explicitly declined in favor of preserving the approved equivalent exposure,
+linear 4.7 W/m2/K radiation and calibrated inertia. No new contact physics is added.
+These safe per-actor coefficient savings apply to normal physiology at all counts;
+#128's separate 500-living-combatant AI activation rule remains unchanged.
+
+### Carbine muscular effort (#140, author decision 2026-10-08)
+
+Primary carbine fire costs the same base Air as a dagger: **2**, previously 20.
+The shared catalogue governs player and soldier costs; ordinary modifiers,
+affordability, magazine consumption and recovery funding still apply.
+Firing and reloading use distinct provisional total metabolic profiles, **2 MET**
+and **2.5 MET** respectively. Resting 1 MET is already in the environment balance:
+`P_extra = surfaceArea * 58.2 * (MET - 1)` watts. These are author-approved light
+activity approximations, not measured physiological values for this weapon.
+Only actual firing-cycle/reload time contributes; idle aim, failed attempts and
+cancelled future work do not. Reload uses elapsed time, including its existing
+movement slowdown, rather than charging an entire reload up front. Reload takes
+precedence over a residual shot animation, so overlapping clocks do not double
+charge. Other physical weapons keep their existing action-heat conversion.
+
+Use real action seconds, not accelerated calendar seconds. Added heat has no
+movement-recovery tail. Count it as muscular ActionJoules, not absorbed magic.
+NPCs queue finite work until their existing bounded thermal update; queuing must
+not force a full thermal solver update every tic. Save/load preserves unconsumed
+work. Switching away, immobilization and death stop new firearm work.
+
+### Cold regulation by shivering (#140, author decision 2026-10-08)
+
+All supported physiological actors, including bulls and giant rats, provisionally
+share `MET_total = 1 + 4*clamp(-E/5,0,1)`: no shivering at E>=0, a gradual
+response below neutral, and at most 5 total MET at E<=-5. Extra production is
+`surfaceArea*58.2*(MET_total-1)` watts integrated in world seconds alongside
+resting metabolism. Recompute within the existing bounded thermal substeps;
+there is no invented action-Air cost or post-shivering activity tail. This is
+an approved equivalent-exposure calibration, not clinical core temperature.
+
+Player extra Hunger loss equals the existing passive Hunger rate multiplied by
+`MET_total-1`, retaining Constitution, body-mass and rest modifiers. Baseline
+passive loss is charged separately once, so full shivering costs five times
+the baseline overall. The remaining food fraction limits paid additional heat;
+zero player Hunger funds no extra heat. NPCs retain the author's exclusion from
+Hunger reserves and feeding AI. They receive the provisional shivering response
+without a new food resource. No sweat or shivering water is reabsorbed as Thirst.
+
+Travel forecasts use independent food/thermal projections and the same sleeping
+comfort factor as journey supplies. Commit does not charge shivering twice.
+Revision 6 initializes shivering metadata without resetting prior physiology or
+pending firearm work. Accumulated shivering energy survives save/load.
+
+Metal itself does not store absorbed water: the current metal-cloth material
+stores moisture in its underlying light fabric (0.192336119 kg per square metre).
+The model already evaporates retained water according to surface temperature,
+humidity, wind and permeability; excess above capacity runs off. It does not
+have a separate free-droplet film or an approved movement-shedding coefficient.
+Fire already contributes declared, distance/occlusion-limited absorbed energy;
+it can increase evaporation indirectly, not by an arbitrary drying percentage.
+There is no independent garment-temperature node in this retained model.
 
 ### Clothing, water and shelter
 
@@ -326,7 +429,10 @@ harmful threshold, wetness, humidity, acclimatization and current penalties in
 English/Spanish. The 5.1.1/#131 HUD adds a read-only bar directly above Load:
 a grey icon with snowflake upper left and flame lower right, a neutral center, cold/hot bands and
 ticks at the actual Toughness-scaled
-thresholds, a signed value and localized severity. Its visual span is +/-30*s;
+thresholds, a signed value and localized severity. The #140 follow-up colors
+the exposure label with the same cold/hot band palette as its marker position,
+including Toughness scaling and overflow; black glyph outlines remain visible.
+Its visual span is +/-30*s;
 overflow pins the marker and prints < or > with the extreme state, without
 clamping stored E. Large numbers use scientific notation. The same 640x360
 projection, typography, frame/laurels, aspect handling and visibility policy
@@ -3482,8 +3588,8 @@ cancelling, updating, re-clicking Enter or loading a save.
 CaelumJourneyModel copies numerical values and goes through steps of a tic. The Needed
 model uses unlimited rations to calculate what is necessary without container water;
 Available uses actual stocks. It accounts for passive consumption by body mass and
-Constitution, sleep per Resilience, ten pulses per serving, real digestion /4, natural
-regeneration of Health/Air with its costs, critical reserve damage, Anima, Adrenaline
+Constitution (including Sleep since #131), ten pulses per serving, real digestion /4,
+natural Health/Air/Anima recovery with its current #140 costs, critical reserve damage, Adrenaline
 and Lucidity. Sleeping drains 10 Lucidity/s, without recovery from it, and recovers
 Sleep in 8 hours; stunned by Lucidity does not interrupt camping. Compatible personal
 timers advance by the same interval.
@@ -4808,11 +4914,12 @@ The new fields start empty in 0ai: loading does not enable the test or reset the
 profile, attributes, previous quests, containers or choices. Persistence uses native
 save and the same Traveler Inventory. Automated test modes remain out of delivery.
 
-## Survival consumption and regeneration - current in 5.1.3 (#131/#133)
+## Survival consumption and regeneration - current in 5.1.4 (#131/#133/#140)
 
 Constitution controls passive Hunger, Thirst and Sleep consumption, as well as
-Hunger expense from regenerating health/Air and Thirst spent on health. Air
-recovery no longer consumes water in #133. The author reassigned Sleep
+Hunger and Thirst expense from player health, Air and Anima regeneration.
+The #140 quarter-Health rule supersedes #133's water-free Air recovery.
+The author reassigned Sleep
 from Resilience in #131; the Type-4 divisor and original mass rules remain.
 Resilience now controls climate adaptation rate/range and retains its existing
 combat benefits (maximum Air/Adrenaline and health regeneration).
@@ -4838,18 +4945,26 @@ Thirst 12, Sleep 16; one hour of play is 180 real seconds. At 100 kg and attribu
 these equal 72/36/48 real minutes. At attribute 100, they become 216/108/144 minutes.
 Other masses only modify Hunger/Thirst.
 
-Regeneration cost is calculated from the fraction of maximum health/Air actually
+Regeneration cost is calculated from the fraction of maximum health/Air/Anima actually
 recovered. Constitution now also divides that cost; the body mass factor of passive
 consumption is not applied again.
 
 | Natural recovery | Base cost of Hunger | Thirst base cost | With Constitution 100 |
 | --- | ---: | ---: | --- |
 | Maximum health 1% | 1 point | 0,5 points | 0,3333 / 0,1667 points |
-| Maximum Air 1% | 0,1 points | 0 points | 0,0333 / 0 points |
+| Maximum Air 1% | 0.25 points | 0.125 points | 0.08333 / 0.04167 points |
+| Maximum Anima 1% | 0.25 points | 0.125 points | 0.08333 / 0.04167 points |
 
 Each cost is divided by D(Constitución), also when calculating how much can be recovered
 with the available reserves. Only the recovered amount is charged, with non-negative
-reserves. Speeds and regeneration requirements do not change. Resilience continues to
+reserves. Full Air or Anima recovery therefore costs 25 Hunger / 12.5 Thirst before
+modifiers, one quarter of complete Health recovery (100 / 50), regardless of each
+bar's maximum. Existing rest divides cost per recovered unit by comfort squared;
+its speed bonus remains, and panting adds the specified Air speed factor. These
+food/water costs are player-only; NPC recovery gains the breathing factor without
+new Hunger, feeding behavior or recovery water charges. Passive Hunger/Thirst
+have no abstract cold/heat multiplier; sweat is charged by secreted water mass.
+Resilience continues to
 accelerate health recovery and increase the maximum Air. The return in three seconds of
 the Underwater Air debt keeps its route separate, which no longer consumed
 Hunger/Thirst.
