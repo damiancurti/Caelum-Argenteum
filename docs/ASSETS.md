@@ -1,6 +1,35 @@
 # Caelum Argenteum — Audio and art
 
-Documentation version: **5.1.6** — 2026-10-08.
+Documentation version: **5.1.7** — 2026-10-08.
+
+## 5.1.7 - Modular shotgun artwork and evidence (#136)
+
+Original transparent shotgun artwork was generated with the built-in image_gen
+tool. Sources and the full prompt history are in assets/source/art/shotgun_517;
+PROMPTS.json identifies selected runtime files and retained intermediate drafts.
+The references are project-owned carbine/Domingo artwork. No new Doom art is
+introduced. Runtime PNG copies remain byte-identical to the selected sources.
+
+Following the author's hand-reuse request, weapon_layer.png contains complete
+T1/T2/T3 guns without hands; hands_layer.png contains the foreground gloves,
+forearms and held cartridges. Only its first column is used, shared across tiers.
+Both use fixed 362-pixel canvases, common pivots and native layers 50/51. Twenty-one
+weapon registrations and seven hand registrations cover ready, aim, empty/partial
+opening and one/two-cartridge loading. Recoil and equip/holster transform both
+layers together. New hand variants can replace the hand layer independently.
+Earlier combined atlases remain source history and are not runtime resources.
+
+Four inventory icons, two world pickups and 48 Domingo world frames supply six
+poses in eight directions. register_shotgun.py measures alpha and emits native
+TEXTURES clipping without rewriting image pixels. Shared fixed canvases prevent
+independent trimming from misaligning hands and gun. REGISTRATION.json records
+source hashes and rectangles; repeated exports must match byte-for-byte.
+
+Native fixtures, selected clean logs/configurations/captures, source hashes and
+reproduction commands are in assets/validation_517. They exercise both actual
+inputs and deterministic mechanics. Agent verification remains separate from
+CA136-01 and CA143-01 author acceptance. Development PK3s, IWADs, executables and
+saved-game fixtures remain local under build/issue136 and are not distributed.
 
 ## 5.1.6 - Crouched Domingo carbine poses (#143)
 

@@ -25,7 +25,7 @@ class CaelumDisplayNames : Object
             case CaelumConstants.WEAPON_TYPE_WAR_AXE: return "CA_WEAPON_TYPE_WAR_AXE";
             case CaelumConstants.WEAPON_TYPE_HALBERD: return "CA_WEAPON_TYPE_HALBERD";
             case CaelumConstants.WEAPON_TYPE_GIANT_GAUNTLETS: return "CA_WEAPON_TYPE_GIANT_GAUNTLETS";
-            case CaelumConstants.WEAPON_TYPE_STANDARD_BOW: return "CA_WEAPON_TYPE_STANDARD_BOW";
+            case CaelumConstants.WEAPON_TYPE_SHOTGUN: return "CA_WEAPON_TYPE_SHOTGUN";
             case CaelumConstants.WEAPON_TYPE_LONGBOW: return "CA_WEAPON_TYPE_LONGBOW";
             case CaelumConstants.WEAPON_TYPE_CROSSBOW: return "CA_WEAPON_TYPE_CROSSBOW";
             case CaelumConstants.WEAPON_TYPE_BELL: return "CA_WEAPON_TYPE_BELL";
@@ -94,6 +94,7 @@ class CaelumDisplayNames : Object
     {
         switch (ammunitionType)
         {
+            case CaelumConstants.AMMUNITION_SHOTGUN: return "CA_AMMUNITION_SHOTGUN";
             case CaelumConstants.AMMUNITION_ARROW:
                 return "CA_WEAPON_AMMO_ARROWS";
             case CaelumConstants.AMMUNITION_BOLT:
@@ -402,7 +403,7 @@ class CaelumDisplayNames : Object
             case CaelumConstants.CATALOGUE_WEAPON_WAR_AXE: return CaelumConstants.WEAPON_TYPE_WAR_AXE;
             case CaelumConstants.CATALOGUE_WEAPON_HALBERD: return CaelumConstants.WEAPON_TYPE_HALBERD;
             case CaelumConstants.CATALOGUE_WEAPON_GIANT_GAUNTLETS: return CaelumConstants.WEAPON_TYPE_GIANT_GAUNTLETS;
-            case CaelumConstants.CATALOGUE_WEAPON_STANDARD_BOW: return CaelumConstants.WEAPON_TYPE_STANDARD_BOW;
+            case CaelumConstants.CATALOGUE_WEAPON_SHOTGUN: return CaelumConstants.WEAPON_TYPE_SHOTGUN;
             case CaelumConstants.CATALOGUE_WEAPON_CARBINE: return CaelumConstants.WEAPON_TYPE_CARBINE;
             case CaelumConstants.CATALOGUE_WEAPON_LONGBOW: return CaelumConstants.WEAPON_TYPE_LONGBOW;
             case CaelumConstants.CATALOGUE_WEAPON_CROSSBOW: return CaelumConstants.WEAPON_TYPE_CROSSBOW;

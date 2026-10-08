@@ -57,13 +57,13 @@ class CaelumThermalEffects : Object play
     static void PlayerFirearmTic(CaelumPlayer user)
     {
         if(user.WeaponModel==null || !user.WeaponModel.Equipped || user.WeaponModel.Durability<=0
-            || user.WeaponModel.WeaponType!=CaelumConstants.WEAPON_TYPE_CARBINE
+            || !CaelumRangedRules.IsFirearm(user.WeaponModel.WeaponType)
             || user.IsPhysicallyImmobilized() || user.CombatBlockModeActive)return;
-        if(user.RangedReloadActive && user.RangedReloadWeaponType==CaelumConstants.WEAPON_TYPE_CARBINE)
+        if(user.RangedReloadActive && CaelumRangedRules.IsFirearm(user.RangedReloadWeaponType))
             RecordFirearmWork(user,Min(1.0/TICRATE,user.RangedReloadRemainingSeconds
                 /Max(0.000001,user.GetReloadProgressMultiplier())),true);
         else if(user.AttackAnimationMap==level.MapName
-            && user.AttackAnimationKind==CaelumConstants.WEAPON_TYPE_CARBINE
+            && CaelumRangedRules.IsFirearm(user.AttackAnimationKind)
             && user.AttackAnimationItemId==user.ActiveWeaponItemId)
             RecordFirearmWork(user,Min(1.0/TICRATE,Max(0.0,
                 (user.AttackAnimationStartTic+user.AttackAnimationDurationTics-level.time+1)/TICRATE)),false);

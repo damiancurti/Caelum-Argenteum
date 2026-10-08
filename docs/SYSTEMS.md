@@ -1,6 +1,77 @@
 # Caelum Argenteum — Current systems and rules
 
-Documentation version: **5.1.6** — 2026-10-08.
+Documentation version: **5.1.7** — 2026-10-08.
+
+## Double-barrel shotgun and equipped-armor bypass (#136)
+
+The author's final contract replaces the **shortbow/standard bow**, not the
+longbow. Playable ID 14 and catalogue/recipe ID 12 now identify the two-handed
+side-by-side shotgun at T1/T2/T3. The old selector class and numeric IDs remain
+serialized aliases. Longbow and crossbow retain their current behavior.
+
+One shot spends one cartridge and one carbine-equivalent Air cost, launching
+12 independently colliding pellets. Each nominal pellet is one tenth of the
+same-tier carbine damage; full pre-mitigation totals are 4320/6912/10800 before
+shared modifiers. Differences of rounded cumulative pellet budgets preserve
+the nearest integer total, including non-divisible values; zero stays zero.
+Misses lose their share, and hits on multiple targets distribute one budget.
+Critical, anatomy, Toughness, shields, push and successful-damage wear use the
+existing projectile pipeline. Defenses resolve per pellet, so post-defense
+damage need not equal 1.2 times a single carbine impact.
+
+Capacity is two cartridges, one per barrel. A two-bit chamber mask persists;
+ordinary shots fire right then left. Reload fills available chambers up to
+the inventory's total quantity, without spending ammunition again. Empty,
+single-cartridge and partial reloads use the same carbine five-second base and
+Dexterity/movement modifiers. Interruption grants no cartridge. Fire costs the
+same base 2 Air; reload retains the carbine's existing resource rules. Calibrated
+firearm muscular heat, rather than the generic melee Air-to-heat conversion,
+also applies. Mass (T1 12 kg), durability, critical chance, recipe components,
+material quantities and manufacturing complexity copy the corresponding carbine.
+
+Range is 30 m, half the carbine's 60 m. Both use **Maximum dispersion: 13–130°**
+before the shared accuracy, aim, crouch and movement adjustments. The author's
+final correction supersedes the intermediate double-dispersion approval.
+Dispersion categories are separate from T1/T2/T3 equipment tiers: maximums are
+10/30/50/70/90/110/130°, with minimums one tenth of maximums. Existing longbow
+code remains 3–30°; the historical 70° note in HISTORY is not a new balance
+change. Ranged tiers still affect damage/critical chance, not spread category.
+
+| Weapon | Equipped armor bypass T1 / T2 / T3 |
+| --- | --- |
+| Shotgun | 60% / 70% / 80% |
+| Carbine | 70% / 80% / 90% |
+| Cannon | 100% at every supported tier |
+
+Defense is innate racial defense plus equipped defense times the retained
+fraction. Toughness, armor reinforcement/vulnerability grades and shields
+remain separate. Only the equipped absorption contributes to equipment wear.
+Projectile metadata freezes the fired weapon's type/tier; changing equipment
+in flight cannot change penetration. Player and NPC damage/contact solvers
+share this rule, including armor's contribution to contact lucidity protection.
+
+Shotgun cartridges are independent ammunition ID 6; arrow, bolt, bullet and
+javelin IDs are unchanged. Their mass is 0.003 kg and base price equals carbine
+cartridges. Armories receive 100 once, including an idempotent old-stock upgrade;
+reopening does not replenish stock. MAP02 adds six 20-cartridge drops to previously
+unassigned living enemy slots: 2/1/2/1 per section. Existing supplies and keys
+remain assigned to the same enemies; map geometry is unchanged.
+
+Shotgun revision 1 migrates old shortbow items, current models and persistent
+records once. Tier, identity, ownership, Box placement and proportional condition
+survive; durability scales 1200/1000. Recipe ID 12 retains knowledge and learns
+its replacement dependencies. Shared arrows and known arrow recipes remain for
+the longbow; no arrows become cartridges. The migrated shotgun starts empty.
+New constructors stamp revisions before inventory synchronization. Native
+old-save/current-save/hub tests cover these boundaries. Keep the original
+5.1.6 save and matching package for tested checkpoint rollback; direct downgrade
+of a newly saved 5.1.7 game is not promised.
+
+First-person presentation uses separate complete weapon and foreground hand
+layers with common anchors for ready, aim, recoil and reload. The three weapon
+tiers share the same hand set. Hand-style selection is a future feature; adding
+it will not require redrawing the weapon. Equip/holster uses the existing
+lowering motion and shot/reload timing remains controlled by gameplay.
 
 ## Soldier crouched carbine aim (#143)
 
@@ -6142,7 +6213,7 @@ pending; no expansion is a new requirement to start to Rulo.
 
 ### Crafts arrows and controls (4.33.0n)
 
-Choosing bow or longbow shows the recipe 129 and its dependencies. It also applies to
+Choosing the longbow shows the recipe 129 and its dependencies. It also applies to
 saves with those choices. Previous 129 recipes retain their indices and knowledge; the
 catalog passes to 130 entries. Filter Munitions.
 
@@ -6462,7 +6533,7 @@ modify these combat routes.
 
 | Weapon | Fire | AltFire | Reload | Zoom |
 | --- | --- | --- | --- | --- |
-| Standard Bow | Fires its native arrow from the magazine. | Toggles Aim/ADS. | Reloads the bow magazine; duration uses the ranged reload-speed bonus. | Toggles the same Aim/ADS mode, real FOV and doubled physical accuracy. |
+| Double-barrel shotgun | Fires twelve pellets using one cartridge. | Toggles Aim/ADS. | Loads up to two cartridges with the shared carbine reload pipeline. | Toggles the same Aim/ADS mode, real FOV and doubled physical accuracy. |
 | Longbow | Fires its native longbow arrow. | Toggles Aim/ADS. | Reloads its independent magazine. | Toggles Aim/ADS, real FOV and doubled physical accuracy. |
 | Crossbow | Fires its native bolt. | Toggles Aim/ADS. | Reloads its independent magazine. | Toggles Aim/ADS, real FOV and doubled physical accuracy. |
 | Carbine | Fires its native carbine projectile. | Toggles Aim/ADS. | Reloads its independent magazine. | Toggles Aim/ADS, real FOV and doubled physical accuracy. |

@@ -289,5 +289,11 @@
     "progression_rule": "Author approved on 2026-10-02: a closed block keeps all its trapdoor covers solid/inactive, including for enemies, until the normal keyed entrance opens. This prevents upward jumps through remotely opened pits. South is initially accessible.",
     "save_policy": "Author explicitly waived prior-save compatibility for issue #74 on 2026-10-02. New-layout mechanism state must persist through save/load and hub travel.",
     "moving_sector_isolation": "Lower paths avoid every surface gate and crusher panel. East branches detour around crusher 43923 so its original base floor and complete sector remain unchanged."
-  }
+  },
+  "shotgun_bundles_per_section": [
+    2,
+    1,
+    2,
+    1
+  ]
 }

@@ -296,7 +296,13 @@
       "progression_rule": "Author approved on 2026-10-02: a closed block keeps all its trapdoor covers solid/inactive, including for enemies, until the normal keyed entrance opens. This prevents upward jumps through remotely opened pits. South is initially accessible.",
       "save_policy": "Author explicitly waived prior-save compatibility for issue #74 on 2026-10-02. New-layout mechanism state must persist through save/load and hub travel.",
       "moving_sector_isolation": "Lower paths avoid every surface gate and crusher panel. East branches detour around crusher 43923 so its original base floor and complete sector remain unchanged."
-    }
+    },
+    "shotgun_bundles_per_section": [
+      2,
+      1,
+      2,
+      1
+    ]
   },
   "return_grates": [
     {
@@ -66398,6 +66404,18 @@
       ]
     },
     {
+      "tid": 47007,
+      "zone": 0,
+      "actor": "CaelumMandinga",
+      "cls": "CaelumShotgunAmmo",
+      "amount": 20,
+      "position": [
+        192,
+        -4704,
+        0
+      ]
+    },
+    {
       "tid": 48014,
       "zone": 0,
       "actor": "CaelumGiantRat",
@@ -66418,6 +66436,18 @@
       "position": [
         192,
         -4448,
+        0
+      ]
+    },
+    {
+      "tid": 47008,
+      "zone": 0,
+      "actor": "CaelumMandinga",
+      "cls": "CaelumShotgunAmmo",
+      "amount": 20,
+      "position": [
+        960,
+        -4704,
         0
       ]
     },
@@ -67030,6 +67060,18 @@
       "position": [
         -5088,
         -704,
+        0
+      ]
+    },
+    {
+      "tid": 47030,
+      "zone": 1,
+      "actor": "CaelumMandinga",
+      "cls": "CaelumShotgunAmmo",
+      "amount": 20,
+      "position": [
+        -4320,
+        -960,
         0
       ]
     },
@@ -67706,6 +67748,18 @@
       ]
     },
     {
+      "tid": 47054,
+      "zone": 2,
+      "actor": "CaelumMandinga",
+      "cls": "CaelumShotgunAmmo",
+      "amount": 20,
+      "position": [
+        3168,
+        -960,
+        0
+      ]
+    },
+    {
       "tid": 48108,
       "zone": 2,
       "actor": "CaelumGiantRat",
@@ -67726,6 +67780,18 @@
       "position": [
         3168,
         -704,
+        0
+      ]
+    },
+    {
+      "tid": 47055,
+      "zone": 2,
+      "actor": "CaelumMandinga",
+      "cls": "CaelumShotgunAmmo",
+      "amount": 20,
+      "position": [
+        3936,
+        -960,
         0
       ]
     },
@@ -68374,6 +68440,18 @@
       "position": [
         -576,
         3040,
+        0
+      ]
+    },
+    {
+      "tid": 47078,
+      "zone": 3,
+      "actor": "CaelumMandinga",
+      "cls": "CaelumShotgunAmmo",
+      "amount": 20,
+      "position": [
+        192,
+        2784,
         0
       ]
     },
@@ -77489,6 +77567,7 @@
     "arrows": 240,
     "bolts": 120,
     "bullets": 120,
+    "shotgun_cartridges": 120,
     "traps": 45
   },
   "geometry": {

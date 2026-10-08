@@ -755,7 +755,7 @@ class CaelumEconomyRules : Object
 
     static double GetAmmunitionUnitBaseValue(int kind)
     {
-        if(kind==CaelumConstants.AMMUNITION_CARBINE)
+        if(kind==CaelumConstants.AMMUNITION_CARBINE || kind==CaelumConstants.AMMUNITION_SHOTGUN)
             return GetAmmunitionUnitBaseValue(CaelumConstants.AMMUNITION_ARROW)*CaelumConstants.ECONOMY_CARTRIDGE_ARROW_MULTIPLIER;
         if(kind!=CaelumConstants.AMMUNITION_ARROW && kind!=CaelumConstants.AMMUNITION_BOLT)return 0;
         int recipe=kind==CaelumConstants.AMMUNITION_ARROW ? CaelumConstants.CRAFTING_ARROW_RECIPE : CaelumConstants.CRAFTING_BOLT_RECIPE;

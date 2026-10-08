@@ -46,6 +46,8 @@ class CaelumWorldSpriteRegistry : Actor
         CBHV A 1;
         CBLT A 1;
         CCAA A 1;
+        CSAM A 1;
+        CSGN A 1;
         CARR A 1;
         CBOL A 1;
         CKEY A 1;
@@ -112,6 +114,7 @@ class CaelumWorldSpriteRegistry : Actor
         CPIK A 1;
         CAGN ABCDEF 1;
         CAGC ABCD 1;
+        SHGW ABCDEF 1;
         Stop;
     }
 }
@@ -139,6 +142,7 @@ class CaelumEquipmentItem : Inventory
     int EquipmentSize;
     int Durability;
     int WeaponDurabilityRevision;
+    int ShotgunRevision;
     // La humedad sigue a esta pieza al equiparla, guardarla o soltarla.
     double ThermalWaterKg;
 
@@ -146,11 +150,12 @@ class CaelumEquipmentItem : Inventory
     {
         Super.PostBeginPlay();
         WeaponDurabilityRevision = CaelumAttackRules.DURABILITY_REVISION;
+        ShotgunRevision=CaelumShotgunRules.REVISION;
     }
 
     void MigrateWeaponDurability(int revision = 1)
     {
-        if (WeaponDurabilityRevision == revision) return;
+        if (WeaponDurabilityRevision == revision){MigrateShotgun();return;}
         if (PreviewEquipmentKind() == CaelumConstants.EQUIPMENT_KIND_WEAPON)
         {
             Durability = revision == 1 ? Durability * CaelumAttackRules.DURABILITY_SCALE
@@ -160,6 +165,24 @@ class CaelumEquipmentItem : Inventory
                     : (args[3]-1)/CaelumAttackRules.DURABILITY_SCALE);
         }
         WeaponDurabilityRevision = revision;
+        MigrateShotgun();
+    }
+
+    void MigrateShotgun()
+    {
+        if(ShotgunRevision>=CaelumShotgunRules.REVISION)return;
+        if(PreviewEquipmentKind()==CaelumConstants.EQUIPMENT_KIND_WEAPON
+            && PreviewItemType()==CaelumConstants.WEAPON_TYPE_SHOTGUN)
+        {
+            Durability=CaelumShotgunRules.MigrateDurability(Durability);
+            if(!HasAcquiredIdentity() && args[3]>0)args[3]=1+CaelumShotgunRules.MigrateDurability(args[3]-1);
+            if(HasAcquiredIdentity())
+            {
+                let model=new("CaelumWeaponModel");
+                UnitWeight=model.GetWeightFor(ItemType,Tier,EquipmentSize);
+            }
+        }
+        ShotgunRevision=CaelumShotgunRules.REVISION;
     }
 
     void TransferProjectileWearIdentity(CaelumEquipmentItem copy)
@@ -411,6 +434,7 @@ class CaelumEquipmentItem : Inventory
             copy.EquipmentSize = EquipmentSize;
             copy.Durability = Durability;
             copy.WeaponDurabilityRevision = WeaponDurabilityRevision;
+            copy.ShotgunRevision=ShotgunRevision;
             copy.ThermalWaterKg = ThermalWaterKg;
             copy.EssenceType = EssenceType;
             copy.UnitWeight = UnitWeight;
@@ -442,6 +466,7 @@ class CaelumEquipmentItem : Inventory
             copy.EquipmentSize = EquipmentSize;
             copy.Durability = Durability;
             copy.WeaponDurabilityRevision = WeaponDurabilityRevision;
+            copy.ShotgunRevision=ShotgunRevision;
             copy.ThermalWaterKg = ThermalWaterKg;
             copy.EssenceType = EssenceType;
             copy.UnitWeight = UnitWeight;
@@ -629,7 +654,7 @@ class CaelumWeaponPickup : CaelumEquipmentItem
             case CaelumConstants.WEAPON_TYPE_WAR_AXE: visual = "CWAX"; break;
             case CaelumConstants.WEAPON_TYPE_HALBERD: visual = "CHAL"; break;
             case CaelumConstants.WEAPON_TYPE_GIANT_GAUNTLETS: visual = "CGAU"; break;
-            case CaelumConstants.WEAPON_TYPE_STANDARD_BOW: visual = "CBOW"; break;
+            case CaelumConstants.WEAPON_TYPE_SHOTGUN: visual = "CSGN"; break;
             case CaelumConstants.WEAPON_TYPE_LONGBOW: visual = "CLBW"; break;
             case CaelumConstants.WEAPON_TYPE_CROSSBOW: visual = "CCBW"; break;
             case CaelumConstants.WEAPON_TYPE_BELL: visual = "CBEL"; break;
@@ -804,9 +829,10 @@ class CaelumCarbineAmmo : Ammo
         String visual = "CCAA";
         int ammoType = GetAmmoType();
         if(ammoType==CaelumConstants.AMMUNITION_CARBINE)Scale=(0.10,0.10);
-        if (ammoType == CaelumConstants.AMMUNITION_ARROW) visual = "CARR";
+        if(ammoType==CaelumConstants.AMMUNITION_SHOTGUN)visual="CSAM";
+        else if (ammoType == CaelumConstants.AMMUNITION_ARROW) visual = "CARR";
         else if (ammoType == CaelumConstants.AMMUNITION_BOLT) visual = "CBOL";
-        else if (ammoType >= CaelumConstants.AMMUNITION_JAVELIN_TIER_ONE)
+        else if (ammoType >= CaelumConstants.AMMUNITION_JAVELIN_TIER_ONE && ammoType<=CaelumConstants.AMMUNITION_JAVELIN_TIER_THREE)
             visual = "CJAV";
         sprite = GetSpriteIndex(visual);
         frame = 0;

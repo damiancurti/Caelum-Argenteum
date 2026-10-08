@@ -1,6 +1,37 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **5.1.6** — 2026-10-08.
+Documentation version: **5.1.7** — 2026-10-08.
+
+## 5.1.7 - Shortbow becomes a modular double-barrel shotgun (#136, 2026-10-08)
+
+After #143 / PR #145 merged as abd4f578, the author changes #136's target from
+longbow to shortbow and approves: two cartridges, twelve D/10 pellets, half
+carbine range, matching carbine firing/reload costs/time, mass/condition/critical
+and recipe quantities. Final spread is the existing Maximum 13–130° category,
+superseding an intermediate double-spread approval. Shotgun bypass is 60/70/80%,
+carbine 70/80/90%, cannon 100%, affecting equipped armor only. Ammo is independent,
+same carbine mass/price, 100 per armory and six eligible MAP02 drops of 20.
+
+Native evidence confirms conserved rounding, multiple-target and partial hits,
+two chambers, independent native ammunition pickup, reload interruption, Air
+gating, equipment changes, equipped-only penetration and actual cannon contact
+solvers. Old-save migration preserves items/Box/condition/recipes/arrows; current
+save/hub and original-checkpoint rollback pass. Six actual MAP02 deaths release
+exactly 120 cartridges without duplicate drops. No mass performance test is claimed.
+
+The author requests reusable hands after asking about the first-person animation.
+Combined draft sprites are replaced by separate complete weapon/foreground-hand
+layers for all poses and tiers. Native visual captures cover aim, recoil, open,
+single/partial/full loading and world directions. Author appearance acceptance
+is still outstanding; CA136-01 is added and CA143-01 is carried forward unchanged.
+
+Rejected setup runs exposed Ammo parent-class stacking, a case-insensitive local
+name shadowing PELLETS, a state-pointer lookup that hid a reload pose, unstamped
+merchant equipment revisions and hub-fixture references to the departed player.
+Final fixes use distinct inventory acquisition, explicit state labels, constructor
+revision stamps and stable ItemIds in the observer. These failures are not passing
+evidence. Full bounds, successful run labels and final hashes: validation_517.
+Commit/push is authorized; #136 integration and closure await the author.
 
 ## 5.1.6 - Soldier crouched carbine aim (#143, 2026-10-08)
 

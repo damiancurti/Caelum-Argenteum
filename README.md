@@ -6,8 +6,19 @@ An independent dark fantasy FPS-RPG inspired by nineteenth-century Argentina.
 Author and game designer: **Damian Curti**. Development target: **GZDoom 4.14.2**
 on Windows 11. The final game is intended to be independent of Doom assets.
 
-**Current release: 5.1.6.** Obtain and update the complete repository, validate
+**Current release: 5.1.7.** Obtain and update the complete repository, validate
 it, then rebuild with `run_dev.bat` as described below.
+
+**5.1.7 / [#136](https://github.com/damiancurti/Caelum-Argenteum/issues/136):**
+The shortbow becomes a two-cartridge, twelve-pellet shotgun; the longbow remains.
+It shares carbine costs, reload, crafting and Maximum spread, with half its range.
+Firearms bypass the approved portion of equipped armor, preserving innate defense
+and Toughness. Independent cartridges are stocked in armories and six MAP02 drops.
+Original weapon and hand sprites are separate reusable first-person layers.
+Migration, save/hub/rollback and focused native evidence are in
+[validation_517](assets/validation_517/RESULTS.md). Commit/push is requested;
+#136 remains open for review. [CA136-01 and CA143-01](pending_test.txt) await
+author appearance/gameplay confirmation. #143/PR #145 merged as `abd4f578`.
 
 **5.1.6 / [#143](https://github.com/damiancurti/Caelum-Argenteum/issues/143):**
 Stationary soldiers now crouch and aim before firing their carbines. Physical

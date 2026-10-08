@@ -1,6 +1,22 @@
 # Caelum Argenteum — Project, status and roadmap
 
-Documentation version: **5.1.6** — 2026-10-08.
+Documentation version: **5.1.7** — 2026-10-08.
+
+## 5.1.7 - Shortbow replacement and firearm armor bypass (#136)
+
+The author's final correction replaces the shortbow with a two-cartridge,
+12-pellet shotgun and preserves the longbow/crossbow. Approved carbine-derived
+costs, recipe, condition, weight, spread and half range are integrated throughout
+equipment, tutorial choices, shops and localization. Player/NPC equipped-armor
+bypass preserves innate defense and Toughness. Six eligible MAP02 enemies add
+120 independent cartridges without moving prior supplies or changing geometry.
+
+Original first-person weapon/hand layers are independent, including reload;
+world, inventory and pickup artwork accompanies them. Versioned migration,
+save/hub/rollback and focused native checks are recorded in validation_517.
+Delivery is commit/push and a linked PR, with no #136 merge/closure authorization
+yet. CA136-01 and the carried CA143-01 remain author visual/gameplay checks.
+#143 is merged through PR #145 (abd4f578) and closed; merge is not manual acceptance.
 
 ## 5.1.6 - Crouched and aimed soldiers (#143)
 

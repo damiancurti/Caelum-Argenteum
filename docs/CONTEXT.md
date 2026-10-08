@@ -1,11 +1,14 @@
 # CONTEXT.md — Caelum Argenteum
 
-Documentation version: **5.1.6** — 2026-10-08.
+Documentation version: **5.1.7** — 2026-10-08.
 
-**5.1.6/#143:** crouched aimed soldiers; evidence: validation_516.
-Integration authorized after verification; CA143-01 awaits author review.
-#135 accepted/closed, PR #144 merged 5e550484. #133 checks accepted.
-#140 merged 5f9202ad.
+**5.1.7/#136:** shortbow -> two-cartridge shotgun; 12 D/10 pellets,
+equipped-only bypass, independent ammo, modular hands/weapon sprites.
+Evidence: validation_517; merge pending.
+CA136-01/CA143-01 await author checks. #143/PR145 merged abd4f578.
+
+Soldier evidence: validation_516. #135/PR144 accepted/merged (5e550484).
+#133 checks accepted. #140 merged 5f9202ad.
 **#132 accepted, closed; PR #139 merged b0020109.**
 
 **5.1.2/#132:** opt-in MAP06 groups: 100/350 tics, 2,000 alive, 6,000 total.

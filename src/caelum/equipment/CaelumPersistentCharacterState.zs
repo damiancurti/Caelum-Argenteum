@@ -292,16 +292,18 @@ class CaelumPersistentCharacterState : Inventory
     double StoredSleep;
 
     int WeaponDurabilityRevision;
+    int ShotgunRevision;
 
     override void PostBeginPlay()
     {
         Super.PostBeginPlay();
         WeaponDurabilityRevision = CaelumAttackRules.DURABILITY_REVISION;
+        ShotgunRevision=CaelumShotgunRules.REVISION;
     }
 
     void MigrateWeaponDurability(int revision = 1)
     {
-        if (WeaponDurabilityRevision == revision) return;
+        if (WeaponDurabilityRevision == revision){MigrateShotgun();return;}
         int scale = CaelumAttackRules.DURABILITY_SCALE;
         WeaponDurability = revision == 1 ? WeaponDurability * scale : WeaponDurability / scale;
         MainM00StarterDurability = revision == 1 ? MainM00StarterDurability * scale : MainM00StarterDurability / scale;
@@ -309,6 +311,31 @@ class CaelumPersistentCharacterState : Inventory
             SizedOwnedWeaponDurability[i] = revision == 1 ? SizedOwnedWeaponDurability[i] * scale
                 : SizedOwnedWeaponDurability[i] / scale;
         WeaponDurabilityRevision = revision;
+        MigrateShotgun();
+    }
+
+    void MigrateShotgun()
+    {
+        if(ShotgunRevision>=CaelumShotgunRules.REVISION)return;
+        if(WeaponType==CaelumConstants.WEAPON_TYPE_SHOTGUN)
+            WeaponDurability=CaelumShotgunRules.MigrateDurability(WeaponDurability);
+        for(int tier=1;tier<=3;tier++)for(int size=0;size<CaelumConstants.EQUIPMENT_SIZE_COUNT;size++)
+        {
+            int index=GetSizedWeaponOwnershipIndex(CaelumConstants.WEAPON_TYPE_SHOTGUN,tier,size);
+            SizedOwnedWeaponDurability[index]=CaelumShotgunRules.MigrateDurability(SizedOwnedWeaponDurability[index]);
+        }
+        if(MainM00StarterChosen && MainM00StarterOption==CaelumConstants.CATALOGUE_WEAPON_SHOTGUN)
+            MainM00StarterDurability=CaelumShotgunRules.MigrateDurability(MainM00StarterDurability);
+        // La receta conserva el índice del arco corto. Las flechas ya
+        // aprendidas permanecen, y se agregan sólo las nuevas dependencias.
+        if(KnownCraftingRecipe[CaelumConstants.CATALOGUE_WEAPON_SHOTGUN])
+        {
+            let materials=new("CaelumMainM00StarterMaterials");
+            materials.AddWeapon(CaelumConstants.CATALOGUE_WEAPON_SHOTGUN,CaelumConstants.EQUIPMENT_SIZE_M);
+            for(int i=0;i<CaelumConstants.CRAFTING_NETWORK_PLAYABLE_RECIPE_COUNT;i++)
+                if(materials.Recipes[i])KnownCraftingRecipe[i]=true;
+        }
+        ShotgunRevision=CaelumShotgunRules.REVISION;
     }
 
     Default

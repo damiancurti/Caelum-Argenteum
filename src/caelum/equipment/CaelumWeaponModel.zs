@@ -64,7 +64,7 @@ class CaelumWeaponModel : Object
             case CaelumConstants.WEAPON_TYPE_WAR_AXE: return CaelumConstants.WEAPON_WAR_AXE_TIER_ONE_WEIGHT;
             case CaelumConstants.WEAPON_TYPE_HALBERD: return CaelumConstants.WEAPON_HALBERD_TIER_ONE_WEIGHT;
             case CaelumConstants.WEAPON_TYPE_GIANT_GAUNTLETS: return CaelumConstants.WEAPON_GIANT_GAUNTLETS_TIER_ONE_WEIGHT;
-            case CaelumConstants.WEAPON_TYPE_STANDARD_BOW: return CaelumConstants.WEAPON_STANDARD_BOW_TIER_ONE_WEIGHT;
+            case CaelumConstants.WEAPON_TYPE_SHOTGUN: return CaelumConstants.WEAPON_SHOTGUN_TIER_ONE_WEIGHT;
             case CaelumConstants.WEAPON_TYPE_LONGBOW: return CaelumConstants.WEAPON_LONGBOW_TIER_ONE_WEIGHT;
             case CaelumConstants.WEAPON_TYPE_CROSSBOW: return CaelumConstants.WEAPON_CROSSBOW_TIER_ONE_WEIGHT;
             case CaelumConstants.WEAPON_TYPE_BELL: return CaelumConstants.WEAPON_BELL_TIER_ONE_WEIGHT;
@@ -108,7 +108,7 @@ class CaelumWeaponModel : Object
 
     bool IsRangedPhysicalType(int weaponType)
     {
-        return weaponType == CaelumConstants.WEAPON_TYPE_STANDARD_BOW
+        return weaponType == CaelumConstants.WEAPON_TYPE_SHOTGUN
             || weaponType == CaelumConstants.WEAPON_TYPE_LONGBOW
             || weaponType == CaelumConstants.WEAPON_TYPE_CROSSBOW
             || weaponType == CaelumConstants.WEAPON_TYPE_CARBINE;
@@ -142,7 +142,7 @@ class CaelumWeaponModel : Object
 
     int GetBaseDurabilityFor(int weaponType)
     {
-        if (weaponType == CaelumConstants.WEAPON_TYPE_CARBINE)
+        if (weaponType == CaelumConstants.WEAPON_TYPE_CARBINE || weaponType == CaelumConstants.WEAPON_TYPE_SHOTGUN)
         {
             return CaelumConstants.WEAPON_CARBINE_BASE_DURABILITY;
         }

@@ -1,6 +1,18 @@
 CAELUM ARGENTEUM — STORY AND MAP01
 
-Documentation version: **5.1.6** — 2026-10-08.
+Documentation version: **5.1.7** — 2026-10-08.
+
+## 5.1.7 - Shotgun tutorial and MAP02 supplies (#136)
+
+Palomo's existing shortbow choice (catalogue option 12) now grants the shotgun;
+Ronnie uses its carbine-equivalent components and recipe dependencies. The
+longbow retains arrow teaching, and existing arrow recipe knowledge is preserved.
+No dialogue story, coordinates or other equipment choice is reauthored.
+MAP02 adds shotgun cartridges only to previously unassigned Mandingas at TIDs
+47007, 47008, 47030, 47054, 47055 and 47078: 20 each, section counts 2/1/2/1.
+Existing enemy/key/supply assignments and the WAD geometry stay unchanged.
+Armories receive the author's 100-cartridge stock once. Rules: SYSTEMS #136;
+native death/persistence evidence: assets/validation_517.
 
 ## 5.1.6 - Soldier posture integration (#143)
 

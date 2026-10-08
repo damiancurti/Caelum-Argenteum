@@ -1,3 +1,23 @@
+CA136-01 | 5.1.7 | Issue #136 | Shotgun appearance and ordinary use
+Prerequisites: GZDoom 4.14.2 and the development IWAD at the documented runner
+paths; no other engine instance. Prepare the isolated inspection room:
+  python -X utf8 assets/validation_517/prepare.py
+  powershell -NoProfile -ExecutionPolicy Bypass -File assets/validation_517/run_native.ps1 -Label author-136-a -Package production.pk3 -Addon visual.pk3 -Map CA136 -Script manual.cfg -Interactive -Language es
+Use a fresh label for every launch; close normally. The fixture provides a
+shotgun and cartridges. Fire twice, aim, reload from empty, fire once and reload
+partially. Check two-handed grip, recoil, opening/loading/closing, no missing
+poses and coherent independent weapon/hand alignment. Set ca136_mode 2 or 3 for
+T2/T3; ca136_mode 5 demonstrates reloading an empty gun with only one cartridge,
+and ca136_mode 6 demonstrates a partial reload. Wait for each reload to finish.
+For the world gallery: ca136_mode 1; r_drawplayersprites false; set ca136_view
+0 through 47 (six poses, eight directions). Restore r_drawplayersprites true.
+Check inventory/Box, independent cartridges, equipment changes and save/reload.
+In normal play verify Palomo's former shortbow option, armory cartridge stock
+and MAP02 cartridge pickups. Longbow/crossbow must retain their own ammunition.
+Expected: coherent T1/T2/T3 shotgun, two-shot capacity, separate reusable hands,
+one/two-cartridge reloads matching inventory, no ammunition interchange or crash.
+Native mechanics and migration have separate evidence; this is author acceptance.
+
 CA143-01 | 5.1.6 | Issue #143 | Crouched carbine appearance and ordinary combat
 Prerequisites: GZDoom 4.14.2 and the development IWAD at the runner's documented
 paths; no other engine instance. Prepare and open the isolated inspection room:

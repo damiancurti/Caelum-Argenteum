@@ -546,10 +546,17 @@ class CaelumInventoryService : Object play
         {
             return user.FindInventory("CaelumBoltAmmo");
         }
+        if(ammunitionType==CaelumConstants.AMMUNITION_SHOTGUN)return user.FindInventory("CaelumShotgunAmmo");
         return user.FindInventory("CaelumCarbineAmmo");
     }
 
     static bool AcquireJavelinAmmunition(CaelumPlayer user, int ammunitionType, int incomingAmount)
+    {
+        return AcquireDistinctAmmunition(user,ammunitionType,incomingAmount);
+    }
+
+    // Misma transferencia aceptada para pilas que no comparten el Ammo nativo.
+    static bool AcquireDistinctAmmunition(CaelumPlayer user, int ammunitionType, int incomingAmount)
     {
         if (!CaelumPlayerAuthority.CanMutate(user)) return false;
         if (incomingAmount <= 0 || user.DerivedStats == null) { return false; }
@@ -1479,6 +1486,8 @@ class CaelumInventoryService : Object play
                     item.Durability = persistentState.GetOwnedWeaponDurability(
                         weaponType, tier, equipmentSize
                     );
+                    item.WeaponDurabilityRevision=persistentState.WeaponDurabilityRevision;
+                    item.ShotgunRevision=persistentState.ShotgunRevision;
                     item.EssenceType = persistentState.GetWeaponEssenceType(
                         weaponType, tier, equipmentSize
                     );
@@ -2454,6 +2463,7 @@ class CaelumInventoryService : Object play
             0,
             CaelumConstants.ESSENCE_TYPE_COUNT - 1
         );
+        if(user.EquipmentSelectionAmmunitionType!=CaelumConstants.AMMUNITION_SHOTGUN)
         user.EquipmentSelectionAmmunitionType = Clamp(
             user.EquipmentSelectionAmmunitionType,
             0,
@@ -4002,6 +4012,7 @@ class CaelumInventoryService : Object play
         );
         // La pieza nace con durabilidad actual; no debe migrarse como un save antiguo.
         result.WeaponDurabilityRevision = CaelumAttackRules.DURABILITY_REVISION;
+        result.ShotgunRevision = CaelumShotgunRules.REVISION;
         result.Equipped = false;
         result.InMagicBox = !CaelumMainM00RonnieTrial.CanUsePersonalCraftingOutput(user);
         result.PickupDataInitialized = true;
@@ -4088,6 +4099,8 @@ class CaelumInventoryService : Object play
     {
         switch (ammunitionType)
         {
+            case CaelumConstants.AMMUNITION_SHOTGUN:
+                return 'CaelumShotgunAmmo';
             case CaelumConstants.AMMUNITION_ARROW:
                 return 'CaelumArrowAmmo';
             case CaelumConstants.AMMUNITION_BOLT:
@@ -5023,7 +5036,8 @@ class CaelumInventoryService : Object play
             if (pickup != null)
             {
                 bool isJavelin = user.EquipmentSelectionAmmunitionType
-                    >= CaelumConstants.AMMUNITION_JAVELIN_TIER_ONE;
+                    >= CaelumConstants.AMMUNITION_JAVELIN_TIER_ONE
+                    && user.EquipmentSelectionAmmunitionType<=CaelumConstants.AMMUNITION_JAVELIN_TIER_THREE;
                 Inventory(pickup).Amount = isJavelin ? 5 : 100;
             }
         }
@@ -6305,6 +6319,14 @@ class CaelumInventoryService : Object play
     {
         if (!CaelumPlayerAuthority.CanMutate(user)) return;
         if (user.WeaponModel != null) user.WeaponModel.MigrateDurability(revision);
+        if(user.ShotgunRevision<CaelumShotgunRules.REVISION)
+        {
+            if(user.WeaponModel!=null && user.WeaponModel.WeaponType==CaelumConstants.WEAPON_TYPE_SHOTGUN)
+                user.WeaponModel.Durability=CaelumShotgunRules.MigrateDurability(user.WeaponModel.Durability);
+            user.StandardBowMagazine=0;user.ShotgunLoadedMask=0;
+            if(user.RangedReloadWeaponType==CaelumConstants.WEAPON_TYPE_SHOTGUN)user.CancelRangedReload();
+            user.ShotgunRevision=CaelumShotgunRules.REVISION;
+        }
         let persistent = user.GetPersistentCharacterState(false);
         if (persistent != null) persistent.MigrateWeaponDurability(revision);
         for (Inventory cursor=user.Inv; cursor!=null; cursor=cursor.Inv)

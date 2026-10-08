@@ -4,6 +4,26 @@ Status: integrated engineering register (issue #22, patch 4.36.1b).
 Prepared: 2026-09-23. Inherits the project's release after integration.
 Inspected baseline: `1dc390576fa330d37ff543526fc7e69a397fc28f` (PR #7).
 
+## CA-KP-060 - A distinct Ammo subclass can still merge into its parent
+
+Status/evidence: RESOLVED-VERIFIED, #136 / 5.1.7, 2026-10-08.
+Affected baseline: abd4f578 plus the initial shotgun prototype; GZDoom 4.14.2.
+
+Different class names and icons do not guarantee independent native ammunition.
+The first CaelumShotgunAmmo subclass of CaelumCarbineAmmo inherited native Ammo
+grouping: a shell pickup could increase the bullet stack. Direct AttachToOwner
+tests had concealed this because they skipped the real pickup path.
+
+Shotgun TryPickup now uses the same authoritative distinct-stack acquisition
+already used by javelins, and its HandlePickup refuses other concrete classes.
+The old javelin entry point remains an adapter to that shared service. Reject
+zero quantities and already-owned objects; preserve the normal carry check.
+Test CallTryPickup in both directions with existing shell and bullet stacks,
+then check quantities and classes independently. Final native checks in
+assets/validation_517 cover both directions and actual MAP02 death supplies.
+This is a targeted Ammo rule, not permission to replace ordinary Inventory
+stacking. Author appearance acceptance remains separate.
+
 ## CA-KP-059 - Check sprite rotation order for every animation family
 
 Status/evidence: RESOLVED-VERIFIED, #135 / 5.1.5, 2026-10-08.
@@ -713,6 +733,14 @@ Regression: wait after granting/crafting, inspect both model and owned item,
 then hit a resource and save/reload. Both begin at the same maximum and decrease
 together. Evidence: assets/validation_43717, including the reproduced mismatch
 and corrected native impact. Author visual/audio acceptance remains separate.
+
+Rechecked #136 / 5.1.7: city merchant constructors also attached freshly
+computed durability before deferred PostBeginPlay stamped it. Stamp both
+WeaponDurabilityRevision and ShotgunRevision before attachment, including
+physical crafting. The final native integration asserts matching model/item
+condition after ticks. Legacy-save fixtures must stamp their explicitly
+constructed *old-format* values correctly too; fixture setup errors are not
+evidence that the production migration changed a correctly formed old save.
 
 ## CA-KP-035 - Center visible font ink rather than trailing advance
 

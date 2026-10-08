@@ -1,6 +1,20 @@
 # TASKS.md — Active tasks
 
-Documentation version: **5.1.6** — 2026-10-08.
+Documentation version: **5.1.7** — 2026-10-08.
+
+## Issue #136 - Shortbow shotgun and armor bypass (5.1.7)
+
+Implemented contract: two barrels/cartridges, twelve D/10 pellets, half range,
+Maximum spread, carbine-equivalent costs/time/recipe/mass/condition/critical,
+independent ammo and eligible MAP02/armory supplies. Equipped-only penetration
+shares the player/NPC path; revision-1 migration preserves ownership and condition.
+First-person hands and weapons are independent reusable layers, with original
+world/icon/pickup art. Focused mechanics, actual inputs/deaths, migration/save/hub
+and checkpoint rollback have native evidence in assets/validation_517.
+
+Delivery: commit/push and linked PR. Next: author CA136-01 appearance/gameplay
+review and carried CA143-01. #136 has no merge/close authorization. A future hand
+appearance selector may reuse these layers; no new race/hand balance is invented.
 
 ## Issue #143 - Crouched aimed soldiers (5.1.6)
 

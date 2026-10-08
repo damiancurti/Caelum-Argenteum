@@ -350,7 +350,7 @@ class CaelumFirstPersonLayers : Object play
     {
         if (kind == CaelumConstants.WEAPON_TYPE_PICKAXE) return (216,160);
         bool ranged=kind==2 || kind==14 || kind==15 || kind==16;
-        bool bow=kind==14 || kind==15;
+        bool bow=kind==15;
         bool large=kind==10 || kind==11 || kind==12;
         bool rightLeaning=kind==4 || kind==5 || kind==7 || kind==11 || kind==12;
         return bow?(141,160):ranged?(165,210):kind==10?(235,182):kind==12?(222,180)
@@ -627,9 +627,14 @@ class CaelumFirstPersonLayers : Object play
     static void Draw(CaelumPlayer user,int kind,int tier,int phase,
         double dx,double dy,double rotation,double chainTurn=0)
     {
+        if(kind==CaelumConstants.WEAPON_TYPE_SHOTGUN)
+        {
+            CaelumShotgunView.Draw(user,tier,dx,dy,rotation);
+            return;
+        }
         // Sólo crece el arma: las manos conservan las proporciones de la daga.
         bool ranged=kind==2 || kind==14 || kind==15 || kind==16;
-        bool bow=kind==14 || kind==15;
+        bool bow=kind==15;
         if(!bow){user.A_ClearOverlays(kind==8?47:46,47);user.A_ClearOverlays(53,53);}
         bool large=kind==10 || kind==11 || kind==12;
         bool rightLeaning=kind==4 || kind==5 || kind==7 || kind==11 || kind==12;
