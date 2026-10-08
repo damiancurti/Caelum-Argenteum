@@ -547,6 +547,10 @@ class CaelumConstants : Object
 
     // Valores autorizados por unidad de consumible.
     const ECONOMY_FOOD_RATION_VALUE = 4;
+    const ECONOMY_RECOVERY_RATION_MULTIPLIER = 3;
+    const AMMUNITION_SHAFT_SHARE = 0.7;
+    const AMMUNITION_POINT_SHARE = 0.3;
+    const ECONOMY_CARTRIDGE_ARROW_MULTIPLIER = 4;
     const ECONOMY_WATER_RATION_VALUE = 6;
 
     // La valoración de receta usa la salida real al 100 % de eficiencia.
