@@ -1,6 +1,19 @@
 // Datos ya aceptados para el jugador, compartidos ahora con actores armados.
 class CaelumRangedRules : Object
 {
+    // Mínimo nativo de crouch del jugador; no añade otro perfil de altura.
+    const CROUCH_HEIGHT_FACTOR=0.5;
+    // Altura del cañón en el atlas CAGC, medida desde el pivote de apoyo.
+    const CROUCH_MUZZLE_PIXELS=116.0/1.909090909;
+
+    static clearscope double LaunchHeight(Actor owner,int type)
+    {
+        let user=CaelumPlayer(owner);let soldier=CaelumPortDefender(owner);
+        bool crouched=user!=null ? user.player!=null && user.player.crouchfactor<0.75
+            : soldier!=null && soldier.Carbine!=null && soldier.Carbine.Crouched;
+        return type==CaelumConstants.WEAPON_TYPE_CARBINE && crouched
+            ? owner.Scale.Y*CROUCH_MUZZLE_PIXELS : owner.Height*0.65;
+    }
     static int MagazineCapacity(int type)
     {
         if(type==CaelumConstants.WEAPON_TYPE_CARBINE)return 10;
@@ -23,7 +36,7 @@ class CaelumRangedRules : Object
         Name type="CaelumCarbineProjectile";
         if(weapon.WeaponType==CaelumConstants.WEAPON_TYPE_STANDARD_BOW || weapon.WeaponType==CaelumConstants.WEAPON_TYPE_LONGBOW)type="CaelumArrowProjectile";
         else if(weapon.WeaponType==CaelumConstants.WEAPON_TYPE_CROSSBOW)type="CaelumBoltProjectile";
-        vector3 origin=owner.Pos+(Cos(yaw)*32,Sin(yaw)*32,owner.Height*0.65);
+        vector3 origin=owner.Pos+(Cos(yaw)*32,Sin(yaw)*32,LaunchHeight(owner,weapon.WeaponType));
         let projectile=CaelumCarbineProjectile(Actor.Spawn(type,origin,NO_REPLACE));
         if(projectile==null)return null;
         projectile.Target=owner;projectile.Angle=yaw;projectile.Pitch=pitch;
@@ -42,15 +55,18 @@ class CaelumCarbineWorld : Object play
 {
     static void Restore(Actor owner)
     {
-        if(owner.sprite==owner.GetSpriteIndex("CAGN") && owner.CurState!=null)
+        if((owner.sprite==owner.GetSpriteIndex("CAGN") || owner.sprite==owner.GetSpriteIndex("CAGC")) && owner.CurState!=null)
         {owner.sprite=owner.CurState.sprite;owner.frame=owner.CurState.Frame;}
     }
     static void Apply(Actor owner,bool held,bool moving,bool firing,double reload,double total)
     {
-        if(!held || owner.health<=0 || owner.CurState==null)return;
+        if(owner.CurState==null)return;
+        if(!held || owner.health<=0){Restore(owner);return;}
         bool pose=owner.InStateSequence(owner.CurState,owner.SpawnState)
             || owner.InStateSequence(owner.CurState,owner.SeeState);
         let user=CaelumPlayer(owner);
+        let soldier=CaelumPortDefender(owner);
+        bool crouched=soldier!=null && soldier.Carbine!=null && soldier.Carbine.Crouched;
         if(user!=null)
         {
             if(CaelumRestState.IsActive(user) || user.ForcedSleepTics>0)return;
@@ -59,13 +75,15 @@ class CaelumCarbineWorld : Object play
                 || user.InStateSequence(user.CurState,user.FindState("CrouchIdle"))
                 || user.InStateSequence(user.CurState,user.FindState("CrouchWalk"))
                 || user.InStateSequence(user.CurState,user.MissileState);
-            // Esta pose se comprime con la altura nativa al agacharse.
-            if(pose)user.crouchsprite=0;
+            // La pose de puntería ya está agachada. Al desplazarse conserva
+            // la marcha anterior comprimida, sin inventar otro ciclo de pasos.
+            crouched=!moving && user.player!=null && user.player.crouchfactor<0.75;
+            if(pose)user.crouchsprite=crouched ? owner.GetSpriteIndex("CAGC") : 0;
         }
         if(!pose)return;
-        owner.sprite=owner.GetSpriteIndex("CAGN");
-        owner.frame=reload>0 ? (reload>total*0.5 ? 4 : 5)
-            : firing ? 3 : moving ? 1+(level.time/4)%2 : 0;
+        owner.sprite=owner.GetSpriteIndex(crouched ? "CAGC" : "CAGN");
+        owner.frame=crouched ? (reload>0 ? (reload>total*0.5 ? 2 : 3) : firing ? 1 : 0)
+            : reload>0 ? (reload>total*0.5 ? 4 : 5) : firing ? 3 : moving ? 1+(level.time/4)%2 : 0;
     }
 }
 
@@ -76,31 +94,53 @@ class CaelumCityCarbine : Object play
     int Revision,Magazine,NextShotTic,ShotCount,ReloadCount;
     double ReloadRemaining,ReloadTotal;
     bool Held;
+    bool Crouched,Aiming;
+    double StandingHeight,LastAccuracyPercent,LastCriticalChance,LastMinimumSpread,LastMaximumSpread;
+    int LastAimTic;
+    CaelumPortDefender Holder;
     vector3 PreviousPosition;
     CaelumWeaponModel Weapon;
 
     void Initialize(CaelumPortDefender owner)
     {
-        if(Revision>=1)return;
+        Holder=owner;
+        if(!Crouched)StandingHeight=owner.Height;
+        if(Revision>=2)return;
+        if(Revision>=1){Revision=2;return;}
         Weapon=new("CaelumWeaponModel");Weapon.InitializeDefaults();
         Weapon.WeaponType=CaelumConstants.WEAPON_TYPE_CARBINE;Weapon.Tier=CaelumPortData.EQUIPMENT_TIER;
         Weapon.Durability=Weapon.GetMaximumDurability();Weapon.Equipped=true;
         Magazine=CaelumRangedRules.MagazineCapacity(Weapon.WeaponType);
-        Held=true;Revision=1;PreviousPosition=owner.Pos;
+        Held=true;Revision=2;PreviousPosition=owner.Pos;
+    }
+    bool SetCrouched(CaelumPortDefender owner,bool wanted)
+    {
+        Initialize(owner);
+        if(!wanted)Aiming=false;
+        if(Crouched==wanted)return true;
+        // A_SetSize(testpos=true) conserva la caja anterior si no cabe: no
+        // atravesar techos, cuerpos ni plataformas al intentar incorporarse.
+        if(!owner.A_SetSize(-1,StandingHeight*(wanted ? CaelumRangedRules.CROUCH_HEIGHT_FACTOR : 1),true))return false;
+        Crouched=wanted;return true;
     }
     void Select(bool carbine)
     {
         Held=carbine && Weapon!=null && Weapon.Durability>0;
-        if(!Held){ReloadRemaining=0;ReloadTotal=0;}
+        if(!Held)
+        {ReloadRemaining=0;ReloadTotal=0;Aiming=false;if(Holder!=null)SetCrouched(Holder,false);}
         if(Weapon!=null)Weapon.Equipped=Held;
     }
     void Tick(CaelumPortDefender owner)
     {
+        Initialize(owner);
         bool moving=(owner.Pos.XY-PreviousPosition.XY).Length()>0.01;
         bool interrupted=owner.health<=0 || owner.ForcedSleepTics>0 || owner.CombatLucidityPhysicalStunRemaining>0
             || owner.InStateSequence(owner.CurState,owner.FindState("Pain")) || !Held;
         if(interrupted)
         {ReloadRemaining=0;ReloadTotal=0;}
+        bool keep=Crouched && !interrupted && (!moving || LastAimTic==level.time)
+            && owner.RecoveryPhase==0 && InRange(owner,owner.target);
+        if(!keep)SetCrouched(owner,false);
         if(ReloadRemaining>0)
         {
             double progress=moving ? CaelumConstants.RELOAD_MOVEMENT_AND_PROGRESS_MULTIPLIER : 1;
@@ -117,7 +157,7 @@ class CaelumCityCarbine : Object play
     bool InRange(CaelumPortDefender owner,Actor victim)
     {
         if(Weapon==null || Weapon.Durability<=0 || victim==null || victim.health<=0 || !victim.bShootable || victim.bFriendly)return false;
-        vector3 origin=owner.Pos+(0,0,owner.Height*0.65);
+        vector3 origin=owner.Pos+(0,0,CaelumRangedRules.LaunchHeight(owner,Weapon.WeaponType));
         return (victim.Pos+(0,0,victim.Height/2)-origin).Length()<=Weapon.GetRangedRangeFor(Weapon.WeaponType) && owner.CheckSight(victim);
     }
     bool Attack(CaelumPortDefender owner,Actor victim)
@@ -125,7 +165,11 @@ class CaelumCityCarbine : Object play
         if(owner==null || owner.health<=0 || owner.ForcedSleepTics>0 || owner.CombatLucidityPhysicalStunRemaining>0
             || owner.InStateSequence(owner.CurState,owner.FindState("Pain")))return false;
         if(!InRange(owner,victim))return false;
-        Select(true);owner.target=victim;owner.A_FaceTarget();owner.Vel.X=0;owner.Vel.Y=0;
+        Initialize(owner);Select(true);owner.target=victim;owner.A_FaceTarget();owner.Vel.X=0;owner.Vel.Y=0;
+        if(owner.RecoveryPhase!=0 || !SetCrouched(owner,true))return false;
+        // Volver a comprobar visibilidad desde la altura física ya agachada.
+        if(!InRange(owner,victim)){SetCrouched(owner,false);return false;}
+        Aiming=true;LastAimTic=level.time;
         if(ReloadRemaining>0 || level.time<NextShotTic)return true;
         if(Magazine<=0)
         {
@@ -139,16 +183,20 @@ class CaelumCityCarbine : Object play
         if(!owner.HasAttackResource()){owner.WaitForAttackResource();return true;}
         owner.UpdateCombatHealthEffects();owner.UpdateActorOffensiveStatistics();
         double accuracy=Max(1.0,owner.CombatPhysicalAccuracyPercent*owner.CombatLucidityAccuracyMultiplier
-            *(owner.ElementalStatus==null ? 1.0 : owner.ElementalStatus.GetAccuracyMultiplier()));
+            *(owner.ElementalStatus==null ? 1.0 : owner.ElementalStatus.GetAccuracyMultiplier())
+            *CaelumConstants.CROUCH_ACCURACY_MULTIPLIER*CaelumConstants.RANGED_AIM_ACCURACY_MULTIPLIER);
         double minimum=CaelumWeaponCatalogue.GetMinimumSpread(CaelumConstants.CATALOGUE_WEAPON_CARBINE)*100/accuracy;
         double maximum=CaelumWeaponCatalogue.GetMaximumSpread(CaelumConstants.CATALOGUE_WEAPON_CARBINE)*100/accuracy;
         double spread=minimum+(maximum-minimum)*Random[CaelumCarbineSpread](0,100000)/100000.0;
         double yaw=owner.Angle+Random[CaelumCarbineYaw](-100000,100000)/100000.0*spread;
-        vector3 aim=victim.Pos+(0,0,victim.Height/2)-(owner.Pos+(0,0,owner.Height*0.65));
+        vector3 aim=victim.Pos+(0,0,victim.Height/2)-(owner.Pos+(0,0,CaelumRangedRules.LaunchHeight(owner,Weapon.WeaponType)));
         double pitch=-VectorAngle(aim.XY.Length(),aim.Z)+Random[CaelumCarbinePitch](-100000,100000)/100000.0*spread;
-        double chance=Clamp(CaelumWeaponCatalogue.GetCriticalChancePercent(CaelumConstants.CATALOGUE_WEAPON_CARBINE)
+        double chance=Clamp((CaelumWeaponCatalogue.GetCriticalChancePercent(CaelumConstants.CATALOGUE_WEAPON_CARBINE)
             *CaelumRangedRules.TierCriticalMultiplier(Weapon.Tier)
-            +Max(0.0,owner.CombatPhysicalCriticalChancePercent-CaelumConstants.BASE_CRITICAL_CHANCE_PERCENT),0.0,100.0);
+            +Max(0.0,owner.CombatPhysicalCriticalChancePercent-CaelumConstants.BASE_CRITICAL_CHANCE_PERCENT))
+            *CaelumConstants.CROUCH_CRITICAL_CHANCE_MULTIPLIER,0.0,100.0);
+        LastAccuracyPercent=accuracy;LastCriticalChance=chance;
+        LastMinimumSpread=minimum;LastMaximumSpread=maximum;
         bool critical=Random[CaelumCarbineCritical](0,999999)/10000.0<chance;
         let projectile=CaelumRangedRules.Fire(owner,Weapon,Weapon.GetDamage()*owner.CombatHealthPerformanceMultiplier,critical,owner.CombatPhysicalPushMultiplier,yaw,pitch);
         if(projectile==null)return true;

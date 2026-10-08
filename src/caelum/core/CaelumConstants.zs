@@ -1174,6 +1174,7 @@ class CaelumConstants : Object
     const RUNNING_ACCURACY_MULTIPLIER = 0.25;
     const CROUCH_ACCURACY_MULTIPLIER = 2.0;
     const CROUCH_CRITICAL_CHANCE_MULTIPLIER = 2.0;
+    const RANGED_AIM_ACCURACY_MULTIPLIER = 2.0;
     // Agacharse ya modifica por separado altura visible y ruido corporal; no
     // duplica el atributo Sigilo antes de aplicar esos dos factores.
     const CROUCH_STEALTH_MULTIPLIER = 1.0;

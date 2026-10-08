@@ -1,6 +1,15 @@
 CAELUM ARGENTEUM — STORY AND MAP01
 
-Documentation version: **5.1.5** — 2026-10-08.
+Documentation version: **5.1.6** — 2026-10-08.
+
+## 5.1.6 - Soldier posture integration (#143)
+
+MAP01 narrative and all map geometry remain unchanged. Existing city infantry
+uses the shared crouched/aimed carbine service when firing; actor identity,
+calendar deployment, posts and target ownership remain intact. Standing uses
+native clearance. The new directional Domingo poses add no captain dialogue,
+quest identity or equipment supply to the soldiers. SYSTEMS defines the reused
+accuracy/critical factors and revision-2 save migration.
 
 ## 5.1.5 - Demon behavior integration (#135)
 

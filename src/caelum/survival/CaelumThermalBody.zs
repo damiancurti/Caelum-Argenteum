@@ -71,7 +71,7 @@ class CaelumThermalBody : Object play
         {
             thermal.BreathingAirRatio=npc.MaximumCombatAir>0 ? npc.CurrentCombatAir/npc.MaximumCombatAir : 1;
             thermal.BodyMassKg=Max(0.001,npc.Mass);
-            thermal.HeightMeters=npc.Height/CaelumJourneyRules.MAP_UNITS_PER_METER;
+            thermal.HeightMeters=npc.GetPhysiologicalHeight()/CaelumJourneyRules.MAP_UNITS_PER_METER;
             thermal.MovedMassKg=thermal.BodyMassKg+npc.GetAttackCarriedWeight();
             thermal.Toughness=npc.CombatToughness+npc.GetCombatArmorAttributeBonus(CaelumConstants.ATTRIBUTE_TOUGHNESS);
             thermal.AcclimationMultiplier=npc.CalculateActorType4Percent(Max(0,npc.CombatResilience

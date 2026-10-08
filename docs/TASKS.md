@@ -1,6 +1,22 @@
 # TASKS.md — Active tasks
 
-Documentation version: **5.1.5** — 2026-10-08.
+Documentation version: **5.1.6** — 2026-10-08.
+
+## Issue #143 - Crouched aimed soldiers (5.1.6)
+
+Implemented: native half-height posture/clearance; lowered shared muzzle;
+existing crouch and aim modifiers; interrupt/target/movement transitions;
+revision-2 carbine migration; invariant thermal body height; original 32-frame
+Domingo atlas and deterministic registration. Player stationary crouch uses
+it without double compression; walking remains the existing animation.
+
+Focused engine checks, ordinary soldier AI, player input, save/reload/hub and
+old-save migration/checkpoint rollback are recorded in validation_516. No mass
+siege retest is required for this patch. The author explicitly requests commit,
+push, and merge/closure if implementation and verification are complete.
+CA143-01 remains pending author visual/gameplay confirmation independently.
+Next: retain the accepted city deployment and high-density AI policy; any new
+movement or combat balance requires its own authored issue.
 
 ## Issue #135 - Demon breath and potions (5.1.5)
 
@@ -19,8 +35,8 @@ requested. The reported shutdown crash has a targeted teardown fix;
 only runs with explicit clean exit codes count as final clean-exit proof.
 Author confirmation, 2026-10-08: CA135-01/02 passed; PR #144 merge and #135
 closure authorized. No #135 author checks remain pending.
-Next authorized work: #143 crouched and aimed soldiers, original Domingo poses,
-focused native verification, commit/push and separate linked PR.
+PR #144 merged as 5e550484 and #135 closed on 2026-10-08. The separate #143
+implementation and delivery are recorded above.
 
 #140 is closed; PR #142 merged 5f9202ad. CA133-01/02/03 were accepted on 2026-10-08.
 

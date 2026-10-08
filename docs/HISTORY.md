@@ -1,6 +1,40 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **5.1.5** — 2026-10-08.
+Documentation version: **5.1.6** — 2026-10-08.
+
+## 5.1.6 - Soldier crouched carbine aim (#143, 2026-10-08)
+
+After accepting CA135-01/02 and the remaining CA133-01/02/03, the author requests
+continuation of #143, commit/push and merge/closure if complete. #135 closes
+through PR #144, merged as 5e550484. This instruction does not manually accept
+new #143 visual checks.
+
+City carbine revision 2 adds native half-height crouch, aimed shots, stored
+standing height and holder/posture persistence. The shared crouch x2 accuracy,
+x2 critical and ranged aim x2 accuracy factors apply once. Clearance guards
+standing; movement, melee, recovery, invalid targets and interruptions release
+aim. Biological height and thermal surface area remain invariant. Original
+Domingo CAGC A-D poses show aim, fire and reload in eight directions. Source
+artwork/provenance and deterministic native registration are retained unchanged.
+
+Initial renderer trials exposed the documented dynamic-sprite initialization
+hazard: CAGC had TEXTURES but no native state registration. Render-thread stack
+candidates resolved to HWDrawInfo::RenderBSP / RenderThings and sprite processing;
+no complete exception trace is claimed. Appending CAGC A-D to the registration
+actor resolves the observed freeze. Final checks explicitly require a valid
+sprite index. A short zoom input was issued before the player weapon was ready;
+the corrected fixture holds it through readiness and verifies actual aimed fire.
+Failed/interrupted setup runs do not count as passing evidence.
+
+Final native evidence: 23 mechanics checks, ordinary soldier combat, real player
+input, current posture save/hub, revision-1 migration with repeated initialization,
+new-save reload/hub and original-pair rollback. The default 80-kg, attribute-18
+soldier fires 50 shots, reloads four times and retains all 2168 HP in a bounded
+single-target control. It records 31 impacts and exposure +0.507586; this is not
+a mass-battle or indefinite-survival claim. All final native runs require clean
+exit 0. Exact source/package hashes, visual coverage and static gates are in
+assets/validation_516. CA143-01 remains outstanding author confirmation; the
+conditional integration authorization is separate from manual acceptance.
 
 ## 5.1.5 - Demon breath and finite potions (#135, 2026-10-08)
 

@@ -1,0 +1,13 @@
+{
+  "issue": 143,
+  "runs": 2,
+  "outputs_byte_identical": true,
+  "tested_runtime_registration_unchanged": true,
+  "outputs": {
+    "src/graphics/caelum/carbine_crouch.textures": "f3afa9937c4a643b084b6963050bd10b232727ddd234e353ced487681b9f3757",
+    "assets/source/art/carbine_crouch_516/REGISTRATION.json": "08eff010855425dd04afc0d6ea687da64658ce971f5413e1079f707894682bd4"
+  },
+  "original_atlas_sha256": "8e9d04b085d3367301daba8aa928ba71f4f7e898300974fed3f1463ad6521d5b",
+  "runtime_atlas_matches_original": true,
+  "reference_sha256": "6d703f2b8c3da2c114c25bc22e4296fe5eb1a0bef8816ef83cee603a4c7b5930"
+}

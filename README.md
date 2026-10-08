@@ -6,8 +6,19 @@ An independent dark fantasy FPS-RPG inspired by nineteenth-century Argentina.
 Author and game designer: **Damian Curti**. Development target: **GZDoom 4.14.2**
 on Windows 11. The final game is intended to be independent of Doom assets.
 
-**Current release: 5.1.5.** Obtain and update the complete repository, validate
+**Current release: 5.1.6.** Obtain and update the complete repository, validate
 it, then rebuild with `run_dev.bat` as described below.
+
+**5.1.6 / [#143](https://github.com/damiancurti/Caelum-Argenteum/issues/143):**
+Stationary soldiers now crouch and aim before firing their carbines. Physical
+height and muzzle follow the posture; the existing crouch and aim bonuses apply
+once. Original Domingo artwork covers aim, fire and reload in eight directions.
+Movement, melee, recovery and interruptions release the pose; standing requires
+clearance. The player's stationary crouched carbine uses the same artwork.
+Native mechanics, ordinary AI, player input and saved-game evidence are recorded
+in [validation_516](assets/validation_516/RESULTS.md). The author authorized
+commit/push and integration/closure once implementation and verification finish;
+[CA143-01](pending_test.txt) remains a separate author visual/gameplay check.
 
 **5.1.5 / [#135](https://github.com/damiancurti/Caelum-Argenteum/issues/135):**
 Mandingas and Zupay gain sustained racial fire breath, finite automatic potions
@@ -15,9 +26,9 @@ and weighted single-unit death loot. Both demons have dedicated exhalation
 animations; Zupay's reversed action directions are corrected. Nine potion
 variants share exact timed doses and distinct tier artwork. Native behavior, persistence, reported-crash
 regression and final gates are recorded in [evidence](assets/validation_515/RESULTS.md).
-The author accepted CA135-01/02 on 2026-10-08 and authorized
-[PR #144](https://github.com/damiancurti/Caelum-Argenteum/pull/144) integration
-and issue closure. Soldier crouched aiming continues separately in #143.
+The author accepted CA135-01/02 on 2026-10-08.
+[PR #144](https://github.com/damiancurti/Caelum-Argenteum/pull/144) merged as
+`5e550484`; #135 is closed. Soldier crouched aiming is the separate #143 patch.
 
 **#140 is closed; [PR #142](https://github.com/damiancurti/Caelum-Argenteum/pull/142)
 was merged as `5f9202ad` on 2026-10-08**, including the requested thermal label colors.

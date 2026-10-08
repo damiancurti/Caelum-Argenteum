@@ -14,6 +14,8 @@ class CaelumPortDefender : CaelumFolkloreCombatActor
     CaelumShieldModel Shield;
     CaelumWeaponModel Sword;
     CaelumCityCarbine Carbine;
+    override double GetPhysiologicalHeight()
+    { return Carbine!=null && Carbine.StandingHeight>0 ? Carbine.StandingHeight : Height; }
     int HomeRevision, HomeIdentity, DeploymentStep;
     bool DeploymentComplete;
     CaelumHingedDoorLeaf HomeDoor;
