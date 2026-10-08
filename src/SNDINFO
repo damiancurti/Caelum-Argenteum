@@ -186,3 +186,9 @@ caelum/gathering/chop = "sounds/caelum/gathering/chop.wav"
 caelum/gathering/stone = "sounds/caelum/gathering/stone.ogg"
 caelum/gathering/crystal = "sounds/caelum/gathering/crystal.ogg"
 caelum/gathering/metal = "sounds/caelum/gathering/metal.ogg"
+
+// #140: recordings supplied by the author, CC0; credits in licenses/breathing_514.txt.
+caelum/breathing/female = "sounds/caelum/breathing/female.wav"
+caelum/breathing/female_high = "sounds/caelum/breathing/female_high.wav"
+caelum/breathing/male = "sounds/caelum/breathing/male.wav"
+caelum/breathing/male_high = "sounds/caelum/breathing/male_high.wav"
