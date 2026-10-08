@@ -1,13 +1,13 @@
 # Caelum Argenteum — Current systems and rules
 
-Documentation version: **5.1.0** — 2026-10-07.
+Documentation version: **5.1.1** — 2026-10-07.
 
 ## Thermal exposure and energy transfer (#130)
 
 V5.1.0 implements the author's 2026-10-07 contract. These are provisional game
 coefficients, not a clinical body-temperature model. The signed personal value
 `E` measures accumulated **equivalent exposure degrees**; negative means cold.
-`CaelumThermalState` revision 1 belongs to the player's persistent character
+`CaelumThermalState` revision 2 belongs to the player's persistent character
 record, or to each supported NPC. Shared services under `caelum/survival` own
 the calculations; environment caches never own another character's exposure.
 
@@ -15,9 +15,17 @@ Humans and duendes have a 22 C comfort center; Beast Men and Caelith have 17 C.
 Furry bulls and giant rats share the 17 C category without another fur bonus,
 while retaining their own biological mass, size and attributes. Animal surface
 uses a collision-cylinder approximation, not a humanoid height formula.
-Mandingas and Zupay use 32 C. Acclimatization shifts the original center by up
-to +/-5 C, toward sustained local climate at 1 C per world day. It never also
-shifts stored E. Transient fire, drinks and magic are not acclimatization targets.
+Mandingas and Zupay use 32 C. In 5.1.1/#131, effective Resilience
+`A=max(0,Resilience)` multiplies both the base 1 C/world-day adaptation rate
+and the base +/-5 C displacement limit by Type 4:
+`M=1+2*A*(A+1)/10100`. At A=100 this is 300% of the base: 3 C/day and +/-15 C.
+Growth remains uncapped above 100, as for other Type-4 uses. Reaching either
+limit from original racial comfort takes five world days under a sufficiently
+distant sustained climate; traversing opposite limits takes ten. Nearby climates
+stop at their actual offset. If effective Resilience decreases below an acquired
+offset, adaptation returns gradually at the new rate, never by an instant clamp.
+Players and supported NPCs use current effective attributes including equipment.
+Acclimatization never also shifts stored E. Transient fire, drinks and magic are not acclimatization targets.
 Players, anchored residents, folklore combatants, bulls and giant rats are
 supported; unrelated actors without an approved physiology remain outside it.
 
@@ -168,7 +176,19 @@ acclimatization and damage fractions. Offscreen actors on a loaded map remain
 fully supported, with staggered one-second updates and actual elapsed time.
 
 Journey previews integrate minute-sized weather/activity steps on an isolated
-copy. Foot/caravan uses actual speed/load and the existing 16 hours walking /
+copy. In #131, each step samples both endpoint regions at the same advancing
+civil date/hour and seed, then linearly blends air temperature, humidity, wind
+speed, rain, regional means, ground temperature and cloud by distance travelled.
+Foot/caravan/cart distance stops during the eight-hour sleeping interval; ships
+continue sailing through passenger sleep. Climate still evolves with the clock
+while stopped. Apply vehicle shelter after blending, and feed the resulting
+climate to both exposure and Resilience-scaled acclimatization. Unknown destination
+regions fail explicitly. `CaelumWeatherRules.RegionForLocation` is the shared
+catalogue for unloaded destinations and default loaded-map weather; current
+shipped destinations are all Buenos Aires (region 1). A new regional destination
+must define its region there and keep its map marker consistent. Standalone map
+markers still define uncatalogued local climates. The route is an approved
+endpoint interpolation, not a claim to model intermediate geography. Foot/caravan uses actual speed/load and the existing 16 hours walking /
 8 hours sleeping cycle. Cart/ship passengers rest inside four walls and a roof,
 using the existing indoor microclimate, zero exterior wind/rain and no invented
 heating. Nearby parked vehicles do not confer this journey shelter. Reject any
@@ -178,7 +198,14 @@ without inventing real HP damage. Active drinks prevent instantaneous travel.
 
 ### Persistence, presentation and evidence
 
-Missing revision-1 state initializes idempotently without resetting old records.
+Missing state initializes idempotently without resetting old records. Revision 2
+adds only a derived acclimatization multiplier and preserves every revision-1
+primary thermal value. Effective attributes reconstruct the multiplier after
+load and before forecasts. A 5.1.1 save can return directly to accepted 5.1.0
+and later reload in 5.1.1; keep original saves and write distinct slots. This
+restores the old gameplay rules while away, so ongoing simulation can naturally
+change E, water and adaptation. The separate bridge below is still required
+when returning further to 5.0.6, which predates thermal classes.
 GZDoom cannot load new class instances in an unmodified old executable package:
 `python assets/validation_510/prepare_rollback.py` reproducibly builds
 `build/issue130/rollback-506.pk3` from accepted commit `45f1637`. Use it in place
@@ -189,7 +216,21 @@ Generated packages, development IWADs, engine and saves are not distributed.
 
 Journal > World > **T** displays air, adapted comfort, signed exposure, first
 harmful threshold, wetness, humidity, acclimatization and current penalties in
-English/Spanish. HUD shows active harmful states. This is not core temperature.
+English/Spanish. The 5.1.1/#131 HUD adds a read-only bar directly above Load:
+a grey icon with snowflake upper left and flame lower right, a neutral center, cold/hot bands and
+ticks at the actual Toughness-scaled
+thresholds, a signed value and localized severity. Its visual span is +/-30*s;
+overflow pins the marker and prints < or > with the extreme state, without
+clamping stored E. Large numbers use scientific notation. The same 640x360
+projection, typography, frame/laurels, aspect handling and visibility policy
+as the existing resource bars apply. Shared native coordinate conversion also
+corrects the prior frame/fill mismatch at 4:3 and ultrawide (CA-KP-051).
+It follows a valid viewed live player,
+falling back to the local pawn for non-player cameras; this is not new network
+multiplayer support. Draw calls never sample climate/geometry or mutate state.
+Air temperature, wetness and comfort remain separate Journal details. This is
+not core temperature. #131 gameplay and final revised-icon checks are author-accepted on 2026-10-07.
+No #131 author checks remain in pending_test.txt.
 Native evidence, exact package/config hashes, migration comparisons, drying fit
 and bilingual captures are in [5.1.0 results](../assets/validation_510/RESULTS.json).
 The author accepted CA130-01/02/03 on 2026-10-07; HISTORY records the results
@@ -4600,16 +4641,18 @@ The new fields start empty in 0ai: loading does not enable the test or reset the
 profile, attributes, previous quests, containers or choices. Persistence uses native
 save and the same Traveler Inventory. Automated test modes remain out of delivery.
 
-## Survival consumption and regeneration — current in 4.33.0ai
+## Survival consumption and regeneration - current in 5.1.1 (#131)
 
-Constitution controls the passive consumption of Hunger and Thirst and their expense by
-regenerating health/Air. Resilience controls the loss of Sleep: the author corrected the
-attribution to Patience of 0ah. The division by Type 4 is retained.
+Constitution controls passive Hunger, Thirst and Sleep consumption, as well as
+Hunger/Thirst expense from regenerating health/Air. The author reassigned Sleep
+from Resilience in #131; the Type-4 divisor and original mass rules remain.
+Resilience now controls climate adaptation rate/range and retains its existing
+combat benefits (maximum Air/Adrenaline and health regeneration).
 
     A = máximo(0, atributo efectivo)
     divisor D(A) = 1 + 2 * A * (A + 1) / 10100
     factor de Hambre/Sed = (masa corporal / 100 kg) / D(Constitución)
-    factor de Sueño = 1 / D(Resiliencia)
+    factor de Sueño = 1 / D(Constitución)
     factor de coste de Hambre/Sed al regenerar = 1 / D(Constitución)
 
 | Attribute | Divisor | Consumption with respect to 0 attribute, same mass |
@@ -4685,9 +4728,9 @@ lucidity, Dialogue skill and durations do not share a single curve today.
 | --- | --- | --- | --- |
 | Strength / Physical | Melee damage and physical thrust Type 1, with body mass. | Load Type 4; object thrust and launch power use Strength. | It matches the main thing. "Physical power" is not another independent universal effect: it is expressed in the routes of damage, thrust and launch. |
 | Hardness / Physical | Ordinary physical/magic damage subtracts uncapped R(T)=T(T+1)/101 percentage points of maximum health after anatomy and before final armor (#52, 2026-09-28). Pain and loss of Lucidity use Type 3. | Since the #52 revision, kinematic impacts subtract R(T) after biological absorption/surface and before anatomy/armor. | Scales must be updated and the scope of “environmental damage” must be narrowed: it is not universal resistance to drowning, drainage for needs or any damage outside the classified system. |
-| Constitution / Physical | Maximum health Type 1, with body mass. | Passive Hunger/Thirst and natural health regeneration costs/Air divided by Type 4. | It is not connected to shortening debuffs or incoming poisons. There is no disease system implemented that applies that duration. |
+| Constitution / Physical | Maximum health Type 1, with body mass. | Passive Hunger/Thirst/Sleep and natural health regeneration costs/Air divided by Type 4. | It is not connected to shortening debuffs or incoming poisons. There is no disease system implemented that applies that duration. |
 | Dexterity / Technical | Attack speed Type 4, physical precision Type 1 and physical critical chance Type 2. It also reduces the ranged-weapon reload time by Type 4. | Type 1 reduces the working time of materials in manufacture. | The ammunition reload belongs here; it is appropriate to distinguish it from the cooldown of skills when updating the table. Crafting covers a specific manual use, not a general system of accuracy rolls. |
-| Resilience / Technical | Maximum Adrenaline, Health Regeneration Factor and Air Capacity Type 4. | Sleep loss divided by Type 4, restored to 0ai. | Matches in association. Explain the Sleep divider; health regeneration is calculated over its maximum. |
+| Resilience / Technical | Maximum Adrenaline, Health Regeneration Factor and Air Capacity Type 4. | Acclimatization rate and displacement limit multiplied by Type 4 (#131). | At 100: 3 C/world day, +/-15 C; five days from the racial base. Sleep depletion belongs to Constitution. |
 | Agility / Technical | Type 4 movement using shared ground/swimming/flight factors; Type 2 evasion; jump uses another curve. | Type 2 stealth applied to concealment/noise, with crouching rules. | The jump does not use Type 4: JumpZ scales with the square root of Type 1, so that the ideal ballistic height scales with Type 1 at equal gravity, before load/state modifiers. |
 | Charisma / Social | Its Type 4 modifies the duration/power of elemental payloads received by the player; not all effects/actors consume it. | Type 4 Persuasion on MAP01 social rolls. | The area does not use Charisma: current blast radii and Channel use the range of Eloquence. Channel also has fixed power/duration states. The set of debuffs is partial. |
 | Empathy / Social | BuffPowerPercent Type 4 is available and an illumination timer is prepared; there is no general system of buffs/healing that applies all the duration/power/area indicated. | Emotion Type 4 in the MAP01 dialogs. | Emotion works. The stored factor and timer are not enough to mark buffs, cures or playable lighting as complete. Support areas based on Empathy remain pending. |

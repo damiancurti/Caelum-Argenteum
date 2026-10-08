@@ -51,6 +51,7 @@ class CaelumThermalBody : Object play
             thermal.HeightMeters=user.DerivedStats.BodyHeightMeters;
             thermal.MovedMassKg=user.DerivedStats.TotalMass;
             thermal.Toughness=user.Attributes.Toughness;
+            thermal.AcclimationMultiplier=user.DerivedStats.CalculateType4Percent(Max(0.0,user.Attributes.Resilience))/100.0;
             race=user.CharacterProfile.Race;
             thermal.ReferenceJumpHeat=CaelumThermalRules.JumpHeat(thermal.MovedMassKg,0,
                 user.JumpZ*TICRATE/CaelumJourneyRules.MAP_UNITS_PER_METER);
@@ -61,6 +62,8 @@ class CaelumThermalBody : Object play
             thermal.HeightMeters=npc.Height/CaelumJourneyRules.MAP_UNITS_PER_METER;
             thermal.MovedMassKg=thermal.BodyMassKg+npc.GetAttackCarriedWeight();
             thermal.Toughness=npc.CombatToughness+npc.GetCombatArmorAttributeBonus(CaelumConstants.ATTRIBUTE_TOUGHNESS);
+            thermal.AcclimationMultiplier=npc.CalculateActorType4Percent(Max(0,npc.CombatResilience
+                +npc.GetCombatArmorAttributeBonus(CaelumConstants.ATTRIBUTE_RESILIENCE)))/100.0;
             race=FurryAnimal(npc) ? CaelumConstants.RACE_BEAST_MAN : npc.GetArmorRace();
             // Los NPC actuales no tienen lanzamiento de salto propio: la
             // referencia compartida usa el salto base autorizado del motor.

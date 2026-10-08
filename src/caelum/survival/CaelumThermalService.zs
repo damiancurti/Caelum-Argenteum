@@ -126,7 +126,7 @@ class CaelumThermalService : Object play
             return dose;
         }
         double oldAcclimation=thermal.Acclimation;
-        thermal.Acclimation=CaelumThermalRules.Acclimation(oldAcclimation,thermal.ClimateC,thermal.ComfortC,dw);
+        thermal.Acclimation=CaelumThermalRules.Acclimation(oldAcclimation,thermal.ClimateC,thermal.ComfortC,dw,thermal.AcclimationMultiplier);
         // El centro sólo entra en B; E no recibe también el mismo desplazamiento.
         double center=thermal.ComfortC+(oldAcclimation+thermal.Acclimation)/2.0;
         double area=thermal.SurfaceArea;

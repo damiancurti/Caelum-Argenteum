@@ -6,8 +6,19 @@ An independent dark fantasy FPS-RPG inspired by nineteenth-century Argentina.
 Author and game designer: **Damian Curti**. Development target: **GZDoom 4.14.2**
 on Windows 11. The final game is intended to be independent of Doom assets.
 
-**Current release: 5.1.0.** Obtain and update the complete repository, validate
+**Current release: 5.1.1.** Obtain and update the complete repository, validate
 it, then rebuild with `run_dev.bat` as described below.
+
+Issue [#131](https://github.com/damiancurti/Caelum-Argenteum/issues/131) adds a
+signed thermal exposure bar directly above Load. Constitution now reduces
+Sleep loss just like Hunger/Thirst; Resilience instead scales climate adaptation
+rate and range (at 100: 3 C/world day, +/-15 C, five days from the racial base).
+Long journeys transition between endpoint climates by distance, preserving
+passenger shelter and stopping walking progress while asleep. See the
+[thermal contract](docs/SYSTEMS.md#thermal-exposure-and-energy-transfer-130),
+[5.1.1 evidence](assets/validation_511/RESULTS.json) and
+[author acceptance](docs/HISTORY.md). All #131 tests, including the revised
+diagonal flame/snowflake icon, passed on 2026-10-07; merge and closure authorized.
 
 Issue [#130](https://github.com/damiancurti/Caelum-Argenteum/issues/130) adds
 thermal exposure, persistent wetness, clothing insulation, activity heat and
@@ -1214,7 +1225,7 @@ preserved. The broader unfinished 4.36 physics roadmap remains in PROJECT.md.
   price or bonuses; the campaign gains no extra quest requirement or rewards.
 
 
-- Hunger/Thirst depletion uses Constitution; Sleep depletion uses Resilience.
+- Hunger/Thirst/Sleep depletion uses Constitution; Resilience scales climate adaptation.
   Each is divided by Type 4: 1 at attribute 0, 3 at 100. Consumption stays
   positive; passive Hunger/Thirst retain their body-mass factor. Constitution
   also divides the Hunger/Thirst cost per point of natural Health/Air recovery,

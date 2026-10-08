@@ -2088,7 +2088,7 @@ class CaelumJournalOverlay : EventHandler
         DrawTextLine(SmallFont,Font.CR_WHITE,48,156,String.Format(StringTable.Localize("CA_THERMAL_ENV",false),
             thermal.AirC,thermal.ComfortC+thermal.Acclimation));
         DrawTextLine(SmallFont,Font.CR_WHITE,48,172,String.Format(StringTable.Localize("CA_THERMAL_EXPOSURE",false),
-            thermal.Exposure,10*CaelumThermalRules.ThresholdScale(thermal.Toughness)));
+            thermal.Exposure,CaelumThermalRules.Threshold(1,thermal.Toughness)));
         DrawTextLine(SmallFont,Font.CR_WHITE,48,188,String.Format(StringTable.Localize("CA_THERMAL_WET",false),
             thermal.WetnessPercent,thermal.Humidity,thermal.Acclimation));
         DrawTextLine(SmallFont,Font.CR_WHITE,48,210,String.Format(StringTable.Localize("CA_THERMAL_COST",false),

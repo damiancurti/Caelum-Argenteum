@@ -1,0 +1,16 @@
+{
+  "issue": 131,
+  "release": "5.1.1",
+  "author_request": "Grey icon to the left of the thermal bar, like the other resource icons; flame with snowflake.",
+  "tool": "Built-in image_gen.imagegen",
+  "created_utc": "2026-10-07",
+  "source": "assets/art_source/thermal_icon_511.png",
+  "runtime": "src/graphics/caelum/ui/hud/icons/ca_hud_icon_thermal.png",
+  "sha256": "e7d2054e559befaaa54b36fce0ae2db181ec3fc67da57e851fd86af98c385273",
+  "dimensions": [
+    1254,
+    1254
+  ],
+  "format": "PNG RGBA, original alpha preserved byte-for-byte; rendered at 18x18 virtual HUD units.",
+  "prompt": "Create one transparent-background raster HUD icon for the dark fantasy FPS-RPG Caelum Argenteum. Symbol: a compact single flame interwoven with a clearly recognizable six-armed snowflake, signifying both heat and cold. Monochrome grey and silver only, black recesses and bright silver highlights, sculpted engraved antique metal relief, subdued weathered material. Match a small gothic RPG resource icon set with realistic embossed silver anatomical heart and lungs, crisp shaded edges and tiny ornamental side flourishes. No color, no glow, no text, no letters, no circle or badge background, no rectangular frame, no scene. Front-facing flat UI asset, centered silhouette occupies about 90 percent of a square canvas. Bold readable flame contour and thick simple snowflake branches that remain clear when displayed at 36 pixels. Genuine alpha transparency around the icon and through negative spaces. Deliver only the single icon."
+}

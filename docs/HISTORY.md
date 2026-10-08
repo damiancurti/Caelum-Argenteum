@@ -1,6 +1,48 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **5.1.0** — 2026-10-07.
+Documentation version: **5.1.1** — 2026-10-07.
+
+## 5.1.1 - Thermal HUD, attributes and journey climate (#131, 2026-10-07)
+
+The author requests the HUD bar, live tests, commit/push and changes Sleep
+consumption to Constitution. Resilience instead multiplies adaptation rate and
+maximum offset by Type 4: 300% at 100, 3 C/day and +/-15 C. The author explicitly
+chooses gradual return at the new rate when an attribute drop lowers the cap.
+A later request adds endpoint climate transitions during long travel; gradual
+blending by distance is approved, with walking sleep stops and continuous ships.
+
+The delivery preserves thermal authority and adds only a derived revision-2
+projection. The HUD reads current exposure/thresholds without climate or geometry
+queries. Original comfort, exposure, wetness, inventories and quests persist.
+Native test details and exact artifacts: [RESULTS.json](../assets/validation_511/RESULTS.json).
+Native checks pass: 47 unique assertions, viewed-player/cinematic fallback,
+six save stages preserving 220 character fields and all 18 equipment fields,
+and bilingual HUD/Journal captures in three aspect ratios. Tests found the old
+HUD projection mismatch (CA-KP-051) and a missing legacy durability revision in
+the copied save fixture; the corrected chain passes without production inventory
+changes. Standard build matches the tested source package, with no script errors.
+**Author confirmation, 2026-10-07:** the author states that all other tests
+passed and requests more separation between the snowflake and flame. CA131-02
+(attributes, adaptation, long travel and persistence), originating in 5.1.1/#131,
+is passed without a reported exception and removed from pending_test.txt.
+The previous functional/layout portions of CA131-01 are accepted. Its entry
+was narrowed to the revised icon, which places the snowflake upper left
+and flame lower right with a visible gap. The original art remains preserved.
+The icon is drawn after the frame laurel to keep the lower-right flame visible.
+Native checks at 1280x720 and 1024x768 verify the revised composition in game;
+the author subsequently approved that composition. No simulation,
+attribute, journey or save behavior changes during this review revision.
+**Final author confirmation, 2026-10-07:** CA131-01 (origin 5.1.1/#131),
+including the revised diagonal icon, passed without a reported exception.
+The author explicitly authorizes #131 closure and PR #138 merge. The final
+pending entry is removed; agent evidence remains separately qualified.
+The author later adds a grey flame/snowflake icon; generation provenance is
+recorded in ASSETS and the icon manifest. No new audio, recipes or encounter
+content. The temporary keep-awake helper
+uses a bounded execution request without changing the power plan; the release
+record is retained with the delivery evidence.
+The request was released at 23:42:39 UTC on 2026-10-07; its helper
+exited and the Balanced power-plan GUID matches before/after.
 
 ## 5.1.0 — Thermal survival (#130, 2026-10-07)
 

@@ -476,6 +476,7 @@ class CaelumHUDOverlay : EventHandler
         DrawHUDBarLaurels(20.0, 278.0, 180.0);
         DrawHUDBarLaurels(20.0, 302.0, 180.0);
         DrawHUDBarLaurels(20.0, 326.0, 180.0);
+        DrawHUDBarLaurels(CaelumThermalHUD.BAR_X, CaelumThermalHUD.BAR_Y, CaelumThermalHUD.BAR_WIDTH);
         DrawHUDBarLaurels(440.0, 254.0, 180.0);
         DrawHUDBarLaurels(440.0, 278.0, 180.0);
         DrawHUDBarLaurels(440.0, 302.0, 180.0);
@@ -492,6 +493,7 @@ class CaelumHUDOverlay : EventHandler
         DrawHUDBarFrame(20.0, 278.0, 180.0);
         DrawHUDBarFrame(20.0, 302.0, 180.0);
         DrawHUDBarFrame(20.0, 326.0, 180.0);
+        DrawHUDBarFrame(CaelumThermalHUD.BAR_X, CaelumThermalHUD.BAR_Y, CaelumThermalHUD.BAR_WIDTH);
         DrawHUDBarFrame(440.0, 254.0, 180.0);
         DrawHUDBarFrame(440.0, 278.0, 180.0);
         DrawHUDBarFrame(440.0, 302.0, 180.0);
@@ -508,23 +510,21 @@ class CaelumHUDOverlay : EventHandler
         DrawHUDTexture(root .. "ca_hud_icon_sleep.png", 422.0, 321.0, 18.0, 18.0);
     }
 
-    // Screen.Dim uses real screen pixels. This conversion reproduces the same
-    // centered 640x360 canvas used by the localized text on any aspect ratio.
+    // Coincide con DrawTexture/DrawText y DTA_KEEPRATIO: no mezclar otra
+    // proyección de aspecto en los rellenos dibujados con coordenadas reales.
+    ui Vector2, Vector2 ResourceRect(double x,double y,double width=164,double height=7)
+    {
+        Vector2 pos, size;
+        [pos, size] = Screen.VirtualToRealCoords((x,y),(width,height),(640,360),false,false);
+        return pos, size;
+    }
+
     ui void DrawAirBar(CaelumPlayer localPlayer)
     {
-        double scale = Min(
-            Screen.GetWidth() / 640.0,
-            Screen.GetHeight() / 360.0
-        );
-        double canvasWidth = 640.0 * scale;
-        double canvasHeight = 360.0 * scale;
-        double offsetX = (Screen.GetWidth() - canvasWidth) * 0.5;
-        double offsetY = (Screen.GetHeight() - canvasHeight) * 0.5;
-
-        int barX = int(offsetX + 28.0 * scale);
-        int barY = int(offsetY + 326.0 * scale);
-        int barWidth = Max(1, int(164.0 * scale));
-        int barHeight = Max(1, int(7.0 * scale));
+        Vector2 pos, size;
+        [pos, size] = ResourceRect(28, 326);
+        int barX=int(pos.X), barY=int(pos.Y);
+        int barWidth=Max(1,int(size.X)), barHeight=Max(1,int(size.Y));
         // Read stored fields directly. Calling a play-scope function such as
         // GetAirRatio from this UI context is forbidden by ZScript.
         double ratio = 0.0;
@@ -559,19 +559,10 @@ class CaelumHUDOverlay : EventHandler
     // based maximum. It sits above air so both resources remain readable.
     ui void DrawHealthBar(CaelumPlayer localPlayer)
     {
-        double scale = Min(
-            Screen.GetWidth() / 640.0,
-            Screen.GetHeight() / 360.0
-        );
-        double canvasWidth = 640.0 * scale;
-        double canvasHeight = 360.0 * scale;
-        double offsetX = (Screen.GetWidth() - canvasWidth) * 0.5;
-        double offsetY = (Screen.GetHeight() - canvasHeight) * 0.5;
-
-        int barX = int(offsetX + 28.0 * scale);
-        int barY = int(offsetY + 302.0 * scale);
-        int barWidth = Max(1, int(164.0 * scale));
-        int barHeight = Max(1, int(7.0 * scale));
+        Vector2 pos, size;
+        [pos, size] = ResourceRect(28, 302);
+        int barX=int(pos.X), barY=int(pos.Y);
+        int barWidth=Max(1,int(size.X)), barHeight=Max(1,int(size.Y));
         double ratio = 0.0;
 
         if (localPlayer.CaelumMaximumHealth > 0)
@@ -596,19 +587,10 @@ class CaelumHUDOverlay : EventHandler
     // it is drawn through code and requires no copyrighted interface artwork.
     ui void DrawAnimaBar(CaelumPlayer localPlayer)
     {
-        double scale = Min(
-            Screen.GetWidth() / 640.0,
-            Screen.GetHeight() / 360.0
-        );
-        double canvasWidth = 640.0 * scale;
-        double canvasHeight = 360.0 * scale;
-        double offsetX = (Screen.GetWidth() - canvasWidth) * 0.5;
-        double offsetY = (Screen.GetHeight() - canvasHeight) * 0.5;
-
-        int barX = int(offsetX + 28.0 * scale);
-        int barY = int(offsetY + 278.0 * scale);
-        int barWidth = Max(1, int(164.0 * scale));
-        int barHeight = Max(1, int(7.0 * scale));
+        Vector2 pos, size;
+        [pos, size] = ResourceRect(28, 278);
+        int barX=int(pos.X), barY=int(pos.Y);
+        int barWidth=Max(1,int(size.X)), barHeight=Max(1,int(size.Y));
         double ratio = 0.0;
 
         if (localPlayer.DerivedStats.MaximumAnima > 0.0)
@@ -634,19 +616,10 @@ class CaelumHUDOverlay : EventHandler
     // to verify without opening the development panel.
     ui void DrawAdrenalineBar(CaelumPlayer localPlayer)
     {
-        double scale = Min(
-            Screen.GetWidth() / 640.0,
-            Screen.GetHeight() / 360.0
-        );
-        double canvasWidth = 640.0 * scale;
-        double canvasHeight = 360.0 * scale;
-        double offsetX = (Screen.GetWidth() - canvasWidth) * 0.5;
-        double offsetY = (Screen.GetHeight() - canvasHeight) * 0.5;
-
-        int barX = int(offsetX + 28.0 * scale);
-        int barY = int(offsetY + 254.0 * scale);
-        int barWidth = Max(1, int(164.0 * scale));
-        int barHeight = Max(1, int(7.0 * scale));
+        Vector2 pos, size;
+        [pos, size] = ResourceRect(28, 254);
+        int barX=int(pos.X), barY=int(pos.Y);
+        int barWidth=Max(1,int(size.X)), barHeight=Max(1,int(size.Y));
         double ratio = 0.0;
 
         if (localPlayer.DerivedStats.MaximumAdrenaline > 0.0)
@@ -672,15 +645,10 @@ class CaelumHUDOverlay : EventHandler
     // It is placed above adrenaline to keep every live resource in one stack.
     ui void DrawLucidityBar(CaelumPlayer localPlayer)
     {
-        double scale = Min(Screen.GetWidth() / 640.0, Screen.GetHeight() / 360.0);
-        double canvasWidth = 640.0 * scale;
-        double canvasHeight = 360.0 * scale;
-        double offsetX = (Screen.GetWidth() - canvasWidth) * 0.5;
-        double offsetY = (Screen.GetHeight() - canvasHeight) * 0.5;
-        int barX = int(offsetX + 28.0 * scale);
-        int barY = int(offsetY + 230.0 * scale);
-        int barWidth = Max(1, int(164.0 * scale));
-        int barHeight = Max(1, int(7.0 * scale));
+        Vector2 pos, size;
+        [pos, size] = ResourceRect(28, 230);
+        int barX=int(pos.X), barY=int(pos.Y);
+        int barWidth=Max(1,int(size.X)), barHeight=Max(1,int(size.Y));
         double ratio = Clamp(
             localPlayer.CurrentLucidity / CaelumConstants.MAXIMUM_LUCIDITY,
             0.0,
@@ -710,13 +678,10 @@ class CaelumHUDOverlay : EventHandler
     // remains readable instead of extending too far up the left side.
     ui void DrawSurvivalBar(double value, int state, int virtualY, int baseColor)
     {
-        double scale = Min(Screen.GetWidth() / 640.0, Screen.GetHeight() / 360.0);
-        double offsetX = (Screen.GetWidth() - 640.0 * scale) * 0.5;
-        double offsetY = (Screen.GetHeight() - 360.0 * scale) * 0.5;
-        int x = int(offsetX + 448.0 * scale);
-        int y = int(offsetY + virtualY * scale);
-        int width = Max(1, int(164.0 * scale));
-        int height = Max(1, int(7.0 * scale));
+        Vector2 pos, size;
+        [pos, size] = ResourceRect(448, virtualY);
+        int x=int(pos.X), y=int(pos.Y);
+        int width=Max(1,int(size.X)), height=Max(1,int(size.Y));
         int fill = int(width * Clamp(value / 100.0, 0.0, 1.0));
         // "color" is a built-in ZScript type, so the variable needs a more
         // specific name to remain compatible with GZDoom 4.14.2's parser.
@@ -747,13 +712,10 @@ class CaelumHUDOverlay : EventHandler
     // verde hasta rojo al acercarse y superar la capacidad máxima.
     ui void DrawLoadBar(CaelumPlayer localPlayer, int virtualY)
     {
-        double scale = Min(Screen.GetWidth() / 640.0, Screen.GetHeight() / 360.0);
-        double offsetX = (Screen.GetWidth() - 640.0 * scale) * 0.5;
-        double offsetY = (Screen.GetHeight() - 360.0 * scale) * 0.5;
-        int x = int(offsetX + 448.0 * scale);
-        int y = int(offsetY + virtualY * scale);
-        int width = Max(1, int(164.0 * scale));
-        int height = Max(1, int(7.0 * scale));
+        Vector2 pos, size;
+        [pos, size] = ResourceRect(448, virtualY);
+        int x=int(pos.X), y=int(pos.Y);
+        int width=Max(1,int(size.X)), height=Max(1,int(size.Y));
         double ratio = localPlayer.HUDLoadRatio;
         int fill = int(width * Clamp(ratio, 0.0, 1.0));
         int barColor = 0x55B86A;
@@ -762,6 +724,52 @@ class CaelumHUDOverlay : EventHandler
         else if (ratio >= 0.50) barColor = 0xB7B547;
         Screen.Dim(0x161616, 0.85, x, y, width, height);
         if (fill > 0) Screen.Dim(barColor, 0.95, x, y, fill, height);
+    }
+
+    ui void DrawThermalBar(CaelumPlayer localPlayer)
+    {
+        let record=CaelumPersistentCharacterState(localPlayer.FindInventory("CaelumPersistentCharacterState"));
+        let thermal=record!=null ? record.ThermalState : null;
+        Vector2 pos, size;
+        [pos, size] = ResourceRect(CaelumThermalHUD.BAR_X+CaelumThermalHUD.FILL_INSET,
+            CaelumThermalHUD.BAR_Y,CaelumThermalHUD.FILL_WIDTH,CaelumThermalHUD.FILL_HEIGHT);
+        int x=int(pos.X), y=int(pos.Y);
+        int width=Max(1,int(size.X)), height=Max(1,int(size.Y));
+        int stroke=Max(1,int(Screen.GetWidth()/640.0));
+        int strokeY=Max(1,int(Screen.GetHeight()/360.0));
+        int colors[6]={0x377DAA,0x539FBC,0x789C9F,0xAD9873,0xD18D45,0xBC5743};
+        for(int band=0;band<6;band++)
+        {
+            int left=x+int(width*CaelumThermalHUD.BandPosition(band));
+            int right=x+int(width*CaelumThermalHUD.BandPosition(band+1));
+            Screen.Dim(colors[band],0.80,left,y,Max(1,right-left),height);
+        }
+        // ±10, ±20 y el cero se distinguen también por geometría, sin color.
+        for(int tick=1;tick<6;tick++)
+            Screen.Dim(tick==3 ? 0xFFFFFF : 0x20252B,0.9,
+                x+int(width*CaelumThermalHUD.BandPosition(tick)),y,stroke,height);
+        String label=StringTable.Localize("CA_HUD_THERMAL_UNAVAILABLE",false);
+        int textColor=Font.CR_GRAY;
+        if(thermal!=null)
+        {
+            double toughness=localPlayer.Attributes!=null ? localPlayer.Attributes.Toughness : thermal.Toughness;
+            double exposure=thermal.Exposure;
+            int marker=x+int((width-1)*CaelumThermalHUD.Position(exposure,toughness));
+            Screen.Dim(0x080C10,1,marker-2*stroke,y-strokeY,5*stroke,height+2*strokeY);
+            Screen.Dim(0xFFFFFF,1,marker,y-strokeY,stroke,height+2*strokeY);
+            int severity=CaelumThermalRules.Severity(exposure,toughness);
+            textColor=severity==0 ? Font.CR_WHITE : exposure<0 ? Font.CR_CYAN : Font.CR_ORANGE;
+            String stateName=StringTable.Localize(CaelumThermalHUD.StateKey(exposure,toughness),false);
+            bool beyond=Abs(exposure)>CaelumThermalHUD.Range(toughness);
+            String key=beyond ? (exposure<0 ? "CA_HUD_THERMAL_BELOW" : "CA_HUD_THERMAL_ABOVE") : "CA_HUD_THERMAL_VALUE";
+            double displayed=beyond ? (exposure<0 ? -1 : 1)*CaelumThermalHUD.Range(toughness) : exposure;
+            String value=String.Format(Abs(displayed)<1000 ? "%+.1f" : "%+.2e",displayed);
+            label=String.Format(StringTable.Localize(key,false),value,stateName);
+        }
+        Screen.DrawText(HUDFont,textColor,CaelumThermalHUD.BAR_X,CaelumThermalHUD.LABEL_Y,label,
+            DTA_VIRTUALWIDTHF,640.0,DTA_VIRTUALHEIGHTF,360.0,DTA_KEEPRATIO,true,DTA_SHADOW,true);
+        // La llama desplazada no debe quedar tapada por el laurel del marco.
+        DrawHUDTexture("graphics/caelum/ui/hud/icons/ca_hud_icon_thermal.png",422.0,225.0,18.0,18.0);
     }
 
     // A restrained full-screen tint plus opposed color bands represents the
@@ -867,7 +875,7 @@ class CaelumHUDOverlay : EventHandler
             return;
         }
 
-        CaelumPlayer localPlayer = CaelumPlayer(players[consoleplayer].mo);
+        CaelumPlayer localPlayer = CaelumThermalHUD.ViewedPlayer(consoleplayer);
 
         if (localPlayer == null
             || localPlayer.player == null
@@ -1021,6 +1029,7 @@ class CaelumHUDOverlay : EventHandler
         DrawAirBar(localPlayer);
         DrawResourceLaurels();
         DrawLoadBar(localPlayer, 254);
+        DrawThermalBar(localPlayer);
         DrawSurvivalBar(localPlayer.CurrentHunger, localPlayer.HungerState, 278, 0x75A84A);
         DrawSurvivalBar(localPlayer.CurrentThirst, localPlayer.ThirstState, 302, 0x3F9FD2);
         DrawSurvivalBar(localPlayer.CurrentSleep, localPlayer.SleepState, 326, 0x8074C8);

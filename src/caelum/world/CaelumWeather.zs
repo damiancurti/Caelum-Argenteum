@@ -26,6 +26,9 @@ class CaelumWeatherRules : Object
         return PROFILE_NONE;
     }
     static clearscope bool IsProfile(int profile) { return profile>=1 && profile<=5; }
+    // Catálogo compartido por el mapa cargado y los destinos aún descargados.
+    static clearscope int RegionForLocation(int location)
+    { return ProfileForLocation(location)>PROFILE_LIMBO ? 1 : 0; }
     static clearscope String ProfileKey(int profile)
     {
         if(profile==1)return "CA_WEATHER_LIMBO";
@@ -255,7 +258,7 @@ class CaelumWeatherState : Inventory
         int minute=civilTics<0?-1:civilTics/(CaelumWorldClock.TicsPerHour()/60);
         int location=CaelumWorldCatalogue.LocationForMap(level.MapName);
         int profile=CaelumWeatherRules.ProfileForLocation(location);
-        int region=profile>1?1:0;
+        int region=CaelumWeatherRules.RegionForLocation(location);
         // Limbo conserva su excepción; los otros mapas admiten asignación explícita.
         if(profile!=1)
         {

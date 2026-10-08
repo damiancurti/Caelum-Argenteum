@@ -1,0 +1,18 @@
+{
+  "issue": 131,
+  "release": "5.1.1",
+  "revision": 2,
+  "author_request": "Separate the snowflake and flame diagonally: snowflake upper left, flame lower right. All other tests passed.",
+  "tool": "Built-in image_gen.imagegen, edit with original icon as reference",
+  "date": "2026-10-07",
+  "source": "assets/art_source/thermal_icon_511_v2.png",
+  "runtime": "src/graphics/caelum/ui/hud/icons/ca_hud_icon_thermal.png",
+  "original_manifest": "assets/manifests/thermal_icon_511.json",
+  "prompt": "Edit the supplied thermal HUD icon. Preserve the monochrome grey/silver antique engraved metal relief, lighting, bold shaded edges, and genuine transparent background. Change the composition: make the snowflake and flame into TWO clearly distinguishable standalone symbols, with the six-armed snowflake in the upper LEFT and the flame in the lower RIGHT. Offset them diagonally and leave a modest visible transparent gap between their silhouettes. They must not interweave, overlap, or share a central stem. Keep both large and balanced within one square canvas, as a single combined resource icon displayed at only 36 pixels. Use thick simple snowflake branches and a strong flame silhouette, minimize the small side flourishes so each symbol is immediately recognizable. Keep silver/grey only, no colored fire, no colored ice, no text, no badge, no border, no background, no added objects. Preserve alpha transparency around and between the symbols. Output just the revised icon.",
+  "sha256": "6c1fb406c9c262dca9972b49f98df96a5123c32be598a611671b908ff7299b77",
+  "dimensions": [
+    1254,
+    1254
+  ],
+  "format": "PNG RGBA; alpha preserved byte-for-byte; existing 18x18 virtual HUD placement."
+}

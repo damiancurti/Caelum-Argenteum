@@ -41,6 +41,9 @@ class CaelumThermalRules : Object
     static clearscope double ThresholdScale(double toughness)
     { return 1.0+CaelumArmorRules.ToughnessReductionPercent(toughness)/100.0; }
 
+    static clearscope double Threshold(int tier,double toughness)
+    {return CaelumThermalData.ExposureThreshold(tier)*ThresholdScale(toughness);}
+
     static clearscope double DamageResistance(double toughness)
     { return Clamp(CaelumArmorRules.ToughnessReductionPercent(toughness)/100.0,0.0,1.0); }
 
@@ -48,9 +51,9 @@ class CaelumThermalRules : Object
     {
         double d=Abs(exposure)/ThresholdScale(toughness);
         double epsilon=CaelumThermalData.THRESHOLD_EPSILON;
-        if(d>30.0+epsilon)return 3;
-        if(d+epsilon>=20.0)return 2;
-        if(d+epsilon>=10.0)return 1;
+        if(d>CaelumThermalData.ExposureThreshold(3)+epsilon)return 3;
+        if(d+epsilon>=CaelumThermalData.ExposureThreshold(2))return 2;
+        if(d+epsilon>=CaelumThermalData.ExposureThreshold(1))return 1;
         return 0;
     }
 
@@ -118,11 +121,14 @@ class CaelumThermalRules : Object
         return target+(previous-target)*(1.0-Exp(-exponent))/exponent;
     }
 
-    static clearscope double Acclimation(double previous,double climateC,double originalCenter,double worldSeconds)
+    static clearscope double Acclimation(double previous,double climateC,double originalCenter,double worldSeconds,double multiplier=1)
     {
-        double target=Clamp(climateC-originalCenter,-CaelumThermalData.ACCLIMATION_LIMIT_C,
-            CaelumThermalData.ACCLIMATION_LIMIT_C);
-        double step=Max(0.0,worldSeconds)*CaelumThermalData.ACCLIMATION_C_PER_DAY/CaelumThermalData.WORLD_DAY_SECONDS;
+        double factor=Max(1.0,multiplier);
+        double limit=CaelumThermalData.ACCLIMATION_LIMIT_C*factor;
+        double target=Clamp(climateC-originalCenter,-limit,limit);
+        double step=Max(0.0,worldSeconds)*CaelumThermalData.ACCLIMATION_C_PER_DAY*factor/CaelumThermalData.WORLD_DAY_SECONDS;
+        // Si baja Resiliencia, cambia el destino y la velocidad; el estado
+        // previo vuelve gradualmente en lugar de recortarse instantáneamente.
         return previous+Clamp(target-previous,-step,step);
     }
 
