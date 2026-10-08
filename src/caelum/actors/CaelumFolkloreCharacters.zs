@@ -471,6 +471,7 @@ class CaelumMandinga : CaelumFolkloreCombatActor
         Super.PostBeginPlay();
         InitializeUniformFolkloreProfile(6);
         ConfigureCombatMagicalRange();
+        CaelumDemonService.Initialize(self);
     }
 
     override String GetCaelumRecognitionSound()
@@ -549,6 +550,9 @@ class CaelumMandinga : CaelumFolkloreCombatActor
     WalkCycle:
         TNT1 A 0 A_JumpIf(CombatLucidityPhysicalStunRemaining > 0.0, "LucidityStun");
         MIWK AB 4 A_CaelumBudgetedChase;
+        Loop;
+    RacialBreath:
+        MDBR ABCD 3;
         Loop;
     }
 }
@@ -665,6 +669,7 @@ class CaelumZupayColossus : CaelumFolkloreCombatActor
         Super.PostBeginPlay();
         InitializeUniformFolkloreProfile(33);
         ConfigureCombatMagicalRange();
+        CaelumDemonService.Initialize(self);
     }
 
     override String GetCaelumRecognitionSound()
@@ -768,6 +773,9 @@ class CaelumZupayColossus : CaelumFolkloreCombatActor
         Loop;
     SewerEscape:
         ZURN ABCD 4 A_CaelumSewerEscapeMove;
+        Loop;
+    RacialBreath:
+        ZUBR ABCD 3;
         Loop;
     }
 }

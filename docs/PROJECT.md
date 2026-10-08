@@ -1,6 +1,25 @@
 # Caelum Argenteum — Project, status and roadmap
 
-Documentation version: **5.1.4** — 2026-10-08.
+Documentation version: **5.1.5** — 2026-10-08.
+
+## 5.1.5 - Demon supplies and fire breath (#135)
+
+PR #142 merged as 5f9202ad and #140 closed on 2026-10-08, including thermal
+label colors. The #135 branch adds owned finite potion supplies, all nine
+size/family combinations, automatic use and weighted single-unit death loot.
+Mandingas use small doses and Zupay large; active families wait ten seconds.
+The approved racial breath serves cold regulation and close combat, spending
+Anima concurrently with regeneration. SYSTEMS holds its approved profile.
+
+Native evidence covers exact doses, resource thresholds, contact versus heat,
+wall occlusion, ordinary cold regulation, retreat, persistence and migration.
+A reported native shutdown crash was traced with official engine symbols to
+state restoration during destruction; teardown now releases effects without
+executing state actions. Passing gameplay markers alone are not clean-exit
+proof. Validation and outstanding author acceptance are tracked in HISTORY,
+TASKS and pending_test.txt. No merge/closure of #135 is authorized yet.
+The author's additional crouched/aimed soldier request is tracked separately
+as #143, with its own code, artwork, tests and delivery.
 
 ## 5.1.4 - Thermal coefficients, breathing and recovery (#140)
 

@@ -1,6 +1,64 @@
 # Caelum Argenteum — Current systems and rules
 
-Documentation version: **5.1.4** — 2026-10-08.
+Documentation version: **5.1.5** — 2026-10-08.
+
+## Demon racial ability and finite supplies (#135)
+
+Approved issue scope: Mandingas carry six small potions of each family; Zupay
+carries six large ones. Small/medium/large restore 10%/22.5%/50% of the respective
+maximum over ten real seconds. Existing potion classes are small; IDs 11..16
+append the six new variants, keeping container and legacy IDs unchanged.
+Native inventory stacks own quantities; an idempotent supply revision initializes
+old living demons once. Dead bodies do not receive retroactive supplies.
+
+On actual death, an existing map/native predefined drop has priority. Otherwise
+one remaining unit is chosen uniformly across all remaining units, retaining
+its exact family/size. No remaining units means no potion; a persistent death
+latch prevents duplicate callbacks. Scripted retreat remains distinct from death.
+The shared regeneration effect records the dose, fractional Health and delivered
+pulses. Natural expiry completes the tenth pulse otherwise lost to native
+Powerup ordering; cancellation/death/refresh do not grant a completion bonus.
+Older active effects with no dose metadata retain their historical behavior.
+
+Automatic use starts strictly below 50%. Each family waits until its own active
+ten-second effect ends; Health, Anima and Energy may run concurrently. NPC Energy
+restores Air; player Energy retains Air plus Sleep. No NPC Sleep is introduced.
+All sizes weigh 0.25 kg. Medium and large prices are 2.25 and 5 times the small
+base price, respectively. Carried native stacks contribute their actual weight.
+Medium items have silver details, large items silver and gold, including medikits.
+
+The approved sustained breath costs 10 Anima per real simulation second before
+the existing Eloquence/armor pipeline, applied once. Natural regeneration remains
+active. Cold means negative exposure in an authoritative cold severity state.
+Both demons also use it against their current combat target within reach. Normal
+sleep, stun, pain, retreat, death and inability to pay interrupt the ability; no
+additional activation charge or cooldown is introduced. An already-paid ordinary
+attack is allowed to finish before starting the racial ability.
+
+Each demon has its own four-phase exhalation loop in eight directions. Mouth
+anchors are measured in the new atlas: Mandinga 160 pixels above the foot pivot
+and 60 forward; Zupay 147 above and 70 forward, divided by the registered texture
+scale and multiplied by individual actor scale. A native trace prevents a
+forward mouth anchor from crossing a wall. These are art geometry, not new
+combat balance. Animation advances every three tics without delaying payment
+or contact. Interruption restores AI from any phase. Contact extends
+4 m (128 MU), within a 60-degree cone, with native wall traces. Contact refreshes
+the existing T1 fire burn: shared base duration times Charisma's Type-4 factor,
+and the shared DOT ratio of T1 staff damage times that factor. There is no
+additional direct-hit damage; refreshing contact preserves the burn pulse clock.
+Radiation alone never adds the burn status and has no distance cutoff.
+
+Total emitted flame power is 20 kW, the existing campfire profile. Four cone
+samples reuse the thermal fire projection, distance attenuation, 35% radiative
+fraction, 0.95 surface absorption and wall visibility. Combined absorption is
+capped to the emitted radiative budget before shared magical armor retention.
+The emitter can receive its own radiation but not its own direct flame burn.
+Cost/contact run each real tic; radiation integrates only paid real seconds in
+staggered one-second samples, with the residual interval settled on stopping.
+Moving sources use the sampled pose at interval end, matching the thermal
+scheduler's temporal approximation; this is not sub-tic fluid/fire simulation.
+The owned source, paid residual time, potion units and ongoing powers serialize.
+Native evidence and outstanding acceptance are recorded separately in HISTORY.
 
 ## Functional port city contract (#133)
 

@@ -72,6 +72,12 @@ class CaelumDisplayNames : Object
         if (consumableType == 10) return "CA_WATER_CANTEEN_LARGE";
         switch (consumableType)
         {
+            case CaelumConstants.CONSUMABLE_LIFE_MEDIUM:return "CA_CONSUMABLE_LIFE_MEDIUM";
+            case CaelumConstants.CONSUMABLE_ANIMA_MEDIUM:return "CA_CONSUMABLE_ANIMA_MEDIUM";
+            case CaelumConstants.CONSUMABLE_ENERGY_MEDIUM:return "CA_CONSUMABLE_ENERGY_MEDIUM";
+            case CaelumConstants.CONSUMABLE_LIFE_LARGE:return "CA_CONSUMABLE_LIFE_LARGE";
+            case CaelumConstants.CONSUMABLE_ANIMA_LARGE:return "CA_CONSUMABLE_ANIMA_LARGE";
+            case CaelumConstants.CONSUMABLE_ENERGY_LARGE:return "CA_CONSUMABLE_ENERGY_LARGE";
             case CaelumConstants.CONSUMABLE_ANIMA_POTION:
                 return "CA_CONSUMABLE_ANIMA_POTION";
             case CaelumConstants.CONSUMABLE_ENERGY_DRINK:

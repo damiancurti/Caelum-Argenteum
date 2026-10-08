@@ -6,8 +6,19 @@ An independent dark fantasy FPS-RPG inspired by nineteenth-century Argentina.
 Author and game designer: **Damian Curti**. Development target: **GZDoom 4.14.2**
 on Windows 11. The final game is intended to be independent of Doom assets.
 
-**Current release: 5.1.4.** Obtain and update the complete repository, validate
+**Current release: 5.1.5.** Obtain and update the complete repository, validate
 it, then rebuild with `run_dev.bat` as described below.
+
+**5.1.5 / [#135](https://github.com/damiancurti/Caelum-Argenteum/issues/135):**
+Mandingas and Zupay gain sustained racial fire breath, finite automatic potions
+and weighted single-unit death loot. Both demons have dedicated exhalation
+animations; Zupay's reversed action directions are corrected. Nine potion
+variants share exact timed doses and distinct tier artwork. Native behavior, persistence, reported-crash
+regression and final gates are recorded in [evidence](assets/validation_515/RESULTS.md).
+Author acceptance and PR integration remain separate; 5.1.4 is the merged baseline.
+
+**#140 is closed; [PR #142](https://github.com/damiancurti/Caelum-Argenteum/pull/142)
+was merged as `5f9202ad` on 2026-10-08**, including the requested thermal label colors.
 
 **5.1.4 / [#140](https://github.com/damiancurti/Caelum-Argenteum/issues/140):**
 thermal coefficients are cached per actor while heat/water flux remains dynamic.

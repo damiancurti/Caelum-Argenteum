@@ -23,7 +23,7 @@ class CaelumConsumableItem : PowerupGiver
 
     Name GetPowerClassName()
     {
-        switch (GetConsumableType())
+        switch (CaelumPotionRules.Family(GetConsumableType()))
         {
             case CaelumConstants.CONSUMABLE_ANIMA_POTION:
                 return 'CaelumAnimaRegeneration';
@@ -81,6 +81,12 @@ class CaelumConsumableItem : PowerupGiver
                     CaelumConstants.CONSUMABLE_REGENERATION_SECONDS * TICRATE;
                 power.PulseTics = 0;
                 power.SeatedMealSubTics = 0;
+                if(CaelumPotionRules.IsPotion(GetConsumableType()))
+                {
+                    power.PotionTotalRatio=CaelumPotionRules.TotalRatio(CaelumPotionRules.Size(GetConsumableType()));
+                    power.PotionHealingFraction=0;
+                    power.PotionPulsesGiven=0;
+                }
                 if (GetConsumableType() == CaelumConstants.CONSUMABLE_FOOD_RATION)
                 {
                     let user = CaelumPlayer(Owner);
@@ -142,6 +148,11 @@ class CaelumRegenerationPower : Powerup
     double WaterRecoveryPerPulse;
     // Cero en guardados anteriores: conserva sus pulsos históricos de 1 punto.
     double FoodRecoveryPerPulse;
+    // Cero preserva los efectos históricos cargados; las dosis nuevas fijan
+    // su recuperación total y conservan la fracción de Salud entre pulsos.
+    double PotionTotalRatio;
+    double PotionHealingFraction;
+    int PotionPulsesGiven;
 
     Default
     {
@@ -170,6 +181,12 @@ class CaelumRegenerationPower : Powerup
         PulseTics++;
         if (PulseTics < TICRATE) { return; }
         PulseTics -= TICRATE;
+        if(PotionTotalRatio>0 && CaelumPotionRules.IsPotion(kind))
+        {
+            ApplyPotionPulse(kind,PotionTotalRatio/CaelumConstants.CONSUMABLE_REGENERATION_SECONDS);
+            PotionPulsesGiven++;
+            return;
+        }
         CaelumPlayer caelumPlayer = CaelumPlayer(Owner);
         if (caelumPlayer != null)
         {
@@ -183,6 +200,57 @@ class CaelumRegenerationPower : Powerup
             }
             caelumPlayer.ApplyConsumableRegenerationPulse(GetRegenerationType(),
                 FoodRecoveryPerPulse > 0 ? FoodRecoveryPerPulse : 1.0);
+        }
+    }
+
+    override void EndEffect()
+    {
+        // Powerup caduca antes del último DoEffect del dueño. Completar ese
+        // pulso al vencer evita perder un décimo, sin adelantar la dosis ni
+        // regalar pulsos al morir, cancelar o refrescar una poción.
+        if(EffectTics==0 && PotionTotalRatio>0
+            && PotionPulsesGiven==CaelumConstants.CONSUMABLE_REGENERATION_SECONDS-1)
+        {
+            ApplyPotionPulse(GetRegenerationType(),PotionTotalRatio/CaelumConstants.CONSUMABLE_REGENERATION_SECONDS);
+            PotionPulsesGiven++;
+        }
+        Super.EndEffect();
+    }
+
+    void ApplyPotionPulse(int family,double ratio)
+    {
+        if(Owner==null || Owner.health<=0)return;
+        let user=CaelumPlayer(Owner);
+        let npc=CaelumCombatActor(Owner);
+        if(user==null && npc==null)return;
+        if(user!=null && (user.DerivedStats==null || !CaelumPlayerAuthority.CanMutate(user)))return;
+        if(family==CaelumConstants.CONSUMABLE_LIFE_POTION)
+        {
+            int maximum=user!=null ? user.CaelumMaximumHealth : npc.CombatMaximumHealth;
+            PotionHealingFraction+=maximum*ratio;
+            int healing=int(PotionHealingFraction);
+            PotionHealingFraction-=healing;
+            Owner.health=Min(maximum,Owner.health+healing);
+            if(user!=null){user.player.health=user.health;user.UpdateHealthStateEffects();}
+            else npc.UpdateCombatHealthEffects();
+        }
+        else if(family==CaelumConstants.CONSUMABLE_ANIMA_POTION)
+        {
+            if(user!=null)user.CurrentAnima=Min(user.DerivedStats.MaximumAnima,
+                user.CurrentAnima+user.DerivedStats.MaximumAnima*ratio);
+            else npc.CurrentCombatAnima=Min(npc.MaximumCombatAnima,
+                npc.CurrentCombatAnima+npc.MaximumCombatAnima*ratio);
+        }
+        else if(family==CaelumConstants.CONSUMABLE_ENERGY_DRINK)
+        {
+            if(user!=null)
+            {
+                user.CurrentAir=Min(user.DerivedStats.MaximumAir,user.CurrentAir+user.DerivedStats.MaximumAir*ratio);
+                user.CurrentSleep=Min(CaelumConstants.SURVIVAL_MAXIMUM,
+                    user.CurrentSleep+CaelumConstants.SURVIVAL_MAXIMUM*ratio);
+                user.UpdateAirStateEffects();user.UpdateSurvivalStates();
+            }
+            else npc.CurrentCombatAir=Min(npc.MaximumCombatAir,npc.CurrentCombatAir+npc.MaximumCombatAir*ratio);
         }
     }
 }
@@ -273,6 +341,43 @@ class CaelumEnergyDrink : CaelumConsumableItem
         return CaelumConstants.CONSUMABLE_ENERGY_DRINK;
     }
     States { Spawn: CENE A -1 Bright; Stop; }
+}
+
+class CaelumLifePotionMedium : CaelumLifePotion
+{
+    Default { Tag "$CA_CONSUMABLE_LIFE_MEDIUM"; Inventory.Icon "graphics/caelum/icons/potions/medikit_medium.png"; }
+    override int GetConsumableType(){return CaelumConstants.CONSUMABLE_LIFE_MEDIUM;}
+    States { Spawn: CMMD A -1; Stop; }
+}
+class CaelumAnimaPotionMedium : CaelumAnimaPotion
+{
+    Default { Tag "$CA_CONSUMABLE_ANIMA_MEDIUM"; Inventory.Icon "graphics/caelum/icons/potions/anima_medium.png"; }
+    override int GetConsumableType(){return CaelumConstants.CONSUMABLE_ANIMA_MEDIUM;}
+    States { Spawn: CAMD A -1 Bright; Stop; }
+}
+class CaelumEnergyDrinkMedium : CaelumEnergyDrink
+{
+    Default { Tag "$CA_CONSUMABLE_ENERGY_MEDIUM"; Inventory.Icon "graphics/caelum/icons/potions/energy_medium.png"; }
+    override int GetConsumableType(){return CaelumConstants.CONSUMABLE_ENERGY_MEDIUM;}
+    States { Spawn: CEMD A -1 Bright; Stop; }
+}
+class CaelumLifePotionLarge : CaelumLifePotion
+{
+    Default { Tag "$CA_CONSUMABLE_LIFE_LARGE"; Inventory.Icon "graphics/caelum/icons/potions/medikit_large.png"; }
+    override int GetConsumableType(){return CaelumConstants.CONSUMABLE_LIFE_LARGE;}
+    States { Spawn: CMLG A -1; Stop; }
+}
+class CaelumAnimaPotionLarge : CaelumAnimaPotion
+{
+    Default { Tag "$CA_CONSUMABLE_ANIMA_LARGE"; Inventory.Icon "graphics/caelum/icons/potions/anima_large.png"; }
+    override int GetConsumableType(){return CaelumConstants.CONSUMABLE_ANIMA_LARGE;}
+    States { Spawn: CALG A -1 Bright; Stop; }
+}
+class CaelumEnergyDrinkLarge : CaelumEnergyDrink
+{
+    Default { Tag "$CA_CONSUMABLE_ENERGY_LARGE"; Inventory.Icon "graphics/caelum/icons/potions/energy_large.png"; }
+    override int GetConsumableType(){return CaelumConstants.CONSUMABLE_ENERGY_LARGE;}
+    States { Spawn: CELG A -1 Bright; Stop; }
 }
 
 class CaelumFoodRation : CaelumConsumableItem

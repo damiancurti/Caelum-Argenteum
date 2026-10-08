@@ -1,0 +1,21 @@
+{
+  "baseline_before": {
+    "src/maps/MAP02.wad": "fc59611c4af051cda3f7b290ffdd8b505dd14606cbd6454e226ff6db81ada91b",
+    "src/caelum/world/CaelumMazeLootCatalogue.zs": "483ee58e8bcc02c56a32a2e0b9f429af42fe71a147152dc0a629b7df7f4ff022",
+    "assets/map02_maze/MAP02_MANIFEST.json": "9f962cfeed5c03f64068c3c360bc9b9bd9b6c709354d6ab88055662dcbbcec90",
+    "src/caelum/world/CaelumMazeLayout.zs": "e080cafa0810c8e6a52782de166a5e13de1fd802e3b3f59a6cecd2cb772dc11e"
+  },
+  "first": {
+    "src/maps/MAP02.wad": "fc59611c4af051cda3f7b290ffdd8b505dd14606cbd6454e226ff6db81ada91b",
+    "src/caelum/world/CaelumMazeLootCatalogue.zs": "483ee58e8bcc02c56a32a2e0b9f429af42fe71a147152dc0a629b7df7f4ff022",
+    "assets/map02_maze/MAP02_MANIFEST.json": "9f962cfeed5c03f64068c3c360bc9b9bd9b6c709354d6ab88055662dcbbcec90",
+    "src/caelum/world/CaelumMazeLayout.zs": "2606f1181c381ef90f2ab8c000a91ce2d601e426887015e2180d63c9a3a62474"
+  },
+  "second": {
+    "src/maps/MAP02.wad": "fc59611c4af051cda3f7b290ffdd8b505dd14606cbd6454e226ff6db81ada91b",
+    "src/caelum/world/CaelumMazeLootCatalogue.zs": "483ee58e8bcc02c56a32a2e0b9f429af42fe71a147152dc0a629b7df7f4ff022",
+    "assets/map02_maze/MAP02_MANIFEST.json": "9f962cfeed5c03f64068c3c360bc9b9bd9b6c709354d6ab88055662dcbbcec90",
+    "src/caelum/world/CaelumMazeLayout.zs": "2606f1181c381ef90f2ab8c000a91ce2d601e426887015e2180d63c9a3a62474"
+  },
+  "unchanged_geometry": true
+}

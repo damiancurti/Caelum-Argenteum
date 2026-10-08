@@ -1,6 +1,27 @@
 # TASKS.md — Active tasks
 
-Documentation version: **5.1.4** — 2026-10-08.
+Documentation version: **5.1.5** — 2026-10-08.
+
+## Issue #135 - Demon breath and potions (5.1.5)
+
+Implemented: native 6/6/6 supplies; nine typed ten-second doses; automatic strict
+below-50% consumption with per-family waiting; approved prices, weight and
+silver/gold sprite distinctions; predefined priority and weighted single-unit
+loot; cold/combat breath with real-time spending, contact burn and thermal heat.
+All design questions were resolved by the author. Native evidence includes
+normal-AI cold warming, concurrent regeneration, obstruction, interruptions,
+scripted retreat, current save/hub and original-save migration/rollback.
+
+Finite exhaustion, dedicated exhalation loops, corrected Zupay action rotations
+and bounded incremental-cost checks pass. Final source-bound results and
+static/package gates are recorded in validation_515. No mass siege retest is
+requested. The reported shutdown crash has a targeted teardown fix;
+only runs with explicit clean exit codes count as final clean-exit proof.
+Author acceptance remains pending; do not merge/close #135 without authorization.
+Next authorized work: #143 crouched and aimed soldiers, original Domingo poses,
+focused native verification, commit/push and separate linked PR.
+
+#140 is closed; PR #142 merged 5f9202ad. CA133-01/02/03 remain pending.
 
 ## Issue #133 - City interiors and deployment (5.1.3, closure and merge authorized)
 

@@ -1,6 +1,15 @@
 CAELUM ARGENTEUM — STORY AND MAP01
 
-Documentation version: **5.1.4** — 2026-10-08.
+Documentation version: **5.1.5** — 2026-10-08.
+
+## 5.1.5 - Demon behavior integration (#135)
+
+MAP01 story and map geometry remain unchanged. The deterministic MAP02
+catalogue exposes predefined-drop membership; existing keys and mission drops
+retain priority over potion loot. Native Zupay retreat remains a living exit,
+without death loot. Both demon profiles use shared thermal radiation and direct
+flame burn under the approved SYSTEMS contract; finite supplies stay individual.
+New saved supply revision 1 does not replenish spent or empty inventories.
 
 ## 5.1.4 - Shared thermal physiology (#140)
 

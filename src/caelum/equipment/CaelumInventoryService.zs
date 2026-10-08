@@ -4043,6 +4043,7 @@ class CaelumInventoryService : Object play
 
     static Name GetConsumableClassName(CaelumPlayer user, int consumableType)
     {
+        if(CaelumPotionRules.IsPotion(consumableType))return CaelumPotionRules.ItemClass(consumableType);
         switch (consumableType)
         {
             case CaelumConstants.CONSUMABLE_ANIMA_POTION:
