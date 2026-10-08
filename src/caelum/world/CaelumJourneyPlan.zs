@@ -255,9 +255,8 @@ class CaelumJourneyModel : Object play
             double performance = 1.0 - (1.0 - raw) * HealthPenalty;
             performance += (1.0 - performance) * (MaxAdrenaline > 0 ? AirAdrenaline() / MaxAdrenaline : 0.0);
             double foodCost = CaelumConstants.AIR_FULL_RECOVERY_HUNGER_COST * costs / MaxAir;
-            double waterCost = CaelumConstants.AIR_FULL_RECOVERY_THIRST_COST * costs / MaxAir;
-            double gained = Min(Min(AirRate * performance * comfort, MaxAir - Air), Min(Hunger / foodCost, Thirst / waterCost));
-            Air += gained; Hunger = Max(0.0, Hunger - gained * foodCost); Thirst = Max(0.0, Thirst - gained * waterCost);
+            double gained = Min(Min(AirRate * performance * comfort, MaxAir - Air), Hunger / foodCost);
+            Air += gained; Hunger = Max(0.0, Hunger - gained * foodCost);
         }
         ElapsedTics++;
     }

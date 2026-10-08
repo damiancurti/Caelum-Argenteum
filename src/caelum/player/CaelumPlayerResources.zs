@@ -586,13 +586,7 @@ class CaelumPlayerResources : Object play
         double hungerCostPerAir =
             CaelumConstants.AIR_FULL_RECOVERY_HUNGER_COST
             * consumptionMultiplier / user.DerivedStats.MaximumAir;
-        double thirstCostPerAir =
-            CaelumConstants.AIR_FULL_RECOVERY_THIRST_COST
-            * consumptionMultiplier / user.DerivedStats.MaximumAir * CaelumThermalEffects.HeatCost(user);
-        double affordableAir = Min(
-            user.CurrentHunger / hungerCostPerAir,
-            user.CurrentThirst / thirstCostPerAir
-        );
+        double affordableAir = user.CurrentHunger / hungerCostPerAir;
         if (affordableAir <= 0.0) return;
 
         double recoveredAir = Min(
@@ -608,10 +602,6 @@ class CaelumPlayerResources : Object play
         user.CurrentHunger = Max(
             0.0,
             user.CurrentHunger - recoveredAir * hungerCostPerAir
-        );
-        user.CurrentThirst = Max(
-            0.0,
-            user.CurrentThirst - recoveredAir * thirstCostPerAir
         );
         user.UpdateSurvivalStates();
     }

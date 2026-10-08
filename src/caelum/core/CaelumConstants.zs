@@ -1234,10 +1234,9 @@ class CaelumConstants : Object
 
     // The design defines a complete air recovery time of eight minutes.
     const AIR_FULL_RECOVERY_SECONDS = 480;
-    // A complete air refill consumes 10% hunger and 20% thirst. Expressing
-    // these as full-refill costs keeps the rule independent of maximum air.
+    // Coste por reserva completa, independiente de su capacidad máxima.
     const AIR_FULL_RECOVERY_HUNGER_COST = 10.0;
-    const AIR_FULL_RECOVERY_THIRST_COST = 20.0;
+    const AIR_FULL_RECOVERY_THIRST_COST = 0.0;
 
     // La falta de respiración empieza en 5 Aire/s y suma 1 Aire/s por cada
     // segundo continuo bajo el agua hasta llegar a 20 Aire/s. La masa y la
