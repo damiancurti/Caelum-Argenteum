@@ -737,12 +737,11 @@ class CaelumHUDOverlay : EventHandler
         int width=Max(1,int(size.X)), height=Max(1,int(size.Y));
         int stroke=Max(1,int(Screen.GetWidth()/640.0));
         int strokeY=Max(1,int(Screen.GetHeight()/360.0));
-        int colors[6]={0x377DAA,0x539FBC,0x789C9F,0xAD9873,0xD18D45,0xBC5743};
         for(int band=0;band<6;band++)
         {
             int left=x+int(width*CaelumThermalHUD.BandPosition(band));
             int right=x+int(width*CaelumThermalHUD.BandPosition(band+1));
-            Screen.Dim(colors[band],0.80,left,y,Max(1,right-left),height);
+            Screen.Dim(CaelumThermalHUD.BandColor(band),0.80,left,y,Max(1,right-left),height);
         }
         // ±10, ±20 y el cero se distinguen también por geometría, sin color.
         for(int tick=1;tick<6;tick++)
@@ -750,6 +749,7 @@ class CaelumHUDOverlay : EventHandler
                 x+int(width*CaelumThermalHUD.BandPosition(tick)),y,stroke,height);
         String label=StringTable.Localize("CA_HUD_THERMAL_UNAVAILABLE",false);
         int textColor=Font.CR_GRAY;
+        int textTint=0xFFFFFFFF;
         if(thermal!=null)
         {
             double toughness=localPlayer.Attributes!=null ? localPlayer.Attributes.Toughness : thermal.Toughness;
@@ -757,8 +757,8 @@ class CaelumHUDOverlay : EventHandler
             int marker=x+int((width-1)*CaelumThermalHUD.Position(exposure,toughness));
             Screen.Dim(0x080C10,1,marker-2*stroke,y-strokeY,5*stroke,height+2*strokeY);
             Screen.Dim(0xFFFFFF,1,marker,y-strokeY,stroke,height+2*strokeY);
-            int severity=CaelumThermalRules.Severity(exposure,toughness);
-            textColor=severity==0 ? Font.CR_WHITE : exposure<0 ? Font.CR_CYAN : Font.CR_ORANGE;
+            textColor=Font.CR_WHITE;
+            textTint=0xFF000000 | CaelumThermalHUD.ExposureColor(exposure,toughness);
             String stateName=StringTable.Localize(CaelumThermalHUD.StateKey(exposure,toughness),false);
             bool beyond=Abs(exposure)>CaelumThermalHUD.Range(toughness);
             String key=beyond ? (exposure<0 ? "CA_HUD_THERMAL_BELOW" : "CA_HUD_THERMAL_ABOVE") : "CA_HUD_THERMAL_VALUE";
@@ -767,7 +767,8 @@ class CaelumHUDOverlay : EventHandler
             label=String.Format(StringTable.Localize(key,false),value,stateName);
         }
         Screen.DrawText(HUDFont,textColor,CaelumThermalHUD.BAR_X,CaelumThermalHUD.LABEL_Y,label,
-            DTA_VIRTUALWIDTHF,640.0,DTA_VIRTUALHEIGHTF,360.0,DTA_KEEPRATIO,true,DTA_SHADOW,true);
+            DTA_VIRTUALWIDTHF,640.0,DTA_VIRTUALHEIGHTF,360.0,DTA_KEEPRATIO,true,DTA_SHADOW,true,
+            DTA_COLOR,textTint);
         // La llama desplazada no debe quedar tapada por el laurel del marco.
         DrawHUDTexture("graphics/caelum/ui/hud/icons/ca_hud_icon_thermal.png",422.0,225.0,18.0,18.0);
     }
