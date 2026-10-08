@@ -92,7 +92,7 @@ for path in sorted(HERE.glob('*.png')):
 
 result={
     'issue':131,'release':'5.1.1','baseline_commit':manifest['baseline_commit'],
-    'status':'gameplay and prior HUD checks author-accepted on 2026-10-07; revised icon alone pending CA131-01',
+    'status':'all CA131-01/02 checks author-accepted on 2026-10-07; merge and closure authorized',
     'engine':'GZDoom 4.14.2, Windows/Vulkan, RNG 116, cap 60, 5% audio, background unpaused',
     'production_sha256':manifest['production'],'standard_build_sha256':digest(standard),
     'standard_build_members_identical':members,'repeat_fixture_hashes_identical':True,'deterministic_fixture_manifest':manifest,
@@ -107,8 +107,8 @@ result={
         'qualification':'One short arrival pair, not statistical evidence of improvement or late-battle FPS. Functional source includes HUD projection correction; final later changes add the fixed thermal icon and extract unchanged 10/20/30 boundaries into shared data/helpers used by simulation, HUD bands and Journal. The final standard build reruns all 47 checks and Spanish UI states. No AI/population policy changed; no new per-frame scan.'},
     'corrections':'The copied save fixture omitted WeaponDurabilityRevision, accidentally triggering the old x10 migration before hub restore; the corrected verified-save chain initializes that metadata and compares every equipment field. Early multi-line console scripts quit before their waits; recorded final scripts use one command chain. Initial unsafe walking fixture could heat from exertion; changed to a sheltered cold ship route, preserving production rules. Native multi-value projection helper needed explicit unpack/return. Windows client sizes verified from PNG headers. Before-fix 4:3 capture retained explicitly.',
     'reproduce':'python assets/validation_511/prepare.py; powershell -NoProfile -ExecutionPolicy Bypass -File assets/validation_511/run_check.ps1 with the label/package/addon/map/script/language/dimensions recorded in each *-run.json. Use unique labels. For viewed.cfg first run prepare_bots.py and pass the isolated engine path. Standard package: build_dev.ps1. Generate this summary with collect_results.py.',
-    'author_pending':['CA131-01'],
-    'author_acceptance':{'date':'2026-10-07','passed':['CA131-02'],'qualified_pass':'All prior CA131-01 functional/layout checks passed; only the requested diagonal icon revision needs approval.'},
+    'author_pending':[],
+    'author_acceptance':{'date':'2026-10-07','passed':['CA131-01','CA131-02'],'qualified_pass':'All checks, including the final diagonal icon, passed without reported exceptions; merge and closure explicitly authorized.'},
     'icon_revision_2':{'manifest':'assets/manifests/thermal_icon_511_v2.json','scope':'Only the thermal PNG and its draw order change. No simulation or saved values change; prior functional evidence remains applicable. Native revised-icon runs cover 1280x720 and 1024x768.'},
 }
 power=WORK/'power-request.json'

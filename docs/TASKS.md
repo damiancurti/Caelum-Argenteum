@@ -11,10 +11,9 @@ walking sleep pauses distance and ships continue. Retain forecast rejection,
 vehicle shelter and no invented real-time damage.
 
 47 native assertions, viewed-pawn ownership, save/hub/rollback, aspect/scale
-and bilingual checks pass; evidence belongs to validation_511. Review the linked PR
-and the sole outstanding CA131-01 icon check in pending_test.txt before closure
-or merge. On 2026-10-07 the author accepted CA131-02 and all prior HUD checks,
-requesting only diagonal separation of the snowflake and flame. Future region assignments must remain consistent
+and bilingual checks pass; evidence belongs to validation_511. On 2026-10-07
+the author accepted CA131-01/02, including the final diagonal icon, and authorized
+PR #138 merge and #131 closure. No author checks remain. Future region assignments must remain consistent
 between the destination catalogue and authored map markers.
 
 ## Issue #130 — Thermal survival (5.1.0)

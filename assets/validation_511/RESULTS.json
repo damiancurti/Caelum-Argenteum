@@ -2,7 +2,7 @@
   "issue": 131,
   "release": "5.1.1",
   "baseline_commit": "524baaf0da4e385c81c54823ff5938921538652b",
-  "status": "gameplay and prior HUD checks author-accepted on 2026-10-07; revised icon alone pending CA131-01",
+  "status": "all CA131-01/02 checks author-accepted on 2026-10-07; merge and closure authorized",
   "engine": "GZDoom 4.14.2, Windows/Vulkan, RNG 116, cap 60, 5% audio, background unpaused",
   "production_sha256": "04b7433070652719effee1943345b3902ed13b7f45706be1a489f27413ff3f34",
   "standard_build_sha256": "baee2f5ec70a78632fbe0df1ac6bb4efd47ac3a703e10aa731af6f3e12827ae7",
@@ -476,15 +476,14 @@
   },
   "corrections": "The copied save fixture omitted WeaponDurabilityRevision, accidentally triggering the old x10 migration before hub restore; the corrected verified-save chain initializes that metadata and compares every equipment field. Early multi-line console scripts quit before their waits; recorded final scripts use one command chain. Initial unsafe walking fixture could heat from exertion; changed to a sheltered cold ship route, preserving production rules. Native multi-value projection helper needed explicit unpack/return. Windows client sizes verified from PNG headers. Before-fix 4:3 capture retained explicitly.",
   "reproduce": "python assets/validation_511/prepare.py; powershell -NoProfile -ExecutionPolicy Bypass -File assets/validation_511/run_check.ps1 with the label/package/addon/map/script/language/dimensions recorded in each *-run.json. Use unique labels. For viewed.cfg first run prepare_bots.py and pass the isolated engine path. Standard package: build_dev.ps1. Generate this summary with collect_results.py.",
-  "author_pending": [
-    "CA131-01"
-  ],
+  "author_pending": [],
   "author_acceptance": {
     "date": "2026-10-07",
     "passed": [
+      "CA131-01",
       "CA131-02"
     ],
-    "qualified_pass": "All prior CA131-01 functional/layout checks passed; only the requested diagonal icon revision needs approval."
+    "qualified_pass": "All checks, including the final diagonal icon, passed without reported exceptions; merge and closure explicitly authorized."
   },
   "icon_revision_2": {
     "manifest": "assets/manifests/thermal_icon_511_v2.json",
@@ -492,24 +491,24 @@
     "keep_awake": {
       "started_utc": "2026-10-07T23:46:38.2037146Z",
       "pid": 7552,
-      "active_plan_before": "GUID de plan de energía: 381b4222-f694-41f0-9685-ff5bb260df2e  (Equilibrado)",
+      "active_plan_before": "GUID de plan de energ\u00eda: 381b4222-f694-41f0-9685-ff5bb260df2e  (Equilibrado)",
       "mechanism": "Thread-scoped ES_CONTINUOUS | ES_SYSTEM_REQUIRED | ES_DISPLAY_REQUIRED; no power-plan mutation",
       "maximum_hours": 1,
       "previous_thread_state": 2147483648,
       "release_result": 2147483651,
       "released_utc": "2026-10-07T23:53:13.2371306Z",
-      "active_plan_after": "GUID de plan de energía: 381b4222-f694-41f0-9685-ff5bb260df2e  (Equilibrado)"
+      "active_plan_after": "GUID de plan de energ\u00eda: 381b4222-f694-41f0-9685-ff5bb260df2e  (Equilibrado)"
     }
   },
   "keep_awake": {
     "started_utc": "2026-10-07T23:06:30.3834225Z",
     "pid": 25216,
-    "active_plan_before": "GUID de plan de energía: 381b4222-f694-41f0-9685-ff5bb260df2e  (Equilibrado)",
+    "active_plan_before": "GUID de plan de energ\u00eda: 381b4222-f694-41f0-9685-ff5bb260df2e  (Equilibrado)",
     "mechanism": "Thread-scoped ES_CONTINUOUS | ES_SYSTEM_REQUIRED | ES_DISPLAY_REQUIRED; no power-plan mutation",
     "maximum_hours": 12,
     "previous_thread_state": 2147483648,
     "release_result": 2147483651,
     "released_utc": "2026-10-07T23:42:39.2222414Z",
-    "active_plan_after": "GUID de plan de energía: 381b4222-f694-41f0-9685-ff5bb260df2e  (Equilibrado)"
+    "active_plan_after": "GUID de plan de energ\u00eda: 381b4222-f694-41f0-9685-ff5bb260df2e  (Equilibrado)"
   }
 }

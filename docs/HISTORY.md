@@ -26,12 +26,16 @@ passed and requests more separation between the snowflake and flame. CA131-02
 (attributes, adaptation, long travel and persistence), originating in 5.1.1/#131,
 is passed without a reported exception and removed from pending_test.txt.
 The previous functional/layout portions of CA131-01 are accepted. Its entry
-remains narrowed to the revised icon, which places the snowflake upper left
+was narrowed to the revised icon, which places the snowflake upper left
 and flame lower right with a visible gap. The original art remains preserved.
 The icon is drawn after the frame laurel to keep the lower-right flame visible.
 Native checks at 1280x720 and 1024x768 verify the revised composition in game;
-final author approval of that composition remains pending. No simulation,
+the author subsequently approved that composition. No simulation,
 attribute, journey or save behavior changes during this review revision.
+**Final author confirmation, 2026-10-07:** CA131-01 (origin 5.1.1/#131),
+including the revised diagonal icon, passed without a reported exception.
+The author explicitly authorizes #131 closure and PR #138 merge. The final
+pending entry is removed; agent evidence remains separately qualified.
 The author later adds a grey flame/snowflake icon; generation provenance is
 recorded in ASSETS and the icon manifest. No new audio, recipes or encounter
 content. The temporary keep-awake helper

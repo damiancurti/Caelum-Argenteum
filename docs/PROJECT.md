@@ -18,9 +18,9 @@ The aspect matrix exposed and corrected the previous frame/fill mismatch.
 A short full-roster arrival pair gives 31.00 tics/s in 5.1.0 and 33.44 in this
 patch before the final static icon/threshold-helper extraction. This is a smoke
 comparison, not a speedup claim or late-battle FPS validation.
-On 2026-10-07 the author confirmed the other tests passed. CA131-02 and prior
-HUD behavior are accepted; CA131-01 remains only for the revised grey icon,
-with the snowflake upper left and flame lower right. PR #138 stays open.
+On 2026-10-07 the author confirmed all tests passed, including CA131-01 with
+the snowflake upper left and flame lower right. CA131-01/02 are accepted without
+reported exceptions; PR #138 merge and #131 closure are authorized.
 The existing V5.2+ roadmap and accepted #130 calibration limits remain.
 
 ## 5.1.0 — Thermal exposure and energy transfer (#130)
@@ -3825,7 +3825,7 @@ content extensions and the pending previous versions are returned to V5.
 | V4.37: Tarot and Trucazo | Implemented and feature-accepted: physical 78-card deck, three campaign essences with selection/activation, and a complete NPC Trucazo slice. #82 / 4.37.24 owns final integration and export. Remaining acquisition, Major powers, broader awakening and team/network modes stay in V5. |
 | **V4 test export** | #17 / 4.36.28 is accepted historical evidence. #82 / 4.37.24 exports the current integrated MAP01 -> MAP02 -> MAP06 slice with initial controls and final validation. It does not claim full campaign or standalone completion. |
 | **V5.0: modular code architecture** | The bounded #116–#120 series is implemented: player services/adapters, authoritative inventory and Tarot operations, explicit per-player contracts and integrated native validation. #119/#120 author acceptance passed on 2026-10-06. Compatible inputs/selectors/save adapters remain; further F1–F4 coordination/performance/network work is separate and full multiplayer is not claimed. |
-| V5.1: thermal exposure and HUD | Author-approved 2026-10-07 rules and initial coefficients are specified in [#130](https://github.com/damiancurti/Caelum-Argenteum/issues/130): racial comfort, proportional Toughness resistance, heat/cold penalties, wetness, insulation, activity, magic and distinct clocks. [#131](https://github.com/damiancurti/Caelum-Argenteum/issues/131) adds the thermal bar directly above the load bar. #130 / 5.1.0 is implemented and author-accepted on 2026-10-07; #131 / 5.1.1 is implemented; the revised icon alone awaits author approval. The thermal contract records the implemented integration and remaining calibration limits. |
+| V5.1: thermal exposure and HUD | Author-approved 2026-10-07 rules and initial coefficients are specified in [#130](https://github.com/damiancurti/Caelum-Argenteum/issues/130): racial comfort, proportional Toughness resistance, heat/cold penalties, wetness, insulation, activity, magic and distinct clocks. [#131](https://github.com/damiancurti/Caelum-Argenteum/issues/131) adds the thermal bar directly above the load bar. #130 / 5.1.0 is implemented and author-accepted on 2026-10-07; #131 / 5.1.1 is implemented and fully author-accepted on 2026-10-07. The thermal contract records the implemented integration and remaining calibration limits. |
 | V5.7: resources and biomes | Persistent 3D sources, melee extraction slashing/piercing, toughness/rarity/depth/region/skill, exhaustion and regeneration. Marine biomes, algae/iodine and non-potable waters; stores maintain access to remote materials. Detailed sequencing is below. |
 
 ### Numbered V5 delivery sequence — author request 2026-10-07

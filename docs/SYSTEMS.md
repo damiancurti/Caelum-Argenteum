@@ -229,8 +229,8 @@ It follows a valid viewed live player,
 falling back to the local pawn for non-player cameras; this is not new network
 multiplayer support. Draw calls never sample climate/geometry or mutate state.
 Air temperature, wetness and comfort remain separate Journal details. This is
-not core temperature. #131 gameplay and prior HUD checks are author-accepted; only revised-icon
-approval remains in pending_test.txt.
+not core temperature. #131 gameplay and final revised-icon checks are author-accepted on 2026-10-07.
+No #131 author checks remain in pending_test.txt.
 Native evidence, exact package/config hashes, migration comparisons, drying fit
 and bilingual captures are in [5.1.0 results](../assets/validation_510/RESULTS.json).
 The author accepted CA130-01/02/03 on 2026-10-07; HISTORY records the results

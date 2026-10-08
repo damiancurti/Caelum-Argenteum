@@ -1,7 +1,0 @@
-CA131-01 | Origin: 5.1.1 / issue #131 | Revised thermal icon only
-Author confirmed all other HUD and gameplay checks passed on 2026-10-07.
-Prerequisites: current PR #138 build, normal HUD at your preferred resolution.
-Steps: inspect the grey icon to the left of the thermal bar above Load.
-Expected: snowflake upper left and flame lower right, separated and recognizable
-at the normal HUD size; neither symbol hidden by the frame ornament.
-Only approval of this revised icon remains. CA131-02 passed; see HISTORY.
