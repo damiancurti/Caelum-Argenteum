@@ -1,6 +1,9 @@
 // Matemática compartida sin estado de jugador; E no es temperatura corporal.
 class CaelumThermalRules : Object
 {
+    static clearscope double ShiveringExtraMet(double exposure)
+    {return (CaelumThermalData.SHIVER_MAX_MET-1)*Clamp(-exposure/CaelumThermalData.SHIVER_FULL_COLD_EXPOSURE,0.0,1.0);}
+
     static clearscope double HydrationPointsPerKg(double massKg)
     {
         return CaelumConstants.WATER_RECOVERY_PER_LITER_PER_PULSE

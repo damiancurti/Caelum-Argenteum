@@ -2,7 +2,7 @@
 // Procedencia física y decisiones del autor en SYSTEMS, sección V5.1 térmica.
 class CaelumThermalData : Object
 {
-    const REVISION=4;
+    const REVISION=6;
     static clearscope double ExposureThreshold(int tier)
     {return tier==1 ? 10.0 : tier==2 ? 20.0 : 30.0;}
     const LIGHT_CLOTH=0;
@@ -20,6 +20,11 @@ class CaelumThermalData : Object
     const REFERENCE_RADIATION=4.7;
     const WATER_CONVECTION=100.0;
     const MET_WATTS_M2=58.2;
+    // #140: esfuerzo total aprobado; el reposo de 1 MET ya está en el balance.
+    const CARBINE_FIRE_MET=2.0;
+    const CARBINE_RELOAD_MET=2.5;
+    const SHIVER_MAX_MET=5.0;
+    const SHIVER_FULL_COLD_EXPOSURE=5.0;
     const REFERENCE_SECONDS=1200.0;
     const REFERENCE_MASS_KG=80.0;
     const REFERENCE_HEIGHT_METERS=1.75;

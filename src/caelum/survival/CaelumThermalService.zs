@@ -26,6 +26,7 @@ class CaelumThermalService : Object play
         live.ActivityWatts=projection.ActivityWatts;live.ActivityJoules=projection.ActivityJoules;
         live.EvaporatedKg=projection.EvaporatedKg;live.EvaporationJoules=projection.EvaporationJoules;
         live.RespirationJoules=projection.RespirationJoules;
+        live.ShiveringJoules=projection.ShiveringJoules;
         live.SweatKg=projection.SweatKg;live.SweatRunoffKg=projection.SweatRunoffKg;
         live.SweatRateKgHour=projection.SweatRateKgHour;
         // La previsión de provisiones ya aplicó la misma pérdida al jugador.
@@ -88,7 +89,7 @@ class CaelumThermalService : Object play
     }
 
     static void Advance(Actor body,double worldSeconds,double realSeconds,
-        double activityWatts=0,double magicWatts=0,double fireWatts=0)
+        double activityWatts=0,double magicWatts=0,double fireWatts=0,double firearmWatts=0)
     {
         let thermal=CaelumThermalBody.Get(body,true);
         if(thermal==null || body.health<=0)return;
@@ -102,11 +103,12 @@ class CaelumThermalService : Object play
             thermal.WorkWaterKg[slot]=CaelumThermalBody.Water(body,thermal,slot);
         }
         thermal.Bare=CaelumThermalBody.FurryAnimal(body);
-        double severitySeconds=Integrate(thermal,worldSeconds,realSeconds,activityWatts,magicWatts,fireWatts);
+        double severitySeconds=Integrate(thermal,worldSeconds,realSeconds,activityWatts,magicWatts,fireWatts,0,firearmWatts);
         let user=CaelumPlayer(body);
         if(user!=null)
         {
             user.CurrentThirst=thermal.Hydration;
+            user.CurrentHunger=thermal.ShiveringHunger;
             user.UpdateSurvivalStates();
         }
         for(int slot=0;slot<4;slot++)CaelumThermalBody.SetWater(body,thermal,slot,thermal.WorkWaterKg[slot]);
@@ -116,27 +118,39 @@ class CaelumThermalService : Object play
     // El pronóstico usa una copia independiente. Esta ruta no toca actores,
     // inventario, reloj, recursos ni daños: devuelve la dosis de severidad real.
     static double Integrate(CaelumThermalState thermal,double worldSeconds,double realSeconds,
-        double activityWatts=0,double magicWatts=0,double fireWatts=0,double logicalActivitySeconds=0)
+        double activityWatts=0,double magicWatts=0,double fireWatts=0,double logicalActivitySeconds=0,double firearmWatts=0)
     {
         if(thermal==null)return 0;
-        int steps=thermal.Sweats && thermal.Available ? Max(1,int(Ceil(Max(0.0,worldSeconds)/CaelumThermalData.SWEAT_STEP_SECONDS))) : 1;
+        int steps=(thermal.Sweats || thermal.CanShiver) && thermal.Available ? Max(1,int(Ceil(Max(0.0,worldSeconds)/CaelumThermalData.SWEAT_STEP_SECONDS))) : 1;
         let coefficients=CaelumThermalCoefficients.Get(thermal);
         if(thermal.Available)coefficients.Prepare(thermal);
         double dose=0;
         for(int i=0;i<steps;i++)dose+=IntegrateStep(thermal,worldSeconds/steps,realSeconds/steps,
-            activityWatts,magicWatts,fireWatts,logicalActivitySeconds/steps,coefficients);
+            activityWatts,magicWatts,fireWatts,logicalActivitySeconds/steps,coefficients,firearmWatts);
         return dose;
     }
 
     static double IntegrateStep(CaelumThermalState thermal,double worldSeconds,double realSeconds,
         double activityWatts=0,double magicWatts=0,double fireWatts=0,double logicalActivitySeconds=0,
-        CaelumThermalCoefficients coefficients=null)
+        CaelumThermalCoefficients coefficients=null,double firearmWatts=0)
     {
         if(thermal==null || thermal.Inertia<=0)return 0;
         if(coefficients==null)
         {coefficients=CaelumThermalCoefficients.Get(thermal);if(thermal.Available)coefficients.Prepare(thermal);}
         coefficients.FluxUpdates++;
         double dw=Max(0.0,worldSeconds),dr=Max(0.0,realSeconds);
+        firearmWatts=Max(0.0,firearmWatts);
+        thermal.ActionJoules+=firearmWatts*dr;
+        double shiverMet=thermal.CanShiver ? CaelumThermalRules.ShiveringExtraMet(thermal.Exposure) : 0;
+        double food=shiverMet*dw*thermal.ShiveringHungerPerMetSecond;
+        if(food>0)
+        {
+            // El jugador sólo obtiene el calor extra que puede alimentar.
+            double funded=Min(1.0,Max(0.0,thermal.ShiveringHunger)/food);
+            shiverMet*=funded;thermal.ShiveringHunger=Max(0.0,thermal.ShiveringHunger-food*funded);
+        }
+        double shiverWatts=thermal.SurfaceArea*CaelumThermalData.MET_WATTS_M2*shiverMet;
+        thermal.ShiveringJoules+=shiverWatts*dw;
         thermal.SweatRateKgHour=0;
         if(!thermal.Available)
         {
@@ -144,11 +158,11 @@ class CaelumThermalService : Object play
             // La energía real y las consecuencias de E siguen siendo válidas.
             double activity=CaelumThermalRules.AverageActivityPower(thermal.ActivityWatts,activityWatts,dw);
             thermal.ActivityWatts=CaelumThermalRules.ActivityPower(thermal.ActivityWatts,activityWatts,dw);
-            double logicalPower=dw>0 ? activity*Max(0.0,logicalActivitySeconds)/dw : 0;
+            double logicalPower=shiverWatts+(dw>0 ? activity*Max(0.0,logicalActivitySeconds)/dw : 0);
             double dose=CaelumThermalRules.SeveritySeconds(thermal.Exposure,logicalPower,0,
-                thermal.Inertia,dw,dr,thermal.Toughness,magicWatts+activity);
+                thermal.Inertia,dw,dr,thermal.Toughness,magicWatts+activity+firearmWatts);
             thermal.Exposure=CaelumThermalRules.Advance(thermal.Exposure,logicalPower,0,
-                thermal.Inertia,dw,dr,magicWatts+activity);
+                thermal.Inertia,dw,dr,magicWatts+activity+firearmWatts);
             thermal.ActivityJoules+=activity*(dr+Max(0.0,logicalActivitySeconds));thermal.AbsorbedContinuousJoules+=magicWatts*dr;
             thermal.Severity=CaelumThermalRules.Severity(thermal.Exposure,thermal.Toughness);
             thermal.Conductance=0;thermal.Imbalance=0;
@@ -163,7 +177,7 @@ class CaelumThermalService : Object play
         double rest=coefficients.Rest;
         double referenceOffset=coefficients.ReferenceOffset;
         double nodeC=center+referenceOffset+thermal.Exposure;
-        double conductance=0,imbalance=rest+Max(0.0,fireWatts),wetness=0;
+        double conductance=0,imbalance=rest+shiverWatts+Max(0.0,fireWatts),wetness=0;
         double evaporated=0;
         double points=coefficients.HydrationPoints;
         double sweat=thermal.Sweats ? Min(Max(0.0,thermal.Hydration)/points,
@@ -224,7 +238,7 @@ class CaelumThermalService : Object play
         double activity=CaelumThermalRules.AverageActivityPower(thermal.ActivityWatts,activityWatts,dw);
         thermal.ActivityWatts=CaelumThermalRules.ActivityPower(thermal.ActivityWatts,activityWatts,dw);
         if(dw>0)imbalance+=activity*Max(0.0,logicalActivitySeconds)/dw;
-        double realPower=magicWatts+activity;
+        double realPower=magicWatts+activity+firearmWatts;
         double after=CaelumThermalRules.Advance(thermal.Exposure,imbalance,
             conductance,thermal.Inertia,dw,dr,realPower);
         double severitySeconds=CaelumThermalRules.SeverityBetween(thermal.Exposure,after,imbalance,

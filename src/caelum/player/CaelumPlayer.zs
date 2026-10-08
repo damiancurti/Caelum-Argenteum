@@ -10403,7 +10403,8 @@ class CaelumPlayer : DoomPlayer
         {
             CarbineAmmoCount = CarbineMagazine;
         }
-        CaelumThermalEffects.RecordAction(self,nominalAirCost);
+        if(WeaponModel.WeaponType!=CaelumConstants.WEAPON_TYPE_CARBINE)
+            CaelumThermalEffects.RecordAction(self,nominalAirCost);
         CurrentAir = Max(0.0, CurrentAir - airCost);
         UpdateAirStateEffects();
         LastCarbineFired = true;

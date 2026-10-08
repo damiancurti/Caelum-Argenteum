@@ -35,6 +35,11 @@ class CaelumThermalState : Object play
     vector3 LastPosition;
     vector2 PropelledVelocity;
     double PendingActivityJoules,LocalMotionMps,FireWatts;
+    double PendingFirearmJoules;
+    bool CanShiver;
+    double ShiveringJoules;
+    // Proyección del Hambre del jugador; no crea una reserva alimentaria NPC.
+    double ShiveringHunger,ShiveringHungerPerMetSecond;
     bool MotionInitialized;
     double DrinkOffset,DrinkRemaining;
     double AirC,Humidity,WindMps,RainMmHour,WaterC,ClimateC;
@@ -77,6 +82,8 @@ class CaelumThermalState : Object play
         copy.ReferenceJumpHeat=ReferenceJumpHeat;
         copy.ActivityJoules=ActivityJoules;
         copy.ActionJoules=ActionJoules;
+        copy.CanShiver=CanShiver;copy.ShiveringJoules=ShiveringJoules;
+        copy.ShiveringHunger=ShiveringHunger;copy.ShiveringHungerPerMetSecond=ShiveringHungerPerMetSecond;
         copy.LastPosition=LastPosition;
         copy.MotionInitialized=MotionInitialized;
         copy.DrinkOffset=DrinkOffset;
@@ -127,6 +134,8 @@ class CaelumThermalState : Object play
         if(Revision<3)Hydration=CaelumConstants.SURVIVAL_MAXIMUM;
         // Revisión 4: no migra reservas; sólo invalida proyecciones derivadas.
         if(Revision<4){Coefficients=null;CanBreathe=true;BreathingAirRatio=1;}
+        if(Revision<5)PendingFirearmJoules=0;
+        if(Revision<6){CanShiver=true;ShiveringJoules=0;ShiveringHunger=0;ShiveringHungerPerMetSecond=0;}
         Revision=CaelumThermalData.REVISION;
     }
 

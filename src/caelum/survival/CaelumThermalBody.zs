@@ -41,6 +41,8 @@ class CaelumThermalBody : Object play
     static void Refresh(Actor body,CaelumThermalState thermal)
     {
         thermal.Sweats=true;
+        thermal.CanShiver=true;
+        thermal.ShiveringHungerPerMetSecond=0;
         thermal.CanBreathe=body.WaterLevel<3;
         double priorMass=thermal.BodyMassKg,priorHeight=thermal.HeightMeters;
         let user=CaelumPlayer(body);
@@ -49,7 +51,12 @@ class CaelumThermalBody : Object play
         if(user!=null)
         {
             thermal.Hydration=user.CurrentThirst;
+            thermal.ShiveringHunger=user.CurrentHunger;
             if(user.DerivedStats==null || user.CharacterProfile==null || user.Attributes==null)return;
+            thermal.ShiveringHungerPerMetSecond=CaelumConstants.SURVIVAL_MAXIMUM
+                /(CaelumConstants.HUNGER_EMPTY_GAME_HOURS*3600.0)
+                *user.DerivedStats.BaseMassMultiplier*user.DerivedStats.GetHungerThirstConsumptionMultiplier(user.Attributes)
+                /CaelumRestState.ResourceFactor(user);
             thermal.BreathingAirRatio=user.DerivedStats.MaximumAir>0 ? user.CurrentAir/user.DerivedStats.MaximumAir : 1;
             thermal.BodyMassKg=user.DerivedStats.BaseMass;
             thermal.HeightMeters=user.DerivedStats.BodyHeightMeters;

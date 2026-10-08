@@ -242,7 +242,8 @@ class CaelumWeaponCatalogue : Object
     {
         switch (GetStatisticsWeapon(weaponId))
         {
-            case CaelumConstants.CATALOGUE_WEAPON_DAGGER: return 2.0;
+            case CaelumConstants.CATALOGUE_WEAPON_DAGGER:
+            case CaelumConstants.CATALOGUE_WEAPON_CARBINE: return 2.0;
             case CaelumConstants.CATALOGUE_WEAPON_HATCHET:
             case CaelumConstants.CATALOGUE_WEAPON_MACHETE:
             case CaelumConstants.CATALOGUE_WEAPON_STANDARD_BOW: return 3.0;
