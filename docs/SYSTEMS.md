@@ -14,10 +14,11 @@ Failed capacity checks leave the source available for a later attempt.
 Alternate fire on any ranged weapon is edge-triggered like Zoom: holding it
 keeps the resulting aim state; release/repress toggles again. Its transient latch
 is independent of the Zoom latch and does not change melee/magic secondary actions.
-Ready/open shotgun grips render the right hand behind the stock and the left
-support hand in front; the loading hand/cartridges remain in front during insertion.
+Ready/open shotgun grips use one complete hand pair below the weapon, retaining
+the accepted under-gun support hand without a second foreground copy. Loading
+hands/cartridges remain foreground; aiming retains the canonical carbine hands.
 The pickup atlas now uses the author-approved 6 cm world-height reference from
-editable art data; native appearance remains subject to author visual review. Inventory icon size, collision, ammunition
+editable art data, accepted natively by the author on 2026-10-09. Inventory icon size, collision, ammunition
 mass/price/count, damage, cadence and reload timing retain their accepted values.
 
 Thermal review boundary: the author's test body is 200 kg plus 285.428 kg carried.

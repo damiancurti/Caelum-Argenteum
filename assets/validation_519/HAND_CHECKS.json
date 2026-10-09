@@ -1,0 +1,231 @@
+{
+  "native_runs": [
+    "hands-followup-a",
+    "hands-followup-save"
+  ],
+  "sample_count": 177,
+  "layer_order": [
+    48,
+    49,
+    51
+  ],
+  "groups": [
+    {
+      "stage_tier_kind_aim_reload_layers": [
+        "0",
+        "1",
+        "14",
+        "0",
+        "0",
+        "0,1,0"
+      ],
+      "samples": 19
+    },
+    {
+      "stage_tier_kind_aim_reload_layers": [
+        "0",
+        "1",
+        "14",
+        "1",
+        "0",
+        "1,1,0"
+      ],
+      "samples": 5
+    },
+    {
+      "stage_tier_kind_aim_reload_layers": [
+        "0",
+        "1",
+        "14",
+        "0",
+        "1",
+        "0,1,0"
+      ],
+      "samples": 19
+    },
+    {
+      "stage_tier_kind_aim_reload_layers": [
+        "0",
+        "1",
+        "14",
+        "0",
+        "1",
+        "0,0,1"
+      ],
+      "samples": 12
+    },
+    {
+      "stage_tier_kind_aim_reload_layers": [
+        "3",
+        "1",
+        "14",
+        "0",
+        "1",
+        "0,1,0"
+      ],
+      "samples": 12
+    },
+    {
+      "stage_tier_kind_aim_reload_layers": [
+        "3",
+        "1",
+        "14",
+        "0",
+        "1",
+        "0,0,1"
+      ],
+      "samples": 12
+    },
+    {
+      "stage_tier_kind_aim_reload_layers": [
+        "3",
+        "1",
+        "14",
+        "0",
+        "0",
+        "0,1,0"
+      ],
+      "samples": 7
+    },
+    {
+      "stage_tier_kind_aim_reload_layers": [
+        "4",
+        "1",
+        "14",
+        "0",
+        "1",
+        "0,1,0"
+      ],
+      "samples": 12
+    },
+    {
+      "stage_tier_kind_aim_reload_layers": [
+        "4",
+        "1",
+        "14",
+        "0",
+        "1",
+        "0,0,1"
+      ],
+      "samples": 12
+    },
+    {
+      "stage_tier_kind_aim_reload_layers": [
+        "4",
+        "1",
+        "14",
+        "0",
+        "0",
+        "0,1,0"
+      ],
+      "samples": 7
+    },
+    {
+      "stage_tier_kind_aim_reload_layers": [
+        "5",
+        "2",
+        "14",
+        "0",
+        "0",
+        "0,1,0"
+      ],
+      "samples": 12
+    },
+    {
+      "stage_tier_kind_aim_reload_layers": [
+        "6",
+        "3",
+        "14",
+        "0",
+        "0",
+        "0,1,0"
+      ],
+      "samples": 11
+    },
+    {
+      "stage_tier_kind_aim_reload_layers": [
+        "7",
+        "1",
+        "2",
+        "0",
+        "0",
+        "0,1,0"
+      ],
+      "samples": 3
+    },
+    {
+      "stage_tier_kind_aim_reload_layers": [
+        "7",
+        "1",
+        "2",
+        "0",
+        "0",
+        "1,1,0"
+      ],
+      "samples": 9
+    },
+    {
+      "stage_tier_kind_aim_reload_layers": [
+        "8",
+        "1",
+        "14",
+        "0",
+        "0",
+        "0,1,0"
+      ],
+      "samples": 11
+    },
+    {
+      "stage_tier_kind_aim_reload_layers": [
+        "9",
+        "1",
+        "3",
+        "0",
+        "0",
+        "0,1,0"
+      ],
+      "samples": 2
+    },
+    {
+      "stage_tier_kind_aim_reload_layers": [
+        "9",
+        "1",
+        "3",
+        "0",
+        "0",
+        "0,0,0"
+      ],
+      "samples": 10
+    },
+    {
+      "stage_tier_kind_aim_reload_layers": [
+        "10",
+        "1",
+        "3",
+        "0",
+        "0",
+        "0,0,0"
+      ],
+      "samples": 2
+    }
+  ],
+  "captures": [
+    "hands-followup-a-hands-aim.png",
+    "hands-followup-a-hands-carbine.png",
+    "hands-followup-a-hands-dagger.png",
+    "hands-followup-a-hands-load-one.png",
+    "hands-followup-a-hands-load-two.png",
+    "hands-followup-a-hands-open.png",
+    "hands-followup-a-hands-partial-load.png",
+    "hands-followup-a-hands-partial-open.png",
+    "hands-followup-a-hands-ready.png",
+    "hands-followup-a-hands-recoil.png",
+    "hands-followup-a-hands-reloaded.png",
+    "hands-followup-a-hands-return.png",
+    "hands-followup-a-hands-tier-three.png",
+    "hands-followup-a-hands-tier-two.png"
+  ],
+  "preserved_shells": 1081,
+  "preserved_bullets": 895,
+  "qualification": "Weapon switching retains lowering overlays briefly. Final dagger samples are clear; author artwork acceptance remains pending."
+}

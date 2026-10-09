@@ -1,21 +1,12 @@
 {
   "release": "5.1.9",
   "issue": 152,
-  "package_sha256": "673cca478ad05353d9878cd130fb7a4896689bff4d2d316b3c91ecddf0f4f25f",
-  "files": 6293,
+  "package_sha256": "9497e13aac34ad78b5b572d596957ff900ad05308d455a05d6c012d712e4fc73",
+  "files": 6294,
   "all_entries_match_src": true,
-  "native_final": "release-final",
-  "passed_recorded_runs": [
-    "checks-fixed-a",
-    "input-fixed-shotgun",
-    "input-fixed-carbine",
-    "input-fixed-longbow",
-    "input-fixed-crossbow",
-    "world-fixed-b",
-    "save-upgrade",
-    "save-reload",
-    "thermal-diagnostic",
-    "release-final"
+  "native_final": [
+    "hands-followup-a",
+    "hands-followup-save"
   ],
   "validation": {
     "version": "5.1.9",
@@ -45,15 +36,77 @@
       19,
       20
     ],
-    "context_words": 2491,
+    "context_words": 2493,
     "errors": []
   },
-  "art_reference_cm": 6,
-  "art_reference_author_approved": "2026-10-09",
+  "initial_delivery": {
+    "release": "5.1.9",
+    "issue": 152,
+    "package_sha256": "673cca478ad05353d9878cd130fb7a4896689bff4d2d316b3c91ecddf0f4f25f",
+    "files": 6293,
+    "all_entries_match_src": true,
+    "native_final": "release-final",
+    "passed_recorded_runs": [
+      "checks-fixed-a",
+      "input-fixed-shotgun",
+      "input-fixed-carbine",
+      "input-fixed-longbow",
+      "input-fixed-crossbow",
+      "world-fixed-b",
+      "save-upgrade",
+      "save-reload",
+      "thermal-diagnostic",
+      "release-final"
+    ],
+    "validation": {
+      "version": "5.1.9",
+      "documents": 10,
+      "audio_files": 107,
+      "station_models": 12,
+      "spanish_caella_keys": 25,
+      "premise_numbers": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20
+      ],
+      "context_words": 2491,
+      "errors": []
+    },
+    "art_reference_cm": 6,
+    "art_reference_author_approved": "2026-10-09",
+    "pending_author_checks": [
+      "CA152-01",
+      "CA152-02",
+      "CA152-03"
+    ],
+    "temporary_power_request_released": true
+  },
+  "accepted_author_checks": {
+    "date": "2026-10-09",
+    "ids": [
+      "CA152-01",
+      "CA152-03"
+    ]
+  },
   "pending_author_checks": [
-    "CA152-01",
-    "CA152-02",
-    "CA152-03"
+    "CA152-02"
   ],
   "temporary_power_request_released": true
 }

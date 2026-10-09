@@ -3,7 +3,7 @@
 Documentation version: **5.1.9** — 2026-10-09.
 
 **5.1.9/#152:** shotgun pickup repair, grip layers and one-press ADS.
-Evidence: validation_519; author checks pending. Thermal redesign deferred.
+Evidence: validation_519; CA152-01/03 accepted, revised hands pending. Thermal redesign deferred.
 **5.1.8/#137 accepted:** PR151 merged; validation_518.
 **5.1.7/#136 accepted:** PR146; validation_517.
 

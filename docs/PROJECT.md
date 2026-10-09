@@ -9,11 +9,13 @@ rendering as a world pickup. Distinct-ammunition acquisition now completes the
 native held-item transition; an idempotent flag-based repair also fixes already
 owned stacks when an old save runs, retaining quantities and Box placement.
 Ranged alternate aim toggles once per press, independently of the Zoom key.
-Shotgun grip layers put the right hand behind the stock while preserving the
-left support hand and foreground loading cartridges. Cartridge world art uses
-the author-approved 6 cm reference; mass and quantity are unchanged.
-Native evidence and limitations: assets/validation_519/RESULTS.md. CA152-01/02/03
-remain pending. Thermal observations are diagnosed, not recalibrated: full-height
+Shotgun ready/open grips now use one complete pair below the weapon; the duplicate
+foreground support hand is removed. Revised brown gloves, red cuffs and dark
+bracers match Domingo's existing costume. Loading stays foreground. Cartridge
+world art uses the author-approved 6 cm reference; mass and quantity are unchanged.
+Native evidence and limitations: assets/validation_519/RESULTS.md. The author
+accepted CA152-01/03 on 2026-10-09; revised hands (CA152-02) remain pending.
+Thermal observations are diagnosed, not recalibrated: full-height
 native-gravity stairs and the approved fixed human jump use different budgets;
 beastfolk fur water/insulation and a metabolic-power redesign await author design.
 

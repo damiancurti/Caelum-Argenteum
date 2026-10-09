@@ -1,0 +1,10 @@
+{
+  "generator": "assets/generators/register_shotgun.py",
+  "two_runs_identical": true,
+  "outputs": {
+    "src/graphics/caelum/shotgun.textures": "7b6208f1712678234bfffecb405d5d12ffaaec7cd2a6b272c5422f6b1393d04e",
+    "assets/source/art/shotgun_517/REGISTRATION.json": "0352745dbfd55b2a128e2b3d6c059c5cda3a213b07981ce27db4eb99dce91e21"
+  },
+  "selected_source_equals_runtime": true,
+  "selected_png_sha256": "9f2277e4073da99b3f5bef8e7ca5be204db660c305239ff2b0debcccd8a97173"
+}

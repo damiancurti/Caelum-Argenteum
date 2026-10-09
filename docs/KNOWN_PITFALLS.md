@@ -4,6 +4,26 @@ Status: integrated engineering register (issue #22, patch 4.36.1b).
 Prepared: 2026-09-23. Inherits the project's release after integration.
 Inspected baseline: `1dc390576fa330d37ff543526fc7e69a397fc28f` (PR #7).
 
+## CA-KP-066 - A foreground hand cut can duplicate an existing support hand
+
+Status/evidence: AUTHOR-REPORTED and ENGINE-VERIFIED, #152 / PR #153, 2026-10-09.
+Affected baseline: f7bb5c5e; corrected working tree remains release 5.1.9.
+Environment: GZDoom 4.14.2, Windows 11, Vulkan, 1280x720.
+Scope: CaelumShotgunView.Draw and separate hand/weapon TEXTURES registration.
+
+Moving a full pair below the gun while drawing another support-hand cut above
+it created two visible left-hand silhouettes. The author rejected the initial
+native visual pass and selected the under-gun hand. Clear the extra foreground
+overlay for ready/open poses; keep insertion poses foreground and canonical aim
+hands separate. Preserve unused old state definitions for serialized overlays.
+
+Regression evidence: validation_519/hands-followup-a records active layers and
+fourteen captures, including single/partial reloads and all tiers; the existing
+upgraded save loads in hands-followup-save, both exit 0. Inspect the whole native
+composite and compare costume with canonical hand sprites, not just each cut in
+isolation. The atlas restyle is new artwork, with exact outputs/prompts retained.
+CA152-02 remains PENDING for author aesthetic acceptance after this correction.
+
 ## CA-KP-065 - Inventory linkage does not complete a held-item transition
 
 Status/evidence: ENGINE-VERIFIED, #152 / 5.1.9, 2026-10-09.
@@ -21,7 +41,7 @@ active. BecomeItem preserves quantity and owner and is idempotent; normal held
 stacks need no repeated state reset. The author's Prueba save reproduces 1,081
 owned but visible shells. The corrected load preserves those and 895 separate
 carbine rounds. Capacity/retry checks supplement that old-save proof. See
-assets/validation_519/RESULTS.md; author visual acceptance remains pending.
+assets/validation_519/RESULTS.md; CA152-01 accepted by the author on 2026-10-09.
 
 ## CA-KP-064 - Inspect atlas seams and source damage before changing offsets
 

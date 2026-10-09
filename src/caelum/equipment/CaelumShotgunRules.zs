@@ -149,11 +149,10 @@ class CaelumShotgunView : Object play
         State hands=GetDefaultByType("CaelumShotgunHandFrames").FindStateByString(String.Format("Hands_%d",pose));
         if(pose==0 || pose==2 || pose==6)
         {
-            // La derecha sostiene la culata por detrás; la izquierda envuelve
-            // el guardamanos por delante. Al cargar, cartuchos/mano van delante.
+            // Un único par bajo el arma: la copia frontal desplazaba la mano
+            // de apoyo y la duplicaba. Las poses de carga siguen por delante.
             CaelumFirstPersonLayers.Place(user,49,hands,(160+dx,200+dy),(0.5,1.0),0.68,rotation,true);
-            State front=GetDefaultByType("CaelumShotgunHandFrames").FindStateByString(String.Format("HandsFront_%d",pose==0 ? 0 : 2));
-            CaelumFirstPersonLayers.Place(user,51,front,(160+dx,200+dy),(0.5,1.0),0.68,rotation,true);
+            user.A_ClearOverlays(51,51);
             return;
         }
         user.A_ClearOverlays(49,49);

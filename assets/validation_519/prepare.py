@@ -23,7 +23,15 @@ def main():
         'observer.zs': (HERE / 'observer.zs').read_bytes(),
         'CVARINFO': b'server int ca152_mode=0;\nserver int ca152_stage=0;\nserver int ca152_weapon=14;\n',
     })
-    for name in ('saved', 'checks', 'input', 'visual', 'thermal', 'world'):
+    room.package('hands.pk3', {
+        'maps/CA152.wad': room.room().replace(b'CA143', b'CA152'),
+        'MAPINFO': b'map CA152 "Shotgun hands" {}\nGameInfo { AddEventHandlers="CA152Hands" }\n',
+        'ZSCRIPT': b'version "4.14"\n#include "checks.zs"\n#include "hands.zs"\n',
+        'checks.zs': (ROOT/'assets/validation_517/checks.zs').read_bytes(),
+        'hands.zs': (HERE/'hands.zs').read_bytes(),
+        'CVARINFO': b'server int ca152_stage=0;\n',
+    })
+    for name in ('saved', 'checks', 'input', 'visual', 'thermal', 'world', 'hands'):
         p = HERE / (name + '.cfg')
         if p.exists():
             (OUT / p.name).write_bytes(p.read_bytes())

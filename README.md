@@ -12,11 +12,13 @@ it, then rebuild with `run_dev.bat` as described below.
 **5.1.9 / [#152](https://github.com/damiancurti/Caelum-Argenteum/issues/152):**
 Shotgun cartridges now leave the world when collected, including repaired owned
 stacks in existing saves. Ranged alternate aim toggles once per press. The shotgun
-stock correctly occludes the right grip while the support/loading hands retain
-their intended layers. Cartridge world art uses the author-approved 6 cm reference.
+draws a single pair of hands below the weapon in ready/open poses; loading stays
+foreground. Revised gloves use Domingo's brown leather, red cuffs and dark bracers.
+Cartridge world art uses the author-approved 6 cm reference.
 Thermal observations are documented while the author considers the next model;
 thermal balance is unchanged. Evidence: [validation_519](assets/validation_519/RESULTS.md).
-Author checks remain in [pending_test.txt](pending_test.txt).
+The author accepted pickup/size and held aim on 2026-10-09; only the revised hands
+remain in [pending_test.txt](pending_test.txt).
 
 **5.1.8 / [#137](https://github.com/damiancurti/Caelum-Argenteum/issues/137):**
 Animated elemental projectiles share original artwork, light, trails and impacts
