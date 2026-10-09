@@ -8,5 +8,7 @@
   "native_save": "release-save",
   "validator_errors": [],
   "context_words": 2498,
-  "git_diff_check": 0
+  "git_diff_check": 0,
+  "git_diff_check_base": "126ceabe9841ce45090193dab28d85f7dad1b5dd",
+  "evidence_whitespace_normalized": true
 }

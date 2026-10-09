@@ -13,6 +13,3 @@ S: Render=0.551, Setup=0.108
 Main thread total=0.118, Main thread waiting=0.115 Worker thread total=0.106, Worker thread waiting=-0.005
 All=14.755, Render=0.629, Setup=0.119, Portal=0.000, Drawcalls=0.112, Postprocess=0.006, Finish=13.991
 DLight - Walls: 0 processed, 0 rendered - Flats: 354 processed, 182 rendered
-
-
-

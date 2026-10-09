@@ -6,6 +6,8 @@ an isolated INI, 5% master audio and unpaused background simulation. The
 individual `*-run.json` files retain engine/package/addon hashes, arguments,
 settings, timestamps, process identity and clean exit status. These are native
 engine observations, not author aesthetic acceptance.
+Tracked log/INI copies normalize trailing whitespace and encoding only
+(`TEXT_NORMALIZATION.json`); the original native files remain in build/issue137.
 
 Baseline: main commit `126ceabe9841ce45090193dab28d85f7dad1b5dd` (5.1.7).
 Only the project-owned test room is used. Development IWAD, engine, test PK3s
