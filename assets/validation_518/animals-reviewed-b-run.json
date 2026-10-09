@@ -1,0 +1,73 @@
+﻿{
+    "label":  "animals-reviewed-b",
+    "started_utc":  "2026-10-09T13:38:26.4636740Z",
+    "engine":  "C:\\Program Files (x86)\\GZDoom\\gzdoom.exe",
+    "engine_sha256":  "EC706C2EA1EF946EEC13BE7B1B461DF8D52EFCD47CAA6C056ED0E0257F7F9FFA",
+    "iwad_sha256":  "10D67824B11025DDD9198E8CFC87CA335EE6E2D3E63AF4180FA9B8A471893255",
+    "package_sha256":  "AA88A830C5854DE9CAEED28948DBC6225311AEBB5A9F0C2ED70368AED86F49FE",
+    "addon_sha256":  "DC3091FC368BBAD6A3EBDE9074946DC5029F68C9EDABCA478D3FCEE7DB4E10F4",
+    "initial_config":  "[LastRun]\nVersion=225\n[GlobalSettings]\nvid_preferbackend=1\nvid_vsync=false\nvid_maxfps=60\nvid_activeinbackground=true\ni_pauseinbackground=false\nvid_lowerinbackground=false\ni_soundinbackground=true\ncl_capfps=false\nvid_fullscreen=false\nvid_defwidth=1280\nwin_w=1296\nwin_h=759\nwin_maximized=false\nvid_defheight=720\nuse_mouse=false\nsnd_mastervolume=0.05\nlanguage=enu\n",
+    "arguments":  [
+                      "-noautoload",
+                      "-nomouse",
+                      "-iwad",
+                      "\"C:\\Program Files (x86)\\Steam\\steamapps\\common\\ultimate doom\\base\\doom2\\DOOM2.WAD\"",
+                      "-file",
+                      "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue137\\current/caelum_argenteum_dev.pk3\"",
+                      "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue137\\animals.pk3\"",
+                      "-config",
+                      "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue137\\animals-reviewed-b.ini\"",
+                      "-savedir",
+                      "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue137\"",
+                      "-width",
+                      1280,
+                      "-height",
+                      720,
+                      "-window",
+                      "-rngseed",
+                      "116",
+                      "-skill",
+                      "2",
+                      "+logfile",
+                      "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue137\\animals-reviewed-b.txt\"",
+                      "+con_notifytime",
+                      "0",
+                      "+set",
+                      "ca_test_siege_reinforcements",
+                      1,
+                      "+map",
+                      "CA137",
+                      "+exec",
+                      "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue137\\animals-reviewed-b-exec.cfg\""
+                  ],
+    "benchmark_offset":  12397,
+    "command_script":  "unbindall;r_drawplayersprites false;ca137_mode 1;wait 70;ca137_view 0;wait 24;screenshot animals-reviewed-b-animals-0.png;wait 12;ca137_view 1;wait 24;screenshot animals-reviewed-b-animals-1.png;wait 12;ca137_view 2;wait 24;screenshot animals-reviewed-b-animals-2.png;wait 12;ca137_view 3;wait 24;screenshot animals-reviewed-b-animals-3.png;wait 12;ca137_view 4;wait 24;screenshot animals-reviewed-b-animals-4.png;wait 12;ca137_view 5;wait 24;screenshot animals-reviewed-b-animals-5.png;wait 12;ca137_view 6;wait 24;screenshot animals-reviewed-b-animals-6.png;wait 12;ca137_view 7;wait 24;screenshot animals-reviewed-b-animals-7.png;wait 12;ca137_view 8;wait 24;screenshot animals-reviewed-b-animals-8.png;wait 12;ca137_view 9;wait 24;screenshot animals-reviewed-b-animals-9.png;wait 12;wait 300;quit\r\n",
+    "cpu":  [
+                {
+                    "Name":  "AMD Ryzen 9 5950X 16-Core Processor            ",
+                    "NumberOfCores":  16,
+                    "NumberOfLogicalProcessors":  32
+                }
+            ],
+    "gpu":  [
+                {
+                    "Name":  "Parsec Virtual Display Adapter",
+                    "DriverVersion":  "0.45.0.0"
+                },
+                {
+                    "Name":  "NVIDIA GeForce RTX 3070 Ti",
+                    "DriverVersion":  "32.0.15.7688"
+                }
+            ],
+    "os":  {
+               "Caption":  "Microsoft Windows 11 Pro",
+               "Version":  "10.0.26200",
+               "TotalVisibleMemorySize":  33475240
+           },
+    "pid":  12828,
+    "qpc_ms":  1436529931.9313,
+    "epoch_ms":  1791553108465.6145,
+    "exit_code":  0,
+    "completed_utc":  "2026-10-09T13:38:52.7102624Z",
+    "expected":  "CA137 ANIMAL AUDIT COMPLETE"
+}

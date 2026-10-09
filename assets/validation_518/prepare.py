@@ -29,7 +29,7 @@ def main():
     OUT.mkdir(exist_ok=True)
     (OUT/'current').mkdir(exist_ok=True)
     base.package('current/caelum_argenteum_dev.pk3',{p.relative_to(ROOT/'src').as_posix():p.read_bytes() for p in (ROOT/'src').rglob('*') if p.is_file()})
-    for fixture in ['gallery','showcase','invariance','checks','stress','persist','water','deathframes']:
+    for fixture in ['gallery','showcase','invariance','checks','stress','persist','water','deathframes','animals']:
         file=HERE/(fixture+'.zs')
         if not file.exists():continue
         base.package(fixture+'.pk3',{
@@ -70,9 +70,15 @@ def main():
     (OUT/'rollback.cfg').write_text('unbindall;wait 70;quit\n',encoding='utf-8')
     commands='unbindall;r_drawplayersprites false;wait 70;'
     for stage in range(16):
-        commands+=f'ca137_view {stage};wait 3;screenshot death-frame-{stage}.png;wait 2;'
+        commands+=f'ca137_view {stage};wait 24;screenshot death-frame-{stage}.png;wait 6;'
     commands+='ca137_view 16;wait 65;screenshot domingo-corpse.png;ca137_view 17;wait 40;screenshot rat-corpse.png;ca137_view 18;wait 5;quit\n'
     (OUT/'deathframes.cfg').write_text(commands,encoding='utf-8')
+    for mode in [0,1]:
+        commands=f'unbindall;r_drawplayersprites false;ca137_mode {mode};wait 70;'
+        for page in range(10):
+            commands+=f'ca137_view {page};wait 24;screenshot animals-{page}.png;wait 12;'
+        commands+='wait 300;quit\n'
+        (OUT/f'animals-{mode}.cfg').write_text(commands,encoding='utf-8')
     for population in [0,24,499]:
         (OUT/f'stress-{population}.cfg').write_text(f'unbindall;r_drawplayersprites false;ca137_mode {population};wait 200;bench;wait 405;quit\n',encoding='utf-8')
     (OUT/'battle.cfg').write_text('unbindall;r_drawplayersprites false;ca137_view 1;ca137_mode 499;wait 200;bench;wait 250;screenshot dense-battle.png;wait 470;quit\n',encoding='utf-8')

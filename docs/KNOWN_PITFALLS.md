@@ -17,11 +17,20 @@ rat's neighboring pieces were already baked into old files. An offset change
 cannot recover missing pixels. Locate an intact source, or clearly identify a
 reconstruction from owned references and retain the damaged originals.
 
-Evidence: elemental_518/DESIGN.json and final gallery-cells-final; all sixteen
-death frames in deathframes-before/after and death_repair_518/REGISTRATION.json.
-The death generator checks an opaque margin on every side, uses one scale per
-sequence and floor anchors, and leaves native state timing untouched. Technical
-frame integrity does not constitute author acceptance of reconstructed art.
+Evidence: elemental_518/DESIGN.json and final gallery-cells-final; initial death
+reconstructions in deathframes-before/after. Later recovered source bindings are
+in deathframes-original-final, death_repair_518 and animal_recovery_518. Native
+subtextures separate Domingo's overlapping corpse outlines without editing PNG
+pixels; the rat's original RGB is retained with author-approved mask recovery.
+Generators check opaque margins and retain native state timing. Technical frame
+integrity does not constitute author aesthetic acceptance.
+
+Inspect alpha as well as RGB: a preview may expose hidden neighbor art or labels
+whose alpha is zero. Composite onto a contrasting background and verify in-engine
+before calling that a rendering defect. The 166-image rat/bull audit found real
+rat silhouette border cuts but no visible neighbor fragments or bull clipping.
+For opaque-sheet recovery, preserve valid old alpha as foreground/background
+seeds: a rectangle-only segmentation can fill tail holes or remove dark fur.
 
 ## CA-KP-063 - Emit cosmetic impacts on native Death entry
 

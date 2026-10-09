@@ -712,5 +712,313 @@
     "sha256": "e2ffa3eb9eea95c21df09a925b8eebdbe5450e6179a33d5a6c07c97851ab8f44",
     "package_sha256": "66213713434DA2921B77B758FB62B60EAFA2BA238831B75226A7C1CE9E386B59",
     "addon_sha256": "94604509BE74CBF633BD4235FE84DE65C7268D5A42C9AC4A91780998AF512B8F"
+  },
+  {
+    "file": "captures/deathframes-before-death-frame-0.png",
+    "run": "deathframes-before",
+    "sha256": "dc6bc736ee68fff7664a876bbae830c47baeb1652aed6a2ad8be214e3217814f",
+    "package_sha256": "E0E18696DC04B383F6D1B6A738E5496E0D39E88E19F24BBF308C847036CA7F0E",
+    "addon_sha256": "94604509BE74CBF633BD4235FE84DE65C7268D5A42C9AC4A91780998AF512B8F"
+  },
+  {
+    "file": "captures/deathframes-original-final-death-frame-0.png",
+    "run": "deathframes-original-final",
+    "sha256": "6680e07ec7b1e4b8edded0a8dfc4df959eb787fa0f3c06300c5bee14df72afd9",
+    "package_sha256": "A0552C947640AF944B4EC0C9F24821582ABA962CA64DC91958FB28F627B2645F",
+    "addon_sha256": "34246499AC9680F0BDFA9786077AD8BB30DE1CA4DD9159BC069EF2C13DFFF385"
+  },
+  {
+    "file": "captures/deathframes-before-death-frame-1.png",
+    "run": "deathframes-before",
+    "sha256": "90f1f04b359213addd9f57ab01a31d81341208dca555416005cc2e9b78761631",
+    "package_sha256": "E0E18696DC04B383F6D1B6A738E5496E0D39E88E19F24BBF308C847036CA7F0E",
+    "addon_sha256": "94604509BE74CBF633BD4235FE84DE65C7268D5A42C9AC4A91780998AF512B8F"
+  },
+  {
+    "file": "captures/deathframes-original-final-death-frame-1.png",
+    "run": "deathframes-original-final",
+    "sha256": "49b597228948d61484eac3d349e3434f22b82a34d03d8ce6d495913f52c06119",
+    "package_sha256": "A0552C947640AF944B4EC0C9F24821582ABA962CA64DC91958FB28F627B2645F",
+    "addon_sha256": "34246499AC9680F0BDFA9786077AD8BB30DE1CA4DD9159BC069EF2C13DFFF385"
+  },
+  {
+    "file": "captures/deathframes-before-death-frame-2.png",
+    "run": "deathframes-before",
+    "sha256": "0aff0e8a9f5cd1eca6b6bfdac28af7f6d1bec3c34227b3a2dca2a4c777d236e5",
+    "package_sha256": "E0E18696DC04B383F6D1B6A738E5496E0D39E88E19F24BBF308C847036CA7F0E",
+    "addon_sha256": "94604509BE74CBF633BD4235FE84DE65C7268D5A42C9AC4A91780998AF512B8F"
+  },
+  {
+    "file": "captures/deathframes-original-final-death-frame-2.png",
+    "run": "deathframes-original-final",
+    "sha256": "852935af5d2fdcdfc27ac0fb2d9ad7142dbd3e15ae4f0ec04503ae1baa93fcd2",
+    "package_sha256": "A0552C947640AF944B4EC0C9F24821582ABA962CA64DC91958FB28F627B2645F",
+    "addon_sha256": "34246499AC9680F0BDFA9786077AD8BB30DE1CA4DD9159BC069EF2C13DFFF385"
+  },
+  {
+    "file": "captures/deathframes-before-death-frame-3.png",
+    "run": "deathframes-before",
+    "sha256": "6cac8e7375da07fd0ac7a195c23a1c4b654599407377a43c437f52d9e9492fda",
+    "package_sha256": "E0E18696DC04B383F6D1B6A738E5496E0D39E88E19F24BBF308C847036CA7F0E",
+    "addon_sha256": "94604509BE74CBF633BD4235FE84DE65C7268D5A42C9AC4A91780998AF512B8F"
+  },
+  {
+    "file": "captures/deathframes-original-final-death-frame-3.png",
+    "run": "deathframes-original-final",
+    "sha256": "4ac4f0111a3a78d4ec28f3c29515fa3be203d2736da86f432274d8591e76bec6",
+    "package_sha256": "A0552C947640AF944B4EC0C9F24821582ABA962CA64DC91958FB28F627B2645F",
+    "addon_sha256": "34246499AC9680F0BDFA9786077AD8BB30DE1CA4DD9159BC069EF2C13DFFF385"
+  },
+  {
+    "file": "captures/deathframes-before-death-frame-4.png",
+    "run": "deathframes-before",
+    "sha256": "d4c720d414aba389463b5c413e29f2b21efc79e323641853a22bea423bcd3b0b",
+    "package_sha256": "E0E18696DC04B383F6D1B6A738E5496E0D39E88E19F24BBF308C847036CA7F0E",
+    "addon_sha256": "94604509BE74CBF633BD4235FE84DE65C7268D5A42C9AC4A91780998AF512B8F"
+  },
+  {
+    "file": "captures/deathframes-original-final-death-frame-4.png",
+    "run": "deathframes-original-final",
+    "sha256": "c36fb56a43f688e9ea1e7d5d0d0d9040622105074c5b80b80a72cfb046e719c6",
+    "package_sha256": "A0552C947640AF944B4EC0C9F24821582ABA962CA64DC91958FB28F627B2645F",
+    "addon_sha256": "34246499AC9680F0BDFA9786077AD8BB30DE1CA4DD9159BC069EF2C13DFFF385"
+  },
+  {
+    "file": "captures/deathframes-before-death-frame-5.png",
+    "run": "deathframes-before",
+    "sha256": "dfb39ee5c326c8c482e524c75a8d257509c4d481168a174881bace7aa12d9c19",
+    "package_sha256": "E0E18696DC04B383F6D1B6A738E5496E0D39E88E19F24BBF308C847036CA7F0E",
+    "addon_sha256": "94604509BE74CBF633BD4235FE84DE65C7268D5A42C9AC4A91780998AF512B8F"
+  },
+  {
+    "file": "captures/deathframes-original-final-death-frame-5.png",
+    "run": "deathframes-original-final",
+    "sha256": "3ac1ffe66acc25454e43199220729fceeb4245d38d7ee5005841ceaabcc21b6b",
+    "package_sha256": "A0552C947640AF944B4EC0C9F24821582ABA962CA64DC91958FB28F627B2645F",
+    "addon_sha256": "34246499AC9680F0BDFA9786077AD8BB30DE1CA4DD9159BC069EF2C13DFFF385"
+  },
+  {
+    "file": "captures/deathframes-before-death-frame-6.png",
+    "run": "deathframes-before",
+    "sha256": "41673a880a0b7e2221a89adbabc599fc6d8dabff57d8748f14bb5c46a87054e7",
+    "package_sha256": "E0E18696DC04B383F6D1B6A738E5496E0D39E88E19F24BBF308C847036CA7F0E",
+    "addon_sha256": "94604509BE74CBF633BD4235FE84DE65C7268D5A42C9AC4A91780998AF512B8F"
+  },
+  {
+    "file": "captures/deathframes-original-final-death-frame-6.png",
+    "run": "deathframes-original-final",
+    "sha256": "f4a78bbee2d30052f6f3804f1b2eddc06eaba5f96d7f3595a6040cf164ad0dbd",
+    "package_sha256": "A0552C947640AF944B4EC0C9F24821582ABA962CA64DC91958FB28F627B2645F",
+    "addon_sha256": "34246499AC9680F0BDFA9786077AD8BB30DE1CA4DD9159BC069EF2C13DFFF385"
+  },
+  {
+    "file": "captures/deathframes-before-death-frame-7.png",
+    "run": "deathframes-before",
+    "sha256": "c3e9f4ea4e38b68e75025448365bd79089e002e322c559309130c1e127651618",
+    "package_sha256": "E0E18696DC04B383F6D1B6A738E5496E0D39E88E19F24BBF308C847036CA7F0E",
+    "addon_sha256": "94604509BE74CBF633BD4235FE84DE65C7268D5A42C9AC4A91780998AF512B8F"
+  },
+  {
+    "file": "captures/deathframes-original-final-death-frame-7.png",
+    "run": "deathframes-original-final",
+    "sha256": "907874582bc72dac4e493267ae1e510173b67305577a2da9b4bca85c825d3dc9",
+    "package_sha256": "A0552C947640AF944B4EC0C9F24821582ABA962CA64DC91958FB28F627B2645F",
+    "addon_sha256": "34246499AC9680F0BDFA9786077AD8BB30DE1CA4DD9159BC069EF2C13DFFF385"
+  },
+  {
+    "file": "captures/deathframes-before-death-frame-8.png",
+    "run": "deathframes-before",
+    "sha256": "9afb799615600b21adaef6683dc1a95444f620ee7af08a3e84f331b6642daf32",
+    "package_sha256": "E0E18696DC04B383F6D1B6A738E5496E0D39E88E19F24BBF308C847036CA7F0E",
+    "addon_sha256": "94604509BE74CBF633BD4235FE84DE65C7268D5A42C9AC4A91780998AF512B8F"
+  },
+  {
+    "file": "captures/deathframes-original-final-death-frame-8.png",
+    "run": "deathframes-original-final",
+    "sha256": "7db2d76728596e652ce2246efbccd9fa335d6d8885852bd496dde4c43dda707b",
+    "package_sha256": "A0552C947640AF944B4EC0C9F24821582ABA962CA64DC91958FB28F627B2645F",
+    "addon_sha256": "34246499AC9680F0BDFA9786077AD8BB30DE1CA4DD9159BC069EF2C13DFFF385"
+  },
+  {
+    "file": "captures/deathframes-before-death-frame-9.png",
+    "run": "deathframes-before",
+    "sha256": "9dedf8a71459ecdf87ec877e3706391ca1ee5e6c77efc759ee7f23176cb65d5c",
+    "package_sha256": "E0E18696DC04B383F6D1B6A738E5496E0D39E88E19F24BBF308C847036CA7F0E",
+    "addon_sha256": "94604509BE74CBF633BD4235FE84DE65C7268D5A42C9AC4A91780998AF512B8F"
+  },
+  {
+    "file": "captures/deathframes-original-final-death-frame-9.png",
+    "run": "deathframes-original-final",
+    "sha256": "a6a3bdaaae8b84c61ecb2671218a4759c7e93e1efec93b827693962739871f2a",
+    "package_sha256": "A0552C947640AF944B4EC0C9F24821582ABA962CA64DC91958FB28F627B2645F",
+    "addon_sha256": "34246499AC9680F0BDFA9786077AD8BB30DE1CA4DD9159BC069EF2C13DFFF385"
+  },
+  {
+    "file": "captures/deathframes-before-death-frame-10.png",
+    "run": "deathframes-before",
+    "sha256": "810709e8ef59a3e1441957ddaff7f1bf6e6605bf1757e7c7a02e8d323d9a31f8",
+    "package_sha256": "E0E18696DC04B383F6D1B6A738E5496E0D39E88E19F24BBF308C847036CA7F0E",
+    "addon_sha256": "94604509BE74CBF633BD4235FE84DE65C7268D5A42C9AC4A91780998AF512B8F"
+  },
+  {
+    "file": "captures/deathframes-original-final-death-frame-10.png",
+    "run": "deathframes-original-final",
+    "sha256": "a421710f6e858063a4fa661183d61926116a49e8c5bcf7c7ed86f741c57dcaa2",
+    "package_sha256": "A0552C947640AF944B4EC0C9F24821582ABA962CA64DC91958FB28F627B2645F",
+    "addon_sha256": "34246499AC9680F0BDFA9786077AD8BB30DE1CA4DD9159BC069EF2C13DFFF385"
+  },
+  {
+    "file": "captures/deathframes-before-death-frame-11.png",
+    "run": "deathframes-before",
+    "sha256": "29fa6e8bce23684379ef0953c3b7ec14d4a62a0b6d53db6cd799597ebbde276a",
+    "package_sha256": "E0E18696DC04B383F6D1B6A738E5496E0D39E88E19F24BBF308C847036CA7F0E",
+    "addon_sha256": "94604509BE74CBF633BD4235FE84DE65C7268D5A42C9AC4A91780998AF512B8F"
+  },
+  {
+    "file": "captures/deathframes-original-final-death-frame-11.png",
+    "run": "deathframes-original-final",
+    "sha256": "6e8299d2ce858833cdc9eecfb2ec7b0a2ca2ece2f6866bea5045891929a33870",
+    "package_sha256": "A0552C947640AF944B4EC0C9F24821582ABA962CA64DC91958FB28F627B2645F",
+    "addon_sha256": "34246499AC9680F0BDFA9786077AD8BB30DE1CA4DD9159BC069EF2C13DFFF385"
+  },
+  {
+    "file": "captures/deathframes-before-death-frame-12.png",
+    "run": "deathframes-before",
+    "sha256": "1c5f180a7021f0340dc05bdda126a32f09585461a00c761aebc2dd7252e4a5db",
+    "package_sha256": "E0E18696DC04B383F6D1B6A738E5496E0D39E88E19F24BBF308C847036CA7F0E",
+    "addon_sha256": "94604509BE74CBF633BD4235FE84DE65C7268D5A42C9AC4A91780998AF512B8F"
+  },
+  {
+    "file": "captures/deathframes-original-final-death-frame-12.png",
+    "run": "deathframes-original-final",
+    "sha256": "64f150ac7b622f3fbf145bf4ff6b9a3c836585f0c3d8f092c0671dffff1d1f37",
+    "package_sha256": "A0552C947640AF944B4EC0C9F24821582ABA962CA64DC91958FB28F627B2645F",
+    "addon_sha256": "34246499AC9680F0BDFA9786077AD8BB30DE1CA4DD9159BC069EF2C13DFFF385"
+  },
+  {
+    "file": "captures/deathframes-before-death-frame-13.png",
+    "run": "deathframes-before",
+    "sha256": "c3fccb84156dff32fbca442598c6e462e395272245edffab651964f335bf8ab5",
+    "package_sha256": "E0E18696DC04B383F6D1B6A738E5496E0D39E88E19F24BBF308C847036CA7F0E",
+    "addon_sha256": "94604509BE74CBF633BD4235FE84DE65C7268D5A42C9AC4A91780998AF512B8F"
+  },
+  {
+    "file": "captures/deathframes-original-final-death-frame-13.png",
+    "run": "deathframes-original-final",
+    "sha256": "7aeb1cd71562ea805d7048d213000ef460dc838f181e1c347a0e35e2f0bab92e",
+    "package_sha256": "A0552C947640AF944B4EC0C9F24821582ABA962CA64DC91958FB28F627B2645F",
+    "addon_sha256": "34246499AC9680F0BDFA9786077AD8BB30DE1CA4DD9159BC069EF2C13DFFF385"
+  },
+  {
+    "file": "captures/deathframes-before-death-frame-14.png",
+    "run": "deathframes-before",
+    "sha256": "5688d957c0d263dabd23cfe02c3334ed11014c42be170eaff0d92f78a6e8bd3f",
+    "package_sha256": "E0E18696DC04B383F6D1B6A738E5496E0D39E88E19F24BBF308C847036CA7F0E",
+    "addon_sha256": "94604509BE74CBF633BD4235FE84DE65C7268D5A42C9AC4A91780998AF512B8F"
+  },
+  {
+    "file": "captures/deathframes-original-final-death-frame-14.png",
+    "run": "deathframes-original-final",
+    "sha256": "410ce35ab08491b03dbe3fd8a82ed1984ac4ce3fd761e73a18b0ad1ef5b481e0",
+    "package_sha256": "A0552C947640AF944B4EC0C9F24821582ABA962CA64DC91958FB28F627B2645F",
+    "addon_sha256": "34246499AC9680F0BDFA9786077AD8BB30DE1CA4DD9159BC069EF2C13DFFF385"
+  },
+  {
+    "file": "captures/deathframes-before-death-frame-15.png",
+    "run": "deathframes-before",
+    "sha256": "c8c55fdac50fbf4284858b808909877542300bf9d91ce87c94703a265ceb96c2",
+    "package_sha256": "E0E18696DC04B383F6D1B6A738E5496E0D39E88E19F24BBF308C847036CA7F0E",
+    "addon_sha256": "94604509BE74CBF633BD4235FE84DE65C7268D5A42C9AC4A91780998AF512B8F"
+  },
+  {
+    "file": "captures/deathframes-original-final-death-frame-15.png",
+    "run": "deathframes-original-final",
+    "sha256": "819156b3ffc01786ee777bfd58f02518a47c4ab2cb5cbee121e152ff4af2d5ed",
+    "package_sha256": "A0552C947640AF944B4EC0C9F24821582ABA962CA64DC91958FB28F627B2645F",
+    "addon_sha256": "34246499AC9680F0BDFA9786077AD8BB30DE1CA4DD9159BC069EF2C13DFFF385"
+  },
+  {
+    "file": "captures/animals-original-final-animals-0.png",
+    "run": "animals-original-final",
+    "sha256": "7b734590b2af5abf52e0645c08f48c79df6d7e6040ba9fdd8f246706d32a2ae6",
+    "package_sha256": "A0552C947640AF944B4EC0C9F24821582ABA962CA64DC91958FB28F627B2645F",
+    "addon_sha256": "DC3091FC368BBAD6A3EBDE9074946DC5029F68C9EDABCA478D3FCEE7DB4E10F4"
+  },
+  {
+    "file": "captures/animals-original-final-animals-1.png",
+    "run": "animals-original-final",
+    "sha256": "5d46597f48d75c2746c8e11b343789035ba444f9027185638f3c3b719a77bf0a",
+    "package_sha256": "A0552C947640AF944B4EC0C9F24821582ABA962CA64DC91958FB28F627B2645F",
+    "addon_sha256": "DC3091FC368BBAD6A3EBDE9074946DC5029F68C9EDABCA478D3FCEE7DB4E10F4"
+  },
+  {
+    "file": "captures/animals-original-final-animals-2.png",
+    "run": "animals-original-final",
+    "sha256": "86bcded0fbad1b674651157af058453bd8f4b6d3029232f1613f404d4c3c6f1d",
+    "package_sha256": "A0552C947640AF944B4EC0C9F24821582ABA962CA64DC91958FB28F627B2645F",
+    "addon_sha256": "DC3091FC368BBAD6A3EBDE9074946DC5029F68C9EDABCA478D3FCEE7DB4E10F4"
+  },
+  {
+    "file": "captures/animals-original-final-animals-3.png",
+    "run": "animals-original-final",
+    "sha256": "0f30f9f63febe3937c0be109e76d867161b83b318005ec0f14cc25b4f1442955",
+    "package_sha256": "A0552C947640AF944B4EC0C9F24821582ABA962CA64DC91958FB28F627B2645F",
+    "addon_sha256": "DC3091FC368BBAD6A3EBDE9074946DC5029F68C9EDABCA478D3FCEE7DB4E10F4"
+  },
+  {
+    "file": "captures/animals-original-final-animals-4.png",
+    "run": "animals-original-final",
+    "sha256": "a9694a34a3e1acf8efbb82eb07e9e3b844230d5a47a8366d4cf76ad41dadc8a0",
+    "package_sha256": "A0552C947640AF944B4EC0C9F24821582ABA962CA64DC91958FB28F627B2645F",
+    "addon_sha256": "DC3091FC368BBAD6A3EBDE9074946DC5029F68C9EDABCA478D3FCEE7DB4E10F4"
+  },
+  {
+    "file": "captures/animals-original-final-animals-5.png",
+    "run": "animals-original-final",
+    "sha256": "cbd38bc956bbff66c30f9ddf6fe0f51b8d3f2cf3e69a1599eeafd056a8e88bc8",
+    "package_sha256": "A0552C947640AF944B4EC0C9F24821582ABA962CA64DC91958FB28F627B2645F",
+    "addon_sha256": "DC3091FC368BBAD6A3EBDE9074946DC5029F68C9EDABCA478D3FCEE7DB4E10F4"
+  },
+  {
+    "file": "captures/animals-original-final-animals-6.png",
+    "run": "animals-original-final",
+    "sha256": "64fbbf8fbad971d0b05515f700207062d54362809fe776a2a4be6b4a57f3f319",
+    "package_sha256": "A0552C947640AF944B4EC0C9F24821582ABA962CA64DC91958FB28F627B2645F",
+    "addon_sha256": "DC3091FC368BBAD6A3EBDE9074946DC5029F68C9EDABCA478D3FCEE7DB4E10F4"
+  },
+  {
+    "file": "captures/animals-original-final-animals-7.png",
+    "run": "animals-original-final",
+    "sha256": "1c8dbd6ca2d8ecc20c046abe7a0067ddca253ab596927d31298a7be13751bb1b",
+    "package_sha256": "A0552C947640AF944B4EC0C9F24821582ABA962CA64DC91958FB28F627B2645F",
+    "addon_sha256": "DC3091FC368BBAD6A3EBDE9074946DC5029F68C9EDABCA478D3FCEE7DB4E10F4"
+  },
+  {
+    "file": "captures/animals-original-final-animals-8.png",
+    "run": "animals-original-final",
+    "sha256": "f5f8fbff0b402f7f638be773d8608a6577444d327acbc4d8d42fb679f1c95c2b",
+    "package_sha256": "A0552C947640AF944B4EC0C9F24821582ABA962CA64DC91958FB28F627B2645F",
+    "addon_sha256": "DC3091FC368BBAD6A3EBDE9074946DC5029F68C9EDABCA478D3FCEE7DB4E10F4"
+  },
+  {
+    "file": "captures/animals-original-final-animals-9.png",
+    "run": "animals-original-final",
+    "sha256": "5f413973ae6546501f6eaaad58dc92728f97e107a603bdfbe143474a648c39cb",
+    "package_sha256": "A0552C947640AF944B4EC0C9F24821582ABA962CA64DC91958FB28F627B2645F",
+    "addon_sha256": "DC3091FC368BBAD6A3EBDE9074946DC5029F68C9EDABCA478D3FCEE7DB4E10F4"
+  },
+  {
+    "file": "captures/deathframes-original-final-domingo-corpse.png",
+    "run": "deathframes-original-final",
+    "sha256": "0c7e9e5ba7208e836414413cc837ac411dfb136c09dc702ba8fd9cffd3336189",
+    "package_sha256": "A0552C947640AF944B4EC0C9F24821582ABA962CA64DC91958FB28F627B2645F",
+    "addon_sha256": "34246499AC9680F0BDFA9786077AD8BB30DE1CA4DD9159BC069EF2C13DFFF385"
+  },
+  {
+    "file": "captures/deathframes-original-final-rat-corpse.png",
+    "run": "deathframes-original-final",
+    "sha256": "93d0d71604a3dd57b4e77e4ac9819cabce0706545e1fc71dc4cc6ecb4f38e45c",
+    "package_sha256": "A0552C947640AF944B4EC0C9F24821582ABA962CA64DC91958FB28F627B2645F",
+    "addon_sha256": "34246499AC9680F0BDFA9786077AD8BB30DE1CA4DD9159BC069EF2C13DFFF385"
   }
 ]

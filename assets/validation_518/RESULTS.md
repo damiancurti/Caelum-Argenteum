@@ -123,11 +123,13 @@ uninterrupted production Death sequences. The rat is enlarged in individual
 inspection frames only; the actual corpse view retains scale 0.11. Measured
 transparent seams, constant scale and per-frame ground anchors are registered
 by `register_death_frames.py`. No Death state, sound, action or duration changed.
+These initial reconstructions have since been superseded by the author's original
+sheets as described below; their evidence and assets remain intact.
 
 Temporary keep-awake uses thread-scoped execution-state flags, never a changed
 power plan. Its release record is retained with the completed delivery.
 
-## Final delivery gates
+## Initial delivery gates
 
 The normal `build_dev.ps1` creates a 6,276-file PK3 with no directory entries.
 `release-checks` passes all fourteen assertions against that exact deliverable;
@@ -137,3 +139,44 @@ the deterministic fixture packager. All five generators were then run twice:
 35 runtime outputs are byte-identical to each other and to the tested PK3.
 The final project validator reports no errors and 2,498 CONTEXT words;
 `git diff --check` passes. `DELIVERY.json` binds these gates to the final package.
+
+## Original-sheet recovery and complete animal audit (2026-10-09)
+
+The author supplied Domingo, rat and bull sheets from the same local source
+folder and explicitly approved deterministic cropping/background removal.
+Domingo uses its unchanged 1,254-square original sheet. Measured native clips
+preserve all death-strip pixels with alpha >=16 exactly once; overlapping X/Y/Z
+silhouettes use native subtextures. One 199/176 scale matches the original
+standing drawing to existing DOIDA1. Eight original DOMI S-Z states retain timing.
+
+The rat's seven original death drawings now occupy RATG F-M, repeating the final
+corpse instead of inventing an eighth drawing or changing native duration.
+Nine minor border cuts (B1/B5/C3/C4/C5/C6/C8/E1/E5) also use recovered source
+pixels with their original source-relative anchors. The mask recovery preserves
+existing valid alpha and source RGB, using seeded single-thread GrabCut only
+where the old cuts lack pixels. All 118 bull images and 48 rat images were
+inspected as alpha composites and native textures. No bull clipping was found.
+Hidden labels/neighbor RGB in rat PNGs have alpha zero and do not render; the
+earlier broader claim about those artifacts was a misleading preview.
+
+`deathframes-original-final` records all sixteen individual death states plus
+uninterrupted production sequences and final corpses. `animals-original-final`
+renders every registered animal texture on contrasting backgrounds, including
+all directional frames. Each texture fits its inspection cell independently;
+this sheet does not compare world body sizes. Source/registration and alpha-composite inspections are
+separate from native captures. Rat inspection poses are enlarged only in the
+individual death fixture; its actual corpse keeps production scale 0.11.
+
+Rejected iterations: `deathframes-original-a` had insufficient console settling
+and skipped four frame selections; the fixture now holds each selection and
+requires all sixteen before completion. Earlier baseline/reconstruction logs
+already contained sixteen selections. The first rat rectangle-only segmentation
+filled tail holes and altered dark fur, so the final extraction preserves/seeds
+the known alpha. Early animal contact sheets were obscured by the HUD; a normal
+EventHandler renders the final inspection after the gameplay HUD. These attempts
+do not constitute final visual evidence.
+
+`RECOVERY.json` binds source hashes, two repeated generator runs, runtime assets
+and the normal final PK3. Updated static/native gates are in `DELIVERY.json`.
+Temporary keep-awake release is recorded in `power-137-original.json` with no
+power-plan change. CA137-01/02/03 remain pending author acceptance in PR #151.

@@ -9,16 +9,18 @@ trails and impacts, attached statuses, directional demon breath, original 3D
 physical projectiles including javelins, and the Federal prisoner's staff ray.
 Author-approved additions: proportional colored damage feedback, peripheral
 Health warnings and stronger Lucidity visuals. The later reported Domingo/rat
-death cuts use complete reconstructed poses; originals/timing are retained.
+death cuts now use recovered original poses; older assets/timing are retained.
 No gameplay/balance changes.
 Native evidence and qualifications are maintained in assets/validation_518/RESULTS.md;
 static/build gates accompany delivery. Outstanding author checks: CA137-01/02/03 in
 pending_test.txt. Delivered through PR #151; no merge/closure is claimed until
 the author asks for it.
 
-Separate legacy observation: some rat idle/movement PNGs also contain neighboring
-art or labels. The author's #137 follow-up and this repair cover death frames;
-broader rat-sheet recovery remains a visual backlog item, not a completed check.
+Author follow-up: audit every rat/bull sprite and repair defective cuts. All 48
+rat and 118 bull images were inspected. Nine rat movement/pain border cuts were
+restored alongside the original deaths. Bull cuts are intact. Visible source
+labels/neighbor RGB outside some rats have alpha zero and do not render; they
+were a misleading preview, not an outstanding gameplay rendering defect.
 
 ## Issue #136 - Shortbow shotgun and armor bypass (5.1.7)
 

@@ -15,7 +15,10 @@ MODELDEF momentum pitch does not change their physical velocity or gravity.
 Javelin impact still uses its existing breakage/material recovery.
 Domingo (including soldiers) and giant-rat deaths use repaired complete poses
 under their existing sprite names. Death timing, actions and corpse behavior
-are unchanged; the old damaged PNGs remain available for rollback.
+are unchanged; the old damaged PNGs remain available for rollback. Original
+Domingo art uses eight poses; the rat's seven source poses repeat the last corpse
+over its last two timed states. Nine rat movement/pain border repairs preserve
+their original source-relative anchors. All bull cuts were audited unchanged.
 
 Attached burn, poison, frost and lightning art follows owner height and width,
 keeps the central silhouette open, and ends on real status expiry/death/removal.

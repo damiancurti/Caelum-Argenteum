@@ -31,15 +31,22 @@ impact/status effects use native alpha and bounded lifetimes. Runtime provenance
 src/licenses/ELEMENTAL_VFX_518.txt. Comparative native captures and measurement
 records: assets/validation_518; no PK3, IWAD, save or executable is distributed.
 
-The author also reported clipped Domingo/giant-rat deaths. The source runtime
-PNGs already lacked body parts and contained neighboring sprites; the located
-historical graphics ZIP has the same damaged Domingo hashes. Complete eight-pose
-sequences were reconstructed with image_gen using the existing owned character
-references, rather than claiming recovery of a missing original sheet. Original
-PNGs remain unchanged. New untouched atlases, prompts and measured registration:
-assets/source/art/death_repair_518; generator register_death_frames.py. Native
-TEXTURES preserves DOMI S-Z / RATG F-M names, state timing and floor anchors.
-The soldier shares Domingo's repaired poses. Runtime provenance is in
+The author supplied the complete original Domingo, rat and bull sheets after
+the first death reconstructions. Current DOMI S-Z bindings use the original
+Domingo sheet unchanged: measured native subtextures separate the overlapping
+corpse silhouettes without repainting pixels. Standing height sets one common
+scale. Sources, previous reconstructions and registration are retained in
+assets/source/art/death_repair_518; generator register_death_frames.py.
+
+The author explicitly approved code-based background removal for the opaque
+animal sheets. assets/source/art/animal_recovery_518 records their provenance,
+crop rectangles and masks. recover_rat_frames.py preserves source RGB and valid
+legacy alpha, then separates missing regions with seeded, single-thread GrabCut
+(Pillow 11.3.0, numpy 2.2.6, OpenCV 4.12.0.88). Seven original death poses occupy
+RATG F-M, repeating the last corpse to preserve the eight existing state durations.
+Nine movement/pain border cuts are restored; their source-relative grAb anchors
+remain unchanged. All 118 bull images were audited; no recut was needed.
+Legacy PNGs and prior reconstructions remain available; runtime provenance is
 src/licenses/DEATH_REPAIR_518.txt. CA137-03 awaits author visual acceptance.
 
 ## 5.1.7 - Modular shotgun artwork and evidence (#136)

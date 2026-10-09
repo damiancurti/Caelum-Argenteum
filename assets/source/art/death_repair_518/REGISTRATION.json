@@ -2,353 +2,277 @@
   {
     "name": "DOMIS0",
     "clip": [
-      0,
-      0,
-      434,
-      537
+      16,
+      766,
+      152,
+      934
     ],
     "opaque_bounds": [
-      66,
-      123,
-      393,
-      454
+      40,
+      773,
+      140,
+      915
     ],
     "pivot": [
-      230,
-      455
+      74,
+      150
     ],
-    "scale": 2.258503401360544,
-    "source": "domingo.png",
-    "source_sha256": "2df16b6c3386864b38e6f5499bd17d65f57de727f3e0bd60ac60de8edd855bf1"
+    "scale": 1.1306818181818181,
+    "source": "domingo-original.png",
+    "source_sha256": "4eb6162dc54d0117e23826ca8067b16851588c42948ad19cd05982c0e20f55f3",
+    "native_clip_parts": [
+      [
+        16,
+        766,
+        152,
+        934
+      ]
+    ]
   },
   {
     "name": "DOMIT0",
     "clip": [
-      434,
-      0,
-      882,
-      537
+      156,
+      765,
+      313,
+      938
     ],
     "opaque_bounds": [
-      558,
-      161,
-      819,
-      449
+      164,
+      768,
+      297,
+      925
     ],
     "pivot": [
-      255,
-      450
+      75,
+      161
     ],
-    "scale": 2.258503401360544,
-    "source": "domingo.png",
-    "source_sha256": "2df16b6c3386864b38e6f5499bd17d65f57de727f3e0bd60ac60de8edd855bf1"
+    "scale": 1.1306818181818181,
+    "source": "domingo-original.png",
+    "source_sha256": "4eb6162dc54d0117e23826ca8067b16851588c42948ad19cd05982c0e20f55f3",
+    "native_clip_parts": [
+      [
+        156,
+        765,
+        313,
+        938
+      ]
+    ]
   },
   {
     "name": "DOMIU0",
     "clip": [
-      882,
-      0,
-      1317,
-      537
+      313,
+      772,
+      481,
+      938
     ],
     "opaque_bounds": [
-      919,
-      190,
-      1206,
-      454
+      324,
+      785,
+      477,
+      927
     ],
     "pivot": [
-      181,
-      455
+      88,
+      156
     ],
-    "scale": 2.258503401360544,
-    "source": "domingo.png",
-    "source_sha256": "2df16b6c3386864b38e6f5499bd17d65f57de727f3e0bd60ac60de8edd855bf1"
+    "scale": 1.1306818181818181,
+    "source": "domingo-original.png",
+    "source_sha256": "4eb6162dc54d0117e23826ca8067b16851588c42948ad19cd05982c0e20f55f3",
+    "native_clip_parts": [
+      [
+        313,
+        772,
+        481,
+        938
+      ]
+    ]
   },
   {
     "name": "DOMIV0",
     "clip": [
-      1317,
-      0,
-      1774,
-      537
+      481,
+      778,
+      620,
+      938
     ],
     "opaque_bounds": [
-      1383,
-      234,
-      1711,
-      466
+      483,
+      804,
+      614,
+      917
     ],
     "pivot": [
-      230,
-      467
+      68,
+      140
     ],
-    "scale": 2.258503401360544,
-    "source": "domingo.png",
-    "source_sha256": "2df16b6c3386864b38e6f5499bd17d65f57de727f3e0bd60ac60de8edd855bf1"
+    "scale": 1.1306818181818181,
+    "source": "domingo-original.png",
+    "source_sha256": "4eb6162dc54d0117e23826ca8067b16851588c42948ad19cd05982c0e20f55f3",
+    "native_clip_parts": [
+      [
+        481,
+        778,
+        620,
+        938
+      ]
+    ]
   },
   {
     "name": "DOMIW0",
     "clip": [
-      0,
-      537,
-      434,
-      887
+      620,
+      782,
+      765,
+      938
     ],
     "opaque_bounds": [
-      56,
-      607,
-      401,
-      818
+      624,
+      797,
+      752,
+      918
     ],
     "pivot": [
-      229,
-      282
+      68,
+      137
     ],
-    "scale": 2.258503401360544,
-    "source": "domingo.png",
-    "source_sha256": "2df16b6c3386864b38e6f5499bd17d65f57de727f3e0bd60ac60de8edd855bf1"
+    "scale": 1.1306818181818181,
+    "source": "domingo-original.png",
+    "source_sha256": "4eb6162dc54d0117e23826ca8067b16851588c42948ad19cd05982c0e20f55f3",
+    "native_clip_parts": [
+      [
+        620,
+        782,
+        765,
+        938
+      ]
+    ]
   },
   {
     "name": "DOMIX0",
     "clip": [
-      434,
-      537,
-      882,
-      887
+      765,
+      820,
+      950,
+      934
     ],
     "opaque_bounds": [
-      467,
-      620,
-      862,
-      815
+      773,
+      834,
+      947,
+      917
     ],
     "pivot": [
-      231,
-      279
+      95,
+      98
     ],
-    "scale": 2.258503401360544,
-    "source": "domingo.png",
-    "source_sha256": "2df16b6c3386864b38e6f5499bd17d65f57de727f3e0bd60ac60de8edd855bf1"
+    "scale": 1.1306818181818181,
+    "source": "domingo-original.png",
+    "source_sha256": "4eb6162dc54d0117e23826ca8067b16851588c42948ad19cd05982c0e20f55f3",
+    "native_clip_parts": [
+      [
+        765,
+        820,
+        938,
+        934
+      ],
+      [
+        938,
+        820,
+        949,
+        896
+      ],
+      [
+        949,
+        820,
+        950,
+        891
+      ]
+    ]
   },
   {
     "name": "DOMIY0",
     "clip": [
-      882,
-      537,
-      1317,
-      887
+      938,
+      826,
+      1108,
+      934
     ],
     "opaque_bounds": [
-      901,
-      669,
-      1296,
-      815
+      942,
+      837,
+      1105,
+      917
     ],
     "pivot": [
-      217,
-      279
+      86,
+      92
     ],
-    "scale": 2.258503401360544,
-    "source": "domingo.png",
-    "source_sha256": "2df16b6c3386864b38e6f5499bd17d65f57de727f3e0bd60ac60de8edd855bf1"
+    "scale": 1.1306818181818181,
+    "source": "domingo-original.png",
+    "source_sha256": "4eb6162dc54d0117e23826ca8067b16851588c42948ad19cd05982c0e20f55f3",
+    "native_clip_parts": [
+      [
+        938,
+        896,
+        949,
+        934
+      ],
+      [
+        949,
+        891,
+        950,
+        934
+      ],
+      [
+        950,
+        826,
+        1093,
+        934
+      ],
+      [
+        1093,
+        826,
+        1108,
+        896
+      ]
+    ]
   },
   {
     "name": "DOMIZ0",
     "clip": [
-      1317,
-      537,
-      1774,
-      887
+      1093,
+      851,
+      1250,
+      939
     ],
     "opaque_bounds": [
-      1338,
-      684,
-      1747,
-      811
+      1095,
+      865,
+      1243,
+      923
     ],
     "pivot": [
-      226,
-      275
+      76,
+      73
     ],
-    "scale": 2.258503401360544,
-    "source": "domingo.png",
-    "source_sha256": "2df16b6c3386864b38e6f5499bd17d65f57de727f3e0bd60ac60de8edd855bf1"
-  },
-  {
-    "name": "RATGF0",
-    "clip": [
-      0,
-      0,
-      441,
-      540
-    ],
-    "opaque_bounds": [
-      32,
-      131,
-      394,
-      440
-    ],
-    "pivot": [
-      213,
-      441
-    ],
-    "scale": 2.6030534371015674,
-    "source": "rat.png",
-    "source_sha256": "1bd19e620046e7490999daa4afb0562fb0a10ca056ef832e46f4e42f36ce918c"
-  },
-  {
-    "name": "RATGG0",
-    "clip": [
-      441,
-      0,
-      878,
-      540
-    ],
-    "opaque_bounds": [
-      468,
-      187,
-      850,
-      439
-    ],
-    "pivot": [
-      218,
-      440
-    ],
-    "scale": 2.6030534371015674,
-    "source": "rat.png",
-    "source_sha256": "1bd19e620046e7490999daa4afb0562fb0a10ca056ef832e46f4e42f36ce918c"
-  },
-  {
-    "name": "RATGH0",
-    "clip": [
-      878,
-      0,
-      1320,
-      540
-    ],
-    "opaque_bounds": [
-      909,
-      227,
-      1277,
-      438
-    ],
-    "pivot": [
-      215,
-      439
-    ],
-    "scale": 2.6030534371015674,
-    "source": "rat.png",
-    "source_sha256": "1bd19e620046e7490999daa4afb0562fb0a10ca056ef832e46f4e42f36ce918c"
-  },
-  {
-    "name": "RATGI0",
-    "clip": [
-      1320,
-      0,
-      1774,
-      540
-    ],
-    "opaque_bounds": [
-      1334,
-      271,
-      1741,
-      446
-    ],
-    "pivot": [
-      218,
-      447
-    ],
-    "scale": 2.6030534371015674,
-    "source": "rat.png",
-    "source_sha256": "1bd19e620046e7490999daa4afb0562fb0a10ca056ef832e46f4e42f36ce918c"
-  },
-  {
-    "name": "RATGJ0",
-    "clip": [
-      0,
-      540,
-      441,
-      887
-    ],
-    "opaque_bounds": [
-      31,
-      633,
-      424,
-      810
-    ],
-    "pivot": [
-      228,
-      271
-    ],
-    "scale": 2.6030534371015674,
-    "source": "rat.png",
-    "source_sha256": "1bd19e620046e7490999daa4afb0562fb0a10ca056ef832e46f4e42f36ce918c"
-  },
-  {
-    "name": "RATGK0",
-    "clip": [
-      441,
-      540,
-      878,
-      887
-    ],
-    "opaque_bounds": [
-      458,
-      641,
-      855,
-      807
-    ],
-    "pivot": [
-      216,
-      268
-    ],
-    "scale": 2.6030534371015674,
-    "source": "rat.png",
-    "source_sha256": "1bd19e620046e7490999daa4afb0562fb0a10ca056ef832e46f4e42f36ce918c"
-  },
-  {
-    "name": "RATGL0",
-    "clip": [
-      878,
-      540,
-      1320,
-      887
-    ],
-    "opaque_bounds": [
-      901,
-      659,
-      1304,
-      809
-    ],
-    "pivot": [
-      225,
-      270
-    ],
-    "scale": 2.6030534371015674,
-    "source": "rat.png",
-    "source_sha256": "1bd19e620046e7490999daa4afb0562fb0a10ca056ef832e46f4e42f36ce918c"
-  },
-  {
-    "name": "RATGM0",
-    "clip": [
-      1320,
-      540,
-      1774,
-      887
-    ],
-    "opaque_bounds": [
-      1362,
-      677,
-      1737,
-      809
-    ],
-    "pivot": [
-      230,
-      270
-    ],
-    "scale": 2.6030534371015674,
-    "source": "rat.png",
-    "source_sha256": "1bd19e620046e7490999daa4afb0562fb0a10ca056ef832e46f4e42f36ce918c"
+    "scale": 1.1306818181818181,
+    "source": "domingo-original.png",
+    "source_sha256": "4eb6162dc54d0117e23826ca8067b16851588c42948ad19cd05982c0e20f55f3",
+    "native_clip_parts": [
+      [
+        1093,
+        896,
+        1108,
+        939
+      ],
+      [
+        1108,
+        851,
+        1250,
+        939
+      ]
+    ]
   }
 ]

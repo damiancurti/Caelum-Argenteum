@@ -10,5 +10,5 @@ Expected: small percentage losses give mild flashes even when their absolute dam
 
 CA137-03 | Origin: 5.1.8 / issue #137 | Domingo and giant-rat death poses
 Prerequisites: rebuilt package; test save or the recorded native before/after gallery.
-Steps: observe Domingo's death in chase camera, a soldier dying, and a giant rat dying; inspect the entire collapse and final corpse from nearby.
-Expected: complete heads, limbs and tail without neighboring-frame fragments, grounded bodies and a coherent collapse at the existing animation speed. These poses were reconstructed from the existing character references because the located source copies already contained the cuts; confirm their appearance separately from technical correctness.
+Steps: observe Domingo's death in chase camera, a soldier dying, and a giant rat dying; inspect the entire collapse and final corpse from nearby. View a rat moving and reacting to pain from several directions; compare the unchanged bull.
+Expected: complete heads, limbs and tails, grounded bodies and the existing animation speed. Domingo and rat now use the author's recovered original art; the rat holds its seventh source pose over the final two existing death states. Nine minor movement/pain borders are restored; all bull sprites were audited without finding clipping. Confirm appearance separately from technical correctness.

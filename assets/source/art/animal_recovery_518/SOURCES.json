@@ -1,0 +1,16 @@
+[
+  {
+    "actor": "rat",
+    "file": "rat-original.png",
+    "source_path": "C:\\GZDooMProjects\\Caelum Argenteum\\Sprite sheets\\Rata sprite sheet.png",
+    "sha256": "7a606ff9986e63af16ded56008af355737281558b7cd6529d2cbe2afe191a20e",
+    "provenance": "Original project artwork supplied by the author on 2026-10-09."
+  },
+  {
+    "actor": "bull",
+    "file": "bull-original.png",
+    "source_path": "C:\\GZDooMProjects\\Caelum Argenteum\\Sprite sheets\\Toro sprite sheet.png",
+    "sha256": "8da89505d1c1a48dac1a5d0631bfa716955f8c13d27fe2bcd0bd7fee23fc39a5",
+    "provenance": "Original project artwork supplied by the author on 2026-10-09."
+  }
+]

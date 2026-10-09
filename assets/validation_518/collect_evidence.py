@@ -38,9 +38,19 @@ def main():
     pair('500 living combatants, native attacks', 'battle-before-final-dense-battle.png',
          'battle-cells-final-dense-battle.png')
     for stage in [0, 3, 7, 8, 11, 15]:
-        pair(f'Death frame {stage}: reconstructed complete pose',
+        pair(f'Death frame {stage}: initial reconstruction (superseded)',
              f'deathframes-before-death-frame-{stage}.png',
              f'deathframes-after-death-frame-{stage}.png')
+    for stage in range(16):
+        pair(f'Death frame {stage}: recovered original art',
+             f'deathframes-before-death-frame-{stage}.png',
+             f'deathframes-original-final-death-frame-{stage}.png')
+    for stage in range(10):
+        groups.append((f'All animal sprites: native inspection page {stage+1}',
+                       [f'animals-original-final-animals-{stage}.png']))
+    groups.append(('Production death sequences: original art, actual corpse scale',
+                   ['deathframes-original-final-domingo-corpse.png',
+                    'deathframes-original-final-rat-corpse.png']))
 
     records = []
     run_names = sorted((p.name[:-9] for p in HERE.glob('*-run.json')), key=len, reverse=True)

@@ -1,0 +1,9 @@
+{
+  "issue": 137,
+  "supplied_by": "Project author, 2026-10-09",
+  "source_path": "C:\\GZDooMProjects\\Caelum Argenteum\\Sprite sheets\\Domingo sprite sheet.png",
+  "file": "domingo-original.png",
+  "sha256": "4eb6162dc54d0117e23826ca8067b16851588c42948ad19cd05982c0e20f55f3",
+  "registration": "Native clips only; source and runtime PNG bytes match exactly.",
+  "supersedes": "domingo.png reconstruction, retained with DESIGN.reconstructed.json and REGISTRATION.reconstructed.json."
+}

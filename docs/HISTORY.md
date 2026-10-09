@@ -30,8 +30,17 @@ The author then reported broken Domingo/giant-rat death cuts. Native inspection
 confirmed missing heads and neighboring body fragments in the old PNGs. New
 eight-frame reconstructions preserve identity/pose progression, names and state
 timing; original files remain untouched. Frame-by-frame and actual native Death
-sequence captures are in deathframes-before/after. These are reconstructed art,
-not recovered source pixels; artistic acceptance remains separate.
+sequence captures are in deathframes-before/after. These first deliveries were
+reconstructions, not recovered source pixels.
+Later on 2026-10-09 the author supplied complete original sheets for Domingo,
+rat and bull and approved deterministic cropping/background removal. Domingo's
+eight original poses now replace the reconstruction through native clipping;
+the rat's seven original poses use the same eight timed states, holding its last
+corpse twice. Nine additional rat movement/pain edge cuts were restored. All 118
+bull sprites were reviewed without finding clipping. Initial claims about rat
+labels/neighbor fragments are qualified: those pixels have alpha zero and do not
+render; the confirmed remaining defects were small silhouette border cuts.
+Earlier assets/evidence remain intact. Updated evidence is in validation_518.
 Author aesthetic acceptance is still outstanding as CA137-01/02/03 (origin 5.1.8,
 issue #137). No passed author result or merge is inferred from automated tests.
 Delivered through PR #151; commit/push completed with source assets, supporting

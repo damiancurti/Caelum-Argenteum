@@ -7,9 +7,10 @@ class CA137DeathFrame : Actor
 class CA137Deathframes : StaticEventHandler
 {
     int Previous;
+    int SeenFrames;
     Actor FrameBody;
     CaelumCombatActor Body;
-    override void WorldLoaded(WorldEvent e){Previous=-1;}
+    override void WorldLoaded(WorldEvent e){Previous=-1;SeenFrames=0;}
     override void WorldTick()
     {
         let u=CaelumPlayer(players[0].mo);if(u==null)return;
@@ -29,6 +30,7 @@ class CA137Deathframes : StaticEventHandler
                 FrameBody.frame=selection<8 ? 18+selection : 5+selection-8;
                 // Rat is enlarged only for this inspection, never in production.
                 FrameBody.Scale=(.409091,.409091);
+                SeenFrames |= 1 << selection;
                 Console.Printf("CA137 DEATH_FRAME kind=%s index=%d",selection<8 ? "Domingo" : "Rat",selection%8);
             }
             else if(selection<18)
@@ -36,12 +38,16 @@ class CA137Deathframes : StaticEventHandler
                 Class<Actor> type=selection==16 ? "CaelumPortDefender" : "CaelumGiantRat";
                 Body=CaelumCombatActor(Actor.Spawn(type,(2170,4096,0)));
             }
+            else if(selection==18)
+            {
+                if(SeenFrames==65535)Console.Printf("CA137 DEATH INSPECTION COMPLETE frames=16");
+                else Console.Printf("CA137 FAIL incomplete death frame inspection mask=%d",SeenFrames);
+            }
         }
         if(selection>=16 && selection<18 && Body!=null && Body.health>0)
         {
             // State timing, actions and final corpse frame are the production path.
             Body.health=0;Body.SetStateLabel("Death");
         }
-        if(selection==18)Console.Printf("CA137 DEATH INSPECTION COMPLETE");
     }
 }

@@ -21,7 +21,15 @@ def main():
                         'raw_local_file_retained': local.is_file()})
         path.write_bytes(data)
     if records:
-        (HERE / 'TEXT_NORMALIZATION.json').write_text(json.dumps({
+        manifest = HERE / 'TEXT_NORMALIZATION.json'
+        previous = json.loads(manifest.read_text(encoding='utf-8'))['files'] if manifest.exists() else []
+        previous_by_name = {r['file']: r for r in previous}
+        for record in records:
+            old = previous_by_name.get(record['file'])
+            if old is None or old['normalized_sha256'] != record['normalized_sha256']:
+                previous_by_name[record['file']] = record
+        records = list(previous_by_name.values())
+        manifest.write_text(json.dumps({
             'policy': 'UTF-8, LF, no trailing spaces or extra EOF blank lines in repository copies; values and log content unchanged. Original native files remain local.',
             'files': records}, indent=2) + '\n', encoding='utf-8')
     print(f'Normalized {len(records)} text copies; no native PNG, video or game file changed.')

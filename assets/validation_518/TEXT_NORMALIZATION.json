@@ -762,6 +762,108 @@
       "original_copy_sha256": "c26f375c432663ae9596658acdde3c5c5640ade4cc0fb5bc8691afb9f50cbde7",
       "normalized_sha256": "fd97cd4bf66801eb68c57b47d5c47f5add242ebe675343f76e4b22e70b3335e3",
       "raw_local_file_retained": true
+    },
+    {
+      "file": "animals-original-final.ini",
+      "original_copy_sha256": "74f978a8afeed603c5b9ce1303bf3c5f8f35de145a8667ffaee7cc54a6170531",
+      "normalized_sha256": "ce5cb7153b3faa18d63d290ff711a733677954b2a30d247abc6d9370ecabab98",
+      "raw_local_file_retained": true
+    },
+    {
+      "file": "animals-original-final.txt",
+      "original_copy_sha256": "31d9b6ae01e5c6e24fa3498658b19f84bcefbdd474bd4d052ae9e48ac727a7fe",
+      "normalized_sha256": "5834cd9bbdbfb30a88c0818d7987ce6bf872661dd14b5ff89c22c582722f9752",
+      "raw_local_file_retained": true
+    },
+    {
+      "file": "animals-raw-a.ini",
+      "original_copy_sha256": "2d939ff452a8f8c20ae6ef67a08b51f4cfeed056bf77e39974c842af6395071f",
+      "normalized_sha256": "b03185e353aadd79a47a9e5b33ba339cdeaf5ef74f1ee1e08b290a672a048c7d",
+      "raw_local_file_retained": true
+    },
+    {
+      "file": "animals-raw-a.txt",
+      "original_copy_sha256": "bcf4c934cfcfa3557b8de8230bb0e3a3cc036afec345f9479aa4b3fed1d21e1b",
+      "normalized_sha256": "4feaa6937f6c9c52f0d06e49c5a89bc43e8bcf8e42c67c813d1eca28cbfed35c",
+      "raw_local_file_retained": true
+    },
+    {
+      "file": "animals-reviewed-a.ini",
+      "original_copy_sha256": "5878de78a5dfb70a34416da1f461775c95fe71aad0ed2c7efea0b3f28f61fd06",
+      "normalized_sha256": "d023002ec816a75acc43c7d7c61d1c181ff96a36a91a72d87bd01402eb41eb97",
+      "raw_local_file_retained": true
+    },
+    {
+      "file": "animals-reviewed-a.txt",
+      "original_copy_sha256": "cc02f75d8c609b4bfcb99c0e5d089618e83bc7a53e692c023ef69a3737b35bf6",
+      "normalized_sha256": "f0d1f29f669eea652e9f93fdcd2f24ca58f655d06da77684e497f1383efd9789",
+      "raw_local_file_retained": true
+    },
+    {
+      "file": "animals-reviewed-b.ini",
+      "original_copy_sha256": "20019a80c49cf7b2ccb312b6d70843b05dee88b4248d473a7138151503208232",
+      "normalized_sha256": "82aab1510b45d6932bd62de8040687b6c1d55e19c0709b5a193ce9f840d9a1a1",
+      "raw_local_file_retained": true
+    },
+    {
+      "file": "animals-reviewed-b.txt",
+      "original_copy_sha256": "8a5cb9ed215a05df7b13a4844d88e927382e061db3837a5f10fe3e126ae250b8",
+      "normalized_sha256": "c4a823137ceff08af27283644ada9999a4b8384d521cc6e1c98d4747f9b47ae9",
+      "raw_local_file_retained": true
+    },
+    {
+      "file": "build-original-final.txt",
+      "original_copy_sha256": "fd29b948a1212a93fc2de2c60e511892f926219f31c875b0ff73269d21de40cb",
+      "normalized_sha256": "608bbc1ac13b2f7397f4690c7798ea49f38f1477b64491e4d290134e25a4f261",
+      "raw_local_file_retained": false
+    },
+    {
+      "file": "deathframes-original-a.ini",
+      "original_copy_sha256": "0567600694fe2da70744cd3ba320ebb0ab92704450dd6159478af5f0471b7fc1",
+      "normalized_sha256": "91143cbb1ab55ddd0c8f7c15ea7c9d1e00e9ade260cb7308d2e3c843118c2ed8",
+      "raw_local_file_retained": true
+    },
+    {
+      "file": "deathframes-original-a.txt",
+      "original_copy_sha256": "5112822f7a79635c65a1fa7d848ee7d3ac05ed11bee890d8298c83fef896fa7c",
+      "normalized_sha256": "0d9b4a752c317d7079e9ab0ffa96925b942342ea4f85686281bf71152b6a14d2",
+      "raw_local_file_retained": true
+    },
+    {
+      "file": "deathframes-original-b.ini",
+      "original_copy_sha256": "6993dbf76596cb31cb84615dec49f26834fcd330cd4b781469ad4c8565a3d7fa",
+      "normalized_sha256": "d03923f07316f124ab10ac2b1a2ce9dc19eea69bd6642b252e43121f70006c51",
+      "raw_local_file_retained": true
+    },
+    {
+      "file": "deathframes-original-b.txt",
+      "original_copy_sha256": "7e688d1c622ff3058bc0c6d6882c49ab16e7c87e396673cf2a4157dd325715af",
+      "normalized_sha256": "555d04906acd7e926b7e488866d1dbefce20fb026cd62467820db41b3cd968ef",
+      "raw_local_file_retained": true
+    },
+    {
+      "file": "deathframes-original-final.ini",
+      "original_copy_sha256": "ceb7070876861d21f82ebb2953538203ee9dafeb2852af290f261e21da7578e9",
+      "normalized_sha256": "76f4b1f4e726193337fba0748f6ef68a02b55b61390c60e68e17443136be7a69",
+      "raw_local_file_retained": true
+    },
+    {
+      "file": "deathframes-original-final.txt",
+      "original_copy_sha256": "eac8cbdc5933fde714c7f2f65a6a44c0c17ecf46a772eaa5f328f1e2f73ce546",
+      "normalized_sha256": "06b193a00d20090357b903d7aa2b9f67303a6f11a198d76dde82fc06cea6842e",
+      "raw_local_file_retained": true
+    },
+    {
+      "file": "recovery-release-checks.ini",
+      "original_copy_sha256": "1964b8d41ca6a1899bc725f076675232329a871930ca1feb179204d5ea071186",
+      "normalized_sha256": "1aae29ddd129d547e4fb0fa8bb868e8c116d25897936f54e75ba43cec8217e9c",
+      "raw_local_file_retained": true
+    },
+    {
+      "file": "recovery-release-checks.txt",
+      "original_copy_sha256": "bde233127792c1a87a2b83181fd409ef5ddeb02c658e422e74d500d53f17b087",
+      "normalized_sha256": "4421368e70a815533562a49552dd3dcfb68ebdebd54f152770aa39233bdfa2fd",
+      "raw_local_file_retained": true
     }
   ]
 }

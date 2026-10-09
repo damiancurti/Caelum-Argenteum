@@ -1,0 +1,73 @@
+﻿{
+    "label":  "animals-raw-a",
+    "started_utc":  "2026-10-09T13:23:58.9546262Z",
+    "engine":  "C:\\Program Files (x86)\\GZDoom\\gzdoom.exe",
+    "engine_sha256":  "EC706C2EA1EF946EEC13BE7B1B461DF8D52EFCD47CAA6C056ED0E0257F7F9FFA",
+    "iwad_sha256":  "10D67824B11025DDD9198E8CFC87CA335EE6E2D3E63AF4180FA9B8A471893255",
+    "package_sha256":  "938C94C92CB60B12F76AE5451AC2079237D1A7EE78D50151F7BA81F34DE8EBB4",
+    "addon_sha256":  "5DD5F94345D4EA026F033E89F6CEEB15ACBC3A38791F31EC00673C874EB4955C",
+    "initial_config":  "[LastRun]\nVersion=225\n[GlobalSettings]\nvid_preferbackend=1\nvid_vsync=false\nvid_maxfps=60\nvid_activeinbackground=true\ni_pauseinbackground=false\nvid_lowerinbackground=false\ni_soundinbackground=true\ncl_capfps=false\nvid_fullscreen=false\nvid_defwidth=1280\nwin_w=1296\nwin_h=759\nwin_maximized=false\nvid_defheight=720\nuse_mouse=false\nsnd_mastervolume=0.05\nlanguage=enu\n",
+    "arguments":  [
+                      "-noautoload",
+                      "-nomouse",
+                      "-iwad",
+                      "\"C:\\Program Files (x86)\\Steam\\steamapps\\common\\ultimate doom\\base\\doom2\\DOOM2.WAD\"",
+                      "-file",
+                      "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue137\\current/caelum_argenteum_dev.pk3\"",
+                      "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue137\\animals.pk3\"",
+                      "-config",
+                      "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue137\\animals-raw-a.ini\"",
+                      "-savedir",
+                      "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue137\"",
+                      "-width",
+                      1280,
+                      "-height",
+                      720,
+                      "-window",
+                      "-rngseed",
+                      "116",
+                      "-skill",
+                      "2",
+                      "+logfile",
+                      "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue137\\animals-raw-a.txt\"",
+                      "+con_notifytime",
+                      "0",
+                      "+set",
+                      "ca_test_siege_reinforcements",
+                      1,
+                      "+map",
+                      "CA137",
+                      "+exec",
+                      "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue137\\animals-raw-a-exec.cfg\""
+                  ],
+    "benchmark_offset":  12397,
+    "command_script":  "unbindall;r_drawplayersprites false;ca137_mode 0;wait 70;ca137_view 0;wait 24;screenshot animals-raw-a-animals-0.png;wait 12;ca137_view 1;wait 24;screenshot animals-raw-a-animals-1.png;wait 12;ca137_view 2;wait 24;screenshot animals-raw-a-animals-2.png;wait 12;ca137_view 3;wait 24;screenshot animals-raw-a-animals-3.png;wait 12;ca137_view 4;wait 24;screenshot animals-raw-a-animals-4.png;wait 12;ca137_view 5;wait 24;screenshot animals-raw-a-animals-5.png;wait 12;ca137_view 6;wait 24;screenshot animals-raw-a-animals-6.png;wait 12;ca137_view 7;wait 24;screenshot animals-raw-a-animals-7.png;wait 12;ca137_view 8;wait 24;screenshot animals-raw-a-animals-8.png;wait 12;ca137_view 9;wait 24;screenshot animals-raw-a-animals-9.png;wait 12;wait 300;quit\r\n",
+    "cpu":  [
+                {
+                    "Name":  "AMD Ryzen 9 5950X 16-Core Processor            ",
+                    "NumberOfCores":  16,
+                    "NumberOfLogicalProcessors":  32
+                }
+            ],
+    "gpu":  [
+                {
+                    "Name":  "Parsec Virtual Display Adapter",
+                    "DriverVersion":  "0.45.0.0"
+                },
+                {
+                    "Name":  "NVIDIA GeForce RTX 3070 Ti",
+                    "DriverVersion":  "32.0.15.7688"
+                }
+            ],
+    "os":  {
+               "Caption":  "Microsoft Windows 11 Pro",
+               "Version":  "10.0.26200",
+               "TotalVisibleMemorySize":  33475240
+           },
+    "pid":  34964,
+    "qpc_ms":  1435662409.0269,
+    "epoch_ms":  1791552240943.5686,
+    "exit_code":  0,
+    "completed_utc":  "2026-10-09T13:24:25.4213687Z",
+    "expected":  "CA137 ANIMAL AUDIT COMPLETE"
+}

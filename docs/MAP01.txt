@@ -10,8 +10,9 @@ the Federal prisoner and Ronnie retain their air/electric alternation while
 rendering the same electric ray as player weapons. Demon mouth/ability timing
 and environmental heat remain owned by the existing services. Screen feedback
 uses the approved Health/Lucidity thresholds without modifying map rules.
-Domingo/soldier and giant-rat death art is reconstructed into complete poses;
-existing death state names, timings and encounter consequences remain unchanged.
+Domingo/soldier and giant-rat deaths use recovered original poses; nine rat
+movement/pain borders are repaired and all bull cuts audited. Existing state
+names, timings and encounter consequences remain unchanged.
 
 ## 5.1.7 - Shotgun tutorial and MAP02 supplies (#136)
 
