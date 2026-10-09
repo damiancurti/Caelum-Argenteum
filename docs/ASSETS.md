@@ -12,7 +12,7 @@ Cell boundaries follow measured gaps in DESIGN.json, rather than an assumed
 uniform grid; native clips keep adjacent elements out of each animation frame.
 Three atlases provide nine projectile families, four attached states and four
 directional flame phases. The stronger art direction was chosen by the author;
-final native appearance remains pending author acceptance.
+the author accepted the final native appearance on 2026-10-09 (CA137-01/02).
 
 Optional deterministic tools: register_elemental_vfx.py,
 generate_projectile_models.py, generate_breath_models.py and
@@ -47,7 +47,7 @@ RATG F-M, repeating the last corpse to preserve the eight existing state duratio
 Nine movement/pain border cuts are restored; their source-relative grAb anchors
 remain unchanged. All 118 bull images were audited; no recut was needed.
 Legacy PNGs and prior reconstructions remain available; runtime provenance is
-src/licenses/DEATH_REPAIR_518.txt. CA137-03 awaits author visual acceptance.
+src/licenses/DEATH_REPAIR_518.txt. The author accepted CA137-03 on 2026-10-09.
 
 ## 5.1.7 - Modular shotgun artwork and evidence (#136)
 

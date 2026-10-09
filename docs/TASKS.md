@@ -12,9 +12,9 @@ Health warnings and stronger Lucidity visuals. The later reported Domingo/rat
 death cuts now use recovered original poses; older assets/timing are retained.
 No gameplay/balance changes.
 Native evidence and qualifications are maintained in assets/validation_518/RESULTS.md;
-static/build gates accompany delivery. Outstanding author checks: CA137-01/02/03 in
-pending_test.txt. Delivered through PR #151; no merge/closure is claimed until
-the author asks for it.
+static/build gates accompany delivery. The author accepted CA137-01/02/03 on
+2026-10-09 and requested PR #151 merge and #137 closure. Results are recorded in
+HISTORY; pending_test.txt is empty.
 
 Author follow-up: audit every rat/bull sprite and repair defective cuts. All 48
 rat and 118 bull images were inspected. Nine rat movement/pain border cuts were

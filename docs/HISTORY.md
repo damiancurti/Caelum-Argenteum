@@ -41,10 +41,14 @@ bull sprites were reviewed without finding clipping. Initial claims about rat
 labels/neighbor fragments are qualified: those pixels have alpha zero and do not
 render; the confirmed remaining defects were small silhouette border cuts.
 Earlier assets/evidence remain intact. Updated evidence is in validation_518.
-Author aesthetic acceptance is still outstanding as CA137-01/02/03 (origin 5.1.8,
-issue #137). No passed author result or merge is inferred from automated tests.
-Delivered through PR #151; commit/push completed with source assets, supporting
-runtime and native evidence retained in the focused branch.
+Author acceptance, 2026-10-09 (America/Buenos_Aires): the author confirms all
+outstanding tests passed and requests #137 closure and PR #151 merge.
+CA137-01 (elemental visuals and flying models), CA137-02 (damage, Health and
+Lucidity feedback), and CA137-03 (Domingo/giant-rat deaths and animal sprite
+audit), all originating in 5.1.8 / issue #137, are PASSED without qualifications.
+Their entries were removed from pending_test.txt, which remains tracked and empty.
+Technical results above remain separate evidence. Source assets, supporting
+runtime and native evidence are retained in the PR #151 delivery.
 
 ## 5.1.7 - Shortbow becomes a modular double-barrel shotgun (#136, 2026-10-08)
 

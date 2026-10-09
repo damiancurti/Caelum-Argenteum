@@ -112,9 +112,12 @@ never overrides a crash, VM error, unknown command or nonzero engine exit.
 
 ## Acceptance and remaining checks
 
-CA137-01 and CA137-02 in root `pending_test.txt` require the author's visual
-review. Technical passes do not mark them accepted. CA137-03 covers the author's
-later report of clipped Domingo/giant-rat deaths. The existing PNGs themselves
+On 2026-10-09 (America/Buenos_Aires), the author confirmed CA137-01, CA137-02
+and CA137-03 (all originating in 5.1.8 / issue #137) PASSED without qualifications
+and requested PR #151 merge and #137 closure. Their entries were cleared from
+root `pending_test.txt`; HISTORY preserves the acceptance record separately
+from technical evidence. CA137-03 covers the author's later report of clipped
+Domingo/giant-rat deaths. The existing PNGs themselves
 already contained truncated body parts/neighbor fragments; the located old
 graphics archive has identical damaged Domingo PNG hashes. New eight-pose atlases
 were reconstructed with image_gen from project-owned references, retaining the
@@ -179,4 +182,5 @@ do not constitute final visual evidence.
 `RECOVERY.json` binds source hashes, two repeated generator runs, runtime assets
 and the normal final PK3. Updated static/native gates are in `DELIVERY.json`.
 Temporary keep-awake release is recorded in `power-137-original.json` with no
-power-plan change. CA137-01/02/03 remain pending author acceptance in PR #151.
+power-plan change. The author accepted CA137-01/02/03 on 2026-10-09 and
+authorized PR #151 merge and #137 closure.

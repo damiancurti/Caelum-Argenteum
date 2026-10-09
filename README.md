@@ -21,7 +21,7 @@ sheets; nine minor rat movement/pain cuts are also repaired. All 118 bull sprite
 were audited without finding clipping. Old assets, gameplay and saves are preserved.
 Native evidence, comparisons and limitations: [validation_518](assets/validation_518/RESULTS.md).
 Delivery: [PR #151](https://github.com/damiancurti/Caelum-Argenteum/pull/151).
-Author visual acceptance remains in [pending_test.txt](pending_test.txt).
+Author acceptance: CA137-01/02/03 passed on 2026-10-09; see [history](docs/HISTORY.md).
 
 **5.1.7 / [#136](https://github.com/damiancurti/Caelum-Argenteum/issues/136):**
 The shortbow becomes a two-cartridge, twelve-pellet shotgun; the longbow remains.

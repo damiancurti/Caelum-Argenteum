@@ -16,8 +16,8 @@ Native comparison and persistence evidence: assets/validation_518/RESULTS.md.
 The reported Domingo/giant-rat death cuts now use recovered original art; nine
 rat movement/pain borders are also repaired. All 118 bull sprites were audited.
 Previous assets and native state timing remain unchanged.
-Technical checks and author aesthetic acceptance are separate; CA137-01/02/03 remain
-pending. Delivered through PR #151; merge/closure has not been requested.
+The author accepted CA137-01/02/03 on 2026-10-09 and requested PR #151 merge
+and #137 closure. HISTORY records acceptance separately from technical evidence.
 
 ## 5.1.7 - Shortbow replacement and firearm armor bypass (#136)
 
