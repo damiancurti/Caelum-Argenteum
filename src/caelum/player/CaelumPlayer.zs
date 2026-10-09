@@ -471,6 +471,7 @@ class CaelumPlayer : DoomPlayer
     bool CombatBlockModeActive;
     int CombatBlockInputGraceTics;
     bool CombatZoomInputLatched;
+    transient bool RangedAimSecondaryLatched;
     bool CombatChannelModeActive;
     Actor CombatChannelEffectActor;
     double CombatChannelCooldownRemaining;
@@ -9009,6 +9010,7 @@ class CaelumPlayer : DoomPlayer
         if (player != null && (player.cmd.buttons & BT_ALTATTACK) == 0)
         {
             JavelinSecondaryLatched = false;
+            RangedAimSecondaryLatched = false;
         }
 
         // Zoom/ADS/Block se rearma solamente al soltar la tecla. El estado
@@ -9606,6 +9608,10 @@ class CaelumPlayer : DoomPlayer
 
         if (IsRangedWeaponType(WeaponModel.WeaponType))
         {
+            // AltFire, igual que Zoom, alterna ADS una sola vez por pulsación.
+            // El bloqueo es propio de esta tecla y no afecta ataques secundarios.
+            if (RangedAimSecondaryLatched) { return; }
+            RangedAimSecondaryLatched = true;
             ToggleRangedAim(WeaponModel.WeaponType);
             return;
         }
