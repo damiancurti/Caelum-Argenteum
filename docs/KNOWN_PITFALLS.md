@@ -6,8 +6,8 @@ Inspected baseline: `1dc390576fa330d37ff543526fc7e69a397fc28f` (PR #7).
 
 ## CA-KP-066 - A foreground hand cut can duplicate an existing support hand
 
-Status/evidence: AUTHOR-REPORTED and ENGINE-VERIFIED, #152 / PR #153, 2026-10-09.
-Affected baseline: f7bb5c5e; corrected working tree remains release 5.1.9.
+Status/evidence: RESOLVED-VERIFIED, #152 / PR #153, 2026-10-09.
+Affected baseline: f7bb5c5e; correction 23fda033 remains release 5.1.9.
 Environment: GZDoom 4.14.2, Windows 11, Vulkan, 1280x720.
 Scope: CaelumShotgunView.Draw and separate hand/weapon TEXTURES registration.
 
@@ -22,7 +22,7 @@ fourteen captures, including single/partial reloads and all tiers; the existing
 upgraded save loads in hands-followup-save, both exit 0. Inspect the whole native
 composite and compare costume with canonical hand sprites, not just each cut in
 isolation. The atlas restyle is new artwork, with exact outputs/prompts retained.
-CA152-02 remains PENDING for author aesthetic acceptance after this correction.
+CA152-02 accepted by the author on 2026-10-09 without qualifications after correction.
 
 ## CA-KP-065 - Inventory linkage does not complete a held-item transition
 

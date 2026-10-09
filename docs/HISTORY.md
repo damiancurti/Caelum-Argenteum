@@ -46,8 +46,17 @@ ready/aim/recoil, empty/single/partial reload, all tiers and weapon switching;
 hands-followup-a and hands-followup-save exit 0 on the same final package.
 The prior upgraded save still holds 1,081 shells and 895 bullets. Registration
 is deterministic, and the temporary keep-awake request was released with the
-same power plan. CA152-02 remains pending author review of the revised hands;
-technical checks do not erase the initial rejection or approve the new artwork.
+same power plan. CA152-02 was left pending for author review of the revised hands;
+technical checks did not erase the initial rejection or approve the new artwork.
+
+Final author acceptance, 2026-10-09 (America/Buenos_Aires): the author confirms
+all remaining tests passed and requests #152 closure and PR #153 merge.
+CA152-02 (revised shotgun hands, origin 5.1.9 / issue #152) is PASSED without
+qualifications. Its entry is removed from pending_test.txt, leaving the tracked
+file empty; CA152-01/03 acceptance is recorded above. This documentation-only
+acceptance retains release 5.1.9, runtime files and the tested package. Static
+validation and index checks are repeated; native evidence remains applicable.
+Thermal redesign and beastfolk fur coefficients remain deferred author decisions.
 
 ## 5.1.8 - Elemental VFX, flying models and screen feedback (#137, 2026-10-09)
 

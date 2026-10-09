@@ -11,8 +11,9 @@ upgrade and ranged input tests have separate evidence in validation_519.
 The author accepted CA152-01 (pickup/6 cm size) and CA152-03 (held aim) on
 2026-10-09. CA152-02 failed because the left hand was duplicated and its costume
 differed from the other weapons. The revised atlas and single under-gun hand pair
-have native pose/save evidence; only that hand check remains in pending_test.txt.
-PR #153 remains open for this follow-up; merge/closure is not yet authorized.
+have native pose/save evidence. The author subsequently accepted revised hands
+(CA152-02, origin 5.1.9/#152) without qualifications on 2026-10-09 and requested
+PR #153 merge and #152 closure. All checks are accepted; pending_test.txt is empty.
 
 Thermal follow-up is deferred while the author decides: stair/jump work references,
 metabolic power including zero-net-work effort, and beastfolk fur water/insulation.

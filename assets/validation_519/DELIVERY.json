@@ -102,11 +102,12 @@
     "date": "2026-10-09",
     "ids": [
       "CA152-01",
+      "CA152-02",
       "CA152-03"
-    ]
+    ],
+    "qualifications": null,
+    "merge_and_closure_authorized": true
   },
-  "pending_author_checks": [
-    "CA152-02"
-  ],
+  "pending_author_checks": [],
   "temporary_power_request_released": true
 }

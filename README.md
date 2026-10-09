@@ -17,8 +17,9 @@ foreground. Revised gloves use Domingo's brown leather, red cuffs and dark brace
 Cartridge world art uses the author-approved 6 cm reference.
 Thermal observations are documented while the author considers the next model;
 thermal balance is unchanged. Evidence: [validation_519](assets/validation_519/RESULTS.md).
-The author accepted pickup/size and held aim on 2026-10-09; only the revised hands
-remain in [pending_test.txt](pending_test.txt).
+The author accepted CA152-01/02/03 on 2026-10-09 and requested closure and merge
+of [PR #153](https://github.com/damiancurti/Caelum-Argenteum/pull/153).
+[pending_test.txt](pending_test.txt) is empty; acceptance is recorded in HISTORY.
 
 **5.1.8 / [#137](https://github.com/damiancurti/Caelum-Argenteum/issues/137):**
 Animated elemental projectiles share original artwork, light, trails and impacts

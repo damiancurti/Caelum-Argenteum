@@ -1,4 +1,0 @@
-CA152-02 | Origin: 5.1.9 / issue #152 | Revised shotgun hands
-Prerequisites: rebuild with run_dev.bat and equip a shotgun with ammunition. The prior duplication/style failure is recorded in HISTORY; pickup/size and held aim are already accepted.
-Steps: inspect ready, aimed, recoil, empty opening, single/partial loading and completed reload poses; switch away and back. Compare tiers if available.
-Expected: a single left support hand remains under the weapon, with the right grip behind the stock and loading hands/cartridges in front. Brown gloves, narrow red wrist bands and dark bracers match the other weapons. No clipped wrist, duplicated hand, visible rectangular seam or persistent overlay after switching.

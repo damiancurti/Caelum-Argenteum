@@ -24,8 +24,8 @@ transparent outside the source. Used first-column silhouettes are checked native
 assets/source/art/shotgun_517/PICKUP_LAYOUT.json stores the support-hand clipping
 coordinate and author-approved 6 cm cartridge world-height reference. This corrects
 the reported 37.5 cm pickup artwork without changing its inventory icon, count,
-weight or collision. CA152-01 was accepted on 2026-10-09; only revised hand
-appearance (CA152-02) awaits author review. Registration and repeatable export,
+weight or collision. CA152-01 and revised hand appearance (CA152-02) were accepted
+by the author on 2026-10-09. Registration and repeatable export,
 fourteen native pose captures and existing-save load are in assets/validation_519.
 
 ## 5.1.8 - Original elemental atlases and projectile meshes (#137)

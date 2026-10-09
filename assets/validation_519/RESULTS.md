@@ -85,8 +85,8 @@ initial DETERMINISM.json and initial delivery fingerprint remain historical
 evidence. DELIVERY.json holds the current fingerprint plus the initial delivery.
 HANDS_NORMALIZATION.json records UTF-8/LF evidence-copy normalization; raw files
 stay local. power-152-hands.json confirms the temporary request was released
-and the active power plan did not change. Only the revised hands need author
-acceptance; accepted pickup/input mechanics and deferred thermal rules were
+and the active power plan did not change. Revised hands awaited author acceptance
+at this delivery (now accepted below); pickup/input mechanics and deferred thermal rules were
 not changed by this follow-up.
 
 ## Thermal findings, deliberately deferred
@@ -138,6 +138,9 @@ incomplete attempt is never substituted for a final pass.
 On 2026-10-09 the author accepted CA152-01 (pickup/size) and CA152-03 (held aim),
 both originating in 5.1.9 / #152, without qualifications. HISTORY records their
 removal from pending_test.txt. CA152-02 (same origin, grip appearance) initially
-FAILED for duplicated hands and costume mismatch; the revised single-pair atlas
-remains pending author review. Native verification does not approve the artwork
-or authorize issue/PR closure and merge.
+FAILED for duplicated hands and costume mismatch. The author subsequently
+confirmed the revised hands passed on 2026-10-09, without qualifications, and
+requested #152 closure and PR #153 merge. CA152-02 is now PASSED and its entry
+is removed, leaving pending_test.txt empty. Historical run snapshots retain the
+review status at capture time; this explicit author confirmation is separate
+from native verification. Acceptance changes no runtime files or package bytes.

@@ -14,7 +14,7 @@ foreground support hand is removed. Revised brown gloves, red cuffs and dark
 bracers match Domingo's existing costume. Loading stays foreground. Cartridge
 world art uses the author-approved 6 cm reference; mass and quantity are unchanged.
 Native evidence and limitations: assets/validation_519/RESULTS.md. The author
-accepted CA152-01/03 on 2026-10-09; revised hands (CA152-02) remain pending.
+accepted CA152-01/02/03 on 2026-10-09 and requested PR #153 merge and #152 closure.
 Thermal observations are diagnosed, not recalibrated: full-height
 native-gravity stairs and the approved fixed human jump use different budgets;
 beastfolk fur water/insulation and a metabolic-power redesign await author design.
