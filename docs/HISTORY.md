@@ -64,6 +64,33 @@ Controlled action runs record no thermal HP damage; the already-overheated save
 is a supported flux probe, not a survival pass. No additional author check is
 marked accepted. The temporary keep-awake request is released after testing.
 
+The author subsequently requests mechanical work rather than amplified speed or
+Air proxies, with 25% efficiency: metabolic energy is 4W and retained heat 3W.
+After comparing full native jumping, native base jumping and a human reference,
+the author selects 0.5 m at 9.81 m/s2 for each accepted jump; extra attribute
+height is outside that budget. The author approves fixed weapon work (dagger
+50/75 J, sword 125/200 J, greatsword 300/450 J, other weapons preserving their
+old relative proportions), natural NPC attacks 25 J, machete equivalents 75 J,
+and Zupay ground slam 850 J. Those tables no longer read Air or jump energy.
+Firearm cycles and walking/running/swimming convert the approved references to
+work with the 25% useful / 75% heat split. Reload energy follows completed
+progress, including moving/interrupted and old-save cycles. Isometric pushing
+retains its approved metabolic rate; blocking is approved at 0.2943 W per kg
+of total moved mass per kg held, with no attribute multiplier.
+Resilience adaptation changes from Type 4 to base plus Type 2: at 100, +/-10 C
+and 2 C/day, still five days from racial comfort. Investigation confirms that
+Toughness thresholds already used this Type-2 widening; they are not changed.
+Thermal revision 8 preserves old exposure/resources/pending joules and lets
+out-of-limit acclimatization return gradually. ENERGY_RESULTS and its manifest
+record the final native tests, rejected fixture setups and preserved checkpoints.
+The final suite passes 76 assertions. Four native jump/greatsword controls
+(human heavy normal/high attributes, Caelith light and goblin magic) record
+zero thermal damage; each primary greatsword attack emits 900 J. Normal/high
+swimming and blocking match the same energy profiles, with zero activity after
+release. Old/current mid-reload saves and original-checkpoint rollback pass.
+The manifest distinguishes unchanged earlier controls from the final charged-
+javelin correction; no pending author check is marked accepted.
+
 Rejected setup runs exposed Ammo parent-class stacking, a case-insensitive local
 name shadowing PELLETS, a state-pointer lookup that hid a reload pose, unstamped
 merchant equipment revisions and hub-fixture references to the departed player.

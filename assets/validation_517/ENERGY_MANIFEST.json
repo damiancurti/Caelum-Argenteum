@@ -1,0 +1,321 @@
+{
+  "issue": 136,
+  "release": "5.1.7",
+  "baseline_commit": "3366aba4b31ab339eacdf52bbde62a735e30b636",
+  "contract": "Fixed work, 25 percent efficiency, heat = 3 * work; Type-2 adaptation",
+  "packages": {
+    "build\\caelum_argenteum_dev.pk3": "e0e18696dc04b383f6d1b6a738e5496e0d39e88e19f24bbf308c847036ca7f0e",
+    "build\\issue136\\production.pk3": "0e25c7fc5731b1caf6dc29b846d7fb1c3a177ab6e2790c6b3698d0db2388590a",
+    "build\\issue136\\energy-current\\caelum_argenteum_dev.pk3": "0e25c7fc5731b1caf6dc29b846d7fb1c3a177ab6e2790c6b3698d0db2388590a"
+  },
+  "previous_measured_package_sha256": "0af4d8cfb34f68a918a624302aa0990441ee6376163b7e02bdacdc39f7d2debd",
+  "baseline_package_sha256": "505002df31ff829ca09767196c399d53318d2755c743fae7de952e43390de98c",
+  "source_members": 6239,
+  "payload_sha256": "8a58f23149100e4d0f974ea57dc9888993ce59fd2be092dd774c57f7d2ecf2b3",
+  "native_runs": {
+    "energy-compile-a": {
+      "package_sha256": "0af4d8cfb34f68a918a624302aa0990441ee6376163b7e02bdacdc39f7d2debd",
+      "addon_sha256": "3EF5913428728306EDA5DE1531F79BD93F1C6A188515297C622CDCB0DD1CE06B",
+      "log_sha256": "aa15c3bea81b590dda7cfcf0f7f99299d36980699b994f0a193b3f074ef3cf90",
+      "exit_code": 0,
+      "evidence_scope": "Identical runtime except charged-javelin argument; final suite covers that correction"
+    },
+    "energy-checks-b": {
+      "package_sha256": "0af4d8cfb34f68a918a624302aa0990441ee6376163b7e02bdacdc39f7d2debd",
+      "addon_sha256": "0A6AEF4BC159A9F9DFE74D1BCE801916E21B91DC047DC446829DE69EED0EAC96",
+      "log_sha256": "9a1f6949083b518938ae1a5b73734da02413766d796677696b78da8a71c036b6",
+      "exit_code": 0,
+      "evidence_scope": "Identical runtime except charged-javelin argument; final suite covers that correction"
+    },
+    "energy-checks-c": {
+      "package_sha256": "0e25c7fc5731b1caf6dc29b846d7fb1c3a177ab6e2790c6b3698d0db2388590a",
+      "addon_sha256": "5E3681FEEFED521BA139163750D7E6BEFABFB72C9EAA485D54EE5701B21ACF45",
+      "log_sha256": "448e1affba7499106cdeb3ac1500b14bc3528be86d9d0248ddf9132b2f2e5749",
+      "exit_code": 0,
+      "evidence_scope": "Final runtime"
+    },
+    "energy-live-normal-b": {
+      "package_sha256": "0af4d8cfb34f68a918a624302aa0990441ee6376163b7e02bdacdc39f7d2debd",
+      "addon_sha256": "A3F0352E9D9389501FDD0DE51625759EA3599D2FC95A4682CC5CF481D0CD5DCE",
+      "log_sha256": "bf7b56bdc017f12513d0d2a77299644c443a1eda428a9d985627e0cde6549572",
+      "exit_code": 0,
+      "evidence_scope": "Identical runtime except charged-javelin argument; final suite covers that correction"
+    },
+    "energy-live-high-a": {
+      "package_sha256": "0af4d8cfb34f68a918a624302aa0990441ee6376163b7e02bdacdc39f7d2debd",
+      "addon_sha256": "918DEA612D82F3B2AAAA75B744E5444698FCFE66E6F6260D3AA61F38BBB54C3B",
+      "log_sha256": "edd79e786f7ed2dc1a61e33a5050029c930f4c61183b26384d7ffd89b2f9ce77",
+      "exit_code": 0,
+      "evidence_scope": "Identical runtime except charged-javelin argument; final suite covers that correction"
+    },
+    "energy-live-caelith-a": {
+      "package_sha256": "0af4d8cfb34f68a918a624302aa0990441ee6376163b7e02bdacdc39f7d2debd",
+      "addon_sha256": "95A51FDD69FC82AE3258221A095AAB91035693EBF697AC5DD3AF4A072CB9D015",
+      "log_sha256": "3db88451c2aee17651e44363b9b184d1c0083660c09fca145211b52cfa3f73ee",
+      "exit_code": 0,
+      "evidence_scope": "Identical runtime except charged-javelin argument; final suite covers that correction"
+    },
+    "energy-live-goblin-a": {
+      "package_sha256": "0af4d8cfb34f68a918a624302aa0990441ee6376163b7e02bdacdc39f7d2debd",
+      "addon_sha256": "5202777D048EE8F208A950B3086AAF8FD071963727437E0B35D6D3CDCF17AD54",
+      "log_sha256": "997f7c27041fa72cc9e359d16718ff94d92c2ea5472361237fc0793c61c089ca",
+      "exit_code": 0,
+      "evidence_scope": "Identical runtime except charged-javelin argument; final suite covers that correction"
+    },
+    "energy-save-seed-b": {
+      "package_sha256": "505002df31ff829ca09767196c399d53318d2755c743fae7de952e43390de98c",
+      "addon_sha256": "E152A6E6545796842D13936A347B77C3D11C14C93768318CC8C7FBECB57DCA8A",
+      "log_sha256": "759e5ee0cf3467a6412de7867f9262822813348e70f045f51b6f58f890fb4524",
+      "exit_code": 0,
+      "evidence_scope": "Preserved revision-7 baseline"
+    },
+    "energy-save-upgrade-a": {
+      "package_sha256": "0af4d8cfb34f68a918a624302aa0990441ee6376163b7e02bdacdc39f7d2debd",
+      "addon_sha256": "A6B8CB32F6405291E76A86485B0B109DBD3B85FB2F6C85618FF700B08AB25317",
+      "log_sha256": "69815e687e0f11022fdf4db68289af2e943d710a523cb70b696bce6c900ec234",
+      "exit_code": 0,
+      "evidence_scope": "Identical runtime except charged-javelin argument; final suite covers that correction"
+    },
+    "energy-save-reload-a": {
+      "package_sha256": "0af4d8cfb34f68a918a624302aa0990441ee6376163b7e02bdacdc39f7d2debd",
+      "addon_sha256": "A6B8CB32F6405291E76A86485B0B109DBD3B85FB2F6C85618FF700B08AB25317",
+      "log_sha256": "983d5ffe008fb5313c2e18379be6defd97f4f8e7c0f97599e78f435cbae258bc",
+      "exit_code": 0,
+      "evidence_scope": "Identical runtime except charged-javelin argument; final suite covers that correction"
+    },
+    "energy-save-rollback-a": {
+      "package_sha256": "505002df31ff829ca09767196c399d53318d2755c743fae7de952e43390de98c",
+      "addon_sha256": "A8E4C84DC85D9E3DE0C0C7C7039BEAF88F20C7F7E08B5CE839B90A8C2417FD78",
+      "log_sha256": "6a029773fd85fc18cd67766991855f54c86bc15884032fd601d20788931fd022",
+      "exit_code": 0,
+      "evidence_scope": "Preserved revision-7 baseline"
+    },
+    "energy-swim-normal-a": {
+      "package_sha256": "0e25c7fc5731b1caf6dc29b846d7fb1c3a177ab6e2790c6b3698d0db2388590a",
+      "addon_sha256": "BA6873B2D8373CBF1EFC33F372AC6BDD218221AFA95C18908E864D497A139FC5",
+      "log_sha256": "57b021b04d45f96561b02d85e5c438ed1897f81895064ec7f4e14ee1820d8052",
+      "exit_code": 0,
+      "evidence_scope": "Final runtime"
+    },
+    "energy-swim-high-a": {
+      "package_sha256": "0e25c7fc5731b1caf6dc29b846d7fb1c3a177ab6e2790c6b3698d0db2388590a",
+      "addon_sha256": "BA6873B2D8373CBF1EFC33F372AC6BDD218221AFA95C18908E864D497A139FC5",
+      "log_sha256": "88bb3ea8fcff0b8041562ff3eae954678cb6eb39f5b3eaba60f7464643576405",
+      "exit_code": 0,
+      "evidence_scope": "Final runtime"
+    },
+    "energy-block-normal-a": {
+      "package_sha256": "0e25c7fc5731b1caf6dc29b846d7fb1c3a177ab6e2790c6b3698d0db2388590a",
+      "addon_sha256": "DD90EB1C13051B6655C364BC77B69CEC88BC715152F428B44EFCD05D2AC35BA3",
+      "log_sha256": "98413569363adc3eee1a537962207ed2cb85c63e258fb7b98216961b8187f322",
+      "exit_code": 0,
+      "evidence_scope": "Final runtime"
+    },
+    "energy-block-high-a": {
+      "package_sha256": "0e25c7fc5731b1caf6dc29b846d7fb1c3a177ab6e2790c6b3698d0db2388590a",
+      "addon_sha256": "D8D29534F2A66EFB710E29B0452D6FCC3E7F00BBB48E342512B34B51B2CAD94D",
+      "log_sha256": "4521dbc07bdeacec069fa87f110ce8d5910e696ac953b0a0aca101cabd5413b4",
+      "exit_code": 0,
+      "evidence_scope": "Final runtime"
+    }
+  },
+  "live_cases": {
+    "normal-b": {
+      "jump": {
+        "actual": 2819.04084,
+        "expected": 2819.04084,
+        "velocity": 1.519073,
+        "exposure": 0.198214
+      },
+      "last_sample": {
+        "sec": 25.0,
+        "E": 0.721276,
+        "actionJ": 13619.04084,
+        "motionJ": 0.0,
+        "activity": 0.0,
+        "air": 783.716,
+        "hunger": 98.936,
+        "thirst": 99.363,
+        "HP": 2710.0,
+        "thermalHP": 0.0
+      },
+      "primary_greatsword_attacks": 12
+    },
+    "high-a": {
+      "jump": {
+        "actual": 2819.04084,
+        "expected": 2819.04084,
+        "velocity": 39.885962,
+        "exposure": 0.198214
+      },
+      "last_sample": {
+        "sec": 25.0,
+        "E": 2.151082,
+        "actionJ": 34319.04084,
+        "motionJ": 0.0,
+        "activity": 0.0,
+        "air": 2557.151,
+        "hunger": 98.379,
+        "thirst": 99.01,
+        "HP": 51500.0,
+        "thermalHP": 0.0
+      },
+      "primary_greatsword_attacks": 35
+    },
+    "caelith-a": {
+      "jump": {
+        "actual": 2671.89084,
+        "expected": 2671.89084,
+        "velocity": 47.591002,
+        "exposure": 0.165832
+      },
+      "last_sample": {
+        "sec": 25.0,
+        "E": 2.362311,
+        "actionJ": 40471.89084,
+        "motionJ": 0.0,
+        "activity": 0.0,
+        "air": 2397.109,
+        "hunger": 98.376,
+        "thirst": 99.015,
+        "HP": 61800.0,
+        "thermalHP": 0.0
+      },
+      "primary_greatsword_attacks": 42
+    },
+    "goblin-a": {
+      "jump": {
+        "actual": 2009.71584,
+        "expected": 2009.71584,
+        "velocity": 43.877161,
+        "exposure": 0.180776
+      },
+      "last_sample": {
+        "sec": 25.0,
+        "E": 2.717527,
+        "actionJ": 33509.71584,
+        "motionJ": 0.0,
+        "activity": 0.0,
+        "air": 2690.151,
+        "hunger": 98.385,
+        "thirst": 98.969,
+        "HP": 41200.0,
+        "thermalHP": 0.0
+      },
+      "primary_greatsword_attacks": 35
+    }
+  },
+  "swimming": {
+    "normal-a": {
+      "maximum_watts": 860.301526,
+      "last_sample": {
+        "sec": 50.0,
+        "E": -0.076436,
+        "activity": 0.0,
+        "pending": 0.0,
+        "airC": 20.0,
+        "waterC": 17.549,
+        "water": 3.0,
+        "wet": 100.0,
+        "G": 25.027409,
+        "B": -278.221552,
+        "net": -276.308553,
+        "actionJ": 0.0,
+        "motionJ": 13382.468,
+        "hp": 2710.0,
+        "damage": 0.0,
+        "rescues": 0.0
+      }
+    },
+    "high-a": {
+      "maximum_watts": 860.301526,
+      "last_sample": {
+        "sec": 50.0,
+        "E": -0.076163,
+        "activity": 0.0,
+        "pending": 0.0,
+        "airC": 20.0,
+        "waterC": 17.549,
+        "water": 3.0,
+        "wet": 100.0,
+        "G": 25.027409,
+        "B": -278.159384,
+        "net": -276.253232,
+        "actionJ": 0.0,
+        "motionJ": 13382.468,
+        "hp": 51500.0,
+        "damage": 0.0,
+        "rescues": 0.0
+      }
+    }
+  },
+  "blocking": {
+    "normal-a": {
+      "active": {
+        "actual": 521.1794016,
+        "expected": 521.1794016
+      },
+      "last_sample": {
+        "high": 0.0,
+        "activity": 0.0,
+        "E": 0.124175538,
+        "thermalHP": 0.0
+      }
+    },
+    "high-a": {
+      "active": {
+        "actual": 521.1794016,
+        "expected": 521.1794016
+      },
+      "last_sample": {
+        "high": 1.0,
+        "activity": 0.0,
+        "E": 0.124175794,
+        "thermalHP": 0.0
+      }
+    }
+  },
+  "save_sha256": {
+    "heat-followup/calor-136-original.zds": "382e1e870885d566c0e5a3ff56daaaf60838606e8e5cd8fda8569fce4cc0b969",
+    "heat-followup/calor-136-highstats-original.zds": "60bb44714a06202103babbe6adc54feb3bf9d72aedf7a42bcb4940f2dcc06763",
+    "ca136-energy-old.zds": "d68c0ebbeab2858f0e8f74a0350670a21131d1f6d78b0c57d91cf1066b2b714b",
+    "ca136-energy-new.zds": "57bd2d5cbb10ea574cbb566dc8315c90d25450497fecd90b5950eab7833089a2"
+  },
+  "validator": {
+    "version": "5.1.7",
+    "documents": 10,
+    "audio_files": 107,
+    "station_models": 12,
+    "spanish_caella_keys": 25,
+    "premise_numbers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20
+    ],
+    "context_words": 2499,
+    "errors": []
+  },
+  "power_released": "2026-10-09T02:02:25.8962714Z",
+  "author_acceptance_pending": [
+    "CA136-01",
+    "CA136-02",
+    "CA143-01"
+  ]
+}

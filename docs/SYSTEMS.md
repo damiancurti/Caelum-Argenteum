@@ -235,7 +235,7 @@ accepted sword behavior for matched #132 comparison and compatibility.
 V5.1.0 implements the author's 2026-10-07 contract. These are provisional game
 coefficients, not a clinical body-temperature model. The signed personal value
 `E` measures accumulated **equivalent exposure degrees**; negative means cold.
-`CaelumThermalState` revision 3 belongs to the player's persistent character
+`CaelumThermalState` revision 8 belongs to the player's persistent character
 record, or to each supported NPC. Shared services under `caelum/survival` own
 the calculations; environment caches never own another character's exposure.
 
@@ -245,9 +245,10 @@ while retaining their own biological mass, size and attributes. Animal surface
 uses a collision-cylinder approximation, not a humanoid height formula.
 Mandingas and Zupay use 32 C. In 5.1.1/#131, effective Resilience
 `A=max(0,Resilience)` multiplies both the base 1 C/world-day adaptation rate
-and the base +/-5 C displacement limit by Type 4:
-`M=1+2*A*(A+1)/10100`. At A=100 this is 300% of the base: 3 C/day and +/-15 C.
-Growth remains uncapped above 100, as for other Type-4 uses. Reaching either
+and the base +/-5 C displacement limit by an additive Type-2 factor (#136):
+`M=1+A*(A+1)/10100`. At A=100 this is 200% of the base: 2 C/day and +/-10 C.
+This supersedes #131's Type-4 factor. Growth remains uncapped above 100.
+Reaching either
 limit from original racial comfort takes five world days under a sufficiently
 distant sustained climate; traversing opposite limits takes ten. Nearby climates
 stop at their actual offset. If effective Resilience decreases below an acquired
@@ -257,7 +258,7 @@ Acclimatization never also shifts stored E. Transient fire, drinks and magic are
 Players, anchored residents, folklore combatants, bulls and giant rats are
 supported; unrelated actors without an approved physiology remain outside it.
 
-For effective Toughness `D=max(0,D)`, `R=D*(D+1)/101` percentage points and
+For effective Toughness `D=max(0,D)`, the existing Type-2 `R=D*(D+1)/101` percentage points and
 `s=1+R/100`. Harmful thresholds are `10s`, `20s`, and **past** `30s`: exactly
 `30s` remains tier 2. Numerical boundary tolerance is 1e-9. Threshold widening
 is uncapped; HP mitigation alone clamps `R/100` to [0,1]. Tier 1/2/3 costs
@@ -378,21 +379,23 @@ These safe per-actor coefficient savings apply to normal physiology at all count
 Primary carbine fire costs the same base Air as a dagger: **2**, previously 20.
 The shared catalogue governs player and soldier costs; ordinary modifiers,
 affordability, magazine consumption and recovery funding still apply.
-Firing and reloading use distinct provisional total metabolic profiles, **2 MET**
-and **2.5 MET** respectively. Resting 1 MET is already in the environment balance:
-`P_extra = surfaceArea * 58.2 * (MET - 1)` watts. These are author-approved light
-activity approximations, not measured physiological values for this weapon.
-Only actual firing-cycle/reload time contributes; idle aim, failed attempts and
-cancelled future work do not. Reload uses elapsed time, including its existing
-movement slowdown, rather than charging an entire reload up front. Reload takes
-precedence over a residual shot animation, so overlapping clocks do not double
-charge. Other physical weapons keep their existing action-heat conversion.
+The #136 energy-budget correction converts the approved 2/2.5-MET reference
+profiles into fixed mechanical work. Subtract the resting MET, assign 25% of
+the remaining metabolic energy to work, and use reference cycles of 0.4 seconds
+for firing and 5 seconds for a complete reload. The authoritative budgets are
+5.82 J/m2 per shot and 109.125 J/m2 per complete reload; resulting body heat is
+three times work. For the 100 kg / 1.80 m body these are 12.745/238.973 J work
+and 38.236/716.918 J heat. They are approved equivalent-work calibrations, not
+measurements of the gun animation or energy supplied to the projectile.
 
-Use real action seconds, not accelerated calendar seconds. Added heat has no
-movement-recovery tail. Count it as muscular ActionJoules, not absorbed magic.
-NPCs queue finite work until their existing bounded thermal update; queuing must
-not force a full thermal solver update every tic. Save/load preserves unconsumed
-work. Switching away, immobilization and death stop new firearm work.
+A successful shot pays once, when fired. Reload pays its fixed budget in
+proportion to completed progress; Dexterity and moving while reloading alter
+duration, not total energy. Partial-magazine reloads retain the game's complete
+reload cycle budget. Interruption pays only completed progress. Idle aim and
+failed shots add nothing. Player and NPC paths share the same work data.
+NPCs queue completed joules until their bounded thermal update without forcing
+the solver every tic. Save/load retains measured work and a reload's budget;
+an old in-progress reload adopts the new rate for its remaining progress only.
 
 ### Cold regulation by shivering (#140, author decision 2026-10-08)
 
@@ -492,46 +495,74 @@ Resting 58.2 W/m² is balanced in the neutral reference; it creates no neutral
 drift. The constant-coefficient solver integrates exchange and threshold dose
 analytically: `C*dE=(B-G*E)*dt_world + P_real*dt_real + Q`.
 
-Voluntary walking/running use net ACSM oxygen equations with S in m/min:
-walking `0.1*S+1.8*S*grade`, running `0.2*S+0.9*S*grade`, moved mass and
-20.1 J/mL O2. Positive external ascent work is subtracted once from metabolic
-power. Moderate descents use the published Minetti cost curve with braking;
-below its fitted -0.45 grade, retain the boundary value, never extrapolate to
-vertical falling. Exceptional character speeds remain an explicit ACSM
-extrapolation. 80 kg at 5 km/h walking produces 223.333 W; running at 10 km/h
-produces 893.333 W; adding 20 kg load makes walking 279.167 W without changing
-thermal inertia. The conversion is 32 map units/m and actual engine gravity,
-not a change to native physics.
+Author-approved #136 budgets now distinguish positive mechanical work `W`,
+metabolic energy `W/0.25=4W` and retained muscular heat `Q=3W`. No new Hunger or
+Air charge is inferred from that energy ledger. Performing the same action
+faster does not change its budget; completing more actions or metres per second
+still increases the rate of production. These are calibrated gameplay profiles.
 
-Positive added jump kinetic energy uses 25% work efficiency, giving three times
-positive launch work as internal heat. An 80 kg, 0.5 m Earth-gravity reference
-gives 1,177.2 J. Native jump acceptance records this once, even for a one-tic
-key press. Ground steps subtract moving-support translation; teleports, falls,
-passive impulses and platform transport create no walking heat. Native command
-propulsion is separated from external velocity; combined collision/knockback
-remains an approximation requiring further tuning in unusual physics scenes.
+Walking/running use 0.5025/1.005 J of equivalent work per kg of moved mass per
+metre, derived from 25% of the former flat ACSM metabolic cost. Heat is therefore
+1.5075/3.015 J/kg/m. The same path has the same energy regardless of traversal
+speed or integration partition. Positive ascent adds `mass*localGravity*height`
+of mechanical work once. Descents retain the approved normalized Minetti braking
+curve, bounded at -0.45 grade; negative work never becomes cooling. Ground paths
+subtract moving-support translation. Teleports, falls, passive impulses and
+platform transport create no walking heat. The existing 32 map units/m and
+native movement/collision rules remain; mixed propulsion and knockback remain an
+approximation. Journey forecasting converts actual distance to the same work.
 
-As explicitly approved, unsupported physical actions use nominal Air ratios:
-`Q_action=Q_reference_jump*nominal_action_Air/nominal_jump_Air`. Sustained
-blocking uses nominal Air/second. The #136 high-attribute follow-up replaces the
-provisional jump-based swimming and walking-into-obstacle profiles: active player
-swimming uses 6 MET total, or 10 MET with the running command; pushing against
-an obstacle without advancing uses 6 MET total. Subtract the 1 MET rest already
-counted and multiply by actual body surface and 58.2 W/m2 per MET. At 100 kg,
-1.80 m (2.189898 m2), these add 637.260/1147.069 W for swimming and 637.260 W for
-pushing. Strength/jump-height bonuses do not multiply these profiles. They are
-author-approved initial effort proxies, not hydrodynamic or measured push-force
-models. Actual Air, movement, jumping and other action rules stay unchanged.
-Never use clipped/spent Air, heat surcharges, hypoxia or
-regeneration as heat. Discrete actions have no duplicated recovery tail.
+Every accepted player jump pays the work of raising total moved mass by 0.5 m
+at the fixed 9.81 m/s2 human reference: `W=mass*9.81*0.5`, `Q=3W`. At 133.576 kg
+this is 655.190 J work and 1965.571 J heat. Attribute-enhanced height is explicitly
+outside this muscular budget. The native takeoff hook charges once, including a
+one-tic jump command; movement height/velocity and actual Air use do not change.
+The older actual-launch-velocity and NPC native-jump proxies are superseded.
+
+Physical weapon work is a fixed, independent table, not a runtime Air or jump
+conversion. Values are J per successful action, shared across actors and tiers:
+
+| Weapon | Primary work J | Secondary work J |
+| --- | ---: | ---: |
+| Dagger | 50 | 75 |
+| Hatchet | 75 | 100 |
+| Machete | 75 | 125 |
+| Javelin | 100 | 150 |
+| Sword | 125 | 200 |
+| Axe / pickaxe | 150 | 225 |
+| Flail | 150 | 250 |
+| Spear | 175 | No physical secondary |
+| Halberd | 250 | 375 |
+| Greatsword | 300 | 450 |
+| War axe | 350 | 500 |
+| Giant gauntlets | 375 | 375 |
+| Longbow | 250 | No physical secondary |
+| Crossbow | 150 | 150 where applicable |
+
+These preserve the approved old relative attack-cost proportions once as data;
+later Air tuning must not change heat. Charged attacks multiply work by 2 and
+sweeps by 3, once each. A primary greatsword attack emits 900 J heat at either
+normal or high attributes. NPC natural bites/horns use 25 J, machete-equivalent
+attacks 75 J, and Zupay's ground slam 850 J; heat is again three times work.
+Firearms use their separate fixed budgets above. Magic remains external energy.
+
+Active player swimming uses 72.75/130.95 W of equivalent mechanical work per m2,
+normal/fast, derived from the approved 6/10-MET profiles after subtracting rest
+and assigning 25% to work. At 100 kg / 1.80 m this emits 477.945/860.302 W heat.
+The running command selects intensity; jump height and attributes do not.
+Isometric effort retains metabolic heat despite zero external displacement:
+pushing uses the approved 6-MET total profile (637.260 extra W for that body),
+and blocking uses `0.2943*totalMovedMassKg*heldWeaponOrShieldKg` W (235.869 W at
+133.576 kg with a 6 kg shield). Neither reads Air or jump energy. Resting heat,
+shivering, sweat, respiration and environmental/magical transfer remain separate.
 Since the author's #136 follow-up, continuous effort produces heat only during
 the action: `Q=P*(real action seconds + explicit logical travel effort seconds)`.
 Stopping, loading a stationary save or advancing personal time without further
 work produces no additional activity heat. Exposure already accumulated remains
 and exchanges heat through the existing environment/sweat/shivering model.
 The earlier 120-world-second peak/recovery tail is removed; there is no 8-met cap.
-Actual actions use the approved locomotion, swimming/pushing and firearm profiles;
-the follow-up changes no Air, sweat or water-transfer values.
+Actual actions use the work and isometric profiles above. No Air, sweat or
+water-transfer values change in the energy-budget correction.
 
 Thermal revision 7 clears only the old saved activity-power peak. It preserves
 exposure, damage history/fractions, hydration, acclimatization, gear/base moisture,
@@ -539,6 +570,11 @@ and pending measured work. The migration is idempotent. It cannot reconstruct
 and undo erroneous historical heat from an old peak, so a previously overheated
 save can remain dangerous while cooling. Keep the original save and matching
 package for checkpoint rollback; do not interpret the fix as a health refill.
+Revision 8 adds only a reload budget. Measured pending joules, prior exposure,
+moisture, resources and acclimatization survive unchanged. Refresh recomputes
+the Type-2 adaptation factor; offsets above the new limit return gradually,
+using the existing approved rule. Original save/package pairs remain rollback
+checkpoints; never overwrite the author's saves during testing.
 
 Fire-primary and ice-secondary projectiles carry the existing Type-1 snapshot,
 `100+Intelligence*(Intelligence+1)/2` joules. Only actual intercepted shield and
@@ -5197,7 +5233,7 @@ lucidity, Dialogue skill and durations do not share a single curve today.
 | Hardness / Physical | Ordinary physical/magic damage subtracts uncapped R(T)=T(T+1)/101 percentage points of maximum health after anatomy and before final armor (#52, 2026-09-28). Pain and loss of Lucidity use Type 3. | Since the #52 revision, kinematic impacts subtract R(T) after biological absorption/surface and before anatomy/armor. | Scales must be updated and the scope of “environmental damage” must be narrowed: it is not universal resistance to drowning, drainage for needs or any damage outside the classified system. |
 | Constitution / Physical | Maximum health Type 1, with body mass. | Passive Hunger/Thirst/Sleep and natural health regeneration costs/Air divided by Type 4. | It is not connected to shortening debuffs or incoming poisons. There is no disease system implemented that applies that duration. |
 | Dexterity / Technical | Attack speed Type 4, physical precision Type 1 and physical critical chance Type 2. It also reduces the ranged-weapon reload time by Type 4. | Type 1 reduces the working time of materials in manufacture. | The ammunition reload belongs here; it is appropriate to distinguish it from the cooldown of skills when updating the table. Crafting covers a specific manual use, not a general system of accuracy rolls. |
-| Resilience / Technical | Maximum Adrenaline, Health Regeneration Factor and Air Capacity Type 4. | Acclimatization rate and displacement limit multiplied by Type 4 (#131). | At 100: 3 C/world day, +/-15 C; five days from the racial base. Sleep depletion belongs to Constitution. |
+| Resilience / Technical | Maximum Adrenaline, Health Regeneration Factor and Air Capacity Type 4. | Acclimatization rate and displacement limit use base plus Type 2 (#136). | At 100: 2 C/world day, +/-10 C; five days from the racial base. Sleep depletion belongs to Constitution. |
 | Agility / Technical | Type 4 movement using shared ground/swimming/flight factors; Type 2 evasion; jump uses another curve. | Type 2 stealth applied to concealment/noise, with crouching rules. | The jump does not use Type 4: JumpZ scales with the square root of Type 1, so that the ideal ballistic height scales with Type 1 at equal gravity, before load/state modifiers. |
 | Charisma / Social | Its Type 4 modifies the duration/power of elemental payloads received by the player; not all effects/actors consume it. | Type 4 Persuasion on MAP01 social rolls. | The area does not use Charisma: current blast radii and Channel use the range of Eloquence. Channel also has fixed power/duration states. The set of debuffs is partial. |
 | Empathy / Social | BuffPowerPercent Type 4 is available and an illumination timer is prepared; there is no general system of buffs/healing that applies all the duration/power/area indicated. | Emotion Type 4 in the MAP01 dialogs. | Emotion works. The stored factor and timer are not enough to mark buffs, cures or playable lighting as complete. Support areas based on Empathy remain pending. |

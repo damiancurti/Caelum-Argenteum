@@ -1095,14 +1095,14 @@ class CaelumCombatActor : Actor
         if(tics<=0)SetState(CurState.NextState);
     }
 
-    bool SpendPhysicalAttackAir(double baseAir)
+    bool SpendPhysicalAttackAir(double baseAir,double workJoules=CaelumThermalData.NATURAL_ATTACK_WORK_JOULES)
     {
         AttackResourceBaseCost=baseAir;AttackResourceMagical=false;AttackResourceWeapon=-1;
         // Una cornada ya preparada no repite la carrera después de esperar.
         AttackResourceResume=self is "CaelumBull" ? CurState : MeleeState;
         if(!TrySpendCombatAir(GetEffectiveAttackAir(baseAir)))
         {WaitForAttackResource();return false;}
-        CaelumThermalEffects.RecordAction(self,GetEffectiveAttackAir(baseAir));
+        CaelumThermalService.Impulse(self,CaelumThermalRules.PositiveWorkHeat(workJoules),true);
         return true;
     }
 
@@ -1379,7 +1379,9 @@ class CaelumCombatActor : Actor
         if (!combatActor.BeginCaelumDiagnosticAttack()) { return; }
         if (!combatActor.WithinAttackRange(false)) return;
         double cost=combatActor is "CaelumBull" ? CaelumAttackRules.NaturalAir() : CaelumWeaponCatalogue.GetPrimaryAirCost(CaelumConstants.CATALOGUE_WEAPON_MACHETE);
-        if (!combatActor.SpendPhysicalAttackAir(cost)) return;
+        double work=combatActor is "CaelumBull" ? CaelumThermalData.NATURAL_ATTACK_WORK_JOULES
+            : CaelumThermalData.WeaponWork(CaelumConstants.WEAPON_TYPE_MACHETE);
+        if (!combatActor.SpendPhysicalAttackAir(cost,work)) return;
         if (combatActor.IsCaelumMassDiagnosticAlly(combatActor.Target))
         {
             combatActor.ImpactDiagnosticFriendlyFirePrevented++;
@@ -1462,7 +1464,7 @@ class CaelumCombatActor : Actor
         if (combatActor == null) { return; }
         if (!combatActor.BeginCaelumDiagnosticAttack()) { return; }
         if (!combatActor.WithinAttackRange(false)) return;
-        if (!combatActor.SpendPhysicalAttackAir(CaelumAttackRules.SlamAir())) return;
+        if (!combatActor.SpendPhysicalAttackAir(CaelumAttackRules.SlamAir(),CaelumThermalData.GROUND_SLAM_WORK_JOULES)) return;
 
         double strengthScaledDamage = Max(1.0,
             Max(0.0, authoredBaseDamage)

@@ -151,13 +151,11 @@ class CaelumCityCarbine : Object play
         if(ReloadRemaining>0)
         {
             double progress=moving ? CaelumConstants.RELOAD_MOVEMENT_AND_PROGRESS_MULTIPLIER : 1;
-            CaelumThermalEffects.RecordFirearmWork(owner,Min(1.0/TICRATE,ReloadRemaining/progress),true);
+            CaelumThermalEffects.RecordReloadProgress(owner,Min(ReloadRemaining,progress/TICRATE),ReloadTotal);
             ReloadRemaining=Max(0.0,ReloadRemaining-progress/TICRATE);
             owner.Speed*=CaelumConstants.RELOAD_MOVEMENT_AND_PROGRESS_MULTIPLIER;
             if(ReloadRemaining<=0){Magazine=CaelumRangedRules.MagazineCapacity(Weapon.WeaponType);ReloadCount++;}
         }
-        else if(!interrupted && ShotCount>0 && level.time<=NextShotTic)
-            CaelumThermalEffects.RecordFirearmWork(owner,1.0/TICRATE,false);
         PreviousPosition=owner.Pos;
         CaelumCarbineWorld.Apply(owner,Held,moving,ShotCount>0 && level.time<NextShotTic,ReloadRemaining,ReloadTotal);
     }
@@ -182,7 +180,7 @@ class CaelumCityCarbine : Object play
         {
             int dexterity=owner.CombatDexterity+owner.GetCombatArmorAttributeBonus(CaelumConstants.ATTRIBUTE_DEXTERITY);
             ReloadTotal=CaelumRangedRules.BaseReloadSeconds(Weapon.WeaponType)*100/Max(1.0,owner.CalculateActorType4Percent(dexterity));
-            ReloadRemaining=ReloadTotal;return true;
+            ReloadRemaining=ReloadTotal;CaelumThermalEffects.BeginFirearmReload(owner);return true;
         }
         owner.AttackResourceWeapon=Weapon.WeaponType;owner.AttackResourceMagical=false;
         owner.AttackResourceBaseCost=CaelumWeaponCatalogue.GetPrimaryAirCost(CaelumConstants.CATALOGUE_WEAPON_CARBINE);
@@ -210,6 +208,7 @@ class CaelumCityCarbine : Object play
         double cost=owner.GetEffectiveAttackAir(owner.AttackResourceBaseCost);
         if(!owner.TrySpendCombatAir(cost)){projectile.Destroy();owner.WaitForAttackResource();return true;}
         owner.MarkActorCombatActivity();
+        CaelumThermalEffects.RecordFirearmShot(owner);
         Magazine--;ShotCount++;NextShotTic=level.time+int(Ceil(owner.GetProfileWeaponDuration(Weapon.WeaponType)));
         owner.tics=Max(owner.tics,NextShotTic-level.time);
         owner.A_StartSound("caelum/weapons/carabine_fire",CHAN_WEAPON);return true;

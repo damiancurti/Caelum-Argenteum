@@ -13,9 +13,8 @@ class CaelumThermalMotion : Object play
         if(distance<=0)return;
         CaelumThermalBody.Refresh(body,thermal);
         double grade=(after.Z-before.Z)/distance;
-        double speed=distance*TICRATE/CaelumJourneyRules.MAP_UNITS_PER_METER;
-        thermal.PendingActivityJoules+=CaelumThermalRules.LocomotionHeat(
-            thermal.MovedMassKg,speed,grade,running,Gravity(body))/TICRATE;
+        thermal.PendingActivityJoules+=CaelumThermalRules.PositiveWorkHeat(CaelumThermalRules.LocomotionWork(
+            thermal.MovedMassKg,distance/CaelumJourneyRules.MAP_UNITS_PER_METER,grade,running,Gravity(body)));
     }
 
     static void PlayerInput(CaelumPlayer user,vector2 oldVelocity)

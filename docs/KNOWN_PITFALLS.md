@@ -39,6 +39,20 @@ the 1 MET resting term and scaled by body area. Do not reinstate enhanced jump
 energy in these profiles. Other measured locomotion/jumps and discrete action
 rules remain unchanged. Normal/high-stat native controls are recorded separately.
 
+Final #136 energy correction: the author then removes the remaining amplified
+jump/Air anchors from all runtime physical attacks and blocking. Work is now
+explicit data per action/distance, with a human half-metre jump and Q=3W at 25%
+efficiency. Fixed firearm cycles pay once/per completed reload progress, never
+once per animation tic plus a second event. Swimming converts 75% of the former
+net MET power to heat; isometric work retains its separately approved metabolic
+rate. Native speed controls must compare both energy per action and action count:
+a faster character can still produce more total heat by acting more often.
+Do not infer new energy from remaining Air or accumulated ActionJoules. Preserve
+already measured pending work across reload migration and do not retroactively
+charge the completed fraction. Earlier fixtures for the old velocity/Air or
+continuous-firearm contracts remain historical evidence. Current tests:
+assets/validation_517/ENERGY_RESULTS.md.
+
 ## CA-KP-060 - A distinct Ammo subclass can still merge into its parent
 
 Status/evidence: RESOLVED-VERIFIED, #136 / 5.1.7, 2026-10-08.

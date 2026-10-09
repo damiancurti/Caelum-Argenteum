@@ -1,5 +1,9 @@
 # #136 author-inspection follow-up (5.1.7)
 
+Preserved earlier delivery. The subsequent author-approved fixed-work model and
+Type-2 adaptation supersede the affected energy profiles below; current evidence
+and payload: [ENERGY_RESULTS.md](ENERGY_RESULTS.md).
+
 The author reports hyperthermia despite entering the MAP01 pool and requests
 smaller, muted shotgun gloves with aimed placement matching the other weapons.
 Both author-supplied calor-136 checkpoints are copied locally before testing;

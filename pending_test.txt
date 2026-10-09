@@ -28,6 +28,12 @@ and carbine shooting/reloading, then briefly walk, swim or push against a wall
 and release the controls. Watch exposure while resting and after immersion.
 Repeat swimming normally/with the running command and blocked pushing with high
 attributes: enhanced jumping must not amplify either effort profile.
+Compare individual jumps and dagger/sword/greatsword attacks at normal and high
+attributes with the same equipment. Each action has its own fixed work budget;
+faster repeated attacks can still produce more total heat. Compare fast/slow
+firearm reloads and interrupt one: only completed progress should add heat.
+Inspect Resilience's description: at 100, adaptation is +/-10 C at 2 C/world day.
+An older offset above that limit must return gradually, not jump on loading.
 Save/reload while safe and repeat. Existing overheated calor-136 keeps its prior
 exposure and missing HP; it is a diagnostic case, not a promised survival test.
 Expected: effort adds heat only during the actual action. Stopping leaves stored

@@ -2,6 +2,8 @@
 
 Original delivery evidence below is preserved. See [FOLLOWUP_RESULTS.md](FOLLOWUP_RESULTS.md)
 for the subsequent hand-style and thermal corrections, final payload and pending checks.
+The later fixed-work and Type-2 adaptation contract is verified in
+[ENERGY_RESULTS.md](ENERGY_RESULTS.md); its manifest identifies the current payload.
 
 Release 5.1.7, GZDoom 4.14.2 Windows/Vulkan. Base: abd4f578 (#143).
 The author's final target is the shortbow; longbow/crossbow remain.

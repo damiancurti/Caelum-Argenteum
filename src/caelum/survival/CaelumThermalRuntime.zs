@@ -34,11 +34,10 @@ class CaelumThermalRuntime : Object play
         double firearm=0;
         if(realStep)
         {
-            CaelumThermalEffects.PlayerFirearmTic(user);
             firearm=thermal.PendingFirearmJoules*TICRATE;thermal.PendingFirearmJoules=0;
             thermal.PendingActivityJoules=0;
             if(user.DebugShieldBlocking && user.HasActiveBlockSource())
-                activity+=CaelumThermalEffects.EffortWatts(user,user.CurrentShieldAirCostPerSecond);
+                activity+=CaelumThermalEffects.BlockingWatts(thermal.MovedMassKg,user.GetActiveBlockWeight());
         }
         CaelumThermalService.Advance(user,WorldTicSeconds(),realStep ? 1.0/TICRATE : 0,activity,0,thermal.FireWatts,firearm);
     }

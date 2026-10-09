@@ -18,11 +18,15 @@ Original weapon and hand sprites are separate reusable first-person layers.
 The inspection follow-up reduces/mutes the gloves and matches carbine aiming.
 It also corrects thermal effort: actions heat only while performed, without the
 old lingering activity peak. Existing saved exposure and health are preserved.
-Swimming now uses the approved 6/10 MET effort and pushing 6 MET, independent
-of amplified jump statistics, with unchanged Air costs.
+The final energy model assigns fixed work to jumps, physical attacks and firearm
+cycles, distance-based locomotion work, and separate sustained isometric heat.
+Body heat is three times positive work at 25% efficiency. Enhanced jump height
+does not multiply other efforts. Resilience now uses base plus Type 2 for climate
+adaptation: at 100, +/-10 C and 2 C/day. Air costs remain unchanged.
 Migration, save/hub/rollback and focused native evidence are in
 [validation_517](assets/validation_517/RESULTS.md). Follow-up reproduction is in
-[FOLLOWUP_RESULTS](assets/validation_517/FOLLOWUP_RESULTS.md). Commit/push is requested;
+[FOLLOWUP_RESULTS](assets/validation_517/FOLLOWUP_RESULTS.md), followed by
+[ENERGY_RESULTS](assets/validation_517/ENERGY_RESULTS.md). Commit/push is requested;
 #136 remains open for review. [CA136-01/02 and CA143-01](pending_test.txt) await
 author appearance/gameplay confirmation. #143/PR #145 merged as `abd4f578`.
 
@@ -97,7 +101,8 @@ or change the automatic 500-combatant AI.
 Issue [#131](https://github.com/damiancurti/Caelum-Argenteum/issues/131) adds a
 signed thermal exposure bar directly above Load. Constitution now reduces
 Sleep loss just like Hunger/Thirst; Resilience instead scales climate adaptation
-rate and range (at 100: 3 C/world day, +/-15 C, five days from the racial base).
+rate and range (updated by #136 to Type 2: at 100, 2 C/world day, +/-10 C,
+five days from the racial base).
 Long journeys transition between endpoint climates by distance, preserving
 passenger shelter and stopping walking progress while asleep. See the
 [thermal contract](docs/SYSTEMS.md#thermal-exposure-and-energy-transfer-130),

@@ -9834,7 +9834,6 @@ class CaelumPlayer : DoomPlayer
         {
             airCost *= CaelumConstants.WEAPON_CHARGED_COST_MULTIPLIER;
         }
-        double nominalAirCost=airCost;
         airCost*=CaelumThermalEffects.HeatCost(self);
         if (CurrentAir < airCost) { return; }
 
@@ -9988,7 +9987,7 @@ class CaelumPlayer : DoomPlayer
             WeaponModel.Size
         );
 
-        CaelumThermalEffects.RecordAction(self,nominalAirCost);
+        CaelumThermalEffects.RecordWeaponAction(self,CaelumConstants.WEAPON_TYPE_JAVELIN,true,chargedAttack);
         CurrentAir = Max(0.0, CurrentAir - airCost);
         UpdateAirStateEffects();
         EquippedWeaponCooldownRemaining = GetEquippedAttackDurationTics()
@@ -10238,6 +10237,8 @@ class CaelumPlayer : DoomPlayer
             GetRangedEffectiveReloadSeconds(requestedWeaponType);
         RangedReloadRemainingSeconds = RangedReloadTotalSeconds;
         RangedReloadActive = RangedReloadRemainingSeconds > 0.0;
+        if(RangedReloadActive && CaelumRangedRules.IsFirearm(requestedWeaponType))
+            CaelumThermalEffects.BeginFirearmReload(self);
     }
 
     void UpdateRangedReload()
@@ -10252,6 +10253,9 @@ class CaelumPlayer : DoomPlayer
             return;
         }
 
+        if(CaelumRangedRules.IsFirearm(RangedReloadWeaponType))
+            CaelumThermalEffects.RecordReloadProgress(self,
+                Min(RangedReloadRemainingSeconds,GetReloadProgressMultiplier()/TICRATE),RangedReloadTotalSeconds);
         RangedReloadRemainingSeconds = Max(
             0.0,
             RangedReloadRemainingSeconds
@@ -10329,7 +10333,6 @@ class CaelumPlayer : DoomPlayer
             catalogueWeapon
         )
             * DerivedStats.AirConsumptionMultiplier;
-        double nominalAirCost=airCost;
         airCost*=CaelumThermalEffects.HeatCost(self);
         LastCarbineHadEnoughAir = CurrentAir >= airCost;
         if (!LastCarbineHadEnoughAir) { return; }
@@ -10418,8 +10421,9 @@ class CaelumPlayer : DoomPlayer
         {
             CarbineAmmoCount = CarbineMagazine;
         }
-        if(!CaelumRangedRules.IsFirearm(WeaponModel.WeaponType))
-            CaelumThermalEffects.RecordAction(self,nominalAirCost);
+        if(CaelumRangedRules.IsFirearm(WeaponModel.WeaponType))
+            CaelumThermalEffects.RecordFirearmShot(self);
+        else CaelumThermalEffects.RecordWeaponAction(self,WeaponModel.WeaponType);
         CurrentAir = Max(0.0, CurrentAir - airCost);
         UpdateAirStateEffects();
         LastCarbineFired = true;
@@ -11353,9 +11357,7 @@ class CaelumPlayer : DoomPlayer
         {
             ConsumeJumpAir();
             if(DerivedStats!=null)
-                CaelumThermalService.Impulse(self,CaelumThermalRules.JumpHeat(DerivedStats.TotalMass,
-                    before*TICRATE/CaelumJourneyRules.MAP_UNITS_PER_METER,
-                    Vel.Z*TICRATE/CaelumJourneyRules.MAP_UNITS_PER_METER),true);
+                CaelumThermalService.Impulse(self,CaelumThermalRules.BodyJumpHeat(DerivedStats.TotalMass),true);
         }
     }
 
@@ -11807,7 +11809,6 @@ class CaelumPlayer : DoomPlayer
             LastMeleeAirCost *=
                 CaelumConstants.WEAPON_CHARGED_COST_MULTIPLIER;
         }
-        double nominalMeleeAir=LastMeleeAirCost;
         LastMeleeAirCost*=CaelumThermalEffects.HeatCost(self);
         if (CurrentAir < LastMeleeAirCost)
         {
@@ -11816,7 +11817,7 @@ class CaelumPlayer : DoomPlayer
 
         LastMeleeHadEnoughAir = true;
         if (chargedAttack) { ConsumeWeaponChargedState(); }
-        CaelumThermalEffects.RecordAction(self,nominalMeleeAir);
+        CaelumThermalEffects.RecordWeaponAction(self,WeaponModel.WeaponType,secondaryAttack,chargedAttack,areaSweep);
         CurrentAir = Max(0.0, CurrentAir - LastMeleeAirCost);
         UpdateAirStateEffects();
 

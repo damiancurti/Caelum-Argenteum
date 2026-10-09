@@ -18,6 +18,13 @@ finite recovery filter. Revision 7 preserves accumulated exposure and resources.
 Focused reproduction, action timing and save checks: FOLLOWUP_RESULTS.
 The high-stat follow-up also replaces jump-amplified swimming/pushing with the
 approved 6/10 MET swimming and 6 MET pushing profiles; actual Air is unchanged.
+The final contract replaces the remaining jump/Air proxies with fixed work:
+human 0.5 m jump at 9.81 m/s2, approved weapon/NPC tables, per-cycle firearms and
+per-distance locomotion, with heat = 3 * work. Swimming uses 75% of its approved
+net metabolic reference as heat; pushing/blocking remain isometric profiles.
+Revision 8 preserves completed energy and tracks reload progress. Resilience
+adaptation uses base plus Type 2; thermal Toughness thresholds already did so.
+Final tests and qualifications: assets/validation_517/ENERGY_RESULTS.md.
 
 Delivery: commit/push and linked PR. Next: author CA136-01 appearance/gameplay
 review, CA136-02 thermal follow-up and carried CA143-01. #136 has no merge/close authorization. A future hand
@@ -122,7 +129,8 @@ and demon self-warming effects kept explicit when #135 changes the workload.
 ## Issue #131 - Thermal HUD and attribute adaptation (5.1.1)
 
 Implemented and agent-verified: exposure bar above Load, bilingual read-only presentation,
-Constitution Sleep loss, Type-4 Resilience adaptation and gradual limit return.
+Constitution Sleep loss and gradual adaptation-limit return. #136 subsequently
+changes the original Type-4 Resilience adaptation to base plus Type 2.
 Long travel blends endpoint climate by distance at the current journey time;
 walking sleep pauses distance and ships continue. Retain forecast rejection,
 vehicle shelter and no invented real-time damage.

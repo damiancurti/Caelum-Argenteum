@@ -20,6 +20,11 @@ exposure/resources while discarding the old peak; FOLLOWUP_RESULTS records the
 copied-save investigation and current action-only heat checks.
 The later high-stat report adds approved 6/10 MET swimming and 6 MET pushing,
 replacing their amplified-jump proxies without changing Air or movement rules.
+The final author-approved energy correction converts active work at 25% efficiency,
+uses a fixed half-metre human jump and independent action/distance budgets, and
+changes Resilience adaptation to base plus Type 2 (+/-10 C and 2 C/day at 100).
+Toughness thresholds already use Type 2. ENERGY_RESULTS records the final native
+controls and migration; earlier energy reports retain their original contracts.
 Delivery is commit/push and a linked PR, with no #136 merge/closure authorization
 yet. CA136-01/02 and the carried CA143-01 remain author visual/gameplay checks.
 #143 is merged through PR #145 (abd4f578) and closed; merge is not manual acceptance.
