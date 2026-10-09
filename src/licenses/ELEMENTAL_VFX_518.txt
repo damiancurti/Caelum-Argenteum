@@ -1,0 +1,14 @@
+Caelum Argenteum - original elemental VFX and projectile models, issue #137.
+Author/designer: Damian Curti. Integration: Codex, 2026-10-08/09.
+
+Original transparent projectile/status/breath atlases were generated with
+OpenAI image_gen for this project. Source PNGs, exact prompts, the retained
+status draft and registration metadata are in assets/source/art/elemental_518.
+Runtime copies preserve the source pixels unchanged. Native TEXTURES and OBJ
+UV coordinates provide clipping and animation; no external raster art was used.
+
+Arrow, bolt, bullet, pellet and javelin geometry and the cosmetic flame/ray
+planes are original deterministic meshes authored for this issue. Editable
+dimensions and generators are retained in assets/. Physical surfaces reuse
+Caelum Argenteum's original training-dummy wood/iron atlas from issue #98.
+No third-party model or Doom artwork is included in these new assets.

@@ -1,0 +1,16 @@
+Sprite "VFBRA0", 256, 170 { XScale 4 YScale 2.65625 Offset 128, 85 Patch "graphics/caelum/vfx/projectiles.png", 0, 0 }
+Sprite "VFBRB0", 256, 170 { XScale 4 YScale 2.65625 Offset 128, 85 Patch "graphics/caelum/vfx/projectiles.png", -256, 0 }
+Sprite "VFBRC0", 256, 170 { XScale 4 YScale 2.65625 Offset 128, 85 Patch "graphics/caelum/vfx/projectiles.png", -512, 0 }
+Sprite "VFBRD0", 256, 170 { XScale 4 YScale 2.65625 Offset 128, 85 Patch "graphics/caelum/vfx/projectiles.png", -768, 0 }
+Sprite "VFBRE0", 256, 170 { XScale 4 YScale 2.65625 Offset 128, 85 Patch "graphics/caelum/vfx/projectiles.png", 0, 0 }
+Sprite "VFBRF0", 256, 170 { XScale 4 YScale 2.65625 Offset 128, 85 Patch "graphics/caelum/vfx/projectiles.png", -256, 0 }
+Sprite "VFBRG0", 256, 170 { XScale 4 YScale 2.65625 Offset 128, 85 Patch "graphics/caelum/vfx/projectiles.png", -512, 0 }
+Sprite "VFBRH0", 256, 170 { XScale 4 YScale 2.65625 Offset 128, 85 Patch "graphics/caelum/vfx/projectiles.png", -768, 0 }
+Sprite "VFBRI0", 256, 170 { XScale 4 YScale 2.65625 Offset 128, 85 Patch "graphics/caelum/vfx/projectiles.png", 0, 0 }
+Sprite "VFBRJ0", 256, 170 { XScale 4 YScale 2.65625 Offset 128, 85 Patch "graphics/caelum/vfx/projectiles.png", -256, 0 }
+Sprite "VFBRK0", 256, 170 { XScale 4 YScale 2.65625 Offset 128, 85 Patch "graphics/caelum/vfx/projectiles.png", -512, 0 }
+Sprite "VFBRL0", 256, 170 { XScale 4 YScale 2.65625 Offset 128, 85 Patch "graphics/caelum/vfx/projectiles.png", -768, 0 }
+Sprite "VFBRM0", 256, 170 { XScale 4 YScale 2.65625 Offset 128, 85 Patch "graphics/caelum/vfx/projectiles.png", 0, 0 }
+Sprite "VFBRN0", 256, 170 { XScale 4 YScale 2.65625 Offset 128, 85 Patch "graphics/caelum/vfx/projectiles.png", -256, 0 }
+Sprite "VFBRO0", 256, 170 { XScale 4 YScale 2.65625 Offset 128, 85 Patch "graphics/caelum/vfx/projectiles.png", -512, 0 }
+Sprite "VFBRP0", 256, 170 { XScale 4 YScale 2.65625 Offset 128, 85 Patch "graphics/caelum/vfx/projectiles.png", -768, 0 }

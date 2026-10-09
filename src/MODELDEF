@@ -3711,3 +3711,542 @@ Model CaelumM00TrainingDummy
     FrameIndex CDMY A 0 0
 }
 // END GENERATED TRAINING DUMMY
+
+// BEGIN GENERATED PHYSICAL PROJECTILES
+Model CaelumArrowProjectile
+{
+ Path "models/caelum/projectiles"
+ Model 0 "ca_arrow.obj"
+ Scale 5 5 5
+ CorrectPixelStretch
+ PitchFromMomentum
+ DontCullBackFaces
+ FrameIndex ARRO A 0 0
+}
+Model CaelumBoltProjectile
+{
+ Path "models/caelum/projectiles"
+ Model 0 "ca_bolt.obj"
+ Scale 5 5 5
+ CorrectPixelStretch
+ PitchFromMomentum
+ DontCullBackFaces
+ FrameIndex BOLT A 0 0
+}
+Model CaelumCarbineProjectile
+{
+ Path "models/caelum/projectiles"
+ Model 0 "ca_bullet.obj"
+ Scale 1 1 1
+ CorrectPixelStretch
+ PitchFromMomentum
+ DontCullBackFaces
+ FrameIndex PUFF A 0 0
+}
+Model CaelumShotgunPellet
+{
+ Path "models/caelum/projectiles"
+ Model 0 "ca_pellet.obj"
+ Scale 1 1 1
+ CorrectPixelStretch
+ PitchFromMomentum
+ DontCullBackFaces
+ FrameIndex PUFF A 0 0
+}
+Model CaelumJavelinProjectile
+{
+ Path "models/caelum/projectiles"
+ Model 0 "ca_javelin.obj"
+ Scale 4 4 4
+ CorrectPixelStretch
+ PitchFromMomentum
+ DontCullBackFaces
+ FrameIndex JAVL A 0 0
+}
+// END GENERATED PHYSICAL PROJECTILES
+
+// BEGIN GENERATED DEMON FLAME PLANES
+Model CaelumDemonFlameVisual
+{
+ Path "models/caelum/projectiles"
+ Model 0 "flame_0_0.obj"
+ Scale 1 1 1
+ UseActorPitch
+ CorrectPixelStretch
+ DontCullBackFaces
+ FrameIndex VFBR A 0 0
+}
+Model CaelumDemonFlameVisual
+{
+ Path "models/caelum/projectiles"
+ Model 0 "flame_0_1.obj"
+ Scale 1 1 1
+ UseActorPitch
+ CorrectPixelStretch
+ DontCullBackFaces
+ FrameIndex VFBR B 0 0
+}
+Model CaelumDemonFlameVisual
+{
+ Path "models/caelum/projectiles"
+ Model 0 "flame_0_2.obj"
+ Scale 1 1 1
+ UseActorPitch
+ CorrectPixelStretch
+ DontCullBackFaces
+ FrameIndex VFBR C 0 0
+}
+Model CaelumDemonFlameVisual
+{
+ Path "models/caelum/projectiles"
+ Model 0 "flame_0_3.obj"
+ Scale 1 1 1
+ UseActorPitch
+ CorrectPixelStretch
+ DontCullBackFaces
+ FrameIndex VFBR D 0 0
+}
+Model CaelumDemonFlameVisual
+{
+ Path "models/caelum/projectiles"
+ Model 0 "flame_1_0.obj"
+ Scale 1 1 1
+ UseActorPitch
+ CorrectPixelStretch
+ DontCullBackFaces
+ FrameIndex VFBR E 0 0
+}
+Model CaelumDemonFlameVisual
+{
+ Path "models/caelum/projectiles"
+ Model 0 "flame_1_1.obj"
+ Scale 1 1 1
+ UseActorPitch
+ CorrectPixelStretch
+ DontCullBackFaces
+ FrameIndex VFBR F 0 0
+}
+Model CaelumDemonFlameVisual
+{
+ Path "models/caelum/projectiles"
+ Model 0 "flame_1_2.obj"
+ Scale 1 1 1
+ UseActorPitch
+ CorrectPixelStretch
+ DontCullBackFaces
+ FrameIndex VFBR G 0 0
+}
+Model CaelumDemonFlameVisual
+{
+ Path "models/caelum/projectiles"
+ Model 0 "flame_1_3.obj"
+ Scale 1 1 1
+ UseActorPitch
+ CorrectPixelStretch
+ DontCullBackFaces
+ FrameIndex VFBR H 0 0
+}
+Model CaelumDemonFlameVisual
+{
+ Path "models/caelum/projectiles"
+ Model 0 "flame_2_0.obj"
+ Scale 1 1 1
+ UseActorPitch
+ CorrectPixelStretch
+ DontCullBackFaces
+ FrameIndex VFBR I 0 0
+}
+Model CaelumDemonFlameVisual
+{
+ Path "models/caelum/projectiles"
+ Model 0 "flame_2_1.obj"
+ Scale 1 1 1
+ UseActorPitch
+ CorrectPixelStretch
+ DontCullBackFaces
+ FrameIndex VFBR J 0 0
+}
+Model CaelumDemonFlameVisual
+{
+ Path "models/caelum/projectiles"
+ Model 0 "flame_2_2.obj"
+ Scale 1 1 1
+ UseActorPitch
+ CorrectPixelStretch
+ DontCullBackFaces
+ FrameIndex VFBR K 0 0
+}
+Model CaelumDemonFlameVisual
+{
+ Path "models/caelum/projectiles"
+ Model 0 "flame_2_3.obj"
+ Scale 1 1 1
+ UseActorPitch
+ CorrectPixelStretch
+ DontCullBackFaces
+ FrameIndex VFBR L 0 0
+}
+Model CaelumDemonFlameVisual
+{
+ Path "models/caelum/projectiles"
+ Model 0 "flame_3_0.obj"
+ Scale 1 1 1
+ UseActorPitch
+ CorrectPixelStretch
+ DontCullBackFaces
+ FrameIndex VFBR M 0 0
+}
+Model CaelumDemonFlameVisual
+{
+ Path "models/caelum/projectiles"
+ Model 0 "flame_3_1.obj"
+ Scale 1 1 1
+ UseActorPitch
+ CorrectPixelStretch
+ DontCullBackFaces
+ FrameIndex VFBR N 0 0
+}
+Model CaelumDemonFlameVisual
+{
+ Path "models/caelum/projectiles"
+ Model 0 "flame_3_2.obj"
+ Scale 1 1 1
+ UseActorPitch
+ CorrectPixelStretch
+ DontCullBackFaces
+ FrameIndex VFBR O 0 0
+}
+Model CaelumDemonFlameVisual
+{
+ Path "models/caelum/projectiles"
+ Model 0 "flame_3_3.obj"
+ Scale 1 1 1
+ UseActorPitch
+ CorrectPixelStretch
+ DontCullBackFaces
+ FrameIndex VFBR P 0 0
+}
+// END GENERATED DEMON FLAME PLANES
+
+// BEGIN GENERATED LIGHTNING RAYS
+Model CaelumPlayerMagicProjectile
+{
+ Path "models/caelum/projectiles"
+ Model 0 "lightning_0.obj"
+ Scale 1 1 1
+ PitchFromMomentum
+ CorrectPixelStretch
+ DontCullBackFaces
+ FrameIndex VFLI A 0 0
+}
+Model CaelumHomingMagicProjectile
+{
+ Path "models/caelum/projectiles"
+ Model 0 "lightning_0.obj"
+ Scale 1 1 1
+ PitchFromMomentum
+ CorrectPixelStretch
+ DontCullBackFaces
+ FrameIndex VFLI A 0 0
+}
+Model CaelumExplosiveMagicProjectile
+{
+ Path "models/caelum/projectiles"
+ Model 0 "lightning_0.obj"
+ Scale 1 1 1
+ PitchFromMomentum
+ CorrectPixelStretch
+ DontCullBackFaces
+ FrameIndex VFLI A 0 0
+}
+Model CaelumChargedPlayerMagicProjectile
+{
+ Path "models/caelum/projectiles"
+ Model 0 "lightning_0.obj"
+ Scale 1 1 1
+ PitchFromMomentum
+ CorrectPixelStretch
+ DontCullBackFaces
+ FrameIndex VFLI A 0 0
+}
+Model CaelumChargedHomingMagicProjectile
+{
+ Path "models/caelum/projectiles"
+ Model 0 "lightning_0.obj"
+ Scale 1 1 1
+ PitchFromMomentum
+ CorrectPixelStretch
+ DontCullBackFaces
+ FrameIndex VFLI A 0 0
+}
+Model CaelumChargedExplosiveMagicProjectile
+{
+ Path "models/caelum/projectiles"
+ Model 0 "lightning_0.obj"
+ Scale 1 1 1
+ PitchFromMomentum
+ CorrectPixelStretch
+ DontCullBackFaces
+ FrameIndex VFLI A 0 0
+}
+Model CaelumActorSimpleElementalProjectile
+{
+ Path "models/caelum/projectiles"
+ Model 0 "lightning_0.obj"
+ Scale 1 1 1
+ PitchFromMomentum
+ CorrectPixelStretch
+ DontCullBackFaces
+ FrameIndex VFLI A 0 0
+}
+Model CaelumActorExplosiveElementalProjectile
+{
+ Path "models/caelum/projectiles"
+ Model 0 "lightning_0.obj"
+ Scale 1 1 1
+ PitchFromMomentum
+ CorrectPixelStretch
+ DontCullBackFaces
+ FrameIndex VFLI A 0 0
+}
+Model CaelumPlayerMagicProjectile
+{
+ Path "models/caelum/projectiles"
+ Model 0 "lightning_1.obj"
+ Scale 1 1 1
+ PitchFromMomentum
+ CorrectPixelStretch
+ DontCullBackFaces
+ FrameIndex VFLI B 0 0
+}
+Model CaelumHomingMagicProjectile
+{
+ Path "models/caelum/projectiles"
+ Model 0 "lightning_1.obj"
+ Scale 1 1 1
+ PitchFromMomentum
+ CorrectPixelStretch
+ DontCullBackFaces
+ FrameIndex VFLI B 0 0
+}
+Model CaelumExplosiveMagicProjectile
+{
+ Path "models/caelum/projectiles"
+ Model 0 "lightning_1.obj"
+ Scale 1 1 1
+ PitchFromMomentum
+ CorrectPixelStretch
+ DontCullBackFaces
+ FrameIndex VFLI B 0 0
+}
+Model CaelumChargedPlayerMagicProjectile
+{
+ Path "models/caelum/projectiles"
+ Model 0 "lightning_1.obj"
+ Scale 1 1 1
+ PitchFromMomentum
+ CorrectPixelStretch
+ DontCullBackFaces
+ FrameIndex VFLI B 0 0
+}
+Model CaelumChargedHomingMagicProjectile
+{
+ Path "models/caelum/projectiles"
+ Model 0 "lightning_1.obj"
+ Scale 1 1 1
+ PitchFromMomentum
+ CorrectPixelStretch
+ DontCullBackFaces
+ FrameIndex VFLI B 0 0
+}
+Model CaelumChargedExplosiveMagicProjectile
+{
+ Path "models/caelum/projectiles"
+ Model 0 "lightning_1.obj"
+ Scale 1 1 1
+ PitchFromMomentum
+ CorrectPixelStretch
+ DontCullBackFaces
+ FrameIndex VFLI B 0 0
+}
+Model CaelumActorSimpleElementalProjectile
+{
+ Path "models/caelum/projectiles"
+ Model 0 "lightning_1.obj"
+ Scale 1 1 1
+ PitchFromMomentum
+ CorrectPixelStretch
+ DontCullBackFaces
+ FrameIndex VFLI B 0 0
+}
+Model CaelumActorExplosiveElementalProjectile
+{
+ Path "models/caelum/projectiles"
+ Model 0 "lightning_1.obj"
+ Scale 1 1 1
+ PitchFromMomentum
+ CorrectPixelStretch
+ DontCullBackFaces
+ FrameIndex VFLI B 0 0
+}
+Model CaelumPlayerMagicProjectile
+{
+ Path "models/caelum/projectiles"
+ Model 0 "lightning_2.obj"
+ Scale 1 1 1
+ PitchFromMomentum
+ CorrectPixelStretch
+ DontCullBackFaces
+ FrameIndex VFLI C 0 0
+}
+Model CaelumHomingMagicProjectile
+{
+ Path "models/caelum/projectiles"
+ Model 0 "lightning_2.obj"
+ Scale 1 1 1
+ PitchFromMomentum
+ CorrectPixelStretch
+ DontCullBackFaces
+ FrameIndex VFLI C 0 0
+}
+Model CaelumExplosiveMagicProjectile
+{
+ Path "models/caelum/projectiles"
+ Model 0 "lightning_2.obj"
+ Scale 1 1 1
+ PitchFromMomentum
+ CorrectPixelStretch
+ DontCullBackFaces
+ FrameIndex VFLI C 0 0
+}
+Model CaelumChargedPlayerMagicProjectile
+{
+ Path "models/caelum/projectiles"
+ Model 0 "lightning_2.obj"
+ Scale 1 1 1
+ PitchFromMomentum
+ CorrectPixelStretch
+ DontCullBackFaces
+ FrameIndex VFLI C 0 0
+}
+Model CaelumChargedHomingMagicProjectile
+{
+ Path "models/caelum/projectiles"
+ Model 0 "lightning_2.obj"
+ Scale 1 1 1
+ PitchFromMomentum
+ CorrectPixelStretch
+ DontCullBackFaces
+ FrameIndex VFLI C 0 0
+}
+Model CaelumChargedExplosiveMagicProjectile
+{
+ Path "models/caelum/projectiles"
+ Model 0 "lightning_2.obj"
+ Scale 1 1 1
+ PitchFromMomentum
+ CorrectPixelStretch
+ DontCullBackFaces
+ FrameIndex VFLI C 0 0
+}
+Model CaelumActorSimpleElementalProjectile
+{
+ Path "models/caelum/projectiles"
+ Model 0 "lightning_2.obj"
+ Scale 1 1 1
+ PitchFromMomentum
+ CorrectPixelStretch
+ DontCullBackFaces
+ FrameIndex VFLI C 0 0
+}
+Model CaelumActorExplosiveElementalProjectile
+{
+ Path "models/caelum/projectiles"
+ Model 0 "lightning_2.obj"
+ Scale 1 1 1
+ PitchFromMomentum
+ CorrectPixelStretch
+ DontCullBackFaces
+ FrameIndex VFLI C 0 0
+}
+Model CaelumPlayerMagicProjectile
+{
+ Path "models/caelum/projectiles"
+ Model 0 "lightning_3.obj"
+ Scale 1 1 1
+ PitchFromMomentum
+ CorrectPixelStretch
+ DontCullBackFaces
+ FrameIndex VFLI D 0 0
+}
+Model CaelumHomingMagicProjectile
+{
+ Path "models/caelum/projectiles"
+ Model 0 "lightning_3.obj"
+ Scale 1 1 1
+ PitchFromMomentum
+ CorrectPixelStretch
+ DontCullBackFaces
+ FrameIndex VFLI D 0 0
+}
+Model CaelumExplosiveMagicProjectile
+{
+ Path "models/caelum/projectiles"
+ Model 0 "lightning_3.obj"
+ Scale 1 1 1
+ PitchFromMomentum
+ CorrectPixelStretch
+ DontCullBackFaces
+ FrameIndex VFLI D 0 0
+}
+Model CaelumChargedPlayerMagicProjectile
+{
+ Path "models/caelum/projectiles"
+ Model 0 "lightning_3.obj"
+ Scale 1 1 1
+ PitchFromMomentum
+ CorrectPixelStretch
+ DontCullBackFaces
+ FrameIndex VFLI D 0 0
+}
+Model CaelumChargedHomingMagicProjectile
+{
+ Path "models/caelum/projectiles"
+ Model 0 "lightning_3.obj"
+ Scale 1 1 1
+ PitchFromMomentum
+ CorrectPixelStretch
+ DontCullBackFaces
+ FrameIndex VFLI D 0 0
+}
+Model CaelumChargedExplosiveMagicProjectile
+{
+ Path "models/caelum/projectiles"
+ Model 0 "lightning_3.obj"
+ Scale 1 1 1
+ PitchFromMomentum
+ CorrectPixelStretch
+ DontCullBackFaces
+ FrameIndex VFLI D 0 0
+}
+Model CaelumActorSimpleElementalProjectile
+{
+ Path "models/caelum/projectiles"
+ Model 0 "lightning_3.obj"
+ Scale 1 1 1
+ PitchFromMomentum
+ CorrectPixelStretch
+ DontCullBackFaces
+ FrameIndex VFLI D 0 0
+}
+Model CaelumActorExplosiveElementalProjectile
+{
+ Path "models/caelum/projectiles"
+ Model 0 "lightning_3.obj"
+ Scale 1 1 1
+ PitchFromMomentum
+ CorrectPixelStretch
+ DontCullBackFaces
+ FrameIndex VFLI D 0 0
+}
+// END GENERATED LIGHTNING RAYS

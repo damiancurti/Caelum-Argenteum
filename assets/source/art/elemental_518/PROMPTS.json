@@ -1,0 +1,13 @@
+{
+  "issue": 137,
+  "tool": "Built-in image_gen",
+  "author_direction": "More intense and spectacular elemental effects",
+  "generated": [
+    {
+      "file": "projectiles.png",
+      "prompt": "Use case: stylized-concept. Asset type: original transparent game VFX sprite atlas for Caelum Argenteum, a nineteenth-century Argentine dark-fantasy FPS. Create one production sprite sheet, exactly 4 equally spaced columns by 9 equally spaced rows, preferably 1536 x 2304 pixels, no labels, no text, no borders. Every cell is an isolated compact magical projectile seen against actual transparency, centered on the exact cell center with generous transparent margins; no glow crosses cell borders. The four cells in each row are four successive coherent looping animation phases of the SAME effect, similar size and center, not four unrelated designs. Energetic and visually striking, painterly realistic translucent materials, sharp readable central silhouettes, strong internal luminosity with controlled soft falloff; no rectangular backgrounds, no checkerboard baked in, no ground/shadows. Each projectile body is roughly spherical/compact so it works as a camera-facing world sprite from all angles; avoid a long tail pointing in a fixed screen direction, trails will be emitted by the engine along actual velocity. Row 1: vivid orange crimson FIRE, white-yellow molten core wrapped in curling flame tongues and few embers. Row 2: warm pale gold LIGHT, sharp luminous central star and thin radiant filaments, distinct from flame. Row 3: saturated blue WATER, a glossy suspended twisting water globule with rippling liquid surface and detached droplets. Row 4: icy cyan ICE, cluster of translucent angular frost crystals with bright crystalline facets and cold mist. Row 5: EARTH, jagged dark brown and ochre stone fragments compactly orbiting an amber cracked mineral core, clearly solid rocky silhouette. Row 6: acid green POISON, asymmetrical viscous toxic globule, suspended bubbles and torn smoky tendrils, distinct from water/fire. Row 7: pale teal AIR, hollow spinning vortex of slender curved white-blue wind ribbons, mostly transparent center. Row 8: LIGHTNING, tight intensely bright white-violet irregular branching electrical arcs, no regular sphere outline. Row 9: QUINTESSENCE, otherworldly magenta-violet nucleus with thin interwoven cyan and silver orbital wisps, luminous but not a science-fiction device. Fill only central 65 percent of each cell, same 9-row sequence in all columns. Transparent background throughout.",
+      "transparent_background": true,
+      "local_output": "01a11342-0a7e-7501-9c95-114f8f549321/exec-17e03742-4a50-4990-8e41-aa768ece4e6d.png"
+    }
+  ]
+}
