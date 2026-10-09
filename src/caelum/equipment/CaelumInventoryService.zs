@@ -609,7 +609,7 @@ class CaelumInventoryService : Object play
             // La clase nace con Amount 1. Sustituimos ese valor por la cantidad
             // que realmente entra antes de adjuntarla al inventario del jugador.
             result.Amount = incomingAmount;
-            user.AddInventory(result);
+            result.AttachToOwner(user);
             createdNewStack = true;
         }
 

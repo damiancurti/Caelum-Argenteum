@@ -825,7 +825,13 @@ class CaelumCarbineAmmo : Ammo
     override void Tick()
     {
         Super.Tick();
-        if (Owner != null) { return; }
+        if (Owner != null)
+        {
+            // Repara pilas antiguas adjuntadas sin BecomeItem. La propiedad y
+            // cantidad se conservan; la conversión nativa es idempotente.
+            if (bSpecial || !bNoSector || !bNoBlockmap) { BecomeItem(); }
+            return;
+        }
         String visual = "CCAA";
         int ammoType = GetAmmoType();
         if(ammoType==CaelumConstants.AMMUNITION_CARBINE)Scale=(0.10,0.10);
