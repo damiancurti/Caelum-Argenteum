@@ -1,0 +1,869 @@
+{
+  "policy": "UTF-8, LF, no trailing spaces or extra EOF blank lines in repository copies; values and log content unchanged. Original native files remain local.",
+  "files": [
+    {
+      "file": "after-gallery-b.ini",
+      "original_copy_sha256": "4780f9bfc9c46c96e986d0a6dfff57ea30b3fbc7cd5596941ff5e23b51bb17e7",
+      "normalized_sha256": "d2285d9355762265f2bbae8af6168c3ebb122691a17a2b1dd745f86e20a184a4",
+      "raw_local_file_retained": true
+    },
+    {
+      "file": "after-gallery-b.txt",
+      "original_copy_sha256": "d9ef8b7e58268648906b56670c1a472ceb60f5f8e757479bb637d4a364725e6d",
+      "normalized_sha256": "2794213bb710c57d9c5f4759279fc41d2d892df13523e773e09c65568e0dda3a",
+      "raw_local_file_retained": true
+    },
+    {
+      "file": "after-gallery-d.ini",
+      "original_copy_sha256": "c3389f09152fbde9a9a46cc5e9c092605b151cb7189caab6eb6c71da4587bbca",
+      "normalized_sha256": "139056e0d02cc990d79b2843fc31e782bc47859e57c5f17dd5c83b0aefc61d88",
+      "raw_local_file_retained": true
+    },
+    {
+      "file": "after-gallery-d.txt",
+      "original_copy_sha256": "51b70605d734dd01cec8c19d884b86e9f133d0dfa62d054285c047fe3f4705c0",
+      "normalized_sha256": "c39db17bcdcb6756c57a2637d1c4d1e1d2e50df11d076e891f1be2ff9f06ed6d",
+      "raw_local_file_retained": true
+    },
+    {
+      "file": "after-showcase-b.ini",
+      "original_copy_sha256": "7e07e6bc3d844039b295a226049cf48e1c9ebe0a1915166eb55170f3ffe35c94",
+      "normalized_sha256": "ba557702c01dfaf8dfc540c81971a2edf005386caf8cd2a5d3c54faa89969e58",
+      "raw_local_file_retained": true
+    },
+    {
+      "file": "after-showcase-b.txt",
+      "original_copy_sha256": "95175ecfe55799357141c420aa0d9de8c49cc063e5630631ac34de2110de1297",
+      "normalized_sha256": "0e6659052840bdeab9086abce8df0e0c44d964af8f0bee1064944e38f7671e57",
+      "raw_local_file_retained": true
+    },
+    {
+      "file": "after-showcase-c.ini",
+      "original_copy_sha256": "6281f50f3e8f35cca4fd506f68803b0822104805852afa4daa1693435ed973e3",
+      "normalized_sha256": "06d81debdad21a82a51285242c3ae309a5b58930e8d420af492d1e0462fedce5",
+      "raw_local_file_retained": true
+    },
+    {
+      "file": "after-showcase-c.txt",
+      "original_copy_sha256": "e0898cdc26ec68136b7b2b4ad6a5d21077bcd199486ad9e7851b283538f89dd6",
+      "normalized_sha256": "c167f9bb5cf90f38da186179dcd7146b38e5584798f4a427f8d0fb71ecaca680",
+      "raw_local_file_retained": true
+    },
+    {
+      "file": "battle-after-final-bench.txt",
+      "original_copy_sha256": "87a1e75a909ce03971499a7d8c771f086f4881d051119ff1db79a33a22ada671",
+      "normalized_sha256": "13ad3cad7f463e282e078d3fb557e8cff1865830eb9a45730df3a6dc95e5aa89",
+      "raw_local_file_retained": false
+    },
+    {
+      "file": "battle-after-final.ini",
+      "original_copy_sha256": "4ee5bdec3a0cf8d286f5a244d3bf4a9cace6390a6411f011d500547e7f122a70",
+      "normalized_sha256": "8db698f4c8afa5c60f09954b5085423022394aeaadd5938f23468bcc271debc9",
+      "raw_local_file_retained": true
+    },
+    {
+      "file": "battle-after-final.txt",
+      "original_copy_sha256": "a713aa90abf7d5d0eaf604297894e08bd493e425aa026834d9af9547c9921b96",
+      "normalized_sha256": "2beadacf51a56edf1650490e5b80703b4c1a1e6f18b1e8487520806badb9ec42",
+      "raw_local_file_retained": true
+    },
+    {
+      "file": "battle-before-a.ini",
+      "original_copy_sha256": "9409401d9e2fe913c660e4afa9a37ad19055bc56f378ab7f0be9d009426e6385",
+      "normalized_sha256": "bd8d4b8b1a9080d8a2dddf8c6eae497dd3ca79ad708f66279824a91266c326a0",
+      "raw_local_file_retained": true
+    },
+    {
+      "file": "battle-before-a.txt",
+      "original_copy_sha256": "48d0f8a10086f28709fc49150be27f1bb7e84d1ab0c2e26a780ba685d77a81a0",
+      "normalized_sha256": "479dbdeec69bc0cad52b192c9a5029a88edeadf5752b08c2bfc2778cc4d852b8",
+      "raw_local_file_retained": true
+    },
+    {
+      "file": "battle-before-final-bench.txt",
+      "original_copy_sha256": "0bca9f0c45267fa14784d9f6807ebb227b4150eeb46719968b589de4100e944a",
+      "normalized_sha256": "acdf97c97bed580967bae051dd7e5cfe90280a8163576c8fedbce5e54a2c77a1",
+      "raw_local_file_retained": false
+    },
+    {
+      "file": "battle-before-final.ini",
+      "original_copy_sha256": "b1745328c248930d079300643d9c87c022f93927a5596cc9e72ca5f716583b0b",
+      "normalized_sha256": "6bd8f3d4b04f09aa303044776c73574982cf78f2005c527e9e6d7a3f079172bb",
+      "raw_local_file_retained": true
+    },
+    {
+      "file": "battle-before-final.txt",
+      "original_copy_sha256": "a466891f872d3046ddf424ef7ef125fca1c5bc68e208d088aaa34b1a20e5bbef",
+      "normalized_sha256": "67ef6cf8427e5f8d9be3c841fe422c97ba603ddabcdae7e0a396483a1ebf0120",
+      "raw_local_file_retained": true
+    },
+    {
+      "file": "battle-cells-final-bench.txt",
+      "original_copy_sha256": "d6dde9aa4c89a875b3b913d52c6e8d17e533212b2f8f5b0e38d68d66b20f5995",
+      "normalized_sha256": "4c5e87c0228c587823dabe3bf83abf42bd94396fe49c470f0e81cde8f5b62d0c",
+      "raw_local_file_retained": false
+    },
+    {
+      "file": "battle-cells-final.ini",
+      "original_copy_sha256": "b4e2e1526c712c556395cb63f3cbc38adbd72c71bed57fb862f1bd8e648b8f20",
+      "normalized_sha256": "684e9402a37ccf708f42741117e42112e4e7bc47eb864ff81a4100f0d7af4d05",
+      "raw_local_file_retained": true
+    },
+    {
+      "file": "battle-cells-final.txt",
+      "original_copy_sha256": "a53a9b7657b68120c928f38e738904fb58e383201a4f661c63c61c40b8b75bb8",
+      "normalized_sha256": "fe8224fa8c0f1b87e65f29fd9b4f39e6b0389bbba0ad4231db83d17c889220f5",
+      "raw_local_file_retained": true
+    },
+    {
+      "file": "before-gallery-c.ini",
+      "original_copy_sha256": "8970ae000e09853b5b6a4b8d2dff7a60ea5a43697ec9cebdb1abbd9ee1c00201",
+      "normalized_sha256": "266962a41af6d97d3170862601168f774e28f8081d52bbb4471928dcdbaf197c",
+      "raw_local_file_retained": true
+    },
+    {
+      "file": "before-gallery-c.txt",
+      "original_copy_sha256": "ac8ac783ba28c334ef728f4aa39d3920f006fcfa728d0a9ecc1202a6c94a4a1f",
+      "normalized_sha256": "4bbd6021256b2133195e18f868a9fb2d00f9862690a7cb4e73d24c1dd7f1f4d9",
+      "raw_local_file_retained": true
+    },
+    {
+      "file": "build-final.txt",
+      "original_copy_sha256": "69c82fdda99dea5d78fe9e33bf5f44523913ef69564dc75d6d08af781d4a9593",
+      "normalized_sha256": "5a87bcff13afa26d16199d59fb4c36d751a8c0614d797fab3ae073631f91b99e",
+      "raw_local_file_retained": true
+    },
+    {
+      "file": "checks-a.ini",
+      "original_copy_sha256": "866dfa33e918dcab26a3d955d84c58ef587f3050ccfaffd545bee8eb7299d794",
+      "normalized_sha256": "5c2cda090a06cfc3fb44f5f19455c51a4e7d1cfaf16727e5060fb577fdec5230",
+      "raw_local_file_retained": true
+    },
+    {
+      "file": "checks-a.txt",
+      "original_copy_sha256": "11929a40384ee7e8927c5559b5ce115d3d1736d8e604427121fb42f2eee73565",
+      "normalized_sha256": "9016d41fb096ba1ec8fb257dc68365b494f8a5b7c3a601760483614ee69441a2",
+      "raw_local_file_retained": true
+    },
+    {
+      "file": "checks-cells-final.ini",
+      "original_copy_sha256": "2c0d00be76dbfb682c4722afa411b3b991126cb1a9b9fa473a95e687e7e04b57",
+      "normalized_sha256": "954317e79a82cf70defc52e86b9f3b383e3afa4acaac439c871383ee56b13865",
+      "raw_local_file_retained": true
+    },
+    {
+      "file": "checks-cells-final.txt",
+      "original_copy_sha256": "9f4679a993181f7e3a2f3f63e217975c40d8414af1ce8bd35425403be6fccdd9",
+      "normalized_sha256": "7572214d9d23594b4b2934a61e90f243dced993579cdc828c667683494f7beb6",
+      "raw_local_file_retained": true
+    },
+    {
+      "file": "checks-final-c.ini",
+      "original_copy_sha256": "f555dfcd5dbb5159cc1209bff1e473aa54ea3f401ddbba74a0c4c360b5a4ef39",
+      "normalized_sha256": "85da2c2be0decddd083ff8c14265c02a9c204433496138e61f5ea5af0781a36c",
+      "raw_local_file_retained": true
+    },
+    {
+      "file": "checks-final-c.txt",
+      "original_copy_sha256": "701f086988ae24352b4b9eb150f30f9798d5a19c8ee6f3c2e85ba7fe9d176b80",
+      "normalized_sha256": "f09fb14a56a1255a1c25b36e2dd679087a418de8efd7e7a54cba76dcb3d9cfdd",
+      "raw_local_file_retained": true
+    },
+    {
+      "file": "checks-final-d.ini",
+      "original_copy_sha256": "a4606a5fdb049061c23e50defe1528f96792d2147c472b1589ff70b03c02480c",
+      "normalized_sha256": "8d2d17039342a9d8332e4f76f8fa0a36bbd97c643515602da1373c79ba679afc",
+      "raw_local_file_retained": true
+    },
+    {
+      "file": "checks-final-d.txt",
+      "original_copy_sha256": "3d80f73e54a4ae014918552536b79d595533bb7f5c3e9b6bf6f64663d8b73025",
+      "normalized_sha256": "67052332ec527cf10bf9a2a2bc249ba6bdd01772c578703d52c19818fb52b369",
+      "raw_local_file_retained": true
+    },
+    {
+      "file": "checks-final-e.ini",
+      "original_copy_sha256": "cb03c98933e6f5175c03220f17e7834dbfa3cb94e5bf53b4999f3d5370e1d530",
+      "normalized_sha256": "89b3de3c73ddb04364a589fc5cf3fcdb03e0ab9953faec85558d1cb50e3add77",
+      "raw_local_file_retained": true
+    },
+    {
+      "file": "checks-final-e.txt",
+      "original_copy_sha256": "0ecde8f642778bd79749bcf5add093280ceb8de2f3e509c5fadbd7dee65e3d2c",
+      "normalized_sha256": "754b57cf9fa9d2c17f51cb32e7bbc676109f32fce8fc347c549030595214d075",
+      "raw_local_file_retained": true
+    },
+    {
+      "file": "cost-baseline-0-b-bench.txt",
+      "original_copy_sha256": "d35818e149ea83349a930823e72793575bdb80ee11a5ae4c434bd19ab81257f8",
+      "normalized_sha256": "baedecf2937e058e853ec8d71686a3d80be2ddc573413ee3e98f95feefffd97b",
+      "raw_local_file_retained": false
+    },
+    {
+      "file": "cost-baseline-0-b.ini",
+      "original_copy_sha256": "d502924e33570df5ae1fc44cf2574b8ae370322b595ea9d780ae69f7eb1f89c1",
+      "normalized_sha256": "175c3b14a1e5598291da936a0b6fe373ee9e711f401e35c2586b995038504d7e",
+      "raw_local_file_retained": true
+    },
+    {
+      "file": "cost-baseline-0-b.txt",
+      "original_copy_sha256": "4e2c02b2d27517196cd22bac232cb41d1e03f0aa4b7f1f55342185fb359492c0",
+      "normalized_sha256": "c9746735cfe9eb71dc35a03d672e636996286aecebbc0bc041c6b1bed4db5508",
+      "raw_local_file_retained": true
+    },
+    {
+      "file": "cost-baseline-24-b-bench.txt",
+      "original_copy_sha256": "cf79b68bb1124003eab728518f4d9f89a8f997f6379513655853ee264216a4f3",
+      "normalized_sha256": "c9af59c6d3dc3e857e2d71b3a8ac4ebf5c8119837bfdb16d024c932a38709ec7",
+      "raw_local_file_retained": false
+    },
+    {
+      "file": "cost-baseline-24-b.ini",
+      "original_copy_sha256": "bd7af8d2fe1a948a99c74484d72a354df3cd97f434a5612773c9bb5b8df871ee",
+      "normalized_sha256": "6989fceaa8a6ace301d5660994c77d410d83da3c8dd3c0306ab0325711afa955",
+      "raw_local_file_retained": true
+    },
+    {
+      "file": "cost-baseline-24-b.txt",
+      "original_copy_sha256": "4f1edbe21b218329b3ecfea967bb95a2194c7f4a1d14db57cc1347c761ba01ec",
+      "normalized_sha256": "c7996ad290adfaef22084aaf208717906692a6bb1ee5e6ddef3cf3da4846cdb3",
+      "raw_local_file_retained": true
+    },
+    {
+      "file": "cost-baseline-499-b-bench.txt",
+      "original_copy_sha256": "b1880ebec066ee399cf159b11bce23617e8e52b4eccf865f3c13b502313c194d",
+      "normalized_sha256": "7274de4340885fb7f3677279d94e0b070fbafb948597f6cc20ee7f28e0b9db48",
+      "raw_local_file_retained": false
+    },
+    {
+      "file": "cost-baseline-499-b.ini",
+      "original_copy_sha256": "b45616c07a95cd7fe158fbd00f18551968c3f97e5a53c9024cff4036c0ab4629",
+      "normalized_sha256": "204b71e5bcdb04188b074f704c8f3730e175218c1351a153a3bcc3372e6f4204",
+      "raw_local_file_retained": true
+    },
+    {
+      "file": "cost-baseline-499-b.txt",
+      "original_copy_sha256": "e3b8b8835bc685e26205ae3de93104bc04511ee40c82903212e867dae471b527",
+      "normalized_sha256": "9cffb264139b72ad6b1b69e1e39d1607d2b83b8e5cf55c45aeced4635fa3105c",
+      "raw_local_file_retained": true
+    },
+    {
+      "file": "cost-current-0-b-bench.txt",
+      "original_copy_sha256": "8646776f5784db62f20f34fe712981ce1f7e01a82d3d1cfd56f0f980c953e365",
+      "normalized_sha256": "a59a1c1dbc88191e22901ad8d7340947f2cf4945e8e53dbad4e68d2087f95406",
+      "raw_local_file_retained": false
+    },
+    {
+      "file": "cost-current-0-b.ini",
+      "original_copy_sha256": "9ad5b8ad50612f9fa677816a772c733fb4058760f229c57b8d85867539e75855",
+      "normalized_sha256": "7b742624d0bd5353daf7b1508d9c0f0dbf97e2e8ed1fb1a8b454fb82016ec403",
+      "raw_local_file_retained": true
+    },
+    {
+      "file": "cost-current-0-b.txt",
+      "original_copy_sha256": "5c1b8caa240deecc7dfb1bb4629e76e3a4a6110e7e07d509a2af01c08a11d53f",
+      "normalized_sha256": "8139edbab0af7606221b2b7ce4c4a5a4604c44282754b3ed307d20ea875f6e33",
+      "raw_local_file_retained": true
+    },
+    {
+      "file": "cost-current-0-cells-bench.txt",
+      "original_copy_sha256": "59b90ac96d8f5e590c6cdc853c637ad2290ff08838165aa893c02025d4b6e03b",
+      "normalized_sha256": "40c12c87345b44e0769ad90cedfa07d36b3760cb3e8b91436b9fb370087c5dba",
+      "raw_local_file_retained": false
+    },
+    {
+      "file": "cost-current-0-cells.ini",
+      "original_copy_sha256": "7dac7e78565fe64d58415ae5604a6d360cde3d06f8217a8ff4e015aa5e26a269",
+      "normalized_sha256": "72cffd2c1b9a188b1c2bd507f43d223850c597352234a7b8ae63396ade370b7b",
+      "raw_local_file_retained": true
+    },
+    {
+      "file": "cost-current-0-cells.txt",
+      "original_copy_sha256": "a98eceffe62bd013a89506013e30744eb2d653d84e989f3ce167b3ce8baf393e",
+      "normalized_sha256": "8af01873643498e252e4e32bbbd2bce3cd36a6d9f7072ce1f08c6ed4ff511868",
+      "raw_local_file_retained": true
+    },
+    {
+      "file": "cost-current-0-final-bench.txt",
+      "original_copy_sha256": "37681f8e7dc971f90c52ed030b71a4604b373693a073610760a79c53c084f434",
+      "normalized_sha256": "bab2249ee119393bb2b4fb94ea08a2638f0f2315ae7151d8d4c62d8888937796",
+      "raw_local_file_retained": false
+    },
+    {
+      "file": "cost-current-0-final.ini",
+      "original_copy_sha256": "079fc0450bc02d6aa2975261c999cd23ba65497604abc79c6d78f7f9cbe18e4b",
+      "normalized_sha256": "d12a3b74b1d09ae6e3aa69292d9c15a9da0d098a9b0bfec1dbccbe9edb7ca0d3",
+      "raw_local_file_retained": true
+    },
+    {
+      "file": "cost-current-0-final.txt",
+      "original_copy_sha256": "8cbf8d82ff3afa221b07e9063d7a3a7ff3c31dc8b724d87a9350618cdcab2e44",
+      "normalized_sha256": "85126e76f8cb3ce61ff03f9bdc185d6f4c55aa9aac8049bb34336850a4bb0432",
+      "raw_local_file_retained": true
+    },
+    {
+      "file": "cost-current-24-b-bench.txt",
+      "original_copy_sha256": "2412adb1f8fde78b2574dc50943b26ae1c58b94d0882188b7f46139293b6694d",
+      "normalized_sha256": "3fccf6aba0b64147ccaf239ffd6d788a4c06974ca5fe3d8c44b0832abc922df1",
+      "raw_local_file_retained": false
+    },
+    {
+      "file": "cost-current-24-b.ini",
+      "original_copy_sha256": "702aefc9ab3f0b88ea15a5f688721b746f7c70deb42d9c77421ee52a1dadb59b",
+      "normalized_sha256": "22c58be48a27fe18fa0763f2465ff745fd1bb6420abffff95bfd9db3928d5860",
+      "raw_local_file_retained": true
+    },
+    {
+      "file": "cost-current-24-b.txt",
+      "original_copy_sha256": "4d1aecf5e2bb68c20450d2b6ebde595780cd83ce25b1b4e386e43f82dc8cdb43",
+      "normalized_sha256": "aadb6c3dd4cf225d861f9c18194ffab301624e3dd13062bea22fba1ba431a9ed",
+      "raw_local_file_retained": true
+    },
+    {
+      "file": "cost-current-24-cells-bench.txt",
+      "original_copy_sha256": "a31252e41b0c59e332e40b30370bcacabb52177b146bd7aeda93baf55f795824",
+      "normalized_sha256": "02d4ef729a25652f8ada111bdafa5f939ac1b84721c54f66f95f8081147be93d",
+      "raw_local_file_retained": false
+    },
+    {
+      "file": "cost-current-24-cells.ini",
+      "original_copy_sha256": "9012283518b0708a8eb34e88acf49452cad730d29970ab5027e10917d181c6bd",
+      "normalized_sha256": "28f35dc5cb95fcb4f66c35db1987a25a7dafd7cd2fd6ee28be25bf1a44ee1c3a",
+      "raw_local_file_retained": true
+    },
+    {
+      "file": "cost-current-24-cells.txt",
+      "original_copy_sha256": "6c6f946635ed7b2398784902fef650a5944d85e0c804c55b4a67e21489c643ef",
+      "normalized_sha256": "1c79996ed31d0195fffc7f5233db09411a84a59a48dfc9815673ca6c17b6fadd",
+      "raw_local_file_retained": true
+    },
+    {
+      "file": "cost-current-24-final-bench.txt",
+      "original_copy_sha256": "7f2849c437ff4a740d39cb124b932d49ae6f73f2f61ead882d58d76f5ea86406",
+      "normalized_sha256": "ad6764a16694773f2df655ede79972048172e3a978cdcf11cf1eac3452c9ff9f",
+      "raw_local_file_retained": false
+    },
+    {
+      "file": "cost-current-24-final.ini",
+      "original_copy_sha256": "9caca897fd6637df6eab4a790363f18139d89a1412f40fdbceef5504a9d4fcff",
+      "normalized_sha256": "a8e1c5961bc4d209ef052732b2056bbdecf068c62b7af16bdd25ad0be1d9f2c6",
+      "raw_local_file_retained": true
+    },
+    {
+      "file": "cost-current-24-final.txt",
+      "original_copy_sha256": "0b42e28ef2efb018789b369addfc02cc7616001d5f1ef28fc8d31b098f03c94a",
+      "normalized_sha256": "fb571807d56bc88e92e34a96469624005da4d5e1cfa51b5dc7f98e36e1a39e2f",
+      "raw_local_file_retained": true
+    },
+    {
+      "file": "cost-current-499-b-bench.txt",
+      "original_copy_sha256": "153eb6626016cfc511a5bc2bff04ef8e56155b2ff8bf4bf17bf2e489ca8b489b",
+      "normalized_sha256": "49a2ceffa095ab0680875549078533dce806eeb6e1df4335a7f97e7fbc5ddc76",
+      "raw_local_file_retained": false
+    },
+    {
+      "file": "cost-current-499-b.ini",
+      "original_copy_sha256": "6ea32da7690496d438b6ddf8cd6a91c97c99af44c511e46c311abe80182483fe",
+      "normalized_sha256": "ba660b9f0cfcd2514e8a50d409a3514e9a6ac04cb71cad873e112bbf66e8a156",
+      "raw_local_file_retained": true
+    },
+    {
+      "file": "cost-current-499-b.txt",
+      "original_copy_sha256": "3edbee8aed623f90730bb45319b5d6f73fbdfe93907a7f2c84563b308f51b42b",
+      "normalized_sha256": "a9fc6677db3c67149d2cf2f32239c4f56c1f596434aa467573eacb559f2b2e1b",
+      "raw_local_file_retained": true
+    },
+    {
+      "file": "cost-current-499-cells-bench.txt",
+      "original_copy_sha256": "d20f691aeef5811d96193bb017321371fb2363218edd80017dda31a0fc25d6ad",
+      "normalized_sha256": "a231854837d397d85bf9760eb7d0882106d6f0ea89eb774f156f6e4340174d10",
+      "raw_local_file_retained": false
+    },
+    {
+      "file": "cost-current-499-cells.ini",
+      "original_copy_sha256": "772ca8dfef33d35a2eee81ac8aa98560b778b5129f2dd1741b89795be2505dbe",
+      "normalized_sha256": "78fcbcbccaf0a7a927dc824b07185c1fb834b4f278b833dcc8320a4c69e071c1",
+      "raw_local_file_retained": true
+    },
+    {
+      "file": "cost-current-499-cells.txt",
+      "original_copy_sha256": "4d92fe032592eb91ef2e30bf06bb96b4d3c1b202ec54ae8a5e8570409c75a701",
+      "normalized_sha256": "d91d5c4ba02e11ee1d26108bd4f0d3aa061ac51bde01010743ad55f8f6a6705a",
+      "raw_local_file_retained": true
+    },
+    {
+      "file": "cost-current-499-final-bench.txt",
+      "original_copy_sha256": "f14c95b581ee979a2eb440c843e2f1fbf290b28080a39124394a9e805d28b2a0",
+      "normalized_sha256": "7b8e42f8c04ceda67cf761aab428accd9f3bda3a877dcecc1fa06ea8993aa0d3",
+      "raw_local_file_retained": false
+    },
+    {
+      "file": "cost-current-499-final.ini",
+      "original_copy_sha256": "565c38368b230c50cfb9164c162e193d6a43eeae532a8a45d3b8c32875fa76e6",
+      "normalized_sha256": "48eef6b48552685959c8e66425fff6510253a2fb4acb3a24470193869ebf7878",
+      "raw_local_file_retained": true
+    },
+    {
+      "file": "cost-current-499-final.txt",
+      "original_copy_sha256": "c67018fa9952d7c6021fc8ed4c812cad0307a475cbfa77237b1ddd9db4543351",
+      "normalized_sha256": "dc7ad7e9d89e2dbaad29a0b963ef63a2af7ce4a8587d280d5a11527f6c242398",
+      "raw_local_file_retained": true
+    },
+    {
+      "file": "deathframes-after.ini",
+      "original_copy_sha256": "b4b066c4471613a0ee73f6ec6fe5069507e5ab3dc247158fe71df51bbb154421",
+      "normalized_sha256": "0444863ac1f3d3e2edd3cf6f8b18bdf8584304a40ae592786fb14df1bf147caf",
+      "raw_local_file_retained": true
+    },
+    {
+      "file": "deathframes-after.txt",
+      "original_copy_sha256": "d6da249dd799d844569c38fd1fccc88d9ef2359122ab92b7192f36f7ad022da8",
+      "normalized_sha256": "fc26b5083f7c20d21fa70c0199c31834a832dae6a9c096a2a74db3863c35a1cc",
+      "raw_local_file_retained": true
+    },
+    {
+      "file": "deathframes-before.ini",
+      "original_copy_sha256": "617c3bcdbb3432496d158e699e82b40c49dbd29a5e5e6a09a50928c98f87e77e",
+      "normalized_sha256": "20bb6df7ae4603cd74e49d6daedf37ffde5d0871f0698ccf94e7e202618efc43",
+      "raw_local_file_retained": true
+    },
+    {
+      "file": "deathframes-before.txt",
+      "original_copy_sha256": "b54fd58a1d45d8edcee53d62c87b807436cce169aedb75aea220d61b1b1b16bc",
+      "normalized_sha256": "d3f05a67dc463d8b8562d92f76f6d1d3923bb3972b68cffb8c913cac8631ee7c",
+      "raw_local_file_retained": true
+    },
+    {
+      "file": "flight-video-after.ini",
+      "original_copy_sha256": "646ec03881accf407fada467a21859902d415a06a05638add884aaa4046fba29",
+      "normalized_sha256": "03510b1ab2d912d5ae5b4d3634ca8dc9113f4cd355a6949ee5a70c9611ce78c0",
+      "raw_local_file_retained": true
+    },
+    {
+      "file": "flight-video-after.txt",
+      "original_copy_sha256": "9f37268a30275a5907c627f004c32810bf5d246d68480939edf2250e0b3df69f",
+      "normalized_sha256": "1c43013f1b52ba188235f886241346bb0b2c15faee7968a4ff35d29eaa780c88",
+      "raw_local_file_retained": true
+    },
+    {
+      "file": "flight-video-before.ini",
+      "original_copy_sha256": "b29c89160ca4c9d45ee437c5fd3da1c94e895aa24cfa3972e80deca4021d411c",
+      "normalized_sha256": "70930b0f5659facbec88307da364baa41eb3727df6a220705588bafcf5c20ada",
+      "raw_local_file_retained": true
+    },
+    {
+      "file": "flight-video-before.txt",
+      "original_copy_sha256": "63c94d930d7c81d779266faa350b4f1c9bcb34f710fb86bc359614028bffff9d",
+      "normalized_sha256": "e0f237af4ae5a96ba2c733cb103876be714afa937322039b46fdd02278b93d38",
+      "raw_local_file_retained": true
+    },
+    {
+      "file": "gallery-after-final-b.ini",
+      "original_copy_sha256": "4cebe09d761fed429e7093c70f8f75f9b16bfd2cc8c34a55428c2ef5cedea466",
+      "normalized_sha256": "3fc14d3a05b841c0cc02cd19140c8e50cd315dc0c5e75c3cde88e5ef7404e516",
+      "raw_local_file_retained": true
+    },
+    {
+      "file": "gallery-after-final-b.txt",
+      "original_copy_sha256": "ca5c8fda45be1e38348b536652080aa726d97ee2dd9d7d4f6c34662a73f43ea0",
+      "normalized_sha256": "7da1f9c7017b037491314983d0bafa640868d998c64e337fd582737c96277469",
+      "raw_local_file_retained": true
+    },
+    {
+      "file": "gallery-before-final-c.ini",
+      "original_copy_sha256": "381aee383b65df9440ea9c1c9370346be679ee8aa5d9d4b37b3cdb751851cfdf",
+      "normalized_sha256": "74bcee10cc61d166b2c9faf0f1735ed28e2a651f78d910a6df95501db2706354",
+      "raw_local_file_retained": true
+    },
+    {
+      "file": "gallery-before-final-c.txt",
+      "original_copy_sha256": "1db7c6b37998ff596366fa930993592f63bb4d6492f01adf5deb9f034288e074",
+      "normalized_sha256": "6a389e8c21e80f7311a1c84038819d673707059fc6d64044abf176dbaee734ec",
+      "raw_local_file_retained": true
+    },
+    {
+      "file": "gallery-cells-final.ini",
+      "original_copy_sha256": "d2af591e5b8ab0a8fd341d64257c86a481280e806abc50245aad9d9fee6975f7",
+      "normalized_sha256": "9958b2c52877babfea5b12b83bcd1b93ec783db7681a34ac92796e812991a498",
+      "raw_local_file_retained": true
+    },
+    {
+      "file": "gallery-cells-final.txt",
+      "original_copy_sha256": "2c16e25c65fd0381d808e120ee9d5d716d69ec20a7428d4aa3cf3b31875c11a2",
+      "normalized_sha256": "7faea51dce292d56b2c27272ea6ed8ea6f47faa132ae846c208616e1a14c9a81",
+      "raw_local_file_retained": true
+    },
+    {
+      "file": "gallery-final-a.ini",
+      "original_copy_sha256": "88b6281a332b1c57b6586c8e227fea6d489cb02d23b9f6ab3f092f0d2f9d6099",
+      "normalized_sha256": "c2d1fd44ff2f2177c24a78e35f551ea1040ac88b0d653ffb80de2d785b2caf83",
+      "raw_local_file_retained": true
+    },
+    {
+      "file": "gallery-final-a.txt",
+      "original_copy_sha256": "23c75340733efaf9eeac4ed8ed525795e6e6a3d2e3596a481c34e0515fea422a",
+      "normalized_sha256": "ad13cdd4a3bc3cda6dcb66c0ee179ae016c2fd44063e7e51117dc5f1b977e288",
+      "raw_local_file_retained": true
+    },
+    {
+      "file": "invariance-after-a.ini",
+      "original_copy_sha256": "7675fb4e3447059c3278fbb2991299ac232f65282441b80ccadb5c7e8a41f7f7",
+      "normalized_sha256": "986cb035070da3ef0e170930a866f91fb09a855e9cfa597ff279c6e94e3efc53",
+      "raw_local_file_retained": true
+    },
+    {
+      "file": "invariance-after-a.txt",
+      "original_copy_sha256": "ad9d055fe1f4b62ff390d92d39b19a2884d7b1ac23711e77318e500118a92202",
+      "normalized_sha256": "3693677664c9562ab20c54b811af268f7dd27d3ec54fd809e6333d03e697e2b1",
+      "raw_local_file_retained": true
+    },
+    {
+      "file": "invariance-before-a.ini",
+      "original_copy_sha256": "42c69c163254a8dbd7ac940029f7c6173ea9eeb51986b9c3de6f0f521543b385",
+      "normalized_sha256": "3394b8b29c5929f057707c9c869ddf6ebee66d4fcae3f07d984278736d12f6d6",
+      "raw_local_file_retained": true
+    },
+    {
+      "file": "invariance-before-a.txt",
+      "original_copy_sha256": "a3a7507f29d622ca21546e7594d9275707a6255718b1120bee6e62115f2fd60d",
+      "normalized_sha256": "cad71ebf30137247bbb340fa82b139ec34eb0d5ad332f29432f252eb2945fdfd",
+      "raw_local_file_retained": true
+    },
+    {
+      "file": "invariance-cells-final.ini",
+      "original_copy_sha256": "32956ef6e7880ef2fa9c0920ed910579bd9b196338ca8a51c77343a18418b16a",
+      "normalized_sha256": "150057fcd8bea362955ce661971bcafdc7ae2a3549c60dcf03ccee04cd2a80a6",
+      "raw_local_file_retained": true
+    },
+    {
+      "file": "invariance-cells-final.txt",
+      "original_copy_sha256": "c7c7b64fc00722f6f9282c23b00eb10bd1cb02dfc511993c0e554e6909d73300",
+      "normalized_sha256": "42fefa525ff659f9f2c872dc28f70cc9a50ed7b5885a0b33b1c86f244c7b7b28",
+      "raw_local_file_retained": true
+    },
+    {
+      "file": "invariance-final.ini",
+      "original_copy_sha256": "85f4a1ef1dc0d40faecec62a21769bbefde577e0f0d7ec06a196d1be76b6eadf",
+      "normalized_sha256": "28e59972c7ade522edfc40a2627406fcf63d029d7f086947871593b59043eba6",
+      "raw_local_file_retained": true
+    },
+    {
+      "file": "invariance-final.txt",
+      "original_copy_sha256": "d8089a7364ff625af475219ecc3b4eb755a5bddccabe5cf0cde5b46edbe56782",
+      "normalized_sha256": "7fcca19922b92eb1342e6ad3608380d7792dccf885f732dcf4c47cfca3b51008",
+      "raw_local_file_retained": true
+    },
+    {
+      "file": "persist-before-b.ini",
+      "original_copy_sha256": "24f035492d60d290da2838571805a29a9f8edb0abdd9674d87a007f95048907d",
+      "normalized_sha256": "f2ecf9ca402851b27c44eed3c40003cebe9c73f60dc5769e21138c49bd016844",
+      "raw_local_file_retained": true
+    },
+    {
+      "file": "persist-before-b.txt",
+      "original_copy_sha256": "3c4847aa7521e050f07442e88c02fb8f0546a253296d7412c7d9eb3fe25fe845",
+      "normalized_sha256": "574d2eeb6644e3be80b50ba8ace7627d2c0fc95d364160b61ef3249ee1d58b6c",
+      "raw_local_file_retained": true
+    },
+    {
+      "file": "persist-hub-d.ini",
+      "original_copy_sha256": "7c6461f18ff8e349942893a064b9c6b476a1f5c15372b6ab04bf5f2d4a79e86a",
+      "normalized_sha256": "67d29a37d71af221b52a689f5e535704f5579fa245f4db1f2d0c4d23c104dde7",
+      "raw_local_file_retained": true
+    },
+    {
+      "file": "persist-hub-d.txt",
+      "original_copy_sha256": "57ad2b19adc0b3040a8f7195151001bf8c11b0f49e896e7223f12a5eb0f271e8",
+      "normalized_sha256": "6089a7f03007d721aad849d5a8a9c0e794811bf052e2c4ccf45d2a54f263bc37",
+      "raw_local_file_retained": true
+    },
+    {
+      "file": "persist-hub-final.ini",
+      "original_copy_sha256": "127a895cae5b1d8dd940175634e7b67b21eb1be183a581e71cd657f62b2a1d90",
+      "normalized_sha256": "08a55d79acf671e1cd9b85786d8973b66c2b4dc5f5344e260606c7b84d03709c",
+      "raw_local_file_retained": true
+    },
+    {
+      "file": "persist-hub-final.txt",
+      "original_copy_sha256": "4e2bfecf21c29df52141cc4a0b456bf23c7dd4f36ec4b7b5b191d3e3fab56e84",
+      "normalized_sha256": "4319d040ec1acb8f2b1eae8b33487734306c3d250bc6215c32ff8048454e62a1",
+      "raw_local_file_retained": true
+    },
+    {
+      "file": "persist-rollback-final.ini",
+      "original_copy_sha256": "51ab1cd24c7774f2ded971ce97d50487c85970a32250f6d72686ffe408644ed2",
+      "normalized_sha256": "c0bb1d4044fb7a8d53164c89065b6f582f551cb91746801d0ea1f2d058ef2b00",
+      "raw_local_file_retained": true
+    },
+    {
+      "file": "persist-rollback-final.txt",
+      "original_copy_sha256": "95c547215f31009a18e0b7175e9574d3f7ac7521e7a9fe1632ce8e597dd24e0b",
+      "normalized_sha256": "f0e24131f3a8151a65e0205bfe9c3e220a5ec81ea6709119a6a9183f3a350b1a",
+      "raw_local_file_retained": true
+    },
+    {
+      "file": "persist-upgrade-b.ini",
+      "original_copy_sha256": "8b2a3b450b87d82a78756b4e2234db57cb548f12753fa5dd11a17eb12917f204",
+      "normalized_sha256": "bb31eb418162af944d60b83f32906a3e1a7e41957bf6f450dd2e2f5b92f15aef",
+      "raw_local_file_retained": true
+    },
+    {
+      "file": "persist-upgrade-b.txt",
+      "original_copy_sha256": "4a2eb45f50cd0473fc66a918fc7a16443d71a9220c961c1f12e8819c43c825c5",
+      "normalized_sha256": "f372016bcd054861482750645c2bfe99e445edd415acb8ca136788b4243b8d45",
+      "raw_local_file_retained": true
+    },
+    {
+      "file": "persist-upgrade-c.ini",
+      "original_copy_sha256": "8d93b9ddb534458a12c3fba7cf79bf63308cbcfaf9ab7f17a04d4a536bde9ac7",
+      "normalized_sha256": "ceb25aa52ad66214ef42836426ac2f70e77a727c1ecfaf557c957aa239245095",
+      "raw_local_file_retained": true
+    },
+    {
+      "file": "persist-upgrade-c.txt",
+      "original_copy_sha256": "7941b2a064a023604f9b55e073e73852911e3940d8dd87658457b399c245593c",
+      "normalized_sha256": "57b2de2f8ed18b55f7574cae83f395577a00f0043e9a45c5a17a6033c82f4559",
+      "raw_local_file_retained": true
+    },
+    {
+      "file": "persist-upgrade-final.ini",
+      "original_copy_sha256": "5b7cd4f038f8944b27620835818f84f55d7d3818cc27112af4f8f9c0af385de2",
+      "normalized_sha256": "78f8a7c8f62013bfd16506323f53dc404f346159d14c6fb0136417b57ad691c6",
+      "raw_local_file_retained": true
+    },
+    {
+      "file": "persist-upgrade-final.txt",
+      "original_copy_sha256": "58f37eb120300948a1b52352a132b8a7a62725db509fc70aee0d2fcb7a5cc6d9",
+      "normalized_sha256": "9cc152fa4e906d1f78166e775d0871ca5160ebb45e4abc6bfadf9bcff565a904",
+      "raw_local_file_retained": true
+    },
+    {
+      "file": "release-checks.ini",
+      "original_copy_sha256": "74c3f3bf188ca9d588a05ee957fe65a05087ad244114e1869c90d01b0e266224",
+      "normalized_sha256": "b3ce26b425490b47dc87f58c28964eb080d860c418b2acd35887e41872eedce9",
+      "raw_local_file_retained": true
+    },
+    {
+      "file": "release-checks.txt",
+      "original_copy_sha256": "1f1622a255aa41651b114f3fe8afcd652618ff085d78b38135482e29ff20157d",
+      "normalized_sha256": "de6dfe3272d8754a5c4c892af1e44d4de989cbb460ec54b1f75574d77ea54a29",
+      "raw_local_file_retained": true
+    },
+    {
+      "file": "release-save.ini",
+      "original_copy_sha256": "c571cdcaa9039ea38df285a09738baca83adfcc2420c7496bdc75ef65aeddebc",
+      "normalized_sha256": "7e62941743433f92b9de80f7454c8e4906b0aef839b976960a9854f3621fe313",
+      "raw_local_file_retained": true
+    },
+    {
+      "file": "release-save.txt",
+      "original_copy_sha256": "6cc0919fa9957c8c20d31b317081b0967e50ab6d26dee81dc01c3cf043f2ba4e",
+      "normalized_sha256": "19a72ec6cc48f4b8ea740a3cc3265388fcd971032324f28f5db70d1f64191c79",
+      "raw_local_file_retained": true
+    },
+    {
+      "file": "showcase-after-final.ini",
+      "original_copy_sha256": "eab415d3fcde7c070d37b680b03a0b964a446144f6386ac456e816493ec781da",
+      "normalized_sha256": "f48df7e2ce5f0f95f51ca5c3519b48daf1f26e1b9f7b0a27b5eaf803e797a3c3",
+      "raw_local_file_retained": true
+    },
+    {
+      "file": "showcase-after-final.txt",
+      "original_copy_sha256": "e61c500aafdf96f25ca365de5283e36186ecb39aaf6d5afe0ce14ae80e773566",
+      "normalized_sha256": "4ca224111710373c917a15fd91467efc4c004b5bb621020494d37c1172c864e4",
+      "raw_local_file_retained": true
+    },
+    {
+      "file": "showcase-before-final.ini",
+      "original_copy_sha256": "80fadec1bcaed975d2c192eab190bbc2489f0e8d22c6c3281e5014b42f287bf5",
+      "normalized_sha256": "8efd04f9ddc73047c17640ef6701222c2c64469ca02e0b2601975ecda9511cda",
+      "raw_local_file_retained": true
+    },
+    {
+      "file": "showcase-before-final.txt",
+      "original_copy_sha256": "e489403c341af8dc806582f50131e7769d4ccfecab6409acbf4d9a3863cdad12",
+      "normalized_sha256": "79ad651f70f30779b4bb3e870330a770d40b58c22fd7514f4b879af87e32bf68",
+      "raw_local_file_retained": true
+    },
+    {
+      "file": "showcase-cells-final.ini",
+      "original_copy_sha256": "9cf45c5ef3342096fc9671d428a512a8f7919e0cd615dccd14fcd42cd40e3404",
+      "normalized_sha256": "0d1d66c2b8d37e04df21c4a7252c4cc5bff94e38dcbb4c285cf0893303350706",
+      "raw_local_file_retained": true
+    },
+    {
+      "file": "showcase-cells-final.txt",
+      "original_copy_sha256": "72a1ac3a7e9a9364a15a3c3cd2b7dd55a074b3c971d5758be116374522e6400f",
+      "normalized_sha256": "123646706d0aa43ae9e24487aad6f7f9e1b7d802d3677c9321f7880abde44e74",
+      "raw_local_file_retained": true
+    },
+    {
+      "file": "sizes-after-final.ini",
+      "original_copy_sha256": "eaf712a5946ed5719c6f7a2d9af97ae9b00f618e7fa6d80f71607034ff2a70ae",
+      "normalized_sha256": "f6c9a4dca221ecefa1b323fb96546b3460dd59f459781c0f85349db39dec67ea",
+      "raw_local_file_retained": true
+    },
+    {
+      "file": "sizes-after-final.txt",
+      "original_copy_sha256": "1bd3bf1e308094ed7b6b4de65c1acd1d14c026c3d342a60341740df998cd5470",
+      "normalized_sha256": "74c81b26a26f3b94c85367221417dae6c6926aef8c54680bd98396a2a470f713",
+      "raw_local_file_retained": true
+    },
+    {
+      "file": "sizes-before-final.ini",
+      "original_copy_sha256": "b2a3098cf1ddb59cae2425235fae4c606b6f6f22d47c9e9a4b6622d826b62e45",
+      "normalized_sha256": "1ba936dd8d280a2027d1c379d4e45cf7766348cc38c7070b90470ab4e29c5145",
+      "raw_local_file_retained": true
+    },
+    {
+      "file": "sizes-before-final.txt",
+      "original_copy_sha256": "fb679604ae38c39ee42478a695eef00dc6663a8001ccf412993cbff92d05f427",
+      "normalized_sha256": "208f334db11e44201d4a0e455298c86798e6b778b1d7aafd0728ef68eceacecf",
+      "raw_local_file_retained": true
+    },
+    {
+      "file": "static-validation.txt",
+      "original_copy_sha256": "030007ef957ed76fba087d60cf330decd1347792a69598752b2790b3a5a7c02a",
+      "normalized_sha256": "a4b12f691bce4b37d8dd152d5aab025a29a96b3570b520dda29f91b5df6caa97",
+      "raw_local_file_retained": true
+    },
+    {
+      "file": "water-after-a.ini",
+      "original_copy_sha256": "6bd878d3bb4d3c4917b617f8692e43d3faa909505a14d2aa6c26627b8fb89ddb",
+      "normalized_sha256": "b0e16fdcfcc1093b84666f3c803205581f8e3de07976a2134a05acce550ebce2",
+      "raw_local_file_retained": true
+    },
+    {
+      "file": "water-after-a.txt",
+      "original_copy_sha256": "380788e466bb5496828117843b484a4ee0513accdf74d6511b54c4574d909b6e",
+      "normalized_sha256": "1f05b3f8cbaa09e4cdcac72b8e5c8a535215f6cf6fdc4d97bb749a8a0a4c7557",
+      "raw_local_file_retained": true
+    },
+    {
+      "file": "water-after-final.ini",
+      "original_copy_sha256": "1b40981636195cbc044741e59c744bd3e2191845482a692f80e72960947ad2ed",
+      "normalized_sha256": "be66af203cf7eb84a4e799b46254767c447647326eb224d9e567249a271010c8",
+      "raw_local_file_retained": true
+    },
+    {
+      "file": "water-after-final.txt",
+      "original_copy_sha256": "a59ed77031516aabc161cb004b9c8be59f7783d42885f9cb286488ebf738bccc",
+      "normalized_sha256": "e01857640b5ae7dce3bd7a4e80bd18cb7b1183f84f0fd508333a2fa9c478fe0e",
+      "raw_local_file_retained": true
+    },
+    {
+      "file": "water-cells-final.ini",
+      "original_copy_sha256": "b66bc70ed074246869aff205511bd0c5cd66b8acdd13c18ae8604db8d05fecff",
+      "normalized_sha256": "fc6dde400a5981e2eaa343548e0356df452c739c135ac97109a1c7cee5e5fb9d",
+      "raw_local_file_retained": true
+    },
+    {
+      "file": "water-cells-final.txt",
+      "original_copy_sha256": "c26f375c432663ae9596658acdde3c5c5640ade4cc0fb5bc8691afb9f50cbde7",
+      "normalized_sha256": "fd97cd4bf66801eb68c57b47d5c47f5add242ebe675343f76e4b22e70b3335e3",
+      "raw_local_file_retained": true
+    },
+    {
+      "file": "animals-original-final.ini",
+      "original_copy_sha256": "74f978a8afeed603c5b9ce1303bf3c5f8f35de145a8667ffaee7cc54a6170531",
+      "normalized_sha256": "ce5cb7153b3faa18d63d290ff711a733677954b2a30d247abc6d9370ecabab98",
+      "raw_local_file_retained": true
+    },
+    {
+      "file": "animals-original-final.txt",
+      "original_copy_sha256": "31d9b6ae01e5c6e24fa3498658b19f84bcefbdd474bd4d052ae9e48ac727a7fe",
+      "normalized_sha256": "5834cd9bbdbfb30a88c0818d7987ce6bf872661dd14b5ff89c22c582722f9752",
+      "raw_local_file_retained": true
+    },
+    {
+      "file": "animals-raw-a.ini",
+      "original_copy_sha256": "2d939ff452a8f8c20ae6ef67a08b51f4cfeed056bf77e39974c842af6395071f",
+      "normalized_sha256": "b03185e353aadd79a47a9e5b33ba339cdeaf5ef74f1ee1e08b290a672a048c7d",
+      "raw_local_file_retained": true
+    },
+    {
+      "file": "animals-raw-a.txt",
+      "original_copy_sha256": "bcf4c934cfcfa3557b8de8230bb0e3a3cc036afec345f9479aa4b3fed1d21e1b",
+      "normalized_sha256": "4feaa6937f6c9c52f0d06e49c5a89bc43e8bcf8e42c67c813d1eca28cbfed35c",
+      "raw_local_file_retained": true
+    },
+    {
+      "file": "animals-reviewed-a.ini",
+      "original_copy_sha256": "5878de78a5dfb70a34416da1f461775c95fe71aad0ed2c7efea0b3f28f61fd06",
+      "normalized_sha256": "d023002ec816a75acc43c7d7c61d1c181ff96a36a91a72d87bd01402eb41eb97",
+      "raw_local_file_retained": true
+    },
+    {
+      "file": "animals-reviewed-a.txt",
+      "original_copy_sha256": "cc02f75d8c609b4bfcb99c0e5d089618e83bc7a53e692c023ef69a3737b35bf6",
+      "normalized_sha256": "f0d1f29f669eea652e9f93fdcd2f24ca58f655d06da77684e497f1383efd9789",
+      "raw_local_file_retained": true
+    },
+    {
+      "file": "animals-reviewed-b.ini",
+      "original_copy_sha256": "20019a80c49cf7b2ccb312b6d70843b05dee88b4248d473a7138151503208232",
+      "normalized_sha256": "82aab1510b45d6932bd62de8040687b6c1d55e19c0709b5a193ce9f840d9a1a1",
+      "raw_local_file_retained": true
+    },
+    {
+      "file": "animals-reviewed-b.txt",
+      "original_copy_sha256": "8a5cb9ed215a05df7b13a4844d88e927382e061db3837a5f10fe3e126ae250b8",
+      "normalized_sha256": "c4a823137ceff08af27283644ada9999a4b8384d521cc6e1c98d4747f9b47ae9",
+      "raw_local_file_retained": true
+    },
+    {
+      "file": "build-original-final.txt",
+      "original_copy_sha256": "fd29b948a1212a93fc2de2c60e511892f926219f31c875b0ff73269d21de40cb",
+      "normalized_sha256": "608bbc1ac13b2f7397f4690c7798ea49f38f1477b64491e4d290134e25a4f261",
+      "raw_local_file_retained": false
+    },
+    {
+      "file": "deathframes-original-a.ini",
+      "original_copy_sha256": "0567600694fe2da70744cd3ba320ebb0ab92704450dd6159478af5f0471b7fc1",
+      "normalized_sha256": "91143cbb1ab55ddd0c8f7c15ea7c9d1e00e9ade260cb7308d2e3c843118c2ed8",
+      "raw_local_file_retained": true
+    },
+    {
+      "file": "deathframes-original-a.txt",
+      "original_copy_sha256": "5112822f7a79635c65a1fa7d848ee7d3ac05ed11bee890d8298c83fef896fa7c",
+      "normalized_sha256": "0d9b4a752c317d7079e9ab0ffa96925b942342ea4f85686281bf71152b6a14d2",
+      "raw_local_file_retained": true
+    },
+    {
+      "file": "deathframes-original-b.ini",
+      "original_copy_sha256": "6993dbf76596cb31cb84615dec49f26834fcd330cd4b781469ad4c8565a3d7fa",
+      "normalized_sha256": "d03923f07316f124ab10ac2b1a2ce9dc19eea69bd6642b252e43121f70006c51",
+      "raw_local_file_retained": true
+    },
+    {
+      "file": "deathframes-original-b.txt",
+      "original_copy_sha256": "7e688d1c622ff3058bc0c6d6882c49ab16e7c87e396673cf2a4157dd325715af",
+      "normalized_sha256": "555d04906acd7e926b7e488866d1dbefce20fb026cd62467820db41b3cd968ef",
+      "raw_local_file_retained": true
+    },
+    {
+      "file": "deathframes-original-final.ini",
+      "original_copy_sha256": "ceb7070876861d21f82ebb2953538203ee9dafeb2852af290f261e21da7578e9",
+      "normalized_sha256": "76f4b1f4e726193337fba0748f6ef68a02b55b61390c60e68e17443136be7a69",
+      "raw_local_file_retained": true
+    },
+    {
+      "file": "deathframes-original-final.txt",
+      "original_copy_sha256": "eac8cbdc5933fde714c7f2f65a6a44c0c17ecf46a772eaa5f328f1e2f73ce546",
+      "normalized_sha256": "06b193a00d20090357b903d7aa2b9f67303a6f11a198d76dde82fc06cea6842e",
+      "raw_local_file_retained": true
+    },
+    {
+      "file": "recovery-release-checks.ini",
+      "original_copy_sha256": "1964b8d41ca6a1899bc725f076675232329a871930ca1feb179204d5ea071186",
+      "normalized_sha256": "1aae29ddd129d547e4fb0fa8bb868e8c116d25897936f54e75ba43cec8217e9c",
+      "raw_local_file_retained": true
+    },
+    {
+      "file": "recovery-release-checks.txt",
+      "original_copy_sha256": "bde233127792c1a87a2b83181fd409ef5ddeb02c658e422e74d500d53f17b087",
+      "normalized_sha256": "4421368e70a815533562a49552dd3dcfb68ebdebd54f152770aa39233bdfa2fd",
+      "raw_local_file_retained": true
+    }
+  ]
+}

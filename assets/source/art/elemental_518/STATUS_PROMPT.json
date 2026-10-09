@@ -1,0 +1,7 @@
+{
+  "tool": "image_gen.imagegen",
+  "reference": "statuses-draft.png",
+  "prompt": "Edit this original transparent VFX atlas, preserving the four-column/four-row layout, each row's element and the four animated phases. Correct only the usability of these effect overlays: shrink each effect within its own cell so every cell has a completely transparent margin of at least 15% on all four sides; no flame tip, glow or other pixel may touch any image or cell edge. Preserve the shared bottom anchor across phases. Make the central body-shaped empty region truly transparent in every row so the character remains clearly visible behind the effect. Row 4 must consist of thin irregular branching violet-white lightning arcs with a few small sparks, removing its dense purple flame/cloud material entirely. Keep rows 1 fire, 2 green poison and 3 ice crystalline, vivid and detailed around their OUTER perimeter, with empty transparent centers and no human figure. Maintain actual alpha transparency. No labels, ground, backgrounds or checkerboard.",
+  "output": "statuses.png",
+  "provenance": "Original generated art for issue #137, 2026-10-08. Source PNG preserved without raster editing."
+}

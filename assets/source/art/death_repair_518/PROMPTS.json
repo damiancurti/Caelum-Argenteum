@@ -1,0 +1,25 @@
+{
+  "tool": "built-in image_gen",
+  "purpose": "Reconstruct clipped existing death poses from project-owned character references; original runtime PNGs are retained unchanged.",
+  "domingo": {
+    "prompt": "Repair the project's original Domingo death-animation artwork. The first reference is the intact character identity (DOIDA1); the other four references are representative damaged key poses from the existing sequence (S, U, V, Z). Use these as identity/style/pose references to create a new complete eight-frame atlas, following the explicitly listed eight-pose sequence. Create ONE complete replacement sprite atlas with EIGHT frames, four columns by two rows in reading order, on a genuinely transparent RGBA background. Preserve the original dark-fantasy pixel-painted game sprite aesthetic, muted palette, proportions and identity: adult Argentine male warrior, shoulder-length black hair and beard, red neck scarf, dark steel armor with small brass details, dark navy cloak with gold trim, boots, sword. Restore complete heads, hair, hands, boots, sword and cloak; remove all neighboring-frame fragments. Make a coherent collapse sequence preserving the broad original progression: (1) wounded upright on one knee with head still visible; (2) weakening deeper kneel; (3) turning/hunching forward and losing balance; (4) hands and knees, head bent; (5) slumping; (6) on his side; (7) body settling; (8) completely still prone corpse with navy cloak visible, sword fallen beside him. Every frame must show the whole subject with generous clear transparent padding on every side. Same camera, lighting, pixel density, identity and body scale across all eight frames. In particular do NOT enlarge the flattened corpse to fill its cell: the final lying body has low height and fits horizontally inside its cell at the same physical scale. Each equal cell should have at least 12 percent fully transparent spacing around all artwork; keep the same ground baseline relative to each cell bottom. No labels, lettering, numbers, borders, grids, shadows outside the sprite, background scene, gore additions, new costume, new weapon or props. This is a technical repair for GZDoom animation, not an illustration. Sheet layout four columns by two rows, all eight poses completely isolated so the engine can clip exact cell bounds without losing pixels.",
+    "generated": "exec-2002b21e-b08d-482e-abd1-1f00879f437b.png",
+    "references": [
+      "DOIDA1.png",
+      "DOMIS0.png",
+      "DOMIU0.png",
+      "DOMIV0.png",
+      "DOMIZ0.png"
+    ]
+  },
+  "rat": {
+    "prompt": "Create a repaired eight-frame death-animation atlas for this project's giant rat. The four supplied images are representative BROKEN old sprite frames: cropped heads, tails, neighboring-frame fragments. Use ONLY the visible rat anatomy/style as reference, never preserve those cropping errors or stray pieces. Giant rat identity: stocky dark charcoal/black shaggy fur, reddish pink ears/paws/long naked curled tail, small red eyes, long rodent muzzle. Original muted dark-fantasy pixel-painted GZDoom sprite style. ONE transparent RGBA atlas, FOUR COLUMNS by TWO ROWS, eight frames in reading order. Continuous consistent three-quarter side view, facing right throughout. Death sequence: (1) recoiling with front paws raised and COMPLETE head; (2) lowering onto four paws, weak and hunched; (3) forelegs giving way; (4) belly dropping; (5) falling onto side; (6) lying on side with head lowered; (7) body and tail settling; (8) completely still dead rat. Preserve same body scale and pixel density throughout. Show the ENTIRE rat including every ear, nose, foot and complete tail in EVERY cell, with at least 12 percent completely transparent padding on each side. The longest curled tail must stay inside its own cell. Keep all feet/final bodies aligned to a common ground baseline near the bottom of each cell. The final corpse is lower than the upright rat, never scaled up to fill its cell. Subtle small existing-style dark-red blood mark beneath the last poses is fine, no increased gore or added wounds. No text, labels, numbers, icons, borders, background, grid lines, detached rat fragments, extra animals or objects. All eight poses separate with clear transparent gaps; no frame touches any image or cell edge. This is a production sprite atlas to correct slicing defects, not a standalone illustration.",
+    "generated": "exec-862a4fc3-0fef-4723-975b-d238554aaeb6.png",
+    "references": [
+      "RATGG0.png",
+      "RATGH0.png",
+      "RATGJ0.png",
+      "RATGM0.png"
+    ]
+  }
+}

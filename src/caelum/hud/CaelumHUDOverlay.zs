@@ -773,24 +773,11 @@ class CaelumHUDOverlay : EventHandler
         DrawHUDTexture("graphics/caelum/ui/hud/icons/ca_hud_icon_thermal.png",422.0,225.0,18.0,18.0);
     }
 
-    // A restrained full-screen tint plus opposed color bands represents the
-    // documented dizzy visual distortion without depending on temporary art.
-    // HUD text is drawn afterward and therefore stays crisp and readable.
-    ui void DrawLucidityDistortion(CaelumPlayer localPlayer)
+    // Gradientes y bandas animadas hacen visible la pérdida de Lucidez.
+    // El HUD se dibuja después para conservar la legibilidad de sus textos.
+    ui void DrawLucidityDistortion(CaelumPlayer localPlayer,double fraction)
     {
-        if (localPlayer.LucidityState == CaelumConstants.LUCIDITY_STATE_NORMAL)
-        {
-            return;
-        }
-
-        double strength = localPlayer.LucidityState
-            == CaelumConstants.LUCIDITY_STATE_STUNNED ? 0.13 : 0.08;
-        int width = Screen.GetWidth();
-        int height = Screen.GetHeight();
-        int bandWidth = Max(1, int(width * 0.055));
-        Screen.Dim(0x6E547D, strength, 0, 0, width, height);
-        Screen.Dim(0x3E88A8, strength * 0.75, 0, 0, bandWidth, height);
-        Screen.Dim(0xA45A62, strength * 0.75, width - bandWidth, 0, bandWidth, height);
+        CaelumScreenFeedback.Lucidity(localPlayer,fraction);
     }
 
     // Indicador lateral: utiliza el icono real del Sello y su disponibilidad
@@ -883,6 +870,9 @@ class CaelumHUDOverlay : EventHandler
             || localPlayer.player.playerstate != PST_LIVE
             || localPlayer.DerivedStats == null)
         {
+            if(localPlayer!=null && localPlayer.player!=null
+                && localPlayer.player.playerstate==PST_DEAD)
+                CaelumScreenFeedback.Damage(localPlayer,event.FracTic);
             return;
         }
 
@@ -1018,7 +1008,8 @@ class CaelumHUDOverlay : EventHandler
             );
         }
 
-        DrawLucidityDistortion(localPlayer);
+        CaelumScreenFeedback.Damage(localPlayer,event.FracTic);
+        DrawLucidityDistortion(localPlayer,event.FracTic);
         // El centro del marco HUD-01 es deliberadamente oscuro y casi opaco.
         // Dibujarlo primero permite que los rellenos tintados queden visibles
         // dentro de sus bordes metálicos en vez de quedar tapados por el arte.

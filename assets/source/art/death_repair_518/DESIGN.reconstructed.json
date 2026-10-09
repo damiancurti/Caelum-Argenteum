@@ -1,0 +1,8 @@
+{
+  "issue": 137,
+  "note": "Presentation-only reconstruction from existing project-owned references. Legacy PNGs remain untouched. Native clips use measured transparent gaps, consistent scale and per-frame floor anchors; all existing Death state indices and durations remain unchanged.",
+  "actors": [
+    {"atlas": "domingo", "prefix": "DOMI", "frames": "STUVWXYZ", "columns": [0,434,882,1317,1774], "rows": [0,537,887], "first_pose_height": 147.0, "scale_reference": "Approximately 84% of the intact DOIDA1 visible standing height, since the first pose is kneeling."},
+    {"atlas": "rat", "prefix": "RATG", "frames": "FGHIJKLM", "columns": [0,441,878,1320,1774], "rows": [0,540,887], "first_pose_height": 119.090909, "scale_reference": "Existing physical height 13.1 / existing actor scale 0.11; no actor properties change."}
+  ]
+}

@@ -7718,7 +7718,19 @@ class CaelumPlayer : DoomPlayer
         Super.Die(source, inflictor, dmgflags, MeansOfDeath);
     }
 
-    override int DamageMobj(
+    // Estado visual individual; el daño real sigue en las mismas rutas de defensa.
+    int PendingDamageVFXKind,DamageVFXKind,DamageVFXTic,DamageFeedbackRevision;
+    double DamageVFXStrength;
+
+    override int DamageMobj(Actor inflictor,Actor source,int damage,Name mod,int flags,double angle)
+    {
+        int before=health;
+        int result=ReceiveCaelumDamage(inflictor,source,damage,mod,flags,angle);
+        CaelumDamageFeedback.Record(self,inflictor,mod,Max(0,Max(0,before)-Max(0,health)));
+        return result;
+    }
+
+    int ReceiveCaelumDamage(
         Actor inflictor,
         Actor source,
         int damage,

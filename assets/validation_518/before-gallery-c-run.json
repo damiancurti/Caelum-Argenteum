@@ -1,0 +1,73 @@
+﻿{
+    "label":  "before-gallery-c",
+    "started_utc":  "2026-10-09T02:42:04.8198352Z",
+    "engine":  "C:\\Program Files (x86)\\GZDoom\\gzdoom.exe",
+    "engine_sha256":  "EC706C2EA1EF946EEC13BE7B1B461DF8D52EFCD47CAA6C056ED0E0257F7F9FFA",
+    "iwad_sha256":  "10D67824B11025DDD9198E8CFC87CA335EE6E2D3E63AF4180FA9B8A471893255",
+    "package_sha256":  "E0E18696DC04B383F6D1B6A738E5496E0D39E88E19F24BBF308C847036CA7F0E",
+    "addon_sha256":  "E8D15462271B9F20EE248FC784BB6CB2621354C71D5824439FF494D374326235",
+    "initial_config":  "[LastRun]\nVersion=225\n[GlobalSettings]\nvid_preferbackend=1\nvid_vsync=false\nvid_maxfps=60\nvid_activeinbackground=true\ni_pauseinbackground=false\nvid_lowerinbackground=false\ni_soundinbackground=true\ncl_capfps=false\nvid_fullscreen=false\nvid_defwidth=1280\nwin_w=1296\nwin_h=759\nwin_maximized=false\nvid_defheight=720\nuse_mouse=false\nsnd_mastervolume=0.05\nlanguage=enu\n",
+    "arguments":  [
+                      "-noautoload",
+                      "-nomouse",
+                      "-iwad",
+                      "\"C:\\Program Files (x86)\\Steam\\steamapps\\common\\ultimate doom\\base\\doom2\\DOOM2.WAD\"",
+                      "-file",
+                      "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue137\\baseline/caelum_argenteum_dev.pk3\"",
+                      "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue137\\gallery.pk3\"",
+                      "-config",
+                      "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue137\\before-gallery-c.ini\"",
+                      "-savedir",
+                      "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue137\"",
+                      "-width",
+                      1280,
+                      "-height",
+                      720,
+                      "-window",
+                      "-rngseed",
+                      "116",
+                      "-skill",
+                      "2",
+                      "+logfile",
+                      "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue137\\before-gallery-c.txt\"",
+                      "+con_notifytime",
+                      "0",
+                      "+set",
+                      "ca_test_siege_reinforcements",
+                      1,
+                      "+map",
+                      "CA137",
+                      "+exec",
+                      "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue137\\before-gallery-c-exec.cfg\""
+                  ],
+    "benchmark_offset":  0,
+    "command_script":  "unbindall;r_drawplayersprites false;wait 70;ca137_view 0;wait 4;screenshot before-gallery-c-flight-0-early.png;wait 5;screenshot before-gallery-c-flight-0-late.png;wait 21;ca137_view 1;wait 4;screenshot before-gallery-c-flight-1-early.png;wait 5;screenshot before-gallery-c-flight-1-late.png;wait 21;ca137_view 2;wait 4;screenshot before-gallery-c-flight-2-early.png;wait 5;screenshot before-gallery-c-flight-2-late.png;wait 21;ca137_view 3;wait 4;screenshot before-gallery-c-flight-3-early.png;wait 5;screenshot before-gallery-c-flight-3-late.png;wait 21;ca137_view 4;wait 4;screenshot before-gallery-c-flight-4-early.png;wait 5;screenshot before-gallery-c-flight-4-late.png;wait 21;ca137_view 5;wait 4;screenshot before-gallery-c-flight-5-early.png;wait 5;screenshot before-gallery-c-flight-5-late.png;wait 21;ca137_view 6;wait 4;screenshot before-gallery-c-flight-6-early.png;wait 5;screenshot before-gallery-c-flight-6-late.png;wait 21;ca137_view 7;wait 4;screenshot before-gallery-c-flight-7-early.png;wait 5;screenshot before-gallery-c-flight-7-late.png;wait 21;ca137_view 8;wait 4;screenshot before-gallery-c-flight-8-early.png;wait 5;screenshot before-gallery-c-flight-8-late.png;wait 21;ca137_view 9;wait 4;screenshot before-gallery-c-flight-9-early.png;wait 5;screenshot before-gallery-c-flight-9-late.png;wait 21;ca137_view 10;wait 4;screenshot before-gallery-c-flight-10-early.png;wait 5;screenshot before-gallery-c-flight-10-late.png;wait 21;ca137_view 11;wait 4;screenshot before-gallery-c-flight-11-early.png;wait 5;screenshot before-gallery-c-flight-11-late.png;wait 21;ca137_view 12;wait 4;screenshot before-gallery-c-flight-12-early.png;wait 5;screenshot before-gallery-c-flight-12-late.png;wait 21;ca137_view 13;wait 4;screenshot before-gallery-c-flight-13-early.png;wait 5;screenshot before-gallery-c-flight-13-late.png;wait 21;ca137_view 14;wait 4;screenshot before-gallery-c-flight-14-early.png;wait 5;screenshot before-gallery-c-flight-14-late.png;wait 21;ca137_view 15;wait 4;screenshot before-gallery-c-flight-15-early.png;wait 5;screenshot before-gallery-c-flight-15-late.png;wait 21;ca137_view 16;wait 4;screenshot before-gallery-c-flight-16-early.png;wait 5;screenshot before-gallery-c-flight-16-late.png;wait 21;ca137_view 17;wait 4;screenshot before-gallery-c-flight-17-early.png;wait 5;screenshot before-gallery-c-flight-17-late.png;wait 21;ca137_view 18;wait 4;screenshot before-gallery-c-flight-18-early.png;wait 5;screenshot before-gallery-c-flight-18-late.png;wait 21;ca137_view 19;wait 4;screenshot before-gallery-c-flight-19-early.png;wait 5;screenshot before-gallery-c-flight-19-late.png;wait 21;ca137_view 20;wait 4;screenshot before-gallery-c-flight-20-early.png;wait 5;screenshot before-gallery-c-flight-20-late.png;wait 21;ca137_view 21;wait 4;screenshot before-gallery-c-flight-21-early.png;wait 5;screenshot before-gallery-c-flight-21-late.png;wait 21;ca137_view 22;wait 4;screenshot before-gallery-c-flight-22-early.png;wait 5;screenshot before-gallery-c-flight-22-late.png;wait 21;ca137_view 23;wait 4;screenshot before-gallery-c-flight-23-early.png;wait 5;screenshot before-gallery-c-flight-23-late.png;wait 21;ca137_view 24;wait 4;screenshot before-gallery-c-flight-24-early.png;wait 5;screenshot before-gallery-c-flight-24-late.png;wait 21;ca137_view 25;wait 4;screenshot before-gallery-c-flight-25-early.png;wait 5;screenshot before-gallery-c-flight-25-late.png;wait 21;ca137_view 26;wait 4;screenshot before-gallery-c-flight-26-early.png;wait 5;screenshot before-gallery-c-flight-26-late.png;wait 21;ca137_mode 1;wait 15;screenshot before-gallery-c-statuses-dark.png;wait 30;screenshot before-gallery-c-statuses-motion.png;ca137_mode 2;wait 15;screenshot before-gallery-c-statuses-bright.png;wait 20;quit\r\n",
+    "cpu":  [
+                {
+                    "Name":  "AMD Ryzen 9 5950X 16-Core Processor            ",
+                    "NumberOfCores":  16,
+                    "NumberOfLogicalProcessors":  32
+                }
+            ],
+    "gpu":  [
+                {
+                    "Name":  "Parsec Virtual Display Adapter",
+                    "DriverVersion":  "0.45.0.0"
+                },
+                {
+                    "Name":  "NVIDIA GeForce RTX 3070 Ti",
+                    "DriverVersion":  "32.0.15.7688"
+                }
+            ],
+    "os":  {
+               "Caption":  "Microsoft Windows 11 Pro",
+               "Version":  "10.0.26200",
+               "TotalVisibleMemorySize":  33475240
+           },
+    "pid":  38080,
+    "qpc_ms":  1397148223.2652,
+    "epoch_ms":  1791513726977.177,
+    "exit_code":  0,
+    "completed_utc":  "2026-10-09T02:42:39.1251966Z",
+    "expected":  "CA137 GALLERY COMPLETE"
+}

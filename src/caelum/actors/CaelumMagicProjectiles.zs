@@ -24,21 +24,7 @@ class CaelumActorSimpleElementalProjectile : CaelumActorProjectile
 
     void PrepareElementSprite()
     {
-        if (CaelumVisualPrepared || !CaelumElementalPayloadPrepared) { return; }
-        String visual = "XFIR";
-        if (CaelumEssenceType == CaelumConstants.ESSENCE_FIRE)
-            visual = CaelumSecondaryElement ? "XLIT" : "XFIR";
-        else if (CaelumEssenceType == CaelumConstants.ESSENCE_WATER)
-            visual = CaelumSecondaryElement ? "XICE" : "XWAT";
-        else if (CaelumEssenceType == CaelumConstants.ESSENCE_EARTH)
-            visual = CaelumSecondaryElement ? "XVSN" : "XERT";
-        else if (CaelumEssenceType == CaelumConstants.ESSENCE_WIND)
-            visual = CaelumSecondaryElement ? "CELH" : "XAIR";
-        else if (CaelumEssenceType == CaelumConstants.ESSENCE_QUINTESSENCE)
-            visual = "XQUI";
-        sprite = GetSpriteIndex(visual);
-        frame = visual == "CELH" ? level.time % 12 : 0;
-        CaelumVisualPrepared = true;
+        CaelumElementalVFX.Projectile(self);
     }
 
     override void Tick()
@@ -102,20 +88,7 @@ class CaelumActorExplosiveElementalProjectile : CaelumActorProjectile
 
     void UpdateElementSprite()
     {
-        if (!CaelumElementalPayloadPrepared) { return; }
-        String visual = "XFIR";
-        if (CaelumEssenceType == CaelumConstants.ESSENCE_FIRE)
-            visual = CaelumSecondaryElement ? "XLIT" : "XFIR";
-        else if (CaelumEssenceType == CaelumConstants.ESSENCE_WATER)
-            visual = CaelumSecondaryElement ? "XICE" : "XWAT";
-        else if (CaelumEssenceType == CaelumConstants.ESSENCE_EARTH)
-            visual = CaelumSecondaryElement ? "XVSN" : "XERT";
-        else if (CaelumEssenceType == CaelumConstants.ESSENCE_WIND)
-            visual = CaelumSecondaryElement ? "CELH" : "XAIR";
-        else if (CaelumEssenceType == CaelumConstants.ESSENCE_QUINTESSENCE)
-            visual = "XQUI";
-        sprite = GetSpriteIndex(visual);
-        frame = visual == "CELH" ? (level.time / 2) % 12 : 0;
+        CaelumElementalVFX.Projectile(self);
     }
 
     action void A_CaelumActorExplode()

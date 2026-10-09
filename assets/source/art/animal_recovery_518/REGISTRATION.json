@@ -1,0 +1,403 @@
+{
+  "dependencies": {
+    "Pillow": "11.3.0",
+    "numpy": "2.2.6",
+    "opencv": "4.12.0"
+  },
+  "reference_bounds": [
+    14,
+    12,
+    122,
+    108
+  ],
+  "runtime_reference_bounds": [
+    93,
+    15,
+    207,
+    117
+  ],
+  "frames": [
+    {
+      "sprite": "RATGF0",
+      "source_rect": [
+        231,
+        810,
+        361,
+        966
+      ],
+      "source_pose": 0,
+      "file": "death-0.png",
+      "bounds": [
+        8,
+        14,
+        122,
+        141
+      ],
+      "pivot": [
+        65,
+        141
+      ],
+      "scale": 0.9411764705882353,
+      "sha256": "293fd68b7a694540f5d247c22248dc7486bc3848d452e76635d390b4363e99b7"
+    },
+    {
+      "sprite": "RATGG0",
+      "source_rect": [
+        372,
+        842,
+        534,
+        956
+      ],
+      "source_pose": 1,
+      "file": "death-1.png",
+      "bounds": [
+        8,
+        9,
+        150,
+        103
+      ],
+      "pivot": [
+        79,
+        103
+      ],
+      "scale": 0.9411764705882353,
+      "sha256": "68799b891e67d7a98766426376fa22af725d9e916760e19486868346df1a0d2b"
+    },
+    {
+      "sprite": "RATGH0",
+      "source_rect": [
+        522,
+        843,
+        708,
+        958
+      ],
+      "source_pose": 2,
+      "file": "death-2.png",
+      "bounds": [
+        4,
+        15,
+        173,
+        98
+      ],
+      "pivot": [
+        88,
+        98
+      ],
+      "scale": 0.9411764705882353,
+      "sha256": "080d9c43752dc0e31c31079cea3e9bbeaf2ff9a872bfc8f496a933ac1e8bf944"
+    },
+    {
+      "sprite": "RATGI0",
+      "source_rect": [
+        710,
+        846,
+        907,
+        959
+      ],
+      "source_pose": 3,
+      "file": "death-3.png",
+      "bounds": [
+        10,
+        18,
+        185,
+        105
+      ],
+      "pivot": [
+        97,
+        105
+      ],
+      "scale": 0.9411764705882353,
+      "sha256": "ad8285aafc744c6280ed03290b4ff01e0ae2ead2fd22411f26008b84f660b36e"
+    },
+    {
+      "sprite": "RATGJ0",
+      "source_rect": [
+        901,
+        857,
+        1101,
+        960
+      ],
+      "source_pose": 4,
+      "file": "death-4.png",
+      "bounds": [
+        10,
+        14,
+        192,
+        82
+      ],
+      "pivot": [
+        101,
+        82
+      ],
+      "scale": 0.9411764705882353,
+      "sha256": "3d97a3bfbb818a97125b9c9e1549620bac84ac7e3c7529c6589fffe0b4e22464"
+    },
+    {
+      "sprite": "RATGK0",
+      "source_rect": [
+        1107,
+        853,
+        1298,
+        961
+      ],
+      "source_pose": 5,
+      "file": "death-5.png",
+      "bounds": [
+        6,
+        15,
+        184,
+        96
+      ],
+      "pivot": [
+        95,
+        96
+      ],
+      "scale": 0.9411764705882353,
+      "sha256": "a4c965e06c7ec2b3ed421718917c808cf61710aae1ee098bbad0d91505912fdb"
+    },
+    {
+      "sprite": "RATGL0",
+      "source_rect": [
+        1301,
+        858,
+        1525,
+        974
+      ],
+      "source_pose": 6,
+      "file": "death-6.png",
+      "bounds": [
+        4,
+        19,
+        209,
+        101
+      ],
+      "pivot": [
+        106,
+        101
+      ],
+      "scale": 0.9411764705882353,
+      "sha256": "63b1e44645f41d0c494be7b85f30f90adeb3189274f14488331f2b70a2196fe8"
+    },
+    {
+      "sprite": "RATGM0",
+      "source_rect": [
+        1301,
+        858,
+        1525,
+        974
+      ],
+      "source_pose": 6,
+      "file": "death-6.png",
+      "bounds": [
+        4,
+        19,
+        209,
+        101
+      ],
+      "pivot": [
+        106,
+        101
+      ],
+      "scale": 0.9411764705882353,
+      "sha256": "63b1e44645f41d0c494be7b85f30f90adeb3189274f14488331f2b70a2196fe8"
+    },
+    {
+      "sprite": "RATGB1",
+      "source_rect": [
+        241,
+        211,
+        313,
+        311
+      ],
+      "file": "RATGB1.png",
+      "bounds": [
+        9,
+        14,
+        62,
+        92
+      ],
+      "pivot": [
+        63,
+        92
+      ],
+      "scale": 1,
+      "sha256": "2694bf8eb4bbefe69b65642a2943a97c34f0ca2c275e47390217407ae6cf5532"
+    },
+    {
+      "sprite": "RATGB5",
+      "source_rect": [
+        932,
+        220,
+        1002,
+        303
+      ],
+      "file": "RATGB5.png",
+      "bounds": [
+        9,
+        9,
+        58,
+        79
+      ],
+      "pivot": [
+        28,
+        83
+      ],
+      "scale": 1,
+      "sha256": "58386dbc96279b2ca76de0017252bbf711d9a5616c2782ef2bb9b3e24ccf51ef"
+    },
+    {
+      "sprite": "RATGC3",
+      "source_rect": [
+        1193,
+        295,
+        1360,
+        385
+      ],
+      "file": "RATGC3.png",
+      "bounds": [
+        9,
+        9,
+        157,
+        82
+      ],
+      "pivot": [
+        95,
+        91
+      ],
+      "scale": 1,
+      "sha256": "b8585ec77a60d8e4c3c86b8ba1e127571950a2d7214d134f619375fe641d44f8"
+    },
+    {
+      "sprite": "RATGC4",
+      "source_rect": [
+        1028,
+        291,
+        1183,
+        382
+      ],
+      "file": "RATGC4.png",
+      "bounds": [
+        10,
+        11,
+        145,
+        82
+      ],
+      "pivot": [
+        96,
+        95
+      ],
+      "scale": 1,
+      "sha256": "207c631daf5721769936719949ad246a9787672a33ef4e0537a359c5962ba1e0"
+    },
+    {
+      "sprite": "RATGC5",
+      "source_rect": [
+        933,
+        294,
+        1007,
+        383
+      ],
+      "file": "RATGC5.png",
+      "bounds": [
+        10,
+        10,
+        61,
+        87
+      ],
+      "pivot": [
+        27,
+        92
+      ],
+      "scale": 1,
+      "sha256": "f5ddfe305c54351fe120e7f782480308d7f10c64bb6ce5675ec14dd9a3f12b6c"
+    },
+    {
+      "sprite": "RATGC6",
+      "source_rect": [
+        758,
+        291,
+        892,
+        382
+      ],
+      "file": "RATGC6.png",
+      "bounds": [
+        10,
+        11,
+        125,
+        84
+      ],
+      "pivot": [
+        38,
+        95
+      ],
+      "scale": 1,
+      "sha256": "e32f9a9aeef5d67217f6afeb78c6f6609aca493112f0315ba4667ae5c5325c2c"
+    },
+    {
+      "sprite": "RATGC8",
+      "source_rect": [
+        440,
+        292,
+        573,
+        382
+      ],
+      "file": "RATGC8.png",
+      "bounds": [
+        10,
+        11,
+        123,
+        83
+      ],
+      "pivot": [
+        28,
+        94
+      ],
+      "scale": 1,
+      "sha256": "1f9dc91dfd346d39943524f93656dd4a4bd25e6b1b7c85227782fe8a7f812435"
+    },
+    {
+      "sprite": "RATGE1",
+      "source_rect": [
+        242,
+        671,
+        329,
+        805
+      ],
+      "file": "RATGE1.png",
+      "bounds": [
+        12,
+        9,
+        79,
+        122
+      ],
+      "pivot": [
+        62,
+        159
+      ],
+      "scale": 1,
+      "sha256": "34325fe48dc2a3ee916f641cfcfe1ab03fd317a9a8b0b3936486b9413dae94a9"
+    },
+    {
+      "sprite": "RATGE5",
+      "source_rect": [
+        930,
+        672,
+        1021,
+        817
+      ],
+      "file": "RATGE5.png",
+      "bounds": [
+        10,
+        11,
+        81,
+        134
+      ],
+      "pivot": [
+        30,
+        158
+      ],
+      "scale": 1,
+      "sha256": "99dbf5ca8a09dbe0cb7f91a7d504d39b6eba03516c9eac35a295ee3e72a056b2"
+    }
+  ]
+}

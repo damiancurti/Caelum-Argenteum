@@ -1,0 +1,278 @@
+[
+  {
+    "name": "DOMIS0",
+    "clip": [
+      16,
+      766,
+      152,
+      934
+    ],
+    "opaque_bounds": [
+      40,
+      773,
+      140,
+      915
+    ],
+    "pivot": [
+      74,
+      150
+    ],
+    "scale": 1.1306818181818181,
+    "source": "domingo-original.png",
+    "source_sha256": "4eb6162dc54d0117e23826ca8067b16851588c42948ad19cd05982c0e20f55f3",
+    "native_clip_parts": [
+      [
+        16,
+        766,
+        152,
+        934
+      ]
+    ]
+  },
+  {
+    "name": "DOMIT0",
+    "clip": [
+      156,
+      765,
+      313,
+      938
+    ],
+    "opaque_bounds": [
+      164,
+      768,
+      297,
+      925
+    ],
+    "pivot": [
+      75,
+      161
+    ],
+    "scale": 1.1306818181818181,
+    "source": "domingo-original.png",
+    "source_sha256": "4eb6162dc54d0117e23826ca8067b16851588c42948ad19cd05982c0e20f55f3",
+    "native_clip_parts": [
+      [
+        156,
+        765,
+        313,
+        938
+      ]
+    ]
+  },
+  {
+    "name": "DOMIU0",
+    "clip": [
+      313,
+      772,
+      481,
+      938
+    ],
+    "opaque_bounds": [
+      324,
+      785,
+      477,
+      927
+    ],
+    "pivot": [
+      88,
+      156
+    ],
+    "scale": 1.1306818181818181,
+    "source": "domingo-original.png",
+    "source_sha256": "4eb6162dc54d0117e23826ca8067b16851588c42948ad19cd05982c0e20f55f3",
+    "native_clip_parts": [
+      [
+        313,
+        772,
+        481,
+        938
+      ]
+    ]
+  },
+  {
+    "name": "DOMIV0",
+    "clip": [
+      481,
+      778,
+      620,
+      938
+    ],
+    "opaque_bounds": [
+      483,
+      804,
+      614,
+      917
+    ],
+    "pivot": [
+      68,
+      140
+    ],
+    "scale": 1.1306818181818181,
+    "source": "domingo-original.png",
+    "source_sha256": "4eb6162dc54d0117e23826ca8067b16851588c42948ad19cd05982c0e20f55f3",
+    "native_clip_parts": [
+      [
+        481,
+        778,
+        620,
+        938
+      ]
+    ]
+  },
+  {
+    "name": "DOMIW0",
+    "clip": [
+      620,
+      782,
+      765,
+      938
+    ],
+    "opaque_bounds": [
+      624,
+      797,
+      752,
+      918
+    ],
+    "pivot": [
+      68,
+      137
+    ],
+    "scale": 1.1306818181818181,
+    "source": "domingo-original.png",
+    "source_sha256": "4eb6162dc54d0117e23826ca8067b16851588c42948ad19cd05982c0e20f55f3",
+    "native_clip_parts": [
+      [
+        620,
+        782,
+        765,
+        938
+      ]
+    ]
+  },
+  {
+    "name": "DOMIX0",
+    "clip": [
+      765,
+      820,
+      950,
+      934
+    ],
+    "opaque_bounds": [
+      773,
+      834,
+      947,
+      917
+    ],
+    "pivot": [
+      95,
+      98
+    ],
+    "scale": 1.1306818181818181,
+    "source": "domingo-original.png",
+    "source_sha256": "4eb6162dc54d0117e23826ca8067b16851588c42948ad19cd05982c0e20f55f3",
+    "native_clip_parts": [
+      [
+        765,
+        820,
+        938,
+        934
+      ],
+      [
+        938,
+        820,
+        949,
+        896
+      ],
+      [
+        949,
+        820,
+        950,
+        891
+      ]
+    ]
+  },
+  {
+    "name": "DOMIY0",
+    "clip": [
+      938,
+      826,
+      1108,
+      934
+    ],
+    "opaque_bounds": [
+      942,
+      837,
+      1105,
+      917
+    ],
+    "pivot": [
+      86,
+      92
+    ],
+    "scale": 1.1306818181818181,
+    "source": "domingo-original.png",
+    "source_sha256": "4eb6162dc54d0117e23826ca8067b16851588c42948ad19cd05982c0e20f55f3",
+    "native_clip_parts": [
+      [
+        938,
+        896,
+        949,
+        934
+      ],
+      [
+        949,
+        891,
+        950,
+        934
+      ],
+      [
+        950,
+        826,
+        1093,
+        934
+      ],
+      [
+        1093,
+        826,
+        1108,
+        896
+      ]
+    ]
+  },
+  {
+    "name": "DOMIZ0",
+    "clip": [
+      1093,
+      851,
+      1250,
+      939
+    ],
+    "opaque_bounds": [
+      1095,
+      865,
+      1243,
+      923
+    ],
+    "pivot": [
+      76,
+      73
+    ],
+    "scale": 1.1306818181818181,
+    "source": "domingo-original.png",
+    "source_sha256": "4eb6162dc54d0117e23826ca8067b16851588c42948ad19cd05982c0e20f55f3",
+    "native_clip_parts": [
+      [
+        1093,
+        896,
+        1108,
+        939
+      ],
+      [
+        1108,
+        851,
+        1250,
+        939
+      ]
+    ]
+  }
+]

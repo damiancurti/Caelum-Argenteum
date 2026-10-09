@@ -1,0 +1,29 @@
+{
+  "version": "5.1.8",
+  "issue": 137,
+  "package_sha256": "a0552c947640af944b4ec0c9f24821582aba962ca64dc91958fb28f627b2645f",
+  "packaged_files": 6293,
+  "all_package_entries_match_src": true,
+  "native_checks": "recovery-release-checks",
+  "native_deaths": "deathframes-original-final",
+  "native_animals": "animals-original-final",
+  "validator_errors": [],
+  "context_words": 2498,
+  "initial_delivery": {
+    "version": "5.1.8",
+    "issue": 137,
+    "package_sha256": "a4c03876f0478edd17cc66c04b1f908992d2d9092adce4f3e3f139dea6006a5f",
+    "packaged_files": 6276,
+    "all_package_entries_match_src": true,
+    "native_checks": "release-checks",
+    "native_save": "release-save",
+    "validator_errors": [],
+    "context_words": 2498,
+    "git_diff_check": 0,
+    "git_diff_check_base": "126ceabe9841ce45090193dab28d85f7dad1b5dd",
+    "evidence_whitespace_normalized": true
+  },
+  "persistence": "Earlier release-save/hub/rollback evidence remains applicable: no actor/state or persistence logic changed in source recovery.",
+  "git_diff_check": 0,
+  "git_diff_check_base": "126ceabe9841ce45090193dab28d85f7dad1b5dd"
+}

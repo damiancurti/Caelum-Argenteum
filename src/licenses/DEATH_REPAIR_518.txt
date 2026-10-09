@@ -1,0 +1,16 @@
+Caelum Argenteum - Domingo and giant-rat death-frame repair, issue #137.
+Author/project: Damian Curti / Caelum Argenteum.
+The author supplied complete original Domingo, giant-rat and bull sheets on
+2026-10-09. Domingo now uses unchanged original pixels through native TEXTURES
+clips. The rat uses deterministic original-sheet extraction, preserving RGB and
+existing valid alpha; only missing silhouette regions need background separation.
+Seven original rat death poses occupy eight existing states (last corpse held),
+and nine minor movement/pain border cuts are restored. All 118 bull sprites were
+audited; no clipping repair was necessary. No actor or gameplay rule changes.
+Sources, extraction data and registration: assets/source/art/death_repair_518
+and assets/source/art/animal_recovery_518. Earlier image_gen reconstructions,
+their prompts and legacy PNGs remain unchanged for history/rollback. The old
+reconstructed runtime atlases remain unused; they are not the current bindings.
+Native TEXTURES changes the presentation only; actor classes, Death state
+indices, duration, sounds, collision and gameplay remain unchanged.
+No external or Doom artwork is incorporated into the recovered assets.

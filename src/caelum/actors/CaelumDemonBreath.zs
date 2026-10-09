@@ -19,8 +19,24 @@ class CaelumDemonBreathRules : Object
 
 class CaelumDemonFlameVisual : Actor
 {
+    int Segment,VisualAge;
+    override void Tick()
+    {
+        Super.Tick();
+        if(bDestroyed)return;
+        if(master==null || master.bDestroyed){Destroy();return;}
+        sprite=GetSpriteIndex("VFBR");
+        frame=Segment*4+(VisualAge/CaelumElementalVFXData.FRAME_TICS)%4;
+        if(VisualAge%CaelumElementalVFXData.FRAME_TICS==0)
+            CaelumElementalVFX.Light(self,0,!CaelumElementalVFX.Dense() || Segment==0);
+        VisualAge++;
+    }
     Default { +NOINTERACTION +NOGRAVITY +BRIGHT RenderStyle "Add"; }
-    States { Spawn: CEFB ABCDEFGHIJKL 3 Bright; Loop; }
+    States
+    {
+        Spawn: CEFB ABCDEFGHIJKL 3 Bright; Loop;
+        VisualFrames: VFBR ABCDEFGHIJKLMNOP 1 Bright; Stop;
+    }
 }
 
 class CaelumDemonBreath : Actor
@@ -121,12 +137,14 @@ class CaelumDemonBreath : Actor
             if(FlameVisuals[i]==null)FlameVisuals[i]=Spawn("CaelumDemonFlameVisual",point,NO_REPLACE);
             if(FlameVisuals[i]!=null)
             {
-                double diameter=2*along*Tan(CaelumDemonBreathRules.CONE_DEGREES/2);
-                // CEFB tiene pivote inferior y 115x188 píxeles. El volumen
-                // visual se centra sobre el eje, no nace por encima de él.
-                FlameVisuals[i].SetOrigin(point-(0,0,diameter/2),false);
-                FlameVisuals[i].Scale=(diameter/CaelumDemonBreathRules.FLAME_PIXEL_WIDTH,
-                    diameter/CaelumDemonBreathRules.FLAME_PIXEL_HEIGHT);
+                // La malla sigue el eje de la boca, sin tocar el cono de contacto.
+                let flame=CaelumDemonFlameVisual(FlameVisuals[i]);
+                flame.master=self;flame.Segment=i;
+                flame.SetOrigin(point,false);
+                flame.Angle=VectorAngle(Direction.X,Direction.Y);
+                flame.Pitch=-VectorAngle(Direction.XY.Length(),Direction.Z);
+                flame.Scale=(CaelumDemonBreathRules.Range(),CaelumDemonBreathRules.Range());
+                flame.Alpha=0.70;
             }
         }
         let nearby=BlockThingsIterator.Create(Emitter,CaelumDemonBreathRules.Range()+Emitter.Radius);

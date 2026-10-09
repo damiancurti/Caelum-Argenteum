@@ -1,6 +1,53 @@
 # Caelum Argenteum — Audio and art
 
-Documentation version: **5.1.7** — 2026-10-08.
+Documentation version: **5.1.8** — 2026-10-09.
+
+## 5.1.8 - Original elemental atlases and projectile meshes (#137)
+
+Original image_gen artwork, prompts, retained draft, editable visual data and
+atlas registration are in assets/source/art/elemental_518. Runtime PNG copies
+preserve the generated pixels byte-for-byte; TEXTURES clips cells and supplies
+pivots/scales. No raster background removal or palette processing was used.
+Cell boundaries follow measured gaps in DESIGN.json, rather than an assumed
+uniform grid; native clips keep adjacent elements out of each animation frame.
+Three atlases provide nine projectile families, four attached states and four
+directional flame phases. The stronger art direction was chosen by the author;
+the author accepted the final native appearance on 2026-10-09 (CA137-01/02).
+
+Optional deterministic tools: register_elemental_vfx.py,
+generate_projectile_models.py, generate_breath_models.py and
+generate_lightning_models.py under assets/generators. Outputs are in
+src/graphics/caelum/vfx, src/models/caelum/projectiles and the shared generated
+VFX data. Physical meshes reuse the project's original training-dummy wood/iron
+atlas; no external mesh was imported. OBJ +X is the native model pitch axis,
+Y is up. MODELDEF binds only the flying frame and preserves existing physical
+impact states. The existing Doom-dependent development impact puff is unchanged;
+this patch does not claim to finish the broader independent-asset migration.
+
+The lightning model is shared by staff, other existing implements and NPCs,
+including the Federal prisoner; it is not a hitscan or new attack. Breath planes
+use the same range and four visibility segments as the existing ability. Owned
+impact/status effects use native alpha and bounded lifetimes. Runtime provenance:
+src/licenses/ELEMENTAL_VFX_518.txt. Comparative native captures and measurement
+records: assets/validation_518; no PK3, IWAD, save or executable is distributed.
+
+The author supplied the complete original Domingo, rat and bull sheets after
+the first death reconstructions. Current DOMI S-Z bindings use the original
+Domingo sheet unchanged: measured native subtextures separate the overlapping
+corpse silhouettes without repainting pixels. Standing height sets one common
+scale. Sources, previous reconstructions and registration are retained in
+assets/source/art/death_repair_518; generator register_death_frames.py.
+
+The author explicitly approved code-based background removal for the opaque
+animal sheets. assets/source/art/animal_recovery_518 records their provenance,
+crop rectangles and masks. recover_rat_frames.py preserves source RGB and valid
+legacy alpha, then separates missing regions with seeded, single-thread GrabCut
+(Pillow 11.3.0, numpy 2.2.6, OpenCV 4.12.0.88). Seven original death poses occupy
+RATG F-M, repeating the last corpse to preserve the eight existing state durations.
+Nine movement/pain border cuts are restored; their source-relative grAb anchors
+remain unchanged. All 118 bull images were audited; no recut was needed.
+Legacy PNGs and prior reconstructions remain available; runtime provenance is
+src/licenses/DEATH_REPAIR_518.txt. The author accepted CA137-03 on 2026-10-09.
 
 ## 5.1.7 - Modular shotgun artwork and evidence (#136)
 

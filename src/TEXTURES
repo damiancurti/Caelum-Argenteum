@@ -740,14 +740,14 @@ Sprite "DOMIN0", 256, 256 { Offset 128, 244 Patch "sprites/caelum/domingo/DOMIN0
 Sprite "DOMIO0", 256, 256 { Offset 128, 244 Patch "sprites/caelum/domingo/DOMIO0.png", 0, 0 }
 Sprite "DOMIP0", 256, 256 { Offset 128, 244 Patch "sprites/caelum/domingo/DOMIP0.png", 0, 0 }
 Sprite "DOMIQ0", 256, 256 { Offset 128, 244 Patch "sprites/caelum/domingo/DOMIQ0.png", 0, 0 }
-Sprite "DOMIS0", 256, 256 { Offset 128, 244 Patch "sprites/caelum/domingo/DOMIS0.png", 0, 0 }
-Sprite "DOMIT0", 256, 256 { Offset 128, 244 Patch "sprites/caelum/domingo/DOMIT0.png", 0, 0 }
-Sprite "DOMIU0", 256, 256 { Offset 128, 244 Patch "sprites/caelum/domingo/DOMIU0.png", 0, 0 }
-Sprite "DOMIV0", 256, 256 { Offset 128, 244 Patch "sprites/caelum/domingo/DOMIV0.png", 0, 0 }
-Sprite "DOMIW0", 256, 256 { Offset 128, 244 Patch "sprites/caelum/domingo/DOMIW0.png", 0, 0 }
-Sprite "DOMIX0", 256, 256 { Offset 128, 244 Patch "sprites/caelum/domingo/DOMIX0.png", 0, 0 }
-Sprite "DOMIY0", 256, 256 { Offset 128, 244 Patch "sprites/caelum/domingo/DOMIY0.png", 0, 0 }
-Sprite "DOMIZ0", 256, 256 { Offset 128, 244 Patch "sprites/caelum/domingo/DOMIZ0.png", 0, 0 }
+Sprite "DOMIS0", 136, 168 { XScale 1.130681818 YScale 1.130681818 Offset 74, 150 Patch "graphics/caelum/death_repair/domingo-original.png", -16, -766 }
+Sprite "DOMIT0", 157, 173 { XScale 1.130681818 YScale 1.130681818 Offset 75, 161 Patch "graphics/caelum/death_repair/domingo-original.png", -156, -765 }
+Sprite "DOMIU0", 168, 166 { XScale 1.130681818 YScale 1.130681818 Offset 88, 156 Patch "graphics/caelum/death_repair/domingo-original.png", -313, -772 }
+Sprite "DOMIV0", 139, 160 { XScale 1.130681818 YScale 1.130681818 Offset 68, 140 Patch "graphics/caelum/death_repair/domingo-original.png", -481, -778 }
+Sprite "DOMIW0", 145, 156 { XScale 1.130681818 YScale 1.130681818 Offset 68, 137 Patch "graphics/caelum/death_repair/domingo-original.png", -620, -782 }
+Sprite "DOMIX0", 185, 114 { XScale 1.130681818 YScale 1.130681818 Offset 95, 98 Graphic "CA518_DOMIX0_0", 0, 0 Graphic "CA518_DOMIX0_1", 173, 0 Graphic "CA518_DOMIX0_2", 184, 0 }
+Sprite "DOMIY0", 170, 108 { XScale 1.130681818 YScale 1.130681818 Offset 86, 92 Graphic "CA518_DOMIY0_0", 0, 70 Graphic "CA518_DOMIY0_1", 11, 65 Graphic "CA518_DOMIY0_2", 12, 0 Graphic "CA518_DOMIY0_3", 155, 0 }
+Sprite "DOMIZ0", 157, 88 { XScale 1.130681818 YScale 1.130681818 Offset 76, 73 Graphic "CA518_DOMIZ0_0", 0, 45 Graphic "CA518_DOMIZ0_1", 15, 0 }
 
 // V4.29.0s - canonical 128x128 world pickup aliases
 Sprite "CAMUA0", 128, 128 { Offset 64, 114 Patch "graphics/caelum/icons/ca_javelin.png", 0, 0 }
@@ -5729,9 +5729,43 @@ Graphic "graphics/caelum/icons/ca_giant_gauntlets_t3.png", 1280, 1280
 
 // #135: dedicated medium silver / large silver-and-gold potion variants.
 #include "graphics/caelum/demon_breath.textures"
+#include "graphics/caelum/vfx/elemental.textures"
+#include "graphics/caelum/vfx/breath.textures"
 Sprite "CMMDA0", 128, 128 { Offset 64, 120 Patch "graphics/caelum/icons/potions/medikit_medium.png", 0, 0 }
 Sprite "CMLGA0", 128, 128 { Offset 64, 120 Patch "graphics/caelum/icons/potions/medikit_large.png", 0, 0 }
 Sprite "CAMDA0", 128, 128 { Offset 64, 120 Patch "graphics/caelum/icons/potions/anima_medium.png", 0, 0 }
 Sprite "CALGA0", 128, 128 { Offset 64, 120 Patch "graphics/caelum/icons/potions/anima_large.png", 0, 0 }
 Sprite "CEMDA0", 128, 128 { Offset 64, 120 Patch "graphics/caelum/icons/potions/energy_medium.png", 0, 0 }
 Sprite "CELGA0", 128, 128 { Offset 64, 120 Patch "graphics/caelum/icons/potions/energy_large.png", 0, 0 }
+
+// BEGIN GENERATED RAT DEATH REPAIR 518
+Sprite "RATGF0", 130, 156 { XScale 0.941176471 YScale 0.941176471 Offset 65, 141 Patch "graphics/caelum/rat_original/death-0.png", 0, 0 }
+Sprite "RATGG0", 162, 114 { XScale 0.941176471 YScale 0.941176471 Offset 79, 103 Patch "graphics/caelum/rat_original/death-1.png", 0, 0 }
+Sprite "RATGH0", 186, 115 { XScale 0.941176471 YScale 0.941176471 Offset 88, 98 Patch "graphics/caelum/rat_original/death-2.png", 0, 0 }
+Sprite "RATGI0", 197, 113 { XScale 0.941176471 YScale 0.941176471 Offset 97, 105 Patch "graphics/caelum/rat_original/death-3.png", 0, 0 }
+Sprite "RATGJ0", 200, 103 { XScale 0.941176471 YScale 0.941176471 Offset 101, 82 Patch "graphics/caelum/rat_original/death-4.png", 0, 0 }
+Sprite "RATGK0", 191, 108 { XScale 0.941176471 YScale 0.941176471 Offset 95, 96 Patch "graphics/caelum/rat_original/death-5.png", 0, 0 }
+Sprite "RATGL0", 224, 116 { XScale 0.941176471 YScale 0.941176471 Offset 106, 101 Patch "graphics/caelum/rat_original/death-6.png", 0, 0 }
+Sprite "RATGM0", 224, 116 { XScale 0.941176471 YScale 0.941176471 Offset 106, 101 Patch "graphics/caelum/rat_original/death-6.png", 0, 0 }
+Sprite "RATGB1", 72, 100 { Offset 63, 92 Patch "graphics/caelum/rat_original/RATGB1.png", 0, 0 }
+Sprite "RATGB5", 70, 83 { Offset 28, 83 Patch "graphics/caelum/rat_original/RATGB5.png", 0, 0 }
+Sprite "RATGC3", 167, 90 { Offset 95, 91 Patch "graphics/caelum/rat_original/RATGC3.png", 0, 0 }
+Sprite "RATGC4", 155, 91 { Offset 96, 95 Patch "graphics/caelum/rat_original/RATGC4.png", 0, 0 }
+Sprite "RATGC5", 74, 89 { Offset 27, 92 Patch "graphics/caelum/rat_original/RATGC5.png", 0, 0 }
+Sprite "RATGC6", 134, 91 { Offset 38, 95 Patch "graphics/caelum/rat_original/RATGC6.png", 0, 0 }
+Sprite "RATGC8", 133, 90 { Offset 28, 94 Patch "graphics/caelum/rat_original/RATGC8.png", 0, 0 }
+Sprite "RATGE1", 87, 134 { Offset 62, 159 Patch "graphics/caelum/rat_original/RATGE1.png", 0, 0 }
+Sprite "RATGE5", 91, 145 { Offset 30, 158 Patch "graphics/caelum/rat_original/RATGE5.png", 0, 0 }
+// END GENERATED RAT DEATH REPAIR 518
+
+// BEGIN GENERATED ORIGINAL DOMINGO CLIPS 518
+Graphic "CA518_DOMIX0_0", 173, 114 { Patch "graphics/caelum/death_repair/domingo-original.png", -765, -820 }
+Graphic "CA518_DOMIX0_1", 11, 76 { Patch "graphics/caelum/death_repair/domingo-original.png", -938, -820 }
+Graphic "CA518_DOMIX0_2", 1, 71 { Patch "graphics/caelum/death_repair/domingo-original.png", -949, -820 }
+Graphic "CA518_DOMIY0_0", 11, 38 { Patch "graphics/caelum/death_repair/domingo-original.png", -938, -896 }
+Graphic "CA518_DOMIY0_1", 1, 43 { Patch "graphics/caelum/death_repair/domingo-original.png", -949, -891 }
+Graphic "CA518_DOMIY0_2", 143, 108 { Patch "graphics/caelum/death_repair/domingo-original.png", -950, -826 }
+Graphic "CA518_DOMIY0_3", 15, 70 { Patch "graphics/caelum/death_repair/domingo-original.png", -1093, -826 }
+Graphic "CA518_DOMIZ0_0", 15, 43 { Patch "graphics/caelum/death_repair/domingo-original.png", -1093, -896 }
+Graphic "CA518_DOMIZ0_1", 142, 88 { Patch "graphics/caelum/death_repair/domingo-original.png", -1108, -851 }
+// END GENERATED ORIGINAL DOMINGO CLIPS 518

@@ -1,0 +1,286 @@
+{
+  "issue": 137,
+  "method": "Author-approved deterministic crop/background removal; retained foreground RGB values equal the original source pixels. No AI redraw.",
+  "rat": {
+    "source": "rat-original.png",
+    "reference": [
+      257,
+      86,
+      389,
+      211
+    ],
+    "frames": [
+      [
+        231,
+        810,
+        361,
+        966
+      ],
+      [
+        372,
+        842,
+        534,
+        956
+      ],
+      [
+        522,
+        843,
+        708,
+        958
+      ],
+      [
+        710,
+        846,
+        907,
+        959
+      ],
+      [
+        901,
+        857,
+        1101,
+        960
+      ],
+      [
+        1107,
+        853,
+        1298,
+        961
+      ],
+      [
+        1301,
+        858,
+        1525,
+        974
+      ]
+    ],
+    "state_pose_indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      6
+    ],
+    "names": "FGHIJKLM",
+    "border_repairs": {
+      "RATGB1": {
+        "rect": [
+          241,
+          211,
+          313,
+          311
+        ],
+        "original_origin": [
+          174,
+          221
+        ],
+        "original_anchor": [
+          130,
+          82
+        ]
+      },
+      "RATGB5": {
+        "rect": [
+          932,
+          220,
+          1002,
+          303
+        ],
+        "original_origin": [
+          830,
+          221
+        ],
+        "original_anchor": [
+          130,
+          82
+        ]
+      },
+      "RATGC3": {
+        "rect": [
+          1193,
+          295,
+          1360,
+          385
+        ],
+        "original_origin": [
+          1158,
+          303
+        ],
+        "original_anchor": [
+          130,
+          83
+        ]
+      },
+      "RATGC4": {
+        "rect": [
+          1028,
+          291,
+          1183,
+          382
+        ],
+        "original_origin": [
+          994,
+          303
+        ],
+        "original_anchor": [
+          130,
+          83
+        ]
+      },
+      "RATGC5": {
+        "rect": [
+          933,
+          294,
+          1007,
+          383
+        ],
+        "original_origin": [
+          830,
+          303
+        ],
+        "original_anchor": [
+          130,
+          83
+        ]
+      },
+      "RATGC6": {
+        "rect": [
+          758,
+          291,
+          892,
+          382
+        ],
+        "original_origin": [
+          666,
+          303
+        ],
+        "original_anchor": [
+          130,
+          83
+        ]
+      },
+      "RATGC8": {
+        "rect": [
+          440,
+          292,
+          573,
+          382
+        ],
+        "original_origin": [
+          338,
+          303
+        ],
+        "original_anchor": [
+          130,
+          83
+        ]
+      },
+      "RATGE1": {
+        "rect": [
+          242,
+          671,
+          329,
+          805
+        ],
+        "original_origin": [
+          174,
+          684
+        ],
+        "original_anchor": [
+          130,
+          146
+        ]
+      },
+      "RATGE5": {
+        "rect": [
+          930,
+          672,
+          1021,
+          817
+        ],
+        "original_origin": [
+          830,
+          684
+        ],
+        "original_anchor": [
+          130,
+          146
+        ]
+      }
+    },
+    "preserve_death_alpha": [
+      [
+        {
+          "file": "RATGF0.png",
+          "origin": [
+            222,
+            830
+          ]
+        }
+      ],
+      [
+        {
+          "file": "RATGG0.png",
+          "origin": [
+            386,
+            830
+          ]
+        }
+      ],
+      [
+        {
+          "file": "RATGH0.png",
+          "origin": [
+            550,
+            830
+          ]
+        }
+      ],
+      [
+        {
+          "file": "RATGI0.png",
+          "origin": [
+            714,
+            830
+          ]
+        }
+      ],
+      [
+        {
+          "file": "RATGJ0.png",
+          "origin": [
+            878,
+            830
+          ]
+        }
+      ],
+      [
+        {
+          "file": "RATGK0.png",
+          "origin": [
+            1042,
+            830
+          ]
+        },
+        {
+          "file": "RATGL0.png",
+          "origin": [
+            1206,
+            830
+          ]
+        }
+      ],
+      [
+        {
+          "file": "RATGM0.png",
+          "origin": [
+            1370,
+            830
+          ]
+        }
+      ]
+    ]
+  }
+}

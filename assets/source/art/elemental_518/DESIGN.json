@@ -1,0 +1,22 @@
+{
+  "issue": 137,
+  "projectile_prefixes": ["VFFR", "VFLT", "VFWA", "VFIC", "VFEA", "VFPO", "VFAI", "VFLI", "VFQU"],
+  "colors": ["ff6820", "fff1a0", "329fff", "9eeaff", "dd9b42", "8aef36", "d0ecff", "bb7aff", "f060dc"],
+  "light_radii": [80, 96, 56, 64, 48, 56, 48, 80, 80],
+  "status_prefixes": ["VFBU", "VFVE", "VFFZ", "VFST"],
+  "projectile_size": [64, 64],
+  "status_size": [100, 140],
+  "projectiles_columns": [0, 267, 511, 756, 1024],
+  "projectiles_rows": [0, 170, 314, 470, 655, 836, 1003, 1186, 1347, 1536],
+  "statuses_columns": [0, 318, 627, 940, 1254],
+  "statuses_rows": [0, 334, 652, 958, 1254],
+  "breath_rows": [0, 313, 624, 962, 1287],
+  "frame_tics": 3,
+  "particle_life": 9,
+  "trail_interval": 2,
+  "dense_trail_interval": 8,
+  "detail_distance": 1024,
+  "dense_detail_distance": 512,
+  "impact_tics": 12,
+  "notes": "Cosmetic dimensions only; collider, speed, damage, range, resources and thermal power are unchanged. Original atlas pixels are never rewritten. Cell boundaries follow measured low-alpha gaps; the generated art is not a uniform grid."
+}

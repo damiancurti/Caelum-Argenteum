@@ -49,6 +49,9 @@ class CaelumActorProjectile : Actor
     int CaelumTravelRevision;
     double CaelumTravelledDistance;
     bool CaelumDiagnosticCompletionRecorded;
+    // Campos cosméticos: cero en saves anteriores; no alteran el vuelo guardado.
+    int CaelumVFXAge,CaelumVFXRevision;
+    bool CaelumVFXImpactShown;
 
     // Conserva la identidad del arma que originó el proyectil. Así la
     // durabilidad se descuenta del objeto correcto aunque el jugador cambie
@@ -172,7 +175,13 @@ class CaelumActorProjectile : Actor
         if (projectile != null)
         {
             projectile.RegisterCaelumDiagnosticCompletion(true, false);
+            CaelumElementalVFX.Impact(projectile);
         }
+    }
+
+    action void A_CaelumShowElementalImpact()
+    {
+        CaelumElementalVFX.Impact(CaelumActorProjectile(invoker));
     }
 
     void StoreCaelumWeaponWearIdentity(

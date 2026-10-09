@@ -1,0 +1,5 @@
+PK3 created successfully: C:\GZDooMProjects\CaelumArgenteum\build\caelum_argenteum_dev.pk3
+MAP02 layout: current source. Use -LegacyMap02 for saves that already visited the old maze.
+Files included: 6293
+MAP06 layout: furnished city with integrated southern siege. Select the matching legacy MAP06 option for previously visited ports.
+Directory entries: 0

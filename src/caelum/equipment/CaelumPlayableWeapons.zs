@@ -2924,34 +2924,7 @@ class CaelumPlayerMagicProjectile : CaelumActorProjectile
 
     void UpdateCaelumElementalWorldSprite()
     {
-        if (!CaelumElementalPayloadPrepared) { return; }
-
-        // Cada esencia usa un juego rotacional de ocho vistas. El ataque
-        // secundario cambia únicamente el arte elemental; la lógica de daño
-        // y estados sigue usando CaelumEssenceType + CaelumSecondaryElement.
-        String visual = "XFIR";
-        if (CaelumEssenceType == CaelumConstants.ESSENCE_FIRE)
-        {
-            visual = CaelumSecondaryElement ? "XLIT" : "XFIR";
-        }
-        else if (CaelumEssenceType == CaelumConstants.ESSENCE_WATER)
-        {
-            visual = CaelumSecondaryElement ? "XICE" : "XWAT";
-        }
-        else if (CaelumEssenceType == CaelumConstants.ESSENCE_EARTH)
-        {
-            visual = CaelumSecondaryElement ? "XVSN" : "XERT";
-        }
-        else if (CaelumEssenceType == CaelumConstants.ESSENCE_WIND)
-        {
-            visual = CaelumSecondaryElement ? "XRAY" : "XAIR";
-        }
-        else if (CaelumEssenceType == CaelumConstants.ESSENCE_QUINTESSENCE)
-        {
-            visual = "XQUI";
-        }
-        sprite = GetSpriteIndex(visual);
-        frame = 0;
+        CaelumElementalVFX.Projectile(self);
     }
 
     override void Tick()
@@ -2995,7 +2968,7 @@ class CaelumPlayerMagicProjectile : CaelumActorProjectile
         XFIR A 1 Bright;
         Loop;
     Death:
-        XFIR A 2 Bright;
+        XFIR A 2 Bright A_CaelumShowElementalImpact;
         Stop;
     }
 }
@@ -3197,7 +3170,7 @@ class CaelumExplosiveMagicProjectile : CaelumPlayerMagicProjectile
         Loop;
     Death:
         XFIR A 0 A_CaelumExplode;
-        XFIR A 2 Bright;
+        XFIR A 2 Bright A_CaelumShowElementalImpact;
         Stop;
     }
 }

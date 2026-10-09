@@ -1,6 +1,54 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **5.1.7** — 2026-10-08.
+Documentation version: **5.1.8** — 2026-10-09.
+
+## 5.1.8 - Elemental VFX, flying models and screen feedback (#137, 2026-10-09)
+
+The author chose intense effects and requested luminous magical projectiles,
+original 3D arrows/bolts/bullets/pellets, then flying javelins. Original atlases,
+native clipping and deterministic meshes now feed a shared presentation layer.
+The Federal prisoner's small electric effect is replaced by the staff ray.
+Existing actor classes and state indices remain usable in saved games.
+
+During implementation the author approved percent-based damage flashes with
+physical red, fire orange, cold cyan, poison green and electrical violet;
+subtle Health borders at <=50%, stronger at <=10%; and more conspicuous Lucidity
+feedback. Native absolute damage flash is replaced only in presentation.
+Actual damage, defenses, resources, thermal state and projectile behavior remain
+in their existing services. Temporary DOT color context is restored after use.
+
+Audit found static projectile frames, NPC presentation being reset by its spawn
+state, vertical flame columns in breath, and hard rectangular status edges.
+The native pass verifies flight, lighting, overlapping statuses, models, breath,
+water, real impacts, percent feedback and cleanup. Baseline/current traces cover
+623 launched projectiles across 240 player combinations, 18 NPC elemental cases
+and five physical types; the recorded gameplay fields match exactly.
+Save/load and hub records, comparable images, cost measurements and rejected QA
+attempts are distinguished in assets/validation_518/RESULTS.md. Source artwork
+and model generators retain provenance; temporary test resources stay local.
+The author then reported broken Domingo/giant-rat death cuts. Native inspection
+confirmed missing heads and neighboring body fragments in the old PNGs. New
+eight-frame reconstructions preserve identity/pose progression, names and state
+timing; original files remain untouched. Frame-by-frame and actual native Death
+sequence captures are in deathframes-before/after. These first deliveries were
+reconstructions, not recovered source pixels.
+Later on 2026-10-09 the author supplied complete original sheets for Domingo,
+rat and bull and approved deterministic cropping/background removal. Domingo's
+eight original poses now replace the reconstruction through native clipping;
+the rat's seven original poses use the same eight timed states, holding its last
+corpse twice. Nine additional rat movement/pain edge cuts were restored. All 118
+bull sprites were reviewed without finding clipping. Initial claims about rat
+labels/neighbor fragments are qualified: those pixels have alpha zero and do not
+render; the confirmed remaining defects were small silhouette border cuts.
+Earlier assets/evidence remain intact. Updated evidence is in validation_518.
+Author acceptance, 2026-10-09 (America/Buenos_Aires): the author confirms all
+outstanding tests passed and requests #137 closure and PR #151 merge.
+CA137-01 (elemental visuals and flying models), CA137-02 (damage, Health and
+Lucidity feedback), and CA137-03 (Domingo/giant-rat deaths and animal sprite
+audit), all originating in 5.1.8 / issue #137, are PASSED without qualifications.
+Their entries were removed from pending_test.txt, which remains tracked and empty.
+Technical results above remain separate evidence. Source assets, supporting
+runtime and native evidence are retained in the PR #151 delivery.
 
 ## 5.1.7 - Shortbow becomes a modular double-barrel shotgun (#136, 2026-10-08)
 
