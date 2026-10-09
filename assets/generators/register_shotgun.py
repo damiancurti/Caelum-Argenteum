@@ -23,6 +23,7 @@ def cells(path, rows_count, columns):
 def main():
     output=['// Generated from original unmodified atlases; native texture clipping.']
     report={}
+    layout=json.loads((ROOT/'assets/source/art/shotgun_517/PICKUP_LAYOUT.json').read_text(encoding='utf-8'))
     def texture(kind,name,file,rect,scale,offset):
         x1,y1,x2,y2=rect
         output.append(f'{kind} "{name}", {x2-x1}, {y2-y1}\n{{\n    XScale {scale:.9f}\n    YScale {scale:.9f}\n    Offset {offset[0]}, {offset[1]}\n    Patch "graphics/caelum/shotgun/{file}", {-x1}, {-y1}\n}}')
@@ -44,12 +45,22 @@ def main():
         rect=[0,edges[hand_row],362,edges[hand_row+1]]
         texture('Sprite',f'SHHD{chr(65+pose)}0','hands_layer.png',rect,2.2,[181,hand_bottom-rect[1]])
         hands.append(dict(pose=pose,rect=rect))
+        if pose in (0,2):
+            # Native subtexture keeps the support hand in front; the gripping
+            # right hand stays behind the stock. No source pixels are edited.
+            left=[0,rect[1],layout['support_hand_clip_x'],rect[3]]
+            name=f'CA_SHOTGUN_LEFT_{pose}'
+            texture('Graphic',name,'hands_layer.png',left,1,[0,0])
+            output.append(f'Sprite "SHHL{chr(65+pose)}0", 362, {rect[3]-rect[1]}\n{{\n    XScale 2.2\n    YScale 2.2\n    Offset 181, {hand_bottom-rect[1]}\n    Graphic "{name}", 0, 0\n}}')
+            hands[-1]['foreground_rect']=left
     icons=cells(ART/'icons.png',2,2)
     for f in icons:
         b=f['bounds'];rect=[b[0],b[1],b[2]+1,b[3]+1];w=rect[2]-rect[0];h=rect[3]-rect[1];c=f['row']*2+f['column']
         name=f'CA_SHOTGUN_T{c+1}' if c<3 else 'CA_SHOTGUN_AMMO'
         texture('Graphic',name,'icons.png',rect,h/(120 if c<3 else 64),[0,0])
-        if c in (0,3):texture('Sprite','CSGNA0' if c==0 else 'CSAMA0','icons.png',rect,h/120,[w//2,h])
+        if c in (0,3):
+            world_height=120 if c==0 else layout['cartridge_world_height_meters']*layout['map_units_per_meter']/layout['actor_scale']
+            texture('Sprite','CSGNA0' if c==0 else 'CSAMA0','icons.png',rect,h/world_height,[w//2,h])
     world=cells(ART/'world.png',6,8)
     rw,rh,rr=rgba(ROOT/'src/sprites/caelum/domingo/DOIDA1.png');rb=alpha_bounds(rr,(0,0,rw,rh))
     scale=sum(f['bounds'][3]-f['bounds'][1]+1 for f in world[:8])/8/(rb[3]-rb[1]+1)
