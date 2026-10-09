@@ -1,0 +1,14 @@
+CA152-01 | Origin: 5.1.9 / issue #152 | Cartridge pickup and world size
+Prerequisites: rebuild with run_dev.bat; load a copy of Prueba or use a new shotgun cartridge pickup.
+Steps: inspect the place where the collected cartridges remained; collect another stack and walk across the spot again. Compare inventory amounts before/after, including carbine ammunition. Inspect the smaller cartridge pickup before collecting it.
+Expected: previously owned cartridges no longer appear on the floor; each new stack adds its quantity once and disappears. Carbine ammunition stays separate. Confirm visibility/readability of the approved 6 cm world-art size; mass and inventory icon size are unchanged.
+
+CA152-02 | Origin: 5.1.9 / issue #152 | Shotgun grip overlap
+Prerequisites: the same build and an equipped shotgun with ammunition.
+Steps: inspect ready, aimed, recoil, empty opening, single/partial loading and completed reload poses; switch away and back. Compare tiers if available.
+Expected: the right grip sits behind the stock while the support hand and insertion hand/cartridges remain on the appropriate side. No clipped wrist, duplicated hand, visible rectangular seam or persistent overlay after switching.
+
+CA152-03 | Origin: 5.1.9 / issue #152 | One aim toggle per press
+Prerequisites: a ranged weapon; alternate fire on the right mouse button and Zoom on F.
+Steps: hold the right button for several seconds, release, then press and hold again. Repeat with F and another available ranged weapon. Try an ordinary secondary action with a melee or magical weapon.
+Expected: each aim button press toggles only once and holding does not oscillate. Releasing/repressing toggles again. Existing melee/magic secondary behavior remains unchanged.

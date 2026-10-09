@@ -1,6 +1,33 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **5.1.8** — 2026-10-09.
+Documentation version: **5.1.9** — 2026-10-09.
+
+## 5.1.9 - Shotgun pickup, grip and held aim correction (#152, 2026-10-09)
+
+After accepting #137, the author reported visible/oversized collected shotgun
+cartridges, the right hand covering the stock, and repeated aim toggles while
+holding alternate fire. The supplied Prueba checkpoint contains 1,081 owned
+shells with world flags still active; its 895 carbine rounds are correctly held.
+Acquisition had called AddInventory without BecomeItem. It now uses AttachToOwner;
+existing invalid owned stacks normalize idempotently on Tick, preserving counts.
+
+Ranged alternate aim now has its own transient release latch. The baseline input
+script recorded 212 transitions for two held alternate-fire presses and two Zoom
+presses; the corrected shotgun, carbine, longbow and crossbow each record four.
+The right grip moves behind the shotgun; a native subtexture keeps the support
+hand in front, and loading remains foreground. Original PNGs and state indices
+remain intact. Pickup art shrinks from 37.5 cm to the 6 cm reference explicitly approved by the
+author on 2026-10-09. That design approval is separate from native visual acceptance.
+
+The author also reported disproportionate stair heat, incomplete return to zero,
+and missing beastfolk fur wetness, and asked to fix the weapon while considering
+new thermal rules. Diagnostics retain the accepted model: 8.25 m of ascent for
+this 485.428 kg moved mass adds 459.924 kJ at native gravity, versus 7.143 kJ for
+the fixed 0.5 m human-reference jump. Isolated forecast copies just below the
+Heat threshold do sweat and cool. The original save is slightly cold and wet;
+it does not capture the claimed hot plateau. Fur has no separate water reservoir.
+No thermal recalibration is included. Evidence and rejected attempts are in
+assets/validation_519/RESULTS.md. CA152-01/02/03 await explicit author acceptance.
 
 ## 5.1.8 - Elemental VFX, flying models and screen feedback (#137, 2026-10-09)
 

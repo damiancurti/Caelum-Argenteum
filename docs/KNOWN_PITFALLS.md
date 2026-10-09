@@ -4,6 +4,25 @@ Status: integrated engineering register (issue #22, patch 4.36.1b).
 Prepared: 2026-09-23. Inherits the project's release after integration.
 Inspected baseline: `1dc390576fa330d37ff543526fc7e69a397fc28f` (PR #7).
 
+## CA-KP-065 - Inventory linkage does not complete a held-item transition
+
+Status/evidence: ENGINE-VERIFIED, #152 / 5.1.9, 2026-10-09.
+Affected path: distinct ammunition creation and already-saved owned actors.
+
+AddInventory assigns ownership but does not run BecomeItem. A newly spawned
+ammunition actor can therefore be in the inventory and still render at its old
+world position with pickup/collision links active. Use AttachToOwner, which calls
+BecomeItem before linking ownership. Do not call GiveInventory recursively from
+that ammunition's own TryPickup path. Native counts alone cannot prove removal:
+inspect owner, amount, bSpecial, bNoSector/bNoBlockmap and the actual world view.
+
+For existing saves, normalize an owned stack only when its world flags are still
+active. BecomeItem preserves quantity and owner and is idempotent; normal held
+stacks need no repeated state reset. The author's Prueba save reproduces 1,081
+owned but visible shells. The corrected load preserves those and 895 separate
+carbine rounds. Capacity/retry checks supplement that old-save proof. See
+assets/validation_519/RESULTS.md; author visual acceptance remains pending.
+
 ## CA-KP-064 - Inspect atlas seams and source damage before changing offsets
 
 Status/evidence: RESOLVED-VERIFIED for the #137 assets, 5.1.8, 2026-10-09.

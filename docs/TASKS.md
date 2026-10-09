@@ -1,6 +1,21 @@
 # TASKS.md — Active tasks
 
-Documentation version: **5.1.8** — 2026-10-09.
+Documentation version: **5.1.9** — 2026-10-09.
+
+## Issue #152 - Shotgun follow-up (5.1.9)
+
+Fix the reproduced owned-but-visible ammunition stack, correct right-hand/stock
+occlusion and make ranged alternate aim act once per press. Native pickup checks
+cover capacity failure/retry and independent carbine/shotgun counts. Existing-save
+upgrade and ranged input tests have separate evidence in validation_519.
+Cartridge art uses the approved 6 cm reference; author visual review is pending.
+Pending checks: CA152-01/02/03 in pending_test.txt. Deliver via a focused linked PR;
+no merge or closure is authorized for this new issue yet.
+
+Thermal follow-up is deferred while the author decides: stair/jump work references,
+metabolic power including zero-net-work effort, and beastfolk fur water/insulation.
+Diagnosis confirms sweat is active inside the Normal range and the supplied
+save's exposure is -0.482, not a captured hot state. No thermal runtime edits.
 
 ## Issue #137 - Elemental VFX and screen feedback (5.1.8)
 

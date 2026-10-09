@@ -1,6 +1,21 @@
 # Caelum Argenteum — Audio and art
 
-Documentation version: **5.1.8** — 2026-10-09.
+Documentation version: **5.1.9** — 2026-10-09.
+
+## 5.1.9 - Shotgun grip occlusion and cartridge world scale (#152)
+
+Existing weapon/hand PNGs remain unchanged and independently reusable. Native
+subtextures in register_shotgun.py isolate the left support hand; the complete
+hand layer moves behind the weapon for ready/opening poses, and only the left
+hand is drawn again in front. The insertion hand and cartridges remain foreground.
+Existing hand-state indices are retained; two foreground states append at the end.
+Aim continues using the carbine hand poses. Recoil and lowering transform all layers.
+
+assets/source/art/shotgun_517/PICKUP_LAYOUT.json stores the support-hand clipping
+coordinate and author-approved 6 cm cartridge world-height reference. This corrects
+the reported 37.5 cm pickup artwork without changing its inventory icon, count,
+weight or collision. Author native-appearance review is still pending. Registration
+and a repeated deterministic export are recorded in assets/validation_519.
 
 ## 5.1.8 - Original elemental atlases and projectile meshes (#137)
 

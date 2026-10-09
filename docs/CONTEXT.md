@@ -1,12 +1,11 @@
 # CONTEXT.md — Caelum Argenteum
 
-Documentation version: **5.1.8** — 2026-10-09.
+Documentation version: **5.1.9** — 2026-10-09.
 
-**5.1.8/#137:** elemental VFX, 3D flying physical projectiles/javelins,
-shared Federal/staff lightning, proportional damage/Health/Lucidity feedback.
-Original deaths/animals audited. CA137-01/02/03 accepted 2026-10-09; PR151 approved.
-**5.1.7/#136 accepted 2026-10-08:** PR146, validation_517. Shotgun,
-fixed-work heat and Type-2 adaptation. CA136-01/02/CA143-01 passed.
+**5.1.9/#152:** shotgun pickup repair, grip layers and one-press ADS.
+Evidence: validation_519; author checks pending. Thermal redesign deferred.
+**5.1.8/#137 accepted:** PR151 merged; validation_518.
+**5.1.7/#136 accepted:** PR146; validation_517.
 
 Soldiers: validation_516. #135/PR144 accepted/merged (5e550484).
 #133 checks accepted. #140 merged 5f9202ad.

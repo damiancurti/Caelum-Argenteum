@@ -1,0 +1,8 @@
+{
+  "generator": "assets/generators/register_shotgun.py",
+  "two_runs_identical": true,
+  "outputs": {
+    "src/graphics/caelum/shotgun.textures": "8f96db7b5c4aa323342bc28925915dbc28fdb9c262fc0da6213a154098409471",
+    "assets/source/art/shotgun_517/REGISTRATION.json": "03e8b37f4b99f287dff651b204eadeaf04a43bf1a051d00a06f6486414ae843c"
+  }
+}

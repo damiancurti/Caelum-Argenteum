@@ -1,0 +1,36 @@
+{
+  "original_sha256": "3cde87c764be563206a606d054e59692c98f417f47ec13d481e86886ce8c4342",
+  "original_unchanged": true,
+  "upgraded_sha256": "d2a566ed3e4a3963532be712b2e492941f00e9b49f8d462e79f2c0c8fd313dbd",
+  "upgraded_ammunition": [
+    {
+      "class": "CaelumCarbineAmmo",
+      "owner": 1,
+      "amount": 895,
+      "sprite": null,
+      "state": [
+        "Inventory",
+        15
+      ],
+      "flags": 131096
+    },
+    {
+      "class": "CaelumShotgunAmmo",
+      "owner": 1,
+      "amount": 1081,
+      "sprite": null,
+      "state": [
+        "Inventory",
+        15
+      ],
+      "flags": 131096
+    }
+  ],
+  "native_loads": [
+    "saved-before-b",
+    "saved-fixed-a",
+    "save-upgrade",
+    "save-reload"
+  ],
+  "rollback": "Original checkpoint and original package retained untouched; saved-before-b demonstrates their native load. No downgrade of newly saved data is claimed."
+}
