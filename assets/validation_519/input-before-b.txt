@@ -1,0 +1,276 @@
+Log started: 2026-10-09 11:30:34
+GZDoom version g4.14.2
+D_DoomInit: Static RNGseed 116 set.
+W_Init: Init WADfiles.
+adding C:/Program Files (x86)/GZDoom/gzdoom.pk3, 692 lumps
+adding C:/Program Files (x86)/GZDoom/game_support.pk3, 3308 lumps
+adding C:/Program Files (x86)/Steam/steamapps/common/ultimate doom/base/doom2/DOOM2.WAD, 2919 lumps
+adding C:/Program Files (x86)/Steam/steamapps/common/Ultimate Doom/rerelease/id24res.wad, 530 lumps
+adding C:/Program Files (x86)/GZDoom/game_widescreen_gfx.pk3, 214 lumps
+adding C:/GZDooMProjects/CaelumArgenteum/build/issue152/caelum_argenteum_dev.pk3, 6293 lumps
+adding C:/GZDooMProjects/CaelumArgenteum/build/issue152/observer.pk3, 6 lumps
+S_Init: Setting up sound.
+I_InitSound: Initializing OpenAL
+  Opened device OpenAL Soft on G27F (NVIDIA High Definition Audio)
+  EFX enabled
+I_InitInput
+I_StartupMouse
+I_StartupKeyboard
+I_StartupXInput
+I_StartupRawPS2
+I_StartupDirectInputJoystick
+Vulkan device: NVIDIA GeForce RTX 3070 Ti
+Vulkan device type: discrete gpu
+Vulkan version: 1.4.303 (api) 576.352.0 (driver)
+Vulkan extensions: VK_KHR_16bit_storage VK_KHR_8bit_storage VK_KHR_acceleration_structure VK_KHR_bind_memory2 VK_KHR_buffer_device_address VK_KHR_calibrated_timestamps VK_KHR_compute_shader_derivatives VK_KHR_cooperative_matrix VK_KHR_copy_commands2 VK_KHR_create_renderpass2 VK_KHR_dedicated_allocation VK_KHR_deferred_host_operations VK_KHR_depth_stencil_resolve VK_KHR_descriptor_update_template VK_KHR_device_group VK_KHR_draw_indirect_count VK_KHR_driver_properties VK_KHR_dynamic_rendering VK_KHR_dynamic_rendering_local_read VK_KHR_external_fence VK_KHR_external_fence_win32 VK_KHR_external_memory VK_KHR_external_memory_win32 VK_KHR_external_semaphore VK_KHR_external_semaphore_win32 VK_KHR_format_feature_flags2 VK_KHR_fragment_shader_barycentric VK_KHR_fragment_shading_rate VK_KHR_get_memory_requirements2 VK_KHR_global_priority VK_KHR_image_format_list VK_KHR_imageless_framebuffer VK_KHR_index_type_uint8 VK_KHR_line_rasterization VK_KHR_load_store_op_none VK_KHR_maintenance1 VK_KHR_maintenance2 VK_KHR_maintenance3 VK_KHR_maintenance4 VK_KHR_maintenance5 VK_KHR_maintenance6 VK_KHR_maintenance7 VK_KHR_map_memory2 VK_KHR_multiview VK_KHR_pipeline_binary VK_KHR_pipeline_executable_properties VK_KHR_pipeline_library VK_KHR_present_id VK_KHR_present_wait VK_KHR_push_descriptor VK_KHR_ray_query VK_KHR_ray_tracing_maintenance1 VK_KHR_ray_tracing_pipeline VK_KHR_ray_tracing_position_fetch VK_KHR_relaxed_block_layout VK_KHR_sampler_mirror_clamp_to_edge VK_KHR_sampler_ycbcr_conversion VK_KHR_separate_depth_stencil_layouts VK_KHR_shader_atomic_int64 VK_KHR_shader_clock VK_KHR_shader_draw_parameters VK_KHR_shader_expect_assume VK_KHR_shader_float16_int8 VK_KHR_shader_float_controls VK_KHR_shader_float_controls2 VK_KHR_shader_integer_dot_product VK_KHR_shader_maximal_reconvergence VK_KHR_shader_non_semantic_info VK_KHR_shader_quad_control VK_KHR_shader_relaxed_extended_instruction VK_KHR_shader_subgroup_extended_types VK_KHR_shader_subgroup_rotate VK_KHR_shader_subgroup_uniform_control_flow VK_KHR_shader_terminate_invocation VK_KHR_spirv_1_4 VK_KHR_storage_buffer_storage_class VK_KHR_swapchain VK_KHR_swapchain_mutable_format VK_KHR_synchronization2 VK_KHR_timeline_semaphore VK_KHR_uniform_buffer_standard_layout VK_KHR_variable_pointers VK_KHR_vertex_attribute_divisor VK_KHR_video_decode_av1 VK_KHR_video_decode_h264 VK_KHR_video_decode_h265 VK_KHR_video_decode_queue VK_KHR_video_encode_h264 VK_KHR_video_encode_h265 VK_KHR_video_encode_quantization_map VK_KHR_video_encode_queue VK_KHR_video_maintenance1 VK_KHR_video_maintenance2 VK_KHR_video_queue VK_KHR_vulkan_memory_model VK_KHR_win32_keyed_mutex VK_KHR_workgroup_memory_explicit_layout VK_KHR_zero_initialize_workgroup_memory VK_EXT_4444_formats VK_EXT_attachment_feedback_loop_dynamic_state VK_EXT_attachment_feedback_loop_layout VK_EXT_blend_operation_advanced VK_EXT_border_color_swizzle VK_EXT_buffer_device_address VK_EXT_calibrated_timestamps VK_EXT_color_write_enable VK_EXT_conditional_rendering VK_EXT_conservative_rasterization VK_EXT_custom_border_color VK_EXT_depth_bias_control VK_EXT_depth_clamp_control VK_EXT_depth_clamp_zero_one VK_EXT_depth_clip_control VK_EXT_depth_clip_enable VK_EXT_depth_range_unrestricted VK_EXT_descriptor_buffer VK_EXT_descriptor_indexing VK_EXT_device_address_binding_report VK_EXT_device_fault VK_EXT_device_generated_commands VK_EXT_discard_rectangles VK_EXT_dynamic_rendering_unused_attachments VK_EXT_extended_dynamic_state VK_EXT_extended_dynamic_state2 VK_EXT_extended_dynamic_state3 VK_EXT_external_memory_host VK_EXT_fragment_shader_interlock VK_EXT_full_screen_exclusive VK_EXT_global_priority VK_EXT_global_priority_query VK_EXT_graphics_pipeline_library VK_EXT_hdr_metadata VK_EXT_host_image_copy VK_EXT_host_query_reset VK_EXT_image_2d_view_of_3d VK_EXT_image_robustness VK_EXT_image_sliced_view_of_3d VK_EXT_image_view_min_lod VK_EXT_index_type_uint8 VK_EXT_inline_uniform_block VK_EXT_legacy_vertex_attributes VK_EXT_line_rasterization VK_EXT_load_store_op_none VK_EXT_memory_budget VK_EXT_memory_priority VK_EXT_mesh_shader VK_EXT_multi_draw VK_EXT_mutable_descriptor_type VK_EXT_nested_command_buffer VK_EXT_non_seamless_cube_map VK_EXT_opacity_micromap VK_EXT_pageable_device_local_memory VK_EXT_pci_bus_info VK_EXT_pipeline_creation_cache_control VK_EXT_pipeline_creation_feedback VK_EXT_pipeline_library_group_handles VK_EXT_pipeline_robustness VK_EXT_post_depth_coverage VK_EXT_present_mode_fifo_latest_ready VK_EXT_primitive_topology_list_restart VK_EXT_primitives_generated_query VK_EXT_private_data VK_EXT_provoking_vertex VK_EXT_queue_family_foreign VK_EXT_robustness2 VK_EXT_sample_locations VK_EXT_sampler_filter_minmax VK_EXT_scalar_block_layout VK_EXT_separate_stencil_usage VK_EXT_shader_atomic_float VK_EXT_shader_demote_to_helper_invocation VK_EXT_shader_image_atomic_int64 VK_EXT_shader_module_identifier VK_EXT_shader_object VK_EXT_shader_replicated_composites VK_EXT_shader_subgroup_ballot VK_EXT_shader_subgroup_vote VK_EXT_shader_viewport_index_layer VK_EXT_subgroup_size_control VK_EXT_swapchain_maintenance1 VK_EXT_texel_buffer_alignment VK_EXT_tooling_info VK_EXT_transform_feedback VK_EXT_vertex_attribute_divisor VK_EXT_vertex_attribute_robustness VK_EXT_vertex_input_dynamic_state VK_EXT_ycbcr_2plane_444_formats VK_EXT_ycbcr_image_arrays VK_NV_acquire_winrt_display VK_NV_clip_space_w_scaling VK_NV_cluster_acceleration_structure VK_NV_compute_shader_derivatives VK_NV_cooperative_matrix VK_NV_cooperative_matrix2 VK_NV_cooperative_vector VK_NV_copy_memory_indirect VK_NV_corner_sampled_image VK_NV_coverage_reduction_mode VK_NV_cuda_kernel_launch VK_NV_dedicated_allocation VK_NV_dedicated_allocation_image_aliasing VK_NV_descriptor_pool_overallocation VK_NV_device_diagnostic_checkpoints VK_NV_device_diagnostics_config VK_NV_device_generated_commands VK_NV_device_generated_commands_compute VK_NV_disk_cache_utils VK_NV_external_memory VK_NV_external_memory_win32 VK_NV_fill_rectangle VK_NV_fragment_coverage_to_color VK_NV_fragment_shader_barycentric VK_NV_fragment_shading_rate_enums VK_NV_framebuffer_mixed_samples VK_NV_geometry_shader_passthrough VK_NV_inherited_viewport_scissor VK_NV_internal_nvpresent VK_NV_linear_color_attachment VK_NV_low_latency VK_NV_low_latency2 VK_NV_memory_decompression VK_NV_mesh_shader VK_NV_optical_flow VK_NV_partitioned_acceleration_structure VK_NV_present_metering VK_NV_raw_access_chains VK_NV_ray_tracing VK_NV_ray_tracing_invocation_reorder VK_NV_ray_tracing_motion_blur VK_NV_representative_fragment_test VK_NV_sample_mask_override_coverage VK_NV_scissor_exclusive VK_NV_shader_atomic_float16_vector VK_NV_shader_image_footprint VK_NV_shader_sm_builtins VK_NV_shader_subgroup_partitioned VK_NV_shading_rate_image VK_NV_viewport_array2 VK_NV_viewport_swizzle VK_NV_win32_keyed_mutex VK_NVX_binary_import VK_NVX_image_view_handle VK_NVX_multiview_per_view_attributes VK_AMD_buffer_marker VK_GOOGLE_hlsl_functionality1 VK_GOOGLE_user_type
+Max. texture size: 32768
+Max. uniform buffer range: 65536
+Min. uniform buffer offset alignment: 64
+Resolution: 1280 x 720
+I_Init: Setting up machine state.
+CPU speed: 3400 MHz
+CPU Vendor ID: AuthenticAMD
+  Name: AMD Ryzen 9 5950X 16-Core Processor
+  Family 25 (25), Model 33, Stepping 0
+  Features: SSE2 SSE3 SSSE3 SSE4.1 SSE4.2 AVX AVX2 F16C FMA3 BMI1 BMI2 HyperThreading
+V_Init: allocate screen.
+ST_Init: Init startup screen.
+Checking cmd-line parameters...
+S_InitData: Load sound definitions.
+G_ParseMapInfo: Load map definitions.
+Texman.Init: Init texture manager.
+ParseTeamInfo: Load team definitions.
+LoadActors: Load actor definitions.
+script parsing took 1067.87 ms
+R_Init: Init Doom refresh subsystem.
+DecalLibrary: Load decals.
+M_Init: Init menus.
+P_Init: Init Playloop state.
+ParseSBarInfo: Loading custom status bar definition.
+D_CheckNetGame: Checking network game status.
+player 1 of 1 (1 nodes)
+
+----------------------------------------
+
+CA152 - Shotgun follow-up
+
+[Caelum] Inicio por comando directo: perfil de prueba seguro aplicado.
+[Caelum] Character creation values loaded. Attribute total: 150.00
+[Caelum] Inicio por comando directo: perfil de prueba seguro aplicado.
+CA152 AIM tic=101 stage=0 aim=1 transitions=1 alt=1 zoom=0
+CA152 AIM tic=102 stage=0 aim=0 transitions=2 alt=1 zoom=0
+CA152 AIM tic=103 stage=0 aim=1 transitions=3 alt=1 zoom=0
+CA152 AIM tic=104 stage=0 aim=0 transitions=4 alt=1 zoom=0
+CA152 AIM tic=105 stage=0 aim=1 transitions=5 alt=1 zoom=0
+CA152 AIM tic=106 stage=0 aim=0 transitions=6 alt=1 zoom=0
+CA152 AIM tic=107 stage=0 aim=1 transitions=7 alt=1 zoom=0
+CA152 AIM tic=108 stage=0 aim=0 transitions=8 alt=1 zoom=0
+CA152 AIM tic=109 stage=0 aim=1 transitions=9 alt=1 zoom=0
+CA152 AIM tic=110 stage=0 aim=0 transitions=10 alt=1 zoom=0
+CA152 AIM tic=111 stage=0 aim=1 transitions=11 alt=1 zoom=0
+CA152 AIM tic=112 stage=0 aim=0 transitions=12 alt=1 zoom=0
+CA152 AIM tic=113 stage=0 aim=1 transitions=13 alt=1 zoom=0
+CA152 AIM tic=114 stage=0 aim=0 transitions=14 alt=1 zoom=0
+CA152 AIM tic=115 stage=0 aim=1 transitions=15 alt=1 zoom=0
+CA152 AIM tic=116 stage=0 aim=0 transitions=16 alt=1 zoom=0
+CA152 AIM tic=117 stage=0 aim=1 transitions=17 alt=1 zoom=0
+CA152 AIM tic=118 stage=0 aim=0 transitions=18 alt=1 zoom=0
+CA152 AIM tic=119 stage=0 aim=1 transitions=19 alt=1 zoom=0
+CA152 AIM tic=120 stage=0 aim=0 transitions=20 alt=1 zoom=0
+CA152 AIM tic=121 stage=0 aim=1 transitions=21 alt=1 zoom=0
+CA152 AIM tic=122 stage=0 aim=0 transitions=22 alt=1 zoom=0
+CA152 AIM tic=123 stage=0 aim=1 transitions=23 alt=1 zoom=0
+CA152 AIM tic=124 stage=0 aim=0 transitions=24 alt=1 zoom=0
+CA152 AIM tic=125 stage=0 aim=1 transitions=25 alt=1 zoom=0
+CA152 AIM tic=126 stage=0 aim=0 transitions=26 alt=1 zoom=0
+CA152 AIM tic=127 stage=0 aim=1 transitions=27 alt=1 zoom=0
+CA152 AIM tic=128 stage=0 aim=0 transitions=28 alt=1 zoom=0
+CA152 AIM tic=129 stage=0 aim=1 transitions=29 alt=1 zoom=0
+CA152 AIM tic=130 stage=0 aim=0 transitions=30 alt=1 zoom=0
+CA152 AIM tic=131 stage=0 aim=1 transitions=31 alt=1 zoom=0
+CA152 AIM tic=132 stage=0 aim=0 transitions=32 alt=1 zoom=0
+CA152 AIM tic=133 stage=0 aim=1 transitions=33 alt=1 zoom=0
+CA152 AIM tic=134 stage=0 aim=0 transitions=34 alt=1 zoom=0
+CA152 AIM tic=135 stage=0 aim=1 transitions=35 alt=1 zoom=0
+CA152 AIM tic=136 stage=0 aim=0 transitions=36 alt=1 zoom=0
+CA152 AIM tic=137 stage=0 aim=1 transitions=37 alt=1 zoom=0
+CA152 AIM tic=138 stage=0 aim=0 transitions=38 alt=1 zoom=0
+CA152 AIM tic=139 stage=0 aim=1 transitions=39 alt=1 zoom=0
+CA152 AIM tic=140 stage=0 aim=0 transitions=40 alt=1 zoom=0
+CA152 AIM tic=141 stage=0 aim=1 transitions=41 alt=1 zoom=0
+CA152 AIM tic=142 stage=0 aim=0 transitions=42 alt=1 zoom=0
+CA152 AIM tic=143 stage=0 aim=1 transitions=43 alt=1 zoom=0
+CA152 AIM tic=144 stage=0 aim=0 transitions=44 alt=1 zoom=0
+CA152 AIM tic=145 stage=0 aim=1 transitions=45 alt=1 zoom=0
+CA152 AIM tic=146 stage=0 aim=0 transitions=46 alt=1 zoom=0
+CA152 AIM tic=147 stage=0 aim=1 transitions=47 alt=1 zoom=0
+CA152 AIM tic=148 stage=0 aim=0 transitions=48 alt=1 zoom=0
+CA152 AIM tic=149 stage=0 aim=1 transitions=49 alt=1 zoom=0
+CA152 AIM tic=150 stage=0 aim=0 transitions=50 alt=1 zoom=0
+CA152 AIM tic=151 stage=0 aim=1 transitions=51 alt=1 zoom=0
+CA152 AIM tic=152 stage=0 aim=0 transitions=52 alt=1 zoom=0
+CA152 AIM tic=153 stage=0 aim=1 transitions=53 alt=1 zoom=0
+CA152 AIM tic=154 stage=0 aim=0 transitions=54 alt=1 zoom=0
+CA152 AIM tic=155 stage=0 aim=1 transitions=55 alt=1 zoom=0
+CA152 AIM tic=156 stage=0 aim=0 transitions=56 alt=1 zoom=0
+CA152 AIM tic=157 stage=0 aim=1 transitions=57 alt=1 zoom=0
+CA152 AIM tic=158 stage=0 aim=0 transitions=58 alt=1 zoom=0
+CA152 AIM tic=159 stage=0 aim=1 transitions=59 alt=1 zoom=0
+CA152 AIM tic=160 stage=0 aim=0 transitions=60 alt=1 zoom=0
+CA152 AIM tic=161 stage=0 aim=1 transitions=61 alt=1 zoom=0
+CA152 AIM tic=162 stage=0 aim=0 transitions=62 alt=1 zoom=0
+CA152 AIM tic=163 stage=0 aim=1 transitions=63 alt=1 zoom=0
+CA152 AIM tic=164 stage=0 aim=0 transitions=64 alt=1 zoom=0
+CA152 AIM tic=165 stage=0 aim=1 transitions=65 alt=1 zoom=0
+CA152 AIM tic=166 stage=0 aim=0 transitions=66 alt=1 zoom=0
+CA152 AIM tic=167 stage=0 aim=1 transitions=67 alt=1 zoom=0
+CA152 AIM tic=168 stage=0 aim=0 transitions=68 alt=1 zoom=0
+CA152 AIM tic=169 stage=0 aim=1 transitions=69 alt=1 zoom=0
+CA152 AIM tic=170 stage=0 aim=0 transitions=70 alt=1 zoom=0
+CA152 AIM tic=171 stage=0 aim=1 transitions=71 alt=1 zoom=0
+CA152 AIM tic=172 stage=0 aim=0 transitions=72 alt=1 zoom=0
+CA152 AIM tic=173 stage=0 aim=1 transitions=73 alt=1 zoom=0
+CA152 AIM tic=174 stage=0 aim=0 transitions=74 alt=1 zoom=0
+CA152 AIM tic=175 stage=0 aim=1 transitions=75 alt=1 zoom=0
+CA152 AIM tic=176 stage=0 aim=0 transitions=76 alt=1 zoom=0
+CA152 AIM tic=177 stage=0 aim=1 transitions=77 alt=1 zoom=0
+CA152 AIM tic=178 stage=0 aim=0 transitions=78 alt=1 zoom=0
+CA152 AIM tic=179 stage=0 aim=1 transitions=79 alt=1 zoom=0
+CA152 AIM tic=180 stage=0 aim=0 transitions=80 alt=1 zoom=0
+CA152 AIM tic=181 stage=0 aim=1 transitions=81 alt=1 zoom=0
+CA152 AIM tic=182 stage=0 aim=0 transitions=82 alt=1 zoom=0
+CA152 AIM tic=183 stage=0 aim=1 transitions=83 alt=1 zoom=0
+CA152 AIM tic=184 stage=0 aim=0 transitions=84 alt=1 zoom=0
+CA152 AIM tic=185 stage=0 aim=1 transitions=85 alt=1 zoom=0
+CA152 AIM tic=186 stage=0 aim=0 transitions=86 alt=1 zoom=0
+CA152 AIM tic=187 stage=0 aim=1 transitions=87 alt=1 zoom=0
+CA152 AIM tic=188 stage=0 aim=0 transitions=88 alt=1 zoom=0
+CA152 AIM tic=189 stage=0 aim=1 transitions=89 alt=1 zoom=0
+CA152 AIM tic=190 stage=0 aim=0 transitions=90 alt=1 zoom=0
+CA152 AIM tic=191 stage=0 aim=1 transitions=91 alt=1 zoom=0
+CA152 AIM tic=192 stage=0 aim=0 transitions=92 alt=1 zoom=0
+CA152 AIM tic=193 stage=0 aim=1 transitions=93 alt=1 zoom=0
+CA152 AIM tic=194 stage=0 aim=0 transitions=94 alt=1 zoom=0
+CA152 AIM tic=195 stage=0 aim=1 transitions=95 alt=1 zoom=0
+CA152 AIM tic=196 stage=0 aim=0 transitions=96 alt=1 zoom=0
+CA152 AIM tic=197 stage=0 aim=1 transitions=97 alt=1 zoom=0
+CA152 AIM tic=198 stage=0 aim=0 transitions=98 alt=1 zoom=0
+CA152 AIM tic=199 stage=0 aim=1 transitions=99 alt=1 zoom=0
+CA152 AIM tic=200 stage=0 aim=0 transitions=100 alt=1 zoom=0
+CA152 AIM tic=201 stage=1 aim=1 transitions=101 alt=1 zoom=0
+CA152 FAIL input checkpoint 1 has exactly 1 transitions
+CA152 AIM tic=202 stage=1 aim=0 transitions=102 alt=1 zoom=0
+CA152 AIM tic=203 stage=1 aim=1 transitions=103 alt=1 zoom=0
+CA152 AIM tic=204 stage=1 aim=0 transitions=104 alt=1 zoom=0
+CA152 AIM tic=205 stage=1 aim=1 transitions=105 alt=1 zoom=0
+CA152 AIM tic=221 stage=1 aim=0 transitions=106 alt=1 zoom=0
+CA152 AIM tic=222 stage=1 aim=1 transitions=107 alt=1 zoom=0
+CA152 AIM tic=223 stage=1 aim=0 transitions=108 alt=1 zoom=0
+CA152 AIM tic=224 stage=1 aim=1 transitions=109 alt=1 zoom=0
+CA152 AIM tic=225 stage=1 aim=0 transitions=110 alt=1 zoom=0
+CA152 AIM tic=226 stage=1 aim=1 transitions=111 alt=1 zoom=0
+CA152 AIM tic=227 stage=1 aim=0 transitions=112 alt=1 zoom=0
+CA152 AIM tic=228 stage=1 aim=1 transitions=113 alt=1 zoom=0
+CA152 AIM tic=229 stage=1 aim=0 transitions=114 alt=1 zoom=0
+CA152 AIM tic=230 stage=1 aim=1 transitions=115 alt=1 zoom=0
+CA152 AIM tic=231 stage=1 aim=0 transitions=116 alt=1 zoom=0
+CA152 AIM tic=232 stage=1 aim=1 transitions=117 alt=1 zoom=0
+CA152 AIM tic=233 stage=1 aim=0 transitions=118 alt=1 zoom=0
+CA152 AIM tic=234 stage=1 aim=1 transitions=119 alt=1 zoom=0
+CA152 AIM tic=235 stage=1 aim=0 transitions=120 alt=1 zoom=0
+CA152 AIM tic=236 stage=1 aim=1 transitions=121 alt=1 zoom=0
+CA152 AIM tic=237 stage=1 aim=0 transitions=122 alt=1 zoom=0
+CA152 AIM tic=238 stage=1 aim=1 transitions=123 alt=1 zoom=0
+CA152 AIM tic=239 stage=1 aim=0 transitions=124 alt=1 zoom=0
+CA152 AIM tic=240 stage=1 aim=1 transitions=125 alt=1 zoom=0
+CA152 AIM tic=241 stage=1 aim=0 transitions=126 alt=1 zoom=0
+CA152 AIM tic=242 stage=1 aim=1 transitions=127 alt=1 zoom=0
+CA152 AIM tic=243 stage=1 aim=0 transitions=128 alt=1 zoom=0
+CA152 AIM tic=244 stage=1 aim=1 transitions=129 alt=1 zoom=0
+CA152 AIM tic=245 stage=1 aim=0 transitions=130 alt=1 zoom=0
+CA152 AIM tic=246 stage=1 aim=1 transitions=131 alt=1 zoom=0
+CA152 AIM tic=247 stage=1 aim=0 transitions=132 alt=1 zoom=0
+CA152 AIM tic=248 stage=1 aim=1 transitions=133 alt=1 zoom=0
+CA152 AIM tic=249 stage=1 aim=0 transitions=134 alt=1 zoom=0
+CA152 AIM tic=250 stage=1 aim=1 transitions=135 alt=1 zoom=0
+CA152 AIM tic=251 stage=1 aim=0 transitions=136 alt=1 zoom=0
+CA152 AIM tic=252 stage=1 aim=1 transitions=137 alt=1 zoom=0
+CA152 AIM tic=253 stage=1 aim=0 transitions=138 alt=1 zoom=0
+CA152 AIM tic=254 stage=1 aim=1 transitions=139 alt=1 zoom=0
+CA152 AIM tic=255 stage=1 aim=0 transitions=140 alt=1 zoom=0
+CA152 AIM tic=256 stage=1 aim=1 transitions=141 alt=1 zoom=0
+CA152 AIM tic=257 stage=1 aim=0 transitions=142 alt=1 zoom=0
+CA152 AIM tic=258 stage=1 aim=1 transitions=143 alt=1 zoom=0
+CA152 AIM tic=259 stage=1 aim=0 transitions=144 alt=1 zoom=0
+CA152 AIM tic=260 stage=1 aim=1 transitions=145 alt=1 zoom=0
+CA152 AIM tic=261 stage=1 aim=0 transitions=146 alt=1 zoom=0
+CA152 AIM tic=262 stage=1 aim=1 transitions=147 alt=1 zoom=0
+CA152 AIM tic=263 stage=1 aim=0 transitions=148 alt=1 zoom=0
+CA152 AIM tic=264 stage=1 aim=1 transitions=149 alt=1 zoom=0
+CA152 AIM tic=265 stage=1 aim=0 transitions=150 alt=1 zoom=0
+CA152 AIM tic=266 stage=1 aim=1 transitions=151 alt=1 zoom=0
+CA152 AIM tic=267 stage=1 aim=0 transitions=152 alt=1 zoom=0
+CA152 AIM tic=268 stage=1 aim=1 transitions=153 alt=1 zoom=0
+CA152 AIM tic=269 stage=1 aim=0 transitions=154 alt=1 zoom=0
+CA152 AIM tic=270 stage=1 aim=1 transitions=155 alt=1 zoom=0
+CA152 AIM tic=271 stage=1 aim=0 transitions=156 alt=1 zoom=0
+CA152 AIM tic=272 stage=1 aim=1 transitions=157 alt=1 zoom=0
+CA152 AIM tic=273 stage=1 aim=0 transitions=158 alt=1 zoom=0
+CA152 AIM tic=274 stage=1 aim=1 transitions=159 alt=1 zoom=0
+CA152 AIM tic=275 stage=1 aim=0 transitions=160 alt=1 zoom=0
+CA152 AIM tic=276 stage=1 aim=1 transitions=161 alt=1 zoom=0
+CA152 AIM tic=277 stage=1 aim=0 transitions=162 alt=1 zoom=0
+CA152 AIM tic=278 stage=1 aim=1 transitions=163 alt=1 zoom=0
+CA152 AIM tic=279 stage=1 aim=0 transitions=164 alt=1 zoom=0
+CA152 AIM tic=280 stage=1 aim=1 transitions=165 alt=1 zoom=0
+CA152 AIM tic=281 stage=1 aim=0 transitions=166 alt=1 zoom=0
+CA152 AIM tic=282 stage=1 aim=1 transitions=167 alt=1 zoom=0
+CA152 AIM tic=283 stage=1 aim=0 transitions=168 alt=1 zoom=0
+CA152 AIM tic=284 stage=1 aim=1 transitions=169 alt=1 zoom=0
+CA152 AIM tic=285 stage=1 aim=0 transitions=170 alt=1 zoom=0
+CA152 AIM tic=286 stage=1 aim=1 transitions=171 alt=1 zoom=0
+CA152 AIM tic=287 stage=1 aim=0 transitions=172 alt=1 zoom=0
+CA152 AIM tic=288 stage=1 aim=1 transitions=173 alt=1 zoom=0
+CA152 AIM tic=289 stage=1 aim=0 transitions=174 alt=1 zoom=0
+CA152 AIM tic=290 stage=1 aim=1 transitions=175 alt=1 zoom=0
+CA152 AIM tic=291 stage=1 aim=0 transitions=176 alt=1 zoom=0
+CA152 AIM tic=292 stage=1 aim=1 transitions=177 alt=1 zoom=0
+CA152 AIM tic=293 stage=1 aim=0 transitions=178 alt=1 zoom=0
+CA152 AIM tic=294 stage=1 aim=1 transitions=179 alt=1 zoom=0
+CA152 AIM tic=295 stage=1 aim=0 transitions=180 alt=1 zoom=0
+CA152 AIM tic=296 stage=1 aim=1 transitions=181 alt=1 zoom=0
+CA152 AIM tic=297 stage=1 aim=0 transitions=182 alt=1 zoom=0
+CA152 AIM tic=298 stage=1 aim=1 transitions=183 alt=1 zoom=0
+CA152 AIM tic=299 stage=1 aim=0 transitions=184 alt=1 zoom=0
+CA152 AIM tic=300 stage=1 aim=1 transitions=185 alt=1 zoom=0
+CA152 AIM tic=301 stage=1 aim=0 transitions=186 alt=1 zoom=0
+CA152 AIM tic=302 stage=1 aim=1 transitions=187 alt=1 zoom=0
+CA152 AIM tic=303 stage=1 aim=0 transitions=188 alt=1 zoom=0
+CA152 AIM tic=304 stage=1 aim=1 transitions=189 alt=1 zoom=0
+CA152 AIM tic=305 stage=1 aim=0 transitions=190 alt=1 zoom=0
+CA152 AIM tic=306 stage=1 aim=1 transitions=191 alt=1 zoom=0
+CA152 AIM tic=307 stage=1 aim=0 transitions=192 alt=1 zoom=0
+CA152 AIM tic=308 stage=1 aim=1 transitions=193 alt=1 zoom=0
+CA152 AIM tic=309 stage=1 aim=0 transitions=194 alt=1 zoom=0
+CA152 AIM tic=310 stage=1 aim=1 transitions=195 alt=1 zoom=0
+CA152 AIM tic=311 stage=1 aim=0 transitions=196 alt=1 zoom=0
+CA152 AIM tic=312 stage=1 aim=1 transitions=197 alt=1 zoom=0
+CA152 AIM tic=313 stage=1 aim=0 transitions=198 alt=1 zoom=0
+CA152 AIM tic=314 stage=1 aim=1 transitions=199 alt=1 zoom=0
+CA152 AIM tic=315 stage=1 aim=0 transitions=200 alt=1 zoom=0
+CA152 AIM tic=316 stage=1 aim=1 transitions=201 alt=1 zoom=0
+CA152 AIM tic=317 stage=1 aim=0 transitions=202 alt=1 zoom=0
+CA152 AIM tic=318 stage=1 aim=1 transitions=203 alt=1 zoom=0
+CA152 AIM tic=319 stage=1 aim=0 transitions=204 alt=1 zoom=0
+CA152 AIM tic=320 stage=1 aim=1 transitions=205 alt=1 zoom=0
+CA152 AIM tic=321 stage=2 aim=0 transitions=206 alt=1 zoom=0
+CA152 FAIL input checkpoint 2 has exactly 2 transitions
+CA152 AIM tic=322 stage=2 aim=1 transitions=207 alt=1 zoom=0
+CA152 AIM tic=323 stage=2 aim=0 transitions=208 alt=1 zoom=0
+CA152 AIM tic=324 stage=2 aim=1 transitions=209 alt=1 zoom=0
+CA152 AIM tic=325 stage=2 aim=0 transitions=210 alt=1 zoom=0
+CA152 AIM tic=341 stage=2 aim=1 transitions=211 alt=0 zoom=1
+CA152 FAIL input checkpoint 3 has exactly 3 transitions
+CA152 AIM tic=461 stage=3 aim=0 transitions=212 alt=0 zoom=1
+CA152 FAIL input checkpoint 4 has exactly 4 transitions
+CA152 COMPLETE checks=4 failures=4 transitions=212

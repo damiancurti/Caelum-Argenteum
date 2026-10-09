@@ -1,6 +1,35 @@
 # Caelum Argenteum — Current systems and rules
 
-Documentation version: **5.1.8** — 2026-10-09.
+Documentation version: **5.1.9** — 2026-10-09.
+
+## Shotgun follow-up: ownership, presentation and aim (#152)
+
+A successful distinct-ammunition transfer uses native AttachToOwner (including
+BecomeItem), so owned cartridges have no world-sector/blockmap presence or pickup
+flag. A carried stack saved with those flags still set is normalized on its next
+Tick, without changing amount, owner or Box placement. This is an idempotent
+repair of an invalid native state, not a new serialized inventory schema.
+Failed capacity checks leave the source available for a later attempt.
+
+Alternate fire on any ranged weapon is edge-triggered like Zoom: holding it
+keeps the resulting aim state; release/repress toggles again. Its transient latch
+is independent of the Zoom latch and does not change melee/magic secondary actions.
+Ready/open shotgun grips use one complete hand pair below the weapon, retaining
+the accepted under-gun support hand without a second foreground copy. Loading
+hands/cartridges remain foreground; aiming retains the canonical carbine hands.
+The pickup atlas now uses the author-approved 6 cm world-height reference from
+editable art data, accepted natively by the author on 2026-10-09. Inventory icon size, collision, ammunition
+mass/price/count, damage, cadence and reload timing retain their accepted values.
+
+Thermal review boundary: the author's test body is 200 kg plus 285.428 kg carried.
+At native gravity 38.28125 m/s2, raising that mass by 8.25 m adds 459,924.068 J
+of vertical-work heat before horizontal work/losses; its fixed-reference jump
+adds 7,143.073 J. This follows two different approved calibrations and is not an
+energy-equivalent comparison. Sweat already starts at positive exposure, inside
+the Normal band; exposure is not body temperature and need not settle at zero.
+Furred races have a different comfort value but no separate fur-water reservoir.
+The author is considering metabolic-power budgets, including zero-net-work effort
+and the jump boundary. No new thermal coefficients or changes are approved here.
 
 ## Elemental presentation and proportional damage feedback (#137)
 
@@ -121,7 +150,7 @@ old-save/current-save/hub tests cover these boundaries. Keep the original
 5.1.6 save and matching package for tested checkpoint rollback; direct downgrade
 of a newly saved 5.1.7 game is not promised.
 
-First-person presentation uses separate complete weapon and foreground hand
+First-person presentation uses separate complete weapon and separate hand
 layers for ready, aim, recoil and reload. Ready/reload hands have the author's
 requested smaller scale and muted colors; aiming reuses the carbine's existing
 hand poses, scale and under-stock placement. The three weapon tiers share the

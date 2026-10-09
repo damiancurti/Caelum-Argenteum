@@ -1,0 +1,10 @@
+{
+  "issue": 152,
+  "release": "5.1.9",
+  "baseline_commit": "b2d168f0c006bc8727e4ffa69fc46568d69ca47e",
+  "save_title": "Prueba",
+  "save_sha256": "3cde87c764be563206a606d054e59692c98f417f47ec13d481e86886ce8c4342",
+  "baseline_package_sha256": "aa4fac067b0ee4b0b94a3abfffff1aa31158a9e5cad46817b50f56961e2bb651",
+  "original_save_policy": "The author save is read-only; all native loads/resaves use copies under build/issue152.",
+  "thermal_scope": "Diagnosis only. The author is considering a metabolic-power model and beastfolk fur/wetness; no coefficients or thermal runtime changes are included."
+}

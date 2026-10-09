@@ -1,0 +1,23 @@
+{
+  "issue": 152,
+  "release": "5.1.9",
+  "date": "2026-10-09",
+  "method": "Built-in image_gen",
+  "target": "src/graphics/caelum/shotgun/hands_layer.png",
+  "references": [
+    "src/sprites/caelum/first_person/v1/hands/FH05A0.png",
+    "src/sprites/caelum/first_person/v1/hands/FH06A0.png"
+  ],
+  "draft": "hands_red_draft.png",
+  "selected": "hands_domingo.png",
+  "prompts": [
+    "Use case: style-transfer / precise-object-edit. Edit target image 1: existing transparent 1086x1448 shotgun HANDS-ONLY sprite atlas, 3 columns and 5 rows. Reference images 2 and 3: the ACTUAL canonical first-person Domingo gloves and sleeves used by all other weapons in this game. Restyle ALL the gloves/forearms in image 1 to match those reference assets closely: dark warm brown studded/laced leather glove panels, dull dark brown/brass small trim, burgundy red cloth sleeve/cuff bands, coarse painted low-resolution game-sprite shading. Remove the large smooth grey engraved steel vambraces and black cloth sleeves currently in image 1; these are the wrong costume. Avoid smooth photorealistic leather and shiny elaborate metal armor. Match the refs' restrained dark brown/red colors, simpler shapes and chunky low-resolution shading, but preserve the target's exact hand silhouettes, angles, finger poses and positions as much as possible. CRITICAL registration: keep EXACT original 1086x1448 canvas, 3 columns of width 362, and row boundaries y=0,312,580,876,1156,1448. Keep each existing hand at the same pixel coordinates and scale. No repacking, recentering, new poses or extra hands. Each cell still has exactly two hands. Rows 1 and 3 are support-left and closed grip-right, row 2 aimed support hands, row 4 right hand holding ONE cartridge, row 5 right hand holding TWO cartridges. Preserve cartridge count and positions. Hands remain separate from the gun; DO NOT draw any gun, background, grid, letters, labels or cast shadows. Retain genuine transparent alpha background in all empty spaces. This image will be clipped and drawn behind an unchanged weapon sprite, so exact alignment and no extra fingers or sleeves are essential.",
+    "Edit target image 1: the transparent 1086x1448 3-column by 5-row hands-only sprite atlas just produced. Reference images 2 and 3 are the canonical Domingo hand sprites from the game. Correct ONLY the forearm costume and shading style in image 1: too much red cloth was introduced. In the reference, a NARROW burgundy red cloth band wraps the wrist immediately below the leather glove, and most of the lower forearm is covered by a LONG dark worn brown/bronze metal bracer with subdued edging. Reproduce that exact glove -> narrow red cuff band -> dark brown metal forearm bracer arrangement. Do not make the entire forearm a red sleeve; no bright silver/grey bracers or ornate large engraved plates. Keep the reference's coarse dark painted sprite aesthetic, with smaller chunked highlights rather than glossy smooth photographic leather. Keep the original atlas's exact 1086x1448 dimensions, 362-pixel column widths, row boundaries 0,312,580,876,1156,1448, all hand positions, silhouettes, pose angles, sizes, finger configurations, and one/two cartridge counts/positions. Keep all remaining pixels/empty gaps and registration unchanged as far as possible. Actual transparent alpha background, no background, no text, no labels, no gun, no extra limbs."
+  ],
+  "notes": "The first draft made the forearms red cloth; the selected iteration restores dark forearm bracers and narrow red wrist bands. Both exact outputs and earlier source files are retained. Runtime uses a byte-identical copy. Aim continues to reuse the canonical existing carbine hands. Original registration anchors keep the accepted under-gun hand position.",
+  "selected_dimensions": [
+    1087,
+    1446
+  ],
+  "registration_note": "Image generation did not preserve the requested exact canvas: selected output is 1087x1446. Native 362-pixel virtual canvases and original row offsets are retained without resampling; the used first-column silhouettes are checked in engine. The two missing bottom rows are transparent outside the source."
+}

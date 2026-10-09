@@ -1,6 +1,32 @@
 # Caelum Argenteum — Audio and art
 
-Documentation version: **5.1.8** — 2026-10-09.
+Documentation version: **5.1.9** — 2026-10-09.
+
+## 5.1.9 - Shotgun grip occlusion and cartridge world scale (#152)
+
+Ready/opening poses draw the complete hand layer once below the weapon, keeping
+the under-gun support hand the author selected. The earlier foreground copy caused
+a visible duplicate and is no longer drawn. Loading hands/cartridges stay in front;
+aim continues using canonical carbine hands. Recoil/lowering transform all layers.
+Existing state indices and the now-unused foreground states remain for saved games.
+
+The follow-up hands_domingo.png matches the existing FH05A0/FH06A0 references:
+brown leather gloves, narrow red wrist bands and dark forearm bracers. Built-in
+image_gen edited the separate hand atlas; both exact generated outputs, prompts
+and source provenance are in assets/source/art/shotgun_517/HAND_STYLE_519.json.
+The first draft's excessive red cloth was replaced in the selected iteration.
+Original weapon/hand PNGs remain intact; runtime uses a byte-identical copy of
+the selected 1087x1446 PNG and preserves its alpha. Generation did not preserve
+the requested 1086x1448 canvas. Native 362-pixel virtual canvases and original
+registration anchors are retained without resampling; missing bottom rows are
+transparent outside the source. Used first-column silhouettes are checked natively.
+
+assets/source/art/shotgun_517/PICKUP_LAYOUT.json stores the support-hand clipping
+coordinate and author-approved 6 cm cartridge world-height reference. This corrects
+the reported 37.5 cm pickup artwork without changing its inventory icon, count,
+weight or collision. CA152-01 and revised hand appearance (CA152-02) were accepted
+by the author on 2026-10-09. Registration and repeatable export,
+fourteen native pose captures and existing-save load are in assets/validation_519.
 
 ## 5.1.8 - Original elemental atlases and projectile meshes (#137)
 

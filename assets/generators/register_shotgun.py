@@ -23,6 +23,8 @@ def cells(path, rows_count, columns):
 def main():
     output=['// Generated from original unmodified atlases; native texture clipping.']
     report={}
+    layout=json.loads((ROOT/'assets/source/art/shotgun_517/PICKUP_LAYOUT.json').read_text(encoding='utf-8'))
+    hand_file=layout.get('hand_art_file','hands_layer.png')
     def texture(kind,name,file,rect,scale,offset):
         x1,y1,x2,y2=rect
         output.append(f'{kind} "{name}", {x2-x1}, {y2-y1}\n{{\n    XScale {scale:.9f}\n    YScale {scale:.9f}\n    Offset {offset[0]}, {offset[1]}\n    Patch "graphics/caelum/shotgun/{file}", {-x1}, {-y1}\n}}')
@@ -42,21 +44,31 @@ def main():
             texture('Sprite',f'SHF{tier+1}{chr(65+pose)}0','weapon_layer.png',rect,2.2,[181,rect[3]-rect[1]-bottom_padding])
             fp.append(dict(pose=pose,tier=tier+1,rect=rect))
         rect=[0,edges[hand_row],362,edges[hand_row+1]]
-        texture('Sprite',f'SHHD{chr(65+pose)}0','hands_layer.png',rect,2.2,[181,hand_bottom-rect[1]])
+        texture('Sprite',f'SHHD{chr(65+pose)}0',hand_file,rect,2.2,[181,hand_bottom-rect[1]])
         hands.append(dict(pose=pose,rect=rect))
+        if pose in (0,2):
+            # Retain the earlier registered states/textures for saved overlays.
+            # Current drawing no longer uses this duplicated foreground hand.
+            left=[0,rect[1],layout['support_hand_clip_x'],rect[3]]
+            name=f'CA_SHOTGUN_LEFT_{pose}'
+            texture('Graphic',name,'hands_layer.png',left,1,[0,0])
+            output.append(f'Sprite "SHHL{chr(65+pose)}0", 362, {rect[3]-rect[1]}\n{{\n    XScale 2.2\n    YScale 2.2\n    Offset 181, {hand_bottom-rect[1]}\n    Graphic "{name}", 0, 0\n}}')
+            hands[-1]['foreground_rect']=left
     icons=cells(ART/'icons.png',2,2)
     for f in icons:
         b=f['bounds'];rect=[b[0],b[1],b[2]+1,b[3]+1];w=rect[2]-rect[0];h=rect[3]-rect[1];c=f['row']*2+f['column']
         name=f'CA_SHOTGUN_T{c+1}' if c<3 else 'CA_SHOTGUN_AMMO'
         texture('Graphic',name,'icons.png',rect,h/(120 if c<3 else 64),[0,0])
-        if c in (0,3):texture('Sprite','CSGNA0' if c==0 else 'CSAMA0','icons.png',rect,h/120,[w//2,h])
+        if c in (0,3):
+            world_height=120 if c==0 else layout['cartridge_world_height_meters']*layout['map_units_per_meter']/layout['actor_scale']
+            texture('Sprite','CSGNA0' if c==0 else 'CSAMA0','icons.png',rect,h/world_height,[w//2,h])
     world=cells(ART/'world.png',6,8)
     rw,rh,rr=rgba(ROOT/'src/sprites/caelum/domingo/DOIDA1.png');rb=alpha_bounds(rr,(0,0,rw,rh))
     scale=sum(f['bounds'][3]-f['bounds'][1]+1 for f in world[:8])/8/(rb[3]-rb[1]+1)
     for f in world:
         x1,y1,x2,y2=f['rect'];b=f['bounds']
         texture('Sprite',f'SHGW{chr(65+f["row"])}{f["column"]+1}','world.png',f['rect'],scale,[(b[0]+b[2])//2-x1,b[3]+1-y1])
-    for file,frames in [('weapon_layer.png',fp),('hands_layer.png',hands),('icons.png',icons),('world.png',world)]:
+    for file,frames in [('weapon_layer.png',fp),(hand_file,hands),('icons.png',icons),('world.png',world)]:
         report[file]={'sha256':hashlib.sha256((ART/file).read_bytes()).hexdigest(),'frames':frames}
     (ROOT/'src/graphics/caelum/shotgun.textures').write_text('\n'.join(output)+'\n',encoding='utf-8',newline='\r\n')
     (ROOT/'assets/source/art/shotgun_517/REGISTRATION.json').write_text(json.dumps(report,indent=2)+'\n',encoding='utf-8',newline='\n')

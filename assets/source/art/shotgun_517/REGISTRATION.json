@@ -214,8 +214,8 @@
       }
     ]
   },
-  "hands_layer.png": {
-    "sha256": "7bc0709e8966f98aa562f43b37a132521689611f919271ec62f3fb375932bf5f",
+  "hands_domingo.png": {
+    "sha256": "9f2277e4073da99b3f5bef8e7ca5be204db660c305239ff2b0debcccd8a97173",
     "frames": [
       {
         "pose": 0,
@@ -223,6 +223,12 @@
           0,
           0,
           362,
+          312
+        ],
+        "foreground_rect": [
+          0,
+          0,
+          196,
           312
         ]
       },
@@ -241,6 +247,12 @@
           0,
           580,
           362,
+          876
+        ],
+        "foreground_rect": [
+          0,
+          580,
+          196,
           876
         ]
       },

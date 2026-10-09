@@ -1,6 +1,23 @@
 # Caelum Argenteum — Project, status and roadmap
 
-Documentation version: **5.1.8** — 2026-10-09.
+Documentation version: **5.1.9** — 2026-10-09.
+
+## 5.1.9 - Shotgun pickup, grip and alternate aim follow-up (#152)
+
+The author's `Prueba` checkpoint reproduced a carried cartridge stack still
+rendering as a world pickup. Distinct-ammunition acquisition now completes the
+native held-item transition; an idempotent flag-based repair also fixes already
+owned stacks when an old save runs, retaining quantities and Box placement.
+Ranged alternate aim toggles once per press, independently of the Zoom key.
+Shotgun ready/open grips now use one complete pair below the weapon; the duplicate
+foreground support hand is removed. Revised brown gloves, red cuffs and dark
+bracers match Domingo's existing costume. Loading stays foreground. Cartridge
+world art uses the author-approved 6 cm reference; mass and quantity are unchanged.
+Native evidence and limitations: assets/validation_519/RESULTS.md. The author
+accepted CA152-01/02/03 on 2026-10-09 and requested PR #153 merge and #152 closure.
+Thermal observations are diagnosed, not recalibrated: full-height
+native-gravity stairs and the approved fixed human jump use different budgets;
+beastfolk fur water/insulation and a metabolic-power redesign await author design.
 
 ## 5.1.8 - Elemental presentation and proportional screen feedback (#137)
 

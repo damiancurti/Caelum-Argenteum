@@ -1,0 +1,42 @@
+[
+  {
+    "file": "hands-followup-a.txt",
+    "raw_sha256": "f4208d7bfd0285650375ac46efdba21f3ccb1a70a8f22c05ce0c6c513b873709",
+    "normalized_sha256": "8a61f37ad43ae8133b018e7d6a0442d75ed05ee2a88eb434a724904f2ed1bd98"
+  },
+  {
+    "file": "hands-followup-a.ini",
+    "raw_sha256": "cc3aa7a19aa385197b0c9e65f26279a4d8f7851a89aaeb48ea0f51b7773a863f",
+    "normalized_sha256": "0798fae3b4e10a12c773b77e18da823e456cb0d46ab0ca3617eb60cfcb93b07a"
+  },
+  {
+    "file": "hands-followup-a-run.json",
+    "raw_sha256": "4b9b65087f0960733691c047a085e7a91a41d4cb8094cef933e9ecc22c9a8287",
+    "normalized_sha256": "17047ddde1690a80bf4b83e89d656f6fe0056e257f6c2b78f3a26b1e67ab9fb5"
+  },
+  {
+    "file": "hands-followup-a-exec.cfg",
+    "raw_sha256": "e8ec05e37c41cbcddb462e4d0136b0b4e638f540caf67382056c33a61e3be7e3",
+    "normalized_sha256": "e8ec05e37c41cbcddb462e4d0136b0b4e638f540caf67382056c33a61e3be7e3"
+  },
+  {
+    "file": "hands-followup-save.txt",
+    "raw_sha256": "8611099361c096a6f335833691de7372de773a5ff11de3e1aee906bda919e59e",
+    "normalized_sha256": "c9c0d9e2d54eed05b150aa5036955a0f9826ce4fff36096f51ab25dec588dace"
+  },
+  {
+    "file": "hands-followup-save.ini",
+    "raw_sha256": "63f87043ce0799b38d1b44dfe17861134c14f684b5979d838832bbf40bfefc17",
+    "normalized_sha256": "da9376e9ec11a8333d006834b973d4ea443639cb0296f1514f90dda9a203ab57"
+  },
+  {
+    "file": "hands-followup-save-run.json",
+    "raw_sha256": "d6e1e3f61de3899a5cce3ec95749e3ffb0ef3737657f288e65d2a5942cb31509",
+    "normalized_sha256": "5ad8624c23ed7500de20caa246e6ea0e9101f0f0db1c31f9b608090e6a291a64"
+  },
+  {
+    "file": "hands-followup-save-exec.cfg",
+    "raw_sha256": "96911706ffa92e71255daa04605612956cf5fb8a545ce895de6567ac9742ca83",
+    "normalized_sha256": "96911706ffa92e71255daa04605612956cf5fb8a545ce895de6567ac9742ca83"
+  }
+]

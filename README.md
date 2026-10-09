@@ -6,8 +6,20 @@ An independent dark fantasy FPS-RPG inspired by nineteenth-century Argentina.
 Author and game designer: **Damian Curti**. Development target: **GZDoom 4.14.2**
 on Windows 11. The final game is intended to be independent of Doom assets.
 
-**Current release: 5.1.8.** Obtain and update the complete repository, validate
+**Current release: 5.1.9.** Obtain and update the complete repository, validate
 it, then rebuild with `run_dev.bat` as described below.
+
+**5.1.9 / [#152](https://github.com/damiancurti/Caelum-Argenteum/issues/152):**
+Shotgun cartridges now leave the world when collected, including repaired owned
+stacks in existing saves. Ranged alternate aim toggles once per press. The shotgun
+draws a single pair of hands below the weapon in ready/open poses; loading stays
+foreground. Revised gloves use Domingo's brown leather, red cuffs and dark bracers.
+Cartridge world art uses the author-approved 6 cm reference.
+Thermal observations are documented while the author considers the next model;
+thermal balance is unchanged. Evidence: [validation_519](assets/validation_519/RESULTS.md).
+The author accepted CA152-01/02/03 on 2026-10-09 and requested closure and merge
+of [PR #153](https://github.com/damiancurti/Caelum-Argenteum/pull/153).
+[pending_test.txt](pending_test.txt) is empty; acceptance is recorded in HISTORY.
 
 **5.1.8 / [#137](https://github.com/damiancurti/Caelum-Argenteum/issues/137):**
 Animated elemental projectiles share original artwork, light, trails and impacts

@@ -116,6 +116,8 @@ class CaelumShotgunHandFrames : Actor
     Hands_4: SHHD E -1; Stop;
     Hands_5: SHHD F -1; Stop;
     Hands_6: SHHD G -1; Stop;
+    HandsFront_0: SHHL A -1; Stop;
+    HandsFront_2: SHHL C -1; Stop;
     }
 }
 class CaelumShotgunView : Object play
@@ -142,9 +144,18 @@ class CaelumShotgunView : Object play
             CaelumFirstPersonLayers.Hand(user,49,5,grip,(23,-27),0.88,rotation);
             return;
         }
-        user.A_ClearOverlays(48,49);
+        user.A_ClearOverlays(48,48);
         // Las manos se sustituyen sin duplicar el arma ni alterar su animación.
         State hands=GetDefaultByType("CaelumShotgunHandFrames").FindStateByString(String.Format("Hands_%d",pose));
+        if(pose==0 || pose==2 || pose==6)
+        {
+            // Un único par bajo el arma: la copia frontal desplazaba la mano
+            // de apoyo y la duplicaba. Las poses de carga siguen por delante.
+            CaelumFirstPersonLayers.Place(user,49,hands,(160+dx,200+dy),(0.5,1.0),0.68,rotation,true);
+            user.A_ClearOverlays(51,51);
+            return;
+        }
+        user.A_ClearOverlays(49,49);
         CaelumFirstPersonLayers.Place(user,51,hands,(160+dx,200+dy),(0.5,1.0),0.68,rotation,true);
     }
 }

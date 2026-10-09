@@ -1,6 +1,24 @@
 # TASKS.md — Active tasks
 
-Documentation version: **5.1.8** — 2026-10-09.
+Documentation version: **5.1.9** — 2026-10-09.
+
+## Issue #152 - Shotgun follow-up (5.1.9)
+
+Fix the reproduced owned-but-visible ammunition stack, correct right-hand/stock
+occlusion and make ranged alternate aim act once per press. Native pickup checks
+cover capacity failure/retry and independent carbine/shotgun counts. Existing-save
+upgrade and ranged input tests have separate evidence in validation_519.
+The author accepted CA152-01 (pickup/6 cm size) and CA152-03 (held aim) on
+2026-10-09. CA152-02 failed because the left hand was duplicated and its costume
+differed from the other weapons. The revised atlas and single under-gun hand pair
+have native pose/save evidence. The author subsequently accepted revised hands
+(CA152-02, origin 5.1.9/#152) without qualifications on 2026-10-09 and requested
+PR #153 merge and #152 closure. All checks are accepted; pending_test.txt is empty.
+
+Thermal follow-up is deferred while the author decides: stair/jump work references,
+metabolic power including zero-net-work effort, and beastfolk fur water/insulation.
+Diagnosis confirms sweat is active inside the Normal range and the supplied
+save's exposure is -0.482, not a captured hot state. No thermal runtime edits.
 
 ## Issue #137 - Elemental VFX and screen feedback (5.1.8)
 

@@ -25,7 +25,21 @@ Sprite "SHHDA0", 362, 312
     XScale 2.200000000
     YScale 2.200000000
     Offset 181, 308
+    Patch "graphics/caelum/shotgun/hands_domingo.png", 0, 0
+}
+Graphic "CA_SHOTGUN_LEFT_0", 196, 312
+{
+    XScale 1.000000000
+    YScale 1.000000000
+    Offset 0, 0
     Patch "graphics/caelum/shotgun/hands_layer.png", 0, 0
+}
+Sprite "SHHLA0", 362, 312
+{
+    XScale 2.2
+    YScale 2.2
+    Offset 181, 308
+    Graphic "CA_SHOTGUN_LEFT_0", 0, 0
 }
 Sprite "SHF1B0", 362, 268
 {
@@ -53,7 +67,7 @@ Sprite "SHHDB0", 362, 268
     XScale 2.200000000
     YScale 2.200000000
     Offset 181, 266
-    Patch "graphics/caelum/shotgun/hands_layer.png", 0, -312
+    Patch "graphics/caelum/shotgun/hands_domingo.png", 0, -312
 }
 Sprite "SHF1C0", 362, 296
 {
@@ -81,7 +95,21 @@ Sprite "SHHDC0", 362, 296
     XScale 2.200000000
     YScale 2.200000000
     Offset 181, 284
+    Patch "graphics/caelum/shotgun/hands_domingo.png", 0, -580
+}
+Graphic "CA_SHOTGUN_LEFT_2", 196, 296
+{
+    XScale 1.000000000
+    YScale 1.000000000
+    Offset 0, 0
     Patch "graphics/caelum/shotgun/hands_layer.png", 0, -580
+}
+Sprite "SHHLC0", 362, 296
+{
+    XScale 2.2
+    YScale 2.2
+    Offset 181, 284
+    Graphic "CA_SHOTGUN_LEFT_2", 0, 0
 }
 Sprite "SHF1D0", 362, 280
 {
@@ -109,7 +137,7 @@ Sprite "SHHDD0", 362, 280
     XScale 2.200000000
     YScale 2.200000000
     Offset 181, 274
-    Patch "graphics/caelum/shotgun/hands_layer.png", 0, -876
+    Patch "graphics/caelum/shotgun/hands_domingo.png", 0, -876
 }
 Sprite "SHF1E0", 362, 292
 {
@@ -137,7 +165,7 @@ Sprite "SHHDE0", 362, 292
     XScale 2.200000000
     YScale 2.200000000
     Offset 181, 282
-    Patch "graphics/caelum/shotgun/hands_layer.png", 0, -1156
+    Patch "graphics/caelum/shotgun/hands_domingo.png", 0, -1156
 }
 Sprite "SHF1F0", 362, 296
 {
@@ -165,7 +193,7 @@ Sprite "SHHDF0", 362, 280
     XScale 2.200000000
     YScale 2.200000000
     Offset 181, 274
-    Patch "graphics/caelum/shotgun/hands_layer.png", 0, -876
+    Patch "graphics/caelum/shotgun/hands_domingo.png", 0, -876
 }
 Sprite "SHF1G0", 362, 280
 {
@@ -193,7 +221,7 @@ Sprite "SHHDG0", 362, 296
     XScale 2.200000000
     YScale 2.200000000
     Offset 181, 284
-    Patch "graphics/caelum/shotgun/hands_layer.png", 0, -580
+    Patch "graphics/caelum/shotgun/hands_domingo.png", 0, -580
 }
 Graphic "CA_SHOTGUN_T1", 503, 588
 {
@@ -232,8 +260,8 @@ Graphic "CA_SHOTGUN_AMMO", 345, 365
 }
 Sprite "CSAMA0", 345, 365
 {
-    XScale 3.041666667
-    YScale 3.041666667
+    XScale 19.010416667
+    YScale 19.010416667
     Offset 172, 365
     Patch "graphics/caelum/shotgun/icons.png", -767, -881
 }

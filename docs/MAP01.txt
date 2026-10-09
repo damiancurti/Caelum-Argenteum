@@ -1,6 +1,15 @@
 CAELUM ARGENTEUM — STORY AND MAP01
 
-Documentation version: **5.1.8** — 2026-10-09.
+Documentation version: **5.1.9** — 2026-10-09.
+
+## 5.1.9 - Existing-save shotgun correction (#152)
+
+The author's Prueba checkpoint in MAP01 reproduced owned cartridges still drawn
+on the floor. Held-item normalization preserves that save's 1,081 shotgun
+cartridges and 895 carbine rounds. All native work uses copies; the original save
+is unchanged. No map geometry, spawn assignment or climate values change.
+The reported stair/jump heat disparity is recorded for the author's deferred
+thermal redesign; it is not resolved through an unapproved map/balance change.
 
 ## 5.1.8 - Shared elemental presentation (#137)
 

@@ -1,6 +1,62 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **5.1.8** — 2026-10-09.
+Documentation version: **5.1.9** — 2026-10-09.
+
+## 5.1.9 - Shotgun pickup, grip and held aim correction (#152, 2026-10-09)
+
+After accepting #137, the author reported visible/oversized collected shotgun
+cartridges, the right hand covering the stock, and repeated aim toggles while
+holding alternate fire. The supplied Prueba checkpoint contains 1,081 owned
+shells with world flags still active; its 895 carbine rounds are correctly held.
+Acquisition had called AddInventory without BecomeItem. It now uses AttachToOwner;
+existing invalid owned stacks normalize idempotently on Tick, preserving counts.
+
+Ranged alternate aim now has its own transient release latch. The baseline input
+script recorded 212 transitions for two held alternate-fire presses and two Zoom
+presses; the corrected shotgun, carbine, longbow and crossbow each record four.
+The first grip revision moved the right hand behind the shotgun and drew a
+support-hand subtexture in front; this was later rejected as duplicated (below).
+Original PNGs and state indices remain intact. Pickup art shrinks from 37.5 cm to the 6 cm reference explicitly approved by the
+author on 2026-10-09. That design approval is separate from native visual acceptance.
+
+The author also reported disproportionate stair heat, incomplete return to zero,
+and missing beastfolk fur wetness, and asked to fix the weapon while considering
+new thermal rules. Diagnostics retain the accepted model: 8.25 m of ascent for
+this 485.428 kg moved mass adds 459.924 kJ at native gravity, versus 7.143 kJ for
+the fixed 0.5 m human-reference jump. Isolated forecast copies just below the
+Heat threshold do sweat and cool. The original save is slightly cold and wet;
+it does not capture the claimed hot plateau. Fur has no separate water reservoir.
+No thermal recalibration is included. Evidence and rejected attempts are in
+assets/validation_519/RESULTS.md.
+
+Author follow-up, 2026-10-09 (America/Buenos_Aires): CA152-01 (pickup/world size)
+and CA152-03 (one aim toggle per press), both originating in 5.1.9 / issue #152,
+are PASSED without qualifications and removed from pending_test.txt. CA152-02
+(same origin, grip appearance) FAILED: two left hands were visible and the gloves
+did not match the other weapons. The author selected the rightmost left hand,
+under the gun. Ready/open poses now draw that full hand pair once below the gun;
+the extra foreground copy is cleared. Loading remains foreground and aiming
+retains canonical carbine hands. Old states/textures remain available for saves.
+
+Built-in image_gen restyled the separate atlas from canonical FH05A0/FH06A0
+references, using brown leather, narrow red cuffs and dark forearm bracers.
+Prompts, both generated iterations, original assets and registration qualification
+are retained in shotgun_517/HAND_STYLE_519.json. Fourteen native captures cover
+ready/aim/recoil, empty/single/partial reload, all tiers and weapon switching;
+hands-followup-a and hands-followup-save exit 0 on the same final package.
+The prior upgraded save still holds 1,081 shells and 895 bullets. Registration
+is deterministic, and the temporary keep-awake request was released with the
+same power plan. CA152-02 was left pending for author review of the revised hands;
+technical checks did not erase the initial rejection or approve the new artwork.
+
+Final author acceptance, 2026-10-09 (America/Buenos_Aires): the author confirms
+all remaining tests passed and requests #152 closure and PR #153 merge.
+CA152-02 (revised shotgun hands, origin 5.1.9 / issue #152) is PASSED without
+qualifications. Its entry is removed from pending_test.txt, leaving the tracked
+file empty; CA152-01/03 acceptance is recorded above. This documentation-only
+acceptance retains release 5.1.9, runtime files and the tested package. Static
+validation and index checks are repeated; native evidence remains applicable.
+Thermal redesign and beastfolk fur coefficients remain deferred author decisions.
 
 ## 5.1.8 - Elemental VFX, flying models and screen feedback (#137, 2026-10-09)
 
