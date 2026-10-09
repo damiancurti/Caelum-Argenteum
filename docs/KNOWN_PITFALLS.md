@@ -4,6 +4,60 @@ Status: integrated engineering register (issue #22, patch 4.36.1b).
 Prepared: 2026-09-23. Inherits the project's release after integration.
 Inspected baseline: `1dc390576fa330d37ff543526fc7e69a397fc28f` (PR #7).
 
+## CA-KP-064 - Inspect atlas seams and source damage before changing offsets
+
+Status/evidence: RESOLVED-VERIFIED for the #137 assets, 5.1.8, 2026-10-09.
+Affected path: source atlases and native TEXTURES/model UV registration.
+
+Generated sheets need not form a uniform grid. Equal-row division admitted earth
+fragments below the ice and clipped its tip. Use measured transparent/low-alpha
+gaps in source data, retain PNG pixels, and inspect complete native frames.
+For death art, inspect the original PNG itself: Domingo's missing head and the
+rat's neighboring pieces were already baked into old files. An offset change
+cannot recover missing pixels. Locate an intact source, or clearly identify a
+reconstruction from owned references and retain the damaged originals.
+
+Evidence: elemental_518/DESIGN.json and final gallery-cells-final; all sixteen
+death frames in deathframes-before/after and death_repair_518/REGISTRATION.json.
+The death generator checks an opaque margin on every side, uses one scale per
+sequence and floor anchors, and leaves native state timing untouched. Technical
+frame integrity does not constitute author acceptance of reconstructed art.
+
+## CA-KP-063 - Emit cosmetic impacts on native Death entry
+
+Status/evidence: RESOLVED-VERIFIED, #137 / 5.1.8, 2026-10-09.
+Affected path: Actor projectile Tick and short native Death states.
+
+Super.Tick can finish a one-tic Death state and destroy its actor. Updating
+cosmetics afterward without checking bDestroyed can create effects from an
+already removed owner; adding the necessary guard then exposes the missing
+impact. Emit once from the native Death action, before destruction, and retain
+the idempotent impact flag. Keep state indices/timing intact and avoid generating
+an impact on range expiry. Named attached lights follow their owning actor.
+
+Native evidence: checks-final-e in assets/validation_518 verifies both forced
+missile impact and an actual wall collision, one effect per impact, bounded
+expiry and owner-death cleanup. Earlier checks-final-a is rejected; its three
+failures included this issue plus a captive-prisoner fixture and distant LOD
+case. The final freed-prisoner test uses the actual rescue/attack path.
+
+## CA-KP-062 - Native model pitch rotates the forward X axis
+
+Status/evidence: RESOLVED-VERIFIED, #137 / 5.1.8, 2026-10-09.
+Affected renderer: GZDoom 4.14.2 OBJ models with PitchFromMomentum/UseActorPitch.
+
+For these native model transforms, author the flight axis along OBJ +X and
+height along Y. A mesh using +Z as forward can look plausible from one angle
+but rotates incorrectly during pitch. This was visible in the rejected early
+arrow/javelin views and the breath planes. Convert mesh axes once; do not change
+the actor velocity or ballistic physics to correct a rendering convention.
+
+Evidence: generate_projectile_models.py/generate_breath_models.py, native
+showcase-after-final side views and rising/falling javelin captures. The 623
+baseline/current gameplay traces in validation_518 match exactly. Retain native
+frame registrations for dynamically selected sprites (see CA-KP-054), and keep
+the model bound to flying frames so impact states retain their own presentation.
+
 ## CA-KP-061 - A held activity peak invents heat after a brief action
 
 Status/evidence: RESOLVED-VERIFIED, #136 / 5.1.7 follow-up, 2026-10-08.

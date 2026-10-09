@@ -1,0 +1,137 @@
+{
+  "scope": "Single native bench snapshots, background presentation, short CPU samples; not presented FPS or percentiles.",
+  "scenes": [
+    {
+      "scene": "single source",
+      "before": {
+        "label": "cost-baseline-0-b",
+        "native_bench_fps": 60,
+        "native_bench_ms": {
+          "All": 15.818,
+          "Render": 0.058,
+          "Setup": 0.047,
+          "Portal": 0.0,
+          "Drawcalls": 0.044,
+          "Postprocess": 0.016,
+          "Finish": 15.661
+        },
+        "sampled_cpu_seconds": 1.421875,
+        "sampled_wall_seconds": 9.1184304
+      },
+      "after": {
+        "label": "cost-current-0-cells",
+        "native_bench_fps": 60,
+        "native_bench_ms": {
+          "All": 16.416,
+          "Render": 0.03,
+          "Setup": 0.021,
+          "Portal": 0.0,
+          "Drawcalls": 0.017,
+          "Postprocess": 0.006,
+          "Finish": 16.351
+        },
+        "sampled_cpu_seconds": 2.265625,
+        "sampled_wall_seconds": 10.086771599999999
+      }
+    },
+    {
+      "scene": "24 passive NPCs",
+      "before": {
+        "label": "cost-baseline-24-b",
+        "native_bench_fps": 60,
+        "native_bench_ms": {
+          "All": 15.996,
+          "Render": 0.103,
+          "Setup": 0.188,
+          "Portal": 0.0,
+          "Drawcalls": 0.068,
+          "Postprocess": 0.021,
+          "Finish": 15.655
+        },
+        "sampled_cpu_seconds": 1.921875,
+        "sampled_wall_seconds": 10.1416808
+      },
+      "after": {
+        "label": "cost-current-24-cells",
+        "native_bench_fps": 60,
+        "native_bench_ms": {
+          "All": 16.269,
+          "Render": 0.124,
+          "Setup": 0.042,
+          "Portal": 0.0,
+          "Drawcalls": 0.049,
+          "Postprocess": 0.007,
+          "Finish": 16.086
+        },
+        "sampled_cpu_seconds": 1.40625,
+        "sampled_wall_seconds": 10.1113285
+      }
+    },
+    {
+      "scene": "500 living, synthetic effects",
+      "before": {
+        "label": "cost-baseline-499-b",
+        "native_bench_fps": 60,
+        "native_bench_ms": {
+          "All": 14.669,
+          "Render": 0.238,
+          "Setup": 0.11,
+          "Portal": 0.0,
+          "Drawcalls": 0.128,
+          "Postprocess": 0.008,
+          "Finish": 14.304
+        },
+        "sampled_cpu_seconds": 2.453125,
+        "sampled_wall_seconds": 10.1035691
+      },
+      "after": {
+        "label": "cost-current-499-cells",
+        "native_bench_fps": 60,
+        "native_bench_ms": {
+          "All": 14.755,
+          "Render": 0.629,
+          "Setup": 0.119,
+          "Portal": 0.0,
+          "Drawcalls": 0.112,
+          "Postprocess": 0.006,
+          "Finish": 13.991
+        },
+        "sampled_cpu_seconds": 2.515625,
+        "sampled_wall_seconds": 10.0803209
+      }
+    },
+    {
+      "scene": "500 living, native battle",
+      "before": {
+        "label": "battle-before-final",
+        "native_bench_fps": 33,
+        "native_bench_ms": {
+          "All": 14.132,
+          "Render": 0.195,
+          "Setup": 0.101,
+          "Portal": 0.0,
+          "Drawcalls": 0.088,
+          "Postprocess": 0.008,
+          "Finish": 13.819
+        },
+        "sampled_cpu_seconds": 7.421875,
+        "sampled_wall_seconds": 11.117852899999997
+      },
+      "after": {
+        "label": "battle-cells-final",
+        "native_bench_fps": 35,
+        "native_bench_ms": {
+          "All": 14.272,
+          "Render": 0.231,
+          "Setup": 0.097,
+          "Portal": 0.0,
+          "Drawcalls": 0.083,
+          "Postprocess": 0.007,
+          "Finish": 13.929
+        },
+        "sampled_cpu_seconds": 7.390625,
+        "sampled_wall_seconds": 11.1431261
+      }
+    }
+  ]
+}

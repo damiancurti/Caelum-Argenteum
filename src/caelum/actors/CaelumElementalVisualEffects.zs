@@ -2,10 +2,38 @@
 // CaelumElementalStatus; estos actores sólo siguen al objetivo afectado.
 class CaelumAttachedElementalVisual : Actor
 {
+    int VisualAge;
+
+    int VisualKind()
+    {
+        if(self is "CaelumPoisonVisual")return 1;
+        if(self is "CaelumFreezeVisual")return 2;
+        if(self is "CaelumLightningStatusVisual" || self is "CaelumLightningImpactVisual")return 3;
+        return 0;
+    }
+
+    bool Active()
+    {
+        if(master==null || master.health<=0)return false;
+        if(self is "CaelumLightningImpactVisual")return true;
+        let user=CaelumPlayer(master);let npc=CaelumCombatActor(master);
+        let status=user!=null ? user.ElementalStatus : npc!=null ? npc.ElementalStatus : null;
+        if(status==null)return false;
+        switch(VisualKind())
+        {
+            case 0:return status.BurnRemaining>0;
+            case 1:return status.PoisonRemaining>0;
+            case 2:return status.FreezeRemaining>0;
+            case 3:return status.LightningStunRemaining>0;
+        }
+        return false;
+    }
+
     override void Tick()
     {
         Super.Tick();
-        if (master == null)
+        if(bDestroyed)return;
+        if (!Active())
         {
             A_StopSound(CHAN_BODY);
             Destroy();
@@ -13,8 +41,15 @@ class CaelumAttachedElementalVisual : Actor
         }
         SetOrigin(master.Pos, false);
         double visualScale = Max(0.08, master.Height / 140.0);
-        Scale.X = visualScale;
+        Scale.X = Max(visualScale,master.Radius/40.0);
         Scale.Y = visualScale;
+        int kind=VisualKind();
+        sprite=GetSpriteIndex(CaelumElementalVFXData.StatusSprite(kind));
+        frame=(VisualAge/CaelumElementalVFXData.FRAME_TICS+kind)%4;
+        Alpha=0.72;
+        if(VisualAge%CaelumElementalVFXData.FRAME_TICS==0)
+            CaelumElementalVFX.Light(self,kind==0 ? 0 : kind==1 ? 5 : kind==2 ? 3 : 7);
+        VisualAge++;
     }
 
     Default

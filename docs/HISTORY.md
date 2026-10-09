@@ -1,6 +1,39 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **5.1.7** — 2026-10-08.
+Documentation version: **5.1.8** — 2026-10-09.
+
+## 5.1.8 - Elemental VFX, flying models and screen feedback (#137, 2026-10-09)
+
+The author chose intense effects and requested luminous magical projectiles,
+original 3D arrows/bolts/bullets/pellets, then flying javelins. Original atlases,
+native clipping and deterministic meshes now feed a shared presentation layer.
+The Federal prisoner's small electric effect is replaced by the staff ray.
+Existing actor classes and state indices remain usable in saved games.
+
+During implementation the author approved percent-based damage flashes with
+physical red, fire orange, cold cyan, poison green and electrical violet;
+subtle Health borders at <=50%, stronger at <=10%; and more conspicuous Lucidity
+feedback. Native absolute damage flash is replaced only in presentation.
+Actual damage, defenses, resources, thermal state and projectile behavior remain
+in their existing services. Temporary DOT color context is restored after use.
+
+Audit found static projectile frames, NPC presentation being reset by its spawn
+state, vertical flame columns in breath, and hard rectangular status edges.
+The native pass verifies flight, lighting, overlapping statuses, models, breath,
+water, real impacts, percent feedback and cleanup. Baseline/current traces cover
+623 launched projectiles across 240 player combinations, 18 NPC elemental cases
+and five physical types; the recorded gameplay fields match exactly.
+Save/load and hub records, comparable images, cost measurements and rejected QA
+attempts are distinguished in assets/validation_518/RESULTS.md. Source artwork
+and model generators retain provenance; temporary test resources stay local.
+The author then reported broken Domingo/giant-rat death cuts. Native inspection
+confirmed missing heads and neighboring body fragments in the old PNGs. New
+eight-frame reconstructions preserve identity/pose progression, names and state
+timing; original files remain untouched. Frame-by-frame and actual native Death
+sequence captures are in deathframes-before/after. These are reconstructed art,
+not recovered source pixels; artistic acceptance remains separate.
+Author aesthetic acceptance is still outstanding as CA137-01/02/03 (origin 5.1.8,
+issue #137). No passed author result or merge is inferred from automated tests.
 
 ## 5.1.7 - Shortbow becomes a modular double-barrel shotgun (#136, 2026-10-08)
 

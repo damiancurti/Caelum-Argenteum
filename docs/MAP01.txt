@@ -1,6 +1,17 @@
 CAELUM ARGENTEUM — STORY AND MAP01
 
-Documentation version: **5.1.7** — 2026-10-08.
+Documentation version: **5.1.8** — 2026-10-09.
+
+## 5.1.8 - Shared elemental presentation (#137)
+
+Map geometry, narrative, prisoner identities/rescue states and encounter balance
+are unchanged. Existing magical users receive the common projectile/status VFX;
+the Federal prisoner and Ronnie retain their air/electric alternation while
+rendering the same electric ray as player weapons. Demon mouth/ability timing
+and environmental heat remain owned by the existing services. Screen feedback
+uses the approved Health/Lucidity thresholds without modifying map rules.
+Domingo/soldier and giant-rat death art is reconstructed into complete poses;
+existing death state names, timings and encounter consequences remain unchanged.
 
 ## 5.1.7 - Shotgun tutorial and MAP02 supplies (#136)
 

@@ -1,0 +1,18 @@
+Map CA137: "Elemental VFX",
+x = 2048.0000, y = 4096.0000, z = 41.0000, angle = 0.0000, pitch = 0.0000
+35 fps
+
+Walls: 6 (0 splits, 0 t-splits, 24 vertices)
+Flats: 3 (3 primitives, 18 vertices)
+Sprites: 536, Decals=0, Portals: 0, Command buffers: 2
+BSP = 0.003, Clip=0.001
+W: Render=0.013, Setup=0.003
+F: Render=0.003, Setup=0.001
+S: Render=0.181, Setup=0.080
+2D: 0.076 Finish3D: 0.001
+Main thread total=0.096, Main thread waiting=0.092 Worker thread total=0.083, Worker thread waiting=-0.000
+All=14.272, Render=0.231, Setup=0.097, Portal=0.000, Drawcalls=0.083, Postprocess=0.007, Finish=13.929
+DLight - Walls: 0 processed, 0 rendered - Flats: 28 processed, 14 rendered
+
+
+

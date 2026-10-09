@@ -139,9 +139,12 @@ class CaelumElementalStatus : Object
     // DamageMobj pertenece al alcance jugable del motor. Declarar toda la
     // cadena de actualización como play evita que Object la ejecute desde
     // el alcance de datos en GZDoom 4.14.2.
-    play void DealStatusDamage(Actor owner, Actor source, int damage)
+    play void DealStatusDamage(Actor owner, Actor source, int damage, int visualKind=-1)
     {
         if (owner == null || owner.health <= 0 || damage <= 0) { return; }
+        let user=CaelumPlayer(owner);
+        int previous=user!=null ? user.PendingDamageVFXKind : 0;
+        if(user!=null)user.PendingDamageVFXKind=visualKind+1;
         owner.DamageMobj(
             null,
             source,
@@ -150,6 +153,7 @@ class CaelumElementalStatus : Object
             DMG_NO_ARMOR,
             0.0
         );
+        if(user!=null)user.PendingDamageVFXKind=previous;
     }
 
     play void TickDamageOverTime(Actor owner)
@@ -161,7 +165,7 @@ class CaelumElementalStatus : Object
             if (BurnTickAccumulator >= 1.0)
             {
                 BurnTickAccumulator -= 1.0;
-                DealStatusDamage(owner, BurnSource, BurnDamagePerSecond);
+                DealStatusDamage(owner, BurnSource, BurnDamagePerSecond,0);
             }
             BurnRemaining = Max(0.0, BurnRemaining - ticSeconds);
             if (BurnRemaining <= 0.0) { BurnPower = 0.0; }
@@ -183,7 +187,7 @@ class CaelumElementalStatus : Object
             if (PoisonTickAccumulator >= 1.0)
             {
                 PoisonTickAccumulator -= 1.0;
-                DealStatusDamage(owner, PoisonSource, PoisonDamagePerSecond);
+                DealStatusDamage(owner, PoisonSource, PoisonDamagePerSecond,5);
             }
             PoisonRemaining = Max(0.0, PoisonRemaining - ticSeconds);
             if (PoisonRemaining <= 0.0) { PoisonPower = 0.0; }

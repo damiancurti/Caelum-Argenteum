@@ -1,6 +1,57 @@
 # Caelum Argenteum — Current systems and rules
 
-Documentation version: **5.1.7** — 2026-10-08.
+Documentation version: **5.1.8** — 2026-10-09.
+
+## Elemental presentation and proportional damage feedback (#137)
+
+This pass changes presentation only. Fire/light, water/ice, earth/poison,
+air/lightning and quintessence share four-phase projectile materials between
+player and NPC paths. Charged size, homing, multishot, explosion, speed, collision,
+range and status rules retain their existing data. The Federal prisoner keeps
+his air/electric alternation; the electric shot renders the same travelling ray
+as the staff. The ray extends behind its collision origin. Arrows, bolts,
+carbine bullets, shotgun pellets and ballistic javelins use original meshes;
+MODELDEF momentum pitch does not change their physical velocity or gravity.
+Javelin impact still uses its existing breakage/material recovery.
+Domingo (including soldiers) and giant-rat deaths use repaired complete poses
+under their existing sprite names. Death timing, actions and corpse behavior
+are unchanged; the old damaged PNGs remain available for rollback.
+
+Attached burn, poison, frost and lightning art follows owner height and width,
+keeps the central silhouette open, and ends on real status expiry/death/removal.
+Demon breath's animated cone follows the authoritative mouth/direction and four
+existing visibility samples. Its visuals emit no damage, contact or thermal
+energy; those remain in CaelumDemonBreath. The existing mine burst reuses fire
+material without changing its explosion or twenty-tic lifetime.
+
+Fullbright materials remain visible without dynamic lights. Nearby effects use
+named native lights. Native trail particles live nine tics; impact actors live
+at most twelve. The existing whole-map living-combatant service controls cosmetic
+density: below 500, detail distance is 1024 MU and trail interval two tics; at
+500 or more, 512 MU and eight tics, with only the first breath segment retaining
+its light. The electric ray does not add a separate dot trail. Projectile bodies
+and all individual combat/resources/collision remain active. These are visual
+settings, not new gameplay ranges or a claimed performance budget.
+
+Player damage feedback measures actual post-defense Health loss / maximum Health.
+The approved colors are physical/bleeding red, fire/heat orange, ice/cold cyan,
+poison green and electricity violet; other unspecified types retain red.
+Successive hits add their remaining visual intensity, with an 18-tic linear fade
+and 0.40 alpha cap (alpha gain = 0.80 * Health fraction). A 50-point loss from
+2000 maximum produces 0.02 alpha, identical to five from 200. Prevented damage
+has no flash. Burn/poison share the existing DOT damage type while carrying only
+a temporary presentation context; this does not modify defenses or damage.
+The Doom absolute-point damage palette counter is cleared after damage handling.
+
+The existing Health thresholds drive peripheral red gradients: <=50% uses 0.12
+outer opacity; <=10% uses 0.30. Lucidity retains its own existing 50%/10%
+thresholds and all accuracy/stun rules, with a stronger animated violet gradient
+and cyan/magenta peripheral motion. HUD text/bars render afterward; camera angle,
+aiming, controls and central visibility are unchanged. Feedback state belongs
+to the affected player, including viewed-player HUDs. New cosmetic fields start
+at zero in old saves; cosmetic revision 1 is applied idempotently without
+resetting saved ages. Serialized classes/state indices and all gameplay fields
+remain available, with native old-save/current-save/hub verification.
 
 ## Double-barrel shotgun and equipped-armor bypass (#136)
 

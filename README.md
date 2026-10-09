@@ -6,8 +6,20 @@ An independent dark fantasy FPS-RPG inspired by nineteenth-century Argentina.
 Author and game designer: **Damian Curti**. Development target: **GZDoom 4.14.2**
 on Windows 11. The final game is intended to be independent of Doom assets.
 
-**Current release: 5.1.7.** Obtain and update the complete repository, validate
+**Current release: 5.1.8.** Obtain and update the complete repository, validate
 it, then rebuild with `run_dev.bat` as described below.
+
+**5.1.8 / [#137](https://github.com/damiancurti/Caelum-Argenteum/issues/137):**
+Animated elemental projectiles share original artwork, light, trails and impacts
+between player weapons and NPCs. The Federal prisoner uses the staff's electric
+ray. Arrows, bolts, bullets, pellets and flying javelins have original 3D models;
+native momentum controls their pitch. Demon breath follows its actual mouth axis.
+Damage flashes use the percentage of maximum Health lost and the approved damage
+colors. Wounded/critical borders and animated Lucidity feedback retain a clear
+center and legible HUD. Complete Domingo/giant-rat death poses replace damaged
+cuts, preserving the old source PNGs. Gameplay values and saved progress are preserved.
+Native evidence, comparisons and limitations: [validation_518](assets/validation_518/RESULTS.md).
+Author visual acceptance remains in [pending_test.txt](pending_test.txt).
 
 **5.1.7 / [#136](https://github.com/damiancurti/Caelum-Argenteum/issues/136):**
 The shortbow becomes a two-cartridge, twelve-pellet shotgun; the longbow remains.
@@ -29,7 +41,7 @@ Migration, save/hub/rollback and focused native evidence are in
 [ENERGY_RESULTS](assets/validation_517/ENERGY_RESULTS.md). The author confirmed
 CA136-01/02 and carried CA143-01 passed on 2026-10-08 and authorized #136 closure
 and [PR #146](https://github.com/damiancurti/Caelum-Argenteum/pull/146) integration.
-No author checks remain pending. #143/PR #145 merged as `abd4f578`.
+No author checks for #136 remain pending. #143/PR #145 merged as `abd4f578`.
 
 **5.1.6 / [#143](https://github.com/damiancurti/Caelum-Argenteum/issues/143):**
 Stationary soldiers now crouch and aim before firing their carbines. Physical

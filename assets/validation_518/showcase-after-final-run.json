@@ -1,0 +1,73 @@
+﻿{
+    "label":  "showcase-after-final",
+    "started_utc":  "2026-10-09T03:46:40.0829547Z",
+    "engine":  "C:\\Program Files (x86)\\GZDoom\\gzdoom.exe",
+    "engine_sha256":  "EC706C2EA1EF946EEC13BE7B1B461DF8D52EFCD47CAA6C056ED0E0257F7F9FFA",
+    "iwad_sha256":  "10D67824B11025DDD9198E8CFC87CA335EE6E2D3E63AF4180FA9B8A471893255",
+    "package_sha256":  "A9EA3D7903893E06781476505D30A624BBEDC5511FFA422B3E54339713A0A5C4",
+    "addon_sha256":  "6DC05416EE2619F591EA943ED8587ADF895E350FE4AAC0CFA8500CF512C4A225",
+    "initial_config":  "[LastRun]\nVersion=225\n[GlobalSettings]\nvid_preferbackend=1\nvid_vsync=false\nvid_maxfps=60\nvid_activeinbackground=true\ni_pauseinbackground=false\nvid_lowerinbackground=false\ni_soundinbackground=true\ncl_capfps=false\nvid_fullscreen=false\nvid_defwidth=1280\nwin_w=1296\nwin_h=759\nwin_maximized=false\nvid_defheight=720\nuse_mouse=false\nsnd_mastervolume=0.05\nlanguage=enu\n",
+    "arguments":  [
+                      "-noautoload",
+                      "-nomouse",
+                      "-iwad",
+                      "\"C:\\Program Files (x86)\\Steam\\steamapps\\common\\ultimate doom\\base\\doom2\\DOOM2.WAD\"",
+                      "-file",
+                      "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue137\\current/caelum_argenteum_dev.pk3\"",
+                      "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue137\\showcase.pk3\"",
+                      "-config",
+                      "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue137\\showcase-after-final.ini\"",
+                      "-savedir",
+                      "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue137\"",
+                      "-width",
+                      1280,
+                      "-height",
+                      720,
+                      "-window",
+                      "-rngseed",
+                      "116",
+                      "-skill",
+                      "2",
+                      "+logfile",
+                      "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue137\\showcase-after-final.txt\"",
+                      "+con_notifytime",
+                      "0",
+                      "+set",
+                      "ca_test_siege_reinforcements",
+                      1,
+                      "+map",
+                      "CA137",
+                      "+exec",
+                      "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue137\\showcase-after-final-exec.cfg\""
+                  ],
+    "benchmark_offset":  6188,
+    "command_script":  "unbindall;r_drawplayersprites false;wait 70;ca137_view 0;wait 4;screenshot showcase-after-final-showcase-0-a.png;wait 10;screenshot showcase-after-final-showcase-0-b.png;wait 16;ca137_view 1;wait 4;screenshot showcase-after-final-showcase-1-a.png;wait 10;screenshot showcase-after-final-showcase-1-b.png;wait 16;ca137_view 2;wait 4;screenshot showcase-after-final-showcase-2-a.png;wait 10;screenshot showcase-after-final-showcase-2-b.png;wait 16;ca137_view 3;wait 4;screenshot showcase-after-final-showcase-3-a.png;wait 10;screenshot showcase-after-final-showcase-3-b.png;wait 16;ca137_view 4;wait 4;screenshot showcase-after-final-showcase-4-a.png;wait 10;screenshot showcase-after-final-showcase-4-b.png;wait 16;ca137_view 5;wait 4;screenshot showcase-after-final-showcase-5-a.png;wait 10;screenshot showcase-after-final-showcase-5-b.png;wait 16;ca137_view 6;wait 4;screenshot showcase-after-final-showcase-6-a.png;wait 10;screenshot showcase-after-final-showcase-6-b.png;wait 16;ca137_view 7;wait 4;screenshot showcase-after-final-showcase-7-a.png;wait 10;screenshot showcase-after-final-showcase-7-b.png;wait 16;ca137_view 8;wait 4;screenshot showcase-after-final-showcase-8-a.png;wait 10;screenshot showcase-after-final-showcase-8-b.png;wait 16;ca137_view 9;wait 4;screenshot showcase-after-final-showcase-9-a.png;wait 10;screenshot showcase-after-final-showcase-9-b.png;wait 16;ca137_view 10;wait 4;screenshot showcase-after-final-showcase-10-a.png;wait 10;screenshot showcase-after-final-showcase-10-b.png;wait 16;ca137_view 11;wait 4;screenshot showcase-after-final-showcase-11-a.png;wait 10;screenshot showcase-after-final-showcase-11-b.png;wait 16;ca137_view 12;wait 4;screenshot showcase-after-final-showcase-12-a.png;wait 10;screenshot showcase-after-final-showcase-12-b.png;wait 16;ca137_view 13;wait 4;screenshot showcase-after-final-showcase-13-a.png;wait 10;screenshot showcase-after-final-showcase-13-b.png;wait 16;ca137_view 14;wait 4;screenshot showcase-after-final-showcase-14-a.png;wait 10;screenshot showcase-after-final-showcase-14-b.png;wait 16;ca137_view 15;wait 4;screenshot showcase-after-final-showcase-15-a.png;wait 10;screenshot showcase-after-final-showcase-15-b.png;wait 16;ca137_view 16;wait 4;screenshot showcase-after-final-showcase-16-a.png;wait 10;screenshot showcase-after-final-showcase-16-b.png;wait 16;ca137_view 17;wait 4;screenshot showcase-after-final-showcase-17-a.png;wait 10;screenshot showcase-after-final-showcase-17-b.png;wait 16;ca137_view 18;wait 5;screenshot showcase-after-final-javelin-up.png;wait 10;screenshot showcase-after-final-javelin-apex.png;wait 10;screenshot showcase-after-final-javelin-down.png;ca137_view 19;wait 15;quit\r\n",
+    "cpu":  [
+                {
+                    "Name":  "AMD Ryzen 9 5950X 16-Core Processor            ",
+                    "NumberOfCores":  16,
+                    "NumberOfLogicalProcessors":  32
+                }
+            ],
+    "gpu":  [
+                {
+                    "Name":  "Parsec Virtual Display Adapter",
+                    "DriverVersion":  "0.45.0.0"
+                },
+                {
+                    "Name":  "NVIDIA GeForce RTX 3070 Ti",
+                    "DriverVersion":  "32.0.15.7688"
+                }
+            ],
+    "os":  {
+               "Caption":  "Microsoft Windows 11 Pro",
+               "Version":  "10.0.26200",
+               "TotalVisibleMemorySize":  33475240
+           },
+    "pid":  49988,
+    "qpc_ms":  1401023118.7614,
+    "epoch_ms":  1791517601868.1921,
+    "exit_code":  0,
+    "completed_utc":  "2026-10-09T03:47:03.6322708Z",
+    "expected":  "CA137 SHOWCASE COMPLETE"
+}

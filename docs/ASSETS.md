@@ -1,6 +1,46 @@
 # Caelum Argenteum — Audio and art
 
-Documentation version: **5.1.7** — 2026-10-08.
+Documentation version: **5.1.8** — 2026-10-09.
+
+## 5.1.8 - Original elemental atlases and projectile meshes (#137)
+
+Original image_gen artwork, prompts, retained draft, editable visual data and
+atlas registration are in assets/source/art/elemental_518. Runtime PNG copies
+preserve the generated pixels byte-for-byte; TEXTURES clips cells and supplies
+pivots/scales. No raster background removal or palette processing was used.
+Cell boundaries follow measured gaps in DESIGN.json, rather than an assumed
+uniform grid; native clips keep adjacent elements out of each animation frame.
+Three atlases provide nine projectile families, four attached states and four
+directional flame phases. The stronger art direction was chosen by the author;
+final native appearance remains pending author acceptance.
+
+Optional deterministic tools: register_elemental_vfx.py,
+generate_projectile_models.py, generate_breath_models.py and
+generate_lightning_models.py under assets/generators. Outputs are in
+src/graphics/caelum/vfx, src/models/caelum/projectiles and the shared generated
+VFX data. Physical meshes reuse the project's original training-dummy wood/iron
+atlas; no external mesh was imported. OBJ +X is the native model pitch axis,
+Y is up. MODELDEF binds only the flying frame and preserves existing physical
+impact states. The existing Doom-dependent development impact puff is unchanged;
+this patch does not claim to finish the broader independent-asset migration.
+
+The lightning model is shared by staff, other existing implements and NPCs,
+including the Federal prisoner; it is not a hitscan or new attack. Breath planes
+use the same range and four visibility segments as the existing ability. Owned
+impact/status effects use native alpha and bounded lifetimes. Runtime provenance:
+src/licenses/ELEMENTAL_VFX_518.txt. Comparative native captures and measurement
+records: assets/validation_518; no PK3, IWAD, save or executable is distributed.
+
+The author also reported clipped Domingo/giant-rat deaths. The source runtime
+PNGs already lacked body parts and contained neighboring sprites; the located
+historical graphics ZIP has the same damaged Domingo hashes. Complete eight-pose
+sequences were reconstructed with image_gen using the existing owned character
+references, rather than claiming recovery of a missing original sheet. Original
+PNGs remain unchanged. New untouched atlases, prompts and measured registration:
+assets/source/art/death_repair_518; generator register_death_frames.py. Native
+TEXTURES preserves DOMI S-Z / RATG F-M names, state timing and floor anchors.
+The soldier shares Domingo's repaired poses. Runtime provenance is in
+src/licenses/DEATH_REPAIR_518.txt. CA137-03 awaits author visual acceptance.
 
 ## 5.1.7 - Modular shotgun artwork and evidence (#136)
 

@@ -1,6 +1,22 @@
 # Caelum Argenteum — Project, status and roadmap
 
-Documentation version: **5.1.7** — 2026-10-08.
+Documentation version: **5.1.8** — 2026-10-09.
+
+## 5.1.8 - Elemental presentation and proportional screen feedback (#137)
+
+The author selected more intense elemental visuals, luminous projectiles and
+3D arrows, bolts, bullets, pellets and javelins. One shared presentation layer
+covers every existing magical weapon family/tier and player/NPC projectile
+variant. The Federal prisoner's electric shot uses the staff ray. Existing
+spells, targeting, damage, resource costs and thermal rules remain authoritative.
+Approved additions normalize damage feedback by maximum Health, color selected
+damage families, mark <=50% / <=10% Health at the screen edges and strengthen
+Lucidity presentation. Sources and deterministic model/atlas tools are retained.
+Native comparison and persistence evidence: assets/validation_518/RESULTS.md.
+The reported Domingo/giant-rat death cuts are repaired through complete pose
+reconstructions, retaining original PNGs and native death timing.
+Technical checks and author aesthetic acceptance are separate; CA137-01/02/03 remain
+pending. Branch/PR delivery is authorized; merge/closure has not been requested.
 
 ## 5.1.7 - Shortbow replacement and firearm armor bypass (#136)
 

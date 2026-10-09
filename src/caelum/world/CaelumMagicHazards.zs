@@ -76,6 +76,9 @@ class CaelumMineBurst : Actor
     {
         Super.Tick();
         Age++;
+        sprite=GetSpriteIndex(CaelumElementalVFXData.SpriteName(0));
+        frame=(Age/CaelumElementalVFXData.FRAME_TICS)%4;
+        if(Age%CaelumElementalVFXData.FRAME_TICS==0)CaelumElementalVFX.Light(self,0);
         Scale = (0.5 + Age*0.10, 0.5 + Age*0.10);
         Alpha = Max(0.0, 1.0-Age/20.0);
         if (Age >= 20) Destroy();
