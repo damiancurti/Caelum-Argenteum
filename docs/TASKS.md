@@ -26,9 +26,10 @@ Revision 8 preserves completed energy and tracks reload progress. Resilience
 adaptation uses base plus Type 2; thermal Toughness thresholds already did so.
 Final tests and qualifications: assets/validation_517/ENERGY_RESULTS.md.
 
-Delivery: commit/push and linked PR. Next: author CA136-01 appearance/gameplay
-review, CA136-02 thermal follow-up and carried CA143-01. #136 has no merge/close authorization. A future hand
-appearance selector may reuse these layers; no new race/hand balance is invented.
+Accepted on 2026-10-08: CA136-01 appearance/gameplay, CA136-02 thermal follow-up
+and carried CA143-01 all passed without reported qualifications. Issue #136
+closure and PR #146 integration are authorized; the author queue is empty.
+A future hand appearance selector may reuse these layers; no new balance is implied.
 
 ## Issue #143 - Crouched aimed soldiers (5.1.6)
 
@@ -42,7 +43,7 @@ Focused engine checks, ordinary soldier AI, player input, save/reload/hub and
 old-save migration/checkpoint rollback are recorded in validation_516. No mass
 siege retest is required for this patch. The author explicitly requests commit,
 push, and merge/closure if implementation and verification are complete.
-CA143-01 remains pending author visual/gameplay confirmation independently.
+PR #145 is merged; CA143-01 was separately confirmed passed on 2026-10-08.
 Next: retain the accepted city deployment and high-density AI policy; any new
 movement or combat balance requires its own authored issue.
 

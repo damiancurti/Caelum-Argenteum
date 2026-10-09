@@ -2,8 +2,10 @@
 
 Author-approved follow-up to [FOLLOWUP_RESULTS.md](FOLLOWUP_RESULTS.md), whose
 earlier swimming, jump, attack and firearm profiles are superseded here.
-GZDoom 4.14.2, Windows 11/Vulkan, 2026-10-08 local time. This is agent evidence;
-CA136-01, CA136-02 and carried CA143-01 still require author confirmation.
+GZDoom 4.14.2, Windows 11/Vulkan, 2026-10-08 local time. Native results below are
+agent evidence. The author subsequently confirmed CA136-01, CA136-02 and carried
+CA143-01 passed on 2026-10-08, without reported qualifications; HISTORY records
+their original releases/issues. The manifests retain their delivery-time status.
 
 ## Approved contract
 
@@ -132,5 +134,6 @@ The eight prior first-person captures remain applicable to unchanged artwork.
 Tests use one engine process at a time, 5% audio and unpaused background
 simulation. The temporary keep-awake request was released and the original
 power plan verified unchanged (ENERGY_POWER.json). No mass-siege or multiplayer
-acceptance is claimed. Commit/push and PR #146 update are authorized; issue #136
-and its PR remain open for author review.
+acceptance is claimed. The author confirmed all outstanding tests passed and
+authorized #136 closure and PR #146 merge on 2026-10-08. The acceptance-only
+update changes no runtime files; the recorded native evidence remains applicable.

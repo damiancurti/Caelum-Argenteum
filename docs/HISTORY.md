@@ -4,6 +4,16 @@ Documentation version: **5.1.7** — 2026-10-08.
 
 ## 5.1.7 - Shortbow becomes a modular double-barrel shotgun (#136, 2026-10-08)
 
+Author acceptance, 2026-10-08 (America/Buenos_Aires): the author confirms all
+outstanding tests passed and requests #136 closure and PR #146 merge.
+CA136-01 (origin 5.1.7/#136, shotgun appearance and ordinary use) and CA136-02
+(origin 5.1.7/#136, thermal action timing and fixed-work follow-up) are PASSED,
+with no qualifications reported. Carried CA143-01 is also PASSED and recorded
+under its original 5.1.6/#143 entry below. The confirmed entries are removed
+from pending_test.txt, leaving the tracked queue empty. This acceptance update
+changes no runtime files and keeps release 5.1.7. Existing static/native evidence
+remains applicable; bounded trial and multiplayer/performance limits remain.
+
 After #143 / PR #145 merged as abd4f578, the author changes #136's target from
 longbow to shortbow and approves: two cartridges, twelve D/10 pellets, half
 carbine range, matching carbine firing/reload costs/time, mass/condition/critical
@@ -97,7 +107,8 @@ merchant equipment revisions and hub-fixture references to the departed player.
 Final fixes use distinct inventory acquisition, explicit state labels, constructor
 revision stamps and stable ItemIds in the observer. These failures are not passing
 evidence. Full bounds, successful run labels and final hashes: validation_517.
-Commit/push is authorized; #136 integration and closure await the author.
+That implementation was delivered for review; the acceptance recorded above
+authorizes #136 integration and closure through PR #146.
 
 ## 5.1.6 - Soldier crouched carbine aim (#143, 2026-10-08)
 
@@ -130,8 +141,16 @@ soldier fires 50 shots, reloads four times and retains all 2168 HP in a bounded
 single-target control. It records 31 impacts and exposure +0.507586; this is not
 a mass-battle or indefinite-survival claim. All final native runs require clean
 exit 0. Exact source/package hashes, visual coverage and static gates are in
-assets/validation_516. CA143-01 remains outstanding author confirmation; the
-conditional integration authorization is separate from manual acceptance.
+assets/validation_516. CA143-01 was carried forward pending author confirmation;
+the conditional integration authorization was separate from manual acceptance.
+
+Author acceptance, 2026-10-08 (America/Buenos_Aires): CA143-01, originating in
+5.1.6/#143 (crouched carbine appearance and ordinary combat), PASSED without
+reported qualifications. The author confirms all outstanding checks after the
+#136 follow-up, including this carried entry. It is removed from pending_test.txt
+alongside CA136-01/02. PR #145 had already merged as abd4f578; this explicit
+confirmation supplies the separate visual/gameplay acceptance, not a new mass
+performance or multiplayer result.
 
 ## 5.1.5 - Demon breath and finite potions (#135, 2026-10-08)
 

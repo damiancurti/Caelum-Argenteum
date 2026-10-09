@@ -4,9 +4,9 @@ Documentation version: **5.1.7** — 2026-10-08.
 
 **5.1.7/#136:** shortbow -> two-cartridge shotgun; 12 D/10 pellets,
 equipped-only bypass, independent ammo, modular hands/weapon sprites.
-Evidence: validation_517; merge pending.
+Accepted 2026-10-08; PR146; validation_517.
 Follow-up: muted gloves, fixed work, Type-2 adaptation; saved exposure/HP persist.
-CA136-01/02/CA143-01 pending. #143/PR145 merged abd4f578.
+CA136-01/02/CA143-01 passed. #143/PR145 merged abd4f578.
 
 Soldiers: validation_516. #135/PR144 accepted/merged (5e550484).
 #133 checks accepted. #140 merged 5f9202ad.

@@ -25,9 +25,10 @@ uses a fixed half-metre human jump and independent action/distance budgets, and
 changes Resilience adaptation to base plus Type 2 (+/-10 C and 2 C/day at 100).
 Toughness thresholds already use Type 2. ENERGY_RESULTS records the final native
 controls and migration; earlier energy reports retain their original contracts.
-Delivery is commit/push and a linked PR, with no #136 merge/closure authorization
-yet. CA136-01/02 and the carried CA143-01 remain author visual/gameplay checks.
-#143 is merged through PR #145 (abd4f578) and closed; merge is not manual acceptance.
+Author acceptance on 2026-10-08: CA136-01/02 and carried CA143-01 passed without
+reported qualifications; #136 closure and PR #146 integration are authorized.
+No author checks remain pending. #143 already merged through PR #145 (abd4f578);
+its manual acceptance is now recorded separately in HISTORY.
 
 ## 5.1.6 - Crouched and aimed soldiers (#143)
 
@@ -43,9 +44,9 @@ spread factors, reload rates, obstructions, interrupts, independent player camer
 ordinary siege AI and actual player inputs. Save/hub and revision-1 migration
 retain magazines, reload progress, condition and resources; rollback restores
 the original save/runtime checkpoint. Evidence and exact bounds: validation_516.
-The author requests commit/push and merge/closure when complete and verified.
-CA143-01 records the separate outstanding manual visual/gameplay confirmation;
-integration does not substitute for that confirmation.
+PR #145 is merged. The author separately confirmed CA143-01 (5.1.6/#143) passed
+on 2026-10-08 while accepting the full outstanding queue after #136. HISTORY
+records that visual/gameplay confirmation independently of integration.
 
 ## 5.1.5 - Demon supplies and fire breath (#135)
 

@@ -35,8 +35,9 @@ The corrected persistent overlays are verified in fp-final.
 
 Native fixtures, selected clean logs/configurations/captures, source hashes and
 reproduction commands are in assets/validation_517. They exercise both actual
-inputs and deterministic mechanics. Agent verification remains separate from
-CA136-01 and CA143-01 author acceptance. Development PK3s, IWADs, executables and
+inputs and deterministic mechanics. The author separately confirmed CA136-01
+and CA143-01 passed on 2026-10-08; HISTORY records their original releases.
+Development PK3s, IWADs, executables and
 saved-game fixtures remain local under build/issue136 and are not distributed.
 
 ## 5.1.6 - Crouched Domingo carbine poses (#143)
@@ -57,8 +58,8 @@ registration actor so native rendering never lazily initializes an unknown sprit
 The atlas matches half the standing Domingo artwork's height. The same service
 selects these poses for stationary crouched players and soldiers; player moving
 crouch retains the accepted walking art. Native captures and input checks live
-in assets/validation_516. Agent visual review and the outstanding CA143-01
-manual author check remain distinct.
+in assets/validation_516. Agent visual review is separate from CA143-01,
+which the author confirmed passed on 2026-10-08.
 
 ## 5.1.5 - Demon breath and potion tiers (#135)
 

@@ -26,9 +26,10 @@ adaptation: at 100, +/-10 C and 2 C/day. Air costs remain unchanged.
 Migration, save/hub/rollback and focused native evidence are in
 [validation_517](assets/validation_517/RESULTS.md). Follow-up reproduction is in
 [FOLLOWUP_RESULTS](assets/validation_517/FOLLOWUP_RESULTS.md), followed by
-[ENERGY_RESULTS](assets/validation_517/ENERGY_RESULTS.md). Commit/push is requested;
-#136 remains open for review. [CA136-01/02 and CA143-01](pending_test.txt) await
-author appearance/gameplay confirmation. #143/PR #145 merged as `abd4f578`.
+[ENERGY_RESULTS](assets/validation_517/ENERGY_RESULTS.md). The author confirmed
+CA136-01/02 and carried CA143-01 passed on 2026-10-08 and authorized #136 closure
+and [PR #146](https://github.com/damiancurti/Caelum-Argenteum/pull/146) integration.
+No author checks remain pending. #143/PR #145 merged as `abd4f578`.
 
 **5.1.6 / [#143](https://github.com/damiancurti/Caelum-Argenteum/issues/143):**
 Stationary soldiers now crouch and aim before firing their carbines. Physical
@@ -37,9 +38,9 @@ once. Original Domingo artwork covers aim, fire and reload in eight directions.
 Movement, melee, recovery and interruptions release the pose; standing requires
 clearance. The player's stationary crouched carbine uses the same artwork.
 Native mechanics, ordinary AI, player input and saved-game evidence are recorded
-in [validation_516](assets/validation_516/RESULTS.md). The author authorized
-commit/push and integration/closure once implementation and verification finish;
-[CA143-01](pending_test.txt) remains a separate author visual/gameplay check.
+in [validation_516](assets/validation_516/RESULTS.md). PR #145 is merged;
+the author separately confirmed CA143-01 passed on 2026-10-08. Acceptance and
+its original release/issue are recorded in [HISTORY](docs/HISTORY.md).
 
 **5.1.5 / [#135](https://github.com/damiancurti/Caelum-Argenteum/issues/135):**
 Mandingas and Zupay gain sustained racial fire breath, finite automatic potions
