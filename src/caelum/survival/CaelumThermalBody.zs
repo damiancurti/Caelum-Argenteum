@@ -62,10 +62,9 @@ class CaelumThermalBody : Object play
             thermal.HeightMeters=user.DerivedStats.BodyHeightMeters;
             thermal.MovedMassKg=user.DerivedStats.TotalMass;
             thermal.Toughness=user.Attributes.Toughness;
-            thermal.AcclimationMultiplier=user.DerivedStats.CalculateType4Percent(Max(0.0,user.Attributes.Resilience))/100.0;
+            thermal.AcclimationMultiplier=1.0+user.DerivedStats.CalculateType2Percent(Max(0.0,user.Attributes.Resilience))/100.0;
             race=user.CharacterProfile.Race;
-            thermal.ReferenceJumpHeat=CaelumThermalRules.JumpHeat(thermal.MovedMassKg,0,
-                user.JumpZ*TICRATE/CaelumJourneyRules.MAP_UNITS_PER_METER);
+            thermal.ReferenceJumpHeat=CaelumThermalRules.BodyJumpHeat(thermal.MovedMassKg);
         }
         else if(npc!=null)
         {
@@ -74,13 +73,11 @@ class CaelumThermalBody : Object play
             thermal.HeightMeters=npc.GetPhysiologicalHeight()/CaelumJourneyRules.MAP_UNITS_PER_METER;
             thermal.MovedMassKg=thermal.BodyMassKg+npc.GetAttackCarriedWeight();
             thermal.Toughness=npc.CombatToughness+npc.GetCombatArmorAttributeBonus(CaelumConstants.ATTRIBUTE_TOUGHNESS);
-            thermal.AcclimationMultiplier=npc.CalculateActorType4Percent(Max(0,npc.CombatResilience
+            thermal.AcclimationMultiplier=1.0+npc.CalculateActorType2Percent(Max(0,npc.CombatResilience
                 +npc.GetCombatArmorAttributeBonus(CaelumConstants.ATTRIBUTE_RESILIENCE)))/100.0;
             race=FurryAnimal(npc) ? CaelumConstants.RACE_BEAST_MAN : npc.GetArmorRace();
-            // Los NPC actuales no tienen lanzamiento de salto propio: la
-            // referencia compartida usa el salto base autorizado del motor.
-            thermal.ReferenceJumpHeat=CaelumThermalRules.JumpHeat(thermal.MovedMassKg,0,
-                CaelumConstants.GZDOOM_BASE_JUMP_Z*TICRATE/CaelumJourneyRules.MAP_UNITS_PER_METER);
+            // Metadato histórico; las otras acciones ya no toman el salto.
+            thermal.ReferenceJumpHeat=CaelumThermalRules.BodyJumpHeat(thermal.MovedMassKg);
         }
         thermal.ComfortC=CaelumThermalRules.Comfort(race,
             body is 'CaelumMandinga' || body is 'CaelumZupayColossus');

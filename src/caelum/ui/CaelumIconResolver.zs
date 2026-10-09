@@ -5,6 +5,7 @@ class CaelumIconResolver : Object
     static clearscope String ResolveTierPath(String basePath, int tier)
     {
         int resolvedTier = Clamp(tier, 1, 3);
+        if(basePath=="CA_SHOTGUN_T1")return String.Format("CA_SHOTGUN_T%d",resolvedTier);
         if (resolvedTier <= 1 || basePath.Length() < 5)
         {
             return basePath;
@@ -32,7 +33,7 @@ class CaelumIconResolver : Object
             case CaelumConstants.WEAPON_TYPE_WAR_AXE: return "graphics/caelum/icons/ca_war_axe.png";
             case CaelumConstants.WEAPON_TYPE_HALBERD: return "graphics/caelum/icons/ca_halberd.png";
             case CaelumConstants.WEAPON_TYPE_GIANT_GAUNTLETS: return "graphics/caelum/icons/ca_giant_gauntlets.png";
-            case CaelumConstants.WEAPON_TYPE_STANDARD_BOW: return "graphics/caelum/icons/ca_standard_bow.png";
+            case CaelumConstants.WEAPON_TYPE_SHOTGUN: return "CA_SHOTGUN_T1";
             case CaelumConstants.WEAPON_TYPE_LONGBOW: return "graphics/caelum/icons/ca_longbow.png";
             case CaelumConstants.WEAPON_TYPE_CROSSBOW: return "graphics/caelum/icons/ca_crossbow.png";
             case CaelumConstants.WEAPON_TYPE_BELL: return "graphics/caelum/icons/ca_bell.png";

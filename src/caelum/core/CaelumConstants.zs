@@ -919,7 +919,8 @@ class CaelumConstants : Object
     const WEAPON_TYPE_WAR_AXE = 11;
     const WEAPON_TYPE_HALBERD = 12;
     const WEAPON_TYPE_GIANT_GAUNTLETS = 13;
-    const WEAPON_TYPE_STANDARD_BOW = 14;
+    const WEAPON_TYPE_SHOTGUN = 14;
+    const WEAPON_TYPE_STANDARD_BOW = WEAPON_TYPE_SHOTGUN; // Alias de partidas y herramientas anteriores.
     const WEAPON_TYPE_LONGBOW = 15;
     const WEAPON_TYPE_CROSSBOW = 16;
     const WEAPON_TYPE_BELL = 17;
@@ -944,7 +945,8 @@ class CaelumConstants : Object
     const WEAPON_WAR_AXE_TIER_ONE_WEIGHT = 20.0;
     const WEAPON_HALBERD_TIER_ONE_WEIGHT = 16.0;
     const WEAPON_GIANT_GAUNTLETS_TIER_ONE_WEIGHT = 20.0;
-    const WEAPON_STANDARD_BOW_TIER_ONE_WEIGHT = 6.0;
+    const WEAPON_SHOTGUN_TIER_ONE_WEIGHT = WEAPON_CARBINE_TIER_ONE_WEIGHT;
+    const WEAPON_STANDARD_BOW_TIER_ONE_WEIGHT = WEAPON_SHOTGUN_TIER_ONE_WEIGHT;
     const WEAPON_LONGBOW_TIER_ONE_WEIGHT = 10.0;
     const WEAPON_CROSSBOW_TIER_ONE_WEIGHT = 8.0;
     const WEAPON_BELL_TIER_ONE_WEIGHT = 5.0;
@@ -963,6 +965,7 @@ class CaelumConstants : Object
     const AMMUNITION_JAVELIN_TIER_ONE = 3;
     const AMMUNITION_JAVELIN_TIER_TWO = 4;
     const AMMUNITION_JAVELIN_TIER_THREE = 5;
+    const AMMUNITION_SHOTGUN = 6;
     // Las jabalinas ya no usan munición. Las IDs antiguas se conservan sólo
     // para compatibilidad con partidas de desarrollo anteriores, pero quedan
     // fuera del selector y de todas las rutas normales de juego.
@@ -992,7 +995,8 @@ class CaelumConstants : Object
     const CATALOGUE_WEAPON_WAR_AXE = 9;
     const CATALOGUE_WEAPON_HALBERD = 10;
     const CATALOGUE_WEAPON_GIANT_GAUNTLETS = 11;
-    const CATALOGUE_WEAPON_STANDARD_BOW = 12;
+    const CATALOGUE_WEAPON_SHOTGUN = 12;
+    const CATALOGUE_WEAPON_STANDARD_BOW = CATALOGUE_WEAPON_SHOTGUN;
     const CATALOGUE_WEAPON_CARBINE = 13;
     const CATALOGUE_WEAPON_LONGBOW = 14;
     const CATALOGUE_WEAPON_CROSSBOW = 15;

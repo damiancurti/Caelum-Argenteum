@@ -1095,14 +1095,14 @@ class CaelumCombatActor : Actor
         if(tics<=0)SetState(CurState.NextState);
     }
 
-    bool SpendPhysicalAttackAir(double baseAir)
+    bool SpendPhysicalAttackAir(double baseAir,double workJoules=CaelumThermalData.NATURAL_ATTACK_WORK_JOULES)
     {
         AttackResourceBaseCost=baseAir;AttackResourceMagical=false;AttackResourceWeapon=-1;
         // Una cornada ya preparada no repite la carrera después de esperar.
         AttackResourceResume=self is "CaelumBull" ? CurState : MeleeState;
         if(!TrySpendCombatAir(GetEffectiveAttackAir(baseAir)))
         {WaitForAttackResource();return false;}
-        CaelumThermalEffects.RecordAction(self,GetEffectiveAttackAir(baseAir));
+        CaelumThermalService.Impulse(self,CaelumThermalRules.PositiveWorkHeat(workJoules),true);
         return true;
     }
 
@@ -1379,7 +1379,9 @@ class CaelumCombatActor : Actor
         if (!combatActor.BeginCaelumDiagnosticAttack()) { return; }
         if (!combatActor.WithinAttackRange(false)) return;
         double cost=combatActor is "CaelumBull" ? CaelumAttackRules.NaturalAir() : CaelumWeaponCatalogue.GetPrimaryAirCost(CaelumConstants.CATALOGUE_WEAPON_MACHETE);
-        if (!combatActor.SpendPhysicalAttackAir(cost)) return;
+        double work=combatActor is "CaelumBull" ? CaelumThermalData.NATURAL_ATTACK_WORK_JOULES
+            : CaelumThermalData.WeaponWork(CaelumConstants.WEAPON_TYPE_MACHETE);
+        if (!combatActor.SpendPhysicalAttackAir(cost,work)) return;
         if (combatActor.IsCaelumMassDiagnosticAlly(combatActor.Target))
         {
             combatActor.ImpactDiagnosticFriendlyFirePrevented++;
@@ -1462,7 +1464,7 @@ class CaelumCombatActor : Actor
         if (combatActor == null) { return; }
         if (!combatActor.BeginCaelumDiagnosticAttack()) { return; }
         if (!combatActor.WithinAttackRange(false)) return;
-        if (!combatActor.SpendPhysicalAttackAir(CaelumAttackRules.SlamAir())) return;
+        if (!combatActor.SpendPhysicalAttackAir(CaelumAttackRules.SlamAir(),CaelumThermalData.GROUND_SLAM_WORK_JOULES)) return;
 
         double strengthScaledDamage = Max(1.0,
             Max(0.0, authoredBaseDamage)
@@ -1762,9 +1764,9 @@ class CaelumCombatActor : Actor
         return CaelumArmorRules.InnateDefense(GetArmorRace(), magical);
     }
 
-    double GetArmorDefensePercent(int slot, bool magical = false)
+    double GetArmorDefensePercent(int slot, bool magical = false,Actor inflictor=null)
     {
-        return CaelumArmorRules.TotalDefense(GetInnateArmorDefense(magical), CombatArmor, slot, magical);
+        return CaelumArmorRules.TotalDefense(GetInnateArmorDefense(magical), CombatArmor, slot, magical,inflictor);
     }
 
     double GetImpactArmorDefensePercent()
@@ -1883,7 +1885,8 @@ class CaelumCombatActor : Actor
     void ApplyWeightedImpactLucidity(
         double minimumHeightRatio,
         double maximumHeightRatio,
-        double totalOverlap
+        double totalOverlap,
+        Actor inflictor=null
     )
     {
         LastImpactHeadContactWeight = 0.0;
@@ -1913,7 +1916,7 @@ class CaelumCombatActor : Actor
             LastImpactHeadContactWeight += weight;
             int location = AnatomyProfile.GetLocation(regionIndex);
             int slot = GetArmorSlotForLocation(location);
-            double defenseRatio = Clamp(GetArmorDefensePercent(slot) / 100.0, 0.0, 1.0);
+            double defenseRatio = Clamp(GetArmorDefensePercent(slot,false,inflictor) / 100.0, 0.0, 1.0);
             weightedLoss +=
                 CaelumConstants.CRITICAL_POINT_BASE_LUCIDITY_LOSS
                 * weight
@@ -2036,7 +2039,7 @@ class CaelumCombatActor : Actor
                 );
                 double vulnerabilityMultiplier =
                     GetActorVulnerabilityMultiplier(effectiveGrade);
-                double defenseRatio = Clamp(GetArmorDefensePercent(slot) / 100.0, 0.0, 1.0);
+                double defenseRatio = Clamp(GetArmorDefensePercent(slot,false,sourceActor) / 100.0, 0.0, 1.0);
 
                 LastImpactWeightedVulnerabilityMultiplier +=
                     weight * vulnerabilityMultiplier;
@@ -2079,7 +2082,7 @@ class CaelumCombatActor : Actor
             ApplyWeightedImpactLucidity(
                 LastImpactContactMinimumHeightRatio,
                 LastImpactContactMaximumHeightRatio,
-                totalOverlap
+                totalOverlap,sourceActor
             );
         }
         if (LastImpactFinalDamage <= 0) { return; }
@@ -3072,7 +3075,7 @@ class CaelumCombatActor : Actor
             totalPostAnatomyDamage += postAnatomyDamage;
             double preDefenseDamage = CaelumArmorRules.AfterToughnessDamage(
                 postAnatomyDamage, GetImpactMaximumHealth(), CombatToughness);
-            double defensePercent = GetArmorDefensePercent(slot, magical);
+            double defensePercent = GetArmorDefensePercent(slot, magical,inflictor);
             double defenseRatio = Clamp(defensePercent / 100.0, 0.0, 1.0);
             double absorbedDamage = preDefenseDamage * defenseRatio;
             double postDefenseDamage = Max(
@@ -3106,7 +3109,7 @@ class CaelumCombatActor : Actor
                 && CombatArmor.Durability[slot] > 0
                 && absorbedDamage > 0.0)
             {
-                double equippedAbsorbed = preDefenseDamage * CombatArmor.GetDefense(slot, magical) / 100.0;
+                double equippedAbsorbed = preDefenseDamage * CombatArmor.GetDefense(slot, magical) / 100.0*CaelumArmorRules.EquipmentRetention(inflictor);
                 int durabilityLoss = int(
                     equippedAbsorbed
                         / CaelumConstants.ARMOR_ABSORBED_DAMAGE_PER_GUARANTEED_DURABILITY
@@ -3308,7 +3311,7 @@ class CaelumCombatActor : Actor
             LastCombatArmorIncomingDamage, GetImpactMaximumHealth(), CombatToughness);
         LastCombatArmorIncomingDamage = CaelumArmorRules.AfterToughnessDamage(
             LastCombatArmorIncomingDamage, GetImpactMaximumHealth(), CombatToughness);
-        LastCombatArmorDefenseExactPercent = GetArmorDefensePercent(LastCombatArmorSlot, magical);
+        LastCombatArmorDefenseExactPercent = GetArmorDefensePercent(LastCombatArmorSlot, magical,inflictor);
         LastCombatArmorDefensePercent = int(LastCombatArmorDefenseExactPercent);
         double defenseRatio = Clamp(
             LastCombatArmorDefenseExactPercent / 100.0,
@@ -3330,7 +3333,7 @@ class CaelumCombatActor : Actor
         }
 
         double equippedAbsorbed = LastCombatArmorIncomingDamage
-            * CombatArmor.GetDefense(LastCombatArmorSlot, magical) / 100.0;
+            * CombatArmor.GetDefense(LastCombatArmorSlot, magical) / 100.0*CaelumArmorRules.EquipmentRetention(inflictor);
         LastCombatArmorDurabilityLoss = int(
             equippedAbsorbed
                 / CaelumConstants.ARMOR_ABSORBED_DAMAGE_PER_GUARANTEED_DURABILITY

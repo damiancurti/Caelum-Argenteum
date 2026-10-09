@@ -6,8 +6,30 @@ An independent dark fantasy FPS-RPG inspired by nineteenth-century Argentina.
 Author and game designer: **Damian Curti**. Development target: **GZDoom 4.14.2**
 on Windows 11. The final game is intended to be independent of Doom assets.
 
-**Current release: 5.1.6.** Obtain and update the complete repository, validate
+**Current release: 5.1.7.** Obtain and update the complete repository, validate
 it, then rebuild with `run_dev.bat` as described below.
+
+**5.1.7 / [#136](https://github.com/damiancurti/Caelum-Argenteum/issues/136):**
+The shortbow becomes a two-cartridge, twelve-pellet shotgun; the longbow remains.
+It shares carbine costs, reload, crafting and Maximum spread, with half its range.
+Firearms bypass the approved portion of equipped armor, preserving innate defense
+and Toughness. Independent cartridges are stocked in armories and six MAP02 drops.
+Original weapon and hand sprites are separate reusable first-person layers.
+The inspection follow-up reduces/mutes the gloves and matches carbine aiming.
+It also corrects thermal effort: actions heat only while performed, without the
+old lingering activity peak. Existing saved exposure and health are preserved.
+The final energy model assigns fixed work to jumps, physical attacks and firearm
+cycles, distance-based locomotion work, and separate sustained isometric heat.
+Body heat is three times positive work at 25% efficiency. Enhanced jump height
+does not multiply other efforts. Resilience now uses base plus Type 2 for climate
+adaptation: at 100, +/-10 C and 2 C/day. Air costs remain unchanged.
+Migration, save/hub/rollback and focused native evidence are in
+[validation_517](assets/validation_517/RESULTS.md). Follow-up reproduction is in
+[FOLLOWUP_RESULTS](assets/validation_517/FOLLOWUP_RESULTS.md), followed by
+[ENERGY_RESULTS](assets/validation_517/ENERGY_RESULTS.md). The author confirmed
+CA136-01/02 and carried CA143-01 passed on 2026-10-08 and authorized #136 closure
+and [PR #146](https://github.com/damiancurti/Caelum-Argenteum/pull/146) integration.
+No author checks remain pending. #143/PR #145 merged as `abd4f578`.
 
 **5.1.6 / [#143](https://github.com/damiancurti/Caelum-Argenteum/issues/143):**
 Stationary soldiers now crouch and aim before firing their carbines. Physical
@@ -16,9 +38,9 @@ once. Original Domingo artwork covers aim, fire and reload in eight directions.
 Movement, melee, recovery and interruptions release the pose; standing requires
 clearance. The player's stationary crouched carbine uses the same artwork.
 Native mechanics, ordinary AI, player input and saved-game evidence are recorded
-in [validation_516](assets/validation_516/RESULTS.md). The author authorized
-commit/push and integration/closure once implementation and verification finish;
-[CA143-01](pending_test.txt) remains a separate author visual/gameplay check.
+in [validation_516](assets/validation_516/RESULTS.md). PR #145 is merged;
+the author separately confirmed CA143-01 passed on 2026-10-08. Acceptance and
+its original release/issue are recorded in [HISTORY](docs/HISTORY.md).
 
 **5.1.5 / [#135](https://github.com/damiancurti/Caelum-Argenteum/issues/135):**
 Mandingas and Zupay gain sustained racial fire breath, finite automatic potions
@@ -80,7 +102,8 @@ or change the automatic 500-combatant AI.
 Issue [#131](https://github.com/damiancurti/Caelum-Argenteum/issues/131) adds a
 signed thermal exposure bar directly above Load. Constitution now reduces
 Sleep loss just like Hunger/Thirst; Resilience instead scales climate adaptation
-rate and range (at 100: 3 C/world day, +/-15 C, five days from the racial base).
+rate and range (updated by #136 to Type 2: at 100, 2 C/world day, +/-10 C,
+five days from the racial base).
 Long journeys transition between endpoint climates by distance, preserving
 passenger shelter and stopping walking progress while asleep. See the
 [thermal contract](docs/SYSTEMS.md#thermal-exposure-and-energy-transfer-130),

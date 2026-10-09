@@ -350,7 +350,7 @@ class CaelumMainM00RonnieTrial : Object play
         let record = user.GetPersistentCharacterState(false);
         if (record == null || !IsStarted(user) || !record.MainM00StarterChosen) return;
         int recipe = record.MainM00StarterOption == 15 ? CaelumConstants.CRAFTING_BOLT_RECIPE
-            : (record.MainM00StarterOption == 12 || record.MainM00StarterOption == 14)
+            : (record.MainM00StarterOption == 14)
             ? CaelumConstants.CRAFTING_ARROW_RECIPE : -1;
         if (recipe < 0 || record.KnowsCraftingRecipe(recipe)) return;
         record.LearnCraftingRecipe(recipe);

@@ -3,6 +3,21 @@ class CaelumArmorRules : Object
 {
     const PALOMO_DEFENSE = 77.0;
 
+    // #136: sólo atraviesa la pieza equipada, nunca la defensa racial ni Dureza.
+    static double WeaponBypass(int type,int tier)
+    {
+        if(type==CaelumConstants.WEAPON_TYPE_CARBINE)return 0.60+0.10*Clamp(tier,1,3);
+        if(type==CaelumConstants.WEAPON_TYPE_SHOTGUN)return 0.50+0.10*Clamp(tier,1,3);
+        return 0;
+    }
+    static double EquipmentRetention(Actor inflictor)
+    {
+        if(inflictor is "CaelumCannonProjectile")return 0;
+        let projectile=CaelumActorProjectile(inflictor);
+        if(projectile==null || !projectile.CaelumWeaponWearPrepared)return 1;
+        return 1-WeaponBypass(projectile.CaelumWearWeaponType,projectile.CaelumWearWeaponTier);
+    }
+
     // Curva histórica del atributo, sin limitar el porcentaje a 100.
     static clearscope double ToughnessReductionPercent(double toughness)
     {
@@ -56,10 +71,10 @@ class CaelumArmorRules : Object
         }
     }
 
-    static double TotalDefense(double innateDefense, CaelumArmorModel armor, int slot, bool magical = false)
+    static double TotalDefense(double innateDefense, CaelumArmorModel armor, int slot, bool magical = false,Actor inflictor=null)
     {
         return Clamp(innateDefense
-            + (armor != null ? armor.GetDefense(slot, magical) : 0.0), 0.0, 100.0);
+            + (armor != null ? armor.GetDefense(slot, magical)*EquipmentRetention(inflictor) : 0.0), 0.0, 100.0);
     }
 
     static bool IsMagical(Actor inflictor, Name mod)

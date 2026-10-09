@@ -13,9 +13,8 @@ class CaelumThermalMotion : Object play
         if(distance<=0)return;
         CaelumThermalBody.Refresh(body,thermal);
         double grade=(after.Z-before.Z)/distance;
-        double speed=distance*TICRATE/CaelumJourneyRules.MAP_UNITS_PER_METER;
-        thermal.PendingActivityJoules+=CaelumThermalRules.LocomotionHeat(
-            thermal.MovedMassKg,speed,grade,running,Gravity(body))/TICRATE;
+        thermal.PendingActivityJoules+=CaelumThermalRules.PositiveWorkHeat(CaelumThermalRules.LocomotionWork(
+            thermal.MovedMassKg,distance/CaelumJourneyRules.MAP_UNITS_PER_METER,grade,running,Gravity(body)));
     }
 
     static void PlayerInput(CaelumPlayer user,vector2 oldVelocity)
@@ -58,8 +57,11 @@ class CaelumThermalMotion : Object play
             && (user.player.cmd.forwardmove!=0 || user.player.cmd.sidemove!=0 || user.player.cmd.upmove!=0)
             && !user.IsPhysicallyImmobilized();
         if(user!=null && intent && user.WaterLevel>=2)
-            thermal.PendingActivityJoules+=CaelumThermalEffects.EffortWatts(user,
-                CaelumConstants.RUN_AIR_COST_PER_SECOND*user.DerivedStats.AirConsumptionMultiplier)/TICRATE;
+        {
+            if(thermal.SurfaceArea<=0)CaelumThermalBody.Refresh(user,thermal);
+            thermal.PendingActivityJoules+=CaelumThermalEffects.SwimmingWatts(thermal.SurfaceArea,
+                (user.player.cmd.buttons & BT_RUN)!=0)/TICRATE;
+        }
         else if(grounded && body.Pos.Z<=body.FloorZ+0.01 && !body.bNoGravity && (intent || user==null))
         {
             vector2 own=propelled;
@@ -79,8 +81,10 @@ class CaelumThermalMotion : Object play
                 Path(body,(0,0,0),(along,0,delta.Z-supportRise),running);
             }
             else if(intent && length>0 && delta.XY.Length()<=0.01)
-                thermal.PendingActivityJoules+=CaelumThermalEffects.EffortWatts(user,
-                    CaelumConstants.RUN_AIR_COST_PER_SECOND*user.DerivedStats.AirConsumptionMultiplier)/TICRATE;
+            {
+                if(thermal.SurfaceArea<=0)CaelumThermalBody.Refresh(user,thermal);
+                thermal.PendingActivityJoules+=CaelumThermalEffects.PushingWatts(thermal.SurfaceArea)/TICRATE;
+            }
         }
         if(user!=null)
         {

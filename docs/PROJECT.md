@@ -1,6 +1,34 @@
 # Caelum Argenteum — Project, status and roadmap
 
-Documentation version: **5.1.6** — 2026-10-08.
+Documentation version: **5.1.7** — 2026-10-08.
+
+## 5.1.7 - Shortbow replacement and firearm armor bypass (#136)
+
+The author's final correction replaces the shortbow with a two-cartridge,
+12-pellet shotgun and preserves the longbow/crossbow. Approved carbine-derived
+costs, recipe, condition, weight, spread and half range are integrated throughout
+equipment, tutorial choices, shops and localization. Player/NPC equipped-armor
+bypass preserves innate defense and Toughness. Six eligible MAP02 enemies add
+120 independent cartridges without moving prior supplies or changing geometry.
+
+Original first-person weapon/hand layers are independent, including reload;
+world, inventory and pickup artwork accompanies them. Versioned migration,
+save/hub/rollback and focused native checks are recorded in validation_517.
+The author's inspection follow-up aligns hand size/palette/aim with the carbine
+and removes lingering effort-heat production. Thermal revision 7 retains existing
+exposure/resources while discarding the old peak; FOLLOWUP_RESULTS records the
+copied-save investigation and current action-only heat checks.
+The later high-stat report adds approved 6/10 MET swimming and 6 MET pushing,
+replacing their amplified-jump proxies without changing Air or movement rules.
+The final author-approved energy correction converts active work at 25% efficiency,
+uses a fixed half-metre human jump and independent action/distance budgets, and
+changes Resilience adaptation to base plus Type 2 (+/-10 C and 2 C/day at 100).
+Toughness thresholds already use Type 2. ENERGY_RESULTS records the final native
+controls and migration; earlier energy reports retain their original contracts.
+Author acceptance on 2026-10-08: CA136-01/02 and carried CA143-01 passed without
+reported qualifications; #136 closure and PR #146 integration are authorized.
+No author checks remain pending. #143 already merged through PR #145 (abd4f578);
+its manual acceptance is now recorded separately in HISTORY.
 
 ## 5.1.6 - Crouched and aimed soldiers (#143)
 
@@ -16,9 +44,9 @@ spread factors, reload rates, obstructions, interrupts, independent player camer
 ordinary siege AI and actual player inputs. Save/hub and revision-1 migration
 retain magazines, reload progress, condition and resources; rollback restores
 the original save/runtime checkpoint. Evidence and exact bounds: validation_516.
-The author requests commit/push and merge/closure when complete and verified.
-CA143-01 records the separate outstanding manual visual/gameplay confirmation;
-integration does not substitute for that confirmation.
+PR #145 is merged. The author separately confirmed CA143-01 (5.1.6/#143) passed
+on 2026-10-08 while accepting the full outstanding queue after #136. HISTORY
+records that visual/gameplay confirmation independently of integration.
 
 ## 5.1.5 - Demon supplies and fire breath (#135)
 

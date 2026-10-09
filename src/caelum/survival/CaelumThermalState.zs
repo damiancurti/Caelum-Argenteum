@@ -5,6 +5,7 @@ class CaelumThermalState : Object play
     int Revision;
     transient CaelumThermalCoefficients Coefficients;
     double Exposure,Acclimation,ActivityWatts,DamageRemainder;
+    // Desde revisión 7, ActivityWatts sólo informa del intervalo actual.
     double AcclimationMultiplier;
     double BaseWaterKg[4];
     double ActorWaterKg[4];
@@ -36,6 +37,7 @@ class CaelumThermalState : Object play
     vector2 PropelledVelocity;
     double PendingActivityJoules,LocalMotionMps,FireWatts;
     double PendingFirearmJoules;
+    double ReloadHeatBudget;
     bool CanShiver;
     double ShiveringJoules;
     // Proyección del Hambre del jugador; no crea una reserva alimentaria NPC.
@@ -136,6 +138,12 @@ class CaelumThermalState : Object play
         if(Revision<4){Coefficients=null;CanBreathe=true;BreathingAirRatio=1;}
         if(Revision<5)PendingFirearmJoules=0;
         if(Revision<6){CanShiver=true;ShiveringJoules=0;ShiveringHunger=0;ShiveringHungerPerMetSecond=0;}
+        // El pico antiguo no permite reconstruir trabajo pendiente real. Sólo
+        // se descarta esa cola no financiada; E, daño, agua y recursos siguen.
+        if(Revision<7)ActivityWatts=0;
+        // El presupuesto sólo describe trabajo futuro; conservar los julios
+        // ya medidos y toda la exposición/aclimatación anterior.
+        if(Revision<8)ReloadHeatBudget=0;
         Revision=CaelumThermalData.REVISION;
     }
 

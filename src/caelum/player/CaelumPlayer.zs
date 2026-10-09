@@ -423,7 +423,8 @@ class CaelumPlayer : DoomPlayer
     int CarbineAmmoCount;
 
     // V4.25 ranged architecture.
-    int StandardBowMagazine;
+    int StandardBowMagazine; // Legado: las flechas siguen en su pila original.
+    int ShotgunRevision,ShotgunLoadedMask,ShotgunLastBarrel;
     int LongbowMagazine;
     int CrossbowMagazine;
     int CarbineMagazine;
@@ -2542,7 +2543,7 @@ class CaelumPlayer : DoomPlayer
                 return 'CaelumHalberdSelectorWeapon';
             case CaelumConstants.WEAPON_TYPE_GIANT_GAUNTLETS:
                 return 'CaelumGiantGauntletsSelectorWeapon';
-            case CaelumConstants.WEAPON_TYPE_STANDARD_BOW:
+            case CaelumConstants.WEAPON_TYPE_SHOTGUN:
                 return 'CaelumStandardBowSelectorWeapon';
             case CaelumConstants.WEAPON_TYPE_CARBINE:
                 return 'CaelumCarbineSelectorWeapon';
@@ -2678,7 +2679,7 @@ class CaelumPlayer : DoomPlayer
             "CaelumGiantGauntletsSelectorWeapon"
         );
         EnsurePhysicalWeaponSelector(
-            CaelumConstants.WEAPON_TYPE_STANDARD_BOW,
+            CaelumConstants.WEAPON_TYPE_SHOTGUN,
             "CaelumStandardBowSelectorWeapon"
         );
         EnsurePhysicalWeaponSelector(
@@ -4502,7 +4503,7 @@ class CaelumPlayer : DoomPlayer
             case CaelumConstants.WEAPON_TYPE_WAR_AXE: return "graphics/caelum/icons/ca_war_axe.png";
             case CaelumConstants.WEAPON_TYPE_HALBERD: return "graphics/caelum/icons/ca_halberd.png";
             case CaelumConstants.WEAPON_TYPE_GIANT_GAUNTLETS: return "graphics/caelum/icons/ca_giant_gauntlets.png";
-            case CaelumConstants.WEAPON_TYPE_STANDARD_BOW: return "graphics/caelum/icons/ca_standard_bow.png";
+            case CaelumConstants.WEAPON_TYPE_SHOTGUN: return "CA_SHOTGUN_T1";
             case CaelumConstants.WEAPON_TYPE_LONGBOW: return "graphics/caelum/icons/ca_longbow.png";
             case CaelumConstants.WEAPON_TYPE_CROSSBOW: return "graphics/caelum/icons/ca_crossbow.png";
             case CaelumConstants.WEAPON_TYPE_CARBINE: return "graphics/caelum/icons/ca_carbine.png";
@@ -4964,7 +4965,7 @@ class CaelumPlayer : DoomPlayer
             CraftingBasicRequired = CaelumCraftingRules.GetRoundedMaterialUnits(CraftingFinalWeight, CaelumConstants.AMMUNITION_SHAFT_SHARE);
             CraftingTierRequired = CaelumCraftingRules.GetRoundedMaterialUnits(CraftingFinalWeight, CaelumConstants.AMMUNITION_POINT_SHARE);
             CraftingMissingStationType = CaelumCraftingRules.GetMissingNetworkStation(
-                CraftingNetworkCapabilities, 1, CaelumConstants.CATALOGUE_WEAPON_STANDARD_BOW);
+                CraftingNetworkCapabilities, 1, CaelumConstants.CATALOGUE_WEAPON_LONGBOW);
         }
         else if (CraftingSelectedRecipeKind == CaelumConstants.CRAFTING_RECIPE_KIND_AMULET)
         {
@@ -5630,10 +5631,9 @@ class CaelumPlayer : DoomPlayer
         if (EquipmentSelectionKind
             == CaelumConstants.EQUIPMENT_KIND_AMMUNITION)
         {
-            EquipmentSelectionAmmunitionType = (
-                EquipmentSelectionAmmunitionType + direction
-                    + CaelumConstants.AMMUNITION_TYPE_COUNT
-            ) % CaelumConstants.AMMUNITION_TYPE_COUNT;
+            int index=EquipmentSelectionAmmunitionType==CaelumConstants.AMMUNITION_SHOTGUN ? 3 : EquipmentSelectionAmmunitionType;
+            index=(index+direction+4)%4;
+            EquipmentSelectionAmmunitionType=index==3 ? CaelumConstants.AMMUNITION_SHOTGUN : index;
         }
         else if (IsSpecialInventoryKind(EquipmentSelectionKind))
         {
@@ -6532,10 +6532,10 @@ class CaelumPlayer : DoomPlayer
         return CaelumArmorRules.ToughnessMultiplier(incomingPercent, 100.0, toughness);
     }
 
-    double GetArmorDefensePercent(int slot, bool magical = false)
+    double GetArmorDefensePercent(int slot, bool magical = false,Actor inflictor=null)
     {
         int race = CharacterProfile != null ? CharacterProfile.Race : CaelumConstants.RACE_HUMAN;
-        return CaelumArmorRules.TotalDefense(CaelumArmorRules.InnateDefense(race, magical), ArmorModel, slot, magical);
+        return CaelumArmorRules.TotalDefense(CaelumArmorRules.InnateDefense(race, magical), ArmorModel, slot, magical,inflictor);
     }
 
     double GetImpactArmorDefensePercent()
@@ -6718,7 +6718,8 @@ class CaelumPlayer : DoomPlayer
     void ApplyWeightedImpactLucidity(
         double minimumHeightRatio,
         double maximumHeightRatio,
-        double totalOverlap
+        double totalOverlap,
+        Actor inflictor=null
     )
     {
         LastImpactHeadContactWeight = 0.0;
@@ -6753,7 +6754,7 @@ class CaelumPlayer : DoomPlayer
             LastImpactHeadContactWeight += weight;
             int location = AnatomyProfile.GetLocation(regionIndex);
             int slot = GetArmorSlotForHitLocation(location);
-            double defenseRatio = Clamp(GetArmorDefensePercent(slot) / 100.0, 0.0, 1.0);
+            double defenseRatio = Clamp(GetArmorDefensePercent(slot,false,inflictor) / 100.0, 0.0, 1.0);
             weightedLoss +=
                 CaelumConstants.CRITICAL_POINT_BASE_LUCIDITY_LOSS
                 * weight
@@ -6908,7 +6909,7 @@ class CaelumPlayer : DoomPlayer
                 );
                 double vulnerabilityMultiplier =
                     GetVulnerabilityMultiplier(effectiveGrade, false);
-                double defenseRatio = Clamp(GetArmorDefensePercent(slot) / 100.0, 0.0, 1.0);
+                double defenseRatio = Clamp(GetArmorDefensePercent(slot,false,sourceActor) / 100.0, 0.0, 1.0);
 
                 LastImpactWeightedVulnerabilityMultiplier +=
                     weight * vulnerabilityMultiplier;
@@ -6951,7 +6952,7 @@ class CaelumPlayer : DoomPlayer
             ApplyWeightedImpactLucidity(
                 LastImpactContactMinimumHeightRatio,
                 LastImpactContactMaximumHeightRatio,
-                totalOverlap
+                totalOverlap,sourceActor
             );
         }
         if (LastImpactFinalDamage <= 0) { return; }
@@ -8071,7 +8072,7 @@ class CaelumPlayer : DoomPlayer
             totalPostAnatomyDamage += postAnatomyDamage;
             double preDefenseDamage = CaelumArmorRules.AfterToughnessDamage(
                 postAnatomyDamage, GetImpactMaximumHealth(), toughness);
-            double defenseRatio = Clamp(GetArmorDefensePercent(slot, magical) / 100.0, 0.0, 1.0);
+            double defenseRatio = Clamp(GetArmorDefensePercent(slot, magical,inflictor) / 100.0, 0.0, 1.0);
             double absorbedDamage = preDefenseDamage * defenseRatio;
             double postDefenseDamage = Max(
                 0.0,
@@ -8100,7 +8101,7 @@ class CaelumPlayer : DoomPlayer
                 && ArmorModel.Durability[slot] > 0
                 && absorbedDamage > 0.0)
             {
-                double eligibleDamage = preDefenseDamage * ArmorModel.GetDefense(slot, magical) / 100.0
+                double eligibleDamage = preDefenseDamage * ArmorModel.GetDefense(slot, magical) / 100.0*CaelumArmorRules.EquipmentRetention(inflictor)
                     * Max(0.0, ArmorDurabilityDamageMultiplier);
                 int durabilityLoss = int(
                     eligibleDamage
@@ -8273,7 +8274,7 @@ class CaelumPlayer : DoomPlayer
             damageAfterShield,
             incomingActorCritical,
             LastIncomingArmorSlot,
-            CaelumArmorRules.IsMagical(inflictor, mod)
+            CaelumArmorRules.IsMagical(inflictor, mod),inflictor
         );
 
         double adrenalineRatioBeforeDamage = 0.0;
@@ -8328,7 +8329,7 @@ class CaelumPlayer : DoomPlayer
                 LastArmorVulnerabilityGrade,
                 incomingActorCritical,
                 Clamp(
-                    GetArmorDefensePercent(LastIncomingArmorSlot, CaelumArmorRules.IsMagical(inflictor, mod)) / 100.0,
+                    GetArmorDefensePercent(LastIncomingArmorSlot, CaelumArmorRules.IsMagical(inflictor, mod),inflictor) / 100.0,
                     0.0, 1.0
                 )
             );
@@ -8537,7 +8538,7 @@ class CaelumPlayer : DoomPlayer
         double incomingDamage,
         bool criticalHit,
         int incomingSlot,
-        bool magical = false
+        bool magical = false,Actor inflictor=null
     )
     {
         LastLocalizedLucidityLoss = 0.0;
@@ -8566,7 +8567,7 @@ class CaelumPlayer : DoomPlayer
         LastArmorPreDefenseDamage = CaelumArmorRules.AfterToughnessDamage(
             postAnatomyDamage, GetImpactMaximumHealth(), toughness);
         double defenseRatio = Clamp(
-            GetArmorDefensePercent(slot, magical) / 100.0,
+            GetArmorDefensePercent(slot, magical,inflictor) / 100.0,
             0.0,
             1.0
         );
@@ -8583,6 +8584,7 @@ class CaelumPlayer : DoomPlayer
         // El cuerpo absorbe su parte sin desgastar la pieza equipada.
         double eligibleDamage = LastArmorPreDefenseDamage
             * (ArmorModel != null ? ArmorModel.GetDefense(slot, magical) / 100.0 : 0.0)
+            * CaelumArmorRules.EquipmentRetention(inflictor)
             * Max(0.0, ArmorDurabilityDamageMultiplier);
         LastArmorDurabilityLoss = int(
             eligibleDamage
@@ -9176,7 +9178,7 @@ class CaelumPlayer : DoomPlayer
     void UpdateWorldCarbineVisual()
     {
         CaelumCarbineWorld.Apply(self,WeaponModel!=null && WeaponModel.Equipped
-            && WeaponModel.WeaponType==CaelumConstants.WEAPON_TYPE_CARBINE,
+            && CaelumRangedRules.IsFirearm(WeaponModel.WeaponType),
             Vel.XY.Length()>0.01,level.time<WorldCarbineShotUntil,
             RangedReloadActive ? RangedReloadRemainingSeconds : 0,RangedReloadTotalSeconds);
     }
@@ -9832,7 +9834,6 @@ class CaelumPlayer : DoomPlayer
         {
             airCost *= CaelumConstants.WEAPON_CHARGED_COST_MULTIPLIER;
         }
-        double nominalAirCost=airCost;
         airCost*=CaelumThermalEffects.HeatCost(self);
         if (CurrentAir < airCost) { return; }
 
@@ -9986,7 +9987,7 @@ class CaelumPlayer : DoomPlayer
             WeaponModel.Size
         );
 
-        CaelumThermalEffects.RecordAction(self,nominalAirCost);
+        CaelumThermalEffects.RecordWeaponAction(self,CaelumConstants.WEAPON_TYPE_JAVELIN,true,chargedAttack);
         CurrentAir = Max(0.0, CurrentAir - airCost);
         UpdateAirStateEffects();
         EquippedWeaponCooldownRemaining = GetEquippedAttackDurationTics()
@@ -9997,7 +9998,7 @@ class CaelumPlayer : DoomPlayer
 
     bool IsRangedWeaponType(int weaponType)
     {
-        return weaponType == CaelumConstants.WEAPON_TYPE_STANDARD_BOW
+        return weaponType == CaelumConstants.WEAPON_TYPE_SHOTGUN
             || weaponType == CaelumConstants.WEAPON_TYPE_LONGBOW
             || weaponType == CaelumConstants.WEAPON_TYPE_CROSSBOW
             || weaponType == CaelumConstants.WEAPON_TYPE_CARBINE;
@@ -10010,8 +10011,8 @@ class CaelumPlayer : DoomPlayer
 
     int GetRangedMagazineCount(int weaponType)
     {
-        if (weaponType == CaelumConstants.WEAPON_TYPE_STANDARD_BOW)
-            return StandardBowMagazine;
+        if (weaponType == CaelumConstants.WEAPON_TYPE_SHOTGUN)
+            return (ShotgunLoadedMask&1)+(ShotgunLoadedMask>>1&1);
         if (weaponType == CaelumConstants.WEAPON_TYPE_LONGBOW)
             return LongbowMagazine;
         if (weaponType == CaelumConstants.WEAPON_TYPE_CROSSBOW)
@@ -10024,8 +10025,11 @@ class CaelumPlayer : DoomPlayer
     void SetRangedMagazineCount(int weaponType, int amount)
     {
         int value = Clamp(amount, 0, GetRangedMagazineCapacity(weaponType));
-        if (weaponType == CaelumConstants.WEAPON_TYPE_STANDARD_BOW)
-            StandardBowMagazine = value;
+        if (weaponType == CaelumConstants.WEAPON_TYPE_SHOTGUN)
+            {
+            while(GetRangedMagazineCount(weaponType)>value)ShotgunLoadedMask&=~((ShotgunLoadedMask&2)!=0 ? 2 : 1);
+            while(GetRangedMagazineCount(weaponType)<value)ShotgunLoadedMask|=(ShotgunLoadedMask&1)==0 ? 1 : 2;
+        }
         else if (weaponType == CaelumConstants.WEAPON_TYPE_LONGBOW)
             LongbowMagazine = value;
         else if (weaponType == CaelumConstants.WEAPON_TYPE_CROSSBOW)
@@ -10036,6 +10040,7 @@ class CaelumPlayer : DoomPlayer
 
     int GetRangedAmmoType(int weaponType)
     {
+        if(weaponType==CaelumConstants.WEAPON_TYPE_SHOTGUN)return CaelumConstants.AMMUNITION_SHOTGUN;
         if (weaponType == CaelumConstants.WEAPON_TYPE_CARBINE)
             return CaelumConstants.AMMUNITION_CARBINE;
         if (weaponType == CaelumConstants.WEAPON_TYPE_CROSSBOW)
@@ -10232,6 +10237,8 @@ class CaelumPlayer : DoomPlayer
             GetRangedEffectiveReloadSeconds(requestedWeaponType);
         RangedReloadRemainingSeconds = RangedReloadTotalSeconds;
         RangedReloadActive = RangedReloadRemainingSeconds > 0.0;
+        if(RangedReloadActive && CaelumRangedRules.IsFirearm(requestedWeaponType))
+            CaelumThermalEffects.BeginFirearmReload(self);
     }
 
     void UpdateRangedReload()
@@ -10246,6 +10253,9 @@ class CaelumPlayer : DoomPlayer
             return;
         }
 
+        if(CaelumRangedRules.IsFirearm(RangedReloadWeaponType))
+            CaelumThermalEffects.RecordReloadProgress(self,
+                Min(RangedReloadRemainingSeconds,GetReloadProgressMultiplier()/TICRATE),RangedReloadTotalSeconds);
         RangedReloadRemainingSeconds = Max(
             0.0,
             RangedReloadRemainingSeconds
@@ -10293,7 +10303,7 @@ class CaelumPlayer : DoomPlayer
         {
             return;
         }
-        int requiredAmmoType = CaelumConstants.AMMUNITION_ARROW;
+        int requiredAmmoType = GetRangedAmmoType(WeaponModel.WeaponType);
         if (WeaponModel.WeaponType == CaelumConstants.WEAPON_TYPE_CARBINE)
         {
             requiredAmmoType = CaelumConstants.AMMUNITION_CARBINE;
@@ -10323,7 +10333,6 @@ class CaelumPlayer : DoomPlayer
             catalogueWeapon
         )
             * DerivedStats.AirConsumptionMultiplier;
-        double nominalAirCost=airCost;
         airCost*=CaelumThermalEffects.HeatCost(self);
         LastCarbineHadEnoughAir = CurrentAir >= airCost;
         if (!LastCarbineHadEnoughAir) { return; }
@@ -10377,12 +10386,21 @@ class CaelumPlayer : DoomPlayer
         LastCarbineDamage = WeaponModel.GetDamage()
             * EffectiveOffensiveDamageMultiplier;
 
-        let projectile=CaelumRangedRules.Fire(self,WeaponModel,LastCarbineDamage,
-            LastCarbineCriticalHit,DerivedStats.PhysicalPushMultiplier,
-            Angle+LastCarbineYawOffset,Pitch+LastCarbinePitchOffset);
-        if(projectile==null)return;
+        if(WeaponModel.WeaponType==CaelumConstants.WEAPON_TYPE_SHOTGUN)
+        {
+            if(!CaelumShotgunRules.Fire(self,WeaponModel,LastCarbineDamage,LastCarbineCriticalHit,
+                DerivedStats.PhysicalPushMultiplier,LastCarbineMinimumSpread,LastCarbineMaximumSpread))return;
+            ShotgunLastBarrel=(ShotgunLoadedMask&2)!=0 ? 1 : 0;
+        }
+        else
+        {
+            let projectile=CaelumRangedRules.Fire(self,WeaponModel,LastCarbineDamage,
+                LastCarbineCriticalHit,DerivedStats.PhysicalPushMultiplier,
+                Angle+LastCarbineYawOffset,Pitch+LastCarbinePitchOffset);
+            if(projectile==null)return;
+        }
 
-        if (WeaponModel.WeaponType == CaelumConstants.WEAPON_TYPE_CARBINE)
+        if (CaelumRangedRules.IsFirearm(WeaponModel.WeaponType))
         {
             A_StartSound("caelum/weapons/carabine_fire", CHAN_WEAPON);
         }
@@ -10403,12 +10421,13 @@ class CaelumPlayer : DoomPlayer
         {
             CarbineAmmoCount = CarbineMagazine;
         }
-        if(WeaponModel.WeaponType!=CaelumConstants.WEAPON_TYPE_CARBINE)
-            CaelumThermalEffects.RecordAction(self,nominalAirCost);
+        if(CaelumRangedRules.IsFirearm(WeaponModel.WeaponType))
+            CaelumThermalEffects.RecordFirearmShot(self);
+        else CaelumThermalEffects.RecordWeaponAction(self,WeaponModel.WeaponType);
         CurrentAir = Max(0.0, CurrentAir - airCost);
         UpdateAirStateEffects();
         LastCarbineFired = true;
-        if(WeaponModel.WeaponType==CaelumConstants.WEAPON_TYPE_CARBINE)
+        if(CaelumRangedRules.IsFirearm(WeaponModel.WeaponType))
             WorldCarbineShotUntil=level.time+GetEquippedAttackDurationTics();
         UpdateWorldCarbineVisual();
         EquippedWeaponCooldownRemaining = GetEquippedAttackDurationTics()
@@ -11338,9 +11357,7 @@ class CaelumPlayer : DoomPlayer
         {
             ConsumeJumpAir();
             if(DerivedStats!=null)
-                CaelumThermalService.Impulse(self,CaelumThermalRules.JumpHeat(DerivedStats.TotalMass,
-                    before*TICRATE/CaelumJourneyRules.MAP_UNITS_PER_METER,
-                    Vel.Z*TICRATE/CaelumJourneyRules.MAP_UNITS_PER_METER),true);
+                CaelumThermalService.Impulse(self,CaelumThermalRules.BodyJumpHeat(DerivedStats.TotalMass),true);
         }
     }
 
@@ -11792,7 +11809,6 @@ class CaelumPlayer : DoomPlayer
             LastMeleeAirCost *=
                 CaelumConstants.WEAPON_CHARGED_COST_MULTIPLIER;
         }
-        double nominalMeleeAir=LastMeleeAirCost;
         LastMeleeAirCost*=CaelumThermalEffects.HeatCost(self);
         if (CurrentAir < LastMeleeAirCost)
         {
@@ -11801,7 +11817,7 @@ class CaelumPlayer : DoomPlayer
 
         LastMeleeHadEnoughAir = true;
         if (chargedAttack) { ConsumeWeaponChargedState(); }
-        CaelumThermalEffects.RecordAction(self,nominalMeleeAir);
+        CaelumThermalEffects.RecordWeaponAction(self,WeaponModel.WeaponType,secondaryAttack,chargedAttack,areaSweep);
         CurrentAir = Max(0.0, CurrentAir - LastMeleeAirCost);
         UpdateAirStateEffects();
 

@@ -87,25 +87,36 @@ class CaelumThermalRules : Object
     static clearscope double Speed(double exposure,double toughness)
     { return 1.0/ColdAttack(exposure,toughness,false); }
 
-    // ACSM neto: el reposo ya está equilibrado en el término ambiental.
-    // Bajadas: forma de Minetti normalizada al coste ACSM llano, sin salto
-    // al cruzar pendiente cero. Aproximación aprobada; no se aplica a caídas.
+    // Trabajo equivalente por distancia. La subida añade trabajo gravitatorio;
+    // la bajada conserva el perfil de frenado, sin enfriar con trabajo negativo.
+    static clearscope double LocomotionWork(double movedMassKg,double distanceMeters,
+        double grade,bool running,double gravityMetersSecondSquared)
+    {
+        double distance=Max(0.0,distanceMeters),mass=Max(0.0,movedMassKg);
+        double cost=running ? CaelumThermalData.RUN_WORK_JOULES_KG_METER
+            : CaelumThermalData.WALK_WORK_JOULES_KG_METER;
+        double work=mass*distance*cost;
+        if(grade<0)return work*CaelumThermalData.DownhillCostRatio(grade,running);
+        return work+mass*Max(0.0,gravityMetersSecondSquared)*distance*grade;
+    }
+
+    // Adaptador de potencia para las previsiones de viaje. El dato primario
+    // es trabajo por metro; la velocidad sólo determina los metros recorridos.
     static clearscope double LocomotionHeat(double movedMassKg,double speedMetersSecond,
         double grade,bool running,double gravityMetersSecondSquared)
     {
-        double speed=Max(0.0,speedMetersSecond);
-        double mass=Max(0.0,movedMassKg);
-        double horizontal=running ? CaelumThermalData.RUN_OXYGEN_SPEED : CaelumThermalData.WALK_OXYGEN_SPEED;
-        if(grade<0)return horizontal*speed*mass*CaelumThermalData.OXYGEN_JOULES_PER_ML
-            *CaelumThermalData.DownhillCostRatio(grade,running);
-        double ascent=running ? CaelumThermalData.RUN_OXYGEN_GRADE : CaelumThermalData.WALK_OXYGEN_GRADE;
-        double metabolic=(horizontal+ascent*grade)*speed*mass*CaelumThermalData.OXYGEN_JOULES_PER_ML;
-        double external=mass*Max(0.0,gravityMetersSecondSquared)*speed*grade;
-        return Max(0.0,metabolic-external);
+        return PositiveWorkHeat(LocomotionWork(movedMassKg,speedMetersSecond,
+            grade,running,gravityMetersSecondSquared));
     }
 
     static clearscope double PositiveWorkHeat(double workJoules)
     { return Max(0.0,workJoules)*(1.0/CaelumThermalData.POSITIVE_WORK_EFFICIENCY-1.0); }
+
+    static clearscope double BodyJumpHeat(double movedMassKg)
+    {
+        return PositiveWorkHeat(Max(0.0,movedMassKg)*CaelumThermalData.JUMP_WORK_GRAVITY
+            *CaelumThermalData.JUMP_WORK_HEIGHT_METERS);
+    }
 
     static clearscope double JumpHeat(double movedMassKg,double previousUpSpeed,double launchUpSpeed)
     {
@@ -121,21 +132,16 @@ class CaelumThermalRules : Object
         return jumpAirCost>0 ? Max(0.0,referenceJumpJoules)*Max(0.0,actionAirCost)/jumpAirCost : 0;
     }
 
-    // Sólo producción continua: los impulsos de salto/golpe no alimentan cola.
+    // Adaptadores del contrato anterior, usados por diagnósticos históricos.
+    // Desde #136 no hay cola: sólo importa el esfuerzo actual, no el pico previo.
     static clearscope double ActivityPower(double previous,double target,double worldSeconds)
     {
-        target=Max(0.0,target);
-        if(target>=previous)return target;
-        return target+(previous-target)*0.5**(Max(0.0,worldSeconds)/CaelumThermalData.ACTIVITY_HALF_LIFE_SECONDS);
+        return Max(0.0,target);
     }
 
     static clearscope double AverageActivityPower(double previous,double target,double worldSeconds)
     {
-        target=Max(0.0,target);
-        if(target>=previous)return target;
-        double exponent=Max(0.0,worldSeconds)*Log(2.0)/CaelumThermalData.ACTIVITY_HALF_LIFE_SECONDS;
-        if(exponent<0.00000001)return previous;
-        return target+(previous-target)*(1.0-Exp(-exponent))/exponent;
+        return Max(0.0,target);
     }
 
     static clearscope double Acclimation(double previous,double climateC,double originalCenter,double worldSeconds,double multiplier=1)

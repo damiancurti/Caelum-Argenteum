@@ -251,7 +251,8 @@ class CaelumPortDefender : CaelumFolkloreCombatActor
         let soldier=CaelumPortDefender(self);
         if(soldier==null || soldier.Sword==null || soldier.Sword.Durability<=0)return;
         if(!soldier.WithinAttackRange(false))return;
-        if(!soldier.SpendPhysicalAttackAir(CaelumWeaponCatalogue.GetPrimaryAirCost(CaelumConstants.CATALOGUE_WEAPON_SWORD)))return;
+        if(!soldier.SpendPhysicalAttackAir(CaelumWeaponCatalogue.GetPrimaryAirCost(CaelumConstants.CATALOGUE_WEAPON_SWORD),
+            CaelumThermalData.WeaponWork(CaelumConstants.WEAPON_TYPE_SWORD)))return;
         if(soldier.target==null || soldier.target.bFriendly)return;
         int damage=soldier.PrepareActorOutgoingDamage(CaelumWeaponCatalogue.GetPrimaryDamage(CaelumConstants.CATALOGUE_WEAPON_SWORD)
             *soldier.CalculateActorType1Percent(soldier.CombatStrength)/100.0,false);

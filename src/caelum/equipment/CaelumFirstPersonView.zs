@@ -534,12 +534,12 @@ class CaelumFirstPersonView : Object play
         bool reloading = ranged && user.RangedReloadActive && user.RangedReloadWeaponType == kind;
         int magazine = ranged ? user.GetRangedMagazineCount(kind) : 0;
         int phase = 0;
-        bool bow = kind == CaelumConstants.WEAPON_TYPE_STANDARD_BOW || kind == CaelumConstants.WEAPON_TYPE_LONGBOW;
+        bool bow = kind == CaelumConstants.WEAPON_TYPE_LONGBOW;
         if (bow)
             phase = magazine <= 0 || attack ? 2 : user.RangedAimModeActive ? 1 : 0;
         else if (kind == CaelumConstants.WEAPON_TYPE_CROSSBOW)
             phase = reloading ? 2 : magazine <= 0 || attack ? 1 : 0;
-        else if (kind == CaelumConstants.WEAPON_TYPE_CARBINE)
+        else if (CaelumRangedRules.IsFirearm(kind))
             phase = reloading ? 2 : attack ? 1 : 0;
         else if (kind == CaelumConstants.WEAPON_TYPE_BOOK)
             phase = blocking || baseView.y > WEAPONTOP + 1 ? 1 : 0;

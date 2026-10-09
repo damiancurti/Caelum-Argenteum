@@ -1,0 +1,11 @@
+{
+  "started_utc": "2026-10-09T01:27:50.2091956Z",
+  "pid": 17516,
+  "active_plan_before": "GUID de plan de energ\u00eda: 381b4222-f694-41f0-9685-ff5bb260df2e  (Equilibrado)",
+  "mechanism": "Thread-scoped ES_CONTINUOUS | ES_SYSTEM_REQUIRED | ES_DISPLAY_REQUIRED; no power-plan mutation",
+  "maximum_hours": 8,
+  "previous_thread_state": 2147483648,
+  "release_result": 2147483651,
+  "released_utc": "2026-10-09T02:02:25.8962714Z",
+  "active_plan_after": "GUID de plan de energ\u00eda: 381b4222-f694-41f0-9685-ff5bb260df2e  (Equilibrado)"
+}

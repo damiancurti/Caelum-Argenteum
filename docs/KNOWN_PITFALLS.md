@@ -4,6 +4,75 @@ Status: integrated engineering register (issue #22, patch 4.36.1b).
 Prepared: 2026-09-23. Inherits the project's release after integration.
 Inspected baseline: `1dc390576fa330d37ff543526fc7e69a397fc28f` (PR #7).
 
+## CA-KP-061 - A held activity peak invents heat after a brief action
+
+Status/evidence: RESOLVED-VERIFIED, #136 / 5.1.7 follow-up, 2026-10-08.
+Affected baseline: 0dfa718e; GZDoom 4.14.2. Scope: continuous thermal effort.
+
+The old immediate-rise, exponential-decay filter held the greatest recent
+activity power, including a short push or swim, for a 120-world-second half-life.
+At 1:1 time, one second at 5000 W added 5000 J during effort and could create
+approximately 865617 J more afterward. Testing only sustained exercise or the
+20:1 exterior clock concealed how strongly this affected brief Limbo actions.
+The author's calor-136 checkpoint has a 6393 W peak despite zero input/velocity.
+Native replay detects full immersion and water cooling, but excess production
+still raises exposure. This does not establish the exact preceding input history.
+
+The final author correction requires effort heat only during actual actions.
+Integrate current power with real action seconds, or explicitly supplied logical
+travel effort; never use the prior activity peak as another source. Stored body
+exposure still dissipates through normal exchange. Revision 7 clears the old
+peak once and preserves exposure, HP history, moisture and resources. Keep the
+original save/runtime pair for rollback; do not silently heal a damaged save.
+
+Validation: assets/validation_517/FOLLOWUP_RESULTS.md. Include one-tic action,
+release, no-input reload, 1:1/20:1 clocks, logical travel and paused/personal steps,
+plus native movement, stationary firearms and actual water geometry. Log thermal
+damage separately from contact damage and disclose any HP support in flux probes.
+Historical #130/#140 recovery-tail assertions describe the superseded contract.
+
+The second author checkpoint, with all attributes at 100, separates another
+problem: swimming inherited about 140194 W from a 350485 J enhanced jump reference,
+even after the lingering peak was removed. The final approved proxies are 6/10
+MET total for normal/fast player swimming and 6 MET for blocked pushing, minus
+the 1 MET resting term and scaled by body area. Do not reinstate enhanced jump
+energy in these profiles. Other measured locomotion/jumps and discrete action
+rules remain unchanged. Normal/high-stat native controls are recorded separately.
+
+Final #136 energy correction: the author then removes the remaining amplified
+jump/Air anchors from all runtime physical attacks and blocking. Work is now
+explicit data per action/distance, with a human half-metre jump and Q=3W at 25%
+efficiency. Fixed firearm cycles pay once/per completed reload progress, never
+once per animation tic plus a second event. Swimming converts 75% of the former
+net MET power to heat; isometric work retains its separately approved metabolic
+rate. Native speed controls must compare both energy per action and action count:
+a faster character can still produce more total heat by acting more often.
+Do not infer new energy from remaining Air or accumulated ActionJoules. Preserve
+already measured pending work across reload migration and do not retroactively
+charge the completed fraction. Earlier fixtures for the old velocity/Air or
+continuous-firearm contracts remain historical evidence. Current tests:
+assets/validation_517/ENERGY_RESULTS.md.
+
+## CA-KP-060 - A distinct Ammo subclass can still merge into its parent
+
+Status/evidence: RESOLVED-VERIFIED, #136 / 5.1.7, 2026-10-08.
+Affected baseline: abd4f578 plus the initial shotgun prototype; GZDoom 4.14.2.
+
+Different class names and icons do not guarantee independent native ammunition.
+The first CaelumShotgunAmmo subclass of CaelumCarbineAmmo inherited native Ammo
+grouping: a shell pickup could increase the bullet stack. Direct AttachToOwner
+tests had concealed this because they skipped the real pickup path.
+
+Shotgun TryPickup now uses the same authoritative distinct-stack acquisition
+already used by javelins, and its HandlePickup refuses other concrete classes.
+The old javelin entry point remains an adapter to that shared service. Reject
+zero quantities and already-owned objects; preserve the normal carry check.
+Test CallTryPickup in both directions with existing shell and bullet stacks,
+then check quantities and classes independently. Final native checks in
+assets/validation_517 cover both directions and actual MAP02 death supplies.
+This is a targeted Ammo rule, not permission to replace ordinary Inventory
+stacking. Author appearance acceptance remains separate.
+
 ## CA-KP-059 - Check sprite rotation order for every animation family
 
 Status/evidence: RESOLVED-VERIFIED, #135 / 5.1.5, 2026-10-08.
@@ -713,6 +782,14 @@ Regression: wait after granting/crafting, inspect both model and owned item,
 then hit a resource and save/reload. Both begin at the same maximum and decrease
 together. Evidence: assets/validation_43717, including the reproduced mismatch
 and corrected native impact. Author visual/audio acceptance remains separate.
+
+Rechecked #136 / 5.1.7: city merchant constructors also attached freshly
+computed durability before deferred PostBeginPlay stamped it. Stamp both
+WeaponDurabilityRevision and ShotgunRevision before attachment, including
+physical crafting. The final native integration asserts matching model/item
+condition after ticks. Legacy-save fixtures must stamp their explicitly
+constructed *old-format* values correctly too; fixture setup errors are not
+evidence that the production migration changed a correctly formed old save.
 
 ## CA-KP-035 - Center visible font ink rather than trailing advance
 

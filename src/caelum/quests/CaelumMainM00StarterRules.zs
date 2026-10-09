@@ -212,7 +212,7 @@ class CaelumMainM00StarterMaterials : Object play
 
     void AddStarterAmmunition(int option)
     {
-        if (option != 12 && option != 14 && option != 15) return;
+        if (option != 14 && option != 15) return;
         Recipes[option == 15 ? CaelumConstants.CRAFTING_BOLT_RECIPE
             : CaelumConstants.CRAFTING_ARROW_RECIPE] = true;
         // Ambos lotes aceptados incorporan 0,5 kg: diez unidades de 50 g.

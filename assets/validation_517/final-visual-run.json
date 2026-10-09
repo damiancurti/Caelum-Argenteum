@@ -1,0 +1,73 @@
+﻿{
+    "label":  "final-visual",
+    "started_utc":  "2026-10-08T21:42:51.9878820Z",
+    "engine":  "C:\\Program Files (x86)\\GZDoom\\gzdoom.exe",
+    "engine_sha256":  "EC706C2EA1EF946EEC13BE7B1B461DF8D52EFCD47CAA6C056ED0E0257F7F9FFA",
+    "iwad_sha256":  "10D67824B11025DDD9198E8CFC87CA335EE6E2D3E63AF4180FA9B8A471893255",
+    "package_sha256":  "6FD97FAA1DBA39AEA7E568EC02C1930E32FE6A93EC1107D76C431DE2446F5B5B",
+    "addon_sha256":  "869C5C6970946E01D4C58A8EB097458C73FEDC520CDD2A2E72402CC21343E087",
+    "initial_config":  "[LastRun]\nVersion=225\n[GlobalSettings]\nvid_preferbackend=1\nvid_vsync=false\nvid_maxfps=60\nvid_activeinbackground=true\ni_pauseinbackground=false\nvid_lowerinbackground=false\ni_soundinbackground=true\ncl_capfps=false\nvid_fullscreen=false\nvid_defwidth=1280\nwin_w=1296\nwin_h=759\nwin_maximized=false\nvid_defheight=720\nuse_mouse=false\nsnd_mastervolume=0.05\nlanguage=es\n",
+    "arguments":  [
+                      "-noautoload",
+                      "-nomouse",
+                      "-iwad",
+                      "\"C:\\Program Files (x86)\\Steam\\steamapps\\common\\ultimate doom\\base\\doom2\\DOOM2.WAD\"",
+                      "-file",
+                      "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue136\\production.pk3\"",
+                      "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue136\\visual.pk3\"",
+                      "-config",
+                      "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue136\\final-visual.ini\"",
+                      "-savedir",
+                      "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue136\"",
+                      "-width",
+                      1280,
+                      "-height",
+                      720,
+                      "-window",
+                      "-rngseed",
+                      "116",
+                      "-skill",
+                      "2",
+                      "+logfile",
+                      "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue136\\final-visual.txt\"",
+                      "+con_notifytime",
+                      "0",
+                      "+set",
+                      "ca_test_siege_reinforcements",
+                      1,
+                      "+map",
+                      "CA136",
+                      "+exec",
+                      "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue136\\final-visual-exec.cfg\""
+                  ],
+    "benchmark_offset":  0,
+    "command_script":  "unbindall; wait 90; screenshot final-visual-fp-ready.png; +zoom; wait 20; -zoom; wait 15; screenshot final-visual-fp-aim.png; +attack; wait 10; screenshot final-visual-fp-fire.png; wait 55; -attack; +reload; wait 2; -reload; wait 12; screenshot final-visual-fp-open.png; wait 90; screenshot final-visual-fp-load.png; wait 110; screenshot final-visual-fp-complete.png; ca136_mode 1; r_drawplayersprites false; ca136_view 0; wait 15; screenshot final-visual-world-0.png; ca136_view 1; wait 15; screenshot final-visual-world-1.png; ca136_view 2; wait 15; screenshot final-visual-world-2.png; ca136_view 3; wait 15; screenshot final-visual-world-3.png; ca136_view 4; wait 15; screenshot final-visual-world-4.png; ca136_view 5; wait 15; screenshot final-visual-world-5.png; ca136_view 6; wait 15; screenshot final-visual-world-6.png; ca136_view 7; wait 15; screenshot final-visual-world-7.png; ca136_view 8; wait 15; screenshot final-visual-world-8.png; ca136_view 9; wait 15; screenshot final-visual-world-9.png; ca136_view 10; wait 15; screenshot final-visual-world-10.png; ca136_view 11; wait 15; screenshot final-visual-world-11.png; ca136_view 12; wait 15; screenshot final-visual-world-12.png; ca136_view 13; wait 15; screenshot final-visual-world-13.png; ca136_view 14; wait 15; screenshot final-visual-world-14.png; ca136_view 15; wait 15; screenshot final-visual-world-15.png; ca136_view 16; wait 15; screenshot final-visual-world-16.png; ca136_view 17; wait 15; screenshot final-visual-world-17.png; ca136_view 18; wait 15; screenshot final-visual-world-18.png; ca136_view 19; wait 15; screenshot final-visual-world-19.png; ca136_view 20; wait 15; screenshot final-visual-world-20.png; ca136_view 21; wait 15; screenshot final-visual-world-21.png; ca136_view 22; wait 15; screenshot final-visual-world-22.png; ca136_view 23; wait 15; screenshot final-visual-world-23.png; ca136_view 24; wait 15; screenshot final-visual-world-24.png; ca136_view 25; wait 15; screenshot final-visual-world-25.png; ca136_view 26; wait 15; screenshot final-visual-world-26.png; ca136_view 27; wait 15; screenshot final-visual-world-27.png; ca136_view 28; wait 15; screenshot final-visual-world-28.png; ca136_view 29; wait 15; screenshot final-visual-world-29.png; ca136_view 30; wait 15; screenshot final-visual-world-30.png; ca136_view 31; wait 15; screenshot final-visual-world-31.png; ca136_view 32; wait 15; screenshot final-visual-world-32.png; ca136_view 33; wait 15; screenshot final-visual-world-33.png; ca136_view 34; wait 15; screenshot final-visual-world-34.png; ca136_view 35; wait 15; screenshot final-visual-world-35.png; ca136_view 36; wait 15; screenshot final-visual-world-36.png; ca136_view 37; wait 15; screenshot final-visual-world-37.png; ca136_view 38; wait 15; screenshot final-visual-world-38.png; ca136_view 39; wait 15; screenshot final-visual-world-39.png; ca136_view 40; wait 15; screenshot final-visual-world-40.png; ca136_view 41; wait 15; screenshot final-visual-world-41.png; ca136_view 42; wait 15; screenshot final-visual-world-42.png; ca136_view 43; wait 15; screenshot final-visual-world-43.png; ca136_view 44; wait 15; screenshot final-visual-world-44.png; ca136_view 45; wait 15; screenshot final-visual-world-45.png; ca136_view 46; wait 15; screenshot final-visual-world-46.png; ca136_view 47; wait 15; screenshot final-visual-world-47.png; ca136_mode 2; r_drawplayersprites true; wait 15; screenshot final-visual-fp-t2.png; ca136_mode 3; wait 15; screenshot final-visual-fp-t3.png; ca136_mode 5; wait 105; screenshot final-visual-fp-single.png; wait 110; ca136_mode 6; wait 105; screenshot final-visual-fp-partial.png; wait 110; ca136_mode 4; wait 10; quit\r\n",
+    "cpu":  [
+                {
+                    "Name":  "AMD Ryzen 9 5950X 16-Core Processor            ",
+                    "NumberOfCores":  16,
+                    "NumberOfLogicalProcessors":  32
+                }
+            ],
+    "gpu":  [
+                {
+                    "Name":  "Parsec Virtual Display Adapter",
+                    "DriverVersion":  "0.45.0.0"
+                },
+                {
+                    "Name":  "NVIDIA GeForce RTX 3070 Ti",
+                    "DriverVersion":  "32.0.15.7688"
+                }
+            ],
+    "os":  {
+               "Caption":  "Microsoft Windows 11 Pro",
+               "Version":  "10.0.26200",
+               "TotalVisibleMemorySize":  33475240
+           },
+    "pid":  20392,
+    "qpc_ms":  1379194922.2619,
+    "epoch_ms":  1791495773917.3525,
+    "exit_code":  0,
+    "completed_utc":  "2026-10-08T21:43:42.7469646Z",
+    "expected":  "CA136 COMPLETE checks=\\d+ failures=0"
+}

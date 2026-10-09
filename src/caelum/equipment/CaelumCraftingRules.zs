@@ -61,7 +61,7 @@ class CaelumCraftingRules : Object
                 CaelumConstants.CRAFTING_RANGED_WORKSHOP_RECIPE_COUNT - 1
             ))
             {
-                case 0: return CaelumConstants.CATALOGUE_WEAPON_STANDARD_BOW;
+                case 0: return CaelumConstants.CATALOGUE_WEAPON_SHOTGUN;
                 case 1: return CaelumConstants.CATALOGUE_WEAPON_CARBINE;
                 case 2: return CaelumConstants.CATALOGUE_WEAPON_LONGBOW;
                 default: return CaelumConstants.CATALOGUE_WEAPON_CROSSBOW;
@@ -486,12 +486,12 @@ class CaelumCraftingRules : Object
         switch (CaelumWeaponCatalogue.ResolveWeapon(weaponId))
         {
             case CaelumConstants.CATALOGUE_WEAPON_FLAIL:
-            case CaelumConstants.CATALOGUE_WEAPON_STANDARD_BOW:
             case CaelumConstants.CATALOGUE_WEAPON_LONGBOW:
                 return CaelumConstants.CRAFTING_NORMAL_TICS_PER_MATERIAL;
             case CaelumConstants.CATALOGUE_WEAPON_GIANT_GAUNTLETS:
             case CaelumConstants.CATALOGUE_WEAPON_CROSSBOW:
                 return CaelumConstants.CRAFTING_DETAILED_TICS_PER_MATERIAL;
+            case CaelumConstants.CATALOGUE_WEAPON_SHOTGUN:
             case CaelumConstants.CATALOGUE_WEAPON_CARBINE:
                 return CaelumConstants.CRAFTING_COMPLEX_TICS_PER_MATERIAL;
             default:
@@ -984,7 +984,7 @@ class CaelumCraftingRules : Object
         {
             return GetMissingNetworkStation(
                 capabilities, craftingTier,
-                CaelumConstants.CATALOGUE_WEAPON_STANDARD_BOW
+                CaelumConstants.CATALOGUE_WEAPON_LONGBOW
             );
         }
         if (componentType == CaelumConstants.MATERIAL_LONG_FRAME)
@@ -1314,7 +1314,7 @@ class CaelumCraftingRules : Object
             case CaelumConstants.CATALOGUE_WEAPON_WAR_AXE: return CaelumConstants.WEAPON_TYPE_WAR_AXE;
             case CaelumConstants.CATALOGUE_WEAPON_HALBERD: return CaelumConstants.WEAPON_TYPE_HALBERD;
             case CaelumConstants.CATALOGUE_WEAPON_GIANT_GAUNTLETS: return CaelumConstants.WEAPON_TYPE_GIANT_GAUNTLETS;
-            case CaelumConstants.CATALOGUE_WEAPON_STANDARD_BOW: return CaelumConstants.WEAPON_TYPE_STANDARD_BOW;
+            case CaelumConstants.CATALOGUE_WEAPON_SHOTGUN: return CaelumConstants.WEAPON_TYPE_SHOTGUN;
             case CaelumConstants.CATALOGUE_WEAPON_CARBINE: return CaelumConstants.WEAPON_TYPE_CARBINE;
             case CaelumConstants.CATALOGUE_WEAPON_LONGBOW: return CaelumConstants.WEAPON_TYPE_LONGBOW;
             default: return CaelumConstants.WEAPON_TYPE_CROSSBOW;
@@ -1338,7 +1338,7 @@ class CaelumCraftingRules : Object
             case CaelumConstants.WEAPON_TYPE_WAR_AXE: return CaelumConstants.CATALOGUE_WEAPON_WAR_AXE;
             case CaelumConstants.WEAPON_TYPE_HALBERD: return CaelumConstants.CATALOGUE_WEAPON_HALBERD;
             case CaelumConstants.WEAPON_TYPE_GIANT_GAUNTLETS: return CaelumConstants.CATALOGUE_WEAPON_GIANT_GAUNTLETS;
-            case CaelumConstants.WEAPON_TYPE_STANDARD_BOW: return CaelumConstants.CATALOGUE_WEAPON_STANDARD_BOW;
+            case CaelumConstants.WEAPON_TYPE_SHOTGUN: return CaelumConstants.CATALOGUE_WEAPON_SHOTGUN;
             case CaelumConstants.WEAPON_TYPE_CARBINE: return CaelumConstants.CATALOGUE_WEAPON_CARBINE;
             case CaelumConstants.WEAPON_TYPE_LONGBOW: return CaelumConstants.CATALOGUE_WEAPON_LONGBOW;
             case CaelumConstants.WEAPON_TYPE_CROSSBOW: return CaelumConstants.CATALOGUE_WEAPON_CROSSBOW;
@@ -1384,7 +1384,7 @@ class CaelumCraftingRules : Object
             case CaelumConstants.CATALOGUE_WEAPON_WAR_AXE: return CaelumConstants.WEAPON_WAR_AXE_TIER_ONE_WEIGHT;
             case CaelumConstants.CATALOGUE_WEAPON_HALBERD: return CaelumConstants.WEAPON_HALBERD_TIER_ONE_WEIGHT;
             case CaelumConstants.CATALOGUE_WEAPON_GIANT_GAUNTLETS: return CaelumConstants.WEAPON_GIANT_GAUNTLETS_TIER_ONE_WEIGHT;
-            case CaelumConstants.CATALOGUE_WEAPON_STANDARD_BOW: return CaelumConstants.WEAPON_STANDARD_BOW_TIER_ONE_WEIGHT;
+            case CaelumConstants.CATALOGUE_WEAPON_SHOTGUN: return CaelumConstants.WEAPON_SHOTGUN_TIER_ONE_WEIGHT;
             case CaelumConstants.CATALOGUE_WEAPON_CARBINE: return CaelumConstants.WEAPON_CARBINE_TIER_ONE_WEIGHT;
             case CaelumConstants.CATALOGUE_WEAPON_LONGBOW: return CaelumConstants.WEAPON_LONGBOW_TIER_ONE_WEIGHT;
             default: return CaelumConstants.WEAPON_CROSSBOW_TIER_ONE_WEIGHT;
@@ -1407,8 +1407,8 @@ class CaelumCraftingRules : Object
             case CaelumConstants.CATALOGUE_WEAPON_HALBERD: return CaelumConstants.MATERIAL_LONG_BLADE;
             case CaelumConstants.CATALOGUE_WEAPON_WAR_AXE: return CaelumConstants.MATERIAL_BROAD_BLADE;
             case CaelumConstants.CATALOGUE_WEAPON_GIANT_GAUNTLETS: return CaelumConstants.MATERIAL_LARGE_PLATE;
-            case CaelumConstants.CATALOGUE_WEAPON_STANDARD_BOW:
             case CaelumConstants.CATALOGUE_WEAPON_CROSSBOW: return CaelumConstants.MATERIAL_FRAME;
+            case CaelumConstants.CATALOGUE_WEAPON_SHOTGUN: return CaelumConstants.MATERIAL_BARREL;
             case CaelumConstants.CATALOGUE_WEAPON_CARBINE: return CaelumConstants.MATERIAL_BARREL;
             default: return CaelumConstants.MATERIAL_LONG_FRAME;
         }
@@ -1430,8 +1430,8 @@ class CaelumCraftingRules : Object
             case CaelumConstants.CATALOGUE_WEAPON_WAR_AXE: return CaelumConstants.MATERIAL_LONG_HANDLE;
             case CaelumConstants.CATALOGUE_WEAPON_HALBERD: return CaelumConstants.MATERIAL_SHAFT;
             case CaelumConstants.CATALOGUE_WEAPON_GIANT_GAUNTLETS: return CaelumConstants.MATERIAL_REINFORCED_STRAP;
-            case CaelumConstants.CATALOGUE_WEAPON_STANDARD_BOW:
             case CaelumConstants.CATALOGUE_WEAPON_LONGBOW: return CaelumConstants.MATERIAL_BOWSTRING;
+            case CaelumConstants.CATALOGUE_WEAPON_SHOTGUN: return CaelumConstants.MATERIAL_MECHANISM;
             case CaelumConstants.CATALOGUE_WEAPON_CARBINE: return CaelumConstants.MATERIAL_MECHANISM;
             default: return CaelumConstants.MATERIAL_REINFORCED_BOWSTRING;
         }

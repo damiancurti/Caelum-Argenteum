@@ -14,17 +14,22 @@ class CaelumRangedRules : Object
         return type==CaelumConstants.WEAPON_TYPE_CARBINE && crouched
             ? owner.Scale.Y*CROUCH_MUZZLE_PIXELS : owner.Height*0.65;
     }
+    static bool IsFirearm(int type)
+    {return type==CaelumConstants.WEAPON_TYPE_CARBINE || type==CaelumConstants.WEAPON_TYPE_SHOTGUN;}
+
     static int MagazineCapacity(int type)
     {
+        if(type==CaelumConstants.WEAPON_TYPE_SHOTGUN)return CaelumShotgunRules.CAPACITY;
         if(type==CaelumConstants.WEAPON_TYPE_CARBINE)return 10;
         if(type==CaelumConstants.WEAPON_TYPE_CROSSBOW)return 20;
-        if(type==CaelumConstants.WEAPON_TYPE_STANDARD_BOW || type==CaelumConstants.WEAPON_TYPE_LONGBOW)return 50;
+        if(type==CaelumConstants.WEAPON_TYPE_LONGBOW)return 50;
         return 0;
     }
     static double BaseReloadSeconds(int type)
     {
+        if(type==CaelumConstants.WEAPON_TYPE_SHOTGUN)return BaseReloadSeconds(CaelumConstants.WEAPON_TYPE_CARBINE);
         if(type==CaelumConstants.WEAPON_TYPE_CARBINE || type==CaelumConstants.WEAPON_TYPE_CROSSBOW)return 5;
-        if(type==CaelumConstants.WEAPON_TYPE_STANDARD_BOW || type==CaelumConstants.WEAPON_TYPE_LONGBOW)return 3;
+        if(type==CaelumConstants.WEAPON_TYPE_LONGBOW)return 3;
         return 0;
     }
     static double TierCriticalMultiplier(int tier)
@@ -34,16 +39,17 @@ class CaelumRangedRules : Object
         double damage,bool critical,double push,double yaw,double pitch)
     {
         Name type="CaelumCarbineProjectile";
-        if(weapon.WeaponType==CaelumConstants.WEAPON_TYPE_STANDARD_BOW || weapon.WeaponType==CaelumConstants.WEAPON_TYPE_LONGBOW)type="CaelumArrowProjectile";
+        if(weapon.WeaponType==CaelumConstants.WEAPON_TYPE_SHOTGUN)type="CaelumShotgunPellet";
+        else if(weapon.WeaponType==CaelumConstants.WEAPON_TYPE_LONGBOW)type="CaelumArrowProjectile";
         else if(weapon.WeaponType==CaelumConstants.WEAPON_TYPE_CROSSBOW)type="CaelumBoltProjectile";
         vector3 origin=owner.Pos+(Cos(yaw)*32,Sin(yaw)*32,LaunchHeight(owner,weapon.WeaponType));
         let projectile=CaelumCarbineProjectile(Actor.Spawn(type,origin,NO_REPLACE));
         if(projectile==null)return null;
         projectile.Target=owner;projectile.Angle=yaw;projectile.Pitch=pitch;
         projectile.ConfigureCaelumTravelDistance(weapon.GetRangedRangeFor(weapon.WeaponType));
-        double speed=weapon.WeaponType==CaelumConstants.WEAPON_TYPE_CARBINE ? CaelumConstants.WEAPON_CARBINE_PROJECTILE_SPEED : CaelumConstants.PROJECTILE_SPEED_VERY_FAST;
+        double speed=IsFirearm(weapon.WeaponType) ? CaelumConstants.WEAPON_CARBINE_PROJECTILE_SPEED : CaelumConstants.PROJECTILE_SPEED_VERY_FAST;
         projectile.Vel=(Cos(pitch)*Cos(yaw)*speed,Cos(pitch)*Sin(yaw)*speed,-Sin(pitch)*speed);
-        projectile.StoreCaelumAttackResult(Max(1,int(damage+0.5)),true,critical,false,push);
+        projectile.StoreCaelumAttackResult(Max(0,int(damage+0.5)),true,critical,false,push);
         projectile.StoreCaelumWeaponWearIdentity(weapon.WeaponType,weapon.Tier,weapon.Size);
         return projectile;
     }
@@ -55,7 +61,7 @@ class CaelumCarbineWorld : Object play
 {
     static void Restore(Actor owner)
     {
-        if((owner.sprite==owner.GetSpriteIndex("CAGN") || owner.sprite==owner.GetSpriteIndex("CAGC")) && owner.CurState!=null)
+        if((owner.sprite==owner.GetSpriteIndex("CAGN") || owner.sprite==owner.GetSpriteIndex("CAGC") || owner.sprite==owner.GetSpriteIndex("SHGW")) && owner.CurState!=null)
         {owner.sprite=owner.CurState.sprite;owner.frame=owner.CurState.Frame;}
     }
     static void Apply(Actor owner,bool held,bool moving,bool firing,double reload,double total)
@@ -65,6 +71,7 @@ class CaelumCarbineWorld : Object play
         bool pose=owner.InStateSequence(owner.CurState,owner.SpawnState)
             || owner.InStateSequence(owner.CurState,owner.SeeState);
         let user=CaelumPlayer(owner);
+        bool shotgun=user!=null && user.WeaponModel!=null && user.WeaponModel.WeaponType==CaelumConstants.WEAPON_TYPE_SHOTGUN;
         let soldier=CaelumPortDefender(owner);
         bool crouched=soldier!=null && soldier.Carbine!=null && soldier.Carbine.Crouched;
         if(user!=null)
@@ -78,11 +85,11 @@ class CaelumCarbineWorld : Object play
             // La pose de puntería ya está agachada. Al desplazarse conserva
             // la marcha anterior comprimida, sin inventar otro ciclo de pasos.
             crouched=!moving && user.player!=null && user.player.crouchfactor<0.75;
-            if(pose)user.crouchsprite=crouched ? owner.GetSpriteIndex("CAGC") : 0;
+            if(pose)user.crouchsprite=crouched && !shotgun ? owner.GetSpriteIndex("CAGC") : 0;
         }
         if(!pose)return;
-        owner.sprite=owner.GetSpriteIndex(crouched ? "CAGC" : "CAGN");
-        owner.frame=crouched ? (reload>0 ? (reload>total*0.5 ? 2 : 3) : firing ? 1 : 0)
+        owner.sprite=owner.GetSpriteIndex(shotgun ? "SHGW" : crouched ? "CAGC" : "CAGN");
+        owner.frame=crouched && !shotgun ? (reload>0 ? (reload>total*0.5 ? 2 : 3) : firing ? 1 : 0)
             : reload>0 ? (reload>total*0.5 ? 4 : 5) : firing ? 3 : moving ? 1+(level.time/4)%2 : 0;
     }
 }
@@ -144,13 +151,11 @@ class CaelumCityCarbine : Object play
         if(ReloadRemaining>0)
         {
             double progress=moving ? CaelumConstants.RELOAD_MOVEMENT_AND_PROGRESS_MULTIPLIER : 1;
-            CaelumThermalEffects.RecordFirearmWork(owner,Min(1.0/TICRATE,ReloadRemaining/progress),true);
+            CaelumThermalEffects.RecordReloadProgress(owner,Min(ReloadRemaining,progress/TICRATE),ReloadTotal);
             ReloadRemaining=Max(0.0,ReloadRemaining-progress/TICRATE);
             owner.Speed*=CaelumConstants.RELOAD_MOVEMENT_AND_PROGRESS_MULTIPLIER;
             if(ReloadRemaining<=0){Magazine=CaelumRangedRules.MagazineCapacity(Weapon.WeaponType);ReloadCount++;}
         }
-        else if(!interrupted && ShotCount>0 && level.time<=NextShotTic)
-            CaelumThermalEffects.RecordFirearmWork(owner,1.0/TICRATE,false);
         PreviousPosition=owner.Pos;
         CaelumCarbineWorld.Apply(owner,Held,moving,ShotCount>0 && level.time<NextShotTic,ReloadRemaining,ReloadTotal);
     }
@@ -175,7 +180,7 @@ class CaelumCityCarbine : Object play
         {
             int dexterity=owner.CombatDexterity+owner.GetCombatArmorAttributeBonus(CaelumConstants.ATTRIBUTE_DEXTERITY);
             ReloadTotal=CaelumRangedRules.BaseReloadSeconds(Weapon.WeaponType)*100/Max(1.0,owner.CalculateActorType4Percent(dexterity));
-            ReloadRemaining=ReloadTotal;return true;
+            ReloadRemaining=ReloadTotal;CaelumThermalEffects.BeginFirearmReload(owner);return true;
         }
         owner.AttackResourceWeapon=Weapon.WeaponType;owner.AttackResourceMagical=false;
         owner.AttackResourceBaseCost=CaelumWeaponCatalogue.GetPrimaryAirCost(CaelumConstants.CATALOGUE_WEAPON_CARBINE);
@@ -203,6 +208,7 @@ class CaelumCityCarbine : Object play
         double cost=owner.GetEffectiveAttackAir(owner.AttackResourceBaseCost);
         if(!owner.TrySpendCombatAir(cost)){projectile.Destroy();owner.WaitForAttackResource();return true;}
         owner.MarkActorCombatActivity();
+        CaelumThermalEffects.RecordFirearmShot(owner);
         Magazine--;ShotCount++;NextShotTic=level.time+int(Ceil(owner.GetProfileWeaponDuration(Weapon.WeaponType)));
         owner.tics=Max(owner.tics,NextShotTic-level.time);
         owner.A_StartSound("caelum/weapons/carabine_fire",CHAN_WEAPON);return true;

@@ -1,0 +1,10 @@
+{
+  "issue": 136,
+  "release": "5.1.7",
+  "method": "Built-in image_gen",
+  "source": "hands_layer.png",
+  "result": "hands_muted.png",
+  "reference": "src/sprites/caelum/first_person/v1/hands/FH05A0.png",
+  "prompt": "Edit target: image 1 is the existing 1086x1448 transparent 3-column by 5-row HANDS-ONLY game sprite atlas. Image 2 is the existing Domingo first-person glove style reference. Match image 2's dark, muted low-saturation brown leather and aged dull metal. Reduce the excessive orange/gold shine and bright smooth highlights in image 1, adding the same restrained painted game-sprite texture as image 2. Preserve EXACT canvas dimensions, all original grid positions, silhouettes, size, angles, individual fingers, cuffs, poses and cartridge counts (one in row 4, two in row 5). This is a COLOR/STYLE edit only; do not move or rescale anything. Retain genuine transparent background and all transparent gaps. No weapon, text, new objects, shadows or background. All 15 cells stay registered identically so they composite with an existing separate shotgun layer.",
+  "notes": "Original atlas retained. Aimed hands reuse the existing carbine hand sprites; ready/reload use this muted layer. No pixel editing script."
+}

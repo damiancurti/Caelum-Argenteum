@@ -1,6 +1,44 @@
 # Caelum Argenteum — Audio and art
 
-Documentation version: **5.1.6** — 2026-10-08.
+Documentation version: **5.1.7** — 2026-10-08.
+
+## 5.1.7 - Modular shotgun artwork and evidence (#136)
+
+Original transparent shotgun artwork was generated with the built-in image_gen
+tool. Sources and the full prompt history are in assets/source/art/shotgun_517;
+PROMPTS.json identifies selected runtime files and retained intermediate drafts.
+The references are project-owned carbine/Domingo artwork. No new Doom art is
+introduced. Runtime PNG copies remain byte-identical to the selected sources.
+
+Following the author's hand-reuse request, weapon_layer.png contains complete
+T1/T2/T3 guns without hands; the selected hands_muted.png contains foreground
+gloves, forearms and held cartridges. The original hands_layer.png is retained.
+HAND_STYLE_FOLLOWUP.json records the built-in image_gen color/style edit against
+the existing Domingo glove reference. Only the first column is used across tiers.
+Ready/reload use fixed 362-pixel canvases, common pivots and layers 50/51 at 0.68
+view scale. Aimed hands reuse the carbine's DH05/DH06 poses on layers 48/49,
+with the same 0.88 hand scale and placement below the stock. Twenty-one
+weapon registrations and seven hand registrations cover ready, aim, empty/partial
+opening and one/two-cartridge loading. Recoil and equip/holster transform both
+layers together. New hand variants can replace the hand layer independently.
+Earlier combined atlases remain source history and are not runtime resources.
+
+Four inventory icons, two world pickups and 48 Domingo world frames supply six
+poses in eight directions. register_shotgun.py measures alpha and emits native
+TEXTURES clipping without rewriting image pixels. Shared fixed canvases prevent
+independent trimming from misaligning hands and gun. REGISTRATION.json records
+source hashes and rectangles; repeated exports must match byte-for-byte.
+The follow-up native captures compare shotgun/carbine aim and empty, single and
+partial loading. Do not clear and recreate the aimed hand overlays every frame:
+their first-tic positioning differs from established overlays (fp-followup-a).
+The corrected persistent overlays are verified in fp-final.
+
+Native fixtures, selected clean logs/configurations/captures, source hashes and
+reproduction commands are in assets/validation_517. They exercise both actual
+inputs and deterministic mechanics. The author separately confirmed CA136-01
+and CA143-01 passed on 2026-10-08; HISTORY records their original releases.
+Development PK3s, IWADs, executables and
+saved-game fixtures remain local under build/issue136 and are not distributed.
 
 ## 5.1.6 - Crouched Domingo carbine poses (#143)
 
@@ -20,8 +58,8 @@ registration actor so native rendering never lazily initializes an unknown sprit
 The atlas matches half the standing Domingo artwork's height. The same service
 selects these poses for stationary crouched players and soldiers; player moving
 crouch retains the accepted walking art. Native captures and input checks live
-in assets/validation_516. Agent visual review and the outstanding CA143-01
-manual author check remain distinct.
+in assets/validation_516. Agent visual review is separate from CA143-01,
+which the author confirmed passed on 2026-10-08.
 
 ## 5.1.5 - Demon breath and potion tiers (#135)
 

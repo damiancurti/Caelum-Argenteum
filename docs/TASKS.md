@@ -1,6 +1,35 @@
 # TASKS.md — Active tasks
 
-Documentation version: **5.1.6** — 2026-10-08.
+Documentation version: **5.1.7** — 2026-10-08.
+
+## Issue #136 - Shortbow shotgun and armor bypass (5.1.7)
+
+Implemented contract: two barrels/cartridges, twelve D/10 pellets, half range,
+Maximum spread, carbine-equivalent costs/time/recipe/mass/condition/critical,
+independent ammo and eligible MAP02/armory supplies. Equipped-only penetration
+shares the player/NPC path; revision-1 migration preserves ownership and condition.
+First-person hands and weapons are independent reusable layers, with original
+world/icon/pickup art. Focused mechanics, actual inputs/deaths, migration/save/hub
+and checkpoint rollback have native evidence in assets/validation_517.
+Author inspection also requests smaller/muted hands and carbine-style aiming.
+The reported calor-136 save exposes the old lingering activity-heat peak. The
+author's final rule is heat only during the action, superseding the proposed
+finite recovery filter. Revision 7 preserves accumulated exposure and resources.
+Focused reproduction, action timing and save checks: FOLLOWUP_RESULTS.
+The high-stat follow-up also replaces jump-amplified swimming/pushing with the
+approved 6/10 MET swimming and 6 MET pushing profiles; actual Air is unchanged.
+The final contract replaces the remaining jump/Air proxies with fixed work:
+human 0.5 m jump at 9.81 m/s2, approved weapon/NPC tables, per-cycle firearms and
+per-distance locomotion, with heat = 3 * work. Swimming uses 75% of its approved
+net metabolic reference as heat; pushing/blocking remain isometric profiles.
+Revision 8 preserves completed energy and tracks reload progress. Resilience
+adaptation uses base plus Type 2; thermal Toughness thresholds already did so.
+Final tests and qualifications: assets/validation_517/ENERGY_RESULTS.md.
+
+Accepted on 2026-10-08: CA136-01 appearance/gameplay, CA136-02 thermal follow-up
+and carried CA143-01 all passed without reported qualifications. Issue #136
+closure and PR #146 integration are authorized; the author queue is empty.
+A future hand appearance selector may reuse these layers; no new balance is implied.
 
 ## Issue #143 - Crouched aimed soldiers (5.1.6)
 
@@ -14,7 +43,7 @@ Focused engine checks, ordinary soldier AI, player input, save/reload/hub and
 old-save migration/checkpoint rollback are recorded in validation_516. No mass
 siege retest is required for this patch. The author explicitly requests commit,
 push, and merge/closure if implementation and verification are complete.
-CA143-01 remains pending author visual/gameplay confirmation independently.
+PR #145 is merged; CA143-01 was separately confirmed passed on 2026-10-08.
 Next: retain the accepted city deployment and high-density AI policy; any new
 movement or combat balance requires its own authored issue.
 
@@ -101,7 +130,8 @@ and demon self-warming effects kept explicit when #135 changes the workload.
 ## Issue #131 - Thermal HUD and attribute adaptation (5.1.1)
 
 Implemented and agent-verified: exposure bar above Load, bilingual read-only presentation,
-Constitution Sleep loss, Type-4 Resilience adaptation and gradual limit return.
+Constitution Sleep loss and gradual adaptation-limit return. #136 subsequently
+changes the original Type-4 Resilience adaptation to base plus Type 2.
 Long travel blends endpoint climate by distance at the current journey time;
 walking sleep pauses distance and ships continue. Retain forecast rejection,
 vehicle shelter and no invented real-time damage.

@@ -1,6 +1,114 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **5.1.6** — 2026-10-08.
+Documentation version: **5.1.7** — 2026-10-08.
+
+## 5.1.7 - Shortbow becomes a modular double-barrel shotgun (#136, 2026-10-08)
+
+Author acceptance, 2026-10-08 (America/Buenos_Aires): the author confirms all
+outstanding tests passed and requests #136 closure and PR #146 merge.
+CA136-01 (origin 5.1.7/#136, shotgun appearance and ordinary use) and CA136-02
+(origin 5.1.7/#136, thermal action timing and fixed-work follow-up) are PASSED,
+with no qualifications reported. Carried CA143-01 is also PASSED and recorded
+under its original 5.1.6/#143 entry below. The confirmed entries are removed
+from pending_test.txt, leaving the tracked queue empty. This acceptance update
+changes no runtime files and keeps release 5.1.7. Existing static/native evidence
+remains applicable; bounded trial and multiplayer/performance limits remain.
+
+After #143 / PR #145 merged as abd4f578, the author changes #136's target from
+longbow to shortbow and approves: two cartridges, twelve D/10 pellets, half
+carbine range, matching carbine firing/reload costs/time, mass/condition/critical
+and recipe quantities. Final spread is the existing Maximum 13–130° category,
+superseding an intermediate double-spread approval. Shotgun bypass is 60/70/80%,
+carbine 70/80/90%, cannon 100%, affecting equipped armor only. Ammo is independent,
+same carbine mass/price, 100 per armory and six eligible MAP02 drops of 20.
+
+Native evidence confirms conserved rounding, multiple-target and partial hits,
+two chambers, independent native ammunition pickup, reload interruption, Air
+gating, equipment changes, equipped-only penetration and actual cannon contact
+solvers. Old-save migration preserves items/Box/condition/recipes/arrows; current
+save/hub and original-checkpoint rollback pass. Six actual MAP02 deaths release
+exactly 120 cartridges without duplicate drops. No mass performance test is claimed.
+
+The author requests reusable hands after asking about the first-person animation.
+Combined draft sprites are replaced by separate complete weapon/foreground-hand
+layers for all poses and tiers. Native visual captures cover aim, recoil, open,
+single/partial/full loading and world directions. Author appearance acceptance
+is still outstanding; CA136-01 is added and CA143-01 is carried forward unchanged.
+
+During author inspection, hand size, muted colors and aimed position are revised.
+Built-in image_gen produces hands_muted.png from the retained original atlas;
+ready/reload view scale becomes 0.68. Aiming reuses the carbine's existing gloves,
+0.88 scale and under-stock anchors. fp-final verifies native aim comparison
+and empty/one/partial loading; fp-followup-a exposed and corrected repeated
+overlay recreation and an inspection-script equip timing error. Those preliminary
+captures are not final visual evidence. Author acceptance remains pending.
+
+The author reports hyperthermia despite immersion and provides calor-136.
+An untouched local copy records E +24.268683, activity peak 6393.362475 W,
+462893.088391 activity joules versus 5262.984741 action joules, and almost
+saturated clothing. Native replay confirms water detection and cooling flux,
+but the old lingering activity peak outweighs it. Stationary firearm input does
+not reproduce that activity accumulation. The exact preceding author inputs
+cannot be reconstructed from this save; brief movement/pushing/swimming controls
+reproduce the amplification independently.
+After considering finite recovery energy, the author explicitly chooses heat
+only while the action occurs. The final fix removes recovery heat entirely,
+retains the existing action profiles, and migrates only the obsolete activity
+peak (thermal revision 7). Prior exposure, HP, moisture and supplies are preserved.
+FOLLOWUP_RESULTS separates original-save flux observation with explicit HP
+support from fresh action controls and acceptance; CA136-02 remains outstanding.
+
+The author then updates calor-136 after swimming with all attributes at 100.
+The second checkpoint has E +95.462143 and zero remaining activity power, confirming
+that the recovery tail is gone but active swimming still has an excessive proxy:
+350485.240927 J amplified jump reference implies about 140194 W while swimming.
+The author approves total 6/10 MET for normal/fast swimming and 6 MET for pushing
+against an obstacle, independent of enhanced jumping and minus the existing
+1 MET rest. Air rules remain unchanged. Both original checkpoints are retained
+locally; controlled normal/high-stat water and pushing runs disclose breath
+support and normalized starting health/exposure in FOLLOWUP_RESULTS.
+Final follow-up checks: 36 thermal assertions, 49 shotgun assertions, normal/high
+attribute swimming, blocked pushing, movement/pool controls, stationary firing,
+mid-action save/reload, original-checkpoint rollback and eight native view captures.
+Controlled action runs record no thermal HP damage; the already-overheated save
+is a supported flux probe, not a survival pass. No additional author check is
+marked accepted. The temporary keep-awake request is released after testing.
+
+The author subsequently requests mechanical work rather than amplified speed or
+Air proxies, with 25% efficiency: metabolic energy is 4W and retained heat 3W.
+After comparing full native jumping, native base jumping and a human reference,
+the author selects 0.5 m at 9.81 m/s2 for each accepted jump; extra attribute
+height is outside that budget. The author approves fixed weapon work (dagger
+50/75 J, sword 125/200 J, greatsword 300/450 J, other weapons preserving their
+old relative proportions), natural NPC attacks 25 J, machete equivalents 75 J,
+and Zupay ground slam 850 J. Those tables no longer read Air or jump energy.
+Firearm cycles and walking/running/swimming convert the approved references to
+work with the 25% useful / 75% heat split. Reload energy follows completed
+progress, including moving/interrupted and old-save cycles. Isometric pushing
+retains its approved metabolic rate; blocking is approved at 0.2943 W per kg
+of total moved mass per kg held, with no attribute multiplier.
+Resilience adaptation changes from Type 4 to base plus Type 2: at 100, +/-10 C
+and 2 C/day, still five days from racial comfort. Investigation confirms that
+Toughness thresholds already used this Type-2 widening; they are not changed.
+Thermal revision 8 preserves old exposure/resources/pending joules and lets
+out-of-limit acclimatization return gradually. ENERGY_RESULTS and its manifest
+record the final native tests, rejected fixture setups and preserved checkpoints.
+The final suite passes 76 assertions. Four native jump/greatsword controls
+(human heavy normal/high attributes, Caelith light and goblin magic) record
+zero thermal damage; each primary greatsword attack emits 900 J. Normal/high
+swimming and blocking match the same energy profiles, with zero activity after
+release. Old/current mid-reload saves and original-checkpoint rollback pass.
+The manifest distinguishes unchanged earlier controls from the final charged-
+javelin correction; no pending author check is marked accepted.
+
+Rejected setup runs exposed Ammo parent-class stacking, a case-insensitive local
+name shadowing PELLETS, a state-pointer lookup that hid a reload pose, unstamped
+merchant equipment revisions and hub-fixture references to the departed player.
+Final fixes use distinct inventory acquisition, explicit state labels, constructor
+revision stamps and stable ItemIds in the observer. These failures are not passing
+evidence. Full bounds, successful run labels and final hashes: validation_517.
+That implementation was delivered for review; the acceptance recorded above
+authorizes #136 integration and closure through PR #146.
 
 ## 5.1.6 - Soldier crouched carbine aim (#143, 2026-10-08)
 
@@ -33,8 +141,16 @@ soldier fires 50 shots, reloads four times and retains all 2168 HP in a bounded
 single-target control. It records 31 impacts and exposure +0.507586; this is not
 a mass-battle or indefinite-survival claim. All final native runs require clean
 exit 0. Exact source/package hashes, visual coverage and static gates are in
-assets/validation_516. CA143-01 remains outstanding author confirmation; the
-conditional integration authorization is separate from manual acceptance.
+assets/validation_516. CA143-01 was carried forward pending author confirmation;
+the conditional integration authorization was separate from manual acceptance.
+
+Author acceptance, 2026-10-08 (America/Buenos_Aires): CA143-01, originating in
+5.1.6/#143 (crouched carbine appearance and ordinary combat), PASSED without
+reported qualifications. The author confirms all outstanding checks after the
+#136 follow-up, including this carried entry. It is removed from pending_test.txt
+alongside CA136-01/02. PR #145 had already merged as abd4f578; this explicit
+confirmation supplies the separate visual/gameplay acceptance, not a new mass
+performance or multiplayer result.
 
 ## 5.1.5 - Demon breath and finite potions (#135, 2026-10-08)
 

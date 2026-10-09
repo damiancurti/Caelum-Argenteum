@@ -1,0 +1,575 @@
+// Generated from original unmodified atlases; native texture clipping.
+Sprite "SHF1A0", 362, 312
+{
+    XScale 2.200000000
+    YScale 2.200000000
+    Offset 181, 308
+    Patch "graphics/caelum/shotgun/weapon_layer.png", 0, 0
+}
+Sprite "SHF2A0", 362, 312
+{
+    XScale 2.200000000
+    YScale 2.200000000
+    Offset 181, 308
+    Patch "graphics/caelum/shotgun/weapon_layer.png", -362, 0
+}
+Sprite "SHF3A0", 362, 312
+{
+    XScale 2.200000000
+    YScale 2.200000000
+    Offset 181, 308
+    Patch "graphics/caelum/shotgun/weapon_layer.png", -724, 0
+}
+Sprite "SHHDA0", 362, 312
+{
+    XScale 2.200000000
+    YScale 2.200000000
+    Offset 181, 308
+    Patch "graphics/caelum/shotgun/hands_layer.png", 0, 0
+}
+Sprite "SHF1B0", 362, 268
+{
+    XScale 2.200000000
+    YScale 2.200000000
+    Offset 181, 266
+    Patch "graphics/caelum/shotgun/weapon_layer.png", 0, -312
+}
+Sprite "SHF2B0", 362, 268
+{
+    XScale 2.200000000
+    YScale 2.200000000
+    Offset 181, 266
+    Patch "graphics/caelum/shotgun/weapon_layer.png", -362, -312
+}
+Sprite "SHF3B0", 362, 268
+{
+    XScale 2.200000000
+    YScale 2.200000000
+    Offset 181, 266
+    Patch "graphics/caelum/shotgun/weapon_layer.png", -724, -312
+}
+Sprite "SHHDB0", 362, 268
+{
+    XScale 2.200000000
+    YScale 2.200000000
+    Offset 181, 266
+    Patch "graphics/caelum/shotgun/hands_layer.png", 0, -312
+}
+Sprite "SHF1C0", 362, 296
+{
+    XScale 2.200000000
+    YScale 2.200000000
+    Offset 181, 284
+    Patch "graphics/caelum/shotgun/weapon_layer.png", 0, -580
+}
+Sprite "SHF2C0", 362, 296
+{
+    XScale 2.200000000
+    YScale 2.200000000
+    Offset 181, 284
+    Patch "graphics/caelum/shotgun/weapon_layer.png", -362, -580
+}
+Sprite "SHF3C0", 362, 296
+{
+    XScale 2.200000000
+    YScale 2.200000000
+    Offset 181, 284
+    Patch "graphics/caelum/shotgun/weapon_layer.png", -724, -580
+}
+Sprite "SHHDC0", 362, 296
+{
+    XScale 2.200000000
+    YScale 2.200000000
+    Offset 181, 284
+    Patch "graphics/caelum/shotgun/hands_layer.png", 0, -580
+}
+Sprite "SHF1D0", 362, 280
+{
+    XScale 2.200000000
+    YScale 2.200000000
+    Offset 181, 274
+    Patch "graphics/caelum/shotgun/weapon_layer.png", 0, -876
+}
+Sprite "SHF2D0", 362, 280
+{
+    XScale 2.200000000
+    YScale 2.200000000
+    Offset 181, 274
+    Patch "graphics/caelum/shotgun/weapon_layer.png", -362, -876
+}
+Sprite "SHF3D0", 362, 280
+{
+    XScale 2.200000000
+    YScale 2.200000000
+    Offset 181, 274
+    Patch "graphics/caelum/shotgun/weapon_layer.png", -724, -876
+}
+Sprite "SHHDD0", 362, 280
+{
+    XScale 2.200000000
+    YScale 2.200000000
+    Offset 181, 274
+    Patch "graphics/caelum/shotgun/hands_layer.png", 0, -876
+}
+Sprite "SHF1E0", 362, 292
+{
+    XScale 2.200000000
+    YScale 2.200000000
+    Offset 181, 282
+    Patch "graphics/caelum/shotgun/weapon_layer.png", 0, -1156
+}
+Sprite "SHF2E0", 362, 292
+{
+    XScale 2.200000000
+    YScale 2.200000000
+    Offset 181, 282
+    Patch "graphics/caelum/shotgun/weapon_layer.png", -362, -1156
+}
+Sprite "SHF3E0", 362, 292
+{
+    XScale 2.200000000
+    YScale 2.200000000
+    Offset 181, 282
+    Patch "graphics/caelum/shotgun/weapon_layer.png", -724, -1156
+}
+Sprite "SHHDE0", 362, 292
+{
+    XScale 2.200000000
+    YScale 2.200000000
+    Offset 181, 282
+    Patch "graphics/caelum/shotgun/hands_layer.png", 0, -1156
+}
+Sprite "SHF1F0", 362, 296
+{
+    XScale 2.200000000
+    YScale 2.200000000
+    Offset 181, 290
+    Patch "graphics/caelum/shotgun/weapon_layer.png", 0, -580
+}
+Sprite "SHF2F0", 362, 296
+{
+    XScale 2.200000000
+    YScale 2.200000000
+    Offset 181, 290
+    Patch "graphics/caelum/shotgun/weapon_layer.png", -362, -580
+}
+Sprite "SHF3F0", 362, 296
+{
+    XScale 2.200000000
+    YScale 2.200000000
+    Offset 181, 290
+    Patch "graphics/caelum/shotgun/weapon_layer.png", -724, -580
+}
+Sprite "SHHDF0", 362, 280
+{
+    XScale 2.200000000
+    YScale 2.200000000
+    Offset 181, 274
+    Patch "graphics/caelum/shotgun/hands_layer.png", 0, -876
+}
+Sprite "SHF1G0", 362, 280
+{
+    XScale 2.200000000
+    YScale 2.200000000
+    Offset 181, 268
+    Patch "graphics/caelum/shotgun/weapon_layer.png", 0, -876
+}
+Sprite "SHF2G0", 362, 280
+{
+    XScale 2.200000000
+    YScale 2.200000000
+    Offset 181, 268
+    Patch "graphics/caelum/shotgun/weapon_layer.png", -362, -876
+}
+Sprite "SHF3G0", 362, 280
+{
+    XScale 2.200000000
+    YScale 2.200000000
+    Offset 181, 268
+    Patch "graphics/caelum/shotgun/weapon_layer.png", -724, -876
+}
+Sprite "SHHDG0", 362, 296
+{
+    XScale 2.200000000
+    YScale 2.200000000
+    Offset 181, 284
+    Patch "graphics/caelum/shotgun/hands_layer.png", 0, -580
+}
+Graphic "CA_SHOTGUN_T1", 503, 588
+{
+    XScale 4.900000000
+    YScale 4.900000000
+    Offset 0, 0
+    Patch "graphics/caelum/shotgun/icons.png", -64, -47
+}
+Sprite "CSGNA0", 503, 588
+{
+    XScale 4.900000000
+    YScale 4.900000000
+    Offset 251, 588
+    Patch "graphics/caelum/shotgun/icons.png", -64, -47
+}
+Graphic "CA_SHOTGUN_T2", 509, 591
+{
+    XScale 4.925000000
+    YScale 4.925000000
+    Offset 0, 0
+    Patch "graphics/caelum/shotgun/icons.png", -627, -48
+}
+Graphic "CA_SHOTGUN_T3", 506, 590
+{
+    XScale 4.916666667
+    YScale 4.916666667
+    Offset 0, 0
+    Patch "graphics/caelum/shotgun/icons.png", -56, -688
+}
+Graphic "CA_SHOTGUN_AMMO", 345, 365
+{
+    XScale 5.703125000
+    YScale 5.703125000
+    Offset 0, 0
+    Patch "graphics/caelum/shotgun/icons.png", -767, -881
+}
+Sprite "CSAMA0", 345, 365
+{
+    XScale 3.041666667
+    YScale 3.041666667
+    Offset 172, 365
+    Patch "graphics/caelum/shotgun/icons.png", -767, -881
+}
+Sprite "SHGWA1", 191, 189
+{
+    XScale 0.944602273
+    YScale 0.944602273
+    Offset 98, 183
+    Patch "graphics/caelum/shotgun/world.png", 0, 0
+}
+Sprite "SHGWA2", 166, 189
+{
+    XScale 0.944602273
+    YScale 0.944602273
+    Offset 89, 183
+    Patch "graphics/caelum/shotgun/world.png", -191, 0
+}
+Sprite "SHGWA3", 175, 189
+{
+    XScale 0.944602273
+    YScale 0.944602273
+    Offset 90, 183
+    Patch "graphics/caelum/shotgun/world.png", -357, 0
+}
+Sprite "SHGWA4", 187, 189
+{
+    XScale 0.944602273
+    YScale 0.944602273
+    Offset 84, 183
+    Patch "graphics/caelum/shotgun/world.png", -532, 0
+}
+Sprite "SHGWA5", 183, 189
+{
+    XScale 0.944602273
+    YScale 0.944602273
+    Offset 91, 183
+    Patch "graphics/caelum/shotgun/world.png", -719, 0
+}
+Sprite "SHGWA6", 195, 189
+{
+    XScale 0.944602273
+    YScale 0.944602273
+    Offset 105, 183
+    Patch "graphics/caelum/shotgun/world.png", -902, 0
+}
+Sprite "SHGWA7", 178, 189
+{
+    XScale 0.944602273
+    YScale 0.944602273
+    Offset 84, 183
+    Patch "graphics/caelum/shotgun/world.png", -1097, 0
+}
+Sprite "SHGWA8", 171, 189
+{
+    XScale 0.944602273
+    YScale 0.944602273
+    Offset 87, 183
+    Patch "graphics/caelum/shotgun/world.png", -1275, 0
+}
+Sprite "SHGWB1", 190, 182
+{
+    XScale 0.944602273
+    YScale 0.944602273
+    Offset 96, 177
+    Patch "graphics/caelum/shotgun/world.png", 0, -189
+}
+Sprite "SHGWB2", 169, 182
+{
+    XScale 0.944602273
+    YScale 0.944602273
+    Offset 88, 176
+    Patch "graphics/caelum/shotgun/world.png", -190, -189
+}
+Sprite "SHGWB3", 173, 182
+{
+    XScale 0.944602273
+    YScale 0.944602273
+    Offset 90, 174
+    Patch "graphics/caelum/shotgun/world.png", -359, -189
+}
+Sprite "SHGWB4", 188, 182
+{
+    XScale 0.944602273
+    YScale 0.944602273
+    Offset 87, 176
+    Patch "graphics/caelum/shotgun/world.png", -532, -189
+}
+Sprite "SHGWB5", 179, 182
+{
+    XScale 0.944602273
+    YScale 0.944602273
+    Offset 86, 177
+    Patch "graphics/caelum/shotgun/world.png", -720, -189
+}
+Sprite "SHGWB6", 198, 182
+{
+    XScale 0.944602273
+    YScale 0.944602273
+    Offset 108, 178
+    Patch "graphics/caelum/shotgun/world.png", -899, -189
+}
+Sprite "SHGWB7", 181, 182
+{
+    XScale 0.944602273
+    YScale 0.944602273
+    Offset 86, 174
+    Patch "graphics/caelum/shotgun/world.png", -1097, -189
+}
+Sprite "SHGWB8", 168, 182
+{
+    XScale 0.944602273
+    YScale 0.944602273
+    Offset 87, 174
+    Patch "graphics/caelum/shotgun/world.png", -1278, -189
+}
+Sprite "SHGWC1", 189, 176
+{
+    XScale 0.944602273
+    YScale 0.944602273
+    Offset 93, 173
+    Patch "graphics/caelum/shotgun/world.png", 0, -371
+}
+Sprite "SHGWC2", 172, 176
+{
+    XScale 0.944602273
+    YScale 0.944602273
+    Offset 94, 174
+    Patch "graphics/caelum/shotgun/world.png", -189, -371
+}
+Sprite "SHGWC3", 174, 176
+{
+    XScale 0.944602273
+    YScale 0.944602273
+    Offset 89, 172
+    Patch "graphics/caelum/shotgun/world.png", -361, -371
+}
+Sprite "SHGWC4", 188, 176
+{
+    XScale 0.944602273
+    YScale 0.944602273
+    Offset 87, 170
+    Patch "graphics/caelum/shotgun/world.png", -535, -371
+}
+Sprite "SHGWC5", 176, 176
+{
+    XScale 0.944602273
+    YScale 0.944602273
+    Offset 86, 171
+    Patch "graphics/caelum/shotgun/world.png", -723, -371
+}
+Sprite "SHGWC6", 195, 176
+{
+    XScale 0.944602273
+    YScale 0.944602273
+    Offset 105, 171
+    Patch "graphics/caelum/shotgun/world.png", -899, -371
+}
+Sprite "SHGWC7", 183, 176
+{
+    XScale 0.944602273
+    YScale 0.944602273
+    Offset 88, 171
+    Patch "graphics/caelum/shotgun/world.png", -1094, -371
+}
+Sprite "SHGWC8", 169, 176
+{
+    XScale 0.944602273
+    YScale 0.944602273
+    Offset 86, 172
+    Patch "graphics/caelum/shotgun/world.png", -1277, -371
+}
+Sprite "SHGWD1", 174, 175
+{
+    XScale 0.944602273
+    YScale 0.944602273
+    Offset 89, 170
+    Patch "graphics/caelum/shotgun/world.png", 0, -547
+}
+Sprite "SHGWD2", 179, 175
+{
+    XScale 0.944602273
+    YScale 0.944602273
+    Offset 97, 170
+    Patch "graphics/caelum/shotgun/world.png", -174, -547
+}
+Sprite "SHGWD3", 179, 175
+{
+    XScale 0.944602273
+    YScale 0.944602273
+    Offset 88, 168
+    Patch "graphics/caelum/shotgun/world.png", -353, -547
+}
+Sprite "SHGWD4", 193, 175
+{
+    XScale 0.944602273
+    YScale 0.944602273
+    Offset 89, 169
+    Patch "graphics/caelum/shotgun/world.png", -532, -547
+}
+Sprite "SHGWD5", 181, 175
+{
+    XScale 0.944602273
+    YScale 0.944602273
+    Offset 91, 168
+    Patch "graphics/caelum/shotgun/world.png", -725, -547
+}
+Sprite "SHGWD6", 190, 175
+{
+    XScale 0.944602273
+    YScale 0.944602273
+    Offset 104, 169
+    Patch "graphics/caelum/shotgun/world.png", -906, -547
+}
+Sprite "SHGWD7", 185, 175
+{
+    XScale 0.944602273
+    YScale 0.944602273
+    Offset 88, 169
+    Patch "graphics/caelum/shotgun/world.png", -1096, -547
+}
+Sprite "SHGWD8", 165, 175
+{
+    XScale 0.944602273
+    YScale 0.944602273
+    Offset 74, 170
+    Patch "graphics/caelum/shotgun/world.png", -1281, -547
+}
+Sprite "SHGWE1", 183, 178
+{
+    XScale 0.944602273
+    YScale 0.944602273
+    Offset 92, 171
+    Patch "graphics/caelum/shotgun/world.png", 0, -722
+}
+Sprite "SHGWE2", 177, 178
+{
+    XScale 0.944602273
+    YScale 0.944602273
+    Offset 89, 171
+    Patch "graphics/caelum/shotgun/world.png", -183, -722
+}
+Sprite "SHGWE3", 179, 178
+{
+    XScale 0.944602273
+    YScale 0.944602273
+    Offset 95, 171
+    Patch "graphics/caelum/shotgun/world.png", -360, -722
+}
+Sprite "SHGWE4", 183, 178
+{
+    XScale 0.944602273
+    YScale 0.944602273
+    Offset 81, 171
+    Patch "graphics/caelum/shotgun/world.png", -539, -722
+}
+Sprite "SHGWE5", 180, 178
+{
+    XScale 0.944602273
+    YScale 0.944602273
+    Offset 94, 171
+    Patch "graphics/caelum/shotgun/world.png", -722, -722
+}
+Sprite "SHGWE6", 192, 178
+{
+    XScale 0.944602273
+    YScale 0.944602273
+    Offset 102, 171
+    Patch "graphics/caelum/shotgun/world.png", -902, -722
+}
+Sprite "SHGWE7", 186, 178
+{
+    XScale 0.944602273
+    YScale 0.944602273
+    Offset 89, 171
+    Patch "graphics/caelum/shotgun/world.png", -1094, -722
+}
+Sprite "SHGWE8", 166, 178
+{
+    XScale 0.944602273
+    YScale 0.944602273
+    Offset 86, 172
+    Patch "graphics/caelum/shotgun/world.png", -1280, -722
+}
+Sprite "SHGWF1", 188, 188
+{
+    XScale 0.944602273
+    YScale 0.944602273
+    Offset 97, 173
+    Patch "graphics/caelum/shotgun/world.png", 0, -900
+}
+Sprite "SHGWF2", 171, 188
+{
+    XScale 0.944602273
+    YScale 0.944602273
+    Offset 90, 173
+    Patch "graphics/caelum/shotgun/world.png", -188, -900
+}
+Sprite "SHGWF3", 170, 188
+{
+    XScale 0.944602273
+    YScale 0.944602273
+    Offset 86, 173
+    Patch "graphics/caelum/shotgun/world.png", -359, -900
+}
+Sprite "SHGWF4", 193, 188
+{
+    XScale 0.944602273
+    YScale 0.944602273
+    Offset 84, 172
+    Patch "graphics/caelum/shotgun/world.png", -529, -900
+}
+Sprite "SHGWF5", 181, 188
+{
+    XScale 0.944602273
+    YScale 0.944602273
+    Offset 95, 173
+    Patch "graphics/caelum/shotgun/world.png", -722, -900
+}
+Sprite "SHGWF6", 194, 188
+{
+    XScale 0.944602273
+    YScale 0.944602273
+    Offset 104, 173
+    Patch "graphics/caelum/shotgun/world.png", -903, -900
+}
+Sprite "SHGWF7", 181, 188
+{
+    XScale 0.944602273
+    YScale 0.944602273
+    Offset 86, 173
+    Patch "graphics/caelum/shotgun/world.png", -1097, -900
+}
+Sprite "SHGWF8", 168, 188
+{
+    XScale 0.944602273
+    YScale 0.944602273
+    Offset 85, 173
+    Patch "graphics/caelum/shotgun/world.png", -1278, -900
+}

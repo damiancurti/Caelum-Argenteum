@@ -34,7 +34,7 @@ class CaelumWeaponCatalogue : Object
             case CaelumConstants.CATALOGUE_WEAPON_WAR_AXE: return "CA_WEAPON_CATALOGUE_WAR_AXE";
             case CaelumConstants.CATALOGUE_WEAPON_HALBERD: return "CA_WEAPON_CATALOGUE_HALBERD";
             case CaelumConstants.CATALOGUE_WEAPON_GIANT_GAUNTLETS: return "CA_WEAPON_CATALOGUE_GIANT_GAUNTLETS";
-            case CaelumConstants.CATALOGUE_WEAPON_STANDARD_BOW: return "CA_WEAPON_CATALOGUE_STANDARD_BOW";
+            case CaelumConstants.CATALOGUE_WEAPON_SHOTGUN: return "CA_WEAPON_CATALOGUE_SHOTGUN";
             case CaelumConstants.CATALOGUE_WEAPON_CARBINE: return "CA_WEAPON_CATALOGUE_CARBINE";
             case CaelumConstants.CATALOGUE_WEAPON_LONGBOW: return "CA_WEAPON_CATALOGUE_LONGBOW";
             default: return "CA_WEAPON_CATALOGUE_CROSSBOW";
@@ -110,7 +110,7 @@ class CaelumWeaponCatalogue : Object
             case CaelumConstants.CATALOGUE_WEAPON_WAR_AXE: return 220.0;
             case CaelumConstants.CATALOGUE_WEAPON_HALBERD: return 180.0;
             case CaelumConstants.CATALOGUE_WEAPON_GIANT_GAUNTLETS: return 240.0;
-            case CaelumConstants.CATALOGUE_WEAPON_STANDARD_BOW: return 1200.0;
+            case CaelumConstants.CATALOGUE_WEAPON_SHOTGUN: return GetPrimaryDamage(CaelumConstants.CATALOGUE_WEAPON_CARBINE) * CaelumShotgunRules.SHOT_DAMAGE_RATIO;
             case CaelumConstants.CATALOGUE_WEAPON_CARBINE: return 3600.0;
             case CaelumConstants.CATALOGUE_WEAPON_LONGBOW: return 1800.0;
             default: return 1400.0;
@@ -158,7 +158,7 @@ class CaelumWeaponCatalogue : Object
             case CaelumConstants.CATALOGUE_WEAPON_WAR_AXE: return 76.0;
             case CaelumConstants.CATALOGUE_WEAPON_HALBERD: return 84.0;
             case CaelumConstants.CATALOGUE_WEAPON_GIANT_GAUNTLETS: return 60.0;
-            case CaelumConstants.CATALOGUE_WEAPON_STANDARD_BOW: return 20.0;
+            case CaelumConstants.CATALOGUE_WEAPON_SHOTGUN: return GetPrimaryRange(CaelumConstants.CATALOGUE_WEAPON_CARBINE) * CaelumShotgunRules.RANGE_RATIO;
             case CaelumConstants.CATALOGUE_WEAPON_CARBINE: return 60.0;
             case CaelumConstants.CATALOGUE_WEAPON_LONGBOW: return 70.0;
             default: return 25.0;
@@ -198,7 +198,7 @@ class CaelumWeaponCatalogue : Object
         {
             case CaelumConstants.CATALOGUE_WEAPON_LONGBOW: return 30.0;
             case CaelumConstants.CATALOGUE_WEAPON_CROSSBOW: return 90.0;
-            case CaelumConstants.CATALOGUE_WEAPON_STANDARD_BOW: return 110.0;
+            case CaelumConstants.CATALOGUE_WEAPON_SHOTGUN: return GetMaximumSpread(CaelumConstants.CATALOGUE_WEAPON_CARBINE);
             case CaelumConstants.CATALOGUE_WEAPON_DAGGER: return 90.0;
             case CaelumConstants.CATALOGUE_WEAPON_HATCHET:
             case CaelumConstants.CATALOGUE_WEAPON_MACHETE:
@@ -225,8 +225,8 @@ class CaelumWeaponCatalogue : Object
             case CaelumConstants.CATALOGUE_WEAPON_DAGGER: return 15.0;
             case CaelumConstants.CATALOGUE_WEAPON_HATCHET:
             case CaelumConstants.CATALOGUE_WEAPON_MACHETE:
-            case CaelumConstants.CATALOGUE_WEAPON_GREATSWORD:
-            case CaelumConstants.CATALOGUE_WEAPON_STANDARD_BOW: return 10.0;
+            case CaelumConstants.CATALOGUE_WEAPON_GREATSWORD: return 10.0;
+            case CaelumConstants.CATALOGUE_WEAPON_SHOTGUN: return GetCriticalChancePercent(CaelumConstants.CATALOGUE_WEAPON_CARBINE);
             case CaelumConstants.CATALOGUE_WEAPON_JAVELIN:
             case CaelumConstants.CATALOGUE_WEAPON_SWORD:
             case CaelumConstants.CATALOGUE_WEAPON_SPEAR:
@@ -245,8 +245,8 @@ class CaelumWeaponCatalogue : Object
             case CaelumConstants.CATALOGUE_WEAPON_DAGGER:
             case CaelumConstants.CATALOGUE_WEAPON_CARBINE: return 2.0;
             case CaelumConstants.CATALOGUE_WEAPON_HATCHET:
-            case CaelumConstants.CATALOGUE_WEAPON_MACHETE:
-            case CaelumConstants.CATALOGUE_WEAPON_STANDARD_BOW: return 3.0;
+            case CaelumConstants.CATALOGUE_WEAPON_MACHETE: return 3.0;
+            case CaelumConstants.CATALOGUE_WEAPON_SHOTGUN: return GetPrimaryAirCost(CaelumConstants.CATALOGUE_WEAPON_CARBINE);
             case CaelumConstants.CATALOGUE_WEAPON_JAVELIN: return 4.0;
             case CaelumConstants.CATALOGUE_WEAPON_SWORD: return 5.0;
             case CaelumConstants.CATALOGUE_WEAPON_AXE:
@@ -291,7 +291,7 @@ class CaelumWeaponCatalogue : Object
             case CaelumConstants.CATALOGUE_WEAPON_JAVELIN:
             case CaelumConstants.CATALOGUE_WEAPON_SPEAR:
             case CaelumConstants.CATALOGUE_WEAPON_CARBINE:
-            case CaelumConstants.CATALOGUE_WEAPON_STANDARD_BOW:
+            case CaelumConstants.CATALOGUE_WEAPON_SHOTGUN:
             case CaelumConstants.CATALOGUE_WEAPON_LONGBOW:
             case CaelumConstants.CATALOGUE_WEAPON_CROSSBOW:
                 return CaelumConstants.CATALOGUE_DAMAGE_PIERCING;

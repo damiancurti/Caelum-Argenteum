@@ -2,7 +2,7 @@
 // Procedencia física y decisiones del autor en SYSTEMS, sección V5.1 térmica.
 class CaelumThermalData : Object
 {
-    const REVISION=6;
+    const REVISION=8;
     static clearscope double ExposureThreshold(int tier)
     {return tier==1 ? 10.0 : tier==2 ? 20.0 : 30.0;}
     const LIGHT_CLOTH=0;
@@ -23,13 +23,57 @@ class CaelumThermalData : Object
     // #140: esfuerzo total aprobado; el reposo de 1 MET ya está en el balance.
     const CARBINE_FIRE_MET=2.0;
     const CARBINE_RELOAD_MET=2.5;
+    // #136: natación moderada/intensa, independiente del salto aumentado.
+    const SWIM_MET=6.0;
+    const SWIM_FAST_MET=10.0;
+    const PUSH_MET=6.0;
     const SHIVER_MAX_MET=5.0;
     const SHIVER_FULL_COLD_EXPOSURE=5.0;
     const REFERENCE_SECONDS=1200.0;
     const REFERENCE_MASS_KG=80.0;
     const REFERENCE_HEIGHT_METERS=1.75;
+    // Referencia histórica para fixtures antiguos; el runtime ya no usa cola.
     const ACTIVITY_HALF_LIFE_SECONDS=120.0;
     const POSITIVE_WORK_EFFICIENCY=0.25;
+    // #136: presupuestos de trabajo, independientes de velocidad y Aire.
+    const JUMP_WORK_HEIGHT_METERS=0.5;
+    const JUMP_WORK_GRAVITY=9.81;
+    const FIRE_CYCLE_REFERENCE_SECONDS=0.4;
+    const RELOAD_REFERENCE_SECONDS=5.0;
+    const FIRE_WORK_JOULES_PER_M2=5.82;
+    const RELOAD_WORK_JOULES_PER_M2=109.125;
+    const SWIM_WORK_WATTS_PER_M2=72.75;
+    const SWIM_FAST_WORK_WATTS_PER_M2=130.95;
+    const WALK_WORK_JOULES_KG_METER=0.5025;
+    const RUN_WORK_JOULES_KG_METER=1.005;
+    const NATURAL_ATTACK_WORK_JOULES=25.0;
+    const GROUND_SLAM_WORK_JOULES=850.0;
+    const CHARGED_WORK_MULTIPLIER=2.0;
+    const SWEEP_WORK_MULTIPLIER=3.0;
+    const BLOCK_WATTS_PER_BODY_KG_HELD_KG=0.2943;
+
+    static clearscope double WeaponWork(int type,bool secondary=false)
+    {
+        if(type==CaelumConstants.WEAPON_TYPE_PICKAXE)type=CaelumConstants.WEAPON_TYPE_AXE;
+        switch(type)
+        {
+            case CaelumConstants.WEAPON_TYPE_DAGGER:return secondary ? 75 : 50;
+            case CaelumConstants.WEAPON_TYPE_HATCHET:return secondary ? 100 : 75;
+            case CaelumConstants.WEAPON_TYPE_MACHETE:return secondary ? 125 : 75;
+            case CaelumConstants.WEAPON_TYPE_JAVELIN:return secondary ? 150 : 100;
+            case CaelumConstants.WEAPON_TYPE_SWORD:return secondary ? 200 : 125;
+            case CaelumConstants.WEAPON_TYPE_AXE:return secondary ? 225 : 150;
+            case CaelumConstants.WEAPON_TYPE_FLAIL:return secondary ? 250 : 150;
+            case CaelumConstants.WEAPON_TYPE_SPEAR:return secondary ? 0 : 175;
+            case CaelumConstants.WEAPON_TYPE_HALBERD:return secondary ? 375 : 250;
+            case CaelumConstants.WEAPON_TYPE_GREATSWORD:return secondary ? 450 : 300;
+            case CaelumConstants.WEAPON_TYPE_WAR_AXE:return secondary ? 500 : 350;
+            case CaelumConstants.WEAPON_TYPE_GIANT_GAUNTLETS:return 375;
+            case CaelumConstants.WEAPON_TYPE_LONGBOW:return secondary ? 0 : 250;
+            case CaelumConstants.WEAPON_TYPE_CROSSBOW:return 150;
+            default:return 0;
+        }
+    }
     const OXYGEN_JOULES_PER_ML=20.1;
     const WALK_OXYGEN_SPEED=0.1;
     const WALK_OXYGEN_GRADE=1.8;

@@ -94,3 +94,10 @@
 /assets/validation_516/*.ini whitespace=-blank-at-eof,cr-at-eol
 /assets/source/art/carbine_crouch_516/*.json text eol=lf
 /src/graphics/caelum/carbine_crouch.textures -text whitespace=cr-at-eol
+
+# Preserve #136 native evidence and deterministic atlas registration bytes.
+/assets/validation_517/* -text whitespace=cr-at-eol
+/assets/validation_517/*.txt whitespace=-blank-at-eol,-blank-at-eof,cr-at-eol
+/assets/validation_517/*.ini whitespace=-blank-at-eof,cr-at-eol
+/assets/source/art/shotgun_517/*.json text eol=lf
+/src/graphics/caelum/shotgun.textures -text whitespace=cr-at-eol

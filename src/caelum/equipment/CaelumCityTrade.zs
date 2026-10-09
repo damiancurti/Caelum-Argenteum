@@ -44,13 +44,13 @@ class CaelumCityMerchant : Actor
         if(consumable!=null)return Category==0 && CaelumPotionRules.Family(consumable.GetConsumableType())<=CaelumConstants.CONSUMABLE_WATER_RATION;
         let ammo=CaelumCarbineAmmo(item);
         if(item is "CaelumArrowAmmo" || item is "CaelumBoltAmmo")return Category==2;
-        return Category==2 && ammo!=null && ammo.GetAmmoType()<=CaelumConstants.AMMUNITION_BOLT;
+        return Category==2 && ammo!=null && (ammo.GetAmmoType()<=CaelumConstants.AMMUNITION_BOLT || ammo.GetAmmoType()==CaelumConstants.AMMUNITION_SHOTGUN);
     }
 
     static int WeaponCategory(int type)
     {
         if(CaelumEconomyRules.IsEssenceWeaponType(type))return 5;
-        if(type==CaelumConstants.WEAPON_TYPE_CARBINE || type==CaelumConstants.WEAPON_TYPE_STANDARD_BOW
+        if(type==CaelumConstants.WEAPON_TYPE_CARBINE || type==CaelumConstants.WEAPON_TYPE_SHOTGUN
             || type==CaelumConstants.WEAPON_TYPE_LONGBOW || type==CaelumConstants.WEAPON_TYPE_CROSSBOW)return 2;
         return 1;
     }
@@ -69,15 +69,35 @@ class CaelumCityMerchant : Actor
         item.bDropped=false;
         item.SizePolicyRevision=CaelumEquipmentRules.SIZE_POLICY_REVISION;
         item.UnitWeight=item.PreviewUnitWeight(user);item.Durability=item.PreviewMaximumDurability(user);
+        item.WeaponDurabilityRevision=CaelumAttackRules.DURABILITY_REVISION;
+        item.ShotgunRevision=CaelumShotgunRules.REVISION;
         item.Amount=CaelumCityData.EQUIPMENT_STOCK;item.AttachToOwner(self);
+    }
+
+    void SeedShotgunAmmo(CaelumPlayer user)
+    {
+        if(Revision>=2)return;
+        if(Category==2)
+        {
+            let item=Inventory(Actor.Spawn("CaelumShotgunAmmo",Pos,NO_REPLACE));
+            if(item==null)return;
+            item.Amount=CaelumCityData.AMMUNITION_STOCK;item.AttachToOwner(self);
+        }
+        Revision=2;
     }
 
     void EnsureStock(CaelumPlayer user)
     {
-        if(StockInitialized || !CaelumPlayerAuthority.CanMutate(user))return;
+        if(!CaelumPlayerAuthority.CanMutate(user))return;
+        if(StockInitialized)
+        {
+            SeedShotgunAmmo(user);
+            return;
+        }
         // Sólo materializar al abrir: 64 tiendas vacías de compradores no
         // necesitan miles de actores de inventario en cada tic de asedio.
         StockInitialized=true;
+        SeedShotgunAmmo(user);
         if(Category==0)
             for(int type=0;type<=CaelumConstants.CONSUMABLE_WATER_RATION;type++)
             {

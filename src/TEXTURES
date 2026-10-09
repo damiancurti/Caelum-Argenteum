@@ -5718,6 +5718,7 @@ Graphic "CA_GAUNTLET_ICON_3_MUTED", 1280, 1280
 }
 #include "graphics/caelum/carbine_world.textures"
 #include "graphics/caelum/carbine_crouch.textures"
+#include "graphics/caelum/shotgun.textures"
 
 Graphic "graphics/caelum/icons/ca_giant_gauntlets_t3.png", 1280, 1280
 {

@@ -64,8 +64,10 @@ class CaelumMazeLayout : Object play
         if(tid==47006){item=Inventory(Actor.Spawn("CaelumCarbineAmmo",(-576,-4704,0),NO_REPLACE));if(item!=null)item.Amount=20;return item;}
         if(tid==48012){item=Inventory(Actor.Spawn("CaelumFoodRation",(-960,-4576,0),NO_REPLACE));if(item!=null)item.Amount=1;return item;}
         if(tid==48013){item=Inventory(Actor.Spawn("CaelumWaterRation",(-576,-4448,0),NO_REPLACE));if(item!=null)item.Amount=1;return item;}
+        if(tid==47007){item=Inventory(Actor.Spawn("CaelumShotgunAmmo",(192,-4704,0),NO_REPLACE));if(item!=null)item.Amount=20;return item;}
         if(tid==48014){item=Inventory(Actor.Spawn("CaelumFoodRation",(-192,-4576,0),NO_REPLACE));if(item!=null)item.Amount=1;return item;}
         if(tid==48015){item=Inventory(Actor.Spawn("CaelumWaterRation",(192,-4448,0),NO_REPLACE));if(item!=null)item.Amount=1;return item;}
+        if(tid==47008){item=Inventory(Actor.Spawn("CaelumShotgunAmmo",(960,-4704,0),NO_REPLACE));if(item!=null)item.Amount=20;return item;}
         if(tid==48016){item=Inventory(Actor.Spawn("CaelumFoodRation",(576,-4576,0),NO_REPLACE));if(item!=null)item.Amount=1;return item;}
         if(tid==48017){item=Inventory(Actor.Spawn("CaelumWaterRation",(960,-4448,0),NO_REPLACE));if(item!=null)item.Amount=1;return item;}
         if(tid==48018){item=Inventory(Actor.Spawn("CaelumFoodRation",(1344,-4576,0),NO_REPLACE));if(item!=null)item.Amount=1;return item;}
@@ -122,6 +124,7 @@ class CaelumMazeLayout : Object play
         if(tid==47029){item=Inventory(Actor.Spawn("CaelumCarbineAmmo",(-5088,-960,0),NO_REPLACE));if(item!=null)item.Amount=20;return item;}
         if(tid==48058){item=Inventory(Actor.Spawn("CaelumFoodRation",(-5472,-832,0),NO_REPLACE));if(item!=null)item.Amount=1;return item;}
         if(tid==48059){item=Inventory(Actor.Spawn("CaelumWaterRation",(-5088,-704,0),NO_REPLACE));if(item!=null)item.Amount=1;return item;}
+        if(tid==47030){item=Inventory(Actor.Spawn("CaelumShotgunAmmo",(-4320,-960,0),NO_REPLACE));if(item!=null)item.Amount=20;return item;}
         if(tid==48060){item=Inventory(Actor.Spawn("CaelumFoodRation",(-4704,-832,0),NO_REPLACE));if(item!=null)item.Amount=1;return item;}
         if(tid==48061){item=Inventory(Actor.Spawn("CaelumWaterRation",(-4320,-704,0),NO_REPLACE));if(item!=null)item.Amount=1;return item;}
         if(tid==48062){item=Inventory(Actor.Spawn("CaelumFoodRation",(-3936,-832,0),NO_REPLACE));if(item!=null)item.Amount=1;return item;}
@@ -183,8 +186,10 @@ class CaelumMazeLayout : Object play
         if(tid==47053){item=Inventory(Actor.Spawn("CaelumCarbineAmmo",(2400,-960,0),NO_REPLACE));if(item!=null)item.Amount=20;return item;}
         if(tid==48106){item=Inventory(Actor.Spawn("CaelumFoodRation",(2016,-832,0),NO_REPLACE));if(item!=null)item.Amount=1;return item;}
         if(tid==48107){item=Inventory(Actor.Spawn("CaelumWaterRation",(2400,-704,0),NO_REPLACE));if(item!=null)item.Amount=1;return item;}
+        if(tid==47054){item=Inventory(Actor.Spawn("CaelumShotgunAmmo",(3168,-960,0),NO_REPLACE));if(item!=null)item.Amount=20;return item;}
         if(tid==48108){item=Inventory(Actor.Spawn("CaelumFoodRation",(2784,-832,0),NO_REPLACE));if(item!=null)item.Amount=1;return item;}
         if(tid==48109){item=Inventory(Actor.Spawn("CaelumWaterRation",(3168,-704,0),NO_REPLACE));if(item!=null)item.Amount=1;return item;}
+        if(tid==47055){item=Inventory(Actor.Spawn("CaelumShotgunAmmo",(3936,-960,0),NO_REPLACE));if(item!=null)item.Amount=20;return item;}
         if(tid==48110){item=Inventory(Actor.Spawn("CaelumFoodRation",(3552,-832,0),NO_REPLACE));if(item!=null)item.Amount=1;return item;}
         if(tid==48111){item=Inventory(Actor.Spawn("CaelumWaterRation",(3936,-704,0),NO_REPLACE));if(item!=null)item.Amount=1;return item;}
         if(tid==48112){item=Inventory(Actor.Spawn("CaelumFoodRation",(4320,-832,0),NO_REPLACE));if(item!=null)item.Amount=1;return item;}
@@ -244,6 +249,7 @@ class CaelumMazeLayout : Object play
         if(tid==47077){item=Inventory(Actor.Spawn("CaelumCarbineAmmo",(-576,2784,0),NO_REPLACE));if(item!=null)item.Amount=20;return item;}
         if(tid==48154){item=Inventory(Actor.Spawn("CaelumFoodRation",(-960,2912,0),NO_REPLACE));if(item!=null)item.Amount=1;return item;}
         if(tid==48155){item=Inventory(Actor.Spawn("CaelumWaterRation",(-576,3040,0),NO_REPLACE));if(item!=null)item.Amount=1;return item;}
+        if(tid==47078){item=Inventory(Actor.Spawn("CaelumShotgunAmmo",(192,2784,0),NO_REPLACE));if(item!=null)item.Amount=20;return item;}
         if(tid==48156){item=Inventory(Actor.Spawn("CaelumFoodRation",(-192,2912,0),NO_REPLACE));if(item!=null)item.Amount=1;return item;}
         if(tid==48157){item=Inventory(Actor.Spawn("CaelumWaterRation",(192,3040,0),NO_REPLACE));if(item!=null)item.Amount=1;return item;}
         if(tid==48158){item=Inventory(Actor.Spawn("CaelumFoodRation",(576,2912,0),NO_REPLACE));if(item!=null)item.Amount=1;return item;}
