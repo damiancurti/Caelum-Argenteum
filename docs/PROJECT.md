@@ -16,7 +16,7 @@ Native comparison and persistence evidence: assets/validation_518/RESULTS.md.
 The reported Domingo/giant-rat death cuts are repaired through complete pose
 reconstructions, retaining original PNGs and native death timing.
 Technical checks and author aesthetic acceptance are separate; CA137-01/02/03 remain
-pending. Branch/PR delivery is authorized; merge/closure has not been requested.
+pending. Delivered through PR #151; merge/closure has not been requested.
 
 ## 5.1.7 - Shortbow replacement and firearm armor bypass (#136)
 

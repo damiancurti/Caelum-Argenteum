@@ -4,7 +4,7 @@ Documentation version: **5.1.8** — 2026-10-09.
 
 **5.1.8/#137:** elemental VFX, 3D flying physical projectiles/javelins,
 shared Federal/staff lightning, proportional damage/Health/Lucidity feedback.
-Death repaired: validation_518. CA137-01/02/03 pending; commit/push/PR authorized.
+Death repaired: validation_518. CA137-01/02/03 pending; PR151 delivered.
 **5.1.7/#136 accepted 2026-10-08:** PR146, validation_517. Shotgun,
 fixed-work heat and Type-2 adaptation. CA136-01/02/CA143-01 passed.
 

@@ -19,6 +19,7 @@ colors. Wounded/critical borders and animated Lucidity feedback retain a clear
 center and legible HUD. Complete Domingo/giant-rat death poses replace damaged
 cuts, preserving the old source PNGs. Gameplay values and saved progress are preserved.
 Native evidence, comparisons and limitations: [validation_518](assets/validation_518/RESULTS.md).
+Delivery: [PR #151](https://github.com/damiancurti/Caelum-Argenteum/pull/151).
 Author visual acceptance remains in [pending_test.txt](pending_test.txt).
 
 **5.1.7 / [#136](https://github.com/damiancurti/Caelum-Argenteum/issues/136):**

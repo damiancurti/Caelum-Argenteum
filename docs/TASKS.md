@@ -13,8 +13,8 @@ death cuts use complete reconstructed poses; originals/timing are retained.
 No gameplay/balance changes.
 Native evidence and qualifications are maintained in assets/validation_518/RESULTS.md;
 static/build gates accompany delivery. Outstanding author checks: CA137-01/02/03 in
-pending_test.txt. Commit/push and a linked PR are authorized; no merge/closure
-is claimed until the author asks for it.
+pending_test.txt. Delivered through PR #151; no merge/closure is claimed until
+the author asks for it.
 
 Separate legacy observation: some rat idle/movement PNGs also contain neighboring
 art or labels. The author's #137 follow-up and this repair cover death frames;

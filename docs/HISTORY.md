@@ -34,6 +34,8 @@ sequence captures are in deathframes-before/after. These are reconstructed art,
 not recovered source pixels; artistic acceptance remains separate.
 Author aesthetic acceptance is still outstanding as CA137-01/02/03 (origin 5.1.8,
 issue #137). No passed author result or merge is inferred from automated tests.
+Delivered through PR #151; commit/push completed with source assets, supporting
+runtime and native evidence retained in the focused branch.
 
 ## 5.1.7 - Shortbow becomes a modular double-barrel shotgun (#136, 2026-10-08)
 
