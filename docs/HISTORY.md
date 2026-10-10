@@ -1,6 +1,40 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **5.1.12** — 2026-10-10.
+Documentation version: **5.1.13** — 2026-10-10.
+
+## 5.1.13 - Argento silver-key handoff (#160, 2026-10-10)
+
+The author reported a generic already-have-enough refusal when accepting the
+silver key. The protected llave-plata checkpoint satisfies the practice gates;
+Argento still owns the key and the player has capacity. GiveSilverKey asked the
+ordinary pickup guard to accept this foreign-owned object before releasing it.
+The guard was correct, but the authorized handoff was ordered incorrectly.
+
+The transaction now calls keeper.RemoveInventory(key), validates the normal
+pickup weight/authority rules, and attaches the same object to the player. On
+failure it restores the same object to Argento. DetachFromOwner alone is only a
+virtual notification hook and does not unlink ownership. General foreign-item
+protection, quest prerequisites, fixed key weight, native locks and save schema
+remain unchanged. No replacement key is spawned and repeated offers are idempotent.
+
+GZDoom 4.14.2: baseline passes 10 controls but fails six handoff/result assertions;
+the corrected build passes all 16 and four save/reload checks. Native GiveItem's
+AUTOACTIVATE action path is exercised through CallTryPickup, with conversation
+context restored by the isolated fixture. Tests cover missing/unanchored keeper,
+missing tutorial flag, capacity failure/rollback/retry, identical instance, weight,
+lock access, tokens and repeat attempts. These are engine transaction tests, not
+physical dialogue-click acceptance. Initial fixture compiler errors and a rejected
+DetachFromOwner-only attempt are documented in validation_5113. Original save
+hash is unchanged, package matches source, static validation passes, and temporary
+keep-awake was released without changing the power plan. CA160-01 remains pending;
+CA158-01 is carried forward. Separate focused delivery follows #158 / PR159.
+
+Author acceptance, 2026-10-10: CA160-01 (origin 5.1.13 / #160) PASSED
+without reported qualifications. The author confirmed all other pending checks
+while the separate #165 red-screen investigation was underway and requested
+issue closure and PR161 merge. This confirms only the existing test entry;
+it does not accept the still-unfinished #165 correction. The confirmed entry
+was removed from pending_test.txt.
 
 ## 5.1.12 - Preserve crafting equipment size (#158, 2026-10-10)
 
@@ -30,6 +64,13 @@ assets/validation_5112. CA158-01 remains pending author acceptance.
 
 Prior accepted work: #154/PR155 and #156/PR157 were closed/merged on 2026-10-10
 before this branch. Their acceptance records below remain authoritative.
+
+Author acceptance, 2026-10-10: CA158-01 (origin 5.1.12 / #158) PASSED
+without reported qualifications. The author confirmed all other pending checks
+while the separate #165 red-screen investigation was underway and requested
+issue closure and PR159 merge. This confirms only the existing test entry;
+it does not accept the still-unfinished #165 correction. The confirmed entry
+was removed from pending_test.txt.
 
 ## 5.1.11 - Time-skip letter controls (#156, 2026-10-10)
 

@@ -4,6 +4,25 @@ Status: integrated engineering register (issue #22, patch 4.36.1b).
 Prepared: 2026-09-23. Inherits the project's release after integration.
 Inspected baseline: `1dc390576fa330d37ff543526fc7e69a397fc28f` (PR #7).
 
+## CA-KP-070 - Release actual custody before an authorized item handoff
+
+Status/evidence: CODE-VERIFIED / ENGINE-VERIFIED, #160 / 5.1.13, 2026-10-10.
+Baseline: 6c3a74ea; GZDoom 4.14.2 Windows/Vulkan. Scope: Argento's silver key.
+
+The ordinary pickup guard rejects foreign-owned keys. Calling it before releasing
+Argento's key makes a legitimate dialogue handoff fail with the native generic
+refusal. Do not weaken the guard or spawn a replacement. RemoveInventory performs
+the native unlink; DetachFromOwner is only a virtual notification hook (the base
+implementation is empty). Validate the owner before unlinking, then prepare pickup
+and attach to the recipient. Failure must restore the same instance to the keeper.
+
+Regression: test the AUTOACTIVATE dialogue action through public CallTryPickup,
+not protected TryPickup; check eligibility, false keeper, capacity failure/retry,
+identity, unchanged key count, carried weight, native lock access and save/reload.
+validation_5113 records six reproduced baseline failures, the rejected hook-only
+attempt and 20 passing final checks. No schema migration is necessary. CA160-01
+remains pending author confirmation; native action invocation is not a real click.
+
 ## CA-KP-069 - Fixed-size products must not overwrite equipment size
 
 Status/evidence: CODE-VERIFIED / ENGINE-VERIFIED, #158 / 5.1.12, 2026-10-10.

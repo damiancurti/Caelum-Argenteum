@@ -80,9 +80,18 @@ class CaelumMainM00SocialDialogue : Object play
         if (keeper == null || !keeper.StoryAnchored) return false;
         if (user.FindInventory("CaelumSilverKey") == null)
         {
-            let key = keeper.FindInventory("CaelumSilverKey");
-            if (key == null || !user.PrepareNativeKeyPickup(CaelumWeightedKey(key))) return false;
-            key.DetachFromOwner(); key.AttachToOwner(user);
+            let key = CaelumWeightedKey(keeper.FindInventory("CaelumSilverKey"));
+            if (key == null || key.Owner != keeper) return false;
+            // La entrega autorizada libera la custodia antes de validar el peso;
+            // una recogida común sigue sin poder tomar objetos de otro dueño.
+            keeper.RemoveInventory(key);
+            if (!user.PrepareNativeKeyPickup(key))
+            {
+                // Si no puede cargarla, Argento conserva la misma instancia.
+                key.AttachToOwner(keeper);
+                return false;
+            }
+            key.AttachToOwner(user);
         }
         user.OnNativeInventoryChanged();
         Sync(user); return true;

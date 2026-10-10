@@ -1,6 +1,13 @@
 # Caelum Argenteum — Audio and art
 
-Documentation version: **5.1.12** — 2026-10-10.
+Documentation version: **5.1.13** — 2026-10-10.
+
+## 5.1.13 - Silver-key validation (#160)
+
+No artwork, audio, model, map or attribution change. assets/validation_5113 stores
+isolated native fixture sources, logs, hashes and validation results. Protected
+saves and test packages remain local; no engine or IWAD is distributed. The
+unrelated author-owned art-source deletion remains outside this patch.
 
 ## 5.1.12 - Crafting-size validation (#158)
 

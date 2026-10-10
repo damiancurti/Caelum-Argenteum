@@ -1,6 +1,15 @@
 # TASKS.md — Active tasks
 
-Documentation version: **5.1.12** — 2026-10-10.
+Documentation version: **5.1.13** — 2026-10-10.
+
+## Issue #160 - Argento silver-key handoff (5.1.13)
+
+Implemented the authorized release/check/transfer transaction, including rollback
+to Argento when capacity rejects the pickup. Keep generic ownership guards, quest
+requirements, the single existing key and native silver-lock behavior. The author
+checkpoint reproduces the old rejection; 20 native checks pass after correction.
+The author accepted CA160-01 and CA158-01 on 2026-10-10 and requested closure
+and merge: #158/PR159 first, then #160/PR161. HISTORY records both confirmations.
 
 ## Issue #158 - Preserve crafting equipment size (5.1.12)
 
@@ -10,7 +19,7 @@ size choice, including legacy task snapshots. Sized tasks still restore their
 own size; fixed-size output/display metadata stays canonical. The author save
 needs XS selected once, not extra materials. Native before/after checks, actual
 staff/shield transactions using original stock, and task/completed save reloads
-passed. CA158-01 remains pending; deliver through a linked PR before acceptance.
+passed. CA158-01 accepted 2026-10-10; PR159 merge and #158 closure authorized.
 No quota top-up or forced selection based on race was introduced.
 
 ## Issue #156 - Time-skip letter controls (5.1.11)
