@@ -1,0 +1,62 @@
+{
+  "source": "atlas.png",
+  "cells": [
+    [
+      0,
+      0,
+      426,
+      640
+    ],
+    [
+      426,
+      0,
+      427,
+      640
+    ],
+    [
+      880,
+      0,
+      400,
+      640
+    ],
+    [
+      0,
+      640,
+      426,
+      640
+    ],
+    [
+      426,
+      640,
+      427,
+      640
+    ],
+    [
+      853,
+      640,
+      427,
+      640
+    ]
+  ],
+  "grips": [
+    [
+      158,
+      570
+    ],
+    [
+      120,
+      575
+    ],
+    [
+      88,
+      407
+    ],
+    [
+      158,
+      570
+    ]
+  ],
+  "source_sha256": "fb78f0ab7883e2fcb806fa5feaf035b09ecec762526ae7b4415fc07314e99b6e",
+  "method": "Built-in image_gen; original RGBA atlas; native TEXTURES crops, no raster edits.",
+  "construction": "Three leather-wrapped bronze weights and cowhide thongs. Mouth remains free."
+}
