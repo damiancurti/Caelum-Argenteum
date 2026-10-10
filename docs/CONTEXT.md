@@ -2,10 +2,10 @@
 
 Documentation version: **5.1.13** — 2026-10-10.
 
-**5.1.13/#160 implemented:** Argento transfers the same silver key with capacity
-rollback. Twenty native checks pass; CA160-01 pending. Evidence: validation_5113.
-**5.1.12/#158 implemented:** fixed-size recipes preserve equipment size;
-materiales-palomo has enough stock at XS/T1/100% (select XS once). CA158-01 pending.
+**5.1.13/#160 accepted:** Argento transfers the same silver key with capacity
+rollback. Twenty native checks pass; CA160-01 accepted 2026-10-10. Evidence: validation_5113.
+**5.1.12/#158 accepted:** fixed-size recipes preserve equipment size;
+materiales-palomo has enough stock at XS/T1/100% (select XS once). CA158-01 accepted 2026-10-10; PR159 then PR161 merge authorized.
 **#156/PR157 and #154/PR155 accepted, closed, merged** on 2026-10-10.
 Time-skip and SI/growth contracts: SYSTEMS/HISTORY; validation_5111/5110.
 **#152, #137, #136 accepted:** evidence validation_519/518/517; historical thermal

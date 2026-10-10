@@ -29,6 +29,13 @@ hash is unchanged, package matches source, static validation passes, and tempora
 keep-awake was released without changing the power plan. CA160-01 remains pending;
 CA158-01 is carried forward. Separate focused delivery follows #158 / PR159.
 
+Author acceptance, 2026-10-10: CA160-01 (origin 5.1.13 / #160) PASSED
+without reported qualifications. The author confirmed all other pending checks
+while the separate #165 red-screen investigation was underway and requested
+issue closure and PR161 merge. This confirms only the existing test entry;
+it does not accept the still-unfinished #165 correction. The confirmed entry
+was removed from pending_test.txt.
+
 ## 5.1.12 - Preserve crafting equipment size (#158, 2026-10-10)
 
 The author lacked apparent wood/raw sapphire for the staff and shield selected
@@ -57,6 +64,13 @@ assets/validation_5112. CA158-01 remains pending author acceptance.
 
 Prior accepted work: #154/PR155 and #156/PR157 were closed/merged on 2026-10-10
 before this branch. Their acceptance records below remain authoritative.
+
+Author acceptance, 2026-10-10: CA158-01 (origin 5.1.12 / #158) PASSED
+without reported qualifications. The author confirmed all other pending checks
+while the separate #165 red-screen investigation was underway and requested
+issue closure and PR159 merge. This confirms only the existing test entry;
+it does not accept the still-unfinished #165 correction. The confirmed entry
+was removed from pending_test.txt.
 
 ## 5.1.11 - Time-skip letter controls (#156, 2026-10-10)
 

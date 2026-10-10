@@ -9,8 +9,8 @@ the dialogue therefore failed with a generic native refusal. The handoff now
 removes his existing key from his native inventory before checking pickup weight,
 restoring that same instance on failure. No replacement key, quest bypass or save
 migration. Twenty native action/ownership/lock/reload checks passed against the
-protected llave-plata checkpoint; CA160-01 awaits author acceptance. Evidence:
-assets/validation_5113. This focused patch follows #158 / PR159, still pending.
+protected llave-plata checkpoint; CA160-01 accepted 2026-10-10. Evidence:
+assets/validation_5113. The author authorized #158/PR159 then #160/PR161 closure/merge.
 
 ## 5.1.12 - Preserve crafting equipment size (#158)
 
@@ -19,8 +19,7 @@ fixed-size output metadata remains canonical M. The protected materiales-palomo
 checkpoint has enough raw stock for its recorded XS/T1/100% staff and shield.
 Its saved M menu choice explains the apparent shortage; choose XS once in that
 save. No allowance, recipe, save-schema or balance change. Native regression,
-original-stock transactions and save/reload passed; CA158-01 awaits author
-acceptance. Evidence: assets/validation_5112. #154/PR155 and #156/PR157 are
+original-stock transactions and save/reload passed; CA158-01 accepted by the author on 2026-10-10. Evidence: assets/validation_5112. #154/PR155 and #156/PR157 are
 accepted, closed and merged.
 
 ## 5.1.11 - Time-skip letter controls (#156)
