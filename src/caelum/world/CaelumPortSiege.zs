@@ -509,8 +509,6 @@ class CaelumPortSiege : CaelumSiegeEncounter
             gun.NextTargetQuery=0;
             vector3 point=victim.Pos+(0,0,victim.Height/2);
             if(victim is "CaelumBreakableGate")point.Z=victim.Pos.Z+CaelumCannonData.PIVOT_Z;
-            double t=(point-gun.Pos).Length()/CaelumCannonData.SPEED;
-            point.Z+=gun.GetGravity()*t*(t+1)/2;
             gun.RequestShot(point,victim);
         }
     }

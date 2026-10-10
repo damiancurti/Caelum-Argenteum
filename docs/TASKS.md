@@ -1,6 +1,19 @@
 # TASKS.md — Active tasks
 
-Documentation version: **5.1.9** — 2026-10-09.
+Documentation version: **5.1.10** — 2026-10-09.
+
+## Issue #154 — SI physics and growth (5.1.10)
+
+Implemented: shared Type 1/2/3 consumers, SI gravity, calibrated movement,
+energy-based jumps, fall-threshold conversion, physical projectile gravity and
+launch-time ballistic aiming, attribute-dependent muscular efficiency, explicit
+save migration. Existing acceleration, combat equations and fixed work data remain.
+
+Native evidence covers numeric consumers, actual input/movement/jumps, real
+projectile collisions, falls/traps, map traversal and protected-save migration.
+Static/final-build results and limitations are recorded in validation_5110.
+Outstanding author checks: CA154-01 and CA154-02 in pending_test.txt.
+No mass-siege benchmark or unapproved force/power acceleration redesign is included.
 
 ## Issue #152 - Shotgun follow-up (5.1.9)
 

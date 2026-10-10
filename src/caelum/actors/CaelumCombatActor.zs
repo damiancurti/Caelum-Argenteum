@@ -40,6 +40,7 @@ class CaelumCombatActor : Actor
     double CombatAirRegenerationPerSecond;
     bool CombatAirSpending;
     bool CombatProfileInitialized;
+    int GrowthRevision;
     double CombatBaseSpeed;
     double CombatPhysicalPowerMultiplier;
     double CombatPhysicalPushMultiplier;
@@ -778,6 +779,7 @@ class CaelumCombatActor : Actor
         CombatPatience = Max(0, patience);
         CombatInsight = Max(0, insight);
         CombatProfileInitialized = true;
+        GrowthRevision=CaelumGrowthRules.REVISION;
         // La Salud máxima de actores usa la misma fuente autoritativa que el
         // jugador: Constitución Tipo 1 multiplicada por la masa corporal.
         CombatMaximumHealth = Max(1, int(
@@ -791,6 +793,29 @@ class CaelumCombatActor : Actor
         // jugador recién inicializado; recalcular nunca concede recursos gratis.
         CurrentCombatAnima = MaximumCombatAnima;
         CurrentCombatAir = MaximumCombatAir;
+    }
+
+    void EnsureGrowthBalance()
+    {
+        if(!CombatProfileInitialized || GrowthRevision>=CaelumGrowthRules.REVISION)return;
+        double healthRatio=CombatMaximumHealth>0 ? double(health)/CombatMaximumHealth : 0;
+        double animaRatio=MaximumCombatAnima>0 ? CurrentCombatAnima/MaximumCombatAnima : 0;
+        double airRatio=MaximumCombatAir>0 ? CurrentCombatAir/MaximumCombatAir : 0;
+        double adrenalineRatio=MaximumCombatAdrenaline>0 ? CurrentCombatAdrenaline/MaximumCombatAdrenaline : 0;
+        CombatMaximumHealth=Max(1,int(CaelumConstants.HEALTH_ANIMA_DAMAGE_SCALE
+            *CalculateActorType1Percent(CombatConstitution)*Max(0.01,Mass/100.0)));
+        if(health>0)health=Max(1,int(CombatMaximumHealth*Clamp(healthRatio,0.0,1.0)+0.5));
+        if(self is 'CaelumFolkloreCombatActor')
+            CombatBaseSpeed=CaelumConstants.GZDOOM_BASE_MAX_WALK_SPEED*CaelumGrowthRules.Multiplier(CombatAgility,2);
+        let bull=CaelumBull(self);
+        if(bull!=null)bull.BullRunningSpeed=CombatBaseSpeed*CaelumGrowthRules.Multiplier(CombatAgility,2)
+            *CaelumConstants.GZDOOM_BASE_MAX_RUN_SPEED/CaelumConstants.GZDOOM_BASE_MAX_WALK_SPEED;
+        RecalculateCombatStatistics();
+        CurrentCombatAnima=Clamp(animaRatio,0.0,1.0)*MaximumCombatAnima;
+        CurrentCombatAir=Clamp(airRatio,0.0,1.0)*MaximumCombatAir;
+        CurrentCombatAdrenaline=Clamp(adrenalineRatio,0.0,1.0)*MaximumCombatAdrenaline;
+        GrowthRevision=CaelumGrowthRules.REVISION;
+        UpdateCombatHealthEffects();
     }
 
     void RecalculateCombatStatistics()
@@ -817,8 +842,7 @@ class CaelumCombatActor : Actor
         CombatAirRegenerationPerSecond = MaximumCombatAir
             / CaelumConstants.AIR_FULL_RECOVERY_SECONDS;
         MaximumCombatAdrenaline = 1000.0
-            * (100.0 + 2.0 * CombatResilience
-                * (CombatResilience + 1) / 101.0) / 100.0;
+            * CaelumGrowthRules.Multiplier(CombatResilience,2);
         CurrentCombatAdrenaline = Clamp(
             CurrentCombatAdrenaline,
             0.0,
@@ -830,17 +854,18 @@ class CaelumCombatActor : Actor
 
     double CalculateActorType1Percent(int level)
     {
-        return 100.0 + level * (level + 1) / 2.0;
+        // Adaptador histórico: Tipo 1 antiguo -> Tipo 3 nuevo.
+        return CaelumGrowthRules.Percent(level,3);
     }
 
     double CalculateActorType2Percent(int level)
     {
-        return level * (level + 1) / 101.0;
+        return CaelumGrowthRules.Bonus(level);
     }
 
     double CalculateActorType4Percent(int level)
     {
-        return 100.0 + 2.0 * level * (level + 1) / 101.0;
+        return CaelumGrowthRules.Percent(level,2);
     }
 
     double GetCombatAbilityRange()
@@ -1102,7 +1127,7 @@ class CaelumCombatActor : Actor
         AttackResourceResume=self is "CaelumBull" ? CurState : MeleeState;
         if(!TrySpendCombatAir(GetEffectiveAttackAir(baseAir)))
         {WaitForAttackResource();return false;}
-        CaelumThermalService.Impulse(self,CaelumThermalRules.PositiveWorkHeat(workJoules),true);
+        CaelumThermalService.Impulse(self,CaelumThermalRules.PositiveWorkHeat(workJoules,CaelumThermalBody.Efficiency(self)),true);
         return true;
     }
 
@@ -1732,11 +1757,7 @@ class CaelumCombatActor : Actor
 
     double GetCollisionEffectiveMass()
     {
-        double result = Max(1.0, double(Mass));
-        if (CombatArmor != null)
-        {
-            result += Max(0.0, CombatArmor.GetTotalWeight());
-        }
+        double result = Max(1.0, double(Mass))+Max(0.0,GetAttackCarriedWeight());
         return Max(1.0, result * Max(0.0, CollisionEffectiveMassMultiplier));
     }
 
@@ -1793,10 +1814,7 @@ class CaelumCombatActor : Actor
             return 0.0;
         }
 
-        double agilityTypeOnePercent =
-            100.0 + CombatAgility * (CombatAgility + 1) / 2.0;
-        return CaelumConstants.GZDOOM_BASE_JUMP_Z
-            * Sqrt(Max(0.0, agilityTypeOnePercent / 100.0));
+        return CaelumPhysicsUnits.JumpVelocity(Mass,Mass+GetAttackCarriedWeight(),CombatAgility);
     }
 
     double ApplyBiologicalLandingAbsorption(double rawDeltaSpeed)
@@ -1973,7 +1991,8 @@ class CaelumCombatActor : Actor
         LastImpactEquivalentTics =
             CalculateImpactEquivalentTics(LastImpactDeltaSpeed);
         LastImpactDamagePercent =
-            CalculateImpactDamagePercent(LastImpactEquivalentTics);
+            CalculateImpactDamagePercent(LastImpactEquivalentTics
+                *(impactKind==CaelumConstants.IMPACT_KIND_FLOOR ? Sqrt(CaelumPhysicsUnits.GRAVITY_RATIO) : 1.0));
         LastImpactEffectiveMass = selfEffectiveMass;
         LastImpactOtherEffectiveMass = otherEffectiveMass;
         LastImpactClosingSpeed = closingSpeed;
@@ -3237,8 +3256,7 @@ class CaelumCombatActor : Actor
     // Dolor y pérdida de Lucidez no adoptan el nuevo divisor de daño.
     double GetActorPainLucidityMultiplier()
     {
-        return Clamp(1.0 - CombatToughness * (CombatToughness + 1)
-            / 10100.0, 0.0, 1.0);
+        return CaelumGrowthRules.Remaining(CombatToughness);
     }
 
     void UpdateActorLucidityState()
@@ -3517,11 +3535,7 @@ class CaelumCombatActor : Actor
             + GetCombatArmorAttributeBonus(CaelumConstants.ATTRIBUTE_PATIENCE);
         int effectiveAgility = CombatAgility
             + GetCombatArmorAttributeBonus(CaelumConstants.ATTRIBUTE_AGILITY);
-        double patienceMultiplier = Clamp(
-            1.0 - effectivePatience * (effectivePatience + 1) / 10100.0,
-            0.0,
-            1.0
-        );
+        double patienceMultiplier = CaelumGrowthRules.Remaining(effectivePatience);
         double adrenalineRatio = GetCombatAdrenalineRatio();
         double patienceAdjustedPerformance = 1.0
             - (1.0 - rawPerformance) * patienceMultiplier;
@@ -3533,7 +3547,7 @@ class CaelumCombatActor : Actor
                 * (1.0 - adrenalineRatio);
         CombatAdrenalineGainMultiplier = rawIntensity;
 
-        double baseEvasion = effectiveAgility * (effectiveAgility + 1) / 101.0;
+        double baseEvasion = CaelumGrowthRules.Bonus(effectiveAgility);
         double massMultiplier = 100.0 / (Mass / 2.0 + 50.0);
         EffectiveCombatEvasionChance = baseEvasion
             * massMultiplier
@@ -3635,6 +3649,7 @@ class CaelumCombatActor : Actor
 
     override void Tick()
     {
+        EnsureGrowthBalance();
         CaelumDemonService.Initialize(self);
         CaelumBreathing.UpdateSound(self);
         ResourceRecoveryActive();

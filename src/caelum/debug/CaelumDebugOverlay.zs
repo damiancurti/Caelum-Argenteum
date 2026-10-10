@@ -3826,11 +3826,11 @@ class CaelumDebugOverlay : EventHandler
         );
 
         String agilityMovementLine = String.Format(
-            "%s: %.2f%% -> %.2f%%   %s: %.2f%% -> %.2f%%",
+            "%s: %.2f%% -> %.2f%%   %s: %.2f m",
             StringTable.Localize("CA_STAT_MOVEMENT_AGILITY", false),
             derived.BaseMovementPercent, localPlayer.EffectiveMovementPercent,
             StringTable.Localize("CA_STAT_JUMP_HEIGHT", false),
-            derived.BaseJumpHeightPercent, localPlayer.EffectiveJumpHeightPercent
+            localPlayer.GetGravity()>0 ? CaelumPhysicsUnits.Meters(localPlayer.JumpZ*localPlayer.JumpZ/(2*localPlayer.GetGravity())) : 0
         );
 
         String runStateKey = localPlayer.IsSpendingRunningAir

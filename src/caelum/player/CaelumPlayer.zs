@@ -1045,7 +1045,7 @@ class CaelumPlayer : DoomPlayer
     void RefreshPalomoDiscountOdds()
     {
         double dialogueSkill = Attributes == null ? 0.0
-            : Attributes.Eloquence * (Attributes.Eloquence + 1) / 101.0;
+            : CaelumGrowthRules.Bonus(Attributes.Eloquence);
         if (DerivedStats != null)
         {
             dialogueSkill = DerivedStats.DialogueSkillPercent;
@@ -1540,6 +1540,8 @@ class CaelumPlayer : DoomPlayer
         }
 
         persistentState.StoredHealth = health;
+        persistentState.GrowthRevision=AttributeBalanceVersion>=CaelumGrowthRules.PLAYER_BALANCE_VERSION
+            ? CaelumGrowthRules.REVISION : 0;
         persistentState.StoredAnima = CurrentAnima;
         persistentState.StoredAir = CurrentAir;
         persistentState.StoredUnderwaterNoBreathTics =
@@ -1704,6 +1706,7 @@ class CaelumPlayer : DoomPlayer
         CreationAllocationBackup = null;
         ApplyCharacterProfile();
         CaelumMaximumHealth = Max(1, int(DerivedStats.MaximumHealth));
+        CaelumGrowthMigration.StoredResources(self,persistentState);
         health = Clamp(persistentState.StoredHealth, 1, CaelumMaximumHealth);
         if (player != null) { player.health = health; }
         CurrentAnima = Clamp(persistentState.StoredAnima, 0.0, DerivedStats.MaximumAnima);
@@ -6583,7 +6586,8 @@ class CaelumPlayer : DoomPlayer
             return baseAbsorption;
         }
 
-        double baseJump = CaelumConstants.GZDOOM_BASE_JUMP_Z;
+        double baseJump = DerivedStats!=null
+            ? CaelumPhysicsUnits.JumpVelocity(DerivedStats.BaseMass,DerivedStats.TotalMass,0) : 0;
         double agilityBonusRatio = Max(
             0.0,
             baseAbsorption / Max(0.0001, baseJump) - 1.0
@@ -6829,7 +6833,8 @@ class CaelumPlayer : DoomPlayer
         LastImpactEquivalentTics =
             CalculateImpactEquivalentTics(LastImpactDeltaSpeed);
         LastImpactDamagePercent =
-            CalculateImpactDamagePercent(LastImpactEquivalentTics);
+            CalculateImpactDamagePercent(LastImpactEquivalentTics
+                *(impactKind==CaelumConstants.IMPACT_KIND_FLOOR ? Sqrt(CaelumPhysicsUnits.GRAVITY_RATIO) : 1.0));
         LastImpactEffectiveMass = selfEffectiveMass;
         LastImpactOtherEffectiveMass = otherEffectiveMass;
         LastImpactClosingSpeed = closingSpeed;
@@ -8667,10 +8672,9 @@ class CaelumPlayer : DoomPlayer
                 || mod == 'CaelumMagicTest');
     }
 
-    // Pain uses the percentage of maximum health actually lost after armor,
-    // invulnerability, and every other engine mitigation. Ten times that
-    // percentage is reduced multiplicatively by Dureza Type 3 and by the
-    // adrenaline percentage that existed before this hit.
+    // Dolor usa el porcentaje de Salud máxima perdido tras todas las
+    // mitigaciones. Diez veces ese porcentaje se reduce por el complemento
+    // Tipo 1 de Dureza y por la Adrenalina anterior al golpe.
     void CalculateAndTriggerPain(
         int actualHealthLost,
         double adrenalineRatioBeforeDamage,
@@ -10077,7 +10081,7 @@ class CaelumPlayer : DoomPlayer
 
         // Se calcula desde la Destreza efectiva actual al iniciar Reload.
         // Evita reutilizar una instantanea anterior del multiplicador y
-        // conserva la regla acordada: base / modificador Tipo 4.
+        // conserva la regla acordada: base / modificador Tipo 2.
         double attackSpeedPercent =
             DerivedStats.CalculateType4Percent(Attributes.Dexterity);
         return GetRangedBaseReloadSeconds(weaponType)
@@ -11375,7 +11379,9 @@ class CaelumPlayer : DoomPlayer
         {
             ConsumeJumpAir();
             if(DerivedStats!=null)
-                CaelumThermalService.Impulse(self,CaelumThermalRules.BodyJumpHeat(DerivedStats.TotalMass),true);
+                CaelumThermalService.Impulse(self,CaelumThermalRules.JumpHeat(DerivedStats.TotalMass,
+                    CaelumPhysicsUnits.VelocitySI(before),CaelumPhysicsUnits.VelocitySI(Vel.Z),
+                    CaelumThermalBody.Efficiency(self)),true);
         }
     }
 
@@ -11471,7 +11477,8 @@ class CaelumPlayer : DoomPlayer
             ForwardMove2 = walkMovement;
             SideMove2 = walkMovement;
         }
-        JumpZ = CaelumConstants.GZDOOM_BASE_JUMP_Z * jumpFactor;
+        JumpZ = DerivedStats!=null && Attributes!=null
+            ? CaelumPhysicsUnits.JumpVelocity(DerivedStats.BaseMass,DerivedStats.TotalMass,Attributes.Agility)*jumpFactor : 0;
     }
 
     bool IsPhysicallyImmobilized()
@@ -12511,8 +12518,8 @@ class CaelumPlayer : DoomPlayer
         CaelumPlayerResources.ApplyLocalizedLucidityLoss(self, naturalVulnerabilityGrade, effectiveVulnerabilityGrade, criticalHit, defenseRatio);
     }
 
-    // Low sleep doubles and critical sleep quadruples lucidity loss and stun
-    // duration. Patience Type 3 mitigates only the harmful amount above x1.
+    // Sueño bajo/crítico multiplica la pérdida de Lucidez y el aturdimiento
+    // por 2/4. El complemento Tipo 1 de Paciencia mitiga sólo el exceso sobre x1.
     double GetLuciditySleepDebuffMultiplier()
     {
         return CaelumPlayerResources.GetLuciditySleepDebuffMultiplier(self);
@@ -12597,7 +12604,7 @@ class CaelumPlayer : DoomPlayer
         return CaelumPlayerResources.IsSubmergedInPotableWater(self);
     }
 
-    // Consumo pasivo según tiempo base, masa corporal y divisor Tipo 4.
+    // Consumo pasivo según tiempo base, masa corporal y divisor Tipo 2.
     void UpdateSurvivalResources()
     {
         CaelumPlayerResources.UpdateSurvivalResources(self);
@@ -12665,7 +12672,7 @@ class CaelumPlayer : DoomPlayer
     }
 
     // Hambre, Sed o Sueño críticos detienen la recuperación natural.
-    // Resiliencia Tipo 4 cura gastando hambre/sed según la vida restaurada.
+    // Resiliencia Tipo 2 cura gastando hambre/sed según la vida restaurada.
     void ApplyNaturalHealthRegeneration()
     {
         CaelumPlayerResources.ApplyNaturalHealthRegeneration(self);

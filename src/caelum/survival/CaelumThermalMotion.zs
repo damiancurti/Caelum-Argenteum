@@ -3,7 +3,7 @@
 class CaelumThermalMotion : Object play
 {
     static double Gravity(Actor body)
-    { return body.GetGravity()*TICRATE*TICRATE/CaelumJourneyRules.MAP_UNITS_PER_METER; }
+    { return CaelumPhysicsUnits.AccelerationSI(body.GetGravity()); }
 
     static void Path(Actor body,vector3 before,vector3 after,bool running)
     {
@@ -14,7 +14,7 @@ class CaelumThermalMotion : Object play
         CaelumThermalBody.Refresh(body,thermal);
         double grade=(after.Z-before.Z)/distance;
         thermal.PendingActivityJoules+=CaelumThermalRules.PositiveWorkHeat(CaelumThermalRules.LocomotionWork(
-            thermal.MovedMassKg,distance/CaelumJourneyRules.MAP_UNITS_PER_METER,grade,running,Gravity(body)));
+            thermal.MovedMassKg,CaelumPhysicsUnits.Meters(distance),grade,running,Gravity(body)),thermal.MuscularEfficiency);
     }
 
     static void PlayerInput(CaelumPlayer user,vector2 oldVelocity)
@@ -60,7 +60,7 @@ class CaelumThermalMotion : Object play
         {
             if(thermal.SurfaceArea<=0)CaelumThermalBody.Refresh(user,thermal);
             thermal.PendingActivityJoules+=CaelumThermalEffects.SwimmingWatts(thermal.SurfaceArea,
-                (user.player.cmd.buttons & BT_RUN)!=0)/TICRATE;
+                (user.player.cmd.buttons & BT_RUN)!=0,CaelumThermalBody.Efficiency(user))/TICRATE;
         }
         else if(grounded && body.Pos.Z<=body.FloorZ+0.01 && !body.bNoGravity && (intent || user==null))
         {

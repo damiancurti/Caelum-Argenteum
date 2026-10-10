@@ -22,7 +22,7 @@ class CaelumArmorRules : Object
     static clearscope double ToughnessReductionPercent(double toughness)
     {
         double level = Max(0.0, toughness);
-        return level * (level + 1.0) / 101.0;
+        return CaelumGrowthRules.Bonus(level);
     }
 
     // Recibe el nivel; resta su porcentaje derivado de vida máxima, sin piso de daño.

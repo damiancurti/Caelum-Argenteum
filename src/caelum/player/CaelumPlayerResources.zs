@@ -861,16 +861,9 @@ class CaelumPlayerResources : Object play
                 * user.SurvivalPerformanceMultiplier
                 * user.HealthPerformanceMultiplier;
 
-            // El salto mantiene sqrt(Tipo 1 de Agilidad), pero la penalización
-            // por carga usa la misma regla porcentual nueva que el movimiento.
-            double jumpAgilityTypeOnePercent =
-                user.DerivedStats.CalculateType1Percent(user.Attributes.Agility);
-            double jumpAgilityFactor = Sqrt(
-                Max(0.0, jumpAgilityTypeOnePercent / 100.0)
-            );
+            // #154: la masa total ya limita la velocidad mediante energía.
+            // Este campo legado conserva sólo los modificadores de estado.
             user.EffectiveJumpHeightPercent = 100.0
-                * jumpAgilityFactor
-                * loadPerformanceMultiplier
                 * user.AirStatePerformanceMultiplier
                 * user.SurvivalPerformanceMultiplier
                 * user.HealthPerformanceMultiplier;

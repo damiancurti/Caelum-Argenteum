@@ -43,20 +43,20 @@ class CaelumThermalEffects : Object play
         double work=CaelumThermalData.WeaponWork(type,secondary);
         if(charged)work*=CaelumThermalData.CHARGED_WORK_MULTIPLIER;
         if(sweep)work*=CaelumThermalData.SWEEP_WORK_MULTIPLIER;
-        CaelumThermalService.Impulse(body,CaelumThermalRules.PositiveWorkHeat(work),true);
+        CaelumThermalService.Impulse(body,CaelumThermalRules.PositiveWorkHeat(work,CaelumThermalBody.Efficiency(body)),true);
     }
 
-    static clearscope double FirearmWatts(double area,bool reloading)
+    static clearscope double FirearmWatts(double area,bool reloading,double efficiency=CaelumPhysicsUnits.BASE_MUSCULAR_EFFICIENCY)
     {
         double work=reloading ? CaelumThermalData.RELOAD_WORK_JOULES_PER_M2 : CaelumThermalData.FIRE_WORK_JOULES_PER_M2;
         double duration=reloading ? CaelumThermalData.RELOAD_REFERENCE_SECONDS : CaelumThermalData.FIRE_CYCLE_REFERENCE_SECONDS;
-        return CaelumThermalRules.PositiveWorkHeat(Max(0.0,area)*work)/duration;
+        return CaelumThermalRules.PositiveWorkHeat(Max(0.0,area)*work,efficiency)/duration;
     }
 
-    static clearscope double SwimmingWatts(double area,bool fast)
+    static clearscope double SwimmingWatts(double area,bool fast,double efficiency=CaelumPhysicsUnits.BASE_MUSCULAR_EFFICIENCY)
     {
         double work=fast ? CaelumThermalData.SWIM_FAST_WORK_WATTS_PER_M2 : CaelumThermalData.SWIM_WORK_WATTS_PER_M2;
-        return CaelumThermalRules.PositiveWorkHeat(Max(0.0,area)*work);
+        return CaelumThermalRules.PositiveWorkHeat(Max(0.0,area)*work,efficiency);
     }
 
     static clearscope double PushingWatts(double area)
@@ -74,7 +74,7 @@ class CaelumThermalEffects : Object play
     {
         let thermal=CaelumThermalBody.Get(body,true);if(thermal==null)return 0;
         CaelumThermalBody.Refresh(body,thermal);
-        return FirearmWatts(thermal.SurfaceArea,reloading)*(reloading
+        return FirearmWatts(thermal.SurfaceArea,reloading,thermal.MuscularEfficiency)*(reloading
             ? CaelumThermalData.RELOAD_REFERENCE_SECONDS : CaelumThermalData.FIRE_CYCLE_REFERENCE_SECONDS);
     }
 
@@ -108,7 +108,7 @@ class CaelumThermalEffects : Object play
         if(body==null || body.health<=0 || seconds<=0)return;
         let thermal=CaelumThermalBody.Get(body,true);if(thermal==null)return;
         if(thermal.SurfaceArea<=0)CaelumThermalBody.Refresh(body,thermal);
-        thermal.PendingFirearmJoules+=FirearmWatts(thermal.SurfaceArea,reloading)*seconds;
+        thermal.PendingFirearmJoules+=FirearmWatts(thermal.SurfaceArea,reloading,CaelumThermalBody.Efficiency(body))*seconds;
     }
 
     // Adaptador sólo para fixtures históricos; los eventos reales pagan el

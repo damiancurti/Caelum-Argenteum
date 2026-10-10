@@ -23,7 +23,7 @@ class CaelumFolkloreCombatActor : CaelumCombatActor abstract
         );
 
         // El movimiento reutiliza la marcha máxima normal del jugador y su
-        // Agilidad Tipo 4. La masa corporal no penaliza una carga vacía.
+        // Agilidad Tipo 2. La masa corporal no penaliza una carga vacía.
         CombatBaseSpeed = CaelumConstants.GZDOOM_BASE_MAX_WALK_SPEED
             * CalculateActorType4Percent(CombatAgility) / 100.0;
         Speed = CombatBaseSpeed;

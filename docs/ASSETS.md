@@ -1,6 +1,15 @@
 # Caelum Argenteum — Audio and art
 
-Documentation version: **5.1.9** — 2026-10-09.
+Documentation version: **5.1.10** — 2026-10-09.
+
+## 5.1.10 — Physics validation assets (#154)
+
+No artwork, sprite, model, sound, geometry or attribution change is required.
+Existing physical projectile models now follow gravitational flight; elemental
+art retains its authored behavior. assets/validation_5110 contains deterministic
+isolated fixture sources, native logs/configs, result summaries and package/source
+hashes. Runtime fixtures, saves, development IWAD and engine stay out of src and
+out of delivery. The author's unrelated deleted art source is excluded from this patch.
 
 ## 5.1.9 - Shotgun grip occlusion and cartridge world scale (#152)
 

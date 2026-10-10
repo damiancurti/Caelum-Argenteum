@@ -251,7 +251,7 @@ class CaelumDiagnosticPerceptionObserver : CaelumPassiveGiantRat
     {
         double insight = GetDiagnosticInsight();
         return (50.0 + insight)
-            * (1.0 + 2.0 * insight * (insight + 1.0) / 10100.0);
+            * CaelumGrowthRules.Multiplier(insight,2);
     }
 
     override void Tick()

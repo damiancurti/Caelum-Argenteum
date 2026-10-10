@@ -103,14 +103,14 @@ class CaelumThermalRules : Object
     // Adaptador de potencia para las previsiones de viaje. El dato primario
     // es trabajo por metro; la velocidad sólo determina los metros recorridos.
     static clearscope double LocomotionHeat(double movedMassKg,double speedMetersSecond,
-        double grade,bool running,double gravityMetersSecondSquared)
+        double grade,bool running,double gravityMetersSecondSquared,double efficiency=CaelumPhysicsUnits.BASE_MUSCULAR_EFFICIENCY)
     {
         return PositiveWorkHeat(LocomotionWork(movedMassKg,speedMetersSecond,
-            grade,running,gravityMetersSecondSquared));
+            grade,running,gravityMetersSecondSquared),efficiency);
     }
 
-    static clearscope double PositiveWorkHeat(double workJoules)
-    { return Max(0.0,workJoules)*(1.0/CaelumThermalData.POSITIVE_WORK_EFFICIENCY-1.0); }
+    static clearscope double PositiveWorkHeat(double workJoules,double efficiency=CaelumPhysicsUnits.BASE_MUSCULAR_EFFICIENCY)
+    { return Max(0.0,workJoules)*(1.0/Clamp(efficiency,CaelumPhysicsUnits.BASE_MUSCULAR_EFFICIENCY,CaelumPhysicsUnits.MAX_MUSCULAR_EFFICIENCY)-1.0); }
 
     static clearscope double BodyJumpHeat(double movedMassKg)
     {
@@ -118,10 +118,10 @@ class CaelumThermalRules : Object
             *CaelumThermalData.JUMP_WORK_HEIGHT_METERS);
     }
 
-    static clearscope double JumpHeat(double movedMassKg,double previousUpSpeed,double launchUpSpeed)
+    static clearscope double JumpHeat(double movedMassKg,double previousUpSpeed,double launchUpSpeed,double efficiency=CaelumPhysicsUnits.BASE_MUSCULAR_EFFICIENCY)
     {
         double before=Max(0.0,previousUpSpeed),after=Max(0.0,launchUpSpeed);
-        return PositiveWorkHeat(Max(0.0,movedMassKg)*Max(0.0,after*after-before*before)/2.0);
+        return PositiveWorkHeat(Max(0.0,movedMassKg)*Max(0.0,after*after-before*before)/2.0,efficiency);
     }
 
     // Decisión del autor: perfiles sin trabajo medido proporcionales al coste

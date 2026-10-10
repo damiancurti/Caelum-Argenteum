@@ -1,0 +1,9 @@
+CA154-01 | Origin: 5.1.10 / issue #154 | Save migration and movement
+Prerequisites: rebuild with run_dev.bat; keep an untouched original save and its old package. Use a new save name for the upgraded game.
+Steps: load an older character; compare approximate Health/Anima/Air/Adrenaline percentages, attributes and owned equipment. Save under the new name and reload. Walk/run, jump unloaded and loaded, climb both MAP01 stair flights, enter/leave the pool and use the sewer return elevator.
+Expected: percentages migrate once (Health can round by one point), ownership persists, another load does not rescale again, added load lowers the jump and the routes remain usable. Movement and jump strength reflect the new curves and Earth gravity.
+
+CA154-02 | Origin: 5.1.10 / issue #154 | Combat, gravity and effort feedback
+Prerequisites: the rebuilt game, ammunition and a safe comparison area; use low and high attributes if desired.
+Steps: try the longbow/crossbow, carbine/shotgun and a thrown javelin at different ranges, then an elemental spell. Compare attack cadence, aiming spread and the displayed jump height. Exercise and rest; optionally observe a soldier or cannon firing.
+Expected: physical shots drop, elemental flight keeps its authored behavior, aiming/crouching still work, damage and resource costs use the new curves. Fixed actions generate heat according to efficiency; jumping reflects its actual energy; resting creates no extra effort heat. Confirm the new movement/combat feel is acceptable.

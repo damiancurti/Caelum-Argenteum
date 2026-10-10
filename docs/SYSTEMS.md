@@ -1,6 +1,126 @@
 # Caelum Argenteum — Current systems and rules
 
-Documentation version: **5.1.9** — 2026-10-09.
+Documentation version: **5.1.10** — 2026-10-09.
+
+## SI physics and attribute growth — 5.1.10 / #154
+
+This section is the current contract. It supersedes the curve, gravity, movement,
+jump and efficiency numbers in earlier release notes retained below. Those older
+numeric examples describe their original release, not an alternative live rule.
+The three new families are shared by player, NPC, gear-derived statistics, Tarot,
+crafting, dialogue, Trucazo, the Box, combat, survival and thermal consumers.
+
+For the effective attribute N, `B=(N*N+25*N)/125` percentage points. Types 1/2/3
+have bonuses `B/3B/7B`; their multipliers are `1+bonus/100`. At N=100 these are
+x2/x4/x8. Old Types 1/2/3/4 map to new Types 3/1/1/2, respectively; old Type 3
+keeps its decreasing complement. Historical adapter method names remain for
+save/API continuity. Attributes above 100 remain valid; probability caps,
+integer truncation, base bonuses and operation order remain consumer-specific.
+
+| N | B, percentage points | Type 2 bonus | Type 3 bonus |
+| ---: | ---: | ---: | ---: |
+| 0 | 0 | 0 | 0 |
+| 1 | 0.208 | 0.624 | 1.456 |
+| 10 | 2.8 | 8.4 | 19.6 |
+| 25 | 10 | 30 | 70 |
+| 50 | 30 | 90 | 210 |
+| 75 | 60 | 180 | 420 |
+| 100 | 100 | 300 | 700 |
+| 150 | 210 | 630 | 1470 |
+
+Health/Anima maxima, damage, push and precision use Type 3. Air/Adrenaline,
+capacity, attack/cast speed, regeneration factors and the Constitution needs
+divisor use Type 2. Critical/evasion/dialogue bonuses use Type 1. Toughness
+still subtracts B percentage points of maximum Health from ordinary damage;
+thermal resistance clamps B/100 to [0,1], whereas thermal thresholds use 1+B/100.
+Resilience adaptation uses 1+B/100: at 100, +/-10 C at 2 C/world day, still five
+days from the racial base. The Box uses `2+int((100+7B)/50)`, hence 4/18 slots
+at Intelligence 0/100. Tarot modifies attributes before these curves.
+
+Spatial/time constants are centralized in CaelumPhysicsUnits: 32 MU/m, 35 tics/s,
+velocity `MU/tic*35/32`, acceleration `MU/tic²*1225/32`. Ordinary effective gravity
+is 9.81 m/s², or 0.25626122449 MU/tic². GZDoom's ordinary level gravity 800 becomes
+205.008979591837, once per map, through a serialized marker. Actor/sector gravity
+modifiers and deliberate no-gravity states remain native. World/calendar time,
+map geometry, body dimensions and projectile muzzle-speed data are not rescaled.
+
+Unpenalized steady forward walk/run at Agility 0 is 4/8 m/s, multiplied by Type 2:
+16/32 m/s at 100. Native input and friction remain in control. The existing
+per-tic acceleration envelope `f+=(1-f)*0.028127624` remains; 95% of input after
+three seconds is not a constant-force or constant-power acceleration model.
+Existing load, health, survival, Air, elemental, shield and reload modifiers remain.
+Foot journeys use steady walking speed: 14.4 km/h at Agility 0 and 57.6 at 100
+before penalties, with the existing 16-hour walking / 8-hour sleeping schedule.
+NPC native chase-step schedules and animal base speeds are preserved; a Speed
+field is not a promise that an NPC moves that distance every tic. Folklore actors
+reuse the shared walk reference, and saved bull charge speed is recalculated.
+
+For biological mass mb, moved mass mt and effective Agility A:
+`Ejump=800*(mb/80)^0.75*M3(A)` J;
+`v=sqrt(2*Ejump/mt)` m/s; `JumpZ=v*32/35`; ideal rise `Ejump/(mt*g)`.
+At 80 kg without load: A0 gives 800 J, JumpZ 4.088810, ideal rise 1.019368 m;
+A100 gives 6400 J, JumpZ 11.564901, ideal rise 8.154944 m. Native discrete apex
+is slightly higher (observed 1.083425/8.336096 m). Load enters mt once; there is
+no second load multiplier on JumpZ. Retained state/elemental velocity factors
+square into delivered energy. Immobilization still prevents jumping.
+Thermal impulse uses the accepted native increase in vertical kinetic energy
+once, not the old fixed 0.5 m reference, and adds no new resource debit.
+
+Only fall damage's reference velocity threshold scales by sqrt(0.25626122449),
+equivalently its squared-speed threshold by 0.25626122449. Biological landing
+absorption uses the new jump contract. Wall/actor/environmental collision laws,
+restitution, anatomy and material factors remain. Real total carried mass is
+used in NPC collision inertia, including weapons and supplies; biological mass
+still owns health scaling and thermal inertia. Local reduced gravity is not
+cancelled by a second per-sector threshold adjustment.
+
+| Projectile | Actual launch MU/tic | m/s | Flight and NPC aiming |
+| --- | ---: | ---: | --- |
+| Arrow / bolt | 60 | 65.625 | Native Actor gravity; class defaults 35/45 are overridden by the shared firing path |
+| Carbine / shotgun pellet | 80 | 87.5 | Native Actor gravity; player aim remains manual |
+| Javelin | 15 times sqrt(physical push multiplier) | 16.40625 times that factor | Native Actor gravity; retained Strength/body-mass launch equation |
+| Cannon | 457.142857143 | 500 | FastProjectile integrates GetGravity once before movement |
+| Elemental | Existing 15/20/40 or authored NPC speed | Converted with the same units | Authored straight/seeking behavior retained |
+
+Soldiers and cannon crews solve a low ballistic arc at launch, toward the current
+target center, with no target-motion prediction or homing. Six bounded Newton
+corrections account for Actor's move-then-gravity versus FastProjectile's
+gravity-then-move order. The existing angular dispersion is applied afterward.
+No solution retains the previous direct-shot policy. Collision and range limits
+remain native. This is a bounded launch calculation, not an every-tic AI solver;
+no mass-siege performance improvement is claimed by this issue.
+Dispersion categories become k–10k degrees for k=1..7, retaining assignments:
+book 1, longbow/statuette 2, crossbow/dagger 5, ordinary melee 6,
+carbine/shotgun/bell and the existing maximum-category heavy weapons 7.
+Physical and magical precision use Type 3; crouch, aim and random sampling remain.
+
+Muscular efficiency is `eta=min(0.99,0.25*M1((Agility+Dexterity)/2))`: average the
+attributes first. It is 25% at 0/0, 32.5% at 0/100 and 50% at 100/100. Positive
+work W costs W/eta metabolic joules and yields `Q=W*(1/eta-1)` heat. Existing
+distance/action work budgets remain: 0.5025/1.005 J/kg/m for walking/running,
+m*g*h for ascent, fixed weapon work, shot/reload work and swimming work rates.
+Greatsword primary 300 J therefore gives 900/300 J heat at 25/50% efficiency;
+the 80 kg A100 jump gives 6400 J heat at 50%, versus 2400 J for A0 at 25%.
+More actions or metres per second still increase watts. Isometric pushing and
+blocking retain their separate metabolic cost; braking never becomes cooling.
+Basal heat, sweat, shivering, breathing, external magic and calendar exchange
+are separate. Stopping produces no new effort heat and no post-effort tail.
+
+Player balance revision 4 and NPC/gate growth revision 1 preserve each resource's
+percentage during the one-time curve migration (author decision 2026-10-09).
+Health rounds to the nearest native integer, keeping a living character at least
+1 HP. Ordinary equipment recalculation still clamps without free healing. Air
+recovery debt preserves its fraction. Legacy traveler records reconstruct old
+maxima from the retained profile because they did not store maxima. Ownership,
+attributes, quests, Tarot and accrued thermal exposure persist. A saved pending
+spell recalculates its new cost once, retaining tier/charge and remaining cast
+time without spending Anima during migration. Thermal revision
+9 discards only an old in-progress reload's future budget and re-evaluates it;
+already measured heat remains. World/projectile gravity revisions are separate
+from growth revisions, so future curve changes cannot reapply gravity.
+Rollback uses the untouched pre-upgrade save and matching old package; downgrading
+a newly written save is not promised. Evidence is in assets/validation_5110;
+native checks do not replace the author's outstanding tests in pending_test.txt.
 
 ## Shotgun follow-up: ownership, presentation and aim (#152)
 
@@ -318,7 +438,7 @@ accepted sword behavior for matched #132 comparison and compatibility.
 V5.1.0 implements the author's 2026-10-07 contract. These are provisional game
 coefficients, not a clinical body-temperature model. The signed personal value
 `E` measures accumulated **equivalent exposure degrees**; negative means cold.
-`CaelumThermalState` revision 8 belongs to the player's persistent character
+`CaelumThermalState` revision 9 belongs to the player's persistent character
 record, or to each supported NPC. Shared services under `caelum/survival` own
 the calculations; environment caches never own another character's exposure.
 
@@ -328,8 +448,8 @@ while retaining their own biological mass, size and attributes. Animal surface
 uses a collision-cylinder approximation, not a humanoid height formula.
 Mandingas and Zupay use 32 C. In 5.1.1/#131, effective Resilience
 `A=max(0,Resilience)` multiplies both the base 1 C/world-day adaptation rate
-and the base +/-5 C displacement limit by an additive Type-2 factor (#136):
-`M=1+A*(A+1)/10100`. At A=100 this is 200% of the base: 2 C/day and +/-10 C.
+and the base +/-5 C displacement limit by a Type-1 multiplier (#154):
+`M=1+(A*A+25*A)/12500`. At A=100 this is 200% of the base: 2 C/day and +/-10 C.
 This supersedes #131's Type-4 factor. Growth remains uncapped above 100.
 Reaching either
 limit from original racial comfort takes five world days under a sufficiently
@@ -341,7 +461,7 @@ Acclimatization never also shifts stored E. Transient fire, drinks and magic are
 Players, anchored residents, folklore combatants, bulls and giant rats are
 supported; unrelated actors without an approved physiology remain outside it.
 
-For effective Toughness `D=max(0,D)`, the existing Type-2 `R=D*(D+1)/101` percentage points and
+For effective Toughness `D=max(0,D)`, the current Type-1 `R=(D*D+25*D)/125` percentage points and
 `s=1+R/100`. Harmful thresholds are `10s`, `20s`, and **past** `30s`: exactly
 `30s` remains tier 2. Numerical boundary tolerance is 1e-9. Threshold widening
 is uncapped; HP mitigation alone clamps `R/100` to [0,1]. Tier 1/2/3 costs
@@ -467,7 +587,7 @@ profiles into fixed mechanical work. Subtract the resting MET, assign 25% of
 the remaining metabolic energy to work, and use reference cycles of 0.4 seconds
 for firing and 5 seconds for a complete reload. The authoritative budgets are
 5.82 J/m2 per shot and 109.125 J/m2 per complete reload; resulting body heat is
-three times work. For the 100 kg / 1.80 m body these are 12.745/238.973 J work
+`W*(1/eta-1)`. At 25% efficiency, the 100 kg / 1.80 m body produces 12.745/238.973 J work
 and 38.236/716.918 J heat. They are approved equivalent-work calibrations, not
 measurements of the gun animation or energy supplied to the projectile.
 
@@ -579,14 +699,14 @@ drift. The constant-coefficient solver integrates exchange and threshold dose
 analytically: `C*dE=(B-G*E)*dt_world + P_real*dt_real + Q`.
 
 Author-approved #136 budgets now distinguish positive mechanical work `W`,
-metabolic energy `W/0.25=4W` and retained muscular heat `Q=3W`. No new Hunger or
+metabolic energy `W/eta` and retained muscular heat `Q=W*(1/eta-1)` (#154). No new Hunger or
 Air charge is inferred from that energy ledger. Performing the same action
 faster does not change its budget; completing more actions or metres per second
 still increases the rate of production. These are calibrated gameplay profiles.
 
 Walking/running use 0.5025/1.005 J of equivalent work per kg of moved mass per
-metre, derived from 25% of the former flat ACSM metabolic cost. Heat is therefore
-1.5075/3.015 J/kg/m. The same path has the same energy regardless of traversal
+metre, derived from 25% of the former flat ACSM metabolic cost. At the 25% baseline, heat is
+1.5075/3.015 J/kg/m; current efficiency changes heat, not this work budget. The same path has the same energy regardless of traversal
 speed or integration partition. Positive ascent adds `mass*localGravity*height`
 of mechanical work once. Descents retain the approved normalized Minetti braking
 curve, bounded at -0.45 grade; negative work never becomes cooling. Ground paths
@@ -595,12 +715,12 @@ platform transport create no walking heat. The existing 32 map units/m and
 native movement/collision rules remain; mixed propulsion and knockback remain an
 approximation. Journey forecasting converts actual distance to the same work.
 
-Every accepted player jump pays the work of raising total moved mass by 0.5 m
-at the fixed 9.81 m/s2 human reference: `W=mass*9.81*0.5`, `Q=3W`. At 133.576 kg
-this is 655.190 J work and 1965.571 J heat. Attribute-enhanced height is explicitly
-outside this muscular budget. The native takeoff hook charges once, including a
-one-tic jump command; movement height/velocity and actual Air use do not change.
-The older actual-launch-velocity and NPC native-jump proxies are superseded.
+Every accepted player jump now charges its delivered kinetic energy under the
+#154 contract above. The former 0.5 m / fixed-efficiency calibration is historical
+(#136) and remains in HISTORY and the old validation records. New jump heat uses
+effective Agility, biological versus moved mass, retained velocity penalties and
+current muscular efficiency once at takeoff. Jump-derived proxies do not set the
+work of other actions.
 
 Physical weapon work is a fixed, independent table, not a runtime Air or jump
 conversion. Values are J per successful action, shared across actors and tiers:
@@ -624,15 +744,15 @@ conversion. Values are J per successful action, shared across actors and tiers:
 
 These preserve the approved old relative attack-cost proportions once as data;
 later Air tuning must not change heat. Charged attacks multiply work by 2 and
-sweeps by 3, once each. A primary greatsword attack emits 900 J heat at either
-normal or high attributes. NPC natural bites/horns use 25 J, machete-equivalent
-attacks 75 J, and Zupay's ground slam 850 J; heat is again three times work.
+sweeps by 3, once each. A primary greatsword attack emits 900 J at 25%
+efficiency and 300 J at 50% efficiency (#154). NPC natural bites/horns use 25 J, machete-equivalent
+attacks 75 J, and Zupay's ground slam 850 J; heat uses each actor's efficiency.
 Firearms use their separate fixed budgets above. Magic remains external energy.
 
 Active player swimming uses 72.75/130.95 W of equivalent mechanical work per m2,
 normal/fast, derived from the approved 6/10-MET profiles after subtracting rest
-and assigning 25% to work. At 100 kg / 1.80 m this emits 477.945/860.302 W heat.
-The running command selects intensity; jump height and attributes do not.
+and assigning 25% to work. At 100 kg / 1.80 m and 25% efficiency this emits 477.945/860.302 W heat.
+The running command selects work intensity; attributes affect efficiency, not the work profile.
 Isometric effort retains metabolic heat despite zero external displacement:
 pushing uses the approved 6-MET total profile (637.260 extra W for that body),
 and blocking uses `0.2943*totalMovedMassKg*heldWeaponOrShieldKg` W (235.869 W at
@@ -1971,19 +2091,19 @@ new save. Equipment already removed by an earlier completed exit is not invented
 
 Author decision, 2026-10-01: launching with every magical implement costs one
 tenth of its former base. Eloquence remains the corresponding attribute, using
-the existing Type 4 divisor; this is division, not a subtractive percentage.
+the new Type 2 divisor (#154); this is division, not a subtractive percentage.
 
-`F(E) = 1 + 2 * max(0,E) * (max(0,E) + 1) / 10100`
+`F(E) = 1 + 3 * (E*E + 25*E) / 12500`, with E=max(0,E)
 `Anima per cast = base * tier multiplier * charge multiplier / F(Eloquence)`
 
 | Implement | Former T1 base | Current T1 base | T1 at Eloquence 100 |
 | --- | --- | --- | --- |
-| Staff | 500 | 50 | 16.666666... |
-| Book | 700 | 70 | 23.333333... |
-| Bell | 1000 | 100 | 33.333333... |
-| Statuette | 1000 | 100 | 33.333333... |
+| Staff | 500 | 50 | 12.5 |
+| Book | 700 | 70 | 17.5 |
+| Bell | 1000 | 100 | 25 |
+| Statuette | 1000 | 100 | 25 |
 
-Eloquence 0 retains the base; 100 gives F=3 and one third of the base. Values
+Eloquence 0 retains the base; 100 gives F=4 and one quarter of the base. Values
 above 100 continue along the same curve. T1/T2/T3 multipliers remain 1/1.6/2.5;
 a prepared charge remains x2. Primary/secondary and all five essences use their
 implement's cost. A bell volley pays once, not once per projectile. Authored NPC
@@ -2141,7 +2261,7 @@ campaign play and visual/balance acceptance remain author checks in pending_test
 ## 4.36.26 — Shared attack clock and durability (#37)
 
 All T1–T3 weapon bases are now 14 tics. Effective duration is
-`14 / (F(attribute) * (1 - p))`, with `F(A)=1+2*A*(A+1)/10100` and
+`14 / (F(attribute) * (1 - p))`, with `F(A)=1+3*(A*A+25*A)/12500` and
 `p=(equipped weapon mass + equipped glove/arm armor mass)/maximum carry capacity`.
 Physical/ranged weapons use effective Dexterity; magic uses effective Eloquence.
 The denominator is neither remaining capacity nor the overload threshold.
@@ -2310,12 +2430,12 @@ and critical, (3) Toughness, (4) additive innate and equipped armor absorption.
 Author revisions on 2026-09-28 replace the Type 4 divisor with subtractive
 maximum-health damage and restore the historical attribute growth curve.
 The earlier direct-level subtraction was superseded: level L is converted to
-`R(L)=max(0,L)*(max(0,L)+1)/101` percentage points, without a 100% cap.
+`R(L)=(L*L+25*L)/125`, with L=max(0,L), percentage points, without a 100% cap.
 No minimum-damage floor is added. For an attack after shield and anatomy/critical:
 
 ```
 P = 100 * postAnatomyDamage / maximumHealth
-R = max(0, Toughness) * (max(0, Toughness) + 1) / 101
+R = (T*T + 25*T) / 125, where T=max(0,Toughness)
 remainingPercent = max(0, P - R)
 preArmorDamage = maximumHealth * remainingPercent / 100
 finalDamage = round(preArmorDamage * (1 - innateFraction - equippedFraction))
@@ -3359,7 +3479,7 @@ E is a reference percentage, not physical energy in joules. Its undamaged thresh
 u≤0,8 MU/tic; u=28 produces E=100%. It is not limited to 100%. The height of the
 character no longer alters the reference of 28 MU.
 
-    P = max(0, S·E - T*(T+1)/101)  [uncapped growth restored in #52, 2026-09-28]
+    P = max(0, S·E - (T*T+25*T)/125)  [uncapped growth restored in #52, 2026-09-28]
     W = suma_i [ wi · Vi · (1−Ai) ]
     Daño = floor(Hmax · P · W / 100 + 0,5)
 
@@ -5223,12 +5343,12 @@ Constitution controls passive Hunger, Thirst and Sleep consumption, as well as
 Hunger and Thirst expense from player health, Air and Anima regeneration.
 The #140 quarter-Health rule supersedes #133's water-free Air recovery.
 The author reassigned Sleep
-from Resilience in #131; the Type-4 divisor and original mass rules remain.
+from Resilience in #131; the new Type-2 divisor (#154) and original mass rules remain.
 Resilience now controls climate adaptation rate/range and retains its existing
 combat benefits (maximum Air/Adrenaline and health regeneration).
 
     A = máximo(0, atributo efectivo)
-    divisor D(A) = 1 + 2 * A * (A + 1) / 10100
+    divisor D(A) = 1 + 3 * (A*A + 25*A) / 12500
     factor de Hambre/Sed = (masa corporal / 100 kg) / D(Constitución)
     factor de Sueño = 1 / D(Constitución)
     factor de coste de Hambre/Sed al regenerar = 1 / D(Constitución)
@@ -5236,16 +5356,16 @@ combat benefits (maximum Air/Adrenaline and health regeneration).
 | Attribute | Divisor | Consumption with respect to 0 attribute, same mass |
 | --- | ---: | ---: |
 | 0 | 1 | 100% |
-| 50 | 1,5049505 | 66,4474% |
-| 100 | 3 | 33,3333% |
+| 50 | 1.9 | 52.631579% |
+| 100 | 4 | 25% |
 
-Type 4 is not linear. Fractional levels and growth above 100 are preserved without zero
+New Type 2 is not linear. Fractional levels and growth above 100 are preserved without zero
 consumption. The formula uses effective attributes, with its current bonuses; the weight
 of the equipment is not body mass.
 
 Base times to empty a full reserve, without other consumption: Hunger 24 hours of play,
 Thirst 12, Sleep 16; one hour of play is 180 real seconds. At 100 kg and attribute 0,
-these equal 72/36/48 real minutes. At attribute 100, they become 216/108/144 minutes.
+these equal 72/36/48 real minutes. At attribute 100, they become 288/144/192 minutes.
 Other masses only modify Hunger/Thirst.
 
 Regeneration cost is calculated from the fraction of maximum health/Air/Anima actually
@@ -5287,7 +5407,7 @@ to 0ag is restored at the author's request. To regenerate health again, all thre
 reserves must be above the 10%. Performance penalties and regeneration costs remain in
 place.
 
-## Audit of the twelve attributes — current code 4.33.0ai
+## Audit of the twelve attributes — current code 5.1.10 (#154)
 
 Comparison with the table provided by the author. The calculations and their consumers
 in play were reviewed: a calculated field or an isolated timer does not amount to a
@@ -5297,33 +5417,33 @@ combat changes in this patch.
 
 To avoid r/l/lx2 ambiguity, explicit types of code are used:
 
-| Scale | Native formula for attribute A | A=0 | A=100 |
+| Scale | Formula | N=0 | N=100 |
 | --- | --- | ---: | ---: |
-| Type 1, percentage of a base | 100 + A(A+1)/2 | 100% | 5150% |
-| Type 2, percentage points | A(A+1)/101 | 0 | 100 |
-| Type 3, remaining harmful fraction | limitar(1 - A(A+1)/10100, 0, 1) | 1 | 0 |
-| Type 4, percentage of a base | 100 + 2A(A+1)/101 | 100% | 300% |
-| Division by Type 4 | coste base / (Tipo4(A)/100) | coste base | coste base / 3 |
+| Type 1 bonus | B=(N*N+25*N)/125 | 0% | 100% |
+| Type 2 multiplier | 1+3B/100 | 1 | 4 |
+| Type 3 multiplier | 1+7B/100 | 1 | 8 |
+| Harmful complement | clamp(1-B/100,0,1) | 1 | 0 |
+| Division by Type 2 | base/(1+3B/100) | base | base/4 |
 
 Probabilities add their base when it corresponds to and is limited to the permitted
-range; equipment, mass, states and vulnerability can add modifiers. "Type 4" does not
+range; equipment, mass, states and vulnerability can add modifiers. "Type 2" does not
 mean linear. Each "l" in the table is not automatically replaced: damage, pain,
 lucidity, Dialogue skill and durations do not share a single curve today.
 
 | Attribute / family | Implemented combat use | Implemented noncombat use | Differences from the table |
 | --- | --- | --- | --- |
-| Strength / Physical | Melee damage and physical thrust Type 1, with body mass. | Load Type 4; object thrust and launch power use Strength. | It matches the main thing. "Physical power" is not another independent universal effect: it is expressed in the routes of damage, thrust and launch. |
-| Hardness / Physical | Ordinary physical/magic damage subtracts uncapped R(T)=T(T+1)/101 percentage points of maximum health after anatomy and before final armor (#52, 2026-09-28). Pain and loss of Lucidity use Type 3. | Since the #52 revision, kinematic impacts subtract R(T) after biological absorption/surface and before anatomy/armor. | Scales must be updated and the scope of “environmental damage” must be narrowed: it is not universal resistance to drowning, drainage for needs or any damage outside the classified system. |
-| Constitution / Physical | Maximum health Type 1, with body mass. | Passive Hunger/Thirst/Sleep and natural health regeneration costs/Air divided by Type 4. | It is not connected to shortening debuffs or incoming poisons. There is no disease system implemented that applies that duration. |
-| Dexterity / Technical | Attack speed Type 4, physical precision Type 1 and physical critical chance Type 2. It also reduces the ranged-weapon reload time by Type 4. | Type 1 reduces the working time of materials in manufacture. | The ammunition reload belongs here; it is appropriate to distinguish it from the cooldown of skills when updating the table. Crafting covers a specific manual use, not a general system of accuracy rolls. |
-| Resilience / Technical | Maximum Adrenaline, Health Regeneration Factor and Air Capacity Type 4. | Acclimatization rate and displacement limit use base plus Type 2 (#136). | At 100: 2 C/world day, +/-10 C; five days from the racial base. Sleep depletion belongs to Constitution. |
-| Agility / Technical | Type 4 movement using shared ground/swimming/flight factors; Type 2 evasion; jump uses another curve. | Type 2 stealth applied to concealment/noise, with crouching rules. | The jump does not use Type 4: JumpZ scales with the square root of Type 1, so that the ideal ballistic height scales with Type 1 at equal gravity, before load/state modifiers. |
-| Charisma / Social | Its Type 4 modifies the duration/power of elemental payloads received by the player; not all effects/actors consume it. | Type 4 Persuasion on MAP01 social rolls. | The area does not use Charisma: current blast radii and Channel use the range of Eloquence. Channel also has fixed power/duration states. The set of debuffs is partial. |
-| Empathy / Social | BuffPowerPercent Type 4 is available and an illumination timer is prepared; there is no general system of buffs/healing that applies all the duration/power/area indicated. | Emotion Type 4 in the MAP01 dialogs. | Emotion works. The stored factor and timer are not enough to mark buffs, cures or playable lighting as complete. Support areas based on Empathy remain pending. |
-| Eloquence / Social | Launch speed and range Type 4; this range also scales current radii. Anima cost divided by Type 4. | Dialogue skill Type 2, used by Ronnie; also intervenes in social discount of Palomo. | The ammunition reload uses Dexterity; the Channel Seal Cooldown is fixed to 60 s and does not use Eloquence. The table should specify which recharge is intended to reduce and add the cost of Anima already implemented. |
-| Intelligence / Mental | Magical Damage and Push Type 1. | Box capacity = 2 + entero(Tipo1(Inteligencia)/50). | Academic tasks pending. Add the Box; "magic power" does not appear as the third separate universal effect of damage/push. |
-| Patience / Mental | Maximum Anima Type 1; regeneration = maximum/base time multiplied by Type 4; interrupt resistance Type 2. It mitigates effects of being injured by Type 3. | Type 3 mitigates low/critical sleep aggravation of Lucidity loss and stunning duration. | It does not mitigate general performance penalties by Hunger/Thirst/Sleep: that combination uses Adrenaline. The intended function is only partial. It does not control Sleep loss. |
-| Insight / Mental | Magical precision Type 1 and magical critical chance Type 2. | There is no player detection of hidden objects/sounds or dark attenuation linked to this attribute. | Magical senses and hidden detection are still pending. The debugging perception observer does not implement the senses of the player. |
+| Strength / Physical | Melee damage and physical thrust Type 3, with body mass. | Load Type 2; object thrust and launch power use Strength. | It matches the main thing. "Physical power" is not another independent universal effect: it is expressed in the routes of damage, thrust and launch. |
+| Hardness / Physical | Ordinary physical/magic damage subtracts uncapped R(T)=(T*T+25*T)/125 percentage points of maximum health after anatomy and before final armor (#52, 2026-09-28). Pain and loss of Lucidity use Type 1 complement. | Since the #52 revision, kinematic impacts subtract R(T) after biological absorption/surface and before anatomy/armor. | Scales must be updated and the scope of “environmental damage” must be narrowed: it is not universal resistance to drowning, drainage for needs or any damage outside the classified system. |
+| Constitution / Physical | Maximum health Type 3, with body mass. | Passive Hunger/Thirst/Sleep and natural health regeneration costs/Air divided by Type 2. | It is not connected to shortening debuffs or incoming poisons. There is no disease system implemented that applies that duration. |
+| Dexterity / Technical | Attack speed Type 2, physical precision Type 3 and physical critical chance Type 1. It also reduces the ranged-weapon reload time by Type 2. | Type 3 reduces the working time of materials in manufacture. | The ammunition reload belongs here; it is appropriate to distinguish it from the cooldown of skills when updating the table. Crafting covers a specific manual use, not a general system of accuracy rolls. |
+| Resilience / Technical | Maximum Adrenaline, Health Regeneration Factor and Air Capacity Type 2. | Acclimatization rate and displacement limit use base plus Type 1 (#136). | At 100: 2 C/world day, +/-10 C; five days from the racial base. Sleep depletion belongs to Constitution. |
+| Agility / Technical | Type 2 movement using shared ground/swimming/flight factors; Type 1 evasion; jump uses another curve. | Type 1 stealth applied to concealment/noise, with crouching rules. | The jump does not use Type 2: Jump energy uses Type 3 and biological mass; native velocity follows total moved mass, then the retained state modifiers. |
+| Charisma / Social | Its Type 2 modifies the duration/power of elemental payloads received by the player; not all effects/actors consume it. | Type 2 Persuasion on MAP01 social rolls. | The area does not use Charisma: current blast radii and Channel use the range of Eloquence. Channel also has fixed power/duration states. The set of debuffs is partial. |
+| Empathy / Social | BuffPowerPercent Type 2 is available and an illumination timer is prepared; there is no general system of buffs/healing that applies all the duration/power/area indicated. | Emotion Type 2 in the MAP01 dialogs. | Emotion works. The stored factor and timer are not enough to mark buffs, cures or playable lighting as complete. Support areas based on Empathy remain pending. |
+| Eloquence / Social | Casting speed and ability range Type 2 (not projectile muzzle velocity); this range also scales current radii. Anima cost divided by Type 2. | Dialogue skill Type 1, used by Ronnie; also intervenes in social discount of Palomo. | The ammunition reload uses Dexterity; the Channel Seal Cooldown is fixed to 60 s and does not use Eloquence. The table should specify which recharge is intended to reduce and add the cost of Anima already implemented. |
+| Intelligence / Mental | Magical Damage and Push Type 3. | Box capacity = 2 + entero(Type3(Intelligence)/50). | Academic tasks pending. Add the Box; "magic power" does not appear as the third separate universal effect of damage/push. |
+| Patience / Mental | Maximum Anima Type 3; regeneration = maximum/base time multiplied by Type 2; interrupt resistance Type 1. It mitigates effects of being injured by Type 1 complement. | Type 1 complement mitigates low/critical sleep aggravation of Lucidity loss and stunning duration. | It does not mitigate general performance penalties by Hunger/Thirst/Sleep: that combination uses Adrenaline. The intended function is only partial. It does not control Sleep loss. |
+| Insight / Mental | Magical precision Type 3 and magical critical chance Type 1. | There is no player detection of hidden objects/sounds or dark attenuation linked to this attribute. | Magical senses and hidden detection are still pending. The debugging perception observer does not implement the senses of the player. |
 
 "Recharge time" needs that distinction: ammunition, wait between attacks and cooldown
 skills are not a single route. StaffCastCooldownRemaining names launch preparation time,
@@ -5348,12 +5468,11 @@ References to verify or continue implementation:
   [Channel](../src/caelum/actors/CaelumChannelEffect.zs): application of duration, power
   and radii.
 - [Manufacturing](../src/caelum/equipment/CaelumCraftingRules.zs): GetMaterialWorkSeconds
-  uses the Dexterity Type 1.
+  uses the Dexterity Type 3.
 - [Diagnosis of perception](../src/caelum/debug/CaelumPhysicsDiagnostics.zs): experimental
   observer, different from the senses of the player.
 
-Author's later decision, after approving 0ai: maintain attributes as they are. Further
-audit is postponed and does not block V4.34.
+Historical 0ai deferred further changes. The author has now authorized the #154 curve mapping and physics contract; unrelated missing systems in this matrix remain pending.
 
 Design status: keep the author's table as intent and this matrix as proven state. It is
 left to decide/implement the logical differences in the attribute, magic/state and
@@ -5839,7 +5958,7 @@ remains separate and pending.
 | Calls | Ordinary Truco scoring: unraised hand 1; accepted Truco/Retruco/Vale 4 worth 2/3/4; refused raises worth 1/2/3. Envido uses the best same-suit pair, 20 plus numeric values, figures 0; ties go to mano. No same-suit pair uses the highest individual value. Envido adds 2, at most twice; Real Envido adds 3, once. Refusal awards the previous call total, or 1 for an initial call. | None. Traditional scoring/timing, explicitly authorized by the author, supersedes contradictory source terminology about rounds and accepted-call raises. |
 | Match ending | Trucazo health is Patience squared. Repeat hands until a participant reaches zero; a double knockout goes to mano. This practice cannot damage world health. | None for the health-based end condition. |
 | Major modifiers | Explicitly excluded from this practice by the author on 2026-10-04. World Tarot powers remain separate. | None for this slice. |
-| Health/damage | First-row value: (5 + sum of numeric cards) times (1 + Queen count). Second-row value uses the same formula. Damage before Intelligence: max(0, attacker's first-row value times points won minus defender's second-row value). Source's worked match uses the defender's second row. Author confirmed Type 1: multiply by 1 + I*(I+1)/200, then round to the nearest whole health point as in the source example. | None; this supersedes the source's contradictory linear formula. |
+| Health/damage | First-row value: (5 + sum of numeric cards) times (1 + Queen count). Second-row value uses the same formula. Damage before Intelligence: max(0, attacker's first-row value times points won minus defender's second-row value). Source's worked match uses the defender's second row. Author confirmed the former Type 1, mapped by #154 to Type 3: multiply by 1 + 7*(I*I+25*I)/12500, then round to the nearest whole health point as in the source example. | None; this supersedes the source's contradictory linear formula. |
 | Magic Senses | Explicitly deferred by the author on 2026-10-04. Ordinary decisions/UI must not leak private hands. | None for this slice. |
 | Stakes/consequences | Explicitly a practice with no wagers, prizes, item/card transfer or reputation changes. | None for this slice. |
 | Leaving/interruption | Voluntary abandonment is an automatic match defeat. Restore ordinary controls; never strand the player seated. The source requires a dedicated screen that pauses the world. | None for voluntary abandonment. Native interruptions must preserve a valid state. |
@@ -5954,7 +6073,7 @@ essences. Preserve the original save/package for rollback. No map is rewritten.
 
 Rule in force since 0aa: each Minor exclusively contributes a base passive, in addition
 to its +1% per collection. Major: +2% per card. The 22 Major and 56 Minor add up +100%
-collection, in an additive way, before Type 1/2/4. Do not round the level or alter
+collection, in an additive way, before the three current growth families. Do not round the level or alter
 creation points. Combat awards no XP. The active rule above supersedes the reservation hook; Trucazo remains #81.
 The campaign obtains The Fool, Ace of Cups and Knight of Wands. The other 75
 essences still require their acquisition content.
@@ -6453,11 +6572,11 @@ implementation.
 ## Social probability
 
 Rulo uses **Emotion**, derived from Empathy. Caella uses **Persuasion**, derived from
-Charisma. Both use Type 4 and 120 difficulty, according to the decision for 0f.
+Charisma. Both use new Type 2 and 120 difficulty, according to the decision for 0f.
 Residents have no assigned faction: reputation modifier is neutral.
 
 ```text
-capacidad Tipo 4 = 100 + 2 × atributo × (atributo + 1) / 101
+Type 2 capacity = 100 + 3 * (attribute*attribute + 25*attribute) / 125
 probabilidad (%) = limitar(redondear(capacidad × 100 / dificultad), 0, 100)
 ```
 
@@ -6470,24 +6589,23 @@ difficulty is not a percentage alone: you have to know the attribute.
 | ---: | ---: | ---: | ---: |
 | 50 | 100% | 100% | 100% |
 | 100 | 100% | 100% | 100% |
-| 120 | 85% | 99% | 100% |
-| 150 | 68% | 79% | 100% |
-| 200 | 51% | 59% | 75% |
-| 300 | 34% | 39% | 50% |
+| 120 | 90% | 100% | 100% |
+| 150 | 72% | 93% | 100% |
+| 200 | 54% | 70% | 95% |
+| 300 | 36% | 47% | 63% |
 
-120: 0 attribute → 83%; 3 → 84%; 10 → 85%; 15 → 87%; 30 → 99%; 31 → 100%. The 31 already
-reaches 100% by rounding; does not require the unrounded capacity to reach exactly 120.
-A difficulty<=100 succeeds automatically even with a zero attribute due to the Type 4
-floor. These data explain the existing balance; 0h does not change the formula or the
-difficulties.
+At difficulty 120: attribute 0 -> 83%, 3 -> 85%, 10 -> 90%, 15 -> 95%,
+19 -> 100% after rounding. Difficulty <=100 succeeds automatically even at
+attribute 0 because Type 2 includes its 100% base. Difficulty and RNG rules
+are unchanged; the probabilities follow the newly approved curve.
 
 Ronnie does not roll dice. His direct option requires **Dialogue skill >= 1**, with:
 
 ```text
-Labia Tipo 2 = Elocuencia × (Elocuencia + 1) / 101
+Type 1 dialogue bonus = (Eloquence*Eloquence + 25*Eloquence) / 125
 ```
 
-Eloquence 9 gives approximately 0,891 and does not reach; Eloquence 10 gives 1,089 and
+Eloquence 4 gives 0.928 and does not reach; Eloquence 5 gives 1.2 and
 enables the option. Dialogue skill 1 does not mean Eloquence 1.
 
 Rulo/Caella attempts save the result, probability and die roll. Reopening the dialog
@@ -6618,7 +6736,7 @@ rounding of Engine Health is preserved.
 | 0 | 1 | 100% |
 | 25 | 1,128713 | 88,5965% |
 | 50 | 1,504950 | 66,4474% |
-| 100 | 3 | 33,3333% |
+| 100 | 4 | 25% |
 
 The reduction percentage showing debugging is the equivalent 100 × (1 − 1/F), not the
 old Type 2 curve. 100 hardness no longer cancels the general damage and Eloquence 100 no
