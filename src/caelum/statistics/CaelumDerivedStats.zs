@@ -72,12 +72,14 @@ class CaelumDerivedStats : Object
 
     double CalculateType1Percent(double level)
     {
-        return 100.0 + level * (level + 1) / 2.0;
+        // Adaptador de nombre histórico: Tipo 1 antiguo -> Tipo 3 nuevo.
+        return CaelumGrowthRules.Percent(level,3);
     }
 
     double CalculateType4Percent(double level)
     {
-        return 100.0 + 2.0 * level * (level + 1) / 101.0;
+        // Tipo 4 antiguo -> Tipo 2 nuevo, incluyendo la base de 100%.
+        return CaelumGrowthRules.Percent(level,2);
     }
 
     // El mismo divisor de Constitución rige el gasto pasivo y el de regenerar.
@@ -89,7 +91,7 @@ class CaelumDerivedStats : Object
             / CalculateType4Percent(Max(0.0, attributes.Constitution));
     }
 
-    // El consumo pasivo se divide por Tipo 4: /1 a 0 y /3 a 100.
+    // El consumo pasivo se divide por Tipo 2 nuevo: /1 a 0 y /4 a 100.
     // Constitución gobierna las tres reservas; sólo Hambre/Sed usan la masa.
     void RefreshSurvivalLossMultipliers(CaelumAttributes attributes)
     {
@@ -101,7 +103,8 @@ class CaelumDerivedStats : Object
 
     double CalculateType2Percent(double level)
     {
-        return level * (level + 1) / 101.0;
+        // Tipo 2 antiguo -> bonificación Tipo 1 nueva, sin base añadida.
+        return CaelumGrowthRules.Bonus(level);
     }
 
     int GetMassForTier(int tier)
@@ -250,17 +253,13 @@ class CaelumDerivedStats : Object
         StaffCriticalChance = Clamp(CaelumConstants.DEBUG_STAFF_BASE_CRITICAL_CHANCE_PERCENT
             + CalculateType2Percent(attributes.Insight), 0.0, 100.0);
 
-        PainChanceMultiplier = Clamp(1.0
-            - attributes.Toughness * (attributes.Toughness + 1) / 10100.0,
-            0.0, 1.0);
+        PainChanceMultiplier = CaelumGrowthRules.Remaining(attributes.Toughness);
         // Campo legado para saves: el daño actual usa la resta por golpe de
         // CaelumArmorRules; este cociente ya no interviene en la recepción.
         DamageResistanceMultiplier = 100.0
             / CalculateType4Percent(Max(0.0, attributes.Toughness));
         LucidityLossMultiplier = PainChanceMultiplier;
-        HealthPenaltyMultiplier = Clamp(1.0
-            - attributes.Patience * (attributes.Patience + 1) / 10100.0,
-            0.0, 1.0);
+        HealthPenaltyMultiplier = CaelumGrowthRules.Remaining(attributes.Patience);
 
         RefreshSurvivalLossMultipliers(attributes);
 
@@ -285,8 +284,8 @@ class CaelumDerivedStats : Object
 
         MaximumAir = CaelumConstants.BASE_AIR_CAPACITY
             * CalculateType4Percent(attributes.Resilience) / 100.0;
-        // La masa base es la capacidad a Fuerza 0; el Tipo 4 la lleva a x3 en
-        // nivel 100. Ejemplo: masa 200 produce capacidad 200 y luego 600.
+        // La masa base es la capacidad a Fuerza 0; el Tipo 2 nuevo la lleva
+        // a x4 en nivel 100: masa 200 produce capacidad 200 y luego 800.
         CarryCapacity = BaseMass
             * CalculateType4Percent(attributes.Strength) / 100.0;
         MagicBoxCapacity = 2 + int(

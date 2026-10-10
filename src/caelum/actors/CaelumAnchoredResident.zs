@@ -217,7 +217,7 @@ class CaelumAnchoredResident : CaelumCombatActor abstract
         if(IsCombatIdle())return; // El descanso quieto ya usa la recuperación común.
         if (health <= 0 || health >= CombatMaximumHealth) return;
         // La recuperación base de los seguidores reutiliza la tasa natural del
-        // jugador: vida máxima por hora real, escalada por Resiliencia Tipo 4.
+        // jugador: vida máxima por hora real, escalada por Resiliencia Tipo 2.
         double regenPerSecond = Max(0.0, double(CombatMaximumHealth))
             / CaelumConstants.HEALTH_BASE_RECOVERY_REAL_SECONDS
             * CalculateActorType4Percent(CombatResilience) / 100.0;

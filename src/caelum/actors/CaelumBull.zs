@@ -113,7 +113,7 @@ class CaelumBull : CaelumCombatActor
             CombatArmor.Durability[slot] = 0;
         }
         RecalculateCombatStatistics();
-        // La base cuadrúpeda 10 también respeta Agilidad Tipo 4, igual que las
+        // La base cuadrúpeda 10 también respeta Agilidad Tipo 2, igual que las
         // estadísticas derivadas que convertirán sus atributos en movimiento.
         Speed = CombatBaseSpeed
             * CalculateActorType4Percent(CombatAgility) / 100.0;

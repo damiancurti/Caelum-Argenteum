@@ -414,8 +414,9 @@ class CaelumConstants : Object
     const CARBINE_TIER_ONE_FIRE_TICS = 48;
     const CARBINE_TIER_ONE_RANGE_METERS = 60.0;
     // Dispersión muy alta: el mínimo siempre equivale al 10% del máximo.
-    const CARBINE_MINIMUM_SPREAD_DEGREES = 11.0;
-    const CARBINE_MAXIMUM_SPREAD_DEGREES = 110.0;
+    // Respaldo histórico sin catálogo: conserva su categoría 6.
+    const CARBINE_MINIMUM_SPREAD_DEGREES = 6.0;
+    const CARBINE_MAXIMUM_SPREAD_DEGREES = 60.0;
     const CARBINE_BASE_CRITICAL_CHANCE_PERCENT = 0.0;
     const CARBINE_AIR_CHANGE = -20.0;
     const TEST_ACTOR_RANGED_DAMAGE = 138;

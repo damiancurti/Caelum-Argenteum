@@ -16,6 +16,7 @@ class CaelumBreakableGate : Actor
     bool Broken;
     bool Opened;
     int BalanceRevision;
+    int GrowthRevision;
     bool LegacyBalanceForRecovery;
     // Una explosión puede alcanzar muchos bloques. Guardar el máximo de cada
     // explosión, no sumar sus muestras ni perder otra explosión del mismo tic.
@@ -59,7 +60,8 @@ class CaelumBreakableGate : Actor
     void EnsureGateBalance()
     {
         int desiredRevision = LegacyBalanceForRecovery ? 0 : CaelumGateData.BALANCE_REVISION;
-        if (StructuralMaximum > 0 && BalanceRevision == desiredRevision) return;
+        if (StructuralMaximum > 0 && BalanceRevision == desiredRevision
+            && GrowthRevision>=CaelumGrowthRules.REVISION) return;
         // Migrar resistencia proporcional sin reparar, cerrar ni resucitar.
         double remaining = StructuralMaximum > 0
             ? Clamp(double(health) / StructuralMaximum, 0.0, 1.0) : 1.0;
@@ -72,12 +74,16 @@ class CaelumBreakableGate : Actor
             Constitution = Toughness;
         }
         let stats = new("CaelumDerivedStats");
-        RetainedDamage = 100.0 / stats.CalculateType4Percent(Toughness);
+        RetainedDamage = LegacyBalanceForRecovery ? 1.0/CaelumGrowthMigration.LegacyModerateMultiplier(Toughness)
+            : 100.0 / stats.CalculateType4Percent(Toughness);
+        double constitutionPercent=LegacyBalanceForRecovery ? CaelumGrowthMigration.LegacyLargePercent(Constitution)
+            : stats.CalculateType1Percent(Constitution);
         StructuralMaximum = Max(1, int(CaelumConstants.HEALTH_ANIMA_DAMAGE_SCALE
-            * stats.CalculateType1Percent(Constitution) * (Mass / 100.0)));
+            * constitutionPercent * (Mass / 100.0)));
         health = Broken || remaining <= 0 ? 0
             : Max(1, int(StructuralMaximum * remaining + 0.5));
         BalanceRevision = desiredRevision;
+        GrowthRevision=CaelumGrowthRules.REVISION;
     }
 
     // Herramienta de recuperación explícita; no la invoca el juego normal.

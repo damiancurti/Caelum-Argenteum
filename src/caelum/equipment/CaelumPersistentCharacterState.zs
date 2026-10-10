@@ -293,12 +293,14 @@ class CaelumPersistentCharacterState : Inventory
 
     int WeaponDurabilityRevision;
     int ShotgunRevision;
+    int GrowthRevision;
 
     override void PostBeginPlay()
     {
         Super.PostBeginPlay();
         WeaponDurabilityRevision = CaelumAttackRules.DURABILITY_REVISION;
         ShotgunRevision=CaelumShotgunRules.REVISION;
+        GrowthRevision=CaelumGrowthRules.REVISION;
     }
 
     void MigrateWeaponDurability(int revision = 1)

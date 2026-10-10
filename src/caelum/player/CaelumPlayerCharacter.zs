@@ -190,7 +190,7 @@ class CaelumPlayerCharacter : Object play
     static void EnsureCurrentAttributeBalance(CaelumPlayer user)
     {
         if (!CaelumPlayerAuthority.CanMutate(user)) return;
-        if (user.AttributeBalanceVersion >= 3 || !user.CharacterCreationComplete
+        if (user.AttributeBalanceVersion >= CaelumGrowthRules.PLAYER_BALANCE_VERSION || !user.CharacterCreationComplete
             || user.Attributes == null || user.DerivedStats == null) return;
         user.ApplyCharacterProfile();
 
@@ -204,9 +204,17 @@ class CaelumPlayerCharacter : Object play
             && user.CharacterAllocation != null
             && user.DerivedStats != null)
         {
-            // La revisión 3 actualiza el coste guardado y el lanzamiento en curso
-            // antes de pagarlo; conserva el tiempo, los recursos y el progreso.
-            bool migrateBalance = user.AttributeBalanceVersion < 3;
+            // La revisión 4 incluye el coste del lanzamiento en curso antes
+            // de pagarlo; conserva el tiempo, los recursos y el progreso.
+            bool migrateGrowth=user.AttributeBalanceVersion<CaelumGrowthRules.PLAYER_BALANCE_VERSION;
+            double oldHealth=user.CaelumMaximumHealth,oldAnima=user.DerivedStats.MaximumAnima;
+            double oldAir=user.DerivedStats.MaximumAir,oldAdrenaline=user.DerivedStats.MaximumAdrenaline;
+            // Única migración de curvas: preservar fracciones; los cambios
+            // posteriores de equipo conservan su política habitual sin curar.
+            double healthRatio=oldHealth>0 ? user.health/oldHealth : 0;
+            double animaRatio=oldAnima>0 ? user.CurrentAnima/oldAnima : 0;
+            double airRatio=oldAir>0 ? user.CurrentAir/oldAir : 0;
+            double adrenalineRatio=oldAdrenaline>0 ? user.CurrentAdrenaline/oldAdrenaline : 0;
             user.Attributes.InitializeFromCreation(user.CharacterProfile, user.CharacterAllocation);
             if (user.ArmorModel != null)
             {
@@ -242,7 +250,7 @@ class CaelumPlayerCharacter : Object play
             // carga corregida en el mismo tic.
             user.RefreshCarriedInventorySummary();
             user.DerivedStats.Recalculate(user.Attributes, user.CharacterProfile);
-            if (migrateBalance)
+            if (migrateGrowth)
             {
                 if (user.StaffCastPending && user.WeaponModel != null)
                 {
@@ -253,7 +261,7 @@ class CaelumPlayerCharacter : Object play
                         * (user.PendingStaffChargedAttack ? CaelumConstants.WEAPON_CHARGED_COST_MULTIPLIER : 1.0);
                 }
             }
-            user.AttributeBalanceVersion = 3;
+            user.AttributeBalanceVersion = CaelumGrowthRules.PLAYER_BALANCE_VERSION;
             user.SyncHUDLoadState();
             // La masa nativa representa la masa total para que el motor y los
             // ataques externos respeten tambien el peso equipado del jugador.
@@ -273,7 +281,9 @@ class CaelumPlayerCharacter : Object play
             if (user.HealthResourceInitialized)
             {
                 user.CaelumMaximumHealth = Max(1, int(user.DerivedStats.MaximumHealth));
-                user.health = Min(user.health, user.CaelumMaximumHealth);
+                if(migrateGrowth && oldHealth>0 && user.health>0)
+                    user.health=Max(1,int(user.CaelumMaximumHealth*Clamp(healthRatio,0.0,1.0)+0.5));
+                else user.health = Min(user.health, user.CaelumMaximumHealth);
 
                 if (user.player != null)
                 {
@@ -285,12 +295,15 @@ class CaelumPlayerCharacter : Object play
             // newly reduced capacity, matching the health and air behavior.
             if (user.AnimaResourceInitialized)
             {
-                user.CurrentAnima = Min(user.CurrentAnima, user.DerivedStats.MaximumAnima);
+                user.CurrentAnima = migrateGrowth && oldAnima>0
+                    ? Clamp(animaRatio,0.0,1.0)*user.DerivedStats.MaximumAnima
+                    : Min(user.CurrentAnima, user.DerivedStats.MaximumAnima);
             }
 
             if (user.AdrenalineResourceInitialized)
             {
-                user.CurrentAdrenaline = Min(
+                user.CurrentAdrenaline = migrateGrowth && oldAdrenaline>0
+                    ? Clamp(adrenalineRatio,0.0,1.0)*user.DerivedStats.MaximumAdrenaline : Min(
                     user.CurrentAdrenaline,
                     user.DerivedStats.MaximumAdrenaline
                 );
@@ -300,7 +313,11 @@ class CaelumPlayerCharacter : Object play
             // resource above its newly calculated maximum.
             if (user.AirResourceInitialized)
             {
-                user.CurrentAir = Min(user.CurrentAir, user.DerivedStats.MaximumAir);
+                user.CurrentAir = migrateGrowth && oldAir>0
+                    ? Clamp(airRatio,0.0,1.0)*user.DerivedStats.MaximumAir
+                    : Min(user.CurrentAir, user.DerivedStats.MaximumAir);
+                if(migrateGrowth && oldAir>0)
+                    user.UnderwaterAirRecoveryDebt*=user.DerivedStats.MaximumAir/oldAir;
             }
         }
     }
