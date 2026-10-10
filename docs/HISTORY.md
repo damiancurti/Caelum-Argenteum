@@ -29,7 +29,12 @@ continues during runs; the visual operations themselves do not change resources.
 Before/after screenshots show the same view and ordinary Health regeneration.
 An initial 17-check route also passed; the final route adds airborne departure.
 Static/package integrity, protected-save hashes and power release: validation_5114.
-CA165-01 remains pending author acceptance.
+Author acceptance, 2026-10-10: CA165-01 (origin 5.1.14 / #165) PASSED without
+reported qualifications. The author confirmed all pending checks: visibility in
+loco-map02, save/reload and the next ordinary hit's brief proportional tint.
+The author requested issue closure and PR166 merge; the confirmed entry was
+removed from pending_test.txt. No additional native tests are claimed, and
+the fixture limitations above remain part of the evidence.
 
 During this investigation the author accepted all other pending tests: CA158-01
 and CA160-01, both without qualifications. Their release entries record acceptance;

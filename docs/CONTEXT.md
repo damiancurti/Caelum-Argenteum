@@ -2,8 +2,9 @@
 
 Documentation version: **5.1.14** — 2026-10-10.
 
-**5.1.14/#165 implemented:** bounded damage flash, map-travel reset and legacy
-visual repair. Thirty-four native checks pass; CA165-01 pending. validation_5114.
+**5.1.14/#165 accepted:** bounded damage flash, map-travel reset and legacy
+visual repair. CA165-01 accepted 2026-10-10; PR166 merge/closure authorized.
+Thirty-four native checks pass; validation_5114. Author queue empty.
 **#158/PR159 and #160/PR161 accepted, closed, merged** 2026-10-10.
 Crafting size and silver-key fixes: SYSTEMS/HISTORY; validation_5112/5113.
 **#156/PR157 and #154/PR155 accepted, closed, merged** on 2026-10-10.

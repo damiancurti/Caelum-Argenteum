@@ -24,7 +24,8 @@ remove a paid Tarot effect to hide a screen-feedback bug.
 
 Evidence: validation_5114, before/after native screenshots and 34 passing checks.
 The travel fixture seeds paid-effect state and calls native ChangeLevel; it does
-not replace author dialogue/input acceptance. CA165-01 remains pending.
+not replace author dialogue/input acceptance. Separately, the author accepted
+CA165-01 on 2026-10-10 without reported qualifications; HISTORY records the result.
 
 ## CA-KP-070 - Release actual custody before an authorized item handoff
 

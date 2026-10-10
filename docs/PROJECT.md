@@ -12,7 +12,8 @@ clears the transient flash, and visual revision 2 clears older saved flash state
 once. No Health, position, inventory, Tarot or damage-balance change. Native
 render comparisons and 34 checks pass, including airborne departure/arrival,
 active flight/cooldown retention, grounded hub return and save/reload. CA165-01
-awaits author acceptance; evidence: assets/validation_5114. #158 and #160 are
+was accepted by the author on 2026-10-10, with #165 closure/PR166 merge requested.
+Evidence: assets/validation_5114; acceptance: HISTORY. #158 and #160 are
 accepted/closed, with PR159 and PR161 merged on 2026-10-10.
 
 ## 5.1.13 - Argento silver-key handoff (#160)
