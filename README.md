@@ -6,8 +6,17 @@ An independent dark fantasy FPS-RPG inspired by nineteenth-century Argentina.
 Author and game designer: **Damian Curti**. Development target: **GZDoom 4.14.2**
 on Windows 11. The final game is intended to be independent of Doom assets.
 
-**Current release: 5.1.15.** Obtain and update the complete repository, validate
+**Current release: 5.1.16.** Obtain and update the complete repository, validate
 it, then rebuild with `run_dev.bat` as described below.
+
+**5.1.16 / [#163](https://github.com/damiancurti/Caelum-Argenteum/issues/163):**
+Recoverable Boleadora / Bolas joins family 1. Hold secondary to improve accuracy
+for one second, then throw with primary; earlier throws are allowed. Ropes block
+movement and attacks for up to five seconds. Fire, a Reload cutting action or
+one Strength roll can destroy the piece. Original artwork and the approved
+bronze/leather recipe are integrated. Native/static evidence:
+[validation_5116](assets/validation_5116/RESULTS.md). CA163-01 awaits author
+visual/handling acceptance. Rulo's permanent gift remains #164.
 
 **5.1.15 / [#162](https://github.com/damiancurti/Caelum-Argenteum/issues/162):**
 A bronze-tipped Utility staff / Bastón joins family 1 beside the Pickaxe. Hold

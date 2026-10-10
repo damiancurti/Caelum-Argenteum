@@ -122,3 +122,8 @@
 /assets/validation_5115/* -text whitespace=cr-at-eol
 /assets/validation_5115/*.txt whitespace=-blank-at-eol,-blank-at-eof,cr-at-eol
 /src/graphics/caelum/utility_staff/*.textures text eol=lf
+
+# Preserve #163 native evidence and fixture fingerprints across checkouts.
+/assets/validation_5116/* -text whitespace=cr-at-eol
+/assets/validation_5116/*.txt whitespace=-blank-at-eol,-blank-at-eof,cr-at-eol
+/src/graphics/caelum/bolas/*.textures text eol=lf

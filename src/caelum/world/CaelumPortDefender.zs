@@ -13,6 +13,7 @@ class CaelumPortDefender : CaelumFolkloreCombatActor
     int CrewRouteGun, CrewRouteStep;
     CaelumShieldModel Shield;
     CaelumWeaponModel Sword;
+    override CaelumWeaponModel GetPossessedSidearm(){return Sword;}
     CaelumCityCarbine Carbine;
     override double GetPhysiologicalHeight()
     { return Carbine!=null && Carbine.StandingHeight>0 ? Carbine.StandingHeight : Height; }

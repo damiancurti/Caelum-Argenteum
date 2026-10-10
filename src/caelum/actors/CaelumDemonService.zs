@@ -23,12 +23,14 @@ class CaelumDemonService : Object play
             || (boss!=null && boss.SewerFleeing)
             || (npc.SiegeCombatant!=null && npc.SiegeCombatant.Withdrawing)
             || (npc.FindState("Pain")!=null && npc.InStateSequence(npc.CurState,npc.FindState("Pain")));
+        bool ropes=CaelumBolas.Restrained(npc);
+        if(ropes && CaelumBolas.Interrupted(npc))blocked=true;
         bool cold=npc.ThermalState!=null && npc.ThermalState.Exposure<0 && npc.ThermalState.Severity>0;
         bool combat=!blocked && npc.RecoveryPhase==0 && npc.target!=null && npc.target.health>0
             && npc.target.bSHOOTABLE && CaelumDemonBreath.CanReach(npc,npc.target);
-        if(blocked || (!cold && !combat)){StopBreath(npc);return;}
+        if(blocked || (!ropes && !cold && !combat)){StopBreath(npc);return;}
         // No se cancela a mitad una acción que ya pagó sus recursos.
-        if(npc.DemonBreath==null && ((npc.MeleeState!=null && npc.InStateSequence(npc.CurState,npc.MeleeState))
+        if(!ropes && npc.DemonBreath==null && ((npc.MeleeState!=null && npc.InStateSequence(npc.CurState,npc.MeleeState))
             || (npc.MissileState!=null && npc.InStateSequence(npc.CurState,npc.MissileState))))return;
         double cost=npc.GetMagicAnimaCost(CaelumDemonBreathRules.ANIMA_PER_SECOND)/TICRATE;
         if(npc.CurrentCombatAnima<cost){StopBreath(npc);return;}
@@ -42,6 +44,7 @@ class CaelumDemonService : Object play
         }
         // La regeneración natural sigue en el Tick normal, sin bloqueo mágico.
         npc.CurrentCombatAnima=Max(0.0,npc.CurrentCombatAnima-cost);
+        if(ropes)CaelumBolas.FireContact(npc); // Contacto propio pagado, boca libre.
         npc.DemonBreath.PaidTick();
     }
 

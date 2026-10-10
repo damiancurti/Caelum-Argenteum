@@ -1,6 +1,17 @@
 # TASKS.md — Active tasks
 
-Documentation version: **5.1.15** — 2026-10-10.
+Documentation version: **5.1.16** — 2026-10-10.
+
+## Issue #163 - Recoverable bolas (5.1.16)
+
+Implementation and focused native validation are recorded in
+assets/validation_5116/RESULTS.md: crafting, preparation/throw/recovery, restraint,
+fire/cut/Strength resolutions, demon costs, save migration and hub lifecycle.
+Approved author decisions: bronze 800 g plus leather 218 g at M; javelin
+ballistics, 60-to-6-degree linear preparation and 6 base Air; two-second base
+cut with shared physical speed and pain/sleep/stun interruption. Next: linked
+PR review and CA163-01 visual/handling acceptance; then #164 permanent grants.
+No author acceptance is inferred from engine assertions or a future PR merge.
 
 ## Issue #162 - Bronze utility staff (5.1.15)
 

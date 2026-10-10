@@ -1,6 +1,19 @@
 # Caelum Argenteum — Audio and art
 
-Documentation version: **5.1.15** — 2026-10-10.
+Documentation version: **5.1.16** — 2026-10-10.
+
+## 5.1.16 - Original bolas atlas (#163)
+
+The built-in imagegen tool generated an original RGBA atlas of three
+leather-covered bronze weights and cowhide thongs. Source, exact prompt,
+provenance and measured clips: assets/source/art/bolas_5116. No museum image or
+Doom art was copied. assets/generators/register_bolas.py copies the original
+pixels unchanged and deterministically registers native TEXTURES for ready,
+spin, release, pickup/icon and arm/leg overlays. Recovery uses the existing
+shared hand layer with the released item absent. Native rotation spins around
+the fixed grip; restraint overlays scale uniformly to preserve round weights
+and remain below the mouth. Runtime: src/graphics/caelum/bolas; validation
+captures: assets/validation_5116. Visual acceptance remains CA163-01.
 
 ## 5.1.15 - Bronze utility staff (#162)
 

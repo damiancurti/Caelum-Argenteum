@@ -4,6 +4,23 @@ Status: integrated engineering register (issue #22, patch 4.36.1b).
 Prepared: 2026-09-23. Inherits the project's release after integration.
 Inspected baseline: `1dc390576fa330d37ff543526fc7e69a397fc28f` (PR #7).
 
+## CA-KP-072 - Observe loaded input state before the first simulation tick
+
+Status/evidence: ENGINE-VERIFIED, #163 / 5.1.16, 2026-10-10.
+Runtime: GZDoom 4.14.2 Windows/Vulkan; native source baseline dc757efe plus #163.
+
+A preparation-reload fixture initially checked the live counter after several
+tics, although the engine had released its input. Zero was the correct runtime
+cancellation, not a serialization failure: the native save stored 35 tics.
+A regular saved EventHandler did not provide the required pre-tick reload
+observation. A StaticEventHandler.WorldLoaded observer with IsSaveGame confirmed
+35 immediately on load; the ordinary tick then correctly canceled on release.
+Use that static observer for load-time assertions, and test subsequent input
+handling separately. Do not preserve stale held input merely to satisfy a late
+snapshot assertion. Evidence: validation_5116/delivered-prepared-observed.txt
+and inputs.zs; the save/package/fixture fingerprints are recorded alongside it.
+Author handling acceptance remains separate (CA163-01).
+
 ## CA-KP-071 - Never carry map-local damage age into another map
 
 Status/evidence: CODE-VERIFIED / ENGINE-VERIFIED, #165 / 5.1.14, 2026-10-10.

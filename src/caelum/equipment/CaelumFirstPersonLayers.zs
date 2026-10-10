@@ -410,6 +410,8 @@ class CaelumFirstPersonLayers : Object play
 
     static Vector2 Pivot(int index)
     {
+        if (index >= CaelumConstants.WEAPON_TYPE_BOLAS*9
+            && index < (CaelumConstants.WEAPON_TYPE_BOLAS+1)*9) return (216,160);
         if (index >= CaelumConstants.WEAPON_TYPE_UTILITY_STAFF*9
             && index < (CaelumConstants.WEAPON_TYPE_UTILITY_STAFF+1)*9) return (216,160);
         if (index >= CaelumConstants.WEAPON_TYPE_PICKAXE * 9
@@ -683,6 +685,7 @@ class CaelumFirstPersonLayers : Object play
         double weaponRotation=rotation+(kind==CaelumConstants.WEAPON_TYPE_PICKAXE
             ?-CaelumConstants.PICKAXE_REST_CLOCKWISE_DEGREES
             :rightLeaning?-28.0:kind==8?FLAIL_HANDLE_ANGLE:0.0);
+        if(kind==CaelumConstants.WEAPON_TYPE_BOLAS && phase==1)weaponRotation-=level.time*360.0/TICRATE;
         vector2 weaponGrip=grip;
         if(rightLeaning)weaponGrip+=Turn((4,3),rotation);
         if(kind==8)Flail(user,tier,grip,rotation,chainTurn);

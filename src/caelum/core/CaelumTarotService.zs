@@ -66,7 +66,7 @@ class CaelumTarotService : Object play
 
     static bool Activate(CaelumPlayer user)
     {
-        if (!ValidUser(user)) return false;
+        if (!ValidUser(user) || CaelumBolas.Restrained(user)) return false;
         let record = user.GetPersistentCharacterState(false);
         EnsureRevision(record);
         if (record == null || SelectedCount(record) == 0)

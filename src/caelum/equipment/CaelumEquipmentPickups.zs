@@ -649,6 +649,7 @@ class CaelumWeaponPickup : CaelumEquipmentItem
             case CaelumConstants.WEAPON_TYPE_HATCHET: visual = "CHAT"; break;
             case CaelumConstants.WEAPON_TYPE_MACHETE: visual = "CMAC"; break;
             case CaelumConstants.WEAPON_TYPE_JAVELIN: visual = "CJAV"; break;
+            case CaelumConstants.WEAPON_TYPE_BOLAS: visual = "CBOL"; break;
             case CaelumConstants.WEAPON_TYPE_UTILITY_STAFF: visual = "CUST"; break;
             case CaelumConstants.WEAPON_TYPE_PICKAXE: visual = "CPIK"; break;
             case CaelumConstants.WEAPON_TYPE_AXE: visual = "CAXE"; break;

@@ -1,6 +1,20 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **5.1.15** — 2026-10-10.
+Documentation version: **5.1.16** — 2026-10-10.
+
+## 5.1.16 - Recoverable bolas (#163), 2026-10-10
+
+The author approved bronze in place of proposed iron (800 g bronze/218 g leather
+at M), javelin-derived throwing rules with linear 60-to-6-degree preparation and
+6 base Air, and a two-second base cut using shared physical speed with
+pain/sleep/stun cancellation. Implemented append-only tool/catalogue/recipe IDs,
+original sprites, exact native item recovery, five-second independent restraint,
+fire/cut destruction, one natural Strength roll and paid own-breath escape.
+Versioned recipe/sidearm migration preserves existing saves and learned recipes.
+Static/build and isolated GZDoom evidence: assets/validation_5116/RESULTS.md.
+CA163-01 remains pending author acceptance; #164 permanent Rulo/Caella grants
+are not included. #162's right-leaning staff remains on PR167 underneath this
+focused branch. No existing pending author test is removed.
 
 ## 5.1.15 - Bronze utility staff and wand names (#162, 2026-10-10)
 
