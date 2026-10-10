@@ -1,0 +1,38 @@
+{
+  "release": "5.1.15",
+  "validation": {
+    "version": "5.1.15",
+    "documents": 10,
+    "audio_files": 107,
+    "station_models": 12,
+    "spanish_caella_keys": 25,
+    "premise_numbers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20
+    ],
+    "context_words": 2498,
+    "errors": []
+  },
+  "package_members": 6304,
+  "tested_source_parity": true,
+  "build_sha256": "4d5e37eff5109a4b693cd32e6fa7734c7ab1ea6ec6622aa4a62740016b59d9b3",
+  "production_sha256": "ca9872d902ba3be27ff759cddbbf6ddaf42e2c637ca50df79fe4fab00d7f8ccc"
+}

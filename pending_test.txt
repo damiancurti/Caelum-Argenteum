@@ -6,7 +6,7 @@ From the repository in PowerShell, prepare the local fixture:
 Then run (choose a new Label if re-running):
   .\assets\validation_5115\run_native.ps1 -Label author162-01 -Fixture inputs -Script preview.cfg -Interactive -Language es
 Steps:
-1. Inspect the bronze Baston, hands and equip pose. Use family key 1 to switch
+1. Confirm the corrected right-leaning bronze Baston, hands and equip pose. Use family key 1 to switch
    between the Pico and Baston. Inspect its inventory icon/name and Anima/s.
 2. Hold primary toward the passive target for fire; release, then hold secondary
    for ice. Inspect the tip, continuous effects, burn/freeze and HUD resources.

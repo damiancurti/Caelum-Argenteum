@@ -2,8 +2,8 @@
 
 Documentation version: **5.1.15** — 2026-10-10.
 
-**5.1.15/#162 implemented:** bronze fire/ice Utility staff / Bast?n; Pickaxe
-recipe/durability, contact wear and Wands / Varitas terminology. Saves retain IDs.
+**5.1.15/#162 implemented:** bronze fire/ice Utility staff / Bastón; Pickaxe
+recipe/durability, contact wear, right-leaning pose; Wands / Varitas retain IDs.
 Evidence: assets/validation_5115. CA162-01 pending. Caella/tutorial remains #164,
 dependent on #162/#163.
 

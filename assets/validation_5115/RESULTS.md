@@ -59,7 +59,7 @@ baseline and builds the current production source. Run each fixture using
 `ca162-legacy` and `ca162-migrated` locally. Saved assertions are reported separately
 from new checks. Only `src/` is included in the development PK3.
 
-Final production package SHA-256:
+Initial implementation production package SHA-256:
 `897bad7273dcf9f3cf9465bfbd2e06cef43d32d1197ee2fc40643dc5b9ac2240`.
 Earlier checks retain their original package/fixture hashes in run records.
 After `inputs-final`/`travel-final`, production changes only updated two required
@@ -86,3 +86,22 @@ the final script presses again in the destination. These runs are not counted as
 passing evidence. All final assertions above pass.
 
 The pre-existing deletion of `assets/art_source/Caelum Argenteum.png` is excluded.
+
+## Author-requested right-leaning pose, 2026-10-10
+
+The author requested only that the staff lean right like the other weapons.
+The shared clockwise rest pose now applies to the staff in ready, fire, ice and
+equip frames; the world emission/light anchor follows the relocated tip. Original
+art bytes, pickup and icon are retained. Release remains 5.1.15 in PR167.
+
+`right-lean-final` and `right-lean-equip` inspect the corrected native poses and
+light cleanup. `right-lean-checks` passes all 35 affected mechanics assertions,
+including contacts, signed heat, wall occlusion, wear and cleanup. Existing
+crafting and persistence evidence still applies. The first preview changed the
+unused early-return grip branch; the final change is in the actual draw branch.
+The corrected source also fixes the staff name's accent in maintained docs.
+
+Current production SHA-256:
+`ca9872d902ba3be27ff759cddbbf6ddaf42e2c637ca50df79fe4fab00d7f8ccc`.
+Normal build/static results and package parity: `right-lean-build.json`.
+The author's corrected-pose confirmation remains pending under CA162-01.

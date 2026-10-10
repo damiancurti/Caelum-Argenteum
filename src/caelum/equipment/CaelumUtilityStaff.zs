@@ -6,8 +6,8 @@ class CaelumUtilityStaffRules : Object
     const ICE=2;
     // Registro geométrico de la punta en la vista de primera persona.
     const TIP_FORWARD=16.0;
-    const TIP_RIGHT=1.5;
-    const TIP_UP=4.5;
+    const TIP_RIGHT=6.5;
+    const TIP_UP=4.0;
     const CONTACT_WEAR_TICS=TICRATE;
 }
 

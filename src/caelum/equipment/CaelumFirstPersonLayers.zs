@@ -639,7 +639,8 @@ class CaelumFirstPersonLayers : Object play
         bool bow=kind==15;
         if(!bow){user.A_ClearOverlays(kind==8?47:46,47);user.A_ClearOverlays(53,53);}
         bool large=kind==10 || kind==11 || kind==12;
-        bool rightLeaning=kind==4 || kind==5 || kind==7 || kind==11 || kind==12;
+        bool rightLeaning=kind==4 || kind==5 || kind==7 || kind==11 || kind==12
+            || kind==CaelumConstants.WEAPON_TYPE_UTILITY_STAFF;
         double size=kind==0?1.20:kind==7?1.18:kind==10?1.38:kind==11?1.32:kind==12?1.13:ranged?0.82:1.0;
         vector2 grip=Grip(kind);
         grip+=(dx,dy);

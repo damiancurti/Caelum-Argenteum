@@ -4,7 +4,7 @@ Documentation version: **5.1.15** — 2026-10-10.
 
 ## 5.1.15 - Utility tool integration boundary (#162 / #164)
 
-The new bronze-tipped Bast?n / Utility staff is available to the equipment and
+The new bronze-tipped Bastón / Utility staff is available to the equipment and
 crafting systems. Existing tiered magic implements are called Varitas / Wands,
 without changing their IDs or current tutorial instances. The author-approved
 permanent Caella gift, removal of loan returns and revised trial progression

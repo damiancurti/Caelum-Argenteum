@@ -10,11 +10,11 @@ on Windows 11. The final game is intended to be independent of Doom assets.
 it, then rebuild with `run_dev.bat` as described below.
 
 **5.1.15 / [#162](https://github.com/damiancurti/Caelum-Argenteum/issues/162):**
-A bronze-tipped Utility staff / Bast?n joins family 1 beside the Pickaxe. Hold
+A bronze-tipped Utility staff / Bastón joins family 1 beside the Pickaxe. Hold
 primary for fire or secondary for ice; both spend Anima continuously while
 natural regeneration continues. The tool shares the Pickaxe recipe/durability
 and wears once per second of contact. Existing magic staffs are now Wands /
-Varitas, retaining their saved identities. Original tool art and native thermal,
+Varitas, retaining their saved identities. Original tool art now leans right as requested; native thermal,
 crafting, controls and save tests are included. Evidence:
 [validation_5115](assets/validation_5115/RESULTS.md). Author handling/art check
 CA162-01 remains in [pending_test.txt](pending_test.txt). Caella's permanent gift

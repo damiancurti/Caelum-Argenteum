@@ -20,6 +20,12 @@ assets/validation_5115. Tool/cap readability, hand alignment and elemental effec
 appearance were inspected in engine; final author acceptance remains CA162-01.
 The unrelated pre-existing art-source deletion remains excluded from this patch.
 
+Author correction, 2026-10-10: rotate the utility staff clockwise into the
+existing right-leaning weapon rest pose, around the shared grip. Ready, fire,
+ice and equip inherit that pose; the measured emission/light origin follows
+the relocated bronze tip. The original atlas, pickup and icon are retained.
+Updated native captures and checks: assets/validation_5115/RESULTS.md.
+
 ## 5.1.14 - Damage-flash travel validation (#165)
 
 No art, sound, map, model or attribution changes. assets/validation_5114 contains

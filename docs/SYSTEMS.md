@@ -4,7 +4,7 @@ Documentation version: **5.1.15** — 2026-10-10.
 
 ## Utility staff and wand terminology - 5.1.15 / #162
 
-**Bast?n / Utility staff** is a separate family-1 tool beside the Pickaxe, with
+**Bastón / Utility staff** is a separate family-1 tool beside the Pickaxe, with
 one tier and a bronze tip. The author renamed the existing tiered elemental
 staffs to **Varitas / Wands** on 2026-10-10. Their internal `STAFF` identifiers,
 sixty magical variants and saved instances remain unchanged. Earlier release
@@ -6888,7 +6888,7 @@ modify these combat routes.
 
 | Implement (family 1) | Fire | AltFire | Reload |
 | --- | --- | --- | --- |
-| Utility staff / Bast?n, one tier | Hold for flame, burn and heat. | Hold for ice, Freeze and cooling. | No charge or reload. |
+| Utility staff / Bastón, one tier | Hold for flame, burn and heat. | Hold for ice, Freeze and cooling. | No charge or reload. |
 
 Both modes use the continuous cost/contact-wear contract in the 5.1.15 section.
 

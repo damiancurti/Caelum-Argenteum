@@ -8,7 +8,8 @@ Implemented family 1, one tier, original art, exact Pickaxe components and
 maximum durability, fire/ice streams, once-per-second contact wear and wand
 terminology. Recipe revision 6 preserves old knowledge and equipment identity.
 Static/native evidence and reproducible fixtures: assets/validation_5115.
-CA162-01 remains for author handling/art acceptance. Next: review the linked PR
+The requested right-leaning pose is corrected. CA162-01 remains for confirmation.
+Next: review PR167
 and then integrate Caella's permanent grant through #164 alongside #163; the
 full tutorial/grant criterion is deliberately not marked passed in this patch.
 
