@@ -1,6 +1,17 @@
 # TASKS.md — Active tasks
 
-Documentation version: **5.1.10** — 2026-10-09.
+Documentation version: **5.1.11** — 2026-10-10.
+
+## Issue #156 - Time-skip letter controls (5.1.11)
+
+Implemented the native KeyChar path for Q/R while retaining scan-code controls,
+key release propagation and authoritative network actions. The author's save
+contains a finished task and past destination, explaining the valid Enter warning.
+Native dispatch/state checks and save/reload passed. The author's baseline Tab
+check confirms the panel can receive real input; synthetic Windows presses were
+not delivered reliably and are not counted as validation. Corrected physical
+Q/R verification remains CA156-01. PR is stacked on #154 / PR155; neither issue
+has been accepted for merge or closure.
 
 ## Issue #154 — SI physics and growth (5.1.10)
 

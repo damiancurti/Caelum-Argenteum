@@ -1,6 +1,16 @@
 # Caelum Argenteum — Project, status and roadmap
 
-Documentation version: **5.1.10** — 2026-10-09.
+Documentation version: **5.1.11** — 2026-10-10.
+
+## 5.1.11 - Time-skip letter controls (#156)
+
+Q and R now recognize the native character code, matching the other Journal
+panels. The author's protected craft-tiempo checkpoint retains completed work;
+Enter requires a future destination and does not repeat completed crafting.
+No clock policy, balance, save schema or migration changes. Native callback/state
+checks and save/reload passed; physical corrected-key acceptance remains pending.
+Evidence: assets/validation_5111; author queue: CA156-01 plus CA154-01/02.
+This focused patch depends on the unmerged #154 / PR155 branch.
 
 ## 5.1.10 — SI physics and growth migration (#154)
 

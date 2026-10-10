@@ -1,6 +1,27 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **5.1.10** — 2026-10-09.
+Documentation version: **5.1.11** — 2026-10-10.
+
+## 5.1.11 - Time-skip letter controls (#156, 2026-10-10)
+
+The author reported Q and Enter unresponsive inside the crafting time selector
+and supplied craft-tiempo. Its task had completed; target 01:24 was already past,
+so CA_SKIP_FUTURE was a valid Enter response. Q/R incorrectly compared native
+InputEvent.KeyString to ASCII letters. GZDoom 4.14.2 constructs that string from
+the physical scan code; use KeyChar for letters, preserving scan-code controls.
+No save schema, inventory transaction, forecast or time-advance policy changed.
+
+Native GZDoom regression: 21 dispatch/state checks passed, covering completed
+and pending-panel cancellation, active-stop then close, unchanged completed work
+and inventory, R refresh, field editing, past rejection, future execution and
+key release/Escape/console pass-through. Two reload checks passed. These call the
+production UI dispatcher in-engine and observe native network/state processing;
+they are not physical keyboard acceptance. Raw Windows automation produced no
+reliable events. The author confirmed physical Tab closes the baseline panel on
+2026-10-10; its native log records ca_skip_cancel. This confirms diagnosis only.
+CA156-01 remains pending for corrected physical Q/R. CA154-01/02 are retained.
+Protected save/package pairs and temporary power-request release are documented
+in assets/validation_5111. No merge/closure acceptance is implied.
 
 ## 5.1.10 — SI physics, growth curves and migration (#154, 2026-10-09)
 

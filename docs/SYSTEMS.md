@@ -1,6 +1,6 @@
 # Caelum Argenteum — Current systems and rules
 
-Documentation version: **5.1.10** — 2026-10-09.
+Documentation version: **5.1.11** — 2026-10-10.
 
 ## SI physics and attribute growth — 5.1.10 / #154
 
@@ -1976,6 +1976,13 @@ Neither mode simulates arbitrary world AI or physics. The skip yields between
 batches, supports save/reload and retains actual partial progress on interruption.
 The technical planning horizon is 30 local days, inherited from the journey
 planner; destinations are expressed in whole minutes.
+
+Input repair 5.1.11/#156: Q/R recognize the native character code as well as the
+text fallback. Tab/controller B also cancel. During an active skip cancellation
+stops it and keeps the result panel; a second cancellation closes it. Idle,
+completed or pending-confirmation panels close without discarding completed work.
+Enter still rejects a destination that is now in the past; select a future time
+or reopen Y for a new default. A completed crafting task is not started again.
 
 Author decisions, 2026-10-01: automatic sleep begins at the existing critical
 10% Sleep threshold and wakes at 100%. Recovery remains 100 points per eight

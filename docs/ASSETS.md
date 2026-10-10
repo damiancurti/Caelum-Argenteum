@@ -1,6 +1,14 @@
 # Caelum Argenteum — Audio and art
 
-Documentation version: **5.1.10** — 2026-10-09.
+Documentation version: **5.1.11** — 2026-10-10.
+
+## 5.1.11 - Time-skip input validation (#156)
+
+No visual/audio assets or attributions changed. assets/validation_5111 contains
+isolated native fixture sources, logs and hashes. The original author save,
+packaged fixtures, engine and IWAD remain local under build or their original
+locations; none is distributed. The unrelated author-owned art deletion remains
+excluded from the patch.
 
 ## 5.1.10 — Physics validation assets (#154)
 

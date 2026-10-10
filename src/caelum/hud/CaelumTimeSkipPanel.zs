@@ -1,22 +1,27 @@
 class CaelumTimeSkipPanel : Object
 {
     static ui bool Input(InputEvent e,CaelumPlayer user)
+    { return Key(e.Type,e.KeyScan,e.KeyChar,e.KeyString,user); }
+
+    static ui bool Key(int type,int scan,int character,String key,CaelumPlayer user)
     {
         let skip=CaelumTimeSkipState(user.FindInventory("CaelumTimeSkipState"));
         if(skip==null || !skip.Open || menuactive!=0)return false;
-        if(e.Type!=InputEvent.Type_KeyDown || e.KeyScan==InputEvent.Key_Grave
-            || e.KeyScan==InputEvent.Key_Escape || e.KeyScan==InputEvent.Key_Pad_Start)return false;
-        if(e.KeyString~=="q" || e.KeyScan==InputEvent.Key_Tab || e.KeyScan==InputEvent.Key_Pad_B)
+        if(type!=InputEvent.Type_KeyDown || scan==InputEvent.Key_Grave
+            || scan==InputEvent.Key_Escape || scan==InputEvent.Key_Pad_Start)return false;
+        // En la entrada nativa KeyString contiene el scan, no la letra ASCII.
+        // Igual que en el Diario, Q/R se resuelven también mediante KeyChar.
+        if(character==113 || character==81 || key~=="q" || scan==InputEvent.Key_Tab || scan==InputEvent.Key_Pad_B)
             EventHandler.SendNetworkEvent("ca_skip_cancel");
         else if(!skip.Active && !skip.ConfirmPending)
         {
-            if(e.KeyScan==InputEvent.Key_Enter || e.KeyScan==InputEvent.Key_Pad_A)
+            if(scan==InputEvent.Key_Enter || scan==InputEvent.Key_Pad_A)
                 EventHandler.SendNetworkEvent("ca_skip_start");
-            else if(e.KeyScan==InputEvent.Key_LeftArrow || e.KeyScan==InputEvent.Key_Pad_DPad_Left)EventHandler.SendNetworkEvent("ca_skip_edit",-1,0);
-            else if(e.KeyScan==InputEvent.Key_RightArrow || e.KeyScan==InputEvent.Key_Pad_DPad_Right)EventHandler.SendNetworkEvent("ca_skip_edit",1,0);
-            else if(e.KeyScan==InputEvent.Key_UpArrow || e.KeyScan==InputEvent.Key_Pad_DPad_Up)EventHandler.SendNetworkEvent("ca_skip_edit",0,1);
-            else if(e.KeyScan==InputEvent.Key_DownArrow || e.KeyScan==InputEvent.Key_Pad_DPad_Down)EventHandler.SendNetworkEvent("ca_skip_edit",0,-1);
-            else if(e.KeyString~=="r")EventHandler.SendNetworkEvent("ca_skip_forecast");
+            else if(scan==InputEvent.Key_LeftArrow || scan==InputEvent.Key_Pad_DPad_Left)EventHandler.SendNetworkEvent("ca_skip_edit",-1,0);
+            else if(scan==InputEvent.Key_RightArrow || scan==InputEvent.Key_Pad_DPad_Right)EventHandler.SendNetworkEvent("ca_skip_edit",1,0);
+            else if(scan==InputEvent.Key_UpArrow || scan==InputEvent.Key_Pad_DPad_Up)EventHandler.SendNetworkEvent("ca_skip_edit",0,1);
+            else if(scan==InputEvent.Key_DownArrow || scan==InputEvent.Key_Pad_DPad_Down)EventHandler.SendNetworkEvent("ca_skip_edit",0,-1);
+            else if(character==114 || character==82 || key~=="r")EventHandler.SendNetworkEvent("ca_skip_forecast");
         }
         return true;
     }

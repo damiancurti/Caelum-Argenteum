@@ -4,6 +4,31 @@ Status: integrated engineering register (issue #22, patch 4.36.1b).
 Prepared: 2026-09-23. Inherits the project's release after integration.
 Inspected baseline: `1dc390576fa330d37ff543526fc7e69a397fc28f` (PR #7).
 
+## CA-KP-068 - Read letter keys from KeyChar in native InputEvent
+
+Status/evidence: CODE-VERIFIED / ENGINE-VERIFIED, #156 / 5.1.11, 2026-10-10.
+Baseline: fe5ba743; GZDoom 4.14.2 Windows/Vulkan. Scope: time-skip Q/R.
+
+Native FInputEvent copies ev.data1 to KeyScan and KeyString, but ev.data2 to
+KeyChar. On Windows Q is scan 16 / character 113 and R is scan 19 / character
+114. Comparing KeyString alone to "q" or "r" therefore misses those letter
+presses. Use KeyChar (including uppercase where appropriate); retain scan-code
+checks for Enter, arrows, Tab and controllers. UiEvent uses a different mapping.
+Do not assume InputEvent.KeyString is the same textual field as UiEvent.KeyString.
+
+The author's craft-tiempo checkpoint had finished its task and selected a past
+time. Its Enter warning was valid, independently of broken Q. Physical Tab closed
+that baseline panel and logged ca_skip_cancel, confirmed by the author on
+2026-10-10. Automated Windows presses delivered no reliable events in this run;
+that absence alone was not proof that every panel control was broken.
+
+Regression: native production-dispatch checks with nontextual/empty KeyString
+must cover Q/R, completed/pending/active cancellation, progress retention, past
+rejection, future execution and key release propagation. See validation_5111 for
+21 passing dispatch/state checks, two reload checks, hashes and qualifications.
+These in-engine callback tests are not physical-key acceptance; CA156-01 is pending.
+No save schema or balance change is necessary for this UI defect.
+
 ## CA-KP-067 - Convert effective gravity once and test native displacement
 
 Status/evidence: ENGINE-VERIFIED, #154 / 5.1.10, 2026-10-09.

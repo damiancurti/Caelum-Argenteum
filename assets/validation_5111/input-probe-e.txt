@@ -1,0 +1,401 @@
+Log started: 2026-10-10 09:52:46
+GZDoom version g4.14.2
+D_DoomInit: Static RNGseed 116 set.
+W_Init: Init WADfiles.
+adding C:/Program Files (x86)/GZDoom/gzdoom.pk3, 692 lumps
+adding C:/Program Files (x86)/GZDoom/game_support.pk3, 3308 lumps
+adding C:/Program Files (x86)/Steam/steamapps/common/ultimate doom/base/doom2/DOOM2.WAD, 2919 lumps
+adding C:/Program Files (x86)/Steam/steamapps/common/Ultimate Doom/rerelease/id24res.wad, 530 lumps
+adding C:/Program Files (x86)/GZDoom/game_widescreen_gfx.pk3, 214 lumps
+adding C:/GZDooMProjects/CaelumArgenteum/build/issue156/instrumented/caelum_argenteum_dev.pk3, 6299 lumps
+adding C:/GZDooMProjects/CaelumArgenteum/build/issue156/observer.pk3, 3 lumps
+S_Init: Setting up sound.
+I_InitSound: Initializing OpenAL
+  Opened device OpenAL Soft on G27F (NVIDIA High Definition Audio)
+  EFX enabled
+I_InitInput
+I_StartupMouse
+I_StartupKeyboard
+I_StartupXInput
+I_StartupRawPS2
+I_StartupDirectInputJoystick
+Vulkan device: NVIDIA GeForce RTX 3070 Ti
+Vulkan device type: discrete gpu
+Vulkan version: 1.4.303 (api) 576.352.0 (driver)
+Vulkan extensions: VK_KHR_16bit_storage VK_KHR_8bit_storage VK_KHR_acceleration_structure VK_KHR_bind_memory2 VK_KHR_buffer_device_address VK_KHR_calibrated_timestamps VK_KHR_compute_shader_derivatives VK_KHR_cooperative_matrix VK_KHR_copy_commands2 VK_KHR_create_renderpass2 VK_KHR_dedicated_allocation VK_KHR_deferred_host_operations VK_KHR_depth_stencil_resolve VK_KHR_descriptor_update_template VK_KHR_device_group VK_KHR_draw_indirect_count VK_KHR_driver_properties VK_KHR_dynamic_rendering VK_KHR_dynamic_rendering_local_read VK_KHR_external_fence VK_KHR_external_fence_win32 VK_KHR_external_memory VK_KHR_external_memory_win32 VK_KHR_external_semaphore VK_KHR_external_semaphore_win32 VK_KHR_format_feature_flags2 VK_KHR_fragment_shader_barycentric VK_KHR_fragment_shading_rate VK_KHR_get_memory_requirements2 VK_KHR_global_priority VK_KHR_image_format_list VK_KHR_imageless_framebuffer VK_KHR_index_type_uint8 VK_KHR_line_rasterization VK_KHR_load_store_op_none VK_KHR_maintenance1 VK_KHR_maintenance2 VK_KHR_maintenance3 VK_KHR_maintenance4 VK_KHR_maintenance5 VK_KHR_maintenance6 VK_KHR_maintenance7 VK_KHR_map_memory2 VK_KHR_multiview VK_KHR_pipeline_binary VK_KHR_pipeline_executable_properties VK_KHR_pipeline_library VK_KHR_present_id VK_KHR_present_wait VK_KHR_push_descriptor VK_KHR_ray_query VK_KHR_ray_tracing_maintenance1 VK_KHR_ray_tracing_pipeline VK_KHR_ray_tracing_position_fetch VK_KHR_relaxed_block_layout VK_KHR_sampler_mirror_clamp_to_edge VK_KHR_sampler_ycbcr_conversion VK_KHR_separate_depth_stencil_layouts VK_KHR_shader_atomic_int64 VK_KHR_shader_clock VK_KHR_shader_draw_parameters VK_KHR_shader_expect_assume VK_KHR_shader_float16_int8 VK_KHR_shader_float_controls VK_KHR_shader_float_controls2 VK_KHR_shader_integer_dot_product VK_KHR_shader_maximal_reconvergence VK_KHR_shader_non_semantic_info VK_KHR_shader_quad_control VK_KHR_shader_relaxed_extended_instruction VK_KHR_shader_subgroup_extended_types VK_KHR_shader_subgroup_rotate VK_KHR_shader_subgroup_uniform_control_flow VK_KHR_shader_terminate_invocation VK_KHR_spirv_1_4 VK_KHR_storage_buffer_storage_class VK_KHR_swapchain VK_KHR_swapchain_mutable_format VK_KHR_synchronization2 VK_KHR_timeline_semaphore VK_KHR_uniform_buffer_standard_layout VK_KHR_variable_pointers VK_KHR_vertex_attribute_divisor VK_KHR_video_decode_av1 VK_KHR_video_decode_h264 VK_KHR_video_decode_h265 VK_KHR_video_decode_queue VK_KHR_video_encode_h264 VK_KHR_video_encode_h265 VK_KHR_video_encode_quantization_map VK_KHR_video_encode_queue VK_KHR_video_maintenance1 VK_KHR_video_maintenance2 VK_KHR_video_queue VK_KHR_vulkan_memory_model VK_KHR_win32_keyed_mutex VK_KHR_workgroup_memory_explicit_layout VK_KHR_zero_initialize_workgroup_memory VK_EXT_4444_formats VK_EXT_attachment_feedback_loop_dynamic_state VK_EXT_attachment_feedback_loop_layout VK_EXT_blend_operation_advanced VK_EXT_border_color_swizzle VK_EXT_buffer_device_address VK_EXT_calibrated_timestamps VK_EXT_color_write_enable VK_EXT_conditional_rendering VK_EXT_conservative_rasterization VK_EXT_custom_border_color VK_EXT_depth_bias_control VK_EXT_depth_clamp_control VK_EXT_depth_clamp_zero_one VK_EXT_depth_clip_control VK_EXT_depth_clip_enable VK_EXT_depth_range_unrestricted VK_EXT_descriptor_buffer VK_EXT_descriptor_indexing VK_EXT_device_address_binding_report VK_EXT_device_fault VK_EXT_device_generated_commands VK_EXT_discard_rectangles VK_EXT_dynamic_rendering_unused_attachments VK_EXT_extended_dynamic_state VK_EXT_extended_dynamic_state2 VK_EXT_extended_dynamic_state3 VK_EXT_external_memory_host VK_EXT_fragment_shader_interlock VK_EXT_full_screen_exclusive VK_EXT_global_priority VK_EXT_global_priority_query VK_EXT_graphics_pipeline_library VK_EXT_hdr_metadata VK_EXT_host_image_copy VK_EXT_host_query_reset VK_EXT_image_2d_view_of_3d VK_EXT_image_robustness VK_EXT_image_sliced_view_of_3d VK_EXT_image_view_min_lod VK_EXT_index_type_uint8 VK_EXT_inline_uniform_block VK_EXT_legacy_vertex_attributes VK_EXT_line_rasterization VK_EXT_load_store_op_none VK_EXT_memory_budget VK_EXT_memory_priority VK_EXT_mesh_shader VK_EXT_multi_draw VK_EXT_mutable_descriptor_type VK_EXT_nested_command_buffer VK_EXT_non_seamless_cube_map VK_EXT_opacity_micromap VK_EXT_pageable_device_local_memory VK_EXT_pci_bus_info VK_EXT_pipeline_creation_cache_control VK_EXT_pipeline_creation_feedback VK_EXT_pipeline_library_group_handles VK_EXT_pipeline_robustness VK_EXT_post_depth_coverage VK_EXT_present_mode_fifo_latest_ready VK_EXT_primitive_topology_list_restart VK_EXT_primitives_generated_query VK_EXT_private_data VK_EXT_provoking_vertex VK_EXT_queue_family_foreign VK_EXT_robustness2 VK_EXT_sample_locations VK_EXT_sampler_filter_minmax VK_EXT_scalar_block_layout VK_EXT_separate_stencil_usage VK_EXT_shader_atomic_float VK_EXT_shader_demote_to_helper_invocation VK_EXT_shader_image_atomic_int64 VK_EXT_shader_module_identifier VK_EXT_shader_object VK_EXT_shader_replicated_composites VK_EXT_shader_subgroup_ballot VK_EXT_shader_subgroup_vote VK_EXT_shader_viewport_index_layer VK_EXT_subgroup_size_control VK_EXT_swapchain_maintenance1 VK_EXT_texel_buffer_alignment VK_EXT_tooling_info VK_EXT_transform_feedback VK_EXT_vertex_attribute_divisor VK_EXT_vertex_attribute_robustness VK_EXT_vertex_input_dynamic_state VK_EXT_ycbcr_2plane_444_formats VK_EXT_ycbcr_image_arrays VK_NV_acquire_winrt_display VK_NV_clip_space_w_scaling VK_NV_cluster_acceleration_structure VK_NV_compute_shader_derivatives VK_NV_cooperative_matrix VK_NV_cooperative_matrix2 VK_NV_cooperative_vector VK_NV_copy_memory_indirect VK_NV_corner_sampled_image VK_NV_coverage_reduction_mode VK_NV_cuda_kernel_launch VK_NV_dedicated_allocation VK_NV_dedicated_allocation_image_aliasing VK_NV_descriptor_pool_overallocation VK_NV_device_diagnostic_checkpoints VK_NV_device_diagnostics_config VK_NV_device_generated_commands VK_NV_device_generated_commands_compute VK_NV_disk_cache_utils VK_NV_external_memory VK_NV_external_memory_win32 VK_NV_fill_rectangle VK_NV_fragment_coverage_to_color VK_NV_fragment_shader_barycentric VK_NV_fragment_shading_rate_enums VK_NV_framebuffer_mixed_samples VK_NV_geometry_shader_passthrough VK_NV_inherited_viewport_scissor VK_NV_internal_nvpresent VK_NV_linear_color_attachment VK_NV_low_latency VK_NV_low_latency2 VK_NV_memory_decompression VK_NV_mesh_shader VK_NV_optical_flow VK_NV_partitioned_acceleration_structure VK_NV_present_metering VK_NV_raw_access_chains VK_NV_ray_tracing VK_NV_ray_tracing_invocation_reorder VK_NV_ray_tracing_motion_blur VK_NV_representative_fragment_test VK_NV_sample_mask_override_coverage VK_NV_scissor_exclusive VK_NV_shader_atomic_float16_vector VK_NV_shader_image_footprint VK_NV_shader_sm_builtins VK_NV_shader_subgroup_partitioned VK_NV_shading_rate_image VK_NV_viewport_array2 VK_NV_viewport_swizzle VK_NV_win32_keyed_mutex VK_NVX_binary_import VK_NVX_image_view_handle VK_NVX_multiview_per_view_attributes VK_AMD_buffer_marker VK_GOOGLE_hlsl_functionality1 VK_GOOGLE_user_type
+Max. texture size: 32768
+Max. uniform buffer range: 65536
+Min. uniform buffer offset alignment: 64
+Resolution: 1280 x 720
+I_Init: Setting up machine state.
+CPU speed: 3400 MHz
+CPU Vendor ID: AuthenticAMD
+  Name: AMD Ryzen 9 5950X 16-Core Processor 
+  Family 25 (25), Model 33, Stepping 0
+  Features: SSE2 SSE3 SSSE3 SSE4.1 SSE4.2 AVX AVX2 F16C FMA3 BMI1 BMI2 HyperThreading
+V_Init: allocate screen.
+ST_Init: Init startup screen.
+Checking cmd-line parameters...
+S_InitData: Load sound definitions.
+G_ParseMapInfo: Load map definitions.
+Texman.Init: Init texture manager.
+ParseTeamInfo: Load team definitions.
+LoadActors: Load actor definitions.
+script parsing took 1071.77 ms
+R_Init: Init Doom refresh subsystem.
+DecalLibrary: Load decals.
+M_Init: Init menus.
+P_Init: Init Playloop state.
+ParseSBarInfo: Loading custom status bar definition.
+D_CheckNetGame: Checking network game status.
+player 1 of 1 (1 nodes)
+
+----------------------------------------
+
+MAP01 - The Mansion
+
+CA156 STATE tic=35 open=1 active=0 pending=0 done=1 task=0 remaining=0.000000 target=0/8820 now=0/9147 inputUI=0 reason=CA_SKIP_FUTURE
+CA156 UI menu=0 console=0 journal=0
+CA156 UI menu=0 console=0 journal=0
+CA156 STATE tic=70 open=1 active=0 pending=0 done=1 task=0 remaining=0.000000 target=0/8820 now=0/9148 inputUI=0 reason=CA_SKIP_FUTURE
+CA156 STATE tic=105 open=1 active=0 pending=0 done=1 task=0 remaining=0.000000 target=0/8820 now=0/9150 inputUI=0 reason=CA_SKIP_FUTURE
+CA156 UI menu=0 console=0 journal=0
+CA156 UI menu=0 console=0 journal=0
+CA156 STATE tic=140 open=1 active=0 pending=0 done=1 task=0 remaining=0.000000 target=0/8820 now=0/9152 inputUI=0 reason=CA_SKIP_FUTURE
+CA156 STATE tic=175 open=1 active=0 pending=0 done=1 task=0 remaining=0.000000 target=0/8820 now=0/9154 inputUI=0 reason=CA_SKIP_FUTURE
+CA156 UI menu=0 console=0 journal=0
+CA156 STATE tic=210 open=1 active=0 pending=0 done=1 task=0 remaining=0.000000 target=0/8820 now=0/9155 inputUI=0 reason=CA_SKIP_FUTURE
+CA156 STATE tic=245 open=1 active=0 pending=0 done=1 task=0 remaining=0.000000 target=0/8820 now=0/9157 inputUI=0 reason=CA_SKIP_FUTURE
+CA156 UI menu=0 console=0 journal=0
+CA156 UI menu=0 console=0 journal=0
+CA156 STATE tic=280 open=1 active=0 pending=0 done=1 task=0 remaining=0.000000 target=0/8820 now=0/9159 inputUI=0 reason=CA_SKIP_FUTURE
+CA156 STATE tic=315 open=1 active=0 pending=0 done=1 task=0 remaining=0.000000 target=0/8820 now=0/9161 inputUI=0 reason=CA_SKIP_FUTURE
+CA156 UI menu=0 console=0 journal=0
+CA156 UI menu=0 console=0 journal=0
+CA156 STATE tic=350 open=1 active=0 pending=0 done=1 task=0 remaining=0.000000 target=0/8820 now=0/9162 inputUI=0 reason=CA_SKIP_FUTURE
+CA156 STATE tic=385 open=1 active=0 pending=0 done=1 task=0 remaining=0.000000 target=0/8820 now=0/9164 inputUI=0 reason=CA_SKIP_FUTURE
+CA156 UI menu=0 console=0 journal=0
+CA156 UI menu=0 console=0 journal=0
+CA156 STATE tic=420 open=1 active=0 pending=0 done=1 task=0 remaining=0.000000 target=0/8820 now=0/9166 inputUI=0 reason=CA_SKIP_FUTURE
+CA156 STATE tic=455 open=1 active=0 pending=0 done=1 task=0 remaining=0.000000 target=0/8820 now=0/9168 inputUI=0 reason=CA_SKIP_FUTURE
+CA156 UI menu=0 console=0 journal=0
+CA156 UI menu=0 console=0 journal=0
+CA156 STATE tic=490 open=1 active=0 pending=0 done=1 task=0 remaining=0.000000 target=0/8820 now=0/9169 inputUI=0 reason=CA_SKIP_FUTURE
+CA156 STATE tic=525 open=1 active=0 pending=0 done=1 task=0 remaining=0.000000 target=0/8820 now=0/9171 inputUI=0 reason=CA_SKIP_FUTURE
+CA156 UI menu=0 console=0 journal=0
+CA156 STATE tic=560 open=1 active=0 pending=0 done=1 task=0 remaining=0.000000 target=0/8820 now=0/9173 inputUI=0 reason=CA_SKIP_FUTURE
+CA156 STATE tic=595 open=1 active=0 pending=0 done=1 task=0 remaining=0.000000 target=0/8820 now=0/9175 inputUI=0 reason=CA_SKIP_FUTURE
+CA156 UI menu=0 console=0 journal=0
+CA156 UI menu=0 console=0 journal=0
+CA156 STATE tic=630 open=1 active=0 pending=0 done=1 task=0 remaining=0.000000 target=0/8820 now=0/9176 inputUI=0 reason=CA_SKIP_FUTURE
+CA156 STATE tic=665 open=1 active=0 pending=0 done=1 task=0 remaining=0.000000 target=0/8820 now=0/9178 inputUI=0 reason=CA_SKIP_FUTURE
+CA156 UI menu=0 console=0 journal=0
+CA156 STATE tic=700 open=1 active=0 pending=0 done=1 task=0 remaining=0.000000 target=0/8820 now=0/9180 inputUI=0 reason=CA_SKIP_FUTURE
+CA156 STATE tic=735 open=1 active=0 pending=0 done=1 task=0 remaining=0.000000 target=0/8820 now=0/9182 inputUI=0 reason=CA_SKIP_FUTURE
+CA156 UI menu=0 console=0 journal=0
+CA156 UI menu=0 console=0 journal=0
+CA156 STATE tic=770 open=1 active=0 pending=0 done=1 task=0 remaining=0.000000 target=0/8820 now=0/9183 inputUI=0 reason=CA_SKIP_FUTURE
+CA156 STATE tic=805 open=1 active=0 pending=0 done=1 task=0 remaining=0.000000 target=0/8820 now=0/9185 inputUI=0 reason=CA_SKIP_FUTURE
+CA156 UI menu=0 console=0 journal=0
+CA156 UI menu=0 console=0 journal=0
+CA156 STATE tic=840 open=1 active=0 pending=0 done=1 task=0 remaining=0.000000 target=0/8820 now=0/9187 inputUI=0 reason=CA_SKIP_FUTURE
+CA156 STATE tic=875 open=1 active=0 pending=0 done=1 task=0 remaining=0.000000 target=0/8820 now=0/9189 inputUI=0 reason=CA_SKIP_FUTURE
+CA156 UI menu=0 console=0 journal=0
+CA156 UI menu=0 console=0 journal=0
+CA156 STATE tic=910 open=1 active=0 pending=0 done=1 task=0 remaining=0.000000 target=0/8820 now=0/9190 inputUI=0 reason=CA_SKIP_FUTURE
+CA156 STATE tic=945 open=1 active=0 pending=0 done=1 task=0 remaining=0.000000 target=0/8820 now=0/9192 inputUI=0 reason=CA_SKIP_FUTURE
+CA156 UI menu=0 console=0 journal=0
+CA156 STATE tic=980 open=1 active=0 pending=0 done=1 task=0 remaining=0.000000 target=0/8820 now=0/9194 inputUI=0 reason=CA_SKIP_FUTURE
+CA156 STATE tic=1015 open=1 active=0 pending=0 done=1 task=0 remaining=0.000000 target=0/8820 now=0/9196 inputUI=0 reason=CA_SKIP_FUTURE
+CA156 UI menu=0 console=0 journal=0
+CA156 UI menu=0 console=0 journal=0
+CA156 STATE tic=1050 open=1 active=0 pending=0 done=1 task=0 remaining=0.000000 target=0/8820 now=0/9197 inputUI=0 reason=CA_SKIP_FUTURE
+CA156 STATE tic=1085 open=1 active=0 pending=0 done=1 task=0 remaining=0.000000 target=0/8820 now=0/9199 inputUI=0 reason=CA_SKIP_FUTURE
+CA156 UI menu=0 console=0 journal=0
+CA156 STATE tic=1120 open=1 active=0 pending=0 done=1 task=0 remaining=0.000000 target=0/8820 now=0/9201 inputUI=0 reason=CA_SKIP_FUTURE
+CA156 STATE tic=1155 open=1 active=0 pending=0 done=1 task=0 remaining=0.000000 target=0/8820 now=0/9203 inputUI=0 reason=CA_SKIP_FUTURE
+CA156 UI menu=0 console=0 journal=0
+CA156 UI menu=0 console=0 journal=0
+CA156 STATE tic=1190 open=1 active=0 pending=0 done=1 task=0 remaining=0.000000 target=0/8820 now=0/9204 inputUI=0 reason=CA_SKIP_FUTURE
+CA156 STATE tic=1225 open=1 active=0 pending=0 done=1 task=0 remaining=0.000000 target=0/8820 now=0/9206 inputUI=0 reason=CA_SKIP_FUTURE
+CA156 UI menu=0 console=0 journal=0
+CA156 STATE tic=1260 open=1 active=0 pending=0 done=1 task=0 remaining=0.000000 target=0/8820 now=0/9208 inputUI=0 reason=CA_SKIP_FUTURE
+CA156 STATE tic=1295 open=1 active=0 pending=0 done=1 task=0 remaining=0.000000 target=0/8820 now=0/9210 inputUI=0 reason=CA_SKIP_FUTURE
+CA156 UI menu=0 console=0 journal=0
+CA156 STATE tic=1330 open=1 active=0 pending=0 done=1 task=0 remaining=0.000000 target=0/8820 now=0/9211 inputUI=0 reason=CA_SKIP_FUTURE
+CA156 STATE tic=1365 open=1 active=0 pending=0 done=1 task=0 remaining=0.000000 target=0/8820 now=0/9213 inputUI=0 reason=CA_SKIP_FUTURE
+CA156 UI menu=0 console=0 journal=0
+CA156 STATE tic=1400 open=1 active=0 pending=0 done=1 task=0 remaining=0.000000 target=0/8820 now=0/9215 inputUI=0 reason=CA_SKIP_FUTURE
+CA156 STATE tic=1435 open=1 active=0 pending=0 done=1 task=0 remaining=0.000000 target=0/8820 now=0/9217 inputUI=0 reason=CA_SKIP_FUTURE
+CA156 UI menu=0 console=0 journal=0
+CA156 STATE tic=1470 open=1 active=0 pending=0 done=1 task=0 remaining=0.000000 target=0/8820 now=0/9218 inputUI=0 reason=CA_SKIP_FUTURE
+CA156 STATE tic=1505 open=1 active=0 pending=0 done=1 task=0 remaining=0.000000 target=0/8820 now=0/9220 inputUI=0 reason=CA_SKIP_FUTURE
+CA156 UI menu=0 console=0 journal=0
+CA156 STATE tic=1540 open=1 active=0 pending=0 done=1 task=0 remaining=0.000000 target=0/8820 now=0/9222 inputUI=0 reason=CA_SKIP_FUTURE
+CA156 STATE tic=1575 open=1 active=0 pending=0 done=1 task=0 remaining=0.000000 target=0/8820 now=0/9224 inputUI=0 reason=CA_SKIP_FUTURE
+CA156 UI menu=0 console=0 journal=0
+CA156 STATE tic=1610 open=1 active=0 pending=0 done=1 task=0 remaining=0.000000 target=0/8820 now=0/9225 inputUI=0 reason=CA_SKIP_FUTURE
+CA156 STATE tic=1645 open=1 active=0 pending=0 done=1 task=0 remaining=0.000000 target=0/8820 now=0/9227 inputUI=0 reason=CA_SKIP_FUTURE
+CA156 UI menu=0 console=0 journal=0
+CA156 UI menu=0 console=0 journal=0
+CA156 STATE tic=1680 open=1 active=0 pending=0 done=1 task=0 remaining=0.000000 target=0/8820 now=0/9229 inputUI=0 reason=CA_SKIP_FUTURE
+CA156 STATE tic=1715 open=1 active=0 pending=0 done=1 task=0 remaining=0.000000 target=0/8820 now=0/9231 inputUI=0 reason=CA_SKIP_FUTURE
+CA156 UI menu=0 console=0 journal=0
+CA156 UI menu=0 console=0 journal=0
+CA156 STATE tic=1750 open=1 active=0 pending=0 done=1 task=0 remaining=0.000000 target=0/8820 now=0/9232 inputUI=0 reason=CA_SKIP_FUTURE
+CA156 STATE tic=1785 open=1 active=0 pending=0 done=1 task=0 remaining=0.000000 target=0/8820 now=0/9234 inputUI=0 reason=CA_SKIP_FUTURE
+CA156 UI menu=0 console=0 journal=0
+CA156 UI menu=0 console=0 journal=0
+CA156 STATE tic=1820 open=1 active=0 pending=0 done=1 task=0 remaining=0.000000 target=0/8820 now=0/9236 inputUI=0 reason=CA_SKIP_FUTURE
+CA156 STATE tic=1855 open=1 active=0 pending=0 done=1 task=0 remaining=0.000000 target=0/8820 now=0/9238 inputUI=0 reason=CA_SKIP_FUTURE
+CA156 UI menu=0 console=0 journal=0
+CA156 UI menu=0 console=0 journal=0
+CA156 STATE tic=1890 open=1 active=0 pending=0 done=1 task=0 remaining=0.000000 target=0/8820 now=0/9239 inputUI=0 reason=CA_SKIP_FUTURE
+CA156 STATE tic=1925 open=1 active=0 pending=0 done=1 task=0 remaining=0.000000 target=0/8820 now=0/9241 inputUI=0 reason=CA_SKIP_FUTURE
+CA156 UI menu=0 console=0 journal=0
+CA156 UI menu=0 console=0 journal=0
+CA156 STATE tic=1960 open=1 active=0 pending=0 done=1 task=0 remaining=0.000000 target=0/8820 now=0/9243 inputUI=0 reason=CA_SKIP_FUTURE
+CA156 STATE tic=1995 open=1 active=0 pending=0 done=1 task=0 remaining=0.000000 target=0/8820 now=0/9245 inputUI=0 reason=CA_SKIP_FUTURE
+CA156 UI menu=0 console=0 journal=0
+CA156 UI menu=0 console=0 journal=0
+CA156 STATE tic=2030 open=1 active=0 pending=0 done=1 task=0 remaining=0.000000 target=0/8820 now=0/9246 inputUI=0 reason=CA_SKIP_FUTURE
+CA156 STATE tic=2065 open=1 active=0 pending=0 done=1 task=0 remaining=0.000000 target=0/8820 now=0/9248 inputUI=0 reason=CA_SKIP_FUTURE
+CA156 UI menu=0 console=0 journal=0
+CA156 UI menu=0 console=0 journal=0
+CA156 STATE tic=2100 open=1 active=0 pending=0 done=1 task=0 remaining=0.000000 target=0/8820 now=0/9250 inputUI=0 reason=CA_SKIP_FUTURE
+CA156 STATE tic=2135 open=1 active=0 pending=0 done=1 task=0 remaining=0.000000 target=0/8820 now=0/9252 inputUI=0 reason=CA_SKIP_FUTURE
+CA156 UI menu=0 console=0 journal=0
+CA156 UI menu=0 console=0 journal=0
+CA156 STATE tic=2170 open=1 active=0 pending=0 done=1 task=0 remaining=0.000000 target=0/8820 now=0/9253 inputUI=0 reason=CA_SKIP_FUTURE
+CA156 STATE tic=2205 open=1 active=0 pending=0 done=1 task=0 remaining=0.000000 target=0/8820 now=0/9255 inputUI=0 reason=CA_SKIP_FUTURE
+CA156 UI menu=0 console=0 journal=0
+CA156 UI menu=0 console=0 journal=0
+CA156 STATE tic=2240 open=1 active=0 pending=0 done=1 task=0 remaining=0.000000 target=0/8820 now=0/9257 inputUI=0 reason=CA_SKIP_FUTURE
+CA156 STATE tic=2275 open=1 active=0 pending=0 done=1 task=0 remaining=0.000000 target=0/8820 now=0/9259 inputUI=0 reason=CA_SKIP_FUTURE
+CA156 UI menu=0 console=0 journal=0
+CA156 UI menu=0 console=0 journal=0
+CA156 STATE tic=2310 open=1 active=0 pending=0 done=1 task=0 remaining=0.000000 target=0/8820 now=0/9260 inputUI=0 reason=CA_SKIP_FUTURE
+CA156 STATE tic=2345 open=1 active=0 pending=0 done=1 task=0 remaining=0.000000 target=0/8820 now=0/9262 inputUI=0 reason=CA_SKIP_FUTURE
+CA156 UI menu=0 console=0 journal=0
+CA156 UI menu=0 console=0 journal=0
+CA156 STATE tic=2380 open=1 active=0 pending=0 done=1 task=0 remaining=0.000000 target=0/8820 now=0/9264 inputUI=0 reason=CA_SKIP_FUTURE
+CA156 STATE tic=2415 open=1 active=0 pending=0 done=1 task=0 remaining=0.000000 target=0/8820 now=0/9266 inputUI=0 reason=CA_SKIP_FUTURE
+CA156 UI menu=0 console=0 journal=0
+CA156 STATE tic=2450 open=1 active=0 pending=0 done=1 task=0 remaining=0.000000 target=0/8820 now=0/9267 inputUI=0 reason=CA_SKIP_FUTURE
+CA156 STATE tic=2485 open=1 active=0 pending=0 done=1 task=0 remaining=0.000000 target=0/8820 now=0/9269 inputUI=0 reason=CA_SKIP_FUTURE
+CA156 UI menu=0 console=0 journal=0
+CA156 UI menu=0 console=0 journal=0
+CA156 STATE tic=2520 open=1 active=0 pending=0 done=1 task=0 remaining=0.000000 target=0/8820 now=0/9271 inputUI=0 reason=CA_SKIP_FUTURE
+CA156 STATE tic=2555 open=1 active=0 pending=0 done=1 task=0 remaining=0.000000 target=0/8820 now=0/9273 inputUI=0 reason=CA_SKIP_FUTURE
+CA156 UI menu=0 console=0 journal=0
+CA156 UI menu=0 console=0 journal=0
+CA156 STATE tic=2590 open=1 active=0 pending=0 done=1 task=0 remaining=0.000000 target=0/8820 now=0/9274 inputUI=0 reason=CA_SKIP_FUTURE
+CA156 STATE tic=2625 open=1 active=0 pending=0 done=1 task=0 remaining=0.000000 target=0/8820 now=0/9276 inputUI=0 reason=CA_SKIP_FUTURE
+CA156 UI menu=0 console=0 journal=0
+CA156 UI menu=0 console=0 journal=0
+CA156 STATE tic=2660 open=1 active=0 pending=0 done=1 task=0 remaining=0.000000 target=0/8820 now=0/9278 inputUI=0 reason=CA_SKIP_FUTURE
+CA156 STATE tic=2695 open=1 active=0 pending=0 done=1 task=0 remaining=0.000000 target=0/8820 now=0/9280 inputUI=0 reason=CA_SKIP_FUTURE
+CA156 UI menu=0 console=0 journal=0
+CA156 UI menu=0 console=0 journal=0
+CA156 STATE tic=2730 open=1 active=0 pending=0 done=1 task=0 remaining=0.000000 target=0/8820 now=0/9281 inputUI=0 reason=CA_SKIP_FUTURE
+CA156 STATE tic=2765 open=1 active=0 pending=0 done=1 task=0 remaining=0.000000 target=0/8820 now=0/9283 inputUI=0 reason=CA_SKIP_FUTURE
+CA156 UI menu=0 console=0 journal=0
+CA156 STATE tic=2800 open=1 active=0 pending=0 done=1 task=0 remaining=0.000000 target=0/8820 now=0/9285 inputUI=0 reason=CA_SKIP_FUTURE
+CA156 STATE tic=2835 open=1 active=0 pending=0 done=1 task=0 remaining=0.000000 target=0/8820 now=0/9287 inputUI=0 reason=CA_SKIP_FUTURE
+CA156 UI menu=0 console=0 journal=0
+CA156 STATE tic=2870 open=1 active=0 pending=0 done=1 task=0 remaining=0.000000 target=0/8820 now=0/9288 inputUI=0 reason=CA_SKIP_FUTURE
+CA156 STATE tic=2905 open=1 active=0 pending=0 done=1 task=0 remaining=0.000000 target=0/8820 now=0/9290 inputUI=0 reason=CA_SKIP_FUTURE
+CA156 UI menu=0 console=0 journal=0
+CA156 STATE tic=2940 open=1 active=0 pending=0 done=1 task=0 remaining=0.000000 target=0/8820 now=0/9292 inputUI=0 reason=CA_SKIP_FUTURE
+CA156 STATE tic=2975 open=1 active=0 pending=0 done=1 task=0 remaining=0.000000 target=0/8820 now=0/9294 inputUI=0 reason=CA_SKIP_FUTURE
+CA156 UI menu=0 console=0 journal=0
+CA156 STATE tic=3010 open=1 active=0 pending=0 done=1 task=0 remaining=0.000000 target=0/8820 now=0/9295 inputUI=0 reason=CA_SKIP_FUTURE
+CA156 STATE tic=3045 open=1 active=0 pending=0 done=1 task=0 remaining=0.000000 target=0/8820 now=0/9297 inputUI=0 reason=CA_SKIP_FUTURE
+CA156 UI menu=0 console=0 journal=0
+CA156 UI menu=0 console=0 journal=0
+CA156 STATE tic=3080 open=1 active=0 pending=0 done=1 task=0 remaining=0.000000 target=0/8820 now=0/9299 inputUI=0 reason=CA_SKIP_FUTURE
+CA156 STATE tic=3115 open=1 active=0 pending=0 done=1 task=0 remaining=0.000000 target=0/8820 now=0/9301 inputUI=0 reason=CA_SKIP_FUTURE
+CA156 UI menu=0 console=0 journal=0
+CA156 UI menu=0 console=0 journal=0
+CA156 STATE tic=3150 open=1 active=0 pending=0 done=1 task=0 remaining=0.000000 target=0/8820 now=0/9302 inputUI=0 reason=CA_SKIP_FUTURE
+CA156 STATE tic=3185 open=1 active=0 pending=0 done=1 task=0 remaining=0.000000 target=0/8820 now=0/9304 inputUI=0 reason=CA_SKIP_FUTURE
+CA156 UI menu=0 console=0 journal=0
+CA156 STATE tic=3220 open=1 active=0 pending=0 done=1 task=0 remaining=0.000000 target=0/8820 now=0/9306 inputUI=0 reason=CA_SKIP_FUTURE
+CA156 STATE tic=3255 open=1 active=0 pending=0 done=1 task=0 remaining=0.000000 target=0/8820 now=0/9308 inputUI=0 reason=CA_SKIP_FUTURE
+CA156 UI menu=0 console=0 journal=0
+CA156 STATE tic=3290 open=1 active=0 pending=0 done=1 task=0 remaining=0.000000 target=0/8820 now=0/9309 inputUI=0 reason=CA_SKIP_FUTURE
+CA156 STATE tic=3325 open=1 active=0 pending=0 done=1 task=0 remaining=0.000000 target=0/8820 now=0/9311 inputUI=0 reason=CA_SKIP_FUTURE
+CA156 UI menu=0 console=0 journal=0
+CA156 STATE tic=3360 open=1 active=0 pending=0 done=1 task=0 remaining=0.000000 target=0/8820 now=0/9313 inputUI=0 reason=CA_SKIP_FUTURE
+CA156 STATE tic=3395 open=1 active=0 pending=0 done=1 task=0 remaining=0.000000 target=0/8820 now=0/9315 inputUI=0 reason=CA_SKIP_FUTURE
+CA156 UI menu=0 console=0 journal=0
+CA156 STATE tic=3430 open=1 active=0 pending=0 done=1 task=0 remaining=0.000000 target=0/8820 now=0/9316 inputUI=0 reason=CA_SKIP_FUTURE
+CA156 STATE tic=3465 open=1 active=0 pending=0 done=1 task=0 remaining=0.000000 target=0/8820 now=0/9318 inputUI=0 reason=CA_SKIP_FUTURE
+CA156 UI menu=0 console=0 journal=0
+CA156 STATE tic=3500 open=1 active=0 pending=0 done=1 task=0 remaining=0.000000 target=0/8820 now=0/9320 inputUI=0 reason=CA_SKIP_FUTURE
+CA156 STATE tic=3535 open=1 active=0 pending=0 done=1 task=0 remaining=0.000000 target=0/8820 now=0/9322 inputUI=0 reason=CA_SKIP_FUTURE
+CA156 UI menu=0 console=0 journal=0
+CA156 STATE tic=3570 open=1 active=0 pending=0 done=1 task=0 remaining=0.000000 target=0/8820 now=0/9323 inputUI=0 reason=CA_SKIP_FUTURE
+CA156 STATE tic=3605 open=1 active=0 pending=0 done=1 task=0 remaining=0.000000 target=0/8820 now=0/9325 inputUI=0 reason=CA_SKIP_FUTURE
+CA156 UI menu=0 console=0 journal=0
+CA156 STATE tic=3640 open=1 active=0 pending=0 done=1 task=0 remaining=0.000000 target=0/8820 now=0/9327 inputUI=0 reason=CA_SKIP_FUTURE
+CA156 STATE tic=3675 open=1 active=0 pending=0 done=1 task=0 remaining=0.000000 target=0/8820 now=0/9329 inputUI=0 reason=CA_SKIP_FUTURE
+CA156 UI menu=0 console=0 journal=0
+CA156 STATE tic=3710 open=1 active=0 pending=0 done=1 task=0 remaining=0.000000 target=0/8820 now=0/9330 inputUI=0 reason=CA_SKIP_FUTURE
+CA156 STATE tic=3745 open=1 active=0 pending=0 done=1 task=0 remaining=0.000000 target=0/8820 now=0/9332 inputUI=0 reason=CA_SKIP_FUTURE
+CA156 UI menu=0 console=0 journal=0
+CA156 STATE tic=3780 open=1 active=0 pending=0 done=1 task=0 remaining=0.000000 target=0/8820 now=0/9334 inputUI=0 reason=CA_SKIP_FUTURE
+CA156 STATE tic=3815 open=1 active=0 pending=0 done=1 task=0 remaining=0.000000 target=0/8820 now=0/9336 inputUI=0 reason=CA_SKIP_FUTURE
+CA156 UI menu=0 console=0 journal=0
+CA156 UI menu=0 console=0 journal=0
+CA156 STATE tic=3850 open=1 active=0 pending=0 done=1 task=0 remaining=0.000000 target=0/8820 now=0/9337 inputUI=0 reason=CA_SKIP_FUTURE
+CA156 STATE tic=3885 open=1 active=0 pending=0 done=1 task=0 remaining=0.000000 target=0/8820 now=0/9339 inputUI=0 reason=CA_SKIP_FUTURE
+CA156 UI menu=0 console=0 journal=0
+CA156 UI menu=0 console=0 journal=0
+CA156 STATE tic=3920 open=1 active=0 pending=0 done=1 task=0 remaining=0.000000 target=0/8820 now=0/9341 inputUI=0 reason=CA_SKIP_FUTURE
+CA156 STATE tic=3955 open=1 active=0 pending=0 done=1 task=0 remaining=0.000000 target=0/8820 now=0/9343 inputUI=0 reason=CA_SKIP_FUTURE
+CA156 UI menu=0 console=0 journal=0
+CA156 UI menu=0 console=0 journal=0
+CA156 STATE tic=3990 open=1 active=0 pending=0 done=1 task=0 remaining=0.000000 target=0/8820 now=0/9344 inputUI=0 reason=CA_SKIP_FUTURE
+CA156 STATE tic=4025 open=1 active=0 pending=0 done=1 task=0 remaining=0.000000 target=0/8820 now=0/9346 inputUI=0 reason=CA_SKIP_FUTURE
+CA156 UI menu=0 console=0 journal=0
+CA156 UI menu=0 console=0 journal=0
+CA156 STATE tic=4060 open=1 active=0 pending=0 done=1 task=0 remaining=0.000000 target=0/8820 now=0/9348 inputUI=0 reason=CA_SKIP_FUTURE
+CA156 STATE tic=4095 open=1 active=0 pending=0 done=1 task=0 remaining=0.000000 target=0/8820 now=0/9350 inputUI=0 reason=CA_SKIP_FUTURE
+CA156 UI menu=0 console=0 journal=0
+CA156 UI menu=0 console=0 journal=0
+CA156 STATE tic=4130 open=1 active=0 pending=0 done=1 task=0 remaining=0.000000 target=0/8820 now=0/9351 inputUI=0 reason=CA_SKIP_FUTURE
+CA156 JOURNAL RAW scan=56 char=0 string=8 menu=0
+CA156 STATE tic=4165 open=1 active=0 pending=0 done=1 task=0 remaining=0.000000 target=0/8820 now=0/9353 inputUI=0 reason=CA_SKIP_FUTURE
+CA156 RAW type=2 scan=56 char=0 string=8
+CA156 UI menu=0 console=0 journal=0
+CA156 UI menu=0 console=0 journal=0
+CA156 STATE tic=4200 open=1 active=0 pending=0 done=1 task=0 remaining=0.000000 target=0/8820 now=0/9355 inputUI=0 reason=CA_SKIP_FUTURE
+CA156 STATE tic=4235 open=1 active=0 pending=0 done=1 task=0 remaining=0.000000 target=0/8820 now=0/9357 inputUI=0 reason=CA_SKIP_FUTURE
+CA156 UI menu=0 console=0 journal=0
+CA156 UI menu=0 console=0 journal=0
+CA156 STATE tic=4270 open=1 active=0 pending=0 done=1 task=0 remaining=0.000000 target=0/8820 now=0/9358 inputUI=0 reason=CA_SKIP_FUTURE
+CA156 STATE tic=4305 open=1 active=0 pending=0 done=1 task=0 remaining=0.000000 target=0/8820 now=0/9360 inputUI=0 reason=CA_SKIP_FUTURE
+CA156 UI menu=0 console=0 journal=0
+CA156 UI menu=0 console=0 journal=0
+CA156 STATE tic=4340 open=1 active=0 pending=0 done=1 task=0 remaining=0.000000 target=0/8820 now=0/9362 inputUI=0 reason=CA_SKIP_FUTURE
+CA156 STATE tic=4375 open=1 active=0 pending=0 done=1 task=0 remaining=0.000000 target=0/8820 now=0/9364 inputUI=0 reason=CA_SKIP_FUTURE
+CA156 UI menu=0 console=0 journal=0
+CA156 UI menu=0 console=0 journal=0
+CA156 STATE tic=4410 open=1 active=0 pending=0 done=1 task=0 remaining=0.000000 target=0/8820 now=0/9365 inputUI=0 reason=CA_SKIP_FUTURE
+CA156 STATE tic=4445 open=1 active=0 pending=0 done=1 task=0 remaining=0.000000 target=0/8820 now=0/9367 inputUI=0 reason=CA_SKIP_FUTURE
+CA156 UI menu=0 console=0 journal=0
+CA156 STATE tic=4480 open=1 active=0 pending=0 done=1 task=0 remaining=0.000000 target=0/8820 now=0/9369 inputUI=0 reason=CA_SKIP_FUTURE
+CA156 STATE tic=4515 open=1 active=0 pending=0 done=1 task=0 remaining=0.000000 target=0/8820 now=0/9371 inputUI=0 reason=CA_SKIP_FUTURE
+CA156 UI menu=0 console=0 journal=0
+CA156 STATE tic=4550 open=1 active=0 pending=0 done=1 task=0 remaining=0.000000 target=0/8820 now=0/9372 inputUI=0 reason=CA_SKIP_FUTURE
+CA156 STATE tic=4585 open=1 active=0 pending=0 done=1 task=0 remaining=0.000000 target=0/8820 now=0/9374 inputUI=0 reason=CA_SKIP_FUTURE
+CA156 UI menu=0 console=0 journal=0
+CA156 UI menu=0 console=0 journal=0
+CA156 JOURNAL RAW scan=15 char=9 string= menu=0
+CA156 NET ca_skip_cancel
+CA156 RAW type=2 scan=15 char=9 string=
+CA156 STATE tic=4620 open=0 active=0 pending=0 done=1 task=0 remaining=0.000000 target=0/8820 now=0/9376 inputUI=0 reason=CA_SKIP_CANCELLED
+CA156 STATE tic=4655 open=0 active=0 pending=0 done=1 task=0 remaining=0.000000 target=0/8820 now=0/9378 inputUI=0 reason=CA_SKIP_CANCELLED
+CA156 UI menu=0 console=0 journal=0
+CA156 UI menu=0 console=0 journal=0
+CA156 STATE tic=4690 open=0 active=0 pending=0 done=1 task=0 remaining=0.000000 target=0/8820 now=0/9379 inputUI=0 reason=CA_SKIP_CANCELLED
+CA156 JOURNAL RAW scan=56 char=0 string=8 menu=0
+CA156 RAW type=1 scan=56 char=0 string=8
+CA156 RAW type=2 scan=56 char=0 string=8
+CA156 STATE tic=4725 open=0 active=0 pending=0 done=1 task=0 remaining=0.000000 target=0/8820 now=0/9381 inputUI=0 reason=CA_SKIP_CANCELLED
+CA156 UI menu=0 console=0 journal=0
+CA156 UI menu=0 console=0 journal=0
+CA156 STATE tic=4760 open=0 active=0 pending=0 done=1 task=0 remaining=0.000000 target=0/8820 now=0/9383 inputUI=0 reason=CA_SKIP_CANCELLED
+CA156 STATE tic=4795 open=0 active=0 pending=0 done=1 task=0 remaining=0.000000 target=0/8820 now=0/9385 inputUI=0 reason=CA_SKIP_CANCELLED
+CA156 UI menu=0 console=0 journal=0
+CA156 UI menu=0 console=0 journal=0
+CA156 STATE tic=4830 open=0 active=0 pending=0 done=1 task=0 remaining=0.000000 target=0/8820 now=0/9386 inputUI=0 reason=CA_SKIP_CANCELLED
+CA156 STATE tic=4865 open=0 active=0 pending=0 done=1 task=0 remaining=0.000000 target=0/8820 now=0/9388 inputUI=0 reason=CA_SKIP_CANCELLED
+CA156 UI menu=0 console=0 journal=0
+CA156 UI menu=0 console=0 journal=0
+CA156 STATE tic=4900 open=0 active=0 pending=0 done=1 task=0 remaining=0.000000 target=0/8820 now=0/9390 inputUI=0 reason=CA_SKIP_CANCELLED
+CA156 STATE tic=4935 open=0 active=0 pending=0 done=1 task=0 remaining=0.000000 target=0/8820 now=0/9392 inputUI=0 reason=CA_SKIP_CANCELLED
+CA156 UI menu=0 console=0 journal=0
+CA156 UI menu=0 console=0 journal=0
+CA156 STATE tic=4970 open=0 active=0 pending=0 done=1 task=0 remaining=0.000000 target=0/8820 now=0/9393 inputUI=0 reason=CA_SKIP_CANCELLED
+CA156 STATE tic=5005 open=0 active=0 pending=0 done=1 task=0 remaining=0.000000 target=0/8820 now=0/9395 inputUI=0 reason=CA_SKIP_CANCELLED
+CA156 UI menu=0 console=0 journal=0
+CA156 UI menu=0 console=0 journal=0
+CA156 STATE tic=5040 open=0 active=0 pending=0 done=1 task=0 remaining=0.000000 target=0/8820 now=0/9397 inputUI=0 reason=CA_SKIP_CANCELLED
+CA156 STATE tic=5075 open=0 active=0 pending=0 done=1 task=0 remaining=0.000000 target=0/8820 now=0/9399 inputUI=0 reason=CA_SKIP_CANCELLED
+CA156 UI menu=0 console=0 journal=0
+CA156 UI menu=0 console=0 journal=0
+CA156 STATE tic=5110 open=0 active=0 pending=0 done=1 task=0 remaining=0.000000 target=0/8820 now=0/9400 inputUI=0 reason=CA_SKIP_CANCELLED
+CA156 STATE tic=5145 open=0 active=0 pending=0 done=1 task=0 remaining=0.000000 target=0/8820 now=0/9402 inputUI=0 reason=CA_SKIP_CANCELLED
+CA156 UI menu=0 console=0 journal=0
+CA156 STATE tic=5180 open=0 active=0 pending=0 done=1 task=0 remaining=0.000000 target=0/8820 now=0/9404 inputUI=0 reason=CA_SKIP_CANCELLED
+CA156 STATE tic=5215 open=0 active=0 pending=0 done=1 task=0 remaining=0.000000 target=0/8820 now=0/9406 inputUI=0 reason=CA_SKIP_CANCELLED
+CA156 UI menu=0 console=0 journal=0
+CA156 UI menu=0 console=0 journal=0
+CA156 STATE tic=5250 open=0 active=0 pending=0 done=1 task=0 remaining=0.000000 target=0/8820 now=0/9407 inputUI=0 reason=CA_SKIP_CANCELLED
+CA156 STATE tic=5285 open=0 active=0 pending=0 done=1 task=0 remaining=0.000000 target=0/8820 now=0/9409 inputUI=0 reason=CA_SKIP_CANCELLED
+CA156 UI menu=0 console=0 journal=0
+CA156 UI menu=0 console=0 journal=0
+CA156 STATE tic=5320 open=0 active=0 pending=0 done=1 task=0 remaining=0.000000 target=0/8820 now=0/9411 inputUI=0 reason=CA_SKIP_CANCELLED
+CA156 STATE tic=5355 open=0 active=0 pending=0 done=1 task=0 remaining=0.000000 target=0/8820 now=0/9413 inputUI=0 reason=CA_SKIP_CANCELLED
+CA156 UI menu=0 console=0 journal=0
+CA156 STATE tic=5390 open=0 active=0 pending=0 done=1 task=0 remaining=0.000000 target=0/8820 now=0/9414 inputUI=0 reason=CA_SKIP_CANCELLED
+CA156 STATE tic=5425 open=0 active=0 pending=0 done=1 task=0 remaining=0.000000 target=0/8820 now=0/9416 inputUI=0 reason=CA_SKIP_CANCELLED
+CA156 UI menu=0 console=0 journal=0
+CA156 UI menu=0 console=0 journal=0
+CA156 STATE tic=5460 open=0 active=0 pending=0 done=1 task=0 remaining=0.000000 target=0/8820 now=0/9418 inputUI=0 reason=CA_SKIP_CANCELLED
+CA156 STATE tic=5495 open=0 active=0 pending=0 done=1 task=0 remaining=0.000000 target=0/8820 now=0/9420 inputUI=0 reason=CA_SKIP_CANCELLED
+CA156 UI menu=0 console=0 journal=0
+CA156 UI menu=0 console=0 journal=0
+CA156 STATE tic=5530 open=0 active=0 pending=0 done=1 task=0 remaining=0.000000 target=0/8820 now=0/9421 inputUI=0 reason=CA_SKIP_CANCELLED
+CA156 STATE tic=5565 open=0 active=0 pending=0 done=1 task=0 remaining=0.000000 target=0/8820 now=0/9423 inputUI=0 reason=CA_SKIP_CANCELLED
+CA156 UI menu=0 console=0 journal=0
+CA156 UI menu=0 console=0 journal=0
+CA156 STATE tic=5600 open=0 active=0 pending=0 done=1 task=0 remaining=0.000000 target=0/8820 now=0/9425 inputUI=0 reason=CA_SKIP_CANCELLED
+CA156 STATE tic=5635 open=0 active=0 pending=0 done=1 task=0 remaining=0.000000 target=0/8820 now=0/9427 inputUI=0 reason=CA_SKIP_CANCELLED
+CA156 UI menu=0 console=0 journal=0
+CA156 UI menu=0 console=0 journal=0
+CA156 STATE tic=5670 open=0 active=0 pending=0 done=1 task=0 remaining=0.000000 target=0/8820 now=0/9428 inputUI=0 reason=CA_SKIP_CANCELLED
+CA156 STATE tic=5705 open=0 active=0 pending=0 done=1 task=0 remaining=0.000000 target=0/8820 now=0/9430 inputUI=0 reason=CA_SKIP_CANCELLED
+CA156 UI menu=0 console=0 journal=0
+CA156 UI menu=0 console=0 journal=0
+CA156 STATE tic=5740 open=0 active=0 pending=0 done=1 task=0 remaining=0.000000 target=0/8820 now=0/9432 inputUI=0 reason=CA_SKIP_CANCELLED
+CA156 STATE tic=5775 open=0 active=0 pending=0 done=1 task=0 remaining=0.000000 target=0/8820 now=0/9434 inputUI=0 reason=CA_SKIP_CANCELLED
+CA156 UI menu=0 console=0 journal=0
+CA156 UI menu=0 console=0 journal=0
+CA156 STATE tic=5810 open=0 active=0 pending=0 done=1 task=0 remaining=0.000000 target=0/8820 now=0/9435 inputUI=0 reason=CA_SKIP_CANCELLED
+CA156 STATE tic=5845 open=0 active=0 pending=0 done=1 task=0 remaining=0.000000 target=0/8820 now=0/9437 inputUI=0 reason=CA_SKIP_CANCELLED
+CA156 UI menu=0 console=0 journal=0
+CA156 UI menu=0 console=0 journal=0
+CA156 STATE tic=5880 open=0 active=0 pending=0 done=1 task=0 remaining=0.000000 target=0/8820 now=0/9439 inputUI=0 reason=CA_SKIP_CANCELLED
+CA156 STATE tic=5915 open=0 active=0 pending=0 done=1 task=0 remaining=0.000000 target=0/8820 now=0/9441 inputUI=0 reason=CA_SKIP_CANCELLED
+CA156 UI menu=0 console=0 journal=0
+CA156 STATE tic=5950 open=0 active=0 pending=0 done=1 task=0 remaining=0.000000 target=0/8820 now=0/9442 inputUI=0 reason=CA_SKIP_CANCELLED
+CA156 STATE tic=5985 open=0 active=0 pending=0 done=1 task=0 remaining=0.000000 target=0/8820 now=0/9444 inputUI=0 reason=CA_SKIP_CANCELLED
+CA156 UI menu=0 console=0 journal=0
+CA156 UI menu=0 console=0 journal=0
+CA156 STATE tic=6020 open=0 active=0 pending=0 done=1 task=0 remaining=0.000000 target=0/8820 now=0/9446 inputUI=0 reason=CA_SKIP_CANCELLED
+CA156 STATE tic=6055 open=0 active=0 pending=0 done=1 task=0 remaining=0.000000 target=0/8820 now=0/9448 inputUI=0 reason=CA_SKIP_CANCELLED
+CA156 UI menu=0 console=0 journal=0
+CA156 UI menu=0 console=0 journal=0
+CA156 STATE tic=6090 open=0 active=0 pending=0 done=1 task=0 remaining=0.000000 target=0/8820 now=0/9449 inputUI=0 reason=CA_SKIP_CANCELLED
+CA156 STATE tic=6125 open=0 active=0 pending=0 done=1 task=0 remaining=0.000000 target=0/8820 now=0/9451 inputUI=0 reason=CA_SKIP_CANCELLED
+CA156 UI menu=0 console=0 journal=0
+CA156 UI menu=0 console=0 journal=0
+CA156 STATE tic=6160 open=0 active=0 pending=0 done=1 task=0 remaining=0.000000 target=0/8820 now=0/9453 inputUI=0 reason=CA_SKIP_CANCELLED
+CA156 STATE tic=6195 open=0 active=0 pending=0 done=1 task=0 remaining=0.000000 target=0/8820 now=0/9455 inputUI=0 reason=CA_SKIP_CANCELLED
+CA156 UI menu=0 console=0 journal=0
+CA156 UI menu=0 console=0 journal=0
+CA156 STATE tic=6230 open=0 active=0 pending=0 done=1 task=0 remaining=0.000000 target=0/8820 now=0/9456 inputUI=0 reason=CA_SKIP_CANCELLED
+CA156 STATE tic=6265 open=0 active=0 pending=0 done=1 task=0 remaining=0.000000 target=0/8820 now=0/9458 inputUI=0 reason=CA_SKIP_CANCELLED
+CA156 UI menu=0 console=0 journal=0
+CA156 UI menu=0 console=0 journal=0
+CA156 STATE tic=6300 open=0 active=0 pending=0 done=1 task=0 remaining=0.000000 target=0/8820 now=0/9460 inputUI=0 reason=CA_SKIP_CANCELLED
+CA156 STATE tic=6335 open=0 active=0 pending=0 done=1 task=0 remaining=0.000000 target=0/8820 now=0/9462 inputUI=0 reason=CA_SKIP_CANCELLED
+CA156 UI menu=0 console=0 journal=0
+CA156 UI menu=0 console=0 journal=0
+CA156 JOURNAL RAW scan=208 char=0 string=Ð menu=0
+CA156 RAW type=1 scan=208 char=0 string=Ð
+CA156 RAW type=2 scan=208 char=0 string=Ð
+CA156 STATE tic=6370 open=0 active=0 pending=0 done=1 task=0 remaining=0.000000 target=0/8820 now=0/9463 inputUI=0 reason=CA_SKIP_CANCELLED
