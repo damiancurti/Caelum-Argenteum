@@ -67,6 +67,9 @@ no power plan is changed. The release record is included. Development executable
 IWAD, saves, engine source excerpts and packaged fixtures are not distributed.
 The unrelated author deletion of assets/art_source/Caelum Argenteum.png is excluded.
 
-Author evidence on 2026-10-10: physical Tab closes the pre-fix checkpoint. This
-does not accept corrected Q/R. CA156-01 remains in pending_test.txt, alongside
-CA154-01/02. #154 / PR155 and #156 remain open for review; no merge implied.
+Initial author evidence on 2026-10-10: physical Tab closes the pre-fix checkpoint;
+that observation alone did not accept corrected Q/R. Later the same day the
+author confirmed all pending tests (CA154-01/02 and CA156-01) without reported
+qualifications and requested both issue closures and PR155/157 merges. HISTORY
+records acceptance and pending_test.txt is empty. RESULTS.json retains its
+original delivery-time pending list; native evidence and hashes are unchanged.

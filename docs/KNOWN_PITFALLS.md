@@ -26,7 +26,8 @@ Regression: native production-dispatch checks with nontextual/empty KeyString
 must cover Q/R, completed/pending/active cancellation, progress retention, past
 rejection, future execution and key release propagation. See validation_5111 for
 21 passing dispatch/state checks, two reload checks, hashes and qualifications.
-These in-engine callback tests are not physical-key acceptance; CA156-01 is pending.
+These in-engine callback tests are not physical-key acceptance. Separately, the
+author accepted CA156-01 without reported qualifications on 2026-10-10.
 No save schema or balance change is necessary for this UI defect.
 
 ## CA-KP-067 - Convert effective gravity once and test native displacement
@@ -66,7 +67,8 @@ and charging only when the action completes. Save metadata may require the origi
 the candidate under that basename in a separate test directory without overwriting
 the protected old package. See validation_5110 for commands, hashes and failures
 corrected in the fixture (deferred PostBeginPlay, elevator direction, VM preconditions).
-Author checks CA154-01/02 remain pending; these engine results are not acceptance.
+Author checks CA154-01/02 were accepted without reported qualifications on
+2026-10-10, separately from these engine results; see HISTORY.
 
 ## CA-KP-066 - A foreground hand cut can duplicate an existing support hand
 

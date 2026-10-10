@@ -8,9 +8,9 @@ Q and R now recognize the native character code, matching the other Journal
 panels. The author's protected craft-tiempo checkpoint retains completed work;
 Enter requires a future destination and does not repeat completed crafting.
 No clock policy, balance, save schema or migration changes. Native callback/state
-checks and save/reload passed; physical corrected-key acceptance remains pending.
-Evidence: assets/validation_5111; author queue: CA156-01 plus CA154-01/02.
-This focused patch depends on the unmerged #154 / PR155 branch.
+checks and save/reload passed; the author accepted CA156-01 on 2026-10-10.
+Evidence: assets/validation_5111. PR157 follows #154 / PR155; the author requested
+both merges and issue closures. All author checks are accepted; the queue is empty.
 
 ## 5.1.10 — SI physics and growth migration (#154)
 
@@ -23,9 +23,9 @@ shots compensate drop once at launch; elemental flight stays authored.
 
 One-time migration preserves resource percentages, attributes, inventory and
 accrued thermal state. Map geometry is unchanged. Detailed rules: SYSTEMS;
-reproducible native/static evidence: assets/validation_5110. Author acceptance
-is pending in pending_test.txt. Commit/push and linked PR are requested; closure
-and merge are not authorized for this issue yet.
+reproducible native/static evidence: assets/validation_5110. The author accepted
+CA154-01/02 without reported qualifications on 2026-10-10 and requested issue
+closure and PR155 merge. HISTORY records the confirmed test IDs.
 
 ## 5.1.9 - Shotgun pickup, grip and alternate aim follow-up (#152)
 

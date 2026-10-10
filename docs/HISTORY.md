@@ -19,9 +19,14 @@ production UI dispatcher in-engine and observe native network/state processing;
 they are not physical keyboard acceptance. Raw Windows automation produced no
 reliable events. The author confirmed physical Tab closes the baseline panel on
 2026-10-10; its native log records ca_skip_cancel. This confirms diagnosis only.
-CA156-01 remains pending for corrected physical Q/R. CA154-01/02 are retained.
 Protected save/package pairs and temporary power-request release are documented
-in assets/validation_5111. No merge/closure acceptance is implied.
+in assets/validation_5111.
+
+Author acceptance, 2026-10-10: CA156-01 (origin 5.1.11 / #156), corrected Q/R,
+destination feedback and cancellation/progress checks, PASSED without reported
+qualifications. The author confirmed all pending tests and requested issue closure
+and PR157 merge after its PR155 dependency. The confirmed entry was removed from
+pending_test.txt; native automation limits above remain part of the evidence.
 
 ## 5.1.10 — SI physics, growth curves and migration (#154, 2026-10-09)
 
@@ -50,8 +55,12 @@ protected Prueba/rollback and three hub visits preserve the tested state.
 Pending spells migrate their new cost once without restarting or spending Anima.
 Static validation passes; the official package matches 6,299 source members.
 The temporary keep-awake request was released with the power plan unchanged.
-CA154-01/02 remain unconfirmed. Commit/push and a linked PR are authorized;
-author acceptance, issue closure and merge have not been claimed.
+Author acceptance, 2026-10-10: CA154-01 (origin 5.1.10 / #154), save migration
+and movement, and CA154-02 (origin 5.1.10 / #154), combat, gravity and effort
+feedback, both PASSED without reported qualifications. The author confirmed all
+pending tests and requested #154 closure and PR155 merge. Both confirmed entries
+were removed from pending_test.txt. This acceptance does not claim additional
+agent benchmarks or expand the approved physics scope.
 
 ## 5.1.9 - Shotgun pickup, grip and held aim correction (#152, 2026-10-09)
 

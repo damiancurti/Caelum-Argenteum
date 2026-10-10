@@ -2,12 +2,13 @@
 
 Documentation version: **5.1.11** — 2026-10-10.
 
-**5.1.11/#156:** time-skip Q/R fixed; Enter rejects past destinations.
-Native checks: validation_5111. Pending: CA156-01. Branch issue-156-time-skip-input
-depends on unmerged issue-154-si-growth / PR155.
+**5.1.11/#156 accepted:** time-skip Q/R fixed; Enter rejects past destinations.
+CA156-01 passed 2026-10-10; PR157 merge/closure authorized. Evidence: validation_5111.
+Author queue empty.
 
-**5.1.10/#154:** SI physics/growth and percentage-preserving migration implemented.
-Rules: SYSTEMS. Native evidence: validation_5110. Pending: CA154-01/02 and PR155.
+**5.1.10/#154 accepted:** SI physics/growth and percentage-preserving migration.
+CA154-01/02 passed 2026-10-10; PR155 merge/closure authorized. Rules: SYSTEMS;
+evidence: validation_5110.
 
 **5.1.9/#152 accepted:** shotgun pickup, hands and one-press ADS; PR153 merge authorized.
 Evidence: validation_519. Author queue empty. Thermal redesign deferred.
