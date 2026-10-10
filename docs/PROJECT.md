@@ -1,6 +1,19 @@
 # Caelum Argenteum — Project, status and roadmap
 
-Documentation version: **5.1.14** — 2026-10-10.
+Documentation version: **5.1.15** — 2026-10-10.
+
+## 5.1.15 - Bronze utility staff and wand names (#162)
+
+Implemented a single-tier family-1 fire/ice tool using the Pickaxe recipe and
+durability, shared demon-breath thermal geometry, continuous Anima payment and
+per-second contact wear. Existing magic staffs are now displayed as Wands /
+Varitas, retaining IDs and saves. Original bronze-tip poses, pickup/icon and
+native elemental effects are integrated. Isolated native checks cover mechanics,
+crafting/repair/dismantling, real controls, sustained heat/cooling, item lifecycle,
+hub travel and migration from 5.1.14. Evidence: assets/validation_5115/RESULTS.md.
+Author handling/art acceptance remains CA162-01. Caella's permanent gift and the
+corresponding full tutorial test belong to dependent issue #164; no completion
+of that progression is claimed here.
 
 ## 5.1.14 - Damage flash across map travel (#165)
 

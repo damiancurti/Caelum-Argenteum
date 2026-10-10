@@ -1,6 +1,58 @@
 # Caelum Argenteum — Current systems and rules
 
-Documentation version: **5.1.14** — 2026-10-10.
+Documentation version: **5.1.15** — 2026-10-10.
+
+## Utility staff and wand terminology - 5.1.15 / #162
+
+**Bast?n / Utility staff** is a separate family-1 tool beside the Pickaxe, with
+one tier and a bronze tip. The author renamed the existing tiered elemental
+staffs to **Varitas / Wands** on 2026-10-10. Their internal `STAFF` identifiers,
+sixty magical variants and saved instances remain unchanged. Earlier release
+entries use the terminology of their time; current controls use Wand.
+
+Hold Fire for flame or AltFire for ice. Both use the approved demon-breath
+geometry: 4 m / 128 MU contact range, a 60-degree cone, and 20 kW source power.
+The author explicitly approved equal ice geometry/power magnitude. Fire applies
+the existing T1 wand burn on contact without an extra direct Health hit; ice
+applies the existing Freeze control and actual negative continuous thermal
+energy. Duration/control strength and T1 burn/wear damage use the existing
+attribute rules. Repeated fire contact retains the burn pulse clock.
+
+Both signs reuse the shared thermal pipeline: four geometric source samples,
+distance attenuation, wall visibility, the existing 35% radiative budget and
+armor area retention exactly once. Therefore 20 kW is source power, not 20 kW
+absorbed by each actor. Radiation extends beyond contact range without an
+arbitrary cutoff; cooling/heating affects supported thermal bodies, including
+the emitter. No projectile push or direct ice damage is added. Demon breath uses
+the same geometry/contact/heat service with its accepted balance and visuals.
+
+Each mode costs 10 Anima per simulation second before existing wand cost
+reductions, once per real tic. Natural regeneration continues. Primary wins
+when both buttons are held. Release, insufficient Anima, immobilization, rest,
+blocking, equipment/crafting/creation overlays, switching and death stop the
+source and owned light/visuals. A paid fractional thermal interval settles on
+stop; map unload settles it in the departure map. No pending heat travels to
+the destination or returns as an orphan source in a hub. Reload does not charge
+or change the tool's mode.
+
+Mass, maximum durability, component types/quantities, size and efficiency follow
+the Pickaxe: M is 8 kg and 10,000 durability; its recipe uses 5,600 handle units
+and 2,400 T1 head units (bronze), with the same forge/workbench requirements.
+No essence is required. The author approved the wand wear rule **once per
+second of valid contact**, including ice: one point per 1,000 prepared T1 damage
+plus the established probability for the remainder. Empty emission causes no
+wear; multiple contacted actors do not multiply the cadence. Fractional contact
+tics belong to the exact item and survive Box storage, drops and saves.
+
+Type 21, catalogue 17 and recipe 132 are appended; Pickaxe recipe 131 is stable.
+Recipe-book revision 6 preserves prior knowledge and initializes the new recipe
+locked. Native equipment identity and existing tiered wands are not converted.
+Crafting, repair and dismantling use normal equipment transactions. Keep the old
+save/package pair; save the migrated game under a new name for reversible rollback.
+Caella's permanent grant and the tutorial transition are explicitly owned by
+#164; #162 supplies the tool and does not claim that progression is implemented.
+Native/static evidence: assets/validation_5115; author visual/handling acceptance
+remains CA162-01 in pending_test.txt.
 
 ## Damage-flash lifetime across maps - 5.1.14 / #165
 
@@ -6832,6 +6884,14 @@ modify these combat routes.
 | Crossbow | Fires its native bolt. | Toggles Aim/ADS. | Reloads its independent magazine. | Toggles Aim/ADS, real FOV and doubled physical accuracy. |
 | Carbine | Fires its native carbine projectile. | Toggles Aim/ADS. | Reloads its independent magazine. | Toggles Aim/ADS, real FOV and doubled physical accuracy. |
 
+### Utility tool
+
+| Implement (family 1) | Fire | AltFire | Reload |
+| --- | --- | --- | --- |
+| Utility staff / Bast?n, one tier | Hold for flame, burn and heat. | Hold for ice, Freeze and cooling. | No charge or reload. |
+
+Both modes use the continuous cost/contact-wear contract in the 5.1.15 section.
+
 ### Magical implements
 
 Every magical variant below exists at T1, T2 and T3 for Fire/Light, Water/Ice,
@@ -6840,7 +6900,7 @@ equipped essence and `AltFire` selects its secondary side.
 
 | Implement | Fire and AltFire delivery | Reload | Zoom |
 | --- | --- | --- | --- |
-| Staff | One normal-speed direct magical projectile. | Charge next magical attack. | Shield Block when a shield is equipped. |
+| Wand | One normal-speed direct magical projectile. | Charge next magical attack. | Shield Block when a shield is equipped. |
 | Bell | Seven slow projectiles in a broad cone; every projectile rolls its own critical. Uses the confirmed half-damage/double-Anima baseline. | Charge next magical attack. | Shield Block when a shield is equipped. |
 | Book | One fast homing magical projectile. | Charge next magical attack. | Shield Block when a shield is equipped. |
 | Statuette | One explosive magical projectile; charged attacks double explosion area. | Charge next magical attack. | Shield Block when a shield is equipped. |
@@ -6860,13 +6920,13 @@ equipped essence and `AltFire` selects its secondary side.
 The following twenty implement/essence combinations each have T1, T2 and T3 selectors,
 totaling sixty magical weapons:
 
-| Essence | Staff | Bell | Book | Statuette |
+| Essence | Wand | Bell | Book | Statuette |
 | --- | --- | --- | --- | --- |
-| Fire / Light | Fire Staff T1–T3 | Fire Bell T1–T3 | Fire Book T1–T3 | Fire Statuette T1–T3 |
-| Water / Ice | Water Staff T1–T3 | Water Bell T1–T3 | Water Book T1–T3 | Water Statuette T1–T3 |
-| Earth / Poison | Earth Staff T1–T3 | Earth Bell T1–T3 | Earth Book T1–T3 | Earth Statuette T1–T3 |
-| Air / Lightning | Air Staff T1–T3 | Air Bell T1–T3 | Air Book T1–T3 | Air Statuette T1–T3 |
-| Quintessence | Quintessence Staff T1–T3 | Quintessence Bell T1–T3 | Quintessence Book T1–T3 | Quintessence Statuette T1–T3 |
+| Fire / Light | Fire Wand T1–T3 | Fire Bell T1–T3 | Fire Book T1–T3 | Fire Statuette T1–T3 |
+| Water / Ice | Water Wand T1–T3 | Water Bell T1–T3 | Water Book T1–T3 | Water Statuette T1–T3 |
+| Earth / Poison | Earth Wand T1–T3 | Earth Bell T1–T3 | Earth Book T1–T3 | Earth Statuette T1–T3 |
+| Air / Lightning | Air Wand T1–T3 | Air Bell T1–T3 | Air Book T1–T3 | Air Statuette T1–T3 |
+| Quintessence | Quintessence Wand T1–T3 | Quintessence Bell T1–T3 | Quintessence Book T1–T3 | Quintessence Statuette T1–T3 |
 
 ## Economy
 

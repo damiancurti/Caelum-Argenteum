@@ -1,10 +1,14 @@
 # CONTEXT.md — Caelum Argenteum
 
-Documentation version: **5.1.14** — 2026-10-10.
+Documentation version: **5.1.15** — 2026-10-10.
 
-**5.1.14/#165 accepted:** bounded damage flash, map-travel reset and legacy
-visual repair. CA165-01 accepted 2026-10-10; PR166 merge/closure authorized.
-Thirty-four native checks pass; validation_5114. Author queue empty.
+**5.1.15/#162 implemented:** bronze fire/ice Utility staff / Bast?n; Pickaxe
+recipe/durability, contact wear and Wands / Varitas terminology. Saves retain IDs.
+Evidence: assets/validation_5115. CA162-01 pending. Caella/tutorial remains #164,
+dependent on #162/#163.
+
+**5.1.14/#165 accepted** 2026-10-10 (CA165-01). Flash/travel repair; PR166
+merged. 34 checks pass: validation_5114.
 **#158/PR159 and #160/PR161 accepted, closed, merged** 2026-10-10.
 Crafting size and silver-key fixes: SYSTEMS/HISTORY; validation_5112/5113.
 **#156/PR157 and #154/PR155 accepted, closed, merged** on 2026-10-10.

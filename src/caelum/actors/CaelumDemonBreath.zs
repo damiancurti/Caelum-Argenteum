@@ -73,43 +73,17 @@ class CaelumDemonBreath : Actor
 
     bool Visible(Vector3 point)
     {
-        vector3 ray=point-Pos;FLineTraceData hit;
-        return !LineTrace(VectorAngle(ray.X,ray.Y),ray.Length(),-VectorAngle(ray.XY.Length(),ray.Z),
-            TRF_THRUACTORS|TRF_ABSPOSITION,Pos.Z,Pos.X,Pos.Y,hit);
+        return CaelumElementalStream.Visible(self,point);
     }
 
     bool Contact(Actor body)
     {
-        if(body==null || body==Emitter || body.health<=0)return false;
-        vector2 horizontal=Pos.XY-body.Pos.XY;
-        vector2 facing=horizontal.Length()>0 ? horizontal/horizontal.Length() : (1,0);
-        // Se muestrea la cara del cilindro real: un centro fuera del cono
-        // no excluye una pierna o un torso que sí toca la llama.
-        for(int z=0;z<CaelumThermalData.FIRE_VISIBILITY_SAMPLES;z++)
-        {
-            vector3 point=body.Pos+(facing.X*body.Radius,facing.Y*body.Radius,
-                body.Height*(z+0.5)/CaelumThermalData.FIRE_VISIBILITY_SAMPLES);
-            vector3 ray=point-Pos;double distance=ray.Length();
-            if(distance<=CaelumDemonBreathRules.Range() && (distance<=0
-                || (ray dot Direction)/distance>=Cos(CaelumDemonBreathRules.CONE_DEGREES/2)) && Visible(point))return true;
-        }
-        return false;
+        return CaelumElementalStream.Contact(self,Emitter,Direction,body);
     }
 
     void Burn(Actor body)
     {
-        let user=CaelumPlayer(body);let npc=CaelumCombatActor(body);
-        let status=user!=null ? user.ElementalStatus : npc!=null ? npc.ElementalStatus : null;
-        if(status==null || Emitter==null)return;
-        double scale=Emitter.CalculateActorType4Percent(Emitter.CombatCharisma)/100.0;
-        int damage=Max(1,int(Emitter.GetTierOneMagicDamage(CaelumConstants.WEAPON_TYPE_STAFF)
-            *CaelumConstants.ELEMENTAL_DOT_DAMAGE_RATIO*scale+0.5));
-        // Refrescar contacto no reinicia el reloj: de lo contrario una llama
-        // continua impediría para siempre alcanzar el pulso de un segundo.
-        double clock=status.BurnRemaining>0 ? status.BurnTickAccumulator : 0;
-        status.ApplyDamageOverTime(CaelumConstants.ELEMENTAL_EFFECT_BURN,
-            CaelumConstants.ELEMENTAL_BASE_DURATION_SECONDS*scale,scale,damage,Emitter);
-        status.BurnTickAccumulator=clock;
+        CaelumElementalStream.ApplyContact(Emitter,body);
     }
 
     void PaidTick()
@@ -154,42 +128,13 @@ class CaelumDemonBreath : Actor
 
     double ReceivedWatts(Actor body,CaelumThermalState thermal)
     {
-        double watts=0;
-        for(int i=0;i<CaelumDemonBreathRules.SEGMENTS;i++)
-        {
-            double along=CaelumDemonBreathRules.Range()*(i+0.5)/CaelumDemonBreathRules.SEGMENTS;
-            vector3 point=Pos+Direction*along;
-            if(!Visible(point))continue;
-            watts+=CaelumThermalFire.AbsorbedAt(body,thermal,self,point,
-                CaelumDemonBreathRules.Watts()/CaelumDemonBreathRules.SEGMENTS,
-                along*Tan(CaelumDemonBreathRules.CONE_DEGREES/2)/CaelumJourneyRules.MAP_UNITS_PER_METER);
-        }
-        return watts;
+        return CaelumElementalStream.ReceivedWatts(self,Direction,body,thermal);
     }
 
     void FlushHeat()
     {
         double seconds=PaidSeconds;PaidSeconds=0;
-        if(seconds<=0)return;
-        Array<Actor> bodies;Array<double> watts;double sum=0;
-        // No hay corte de distancia para radiación. Sólo se recorre al cerrar
-        // el intervalo pagado o terminar, nunca por NPC inactivo.
-        let search=ThinkerIterator.Create("Actor");Thinker entry;
-        while((entry=search.Next())!=null)
-        {
-            let body=Actor(entry);
-            if(body.health<=0 || !CaelumThermalBody.Supported(body))continue;
-            let thermal=CaelumThermalBody.Get(body,true);
-            if(thermal==null)continue;
-            if(thermal.SurfaceArea<=0)CaelumThermalBody.Refresh(body,thermal);
-            double value=ReceivedWatts(body,thermal);
-            if(value<=0)continue;
-            bodies.Push(body);watts.Push(value);sum+=value;
-        }
-        double budget=CaelumDemonBreathRules.Watts()*CaelumThermalData.FIRE_RADIATIVE_FRACTION;
-        double scale=sum>budget ? budget/sum : 1;
-        for(int i=0;i<bodies.Size();i++)
-            CaelumThermalMagic.Continuous(bodies[i],watts[i]*scale,seconds);
+        CaelumElementalStream.Transfer(self,Direction,seconds);
     }
 
     override void Tick()

@@ -224,6 +224,7 @@ class CaelumDebugOverlay : EventHandler
             case CaelumConstants.WEAPON_TYPE_JAVELIN: return "CA_WEAPON_TYPE_JAVELIN";
             case CaelumConstants.WEAPON_TYPE_STAFF: return "CA_WEAPON_TYPE_STAFF";
             case CaelumConstants.WEAPON_TYPE_CARBINE: return "CA_WEAPON_TYPE_CARBINE";
+            case CaelumConstants.WEAPON_TYPE_UTILITY_STAFF: return "CA_WEAPON_TYPE_UTILITY_STAFF";
             case CaelumConstants.WEAPON_TYPE_PICKAXE: return "CA_WEAPON_TYPE_PICKAXE";
             case CaelumConstants.WEAPON_TYPE_AXE: return "CA_WEAPON_TYPE_AXE";
             case CaelumConstants.WEAPON_TYPE_FLAIL: return "CA_WEAPON_TYPE_FLAIL";
@@ -1181,7 +1182,8 @@ class CaelumDebugOverlay : EventHandler
                 case CaelumConstants.WEAPON_TYPE_HATCHET: return "graphics/caelum/icons/ca_hatchet.png";
                 case CaelumConstants.WEAPON_TYPE_MACHETE: return "graphics/caelum/icons/ca_machete.png";
                 case CaelumConstants.WEAPON_TYPE_JAVELIN: return "graphics/caelum/icons/ca_javelin.png";
-                case CaelumConstants.WEAPON_TYPE_PICKAXE: return "graphics/caelum/icons/ca_pickaxe.png";
+                case CaelumConstants.WEAPON_TYPE_UTILITY_STAFF: return "CA_UTILITY_STAFF_ICON";
+            case CaelumConstants.WEAPON_TYPE_PICKAXE: return "graphics/caelum/icons/ca_pickaxe.png";
                 case CaelumConstants.WEAPON_TYPE_AXE: return "graphics/caelum/icons/ca_axe.png";
                 case CaelumConstants.WEAPON_TYPE_FLAIL: return "graphics/caelum/icons/ca_flail.png";
                 case CaelumConstants.WEAPON_TYPE_SPEAR: return "graphics/caelum/icons/ca_spear.png";
@@ -1714,6 +1716,9 @@ class CaelumDebugOverlay : EventHandler
                 StringTable.Localize("CA_WEAPON_ANIMA_COST", false),
                 localPlayer.EquipmentSelectionAnimaCost
             );
+            if (localPlayer.EquipmentSelectionWeaponType==CaelumConstants.WEAPON_TYPE_UTILITY_STAFF)
+                weaponDetail=String.Format("%s %.2f/s",StringTable.Localize("CA_WEAPON_ANIMA_COST",false),
+                    CaelumUtilityStaff.CostPerSecond(localPlayer));
             if (localPlayer.EquipmentSelectionWeaponType
                 == CaelumConstants.WEAPON_TYPE_CARBINE)
             {

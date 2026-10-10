@@ -1,0 +1,11 @@
+{
+  "release": "5.1.15",
+  "src_files": 6304,
+  "zip_integrity": "passed",
+  "dev_package_equals_tested_production_members": true,
+  "dev_package_sha256": "32e3f01cea427cd8fc067490e786fb7b42119bf29830b9b15eed3c460910cecd",
+  "tested_production_sha256": "897bad7273dcf9f3cf9465bfbd2e06cef43d32d1197ee2fc40643dc5b9ac2240",
+  "art_registration_two_runs_identical": true,
+  "atlas_sha256": "080e580c3880365d59fd884d054a433337eb4ba521eaab5a172779980e1dc3fb",
+  "textures_sha256": "dbdaed52efa1a7af11f5eeb23b2bb5f1552cc830b19ceaf7dfb660e5aeaf0cd1"
+}

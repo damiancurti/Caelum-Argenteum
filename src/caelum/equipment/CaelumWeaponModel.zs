@@ -40,9 +40,15 @@ class CaelumWeaponModel : Object
         return 1.5;
     }
 
+    static bool IsSingleTierType(int weaponType)
+    {
+        return weaponType == CaelumConstants.WEAPON_TYPE_PICKAXE
+            || weaponType == CaelumConstants.WEAPON_TYPE_UTILITY_STAFF;
+    }
+
     static int ResolveTierFor(int weaponType, int tier)
     {
-        return weaponType == CaelumConstants.WEAPON_TYPE_PICKAXE ? 1 : Clamp(tier, 1, 3);
+        return IsSingleTierType(weaponType) ? 1 : Clamp(tier, 1, 3);
     }
 
     double GetTierOneWeightFor(int weaponType)
@@ -56,6 +62,7 @@ class CaelumWeaponModel : Object
             case CaelumConstants.WEAPON_TYPE_HATCHET: return CaelumConstants.WEAPON_HATCHET_TIER_ONE_WEIGHT;
             case CaelumConstants.WEAPON_TYPE_MACHETE: return CaelumConstants.WEAPON_MACHETE_TIER_ONE_WEIGHT;
             case CaelumConstants.WEAPON_TYPE_JAVELIN: return CaelumConstants.WEAPON_JAVELIN_TIER_ONE_WEIGHT;
+            case CaelumConstants.WEAPON_TYPE_UTILITY_STAFF:
             case CaelumConstants.WEAPON_TYPE_PICKAXE:
             case CaelumConstants.WEAPON_TYPE_AXE: return CaelumConstants.WEAPON_AXE_TIER_ONE_WEIGHT;
             case CaelumConstants.WEAPON_TYPE_FLAIL: return CaelumConstants.WEAPON_FLAIL_TIER_ONE_WEIGHT;
@@ -194,6 +201,8 @@ class CaelumWeaponModel : Object
 
     double GetAnimaCostFor(int weaponType)
     {
+        if (weaponType == CaelumConstants.WEAPON_TYPE_UTILITY_STAFF)
+            return CaelumDemonBreathRules.ANIMA_PER_SECOND;
         switch (weaponType)
         {
             case CaelumConstants.WEAPON_TYPE_STAFF:

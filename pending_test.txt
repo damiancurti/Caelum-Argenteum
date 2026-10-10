@@ -1,0 +1,18 @@
+CA162-01 | Origin: 5.1.15 / issue #162 | Author acceptance pending
+Prerequisites: current branch/package, GZDoom 4.14.2 and the local development
+IWAD. This isolated tool check does not test Caella's future gift (#164).
+From the repository in PowerShell, prepare the local fixture:
+  python assets/validation_5115/prepare.py
+Then run (choose a new Label if re-running):
+  .\assets\validation_5115\run_native.ps1 -Label author162-01 -Fixture inputs -Script preview.cfg -Interactive -Language es
+Steps:
+1. Inspect the bronze Baston, hands and equip pose. Use family key 1 to switch
+   between the Pico and Baston. Inspect its inventory icon/name and Anima/s.
+2. Hold primary toward the passive target for fire; release, then hold secondary
+   for ice. Inspect the tip, continuous effects, burn/freeze and HUD resources.
+3. Turn toward a nearby wall to inspect flame illumination and occlusion. Release
+   and switch tools; no stream or source light should remain. Save/reload once.
+Expected: readable bronze tool and hands, distinct fire/ice, normal concurrent
+Anima regeneration, no double emission or stuck light, one persistent tool.
+Existing tiered magic weapons are named Varitas. Report visual/handling acceptance
+or specific defects. Close the engine normally when finished.

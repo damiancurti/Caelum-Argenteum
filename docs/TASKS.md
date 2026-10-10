@@ -1,6 +1,16 @@
 # TASKS.md — Active tasks
 
-Documentation version: **5.1.14** — 2026-10-10.
+Documentation version: **5.1.15** — 2026-10-10.
+
+## Issue #162 - Bronze utility staff (5.1.15)
+
+Implemented family 1, one tier, original art, exact Pickaxe components and
+maximum durability, fire/ice streams, once-per-second contact wear and wand
+terminology. Recipe revision 6 preserves old knowledge and equipment identity.
+Static/native evidence and reproducible fixtures: assets/validation_5115.
+CA162-01 remains for author handling/art acceptance. Next: review the linked PR
+and then integrate Caella's permanent grant through #164 alongside #163; the
+full tutorial/grant criterion is deliberately not marked passed in this patch.
 
 ## Issue #165 - Damage flash across map travel (5.1.14)
 

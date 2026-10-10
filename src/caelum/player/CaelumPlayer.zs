@@ -5,6 +5,8 @@
 // These inherited resources will be replaced by original assets later.
 class CaelumPlayer : DoomPlayer
 {
+    Actor UtilityStaffStream;
+    int UtilityStaffRequestedMode;
     bool ThermalBluntDelivery;
     const FORMAL_INVENTORY_VISIBLE_ROWS = 6;
     const FORMAL_INVENTORY_FILTER_COUNT = 10;
@@ -2531,6 +2533,8 @@ class CaelumPlayer : DoomPlayer
                 return 'CaelumJavelinSelectorWeapon';
             case CaelumConstants.WEAPON_TYPE_SWORD:
                 return 'CaelumSwordSelectorWeapon';
+            case CaelumConstants.WEAPON_TYPE_UTILITY_STAFF:
+                return 'CaelumUtilityStaffSelectorWeapon';
             case CaelumConstants.WEAPON_TYPE_PICKAXE:
                 return 'CaelumPickaxeSelectorWeapon';
             case CaelumConstants.WEAPON_TYPE_AXE:
@@ -2634,6 +2638,7 @@ class CaelumPlayer : DoomPlayer
     {
         if (!CharacterCreationComplete) { return; }
         EnsurePhysicalWeaponSelector(CaelumConstants.WEAPON_TYPE_PICKAXE, "CaelumPickaxeSelectorWeapon");
+        EnsurePhysicalWeaponSelector(CaelumConstants.WEAPON_TYPE_UTILITY_STAFF, "CaelumUtilityStaffSelectorWeapon");
         EnsurePhysicalWeaponSelector(
             CaelumConstants.WEAPON_TYPE_DAGGER,
             "CaelumDaggerSelectorWeapon"
@@ -4499,6 +4504,7 @@ class CaelumPlayer : DoomPlayer
             case CaelumConstants.WEAPON_TYPE_HATCHET: return "graphics/caelum/icons/ca_hatchet.png";
             case CaelumConstants.WEAPON_TYPE_MACHETE: return "graphics/caelum/icons/ca_machete.png";
             case CaelumConstants.WEAPON_TYPE_JAVELIN: return "graphics/caelum/icons/ca_javelin.png";
+            case CaelumConstants.WEAPON_TYPE_UTILITY_STAFF: return "CA_UTILITY_STAFF_ICON";
             case CaelumConstants.WEAPON_TYPE_PICKAXE: return "graphics/caelum/icons/ca_pickaxe.png";
             case CaelumConstants.WEAPON_TYPE_AXE: return "graphics/caelum/icons/ca_axe.png";
             case CaelumConstants.WEAPON_TYPE_FLAIL: return "graphics/caelum/icons/ca_flail.png";
@@ -4661,7 +4667,7 @@ class CaelumPlayer : DoomPlayer
         }
         CraftingSelectedRecipeKnown = persistentState != null
             && persistentState.KnowsCraftingRecipe(CraftingSelectionRecipe);
-        CraftingSelectionTier = CraftingSelectionRecipe == CaelumConstants.CRAFTING_PICKAXE_RECIPE
+        CraftingSelectionTier = CaelumCraftingRules.IsSingleTierRecipe(CraftingSelectionRecipe)
             ? 1 : Clamp(CraftingSelectionTier, 1, 3);
         CraftingSelectionSize = Clamp(
             CraftingSelectionSize,
@@ -7718,6 +7724,7 @@ class CaelumPlayer : DoomPlayer
     // El reinicio se difiere al WorldTick para terminar primero el daño actual.
     override void Die(Actor source, Actor inflictor, int dmgflags, Name MeansOfDeath)
     {
+        CaelumUtilityStaff.EndEmission(self);
         CaelumRestState.Interrupt(self, "CA_REST_DAMAGE");
         if (CaelumMainM00RuloTrial.PreventDefeat(self)) return;
         CaelumBreathing.StopAudio(self);
@@ -8914,6 +8921,7 @@ class CaelumPlayer : DoomPlayer
         // reconcilia antes de actualizar la vista, el peso y el bloqueo.
         RepairActiveShieldReference();
         Super.Tick();
+        CaelumUtilityStaff.Update(self);
         CaelumRestState.Validate(self);
         UpdateCraftingTask();
         UpdatePalomoMerchantSession();
@@ -9521,6 +9529,8 @@ class CaelumPlayer : DoomPlayer
 
     void PerformEquippedWeaponPrimaryAttack()
     {
+        if(WeaponModel!=null && WeaponModel.WeaponType==CaelumConstants.WEAPON_TYPE_UTILITY_STAFF)
+        {CaelumUtilityStaff.Request(self,CaelumUtilityStaffRules.FIRE);return;}
         RefreshWeaponAttackClock();
         if (WeaponModel == null || !WeaponModel.Equipped
             || WeaponModel.Durability <= 0
@@ -9594,6 +9604,8 @@ class CaelumPlayer : DoomPlayer
     // independiente.
     void PerformEquippedWeaponSecondaryAttack()
     {
+        if(WeaponModel!=null && WeaponModel.WeaponType==CaelumConstants.WEAPON_TYPE_UTILITY_STAFF)
+        {CaelumUtilityStaff.Request(self,CaelumUtilityStaffRules.ICE);return;}
         RefreshWeaponAttackClock();
         if (WeaponModel == null || !WeaponModel.Equipped
             || WeaponModel.Durability <= 0
@@ -10156,6 +10168,7 @@ class CaelumPlayer : DoomPlayer
 
     void RequestWeaponReloadOrCharge(int requestedWeaponType, bool isMagic)
     {
+        if(requestedWeaponType==CaelumConstants.WEAPON_TYPE_UTILITY_STAFF)return;
         if (PhysicalAttackPending) return;
         if (IsRangedWeaponType(requestedWeaponType))
         {

@@ -429,6 +429,9 @@ class CaelumFirstPersonView : Object play
 
     static State Pose(int weaponType, int tier, int phase)
     {
+        if (weaponType == CaelumConstants.WEAPON_TYPE_UTILITY_STAFF)
+            return GetDefaultByType("CaelumUtilityStaffFrames").FindStateByString(
+                phase==1 ? "Fire" : phase==2 ? "Ice" : phase==3 ? "Equip" : "Ready");
         if (weaponType == CaelumConstants.WEAPON_TYPE_PICKAXE)
             return GetDefaultByType("CaelumPickaxeFrames").FindStateByString(phase == 1 ? "Mine" : "Ready");
         String frame = phase == 1 ? "B" : phase == 2 ? "C" : "A";
@@ -438,7 +441,7 @@ class CaelumFirstPersonView : Object play
 
     static Vector2 Pivot(int weaponType, int tier, int phase)
     {
-        if (weaponType == CaelumConstants.WEAPON_TYPE_PICKAXE) return (216.0/320, 160.0/200);
+        if (CaelumWeaponModel.IsSingleTierType(weaponType)) return (216.0/320, 160.0/200);
         // Porcentaje distinto por caja visible; todos vienen del manifiesto.
         int index = Clamp(weaponType,0,19)*9 + (Clamp(tier,1,3)-1)*3 + Clamp(phase,0,2);
         static const double px[] = {
@@ -547,6 +550,9 @@ class CaelumFirstPersonView : Object play
             phase = attack && !blocking ? AttackSide : 0;
         if (kind == CaelumConstants.WEAPON_TYPE_PICKAXE)
             phase = attack && !blocking && user.AttackAnimationSecondary ? 1 : 0;
+        if (kind == CaelumConstants.WEAPON_TYPE_UTILITY_STAFF)
+            phase = outgoing || baseView.y>WEAPONTOP+1 ? 3
+                : user.UtilityStaffStream!=null ? CaelumUtilityStaffStream(user.UtilityStaffStream).Mode : 0;
         bool gauntletGuard = blocking && kind == CaelumConstants.WEAPON_TYPE_GIANT_GAUNTLETS;
         State pose = gauntletGuard
             ? GetDefaultByType("CaelumGauntletGuardFrames").FindStateByString(String.Format("Tier%d", Clamp(Tier,1,3)))

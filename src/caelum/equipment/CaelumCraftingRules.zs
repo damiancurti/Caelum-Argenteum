@@ -31,6 +31,9 @@ class CaelumCraftingRules : Object
     static int GetStationRecipeWeapon(int stationType, int recipeIndex)
     {
         int resolvedStation = ResolveStationType(stationType);
+        if (resolvedStation == CaelumConstants.CRAFTING_STATION_WORKBENCH
+            && recipeIndex == CaelumConstants.CRAFTING_UTILITY_STAFF_RECIPE)
+            return CaelumConstants.CATALOGUE_WEAPON_UTILITY_STAFF;
         if ((resolvedStation == CaelumConstants.CRAFTING_STATION_WORKBENCH
                 && recipeIndex == CaelumConstants.CRAFTING_PICKAXE_RECIPE)
             || (resolvedStation == CaelumConstants.CRAFTING_STATION_FORGE
@@ -116,6 +119,8 @@ class CaelumCraftingRules : Object
 
     static int GetWeaponPrimaryStation(int weaponId)
     {
+        if (weaponId == CaelumConstants.CATALOGUE_WEAPON_UTILITY_STAFF)
+            return GetWeaponPrimaryStation(CaelumConstants.CATALOGUE_WEAPON_PICKAXE);
         int resolved = CaelumWeaponCatalogue.ResolveWeapon(weaponId);
         if (CanStationCraftWeapon(CaelumConstants.CRAFTING_STATION_FORGE, resolved))
         {
@@ -210,9 +215,15 @@ class CaelumCraftingRules : Object
         return 0;
     }
 
+    static bool IsSingleTierRecipe(int recipeIndex)
+    {
+        return recipeIndex == CaelumConstants.CRAFTING_PICKAXE_RECIPE
+            || recipeIndex == CaelumConstants.CRAFTING_UTILITY_STAFF_RECIPE;
+    }
+
     static int GetUnifiedRecipeKind(int recipeIndex)
     {
-        if (recipeIndex == CaelumConstants.CRAFTING_PICKAXE_RECIPE)
+        if (IsSingleTierRecipe(recipeIndex))
             return CaelumConstants.CRAFTING_RECIPE_KIND_PHYSICAL_WEAPON;
         if (GetRecipeAmmunitionType(recipeIndex) >= 0)
             return CaelumConstants.CRAFTING_RECIPE_KIND_AMMUNITION;
@@ -289,7 +300,7 @@ class CaelumCraftingRules : Object
 
     static int GetUnifiedPhysicalRecipeIndex(int recipeIndex)
     {
-        if (recipeIndex == CaelumConstants.CRAFTING_PICKAXE_RECIPE) return recipeIndex;
+        if (IsSingleTierRecipe(recipeIndex)) return recipeIndex;
         return Clamp(
             recipeIndex, 0,
             CaelumConstants.CRAFTING_NETWORK_PHYSICAL_RECIPE_COUNT - 1
@@ -298,6 +309,8 @@ class CaelumCraftingRules : Object
 
     static int FindUnifiedPhysicalRecipeIndex(int weaponId)
     {
+        if (weaponId == CaelumConstants.CATALOGUE_WEAPON_UTILITY_STAFF)
+            return CaelumConstants.CRAFTING_UTILITY_STAFF_RECIPE;
         if (weaponId == CaelumConstants.CATALOGUE_WEAPON_PICKAXE)
             return CaelumConstants.CRAFTING_PICKAXE_RECIPE;
         int resolvedWeapon = CaelumWeaponCatalogue.ResolveWeapon(weaponId);
@@ -1323,6 +1336,7 @@ class CaelumCraftingRules : Object
             case CaelumConstants.CATALOGUE_WEAPON_MACHETE: return CaelumConstants.WEAPON_TYPE_MACHETE;
             case CaelumConstants.CATALOGUE_WEAPON_JAVELIN: return CaelumConstants.WEAPON_TYPE_JAVELIN;
             case CaelumConstants.CATALOGUE_WEAPON_SWORD: return CaelumConstants.WEAPON_TYPE_SWORD;
+            case CaelumConstants.CATALOGUE_WEAPON_UTILITY_STAFF: return CaelumConstants.WEAPON_TYPE_UTILITY_STAFF;
             case CaelumConstants.CATALOGUE_WEAPON_PICKAXE: return CaelumConstants.WEAPON_TYPE_PICKAXE;
             case CaelumConstants.CATALOGUE_WEAPON_AXE: return CaelumConstants.WEAPON_TYPE_AXE;
             case CaelumConstants.CATALOGUE_WEAPON_FLAIL: return CaelumConstants.WEAPON_TYPE_FLAIL;
@@ -1347,6 +1361,7 @@ class CaelumCraftingRules : Object
             case CaelumConstants.WEAPON_TYPE_MACHETE: return CaelumConstants.CATALOGUE_WEAPON_MACHETE;
             case CaelumConstants.WEAPON_TYPE_JAVELIN: return CaelumConstants.CATALOGUE_WEAPON_JAVELIN;
             case CaelumConstants.WEAPON_TYPE_SWORD: return CaelumConstants.CATALOGUE_WEAPON_SWORD;
+            case CaelumConstants.WEAPON_TYPE_UTILITY_STAFF: return CaelumConstants.CATALOGUE_WEAPON_UTILITY_STAFF;
             case CaelumConstants.WEAPON_TYPE_PICKAXE: return CaelumConstants.CATALOGUE_WEAPON_PICKAXE;
             case CaelumConstants.WEAPON_TYPE_AXE: return CaelumConstants.CATALOGUE_WEAPON_AXE;
             case CaelumConstants.WEAPON_TYPE_FLAIL: return CaelumConstants.CATALOGUE_WEAPON_FLAIL;
