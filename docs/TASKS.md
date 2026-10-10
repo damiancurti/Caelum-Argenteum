@@ -1,6 +1,15 @@
 # TASKS.md — Active tasks
 
-Documentation version: **5.1.12** — 2026-10-10.
+Documentation version: **5.1.13** — 2026-10-10.
+
+## Issue #160 - Argento silver-key handoff (5.1.13)
+
+Implemented the authorized release/check/transfer transaction, including rollback
+to Argento when capacity rejects the pickup. Keep generic ownership guards, quest
+requirements, the single existing key and native silver-lock behavior. The author
+checkpoint reproduces the old rejection; 20 native checks pass after correction.
+CA160-01 remains pending. This branch follows #158 / PR159; its CA158-01 check is
+carried forward unchanged. No issue closure or merge is claimed by engine evidence.
 
 ## Issue #158 - Preserve crafting equipment size (5.1.12)
 

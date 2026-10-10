@@ -1,0 +1,39 @@
+{
+  "issue": 160,
+  "version": "5.1.13",
+  "native_runs": {
+    "baseline-b": {
+      "passed": 10,
+      "failed": 6,
+      "package_sha256": "C5A0C2267D0C4EE3770DE22AC413B0B7C3CAC3DEF7D52D315BA69A368E0F9512",
+      "addon_sha256": "069401E5FC82529647E49A518C58C4BCD29688668CEC66FF41359BAF33315EA6"
+    },
+    "regression-b": {
+      "passed": 16,
+      "failed": 0,
+      "package_sha256": "AE96BFF5524CD3D3DC0F94841EE2F4552645194AD53DE7A9DB25E2297F3F0928",
+      "addon_sha256": "069401E5FC82529647E49A518C58C4BCD29688668CEC66FF41359BAF33315EA6"
+    },
+    "reload-b": {
+      "passed": 4,
+      "failed": 0,
+      "package_sha256": "AE96BFF5524CD3D3DC0F94841EE2F4552645194AD53DE7A9DB25E2297F3F0928",
+      "addon_sha256": "5136BEA9705E406FAD5174A6B326857AC494B5757D6774C9113EFF7F28AB4A96"
+    }
+  },
+  "final_passed": 20,
+  "package_sha256": "AE96BFF5524CD3D3DC0F94841EE2F4552645194AD53DE7A9DB25E2297F3F0928",
+  "source_members_verified": 6299,
+  "original_checkpoint_sha256": "A181106176F3689AE86645458E55804FADCD638991DAE74E255B25CB20852B86",
+  "original_checkpoint_unchanged": true,
+  "fixture_packages_deterministic": true,
+  "power_released": true,
+  "author_pending": [
+    "CA158-01",
+    "CA160-01"
+  ],
+  "source_sha256": {
+    "assets/validation_5113/checks.zs": "AC1C4947BB364A1B5C65C2D20704858CF88A77A7A9C74B78BB869E7A3B7BFB24",
+    "assets/validation_5113/reload.zs": "744CB905D66BDB0127AE806CEEC9510ECAB4D0258E9F6A7F2FCD68A9BE466E3C"
+  }
+}

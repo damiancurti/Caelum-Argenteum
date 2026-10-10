@@ -1,6 +1,16 @@
 # Caelum Argenteum — Project, status and roadmap
 
-Documentation version: **5.1.12** — 2026-10-10.
+Documentation version: **5.1.13** — 2026-10-10.
+
+## 5.1.13 - Argento silver-key handoff (#160)
+
+The inventory ownership guard correctly rejected a key still owned by Argento;
+the dialogue therefore failed with a generic native refusal. The handoff now
+removes his existing key from his native inventory before checking pickup weight,
+restoring that same instance on failure. No replacement key, quest bypass or save
+migration. Twenty native action/ownership/lock/reload checks passed against the
+protected llave-plata checkpoint; CA160-01 awaits author acceptance. Evidence:
+assets/validation_5113. This focused patch follows #158 / PR159, still pending.
 
 ## 5.1.12 - Preserve crafting equipment size (#158)
 

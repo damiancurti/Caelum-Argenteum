@@ -9,3 +9,13 @@ Palomo XS staff/shield plan with its remaining stock. Keep the original save.
 3. Craft the selected staff and shield. Save under a new name and reload.
    Expected: both are XS and retained, quest progress recognizes them, no extra
    materials are granted and no original item disappears.
+
+CA160-01 | Origin: 5.1.13 / issue #160 | Pending author acceptance
+Prerequisites: rebuilt 5.1.13; load a copy of llave-plata. Keep the original save.
+1. Speak with Argento and choose to receive the silver key.
+   Expected: the offer succeeds, the key appears once in inventory, and the
+   generic already-have-enough refusal no longer blocks this eligible character.
+2. Close/reopen the conversation, then save under a new name and reload.
+   Expected: the key is retained without duplication; Argento acknowledges it.
+3. Open the silver-locked Bull room behind the starting room.
+   Expected: the native lock recognizes the key and the existing trial can begin.

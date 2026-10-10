@@ -1,25 +1,19 @@
 # CONTEXT.md — Caelum Argenteum
 
-Documentation version: **5.1.12** — 2026-10-10.
+Documentation version: **5.1.13** — 2026-10-10.
 
-**5.1.12/#158 implemented:** fixed-size recipes preserve equipment size.
-materiales-palomo has enough stock at XS/T1/100%; select XS once in that save.
-Native transactions/reloads pass; CA158-01 pending. Evidence: validation_5112.
+**5.1.13/#160 implemented:** Argento transfers the same silver key with capacity
+rollback. Twenty native checks pass; CA160-01 pending. Evidence: validation_5113.
+**5.1.12/#158 implemented:** fixed-size recipes preserve equipment size;
+materiales-palomo has enough stock at XS/T1/100% (select XS once). CA158-01 pending.
 **#156/PR157 and #154/PR155 accepted, closed, merged** on 2026-10-10.
-Time-skip controls and SI/growth migration: SYSTEMS/HISTORY; validation_5111/5110.
-
-**5.1.9/#152 accepted:** shotgun pickup, hands and one-press ADS; PR153 merge authorized.
-Evidence: validation_519. Author queue empty. Thermal redesign deferred.
-**5.1.8/#137 accepted:** PR151 merged; validation_518.
-**5.1.7/#136 accepted:** PR146; validation_517.
-
-Soldiers: validation_516. #135/PR144 accepted/merged (5e550484).
-#133 checks accepted. #140 merged 5f9202ad.
-**#132 accepted, closed; PR #139 merged b0020109.**
-
-**5.1.2/#132:** opt-in MAP06 groups: 100/350 tics, 2,000 alive, 6,000 total.
-Old/full armies retained. CA132-01 accepted 2026-10-07; merge authorized.
-**#131/#130/#128 accepted.** Rules: SYSTEMS. Fluency/multiplayer pending.
+Time-skip and SI/growth contracts: SYSTEMS/HISTORY; validation_5111/5110.
+**#152, #137, #136 accepted:** evidence validation_519/518/517; historical thermal
+follow-up stays in SYSTEMS/TASKS. #135/PR144 merged; soldiers: validation_516.
+#133 accepted; #140 merged. #132 closed/PR139 merged; CA132-01 accepted.
+#132 opt-in MAP06 reinforcement groups are 100/350 tics, 2,000 alive, 6,000 total;
+old/full armies remain. Evidence: validation_512; geometry and 10 km route: SYSTEMS.
+**#131/#130/#128 accepted.** Fluency/multiplayer remain pending.
 
 **Earlier milestones:** #82 export and #103 introduction accepted;
 #112/#106 merged (#114/#113). Details and controls remain in HISTORY/SYSTEMS.

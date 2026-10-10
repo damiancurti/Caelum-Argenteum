@@ -6,8 +6,17 @@ An independent dark fantasy FPS-RPG inspired by nineteenth-century Argentina.
 Author and game designer: **Damian Curti**. Development target: **GZDoom 4.14.2**
 on Windows 11. The final game is intended to be independent of Doom assets.
 
-**Current release: 5.1.12.** Obtain and update the complete repository, validate
+**Current release: 5.1.13.** Obtain and update the complete repository, validate
 it, then rebuild with `run_dev.bat` as described below.
+
+**5.1.13 / [#160](https://github.com/damiancurti/Caelum-Argenteum/issues/160):**
+Argento can hand over his existing silver key after the required practices.
+The authorized transfer releases the key's prior ownership before the inventory
+check and restores it to Argento if capacity is insufficient. Generic foreign-item
+protection, quest gates and key identity remain intact. Twenty native checks pass,
+including retry, ownership, lock access and save/reload. Evidence:
+[validation_5113](assets/validation_5113/RESULTS.md). Author check CA160-01 remains
+in [pending_test.txt](pending_test.txt), alongside CA158-01.
 
 **5.1.12 / [#158](https://github.com/damiancurti/Caelum-Argenteum/issues/158):**
 Crafting remembers the equipment size when browsing or completing fixed-size

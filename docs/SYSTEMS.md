@@ -1,6 +1,6 @@
 # Caelum Argenteum — Current systems and rules
 
-Documentation version: **5.1.12** — 2026-10-10.
+Documentation version: **5.1.13** — 2026-10-10.
 
 ## SI physics and attribute growth — 5.1.10 / #154
 
@@ -6516,6 +6516,14 @@ is connected from 0p. The Bull waits inactive until ENTERING the enclosure with 
 and preparation finished. From 0q the group meets before the first attack. Death records
 the result and produces the mass-based leather described above. Save does not duplicate
 key, actor or loot.
+
+Ownership correction 5.1.13/#160: the authorized handoff must remove the existing
+key from Argento's native inventory before asking the ordinary pickup guard to
+validate it. If validation fails, restore that same object to Argento. Success
+transfers the existing instance and refreshes carried weight/dialogue tokens;
+repeated offers do not duplicate it. Ordinary pickup still rejects foreign-owned
+items. DetachFromOwner is a notification hook, not an ownership-removal operation.
+
 
 After the initial dialog is finished, Palomo keeps SOLID on and INVISIBLE disabled. He
 runs using XY velocity, vertical physics, stairs and unlocked doors, then waits
