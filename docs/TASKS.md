@@ -1,6 +1,17 @@
 # TASKS.md — Active tasks
 
-Documentation version: **5.1.13** — 2026-10-10.
+Documentation version: **5.1.14** — 2026-10-10.
+
+## Issue #165 - Damage flash across map travel (5.1.14)
+
+Implemented bounded, shared flash evaluation; future/expired timestamps never
+revive a hit. Native travel clears its map-local flash; existing visual revision
+2 repairs legacy saves idempotently. Preserved Health, inventory, position, damage
+colors/intensity/fade and paid Tarot state. Native screenshots and 34 checks pass,
+including actual airborne MAP01/MAP02 crossing and ground MAP03/MAP02 return.
+CA165-01 accepted 2026-10-10 without reported qualifications; #165 closure and
+PR166 merge requested. The author queue is empty. #158 and #160 were accepted and
+closed during this task; PR159/PR161 are merged and their IDs remain in HISTORY.
 
 ## Issue #160 - Argento silver-key handoff (5.1.13)
 

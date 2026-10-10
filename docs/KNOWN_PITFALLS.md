@@ -4,6 +4,29 @@ Status: integrated engineering register (issue #22, patch 4.36.1b).
 Prepared: 2026-09-23. Inherits the project's release after integration.
 Inspected baseline: `1dc390576fa330d37ff543526fc7e69a397fc28f` (PR #7).
 
+## CA-KP-071 - Never carry map-local damage age into another map
+
+Status/evidence: CODE-VERIFIED / ENGINE-VERIFIED, #165 / 5.1.14, 2026-10-10.
+Baseline runtime: 18c1aa90 (5.1.13); GZDoom 4.14.2 Windows/Vulkan.
+
+A traveling pawn kept DamageVFXTic from MAP01 while MAP02 restarted level.time.
+The old expression strength*max(0,1-age/18) amplified a negative age instead of
+rejecting it. The author's 0.03205 hit strength became alpha 152.55 and obscured
+the scene completely. The screenshot alone looked like bad travel geometry;
+the save confirmed a valid entry position and expired Fool effect.
+
+Bound the age and strength in one shared evaluator used for both drawing and
+new-hit accumulation. Clear transient map-local flash state at actual travel.
+An idempotent visual revision repairs older saves; keep gameplay resources intact.
+Check future timestamps, overlapping hits, fractional rendering, expiry, cap,
+ordinary same-map reload and airborne/grounded hub/non-hub crossings. Do not
+remove a paid Tarot effect to hide a screen-feedback bug.
+
+Evidence: validation_5114, before/after native screenshots and 34 passing checks.
+The travel fixture seeds paid-effect state and calls native ChangeLevel; it does
+not replace author dialogue/input acceptance. Separately, the author accepted
+CA165-01 on 2026-10-10 without reported qualifications; HISTORY records the result.
+
 ## CA-KP-070 - Release actual custody before an authorized item handoff
 
 Status/evidence: CODE-VERIFIED / ENGINE-VERIFIED, #160 / 5.1.13, 2026-10-10.
@@ -21,7 +44,7 @@ not protected TryPickup; check eligibility, false keeper, capacity failure/retry
 identity, unchanged key count, carried weight, native lock access and save/reload.
 validation_5113 records six reproduced baseline failures, the rejected hook-only
 attempt and 20 passing final checks. No schema migration is necessary. CA160-01
-remains pending author confirmation; native action invocation is not a real click.
+was accepted by the author on 2026-10-10; native invocation remains distinct from a real click.
 
 ## CA-KP-069 - Fixed-size products must not overwrite equipment size
 
@@ -43,7 +66,7 @@ unchanged issued counters. Reload an active fixed-size task with a different
 current selection, complete it and reload again. validation_5112 records the
 12 reproduced baseline failures and 37 final passing native checks. Fixtures
 force completion after reservation, not elapsed-duration acceptance. CA158-01
-remains pending; this is engine evidence, not author confirmation.
+was separately accepted by the author on 2026-10-10.
 
 ## CA-KP-068 - Read letter keys from KeyChar in native InputEvent
 

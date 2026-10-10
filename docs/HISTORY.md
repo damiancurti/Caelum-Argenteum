@@ -1,6 +1,45 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **5.1.13** — 2026-10-10.
+Documentation version: **5.1.14** — 2026-10-10.
+
+## 5.1.14 - Damage flash across map travel (#165, 2026-10-10)
+
+The author entered MAP02 while using the Fool's flight and reported a fully red
+view. loco-map02 has map time 1,759 but DamageVFXTic 87,434, strength 0.032051282,
+Health 476/627, and position (-6.996,20.728,0) near the authored (0,0) entry. The
+Fool effect is already expired; its cooldown persists. The old renderer turns the
+negative age into alpha about 152.55, reproduced in a native screenshot. This is
+a map-local damage-clock defect, not an invalid spawn or newly incurred damage.
+
+The shared flash evaluator rejects negative/expired age and bounds stored strength
+to the existing 0.40 cap. It serves both rendering and new-hit accumulation, so
+an old timestamp cannot amplify a later hit either. Travelled clears the transient
+flash. Existing DamageFeedbackRevision advances to 2 and clears legacy flash state
+once, without adding saved fields or changing Health, inventory, position, Tarot
+or combat balance. Keep the original save/package pair for reversible rollback;
+loading older saves only migrates the visual state, then saving a new copy retains it.
+
+Native GZDoom 4.14.2: 14 visual/state assertions, two repaired-save reload checks,
+and 18 crossing/flight/ground assertions pass. The route is MAP02 -> MAP01 ->
+MAP02 -> MAP03 -> MAP02, with an actually airborne MAP01 departure. Paid flight
+and cooldown are not restarted; native arrival fits entry geometry; ground
+controls do not regain flight. The fixture seeds active Tarot state and invokes
+native ChangeLevel directly, not the full departure dialogue. Ordinary regeneration
+continues during runs; the visual operations themselves do not change resources.
+Before/after screenshots show the same view and ordinary Health regeneration.
+An initial 17-check route also passed; the final route adds airborne departure.
+Static/package integrity, protected-save hashes and power release: validation_5114.
+Author acceptance, 2026-10-10: CA165-01 (origin 5.1.14 / #165) PASSED without
+reported qualifications. The author confirmed all pending checks: visibility in
+loco-map02, save/reload and the next ordinary hit's brief proportional tint.
+The author requested issue closure and PR166 merge; the confirmed entry was
+removed from pending_test.txt. No additional native tests are claimed, and
+the fixture limitations above remain part of the evidence.
+
+During this investigation the author accepted all other pending tests: CA158-01
+and CA160-01, both without qualifications. Their release entries record acceptance;
+#158 closed / PR159 merged as fa65c253, then #160 closed / PR161 merged as 8b325144,
+on 2026-10-10. This did not accept the still-unfinished #165 work.
 
 ## 5.1.13 - Argento silver-key handoff (#160, 2026-10-10)
 

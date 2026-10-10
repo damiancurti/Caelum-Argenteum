@@ -6,8 +6,18 @@ An independent dark fantasy FPS-RPG inspired by nineteenth-century Argentina.
 Author and game designer: **Damian Curti**. Development target: **GZDoom 4.14.2**
 on Windows 11. The final game is intended to be independent of Doom assets.
 
-**Current release: 5.1.13.** Obtain and update the complete repository, validate
+**Current release: 5.1.14.** Obtain and update the complete repository, validate
 it, then rebuild with `run_dev.bat` as described below.
+
+**5.1.14 / [#165](https://github.com/damiancurti/Caelum-Argenteum/issues/165):**
+Damage flashes no longer carry a previous map's timestamp into a new map and
+cover the screen in red. The protected `loco-map02` save repairs its transient
+visual state automatically; Health, inventory, arrival and Tarot are retained.
+Thirty-four native checks pass, including airborne MAP01/MAP02 travel, grounded
+hub travel and save/reload. Evidence: [validation_5114](assets/validation_5114/RESULTS.md).
+The author accepted CA165-01 on 2026-10-10 and requested #165 closure/PR166 merge.
+Acceptance is recorded in [HISTORY](docs/HISTORY.md); [pending_test.txt](pending_test.txt)
+is empty. #158/#160 are closed, with PR159/PR161 merged on 2026-10-10.
 
 **5.1.13 / [#160](https://github.com/damiancurti/Caelum-Argenteum/issues/160):**
 Argento can hand over his existing silver key after the required practices.

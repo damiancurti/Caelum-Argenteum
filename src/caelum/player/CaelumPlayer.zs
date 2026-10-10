@@ -6149,6 +6149,8 @@ class CaelumPlayer : DoomPlayer
     override void Travelled()
     {
         Super.Travelled();
+        // level.time pertenece al mapa: ningún destello de daño cruza con él.
+        CaelumDamageFeedback.ClearFlash(self);
         RestorePersistentCharacterState();
         CaelumTarotService.RestoreNativeEffect(self);
     }
@@ -8893,6 +8895,7 @@ class CaelumPlayer : DoomPlayer
     // regeneration that also pauses when the game itself is paused.
     override void Tick()
     {
+        CaelumDamageFeedback.EnsureRevision(self);
         CaelumBreathing.UpdateSound(self);
         CaelumCarbineWorld.Restore(self);
         CaelumTarotDeckRules.EnsureLegacy(self);

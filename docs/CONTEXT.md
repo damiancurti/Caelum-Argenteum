@@ -1,11 +1,12 @@
 # CONTEXT.md — Caelum Argenteum
 
-Documentation version: **5.1.13** — 2026-10-10.
+Documentation version: **5.1.14** — 2026-10-10.
 
-**5.1.13/#160 accepted:** Argento transfers the same silver key with capacity
-rollback. Twenty native checks pass; CA160-01 accepted 2026-10-10. Evidence: validation_5113.
-**5.1.12/#158 accepted:** fixed-size recipes preserve equipment size;
-materiales-palomo has enough stock at XS/T1/100% (select XS once). CA158-01 accepted 2026-10-10; PR159 then PR161 merge authorized.
+**5.1.14/#165 accepted:** bounded damage flash, map-travel reset and legacy
+visual repair. CA165-01 accepted 2026-10-10; PR166 merge/closure authorized.
+Thirty-four native checks pass; validation_5114. Author queue empty.
+**#158/PR159 and #160/PR161 accepted, closed, merged** 2026-10-10.
+Crafting size and silver-key fixes: SYSTEMS/HISTORY; validation_5112/5113.
 **#156/PR157 and #154/PR155 accepted, closed, merged** on 2026-10-10.
 Time-skip and SI/growth contracts: SYSTEMS/HISTORY; validation_5111/5110.
 **#152, #137, #136 accepted:** evidence validation_519/518/517; historical thermal
