@@ -1,6 +1,36 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **5.1.9** — 2026-10-09.
+Documentation version: **5.1.10** — 2026-10-09.
+
+## 5.1.10 — SI physics, growth curves and migration (#154, 2026-10-09)
+
+Author-approved contract: B=(N*N+25*N)/125 percentage points; families B/3B/7B,
+mapping old Types 1/2/3/4 to new 3/1/1/2 while retaining each operation. 32 MU/m
+and 35 tics/s remain; ordinary gravity becomes 9.81 m/s2. Walk/run is 4/8 m/s
+at Agility 0. Jump useful energy is 800*(biologicalMass/80)^0.75*M3(Agility),
+and total moved mass determines velocity. Fall thresholds follow the approved
+gravity ratio. Physical projectile gravity and bounded launch-time ballistic aim
+preserve muzzle speed, dispersion, collision and elemental exceptions.
+
+Efficiency averages Agility/Dexterity before Type 1, starts at 25%, reaches 50%
+at 100/100 and caps at 99%. Existing fixed action/distance work remains; jump's
+former fixed 0.5 m budget is superseded by actual accepted takeoff energy. No new
+Air/Hunger debit, no heat tail and no acceleration redesign are inferred.
+
+Author decision 2026-10-09: one-time migration preserves Health, Anima, Air and
+Adrenaline percentages; ordinary equipment recalculation keeps its previous
+no-free-heal rule. Explicit player/NPC/gate/traveler and map/projectile revisions
+preserve ownership and accrued state. Original saves/packages remain the rollback
+pair. Static/native results and rejected fixture attempts: validation_5110.
+Native results: 327 final rule checks, 165 projectile checks, 9 real-launcher
+checks and 16 fall/trap checks pass. Four steady speeds and six native jumps,
+both mansion stairs, pool exit and the sewer elevator pass. Old-save/reload,
+protected Prueba/rollback and three hub visits preserve the tested state.
+Pending spells migrate their new cost once without restarting or spending Anima.
+Static validation passes; the official package matches 6,299 source members.
+The temporary keep-awake request was released with the power plan unchanged.
+CA154-01/02 remain unconfirmed. Commit/push and a linked PR are authorized;
+author acceptance, issue closure and merge have not been claimed.
 
 ## 5.1.9 - Shotgun pickup, grip and held aim correction (#152, 2026-10-09)
 

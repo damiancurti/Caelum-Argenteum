@@ -1,6 +1,13 @@
 # CONTEXT.md — Caelum Argenteum
 
-Documentation version: **5.1.9** — 2026-10-09.
+Documentation version: **5.1.10** — 2026-10-09.
+
+**5.1.10/#154 implemented, author acceptance pending:** new growth families,
+Earth gravity, 4/8 m/s base movement, energy jumps and 25–99% muscular efficiency.
+Physical projectiles fall; NPC ballistic aim is solved at launch. Save migration
+preserves percentages once; equipment recalculation still grants no free healing.
+Rules: SYSTEMS. Evidence: validation_5110. Pending: CA154-01/02.
+Branch: issue-154-si-growth; PR review pending.
 
 **5.1.9/#152 accepted:** shotgun pickup, hands and one-press ADS; PR153 merge authorized.
 Evidence: validation_519. Author queue empty. Thermal redesign deferred.
@@ -15,21 +22,14 @@ Soldiers: validation_516. #135/PR144 accepted/merged (5e550484).
 Old/full armies retained. CA132-01 accepted 2026-10-07; merge authorized.
 **#131/#130/#128 accepted.** Rules: SYSTEMS. Fluency/multiplayer pending.
 
-**4.37.24/#82 accepted:** closing export; Tab/M/B/R/F/T.
-Evidence: validation_43724. #112/#106 merged (#114/#113); V5.0 follows.
-**#103 accepted:** single-page introduction, actual controls, CA_MUS01;
-second key starts MAP01/CA_MUS02. Art farewell; saves unchanged.
+**Earlier milestones:** #82 export and #103 introduction accepted;
+#112/#106 merged (#114/#113). Details and controls remain in HISTORY/SYSTEMS.
 
 **#98/#96/#91/#89 accepted, closed, merged:** dummy model, necklace/shield names,
 crafting/Tarot UI, Pico and shared gathering feedback. Evidence: validation_43717-20.
 
-**Accepted 2026-10-04:** #93, #97, #99, #101, #87; all author checks passed.
-Evidence: assets/validation_*. #81 accepted/merged.
-
-**Accepted #80 / 4.37.12 (2026-10-04):** three essences; User3 costs 1000 Anima,
-lasts 60 s, recharges 600 s from use. Fool flies; Minors double fixed bonuses.
-Deck: 780 g, one slot, unsellable/undroppable/unbreakable; capture needs
-it inside the owned Box. Evidence: validation_43712.
+**Earlier accepted releases:** #93/#97/#99/#101/#87 and #80/#78; ownership,
+Tarot and equipment rules remain in SYSTEMS, with acceptance in HISTORY.
 
 **Accepted #79/#78 (2026-10-04):** guards recognize the amnesiac captain; one
 Journal clue. Paid prisoners share siege/calendar guidance; future timing pending.

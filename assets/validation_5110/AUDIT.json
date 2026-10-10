@@ -1,0 +1,1048 @@
+{
+  "release": "5.1.10",
+  "issue": 154,
+  "baseline": {
+    "commit": "f8addb685022a867dd76071826304860ea97baa9",
+    "package_sha256": "62440c08938131aa785385af225497de79fd6c6d9a5627993ae942f875d75453",
+    "author_owned_deletion_excluded": "assets/art_source/Caelum Argenteum.png"
+  },
+  "official_package_sha256": "2416c63a674b6ede63f5f50c0cd36b548851cd1005fd60251ddfffa28dc04581",
+  "package_members": 6299,
+  "package_exactly_matches_src": true,
+  "unchanged_maps_art_and_audio": true,
+  "deterministic_fixture_hashes": {
+    "baseline-addon.pk3": "15e53dc7a1b911e06c5253347590c38b66bd9ec8c1bbf3142fa313b93b4fdd84",
+    "checks-addon.pk3": "a4f7f84e87c98a213aafcc7a38d6e43fa3d4b170f5783e38afc842867cc8ec0e",
+    "hazards-addon.pk3": "04621cfa92c07912fa80b5adc0b5b75ce3880762063571977777c1acc859eb15",
+    "hub-addon.pk3": "c70835196702bc9e45c183654985fa7024a0827952ae8c74a704e696e6d4817c",
+    "launchers-addon.pk3": "6f9f4e336ce423c1548b4ceda09bc696d1d3a2ec6b1440238209d1b00710cf43",
+    "movement-addon.pk3": "c1f0405afde11bf2055332809d16e7eb8ba05119c58191c89dca1c65bd362689",
+    "persistence-addon.pk3": "f813b2c3db7cd0e416f6266c85878ebfdc2e4b69981ed72201c203e8e1c52ed3",
+    "projectiles-addon.pk3": "b3d80e84517f84082aaa037f7d556e33a21efdac598ed62f38b4d477c19d3634",
+    "traversal-addon.pk3": "bc712f267a62f3f5e604036b8fade880981177ed9f698b09f2b7623896c6f6e0"
+  },
+  "protected_author_save_sha256": "3cde87c764be563206a606d054e59692c98f417f47ec13d481e86886ce8c4342",
+  "original_author_save_unchanged": true,
+  "keep_awake_released": true,
+  "source_sha256": {
+    "crafting/CaelumCraftingStation.zs": "4cf9d45bbf0e0cf3897d8f74869bef1aad39f5109ee359fe3866adb42ed38858",
+    "impactphysics/ImpactPhysics.zs": "414c51e69482d225d7b281d2756493c662e63dcac19eb0ff778a2408753033d4",
+    "caelum/actors/CaelumActorProjectile.zs": "b9b62a3cc71fbc6ce6000c8ebb3afac9a055a9aac291cea6dbc90288f8e88cfe",
+    "caelum/actors/CaelumAnchoredResident.zs": "f25acd5c912739862e4ba2e83005c0b1c309014e3fcc1f1b10f2f32db30ffb6a",
+    "caelum/actors/CaelumArgento.zs": "e91790c5b8de00089f0ac98afe5d782e361628f793a88c14c497286dfe5e91ad",
+    "caelum/actors/CaelumBull.zs": "f03791365b31f9142b92e68ae9d71ef57c8ff6283cb0947186b1df34e38cc0c5",
+    "caelum/actors/CaelumCaella.zs": "df2ad3687756628edb1218cb57fc368697658d7838c168e7f2ddc40cdc1b522c",
+    "caelum/actors/CaelumChannelEffect.zs": "bcfa0a03d8af88212bf6da3085c0ac1e2631b4d43af05ddf537b5f58d6467741",
+    "caelum/actors/CaelumCombatActor.zs": "77278c6afbd02fa8801dd6b504b94370dc3b8969d737648969be77dbce0346cb",
+    "caelum/actors/CaelumDemonBreath.zs": "9c0f261d04efd82489f197a07b69519327e2533e01f7609c2ddd1a8ece7a45b3",
+    "caelum/actors/CaelumDemonService.zs": "cef6c19a5aca2476381a21410c942b7d7c05a93932771224c328e8df8740a622",
+    "caelum/actors/CaelumElementalStatus.zs": "82117caa514eee5313976737fd7b46f735a2c59b4d4c6cf8e5c3e443eba104c7",
+    "caelum/actors/CaelumElementalVFX.zs": "d298dd3db18ec7f907ab5dcc532058d797c1a9dd8ad1f5b6c9c3f60059605494",
+    "caelum/actors/CaelumElementalVFXData.zs": "83392d05052bbc5294dedd2bc20639713917e9abcb2c31b8118d76d68192474f",
+    "caelum/actors/CaelumElementalVisualEffects.zs": "3760296a013d0197e7677518dc07bb4af7d589fa4a91f7d7b3442cc4db7207e4",
+    "caelum/actors/CaelumFolkloreCharacters.zs": "b4fb25ddd691ffe4e4056c3e90294e1ab38025cc9f323bc63841e893ec6012f3",
+    "caelum/actors/CaelumGiantRat.zs": "58c03dee5acda68f533bae6f3e450ba57c4c949ff0873b97cee07702c2510a1d",
+    "caelum/actors/CaelumMagicProjectiles.zs": "bdc3bb681b50551026d2894a57206df0118584be56af5ff3a9c33699914a85a3",
+    "caelum/actors/CaelumMassAIScheduler.zs": "fe50019a5a8108fa3e260f09c00e8aa28020af7770cdc7314b5cd4efc33b432f",
+    "caelum/actors/CaelumMovableProp.zs": "3d63cb3b44d6debda6ab482f32707d62a63f4d4fae511c25524cb91f7a3c298e",
+    "caelum/actors/CaelumPassiveStressActors.zs": "a5b1f31db303b88971771fe749dbafde0d0c59e1a8924500bd17c7904a100a1b",
+    "caelum/actors/CaelumPopulationState.zs": "8603536e17a0b830b3a1e7b2741948b9a952b77f82186149c640273f9c717544",
+    "caelum/actors/CaelumPrisoners.zs": "47e97fb81bdc1f31b9092b63933d70c6a762e4476232d6a43aee2a200cc41bb1",
+    "caelum/actors/CaelumRonnie.zs": "e29f8a522affdea1ee08a9526374d68c3237e21e7f26cd10c9edad070c3e7232",
+    "caelum/actors/CaelumRulo.zs": "9bbb3552268c2f1d3b6b5a4e6bf710ddcc99f0a8313ee288dabd608f1ee34546",
+    "caelum/actors/CaelumTrainingDummy.zs": "d94cb58de9ee972e134ac716223bfbde66ed44f6357b9a2265efeffd4bf8b114",
+    "caelum/anatomy/CaelumAnatomyProfile.zs": "3f0ea6129f0fb2dba5dc9887160d63e8ab023316d64153641fc9ce8ac5c663f7",
+    "caelum/attributes/CaelumAttributes.zs": "2a20f0e74142d2b974e33de5c273811a15430b297478cb72b58da5e5dff9a90c",
+    "caelum/character/CaelumCharacterAllocation.zs": "5ccc7966ca46112f9fc6d6dc53b6a73f8e5684c93f664949dce73e63932c17cb",
+    "caelum/character/CaelumCharacterCreationMenu.zs": "ccc3c6b168c5e6eb56889bba6b1c58cefced4641261197207fb7794a2d1a60ea",
+    "caelum/character/CaelumCharacterProfile.zs": "deb2e59b2ad4e607a5e943e067a49f58f81104bbbee4c27599a723fcfe2adb0c",
+    "caelum/core/CaelumBallistics.zs": "aeee905afa3ca03188e614697c3f34ab57b85e6fa6138ed2d5885b3079d95b5e",
+    "caelum/core/CaelumConstants.zs": "85365017e2ba3e1a6121ff1d45fecf86cb4d7cb10e3ee9042f4e868ef44f6dd1",
+    "caelum/core/CaelumPhysicsUnits.zs": "b7c68ec0c97aa3114ef16f47a05f94d30b32af0b2d5de2d0784a817d1cdc6dd4",
+    "caelum/core/CaelumTarotArt.zs": "4b47fe8b2cb86e9dc499ed5995fab0d8a7257ade1f47d9918ea4f0fec9fa729a",
+    "caelum/core/CaelumTarotDetails.zs": "bde24bedd1594f11f64810d3d654378f9d35a3150543a928e60cc35fb767fc5d",
+    "caelum/core/CaelumTarotPowers.zs": "55f619ac5f630d668806d750ef465f58960175c10539243277c5f64f234fa752",
+    "caelum/core/CaelumTarotService.zs": "a30a3645251c9aaf108b56acad04babdcf981b6986a7587e9ece6eb43497a8d3",
+    "caelum/crafting/CaelumCraftingBrowser.zs": "de9beea16d2a69076ce57ce4befc1e6c5343aff67f4fe0f6ead0591b144c2334",
+    "caelum/crafting/CaelumCraftingStation.zs": "f84f155893e58e63c01bdfb0bc97e9cff7f0021224089f3a3a16a843b1fad468",
+    "caelum/debug/CaelumDebugOverlay.zs": "2615e8f796961b82514c5ab98585b569eccd45dd3db71e6800f987ff2c2f2655",
+    "caelum/debug/CaelumIntegrationDiagnostics.zs": "e12d64d3067e83d26f4931d83627ce06632f4a83ce856a68787f1803c9290120",
+    "caelum/debug/CaelumPhysicsDiagnostics.zs": "cc5218e8138316397252d2dd389215c5f133afd0ab709e485bcacdaed54a1bbc",
+    "caelum/dialogue/CaelumGuardCaptainDialogue.zs": "d5b51ca648399f57ffdcb4d01184bbf5d511d6bdaf96db3beca2d7ef0ce2d70a",
+    "caelum/dialogue/CaelumMainM00SocialDialogue.zs": "1674e89262938a0a8a46551fa1a9a2930a3da84e138e8bbf6c30089955c42eb3",
+    "caelum/dialogue/CaelumPalomoDialogue.zs": "f6283ab12c9fc78f9053445614692c5e8b9817687e82e460f2299accff1b1a56",
+    "caelum/dialogue/CaelumPrisonerRescue.zs": "c174757165f0b6b518a13757299f54a89e372f070d3221aa60b09938f2651080",
+    "caelum/dialogue/CaelumRonnieChoiceActions.zs": "8bc025c1db5c66300879a0fa11c76ec42727233c9fbb238289ccc63ff0167ddc",
+    "caelum/equipment/CaelumArmorModel.zs": "22a4e74a8a8c8de3be5c97b3fa8915da3b99479882bfbe35ebc94e15928fcdde",
+    "caelum/equipment/CaelumArmorRules.zs": "ed48918d2017fa4a7cb036169f2548da26aaad887583e0b84006ac73160a4646",
+    "caelum/equipment/CaelumAttackRules.zs": "df0afcf6e9be94a4f029fb6ccfd3f6cb7d998d2040bbde70aec4ca4f55dc045f",
+    "caelum/equipment/CaelumCityTrade.zs": "f258a6d79741de0133245a5a93efac002f2394dce2cb10533e2cc82d1671f3d7",
+    "caelum/equipment/CaelumConsumables.zs": "dbae0af276af24842874badff45ae16b60a87223d31612e778f0aa8563a96ac0",
+    "caelum/equipment/CaelumCraftingRules.zs": "a2cb58d6a5f938b8f7cd045644df496ef7f92356859c56d7c348c60c7c21dab9",
+    "caelum/equipment/CaelumEconomy.zs": "68f4257977e6d41f132d8269bd38a16e9b7758c2cc786b090b0a833563b22e31",
+    "caelum/equipment/CaelumEquipmentPickups.zs": "8ca15f5f4c084a59043c7b8f1556c1bec3b4fbef62a04881c247a9a96f17a8b5",
+    "caelum/equipment/CaelumEquipmentRules.zs": "695a32fe880ded4795986cfcfeaf86bd2f08e417f7396569a0ec539a68ea9aed",
+    "caelum/equipment/CaelumFirstPersonLayers.zs": "c4fb13f7a92c737f17d5ee9a4d5eac742ee40c09fe2ac745c3d5acabe8c92b1a",
+    "caelum/equipment/CaelumFirstPersonShield.zs": "7da6abc26a01b111658f2e1557eb94c1305590c10efd843ca55c62eb681595f5",
+    "caelum/equipment/CaelumFirstPersonView.zs": "52eed71a2907e5b1b849878fcaeb8c2af76fd43b4034e9b8b5c4f0abcb1de941",
+    "caelum/equipment/CaelumInventoryService.zs": "55c4cbe170da93bda5aa1c9105a4b16cc078136482f97cbb5132c13ce31309d1",
+    "caelum/equipment/CaelumPersistentCharacterState.zs": "f8ffb47a49182c08cac334cf5ae6dc703fbf1ee49ac951382c6c02aba777fbf4",
+    "caelum/equipment/CaelumPlayableWeapons.zs": "82b7ac263fc2379223187b08111b1aec63df2ec2b0ddeafafdc930fdf8ca1f31",
+    "caelum/equipment/CaelumPotionRules.zs": "6cc6420208b0a3d8f3a2b86ec5c7e6c0f40f510d66c577094238ecf317d892bc",
+    "caelum/equipment/CaelumRangedRules.zs": "2b7741205dab541248e0b46b42974747db8ca85bf0d0f2bfa3c4e94fd101a5c0",
+    "caelum/equipment/CaelumShieldModel.zs": "311e959d40e2dd3f9eb7f82c5653252691d06de203c1c325c315cf3906564688",
+    "caelum/equipment/CaelumShotgunRules.zs": "78990e60bfddb40556092603439fcad8c19cd43354219f0869e58def5657f92a",
+    "caelum/equipment/CaelumSpecialItems.zs": "90bae857df5c061c607875ca92cc0fd34feeb863b62e7d513b119f8001f88ff8",
+    "caelum/equipment/CaelumTarotDeck.zs": "8a69331077ec2fac097c283c66e01b91d300734f333a2a30a04894f96ec4b943",
+    "caelum/equipment/CaelumUnarmedWeapon.zs": "160b6ae64eaa0439b4e2651c6958489ec70a44c458ee82ff4eb4239076a36c10",
+    "caelum/equipment/CaelumWeaponCatalogue.zs": "3f3ea10f0683e1b91389796bcb46727981daaaae00f8d4daa4891a08a9734dfc",
+    "caelum/equipment/CaelumWeaponModel.zs": "edd1c67c78a76ff57faafe14d530ac924c4eec42e7fe578e5c978c91e45ea3ca",
+    "caelum/factions/CaelumFactionCondition.zs": "e1f3417c26f063292c6944df1fad0cc39504441081b2c1ed9fe6a41530451746",
+    "caelum/factions/CaelumFactionRules.zs": "936733f9c11d4438335f6e2694fc067ec398fb134cd7cd6c1ce550b83660d451",
+    "caelum/factions/CaelumReputationTrial.zs": "023886da3700f011bd38b2dbc97ba5a027e43f0ae5e8e36d90ef773472d6523a",
+    "caelum/hud/CaelumCompass.zs": "5a96ffa66350305bc6133f95f4b01c013bab5bb6a32ba8552560a75979a2d485",
+    "caelum/hud/CaelumCraftingUI.zs": "dbc726f65de69be3de335ada87c4be19b3602f013af9469f24abebc4edb5ad88",
+    "caelum/hud/CaelumDamageFeedback.zs": "e4a1a47bcb788bb4a96565af12762cb322af93b39a96afcbebe5873b39c0bf6d",
+    "caelum/hud/CaelumHUDOverlay.zs": "214e1ac0310158ca641a7c30a23c6c6ba617dbd6d5247475eca52734dddd3477",
+    "caelum/hud/CaelumJournalOverlay.zs": "11cf5afd87f86b2ae71efaa32c755b259c97b293d69250fc6ce5556f65ce3e3e",
+    "caelum/hud/CaelumNotifications.zs": "58104f78f68a576130f64038afbbb3c5b18f26c442c96c322dd387c3eab0c0ad",
+    "caelum/hud/CaelumScheduleCalendar.zs": "813149c28ddb2e74a0d0eef625660b2e5a5515a20c10a106fb19c632814274f4",
+    "caelum/hud/CaelumStatusBar.zs": "2d7dca6676047c148a33b28a2e0a60d37d2bde446a9ed74d4262b1325d175725",
+    "caelum/hud/CaelumThermalHUD.zs": "381c986af03acd062caaf4c2bb2b2df2e4a52edb9b2fbc7cfc87dd4e7f9d6700",
+    "caelum/hud/CaelumTimeSkipPanel.zs": "d2e719d8d8b17f96e18e69182a00da839257a800e7ca41ad965afee01ee2b7a8",
+    "caelum/player/CaelumPlayer.zs": "c0c0fb9ae84518c8413ce599899cbddc6f9ea46ec5255ab6579df0677a49df06",
+    "caelum/player/CaelumPlayerAuthority.zs": "f942f0fd9a5a24470c7f899ee6f92f529bf8144523e8b4fce63574ea834f93f0",
+    "caelum/player/CaelumPlayerCharacter.zs": "975d5ff13b41e57bd1f06a25169b0a6c0c383e72bae31fab474e2615ee538228",
+    "caelum/player/CaelumPlayerPresentation.zs": "dd50714948b92984da4268d684f29187a395216100dd4ea18a44936fc557d3d1",
+    "caelum/player/CaelumPlayerResources.zs": "12439c23f2b1487cb701720da89fe1db8b3f07e6b75821d502047fcbd0bbacbd",
+    "caelum/prototypes/CaelumDomingoFirstPersonPrototype.zs": "c52d18fcb505ad36c65707cbd8e47f1ea99c87d1e9b730fc7191b6b042bc8fd5",
+    "caelum/quests/CaelumArcanaProgress.zs": "c9d7b1e7f3a6053cac8cc289b867edfdd7fdbf03ccf1df38224991a2585507a4",
+    "caelum/quests/CaelumDemoNarrative.zs": "89f4f497ca3c3b6b0e07ae8145ea2c2948c55585011ce880d51b8f9da9646fd7",
+    "caelum/quests/CaelumMainM00FoolCapture.zs": "ec3ac735cbf7d998881fb564752e1aefb69102c945df3dc5a65fda012082c96d",
+    "caelum/quests/CaelumMainM00Loadout.zs": "fd385026e128462dbedadd0b0f1e0e6211fe7d939ce305065708c80142bd0737",
+    "caelum/quests/CaelumMainM00MagicTrial.zs": "cc823e7fcd097ea3c5561dbd2ed6fdac8190b9e56421af3f2bb8cf5bd1a5cc72",
+    "caelum/quests/CaelumMainM00Necklace.zs": "b25db81dbacbaee9f84c6672b3a722600b78c2f14edafcc9a13b82182e193188",
+    "caelum/quests/CaelumMainM00QuestController.zs": "dcbaec89cb6fafc6f10ac318161895f5e989165c838ccc79de7d9f2eb904ba44",
+    "caelum/quests/CaelumMainM00Return.zs": "9214712945e966e74b0478792f92c670df61b06864101b7b41bd17e60891d2e4",
+    "caelum/quests/CaelumMainM00RonnieTrial.zs": "d21777ece8b66e08304d3f4aa982797c1f6beb232f78e1c5df3616d582447dd8",
+    "caelum/quests/CaelumMainM00RuloTrial.zs": "7eaae6b5972f0070a3072fb9e069a35cadcf6a4fe5f0bd49752929beb5d206ec",
+    "caelum/quests/CaelumMainM00StarterRules.zs": "f0343f50e8b943b6025b5f132c68a82dfcec06cf5deaea60edac3b3ed69ffbc8",
+    "caelum/quests/CaelumQuestCatalogue.zs": "fbd01f31b24499cbca01bca7f40b6ecab09394b8f2bac3efa6fe963025a543c1",
+    "caelum/quests/CaelumSideQuestRules.zs": "ca710a9acea511416c34b71101b5ff3e96e41d6471ed460376d66ec65596754a",
+    "caelum/quests/CaelumSocialDebugActions.zs": "956ebc8dd48d1998c4a609c592ea1562e0261f7cbe5532685828ebe197db7349",
+    "caelum/statistics/CaelumDerivedStats.zs": "2842517611e1ce317c577bf17f548149e51701e76230ba30a9612d2dd7afb5cb",
+    "caelum/statistics/CaelumGrowthMigration.zs": "6d30428fdf3a10a5f0b327487281113deb1f946531cee660fc54daa9dd8092ff",
+    "caelum/statistics/CaelumGrowthRules.zs": "087e5a2b29f60dc1ff6f293bcc05a79607c6a7c44530e1f4c565381a8daa30f5",
+    "caelum/survival/CaelumBreathing.zs": "c840ad86e8c559b762b1f21eb8e16446ecc6e80d30a951b6b8ef868858819af3",
+    "caelum/survival/CaelumRecoveryRules.zs": "5f1f955dbf1006fd95deb767e77a3adf2257ad17bd31ea9631d76aa1207eb1df",
+    "caelum/survival/CaelumThermalBody.zs": "7800f7fe662e961952ed2b90c7c1b8ae3d21b9dd23b388066e2edf83ae8a77f2",
+    "caelum/survival/CaelumThermalCoefficients.zs": "be1ea2e077978011e741cfd94302ed4ca75022a20e87584d41e00dbb44cf28dd",
+    "caelum/survival/CaelumThermalData.zs": "4ec6334ed84a922a6fbbf0ddf1fa7c89c7f873870d0238a7f314c96c0ca35ad4",
+    "caelum/survival/CaelumThermalEffects.zs": "6ce9c488cf20f3731572fa8565e110ffa0446dc64f9154dd257c6fd252fca58c",
+    "caelum/survival/CaelumThermalEnvironment.zs": "43e805b9a477665934ab2c05997e280f4389d6f4831101805aa7bf51b9b331b4",
+    "caelum/survival/CaelumThermalFire.zs": "c34ee9d40943d4a6a9f23ccab76e45830e742661b21fd31d28a0b4c593230320",
+    "caelum/survival/CaelumThermalJourney.zs": "545f8e208b7a121db12b5fbcd71676cbe5540a7e1b0653e0f73fb7d3561f9030",
+    "caelum/survival/CaelumThermalMagic.zs": "07153840be0fa8ae71327a371bc20e829d1e0a998a0507c26646ae311d30ef88",
+    "caelum/survival/CaelumThermalMotion.zs": "5fcc9129627955dd3e01f1529e04d5cee2cca8de222a67ea03e0b364d2f6cc41",
+    "caelum/survival/CaelumThermalRules.zs": "d0f162f3f3c6ed3f21ae1c9b1d15f56ae9fbef8f8c71207d267c2c098f3e51bc",
+    "caelum/survival/CaelumThermalRuntime.zs": "958f9fa4d927405a85d30a8671f59804fcd63da05cb0ca51762e0f30b46c1e50",
+    "caelum/survival/CaelumThermalService.zs": "0d33861a6b010a553e1e05f6eafafcd307e46d472a7a6c8fd56a83f9a7ff8e91",
+    "caelum/survival/CaelumThermalState.zs": "ad6583dd5b4341352b64af334e90126762a4d0ff31c89c10a4a2f294dcd24a1e",
+    "caelum/trucazo/CaelumTrucazoMatch.zs": "ffd56934dc8a6bf2d38aa23149810b1830de73bc10d84aa22e3abd86dda68413",
+    "caelum/trucazo/CaelumTrucazoMenu.zs": "35aeeb5a379ce41eebec73f2d14fda6d6dbc091cb222527fe754efaadf3c6a68",
+    "caelum/trucazo/CaelumTrucazoRules.zs": "6467340ac3789bd7250268777e83215c098673f6eb49a49e39d84a2cc464d380",
+    "caelum/trucazo/CaelumTrucoMatch.zs": "15c1f2c513f0020bf3e64400510c2bf2738c3b49ffc3606b09b7bf857c8aa976",
+    "caelum/trucazo/CaelumTrucoMenu.zs": "30db8ff07a261b5326046d0c213f5e186f44c0fda2b85fb14294b91b56a72546",
+    "caelum/trucazo/CaelumTrucoRules.zs": "42483d934b39e5c7a131725101c31cef41ffbfb3a1eafad053f205f6e246abc1",
+    "caelum/ui/CaelumChestPreview.zs": "24a2769d7964853f28ff92fe3132bf3a09744300697ff43be9114ed61a88b980",
+    "caelum/ui/CaelumConversationResume.zs": "ec98f3f8665578c4662d09f92270e2cabeffba7332b303fcfc921a73c60a6b07",
+    "caelum/ui/CaelumDisplayNames.zs": "38b438987cc9acd300bdb5aa1455f27161a37d45ce016d7c44e624b1cd0a035e",
+    "caelum/ui/CaelumIconResolver.zs": "c1f5b1e4425557face8200c402077a5d445f9d82632ad75b9035bc874f5c82a3",
+    "caelum/ui/CaelumMenuAudio.zs": "440928498294f4fc573082160960b272414b33794bbe547efe4cc6a08c41f9fc",
+    "caelum/ui/CaelumNarrativeArtwork.zs": "786ea09237cd61ef655259c5b5d234c2f00c10c51d21e2d84190298e4c9dad37",
+    "caelum/ui/CaelumStoryIntermission.zs": "1eeb254d4c2f5102ba08b34f13a59f4e519cd5e3077b3b67ff9fe06b10e267f4",
+    "caelum/world/CaelumArcanaPlacement.zs": "f4b69290124c8eab8783d3953edeb8c029d79afd9aee54826f8d543f58de89fd",
+    "caelum/world/CaelumBatteringRam.zs": "72dfcd59ab09a8911a7c0cf4cff6dc6f993361fd198d008a0fc27cb54045e424",
+    "caelum/world/CaelumBreakableGate.zs": "0c4a0becc54d4a301e40e85d10e8912c00ac2603420a61e689d87ecd69dc4e01",
+    "caelum/world/CaelumCalendar.zs": "bce9fb573f04e112ab2a3c31fbc890cb012ece66735e887c7a74068d62fb171b",
+    "caelum/world/CaelumCannon.zs": "287dcab51c9f690a5b299dd5d8817d8374bfd4d8c7f66d3aa8800c241c225114",
+    "caelum/world/CaelumCannonData.zs": "d86b251c93661a3fa4db13f8d485edef33bdf1d553d4db40fb85d85469208b1b",
+    "caelum/world/CaelumCannonTrial.zs": "dabde1ae3766de716a4851ce3dac60eb45cc8f5ca2dc9b766bcd3bc02995eeb9",
+    "caelum/world/CaelumCaravanTrial.zs": "c3a55453ef46486d51d4ffdb6da741145267c36e79f6d571208b0035b01a7180",
+    "caelum/world/CaelumCityData.zs": "3be13b063325da0ae22d51b67587351555668388492db780e531787673012f56",
+    "caelum/world/CaelumCityNavigation.zs": "a88bd0d8d792c8a5d77ab2638a1698f9214c57f337dfd697f0b77d26bdea1a90",
+    "caelum/world/CaelumCityRoutes.zs": "472c81cffae27b4cef40c6757d1bfa1b1bafb2b7658692fb5cedfae90f2b05a5",
+    "caelum/world/CaelumCityWorld.zs": "7899a445e8ff5d5d24a11822742a7085759dc3f4c3573bbcd81efad009b34a77",
+    "caelum/world/CaelumClimateNormals.zs": "ce50ec4c93e88f02088a7056c943b0a9eb19511a1f0b369eaa088b1eb0b71fbb",
+    "caelum/world/CaelumDecorativeCave.zs": "182569cca99617a5822040741fbdbf197311577e69db137af49e3710abcfcc02",
+    "caelum/world/CaelumDining.zs": "431e13235ea0281d083396b598fc7eb71ea881fdf346be82dc217ffbd773e93b",
+    "caelum/world/CaelumDoorAccessTrial.zs": "bbed119619c31c316d04f0993b0079ba74f11c178bbfb68a869ac1e36e62876c",
+    "caelum/world/CaelumEnvironmentProps.zs": "bbc62340cb85167f2e2334ce15ea577d9565c6d64a8dd9db045b25743398c6f8",
+    "caelum/world/CaelumFiniteSurface.zs": "f7bfc64d766b2dc5e468a3185cc32bc41ac8d3d32233508c51cca36671283545",
+    "caelum/world/CaelumFiniteWall.zs": "71f581c786f70a5e180a3abbf210a76d3430f03424f8a54558c7e38b988e9ff2",
+    "caelum/world/CaelumGateData.zs": "767c166786953e40509a6a8d5cc2d5814d467b28799be9e41284c56b0ce5993d",
+    "caelum/world/CaelumHazardReset.zs": "6b5b941d91389ec68066b40f91e962022af87fd3d4b2cdcdf4d4dedc958f1ea7",
+    "caelum/world/CaelumHingedDoor.zs": "dd04431fdd87f1e3cd0a5418136b7eb1d31ffd79c14515d6e2999389c5b2f818",
+    "caelum/world/CaelumInteractionHint.zs": "d7a888a69d44d16311f3b8dfb8d614e480ffc1262f80657a5a12705fdda0f4fc",
+    "caelum/world/CaelumJourney.zs": "8dfa4abab1d81d8d65e2b7c99be2b3e2100e645dd95e8b2fe75f86ceb32added",
+    "caelum/world/CaelumJourneyPlan.zs": "23736e4765008239b3c9c68dc48d4b571bba675612f50f95d3c687349eab2af7",
+    "caelum/world/CaelumMagicHazards.zs": "c2ab3a68827ec4db3c2e95e3f9547aaee1d47491cc1ab949bce8cdd7e5927a51",
+    "caelum/world/CaelumMansionDoorData.zs": "e4df906767fc1a17f93a1814b96097171725720d80ec6bdba3672885b04b9008",
+    "caelum/world/CaelumMansionFurniture.zs": "055663edc59cd1da3608bc7b6476a56909c89b354e1c0530074236fb51b7db08",
+    "caelum/world/CaelumMansionPracticeData.zs": "f85d455ec512e319e5f6f43bd53d0fcd4b8e2e8f38bfb5283a15fc6c2c20abfb",
+    "caelum/world/CaelumMansionScenery.zs": "e5d1efd8ed359ef9e1d2954905a18cda529329f106076081988dfd6efb68e6b5",
+    "caelum/world/CaelumMansionTympana.zs": "9d9a36ccf68e3a097266e2cd90d2fdff65793352ec9353ba6136ad31900e0a00",
+    "caelum/world/CaelumMazeGates.zs": "d07570c30c365401a6b1e053ea89dbad4c3974f01e12788ff6dc63650ea65d28",
+    "caelum/world/CaelumMazeLayout.zs": "8c4fc96bc9142fcc59cd736022c665ddf9d87a204aa2307ed66f478008f66388",
+    "caelum/world/CaelumMazeLootCatalogue.zs": "483ee58e8bcc02c56a32a2e0b9f429af42fe71a147152dc0a629b7df7f4ff022",
+    "caelum/world/CaelumMineralVeins.zs": "3c5bc1602cfdef2b7b7af167a185da888e5ab6bae26c2cf3311b7710ecbd64b5",
+    "caelum/world/CaelumPhysicalHazards.zs": "33d02f2fafcde0ae77ce415018fa3644234ea48ac74a33acea72a32561f6b36b",
+    "caelum/world/CaelumPhysicsWorld.zs": "9df52f14b3333ff0de166b76a661652e6d60a49f753b5e8b3a5bdce41c4ecc48",
+    "caelum/world/CaelumPortData.zs": "cb4a437a6e3ef4b60ba2d66524fda59ebcde772b5b99f09374a5e8fe26f6c6f3",
+    "caelum/world/CaelumPortDefender.zs": "3a875e8f00832a9ef5d875a21095e1c5b1f8aad9d56e7626e260c41c9057eb5d",
+    "caelum/world/CaelumPortSiege.zs": "6e508895c56df4bf2b70246f101c7e0c5a3aa87baeef088e9ae88ea8ec37fcfa",
+    "caelum/world/CaelumRamData.zs": "c197b892b46c8163b9fa1bff27219a7848c5c07bd29157f1cc1a40ba64387d82",
+    "caelum/world/CaelumRamTrial.zs": "da9ef28a391b10b2b33b4a7123450719cc26475f9174fa9c2e5ae6b067bf61c1",
+    "caelum/world/CaelumRest.zs": "4c9617a27ae0cfaa93ae388843b8e500e9adbff96cc291ee6aec67741eab3c6b",
+    "caelum/world/CaelumRestFurniture.zs": "7c767cd361a665f233a2f505f0e23aa0d48beb12034ec2a1774dd95969b18790",
+    "caelum/world/CaelumRestTrial.zs": "95ea17a73d1eda7187acccf13bd9649a3b3e674437c2d25e7e32333753e755c3",
+    "caelum/world/CaelumSchedule.zs": "aa675505de5587a4922a40686c5146a0f8fe319a64904a283651eed0a8ad3c19",
+    "caelum/world/CaelumScheduleTrial.zs": "7ff2d08f7363857a45f2cc1775a40435e49a238595a946fed6ea7d89e9010391",
+    "caelum/world/CaelumSecretPassage.zs": "93ea9d818194830719027edc43f05dbfcf04306ba3a93073bd53b6bcf18cb247",
+    "caelum/world/CaelumSewerMaze.zs": "1401581007c9d54c198878bae71c54461c7939a38c08080120d6396a7a04b153",
+    "caelum/world/CaelumSewerTravel.zs": "2c312bcb9bcfd8ca4b03b13c9997b9978d1c7262ea472dd5f69503de5a8f7c69",
+    "caelum/world/CaelumSewerTrialSupport.zs": "6d26bffbfae01aede492ca28278333d7a9fc58b30baae95af888ed9b917090a0",
+    "caelum/world/CaelumSiegeAssets.zs": "e5f7ade3bb2674ff3ba6591161d2c4b31a31f090a88b4789b6df943bec8d7314",
+    "caelum/world/CaelumSiegeEncounter.zs": "25047173360229facd83e2f6420457eb6a407afa173ac3bdbe66627d9b70f3bb",
+    "caelum/world/CaelumSiegeReinforcements.zs": "85e048f8b223d23a07ff77a04ecc856388aac32224274dc17d66b22b1d75d55d",
+    "caelum/world/CaelumSleepingBag.zs": "7e7d4f2ccb6da586b20f6a0df0bd0ef2bde044c707950092ab500f479c8bea0f",
+    "caelum/world/CaelumSleepRules.zs": "aa8971a9318d783c45d74a182f1f7afe59ebc1a1ca7b11f53dc37d1dc90aa34c",
+    "caelum/world/CaelumSlidingDoor.zs": "c65d5b99df58d0ff662f18dd2e1c7dd190607e75496050283017cd140fd366ed",
+    "caelum/world/CaelumStashChest.zs": "11de920e152b8762c4eefd50cf4055d024a9711a93ee0615793d1503aef5599d",
+    "caelum/world/CaelumTimeAdvance.zs": "3fec74b1f6aedab8e9e08f3c852f917272873333bb22394a515cf8cd41f3e68f",
+    "caelum/world/CaelumTimeSkip.zs": "74722e09533d9c17f731f8ddb954a605da97ead1a004019048eea09deabe38cb",
+    "caelum/world/CaelumTimeSkipModel.zs": "4ecfe8a04d7b081378c329f915f3fb3e15e85d2ccd102ed34a2e869e608e2021",
+    "caelum/world/CaelumTravelVehicles.zs": "e33690b43b26b092c01f75228d444ee397b89397256fbefff3875195a1dc677d",
+    "caelum/world/CaelumUseGeometry.zs": "24f16495162cea8c325cc7693e3d2bff3f9d5d0a5f5b6ff768f92bc3d6e975b5",
+    "caelum/world/CaelumWeather.zs": "09bb0476865d8bfa49436282f1bfb519b7b44e509872ead9a22164fe8c597f51",
+    "caelum/world/CaelumWeightPressure.zs": "e5e55c85acf7f49af7795e4d0e07db520bd01df79ece6068ed6eede4ed375fb3",
+    "caelum/world/CaelumWorldCatalogue.zs": "f69cba8158fe96c7e5dfb7eb5ccfb22037e3219fd9950bb1fae24de8f12bcc6c",
+    "caelum/world/CaelumWorldClock.zs": "43d2821d78354f486f31840dea83db51fea3cbdd16c4027edb70323346d7f2a0",
+    "caelum/world/CaelumWorldProgress.zs": "725fbd9030746ed82480d962b07da8dbb3cc17d4ecfd25bda8fc313a12ed328e"
+  },
+  "growth_consumer_inventory": {
+    "src/caelum/actors/CaelumAnchoredResident.zs": [
+      {
+        "line": 223,
+        "text": "* CalculateActorType4Percent(CombatResilience) / 100.0;"
+      }
+    ],
+    "src/caelum/actors/CaelumBull.zs": [
+      {
+        "line": 119,
+        "text": "* CalculateActorType4Percent(CombatAgility) / 100.0;"
+      }
+    ],
+    "src/caelum/actors/CaelumCombatActor.zs": [
+      {
+        "line": 782,
+        "text": "GrowthRevision=CaelumGrowthRules.REVISION;"
+      },
+      {
+        "line": 787,
+        "text": "* CalculateActorType1Percent(CombatConstitution)"
+      },
+      {
+        "line": 800,
+        "text": "if(!CombatProfileInitialized || GrowthRevision>=CaelumGrowthRules.REVISION)return;"
+      },
+      {
+        "line": 806,
+        "text": "*CalculateActorType1Percent(CombatConstitution)*Max(0.01,Mass/100.0)));"
+      },
+      {
+        "line": 809,
+        "text": "CombatBaseSpeed=CaelumConstants.GZDOOM_BASE_MAX_WALK_SPEED*CaelumGrowthRules.Multiplier(CombatAgility,2);"
+      },
+      {
+        "line": 811,
+        "text": "if(bull!=null)bull.BullRunningSpeed=CombatBaseSpeed*CaelumGrowthRules.Multiplier(CombatAgility,2)"
+      },
+      {
+        "line": 817,
+        "text": "GrowthRevision=CaelumGrowthRules.REVISION;"
+      },
+      {
+        "line": 826,
+        "text": "* CalculateActorType1Percent(effectivePatience);"
+      },
+      {
+        "line": 829,
+        "text": "* CalculateActorType4Percent(effectivePatience) / 100.0;"
+      },
+      {
+        "line": 836,
+        "text": "* CalculateActorType4Percent(CombatResilience) / 100.0;"
+      },
+      {
+        "line": 845,
+        "text": "* CaelumGrowthRules.Multiplier(CombatResilience,2);"
+      },
+      {
+        "line": 855,
+        "text": "double CalculateActorType1Percent(int level)"
+      },
+      {
+        "line": 858,
+        "text": "return CaelumGrowthRules.Percent(level,3);"
+      },
+      {
+        "line": 861,
+        "text": "double CalculateActorType2Percent(int level)"
+      },
+      {
+        "line": 863,
+        "text": "return CaelumGrowthRules.Bonus(level);"
+      },
+      {
+        "line": 866,
+        "text": "double CalculateActorType4Percent(int level)"
+      },
+      {
+        "line": 868,
+        "text": "return CaelumGrowthRules.Percent(level,2);"
+      },
+      {
+        "line": 876,
+        "text": "* CalculateActorType4Percent(effectiveEloquence) / 100.0;"
+      },
+      {
+        "line": 1008,
+        "text": "double capacity=Mass*CalculateActorType4Percent(CombatStrength)/100.0;"
+      },
+      {
+        "line": 1020,
+        "text": "double capacity=Mass*CalculateActorType4Percent(CombatStrength)/100.0;"
+      },
+      {
+        "line": 1021,
+        "text": "return CaelumAttackRules.Duration(100.0/CalculateActorType4Percent(attribute),"
+      },
+      {
+        "line": 1170,
+        "text": "/ CalculateActorType4Percent(Max(0, effectiveEloquence));"
+      },
+      {
+        "line": 1189,
+        "text": "* CalculateActorType1Percent(effectiveIntelligence)"
+      },
+      {
+        "line": 1209,
+        "text": "* CalculateActorType4Percent(effectiveEloquence) / 100.0;"
+      },
+      {
+        "line": 1220,
+        "text": "CombatPhysicalAccuracyPercent = CalculateActorType1Percent("
+      },
+      {
+        "line": 1223,
+        "text": "CombatMagicalAccuracyPercent = CalculateActorType1Percent("
+      },
+      {
+        "line": 1228,
+        "text": "+ CalculateActorType2Percent(CombatEffectiveDexterity),"
+      },
+      {
+        "line": 1234,
+        "text": "+ CalculateActorType2Percent(CombatEffectiveInsight),"
+      },
+      {
+        "line": 1239,
+        "text": "* CalculateActorType1Percent(CombatStrength) / 100.0;"
+      },
+      {
+        "line": 1240,
+        "text": "CombatMagicalPushMultiplier = CalculateActorType1Percent("
+      },
+      {
+        "line": 1422,
+        "text": "* combatActor.CalculateActorType1Percent("
+      },
+      {
+        "line": 1496,
+        "text": "* combatActor.CalculateActorType1Percent("
+      },
+      {
+        "line": 1729,
+        "text": "combatActor.CalculateActorType4Percent("
+      },
+      {
+        "line": 1732,
+        "text": "combatActor.CalculateActorType4Percent("
+      },
+      {
+        "line": 3259,
+        "text": "return CaelumGrowthRules.Remaining(CombatToughness);"
+      },
+      {
+        "line": 3538,
+        "text": "double patienceMultiplier = CaelumGrowthRules.Remaining(effectivePatience);"
+      },
+      {
+        "line": 3550,
+        "text": "double baseEvasion = CaelumGrowthRules.Bonus(effectiveAgility);"
+      },
+      {
+        "line": 3771,
+        "text": "*CalculateActorType4Percent(CombatResilience)/100.0*idleFactor/TICRATE;"
+      }
+    ],
+    "src/caelum/actors/CaelumDemonBreath.zs": [
+      {
+        "line": 104,
+        "text": "double scale=Emitter.CalculateActorType4Percent(Emitter.CombatCharisma)/100.0;"
+      }
+    ],
+    "src/caelum/actors/CaelumFolkloreCharacters.zs": [
+      {
+        "line": 28,
+        "text": "* CalculateActorType4Percent(CombatAgility) / 100.0;"
+      }
+    ],
+    "src/caelum/actors/CaelumGiantRat.zs": [
+      {
+        "line": 38,
+        "text": "* CalculateActorType4Percent(CombatAgility) / 100.0;"
+      }
+    ],
+    "src/caelum/core/CaelumPhysicsUnits.zs": [
+      {
+        "line": 34,
+        "text": "*CaelumGrowthRules.Multiplier(agility,3);"
+      },
+      {
+        "line": 42,
+        "text": "*CaelumGrowthRules.Multiplier((agility+dexterity)/2.0));"
+      }
+    ],
+    "src/caelum/debug/CaelumPhysicsDiagnostics.zs": [
+      {
+        "line": 254,
+        "text": "* CaelumGrowthRules.Multiplier(insight,2);"
+      }
+    ],
+    "src/caelum/dialogue/CaelumMainM00SocialDialogue.zs": [
+      {
+        "line": 33,
+        "text": "return user.DerivedStats.CalculateType2Percent(user.Attributes.Eloquence);"
+      },
+      {
+        "line": 54,
+        "text": "double ability = user.DerivedStats.CalculateType4Percent(attribute);"
+      }
+    ],
+    "src/caelum/equipment/CaelumArmorRules.zs": [
+      {
+        "line": 25,
+        "text": "return CaelumGrowthRules.Bonus(level);"
+      }
+    ],
+    "src/caelum/equipment/CaelumPersistentCharacterState.zs": [
+      {
+        "line": 303,
+        "text": "GrowthRevision=CaelumGrowthRules.REVISION;"
+      }
+    ],
+    "src/caelum/equipment/CaelumRangedRules.zs": [
+      {
+        "line": 183,
+        "text": "ReloadTotal=CaelumRangedRules.BaseReloadSeconds(Weapon.WeaponType)*100/Max(1.0,owner.CalculateActorType4Percent(dexterity));"
+      }
+    ],
+    "src/caelum/player/CaelumPlayer.zs": [
+      {
+        "line": 1048,
+        "text": ": CaelumGrowthRules.Bonus(Attributes.Eloquence);"
+      },
+      {
+        "line": 1543,
+        "text": "persistentState.GrowthRevision=AttributeBalanceVersion>=CaelumGrowthRules.PLAYER_BALANCE_VERSION"
+      },
+      {
+        "line": 1544,
+        "text": "? CaelumGrowthRules.REVISION : 0;"
+      },
+      {
+        "line": 3350,
+        "text": "DerivedStats.CalculateType1Percent(Attributes.Dexterity)"
+      },
+      {
+        "line": 10086,
+        "text": "DerivedStats.CalculateType4Percent(Attributes.Dexterity);"
+      }
+    ],
+    "src/caelum/player/CaelumPlayerCharacter.zs": [
+      {
+        "line": 193,
+        "text": "if (user.AttributeBalanceVersion >= CaelumGrowthRules.PLAYER_BALANCE_VERSION || !user.CharacterCreationComplete"
+      },
+      {
+        "line": 209,
+        "text": "bool migrateGrowth=user.AttributeBalanceVersion<CaelumGrowthRules.PLAYER_BALANCE_VERSION;"
+      },
+      {
+        "line": 264,
+        "text": "user.AttributeBalanceVersion = CaelumGrowthRules.PLAYER_BALANCE_VERSION;"
+      }
+    ],
+    "src/caelum/statistics/CaelumDerivedStats.zs": [
+      {
+        "line": 73,
+        "text": "double CalculateType1Percent(double level)"
+      },
+      {
+        "line": 76,
+        "text": "return CaelumGrowthRules.Percent(level,3);"
+      },
+      {
+        "line": 79,
+        "text": "double CalculateType4Percent(double level)"
+      },
+      {
+        "line": 82,
+        "text": "return CaelumGrowthRules.Percent(level,2);"
+      },
+      {
+        "line": 91,
+        "text": "/ CalculateType4Percent(Max(0.0, attributes.Constitution));"
+      },
+      {
+        "line": 104,
+        "text": "double CalculateType2Percent(double level)"
+      },
+      {
+        "line": 107,
+        "text": "return CaelumGrowthRules.Bonus(level);"
+      },
+      {
+        "line": 220,
+        "text": "* CalculateType1Percent(attributes.Constitution)"
+      },
+      {
+        "line": 223,
+        "text": "* CalculateType1Percent(attributes.Patience);"
+      },
+      {
+        "line": 225,
+        "text": "HealthRegenerationPercent = CalculateType4Percent(attributes.Resilience);"
+      },
+      {
+        "line": 230,
+        "text": "* CalculateType4Percent(attributes.Resilience) / 100.0;"
+      },
+      {
+        "line": 232,
+        "text": "MeleeDamagePercent = CalculateType1Percent(attributes.Strength);"
+      },
+      {
+        "line": 238,
+        "text": "MagicalPushMultiplier = CalculateType1Percent(attributes.Intelligence)"
+      },
+      {
+        "line": 243,
+        "text": "* CalculateType1Percent(attributes.Intelligence) / 100.0;"
+      },
+      {
+        "line": 245,
+        "text": "PhysicalAccuracyPercent = CalculateType1Percent(attributes.Dexterity);"
+      },
+      {
+        "line": 246,
+        "text": "AttackSpeedPercent = CalculateType4Percent(attributes.Dexterity);"
+      },
+      {
+        "line": 248,
+        "text": "MagicalAccuracyPercent = CalculateType1Percent(attributes.Insight);"
+      },
+      {
+        "line": 250,
+        "text": "+ CalculateType2Percent(attributes.Dexterity), 0.0, 100.0);"
+      },
+      {
+        "line": 252,
+        "text": "+ CalculateType2Percent(attributes.Insight), 0.0, 100.0);"
+      },
+      {
+        "line": 254,
+        "text": "+ CalculateType2Percent(attributes.Insight), 0.0, 100.0);"
+      },
+      {
+        "line": 256,
+        "text": "PainChanceMultiplier = CaelumGrowthRules.Remaining(attributes.Toughness);"
+      },
+      {
+        "line": 260,
+        "text": "/ CalculateType4Percent(Max(0.0, attributes.Toughness));"
+      },
+      {
+        "line": 262,
+        "text": "HealthPenaltyMultiplier = CaelumGrowthRules.Remaining(attributes.Patience);"
+      },
+      {
+        "line": 266,
+        "text": "AnimaRegenerationPercent = CalculateType4Percent(attributes.Patience);"
+      },
+      {
+        "line": 271,
+        "text": "/ CalculateType4Percent(Max(0.0, attributes.Eloquence));"
+      },
+      {
+        "line": 275,
+        "text": "CastingSpeedPercent = CalculateType4Percent(attributes.Eloquence);"
+      },
+      {
+        "line": 278,
+        "text": "DebuffPowerPercent = CalculateType4Percent(attributes.Charisma);"
+      },
+      {
+        "line": 279,
+        "text": "BuffPowerPercent = CalculateType4Percent(attributes.Empathy);"
+      },
+      {
+        "line": 281,
+        "text": "CalculateType2Percent(attributes.Patience), 0.0, 100.0"
+      },
+      {
+        "line": 283,
+        "text": "DialogueSkillPercent = CalculateType2Percent(attributes.Eloquence);"
+      },
+      {
+        "line": 286,
+        "text": "* CalculateType4Percent(attributes.Resilience) / 100.0;"
+      },
+      {
+        "line": 290,
+        "text": "* CalculateType4Percent(attributes.Strength) / 100.0;"
+      },
+      {
+        "line": 292,
+        "text": "CalculateType1Percent(attributes.Intelligence) / 50.0"
+      },
+      {
+        "line": 302,
+        "text": "BaseEvasionChance = CalculateType2Percent(attributes.Agility);"
+      },
+      {
+        "line": 305,
+        "text": "CalculateType2Percent(attributes.Agility),"
+      },
+      {
+        "line": 309,
+        "text": "BaseMovementPercent = CalculateType4Percent(attributes.Agility);"
+      },
+      {
+        "line": 311,
+        "text": "BaseJumpHeightPercent = CalculateType1Percent(attributes.Agility);"
+      }
+    ],
+    "src/caelum/statistics/CaelumGrowthMigration.zs": [
+      {
+        "line": 2,
+        "text": "// máximos. Las curvas actuales siempre proceden de CaelumGrowthRules."
+      },
+      {
+        "line": 12,
+        "text": "if(record.GrowthRevision>=CaelumGrowthRules.REVISION || user.DerivedStats==null || user.Attributes==null)return;"
+      },
+      {
+        "line": 25,
+        "text": "record.GrowthRevision=CaelumGrowthRules.REVISION;"
+      }
+    ],
+    "src/caelum/survival/CaelumThermalBody.zs": [
+      {
+        "line": 78,
+        "text": "thermal.AcclimationMultiplier=1.0+user.DerivedStats.CalculateType2Percent(Max(0.0,user.Attributes.Resilience))/100.0;"
+      },
+      {
+        "line": 89,
+        "text": "thermal.AcclimationMultiplier=1.0+npc.CalculateActorType2Percent(Max(0,npc.CombatResilience"
+      }
+    ],
+    "src/caelum/trucazo/CaelumTrucazoRules.zs": [
+      {
+        "line": 60,
+        "text": "double factor=new(\"CaelumDerivedStats\").CalculateType1Percent(Max(0.0,intelligence))/100.0;"
+      }
+    ],
+    "src/caelum/world/CaelumBreakableGate.zs": [
+      {
+        "line": 64,
+        "text": "&& GrowthRevision>=CaelumGrowthRules.REVISION) return;"
+      },
+      {
+        "line": 78,
+        "text": ": 100.0 / stats.CalculateType4Percent(Toughness);"
+      },
+      {
+        "line": 80,
+        "text": ": stats.CalculateType1Percent(Constitution);"
+      },
+      {
+        "line": 86,
+        "text": "GrowthRevision=CaelumGrowthRules.REVISION;"
+      }
+    ],
+    "src/caelum/world/CaelumPortDefender.zs": [
+      {
+        "line": 258,
+        "text": "*soldier.CalculateActorType1Percent(soldier.CombatStrength)/100.0,false);"
+      }
+    ],
+    "src/caelum/world/CaelumWeightPressure.zs": [
+      {
+        "line": 88,
+        "text": ": Max(1, npc.Mass) * npc.CalculateActorType4Percent(npc.CombatStrength) / 100.0;"
+      }
+    ]
+  },
+  "legacy_curve_occurrences": {
+    "src/caelum/statistics/CaelumGrowthMigration.zs": [
+      {
+        "line": 8,
+        "text": "{ return 1.0+2.0*level*(level+1.0)/10100.0; }"
+      }
+    ]
+  },
+  "runs": [
+    {
+      "label": "author-rollback-a",
+      "selected_acceptance_evidence": true,
+      "exit_code": 0,
+      "package_sha256": "62440C08938131AA785385AF225497DE79FD6C6D9A5627993AE942F875D75453",
+      "log_sha256": "3e975cb8c3260934ab2cea92e5ba2b25de72886500895beb188c6afbb7216171",
+      "diagnostic_error_present": false
+    },
+    {
+      "label": "author-save-a",
+      "selected_acceptance_evidence": false,
+      "exit_code": 0,
+      "package_sha256": "058D52FCC30CCE0EBAE22F89FC61B2A02D40D079C163CD0BBED3563D2A210D85",
+      "log_sha256": "5bc688d837f122227d8a045b408af2aa5100da259fa92f7264f0cf2b1c333fe1",
+      "diagnostic_error_present": true
+    },
+    {
+      "label": "author-save-b",
+      "selected_acceptance_evidence": true,
+      "exit_code": 0,
+      "package_sha256": "058D52FCC30CCE0EBAE22F89FC61B2A02D40D079C163CD0BBED3563D2A210D85",
+      "log_sha256": "7e0cbc31a9418cbd853f2cdedcb0dd79329a5650d3e9db3af2fb74407239e0a5",
+      "diagnostic_error_present": false
+    },
+    {
+      "label": "ballistics-compile-a",
+      "selected_acceptance_evidence": false,
+      "exit_code": 0,
+      "package_sha256": "DB4B9E854460C52F1E0D1B595C983CFAB51AC9E894D3EBB620255BFA47FA9BA7",
+      "log_sha256": "8bfec464cf467c7a9d69962b1e860b2f3710dd4a1e0be3e9ae14b88d9c11f1a5",
+      "diagnostic_error_present": false
+    },
+    {
+      "label": "consumers-a",
+      "selected_acceptance_evidence": false,
+      "exit_code": 0,
+      "package_sha256": "058D52FCC30CCE0EBAE22F89FC61B2A02D40D079C163CD0BBED3563D2A210D85",
+      "log_sha256": "39a1f16457fe459d6f70637fcbc1101fe06bf065421753e4c5b6384d62a23aee",
+      "diagnostic_error_present": false
+    },
+    {
+      "label": "consumers-b",
+      "selected_acceptance_evidence": false,
+      "exit_code": 0,
+      "package_sha256": "40D1D18E2E289C4CD0C3363B64311BD73F3ECCDB456A8F92D2B0B4DE0370BD28",
+      "log_sha256": "82d98d04c82355dcc40d0a32843e19a09569559110ecb986b96b82d6b68bee37",
+      "diagnostic_error_present": false
+    },
+    {
+      "label": "core-checks-a",
+      "selected_acceptance_evidence": false,
+      "exit_code": 0,
+      "package_sha256": "2B7548D945897B3348B19F8F03B1447C9A5446A50163D7F170D4451407CAD2AE",
+      "log_sha256": "81596cd04ac6ddfac31ec02bc03edebce3b77f9b29f96f32c23f9f25e423e514",
+      "diagnostic_error_present": false
+    },
+    {
+      "label": "core-compile-a",
+      "selected_acceptance_evidence": false,
+      "exit_code": -1,
+      "package_sha256": "E387F83DF5C8FE5B884953953DE19FC0B5C3380FC02DA35E8188767CE176CCE0",
+      "log_sha256": "2ae28ff003de98a6b06788e15673ca937ec996e6a415599d8dc991159dbaeea8",
+      "diagnostic_error_present": true
+    },
+    {
+      "label": "elevator-a",
+      "selected_acceptance_evidence": false,
+      "exit_code": 0,
+      "package_sha256": "058D52FCC30CCE0EBAE22F89FC61B2A02D40D079C163CD0BBED3563D2A210D85",
+      "log_sha256": "e7ffebbabb0ad0579f7dafe9859839eda1c6dc13fa63779408511ad44940683e",
+      "diagnostic_error_present": true
+    },
+    {
+      "label": "elevator-b",
+      "selected_acceptance_evidence": true,
+      "exit_code": 0,
+      "package_sha256": "F42905E92EF3C628DD4D98B53235D6A3813CD0AFDA8C572700C81F3332FB8E28",
+      "log_sha256": "cdefcb66470184d4574d29f82686e92b07479f2b5112ac1c8b10d0d74047b8a5",
+      "diagnostic_error_present": false
+    },
+    {
+      "label": "gravity-baseline-a",
+      "selected_acceptance_evidence": false,
+      "exit_code": 0,
+      "package_sha256": "62440C08938131AA785385AF225497DE79FD6C6D9A5627993AE942F875D75453",
+      "log_sha256": "3b6c48667369e3508dc5127bd578256013404490f1dbbbfca0f45463bfb4ba8c",
+      "diagnostic_error_present": false
+    },
+    {
+      "label": "hazards-a",
+      "selected_acceptance_evidence": false,
+      "exit_code": 0,
+      "package_sha256": "058D52FCC30CCE0EBAE22F89FC61B2A02D40D079C163CD0BBED3563D2A210D85",
+      "log_sha256": "31cb7a8eda126c2f038fc228316eb8cb22e891e50dd3512f499e907a75f41e03",
+      "diagnostic_error_present": false
+    },
+    {
+      "label": "hazards-b",
+      "selected_acceptance_evidence": true,
+      "exit_code": 0,
+      "package_sha256": "F42905E92EF3C628DD4D98B53235D6A3813CD0AFDA8C572700C81F3332FB8E28",
+      "log_sha256": "8dd9f1383b294ed0cb01be88ce648000a2f684a53921a1bb6bc5a037f0054795",
+      "diagnostic_error_present": false
+    },
+    {
+      "label": "hub-old-a",
+      "selected_acceptance_evidence": false,
+      "exit_code": -1,
+      "package_sha256": "62440C08938131AA785385AF225497DE79FD6C6D9A5627993AE942F875D75453",
+      "log_sha256": "3e393784c0105aeff2d04b14b4cdc979b43a8dec0cb361630579312e4a3de434",
+      "diagnostic_error_present": true
+    },
+    {
+      "label": "hub-old-b",
+      "selected_acceptance_evidence": false,
+      "exit_code": 0,
+      "package_sha256": "62440C08938131AA785385AF225497DE79FD6C6D9A5627993AE942F875D75453",
+      "log_sha256": "47d749d677161e5866bca4886c0dc8f528438d77ca14ea78134ce4f4437b139c",
+      "diagnostic_error_present": false
+    },
+    {
+      "label": "hub-upgrade-a",
+      "selected_acceptance_evidence": false,
+      "exit_code": 0,
+      "package_sha256": "40D1D18E2E289C4CD0C3363B64311BD73F3ECCDB456A8F92D2B0B4DE0370BD28",
+      "log_sha256": "935e7e986a4bf785229a2ce015557a2504752f75d1df8f8c836baebdb62ec7ac",
+      "diagnostic_error_present": true
+    },
+    {
+      "label": "hub-upgrade-b",
+      "selected_acceptance_evidence": false,
+      "exit_code": 0,
+      "package_sha256": "40D1D18E2E289C4CD0C3363B64311BD73F3ECCDB456A8F92D2B0B4DE0370BD28",
+      "log_sha256": "db7a8b4f2422e6ba69b0120eeb272fc7a7a55dfb50a3e32c88a6909177c47746",
+      "diagnostic_error_present": false
+    },
+    {
+      "label": "hub-upgrade-final",
+      "selected_acceptance_evidence": true,
+      "exit_code": 0,
+      "package_sha256": "F42905E92EF3C628DD4D98B53235D6A3813CD0AFDA8C572700C81F3332FB8E28",
+      "log_sha256": "d77a373233b6d06e406e1486f2abb87bc4f391dd9279161c8c7aca6b1cf795ab",
+      "diagnostic_error_present": false
+    },
+    {
+      "label": "launchers-a",
+      "selected_acceptance_evidence": false,
+      "exit_code": 0,
+      "package_sha256": "F42905E92EF3C628DD4D98B53235D6A3813CD0AFDA8C572700C81F3332FB8E28",
+      "log_sha256": "a1c9ae61aea8633d5dd65fc7d54bb4df62f78ca9d368b9cd18fbac73eab52be4",
+      "diagnostic_error_present": true
+    },
+    {
+      "label": "launchers-b",
+      "selected_acceptance_evidence": false,
+      "exit_code": 0,
+      "package_sha256": "F42905E92EF3C628DD4D98B53235D6A3813CD0AFDA8C572700C81F3332FB8E28",
+      "log_sha256": "303bd935dcee394b8955df860c577d889a2811b953d33ee37186c1bcb8bd95ca",
+      "diagnostic_error_present": true
+    },
+    {
+      "label": "launchers-c",
+      "selected_acceptance_evidence": false,
+      "exit_code": 0,
+      "package_sha256": "F42905E92EF3C628DD4D98B53235D6A3813CD0AFDA8C572700C81F3332FB8E28",
+      "log_sha256": "9badc6f5daf3866afd66b439a008b6d4894c93e17f119af4d08c358c42ecf4f1",
+      "diagnostic_error_present": true
+    },
+    {
+      "label": "launchers-final",
+      "selected_acceptance_evidence": true,
+      "exit_code": 0,
+      "package_sha256": "0483B0EFB113ABFEA780B37A9310A88DE421177993752328FE8606FA9DB4E3F4",
+      "log_sha256": "42ee8e9e7491efb8b752003f2a11da6c7baf786def2d30c9c56253569edb4a1e",
+      "diagnostic_error_present": false
+    },
+    {
+      "label": "migration-compile-a",
+      "selected_acceptance_evidence": false,
+      "exit_code": 0,
+      "package_sha256": "10739FE68C5680EB203235F8F9DE4527CCD371BFDE1ECA40109B26CDC47E6D22",
+      "log_sha256": "9c92b518cf5bea42f28f94fe8cacd2603de6766c7d090a59501afd09de5b9328",
+      "diagnostic_error_present": false
+    },
+    {
+      "label": "movement-a",
+      "selected_acceptance_evidence": false,
+      "exit_code": 0,
+      "package_sha256": "DB4B9E854460C52F1E0D1B595C983CFAB51AC9E894D3EBB620255BFA47FA9BA7",
+      "log_sha256": "9224ea338fd2d85a0a2969fe2af6dd187d12adab676a5634d8e35c56afe6a6b7",
+      "diagnostic_error_present": true
+    },
+    {
+      "label": "movement-b",
+      "selected_acceptance_evidence": false,
+      "exit_code": 0,
+      "package_sha256": "DB4B9E854460C52F1E0D1B595C983CFAB51AC9E894D3EBB620255BFA47FA9BA7",
+      "log_sha256": "c2fb46ea230e4d8f843be979707a88ccc0db4703237fb66e2e03b94abcdc25cc",
+      "diagnostic_error_present": false
+    },
+    {
+      "label": "movement-final-a",
+      "selected_acceptance_evidence": true,
+      "exit_code": 0,
+      "package_sha256": "40D1D18E2E289C4CD0C3363B64311BD73F3ECCDB456A8F92D2B0B4DE0370BD28",
+      "log_sha256": "7b77b09e0fb5a26063f22b50e7f5cb482edc13fb6bea83df6cef1386c04c82ef",
+      "diagnostic_error_present": false
+    },
+    {
+      "label": "official-final-b",
+      "selected_acceptance_evidence": true,
+      "exit_code": 0,
+      "package_sha256": "2416C63A674B6EDE63F5F50C0CD36B548851CD1005FD60251DDFFFA28DC04581",
+      "log_sha256": "d7a0bd035b331d371e453d05df0f0cb80e5ad72178c3b195cda144c1089bd6b9",
+      "diagnostic_error_present": false
+    },
+    {
+      "label": "official-final",
+      "selected_acceptance_evidence": false,
+      "exit_code": 0,
+      "package_sha256": "A2807964A574777D9AA9C63B8006650CEF6C63209823D044EE68FD819DE61E3C",
+      "log_sha256": "34bd5cb8f41a9c7e1fcad2bb5890dd52c4e1be80f1f651dc10ec996a619bb619",
+      "diagnostic_error_present": false
+    },
+    {
+      "label": "pool-a",
+      "selected_acceptance_evidence": false,
+      "exit_code": 0,
+      "package_sha256": "0483B0EFB113ABFEA780B37A9310A88DE421177993752328FE8606FA9DB4E3F4",
+      "log_sha256": "4e5589dfbb2c41dca8ba1c00549bf0f5a411eb40a48ddf9d67ad574d354a0153",
+      "diagnostic_error_present": true
+    },
+    {
+      "label": "pool-b",
+      "selected_acceptance_evidence": true,
+      "exit_code": 0,
+      "package_sha256": "EAB9B1FDB506257170CCBBF750D533E0C3382CB1AED0EDFBF28610869492641A",
+      "log_sha256": "0faa826c5870128fe9297b00aa3f864b9361c5304196cd5d87e2a155072862b7",
+      "diagnostic_error_present": false
+    },
+    {
+      "label": "projectiles-a",
+      "selected_acceptance_evidence": false,
+      "exit_code": -1,
+      "package_sha256": "DB4B9E854460C52F1E0D1B595C983CFAB51AC9E894D3EBB620255BFA47FA9BA7",
+      "log_sha256": "88107365642e9218b4ffb269b4cad4ddf96b61a134e5b97e04ebeb8052812490",
+      "diagnostic_error_present": false
+    },
+    {
+      "label": "projectiles-b",
+      "selected_acceptance_evidence": false,
+      "exit_code": -1,
+      "package_sha256": "DB4B9E854460C52F1E0D1B595C983CFAB51AC9E894D3EBB620255BFA47FA9BA7",
+      "log_sha256": "f944eb43bdb397524d6e0619538dcefde6ed1d923d29f23cf0dda538c603e660",
+      "diagnostic_error_present": true
+    },
+    {
+      "label": "projectiles-c",
+      "selected_acceptance_evidence": false,
+      "exit_code": 0,
+      "package_sha256": "DB4B9E854460C52F1E0D1B595C983CFAB51AC9E894D3EBB620255BFA47FA9BA7",
+      "log_sha256": "63306f7e5e5d1bee75ce2de28d7905aa2b623011ff421e7dfcfe272ecff8f74e",
+      "diagnostic_error_present": true
+    },
+    {
+      "label": "projectiles-final-a",
+      "selected_acceptance_evidence": true,
+      "exit_code": 0,
+      "package_sha256": "058D52FCC30CCE0EBAE22F89FC61B2A02D40D079C163CD0BBED3563D2A210D85",
+      "log_sha256": "bad9f7c0fea8a7202c9697ded9a1fc992537532223bdf2ee19c5b835bf92bd3a",
+      "diagnostic_error_present": false
+    },
+    {
+      "label": "save-old-a",
+      "selected_acceptance_evidence": false,
+      "exit_code": 0,
+      "package_sha256": "62440C08938131AA785385AF225497DE79FD6C6D9A5627993AE942F875D75453",
+      "log_sha256": "f9e1d5b9f01ccef9aad32e17162950af683ea0df9a44c6035a40ab4357a02daf",
+      "diagnostic_error_present": false
+    },
+    {
+      "label": "save-old-b2",
+      "selected_acceptance_evidence": false,
+      "exit_code": 0,
+      "package_sha256": "62440C08938131AA785385AF225497DE79FD6C6D9A5627993AE942F875D75453",
+      "log_sha256": "6a003447669d5907e356d1985e34f955e11f6402cfffd4d8fd4c10ef4fa565bb",
+      "diagnostic_error_present": false
+    },
+    {
+      "label": "save-repeat-a",
+      "selected_acceptance_evidence": false,
+      "exit_code": 0,
+      "package_sha256": "33DB36943D55A571D28C9AAEAF4EA24C5E7415E69F89CA202D73910D8E949E7E",
+      "log_sha256": "38697f40f1d4036bf4b7808b766721f05ee8e26c0337773949e01983f85a31a5",
+      "diagnostic_error_present": true
+    },
+    {
+      "label": "save-repeat-b",
+      "selected_acceptance_evidence": true,
+      "exit_code": 0,
+      "package_sha256": "058D52FCC30CCE0EBAE22F89FC61B2A02D40D079C163CD0BBED3563D2A210D85",
+      "log_sha256": "a82b62272a508df7bf2518e49936f171f614e2a6fa053eaa16ce8a043394af86",
+      "diagnostic_error_present": false
+    },
+    {
+      "label": "save-upgrade-a",
+      "selected_acceptance_evidence": false,
+      "exit_code": 0,
+      "package_sha256": "33DB36943D55A571D28C9AAEAF4EA24C5E7415E69F89CA202D73910D8E949E7E",
+      "log_sha256": "f36ec053980418dad3cb42077f1a620430181c0a42749c8bb27246075c9f303d",
+      "diagnostic_error_present": true
+    },
+    {
+      "label": "save-upgrade-b",
+      "selected_acceptance_evidence": true,
+      "exit_code": 0,
+      "package_sha256": "058D52FCC30CCE0EBAE22F89FC61B2A02D40D079C163CD0BBED3563D2A210D85",
+      "log_sha256": "f1c516ac234851f22bf3b321403801cd40aadf87656e2532bf99eb5c422bb64a",
+      "diagnostic_error_present": false
+    },
+    {
+      "label": "stairs-a",
+      "selected_acceptance_evidence": true,
+      "exit_code": 0,
+      "package_sha256": "058D52FCC30CCE0EBAE22F89FC61B2A02D40D079C163CD0BBED3563D2A210D85",
+      "log_sha256": "99b2fa32cfa75878c50c703bf95e74e9bf460b1ad1a95b3d8a83c08438bd4979",
+      "diagnostic_error_present": false
+    }
+  ],
+  "author_acceptance": "pending: CA154-01 and CA154-02"
+}

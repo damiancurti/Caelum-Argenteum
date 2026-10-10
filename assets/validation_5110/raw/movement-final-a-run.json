@@ -1,0 +1,72 @@
+﻿{
+    "label":  "movement-final-a",
+    "started_utc":  "2026-10-10T02:00:58.3715078Z",
+    "engine":  "C:\\Program Files (x86)\\GZDoom\\gzdoom.exe",
+    "engine_sha256":  "EC706C2EA1EF946EEC13BE7B1B461DF8D52EFCD47CAA6C056ED0E0257F7F9FFA",
+    "iwad_sha256":  "10D67824B11025DDD9198E8CFC87CA335EE6E2D3E63AF4180FA9B8A471893255",
+    "package_sha256":  "40D1D18E2E289C4CD0C3363B64311BD73F3ECCDB456A8F92D2B0B4DE0370BD28",
+    "addon_sha256":  "C1F0405AFDE11BF2055332809D16E7EB8BA05119C58191C89DCA1C65BD362689",
+    "initial_config":  "[LastRun]\nVersion=225\n[GlobalSettings]\nvid_preferbackend=1\nvid_vsync=false\nvid_maxfps=60\nvid_activeinbackground=true\ni_pauseinbackground=false\nvid_lowerinbackground=false\ni_soundinbackground=true\ncl_capfps=false\nvid_fullscreen=false\nvid_defwidth=1280\nwin_w=1296\nwin_h=759\nwin_maximized=false\nvid_defheight=720\nuse_mouse=false\nsnd_mastervolume=0.05\nlanguage=enu\n",
+    "arguments":  [
+                      "-noautoload",
+                      "-nomouse",
+                      "-iwad",
+                      "\"C:\\Program Files (x86)\\Steam\\steamapps\\common\\ultimate doom\\base\\doom2\\DOOM2.WAD\"",
+                      "-file",
+                      "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue154\\production.pk3\"",
+                      "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue154\\movement-addon.pk3\"",
+                      "-config",
+                      "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue154\\movement-final-a.ini\"",
+                      "-savedir",
+                      "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue154\"",
+                      "-width",
+                      1280,
+                      "-height",
+                      720,
+                      "-window",
+                      "-rngseed",
+                      "116",
+                      "-skill",
+                      "2",
+                      "+logfile",
+                      "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue154\\movement-final-a.txt\"",
+                      "+con_notifytime",
+                      "0",
+                      "+set",
+                      "ca_test_siege_reinforcements",
+                      1,
+                      "+map",
+                      "CA154",
+                      "+exec",
+                      "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue154\\movement-final-a-exec.cfg\""
+                  ],
+    "benchmark_offset":  0,
+    "command_script":  "unbindall; cl_run false; wait 40; +forward; wait 360; -forward; set ca154_stage 1; +speed; +forward; wait 360; -forward; -speed; set ca154_stage 2; +forward; wait 360; -forward; set ca154_stage 3; +speed; +forward; wait 360; -forward; -speed; set ca154_stage 4; wait 10; +jump; wait 1; -jump; wait 130; set ca154_stage 5; wait 10; +jump; wait 1; -jump; wait 130; set ca154_stage 6; wait 10; +jump; wait 1; -jump; wait 150; set ca154_stage 7; wait 10; +jump; wait 1; -jump; wait 150; set ca154_stage 8; wait 10; +jump; wait 1; -jump; wait 130; set ca154_stage 9; wait 10; +jump; wait 1; -jump; wait 150; quit\r\n",
+    "cpu":  [
+                {
+                    "Name":  "AMD Ryzen 9 5950X 16-Core Processor            ",
+                    "NumberOfCores":  16,
+                    "NumberOfLogicalProcessors":  32
+                }
+            ],
+    "gpu":  [
+                {
+                    "Name":  "Parsec Virtual Display Adapter",
+                    "DriverVersion":  "0.45.0.0"
+                },
+                {
+                    "Name":  "NVIDIA GeForce RTX 3070 Ti",
+                    "DriverVersion":  "32.0.15.7688"
+                }
+            ],
+    "os":  {
+               "Caption":  "Microsoft Windows 11 Pro",
+               "Version":  "10.0.26200",
+               "TotalVisibleMemorySize":  33475240
+           },
+    "pid":  31224,
+    "qpc_ms":  1481079452.3431,
+    "epoch_ms":  1791597660337.7346,
+    "exit_code":  0,
+    "finished_utc":  "2026-10-10T02:02:11.8603336Z"
+}

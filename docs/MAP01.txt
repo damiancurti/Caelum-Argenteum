@@ -1,6 +1,16 @@
 CAELUM ARGENTEUM — STORY AND MAP01
 
-Documentation version: **5.1.9** — 2026-10-09.
+Documentation version: **5.1.10** — 2026-10-09.
+
+## 5.1.10 — Physics and traversal integration (#154)
+
+Geometry, stairs, pool, doors and narrative routes are unchanged. Earth gravity,
+new attribute curves, energy-based jumps and muscular efficiency apply to MAP01
+and the sewer hub. Native forward input traversed both mansion stair flights to
+Z=264 (8.25 m), with measured work/heat matching the route and no damage. The
+protected author Prueba save loaded with its 37 inventory actors and weapon ID
+preserved. Further route and save evidence: assets/validation_5110. These checks
+do not replace author acceptance or assert that every possible jump shortcut was tested.
 
 ## 5.1.9 - Existing-save shotgun correction (#152)
 

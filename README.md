@@ -6,8 +6,18 @@ An independent dark fantasy FPS-RPG inspired by nineteenth-century Argentina.
 Author and game designer: **Damian Curti**. Development target: **GZDoom 4.14.2**
 on Windows 11. The final game is intended to be independent of Doom assets.
 
-**Current release: 5.1.9.** Obtain and update the complete repository, validate
+**Current release: 5.1.10.** Obtain and update the complete repository, validate
 it, then rebuild with `run_dev.bat` as described below.
+
+**5.1.10 / [#154](https://github.com/damiancurti/Caelum-Argenteum/issues/154):**
+Shared attribute curves, Earth gravity, calibrated walking/running, energy-based
+jumps and muscular efficiency now use the approved SI contract. Physical
+projectiles fall; NPC shots compensate drop at launch. Older saves migrate resource
+percentages once, preserving attributes and ownership. Keep an original save and
+its matching package for rollback; save the upgraded game under a new name.
+Rules: [SYSTEMS](docs/SYSTEMS.md). Evidence: [validation_5110](assets/validation_5110/RESULTS.md).
+Native checks passed; author checks CA154-01/02 remain in [pending_test.txt](pending_test.txt).
+This delivery is for review; #154 has not been merged or closed.
 
 **5.1.9 / [#152](https://github.com/damiancurti/Caelum-Argenteum/issues/152):**
 Shotgun cartridges now leave the world when collected, including repaired owned
@@ -19,7 +29,7 @@ Thermal observations are documented while the author considers the next model;
 thermal balance is unchanged. Evidence: [validation_519](assets/validation_519/RESULTS.md).
 The author accepted CA152-01/02/03 on 2026-10-09 and requested closure and merge
 of [PR #153](https://github.com/damiancurti/Caelum-Argenteum/pull/153).
-[pending_test.txt](pending_test.txt) is empty; acceptance is recorded in HISTORY.
+The #152 author queue was cleared; acceptance is recorded in HISTORY.
 
 **5.1.8 / [#137](https://github.com/damiancurti/Caelum-Argenteum/issues/137):**
 Animated elemental projectiles share original artwork, light, trails and impacts

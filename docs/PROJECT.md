@@ -1,6 +1,21 @@
 # Caelum Argenteum — Project, status and roadmap
 
-Documentation version: **5.1.9** — 2026-10-09.
+Documentation version: **5.1.10** — 2026-10-09.
+
+## 5.1.10 — SI physics and growth migration (#154)
+
+Three shared growth families replace the old curves, with per-consumer operations
+preserved. Mechanical units stay 32 MU/m and 35 tics/s; ordinary gravity is 9.81
+m/s2. Unpenalized player walk/run is 4/8 m/s at Agility 0 and 16/32 at 100.
+Jump uses biological-mass/Agility energy and total moved mass. Muscular efficiency
+is 25–99%, reaching 50% at Agility/Dexterity 100. Physical projectiles fall and NPC
+shots compensate drop once at launch; elemental flight stays authored.
+
+One-time migration preserves resource percentages, attributes, inventory and
+accrued thermal state. Map geometry is unchanged. Detailed rules: SYSTEMS;
+reproducible native/static evidence: assets/validation_5110. Author acceptance
+is pending in pending_test.txt. Commit/push and linked PR are requested; closure
+and merge are not authorized for this issue yet.
 
 ## 5.1.9 - Shotgun pickup, grip and alternate aim follow-up (#152)
 

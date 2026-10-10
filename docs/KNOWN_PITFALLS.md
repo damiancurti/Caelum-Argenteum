@@ -4,6 +4,45 @@ Status: integrated engineering register (issue #22, patch 4.36.1b).
 Prepared: 2026-09-23. Inherits the project's release after integration.
 Inspected baseline: `1dc390576fa330d37ff543526fc7e69a397fc28f` (PR #7).
 
+## CA-KP-067 - Convert effective gravity once and test native displacement
+
+Status/evidence: ENGINE-VERIFIED, #154 / 5.1.10, 2026-10-09.
+Environment: GZDoom 4.14.2, Windows 11, Vulkan, 1280x720, 35 simulation tics/s.
+Scope: CaelumPhysicsUnits, CaelumPhysicsWorld, growth migration and ballistic aim.
+Baseline: f8addb68 (5.1.9). Implementation: 09f46d33 (curves/migration),
+5d3769b2 (SI physics); final tested package/source hashes are in validation_5110.
+
+Level gravity 800 produces 1 MU/tic squared for an ordinary actor, not 800.
+At 32 MU/m this is 38.28125 m/s2. Scaling the level value to 205.008979591837
+produces 9.81 m/s2 while preserving actor/sector modifiers. Store a per-map
+revision and original value; loading or revisiting a hub must not multiply it
+again. Keep gravity revisions independent from attribute-growth revisions.
+Native old MAP02/MAP03 hub loading and revisits retain one marker and one factor.
+
+Actor integrates position before gravity; FastProjectile does not integrate
+gravity itself, so the cannon's manual gravity-before-position path differs by
+one discrete step. A continuous low arc alone does not describe both. The launch
+solver corrects this difference, retains speed and reapplies dispersion. Native
+trigonometry has small rounding errors; normalize the direction before restoring
+muzzle speed. Verify actual collisions and launcher controllers, not only formulas.
+Unreachable targets keep the existing direct-shot policy, without inventing homing.
+
+ForwardMove is an input multiplier. Verify displacement per tic as well as Vel,
+input acceleration and steady speed. At the approved calibration, native forward
+travel approaches 4/8 m/s at Agility 0 and 16/32 at 100. Discrete jump apex exceeds
+the continuous reference by roughly half one takeoff step; check that bounded
+effect rather than forcing a continuous trajectory into native collision.
+
+Resource migration must snapshot old maxima before recalculation. Ordinary gear
+changes retain their no-free-heal policy; only a versioned migration preserves
+fractions. Test a real old save, a new save reloaded, traveler restoration and an
+old visited hub. Migrate cached pending-action costs too, retaining their progress
+and charging only when the action completes. Save metadata may require the original package basename: provide
+the candidate under that basename in a separate test directory without overwriting
+the protected old package. See validation_5110 for commands, hashes and failures
+corrected in the fixture (deferred PostBeginPlay, elevator direction, VM preconditions).
+Author checks CA154-01/02 remain pending; these engine results are not acceptance.
+
 ## CA-KP-066 - A foreground hand cut can duplicate an existing support hand
 
 Status/evidence: RESOLVED-VERIFIED, #152 / PR #153, 2026-10-09.
