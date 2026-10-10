@@ -1,0 +1,44 @@
+{
+  "issue": 162,
+  "tool": "OpenAI built-in image_gen",
+  "source": "atlas.png",
+  "canvas": [
+    1254,
+    1254
+  ],
+  "cell": [
+    627,
+    627
+  ],
+  "grips": [
+    [
+      359,
+      434
+    ],
+    [
+      375,
+      434
+    ],
+    [
+      368,
+      444
+    ],
+    [
+      362,
+      456
+    ]
+  ],
+  "view_grip": [
+    216,
+    160
+  ],
+  "view_scale": 3,
+  "states": [
+    "Ready",
+    "Fire",
+    "Ice",
+    "Equip"
+  ],
+  "processing": "No raster editing. Copy original RGBA bytes and register native TEXTURES clips/scales/pivots.",
+  "refinement": "Preserve staff design and transparency. Fit complete silhouettes and flame/frost inside separate quadrants, correcting the first draft's clipped flame."
+}
