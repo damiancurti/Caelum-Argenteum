@@ -149,7 +149,8 @@ class CaelumCraftingUI : Object
             titleLines.Destroy();
             view.DrawTextLine(view.SmallFont,Font.CR_WHITE,294,179,craft
                 ? String.Format("T%d · %s · x%d · %d%%", user.CraftingSelectionTier,
-                    L(CaelumDisplayNames.GetEquipmentSizeKey(user.CraftingSelectionSize)),user.CraftingProcessingBatchMultiplier,user.CraftingEfficiencyPercent)
+                    L(CaelumDisplayNames.GetEquipmentSizeKey(CaelumCraftingRules.GetRecipeEquipmentSize(
+                        user.CraftingSelectionRecipe,user.CraftingSelectionSize))),user.CraftingProcessingBatchMultiplier,user.CraftingEfficiencyPercent)
                 : String.Format("#%d · %d/%d · %s",browser.SelectedWeaponId,browser.Durability,browser.MaximumDurability,
                     L(browser.Equipped ? "CA_CRAFT_BROWSER_EQUIPPED" : browser.Boxed ? "CA_CRAFT_BROWSER_BOXED" : "CA_CRAFT_BROWSER_CARRIED")));
             view.DrawTextLine(view.SmallFont,Font.CR_CYAN,244,198,craft

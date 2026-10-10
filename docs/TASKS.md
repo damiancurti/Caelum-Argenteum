@@ -1,6 +1,17 @@
 # TASKS.md — Active tasks
 
-Documentation version: **5.1.11** — 2026-10-10.
+Documentation version: **5.1.12** — 2026-10-10.
+
+## Issue #158 - Preserve crafting equipment size (5.1.12)
+
+Implemented: browsing Seals, amulets and ammunition no longer replaces the
+remembered equipment size with M. Fixed-size task completion preserves a later
+size choice, including legacy task snapshots. Sized tasks still restore their
+own size; fixed-size output/display metadata stays canonical. The author save
+needs XS selected once, not extra materials. Native before/after checks, actual
+staff/shield transactions using original stock, and task/completed save reloads
+passed. CA158-01 remains pending; deliver through a linked PR before acceptance.
+No quota top-up or forced selection based on race was introduced.
 
 ## Issue #156 - Time-skip letter controls (5.1.11)
 

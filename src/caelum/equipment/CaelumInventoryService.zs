@@ -5771,7 +5771,9 @@ class CaelumInventoryService : Object play
         {
             user.CraftingSelectionRecipe = user.CraftingTaskRecipeIndex;
             user.CraftingSelectionTier = user.CraftingTaskTier;
-            user.CraftingSelectionSize = user.CraftingTaskSize;
+            // Sólo las piezas con talla restauran la usada por su tarea.
+            if (CaelumCraftingRules.RecipeUsesEquipmentSize(user.CraftingTaskRecipeIndex))
+                user.CraftingSelectionSize = user.CraftingTaskSize;
             user.CraftingProcessingBatchIndex = user.CraftingTaskBatchIndex;
             user.CraftingEfficiencyIndex = user.CraftingTaskEfficiencyIndex;
             user.CraftingNetworkCapabilities = user.CraftingTaskNetworkCapabilities;

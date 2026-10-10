@@ -1,0 +1,23 @@
+{
+  "version": "5.1.12",
+  "recorded_utc": "2026-10-10T13:38:16.447635+00:00",
+  "project_validation": {
+    "command": "python -X utf8 validate_project.py",
+    "exit_code": 0,
+    "documents": 10,
+    "audio_files": 107,
+    "station_models": 12,
+    "spanish_caella_keys": 25,
+    "context_words": 2487,
+    "errors": []
+  },
+  "document_index": {
+    "command": "python -X utf8 build_document_index.py",
+    "regenerated": true,
+    "freshness_checked_by_validator": true
+  },
+  "git_diff_check": {
+    "exit_code": 0
+  },
+  "excluded_user_change": "assets/art_source/Caelum Argenteum.png deletion"
+}

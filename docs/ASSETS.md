@@ -1,6 +1,13 @@
 # Caelum Argenteum — Audio and art
 
-Documentation version: **5.1.11** — 2026-10-10.
+Documentation version: **5.1.12** — 2026-10-10.
+
+## 5.1.12 - Crafting-size validation (#158)
+
+No art, sound, model, map or attribution changes. assets/validation_5112 holds
+isolated deterministic fixture sources, native logs, run hashes and results.
+Author saves, test packages, engine and IWAD stay local and are not distributed.
+The unrelated author-owned art deletion remains outside this patch.
 
 ## 5.1.11 - Time-skip input validation (#156)
 

@@ -1,6 +1,35 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **5.1.11** — 2026-10-10.
+Documentation version: **5.1.12** — 2026-10-10.
+
+## 5.1.12 - Preserve crafting equipment size (#158, 2026-10-10)
+
+The author lacked apparent wood/raw sapphire for the staff and shield selected
+with Palomo. materiales-palomo retains 1,800 wood, 200 raw sapphire, 1,260 raw
+copper, 140 raw tin and 600 leather units: exactly the remaining XS/T1/100% plan.
+The menu had selected M after a fixed-size recipe; all four XS magic armor pieces
+and the Quintessence Seal were already crafted. Fixed-size previews must not
+write their canonical output size into the artisan's remembered equipment size.
+Completion likewise restores task size only for sized equipment. The HUD derives
+the fixed product's displayed size separately; jewelry remains M with its original
+mass. No recipes, material allowance, issued counters or save schema change.
+Existing M selections remain M because previous intent cannot be reconstructed;
+select XS once in this checkpoint. Originals were preserved byte-for-byte.
+
+Isolated GZDoom 4.14.2 evidence: baseline reproduces all 12 non-M size-switch
+failures across Seal/amulet/ammunition. Candidate passes 30 checks, including all
+five sizes and real reservation/output transactions for staff and shield using
+only the author's stock. The fixture advances directly to task completion; it
+does not claim a manual wait-duration test. A separate seeded Seal task exercises
+legacy M task metadata with a later XL selection: six reload/completion checks
+pass, plus a completed-save reload. Fixed jewelry stays M; XL selection survives.
+The fixture repositions the copied pawn at the existing upstairs workbench and
+teaches two preview-only recipes; it does not alter original saves or the quota.
+Static/build evidence, hashes, fixture corrections and power-request release:
+assets/validation_5112. CA158-01 remains pending author acceptance.
+
+Prior accepted work: #154/PR155 and #156/PR157 were closed/merged on 2026-10-10
+before this branch. Their acceptance records below remain authoritative.
 
 ## 5.1.11 - Time-skip letter controls (#156, 2026-10-10)
 

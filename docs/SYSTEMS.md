@@ -1,6 +1,6 @@
 # Caelum Argenteum — Current systems and rules
 
-Documentation version: **5.1.11** — 2026-10-10.
+Documentation version: **5.1.12** — 2026-10-10.
 
 ## SI physics and attribute growth — 5.1.10 / #154
 
@@ -2061,6 +2061,15 @@ continue without filling new choices or repeating its start. Adding a missing
 choice to that legacy plan teaches its dependencies without resetting issued
 stock, existing tasks or progress. At #63 Caella chose/taught the amulet;
 #96 supersedes that assignment: Palomo gives it, Caella teaches its recipe.
+
+Crafting-size correction 5.1.12/#158: the selected equipment size belongs to the
+artisan's menu state. Browsing Seals, amulets or ammunition must not replace it
+with their fixed size; their size control is a no-op. Sized task completion uses
+its snapshotted size, while fixed-size completion preserves the current equipment
+size. Fixed-size display/output metadata remains canonical M. This does not
+increase Palomo's allowance: the tutorial's recorded size, T1 and 100% efficiency
+still determine its finite stock. Existing saves keep their explicit menu size;
+if it was changed to M by the old preview, select the planned size once.
 
 Shield materials expand from established plate/strap recipes at the same 100%
 layer efficiency and recorded size as the starter plan. All four T1 shields
