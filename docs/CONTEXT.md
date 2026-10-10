@@ -1,13 +1,14 @@
 # CONTEXT.md — Caelum Argenteum
 
-Documentation version: **5.1.10** — 2026-10-09.
+Documentation version: **5.1.11** — 2026-10-10.
 
-**5.1.10/#154 implemented, author acceptance pending:** new growth families,
-Earth gravity, 4/8 m/s base movement, energy jumps and 25–99% muscular efficiency.
-Physical projectiles fall; NPC ballistic aim is solved at launch. Save migration
-preserves percentages once; equipment recalculation still grants no free healing.
-Rules: SYSTEMS. Evidence: validation_5110. Pending: CA154-01/02.
-Branch: issue-154-si-growth; PR review pending.
+**5.1.11/#156 accepted:** time-skip Q/R fixed; Enter rejects past destinations.
+CA156-01 passed 2026-10-10; PR157 merge/closure authorized. Evidence: validation_5111.
+Author queue empty.
+
+**5.1.10/#154 accepted:** SI physics/growth and percentage-preserving migration.
+CA154-01/02 passed 2026-10-10; PR155 merge/closure authorized. Rules: SYSTEMS;
+evidence: validation_5110.
 
 **5.1.9/#152 accepted:** shotgun pickup, hands and one-press ADS; PR153 merge authorized.
 Evidence: validation_519. Author queue empty. Thermal redesign deferred.

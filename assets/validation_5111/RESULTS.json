@@ -1,0 +1,29 @@
+{
+  "version": "5.1.11",
+  "issue": 156,
+  "baseline": "fe5ba743",
+  "runs": {
+    "regression-final": {
+      "checks_passed": 21,
+      "package_sha256": "3726DDEE195D7D4869D1CE0CE924E8A4ABFE784BE9324C0332DED606C0DD2DB0"
+    },
+    "reload-final": {
+      "checks_passed": 2,
+      "package_sha256": "3726DDEE195D7D4869D1CE0CE924E8A4ABFE784BE9324C0332DED606C0DD2DB0"
+    }
+  },
+  "final_package_sha256": "3726ddee195d7d4869d1ce0ce924e8a4abfe784be9324c0332ded606c0dd2db0",
+  "protected_baseline_package_sha256": "bedde5c11705c9e1059ef3fe31519f53cb058e6c2356d675268c002ee72d275a",
+  "author_save_sha256": "c3fa89ef2a098ca77e5d9ddeba9d819d3d4895908095dadb4efc087d18d20e57",
+  "original_save_unchanged": true,
+  "panel_source_sha256": "8d13e301cd834f8ec76d69259e3840baf5c8831354d9fb26d4e8f0a5a7c19f07",
+  "checks_source_sha256": "21226fad95b0061d09f1db75ad14ca253779e5b706179234b53aea5b5111db57",
+  "reload_source_sha256": "a9381c01a1d257535fa8b194adab70fde3fcdac5236a25d4ae453b5d4b55d48d",
+  "author_confirmation": "2026-10-10: physical Tab closes baseline panel only",
+  "pending": [
+    "CA154-01",
+    "CA154-02",
+    "CA156-01"
+  ],
+  "os_input_automation": "No reliable delivery; not counted as a pass"
+}

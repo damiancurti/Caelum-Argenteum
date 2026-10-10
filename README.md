@@ -6,8 +6,16 @@ An independent dark fantasy FPS-RPG inspired by nineteenth-century Argentina.
 Author and game designer: **Damian Curti**. Development target: **GZDoom 4.14.2**
 on Windows 11. The final game is intended to be independent of Doom assets.
 
-**Current release: 5.1.10.** Obtain and update the complete repository, validate
+**Current release: 5.1.11.** Obtain and update the complete repository, validate
 it, then rebuild with `run_dev.bat` as described below.
+
+**5.1.11 / [#156](https://github.com/damiancurti/Caelum-Argenteum/issues/156):**
+Fix Q/R in the time-skip panel. Enter still requires a future destination; the
+supplied checkpoint had already finished crafting. Work and inventory are kept.
+Native dispatch/save checks passed; the author accepted CA156-01 on 2026-10-10.
+Evidence: [validation_5111](assets/validation_5111/RESULTS.md). Delivery: PR157,
+following #154 / PR155. All author checks are accepted;
+[pending_test.txt](pending_test.txt) is empty.
 
 **5.1.10 / [#154](https://github.com/damiancurti/Caelum-Argenteum/issues/154):**
 Shared attribute curves, Earth gravity, calibrated walking/running, energy-based
@@ -16,8 +24,8 @@ projectiles fall; NPC shots compensate drop at launch. Older saves migrate resou
 percentages once, preserving attributes and ownership. Keep an original save and
 its matching package for rollback; save the upgraded game under a new name.
 Rules: [SYSTEMS](docs/SYSTEMS.md). Evidence: [validation_5110](assets/validation_5110/RESULTS.md).
-Native checks passed; author checks CA154-01/02 remain in [pending_test.txt](pending_test.txt).
-This delivery is for review; #154 has not been merged or closed.
+Native checks passed; the author accepted CA154-01/02 on 2026-10-10 and requested
+issue closure and PR155 merge. Acceptance details: [HISTORY](docs/HISTORY.md).
 
 **5.1.9 / [#152](https://github.com/damiancurti/Caelum-Argenteum/issues/152):**
 Shotgun cartridges now leave the world when collected, including repaired owned

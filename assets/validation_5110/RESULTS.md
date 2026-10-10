@@ -5,8 +5,9 @@ Implemented on `issue-154-si-growth` from main
 (2026-10-10 UTC), GZDoom 4.14.2 / Windows 11, Vulkan, 1280 x 720. Native runs
 used separate configs, 5% master volume, unpaused background simulation and one
 engine process at a time. This is controlled native evidence, not author acceptance
-or a siege FPS benchmark. Outstanding author checks: `CA154-01`, `CA154-02` in the
-single root `pending_test.txt`.
+or a siege FPS benchmark. At initial delivery, author checks `CA154-01` and
+`CA154-02` remained outstanding. The author accepted both without reported
+qualifications on 2026-10-10 and requested #154 closure / PR155 merge; see HISTORY.
 
 ## Native results
 
@@ -121,5 +122,6 @@ can exit normally after a VM abort or after rejecting a missing save dependency.
 New formulas and SI targets are implemented, not a newly approved force/power
 acceleration model. Ballistic solving is bounded to launch and has no measured
 mass-siege FPS claim. Unreachable targets retain direct-shot fallback. User feel,
-HUD readability and the combined playthrough remain author checks; no issue
-closure, merge or author acceptance is asserted by this evidence.
+HUD readability and the combined playthrough were separate author checks,
+subsequently accepted on 2026-10-10. The native evidence itself does not assert
+author acceptance or expand the approved scope.

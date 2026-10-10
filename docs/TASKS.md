@@ -1,6 +1,17 @@
 # TASKS.md — Active tasks
 
-Documentation version: **5.1.10** — 2026-10-09.
+Documentation version: **5.1.11** — 2026-10-10.
+
+## Issue #156 - Time-skip letter controls (5.1.11)
+
+Implemented the native KeyChar path for Q/R while retaining scan-code controls,
+key release propagation and authoritative network actions. The author's save
+contains a finished task and past destination, explaining the valid Enter warning.
+Native dispatch/state checks and save/reload passed. The author's baseline Tab
+check confirms the panel can receive real input; synthetic Windows presses were
+not delivered reliably and are not counted as validation. The author accepted
+CA156-01 on 2026-10-10 without reported qualifications and requested PR157 merge
+and #156 closure after #154 / PR155. The author queue is empty.
 
 ## Issue #154 — SI physics and growth (5.1.10)
 
@@ -12,7 +23,8 @@ save migration. Existing acceleration, combat equations and fixed work data rema
 Native evidence covers numeric consumers, actual input/movement/jumps, real
 projectile collisions, falls/traps, map traversal and protected-save migration.
 Static/final-build results and limitations are recorded in validation_5110.
-Outstanding author checks: CA154-01 and CA154-02 in pending_test.txt.
+CA154-01 and CA154-02 accepted by the author on 2026-10-10 without reported
+qualifications; #154 closure and PR155 merge requested. HISTORY retains the IDs.
 No mass-siege benchmark or unapproved force/power acceleration redesign is included.
 
 ## Issue #152 - Shotgun follow-up (5.1.9)
