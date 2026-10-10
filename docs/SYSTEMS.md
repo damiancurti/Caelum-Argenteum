@@ -1,6 +1,17 @@
 # Caelum Argenteum — Current systems and rules
 
-Documentation version: **5.1.13** — 2026-10-10.
+Documentation version: **5.1.14** — 2026-10-10.
+
+## Damage-flash lifetime across maps - 5.1.14 / #165
+
+Damage feedback remains percentage-based, with the approved family colors,
+18-tic fade and 0.40 maximum full-screen intensity. Shared evaluation rejects
+future or expired map-local timestamps and caps malformed saved strength; new
+hits accumulate only the valid remaining flash. Native travel clears the transient
+flash rather than carrying a level.time timestamp to another map. Existing visual
+revision 2 clears older saved flash state once; no Health, resource, position,
+Tarot, damage or wounded-edge balance changes. Save a migrated game under a new
+name and retain the original package/save pair for rollback.
 
 ## SI physics and attribute growth — 5.1.10 / #154
 

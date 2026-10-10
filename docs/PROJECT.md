@@ -1,6 +1,19 @@
 # Caelum Argenteum — Project, status and roadmap
 
-Documentation version: **5.1.13** — 2026-10-10.
+Documentation version: **5.1.14** — 2026-10-10.
+
+## 5.1.14 - Damage flash across map travel (#165)
+
+The protected loco-map02 checkpoint kept an old MAP01 damage timestamp, producing
+a negative flash age and a fully opaque red view after the level clock reset.
+It was near the authored MAP02 entry; flight had expired normally by the save.
+Shared bounded flash evaluation rejects future/expired timestamps, actual travel
+clears the transient flash, and visual revision 2 clears older saved flash state
+once. No Health, position, inventory, Tarot or damage-balance change. Native
+render comparisons and 34 checks pass, including airborne departure/arrival,
+active flight/cooldown retention, grounded hub return and save/reload. CA165-01
+awaits author acceptance; evidence: assets/validation_5114. #158 and #160 are
+accepted/closed, with PR159 and PR161 merged on 2026-10-10.
 
 ## 5.1.13 - Argento silver-key handoff (#160)
 

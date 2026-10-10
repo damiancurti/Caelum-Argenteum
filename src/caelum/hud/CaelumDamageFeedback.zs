@@ -1,12 +1,38 @@
 // Colores y respuesta visual aprobados #137. No alteran daño ni recursos.
 class CaelumDamageFeedback : Object play
 {
+    const REVISION=2;
     const FLASH_TICS=18;
     const MAX_FLASH_ALPHA=0.40;
     const FLASH_PER_HEALTH_FRACTION=0.80;
     const WOUNDED_EDGE_ALPHA=0.12;
     const CRITICAL_EDGE_ALPHA=0.30;
     const EDGE_SCREEN_FRACTION=0.09;
+
+    static void ClearFlash(CaelumPlayer user)
+    {
+        user.DamageVFXStrength=0;
+        user.DamageVFXTic=level.time;
+        user.DamageVFXKind=-1;
+        if(user.player!=null)user.player.damagecount=0;
+    }
+
+    static void EnsureRevision(CaelumPlayer user)
+    {
+        if(!CaelumPlayerAuthority.CanMutate(user) || user.DamageFeedbackRevision>=REVISION)return;
+        // Los saves anteriores pueden traer un tic del mapa de origen. Sólo
+        // se descarta ese destello transitorio; salud y demás estados persisten.
+        ClearFlash(user);
+        user.DamageFeedbackRevision=REVISION;
+    }
+
+    static clearscope double FlashAlpha(CaelumPlayer user,double fraction=0)
+    {
+        double age=level.time+fraction-user.DamageVFXTic;
+        // Un reloj de otro mapa nunca rejuvenece ni amplifica un golpe viejo.
+        if(age<0 || age>=FLASH_TICS)return 0;
+        return Clamp(user.DamageVFXStrength,0.0,MAX_FLASH_ALPHA)*(1.0-age/FLASH_TICS);
+    }
 
     static clearscope Color Tint(int kind)
     {
@@ -36,11 +62,11 @@ class CaelumDamageFeedback : Object play
 
     static void Record(CaelumPlayer user,Actor inflictor,Name damageType,int healthLost)
     {
-        if(user.DamageFeedbackRevision<1)user.DamageFeedbackRevision=1;
+        EnsureRevision(user);
         // El contador de Doom usa puntos absolutos sobre su barra de cien.
         if(user.player!=null)user.player.damagecount=0;
         if(healthLost<=0)return;
-        double previous=user.DamageVFXStrength*Max(0.0,1.0-double(level.time-user.DamageVFXTic)/FLASH_TICS);
+        double previous=FlashAlpha(user);
         user.DamageVFXStrength=Min(MAX_FLASH_ALPHA,previous
             +FLASH_PER_HEALTH_FRACTION*healthLost/Max(1,user.CaelumMaximumHealth));
         user.DamageVFXTic=level.time;
@@ -68,8 +94,7 @@ class CaelumScreenFeedback : Object ui
 
     static void Damage(CaelumPlayer user,double fraction)
     {
-        double age=level.time+fraction-user.DamageVFXTic;
-        double alpha=user.DamageVFXStrength*Max(0.0,1.0-age/CaelumDamageFeedback.FLASH_TICS);
+        double alpha=CaelumDamageFeedback.FlashAlpha(user,fraction);
         if(alpha>0)Screen.Dim(CaelumDamageFeedback.Tint(user.DamageVFXKind),alpha,
             0,0,Screen.GetWidth(),Screen.GetHeight());
         double ratio=double(Max(0,user.health))/Max(1,user.CaelumMaximumHealth);

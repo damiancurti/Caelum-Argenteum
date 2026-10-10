@@ -1,6 +1,13 @@
 # Caelum Argenteum — Audio and art
 
-Documentation version: **5.1.13** — 2026-10-10.
+Documentation version: **5.1.14** — 2026-10-10.
+
+## 5.1.14 - Damage-flash travel validation (#165)
+
+No art, sound, map, model or attribution changes. assets/validation_5114 contains
+native fixture sources, before/after screen captures, raw logs, hashes and test
+results. Original saves, engine, IWAD and generated packages stay local. The
+unrelated author-owned art-source deletion is excluded.
 
 ## 5.1.13 - Silver-key validation (#160)
 
