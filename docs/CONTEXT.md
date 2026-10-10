@@ -1,14 +1,12 @@
 # CONTEXT.md — Caelum Argenteum
 
-Documentation version: **5.1.11** — 2026-10-10.
+Documentation version: **5.1.12** — 2026-10-10.
 
-**5.1.11/#156 accepted:** time-skip Q/R fixed; Enter rejects past destinations.
-CA156-01 passed 2026-10-10; PR157 merge/closure authorized. Evidence: validation_5111.
-Author queue empty.
-
-**5.1.10/#154 accepted:** SI physics/growth and percentage-preserving migration.
-CA154-01/02 passed 2026-10-10; PR155 merge/closure authorized. Rules: SYSTEMS;
-evidence: validation_5110.
+**5.1.12/#158 implemented:** fixed-size recipes preserve equipment size.
+materiales-palomo has enough stock at XS/T1/100%; select XS once in that save.
+Native transactions/reloads pass; CA158-01 pending. Evidence: validation_5112.
+**#156/PR157 and #154/PR155 accepted, closed, merged** on 2026-10-10.
+Time-skip controls and SI/growth migration: SYSTEMS/HISTORY; validation_5111/5110.
 
 **5.1.9/#152 accepted:** shotgun pickup, hands and one-press ADS; PR153 merge authorized.
 Evidence: validation_519. Author queue empty. Thermal redesign deferred.

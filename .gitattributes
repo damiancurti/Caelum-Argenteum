@@ -105,3 +105,7 @@
 # Preserve #156 native evidence bytes and source hashes across checkouts.
 /assets/validation_5111/* -text whitespace=cr-at-eol
 /assets/validation_5111/*.txt whitespace=-blank-at-eol,-blank-at-eof,cr-at-eol
+
+# Preserve #158 native evidence bytes and source hashes across checkouts.
+/assets/validation_5112/* -text whitespace=cr-at-eol
+/assets/validation_5112/*.txt whitespace=-blank-at-eol,-blank-at-eof,cr-at-eol

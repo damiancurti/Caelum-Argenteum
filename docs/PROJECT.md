@@ -1,6 +1,17 @@
 # Caelum Argenteum — Project, status and roadmap
 
-Documentation version: **5.1.11** — 2026-10-10.
+Documentation version: **5.1.12** — 2026-10-10.
+
+## 5.1.12 - Preserve crafting equipment size (#158)
+
+Fixed-size recipe previews and completions retain the artisan's equipment size;
+fixed-size output metadata remains canonical M. The protected materiales-palomo
+checkpoint has enough raw stock for its recorded XS/T1/100% staff and shield.
+Its saved M menu choice explains the apparent shortage; choose XS once in that
+save. No allowance, recipe, save-schema or balance change. Native regression,
+original-stock transactions and save/reload passed; CA158-01 awaits author
+acceptance. Evidence: assets/validation_5112. #154/PR155 and #156/PR157 are
+accepted, closed and merged.
 
 ## 5.1.11 - Time-skip letter controls (#156)
 

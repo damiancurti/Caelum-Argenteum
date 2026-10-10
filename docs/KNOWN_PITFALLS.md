@@ -4,6 +4,28 @@ Status: integrated engineering register (issue #22, patch 4.36.1b).
 Prepared: 2026-09-23. Inherits the project's release after integration.
 Inspected baseline: `1dc390576fa330d37ff543526fc7e69a397fc28f` (PR #7).
 
+## CA-KP-069 - Fixed-size products must not overwrite equipment size
+
+Status/evidence: CODE-VERIFIED / ENGINE-VERIFIED, #158 / 5.1.12, 2026-10-10.
+Baseline: 18dba350 (runtime equivalent to protected 5.1.11 package); GZDoom 4.14.2.
+Scope: crafting size, finite tutorial materials and saved task completion.
+
+The author checkpoint contained the exact XS staff/shield raw inputs while the
+menu selected M. Previewing jewelry or ammunition wrote M into the shared choice,
+which the next sized recipe inherited. Quota replenishment would hide that defect.
+Keep the equipment choice separate from a fixed product's effective display/output
+size; only sized task completion may restore its saved size. Legacy fixed task
+snapshots must not overwrite a more recent choice. Do not infer that every saved
+M is erroneous: preserve it until the player chooses another size.
+
+Regression: preview all five sizes through Seal, amulet and ammunition, then
+return to a sized recipe; check actual original-stock reservations/outputs and
+unchanged issued counters. Reload an active fixed-size task with a different
+current selection, complete it and reload again. validation_5112 records the
+12 reproduced baseline failures and 37 final passing native checks. Fixtures
+force completion after reservation, not elapsed-duration acceptance. CA158-01
+remains pending; this is engine evidence, not author confirmation.
+
 ## CA-KP-068 - Read letter keys from KeyChar in native InputEvent
 
 Status/evidence: CODE-VERIFIED / ENGINE-VERIFIED, #156 / 5.1.11, 2026-10-10.

@@ -237,6 +237,23 @@ class CaelumCraftingRules : Object
         return CaelumConstants.CRAFTING_RECIPE_KIND_COMPONENT;
     }
 
+    static bool RecipeUsesEquipmentSize(int recipeIndex)
+    {
+        int kind = GetUnifiedRecipeKind(recipeIndex);
+        return kind == CaelumConstants.CRAFTING_RECIPE_KIND_PHYSICAL_WEAPON
+            || kind == CaelumConstants.CRAFTING_RECIPE_KIND_ARMOR
+            || kind == CaelumConstants.CRAFTING_RECIPE_KIND_ESSENCE_WEAPON
+            || kind == CaelumConstants.CRAFTING_RECIPE_KIND_SHIELD;
+    }
+
+    static int GetRecipeEquipmentSize(int recipeIndex, int selectedSize)
+    {
+        // La talla fija de un producto no modifica la elección del artesano.
+        return RecipeUsesEquipmentSize(recipeIndex)
+            ? Clamp(selectedSize, 0, CaelumConstants.EQUIPMENT_SIZE_COUNT - 1)
+            : CaelumConstants.EQUIPMENT_SIZE_M;
+    }
+
     static int ResolveRecipeFilter(int recipeFilter)
     {
         return Clamp(

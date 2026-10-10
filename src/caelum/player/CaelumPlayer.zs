@@ -4960,7 +4960,7 @@ class CaelumPlayer : DoomPlayer
         {
             // Flechas y virotes conservan sus masas nativas y comparten la
             // base T1: 70 % asta y 30 % punta. Merma por capa en el bloque común.
-            CraftingSelectionTier = 1; CraftingSelectionSize = CaelumConstants.EQUIPMENT_SIZE_M;
+            CraftingSelectionTier = 1;
             CraftingFinalWeight = GetAmmunitionUnitWeight(
                 CaelumCraftingRules.GetRecipeAmmunitionType(CraftingSelectionRecipe))
                 * CaelumCraftingRules.GetRecipeAmmunitionBatch(CraftingSelectionRecipe);
@@ -4974,7 +4974,6 @@ class CaelumPlayer : DoomPlayer
         else if (CraftingSelectedRecipeKind == CaelumConstants.CRAFTING_RECIPE_KIND_AMULET)
         {
             CraftingSelectedAmuletType = CaelumCraftingRules.GetUnifiedAmuletType(CraftingSelectionRecipe);
-            CraftingSelectionSize = CaelumConstants.EQUIPMENT_SIZE_M;
             CraftingBasicMaterialType = CaelumConstants.MATERIAL_SILVER_CHAIN;
             CraftingTierMaterialType = CaelumCraftingRules.GetAmuletTierMaterial(CraftingSelectedAmuletType);
             CraftingFinalWeight = CaelumCraftingRules.GetJewelryWeight(CraftingSelectionTier);
@@ -4986,7 +4985,6 @@ class CaelumPlayer : DoomPlayer
             == CaelumConstants.CRAFTING_RECIPE_KIND_SEAL)
         {
             CraftingSelectedSealType = CaelumCraftingRules.GetUnifiedSealType(CraftingSelectionRecipe);
-            CraftingSelectionSize = CaelumConstants.EQUIPMENT_SIZE_M;
             CraftingBasicMaterialType = CaelumConstants.MATERIAL_SEAL_BASE;
             CraftingTierMaterialType = CaelumCraftingRules.GetSealTierMaterial(CraftingSelectedSealType);
             CraftingFinalWeight = CaelumCraftingRules.GetJewelryWeight(CraftingSelectionTier);
@@ -5337,9 +5335,9 @@ class CaelumPlayer : DoomPlayer
     {
         RefreshCraftingPreview();
         if (CraftingSelectedRecipeKind == CaelumConstants.CRAFTING_RECIPE_KIND_AMULET
-            || CraftingSelectedRecipeKind == CaelumConstants.CRAFTING_RECIPE_KIND_SEAL)
+            || CraftingSelectedRecipeKind == CaelumConstants.CRAFTING_RECIPE_KIND_SEAL
+            || CraftingSelectedRecipeKind == CaelumConstants.CRAFTING_RECIPE_KIND_AMMUNITION)
         {
-            CraftingSelectionSize = CaelumConstants.EQUIPMENT_SIZE_M;
             return;
         }
         if (CraftingSelectedRecipeKind
