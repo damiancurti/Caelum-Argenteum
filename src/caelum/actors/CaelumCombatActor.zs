@@ -1127,7 +1127,7 @@ class CaelumCombatActor : Actor
         AttackResourceResume=self is "CaelumBull" ? CurState : MeleeState;
         if(!TrySpendCombatAir(GetEffectiveAttackAir(baseAir)))
         {WaitForAttackResource();return false;}
-        CaelumThermalService.Impulse(self,CaelumThermalRules.PositiveWorkHeat(workJoules),true);
+        CaelumThermalService.Impulse(self,CaelumThermalRules.PositiveWorkHeat(workJoules,CaelumThermalBody.Efficiency(self)),true);
         return true;
     }
 
@@ -1757,11 +1757,7 @@ class CaelumCombatActor : Actor
 
     double GetCollisionEffectiveMass()
     {
-        double result = Max(1.0, double(Mass));
-        if (CombatArmor != null)
-        {
-            result += Max(0.0, CombatArmor.GetTotalWeight());
-        }
+        double result = Max(1.0, double(Mass))+Max(0.0,GetAttackCarriedWeight());
         return Max(1.0, result * Max(0.0, CollisionEffectiveMassMultiplier));
     }
 
@@ -1818,10 +1814,7 @@ class CaelumCombatActor : Actor
             return 0.0;
         }
 
-        double agilityTypeOnePercent =
-            100.0 + CombatAgility * (CombatAgility + 1) / 2.0;
-        return CaelumConstants.GZDOOM_BASE_JUMP_Z
-            * Sqrt(Max(0.0, agilityTypeOnePercent / 100.0));
+        return CaelumPhysicsUnits.JumpVelocity(Mass,Mass+GetAttackCarriedWeight(),CombatAgility);
     }
 
     double ApplyBiologicalLandingAbsorption(double rawDeltaSpeed)
@@ -1998,7 +1991,8 @@ class CaelumCombatActor : Actor
         LastImpactEquivalentTics =
             CalculateImpactEquivalentTics(LastImpactDeltaSpeed);
         LastImpactDamagePercent =
-            CalculateImpactDamagePercent(LastImpactEquivalentTics);
+            CalculateImpactDamagePercent(LastImpactEquivalentTics
+                *(impactKind==CaelumConstants.IMPACT_KIND_FLOOR ? Sqrt(CaelumPhysicsUnits.GRAVITY_RATIO) : 1.0));
         LastImpactEffectiveMass = selfEffectiveMass;
         LastImpactOtherEffectiveMass = otherEffectiveMass;
         LastImpactClosingSpeed = closingSpeed;

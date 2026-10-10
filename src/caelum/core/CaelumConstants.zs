@@ -1228,20 +1228,19 @@ class CaelumConstants : Object
     // Equipment load modifies this rate through the shared multiplier.
     const RUN_AIR_COST_PER_SECOND = 2.0;
 
-    // GZDoom PlayerPawn defaults use movement x1 and JumpZ 8. Fixed baselines
-    // prevent the effective percentages from accumulating every game tic.
-    const GZDOOM_BASE_MOVEMENT = 1.0;
+    // #154: calibración de input nativo, no asignación directa de velocidad.
+    const GZDOOM_BASE_MOVEMENT = (CaelumPhysicsUnits.WALK_METERS_PER_SECOND*CaelumPhysicsUnits.MAP_UNITS_PER_METER/TICRATE)/(25.0/3.0);
     // El DoomPlayer estándar alcanza 25/3 MU por tic caminando y el doble
     // corriendo. Los actores Caelum reutilizan esta relación, no su velocidad.
-    const GZDOOM_BASE_MAX_WALK_SPEED = 25.0 / 3.0;
+    const GZDOOM_BASE_MAX_WALK_SPEED = CaelumPhysicsUnits.WALK_METERS_PER_SECOND*CaelumPhysicsUnits.MAP_UNITS_PER_METER/TICRATE;
     // Velocidad terminal horizontal del DoomPlayer estándar al correr sobre
     // suelo normal (50/3 MU por tic). ForwardMove escala este valor, mientras
     // que asignar Vel requiere unidades físicas y no el multiplicador 1.0.
-    const GZDOOM_BASE_MAX_RUN_SPEED = 50.0 / 3.0;
+    const GZDOOM_BASE_MAX_RUN_SPEED = CaelumPhysicsUnits.RUN_METERS_PER_SECOND*CaelumPhysicsUnits.MAP_UNITS_PER_METER/TICRATE;
+    // Referencia heredada para fixtures; el salto real usa energía y masa.
     const GZDOOM_BASE_JUMP_Z = 8.0;
 
-    // El aire parte de 1000 y Resilience aplica el crecimiento existente.
-    // Type 4 percentage without changing its curve or reference levels.
+    // Aire parte de 1000; Resiliencia aplica el multiplicador Tipo 2.
     const BASE_AIR_CAPACITY = 1000.0;
 
     // The design defines a complete air recovery time of eight minutes.

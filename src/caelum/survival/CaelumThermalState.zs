@@ -33,6 +33,7 @@ class CaelumThermalState : Object play
     int NextUpdateTic,LastWaterLevel,EnvironmentDate,EnvironmentMinute;
     String RuntimeMap;
     double ReferenceJumpHeat,ActivityJoules,ActionJoules;
+    double MuscularEfficiency;
     vector3 LastPosition;
     vector2 PropelledVelocity;
     double PendingActivityJoules,LocalMotionMps,FireWatts;
@@ -82,6 +83,7 @@ class CaelumThermalState : Object play
         copy.Toughness=Toughness;
         copy.LastSubmergedFraction=LastSubmergedFraction;
         copy.ReferenceJumpHeat=ReferenceJumpHeat;
+        copy.MuscularEfficiency=MuscularEfficiency;
         copy.ActivityJoules=ActivityJoules;
         copy.ActionJoules=ActionJoules;
         copy.CanShiver=CanShiver;copy.ShiveringJoules=ShiveringJoules;
@@ -144,6 +146,8 @@ class CaelumThermalState : Object play
         // El presupuesto sólo describe trabajo futuro; conservar los julios
         // ya medidos y toda la exposición/aclimatación anterior.
         if(Revision<8)ReloadHeatBudget=0;
+        // La eficiencia nueva cambia sólo el calor del progreso futuro.
+        if(Revision<9){ReloadHeatBudget=0;MuscularEfficiency=CaelumPhysicsUnits.BASE_MUSCULAR_EFFICIENCY;}
         Revision=CaelumThermalData.REVISION;
     }
 

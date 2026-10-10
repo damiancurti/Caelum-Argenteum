@@ -2,7 +2,7 @@
 // Procedencia física y decisiones del autor en SYSTEMS, sección V5.1 térmica.
 class CaelumThermalData : Object
 {
-    const REVISION=8;
+    const REVISION=9;
     static clearscope double ExposureThreshold(int tier)
     {return tier==1 ? 10.0 : tier==2 ? 20.0 : 30.0;}
     const LIGHT_CLOTH=0;
@@ -34,7 +34,7 @@ class CaelumThermalData : Object
     const REFERENCE_HEIGHT_METERS=1.75;
     // Referencia histórica para fixtures antiguos; el runtime ya no usa cola.
     const ACTIVITY_HALF_LIFE_SECONDS=120.0;
-    const POSITIVE_WORK_EFFICIENCY=0.25;
+    const POSITIVE_WORK_EFFICIENCY=CaelumPhysicsUnits.BASE_MUSCULAR_EFFICIENCY;
     // #136: presupuestos de trabajo, independientes de velocidad y Aire.
     const JUMP_WORK_HEIGHT_METERS=0.5;
     const JUMP_WORK_GRAVITY=9.81;

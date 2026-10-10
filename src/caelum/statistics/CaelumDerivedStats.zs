@@ -309,6 +309,8 @@ class CaelumDerivedStats : Object
         BaseMovementPercent = CalculateType4Percent(attributes.Agility);
         MassAdjustedMovementPercent = BaseMovementPercent * MovementMultiplier;
         BaseJumpHeightPercent = CalculateType1Percent(attributes.Agility);
-        MassAdjustedJumpHeightPercent = BaseJumpHeightPercent * MovementMultiplier;
+        // Altura relativa al salto sin carga de este cuerpo; la carga ya
+        // interviene en energía cinética y no vuelve a reducir JumpZ.
+        MassAdjustedJumpHeightPercent = BaseJumpHeightPercent*BaseMass/Max(0.001,TotalMass);
     }
 }

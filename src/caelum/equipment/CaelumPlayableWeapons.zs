@@ -2712,6 +2712,23 @@ class CaelumQuintessenceStatuetteT3Weapon : CaelumMagicSelectorWeapon
 // Caelum registra la region exacta del impacto antes de entrar a la armadura.
 class CaelumCarbineProjectile : CaelumActorProjectile
 {
+    int PhysicsRevision;
+
+    override void PostBeginPlay()
+    {
+        Super.PostBeginPlay();
+        PhysicsRevision=CaelumPhysicsUnits.PROJECTILE_GRAVITY_REVISION;
+    }
+
+    override void Tick()
+    {
+        // Los proyectiles guardados conservan velocidad/daño. Sólo el vuelo
+        // físico deja de omitir gravedad; los estados de impacto no cambian.
+        if(PhysicsRevision<CaelumPhysicsUnits.PROJECTILE_GRAVITY_REVISION)
+        {if(bMissile)bNoGravity=false;PhysicsRevision=CaelumPhysicsUnits.PROJECTILE_GRAVITY_REVISION;}
+        Super.Tick();
+    }
+
     Default
     {
         Radius 2;
@@ -2720,6 +2737,7 @@ class CaelumCarbineProjectile : CaelumActorProjectile
         Damage 1;
         DamageType "CaelumRangedTest";
         Projectile;
+        -NOGRAVITY
         +NOEXTREMEDEATH
     }
 

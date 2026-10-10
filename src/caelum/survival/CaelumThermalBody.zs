@@ -1,6 +1,18 @@
 // Adaptadores de datos: la fisiología térmica no posee inventario ni estadísticas.
 class CaelumThermalBody : Object play
 {
+    static double Efficiency(Actor body)
+    {
+        let user=CaelumPlayer(body);let npc=CaelumCombatActor(body);
+        if(user!=null && user.Attributes!=null)
+            return CaelumPhysicsUnits.MuscularEfficiency(user.Attributes.Agility,user.Attributes.Dexterity);
+        if(npc!=null)
+            return CaelumPhysicsUnits.MuscularEfficiency(
+                npc.CombatAgility+npc.GetCombatArmorAttributeBonus(CaelumConstants.ATTRIBUTE_AGILITY),
+                npc.CombatDexterity+npc.GetCombatArmorAttributeBonus(CaelumConstants.ATTRIBUTE_DEXTERITY));
+        return CaelumPhysicsUnits.BASE_MUSCULAR_EFFICIENCY;
+    }
+
     static clearscope bool FurryAnimal(Actor body)
     { return body is 'CaelumBull' || body is 'CaelumGiantRat'; }
 
@@ -40,6 +52,7 @@ class CaelumThermalBody : Object play
 
     static void Refresh(Actor body,CaelumThermalState thermal)
     {
+        thermal.MuscularEfficiency=Efficiency(body);
         thermal.Sweats=true;
         thermal.CanShiver=true;
         thermal.ShiveringHungerPerMetSecond=0;

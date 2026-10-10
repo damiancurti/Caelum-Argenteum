@@ -2,7 +2,7 @@
 // vuelve a calcular el mismo modelo y aplica una sola transacción de viaje.
 class CaelumJourneyRules : Object play
 {
-    const MAP_UNITS_PER_METER = 32.0;
+    const MAP_UNITS_PER_METER = CaelumPhysicsUnits.MAP_UNITS_PER_METER;
     const WALK_HOURS = 16;
     const SLEEP_HOURS = 8;
     // Valores nominales de marcha; viento favorable y tripulación de relevo.

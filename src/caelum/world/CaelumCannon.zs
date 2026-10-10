@@ -191,6 +191,12 @@ class CaelumCannon : CaelumHostileMachine
         for(int i=0;i<Operators.Size();i++)if(Operators[i]!=null && Operators[i].health>0)LastOperator=Operators[i];
         shot.Operator=LastOperator;
         shot.Vel=direction*CaelumCannonData.SPEED;
+        if(IntendedTarget!=null && CaelumBallistics.AimProjectile(shot,AimPoint,0,0,true))
+        {
+            direction=shot.Vel.Unit();
+            Angle=shot.Angle;Elevation=-shot.Pitch;
+            PlaceComponents();
+        }
         LastLaunchVelocity=shot.Vel;
         shot.FlightVelocity=shot.Vel; shot.Angle=Angle; shot.Pitch=-Elevation;
         ActiveShot=shot;

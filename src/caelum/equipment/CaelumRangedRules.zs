@@ -48,7 +48,8 @@ class CaelumRangedRules : Object
         projectile.Target=owner;projectile.Angle=yaw;projectile.Pitch=pitch;
         projectile.ConfigureCaelumTravelDistance(weapon.GetRangedRangeFor(weapon.WeaponType));
         double speed=IsFirearm(weapon.WeaponType) ? CaelumConstants.WEAPON_CARBINE_PROJECTILE_SPEED : CaelumConstants.PROJECTILE_SPEED_VERY_FAST;
-        projectile.Vel=(Cos(pitch)*Cos(yaw)*speed,Cos(pitch)*Sin(yaw)*speed,-Sin(pitch)*speed);
+        vector3 direction=(Cos(pitch)*Cos(yaw),Cos(pitch)*Sin(yaw),-Sin(pitch));
+        projectile.Vel=direction.Unit()*speed;
         projectile.StoreCaelumAttackResult(Max(0,int(damage+0.5)),true,critical,false,push);
         projectile.StoreCaelumWeaponWearIdentity(weapon.WeaponType,weapon.Tier,weapon.Size);
         return projectile;
@@ -193,9 +194,11 @@ class CaelumCityCarbine : Object play
         double minimum=CaelumWeaponCatalogue.GetMinimumSpread(CaelumConstants.CATALOGUE_WEAPON_CARBINE)*100/accuracy;
         double maximum=CaelumWeaponCatalogue.GetMaximumSpread(CaelumConstants.CATALOGUE_WEAPON_CARBINE)*100/accuracy;
         double spread=minimum+(maximum-minimum)*Random[CaelumCarbineSpread](0,100000)/100000.0;
-        double yaw=owner.Angle+Random[CaelumCarbineYaw](-100000,100000)/100000.0*spread;
+        double yawOffset=Random[CaelumCarbineYaw](-100000,100000)/100000.0*spread;
+        double yaw=owner.Angle+yawOffset;
         vector3 aim=victim.Pos+(0,0,victim.Height/2)-(owner.Pos+(0,0,CaelumRangedRules.LaunchHeight(owner,Weapon.WeaponType)));
-        double pitch=-VectorAngle(aim.XY.Length(),aim.Z)+Random[CaelumCarbinePitch](-100000,100000)/100000.0*spread;
+        double pitchOffset=Random[CaelumCarbinePitch](-100000,100000)/100000.0*spread;
+        double pitch=-VectorAngle(aim.XY.Length(),aim.Z)+pitchOffset;
         double chance=Clamp((CaelumWeaponCatalogue.GetCriticalChancePercent(CaelumConstants.CATALOGUE_WEAPON_CARBINE)
             *CaelumRangedRules.TierCriticalMultiplier(Weapon.Tier)
             +Max(0.0,owner.CombatPhysicalCriticalChancePercent-CaelumConstants.BASE_CRITICAL_CHANCE_PERCENT))
@@ -205,6 +208,7 @@ class CaelumCityCarbine : Object play
         bool critical=Random[CaelumCarbineCritical](0,999999)/10000.0<chance;
         let projectile=CaelumRangedRules.Fire(owner,Weapon,Weapon.GetDamage()*owner.CombatHealthPerformanceMultiplier,critical,owner.CombatPhysicalPushMultiplier,yaw,pitch);
         if(projectile==null)return true;
+        CaelumBallistics.AimProjectile(projectile,victim.Pos+(0,0,victim.Height/2),yawOffset,pitchOffset);
         double cost=owner.GetEffectiveAttackAir(owner.AttackResourceBaseCost);
         if(!owner.TrySpendCombatAir(cost)){projectile.Destroy();owner.WaitForAttackResource();return true;}
         owner.MarkActorCombatActivity();

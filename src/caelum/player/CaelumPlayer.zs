@@ -6586,7 +6586,8 @@ class CaelumPlayer : DoomPlayer
             return baseAbsorption;
         }
 
-        double baseJump = CaelumConstants.GZDOOM_BASE_JUMP_Z;
+        double baseJump = DerivedStats!=null
+            ? CaelumPhysicsUnits.JumpVelocity(DerivedStats.BaseMass,DerivedStats.TotalMass,0) : 0;
         double agilityBonusRatio = Max(
             0.0,
             baseAbsorption / Max(0.0001, baseJump) - 1.0
@@ -6832,7 +6833,8 @@ class CaelumPlayer : DoomPlayer
         LastImpactEquivalentTics =
             CalculateImpactEquivalentTics(LastImpactDeltaSpeed);
         LastImpactDamagePercent =
-            CalculateImpactDamagePercent(LastImpactEquivalentTics);
+            CalculateImpactDamagePercent(LastImpactEquivalentTics
+                *(impactKind==CaelumConstants.IMPACT_KIND_FLOOR ? Sqrt(CaelumPhysicsUnits.GRAVITY_RATIO) : 1.0));
         LastImpactEffectiveMass = selfEffectiveMass;
         LastImpactOtherEffectiveMass = otherEffectiveMass;
         LastImpactClosingSpeed = closingSpeed;
@@ -11377,7 +11379,9 @@ class CaelumPlayer : DoomPlayer
         {
             ConsumeJumpAir();
             if(DerivedStats!=null)
-                CaelumThermalService.Impulse(self,CaelumThermalRules.BodyJumpHeat(DerivedStats.TotalMass),true);
+                CaelumThermalService.Impulse(self,CaelumThermalRules.JumpHeat(DerivedStats.TotalMass,
+                    CaelumPhysicsUnits.VelocitySI(before),CaelumPhysicsUnits.VelocitySI(Vel.Z),
+                    CaelumThermalBody.Efficiency(self)),true);
         }
     }
 
@@ -11473,7 +11477,8 @@ class CaelumPlayer : DoomPlayer
             ForwardMove2 = walkMovement;
             SideMove2 = walkMovement;
         }
-        JumpZ = CaelumConstants.GZDOOM_BASE_JUMP_Z * jumpFactor;
+        JumpZ = DerivedStats!=null && Attributes!=null
+            ? CaelumPhysicsUnits.JumpVelocity(DerivedStats.BaseMass,DerivedStats.TotalMass,Attributes.Agility)*jumpFactor : 0;
     }
 
     bool IsPhysicallyImmobilized()

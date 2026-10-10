@@ -66,7 +66,7 @@ class CaelumThermalJourney : Object play
             Result.WindMps=Sqrt(local.WindSpeedKmh*local.WindSpeedKmh/12.96+speed*speed);
             Result.WaterC=local.GroundTemperatureC;
             double seconds=double(step)*3600.0/hour;
-            double effort=CaelumThermalRules.LocomotionHeat(Result.MovedMassKg,speed,0,false,CaelumThermalMotion.Gravity(user));
+            double effort=CaelumThermalRules.LocomotionHeat(Result.MovedMassKg,speed,0,false,CaelumThermalMotion.Gravity(user),Result.MuscularEfficiency);
             // Segundos lógicos de esfuerzo explícitos; dr permanece cero.
             int substeps=supplies!=null ? step : 1;
             for(int t=0;t<substeps;t++)
