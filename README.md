@@ -12,7 +12,7 @@ it, then rebuild with `run_dev.bat` as described below.
 **5.1.17 / [#169](https://github.com/damiancurti/Caelum-Argenteum/issues/169):**
 Health kits now display as **medikit / botiquín**, including medium and large
 sizes, inventory details and pickup text. Saved items and healing rules remain
-unchanged. English/Spanish native evidence: [validation_5117](assets/validation_5117/RESULTS.md).
+unchanged. Author accepted on 2026-10-10; merge/closure authorized. Native evidence: [validation_5117](assets/validation_5117/RESULTS.md).
 
 **5.1.16 / [#163](https://github.com/damiancurti/Caelum-Argenteum/issues/163):**
 Recoverable Boleadora / Bolas joins family 1. Hold secondary to improve accuracy
@@ -23,8 +23,8 @@ bronze/leather recipe are integrated. The corrected ready pose hangs from the
 grip, spin runs at 3 Hz, and the body occludes the rear rope arcs. Extended
 forearms cover every bolas pose; a brief visible flame identifies immediate
 paid demon escape. Native/static evidence:
-[validation_5116](assets/validation_5116/RESULTS.md). CA163-01 awaits author
-visual/handling acceptance. Rulo's permanent gift remains #164.
+[validation_5116](assets/validation_5116/RESULTS.md). CA163-01 accepted by the
+author on 2026-10-10; merge/closure authorized. Rulo's permanent gift remains #164.
 
 **5.1.15 / [#162](https://github.com/damiancurti/Caelum-Argenteum/issues/162):**
 A bronze-tipped Utility staff / Bastón joins family 1 beside the Pickaxe. Hold
@@ -34,7 +34,7 @@ and wears once per second of contact. Existing magic staffs are now Wands /
 Varitas, retaining their saved identities. Original tool art now leans right as requested; native thermal,
 crafting, controls and save tests are included. Evidence:
 [validation_5115](assets/validation_5115/RESULTS.md). Author handling/art check
-CA162-01 remains in [pending_test.txt](pending_test.txt). Caella's permanent gift
+CA162-01 passed author acceptance on 2026-10-10; merge/closure authorized. Caella's permanent gift
 and tutorial integration belong to [#164](https://github.com/damiancurti/Caelum-Argenteum/issues/164).
 
 **5.1.14 / [#165](https://github.com/damiancurti/Caelum-Argenteum/issues/165):**

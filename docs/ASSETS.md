@@ -36,7 +36,7 @@ Actual rope burning reuses the existing four-frame burn sprites, scale, opacity
 and distance-limited light for the existing 12-tic impact lifetime. This finite
 cosmetic actor survives cessation of the paid breath; it has no damage/status.
 The original atlas and its superseded ready cell are retained. Runtime: src/graphics/caelum/bolas; validation
-captures: assets/validation_5116. Visual acceptance remains CA163-01.
+captures: assets/validation_5116. CA163-01 passed author acceptance on 2026-10-10.
 
 ## 5.1.15 - Bronze utility staff (#162)
 
@@ -53,7 +53,7 @@ Provenance: src/licenses/UTILITY_STAFF_5115.txt. No Doom art was imported.
 
 Native 1280x720 ready/fire/ice/release captures and test logs are recorded in
 assets/validation_5115. Tool/cap readability, hand alignment and elemental effect
-appearance were inspected in engine; final author acceptance remains CA162-01.
+appearance were inspected in engine; CA162-01 passed author acceptance on 2026-10-10.
 The unrelated pre-existing art-source deletion remains excluded from this patch.
 
 Author correction, 2026-10-10: rotate the utility staff clockwise into the

@@ -106,7 +106,7 @@ map and releases that player; a hub retains NPC restraints with paused timers.
 Keep the original save/package pair and save migration under a new filename
 for reversible rollback. Native/static evidence is in assets/validation_5116.
 Rulo's permanent grant and tutorial changes remain #164; author visual/handling
-acceptance is CA163-01, distinct from isolated engine evidence.
+acceptance CA163-01 passed on 2026-10-10, distinct from isolated engine evidence.
 
 ## Utility staff and wand terminology - 5.1.15 / #162
 
@@ -158,7 +158,7 @@ save/package pair; save the migrated game under a new name for reversible rollba
 Caella's permanent grant and the tutorial transition are explicitly owned by
 #164; #162 supplies the tool and does not claim that progression is implemented.
 Native/static evidence: assets/validation_5115; author visual/handling acceptance
-remains CA162-01 in pending_test.txt.
+CA162-01 passed on 2026-10-10; the author authorized merge and closure.
 
 ## Damage-flash lifetime across maps - 5.1.14 / #165
 
