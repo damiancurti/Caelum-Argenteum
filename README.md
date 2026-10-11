@@ -16,6 +16,8 @@ contract. Cannonballs retain normal armor absorption. [Evidence](assets/validati
 Author gameplay check CA194-01 remains in [pending_test.txt](pending_test.txt);
 #195 bull balance is separate. The accepted PR198 changes are included, while
 that PR still awaits merge into main.
+Delivery: [PR199](https://github.com/damiancurti/Caelum-Argenteum/pull/199),
+branch `issue194-collision-energy`, implementation commit `8810aec6` pushed.
 
 5.2.10 applies the reopened #192 ranged amendment: longbow armor bypass is
 20/30/40%, crossbow 40/50/60%; carbine 70/80/90% and shotgun 60/70/80% stay

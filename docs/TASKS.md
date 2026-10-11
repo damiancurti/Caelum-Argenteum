@@ -12,6 +12,8 @@ the issue; validation evidence is assets/validation_5211/RESULTS.md.
 Outstanding author gameplay check: CA194-01 in pending_test.txt. Keep #194 open
 until acceptance; #195 is the separate bull-specific rebalance. PR198 is accepted
 but not merged; #194 is based on that branch. No unrelated roadmap work is claimed.
+Delivery: PR199, implementation commit `8810aec6` pushed. Merge PR198 first;
+CA194-01 author acceptance and #194 merge/closure remain outstanding.
 
 ## Issue #192 - Ranged amendment and shotgun naming (5.2.10)
 

@@ -14,6 +14,8 @@ including the approved immobile-load approximation. Native tests and limitations
 are recorded in assets/validation_5211/RESULTS.md. CA194-01 remains pending;
 agent checks do not constitute author acceptance. #195 bull balance is separate.
 The accepted #192 amendment is present in this branch; PR198 remains open.
+Delivered in PR199 on `issue194-collision-energy`; commit `8810aec6` is pushed.
+PR199 targets the PR198 branch and awaits CA194-01 acceptance before merge.
 
 ## 5.2.10 - Ranged penetration and shotgun naming (#192 amendment)
 

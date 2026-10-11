@@ -29,6 +29,8 @@ and pending work; a real 5.2.10 save loads with its contact graph preserved,
 and legacy weight carry resets through EnergyRevision 1 without HP conversion.
 CA194-01 originates in this release and remains pending author acceptance.
 The prior explicit CA192-02 acceptance remains valid; PR198 is still open.
+Delivery: implementation commit `8810aec6` pushed to `issue194-collision-energy`;
+PR199 targets the PR198 branch. No #194 merge or author acceptance is claimed.
 
 ## 5.2.10 - Ranged penetration amendment and shotgun names (#192), 2026-10-11
 
