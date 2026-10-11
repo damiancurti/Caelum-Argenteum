@@ -754,6 +754,7 @@ class CaelumPlayer : DoomPlayer
         Scale 0.409091;
         Player.CrouchSprite "None";
         Player.ColorRange 0, 0;
+        +NOSKIN
 
         // Caelum performs one custom pain roll after engine mitigation. This
         // disables DoomPlayer's independent native roll and prevents duplicates.
@@ -1474,6 +1475,7 @@ class CaelumPlayer : DoomPlayer
         StoreCraftingTaskState(persistentState);
 
         persistentState.ProfileCommitted = true;
+        CaelumCharacterIdentity.Bind(self, persistentState, true);
         persistentState.Race = CharacterProfile.Race;
         persistentState.FirstClass = CharacterProfile.FirstClass;
         persistentState.SecondClass = CharacterProfile.SecondClass;
@@ -1578,11 +1580,7 @@ class CaelumPlayer : DoomPlayer
         RefreshCraftingRecipeBookSummary();
         LoadCraftingTaskState(persistentState);
 
-        CharacterProfile.Race = persistentState.Race;
-        CharacterProfile.FirstClass = persistentState.FirstClass;
-        CharacterProfile.SecondClass = persistentState.SecondClass;
-        CharacterProfile.Sex = persistentState.Sex;
-        CharacterProfile.HeightChoice = persistentState.HeightChoice;
+        CaelumCharacterIdentity.Bind(self, persistentState, false);
         for (int activeArmorSlot = 0;
             activeArmorSlot < CaelumConstants.ARMOR_SLOT_COUNT;
             activeArmorSlot++)
@@ -1594,15 +1592,6 @@ class CaelumPlayer : DoomPlayer
         ActiveWeaponItemId = persistentState.ActiveWeaponItemId;
         EquippedAmuletItemId = persistentState.EquippedAmuletItemId;
         EquippedSealItemId = persistentState.EquippedSealItemId;
-        for (int layer = 0; layer < CaelumConstants.ATTRIBUTE_LAYER_COUNT; layer++)
-        {
-            CharacterAllocation.LayerBonus[layer] = persistentState.LayerBonus[layer];
-        }
-        for (int attribute = 0; attribute < CaelumConstants.PRIMARY_ATTRIBUTE_COUNT; attribute++)
-        {
-            CharacterAllocation.AttributeBonus[attribute] = persistentState.AttributeBonus[attribute];
-        }
-
         if (persistentState.EquipmentInitialized && ArmorModel != null
             && ShieldModel != null && WeaponModel != null)
         {
@@ -8747,8 +8736,7 @@ class CaelumPlayer : DoomPlayer
     // male uses the human/Caelith grunt, female uses its selected counterpart.
     Sound ResolvePlayerPainSound()
     {
-        if (CharacterProfile != null
-            && CharacterProfile.Sex == CaelumConstants.SEX_FEMALE)
+        if (CaelumCharacterIdentity.VoiceSex(self) == CaelumConstants.SEX_FEMALE)
         {
             return "caelum/player/pain_female";
         }
@@ -8900,6 +8888,7 @@ class CaelumPlayer : DoomPlayer
     // regeneration that also pauses when the game itself is paused.
     override void Tick()
     {
+        CaelumCharacterIdentity.Ensure(self);
         CaelumDamageFeedback.EnsureRevision(self);
         CaelumBreathing.UpdateSound(self);
         CaelumCarbineWorld.Restore(self);

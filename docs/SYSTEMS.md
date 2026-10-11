@@ -1,6 +1,71 @@
 # Caelum Argenteum — Current systems and rules
 
-Documentation version: **5.1.20** — 2026-10-10.
+Documentation version: **5.2.0** — 2026-10-11.
+
+## 5.2.0 - Authoritative character identity and native settings (#147)
+
+The creator remains the only ordinary gameplay identity editor. It retains the
+four playable races, two-stage profession selection and combined names, sex,
+height and existing four-family/thirty-individual-point rules and descriptions.
+On 2026-10-11 the author chose to retain an unconfirmed draft for the engine
+session. Back, closing and reopening preserve that draft; confirmation consumes
+it once. Restart starts a fresh draft. Editing a new draft never edits the
+currently loaded character. Changing structural choices retains the existing
+allocation-reset rule; merely navigating backward does not reset points.
+
+`CaelumPersistentCharacterState` owns `IdentityProfile` and `IdentityAllocation`.
+The player's existing `CharacterProfile`/`CharacterAllocation` references point
+to those same objects. Gameplay readers retain their existing interface without
+a competing copy. `CaelumCharacterIdentity.Profile(user)` is the shared read
+interface for future appearance work; `VoiceSex(user)` resolves the saved voice
+mapping. Neither reads a global native identity preference.
+
+| Field / selector | Owner and writes | Reads / persistence |
+| --- | --- | --- |
+| Race, first/second class, sex, height | Creator draft until confirmation; then the character's identity profile | Attributes, derived size/mass, abilities, equipment fit, HUD/Journal, thermal/sleep systems and voice; saved inventory object |
+| Four family and twelve individual bonuses | Creator allocation until confirmation; then identity allocation | Attribute calculations and saved profile; no additional grant on binding/load |
+| Creator page, cursor and unconfirmed choices | Local UI `CaelumCreationDraft`, held by `CaelumCharacterSettings` | Creator only, for the current engine session; never a saved-character owner |
+| `ca_newchar_*` user CVars | Creator confirmation writes the per-player transfer bridge; first spawn validates/consumes it | New, uncommitted characters only. Loaded/committed records reject it; loading clears readiness per player |
+| Flat legacy profile/bonus fields | Compatibility mirror written by `PersistCharacterState` | Migration when only the travelling legacy record exists; not a second current authority |
+| Native `PlayerClass` | MAPINFO's sole `CaelumPlayer` and explicit `StartGameDirect` class | Engine pawn type, never the combined profession; redundant selector hidden |
+| Native gender | Retained engine preference, no custom gameplay reader | Hidden from stock setup; custom pain/breathing use saved sex |
+| Native skin/color/color-set | Global engine preferences, not saved Caelum appearance choices | Selectors hidden; `NOSKIN` protects the existing body and its sound bank; color range remains 0,0 |
+| World body / first-person appearance | Existing Domingo body and accepted modular equipment/hand resources | No new appearance catalogue, translations or preview; #148 remains responsible for those assets/options |
+| Player sounds | Existing sex-based pain and breathing mapping, via the shared identity interface | Existing cues retained; inherited engine fallback cues are not a new authored voice catalogue |
+| Native name/team | Global network preferences, explicitly identified as such in setup | Not a new character-name or narrative-identity field |
+| Autoaim, vertical spread, pickup switching, run, bindings, camera/audio/UI settings | Native user preferences | Remain available; loading identity does not reset them |
+| Legacy profile/allocation/debug commands | Explicit development console commands only | Existing diagnostic behavior retained at the author's request; no ordinary respec menu or new cosmetic permissions |
+
+The exact source consumer inventory is generated in
+`assets/validation_520/identity-audit.json`. The stock setup menu keeps native
+name/team and handling preferences while removing class, gender, skin and color
+selectors before native option search builds its entries. The old PlayerMenu
+entry redirects to that same setup screen. No misleading Doom preview is shown.
+
+Identity revision 1 is additive and idempotent. A native old save adopts its
+actual live profile/allocation; a legacy travelling record without those
+references reconstructs them from its saved flat fields. It does not recompute
+attributes, refill resources, grant items or reset quests/Tarot. Native current
+saves serialize shared references directly. Normal travel uses the same record.
+Original save/package pairs remain the reversible rollback path; keep copies.
+Existing flat fields and all old class/field names remain readable.
+
+The author additionally requested removing the Caelum debug binding section and
+placing ordinary actions in native categories. Abilities use the existing four
+User1/User2/User3/User4 rows in Weapons, now labelled by their actual purpose;
+flight stays in Actions; Journal is in Inventory; time skip is in Other.
+Native inventory and automap rows remain available. KEYCONF keeps aliases and
+accepted defaults, with no custom debug rows. An empty legacy KEYCONF section
+imports old Caelum Bindings/DoubleBindings through GZDoom; its empty heading is
+removed before menu search. Native config saving moves those assignments into
+the general sections, retaining remaps and double bindings across restart.
+Existing bindings are not cleared or reassigned. Full hint synchronization and
+input/accessibility work in #149
+and later issues remain separate.
+
+Native/static evidence and fixture limits: `assets/validation_520/RESULTS.md`.
+CA147-01 remains outstanding author acceptance; single-client evidence does not
+establish complete multiplayer support.
 
 ## 5.1.20 - Interior doors and peaceful city time skipping (#173)
 

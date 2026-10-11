@@ -25,8 +25,8 @@ class CaelumBreathing : Object play
     {
         if(factor<=1 || CaelumThermalBody.FurryAnimal(body))return 0;
         let user=CaelumPlayer(body);
-        bool female=user!=null && user.CharacterProfile!=null
-            ? user.CharacterProfile.Sex==CaelumConstants.SEX_FEMALE : body is 'CaelumCaella';
+        bool female=user!=null
+            ? CaelumCharacterIdentity.VoiceSex(user)==CaelumConstants.SEX_FEMALE : body is 'CaelumCaella';
         if(female)return factor>=CaelumThermalData.BREATHING_HIGH ? "caelum/breathing/female_high" : "caelum/breathing/female";
         return factor>=CaelumThermalData.BREATHING_HIGH ? "caelum/breathing/male_high" : "caelum/breathing/male";
     }

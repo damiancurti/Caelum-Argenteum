@@ -4,6 +4,50 @@ Status: integrated engineering register (issue #22, patch 4.36.1b).
 Prepared: 2026-09-23. Inherits the project's release after integration.
 Inspected baseline: `1dc390576fa330d37ff543526fc7e69a397fc28f` (PR #7).
 
+## CA-KP-077 - Removing a KEYCONF section can orphan saved key bindings
+
+Status/evidence: ENGINE-VERIFIED, #147 / 5.2.0, 2026-10-11.
+Baseline: f7c4a0dd; GZDoom 4.14.2 / Windows 11.
+
+addkeysection loads the mod's Bindings and DoubleBindings INI sections. Native
+shutdown archives commands listed by addmenukey into those sections instead of
+the general game sections. Removing the entire declaration therefore leaves
+old user mappings unread even if all aliases/defaultbinds are unchanged.
+
+For #147, retain an empty declaration with the original INI identifier, remove
+its generated heading/spacer in UI before search, and expose ordinary commands
+through native menu categories. The declaration imports both legacy sections;
+with no registered custom actions, native shutdown writes their assignments to
+the general sections and empties the old ones. The next restart reads them
+normally. No manual INI rewrite or key reassignment is needed in runtime code.
+
+Evidence: assets/validation_520/bindings-import.txt, bindings-restart.txt and
+bindings.json. Eleven customized normal bindings and one double binding remain
+active before shutdown and after restart, including gameplay and debug aliases.
+Sources: g4.14.2 src/gamedata/keysections.cpp (LoadKeys/DoSaveKeys),
+src/gameconfigfile.cpp and src/menu/doommenu.cpp (InitKeySections).
+
+## CA-KP-076 - Protected native player menus need compatible extension points
+
+Status/evidence: ENGINE-VERIFIED, #147 / 5.2.0, 2026-10-11.
+Baseline: f7c4a0dd plus #147; GZDoom 4.14.2 / Windows 11.
+
+Replacing protected NewPlayerMenu as a fresh OptionMenu does not reliably
+replace its native class. Replacing the old PlayerMenu with a different menu
+type produces the native warning "Tried to replace menu ... with a menu of
+different type". Use AddOptionMenu to extend NewPlayerMenu and set its compatible
+OptionMenu class. The public UI MenuDescriptor.mClass permits a ListMenu redirect
+for the legacy entry. Filter conflicting descriptor items before the native
+option search indexes them, not only when the setup screen opens.
+
+The final English/Spanish captures show both entries resolving to the same
+screen, without the stock class/gender/skin/color selectors or Doom preview.
+The fixture checks descriptor entries and native control categories. Evidence:
+assets/validation_520/RESULTS.md; compile-01 in its diagnostics retains the
+failed replacement warning. Sources: installed gzdoom.pk3 menu definitions and
+ZScript declarations, GZDoom g4.14.2 menu parsing. This does not establish
+compatibility with unrelated addons that replace the same menus.
+
 ## CA-KP-075 - Runtime door placement must wait for PostBeginPlay
 
 Status/evidence: RESOLVED-VERIFIED (agent engine test); author acceptance pending.

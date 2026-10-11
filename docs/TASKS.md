@@ -1,6 +1,18 @@
 # TASKS.md — Active tasks
 
-Documentation version: **5.1.20** — 2026-10-10.
+Documentation version: **5.2.0** — 2026-10-11.
+
+## Issue #147 - Unified identity and native settings (5.2.0)
+
+Implemented shared saved profile/allocation ownership, revision-1 migration,
+session-only creator draft recovery, committed-profile protection and a shared
+appearance/voice interface. Preserved creation text, profession combinations,
+stat rules and existing appearance/audio. Reconciled native setup selectors.
+The author's additional control cleanup moves normal actions to native groups
+and keeps debugging in the console; full #149 hint/input work remains pending.
+Native/static evidence: assets/validation_520. CA147-01 awaits author acceptance.
+Delivery: focused branch issue-147-character-identity and linked PR for #147.
+Next after acceptance: #148 appearance/preview; remaining #149 work stays open.
 
 ## Issue #173 - MAP06 interior doors and time skip (5.1.20)
 

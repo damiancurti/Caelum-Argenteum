@@ -1,6 +1,18 @@
 CAELUM ARGENTEUM — STORY AND MAP01
 
-Documentation version: **5.1.20** — 2026-10-10.
+Documentation version: **5.2.0** — 2026-10-11.
+
+## 5.2.0 - Creator and saved identity (#147)
+
+The pre-game creator remains authoritative for race, two-stage profession,
+sex, height and point allocation. The author chose session-only recovery of
+an unconfirmed draft. Confirmation still uses the established introduction and
+MAP01 start; editing another draft does not change a loaded protagonist.
+Identity revision 1 preserves the actual existing character and travelling
+record without grants, stat changes or quest resets. The captain's amnesia,
+recognition and accepted narrative remain unchanged. Appearance/preview assets
+are still #148. SYSTEMS owns the complete settings/migration contract.
+Evidence: assets/validation_520. CA147-01 awaits author acceptance.
 
 5.1.20 - MAP06 interior doors and pre-siege time skip (#173)
 ----------------------------------------------------------

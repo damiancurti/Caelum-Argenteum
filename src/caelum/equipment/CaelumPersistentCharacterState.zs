@@ -4,6 +4,11 @@
 class CaelumPersistentCharacterState : Inventory
 {
     bool ProfileCommitted;
+    // #147: autoridad compartida. Los campos planos se conservan para saves
+    // anteriores y rollback, pero sólo reflejan estos objetos tras la migración.
+    int IdentityRevision;
+    CaelumCharacterProfile IdentityProfile;
+    CaelumCharacterAllocation IdentityAllocation;
     // #130: estado aditivo y viajero; no sustituye recursos ni equipo aceptado.
     CaelumThermalState ThermalState;
     // V4.32.0b convierte la Caja Magica en una recompensa persistente. Los

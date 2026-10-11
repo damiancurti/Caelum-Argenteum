@@ -1,6 +1,17 @@
 # Caelum Argenteum — Audio and art
 
-Documentation version: **5.1.20** — 2026-10-10.
+Documentation version: **5.2.0** — 2026-10-11.
+
+## 5.2.0 - Saved identity presentation boundary (#147)
+
+No new art, voices, color palettes or cosmetic catalogue. The existing Domingo
+world body, accepted first-person layers, pain cues and breathing cues remain.
+NOSKIN prevents a global Doom skin from replacing that body/sound bank. Native
+setup no longer advertises unsupported skin/color options or its stock preview.
+The shared character profile and saved voice-sex resolver are the interface for
+#148; this patch does not claim race/sex-specific world art has been completed.
+Bilingual native setting explanations and control labels use LANGUAGE; existing
+creation descriptions remain unchanged. Native captures: assets/validation_520.
 
 ## 5.1.20 - Existing native door art in MAP06 (#173)
 

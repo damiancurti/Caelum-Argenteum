@@ -79,3 +79,22 @@ ListMenu "CaelumTrucoMenu"
 {
     Class "CaelumTrucoMenu"
 }
+
+// AddOptionMenu conserva los ajustes nativos y permite elegir una clase UI
+// sin intentar reemplazar la definición protegida de GZDoom 4.14.2.
+AddOptionMenu "NewPlayerMenu"
+{
+    Class "CaelumPlayerPreferencesMenu"
+    StaticText "$CA_IDENTITY_CREATOR_OWNER"
+    StaticText "$CA_IDENTITY_NETWORK_NAME"
+}
+
+AddOptionMenu "InventoryControlsMenu"
+{
+    Control "$CA_CONTROL_JOURNAL", "ca_journal_toggle"
+}
+
+AddOptionMenu "OtherControlsMenu"
+{
+    Control "$CA_SKIP_TITLE", "ca_time_skip"
+}

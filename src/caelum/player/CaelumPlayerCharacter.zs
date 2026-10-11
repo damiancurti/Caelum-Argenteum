@@ -109,6 +109,8 @@ class CaelumPlayerCharacter : Object play
     static bool ConsumeNewCharacterDraft(CaelumPlayer user)
     {
         if (!CaelumPlayerAuthority.CanMutate(user)) return false;
+        let record = user.GetPersistentCharacterState(false);
+        if (user.CharacterCreationComplete || (record != null && record.ProfileCommitted)) return false;
         if (!user.NewCharacterDraftIsReady()) { return false; }
 
         user.CharacterProfile.Race = user.ReadNewCharacterDraft(
@@ -154,6 +156,7 @@ class CaelumPlayerCharacter : Object play
         user.ApplyCharacterProfile();
         user.GrantStartingDevelopmentEquipment();
         user.ClearNewCharacterDraftReady();
+        EventHandler.SendInterfaceEvent(user.PlayerNumber(), "ca_identity_committed");
         return true;
     }
 

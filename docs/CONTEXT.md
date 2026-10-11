@@ -1,12 +1,12 @@
 # CONTEXT.md — Caelum Argenteum
 
-Documentation version: **5.1.20** — 2026-10-10.
+Documentation version: **5.2.0** — 2026-10-11.
 
-**5.1.20/#173:** MAP06 interior doors and peaceful time skip; exact siege stop.
-Evidence: validation_5120; CA173-01 accepted 2026-10-10; merge/closure authorized.
-**#172/PR174:** dialogue history/replay; CA172-01 accepted, merged/closed.
-**#164/PR171:** permanent gifts, optional crafts/Channel, assisted Bull checkpoint.
-CA164-01 accepted, merged/closed; validation_5118. Pending tests empty.
+**5.2.0/#147:** shared saved identity, session draft recovery and native settings.
+Author-requested debug controls become console-only; normal actions use native
+categories. Evidence: validation_520; CA147-01 pending. Next: #148 preview;
+remaining #149 hints/input work stays separate.
+**#164/#172/#173 accepted/closed/merged:** PR171/174/175; baseline f7c4a0dd.
 
 **5.1.14/#165 accepted** 2026-10-10 (CA165-01). Flash/travel repair; PR166
 merged. 34 checks pass: validation_5114.

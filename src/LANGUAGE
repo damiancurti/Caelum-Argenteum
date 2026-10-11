@@ -1,4 +1,13 @@
 [enu default]
+CA_CONTROL_LEGACY_SECTION = "Caelum Argenteum";
+CA_IDENTITY_CREATOR_OWNER = "Race, sex and profession: character creator.";
+CA_IDENTITY_NETWORK_NAME = "Name and team are network preferences.";
+CNTRLMNU_USER1 = "Racial ability";
+CNTRLMNU_USER2 = "Equipped Seal: Channel";
+CNTRLMNU_USER3 = "Selected Tarot power";
+CNTRLMNU_USER4 = "Profession ability";
+CNTRLMNU_MOVEUP = "Fly up";
+CNTRLMNU_MOVEDOWN = "Fly down";
 CA_CITY_SHOPKEEPER = "Shopkeeper";
 CA_CITY_SHOP_0 = "Food and provisions";
 CA_CITY_SHOP_1 = "Melee weapons";
@@ -48,6 +57,15 @@ CA_INTRO_REVEAL = "Press a key to reveal the full text.";
 CA_INTRO_BEGIN = "Press a key to begin your adventure.";
 
 [es]
+CA_CONTROL_LEGACY_SECTION = "Caelum Argenteum";
+CA_IDENTITY_CREATOR_OWNER = "Raza, sexo y profesión: creador de personaje.";
+CA_IDENTITY_NETWORK_NAME = "Nombre y equipo de esta pantalla son de red.";
+CNTRLMNU_USER1 = "Habilidad racial";
+CNTRLMNU_USER2 = "Sello equipado: Canal";
+CNTRLMNU_USER3 = "Poder de Tarot seleccionado";
+CNTRLMNU_USER4 = "Habilidad de profesión";
+CNTRLMNU_MOVEUP = "Volar hacia arriba";
+CNTRLMNU_MOVEDOWN = "Volar hacia abajo";
 CA_CITY_SHOPKEEPER = "Comerciante";
 CA_CITY_SHOP_0 = "Alimentos y provisiones";
 CA_CITY_SHOP_1 = "Armas cuerpo a cuerpo";

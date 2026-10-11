@@ -1,0 +1,229 @@
+{
+  "runs": [
+    {
+      "label": "legacy-a-04",
+      "passed_assertions": 8,
+      "exit_code": 0,
+      "production_sha256": "",
+      "original_log_sha256": "5ce1690896ac0ac47423af70f8ad8d52978fe4e89da6168d1c4222aef7d2eac9",
+      "snapshots": [
+        "CA147 SNAP SEEDED map=MAP01 profile=2,2,2,1,0 health=391 air=351.472125333 anima=426.787421333 lucidity=100.000000000 hunger=99.998260130 thirst=99.996526585 sleep=99.995658231 stage=30 tarot=1 nextid=1"
+      ]
+    },
+    {
+      "label": "legacy-b-01",
+      "passed_assertions": 8,
+      "exit_code": 0,
+      "production_sha256": "",
+      "original_log_sha256": "85f93fdd744fddf51fd7275ace1abacdc42c9584ffce3b9fc0626b20c27c879a",
+      "snapshots": [
+        "CA147 SNAP SEEDED map=MAP01 profile=0,0,1,0,2 health=1189 air=381.995133333 anima=391.177245333 lucidity=100.000000000 hunger=99.995248706 thirst=99.990466395 sleep=99.995807681 stage=30 tarot=1 nextid=1"
+      ]
+    },
+    {
+      "label": "current-a-01",
+      "passed_assertions": 10,
+      "exit_code": 0,
+      "production_sha256": "5DE001F0723A16C81D1D9E8A7998FDD01B722C3F0DA4FFA0AA4C833C218808C7",
+      "original_log_sha256": "94a162017dd55ef4f3700d4e599f644cee7ea1e1663ad31705aef008f9e1a28c",
+      "snapshots": [
+        "CA147 SNAP SEEDED map=MAP01 profile=2,2,2,1,0 health=391 air=351.472125333 anima=426.787421333 lucidity=100.000000000 hunger=99.998260130 thirst=99.996526585 sleep=99.995658231 stage=30 tarot=1 nextid=1"
+      ]
+    },
+    {
+      "label": "current-b-01",
+      "passed_assertions": 10,
+      "exit_code": 0,
+      "production_sha256": "5DE001F0723A16C81D1D9E8A7998FDD01B722C3F0DA4FFA0AA4C833C218808C7",
+      "original_log_sha256": "64b7bf1b55ca06aaffea1be46030030a2d47ed2a23269d2d471ade8f13d9cb12",
+      "snapshots": [
+        "CA147 SNAP SEEDED map=MAP01 profile=0,0,1,0,2 health=1189 air=381.995133333 anima=391.177245333 lucidity=100.000000000 hunger=99.995248706 thirst=99.990466395 sleep=99.995807681 stage=30 tarot=1 nextid=1"
+      ]
+    },
+    {
+      "label": "rollback-a-02",
+      "passed_assertions": 0,
+      "exit_code": 0,
+      "production_sha256": "",
+      "original_log_sha256": "05d4544ead6aca62a79958e49c8ceb9feb8bd3330f6082fc4493b6f933b76b46",
+      "snapshots": [
+        "CA147 SNAP LOAD map=MAP01 profile=2,2,2,1,0 health=391 air=351.686778035 anima=427.043529283 lucidity=100.000000000 hunger=99.989300399 thirst=99.991968001 sleep=99.995526870 stage=30 tarot=1 nextid=1"
+      ]
+    },
+    {
+      "label": "rollback-b-01",
+      "passed_assertions": 0,
+      "exit_code": 0,
+      "production_sha256": "",
+      "original_log_sha256": "b914adfab012f2ebf40493ecbd04f69b749f1d9c51baf31ba9deed9cec749281",
+      "snapshots": [
+        "CA147 SNAP LOAD map=MAP01 profile=0,0,1,0,2 health=1189 air=382.227256021 anima=391.402389648 lucidity=100.000000000 hunger=99.986704667 thirst=99.985976932 sleep=99.995680903 stage=30 tarot=1 nextid=1"
+      ]
+    },
+    {
+      "label": "migration-a-01",
+      "passed_assertions": 16,
+      "exit_code": 0,
+      "production_sha256": "D5F70753D609453EA877388628A0E0D52692D235DA7566A0688200EF3D65841A",
+      "original_log_sha256": "652f43d702620b11ac0cf3782dbf450e3a42e6a3bcb323e4b7b0be38322ae1b1",
+      "snapshots": [
+        "CA147 SNAP LOAD map=MAP01 profile=2,2,2,1,0 health=391 air=351.686778035 anima=427.043529283 lucidity=100.000000000 hunger=99.989300399 thirst=99.991968001 sleep=99.995526870 stage=30 tarot=1 nextid=1"
+      ]
+    },
+    {
+      "label": "migration-b-01",
+      "passed_assertions": 16,
+      "exit_code": 0,
+      "production_sha256": "D5F70753D609453EA877388628A0E0D52692D235DA7566A0688200EF3D65841A",
+      "original_log_sha256": "f27967ffecfa99e5fa1f9e671a45804d08823078c7cfee93cd977acd64e1b4c9",
+      "snapshots": [
+        "CA147 SNAP LOAD map=MAP01 profile=0,0,1,0,2 health=1189 air=382.227256021 anima=391.402389648 lucidity=100.000000000 hunger=99.986704667 thirst=99.985976932 sleep=99.995680903 stage=30 tarot=1 nextid=1"
+      ]
+    },
+    {
+      "label": "menus-es-captures",
+      "passed_assertions": 20,
+      "exit_code": 0,
+      "production_sha256": "E65DA52ED4113B4033B9603A0B69B6752510605C24EBB70575CE0783FA06D398",
+      "original_log_sha256": "9c1a1cfb49c03183b24351f63e49c9604f1167cc00e45131644d935f75ceb57d",
+      "snapshots": []
+    },
+    {
+      "label": "menus-en-final",
+      "passed_assertions": 20,
+      "exit_code": 0,
+      "production_sha256": "E65DA52ED4113B4033B9603A0B69B6752510605C24EBB70575CE0783FA06D398",
+      "original_log_sha256": "3dc2e181a78416b60681492434c985497a9be464418e01e7dc5c7a7d7b0c256f",
+      "snapshots": []
+    },
+    {
+      "label": "truehub-final",
+      "passed_assertions": 62,
+      "exit_code": 0,
+      "production_sha256": "E65DA52ED4113B4033B9603A0B69B6752510605C24EBB70575CE0783FA06D398",
+      "original_log_sha256": "bf2d1826ba0e1ef4348456bedbb75e377f50afe335ad951a711b3ed65785f1c9",
+      "snapshots": [
+        "CA147 SNAP LOAD map=MAP01 profile=2,2,2,1,0 health=391 air=351.686778035 anima=427.043529283 lucidity=100.000000000 hunger=99.989300399 thirst=99.991968001 sleep=99.995526870 stage=30 tarot=1 nextid=1",
+        "CA147 SNAP REQUEST map=MAP03 profile=2,2,2,1,0 health=391 air=358.126359098 anima=434.726767781 lucidity=100.000000000 hunger=99.695087737 thirst=99.807289845 sleep=99.931685238 stage=30 tarot=1 nextid=1",
+        "CA147 SNAP REQUEST map=MAP02 profile=2,2,2,1,0 health=392 air=363.850431154 anima=441.556313113 lucidity=100.000000000 hunger=99.312957267 thirst=99.576256437 sleep=99.861625834 stage=30 tarot=1 nextid=1",
+        "CA147 SNAP REQUEST map=MAP03 profile=2,2,2,1,0 health=392 air=369.574503210 anima=448.385858444 lucidity=100.000000000 hunger=99.041498719 thirst=99.401449047 sleep=99.791566431 stage=30 tarot=1 nextid=1"
+      ]
+    },
+    {
+      "label": "migration-a-final",
+      "passed_assertions": 90,
+      "exit_code": 0,
+      "production_sha256": "E65DA52ED4113B4033B9603A0B69B6752510605C24EBB70575CE0783FA06D398",
+      "original_log_sha256": "0c182211d6dcb2daa9ef36368cdf3529a0325bb8737c1985c52421b3497dd384",
+      "snapshots": [
+        "CA147 SNAP LOAD map=MAP01 profile=2,2,2,1,0 health=391 air=351.686778035 anima=427.043529283 lucidity=100.000000000 hunger=99.989300399 thirst=99.991968001 sleep=99.995526870 stage=30 tarot=1 nextid=1",
+        "CA147 SNAP LOAD map=MAP01 profile=0,0,1,0,2 health=1189 air=382.227256021 anima=391.402389648 lucidity=100.000000000 hunger=99.986704667 thirst=99.985976932 sleep=99.995680903 stage=30 tarot=1 nextid=1",
+        "CA147 SNAP LOAD map=MAP01 profile=2,2,2,1,0 health=391 air=351.686778035 anima=427.043529283 lucidity=100.000000000 hunger=99.989300399 thirst=99.991968001 sleep=99.995526870 stage=30 tarot=1 nextid=1",
+        "CA147 SNAP LOAD map=MAP01 profile=2,2,2,1,0 health=391 air=352.473837943 anima=427.982591766 lucidity=100.000000000 hunger=99.956447999 thirst=99.975253192 sleep=99.995045211 stage=30 tarot=1 nextid=1",
+        "CA147 SNAP REQUEST map=MAP01 profile=2,2,2,1,0 health=391 air=353.904855957 anima=429.689978099 lucidity=100.000000000 hunger=99.896716152 thirst=99.944862632 sleep=99.994169469 stage=30 tarot=1 nextid=1",
+        "CA147 SNAP REQUEST map=MAP03 profile=2,2,2,1,0 health=391 air=358.913419006 anima=435.665830264 lucidity=100.000000000 hunger=99.663331981 thirst=99.792571730 sleep=99.933699446 stage=30 tarot=1 nextid=1",
+        "CA147 SNAP REQUEST map=MAP01 profile=2,2,2,1,0 health=392 air=364.637491061 anima=442.495375596 lucidity=100.000000000 hunger=99.311444169 thirst=99.614117904 sleep=99.929364520 stage=30 tarot=1 nextid=1"
+      ]
+    },
+    {
+      "label": "current-reload-final",
+      "passed_assertions": 48,
+      "exit_code": 0,
+      "production_sha256": "E65DA52ED4113B4033B9603A0B69B6752510605C24EBB70575CE0783FA06D398",
+      "original_log_sha256": "87e9dcaddffe79b6906501940a2d43dbb2c0d90a20330bc79be140c7640da43e",
+      "snapshots": [
+        "CA147 SNAP LOAD map=MAP01 profile=2,2,2,1,0 health=391 air=351.686778035 anima=427.043529283 lucidity=100.000000000 hunger=99.989300399 thirst=99.991968001 sleep=99.995526870 stage=30 tarot=1 nextid=1",
+        "CA147 SNAP LOAD map=MAP01 profile=0,0,1,0,2 health=1189 air=382.227256021 anima=391.402389648 lucidity=100.000000000 hunger=99.986704667 thirst=99.985976932 sleep=99.995680903 stage=30 tarot=1 nextid=1",
+        "CA147 SNAP LOAD map=MAP01 profile=2,2,2,1,0 health=391 air=351.686778035 anima=427.043529283 lucidity=100.000000000 hunger=99.989300399 thirst=99.991968001 sleep=99.995526870 stage=30 tarot=1 nextid=1"
+      ]
+    },
+    {
+      "label": "migrated-restart-final",
+      "passed_assertions": 20,
+      "exit_code": 0,
+      "production_sha256": "E65DA52ED4113B4033B9603A0B69B6752510605C24EBB70575CE0783FA06D398",
+      "original_log_sha256": "3c28020cfb0542c243b9b411a0bbaa87733870738d5df3f328ea1b2017b7377a",
+      "snapshots": [
+        "CA147 SNAP LOAD map=MAP01 profile=2,2,2,1,0 health=391 air=352.473837943 anima=427.982591766 lucidity=100.000000000 hunger=99.956447999 thirst=99.975253192 sleep=99.995045211 stage=30 tarot=1 nextid=1"
+      ]
+    },
+    {
+      "label": "bindings-import",
+      "passed_assertions": 21,
+      "exit_code": 0,
+      "production_sha256": "52CBD4301411B2F2AFA779C9B2C9C6D0987BEE7DC1AA6B9BAF2AC0163E17CC55",
+      "original_log_sha256": "dcb4c6fc7e21ebd8ccd2af9da769abf632b0a7a81b13d161891dc59f529b84da",
+      "snapshots": []
+    },
+    {
+      "label": "bindings-restart",
+      "passed_assertions": 21,
+      "exit_code": 0,
+      "production_sha256": "52CBD4301411B2F2AFA779C9B2C9C6D0987BEE7DC1AA6B9BAF2AC0163E17CC55",
+      "original_log_sha256": "32d6a029edb658569244bb832988eab6a8f6fdca833fd6f4bcdaf1e6bea7f245",
+      "snapshots": []
+    },
+    {
+      "label": "menus-es-delivery",
+      "passed_assertions": 21,
+      "exit_code": 0,
+      "production_sha256": "52CBD4301411B2F2AFA779C9B2C9C6D0987BEE7DC1AA6B9BAF2AC0163E17CC55",
+      "original_log_sha256": "ba9f2a4fe8267a58e7cdd3c19ca901f5b97a1efb0ab388e94c75d19f772be534",
+      "snapshots": []
+    },
+    {
+      "label": "menus-en-delivery",
+      "passed_assertions": 21,
+      "exit_code": 0,
+      "production_sha256": "52CBD4301411B2F2AFA779C9B2C9C6D0987BEE7DC1AA6B9BAF2AC0163E17CC55",
+      "original_log_sha256": "190515d8409974fa74751412ede8c25376b9b02221d53ca66f26ce966f3db9d3",
+      "snapshots": []
+    },
+    {
+      "label": "migration-a-delivery",
+      "passed_assertions": 91,
+      "exit_code": 0,
+      "production_sha256": "52CBD4301411B2F2AFA779C9B2C9C6D0987BEE7DC1AA6B9BAF2AC0163E17CC55",
+      "original_log_sha256": "fc8926144357257a4d80ef82d9fed8bd34980c20412fc6dcd6b06133ec280f2e",
+      "snapshots": [
+        "CA147 SNAP LOAD map=MAP01 profile=2,2,2,1,0 health=391 air=351.686778035 anima=427.043529283 lucidity=100.000000000 hunger=99.989300399 thirst=99.991968001 sleep=99.995526870 stage=30 tarot=1 nextid=1",
+        "CA147 SNAP LOAD map=MAP01 profile=0,0,1,0,2 health=1189 air=382.227256021 anima=391.402389648 lucidity=100.000000000 hunger=99.986704667 thirst=99.985976932 sleep=99.995680903 stage=30 tarot=1 nextid=1",
+        "CA147 SNAP LOAD map=MAP01 profile=2,2,2,1,0 health=391 air=351.686778035 anima=427.043529283 lucidity=100.000000000 hunger=99.989300399 thirst=99.991968001 sleep=99.995526870 stage=30 tarot=1 nextid=1",
+        "CA147 SNAP LOAD map=MAP01 profile=2,2,2,1,0 health=391 air=352.473837943 anima=427.982591766 lucidity=100.000000000 hunger=99.956447999 thirst=99.975253192 sleep=99.995045211 stage=30 tarot=1 nextid=1",
+        "CA147 SNAP REQUEST map=MAP01 profile=2,2,2,1,0 health=391 air=353.904855957 anima=429.689978099 lucidity=100.000000000 hunger=99.896716152 thirst=99.944862632 sleep=99.994169469 stage=30 tarot=1 nextid=1",
+        "CA147 SNAP REQUEST map=MAP03 profile=2,2,2,1,0 health=391 air=358.913419006 anima=435.665830264 lucidity=100.000000000 hunger=99.663331981 thirst=99.792571730 sleep=99.933699446 stage=30 tarot=1 nextid=1",
+        "CA147 SNAP REQUEST map=MAP01 profile=2,2,2,1,0 health=392 air=364.637491061 anima=442.495375596 lucidity=100.000000000 hunger=99.311444169 thirst=99.614117904 sleep=99.929364520 stage=30 tarot=1 nextid=1"
+      ]
+    },
+    {
+      "label": "current-reload-delivery",
+      "passed_assertions": 49,
+      "exit_code": 0,
+      "production_sha256": "52CBD4301411B2F2AFA779C9B2C9C6D0987BEE7DC1AA6B9BAF2AC0163E17CC55",
+      "original_log_sha256": "19774421d53c7eba8a9012fe74bdf0b76b1e76eeba7fe8d55e415d409ad72ffb",
+      "snapshots": [
+        "CA147 SNAP LOAD map=MAP01 profile=2,2,2,1,0 health=391 air=351.686778035 anima=427.043529283 lucidity=100.000000000 hunger=99.989300399 thirst=99.991968001 sleep=99.995526870 stage=30 tarot=1 nextid=1",
+        "CA147 SNAP LOAD map=MAP01 profile=0,0,1,0,2 health=1189 air=382.227256021 anima=391.402389648 lucidity=100.000000000 hunger=99.986704667 thirst=99.985976932 sleep=99.995680903 stage=30 tarot=1 nextid=1",
+        "CA147 SNAP LOAD map=MAP01 profile=2,2,2,1,0 health=391 air=351.686778035 anima=427.043529283 lucidity=100.000000000 hunger=99.989300399 thirst=99.991968001 sleep=99.995526870 stage=30 tarot=1 nextid=1"
+      ]
+    }
+  ],
+  "passed_assertions": 552,
+  "failed_assertions": 0,
+  "capture_sha256": {
+    "captures/enu/controls-actions.png": "00969773cc6c2e55fbd4ae2b14f62144f83bc77a4a79ae0721babda6231f3143",
+    "captures/enu/controls-inventory.png": "c3ef9423da63da422d74cd1e04745289dad62ee56edf8cc16167678af67ff4e9",
+    "captures/enu/controls-other.png": "d889b0233e14b9835222ab85ea6bed4969397b61355ef3ba3c162a0c0854f81f",
+    "captures/enu/controls-root.png": "821cbd6cb3c9c375692f5c803cc0787148cd9063a769ce44bec0f9cf2fcf5158",
+    "captures/enu/controls-weapons.png": "20bb33a3fcb70b2a536beb3c7b78d54b52c89a5b16ff4583c3597fc0fdc4b61b",
+    "captures/enu/settings-legacy.png": "f0a06ab2802faef0279e70804ed3a424427e3b1e9407bc51797ed0fd28c42e1b",
+    "captures/enu/settings.png": "6ca820e2ab23722c12f69c2b93ef283b7edb5377bc206bfc73d927ae3a26ed46",
+    "captures/es/controls-actions.png": "9344122b0b7c895b858e43a42687ebd41f3eb4d635eb13f8c0f66dca60f82d9e",
+    "captures/es/controls-inventory.png": "7e1e3957d2af0dcfbf8ddcb8e7e328fb8bbd2cc4d6f4df801c12b10f5ea4c515",
+    "captures/es/controls-other.png": "b82306d03494333a94589575fb0ff68e8c77ca9cf99e3b22ec0b4f02ef570485",
+    "captures/es/controls-root.png": "3473cdd67da21a4b2b5c50b92ad3623169d627837cd246c905de9901ae375481",
+    "captures/es/controls-weapons.png": "acbb30d123da43344fbb7a9b701853e49a90defd95b796109f7403a5489ce084",
+    "captures/es/settings-legacy.png": "2e5c6fe13b2470ae5a4f7f6643a33868f52be16c8cb2fa8984182de03f416671",
+    "captures/es/settings.png": "c38b00b6d388356b864f1748733ff644ad18faf214522f026efa84462f0f491c"
+  }
+}

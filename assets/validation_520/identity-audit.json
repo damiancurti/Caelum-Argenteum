@@ -1,0 +1,1222 @@
+{
+  "baseline": "f7c4a0dd",
+  "scope": "Custom identity references, CVars and native presentation hooks; ownership contract in SYSTEMS.",
+  "files": {
+    "src/caelum/attributes/CaelumAttributes.zs": [
+      {
+        "line": 49,
+        "source": "CaelumCharacterProfile profile,"
+      },
+      {
+        "line": 50,
+        "source": "CaelumCharacterAllocation allocation"
+      }
+    ],
+    "src/caelum/character/CaelumCharacterAllocation.zs": [
+      {
+        "line": 3,
+        "source": "class CaelumCharacterAllocation : Object"
+      },
+      {
+        "line": 13,
+        "source": "void CopyFrom(CaelumCharacterAllocation source)"
+      },
+      {
+        "line": 91,
+        "source": "bool TryAddSelectedLayerPoint(CaelumCharacterProfile profile)"
+      },
+      {
+        "line": 116,
+        "source": "int GetFinalLayerBase(CaelumCharacterProfile profile, int layer)"
+      },
+      {
+        "line": 123,
+        "source": "int GetMaximumIndividualBonus(CaelumCharacterProfile profile, int attributeIndex)"
+      },
+      {
+        "line": 130,
+        "source": "bool TryAddSelectedAttributePoint(CaelumCharacterProfile profile)"
+      }
+    ],
+    "src/caelum/character/CaelumCharacterCreationMenu.zs": [
+      {
+        "line": 98,
+        "source": "{ return CaelumCharacterProfile.DistributionFor(pattern, layer); }"
+      },
+      {
+        "line": 221,
+        "source": "int profession = CaelumCharacterProfile.ProfessionFor(FirstClass, candidate);"
+      },
+      {
+        "line": 242,
+        "source": "if (CaelumCharacterProfile.ProfessionFor(FirstClass, SecondClass) < 4)"
+      },
+      {
+        "line": 260,
+        "source": "&& CaelumCharacterProfile.ProfessionFor(FirstClass, SecondClass) != CaelumConstants.PROFESSION_ARCANIST))"
+      },
+      {
+        "line": 494,
+        "source": "SetDraft(\"ca_newchar_race\", Race);"
+      },
+      {
+        "line": 495,
+        "source": "SetDraft(\"ca_newchar_first_class\", FirstClass);"
+      },
+      {
+        "line": 496,
+        "source": "SetDraft(\"ca_newchar_second_class\", SecondClass);"
+      },
+      {
+        "line": 497,
+        "source": "SetDraft(\"ca_newchar_sex\", Sex);"
+      },
+      {
+        "line": 498,
+        "source": "SetDraft(\"ca_newchar_height\", HeightChoice);"
+      },
+      {
+        "line": 499,
+        "source": "SetDraft(\"ca_newchar_layer0\", LayerBonus[0]);"
+      },
+      {
+        "line": 500,
+        "source": "SetDraft(\"ca_newchar_layer1\", LayerBonus[1]);"
+      },
+      {
+        "line": 501,
+        "source": "SetDraft(\"ca_newchar_layer2\", LayerBonus[2]);"
+      },
+      {
+        "line": 502,
+        "source": "SetDraft(\"ca_newchar_layer3\", LayerBonus[3]);"
+      },
+      {
+        "line": 503,
+        "source": "SetDraft(\"ca_newchar_attribute0\", AttributeBonus[0]);"
+      },
+      {
+        "line": 504,
+        "source": "SetDraft(\"ca_newchar_attribute1\", AttributeBonus[1]);"
+      },
+      {
+        "line": 505,
+        "source": "SetDraft(\"ca_newchar_attribute2\", AttributeBonus[2]);"
+      },
+      {
+        "line": 506,
+        "source": "SetDraft(\"ca_newchar_attribute3\", AttributeBonus[3]);"
+      },
+      {
+        "line": 507,
+        "source": "SetDraft(\"ca_newchar_attribute4\", AttributeBonus[4]);"
+      },
+      {
+        "line": 508,
+        "source": "SetDraft(\"ca_newchar_attribute5\", AttributeBonus[5]);"
+      },
+      {
+        "line": 509,
+        "source": "SetDraft(\"ca_newchar_attribute6\", AttributeBonus[6]);"
+      },
+      {
+        "line": 510,
+        "source": "SetDraft(\"ca_newchar_attribute7\", AttributeBonus[7]);"
+      },
+      {
+        "line": 511,
+        "source": "SetDraft(\"ca_newchar_attribute8\", AttributeBonus[8]);"
+      },
+      {
+        "line": 512,
+        "source": "SetDraft(\"ca_newchar_attribute9\", AttributeBonus[9]);"
+      },
+      {
+        "line": 513,
+        "source": "SetDraft(\"ca_newchar_attribute10\", AttributeBonus[10]);"
+      },
+      {
+        "line": 514,
+        "source": "SetDraft(\"ca_newchar_attribute11\", AttributeBonus[11]);"
+      },
+      {
+        "line": 515,
+        "source": "SetDraft(\"ca_newchar_ready\", 1);"
+      }
+    ],
+    "src/caelum/character/CaelumCharacterIdentity.zs": [
+      {
+        "line": 7,
+        "source": "static clearscope CaelumCharacterProfile Profile(CaelumPlayer user)"
+      },
+      {
+        "line": 11,
+        "source": "if (record != null && record.IdentityProfile != null) return record.IdentityProfile;"
+      },
+      {
+        "line": 12,
+        "source": "return user.CharacterProfile;"
+      },
+      {
+        "line": 26,
+        "source": "if (liveProfile && user.CharacterProfile != null && user.CharacterAllocation != null)"
+      },
+      {
+        "line": 30,
+        "source": "record.IdentityProfile = user.CharacterProfile;"
+      },
+      {
+        "line": 31,
+        "source": "record.IdentityAllocation = user.CharacterAllocation;"
+      },
+      {
+        "line": 35,
+        "source": "record.IdentityProfile = new(\"CaelumCharacterProfile\");"
+      },
+      {
+        "line": 36,
+        "source": "record.IdentityAllocation = new(\"CaelumCharacterAllocation\");"
+      },
+      {
+        "line": 37,
+        "source": "record.IdentityProfile.Race = record.Race;"
+      },
+      {
+        "line": 38,
+        "source": "record.IdentityProfile.FirstClass = record.FirstClass;"
+      },
+      {
+        "line": 39,
+        "source": "record.IdentityProfile.SecondClass = record.SecondClass;"
+      },
+      {
+        "line": 40,
+        "source": "record.IdentityProfile.Sex = record.Sex;"
+      },
+      {
+        "line": 41,
+        "source": "record.IdentityProfile.HeightChoice = record.HeightChoice;"
+      },
+      {
+        "line": 43,
+        "source": "record.IdentityAllocation.LayerBonus[i] = record.LayerBonus[i];"
+      },
+      {
+        "line": 45,
+        "source": "record.IdentityAllocation.AttributeBonus[i] = record.AttributeBonus[i];"
+      },
+      {
+        "line": 49,
+        "source": "user.CharacterProfile = record.IdentityProfile;"
+      },
+      {
+        "line": 50,
+        "source": "user.CharacterAllocation = record.IdentityAllocation;"
+      },
+      {
+        "line": 53,
+        "source": "user.bNoSkin = true;"
+      }
+    ],
+    "src/caelum/character/CaelumCharacterProfile.zs": [
+      {
+        "line": 2,
+        "source": "class CaelumCharacterProfile : Object"
+      },
+      {
+        "line": 10,
+        "source": "void CopyFrom(CaelumCharacterProfile source)"
+      }
+    ],
+    "src/caelum/core/CaelumTarotService.zs": [
+      {
+        "line": 102,
+        "source": "user.ApplyCharacterProfile();"
+      },
+      {
+        "line": 125,
+        "source": "user.ApplyCharacterProfile();"
+      },
+      {
+        "line": 261,
+        "source": "user.ApplyCharacterProfile();"
+      }
+    ],
+    "src/caelum/debug/CaelumDebugOverlay.zs": [
+      {
+        "line": 935,
+        "source": "CaelumCharacterProfile profile = localPlayer.CharacterProfile;"
+      },
+      {
+        "line": 936,
+        "source": "CaelumCharacterAllocation allocation = localPlayer.CharacterAllocation;"
+      },
+      {
+        "line": 2481,
+        "source": "CaelumCharacterProfile profile = localPlayer.CharacterProfile;"
+      },
+      {
+        "line": 2482,
+        "source": "CaelumCharacterAllocation allocation = localPlayer.CharacterAllocation;"
+      },
+      {
+        "line": 3907,
+        "source": "if (requestingPlayer == null || requestingPlayer.CharacterProfile == null)"
+      }
+    ],
+    "src/caelum/equipment/CaelumBolas.zs": [
+      {
+        "line": 192,
+        "source": "user.RefreshCarriedInventorySummary();user.ApplyCharacterProfile();user.PersistCharacterState();"
+      }
+    ],
+    "src/caelum/equipment/CaelumCityTrade.zs": [
+      {
+        "line": 339,
+        "source": "user.OnNativeInventoryChanged();user.ApplyCharacterProfile();user.RefreshFormalInventorySnapshot();"
+      }
+    ],
+    "src/caelum/equipment/CaelumEquipmentPickups.zs": [
+      {
+        "line": 339,
+        "source": "if (HasEquipmentSize() && (user.CharacterProfile == null || user.ArmorModel == null"
+      }
+    ],
+    "src/caelum/equipment/CaelumEquipmentRules.zs": [
+      {
+        "line": 14,
+        "source": "if (policy == CHARACTER_DEFAULT && user != null && user.CharacterProfile != null)"
+      },
+      {
+        "line": 15,
+        "source": "return GetDefaultSizeForCharacterTier(user.CharacterProfile.GetSizeTier());"
+      }
+    ],
+    "src/caelum/equipment/CaelumInventoryService.zs": [
+      {
+        "line": 64,
+        "source": "user.ApplyCharacterProfile();"
+      },
+      {
+        "line": 394,
+        "source": "user.ApplyCharacterProfile();"
+      },
+      {
+        "line": 1308,
+        "source": "user.ApplyCharacterProfile();"
+      },
+      {
+        "line": 1320,
+        "source": "user.ApplyCharacterProfile();"
+      },
+      {
+        "line": 1325,
+        "source": "|| user.CharacterProfile == null"
+      },
+      {
+        "line": 1328,
+        "source": "user.CharacterProfile.GetSizeTier()"
+      },
+      {
+        "line": 1615,
+        "source": "user.ApplyCharacterProfile();"
+      },
+      {
+        "line": 1656,
+        "source": "user.ApplyCharacterProfile();"
+      },
+      {
+        "line": 2521,
+        "source": "user.EquipmentSelectionSizeCompatible = user.CharacterProfile != null"
+      },
+      {
+        "line": 2524,
+        "source": "user.CharacterProfile.GetSizeTier()"
+      },
+      {
+        "line": 2778,
+        "source": "user.ApplyCharacterProfile();"
+      },
+      {
+        "line": 2826,
+        "source": "user.ApplyCharacterProfile();"
+      },
+      {
+        "line": 2850,
+        "source": "user.ApplyCharacterProfile();"
+      },
+      {
+        "line": 2897,
+        "source": "user.ApplyCharacterProfile();"
+      },
+      {
+        "line": 2919,
+        "source": "user.ApplyCharacterProfile();"
+      },
+      {
+        "line": 2965,
+        "source": "user.ApplyCharacterProfile();"
+      },
+      {
+        "line": 3472,
+        "source": "user.ApplyCharacterProfile();"
+      },
+      {
+        "line": 3573,
+        "source": "user.ApplyCharacterProfile();"
+      },
+      {
+        "line": 3672,
+        "source": "user.ApplyCharacterProfile();"
+      },
+      {
+        "line": 3776,
+        "source": "user.ApplyCharacterProfile();"
+      },
+      {
+        "line": 3834,
+        "source": "user.ApplyCharacterProfile();"
+      },
+      {
+        "line": 4049,
+        "source": "user.ApplyCharacterProfile();"
+      },
+      {
+        "line": 4405,
+        "source": "user.ApplyCharacterProfile();"
+      },
+      {
+        "line": 4479,
+        "source": "user.ApplyCharacterProfile();"
+      },
+      {
+        "line": 4573,
+        "source": "user.ApplyCharacterProfile();"
+      },
+      {
+        "line": 4611,
+        "source": "user.ApplyCharacterProfile();"
+      },
+      {
+        "line": 4661,
+        "source": "user.ApplyCharacterProfile();"
+      },
+      {
+        "line": 4699,
+        "source": "user.ApplyCharacterProfile();"
+      },
+      {
+        "line": 4720,
+        "source": "user.ApplyCharacterProfile();"
+      },
+      {
+        "line": 4867,
+        "source": "user.ApplyCharacterProfile();"
+      },
+      {
+        "line": 4982,
+        "source": "user.ApplyCharacterProfile();"
+      },
+      {
+        "line": 5655,
+        "source": "user.ApplyCharacterProfile();"
+      },
+      {
+        "line": 5746,
+        "source": "user.ApplyCharacterProfile();"
+      },
+      {
+        "line": 5837,
+        "source": "user.ApplyCharacterProfile();"
+      },
+      {
+        "line": 6059,
+        "source": "user.ApplyCharacterProfile();"
+      },
+      {
+        "line": 6181,
+        "source": "user.ApplyCharacterProfile();"
+      },
+      {
+        "line": 6244,
+        "source": "user.ApplyCharacterProfile();"
+      },
+      {
+        "line": 6321,
+        "source": "user.ApplyCharacterProfile();"
+      }
+    ],
+    "src/caelum/equipment/CaelumPersistentCharacterState.zs": [
+      {
+        "line": 10,
+        "source": "CaelumCharacterProfile IdentityProfile;"
+      },
+      {
+        "line": 11,
+        "source": "CaelumCharacterAllocation IdentityAllocation;"
+      }
+    ],
+    "src/caelum/player/CaelumPlayer.zs": [
+      {
+        "line": 21,
+        "source": "CaelumCharacterProfile CharacterProfile;"
+      },
+      {
+        "line": 24,
+        "source": "CaelumCharacterAllocation CharacterAllocation;"
+      },
+      {
+        "line": 732,
+        "source": "CaelumCharacterProfile CreationProfileBackup;"
+      },
+      {
+        "line": 733,
+        "source": "CaelumCharacterAllocation CreationAllocationBackup;"
+      },
+      {
+        "line": 740,
+        "source": "Player.DisplayName \"$CA_PLAYER_DISPLAY_NAME\";"
+      },
+      {
+        "line": 756,
+        "source": "Player.ColorRange 0, 0;"
+      },
+      {
+        "line": 1455,
+        "source": "if (!CharacterCreationComplete || CharacterProfile == null"
+      },
+      {
+        "line": 1456,
+        "source": "|| CharacterAllocation == null)"
+      },
+      {
+        "line": 1479,
+        "source": "persistentState.Race = CharacterProfile.Race;"
+      },
+      {
+        "line": 1480,
+        "source": "persistentState.FirstClass = CharacterProfile.FirstClass;"
+      },
+      {
+        "line": 1481,
+        "source": "persistentState.SecondClass = CharacterProfile.SecondClass;"
+      },
+      {
+        "line": 1482,
+        "source": "persistentState.Sex = CharacterProfile.Sex;"
+      },
+      {
+        "line": 1483,
+        "source": "persistentState.HeightChoice = CharacterProfile.HeightChoice;"
+      },
+      {
+        "line": 1497,
+        "source": "persistentState.LayerBonus[layer] = CharacterAllocation.LayerBonus[layer];"
+      },
+      {
+        "line": 1501,
+        "source": "persistentState.AttributeBonus[attribute] = CharacterAllocation.AttributeBonus[attribute];"
+      },
+      {
+        "line": 1693,
+        "source": "ApplyCharacterProfile();"
+      },
+      {
+        "line": 2354,
+        "source": "ApplyCharacterProfile();"
+      },
+      {
+        "line": 6093,
+        "source": "if (DerivedStats == null || Attributes == null || CharacterProfile == null)"
+      },
+      {
+        "line": 6110,
+        "source": "ApplyCharacterProfile();"
+      },
+      {
+        "line": 6170,
+        "source": "if (CharacterProfile == null)"
+      },
+      {
+        "line": 6172,
+        "source": "CharacterProfile = CaelumCharacterProfile(new(\"CaelumCharacterProfile\"));"
+      },
+      {
+        "line": 6173,
+        "source": "CharacterProfile.InitializeDefaultTestProfile();"
+      },
+      {
+        "line": 6176,
+        "source": "if (CharacterAllocation == null)"
+      },
+      {
+        "line": 6178,
+        "source": "CharacterAllocation = CaelumCharacterAllocation(new(\"CaelumCharacterAllocation\"));"
+      },
+      {
+        "line": 6179,
+        "source": "CharacterAllocation.ResetAllocations();"
+      },
+      {
+        "line": 6534,
+        "source": "int race = CharacterProfile != null ? CharacterProfile.Race : CaelumConstants.RACE_HUMAN;"
+      },
+      {
+        "line": 8151,
+        "source": "if (armorPieceBroken) { ApplyCharacterProfile(); }"
+      },
+      {
+        "line": 8219,
+        "source": "if (armorPieceBroken) { ApplyCharacterProfile(); }"
+      },
+      {
+        "line": 8632,
+        "source": "if (ArmorModel.Durability[slot] <= 0) { ApplyCharacterProfile(); }"
+      },
+      {
+        "line": 11227,
+        "source": "if (CharacterProfile != null && CharacterProfile.GetProfession() == CaelumConstants.PROFESSION_ARCANIST)"
+      },
+      {
+        "line": 11270,
+        "source": "if (ShieldModel != null) { PersistCharacterState(); ShieldModel.CycleType(); ApplyCharacterProfile(); UpdateShieldAirCost(); PersistCharacterState(); RefreshEquipmentSelectionPreview(); }"
+      },
+      {
+        "line": 11275,
+        "source": "if (ShieldModel != null) { PersistCharacterState(); ShieldModel.CycleTier(); ApplyCharacterProfile(); PersistCharacterState(); RefreshEquipmentSelectionPreview(); }"
+      },
+      {
+        "line": 11554,
+        "source": "void ApplyCharacterProfile()"
+      },
+      {
+        "line": 11556,
+        "source": "CaelumPlayerCharacter.ApplyCharacterProfile(self);"
+      },
+      {
+        "line": 12369,
+        "source": "ApplyCharacterProfile();"
+      },
+      {
+        "line": 12379,
+        "source": "ApplyCharacterProfile();"
+      },
+      {
+        "line": 12510,
+        "source": "ApplyCharacterProfile();"
+      },
+      {
+        "line": 12794,
+        "source": "CharacterProfile.CycleRace();"
+      },
+      {
+        "line": 12795,
+        "source": "CharacterAllocation.ResetAllocations();"
+      },
+      {
+        "line": 12796,
+        "source": "ApplyCharacterProfile();"
+      },
+      {
+        "line": 12799,
+        "source": "void CycleFirstClass() { CharacterProfile.CycleFirstClass(); CharacterAllocation.ResetAllocations(); ApplyCharacterProfile(); }"
+      },
+      {
+        "line": 12800,
+        "source": "void CycleSecondClass() { CharacterProfile.CycleSecondClass(); CharacterAllocation.ResetAllocations(); ApplyCharacterProfile(); }"
+      },
+      {
+        "line": 12801,
+        "source": "void CycleSex() { CharacterProfile.CycleSex(); ApplyCharacterProfile(); }"
+      },
+      {
+        "line": 12802,
+        "source": "void CycleHeightChoice() { CharacterProfile.CycleHeight(); ApplyCharacterProfile(); }"
+      },
+      {
+        "line": 12806,
+        "source": "CharacterAllocation.CycleSelectedLayer();"
+      },
+      {
+        "line": 12811,
+        "source": "CharacterAllocation.CycleSelectedAttribute();"
+      },
+      {
+        "line": 12816,
+        "source": "if (CharacterAllocation.TryAddSelectedLayerPoint(CharacterProfile))"
+      },
+      {
+        "line": 12818,
+        "source": "ApplyCharacterProfile();"
+      },
+      {
+        "line": 12824,
+        "source": "if (CharacterAllocation.TryAddSelectedAttributePoint(CharacterProfile))"
+      },
+      {
+        "line": 12826,
+        "source": "ApplyCharacterProfile();"
+      },
+      {
+        "line": 12832,
+        "source": "CharacterAllocation.ResetAllocations();"
+      },
+      {
+        "line": 12833,
+        "source": "ApplyCharacterProfile();"
+      },
+      {
+        "line": 12842,
+        "source": "ApplyCharacterProfile();"
+      },
+      {
+        "line": 12852,
+        "source": "ApplyCharacterProfile();"
+      },
+      {
+        "line": 12865,
+        "source": "ApplyCharacterProfile();"
+      },
+      {
+        "line": 12877,
+        "source": "ApplyCharacterProfile();"
+      },
+      {
+        "line": 12892,
+        "source": "CreationProfileBackup = CaelumCharacterProfile(new(\"CaelumCharacterProfile\"));"
+      },
+      {
+        "line": 12893,
+        "source": "CreationProfileBackup.CopyFrom(CharacterProfile);"
+      },
+      {
+        "line": 12895,
+        "source": "CreationAllocationBackup = CaelumCharacterAllocation(new(\"CaelumCharacterAllocation\"));"
+      },
+      {
+        "line": 12896,
+        "source": "CreationAllocationBackup.CopyFrom(CharacterAllocation);"
+      },
+      {
+        "line": 12911,
+        "source": "CharacterProfile.CopyFrom(CreationProfileBackup);"
+      },
+      {
+        "line": 12912,
+        "source": "CharacterAllocation.CopyFrom(CreationAllocationBackup);"
+      },
+      {
+        "line": 12913,
+        "source": "ApplyCharacterProfile();"
+      },
+      {
+        "line": 13042,
+        "source": "CharacterProfile.GetSizeTier()"
+      },
+      {
+        "line": 13044,
+        "source": "int profession = CharacterProfile.GetProfession();"
+      },
+      {
+        "line": 13078,
+        "source": "ApplyCharacterProfile();"
+      },
+      {
+        "line": 13087,
+        "source": "if (CharacterProfile == null || ArmorModel == null"
+      },
+      {
+        "line": 13099,
+        "source": "CharacterProfile.GetSizeTier()"
+      },
+      {
+        "line": 13101,
+        "source": "int profession = CharacterProfile.GetProfession();"
+      },
+      {
+        "line": 13172,
+        "source": "ApplyCharacterProfile();"
+      },
+      {
+        "line": 13186,
+        "source": "&& CharacterProfile.Race == CaelumConstants.RACE_DEBUG)"
+      },
+      {
+        "line": 13189,
+        "source": "ApplyCharacterProfile();"
+      },
+      {
+        "line": 13195,
+        "source": "&& CharacterAllocation.GetRemainingLayerPoints() > 0)"
+      },
+      {
+        "line": 13202,
+        "source": "&& CharacterAllocation.GetRemainingAttributePoints() > 0)"
+      },
+      {
+        "line": 13219,
+        "source": "ApplyCharacterProfile();"
+      },
+      {
+        "line": 13253,
+        "source": "&& CharacterProfile.Race == CaelumConstants.RACE_DEBUG)"
+      }
+    ],
+    "src/caelum/player/CaelumPlayerCharacter.zs": [
+      {
+        "line": 18,
+        "source": "case 0: return user.ReadNewCharacterDraft(\"ca_newchar_layer0\", 0);"
+      },
+      {
+        "line": 19,
+        "source": "case 1: return user.ReadNewCharacterDraft(\"ca_newchar_layer1\", 0);"
+      },
+      {
+        "line": 20,
+        "source": "case 2: return user.ReadNewCharacterDraft(\"ca_newchar_layer2\", 0);"
+      },
+      {
+        "line": 21,
+        "source": "default: return user.ReadNewCharacterDraft(\"ca_newchar_layer3\", 0);"
+      },
+      {
+        "line": 30,
+        "source": "case 0: return user.ReadNewCharacterDraft(\"ca_newchar_attribute0\", 0);"
+      },
+      {
+        "line": 31,
+        "source": "case 1: return user.ReadNewCharacterDraft(\"ca_newchar_attribute1\", 0);"
+      },
+      {
+        "line": 32,
+        "source": "case 2: return user.ReadNewCharacterDraft(\"ca_newchar_attribute2\", 0);"
+      },
+      {
+        "line": 33,
+        "source": "case 3: return user.ReadNewCharacterDraft(\"ca_newchar_attribute3\", 0);"
+      },
+      {
+        "line": 34,
+        "source": "case 4: return user.ReadNewCharacterDraft(\"ca_newchar_attribute4\", 0);"
+      },
+      {
+        "line": 35,
+        "source": "case 5: return user.ReadNewCharacterDraft(\"ca_newchar_attribute5\", 0);"
+      },
+      {
+        "line": 36,
+        "source": "case 6: return user.ReadNewCharacterDraft(\"ca_newchar_attribute6\", 0);"
+      },
+      {
+        "line": 37,
+        "source": "case 7: return user.ReadNewCharacterDraft(\"ca_newchar_attribute7\", 0);"
+      },
+      {
+        "line": 38,
+        "source": "case 8: return user.ReadNewCharacterDraft(\"ca_newchar_attribute8\", 0);"
+      },
+      {
+        "line": 39,
+        "source": "case 9: return user.ReadNewCharacterDraft(\"ca_newchar_attribute9\", 0);"
+      },
+      {
+        "line": 40,
+        "source": "case 10: return user.ReadNewCharacterDraft(\"ca_newchar_attribute10\", 0);"
+      },
+      {
+        "line": 41,
+        "source": "default: return user.ReadNewCharacterDraft(\"ca_newchar_attribute11\", 0);"
+      },
+      {
+        "line": 49,
+        "source": "CVar ready = CVar.GetCVar(\"ca_newchar_ready\", user.player);"
+      },
+      {
+        "line": 57,
+        "source": "CVar ready = CVar.GetCVar(\"ca_newchar_ready\", user.player);"
+      },
+      {
+        "line": 64,
+        "source": "if (user.CharacterProfile == null || user.CharacterAllocation == null) return false;"
+      },
+      {
+        "line": 65,
+        "source": "if (user.CharacterProfile.Race < CaelumConstants.RACE_BEAST_MAN"
+      },
+      {
+        "line": 66,
+        "source": "|| user.CharacterProfile.Race > CaelumConstants.RACE_GOBLIN"
+      },
+      {
+        "line": 67,
+        "source": "|| user.CharacterProfile.FirstClass < CaelumConstants.CLASS_WARRIOR"
+      },
+      {
+        "line": 68,
+        "source": "|| user.CharacterProfile.FirstClass > CaelumConstants.CLASS_MAGE"
+      },
+      {
+        "line": 69,
+        "source": "|| user.CharacterProfile.SecondClass < CaelumConstants.CLASS_WARRIOR"
+      },
+      {
+        "line": 70,
+        "source": "|| user.CharacterProfile.SecondClass > CaelumConstants.CLASS_MAGE"
+      },
+      {
+        "line": 71,
+        "source": "|| user.CharacterProfile.Sex < CaelumConstants.SEX_MALE"
+      },
+      {
+        "line": 72,
+        "source": "|| user.CharacterProfile.Sex > CaelumConstants.SEX_FEMALE"
+      },
+      {
+        "line": 73,
+        "source": "|| user.CharacterProfile.HeightChoice < CaelumConstants.HEIGHT_SHORT"
+      },
+      {
+        "line": 74,
+        "source": "|| user.CharacterProfile.HeightChoice > CaelumConstants.HEIGHT_TALL)"
+      },
+      {
+        "line": 82,
+        "source": "int bonus = user.CharacterAllocation.LayerBonus[layer];"
+      },
+      {
+        "line": 85,
+        "source": "|| user.CharacterProfile.GetCombinedLayerValue(layer) + bonus"
+      },
+      {
+        "line": 97,
+        "source": "int bonus = user.CharacterAllocation.AttributeBonus[attribute];"
+      },
+      {
+        "line": 99,
+        "source": "if (bonus < 0 || bonus > user.CharacterAllocation.GetMaximumIndividualBonus("
+      },
+      {
+        "line": 100,
+        "source": "user.CharacterProfile, attribute"
+      },
+      {
+        "line": 116,
+        "source": "user.CharacterProfile.Race = user.ReadNewCharacterDraft("
+      },
+      {
+        "line": 117,
+        "source": "\"ca_newchar_race\", CaelumConstants.RACE_HUMAN"
+      },
+      {
+        "line": 119,
+        "source": "user.CharacterProfile.FirstClass = user.ReadNewCharacterDraft("
+      },
+      {
+        "line": 120,
+        "source": "\"ca_newchar_first_class\", CaelumConstants.CLASS_WARRIOR"
+      },
+      {
+        "line": 122,
+        "source": "user.CharacterProfile.SecondClass = user.ReadNewCharacterDraft("
+      },
+      {
+        "line": 123,
+        "source": "\"ca_newchar_second_class\", CaelumConstants.CLASS_MAGE"
+      },
+      {
+        "line": 125,
+        "source": "user.CharacterProfile.Sex = user.ReadNewCharacterDraft("
+      },
+      {
+        "line": 126,
+        "source": "\"ca_newchar_sex\", CaelumConstants.SEX_MALE"
+      },
+      {
+        "line": 128,
+        "source": "user.CharacterProfile.HeightChoice = user.ReadNewCharacterDraft("
+      },
+      {
+        "line": 129,
+        "source": "\"ca_newchar_height\", CaelumConstants.HEIGHT_NORMAL"
+      },
+      {
+        "line": 133,
+        "source": "user.CharacterAllocation.LayerBonus[layer] = user.ReadNewCharacterLayer(layer);"
+      },
+      {
+        "line": 138,
+        "source": "user.CharacterAllocation.AttributeBonus[attribute] ="
+      },
+      {
+        "line": 156,
+        "source": "user.ApplyCharacterProfile();"
+      },
+      {
+        "line": 166,
+        "source": "user.CharacterProfile.InitializeDefaultTestProfile();"
+      },
+      {
+        "line": 167,
+        "source": "user.CharacterAllocation.ResetAllocations();"
+      },
+      {
+        "line": 170,
+        "source": "user.CharacterAllocation.LayerBonus[layer] = 1;"
+      },
+      {
+        "line": 172,
+        "source": "user.CharacterAllocation.AttributeBonus[0] = 3;"
+      },
+      {
+        "line": 173,
+        "source": "user.CharacterAllocation.AttributeBonus[1] = 3;"
+      },
+      {
+        "line": 174,
+        "source": "user.CharacterAllocation.AttributeBonus[2] = 2;"
+      },
+      {
+        "line": 175,
+        "source": "user.CharacterAllocation.AttributeBonus[3] = 3;"
+      },
+      {
+        "line": 176,
+        "source": "user.CharacterAllocation.AttributeBonus[4] = 3;"
+      },
+      {
+        "line": 177,
+        "source": "user.CharacterAllocation.AttributeBonus[5] = 2;"
+      },
+      {
+        "line": 178,
+        "source": "user.CharacterAllocation.AttributeBonus[6] = 3;"
+      },
+      {
+        "line": 179,
+        "source": "user.CharacterAllocation.AttributeBonus[7] = 2;"
+      },
+      {
+        "line": 180,
+        "source": "user.CharacterAllocation.AttributeBonus[8] = 2;"
+      },
+      {
+        "line": 181,
+        "source": "user.CharacterAllocation.AttributeBonus[9] = 3;"
+      },
+      {
+        "line": 182,
+        "source": "user.CharacterAllocation.AttributeBonus[10] = 2;"
+      },
+      {
+        "line": 183,
+        "source": "user.CharacterAllocation.AttributeBonus[11] = 2;"
+      },
+      {
+        "line": 186,
+        "source": "user.ApplyCharacterProfile();"
+      },
+      {
+        "line": 198,
+        "source": "user.ApplyCharacterProfile();"
+      },
+      {
+        "line": 202,
+        "source": "static void ApplyCharacterProfile(CaelumPlayer user)"
+      },
+      {
+        "line": 206,
+        "source": "&& user.CharacterProfile != null"
+      },
+      {
+        "line": 207,
+        "source": "&& user.CharacterAllocation != null"
+      },
+      {
+        "line": 221,
+        "source": "user.Attributes.InitializeFromCreation(user.CharacterProfile, user.CharacterAllocation);"
+      },
+      {
+        "line": 227,
+        "source": "if (user.CharacterProfile.Race == CaelumConstants.RACE_DEBUG)"
+      },
+      {
+        "line": 249,
+        "source": "user.DerivedStats.Recalculate(user.Attributes, user.CharacterProfile);"
+      },
+      {
+        "line": 255,
+        "source": "user.DerivedStats.Recalculate(user.Attributes, user.CharacterProfile);"
+      }
+    ],
+    "src/caelum/quests/CaelumMainM00Loadout.zs": [
+      {
+        "line": 64,
+        "source": "r.MainM00StarterSize = CaelumEquipmentRules.GetDefaultSizeForCharacterTier(user.CharacterProfile.GetSizeTier());"
+      },
+      {
+        "line": 71,
+        "source": ": CaelumEquipmentRules.GetDefaultSizeForCharacterTier(user.CharacterProfile.GetSizeTier());"
+      },
+      {
+        "line": 142,
+        "source": ": CaelumEquipmentRules.GetDefaultSizeForCharacterTier(user.CharacterProfile.GetSizeTier());"
+      }
+    ],
+    "src/caelum/quests/CaelumMainM00MagicTrial.zs": [
+      {
+        "line": 37,
+        "source": "user.ApplyCharacterProfile();"
+      }
+    ],
+    "src/caelum/quests/CaelumMainM00Return.zs": [
+      {
+        "line": 168,
+        "source": "user.ApplyCharacterProfile(); user.EnsureWeaponFamilySelectors();"
+      }
+    ],
+    "src/caelum/quests/CaelumMainM00RonnieTrial.zs": [
+      {
+        "line": 290,
+        "source": "user.ApplyCharacterProfile();"
+      }
+    ],
+    "src/caelum/statistics/CaelumDerivedStats.zs": [
+      {
+        "line": 208,
+        "source": "void Recalculate(CaelumAttributes attributes, CaelumCharacterProfile profile)"
+      }
+    ],
+    "src/caelum/survival/CaelumThermalBody.zs": [
+      {
+        "line": 68,
+        "source": "if(user.DerivedStats==null || user.CharacterProfile==null || user.Attributes==null)return;"
+      },
+      {
+        "line": 79,
+        "source": "race=user.CharacterProfile.Race;"
+      }
+    ],
+    "src/caelum/ui/CaelumStoryIntermission.zs": [
+      {
+        "line": 22,
+        "source": "let draft = CVar.GetCVar(\"ca_newchar_ready\", players[consoleplayer]);"
+      }
+    ],
+    "src/caelum/world/CaelumSewerTrialSupport.zs": [
+      {
+        "line": 148,
+        "source": "user.ApplyCharacterProfile();"
+      }
+    ],
+    "src/caelum/world/CaelumSleepRules.zs": [
+      {
+        "line": 50,
+        "source": "|| user.CharacterProfile == null || !user.CharacterCreationComplete"
+      },
+      {
+        "line": 51,
+        "source": "|| user.CharacterProfile.GetProfession() != CaelumConstants.PROFESSION_ARCANIST"
+      }
+    ],
+    "src/CVARINFO": [
+      {
+        "line": 14,
+        "source": "user bool ca_newchar_ready = false;"
+      },
+      {
+        "line": 15,
+        "source": "user int ca_newchar_race = 2;"
+      },
+      {
+        "line": 16,
+        "source": "user int ca_newchar_first_class = 0;"
+      },
+      {
+        "line": 17,
+        "source": "user int ca_newchar_second_class = 3;"
+      },
+      {
+        "line": 18,
+        "source": "user int ca_newchar_sex = 0;"
+      },
+      {
+        "line": 19,
+        "source": "user int ca_newchar_height = 1;"
+      },
+      {
+        "line": 20,
+        "source": "user int ca_newchar_layer0 = 0;"
+      },
+      {
+        "line": 21,
+        "source": "user int ca_newchar_layer1 = 0;"
+      },
+      {
+        "line": 22,
+        "source": "user int ca_newchar_layer2 = 0;"
+      },
+      {
+        "line": 23,
+        "source": "user int ca_newchar_layer3 = 0;"
+      },
+      {
+        "line": 24,
+        "source": "user int ca_newchar_attribute0 = 0;"
+      },
+      {
+        "line": 25,
+        "source": "user int ca_newchar_attribute1 = 0;"
+      },
+      {
+        "line": 26,
+        "source": "user int ca_newchar_attribute2 = 0;"
+      },
+      {
+        "line": 27,
+        "source": "user int ca_newchar_attribute3 = 0;"
+      },
+      {
+        "line": 28,
+        "source": "user int ca_newchar_attribute4 = 0;"
+      },
+      {
+        "line": 29,
+        "source": "user int ca_newchar_attribute5 = 0;"
+      },
+      {
+        "line": 30,
+        "source": "user int ca_newchar_attribute6 = 0;"
+      },
+      {
+        "line": 31,
+        "source": "user int ca_newchar_attribute7 = 0;"
+      },
+      {
+        "line": 32,
+        "source": "user int ca_newchar_attribute8 = 0;"
+      },
+      {
+        "line": 33,
+        "source": "user int ca_newchar_attribute9 = 0;"
+      },
+      {
+        "line": 34,
+        "source": "user int ca_newchar_attribute10 = 0;"
+      },
+      {
+        "line": 35,
+        "source": "user int ca_newchar_attribute11 = 0;"
+      }
+    ],
+    "src/ZSCRIPT": [
+      {
+        "line": 29,
+        "source": "#include \"caelum/character/CaelumCharacterProfile.zs\""
+      },
+      {
+        "line": 30,
+        "source": "#include \"caelum/character/CaelumCharacterAllocation.zs\""
+      }
+    ]
+  }
+}
