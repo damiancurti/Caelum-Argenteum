@@ -1,6 +1,20 @@
 # TASKS.md — Active tasks
 
-Documentation version: **5.2.5** — 2026-10-11.
+Documentation version: **5.2.6** — 2026-10-11.
+
+## Issue #184 - Mouse interaction (5.2.6)
+
+Implemented native card mouse handling and shared transient pointer controls
+for live crafting/time skip. Evidence: assets/validation_526/RESULTS.md.
+Author acceptance CA184-01 remains pending; commit/push and linked PR required.
+
+## Issue #189 - Native menus and NPC dialogue clicks
+
+Requested and authorized by the author after #184. Audit all interactive
+screens, migrate remaining overlays to native ownership while retaining images,
+keyboard/controller actions and live simulation. NPC conversations remain explicitly
+unpaused and gain verified clicks; Truco/Trucazo retain pause. Keep Escape/settings
+pause. Test input ownership, nested menus, save/load and bilingual layouts.
 
 ## Issue #183 - Profession onboarding and MAP02 supplies (5.2.4)
 

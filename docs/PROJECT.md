@@ -1,6 +1,15 @@
 # Caelum Argenteum — Project, status and roadmap
 
-Documentation version: **5.2.5** — 2026-10-11.
+Documentation version: **5.2.6** — 2026-10-11.
+
+## 5.2.6 - Mouse interaction in game menus (#184)
+
+Truco/Trucazo, crafting and time skip now share press/release pointer guards
+and expose their existing actions through visible mouse controls. Card menus
+retain native pause; Journal panels remain live. Static and isolated GZDoom
+4.14.2 evidence is recorded in assets/validation_526/RESULTS.md; CA184-01 awaits
+author acceptance. The author requested native-menu migration next in #189,
+including clickable, unpaused NPC conversations; cards must retain their pause.
 
 ## 5.2.5 - Indexed NPC dialogue sources (#185)
 

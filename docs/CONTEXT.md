@@ -1,8 +1,15 @@
 # CONTEXT.md — Caelum Argenteum
 
-Documentation version: **5.2.5** — 2026-10-11.
+Documentation version: **5.2.6** — 2026-10-11.
 
-**Current patch 5.2.5 / #185:** per-NPC dialogue sources and main manifest in
+**Current patch 5.2.6 / #184:** cursor/hover/click support in both card games,
+live crafting and time skip. Shared press/release guards; existing actions,
+serial validation and pause policies retained. Native/physical input evidence:
+assets/validation_526/RESULTS.md. CA184-01 awaits author acceptance.
+Next authorized work: #189, native-menu migration preserving artwork, including
+clickable NPC conversations without pause. Cards retain native pause.
+
+**Previous patch 5.2.5 / #185:** per-NPC dialogue sources and main manifest in
 src/dialogues, with deterministic runtime assembly preserving every node/ID.
 Start at src/dialogues/INDEX.md; src/localization/INDEX.md locates all LANGUAGE
 keys. `python build_dialogue_index.py build` regenerates after edits; check,

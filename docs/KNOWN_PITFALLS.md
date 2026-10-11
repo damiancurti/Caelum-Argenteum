@@ -1153,6 +1153,13 @@ tested package hash: assets/validation_43718/RESULTS.json. Author acceptance
 CA-43718-UI-01 passed on 2026-10-04. This projection choice applies to these Journal draw flags;
 other overlays may intentionally use aspect correction.
 
+Extension (#184 / 5.2.6): shared CaelumMenuPointer keeps press/release and hover
+state in UI scope; the static adapter also owns the live time-skip pointer.
+Ignore orphan/stale releases and reset capture on panel changes or dragging
+onto Journal navigation. Cursor capture alone does not stop an already-held
+turn command: clear cmd yaw/pitch/roll before PlayerThink for crafting/time
+skip. Native held-input and save/load regression: validation_526/RESULTS.md.
+
 ## CA-KP-036 - Stamp newly constructed equipment durability revisions
 
 Status/evidence: CODE-VERIFIED / ENGINE-VERIFIED.

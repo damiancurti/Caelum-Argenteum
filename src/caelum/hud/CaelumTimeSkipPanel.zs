@@ -25,6 +25,49 @@ class CaelumTimeSkipPanel : Object
         }
         return true;
     }
+    static ui void Layout(CaelumJournalOverlay view,CaelumTimeSkipState skip,CaelumMenuPointer pointer,bool draw)
+    {
+        pointer.Clear();bool edit=!skip.Active && !skip.ConfirmPending;
+        pointer.Button(view,4,112,126,36,"-",edit,false,draw);
+        for(int i=0;i<3;i++)pointer.Button(view,i+1,156+i*112,126,104,
+            StringTable.Localize(i==0?"CA_SKIP_DAY":i==1?"CA_SKIP_HOUR":"CA_SKIP_MINUTE",false),edit,skip.Field==i,draw);
+        pointer.Button(view,5,496,126,36,"+",edit,false,draw);
+        pointer.Button(view,6,44,316,180,StringTable.Localize("CA_UI_SKIP_START",false),edit,false,draw);
+        pointer.Button(view,7,232,316,180,StringTable.Localize("CA_UI_SKIP_FORECAST",false),edit,false,draw);
+        pointer.Button(view,8,420,316,176,StringTable.Localize(skip.Active?"CA_UI_SKIP_STOP":"CA_UI_BACK",false),true,false,draw);
+    }
+    static ui bool Mouse(CaelumJournalOverlay view,CaelumPlayer user,UiEvent e)
+    {
+        let skip=CaelumTimeSkipState(user.FindInventory("CaelumTimeSkipState"));
+        if(skip==null || !skip.Open || menuactive!=0)return false;
+        let pointer=CaelumJournalInput.PointerFor(100);
+        if(e.Type==UiEvent.Type_KeyDown || e.Type==UiEvent.Type_KeyUp)
+        {
+            pointer.Reset();
+            if(e.Type==UiEvent.Type_KeyUp)return false;
+            return Key(InputEvent.Type_KeyDown,CaelumMenuPointer.KeyScan(e.KeyChar),e.KeyChar,e.KeyString,user);
+        }
+        return PointerInput(view,user,e.Type,CaelumMenuPointer.JournalPoint(e.MouseX,e.MouseY));
+    }
+    static ui bool PointerInput(CaelumJournalOverlay view,CaelumPlayer user,int type,Vector2 point)
+    {
+        let skip=CaelumTimeSkipState(user.FindInventory("CaelumTimeSkipState"));
+        if(skip==null || !skip.Open || menuactive!=0)return false;
+        let pointer=CaelumJournalInput.PointerFor(100);
+        pointer.Move(point);Layout(view,skip,pointer,false);
+        int revision=skip.Field+(skip.Active?4:0)+(skip.ConfirmPending?8:0);
+        if(type==UiEvent.Type_LButtonDown)pointer.Press(revision);
+        else if(type==UiEvent.Type_LButtonUp)
+        {
+            int control=pointer.Release(revision);
+            if(control>=1 && control<=3)EventHandler.SendNetworkEvent("ca_skip_field",control-1);
+            else if(control==4 || control==5)Key(InputEvent.Type_KeyDown,control==4?InputEvent.Key_DownArrow:InputEvent.Key_UpArrow,0,"",user);
+            else if(control==6)Key(InputEvent.Type_KeyDown,InputEvent.Key_Enter,0,"",user);
+            else if(control==7)Key(InputEvent.Type_KeyDown,0,114,"r",user);
+            else if(control==8)Key(InputEvent.Type_KeyDown,InputEvent.Key_Tab,0,"",user);
+        }
+        return true;
+    }
     static ui void Draw(CaelumJournalOverlay view,CaelumPlayer user,CaelumTimeSkipState skip)
     {
         Screen.Dim(0x05070A,0.92,0,0,Screen.GetWidth(),Screen.GetHeight());
@@ -41,8 +84,7 @@ class CaelumTimeSkipPanel : Object
         view.DrawCenteredText(view.TextFont,Font.CR_GOLD,320,104,
             String.Format(StringTable.Localize("CA_SKIP_TARGET",false),
                 CaelumTimeSkipState.Stamp(skip.TargetDay,skip.TargetTics,limbo)));
-        view.DrawCenteredText(view.SmallFont,Font.CR_GRAY,320,128,
-            StringTable.Localize(skip.Field==0?"CA_SKIP_DAY":skip.Field==1?"CA_SKIP_HOUR":"CA_SKIP_MINUTE",false));
+
         let model=skip.Forecast;
         String forecast=!skip.HadTask?"CA_SKIP_NO_TASK":model==null || !model.Done?"CA_SKIP_CALCULATING"
             :model.Reason.Length()!=0?model.Reason:"CA_SKIP_FORECAST_READY";
@@ -60,8 +102,8 @@ class CaelumTimeSkipPanel : Object
                     double(skip.SleepTics)/TICRATE/CaelumWorldClock.SecondsPerGameHour(level.MapName)));
         String status=skip.Active?(skip.Sleeping?"CA_REST_SLEEP":"CA_SKIP_RUNNING"):skip.LastReason;
         if(status.Length()!=0)view.DrawParagraph(view.SmallFont,Font.CR_GOLD,44,247,552,StringTable.Localize(status,false));
+        view.DrawCenteredText(view.SmallFont,Font.CR_GRAY,320,280,StringTable.Localize("CA_SKIP_HELP",false));
         view.DrawCenteredText(view.SmallFont,Font.CR_GRAY,320,298,StringTable.Localize("CA_SKIP_POLICY",false));
-        view.DrawCenteredText(view.SmallFont,Font.CR_GOLD,320,322,
-            StringTable.Localize(skip.Active?"CA_SKIP_ACTIVE_HELP":"CA_SKIP_HELP",false));
+        Layout(view,skip,CaelumJournalInput.PointerFor(100),true);
     }
 }

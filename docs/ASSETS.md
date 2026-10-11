@@ -1,6 +1,15 @@
 # Caelum Argenteum — Audio and art
 
-Documentation version: **5.2.5** — 2026-10-11.
+Documentation version: **5.2.6** — 2026-10-11.
+
+## 5.2.6 - Menu pointer evidence (#184)
+
+Uses existing cursor, card, journal, crafting-item and action-icon artwork;
+no external assets or provenance changes. Development-only native fixtures,
+run hashes, logs and captures live in assets/validation_526. Only src is packaged.
+The fixtures seed an isolated inventory and accelerate completion explicitly;
+they do not establish author acceptance. No IWAD, engine, save or test PK3 is
+redistributed. The existing UI assets will be retained in the #189 migration.
 
 ## 5.2.5 - Dialogue source provenance and evidence (#185)
 

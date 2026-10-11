@@ -32,22 +32,9 @@ class CaelumJournalOverlay : EventHandler
         if (CaelumScheduleCalendar.IsOpen()) return false;
         if (e.Type == UiEvent.Type_KeyDown || e.Type == UiEvent.Type_KeyUp)
         {
-            int scan = 0;
-            switch (e.KeyChar)
-            {
-                case UiEvent.Key_PgDn: scan = InputEvent.Key_PgDn; break;
-                case UiEvent.Key_PgUp: scan = InputEvent.Key_PgUp; break;
-                case UiEvent.Key_Left: scan = InputEvent.Key_LeftArrow; break;
-                case UiEvent.Key_Right: scan = InputEvent.Key_RightArrow; break;
-                case UiEvent.Key_Up: scan = InputEvent.Key_UpArrow; break;
-                case UiEvent.Key_Down: scan = InputEvent.Key_DownArrow; break;
-                case UiEvent.Key_Return: scan = InputEvent.Key_Enter; break;
-                case UiEvent.Key_Tab: scan = InputEvent.Key_Tab; break;
-                case UiEvent.Key_Escape: return false;
-                case 96: return false;
-                case 126: return false;
-                case 32: scan = InputEvent.Key_Space; break;
-            }
+            int scan=CaelumMenuPointer.KeyScan(e.KeyChar);
+            if(scan==InputEvent.Key_Escape || scan==InputEvent.Key_Grave)return false;
+            if(page==3)CaelumJournalInput.PointerFor(4).Reset();
             if (e.Type == UiEvent.Type_KeyDown && (e.KeyString ~== "y"))
             { SendNetworkEvent("ca_skip_open"); return true; }
             if (e.Type == UiEvent.Type_KeyDown && user.CraftingMenuOpen && (e.KeyString ~== "t"))
@@ -56,10 +43,11 @@ class CaelumJournalOverlay : EventHandler
                 scan,e.KeyChar,e.KeyString,user);
             return e.Type == UiEvent.Type_KeyUp ? false : handled;
         }
-        // Las coordenadas reales se invierten con la misma proyección del HUD.
-        Vector2 origin, size;
-        [origin, size] = Screen.VirtualToRealCoords((0,0),(640,360),(640,360),false,false);
-        double x = (e.MouseX-origin.X)*640/size.X, y = (e.MouseY-origin.Y)*360/size.Y;
+        let point=CaelumMenuPointer.JournalPoint(e.MouseX,e.MouseY);
+        double x=point.X,y=point.Y;
+        if(page==3 && !(y>=36 && y<101 && x>=26 && x<614))
+            return CaelumCraftingUI.Mouse(self,user,e.Type,point);
+        if(page==3)CaelumJournalInput.PointerFor(4).Reset();
         if (e.Type == UiEvent.Type_LButtonDown)
         {
             if (y >= 36 && y < 101 && x >= 26 && x < 614)
@@ -70,7 +58,6 @@ class CaelumJournalOverlay : EventHandler
                 SendNetworkEvent("ca_journal_menu_select_sound");
             }
             else if (page==2 && x>=440 && x<612 && y>=104 && y<126)ThermalDetailsOpen=!ThermalDetailsOpen;
-            else if (page == 3) CaelumCraftingUI.Click(self,user,x,y);
             else if (page == 6 && x >= 64 && x < 184 && y >= 150 && y < 310) RequestTarotSelection();
             return true;
         }
@@ -2866,12 +2853,13 @@ class CaelumJournalOverlay : EventHandler
         else if(e.Name=="ca_skip_open") {CaelumTimeSkipState.OpenMenu(requestingPlayer);}
         else if(e.Name=="ca_skip_start") {CaelumTimeSkipState.Start(requestingPlayer);}
         else if(e.Name=="ca_skip_edit") {CaelumTimeSkipState.Edit(requestingPlayer,e.Args[0],e.Args[1]);}
+        else if(e.Name=="ca_skip_field") {CaelumTimeSkipState.SelectField(requestingPlayer,e.Args[0]);}
         else if(e.Name=="ca_skip_cancel")
         {CaelumTimeSkipState.FinishSkip(requestingPlayer,"CA_SKIP_CANCELLED",!CaelumTimeSkipState.IsActive(requestingPlayer));}
         else if(e.Name=="ca_skip_forecast")
         {
             let s=CaelumTimeSkipState.Get(requestingPlayer);
-            if(s!=null && s.Open && !s.Active){s.UseTaskDefault=true;s.HadTask=requestingPlayer.CraftingTaskActive;s.Recalculate(requestingPlayer);}
+            if(s!=null && s.Open && !s.Active && !s.ConfirmPending){s.UseTaskDefault=true;s.HadTask=requestingPlayer.CraftingTaskActive;s.Recalculate(requestingPlayer);}
         }
         else if (e.Name == "ca_table_eat" || e.Name == "ca_table_drink")
         {
@@ -3186,12 +3174,37 @@ class CaelumJournalOverlay : EventHandler
 // El cursor es estado de la interfaz: un handler estático no lo serializa.
 class CaelumJournalInput : StaticEventHandler
 {
+    ui CaelumMenuPointer Pointer;
+    ui int PointerContext;
+    ui Actor PointerOwner;
+    static ui bool SkipOpen(CaelumPlayer user)
+    {
+        let skip=CaelumTimeSkipState(user.FindInventory("CaelumTimeSkipState"));
+        return skip!=null && skip.Open;
+    }
+    static ui CaelumMenuPointer PointerFor(int context)
+    {
+        let handler=CaelumJournalInput(StaticEventHandler.Find("CaelumJournalInput"));
+        if(handler.Pointer==null)handler.Pointer=new("CaelumMenuPointer");
+        let owner=consoleplayer>=0?players[consoleplayer].mo:null;
+        if(handler.PointerContext!=context || handler.PointerOwner!=owner)
+        {handler.Pointer.Reset();handler.PointerContext=context;handler.PointerOwner=owner;}
+        return handler.Pointer;
+    }
+    override void UiTick()
+    {
+        let journal=CaelumJournalOverlay(EventHandler.Find("CaelumJournalOverlay"));
+        let user=consoleplayer>=0?CaelumPlayer(players[consoleplayer].mo):null;
+        int context=0;
+        if(menuactive==0 && user!=null && IsUiProcessor)
+            context=SkipOpen(user)?100:journal!=null && journal.IsJournalOpen()?journal.GetJournalPage()+1:0;
+        PointerFor(context);
+    }
     override void OnRegister() { SetOrder(101); }
     override void WorldUnloaded(WorldEvent e) { IsUiProcessor=false; RequireMouse=false; }
     override void WorldTick()
     {
-        // El Diario solicita el cursor nativo; los paneles modales conservan
-        // sus controles de conversación, calendario, viaje y salto temporal.
+        // Diario y salto temporal comparten la captura nativa sin pausar el mundo.
         let user = consoleplayer >= 0 ? CaelumPlayer(players[consoleplayer].mo) : null;
         bool wanted = false;
         if (user != null)
@@ -3201,9 +3214,9 @@ class CaelumJournalInput : StaticEventHandler
             let calendar = CVar.GetCVar("ca_calendar_open",players[consoleplayer]);
             let journey = CaelumJourneyPlan(user.FindInventory("CaelumJourneyPlan"));
             int current = page == null ? 0 : page.GetInt();
-            wanted = open != null && open.GetBool() && !user.CreationWizardOpen
+            wanted = (CaelumTimeSkipState.IsOpen(user) || (open != null && open.GetBool())) && !user.CreationWizardOpen
                 && (calendar == null || calendar.GetInt() == 0) && (journey == null || !journey.Open)
-                && !CaelumTimeSkipState.IsOpen(user) && !user.HasActiveConversation()
+                && !user.HasActiveConversation()
                 && !user.PalomoMerchantMenuOpen && !CaelumRestState.IsActive(user);
             if (open != null && open.GetBool() && current == 3 && level.Time % 7 == 0)
                 CaelumCraftingBrowser.Get(user).Refresh(user);
@@ -3218,6 +3231,9 @@ class CaelumJournalInput : StaticEventHandler
     override bool UiProcess(UiEvent e)
     {
         let journal = CaelumJournalOverlay(EventHandler.Find("CaelumJournalOverlay"));
-        return journal != null && journal.MouseInput(e);
+        if(journal==null || menuactive!=0)return false;
+        let user=consoleplayer>=0?CaelumPlayer(players[consoleplayer].mo):null;
+        if(user!=null && SkipOpen(user))return CaelumTimeSkipPanel.Mouse(journal,user,e);
+        return journal.MouseInput(e);
     }
 }

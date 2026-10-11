@@ -33,6 +33,7 @@ class CaelumTrucoEvents : StaticEventHandler
 
 class CaelumTrucoMenu : ListMenu
 {
+    CaelumMenuPointer Pointer;
     int CardCursor;
     int Focus;
     int Details;
@@ -50,6 +51,7 @@ class CaelumTrucoMenu : ListMenu
     override void Init(Menu parent,ListMenuDescriptor desc)
     {
         Super.Init(parent,desc);DontDim=true;DontBlur=true;SentSerial=-1;
+        Pointer=new("CaelumMenuPointer");
         // La conversación ha terminado: cerrar Trucazo vuelve al mundo.
         mParentMenu=null;menuactive=Menu.On;
     }
@@ -123,6 +125,7 @@ class CaelumTrucoMenu : ListMenu
     }
     void Choose()
     {
+        Pointer.Reset();
         Choices();if(Operations.Size()==0)return;
         int operation=Operations[Focus];
         if(operation==-1){Details=Details>0?0:1;Focus=0;}
@@ -135,6 +138,7 @@ class CaelumTrucoMenu : ListMenu
     }
     override bool MenuEvent(int mkey,bool fromcontroller)
     {
+        Pointer.Reset();
         Choices();
         if(mkey==MKEY_Left)MoveCard(-1);
         else if(mkey==MKEY_Right)MoveCard(1);
@@ -154,6 +158,7 @@ class CaelumTrucoMenu : ListMenu
     {
         if(e.Type==UIEvent.Type_KeyDown)
         {
+            Pointer.Reset();
             if(e.KeyChar==113 || e.KeyChar==81)return MenuEvent(MKEY_Back,false);
             if(e.KeyChar>=49 && e.KeyChar<=53)
             {
@@ -165,8 +170,36 @@ class CaelumTrucoMenu : ListMenu
         }
         return Super.OnUIEvent(e);
     }
+    override bool MouseEvent(int type,int x,int y)
+    {
+        let match=Match();if(match==null)return true;
+        Choices();Pointer.Clear();
+        Pointer.Move(((x-UILeft())/UIScale(),(y-UITop())/UIScale()));
+        for(int i=0;i<int(Operations.Size());i++)
+            Pointer.Add(100+Operations[i],562,110+i*24,220,24);
+        if(Details==0 && !ConfirmForfeit && match.HandNumber>0 && match.Phase!=CaelumTrucoRules.INTRO)
+            for(int i=0;i<int(match.Sides[0].Hand.Size());i++)
+            {
+                if(match.Sides[0].Used[i])continue;
+                let texture=TexMan.CheckForTexture(CaelumTarotArt.FrontPath(match.Sides[0].Hand[i]),TexMan.Type_Any);
+                if(!texture.IsValid())continue;
+                let size=TexMan.GetScaledSize(texture);double scale=Min(92/size.X,120/size.Y);
+                Pointer.Add(i+1,22+i*105+(92-size.X*scale)/2,390,size.X*scale,size.Y*scale);
+            }
+        int hit=Pointer.Hit();
+        if(hit>0 && hit<100-6)CardCursor=hit-1;
+        else for(int i=0;i<int(Operations.Size());i++)if(hit==100+Operations[i])Focus=i;
+        if(type==MOUSE_Click)Pointer.Press(match.Serial);
+        else if(type==MOUSE_Release)
+        {
+            int control=Pointer.Release(match.Serial);
+            if(control>=100-6)
+                for(int i=0;i<int(Operations.Size());i++)if(control==100+Operations[i]){Focus=i;Choose();break;}
+        }
+        return true;
+    }
     // Dibujo en coordenadas virtuales: las cartas nunca se deforman para llenar
-    // una relación de pantalla distinta. La entrada usa menú/teclado nativos.
+    // una relación de pantalla distinta. El puntero invierte esta misma proyección.
     static double UIScale() {return Min(Screen.GetWidth()/800.0,Screen.GetHeight()/600.0);}
     static double UILeft() {return (Screen.GetWidth()-800*UIScale())/2;}
     static double UITop() {return (Screen.GetHeight()-600*UIScale())/2;}
