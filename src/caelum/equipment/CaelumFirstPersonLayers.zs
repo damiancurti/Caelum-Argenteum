@@ -348,7 +348,7 @@ class CaelumFirstPersonLayers : Object play
 
     static Vector2 Grip(int kind)
     {
-        if (kind == CaelumConstants.WEAPON_TYPE_PICKAXE) return (216,160);
+        if (CaelumWeaponModel.IsSingleTierType(kind)) return (216,160);
         bool ranged=kind==2 || kind==14 || kind==15 || kind==16;
         bool bow=kind==15;
         bool large=kind==10 || kind==11 || kind==12;
@@ -396,13 +396,13 @@ class CaelumFirstPersonLayers : Object play
 
     static bool Handles(int kind)
     {
-        return kind==CaelumConstants.WEAPON_TYPE_PICKAXE || kind==0 || kind==2 || kind==3 || kind==4 || kind==5 || kind==7 || kind==8
+        return CaelumWeaponModel.IsSingleTierType(kind) || kind==0 || kind==2 || kind==3 || kind==4 || kind==5 || kind==7 || kind==8
             || kind==10 || kind==11 || kind==12 || kind==14 || kind==15 || kind==16;
     }
 
     static State Pose(int kind, int tier, int phase)
     {
-        if (kind == CaelumConstants.WEAPON_TYPE_PICKAXE)
+        if (CaelumWeaponModel.IsSingleTierType(kind))
             return CaelumFirstPersonView.Pose(kind, 1, phase);
         return GetDefaultByType("CaelumFirstPersonLayerFrames").FindStateByString(
             String.Format("Weapon_%d_%d_%d",kind,Clamp(tier,1,3),phase));
@@ -410,6 +410,8 @@ class CaelumFirstPersonLayers : Object play
 
     static Vector2 Pivot(int index)
     {
+        if (index >= CaelumConstants.WEAPON_TYPE_UTILITY_STAFF*9
+            && index < (CaelumConstants.WEAPON_TYPE_UTILITY_STAFF+1)*9) return (216,160);
         if (index >= CaelumConstants.WEAPON_TYPE_PICKAXE * 9
             && index < (CaelumConstants.WEAPON_TYPE_PICKAXE + 1) * 9) return (216,160);
         switch(index)
@@ -637,7 +639,8 @@ class CaelumFirstPersonLayers : Object play
         bool bow=kind==15;
         if(!bow){user.A_ClearOverlays(kind==8?47:46,47);user.A_ClearOverlays(53,53);}
         bool large=kind==10 || kind==11 || kind==12;
-        bool rightLeaning=kind==4 || kind==5 || kind==7 || kind==11 || kind==12;
+        bool rightLeaning=kind==4 || kind==5 || kind==7 || kind==11 || kind==12
+            || kind==CaelumConstants.WEAPON_TYPE_UTILITY_STAFF;
         double size=kind==0?1.20:kind==7?1.18:kind==10?1.38:kind==11?1.32:kind==12?1.13:ranged?0.82:1.0;
         vector2 grip=Grip(kind);
         grip+=(dx,dy);

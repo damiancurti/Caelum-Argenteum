@@ -5769,3 +5769,4 @@ Graphic "CA518_DOMIY0_3", 15, 70 { Patch "graphics/caelum/death_repair/domingo-o
 Graphic "CA518_DOMIZ0_0", 15, 43 { Patch "graphics/caelum/death_repair/domingo-original.png", -1093, -896 }
 Graphic "CA518_DOMIZ0_1", 142, 88 { Patch "graphics/caelum/death_repair/domingo-original.png", -1108, -851 }
 // END GENERATED ORIGINAL DOMINGO CLIPS 518
+#include "graphics/caelum/utility_staff/staff.textures"

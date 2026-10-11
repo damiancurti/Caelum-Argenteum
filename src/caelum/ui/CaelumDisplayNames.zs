@@ -17,6 +17,7 @@ class CaelumDisplayNames : Object
             case CaelumConstants.WEAPON_TYPE_HATCHET: return "CA_WEAPON_TYPE_HATCHET";
             case CaelumConstants.WEAPON_TYPE_MACHETE: return "CA_WEAPON_TYPE_MACHETE";
             case CaelumConstants.WEAPON_TYPE_JAVELIN: return "CA_WEAPON_TYPE_JAVELIN";
+            case CaelumConstants.WEAPON_TYPE_UTILITY_STAFF: return "CA_WEAPON_TYPE_UTILITY_STAFF";
             case CaelumConstants.WEAPON_TYPE_PICKAXE: return "CA_WEAPON_TYPE_PICKAXE";
             case CaelumConstants.WEAPON_TYPE_AXE: return "CA_WEAPON_TYPE_AXE";
             case CaelumConstants.WEAPON_TYPE_FLAIL: return "CA_WEAPON_TYPE_FLAIL";
@@ -395,6 +396,7 @@ class CaelumDisplayNames : Object
             case CaelumConstants.CATALOGUE_WEAPON_HATCHET: return CaelumConstants.WEAPON_TYPE_HATCHET;
             case CaelumConstants.CATALOGUE_WEAPON_MACHETE: return CaelumConstants.WEAPON_TYPE_MACHETE;
             case CaelumConstants.CATALOGUE_WEAPON_JAVELIN: return CaelumConstants.WEAPON_TYPE_JAVELIN;
+            case CaelumConstants.CATALOGUE_WEAPON_UTILITY_STAFF: return CaelumConstants.WEAPON_TYPE_UTILITY_STAFF;
             case CaelumConstants.CATALOGUE_WEAPON_PICKAXE: return CaelumConstants.WEAPON_TYPE_PICKAXE;
             case CaelumConstants.CATALOGUE_WEAPON_AXE: return CaelumConstants.WEAPON_TYPE_AXE;
             case CaelumConstants.CATALOGUE_WEAPON_FLAIL: return CaelumConstants.WEAPON_TYPE_FLAIL;

@@ -1,6 +1,30 @@
 # Caelum Argenteum — Audio and art
 
-Documentation version: **5.1.14** — 2026-10-10.
+Documentation version: **5.1.15** — 2026-10-10.
+
+## 5.1.15 - Bronze utility staff (#162)
+
+Original RGBA artwork provides ready, fire, ice and equip poses of a walnut
+shaft with bronze tip. The same ready artwork supplies pickup and inventory
+views through native TEXTURES. Original generation, retained first draft,
+prompt and measured registration are in assets/source/art/utility_staff_5115.
+The atlas is copied byte-for-byte into src/graphics/caelum/utility_staff;
+assets/generators/register_utility_staff.py deterministically registers clips,
+scales and grip pivots without raster retouching. Existing shared hand layers
+hold the tool; fire and ice streams reuse #137's original elemental atlases.
+A native dynamic light follows the actual source and is removed on stop.
+Provenance: src/licenses/UTILITY_STAFF_5115.txt. No Doom art was imported.
+
+Native 1280x720 ready/fire/ice/release captures and test logs are recorded in
+assets/validation_5115. Tool/cap readability, hand alignment and elemental effect
+appearance were inspected in engine; final author acceptance remains CA162-01.
+The unrelated pre-existing art-source deletion remains excluded from this patch.
+
+Author correction, 2026-10-10: rotate the utility staff clockwise into the
+existing right-leaning weapon rest pose, around the shared grip. Ready, fire,
+ice and equip inherit that pose; the measured emission/light origin follows
+the relocated bronze tip. The original atlas, pickup and icon are retained.
+Updated native captures and checks: assets/validation_5115/RESULTS.md.
 
 ## 5.1.14 - Damage-flash travel validation (#165)
 

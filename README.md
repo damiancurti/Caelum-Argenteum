@@ -6,8 +6,19 @@ An independent dark fantasy FPS-RPG inspired by nineteenth-century Argentina.
 Author and game designer: **Damian Curti**. Development target: **GZDoom 4.14.2**
 on Windows 11. The final game is intended to be independent of Doom assets.
 
-**Current release: 5.1.14.** Obtain and update the complete repository, validate
+**Current release: 5.1.15.** Obtain and update the complete repository, validate
 it, then rebuild with `run_dev.bat` as described below.
+
+**5.1.15 / [#162](https://github.com/damiancurti/Caelum-Argenteum/issues/162):**
+A bronze-tipped Utility staff / Bastón joins family 1 beside the Pickaxe. Hold
+primary for fire or secondary for ice; both spend Anima continuously while
+natural regeneration continues. The tool shares the Pickaxe recipe/durability
+and wears once per second of contact. Existing magic staffs are now Wands /
+Varitas, retaining their saved identities. Original tool art now leans right as requested; native thermal,
+crafting, controls and save tests are included. Evidence:
+[validation_5115](assets/validation_5115/RESULTS.md). Author handling/art check
+CA162-01 remains in [pending_test.txt](pending_test.txt). Caella's permanent gift
+and tutorial integration belong to [#164](https://github.com/damiancurti/Caelum-Argenteum/issues/164).
 
 **5.1.14 / [#165](https://github.com/damiancurti/Caelum-Argenteum/issues/165):**
 Damage flashes no longer carry a previous map's timestamp into a new map and
@@ -16,8 +27,7 @@ visual state automatically; Health, inventory, arrival and Tarot are retained.
 Thirty-four native checks pass, including airborne MAP01/MAP02 travel, grounded
 hub travel and save/reload. Evidence: [validation_5114](assets/validation_5114/RESULTS.md).
 The author accepted CA165-01 on 2026-10-10 and requested #165 closure/PR166 merge.
-Acceptance is recorded in [HISTORY](docs/HISTORY.md); [pending_test.txt](pending_test.txt)
-is empty. #158/#160 are closed, with PR159/PR161 merged on 2026-10-10.
+Acceptance is recorded in [HISTORY](docs/HISTORY.md). #158/#160 are closed, with PR159/PR161 merged on 2026-10-10.
 
 **5.1.13 / [#160](https://github.com/damiancurti/Caelum-Argenteum/issues/160):**
 Argento can hand over his existing silver key after the required practices.

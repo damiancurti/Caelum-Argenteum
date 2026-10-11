@@ -1,6 +1,41 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **5.1.14** — 2026-10-10.
+Documentation version: **5.1.15** — 2026-10-10.
+
+## 5.1.15 - Bronze utility staff and wand names (#162, 2026-10-10)
+
+Author decisions: ice matches fire's geometry and power magnitude (4 m, 60 degrees,
+20 kW); maximum durability follows the Pickaxe (10,000 at M). Existing magic staffs
+are renamed Varitas / Wands; Bastón names the new tool. The author additionally
+confirmed the existing wand wear calculation once per second of valid contact,
+including ice, with no wear for empty emission. These are design confirmations,
+not author acceptance of an implemented test.
+
+Implemented distinct append-only equipment/recipe identities, shared elemental
+stream service with demon breath, native light and original bronze-tip art.
+Crafting reuses Pickaxe components, quantities, size/efficiency and station rules;
+no essence was invented. Recipe-book revision 6 is idempotent and preserves old
+knowledge. Existing wand IDs, tiers, essence and native item identities remain.
+Partial wear is saved on the source item and copied by pickup/drop transactions.
+Map unload clears the source and settles paid heat in the departure map.
+
+Static/build and isolated GZDoom 4.14.2 evidence, individual counts, package hashes,
+failed fixture iterations and limitations are recorded in
+assets/validation_5115/RESULTS.md. Tests include real held commands and regeneration,
+heating/cooling, crafting/repair/dismantling, Box/drop/pickup, save during emission,
+5.1.14 migration/reload and original save/package rollback. Native captures were
+visually inspected. No original user save was overwritten and no engine, IWAD,
+fixture PK3 or save is distributed. No temporary keep-awake request was acquired.
+
+CA162-01 (origin 5.1.15 / #162) remains unconfirmed. Caella's permanent grant and
+its narrative/progression acceptance belong to #164, not this isolated tool patch.
+The pre-existing deletion of assets/art_source/Caelum Argenteum.png is excluded.
+
+Author follow-up, 2026-10-10: the only requested change was to lean the staff
+right like the sword and other weapons. The shared right-leaning pose now applies
+to all four staff frames, with the emission/light anchor moved to the tip.
+Focused native visual/mechanics evidence is appended in validation_5115.
+This remains release 5.1.15 and PR167; the corrected pose awaits confirmation.
 
 ## 5.1.14 - Damage flash across map travel (#165, 2026-10-10)
 

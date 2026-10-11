@@ -142,6 +142,7 @@ class CaelumEquipmentItem : Inventory
     int EquipmentSize;
     int Durability;
     int WeaponDurabilityRevision;
+    int UtilityStaffContactTics;
     int ShotgunRevision;
     // La humedad sigue a esta pieza al equiparla, guardarla o soltarla.
     double ThermalWaterKg;
@@ -249,7 +250,7 @@ class CaelumEquipmentItem : Inventory
     int PreviewTier()
     {
         if (PreviewEquipmentKind() == CaelumConstants.EQUIPMENT_KIND_WEAPON
-            && PreviewItemType() == CaelumConstants.WEAPON_TYPE_PICKAXE) return 1;
+            && CaelumWeaponModel.IsSingleTierType(PreviewItemType())) return 1;
         if (HasAcquiredIdentity()) return Tier;
         if (level.MapName == "MAP02") return 1;
         return PickupDataInitialized ? Tier
@@ -434,6 +435,7 @@ class CaelumEquipmentItem : Inventory
             copy.EquipmentSize = EquipmentSize;
             copy.Durability = Durability;
             copy.WeaponDurabilityRevision = WeaponDurabilityRevision;
+            copy.UtilityStaffContactTics = UtilityStaffContactTics;
             copy.ShotgunRevision=ShotgunRevision;
             copy.ThermalWaterKg = ThermalWaterKg;
             copy.EssenceType = EssenceType;
@@ -466,6 +468,7 @@ class CaelumEquipmentItem : Inventory
             copy.EquipmentSize = EquipmentSize;
             copy.Durability = Durability;
             copy.WeaponDurabilityRevision = WeaponDurabilityRevision;
+            copy.UtilityStaffContactTics = UtilityStaffContactTics;
             copy.ShotgunRevision=ShotgunRevision;
             copy.ThermalWaterKg = ThermalWaterKg;
             copy.EssenceType = EssenceType;
@@ -646,6 +649,7 @@ class CaelumWeaponPickup : CaelumEquipmentItem
             case CaelumConstants.WEAPON_TYPE_HATCHET: visual = "CHAT"; break;
             case CaelumConstants.WEAPON_TYPE_MACHETE: visual = "CMAC"; break;
             case CaelumConstants.WEAPON_TYPE_JAVELIN: visual = "CJAV"; break;
+            case CaelumConstants.WEAPON_TYPE_UTILITY_STAFF: visual = "CUST"; break;
             case CaelumConstants.WEAPON_TYPE_PICKAXE: visual = "CPIK"; break;
             case CaelumConstants.WEAPON_TYPE_AXE: visual = "CAXE"; break;
             case CaelumConstants.WEAPON_TYPE_FLAIL: visual = "CFLA"; break;

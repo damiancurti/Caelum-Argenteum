@@ -101,7 +101,7 @@ class CaelumCraftingBrowser : Object play
         {
             Entries.Push(next[i]);
             if (next[i] == selected) SelectedIndex = i;
-            if (Mode == CRAFT) Labels.Push(RecipeName(next[i], next[i] == CaelumConstants.CRAFTING_PICKAXE_RECIPE ? 1 : user.CraftingSelectionTier));
+            if (Mode == CRAFT) Labels.Push(RecipeName(next[i], CaelumCraftingRules.IsSingleTierRecipe(next[i]) ? 1 : user.CraftingSelectionTier));
             else
             {
                 let item = user.FindNativeEquipmentItemById(next[i]);

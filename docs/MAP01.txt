@@ -1,6 +1,18 @@
 CAELUM ARGENTEUM — STORY AND MAP01
 
-Documentation version: **5.1.14** — 2026-10-10.
+Documentation version: **5.1.15** — 2026-10-10.
+
+## 5.1.15 - Utility tool integration boundary (#162 / #164)
+
+The new bronze-tipped Bastón / Utility staff is available to the equipment and
+crafting systems. Existing tiered magic implements are called Varitas / Wands,
+without changing their IDs or current tutorial instances. The author-approved
+permanent Caella gift, removal of loan returns and revised trial progression
+belong to #164, which depends on #162 and #163. This patch does not implement or
+claim acceptance of that grant. Until #164 lands, current trial dialogue still
+refers to the existing loaned wand; that implementation boundary is explicit.
+Tool mechanics and decisions: SYSTEMS; artwork: ASSETS; isolated evidence:
+assets/validation_5115. Full Caella progression validation belongs to #164.
 
 ## 5.1.10 — Physics and traversal integration (#154)
 

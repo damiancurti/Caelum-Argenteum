@@ -13,7 +13,8 @@ class CaelumWeaponCatalogue : Object
     // El Pico hereda la ficha numérica del hacha; sólo cambia familia y filo secundario.
     static int GetStatisticsWeapon(int weaponId)
     {
-        return weaponId == CaelumConstants.CATALOGUE_WEAPON_PICKAXE
+        return (weaponId == CaelumConstants.CATALOGUE_WEAPON_PICKAXE
+            || weaponId == CaelumConstants.CATALOGUE_WEAPON_UTILITY_STAFF)
             ? CaelumConstants.CATALOGUE_WEAPON_AXE : ResolveWeapon(weaponId);
     }
 
@@ -26,6 +27,7 @@ class CaelumWeaponCatalogue : Object
             case CaelumConstants.CATALOGUE_WEAPON_MACHETE: return "CA_WEAPON_CATALOGUE_MACHETE";
             case CaelumConstants.CATALOGUE_WEAPON_JAVELIN: return "CA_WEAPON_CATALOGUE_JAVELIN";
             case CaelumConstants.CATALOGUE_WEAPON_SWORD: return "CA_WEAPON_CATALOGUE_SWORD";
+            case CaelumConstants.CATALOGUE_WEAPON_UTILITY_STAFF: return "CA_WEAPON_CATALOGUE_UTILITY_STAFF";
             case CaelumConstants.CATALOGUE_WEAPON_PICKAXE: return "CA_WEAPON_CATALOGUE_PICKAXE";
             case CaelumConstants.CATALOGUE_WEAPON_AXE: return "CA_WEAPON_CATALOGUE_AXE";
             case CaelumConstants.CATALOGUE_WEAPON_FLAIL: return "CA_WEAPON_CATALOGUE_FLAIL";
@@ -44,7 +46,8 @@ class CaelumWeaponCatalogue : Object
     static int GetFamily(int weaponId)
     {
         int resolved = ResolveWeapon(weaponId);
-        if (resolved == CaelumConstants.CATALOGUE_WEAPON_PICKAXE)
+        if (resolved == CaelumConstants.CATALOGUE_WEAPON_PICKAXE
+            || resolved == CaelumConstants.CATALOGUE_WEAPON_UTILITY_STAFF)
             return CaelumConstants.CATALOGUE_FAMILY_UTILITY;
         if (resolved <= CaelumConstants.CATALOGUE_WEAPON_JAVELIN)
         {
@@ -96,6 +99,7 @@ class CaelumWeaponCatalogue : Object
 
     static double GetPrimaryDamage(int weaponId)
     {
+        if (weaponId == CaelumConstants.CATALOGUE_WEAPON_UTILITY_STAFF) return 0.0;
         switch (GetStatisticsWeapon(weaponId))
         {
             case CaelumConstants.CATALOGUE_WEAPON_DAGGER: return 60.0;
@@ -119,6 +123,7 @@ class CaelumWeaponCatalogue : Object
 
     static double GetSecondaryDamage(int weaponId)
     {
+        if (weaponId == CaelumConstants.CATALOGUE_WEAPON_UTILITY_STAFF) return 0.0;
         switch (GetStatisticsWeapon(weaponId))
         {
             case CaelumConstants.CATALOGUE_WEAPON_DAGGER: return 80.0;
@@ -240,6 +245,7 @@ class CaelumWeaponCatalogue : Object
 
     static double GetPrimaryAirCost(int weaponId)
     {
+        if (weaponId == CaelumConstants.CATALOGUE_WEAPON_UTILITY_STAFF) return 0.0;
         switch (GetStatisticsWeapon(weaponId))
         {
             case CaelumConstants.CATALOGUE_WEAPON_DAGGER:
@@ -264,6 +270,7 @@ class CaelumWeaponCatalogue : Object
 
     static double GetSecondaryAirCost(int weaponId)
     {
+        if (weaponId == CaelumConstants.CATALOGUE_WEAPON_UTILITY_STAFF) return 0.0;
         switch (GetStatisticsWeapon(weaponId))
         {
             case CaelumConstants.CATALOGUE_WEAPON_DAGGER: return 3.0;
