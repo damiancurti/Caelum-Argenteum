@@ -4,6 +4,26 @@ Status: integrated engineering register (issue #22, patch 4.36.1b).
 Prepared: 2026-09-23. Inherits the project's release after integration.
 Inspected baseline: `1dc390576fa330d37ff543526fc7e69a397fc28f` (PR #7).
 
+## CA-KP-081 - Validate contact work through native movement and lazy state initialization
+
+Status/evidence: ENGINE-VERIFIED, #194 / 5.2.11, 2026-10-11.
+Baseline: e9af2707; GZDoom 4.14.2 / Windows 11. Scope: collision contacts,
+crushing pressure inventories and the isolated validation_5211 fixtures.
+
+Calling a solver on a stationary actor verifies arithmetic, not native landing
+detection or passive callbacks. Keep production Tick in motion fixtures, use
+the native CANPASS flag for body-top support, and test real FastProjectile and
+composite-proxy sweeps. Frozen test receivers remain useful for isolated formulas.
+
+GiveInventoryType can return a new pressure inventory before its deferred
+PostBeginPlay. Initializing its pulse guard there overwrote the first recorded
+native crushing tick, causing a second first-pulse calculation. Initialize the
+guard lazily where work is recorded, with a saved bool. Verify same-tic duplicate
+callbacks inside DamageMobj; calling again on the next WorldTick tests another
+tic and is not a duplicate. Native motion/pressure/save-load results and corrected
+failed attempts are retained in assets/validation_5211/RESULTS.md. These tests
+are agent evidence; CA194-01 remains pending author acceptance.
+
 ## CA-KP-080 - Native projectile preparation must precede custom mitigation
 
 Status/evidence: ENGINE-VERIFIED, #192 / 5.2.9, 2026-10-11.

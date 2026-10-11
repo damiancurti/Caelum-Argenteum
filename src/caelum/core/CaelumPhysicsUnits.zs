@@ -16,6 +16,11 @@ class CaelumPhysicsUnits : Object
     const JUMP_MASS_EXPONENT = 0.75;
     const BASE_MUSCULAR_EFFICIENCY = 0.25;
     const MAX_MUSCULAR_EFFICIENCY = 0.99;
+    // #194: densidad existente del granito y aproximación de fluencia elegida
+    // por delegación del autor. No es una constante universal del tejido.
+    const STONE_DENSITY_KG_M3 = 2700.0;
+    const WEIGHT_CREEP_METERS_PER_SECOND = 0.0001;
+    const CRUSHER_CLEARANCE_MU = 8.0;
 
     static clearscope double Meters(double mapUnits)
     { return mapUnits/MAP_UNITS_PER_METER; }

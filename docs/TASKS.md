@@ -1,6 +1,17 @@
 # TASKS.md — Active tasks
 
-Documentation version: **5.2.10** — 2026-10-11.
+Documentation version: **5.2.11** — 2026-10-11.
+
+## Issue #194 - Collision energy and contact area (5.2.11)
+
+Implemented reduced-mass SI energy, bilateral area-weighted defenses, anchored
+gate handling, one-time wear/Toughness and cannon armor-bypass removal. Continuous
+pressure uses accumulated work; static loads use 0.1 mm/s internal creep and
+MAP08's solid-stone ceiling block uses 507600 kg. Decisions are in SYSTEMS and
+the issue; validation evidence is assets/validation_5211/RESULTS.md.
+Outstanding author gameplay check: CA194-01 in pending_test.txt. Keep #194 open
+until acceptance; #195 is the separate bull-specific rebalance. PR198 is accepted
+but not merged; #194 is based on that branch. No unrelated roadmap work is claimed.
 
 ## Issue #192 - Ranged amendment and shotgun naming (5.2.10)
 

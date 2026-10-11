@@ -224,14 +224,16 @@ class CaelumBatteringRam : CaelumHostileMachine
         hit.Vel.X+=result.Normal.X*result.TargetDeltaSpeed;
         hit.Vel.Y+=result.Normal.Y*result.TargetDeltaSpeed;
         int before = hit.health;
+        let bodyArea=CaelumImpactEnergy.RamArea(hit,self,-normal,
+            result.TargetContactMinimumHeightRatio,result.TargetContactMaximumHeightRatio);
         if (user != null)
             user.ReceiveCaelumImpact(result.TargetDeltaSpeed,CaelumConstants.IMPACT_KIND_ENVIRONMENT,
                 Head,1,body.Mass,AssemblyMass,result.ClosingSpeed,result.Impulse,
-                result.TargetContactMinimumHeightRatio,result.TargetContactMaximumHeightRatio);
+                result.TargetContactMinimumHeightRatio,result.TargetContactMaximumHeightRatio,false,-1,bodyArea,-normal);
         else
             npc.ReceiveCaelumImpact(result.TargetDeltaSpeed,CaelumConstants.IMPACT_KIND_ENVIRONMENT,
                 Head,1,body.Mass,AssemblyMass,result.ClosingSpeed,result.Impulse,
-                result.TargetContactMinimumHeightRatio,result.TargetContactMaximumHeightRatio);
+                result.TargetContactMinimumHeightRatio,result.TargetContactMaximumHeightRatio,false,-1,bodyArea,-normal);
         LastDamage = before-hit.health;
     }
 

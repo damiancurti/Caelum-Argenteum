@@ -14,7 +14,8 @@ class CaelumArmorRules : Object
     }
     static double EquipmentRetention(Actor inflictor,Actor source=null)
     {
-        if(inflictor is "CaelumCannonProjectile")return 0;
+        // #194: la bala de cañón conserva toda la absorción de armadura.
+        if(inflictor is "CaelumCannonProjectile")return 1;
         let projectile=CaelumActorProjectile(inflictor);
         double existing=projectile!=null && projectile.CaelumWeaponWearPrepared
             ? WeaponBypass(projectile.CaelumWearWeaponType,projectile.CaelumWearWeaponTier) : 0;

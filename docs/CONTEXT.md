@@ -1,25 +1,27 @@
 # CONTEXT.md — Caelum Argenteum
 
-Documentation version: **5.2.10** — 2026-10-11.
+Documentation version: **5.2.11** — 2026-10-11.
 
-**Current patch 5.2.10 / #192 amendment:** bow bypass 20/30/40%, crossbow
-40/50/60%; all four ranged families exclude offensive ideology. Active names
-use shotgun; fresh test saves authorized. Evidence: validation_5210. CA192-02
-accepted 2026-10-11; #192 closed. PR198 awaits merge. Next: #194.
-5.2.9 personality/power/bell12 and #188 mass-based Toughness remain accepted:
-CA192-01/CA188-01 passed 2026-10-11; PR193/196/197 merged. Prior evidence:
-validation_529/528. Next separate roadmap: #148.
+**Current patch 5.2.11 / #194:** bilateral reduced-mass energy, 1 J = 1 HP;
+area-weighted anatomy/armor, final #188 Toughness once. Anchored gates, body
+landings, scenery, cannon/ram contacts and accumulated pressure work share the
+contract. Cannon armor bypass removed. Static weight uses 0.1 mm/s internal
+creep; MAP08 solid-stone crusher mass 507600 kg. Evidence: validation_5211.
+CA194-01 pending author acceptance. #195 owns bull-specific balance.
+**5.2.10 / #192 amendment:** CA192-02 accepted 2026-10-11; issue closed,
+PR198 open. Bow 20/30/40%, crossbow 40/50/60%; four ranged families exclude
+ideology. Active names use shotgun; fresh test saves authorized. validation_5210.
+5.2.9 personality/power/bell12 and #188 Toughness accepted CA192-01/CA188-01;
+PR193/196/197 merged. Evidence validation_529/528. Separate roadmap: #148.
 
 **5.2.7 / #189 and 5.2.6 / #184 accepted:** native menus/clicks preserve art;
 live panels/NPCs, paused cards/settings, right-drag rest orbit. Evidence:
 validation_527/526. CA184-01/CA189-01 passed 2026-10-11; PR190/191 merged.
 
-**Previous patch 5.2.5 / #185:** per-NPC dialogue sources and main manifest in
-src/dialogues, with deterministic runtime assembly preserving every node/ID.
-Start at src/dialogues/INDEX.md; src/localization/INDEX.md locates all LANGUAGE
-keys. `python build_dialogue_index.py build` regenerates after edits; check,
-project validation and packaging reject stale output. Evidence: validation_525.
-The author accepted #185 and CA183-01 on 2026-10-11; PR187 merge/closure authorized.
+**5.2.5 / #185:** per-NPC sources: src/dialogues/INDEX.md; text keys:
+src/localization/INDEX.md. Regenerate with `python build_dialogue_index.py build`;
+validation rejects stale output. Node/ID order preserved. Evidence: validation_525.
+Accepted 2026-10-11; PR187 merge/closure authorized.
 
 **Previous patch 5.2.4 / #183 (PR186):** simplified creator recommendations and fixed
 profession gifts; Palomo chooses only the Seal. Ronnie exchanges the sole finite
@@ -189,7 +191,9 @@ the original 400 m/s /zero-gate-damage result. Port and export are now author-ac
 merge/closure authorized. Mechanics, debug commands and evidence remain in
 SYSTEMS/HISTORY and assets/validation_43616. Port and export are now author-accepted.
 
-The accepted **4.36.15** (#19) implements breakable actor gates, using approved 30%/50%/70% reductions and 550/650/1,100 kg moving masses. Intact, damaged and broken states persist across save/load and hub travel; old-save and native body-contact tests pass. CA-43611-GATES-01 passed on 2026-09-26. Full implementation and acceptance details remain in HISTORY; subsequent #21 balance supersedes original gate Constitution.
+**4.36.15 / #19:** breakable gates and persistence accepted CA-43611-GATES-01
+on 2026-09-26. Subsequent #21/#188/#194 balance supersedes the original defense
+formulas; SYSTEMS owns current rules and HISTORY preserves the original evidence.
 
 **4.36.14a / #18:** author accepted the corrected gate/cannon/ram forms and
 independent MODELDEF states on 2026-09-26 (CA-43614A-SIEGE-ART-01). MAP03

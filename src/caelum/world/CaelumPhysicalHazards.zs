@@ -157,16 +157,9 @@ class CaelumHazardRock : CaelumRockGraniteHalf
         LastVerticalVictim = other;
         VerticalImpactCount++;
         LastVerticalImpulse = result.Impulse;
-        // El motor resuelve el apoyo. El receptor biológico recibe una sola
-        // transferencia por aterrizaje; no se duplica como choque horizontal.
-        if (user != null)
-            user.ReceiveCaelumImpact(result.TargetDeltaSpeed, CaelumConstants.IMPACT_KIND_ENVIRONMENT,
-                self, GetEnvironmentImpactMultiplier(), receiver.Mass, sourceBody.Mass,
-                result.ClosingSpeed, result.Impulse, 1.0, 1.0);
-        else
-            npc.ReceiveCaelumImpact(result.TargetDeltaSpeed, CaelumConstants.IMPACT_KIND_ENVIRONMENT,
-                self, GetEnvironmentImpactMultiplier(), receiver.Mass, sourceBody.Mass,
-                result.ClosingSpeed, result.Impulse, 1.0, 1.0);
+        sourceBody.SurfaceMultiplier=GetEnvironmentImpactMultiplier();
+        CaelumImpactEnergy.Pair(self,other,sourceBody,receiver,result,CaelumConstants.IMPACT_KIND_ENVIRONMENT);
+
     }
 
     override void Tick()
@@ -349,26 +342,77 @@ class CaelumHazardReleaseSwitch : Actor
 }
 
 // Adaptación de unidades del techo nativo; no es presión estática por masa.
-class CaelumCrushingDamage : Object
+// Trabajo periódico del techo. Los callbacks nativos sólo indican contacto;
+// su antiguo entero porcentual no participa en la energía ni en las defensas.
+class CaelumCrushingDamage : Object play
 {
-    // Umbral interno de GZDoom 4.14.2 (TELEFRAG_DAMAGE), no valor de balance.
     const NATIVE_TELEFRAG_THRESHOLD = 1000000;
-    static double FromNativePercent(double maximumHealth,int percent)
+    const NATIVE_PULSE_TICS = 4;
+
+    static double SectorArea(Sector sector)
     {
-        // Mantener las órdenes especiales de daño forzado del motor. Un pulso
-        // normal convertido no debe alcanzar el umbral reservado al telefrag.
-        if(percent<=0 || percent>=NATIVE_TELEFRAG_THRESHOLD)return percent;
-        double scaled=Max(1.0,maximumHealth)*percent/100.0;
-        return Clamp(scaled,0.0,double(NATIVE_TELEFRAG_THRESHOLD-1));
+        if (sector==null) return 0;
+        double twiceArea=0;
+        for (int i=0;i<sector.lines.Size();i++)
+        {
+            let boundary=sector.lines[i];
+            double term=boundary.v1.p.X*boundary.v2.p.Y-boundary.v2.p.X*boundary.v1.p.Y;
+            if (boundary.frontsector==sector) twiceArea+=term;
+            if (boundary.backsector==sector) twiceArea-=term;
+        }
+        return Abs(twiceArea)*0.5/(CaelumPhysicsUnits.MAP_UNITS_PER_METER**2);
     }
+
+    static double NativeWork(Actor receiver)
+    {
+        Sector sector=receiver.ceilingsector;
+        if (sector==null) return 0;
+        let ceiling=Ceiling(sector.ceilingdata);
+        if (ceiling==null || !ceiling.IsCrusher() || ceiling.GetDirection()!=Ceiling.dirDown) return 0;
+        let pressure=CaelumCeilingPressure(receiver.FindInventory("CaelumCeilingPressure"));
+        if (pressure==null) pressure=CaelumCeilingPressure(receiver.GiveInventoryType("CaelumCeilingPressure"));
+        if (pressure==null) return 0;
+        if (!pressure.Initialized) { pressure.LastPulseTick=-1; pressure.Initialized=true; }
+        if (pressure.LastPulseTick==level.time) return 0;
+        Object source=ceiling;
+        double mass=SectorArea(sector)*CaelumPhysicsUnits.Meters(Abs(ceiling.m_TopHeight-ceiling.m_BottomHeight))
+            *CaelumPhysicsUnits.STONE_DENSITY_KG_M3;
+        let traps=ThinkerIterator.Create("CaelumCrusherTrap"); CaelumCrusherTrap trap;
+        while ((trap=CaelumCrusherTrap(traps.Next()))!=null)
+        {
+            for (int i=0;i<trap.Panels.Size();i++)
+                if (trap.Panels[i]==sector) { source=trap; mass=trap.CrushingMassKg; break; }
+            if (source==trap) break;
+        }
+        int elapsed=pressure.PressureSource==source && pressure.LastPulseTick>=0
+            && level.time-pressure.LastPulseTick<=NATIVE_PULSE_TICS
+            ? Max(1,level.time-pressure.LastPulseTick) : 1;
+        pressure.LastPulseTick=level.time; pressure.PressureSource=source;
+        pressure.LastMassKg=mass;
+        pressure.LastCompressionMeters=CaelumPhysicsUnits.Meters(Max(0.0,ceiling.m_Speed))*elapsed;
+        // El intento de avance contra el cuerpo representa compresión interna,
+        // aunque el motor revierta el plano por falta de espacio.
+        pressure.LastWorkJoules=mass*CaelumPhysicsUnits.EARTH_GRAVITY_MPS2*pressure.LastCompressionMeters;
+        return pressure.LastWorkJoules;
+    }
+}
+
+class CaelumCeilingPressure : Inventory
+{
+    int LastPulseTick;
+    bool Initialized;
+    Object PressureSource;
+    double LastMassKg, LastWorkJoules, LastCompressionMeters;
+    Default { Inventory.MaxAmount 1; +INVENTORY.UNDROPPABLE -INVENTORY.INVBAR }
+    States { Spawn: TNT1 A -1; Stop; }
 }
 
 class CaelumHazardDiagnostics : Object play
 {
     static void Report()
     {
-        Console.Printf("[Caelum 5.2.10] Peligros físicos y mágicos: mapa=%s", level.MapName);
-        Console.Printf("Techos: args[0] expresa porcentaje de vida máxima por pulso nativo; masa estática: Hmax x 0.10 x max(0, (masa encima+carga)/capacidad-1) por segundo.");
+        Console.Printf("[Caelum 5.2.11] Peligros físicos y mágicos: mapa=%s", level.MapName);
+        Console.Printf("Techos: bloque sólido de piedra, masa x g x compresión. Peso estático: exceso de kg x g x 0.0001 m/s. 1 J = 1 HP bruto; Dureza final una vez.");
         let it = ThinkerIterator.Create("CaelumTrapdoor"); CaelumTrapdoor trap;
         int count = 0;
         while ((trap = CaelumTrapdoor(it.Next())) != null)
@@ -383,7 +427,7 @@ class CaelumHazardDiagnostics : Object play
             Console.Printf("Roca TID=%d liberada=%d masa=%.1f radio=%.1f altura=%.1f ampliada=%d velocidad=(%.2f,%.2f,%.2f) impactos verticales=%d impulso=%.2f",
                 rock.tid, rock.Released, rock.GetEnvironmentMassKg(), rock.Radius, rock.Height, rock.BoulderSizeReady, rock.Vel.X, rock.Vel.Y, rock.Vel.Z,
                 rock.VerticalImpactCount, rock.LastVerticalImpulse);
-            Console.Printf("  Salida configurada=%.2f MU/tic; peso en reposo: aplica sobrecarga porcentual.", rock.GetReleaseSpeed());
+            Console.Printf("  Salida configurada=%.2f MU/tic; peso en reposo: trabajo de compresión interna.", rock.GetReleaseSpeed());
         }
         let switches = ThinkerIterator.Create("CaelumHazardReleaseSwitch"); CaelumHazardReleaseSwitch lever;
         while ((lever = CaelumHazardReleaseSwitch(switches.Next())) != null)
@@ -393,12 +437,12 @@ class CaelumHazardDiagnostics : Object play
             if (!playeringame[p]) continue;
             let user = CaelumPlayer(players[p].mo);
             let pressure=user==null?null:CaelumWeightPressure(user.FindInventory("CaelumWeightPressure"));
-            if(pressure!=null)Console.Printf("Peso jugador=%d encima=%.3f kg daño/s=%.3f fracción=%.6f",p,pressure.SupportedMass,pressure.LastDamagePerSecond,pressure.DamageCarry);
+            if(pressure!=null)Console.Printf("Peso jugador=%d encima=%.3f kg J/s=%.3f acumulado=%.6f J",p,pressure.SupportedMass,pressure.LastDamagePerSecond,pressure.DamageCarry);
             if (user != null)
-                Console.Printf("Impacto jugador=%d tipo=%d masa fuente=%.1f velocidad cierre=%.2f porcentaje=%.2f Dureza=%.2f postDureza=%.2f armadura=%.2f daño=%d",
+                Console.Printf("Impacto jugador=%d tipo=%d masa fuente=%.1f velocidad cierre=%.2f recibido=%.2f J amortiguado=%.2f J armadura=%.2f daño=%d HP",
                     p, user.LastImpactKind, user.LastImpactOtherEffectiveMass,
-                    user.LastImpactClosingSpeed, user.LastImpactDamagePercent,
-                    user.LastImpactToughnessPercent, user.LastImpactPostToughnessPercent,
+                    user.LastImpactClosingSpeed, user.LastImpactReceivedJoules,
+                    user.LastImpactCushionedJoules,
                     user.LastImpactArmorDefensePercent, user.LastImpactFinalDamage);
         }
         CaelumMagicHazardWorld.Report();

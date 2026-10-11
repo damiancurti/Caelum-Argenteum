@@ -1,6 +1,34 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **5.2.10** — 2026-10-11.
+Documentation version: **5.2.11** — 2026-10-11.
+
+## 5.2.11 - Received collision energy and bilateral contact area (#194), 2026-10-11
+
+Replaced maximum-Health percentage severity with the author's reduced-mass,
+relative-normal energy at 1 J = 1 raw HP for EACH eligible body. Native impulse
+resolution remains separate. Added physical contact-face area clipping with
+regional armor correlation, recipient cushioning and final #188 Toughness once;
+deferred shared-slot wear until the complete impact is resolved. Gates use the
+anchored energy limit and retain finite material mass for Toughness. Gate/ram
+logical faces remove collision-proxy order dependence. The final author amendment
+removes cannon armor penetration; the large energy damage remains intentional.
+
+Author clarifications: body contacts ignore offensive ideology; moving pressure
+accumulates inelastic work for both bodies; static weight must hurt while still;
+the agent may choose the internal creep rate (documented 0.1 mm/s approximation).
+The ceiling is a solid stone block down to its final clearance, density 2700 kg/m³,
+with gravity-only force: 507600 kg for the MAP08 assembly. Native crushing and
+static weight retain their existing defense applicability. #195 owns bull balance.
+
+Independent review caught clipping at shared boundaries, shared-slot mid-event
+armor wear, crouch bounds, gate/ram proxy geometry and reassignment of prior
+pressure samples to the latest contact. These were corrected and tested. Agent
+evidence, initial failures and corrected native runs are retained in
+assets/validation_5211/RESULTS.md. Current save/load preserves one shared contact
+and pending work; a real 5.2.10 save loads with its contact graph preserved,
+and legacy weight carry resets through EnergyRevision 1 without HP conversion.
+CA194-01 originates in this release and remains pending author acceptance.
+The prior explicit CA192-02 acceptance remains valid; PR198 is still open.
 
 ## 5.2.10 - Ranged penetration amendment and shotgun names (#192), 2026-10-11
 

@@ -1,0 +1,21 @@
+CA194-01 — Collision energy, pressure and cannon armor
+Origin: 5.2.11 / issue #194
+Prerequisites: rebuild the current branch with build_dev.ps1; use a fresh test
+game. Keep a copy of any save/package pair used for comparison. GZDoom 4.14.2.
+1. In MAP05/MAP08, compare wall impacts and falls with different health totals;
+   repeat conscious versus stunned, and moving into stationary versus incoming
+   moving bodies. Verify no repeated full impact while merely resting in contact.
+2. In the siege test area, compare small/large rams and cannon shots on characters
+   and common/reinforced/armored gates. Cannon hits must be devastating, but armor
+   must absorb normally. Gate proxies must not multiply damage; rams take no
+   automatic reaction HP damage. Use `toggle ca_debug_attributes`, then
+   `ca_debug_next_page` to reach the physics page and inspect joules/HP.
+3. In MAP08, trigger the falling/rolling rocks and stone ceiling mechanism. Check
+   landing onto another body, continued pressure and stationary supported weight.
+   Crushing must be energy-based, with no duplicate pulse from neighboring panels.
+4. Save/load during a stable contact or pressure sequence; resume without a new
+   full collision caused solely by loading. Verify controls remain responsive.
+Expected: behavior matches SYSTEMS #194; raw energy is independent of Hmax,
+each eligible body receives its own mitigated damage, and zero final HP loss is
+possible through defenses. Report balance concerns separately; #195 bull changes
+are not implemented or accepted by this check.

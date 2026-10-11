@@ -246,22 +246,20 @@ class CaelumBreakableGate : Actor
             if (ImpactSources[i] == movingSource) { entry = i; break; }
         if (entry >= 0 && serial <= ImpactSerials[entry]) return 0;
         let body = new("ImpactBody");
-        body.Mass = Mass; body.Height = CaelumGateData.HEIGHT;
-        body.Position = Pos; body.Velocity = (0, 0, 0);
-        body.Restitution = CaelumConstants.IMPACT_RESTITUTION; body.SurfaceMultiplier = 1.0;
+        body.Mass=movingMass; body.Height=movingSource.Height;
+        body.Position=movingSource.Pos; body.Velocity=contactVelocity;
         let result = new("ImpactResult");
-        ImpactPhysics.ResolveExternal(body, movingMass, contactVelocity, normal,
-            CaelumConstants.IMPACT_RESTITUTION, result);
+        ImpactPhysics.ResolveStatic(body,normal,result);
         if (!result.Valid) return 0;
         if (entry < 0) { ImpactSources.Push(movingSource); ImpactSerials.Push(serial); }
         else ImpactSerials[entry] = serial;
-        return ReceiveStructuralImpact(movingSource, movingSource.target, result.TargetEnergyPercent, 1.0);
+        return ReceiveStructuralImpact(movingSource, movingSource.target, CaelumImpactEnergy.Received(movingMass,0,result.ClosingSpeed), 1.0);
     }
 
-    int ReceiveStructuralImpact(Actor source, Actor instigator, double energyPercent, double surfaceMultiplier)
+    int ReceiveStructuralImpact(Actor source, Actor instigator, double receivedJoules, double surfaceMultiplier)
     {
         InitializeGate();
-        double postArmor=StructuralMaximum*Max(0.0,energyPercent*surfaceMultiplier)/100.0
+        double postArmor=Max(0.0,receivedJoules*surfaceMultiplier)
             *(1.0-CaelumGateData.ArmorDefense(args[1])/100.0);
         int damage=Max(0,int(CaelumToughnessRules.AfterDefenses(postArmor,Mass,Toughness)+0.5));
         return DamageMobj(source, instigator, damage, 'CaelumImpact', DMG_NO_ARMOR, Angle);
@@ -299,7 +297,7 @@ class CaelumBreakableGate : Actor
         gateBody.Restitution = CaelumConstants.IMPACT_RESTITUTION;
         gateBody.SurfaceMultiplier = 1.0;
         let result = new("ImpactResult");
-        ImpactPhysics.ResolveBodies(sourceBody, gateBody, normal, result);
+        ImpactPhysics.ResolveStatic(sourceBody, normal, result);
         if (!result.Valid) return;
 
         contact = user != null ? user.LatchImpactContact(self) : npc.LatchImpactContact(self);
@@ -317,16 +315,19 @@ class CaelumBreakableGate : Actor
         contact.LastTransmittedImpulse = result.Impulse;
         movingBody.Vel.X -= result.Normal.X * result.SourceDeltaSpeed;
         movingBody.Vel.Y -= result.Normal.Y * result.SourceDeltaSpeed;
-        ReceiveStructuralImpact(movingBody, movingBody, result.TargetEnergyPercent, sourceBody.SurfaceMultiplier);
+        let bodyArea=CaelumImpactEnergy.GateArea(movingBody,self,normal);
+        ReceiveStructuralImpact(movingBody, movingBody, CaelumImpactEnergy.Received(sourceBody.Mass,0,result.ClosingSpeed), sourceBody.SurfaceMultiplier);
         // El proxy ya declara NODAMAGETHRUST: no sumar empuje nativo al impulso.
         if (user != null)
             user.ReceiveCaelumImpact(result.SourceDeltaSpeed, CaelumConstants.IMPACT_KIND_ACTOR,
-                contactSurface, 1.0, sourceBody.Mass, gateBody.Mass, result.ClosingSpeed, result.Impulse,
-                result.SourceContactMinimumHeightRatio, result.SourceContactMaximumHeightRatio);
+                contactSurface, 1.0, sourceBody.Mass, 0, result.ClosingSpeed, result.Impulse,
+                result.SourceContactMinimumHeightRatio, result.SourceContactMaximumHeightRatio,
+                false, -1, bodyArea, normal);
         else
             npc.ReceiveCaelumImpact(result.SourceDeltaSpeed, CaelumConstants.IMPACT_KIND_ACTOR,
-                contactSurface, 1.0, sourceBody.Mass, gateBody.Mass, result.ClosingSpeed, result.Impulse,
-                result.SourceContactMinimumHeightRatio, result.SourceContactMaximumHeightRatio);
+                contactSurface, 1.0, sourceBody.Mass, 0, result.ClosingSpeed, result.Impulse,
+                result.SourceContactMinimumHeightRatio, result.SourceContactMaximumHeightRatio,
+                false, -1, bodyArea, normal);
     }
 
     override void Tick()

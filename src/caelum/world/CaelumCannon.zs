@@ -295,14 +295,20 @@ class CaelumCannonProjectile : FastProjectile
                     sourceBody.Height=Height; sourceBody.Position=Pos; sourceBody.Velocity=FlightVelocity;
                     sourceBody.Restitution=CaelumConstants.IMPACT_RESTITUTION;
                     let result=new("ImpactResult");
-                    ImpactPhysics.ResolveBodies(sourceBody,body,FlightVelocity,result);
+                    vector3 normal=CaelumImpactEnergy.ContactNormal(self,victim,FlightVelocity);
+                    ImpactPhysics.ResolveBodies(sourceBody,body,normal,result);
                     if(result.Valid)
                     {
                         int before=victim.health;
                         victim.Vel.X+=result.Normal.X*result.TargetDeltaSpeed;
                         victim.Vel.Y+=result.Normal.Y*result.TargetDeltaSpeed;
-                        if(user!=null)user.ReceiveCaelumImpact(result.TargetDeltaSpeed,CaelumConstants.IMPACT_KIND_ENVIRONMENT,self,1,body.Mass,sourceBody.Mass,result.ClosingSpeed,result.Impulse,result.TargetContactMinimumHeightRatio,result.TargetContactMaximumHeightRatio);
-                        else npc.ReceiveCaelumImpact(result.TargetDeltaSpeed,CaelumConstants.IMPACT_KIND_ENVIRONMENT,self,1,body.Mass,sourceBody.Mass,result.ClosingSpeed,result.Impulse,result.TargetContactMinimumHeightRatio,result.TargetContactMaximumHeightRatio);
+                        victim.Vel.Z+=result.Normal.Z*result.TargetDeltaSpeed;
+                        CaelumImpactEnergy.Deliver(victim,self,result.TargetDeltaSpeed,
+                            CaelumConstants.IMPACT_KIND_ENVIRONMENT,1,body.Mass,sourceBody.Mass,
+                            result.ClosingSpeed,result.Impulse,result.TargetContactMinimumHeightRatio,
+                            result.TargetContactMaximumHeightRatio,
+                            CaelumImpactEnergy.Received(body.Mass,sourceBody.Mass,result.ClosingSpeed),
+                            null,-normal);
                         AppliedDamage=before-victim.health;
                     }
                 }

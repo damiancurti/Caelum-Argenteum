@@ -6,8 +6,16 @@ An independent dark fantasy FPS-RPG inspired by nineteenth-century Argentina.
 Author and game designer: **Damian Curti**. Development target: **GZDoom 4.14.2**
 on Windows 11. The final game is intended to be independent of Doom assets.
 
-**Current release: 5.2.10.** Obtain and update the complete repository, validate
+**Current release: 5.2.11.** Obtain and update the complete repository, validate
 it, then rebuild with `run_dev.bat` as described below.
+
+5.2.11 replaces collision severity with received energy at 1 J = 1 raw HP for
+each body, area-weighted anatomy/armor and final Toughness once. Fixed gates,
+falls, pressure, weight and stone crushing ceilings use the same energy/work
+contract. Cannonballs retain normal armor absorption. [Evidence](assets/validation_5211/RESULTS.md).
+Author gameplay check CA194-01 remains in [pending_test.txt](pending_test.txt);
+#195 bull balance is separate. The accepted PR198 changes are included, while
+that PR still awaits merge into main.
 
 5.2.10 applies the reopened #192 ranged amendment: longbow armor bypass is
 20/30/40%, crossbow 40/50/60%; carbine 70/80/90% and shotgun 60/70/80% stay
