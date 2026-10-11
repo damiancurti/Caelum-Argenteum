@@ -1,6 +1,19 @@
 # Caelum Argenteum — Project, status and roadmap
 
-Documentation version: **5.2.7** — 2026-10-11.
+Documentation version: **5.2.8** — 2026-10-11.
+
+## 5.2.8 - Mass-based Toughness and status resistance (#188)
+
+Physical damage now subtracts biological mass times Type 3 after defenses;
+direct magic subtracts half. Gates use structural mass. Armor/shield wear can
+occur even when the final HP loss is zero. Explosions/impacts subtract once
+after regional defenses. Burn/poison/disease use Type-1 duration resistance,
+immunity at 100 and healing above 100, recalculating active effects when
+Toughness changes. Thermal environmental rules and projectile status scaling
+from actual HP lost are preserved. Revisioned legacy status import is idempotent.
+Static and isolated GZDoom evidence: assets/validation_528/RESULTS.md.
+CA188-01 awaits author acceptance. Issue #192 follows on a separate branch;
+its personality layers and bell count are not part of this patch.
 
 ## 5.2.7 - Native ownership for all interactive screens (#189)
 

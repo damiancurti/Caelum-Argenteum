@@ -20,6 +20,17 @@ class CaelumElementalStatus : Object
     double PoisonTickAccumulator;
     Actor PoisonSource;
 
+    // La dosis pendiente conserva progreso sin volver a escalar un guardado.
+    int ToughnessRevision;
+    double BaseRemaining[3];
+    double ResponseFactors[3];
+    double HealthFraction[3];
+    double PulseSeconds[3];
+    double BurnVisualRemaining,PoisonVisualRemaining;
+    double DiseaseRemaining,DiseasePower,DiseaseTickAccumulator;
+    int DiseaseDamagePerSecond;
+    Actor DiseaseSource;
+
     double FreezeRemaining;
     double FreezePowerPercent;
     double DazzleRemaining;
@@ -45,53 +56,72 @@ class CaelumElementalStatus : Object
         return newDuration > currentRemaining;
     }
 
-    void ApplyDamageOverTime(
-        int effect,
-        double duration,
-        double power,
-        int damagePerSecond,
-        Actor source
+    double GetRemaining(int index)
+    {return index==0 ? BurnRemaining : index==1 ? PoisonRemaining : DiseaseRemaining;}
+
+    void SetRemaining(int index,double seconds)
+    {
+        if(index==0)BurnRemaining=seconds;
+        else if(index==1)PoisonRemaining=seconds;
+        else DiseaseRemaining=seconds;
+    }
+
+    play void RefreshResistance(Actor receiver)
+    {
+        double response=CaelumToughnessRules.StatusResponse(CaelumToughnessRules.Effective(receiver));
+        if(ToughnessRevision<CaelumToughnessRules.STATUS_REVISION)
+        {
+            // Los campos antiguos expresaban segundos sin resistencia. La
+            // primera lectura los importa una sola vez; no cambia sus fuentes.
+            BurnVisualRemaining=BurnRemaining;PoisonVisualRemaining=PoisonRemaining;
+            HealthFraction[0]=BurnRemaining>0 ? BurnTickAccumulator*BurnDamagePerSecond*(response>0 ? 1 : response<0 ? -1 : 0) : 0;
+            HealthFraction[1]=PoisonRemaining>0 ? PoisonTickAccumulator*PoisonDamagePerSecond*(response>0 ? 1 : response<0 ? -1 : 0) : 0;
+            PulseSeconds[0]=BurnRemaining>0 ? BurnTickAccumulator : 0;
+            PulseSeconds[1]=PoisonRemaining>0 ? PoisonTickAccumulator : 0;
+            BurnTickAccumulator=0;PoisonTickAccumulator=0;
+            for(int i=0;i<3;i++)
+            {
+                BaseRemaining[i]=GetRemaining(i);
+                ResponseFactors[i]=response;
+            }
+            ToughnessRevision=CaelumToughnessRules.STATUS_REVISION;
+        }
+        for(int i=0;i<3;i++)
+        {
+            // La parte pendiente adopta el nuevo sentido al cambiar Dureza.
+            if(response*ResponseFactors[i]<0)HealthFraction[i]=-HealthFraction[i];
+            ResponseFactors[i]=response;
+            if(response==0){BaseRemaining[i]=0;HealthFraction[i]=0;PulseSeconds[i]=0;}
+            SetRemaining(i,BaseRemaining[i]*Abs(response));
+        }
+    }
+
+    play void ApplyDamageOverTime(
+        int effect,double duration,double power,int damagePerSecond,Actor source,Actor receiver
     )
     {
-        duration = Max(0.0, duration);
-        power = Max(0.0, power);
-        damagePerSecond = Max(1, damagePerSecond);
-        if (effect == CaelumConstants.ELEMENTAL_EFFECT_BURN)
+        RefreshResistance(receiver);
+        duration=Max(0.0,duration);power=Max(0.0,power);damagePerSecond=Max(1,damagePerSecond);
+        if(effect==CaelumConstants.ELEMENTAL_EFFECT_CUT)
         {
-            if (!ShouldReplace(power, duration, BurnPower, BurnRemaining))
-            {
-                return;
-            }
-            BurnRemaining = duration;
-            BurnPower = power;
-            BurnDamagePerSecond = damagePerSecond;
-            BurnTickAccumulator = 0.0;
-            BurnSource = source;
+            if(!ShouldReplace(power,duration,CutPower,CutRemaining))return;
+            CutRemaining=duration;CutPower=power;CutDamagePerSecond=damagePerSecond;
+            CutTickAccumulator=0;CutSource=source;return;
         }
-        else if (effect == CaelumConstants.ELEMENTAL_EFFECT_CUT)
-        {
-            if (!ShouldReplace(power, duration, CutPower, CutRemaining))
-            {
-                return;
-            }
-            CutRemaining = duration;
-            CutPower = power;
-            CutDamagePerSecond = damagePerSecond;
-            CutTickAccumulator = 0.0;
-            CutSource = source;
-        }
-        else if (effect == CaelumConstants.ELEMENTAL_EFFECT_POISON)
-        {
-            if (!ShouldReplace(power, duration, PoisonPower, PoisonRemaining))
-            {
-                return;
-            }
-            PoisonRemaining = duration;
-            PoisonPower = power;
-            PoisonDamagePerSecond = damagePerSecond;
-            PoisonTickAccumulator = 0.0;
-            PoisonSource = source;
-        }
+        int index=effect==CaelumConstants.ELEMENTAL_EFFECT_BURN ? 0
+            : effect==CaelumConstants.ELEMENTAL_EFFECT_POISON ? 1
+            : effect==CaelumConstants.ELEMENTAL_EFFECT_DISEASE ? 2 : -1;
+        if(index<0)return;
+        double previousPower=index==0 ? BurnPower : index==1 ? PoisonPower : DiseasePower;
+        if(index==0 && ShouldReplace(power,duration,previousPower,BurnVisualRemaining))BurnVisualRemaining=duration;
+        if(index==1 && ShouldReplace(power,duration,previousPower,PoisonVisualRemaining))PoisonVisualRemaining=duration;
+        if(BaseRemaining[index]>0 && !ShouldReplace(power,duration,previousPower,BaseRemaining[index]))return;
+        BaseRemaining[index]=ResponseFactors[index]!=0 ? duration : 0;
+        SetRemaining(index,BaseRemaining[index]*Abs(ResponseFactors[index]));
+        // Reaplicar nunca reinicia la fracción de vida ya devengada.
+        if(index==0){BurnPower=power;BurnDamagePerSecond=damagePerSecond;BurnSource=source;}
+        else if(index==1){PoisonPower=power;PoisonDamagePerSecond=damagePerSecond;PoisonSource=source;}
+        else {DiseasePower=power;DiseaseDamagePerSecond=damagePerSecond;DiseaseSource=source;}
     }
 
     void ApplyControlEffect(int effect, double duration, double power)
@@ -157,41 +187,60 @@ class CaelumElementalStatus : Object
         if(user!=null)user.PendingDamageVFXKind=previous;
     }
 
+    play void HealStatus(Actor owner,int amount)
+    {
+        if(owner==null || owner.health<=0 || amount<=0)return;
+        let user=CaelumPlayer(owner);let npc=CaelumCombatActor(owner);
+        int maximum=user!=null ? user.CaelumMaximumHealth : npc!=null ? npc.CombatMaximumHealth : owner.GetMaxHealth();
+        owner.health=Min(maximum,owner.health+amount);
+        if(user!=null){user.player.health=user.health;user.UpdateHealthStateEffects();}
+        else if(npc!=null)npc.UpdateCombatHealthEffects();
+    }
+
+    play void TickResistantEffect(Actor owner,int index,double ticSeconds)
+    {
+        double remaining=GetRemaining(index),response=ResponseFactors[index];
+        if(remaining<=0 || response==0)return;
+        double step=Min(ticSeconds,remaining);
+        int rate=index==0 ? BurnDamagePerSecond : index==1 ? PoisonDamagePerSecond : DiseaseDamagePerSecond;
+        Actor source=index==0 ? BurnSource : index==1 ? PoisonSource : DiseaseSource;
+        HealthFraction[index]+=step*rate*(response>0 ? 1 : -1);
+        PulseSeconds[index]+=step;
+        bool deliver=PulseSeconds[index]+0.0000001>=1 || step+0.0000001>=remaining;
+        int whole=deliver ? (HealthFraction[index]>=0 ? int(HealthFraction[index]+0.0000001)
+            : -int(-HealthFraction[index]+0.0000001)) : 0;
+        if(deliver)PulseSeconds[index]=Max(0,PulseSeconds[index]-1);
+        if(whole>0)DealStatusDamage(owner,source,whole,index==0 ? 0 : index==1 ? 5 : -1);
+        else if(whole<0)HealStatus(owner,-whole);
+        HealthFraction[index]-=whole;
+        if(response<0)
+        {
+            let user=CaelumPlayer(owner);let npc=CaelumCombatActor(owner);
+            int maximum=user!=null ? user.CaelumMaximumHealth : npc!=null ? npc.CombatMaximumHealth : owner.GetMaxHealth();
+            if(owner.health>=maximum && HealthFraction[index]<0)HealthFraction[index]=0;
+        }
+        BaseRemaining[index]=Max(0.0,BaseRemaining[index]-step/Abs(response));
+        SetRemaining(index,BaseRemaining[index]*Abs(response));
+        if(GetRemaining(index)<0.0000001){BaseRemaining[index]=0;SetRemaining(index,0);PulseSeconds[index]=0;}
+    }
+
     play void TickDamageOverTime(Actor owner)
     {
-        double ticSeconds = 1.0 / TICRATE;
-        if (BurnRemaining > 0.0)
+        RefreshResistance(owner);
+        double ticSeconds=1.0/TICRATE;
+        for(int i=0;i<3;i++)TickResistantEffect(owner,i,ticSeconds);
+        BurnVisualRemaining=Max(0.0,BurnVisualRemaining-ticSeconds);
+        PoisonVisualRemaining=Max(0.0,PoisonVisualRemaining-ticSeconds);
+        if(BurnRemaining<=0)BurnPower=0;
+        if(PoisonRemaining<=0)PoisonPower=0;
+        if(DiseaseRemaining<=0)DiseasePower=0;
+        if(CutRemaining>0)
         {
-            BurnTickAccumulator += ticSeconds;
-            if (BurnTickAccumulator >= 1.0)
-            {
-                BurnTickAccumulator -= 1.0;
-                DealStatusDamage(owner, BurnSource, BurnDamagePerSecond,0);
-            }
-            BurnRemaining = Max(0.0, BurnRemaining - ticSeconds);
-            if (BurnRemaining <= 0.0) { BurnPower = 0.0; }
-        }
-        if (CutRemaining > 0.0)
-        {
-            CutTickAccumulator += ticSeconds;
-            if (CutTickAccumulator >= 1.0)
-            {
-                CutTickAccumulator -= 1.0;
-                DealStatusDamage(owner, CutSource, CutDamagePerSecond);
-            }
-            CutRemaining = Max(0.0, CutRemaining - ticSeconds);
-            if (CutRemaining <= 0.0) { CutPower = 0.0; }
-        }
-        if (PoisonRemaining > 0.0)
-        {
-            PoisonTickAccumulator += ticSeconds;
-            if (PoisonTickAccumulator >= 1.0)
-            {
-                PoisonTickAccumulator -= 1.0;
-                DealStatusDamage(owner, PoisonSource, PoisonDamagePerSecond,5);
-            }
-            PoisonRemaining = Max(0.0, PoisonRemaining - ticSeconds);
-            if (PoisonRemaining <= 0.0) { PoisonPower = 0.0; }
+            CutTickAccumulator+=ticSeconds;
+            if(CutTickAccumulator>=1.0)
+            {CutTickAccumulator-=1.0;DealStatusDamage(owner,CutSource,CutDamagePerSecond);}
+            CutRemaining=Max(0.0,CutRemaining-ticSeconds);
+            if(CutRemaining<=0)CutPower=0;
         }
     }
 
@@ -222,10 +271,10 @@ class CaelumElementalStatus : Object
     play void UpdateVisualEffects(Actor owner)
     {
         BurnVisual = UpdateVisual(
-            owner, BurnVisual, "CaelumBurnVisual", BurnRemaining > 0.0
+            owner, BurnVisual, "CaelumBurnVisual", BurnVisualRemaining > 0.0
         );
         PoisonVisual = UpdateVisual(
-            owner, PoisonVisual, "CaelumPoisonVisual", PoisonRemaining > 0.0
+            owner, PoisonVisual, "CaelumPoisonVisual", PoisonVisualRemaining > 0.0
         );
         FreezeVisual = UpdateVisual(
             owner, FreezeVisual, "CaelumFreezeVisual", FreezeRemaining > 0.0

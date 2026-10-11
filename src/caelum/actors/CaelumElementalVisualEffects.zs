@@ -21,8 +21,8 @@ class CaelumAttachedElementalVisual : Actor
         if(status==null)return false;
         switch(VisualKind())
         {
-            case 0:return status.BurnRemaining>0;
-            case 1:return status.PoisonRemaining>0;
+            case 0:return status.BurnVisualRemaining>0;
+            case 1:return status.PoisonVisualRemaining>0;
             case 2:return status.FreezeRemaining>0;
             case 3:return status.LightningStunRemaining>0;
         }

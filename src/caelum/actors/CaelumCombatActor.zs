@@ -163,6 +163,7 @@ class CaelumCombatActor : Actor
     double LastCombatEvasionRollPercent;
     double LastCombatHealthLossPercent;
     double LastCombatToughnessDamageMultiplier;
+    double LastCombatPostToughnessDamage;
     double LastCombatPainChancePercent;
     bool LastCombatPainTriggered;
     int LastAnatomyLocation;
@@ -1777,7 +1778,10 @@ class CaelumCombatActor : Actor
 
     double GetImpactToughnessMultiplier(double incomingPercent = 100.0)
     {
-        return CaelumArmorRules.ToughnessMultiplier(incomingPercent, 100.0, CombatToughness);
+        double toughness=CaelumToughnessRules.Effective(self);
+        double damage=GetImpactMaximumHealth()*Max(0.0,incomingPercent)/100.0;
+        return CaelumToughnessRules.RetainedFraction(damage,
+            CaelumToughnessRules.AfterDefenses(damage,CaelumToughnessRules.NaturalMass(self),toughness));
     }
 
     virtual int GetArmorRace() { return CaelumConstants.RACE_HUMAN; }
@@ -2002,7 +2006,8 @@ class CaelumCombatActor : Actor
         LastImpactBaseDamage = 0;
         LastImpactFinalDamage = 0;
         LastImpactToughnessMultiplier = 1.0;
-        LastImpactToughnessPercent = CaelumArmorRules.ToughnessReductionPercent(CombatToughness);
+        double impactToughness=CaelumToughnessRules.Effective(self);
+        LastImpactToughnessPercent = 100.0*CaelumToughnessRules.Reduction(CaelumToughnessRules.NaturalMass(self),impactToughness)/GetImpactMaximumHealth();
         LastImpactArmorDefensePercent = 0.0;
         LastImpactWeightedVulnerabilityMultiplier = 0.0;
         LastImpactWeightedArmorDefensePercent = 0.0;
@@ -2021,9 +2026,7 @@ class CaelumCombatActor : Actor
         double surfacedDamagePercent =
             LastImpactDamagePercent
                 * Max(0.0, sourceSurfaceMultiplier);
-        LastImpactToughnessMultiplier = GetImpactToughnessMultiplier(surfacedDamagePercent);
-        LastImpactPostToughnessPercent = CaelumArmorRules.AfterToughnessPercent(
-            surfacedDamagePercent, CombatToughness);
+        LastImpactPostToughnessPercent = 0.0;
 
         if (AnatomyProfile == null)
         {
@@ -2067,15 +2070,22 @@ class CaelumCombatActor : Actor
                 LastImpactWeightedArmorDefensePercent +=
                     weight * defenseRatio * 100.0;
                 weightedFinalPercent +=
-                    LastImpactPostToughnessPercent
+                    surfacedDamagePercent
                     * weight
                     * vulnerabilityMultiplier
                     * (1.0 - defenseRatio);
+                if(CombatArmor!=null && CombatArmor.Durability[slot]>0)
+                {
+                    double absorbed=GetImpactMaximumHealth()*surfacedDamagePercent/100.0
+                        *weight*vulnerabilityMultiplier*CombatArmor.GetDefense(slot,false)/100.0
+                        *CaelumArmorRules.EquipmentRetention(sourceActor);
+                    CaelumToughnessRules.ImpactWear(CombatArmor,slot,absorbed);
+                }
             }
         }
         else
         {
-            weightedFinalPercent = LastImpactPostToughnessPercent;
+            weightedFinalPercent = surfacedDamagePercent;
             LastImpactWeightedVulnerabilityMultiplier = 1.0;
         }
 
@@ -2085,18 +2095,16 @@ class CaelumCombatActor : Actor
             0,
             int(
                 GetImpactMaximumHealth()
-                * LastImpactPostToughnessPercent / 100.0
+                * surfacedDamagePercent / 100.0
                 + 0.5
             )
         );
-        LastImpactFinalDamage = Max(
-            0,
-            int(
-                GetImpactMaximumHealth()
-                * weightedFinalPercent / 100.0
-                + 0.5
-            )
-        );
+        double postArmor=GetImpactMaximumHealth()*weightedFinalPercent/100.0;
+        double postToughness=CaelumToughnessRules.AfterDefenses(
+            postArmor,CaelumToughnessRules.NaturalMass(self),impactToughness);
+        LastImpactToughnessMultiplier=CaelumToughnessRules.RetainedFraction(postArmor,postToughness);
+        LastImpactPostToughnessPercent=100.0*postToughness/GetImpactMaximumHealth();
+        LastImpactFinalDamage=Max(0,int(postToughness+0.5));
 
         if (LastImpactPostToughnessPercent > 0.0)
         {
@@ -2846,12 +2854,18 @@ class CaelumCombatActor : Actor
         CaelumBolas.FireAttack(self,inflictor,mod);
         if (damage > 0 && ForcedSleepTics > 0)
         { ForcedSleepTics = 0; tics = Max(1, SleepSavedTics); }
-        if (mod == 'CaelumImpact' || mod == 'Crush' || mod == 'CaelumWeight')
+        if (mod == 'CaelumImpact' || mod == 'Crush' || mod == 'CaelumWeight'
+            || CaelumToughnessRules.IsSustained(mod))
         {
             // La misma unidad porcentual para jugadores y NPC. Los impactos
             // cinemáticos ya están calculados y no se convierten otra vez.
+            double preToughnessDamage=damage;
             if (mod == 'Crush' && inflictor == null && source == null)
-                damage = CaelumCrushingDamage.FromNativePercent(GetImpactMaximumHealth(), damage);
+                preToughnessDamage = CaelumCrushingDamage.FromNativePercent(GetImpactMaximumHealth(), damage);
+            if((mod=='Crush' && damage<CaelumCrushingDamage.NATIVE_TELEFRAG_THRESHOLD) || mod=='CaelumWeight')
+                damage=Max(0,int(CaelumToughnessRules.Apply(self,preToughnessDamage)+0.5));
+            if(CaelumToughnessRules.IsSustained(mod))
+            {PendingLocalizedImpact=false;PendingLocalizedCriticalHit=false;}
             int healthBeforeImpact = health;
             double adrenalineRatioBeforeImpact = GetCombatAdrenalineRatio();
             int result = Super.DamageMobj(
@@ -2940,7 +2954,7 @@ class CaelumCombatActor : Actor
         PendingLocalizedCriticalHit = false;
         int retainedDamage = Max(
             0,
-            int(LastCombatArmorPostDefenseDamage + 0.5)
+            int(LastCombatPostToughnessDamage + 0.5)
         );
         if (retainedDamage <= 0) { return 0; }
         int result = Super.DamageMobj(
@@ -3067,10 +3081,11 @@ class CaelumCombatActor : Actor
         LastCombatArmorDurabilityChancePercent = 0.0;
         LastCombatArmorDurabilityRollPercent = 0.0;
         LastCombatToughnessDamageMultiplier = 1.0;
-        double totalPostAnatomyDamage = 0.0;
+
 
         bool magical = CaelumArmorRules.IsMagical(inflictor, mod);
         int totalHealthDamage = 0;
+        double toughness=CaelumToughnessRules.Effective(self);
         int lucidityNaturalGrade = -1;
         int lucidityEffectiveGrade = -1;
         double lucidityDefensePercent = 0.0;
@@ -3094,9 +3109,8 @@ class CaelumCombatActor : Actor
                 vulnerabilityMultiplier *= vulnerabilityMultiplier + 1.0;
             }
             double postAnatomyDamage = incomingDamage * vulnerabilityMultiplier;
-            totalPostAnatomyDamage += postAnatomyDamage;
-            double preDefenseDamage = CaelumArmorRules.AfterToughnessDamage(
-                postAnatomyDamage, GetImpactMaximumHealth(), CombatToughness);
+
+            double preDefenseDamage = postAnatomyDamage;
             double defensePercent = GetArmorDefensePercent(slot, magical,inflictor);
             double defenseRatio = Clamp(defensePercent / 100.0, 0.0, 1.0);
             double absorbedDamage = preDefenseDamage * defenseRatio;
@@ -3114,10 +3128,7 @@ class CaelumCombatActor : Actor
             LastCombatArmorIncomingDamage += preDefenseDamage;
             LastCombatArmorAbsorbedDamage += absorbedDamage;
             LastCombatArmorPostDefenseDamage += postDefenseDamage;
-            totalHealthDamage += Max(
-                0,
-                int(postDefenseDamage + 0.5)
-            );
+
 
             if (naturalGrade == CaelumConstants.VULNERABILITY_CRITICAL_POINT
                 && lucidityNaturalGrade < 0)
@@ -3159,8 +3170,11 @@ class CaelumCombatActor : Actor
             }
         }
 
-        LastCombatToughnessDamageMultiplier = totalPostAnatomyDamage > 0.0
-            ? LastCombatArmorIncomingDamage / totalPostAnatomyDamage : 1.0;
+        LastCombatPostToughnessDamage=CaelumToughnessRules.AfterDefenses(
+            LastCombatArmorPostDefenseDamage,CaelumToughnessRules.NaturalMass(self),toughness,magical);
+        LastCombatToughnessDamageMultiplier=CaelumToughnessRules.RetainedFraction(
+            LastCombatArmorPostDefenseDamage,LastCombatPostToughnessDamage);
+        totalHealthDamage=Max(0,int(LastCombatPostToughnessDamage+0.5));
         if (totalHealthDamage <= 0) { return 0; }
         int healthBeforeDamage = health;
         double adrenalineRatioBeforeDamage = GetCombatAdrenalineRatio();
@@ -3328,10 +3342,7 @@ class CaelumCombatActor : Actor
 
         LastCombatArmorSlot = GetArmorSlotForLocation(LastAnatomyLocation);
         CaelumThermalMagic.Impact(self,inflictor,CaelumThermalMagic.ArmorRetention(self,LastCombatArmorSlot));
-        LastCombatToughnessDamageMultiplier = CaelumArmorRules.ToughnessMultiplier(
-            LastCombatArmorIncomingDamage, GetImpactMaximumHealth(), CombatToughness);
-        LastCombatArmorIncomingDamage = CaelumArmorRules.AfterToughnessDamage(
-            LastCombatArmorIncomingDamage, GetImpactMaximumHealth(), CombatToughness);
+
         LastCombatArmorDefenseExactPercent = GetArmorDefensePercent(LastCombatArmorSlot, magical,inflictor);
         LastCombatArmorDefensePercent = int(LastCombatArmorDefenseExactPercent);
         double defenseRatio = Clamp(
@@ -3345,6 +3356,10 @@ class CaelumCombatActor : Actor
             0.0,
             LastCombatArmorIncomingDamage - LastCombatArmorAbsorbedDamage
         );
+
+        LastCombatPostToughnessDamage=CaelumToughnessRules.Apply(self,LastCombatArmorPostDefenseDamage,magical);
+        LastCombatToughnessDamageMultiplier=CaelumToughnessRules.RetainedFraction(
+            LastCombatArmorPostDefenseDamage,LastCombatPostToughnessDamage);
 
         if (CombatArmor == null
             || CombatArmor.Durability[LastCombatArmorSlot] <= 0

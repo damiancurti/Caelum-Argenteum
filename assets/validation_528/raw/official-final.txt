@@ -1,0 +1,308 @@
+Log started: 2026-10-11 15:12:58
+GZDoom version g4.14.2
+D_DoomInit: Static RNGseed 184 set.
+W_Init: Init WADfiles.
+adding C:/Program Files (x86)/GZDoom/gzdoom.pk3, 692 lumps
+adding C:/Program Files (x86)/GZDoom/game_support.pk3, 3308 lumps
+adding C:/Program Files (x86)/Steam/steamapps/common/ultimate doom/base/doom2/DOOM2.WAD, 2919 lumps
+adding C:/Program Files (x86)/Steam/steamapps/common/Ultimate Doom/rerelease/id24res.wad, 530 lumps
+adding C:/Program Files (x86)/GZDoom/game_widescreen_gfx.pk3, 214 lumps
+adding C:/GZDooMProjects/CaelumArgenteum/build/issue188/official.pk3, 6346 lumps
+adding C:/GZDooMProjects/CaelumArgenteum/build/issue188/native.pk3, 4 lumps
+S_Init: Setting up sound.
+I_InitSound: Initializing OpenAL
+  Opened device OpenAL Soft on G27F (NVIDIA High Definition Audio)
+  EFX enabled
+I_InitInput
+I_StartupMouse
+I_StartupKeyboard
+I_StartupXInput
+I_StartupRawPS2
+I_StartupDirectInputJoystick
+Vulkan device: NVIDIA GeForce RTX 3070 Ti
+Vulkan device type: discrete gpu
+Vulkan version: 1.4.303 (api) 576.352.0 (driver)
+Vulkan extensions: VK_KHR_16bit_storage VK_KHR_8bit_storage VK_KHR_acceleration_structure VK_KHR_bind_memory2 VK_KHR_buffer_device_address VK_KHR_calibrated_timestamps VK_KHR_compute_shader_derivatives VK_KHR_cooperative_matrix VK_KHR_copy_commands2 VK_KHR_create_renderpass2 VK_KHR_dedicated_allocation VK_KHR_deferred_host_operations VK_KHR_depth_stencil_resolve VK_KHR_descriptor_update_template VK_KHR_device_group VK_KHR_draw_indirect_count VK_KHR_driver_properties VK_KHR_dynamic_rendering VK_KHR_dynamic_rendering_local_read VK_KHR_external_fence VK_KHR_external_fence_win32 VK_KHR_external_memory VK_KHR_external_memory_win32 VK_KHR_external_semaphore VK_KHR_external_semaphore_win32 VK_KHR_format_feature_flags2 VK_KHR_fragment_shader_barycentric VK_KHR_fragment_shading_rate VK_KHR_get_memory_requirements2 VK_KHR_global_priority VK_KHR_image_format_list VK_KHR_imageless_framebuffer VK_KHR_index_type_uint8 VK_KHR_line_rasterization VK_KHR_load_store_op_none VK_KHR_maintenance1 VK_KHR_maintenance2 VK_KHR_maintenance3 VK_KHR_maintenance4 VK_KHR_maintenance5 VK_KHR_maintenance6 VK_KHR_maintenance7 VK_KHR_map_memory2 VK_KHR_multiview VK_KHR_pipeline_binary VK_KHR_pipeline_executable_properties VK_KHR_pipeline_library VK_KHR_present_id VK_KHR_present_wait VK_KHR_push_descriptor VK_KHR_ray_query VK_KHR_ray_tracing_maintenance1 VK_KHR_ray_tracing_pipeline VK_KHR_ray_tracing_position_fetch VK_KHR_relaxed_block_layout VK_KHR_sampler_mirror_clamp_to_edge VK_KHR_sampler_ycbcr_conversion VK_KHR_separate_depth_stencil_layouts VK_KHR_shader_atomic_int64 VK_KHR_shader_clock VK_KHR_shader_draw_parameters VK_KHR_shader_expect_assume VK_KHR_shader_float16_int8 VK_KHR_shader_float_controls VK_KHR_shader_float_controls2 VK_KHR_shader_integer_dot_product VK_KHR_shader_maximal_reconvergence VK_KHR_shader_non_semantic_info VK_KHR_shader_quad_control VK_KHR_shader_relaxed_extended_instruction VK_KHR_shader_subgroup_extended_types VK_KHR_shader_subgroup_rotate VK_KHR_shader_subgroup_uniform_control_flow VK_KHR_shader_terminate_invocation VK_KHR_spirv_1_4 VK_KHR_storage_buffer_storage_class VK_KHR_swapchain VK_KHR_swapchain_mutable_format VK_KHR_synchronization2 VK_KHR_timeline_semaphore VK_KHR_uniform_buffer_standard_layout VK_KHR_variable_pointers VK_KHR_vertex_attribute_divisor VK_KHR_video_decode_av1 VK_KHR_video_decode_h264 VK_KHR_video_decode_h265 VK_KHR_video_decode_queue VK_KHR_video_encode_h264 VK_KHR_video_encode_h265 VK_KHR_video_encode_quantization_map VK_KHR_video_encode_queue VK_KHR_video_maintenance1 VK_KHR_video_maintenance2 VK_KHR_video_queue VK_KHR_vulkan_memory_model VK_KHR_win32_keyed_mutex VK_KHR_workgroup_memory_explicit_layout VK_KHR_zero_initialize_workgroup_memory VK_EXT_4444_formats VK_EXT_attachment_feedback_loop_dynamic_state VK_EXT_attachment_feedback_loop_layout VK_EXT_blend_operation_advanced VK_EXT_border_color_swizzle VK_EXT_buffer_device_address VK_EXT_calibrated_timestamps VK_EXT_color_write_enable VK_EXT_conditional_rendering VK_EXT_conservative_rasterization VK_EXT_custom_border_color VK_EXT_depth_bias_control VK_EXT_depth_clamp_control VK_EXT_depth_clamp_zero_one VK_EXT_depth_clip_control VK_EXT_depth_clip_enable VK_EXT_depth_range_unrestricted VK_EXT_descriptor_buffer VK_EXT_descriptor_indexing VK_EXT_device_address_binding_report VK_EXT_device_fault VK_EXT_device_generated_commands VK_EXT_discard_rectangles VK_EXT_dynamic_rendering_unused_attachments VK_EXT_extended_dynamic_state VK_EXT_extended_dynamic_state2 VK_EXT_extended_dynamic_state3 VK_EXT_external_memory_host VK_EXT_fragment_shader_interlock VK_EXT_full_screen_exclusive VK_EXT_global_priority VK_EXT_global_priority_query VK_EXT_graphics_pipeline_library VK_EXT_hdr_metadata VK_EXT_host_image_copy VK_EXT_host_query_reset VK_EXT_image_2d_view_of_3d VK_EXT_image_robustness VK_EXT_image_sliced_view_of_3d VK_EXT_image_view_min_lod VK_EXT_index_type_uint8 VK_EXT_inline_uniform_block VK_EXT_legacy_vertex_attributes VK_EXT_line_rasterization VK_EXT_load_store_op_none VK_EXT_memory_budget VK_EXT_memory_priority VK_EXT_mesh_shader VK_EXT_multi_draw VK_EXT_mutable_descriptor_type VK_EXT_nested_command_buffer VK_EXT_non_seamless_cube_map VK_EXT_opacity_micromap VK_EXT_pageable_device_local_memory VK_EXT_pci_bus_info VK_EXT_pipeline_creation_cache_control VK_EXT_pipeline_creation_feedback VK_EXT_pipeline_library_group_handles VK_EXT_pipeline_robustness VK_EXT_post_depth_coverage VK_EXT_present_mode_fifo_latest_ready VK_EXT_primitive_topology_list_restart VK_EXT_primitives_generated_query VK_EXT_private_data VK_EXT_provoking_vertex VK_EXT_queue_family_foreign VK_EXT_robustness2 VK_EXT_sample_locations VK_EXT_sampler_filter_minmax VK_EXT_scalar_block_layout VK_EXT_separate_stencil_usage VK_EXT_shader_atomic_float VK_EXT_shader_demote_to_helper_invocation VK_EXT_shader_image_atomic_int64 VK_EXT_shader_module_identifier VK_EXT_shader_object VK_EXT_shader_replicated_composites VK_EXT_shader_subgroup_ballot VK_EXT_shader_subgroup_vote VK_EXT_shader_viewport_index_layer VK_EXT_subgroup_size_control VK_EXT_swapchain_maintenance1 VK_EXT_texel_buffer_alignment VK_EXT_tooling_info VK_EXT_transform_feedback VK_EXT_vertex_attribute_divisor VK_EXT_vertex_attribute_robustness VK_EXT_vertex_input_dynamic_state VK_EXT_ycbcr_2plane_444_formats VK_EXT_ycbcr_image_arrays VK_NV_acquire_winrt_display VK_NV_clip_space_w_scaling VK_NV_cluster_acceleration_structure VK_NV_compute_shader_derivatives VK_NV_cooperative_matrix VK_NV_cooperative_matrix2 VK_NV_cooperative_vector VK_NV_copy_memory_indirect VK_NV_corner_sampled_image VK_NV_coverage_reduction_mode VK_NV_cuda_kernel_launch VK_NV_dedicated_allocation VK_NV_dedicated_allocation_image_aliasing VK_NV_descriptor_pool_overallocation VK_NV_device_diagnostic_checkpoints VK_NV_device_diagnostics_config VK_NV_device_generated_commands VK_NV_device_generated_commands_compute VK_NV_disk_cache_utils VK_NV_external_memory VK_NV_external_memory_win32 VK_NV_fill_rectangle VK_NV_fragment_coverage_to_color VK_NV_fragment_shader_barycentric VK_NV_fragment_shading_rate_enums VK_NV_framebuffer_mixed_samples VK_NV_geometry_shader_passthrough VK_NV_inherited_viewport_scissor VK_NV_internal_nvpresent VK_NV_linear_color_attachment VK_NV_low_latency VK_NV_low_latency2 VK_NV_memory_decompression VK_NV_mesh_shader VK_NV_optical_flow VK_NV_partitioned_acceleration_structure VK_NV_present_metering VK_NV_raw_access_chains VK_NV_ray_tracing VK_NV_ray_tracing_invocation_reorder VK_NV_ray_tracing_motion_blur VK_NV_representative_fragment_test VK_NV_sample_mask_override_coverage VK_NV_scissor_exclusive VK_NV_shader_atomic_float16_vector VK_NV_shader_image_footprint VK_NV_shader_sm_builtins VK_NV_shader_subgroup_partitioned VK_NV_shading_rate_image VK_NV_viewport_array2 VK_NV_viewport_swizzle VK_NV_win32_keyed_mutex VK_NVX_binary_import VK_NVX_image_view_handle VK_NVX_multiview_per_view_attributes VK_AMD_buffer_marker VK_GOOGLE_hlsl_functionality1 VK_GOOGLE_user_type
+Max. texture size: 32768
+Max. uniform buffer range: 65536
+Min. uniform buffer offset alignment: 64
+Resolution: 1280 x 720
+I_Init: Setting up machine state.
+CPU speed: 3400 MHz
+CPU Vendor ID: AuthenticAMD
+  Name: AMD Ryzen 9 5950X 16-Core Processor 
+  Family 25 (25), Model 33, Stepping 0
+  Features: SSE2 SSE3 SSSE3 SSE4.1 SSE4.2 AVX AVX2 F16C FMA3 BMI1 BMI2 HyperThreading
+V_Init: allocate screen.
+ST_Init: Init startup screen.
+Checking cmd-line parameters...
+S_InitData: Load sound definitions.
+G_ParseMapInfo: Load map definitions.
+Texman.Init: Init texture manager.
+ParseTeamInfo: Load team definitions.
+LoadActors: Load actor definitions.
+script parsing took 1127.94 ms
+R_Init: Init Doom refresh subsystem.
+DecalLibrary: Load decals.
+M_Init: Init menus.
+P_Init: Init Playloop state.
+ParseSBarInfo: Loading custom status bar definition.
+D_CheckNetGame: Checking network game status.
+player 1 of 1 (1 nodes)
+
+----------------------------------------
+
+MAP01 - The Mansion
+
+[Caelum] Inicio por comando directo: perfil de prueba seguro aplicado.
+[Caelum] Character creation values loaded. Attribute total: 150.00
+CA188 PASS 80kg N0 actual=80.000000000 expected=80.000000000
+CA188 PASS 80kg N20 actual=120.320000000 expected=120.320000000
+CA188 PASS 80kg N100 actual=640.000000000 expected=640.000000000
+CA188 PASS bull physical actual=1353.600000000 expected=1353.600000000
+CA188 PASS bull magical actual=676.800000000 expected=676.800000000
+CA188 PASS Zupay magical actual=689.922720000 expected=689.922720000
+CA188 PASS below equal above R 0 actual=0.000000000 expected=0.000000000
+CA188 PASS below equal above R 1 actual=0.000000000 expected=0.000000000
+CA188 PASS below equal above R 2 actual=1.000000000 expected=1.000000000
+CA188 PASS shared player reduction actual=879.680000000 expected=879.680000000
+CA188 PASS shared NPC reduction actual=879.680000000 expected=879.680000000
+CA188 PASS load and HP do not change R actual=879.680000000 expected=879.680000000
+CA188 PASS NPC artificial mass and HP do not change R actual=879.680000000 expected=879.680000000
+CA188 PASS real bull natural mass actual=900.000000000 expected=900.000000000
+CA188 PASS real bull effective toughness actual=20.000000000 expected=20.000000000
+CA188 PASS real charge does not increase R actual=646.400000000 expected=646.400000000
+CA188 PASS player body anatomy before armor actual=1600.000000000 expected=1600.000000000
+CA188 PASS player innate before toughness actual=1480.000000000 expected=1480.000000000
+CA188 PASS player physical final round actual=1360.000000000 expected=1360.000000000
+CA188 PASS NPC innate before toughness actual=1480.000000000 expected=1480.000000000
+CA188 PASS NPC precise remainder actual=1359.680000000 expected=1359.680000000
+CA188 PASS magical final half reduction actual=1420.000000000 expected=1420.000000000
+CA188 PASS native direct Fire pipeline actual=1420.000000000 expected=1420.000000000
+CA188 PASS native NPC Fire parity actual=1420.000000000 expected=1420.000000000
+CA188 PASS anatomical slot 0 actual=3580.000000000 expected=3580.000000000
+CA188 PASS anatomical slot 1 actual=2840.000000000 expected=2840.000000000
+CA188 PASS anatomical slot 2 actual=2285.000000000 expected=2285.000000000
+CA188 PASS anatomical slot 3 actual=1730.000000000 expected=1730.000000000
+CA188 PASS armor absorbs before zero-health remainder actual=1.000000000 expected=1.000000000
+CA188 PASS zero health hit still calculates armor wear actual=1.000000000 expected=1.000000000
+CA188 PASS bypass preserves innate and flat R actual=536.000000000 expected=536.000000000
+CA188 PASS physical component ignores magical source flag actual=1.000000000 expected=1.000000000
+CA188 PASS direct ice component is magical actual=1.000000000 expected=1.000000000
+CA188 PASS sustained component bypasses flat class actual=1.000000000 expected=1.000000000
+CA188 PASS native ceiling converts percentage then subtracts once actual=99880.000000000 expected=99880.000000000
+CA188 PASS weight final physical mitigation actual=80.000000000 expected=80.000000000
+CA188 PASS NPC weight parity actual=80.000000000 expected=80.000000000
+CA188 PASS player sustained path excludes flat R actual=11.000000000 expected=11.000000000
+CA188 PASS NPC sustained path excludes armor and R actual=11.000000000 expected=11.000000000
+CA188 PASS native forced crush retains invulnerability bypass actual=1.000000000 expected=1.000000000
+CA188 PASS crush conversion keeps fraction until final HP actual=20.000000000 expected=20.000000000
+CA188 PASS native owned shield participates actual=1.000000000 expected=1.000000000
+CA188 PASS partial shield preserves decimals actual=200.600000000 expected=200.600000000
+CA188 PASS partial block armor then one R actual=177.000000000 expected=177.000000000
+CA188 PASS full shield zero remainder actual=0.000000000 expected=0.000000000
+CA188 PASS full shield never reaches health actual=0.000000000 expected=0.000000000
+CA188 PASS full shield still wears actual=995.000000000 expected=995.000000000
+CA188 PASS real zero remainder retains health actual=100000.000000000 expected=100000.000000000
+CA188 PASS real zero remainder commits armor wear actual=1.000000000 expected=1.000000000
+CA188 PASS blast touches several regions actual=1.000000000 expected=1.000000000
+CA188 PASS blast aggregate subtracts R once actual=431.000000000 expected=431.000000000
+CA188 PASS impact kind0 post armor then R actual=41550.000000000 expected=41550.000000000
+CA188 PASS NPC impact kind0 post armor then R actual=41550.000000000 expected=41550.000000000
+CA188 PASS impact kind1 post armor then R actual=10479.000000000 expected=10479.000000000
+CA188 PASS NPC impact kind1 post armor then R actual=10479.000000000 expected=10479.000000000
+CA188 PASS impact kind2 post armor then R actual=10479.000000000 expected=10479.000000000
+CA188 PASS NPC impact kind2 post armor then R actual=2332.000000000 expected=2332.000000000
+CA188 PASS status recipient0 N0 kind0 duration actual=10.000000000 expected=10.000000000
+CA188 PASS status recipient0 N0 kind0 no instant heal/damage actual=50000.000000000 expected=50000.000000000
+CA188 PASS status recipient0 N0 kind0 integrated health actual=49000.000000000 expected=49000.000000000
+CA188 PASS status recipient0 N0 kind0 ends actual=0.000000000 expected=0.000000000
+CA188 PASS status recipient0 N0 kind1 duration actual=10.000000000 expected=10.000000000
+CA188 PASS status recipient0 N0 kind1 no instant heal/damage actual=50000.000000000 expected=50000.000000000
+CA188 PASS status recipient0 N0 kind1 integrated health actual=49000.000000000 expected=49000.000000000
+CA188 PASS status recipient0 N0 kind1 ends actual=0.000000000 expected=0.000000000
+CA188 PASS status recipient0 N0 kind2 duration actual=10.000000000 expected=10.000000000
+CA188 PASS status recipient0 N0 kind2 no instant heal/damage actual=50000.000000000 expected=50000.000000000
+CA188 PASS status recipient0 N0 kind2 integrated health actual=49000.000000000 expected=49000.000000000
+CA188 PASS status recipient0 N0 kind2 ends actual=0.000000000 expected=0.000000000
+CA188 PASS status recipient0 N20 kind0 duration actual=9.280000000 expected=9.280000000
+CA188 PASS status recipient0 N20 kind0 no instant heal/damage actual=50000.000000000 expected=50000.000000000
+CA188 PASS status recipient0 N20 kind0 integrated health actual=49072.000000000 expected=49072.000000000
+CA188 PASS status recipient0 N20 kind0 ends actual=0.000000000 expected=0.000000000
+CA188 PASS status recipient0 N20 kind1 duration actual=9.280000000 expected=9.280000000
+CA188 PASS status recipient0 N20 kind1 no instant heal/damage actual=50000.000000000 expected=50000.000000000
+CA188 PASS status recipient0 N20 kind1 integrated health actual=49072.000000000 expected=49072.000000000
+CA188 PASS status recipient0 N20 kind1 ends actual=0.000000000 expected=0.000000000
+CA188 PASS status recipient0 N20 kind2 duration actual=9.280000000 expected=9.280000000
+CA188 PASS status recipient0 N20 kind2 no instant heal/damage actual=50000.000000000 expected=50000.000000000
+CA188 PASS status recipient0 N20 kind2 integrated health actual=49072.000000000 expected=49072.000000000
+CA188 PASS status recipient0 N20 kind2 ends actual=0.000000000 expected=0.000000000
+CA188 PASS status recipient0 N50 kind0 duration actual=7.000000000 expected=7.000000000
+CA188 PASS status recipient0 N50 kind0 no instant heal/damage actual=50000.000000000 expected=50000.000000000
+CA188 PASS status recipient0 N50 kind0 integrated health actual=49300.000000000 expected=49300.000000000
+CA188 PASS status recipient0 N50 kind0 ends actual=0.000000000 expected=0.000000000
+CA188 PASS status recipient0 N50 kind1 duration actual=7.000000000 expected=7.000000000
+CA188 PASS status recipient0 N50 kind1 no instant heal/damage actual=50000.000000000 expected=50000.000000000
+CA188 PASS status recipient0 N50 kind1 integrated health actual=49300.000000000 expected=49300.000000000
+CA188 PASS status recipient0 N50 kind1 ends actual=0.000000000 expected=0.000000000
+CA188 PASS status recipient0 N50 kind2 duration actual=7.000000000 expected=7.000000000
+CA188 PASS status recipient0 N50 kind2 no instant heal/damage actual=50000.000000000 expected=50000.000000000
+CA188 PASS status recipient0 N50 kind2 integrated health actual=49300.000000000 expected=49300.000000000
+CA188 PASS status recipient0 N50 kind2 ends actual=0.000000000 expected=0.000000000
+CA188 PASS status recipient0 N99 kind0 duration actual=0.179200000 expected=0.179200000
+CA188 PASS status recipient0 N99 kind0 no instant heal/damage actual=50000.000000000 expected=50000.000000000
+CA188 PASS status recipient0 N99 kind0 integrated health actual=49983.000000000 expected=49983.000000000
+CA188 PASS status recipient0 N99 kind0 ends actual=0.000000000 expected=0.000000000
+CA188 PASS status recipient0 N99 kind1 duration actual=0.179200000 expected=0.179200000
+CA188 PASS status recipient0 N99 kind1 no instant heal/damage actual=50000.000000000 expected=50000.000000000
+CA188 PASS status recipient0 N99 kind1 integrated health actual=49983.000000000 expected=49983.000000000
+CA188 PASS status recipient0 N99 kind1 ends actual=0.000000000 expected=0.000000000
+CA188 PASS status recipient0 N99 kind2 duration actual=0.179200000 expected=0.179200000
+CA188 PASS status recipient0 N99 kind2 no instant heal/damage actual=50000.000000000 expected=50000.000000000
+CA188 PASS status recipient0 N99 kind2 integrated health actual=49983.000000000 expected=49983.000000000
+CA188 PASS status recipient0 N99 kind2 ends actual=0.000000000 expected=0.000000000
+CA188 PASS status recipient0 N100 kind0 duration actual=0.000000000 expected=0.000000000
+CA188 PASS status recipient0 N100 kind0 no instant heal/damage actual=50000.000000000 expected=50000.000000000
+CA188 PASS status recipient0 N100 kind0 integrated health actual=50000.000000000 expected=50000.000000000
+CA188 PASS status recipient0 N100 kind0 ends actual=0.000000000 expected=0.000000000
+CA188 PASS status recipient0 N100 kind1 duration actual=0.000000000 expected=0.000000000
+CA188 PASS status recipient0 N100 kind1 no instant heal/damage actual=50000.000000000 expected=50000.000000000
+CA188 PASS status recipient0 N100 kind1 integrated health actual=50000.000000000 expected=50000.000000000
+CA188 PASS status recipient0 N100 kind1 ends actual=0.000000000 expected=0.000000000
+CA188 PASS status recipient0 N100 kind2 duration actual=0.000000000 expected=0.000000000
+CA188 PASS status recipient0 N100 kind2 no instant heal/damage actual=50000.000000000 expected=50000.000000000
+CA188 PASS status recipient0 N100 kind2 integrated health actual=50000.000000000 expected=50000.000000000
+CA188 PASS status recipient0 N100 kind2 ends actual=0.000000000 expected=0.000000000
+CA188 PASS status recipient0 N101 kind0 duration actual=0.180800000 expected=0.180800000
+CA188 PASS status recipient0 N101 kind0 no instant heal/damage actual=50000.000000000 expected=50000.000000000
+CA188 PASS status recipient0 N101 kind0 integrated health actual=50018.000000000 expected=50018.000000000
+CA188 PASS status recipient0 N101 kind0 ends actual=0.000000000 expected=0.000000000
+CA188 PASS status recipient0 N101 kind1 duration actual=0.180800000 expected=0.180800000
+CA188 PASS status recipient0 N101 kind1 no instant heal/damage actual=50000.000000000 expected=50000.000000000
+CA188 PASS status recipient0 N101 kind1 integrated health actual=50018.000000000 expected=50018.000000000
+CA188 PASS status recipient0 N101 kind1 ends actual=0.000000000 expected=0.000000000
+CA188 PASS status recipient0 N101 kind2 duration actual=0.180800000 expected=0.180800000
+CA188 PASS status recipient0 N101 kind2 no instant heal/damage actual=50000.000000000 expected=50000.000000000
+CA188 PASS status recipient0 N101 kind2 integrated health actual=50018.000000000 expected=50018.000000000
+CA188 PASS status recipient0 N101 kind2 ends actual=0.000000000 expected=0.000000000
+CA188 PASS status recipient0 N150 kind0 duration actual=11.000000000 expected=11.000000000
+CA188 PASS status recipient0 N150 kind0 no instant heal/damage actual=50000.000000000 expected=50000.000000000
+CA188 PASS status recipient0 N150 kind0 integrated health actual=51100.000000000 expected=51100.000000000
+CA188 PASS status recipient0 N150 kind0 ends actual=0.000000000 expected=0.000000000
+CA188 PASS status recipient0 N150 kind1 duration actual=11.000000000 expected=11.000000000
+CA188 PASS status recipient0 N150 kind1 no instant heal/damage actual=50000.000000000 expected=50000.000000000
+CA188 PASS status recipient0 N150 kind1 integrated health actual=51100.000000000 expected=51100.000000000
+CA188 PASS status recipient0 N150 kind1 ends actual=0.000000000 expected=0.000000000
+CA188 PASS status recipient0 N150 kind2 duration actual=11.000000000 expected=11.000000000
+CA188 PASS status recipient0 N150 kind2 no instant heal/damage actual=50000.000000000 expected=50000.000000000
+CA188 PASS status recipient0 N150 kind2 integrated health actual=51100.000000000 expected=51100.000000000
+CA188 PASS status recipient0 N150 kind2 ends actual=0.000000000 expected=0.000000000
+CA188 PASS status recipient1 N0 kind0 duration actual=10.000000000 expected=10.000000000
+CA188 PASS status recipient1 N0 kind0 no instant heal/damage actual=50000.000000000 expected=50000.000000000
+CA188 PASS status recipient1 N0 kind0 integrated health actual=49000.000000000 expected=49000.000000000
+CA188 PASS status recipient1 N0 kind0 ends actual=0.000000000 expected=0.000000000
+CA188 PASS status recipient1 N0 kind1 duration actual=10.000000000 expected=10.000000000
+CA188 PASS status recipient1 N0 kind1 no instant heal/damage actual=50000.000000000 expected=50000.000000000
+CA188 PASS status recipient1 N0 kind1 integrated health actual=49000.000000000 expected=49000.000000000
+CA188 PASS status recipient1 N0 kind1 ends actual=0.000000000 expected=0.000000000
+CA188 PASS status recipient1 N0 kind2 duration actual=10.000000000 expected=10.000000000
+CA188 PASS status recipient1 N0 kind2 no instant heal/damage actual=50000.000000000 expected=50000.000000000
+CA188 PASS status recipient1 N0 kind2 integrated health actual=49000.000000000 expected=49000.000000000
+CA188 PASS status recipient1 N0 kind2 ends actual=0.000000000 expected=0.000000000
+CA188 PASS status recipient1 N20 kind0 duration actual=9.280000000 expected=9.280000000
+CA188 PASS status recipient1 N20 kind0 no instant heal/damage actual=50000.000000000 expected=50000.000000000
+CA188 PASS status recipient1 N20 kind0 integrated health actual=49072.000000000 expected=49072.000000000
+CA188 PASS status recipient1 N20 kind0 ends actual=0.000000000 expected=0.000000000
+CA188 PASS status recipient1 N20 kind1 duration actual=9.280000000 expected=9.280000000
+CA188 PASS status recipient1 N20 kind1 no instant heal/damage actual=50000.000000000 expected=50000.000000000
+CA188 PASS status recipient1 N20 kind1 integrated health actual=49072.000000000 expected=49072.000000000
+CA188 PASS status recipient1 N20 kind1 ends actual=0.000000000 expected=0.000000000
+CA188 PASS status recipient1 N20 kind2 duration actual=9.280000000 expected=9.280000000
+CA188 PASS status recipient1 N20 kind2 no instant heal/damage actual=50000.000000000 expected=50000.000000000
+CA188 PASS status recipient1 N20 kind2 integrated health actual=49072.000000000 expected=49072.000000000
+CA188 PASS status recipient1 N20 kind2 ends actual=0.000000000 expected=0.000000000
+CA188 PASS status recipient1 N50 kind0 duration actual=7.000000000 expected=7.000000000
+CA188 PASS status recipient1 N50 kind0 no instant heal/damage actual=50000.000000000 expected=50000.000000000
+CA188 PASS status recipient1 N50 kind0 integrated health actual=49300.000000000 expected=49300.000000000
+CA188 PASS status recipient1 N50 kind0 ends actual=0.000000000 expected=0.000000000
+CA188 PASS status recipient1 N50 kind1 duration actual=7.000000000 expected=7.000000000
+CA188 PASS status recipient1 N50 kind1 no instant heal/damage actual=50000.000000000 expected=50000.000000000
+CA188 PASS status recipient1 N50 kind1 integrated health actual=49300.000000000 expected=49300.000000000
+CA188 PASS status recipient1 N50 kind1 ends actual=0.000000000 expected=0.000000000
+CA188 PASS status recipient1 N50 kind2 duration actual=7.000000000 expected=7.000000000
+CA188 PASS status recipient1 N50 kind2 no instant heal/damage actual=50000.000000000 expected=50000.000000000
+CA188 PASS status recipient1 N50 kind2 integrated health actual=49300.000000000 expected=49300.000000000
+CA188 PASS status recipient1 N50 kind2 ends actual=0.000000000 expected=0.000000000
+CA188 PASS status recipient1 N99 kind0 duration actual=0.179200000 expected=0.179200000
+CA188 PASS status recipient1 N99 kind0 no instant heal/damage actual=50000.000000000 expected=50000.000000000
+CA188 PASS status recipient1 N99 kind0 integrated health actual=49983.000000000 expected=49983.000000000
+CA188 PASS status recipient1 N99 kind0 ends actual=0.000000000 expected=0.000000000
+CA188 PASS status recipient1 N99 kind1 duration actual=0.179200000 expected=0.179200000
+CA188 PASS status recipient1 N99 kind1 no instant heal/damage actual=50000.000000000 expected=50000.000000000
+CA188 PASS status recipient1 N99 kind1 integrated health actual=49983.000000000 expected=49983.000000000
+CA188 PASS status recipient1 N99 kind1 ends actual=0.000000000 expected=0.000000000
+CA188 PASS status recipient1 N99 kind2 duration actual=0.179200000 expected=0.179200000
+CA188 PASS status recipient1 N99 kind2 no instant heal/damage actual=50000.000000000 expected=50000.000000000
+CA188 PASS status recipient1 N99 kind2 integrated health actual=49983.000000000 expected=49983.000000000
+CA188 PASS status recipient1 N99 kind2 ends actual=0.000000000 expected=0.000000000
+CA188 PASS status recipient1 N100 kind0 duration actual=0.000000000 expected=0.000000000
+CA188 PASS status recipient1 N100 kind0 no instant heal/damage actual=50000.000000000 expected=50000.000000000
+CA188 PASS status recipient1 N100 kind0 integrated health actual=50000.000000000 expected=50000.000000000
+CA188 PASS status recipient1 N100 kind0 ends actual=0.000000000 expected=0.000000000
+CA188 PASS status recipient1 N100 kind1 duration actual=0.000000000 expected=0.000000000
+CA188 PASS status recipient1 N100 kind1 no instant heal/damage actual=50000.000000000 expected=50000.000000000
+CA188 PASS status recipient1 N100 kind1 integrated health actual=50000.000000000 expected=50000.000000000
+CA188 PASS status recipient1 N100 kind1 ends actual=0.000000000 expected=0.000000000
+CA188 PASS status recipient1 N100 kind2 duration actual=0.000000000 expected=0.000000000
+CA188 PASS status recipient1 N100 kind2 no instant heal/damage actual=50000.000000000 expected=50000.000000000
+CA188 PASS status recipient1 N100 kind2 integrated health actual=50000.000000000 expected=50000.000000000
+CA188 PASS status recipient1 N100 kind2 ends actual=0.000000000 expected=0.000000000
+CA188 PASS status recipient1 N101 kind0 duration actual=0.180800000 expected=0.180800000
+CA188 PASS status recipient1 N101 kind0 no instant heal/damage actual=50000.000000000 expected=50000.000000000
+CA188 PASS status recipient1 N101 kind0 integrated health actual=50018.000000000 expected=50018.000000000
+CA188 PASS status recipient1 N101 kind0 ends actual=0.000000000 expected=0.000000000
+CA188 PASS status recipient1 N101 kind1 duration actual=0.180800000 expected=0.180800000
+CA188 PASS status recipient1 N101 kind1 no instant heal/damage actual=50000.000000000 expected=50000.000000000
+CA188 PASS status recipient1 N101 kind1 integrated health actual=50018.000000000 expected=50018.000000000
+CA188 PASS status recipient1 N101 kind1 ends actual=0.000000000 expected=0.000000000
+CA188 PASS status recipient1 N101 kind2 duration actual=0.180800000 expected=0.180800000
+CA188 PASS status recipient1 N101 kind2 no instant heal/damage actual=50000.000000000 expected=50000.000000000
+CA188 PASS status recipient1 N101 kind2 integrated health actual=50018.000000000 expected=50018.000000000
+CA188 PASS status recipient1 N101 kind2 ends actual=0.000000000 expected=0.000000000
+CA188 PASS status recipient1 N150 kind0 duration actual=11.000000000 expected=11.000000000
+CA188 PASS status recipient1 N150 kind0 no instant heal/damage actual=50000.000000000 expected=50000.000000000
+CA188 PASS status recipient1 N150 kind0 integrated health actual=51100.000000000 expected=51100.000000000
+CA188 PASS status recipient1 N150 kind0 ends actual=0.000000000 expected=0.000000000
+CA188 PASS status recipient1 N150 kind1 duration actual=11.000000000 expected=11.000000000
+CA188 PASS status recipient1 N150 kind1 no instant heal/damage actual=50000.000000000 expected=50000.000000000
+CA188 PASS status recipient1 N150 kind1 integrated health actual=51100.000000000 expected=51100.000000000
+CA188 PASS status recipient1 N150 kind1 ends actual=0.000000000 expected=0.000000000
+CA188 PASS status recipient1 N150 kind2 duration actual=11.000000000 expected=11.000000000
+CA188 PASS status recipient1 N150 kind2 no instant heal/damage actual=50000.000000000 expected=50000.000000000
+CA188 PASS status recipient1 N150 kind2 integrated health actual=51100.000000000 expected=51100.000000000
+CA188 PASS status recipient1 N150 kind2 ends actual=0.000000000 expected=0.000000000
+CA188 PASS unchanged rate during shortened burn actual=49900.000000000 expected=49900.000000000
+CA188 PASS attribute change rescales remaining dose actual=6.245689655 expected=6.245689655
+CA188 PASS refresh never compounds duration actual=6.245689655 expected=6.245689655
+CA188 PASS active effect becomes healing actual=9.814655172 expected=9.814655172
+CA188 PASS active healing retains original rate actual=50000.000000000 expected=50000.000000000
+CA188 PASS active immunity ends damaging/healing dose actual=0.000000000 expected=0.000000000
+CA188 PASS immunity never has a damaging first tick actual=50000.000000000 expected=50000.000000000
+CA188 PASS immunity keeps independent visual flames actual=1.000000000 expected=1.000000000
+CA188 PASS healing respects maximum health actual=100000.000000000 expected=100000.000000000
+CA188 PASS subsecond disease retains 77 HP dose actual=49923.000000000 expected=49923.000000000
+CA188 PASS weaker source cannot replace stronger dose actual=7.000000000 expected=7.000000000
+CA188 PASS equal power extends once actual=14.000000000 expected=14.000000000
+CA188 PASS stronger source replaces actual=0.700000000 expected=0.700000000
+CA188 PASS expired legacy effects cannot bank damage actual=0.000000000 expected=0.000000000
+CA188 PASS fractional repeated subsecond doses accumulate actual=49993.000000000 expected=49993.000000000
+CA188 PASS legacy one-second pain pulse preserved actual=100000.000000000 expected=100000.000000000
+CA188 PASS whole second delivers original rate actual=99900.000000000 expected=99900.000000000
+CA188 PASS gate mass fixture 0 actual=935.000000000 expected=935.000000000
+CA188 PASS gate final defense ordering 0 actual=5500.000000000 expected=5500.000000000
+CA188 PASS gate mass fixture 1 actual=2015.000000000 expected=2015.000000000
+CA188 PASS gate final defense ordering 1 actual=5985.000000000 expected=5985.000000000
+CA188 PASS gate mass fixture 2 actual=5720.000000000 expected=5720.000000000
+CA188 PASS gate final defense ordering 2 actual=1280.000000000 expected=1280.000000000
+CA188 PASS unpaused native world advances active dose actual=5.000000000 expected=5.000000000
+CA188 DONE failures=0 passes=249

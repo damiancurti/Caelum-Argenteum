@@ -1,16 +1,15 @@
 # CONTEXT.md — Caelum Argenteum
 
-Documentation version: **5.2.7** — 2026-10-11.
+Documentation version: **5.2.8** — 2026-10-11.
 
-**Current patch 5.2.7 / #189:** interactive overlays use native menus, retaining
-art and actions. Live panels and NPC dialogue
-remain live; cards and Escape/settings remain paused. Rest: right-drag orbit,
-left-click controls. Creator and guarded NPC response clicks implemented.
-Evidence: assets/validation_527/RESULTS.md. CA184-01/CA189-01 passed on 2026-10-11,
-unqualified; PR190/191 merges and #184/#189 closure authorized. Author queue empty.
+**Current patch 5.2.8 / #188:** post-defense Toughness uses biological mass
+times Type3 (half for direct magic); gates use structural mass. Burn/poison/disease
+use Type1 duration, immunity at 100 and healing above, with dynamic recalculation
+and idempotent save import. Evidence: validation_528; CA188-01 pending. #192 next.
 
-**Previous patch 5.2.6 / #184:** guarded mouse controls in cards, crafting and
-time skip. Evidence: validation_526. CA184-01 passed author acceptance.
+**5.2.7 / #189 and 5.2.6 / #184 accepted:** native menus/clicks preserve art;
+live panels/NPCs, paused cards/settings, right-drag rest orbit. Evidence:
+validation_527/526. CA184-01/CA189-01 passed 2026-10-11; PR190/191 merged.
 
 **Previous patch 5.2.5 / #185:** per-NPC dialogue sources and main manifest in
 src/dialogues, with deterministic runtime assembly preserving every node/ID.

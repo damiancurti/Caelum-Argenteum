@@ -1,6 +1,78 @@
 # Caelum Argenteum — Current systems and rules
 
-Documentation version: **5.2.7** — 2026-10-11.
+Documentation version: **5.2.8** — 2026-10-11.
+
+## Mass-based Toughness and sustained resistance - 5.2.8 / #188
+
+This contract supersedes the maximum-Health subtraction, armor-last ordering,
+per-region Toughness/HP rounding and NPC DOT asymmetry described under #52 and
+the earlier impact/gate examples. Equipment absorption values, anatomical
+grades, kinetic severity, thermal environmental resistance and pain/lucidity
+curves retain their existing definitions.
+
+For effective Toughness N (including equipment bonuses, without an upper cap):
+`B=(N*N+25*N)/125`, `M3=1+7*B/100`, `R=naturalMassKg*M3`.
+Use the player's derived biological BaseMass or the NPC's natural actor Mass;
+equipment, carried load, charge/artificial collision mass and maximum Health
+do not contribute to R. There is no extra damage-unit factor of ten.
+Existing shield absorption/coverage precedes anatomical/critical resolution
+and additive innate/equipped armor. Subtract R from the resulting physical
+damage, or R/2 from direct magical damage, clamp to zero, then round HP once.
+Wear is calculated from the absorbed portion before Toughness, including hits
+whose final HP damage is zero. Innate absorption does not wear equipment.
+Do not round the shield remainder before the armor/Toughness stages.
+
+Explosions retain reached-region sampling and regional armor wear. Sum the
+precise post-armor regional components, subtract R or R/2 once for the hit,
+then round once. Impacts/falls retain movement amortization, surface and
+weighted anatomy/armor; convert severity to HP before subtracting physical R
+once. The existing acrobatic buckler/gauntlet bonus doubles effective N.
+Native crushing converts ordinary percentage pulses to precise HP before R;
+forced native telefrag-level sentinels retain their engine semantics.
+Existing bypasses such as drowning/resource depletion are unchanged.
+
+The author applies the same rule to gates using structural mass: common,
+reinforced and armored gates retain masses 550/650/1100 kg, N=25/50/75 and
+10/20/30% armor. Their physical R values are 935/2015/5720 HP; magical R is
+half. Existing structural maximum Health, gate revisions, duplicate-contact
+protection and open/broken state are unchanged. Old hit-count tables below
+are historical observations, not current #188 thresholds.
+
+| Fixture | Physical R | Direct magical R |
+| --- | ---: | ---: |
+| 80 kg, N=0 | 80 | 40 |
+| 80 kg, N=20 | 120.32 | 60.16 |
+| 80 kg, N=100 | 640 | 320 |
+| Bull, 900 kg, N=20 | 1353.6 | 676.8 |
+| Zupay, 666 kg, N=33 | 1379.84544 | 689.92272 |
+
+Burn, poison and disease use Type-1 response `S=1-B/100`. Positive S shortens
+base duration by S without changing the original DPS. At N=100 the harmful
+dose is absent from the first tick. Negative S heals at the original absolute
+rate for `baseDuration*abs(S)`, capped at maximum Health without resurrection.
+Sustained damage bypasses flat R and armor on players and supported NPCs.
+Disease has shared processing support; this patch invents no disease source,
+contagion, base duration or balance values. Cut/control effects retain their rules.
+The environmental hypothermia/hyperthermia system remains separate and unchanged.
+
+Each effect stores remaining unscaled duration, response, fractional HP and
+pulse progress. Attribute changes preserve consumed normalized progress and
+recompute the remaining duration; they do not restart an effect. Pending dose
+adopts the new damage/healing sign; immunity clears it. Pulses remain one
+second apart to preserve existing pain processing, with a proportional final
+pulse for subsecond effects. Fractional HP survives reapplication; no integer
+minimum is imposed per tic. Stronger/equal-longer source replacement remains.
+Burn/poison visual clocks are independent from the health dose; thermal energy
+remains independent too. Projectile status activation and DPS still derive
+from actual direct HP lost, as explicitly requested by the author.
+
+Status schema revision 1 imports only active legacy clocks/durations once.
+Repeated save/load cannot scale duration again. Keep an untouched original
+save and the previous source/package for rollback; downgrading a newly written
+save is not promised. Native migration, repeated loading and rollback evidence,
+plus controlled combat/status fixtures, are in assets/validation_528/RESULTS.md.
+Author gameplay acceptance remains pending under CA188-01.
+
 
 ## Native interactive menus - 5.2.7 / #189
 
@@ -667,7 +739,7 @@ integer truncation, base bonuses and operation order remain consumer-specific.
 Health/Anima maxima, damage, push and precision use Type 3. Air/Adrenaline,
 capacity, attack/cast speed, regeneration factors and the Constitution needs
 divisor use Type 2. Critical/evasion/dialogue bonuses use Type 1. Toughness
-still subtracts B percentage points of maximum Health from ordinary damage;
+now uses mass times Type 3 after defenses, half for direct magic (#188);
 thermal resistance clamps B/100 to [0,1], whereas thermal thresholds use 1+B/100.
 Resilience adaptation uses 1+B/100: at 100, +/-10 C at 2 C/world day, still five
 days from the racial base. The Box uses `2+int((100+7B)/50)`, hence 4/18 slots
@@ -3079,6 +3151,10 @@ on 2026-09-28; its result is recorded in HISTORY.
 
 ## 4.36.23 — Armor last, body absorption and gate defense (#52)
 
+**Historical contract:** Toughness ordering, DOT asymmetry, HP rounding and
+gate/impact thresholds in this section are superseded by 5.2.8 / #188 above.
+The absorption tables and attribution remain current unless separately revised.
+
 Author-approved design, 2026-09-27. For ordinary physical/magical attacks the
 order is (1) existing shield blocking, (2) anatomical vulnerability, reinforcement
 and critical, (3) Toughness, (4) additive innate and equipped armor absorption.
@@ -4134,9 +4210,10 @@ E is a reference percentage, not physical energy in joules. Its undamaged thresh
 u≤0,8 MU/tic; u=28 produces E=100%. It is not limited to 100%. The height of the
 character no longer alters the reference of 28 MU.
 
-    P = max(0, S·E - (T*T+25*T)/125)  [uncapped growth restored in #52, 2026-09-28]
+    P = S·E
+    R = biologicalMassKg * (1 + 7*(T*T+25*T)/12500)  [#188]
     W = suma_i [ wi · Vi · (1−Ai) ]
-    Daño = floor(Hmax · P · W / 100 + 0,5)
+    Damage = floor(max(0, Hmax * P * W / 100 - R) + 0.5)
 
 S is the surface multiplier (rock: 1); T is the effective Toughness attribute level;
 Hmax is maximum health, not remaining health. wi weights anatomical overlap; Vi is
@@ -4145,7 +4222,7 @@ between 0 and 1. Vi can be 2, 1,6, 1,3, 1, 0,8, 0,6 or 0,4. The vertical impact 
 rock has contact in relative height 1,0. The final damage uses CaelumImpact and avoids a
 second armor application.
 
-Calculated example, not an in-game test: ms=38170 kg, mt=75 kg, Hmax=1780, T=13, S=1,
+Historical pre-#188 calculated example, not current damage values: ms=38170 kg, mt=75 kg, Hmax=1780, T=13, S=1,
 W=1, without damping. The receiver is initially stationary.
 
 | Closing speed (MU/tic) | Received Δv | E (%) | Rounded damage |
@@ -6088,8 +6165,8 @@ lucidity, Dialogue skill and durations do not share a single curve today.
 | Attribute / family | Implemented combat use | Implemented noncombat use | Differences from the table |
 | --- | --- | --- | --- |
 | Strength / Physical | Melee damage and physical thrust Type 3, with body mass. | Load Type 2; object thrust and launch power use Strength. | It matches the main thing. "Physical power" is not another independent universal effect: it is expressed in the routes of damage, thrust and launch. |
-| Hardness / Physical | Ordinary physical/magic damage subtracts uncapped R(T)=(T*T+25*T)/125 percentage points of maximum health after anatomy and before final armor (#52, 2026-09-28). Pain and loss of Lucidity use Type 1 complement. | Since the #52 revision, kinematic impacts subtract R(T) after biological absorption/surface and before anatomy/armor. | Scales must be updated and the scope of “environmental damage” must be narrowed: it is not universal resistance to drowning, drainage for needs or any damage outside the classified system. |
-| Constitution / Physical | Maximum health Type 3, with body mass. | Passive Hunger/Thirst/Sleep and natural health regeneration costs/Air divided by Type 2. | It is not connected to shortening debuffs or incoming poisons. There is no disease system implemented that applies that duration. |
+| Hardness / Physical | After defenses, subtract natural mass times Type3 from physical damage, half from direct magic (#188). Burn/poison/disease use Type1 duration response: immunity at 100, healing above. Pain and Lucidity retain their existing curves. | Environmental thermal rules remain separate. | Disease processing exists; no gameplay disease source is introduced. |
+| Constitution / Physical | Maximum health Type 3, with body mass. | Passive Hunger/Thirst/Sleep and natural health regeneration costs/Air divided by Type 2. | It is not connected to shortening debuffs or incoming poisons. Shared disease duration processing uses Toughness (#188); no gameplay disease source is implemented. |
 | Dexterity / Technical | Attack speed Type 2, physical precision Type 3 and physical critical chance Type 1. It also reduces the ranged-weapon reload time by Type 2. | Type 3 reduces the working time of materials in manufacture. | The ammunition reload belongs here; it is appropriate to distinguish it from the cooldown of skills when updating the table. Crafting covers a specific manual use, not a general system of accuracy rolls. |
 | Resilience / Technical | Maximum Adrenaline, Health Regeneration Factor and Air Capacity Type 2. | Acclimatization rate and displacement limit use base plus Type 1 (#136). | At 100: 2 C/world day, +/-10 C; five days from the racial base. Sleep depletion belongs to Constitution. |
 | Agility / Technical | Type 2 movement using shared ground/swimming/flight factors; Type 1 evasion; jump uses another curve. | Type 1 stealth applied to concealment/noise, with crouching rules. | The jump does not use Type 2: Jump energy uses Type 3 and biological mass; native velocity follows total moved mass, then the retained state modifiers. |

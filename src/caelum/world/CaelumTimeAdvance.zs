@@ -80,7 +80,7 @@ class CaelumTimeAdvanceState : Inventory
         if(thermal!=null && CaelumThermalRules.Severity(thermal.Exposure,user.Attributes.Toughness)>0)
             return "CA_REST_THERMAL";
         let status = user.ElementalStatus;
-        if (status != null && (status.BurnRemaining > 0 || status.PoisonRemaining > 0
+        if (status != null && (status.BurnRemaining > 0 || status.PoisonRemaining > 0 || status.DiseaseRemaining > 0
             || status.CutRemaining > 0 || status.IsLightningStunned())) return "CA_FAST_UNSAFE";
         if (scanWorld)
         {
