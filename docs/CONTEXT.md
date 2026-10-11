@@ -1,13 +1,12 @@
 # CONTEXT.md — Caelum Argenteum
 
-Documentation version: **5.1.18** — 2026-10-10.
+Documentation version: **5.1.19** — 2026-10-10.
 
-**5.1.18/#164:** permanent Argento deck, Caella utility staff, Ronnie Pickaxe,
-Rulo bolas; Palomo Box last. Only selected weapon crafting required; optional
-Channel, no extra Seal (author decision). Existing helpers and two-second grace
-precede native autosave; ordinary death/manual loading. Revisions preserve old
-loans as owned items. SYSTEMS/MAP01 contract; validation_5118; CA164-01 pending.
-#162/#163/#169 accepted, closed; PR167/168/170 merged 2026-10-10.
+**5.1.19/#172:** shared NPC information history/replay; actions remain available.
+Evidence: validation_5119; CA172-01 pending. Next #173: MAP06 doors/time skip.
+**#164/PR171:** permanent gifts, weapon-only crafting, optional Channel/no Seal,
+assisted Bull autosave/manual load, legacy ownership. Evidence: validation_5118;
+CA164-01 pending. #162/#163/#169 accepted/closed; PR167/168/170 merged.
 
 **5.1.14/#165 accepted** 2026-10-10 (CA165-01). Flash/travel repair; PR166
 merged. 34 checks pass: validation_5114.

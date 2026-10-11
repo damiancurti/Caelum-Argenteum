@@ -1,6 +1,14 @@
 # TASKS.md — Active tasks
 
-Documentation version: **5.1.18** — 2026-10-10.
+Documentation version: **5.1.19** — 2026-10-10.
+
+## Issue #172 - Shared NPC dialogue history (5.1.19)
+
+Implemented informational-reply filtering, persistent per-speaker history and
+read-only replay through every NPC menu subclass. Actions/navigation remain
+usable, with original native reply mappings and paginated lists. Static/native
+UI/save evidence: assets/validation_5119. CA172-01 awaits author acceptance.
+Next: #173 MAP06 interior doors and safe time skipping until the siege.
 
 ## Issue #164 - Permanent gifts and assisted Bull checkpoint (5.1.18)
 

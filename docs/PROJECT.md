@@ -1,6 +1,15 @@
 # Caelum Argenteum — Project, status and roadmap
 
-Documentation version: **5.1.18** — 2026-10-10.
+Documentation version: **5.1.19** — 2026-10-10.
+
+## 5.1.19 - NPC dialogue history (#172)
+
+Read informational answers disappear from ordinary NPC choices. A bottom
+Repeat dialogues option opens the same speaker's saved information without
+executing actions again. Navigation to gameplay, purchases, crafting, quest
+acceptance/turn-in and departure remain available. Shared native-menu behavior
+covers all NPC menu subclasses. History uses stable per-speaker text keys in
+the persistent character record; old saves start empty. CA172-01 is pending.
 
 ## 5.1.18 - MAP01 permanent gifts and checkpoint (#164)
 

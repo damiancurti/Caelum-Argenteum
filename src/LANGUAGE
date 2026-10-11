@@ -5140,3 +5140,13 @@ CA_M01_GIFT_NO_ROOM = "Hacé espacio para tu regalo; lo recibirás cuando tengas
 CA_LOADOUT_OPTIONAL_PLAN = "Optional equipment and my plan";
 [es]
 CA_LOADOUT_OPTIONAL_PLAN = "Equipo opcional y mi plan";
+
+[enu default]
+CA_DIALOGUE_REPEAT = "Repeat dialogues";
+CA_DIALOGUE_MORE = "More options";
+CA_DIALOGUE_RETURN = "Back to the conversation";
+
+[es]
+CA_DIALOGUE_REPEAT = "Repetir diálogos";
+CA_DIALOGUE_MORE = "Más opciones";
+CA_DIALOGUE_RETURN = "Volver a la conversación";

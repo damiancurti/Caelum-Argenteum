@@ -272,7 +272,7 @@ class CaelumUnknownVoiceSpeaker : Actor
 // Conserva el flujo y los controles del ConversationMenu de GZDoom. La rama de
 // formato comercial queda disponible para pruebas aisladas; Q funciona como
 // cierre equivalente a Atrás en todos los diálogos narrativos del archivo.
-class CaelumPalomoConversationMenu : ConversationMenu
+class CaelumPalomoConversationMenu : CaelumHistoryConversationMenu
 {
     override void Ticker()
     {
@@ -280,7 +280,7 @@ class CaelumPalomoConversationMenu : ConversationMenu
         // esa acción conserva el modo nativo sin pausa incluso en snapshots
         // anteriores a la nueva opción MAPINFO. No altera los demás menús.
         // El asedio sigue vivo durante la charla: actualizar sólo su información.
-        if (mCurNode != null && (CaelumSiegeIntelligence.IsPaidPage(mCurNode.UserData)
+        if (!Replaying && mCurNode != null && (CaelumSiegeIntelligence.IsPaidPage(mCurNode.UserData)
             || mCurNode.UserData ~== "port_siege_start" || mCurNode.UserData ~== "port_siege_complete"))
             FormatSpeakerMessage();
     }
