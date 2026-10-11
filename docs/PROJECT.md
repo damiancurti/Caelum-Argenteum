@@ -10,8 +10,8 @@ activate their finite tools and approved combat weapons, with real sequential
 charge timing and fire avoidance. Eight resident/prisoner personalities now use
 shared #192 rules; prisoners receive no additional equipment. Versioned old-save
 initialization and current item/charge persistence are tested. Evidence and
-limitations: assets/validation_5212/RESULTS.md. CA195-01 awaits author acceptance.
-Delivery: PR200 on `issue195-bull-balance`, committed and pushed; not merged.
+limitations: assets/validation_5212/RESULTS.md. CA195-01 accepted 2026-10-11 without qualifications.
+Delivery: PR200 on `issue195-bull-balance`, committed and pushed; merge/closure authorized.
 The previous accepted PR198/PR199 are merged; issues #192/#194 are closed.
 
 ## 5.2.11 - Bilateral collision energy (#194)

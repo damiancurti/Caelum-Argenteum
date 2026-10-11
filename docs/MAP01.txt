@@ -13,7 +13,7 @@ damage. They avoid Fire/Burn against the bull; Argento may use Light/Dazzle.
 The approved personality profiles also apply to the corresponding prisoners,
 without granting prisoners equipment. Existing grace/autosave, downing, victory,
 dialogue, player gifts and no-leather rule remain. Evidence: validation_5212;
-author acceptance pending as CA195-01.
+CA195-01 passed author acceptance on 2026-10-11 without qualifications.
 
 ## 5.2.11 - Shared collision energy (#194)
 

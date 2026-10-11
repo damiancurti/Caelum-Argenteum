@@ -24,7 +24,7 @@
     "caelum/world/CaelumSewerMaze.zs"
   ],
   "static_validation": "passed; zero errors",
-  "author_acceptance": "CA195-01 pending",
+  "author_acceptance": "CA195-01 passed, author confirmed 2026-10-11 without qualifications",
   "evidence_hashes": {
     "evidence/bolas-regression-01-run.json": "8d95fa3363357bfa860c3f2e1459b3874d5355531ed992c2c5fb4b8ed83b1ac2",
     "evidence/bolas-regression-01.txt": "a08cba148688ea6e5903516cd2f532051c2ed8aa6517e20c143e10edb9d38c0f",

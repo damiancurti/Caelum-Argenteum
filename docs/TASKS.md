@@ -8,10 +8,10 @@ Implemented approved speed/acceleration, moving-target charge and personal
 biological cushioning without doubled mass. Finite actual resident tools,
 War Axe/Sword charged attacks, encounter fire exclusion and eight functional
 personalities share player combat rules. Current and previous-save tests are
-included in assets/validation_5212. Next: author gameplay check CA195-01,
-then acceptance/merge through the linked issue PR. No further balance values
+included in assets/validation_5212. CA195-01 passed author acceptance on
+2026-10-11 without qualifications; merge/closure authorized. No further balance values
 were invented. PR198/PR199 are merged and #192/#194 closed.
-Delivery: PR200, committed and pushed; #195 remains open for CA195-01 acceptance.
+Delivery: PR200, committed and pushed; the author requested its merge and #195 closure.
 
 ## Issue #194 - Collision energy and contact area (5.2.11)
 

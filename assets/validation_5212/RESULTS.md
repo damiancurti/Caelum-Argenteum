@@ -6,7 +6,9 @@ audio at 5%. Each run records exact arguments, configuration and engine/runtime/
 fixture hashes. The temporary thread-scoped keep-awake request and its release
 are recorded separately; the system power plan is not changed.
 
-These are agent checks. **Author gameplay acceptance is pending: CA195-01.**
+These are agent checks. **The author accepted CA195-01 on 2026-10-11 without
+qualifications**, then requested PR200 merge and #195 closure. Native evidence
+remains distinct from this explicit author acceptance.
 Test sources are excluded from the shipped PK3. Generated maps/packages, saves,
 the installed engine and development IWAD remain in the local build directory.
 

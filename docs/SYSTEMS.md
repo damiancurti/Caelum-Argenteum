@@ -85,8 +85,8 @@ and therefore no new bonus. Revision 1 initializes only the approved profiles
 and mansion tools on old saves without healing/replenishing initialized objects;
 an old active charge loses x2 mass and is capped before gameplay resumes.
 
-Native evidence and limitations: assets/validation_5212/RESULTS.md. CA195-01 is
-the outstanding author gameplay check; automated evidence is not acceptance.
+Native evidence and limitations: assets/validation_5212/RESULTS.md. The author
+accepted CA195-01 on 2026-10-11 without qualifications, separately from agent checks.
 
 ## Collision energy and contact area - 5.2.11 / #194
 

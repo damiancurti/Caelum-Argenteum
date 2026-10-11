@@ -17,7 +17,13 @@ to the bull's own horizontal impact energy. Shared pair resolution snapshots
 both recipients before Pain/death can alter charge state. Native tool ownership,
 resource payment, durability, recovery and save references share player services.
 Versioned initialization preserves old actor health/resources and removes old
-x2 charge mass before gameplay. Author acceptance is pending as CA195-01.
+x2 charge mass before gameplay.
+
+Author acceptance, 2026-10-11: CA195-01 (origin 5.2.12 / #195) passed without
+qualifications. The author confirmed all tests passed and requested issue closure
+and PR200 merge. Its confirmed entry is removed from pending_test.txt; the tracked
+queue is empty. This acceptance update retains version 5.2.12 and the original
+static/native evidence; runtime is unchanged.
 
 Static review and native tests found and corrected a stuck charge animation
 after binding, old melee fallback without an available weapon, payment before
@@ -27,7 +33,7 @@ Agent evidence, initial failures and final runs are in assets/validation_5212.
 Prior acceptance remains valid: PR198 merged as 6f8ad478; PR199 merged as
 dbf449cd; #192/#194 are closed. Their author checks are not reopened.
 Delivery: runtime/evidence commit a49531a4 pushed on `issue195-bull-balance`,
-linked PR200 open. 549 native assertions, static validation and official PK3
+linked PR200 accepted, merge/closure authorized. 549 native assertions, static validation and official PK3
 compilation pass. Keep-awake released at 2026-10-11T22:44:08Z; power plan unchanged.
 
 ## 5.2.11 - Received collision energy and bilateral contact area (#194), 2026-10-11
