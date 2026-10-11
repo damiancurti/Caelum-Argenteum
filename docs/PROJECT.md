@@ -11,10 +11,10 @@ individually mitigated projectiles. Native impact ordering now prevents a
 projectile's prepared damage from replacing its already-mitigated remainder;
 soldier shields participate in the same order. Existing saves receive the
 author-approved Normal/Normal/Normal/Center defaults.
-Evidence: assets/validation_529/RESULTS.md. Delivery is a focused branch/PR
-stacked on #188/PR193; CA192-01 and CA188-01 await author acceptance. Native
-checks and static review are not manual campaign acceptance. Next: review and
-author gameplay confirmation; the separate #148 roadmap remains unchanged.
+Evidence: assets/validation_529/RESULTS.md. The author accepted CA192-01 and
+CA188-01 on 2026-10-11 without qualifications and authorized PR193 followed by
+PR196 and #188/#192 closure. HISTORY records this acceptance separately from
+agent checks. The author queue is empty; the separate #148 roadmap remains.
 
 ## 5.2.8 - Mass-based Toughness and status resistance (#188)
 
@@ -26,8 +26,9 @@ immunity at 100 and healing above 100, recalculating active effects when
 Toughness changes. Thermal environmental rules and projectile status scaling
 from actual HP lost are preserved. Revisioned legacy status import is idempotent.
 Static and isolated GZDoom evidence: assets/validation_528/RESULTS.md.
-CA188-01 awaits author acceptance. Issue #192 follows on a separate branch;
-its personality layers and bell count are not part of this patch.
+CA188-01 passed author acceptance on 2026-10-11 using the combined 5.2.9 build,
+including #192's native projectile correction. PR193 merge/#188 closure are
+authorized; #192 is delivered separately through PR196.
 
 ## 5.2.7 - Native ownership for all interactive screens (#189)
 

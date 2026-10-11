@@ -9,14 +9,14 @@ summary before the existing introduction/tutorial. The author specifies
 Normal/Normal/Normal/Center for existing saved characters. Shared magical
 power, ideology defenses and the twelve-projectile bell apply to tutorial
 combat. No narrative, dialogue, gift, recipe or MAP01 geometry is changed.
-See SYSTEMS for the canonical mechanics; CA192-01 awaits author acceptance.
+See SYSTEMS for the canonical mechanics; CA192-01 passed author acceptance on 2026-10-11.
 
 ## 5.2.8 - Shared combat resistance (#188)
 
 MAP01 residents/creatures use the shared biological mass reduction after
 defenses; breakable gates use their structural mass by author decision.
 No story, dialogue, quest, recipe, reward or map geometry changes. Burn visuals
-can outlive their resisted health effect. Gameplay acceptance: CA188-01 pending.
+can outlive their resisted health effect. CA188-01 passed author acceptance on 2026-10-11.
 
 ## 5.2.7 - Native resident interactions and live rest (#189)
 

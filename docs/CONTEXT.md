@@ -6,8 +6,9 @@ Documentation version: **5.2.9** — 2026-10-11.
 damage/push/heat; ideology affects armor/shields, excluding firearms. Bell:
 12 independent hits. Old saves: Normal/Normal/Normal/Center. Native projectile
 preparation and soldier shielding preserve defense order. Evidence/comparisons:
-validation_529; CA192-01 pending. Stacked on #188/PR193 (5.2.8): mass-based R,
-half magical R and dynamic Type1 statuses; validation_528, CA188-01 pending.
+validation_529/528. #188 adds mass-based R, half magical R and Type1 statuses.
+CA192-01/CA188-01 accepted 2026-10-11; PR193/PR196 merges and issue closure
+authorized. Author queue empty; next roadmap: #148.
 
 **5.2.7 / #189 and 5.2.6 / #184 accepted:** native menus/clicks preserve art;
 live panels/NPCs, paused cards/settings, right-drag rest orbit. Evidence:

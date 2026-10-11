@@ -8,17 +8,18 @@ Implemented four creation layers, author-approved magical POWER semantics,
 Normal/Center old-save migration, equipped armor/shield ideology rules and
 12 individually mitigated bell projectiles. Native impact preparation and
 soldier shields preserve defense order and one-time wear. Evidence:
-assets/validation_529/RESULTS.md. CA192-01 awaits author gameplay acceptance;
-CA188-01 remains pending. Deliver through a linked PR based on issue188-toughness
-(PR193), preserving one issue per patch. Next: author review/confirmation.
+assets/validation_529/RESULTS.md. CA192-01 and CA188-01 passed author acceptance
+on 2026-10-11 without qualifications. PR193 then PR196 merges and #188/#192
+closure are explicitly authorized. Confirmed tests are recorded in HISTORY;
+the author queue is empty. Next separate roadmap task: #148.
 
 ## Issue #188 - Toughness (5.2.8)
 
 Implemented shared post-defense mass subtraction and Type-1 sustained status
-resistance. Validate with assets/validation_528; CA188-01 is the outstanding
-author gameplay check. Commit/push and linked PR are delivery steps; merge or
-closure does not imply acceptance. Next requested implementation: #192,
-four personality layers and twelve-projectile bell, on a separate branch.
+resistance. Evidence: assets/validation_528. CA188-01 passed author acceptance
+on 2026-10-11 on the combined 5.2.9 build, including #192's native projectile
+ordering correction. PR193 merge and #188 closure explicitly authorized;
+HISTORY preserves the original evidence scope and the author's confirmation.
 
 ## Issue #184 - Mouse interaction (5.2.6)
 

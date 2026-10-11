@@ -1,5 +1,10 @@
 # 5.2.8 / issue #188 - Toughness validation
 
+Author acceptance, 2026-10-11: CA188-01 passed without qualifications.
+The author authorized the #188/#192 merges and closures on the combined 5.2.9
+build. HISTORY records the confirmation. The agent report below preserves its
+original test scope and delivery-time pending status.
+
 Branch `issue188-toughness`, baseline `d4f11ea9`, GZDoom 4.14.2 on Windows 11.
 Tests use isolated configs, unpaused background simulation, 5% master volume
 and one engine process at a time. This is agent-run native evidence; author

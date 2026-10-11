@@ -4,6 +4,15 @@ Documentation version: **5.2.9** — 2026-10-11.
 
 ## 5.2.9 - Personality, magical power and bell volley (#192), 2026-10-11
 
+Author acceptance, 2026-10-11: CA192-01 (origin 5.2.9 / #192) passed.
+The author confirmed all tests passed, without qualifications, and explicitly
+authorized PR193 followed by PR196 and closure of #188/#192. CA192-01 and
+CA188-01 were removed from pending_test.txt; the tracked queue is empty.
+CA188-01's confirmation is recorded under its originating 5.2.8 entry below.
+This documentation-only acceptance update retains version 5.2.9 and the original
+agent evidence and limits. Runtime is unchanged; acceptance checks regenerate
+the document index, validate current localization/docs and check whitespace.
+
 Added four independent personality choices to both creators, their summary,
 draft restoration and revisioned authoritative profile. Author amendments:
 old characters become Normal/Normal/Normal/Center; magical factors apply to
@@ -22,11 +31,18 @@ which is corrected with launch metadata and direct-inflictor firearm checks.
 Evidence and reproducible comparisons: assets/validation_529/RESULTS.md.
 Static review, engine assertions/collisions, bilingual creator screenshots and
 save migration/reload/rollback/travel are distinguished from author acceptance.
-CA192-01 remains pending together with CA188-01. The temporary keep-awake
-request is released after tests; no persistent power-plan change. No acceptance,
-merge or issue closure is inferred from the automated results.
+At agent delivery CA192-01 and CA188-01 were pending. The temporary keep-awake
+request was released after tests with no persistent power-plan change. The
+later explicit author acceptance above is separate from automated results.
 
 ## 5.2.8 - Mass-based Toughness and status resistance (#188)
+
+Author acceptance, 2026-10-11: CA188-01 (origin 5.2.8 / #188) passed.
+The author confirmed all tests passed without qualifications and authorized
+PR193 merge and #188 closure together with #192/PR196. As specified by the
+pending entry, this acceptance uses the combined 5.2.9 build including #192's
+native projectile ordering correction. The confirmed CA188-01 entry was removed
+from pending_test.txt; its original agent evidence remains scoped as recorded.
 
 Physical damage now subtracts biological mass times Type 3 after defenses;
 direct magic subtracts half. Gates use structural mass. Armor/shield wear can
@@ -36,12 +52,11 @@ immunity at 100 and healing above 100, recalculating active effects when
 Toughness changes. Thermal environmental rules and projectile status scaling
 from actual HP lost are preserved. Revisioned legacy status import is idempotent.
 Static and isolated GZDoom evidence: assets/validation_528/RESULTS.md.
-CA188-01 awaits author acceptance. Issue #192 follows on a separate branch;
+At agent delivery CA188-01 awaited acceptance. Issue #192 followed separately;
 its personality layers and bell count are not part of this patch.
 Follow-up finding in 5.2.9/#192: full native projectile impacts could replace
 the mitigated remainder inside Super.DamageMobj. The stacked #192 correction
-is required for those impacts; perform outstanding CA188-01 on the current
-combined build. Original #188 solver/status evidence remains scoped as recorded.
+is required for those impacts; CA188-01 was specified for that combined build. Original #188 solver/status evidence remains scoped as recorded.
 
 Author decisions, 2026-10-11: use structural mass for gates; recalculate active
 status duration/sign when Toughness changes; keep environmental thermal damage

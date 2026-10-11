@@ -1,5 +1,10 @@
 # 5.2.9 / #192 - Personality, magical power and bell
 
+Author acceptance, 2026-10-11: CA192-01 passed without qualifications.
+The author authorized the #188/#192 merges and closures on the combined 5.2.9
+build. HISTORY records the confirmation. The agent report below preserves its
+original test scope and delivery-time pending status.
+
 Baseline: 52e3bd01 (#188 / 5.2.8). Windows 11, GZDoom 4.14.2, Vulkan,
 development Doom II IWAD. Native runs are isolated, unpaused in the background,
 at 5% audio. This is agent evidence; CA192-01 and CA188-01 remain pending author

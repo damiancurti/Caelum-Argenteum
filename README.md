@@ -13,21 +13,24 @@ it, then rebuild with `run_dev.bat` as described below.
 bonuses affect damage, push and heat; ideology modifies equipped armor/shields.
 Old saves receive Normal/Normal/Normal/Center as requested. Native projectile
 impacts retain their final mitigation and prepare damage/wear once.
-[Evidence and comparisons](assets/validation_529/RESULTS.md). CA192-01 and CA188-01
-await author gameplay acceptance; #192 is delivered separately on top of #188.
+[Evidence and comparisons](assets/validation_529/RESULTS.md). The author accepted
+CA192-01 and CA188-01 on 2026-10-11 without qualifications and authorized
+[PR193](https://github.com/damiancurti/Caelum-Argenteum/pull/193) followed by
+[PR196](https://github.com/damiancurti/Caelum-Argenteum/pull/196) and #188/#192 closure.
+The author test queue is empty; HISTORY records both confirmations.
 
 5.2.8 applies mass-based Toughness after armor, at half strength for direct
 magic, and Type-1 burn/poison/disease resistance with immunity and above-100
 healing. Active states recalculate when Toughness changes; gates use structural
-mass. [Evidence](assets/validation_528/RESULTS.md). CA188-01 awaits author gameplay
-acceptance; #192 follows in 5.2.9 above.
+mass. [Evidence](assets/validation_528/RESULTS.md). CA188-01 passed author acceptance
+on the combined 5.2.9 build, including the #192 native projectile correction.
 
 5.2.7 moves all interactive overlay screens into native menus while preserving
 existing images and gameplay actions. NPC conversations keep the world running
 and support guarded clicks; cards retain pause. Rest uses right-button dragging
 for camera orbit and left clicks for controls. [Evidence](assets/validation_527/RESULTS.md).
 The author accepted CA184-01 and CA189-01 on 2026-10-11 without qualifications
-and authorized PR190/PR191 merges and #184/#189 closure. That acceptance cleared the author queue; CA188-01 is now pending.
+and authorized PR190/PR191 merges and #184/#189 closure. The later CA188-01/CA192-01 acceptance is recorded above.
 
 5.2.6 adds mouse interaction to Truco/Trucazo, time skip and crafting,
 including visible controls, hover and guarded click release. Keyboard shortcuts

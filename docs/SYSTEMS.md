@@ -75,7 +75,7 @@ written saves are not promised to load on the older executable package.
 Native matrices, save upgrade/reload/rollback/travel, bilingual creator captures
 and T1/T2/T3 warrior/mage comparisons: assets/validation_529/RESULTS.md. The T2
 comparison uses a documented balanced 39-card fixture (+50% general attributes)
-and is not an additional balance decision. Author acceptance: CA192-01 pending.
+and is not an additional balance decision. CA192-01 passed author acceptance on 2026-10-11, without qualifications.
 
 ## Mass-based Toughness and sustained resistance - 5.2.8 / #188
 
@@ -146,7 +146,8 @@ Repeated save/load cannot scale duration again. Keep an untouched original
 save and the previous source/package for rollback; downgrading a newly written
 save is not promised. Native migration, repeated loading and rollback evidence,
 plus controlled combat/status fixtures, are in assets/validation_528/RESULTS.md.
-Author gameplay acceptance remains pending under CA188-01.
+CA188-01 passed author acceptance on 2026-10-11 on the combined 5.2.9 build.
+HISTORY records the confirmation and the #192 native impact correction.
 
 
 ## Native interactive menus - 5.2.7 / #189
