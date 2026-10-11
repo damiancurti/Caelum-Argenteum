@@ -255,7 +255,7 @@ class CaelumDerivedStats : Object
 
         PainChanceMultiplier = CaelumGrowthRules.Remaining(attributes.Toughness);
         // Campo legado para saves: el daño actual usa la resta por golpe de
-        // CaelumArmorRules; este cociente ya no interviene en la recepción.
+        // CaelumToughnessRules; este cociente ya no interviene en la recepción.
         DamageResistanceMultiplier = 100.0
             / CalculateType4Percent(Max(0.0, attributes.Toughness));
         LucidityLossMultiplier = PainChanceMultiplier;

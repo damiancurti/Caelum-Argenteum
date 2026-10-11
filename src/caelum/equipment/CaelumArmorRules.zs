@@ -25,23 +25,6 @@ class CaelumArmorRules : Object
         return CaelumGrowthRules.Bonus(level);
     }
 
-    // Recibe el nivel; resta su porcentaje derivado de vida máxima, sin piso de daño.
-    static clearscope double AfterToughnessPercent(double incomingPercent, double toughness)
-    {
-        return Max(0.0, incomingPercent - ToughnessReductionPercent(toughness));
-    }
-
-    static clearscope double AfterToughnessDamage(double incomingDamage, double maximumHealth, double toughness)
-    {
-        return Max(0.0, incomingDamage - Max(1.0, maximumHealth) * ToughnessReductionPercent(toughness) / 100.0);
-    }
-
-    // Sólo diagnóstico: la fracción conservada depende de este impacto concreto.
-    static clearscope double ToughnessMultiplier(double incomingDamage, double maximumHealth, double toughness)
-    {
-        return incomingDamage > 0.0
-            ? AfterToughnessDamage(incomingDamage, maximumHealth, toughness) / incomingDamage : 1.0;
-    }
     static clearscope double TierMultiplier(int tier)
     {
         return tier >= 3 ? 2.0 : tier == 2 ? 1.5 : 1.0;
@@ -79,8 +62,12 @@ class CaelumArmorRules : Object
 
     static bool IsMagical(Actor inflictor, Name mod)
     {
+        // La componente física no hereda el tipo mágico de su emisor.
+        if(mod=='CaelumImpact' || mod=='Crush' || mod=='CaelumWeight'
+            || mod=='Melee' || mod=='Hitscan' || CaelumToughnessRules.IsSustained(mod))return false;
         let projectile = CaelumActorProjectile(inflictor);
-        return mod == 'CaelumMagicTest' || mod == 'CaelumTrapMagic'
+        return mod=='Fire' || mod=='Ice' || mod=='Electric' || mod=='Lightning'
+            || mod == 'CaelumMagicTest' || mod == 'CaelumTrapMagic'
             || (mod == 'Electric' && inflictor is 'CaelumChannelEffect')
             || (projectile != null && projectile.CaelumMagicalAttack);
     }

@@ -163,7 +163,7 @@ class CaelumChannelEffect : Actor
         if (playerTarget != null && playerTarget.ElementalStatus != null)
         {
             playerTarget.ElementalStatus.ApplyDamageOverTime(
-                effect, 1.1, 1.0, damage, ChannelOwner);
+                effect, 1.1, 1.0, damage, ChannelOwner, candidate);
             if (!fire)
                 playerTarget.ElementalStatus.ApplyEarthPenalty(
                     1.1, penaltyPercent);
@@ -173,7 +173,7 @@ class CaelumChannelEffect : Actor
         if (combatTarget != null && combatTarget.ElementalStatus != null)
         {
             combatTarget.ElementalStatus.ApplyDamageOverTime(
-                effect, 1.1, 1.0, damage, ChannelOwner);
+                effect, 1.1, 1.0, damage, ChannelOwner, candidate);
             if (!fire)
                 combatTarget.ElementalStatus.ApplyEarthPenalty(
                     1.1, penaltyPercent);

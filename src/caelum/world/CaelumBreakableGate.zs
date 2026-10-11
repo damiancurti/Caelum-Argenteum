@@ -201,8 +201,10 @@ class CaelumBreakableGate : Actor
         InitializeGate();
         if (Broken || Opened || damage <= 0) return 0;
         // CaelumImpact ya incorpora Dureza y absorción, con un único redondeo.
-        int retained = mod == 'CaelumImpact' ? damage : Max(0, int(CaelumArmorRules.AfterToughnessDamage(damage, StructuralMaximum, Toughness)
-            * (1.0 - CaelumGateData.ArmorDefense(args[1]) / 100.0) + 0.5));
+        double postArmor=damage*(1.0-CaelumGateData.ArmorDefense(args[1])/100.0);
+        int retained = mod == 'CaelumImpact' ? damage : Max(0, int(
+            CaelumToughnessRules.IsSustained(mod) ? damage : CaelumToughnessRules.AfterDefenses(
+                postArmor,Mass,Toughness,CaelumArmorRules.IsMagical(inflictor,mod))+0.5));
         if (flags & DMG_EXPLOSION)
         {
             if (ExplosionTick != level.maptime)
@@ -259,10 +261,9 @@ class CaelumBreakableGate : Actor
     int ReceiveStructuralImpact(Actor source, Actor instigator, double energyPercent, double surfaceMultiplier)
     {
         InitializeGate();
-        double percent = CaelumArmorRules.AfterToughnessPercent(
-            energyPercent * surfaceMultiplier, Toughness);
-        int damage = int(StructuralMaximum * percent / 100.0
-            * (1.0 - CaelumGateData.ArmorDefense(args[1]) / 100.0) + 0.5);
+        double postArmor=StructuralMaximum*Max(0.0,energyPercent*surfaceMultiplier)/100.0
+            *(1.0-CaelumGateData.ArmorDefense(args[1])/100.0);
+        int damage=Max(0,int(CaelumToughnessRules.AfterDefenses(postArmor,Mass,Toughness)+0.5));
         return DamageMobj(source, instigator, damage, 'CaelumImpact', DMG_NO_ARMOR, Angle);
     }
 

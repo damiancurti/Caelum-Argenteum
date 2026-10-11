@@ -6,15 +6,21 @@ An independent dark fantasy FPS-RPG inspired by nineteenth-century Argentina.
 Author and game designer: **Damian Curti**. Development target: **GZDoom 4.14.2**
 on Windows 11. The final game is intended to be independent of Doom assets.
 
-**Current release: 5.2.7.** Obtain and update the complete repository, validate
+**Current release: 5.2.8.** Obtain and update the complete repository, validate
 it, then rebuild with `run_dev.bat` as described below.
+
+5.2.8 applies mass-based Toughness after armor, at half strength for direct
+magic, and Type-1 burn/poison/disease resistance with immunity and above-100
+healing. Active states recalculate when Toughness changes; gates use structural
+mass. [Evidence](assets/validation_528/RESULTS.md). CA188-01 awaits author gameplay
+acceptance; #192 is the next separately requested patch.
 
 5.2.7 moves all interactive overlay screens into native menus while preserving
 existing images and gameplay actions. NPC conversations keep the world running
 and support guarded clicks; cards retain pause. Rest uses right-button dragging
 for camera orbit and left clicks for controls. [Evidence](assets/validation_527/RESULTS.md).
 The author accepted CA184-01 and CA189-01 on 2026-10-11 without qualifications
-and authorized PR190/PR191 merges and #184/#189 closure. The author test queue is empty.
+and authorized PR190/PR191 merges and #184/#189 closure. That acceptance cleared the author queue; CA188-01 is now pending.
 
 5.2.6 adds mouse interaction to Truco/Trucazo, time skip and crafting,
 including visible controls, hover and guarded click release. Keyboard shortcuts

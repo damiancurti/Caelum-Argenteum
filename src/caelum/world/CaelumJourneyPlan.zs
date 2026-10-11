@@ -90,7 +90,7 @@ class CaelumJourneyRules : Object play
             || user.UnderwaterAirRecoveryDebt > 0 || user.UnderwaterAirRecoveryTicsRemaining > 0)
             return "CA_JOURNEY_BUSY";
         let s = user.ElementalStatus;
-        if (s != null && (s.BurnRemaining > 0 || s.CutRemaining > 0 || s.PoisonRemaining > 0
+        if (s != null && (s.BurnRemaining > 0 || s.CutRemaining > 0 || s.PoisonRemaining > 0 || s.DiseaseRemaining > 0
             || s.FreezeRemaining > 0 || s.DazzleRemaining > 0 || s.EarthPenaltyRemaining > 0
             || s.LightningStunRemaining > 0)) return "CA_JOURNEY_BUSY";
         let thermal=CaelumThermalBody.Get(user);

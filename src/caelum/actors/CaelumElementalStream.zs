@@ -62,12 +62,9 @@ class CaelumElementalStream : Object play
         }
         CaelumBolas.FireContact(body);
         int damage=Max(1,int(Damage(emitter)*CaelumConstants.ELEMENTAL_DOT_DAMAGE_RATIO*power+0.5));
-        // El contacto sostenido conserva el reloj del pulso, incluso si el
-        // efecto más fuerte pertenece a otra fuente.
-        double clock=status.BurnRemaining>0 ? status.BurnTickAccumulator : 0;
+        // El procesador conserva la fracción de vida entre contactos.
         status.ApplyDamageOverTime(CaelumConstants.ELEMENTAL_EFFECT_BURN,
-            CaelumConstants.ELEMENTAL_BASE_DURATION_SECONDS*power,power,damage,emitter);
-        status.BurnTickAccumulator=clock;
+            CaelumConstants.ELEMENTAL_BASE_DURATION_SECONDS*power,power,damage,emitter,body);
     }
 
     static double ReceivedWatts(Actor source,Vector3 direction,Actor body,CaelumThermalState thermal)

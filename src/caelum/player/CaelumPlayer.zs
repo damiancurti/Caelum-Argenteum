@@ -6399,7 +6399,7 @@ class CaelumPlayer : DoomPlayer
             {
                 ElementalStatus.ApplyDamageOverTime(
                     CaelumConstants.ELEMENTAL_EFFECT_BURN,
-                    duration, debuffScale, dotDamage, effectSource
+                    duration, debuffScale, dotDamage, effectSource, self
                 );
             }
         }
@@ -6417,7 +6417,7 @@ class CaelumPlayer : DoomPlayer
             {
                 ElementalStatus.ApplyDamageOverTime(
                     CaelumConstants.ELEMENTAL_EFFECT_POISON,
-                    duration, debuffScale, dotDamage, effectSource
+                    duration, debuffScale, dotDamage, effectSource, self
                 );
             }
             else
@@ -6440,7 +6440,7 @@ class CaelumPlayer : DoomPlayer
             {
                 ElementalStatus.ApplyDamageOverTime(
                     CaelumConstants.ELEMENTAL_EFFECT_CUT,
-                    duration, debuffScale, dotDamage, effectSource
+                    duration, debuffScale, dotDamage, effectSource, self
                 );
             }
         }
@@ -6450,7 +6450,7 @@ class CaelumPlayer : DoomPlayer
             if (RollQuintessenceEffect())
                 ElementalStatus.ApplyDamageOverTime(
                     CaelumConstants.ELEMENTAL_EFFECT_BURN,
-                    duration, debuffScale, dotDamage, effectSource
+                    duration, debuffScale, dotDamage, effectSource, self
                 );
             if (RollQuintessenceEffect())
                 ElementalStatus.ApplyControlEffect(
@@ -6472,12 +6472,12 @@ class CaelumPlayer : DoomPlayer
             if (RollQuintessenceEffect())
                 ElementalStatus.ApplyDamageOverTime(
                     CaelumConstants.ELEMENTAL_EFFECT_POISON,
-                    duration, debuffScale, dotDamage, effectSource
+                    duration, debuffScale, dotDamage, effectSource, self
                 );
             if (RollQuintessenceEffect())
                 ElementalStatus.ApplyDamageOverTime(
                     CaelumConstants.ELEMENTAL_EFFECT_CUT,
-                    duration, debuffScale, dotDamage, effectSource
+                    duration, debuffScale, dotDamage, effectSource, self
                 );
             if (RollQuintessenceEffect())
                 ApplyAttackPushToTarget(
@@ -6515,10 +6515,11 @@ class CaelumPlayer : DoomPlayer
 
     double GetImpactToughnessMultiplier(double incomingPercent = 100.0)
     {
-        double toughness = Attributes != null ? Max(0.0, Attributes.Toughness) : 0.0;
-        if (IsBucklerAcrobaticDefenseActive())
-            toughness *= CaelumConstants.SHIELD_BUCKLER_IMPACT_TOUGHNESS_MULTIPLIER;
-        return CaelumArmorRules.ToughnessMultiplier(incomingPercent, 100.0, toughness);
+        double toughness=CaelumToughnessRules.Effective(self);
+        if(IsBucklerAcrobaticDefenseActive())toughness*=CaelumConstants.SHIELD_BUCKLER_IMPACT_TOUGHNESS_MULTIPLIER;
+        double damage=GetImpactMaximumHealth()*Max(0.0,incomingPercent)/100.0;
+        return CaelumToughnessRules.RetainedFraction(damage,
+            CaelumToughnessRules.AfterDefenses(damage,CaelumToughnessRules.NaturalMass(self),toughness));
     }
 
     double GetArmorDefensePercent(int slot, bool magical = false,Actor inflictor=null)
@@ -6840,7 +6841,7 @@ class CaelumPlayer : DoomPlayer
                     CaelumConstants.SHIELD_BUCKLER_IMPACT_TOUGHNESS_MULTIPLIER;
             }
         }
-        LastImpactToughnessPercent = CaelumArmorRules.ToughnessReductionPercent(impactToughness);
+        LastImpactToughnessPercent = 100.0*CaelumToughnessRules.Reduction(CaelumToughnessRules.NaturalMass(self),impactToughness)/GetImpactMaximumHealth();
         LastImpactArmorDefensePercent = 0.0;
         LastImpactWeightedVulnerabilityMultiplier = 0.0;
         LastImpactWeightedArmorDefensePercent = 0.0;
@@ -6859,9 +6860,7 @@ class CaelumPlayer : DoomPlayer
         double surfaceMultiplier = Max(0.0, sourceSurfaceMultiplier);
         double surfacedDamagePercent =
             LastImpactDamagePercent * surfaceMultiplier;
-        LastImpactToughnessMultiplier = GetImpactToughnessMultiplier(surfacedDamagePercent);
-        LastImpactPostToughnessPercent = CaelumArmorRules.AfterToughnessPercent(
-            surfacedDamagePercent, impactToughness);
+        LastImpactPostToughnessPercent = 0.0;
 
         if (AnatomyProfile == null)
         {
@@ -6874,6 +6873,7 @@ class CaelumPlayer : DoomPlayer
             LastImpactContactMaximumHeightRatio
         );
         double weightedFinalPercent = 0.0;
+        bool armorPieceBroken=false;
         if (totalOverlap > 0.0)
         {
             for (int regionIndex = 0;
@@ -6907,15 +6907,23 @@ class CaelumPlayer : DoomPlayer
                 LastImpactWeightedArmorDefensePercent +=
                     weight * defenseRatio * 100.0;
                 weightedFinalPercent +=
-                    LastImpactPostToughnessPercent
+                    surfacedDamagePercent
                     * weight
                     * vulnerabilityMultiplier
                     * (1.0 - defenseRatio);
+                if(ArmorModel!=null && ArmorModel.Durability[slot]>0)
+                {
+                    double absorbed=GetImpactMaximumHealth()*surfacedDamagePercent/100.0
+                        *weight*vulnerabilityMultiplier*ArmorModel.GetDefense(slot,false)/100.0
+                        *CaelumArmorRules.EquipmentRetention(sourceActor);
+                    int loss=CaelumToughnessRules.ImpactWear(ArmorModel,slot,absorbed,ArmorDurabilityDamageMultiplier);
+                    if(loss>0 && ArmorModel.Durability[slot]<=0)armorPieceBroken=true;
+                }
             }
         }
         else
         {
-            weightedFinalPercent = LastImpactPostToughnessPercent;
+            weightedFinalPercent = surfacedDamagePercent;
             LastImpactWeightedVulnerabilityMultiplier = 1.0;
         }
 
@@ -6925,18 +6933,17 @@ class CaelumPlayer : DoomPlayer
             0,
             int(
                 GetImpactMaximumHealth()
-                * LastImpactPostToughnessPercent / 100.0
+                * surfacedDamagePercent / 100.0
                 + 0.5
             )
         );
-        LastImpactFinalDamage = Max(
-            0,
-            int(
-                GetImpactMaximumHealth()
-                * weightedFinalPercent / 100.0
-                + 0.5
-            )
-        );
+        double postArmor=GetImpactMaximumHealth()*weightedFinalPercent/100.0;
+        double postToughness=CaelumToughnessRules.AfterDefenses(
+            postArmor,CaelumToughnessRules.NaturalMass(self),impactToughness);
+        LastImpactToughnessMultiplier=CaelumToughnessRules.RetainedFraction(postArmor,postToughness);
+        LastImpactPostToughnessPercent=100.0*postToughness/GetImpactMaximumHealth();
+        LastImpactFinalDamage=Max(0,int(postToughness+0.5));
+        if(armorPieceBroken)ApplyCharacterProfile();
 
         if (LastImpactPostToughnessPercent > 0.0)
         {
@@ -7743,13 +7750,17 @@ class CaelumPlayer : DoomPlayer
 
         // Ahogamiento y aplastamiento nativo actualizan vida, dolor e
         // interrupciones, sin iniciar combate ni otorgar adrenalina.
-        if (mod == 'Drowning' || mod == 'Crush' || mod == 'CaelumWeight')
+        if (mod == 'Drowning' || mod == 'Crush' || mod == 'CaelumWeight'
+            || CaelumToughnessRules.IsSustained(mod))
         {
             // El techo nativo expresa su pulso en porcentaje de vida máxima.
             // Ahogamiento ya llega convertido; otras fuentes Crush conservan
             // sus unidades. P_DoCrunch envía source e inflictor nulos.
+            double preToughnessDamage=damage;
             if (mod == 'Crush' && inflictor == null && source == null)
-                damage = CaelumCrushingDamage.FromNativePercent(GetImpactMaximumHealth(), damage);
+                preToughnessDamage = CaelumCrushingDamage.FromNativePercent(GetImpactMaximumHealth(), damage);
+            if((mod=='Crush' && damage<CaelumCrushingDamage.NATIVE_TELEFRAG_THRESHOLD) || mod=='CaelumWeight')
+                damage=Max(0,int(CaelumToughnessRules.Apply(self,preToughnessDamage)+0.5));
             int healthBeforeDrowning = health;
             double adrenalineRatioBeforeDrowning = 0.0;
             if (DerivedStats != null && DerivedStats.MaximumAdrenaline > 0.0)
@@ -7937,7 +7948,7 @@ class CaelumPlayer : DoomPlayer
             return false;
         }
         if (inflictor != null && inflictor.bMissile) { return true; }
-        if (mod == 'Electric' && inflictor is 'CaelumChannelEffect') { return true; }
+        if (CaelumArmorRules.IsMagical(inflictor,mod)) { return true; }
         return source != null
             && (mod == 'Melee'
                 || mod == 'Hitscan'
@@ -8042,8 +8053,8 @@ class CaelumPlayer : DoomPlayer
         LastArmorHitWasCritical = criticalHit;
         LastLocalizedLucidityLoss = 0.0;
         LastToughnessDamageMultiplier = 1.0;
-        double totalPostAnatomyDamage = 0.0;
-        double toughness = Attributes != null ? Attributes.Toughness : 0.0;
+
+        double toughness = CaelumToughnessRules.Effective(self);
 
         int totalHealthDamage = 0;
         bool armorPieceBroken = false;
@@ -8073,9 +8084,8 @@ class CaelumPlayer : DoomPlayer
                 criticalHit
             );
             double postAnatomyDamage = incomingDamage * vulnerabilityMultiplier;
-            totalPostAnatomyDamage += postAnatomyDamage;
-            double preDefenseDamage = CaelumArmorRules.AfterToughnessDamage(
-                postAnatomyDamage, GetImpactMaximumHealth(), toughness);
+
+            double preDefenseDamage = postAnatomyDamage;
             double defenseRatio = Clamp(GetArmorDefensePercent(slot, magical,inflictor) / 100.0, 0.0, 1.0);
             double absorbedDamage = preDefenseDamage * defenseRatio;
             double postDefenseDamage = Max(
@@ -8088,10 +8098,7 @@ class CaelumPlayer : DoomPlayer
             LastArmorPreDefenseDamage += preDefenseDamage;
             LastArmorAbsorbedDamage += absorbedDamage;
             LastArmorPostDefenseDamage += postDefenseDamage;
-            totalHealthDamage += Max(
-                0,
-                int(postDefenseDamage + 0.5)
-            );
+
 
             if (naturalGrade == CaelumConstants.VULNERABILITY_CRITICAL_POINT
                 && lucidityNaturalGrade < 0)
@@ -8135,8 +8142,10 @@ class CaelumPlayer : DoomPlayer
             }
         }
 
-        LastToughnessDamageMultiplier = totalPostAnatomyDamage > 0.0
-            ? LastArmorPreDefenseDamage / totalPostAnatomyDamage : 1.0;
+        double postToughnessDamage=CaelumToughnessRules.AfterDefenses(
+            LastArmorPostDefenseDamage,CaelumToughnessRules.NaturalMass(self),toughness,magical);
+        LastToughnessDamageMultiplier=CaelumToughnessRules.RetainedFraction(LastArmorPostDefenseDamage,postToughnessDamage);
+        totalHealthDamage=Max(0,int(postToughnessDamage+0.5));
         LastArmorHealthDamage = totalHealthDamage;
         if (totalHealthDamage <= 0)
         {
@@ -8461,7 +8470,7 @@ class CaelumPlayer : DoomPlayer
         LastShieldBlockedAttack = true;
 
 
-        int damageKind = mod == 'CaelumMagicTest'
+        int damageKind = CaelumArmorRules.IsMagical(inflictor,mod)
             ? CaelumConstants.SHIELD_DAMAGE_MAGICAL
             : CaelumConstants.SHIELD_DAMAGE_PHYSICAL;
         double defenseRatio = Clamp(
@@ -8491,7 +8500,8 @@ class CaelumPlayer : DoomPlayer
             MarkCombatActivity();
         }
         CalculateRealShieldDurabilityLoss();
-        return LastShieldHealthDamage;
+        // Conservar la fracción hasta terminar armadura y Dureza.
+        return Max(0.0,incomingDamage-LastShieldAbsorbedDamage);
     }
 
     void CalculateRealShieldDurabilityLoss()
@@ -8550,6 +8560,7 @@ class CaelumPlayer : DoomPlayer
         LastArmorAbsorbedDamage = 0.0;
         LastArmorPostDefenseDamage = 0.0;
         LastArmorHealthDamage = 0;
+        LastToughnessDamageMultiplier = 1.0;
         LastArmorDurabilityLoss = 0;
         LastArmorDurabilityChancePercent = 0.0;
         LastArmorDurabilityRollPercent = 0.0;
@@ -8565,11 +8576,7 @@ class CaelumPlayer : DoomPlayer
             criticalHit
         );
         double postAnatomyDamage = incomingDamage * LastArmorVulnerabilityMultiplier;
-        double toughness = Attributes != null ? Attributes.Toughness : 0.0;
-        LastToughnessDamageMultiplier = CaelumArmorRules.ToughnessMultiplier(
-            postAnatomyDamage, GetImpactMaximumHealth(), toughness);
-        LastArmorPreDefenseDamage = CaelumArmorRules.AfterToughnessDamage(
-            postAnatomyDamage, GetImpactMaximumHealth(), toughness);
+        LastArmorPreDefenseDamage = postAnatomyDamage;
         double defenseRatio = Clamp(
             GetArmorDefensePercent(slot, magical,inflictor) / 100.0,
             0.0,
@@ -8580,9 +8587,11 @@ class CaelumPlayer : DoomPlayer
             0.0,
             LastArmorPreDefenseDamage - LastArmorAbsorbedDamage
         );
+        double postToughnessDamage=CaelumToughnessRules.Apply(self,LastArmorPostDefenseDamage,magical);
+        LastToughnessDamageMultiplier=CaelumToughnessRules.RetainedFraction(LastArmorPostDefenseDamage,postToughnessDamage);
         LastArmorHealthDamage = Max(
             0,
-            int(LastArmorPostDefenseDamage + 0.5)
+            int(postToughnessDamage + 0.5)
         );
 
         // El cuerpo absorbe su parte sin desgastar la pieza equipada.
@@ -12417,11 +12426,7 @@ class CaelumPlayer : DoomPlayer
             DebugArmorCriticalHit
         );
         double postAnatomyDamage = incomingDamage * LastArmorVulnerabilityMultiplier;
-        double toughness = Attributes != null ? Attributes.Toughness : 0.0;
-        LastToughnessDamageMultiplier = CaelumArmorRules.ToughnessMultiplier(
-            postAnatomyDamage, GetImpactMaximumHealth(), toughness);
-        LastArmorPreDefenseDamage = CaelumArmorRules.AfterToughnessDamage(
-            postAnatomyDamage, GetImpactMaximumHealth(), toughness);
+        LastArmorPreDefenseDamage = postAnatomyDamage;
 
         double defenseRatio = Clamp(GetArmorDefensePercent(slot) / 100.0, 0.0, 1.0);
         LastArmorAbsorbedDamage = LastArmorPreDefenseDamage * defenseRatio;
@@ -12429,9 +12434,11 @@ class CaelumPlayer : DoomPlayer
             0.0,
             LastArmorPreDefenseDamage - LastArmorAbsorbedDamage
         );
+        double postToughnessDamage=CaelumToughnessRules.Apply(self,LastArmorPostDefenseDamage);
+        LastToughnessDamageMultiplier=CaelumToughnessRules.RetainedFraction(LastArmorPostDefenseDamage,postToughnessDamage);
         int calculatedHealthDamage = Max(
             0,
-            int(LastArmorPostDefenseDamage + 0.5)
+            int(postToughnessDamage + 0.5)
         );
         LastArmorHealthDamage = Min(calculatedHealthDamage, health - 1);
 

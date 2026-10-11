@@ -1,6 +1,13 @@
 # Caelum Argenteum — Audio and art
 
-Documentation version: **5.2.7** — 2026-10-11.
+Documentation version: **5.2.8** — 2026-10-11.
+
+## 5.2.8 - Toughness evidence and existing status visuals (#188)
+
+No new art/audio or external resource. Existing burn/poison effects retain
+independent visual lifetimes when health resistance shortens or cancels the
+harmful dose. Development-only test sources, logs, hashes and results are in
+assets/validation_528. Runtime packages, saves, engine and IWAD remain local.
 
 ## 5.2.7 - Existing artwork inside native menus (#189)
 

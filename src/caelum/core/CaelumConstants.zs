@@ -402,6 +402,7 @@ class CaelumConstants : Object
     const ELEMENTAL_EFFECT_FREEZE = 3;
     const ELEMENTAL_EFFECT_DAZZLE = 4;
     const ELEMENTAL_EFFECT_LIGHTNING_STUN = 5;
+    const ELEMENTAL_EFFECT_DISEASE = 6;
     const ESSENCE_EXPLOSION_BASE_RADIUS = 128;
     // Radio común aprobado: sellos y habilidades de clase, antes de atributos.
     const SEAL_CHANNEL_BASE_RADIUS = ESSENCE_EXPLOSION_BASE_RADIUS

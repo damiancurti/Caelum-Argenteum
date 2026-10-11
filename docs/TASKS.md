@@ -1,6 +1,14 @@
 # TASKS.md — Active tasks
 
-Documentation version: **5.2.7** — 2026-10-11.
+Documentation version: **5.2.8** — 2026-10-11.
+
+## Issue #188 - Toughness (5.2.8)
+
+Implemented shared post-defense mass subtraction and Type-1 sustained status
+resistance. Validate with assets/validation_528; CA188-01 is the outstanding
+author gameplay check. Commit/push and linked PR are delivery steps; merge or
+closure does not imply acceptance. Next requested implementation: #192,
+four personality layers and twelve-projectile bell, on a separate branch.
 
 ## Issue #184 - Mouse interaction (5.2.6)
 
