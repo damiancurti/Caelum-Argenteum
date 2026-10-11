@@ -1,6 +1,14 @@
 CAELUM ARGENTEUM — STORY AND MAP01
 
-Documentation version: **5.2.1** — 2026-10-11.
+Documentation version: **5.2.2** — 2026-10-11.
+
+## 5.2.2 - Time-skip execution (#178)
+
+Multi-day crafting uses larger bounded simulation batches and validates its
+station network once per batch. Unlimited mansion provisions remain #177's
+rule; durations, sleeping, recipe payments and actual consumptions are not
+shortened. See SYSTEMS and assets/validation_522 for the processing contract
+and native evidence. CA178-01 remains pending.
 
 ## 5.2.1 - Tutorial equipment, chest and rest corrections (#177)
 

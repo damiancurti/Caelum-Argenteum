@@ -1,6 +1,15 @@
 # Caelum Argenteum — Project, status and roadmap
 
-Documentation version: **5.2.1** — 2026-10-11.
+Documentation version: **5.2.2** — 2026-10-11.
+
+## 5.2.2 - Faster time skipping (#178)
+
+The author's multi-day wait report led to a larger forecast budget and a shared
+crafting-network validation for each stationary simulation batch. Personal tics,
+inventory consumption, sleep and interruptions still execute normally. Native
+timings, cancellation/network and siege checks: assets/validation_522. CA178-01
+is pending; stacked on #177/PR179, with CA177-01 and CA147-01 also pending.
+Next feedback: Mandinga retaliation #180; then the existing #148 roadmap.
 
 ## 5.2.1 - Tutorial usability and portable rest (#177)
 

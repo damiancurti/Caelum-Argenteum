@@ -3,8 +3,8 @@
 class CaelumTimeSkipRules : Object play
 {
     const WAKE_AT = 100.0;
-    const BATCH_TICS = 4096;
-    const FORECAST_BATCH_TICS = 32768;
+    const BATCH_TICS = 8192;
+    const FORECAST_BATCH_TICS = 262144;
     const MAX_DAYS = CaelumJourneyRules.MAX_WALK_HOURS / 24;
 
     static double SleepAt()
@@ -405,6 +405,9 @@ class CaelumTimeSkipState : Inventory
             }
             return;
         }
+        // El mundo nativo puede cambiar entre lotes. Validar allí la red de
+        // oficio una vez; los subpasos no mueven estaciones ni geometría.
+        if(user.CraftingTaskActive)user.CraftingSessionValidationTics=0;
         String reason=CaelumTimeSkipRules.BlockReason(user);
         if(reason.Length()!=0){FinishSkip(user,reason);return;}
         s.RefreshSupports(user);

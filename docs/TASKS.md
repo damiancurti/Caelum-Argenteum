@@ -1,6 +1,14 @@
 # TASKS.md — Active tasks
 
-Documentation version: **5.2.1** — 2026-10-11.
+Documentation version: **5.2.2** — 2026-10-11.
+
+## Issue #178 - Faster multi-day time skipping (5.2.2)
+
+Implemented bounded processing-budget changes and one native crafting-network
+scan per stationary live batch. Evidence: assets/validation_522. Existing
+simulation rates, real inventory and interruption boundaries remain. CA178-01
+is pending alongside CA177-01/CA147-01. Branch issue-178-faster-time-skip is
+stacked on #177/PR179. Next: author feedback and Mandinga retaliation #180.
 
 ## Issue #177 - Tutorial equipment, provisions and portable rest (5.2.1)
 

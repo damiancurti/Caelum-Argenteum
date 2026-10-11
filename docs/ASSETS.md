@@ -1,6 +1,12 @@
 # Caelum Argenteum — Audio and art
 
-Documentation version: **5.2.1** — 2026-10-11.
+Documentation version: **5.2.2** — 2026-10-11.
+
+## 5.2.2 - Time-skip performance evidence (#178)
+
+No art, audio, map or recipe changes. assets/validation_522 contains native
+fixtures, logs, timings and static/build evidence. It inherits the existing
+development-engine/IWAD boundary; packages and saves remain local fixtures.
 
 ## 5.2.1 - Reused tutorial and provision presentation (#177)
 
