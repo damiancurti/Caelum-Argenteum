@@ -560,6 +560,7 @@ class CaelumMainM00QuestController : EventHandler
             CaelumWorldProgress.Update(caelumPlayer);
             CaelumSideQuestRules.Update(caelumPlayer);
             CaelumMainM00Loadout.EnsureMigration(caelumPlayer);
+            CaelumMainM00Gifts.Update(caelumPlayer);
             CaelumMainM00Necklace.Update(caelumPlayer);
             CaelumMainM00MagicTrial.Update(caelumPlayer);
             CaelumMainM00RonnieTrial.Update(caelumPlayer);
@@ -592,16 +593,12 @@ class CaelumM00Bull : CaelumBull
     CaelumPlayer TrialFighter;
     int TrialGraceTicks;
 
-    void ResetAttempt(CaelumPlayer user)
+    void PrepareEncounter(CaelumPlayer user)
     {
-        StopBullCharge();
-        SetOrigin((-2180,0,0), false); Vel = (0,0,0); Angle = 0;
-        health = CombatMaximumHealth;
-        CurrentCombatAir = MaximumCombatAir; CurrentCombatAnima = MaximumCombatAnima;
-        CurrentCombatLucidity = CaelumConstants.MAXIMUM_LUCIDITY;
-        CombatLucidityPhysicalStunRemaining = 0;
-        ElementalStatus = new("CaelumElementalStatus");
-        Target = user; TrialFighter = user; TrialReleased = true;
+        // Usa la gracia existente para guardar antes de habilitar la hostilidad.
+        // No restaura salud, recursos ni durabilidad del jugador o del Toro.
+        StopBullCharge(); Vel = (0,0,0);
+        Target = null; TrialFighter = user; TrialReleased = false;
         TrialGraceTicks = 2 * TICRATE; bShootable = false;
         SetStateLabel("TrialIdle");
     }
@@ -643,11 +640,11 @@ class CaelumM00Bull : CaelumBull
     {
         if (health > 0)
         {
-            if (!TrialReleased) { Vel = (0,0,0); Target = null; bShootable = false; return; }
+            if (!TrialReleased && TrialFighter == null) { Vel = (0,0,0); Target = null; bShootable = false; return; }
             if (TrialGraceTicks > 0)
             {
                 TrialGraceTicks--; Vel = (0,0,0); bShootable = false;
-                if (TrialGraceTicks == 0) SetStateLabel("See");
+                if (TrialGraceTicks == 0) { TrialReleased = true; SetStateLabel("See"); }
                 return;
             }
             bShootable = true;

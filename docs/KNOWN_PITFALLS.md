@@ -4,6 +4,26 @@ Status: integrated engineering register (issue #22, patch 4.36.1b).
 Prepared: 2026-09-23. Inherits the project's release after integration.
 Inspected baseline: `1dc390576fa330d37ff543526fc7e69a397fc28f` (PR #7).
 
+## CA-KP-074 - Native autosave requests are queued before the save is written
+
+Status/evidence: ENGINE-VERIFIED, #164 / 5.1.18, 2026-10-10.
+Baseline: 6cae68bd; GZDoom 4.14.2 Windows/Vulkan.
+
+Actor.A_CallSpecial(15) requests the native autosave through DEM_CHECKAUTOSAVE
+and DEM_DOAUTOSAVE. It is not a synchronous write. Prepare and serialize the
+encounter's party/flags before requesting it, then keep actors inactive through
+the established preparation interval. Retain a persisted encounter identity so
+loading the checkpoint resumes preparation instead of issuing another save.
+Respect native disableautosave/autosavecount and slot rotation; do not invent a
+custom protected slot or claim a file exists when native policy disables it.
+
+In the #164 MAP01 run the request occurred at tic 1231, the native file captured
+tic 1234 with TrialReleased=false and 67 grace tics remaining, and hostility
+began at 1301. Reload retained those values, equipment IDs and wounded resources;
+death did not reset the fight. Observe loaded fields through a StaticEventHandler
+before simulation, as CA-KP-072 requires. Sources: GZDoom g4.14.2 p_lnspec.cpp,
+d_net.cpp and g_game.cpp; evidence assets/validation_5118.
+
 ## CA-KP-073 - Separate front and rear arcs around a billboard actor
 
 Status/evidence: ENGINE-VERIFIED, #163 / 5.1.16 visual follow-up, 2026-10-10.

@@ -294,26 +294,8 @@ class CaelumMainM00RonnieTrial : Object play
         return true;
     }
 
-    static void ReturnLoan(CaelumPlayer user)
-    {
-        let loan = FindLoan(user);
-        if (loan == null) return;
-        let record = user.GetPersistentCharacterState(true);
-        bool active = user.ActiveWeaponItemId == loan.ItemId;
-        if (active) { user.ActiveWeaponItemId = 0; user.WeaponModel.Equipped = false; }
-        loan.Destroy();
-        if (active)
-        {
-            let first = user.FindNativeEquipmentItemById(record.MainM00StarterWeaponId);
-            if (first != null && !first.InMagicBox)
-            { first.Equipped = true; user.ActivateExactEquippedWeapon(first); }
-            else user.ActivateFirstEquippedWeapon();
-        }
-        user.ApplyCharacterProfile();
-        user.EnsureWeaponFamilySelectors();
-        user.PersistCharacterState();
-        user.RefreshEquipmentSelectionPreview();
-    }
+    // Nombre conservado para acciones antiguas; los préstamos ahora son propios.
+    static void ReturnLoan(CaelumPlayer user) { CaelumMainM00Loadout.EnsureMigration(user); }
 
     // Compatibilidad con las clases de acción antiguas; Palomo es la autoridad.
     static bool Choose(CaelumPlayer user, int option)
@@ -469,6 +451,8 @@ class CaelumMainM00RonnieTrial : Object play
             Feedback(user, "CA_M01_STARTER_EXTRA");
             return;
         }
+        // Sólo fabricar el arma elegida satisface el aprendizaje obligatorio.
+        if (user.CraftingSelectionRecipe != CaelumMainM00StarterRules.GetRecipe(record.MainM00StarterOption)) return;
         result.ItemFlags |= CaelumConstants.CA_ITEMFLAG_LIMBO_PRESERVABLE;
         record.MainM00StarterWeaponId = result.ItemId;
         record.SetMainM00Flag(CaelumConstants.MAIN_M00_FLAG_MATERIALS_COMPLETE);
@@ -532,7 +516,6 @@ class CaelumMainM00RonnieTrial : Object play
                 user.CancelCraftingTask();
             ReturnLoan(user);
             bool changed = false;
-            bool lostActiveWeapon = false;
             // Sólo retira cantidades/instancias temporales; conserva cualquier
             // stock anterior del jugador aunque comparta el tipo de material.
             for (Inventory cursor = user.Inv; cursor != null;)
@@ -546,29 +529,7 @@ class CaelumMainM00RonnieTrial : Object play
                     item.LimboQuestUnits = 0; item.LimboSupplyUnits = 0;
                     if (item.Amount <= 0) item.Destroy();
                 }
-                let equipment = CaelumEquipmentItem(cursor);
-                if (equipment != null && equipment.IsLimboTemporary()
-                    && CaelumMainM00Loadout.IsBorrowed(equipment)
-                    && !(equipment is "CA_LimboMagicImplement") && !(equipment is "CA_LimboMagicSeal"))
-                {
-                    changed = true;
-                    if (user.ActiveWeaponItemId == equipment.ItemId)
-                    {
-                        lostActiveWeapon = true;
-                        user.ActiveWeaponItemId = 0;
-                        if (user.WeaponModel != null) user.WeaponModel.Equipped = false;
-                    }
-                    equipment.Destroy();
-                }
                 cursor = next;
-            }
-            if (lostActiveWeapon)
-            {
-                let record = user.GetPersistentCharacterState(true);
-                let first = user.FindNativeEquipmentItemById(record.MainM00StarterWeaponId);
-                if (first != null && !first.InMagicBox)
-                { first.Equipped = true; user.ActivateExactEquippedWeapon(first); }
-                else user.ActivateFirstEquippedWeapon();
             }
             if (changed) { user.OnNativeInventoryChanged(); Sync(user); }
             return;

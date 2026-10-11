@@ -1,6 +1,29 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **5.1.17** — 2026-10-10.
+Documentation version: **5.1.18** — 2026-10-10.
+
+## 5.1.18 - MAP01 gifts and Bull checkpoint (#164), 2026-10-10
+
+Author decision: Channel is optional with an owned Seal; do not give another
+Seal. Caella instead supplies the permanent bronze utility staff. Argento gives
+the physical deck, Ronnie retains his permanent Pickaxe/recipe grant and Rulo
+gives bolas. Only the chosen weapon must be crafted; Palomo's Box remains last.
+The assisted Bull encounter requests a native pre-fight autosave during existing
+grace and no longer intercepts death for a healed retry. Loadout revision 2 and
+gift revision 1 preserve legacy equipment and progression. Native test evidence:
+assets/validation_5118. CA164-01 remains pending author acceptance.
+
+Native GZDoom 4.14.2: the weapon-only route, four optional crafts, five old-save
+stages, capacity/loss handling and two manual checkpoint reloads pass. The actual
+save is at tic 1234, with 67 grace tics and all four helpers; hostility begins
+at 1301. Death and reloads leave that autosave byte-identical. Optional choices
+share the existing plan page so the native menu fits; all 405 page slots retain
+their order. Build members match the tested package. Accelerated fixture limits
+and agent-only evidence are detailed in validation_5118/RESULTS.md.
+
+The author's previous acceptance was applied: PR167 merged at 0de80b1e,
+PR168 at 6935856b and PR170 at 6cae68bd. Issues #162, #163 and #169 are closed.
+Acceptance IDs and qualifications remain under their originating releases.
 
 ## 5.1.17 - Medikit names (#169), 2026-10-10
 

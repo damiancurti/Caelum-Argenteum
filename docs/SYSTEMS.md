@@ -1,6 +1,67 @@
 # Caelum Argenteum — Current systems and rules
 
-Documentation version: **5.1.17** — 2026-10-10.
+Documentation version: **5.1.18** — 2026-10-10.
+
+## Permanent MAP01 gifts and assisted checkpoint - 5.1.18 / #164
+
+This section supersedes earlier MAP01 loan returns, compulsory non-weapon
+selections, mandatory Channel, Palomo's deck delivery and scripted Bull retries.
+It does not change the tools' #162/#163 rules, #89 recipe, #158 size selection,
+#62 dummy exercises, finite supplies or the established resident support.
+
+- Argento gives the complete physical 78-card Tarot deck when his branch starts.
+  Physical possession permits Trucazo practice before the Magic Box; it unlocks
+  no captured essence or power. Capture still needs the deck inside the owned Box.
+- Caella gives one T1 bronze fire/ice utility staff at character acquisition size.
+  Real fire and ice stream contacts on the shared dummy, Anima expenditure and
+  natural recovery are the four required practice checks. Dummy contacts use the
+  actual cone and wall visibility without wear or harmful status on the prop.
+  The four existing runes still follow Earth/Air/Fire/Water, then a Caella turn-in.
+  On 2026-10-10 the author chose optional Channel with an owned Seal, with no
+  additional Seal gift. Existing Channel practice and its reserve remain optional.
+- Ronnie gives the existing owned Pickaxe and unlocks its existing recipe. The
+  gift is separate from actually crafting the weapon selected with Palomo.
+- Rulo gives one recoverable bolas at character acquisition size when his branch
+  starts. It follows the established preparation, throwing and recovery rules.
+- Palomo gives the Magic Box only after Argento, Caella, Ronnie, Rulo and the Bull
+  are complete. Palomo no longer gives or replaces the Tarot deck at the finale.
+
+Only choosing and crafting the selected weapon is mandatory. Armor, Seal,
+necklace and shield crafting remain optional even after confirmation. Explicit
+skip/continue choices return to the plan or close it. The existing choices,
+explanations, recipes, stations, recorded-size allowances and the #96 necklace
+gift remain available. Reopening or skipping grants no extra materials or items.
+
+Each tool's native ItemId records its one-time grant. A missing, sold or broken
+piece is not recreated or repaired by reopening a conversation. Capacity can
+postpone an unclaimed gift; ordinary personal/owned-Box limits apply. The deck
+keeps its existing independent claim marker. Loadout revision 2 promotes actual
+legacy wand, Seal and sword loans to permanent ownership without substituting
+them. Gift revision 1 grants missing new tools according to existing branch-start
+flags, including advanced/completed saves, without replay or a second deck/Box.
+Item identity, size, wear, equipped/boxed location, choices, learned recipes,
+reservations and issued stock survive. Original saves and the original package
+remain the reversible migration path.
+
+The four existing residents still gather and fight with their native attacks,
+resources, downed behavior and victory recovery. Entering the prepared arena
+records the fighter, party and locked doors, then requests native Autosave special
+15. The existing two-second grace keeps the Bull non-hostile and all helpers
+inactive; its saved remaining time resumes on manual load. The fighter reference
+prevents another checkpoint request after loading or during combat. Native slot
+rotation and the user's autosave settings remain authoritative: disabled
+manual-trigger autosaves or zero slots prevent a file. No custom save slot or
+scripted load/respawn is used. The checkpoint does not heal, refill or repair the
+player or reset Bull health. Existing initial practice preparation and combat
+ammunition support remain; combat resupply starts only after hostility begins.
+Lethal damage follows normal player death. Legacy pending-retry state is retired
+without triggering a reset. The user loads a save manually to try again.
+
+Departure preserves all actual gifts and legacy loan instances alongside owned
+crafted equipment. The separately approved removal of ammunition, materials,
+coins, consumables and tutorial keys remains. A selection never creates its item.
+Native/static evidence is maintained in assets/validation_5118; author acceptance
+for this new patch remains CA164-01 in pending_test.txt.
 
 ## Medikit terminology - 5.1.17 / #169
 
@@ -1746,7 +1807,7 @@ Author decisions, 2026-10-04: alongside the accepted Trucazo practice, Argento
 offers traditional Argentine Truco, called ranked. The author confirmed a
 30-point match (15 malas / 15 buenas), optional Flor, and no rating service yet.
 No health, row damage, character attributes, essences, powers, wagers, prizes
-or campaign transactions apply. Palomo's physical deck is still required.
+or campaign transactions apply. The physical deck from Argento (#164) is required.
 The same 40 equivalent cards already used as playable Minors provide the art:
 1-7, Page/Sota = Spanish 10, Knight/Caballero = 11, King = 12, in four suits.
 Only those 40 enter the shared shuffle; deal three each, without replenishment.
@@ -1794,6 +1855,9 @@ conversation pages; a page with no other reply still has practice and goodbye.
 No new page, condition, action or match rule is introduced.
 
 ## 4.37.14 - Early physical deck delivery (#97)
+
+Historical timing, superseded by #164: Argento now gives the deck. The ownership
+and capacity rules below remain; Palomo no longer delivers or replaces it.
 
 After Palomo completes his existing route upstairs, successfully opening his
 conversation grants the protected 78-card physical Tarot deck immediately,
@@ -2223,7 +2287,7 @@ apply. Seal Channel keeps its actual Adrenaline cost and cooldown.
 The existing persistent weapon, armor and Seal fields remain authoritative;
 the shield adds MainM00ShieldChoice and MainM00ShieldCrafted. Palomo only records
 these four choices. They grant no equipment, recipes or supplies and do not advance
-Caella or Ronnie. After Caella's trial and the four confirmations, Ronnie starts
+Caella or Ronnie. As of #164, after Caella's trial and weapon confirmation, Ronnie starts
 the existing crafting stage, teaches the selected recipes/dependencies, and
 opens the finite raw-material allowance. A legacy already-started tutorial can
 continue without filling new choices or repeating its start. Adding a missing
@@ -2254,8 +2318,8 @@ which always supply food and water; this dialogue coordinates with #65.
 On narrative departure, retain every actual owned equipment instance and the
 Magic Box: weapons, armor, shields, Seals and amulets, whether equipped, carried
 or boxed. Preserve ItemId, type, essence, size, condition, weight and placement.
-Return the magic practice implement/Seal and any legacy gathering sword through
-their loan lifecycle; the owned #89 Pickaxe is retained. Remove all ammunition (including loaded magazines),
+As of #164, retain the practice staff, legacy wand/Seal/gathering sword, Pickaxe
+and bolas as owned instances. Remove all ammunition (including loaded magazines),
 materials, currencies, consumables and tutorial keys; this supply cleanup was
 explicitly confirmed by the author on 2026-10-01. Never grant a merely selected
 piece, replace an item, or reconstruct a destroyed first weapon. The existing
@@ -2263,8 +2327,8 @@ recovery of the actual dropped first-weapon instance remains. No healing or
 new equipment is awarded by this change. Active crafting still blocks departure
 until the player finishes or cancels it.
 
-Loadout revision 1 clears the legacy temporary flag on currently owned equipment
-once, excluding explicit loan classes. New own crafted pieces are not marked
+Loadout revision 1 cleared temporary flags except explicit loans. Revision 2
+(#164) also promotes those actual legacy loan instances, without replacing them. New own crafted pieces are not marked
 temporary. Existing choice fields, recipe knowledge, reservations, issued stock
 and completed stages are preserved; missing shield state defaults to unchosen.
 Old native conversation page indices are retained by appending the new Palomo
@@ -6136,7 +6200,7 @@ remains separate and pending.
 | Area | Confirmed contract | Decision still required |
 | --- | --- | --- |
 | Opponent/location | One human against Argento in MAP01. | None for the initial opponent/location. |
-| Physical source | The complete 78-card physical deck supplied by Palomo in #80; separate from captured essences. The 40 playable cards are Minor Aces through 7, Pages, Knights and Kings, in all four suits. | None for identities/playability. |
+| Physical source | The complete 78-card physical deck supplied by Argento in #164; separate from captured essences. The 40 playable cards are Minor Aces through 7, Pages, Knights and Kings, in all four suits. | None for identities/playability. |
 | Dealing | Author correction: one shared shuffled deck of all 56 Minors. Each player receives five cards; their nonplayable 8/9/10/Queens enter their first row. Draw replacements from the remaining shared deck until each has at least three playable cards; replacement nonplayables enter their second row. Replenish only during the deal, never after playing a card. | None; the author confirmed this exact interpretation on 2026-10-04. |
 | Card strength | Sword Ace; Wand Ace; Sword 7; Coin 7; all 3s; all 2s; Cup/Coin Aces; Kings; Knights; Pages; Cup/Wand 7s; all 6s; all 5s; all 4s. The author's current tie rule is mano (the participant who plays first). | None for ordinary strength/ties. The latest tie decision takes precedence over the source's awakened-card tie priority. |
 | Turns/hand outcome | Traditional Truco: up to three tricks, first to win two wins the hand; trick winner leads next. The source's damage/health extension determines the complete match. | None for the hand structure. |
@@ -6217,7 +6281,7 @@ The Fool's flight is additional to its existing authored world transition.
 | Persistence | Selected set, activated set and remaining timers survive save/load/travel | Same; derive bonuses without accumulation | Same; derive bonuses without accumulation |
 
 Changing a selection must never grant an essence or replay acquisition rewards.
-Physical-deck possession is distinct from captured-essence ownership. Palomo's
+Physical-deck possession is distinct from captured-essence ownership. Argento's
 once-only complete deck and capture-commit requirement come from #80; its
 weight is 780 grams and it occupies one slot. The author's final clarification
 makes it unsellable, undroppable and unbreakable. Essences stay with the
@@ -6487,11 +6551,11 @@ the existing main range, correcting the old zero value of the fallback.
 
 The tutorial bull retains profile, mass, anatomy and native damage. Adjustments of this
 delivery to check in game: 18 tics of gore anticipation, 2 seconds of initial
-preparation/retry. The entry starts the test; the key alone does not wake the bull. The
-two leaves of door 806 are blocked and the bull is contained in its room. The player’s
-death is intercepted before native Die and the restart is completed to the next
-WorldTick: positions, Health/Air/Lucidity, elemental states and initial weapon. The
-projectiles of the attempt are removed; no leather is generated or increased. The
+preparation. The entry starts the test; the key alone does not wake the bull.
+The two leaves of door 806 lock and the bull remains in its room. As of #164,
+native autosave is requested with the four helpers gathered during that grace,
+before hostility; loading resumes it without another checkpoint request. Player
+death uses native Die and manual loading, without resets or healing. The
 defeated bull opens the enclosure, delivers once the leather within the current quota
 (up to 12,5 kg from 0q) and dissipates. It is spoken with Rulo within the enclosure to
 close.
@@ -6566,15 +6630,13 @@ duplicating a present target. Existing active/completed 4.37.0 save flags, rune
 progress and loan IDs are preserved, including offensive flags earned under the
 former cast-based rule. There are no new saved fields or conversion/reset steps.
 
-The practice requires five actions followed by four runes; the Journal counts from 0/9
-to 9/9. Use on a rune with an active implement channels its element. Earth → Air → Fire
-→ Water records 4/4 and asks the player to return to Caella. It remains at stage 40,
-with borrowed equipment and a solid wall. The return response to Caella removes only
-CA_LimboMagicImplement/Seal, advances to stage 45 and enables passage. The wall retains
-CMIN01 on both sides and the runes remain lit: the player walks through it. Owned
-equipment is not removed. An error resets only the runes; hints appear after 2 and 4
-errors. A save already completed in 0l retains its stage and returns; the texture is
-restored without blocking passage again.
+As of #164, four required practice checks precede four runes; the Journal counts
+0/8 to 8/8. Channel is optional with an owned Seal. Use with an active staff or
+owned magic implement conducts the rune's element: Earth -> Air -> Fire -> Water.
+At 4/4, return to Caella; her last instruction advances stage 40 to 45 and opens
+the still-visible wall without taking any equipment. An error resets only runes;
+hints remain at 2 and 4 errors. Completed saves keep their open passage and stage.
+The following loan description is historical and superseded by #164.
 
 The two temporary instances reuse T1 from the catalog. They retain ItemId and the
 CA_ITEMFLAG_LIMBO_TEMP brand; they are not sold, released, disarmed or stored in the

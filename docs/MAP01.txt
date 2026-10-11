@@ -1,6 +1,41 @@
 CAELUM ARGENTEUM — STORY AND MAP01
 
-Documentation version: **5.1.17** — 2026-10-10.
+Documentation version: **5.1.18** — 2026-10-10.
+
+## 5.1.18 - Permanent gifts, optional crafting and Bull checkpoint (#164)
+
+The playable sequence remains Argento -> Caella -> Ronnie -> Rulo -> Palomo.
+Argento gives the physical Tarot deck; Caella gives the bronze fire/ice staff;
+Ronnie gives the existing Pickaxe and its recipe; Rulo gives recoverable bolas.
+Each gift is permanent and one-time. Palomo's Magic Box remains last, after the
+mandatory progression and Bull victory. Trucazo works with the physical deck
+before the Box; capturing an essence still requires the deck inside the Box.
+
+The chosen weapon is the only required crafting task. Armor, Seal, necklace and
+shield crafting can be skipped even after selection. Palomo's existing choices,
+explanations and necklace gift remain; Ronnie retains recipes, finite materials
+and stations. Receiving the Pickaxe does not count as crafting the chosen weapon.
+
+Caella's four required checks are fire contact, ice contact, Anima expenditure
+and recovery. The author explicitly chose optional Channel without an extra
+Seal on 2026-10-10. The staff can conduct the four existing rune interactions;
+Caella explains the passage without asking for any equipment back.
+
+The Bull fight keeps all four established helpers and their support. Native
+Autosave runs during the existing two-second pre-fight grace, after gathering
+support and before enabling hostility. It preserves current equipment, resources
+and progress without adding a heal/refill. Loading the saved preparation resumes
+it once; combat/death do not repeatedly overwrite it. Normal native save settings
+and rotation apply. Death stays normal death; retries use manual loading.
+
+Loadout revision 2 and gift revision 1 preserve actual old equipment and migrate
+recorded stages idempotently. Old wand/Seal/sword loans become owned instead of
+being confiscated. Other approved departure supply cleanup remains unchanged.
+SYSTEMS defines the detailed contract. Earlier passages describing loan returns,
+five required magic checks, four compulsory loadout choices, Palomo's deck or
+automatic Bull retries are historical and superseded by this section.
+Evidence: assets/validation_5118. CA164-01 remains author acceptance, distinct
+from the agent's native tests.
 
 ## 5.1.17 - Health-kit terminology (#169)
 
@@ -205,8 +240,8 @@ recipe and components; she refers unchosen characters back to Palomo.
 Previous choices remain authoritative, and an already owned matching T1 is
 recognized rather than duplicated. Pending same-T1 crafting is allowed to
 finish or be cancelled normally. Completed old tutorials are not restarted.
-The necklace remains optional; Ronnie still requires the original four choices
-and an actually crafted first weapon. Palomo's later final/Box/Fool pages also
+The necklace remains optional. As of #164, Ronnie requires only the chosen
+weapon and its actual crafting; other choices can be skipped. Palomo's later final/Box/Fool pages also
 offer the necklace entry. No geometry, route or loan lifecycle changes.
 
 All four shield labels, descriptions, confirmation pages and summary now share
@@ -2835,6 +2870,7 @@ PHASE 20 — MEET_PALOMO
 
 PHASE 30 — ARGENTO_SOCIAL
 
+- Argento gives the complete physical Tarot deck once for practice before the Box.
 - Argento explains that the other residents have necessary knowledge.
 - Activate three recruitment talks.
 - Convince Rulo, Ronnie and Caella.
@@ -2843,15 +2879,16 @@ PHASE 30 — ARGENTO_SOCIAL
 PHASE 40 — CAELLA_MAGIC
 
 - Caella leads to the riddle room.
-- Deliver temporary magic implements and seal when needed.
-- Show Anima, Fire, AltFire and Channel/Reload.
+- Give the permanent bronze fire/ice utility staff once.
+- Practice fire, ice, Anima expenditure and recovery; Channel is optional with an owned Seal.
 - Solve the elementary sequence.
 - To open the secret passage persistently.
 
 PHASE 50 — RONNIE_SURVIVAL
 
 - Ronnie enables the path behind the passageway.
-- Ask what initial weapon the player wants; do not restrict it by class.
+- Use the weapon selected with Palomo; do not restrict it by class.
+- Give the existing Pickaxe and recipe; it does not satisfy weapon crafting.
 - Derive from your recipe the list of necessary raw materials.
 - Teaching resources, cargo, Air and needs.
 - Gather all the weapon materials.
@@ -2865,10 +2902,11 @@ PHASE 60 — PREPARE_WEAPON
 
 PHASE 70 — RULO_COMBAT
 
-- Rulo introduces practice combat.
-- Activate the Bull and temporarily close the enclosure.
+- Rulo gives permanent recoverable bolas and introduces practice combat.
+- Gather the existing four helpers and close the enclosure.
+- Request native autosave during existing grace, before activating the Bull.
 - Register tutorial actions and victory.
-- If the player is defeated, restart the match without losing previous progress.
+- Defeat uses ordinary death and manual save loading; do not reset or heal the encounter.
 - When you beat, complete the fourth branch and enable Palomo up.
 
 PHASE 80 — PALOMO_FINAL
@@ -3044,7 +3082,7 @@ avoid magical numbers in scripts.
 - CA_LimboMagicSeal.
 - CA_LimboSurvivalTool.
 - CA_LimboResourceNode.
-- CA_LimboBull, based on the approved Bull but with restart control.
+- CaelumM00Bull, based on the approved Bull with saved pre-fight preparation.
 - CA_TheFoolEssence.
 - CA_MagicBox, expanded with capture and return.
 - CA_M01QuestController.
@@ -3278,31 +3316,27 @@ una pista.”
 
 Set CA_F_M01_CAELLA_STARTED.
 
-18.3. TEMPORARY EQUIPMENT
+18.3. PERMANENT EQUIPMENT (#164)
 
-If the player does not have compatible magic equipment:
-
-- Give CA_LimboMagicImplement.
-- Give CA_LimboMagicSeal.
-- Assign an ItemId to both instances.
-- Tag them CA_ITEMFLAG_LIMBO_TEMP.
-- Do not allow to sell, release out of the room or transfer to containers.
-
-All classes can complete the test. Magical attributes modify efficiency, but not access to
-tutorial actions.
+Caella gives one T1 bronze-tipped fire/ice utility staff, using the shared
+character-size acquisition policy and existing tool data. Its ItemId records the
+gift independently of continued possession. The staff stays owned after practice
+and departure. Existing loan wand/Seal instances become owned without replacement;
+new players receive no extra Seal. All classes can perform the required practice.
 
 18.4. TEACHING ACTIONS
 
-Before the riddle, record:
+Before the riddle, record four required facts:
 
-- A valid primary spell hit on the shared training dummy: Fire.
-- A valid secondary spell hit on the same dummy: AltFire.
-- A valid channeling with Seal: User2/Channel (current control).
-- Consumption and visible recovery of Anima.
+- Real primary fire contact with the shared training dummy.
+- Real secondary ice contact with that same dummy.
+- Anima expenditure.
+- Natural Anima recovery.
 
-Do not demand harm against an enemy. Both offensive spells must hit the existing
-training dummy in the north-central ground-floor room; misses and other targets
-do not count. Seal Channel and Anima expenditure/recovery require no impact.
+Misses and contact with other targets do not satisfy the dummy exercises. The
+same stream cone and wall visibility apply; the dummy suffers no status or wear.
+Seal Channel remains an optional lesson for an owned Seal and never gates runes.
+Earlier saved practice flags remain valid; no completed step must be repeated.
 
 18.5. RIDDLE
 
@@ -3321,9 +3355,8 @@ Operational solution:
 3. Activate Fire.
 4. Activate Water.
 
-Each rune requires a magical interaction or attack of the corresponding element. If the
-temporary implement uses an elemental selector, Caella teaches to change it before starting the
-sequence.
+Use with an active, usable utility staff or owned magic implement conducts the
+rune's own element. No Seal or four-weapon collection is required.
 
 18.6. ERROR AND RESET
 
@@ -3580,7 +3613,7 @@ CA_LimboBull must reuse approved Bull behavior whenever possible and add only:
 
 - CA_M01QuestController link.
 - Tutorial scaling.
-- Controlled reset.
+- Native pre-fight checkpoint and ordinary death/manual loading (#164).
 - Inability to leave the compound during the meeting.
 - Deletion of exploitable drops.
 - Final dissipation state appropriate for Limbo.

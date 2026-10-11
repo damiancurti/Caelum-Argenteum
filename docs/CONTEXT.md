@@ -1,14 +1,13 @@
 # CONTEXT.md — Caelum Argenteum
 
-Documentation version: **5.1.17** — 2026-10-10.
+Documentation version: **5.1.18** — 2026-10-10.
 
-**#162/#163/#169 accepted** 2026-10-10; merges/closures authorized.
-
-**5.1.16/#163:** recoverable bolas; one-second preparation, five-second restraint
-Hanging rest, 3 Hz spin, rear occlusion, extended hands, visible escape fire.
-validation_5116; CA163-01 passed.
-#162 staff/Wands: PR167, validation_5115; CA162-01 passed.
-Gifts remain #164.
+**5.1.18/#164:** permanent Argento deck, Caella utility staff, Ronnie Pickaxe,
+Rulo bolas; Palomo Box last. Only selected weapon crafting required; optional
+Channel, no extra Seal (author decision). Existing helpers and two-second grace
+precede native autosave; ordinary death/manual loading. Revisions preserve old
+loans as owned items. SYSTEMS/MAP01 contract; validation_5118; CA164-01 pending.
+#162/#163/#169 accepted, closed; PR167/168/170 merged 2026-10-10.
 
 **5.1.14/#165 accepted** 2026-10-10 (CA165-01). Flash/travel repair; PR166
 merged. 34 checks pass: validation_5114.
@@ -22,9 +21,6 @@ follow-up stays in SYSTEMS/TASKS. #135/PR144 merged; soldiers: validation_516.
 #132 opt-in MAP06 reinforcement groups are 100/350 tics, 2,000 alive, 6,000 total;
 old/full armies remain. Evidence: validation_512; geometry and 10 km route: SYSTEMS.
 **#131/#130/#128 accepted.** Fluency/multiplayer remain pending.
-
-**Earlier milestones:** #82 export and #103 introduction accepted;
-#112/#106 merged (#114/#113). Details and controls remain in HISTORY/SYSTEMS.
 
 **#98/#96/#91/#89 accepted, closed, merged:** dummy model, necklace/shield names,
 crafting/Tarot UI, Pico and shared gathering feedback. Evidence: validation_43717-20.
@@ -48,7 +44,7 @@ associations; its old-save waiver stays specific. HISTORY retains acceptance.
 **Accepted base:** #64/#65 (time/tables), #63 (loadout), #68 (magic), #62 (dummy),
 #61 (landscape), #17 (export). #61 geometry needs fresh MAP01. Rights: LICENSE.md.
 
-## The game's premise
+## Premise
 
 Caelum Argenteum: independent Argentine dark-fantasy FPS-RPG, nineteenth century,
 GZDoom 4.14.2/ZScript.

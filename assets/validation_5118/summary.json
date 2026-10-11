@@ -1,0 +1,23 @@
+{
+  "passes_by_run": {
+    "route-final": 43,
+    "reload-final-1": 10,
+    "reload-final-2": 10,
+    "optional-02": 60,
+    "safety-01": 6,
+    "migration-0e": 7,
+    "migration-1e": 9,
+    "migration-2f": 10,
+    "migration-3f": 9,
+    "migration-4f": 9,
+    "ui-plan-es3": 1,
+    "ui-plan-en": 1,
+    "ui-optional-es": 2,
+    "ui-caella-es4": 3,
+    "ui-argento-es": 1
+  },
+  "total_pass_records": 181,
+  "build_members_identical": true,
+  "checkpoint_sha256": "f130dfbc88b38ff109705fdf7a273e8441a2883f02ab25151c8763e1cea8134f",
+  "checkpoint_unchanged_after_death_and_two_reloads": true
+}

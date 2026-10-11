@@ -20,92 +20,20 @@ class CaelumMainM00MagicTrial : Object play
             CHAN_7, CHANF_LOCAL | CHANF_UI, 0.65, ATTN_NONE);
     }
 
-    static CaelumEquipmentItem FindImplement(CaelumPlayer user)
-    {
-        for (Inventory cursor = user.Inv; cursor != null; cursor = cursor.Inv)
-        {
-            let item = CaelumEquipmentItem(cursor);
-            if (item == null || item.InMagicBox || item.Durability <= 0
-                || item.EquipmentKind != CaelumConstants.EQUIPMENT_KIND_WEAPON
-                || !CaelumEconomyRules.IsEssenceWeaponType(item.ItemType)) continue;
-            double tierCost = item.Tier >= 3 ? 2.5 : item.Tier == 2 ? 1.6 : 1.0;
-            if (user.WeaponModel.GetAnimaCostFor(item.ItemType) * tierCost
-                * user.DerivedStats.StaffAnimaCost / CaelumConstants.DEBUG_STAFF_ANIMA_COST <= user.DerivedStats.MaximumAnima)
-                return item;
-        }
-        return null;
-    }
-
     static bool PrepareEquipment(CaelumPlayer user)
     {
         if (!IsActive(user) || user.WeaponModel == null || user.DerivedStats == null) return false;
-        // Caella comparte el blanco recuperable de Rulo desde su propia fase.
         CaelumMainM00RuloTrial.EnsurePracticeTarget();
+        if (!CaelumMainM00Gifts.EnsureTool(user, false))
+        { Feedback(user, "CA_M01_GIFT_NO_ROOM", true); return false; }
         let record = user.GetPersistentCharacterState(true);
+        let implement = user.FindNativeEquipmentItemById(record.MainM00UtilityStaffId);
+        // Una pieza perdida o gastada no autoriza otro regalo ni una reparación.
+        if (implement == null || implement.Durability <= 0) return false;
+        if (implement.InMagicBox && !user.CanMoveRawWeightFromMagicBoxToPersonal(implement.UnitWeight)) return false;
         user.SyncActiveModelsToNativeInventory();
-        let implement = FindImplement(user);
-        if (implement == null)
-        {
-            implement = CaelumEquipmentItem(user.FindInventory("CA_LimboMagicImplement"));
-            if (implement == null)
-            {
-                implement = CaelumEquipmentItem(Actor.Spawn("CA_LimboMagicImplement", user.Pos, NO_REPLACE));
-                if (implement == null) return false;
-                implement.EquipmentKind = CaelumConstants.EQUIPMENT_KIND_WEAPON;
-                implement.ItemType = CaelumConstants.WEAPON_TYPE_STAFF;
-                implement.ArmorSlot = -1;
-                implement.Tier = 1;
-                implement.SizePolicy = CaelumEquipmentRules.CHARACTER_DEFAULT;
-                implement.EquipmentSize = CaelumEquipmentRules.ResolveAcquisitionSize(
-                    user, implement.SizePolicy, user.WeaponModel.Size);
-                implement.EssenceType = CaelumConstants.ESSENCE_FIRE;
-                implement.UnitWeight = user.WeaponModel.GetWeightFor(implement.ItemType, 1, implement.EquipmentSize);
-                implement.PickupDataInitialized = true;
-                implement.ItemFlags = CaelumConstants.CA_ITEMFLAG_LIMBO_TEMP;
-                implement.AttachToOwner(user);
-                user.EnsureEquipmentItemId(implement);
-                CaelumNotifications.Acquired(user, implement, 1);
-                record.SetMainM00Flag(CaelumConstants.MAIN_M00_FLAG_MAGIC_IMPLEMENT_GIVEN);
-            }
-            // El préstamo roto se repone sobre la MISMA instancia e ItemId.
-            implement.Durability = user.WeaponModel.GetMaximumDurabilityFor(
-                implement.ItemType, implement.Tier, implement.EquipmentSize);
-        }
-        implement.Equipped = true;
-        implement.InMagicBox = false;
+        implement.Equipped = true; implement.InMagicBox = false;
         user.ActivateExactEquippedWeapon(implement);
-
-        let seal = user.GetEquippedSeal();
-        if (seal == null)
-        {
-            for (Inventory cursor = user.Inv; cursor != null; cursor = cursor.Inv)
-            {
-                let candidate = CaelumEquipmentItem(cursor);
-                if (candidate != null && !candidate.InMagicBox
-                    && candidate.EquipmentKind == CaelumConstants.EQUIPMENT_KIND_SEAL)
-                { seal = candidate; break; }
-            }
-        }
-        if (seal == null)
-        {
-            seal = CaelumEquipmentItem(Actor.Spawn("CA_LimboMagicSeal", user.Pos, NO_REPLACE));
-            if (seal == null) return false;
-            seal.EquipmentKind = CaelumConstants.EQUIPMENT_KIND_SEAL;
-            seal.ItemType = CaelumConstants.SEAL_FIRE;
-            seal.EssenceType = seal.ItemType;
-            seal.ArmorSlot = -1;
-            seal.Tier = 1;
-            seal.EquipmentSize = CaelumConstants.EQUIPMENT_SIZE_M;
-            seal.UnitWeight = CaelumCraftingRules.GetJewelryWeight(1);
-            seal.PickupDataInitialized = true;
-            seal.ItemFlags = CaelumConstants.CA_ITEMFLAG_LIMBO_TEMP;
-            seal.AttachToOwner(user);
-            user.EnsureEquipmentItemId(seal);
-            CaelumNotifications.Acquired(user, seal, 1);
-            record.SetMainM00Flag(CaelumConstants.MAIN_M00_FLAG_MAGIC_SEAL_GIVEN);
-        }
-        seal.Equipped = true;
-        user.EquippedSealItemId = seal.ItemId;
         user.ApplyCharacterProfile();
         user.EnsureWeaponFamilySelectors();
         user.PersistCharacterState();
@@ -113,40 +41,8 @@ class CaelumMainM00MagicTrial : Object play
         return true;
     }
 
-    static void ReturnLoans(CaelumPlayer user)
-    {
-        if (user == null) return;
-        bool removed = false;
-        bool removedActive = false;
-        for (Inventory cursor = user.Inv; cursor != null;)
-        {
-            Inventory next = cursor.Inv;
-            let item = CaelumEquipmentItem(cursor);
-            if (item != null && (item is "CA_LimboMagicImplement" || item is "CA_LimboMagicSeal"))
-            {
-                if (user.ActiveWeaponItemId == item.ItemId)
-                { user.ActiveWeaponItemId = 0; user.WeaponModel.Equipped = false; removedActive = true; }
-                if (user.EquippedSealItemId == item.ItemId)
-                { user.StopSealChannel(true); user.EquippedSealItemId = 0; }
-                item.Destroy();
-                removed = true;
-            }
-            cursor = next;
-        }
-        if (!removed) return;
-        let record = user.GetPersistentCharacterState(true);
-        let previous = user.FindNativeEquipmentItemById(record.MainM00PreviousWeaponId);
-        if (removedActive && previous != null && previous.Equipped && !previous.InMagicBox)
-            user.ActivateExactEquippedWeapon(previous);
-        else if (removedActive) user.ActivateFirstEquippedWeapon();
-        let seal = user.FindNativeEquipmentItemById(record.MainM00PreviousSealId);
-        if (user.EquippedSealItemId == 0 && seal != null && !seal.InMagicBox)
-        { seal.Equipped = true; user.EquippedSealItemId = seal.ItemId; }
-        user.ApplyCharacterProfile();
-        user.EnsureWeaponFamilySelectors();
-        user.PersistCharacterState();
-        user.RefreshEquipmentSelectionPreview();
-    }
+    // Compatibilidad con acciones y guardados anteriores: ya no retira equipo.
+    static void ReturnLoans(CaelumPlayer user) { CaelumMainM00Loadout.EnsureMigration(user); }
 
     static bool Begin(CaelumPlayer user)
     {
@@ -198,6 +94,10 @@ class CaelumMainM00MagicTrial : Object play
             || shot == null || shot.Target != user || !shot.CaelumAttackPrepared
             || !shot.CaelumMagicalAttack || !shot.CaelumAttackAccuracySucceeded
             || !shot.CaelumElementalPayloadPrepared) return;
+        // Las marcas ya guardadas se conservan; nuevos impactos deben ser fuego
+        // o hielo reales, también si se usa una varita propia heredada.
+        if (shot.CaelumSecondaryElement ? shot.CaelumEssenceType != CaelumConstants.ESSENCE_WATER
+            : shot.CaelumEssenceType != CaelumConstants.ESSENCE_FIRE) return;
         let record = user.GetPersistentCharacterState(true);
         if (!record.SetMainM00Flag(shot.CaelumSecondaryElement
             ? CaelumConstants.MAIN_M00_FLAG_MAGIC_SECONDARY_USED
@@ -205,6 +105,16 @@ class CaelumMainM00MagicTrial : Object play
         Sync(user);
         Feedback(user, shot.CaelumSecondaryElement
             ? "CA_M01_MAGIC_SECONDARY_DONE" : "CA_M01_MAGIC_PRIMARY_DONE");
+    }
+
+    static void RecordStaffContact(CaelumPlayer user, Actor victim, bool ice)
+    {
+        if (!IsActive(user) || !(victim is "CaelumM00TrainingDummy")) return;
+        let record = user.GetPersistentCharacterState(true);
+        if (!record.SetMainM00Flag(ice ? CaelumConstants.MAIN_M00_FLAG_MAGIC_SECONDARY_USED
+            : CaelumConstants.MAIN_M00_FLAG_MAGIC_PRIMARY_USED)) return;
+        Sync(user);
+        Feedback(user, ice ? "CA_M01_MAGIC_SECONDARY_DONE" : "CA_M01_MAGIC_PRIMARY_DONE");
     }
 
     static bool CanPrepareChannel(CaelumPlayer user, CaelumEquipmentItem seal)
@@ -258,7 +168,8 @@ class CaelumMainM00MagicTrial : Object play
         if (!record.IsMainM00MagicPracticeComplete())
         { Feedback(user, "CA_M01_MAGIC_PRACTICE_FIRST", true); return true; }
         if (user.WeaponModel == null || !user.WeaponModel.Equipped
-            || !CaelumEconomyRules.IsEssenceWeaponType(user.WeaponModel.WeaponType)
+            || (user.WeaponModel.WeaponType != CaelumConstants.WEAPON_TYPE_UTILITY_STAFF
+                && !CaelumEconomyRules.IsEssenceWeaponType(user.WeaponModel.WeaponType))
             || user.WeaponModel.Durability <= 0)
         { Feedback(user, "CA_M01_MAGIC_NEED_IMPLEMENT", true); return true; }
         // La interacción conduce el elemento de la runa mediante el implemento;

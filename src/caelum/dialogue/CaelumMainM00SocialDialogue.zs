@@ -201,7 +201,12 @@ class CaelumMainM00SocialDialogue : Object play
         bool changed = false;
         if (resident == CaelumConstants.MAIN_M00_RESIDENT_ARGENTO)
         {
-            if (actionName == 'StartArgento') { changed = persistentState.BeginMainM00Argento(); }
+            if (actionName == 'StartArgento')
+            {
+                changed = persistentState.BeginMainM00Argento();
+                if (persistentState.HasMainM00Flag(CaelumConstants.MAIN_M00_FLAG_ARGENTO_STARTED))
+                    CaelumTarotDeckRules.Grant(user);
+            }
             else if (actionName == 'FinishArgento') { changed = persistentState.CompleteMainM00Argento(); }
             else if (actionName == 'RuloAdvice') { changed = persistentState.RecordMainM00Advice(0); }
             else if (actionName == 'RonnieAdvice') { changed = persistentState.RecordMainM00Advice(1); }
@@ -306,9 +311,10 @@ class CaelumMainM00ConversationMenu : CaelumPalomoConversationMenu
         CaelumPlayer user = mPlayer == null ? null : CaelumPlayer(mPlayer.mo);
         if (user != null)
         {
-            if (mCurNode.UserData ~== "loadout_root")
-                text = StringTable.Localize(user.FindInventory("CaelumTarotDeck") != null
-                    ? "CA_M01_PALOMO_DECK_HANDOFF" : "CA_M01_PALOMO_DECK_ROOM", false) .. "\n\n" .. text;
+            if (mCurNode.UserData ~== "argento_progress")
+                text = StringTable.Localize("CA_M01_ARGENTO_GIFT", false) .. "\n\n" .. text;
+            if (mCurNode.UserData ~== "rulo_trial_active")
+                text = StringTable.Localize("CA_M01_RULO_GIFT", false) .. "\n\n" .. text;
             if (mCurNode.UserData ~== "loadout_summary") text = user.MainM00LoadoutSummary;
             if (mCurNode.UserData ~== "palomo_necklace_status") text = user.MainM00NecklaceStatus;
             if (mCurNode.UserData ~== "caella_choose_amulet") text = user.MainM00AmuletLessonText;

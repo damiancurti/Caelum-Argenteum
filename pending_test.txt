@@ -1,0 +1,8 @@
+CA164-01 — MAP01 gifts, optional crafting and assisted checkpoint
+Origin: 5.1.18 / issue #164. Status: pending author acceptance.
+Prerequisites: rebuilt 5.1.18 PK3, a new character and an untouched copy of an older save; native autosaves enabled with at least one slot.
+1. Follow Argento -> Caella -> Ronnie -> Rulo. Confirm the permanent physical deck, fire/ice staff, Pickaxe with recipe and bolas. Practice Tarot before the Box; no essence power should be granted by the deck alone.
+2. Choose and craft only your weapon. Skip armor, Seal, necklace and shield crafting, including after making an optional choice. Caella must accept fire, ice, Anima spent/recovered without Channel or another Seal. Review both Spanish dialogue and the Journal.
+3. Enter the Bull fight while wounded and with depleted resources. Confirm all four helpers, a pre-fight native autosave and no added refill/repair. Die: there must be no scripted recovery. Load that checkpoint manually twice and win; receive the Box from Palomo once.
+4. Store the deck in the Box for essence capture. Complete departure and check that the same tools remain owned. Load the older save copy: completed progress, choices, actual equipment and wear must survive without duplicate deck/Box or a repeated mandatory branch.
+Expected: all steps match the current SYSTEMS/MAP01 contract. Report any failed step or qualification; agent tests do not replace this acceptance.

@@ -446,7 +446,7 @@ class CaelumJournalOverlay : EventHandler
                 ? "CA_Q_DETAIL_M01_RONNIE" : "CA_Q_DETAIL_GENERIC";
         if (stage >= CaelumConstants.MAIN_M00_STATE_CAELLA_ACTIVE)
             return localPlayer.MainM00RuneSequenceSnapshot == 4 ? "CA_Q_DETAIL_M01_RETURN_CAELLA"
-                : localPlayer.MainM00MagicPracticeSnapshot < 5
+                : localPlayer.MainM00MagicPracticeSnapshot < 4
                 ? "CA_Q_DETAIL_M01_PRACTICE" : "CA_Q_DETAIL_M01_RUNES";
         if (stage >= CaelumConstants.MAIN_M00_STATE_ARGENTO_COMPLETE)
             return "CA_Q_DETAIL_M01_CAELLA";
@@ -584,7 +584,7 @@ class CaelumJournalOverlay : EventHandler
                         ? "CA_Q_DETAIL_DONE" : "CA_Q_DETAIL_PENDING", false)
                     .. ": " .. StringTable.Localize(key, false);
             }
-            if (localPlayer.MainM00MagicPracticeSnapshot >= 5)
+            if (localPlayer.MainM00MagicPracticeSnapshot >= 4)
             {
                 String riddle = StringTable.Localize("CA_DLG_M01_MAGIC_RIDDLE", false);
                 riddle.Replace("%RUNES%", String.Format("%d", localPlayer.MainM00RuneSequenceSnapshot));

@@ -1,6 +1,18 @@
 # Caelum Argenteum — Project, status and roadmap
 
-Documentation version: **5.1.17** — 2026-10-10.
+Documentation version: **5.1.18** — 2026-10-10.
+
+## 5.1.18 - MAP01 permanent gifts and checkpoint (#164)
+
+Argento's physical deck, Caella's utility staff, Ronnie's existing Pickaxe and
+Rulo's bolas are permanent one-time gifts. Only the chosen weapon must be crafted;
+other crafting and Seal Channel are optional. Palomo grants the Box after the
+mandatory route and assisted Bull victory. The existing party prepares before
+a native pre-fight autosave, without a new heal/refill; death requires manual
+loading. Save migration preserves old equipment and recorded progress.
+Details: SYSTEMS and MAP01; native evidence: assets/validation_5118. Author check
+CA164-01 remains pending. #162/#163/#169 were accepted, closed and merged through
+PR167/PR168/PR170 on 2026-10-10.
 
 ## 5.1.17 - Medikit names (#169)
 

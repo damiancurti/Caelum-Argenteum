@@ -295,6 +295,11 @@ class CaelumPersistentCharacterState : Inventory
     int ShotgunRevision;
     int GrowthRevision;
 
+    // #164: identificadores de regalos, independientes de posesión y progreso.
+    int MainM00GiftsRevision;
+    int MainM00UtilityStaffId;
+    int MainM00BolasId;
+
     override void PostBeginPlay()
     {
         Super.PostBeginPlay();
@@ -461,6 +466,9 @@ class CaelumPersistentCharacterState : Inventory
         for (int material = 0; material < CaelumConstants.MATERIAL_TYPE_COUNT; material++)
         { MainM00SupplyLimit[material] = 0; MainM00SupplyIssued[material] = 0; MainM00RepairSupply[material] = 0; }
         MainM00LoadoutRevision = 0;
+        MainM00GiftsRevision = 0;
+        MainM00UtilityStaffId = 0;
+        MainM00BolasId = 0;
         MainM00ShieldChoice = 0;
         MainM00ShieldCrafted = false;
         MainM00StarterChosen = false;
@@ -895,14 +903,14 @@ class CaelumPersistentCharacterState : Inventory
     {
         int count = 0;
         for (int flag = CaelumConstants.MAIN_M00_FLAG_MAGIC_PRIMARY_USED;
-            flag <= CaelumConstants.MAIN_M00_FLAG_MAGIC_CHANNEL_USED; flag++)
+            flag <= CaelumConstants.MAIN_M00_FLAG_MAGIC_SECONDARY_USED; flag++)
             if (HasMainM00Flag(flag)) count++;
         if (HasMainM00Flag(CaelumConstants.MAIN_M00_FLAG_MAGIC_ANIMA_SPENT)) count++;
         if (HasMainM00Flag(CaelumConstants.MAIN_M00_FLAG_MAGIC_ANIMA_RECOVERED)) count++;
         return count;
     }
 
-    bool IsMainM00MagicPracticeComplete() { return CountMainM00MagicPractice() == 5; }
+    bool IsMainM00MagicPracticeComplete() { return CountMainM00MagicPractice() == 4; }
 
     void RefreshMainM00MagicObjective()
     {
@@ -910,7 +918,7 @@ class CaelumPersistentCharacterState : Inventory
         int index = GetQuestObjectiveStorageIndex(CaelumConstants.QUEST_MAIN_M00_THE_FOOL,
             CaelumConstants.MAIN_M00_OBJECTIVE_SOLVE_RIDDLE);
         QuestObjectiveKnown[index] = true;
-        QuestObjectiveTarget[index] = 9;
+        QuestObjectiveTarget[index] = 8;
         QuestObjectiveProgress[index] = CountMainM00MagicPractice() + MainM00RuneSequenceIndex;
     }
 
