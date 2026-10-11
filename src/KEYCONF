@@ -1,14 +1,8 @@
-// Agrega una sección propia de Caelum Argenteum a Personalizar controles.
-addkeysection "Caelum Argenteum" CaelumArgenteumControls
-
-// Este comando alterna la CVar de usuario que lee CaelumDebugOverlay.
-addmenukey "$CA_CONTROL_TOGGLE_ATTRIBUTE_PANEL" "toggle ca_debug_attributes"
-addmenukey "$CA_CONTROL_RACIAL_ABILITY" +user1
-addmenukey "$CA_CONTROL_SEAL_CHANNEL" +user2
-addmenukey "$CA_CONTROL_TAROT_ABILITY" +user3
-addmenukey "$CA_CONTROL_FLY_UP" +moveup
-addmenukey "$CA_CONTROL_FLY_DOWN" +movedown
-addmenukey "$CA_CONTROL_CLASS_ABILITY" +user4
+// Los comandos de consola conservan sus alias. Los controles de juego usan MENUDEF.
+// El panel de atributos se alterna con toggle ca_debug_attributes.
+// Importa las teclas de INI anteriores. Sin acciones propias, GZDoom las vuelve
+// a guardar en Bindings/DoubleBindings nativos; la UI retira este rótulo vacío.
+addkeysection "$CA_CONTROL_LEGACY_SECTION" CaelumArgenteumControls
 
 // Los eventos de red permiten que el jugador correcto cambie su perfil.
 alias ca_next_race "netevent ca_next_race"
@@ -98,74 +92,6 @@ alias ca_debug_crafting_learn_all_recipes "netevent ca_debug_crafting_learn_all_
 alias ca_debug_advance_crafting_time "netevent ca_debug_advance_crafting_time"
 alias ca_journal_toggle "event ca_journal_toggle"
 
-addmenukey "$CA_CONTROL_NEXT_RACE" ca_next_race
-addmenukey "$CA_CONTROL_NEXT_FIRST_CLASS" ca_next_first_class
-addmenukey "$CA_CONTROL_NEXT_SECOND_CLASS" ca_next_second_class
-addmenukey "$CA_CONTROL_NEXT_SEX" ca_next_sex
-addmenukey "$CA_CONTROL_NEXT_HEIGHT" ca_next_height
-addmenukey "$CA_CONTROL_SELECT_NEXT_LAYER" ca_select_next_layer
-addmenukey "$CA_CONTROL_ADD_LAYER_POINT" ca_add_layer_point
-addmenukey "$CA_CONTROL_SELECT_NEXT_ATTRIBUTE" ca_select_next_attribute
-addmenukey "$CA_CONTROL_ADD_ATTRIBUTE_POINT" ca_add_attribute_point
-addmenukey "$CA_CONTROL_RESET_ALLOCATIONS" ca_reset_allocations
-addmenukey "$CA_CONTROL_CREATION_OPEN" ca_creation_open
-addmenukey "$CA_CONTROL_CREATION_NEXT_CHOICE" ca_creation_next_choice
-addmenukey "$CA_CONTROL_CREATION_CONFIRM" ca_creation_confirm
-addmenukey "$CA_CONTROL_CREATION_BACK" ca_creation_back
-addmenukey "$CA_CONTROL_CREATION_ADD_POINT" ca_creation_add_point
-addmenukey "$CA_CONTROL_EQUIPMENT_TOGGLE" ca_equipment_toggle
-addmenukey "$CA_CONTROL_CRAFTING_TOGGLE" ca_crafting_toggle
-addmenukey "$CA_CONTROL_INVENTORY_PREVIOUS" invprev
-addmenukey "$CA_CONTROL_INVENTORY_NEXT" invnext
-addmenukey "$CA_CONTROL_INVENTORY_USE" useinventory
-addmenukey "$CA_CONTROL_JOURNAL" ca_journal_toggle
-addmenukey "$CA_CONTROL_DEBUG_SPAWN_EQUIPMENT" ca_debug_spawn_equipment
-addmenukey "$CA_CONTROL_DEBUG_ADD_WEIGHT" ca_debug_add_weight
-addmenukey "$CA_CONTROL_DEBUG_RESET_WEIGHT" ca_debug_reset_weight
-addmenukey "$CA_CONTROL_DEBUG_CONSUME_AIR" ca_debug_consume_air
-addmenukey "$CA_CONTROL_DEBUG_REFILL_AIR" ca_debug_refill_air
-addmenukey "$CA_CONTROL_DEBUG_JUMP_AIR" ca_debug_jump_air
-addmenukey "$CA_CONTROL_DEBUG_CONSUME_ANIMA" ca_debug_consume_anima
-addmenukey "$CA_CONTROL_DEBUG_REFILL_ANIMA" ca_debug_refill_anima
-addmenukey "$CA_CONTROL_DEBUG_ADD_ADRENALINE" ca_debug_add_adrenaline
-addmenukey "$CA_CONTROL_DEBUG_CLEAR_ADRENALINE" ca_debug_clear_adrenaline
-addmenukey "$CA_CONTROL_DEBUG_PAIN_DAMAGE" ca_debug_pain_damage
-addmenukey "$CA_CONTROL_DEBUG_EVASION_ATTACK" ca_debug_evasion_attack
-addmenukey "$CA_CONTROL_DEBUG_ATTRIBUTES_75" ca_debug_attributes_75
-addmenukey "$CA_CONTROL_DEBUG_ATTRIBUTES_100" ca_debug_attributes_100
-addmenukey "$CA_CONTROL_DEBUG_HEALTH_STATE" ca_debug_health_state
-addmenukey "$CA_CONTROL_DEBUG_HEAL_HEALTH" ca_debug_heal_health
-addmenukey "$CA_CONTROL_DEBUG_NEXT_PAGE" ca_debug_next_page
-addmenukey "$CA_CONTROL_DEBUG_SWORD_ATTACK" ca_debug_sword_attack
-addmenukey "$CA_CONTROL_DEBUG_STAFF_ATTACK" ca_debug_staff_attack
-addmenukey "$CA_CONTROL_DEBUG_ARMOR_SLOT" ca_debug_armor_slot
-addmenukey "$CA_CONTROL_DEBUG_ARMOR_TYPE" ca_debug_armor_type
-addmenukey "$CA_CONTROL_DEBUG_ARMOR_TIER" ca_debug_armor_tier
-addmenukey "$CA_CONTROL_DEBUG_ARMOR_CRITICAL" ca_debug_armor_critical
-addmenukey "$CA_CONTROL_DEBUG_ARMOR_HIT" ca_debug_armor_hit
-addmenukey "$CA_CONTROL_DEBUG_ARMOR_REPAIR" ca_debug_armor_repair
-addmenukey "$CA_CONTROL_DEBUG_LOSE_LUCIDITY" ca_debug_lose_lucidity
-addmenukey "$CA_CONTROL_DEBUG_REFILL_LUCIDITY" ca_debug_refill_lucidity
-addmenukey "$CA_CONTROL_DEBUG_LUCIDITY_STATE" ca_debug_lucidity_state
-addmenukey "$CA_CONTROL_DEBUG_LOSE_HUNGER" ca_debug_lose_hunger
-addmenukey "$CA_CONTROL_DEBUG_LOSE_THIRST" ca_debug_lose_thirst
-addmenukey "$CA_CONTROL_DEBUG_LOSE_SLEEP" ca_debug_lose_sleep
-addmenukey "$CA_CONTROL_DEBUG_REFILL_SURVIVAL" ca_debug_refill_survival
-addmenukey "$CA_CONTROL_DEBUG_SPAWN_DUMMY" ca_debug_spawn_dummy
-addmenukey "$CA_CONTROL_DEBUG_SPAWN_ARGENTO" ca_debug_spawn_argento
-addmenukey "$CA_CONTROL_DEBUG_SPAWN_CAELLA" ca_debug_spawn_caella
-addmenukey "$CA_CONTROL_DEBUG_SPAWN_RULO" ca_debug_spawn_rulo
-addmenukey "$CA_CONTROL_DEBUG_SPAWN_RONNIE" ca_debug_spawn_ronnie
-addmenukey "$CA_CONTROL_DEBUG_ACTOR_HEALTH_STATE" ca_debug_actor_health_state
-addmenukey "$CA_CONTROL_DEBUG_ACTOR_LUCIDITY_STATE" ca_debug_actor_lucidity_state
-addmenukey "$CA_CONTROL_DEBUG_SHIELD_TYPE" ca_debug_shield_type
-addmenukey "$CA_CONTROL_DEBUG_SHIELD_TIER" ca_debug_shield_tier
-addmenukey "$CA_CONTROL_DEBUG_SHIELD_BLOCK" ca_debug_shield_block
-addmenukey "$CA_CONTROL_DEBUG_SHIELD_DAMAGE" ca_debug_shield_damage
-addmenukey "$CA_CONTROL_DEBUG_SHIELD_ANGLE" ca_debug_shield_angle
-addmenukey "$CA_CONTROL_DEBUG_SHIELD_HIT" ca_debug_shield_hit
-addmenukey "$CA_CONTROL_DEBUG_SHIELD_REPAIR" ca_debug_shield_repair
-addmenukey "$CA_CONTROL_DEBUG_TEST_SILVER_LOCK" ca_debug_test_silver_lock
 // +10 minutos conserva su alias de consola para depuración; el Diario usa T
 // únicamente para el avance rápido durante descanso o fabricación.
 
@@ -178,5 +104,4 @@ defaultbind R "+reload"
 defaultbind F "+zoom"
 defaultbind T "+user3"
 alias ca_time_skip "netevent ca_skip_open"
-addmenukey "$CA_SKIP_TITLE" ca_time_skip
 defaultbind Y "ca_time_skip"

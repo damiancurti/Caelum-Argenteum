@@ -1,0 +1,25 @@
+{
+  "checks": {
+    "approved_identity_and_stat_rules_unchanged": true,
+    "all_existing_creation_descriptions_preserved": true,
+    "creation_description_text_bytes_preserved": true,
+    "alias_commands_preserved": true,
+    "defaultbind_commands_preserved": true,
+    "debug_key_rows_removed_with_legacy_import": true,
+    "legacy_saved_fields_retained": true,
+    "sole_native_player_class_retained": true,
+    "accepted_pending_queue_preserved_as_new_single_check": true,
+    "legacy_a_native_snapshot_exact_match": true,
+    "legacy_a_final_package_snapshot_exact_match": true,
+    "legacy_b_native_snapshot_exact_match": true,
+    "legacy_b_final_package_snapshot_exact_match": true,
+    "standard_build_matches_final_native_package": true
+  },
+  "passed": 14,
+  "failed": [],
+  "production_sha256": "52cbd4301411b2f2afa779c9b2c9c6d0987bee7dc1aa6b9baf2ac0163e17cc55",
+  "original_save_sha256": {
+    "identity-legacy-a-final.zds": "4ccd18c6e2c611177084282062c272f595f4dc16262af845d9c2983faa0610f4",
+    "identity-legacy-b-final.zds": "ebffae6edc5375ef99d88fb848d918a51987613bce32d13addfdc0649dabdc3c"
+  }
+}

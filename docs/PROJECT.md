@@ -1,6 +1,25 @@
 # Caelum Argenteum — Project, status and roadmap
 
-Documentation version: **5.1.20** — 2026-10-10.
+Documentation version: **5.2.0** — 2026-10-11.
+
+## 5.2.0 - Unified character identity (#147)
+
+The first V5.2 block makes the travelling character record own the shared
+profile/allocation. Revision 1 adopts existing saves without changing their
+progress, equipment or resource values. The creator remains authoritative;
+native player type and network preferences cannot replace race or profession.
+The author requested retaining unconfirmed drafts during the engine session.
+
+Redundant native class/gender/skin/color selectors and the misleading stock
+preview are hidden. Existing name/team and handling preferences remain native.
+The additional author request removes debug binding rows and places abilities,
+flight, Journal and time skip in their native categories, retaining console
+commands and existing mappings. This does not complete the remaining #149 work.
+
+Evidence: assets/validation_520. CA147-01 awaits author acceptance. Next planned
+block: #148 appearance/preview using the shared identity interface. #164/#172/
+#173 were accepted, closed and merged through PR171/PR174/PR175; main baseline
+f7c4a0dd. #137's earlier acceptance remains intact.
 
 ## 5.1.20 - MAP06 doors and peaceful time skip (#173)
 

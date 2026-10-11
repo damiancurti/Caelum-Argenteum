@@ -1,0 +1,103 @@
+// Borrador exclusivamente UI, limitado a la sesión del motor. Nunca apunta al
+// perfil guardado, ni usa CVars globales como autoridad de una partida cargada.
+class CaelumCreationDraft : Object ui
+{
+    int Page, Race, FirstClass, SecondClass, Sex, HeightChoice;
+    int SelectedLayer, SelectedAttribute;
+    int LayerBonus[4];
+    int AttributeBonus[12];
+}
+
+class CaelumCharacterSettings : StaticEventHandler
+{
+    ui CaelumCreationDraft Draft;
+    ui bool MenusReady;
+
+    override void UiTick()
+    {
+        if (MenusReady) return;
+        // También limpia el catálogo antes de abrir la búsqueda nativa de
+        // opciones: no deja accesos indirectos a los selectores retirados.
+        CaelumPlayerPreferencesMenu.Filter(OptionMenuDescriptor(MenuDescriptor.GetDescriptor("NewPlayerMenu")));
+        HideLegacyControlSection();
+        let legacy = MenuDescriptor.GetDescriptor("PlayerMenu");
+        if (legacy != null) legacy.mClass = "CaelumPlayerPreferencesRedirect";
+        MenusReady = true;
+    }
+
+    ui void HideLegacyControlSection()
+    {
+        let desc = OptionMenuDescriptor(MenuDescriptor.GetDescriptor("CustomizeControls"));
+        if (desc == null) return;
+        for (int i = desc.mItems.Size() - 1; i >= 0; i--)
+        {
+            let item = OptionMenuItemStaticText(desc.mItems[i]);
+            if (item == null || item.mLabel != "$CA_CONTROL_LEGACY_SECTION") continue;
+            desc.mItems.Delete(i);
+            if (i > 0)
+            {
+                let spacer = OptionMenuItemStaticText(desc.mItems[i - 1]);
+                if (spacer != null && spacer.mLabel == " ") desc.mItems.Delete(i - 1);
+            }
+            return;
+        }
+    }
+
+    override void InterfaceProcess(ConsoleEvent e)
+    {
+        if (e.Name == "ca_identity_committed") Draft = null;
+    }
+
+    override void WorldLoaded(WorldEvent e)
+    {
+        if (!e.IsSaveGame) return;
+        // Cada jugador limpia su propio puente; la carga no puede confirmar
+        // por accidente un borrador pendiente de una partida nueva.
+        for (int i = 0; i < MAXPLAYERS; i++)
+        {
+            if (!playeringame[i]) continue;
+            let user = CaelumPlayerAuthority.FromNetworkPlayer(i);
+            if (user != null)
+            {
+                user.ClearNewCharacterDraftReady();
+                CaelumCharacterIdentity.Ensure(user);
+            }
+        }
+    }
+}
+
+// Se conserva nombre de red, equipo y preferencias de manejo nativas. Raza,
+// profesión y sexo pertenecen al creador; colores/skins sin recursos propios
+// no se presentan como opciones funcionales de aspecto.
+class CaelumPlayerPreferencesMenu : OptionMenu
+{
+    static void Filter(OptionMenuDescriptor desc)
+    {
+        if (desc == null) return;
+        for (int i = desc.mItems.Size() - 1; i >= 0; i--)
+        {
+            let item = desc.mItems[i];
+            if (item is 'OptionMenuItemPlayerClassItem'
+                || item is 'OptionMenuItemPlayerSkinItem'
+                || item is 'OptionMenuItemPlayerGenderItem'
+                || item is 'OptionMenuItemPlayerColorItem'
+                || item is 'OptionMenuItemPlayerColorSlider') desc.mItems.Delete(i);
+        }
+    }
+
+    override void Init(Menu parent, OptionMenuDescriptor desc)
+    {
+        Filter(desc);
+        Super.Init(parent, desc);
+    }
+}
+
+class CaelumPlayerPreferencesRedirect : ListMenu
+{
+    override void Drawer() {}
+    override void Ticker()
+    {
+        Close();
+        Menu.SetMenu("NewPlayerMenu");
+    }
+}

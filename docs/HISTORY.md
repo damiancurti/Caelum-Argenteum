@@ -1,6 +1,40 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **5.1.20** — 2026-10-10.
+Documentation version: **5.2.0** — 2026-10-11.
+
+## 5.2.0 - Unified saved identity and native settings (#147), 2026-10-11
+
+The author requested implementing #147 with native testing, commit and push.
+During implementation, the author chose to retain an unconfirmed creator draft
+for the engine session, then requested removing debug controls from the binding
+menu and moving ordinary abilities/Journal/etc. into suitable native sections.
+Diagnostic commands remain available in the console; no new respec UI is added.
+
+The travelling record now owns shared profile/allocation references. Additive
+identity revision 1 preserves old live profiles or reconstructs legacy travelling
+records; binding itself changes no attributes, resources, item identities,
+quests or Tarot. The ordinary creator consumes its per-player draft once and
+loaded identities reject global drafts. Native setup separates network name/team
+and handling preferences from saved character identity, hides redundant or
+unsupported selectors and redirects its legacy entry. Existing authored visuals
+and voice mappings are preserved; appearance expansion remains #148.
+
+Fourteen focused static checks, eight legacy binding/restart checks and twenty
+completed GZDoom 4.14.2 runs (552 passing assertions, zero failures), save comparisons,
+menu captures and fixture limitations are recorded in assets/validation_520.
+The ordinary PK3's 6,315 members match the final tested runtime bytes.
+Final review found that deleting KEYCONF's section would orphan saved remaps.
+An empty legacy declaration imports normal/double bindings; its heading is
+hidden and native shutdown moves them to the general config sections. Both
+import and subsequent restart preserve customized gameplay/debug commands.
+A real baseline native introduction confirmation was exercised separately; repeated
+fixtures close the introduction and consume its validated bridge through a
+fresh map start. This distinction is retained in the evidence. CA147-01 is an
+outstanding author check; agent tests do not substitute for that confirmation.
+
+Previous accepted work: PR171 merged at c526280e, PR174 at c181a313 and PR175
+at f7c4a0dd. Issues #164/#172/#173 are closed; their acceptance IDs remain in
+the originating history entries. Their versions do not change for acceptance.
 
 ## 5.1.20 - MAP06 doors and peaceful time skip (#173), 2026-10-10
 

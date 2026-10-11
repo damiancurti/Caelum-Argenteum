@@ -1,0 +1,14 @@
+{
+  "checks": {
+    "bindings-import_normal": true,
+    "bindings-import_double": true,
+    "bindings-import_legacy_empty": true,
+    "bindings-import_live": true,
+    "bindings-restart_normal": true,
+    "bindings-restart_double": true,
+    "bindings-restart_legacy_empty": true,
+    "bindings-restart_live": true
+  },
+  "passed": 8,
+  "failed": []
+}

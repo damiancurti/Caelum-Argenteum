@@ -17,6 +17,7 @@ class CaelumCharacterCreationMenu : ListMenu
     Font TitleFont;
     Font TextFont;
     Font SmallTextFont;
+    bool Confirmed;
 
     override void Init(Menu parent, ListMenuDescriptor desc)
     {
@@ -30,12 +31,54 @@ class CaelumCharacterCreationMenu : ListMenu
         SelectedLayer = 0;
         SelectedAttribute = 0;
         ResetAllocations();
+        LoadSessionDraft();
         TitleFont = Font.GetFont("CaelumDisplay");
         TextFont = Font.GetFont("CaelumText");
         SmallTextFont = Font.GetFont("CaelumSmall");
         DontDim = true;
         DontBlur = true;
         MenuSound("caelum/ui/menu_open");
+    }
+
+    void LoadSessionDraft()
+    {
+        let settings = CaelumCharacterSettings(StaticEventHandler.Find("CaelumCharacterSettings"));
+        if (settings == null || settings.Draft == null) return;
+        let draft = settings.Draft;
+        Page = draft.Page;
+        Race = draft.Race;
+        FirstClass = draft.FirstClass;
+        SecondClass = draft.SecondClass;
+        Sex = draft.Sex;
+        HeightChoice = draft.HeightChoice;
+        SelectedLayer = draft.SelectedLayer;
+        SelectedAttribute = draft.SelectedAttribute;
+        for (int i = 0; i < 4; i++) LayerBonus[i] = draft.LayerBonus[i];
+        for (int i = 0; i < 12; i++) AttributeBonus[i] = draft.AttributeBonus[i];
+    }
+
+    void StoreSessionDraft()
+    {
+        let settings = CaelumCharacterSettings(StaticEventHandler.Find("CaelumCharacterSettings"));
+        if (settings == null) return;
+        if (settings.Draft == null) settings.Draft = new("CaelumCreationDraft");
+        let draft = settings.Draft;
+        draft.Page = Page;
+        draft.Race = Race;
+        draft.FirstClass = FirstClass;
+        draft.SecondClass = SecondClass;
+        draft.Sex = Sex;
+        draft.HeightChoice = HeightChoice;
+        draft.SelectedLayer = SelectedLayer;
+        draft.SelectedAttribute = SelectedAttribute;
+        for (int i = 0; i < 4; i++) draft.LayerBonus[i] = LayerBonus[i];
+        for (int i = 0; i < 12; i++) draft.AttributeBonus[i] = AttributeBonus[i];
+    }
+
+    override void OnDestroy()
+    {
+        if (!Confirmed) StoreSessionDraft();
+        Super.OnDestroy();
     }
 
     void ResetAllocations()
@@ -470,6 +513,8 @@ class CaelumCharacterCreationMenu : ListMenu
         SetDraft("ca_newchar_attribute10", AttributeBonus[10]);
         SetDraft("ca_newchar_attribute11", AttributeBonus[11]);
         SetDraft("ca_newchar_ready", 1);
+        StoreSessionDraft();
+        Confirmed = true;
         MenuSound("caelum/ui/menu_select");
         Menu.SetMenu("CaelumIntroductionMenu");
     }
