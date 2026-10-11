@@ -1,9 +1,9 @@
 // Palomo registra el plan; Ronnie enseña y habilita los mismos cupos de oficio.
-// El collar de #96 es el único regalo; el resto conserva sus elecciones y oficios.
+// El plan obligatorio contiene sólo el arma; las demás elecciones son opcionales.
 class CaelumMainM00Loadout : Object play
 {
     const CONVERSATION = 43630;
-    const REVISION = 1;
+    const REVISION = 2;
 
     static bool IsBorrowed(CaelumEquipmentItem item)
     {
@@ -17,14 +17,15 @@ class CaelumMainM00Loadout : Object play
         if (user == null || !user.CharacterCreationComplete) return;
         let r = user.GetPersistentCharacterState(false);
         if (r == null || r.MainM00LoadoutRevision >= REVISION) return;
-        // Sólo cambia la clasificación del equipo propio existente. La partida
+        // Promueve también los antiguos préstamos sin sustituirlos. La partida
         // original y su paquete permiten volver al comportamiento anterior.
         for (Inventory cursor = user.Inv; cursor != null; cursor = cursor.Inv)
         {
             let item = CaelumEquipmentItem(cursor);
-            if (item != null && !IsBorrowed(item))
+            if (item != null)
                 item.ItemFlags &= ~CaelumConstants.CA_ITEMFLAG_LIMBO_TEMP;
         }
+        r.MainM00BullResetPending = false;
         r.MainM00LoadoutRevision = REVISION;
     }
 
@@ -43,8 +44,7 @@ class CaelumMainM00Loadout : Object play
 
     static bool IsComplete(CaelumPersistentCharacterState r)
     {
-        return r != null && r.MainM00StarterChosen && r.MainM00ArmorChosen
-            && r.MainM00SealChoice > 0 && r.MainM00ShieldChoice > 0;
+        return r != null && r.MainM00StarterChosen;
     }
 
     static bool Choose(CaelumPlayer user, int kind, int option)
@@ -77,7 +77,7 @@ class CaelumMainM00Loadout : Object play
             for (Inventory cursor = user.Inv; cursor != null; cursor = cursor.Inv)
             {
                 let item = CaelumEquipmentItem(cursor);
-                if (item == null || IsBorrowed(item) || item.EquipmentKind != CaelumConstants.EQUIPMENT_KIND_SEAL
+                if (item == null || item.EquipmentKind != CaelumConstants.EQUIPMENT_KIND_SEAL
                     || item.Tier != 1 || item.ItemType != option) continue;
                 r.MainM00SealsPrepared[option] = true;
                 if (!r.MainM00SealRecipesLearned) r.MainM00SealOwnedAtLearning[option] = true;

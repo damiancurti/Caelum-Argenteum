@@ -6383,7 +6383,7 @@ class CaelumInventoryService : Object play
         if (!CaelumPlayerAuthority.CanMutate(user)) return false;
         let record = user.GetPersistentCharacterState(false);
         if (record == null) return false;
-        // Una ausencia no autoriza otra entrega de Palomo.
+        // Una ausencia no autoriza otra entrega del mazo.
         if (record.TarotDeckGranted) return true;
         let deck = FindOwnedTarotDeck(user);
         if (deck == null)

@@ -1,6 +1,16 @@
 # TASKS.md — Active tasks
 
-Documentation version: **5.1.17** — 2026-10-10.
+Documentation version: **5.1.18** — 2026-10-10.
+
+## Issue #164 - Permanent gifts and assisted Bull checkpoint (5.1.18)
+
+Implemented the Argento/Caella/Ronnie/Rulo permanent gifts and final Palomo Box,
+weapon-only mandatory crafting, optional Channel without a new Seal, promotion
+of legacy loans, native pre-fight autosave and ordinary death/manual loading.
+Preserve the four helpers, existing supplies/recipes, necklace choice and saves.
+Native tests cover the route, actual checkpoint files, retries, optional tasks
+and migration; passing evidence is in assets/validation_5118. CA164-01 is the
+remaining author acceptance. #162/#163/#169 are closed; PR167/PR168/PR170 merged.
 
 ## Issue #169 - Medikit names (5.1.17)
 

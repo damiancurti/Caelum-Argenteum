@@ -1,6 +1,13 @@
 # Caelum Argenteum — Audio and art
 
-Documentation version: **5.1.17** — 2026-10-10.
+Documentation version: **5.1.18** — 2026-10-10.
+
+## 5.1.18 - MAP01 gift presentation (#164)
+
+MAP01 reuses the accepted Tarot deck, utility staff, Pickaxe, bolas, Box and
+dummy assets. Bilingual dialogue and Journal text explain permanent ownership,
+optional crafting/Channel and manual retries. No new artwork, sound, provenance
+or geometry is introduced. Native presentation evidence: assets/validation_5118.
 
 ## 5.1.17 - Medikit labels (#169)
 

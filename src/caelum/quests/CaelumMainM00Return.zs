@@ -126,8 +126,8 @@ class CaelumMainM00Return : Object play
             || r.HasMainM00Flag(CaelumConstants.MAIN_M00_FLAG_INVENTORY_SANITIZED)) return false;
         user.SyncActiveModelsToNativeInventory();
         CaelumMainM00Loadout.EnsureMigration(user);
-        // Devuelve los préstamos mediante sus propias reglas. La elección no
-        // crea ni reconstruye objetos; viajan las instancias realmente propias.
+        // Las acciones antiguas ahora promueven préstamos; viajan las piezas
+        // reales. Una elección nunca crea ni reconstruye un objeto.
         CaelumMainM00MagicTrial.ReturnLoans(user);
         CaelumMainM00RonnieTrial.ReturnLoan(user);
         CaelumMainM00RuloTrial.ReturnAmmo(user);
@@ -143,10 +143,8 @@ class CaelumMainM00Return : Object play
             let equipment = CaelumEquipmentItem(cursor);
             if (equipment != null)
             {
-                // Propiedad, ItemId, talla, desgaste, posición y equipamiento
-                // se mantienen. Sólo los actores de préstamo quedan excluidos.
-                if (CaelumMainM00Loadout.IsBorrowed(equipment)) equipment.Destroy();
-                else equipment.ItemFlags &= ~CaelumConstants.CA_ITEMFLAG_LIMBO_TEMP;
+                // También conserva las instancias de los antiguos préstamos.
+                equipment.ItemFlags &= ~CaelumConstants.CA_ITEMFLAG_LIMBO_TEMP;
             }
             else if (cursor is "CaelumTarotDeck") { } // El mazo físico también cruza.
             else if (cursor is "CaelumSpecialInventoryItem" || cursor is "CaelumConsumableItem"

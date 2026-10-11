@@ -2402,29 +2402,29 @@ CA_DLG_M01_MAGIC_QUOTE = "He said: “No wall is firmer than the one everyone ha
 CA_DLG_M01_MAGIC_BEGIN = "Help me understand the magic of that wall.";
 CA_DLG_M01_MAGIC_STATUS = "We can continue with the wall. Your practice is recorded; you do not need to start over.";
 CA_DLG_M01_MAGIC_CONTINUE = "Let us continue.";
-CA_DLG_M01_MAGIC_PRACTICE = "Before the riddle, hit the training dummy with a primary spell and a secondary spell, then demonstrate Seal Channel. Observe Anima being spent and recovered. Practice: %MAGIC_COUNT%/5. The dummy is in the north-central ground-floor room, off the central hall. The wand and one Seal are enough; borrowed equipment returns to me when the passage opens.";
+CA_DLG_M01_MAGIC_PRACTICE = "This bronze-tipped fire and ice staff is yours to keep. Touch the training dummy with fire and ice, then observe Anima being spent and recovered. Practice: %MAGIC_COUNT%/4. Channel is optional if you own a Seal. The dummy is in the north-central ground-floor room, off the central hall.";
 CA_DLG_M01_MAGIC_CONTROLS = "Explain the controls.";
 CA_DLG_M01_MAGIC_EQUIP = "Prepare my equipment for the trial again.";
-CA_DLG_M01_MAGIC_CONTROLS_TEXT = "In the north-central ground-floor room, aim your magic implement at the training dummy. Hit it with primary attack (Fire), then secondary attack (AltFire). Let each cast finish and reach the dummy. Misses and hits on anyone else do not count. Use the keys assigned in Controls.";
+CA_DLG_M01_MAGIC_CONTROLS_TEXT = "Hold primary attack for fire or secondary attack for ice. The stream must touch the dummy; firing into the air does not count. Both consume Anima. Use the keys assigned in Controls.";
 CA_DLG_M01_MAGIC_NEXT = "Continue.";
-CA_DLG_M01_MAGIC_CHANNEL_TEXT = "Channel Seal uses User2: press to start, and again to stop. It consumes Adrenaline, not Anima. For this first demonstration I prepare the required reserve, so you do not need to hurt anyone. The normal Seal cost and cooldown apply afterward.";
+CA_DLG_M01_MAGIC_CHANNEL_TEXT = "Channel is optional and requires your own Seal; the utility staff cannot channel. User2 starts and stops Channel. It consumes Adrenaline. For this optional demonstration I prepare the existing reserve; the normal Seal cost and cooldown apply.";
 CA_DLG_M01_MAGIC_RESOURCES_TEXT = "Spells consume Anima. Watch its bar before and after casting: natural recovery raises it again. Wait if you need more. Once those actions are complete, return for the riddle. The Journal keeps your progress.";
 CA_DLG_M01_MAGIC_PRACTICE_NOW = "I will practice.";
 CA_DLG_M01_MAGIC_RIDDLE = "Earth sustains it.\nAir betrays it.\nFire reveals it.\nWater erases its traces.\nWhen all four speak, the wall will remember it was a door.\n\nLit runes: %RUNES%/4.";
 CA_DLG_M01_MAGIC_HINT_1 = "It does not list objects. It describes what each element does to the path.";
 CA_DLG_M01_MAGIC_HINT_2 = "Start with what sustains the house. Finish with what can erase a footprint.";
 CA_DLG_M01_MAGIC_WHERE = "Where and how do I activate the runes?";
-CA_DLG_M01_MAGIC_LOCATION = "From the mansion entrance, follow the central hall to the stairs at the far end. Stay on the ground floor and go around their right side (south). The four marks are together on the rear wall, behind that side of the stairs, near the floor. They appear after accepting the trial. Finish practice, approach with the magic wand active, aim at each mark and press Use. The fire Seal is enough.";
+CA_DLG_M01_MAGIC_LOCATION = "From the entrance, follow the central hall to the stairs. Stay on the ground floor and go around their right side (south). The four marks are together on the rear wall near the floor. Finish practice, approach with your staff active, aim at each mark and press Use. No Seal is required.";
 CA_DLG_M01_MAGIC_TRY = "I will try the order.";
-CA_DLG_M01_MAGIC_DONE = "Thank you for returning my equipment. The wall will still look solid: walk straight through the four marks. The passage leads to the lift and the cave. Then speak with Ronnie about preparing your weapon.";
-CA_DLG_M01_RONNIE_MAGIC_READY = "Caella has opened the way. Now let us make something that will serve you outside this house. Choose a weapon: I will teach you its recipe and lend you my sword. Palomo handles gathering directions.";
-CA_M01_MAGIC_PRIMARY_DONE = "Primary spell hit on the dummy recorded.";
-CA_M01_MAGIC_SECONDARY_DONE = "Secondary spell hit on the dummy recorded.";
+CA_DLG_M01_MAGIC_DONE = "Keep your staff. The wall will still look solid: walk straight through the four marks. The passage leads to the lift and the cave. Then speak with Ronnie about crafting your chosen weapon.";
+CA_DLG_M01_RONNIE_MAGIC_READY = "Caella opened the way. I will teach you to craft the weapon you chose with Palomo, and give you your own Pickaxe with its recipe.";
+CA_M01_MAGIC_PRIMARY_DONE = "Fire contact on the dummy recorded.";
+CA_M01_MAGIC_SECONDARY_DONE = "Ice contact on the dummy recorded.";
 CA_M01_MAGIC_CHANNEL_DONE = "Seal channel recorded.";
 CA_M01_MAGIC_RECOVERY_DONE = "Anima recovery recorded. Check your progress with Caella.";
 CA_M01_MAGIC_PRACTICE_FIRST = "Complete the magic practice Caella taught you.";
 CA_M01_MAGIC_NEED_IMPLEMENT = "Activate a magic implement. Caella can prepare your equipment again.";
-CA_M01_MAGIC_LOAN_RESERVED = "On loan from Caella: returned when the passage opens.";
+CA_M01_MAGIC_LOAN_RESERVED = "This equipment is yours to keep.";
 CA_M01_MAGIC_RUNE_RESET = "The sequence went dark. You can try again.";
 CA_M01_MAGIC_RUNE_OK = "The rune responded.";
 CA_M01_MAGIC_PASSAGE_OPEN = "The wall is still visible, but you can walk through it. Speak with Ronnie.";
@@ -2439,29 +2439,29 @@ CA_DLG_M01_MAGIC_QUOTE = "Él me dijo: «No hay pared más firme que aquella que
 CA_DLG_M01_MAGIC_BEGIN = "Ayudame a entender la magia de esa pared.";
 CA_DLG_M01_MAGIC_STATUS = "Podemos seguir con la pared. Tu práctica quedó registrada; no hace falta empezar de nuevo.";
 CA_DLG_M01_MAGIC_CONTINUE = "Sigamos.";
-CA_DLG_M01_MAGIC_PRACTICE = "Antes del acertijo, acertale al muñeco de entrenamiento con un hechizo primario y otro secundario, y demostrá Canalizar Sello. Observá el gasto y la recuperación de Ánima. Práctica: %MAGIC_COUNT%/5. El muñeco está en el cuarto central del lado norte de la planta baja, junto al pasillo central. La varita y un Sello alcanzan; el equipo prestado vuelve conmigo al abrir el pasadizo.";
+CA_DLG_M01_MAGIC_PRACTICE = "Este bastón de fuego y hielo con punta de bronce es tuyo. Tocá al muñeco con fuego y con hielo, y observá el gasto y la recuperación de Ánima. Práctica: %MAGIC_COUNT%/4. Canal es opcional si tenés un Sello. El muñeco está en el cuarto central del lado norte de la planta baja, junto al pasillo central.";
 CA_DLG_M01_MAGIC_CONTROLS = "Explicame los controles.";
 CA_DLG_M01_MAGIC_EQUIP = "Preparar otra vez mi equipo para la prueba.";
-CA_DLG_M01_MAGIC_CONTROLS_TEXT = "En el cuarto central del lado norte de la planta baja, apuntá al muñeco con el implemento mágico. Acertale con Disparo principal (Fire) y después con Disparo secundario (AltFire). Esperá a que cada lanzamiento termine y alcance al muñeco. Los fallos y los golpes a otros no cuentan. Usá las teclas asignadas en Controles.";
+CA_DLG_M01_MAGIC_CONTROLS_TEXT = "Mantené ataque primario para fuego o secundario para hielo. El chorro debe tocar al muñeco; disparar al aire no cuenta. Ambos consumen Ánima. Usá las teclas asignadas en Controles.";
 CA_DLG_M01_MAGIC_NEXT = "Continuar.";
-CA_DLG_M01_MAGIC_CHANNEL_TEXT = "Canalizar Sello usa User2: pulsá para activar y otra vez para detener. Consume Adrenalina, no Ánima. Para esta primera demostración preparo la reserva necesaria, sin que tengas que herir a nadie. Después rigen el coste y la espera habituales del Sello.";
+CA_DLG_M01_MAGIC_CHANNEL_TEXT = "Canal es opcional y requiere un Sello propio; el bastón no canaliza. User2 activa y detiene Canal. Consume Adrenalina. Para esta demostración opcional preparo la reserva habitual; rigen el coste y la espera del Sello.";
 CA_DLG_M01_MAGIC_RESOURCES_TEXT = "Los lanzamientos consumen Ánima. Mirá su barra antes y después: vuelve a subir con la recuperación natural. Si todavía no alcanza, esperá. Al completar esas acciones, volvé y leeremos el acertijo. El Diario conserva el avance.";
 CA_DLG_M01_MAGIC_PRACTICE_NOW = "Voy a practicar.";
 CA_DLG_M01_MAGIC_RIDDLE = "La tierra lo sostiene.\nEl aire lo delata.\nEl fuego lo revela.\nEl agua borra sus huellas.\nCuando los cuatro hablen, la pared recordará que fue puerta.\n\nRunas encendidas: %RUNES%/4.";
 CA_DLG_M01_MAGIC_HINT_1 = "No enumera objetos. Describe lo que cada elemento hace con el camino.";
 CA_DLG_M01_MAGIC_HINT_2 = "Empieza por aquello que sostiene la casa. Terminá con lo que puede borrar una huella.";
 CA_DLG_M01_MAGIC_WHERE = "¿Dónde y cómo activo las runas?";
-CA_DLG_M01_MAGIC_LOCATION = "Desde la entrada de la mansión, seguí el pasillo central hasta la escalera del fondo. Quedate en planta baja y rodeala por la derecha (sur). Las cuatro marcas están juntas en la pared trasera, detrás de ese lado de la escalera, cerca del piso. Aparecen al aceptar la prueba. Completá la práctica, acercate con la varita activa, apuntá a cada marca y pulsá Usar. El Sello de fuego alcanza.";
+CA_DLG_M01_MAGIC_LOCATION = "Desde la entrada, seguí el pasillo central hasta la escalera. Quedate en planta baja y rodeala por la derecha (sur). Las cuatro marcas están juntas en la pared trasera, cerca del suelo. Completá la práctica, acercate con el bastón activo, apuntá a cada marca y pulsá Usar. No necesitás un Sello.";
 CA_DLG_M01_MAGIC_TRY = "Voy a probar el orden.";
-CA_DLG_M01_MAGIC_DONE = "Gracias por devolverme el equipo. La pared seguirá pareciendo sólida: caminá a través de las cuatro marcas. El pasadizo lleva al ascensor y a la cueva. Después hablá con Ronnie para preparar tu arma.";
-CA_DLG_M01_RONNIE_MAGIC_READY = "Caella abrió el paso. Ahora hagamos algo que te sirva fuera de esta casa. Elegí un arma: te enseño la receta y te presto mi espada. Para orientarte en la recolección, hablá con Palomo.";
-CA_M01_MAGIC_PRIMARY_DONE = "Impacto mágico primario en el muñeco registrado.";
-CA_M01_MAGIC_SECONDARY_DONE = "Impacto mágico secundario en el muñeco registrado.";
+CA_DLG_M01_MAGIC_DONE = "Conservá tu bastón. La pared seguirá pareciendo sólida: caminá a través de las cuatro marcas. El pasadizo lleva al ascensor y a la cueva. Después hablá con Ronnie para fabricar el arma que elegiste.";
+CA_DLG_M01_RONNIE_MAGIC_READY = "Caella abrió el paso. Te enseño a fabricar el arma que elegiste con Palomo y te regalo tu Pico con su receta.";
+CA_M01_MAGIC_PRIMARY_DONE = "Contacto de fuego con el muñeco registrado.";
+CA_M01_MAGIC_SECONDARY_DONE = "Contacto de hielo con el muñeco registrado.";
 CA_M01_MAGIC_CHANNEL_DONE = "Canalización con Sello registrada.";
 CA_M01_MAGIC_RECOVERY_DONE = "Recuperación de Ánima registrada. Consultá el avance con Caella.";
 CA_M01_MAGIC_PRACTICE_FIRST = "Completá la práctica de magia que te enseñó Caella.";
 CA_M01_MAGIC_NEED_IMPLEMENT = "Activá un implemento mágico. Caella puede preparar tu equipo otra vez.";
-CA_M01_MAGIC_LOAN_RESERVED = "Equipo prestado por Caella: se devuelve al abrir el pasadizo.";
+CA_M01_MAGIC_LOAN_RESERVED = "Este equipo es tuyo.";
 CA_M01_MAGIC_RUNE_RESET = "La secuencia se apagó. Podés volver a intentarlo.";
 CA_M01_MAGIC_RUNE_OK = "La runa respondió.";
 CA_M01_MAGIC_PASSAGE_OPEN = "La pared sigue visible, pero ya podés atravesarla. Hablá con Ronnie.";
@@ -2480,9 +2480,9 @@ CA_Q_DETAIL_LOCATION = "Where to practice and use the runes";
 CA_Q_DETAIL_PRACTICE = "Practice checklist";
 CA_Q_DETAIL_DONE = "Done";
 CA_Q_DETAIL_PENDING = "Pending";
-CA_Q_DETAIL_PRIMARY = "Primary attack: hit the training dummy with a spell.";
-CA_Q_DETAIL_SECONDARY = "Secondary attack: hit the training dummy with a spell.";
-CA_Q_DETAIL_CHANNEL = "Seal Channel (User2): activate it once.";
+CA_Q_DETAIL_PRIMARY = "Fire: touch the training dummy with the staff.";
+CA_Q_DETAIL_SECONDARY = "Ice: touch the training dummy with the staff.";
+CA_Q_DETAIL_CHANNEL = "Optional: Seal Channel (User2), if you own a Seal.";
 CA_Q_DETAIL_ANIMA_SPENT = "Spend Anima with a completed cast.";
 CA_Q_DETAIL_ANIMA_RECOVERED = "After spending Anima, let it recover.";
 CA_Q_DETAIL_M01_ABOUT = "You woke in a mansion you do not recognize. The residents share your uncertainty. Gain their help and follow their clues to find a way out.";
@@ -2491,8 +2491,8 @@ CA_Q_DETAIL_M01_ARGENTO = "Speak with Argento upstairs, in the south wing room n
 CA_Q_DETAIL_M01_RESIDENTS = "Gain Rulo, Ronnie and Caella's help upstairs (%COUNT%/3). Explore each conversation. If a check fails, ask Argento for advice to continue.";
 CA_Q_DETAIL_M01_RETURN_ARGENTO = "All three residents agreed to help. Return to Argento upstairs, in the south room nearest the stairs, and report the result.";
 CA_Q_DETAIL_M01_CAELLA = "Speak with Caella upstairs, in the south wing room nearest the entrance. Accept her magic trial; ask her to prepare the equipment if you lack it.";
-CA_Q_DETAIL_M01_PRACTICE = "Complete Caella's magic practice (%MAGIC_COUNT%/5). The checklist below shows what remains. Rune activation unlocks when all five actions are recorded.";
-CA_Q_DETAIL_M01_RUNES = "Practice complete (5/5). Use the four marks in the order of Caella's riddle. Lit runes: %RUNES%/4. A mistake resets only the sequence. When all four are lit, return to Caella with her equipment.";
+CA_Q_DETAIL_M01_PRACTICE = "Complete Caella's practice (%MAGIC_COUNT%/4): fire, ice, Anima spent and recovered. Channel is optional and does not block the runes.";
+CA_Q_DETAIL_M01_RUNES = "Practice complete (4/4). Use the four marks in the order of Caella's riddle. Lit runes: %RUNES%/4. A mistake resets only the sequence. Return to Caella when all four are lit; keep your equipment.";
 CA_Q_DETAIL_M01_RONNIE = "Caella's trial is complete. Her marked wall remains passable. Confirm your equipment plan with Palomo upstairs, then speak with Ronnie in the north-wing room nearest the first-floor stairs to learn its recipes and begin crafting.";
 CA_Q_DETAIL_GENERIC = "Follow the current stage and the known objectives in the quest summary. Speak again with the person guiding that stage for instructions.";
 CA_Q_DETAIL_COMPLETE = "Quest completed. There are no pending actions for this quest.";
@@ -2508,9 +2508,9 @@ CA_Q_DETAIL_LOCATION = "Dónde practicar y usar las runas";
 CA_Q_DETAIL_PRACTICE = "Práctica: acciones realizadas y pendientes";
 CA_Q_DETAIL_DONE = "Hecho";
 CA_Q_DETAIL_PENDING = "Pendiente";
-CA_Q_DETAIL_PRIMARY = "Ataque primario: acertale al muñeco con un hechizo.";
-CA_Q_DETAIL_SECONDARY = "Ataque secundario: acertale al muñeco con un hechizo.";
-CA_Q_DETAIL_CHANNEL = "Canalizar Sello (User2): activalo una vez.";
+CA_Q_DETAIL_PRIMARY = "Fuego: tocá al muñeco con el bastón.";
+CA_Q_DETAIL_SECONDARY = "Hielo: tocá al muñeco con el bastón.";
+CA_Q_DETAIL_CHANNEL = "Opcional: Canalizar Sello (User2), si tenés un Sello.";
 CA_Q_DETAIL_ANIMA_SPENT = "Gastá Ánima con un lanzamiento completado.";
 CA_Q_DETAIL_ANIMA_RECOVERED = "Después de gastar Ánima, dejá que se recupere.";
 CA_Q_DETAIL_M01_ABOUT = "Despertaste en una mansión desconocida. Los residentes tampoco entienden cómo llegaron. Conseguí su ayuda y seguí sus pistas para encontrar una salida.";
@@ -2519,8 +2519,8 @@ CA_Q_DETAIL_M01_ARGENTO = "Hablá con Argento en el primer piso, en la habitaci�
 CA_Q_DETAIL_M01_RESIDENTS = "Conseguí la ayuda de Rulo, Ronnie y Caella en el primer piso (%COUNT%/3). Explorá sus conversaciones. Si falla una tirada, pedile un consejo a Argento para continuar.";
 CA_Q_DETAIL_M01_RETURN_ARGENTO = "Los tres residentes aceptaron ayudar. Volvé con Argento, en el primer piso, habitación sur junto a la escalera, y contale el resultado.";
 CA_Q_DETAIL_M01_CAELLA = "Hablá con Caella en el primer piso, en la habitación del ala sur más cercana a la entrada. Aceptá su prueba mágica; pedile preparar el equipo si te falta.";
-CA_Q_DETAIL_M01_PRACTICE = "Completá la práctica mágica de Caella (%MAGIC_COUNT%/5). La lista de abajo indica qué falta. Las runas se pueden activar cuando se registran las cinco acciones.";
-CA_Q_DETAIL_M01_RUNES = "Práctica completa (5/5). Usá las cuatro marcas en el orden del acertijo de Caella. Runas encendidas: %RUNES%/4. Un error reinicia sólo la secuencia. Cuando estén las cuatro encendidas, volvé con Caella y su equipo.";
+CA_Q_DETAIL_M01_PRACTICE = "Completá la práctica de Caella (%MAGIC_COUNT%/4): fuego, hielo, gasto y recuperación de Ánima. Canal es opcional y no bloquea las runas.";
+CA_Q_DETAIL_M01_RUNES = "Práctica completa (4/4). Usá las cuatro marcas en el orden del acertijo de Caella. Runas encendidas: %RUNES%/4. Un error reinicia sólo la secuencia. Volvé con Caella cuando estén las cuatro; conservás tu equipo.";
 CA_Q_DETAIL_M01_RONNIE = "La prueba de Caella terminó. Podés atravesar su pared marcada. Confirmá tu plan de equipo con Palomo arriba; después hablá con Ronnie en la habitación del ala norte más cercana a la escalera del primer piso para aprender sus recetas y comenzar a fabricar.";
 CA_Q_DETAIL_GENERIC = "Seguí la etapa actual y los objetivos conocidos del resumen. Volvé a hablar con quien guía esa etapa para consultar las indicaciones.";
 CA_Q_DETAIL_COMPLETE = "Misión completada. No quedan acciones pendientes de esta misión.";
@@ -2530,7 +2530,7 @@ CA_Q_DETAIL_FAILED = "Esta misión fracasó. Consultá los objetivos conocidos y
 
 [enu default]
 CA_M01_STARTER_NONE = "No weapon chosen";
-CA_M01_LOAN_RESERVED = "This weapon is on loan. Return it to its owner.";
+CA_M01_LOAN_RESERVED = "This weapon is yours to keep.";
 CA_M01_STARTER_EXTRA = "You made another weapon of your own. Your first crafted weapon still identifies the tutorial task.";
 CA_M01_STARTER_CREATED = "Your first weapon is ready. Show it to Ronnie.";
 CA_M01_SUPPLY_RESERVED = "These materials belong to the trial. Unused chest supplies can be returned to the chest.";
@@ -2641,7 +2641,7 @@ CA_M01_TAKE_SUPPLY_5 = "Withdraw cow leather.";
 
 [es]
 CA_M01_STARTER_NONE = "Sin arma elegida";
-CA_M01_LOAN_RESERVED = "Esta arma es prestada. Debes devolvérsela a su dueño.";
+CA_M01_LOAN_RESERVED = "Esta arma es tuya.";
 CA_M01_STARTER_EXTRA = "Fabricaste otra arma propia. Tu primera arma sigue identificando la tarea del tutorial.";
 CA_M01_STARTER_CREATED = "Tu primera arma está lista. Mostrásela a Ronnie.";
 CA_M01_SUPPLY_RESERVED = "Estos materiales pertenecen a la prueba. Puedes devolver los suministros sin usar al cofre.";
@@ -2752,10 +2752,10 @@ CA_M01_TAKE_SUPPLY_5 = "Retirar cuero de vaca.";
 
 [default]
 // 4.33.0m: cierre de Caella y nuevas ubicaciones.
-CA_M01_MAGIC_RUNES_READY = "All four runes are lit. Return to Caella with her equipment.";
-CA_Q_DETAIL_M01_RETURN_CAELLA = "The four runes are lit (4/4). Return to Caella in her first-floor room, in the south wing nearest the entrance. Return the wand and Seal she lent you. She will explain how to cross the wall.";
-CA_DLG_M01_MAGIC_RETURN_TEXT = "I felt all four runes answer. First, give me back the wand and Seal I lent you. You will not need them for the last step. If you used your own equipment, you keep it.";
-CA_DLG_M01_MAGIC_RETURN_LOAN = "Return Caella's equipment and hear the last instruction.";
+CA_M01_MAGIC_RUNES_READY = "All four runes are lit. Return to Caella.";
+CA_Q_DETAIL_M01_RETURN_CAELLA = "The four runes are lit (4/4). Return to Caella in her first-floor room, in the south wing nearest the entrance. She will explain how to cross the wall. The staff remains yours.";
+CA_DLG_M01_MAGIC_RETURN_TEXT = "I felt all four runes answer. Keep your staff; let me explain how to cross the wall.";
+CA_DLG_M01_MAGIC_RETURN_LOAN = "Hear the last instruction.";
 CA_DLG_M01_WORKSHOPS_ASK = "Where can I craft equipment?";
 CA_DLG_M01_GARDEN_ASK = "And where are the materials?";
 CA_DLG_M01_WORKSHOP_RULO = "The heavy equipment workshop is in the first north room on the ground floor, below my bedroom, beside the training target. It covers weapons, armor and components through tier 2. Ronnie handles medium and ranged equipment, Argento light, and Caella magic. All twelve stations are also on the second floor.";
@@ -2765,10 +2765,10 @@ CA_DLG_M01_WORKSHOP_CAELLA = "The magical workshop is on the ground floor, in th
 
 [es]
 // 4.33.0m: cierre de Caella y nuevas ubicaciones.
-CA_M01_MAGIC_RUNES_READY = "Las cuatro runas están encendidas. Volvé con Caella y su equipo.";
-CA_Q_DETAIL_M01_RETURN_CAELLA = "Las cuatro runas están encendidas (4/4). Volvé con Caella, en el primer piso, habitación del ala sur más cercana a la entrada. Devolvé la varita y el Sello prestados. Ella te dirá cómo atravesar la pared.";
-CA_DLG_M01_MAGIC_RETURN_TEXT = "Sentí responder a las cuatro runas. Primero, devolveme la varita y el Sello que te presté. No los vas a necesitar para el último paso. Si usaste equipo propio, te lo quedás.";
-CA_DLG_M01_MAGIC_RETURN_LOAN = "Devolver el equipo de Caella y escuchar la última indicación.";
+CA_M01_MAGIC_RUNES_READY = "Las cuatro runas están encendidas. Volvé con Caella.";
+CA_Q_DETAIL_M01_RETURN_CAELLA = "Las cuatro runas están encendidas (4/4). Volvé con Caella, en el primer piso, habitación del ala sur más cercana a la entrada. Te dirá cómo atravesar la pared. El bastón sigue siendo tuyo.";
+CA_DLG_M01_MAGIC_RETURN_TEXT = "Sentí responder a las cuatro runas. Conservá tu bastón; te explico cómo atravesar la pared.";
+CA_DLG_M01_MAGIC_RETURN_LOAN = "Escuchar la última indicación.";
 CA_DLG_M01_WORKSHOPS_ASK = "¿Dónde puedo fabricar equipo?";
 CA_DLG_M01_GARDEN_ASK = "¿Y dónde están los materiales?";
 CA_DLG_M01_WORKSHOP_RULO = "El taller pesado está en la primera habitación norte de la planta baja, debajo de mi dormitorio, junto al blanco de práctica. Tiene armas, armaduras y componentes hasta tier 2. Ronnie se ocupa del equipo mediano y a distancia; Argento, del liviano; Caella, del mágico. Las doce estaciones también siguen en el segundo piso.";
@@ -2813,14 +2813,14 @@ CA_M01_RULO_PRACTICE_READY = "Exercises complete: ask Argento for the silver key
 CA_M01_RULO_PRACTICE_DONE = "Exercise recorded. Check Quests > Detail (F).";
 CA_M01_RULO_AMMO_RESERVED = "Borrowed ammunition is used in the trial and returned to Rulo.";
 CA_M01_RULO_AMMO_WEIGHT = "Free some carrying capacity to receive practice ammunition.";
-CA_M01_RULO_RETRY = "The group recovers and returns to formation. Get ready: the Bull will try again.";
+CA_M01_RULO_RETRY = "If you fall, load a save from the menu when you want to try again.";
 CA_M01_RULO_FIGHT_BEGIN = "Rulo, Ronnie, Argento and Caella join you. The room closes: face the Bull together.";
 CA_M01_RULO_BULL_WON = "Bull defeated. Speak with Rulo again. Any leather within your remaining allowance can be collected.";
 CA_M01_RULO_DETAIL_OFFER = "Speak with Rulo in the first north room on the first floor (upstairs, left as you enter). Ronnie has checked your first crafted weapon.";
 CA_M01_RULO_DETAIL_PRACTICE = "Train with the target in the central north room on the ground floor, between the workshops. Complete the six exercises. Rulo can prepare your weapon and ammunition again.";
 CA_M01_RULO_DETAIL_KEY = "All six exercises are complete. Ask Argento for the silver key in his southeast room on the first floor. Choose the key option.";
 CA_M01_RULO_DETAIL_DOOR = "Open the locked door behind the place where you awoke and enter. Rulo, Ronnie, Argento and Caella join you inside before the Bull attacks.";
-CA_M01_RULO_DETAIL_FIGHT = "Fight alongside all four residents. The Bull can attack any of you. Evade its wind-up and manage Air and Anima. Fallen companions stay down until the attempt ends. If you fall, the whole group and the Bull recover; your exercises remain completed.";
+CA_M01_RULO_DETAIL_FIGHT = "Fight alongside all four residents. The Bull can attack any of you. Evade its wind-up and manage Air and Anima. Fallen companions stay down until the fight ends. A native autosave is requested before the fight. If you die, load a save manually; the fight does not reset itself.";
 CA_M01_RULO_DETAIL_RETURN = "You defeated the Bull together. The room is open and all four companions recover. It leaves 12.5 kg of usable cow leather. Speak with Rulo beside you: the trial has shown your innate strength and your ability to lead the group.";
 CA_M01_RULO_DETAIL_DONE = "Rulo recognized your innate strength and your ability to bring the four residents together and lead them. Your next meeting is with Palomo in the second-floor room containing all the stations.";
 CA_M01_RULO_CHECK_PRIMARY = "Hit the target with Fire.";
@@ -2854,14 +2854,14 @@ CA_M01_RULO_PRACTICE_READY = "Prácticas completas: pedile la llave de plata a A
 CA_M01_RULO_PRACTICE_DONE = "Práctica registrada. Revisá Misiones > Detalle (F).";
 CA_M01_RULO_AMMO_RESERVED = "La munición prestada se usa en la prueba y se devuelve a Rulo.";
 CA_M01_RULO_AMMO_WEIGHT = "Necesitás liberar peso para recibir la munición de práctica.";
-CA_M01_RULO_RETRY = "El grupo se recupera y vuelve a sus posiciones. Preparáte: el Toro vuelve a intentarlo.";
+CA_M01_RULO_RETRY = "Si caés, cargá una partida desde el menú cuando quieras intentarlo de nuevo.";
 CA_M01_RULO_FIGHT_BEGIN = "Rulo, Ronnie, Argento y Caella se unen a vos. El recinto se cierra: enfrenten juntos al Toro.";
 CA_M01_RULO_BULL_WON = "Toro derrotado. Volvé a hablar con Rulo. Si quedaba cupo de cuero, podés recogerlo.";
 CA_M01_RULO_DETAIL_OFFER = "Hablá con Rulo en la primera habitación norte del primer piso (arriba, a la izquierda al entrar). Ronnie ya revisó tu primera arma fabricada.";
 CA_M01_RULO_DETAIL_PRACTICE = "Entrená con el blanco de la sala central norte de la planta baja, entre los talleres. Completá las seis prácticas. Rulo puede preparar otra vez tu arma y la munición.";
 CA_M01_RULO_DETAIL_KEY = "Las seis prácticas están completas. Pedile la llave de plata a Argento, en la habitación sudeste del primer piso. Elegí la opción sobre la llave.";
 CA_M01_RULO_DETAIL_DOOR = "Abrí la puerta cerrada detrás del lugar donde despertaste y entrá. Rulo, Ronnie, Argento y Caella se reunirán con vos adentro antes de que ataque el Toro.";
-CA_M01_RULO_DETAIL_FIGHT = "Combatí junto a los cuatro residentes. El Toro puede atacar a cualquiera del grupo. Esquivá la cornada y administrá Aire y Anima. Los compañeros caídos quedan fuera de combate hasta el final del intento. Si caés vos, el grupo y el Toro se recuperan; conservás las prácticas.";
+CA_M01_RULO_DETAIL_FIGHT = "Combatí junto a los cuatro residentes. El Toro puede atacar a cualquiera del grupo. Esquivá la cornada y administrá Aire y Ánima. Los compañeros caídos quedan fuera de combate hasta el final. Se solicita un autoguardado nativo antes de luchar. Si morís, cargá una partida manualmente; la pelea no se reinicia sola.";
 CA_M01_RULO_DETAIL_RETURN = "Derrotaron al Toro juntos. El recinto está abierto y los cuatro compañeros se recuperan. Deja 12,5 kg de cuero de vaca utilizable. Hablá con Rulo, que está con vos: la prueba mostró tu fuerza innata y tu capacidad de liderar al grupo.";
 CA_M01_RULO_DETAIL_DONE = "Rulo reconoció tu fuerza innata y tu capacidad para reunir y liderar a los cuatro residentes. El siguiente encuentro es con Palomo, en la habitación del segundo piso donde están todas las estaciones.";
 CA_M01_RULO_CHECK_PRIMARY = "Acertar al blanco con Fire.";
@@ -2905,8 +2905,8 @@ CA_M01_PALOMO_WHERE_ASK = "Will you tell me where we are now?";
 CA_M01_PALOMO_WHERE = "On the second floor. I warned you that architecture would not help with ambitious questions.";
 CA_M01_PALOMO_VOICE_ASK = "And the voice I heard?";
 CA_M01_PALOMO_VOICE = "Hallucinations hate being ignored. The more useful they seem, the more careful you should be with them.";
-CA_M01_PALOMO_OFFER = "Look after this Box and this complete deck of seventy-eight cards. The cards are physical; their scattered essences are something you must find.";
-CA_M01_PALOMO_ACCEPT = "I will look after them. [Receive the Box and Tarot deck]";
+CA_M01_PALOMO_OFFER = "Look after this Magic Box. Argento already gave you the physical Tarot deck; keep it inside the Box when capturing essences.";
+CA_M01_PALOMO_ACCEPT = "I will look after it. [Receive the Magic Box]";
 CA_M01_PALOMO_MAGIC_ASK = "What is magical about it?";
 CA_M01_PALOMO_MAGIC = "Mostly the name. Box was too short, and Immeasurable Relic attracts thieves.";
 CA_M01_PALOMO_CONTENTS_ASK = "What does it contain?";
@@ -2914,8 +2914,8 @@ CA_M01_PALOMO_CONTENTS = "Space. And a place for your Tarot deck: seventy-eight 
 CA_M01_PALOMO_WHY_ASK = "Why are you giving it to me?";
 CA_M01_PALOMO_WHY = "Because you found things you need to carry, and because I found someone who still asks before obeying.";
 CA_M01_PALOMO_RECEIVED = "The Box is in your care now. Keep your Tarot deck inside it when capturing an essence. Having all seventy-eight physical cards gives you no powers by itself. Captured essences stay with you. The deck cannot be sold, dropped or broken.";
-CA_M01_PALOMO_DECK_HANDOFF = "The deck is yours: 78 physical cards for Trucazo.\nTheir powers require captured essences.";
-CA_M01_PALOMO_DECK_ROOM = "I have a Tarot deck for you.\nMake room for 780 grams, then speak to me again.";
+CA_M01_PALOMO_DECK_HANDOFF = "Argento gives you the physical Tarot deck for practice. Its powers require captured essences.";
+CA_M01_PALOMO_DECK_ROOM = "Make room for Argento's physical Tarot deck.";
 CA_M01_PALOMO_USE_ASK = "How do I store my belongings?";
 CA_M01_PALOMO_USE = "The Box weighs ten kilograms; its contents weigh less when stored. Its space has a limit.\n\nOpen inventory with Tab, select an item and press C to store or retrieve it. Unequip it first if necessary. Loans and materials reserved for the trials stay outside. The Box itself stays with you.";
 CA_M01_PALOMO_CAVE_ASK = "Where should I take it?";
@@ -2936,8 +2936,8 @@ CA_M01_PALOMO_WHERE_ASK = "¿Ahora me va a decir dónde estamos?";
 CA_M01_PALOMO_WHERE = "En el segundo piso. Le advertí que la arquitectura no colaboraría con preguntas ambiciosas.";
 CA_M01_PALOMO_VOICE_ASK = "¿Y la voz que escuché?";
 CA_M01_PALOMO_VOICE = "Las alucinaciones detestan ser ignoradas. Cuanto más útiles parezcan, más cuidado conviene tenerles.";
-CA_M01_PALOMO_OFFER = "Cuide esta Caja y este mazo completo de setenta y ocho cartas. Las cartas son físicas; sus esencias dispersas son algo que tendrá que encontrar.";
-CA_M01_PALOMO_ACCEPT = "Voy a cuidarlos. [Recibir la Caja y el mazo del Tarot]";
+CA_M01_PALOMO_OFFER = "Cuide esta Caja Mágica. Argento ya le entregó el mazo físico del Tarot; guárdelo dentro de la Caja para capturar esencias.";
+CA_M01_PALOMO_ACCEPT = "La cuidaré. [Recibir la Caja Mágica]";
 CA_M01_PALOMO_MAGIC_ASK = "¿Qué tiene de mágica?";
 CA_M01_PALOMO_MAGIC = "Principalmente el nombre. Caja era demasiado breve y Reliquia Inconmensurable atrae ladrones.";
 CA_M01_PALOMO_CONTENTS_ASK = "¿Qué contiene?";
@@ -2945,8 +2945,8 @@ CA_M01_PALOMO_CONTENTS = "Espacio. Y un lugar para su mazo del Tarot: setenta y 
 CA_M01_PALOMO_WHY_ASK = "¿Por qué me la entrega?";
 CA_M01_PALOMO_WHY = "Porque usted encontró cosas que necesita llevar y porque yo encontré a alguien que todavía pregunta antes de obedecer.";
 CA_M01_PALOMO_RECEIVED = "La Caja queda a su cuidado. Guarde su mazo del Tarot dentro de ella al capturar una esencia. Tener las setenta y ocho cartas físicas no da poderes por sí solo. Las esencias capturadas quedan con usted. El mazo no se puede vender, tirar ni romper.";
-CA_M01_PALOMO_DECK_HANDOFF = "El mazo es suyo: 78 cartas físicas para el Trucazo.\nSus poderes requieren capturar esencias.";
-CA_M01_PALOMO_DECK_ROOM = "Tengo un mazo del Tarot para usted.\nHaga lugar para 780 gramos y vuelva a hablarme.";
+CA_M01_PALOMO_DECK_HANDOFF = "Argento le entrega el mazo físico del Tarot para practicar. Sus poderes requieren capturar esencias.";
+CA_M01_PALOMO_DECK_ROOM = "Haga espacio para el mazo físico del Tarot de Argento.";
 CA_M01_PALOMO_USE_ASK = "¿Cómo guardo mis cosas?";
 CA_M01_PALOMO_USE = "La Caja pesa diez kilos; el contenido pesa menos al guardarlo. Su espacio tiene un límite.\n\nAbra el inventario con Tab, elija un objeto y pulse C para guardarlo o retirarlo. Si lo tiene equipado, desequípelo primero. Los préstamos y materiales reservados para las pruebas permanecen fuera. La propia Caja permanece con usted.";
 CA_M01_PALOMO_CAVE_ASK = "¿Adónde debería llevarla?";
@@ -3019,14 +3019,14 @@ CA_M01_FOOL_HINT_DONE = "La carta y su bonificación están en Tarot.";
 [enu default]
 CA_MAP02_SEWER_NAME = "Sewers — the labyrinth";
 CA_M01_RETURN_TITLE = "The threshold";
-CA_M01_RETURN_CONFIRM = "The path could close behind you. Leave the mansion?\n\nYour Magic Box and all your own equipment travel with you, equipped or carried, including weapons, armor, Seals, shields and amulets. Borrowed trial items are returned. Ammunition, materials, coins and consumables stay here, including supplies in the Box. Your Tarot and learned recipes remain.";
+CA_M01_RETURN_CONFIRM = "The path could close behind you. Leave the mansion?\n\nYour Magic Box and all actual equipment travel with you, including the deck, staff, Pickaxe, bolas and any older gifted tools. Ammunition, materials, coins and consumables stay here, including supplies in the Box. Your captured Tarot essences and learned recipes remain.";
 CA_M01_RETURN_YES = "Yes. Cross.";
 CA_M01_RETURN_NO = "No. Not yet.";
 CA_M01_RETURN_ERROR = "The crossing could not be prepared. Your items remain with you; you can try again.";
 CA_M01_RETURN_FINISH_TASK = "Finish or cancel your crafting task before crossing.";
 CA_M01_RETURN_SOLO = "This story crossing is currently available only in a single-player game.";
 CA_M01_RETURN_ASK = "Where does the way out lead?";
-CA_M01_RETURN_PALOMO = "The way out is at the back of the room where you faced the Bull. Bring your Box and your own equipment; what you truly acquired goes with you. Return borrowed tools, and leave ammunition and supplies here. You may still say goodbye before crossing.";
+CA_M01_RETURN_PALOMO = "The way out is at the back of the Bull room. Bring your Box and equipment; the gifts remain yours. Leave ammunition and supplies here. You may still say goodbye before crossing.";
 CA_M01_RETURN_DETAIL_READY = "Use the marked door at the back of the Bull room, behind the silver-key door. Confirm crossing when ready. The Box and all owned equipment retain their identity, size, condition and equipped/stored state. Borrowed props are returned; ammunition, materials, coins and consumables are removed. Tarot and learned recipes persist.";
 CA_M01_RETURN_DETAIL_CROSSING = "You chose to cross. Stay beside the marked door while the Box prepares the passage.";
 CA_M01_RETURN_VOICE = "Now. Move before they discover you are still breathing.";
@@ -3039,14 +3039,14 @@ CA_M01_RETURN_DETAIL_COMPLETE = "You left the mansion and awoke in the sewers. Y
 [es]
 CA_MAP02_SEWER_NAME = "Alcantarillas — el laberinto";
 CA_M01_RETURN_TITLE = "El umbral";
-CA_M01_RETURN_CONFIRM = "El camino podría cerrarse detrás de vos. ¿Abandonar la mansión?\n\nLa Caja Mágica y todo tu equipo propio cruzan con vos, equipado o transportado: armas, armaduras, Sellos, escudos y amuletos. Los objetos de prueba prestados se devuelven. Munición, materiales, monedas y consumibles quedan aquí, también los suministros de la Caja. Conservás el Tarot y las recetas aprendidas.";
+CA_M01_RETURN_CONFIRM = "El camino podría cerrarse detrás. ¿Salir de la mansión?\n\nTu Caja Mágica y todo tu equipo real viajan con vos, incluidos el mazo, bastón, Pico, boleadoras y antiguos utensilios regalados. La munición, materiales, monedas y consumibles quedan aquí, incluidos los suministros en la Caja. Conservás las esencias del Tarot y recetas aprendidas.";
 CA_M01_RETURN_YES = "Sí. Cruzar.";
 CA_M01_RETURN_NO = "No. Todavía no.";
 CA_M01_RETURN_ERROR = "No se pudo preparar el cruce. Conservás tus objetos y podés volver a intentarlo.";
 CA_M01_RETURN_FINISH_TASK = "Terminá o cancelá tu tarea de fabricación antes de cruzar.";
 CA_M01_RETURN_SOLO = "Este cruce narrativo está disponible por ahora en una partida individual.";
 CA_M01_RETURN_ASK = "¿Adónde lleva la salida?";
-CA_M01_RETURN_PALOMO = "La salida está al fondo del cuarto donde enfrentó al Toro. Lleve su Caja y su equipo propio; lo que realmente adquirió cruza con usted. Devuelva las herramientas prestadas y deje aquí la munición y los suministros. Todavía puede despedirse antes de cruzar.";
+CA_M01_RETURN_PALOMO = "La salida está al fondo del recinto del Toro. Lleve su Caja y equipo; los regalos siguen siendo suyos. Deje aquí la munición y los suministros. Todavía puede despedirse antes de cruzar.";
 CA_M01_RETURN_DETAIL_READY = "Usá la puerta marcada al fondo del cuarto del Toro, detrás de la puerta de llave plateada. Confirmá cuando estés listo. La Caja y todo el equipo propio conservan identidad, talla, estado y posición equipada o guardada. Los préstamos se devuelven; se retiran munición, materiales, monedas y consumibles. Conservás el Tarot y las recetas aprendidas.";
 CA_M01_RETURN_DETAIL_CROSSING = "Elegiste cruzar. Permanecé junto a la puerta marcada mientras la Caja prepara el paso.";
 CA_M01_RETURN_VOICE = "Ahora sí. Movete antes de que descubran que seguís respirando.";
@@ -3255,11 +3255,11 @@ CA_M01_SUPPLY_SURPLUS = "Dejar aquí los materiales sobrantes.";
 
 [enu default]
 CA_M01_REPAIR_LOAN_ASK = "Equip my Pickaxe to gather repair materials.";
-CA_M01_REPAIR_LOAN_RETURN = "Return the gathering sword.";
+CA_M01_REPAIR_LOAN_RETURN = "Keep my gathering tool.";
 CA_M01_REPAIR_LOAN_NO_ROOM = "Make room for your Pickaxe first.";
 [es]
 CA_M01_REPAIR_LOAN_ASK = "Equipar mi Pico para juntar los materiales de reparación.";
-CA_M01_REPAIR_LOAN_RETURN = "Devolver la espada de recolección.";
+CA_M01_REPAIR_LOAN_RETURN = "Conservar mi herramienta de recolección.";
 CA_M01_REPAIR_LOAN_NO_ROOM = "Hacé espacio para tu Pico primero.";
 
 // 4.33.0ae: sellos tier 1, conocimiento y cupo de práctica.
@@ -4325,7 +4325,7 @@ CA_ARCANA_CUPS_REVEAL = "La Caja Mágica revela el Ancho de copa. Podés captura
 CA_ARCANA_WANDS_REVEAL = "La Caja Mágica revela el Caballero de basto. Podés capturarlo con la Caja o dejarlo aquí y volver.";
 
 [enu default]
-CA_DEMO_MATERIALS = "A recipe cannot grow its own ingredients. Use the sword's primary attack on trees and shrubs, its secondary thrust on veins. Cut ceibos and shrubs at the entrance for wood and fiber. Through the marked wall by the far staircase, the lift reaches the cave: copper, tin and five gem veins at the far end. The chest holds the raw silver and leather still needed for your chosen equipment, and giant gauntlets if chosen. Gather only your allowance. Use the ground-floor workshops or the complete workshop on the second floor. Ronnie will lend you the tool; I can point out where to put it to work.";
+CA_DEMO_MATERIALS = "A recipe cannot grow its own ingredients. Use your Pickaxe's primary attack on trees and shrubs, and its secondary attack on veins. Cut ceibos and shrubs at the entrance for wood and fiber. Through the marked wall by the far staircase, the lift reaches the cave: copper, tin and five gem veins at the far end. The chest holds the raw silver and leather still needed for your chosen equipment, and giant gauntlets if chosen. Gather only your allowance. Use the ground-floor workshops or the complete workshop on the second floor. Ronnie gives you your own Pickaxe; I can point out where to put it to work.";
 CA_DEMO_PALOMO_LESSONS_ASK = "How do I look after myself?";
 CA_DEMO_PALOMO_LESSONS = "A fine weapon is useful. So is remembering to eat before you fall on it. We can practice food, water, rest, breathing and carrying a sensible load. Choose what you need; these lessons do not bar your way. Ronnie will teach you crafting and the calendar.";
 CA_DEMO_SLEEP_ASK = "And sleeping?";
@@ -4459,15 +4459,15 @@ CA_PORT_END = "Capítulo completo: el puerto está a salvo y el Caballero de Bas
 
 // V4.37.1 / #62: ejercicio contra el blanco compartido.
 [enu default]
-CA_DLG_M01_MAGIC_TARGET_LOCATION = "Practice target: the training dummy in the north-central ground-floor room, off the central hall. Both offensive spells must hit it. Seal Channel and Anima recovery do not require an impact.";
+CA_DLG_M01_MAGIC_TARGET_LOCATION = "Practice target: the dummy in the north-central ground-floor room, off the central hall. Touch it with both staff streams. Channel is optional.";
 CA_M01_MAGIC_ANIMA_DONE = "Anima expenditure recorded.";
 [es]
-CA_DLG_M01_MAGIC_TARGET_LOCATION = "Blanco de práctica: el muñeco del cuarto central del lado norte de la planta baja, junto al pasillo central. Los dos hechizos ofensivos deben acertarle. Canalizar Sello y recuperar Ánima no requieren un impacto.";
+CA_DLG_M01_MAGIC_TARGET_LOCATION = "Blanco de práctica: el muñeco del cuarto central del lado norte de la planta baja, junto al pasillo central. Tocalo con ambos chorros del bastón. Canal es opcional.";
 CA_M01_MAGIC_ANIMA_DONE = "Gasto de Ánima registrado.";
 
 [enu default]
 // #63: Palomo equipment planning.
-CA_LOADOUT_INTRO = "Choose a weapon, armor, a Seal and a shield for Ronnie's crafting lessons after Caella. I also give you one T1 amulet of your choice. Read each description before confirming; confirmed choices remain fixed.";
+CA_LOADOUT_INTRO = "Choose the weapon you will craft with Ronnie after Caella. Armor, Seal, necklace and shield crafting are optional, even after choosing them. You may continue with only the weapon. I also offer one T1 necklace of your choice. Confirmed choices remain fixed.";
 CA_LOADOUT_WEAPON = "Review weapons";
 CA_LOADOUT_ARMOR = "Review armor";
 CA_LOADOUT_SEAL = "Review Seals";
@@ -4477,8 +4477,8 @@ CA_LOADOUT_ESSENCE_INTRO = "Choose an essence to read its primary and secondary 
 CA_LOADOUT_REVIEW = "Confirm only if this is your choice. Back returns to the catalogue. If this category is already confirmed, you can still review it.";
 CA_LOADOUT_UNCHOSEN = "Not chosen";
 CA_LOADOUT_SUMMARY = "Weapon: %s\nArmor: %s\nSeal: %s\nShield: %s";
-CA_LOADOUT_RONNIE = "Palomo records your weapon, armor, Seal and shield choices upstairs. Once all four are confirmed, I can teach their recipes and components, prepare the material allowances and give you your own Pickaxe with its recipe. You must craft the weapon you chose with Palomo.";
-CA_LOADOUT_START = "Begin crafting my chosen equipment";
+CA_LOADOUT_RONNIE = "Choose your weapon with Palomo upstairs, then I can teach its recipe and components and give you your own Pickaxe with its recipe. Craft that chosen weapon to continue. Armor, Seal, necklace and shield crafting are optional; choosing them never makes them a requirement.";
+CA_LOADOUT_START = "Begin crafting my chosen weapon";
 CA_LOADOUT_REFERRAL = "Palomo explains and records your starting equipment choices upstairs. I use that same plan for the crafting lessons.";
 CA_LOADOUT_WEIGHT = "T1 weight at your planned size: %.3f kg.";
 CA_LOADOUT_AIR = "Current uncharged Air cost, primary / secondary attack: %.3f / %.3f. Aim and block use their own rules.";
@@ -4530,7 +4530,7 @@ CA_LOADOUT_ACTION_19 = "Statuette: both attacks launch an explosive projectile; 
 
 [es]
 // #63: Palomo equipment planning.
-CA_LOADOUT_INTRO = "Elija arma, armadura, Sello y escudo para las lecciones de oficio de Ronnie después de Caella. También le entrego un amuleto T1 a elección. Lea cada descripción antes de confirmar; las elecciones confirmadas quedan fijas.";
+CA_LOADOUT_INTRO = "Elija el arma que fabricará con Ronnie después de Caella. Fabricar armadura, Sello, collar y escudo es opcional, incluso después de elegirlos. Puede continuar sólo con el arma. También le ofrezco un collar T1 a elección. Las elecciones confirmadas quedan fijas.";
 CA_LOADOUT_WEAPON = "Revisar armas";
 CA_LOADOUT_ARMOR = "Revisar armaduras";
 CA_LOADOUT_SEAL = "Revisar Sellos";
@@ -4540,8 +4540,8 @@ CA_LOADOUT_ESSENCE_INTRO = "Elija una esencia para leer sus efectos principal y 
 CA_LOADOUT_REVIEW = "Confirme sólo si esta es su elección. Volver permite comparar. Si ya confirmó esta categoría, todavía puede consultarla.";
 CA_LOADOUT_UNCHOSEN = "Sin elegir";
 CA_LOADOUT_SUMMARY = "Arma: %s\nArmadura: %s\nSello: %s\nEscudo: %s";
-CA_LOADOUT_RONNIE = "Palomo registra arriba tus elecciones de arma, armadura, Sello y escudo. Cuando confirmes las cuatro, puedo enseñarte sus recetas y componentes, habilitar los cupos de materiales y darte un Pico propio con su receta. Tenés que fabricar el arma que elegiste con Palomo.";
-CA_LOADOUT_START = "Empezar a fabricar el equipo elegido";
+CA_LOADOUT_RONNIE = "Elegí tu arma con Palomo arriba; después te enseño su receta y componentes y te regalo tu Pico con su receta. Fabricá esa arma para continuar. Fabricar armadura, Sello, collar y escudo es opcional; elegirlos nunca los vuelve obligatorios.";
+CA_LOADOUT_START = "Empezar a fabricar mi arma elegida";
 CA_LOADOUT_REFERRAL = "Palomo explica y registra arriba tus elecciones de equipo inicial. Ese mismo plan se usa en las lecciones de fabricación.";
 CA_LOADOUT_WEIGHT = "Peso T1 en tu talla prevista: %.3f kg.";
 CA_LOADOUT_AIR = "Coste actual de Aire sin carga, ataque principal / secundario: %.3f / %.3f. Apuntar y bloquear usan sus propias reglas.";
@@ -5118,3 +5118,25 @@ CA_WEAPON_CATALOGUE_BOLAS = "Bolas";
 [es]
 CA_WEAPON_TYPE_BOLAS = "boleadora";
 CA_WEAPON_CATALOGUE_BOLAS = "Boleadora";
+
+// #164: explicit optional crafting navigation and permanent gifts.
+[enu default]
+CA_LOADOUT_CONTINUE = "Continue; skip optional crafting.";
+CA_LOADOUT_SKIP = "Skip for now; return to my plan.";
+CA_M01_ARGENTO_GIFT = "This complete deck of 78 physical cards is yours. We can practice before you receive a Magic Box; capturing essences later requires the deck inside your own Box.";
+CA_M01_RULO_GIFT = "These bolas are yours to keep. Hold secondary attack to prepare, then press primary attack to throw. Recover them after a miss or when the restraint expires.";
+[es]
+CA_LOADOUT_CONTINUE = "Continuar sin fabricar equipo opcional.";
+CA_LOADOUT_SKIP = "Omitir por ahora; volver a mi plan.";
+CA_M01_ARGENTO_GIFT = "Este mazo completo de 78 cartas físicas es tuyo. Podemos practicar antes de que recibas una Caja Mágica; para capturar esencias después, el mazo debe estar dentro de tu propia Caja.";
+CA_M01_RULO_GIFT = "Estas boleadoras son tuyas. Mantené ataque secundario para preparar y pulsá ataque primario para lanzarlas. Recuperalas si fallás o cuando termine la sujeción.";
+
+[enu default]
+CA_M01_GIFT_NO_ROOM = "Make room for your gift; it will be delivered once capacity is available.";
+[es]
+CA_M01_GIFT_NO_ROOM = "Hacé espacio para tu regalo; lo recibirás cuando tengas capacidad.";
+
+[enu default]
+CA_LOADOUT_OPTIONAL_PLAN = "Optional equipment and my plan";
+[es]
+CA_LOADOUT_OPTIONAL_PLAN = "Equipo opcional y mi plan";

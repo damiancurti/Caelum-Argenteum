@@ -502,7 +502,7 @@ class CaelumAnchoredResident : CaelumCombatActor abstract
     bool IsRuloPartyFighting()
     {
         return RuloPartyMode == 2 && !RuloPartyDowned && RuloPartyBull != null
-            && RuloPartyBull.health > 0 && RuloPartyBull.TrialGraceTicks == 0;
+            && RuloPartyBull.health > 0 && RuloPartyBull.TrialReleased && RuloPartyBull.TrialGraceTicks == 0;
     }
 
     override int DamageMobj(Actor inflictor, Actor source, int damage, Name mod, int flags, double angle)

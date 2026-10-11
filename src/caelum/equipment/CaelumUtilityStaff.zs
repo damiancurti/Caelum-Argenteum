@@ -137,9 +137,15 @@ class CaelumUtilityStaffStream : Actor
         let nearby=BlockThingsIterator.Create(Emitter,CaelumDemonBreathRules.Range()+Emitter.Radius
             +CaelumUtilityStaffRules.TIP_FORWARD+CaelumUtilityStaffRules.TIP_RIGHT);
         while(nearby.Next())
+        {
+            // El muñeco verifica el mismo cono y oclusión sin recibir estados ni desgaste.
+            if(nearby.thing is "CaelumM00TrainingDummy"
+                && CaelumElementalStream.Contact(self,Emitter,Direction,nearby.thing))
+                CaelumMainM00MagicTrial.RecordStaffContact(Emitter,nearby.thing,ice);
             if(CaelumElementalStream.Status(nearby.thing)!=null
                 && CaelumElementalStream.Contact(self,Emitter,Direction,nearby.thing))
             {CaelumElementalStream.ApplyContact(Emitter,nearby.thing,ice);contacted=true;}
+        }
         if(contacted && SourceItem!=null)
         {
             SourceItem.UtilityStaffContactTics++;

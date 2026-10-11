@@ -212,6 +212,8 @@ class CaelumMainM00RuloTrial : Object play
             r.SetQuestObjectiveProgress(CaelumConstants.QUEST_MAIN_M00_THE_FOOL,
                 CaelumConstants.MAIN_M00_OBJECTIVE_DEFEAT_BULL, 0, 1);
         }
+        if (!CaelumMainM00Gifts.EnsureTool(user, true))
+        { CaelumMainM00MagicTrial.Feedback(user, "CA_M01_GIFT_NO_ROOM", true); return false; }
         Prepare(user); Sync(user); return true;
     }
 
@@ -241,36 +243,22 @@ class CaelumMainM00RuloTrial : Object play
             }
     }
 
-    static bool PreventDefeat(CaelumPlayer user)
-    {
-        // Die recibe salud <= 0; aquí no se usa IsActive por ese motivo.
-        if (user == null || user.player == null || level.MapName != "MAP01") return false;
-        let r = user.GetPersistentCharacterState(false); let bull = GetBull();
-        if (r == null || bull == null || bull.TrialFighter != user || !bull.TrialReleased
-            || bull.health <= 0 || r.HasMainM00Flag(CaelumConstants.MAIN_M00_FLAG_BULL_DEFEATED)) return false;
-        if (!r.MainM00BullResetPending) r.MainM00BullFailures++;
-        r.MainM00BullResetPending = true;
-        user.health = 1; user.player.health = 1;
-        user.Vel = (0,0,0); bull.StopBullCharge();
-        user.A_SetBlend("Black", 0.8, TICRATE);
-        return true;
-    }
+    const AUTOSAVE_SPECIAL = 15;
 
-    static void ResetFight(CaelumPlayer user, CaelumM00Bull bull, bool retry = true)
+    static void StartFight(CaelumPlayer user, CaelumM00Bull bull)
     {
         let r = user.GetPersistentCharacterState(true);
         r.MainM00BullResetPending = false;
         for (int i = 0; i < 4; i++) r.BullEncounterSeverity[i] = 0;
-        // Retirar proyectiles del intento evita impactos tardíos y botín al
-        // reiniciar. El arma nativa permanece en el inventario del personaje.
-        let missiles = ThinkerIterator.Create("CaelumActorProjectile"); CaelumActorProjectile missile;
-        while ((missile = CaelumActorProjectile(missiles.Next())) != null)
-            if (missile.Target == user || missile.Target == bull || IsPartyMember(missile.Target, user)) missile.Destroy();
         user.SetOrigin((-1900,0,0), false); user.Vel = (0,0,0); user.Angle = 180; user.Pitch = 0;
-        Prepare(user);
-        bull.ResetAttempt(user);
+        bull.PrepareEncounter(user);
         GatherParty(user, bull);
-        CaelumMainM00MagicTrial.Feedback(user, retry ? "CA_M01_RULO_RETRY" : "CA_M01_RULO_FIGHT_BEGIN");
+        SetArenaDoors(true); Sync(user);
+        // Autosave nativo: respeta la rotación y las preferencias del motor.
+        // La gracia ya existente mantiene inactivos al Toro y sus aliados.
+        // TrialFighter persiste y evita volver a guardar al cargar el punto.
+        user.A_CallSpecial(AUTOSAVE_SPECIAL);
+        CaelumMainM00MagicTrial.Feedback(user, "CA_M01_RULO_FIGHT_BEGIN");
     }
 
     static void Update(CaelumPlayer user)
@@ -303,7 +291,6 @@ class CaelumMainM00RuloTrial : Object play
         }
         r.MainM00PracticeLastAir = user.CurrentAir; r.MainM00PracticeLastPosition = user.Pos;
         let bull = GetBull();
-        if (r.MainM00BullResetPending && bull != null) ResetFight(user, bull);
         if (r.HasMainM00Flag(CaelumConstants.MAIN_M00_FLAG_BULL_DEFEATED))
         {
             // También actualizar una victoria 0p que aún espera la charla final.
@@ -321,7 +308,7 @@ class CaelumMainM00RuloTrial : Object play
                 && CaelumMainM00SocialDialogue.CanReceiveSilverKey(user))
             {
                 r.SetMainM00Flag(CaelumConstants.MAIN_M00_FLAG_BULL_STARTED);
-                ResetFight(user, bull, false); SetArenaDoors(true); Sync(user);
+                StartFight(user, bull);
             }
         }
         else if (bull.TrialFighter == user)
@@ -335,7 +322,7 @@ class CaelumMainM00RuloTrial : Object play
                 CaelumMainM00MagicTrial.Feedback(user, "CA_M01_RULO_PARTY_JOINED");
             }
             SetArenaDoors(true);
-            if (user.IsRangedWeaponType(user.WeaponModel.WeaponType))
+            if (bull.TrialReleased && user.IsRangedWeaponType(user.WeaponModel.WeaponType))
             {
                 let ammo = user.FindNativeAmmunition(user.GetRangedAmmoType(user.WeaponModel.WeaponType));
                 if (r.MainM00AmmoLoanRemaining == 0 || ammo == null || ammo.Amount == 0)
