@@ -1,4 +1,4 @@
-﻿// Matriz aislada: receptores sin IA; todas las reglas probadas son producción.
+// Matriz aislada: receptores sin IA; todas las reglas probadas son producción.
 class CA188Target : CaelumCombatActor
 {
     override void Tick() {}
@@ -275,4 +275,3 @@ class CA188Native : StaticEventHandler
         }
     }
 }
-
