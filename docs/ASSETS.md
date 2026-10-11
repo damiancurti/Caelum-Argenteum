@@ -1,6 +1,12 @@
 # Caelum Argenteum — Audio and art
 
-Documentation version: **5.2.2** — 2026-10-11.
+Documentation version: **5.2.3** — 2026-10-11.
+
+## 5.2.3 - Mandinga targeting evidence (#180)
+
+No sprites, sounds, maps or elemental presentation change. Native fire-breath,
+high-density and old-save target checks are retained in assets/validation_523,
+without distributing the engine, IWAD, packages or save fixtures.
 
 ## 5.2.2 - Time-skip performance evidence (#178)
 

@@ -1,6 +1,14 @@
 # TASKS.md — Active tasks
 
-Documentation version: **5.2.2** — 2026-10-11.
+Documentation version: **5.2.3** — 2026-10-11.
+
+## Issue #180 - Allied Mandinga retaliation (5.2.3)
+
+Implemented native target eligibility and idempotent cleanup of already-saved
+allied targets. Existing damage/heat, resources, enemy retaliation and explicit
+hostility orders remain. Evidence: assets/validation_523; CA180-01 pending.
+Branch issue-180-mandinga-retaliation is stacked on #178/PR181. CA147-01,
+CA177-01 and CA178-01 remain outstanding. Next: author feedback, then #148.
 
 ## Issue #178 - Faster multi-day time skipping (5.2.2)
 

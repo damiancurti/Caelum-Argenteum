@@ -1,6 +1,21 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **5.2.2** — 2026-10-11.
+Documentation version: **5.2.3** — 2026-10-11.
+
+## 5.2.3 - Mandinga friendly-fire retaliation (#180), 2026-10-11
+
+During #178 work the author reported Mandingas fighting each other after fire
+breath contact. Native baseline testing reproduced a burn-source-driven target
+switch. The correction uses the engine's OkayToSwitchTarget hook for allied
+Mandinga pairs and clears already-invalid target/lastenemy references during
+Tick. Existing fire damage/heat and resource costs remain; player attacks,
+opposing allegiance and explicit Thing_Hate orders retain native retaliation.
+
+Normal and 500-plus-combatant checks, saved-actor recovery, fixture diagnostics
+and static/build results are recorded in assets/validation_523/RESULTS.md.
+CA180-01 remains pending author acceptance. #147/#177/#178 also remain pending;
+no merge or closure is implied. The performance and tutorial commits remain
+separate and available for review/reversal.
 
 ## 5.2.2 - Accelerate multi-day time skipping (#178), 2026-10-11
 

@@ -1,12 +1,12 @@
 # CONTEXT.md — Caelum Argenteum
 
-Documentation version: **5.2.2** — 2026-10-11.
+Documentation version: **5.2.3** — 2026-10-11.
 
-**5.2.2/#178:** faster skip budgets and one crafting-network scan per batch;
-per-tic rules/interruption retained. validation_522; CA178-01 pending.
-**5.2.1/#177/PR179:** tutorial autoequip/Bull edges/Palomo choices, finite
-progressive chest, unlimited food/5 L canteens, one sleeping bag/no MAP02 beds.
-validation_521; CA177-01 pending. Next feedback #180: Mandinga retaliation.
+**5.2.3/#180:** allied Mandinga retaliation/old-target repair; damage retained.
+validation_523; CA180-01 pending. Stacked on #178/PR181.
+**5.2.2/#178/PR181:** faster time skip/network batches; validation_522;
+CA178-01 pending. **5.2.1/#177/PR179:** tutorial equipment, supplies and bag;
+validation_521; CA177-01 pending. No merge/closure; next roadmap #148.
 **5.2.0/#147:** shared saved identity/session draft/native controls; CA147-01
 pending (validation_520). Next: #148; remaining #149/#150 work stays separate.
 **#164/#172/#173 accepted/closed/merged:** PR171/174/175; baseline f7c4a0dd.

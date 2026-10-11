@@ -1,6 +1,15 @@
 # Caelum Argenteum — Project, status and roadmap
 
-Documentation version: **5.2.2** — 2026-10-11.
+Documentation version: **5.2.3** — 2026-10-11.
+
+## 5.2.3 - Allied Mandinga retaliation (#180)
+
+The author's live fire-breath report is reproduced and corrected through native
+target eligibility. Allied Mandingas keep their legitimate opponent after burn
+damage; existing accidental target/lastenemy references are cleared in place.
+Damage, thermal transfer, resources and opposite/scripted hostility remain.
+Evidence: assets/validation_523; CA180-01 pending. Stacked on #178/PR181, with
+CA178-01, CA177-01 and CA147-01 still pending. Next roadmap remains #148.
 
 ## 5.2.2 - Faster time skipping (#178)
 

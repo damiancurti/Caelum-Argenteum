@@ -12,3 +12,8 @@ CA178-01 | 5.2.2 | #178 | Faster multi-day time skipping
 Prerequisites: rebuilt 5.2.2 and copies of a long crafting save and a peaceful MAP06 save. Preserve originals.
 Steps: forecast and run a multi-day craft, cancel partway and resume. Save/reload an active skip. Check its real material output, food/water and sleeping. In MAP06 choose a time beyond the siege start.
 Expected: forecasting and execution finish sooner, controls still respond between batches, cancellation retains elapsed work and reloading does not restart/duplicate the task. Resources and durations retain existing rules. The siege interrupts at its scheduled instant and blocks resuming the skip. Report timing or responsiveness problems and qualifications.
+
+CA180-01 | 5.2.3 | #180 | Allied Mandinga fire-breath retaliation
+Prerequisites: rebuilt 5.2.3; a group of Mandingas and a copy of a save where they already fight each other. Preserve originals.
+Steps: let one Mandinga breathe through another while they pursue you. Observe multiple burn pulses in a small encounter and the MAP06 siege. Load the saved internal fight, and also attack a Mandinga yourself.
+Expected: accidental allied fire does not redirect them into fighting each other; fire still hurts and uses its normal resources. Previously saved allied targets clear without healing or replacing actors. Valid enemy/player attacks still provoke retaliation. Report any failed step or qualification.

@@ -1,6 +1,13 @@
 CAELUM ARGENTEUM — STORY AND MAP01
 
-Documentation version: **5.2.2** — 2026-10-11.
+Documentation version: **5.2.3** — 2026-10-11.
+
+## 5.2.3 - Mandinga reaction rule (#180)
+
+Accidental breath contact does not create fights between allied Mandingas. The
+same combat rule applies in all maps and to saved actors, preserving damage,
+thermal transfer and explicit hostile orders. Mansion story and geometry are
+unchanged. See SYSTEMS and assets/validation_523; CA180-01 remains pending.
 
 ## 5.2.2 - Time-skip execution (#178)
 

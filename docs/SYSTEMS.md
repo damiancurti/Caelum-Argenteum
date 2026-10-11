@@ -1,6 +1,25 @@
 # Caelum Argenteum — Current systems and rules
 
-Documentation version: **5.2.2** — 2026-10-11.
+Documentation version: **5.2.3** — 2026-10-11.
+
+## Allied Mandinga retaliation - 5.2.3 / #180
+
+Accidental damage, including the existing racial-breath burn pulses, does not
+make allied Mandingas retaliate against each other. This changes target
+eligibility, not fire contact, damage, thermal energy or resource payment.
+A Mandinga recognizes another Mandinga as allied only when native IsHostile
+is false, both have the same TIDtoHate, and that order does not explicitly name
+the other actor. Opposing native allegiance and distinct/explicit scripted hate
+remain governed by the engine. No cross-faction relationship table is invented.
+
+OkayToSwitchTarget rejects only that allied pair before delegating all other
+cases to GZDoom. Before its normal Tick, each Mandinga discards allied target
+and lastenemy references, including ones restored from earlier saves. This is
+an idempotent check on existing references, not a new saved schema or actor
+replacement: wounds, resources, burn effects and identities remain. The rule
+is identical below and above the automatic 500-combatant threshold. Existing
+valid enemies can still provoke retaliation. Evidence: assets/validation_523;
+CA180-01 awaits author acceptance.
 
 ## Time-skip processing - 5.2.2 / #178
 
