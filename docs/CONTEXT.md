@@ -7,7 +7,8 @@ src/dialogues, with deterministic runtime assembly preserving every node/ID.
 Start at src/dialogues/INDEX.md; src/localization/INDEX.md locates all LANGUAGE
 keys. `python build_dialogue_index.py build` regenerates after edits; check,
 project validation and packaging reject stale output. Evidence: validation_525.
-No gameplay change or new author acceptance; CA183-01 remains pending.
+The author accepted #185 on 2026-10-11 without qualifications and authorized
+PR187 merge/closure. CA183-01 also passed; the author test queue is empty.
 
 **Previous patch 5.2.4 / #183 (PR186):** simplified creator recommendations and fixed
 profession gifts; Palomo chooses only the Seal. Ronnie exchanges the sole finite
@@ -16,8 +17,8 @@ profession gifts; Palomo chooses only the Seal. Ronnie exchanges the sole finite
 20 + floor(10 × Type3 multiplier). Departure boxes actual gifts/utilities/deck and
 matching ammo. MAP02 has 360 arrows/240 bolts and an exact initial-kit repair
 budget plus five replacement bolas across 39 finite chests. Start fresh test
-games by author instruction. Evidence: validation_524; CA183-01 awaits acceptance.
-
+games by author instruction. Evidence: validation_524; CA183-01 passed on
+2026-10-11 without qualifications. PR186 is merged and #183 closed.
 
 **Accepted on 2026-10-11:** CA147-01 (5.2.0/#147), CA177-01 (5.2.1/#177),
 CA178-01 (5.2.2/#178) and CA180-01 (5.2.3/#180), without qualifications.

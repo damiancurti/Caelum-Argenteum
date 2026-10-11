@@ -9,8 +9,9 @@ finite gold exchange, mandatory bag/Seal/5 L canteen crafts, boxed departure,
 one-for-one ammunition replacements and aggregate repair budget. The author
 confirmed five manufactured replacement bolas (no reparable wear exists), a
 30-to-100-slot Type3 Box formula, leather/rope recipes and fresh saves without
-old-save migration. Evidence: assets/validation_524/RESULTS.md. CA183-01 remains
-pending author acceptance; commit/push and linked PR are the delivery boundary.
+old-save migration. Evidence: assets/validation_524/RESULTS.md. CA183-01 passed
+author acceptance on 2026-10-11 without qualifications. PR186 is merged and
+#183 closed; the confirmed pending entry has been removed.
 
 ## Issue #185 - Indexed NPC dialogue and localization sources (5.2.5)
 
@@ -19,7 +20,9 @@ src/dialogues, indexed by index.json; generated runtime retains all 53
 conversations/422 pages in the original order. LANGUAGE index covers all 2,369
 keys; bounded lookup and build/validation freshness gates are implemented.
 Static and bilingual native evidence: assets/validation_525/RESULTS.md.
-No gameplay acceptance is implied; keep CA183-01 pending.
+The author accepted all #185 tests on 2026-10-11 without qualifications and
+authorized PR187 merge/#185 closure. CA183-01 also passed; the author queue
+is empty. Acceptance changes documentation only; release 5.2.5 is unchanged.
 
 ## Issue #180 - Allied Mandinga retaliation (5.2.3)
 

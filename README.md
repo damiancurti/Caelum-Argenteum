@@ -15,14 +15,17 @@ The [LANGUAGE index](src/localization/INDEX.md) locates English/Spanish text and
 shared UI keys without reading the full catalogue. Run
 `python build_dialogue_index.py build` after editing either source; validation
 and packaging reject stale output. [Evidence](assets/validation_525/RESULTS.md).
+The author accepted #185 on 2026-10-11 and authorized PR187 merge/issue closure.
+The author test queue is empty.
 
 5.2.4 simplifies character creation and tutorial equipment: editable recommended
 stats, profession gifts, a finite gold exchange and three utility crafts. The
 larger Box carries the actual starting kit into MAP02, whose finite supplies
 match its ammunition and repair needs. **Start a new test game**, as authorized
 by the author; pre-release saves are not migrated in this patch.
-[Evidence](assets/validation_524/RESULTS.md); CA183-01 awaits author acceptance.
-The source organization requested in #185 is implemented in 5.2.5.
+[Evidence](assets/validation_524/RESULTS.md); CA183-01 passed on 2026-10-11.
+PR186 is merged and #183 closed. The source organization requested in #185
+is implemented in 5.2.5.
 
 Earlier release summaries below record their original accepted behavior; the
 5.2.4 onboarding contract in SYSTEMS supersedes conflicting tutorial rules.

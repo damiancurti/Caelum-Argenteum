@@ -1,8 +1,9 @@
 # Issue #183 — 5.2.4 validation
 
 Tested on 2026-10-11 with native Windows GZDoom 4.14.2, against base
-`d313c227`. These are agent checks; author acceptance remains CA183-01 in
-`pending_test.txt`. The author explicitly requested fresh test games and waived
+`d313c227`. These are agent checks. The author confirmed CA183-01 passed on
+2026-10-11 without qualifications and authorized PR186 merge/#183 closure;
+HISTORY records the acceptance and the pending entry is removed. The author explicitly requested fresh test games and waived
 earlier-save migration. New-version partial rewards, hub travel and reloads are
 tested. No engine, IWAD, package or save is distributed here.
 

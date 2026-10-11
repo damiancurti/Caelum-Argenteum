@@ -10,8 +10,9 @@ The main index.json selects sources and preserves all 53 conversations/422
 pages in their prior runtime order. Deterministic assembly avoids shifting
 native saved node offsets. LANGUAGE remains authoritative and unchanged;
 its generated index covers 2,369 keys, including shared UI. Build/validation
-reject stale artifacts. Evidence: assets/validation_525/RESULTS.md. CA183-01
-remains the outstanding gameplay acceptance check; this patch changes no rules.
+reject stale artifacts. Evidence: assets/validation_525/RESULTS.md. The author
+accepted #185 and CA183-01 on 2026-10-11 without qualifications; PR187
+merge/closure authorized, PR186 merged/#183 closed. The author queue is empty.
 
 ## 5.2.4 - Simplified onboarding and MAP02 supplies (#183)
 
@@ -26,8 +27,8 @@ as explicitly corrected by the author. Existing assets and native transactions
 are reused. SYSTEMS is the design contract; assets/validation_524 records evidence.
 
 The author waived pre-release save migration for this test environment; begin a
-new game. Agent/native verification is separate from author acceptance, pending
-as CA183-01. The requested next change is #185: per-NPC sources in a dedicated
+new game. Agent/native verification is separate from author acceptance.
+CA183-01 passed on 2026-10-11 without qualifications; merge/closure authorized. The requested next change is #185: per-NPC sources in a dedicated
 src directory, a main index, and localization indexing. #148 remains separate.
 
 ## 5.2.3 - Allied Mandinga retaliation (#180)
