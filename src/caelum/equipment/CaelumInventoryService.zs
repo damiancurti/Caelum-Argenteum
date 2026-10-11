@@ -1814,25 +1814,6 @@ class CaelumInventoryService : Object play
             }
         }
 
-        Inventory arrowAmmo = user.FindInventory("CaelumArrowAmmo");
-        if (arrowAmmo != null && arrowAmmo.Amount > 0)
-        {
-            user.PersonalInventoryItemCount += arrowAmmo.Amount;
-            double arrowWeight = arrowAmmo.Amount
-                * CaelumConstants.ARROW_AMMO_UNIT_WEIGHT;
-            personalInventoryWeight += arrowWeight;
-            carriedItemWeight += arrowWeight;
-        }
-        Inventory boltAmmo = user.FindInventory("CaelumBoltAmmo");
-        if (boltAmmo != null && boltAmmo.Amount > 0)
-        {
-            user.PersonalInventoryItemCount += boltAmmo.Amount;
-            double boltWeight = boltAmmo.Amount
-                * CaelumConstants.BOLT_AMMO_UNIT_WEIGHT;
-            personalInventoryWeight += boltWeight;
-            carriedItemWeight += boltWeight;
-        }
-
         for (Inventory cursor = user.Inv; cursor != null; cursor = cursor.Inv)
         {
             CaelumConsumableItem consumable = CaelumConsumableItem(cursor);
@@ -3260,7 +3241,8 @@ class CaelumInventoryService : Object play
         if (!CaelumPlayerAuthority.CanMutate(user)) return false;
         if (user.DerivedStats == null) { return false; }
         user.RefreshCarriedInventorySummary();
-        bool personalOutput = CaelumCraftingRules.GetRecipeAmmunitionType(user.CraftingSelectionRecipe) >= 0
+        bool personalOutput = CaelumUtilityCrafting.IsRecipe(user.CraftingSelectionRecipe)
+            || CaelumCraftingRules.GetRecipeAmmunitionType(user.CraftingSelectionRecipe) >= 0
             || CaelumMainM00RonnieTrial.CanUsePersonalCraftingOutput(user);
         double personalDelta = personalOutput ? Max(0.0, outputRawWeight) : 0.0;
         double boxRawDelta = personalOutput ? 0.0 : Max(0.0, outputRawWeight);
@@ -3902,6 +3884,8 @@ class CaelumInventoryService : Object play
             return;
         }
 
+        if (user.CraftingSelectedRecipeKind == CaelumConstants.CRAFTING_RECIPE_KIND_UTILITY)
+        { CaelumUtilityCrafting.Complete(user); return; }
         if (user.CraftingSelectedRecipeKind == CaelumConstants.CRAFTING_RECIPE_KIND_AMMUNITION)
         { user.CraftSelectedAmmunition(); return; }
         if (user.CraftingSelectedRecipeKind
@@ -5183,12 +5167,17 @@ class CaelumInventoryService : Object play
         );
     }
 
-    static bool BuildEquipmentTaskMaterials(CaelumPlayer user, CaelumEquipmentItem item, double durabilityFraction, bool recovery, CaelumCraftingBrowser preview = null)
+    static bool BuildEquipmentTaskMaterials(CaelumPlayer user, CaelumEquipmentItem item, double durabilityFraction, bool recovery, CaelumCraftingBrowser preview = null, bool replacementBudget = false)
     {
         if (!CaelumPlayerAuthority.CanMutate(user)) return false;
         if (preview != null && preview != user.CraftingBrowser) return false;
         if (item == null || item.Owner != user) return false;
-        if (!user.IsDurabilityTaskEquipment(item)) { return false; }
+        // #183: sólo el presupuesto de cinco reemplazos consulta la receta de
+        // boleadoras. No habilita una reparación ni desgaste que no existen.
+        if (!user.IsDurabilityTaskEquipment(item)
+            && !(replacementBudget && preview != null && !recovery && durabilityFraction == 1
+                && item.EquipmentKind == CaelumConstants.EQUIPMENT_KIND_WEAPON
+                && item.ItemType == CaelumConstants.WEAPON_TYPE_BOLAS)) { return false; }
         double finalWeight = user.GetEquipmentTaskWeight(item);
         int basicType;
         int basicTier = 1;

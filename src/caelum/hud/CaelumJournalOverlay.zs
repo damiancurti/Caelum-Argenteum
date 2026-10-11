@@ -440,7 +440,7 @@ class CaelumJournalOverlay : EventHandler
         if (stage >= CaelumConstants.MAIN_M00_STATE_RONNIE_ACTIVE
             && stage < CaelumConstants.MAIN_M00_STATE_RULO_ACTIVE)
             return localPlayer.MainM00RonnieFinishedSnapshot ? "CA_M01_RULO_DETAIL_OFFER"
-                : localPlayer.MainM00StarterWeaponSnapshot > 0 ? "CA_M01_DETAIL_READY" : "CA_M01_DETAIL_GATHER";
+                : localPlayer.MainM00LessonsCompleteSnapshot ? "CA_M01_DETAIL_READY" : "CA_M01_DETAIL_GATHER";
         if (stage >= CaelumConstants.MAIN_M00_STATE_CAELLA_COMPLETE)
             return stage < CaelumConstants.MAIN_M00_STATE_RONNIE_ACTIVE
                 ? "CA_Q_DETAIL_M01_RONNIE" : "CA_Q_DETAIL_GENERIC";
@@ -594,18 +594,10 @@ class CaelumJournalOverlay : EventHandler
         if (questId == CaelumConstants.QUEST_MAIN_M00_THE_FOOL
             && stage >= CaelumConstants.MAIN_M00_STATE_RONNIE_ACTIVE
             && stage < CaelumConstants.MAIN_M00_STATE_RULO_ACTIVE
-            && localPlayer.MainM00StarterWeaponSnapshot == 0)
+            && !localPlayer.MainM00LessonsCompleteSnapshot)
         {
             text = text .. "\n\n" .. StringTable.Localize("CA_M01_RONNIE_LOCATION", false)
                 .. "\n\n" .. StringTable.Localize("CA_M01_DETAIL_MATERIALS", false);
-            for (int i = 0; i < CaelumConstants.MATERIAL_TYPE_COUNT; i++)
-            {
-                if (localPlayer.MainM00StarterRequiredSnapshot[i] <= 0) continue;
-                text = text .. "\n" .. StringTable.Localize(CaelumDisplayNames.GetSpecialItemKey(
-                    CaelumConstants.EQUIPMENT_KIND_MATERIAL, i), false)
-                    .. String.Format(": %d (%s %d)", localPlayer.MainM00StarterRequiredSnapshot[i],
-                        StringTable.Localize("CA_M01_DETAIL_MISSING", false), localPlayer.MainM00StarterMissingSnapshot[i]);
-            }
             text = text .. "\n\n" .. StringTable.Localize("CA_M01_DETAIL_LOAD", false);
         }
         if (questId == CaelumConstants.QUEST_MAIN_M00_THE_FOOL

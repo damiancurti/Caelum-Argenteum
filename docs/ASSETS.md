@@ -1,6 +1,17 @@
 # Caelum Argenteum — Audio and art
 
-Documentation version: **5.2.3** — 2026-10-11.
+Documentation version: **5.2.4** — 2026-10-11.
+
+## 5.2.4 - Reused onboarding assets and MAP02 generation (#183)
+
+The single basement gold node, existing 2 kg sleeping bag, large canteen, Seals,
+profession equipment and resident presentation reuse the current catalogue and
+art. No new asset provenance or redistribution rights are introduced. MAP02
+generation replaces allocated bullets/cartridges one-for-one with arrows/bolts
+and adds an existing armor workshop to each refuge. LAYOUT and the generated
+manifest record the campaign distribution; the historical equipment catalogue
+remains provenance. Native fixtures/captures/logs and ammunition counts live in
+assets/validation_524. Engine, development IWAD, PK3s and saves remain local.
 
 ## 5.2.3 - Mandinga targeting evidence (#180)
 

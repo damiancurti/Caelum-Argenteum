@@ -1,9 +1,9 @@
 {
-  "version": "4.37.7",
+  "version": "5.2.4",
   "layout_revision": 4,
   "catalogue_revision": 1,
   "size_policy": "CHARACTER_DEFAULT",
-  "distribution": "65 original T1 instances converted to basic recipe inputs; index=chest+slot*39. First successful withdrawal fixes shared recipient-size material budget.",
+  "distribution": "Initial owned profession equipment: one armor, three weapon and five Pickaxe/staff full repairs and five manufactured replacement bolas at 100 percent efficiency. Saved per-character component totals divided across 39 finite chests; historical catalogue retained as provenance.",
   "seed": 436009,
   "layout": {
     "revision": 4,
@@ -302,6 +302,37 @@
       1,
       2,
       1
+    ],
+    "ammunition_replacements": {
+      "CaelumCarbineAmmo": "CaelumArrowAmmo",
+      "CaelumShotgunAmmo": "CaelumBoltAmmo"
+    },
+    "refuge_station_offsets": [
+      [
+        18004,
+        -64,
+        -64
+      ],
+      [
+        18000,
+        0,
+        0
+      ],
+      [
+        18001,
+        64,
+        -64
+      ],
+      [
+        18003,
+        0,
+        -128
+      ],
+      [
+        18002,
+        -128,
+        0
+      ]
     ]
   },
   "return_grates": [
@@ -63843,6 +63874,13 @@
             -2560,
             -5408
           ]
+        },
+        {
+          "type": 18002,
+          "position": [
+            -2688,
+            -5280
+          ]
         }
       ],
       "resource_allowance": "none; known recipes and existing finite salvage only"
@@ -63880,6 +63918,13 @@
           "position": [
             -6304,
             -1664
+          ]
+        },
+        {
+          "type": 18002,
+          "position": [
+            -6432,
+            -1536
           ]
         }
       ],
@@ -63919,6 +63964,13 @@
             1184,
             -1664
           ]
+        },
+        {
+          "type": 18002,
+          "position": [
+            1056,
+            -1536
+          ]
         }
       ],
       "resource_allowance": "none; known recipes and existing finite salvage only"
@@ -63956,6 +64008,13 @@
           "position": [
             -2560,
             2080
+          ]
+        },
+        {
+          "type": 18002,
+          "position": [
+            -2688,
+            2208
           ]
         }
       ],
@@ -66335,7 +66394,7 @@
       "tid": 47005,
       "zone": 0,
       "actor": "CaelumMandinga",
-      "cls": "CaelumCarbineAmmo",
+      "cls": "CaelumArrowAmmo",
       "amount": 20,
       "position": [
         -1344,
@@ -66371,7 +66430,7 @@
       "tid": 47006,
       "zone": 0,
       "actor": "CaelumMandinga",
-      "cls": "CaelumCarbineAmmo",
+      "cls": "CaelumArrowAmmo",
       "amount": 20,
       "position": [
         -576,
@@ -66407,7 +66466,7 @@
       "tid": 47007,
       "zone": 0,
       "actor": "CaelumMandinga",
-      "cls": "CaelumShotgunAmmo",
+      "cls": "CaelumBoltAmmo",
       "amount": 20,
       "position": [
         192,
@@ -66443,7 +66502,7 @@
       "tid": 47008,
       "zone": 0,
       "actor": "CaelumMandinga",
-      "cls": "CaelumShotgunAmmo",
+      "cls": "CaelumBoltAmmo",
       "amount": 20,
       "position": [
         960,
@@ -67031,7 +67090,7 @@
       "tid": 47029,
       "zone": 1,
       "actor": "CaelumMandinga",
-      "cls": "CaelumCarbineAmmo",
+      "cls": "CaelumArrowAmmo",
       "amount": 20,
       "position": [
         -5088,
@@ -67067,7 +67126,7 @@
       "tid": 47030,
       "zone": 1,
       "actor": "CaelumMandinga",
-      "cls": "CaelumShotgunAmmo",
+      "cls": "CaelumBoltAmmo",
       "amount": 20,
       "position": [
         -4320,
@@ -67679,7 +67738,7 @@
       "tid": 47052,
       "zone": 2,
       "actor": "CaelumMandinga",
-      "cls": "CaelumCarbineAmmo",
+      "cls": "CaelumArrowAmmo",
       "amount": 20,
       "position": [
         5472,
@@ -67715,7 +67774,7 @@
       "tid": 47053,
       "zone": 2,
       "actor": "CaelumMandinga",
-      "cls": "CaelumCarbineAmmo",
+      "cls": "CaelumArrowAmmo",
       "amount": 20,
       "position": [
         2400,
@@ -67751,7 +67810,7 @@
       "tid": 47054,
       "zone": 2,
       "actor": "CaelumMandinga",
-      "cls": "CaelumShotgunAmmo",
+      "cls": "CaelumBoltAmmo",
       "amount": 20,
       "position": [
         3168,
@@ -67787,7 +67846,7 @@
       "tid": 47055,
       "zone": 2,
       "actor": "CaelumMandinga",
-      "cls": "CaelumShotgunAmmo",
+      "cls": "CaelumBoltAmmo",
       "amount": 20,
       "position": [
         3936,
@@ -68411,7 +68470,7 @@
       "tid": 47077,
       "zone": 3,
       "actor": "CaelumMandinga",
-      "cls": "CaelumCarbineAmmo",
+      "cls": "CaelumArrowAmmo",
       "amount": 20,
       "position": [
         -576,
@@ -68447,7 +68506,7 @@
       "tid": 47078,
       "zone": 3,
       "actor": "CaelumMandinga",
-      "cls": "CaelumShotgunAmmo",
+      "cls": "CaelumBoltAmmo",
       "amount": 20,
       "position": [
         192,
@@ -72533,6 +72592,20 @@
       "coop": true
     },
     {
+      "x": -2688,
+      "y": -5280,
+      "height": 0,
+      "angle": 90,
+      "type": 18002,
+      "skill1": true,
+      "skill2": true,
+      "skill3": true,
+      "skill4": true,
+      "skill5": true,
+      "single": true,
+      "coop": true
+    },
+    {
       "x": 2112,
       "y": -2208,
       "height": 0,
@@ -74139,6 +74212,20 @@
       "coop": true
     },
     {
+      "x": -6432,
+      "y": -1536,
+      "height": 0,
+      "angle": 90,
+      "type": 18002,
+      "skill1": true,
+      "skill2": true,
+      "skill3": true,
+      "skill4": true,
+      "skill5": true,
+      "single": true,
+      "coop": true
+    },
+    {
       "x": -1632,
       "y": 1536,
       "height": 0,
@@ -75715,6 +75802,20 @@
       "height": 0,
       "angle": 90,
       "type": 18003,
+      "skill1": true,
+      "skill2": true,
+      "skill3": true,
+      "skill4": true,
+      "skill5": true,
+      "single": true,
+      "coop": true
+    },
+    {
+      "x": 1056,
+      "y": -1536,
+      "height": 0,
+      "angle": 90,
+      "type": 18002,
       "skill1": true,
       "skill2": true,
       "skill3": true,
@@ -77345,6 +77446,20 @@
       "coop": true
     },
     {
+      "x": -2688,
+      "y": 2208,
+      "height": 0,
+      "angle": 90,
+      "type": 18002,
+      "skill1": true,
+      "skill2": true,
+      "skill3": true,
+      "skill4": true,
+      "skill5": true,
+      "single": true,
+      "coop": true
+    },
+    {
       "x": 2112,
       "y": 5280,
       "height": 0,
@@ -77564,10 +77679,10 @@
     "converted_equipment": 65,
     "food_rations": 96,
     "water_rations": 96,
-    "arrows": 240,
-    "bolts": 120,
-    "bullets": 120,
-    "shotgun_cartridges": 120,
+    "arrows": 360,
+    "bolts": 240,
+    "bullets": 0,
+    "shotgun_cartridges": 0,
     "traps": 45
   },
   "geometry": {

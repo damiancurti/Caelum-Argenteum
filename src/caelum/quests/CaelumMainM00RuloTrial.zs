@@ -123,18 +123,9 @@ class CaelumMainM00RuloTrial : Object play
 
     static void ReturnAmmo(CaelumPlayer user)
     {
+        // #183: la munición realmente conservada forma parte del equipo de salida.
         let r = user.GetPersistentCharacterState(false);
-        if (r == null || r.MainM00AmmoLoanRemaining <= 0) return;
-        let ammo = user.FindNativeAmmunition(r.MainM00AmmoLoanType);
-        if (ammo != null) ammo.Amount = Max(0, ammo.Amount - r.MainM00AmmoLoanRemaining);
-        r.MainM00AmmoLoanRemaining = 0;
-        for (int kind = 0; kind < CaelumConstants.WEAPON_TYPE_COUNT; kind++)
-            if (user.IsRangedWeaponType(kind))
-            {
-                let stack = user.FindNativeAmmunition(user.GetRangedAmmoType(kind));
-                user.SetRangedMagazineCount(kind, Min(user.GetRangedMagazineCount(kind), stack != null ? stack.Amount : 0));
-            }
-        user.OnNativeInventoryChanged();
+        if (r != null) r.MainM00AmmoLoanRemaining = 0;
     }
 
     static void Prepare(CaelumPlayer user)
@@ -171,7 +162,7 @@ class CaelumMainM00RuloTrial : Object play
         {
             int kind = user.GetRangedAmmoType(user.WeaponModel.WeaponType);
             if (r.MainM00AmmoLoanRemaining > 0 && r.MainM00AmmoLoanType != kind) ReturnAmmo(user);
-            int needed = Max(0, 24 - r.MainM00AmmoLoanRemaining);
+            int needed = Max(0, CaelumOnboardingCatalogue.STARTER_ROUNDS - user.CountInv(user.GetAmmunitionClassName(kind)));
             user.RefreshCarriedInventorySummary();
             if (needed > 0 && user.CanAddWeightToPersonalInventory(needed * user.GetAmmunitionUnitWeight(kind)))
             {
@@ -215,7 +206,8 @@ class CaelumMainM00RuloTrial : Object play
         bool receivedBolas = r.MainM00BolasId <= 0;
         if (!CaelumMainM00Gifts.EnsureTool(user, true, false))
         { CaelumMainM00MagicTrial.Feedback(user, "CA_M01_GIFT_NO_ROOM", true); return false; }
-        Prepare(user);
+        CaelumOnboarding.Update(user);
+        if (!r.MainM00RuloPrepared) { Prepare(user); r.MainM00RuloPrepared = true; }
         // Preparar el arma inicial y su munición no debe tapar el regalo nuevo.
         if (receivedBolas)
             CaelumMainM00Gifts.EquipReceivedWeapon(user, user.FindNativeEquipmentItemById(r.MainM00BolasId));

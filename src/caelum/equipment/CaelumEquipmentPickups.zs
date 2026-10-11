@@ -903,24 +903,18 @@ class CaelumCarbineAmmo : Ammo
     }
 }
 
-class CaelumArrowAmmo : Ammo
+class CaelumArrowAmmo : CaelumCarbineAmmo
 {
-    override String PickupMessage() { return ""; }
-
+    override int GetAmmoType() { return CaelumConstants.AMMUNITION_ARROW; }
+    override double GetUnitWeight() { return CaelumConstants.ARROW_AMMO_UNIT_WEIGHT; }
+    override bool HandlePickup(Inventory item)
+    { if (item.GetClass() != GetClass()) return false; return Super.HandlePickup(item); }
     override bool TryPickup(in out Actor toucher)
     {
-        let user=CaelumPlayer(toucher);
-        if (user==null) return false;
-        Name itemClass=GetClassName();
-        let previousStack=user.FindInventory(itemClass);
-        int previous=previousStack==null ? 0 : previousStack.Amount;
-        bool received=Super.TryPickup(toucher);
-        if (received)
-        {
-            let acquired=user.FindInventory(itemClass);
-            CaelumNotifications.Acquired(user,acquired,acquired==null ? 0 : acquired.Amount-previous);
-        }
-        return received;
+        let user = CaelumPlayer(toucher);
+        if (user == null || Owner != null) return false;
+        if (!CaelumInventoryService.AcquireDistinctAmmunition(user, GetAmmoType(), Amount)) return false;
+        A_StartSound("caelum/items/pickup", CHAN_ITEM); Destroy(); return true;
     }
 
     Default
@@ -938,24 +932,18 @@ class CaelumArrowAmmo : Ammo
     States { Spawn: CARR A -1; Stop; }
 }
 
-class CaelumBoltAmmo : Ammo
+class CaelumBoltAmmo : CaelumCarbineAmmo
 {
-    override String PickupMessage() { return ""; }
-
+    override int GetAmmoType() { return CaelumConstants.AMMUNITION_BOLT; }
+    override double GetUnitWeight() { return CaelumConstants.BOLT_AMMO_UNIT_WEIGHT; }
+    override bool HandlePickup(Inventory item)
+    { if (item.GetClass() != GetClass()) return false; return Super.HandlePickup(item); }
     override bool TryPickup(in out Actor toucher)
     {
-        let user=CaelumPlayer(toucher);
-        if (user==null) return false;
-        Name itemClass=GetClassName();
-        let previousStack=user.FindInventory(itemClass);
-        int previous=previousStack==null ? 0 : previousStack.Amount;
-        bool received=Super.TryPickup(toucher);
-        if (received)
-        {
-            let acquired=user.FindInventory(itemClass);
-            CaelumNotifications.Acquired(user,acquired,acquired==null ? 0 : acquired.Amount-previous);
-        }
-        return received;
+        let user = CaelumPlayer(toucher);
+        if (user == null || Owner != null) return false;
+        if (!CaelumInventoryService.AcquireDistinctAmmunition(user, GetAmmoType(), Amount)) return false;
+        A_StartSound("caelum/items/pickup", CHAN_ITEM); Destroy(); return true;
     }
 
     Default

@@ -356,7 +356,13 @@ class CaelumMainM00SealCrafting : Object play
             || item.ItemType < 0 || item.ItemType >= CaelumConstants.SEAL_TYPE_COUNT) return;
         let r = user.GetPersistentCharacterState(false);
         if (item.EquipmentKind == CaelumConstants.EQUIPMENT_KIND_AMULET) r.MainM00AmuletPrepared = true;
-        else r.MainM00SealsPrepared[item.ItemType] = true;
+        else
+        {
+            r.MainM00SealsPrepared[item.ItemType] = true;
+            if (r.MainM00CraftedSealId == 0 && r.MainM00SealChoice == item.ItemType + 1)
+                r.MainM00CraftedSealId = item.ItemId;
+            CaelumOnboarding.UpdateLessons(user);
+        }
         item.ItemFlags &= ~CaelumConstants.CA_ITEMFLAG_LIMBO_TEMP;
         user.RefreshSocialJournalSnapshot();
     }

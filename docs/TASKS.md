@@ -1,6 +1,24 @@
 # TASKS.md — Active tasks
 
-Documentation version: **5.2.3** — 2026-10-11.
+Documentation version: **5.2.4** — 2026-10-11.
+
+## Issue #183 - Profession onboarding and MAP02 supplies (5.2.4)
+
+Implemented the fixed kits, editable +4/+30 recommendations, resident grants,
+finite gold exchange, mandatory bag/Seal/5 L canteen crafts, boxed departure,
+one-for-one ammunition replacements and aggregate repair budget. The author
+confirmed five manufactured replacement bolas (no reparable wear exists), a
+30-to-100-slot Type3 Box formula, leather/rope recipes and fresh saves without
+old-save migration. Evidence: assets/validation_524/RESULTS.md. CA183-01 remains
+pending author acceptance; commit/push and linked PR are the delivery boundary.
+
+## Issue #185 - Indexed NPC dialogue and localization sources
+
+Explicit author follow-up after #183: one authoritative file per NPC under a
+dedicated src directory, a main indexed entry point, and localization indexing
+for the large LANGUAGE catalogue. Preserve post-#183 gameplay/IDs/keys, use
+native includes if supported or deterministic validated assembly, and adapt
+history generation/build/validators. Separate branch, version and linked PR.
 
 ## Issue #180 - Allied Mandinga retaliation (5.2.3)
 

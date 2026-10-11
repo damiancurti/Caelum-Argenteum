@@ -35,7 +35,7 @@ def audit(manifest, map_data, ledger, constants, recipe_log=None, route_log=None
     check("WAD map things match the generated manifest", things == manifest["things"])
     check("96 Mandingas, 192 rats and 39 chests", all(
         counts[kind] == number for kind, number in ((18037, 96), (18029, 192), (30973, 39))))
-    check("65 actual equipment instances retain identities and chest allocation",
+    check("65 historical reference instances retain provenance and chest allocation",
           len(manifest["loot"]) == 65 and len(ledger["instances"]) == 65
           and Counter(map(identity, manifest["loot"])) == Counter(map(identity, ledger["instances"]))
           and all(item["quantity"] == item["before_quantity"] == 1 for item in ledger["instances"]))
@@ -58,14 +58,14 @@ def audit(manifest, map_data, ledger, constants, recipe_log=None, route_log=None
         check(f"Carrier {drop['tid']} has a dry original upper recovery anchor",
               drop["position"][2] == 0 and drop["position"][:2] ==
               [by_tid.get(drop["tid"], {}).get("x"), by_tid.get(drop["tid"], {}).get("y")])
-    expected = {"CaelumArrowAmmo": 240, "CaelumBoltAmmo": 120, "CaelumCarbineAmmo": 120,
+    expected = {"CaelumArrowAmmo": 360, "CaelumBoltAmmo": 240,
                 "CaelumFoodRation": 96, "CaelumWaterRation": 96}
     for cls, amount in expected.items():
         check(f"Exact finite supply: {cls} = {amount}", totals[cls] == amount)
     keys = ("CaelumMazeSluiceKey", "CaelumMazeCryptKey", "CaelumMazeSanctumKey", "CaelumMazeNorthKey",
             "CaelumMazeSouthCellKey", "CaelumMazeWestCellKey", "CaelumMazeEastCellKey", "CaelumMazeNorthCellKey")
-    check("Only the 224 authorized death objects, all with positive quantities",
-          len(drops) == 224 and set(totals) == set(expected) | set(keys)
+    check("Only the 230 authorized death objects, all with positive quantities",
+          len(drops) == 230 and set(totals) == set(expected) | set(keys)
           and all(drop["amount"] > 0 for drop in drops))
     check("Exactly the eight established keys, once each",
           {name: amount for name, amount in totals.items() if name.endswith("Key")} == dict.fromkeys(keys, 1))
@@ -82,8 +82,8 @@ def audit(manifest, map_data, ledger, constants, recipe_log=None, route_log=None
               and {tuple(d["position"][:2]) for d in key_carriers} ==
               {tuple(manifest["zones"][zone]["position"]), tuple(manifest["zones"][zone]["cell_key_position"])})
     ammunition = [drop for drop in drops if drop["cls"] in expected and drop["actor"] == "CaelumMandinga"]
-    check("24 single-type ammunition stacks, each of the authorized 20 units",
-          len(ammunition) == 24 and all(drop["amount"] == 20 for drop in ammunition))
+    check("30 single-type ammunition stacks, each of the authorized 20 units",
+          len(ammunition) == 30 and all(drop["amount"] == 20 for drop in ammunition))
     material_names = {int(value): name for name, value in re.findall(
         r"const\s+(MATERIAL_[A-Z0-9_]+)\s*=\s*(\d+)\s*;", constants)
         if name not in ("MATERIAL_TYPE_COUNT", "MATERIAL_FIRST_ACTIVE") and not name.startswith("MATERIAL_FAMILY_")}
@@ -133,9 +133,9 @@ def main():
                    json.loads(LEDGER.read_text(encoding="utf-8")), constants_path.read_text(encoding="utf-8"),
                    args.recipe_log.read_text(encoding="utf-8") if args.recipe_log else None,
                    args.route_log.read_text(encoding="utf-8") if args.route_log else None)
-    report = {"issue": 75, "checks": len(checks), "failures": sum(not c["passed"] for c in checks),
+    report = {"issue": 183, "checks": len(checks), "failures": sum(not c["passed"] for c in checks),
               "native_evidence_supplied": bool(args.recipe_log and args.route_log),
-              "author_acceptance": "Recorded separately in HISTORY, originating release 4.37.6.",
+              "author_acceptance": "Current #183 acceptance pending; historical #75 ledger retained as provenance.",
               "sha256": {str(path.relative_to(ROOT)).replace("\\", "/"): hashlib.sha256(path.read_bytes()).hexdigest()
                          for path in (manifest_path, map_path, LEDGER, constants_path)}, "results": checks}
     if args.output:

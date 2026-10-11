@@ -1,0 +1,227 @@
+{
+  "before": {
+    "CaelumArrowAmmo": 240,
+    "CaelumBoltAmmo": 120,
+    "CaelumCarbineAmmo": 120,
+    "CaelumShotgunAmmo": 120
+  },
+  "after": {
+    "CaelumArrowAmmo": 360,
+    "CaelumBoltAmmo": 240,
+    "CaelumCarbineAmmo": 0,
+    "CaelumShotgunAmmo": 0
+  },
+  "total": 600,
+  "allocations": [
+    {
+      "carrier": 47000,
+      "zone": 0,
+      "before": "CaelumArrowAmmo",
+      "after": "CaelumArrowAmmo",
+      "quantity": 20
+    },
+    {
+      "carrier": 47002,
+      "zone": 0,
+      "before": "CaelumArrowAmmo",
+      "after": "CaelumArrowAmmo",
+      "quantity": 20
+    },
+    {
+      "carrier": 47003,
+      "zone": 0,
+      "before": "CaelumArrowAmmo",
+      "after": "CaelumArrowAmmo",
+      "quantity": 20
+    },
+    {
+      "carrier": 47004,
+      "zone": 0,
+      "before": "CaelumBoltAmmo",
+      "after": "CaelumBoltAmmo",
+      "quantity": 20
+    },
+    {
+      "carrier": 47005,
+      "zone": 0,
+      "before": "CaelumCarbineAmmo",
+      "after": "CaelumArrowAmmo",
+      "quantity": 20
+    },
+    {
+      "carrier": 47006,
+      "zone": 0,
+      "before": "CaelumCarbineAmmo",
+      "after": "CaelumArrowAmmo",
+      "quantity": 20
+    },
+    {
+      "carrier": 47007,
+      "zone": 0,
+      "before": "CaelumShotgunAmmo",
+      "after": "CaelumBoltAmmo",
+      "quantity": 20
+    },
+    {
+      "carrier": 47008,
+      "zone": 0,
+      "before": "CaelumShotgunAmmo",
+      "after": "CaelumBoltAmmo",
+      "quantity": 20
+    },
+    {
+      "carrier": 47024,
+      "zone": 1,
+      "before": "CaelumArrowAmmo",
+      "after": "CaelumArrowAmmo",
+      "quantity": 20
+    },
+    {
+      "carrier": 47025,
+      "zone": 1,
+      "before": "CaelumArrowAmmo",
+      "after": "CaelumArrowAmmo",
+      "quantity": 20
+    },
+    {
+      "carrier": 47026,
+      "zone": 1,
+      "before": "CaelumArrowAmmo",
+      "after": "CaelumArrowAmmo",
+      "quantity": 20
+    },
+    {
+      "carrier": 47027,
+      "zone": 1,
+      "before": "CaelumBoltAmmo",
+      "after": "CaelumBoltAmmo",
+      "quantity": 20
+    },
+    {
+      "carrier": 47028,
+      "zone": 1,
+      "before": "CaelumBoltAmmo",
+      "after": "CaelumBoltAmmo",
+      "quantity": 20
+    },
+    {
+      "carrier": 47029,
+      "zone": 1,
+      "before": "CaelumCarbineAmmo",
+      "after": "CaelumArrowAmmo",
+      "quantity": 20
+    },
+    {
+      "carrier": 47030,
+      "zone": 1,
+      "before": "CaelumShotgunAmmo",
+      "after": "CaelumBoltAmmo",
+      "quantity": 20
+    },
+    {
+      "carrier": 47048,
+      "zone": 2,
+      "before": "CaelumArrowAmmo",
+      "after": "CaelumArrowAmmo",
+      "quantity": 20
+    },
+    {
+      "carrier": 47049,
+      "zone": 2,
+      "before": "CaelumArrowAmmo",
+      "after": "CaelumArrowAmmo",
+      "quantity": 20
+    },
+    {
+      "carrier": 47050,
+      "zone": 2,
+      "before": "CaelumArrowAmmo",
+      "after": "CaelumArrowAmmo",
+      "quantity": 20
+    },
+    {
+      "carrier": 47051,
+      "zone": 2,
+      "before": "CaelumBoltAmmo",
+      "after": "CaelumBoltAmmo",
+      "quantity": 20
+    },
+    {
+      "carrier": 47052,
+      "zone": 2,
+      "before": "CaelumCarbineAmmo",
+      "after": "CaelumArrowAmmo",
+      "quantity": 20
+    },
+    {
+      "carrier": 47053,
+      "zone": 2,
+      "before": "CaelumCarbineAmmo",
+      "after": "CaelumArrowAmmo",
+      "quantity": 20
+    },
+    {
+      "carrier": 47054,
+      "zone": 2,
+      "before": "CaelumShotgunAmmo",
+      "after": "CaelumBoltAmmo",
+      "quantity": 20
+    },
+    {
+      "carrier": 47055,
+      "zone": 2,
+      "before": "CaelumShotgunAmmo",
+      "after": "CaelumBoltAmmo",
+      "quantity": 20
+    },
+    {
+      "carrier": 47072,
+      "zone": 3,
+      "before": "CaelumArrowAmmo",
+      "after": "CaelumArrowAmmo",
+      "quantity": 20
+    },
+    {
+      "carrier": 47073,
+      "zone": 3,
+      "before": "CaelumArrowAmmo",
+      "after": "CaelumArrowAmmo",
+      "quantity": 20
+    },
+    {
+      "carrier": 47074,
+      "zone": 3,
+      "before": "CaelumArrowAmmo",
+      "after": "CaelumArrowAmmo",
+      "quantity": 20
+    },
+    {
+      "carrier": 47075,
+      "zone": 3,
+      "before": "CaelumBoltAmmo",
+      "after": "CaelumBoltAmmo",
+      "quantity": 20
+    },
+    {
+      "carrier": 47076,
+      "zone": 3,
+      "before": "CaelumBoltAmmo",
+      "after": "CaelumBoltAmmo",
+      "quantity": 20
+    },
+    {
+      "carrier": 47077,
+      "zone": 3,
+      "before": "CaelumCarbineAmmo",
+      "after": "CaelumArrowAmmo",
+      "quantity": 20
+    },
+    {
+      "carrier": 47078,
+      "zone": 3,
+      "before": "CaelumShotgunAmmo",
+      "after": "CaelumBoltAmmo",
+      "quantity": 20
+    }
+  ]
+}

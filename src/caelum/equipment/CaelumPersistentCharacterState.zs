@@ -136,6 +136,11 @@ class CaelumPersistentCharacterState : Inventory
     int MainM00StarterSize;
     int MainM00RonnieSwordId;
     int MainM00StarterWeaponId;
+    int MainM00ShieldId, MainM00ArmorIds[4], MainM00CraftedSealId;
+    Inventory MainM00CraftedBag, MainM00CraftedCanteen;
+    bool MainM00GoldRewardStarted, MainM00RuloPrepared;
+    int MainM00MazeRepairUnits[CaelumConstants.MATERIAL_TYPE_COUNT];
+    int MainM00StarterAmmoIssued, MainM00GoldMinedUnits;
     // 0ab: práctica opcional de respiración; falso en guardados anteriores.
     bool MainM00SwimLessonStarted;
     bool MainM00SwimLessonSubmerged;
@@ -487,6 +492,11 @@ class CaelumPersistentCharacterState : Inventory
         MainM00StarterSize = 0;
         MainM00RonnieSwordId = 0;
         MainM00StarterWeaponId = 0;
+        MainM00ShieldId = 0; MainM00CraftedSealId = 0;
+        MainM00CraftedBag = null; MainM00CraftedCanteen = null;
+        MainM00GoldRewardStarted = false; MainM00RuloPrepared = false; MainM00StarterAmmoIssued = 0; MainM00GoldMinedUnits = 0;
+        for (int i = 0; i < 4; i++) MainM00ArmorIds[i] = 0;
+        for (int i = 0; i < CaelumConstants.MATERIAL_TYPE_COUNT; i++) MainM00MazeRepairUnits[i] = 0;
         MainM00SuppliesInitialized = false;
         for (int i = 0; i < CaelumConstants.MATERIAL_TYPE_COUNT; i++) MainM00StarterRequired[i] = 0;
         for (int i = 0; i < 6; i++) { MainM00SupplyInitial[i] = 0; MainM00SupplyRemaining[i] = 0; }

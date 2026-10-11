@@ -4,6 +4,23 @@ Status: integrated engineering register (issue #22, patch 4.36.1b).
 Prepared: 2026-09-23. Inherits the project's release after integration.
 Inspected baseline: `1dc390576fa330d37ff543526fc7e69a397fc28f` (PR #7).
 
+## CA-KP-078 - Crafted utility identity must survive native inventory copies
+
+Status/evidence: ENGINE-VERIFIED, #183 / 5.2.4, 2026-10-11.
+Baseline: d313c227; GZDoom 4.14.2 / Windows 11.
+
+An Inventory pointer identifies the current actor, but CreateTossable/CreateCopy
+can create another actor during ordinary drop/pickup. A quest that tracks a
+crafted bag or water container must transfer that reference in both native hooks,
+while retaining water/Box fields. Do not accept any same-class replacement as
+the crafted object. Reject duplicate singleton crafting before consuming inputs.
+Equipment's existing copied ItemId solves a different path; it does not protect
+raw references to special inventory or consumables automatically.
+
+Evidence: assets/validation_524/journey.zs and its final/reload logs exercise
+native toss/pickup, actual hub travel and save/load with the crafted references
+and 1.25 L water retained. Agent verification does not imply author acceptance.
+
 ## CA-KP-077 - Removing a KEYCONF section can orphan saved key bindings
 
 Status/evidence: ENGINE-VERIFIED, #147 / 5.2.0, 2026-10-11.

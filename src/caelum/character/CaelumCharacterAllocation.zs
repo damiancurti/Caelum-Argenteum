@@ -10,6 +10,55 @@ class CaelumCharacterAllocation : Object
     int SelectedLayer;
     int SelectedAttribute;
 
+    // Alterna las fortalezas de las dos clases; al saturarlas pasa a su
+    // familia asociada. Los empates internos reparten puntos uniformemente.
+    static int PreferredFamily(int component)
+    {
+        int best = 0;
+        for (int f = 1; f < 4; f++)
+            if (CaelumCharacterProfile.DistributionFor(component, f)
+                > CaelumCharacterProfile.DistributionFor(component, best)) best = f;
+        return best;
+    }
+
+    static int PairedFamily(int family) { return family ^ 1; }
+
+    void Recommend(CaelumCharacterProfile profile)
+    {
+        ResetAllocations();
+        for (int phase = 0; phase < 2; phase++)
+        {
+            int count = phase == 0 ? CaelumConstants.FREE_LAYER_POINTS
+                : CaelumConstants.INDIVIDUAL_ATTRIBUTE_POINTS;
+            for (int point = 0; point < count; point++)
+            {
+                int component = point % 2 == 0 ? profile.FirstClass : profile.SecondClass;
+                int first = PreferredFamily(component);
+                bool added = false;
+                for (int pass = 0; pass < 4 && !added; pass++)
+                {
+                    int family = pass == 0 ? first : pass == 1 ? PairedFamily(first)
+                        : pass == 2 ? (first ^ 2) : (first ^ 3);
+                    if (phase == 0)
+                    {
+                        SelectedLayer = family;
+                        added = TryAddSelectedLayerPoint(profile);
+                    }
+                    else
+                    {
+                        int best = -1;
+                        for (int a = family * 3; a < family * 3 + 3; a++)
+                            if (AttributeBonus[a] < GetMaximumIndividualBonus(profile, a)
+                                && (best < 0 || AttributeBonus[a] < AttributeBonus[best])) best = a;
+                        if (best >= 0)
+                        { SelectedAttribute = best; added = TryAddSelectedAttributePoint(profile); }
+                    }
+                }
+            }
+        }
+        SelectedLayer = 0; SelectedAttribute = 0;
+    }
+
     void CopyFrom(CaelumCharacterAllocation source)
     {
         for (int i = 0; i < CaelumConstants.ATTRIBUTE_LAYER_COUNT; i++)

@@ -137,6 +137,7 @@ class CaelumMainM00Return : Object play
             first.AttachToOwner(user);
             CaelumNotifications.Acquired(user, first, 1);
         }
+        if (!CaelumOnboarding.PackDeparture(user)) return false;
         for (Inventory cursor = user.Inv; cursor != null;)
         {
             Inventory next = cursor.Inv;
@@ -146,13 +147,14 @@ class CaelumMainM00Return : Object play
                 // También conserva las instancias de los antiguos préstamos.
                 equipment.ItemFlags &= ~CaelumConstants.CA_ITEMFLAG_LIMBO_TEMP;
             }
-            else if (cursor is "CaelumTarotDeck" || cursor is "CaelumSleepingBag") { } // Los regalos permanentes también cruzan.
+            else if (cursor is "CaelumTarotDeck" || cursor is "CaelumSleepingBag"
+                || cursor == r.MainM00CraftedCanteen
+                || CaelumOnboarding.IsStarterAmmo(user, cursor)) { }
             else if (cursor is "CaelumSpecialInventoryItem" || cursor is "CaelumConsumableItem"
                 || cursor is "Ammo" || cursor is "Key") cursor.Destroy();
             cursor = next;
         }
-        // Los cargadores también son munición: vaciarlos sin sustituir armas.
-        for (int kind = 0; kind < CaelumConstants.WEAPON_TYPE_COUNT; kind++) user.SetRangedMagazineCount(kind, 0);
+        // Los proyectiles y cargadores conservados no se rellenan ni se vacían.
         r.MainM00AmmoLoanRemaining = 0;
         r.NativeEquipmentMigrationComplete = true;
         r.SetMainM00Flag(CaelumConstants.MAIN_M00_FLAG_STARTER_WEAPON_PRESERVED);

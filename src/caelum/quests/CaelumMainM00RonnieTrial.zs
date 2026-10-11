@@ -263,6 +263,7 @@ class CaelumMainM00RonnieTrial : Object play
         item.InMagicBox = box;
         item.AttachToOwner(user);
         user.EnsureEquipmentItemId(item);
+        CaelumOnboarding.RecordRepairBudget(user, item, CaelumOnboardingCatalogue.TOOL_REPAIRS);
         record.MainM00PickaxeId = item.ItemId;
         record.MainM00PickaxeRevision = CaelumConstants.PICKAXE_TUTORIAL_REVISION;
         CaelumNotifications.Acquired(user, item, 1);
@@ -315,9 +316,10 @@ class CaelumMainM00RonnieTrial : Object play
         CaelumMainM00Loadout.TeachPlan(user);
         EnsureSupplies(user);
         PrepareLoan(user);
+        CaelumOnboarding.Update(user);
         if (!user.CraftingTaskActive)
         {
-            user.CraftingSelectionRecipe = CaelumMainM00StarterRules.GetRecipe(record.MainM00StarterOption);
+            user.CraftingSelectionRecipe = CaelumConstants.CRAFTING_SLEEPING_BAG_RECIPE;
             user.CraftingSelectionTier = 1;
             user.CraftingSelectionSize = record.MainM00StarterSize;
             user.CraftingEfficiencyIndex = 2;
@@ -435,7 +437,8 @@ class CaelumMainM00RonnieTrial : Object play
     static bool CanUsePersonalCraftingOutput(CaelumPlayer user)
     {
         return CanInteract(user) && IsStarted(user) && user.CraftingSelectionTier == 1
-            && (CaelumMainM00StarterRules.IsWeaponRecipe(user.CraftingSelectionRecipe)
+            && (CaelumUtilityCrafting.IsRecipe(user.CraftingSelectionRecipe)
+                || CaelumMainM00StarterRules.IsWeaponRecipe(user.CraftingSelectionRecipe)
                 || CaelumMainM00SupplyRules.IsChosenArmorRecipe(user)
                 || CaelumMainM00Loadout.IsChosenShieldRecipe(user)
                 || CaelumMainM00SealCrafting.IsLearnedRecipe(user));
@@ -445,30 +448,8 @@ class CaelumMainM00RonnieTrial : Object play
     {
         if (!CanUsePersonalCraftingOutput(user) || result == null
             || result.EquipmentKind != CaelumConstants.EQUIPMENT_KIND_WEAPON) return;
+        result.ItemFlags &= ~CaelumConstants.CA_ITEMFLAG_LIMBO_TEMP;
         CaelumMainM00Gifts.EquipReceivedWeapon(user, result);
-        let record = user.GetPersistentCharacterState(true);
-        if (record.MainM00StarterWeaponId > 0)
-        {
-            result.ItemFlags &= ~CaelumConstants.CA_ITEMFLAG_LIMBO_TEMP;
-            Feedback(user, "CA_M01_STARTER_EXTRA");
-            return;
-        }
-        // Sólo fabricar el arma elegida satisface el aprendizaje obligatorio.
-        if (user.CraftingSelectionRecipe != CaelumMainM00StarterRules.GetRecipe(record.MainM00StarterOption)) return;
-        result.ItemFlags |= CaelumConstants.CA_ITEMFLAG_LIMBO_PRESERVABLE;
-        record.MainM00StarterWeaponId = result.ItemId;
-        record.SetMainM00Flag(CaelumConstants.MAIN_M00_FLAG_MATERIALS_COMPLETE);
-        record.SetMainM00Flag(CaelumConstants.MAIN_M00_FLAG_STARTER_WEAPON_CRAFTED);
-        record.TryAdvanceMainM00State(CaelumConstants.MAIN_M00_STATE_RONNIE_ACTIVE,
-            CaelumConstants.MAIN_M00_STATE_RONNIE_COMPLETE);
-        record.TryAdvanceMainM00State(CaelumConstants.MAIN_M00_STATE_RONNIE_COMPLETE,
-            CaelumConstants.MAIN_M00_STATE_WEAPON_READY);
-        record.SetQuestObjectiveProgress(CaelumConstants.QUEST_MAIN_M00_THE_FOOL,
-            CaelumConstants.MAIN_M00_OBJECTIVE_GATHER_MATERIALS, 1, 1);
-        record.SetQuestObjectiveProgress(CaelumConstants.QUEST_MAIN_M00_THE_FOOL,
-            CaelumConstants.MAIN_M00_OBJECTIVE_PREPARE_WEAPON, 1, 1);
-        Sync(user);
-        Feedback(user, "CA_M01_STARTER_CREATED");
     }
 
     static bool Finish(CaelumPlayer user)
@@ -476,7 +457,7 @@ class CaelumMainM00RonnieTrial : Object play
         if (!IsRonnie(user)) return false;
         let record = user.GetPersistentCharacterState(true);
         let first = user.FindNativeEquipmentItemById(record.MainM00StarterWeaponId);
-        if (first == null || !record.HasMainM00Flag(CaelumConstants.MAIN_M00_FLAG_STARTER_WEAPON_CRAFTED)) return false;
+        if (first == null || !CaelumOnboarding.LessonsComplete(record)) return false;
         if (!record.SetMainM00Flag(CaelumConstants.MAIN_M00_FLAG_RONNIE_COMPLETE)) return false;
         ReturnLoan(user);
         Sync(user);
@@ -494,7 +475,7 @@ class CaelumMainM00RonnieTrial : Object play
         user.SetPalomoDialogueToken("CaelumM00ArmorChosenToken", record.MainM00ArmorChosen);
         user.SetPalomoDialogueToken("CaelumM00RonnieStartedToken", IsStarted(user));
         user.SetPalomoDialogueToken("CaelumM00LoadoutReadyToken", CaelumMainM00Loadout.IsComplete(record));
-        user.SetPalomoDialogueToken("CaelumM00StarterCraftedToken", record.MainM00StarterWeaponId > 0);
+        CaelumOnboarding.UpdateLessons(user);
         user.SetPalomoDialogueToken("CaelumM00RonnieFinishedToken",
             record.HasMainM00Flag(CaelumConstants.MAIN_M00_FLAG_RONNIE_COMPLETE));
         user.RefreshSocialJournalSnapshot();
@@ -538,18 +519,7 @@ class CaelumMainM00RonnieTrial : Object play
         }
         if (!CanInteract(user) || level.time % TICRATE != 0) return;
         let record = user.GetPersistentCharacterState(true);
-        if (record.MainM00StarterWeaponId == 0)
-        {
-            let requirements = new("CaelumMainM00StarterMaterials");
-            requirements.Build(record.MainM00StarterOption, record.MainM00StarterSize, 2, user);
-            bool ready = requirements.IsSatisfied();
-            record.SetQuestObjectiveProgress(CaelumConstants.QUEST_MAIN_M00_THE_FOOL,
-                CaelumConstants.MAIN_M00_OBJECTIVE_GATHER_MATERIALS, ready ? 1 : 0, 1);
-            record.SetQuestObjectiveProgress(CaelumConstants.QUEST_MAIN_M00_THE_FOOL,
-                CaelumConstants.MAIN_M00_OBJECTIVE_PREPARE_WEAPON, 0, 1);
-            for (int i = 0; i < CaelumConstants.MATERIAL_TYPE_COUNT; i++)
-                user.MainM00StarterMissingSnapshot[i] = requirements.Units[i];
-        }
+        CaelumOnboarding.UpdateLessons(user);
         Sync(user);
     }
 }

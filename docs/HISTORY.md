@@ -1,6 +1,30 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **5.2.3** — 2026-10-11.
+Documentation version: **5.2.4** — 2026-10-11.
+
+## 5.2.4 - Profession onboarding and MAP02 supplies (#183), 2026-10-11
+
+Author decisions during implementation: use fresh test saves instead of earlier
+save migration; bag and empty 5 L canteen recipes are 90% leather/10% rope by
+weight at the Workbench with existing time rules and tutorial 100% efficiency;
+remove the MAP01 Bull leather drop; Palomo calls the 2 kg gold-for-rope/leather
+exchange a swindle. Confirmed Box formula: 20 + floor(10 × Type3 multiplier),
+both slots and content-weight divisor (I=0:30; I=100:100), base mass unchanged.
+After native review found that bolas cannot be repaired, the author explicitly
+selected materials for five manufactured replacement bolas instead.
+
+The implementation supplies profession gifts once, requires all three utility
+crafts, consumes gold once and preserves partially unclaimed rewards. Departure
+boxes actual owned instances including water, wear, matching ammunition and deck.
+The MAP02 audit retains 600 allocated rounds as 360 arrows/240 bolts, and the 39
+finite chests divide the actual initial kit's repair/replacement recipe totals.
+Refuges gain armor-workshop capability and the repair selector exposes armor.
+
+Reproducible static/native evidence and diagnostic failures corrected during
+development are retained in assets/validation_524/RESULTS.md. No author gameplay
+acceptance is inferred: CA183-01 remains pending. The author also requested #185
+after this delivery, separating each NPC's dialogue into a dedicated src folder
+with a main index and indexing the localization catalogue.
 
 ## 5.2.3 - Mandinga friendly-fire retaliation (#180), 2026-10-11
 

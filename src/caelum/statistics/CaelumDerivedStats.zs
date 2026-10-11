@@ -288,9 +288,7 @@ class CaelumDerivedStats : Object
         // a x4 en nivel 100: masa 200 produce capacidad 200 y luego 800.
         CarryCapacity = BaseMass
             * CalculateType4Percent(attributes.Strength) / 100.0;
-        MagicBoxCapacity = 2 + int(
-            CalculateType1Percent(attributes.Intelligence) / 50.0
-        );
+        MagicBoxCapacity = CaelumEquipmentRules.MagicBoxSlots(attributes.Intelligence);
         RefreshCarriedWeightTotals();
         PushResistance = TotalMass / 100.0;
         KnockbackMultiplier = 100.0 / (TotalMass + 50.0);

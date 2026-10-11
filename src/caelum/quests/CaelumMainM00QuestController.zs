@@ -329,18 +329,11 @@ class CaelumMainM00QuestController : EventHandler
     {
         if (NaturalSuppliesPrepared || level.MapName != "MAP01") return;
         NaturalSuppliesPrepared = true;
-        // Reutilizar el cajón serializado: ahora sólo administra cuero.
-        let old = ThinkerIterator.Create("CaelumMainM00SupplyChest");
-        RonnieSupplyChest = CaelumMainM00SupplyChest(old.Next());
-        if (RonnieSupplyChest == null)
-            RonnieSupplyChest = CaelumMainM00SupplyChest(Actor.Spawn("CaelumMainM00SupplyChest", (1780,640,-384), NO_REPLACE));
-        if (RonnieSupplyChest != null) RonnieSupplyChest.Angle = 270;
-        Class<CaelumMineralVeinEnvironmentProp> kinds[5];
-        kinds[0] = "CaelumVeinRuby"; kinds[1] = "CaelumVeinSapphire";
-        kinds[2] = "CaelumVeinEmerald"; kinds[3] = "CaelumVeinTopaz";
-        kinds[4] = "CaelumVeinOpal";
-        for (int i = 0; i < 5; i++)
-            Actor.Spawn(kinds[i], (i == 4 ? 1760 : 1080 + i * 180, 1210, -384), NO_REPLACE);
+        let old = ThinkerIterator.Create("CaelumMineralVeinEnvironmentProp");
+        CaelumMineralVeinEnvironmentProp vein;
+        while ((vein = CaelumMineralVeinEnvironmentProp(old.Next())) != null)
+            if (vein.Pos.Z < 0) vein.Destroy();
+        Actor.Spawn("CaelumTutorialGoldVein", CaelumOnboardingCatalogue.GoldPosition(), NO_REPLACE);
     }
 
     void PrepareBullRoom()
@@ -654,35 +647,7 @@ class CaelumM00Bull : CaelumBull
         if (health > 0 || LeatherDropped) return;
         LeatherDropped = true;
         CaelumMainM00RuloTrial.SetArenaDoors(false, true);
-        // La masa y la merma gobiernan el botín, nunca el talle del viajero.
-        // Pilas de 2,5 kg para no exigir cargar todo de una vez.
-        LeatherBudgetUnits = GetLeatherYieldUnits();
-        let recipient = CaelumPlayer(TrialFighter);
-        bool limited = CaelumMainM00SupplyRules.IsLimited(recipient);
-        int remaining = limited ? Min(LeatherBudgetUnits,
-            CaelumMainM00SupplyRules.Remaining(recipient, CaelumConstants.MATERIAL_LEATHER)) : LeatherBudgetUnits;
-        int i = 0;
-        while (remaining > 0)
-        {
-            int amount = Min(2500, remaining);
-            double direction = (i % 12) * 30.0;
-            double radius = 4;
-            let leather = CaelumMaterialPickup(Spawn("CaelumMaterialPickup",
-                Pos + (Cos(direction)*radius,Sin(direction)*radius,8), NO_REPLACE));
-            if (leather != null)
-            {
-                leather.args[0] = CaelumConstants.MATERIAL_LEATHER;
-                leather.args[1] = 1; leather.Amount = amount;
-                leather.LimboQuestUnits = amount; leather.bDropped = true;
-                if (limited)
-                {
-                    leather.LimboQuotaReserved = true;
-                    leather.LimboQuotaPlayer = recipient.PlayerNumber();
-                    CaelumMainM00SupplyRules.Issue(recipient, CaelumConstants.MATERIAL_LEATHER, amount);
-                }
-            }
-            remaining -= amount; i++;
-        }
+        // #183: el Toro tutorial no entrega cuero.
         for (int n = 0; n < MAXPLAYERS; n++)
             if (playeringame[n] && players[n].mo is "CaelumPlayer")
             {
