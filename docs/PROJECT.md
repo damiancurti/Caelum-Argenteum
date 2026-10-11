@@ -10,7 +10,8 @@ flight and five-second movement/attack restraint. Fire, shared-speed cutting
 and one Strength roll govern destruction. Paid own demon breath can burn ropes.
 Native equipment identity and previous saves are preserved. The author-requested
 visual correction adds hanging rest weights, 3 Hz spin and body-occluded rear
-rope arcs, including migration of previously bound saves. Evidence and exact
+rope arcs, including migration of previously bound saves. Follow-up feedback
+extends the bolas forearm and makes immediate paid demon escape visibly burn. Evidence and exact
 validation scope: assets/validation_5116/RESULTS.md. Author visual/handling
 acceptance remains CA163-01; Rulo's permanent grant belongs to #164. This focused
 branch is based on the unmerged #162 branch and its corrected right-leaning staff.

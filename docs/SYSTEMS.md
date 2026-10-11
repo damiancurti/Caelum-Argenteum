@@ -55,7 +55,12 @@ A bound Mandinga or Zupay may direct its own fire breath onto the ropes because
 the mouth is free. Actual paid breath contact destroys the ropes immediately,
 bypassing self-hit filtering only for this escape. Existing #135 Anima cost,
 reductions, regeneration, insufficient-resource and unrelated interruption
-rules remain; no free escape, burn delay or cutting duration is added.
+rules remain; no free escape, burn delay or cutting duration is added. The author
+reconfirmed immediate escape after reporting apparently immune Mandingas. Each
+actual rope burn now leaves a finite, body-following flame for the existing
+12-tic elemental impact animation, independent of continued emission. This
+visual adds no damage, burn status, heat or resource cost; repeated fire after
+resolution cannot spawn another flash.
 Resolution is guarded once, so fire, cut completion and expiry cannot duplicate
 items or repeat the Strength roll. Unrelated stuns survive release.
 

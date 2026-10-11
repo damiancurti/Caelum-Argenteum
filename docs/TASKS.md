@@ -11,7 +11,8 @@ Approved author decisions: bronze 800 g plus leather 218 g at M; javelin
 ballistics, 60-to-6-degree linear preparation and 6 base Air; two-second base
 cut with shared physical speed and pain/sleep/stun interruption. The author
 requested a hanging ready pose, 3 Hz spin and rear rope arcs hidden by the body;
-these corrections and bound-save visual migration are implemented. Next: linked
+these corrections and bound-save visual migration are implemented. Extended
+forearms and a finite flame for immediate paid demon escape address later feedback. Next: linked
 PR review and CA163-01 visual/handling acceptance; then #164 permanent grants.
 No author acceptance is inferred from engine assertions or a future PR merge.
 

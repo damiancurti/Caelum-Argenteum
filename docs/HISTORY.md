@@ -24,6 +24,14 @@ existing saves without changing item ownership, timers or cutting progress.
 Follow-up native captures and test scope are appended to validation_5116/RESULTS.
 This is a correction within the same 5.1.16/#163 patch; CA163-01 stays pending.
 
+The author subsequently reported cropped/floating hands and apparently immune
+Mandingas. An extended dedicated glove/forearm now covers every bolas pose. The
+author explicitly retained immediate paid fire escape and requested clear fire;
+a finite cosmetic burn animation survives the single-tic breath without adding
+damage, status, heat or cost. Focused native collision, insufficient-Anima,
+visual lifetime and three-aspect captures are in the handling follow-up evidence.
+This design confirmation is not acceptance of the pending manual test.
+
 ## 5.1.15 - Bronze utility staff and wand names (#162, 2026-10-10)
 
 Author decisions: ice matches fire's geometry and power magnitude (4 m, 60 degrees,

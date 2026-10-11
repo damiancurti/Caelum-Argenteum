@@ -672,7 +672,9 @@ class CaelumFirstPersonLayers : Object play
             // El mango separado usa 48; no recrearlo cada tic para interpolar.
             user.A_ClearOverlays(49,49);
             if(kind!=7 && kind!=12)user.A_ClearOverlays(48,48);
-            Hand(user,52,0,grip,(0,0),1.0,rotation);
+            if(kind==CaelumConstants.WEAPON_TYPE_BOLAS)
+                Place(user,52,GetDefaultByType("CaelumBolasFrames").FindStateByString("Hand"),grip,(216,160),1.0,rotation);
+            else Hand(user,52,0,grip,(0,0),1.0,rotation);
             // La izquierda sostiene el tramo inferior, sin tapar la derecha.
             if(large)Hand(user,51,3,grip,(0,24),0.85,rotation);
             else user.A_ClearOverlays(51,51);

@@ -1,0 +1,46 @@
+{
+  "runs": [
+    {
+      "label": "hand-fire-poses-16x9",
+      "passes": 14,
+      "production_sha256": "B513FD1E36C2D61F432045C22CFA35C554051A9C0C555F8B9CAD54F76D66F2BB",
+      "fixture_sha256": "2A05D8DB346448E9F256838735D7F9FD1F523EAB05EDB7B7BB403131698EEF98"
+    },
+    {
+      "label": "hand-fire-poses-4x3",
+      "passes": 14,
+      "production_sha256": "B513FD1E36C2D61F432045C22CFA35C554051A9C0C555F8B9CAD54F76D66F2BB",
+      "fixture_sha256": "2A05D8DB346448E9F256838735D7F9FD1F523EAB05EDB7B7BB403131698EEF98"
+    },
+    {
+      "label": "hand-fire-poses-21x9",
+      "passes": 14,
+      "production_sha256": "B513FD1E36C2D61F432045C22CFA35C554051A9C0C555F8B9CAD54F76D66F2BB",
+      "fixture_sha256": "2A05D8DB346448E9F256838735D7F9FD1F523EAB05EDB7B7BB403131698EEF98"
+    },
+    {
+      "label": "hand-fire-npcs",
+      "passes": 22,
+      "production_sha256": "B513FD1E36C2D61F432045C22CFA35C554051A9C0C555F8B9CAD54F76D66F2BB",
+      "fixture_sha256": "AEC5F73913F1767CF95CCAFD380592A2D4CECA0E0FF31C97AD26424D50B55EEE"
+    },
+    {
+      "label": "hand-fire-checks",
+      "passes": 40,
+      "production_sha256": "B513FD1E36C2D61F432045C22CFA35C554051A9C0C555F8B9CAD54F76D66F2BB",
+      "fixture_sha256": "F788C6D6FF02DFB78DFDD7E753D23FD569BDCAAC6EBC8FD2EF517B6851715119"
+    },
+    {
+      "label": "hand-fire-depth",
+      "passes": 13,
+      "production_sha256": "B513FD1E36C2D61F432045C22CFA35C554051A9C0C555F8B9CAD54F76D66F2BB",
+      "fixture_sha256": "1FA975259E4DD063719FF9B19F3E6F03BFD7D008536DCC7EAB766A1C455CA28A"
+    }
+  ],
+  "passes": 117,
+  "native_sha256": "b513fd1e36c2d61f432045c22cfa35c554051a9c0c555f8b9cad54f76d66f2bb",
+  "normal_pk3_sha256": "015b628b2fe7c832ef2cbb3cd8c8a89d3bef6e134bfbd61c84a0b505313dba17",
+  "members": 6309,
+  "all_runtime_member_bytes_equal": true,
+  "registration_deterministic": true
+}

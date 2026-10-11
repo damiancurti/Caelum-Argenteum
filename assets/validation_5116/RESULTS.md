@@ -7,6 +7,56 @@ destruction; own demon breath uses actual paid contact. Author handling/art
 acceptance remains CA163-01. Permanent Rulo/Caella grants remain #164.
 This focused branch is stacked on issue-162-utility-staff (PR167, dc757efe).
 
+
+## Latest author follow-up: continuous arms and visible paid escape
+
+The upright glove now uses a dedicated extended forearm in all four bolas poses.
+The author explicitly kept immediate Mandinga escape: actual paid fire burns the
+item at once and leaves a 12-tic cosmetic flame using the existing burn art,
+scale/opacity and impact lifetime. It survives the emission ending, adds no
+Health damage, heat, burn status or Anima cost, and cannot duplicate on repeat
+contact. Other weapons retain their accepted hand assets.
+
+**117 passing native assertion executions**, six focused runs in GZDoom 4.14.2:
+14 each for actual input/flight/collision, four hand poses, exact paid escape,
+visual survival/expiry and no extra damage/status at 960x720, 1280x720 and
+1680x720; 22 NPC resource/cutting checks; 40 restraint lifecycle checks; 13 spin
+and front/back layer checks. The handling fixture prints its 13-check interim
+summary before a final PASS confirms that all four poses were actually visited.
+All six final logs contain no failed assertions or native errors. An exploratory
+run sampled demon Health/Anima before deferred initialization; corrected fixture
+sampling at stage age 10 resolves those three test failures. No gameplay
+correction was needed for those initialization differences.
+
+Captures cover ready, spin, release, recovery and normal fists in all three
+aspects; representative frames were visually inspected. The sleeve continues beyond the screen edge; the four-pose assertions
+verify native overlay state selection. The Mandinga flame remains visible after
+its paid stream has stopped. See [ready](handling_followup/hand-ready-16x9.png),
+[recovery/fire](handling_followup/hand-recover-16x9.png) and
+[wide ready](handling_followup/hand-ready-21x9.png).
+
+[Raw evidence and fingerprints](handling_followup/verification.json): final
+native package `b513fd1e36c2d61f432045c22cfa35c554051a9c0c555f8b9cad54f76d66f2bb`;
+normal PK3 `015b628b2fe7c832ef2cbb3cd8c8a89d3bef6e134bfbd61c84a0b505313dba17`.
+All **6,309 runtime members** are byte-identical between the two packages.
+Art registration was repeated twice with identical TEXTURES bytes. Static
+validation passes with zero errors; its full report is in handling_followup.
+Earlier evidence below describes its own builds, not this follow-up. CA163-01
+remains pending author acceptance.
+
+Reproduce: prepare.py, then run_native.ps1 with Fixture handling and Script
+handling-16x9.cfg / handling-4x3.cfg / handling-21x9.cfg, respectively Width/Height
+1280/720, 960/720 and 1680/720. Also run fixtures npcs, checks and visualfix with
+their corresponding .cfg scripts. Use fresh Labels. Each run remains unpaused
+in the background with audio at 5%; no keep-awake request is retained.
+
+The built-in imagegen edit saved the unaltered transparent output to
+[hand-extended.png](../source/art/bolas_5116/hand-extended.png), copied verbatim to
+src/graphics/caelum/bolas/hand-extended.png. The exact final prompt and reference
+roles are in [HAND_PROVENANCE.json](../source/art/bolas_5116/HAND_PROVENANCE.json).
+The original glove and atlas remain preserved.
+
+
 Initial delivery validation passed with zero errors (`static-validation.json`).
 That normal build contained 6,307 files, all matching the initially delivered
 native package. The follow-up below supersedes those current-package fingerprints. The atlas remains unchanged and its registration generator

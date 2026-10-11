@@ -51,7 +51,15 @@ class CaelumBolas : Object play
     {let bind=Binding(body);return bind!=null && bind.Phase==1;}
 
     static void FireContact(Actor body)
-    {let bind=Binding(body);if(bind!=null)bind.Resolve(true);}
+    {
+        let bind=Binding(body);
+        if(bind==null || bind.Phase!=1)return;
+        // El fogonazo conserva su vida visual aunque cese el aliento al liberarse.
+        // No aplica quemadura, daño, calor ni un segundo gasto de Ánima.
+        let flash=CaelumBolasBurnVisual(Actor.Spawn("CaelumBolasBurnVisual",body.Pos,NO_REPLACE));
+        if(flash!=null)flash.master=body;
+        bind.Resolve(true);
+    }
 
     static void FireAttack(Actor body,Actor inflictor,Name mod)
     {
@@ -332,6 +340,34 @@ class CaelumBolasRopes : Actor
     override void Tick(){Super.Tick();if(master==null || master.bDestroyed)Destroy();}
 }
 
+class CaelumBolasBurnVisual : Actor
+{
+    int VisualAge;
+
+    override void Tick()
+    {
+        Super.Tick();
+        if(bDestroyed)return;
+        if(master==null || master.bDestroyed || VisualAge>=CaelumElementalVFXData.IMPACT_TICS)
+        {Destroy();return;}
+        SetOrigin(master.Pos,false);
+        // Reutiliza tamaño, opacidad, cuadros y luz de la quemadura existente.
+        double visualScale=Max(0.08,master.Height/140.0);
+        Scale=(Max(visualScale,master.Radius/40.0),visualScale);
+        sprite=GetSpriteIndex(CaelumElementalVFXData.StatusSprite(0));
+        frame=(VisualAge/CaelumElementalVFXData.FRAME_TICS)%4;
+        Alpha=0.72;
+        if(VisualAge%CaelumElementalVFXData.FRAME_TICS==0)CaelumElementalVFX.Light(self,0);
+        let camera=players[consoleplayer].camera;
+        vector2 depth=camera!=null ? AngleToVector(camera.Angle,CaelumBolasRules.WRAP_DEPTH) : (0,0);
+        WorldOffset=master.WorldOffset-(depth.X,depth.Y,0);
+        VisualAge++;
+    }
+
+    Default { +NOINTERACTION +NOGRAVITY +BRIGHT RenderStyle "Normal"; }
+    States { Spawn: TNT1 A -1; Stop; }
+}
+
 class CaelumBolasSelectorWeapon : CaelumPhysicalSelectorWeapon
 {
     Default { Weapon.SelectionOrder 102; Weapon.SlotNumber 1; }
@@ -347,5 +383,6 @@ class CaelumBolasFrames : Actor
     Release: DBOL C -1; Stop;
     Recover: TNT1 A -1; Stop;
     Pickup: CBOL A -1; Stop;
+    Hand: DBLH A -1; Stop;
     }
 }

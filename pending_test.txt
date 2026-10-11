@@ -35,9 +35,14 @@ Steps:
    five seconds. This fixture fixes its Strength to zero for reliable recovery.
 3. Save while preparing or while ropes are visible; reload and confirm coherent
    ownership, remaining restraint and recovery. Confirm the release/recovery
-   hand animation and the size of the original artwork in motion.
+   hand animation and the size of the original artwork in motion. No bolas pose
+   should expose a cropped wrist/forearm, including on a wide display.
 4. For player cutting, enter ca163_stage 8 in the console. The fixture supplies
    an unequipped dagger. Try movement/attack, then press Reload to cut and escape.
+5. Close the first engine, then launch the paid-escape preview:
+   .\assets\validation_5116\run_native.ps1 -Label author163-fire-01 -Fixture handling -Script handling-preview.cfg -Interactive -Language es
+   Prepare and throw at the Mandinga: the piece burns immediately, with a clearly
+   visible brief flame. This preserves the confirmed instant escape rule.
 Expected: readable three-ball tool and body-fitting ropes, no stuck input,
 permanent stun, duplicate item or invisible recovery. Reload cuts without an
 ordinary reload/attack. Report visual/handling acceptance or specific defects.

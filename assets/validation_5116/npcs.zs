@@ -64,12 +64,16 @@ class CA163Npcs : EventHandler
                 let bind=Bind(u,demon);let source=bind.SourceItem;
                 CaelumDemonService.UpdateBreath(demon);
                 Check(String.Format("demon %d cannot escape without payable Anima",i),CaelumBolas.Restrained(demon) && demon.CurrentCombatAnima==0);
+                int before=0;let flashes=ThinkerIterator.Create("CaelumBolasBurnVisual");while(flashes.Next()!=null)before++;
+                Check(String.Format("demon %d insufficient Anima has no burn flash",i),before==i);
                 demon.CurrentCombatAnima=100;
                 double cost=demon.GetMagicAnimaCost(CaelumDemonBreathRules.ANIMA_PER_SECOND)/TICRATE;
                 CaelumDemonService.UpdateBreath(demon);
                 Check(String.Format("demon %d own paid breath burns ropes immediately",i),!CaelumBolas.Restrained(demon)
                     && (source==null || source.bDestroyed) && Abs(demon.CurrentCombatAnima-(100-cost))<0.000001);
                 CaelumDemonService.StopBreath(demon);demon.CaelumDiagnosticPassiveAI=true;
+                int after=0;flashes=ThinkerIterator.Create("CaelumBolasBurnVisual");while(flashes.Next()!=null)after++;
+                Check(String.Format("demon %d paid release leaves one independent flash",i),after==before+1);
             }
             Mandinga.CurrentCombatAnima=0;
             MandingaItem=Bind(u,Mandinga).SourceItem;
@@ -88,6 +92,7 @@ class CA163Npcs : EventHandler
         }
         if(level.time==90)
         {
+            Check("all finite fire flashes expire",ThinkerIterator.Create("CaelumBolasBurnVisual").Next()==null);
             Check("bound bull cannot chase despite live target",Bull.Pos==BullStart && CaelumBolas.Restrained(Bull));
             Check("automatic NPC cut progresses below shared duration",Soldier.BolasBinding!=null && Soldier.BolasBinding.CutProgress>0 && level.time-CutStarted<ExpectedCut);
         }
