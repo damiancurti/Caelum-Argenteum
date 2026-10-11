@@ -1,6 +1,13 @@
 # Caelum Argenteum — Audio and art
 
-Documentation version: **5.1.18** — 2026-10-10.
+Documentation version: **5.1.19** — 2026-10-10.
+
+## 5.1.19 - Shared dialogue history (#172)
+
+Uses existing fonts and native dialogue presentation. English/Spanish replay,
+more-options and return labels are in LANGUAGE. No new art or sound. Reviewed
+informational-topic data: assets/dialogue_history.json; deterministic generator
+emits CaelumDialogueHistoryData.zs. Native evidence: assets/validation_5119.
 
 ## 5.1.18 - MAP01 gift presentation (#164)
 

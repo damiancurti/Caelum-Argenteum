@@ -1,0 +1,293 @@
+{
+  "revision": 1,
+  "entries": [
+    {
+      "source": "$CA_DLG_M01_UNKNOWN_VOICE_WAKE",
+      "reply": "$CA_DLG_M01_UNKNOWN_VOICE_ASK_WHO",
+      "answer": "$CA_DLG_M01_UNKNOWN_VOICE_WHO_REPLY",
+      "page": "unknown_voice_who"
+    },
+    {
+      "source": "$CA_DLG_M01_UNKNOWN_VOICE_WAKE",
+      "reply": "$CA_DLG_M01_UNKNOWN_VOICE_ASK_WHERE",
+      "answer": "$CA_DLG_M01_UNKNOWN_VOICE_WHERE_REPLY",
+      "page": "unknown_voice_where"
+    },
+    {
+      "source": "$CA_DLG_M01_PALOMO_FOYER",
+      "reply": "$CA_DLG_M01_PALOMO_ASK_WHERE",
+      "answer": "$CA_DLG_M01_PALOMO_WHERE_REPLY",
+      "page": "palomo_answer_where"
+    },
+    {
+      "source": "$CA_DLG_M01_PALOMO_FOYER",
+      "reply": "$CA_DLG_M01_PALOMO_ASK_WHAT_HAPPENED",
+      "answer": "$CA_DLG_M01_PALOMO_WHAT_HAPPENED_REPLY",
+      "page": "palomo_answer_what_happened"
+    },
+    {
+      "source": "$CA_DLG_M01_PALOMO_FOYER",
+      "reply": "$CA_DLG_M01_PALOMO_MEMORY_GAP",
+      "answer": "$CA_DLG_M01_PALOMO_MEMORY_GAP_REPLY",
+      "page": "palomo_answer_memory_gap"
+    },
+    {
+      "source": "$CA_DLG_M01_PALOMO_VOICE_REPLY",
+      "reply": "$CA_DLG_M01_PALOMO_VOICE_DOUBT",
+      "answer": "$CA_DLG_M01_PALOMO_VOICE_DOUBT_REPLY",
+      "page": "palomo_answer_voice_doubt"
+    },
+    {
+      "source": "$CA_DEMO_PALOMO_LESSONS",
+      "reply": "$CA_DLG_M01_GARDEN_ASK",
+      "answer": "$CA_DEMO_MATERIALS",
+      "page": "palomo_materials"
+    },
+    {
+      "source": "$CA_M01_NEEDS_INTRO",
+      "reply": "$CA_M01_NEEDS_SAFE_ASK",
+      "answer": "$CA_M01_NEEDS_SAFE",
+      "page": "ronnie_needs_safe"
+    },
+    {
+      "source": "$CA_M01_NEEDS_PRACTICE",
+      "reply": "$CA_M01_NEEDS_SAFE_ASK",
+      "answer": "$CA_M01_NEEDS_SAFE",
+      "page": "ronnie_needs_safe"
+    },
+    {
+      "source": "$CA_DLG_M01_ARGENTO_PROGRESS",
+      "reply": "$CA_DLG_M01_ARGENTO_ADVICE_RULO",
+      "answer": "$CA_DLG_M01_ARGENTO_HINT_RULO",
+      "page": "argento_advice_rulo"
+    },
+    {
+      "source": "$CA_DLG_M01_ARGENTO_PROGRESS",
+      "reply": "$CA_DLG_M01_ARGENTO_ADVICE_RONNIE",
+      "answer": "$CA_DLG_M01_ARGENTO_HINT_RONNIE",
+      "page": "argento_advice_ronnie"
+    },
+    {
+      "source": "$CA_DLG_M01_ARGENTO_PROGRESS",
+      "reply": "$CA_DLG_M01_ARGENTO_ADVICE_CAELLA",
+      "answer": "$CA_DLG_M01_ARGENTO_HINT_CAELLA",
+      "page": "argento_advice_caella"
+    },
+    {
+      "source": "$CA_DLG_M01_WORKSHOP_ARGENTO",
+      "reply": "$CA_DLG_M01_GARDEN_ASK",
+      "answer": "$CA_M01_RONNIE_LOCATION",
+      "page": "argento_resources"
+    },
+    {
+      "source": "$CA_DLG_M01_WORKSHOP_RULO",
+      "reply": "$CA_DLG_M01_GARDEN_ASK",
+      "answer": "$CA_M01_RONNIE_LOCATION",
+      "page": "rulo_resources"
+    },
+    {
+      "source": "$CA_M01_RULO_LESSON",
+      "reply": "$CA_M01_RULO_EQUIVALENTS",
+      "answer": "$CA_M01_RULO_EQUIVALENT_TEXT",
+      "page": "rulo_trial_equivalents"
+    },
+    {
+      "source": "$CA_DLG_M01_RONNIE_RECRUIT",
+      "reply": "$CA_DLG_M01_RONNIE_ASK_PLAN",
+      "answer": "$CA_DLG_M01_RONNIE_PLAN_HINT",
+      "page": "ronnie_plan_hint"
+    },
+    {
+      "source": "$CA_M01_RONNIE_COLLECT",
+      "reply": "$CA_M01_RONNIE_ROUTE_CHOICE",
+      "answer": "$CA_M01_RONNIE_LOCATION",
+      "page": "ronnie_location"
+    },
+    {
+      "source": "$CA_M01_REPAIR_INTRO",
+      "reply": "$CA_M01_REPAIR_STEPS_ASK",
+      "answer": "$CA_M01_REPAIR_STEPS",
+      "page": "ronnie_repair_steps"
+    },
+    {
+      "source": "$CA_M01_REPAIR_INTRO",
+      "reply": "$CA_M01_REPAIR_COST_ASK",
+      "answer": "$CA_M01_REPAIR_COST",
+      "page": "ronnie_repair_cost"
+    },
+    {
+      "source": "$CA_M01_REPAIR_STEPS",
+      "reply": "$CA_M01_REPAIR_COST_ASK",
+      "answer": "$CA_M01_REPAIR_COST",
+      "page": "ronnie_repair_cost"
+    },
+    {
+      "source": "$CA_M01_REPAIR_COST",
+      "reply": "$CA_M01_REPAIR_STEPS_ASK",
+      "answer": "$CA_M01_REPAIR_STEPS",
+      "page": "ronnie_repair_steps"
+    },
+    {
+      "source": "$CA_DLG_M01_WORKSHOP_RONNIE",
+      "reply": "$CA_DEMO_CALENDAR_ASK",
+      "answer": "$CA_DEMO_CALENDAR",
+      "page": "ronnie_calendar"
+    },
+    {
+      "source": "$CA_DLG_M01_WORKSHOP_RONNIE",
+      "reply": "$CA_DLG_M01_GARDEN_ASK",
+      "answer": "$CA_M01_RONNIE_LOCATION",
+      "page": "ronnie_resources"
+    },
+    {
+      "source": "$CA_DLG_M01_WORKSHOP_RONNIE",
+      "reply": "$CA_M01_SEALS_GATHER_ASK",
+      "answer": "$CA_M01_SEALS_GATHER",
+      "page": "ronnie_seals_gather"
+    },
+    {
+      "source": "$CA_DLG_M01_MAGIC_CHANNEL_TEXT",
+      "reply": "$CA_DLG_M01_MAGIC_NEXT",
+      "answer": "$CA_DLG_M01_MAGIC_RESOURCES_TEXT",
+      "page": "caella_magic_resources"
+    },
+    {
+      "source": "$CA_DLG_M01_MAGIC_RIDDLE",
+      "reply": "$CA_DLG_M01_MAGIC_WHERE",
+      "answer": "$CA_DLG_M01_MAGIC_LOCATION",
+      "page": "caella_magic_location"
+    },
+    {
+      "source": "$CA_DLG_M01_MAGIC_RIDDLE",
+      "reply": "$CA_DLG_M01_MAGIC_EQUIP",
+      "answer": "$CA_DLG_M01_MAGIC_LOCATION",
+      "page": "caella_magic_location"
+    },
+    {
+      "source": "$CA_DLG_M01_MAGIC_RIDDLE_HINT1",
+      "reply": "$CA_DLG_M01_MAGIC_WHERE",
+      "answer": "$CA_DLG_M01_MAGIC_LOCATION",
+      "page": "caella_magic_location"
+    },
+    {
+      "source": "$CA_DLG_M01_MAGIC_RIDDLE_HINT1",
+      "reply": "$CA_DLG_M01_MAGIC_EQUIP",
+      "answer": "$CA_DLG_M01_MAGIC_LOCATION",
+      "page": "caella_magic_location"
+    },
+    {
+      "source": "$CA_DLG_M01_MAGIC_RIDDLE_HINT2",
+      "reply": "$CA_DLG_M01_MAGIC_WHERE",
+      "answer": "$CA_DLG_M01_MAGIC_LOCATION",
+      "page": "caella_magic_location"
+    },
+    {
+      "source": "$CA_DLG_M01_MAGIC_RIDDLE_HINT2",
+      "reply": "$CA_DLG_M01_MAGIC_EQUIP",
+      "answer": "$CA_DLG_M01_MAGIC_LOCATION",
+      "page": "caella_magic_location"
+    },
+    {
+      "source": "$CA_DLG_M01_WORKSHOP_CAELLA",
+      "reply": "$CA_DLG_M01_GARDEN_ASK",
+      "answer": "$CA_M01_RONNIE_LOCATION",
+      "page": "caella_resources"
+    },
+    {
+      "source": "$CA_M01_SEALS_READY",
+      "reply": "$CA_M01_SEALS_USE_ASK",
+      "answer": "$CA_M01_SEALS_USE",
+      "page": "caella_seals_use"
+    },
+    {
+      "source": "$CA_M01_SEALS_RESOURCES",
+      "reply": "$CA_M01_SEALS_USE_ASK",
+      "answer": "$CA_M01_SEALS_USE",
+      "page": "caella_seals_use"
+    },
+    {
+      "source": "$CA_M01_PALOMO_FINAL",
+      "reply": "$CA_M01_PALOMO_IDEA_ASK",
+      "answer": "$CA_M01_PALOMO_IDEA",
+      "page": "palomo_final_idea"
+    },
+    {
+      "source": "$CA_M01_PALOMO_FINAL",
+      "reply": "$CA_M01_PALOMO_EXIT_ASK",
+      "answer": "$CA_M01_PALOMO_EXIT",
+      "page": "palomo_final_exit"
+    },
+    {
+      "source": "$CA_M01_PALOMO_FINAL",
+      "reply": "$CA_M01_PALOMO_WHERE_ASK",
+      "answer": "$CA_M01_PALOMO_WHERE",
+      "page": "palomo_final_where"
+    },
+    {
+      "source": "$CA_M01_PALOMO_FINAL",
+      "reply": "$CA_M01_PALOMO_VOICE_ASK",
+      "answer": "$CA_M01_PALOMO_VOICE",
+      "page": "palomo_final_voice"
+    },
+    {
+      "source": "$CA_M01_PALOMO_OFFER",
+      "reply": "$CA_M01_PALOMO_MAGIC_ASK",
+      "answer": "$CA_M01_PALOMO_MAGIC",
+      "page": "palomo_box_magic"
+    },
+    {
+      "source": "$CA_M01_PALOMO_OFFER",
+      "reply": "$CA_M01_PALOMO_CONTENTS_ASK",
+      "answer": "$CA_M01_PALOMO_CONTENTS",
+      "page": "palomo_box_contents"
+    },
+    {
+      "source": "$CA_M01_PALOMO_OFFER",
+      "reply": "$CA_M01_PALOMO_WHY_ASK",
+      "answer": "$CA_M01_PALOMO_WHY",
+      "page": "palomo_box_why"
+    },
+    {
+      "source": "$CA_M01_PALOMO_RECEIVED",
+      "reply": "$CA_M01_PALOMO_USE_ASK",
+      "answer": "$CA_M01_PALOMO_USE",
+      "page": "palomo_box_use"
+    },
+    {
+      "source": "$CA_M01_PALOMO_RECEIVED",
+      "reply": "$CA_M01_PALOMO_CAVE_ASK",
+      "answer": "$CA_M01_PALOMO_CAVE",
+      "page": "palomo_box_cave"
+    },
+    {
+      "source": "$CA_M01_FOOL_PALOMO",
+      "reply": "$CA_M01_RETURN_ASK",
+      "answer": "$CA_M01_RETURN_PALOMO",
+      "page": "palomo_return_door"
+    },
+    {
+      "source": "$CA_M01_FOOL_PALOMO",
+      "reply": "$CA_M01_FOOL_COLLECTION_ASK",
+      "answer": "$CA_M01_FOOL_COLLECTION_HELP",
+      "page": "palomo_fool_collection"
+    },
+    {
+      "source": "$CA_M01_FOOL_PALOMO",
+      "reply": "$CA_M01_PALOMO_USE_ASK",
+      "answer": "$CA_M01_PALOMO_USE",
+      "page": "palomo_fool_box_use"
+    },
+    {
+      "source": "$CA_GUARD_CAPTAIN_FIRST",
+      "reply": "$CA_GUARD_CAPTAIN_FIRST_RESPONSE",
+      "answer": "$CA_GUARD_CAPTAIN_ANSWER",
+      "page": "guard_captain_first_answer"
+    },
+    {
+      "source": "$CA_GUARD_CAPTAIN_REPEAT",
+      "reply": "$CA_GUARD_CAPTAIN_REPEAT_RESPONSE",
+      "answer": "$CA_GUARD_CAPTAIN_ANSWER",
+      "page": "guard_captain_repeat_answer"
+    }
+  ]
+}

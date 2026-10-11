@@ -1,6 +1,32 @@
 # Caelum Argenteum — Current systems and rules
 
-Documentation version: **5.1.18** — 2026-10-10.
+Documentation version: **5.1.19** — 2026-10-10.
+
+## 5.1.19 - Seen NPC information and replay (#172)
+
+Author confirmed hiding informational replies only. The reviewed catalogue in
+assets/dialogue_history.json identifies informational answers by source dialogue
+and reply localization keys. Gameplay actions and the navigation needed to
+reach them remain visible, including practice, supplies and equipment choices.
+Information categories that lead to further choices remain navigation.
+
+Selecting an informational answer through the native menu stores a stable key
+for that speaker's actor class in the player's persistent record. On reopening,
+read topics are hidden. Repeat dialogues at the bottom lists that speaker's
+seen topics, also across different quest pages; selecting one reads its localized
+answer without invoking USDF replies, grants, payments or mission effects.
+Back returns to the ordinary conversation. Menus paginate to preserve access
+to all choices and retain original native reply indices. Q/Escape, mouse,
+number keys and controller navigation use the same selection mapping; Ronnie's
+blocked action stays guarded after filtering/pagination.
+
+History revision 1 is additive and initialized lazily for legacy saves; it never
+infers unread history or rewinds quest flags. Existing native exclusions remain
+authoritative. All NPC subclasses inherit the shared menu, including guards,
+prisoners, Tarot encounters and reputation conversations. Action-only dialogues
+have nothing to hide; no replay link appears until that speaker has history.
+The 405 USDF page slots remain unchanged. Agent evidence: validation_5119;
+author acceptance CA172-01 remains pending.
 
 ## Permanent MAP01 gifts and assisted checkpoint - 5.1.18 / #164
 

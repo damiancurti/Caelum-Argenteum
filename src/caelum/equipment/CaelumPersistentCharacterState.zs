@@ -299,6 +299,8 @@ class CaelumPersistentCharacterState : Inventory
     int MainM00GiftsRevision;
     int MainM00UtilityStaffId;
     int MainM00BolasId;
+    int DialogueHistoryRevision;
+    Array<String> SeenDialogueKeys;
 
     override void PostBeginPlay()
     {
@@ -469,6 +471,8 @@ class CaelumPersistentCharacterState : Inventory
         MainM00GiftsRevision = 0;
         MainM00UtilityStaffId = 0;
         MainM00BolasId = 0;
+        DialogueHistoryRevision = CaelumDialogueHistoryData.REVISION;
+        SeenDialogueKeys.Clear();
         MainM00ShieldChoice = 0;
         MainM00ShieldCrafted = false;
         MainM00StarterChosen = false;

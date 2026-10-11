@@ -249,7 +249,7 @@ class CaelumMainM00ConversationMenu : CaelumPalomoConversationMenu
     {
         Super.Ticker();
         // La entrega ocurre tras abrir USDF; reflejar su resultado al dibujar.
-        if (mCurNode != null && (mCurNode.UserData ~== "loadout_root"
+        if (!Replaying && mCurNode != null && (mCurNode.UserData ~== "loadout_root"
             || mCurNode.UserData ~== "palomo_necklace_status"
             || mCurNode.UserData ~== "caella_choose_amulet"))
             FormatSpeakerMessage();
@@ -265,25 +265,29 @@ class CaelumMainM00ConversationMenu : CaelumPalomoConversationMenu
     override int FormatReplies(int activereply)
     {
         int result = Super.FormatReplies(activereply);
-        int visible = 0;
-        for (let reply = mCurNode.Children; reply != null; reply = reply.Next)
+        if(Replaying)return result;
+        for(int visible=0;visible<ReplyMap.Size();visible++)
         {
-            if (reply.ShouldSkipReply(mPlayer)) { continue; }
-            if (IsRonnieOptionBlocked(reply))
+            int original=ReplyMap[visible];
+            if(original<0)continue;
+            let reply=mCurNode.Children;
+            for(int i=0;i<original && reply!=null;i++)reply=reply.Next;
+            if(IsRonnieOptionBlocked(reply))
             {
-                for (uint line = mResponses[visible]; line < mResponses[visible + 1]; line++)
-                { mResponseLines[line] = "\c[Gray]" .. mResponseLines[line]; }
+                int end=visible+1<mResponses.Size()?mResponses[visible+1]:mResponseLines.Size();
+                for(int line=mResponses[visible];line<end;line++)
+                    mResponseLines[line]="\c[Gray]"..mResponseLines[line];
             }
-            visible++;
         }
         return result;
     }
 
     override bool MenuEvent(int mkey, bool fromcontroller)
     {
-        if (mkey == MKEY_Enter)
+        if (mkey == MKEY_Enter && !Replaying)
         {
-            int selected = GetReplyNum();
+            int selected = SelectedNativeReply();
+            if(selected<0)return Super.MenuEvent(mkey,fromcontroller);
             let reply = mCurNode.Children;
             for (int i = 0; i < selected && reply != null; i++) { reply = reply.Next; }
             if (IsRonnieOptionBlocked(reply)) { return true; }

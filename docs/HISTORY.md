@@ -1,6 +1,16 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **5.1.18** — 2026-10-10.
+Documentation version: **5.1.19** — 2026-10-10.
+
+## 5.1.19 - Hide seen NPC information (#172), 2026-10-10
+
+The author requested disappearing seen responses and a bottom Repetir diálogos
+option for all NPCs, explicitly retaining actions such as purchases, crafting,
+quest acceptance/turn-in and leaving. Implemented shared filtering, stable saved
+history and a read-only replay catalogue. Existing native reply indices and all
+405 page slots are preserved; longer lists paginate. No new narrative, reward
+or balance rules. Native evidence and fixture limits: validation_5119/RESULTS.md.
+CA172-01 remains pending. This focused patch is stacked on #164/PR171 (4248dfce).
 
 ## 5.1.18 - MAP01 gifts and Bull checkpoint (#164), 2026-10-10
 

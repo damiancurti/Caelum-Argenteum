@@ -1,0 +1,13 @@
+{
+  "checks": {
+    "native_dialogues_unchanged": true,
+    "unique_keys": true,
+    "bilingual_answers": true,
+    "all_menus_share_history": true,
+    "deterministic_catalogue": true,
+    "source_matches_native_package": true,
+    "standard_build_matches": true
+  },
+  "catalogue_entries": 48,
+  "production_sha256": "9bac7d3299c6e91807f765658df19a4edd3891351fcee79aa61ff764ee9884b2"
+}

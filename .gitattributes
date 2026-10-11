@@ -141,3 +141,6 @@
 # Preserve #164 native evidence and fixture fingerprints.
 /assets/validation_5118/* -text whitespace=cr-at-eol
 /assets/validation_5118/*.txt whitespace=-blank-at-eol,-blank-at-eof,cr-at-eol
+
+/assets/validation_5119/* -text whitespace=cr-at-eol
+/assets/validation_5119/*.txt whitespace=-blank-at-eol,-blank-at-eof,cr-at-eol
