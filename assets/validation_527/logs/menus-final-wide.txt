@@ -1,0 +1,360 @@
+Log started: 2026-10-11 13:48:42
+GZDoom version g4.14.2
+D_DoomInit: Static RNGseed 184 set.
+W_Init: Init WADfiles.
+adding C:/Program Files (x86)/GZDoom/gzdoom.pk3, 692 lumps
+adding C:/Program Files (x86)/GZDoom/game_support.pk3, 3308 lumps
+adding C:/Program Files (x86)/Steam/steamapps/common/ultimate doom/base/doom2/DOOM2.WAD, 2919 lumps
+adding C:/Program Files (x86)/Steam/steamapps/common/Ultimate Doom/rerelease/id24res.wad, 530 lumps
+adding C:/Program Files (x86)/GZDoom/game_widescreen_gfx.pk3, 214 lumps
+adding C:/GZDooMProjects/CaelumArgenteum/build/issue189/production.pk3, 6345 lumps
+adding C:/GZDooMProjects/CaelumArgenteum/build/issue189/native.pk3, 4 lumps
+S_Init: Setting up sound.
+I_InitSound: Initializing OpenAL
+  Opened device OpenAL Soft on G27F (NVIDIA High Definition Audio)
+  EFX enabled
+I_InitInput
+I_StartupMouse
+I_StartupKeyboard
+I_StartupXInput
+I_StartupRawPS2
+I_StartupDirectInputJoystick
+Vulkan device: NVIDIA GeForce RTX 3070 Ti
+Vulkan device type: discrete gpu
+Vulkan version: 1.4.303 (api) 576.352.0 (driver)
+[Vulkan capability list omitted; original-byte hash retained.]
+Max. texture size: 32768
+Max. uniform buffer range: 65536
+Min. uniform buffer offset alignment: 64
+Resolution: 1924 x 1061
+I_Init: Setting up machine state.
+CPU speed: 3400 MHz
+CPU Vendor ID: AuthenticAMD
+  Name: AMD Ryzen 9 5950X 16-Core Processor
+  Family 25 (25), Model 33, Stepping 0
+  Features: SSE2 SSE3 SSSE3 SSE4.1 SSE4.2 AVX AVX2 F16C FMA3 BMI1 BMI2 HyperThreading
+V_Init: allocate screen.
+ST_Init: Init startup screen.
+Checking cmd-line parameters...
+S_InitData: Load sound definitions.
+G_ParseMapInfo: Load map definitions.
+Texman.Init: Init texture manager.
+ParseTeamInfo: Load team definitions.
+LoadActors: Load actor definitions.
+script parsing took 1102.84 ms
+R_Init: Init Doom refresh subsystem.
+DecalLibrary: Load decals.
+M_Init: Init menus.
+P_Init: Init Playloop state.
+ParseSBarInfo: Loading custom status bar definition.
+D_CheckNetGame: Checking network game status.
+player 1 of 1 (1 nodes)
+
+----------------------------------------
+
+MAP01 - The Mansion
+
+[Caelum] Inicio por comando directo: perfil de prueba seguro aplicado.
+[Caelum] Character creation values loaded. Attribute total: 150.00
+CA189 PASS real workshop opens
+CA189 READY creation=1
+CA189 PASS native owner context 1
+CA189 PASS live menu uses native OnNoPause
+CA189 PASS legacy raw GUI capture disabled
+CA189 PASS native hit geometry context 1 id 1000
+CA189 PASS native hit geometry context 1 id 1001
+CA189 PASS native hit geometry context 1 id 1002
+CA189 PASS native hit geometry context 1 id 1003
+CA189 PASS native hit geometry context 1 id 1004
+CA189 PASS native hit geometry context 1 id 1005
+CA189 PASS native hit geometry context 1 id 1006
+CA189 PASS native hit geometry context 1 id 1
+CA189 PASS native hit geometry context 1 id 2
+CA189 PASS native hit geometry context 1 id 3
+CA189 PASS native hit geometry context 1 id 4
+CA189 PASS native hit geometry context 1 id 5
+CA189 PASS native hit geometry context 1 id 6
+CA189 PASS native hit geometry context 1 id 2000
+CA189 PASS native hit geometry context 1 id 2001
+CA189 PASS native hit geometry context 1 id 2002
+CA189 PASS native hit geometry context 1 id 2003
+CA189 PASS native hit geometry context 1 id 2004
+CA189 PASS native hit geometry context 1 id 2005
+CA189 PASS native hit geometry context 1 id 2006
+CA189 PASS native hit geometry context 1 id 2007
+CA189 PASS native hit geometry context 1 id 2008
+CA189 PASS native hit geometry context 1 id 2009
+CA189 PASS native hit geometry context 1 id 3000
+CA189 PASS native hit geometry context 1 id 3001
+CA189 PASS native hit geometry context 1 id 3002
+CA189 PASS native hit geometry context 1 id 3003
+CA189 PASS native hit geometry context 1 id 3004
+CA189 PASS native hit geometry context 1 id 3005
+CA189 PASS world advances behind live native menu
+Captured ca189-journal.png
+CA189 PASS native click owner exists
+CA189 PASS native control 1001 exists
+CA189 PASS native click releases armed target
+CA189 PASS native owner context 2
+CA189 PASS live menu uses native OnNoPause
+CA189 PASS legacy raw GUI capture disabled
+CA189 PASS native hit geometry context 2 id 1000
+CA189 PASS native hit geometry context 2 id 1001
+CA189 PASS native hit geometry context 2 id 1002
+CA189 PASS native hit geometry context 2 id 1003
+CA189 PASS native hit geometry context 2 id 1004
+CA189 PASS native hit geometry context 2 id 1005
+CA189 PASS native hit geometry context 2 id 1006
+CA189 PASS native hit geometry context 2 id 1
+CA189 PASS native hit geometry context 2 id 2
+CA189 PASS native hit geometry context 2 id 3
+Captured ca189-page1.png
+CA189 PASS native click owner exists
+CA189 PASS native control 1002 exists
+CA189 PASS native click releases armed target
+CA189 PASS native owner context 3
+CA189 PASS live menu uses native OnNoPause
+CA189 PASS legacy raw GUI capture disabled
+CA189 PASS native hit geometry context 3 id 1000
+CA189 PASS native hit geometry context 3 id 1001
+CA189 PASS native hit geometry context 3 id 1002
+CA189 PASS native hit geometry context 3 id 1003
+CA189 PASS native hit geometry context 3 id 1004
+CA189 PASS native hit geometry context 3 id 1005
+CA189 PASS native hit geometry context 3 id 1006
+CA189 PASS native hit geometry context 3 id 1
+CA189 PASS native hit geometry context 3 id 2
+CA189 PASS native hit geometry context 3 id 3
+CA189 PASS native hit geometry context 3 id 5
+CA189 PASS native hit geometry context 3 id 6
+CA189 PASS native hit geometry context 3 id 4000
+Captured ca189-page2.png
+CA189 PASS native click owner exists
+CA189 PASS native control 1003 exists
+CA189 PASS native click releases armed target
+CA189 PASS native owner context 4
+CA189 PASS live menu uses native OnNoPause
+CA189 PASS legacy raw GUI capture disabled
+CA189 PASS native hit geometry context 4 id 1000
+CA189 PASS native hit geometry context 4 id 1001
+CA189 PASS native hit geometry context 4 id 1002
+CA189 PASS native hit geometry context 4 id 1003
+CA189 PASS native hit geometry context 4 id 1004
+CA189 PASS native hit geometry context 4 id 1005
+CA189 PASS native hit geometry context 4 id 1006
+Captured ca189-page3.png
+CA189 PASS native click owner exists
+CA189 PASS native control 1004 exists
+CA189 PASS native click releases armed target
+CA189 PASS native owner context 5
+CA189 PASS live menu uses native OnNoPause
+CA189 PASS legacy raw GUI capture disabled
+CA189 PASS native hit geometry context 5 id 1000
+CA189 PASS native hit geometry context 5 id 1001
+CA189 PASS native hit geometry context 5 id 1002
+CA189 PASS native hit geometry context 5 id 1003
+CA189 PASS native hit geometry context 5 id 1004
+CA189 PASS native hit geometry context 5 id 1005
+CA189 PASS native hit geometry context 5 id 1006
+CA189 PASS native hit geometry context 5 id 1
+CA189 PASS native hit geometry context 5 id 2
+CA189 PASS native hit geometry context 5 id 3
+CA189 PASS native hit geometry context 5 id 4
+CA189 PASS native hit geometry context 5 id 5
+CA189 PASS native hit geometry context 5 id 6
+CA189 PASS native hit geometry context 5 id 7
+CA189 PASS native hit geometry context 5 id 4002
+Captured ca189-page4.png
+CA189 PASS abandon press latches
+CA189 PASS repeated keydown retains latch
+CA189 PASS real release clears latch
+CA189 PASS GUI letter resolves native bound key
+CA189 PASS native click owner exists
+CA189 PASS native control 1005 exists
+CA189 PASS native click releases armed target
+CA189 PASS native owner context 6
+CA189 PASS live menu uses native OnNoPause
+CA189 PASS legacy raw GUI capture disabled
+CA189 PASS native hit geometry context 6 id 1000
+CA189 PASS native hit geometry context 6 id 1001
+CA189 PASS native hit geometry context 6 id 1002
+CA189 PASS native hit geometry context 6 id 1003
+CA189 PASS native hit geometry context 6 id 1004
+CA189 PASS native hit geometry context 6 id 1005
+CA189 PASS native hit geometry context 6 id 1006
+CA189 PASS native hit geometry context 6 id 1
+CA189 PASS native hit geometry context 6 id 2
+CA189 PASS native hit geometry context 6 id 3
+Captured ca189-page5.png
+CA189 PASS native click owner exists
+CA189 PASS native control 1006 exists
+CA189 PASS native click releases armed target
+CA189 PASS native owner context 7
+CA189 PASS live menu uses native OnNoPause
+CA189 PASS legacy raw GUI capture disabled
+CA189 PASS native hit geometry context 7 id 1000
+CA189 PASS native hit geometry context 7 id 1001
+CA189 PASS native hit geometry context 7 id 1002
+CA189 PASS native hit geometry context 7 id 1003
+CA189 PASS native hit geometry context 7 id 1004
+CA189 PASS native hit geometry context 7 id 1005
+CA189 PASS native hit geometry context 7 id 1006
+CA189 PASS native hit geometry context 7 id 1
+CA189 PASS native hit geometry context 7 id 2
+CA189 PASS native hit geometry context 7 id 3
+CA189 PASS native hit geometry context 7 id 4
+CA189 PASS native hit geometry context 7 id 5
+CA189 PASS native hit geometry context 7 id 6
+CA189 PASS native hit geometry context 7 id 4001
+Captured ca189-page6.png
+CA189 PASS native owner context 104
+CA189 PASS live menu uses native OnNoPause
+CA189 PASS legacy raw GUI capture disabled
+CA189 PASS native hit geometry context 104 id 1
+CA189 PASS native hit geometry context 104 id 2
+CA189 PASS native hit geometry context 104 id 3
+CA189 PASS native hit geometry context 104 id 4
+CA189 PASS native hit geometry context 104 id 5
+CA189 PASS native hit geometry context 104 id 6
+CA189 PASS native hit geometry context 104 id 6000
+CA189 PASS native hit geometry context 104 id 6001
+CA189 PASS native hit geometry context 104 id 6002
+CA189 PASS native hit geometry context 104 id 6003
+CA189 PASS native hit geometry context 104 id 6004
+CA189 PASS native hit geometry context 104 id 6005
+CA189 PASS native hit geometry context 104 id 6006
+CA189 PASS native hit geometry context 104 id 6007
+CA189 PASS native hit geometry context 104 id 6008
+CA189 PASS native hit geometry context 104 id 6009
+CA189 PASS native hit geometry context 104 id 6010
+CA189 PASS native hit geometry context 104 id 6011
+CA189 PASS native hit geometry context 104 id 6012
+CA189 PASS native hit geometry context 104 id 6013
+CA189 PASS native hit geometry context 104 id 6014
+CA189 PASS native hit geometry context 104 id 6015
+CA189 PASS native hit geometry context 104 id 6016
+CA189 PASS native hit geometry context 104 id 6017
+CA189 PASS native hit geometry context 104 id 6018
+CA189 PASS native hit geometry context 104 id 6019
+CA189 PASS native hit geometry context 104 id 6020
+CA189 PASS native hit geometry context 104 id 6021
+CA189 PASS native hit geometry context 104 id 6022
+CA189 PASS native hit geometry context 104 id 6023
+CA189 PASS native hit geometry context 104 id 6024
+CA189 PASS native hit geometry context 104 id 6025
+CA189 PASS native hit geometry context 104 id 6026
+CA189 PASS native hit geometry context 104 id 6027
+CA189 PASS native hit geometry context 104 id 6028
+CA189 PASS native hit geometry context 104 id 6029
+CA189 PASS world advances behind live native menu
+Captured ca189-panel11.png
+CA189 PASS native owner context 105
+CA189 PASS live menu uses native OnNoPause
+CA189 PASS legacy raw GUI capture disabled
+CA189 PASS native hit geometry context 105 id 1
+CA189 PASS native hit geometry context 105 id 2
+CA189 PASS native hit geometry context 105 id 3
+CA189 PASS native hit geometry context 105 id 4
+CA189 PASS native hit geometry context 105 id 5
+CA189 PASS native hit geometry context 105 id 6
+CA189 PASS native hit geometry context 105 id 7
+CA189 PASS native hit geometry context 105 id 8
+CA189 PASS native hit geometry context 105 id 9
+CA189 PASS native hit geometry context 105 id 10
+CA189 PASS native hit geometry context 105 id 11
+CA189 PASS native hit geometry context 105 id 12
+CA189 PASS native hit geometry context 105 id 13
+CA189 PASS native hit geometry context 105 id 14
+CA189 PASS world advances behind live native menu
+Captured ca189-panel12.png
+CA189 PASS real chest inspection opens
+CA189 PASS native owner context 106
+CA189 PASS live menu uses native OnNoPause
+CA189 PASS legacy raw GUI capture disabled
+CA189 PASS native hit geometry context 106 id 1
+CA189 PASS native hit geometry context 106 id 2
+CA189 PASS native hit geometry context 106 id 3
+CA189 PASS world advances behind live native menu
+Captured ca189-panel13.png
+CA189 PASS real chair starts native rest and camera
+CA189 PASS native owner context 102
+CA189 PASS live menu uses native OnNoPause
+CA189 PASS legacy raw GUI capture disabled
+CA189 PASS native hit geometry context 102 id 1
+CA189 PASS native hit geometry context 102 id 2
+CA189 PASS native hit geometry context 102 id 3
+CA189 PASS native hit geometry context 102 id 4
+CA189 PASS native hit geometry context 102 id 5
+CA189 PASS native hit geometry context 102 id 6
+CA189 PASS world advances behind live native menu
+Captured ca189-panel14.png
+CA189 PASS real merchant session opens
+CA189 PASS native owner context 103
+CA189 PASS live menu uses native OnNoPause
+CA189 PASS legacy raw GUI capture disabled
+CA189 PASS native hit geometry context 103 id 1
+CA189 PASS native hit geometry context 103 id 2
+CA189 PASS native hit geometry context 103 id 3
+CA189 PASS native hit geometry context 103 id 4
+CA189 PASS native hit geometry context 103 id 5
+CA189 PASS native hit geometry context 103 id 6
+CA189 PASS native hit geometry context 103 id 7
+CA189 PASS native hit geometry context 103 id 5000
+CA189 PASS native hit geometry context 103 id 5001
+CA189 PASS native hit geometry context 103 id 5002
+CA189 PASS native hit geometry context 103 id 5003
+CA189 PASS native hit geometry context 103 id 5004
+CA189 PASS world advances behind live native menu
+Captured ca189-panel15.png
+CA189 PASS native owner context 101
+CA189 PASS live menu uses native OnNoPause
+CA189 PASS legacy raw GUI capture disabled
+CA189 PASS native hit geometry context 101 id 1
+CA189 PASS native hit geometry context 101 id 2
+CA189 PASS world advances behind live native menu
+Captured ca189-panel16.png
+CA189 PASS native owner context 107
+CA189 PASS live menu uses native OnNoPause
+CA189 PASS legacy raw GUI capture disabled
+CA189 PASS native hit geometry context 107 id 1
+CA189 PASS native hit geometry context 107 id 2
+CA189 PASS native hit geometry context 107 id 3
+CA189 PASS native hit geometry context 107 id 4
+CA189 PASS world advances behind live native menu
+Captured ca189-panel17.png
+CA189 PASS native key owner exists
+CA189 PASS nested engine pause stops simulation
+CA189 PASS native owner context 1
+CA189 PASS live menu uses native OnNoPause
+CA189 PASS legacy raw GUI capture disabled
+CA189 PASS native hit geometry context 1 id 1000
+CA189 PASS native hit geometry context 1 id 1001
+CA189 PASS native hit geometry context 1 id 1002
+CA189 PASS native hit geometry context 1 id 1003
+CA189 PASS native hit geometry context 1 id 1004
+CA189 PASS native hit geometry context 1 id 1005
+CA189 PASS native hit geometry context 1 id 1006
+CA189 PASS native hit geometry context 1 id 1
+CA189 PASS native hit geometry context 1 id 2
+CA189 PASS native hit geometry context 1 id 3
+CA189 PASS native hit geometry context 1 id 4
+CA189 PASS native hit geometry context 1 id 5
+CA189 PASS native hit geometry context 1 id 6
+CA189 PASS native hit geometry context 1 id 2000
+CA189 PASS native hit geometry context 1 id 2001
+CA189 PASS native hit geometry context 1 id 2002
+CA189 PASS native hit geometry context 1 id 2003
+CA189 PASS native hit geometry context 1 id 2004
+CA189 PASS native hit geometry context 1 id 2005
+CA189 PASS native hit geometry context 1 id 2006
+CA189 PASS native hit geometry context 1 id 2007
+CA189 PASS native hit geometry context 1 id 2008
+CA189 PASS native hit geometry context 1 id 2009
+CA189 PASS native hit geometry context 1 id 3000
+CA189 PASS native hit geometry context 1 id 3001
+CA189 PASS native hit geometry context 1 id 3002
+CA189 PASS native hit geometry context 1 id 3003
+CA189 PASS native hit geometry context 1 id 3004
+CA189 PASS native hit geometry context 1 id 3005
+CA189 PASS world advances behind live native menu
+CA189 DONE failures=0

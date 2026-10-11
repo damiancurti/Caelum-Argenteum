@@ -1,6 +1,33 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **5.2.6** — 2026-10-11.
+Documentation version: **5.2.7** — 2026-10-11.
+
+## 5.2.7 - Native menu migration (#189), 2026-10-11
+
+The author requested migrating all interactive overlays into native menus,
+preserving images, adding NPC dialogue clicks and keeping NPC dialogue live.
+The author explicitly retained the existing card-game pause and selected
+right-button drag for the rest camera, leaving left click for controls.
+Inspection established that NPC dialogue was already unpaused; the patch
+preserves and verifies that behavior rather than claiming a new pause removal.
+
+Implemented shared native ownership, existing-key action adapters, clickable
+calendar/inventory/merchant regions and visible controls. The native creator
+now supports mouse navigation/allocation. NPC clicks reuse native wrapped reply
+bounds and existing history/condition dispatch. Static flags and pointer state
+remain transient. No save data schema or gameplay balance is changed.
+
+Review caught held-key latch resets, GUI letter scan mapping, redundant creator
+allocation resets and footer overlap. Corrected before delivery. Native runs
+exercise all screen contexts, crafting/card regression, rest orbit limits,
+NPC reply/history clicks, creator controls, nested pause and save/load. Physical
+Windows input exercises Journal/calendar/pause and Palomo replies/history.
+The prior 5.2.6 save also loads with native ownership restored. Final review
+corrected held turn input during journey confirmation and protected rest from
+the opening Use key's repeat; a directed native run verifies both cases.
+Full reproducible evidence and qualifications: assets/validation_527/RESULTS.md.
+CA189-01 is pending; CA184-01 remains outstanding. Agent checks are not author
+acceptance and do not authorize merging these PRs.
 
 ## 5.2.6 - Pointer interaction in card/crafting/time menus (#184), 2026-10-11
 

@@ -17,6 +17,23 @@ class CaelumDialogueHistory : StaticEventHandler
 
 class CaelumHistoryConversationMenu : ConversationMenu
 {
+    bool ReplyHeld;
+    int ArmedReply, ArmedPage, ReplyRevision;
+    override bool MouseEvent(int type,int x,int y)
+    {
+        if(demoplayback)return false;
+        Super.MouseEvent(MOUSE_Move,x,y);
+        if(type==MOUSE_Click && !ReplyHeld)
+        {ReplyHeld=true;ArmedReply=SelectedNativeReply();ArmedPage=ReplyRevision;}
+        else if(type==MOUSE_Release)
+        {
+            bool activate=ReplyHeld && ArmedReply!=-1 && ArmedReply==SelectedNativeReply() && ArmedPage==ReplyRevision;
+            ReplyHeld=false;
+            if(activate)return MenuEvent(MKEY_Enter,true);
+        }
+        return true;
+    }
+    override void OnReturn(){ReplyHeld=false;}
     Array<int> ReplyMap;
     bool Replaying;
     int PageOffset, NextOffset;
@@ -61,6 +78,7 @@ class CaelumHistoryConversationMenu : ConversationMenu
 
     override int FormatReplies(int activereply)
     {
+        ReplyHeld=false;ReplyRevision++;
         mResponses.Clear();mResponseLines.Clear();ReplyMap.Clear();
         mShowGold=false;mSelection=0;NextOffset=0;
         int eligible=0,index=0;
@@ -119,6 +137,7 @@ class CaelumHistoryConversationMenu : ConversationMenu
 
     override bool MenuEvent(int key,bool fromcontroller)
     {
+        ReplyHeld=false;
         if(demoplayback)return Super.MenuEvent(key,fromcontroller);
         if(key==MKEY_Back && Replaying)
         {Replaying=false;PageOffset=0;RestorePage();return true;}

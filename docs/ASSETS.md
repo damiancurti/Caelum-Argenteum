@@ -1,6 +1,15 @@
 # Caelum Argenteum — Audio and art
 
-Documentation version: **5.2.6** — 2026-10-11.
+Documentation version: **5.2.7** — 2026-10-11.
+
+## 5.2.7 - Existing artwork inside native menus (#189)
+
+All Journal panels, inventory icons, Tarot cards, dialogue portraits, native
+cursor and existing fonts are retained. The migration changes input ownership
+and adds controls using existing drawing helpers; no new art or external asset
+is introduced. Development-only fixtures, logs, hashes and captures are under
+assets/validation_527, outside the runtime package. Engine/IWAD/save/PK3 fixtures
+are local dependencies and are not redistributed.
 
 ## 5.2.6 - Menu pointer evidence (#184)
 

@@ -1,0 +1,182 @@
+Log started: 2026-10-11 13:54:16
+GZDoom version g4.14.2
+D_DoomInit: Static RNGseed 184 set.
+W_Init: Init WADfiles.
+adding C:/Program Files (x86)/GZDoom/gzdoom.pk3, 692 lumps
+adding C:/Program Files (x86)/GZDoom/game_support.pk3, 3308 lumps
+adding C:/Program Files (x86)/Steam/steamapps/common/ultimate doom/base/doom2/DOOM2.WAD, 2919 lumps
+adding C:/Program Files (x86)/Steam/steamapps/common/Ultimate Doom/rerelease/id24res.wad, 530 lumps
+adding C:/Program Files (x86)/GZDoom/game_widescreen_gfx.pk3, 214 lumps
+adding C:/GZDooMProjects/CaelumArgenteum/build/issue189/production.pk3, 6345 lumps
+adding C:/GZDooMProjects/CaelumArgenteum/build/issue189/native.pk3, 4 lumps
+S_Init: Setting up sound.
+I_InitSound: Initializing OpenAL
+  Opened device OpenAL Soft on G27F (NVIDIA High Definition Audio)
+  EFX enabled
+I_InitInput
+I_StartupMouse
+I_StartupKeyboard
+I_StartupXInput
+I_StartupRawPS2
+I_StartupDirectInputJoystick
+Vulkan device: NVIDIA GeForce RTX 3070 Ti
+Vulkan device type: discrete gpu
+Vulkan version: 1.4.303 (api) 576.352.0 (driver)
+[Vulkan capability list omitted; original-byte hash retained.]
+Max. texture size: 32768
+Max. uniform buffer range: 65536
+Min. uniform buffer offset alignment: 64
+Resolution: 1280 x 720
+I_Init: Setting up machine state.
+CPU speed: 3400 MHz
+CPU Vendor ID: AuthenticAMD
+  Name: AMD Ryzen 9 5950X 16-Core Processor
+  Family 25 (25), Model 33, Stepping 0
+  Features: SSE2 SSE3 SSSE3 SSE4.1 SSE4.2 AVX AVX2 F16C FMA3 BMI1 BMI2 HyperThreading
+V_Init: allocate screen.
+ST_Init: Init startup screen.
+Checking cmd-line parameters...
+S_InitData: Load sound definitions.
+G_ParseMapInfo: Load map definitions.
+Texman.Init: Init texture manager.
+ParseTeamInfo: Load team definitions.
+LoadActors: Load actor definitions.
+script parsing took 1143.68 ms
+R_Init: Init Doom refresh subsystem.
+DecalLibrary: Load decals.
+M_Init: Init menus.
+P_Init: Init Playloop state.
+ParseSBarInfo: Loading custom status bar definition.
+D_CheckNetGame: Checking network game status.
+player 1 of 1 (1 nodes)
+
+----------------------------------------
+
+MAP01 - The Mansion
+
+[Caelum] Inicio por comando directo: perfil de prueba seguro aplicado.
+[Caelum] Character creation values loaded. Attribute total: 150.00
+CA189 PASS real workshop opens
+CA189 READY creation=1
+CA189 PASS orphan opening release ignored
+CA189 PASS one activation per press/release
+CA189 PASS stale revision rejects click
+CA189 PASS dragging out cancels action
+CA189 PASS disabled controls excluded from hits
+CA189 PASS craft hit projection 1 at 1280x720
+CA189 PASS craft hit projection 2 at 1280x720
+CA189 PASS craft hit projection 3 at 1280x720
+CA189 PASS craft hit projection 10 at 1280x720
+CA189 PASS craft hit projection 232 at 1280x720
+CA189 PASS craft hit projection 233 at 1280x720
+CA189 PASS craft hit projection 234 at 1280x720
+CA189 PASS craft hit projection 235 at 1280x720
+CA189 PASS craft hit projection 15 at 1280x720
+CA189 PASS craft hit projection 16 at 1280x720
+CA189 PASS craft hit projection 14 at 1280x720
+CA189 PASS craft hit projection 20 at 1280x720
+CA189 PASS craft hit projection 21 at 1280x720
+CA189 PASS craft hit projection 17 at 1280x720
+CA189 PASS craft hit projection 22 at 1280x720
+CA189 PASS craft hit projection 23 at 1280x720
+CA189 PASS craft hit projection 19 at 1280x720
+CA189 PASS switching panels discards held click and hover
+CA189 PASS crafting does not pause native world
+CA189 UI menu=3 time=149 angle=0.000 pitch=0.000 input=0 mouse=0 craft=1 task=0 recipe=135 mode=0 serial=2 skip=0 active=0 field=-1
+CA189 RECIPE 0 kind=0 stock=20000/1800 box=80/100 ready=1
+CA189 PASS craft control 12 enabled
+CA189 PASS craft click releases capture
+CA189 PASS craft control 14 enabled
+CA189 PASS craft click releases capture
+CA189 PASS craft control 17 enabled
+CA189 PASS craft click releases capture
+CA189 PASS craft control 18 enabled
+CA189 PASS craft click releases capture
+CA189 PASS mouse confirmation starts native task
+CA189 PASS craft control 17 enabled
+CA189 PASS craft click releases capture
+CA189 PASS mouse cancellation stops native task
+CA189 PASS clicked operation starts real native task
+CA189 PASS craft control 17 enabled
+CA189 PASS craft click releases capture
+CA189 PASS clicked operation starts real native task
+CA189 PASS craft control 3 enabled
+CA189 PASS craft click releases capture
+CA189 PASS craft control 17 enabled
+CA189 PASS craft click releases capture
+CA189 PASS clicked operation starts real native task
+CA189 RECIPE 65 kind=6 stock=20000/4 box=80/100 ready=0
+CA189 PASS craft control 13 enabled
+CA189 PASS craft click releases capture
+CA189 PASS craft control 17 enabled
+CA189 PASS craft click releases capture
+CA189 PASS clicked operation starts real native task
+CA189 RECIPE 79 kind=7 stock=20000/40 box=80/100 ready=0
+CA189 PASS craft control 13 enabled
+CA189 PASS craft click releases capture
+CA189 PASS craft control 17 enabled
+CA189 PASS craft click releases capture
+CA189 PASS clicked operation starts real native task
+CA189 PASS craft control 22 enabled
+CA189 PASS craft click releases capture
+CA189 PASS time skip control 2 enabled
+CA189 PASS time skip input preserves live simulation
+CA189 PASS time skip opens independently and remains live
+CA189 PASS time skip control 5 enabled
+CA189 PASS time skip input preserves live simulation
+CA189 PASS time skip control 3 enabled
+CA189 PASS time skip input preserves live simulation
+CA189 PASS time skip control 4 enabled
+CA189 PASS time skip input preserves live simulation
+CA189 PASS time skip control 7 enabled
+CA189 PASS time skip input preserves live simulation
+CA189 PASS time skip control 8 enabled
+CA189 PASS time skip input preserves live simulation
+CA189 PASS craft control 19 enabled
+CA189 PASS craft click releases capture
+CA189 PASS time skip cancellation closes result
+CA189 PASS Truco native match opens
+CA189 PASS expected native card menu owns input
+CA189 PASS card opening release cannot begin match
+CA189 PASS expected native card menu owns input
+CA189 PASS card operation 0 present
+CA189 PASS expected native card menu owns input
+CA189 PASS card click begins match
+CA189 PASS card UI preserves native pause
+CA189 PASS card operation 1 present
+CA189 PASS expected native card menu owns input
+CA189 PASS card operation -1 present
+CA189 PASS expected native card menu owns input
+CA189 PASS rules open with mouse
+CA189 PASS card operation -1 present
+CA189 PASS expected native card menu owns input
+CA189 PASS card operation -3 present
+CA189 PASS expected native card menu owns input
+CA189 PASS forfeit requires confirmation
+CA189 PASS card operation -4 present
+CA189 PASS expected native card menu owns input
+CA189 PASS return cancels forfeit
+Captured ca189-cards-0.png
+CA189 PASS Trucazo native match opens
+CA189 PASS expected native card menu owns input
+CA189 PASS card opening release cannot begin match
+CA189 PASS expected native card menu owns input
+CA189 PASS card operation 0 present
+CA189 PASS expected native card menu owns input
+CA189 PASS card click begins match
+CA189 PASS card UI preserves native pause
+CA189 PASS card operation 1 present
+CA189 PASS expected native card menu owns input
+CA189 PASS card operation -1 present
+CA189 PASS expected native card menu owns input
+CA189 PASS rules open with mouse
+CA189 PASS card operation -1 present
+CA189 PASS expected native card menu owns input
+CA189 PASS card operation -3 present
+CA189 PASS expected native card menu owns input
+CA189 PASS forfeit requires confirmation
+CA189 PASS card operation -4 present
+CA189 PASS expected native card menu owns input
+CA189 PASS return cancels forfeit
+Captured ca189-cards-1.png
+CA189 DONE failures=0

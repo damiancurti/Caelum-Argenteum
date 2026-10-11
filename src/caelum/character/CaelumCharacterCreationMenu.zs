@@ -4,6 +4,7 @@
 // único episodio/dificultad tras la introducción manual de #103.
 class CaelumCharacterCreationMenu : ListMenu
 {
+    CaelumMenuPointer Pointer;
     int Page;
     int Race;
     int FirstClass;
@@ -22,6 +23,7 @@ class CaelumCharacterCreationMenu : ListMenu
     override void Init(Menu parent, ListMenuDescriptor desc)
     {
         Super.Init(parent, desc);
+        Pointer=new("CaelumMenuPointer");
         Page = CaelumConstants.CREATION_PAGE_RACE;
         Race = CaelumConstants.RACE_HUMAN;
         FirstClass = CaelumConstants.CLASS_WARRIOR;
@@ -461,6 +463,61 @@ class CaelumCharacterCreationMenu : ListMenu
         Center(TextFont, Font.CR_WHITE, 372, StringTable.Localize(HeightKey(), false));
     }
 
+    void PointerLayout(bool draw)
+    {
+        Pointer.Clear();
+        bool allocation=Page==CaelumConstants.CREATION_PAGE_LAYERS || Page==CaelumConstants.CREATION_PAGE_ATTRIBUTES;
+        int count=Page==CaelumConstants.CREATION_PAGE_ATTRIBUTES?12:Page==CaelumConstants.CREATION_PAGE_LAYERS?4:
+            Page==CaelumConstants.CREATION_PAGE_RACE?4:Page==CaelumConstants.CREATION_PAGE_FIRST_CLASS?4:Page==CaelumConstants.CREATION_PAGE_SECOND_CLASS?4:0;
+        for(int i=0;i<count;i++)
+        {
+            double y=Page==CaelumConstants.CREATION_PAGE_ATTRIBUTES?124+i*27:146+i*58;
+            double height=Page==CaelumConstants.CREATION_PAGE_ATTRIBUTES?25:48;
+            Pointer.Add(100+i,PanelLeft()+16,y,LeftWidth(),height);
+            if(draw && Pointer.Positioned && CaelumMenuPointer.Inside(Pointer.Position,(PanelLeft()+16,y),(LeftWidth(),height)))
+                CaelumNarrativeArtwork.Rect(PanelLeft()+16,y,LeftWidth(),height,0xA8B6C8,0.12);
+        }
+        double left=(CaelumNarrativeArtwork.CanvasWidth()-760)/2;
+        for(int i=0;i<4;i++)
+        {
+            double x=left+i*194;
+            Pointer.Add(i+1,x,548,178,36);
+            if(!draw)continue;
+            bool hover=Pointer.Positioned && CaelumMenuPointer.Inside(Pointer.Position,(x,548),(178,36));
+            CaelumNarrativeArtwork.Rect(x,548,178,36,hover?0x806632:0x152029,0.9);
+            String key=i==0?"CA_UI_BACK":i==1?allocation?"CA_UI_MINUS":"CA_UI_PREVIOUS":i==2?allocation?"CA_UI_PLUS":"CA_UI_NEXT":"CA_UI_CONFIRM";
+            Line(SmallTextFont,hover?Font.CR_GOLD:Font.CR_WHITE,x+12,558,StringTable.Localize(key,false),154,1.4);
+        }
+    }
+    override void OnReturn(){Pointer.Reset();}
+    override bool OnUIEvent(UIEvent e)
+    {
+        if(e.Type==UIEvent.Type_WheelUp || e.Type==UIEvent.Type_WheelDown)
+            return MenuEvent(e.Type==UIEvent.Type_WheelUp?MKEY_Up:MKEY_Down,false);
+        return Super.OnUIEvent(e);
+    }
+    override bool MouseEvent(int type,int x,int y)
+    {
+        PointerLayout(false);Pointer.Move((x*600.0/Screen.GetHeight(),y*600.0/Screen.GetHeight()));
+        if(type==MOUSE_Click)Pointer.Press(Page);
+        else if(type==MOUSE_Release)
+        {
+            int id=Pointer.Release(Page);
+            if(id>=100)
+            {
+                int value=id-100;
+                if(Page==CaelumConstants.CREATION_PAGE_LAYERS)SelectedLayer=value;
+                else if(Page==CaelumConstants.CREATION_PAGE_ATTRIBUTES)SelectedAttribute=value;
+                else
+                {
+                    int current=Page==CaelumConstants.CREATION_PAGE_RACE?Race:Page==CaelumConstants.CREATION_PAGE_FIRST_CLASS?FirstClass:SecondClass;
+                    if(value!=current)ChangeChoice(value-current);
+                }
+            }
+            else if(id>0)MenuEvent(id==1?MKEY_Back:id==2?MKEY_Left:id==3?MKEY_Right:MKEY_Enter,false);
+        }
+        return true;
+    }
     override void Drawer()
     {
         screen.Dim(0, 0.90, 0, 0, screen.GetWidth(), screen.GetHeight());
@@ -482,7 +539,7 @@ class CaelumCharacterCreationMenu : ListMenu
             ? "CA_CREATION_SUMMARY_NAVIGATION_HELP"
             : (Page >= CaelumConstants.CREATION_PAGE_LAYERS
                 ? "CA_CREATION_ALLOCATION_NAVIGATION_HELP" : "CA_CREATION_NAVIGATION_HELP");
-        Center(SmallTextFont, Font.CR_GREEN, 560, StringTable.Localize(navigation, false), 1.4);
+        PointerLayout(true);
     }
 
     void SetDraft(Name name, int value)
@@ -529,6 +586,7 @@ class CaelumCharacterCreationMenu : ListMenu
 
     override bool MenuEvent(int mkey, bool fromcontroller)
     {
+        Pointer.Reset();
         if (mkey == MKEY_Up || mkey == MKEY_Down)
         {
             int direction = mkey == MKEY_Up ? -1 : 1;

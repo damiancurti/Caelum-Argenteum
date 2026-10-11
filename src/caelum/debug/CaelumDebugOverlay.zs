@@ -1832,21 +1832,7 @@ class CaelumDebugOverlay : EventHandler
         DrawCenteredText(loadBreakdown, 224.0, Font.CR_GOLD);
         DrawCenteredText(totals, 242.0, Font.CR_CYAN);
         DrawCenteredText(actionResult, 260.0, actionColor);
-        DrawCenteredText(
-            StringTable.Localize("CA_EQUIPMENT_NAVIGATION_HELP_1", false),
-            280.0,
-            Font.CR_GRAY
-        );
-        DrawCenteredText(
-            StringTable.Localize("CA_EQUIPMENT_NAVIGATION_HELP_2", false),
-            296.0,
-            Font.CR_GRAY
-        );
-        DrawCenteredText(
-            StringTable.Localize("CA_EQUIPMENT_NAVIGATION_HELP_3", false),
-            312.0,
-            Font.CR_GRAY
-        );
+
     }
 
     ui void DrawCraftingMenu(CaelumPlayer localPlayer)
@@ -2297,6 +2283,12 @@ class CaelumDebugOverlay : EventHandler
     // Escape, la consola y el boton Start conservan su comportamiento global.
     override bool InputProcess(InputEvent e)
     {
+        if(menuactive!=0)return false;
+        return PanelKey(e.Type,e.KeyScan,e.KeyChar,e.KeyString);
+    }
+
+    ui bool PanelKey(int type,int scan,int character,String keyString)
+    {
         CaelumPlayer localPlayer = CaelumPlayer(players[consoleplayer].mo);
         if (localPlayer == null
             || (!localPlayer.CreationWizardOpen
@@ -2305,24 +2297,24 @@ class CaelumDebugOverlay : EventHandler
             return false;
         }
 
-        if (menuactive != 0)
+        if (!CaelumLiveMenu.InputAllowed())
         {
             return false;
         }
 
-        if (e.Type != InputEvent.Type_KeyDown
-            && e.Type != InputEvent.Type_KeyUp)
+        if (type != InputEvent.Type_KeyDown
+            && type != InputEvent.Type_KeyUp)
         {
             return false;
         }
 
-        if (e.KeyScan == InputEvent.Key_Grave
-            || e.KeyScan == InputEvent.Key_Pad_Start)
+        if (scan == InputEvent.Key_Grave
+            || scan == InputEvent.Key_Pad_Start)
         {
             return false;
         }
 
-        if (e.Type == InputEvent.Type_KeyUp)
+        if (type == InputEvent.Type_KeyUp)
         {
             return true;
         }
@@ -2331,38 +2323,38 @@ class CaelumDebugOverlay : EventHandler
         {
             // KeyChar resulta estable para letras en GZDoom 4.14.2; KeyString
             // puede llegar vacio segun el teclado o la ruta de entrada.
-            int menuCharacter = e.KeyChar;
+            int menuCharacter = character;
             if (menuCharacter == 113 || menuCharacter == 81)
             {
                 SendNetworkEvent("ca_equipment_toggle");
             }
-            else if (e.KeyScan == InputEvent.Key_Tab
-                || e.KeyScan == InputEvent.Key_Pad_Y)
+            else if (scan == InputEvent.Key_Tab
+                || scan == InputEvent.Key_Pad_Y)
             {
                 SendNetworkEvent("ca_equipment_kind");
             }
-            else if (e.KeyScan == InputEvent.Key_RightArrow
-                || e.KeyScan == InputEvent.Key_Pad_DPad_Right)
+            else if (scan == InputEvent.Key_RightArrow
+                || scan == InputEvent.Key_Pad_DPad_Right)
             {
                 SendNetworkEvent("ca_equipment_type_next");
             }
-            else if (e.KeyScan == InputEvent.Key_LeftArrow
-                || e.KeyScan == InputEvent.Key_Pad_DPad_Left)
+            else if (scan == InputEvent.Key_LeftArrow
+                || scan == InputEvent.Key_Pad_DPad_Left)
             {
                 SendNetworkEvent("ca_equipment_type_previous");
             }
-            else if (e.KeyScan == InputEvent.Key_DownArrow
-                || e.KeyScan == InputEvent.Key_Pad_DPad_Down)
+            else if (scan == InputEvent.Key_DownArrow
+                || scan == InputEvent.Key_Pad_DPad_Down)
             {
                 SendNetworkEvent("ca_equipment_slot_next");
             }
-            else if (e.KeyScan == InputEvent.Key_UpArrow
-                || e.KeyScan == InputEvent.Key_Pad_DPad_Up)
+            else if (scan == InputEvent.Key_UpArrow
+                || scan == InputEvent.Key_Pad_DPad_Up)
             {
                 SendNetworkEvent("ca_equipment_slot_previous");
             }
-            else if (e.KeyScan == InputEvent.Key_Space
-                || e.KeyScan == InputEvent.Key_Pad_X)
+            else if (scan == InputEvent.Key_Space
+                || scan == InputEvent.Key_Pad_X)
             {
                 SendNetworkEvent("ca_equipment_tier");
             }
@@ -2370,8 +2362,8 @@ class CaelumDebugOverlay : EventHandler
             {
                 SendNetworkEvent("ca_equipment_size");
             }
-            else if (e.KeyScan == InputEvent.Key_Enter
-                || e.KeyScan == InputEvent.Key_Pad_A)
+            else if (scan == InputEvent.Key_Enter
+                || scan == InputEvent.Key_Pad_A)
             {
                 SendNetworkEvent("ca_equipment_equip");
             }
@@ -2379,8 +2371,8 @@ class CaelumDebugOverlay : EventHandler
             {
                 SendNetworkEvent("ca_equipment_equip");
             }
-            else if (e.KeyScan == InputEvent.Key_Backspace
-                || e.KeyScan == InputEvent.Key_Pad_B)
+            else if (scan == InputEvent.Key_Backspace
+                || scan == InputEvent.Key_Pad_B)
             {
                 SendNetworkEvent("ca_equipment_unequip");
             }
@@ -2408,31 +2400,31 @@ class CaelumDebugOverlay : EventHandler
             return true;
         }
 
-        if (e.KeyScan == InputEvent.Key_Escape)
+        if (scan == InputEvent.Key_Escape)
         {
             return false;
         }
 
-        if (e.KeyScan == InputEvent.Key_RightArrow
-            || e.KeyScan == InputEvent.Key_DownArrow
-            || e.KeyScan == InputEvent.Key_Pad_DPad_Right
-            || e.KeyScan == InputEvent.Key_Pad_DPad_Down)
+        if (scan == InputEvent.Key_RightArrow
+            || scan == InputEvent.Key_DownArrow
+            || scan == InputEvent.Key_Pad_DPad_Right
+            || scan == InputEvent.Key_Pad_DPad_Down)
         {
             SendNetworkEvent("ca_creation_next_choice");
         }
-        else if (e.KeyScan == InputEvent.Key_Enter
-            || e.KeyScan == InputEvent.Key_Pad_A)
+        else if (scan == InputEvent.Key_Enter
+            || scan == InputEvent.Key_Pad_A)
         {
             SendNetworkEvent("ca_creation_confirm");
         }
-        else if (e.KeyScan == InputEvent.Key_Space
-            || e.KeyScan == InputEvent.Key_Pad_X)
+        else if (scan == InputEvent.Key_Space
+            || scan == InputEvent.Key_Pad_X)
         {
             SendNetworkEvent("ca_creation_add_point");
         }
-        else if (e.KeyScan == InputEvent.Key_Backspace
-            || e.KeyScan == InputEvent.Key_LeftArrow
-            || e.KeyScan == InputEvent.Key_Pad_B)
+        else if (scan == InputEvent.Key_Backspace
+            || scan == InputEvent.Key_LeftArrow
+            || scan == InputEvent.Key_Pad_B)
         {
             SendNetworkEvent("ca_creation_back");
         }
@@ -2448,13 +2440,11 @@ class CaelumDebugOverlay : EventHandler
         // The creation wizard is independent from the optional debug panel.
         if (localPlayer != null && localPlayer.CreationWizardOpen)
         {
-            DrawCreationWizard(localPlayer);
             return;
         }
 
         if (localPlayer != null && localPlayer.EquipmentMenuOpen)
         {
-            DrawEquipmentMenu(localPlayer);
             return;
         }
 

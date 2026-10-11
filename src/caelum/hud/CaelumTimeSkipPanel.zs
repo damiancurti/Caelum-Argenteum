@@ -6,7 +6,7 @@ class CaelumTimeSkipPanel : Object
     static ui bool Key(int type,int scan,int character,String key,CaelumPlayer user)
     {
         let skip=CaelumTimeSkipState(user.FindInventory("CaelumTimeSkipState"));
-        if(skip==null || !skip.Open || menuactive!=0)return false;
+        if(skip==null || !skip.Open || !CaelumLiveMenu.InputAllowed())return false;
         if(type!=InputEvent.Type_KeyDown || scan==InputEvent.Key_Grave
             || scan==InputEvent.Key_Escape || scan==InputEvent.Key_Pad_Start)return false;
         // En la entrada nativa KeyString contiene el scan, no la letra ASCII.
@@ -39,7 +39,7 @@ class CaelumTimeSkipPanel : Object
     static ui bool Mouse(CaelumJournalOverlay view,CaelumPlayer user,UiEvent e)
     {
         let skip=CaelumTimeSkipState(user.FindInventory("CaelumTimeSkipState"));
-        if(skip==null || !skip.Open || menuactive!=0)return false;
+        if(skip==null || !skip.Open || !CaelumLiveMenu.InputAllowed())return false;
         let pointer=CaelumJournalInput.PointerFor(100);
         if(e.Type==UiEvent.Type_KeyDown || e.Type==UiEvent.Type_KeyUp)
         {
@@ -52,7 +52,7 @@ class CaelumTimeSkipPanel : Object
     static ui bool PointerInput(CaelumJournalOverlay view,CaelumPlayer user,int type,Vector2 point)
     {
         let skip=CaelumTimeSkipState(user.FindInventory("CaelumTimeSkipState"));
-        if(skip==null || !skip.Open || menuactive!=0)return false;
+        if(skip==null || !skip.Open || !CaelumLiveMenu.InputAllowed())return false;
         let pointer=CaelumJournalInput.PointerFor(100);
         pointer.Move(point);Layout(view,skip,pointer,false);
         int revision=skip.Field+(skip.Active?4:0)+(skip.ConfirmPending?8:0);

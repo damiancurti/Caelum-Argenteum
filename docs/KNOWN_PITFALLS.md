@@ -1160,6 +1160,20 @@ onto Journal navigation. Cursor capture alone does not stop an already-held
 turn command: clear cmd yaw/pitch/roll before PlayerThink for crafting/time
 skip. Native held-input and save/load regression: validation_526/RESULTS.md.
 
+Extension (#189 / 5.2.7), CODE-VERIFIED / ENGINE-VERIFIED:
+Use a native ListMenu with OnNoPause and let its Drawer reuse the existing
+640x360 presentation. Do not switch menuactive off temporarily to call old
+handlers; expose shared key/action adapters instead. Enforce OnNoPause only
+while the live menu is current, preserving nested engine pause. Reset pointer
+capture separately from keyboard hold latches. UIEvent letters can be resolved
+through native KeyBindings.NameKeys before checking user-rebound rest actions.
+GZDoom identifiers are case-insensitive: a Layout(host) parameter shadows a
+Host field; use distinct names or explicit member qualification. NPC reply
+index zero and negative history IDs are valid semantic values; pair the native
+hit result with a FormatReplies revision instead of treating zero as no target.
+Evidence: assets/validation_527/RESULTS.md; physical Journal/calendar/NPC checks
+and native held-input/load, pause, orbit, creator and card/crafting regression.
+
 ## CA-KP-036 - Stamp newly constructed equipment durability revisions
 
 Status/evidence: CODE-VERIFIED / ENGINE-VERIFIED.

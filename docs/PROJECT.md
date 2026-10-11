@@ -1,6 +1,17 @@
 # Caelum Argenteum — Project, status and roadmap
 
-Documentation version: **5.2.6** — 2026-10-11.
+Documentation version: **5.2.7** — 2026-10-11.
+
+## 5.2.7 - Native ownership for all interactive screens (#189)
+
+Journal pages, calendar, equipment, chests, merchant, journey, rest, crafting,
+time skip and the reachable legacy creator now use a shared native ListMenu.
+Artwork and gameplay handlers remain authoritative. The normal creator gains
+mouse controls; NPC replies use native wrapped hit regions with guarded release.
+NPC dialogue retains its already-live simulation. Cards and Escape/settings
+retain native pause. Rest uses right-button dragging to orbit and left clicks
+for controls. Static/native/physical evidence: assets/validation_527/RESULTS.md.
+CA184-01 and CA189-01 await author acceptance; no acceptance or merge is inferred.
 
 ## 5.2.6 - Mouse interaction in game menus (#184)
 

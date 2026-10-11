@@ -1,6 +1,16 @@
 CAELUM ARGENTEUM — STORY AND MAP01
 
-Documentation version: **5.2.6** — 2026-10-11.
+Documentation version: **5.2.7** — 2026-10-11.
+
+## 5.2.7 - Native resident interactions and live rest (#189)
+
+Residents retain every dialogue node, condition, reward and history entry.
+Clicks resolve the native wrapped response geometry and require matching release.
+Dialogue remains unpaused; Argento's Truco/Trucazo remain paused. Journal/workshop,
+merchant, chest and rest views now have native menu ownership while preserving
+existing art. Rest camera orbit requires right-button dragging; left click uses
+controls. No map geometry, narrative, gift or recipe changes belong to this patch.
+Evidence: assets/validation_527/RESULTS.md. CA189-01 awaits author acceptance.
 
 ## 5.2.6 - Resident game and workshop controls (#184)
 

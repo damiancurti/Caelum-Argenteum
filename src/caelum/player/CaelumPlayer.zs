@@ -8831,12 +8831,16 @@ class CaelumPlayer : DoomPlayer
     {
         // El cursor evita movimientos nuevos; también hay que neutralizar
         // los giros que estaban retenidos antes de abrir estos paneles.
-        if(player!=null && (CraftingMenuOpen || CaelumTimeSkipState.IsOpen(self)))
-        {player.cmd.yaw=0;player.cmd.pitch=0;player.cmd.roll=0;}
+        let journalOpen=player==null?null:CVar.GetCVar("ca_journal_open",player);
+        let preview=CaelumChestPreviewState.Get(self);
+        bool readingMenu=(journalOpen!=null && journalOpen.GetBool()) || (preview!=null && preview.IsOpen());
         let journeyPlan = CaelumJourneyPlan.Get(self);
         bool choosingJourney = journeyPlan != null && journeyPlan.Open;
         if (choosingJourney && (health <= 0 || journeyPlan.OriginMap != level.MapName))
         { CaelumJourneyPlan.Cancel(self); choosingJourney = false; }
+        if(player!=null && (readingMenu || choosingJourney || CreationWizardOpen || EquipmentMenuOpen || PalomoMerchantMenuOpen
+            || CraftingMenuOpen || CaelumTimeSkipState.IsOpen(self) || CaelumRestState.IsActive(self)))
+        {player.cmd.yaw=0;player.cmd.pitch=0;player.cmd.roll=0;}
         CaelumRestState.HandleInput(self);
         if (player != null && (player.cmd.buttons & BT_USER4) == 0) ClassSleepInputLatched = false;
         if (player != null && (player.cmd.buttons & BT_USER3) == 0) CombatTarotInputReserved = false;
@@ -8852,7 +8856,7 @@ class CaelumPlayer : DoomPlayer
                 RequestCombatChannelInput();
             if (!channelPressed) CombatChannelInputLatched = false;
         }
-        if ((CreationWizardOpen || EquipmentMenuOpen || CraftingMenuOpen
+        if ((readingMenu || CreationWizardOpen || EquipmentMenuOpen || CraftingMenuOpen
                 || choosingJourney || CaelumTimeSkipState.IsOpen(self) || PalomoMerchantMenuOpen
                 || CombatChannelModeActive || CaelumRestState.IsActive(self) || ForcedSleepTics > 0)
             && player != null)

@@ -98,3 +98,8 @@ AddOptionMenu "OtherControlsMenu"
 {
     Control "$CA_SKIP_TITLE", "ca_time_skip"
 }
+
+ListMenu "CaelumLiveMenu"
+{
+    Class "CaelumLiveMenu"
+}

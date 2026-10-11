@@ -64,28 +64,33 @@ class CaelumScheduleCalendar : Object
     }
     static ui bool Input(InputEvent e, CaelumPlayer user)
     {
+        return Key(e.Type,e.KeyScan,e.KeyChar,e.KeyString,user);
+    }
+
+    static ui bool Key(int type,int scan,int character,String keyString,CaelumPlayer user)
+    {
         if (!IsOpen()) return false;
-        if (e.KeyScan == InputEvent.Key_Escape || e.KeyScan == InputEvent.Key_Pad_Start) return false;
-        if (e.Type == InputEvent.Type_KeyUp) return !(Bindings.GetBinding(e.KeyScan) ~== "+use");
-        if (e.Type != InputEvent.Type_KeyDown) return false;
+        if (scan == InputEvent.Key_Escape || scan == InputEvent.Key_Pad_Start) return false;
+        if (type == InputEvent.Type_KeyUp) return !(Bindings.GetBinding(scan) ~== "+use");
+        if (type != InputEvent.Type_KeyDown) return false;
         bool detail = Setting("ca_calendar_detail") != 0;
-        if (e.KeyScan == InputEvent.Key_Pad_B || e.KeyChar == 113 || e.KeyChar == 81
-            || e.KeyString ~== "q" || e.KeyString ~== "f")
+        if (scan == InputEvent.Key_Pad_B || character == 113 || character == 81
+            || keyString ~== "q" || keyString ~== "f")
         {
             if (detail) Set("ca_calendar_detail", 0); else Close();
             return true;
         }
-        if (e.KeyScan == InputEvent.Key_Tab) { Close(); return false; }
+        if (scan == InputEvent.Key_Tab) { Close(); return false; }
         int day = SelectedDay(user), newDay = day;
         if (!detail)
         {
-            if (e.KeyScan == InputEvent.Key_LeftArrow || e.KeyScan == InputEvent.Key_Pad_DPad_Left) newDay--;
-            if (e.KeyScan == InputEvent.Key_RightArrow || e.KeyScan == InputEvent.Key_Pad_DPad_Right) newDay++;
-            if (e.KeyScan == InputEvent.Key_UpArrow || e.KeyScan == InputEvent.Key_Pad_DPad_Up) newDay -= 7;
-            if (e.KeyScan == InputEvent.Key_DownArrow || e.KeyScan == InputEvent.Key_Pad_DPad_Down) newDay += 7;
-            if (e.KeyScan == InputEvent.Key_PgUp || e.KeyScan == InputEvent.Key_Pad_LShoulder) newDay = ShiftMonth(day, -1);
-            if (e.KeyScan == InputEvent.Key_PgDn || e.KeyScan == InputEvent.Key_Pad_RShoulder) newDay = ShiftMonth(day, 1);
-            if (e.KeyString ~== "h" || e.KeyScan == InputEvent.Key_Home) newDay = Today(user);
+            if (scan == InputEvent.Key_LeftArrow || scan == InputEvent.Key_Pad_DPad_Left) newDay--;
+            if (scan == InputEvent.Key_RightArrow || scan == InputEvent.Key_Pad_DPad_Right) newDay++;
+            if (scan == InputEvent.Key_UpArrow || scan == InputEvent.Key_Pad_DPad_Up) newDay -= 7;
+            if (scan == InputEvent.Key_DownArrow || scan == InputEvent.Key_Pad_DPad_Down) newDay += 7;
+            if (scan == InputEvent.Key_PgUp || scan == InputEvent.Key_Pad_LShoulder) newDay = ShiftMonth(day, -1);
+            if (scan == InputEvent.Key_PgDn || scan == InputEvent.Key_Pad_RShoulder) newDay = ShiftMonth(day, 1);
+            if (keyString ~== "h" || scan == InputEvent.Key_Home) newDay = Today(user);
         }
         if (newDay != day)
         {
@@ -96,12 +101,12 @@ class CaelumScheduleCalendar : Object
         Array<CaelumScheduledEvent> entries; EntriesForDay(agenda, day, entries);
         int count = entries.Size(); if (count == 0) return true;
         int selected = Clamp(Setting("ca_calendar_event"), 0, count - 1);
-        if (e.KeyString ~== "e" || e.KeyScan == InputEvent.Key_Pad_Y) selected = (selected + 1) % count;
-        if (e.KeyString ~== "r" || e.KeyScan == InputEvent.Key_Pad_X) selected = (selected + count - 1) % count;
+        if (keyString ~== "e" || scan == InputEvent.Key_Pad_Y) selected = (selected + 1) % count;
+        if (keyString ~== "r" || scan == InputEvent.Key_Pad_X) selected = (selected + count - 1) % count;
         Set("ca_calendar_event", selected);
-        if (e.KeyScan == InputEvent.Key_Enter || e.KeyScan == InputEvent.Key_Pad_A)
+        if (scan == InputEvent.Key_Enter || scan == InputEvent.Key_Pad_A)
             Set("ca_calendar_detail", detail ? 0 : 1);
-        if (detail && (e.KeyString ~== "p" || e.KeyScan == InputEvent.Key_Pad_RTrigger))
+        if (detail && (keyString ~== "p" || scan == InputEvent.Key_Pad_RTrigger))
             EventHandler.SendNetworkEvent("ca_event_action", entries[selected].EventId);
         return true;
     }

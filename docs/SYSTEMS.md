@@ -1,6 +1,42 @@
 # Caelum Argenteum — Current systems and rules
 
-Documentation version: **5.2.6** — 2026-10-11.
+Documentation version: **5.2.7** — 2026-10-11.
+
+## Native interactive menus - 5.2.7 / #189
+
+All interactive in-game overlays are now native menus. CaelumLiveMenu owns
+Journal pages, crafting, time skip, travel confirmation, rest, merchants,
+calendar, equipment, chest inspection and the reachable legacy creator. Its
+Drawer calls the existing presentation functions, retaining frames, icons,
+portraits, cards, fonts and localized content. Passive HUD elements remain HUD.
+The old EventHandler GUI capture is disabled, including flags from saved handlers.
+
+The shared menu uses OnNoPause only while it owns input. Escape opens the native
+pause menu; returning restores the same live screen. Standard settings, character
+creation, introduction, exit and both card games keep their established pause
+policy. NPC dialogue already ran without pause; this patch explicitly preserves
+that behavior and guards native reply selection against orphan/stale releases.
+Wrapped replies, More, Repeat, history return and Ronnie's contextual blocking
+continue through the existing virtual MenuEvent and native reply mapping.
+
+Left click activates the same enabled control on release; dragging away cancels.
+Tabs, inventory categories/rows, calendar dates/entries and merchant rows are
+clickable. Visible controls expose the existing keyboard actions. Mouse wheels
+navigate lists/text/months; keyboard/controller shortcuts remain. The normal
+creator also supports row selection and allocation/navigation buttons, preserving
+edited allocations when the already-selected profile row is clicked.
+
+During rest, free cursor movement selects controls. Hold the right button and
+drag to orbit the existing camera; the left button activates controls. Drag distance is normalized
+to a full-window-width revolution, then multiplied by native X/Y mouse
+sensitivity and turn/look speed; native inversion preferences apply. Existing
+pitch limits remain -5 to 60 degrees. Movement/action keys still stand up, and rest release
+restores the original camera and furniture ownership. No balance rules change.
+
+Menu/pointer state is transient: panel changes, console, nested-menu return,
+actor/map replacement and save/load discard armed gestures. Keyboard hold latches
+are separate from pointer reset so a repeated keydown cannot confirm abandonment
+or repeat Tarot selection. Author acceptance remains in pending_test.txt.
 
 ## Mouse interaction contract - 5.2.6 / #184
 
