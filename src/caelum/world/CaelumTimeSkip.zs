@@ -299,6 +299,12 @@ class CaelumTimeSkipState : Inventory
             || (!CaelumWorldCatalogue.IsLimboMap(level.MapName) && day>CaelumCalendarRules.MAX_SERIAL))return;
         TargetDay=day;TargetTics=tics;UseTaskDefault=false;
     }
+    static void SelectField(CaelumPlayer user,int field)
+    {
+        let s=Get(user);if(s==null || field<0 || field>2)return;
+        int direction=(field-s.Field+3)%3;
+        if(direction!=0)Edit(user,direction==1?1:-1,0);
+    }
     static void Edit(CaelumPlayer user,int field,int delta)
     {
         let s=Get(user);if(s==null || !s.Open || s.Active || s.ConfirmPending)return;

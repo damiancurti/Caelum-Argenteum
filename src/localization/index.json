@@ -1,7 +1,7 @@
 {
   "schema": 1,
   "source": "LANGUAGE",
-  "sha256": "d67a5c5c0e7872c30e068bd0ebc7a54aacdf6c511350b997c46f2040c5239042",
+  "sha256": "cf6816a50cc4296d40367f5aa09c1a868e92b4e8e086b6f4bdd8c510ee5be6c6",
   "entries": {
     "CA_ABILITY_USED_SUCCESSFULLY": {"enu":[[275,275]],"default":[[275,275]],"es":[[965,965]]},
     "CA_ADRENALINE_EVENT_ALLY_DEATH": {"enu":[[820,820]],"default":[[820,820]],"es":[[1510,1510]]},
@@ -2225,6 +2225,12 @@
     "CA_TT_TITLE": {"enu":[[119,119]],"default":[[119,119]],"es":[[151,151]]},
     "CA_TT_WITHOUT_FLOR": {"enu":[[121,121]],"default":[[121,121]],"es":[[153,153]]},
     "CA_TT_WITH_FLOR": {"enu":[[120,120]],"default":[[120,120]],"es":[[152,152]]},
+    "CA_UI_BACK": {"enu":[[5200,5200]],"default":[[5200,5200]],"es":[[5207,5207]]},
+    "CA_UI_CANCEL_TASK": {"enu":[[5198,5198]],"default":[[5198,5198]],"es":[[5205,5205]]},
+    "CA_UI_SKIP_FORECAST": {"enu":[[5202,5202]],"default":[[5202,5202]],"es":[[5209,5209]]},
+    "CA_UI_SKIP_START": {"enu":[[5201,5201]],"default":[[5201,5201]],"es":[[5208,5208]]},
+    "CA_UI_SKIP_STOP": {"enu":[[5203,5203]],"default":[[5203,5203]],"es":[[5210,5210]]},
+    "CA_UI_TIME_SKIP": {"enu":[[5199,5199]],"default":[[5199,5199]],"es":[[5206,5206]]},
     "CA_UNARMED_NAME": {"enu":[[4196,4196]],"default":[[4196,4196]],"es":[[4218,4218]]},
     "CA_USE_BED": {"enu":[[4201,4201]],"default":[[4201,4201]],"es":[[4223,4223]]},
     "CA_USE_CART": {"enu":[[4197,4197]],"default":[[4197,4197]],"es":[[4219,4219]]},

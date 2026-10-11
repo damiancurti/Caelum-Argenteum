@@ -1,6 +1,26 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **5.2.5** — 2026-10-11.
+Documentation version: **5.2.6** — 2026-10-11.
+
+## 5.2.6 - Pointer interaction in card/crafting/time menus (#184), 2026-10-11
+
+Added a transient shared pointer guard, native card-menu MouseEvent handling,
+visible crafting controls and live time-skip cursor ownership. Mouse and keyboard
+reuse existing actions. Click activation occurs on matching release; opening,
+stale and dragged releases cannot act. Card pause and live Journal/time behavior
+are preserved. Reviewer-found processing/component readiness and drag-to-tab
+capture defects were corrected before delivery.
+
+Native GZDoom 4.14.2 runs cover geometry, real crafting/cancellation, repair,
+dismantling, processing/component batches, time field editing and both card
+games. Physical Windows mouse checks exercised crafting filters/size/efficiency,
+time skip and Truco selection/play/forfeit return. See validation_526/RESULTS.md
+for final configurations, scope and qualifications; no manual author acceptance
+is inferred. CA184-01 is pending.
+
+During implementation the author requested #189: migrate all interactive panels
+to native menus while preserving artwork, add NPC dialogue clicks and ensure
+NPC dialogue remains unpaused. Truco/Trucazo retain pause. #189 is a separate follow-up.
 
 ## 5.2.5 - Indexed NPC dialogue and LANGUAGE sources (#185), 2026-10-11
 

@@ -1,6 +1,14 @@
 CAELUM ARGENTEUM — STORY AND MAP01
 
-Documentation version: **5.2.5** — 2026-10-11.
+Documentation version: **5.2.6** — 2026-10-11.
+
+## 5.2.6 - Resident game and workshop controls (#184)
+
+Argento's Truco/Trucazo actions and resident workshop craft/repair/disassemble
+controls support the mouse alongside existing keyboard input. Time skip also
+supports field editing and confirmation/cancellation by click. Dialogue trees,
+resident gifts, recipes, lessons and map geometry are unchanged. #189 separately
+tracks native-menu migration and author-requested unpaused, clickable NPC dialogue.
 
 ## 5.2.5 - NPC source ownership (#185)
 

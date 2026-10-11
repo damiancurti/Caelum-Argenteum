@@ -8829,6 +8829,10 @@ class CaelumPlayer : DoomPlayer
 
     override void PlayerThink()
     {
+        // El cursor evita movimientos nuevos; también hay que neutralizar
+        // los giros que estaban retenidos antes de abrir estos paneles.
+        if(player!=null && (CraftingMenuOpen || CaelumTimeSkipState.IsOpen(self)))
+        {player.cmd.yaw=0;player.cmd.pitch=0;player.cmd.roll=0;}
         let journeyPlan = CaelumJourneyPlan.Get(self);
         bool choosingJourney = journeyPlan != null && journeyPlan.Open;
         if (choosingJourney && (health <= 0 || journeyPlan.OriginMap != level.MapName))

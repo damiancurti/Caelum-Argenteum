@@ -1,6 +1,37 @@
 # Caelum Argenteum — Current systems and rules
 
-Documentation version: **5.2.5** — 2026-10-11.
+Documentation version: **5.2.6** — 2026-10-11.
+
+## Mouse interaction contract - 5.2.6 / #184
+
+Truco and Trucazo use the native menu pointer. Hover or click an unused visible
+card to select it, then click Play; visible calls, responses, rules, save/load,
+continue and forfeit/return use the same handlers and serial checks as keyboard.
+A forfeit still requires its existing confirmation. Their world pause is unchanged.
+
+Crafting has visible mode, filter, recipe, tier, size, batch and efficiency
+controls, previous/next entry, detail scrolling, operation, cancel task, time
+skip, x60 and Back buttons. The wheel over the list changes the entry; over
+the blueprint it scrolls details. Nonapplicable controls are disabled; final
+operations still revalidate real inventory, station, capacity and reservations.
+Processing/component availability uses their native material preview rather
+than requiring a direct equipment plan. Existing keyboard shortcuts remain.
+
+Time skip exposes day/hour/minute selection, minus/plus, start, task estimate
+and cancel/back. Active/confirmation-pending states disable edits. It keeps
+its accepted forecast, interruption, resource and time policies and live world.
+Keyboard and pointer call the same authoritative handlers.
+
+Pointer actions require a press and release on the same enabled control and
+state revision. Orphan releases, drags out and stale selections do not activate.
+The Journal retains its 640x360 VirtualToRealCoords(...false,false) projection;
+cards retain centered aspect-preserving 800x600 coordinates. Cursor ownership
+is transient and never serialized. Native mouse preferences remain respected.
+
+The author requested the separate #189 migration to native menu ownership,
+retaining artwork and live simulation. NPC conversations must retain their already configured live world
+with verified clickable responses; Truco/Trucazo retain pause. That follow-up
+is not part of #184 behavior.
 
 ## Dialogue and localization source navigation - 5.2.5 / #185
 
