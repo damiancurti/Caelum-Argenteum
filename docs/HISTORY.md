@@ -38,6 +38,10 @@ from actual HP lost are preserved. Revisioned legacy status import is idempotent
 Static and isolated GZDoom evidence: assets/validation_528/RESULTS.md.
 CA188-01 awaits author acceptance. Issue #192 follows on a separate branch;
 its personality layers and bell count are not part of this patch.
+Follow-up finding in 5.2.9/#192: full native projectile impacts could replace
+the mitigated remainder inside Super.DamageMobj. The stacked #192 correction
+is required for those impacts; perform outstanding CA188-01 on the current
+combined build. Original #188 solver/status evidence remains scoped as recorded.
 
 Author decisions, 2026-10-11: use structural mass for gates; recalculate active
 status duration/sign when Toughness changes; keep environmental thermal damage

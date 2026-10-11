@@ -1,6 +1,7 @@
 CA188-01 | Origin 5.2.8 / issue #188 | Author gameplay acceptance pending
-Prerequisites: rebuild 5.2.8; retain an untouched older save and matching old
-package if checking migration; use a separate test save.
+Prerequisites: rebuild current 5.2.9, including the #192 native projectile
+ordering correction; retain an untouched older save and matching old package
+if checking migration; use a separate test save.
 1. Fight with physical and magical attacks, with/without armor and frontal
 blocking; compare a human and Bull/Zupay. Defense absorbs/wears before the
 mass-based remainder, magic receives half R, blocked/fully resisted hits do
