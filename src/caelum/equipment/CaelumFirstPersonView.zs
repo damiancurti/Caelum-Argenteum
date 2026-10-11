@@ -200,39 +200,39 @@ CA_FP1_book_T3_B:
     C153 B -1;
     Stop;
 
-CA_FP1_standard_bow_T1_A:
+CA_FP1_shotgun_T1_A:
     C161 A -1;
     Stop;
 
-CA_FP1_standard_bow_T2_A:
+CA_FP1_shotgun_T2_A:
     C162 A -1;
     Stop;
 
-CA_FP1_standard_bow_T3_A:
+CA_FP1_shotgun_T3_A:
     C163 A -1;
     Stop;
 
-CA_FP1_standard_bow_T1_B:
+CA_FP1_shotgun_T1_B:
     C161 B -1;
     Stop;
 
-CA_FP1_standard_bow_T2_B:
+CA_FP1_shotgun_T2_B:
     C162 B -1;
     Stop;
 
-CA_FP1_standard_bow_T3_B:
+CA_FP1_shotgun_T3_B:
     C163 B -1;
     Stop;
 
-CA_FP1_standard_bow_T1_C:
+CA_FP1_shotgun_T1_C:
     C161 C -1;
     Stop;
 
-CA_FP1_standard_bow_T2_C:
+CA_FP1_shotgun_T2_C:
     C162 C -1;
     Stop;
 
-CA_FP1_standard_bow_T3_C:
+CA_FP1_shotgun_T3_C:
     C163 C -1;
     Stop;
 
@@ -417,7 +417,7 @@ class CaelumFirstPersonView : Object play
             case 11: return "war_axe";
             case 12: return "halberd";
             case 13: return "giant_gauntlets";
-            case 14: return "standard_bow";
+            case 14: return "shotgun";
             case 15: return "longbow";
             case 16: return "crossbow";
             case 17: return "bell";

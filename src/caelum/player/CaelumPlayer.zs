@@ -428,7 +428,6 @@ class CaelumPlayer : DoomPlayer
     int CarbineAmmoCount;
 
     // V4.25 ranged architecture.
-    int StandardBowMagazine; // Legado: las flechas siguen en su pila original.
     int ShotgunRevision,ShotgunLoadedMask,ShotgunLastBarrel;
     int LongbowMagazine;
     int CrossbowMagazine;
@@ -2538,7 +2537,7 @@ class CaelumPlayer : DoomPlayer
             case CaelumConstants.WEAPON_TYPE_GIANT_GAUNTLETS:
                 return 'CaelumGiantGauntletsSelectorWeapon';
             case CaelumConstants.WEAPON_TYPE_SHOTGUN:
-                return 'CaelumStandardBowSelectorWeapon';
+                return 'CaelumShotgunSelectorWeapon';
             case CaelumConstants.WEAPON_TYPE_CARBINE:
                 return 'CaelumCarbineSelectorWeapon';
             case CaelumConstants.WEAPON_TYPE_LONGBOW:
@@ -2676,7 +2675,7 @@ class CaelumPlayer : DoomPlayer
         );
         EnsurePhysicalWeaponSelector(
             CaelumConstants.WEAPON_TYPE_SHOTGUN,
-            "CaelumStandardBowSelectorWeapon"
+            "CaelumShotgunSelectorWeapon"
         );
         EnsurePhysicalWeaponSelector(
             CaelumConstants.WEAPON_TYPE_CARBINE,

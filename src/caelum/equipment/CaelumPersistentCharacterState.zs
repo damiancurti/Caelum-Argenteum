@@ -346,7 +346,7 @@ class CaelumPersistentCharacterState : Inventory
         }
         if(MainM00StarterChosen && MainM00StarterOption==CaelumConstants.CATALOGUE_WEAPON_SHOTGUN)
             MainM00StarterDurability=CaelumShotgunRules.MigrateDurability(MainM00StarterDurability);
-        // La receta conserva el índice del arco corto. Las flechas ya
+        // La escopeta conserva su índice de receta. Las flechas ya
         // aprendidas permanecen, y se agregan sólo las nuevas dependencias.
         if(KnownCraftingRecipe[CaelumConstants.CATALOGUE_WEAPON_SHOTGUN])
         {

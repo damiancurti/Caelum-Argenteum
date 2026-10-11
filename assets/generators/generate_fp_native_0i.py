@@ -27,7 +27,7 @@ for t in range(1,4):
    assembled.append(f'    Graphic "{n}", {x}, {y}')
   name=('GFS' if part=='HANDLE' else 'GFC')+str(t)+'A0';off='235, 158' if part=='HANDLE' else '213, 61'
   blocks.append(f'Sprite "{name}", 320, 200\n{{\n    NoTrim\n    Offset {off}\n'+ '\n'.join(assembled)+'\n}')
-for family,label,scale,offsets in [('standard_bow','SB',6,[304,213,162]),('longbow','LB',4.9,[278,216,185])]:
+for family,label,scale,offsets in [('shotgun_legacy','SB',6,[304,213,162]),('longbow','LB',4.9,[278,216,185])]:
  source=Image.open(ROOT/f'src/graphics/caelum/first_person/v3/{family}.png').convert('RGBA')
  im=source.getchannel('A')
  for tier,pivot in enumerate(offsets,1):

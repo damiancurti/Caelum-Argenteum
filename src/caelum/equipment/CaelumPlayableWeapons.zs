@@ -1011,7 +1011,7 @@ class CaelumGiantGauntletsSelectorWeapon : CaelumPhysicalSelectorWeapon
     override int GetCaelumWeaponType() { return CaelumConstants.WEAPON_TYPE_GIANT_GAUNTLETS; }
 }
 
-class CaelumStandardBowSelectorWeapon : CaelumPhysicalSelectorWeapon
+class CaelumShotgunSelectorWeapon : CaelumPhysicalSelectorWeapon
 {
     Default { Weapon.SelectionOrder 503; Weapon.SlotNumber 5; }
     override int GetCaelumWeaponType() { return CaelumConstants.WEAPON_TYPE_SHOTGUN; }

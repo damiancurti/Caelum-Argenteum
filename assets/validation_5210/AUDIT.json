@@ -1,0 +1,68 @@
+{
+  "baseline_commit": "c8518c6e",
+  "logs": {
+    "baseline-01": {
+      "raw_sha256": "2316dcef3b5fe434b798180cdf8958c6ebd1ea6b8a3b1212bfa7d83f2e8d6c6e",
+      "delivered_sha256": "666d19cf848eb0d60b9af33d8dafb937fb5c651cee5234e73cb0b7a2d9568a06",
+      "passes": 696,
+      "failures": 332
+    },
+    "ranged-01": {
+      "raw_sha256": "11e6a6c335e97643a0d5dd7bd0e1c6f24c0307f099a1361fcbc8f03324fc3523",
+      "delivered_sha256": "2b83f404277ba68075b147272722b7c26abc3ccd969cb603aa08fbe3173cfe5e",
+      "passes": 1028,
+      "failures": 0
+    },
+    "selector-01": {
+      "raw_sha256": "c1b7f93335faa848418b61ea0824841bf26529c23783e53f12005ebdfd27e54e",
+      "delivered_sha256": "b33dc25b93ce5ca66abfd08fb809e0682ce43c79163fb28d7de97f0a8361568a",
+      "passes": 0,
+      "failures": 0
+    },
+    "selector-02": {
+      "raw_sha256": "f13f7585e90835f3636de3cc549ec4269e53f09cae8555b34595b2e8cf155724",
+      "delivered_sha256": "cad4271a572298da6317b80ea04ac7ae6dd4cbaef287c2778e2a535dfb102b5b",
+      "passes": 16,
+      "failures": 0
+    },
+    "selector-reload-01": {
+      "raw_sha256": "b5551df50c2dc1af066222de0eb53c29f98d5d09fe7e61a1387c1f3a9986e7ca",
+      "delivered_sha256": "4682b205ea42c3da98ab42b10f9669dc1b82889cd1c4c16dad589e31a87c92e3",
+      "passes": 5,
+      "failures": 0
+    },
+    "final-ranged": {
+      "raw_sha256": "7e850a81b126648dfbda53451ed236480c3b9d61eaeec430c7f5b2c99b65ecd3",
+      "delivered_sha256": "724373765a2315aacbbb0abf2ea2eecc8d43a299a91e76c3ffeacb54800111a4",
+      "passes": 1028,
+      "failures": 0
+    },
+    "creator-es": {
+      "raw_sha256": "44e4668247961869730bb09aa8808d22329c5ff6bc72e00b9afef580234434fa",
+      "delivered_sha256": "8f7473b77d6b561e6e1b13533dd480fda0e6a398c84c7f7578e4be8c93793a46",
+      "passes": 62,
+      "failures": 0
+    },
+    "creator-en": {
+      "raw_sha256": "c9c28f570b9231af46c1e347265972e9db280c4bfc04c8b5db2c2ce54ebf4dc5",
+      "delivered_sha256": "ebd3885e0b21eea8f969c29cf1ef6a992337f9957fe28abe47cdf496ffd732d1",
+      "passes": 62,
+      "failures": 0
+    }
+  },
+  "fixture_provenance": "base.zs.inc and creator.zs adapt validation_529 native helpers; selector equips using the validation_517 inventory fixture pattern.",
+  "final_fixture_sha256": {
+    "base.zs.inc": "7e0b6e21860508d0d39528b2b0457e995a7ff2c20ea6cab1f8bd307707228b08",
+    "creator.cfg": "1ec7cb2011d10f15e79746588ef885a4efa64d957bdba58bee857be9e7c04837",
+    "creator.zs": "d0b2bc2891aefb75f94dea8da770d4b3649be862cb3821912070f45177b223a5",
+    "keep_awake.ps1": "b2ff404bc897b61f963964d0016c03c6afb16e3762b8f45dd7e1cbd319c6905c",
+    "prepare.py": "127600bce734a5c3ecaef7722225064826e4c37018ef005f9a0dfe442021c3b6",
+    "ranged.cfg": "0cc39fcefbcbe0b75569ffb2c15ea0333034139d0db444e368515541bab31bcc",
+    "ranged.zs": "1e97263b32787006275a4eb157288d4f433e6f7b4416d04ae10c817097946c81",
+    "run_native.ps1": "93e3418549ff1fda62d556877fda95ec3ef1c027d6edaaf34256f948a7b7f8ee",
+    "selector.cfg": "3dbdbf8e3a1b7d59b8b22ebd37d41b26365bf20bb237278f05b0a51c7a34c57e",
+    "selector.zs": "265548dee35b89514a259bd0b1ce8bb80dea2dedb6b3063250c961015195c389",
+    "selector_reload.cfg": "3df745337384c6183fcb8309ef238615da5bf44d2df4c051f472cf7d32727cf2",
+    "verify.py": "637f0a7f17737ead8cfb4aa49a37d4b90172d2563f68889f61ce9487cf030d98"
+  }
+}

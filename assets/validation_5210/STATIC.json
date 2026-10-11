@@ -1,0 +1,76 @@
+{
+  "official_members": 6347,
+  "official_matches_source": true,
+  "official_sha256": "542f452591329b579c57bc495667f77029d6a28dd149a2873aea2ee6d086912c",
+  "renamed_artwork": {
+    "graphics/caelum/icons/ca_shotgun_legacy.png": {
+      "previous_path": "graphics/caelum/icons/ca_standard_bow.png",
+      "sha256": "ee221e934b7e456aea79f34036678f2058fddda52e7c39c7c494b0417f55f637"
+    },
+    "graphics/caelum/icons/ca_shotgun_legacy_t2.png": {
+      "previous_path": "graphics/caelum/icons/ca_standard_bow_t2.png",
+      "sha256": "01d608efa7e74d0f49794efe000926ad7d9cc091f0b7de387e14426858847234"
+    },
+    "graphics/caelum/icons/ca_shotgun_legacy_t3.png": {
+      "previous_path": "graphics/caelum/icons/ca_standard_bow_t3.png",
+      "sha256": "5022bdaab8e953df032fd78db9c636589cf50a3fac3ae5a88929953b1e00a95d"
+    },
+    "graphics/caelum/first_person/bow_cache/shotgun_legacy_t1.png": {
+      "previous_path": "graphics/caelum/first_person/bow_cache/standard_bow_t1.png",
+      "sha256": "4368de2f81d1b6e2738bdbcf3ceb6773d0e4d642ee628ad0670274aaa9317b49"
+    },
+    "graphics/caelum/first_person/bow_cache/shotgun_legacy_t2.png": {
+      "previous_path": "graphics/caelum/first_person/bow_cache/standard_bow_t2.png",
+      "sha256": "77748a56334f14d874631972c1c0b75f991dd940718706cfa658db9fbb67c7fe"
+    },
+    "graphics/caelum/first_person/bow_cache/shotgun_legacy_t3.png": {
+      "previous_path": "graphics/caelum/first_person/bow_cache/standard_bow_t3.png",
+      "sha256": "3a8e5563dd94a5a253fea21743cf1e1d5fef37204adfadf5d87898e56337cf2b"
+    },
+    "graphics/caelum/first_person/v3/shotgun_legacy.png": {
+      "previous_path": "graphics/caelum/first_person/v3/standard_bow.png",
+      "sha256": "590d27125b70117a0b1bbebd3128faa9f72aa2245818f77aa85baef57403f91d"
+    },
+    "sprites/caelum/first_person/v1/shotgun_legacy/F161A0.png": {
+      "previous_path": "sprites/caelum/first_person/v1/standard_bow/F161A0.png",
+      "sha256": "a4fe4e934ee2af716ae881bde2583073922ed795bd9638bce4b3ff8261f4d86a"
+    },
+    "sprites/caelum/first_person/v1/shotgun_legacy/F161B0.png": {
+      "previous_path": "sprites/caelum/first_person/v1/standard_bow/F161B0.png",
+      "sha256": "57d5b05661f8daf668049c41014496c97cdd5e3a3abda7e006ff1f6831366b92"
+    },
+    "sprites/caelum/first_person/v1/shotgun_legacy/F161C0.png": {
+      "previous_path": "sprites/caelum/first_person/v1/standard_bow/F161C0.png",
+      "sha256": "da0857617d0a3e75166d4ed19490c8786a19792419b5d4a1bdbefae716a4fb4d"
+    },
+    "sprites/caelum/first_person/v1/shotgun_legacy/F162A0.png": {
+      "previous_path": "sprites/caelum/first_person/v1/standard_bow/F162A0.png",
+      "sha256": "b4f34a6fd9820cbeb5b8ca374d9532d8aa1e7c6742207139a4d8df5b593affc7"
+    },
+    "sprites/caelum/first_person/v1/shotgun_legacy/F162B0.png": {
+      "previous_path": "sprites/caelum/first_person/v1/standard_bow/F162B0.png",
+      "sha256": "f40f02266713328d4cfe24c6f9e29474e9fc37e758c29aced3c21652a07213fc"
+    },
+    "sprites/caelum/first_person/v1/shotgun_legacy/F162C0.png": {
+      "previous_path": "sprites/caelum/first_person/v1/standard_bow/F162C0.png",
+      "sha256": "d85bbc092a8dfaf97c062d3a70c93eecfa09749a51daf2bb83e1d8bb618e1adc"
+    },
+    "sprites/caelum/first_person/v1/shotgun_legacy/F163A0.png": {
+      "previous_path": "sprites/caelum/first_person/v1/standard_bow/F163A0.png",
+      "sha256": "843930b8cc406914fbdb8ca9a5cdf22ce5825ad178c8480424ee9e3066f64ef0"
+    },
+    "sprites/caelum/first_person/v1/shotgun_legacy/F163B0.png": {
+      "previous_path": "sprites/caelum/first_person/v1/standard_bow/F163B0.png",
+      "sha256": "ff0a151e39f82eb092235c12871b97551ccd4da408ab016fde98953007722723"
+    },
+    "sprites/caelum/first_person/v1/shotgun_legacy/F163C0.png": {
+      "previous_path": "sprites/caelum/first_person/v1/standard_bow/F163C0.png",
+      "sha256": "9cdacf054cc3c3093029ecceaed251f78f0145b8c119ba229616557745caa6fc"
+    }
+  },
+  "active_former_bow_names": 0,
+  "isolated_generator_identical_repeats": true,
+  "byte_identical_to_baseline_generator": 6,
+  "maintained_cache_pixels_unchanged": 6,
+  "maintained_cache_bytes_match_regeneration": 5
+}

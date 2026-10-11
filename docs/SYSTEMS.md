@@ -1,8 +1,8 @@
 # Caelum Argenteum — Current systems and rules
 
-Documentation version: **5.2.9** — 2026-10-11.
+Documentation version: **5.2.10** — 2026-10-11.
 
-## Personality and magical power - 5.2.9 / #192
+## Personality, magical power and ranged penetration - 5.2.10 / #192
 
 The creator adds four independent choices after attribute allocation, before
 confirmation. Each has bilingual descriptions, mouse/keyboard navigation,
@@ -45,9 +45,22 @@ these modifiers. Shield then anatomy/critical, armor/innate and #188 R remain
 sequential, retaining fractions until final HP rounding. Equipment wear uses
 its actually absorbed portion even when R cancels remaining HP loss.
 
-Carbine and shotgun receive NO ideology penetration against armor or shields,
-at every tier. Their armor-only bypass remains 70/80/90% and 60/70/80%
-respectively; it is never transferred to shields. Projectile ownership and
+Longbow, crossbow, carbine and shotgun receive NO offensive ideology
+penetration against armor OR shields, at every tier and for all ideologies.
+The author's 2026-10-11 amendment defines these equipped-armor-only values:
+
+| Weapon | T1 | T2 | T3 |
+| --- | --- | --- | --- |
+| Longbow | 20% | 30% | 40% |
+| Crossbow | 40% | 50% | 60% |
+| Carbine | 70% | 80% | 90% |
+| Shotgun | 60% | 70% | 80% |
+
+Multiply equipped absorption by `1-bypass`: 35% armor becomes 28%, 21% and
+10.5% against T1 longbow, crossbow and carbine respectively. No Liberal/Center
+addition applies. Shields retain their absorption, including normal defensive
+magical ideology bonuses. Innate defense, R, base damage/scaling are unchanged.
+CA192-02 tracks author acceptance of this amendment. Projectile ownership and
 ideology are captured at launch, including javelins; changing the held weapon
 cannot change a flying attack. Channel attacks retain their own identity.
 The soldier's native shield uses the same penetration and fractional remainder.
@@ -991,10 +1004,13 @@ remain available, with native old-save/current-save/hub verification.
 
 ## Double-barrel shotgun and equipped-armor bypass (#136)
 
-The author's final contract replaces the **shortbow/standard bow**, not the
-longbow. Playable ID 14 and catalogue/recipe ID 12 now identify the two-handed
-side-by-side shotgun at T1/T2/T3. The old selector class and numeric IDs remain
-serialized aliases. Longbow and crossbow retain their current behavior.
+Playable ID 14 and catalogue/recipe ID 12 identify the two-handed side-by-side
+shotgun at T1/T2/T3. In 5.2.10 the author requested shotgun terminology throughout
+active code/resources: `CaelumShotgunSelectorWeapon`, shotgun frame labels and
+retained `shotgun_legacy` art paths. Unused old constant/localization aliases and
+the inert legacy magazine field are removed. Numeric IDs are unchanged. Fresh
+test saves are authorized; old saves containing the retired selector class
+must be reopened with their original package, not this renamed runtime.
 
 One shot spends one cartridge and one carbine-equivalent Air cost, launching
 12 independently colliding pellets. Each nominal pellet is one tenth of the
@@ -1026,6 +1042,8 @@ change. Ranged tiers still affect damage/critical chance, not spread category.
 
 | Weapon | Equipped armor bypass T1 / T2 / T3 |
 | --- | --- |
+| Longbow (#192 amendment) | 20% / 30% / 40% |
+| Crossbow (#192 amendment) | 40% / 50% / 60% |
 | Shotgun | 60% / 70% / 80% |
 | Carbine | 70% / 80% / 90% |
 | Cannon | 100% at every supported tier |
@@ -1044,7 +1062,7 @@ reopening does not replenish stock. MAP02 adds six 20-cartridge drops to previou
 unassigned living enemy slots: 2/1/2/1 per section. Existing supplies and keys
 remain assigned to the same enemies; map geometry is unchanged.
 
-Shotgun revision 1 migrates old shortbow items, current models and persistent
+Shotgun revision 1 migrates pre-5.1.7 equipment, current models and persistent
 records once. Tier, identity, ownership, Box placement and proportional condition
 survive; durability scales 1200/1000. Recipe ID 12 retains knowledge and learns
 its replacement dependencies. Shared arrows and known arrow recipes remain for

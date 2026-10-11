@@ -6,8 +6,17 @@ An independent dark fantasy FPS-RPG inspired by nineteenth-century Argentina.
 Author and game designer: **Damian Curti**. Development target: **GZDoom 4.14.2**
 on Windows 11. The final game is intended to be independent of Doom assets.
 
-**Current release: 5.2.9.** Obtain and update the complete repository, validate
+**Current release: 5.2.10.** Obtain and update the complete repository, validate
 it, then rebuild with `run_dev.bat` as described below.
+
+5.2.10 applies the reopened #192 ranged amendment: longbow armor bypass is
+20/30/40%, crossbow 40/50/60%; carbine 70/80/90% and shotgun 60/70/80% stay
+unchanged. All four exclude offensive ideology against both armor and shields.
+Active identifiers, descriptions and retained resource paths use shotgun names.
+[Evidence](assets/validation_5210/RESULTS.md); CA192-02 remains pending for author
+gameplay acceptance. The author requested commit, push and issue reclosure;
+the new linked PR is separate from the previously merged personality delivery.
+Use fresh test saves for the renamed selector, as authorized by the author.
 
 5.2.9 adds four personality choices and a twelve-projectile bell. Magical power
 bonuses affect damage, push and heat; ideology modifies equipped armor/shields.
@@ -17,8 +26,8 @@ impacts retain their final mitigation and prepare damage/wear once.
 CA192-01 and CA188-01 on 2026-10-11 without qualifications.
 [PR193](https://github.com/damiancurti/Caelum-Argenteum/pull/193) and
 [PR196](https://github.com/damiancurti/Caelum-Argenteum/pull/196) are merged;
-#188 and #192 are closed as completed.
-The author test queue is empty; HISTORY records both confirmations.
+#188 is closed; #192 was reopened for the subsequent amendment above.
+HISTORY records both earlier confirmations.
 
 5.2.8 applies mass-based Toughness after armor, at half strength for direct
 magic, and Type-1 burn/poison/disease resistance with immunity and above-100
@@ -204,7 +213,7 @@ Delivery: [PR #151](https://github.com/damiancurti/Caelum-Argenteum/pull/151).
 Author acceptance: CA137-01/02/03 passed on 2026-10-09; see [history](docs/HISTORY.md).
 
 **5.1.7 / [#136](https://github.com/damiancurti/Caelum-Argenteum/issues/136):**
-The shortbow becomes a two-cartridge, twelve-pellet shotgun; the longbow remains.
+The shotgun holds two cartridges and fires twelve pellets; the longbow remains.
 It shares carbine costs, reload, crafting and Maximum spread, with half its range.
 Firearms bypass the approved portion of equipped armor, preserving innate defense
 and Toughness. Independent cartridges are stocked in armories and six MAP02 drops.

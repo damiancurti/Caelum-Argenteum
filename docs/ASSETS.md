@@ -1,6 +1,16 @@
 # Caelum Argenteum — Audio and art
 
-Documentation version: **5.2.9** — 2026-10-11.
+Documentation version: **5.2.10** — 2026-10-11.
+
+## 5.2.10 - Ranged descriptions and shotgun resource names (#192)
+
+Bilingual creator ideology and weapon descriptions now state the approved
+ranged exclusions and bow/crossbow bypass values. Sixteen retained preconversion
+artwork paths now use `shotgun_legacy`; TEXTURES and the optional native-crop
+generator reference those paths. Bytes, provenance and historical depictions
+are unchanged; current shotgun art still uses its accepted modular renderer.
+Development-only sources, native logs, hashes and bilingual captures are in
+assets/validation_5210. Engine, IWAD, saves and generated packages remain local.
 
 ## 5.2.9 - Personality descriptions and creator layout (#192)
 
@@ -1420,7 +1430,7 @@ from the author's 2026-09-23 pass confirmation for CA-4360I-VISUAL-01.
 
 Issue #8 derives six 512 x 1024 RGBA caches in
 `src/graphics/caelum/first_person/bow_cache/` from the existing original
-`v3/standard_bow.png` and `v3/longbow.png`. The maintained generator is
+`v3/shotgun_legacy.png` and `v3/longbow.png`. The maintained generator is
 `assets/generators/generate_fp_native_0i.py` (Pillow required only to regenerate).
 It applies the same column clipping, alpha-derived row shifts and integer
 crops as 0i, copying alpha without multiplying it. Source artwork is unchanged;
