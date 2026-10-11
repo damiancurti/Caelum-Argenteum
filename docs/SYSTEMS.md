@@ -1,6 +1,25 @@
 # Caelum Argenteum — Current systems and rules
 
-Documentation version: **5.2.2** — 2026-10-11.
+Documentation version: **5.2.3** — 2026-10-11.
+
+## Allied Mandinga retaliation - 5.2.3 / #180
+
+Accidental damage, including the existing racial-breath burn pulses, does not
+make allied Mandingas retaliate against each other. This changes target
+eligibility, not fire contact, damage, thermal energy or resource payment.
+A Mandinga recognizes another Mandinga as allied only when native IsHostile
+is false, both have the same TIDtoHate, and that order does not explicitly name
+the other actor. Opposing native allegiance and distinct/explicit scripted hate
+remain governed by the engine. No cross-faction relationship table is invented.
+
+OkayToSwitchTarget rejects only that allied pair before delegating all other
+cases to GZDoom. Before its normal Tick, each Mandinga discards allied target
+and lastenemy references, including ones restored from earlier saves. This is
+an idempotent check on existing references, not a new saved schema or actor
+replacement: wounds, resources, burn effects and identities remain. The rule
+is identical below and above the automatic 500-combatant threshold. Existing
+valid enemies can still provoke retaliation. Evidence: assets/validation_523;
+CA180-01 passed author acceptance on 2026-10-11 without qualifications.
 
 ## Time-skip processing - 5.2.2 / #178
 
@@ -18,7 +37,8 @@ Session, reach, combat and task-capability checks remain active. The next batch
 forces a fresh scan; ordinary crafting and accelerated rest retain their prior
 validation path. No new serialized cache, schema or migration is needed. Native
 old active skips resume with their task, station, clock and inventory intact.
-Evidence: assets/validation_522; CA178-01 remains pending author acceptance.
+Evidence: assets/validation_522; CA178-01 passed author acceptance on 2026-10-11
+without qualifications.
 
 ## Tutorial equipment, supplies and portable rest - 5.2.1 / #177
 
@@ -72,7 +92,7 @@ Save compatibility retains existing inventory IDs, material ledgers and MAP02
 map data. Chest preview source revision 1 preserves the original typed MAP02
 reference and adds a nullable tutorial endpoint. Original saves/packages remain
 the reversible migration path. Native/static evidence: assets/validation_521;
-CA177-01 awaits author acceptance alongside CA147-01.
+CA177-01 passed author acceptance on 2026-10-11 without qualifications.
 
 ## 5.2.0 - Authoritative character identity and native settings (#147)
 
@@ -136,8 +156,8 @@ input/accessibility work in #149
 and later issues remain separate.
 
 Native/static evidence and fixture limits: `assets/validation_520/RESULTS.md`.
-CA147-01 remains outstanding author acceptance; single-client evidence does not
-establish complete multiplayer support.
+CA147-01 passed author acceptance on 2026-10-11 without qualifications.
+Single-client evidence does not establish complete multiplayer support.
 
 ## 5.1.20 - Interior doors and peaceful city time skipping (#173)
 

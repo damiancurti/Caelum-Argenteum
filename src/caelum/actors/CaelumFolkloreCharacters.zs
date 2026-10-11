@@ -452,6 +452,27 @@ class CaelumPalomo : CaelumInteractiveFolkloreActor
 
 class CaelumMandinga : CaelumFolkloreCombatActor
 {
+    // El daño accidental no convierte a otro mandinga del mismo bando en
+    // enemigo. Se respetan lealtades opuestas y órdenes nativas de odio.
+    bool IsAlliedMandinga(Actor other)
+    {
+        return other != null && other != self && other is "CaelumMandinga"
+            && !IsHostile(other) && other.TIDtoHate == TIDtoHate
+            && (TIDtoHate == 0 || other.tid != TIDtoHate);
+    }
+
+    override bool OkayToSwitchTarget(Actor other)
+    { return !IsAlliedMandinga(other) && Super.OkayToSwitchTarget(other); }
+
+    override void Tick()
+    {
+        // También corrige una pelea ya guardada, sin reconstruir al actor ni
+        // tocar heridas, recursos, quemaduras o la transferencia de calor.
+        if (IsAlliedMandinga(target)) target = null;
+        if (IsAlliedMandinga(lastenemy)) lastenemy = null;
+        Super.Tick();
+    }
+
     CaelumWeaponModel PossessedMachete;
     int SidearmRevision;
     override CaelumWeaponModel GetPossessedSidearm()

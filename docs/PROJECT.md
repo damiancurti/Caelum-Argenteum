@@ -1,6 +1,16 @@
 # Caelum Argenteum — Project, status and roadmap
 
-Documentation version: **5.2.2** — 2026-10-11.
+Documentation version: **5.2.3** — 2026-10-11.
+
+## 5.2.3 - Allied Mandinga retaliation (#180)
+
+The author's live fire-breath report is reproduced and corrected through native
+target eligibility. Allied Mandingas keep their legitimate opponent after burn
+damage; existing accidental target/lastenemy references are cleared in place.
+Damage, thermal transfer, resources and opposite/scripted hostility remain.
+Evidence: assets/validation_523. CA180-01 passed author acceptance on 2026-10-11
+without qualifications; PR182 merge/#180 closure authorized. CA178-01, CA177-01
+and CA147-01 also passed. The author test queue is empty; next roadmap is #148.
 
 ## 5.2.2 - Faster time skipping (#178)
 
@@ -8,8 +18,8 @@ The author's multi-day wait report led to a larger forecast budget and a shared
 crafting-network validation for each stationary simulation batch. Personal tics,
 inventory consumption, sleep and interruptions still execute normally. Native
 timings, cancellation/network and siege checks: assets/validation_522. CA178-01
-is pending; stacked on #177/PR179, with CA177-01 and CA147-01 also pending.
-Next feedback: Mandinga retaliation #180; then the existing #148 roadmap.
+passed author acceptance on 2026-10-11 without qualifications; PR181 is merged
+and #178 closed. The separate Mandinga correction is accepted under #180.
 
 ## 5.2.1 - Tutorial usability and portable rest (#177)
 
@@ -21,8 +31,8 @@ confirmed. Mansion food/water are explicitly unlimited, with replenished large
 5 L canteens and matching task forecasts. Palomo supplies a sleeping bag at the
 final gift; MAP02 fixed beds retire safely from both fresh and saved maps.
 
-Evidence: assets/validation_521. Author checks CA177-01 and CA147-01 remain
-pending; this follow-up is stacked on #147/PR176, without merging that patch.
+Evidence: assets/validation_521. CA177-01 passed author acceptance on 2026-10-11
+without qualifications; PR179 is merged and #177 closed.
 Next planned roadmap block remains #148; #149/#150 stay separate.
 
 ## 5.2.0 - Unified character identity (#147)
@@ -39,10 +49,11 @@ The additional author request removes debug binding rows and places abilities,
 flight, Journal and time skip in their native categories, retaining console
 commands and existing mappings. This does not complete the remaining #149 work.
 
-Evidence: assets/validation_520. CA147-01 awaits author acceptance. Next planned
-block: #148 appearance/preview using the shared identity interface. #164/#172/
-#173 were accepted, closed and merged through PR171/PR174/PR175; main baseline
-f7c4a0dd. #137's earlier acceptance remains intact.
+Evidence: assets/validation_520. CA147-01 passed author acceptance on 2026-10-11
+without qualifications; PR176 is merged and #147 closed. Next planned block:
+#148 appearance/preview using the shared identity interface. #164/#172/#173
+were accepted, closed and merged through PR171/PR174/PR175; their historical
+baseline is f7c4a0dd. #137's earlier acceptance remains intact.
 
 ## 5.1.20 - MAP06 doors and peaceful time skip (#173)
 

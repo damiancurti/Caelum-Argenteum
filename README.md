@@ -6,24 +6,32 @@ An independent dark fantasy FPS-RPG inspired by nineteenth-century Argentina.
 Author and game designer: **Damian Curti**. Development target: **GZDoom 4.14.2**
 on Windows 11. The final game is intended to be independent of Doom assets.
 
-**Current release: 5.2.2.** Obtain and update the complete repository, validate
+**Current release: 5.2.3.** Obtain and update the complete repository, validate
 it, then rebuild with `run_dev.bat` as described below.
+
+5.2.3 prevents accidental allied Mandinga retaliation while preserving fire damage.
+Existing saved fights recover without replacing actors or healing them.
+[Evidence](assets/validation_523/RESULTS.md); CA180-01 passed author acceptance
+on 2026-10-11. Delivery: [PR182](https://github.com/damiancurti/Caelum-Argenteum/pull/182).
 
 5.2.2 accelerates time-skip forecasting and validates stationary crafting networks
 once per simulation batch. Per-tic resources and interruption boundaries remain.
-[Evidence](assets/validation_522/RESULTS.md); CA178-01 awaits author acceptance.
+[Evidence](assets/validation_522/RESULTS.md); CA178-01 passed author acceptance
+on 2026-10-11; PR181 is merged and #178 closed.
 
 5.2.1 corrects tutorial weapon selection, Bull-room boundaries and Palomo's
 choices. The basement chest supplies confirmed equipment materials once;
 mansion tables provide unlimited food/water in large canteens. Palomo adds a
 sleeping bag for MAP02, where fixed beds retire. [Evidence](assets/validation_521/RESULTS.md).
-CA177-01 awaits author acceptance; the patch is stacked on unmerged #147/PR176.
+CA177-01 passed author acceptance on 2026-10-11; PR179 is merged and #177 closed.
 
 5.2.0 unifies character identity under its saved inventory record, preserves
 unconfirmed creator drafts for the session and reconciles native player setup.
 Normal controls now use native categories; diagnostic commands remain in the
 console. Existing saves migrate without changing progress or equipment.
-[Evidence](assets/validation_520/RESULTS.md); CA147-01 awaits author acceptance.
+[Evidence](assets/validation_520/RESULTS.md); CA147-01 passed author acceptance
+on 2026-10-11; PR176 is merged and #147 closed. The author test queue is empty;
+the four confirmations are recorded under their originating releases in HISTORY.
 Appearance/preview expansion remains #148. PR171/PR174/PR175 are merged and
 issues #164/#172/#173 closed, with author acceptance recorded in HISTORY.
 
@@ -43,7 +51,7 @@ optional. The assisted Bull fight creates a native pre-fight checkpoint without
 healing; death uses manual loading. Old gifts/loans and progress survive migration.
 Evidence: [validation_5118](assets/validation_5118/RESULTS.md). CA164-01 passed
 author acceptance on 2026-10-10; PR171 is merged and #164 closed. All three
-confirmed checks are recorded in HISTORY; CA147-01 and CA177-01 remain pending.
+confirmed checks are recorded in HISTORY.
 #162/#163/#169 are closed; PR167/PR168/PR170 are merged.
 
 **5.1.17 / [#169](https://github.com/damiancurti/Caelum-Argenteum/issues/169):**
