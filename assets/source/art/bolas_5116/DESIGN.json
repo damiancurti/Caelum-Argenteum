@@ -72,5 +72,14 @@
     220,
     250
   ],
-  "wrap_registration": "Front lower fragments and rear upper arcs retain atlas coordinates, on opposite sides of the victim sprite plane via visual-only WorldOffset."
+  "wrap_registration": "Front lower fragments and rear upper arcs retain atlas coordinates, on opposite sides of the victim sprite plane via visual-only WorldOffset.",
+  "extended_hand": {
+    "source": "hand-extended.png",
+    "grip": [
+      330,
+      360
+    ],
+    "scale": 7,
+    "source_sha256": "ca43bfac616802bd95504b9bbf3c13a7ab7058cb4b78e9bf8c517fbcadd2fb2a"
+  }
 }

@@ -1,0 +1,11 @@
+{
+  "issue": 163,
+  "mode": "Built-in image_gen, edit; true RGBA, no raster postprocessing.",
+  "source": "hand-extended.png",
+  "references": [
+    "src/sprites/caelum/first_person/v1/hands/FH00A0.png",
+    "assets/first_person_v1/masters/hands_grips.png"
+  ],
+  "prompt": "Edit target: the upright right-hand glove in the FIRST reference image (FH00A0). The SECOND reference is the full original hand atlas, used only to recover its wrist/bracer material and exact visual style; use ONLY the upper-left upright fist. Create ONE standalone matching upright gripping right hand with a much longer uninterrupted forearm and sleeve, on true transparent RGBA background. No weapon, no ropes, no other hands, no text. Keep the existing curled fingers, thumb, dark brown worn leather, small tarnished knuckle plates, brass rivets, burgundy cuff and blackened metal wrist bracer. Do not redesign the glove. The hand points upright near the upper-left/middle of the canvas, and the forearm runs diagonally DOWN AND RIGHT from the wrist. Extend the arm continuously past the old cropped edge with anatomically consistent width and matching dark cloth/leather sleeve after the bracer. It must reach the lower-right OUTSIDE edge of the image with no rounded end, no stump, no internal straight crop and no alpha gap: it continues beyond the bottom/right image edge as an FPS arm. The fist is relatively small in the composition, with a long forearm: square 1280x1280 canvas, approximate upright fist bounding box x=200..440, y=160..460; wrist center near 415,470; long forearm/sleeve centerline continues through 650,760 to 1050,1240 and exits bottom/right. The forearm should have natural perspective width increasing towards the wearer's elbow, around 200..280 px, not oversized. Match the reference's dark painterly pixel-art materials and warm highlights. Preserve transparency everywhere around the silhouette. One full continuous hand+arm sprite, no grid and no labels.",
+  "purpose": "Extend the upright bolas hand past the screen boundary in every pose without changing other weapons."
+}
