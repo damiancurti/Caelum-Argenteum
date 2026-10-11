@@ -351,11 +351,11 @@ class CaelumConstants : Object
     // Duplicar un área circular requiere multiplicar su radio por sqrt(2).
     const WEAPON_CHARGED_AREA_LINEAR_MULTIPLIER = 1.4142135623730951;
     const RELOAD_MOVEMENT_AND_PROGRESS_MULTIPLIER = 0.5;
-    // La campana compensa su abanico de siete proyectiles con menor dano
+    // La campana compensa su abanico de doce proyectiles con menor dano
     // individual y un coste de lanzamiento duplicado.
     const WEAPON_BELL_BASE_DAMAGE = 50.0;
     const WEAPON_BELL_ANIMA_COST = 100.0;
-    const WEAPON_BELL_PROJECTILE_COUNT = 7;
+    const WEAPON_BELL_PROJECTILE_COUNT = 12;
     // Provisional trace distance until final magical-weapon ranges are authored.
     const DEBUG_STAFF_TRACE_RANGE = 1024.0;
     const DEBUG_STAFF_BASE_CRITICAL_CHANCE_PERCENT = 8.0;

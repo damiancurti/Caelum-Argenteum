@@ -4,6 +4,35 @@ Status: integrated engineering register (issue #22, patch 4.36.1b).
 Prepared: 2026-09-23. Inherits the project's release after integration.
 Inspected baseline: `1dc390576fa330d37ff543526fc7e69a397fc28f` (PR #7).
 
+## CA-KP-080 - Native projectile preparation must precede custom mitigation
+
+Status/evidence: ENGINE-VERIFIED, #192 / 5.2.9, 2026-10-11.
+Baseline: 52e3bd01; GZDoom 4.14.2 / Windows 11. Scope: CaelumActorProjectile,
+CaelumPlayer, CaelumCombatActor and the soldier shield hook.
+
+Symptom: custom DamageMobj calculates armor/Toughness correctly, but actual HP
+loss ignores that remainder. Cause: Super.DamageMobj subsequently invokes the
+inflictor's DoSpecialDamage, which can return the original prepared damage and
+apply wear/anatomy again. Testing the defense solver alone misses this path.
+See CA-KP-010 for the related gate contact-proxy ordering case.
+
+Fix: after rejected/evasive hits, prepare the Caelum projectile once and retain
+a transient per-recipient guard across the existing receiver. Each derived
+DoSpecialDamage honors the guard. Restore it in the outer wrapper on every
+return. Defer NPC anatomy until after its shield; soldier blocking must be a
+hook inside this order, with a double remainder. Explosion damage uses its
+supplied regional budget, never the direct projectile payload. Preserve their
+separate prepared-weapon wear callback and CADEV02 allied-hit rejection. Preserve native
+forced/sentinel and invulnerable/dormant rejection paths.
+
+Verification: assets/validation_529/collision.zs executes native flying
+collisions on player/NPC, rejects invulnerable/dormant/evasive hits, checks zero
+HP loss, physical/critical and explosive callbacks, repeated blast recipients,
+guard restoration and actual soldier shield wear/order. native.zs exercises
+every bell projectile separately. The source reference is GZDoom g4.14.2
+src/playsim/p_interaction.cpp, P_DamageMobj (DoSpecialDamage before
+TakeSpecialDamage). Agent evidence does not constitute author acceptance.
+
 ## CA-KP-079 - Split dialogue sources without reordering native nodes
 
 Status/evidence: ENGINE-VERIFIED full-path loading and conversations; STATIC

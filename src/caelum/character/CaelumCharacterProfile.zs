@@ -6,6 +6,16 @@ class CaelumCharacterProfile : Object
     int SecondClass;
     int Sex;
     int HeightChoice;
+    int PersonalityRevision;
+    int Personality[4];
+
+    // Decisión del autor: perfiles previos reciben Normal/Normal/Normal/Centro.
+    void EnsurePersonality()
+    {
+        if(PersonalityRevision>=CaelumPersonalityRules.REVISION)return;
+        for(int i=0;i<4;i++)Personality[i]=1;
+        PersonalityRevision=CaelumPersonalityRules.REVISION;
+    }
 
     void CopyFrom(CaelumCharacterProfile source)
     {
@@ -14,6 +24,8 @@ class CaelumCharacterProfile : Object
         SecondClass = source.SecondClass;
         Sex = source.Sex;
         HeightChoice = source.HeightChoice;
+        PersonalityRevision=source.PersonalityRevision;
+        for(int i=0;i<4;i++)Personality[i]=source.Personality[i];
     }
 
     void InitializeDefaultTestProfile()

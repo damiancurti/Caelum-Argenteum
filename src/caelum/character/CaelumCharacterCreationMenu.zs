@@ -11,6 +11,7 @@ class CaelumCharacterCreationMenu : ListMenu
     int SecondClass;
     int Sex;
     int HeightChoice;
+    int Personality[4];
     int LayerBonus[4];
     int AttributeBonus[12];
     int SelectedLayer;
@@ -30,6 +31,7 @@ class CaelumCharacterCreationMenu : ListMenu
         SecondClass = CaelumConstants.CLASS_MAGE;
         Sex = CaelumConstants.SEX_MALE;
         HeightChoice = CaelumConstants.HEIGHT_NORMAL;
+        for(int i=0;i<4;i++)Personality[i]=1;
         SelectedLayer = 0;
         SelectedAttribute = 0;
         ResetAllocations();
@@ -53,6 +55,7 @@ class CaelumCharacterCreationMenu : ListMenu
         SecondClass = draft.SecondClass;
         Sex = draft.Sex;
         HeightChoice = draft.HeightChoice;
+        for(int i=0;i<4;i++)Personality[i]=draft.Personality[i];
         SelectedLayer = draft.SelectedLayer;
         SelectedAttribute = draft.SelectedAttribute;
         for (int i = 0; i < 4; i++) LayerBonus[i] = draft.LayerBonus[i];
@@ -71,6 +74,7 @@ class CaelumCharacterCreationMenu : ListMenu
         draft.SecondClass = SecondClass;
         draft.Sex = Sex;
         draft.HeightChoice = HeightChoice;
+        for(int i=0;i<4;i++)draft.Personality[i]=Personality[i];
         draft.SelectedLayer = SelectedLayer;
         draft.SelectedAttribute = SelectedAttribute;
         for (int i = 0; i < 4; i++) draft.LayerBonus[i] = LayerBonus[i];
@@ -148,8 +152,12 @@ class CaelumCharacterCreationMenu : ListMenu
         );
     }
 
+    bool IsPersonalityPage(){return Page>=CaelumPersonalityRules.FIRST_PAGE && Page<=CaelumPersonalityRules.LAST_PAGE;}
+
     void ChangeChoice(int direction)
     {
+        if(IsPersonalityPage())
+        {int layer=Page-CaelumPersonalityRules.FIRST_PAGE;Personality[layer]=Wrap(Personality[layer]+direction,3);return;}
         if (Page == CaelumConstants.CREATION_PAGE_RACE)
         {
             Race = Wrap(Race + direction, 4);
@@ -243,6 +251,8 @@ class CaelumCharacterCreationMenu : ListMenu
 
     String ContextKey()
     {
+        if(IsPersonalityPage())return CaelumPersonalityRules.ChoiceKey(Page-CaelumPersonalityRules.FIRST_PAGE,
+            Personality[Page-CaelumPersonalityRules.FIRST_PAGE]).."_DESC";
         String key;
         if (Page == CaelumConstants.CREATION_PAGE_RACE) key = RaceKey();
         else if (Page == CaelumConstants.CREATION_PAGE_FIRST_CLASS) key = ClassKey(FirstClass);
@@ -314,6 +324,7 @@ class CaelumCharacterCreationMenu : ListMenu
 
     String PageTitleKey()
     {
+        if(IsPersonalityPage())return CaelumPersonalityRules.LayerKey(Page-CaelumPersonalityRules.FIRST_PAGE);
         switch (Page)
         {
             case 0: return "CA_CREATION_TITLE_RACE";
@@ -329,6 +340,7 @@ class CaelumCharacterCreationMenu : ListMenu
 
     String PageHelpKey()
     {
+        if(IsPersonalityPage())return "CA_PERSONALITY_HELP";
         switch (Page)
         {
             case 0: return "CA_CREATION_HELP_RACE";
@@ -453,21 +465,32 @@ class CaelumCharacterCreationMenu : ListMenu
         DrawRemaining(RemainingAttributePoints());
     }
 
+    void DrawPersonalityPage()
+    {
+        int layer=Page-CaelumPersonalityRules.FIRST_PAGE;
+        for(int i=0;i<3;i++)
+            Line(TextFont,i==Personality[layer]?Font.CR_GOLD:Font.CR_WHITE,
+                PanelLeft()+16,146+i*58,(i==Personality[layer]?"> ":"  ")
+                ..StringTable.Localize(CaelumPersonalityRules.ChoiceKey(layer,i),false),LeftWidth());
+    }
+
     void DrawSummaryPage()
     {
-        Center(TextFont, Font.CR_WHITE, 150, StringTable.Localize(RaceKey(), false));
-        Center(TextFont, Font.CR_GOLD, 208, StringTable.Localize(ProfessionKey(SecondClass), false), 1.6);
-        Center(SmallTextFont, Font.CR_GRAY, 256, StringTable.Localize(ClassKey(FirstClass), false)
-            .. " + " .. StringTable.Localize(ClassKey(SecondClass), false));
-        Center(TextFont, Font.CR_WHITE, 322, StringTable.Localize(SexKey(), false));
-        Center(TextFont, Font.CR_WHITE, 372, StringTable.Localize(HeightKey(), false));
+        Center(TextFont,Font.CR_WHITE,126,StringTable.Localize(RaceKey(),false));
+        Center(TextFont,Font.CR_GOLD,174,StringTable.Localize(ProfessionKey(SecondClass),false),1.6);
+        Center(SmallTextFont,Font.CR_GRAY,216,StringTable.Localize(ClassKey(FirstClass),false)
+            .." + "..StringTable.Localize(ClassKey(SecondClass),false));
+        Center(TextFont,Font.CR_WHITE,258,StringTable.Localize(SexKey(),false).." / "..StringTable.Localize(HeightKey(),false));
+        for(int i=0;i<4;i++)Center(TextFont,Font.CR_GOLD,320+i*40,
+            StringTable.Localize(CaelumPersonalityRules.LayerKey(i),false)..": "
+            ..StringTable.Localize(CaelumPersonalityRules.ChoiceKey(i,Personality[i]),false),1.35);
     }
 
     void PointerLayout(bool draw)
     {
         Pointer.Clear();
         bool allocation=Page==CaelumConstants.CREATION_PAGE_LAYERS || Page==CaelumConstants.CREATION_PAGE_ATTRIBUTES;
-        int count=Page==CaelumConstants.CREATION_PAGE_ATTRIBUTES?12:Page==CaelumConstants.CREATION_PAGE_LAYERS?4:
+        int count=IsPersonalityPage()?3:Page==CaelumConstants.CREATION_PAGE_ATTRIBUTES?12:Page==CaelumConstants.CREATION_PAGE_LAYERS?4:
             Page==CaelumConstants.CREATION_PAGE_RACE?4:Page==CaelumConstants.CREATION_PAGE_FIRST_CLASS?4:Page==CaelumConstants.CREATION_PAGE_SECOND_CLASS?4:0;
         for(int i=0;i<count;i++)
         {
@@ -510,7 +533,7 @@ class CaelumCharacterCreationMenu : ListMenu
                 else if(Page==CaelumConstants.CREATION_PAGE_ATTRIBUTES)SelectedAttribute=value;
                 else
                 {
-                    int current=Page==CaelumConstants.CREATION_PAGE_RACE?Race:Page==CaelumConstants.CREATION_PAGE_FIRST_CLASS?FirstClass:SecondClass;
+                    int current=IsPersonalityPage()?Personality[Page-CaelumPersonalityRules.FIRST_PAGE]:Page==CaelumConstants.CREATION_PAGE_RACE?Race:Page==CaelumConstants.CREATION_PAGE_FIRST_CLASS?FirstClass:SecondClass;
                     if(value!=current)ChangeChoice(value-current);
                 }
             }
@@ -529,7 +552,8 @@ class CaelumCharacterCreationMenu : ListMenu
         }
         Center(TitleFont, Font.CR_GOLD, 24, StringTable.Localize("CA_CREATION_MAIN_TITLE", false), 1.65);
         Center(TextFont, Font.CR_WHITE, 74, StringTable.Localize(PageTitleKey(), false), 1.6);
-        if (Page <= CaelumConstants.CREATION_PAGE_HEIGHT) DrawBasicPage();
+        if(IsPersonalityPage())DrawPersonalityPage();
+        else if (Page <= CaelumConstants.CREATION_PAGE_HEIGHT) DrawBasicPage();
         else if (Page == CaelumConstants.CREATION_PAGE_LAYERS) DrawLayerPage();
         else if (Page == CaelumConstants.CREATION_PAGE_ATTRIBUTES) DrawAttributePage();
         else DrawSummaryPage();
@@ -561,6 +585,8 @@ class CaelumCharacterCreationMenu : ListMenu
         SetDraft("ca_newchar_second_class", SecondClass);
         SetDraft("ca_newchar_sex", Sex);
         SetDraft("ca_newchar_height", HeightChoice);
+        int packed=0;for(int i=3;i>=0;i--)packed=packed*3+Personality[i];
+        SetDraft("ca_newchar_personality",packed);
         SetDraft("ca_newchar_layer0", LayerBonus[0]);
         SetDraft("ca_newchar_layer1", LayerBonus[1]);
         SetDraft("ca_newchar_layer2", LayerBonus[2]);
@@ -625,7 +651,8 @@ class CaelumCharacterCreationMenu : ListMenu
                 MenuSound("menu/clear");
                 return true;
             }
-            Page++;
+            Page=Page==CaelumConstants.CREATION_PAGE_ATTRIBUTES ? CaelumPersonalityRules.FIRST_PAGE
+                : Page==CaelumPersonalityRules.LAST_PAGE ? CaelumConstants.CREATION_PAGE_SUMMARY : Page+1;
             MenuSound("caelum/ui/menu_select");
             return true;
         }
@@ -633,7 +660,8 @@ class CaelumCharacterCreationMenu : ListMenu
         {
             if (Page > CaelumConstants.CREATION_PAGE_RACE)
             {
-                Page--;
+                Page=Page==CaelumConstants.CREATION_PAGE_SUMMARY ? CaelumPersonalityRules.LAST_PAGE
+                    : Page==CaelumPersonalityRules.FIRST_PAGE ? CaelumConstants.CREATION_PAGE_ATTRIBUTES : Page-1;
                 MenuSound("menu/backup");
                 return true;
             }

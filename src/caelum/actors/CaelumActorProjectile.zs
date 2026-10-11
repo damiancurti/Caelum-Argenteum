@@ -29,6 +29,37 @@ class CaelumSilentDetectionPuff : BulletPuff
 // dependencies while allowing the receiver to inspect the result at impact.
 class CaelumActorProjectile : Actor
 {
+    // Solo vive durante DamageMobj; evita repetir el dano y desgaste nativos.
+    transient Actor CaelumDefenseReceiver;
+    transient bool CaelumPreparingDefense;
+
+    virtual void ApplyPreparedWeaponWear(Actor victim){}
+
+    static int PrepareDefense(Actor victim,Actor inflictor,int damage,Name mod,int flags)
+    {
+        let shot=CaelumActorProjectile(inflictor);
+        if(shot==null || shot.CaelumDefenseReceiver==victim || (flags & DMG_FORCED)
+            || (damage>=CaelumCrushingDamage.NATIVE_TELEFRAG_THRESHOLD && !victim.bLAXTELEFRAGDMG))return damage;
+        if(victim.health<=0 || victim.bDORMANT
+            || (victim.bINVULNERABLE && !shot.bFOILINVUL && !(flags & DMG_FOILINVUL)))return damage;
+        // Una explosion ya trae su propio presupuesto, no el impacto directo.
+        if(!(flags & DMG_EXPLOSION))
+        {
+            bool previous=shot.CaelumPreparingDefense;shot.CaelumPreparingDefense=true;
+            damage=shot.DoSpecialDamage(victim,damage,mod);
+            shot.CaelumPreparingDefense=previous;
+        }
+        else
+        {
+            if((shot is "CaelumActorSimpleElementalProjectile" || shot is "CaelumActorExplosiveElementalProjectile")
+                && shot.PreventCaelumMassDiagnosticFriendlyFire(victim))return 0;
+            shot.ApplyPreparedWeaponWear(victim);
+        }
+        shot.CaelumDefenseReceiver=victim;
+        return damage;
+    }
+
+
     Array<Actor> ThermalRecipients;
     bool CaelumAttackPrepared;
     bool MainM00ChargedPractice;
@@ -57,6 +88,8 @@ class CaelumActorProjectile : Actor
     // durabilidad se descuenta del objeto correcto aunque el jugador cambie
     // de arma antes de que el proyectil impacte.
     bool CaelumWeaponWearPrepared;
+    int CaelumPersonalityRevision;
+    double CaelumIdeologyPenetration;
     CaelumEquipmentItem CaelumWearSourceItem;
     int CaelumWearWeaponType;
     int CaelumWearWeaponTier;
@@ -97,6 +130,9 @@ class CaelumActorProjectile : Actor
         CaelumCriticalHit = criticalHit;
         CaelumMagicalAttack = magicalAttack;
         CaelumPushMultiplier = Max(0.0, pushMultiplier);
+        // Capturar al lanzar, incluida la jabalina sin desgaste diferido.
+        CaelumIdeologyPenetration=CaelumPersonalityRules.Penetration(CaelumPersonalityRules.Profile(Target));
+        CaelumPersonalityRevision=CaelumPersonalityRules.REVISION;
     }
 
     void ConfigureCaelumActorExplosion(

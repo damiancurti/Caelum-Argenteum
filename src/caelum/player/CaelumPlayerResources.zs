@@ -21,7 +21,7 @@ class CaelumPlayerResources : Object play
         user.LastAdrenalineEvent = eventType;
         user.LastAdrenalineBaseGain = Max(0.0, amount);
         user.LastAdrenalineFinalGain = user.LastAdrenalineBaseGain
-            * user.HealthAdrenalineGainMultiplier;
+            * user.HealthAdrenalineGainMultiplier * CaelumPersonalityRules.Adrenaline(user);
         user.AddAdrenaline(user.LastAdrenalineFinalGain);
     }
 
@@ -851,6 +851,7 @@ class CaelumPlayerResources : Object play
             );
 
             user.EffectiveEvasionChance = user.DerivedStats.BaseEvasionChance
+                * CaelumPersonalityRules.Evasion(user)
                 * loadPerformanceMultiplier
                 * user.AirStatePerformanceMultiplier
                 * user.HealthPerformanceMultiplier;

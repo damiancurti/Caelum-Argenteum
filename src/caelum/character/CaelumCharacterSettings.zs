@@ -4,6 +4,7 @@ class CaelumCreationDraft : Object ui
 {
     int Page, Race, FirstClass, SecondClass, Sex, HeightChoice;
     int SelectedLayer, SelectedAttribute;
+    int Personality[4];
     int LayerBonus[4];
     int AttributeBonus[12];
 }

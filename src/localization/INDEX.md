@@ -1,7 +1,7 @@
 # LANGUAGE index
 
 Generated from [../LANGUAGE](../LANGUAGE); shared bilingual text remains authoritative there.
-SHA-256: `323f9d222274d1b54a56a903627c3ac322ad56e07fdd19e81dc2e31b1da5b2fe`. Locations include every definition; the last one per language wins.
+SHA-256: `26e68db14cd64448e8a16d017c5d1e149c42d04451949d7e0a867a14569b48ab`. Locations include every definition; the last one per language wins.
 Run `python build_dialogue_index.py check` before using locations.
 
 Use `python build_dialogue_index.py find TERM` to locate keys, then
@@ -97,6 +97,7 @@ including shared UI/system keys and dynamically selected text.
 | CA_ONBOARD | 3 | CA_ONBOARD_GOLD_REWARD | CA_ONBOARD_PALOMO_SCAM |
 | CA_PAIN | 2 | CA_PAIN_RESISTED | CA_PAIN_TRIGGERED |
 | CA_PALOMO | 65 | CA_PALOMO_DIALOGUE_ARE_YOU_SURE | CA_PALOMO_PLACEMENT_MANSION_UPSTAIRS |
+| CA_PERSONALITY | 29 | CA_PERSONALITY_0_0 | CA_PERSONALITY_LAYER_3 |
 | CA_PHYSICS | 5 | CA_PHYSICS_DAMAGE | CA_PHYSICS_KIND |
 | CA_PICKAXE | 1 | CA_PICKAXE_NOT_OWNED | CA_PICKAXE_NOT_OWNED |
 | CA_PICKUP | 16 | CA_PICKUP_AMULET | CA_PICKUP_WATER_RATION |

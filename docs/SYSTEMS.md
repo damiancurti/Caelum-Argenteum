@@ -1,6 +1,81 @@
 # Caelum Argenteum — Current systems and rules
 
-Documentation version: **5.2.8** — 2026-10-11.
+Documentation version: **5.2.9** — 2026-10-11.
+
+## Personality and magical power - 5.2.9 / #192
+
+The creator adds four independent choices after attribute allocation, before
+confirmation. Each has bilingual descriptions, mouse/keyboard navigation,
+summary and session-draft restoration. Existing race/profession/sex/height and
+allocation budgets remain authoritative. The legacy in-world creator uses the
+same choices. The following factors modify derived effects, not primary stats.
+
+| Layer | Choice (Spanish) | Effect |
+| --- | --- | --- |
+| Temperament | Aggressive (Agresivo) | Combat adrenaline gain x1.5 |
+| Temperament | Normal | Adrenaline gain x1.25; magical power x1.25 |
+| Temperament | Patient (Paciente) | Magical power x1.5 |
+| Way of acting | Instinctive (Instintiva) | Physical and magical critical chance x1.5 |
+| Way of acting | Normal | Both critical chances x1.25; magical power x1.25 |
+| Way of acting | Calculating (Calculadora) | Magical power x1.5 |
+| Behavior | Rebellious (Rebelde) | Evasion chance x1.5 |
+| Behavior | Normal | Evasion chance x1.25; magical power x1.25 |
+| Behavior | Disciplined (Disciplinado) | Magical power x1.5 |
+| Ideology | Liberal | +25 percentage points armor/shield penetration |
+| Ideology | Center (Centro) | +12.5 points penetration; magical equipped absorption x1.125 |
+| Ideology | Conservative (Conservador) | Magical equipped absorption x1.25 |
+
+The author's 2026-10-11 clarification replaces the issue's original damage-only
+wording: magical POWER scales outgoing damage, push and thermal energy once.
+The first three focused choices multiply to 3.375; three Normals to 1.953125.
+Intelligence scaling, weapon tier, charge and element remain separate. Utility
+stream watts and its total thermal budget receive the same personality factor;
+NPC-authored stream budgets are unchanged. Costs, range, duration/control and
+Box capacity receive no personality multiplier. Critical factors modify the
+complete chance before the existing final cap, never critical damage. Evasion
+does not increase speed; adrenaline gain does not increase resource capacity.
+
+For each equipped defense layer separately:
+`P=clamp(existingLayerPenetration+ideologyPenetration,0,1)` and
+`effectiveAbsorption=clamp(baseAbsorption*defenderFactor*(1-P),0,1)`.
+The defensive factor applies only to magical absorption; physical uses 1.
+The final cap follows both modifiers: a nominal 100% shield x1.25 against
+Liberal retains 93.75% absorption. Innate defense and Toughness are outside
+these modifiers. Shield then anatomy/critical, armor/innate and #188 R remain
+sequential, retaining fractions until final HP rounding. Equipment wear uses
+its actually absorbed portion even when R cancels remaining HP loss.
+
+Carbine and shotgun receive NO ideology penetration against armor or shields,
+at every tier. Their armor-only bypass remains 70/80/90% and 60/70/80%
+respectively; it is never transferred to shields. Projectile ownership and
+ideology are captured at launch, including javelins; changing the held weapon
+cannot change a flying attack. Channel attacks retain their own identity.
+The soldier's native shield uses the same penetration and fractional remainder.
+Existing magical-shield reflection and electrical-channel block bypass remain;
+thermal transmission filters/environmental resistance are separate from the
+HP absorption modifiers and retain their existing values.
+
+The bell fires **12 independent projectiles**, preserving T1 base damage 50
+per projectile, tiers, spread, individual critical/payload data, charge and
+100 base Anima per cast. There is no division by 12; each hit separately passes
+through defenses and R/2. A native impact prepares projectile damage and wear
+once before defenses, suppressing the duplicate DoSpecialDamage preparation
+inside the final native damage call. Explosion budgets stay separate; each
+recipient restores the transient guard even after a rejected/zero-damage hit.
+Explosive callbacks retain their prepared-damage weapon wear independently of
+the supplied blast HP budget; CADEV02 allied immunity remains in force.
+
+Personality schema revision 1 resides in the authoritative character profile
+and travels/copies with it. On old saves the author explicitly chooses
+Normal/Normal/Normal/Center; migration recalculates once without refilling
+resources. Repeated equip/recalculation/load does not compound factors. Preserve
+an untouched old save and matching package for reversible rollback; newly
+written saves are not promised to load on the older executable package.
+
+Native matrices, save upgrade/reload/rollback/travel, bilingual creator captures
+and T1/T2/T3 warrior/mage comparisons: assets/validation_529/RESULTS.md. The T2
+comparison uses a documented balanced 39-card fixture (+50% general attributes)
+and is not an additional balance decision. CA192-01 passed author acceptance on 2026-10-11, without qualifications.
 
 ## Mass-based Toughness and sustained resistance - 5.2.8 / #188
 
@@ -71,7 +146,8 @@ Repeated save/load cannot scale duration again. Keep an untouched original
 save and the previous source/package for rollback; downgrading a newly written
 save is not promised. Native migration, repeated loading and rollback evidence,
 plus controlled combat/status fixtures, are in assets/validation_528/RESULTS.md.
-Author gameplay acceptance remains pending under CA188-01.
+CA188-01 passed author acceptance on 2026-10-11 on the combined 5.2.9 build.
+HISTORY records the confirmation and the #192 native impact correction.
 
 
 ## Native interactive menus - 5.2.7 / #189

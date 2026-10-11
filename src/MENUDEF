@@ -30,7 +30,7 @@ ListMenu "CaelumExitMenu"
     TextItem "$MNU_QUITGAME", "s", "QuitMenu"
 }
 
-// La clase ZScript conserva el borrador mientras se recorren las ocho páginas
+// La clase ZScript conserva el borrador mientras se recorren las doce páginas
 // y sólo inicia una partida después de validar los 4+30 puntos obligatorios.
 ListMenu "CaelumNewCharacterMenu"
 {

@@ -929,7 +929,7 @@ class CaelumDebugOverlay : EventHandler
         );
     }
 
-    // Dibuja las ocho paginas del creador de personajes 4.0.
+    // La vista heredada comparte las cuatro elecciones nuevas del perfil.
     ui void DrawCreationWizard(CaelumPlayer localPlayer)
     {
         CaelumCharacterProfile profile = localPlayer.CharacterProfile;
@@ -1024,10 +1024,24 @@ class CaelumDebugOverlay : EventHandler
                 break;
         }
 
+        bool personalityPage=localPlayer.CreationWizardPage>=CaelumPersonalityRules.FIRST_PAGE
+            && localPlayer.CreationWizardPage<=CaelumPersonalityRules.LAST_PAGE;
+        if(personalityPage)
+        {
+            int layer=localPlayer.CreationWizardPage-CaelumPersonalityRules.FIRST_PAGE;
+            pageTitle=StringTable.Localize(CaelumPersonalityRules.LayerKey(layer),false);
+            selectedValue=StringTable.Localize(CaelumPersonalityRules.ChoiceKey(layer,profile.Personality[layer]),false);
+            explanation=StringTable.Localize(CaelumPersonalityRules.ChoiceKey(layer,profile.Personality[layer]).."_DESC",false);
+        }
         DrawCenteredText(StringTable.Localize("CA_CREATION_MAIN_TITLE", false), 72.0, Font.CR_GOLD);
         DrawCenteredText(pageTitle, 104.0, Font.CR_WHITE);
         DrawCenteredText(selectedValue, 142.0, Font.CR_GREEN);
-        DrawCenteredText(explanation, 176.0, Font.CR_GRAY);
+        let explanationLines=DebugFont.BreakLines(explanation,550);
+        for(int i=0;i<explanationLines.Count();i++)DrawCenteredText(explanationLines.StringAt(i),170+i*11,Font.CR_GRAY);
+        explanationLines.Destroy();
+        if(localPlayer.CreationWizardPage==CaelumConstants.CREATION_PAGE_SUMMARY)
+            for(int i=0;i<4;i++)DrawCenteredText(StringTable.Localize(CaelumPersonalityRules.LayerKey(i),false)..": "
+                ..StringTable.Localize(CaelumPersonalityRules.ChoiceKey(i,profile.Personality[i]),false),195+i*11,Font.CR_GOLD);
         String navigationKey = "CA_CREATION_NAVIGATION_HELP";
 
         if (localPlayer.CreationWizardPage == CaelumConstants.CREATION_PAGE_LAYERS
@@ -1040,13 +1054,14 @@ class CaelumDebugOverlay : EventHandler
             navigationKey = "CA_CREATION_SUMMARY_NAVIGATION_HELP";
         }
 
-        DrawCenteredText(StringTable.Localize(navigationKey, false), 226.0, Font.CR_WHITE);
+        DrawCenteredText(StringTable.Localize(navigationKey, false), 246.0, Font.CR_WHITE);
 
         String pageNumber = String.Format(
-            "%d / 8",
-            localPlayer.CreationWizardPage + 1
+            "%d / 12",
+            localPlayer.CreationWizardPage==CaelumConstants.CREATION_PAGE_SUMMARY ? 12
+                : personalityPage ? localPlayer.CreationWizardPage : localPlayer.CreationWizardPage+1
         );
-        DrawCenteredText(pageNumber, 252.0, Font.CR_GRAY);
+        DrawCenteredText(pageNumber, 272.0, Font.CR_GRAY);
     }
 
     ui String GetMaterialSelectionIcon(int materialType)
@@ -2848,6 +2863,7 @@ class CaelumDebugOverlay : EventHandler
                 localPlayer.LastMeleeCriticalAttempted
                     ? localPlayer.LastMeleeCriticalChancePercent
                     : Min(100.0, derived.PhysicalCriticalChance
+                        * CaelumPersonalityRules.Critical(localPlayer)
                         * localPlayer.CrouchCriticalChanceMultiplier),
                 localPlayer.CrouchCriticalChanceMultiplier,
                 StringTable.Localize("CA_RESOURCE_CRITICAL_ROLL", false),
@@ -3162,6 +3178,7 @@ class CaelumDebugOverlay : EventHandler
                 localPlayer.LastStaffCriticalAttempted
                     ? localPlayer.LastStaffCriticalChancePercent
                     : Min(100.0, derived.StaffCriticalChance
+                        * CaelumPersonalityRules.Critical(localPlayer)
                         * localPlayer.CrouchCriticalChanceMultiplier),
                 StringTable.Localize("CA_RESOURCE_CRITICAL_ROLL", false),
                 localPlayer.LastStaffCriticalRollPercent,

@@ -1,11 +1,14 @@
 # CONTEXT.md — Caelum Argenteum
 
-Documentation version: **5.2.8** — 2026-10-11.
+Documentation version: **5.2.9** — 2026-10-11.
 
-**Current patch 5.2.8 / #188:** post-defense Toughness uses biological mass
-times Type3 (half for direct magic); gates use structural mass. Burn/poison/disease
-use Type1 duration, immunity at 100 and healing above, with dynamic recalculation
-and idempotent save import. Evidence: validation_528; CA188-01 pending. #192 next.
+**Current patch 5.2.9 / #192:** four personality layers; magical power scales
+damage/push/heat; ideology affects armor/shields, excluding firearms. Bell:
+12 independent hits. Old saves: Normal/Normal/Normal/Center. Native projectile
+preparation and soldier shielding preserve defense order. Evidence/comparisons:
+validation_529/528. #188 adds mass-based R, half magical R and Type1 statuses.
+CA192-01/CA188-01 accepted 2026-10-11; PR193/PR196 merges and issue closure
+authorized. Author queue empty; next roadmap: #148.
 
 **5.2.7 / #189 and 5.2.6 / #184 accepted:** native menus/clicks preserve art;
 live panels/NPCs, paused cards/settings, right-drag rest orbit. Evidence:
@@ -16,8 +19,7 @@ src/dialogues, with deterministic runtime assembly preserving every node/ID.
 Start at src/dialogues/INDEX.md; src/localization/INDEX.md locates all LANGUAGE
 keys. `python build_dialogue_index.py build` regenerates after edits; check,
 project validation and packaging reject stale output. Evidence: validation_525.
-The author accepted #185 on 2026-10-11 without qualifications and authorized
-PR187 merge/closure. CA183-01 also passed; the author test queue is empty.
+The author accepted #185 and CA183-01 on 2026-10-11; PR187 merge/closure authorized.
 
 **Previous patch 5.2.4 / #183 (PR186):** simplified creator recommendations and fixed
 profession gifts; Palomo chooses only the Seal. Ronnie exchanges the sole finite

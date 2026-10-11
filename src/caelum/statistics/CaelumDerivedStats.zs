@@ -45,6 +45,7 @@ class CaelumDerivedStats : Object
     double ActorHeight;
     double ActorRadius;
     double PhysicalPushMultiplier;
+    double MagicalPowerMultiplier;
     double MagicalPushMultiplier;
     double ArmorWeight;
     double ShieldWeight;
@@ -235,12 +236,13 @@ class CaelumDerivedStats : Object
         // resistencia del receptor.
         PhysicalPushMultiplier = MeleeDamagePercent / 100.0
             * BaseMassMultiplier;
-        MagicalPushMultiplier = CalculateType1Percent(attributes.Intelligence)
-            / 100.0;
+        MagicalPowerMultiplier=CalculateType1Percent(attributes.Intelligence)/100.0
+            * CaelumPersonalityRules.MagicPower(profile);
+        MagicalPushMultiplier = MagicalPowerMultiplier;
         DebugSwordDamage = CaelumConstants.DEBUG_SWORD_BASE_DAMAGE
             * MeleeDamagePercent / 100.0 * BaseMassMultiplier;
         DebugStaffDamage = CaelumConstants.DEBUG_STAFF_BASE_DAMAGE
-            * CalculateType1Percent(attributes.Intelligence) / 100.0;
+            * MagicalPowerMultiplier;
 
         PhysicalAccuracyPercent = CalculateType1Percent(attributes.Dexterity);
         AttackSpeedPercent = CalculateType4Percent(attributes.Dexterity);

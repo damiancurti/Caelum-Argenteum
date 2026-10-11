@@ -17,6 +17,7 @@ user int ca_newchar_first_class = 0;
 user int ca_newchar_second_class = 3;
 user int ca_newchar_sex = 0;
 user int ca_newchar_height = 1;
+user int ca_newchar_personality = -1;
 user int ca_newchar_layer0 = 0;
 user int ca_newchar_layer1 = 0;
 user int ca_newchar_layer2 = 0;
