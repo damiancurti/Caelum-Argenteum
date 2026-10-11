@@ -1,6 +1,20 @@
 # TASKS.md — Active tasks
 
-Documentation version: **5.2.0** — 2026-10-11.
+Documentation version: **5.2.1** — 2026-10-11.
+
+## Issue #177 - Tutorial equipment, provisions and portable rest (5.2.1)
+
+Implement the author's follow-ups while preserving #147: autoequip newly
+received tutorial weapons; remove recurring Bull arena relocation; correct
+Palomo shotgun text and optional necklace ordering; expose progressive finite
+materials in the basement chest; provide unlimited mansion food/water with
+large canteens and correct forecasting; grant Palomo's sleeping bag once and
+retire MAP02 fixed beds with occupied-save deferral.
+
+Native/static evidence: assets/validation_521. CA177-01 remains the single
+author check for this issue; CA147-01 remains pending independently. Delivery
+uses issue-177-tutorial-usability, stacked on issue-147-character-identity.
+No merge or closure is claimed. Next: author acceptance, then #148.
 
 ## Issue #147 - Unified identity and native settings (5.2.0)
 

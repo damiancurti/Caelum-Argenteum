@@ -233,6 +233,12 @@ class CaelumMainM00StarterMaterials : Object play
 // consumir: fabricar, descartar, guardar o regenerar el árbol no lo repone.
 class CaelumMainM00SupplyRules : Object play
 {
+    static bool HasPlan(CaelumPersistentCharacterState r)
+    {
+        return r != null && (r.MainM00StarterChosen || r.MainM00ArmorChosen
+            || r.MainM00ShieldChoice > 0 || r.MainM00SealChoice > 0 || r.MainM00AmuletChoice > 0);
+    }
+
     static bool IsLimited(CaelumPlayer user)
     {
         return user != null && level.MapName == "MAP01" && user.CharacterCreationComplete
@@ -252,14 +258,17 @@ class CaelumMainM00SupplyRules : Object play
     static void UpdateLimits(CaelumPlayer user)
     {
         let r = user.GetPersistentCharacterState(false);
-        if (r == null || !r.MainM00StarterChosen || !CaelumMainM00RonnieTrial.IsStarted(user)) return;
+        if (!IsLimited(user) || !HasPlan(r)) return;
         let needs = new("CaelumMainM00StarterMaterials");
-        needs.Build(r.MainM00StarterOption, r.MainM00StarterSize, 2);
+        needs.Efficiency = 2;
+        if (r.MainM00StarterChosen) needs.Build(r.MainM00StarterOption, r.MainM00StarterSize, 2);
         for (int i = 0; i < CaelumConstants.MATERIAL_TYPE_COUNT; i++)
             r.MainM00StarterRequired[i] = needs.Units[i];
-        needs.AddStarterAmmunition(r.MainM00StarterOption);
+        if (r.MainM00StarterChosen) needs.AddStarterAmmunition(r.MainM00StarterOption);
         if (r.MainM00ArmorChosen) needs.AddArmor(r.MainM00ArmorType, r.MainM00ArmorSize);
-        if (r.MainM00ShieldChoice > 0) needs.AddShield(r.MainM00ShieldChoice - 1, r.MainM00StarterSize);
+        if (r.MainM00ShieldChoice > 0) needs.AddShield(r.MainM00ShieldChoice - 1,
+            r.MainM00StarterChosen ? r.MainM00StarterSize
+            : CaelumEquipmentRules.GetDefaultSizeForCharacterTier(user.CharacterProfile.GetSizeTier()));
         // Preservar lo gastado en los sellos ya preparados en 0ae, pero no
         // mantener cupos sin usar para los otros cuatro elementos.
         for (int element = 0; element < CaelumConstants.SEAL_TYPE_COUNT; element++)
@@ -293,7 +302,7 @@ class CaelumMainM00SupplyRules : Object play
     {
         if (!IsLimited(user)) return;
         let r = user.GetPersistentCharacterState(false);
-        if (!r.MainM00StarterChosen || !CaelumMainM00RonnieTrial.IsStarted(user) || r.MainM00SupplyQuotaReady) return;
+        if (!HasPlan(r) || r.MainM00SupplyQuotaReady) return;
         r.MainM00SupplyQuotaReady = true;
         UpdateLimits(user);
         // Migración: valorar existencias (incluidos componentes) al 100%.
@@ -322,7 +331,7 @@ class CaelumMainM00SupplyRules : Object play
         if (!IsLimited(user)) return 2147483647;
         Ensure(user);
         let r = user.GetPersistentCharacterState(false);
-        if (!r.MainM00StarterChosen || !CaelumMainM00RonnieTrial.IsStarted(user) || material < 0 || material >= CaelumConstants.MATERIAL_TYPE_COUNT) return 0;
+        if (!HasPlan(r) || material < 0 || material >= CaelumConstants.MATERIAL_TYPE_COUNT) return 0;
         return Max(0, r.MainM00SupplyLimit[material] - r.MainM00SupplyIssued[material]);
     }
 

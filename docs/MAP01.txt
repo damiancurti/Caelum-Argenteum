@@ -1,6 +1,27 @@
 CAELUM ARGENTEUM — STORY AND MAP01
 
-Documentation version: **5.2.0** — 2026-10-11.
+Documentation version: **5.2.1** — 2026-10-11.
+
+## 5.2.1 - Tutorial equipment, chest and rest corrections (#177)
+
+Caella's staff, Ronnie's Pickaxe, newly crafted tutorial weapons and Rulo's
+bolas autoequip on receipt. Repeat grants do not undo a later manual selection.
+Palomo correctly lists/describes the shotgun; necklace is no longer the first
+choice. His exit gift now includes one existing sleeping bag with the Box.
+
+The basement chest shows all raw materials for confirmed equipment through the
+same loot view as MAP02 chests, even before Ronnie starts. Materials remain a
+one-time 100%-efficiency allowance; confirming more equipment adds its costs.
+Gathering is optional. The author's separate food/water correction makes mansion
+table provisions unlimited, replenishing large 5 L canteens after drinking.
+Forecasting follows actual replenishment for the heaviest playable body too.
+
+The Bull trial retains staging, helpers, locked doors and its autosave but no
+longer relocates participants at the inner rectangle or jump-height limit.
+Fixed MAP02 beds retire without changing geometry/safe areas; a saved occupant
+finishes before its bed is removed. Portable rest uses the existing bag rules.
+SYSTEMS contains the save/capacity contracts. Evidence: validation_521;
+CA177-01 and CA147-01 await author acceptance.
 
 ## 5.2.0 - Creator and saved identity (#147)
 

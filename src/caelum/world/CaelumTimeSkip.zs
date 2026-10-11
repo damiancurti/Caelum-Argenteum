@@ -105,7 +105,7 @@ class CaelumTimeSkipRules : Object play
                 else item.AttachToOwner(table);
             }
             else item.AttachToOwner(table);
-            table.RefreshDisplays();
+            table.RestockMansion();table.RefreshDisplays();
         }
         else if (accepted && bottle==null)
         { item.Amount--; if(item.Amount<=0)item.Destroy(); }
@@ -372,6 +372,8 @@ class CaelumTimeSkipState : Inventory
         {FinishSkip(user,"CA_REST_MOVED",true);return;}
         if(!s.Active)
         {
+            if(s.Forecast!=null && s.Forecast.ProvisionRevision<CaelumTimeSkipModel.PROVISION_REVISION)
+                s.Recalculate(user);
             if(s.Forecast!=null)
             {
                 bool calculating=!s.Forecast.Done;

@@ -81,6 +81,8 @@ class CaelumMainM00Necklace : Object play
         if (record.MainM00AmuletChoice > 0 && record.MainM00AmuletChoice != type + 1) return false;
         record.MainM00AmuletChoice = type + 1;
         EnsureGranted(user);
+        CaelumMainM00SupplyRules.Ensure(user);
+        CaelumMainM00SupplyRules.UpdateLimits(user);
         // Confirmar fija la elección aunque falte espacio; el estado de entrega
         // se confirma por separado y la página ofrece reintentar sin duplicar.
         user.RefreshSocialJournalSnapshot();

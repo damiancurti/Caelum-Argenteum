@@ -212,9 +212,14 @@ class CaelumMainM00RuloTrial : Object play
             r.SetQuestObjectiveProgress(CaelumConstants.QUEST_MAIN_M00_THE_FOOL,
                 CaelumConstants.MAIN_M00_OBJECTIVE_DEFEAT_BULL, 0, 1);
         }
-        if (!CaelumMainM00Gifts.EnsureTool(user, true))
+        bool receivedBolas = r.MainM00BolasId <= 0;
+        if (!CaelumMainM00Gifts.EnsureTool(user, true, false))
         { CaelumMainM00MagicTrial.Feedback(user, "CA_M01_GIFT_NO_ROOM", true); return false; }
-        Prepare(user); Sync(user); return true;
+        Prepare(user);
+        // Preparar el arma inicial y su munición no debe tapar el regalo nuevo.
+        if (receivedBolas)
+            CaelumMainM00Gifts.EquipReceivedWeapon(user, user.FindNativeEquipmentItemById(r.MainM00BolasId));
+        Sync(user); return true;
     }
 
     static bool Complete(CaelumPlayer user)
@@ -328,7 +333,6 @@ class CaelumMainM00RuloTrial : Object play
                 if (r.MainM00AmmoLoanRemaining == 0 || ammo == null || ammo.Amount == 0)
                     PrepareAmmunition(user);
             }
-            if (!InArena(user)) { user.SetOrigin((-1900,0,0), false); user.Vel = (0,0,0); }
         }
         if (level.time % TICRATE == 0) Sync(user);
     }

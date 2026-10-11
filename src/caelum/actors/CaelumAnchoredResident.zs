@@ -560,8 +560,6 @@ class CaelumAnchoredResident : CaelumCombatActor abstract
             { Vel = (0,0,0); Target = null; bInvulnerable = true; return; }
             if (RuloPartyMode == 1) { RuloPartyMode = 2; Target = RuloPartyBull; SetStateLabel("See"); }
             bInvulnerable = false; Target = RuloPartyBull;
-            if (!CaelumMainM00RuloTrial.InArena(self))
-            { SetOrigin(GetRuloPartyPosition(), false); Vel = (0,0,0); }
             return;
         }
         if (RuloPartyMode != 3)

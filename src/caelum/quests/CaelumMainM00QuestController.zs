@@ -619,7 +619,7 @@ class CaelumM00Bull : CaelumBull
 
     bool IsTrialOpponent(Actor candidate)
     {
-        if (candidate == null || candidate.health <= 0 || !CaelumMainM00RuloTrial.InArena(candidate)) return false;
+        if (candidate == null || candidate.health <= 0) return false;
         if (candidate == TrialFighter) return true;
         let ally = CaelumAnchoredResident(candidate);
         return ally != null && ally.RuloPartyBull == self && ally.IsRuloPartyFighting();
@@ -649,8 +649,6 @@ class CaelumM00Bull : CaelumBull
             }
             bShootable = true;
             if (!IsTrialOpponent(Target)) Target = FindTrialOpponent();
-            if (!CaelumMainM00RuloTrial.InArena(self))
-            { StopBullCharge(); SetOrigin((-2180,0,0), false); }
         }
         Super.Tick();
         if (health > 0 || LeatherDropped) return;

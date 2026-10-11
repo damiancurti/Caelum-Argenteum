@@ -146,7 +146,7 @@ class CaelumMainM00Return : Object play
                 // También conserva las instancias de los antiguos préstamos.
                 equipment.ItemFlags &= ~CaelumConstants.CA_ITEMFLAG_LIMBO_TEMP;
             }
-            else if (cursor is "CaelumTarotDeck") { } // El mazo físico también cruza.
+            else if (cursor is "CaelumTarotDeck" || cursor is "CaelumSleepingBag") { } // Los regalos permanentes también cruzan.
             else if (cursor is "CaelumSpecialInventoryItem" || cursor is "CaelumConsumableItem"
                 || cursor is "Ammo" || cursor is "Key") cursor.Destroy();
             cursor = next;
