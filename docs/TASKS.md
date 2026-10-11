@@ -1,6 +1,17 @@
 # TASKS.md — Active tasks
 
-Documentation version: **5.2.11** — 2026-10-11.
+Documentation version: **5.2.12** — 2026-10-11.
+
+## Issue #195 - Bull balance and resident actions (5.2.12)
+
+Implemented approved speed/acceleration, moving-target charge and personal
+biological cushioning without doubled mass. Finite actual resident tools,
+War Axe/Sword charged attacks, encounter fire exclusion and eight functional
+personalities share player combat rules. Current and previous-save tests are
+included in assets/validation_5212. CA195-01 passed author acceptance on
+2026-10-11 without qualifications; merge/closure authorized. No further balance values
+were invented. PR198/PR199 are merged and #192/#194 closed.
+Delivery: PR200, committed and pushed; the author requested its merge and #195 closure.
 
 ## Issue #194 - Collision energy and contact area (5.2.11)
 

@@ -690,6 +690,12 @@ finder with an unchanged zero goal can look like a collision defect. Queue costl
 path queries fairly: actors with synchronized state phases can repeatedly consume
 a naive global per-tic allowance and starve the rest of the roster.
 
+Reverified in #195 / 5.2.12 (ENGINE-VERIFIED, 2026-10-11): `Charged=charged`
+and `Secondary=secondary` assigned the parameters to themselves. Distinct
+`useCharged`/`useSecondary` names fixed persisted resident attack choices.
+Check the serialized selection and actual damage, not just the preparation
+timer; validation_5212 retains the failing and corrected native runs.
+
 Street routes need a floor-height constraint as well as XY reachability; an
 otherwise valid local shortcut can climb an artillery stair and strand a guard
 above a ground post. Use native floor/step/dropoff checks. Formation entry also

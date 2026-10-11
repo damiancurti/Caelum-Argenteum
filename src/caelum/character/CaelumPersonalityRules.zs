@@ -34,7 +34,9 @@ class CaelumPersonalityRules : Object
     static clearscope CaelumCharacterProfile Profile(Actor actor)
     {
         let user=CaelumPlayer(actor);
-        return user!=null ? CaelumCharacterIdentity.Profile(user) : null;
+        let npc=CaelumCombatActor(actor);
+        return user!=null ? CaelumCharacterIdentity.Profile(user)
+            : npc!=null ? npc.CombatPersonality : null;
     }
     static clearscope double Critical(Actor actor){return Alternative(Profile(actor),1);}
     static clearscope double Adrenaline(Actor actor){return Alternative(Profile(actor),0);}

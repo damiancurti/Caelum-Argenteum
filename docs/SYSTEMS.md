@@ -1,6 +1,92 @@
 # Caelum Argenteum — Current systems and rules
 
-Documentation version: **5.2.11** — 2026-10-11.
+Documentation version: **5.2.12** — 2026-10-11.
+
+## Bull charge, resident tools and personality - 5.2.12 / #195
+
+This section supersedes the doubled bull charge mass, old charge speed/burst,
+resident melee loadouts and unassigned personalities in historical sections.
+All other #194 collision energy and #188 Toughness rules remain authoritative.
+
+The final charge cap is **10 m/s** (9.142857 MU/tic). Acceleration from rest is
+linear **10 m/s^2**, reaching the cap after 35 simulation tics. Neither Agility
+nor a class multiplier scales that cap again. Native floor friction changes
+post-tic velocity; actual displacement is the speed measurement. Health,
+temperature and elemental movement impairments may reduce motion below the cap.
+The bull starts within its existing acquisition range and sight, keeps following
+the moving target, and stops at contact, loss of a valid target/sight, exhausted
+Air, Pain, binding or another physical interruption. MAP01 retains its 18-tic
+windup and two-second encounter grace. The horn attack remains separate from
+the collision and pays its existing natural-attack cost. Running pays its
+existing biological-mass Air cost. No blanket invulnerability is added.
+
+Collision mass is natural mass plus actual carried load, with charge multiplier
+1. The healthy unloaded bull is 900 kg. While charging, its own horizontal
+received impact energy is cushioned using the same jump model and masses:
+
+    f = clamp(JumpVelocity(natural, total, Agility) / JumpVelocity(natural, total, 0) - 1, 0, 0.5)
+    retainedEnergy = receivedEnergy * (1 - f)^2
+
+The numerator includes health and elemental biological impairment. At Agility
+20, healthy and unladen, f = 0.2263767773 and retained energy = 0.5984928906 E.
+This does not reduce the other body's energy or increase Toughness. Existing
+floor/crushing absorption remains separate. The shared pair snapshots cushioning
+before either recipient can interrupt the charge through Pain or death.
+Natural Toughness is 900 * Type3(20) = **1353.6 physical / 676.8 direct magical**;
+sustained burn/poison/disease keep their #188 status-duration rule. The bull has
+no cutting or fire tool with which to escape bolas.
+
+Each anchored mansion resident owns one T1 Pickaxe, one T1 utility staff and
+exactly one bolas item. Rulo additionally owns a T1 XL War Axe; Ronnie a T1 M
+Sword. Argento and Caella use their T1 M Pickaxes in melee. Sizes follow the
+resident's existing armor body size. Costs, mass, durability, damage and range
+come from the existing item catalogue; nothing is copied from player gifts.
+
+| Resident | Natural kg | New owned tools kg | Initial collision kg, including armor |
+| --- | ---: | ---: | ---: |
+| Rulo | 200 | 55.527 | 315.527 |
+| Ronnie | 140 | 23.018 | 183.018 |
+| Argento | 120 | 17.018 | 147.018 |
+| Caella | 80 | 17.018 | 102.018 |
+
+Selection prioritizes bolas while the bull is free, then ice while unfrozen,
+then damage. Recover the same reachable dropped bolas; there is no replacement
+on destruction. Throw preparation, Air, spread, native flight, five-second
+binding, repeated-hit behavior, strength expiry, cutting and fire destruction
+reuse the player service. Thrown/bound items cease contributing to carried mass.
+Ice uses the existing cone, Anima per real tic, contact wear and signed heat;
+leaving range/sight ends emission. All resident fire attacks against the bull
+are excluded throughout the encounter. Argento's Fire essence secondary remains
+Light/Dazzle. This restriction does not change player fire or other NPC fights.
+
+Rulo/Ronnie cycle primary/secondary normal attacks and primary/secondary charged
+attacks. Charging takes the existing two-second base scaled by Dexterity, then
+the complete normal weapon cycle follows sequentially. A ready charge has its
+existing three-second window. Movement is stopped during preparation/cycle;
+Pain, control, downing, item loss/breakage and encounter end cancel the action.
+Air and thermal work are paid at release, including misses; charged damage and
+Air are x2. Anatomy, critical chance, penetration, push, successful-hit adrenaline
+and wear use the common combat/item rules. Broken or unavailable weapons cannot
+fall back to the old unowned melee action. Preparations, item references, wear
+and binding graphs are serialized natively.
+
+| Resident / MAP02 prisoner | Temperament / way of acting / behavior / ideology | Magical power |
+| --- | --- | ---: |
+| Rulo / Santos Barrera | Aggressive / Instinctive / Rebellious / Liberal [0,0,0,0] | x1 |
+| Ronnie / Rufino Acosta | Normal / Calculating / Disciplined / Center [1,2,2,1] | x2.8125 |
+| Argento / Leandro Farias | Patient / Normal / Disciplined / Conservative [2,1,2,2] | x2.8125 |
+| Caella / Leonor Benitez | Normal / Calculating / Rebellious / Liberal [1,2,0,0] | x1.875 |
+
+All #192 effects are functional: magical damage/push/heat, critical chance,
+adrenaline gain, evasion, offensive penetration and magical equipped absorption.
+Costs, range, control duration and Box capacity are not magical power. Prisoners
+receive these profiles but no new equipment. Unassigned actors keep no profile
+and therefore no new bonus. Revision 1 initializes only the approved profiles
+and mansion tools on old saves without healing/replenishing initialized objects;
+an old active charge loses x2 mass and is capped before gameplay resumes.
+
+Native evidence and limitations: assets/validation_5212/RESULTS.md. The author
+accepted CA195-01 on 2026-10-11 without qualifications, separately from agent checks.
 
 ## Collision energy and contact area - 5.2.11 / #194
 
@@ -8,7 +94,7 @@ This contract supersedes the historical maximum-Health/EquivalentTics collision
 severity, percentage ceiling damage, resting-weight formula and cannon armor
 bypass described in earlier release sections. Momentum/restitution, collision
 detection and existing defense applicability remain separate from severity.
-The bull-specific rebalance belongs to #195; its existing charge mass is retained.
+The historical charge exception is superseded by the #195 section above.
 
 Convert native MU/tic to m/s with 32 MU/m and 35 tics/s. For pre-contact normal
 closing speed `v = max(0, dot(v1-v2,n))` and collision masses in kg:

@@ -2,6 +2,7 @@
 // coloca con args[0]=1 y adopta el contrato tangible/anclado del residente.
 class CaelumCaella : CaelumAnchoredResident
 {
+    override int GetApprovedPersonality(){return CaelumResidentData.CAELLA_PERSONALITY;}
     override int GetArmorRace() { return CaelumConstants.RACE_GOBLIN; }
     Default
     {
@@ -89,5 +90,8 @@ class CaelumCaella : CaelumAnchoredResident
         Goto Spawn;
     Run:
         Goto See;
+    ResidentToolUse:
+        CAEL E 1;
+        Loop;
     }
 }

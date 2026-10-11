@@ -20,6 +20,23 @@ class CaelumUtilityStaff : Object play
                 /CaelumConstants.DEBUG_STAFF_ANIMA_COST : 0;
     }
 
+    static double ActorCostPerSecond(Actor emitter)
+    {
+        let user=CaelumPlayer(emitter);let npc=CaelumCombatActor(emitter);
+        return user!=null && user.DerivedStats!=null
+            ? CaelumDemonBreathRules.ANIMA_PER_SECOND*user.DerivedStats.StaffAnimaCost
+                /CaelumConstants.DEBUG_STAFF_ANIMA_COST
+            : npc!=null ? CaelumDemonBreathRules.ANIMA_PER_SECOND*npc.GetMagicAnimaCost(CaelumConstants.DEBUG_STAFF_ANIMA_COST)
+                /CaelumConstants.DEBUG_STAFF_ANIMA_COST : 0;
+    }
+
+    static CaelumUtilityStaffStream Stream(Actor emitter)
+    {
+        let user=CaelumPlayer(emitter);let npc=CaelumCombatActor(emitter);
+        return user!=null ? CaelumUtilityStaffStream(user.UtilityStaffStream)
+            : npc!=null ? npc.CombatUtilityStaffStream : null;
+    }
+
     static bool CanEmit(CaelumPlayer user)
     {
         if(user==null || user.health<=0 || user.player==null || user.player.playerstate!=PST_LIVE
@@ -39,11 +56,13 @@ class CaelumUtilityStaff : Object play
         if(CanEmit(user))user.UtilityStaffRequestedMode=mode;
     }
 
-    static void EndEmission(CaelumPlayer user)
+    static void EndEmission(Actor emitter)
     {
-        if(user==null)return;
-        user.UtilityStaffRequestedMode=0;
-        let stream=user.UtilityStaffStream; user.UtilityStaffStream=null;
+        if(emitter==null)return;
+        let user=CaelumPlayer(emitter);let npc=CaelumCombatActor(emitter);
+        let stream=Stream(emitter);
+        if(user!=null){user.UtilityStaffRequestedMode=0;user.UtilityStaffStream=null;}
+        if(npc!=null)npc.CombatUtilityStaffStream=null;
         if(stream!=null)stream.Destroy();
     }
 
@@ -62,27 +81,47 @@ class CaelumUtilityStaff : Object play
         {
             EndEmission(user); user.UtilityStaffRequestedMode=mode;
         }
-        double cost=CostPerSecond(user)/TICRATE;
-        if(user.CurrentAnima<cost)
-        {user.LastStaffInsufficientAnima=true;EndEmission(user);return;}
-        if(user.UtilityStaffStream==null)
+        Emit(user,item,mode);
+    }
+
+    static bool Emit(Actor emitter,CaelumEquipmentItem item,int mode)
+    {
+        let user=CaelumPlayer(emitter);let npc=CaelumCombatActor(emitter);
+        let resident=CaelumAnchoredResident(emitter);
+        if(emitter==null || emitter.health<=0 || item==null || item.Owner!=emitter
+            || !item.Equipped || item.InMagicBox || item.Durability<=0
+            || item.ItemType!=CaelumConstants.WEAPON_TYPE_UTILITY_STAFF
+            || (mode!=CaelumUtilityStaffRules.FIRE && mode!=CaelumUtilityStaffRules.ICE)
+            || (resident!=null && resident.IsRuloPartyFighting() && mode==CaelumUtilityStaffRules.FIRE)
+            || (npc!=null && (CaelumBolas.Restrained(npc) || CaelumBolas.Interrupted(npc))))
+        {EndEmission(emitter);return false;}
+        let stream=Stream(emitter);
+        if(stream!=null && (stream.Mode!=mode || stream.SourceItem!=item || stream.SourceMap!=level.MapName))
+        {EndEmission(emitter);stream=null;}
+        double cost=ActorCostPerSecond(emitter)/TICRATE;
+        double resource=user!=null ? user.CurrentAnima : npc!=null ? npc.CurrentCombatAnima : 0;
+        if(resource<cost)
+        {if(user!=null)user.LastStaffInsufficientAnima=true;EndEmission(emitter);return false;}
+        if(stream==null)
         {
-            let stream=CaelumUtilityStaffStream(Actor.Spawn("CaelumUtilityStaffStream",user.Pos,NO_REPLACE));
-            if(stream==null)return;
-            stream.Emitter=user; stream.SourceItem=item; stream.Mode=mode;
+            stream=CaelumUtilityStaffStream(Actor.Spawn("CaelumUtilityStaffStream",emitter.Pos,NO_REPLACE));
+            if(stream==null)return false;
+            stream.Emitter=emitter; stream.SourceItem=item; stream.Mode=mode;
             stream.SourceMap=level.MapName;
-            user.UtilityStaffStream=stream;
+            if(user!=null)user.UtilityStaffStream=stream;
+            if(npc!=null)npc.CombatUtilityStaffStream=stream;
         }
-        user.CurrentAnima-=cost;
-        user.LastStaffInsufficientAnima=false;
-        CaelumUtilityStaffStream(user.UtilityStaffStream).PaidTick();
-        CaelumMainM00MagicTrial.RecordAnimaSpent(user,cost);
+        if(user!=null){user.CurrentAnima-=cost;user.LastStaffInsufficientAnima=false;}
+        if(npc!=null){npc.CurrentCombatAnima-=cost;npc.MarkActorCombatActivity();}
+        stream.PaidTick();
+        if(user!=null)CaelumMainM00MagicTrial.RecordAnimaSpent(user,cost);
+        return true;
     }
 }
 
 class CaelumUtilityStaffStream : Actor
 {
-    CaelumPlayer Emitter;
+    Actor Emitter;
     CaelumEquipmentItem SourceItem;
     int Mode,NextHeatTic,Revision;
     String SourceMap;
@@ -96,7 +135,12 @@ class CaelumUtilityStaffStream : Actor
     {
         double angle=Emitter.Angle,pitch=Emitter.Pitch;
         Direction=(Cos(angle)*Cos(pitch),Sin(angle)*Cos(pitch),-Sin(pitch));
-        vector3 eye=Emitter.Pos+(0,0,Emitter.player.viewheight);
+        vector3 eye=Emitter.Pos+(0,0,Emitter.player!=null ? Emitter.player.viewheight : Emitter.Height/2);
+        if(Emitter.player==null && Emitter.target!=null)
+        {
+            vector3 aim=Emitter.target.Pos+(0,0,Emitter.target.Height/2)-eye;
+            if(aim.Length()>0)Direction=aim.Unit();
+        }
         vector3 tip=eye+Direction*CaelumUtilityStaffRules.TIP_FORWARD
             +(Sin(angle),-Cos(angle),0)*CaelumUtilityStaffRules.TIP_RIGHT
             +(0,0,CaelumUtilityStaffRules.TIP_UP);
@@ -139,9 +183,9 @@ class CaelumUtilityStaffStream : Actor
         while(nearby.Next())
         {
             // El muñeco verifica el mismo cono y oclusión sin recibir estados ni desgaste.
-            if(nearby.thing is "CaelumM00TrainingDummy"
+            if(Emitter is "CaelumPlayer" && nearby.thing is "CaelumM00TrainingDummy"
                 && CaelumElementalStream.Contact(self,Emitter,Direction,nearby.thing))
-                CaelumMainM00MagicTrial.RecordStaffContact(Emitter,nearby.thing,ice);
+                CaelumMainM00MagicTrial.RecordStaffContact(CaelumPlayer(Emitter),nearby.thing,ice);
             if(CaelumElementalStream.Status(nearby.thing)!=null
                 && CaelumElementalStream.Contact(self,Emitter,Direction,nearby.thing))
             {CaelumElementalStream.ApplyContact(Emitter,nearby.thing,ice);contacted=true;}
@@ -152,8 +196,10 @@ class CaelumUtilityStaffStream : Actor
             if(SourceItem.UtilityStaffContactTics>=CaelumUtilityStaffRules.CONTACT_WEAR_TICS)
             {
                 SourceItem.UtilityStaffContactTics-=CaelumUtilityStaffRules.CONTACT_WEAR_TICS;
-                Emitter.ApplyWeaponDurabilityFromSuccessfulDamage(CaelumElementalStream.Damage(Emitter),
+                let user=CaelumPlayer(Emitter);
+                if(user!=null)user.ApplyWeaponDurabilityFromSuccessfulDamage(CaelumElementalStream.Damage(Emitter),
                     CaelumConstants.WEAPON_TYPE_UTILITY_STAFF,1,SourceItem.EquipmentSize,SourceItem,true);
+                else CaelumWeaponUseRules.Wear(SourceItem,CaelumElementalStream.Damage(Emitter));
             }
         }
         if(level.time>=NextHeatTic){FlushHeat();NextHeatTic=level.time+TICRATE;}
@@ -170,7 +216,7 @@ class CaelumUtilityStaffStream : Actor
     override void Tick()
     {
         Super.Tick();
-        if(Emitter==null || Emitter.health<=0 || Emitter.UtilityStaffStream!=self
+        if(Emitter==null || Emitter.health<=0 || CaelumUtilityStaff.Stream(Emitter)!=self
             || SourceMap!=level.MapName)Destroy();
     }
 
@@ -205,8 +251,22 @@ class CaelumUtilityStaffSelectorWeapon : CaelumPhysicalSelectorWeapon
 
 class CaelumUtilityStaffEvents : StaticEventHandler
 {
+    override void WorldLoaded(WorldEvent e)
+    {
+        // La carga no llama PostBeginPlay: migrar antes de cualquier actor/proyectil.
+        let actors=ThinkerIterator.Create("CaelumCombatActor");CaelumCombatActor npc;
+        while((npc=CaelumCombatActor(actors.Next()))!=null)
+        {
+            npc.EnsureCombatPersonality();
+            let bull=CaelumBull(npc);if(bull!=null)bull.EnsureBullChargeRevision();
+            let resident=CaelumAnchoredResident(npc);if(resident!=null)resident.EnsureResidentTools();
+        }
+    }
     override void WorldUnloaded(WorldEvent e)
     {
+        let streams=ThinkerIterator.Create("CaelumUtilityStaffStream");CaelumUtilityStaffStream stream;
+        while((stream=CaelumUtilityStaffStream(streams.Next()))!=null)
+            CaelumUtilityStaff.EndEmission(stream.Emitter);
         // Se liquida el intervalo pagado en el mapa de origen, antes de
         // congelar el hub; nunca se traslada radiación pendiente al destino.
         for(int i=0;i<MAXPLAYERS;i++)if(playeringame[i])

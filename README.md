@@ -6,18 +6,21 @@ An independent dark fantasy FPS-RPG inspired by nineteenth-century Argentina.
 Author and game designer: **Damian Curti**. Development target: **GZDoom 4.14.2**
 on Windows 11. The final game is intended to be independent of Doom assets.
 
-**Current release: 5.2.11.** Obtain and update the complete repository, validate
+**Current release: 5.2.12.** Obtain and update the complete repository, validate
 it, then rebuild with `run_dev.bat` as described below.
 
-5.2.11 replaces collision severity with received energy at 1 J = 1 raw HP for
-each body, area-weighted anatomy/armor and final Toughness once. Fixed gates,
-falls, pressure, weight and stone crushing ceilings use the same energy/work
-contract. Cannonballs retain normal armor absorption. [Evidence](assets/validation_5211/RESULTS.md).
-The author accepted CA194-01 on 2026-10-11 without qualifications; the
-[author test queue](pending_test.txt) is empty. #195 bull balance is separate.
-PR198 is merged into main. Accepted delivery:
-[PR199](https://github.com/damiancurti/Caelum-Argenteum/pull/199), targeting main;
-the author explicitly authorized merge and #194 closure.
+5.2.12 applies [#195](https://github.com/damiancurti/Caelum-Argenteum/issues/195):
+the bull accelerates to 10 m/s in one second, follows its target and cushions its
+own horizontal impacts without doubling collision mass. Mansion residents use
+finite owned tools, charged melee attacks and their approved personalities.
+[Native evidence](assets/validation_5212/RESULTS.md); the author accepted CA195-01
+on 2026-10-11 without qualifications. The [author test queue](pending_test.txt) is empty.
+Delivery: [PR200](https://github.com/damiancurti/Caelum-Argenteum/pull/200),
+branch `issue195-bull-balance`, committed and pushed; merge and issue closure authorized.
+
+5.2.11 collision energy and the 5.2.10 ranged amendment are author-accepted.
+PR198/PR199 are merged; #192/#194 are closed. Their original evidence remains
+in assets/validation_5210 and assets/validation_5211.
 
 5.2.10 applies the reopened #192 ranged amendment: longbow armor bypass is
 20/30/40%, crossbow 40/50/60%; carbine 70/80/90% and shotgun 60/70/80% stay

@@ -5,15 +5,47 @@ class CaelumBull : CaelumCombatActor
     override int GetArmorRace() { return CaelumConstants.RACE_BEAST_MAN; }
     bool BullChargeActive;
     double BullRunningSpeed;
+    double BullChargeSpeed;
+    int BullChargeRevision;
 
     double GetBullRunningSpeed()
     {
-        double runToWalkRatio =
-            CaelumConstants.GZDOOM_BASE_MAX_RUN_SPEED
-            / CaelumConstants.GZDOOM_BASE_MAX_WALK_SPEED;
-        // Speed ya contiene la marcha base modificada por Agilidad. La
-        // embestida conserva sobre ese valor la relación nativa 2:1.
-        return Speed * runToWalkRatio;
+        // Es el máximo final; no vuelve a multiplicarse por Agilidad ni clase.
+        return CaelumBullRules.MaximumSpeed();
+    }
+
+    bool BullChargeInterrupted()
+    {
+        return health<=0 || CaelumBolas.Restrained(self) || CaelumBolas.Interrupted(self)
+            || (ElementalStatus!=null && ElementalStatus.GetMovementMultiplier()<=0);
+    }
+
+    override double GetHorizontalImpactAbsorptionFraction()
+    {
+        if(!BullChargeActive || BullChargeInterrupted())return 0;
+        double total=Mass+GetAttackCarriedWeight();
+        double baseline=CaelumPhysicsUnits.JumpVelocity(Mass,total,0);
+        double impaired=CaelumPhysicsUnits.JumpVelocity(Mass,total,CombatAgility)
+            *CombatHealthPerformanceMultiplier
+            *(ElementalStatus!=null ? ElementalStatus.GetMovementMultiplier() : 1);
+        return Clamp(impaired/Max(0.0001,baseline)-1,0.0,CaelumBullRules.HORIZONTAL_CUSHION_CAP);
+    }
+
+    void EnsureBullChargeRevision()
+    {
+        if(BullChargeRevision>=CaelumBullRules.REVISION)return;
+        CollisionEffectiveMassMultiplier=1;
+        BullRunningSpeed=GetBullRunningSpeed();
+        // Una embestida anterior conserva su avance, limitado al nuevo máximo.
+        BullChargeSpeed=BullChargeActive ? Min(BullRunningSpeed,Vel.XY.Length()) : 0;
+        if(BullChargeActive && Vel.XY.Length()>BullRunningSpeed)
+        {vector2 limited=Vel.XY.Unit()*BullRunningSpeed;Vel.X=limited.X;Vel.Y=limited.Y;}
+        BullChargeRevision=CaelumBullRules.REVISION;
+        if(BullChargeActive)
+        {
+            if(BullChargeInterrupted() || target==null || target.health<=0)StopBullCharge();
+            else SetStateLabel("BullChargeLoop");
+        }
     }
 
     double GetBullRunningAirCostPerSecond()
@@ -27,14 +59,18 @@ class CaelumBull : CaelumCombatActor
     void StopBullCharge()
     {
         BullChargeActive = false;
+        BullChargeSpeed = 0;
         CombatAirSpending = false;
         CollisionEffectiveMassMultiplier = 1.0;
         Vel.X = 0.0;
         Vel.Y = 0.0;
+        if(health>0 && InStateSequence(CurState,FindState("BullChargeLoop")))SetState(SeeState);
     }
 
     void BeginBullCharge()
     {
+        EnsureBullChargeRevision();
+        if(BullChargeInterrupted()){StopBullCharge();return;}
         double firstTicCost = GetBullRunningAirCostPerSecond() / TICRATE;
         if (CurrentCombatAir < firstTicCost*CaelumThermalEffects.HeatCost(self))
         {
@@ -45,14 +81,38 @@ class CaelumBull : CaelumCombatActor
         }
         BullChargeActive = true;
         CombatAirSpending = true;
-        CollisionEffectiveMassMultiplier =
-            CaelumConstants.SHIELD_TOWER_COMBAT_MASS_MULTIPLIER;
-        Vel.X = Cos(Angle) * BullRunningSpeed;
-        Vel.Y = Sin(Angle) * BullRunningSpeed;
+        CollisionEffectiveMassMultiplier = 1;
+        BullChargeSpeed=0;
+        Vel.X=0;Vel.Y=0;
         CaelumThermalMotion.SetVelocity(self);
+        SetStateLabel("BullChargeLoop");
     }
 
-    // Inicia una embestida física en la dirección ya fijada por A_FaceTarget.
+    void FinishBullCharge()
+    {
+        StopBullCharge();
+        if(!BullChargeInterrupted())SetStateLabel("BullChargeFinish");
+    }
+
+    action void A_CaelumBullChase()
+    {
+        let bull=CaelumBull(self);
+        if(bull==null || bull.PulseResourceRecovery())return;
+        if(!bull.BullChargeInterrupted() && bull.target!=null && bull.target.health>0
+            && bull.Distance2D(bull.target)<=bull.MaxTargetRange && bull.CheckSight(bull.target))
+        {bull.SetState(bull.MeleeState);return;}
+        bull.A_CaelumBudgetedChase();
+    }
+
+    override void CollidedWith(Actor other,bool passive)
+    {
+        bool charging=BullChargeActive;
+        Super.CollidedWith(other,passive);
+        // Espera a que ambos cuerpos reciban el impacto antes de retirar la defensa.
+        if(charging && BullChargeActive && other!=null && other.bSolid)FinishBullCharge();
+    }
+
+    // Inicia la carrera; Tick sigue al blanco móvil durante la aceleración.
     // No aplica daño ni empuje melee: el contacto lo resuelve Impact Physics.
     action void A_CaelumBeginBullCharge()
     {
@@ -119,12 +179,19 @@ class CaelumBull : CaelumCombatActor
             * CalculateActorType4Percent(CombatAgility) / 100.0;
         BullRunningSpeed = GetBullRunningSpeed();
         StopBullCharge();
+        BullChargeRevision=CaelumBullRules.REVISION;
     }
 
     override void Tick()
     {
-        Super.Tick();
+        EnsureBullChargeRevision();
         if (BullChargeActive)
+        {
+            if(BullChargeInterrupted() || target==null || target.health<=0
+                || Distance2D(target)>MaxTargetRange || !CheckSight(target))
+            {StopBullCharge();if(health>0 && !BullChargeInterrupted())SetState(SeeState);}
+        }
+        if(BullChargeActive)
         {
             double ticCost = GetBullRunningAirCostPerSecond() / TICRATE;
             if (!TrySpendCombatAir(ticCost))
@@ -132,7 +199,20 @@ class CaelumBull : CaelumCombatActor
                 StopBullCharge();AttackResourceMagical=false;AttackResourceWeapon=-1;
                 AttackResourceBaseCost=CaelumAttackRules.NaturalAir();WaitForAttackResource();
             }
+            else
+            {
+                A_FaceTarget();
+                BullChargeSpeed=Min(GetBullRunningSpeed(),BullChargeSpeed+CaelumBullRules.SpeedPerTic());
+                double impaired=Clamp(CombatHealthPerformanceMultiplier*CaelumThermalEffects.Speed(self)
+                    *(ElementalStatus!=null ? ElementalStatus.GetMovementMultiplier() : 1),0.0,1.0);
+                double speed=BullChargeSpeed*impaired;
+                Vel.X=Cos(Angle)*speed;Vel.Y=Sin(Angle)*speed;
+                CaelumThermalMotion.SetVelocity(self);
+            }
         }
+        Super.Tick();
+        if(BullChargeActive && (MovementBlockingLine!=null || BlockingLine!=null))FinishBullCharge();
+        if(BullChargeActive && BullChargeInterrupted())StopBullCharge();
     }
 
     States
@@ -145,7 +225,7 @@ class CaelumBull : CaelumCombatActor
             CombatLucidityPhysicalStunRemaining > 0.0,
             "LucidityStun"
         );
-        BURN AB 4 A_CaelumBudgetedChase;
+        BURN AB 4 A_CaelumBullChase;
         Goto RunSecondHalf;
     LucidityStun:
         BULL A 1;
@@ -153,7 +233,7 @@ class CaelumBull : CaelumCombatActor
     Melee:
         // Conserva la embestida y restaura la cornada directa al final del
         // avance. Sus 45 puntos son la base previa a Fuerza, masa y defensas.
-        BULL F 3 A_CaelumBeginResourceAttack(CaelumAttackRules.NaturalAir());
+        BULL F 3 A_FaceTarget;
         BULL G 5 A_CaelumBeginBullCharge;
         BULL G 0 A_CaelumProfiledMeleeAttack(
             CaelumConstants.BULL_GORE_BASE_DAMAGE
@@ -179,9 +259,15 @@ class CaelumBull : CaelumCombatActor
         Goto Spawn;
     RunSecondHalf:
         TNT1 A 0 A_JumpIf(CombatLucidityPhysicalStunRemaining > 0.0, "LucidityStun");
-        BURN CD 4 A_CaelumBudgetedChase;
+        BURN CD 4 A_CaelumBullChase;
         Goto See;
     Run:
+        Goto See;
+    BullChargeLoop:
+        BURN ABCD 4;
+        Loop;
+    BullChargeFinish:
+        BULL G 0 A_CaelumProfiledMeleeAttack(CaelumConstants.BULL_GORE_BASE_DAMAGE);
         Goto See;
     }
 }

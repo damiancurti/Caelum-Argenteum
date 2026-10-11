@@ -45,7 +45,8 @@ class CaelumElementalStream : Object play
         let user=CaelumPlayer(emitter); let npc=CaelumCombatActor(emitter);
         return user!=null && user.DerivedStats!=null
             ? Max(1,int(user.DerivedStats.DebugStaffDamage*user.EffectiveOffensiveDamageMultiplier+0.5))
-            : npc!=null ? npc.GetTierOneMagicDamage(CaelumConstants.WEAPON_TYPE_STAFF) : 0;
+            : npc!=null ? Max(1,int(npc.GetTierOneMagicDamage(CaelumConstants.WEAPON_TYPE_STAFF)
+                *CaelumPersonalityRules.MagicPower(npc.CombatPersonality)+0.5)) : 0;
     }
 
     static void ApplyContact(Actor emitter,Actor body,bool ice=false)

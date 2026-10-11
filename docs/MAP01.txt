@@ -1,6 +1,19 @@
 CAELUM ARGENTEUM — STORY AND MAP01
 
-Documentation version: **5.2.11** — 2026-10-11.
+Documentation version: **5.2.12** — 2026-10-11.
+
+## 5.2.12 - Bull and resident combat (#195)
+
+The bull follows its moving target while accelerating linearly to 10 m/s in one
+second. Its 900 kg natural mass is no longer doubled; personal horizontal
+biological cushioning and normal Toughness follow SYSTEMS. The four original
+residents own and use finite Pickaxe/staff/bolas tools; Rulo uses a T1 XL War Axe
+and Ronnie a T1 M Sword with real normal/charged attack timing. Control precedes
+damage. They avoid Fire/Burn against the bull; Argento may use Light/Dazzle.
+The approved personality profiles also apply to the corresponding prisoners,
+without granting prisoners equipment. Existing grace/autosave, downing, victory,
+dialogue, player gifts and no-leather rule remain. Evidence: validation_5212;
+CA195-01 passed author acceptance on 2026-10-11 without qualifications.
 
 ## 5.2.11 - Shared collision energy (#194)
 

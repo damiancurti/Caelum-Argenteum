@@ -1,6 +1,14 @@
 # Caelum Argenteum — Audio and art
 
-Documentation version: **5.2.11** — 2026-10-11.
+Documentation version: **5.2.12** — 2026-10-11.
+
+## 5.2.12 - Bull and resident diagnostics (#195)
+
+Existing bull run and resident attack sprites are reused; new action poses are
+appended to preserve existing state indices. No new artwork, sound, map geometry
+or attribution changes. assets/validation_5212 keeps native fixture sources,
+logs, package hashes and a live MAP01 capture. Generated PK3s, maps, saves,
+the engine and development IWAD remain local build artifacts.
 
 ## 5.2.11 - Collision energy diagnostics (#194)
 

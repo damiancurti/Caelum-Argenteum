@@ -1,6 +1,40 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **5.2.11** — 2026-10-11.
+Documentation version: **5.2.12** — 2026-10-11.
+
+## 5.2.12 - Bull cushioning and finite resident combat (#195), 2026-10-11
+
+Author decisions: final 10 m/s cap, linear 10 m/s^2 acceleration, tracking a
+moving target, one recoverable bolas per resident without replenishment, and
+control before damage. Rulo/Ronnie use the issue's T1 War Axe/Sword amendment;
+each retains Pickaxe/staff utility ownership. Charging adds real preparation to
+the normal attack cycle. Fire is excluded for residents during the trial;
+Light/Dazzle remains available. The eight approved personality profiles are
+functional, without prisoner equipment grants.
+
+Removed doubled charge mass and added the approved jump-ratio cushioning only
+to the bull's own horizontal impact energy. Shared pair resolution snapshots
+both recipients before Pain/death can alter charge state. Native tool ownership,
+resource payment, durability, recovery and save references share player services.
+Versioned initialization preserves old actor health/resources and removes old
+x2 charge mass before gameplay.
+
+Author acceptance, 2026-10-11: CA195-01 (origin 5.2.12 / #195) passed without
+qualifications. The author confirmed all tests passed and requested issue closure
+and PR200 merge. Its confirmed entry is removed from pending_test.txt; the tracked
+queue is empty. This acceptance update retains version 5.2.12 and the original
+static/native evidence; runtime is unchanged.
+
+Static review and native tests found and corrected a stuck charge animation
+after binding, old melee fallback without an available weapon, payment before
+release, missing successful-hit adrenaline, out-of-range ice emission and
+case-insensitive parameter shadowing of the charged/secondary selection.
+Agent evidence, initial failures and final runs are in assets/validation_5212.
+Prior acceptance remains valid: PR198 merged as 6f8ad478; PR199 merged as
+dbf449cd; #192/#194 are closed. Their author checks are not reopened.
+Delivery: runtime/evidence commit a49531a4 pushed on `issue195-bull-balance`,
+linked PR200 accepted, merge/closure authorized. 549 native assertions, static validation and official PK3
+compilation pass. Keep-awake released at 2026-10-11T22:44:08Z; power plan unchanged.
 
 ## 5.2.11 - Received collision energy and bilateral contact area (#194), 2026-10-11
 

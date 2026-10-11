@@ -13,6 +13,17 @@ class CaelumAnchoredResident : CaelumCombatActor abstract
     bool RuloPartyDowned;
     CaelumPlayer RuloPartyTraveler;
     CaelumM00Bull RuloPartyBull;
+    CaelumResidentTools ResidentTools;
+
+    void EnsureResidentTools()
+    {
+        if(!StoryAnchored || IsEscortPrisoner())return;
+        if(ResidentTools==null)ResidentTools=new("CaelumResidentTools");
+        ResidentTools.Initialize(self);
+    }
+
+    override CaelumWeaponModel GetPossessedSidearm()
+    {return ResidentTools!=null ? ResidentTools.GetSidearm() : null;}
 
     // Estado de escolta de los prisioneros de MAP02. Los residentes de la
     // mansiÃ³n conservan -1 y nunca entran en esta mÃ¡quina.
@@ -628,9 +639,8 @@ class CaelumAnchoredResident : CaelumCombatActor abstract
             if (resident.IsRuloPartyFighting())
             {
                 resident.Target = resident.RuloPartyBull;
-                if (resident is "CaelumRulo" || resident is "CaelumRonnie")
-                    resident.ThermalChase("Melee", null);
-                else resident.A_CaelumBudgetedChase();
+                if(resident.ResidentTools!=null && resident.ResidentTools.TryStart())return;
+                resident.A_CaelumBudgetedChase();
             }
             else resident.Target = null;
             return;
@@ -647,9 +657,8 @@ class CaelumAnchoredResident : CaelumCombatActor abstract
             if (resident.IsRuloPartyFighting())
             {
                 resident.Target = resident.RuloPartyBull;
-                if (resident is "CaelumRulo" || resident is "CaelumRonnie")
-                    resident.ThermalChase("Melee", null);
-                else resident.A_CaelumBudgetedChase();
+                if(resident.ResidentTools!=null && resident.ResidentTools.TryStart())return;
+                resident.A_CaelumBudgetedChase();
             }
             else resident.Target = null;
             return;
@@ -722,6 +731,8 @@ class CaelumAnchoredResident : CaelumCombatActor abstract
     }
     override void Tick()
     {
+        EnsureResidentTools();
+        if(ResidentTools!=null)ResidentTools.Tick();
         EnsureStorySurvival();
         if(ResourceRecoveryActive() && IsRuloPartyFighting())
         {Super.Tick();return;}
