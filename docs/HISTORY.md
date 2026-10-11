@@ -4,6 +4,17 @@ Documentation version: **5.2.7** — 2026-10-11.
 
 ## 5.2.7 - Native menu migration (#189), 2026-10-11
 
+Author acceptance, 2026-10-11: CA189-01 (origin 5.2.7 / #189) passed.
+The author confirmed that all tests passed, with no qualifications reported,
+and explicitly authorized merging PR191 after PR190 and closing #189/#184.
+CA189-01 and CA184-01 were removed from pending_test.txt; the tracked queue is
+empty. CA184-01 is recorded under its originating 5.2.6 entry below.
+This documentation-only acceptance update retains release 5.2.7 and the original
+agent evidence/limitations; it does not claim additional agent-run device tests.
+Acceptance checks: regenerated DOCUMENT_INDEX, current dialogue/localization
+indexes, zero-error project validation and clean patch whitespace. Runtime source
+is unchanged, so the existing engine/build evidence remains applicable.
+
 The author requested migrating all interactive overlays into native menus,
 preserving images, adding NPC dialogue clicks and keeping NPC dialogue live.
 The author explicitly retained the existing card-game pause and selected
@@ -26,10 +37,16 @@ The prior 5.2.6 save also loads with native ownership restored. Final review
 corrected held turn input during journey confirmation and protected rest from
 the opening Use key's repeat; a directed native run verifies both cases.
 Full reproducible evidence and qualifications: assets/validation_527/RESULTS.md.
-CA189-01 is pending; CA184-01 remains outstanding. Agent checks are not author
-acceptance and do not authorize merging these PRs.
+At delivery CA189-01 and CA184-01 were pending; agent checks alone did not
+authorize merging. The later explicit author acceptance is recorded above.
 
 ## 5.2.6 - Pointer interaction in card/crafting/time menus (#184), 2026-10-11
+
+Author acceptance, 2026-10-11: CA184-01 (origin 5.2.6 / #184) passed.
+The author confirmed all tests passed without qualifications and authorized
+PR190 merge and #184 closure, together with #189/PR191. The confirmed entry
+was removed from pending_test.txt. Release 5.2.6 remains unchanged; original
+agent evidence is preserved separately from the author's confirmation.
 
 Added a transient shared pointer guard, native card-menu MouseEvent handling,
 visible crafting controls and live time-skip cursor ownership. Mouse and keyboard
@@ -43,7 +60,7 @@ dismantling, processing/component batches, time field editing and both card
 games. Physical Windows mouse checks exercised crafting filters/size/efficiency,
 time skip and Truco selection/play/forfeit return. See validation_526/RESULTS.md
 for final configurations, scope and qualifications; no manual author acceptance
-is inferred. CA184-01 is pending.
+was inferred at delivery. CA184-01 subsequently passed as recorded above.
 
 During implementation the author requested #189: migrate all interactive panels
 to native menus while preserving artwork, add NPC dialogue clicks and ensure

@@ -6,15 +6,17 @@ Documentation version: **5.2.7** — 2026-10-11.
 
 Implemented native card mouse handling and shared transient pointer controls
 for live crafting/time skip. Evidence: assets/validation_526/RESULTS.md.
-Author acceptance CA184-01 remains pending; commit/push and linked PR required.
+CA184-01 passed author acceptance on 2026-10-11 without qualifications;
+PR190 merge and #184 closure explicitly authorized.
 
 ## Issue #189 - Native interactive menus (5.2.7)
 
 Implemented after #184 on a separate stacked branch. All interactive overlays
 now use native menu ownership and preserved artwork/actions. Creator/NPC mouse
 controls, right-drag rest camera, live simulation and nested native pause are
-covered by assets/validation_527/RESULTS.md. CA189-01 awaits author acceptance;
-CA184-01 is still pending. Review/acceptance precede any merge or issue closure.
+covered by assets/validation_527/RESULTS.md. CA189-01 and CA184-01 passed author
+acceptance on 2026-10-11 without qualifications. PR191 merge after PR190 and
+#189 closure explicitly authorized; confirmed tests removed, author queue empty.
 #149 controls and #150 accessibility remain separate tasks.
 
 ## Issue #183 - Profession onboarding and MAP02 supplies (5.2.4)

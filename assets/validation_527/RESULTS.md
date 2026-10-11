@@ -1,5 +1,10 @@
 # Native menu migration - 5.2.7 / issue #189
 
+Author acceptance, 2026-10-11: CA189-01 and CA184-01 passed without qualifications;
+the author explicitly authorized PR190/PR191 merges and #184/#189 closure.
+The pending queue is empty. Original agent-run evidence and device limitations
+below remain historical; author acceptance does not imply additional agent tests.
+
 Baseline: 4a2ea045 (#184 / PR190). Target: GZDoom 4.14.2 on Windows 11.
 The fixtures are development-only and are not included in src or the PK3.
 Only source, bounded logs, run metadata/hashes and screenshots are redistributed.
@@ -61,11 +66,12 @@ were clicked and observed live. Resources advanced during NPC conversation.
 The engine was stopped deliberately by its recorded owned PID after the checks.
 Sky's drag API supports only its default button: right-drag is exercised in the
 running engine through the same production OrbitInput dispatcher, with physical
-right-button/controller acceptance remaining in CA189-01.
+right-button/controller acceptance left to CA189-01 at delivery (now accepted).
 
 ## Qualifications
 
-Agent checks are not author acceptance. CA184-01 and CA189-01 remain pending.
+Agent checks are not author acceptance. CA184-01 and CA189-01 were pending at
+delivery; the later explicit author confirmation is recorded above.
 The map/save/gameplay authorities and existing art are preserved; no balance or
 narrative values were changed. New UI state is transient and requires no save
 migration. Wider multiplayer acceptance is outside this single-player UI patch.

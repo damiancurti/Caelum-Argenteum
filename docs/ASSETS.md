@@ -10,6 +10,8 @@ and adds controls using existing drawing helpers; no new art or external asset
 is introduced. Development-only fixtures, logs, hashes and captures are under
 assets/validation_527, outside the runtime package. Engine/IWAD/save/PK3 fixtures
 are local dependencies and are not redistributed.
+CA184-01 and CA189-01 passed author acceptance on 2026-10-11 without
+qualifications. Original agent evidence remains distinct from that confirmation.
 
 ## 5.2.6 - Menu pointer evidence (#184)
 
@@ -18,7 +20,7 @@ no external assets or provenance changes. Development-only native fixtures,
 run hashes, logs and captures live in assets/validation_526. Only src is packaged.
 The fixtures seed an isolated inventory and accelerate completion explicitly;
 they do not establish author acceptance. No IWAD, engine, save or test PK3 is
-redistributed. The existing UI assets will be retained in the #189 migration.
+redistributed. The existing UI assets are retained in the #189 migration.
 
 ## 5.2.5 - Dialogue source provenance and evidence (#185)
 

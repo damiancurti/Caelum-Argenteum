@@ -36,7 +36,8 @@ restores the original camera and furniture ownership. No balance rules change.
 Menu/pointer state is transient: panel changes, console, nested-menu return,
 actor/map replacement and save/load discard armed gestures. Keyboard hold latches
 are separate from pointer reset so a repeated keydown cannot confirm abandonment
-or repeat Tarot selection. Author acceptance remains in pending_test.txt.
+or repeat Tarot selection. CA184-01 and CA189-01 passed author acceptance on
+2026-10-11 without qualifications; the confirmation is recorded in HISTORY.
 
 ## Mouse interaction contract - 5.2.6 / #184
 
