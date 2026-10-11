@@ -14,9 +14,10 @@ bonuses affect damage, push and heat; ideology modifies equipped armor/shields.
 Old saves receive Normal/Normal/Normal/Center as requested. Native projectile
 impacts retain their final mitigation and prepare damage/wear once.
 [Evidence and comparisons](assets/validation_529/RESULTS.md). The author accepted
-CA192-01 and CA188-01 on 2026-10-11 without qualifications and authorized
-[PR193](https://github.com/damiancurti/Caelum-Argenteum/pull/193) followed by
-[PR196](https://github.com/damiancurti/Caelum-Argenteum/pull/196) and #188/#192 closure.
+CA192-01 and CA188-01 on 2026-10-11 without qualifications.
+[PR193](https://github.com/damiancurti/Caelum-Argenteum/pull/193) and
+[PR196](https://github.com/damiancurti/Caelum-Argenteum/pull/196) are merged;
+#188 and #192 are closed as completed.
 The author test queue is empty; HISTORY records both confirmations.
 
 5.2.8 applies mass-based Toughness after armor, at half strength for direct
