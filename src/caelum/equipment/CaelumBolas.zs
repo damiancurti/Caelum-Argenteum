@@ -167,31 +167,63 @@ class CaelumBolas : Object play
     {
         if(!CanPrepare(user) || user.EquippedWeaponCooldownRemaining>0)return false;
         let item=user.FindNativeEquipmentItemById(user.ActiveWeaponItemId);
-        if(item==null || item.Owner!=user || !item.Equipped || item.InMagicBox
-            || item.ItemType!=CaelumConstants.WEAPON_TYPE_BOLAS || item.Durability<=0)return false;
-        double cost=CaelumBolasRules.AIR_COST*user.DerivedStats.AirConsumptionMultiplier*CaelumThermalEffects.HeatCost(user);
-        if(user.CurrentAir<cost)return false;
-        user.UpdateLucidityAccuracyEffects();user.UpdateCrouchEffects();
-        double movement=user.IsCrouching ? user.CrouchAccuracyMultiplier
-            : user.IsRunningOnGround() ? CaelumConstants.RUNNING_ACCURACY_MULTIPLIER : 1;
-        double spread=CaelumBolasRules.Spread(user.BolasPreparedTics)
-            *100/Max(1.0,user.EffectivePhysicalAccuracyPercent*movement);
-        double yaw=user.Angle+Random[CaelumBolasYaw](-100000,100000)/100000.0*spread;
-        double pitch=user.Pitch+Random[CaelumBolasPitch](-100000,100000)/100000.0*spread;
-        vector3 origin=user.Pos+(Cos(user.Angle)*32,Sin(user.Angle)*32,user.Height*0.65);
-        let flight=CaelumBolasFlight(Actor.Spawn("CaelumBolasFlight",origin,NO_REPLACE));
-        if(flight==null)return false;
-        flight.SourceItem=item;flight.Target=user;flight.SourceMap=level.MapName;
-        user.RemoveInventory(item);item.Equipped=false;item.AttachToOwner(flight);
-        user.CurrentAir-=cost;user.UpdateAirStateEffects();user.MarkCombatActivity();user.BolasPreparedTics=0;user.BolasPreparedItem=0;
+        if(ThrowItem(user,item,user.BolasPreparedTics)==null)return false;
+        user.BolasPreparedTics=0;user.BolasPreparedItem=0;
         user.WeaponModel.Equipped=false;user.ActiveWeaponItemId=0;
         user.CancelWeaponCharge();user.CancelRangedAim();
-        double speed=CaelumConstants.PROJECTILE_SPEED_SLOW*Sqrt(Max(0.0,user.DerivedStats.PhysicalPushMultiplier));
-        flight.Angle=yaw;flight.Vel=(Cos(yaw)*Cos(pitch),Sin(yaw)*Cos(pitch),-Sin(pitch))*speed;
         user.BolasReleaseUntil=level.time+CaelumAttackRules.BASE_TICS;
         user.RefreshCarriedInventorySummary();user.ApplyCharacterProfile();user.PersistCharacterState();
         // Sin selector alternativo inmediato: deja visible la salida y recuperación.
         return true;
+    }
+
+    static double ThrowCost(Actor emitter)
+    {
+        let user=CaelumPlayer(emitter);let npc=CaelumCombatActor(emitter);
+        double cost=user!=null && user.DerivedStats!=null
+            ? CaelumBolasRules.AIR_COST*user.DerivedStats.AirConsumptionMultiplier
+            : npc!=null ? npc.GetEffectiveAttackAir(CaelumBolasRules.AIR_COST) : 0;
+        return cost*CaelumThermalEffects.HeatCost(emitter);
+    }
+
+    // La activación cambia, pero vuelo, coste y objeto transferido son únicos.
+    static CaelumBolasFlight ThrowItem(Actor emitter,CaelumEquipmentItem item,int prepared)
+    {
+        let user=CaelumPlayer(emitter);let npc=CaelumCombatActor(emitter);
+        if(emitter==null || (user==null && npc==null) || emitter.health<=0 || Restrained(emitter)
+            || Interrupted(emitter) || item==null || item.Owner!=emitter || !item.Equipped || item.InMagicBox
+            || item.ItemType!=CaelumConstants.WEAPON_TYPE_BOLAS || item.Durability<=0)return null;
+        double cost=ThrowCost(emitter),accuracy=0,push=0;
+        if(user!=null)
+        {
+            if(user.DerivedStats==null || user.CurrentAir<cost)return null;
+            user.UpdateLucidityAccuracyEffects();user.UpdateCrouchEffects();
+            double movement=user.IsCrouching ? user.CrouchAccuracyMultiplier
+                : user.IsRunningOnGround() ? CaelumConstants.RUNNING_ACCURACY_MULTIPLIER : 1;
+            accuracy=user.EffectivePhysicalAccuracyPercent*movement;
+            push=user.DerivedStats.PhysicalPushMultiplier;
+        }
+        else
+        {
+            if(npc.CurrentCombatAir<cost)return null;
+            npc.UpdateActorOffensiveStatistics();
+            accuracy=npc.CombatPhysicalAccuracyPercent*npc.CombatLucidityAccuracyMultiplier
+                *(npc.ElementalStatus!=null ? npc.ElementalStatus.GetAccuracyMultiplier() : 1);
+            push=npc.CombatPhysicalPushMultiplier;
+        }
+        double spread=CaelumBolasRules.Spread(prepared)*100/Max(1.0,accuracy);
+        double yaw=emitter.Angle+Random[CaelumBolasYaw](-100000,100000)/100000.0*spread;
+        double pitch=emitter.Pitch+Random[CaelumBolasPitch](-100000,100000)/100000.0*spread;
+        vector3 origin=emitter.Pos+(Cos(emitter.Angle)*32,Sin(emitter.Angle)*32,emitter.Height*0.65);
+        let flight=CaelumBolasFlight(Actor.Spawn("CaelumBolasFlight",origin,NO_REPLACE));
+        if(flight==null)return null;
+        flight.SourceItem=item;flight.Target=emitter;flight.SourceMap=level.MapName;
+        emitter.RemoveInventory(item);item.Equipped=false;item.AttachToOwner(flight);
+        if(user!=null){user.CurrentAir-=cost;user.UpdateAirStateEffects();user.MarkCombatActivity();}
+        else {npc.CurrentCombatAir-=cost;npc.MarkActorCombatActivity();}
+        double speed=CaelumConstants.PROJECTILE_SPEED_SLOW*Sqrt(Max(0.0,push));
+        flight.Angle=yaw;flight.Vel=(Cos(yaw)*Cos(pitch),Sin(yaw)*Cos(pitch),-Sin(pitch))*speed;
+        return flight;
     }
 }
 

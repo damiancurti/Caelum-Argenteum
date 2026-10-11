@@ -1,0 +1,18 @@
+CA195-01 | Origin: 5.2.12 / issue #195 | Pending author gameplay acceptance
+Prerequisites: rebuild with run_dev.bat; use a disposable MAP01 game at Rulo's
+assisted bull trial. Keep the native pre-fight checkpoint for a retry.
+1. Enter the arena and observe the grace, then move while the bull charges.
+   Expected: progressive acceleration, moving-target tracking, a 10 m/s cap;
+   contact, Pain or bolas stop the charge without a stuck run animation.
+2. Let the four residents participate; observe bolas/ice before damage, Rulo's
+   War Axe and Ronnie's Sword, normal/charged preparation and Argento's Light.
+   Expected: no resident Fire/Burn against the bull, finite recoverable bolas,
+   costs/wear on the owned tools and no replacement after destruction.
+3. Save/load during combat and retry from the pre-fight checkpoint if defeated.
+   Expected: no duplicate tools, full-speed jump or x2 mass; bindings, wear,
+   preparation, downing/recovery and quest progression remain coherent.
+4. Win and complete the conversation with Rulo; continue the tutorial.
+   Expected: the same residents survive, victory is recorded, player gifts and
+   progression remain available, and the MAP01 bull drops no leather.
+Report any pacing, targeting or control issue; native automated tests do not
+substitute for this author's playability acceptance.

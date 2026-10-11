@@ -2,6 +2,7 @@
 // con args[0]=1 y adopta el contrato tangible/anclado del residente.
 class CaelumRulo : CaelumAnchoredResident
 {
+    override int GetApprovedPersonality(){return CaelumResidentData.RULO_PERSONALITY;}
     override int GetArmorRace() { return CaelumConstants.RACE_BEAST_MAN; }
     Default
     {
@@ -95,5 +96,8 @@ class CaelumRulo : CaelumAnchoredResident
         Goto Spawn;
     Run:
         Goto See;
+    ResidentToolUse:
+        RULO E 1;
+        Loop;
     }
 }

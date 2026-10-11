@@ -2,6 +2,7 @@
 // coloca con args[0]=1 y adopta el contrato tangible/anclado del residente.
 class CaelumArgento : CaelumAnchoredResident
 {
+    override int GetApprovedPersonality(){return CaelumResidentData.ARGENTO_PERSONALITY;}
     Default
     {
         Tag "$CA_ARGENTO_NAME";
@@ -88,5 +89,8 @@ class CaelumArgento : CaelumAnchoredResident
         Goto Spawn;
     Run:
         Goto See;
+    ResidentToolUse:
+        ARGO E 1;
+        Loop;
     }
 }

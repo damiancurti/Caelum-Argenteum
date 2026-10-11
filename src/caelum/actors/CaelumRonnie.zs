@@ -2,6 +2,7 @@
 // coloca con args[0]=1 y adopta el contrato tangible/anclado del residente.
 class CaelumRonnie : CaelumAnchoredResident
 {
+    override int GetApprovedPersonality(){return CaelumResidentData.RONNIE_PERSONALITY;}
     override int GetArmorRace() { return CaelumConstants.RACE_CAELITH; }
     Default
     {
@@ -89,5 +90,8 @@ class CaelumRonnie : CaelumAnchoredResident
         Goto Spawn;
     Run:
         Goto See;
+    ResidentToolUse:
+        RONI E 1;
+        Loop;
     }
 }

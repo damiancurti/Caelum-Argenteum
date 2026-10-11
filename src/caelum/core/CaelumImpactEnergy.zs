@@ -265,12 +265,17 @@ class CaelumImpactEnergy : Object
             result.SourceContactMaximumHeightRatio,result.Normal);
         let secondArea=AreaFor(second,first,result.TargetContactMinimumHeightRatio,
             result.TargetContactMaximumHeightRatio,-result.Normal);
+        // #195: dolor/muerte del primer receptor no cambia la amortiguación
+        // que el segundo tenía al comenzar este mismo contacto.
+        let firstNPC=CaelumCombatActor(first);let secondNPC=CaelumCombatActor(second);
+        double firstRetained=firstNPC!=null ? firstNPC.RetainImpactEnergy(joules,result.SourceDeltaSpeed,kind,result.Normal) : -1;
+        double secondRetained=secondNPC!=null ? secondNPC.RetainImpactEnergy(joules,result.TargetDeltaSpeed,kind,-result.Normal) : -1;
         Deliver(first,second,result.SourceDeltaSpeed,kind,secondSurface,firstMass,secondMass,
             result.ClosingSpeed,result.Impulse,result.SourceContactMinimumHeightRatio,
-            result.SourceContactMaximumHeightRatio,joules,firstArea,result.Normal,stationaryScenery);
+            result.SourceContactMaximumHeightRatio,joules,firstArea,result.Normal,stationaryScenery,firstRetained);
         Deliver(second,first,result.TargetDeltaSpeed,kind,firstSurface,secondMass,firstMass,
             result.ClosingSpeed,result.Impulse,result.TargetContactMinimumHeightRatio,
-            result.TargetContactMaximumHeightRatio,joules,secondArea,-result.Normal);
+            result.TargetContactMaximumHeightRatio,joules,secondArea,-result.Normal,false,secondRetained);
     }
 }
 

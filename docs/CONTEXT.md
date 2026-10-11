@@ -1,14 +1,15 @@
 # CONTEXT.md — Caelum Argenteum
 
-Documentation version: **5.2.11** — 2026-10-11.
+Documentation version: **5.2.12** — 2026-10-11.
 
-**Current patch 5.2.11 / #194:** bilateral reduced-mass energy, 1 J = 1 HP;
-area-weighted anatomy/armor, final #188 Toughness once. Anchored gates, body
-landings, scenery, cannon/ram contacts and accumulated pressure work share the
-contract. Cannon armor bypass removed. Static weight uses 0.1 mm/s internal
-creep; MAP08 solid-stone crusher mass 507600 kg. Evidence: validation_5211.
-CA194-01 accepted 2026-10-11; queue empty. PR199 to main: merge/closure authorized.
-#195 owns bull balance.
+**Current patch 5.2.12 / #195:** bull 10 m/s, linear 10 m/s^2 acceleration,
+moving-target tracking, normal collision mass and horizontal biological cushioning.
+Residents own finite Pickaxe/staff/one bolas; Rulo/Ronnie use T1 War Axe/Sword
+with sequential charging. Bolas/ice precede damage; resident fire is
+excluded during the trial. Eight functional personalities.
+validation_5212; CA195-01 pending.
+**5.2.11 / #194:** CA194-01 accepted 2026-10-11; PR199 merged, issue closed.
+Collision: 1 J/HP/body, independent defenses.
 **5.2.10 / #192 amendment:** CA192-02 accepted 2026-10-11; issue closed,
 PR198 merged. Bow 20/30/40%, crossbow 40/50/60%; four ranged families exclude
 ideology. Active names use shotgun; fresh test saves authorized. validation_5210.

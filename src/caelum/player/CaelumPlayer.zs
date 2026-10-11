@@ -9662,29 +9662,11 @@ class CaelumPlayer : DoomPlayer
 
         double eligibleDamage = dealtDamage
             * Max(0.0, ArmorDurabilityDamageMultiplier);
-        LastWeaponDurabilityLoss = int(
-            eligibleDamage
-                / CaelumConstants.ARMOR_ABSORBED_DAMAGE_PER_GUARANTEED_DURABILITY
-        );
-        double remainder = eligibleDamage
-            - LastWeaponDurabilityLoss
-                * CaelumConstants.ARMOR_ABSORBED_DAMAGE_PER_GUARANTEED_DURABILITY;
-        LastWeaponDurabilityChancePercent = Clamp(
-            remainder / CaelumConstants.ARMOR_DAMAGE_PER_DURABILITY_CHANCE_PERCENT,
-            0.0,
-            100.0
-        );
+        LastWeaponDurabilityChancePercent = CaelumWeaponUseRules.WearChance(eligibleDamage);
         int roll = Random[CaelumWeaponDurability](0, 999999);
         LastWeaponDurabilityRollPercent = roll / 10000.0;
-        if (LastWeaponDurabilityRollPercent < LastWeaponDurabilityChancePercent)
-        {
-            LastWeaponDurabilityLoss++;
-        }
-
-        LastWeaponDurabilityLoss = Min(
-            LastWeaponDurabilityLoss,
-            weapon.Durability
-        );
+        LastWeaponDurabilityLoss = CaelumWeaponUseRules.WearLoss(eligibleDamage,
+            weapon.Durability,LastWeaponDurabilityRollPercent);
         if (LastWeaponDurabilityLoss <= 0) { return; }
 
         weapon.Durability -= LastWeaponDurabilityLoss;
@@ -11746,14 +11728,9 @@ class CaelumPlayer : DoomPlayer
         double physicalWeaponDamageScale = selectedBaseDamage
             * WeaponModel.GetTierDamageMultiplierFor(WeaponModel.Tier)
             / CaelumConstants.DEBUG_SWORD_BASE_DAMAGE;
-        LastMeleeCalculatedDamage = DerivedStats.DebugSwordDamage
-            * physicalWeaponDamageScale
-            * EffectiveOffensiveDamageMultiplier;
-        if (chargedAttack)
-        {
-            LastMeleeCalculatedDamage *=
-                CaelumConstants.WEAPON_CHARGED_DAMAGE_MULTIPLIER;
-        }
+        LastMeleeCalculatedDamage = CaelumWeaponUseRules.PhysicalDamage(selectedBaseDamage,
+            WeaponModel.GetTierDamageMultiplierFor(WeaponModel.Tier),
+            DerivedStats.PhysicalPushMultiplier*EffectiveOffensiveDamageMultiplier,chargedAttack);
         FTranslatedLineTarget targetData;
         UpdateLucidityAccuracyEffects();
         // Running applies after attributes and lucidity, retaining 25% of the
@@ -11852,15 +11829,9 @@ class CaelumPlayer : DoomPlayer
             LastMeleeVulnerabilityGrade,
             LastMeleeCriticalHit
         );
-        LastMeleeCalculatedDamage = DerivedStats.DebugSwordDamage
-            * physicalWeaponDamageScale
-            * LastMeleeLocationMultiplier
-            * EffectiveOffensiveDamageMultiplier;
-        if (chargedAttack)
-        {
-            LastMeleeCalculatedDamage *=
-                CaelumConstants.WEAPON_CHARGED_DAMAGE_MULTIPLIER;
-        }
+        LastMeleeCalculatedDamage = CaelumWeaponUseRules.PhysicalDamage(selectedBaseDamage,
+            WeaponModel.GetTierDamageMultiplierFor(WeaponModel.Tier),
+            DerivedStats.PhysicalPushMultiplier*LastMeleeLocationMultiplier*EffectiveOffensiveDamageMultiplier,chargedAttack);
         int integerDamage = Max(1, int(LastMeleeCalculatedDamage + 0.5));
         ThermalBluntDelivery=(secondaryAttack ? CaelumWeaponCatalogue.GetSecondaryDamageType(catalogueWeapon)
             : CaelumWeaponCatalogue.GetPrimaryDamageType(catalogueWeapon))==CaelumConstants.CATALOGUE_DAMAGE_BLUNT;

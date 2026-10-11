@@ -26,6 +26,24 @@ class CaelumCombatActor : Actor
     int CombatEffectiveDexterity;
     int CombatEffectiveInsight;
     CaelumBolasFlight BolasBinding;
+    CaelumUtilityStaffStream CombatUtilityStaffStream;
+    CaelumEquipmentItem CombatActiveTool;
+    CaelumCharacterProfile CombatPersonality;
+    int CombatPersonalityRevision;
+    virtual int GetApprovedPersonality(){return -1;}
+
+    void EnsureCombatPersonality()
+    {
+        if(CombatPersonalityRevision>=CaelumResidentData.REVISION)return;
+        int packed=GetApprovedPersonality();
+        if(packed>=0)
+        {
+            if(CombatPersonality==null)CombatPersonality=new("CaelumCharacterProfile");
+            CaelumPersonalityRules.Unpack(CombatPersonality,packed);
+        }
+        CombatPersonalityRevision=CaelumResidentData.REVISION;
+        UpdateActorOffensiveStatistics();UpdateCombatHealthEffects();
+    }
     virtual CaelumWeaponModel GetPossessedSidearm(){return null;}
     int CombatStrength;
     int CombatConstitution;
@@ -261,6 +279,7 @@ class CaelumCombatActor : Actor
         }
         RecalculateCombatStatistics();
         UpdateActorLucidityState();
+        EnsureCombatPersonality();
     }
 
     virtual String GetCaelumRecognitionSound()
@@ -549,7 +568,13 @@ class CaelumCombatActor : Actor
             return;
         }
         if (!combatActor.BeginCaelumDiagnosticChase()) { return; }
-        combatActor.ThermalChase();
+        let resident=CaelumAnchoredResident(combatActor);
+        if(resident!=null && resident.IsRuloPartyFighting())
+        {
+            if(resident is "CaelumRulo" || resident is "CaelumRonnie")combatActor.ThermalChase(null,null);
+            else combatActor.ThermalChase(null,"Missile");
+        }
+        else combatActor.ThermalChase();
     }
 
     void RunCaelumMassFollowerPulse()
@@ -811,8 +836,7 @@ class CaelumCombatActor : Actor
         if(self is 'CaelumFolkloreCombatActor')
             CombatBaseSpeed=CaelumConstants.GZDOOM_BASE_MAX_WALK_SPEED*CaelumGrowthRules.Multiplier(CombatAgility,2);
         let bull=CaelumBull(self);
-        if(bull!=null)bull.BullRunningSpeed=CombatBaseSpeed*CaelumGrowthRules.Multiplier(CombatAgility,2)
-            *CaelumConstants.GZDOOM_BASE_MAX_RUN_SPEED/CaelumConstants.GZDOOM_BASE_MAX_WALK_SPEED;
+        if(bull!=null)bull.BullRunningSpeed=bull.GetBullRunningSpeed();
         RecalculateCombatStatistics();
         CurrentCombatAnima=Clamp(animaRatio,0.0,1.0)*MaximumCombatAnima;
         CurrentCombatAir=Clamp(airRatio,0.0,1.0)*MaximumCombatAir;
@@ -1227,14 +1251,14 @@ class CaelumCombatActor : Actor
             CombatEffectiveInsight
         );
         CombatPhysicalCriticalChancePercent = Clamp(
-            CaelumConstants.BASE_CRITICAL_CHANCE_PERCENT
-                + CalculateActorType2Percent(CombatEffectiveDexterity),
+            (CaelumConstants.BASE_CRITICAL_CHANCE_PERCENT
+                + CalculateActorType2Percent(CombatEffectiveDexterity))*CaelumPersonalityRules.Critical(self),
             0.0,
             100.0
         );
         CombatMagicalCriticalChancePercent = Clamp(
-            CaelumConstants.BASE_CRITICAL_CHANCE_PERCENT
-                + CalculateActorType2Percent(CombatEffectiveInsight),
+            (CaelumConstants.BASE_CRITICAL_CHANCE_PERCENT
+                + CalculateActorType2Percent(CombatEffectiveInsight))*CaelumPersonalityRules.Critical(self),
             0.0,
             100.0
         );
@@ -1242,13 +1266,14 @@ class CaelumCombatActor : Actor
             * CalculateActorType1Percent(CombatStrength) / 100.0;
         CombatMagicalPushMultiplier = CalculateActorType1Percent(
             CombatEffectiveIntelligence
-        ) / 100.0;
+        ) / 100.0 * CaelumPersonalityRules.MagicPower(CombatPersonality);
     }
 
     // Entrada ofensiva comun: salud modifica dano, lucidez modifica precision
     // y el atributo propio del ataque determina su probabilidad critica.
     int PrepareActorOutgoingDamage(double baseDamage, bool magicalAttack)
     {
+        EnsureCombatPersonality();
         UpdateCombatHealthEffects();
         UpdateActorOffensiveStatistics();
         double resolvedBaseDamage = Max(0.0, baseDamage);
@@ -1292,7 +1317,7 @@ class CaelumCombatActor : Actor
         LastCombatAttackCalculatedDamage = Max(
             1,
             int(resolvedBaseDamage
-                * (magicalAttack ? 1.0 : CombatPhysicalPowerMultiplier)
+                * (magicalAttack ? CaelumPersonalityRules.MagicPower(CombatPersonality) : CombatPhysicalPowerMultiplier)
                 * CombatHealthPerformanceMultiplier + 0.5)
         );
         return LastCombatAttackCalculatedDamage;
@@ -1583,6 +1608,10 @@ class CaelumCombatActor : Actor
     {
         CaelumCombatActor combatActor = CaelumCombatActor(self);
         if (combatActor == null) { return; }
+        // #195: Luz sigue permitida; sólo se evita la carga real de Fuego.
+        let resident=CaelumAnchoredResident(combatActor);
+        if(resident!=null && resident.IsRuloPartyFighting() && essenceType==CaelumConstants.ESSENCE_FIRE)
+            combatActor.NextRangedSecondaryElement=true;
         if (!combatActor.BeginCaelumDiagnosticAttack()) { return; }
         if (!combatActor.WithinAttackRange(true,spawnHeight) || !combatActor.SpendBasicMagic()) return;
         int calculatedDamage = combatActor.PrepareActorOutgoingDamage(
@@ -1829,6 +1858,21 @@ class CaelumCombatActor : Actor
         );
     }
 
+    virtual double GetHorizontalImpactAbsorptionFraction(){return 0;}
+
+    double ImpactAbsorptionSpeed(double delta,int kind,Vector3 normal=(0,0,0))
+    {
+        if(kind==CaelumConstants.IMPACT_KIND_CRUSH || kind==CaelumConstants.IMPACT_KIND_FLOOR)
+            return Min(Max(0.0,delta),GetBiologicalLandingAbsorptionSpeed());
+        return Abs(normal.Z)<0.5 ? Max(0.0,delta)*GetHorizontalImpactAbsorptionFraction() : 0;
+    }
+
+    double RetainImpactEnergy(double joules,double delta,int kind,Vector3 normal=(0,0,0))
+    {
+        double retained=delta>0 ? Max(0.0,delta-ImpactAbsorptionSpeed(delta,kind,normal))/delta : 1;
+        return joules*retained*retained;
+    }
+
     double CalculateImpactEquivalentTics(double deltaSpeed)
     {
         return ImpactPhysics.EquivalentTics(
@@ -1943,20 +1987,8 @@ class CaelumCombatActor : Actor
             impactKind = CaelumConstants.IMPACT_KIND_ENVIRONMENT;
         LastImpactKind = impactKind;
         LastImpactRawDeltaSpeed = Max(0.0, deltaSpeed);
-        LastImpactBiologicalAbsorptionSpeed = 0.0;
-        LastImpactDeltaSpeed = LastImpactRawDeltaSpeed;
-        if (impactKind == CaelumConstants.IMPACT_KIND_CRUSH
-            || impactKind == CaelumConstants.IMPACT_KIND_FLOOR)
-        {
-            LastImpactBiologicalAbsorptionSpeed = Min(
-                LastImpactRawDeltaSpeed,
-                GetBiologicalLandingAbsorptionSpeed()
-            );
-            LastImpactDeltaSpeed = Max(
-                0.0,
-                LastImpactRawDeltaSpeed - LastImpactBiologicalAbsorptionSpeed
-            );
-        }
+        LastImpactBiologicalAbsorptionSpeed=ImpactAbsorptionSpeed(LastImpactRawDeltaSpeed,impactKind,contactNormal);
+        LastImpactDeltaSpeed=Max(0.0,LastImpactRawDeltaSpeed-LastImpactBiologicalAbsorptionSpeed);
         LastImpactEquivalentTics = CalculateImpactEquivalentTics(LastImpactDeltaSpeed);
         LastImpactReceivedJoules = receivedJoules>=0 ? receivedJoules
             : CaelumImpactEnergy.Received(selfEffectiveMass,otherEffectiveMass,closingSpeed);
@@ -2736,6 +2768,7 @@ class CaelumCombatActor : Actor
 
     override int DamageMobj(Actor inflictor,Actor source,int damage,Name mod,int flags,double angle)
     {
+        EnsureCombatPersonality();
         let shot=CaelumActorProjectile(inflictor);
         Actor previousReceiver=shot!=null?shot.CaelumDefenseReceiver:null;
         int result=ReceiveCaelumDamage(inflictor,source,damage,mod,flags,angle);
@@ -3474,13 +3507,13 @@ class CaelumCombatActor : Actor
             + (rawIntensity - 1.0)
                 * patienceMultiplier
                 * (1.0 - adrenalineRatio);
-        CombatAdrenalineGainMultiplier = rawIntensity;
+        CombatAdrenalineGainMultiplier = rawIntensity*CaelumPersonalityRules.Adrenaline(self);
 
         double baseEvasion = CaelumGrowthRules.Bonus(effectiveAgility);
         double massMultiplier = 100.0 / (Mass / 2.0 + 50.0);
         EffectiveCombatEvasionChance = baseEvasion
             * massMultiplier
-            * CombatHealthPerformanceMultiplier;
+            * CombatHealthPerformanceMultiplier * CaelumPersonalityRules.Evasion(self);
         Speed = CombatBaseSpeed * CombatHealthPerformanceMultiplier * CaelumThermalEffects.Speed(self)
             * (ElementalStatus != null
                 ? ElementalStatus.GetMovementMultiplier() : 1.0);
@@ -3580,6 +3613,7 @@ class CaelumCombatActor : Actor
 
     override void Tick()
     {
+        EnsureCombatPersonality();
         EnsureGrowthBalance();
         CaelumDemonService.Initialize(self);
         CaelumBreathing.UpdateSound(self);

@@ -1,6 +1,17 @@
 # Caelum Argenteum — Project, status and roadmap
 
-Documentation version: **5.2.11** — 2026-10-11.
+Documentation version: **5.2.12** — 2026-10-11.
+
+## 5.2.12 - Bull balance and finite resident tools (#195)
+
+Implemented the approved 10 m/s cap, one-second linear acceleration, target
+tracking and biological cushioning with normal collision mass. Mansion residents
+activate their finite tools and approved combat weapons, with real sequential
+charge timing and fire avoidance. Eight resident/prisoner personalities now use
+shared #192 rules; prisoners receive no additional equipment. Versioned old-save
+initialization and current item/charge persistence are tested. Evidence and
+limitations: assets/validation_5212/RESULTS.md. CA195-01 awaits author acceptance.
+The previous accepted PR198/PR199 are merged; issues #192/#194 are closed.
 
 ## 5.2.11 - Bilateral collision energy (#194)
 
