@@ -13,8 +13,8 @@ it, then rebuild with `run_dev.bat` as described below.
 20/30/40%, crossbow 40/50/60%; carbine 70/80/90% and shotgun 60/70/80% stay
 unchanged. All four exclude offensive ideology against both armor and shields.
 Active identifiers, descriptions and retained resource paths use shotgun names.
-[Evidence](assets/validation_5210/RESULTS.md); CA192-02 remains pending for author
-gameplay acceptance. Commit/push are complete and #192 is closed again as requested;
+[Evidence](assets/validation_5210/RESULTS.md); CA192-02 passed author
+gameplay acceptance on 2026-10-11 without qualifications. Commit/push are complete and #192 is closed again as requested;
 [PR198](https://github.com/damiancurti/Caelum-Argenteum/pull/198) awaits review/merge.
 Use fresh test saves for the renamed selector, as authorized by the author.
 

@@ -10,8 +10,8 @@ ideology against armor and shields. Firearm values, defensive ideology,
 innate defense, Toughness and base damage/scaling are preserved. Active names
 for the replaced weapon now identify the shotgun. Historical art bytes and
 release records retain their provenance. Fresh test saves are author-authorized.
-Evidence: assets/validation_5210/RESULTS.md. CA192-02 is pending; the earlier
-CA192-01/CA188-01 acceptance does not cover this amendment. Commit/push are complete;
+Evidence: assets/validation_5210/RESULTS.md. CA192-02 passed author acceptance on
+2026-10-11 without qualifications; HISTORY preserves the originating evidence. Commit/push are complete;
 #192 is closed again at the author's request. PR198 awaits review/merge.
 
 ## 5.2.9 - Four personality layers and twelve-projectile bell (#192)

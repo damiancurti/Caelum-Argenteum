@@ -6,8 +6,8 @@ Documentation version: **5.2.10** — 2026-10-11.
 
 Implemented the approved bow/crossbow penetration table, four-family ideology
 exclusion and author-requested removal of active former-weapon names. Native
-and static evidence: assets/validation_5210/RESULTS.md. CA192-02 remains in the
-author queue; previous acceptance is preserved under 5.2.9. Commit/push are complete and
+and static evidence: assets/validation_5210/RESULTS.md. CA192-02 passed author
+acceptance on 2026-10-11 without qualifications; the queue is now empty. Commit/push are complete and
 #192 is closed again as requested. PR198 awaits review/merge.
 
 ## Issue #192 - Personality and magical bell (5.2.9)

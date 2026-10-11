@@ -60,7 +60,7 @@ Multiply equipped absorption by `1-bypass`: 35% armor becomes 28%, 21% and
 10.5% against T1 longbow, crossbow and carbine respectively. No Liberal/Center
 addition applies. Shields retain their absorption, including normal defensive
 magical ideology bonuses. Innate defense, R, base damage/scaling are unchanged.
-CA192-02 tracks author acceptance of this amendment. Projectile ownership and
+CA192-02 passed author acceptance on 2026-10-11 without qualifications. Projectile ownership and
 ideology are captured at launch, including javelins; changing the held weapon
 cannot change a flying attack. Channel attacks retain their own identity.
 The soldier's native shield uses the same penetration and fractional remainder.

@@ -4,6 +4,11 @@ Documentation version: **5.2.10** — 2026-10-11.
 
 ## 5.2.10 - Ranged penetration amendment and shotgun names (#192), 2026-10-11
 
+Author acceptance, 2026-10-11: CA192-02 (origin 5.2.10 / #192) passed without
+qualifications. The author confirmed all tests passed before requesting #194.
+The confirmed entry is removed from pending_test.txt; the tracked queue is empty.
+PR198 remains open; this acceptance does not itself merge the PR.
+
 After accepting 5.2.9, the author reopened #192 with longbow 20/30/40% and
 crossbow 40/50/60% armor-only bypass. Both join carbine and shotgun in excluding
 offensive ideology against armor and shields, at every tier. Carbine 70/80/90%
@@ -25,8 +30,8 @@ Agent evidence is in assets/validation_5210/RESULTS.md. Before the amendment,
 the same ranged matrix reproduces 332 failures; the initial changed-runtime
 run passes all 1,028 assertions, including actual arrow/bolt collisions.
 Final validation and bilingual/native selector checks are recorded there.
-CA192-02 remains pending. Earlier CA192-01/CA188-01 acceptance is not extended
-to new gameplay. Commit 47fec499 was pushed and #192 closed again as requested on 2026-10-11.
+At agent delivery CA192-02 was pending; the subsequent author acceptance is
+recorded above. Earlier CA192-01/CA188-01 acceptance retains its original scope. Commit 47fec499 was pushed and #192 closed again as requested on 2026-10-11.
 PR198 delivers this amendment and awaits review/merge; closing the issue does
 not accept CA192-02. Final native, generator, validator and indexed-byte checks
 passed. The keep-awake request was released without changing the power plan.
