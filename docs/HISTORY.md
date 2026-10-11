@@ -13,6 +13,13 @@ This documentation-only acceptance update retains version 5.2.9 and the original
 agent evidence and limits. Runtime is unchanged; acceptance checks regenerate
 the document index, validate current localization/docs and check whitespace.
 
+PR193 and PR196 merged on 2026-10-11; #188 and #192 are closed as completed.
+Post-merge checkout verification found stale generated hashes because the
+editing session had CRLF sources while Git's existing attributes enforce LF.
+The acceptance follow-up regenerates the document/localization indexes from
+the canonical LF checkout and verifies their bytes against Git's staged files.
+No gameplay or balance change; version and accepted test results are retained.
+
 Added four independent personality choices to both creators, their summary,
 draft restoration and revisioned authoritative profile. Author amendments:
 old characters become Normal/Normal/Normal/Center; magical factors apply to
