@@ -1,14 +1,24 @@
 # TASKS.md — Active tasks
 
-Documentation version: **5.1.19** — 2026-10-10.
+Documentation version: **5.1.20** — 2026-10-10.
+
+## Issue #173 - MAP06 interior doors and time skip (5.1.20)
+
+Implemented two hinged pairs per home in existing openings, additive old-save
+placement and peaceful-city eligibility for time skip. Native checks cover both
+door orientations, street/house use, cancellation, the exact scheduled siege
+boundary, normal full deployment and migration of an occupied saved opening.
+Evidence: assets/validation_5120. CA173-01 passed author acceptance on 2026-10-10
+without qualifications; PR175 merge/#173 closure authorized. No outstanding
+author checks remain. Acceptance is recorded under each release in HISTORY.
 
 ## Issue #172 - Shared NPC dialogue history (5.1.19)
 
 Implemented informational-reply filtering, persistent per-speaker history and
 read-only replay through every NPC menu subclass. Actions/navigation remain
 usable, with original native reply mappings and paginated lists. Static/native
-UI/save evidence: assets/validation_5119. CA172-01 awaits author acceptance.
-Next: #173 MAP06 interior doors and safe time skipping until the siege.
+UI/save evidence: assets/validation_5119. CA172-01 passed author acceptance on
+2026-10-10 without qualifications; PR174 merged and #172 closed.
 
 ## Issue #164 - Permanent gifts and assisted Bull checkpoint (5.1.18)
 
@@ -17,15 +27,16 @@ weapon-only mandatory crafting, optional Channel without a new Seal, promotion
 of legacy loans, native pre-fight autosave and ordinary death/manual loading.
 Preserve the four helpers, existing supplies/recipes, necklace choice and saves.
 Native tests cover the route, actual checkpoint files, retries, optional tasks
-and migration; passing evidence is in assets/validation_5118. CA164-01 is the
-remaining author acceptance. #162/#163/#169 are closed; PR167/PR168/PR170 merged.
+and migration; passing evidence is in assets/validation_5118. CA164-01 passed
+author acceptance on 2026-10-10 without qualifications; PR171 merged/#164 closed.
+#162/#163/#169 are closed; PR167/PR168/PR170 merged.
 
 ## Issue #169 - Medikit names (5.1.17)
 
 Implemented the author's Spanish botiquín choice and English medikit names for
 all three sizes and pickup text. Functional changes are LANGUAGE labels; the
 diagnostic release markers follow 5.1.17. Item identities and #135 rules remain. Evidence: assets/validation_5117.
-Author accepted #169 and CA162-01/CA163-01 on 2026-10-10; merge/closure authorized. Next: #164.
+Author accepted #169 and CA162-01/CA163-01 on 2026-10-10; all three merged/closed.
 
 ## Issue #163 - Recoverable bolas (5.1.16)
 
@@ -39,7 +50,7 @@ requested a hanging ready pose, 3 Hz spin and rear rope arcs hidden by the body;
 these corrections and bound-save visual migration are implemented. Extended
 forearms and a finite flame for immediate paid demon escape address later feedback.
 CA163-01 passed author acceptance on 2026-10-10, with merge/closure authorized.
-Next: #164 permanent gifts, optional crafting and the assisted bull checkpoint.
+The dependent #164 permanent gifts and assisted checkpoint are now accepted.
 
 ## Issue #162 - Bronze utility staff (5.1.15)
 
@@ -48,8 +59,8 @@ maximum durability, fire/ice streams, once-per-second contact wear and wand
 terminology. Recipe revision 6 preserves old knowledge and equipment identity.
 Static/native evidence and reproducible fixtures: assets/validation_5115.
 The right-leaning pose and CA162-01 passed author acceptance on 2026-10-10.
-Merge/closure authorized. Next: integrate Caella's permanent grant through #164; the
-full tutorial/grant criterion is deliberately not marked passed in this patch.
+PR167 merged/#162 closed. Caella's permanent grant and full tutorial are accepted
+separately under CA164-01 above.
 
 ## Issue #165 - Damage flash across map travel (5.1.14)
 

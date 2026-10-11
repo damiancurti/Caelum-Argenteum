@@ -6,20 +6,27 @@ An independent dark fantasy FPS-RPG inspired by nineteenth-century Argentina.
 Author and game designer: **Damian Curti**. Development target: **GZDoom 4.14.2**
 on Windows 11. The final game is intended to be independent of Doom assets.
 
-**Current release: 5.1.19.** Obtain and update the complete repository, validate
+**Current release: 5.1.20.** Obtain and update the complete repository, validate
 it, then rebuild with `run_dev.bat` as described below.
+
+5.1.20 adds MAP06 bedroom/bathroom doors without replacing map geometry or old
+saves, and enables peaceful-city time skip until the existing siege starts.
+[Evidence](assets/validation_5120/RESULTS.md); CA173-01 passed author acceptance
+on 2026-10-10. PR175 merge and #173 closure are authorized.
 
 5.1.19 adds saved NPC information history and a bottom **Repeat dialogues**
 option, preserving actions and native reply mappings. [Evidence](assets/validation_5119/RESULTS.md).
-Author check CA172-01 remains pending; #164 is on PR171 with CA164-01 pending.
+CA172-01 passed author acceptance on 2026-10-10; PR174 is merged and #172 closed.
 
 **5.1.18 / [#164](https://github.com/damiancurti/Caelum-Argenteum/issues/164):**
 MAP01 grants permanent Tarot deck, utility staff, Pickaxe and bolas in resident
 order. Only the chosen weapon must be crafted; other crafting and Channel are
 optional. The assisted Bull fight creates a native pre-fight checkpoint without
 healing; death uses manual loading. Old gifts/loans and progress survive migration.
-Evidence: [validation_5118](assets/validation_5118/RESULTS.md). CA164-01 awaits
-author acceptance. #162/#163/#169 are closed; PR167/PR168/PR170 are merged.
+Evidence: [validation_5118](assets/validation_5118/RESULTS.md). CA164-01 passed
+author acceptance on 2026-10-10; PR171 is merged and #164 closed. All three
+confirmed checks are recorded in HISTORY; pending_test.txt is empty.
+#162/#163/#169 are closed; PR167/PR168/PR170 are merged.
 
 **5.1.17 / [#169](https://github.com/damiancurti/Caelum-Argenteum/issues/169):**
 Health kits now display as **medikit / botiquín**, including medium and large

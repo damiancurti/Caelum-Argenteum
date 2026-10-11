@@ -4,6 +4,26 @@ Status: integrated engineering register (issue #22, patch 4.36.1b).
 Prepared: 2026-09-23. Inherits the project's release after integration.
 Inspected baseline: `1dc390576fa330d37ff543526fc7e69a397fc28f` (PR #7).
 
+## CA-KP-075 - Runtime door placement must wait for PostBeginPlay
+
+Status/evidence: RESOLVED-VERIFIED (agent engine test); author acceptance pending.
+First recorded / last checked: 2026-10-10 / 2026-10-10. Issue: #173.
+Baseline: 1c620037 plus the #173 working patch; GZDoom 4.14.2 / Windows 11.
+Scope: CaelumCityInteriorDoors.Ensure and CaelumHingedDoorLeaf.PlaceAtProgress.
+
+Actor.Spawn returns before the door's deferred PostBeginPlay establishes its
+ClosedPosition. Calling PlaceAtProgress immediately after configuring args
+moves a fresh door to the still-zero origin. It then saves that wrong origin
+when PostBeginPlay runs. The first native test found 640 counted leaves but no
+collision at the intended openings; diagnostic positions were (0,0,0).
+
+Configure the spawned leaf's args and let the existing PostBeginPlay initialize
+its closed position, angle and blockers. Do not move it through methods that
+require those fields first. The corrected check verifies the authored position,
+closed collision, Use, hinge completion and passage in both doorway orientations.
+See assets/validation_5120 (city-04 reproducer; city-05 passing results). This
+lesson concerns the initialization order, not a general ban on runtime Spawn.
+
 ## CA-KP-074 - Native autosave requests are queued before the save is written
 
 Status/evidence: ENGINE-VERIFIED, #164 / 5.1.18, 2026-10-10.

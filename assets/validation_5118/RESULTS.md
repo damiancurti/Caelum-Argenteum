@@ -1,7 +1,8 @@
 ﻿# Issue #164 validation — 5.1.18
 
 Agent verification on 2026-10-10, GZDoom 4.14.2 / Windows 11. Author acceptance
-CA164-01 remains in pending_test.txt. No author acceptance is inferred here.
+was pending at delivery. The author explicitly accepted CA164-01 on 2026-10-10;
+docs/HISTORY.md records that later confirmation separately from these agent tests.
 
 ## Results
 

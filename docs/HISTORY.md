@@ -1,8 +1,41 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **5.1.19** — 2026-10-10.
+Documentation version: **5.1.20** — 2026-10-10.
+
+## 5.1.20 - MAP06 doors and peaceful time skip (#173), 2026-10-10
+
+Author acceptance, 2026-10-10: **CA173-01**, origin 5.1.20 / #173, passed with
+no qualifications reported. The author confirmed all tests correct and authorized
+PR175 merge and #173 closure. Removed the confirmed entry from pending_test.txt.
+The queue is empty after accepting CA164-01 and CA172-01 below. Release 5.1.20
+is unchanged; this acceptance update changes documentation only. Delivery-time
+pending statements below describe the earlier evidence boundary.
+
+The author reported missing interior doors and an unsafe-zone rejection when
+trying to skip time in MAP06. Confirmed adding doors to existing openings while
+preserving the distribution. Runtime placement adds the two internal pairs per
+home, preserving the WAD and saved actor references. Occupied openings defer
+placement instead of trapping bodies; an additive port revision prevents repeats.
+
+Peaceful city time skipping now passes location checks. Existing safety checks
+and the established siege calendar remain authoritative. Native simulation
+stops exactly at the boundary before ordinary siege deployment. The live door
+check caught premature placement before deferred PostBeginPlay; removing that
+call restores the correct native origin and collision. Evidence and scoped
+fixtures: assets/validation_5120/RESULTS.md. CA173-01 remains author-pending.
+Native results: 40 passing assertions, including two door orientations, the
+64-tic exact siege stop, occupied-save migration and both native reloads. Eight
+static checks pass; validator has zero errors and the standard build matches
+the tested package. MAP06.wad is byte-identical to baseline.
+
+Stacked on #172/PR174; #164/PR171 remains below it, also awaiting acceptance.
 
 ## 5.1.19 - Hide seen NPC information (#172), 2026-10-10
+
+Author acceptance, 2026-10-10: **CA172-01**, origin 5.1.19 / #172, passed with
+no qualifications reported. The author authorized merge and closure. PR174 was
+merged at c181a313; #172 is closed. Removed the confirmed entry from
+pending_test.txt. Delivery-time pending statements below are historical.
 
 The author requested disappearing seen responses and a bottom Repetir diálogos
 option for all NPCs, explicitly retaining actions such as purchases, crafting,
@@ -13,6 +46,11 @@ or balance rules. Native evidence and fixture limits: validation_5119/RESULTS.md
 CA172-01 remains pending. This focused patch is stacked on #164/PR171 (4248dfce).
 
 ## 5.1.18 - MAP01 gifts and Bull checkpoint (#164), 2026-10-10
+
+Author acceptance, 2026-10-10: **CA164-01**, origin 5.1.18 / #164, passed with
+no qualifications reported. The author authorized merge and closure. PR171 was
+merged at c526280e; #164 is closed. Removed the confirmed entry from
+pending_test.txt. Delivery-time pending statements below are historical.
 
 Author decision: Channel is optional with an owned Seal; do not give another
 Seal. Caella instead supplies the permanent bronze utility staff. Argento gives

@@ -1,6 +1,15 @@
 # Caelum Argenteum — Project, status and roadmap
 
-Documentation version: **5.1.19** — 2026-10-10.
+Documentation version: **5.1.20** — 2026-10-10.
+
+## 5.1.20 - MAP06 doors and peaceful time skip (#173)
+
+Current MAP06 gains native hinged doors in each existing bedroom/bathroom
+opening. Runtime revision 1 preserves the exact map geometry and old city saves;
+occupied openings wait until clear. Before the established siege date the city
+allows time skip under ordinary safety rules. The existing calendar interruption
+stops it at the siege boundary. Evidence: validation_5120; CA173-01 passed author
+acceptance on 2026-10-10, with PR175 merge/#173 closure authorized.
 
 ## 5.1.19 - NPC dialogue history (#172)
 
@@ -9,7 +18,8 @@ Repeat dialogues option opens the same speaker's saved information without
 executing actions again. Navigation to gameplay, purchases, crafting, quest
 acceptance/turn-in and departure remain available. Shared native-menu behavior
 covers all NPC menu subclasses. History uses stable per-speaker text keys in
-the persistent character record; old saves start empty. CA172-01 is pending.
+the persistent character record; old saves start empty. CA172-01 passed author
+acceptance on 2026-10-10; PR174 merged and #172 closed.
 
 ## 5.1.18 - MAP01 permanent gifts and checkpoint (#164)
 
@@ -20,7 +30,8 @@ mandatory route and assisted Bull victory. The existing party prepares before
 a native pre-fight autosave, without a new heal/refill; death requires manual
 loading. Save migration preserves old equipment and recorded progress.
 Details: SYSTEMS and MAP01; native evidence: assets/validation_5118. Author check
-CA164-01 remains pending. #162/#163/#169 were accepted, closed and merged through
+CA164-01 passed on 2026-10-10; PR171 merged and #164 closed. No author checks
+remain pending. #162/#163/#169 were accepted, closed and merged through
 PR167/PR168/PR170 on 2026-10-10.
 
 ## 5.1.17 - Medikit names (#169)
@@ -30,7 +41,7 @@ and selected Spanish botiquín. Shared English/Spanish labels now identify all
 three sizes and pickup text as medikit/botiquín. Native UI evidence is in
 assets/validation_5117; this localization-only patch preserves saved identities
 and all #135 consumable behavior. Author accepted #169 and CA162-01/CA163-01
-on 2026-10-10 and authorized merges/closures; #164 is next.
+on 2026-10-10; all three are merged/closed. The dependent #164 is also accepted.
 
 ## 5.1.16 - Recoverable bolas (#163)
 

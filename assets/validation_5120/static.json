@@ -1,0 +1,17 @@
+{
+  "checks": {
+    "original_layout_data_unchanged": true,
+    "original_rules_unchanged": true,
+    "groups_unique_and_separate": true,
+    "two_leaves_fit_existing_openings": true,
+    "map_wad_byte_identical": true,
+    "deterministic_generated_data": true,
+    "tested_package_matches_source": true,
+    "standard_build_matches_tested_package": true
+  },
+  "houses": 160,
+  "interior_openings": 320,
+  "leaves": 640,
+  "map06_sha256": "8d62ef32ad584ed43e21613bc216cdfac4423469481eba8ce594da3e0b3ed26c",
+  "production_sha256": "b1a595d630848502f5e5ebff46d7cf51db5ef35023f80da81c9cf24597026719"
+}

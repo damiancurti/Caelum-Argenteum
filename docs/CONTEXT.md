@@ -1,12 +1,12 @@
 # CONTEXT.md — Caelum Argenteum
 
-Documentation version: **5.1.19** — 2026-10-10.
+Documentation version: **5.1.20** — 2026-10-10.
 
-**5.1.19/#172:** shared NPC information history/replay; actions remain available.
-Evidence: validation_5119; CA172-01 pending. Next #173: MAP06 doors/time skip.
-**#164/PR171:** permanent gifts, weapon-only crafting, optional Channel/no Seal,
-assisted Bull autosave/manual load, legacy ownership. Evidence: validation_5118;
-CA164-01 pending. #162/#163/#169 accepted/closed; PR167/168/170 merged.
+**5.1.20/#173:** MAP06 interior doors and peaceful time skip; exact siege stop.
+Evidence: validation_5120; CA173-01 accepted 2026-10-10; merge/closure authorized.
+**#172/PR174:** dialogue history/replay; CA172-01 accepted, merged/closed.
+**#164/PR171:** permanent gifts, optional crafts/Channel, assisted Bull checkpoint.
+CA164-01 accepted, merged/closed; validation_5118. Pending tests empty.
 
 **5.1.14/#165 accepted** 2026-10-10 (CA165-01). Flash/travel repair; PR166
 merged. 34 checks pass: validation_5114.

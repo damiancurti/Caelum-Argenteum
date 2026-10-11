@@ -1,6 +1,7 @@
 # #172 — NPC information history (5.1.19)
 
-Agent checks on GZDoom 4.14.2 / Windows 11; CA172-01 remains author-pending.
+Agent checks on GZDoom 4.14.2 / Windows 11. CA172-01 was author-pending at delivery;
+the author's explicit acceptance on 2026-10-10 is recorded in docs/HISTORY.md.
 73 passing assertion records; zero failures in the retained runs. See summary.json.
 Seven static checks pass; project validator reports zero errors, and the standard
 build matches the tested package member for member.

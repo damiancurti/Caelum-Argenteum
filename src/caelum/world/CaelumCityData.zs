@@ -15,6 +15,8 @@ class CaelumCityData : Object play
     const SHOP_CATEGORIES = 6;
     const FURNITURE_SLOT_BASE = 6000;
     const TRANSIT_WAYPOINT_REACH = 64;
+    const INTERIOR_DOOR_REVISION = 1;
+    const INTERIOR_DOOR_GROUP_BASE = 6000;
     const HOUSE_COUNT = 160;
     const SHOP_COUNT = 64;
     static bool Enabled(){let p=CaelumPortSiege.Get();return p!=null && p.args[0]>=LAYOUT_REVISION;}
@@ -889,6 +891,20 @@ class CaelumCityData : Object play
         case 158:return 5300;
         case 159:return 5301;
         }return 0;}
+    const INTERIOR_DOOR_COUNT = 2;
+    static int InteriorDoorGroup(int house,int door){return INTERIOR_DOOR_GROUP_BASE+house*INTERIOR_DOOR_COUNT+door;}
+    static int InteriorDoorAxis(int door){switch(door){
+        case 0:return 1;
+        case 1:return 0;
+        }return 0;}
+    static vector3 InteriorDoorCenter(int house,int door){switch(door){
+        case 0:return HouseOrigin(house)+(416,384,0);
+        case 1:return HouseOrigin(house)+(192,864,0);
+        }return HouseOrigin(house);}
+    static vector3 InteriorDoorLeafPosition(int house,int door,int side){return InteriorDoorCenter(house,door)+(InteriorDoorAxis(door)==0?side*32:0,InteriorDoorAxis(door)==1?side*32:0,0);}
+    static int HouseAt(vector3 point){for(int i=0;i<HOUSE_COUNT;i++){vector3 p=point-HouseOrigin(i);
+        if(p.X>=0 && p.Y>=0 && p.X<960 && p.Y<1216 && Abs(p.Z)<=16)return i;
+        }return -1;}
     static vector3 TablePosition(int i){return HouseOrigin(i)+(672,832,0);}
     static vector3 BedPosition(int i){return HouseOrigin(i)+(256,640,0);}
     static vector3 DoorInside(int i){return HouseOrigin(i)+(800,384,0);}

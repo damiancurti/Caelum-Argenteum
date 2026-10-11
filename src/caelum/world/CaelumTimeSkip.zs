@@ -43,6 +43,11 @@ class CaelumTimeSkipRules : Object play
     {
         if (user==null || item==null) return false;
         if (level.MapName=="MAP01") return true;
+        if(CaelumCityWorld.Peaceful())
+        {
+            int house=CaelumCityData.HouseAt(user.Pos);
+            if(house>=0 && house==CaelumCityData.HouseAt(item.Pos))return true;
+        }
         let it=ThinkerIterator.Create("CaelumTimeAdvanceZone"); CaelumTimeAdvanceZone zone;
         while ((zone=CaelumTimeAdvanceZone(it.Next()))!=null)
             if (user.Distance2D(zone)<=zone.Radius && Abs(user.Pos.Z-zone.Pos.Z)<=16
