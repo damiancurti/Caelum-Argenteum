@@ -12,6 +12,8 @@ deferred shared-slot wear until the complete impact is resolved. Gates use the
 anchored energy limit and retain finite material mass for Toughness. Gate/ram
 logical faces remove collision-proxy order dependence. The final author amendment
 removes cannon armor penetration; the large energy damage remains intentional.
+The consolidated penetration table also records 0% cannon bypass; its obsolete
+100% entry was corrected during the requested gate/resident damage calculation.
 
 Author clarifications: body contacts ignore offensive ideology; moving pressure
 accumulates inelastic work for both bodies; static weight must hurt while still;

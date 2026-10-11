@@ -1166,7 +1166,7 @@ change. Ranged tiers still affect damage/critical chance, not spread category.
 | Crossbow (#192 amendment) | 40% / 50% / 60% |
 | Shotgun | 60% / 70% / 80% |
 | Carbine | 70% / 80% / 90% |
-| Cannon | 100% at every supported tier |
+| Cannon (#194) | 0%; normal armor absorption applies |
 
 Defense is innate racial defense plus equipped defense times the retained
 fraction. Toughness, armor reinforcement/vulnerability grades and shields
