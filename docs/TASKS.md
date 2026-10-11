@@ -1,6 +1,15 @@
 # TASKS.md — Active tasks
 
-Documentation version: **5.1.19** — 2026-10-10.
+Documentation version: **5.1.20** — 2026-10-10.
+
+## Issue #173 - MAP06 interior doors and time skip (5.1.20)
+
+Implemented two hinged pairs per home in existing openings, additive old-save
+placement and peaceful-city eligibility for time skip. Native checks cover both
+door orientations, street/house use, cancellation, the exact scheduled siege
+boundary, normal full deployment and migration of an occupied saved opening.
+Evidence: assets/validation_5120. CA173-01 awaits author acceptance; CA164-01
+and CA172-01 remain pending on PR171 and PR174. Commit/push and focused PR.
 
 ## Issue #172 - Shared NPC dialogue history (5.1.19)
 
@@ -8,7 +17,7 @@ Implemented informational-reply filtering, persistent per-speaker history and
 read-only replay through every NPC menu subclass. Actions/navigation remain
 usable, with original native reply mappings and paginated lists. Static/native
 UI/save evidence: assets/validation_5119. CA172-01 awaits author acceptance.
-Next: #173 MAP06 interior doors and safe time skipping until the siege.
+Continued in #173 below/above: MAP06 doors and peaceful time skipping.
 
 ## Issue #164 - Permanent gifts and assisted Bull checkpoint (5.1.18)
 

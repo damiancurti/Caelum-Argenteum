@@ -144,3 +144,6 @@
 
 /assets/validation_5119/* -text whitespace=cr-at-eol
 /assets/validation_5119/*.txt whitespace=-blank-at-eol,-blank-at-eof,cr-at-eol
+
+/assets/validation_5120/* -text whitespace=cr-at-eol
+/assets/validation_5120/*.txt whitespace=-blank-at-eol,-blank-at-eof,cr-at-eol

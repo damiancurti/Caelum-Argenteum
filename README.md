@@ -6,8 +6,12 @@ An independent dark fantasy FPS-RPG inspired by nineteenth-century Argentina.
 Author and game designer: **Damian Curti**. Development target: **GZDoom 4.14.2**
 on Windows 11. The final game is intended to be independent of Doom assets.
 
-**Current release: 5.1.19.** Obtain and update the complete repository, validate
+**Current release: 5.1.20.** Obtain and update the complete repository, validate
 it, then rebuild with `run_dev.bat` as described below.
+
+5.1.20 adds MAP06 bedroom/bathroom doors without replacing map geometry or old
+saves, and enables peaceful-city time skip until the existing siege starts.
+[Evidence](assets/validation_5120/RESULTS.md); CA173-01 awaits author acceptance.
 
 5.1.19 adds saved NPC information history and a bottom **Repeat dialogues**
 option, preserving actions and native reply mappings. [Evidence](assets/validation_5119/RESULTS.md).

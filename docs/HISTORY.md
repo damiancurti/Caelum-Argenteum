@@ -1,6 +1,27 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **5.1.19** — 2026-10-10.
+Documentation version: **5.1.20** — 2026-10-10.
+
+## 5.1.20 - MAP06 doors and peaceful time skip (#173), 2026-10-10
+
+The author reported missing interior doors and an unsafe-zone rejection when
+trying to skip time in MAP06. Confirmed adding doors to existing openings while
+preserving the distribution. Runtime placement adds the two internal pairs per
+home, preserving the WAD and saved actor references. Occupied openings defer
+placement instead of trapping bodies; an additive port revision prevents repeats.
+
+Peaceful city time skipping now passes location checks. Existing safety checks
+and the established siege calendar remain authoritative. Native simulation
+stops exactly at the boundary before ordinary siege deployment. The live door
+check caught premature placement before deferred PostBeginPlay; removing that
+call restores the correct native origin and collision. Evidence and scoped
+fixtures: assets/validation_5120/RESULTS.md. CA173-01 remains author-pending.
+Native results: 40 passing assertions, including two door orientations, the
+64-tic exact siege stop, occupied-save migration and both native reloads. Eight
+static checks pass; validator has zero errors and the standard build matches
+the tested package. MAP06.wad is byte-identical to baseline.
+
+Stacked on #172/PR174; #164/PR171 remains below it, also awaiting acceptance.
 
 ## 5.1.19 - Hide seen NPC information (#172), 2026-10-10
 

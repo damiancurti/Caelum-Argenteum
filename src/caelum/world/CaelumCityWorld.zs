@@ -15,6 +15,13 @@ class CaelumCityWorld : Object play
         return CaelumCityMerchant.Prepare() && ready;
     }
 
+    static bool Peaceful()
+    {
+        if(level.MapName!="MAP06" || !CaelumCityData.Enabled())return false;
+        let port=CaelumPortSiege.Get();
+        return port!=null && !port.SiegeStarted && !port.Victory && !SiegeDue();
+    }
+
     static int SiegeDay()
     {return CaelumCalendarRules.ToSerial(CaelumCityData.SIEGE_YEAR,CaelumCityData.SIEGE_MONTH,CaelumCityData.SIEGE_DAY);}
 

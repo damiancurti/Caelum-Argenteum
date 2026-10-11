@@ -1,6 +1,35 @@
 # Caelum Argenteum — Current systems and rules
 
-Documentation version: **5.1.19** — 2026-10-10.
+Documentation version: **5.1.20** — 2026-10-10.
+
+## 5.1.20 - Interior doors and peaceful city time skipping (#173)
+
+Author request: add interior doors without changing MAP06's distribution; allow
+time skip until the siege and stop it automatically when the siege begins.
+Each of the 160 existing homes gains a hinged pair in its bedroom doorway and
+another in its bathroom doorway (320 openings, 640 leaves). Exterior doors,
+room cells, furniture and soldier routes are unchanged. Native door use, swing,
+collision and anti-crushing behavior are shared with the existing doors.
+
+INTERIORS.json's existing doorway rectangles determine centers, axes and leaf
+positions; the generated CityData provides them to runtime placement. The port's
+InteriorDoorRevision 1 is additive. Existing current-city saves gain missing
+pairs once, retaining actors and geometry. A solid body occupying a closed-door
+line delays that pair until it moves; retries are idempotent. Older MAP06 layouts
+without #133 interiors remain unchanged, including active sieges.
+
+Peaceful current MAP06 is an eligible time-skip location. Existing combat,
+nearby threats, injury/effects, activity and resource checks still apply. A
+home's furniture/table supplies belong to that home for automatic care; this
+does not make distant city inventories available. Exterior waiting needs no
+furniture and keeps existing carried supplies/sleeping-bag rules.
+
+The siege date remains 15 November 1889 at 13:00. The shared calendar already
+interrupts simulated time per tic; native #173 tests verify stopping exactly at
+that boundary, rejecting restart and then deploying the ordinary full army.
+Siege balance, counts, date and accepted performance policy are unchanged.
+Post-siege and legacy locations retain their previous explicit safe zones.
+Agent static/native evidence: assets/validation_5120; CA173-01 author-pending.
 
 ## 5.1.19 - Seen NPC information and replay (#172)
 
@@ -1955,9 +1984,9 @@ not count. No four-prisoner requirement or new siege trigger was introduced.
 
 Location comes from `CaelumWorldCatalogue.LOCATION_PORT`. During/after the assault,
 the briefing displays the recorded `port16_siege_start` / `port16_siege_end` date
-from the same calendar events created by `CaelumPortSiege.Calendar`. Current MAP06
-deploys on entry and records that event; it does not schedule a future attack.
-**PENDING author decision:** a future date/hour, countdown or rescheduling rule.
+from the same calendar events created by `CaelumPortSiege.Calendar`. Historical #78 MAP06
+deployed on entry; #133 supersedes that timing with the current scheduled siege.
+The former pending date/hour decision is resolved in the #133 contract above.
 Before an encounter the text explicitly says the date/hour is unconfirmed; a
 legacy save without a dated event does not fabricate a historical timestamp.
 

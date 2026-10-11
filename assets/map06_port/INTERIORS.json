@@ -113,7 +113,11 @@
     0
   ],
   "house_road_overrides": {
-    "159": [1408, 384, 0]
+    "159": [
+      1408,
+      384,
+      0
+    ]
   },
   "occupancy": [
     [
@@ -293,7 +297,9 @@
     "MERCHANT_COPPER": 200,
     "SHOP_CATEGORIES": 6,
     "FURNITURE_SLOT_BASE": 6000,
-    "TRANSIT_WAYPOINT_REACH": 64
+    "TRANSIT_WAYPOINT_REACH": 64,
+    "INTERIOR_DOOR_REVISION": 1,
+    "INTERIOR_DOOR_GROUP_BASE": 6000
   },
   "window_tag_base": 8000,
   "guard_station_corrections": {

@@ -1,6 +1,14 @@
 # Caelum Argenteum — Project, status and roadmap
 
-Documentation version: **5.1.19** — 2026-10-10.
+Documentation version: **5.1.20** — 2026-10-10.
+
+## 5.1.20 - MAP06 doors and peaceful time skip (#173)
+
+Current MAP06 gains native hinged doors in each existing bedroom/bathroom
+opening. Runtime revision 1 preserves the exact map geometry and old city saves;
+occupied openings wait until clear. Before the established siege date the city
+allows time skip under ordinary safety rules. The existing calendar interruption
+stops it at the siege boundary. Evidence: validation_5120; CA173-01 pending.
 
 ## 5.1.19 - NPC dialogue history (#172)
 

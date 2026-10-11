@@ -49,6 +49,7 @@ class CaelumPortSiege : CaelumSiegeEncounter
     int TargetingRevision;
     // Sólo la revisión geométrica 3 tiene fase de paz y viviendas.
     bool SiegeStarted;
+    int InteriorDoorRevision;
     Array<CaelumPortDefender> CityPathQueue;
     CaelumSiegeReinforcements Reinforcements;
 
@@ -686,6 +687,7 @@ class CaelumPortSiege : CaelumSiegeEncounter
 
     override void Tick()
     {
+        CaelumCityInteriorDoors.Ensure(self);
         // Cola justa: como máximo una búsqueda local por tic, incluso cuando
         // centenares de estados See comparten la misma fase de animación.
         if(CityPathQueue.Size()>0)

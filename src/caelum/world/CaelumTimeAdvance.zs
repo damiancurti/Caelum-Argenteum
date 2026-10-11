@@ -38,6 +38,9 @@ class CaelumTimeAdvanceState : Inventory
 
     static bool InSafeZone(CaelumPlayer user)
     {
+        // La ciudad habitada es segura hasta el asedio; el resto de controles
+        // sigue rechazando combate, peligros y efectos sin adaptador.
+        if(CaelumCityWorld.Peaceful())return true;
         if(level.MapName=="MAP01")
         {
             let skip=CaelumTimeSkipState.Get(user);

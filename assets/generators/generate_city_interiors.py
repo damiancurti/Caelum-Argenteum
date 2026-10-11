@@ -147,6 +147,21 @@ def runtime(city, port=None, south=None):
     for i,b in enumerate(homes):
         code+=f'        case {i}:return {DATA["door_group_base"]+b["id"]};\n'
     code+='        }return 0;}\n'
+    # Existing openings supply every coordinate; runtime placement preserves WAD/save geometry.
+    code+=f'    const INTERIOR_DOOR_COUNT = {len(DATA["doorways"])};\n'
+    code+='    static int InteriorDoorGroup(int house,int door){return INTERIOR_DOOR_GROUP_BASE+house*INTERIOR_DOOR_COUNT+door;}\n'
+    code+='    static int InteriorDoorAxis(int door){switch(door){\n'
+    for i,(x1,y1,x2,y2) in enumerate(DATA['doorways']):
+        code+=f'        case {i}:return {0 if x2-x1>y2-y1 else 1};\n'
+    code+='        }return 0;}\n'
+    code+='    static vector3 InteriorDoorCenter(int house,int door){switch(door){\n'
+    for i,(x1,y1,x2,y2) in enumerate(DATA['doorways']):
+        code+=f'        case {i}:return HouseOrigin(house)+({(x1+x2)//2},{(y1+y2)//2},0);\n'
+    code+='        }return HouseOrigin(house);}\n'
+    code+=f'    static vector3 InteriorDoorLeafPosition(int house,int door,int side){{return InteriorDoorCenter(house,door)+(InteriorDoorAxis(door)==0?side*{DATA["leaf_half_width"]}:0,InteriorDoorAxis(door)==1?side*{DATA["leaf_half_width"]}:0,0);}}\n'
+    code+='    static int HouseAt(vector3 point){for(int i=0;i<HOUSE_COUNT;i++){vector3 p=point-HouseOrigin(i);\n'
+    code+=f'        if(p.X>=0 && p.Y>=0 && p.X<{DATA["house_size"][0]} && p.Y<{DATA["house_size"][1]} && Abs(p.Z)<=16)return i;\n'
+    code+='        }return -1;}\n'
     for name,key in [('TablePosition','table'),('BedPosition','bed'),('DoorInside','door_inside'),('DoorOutside','door_outside'),('HouseRoad','house_road')]:
         code+=f'    static vector3 {name}(int i){{'
         if key=='house_road':

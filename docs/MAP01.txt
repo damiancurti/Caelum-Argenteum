@@ -1,6 +1,15 @@
 CAELUM ARGENTEUM — STORY AND MAP01
 
-Documentation version: **5.1.19** — 2026-10-10.
+Documentation version: **5.1.20** — 2026-10-10.
+
+5.1.20 - MAP06 interior doors and pre-siege time skip (#173)
+----------------------------------------------------------
+The author requested doors in existing inter-room openings, preserving the
+layout, and time skip throughout peaceful MAP06 until the scheduled siege.
+The 160 homes gain bedroom/bathroom hinged pairs with old-save migration.
+Time skip stops at the existing 15 November 1889, 13:00 siege boundary. Native
+checks and limitations: assets/validation_5120; CA173-01 remains author-pending.
+MAP01 progression is unchanged by this focused patch.
 
 5.1.19 - Shared NPC dialogue history (#172)
 -------------------------------------------

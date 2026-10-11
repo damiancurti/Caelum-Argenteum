@@ -1,6 +1,13 @@
 # Caelum Argenteum — Audio and art
 
-Documentation version: **5.1.19** — 2026-10-10.
+Documentation version: **5.1.20** — 2026-10-10.
+
+## 5.1.20 - Existing native door art in MAP06 (#173)
+
+Interior door pairs reuse CaelumHingedDoorLeaf and its existing model, material,
+physics and sounds. Existing INTERIORS.json doorway rectangles supply generated
+coordinates; no art, WAD geometry or room distribution is replaced. Native
+closed/open captures and save/time-boundary evidence: assets/validation_5120.
 
 ## 5.1.19 - Shared dialogue history (#172)
 
