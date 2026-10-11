@@ -6,31 +6,30 @@ Documentation version: **5.2.3** — 2026-10-11.
 
 Implemented native target eligibility and idempotent cleanup of already-saved
 allied targets. Existing damage/heat, resources, enemy retaliation and explicit
-hostility orders remain. Evidence: assets/validation_523; CA180-01 pending.
-Branch issue-180-mandinga-retaliation is stacked on #178/PR181. CA147-01,
-CA177-01 and CA178-01 remain outstanding. Next: author feedback, then #148.
+hostility orders remain. Evidence: assets/validation_523. CA180-01 passed author
+acceptance on 2026-10-11 without qualifications; PR182 merge/#180 closure
+authorized. CA147-01, CA177-01 and CA178-01 also passed. The author queue is
+empty; HISTORY records the confirmations. Next roadmap: #148.
 
 ## Issue #178 - Faster multi-day time skipping (5.2.2)
 
 Implemented bounded processing-budget changes and one native crafting-network
 scan per stationary live batch. Evidence: assets/validation_522. Existing
 simulation rates, real inventory and interruption boundaries remain. CA178-01
-is pending alongside CA177-01/CA147-01. Branch issue-178-faster-time-skip is
-stacked on #177/PR179. Next: author feedback and Mandinga retaliation #180.
+passed author acceptance on 2026-10-11 without qualifications. PR181 is merged
+and #178 closed; the separate Mandinga correction is accepted under #180.
 
 ## Issue #177 - Tutorial equipment, provisions and portable rest (5.2.1)
 
-Implement the author's follow-ups while preserving #147: autoequip newly
+Implemented the author's follow-ups while preserving #147: autoequip newly
 received tutorial weapons; remove recurring Bull arena relocation; correct
 Palomo shotgun text and optional necklace ordering; expose progressive finite
 materials in the basement chest; provide unlimited mansion food/water with
 large canteens and correct forecasting; grant Palomo's sleeping bag once and
 retire MAP02 fixed beds with occupied-save deferral.
 
-Native/static evidence: assets/validation_521. CA177-01 remains the single
-author check for this issue; CA147-01 remains pending independently. Delivery
-uses issue-177-tutorial-usability, stacked on issue-147-character-identity.
-No merge or closure is claimed. Next: author acceptance, then #148.
+Native/static evidence: assets/validation_521. CA177-01 passed author acceptance
+on 2026-10-11 without qualifications. PR179 is merged and #177 closed.
 
 ## Issue #147 - Unified identity and native settings (5.2.0)
 
@@ -40,9 +39,9 @@ appearance/voice interface. Preserved creation text, profession combinations,
 stat rules and existing appearance/audio. Reconciled native setup selectors.
 The author's additional control cleanup moves normal actions to native groups
 and keeps debugging in the console; full #149 hint/input work remains pending.
-Native/static evidence: assets/validation_520. CA147-01 awaits author acceptance.
-Delivery: focused branch issue-147-character-identity and linked PR for #147.
-Next after acceptance: #148 appearance/preview; remaining #149 work stays open.
+Native/static evidence: assets/validation_520. CA147-01 passed author acceptance
+on 2026-10-11 without qualifications. PR176 is merged and #147 closed.
+Next: #148 appearance/preview; remaining #149 work stays open.
 
 ## Issue #173 - MAP06 interior doors and time skip (5.1.20)
 

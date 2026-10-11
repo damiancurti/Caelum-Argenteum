@@ -7,7 +7,8 @@ Documentation version: **5.2.3** — 2026-10-11.
 Accidental breath contact does not create fights between allied Mandingas. The
 same combat rule applies in all maps and to saved actors, preserving damage,
 thermal transfer and explicit hostile orders. Mansion story and geometry are
-unchanged. See SYSTEMS and assets/validation_523; CA180-01 remains pending.
+unchanged. See SYSTEMS and assets/validation_523; CA180-01 passed author
+acceptance on 2026-10-11 without qualifications.
 
 ## 5.2.2 - Time-skip execution (#178)
 
@@ -15,7 +16,8 @@ Multi-day crafting uses larger bounded simulation batches and validates its
 station network once per batch. Unlimited mansion provisions remain #177's
 rule; durations, sleeping, recipe payments and actual consumptions are not
 shortened. See SYSTEMS and assets/validation_522 for the processing contract
-and native evidence. CA178-01 remains pending.
+and native evidence. CA178-01 passed author acceptance on 2026-10-11 without
+qualifications.
 
 ## 5.2.1 - Tutorial equipment, chest and rest corrections (#177)
 
@@ -36,7 +38,7 @@ longer relocates participants at the inner rectangle or jump-height limit.
 Fixed MAP02 beds retire without changing geometry/safe areas; a saved occupant
 finishes before its bed is removed. Portable rest uses the existing bag rules.
 SYSTEMS contains the save/capacity contracts. Evidence: validation_521;
-CA177-01 and CA147-01 await author acceptance.
+CA177-01 and CA147-01 passed author acceptance on 2026-10-11 without qualifications.
 
 ## 5.2.0 - Creator and saved identity (#147)
 
@@ -48,7 +50,8 @@ Identity revision 1 preserves the actual existing character and travelling
 record without grants, stat changes or quest resets. The captain's amnesia,
 recognition and accepted narrative remain unchanged. Appearance/preview assets
 are still #148. SYSTEMS owns the complete settings/migration contract.
-Evidence: assets/validation_520. CA147-01 awaits author acceptance.
+Evidence: assets/validation_520. CA147-01 passed author acceptance on 2026-10-11
+without qualifications.
 
 5.1.20 - MAP06 interior doors and pre-siege time skip (#173)
 ----------------------------------------------------------

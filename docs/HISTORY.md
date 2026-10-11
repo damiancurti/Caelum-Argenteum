@@ -4,6 +4,16 @@ Documentation version: **5.2.3** — 2026-10-11.
 
 ## 5.2.3 - Mandinga friendly-fire retaliation (#180), 2026-10-11
 
+Author acceptance, 2026-10-11: **CA180-01**, origin 5.2.3 / #180, passed with
+no qualifications reported. The author confirmed all tests correct and authorized
+PR182 merge and #180 closure. Removed the confirmed entry from pending_test.txt;
+the queue is empty after accepting CA147-01, CA177-01 and CA178-01 below.
+Release 5.2.3 is unchanged. This acceptance update changes documentation only;
+delivery-time pending statements below retain the earlier evidence boundary.
+Acceptance validation: regenerated DOCUMENT_INDEX, project validator with zero
+errors, and clean git diff --check. Runtime code and assets are unchanged;
+the existing native test evidence remains applicable.
+
 During #178 work the author reported Mandingas fighting each other after fire
 breath contact. Native baseline testing reproduced a burn-source-driven target
 switch. The correction uses the engine's OkayToSwitchTarget hook for allied
@@ -19,6 +29,12 @@ separate and available for review/reversal.
 
 ## 5.2.2 - Accelerate multi-day time skipping (#178), 2026-10-11
 
+Author acceptance, 2026-10-11: **CA178-01**, origin 5.2.2 / #178, passed with
+no qualifications reported. The author confirmed all tests correct and authorized
+PR181 merge and #178 closure. PR181 merged at 12382a911da422eea6269aaacb9b1a6c1edfa5a0;
+#178 is closed. Removed the confirmed entry from pending_test.txt. Release 5.2.2
+is unchanged; delivery-time pending statements below retain the earlier status.
+
 The author requested faster time jumps while #177 was being validated. The
 performance change is separate from tutorial/provision behavior. Repeated
 station-network reconstruction within a frozen-world batch is replaced by one
@@ -33,6 +49,12 @@ acceptance; no merge or closure of #147/#177/#178 is implied. The author's new
 Mandinga breath-retaliation report is tracked independently as #180.
 
 ## 5.2.1 - Tutorial equipment, provisions and portable rest (#177), 2026-10-11
+
+Author acceptance, 2026-10-11: **CA177-01**, origin 5.2.1 / #177, passed with
+no qualifications reported. The author confirmed all tests correct and authorized
+PR179 merge and #177 closure. PR179 merged at a6a62bab2cb835e7dd61a2b0000fe76eec7174b6;
+#177 is closed. Removed the confirmed entry from pending_test.txt. Release 5.2.1
+is unchanged; delivery-time pending statements below retain the earlier status.
 
 The author requested autoequipped tutorial weapons, removal of Bull-room edge
 teleports, corrected Palomo shotgun text and later necklace selection. Further
@@ -57,6 +79,12 @@ is pending as CA177-01. CA147-01 remains pending; #147/PR176 is not merged or
 closed by this follow-up. The unrelated local artwork deletion is excluded.
 
 ## 5.2.0 - Unified saved identity and native settings (#147), 2026-10-11
+
+Author acceptance, 2026-10-11: **CA147-01**, origin 5.2.0 / #147, passed with
+no qualifications reported. The author confirmed all tests correct and authorized
+PR176 merge and #147 closure. PR176 merged at 1b272cfd77277fc7d536724096da4fadc5cc3a75;
+#147 is closed. Removed the confirmed entry from pending_test.txt. Release 5.2.0
+is unchanged; delivery-time pending statements below retain the earlier status.
 
 The author requested implementing #147 with native testing, commit and push.
 During implementation, the author chose to retain an unconfirmed creator draft
