@@ -21,6 +21,10 @@ if (-not (Test-Path -LiteralPath $SourcePath -PathType Container)) {
     throw "Source directory does not exist: $SourcePath"
 }
 
+# Refuse stale generated dialogue or localization locations before packaging.
+& python (Join-Path $ProjectRoot 'build_dialogue_index.py') --root $ProjectRoot --source $SourcePath check
+if ($LASTEXITCODE -ne 0) { throw 'Dialogue/localization validation failed. Run python build_dialogue_index.py build.' }
+
 $Files = @(Get-ChildItem -LiteralPath $SourcePath -Recurse -File | Sort-Object FullName)
 if ($Files.Count -eq 0) {
     throw "Source directory contains no files: $SourcePath"

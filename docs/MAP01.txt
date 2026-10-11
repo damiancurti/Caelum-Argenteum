@@ -1,6 +1,16 @@
 CAELUM ARGENTEUM — STORY AND MAP01
 
-Documentation version: **5.2.4** — 2026-10-11.
+Documentation version: **5.2.5** — 2026-10-11.
+
+## 5.2.5 - NPC source ownership (#185)
+
+Conversation editing starts at src/dialogues/INDEX.md. Palomo, Argento, Rulo,
+Ronnie, Caella, the unknown voice and the Fool each have their own source;
+MAP02 prisoners, other Tarot figures and guards are separately indexed too.
+Shared rest/table, caravan, departure and test services are clearly identified.
+The indexed sources assemble into the original conversation/page order without
+changing MAP01 progression or the #183 contract. LANGUAGE navigation and
+freshness checks are documented in SYSTEMS; evidence: assets/validation_525.
 
 ## 5.2.4 - Profession gifts and three crafting lessons (#183)
 

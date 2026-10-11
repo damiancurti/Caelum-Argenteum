@@ -277,7 +277,7 @@ class CaelumPalomo : CaelumInteractiveFolkloreActor
         Super.Tick();
         UpdateLocomotionVisual();
         if (!NarrativeRevealInitialized) { InitializeNarrativeReveal(); }
-        // CAPALOMO no queda unido permanentemente a la clase. Tras cerrar la
+        // El diálogo no queda unido permanentemente a la clase. Tras cerrar la
         // conversación, retirar el nodo devuelve la siguiente pulsación a
         // Actor.Used, donde se resincronizan estado y requisitos por jugador.
         if (!bInConversation && HasConversation())

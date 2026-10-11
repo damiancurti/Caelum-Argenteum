@@ -1,0 +1,71 @@
+namespace = "GZDoom";
+
+conversation
+{
+    id = 43423;
+    class = "CaelumPalomoConversationMenu";
+
+    page
+    {
+        pagename = "prisoner_tarot_cell";
+        name = "$CA_PRISONER_TAROT_NAME";
+        dialog = "$CA_PRISONER_DLG_TAROT_CELL";
+        goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+        ifitem { item = "CaelumPrisonerFreed3Token"; amount = 1; } link = "prisoner_tarot_follow";
+        choice
+        {
+            text = "$CA_PRISONER_RELEASE_CHOICE";
+            giveitem = "CaelumPrisonerReleaseAction";
+            nextpage = "prisoner_tarot_follow";
+            closedialog = false;
+        }
+    }
+
+    page
+    {
+        pagename = "prisoner_tarot_follow";
+        name = "$CA_PRISONER_TAROT_NAME";
+        dialog = "$CA_PRISONER_DLG_TAROT_FOLLOW";
+        goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+    }
+}
+
+conversation
+{
+    id = 43427;
+    class = "CaelumPalomoConversationMenu";
+
+    page
+    {
+        pagename = "prisoner_tarot_port";
+        name = "$CA_PRISONER_TAROT_NAME";
+        dialog = "$CA_PRISONER_DLG_TAROT_PORT";
+        goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+        ifitem { item = "CaelumPrisonerClaimed3Token"; amount = 1; } link = "prisoner_tarot_claimed";
+        choice
+        {
+            text = "$CA_PRISONER_PORT_CLAIM_CHOICE";
+            giveitem = "CaelumPrisonerClaimAction";
+            nextpage = "prisoner_tarot_outcome";
+            closedialog = false;
+        }
+    }
+
+    page
+    {
+        pagename = "prisoner_tarot_outcome";
+        name = "$CA_PRISONER_TAROT_NAME";
+        dialog = "$CA_PRISONER_PORT_REWARD_FAIL";
+        goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+        ifitem { item = "CaelumPrisonerClaimed3Token"; amount = 1; } link = "prisoner_tarot_claimed";
+    }
+
+    page
+    {
+        pagename = "prisoner_tarot_claimed";
+        userstring = "prisoner_tarot_claimed";
+        name = "$CA_PRISONER_TAROT_NAME";
+        dialog = "$CA_PRISONER_PORT_REWARD_GRANTED";
+        goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+    }
+}

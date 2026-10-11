@@ -4,6 +4,25 @@ Status: integrated engineering register (issue #22, patch 4.36.1b).
 Prepared: 2026-09-23. Inherits the project's release after integration.
 Inspected baseline: `1dc390576fa330d37ff543526fc7e69a397fc28f` (PR #7).
 
+## CA-KP-079 - Split dialogue sources without reordering native nodes
+
+Status/evidence: ENGINE-VERIFIED full-path loading and conversations; STATIC
+token/order preservation, #185 / 5.2.5, 2026-10-11. Baseline: 0894d41d.
+
+GZDoom 4.14.2 AddDialogues accepts full paths. Its USDF parser also supports
+`include = "path";` with a namespace in each included file. However, grouping
+previously interleaved conversations by NPC changes the global node order.
+Keep the original order authoritative in index.json and assemble runtime.usdf
+deterministically when preserving existing native node offsets is required.
+Load one entry point only; the root compatibility alias must not be added beside
+the main runtime. Parse comments/quoted strings before checking IDs or links.
+
+Evidence: assets/validation_525 checks all 53 IDs, opens nine representative
+NPCs in both languages, loads a #183 MAP02 save and compares every dialogue token
+and node order. This does not imply author gameplay acceptance.
+Engine references: g4.14.2 src/maploader/strifedialogue.cpp (LoadScriptFile) and
+src/maploader/usdf.cpp (USDFParser::Parse).
+
 ## CA-KP-078 - Crafted utility identity must survive native inventory copies
 
 Status/evidence: ENGINE-VERIFIED, #183 / 5.2.4, 2026-10-11.

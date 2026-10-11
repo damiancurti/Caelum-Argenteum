@@ -1,6 +1,26 @@
 # Caelum Argenteum — Current systems and rules
 
-Documentation version: **5.2.4** — 2026-10-11.
+Documentation version: **5.2.5** — 2026-10-11.
+
+## Dialogue and localization source navigation - 5.2.5 / #185
+
+Start at src/dialogues/INDEX.md and its authoritative index.json. Editable NPC
+files live in npc/; shared services live in shared/. The generated runtime.usdf
+is loaded by MAPINFO using its full path. Its tokens and global node order match
+5.2.4, preserving IDs, conditions, choices, actions and saved conversation
+indices. CAPALOMO is only an inactive compatibility include alias; do not load
+both entry points or edit the generated runtime. The original is preserved in
+archive/dialogues/5.2.4-CAPALOMO.usdf.
+
+Use `python build_dialogue_index.py npc palomo --conversation 43630 --page loadout_root`
+to locate one page and its text keys. `find TERM` searches every LANGUAGE key;
+`read KEY` prints its English/default and Spanish source ranges. The main
+localization index is src/localization/INDEX.md; index.json records hashes and
+all definition ranges, including repeated sections. These commands reject stale
+indexes. After editing sources, run `python build_dialogue_index.py build`, then
+validate_project.py and build_dev.ps1. The history generator also resolves its
+reviewed key/page references against the modular sources. No story, translation,
+balance or gameplay behavior changes in #185.
 
 ## Onboarding and MAP02 initial supplies - 5.2.4 / #183
 

@@ -1,0 +1,136 @@
+{
+  "schema": 1,
+  "sources": [
+    {
+      "name": "unknown_voice",
+      "path": "dialogues/npc/unknown_voice.usdf"
+    },
+    {
+      "name": "palomo",
+      "path": "dialogues/npc/palomo.usdf"
+    },
+    {
+      "name": "argento",
+      "path": "dialogues/npc/argento.usdf"
+    },
+    {
+      "name": "rulo",
+      "path": "dialogues/npc/rulo.usdf"
+    },
+    {
+      "name": "ronnie",
+      "path": "dialogues/npc/ronnie.usdf"
+    },
+    {
+      "name": "caella",
+      "path": "dialogues/npc/caella.usdf"
+    },
+    {
+      "name": "tutorial_chest",
+      "path": "dialogues/shared/tutorial_chest.usdf"
+    },
+    {
+      "name": "fool",
+      "path": "dialogues/npc/fool.usdf"
+    },
+    {
+      "name": "departure",
+      "path": "dialogues/shared/departure.usdf"
+    },
+    {
+      "name": "reputation_trial",
+      "path": "dialogues/shared/reputation_trial.usdf"
+    },
+    {
+      "name": "caravan_routes",
+      "path": "dialogues/shared/caravan_routes.usdf"
+    },
+    {
+      "name": "rest_and_tables",
+      "path": "dialogues/shared/rest_and_tables.usdf"
+    },
+    {
+      "name": "prisoner_unitario",
+      "path": "dialogues/npc/prisoner_unitario.usdf"
+    },
+    {
+      "name": "prisoner_federal",
+      "path": "dialogues/npc/prisoner_federal.usdf"
+    },
+    {
+      "name": "prisoner_bestia",
+      "path": "dialogues/npc/prisoner_bestia.usdf"
+    },
+    {
+      "name": "prisoner_tarot",
+      "path": "dialogues/npc/prisoner_tarot.usdf"
+    },
+    {
+      "name": "cups_ace",
+      "path": "dialogues/npc/cups_ace.usdf"
+    },
+    {
+      "name": "wands_knight",
+      "path": "dialogues/npc/wands_knight.usdf"
+    },
+    {
+      "name": "guards",
+      "path": "dialogues/npc/guards.usdf"
+    }
+  ],
+  "order": [
+    43300,
+    43200,
+    43310,
+    43311,
+    43312,
+    43313,
+    43315,
+    43316,
+    43317,
+    43318,
+    43319,
+    43320,
+    43321,
+    43322,
+    43323,
+    43410,
+    43411,
+    43412,
+    43413,
+    43510,
+    43511,
+    43512,
+    43513,
+    43514,
+    43515,
+    43516,
+    43414,
+    43415,
+    43420,
+    43421,
+    43422,
+    43423,
+    43424,
+    43425,
+    43426,
+    43427,
+    43620,
+    43621,
+    43480,
+    43481,
+    43482,
+    43483,
+    43484,
+    43485,
+    43486,
+    43487,
+    43488,
+    43489,
+    43490,
+    43630,
+    43631,
+    43632,
+    43633
+  ]
+}

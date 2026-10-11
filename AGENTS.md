@@ -1,6 +1,6 @@
 # AGENTS.md — Caelum Argenteum
 
-Documentation version: **5.2.4** — 2026-10-11.
+Documentation version: **5.2.5** — 2026-10-11.
 
 Startup guide for AI agents and human contributors. This file describes **how
 to work** on the project, not what balance or design it contains. Balance
@@ -45,6 +45,14 @@ are optional editing utilities; their outputs are already in `src/`.
 | Engineering orientation, build/launch and reusable patterns | `docs/GZDOOM_DEVELOPMENT.md` |
 | Verified lessons and unresolved defects | `docs/KNOWN_PITFALLS.md` |
 | Locate sections in long docs (over 5,000 words) | `docs/DOCUMENT_INDEX.md` |
+| Locate an NPC's dialogue or bilingual/shared UI text | `src/dialogues/INDEX.md`, `src/localization/INDEX.md` |
+
+Dialogue sources are owned by NPC/shared files under `src/dialogues/`; its
+`index.json` is authoritative for assembly and node order. Edit those sources,
+not `runtime.usdf` or the root compatibility alias `CAPALOMO`. After editing
+dialogue or `src/LANGUAGE`, run `python build_dialogue_index.py build`.
+Use its `npc`, `find` and `read` commands for bounded reads; they check freshness.
+Project validation and packaging also reject stale runtime/localization indexes.
 
 ## Conventions
 

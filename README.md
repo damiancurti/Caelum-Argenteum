@@ -6,16 +6,26 @@ An independent dark fantasy FPS-RPG inspired by nineteenth-century Argentina.
 Author and game designer: **Damian Curti**. Development target: **GZDoom 4.14.2**
 on Windows 11. The final game is intended to be independent of Doom assets.
 
-**Current release: 5.2.4.** Obtain and update the complete repository, validate
+**Current release: 5.2.5.** Obtain and update the complete repository, validate
 it, then rebuild with `run_dev.bat` as described below.
+
+5.2.5 organizes conversations into per-NPC sources under
+[`src/dialogues/`](src/dialogues/INDEX.md), preserving all IDs and node order.
+The [LANGUAGE index](src/localization/INDEX.md) locates English/Spanish text and
+shared UI keys without reading the full catalogue. Run
+`python build_dialogue_index.py build` after editing either source; validation
+and packaging reject stale output. [Evidence](assets/validation_525/RESULTS.md).
+The author accepted #185 on 2026-10-11 and authorized PR187 merge/issue closure.
+The author test queue is empty.
 
 5.2.4 simplifies character creation and tutorial equipment: editable recommended
 stats, profession gifts, a finite gold exchange and three utility crafts. The
 larger Box carries the actual starting kit into MAP02, whose finite supplies
 match its ammunition and repair needs. **Start a new test game**, as authorized
 by the author; pre-release saves are not migrated in this patch.
-[Evidence](assets/validation_524/RESULTS.md); CA183-01 passed author acceptance on 2026-10-11; merge/closure authorized.
-The requested indexed NPC/localization sources follow separately in #185.
+[Evidence](assets/validation_524/RESULTS.md); CA183-01 passed on 2026-10-11.
+PR186 is merged and #183 closed. The source organization requested in #185
+is implemented in 5.2.5.
 
 Earlier release summaries below record their original accepted behavior; the
 5.2.4 onboarding contract in SYSTEMS supersedes conflicting tutorial rules.

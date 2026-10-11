@@ -1,0 +1,200 @@
+namespace = "GZDoom";
+
+// CA_DLG_M01_UNKNOWN_VOICE_WAKE
+conversation
+{
+    id = 43300;
+    class = "CaelumPalomoConversationMenu";
+
+    page
+    {
+        pagename = "unknown_voice_wake";
+        name = "$CA_SPEAKER_UNKNOWN_VOICE";
+        dialog = "$CA_DLG_M01_UNKNOWN_VOICE_WAKE";
+        goodbye = "$CA_DLG_M01_UNKNOWN_VOICE_SILENCE";
+
+        choice
+        {
+            text = "$CA_DLG_M01_UNKNOWN_VOICE_ASK_WHO";
+            nextpage = "unknown_voice_who";
+            closedialog = false;
+        }
+        choice
+        {
+            text = "$CA_DLG_M01_UNKNOWN_VOICE_ASK_WHERE";
+            nextpage = "unknown_voice_where";
+            closedialog = false;
+        }
+    }
+
+    page
+    {
+        pagename = "unknown_voice_who";
+        name = "$CA_SPEAKER_UNKNOWN_VOICE";
+        dialog = "$CA_DLG_M01_UNKNOWN_VOICE_WHO_REPLY";
+        goodbye = "$CA_DLG_M01_CONTINUE";
+    }
+
+    page
+    {
+        pagename = "unknown_voice_where";
+        name = "$CA_SPEAKER_UNKNOWN_VOICE";
+        dialog = "$CA_DLG_M01_UNKNOWN_VOICE_WHERE_REPLY";
+        goodbye = "$CA_DLG_M01_CONTINUE";
+    }
+}
+
+conversation
+{
+    id = 43321;
+    class = "CaelumReturnConversationMenu";
+    page
+    {
+        pagename = "sewer_voice"; userstring = "sewer_voice";
+        name = "$CA_SPEAKER_UNKNOWN_VOICE"; dialog = "$CA_M01_RETURN_VOICE";
+        goodbye = "$CA_M01_RETURN_CONTINUE";
+        choice { text = "$CA_M01_RETURN_LOOK"; nextpage = "sewer_arrival"; closedialog = false; }
+    }
+    page
+    {
+        pagename = "sewer_arrival"; userstring = "sewer_arrival";
+        name = "$CA_MAP02_SEWER_NAME"; dialog = "$CA_M01_RETURN_COMPLETE";
+        goodbye = "$CA_M01_RETURN_CONTINUE";
+    }
+}
+
+conversation
+{
+    id = 43480;
+    class = "CaelumPalomoConversationMenu";
+    page
+    {
+        name = "$CA_SPEAKER_UNKNOWN_VOICE";
+        dialog = "$CA_DEMO_VOICE_0";
+        goodbye = "$CA_DLG_M01_CONTINUE";
+    }
+}
+
+conversation
+{
+    id = 43481;
+    class = "CaelumPalomoConversationMenu";
+    page
+    {
+        name = "$CA_SPEAKER_UNKNOWN_VOICE";
+        dialog = "$CA_DEMO_VOICE_1";
+        goodbye = "$CA_DLG_M01_CONTINUE";
+    }
+}
+
+conversation
+{
+    id = 43482;
+    class = "CaelumPalomoConversationMenu";
+    page
+    {
+        name = "$CA_SPEAKER_UNKNOWN_VOICE";
+        dialog = "$CA_DEMO_VOICE_2";
+        goodbye = "$CA_DLG_M01_CONTINUE";
+    }
+}
+
+conversation
+{
+    id = 43483;
+    class = "CaelumPalomoConversationMenu";
+    page
+    {
+        name = "$CA_SPEAKER_UNKNOWN_VOICE";
+        dialog = "$CA_DEMO_VOICE_3";
+        goodbye = "$CA_DLG_M01_CONTINUE";
+    }
+}
+
+conversation
+{
+    id = 43484;
+    class = "CaelumPalomoConversationMenu";
+    page
+    {
+        name = "$CA_SPEAKER_UNKNOWN_VOICE";
+        dialog = "$CA_DEMO_VOICE_4";
+        goodbye = "$CA_DLG_M01_CONTINUE";
+    }
+}
+
+conversation
+{
+    id = 43485;
+    class = "CaelumPalomoConversationMenu";
+    page
+    {
+        name = "$CA_SPEAKER_UNKNOWN_VOICE";
+        dialog = "$CA_DEMO_VOICE_5";
+        goodbye = "$CA_DLG_M01_CONTINUE";
+    }
+}
+
+conversation
+{
+    id = 43486;
+    class = "CaelumPalomoConversationMenu";
+    page
+    {
+        name = "$CA_SPEAKER_UNKNOWN_VOICE";
+        dialog = "$CA_DEMO_VOICE_6";
+        goodbye = "$CA_DLG_M01_CONTINUE";
+    }
+}
+
+conversation
+{
+    id = 43487;
+    class = "CaelumPalomoConversationMenu";
+    page
+    {
+        name = "$CA_SPEAKER_UNKNOWN_VOICE";
+        dialog = "$CA_DEMO_VOICE_7";
+        goodbye = "$CA_DLG_M01_CONTINUE";
+    }
+}
+
+conversation
+{
+    id = 43488;
+    class = "CaelumPalomoConversationMenu";
+    page
+    {
+        name = "$CA_SPEAKER_UNKNOWN_VOICE";
+        dialog = "$CA_DEMO_VOICE_8";
+        goodbye = "$CA_DLG_M01_CONTINUE";
+    }
+}
+
+conversation
+{
+    id = 43489;
+    class = "CaelumPalomoConversationMenu";
+    page
+    {
+        name = "$CA_SPEAKER_UNKNOWN_VOICE";
+        pagename = "port_siege_start";
+        userstring = "port_siege_start";
+        dialog = "$CA_DEMO_VOICE_9";
+        goodbye = "$CA_DLG_M01_CONTINUE";
+    }
+}
+
+conversation
+{
+    id = 43490;
+    class = "CaelumPalomoConversationMenu";
+    page
+    {
+        name = "$CA_SPEAKER_UNKNOWN_VOICE";
+        pagename = "port_siege_complete";
+        userstring = "port_siege_complete";
+        dialog = "$CA_DEMO_VOICE_10";
+        goodbye = "$CA_DLG_M01_CONTINUE";
+    }
+}

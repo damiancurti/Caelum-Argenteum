@@ -1,0 +1,15 @@
+namespace = "GZDoom";
+
+// 4.33.0v: confirmación del umbral y Voz al llegar a MAP02.
+conversation
+{
+    id = 43320;
+    class = "CaelumReturnConversationMenu";
+    page
+    {
+        pagename = "return_confirm"; userstring = "return_confirm";
+        name = "$CA_M01_RETURN_TITLE"; dialog = "$CA_M01_RETURN_CONFIRM";
+        goodbye = "$CA_M01_RETURN_NO";
+        choice { text = "$CA_M01_RETURN_YES"; giveitem = "CaelumM00CrossReturnAction"; closedialog = true; }
+    }
+}

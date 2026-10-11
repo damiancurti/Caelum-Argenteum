@@ -1,0 +1,226 @@
+namespace = "GZDoom";
+
+conversation
+{
+    id = 43311;
+    class = "CaelumMainM00ConversationMenu";
+    page
+    {
+        pagename = "rulo_gate";
+        userstring = "rulo_gate";
+        name = "$CA_RULO_NAME";
+        dialog = "$CA_DLG_M01_RULO_EARLY";
+        goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+        ifitem
+        {
+            item = "CaelumM00ArgentoStartedToken";
+            amount = 1;
+        }
+        link = "rulo_offer";
+    }
+    page
+    {
+        pagename = "rulo_offer";
+        userstring = "rulo_offer";
+        name = "$CA_RULO_NAME";
+        dialog = "$CA_DLG_M01_RULO_RECRUIT";
+        goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+        ifitem
+        {
+            item = "CaelumM00RuloConvincedToken";
+            amount = 1;
+        }
+        link = "rulo_accepted";
+        choice
+        {
+            text = "$CA_DLG_M01_RULO_READ";
+            nextpage = "rulo_check_confirm";
+            closedialog = false;
+            exclude
+            {
+                item = "CaelumM00RuloAttemptedToken";
+                amount = 1;
+            }
+        }
+        choice
+        {
+            text = "$CA_DLG_M01_RULO_REVISIT";
+            nextpage = "rulo_result";
+            closedialog = false;
+            require
+            {
+                item = "CaelumM00RuloAttemptedToken";
+                amount = 1;
+            }
+        }
+    }
+    page
+    {
+        pagename = "rulo_check_confirm";
+        userstring = "rulo_check_confirm";
+        name = "$CA_RULO_NAME";
+        dialog = "$CA_DLG_M01_RULO_CHECK";
+        goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+        ifitem
+        {
+            item = "CaelumM00RuloAttemptedToken";
+            amount = 1;
+        }
+        link = "rulo_result";
+        choice
+        {
+            text = "$CA_DLG_M01_RULO_ROLL";
+            nextpage = "rulo_result";
+            closedialog = false;
+            giveitem = "CaelumM00ReadRuloAction";
+        }
+    }
+    page
+    {
+        pagename = "rulo_result";
+        userstring = "rulo_result";
+        name = "$CA_RULO_NAME";
+        dialog = "$CA_DLG_M01_RULO_READ_FAILURE";
+        goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+        ifitem
+        {
+            item = "CaelumM00RuloReadToken";
+            amount = 1;
+        }
+        link = "rulo_read_success";
+        choice
+        {
+            text = "$CA_DLG_M01_RULO_ADVISED_ANSWER";
+            nextpage = "rulo_ack";
+            closedialog = false;
+            giveitem = "CaelumM00RespectRuloAction";
+            require
+            {
+                item = "CaelumM00RuloAdviceToken";
+                amount = 1;
+            }
+        }
+    }
+    page
+    {
+        pagename = "rulo_read_success";
+        userstring = "rulo_read_success";
+        name = "$CA_RULO_NAME";
+        dialog = "$CA_DLG_M01_RULO_READ_SUCCESS";
+        goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+        choice
+        {
+            text = "$CA_DLG_M01_RULO_RESPECT";
+            nextpage = "rulo_ack";
+            closedialog = false;
+            giveitem = "CaelumM00RespectRuloAction";
+        }
+    }
+    page
+    {
+        pagename = "rulo_ack";
+        userstring = "rulo_ack";
+        name = "$CA_RULO_NAME";
+        dialog = "$CA_DLG_M01_RULO_STILL_WAITING";
+        goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+        ifitem
+        {
+            item = "CaelumM00RuloConvincedToken";
+            amount = 1;
+        }
+        link = "rulo_accepted";
+    }
+    page
+    {
+        pagename = "rulo_accepted";
+        userstring = "rulo_accepted";
+        name = "$CA_RULO_NAME";
+        dialog = "$CA_DLG_M01_RULO_ACCEPTED";
+        ifitem { item = "CaelumM00RonnieFinishedToken"; amount = 1; }
+        link = "rulo_trial_offer";
+        goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+        choice { text = "$CA_DLG_M01_WORKSHOPS_ASK"; nextpage = "rulo_workshop"; }
+    }
+    page
+    {
+        pagename = "rulo_workshop";
+        userstring = "rulo_workshop";
+        name = "$CA_RULO_NAME";
+        dialog = "$CA_DLG_M01_WORKSHOP_RULO";
+        goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+        choice { text = "$CA_DLG_M01_GARDEN_ASK"; nextpage = "rulo_resources"; }
+    }
+    page
+    {
+        pagename = "rulo_resources";
+        userstring = "rulo_resources";
+        name = "$CA_RULO_NAME";
+        dialog = "$CA_M01_RONNIE_LOCATION";
+        goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+    }
+
+    page
+    {
+        pagename = "rulo_trial_offer"; userstring = "rulo_trial_offer";
+        name = "$CA_RULO_NAME"; dialog = "$CA_M01_RULO_OFFER";
+        goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+        ifitem { item = "CaelumM00RuloStartedToken"; amount = 1; }
+        link = "rulo_trial_active";
+        choice { text = "$CA_M01_RULO_START"; nextpage = "rulo_trial_lesson"; giveitem = "CaelumM00StartRuloAction"; }
+    }
+
+    page
+    {
+        pagename = "rulo_trial_active"; userstring = "rulo_trial_active";
+        name = "$CA_RULO_NAME"; dialog = "$CA_M01_RULO_PRACTICE";
+        goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+        ifitem { item = "CaelumM00RuloPracticeToken"; amount = 1; }
+        link = "rulo_trial_key";
+        choice { text = "$CA_M01_RULO_PREPARE"; nextpage = "rulo_trial_lesson"; giveitem = "CaelumM00StartRuloAction"; }
+        choice { text = "$CA_M01_RULO_CONTROLS"; nextpage = "rulo_trial_lesson"; }
+    }
+
+    page
+    {
+        pagename = "rulo_trial_key"; userstring = "rulo_trial_key";
+        name = "$CA_RULO_NAME"; dialog = "$CA_M01_RULO_KEY";
+        goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+        ifitem { item = "CaelumM00BullDefeatedToken"; amount = 1; }
+        link = "rulo_trial_victory";
+        choice { text = "$CA_M01_RULO_PREPARE"; nextpage = "rulo_trial_lesson"; giveitem = "CaelumM00StartRuloAction"; }
+    }
+
+    page
+    {
+        pagename = "rulo_trial_victory"; userstring = "rulo_trial_victory";
+        name = "$CA_RULO_NAME"; dialog = "$CA_M01_RULO_VICTORY";
+        goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+        ifitem { item = "CaelumM00RuloCompleteToken"; amount = 1; }
+        link = "rulo_trial_done";
+        choice { text = "$CA_M01_RULO_FINISH"; nextpage = "rulo_trial_done"; giveitem = "CaelumM00FinishRuloAction"; }
+    }
+
+    page
+    {
+        pagename = "rulo_trial_done"; userstring = "rulo_trial_done";
+        name = "$CA_RULO_NAME"; dialog = "$CA_M01_RULO_DONE";
+        goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+        choice { text = "$CA_DLG_M01_WORKSHOPS_ASK"; nextpage = "rulo_workshop"; }
+    }
+
+    page
+    {
+        pagename = "rulo_trial_lesson"; userstring = "rulo_trial_lesson";
+        name = "$CA_RULO_NAME"; dialog = "$CA_M01_RULO_LESSON";
+        goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+        choice { text = "$CA_M01_RULO_EQUIVALENTS"; nextpage = "rulo_trial_equivalents"; }
+    }
+
+    page
+    {
+        pagename = "rulo_trial_equivalents"; userstring = "rulo_trial_equivalents";
+        name = "$CA_RULO_NAME"; dialog = "$CA_M01_RULO_EQUIVALENT_TEXT";
+        goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+    }
+
+}

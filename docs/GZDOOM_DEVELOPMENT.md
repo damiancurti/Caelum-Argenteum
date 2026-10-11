@@ -76,6 +76,7 @@ All paths in this section are relative to the repository root and were inspected
 | Responsibility | Entry points |
 | --- | --- |
 | Runtime inclusion | src/ZSCRIPT (declares language version "4.14" and ordered includes), src/MAPINFO |
+| Dialogue and localized text navigation | src/dialogues/INDEX.md and index.json; src/localization/INDEX.md; build_dialogue_index.py (build/check/npc/find/read) |
 | Shared constants and character profile | src/caelum/core/CaelumConstants.zs; src/caelum/character/CaelumCharacterProfile.zs |
 | Player orchestration | src/caelum/player/CaelumPlayer.zs |
 | Equipment fit and size | src/caelum/equipment/CaelumEquipmentRules.zs |

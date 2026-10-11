@@ -1,0 +1,19 @@
+namespace = "GZDoom";
+
+conversation
+{
+    id = 43315;
+    class = "CaelumMainM00ConversationMenu";
+    page
+    {
+        pagename = "ronnie_chest_0";
+        userstring = "ronnie_chest_0";
+        name = "$CA_M01_CHEST_NAME";
+        dialog = "$CA_M01_SUPPLY_PAGE1";
+        goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+        choice { text = "$CA_AF_TAKE_SILVER"; nextpage = "ronnie_chest_0"; giveitem = "CaelumM00TakeSilver"; }
+        choice { text = "$CA_M01_TAKE_SUPPLY_5"; nextpage = "ronnie_chest_0"; closedialog = false; giveitem = "CaelumM00TakeSupply5"; }
+        choice { text = "$CA_M01_SUPPLY_DEPOSIT"; nextpage = "ronnie_chest_0"; closedialog = false; giveitem = "CaelumM00ReturnSupplies"; }
+        choice { text = "$CA_M01_SUPPLY_SURPLUS"; nextpage = "ronnie_chest_0"; giveitem = "CaelumM00ReturnSurplus"; }
+    }
+}

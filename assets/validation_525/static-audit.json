@@ -1,0 +1,93 @@
+{
+  "base": "0894d41d",
+  "checks": 19,
+  "failures": 0,
+  "conversations": 53,
+  "pages": 422,
+  "sources": 19,
+  "localization_keys": 2369,
+  "results": [
+    {
+      "name": "All original dialogue tokens and global node order retained",
+      "passed": true
+    },
+    {
+      "name": "LANGUAGE content retained (only line-ending normalization)",
+      "passed": true
+    },
+    {
+      "name": "Original source archived without content loss",
+      "passed": true
+    },
+    {
+      "name": "Repeated generation is byte-for-byte deterministic",
+      "passed": true
+    },
+    {
+      "name": "All committed output files match generation",
+      "passed": true
+    },
+    {
+      "name": "Production source validates",
+      "passed": true
+    },
+    {
+      "name": "Every localization location starts at its exact key and ends at a semicolon",
+      "passed": true
+    },
+    {
+      "name": "History generation preserves the reviewed catalogue",
+      "passed": true
+    },
+    {
+      "name": "Reject source-comment",
+      "passed": true
+    },
+    {
+      "name": "Reject language-comment",
+      "passed": true
+    },
+    {
+      "name": "Reject runtime",
+      "passed": true
+    },
+    {
+      "name": "Reject duplicate-id",
+      "passed": true
+    },
+    {
+      "name": "Reject missing-key",
+      "passed": true
+    },
+    {
+      "name": "Reject missing-page",
+      "passed": true
+    },
+    {
+      "name": "Reject mapinfo",
+      "passed": true
+    },
+    {
+      "name": "Reject history",
+      "passed": true
+    },
+    {
+      "name": "Reject unlisted-source",
+      "passed": true
+    },
+    {
+      "name": "Comments and legal identifier case preserve compiled dialogue",
+      "passed": true
+    },
+    {
+      "name": "Reject syntax-comments",
+      "passed": true
+    }
+  ],
+  "hashes": {
+    "src/dialogues/runtime.usdf": "b96e71654ce6a872053e4323b198fa4f1a9474bd0f0d784667b68a8ba5e7f307",
+    "src/dialogues/INDEX.md": "953fd9d001394b27e47692ad12ead50fed22aa07dbc13f5d8183f25c854a15fa",
+    "src/localization/index.json": "7a1632f207900010816876fa1636777fbf904cc9548619ccacb6a60448676bb7",
+    "src/localization/INDEX.md": "c7aa1bbb3597d8427aca8094f8f2960ae0de9e1d76b43f8580142f59ad43bc8d"
+  }
+}

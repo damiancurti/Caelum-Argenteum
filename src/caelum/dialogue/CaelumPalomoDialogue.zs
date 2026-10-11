@@ -52,7 +52,7 @@ class CaelumPalomoDialogueAction : Inventory abstract
 }
 
 // Compatibilidad de infraestructura: estas tres acciones conservan el comercio
-// aislado para mapas de depuración, pero CAPALOMO ya no las ofrece en la historia.
+// aislado para mapas de depuración, pero dialogues/npc/palomo.usdf ya no las ofrece en la historia.
 class CaelumPalomoAcceptAdventureAction : CaelumPalomoDialogueAction
 {
     override bool Use(bool pickup)

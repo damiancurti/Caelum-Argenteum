@@ -1,0 +1,14 @@
+namespace = "GZDoom";
+
+// #33: datos de carta; captura y animación compartidas.
+conversation
+{
+    id = 43621;
+    class = "CaelumFoolConversationMenu";
+    page
+    {
+        name = "$CA_TAROT_WANDS_KNIGHT_NAME"; dialog = "$CA_ARCANA_WANDS_REVEAL";
+        goodbye = "$CA_M01_FOOL_LATER";
+        choice { text = "$CA_M01_FOOL_CAPTURE"; giveitem = "CaelumM00CaptureFoolAction"; closedialog = true; }
+    }
+}
