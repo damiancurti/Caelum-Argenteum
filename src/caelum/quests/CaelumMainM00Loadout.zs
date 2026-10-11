@@ -91,6 +91,8 @@ class CaelumMainM00Loadout : Object play
         // Una partida con Ronnie ya iniciado puede completar una elección
         // nueva sin repetir el inicio, reponer lo gastado ni alterar su tarea.
         if (CaelumMainM00RonnieTrial.IsStarted(user)) TeachPlan(user);
+        CaelumMainM00SupplyRules.Ensure(user);
+        CaelumMainM00SupplyRules.UpdateLimits(user);
         CaelumMainM00RonnieTrial.Sync(user);
         Refresh(user);
         user.PersistCharacterState();

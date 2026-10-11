@@ -20,6 +20,12 @@ class CaelumDiningDisplay : Actor
 // Los platos son presentación; la ración real sigue perteneciendo a la mesa.
 class CaelumDiningFoodPlate : CaelumDiningDisplay {}
 class CaelumDiningWaterCup : CaelumDiningDisplay {}
+class CaelumDiningLargeCanteen : CaelumDiningDisplay
+{
+    override void PostBeginPlay()
+    { Super.PostBeginPlay(); Scale = GetDefaultByType("CaelumCanteenLarge").Scale; }
+    States { Spawn: CW5X A -1; Stop; }
+}
 
 class CaelumDiningBlock : Actor
 {
@@ -42,15 +48,22 @@ class CaelumDiningTable : Actor
     bool PresentationReady;
     bool MansionFullFoodPrepared;
     int MansionFoodToSeed;
-    // Revisión 1: conservar pertenencias antiguas y registrar una entrega diaria.
+    // Revisión 2: conservar pertenencias y reponer también cada retirada.
     int MansionProvisionRevision;
     int LastMansionRestockDay;
     virtual int ForecastDailyTarget() { return level.MapName=="MAP01"?Capacity()/2:0; }
     virtual void SyncLocalDay(int localDay)
     {
         if(level.MapName!="MAP01" || localDay<0)return;
-        if(MansionProvisionRevision>=1 && localDay<=LastMansionRestockDay)return;
-        MansionProvisionRevision=1;LastMansionRestockDay=localDay;
+        if(MansionProvisionRevision>=2 && localDay<=LastMansionRestockDay)return;
+        LastMansionRestockDay=localDay;
+        RestockMansion();
+    }
+
+    void RestockMansion()
+    {
+        if(level.MapName!="MAP01")return;
+        MansionProvisionRevision=2;
         // Retira el saldo del sembrado antiguo, nunca sus objetos. Un guardado
         // no distingue raciones iniciales de las depositadas por el jugador.
         MansionFullFoodPrepared=true;MansionFoodToSeed=0;
@@ -62,16 +75,21 @@ class CaelumDiningTable : Actor
             int kind=item.GetConsumableType();
             if(kind==CaelumConstants.CONSUMABLE_FOOD_RATION)food+=item.Amount;
             else if(kind==CaelumConstants.CONSUMABLE_WATER_RATION)water+=item.Amount;
+            let container=CaelumWaterContainer(item);
+            if(container!=null)
+            {container.WaterLiters=container.GetCapacityLiters();water++;}
         }
         for(int i=0;i<Capacity();i++)
         {
             if(Items[i]!=null)continue;
             bool needsFood=food<target;
             if(!needsFood && water>=target)break;
-            class<CaelumConsumableItem> kind=needsFood?"CaelumFoodRation":"CaelumWaterRation";
+            class<CaelumConsumableItem> kind=needsFood?"CaelumFoodRation":"CaelumCanteenLarge";
             let ration=CaelumConsumableItem(Spawn(kind,Pos,NO_REPLACE));
             if(ration==null)break;
             ration.Amount=1;ration.InMagicBox=false;ration.AttachToOwner(self);Items[i]=ration;
+            let container=CaelumWaterContainer(ration);
+            if(container!=null)container.WaterLiters=container.GetCapacityLiters();
             if(needsFood)food++;else water++;
         }
         RefreshDisplays();
@@ -182,6 +200,7 @@ class CaelumDiningTable : Actor
                 Displays[i]=null;continue;
             }
             class<CaelumDiningDisplay> kind=IsDrink(Items[i])?"CaelumDiningWaterCup":"CaelumDiningFoodPlate";
+            if(Items[i] is "CaelumCanteenLarge")kind="CaelumDiningLargeCanteen";
             if(Displays[i]!=null && Displays[i].GetClass()!=kind) {Displays[i].Destroy();Displays[i]=null;}
             if(Displays[i]==null)Displays[i]=CaelumDiningDisplay(Spawn(kind,Pos,NO_REPLACE));
             let visual=Displays[i];if(visual==null)continue;
@@ -228,7 +247,7 @@ class CaelumDiningTable : Actor
             item.BecomePickup();item.bSpecial=false;
             Actor toucher=user;
             if(!item.CallTryPickup(toucher)) {item.AttachToOwner(self);return false;}
-            Items[i]=null;RefreshDisplays();user.OnNativeInventoryChanged();user.PersistCharacterState();return true;
+            Items[i]=null;RestockMansion();RefreshDisplays();user.OnNativeInventoryChanged();user.PersistCharacterState();return true;
         }
         return false;
     }
@@ -251,7 +270,7 @@ class CaelumDiningTable : Actor
             user.RemoveInventory(item);
             if(accepted && bottle==null) {Items[i]=null;item.Destroy();}
             else item.AttachToOwner(self);
-            RefreshDisplays();user.OnNativeInventoryChanged();user.PersistCharacterState();return accepted;
+            RestockMansion();RefreshDisplays();user.OnNativeInventoryChanged();user.PersistCharacterState();return accepted;
         }
         return ConsumeReserve(user,drink);
     }
@@ -325,7 +344,7 @@ class CaelumDiningTable : Actor
             let clock=CaelumWorldClock.Get(CaelumPlayer(players[i].mo));
             if(clock!=null){SyncLocalDay(clock.LocalDays());return;}
         }
-        if(MansionProvisionRevision<1)SyncLocalDay(0);
+        if(MansionProvisionRevision<2)SyncLocalDay(0);
     }
 
     override void Tick()

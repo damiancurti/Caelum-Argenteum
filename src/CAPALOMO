@@ -1651,13 +1651,13 @@ conversation
         goodbye = "$CA_DLG_M01_PALOMO_LEAVE";
         ifitem { item = "CaelumMainM00MagicBoxGrantedToken"; amount = 1; }
         link = "palomo_box_received";
-        choice { text = "$CA_PALOMO_NECKLACE_ASK"; giveitem = "CaelumM00OpenNecklaceAction"; closedialog = true; }
         choice { text = "$CA_M01_PALOMO_FAVOR_ASK"; nextpage = "palomo_box_offer"; closedialog = false; }
         choice { text = "$CA_M01_PALOMO_IDEA_ASK"; nextpage = "palomo_final_idea"; closedialog = false; }
         choice { text = "$CA_M01_PALOMO_EXIT_ASK"; nextpage = "palomo_final_exit"; closedialog = false; }
         choice { text = "$CA_M01_PALOMO_WHERE_ASK"; nextpage = "palomo_final_where"; closedialog = false; }
         choice { text = "$CA_M01_PALOMO_VOICE_ASK"; nextpage = "palomo_final_voice"; closedialog = false; }
         choice { text = "$CA_DEMO_PALOMO_LESSONS_ASK"; nextpage = "palomo_lessons"; closedialog = false; }
+        choice { text = "$CA_PALOMO_NECKLACE_ASK"; giveitem = "CaelumM00OpenNecklaceAction"; closedialog = true; }
     }
     page
     {
@@ -1726,10 +1726,10 @@ conversation
         pagename = "palomo_box_received"; userstring = "palomo_box_received";
         name = "$CA_PALOMO_NAME"; dialog = "$CA_M01_PALOMO_RECEIVED";
         goodbye = "$CA_DLG_M01_PALOMO_LEAVE";
-        choice { text = "$CA_PALOMO_NECKLACE_ASK"; giveitem = "CaelumM00OpenNecklaceAction"; closedialog = true; }
         choice { text = "$CA_M01_PALOMO_USE_ASK"; nextpage = "palomo_box_use"; closedialog = false; }
         choice { text = "$CA_M01_PALOMO_CAVE_ASK"; nextpage = "palomo_box_cave"; closedialog = false; }
         choice { text = "$CA_DEMO_PALOMO_LESSONS_ASK"; nextpage = "palomo_lessons"; closedialog = false; }
+        choice { text = "$CA_PALOMO_NECKLACE_ASK"; giveitem = "CaelumM00OpenNecklaceAction"; closedialog = true; }
     }
     page
     {
@@ -2010,11 +2010,11 @@ conversation
         pagename = "palomo_fool_received"; userstring = "palomo_fool_received";
         name = "$CA_PALOMO_NAME"; dialog = "$CA_M01_FOOL_PALOMO";
         goodbye = "$CA_DLG_M01_PALOMO_LEAVE";
-        choice { text = "$CA_PALOMO_NECKLACE_ASK"; giveitem = "CaelumM00OpenNecklaceAction"; closedialog = true; }
         choice { text = "$CA_M01_RETURN_ASK"; nextpage = "palomo_return_door"; closedialog = false; }
         choice { text = "$CA_M01_FOOL_COLLECTION_ASK"; nextpage = "palomo_fool_collection"; closedialog = false; }
         choice { text = "$CA_M01_PALOMO_USE_ASK"; nextpage = "palomo_fool_box_use"; closedialog = false; }
         choice { text = "$CA_DEMO_PALOMO_LESSONS_ASK"; nextpage = "palomo_lessons"; closedialog = false; }
+        choice { text = "$CA_PALOMO_NECKLACE_ASK"; giveitem = "CaelumM00OpenNecklaceAction"; closedialog = true; }
     }
     page
     {
@@ -3568,10 +3568,10 @@ page
     }
     page { pagename = "loadout_summary"; userstring = "loadout_summary";
         name = "$CA_PALOMO_NAME"; dialog = "$CA_LOADOUT_REVIEW"; goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
-        choice { text = "$CA_PALOMO_NECKLACE_ASK"; giveitem = "CaelumM00OpenNecklaceAction"; closedialog = true; }
         choice { text = "$CA_LOADOUT_ARMOR"; nextpage = "loadout_armors"; closedialog = false; }
         choice { text = "$CA_LOADOUT_SEAL"; nextpage = "loadout_seals"; closedialog = false; }
         choice { text = "$CA_LOADOUT_SHIELD"; nextpage = "loadout_shields"; closedialog = false; }
+        choice { text = "$CA_PALOMO_NECKLACE_ASK"; giveitem = "CaelumM00OpenNecklaceAction"; closedialog = true; }
         choice { text = "$CA_LOADOUT_SKIP"; nextpage = "loadout_root"; closedialog = false; } }
     page { pagename = "loadout_stats_0"; userstring = "loadout_stats_0";
         name = "$CA_PALOMO_NAME"; dialog = "$CA_LOADOUT_REVIEW"; goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";

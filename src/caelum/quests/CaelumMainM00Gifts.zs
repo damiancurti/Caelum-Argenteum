@@ -2,9 +2,37 @@
 // se gaste o se pierda; migrar nunca reconstruye una instancia ya entregada.
 class CaelumMainM00Gifts : Object play
 {
-    const REVISION = 1;
+    const REVISION = 2;
 
-    static bool EnsureTool(CaelumPlayer user, bool bolas)
+    static bool EnsureSleepingBag(CaelumPlayer user)
+    {
+        if (user == null || !user.CharacterCreationComplete || user.health <= 0) return false;
+        let r = user.GetPersistentCharacterState(false);
+        if (r == null || !r.HasMainM00Flag(CaelumConstants.MAIN_M00_FLAG_MAGIC_BOX_GRANTED)) return false;
+        if (r.MainM00SleepingBagGiven) return true;
+        if (user.FindInventory("CaelumSleepingBag") == null)
+        {
+            let bag = CaelumSleepingBag(Actor.Spawn("CaelumSleepingBag", user.Pos, NO_REPLACE));
+            if (bag == null) return false;
+            Actor receiver = user;
+            if (!bag.CallTryPickup(receiver)) { bag.Destroy(); return false; }
+        }
+        r.MainM00SleepingBagGiven = true;
+        user.OnNativeInventoryChanged(); user.PersistCharacterState();
+        return true;
+    }
+
+    // La entrega usa la misma selección que recoger un arma del suelo. Se
+    // llama sólo al crear la pieza, nunca al reconocer un regalo anterior.
+    static void EquipReceivedWeapon(CaelumPlayer user, CaelumEquipmentItem item)
+    {
+        if (!CaelumMainM00RonnieTrial.CanInteract(user) || item == null
+            || item.Owner != user) return;
+        user.OnNativeEquipmentPickedUp(item.ItemId, item.EquipmentKind,
+            item.ItemType, item.Tier, item.EquipmentSize, item.EssenceType, item.InMagicBox);
+    }
+
+    static bool EnsureTool(CaelumPlayer user, bool bolas, bool autoEquip = true)
     {
         if (user == null || !user.CharacterCreationComplete || user.health <= 0
             || user.WeaponModel == null) return false;
@@ -33,6 +61,7 @@ class CaelumMainM00Gifts : Object play
         if (bolas) r.MainM00BolasId = item.ItemId;
         else r.MainM00UtilityStaffId = item.ItemId;
         CaelumNotifications.Acquired(user, item, 1);
+        if (autoEquip) EquipReceivedWeapon(user, item);
         user.OnNativeInventoryChanged(); user.PersistCharacterState();
         return true;
     }
@@ -51,6 +80,7 @@ class CaelumMainM00Gifts : Object play
         // Reintenta sólo regalos aún no entregados si faltaba capacidad. No
         // retrocede la misión ni exige repetir conversaciones ya terminadas.
         if (level.time % TICRATE != 0) return;
+        EnsureSleepingBag(user);
         if (r.HasMainM00Flag(CaelumConstants.MAIN_M00_FLAG_ARGENTO_STARTED))
             CaelumTarotDeckRules.Grant(user, false);
         EnsureTool(user, false); EnsureTool(user, true);

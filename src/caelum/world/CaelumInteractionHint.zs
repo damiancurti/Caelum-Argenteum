@@ -45,7 +45,7 @@ class CaelumInteractionHint : Object play
     {
         if(user==null || user.player==null || user.health<=0 || !user.CharacterCreationComplete)return "";
         let preview=CaelumChestPreviewState.Get(user);
-        if(preview!=null && preview.Chest!=null)return "";
+        if(preview!=null && preview.IsOpen())return "";
         let nearby=BlockThingsIterator.Create(user,user.UseRange+128);
         double best=1000000;String result="";
         while(nearby.Next())

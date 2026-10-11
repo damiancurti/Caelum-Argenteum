@@ -1,6 +1,30 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **5.2.0** — 2026-10-11.
+Documentation version: **5.2.1** — 2026-10-11.
+
+## 5.2.1 - Tutorial equipment, provisions and portable rest (#177), 2026-10-11
+
+The author requested autoequipped tutorial weapons, removal of Bull-room edge
+teleports, corrected Palomo shotgun text and later necklace selection. Further
+feedback moved all confirmed equipment materials into the basement chest's
+maze-style loot interface, progressively and once. The author explicitly chose
+unlimited food/water while retaining one-time material allowances, suggested
+existing large canteens, and requested Palomo's sleeping bag and removal of
+fixed MAP02 beds. The heaviest playable body is included in native provision
+and shotgun crafting checks. No new recipe, serving dose or combat value was
+invented.
+
+Existing item identities/material ledgers remain. Dining revision 2 refills
+empty slots and table containers; forecast revision 1 refreshes old forecasts.
+Gift revision 2 grants/adopts one sleeping bag, including completed old saves.
+The real departure transaction also preserves that exact bag instance.
+Chest preview revision 1 preserves the old MAP02 pointer. Fixed beds retire
+only when unoccupied; geometry/safe areas and original saves remain available.
+
+Agent evidence: assets/validation_521/RESULTS.md distinguishes native engine
+checks, static validation and diagnostic fixture corrections. Author acceptance
+is pending as CA177-01. CA147-01 remains pending; #147/PR176 is not merged or
+closed by this follow-up. The unrelated local artwork deletion is excluded.
 
 ## 5.2.0 - Unified saved identity and native settings (#147), 2026-10-11
 

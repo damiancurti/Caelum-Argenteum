@@ -266,6 +266,7 @@ class CaelumMainM00RonnieTrial : Object play
         record.MainM00PickaxeId = item.ItemId;
         record.MainM00PickaxeRevision = CaelumConstants.PICKAXE_TUTORIAL_REVISION;
         CaelumNotifications.Acquired(user, item, 1);
+        CaelumMainM00Gifts.EquipReceivedWeapon(user, item);
         user.RefreshCraftingRecipeBookSummary();
         user.OnNativeInventoryChanged();
         user.PersistCharacterState();
@@ -359,16 +360,16 @@ class CaelumMainM00RonnieTrial : Object play
 
     static bool OpenChest(CaelumPlayer user, CaelumMainM00SupplyChest chest)
     {
-        if (!CanInteract(user) || chest == null) return false;
-        if (!IsStarted(user)) { Feedback(user, "CA_M01_CHEST_RONNIE_FIRST"); return true; }
-        EnsureSupplies(user);
-        Sync(user);
+        if (!CanInteract(user) || chest == null || !chest.CanInspect(user)) return false;
+        CaelumMainM00SupplyRules.Ensure(user);
+        CaelumMainM00SupplyRules.UpdateLimits(user);
         user.EquipmentMenuOpen = false;
         user.CloseCraftingStationSession();
         user.SetCraftingJournalState(false);
-        Level.ExecuteSpecial(CaelumConstants.GZDOOM_THING_SET_CONVERSATION_SPECIAL,
-            chest, null, false, 0, 43315);
-        return chest.HasConversation() && chest.StartConversation(user, true, true);
+        let preview = CaelumChestPreviewState.Get(user, true);
+        if (preview == null) return false;
+        preview.Close(); preview.TutorialChest = chest; preview.Page = 0; preview.Refresh();
+        return true;
     }
 
     static bool UseSupply(CaelumPlayer user, int slot)
@@ -444,6 +445,7 @@ class CaelumMainM00RonnieTrial : Object play
     {
         if (!CanUsePersonalCraftingOutput(user) || result == null
             || result.EquipmentKind != CaelumConstants.EQUIPMENT_KIND_WEAPON) return;
+        CaelumMainM00Gifts.EquipReceivedWeapon(user, result);
         let record = user.GetPersistentCharacterState(true);
         if (record.MainM00StarterWeaponId > 0)
         {
@@ -572,6 +574,41 @@ class CaelumM00FinishRonnieAction : CaelumPalomoDialogueAction
 
 class CaelumMainM00SupplyChest : CaelumStashChest
 {
+    bool CanInspect(CaelumPlayer user)
+    {
+        return CaelumMainM00RonnieTrial.CanInteract(user)
+            && CaelumUseGeometry.AimedAt(user, self) && user.CheckSight(self);
+    }
+
+    void Collect(CaelumPlayer user)
+    {
+        if (!CanInspect(user)) return;
+        CaelumMainM00SupplyRules.Ensure(user);
+        CaelumMainM00SupplyRules.UpdateLimits(user);
+        int left = 0;
+        for (int material = 0; material < CaelumConstants.MATERIAL_TYPE_COUNT; material++)
+        {
+            int amount = Min(CaelumMainM00SupplyRules.Remaining(user, material),
+                CaelumMainM00SupplyRules.CarryRoom(user));
+            if (amount > 0)
+            {
+                let item = CaelumMaterialPickup(Actor.Spawn("CaelumMaterialPickup", Pos, NO_REPLACE));
+                if (item == null) return;
+                item.args[0] = material; item.args[1] = 1; item.Amount = amount;
+                item.LimboSupplyUnits = amount;
+                item.UpdateMaterialVisuals();
+                Actor receiver = user;
+                // La recogida compartida valida la carga y descuenta el cupo
+                // sólo tras aceptar la pila. El resto sigue dentro del cofre.
+                if (!item.CallTryPickup(receiver)) item.Destroy();
+            }
+            if (CaelumMainM00SupplyRules.Remaining(user, material) > 0) left++;
+        }
+        if (left > 0) CaelumNotifications.Notify(user, String.Format(
+            StringTable.Localize("CA_CHEST_PREVIEW_CAPACITY", false), left));
+        user.OnNativeInventoryChanged();
+    }
+
     override bool Used(Actor user)
     {
         if (user == null || Abs(user.Pos.Z - Pos.Z) > 64 || !user.CheckSight(self)) return false;

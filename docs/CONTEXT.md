@@ -1,17 +1,17 @@
 # CONTEXT.md — Caelum Argenteum
 
-Documentation version: **5.2.0** — 2026-10-11.
+Documentation version: **5.2.1** — 2026-10-11.
 
-**5.2.0/#147:** shared saved identity, session draft recovery and native settings.
-Author-requested debug controls become console-only; normal actions use native
-categories. Evidence: validation_520; CA147-01 pending. Next: #148 preview;
-remaining #149 hints/input work stays separate.
+**5.2.1/#177:** tutorial weapons autoequip; Bull edges do not relocate actors;
+Palomo shotgun/necklace choices corrected. Progressive chest materials remain
+finite; mansion food/water are unlimited with 5 L canteens. Palomo gives a
+sleeping bag; MAP02 beds retire when unoccupied. Evidence: validation_521;
+CA177-01 pending. Stacked on #147/PR176, which remains unmerged.
+**5.2.0/#147:** shared saved identity/session draft/native controls; CA147-01
+pending (validation_520). Next: #148; remaining #149/#150 work stays separate.
 **#164/#172/#173 accepted/closed/merged:** PR171/174/175; baseline f7c4a0dd.
 
-**5.1.14/#165 accepted** 2026-10-10 (CA165-01). Flash/travel repair; PR166
-merged. 34 checks pass: validation_5114.
-**#158/PR159 and #160/PR161 accepted, closed, merged** 2026-10-10.
-Crafting size and silver-key fixes: SYSTEMS/HISTORY; validation_5112/5113.
+**#165/#158/#160 accepted/merged:** validation_5114/5112/5113; HISTORY records acceptance.
 **#156/PR157 and #154/PR155 accepted, closed, merged** on 2026-10-10.
 Time-skip and SI/growth contracts: SYSTEMS/HISTORY; validation_5111/5110.
 **#152, #137, #136 accepted:** evidence validation_519/518/517; historical thermal

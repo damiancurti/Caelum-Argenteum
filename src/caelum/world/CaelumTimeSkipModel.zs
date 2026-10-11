@@ -2,12 +2,13 @@
 class CaelumSkipSupply : Object play
 {
     int Kind, Count;
-    double Liters;
+    double Liters, CapacityLiters;
     void Capture(CaelumConsumableItem item)
     {
         Kind=CaelumTimeSkipRules.Kind(item);
         Count=item!=null?item.Amount:0;
         let bottle=CaelumWaterContainer(item);Liters=bottle!=null?bottle.WaterLiters:0;
+        CapacityLiters=bottle!=null?bottle.GetCapacityLiters():0;
     }
 }
 class CaelumSkipTableStock : Object play
@@ -17,6 +18,8 @@ class CaelumSkipTableStock : Object play
 
 class CaelumTimeSkipModel : CaelumJourneyModel
 {
+    const PROVISION_REVISION = 1;
+    int ProvisionRevision;
     Array<CaelumSkipSupply> Supplies;
     Array<CaelumSkipTableStock> Tables;
     bool Done, Sleeping, Limbo;
@@ -43,6 +46,7 @@ class CaelumTimeSkipModel : CaelumJourneyModel
     }
     void CaptureSkip(CaelumPlayer user,bool alreadySleeping)
     {
+        ProvisionRevision=PROVISION_REVISION;
         Capture(user,false);
         Scale=CaelumWorldClock.MapTimeScale(level.MapName);
         HungerLoss*=Scale;ThirstLoss*=Scale;SleepLoss*=Scale;
@@ -93,7 +97,7 @@ class CaelumTimeSkipModel : CaelumJourneyModel
                 if(entry.Kind==CaelumScheduleRules.SIEGE && entry.MapName==level.MapName && next>=0
                     && (NextThreat<0 || next<NextThreat))NextThreat=next;
             }
-        RefreshTriggers();
+        LocalDay();
     }
     void RefreshTriggers()
     {
@@ -125,7 +129,7 @@ class CaelumTimeSkipModel : CaelumJourneyModel
             {WaterSpent++;WaterEffectTics=CaelumConstants.CONSUMABLE_REGENERATION_SECONDS*TICRATE;
                 WaterPulseTics=0;WaterPulse=dose/CaelumConstants.CONSUMABLE_REGENERATION_SECONDS;}
         }
-        RefreshTriggers();
+        LocalDay();
     }
     override double Comfort(bool sleeping)
     {return Hunger<=CaelumTimeSkipRules.SleepAt() || Thirst<=CaelumTimeSkipRules.SleepAt()?1:sleeping?BedFactor:1;}
@@ -135,19 +139,30 @@ class CaelumTimeSkipModel : CaelumJourneyModel
 
     void LocalDay()
     {
-        // El mismo contrato de #65: completar huecos, jamás sobrescribir ni
-        // acumular una entrega por cada día perdido.
+        // La mansión repone los huecos tras cada consumo, además del cambio
+        // de día. Los objetos depositados y las otras ubicaciones se conservan.
         for(int i=0;i<Tables.Size();i++)
         {
             let table=Tables[i];if(table.Target<=0)continue;
             int food=0,water=0;
             for(int j=table.First;j<table.First+table.Capacity;j++)
-            {let row=Supplies[j];if(row.Kind==1)food+=row.Count;else if(row.Kind==2)water+=row.Count;}
+            {
+                let row=Supplies[j];
+                if(row.Kind==1)food+=row.Count;
+                else if(row.Kind==2)water+=row.Count;
+                else if(row.Kind==3 && row.Count>0){row.Liters=row.CapacityLiters;water++;}
+            }
             for(int j=table.First;j<table.First+table.Capacity;j++)
             {
                 let row=Supplies[j];if(row.Count>0)continue;
                 if(food<table.Target){row.Kind=1;row.Count=1;food++;}
-                else if(water<table.Target){row.Kind=2;row.Count=1;water++;}
+                // Capacidad del mismo objeto usado al reponer las mesas.
+                else if(water<table.Target)
+                {
+                    let defaults=CaelumCanteenLarge(GetDefaultByType("CaelumCanteenLarge"));
+                    row.Kind=3;row.Count=1;row.CapacityLiters=defaults.GetCapacityLiters();
+                    row.Liters=row.CapacityLiters;water++;
+                }
             }
         }
         RefreshTriggers();

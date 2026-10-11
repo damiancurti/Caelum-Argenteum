@@ -1,6 +1,20 @@
 # Caelum Argenteum — Project, status and roadmap
 
-Documentation version: **5.2.0** — 2026-10-11.
+Documentation version: **5.2.1** — 2026-10-11.
+
+## 5.2.1 - Tutorial usability and portable rest (#177)
+
+Follow-up to the author's #147 testing: received tutorial weapons autoequip,
+Bull room movement uses physical boundaries, and Palomo's shotgun text and
+necklace ordering match the current choices. The basement chest exposes the
+existing one-time material plan through the maze loot interface as choices are
+confirmed. Mansion food/water are explicitly unlimited, with replenished large
+5 L canteens and matching task forecasts. Palomo supplies a sleeping bag at the
+final gift; MAP02 fixed beds retire safely from both fresh and saved maps.
+
+Evidence: assets/validation_521. Author checks CA177-01 and CA147-01 remain
+pending; this follow-up is stacked on #147/PR176, without merging that patch.
+Next planned roadmap block remains #148; #149/#150 stay separate.
 
 ## 5.2.0 - Unified character identity (#147)
 

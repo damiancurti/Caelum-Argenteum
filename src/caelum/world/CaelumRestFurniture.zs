@@ -122,6 +122,13 @@ class CaelumRestChair : CaelumRestFurniture
 
 class CaelumRestBed : CaelumRestFurniture
 {
+    override void Tick()
+    {
+        Super.Tick();
+        // MAP02 conserva geometría y zonas seguras. Un ocupante guardado
+        // termina su descanso antes de retirar la cama, sin recolocarlo.
+        if (level.MapName == "MAP02" && Occupant == null) Destroy();
+    }
     override int RestMode() { return CaelumRestRules.MODE_SLEEP; }
     override int ComfortFactor() { return 4; }
     override vector3 PoseOffset() { return (0, 0, 10); }
@@ -173,7 +180,7 @@ class CaelumRestFurnitureTrial : Object play
             bed=CaelumMazeLayout.ArrivalBedPosition();
         }
         bool chairReady = Place(1, chair);
-        bool bedReady = Place(2, bed);
+        bool bedReady = level.MapName == "MAP02" || Place(2, bed);
         return chairReady && bedReady;
     }
 }

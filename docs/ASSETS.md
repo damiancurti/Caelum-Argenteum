@@ -1,6 +1,16 @@
 # Caelum Argenteum — Audio and art
 
-Documentation version: **5.2.0** — 2026-10-11.
+Documentation version: **5.2.1** — 2026-10-11.
+
+## 5.2.1 - Reused tutorial and provision presentation (#177)
+
+The basement chest reuses the existing maze loot panel and chest models. Large
+table canteens reuse the existing CW5X pickup sprite and its native scale;
+food plates, table geometry and the sleeping bag keep their existing art.
+MAP02 bed removal is runtime behavior with occupied-save deferral; no WAD,
+source art, attribution or historical map snapshot is replaced or deleted.
+Palomo's shotgun, supply and portable-rest explanations remain bilingual.
+Native captures and evidence are in assets/validation_521.
 
 ## 5.2.0 - Saved identity presentation boundary (#147)
 

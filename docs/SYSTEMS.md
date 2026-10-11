@@ -1,6 +1,60 @@
 # Caelum Argenteum — Current systems and rules
 
-Documentation version: **5.2.0** — 2026-10-11.
+Documentation version: **5.2.1** — 2026-10-11.
+
+## Tutorial equipment, supplies and portable rest - 5.2.1 / #177
+
+Author feedback on 2026-10-11 supersedes the earlier manual tutorial weapon
+selection, six-slot supply dialogue, daily-only mansion food/water and fixed
+MAP02 beds. Recipes, serving doses, body-mass scaling and combat balance stay
+unchanged. The author explicitly distinguished unlimited food/water from the
+one-time equipment material allowance.
+
+- A newly granted Caella utility staff, Ronnie Pickaxe, personal tutorial weapon
+  crafting output or Rulo bolas selects its exact native instance through the
+  ordinary pickup/equipment path. Boxed or incompatible pieces remain subject
+  to the existing restrictions. Recognizing an earlier grant does not reselect
+  it. Rulo prepares the starter and its ammunition before selecting new bolas.
+- During the Bull fight, walls and locked doors bound movement. Crossing the
+  former inner rectangle or jumping does not relocate the fighter, Bull or
+  helpers or disqualify a living trial opponent. Initial gathering/staging and
+  the pre-hostility native autosave remain; this is not a map geometry change.
+- Palomo's ranged option and both explanations name the existing double-barrel
+  shotgun, using cartridges and twelve pellets, instead of the retired bow.
+  Necklace selection follows the primary choices, including the optional plan.
+- The basement supply chest uses the maze's inspect/collect/paginate interface.
+  All raw materials in the existing 100%-efficiency recipe graph become visible
+  as equipment choices are confirmed, before Ronnie's teaching. Later choices
+  add only their own allowance. The saved limit/issued ledger remains the sole
+  authority; prior withdrawals, consumed materials, gathering and reservations
+  are not replenished or reset. Collection revalidates aim, ownership and carrying
+  room; excess stays in the chest. Gathering remains optional and shares that
+  allowance. Existing owned necklace/Seal exclusions and repair stock remain.
+- MAP01 table food/water are unlimited. Empty provision slots refill after
+  taking/consuming, and table-owned water containers refill after drinking.
+  New water stock uses the existing large 5 L canteen; the established half-food,
+  half-water slot targets remain. Existing deposited items and old ration stacks
+  keep their identity; old rations become canteens only after their slot empties.
+  Dining revision 2 applies this idempotently on old saves without accumulating
+  missed-day stock. Other maps retain finite provisions. Forecast revision 1
+  uses the same refill/volume rules and refreshes obsolete saved forecasts
+  without consuming real inventory. Actual digestion and portion sizes remain.
+- Palomo's final Box gift also grants the existing 2 kg sleeping bag once, or
+  recognizes an owned bag. Insufficient capacity defers the grant. Gift revision
+  2 retries an unclaimed bag, including earlier saves already past Palomo, but
+  never replaces a subsequently lost/sold bag. The bag remains ordinary owned
+  inventory, subject to its existing deployment, carrying and safe-rest rules;
+  the mansion departure transaction preserves that same bag instance.
+- MAP02 fixed beds retire at runtime on all layouts, with geometry and safe
+  zones unchanged. An occupied saved bed remains until its rest/time-skip
+  session releases it; unoccupied beds disappear and arrival preparation no
+  longer respawns one. MAP01/MAP06 beds and portable sleeping bags remain.
+
+Save compatibility retains existing inventory IDs, material ledgers and MAP02
+map data. Chest preview source revision 1 preserves the original typed MAP02
+reference and adds a nullable tutorial endpoint. Original saves/packages remain
+the reversible migration path. Native/static evidence: assets/validation_521;
+CA177-01 awaits author acceptance alongside CA147-01.
 
 ## 5.2.0 - Authoritative character identity and native settings (#147)
 

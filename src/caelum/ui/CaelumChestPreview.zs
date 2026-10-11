@@ -2,11 +2,35 @@
 class CaelumChestPreviewState : Inventory
 {
     CaelumMazeChest Chest;
+    // Revisión 1: el puntero MAP02 guardado conserva nombre y tipo. Las
+    // partidas anteriores inicializan la nueva fuente de tutorial en null.
+    int SourceRevision;
+    CaelumMainM00SupplyChest TutorialChest;
     String Lines[CaelumConstants.MATERIAL_TYPE_COUNT];
     int Page;
     bool Materials;
     String Allocation;
     int Count;
+
+    clearscope bool IsOpen() { return Chest != null || TutorialChest != null; }
+    void Close() { Chest = null; TutorialChest = null; }
+
+    void RefreshTutorial(CaelumPlayer user)
+    {
+        if (!TutorialChest.CanInspect(user)) { Close(); return; }
+        Materials = true;
+        Allocation = StringTable.Localize("CA_CHEST_TUTORIAL_PLAN", false);
+        for (int material = 0; material < CaelumConstants.MATERIAL_TYPE_COUNT; material++)
+        {
+            int amount = CaelumMainM00SupplyRules.Remaining(user, material);
+            if (amount <= 0) continue;
+            String label = StringTable.Localize(CaelumDisplayNames.GetSpecialItemKey(
+                CaelumConstants.EQUIPMENT_KIND_MATERIAL, material), false);
+            int tier = CaelumMaterialRules.ResolveTier(material, 1);
+            if (tier > 0) label.AppendFormat(" · T%d", tier);
+            Lines[Count++] = String.Format("%d × %s", amount, label);
+        }
+    }
 
     static CaelumChestPreviewState Get(CaelumPlayer user,bool create=false)
     {
@@ -24,6 +48,8 @@ class CaelumChestPreviewState : Inventory
     {
         Count=0;
         let user=CaelumPlayer(Owner);
+        if (SourceRevision < 1) SourceRevision = 1;
+        if (TutorialChest != null) { RefreshTutorial(user); return; }
         if(Chest==null)return;
         if(!Chest.CanInspect(user)){Chest=null;return;}
         Materials=CaelumMazeLayout.IsCardinal();
@@ -95,7 +121,7 @@ class CaelumChestPreview : StaticEventHandler
         if(consoleplayer<0 || menuactive!=0)return false;
         let user=CaelumPlayer(players[consoleplayer].mo);
         let preview=user==null?null:CaelumChestPreviewState(user.FindInventory("CaelumChestPreviewState"));
-        if(preview==null || preview.Chest==null)return false;
+        if(preview==null || !preview.IsOpen())return false;
         // Las liberaciones llegan al motor y no dejan Use o marcha retenidos.
         if(e.Type!=InputEvent.Type_KeyDown || e.KeyScan==InputEvent.Key_Grave)return false;
         if(e.KeyString~=="n")EventHandler.SendNetworkEvent("ca_chest_next");
@@ -115,12 +141,13 @@ class CaelumChestPreview : StaticEventHandler
         let preview=CaelumChestPreviewState.Get(user);
         if(preview==null)return;
         if(e.Name=="ca_chest_next"){preview.Page=(preview.Page+1)%Max(1,(preview.Count+4)/5);return;}
-        if(e.Name=="ca_chest_cancel"){preview.Chest=null;return;}
+        if(e.Name=="ca_chest_cancel"){preview.Close();return;}
+        if(preview.TutorialChest!=null)preview.TutorialChest.Collect(user);
         if(preview.Chest!=null)preview.Chest.Collect(user);
         preview.Refresh();
         // Vuelve al HUD para que los recibos y rechazos sean legibles durante
         // toda su vida. Usar otra vez consulta los contenidos restantes reales.
-        preview.Chest=null;
+        preview.Close();
     }
 
     static ui void DrawLine(Font font,int color,double y,String text)
@@ -136,7 +163,7 @@ class CaelumChestPreview : StaticEventHandler
         if(consoleplayer<0 || menuactive!=0)return;
         let user=CaelumPlayer(players[consoleplayer].mo);
         let preview=user==null?null:CaelumChestPreviewState(user.FindInventory("CaelumChestPreviewState"));
-        if(preview==null || preview.Chest==null)return;
+        if(preview==null || !preview.IsOpen())return;
         let font=Font.GetFont("CaelumSmall");
         Screen.Dim(0x05070A,0.94,0,0,Screen.GetWidth(),Screen.GetHeight());
         DrawLine(Font.GetFont("CaelumDisplay"),Font.CR_GOLD,28,StringTable.Localize("CA_CHEST_PREVIEW_TITLE",false));

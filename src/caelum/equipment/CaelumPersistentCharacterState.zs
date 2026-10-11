@@ -304,6 +304,7 @@ class CaelumPersistentCharacterState : Inventory
     int MainM00GiftsRevision;
     int MainM00UtilityStaffId;
     int MainM00BolasId;
+    bool MainM00SleepingBagGiven;
     int DialogueHistoryRevision;
     Array<String> SeenDialogueKeys;
 
@@ -476,6 +477,7 @@ class CaelumPersistentCharacterState : Inventory
         MainM00GiftsRevision = 0;
         MainM00UtilityStaffId = 0;
         MainM00BolasId = 0;
+        MainM00SleepingBagGiven = false;
         DialogueHistoryRevision = CaelumDialogueHistoryData.REVISION;
         SeenDialogueKeys.Clear();
         MainM00ShieldChoice = 0;
