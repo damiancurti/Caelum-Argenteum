@@ -1,6 +1,24 @@
 # Caelum Argenteum — Current systems and rules
 
-Documentation version: **5.2.1** — 2026-10-11.
+Documentation version: **5.2.2** — 2026-10-11.
+
+## Time-skip processing - 5.2.2 / #178
+
+Technical budgets are 8,192 live personal tics and 262,144 forecast tics per
+native frame, previously 4,096 and 32,768. These are processing limits, never
+campaign speed, recipe, food/water or recovery multipliers. Each live personal
+tic still uses PrepareStep, SimulatePersonalTic and AfterStep; cancellation
+returns to the engine between bounded batches, while danger, damage, resource,
+task and exact calendar/siege boundaries retain their existing guards.
+
+Before each live batch with an active crafting task, validate its native station
+network. Inside that batch actors/geometry do not advance, so reuse the same
+capabilities instead of repeatedly rebuilding the network and recipe preview.
+Session, reach, combat and task-capability checks remain active. The next batch
+forces a fresh scan; ordinary crafting and accelerated rest retain their prior
+validation path. No new serialized cache, schema or migration is needed. Native
+old active skips resume with their task, station, clock and inventory intact.
+Evidence: assets/validation_522; CA178-01 remains pending author acceptance.
 
 ## Tutorial equipment, supplies and portable rest - 5.2.1 / #177
 

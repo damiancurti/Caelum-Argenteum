@@ -5231,14 +5231,20 @@ class CaelumPlayer : DoomPlayer
             return false;
         }
 
-        if (CraftingSessionValidationTics <= 0)
+        // Durante un lote de salto no avanzan los actores ni la geometría.
+        // Pump valida la red antes del lote; cada subpaso conserva las guardas
+        // de sesión y capacidades sin reconstruir el mismo grafo inmóvil.
+        let skip = CaelumTimeSkipState.Get(self);
+        bool sharedBatch = skip != null && skip.Active && skip.Pumping
+            && skip.Station == station;
+        if (!sharedBatch && CraftingSessionValidationTics <= 0)
         {
             int scanToken = BeginCraftingNetworkScan();
             station.CollectCraftingNetwork(self, scanToken);
             CraftingSessionValidationTics = TICRATE;
             RefreshCraftingPreview();
         }
-        else
+        else if (!sharedBatch)
         {
             CraftingSessionValidationTics--;
         }

@@ -1,6 +1,21 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **5.2.1** — 2026-10-11.
+Documentation version: **5.2.2** — 2026-10-11.
+
+## 5.2.2 - Accelerate multi-day time skipping (#178), 2026-10-11
+
+The author requested faster time jumps while #177 was being validated. The
+performance change is separate from tutorial/provision behavior. Repeated
+station-network reconstruction within a frozen-world batch is replaced by one
+fresh scan before that batch; all personal simulation and interruption steps
+remain. Forecast budget increases eightfold, live budget doubles. The first
+32,768-live-tic experiment was reduced to 8,192 to return control more often.
+
+Native comparison, cancelled/changed task and exact siege boundaries, old-save
+continuation and final timings are recorded in assets/validation_522/RESULTS.md.
+Static validation/build are reported there separately. CA178-01 awaits author
+acceptance; no merge or closure of #147/#177/#178 is implied. The author's new
+Mandinga breath-retaliation report is tracked independently as #180.
 
 ## 5.2.1 - Tutorial equipment, provisions and portable rest (#177), 2026-10-11
 

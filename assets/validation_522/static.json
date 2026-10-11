@@ -1,0 +1,37 @@
+{
+  "version": "5.2.2",
+  "documents": 10,
+  "audio_files": 107,
+  "station_models": 12,
+  "spanish_caella_keys": 25,
+  "premise_numbers": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20
+  ],
+  "context_words": 2486,
+  "errors": [],
+  "normal_build": {
+    "exit_code": 0,
+    "members": 6315,
+    "matches_tested_source": true,
+    "sha256": "7a03456b4601d20d5806f185246474bb022b34bd3a7e3af658dbec51182aab8b"
+  }
+}
