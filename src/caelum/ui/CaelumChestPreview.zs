@@ -160,7 +160,7 @@ class CaelumChestPreview : StaticEventHandler
     // antes de los handlers de mapa, aunque tengan un orden numérico mayor.
     static ui void Draw()
     {
-        if(consoleplayer<0 || menuactive!=0)return;
+        if(consoleplayer<0)return;
         let user=CaelumPlayer(players[consoleplayer].mo);
         let preview=user==null?null:CaelumChestPreviewState(user.FindInventory("CaelumChestPreviewState"));
         if(preview==null || !preview.IsOpen())return;
@@ -180,7 +180,5 @@ class CaelumChestPreview : StaticEventHandler
             lines.Destroy();y+=6;
         }
         if(preview.Count>5)DrawLine(font,Font.CR_GRAY,284,String.Format("N: %d / %d",preview.Page+1,(preview.Count+4)/5));
-        DrawLine(font,Font.CR_GOLD,304,StringTable.Localize("CA_CHEST_PREVIEW_COLLECT",false));
-        DrawLine(font,Font.CR_GRAY,322,StringTable.Localize("CA_CHEST_PREVIEW_CANCEL",false));
     }
 }

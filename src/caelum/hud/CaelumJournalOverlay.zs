@@ -21,70 +21,6 @@ class CaelumJournalOverlay : EventHandler
         SetOrder(100);
     }
 
-    ui bool MouseInput(UiEvent e)
-    {
-        if (!IsJournalOpen() || menuactive != 0) return false;
-        let user = consoleplayer >= 0 ? CaelumPlayer(players[consoleplayer].mo) : null;
-        if (user == null) return false;
-        let skip = CaelumTimeSkipState(user.FindInventory("CaelumTimeSkipState"));
-        if (skip != null && skip.Open) return false;
-        int page = GetJournalPage();
-        if (CaelumScheduleCalendar.IsOpen()) return false;
-        if (e.Type == UiEvent.Type_KeyDown || e.Type == UiEvent.Type_KeyUp)
-        {
-            int scan=CaelumMenuPointer.KeyScan(e.KeyChar);
-            if(scan==InputEvent.Key_Escape || scan==InputEvent.Key_Grave)return false;
-            if(page==3)CaelumJournalInput.PointerFor(4).Reset();
-            if (e.Type == UiEvent.Type_KeyDown && (e.KeyString ~== "y"))
-            { SendNetworkEvent("ca_skip_open"); return true; }
-            if (e.Type == UiEvent.Type_KeyDown && user.CraftingMenuOpen && (e.KeyString ~== "t"))
-            { SendNetworkEvent("ca_time_fast"); return true; }
-            bool handled = JournalKey(e.Type == UiEvent.Type_KeyDown ? InputEvent.Type_KeyDown : InputEvent.Type_KeyUp,
-                scan,e.KeyChar,e.KeyString,user);
-            return e.Type == UiEvent.Type_KeyUp ? false : handled;
-        }
-        let point=CaelumMenuPointer.JournalPoint(e.MouseX,e.MouseY);
-        double x=point.X,y=point.Y;
-        if(page==3 && !(y>=36 && y<101 && x>=26 && x<614))
-            return CaelumCraftingUI.Mouse(self,user,e.Type,point);
-        if(page==3)CaelumJournalInput.PointerFor(4).Reset();
-        if (e.Type == UiEvent.Type_LButtonDown)
-        {
-            if (y >= 36 && y < 101 && x >= 26 && x < 614)
-            {
-                int next = Clamp(int((x-26)/84),0,JOURNAL_PAGE_COUNT-1);
-                if (next != page && page == 3) SendNetworkEvent("ca_crafting_session_close");
-                SetJournalPage(next);
-                SendNetworkEvent("ca_journal_menu_select_sound");
-            }
-            else if (page==2 && x>=440 && x<612 && y>=104 && y<126)ThermalDetailsOpen=!ThermalDetailsOpen;
-            else if (page == 6 && x >= 64 && x < 184 && y >= 150 && y < 310) RequestTarotSelection();
-            return true;
-        }
-        if (e.Type == UiEvent.Type_LButtonUp)
-        {
-            let held = CVar.GetCVar("ca_journal_tarot_select_held",players[consoleplayer]);
-            if (held != null) held.SetBool(false);
-            return true;
-        }
-        if (e.Type == UiEvent.Type_WheelUp || e.Type == UiEvent.Type_WheelDown)
-        {
-            int direction = e.Type == UiEvent.Type_WheelUp ? -1 : 1;
-            if (page == 3 && x < 232)
-            { SendNetworkEvent("ca_crafting_browser_move",direction); CaelumCraftingUI.Scroll("ca_journal_craft_scroll",0); }
-            else if (page == 3 || page == 6)
-                CaelumCraftingUI.Scroll(page == 3 ? "ca_journal_craft_scroll" : "ca_journal_tarot_scroll",direction);
-            else if (page == 0) SendNetworkEvent(direction < 0 ? "ca_inventory_previous" : "ca_inventory_next");
-            else if (page == 4)
-            {
-                if (IsQuestDetailOpen()) ScrollQuestDetail(user,direction);
-                else CycleQuest(user,direction);
-            }
-            return true;
-        }
-        return true;
-    }
-
     // InputProcess y ConsoleProcess pertenecen al ámbito UI. Los CVars user
     // conservan este estado en el cliente correcto sin eventos de red ni
     // escrituras sobre el EventHandler de ámbito play.
@@ -1518,9 +1454,7 @@ class CaelumJournalOverlay : EventHandler
             String.Format(StringTable.Localize("CA_TAROT_POWER_GROUP_STATUS", false),
                 selectedCount, CaelumConstants.TAROT_SELECTED_LIMIT,
                 record == null ? 0 : (CaelumTarotService.CooldownTics(record) + TICRATE - 1) / TICRATE));
-        DrawCenteredText(SmallFont,Font.CR_GRAY,320,318,
-            CaelumTarotDetails.L(preview >= 0 ? "CA_TAROT_DETAIL_PREVIEW_HELP" : "CA_TAROT_DETAIL_HELP"));
-        DrawCenteredText(SmallFont,Font.CR_GRAY,320,330,CaelumTarotDetails.L("CA_JOURNAL_EDGE_HELP"));
+
     }
 
     ui void DrawQuestPage(CaelumPlayer localPlayer)
@@ -2423,22 +2357,28 @@ class CaelumJournalOverlay : EventHandler
 
     override bool InputProcess(InputEvent e)
     {
+        if(menuactive!=0)return false;
+        return PanelKey(e.Type,e.KeyScan,e.KeyChar,e.KeyString);
+    }
+
+    ui bool PanelKey(int type,int scan,int character,String keyString)
+    {
         // El slot nativo sólo conoce clases de Weapon. Caelum mantiene varias
         // instancias exactas (acabado, tier y durabilidad propios), por lo que
         // el 2 cicla sus objetos equipados antes de que Doom seleccione Pistol.
-        bool slotTwo = e.KeyChar == 50 || e.KeyString ~== "2";
+        bool slotTwo = character == 50 || keyString ~== "2";
         CaelumPlayer localPlayer = consoleplayer >= 0
             ? CaelumPlayer(players[consoleplayer].mo) : null;
         let plan = localPlayer == null ? null : CaelumJourneyPlan(localPlayer.FindInventory("CaelumJourneyPlan"));
-        if (plan != null && plan.Open && menuactive == 0)
+        if (plan != null && plan.Open && CaelumLiveMenu.InputAllowed())
         {
             // Liberar teclas siempre llega al motor: no deja Use/marcha trabados.
-            if (e.Type != InputEvent.Type_KeyDown || e.KeyScan == InputEvent.Key_Grave
-                || e.KeyScan == InputEvent.Key_Escape || e.KeyScan == InputEvent.Key_Pad_Start) return false;
-            if (e.KeyString ~== "q" || e.KeyChar == 113 || e.KeyChar == 81 || e.KeyScan == InputEvent.Key_Tab
-                || e.KeyScan == InputEvent.Key_Pad_B)
+            if (type != InputEvent.Type_KeyDown || scan == InputEvent.Key_Grave
+                || scan == InputEvent.Key_Escape || scan == InputEvent.Key_Pad_Start) return false;
+            if (keyString ~== "q" || character == 113 || character == 81 || scan == InputEvent.Key_Tab
+                || scan == InputEvent.Key_Pad_B)
                 SendNetworkEvent("ca_journey_cancel");
-            else if (e.KeyScan == InputEvent.Key_Enter || e.KeyScan == InputEvent.Key_Pad_A)
+            else if (scan == InputEvent.Key_Enter || scan == InputEvent.Key_Pad_A)
                 SendNetworkEvent("ca_journey_confirm");
             return true;
         }
@@ -2446,87 +2386,88 @@ class CaelumJournalOverlay : EventHandler
             : CaelumRestState(localPlayer.FindInventory("CaelumRestState"));
         bool restOpen = activeRest != null && activeRest.Status == CaelumRestRules.STATUS_ACTIVE;
         bool craftOpen = localPlayer != null && localPlayer.CraftingMenuOpen;
-        if(localPlayer!=null && CaelumTimeSkipPanel.Input(e,localPlayer))return true;
-        if(menuactive==0 && e.Type==InputEvent.Type_KeyDown && (e.KeyString~=="y" || e.KeyChar==121 || e.KeyChar==89))
+        if(localPlayer!=null && CaelumTimeSkipPanel.Key(type,scan,character,keyString,localPlayer))return true;
+        if(CaelumLiveMenu.InputAllowed() && type==InputEvent.Type_KeyDown && (keyString~=="y" || character==121 || character==89))
         {SendNetworkEvent("ca_skip_open");return true;}
-        if (menuactive == 0 && (restOpen || craftOpen) && e.Type == InputEvent.Type_KeyDown
-            && (e.KeyChar == 116 || e.KeyChar == 84 || e.KeyString ~== "t"))
+        if (CaelumLiveMenu.InputAllowed() && (restOpen || craftOpen) && type == InputEvent.Type_KeyDown
+            && (character == 116 || character == 84 || keyString ~== "t"))
         { SendNetworkEvent("ca_time_fast"); return true; }
-        if (menuactive == 0 && restOpen && e.Type == InputEvent.Type_KeyDown)
+        if (CaelumLiveMenu.InputAllowed() && restOpen && type == InputEvent.Type_KeyDown)
         {
-            if (e.KeyChar == 102 || e.KeyChar == 70 || e.KeyString ~== "f")
+            if (character == 102 || character == 70 || keyString ~== "f")
             { SendNetworkEvent("ca_table_eat"); return true; }
-            if (e.KeyChar == 103 || e.KeyChar == 71 || e.KeyString ~== "g")
+            if (character == 103 || character == 71 || keyString ~== "g")
             { SendNetworkEvent("ca_table_drink"); return true; }
         }
-        if (menuactive == 0 && activeRest != null && activeRest.Status == CaelumRestRules.STATUS_ACTIVE
-            && e.Type == InputEvent.Type_KeyDown)
+        if (CaelumLiveMenu.InputAllowed() && activeRest != null && activeRest.Status == CaelumRestRules.STATUS_ACTIVE
+            && type == InputEvent.Type_KeyDown)
         {
-            if (e.KeyChar == 113 || e.KeyChar == 81 || e.KeyString ~== "q"
-                || e.KeyScan == InputEvent.Key_Pad_B)
+            if (character == 113 || character == 81 || keyString ~== "q"
+                || scan == InputEvent.Key_Pad_B)
             {
                 SendNetworkEvent("ca_rest_cancel");
                 return true;
             }
             // Abrir el Diario levanta al personaje. Escape conserva la pausa
             // nativa; las liberaciones de Use siempre llegan al motor.
-            if (e.KeyScan == InputEvent.Key_Tab) SendNetworkEvent("ca_rest_cancel");
+            if (scan == InputEvent.Key_Tab)
+            { SendNetworkEvent("ca_rest_cancel"); SetJournalOpen(true); return true; }
         }
         if (localPlayer != null && localPlayer.PalomoMerchantMenuOpen)
         {
-            if (e.Type != InputEvent.Type_KeyDown
-                && e.Type != InputEvent.Type_KeyUp)
+            if (type != InputEvent.Type_KeyDown
+                && type != InputEvent.Type_KeyUp)
             {
                 return false;
             }
-            if (e.KeyScan == InputEvent.Key_Grave
-                || e.KeyScan == InputEvent.Key_Pad_Start)
+            if (scan == InputEvent.Key_Grave
+                || scan == InputEvent.Key_Pad_Start)
             {
                 return false;
             }
-            if (e.Type == InputEvent.Type_KeyUp) { return true; }
+            if (type == InputEvent.Type_KeyUp) { return true; }
 
-            if (e.KeyScan == InputEvent.Key_Escape
-                || e.KeyScan == InputEvent.Key_Tab
-                || e.KeyScan == InputEvent.Key_Pad_B
-                || e.KeyChar == 113 || e.KeyChar == 81
-                || e.KeyString ~== "q")
+            if (scan == InputEvent.Key_Escape
+                || scan == InputEvent.Key_Tab
+                || scan == InputEvent.Key_Pad_B
+                || character == 113 || character == 81
+                || keyString ~== "q")
             {
                 SendNetworkEvent("ca_palomo_merchant_close");
                 SendNetworkEvent("ca_journal_menu_select_sound");
             }
-            else if (e.KeyScan == InputEvent.Key_DownArrow
-                || e.KeyScan == InputEvent.Key_Pad_DPad_Down)
+            else if (scan == InputEvent.Key_DownArrow
+                || scan == InputEvent.Key_Pad_DPad_Down)
             {
                 SendNetworkEvent("ca_palomo_merchant_next");
                 SendNetworkEvent("ca_journal_menu_move_sound");
             }
-            else if (e.KeyScan == InputEvent.Key_UpArrow
-                || e.KeyScan == InputEvent.Key_Pad_DPad_Up)
+            else if (scan == InputEvent.Key_UpArrow
+                || scan == InputEvent.Key_Pad_DPad_Up)
             {
                 SendNetworkEvent("ca_palomo_merchant_previous");
                 SendNetworkEvent("ca_journal_menu_move_sound");
             }
-            else if (e.KeyScan == InputEvent.Key_LeftArrow
-                || e.KeyScan == InputEvent.Key_Pad_DPad_Left)
+            else if (scan == InputEvent.Key_LeftArrow
+                || scan == InputEvent.Key_Pad_DPad_Left)
             {
                 SendNetworkEvent("ca_palomo_merchant_quantity_previous");
                 SendNetworkEvent("ca_journal_menu_move_sound");
             }
-            else if (e.KeyScan == InputEvent.Key_RightArrow
-                || e.KeyScan == InputEvent.Key_Pad_DPad_Right)
+            else if (scan == InputEvent.Key_RightArrow
+                || scan == InputEvent.Key_Pad_DPad_Right)
             {
                 SendNetworkEvent("ca_palomo_merchant_quantity_next");
                 SendNetworkEvent("ca_journal_menu_move_sound");
             }
-            else if (e.KeyScan == InputEvent.Key_Space
-                || e.KeyScan == InputEvent.Key_Pad_X)
+            else if (scan == InputEvent.Key_Space
+                || scan == InputEvent.Key_Pad_X)
             {
                 SendNetworkEvent("ca_palomo_merchant_mode");
                 SendNetworkEvent("ca_journal_menu_move_sound");
             }
-            else if (e.KeyScan == InputEvent.Key_Enter
-                || e.KeyScan == InputEvent.Key_Pad_A)
+            else if (scan == InputEvent.Key_Enter
+                || scan == InputEvent.Key_Pad_A)
             {
                 SendNetworkEvent("ca_palomo_merchant_transact");
             }
@@ -2534,11 +2475,11 @@ class CaelumJournalOverlay : EventHandler
         }
         if (!IsJournalOpen())
         {
-            if (menuactive == 0 && slotTwo
-                && (e.Type == InputEvent.Type_KeyDown
-                    || e.Type == InputEvent.Type_KeyUp))
+            if (CaelumLiveMenu.InputAllowed() && slotTwo
+                && (type == InputEvent.Type_KeyDown
+                    || type == InputEvent.Type_KeyUp))
             {
-                if (e.Type == InputEvent.Type_KeyDown)
+                if (type == InputEvent.Type_KeyDown)
                 {
                     SendNetworkEvent("ca_cycle_weapon_slot_2");
                 }
@@ -2546,8 +2487,8 @@ class CaelumJournalOverlay : EventHandler
             }
             return false;
         }
-        if (GetJournalPage() == 2 && CaelumScheduleCalendar.Input(e, localPlayer)) return true;
-        return JournalKey(e.Type,e.KeyScan,e.KeyChar,e.KeyString,localPlayer);
+        if (GetJournalPage() == 2 && CaelumScheduleCalendar.Key(type,scan,character,keyString,localPlayer)) return true;
+        return JournalKey(type,scan,character,keyString,localPlayer);
     }
 
     ui bool JournalKey(int type,int scan,int character,String keyString,CaelumPlayer localPlayer)
@@ -2879,6 +2820,17 @@ class CaelumJournalOverlay : EventHandler
         {
             CaelumRestTrial.Open(requestingPlayer);
         }
+        else if(e.Name=="ca_rest_camera")
+        {
+            let rest=CaelumRestState.Get(requestingPlayer);
+            if(rest!=null && rest.Status==CaelumRestRules.STATUS_ACTIVE && rest.ViewCamera!=null
+                && requestingPlayer.player.camera==rest.ViewCamera)
+            {
+                rest.CameraYaw+=e.Args[0]/1000.0;
+                rest.CameraPitch=Clamp(rest.CameraPitch+e.Args[1]/1000.0,-5,60);
+                rest.ViewCamera.UpdateView(rest);
+            }
+        }
         else if (e.Name == "ca_rest_cancel")
         {
             CaelumRestState.Cancel(requestingPlayer);
@@ -3107,6 +3059,12 @@ class CaelumJournalOverlay : EventHandler
 
     override void RenderOverlay(RenderEvent event)
     {
+        let user=consoleplayer>=0?CaelumPlayer(players[consoleplayer].mo):null;
+        if(user!=null && menuactive==0 && !IsJournalOpen())DrawSewerTravelHint(user);
+    }
+
+    ui void DrawMenu()
+    {
         if (consoleplayer < 0
             || TitleFont == null || TextFont == null || SmallFont == null
             || InventoryFont == null)
@@ -3151,23 +3109,7 @@ class CaelumJournalOverlay : EventHandler
         else if (currentPage == 5) { DrawReputationPage(localPlayer); }
         else { DrawTarotPage(localPlayer); }
 
-        if (currentPage == 3 || currentPage == 6) return;
-        {
-            bool hasEdges = currentPage == 0 || currentPage == 4;
-            DrawCenteredText(SmallFont, Font.CR_GRAY, 320.0, hasEdges ? 316.0 : 322.0,
-                StringTable.Localize(
-                    currentPage == 0 ? "CA_JOURNAL_INVENTORY_HELP"
-                        : currentPage == 4 && localPlayer.JournalKnownQuestCount > 0
-                            ? IsQuestDetailOpen() ? "CA_Q_DETAIL_HELP"
-                                : localPlayer.JournalKnownQuestCount == 1
-                                    ? "CA_QUEST_SINGLE_HELP" : "CA_QUEST_LIST_HELP"
-                            : "CA_JOURNAL_NAVIGATION_HELP",
-                    false
-                ));
-            if (hasEdges)
-                DrawCenteredText(SmallFont, Font.CR_GRAY, 320.0, 328.0,
-                    StringTable.Localize("CA_JOURNAL_EDGE_HELP", false));
-        }
+
     }
 }
 
@@ -3193,47 +3135,19 @@ class CaelumJournalInput : StaticEventHandler
     }
     override void UiTick()
     {
-        let journal=CaelumJournalOverlay(EventHandler.Find("CaelumJournalOverlay"));
         let user=consoleplayer>=0?CaelumPlayer(players[consoleplayer].mo):null;
-        int context=0;
-        if(menuactive==0 && user!=null && IsUiProcessor)
-            context=SkipOpen(user)?100:journal!=null && journal.IsJournalOpen()?journal.GetJournalPage()+1:0;
-        PointerFor(context);
+        let current=Menu.GetCurrentMenu();
+        if(ConsoleState==c_up && current==null && menuactive==Menu.Off && CaelumLiveMenu.Wanted(user)>0)
+            Menu.SetMenu("CaelumLiveMenu");
     }
     override void OnRegister() { SetOrder(101); }
     override void WorldUnloaded(WorldEvent e) { IsUiProcessor=false; RequireMouse=false; }
     override void WorldTick()
     {
-        // Diario y salto temporal comparten la captura nativa sin pausar el mundo.
-        let user = consoleplayer >= 0 ? CaelumPlayer(players[consoleplayer].mo) : null;
-        bool wanted = false;
-        if (user != null)
-        {
-            let open = CVar.GetCVar("ca_journal_open",players[consoleplayer]);
-            let page = CVar.GetCVar("ca_journal_page",players[consoleplayer]);
-            let calendar = CVar.GetCVar("ca_calendar_open",players[consoleplayer]);
-            let journey = CaelumJourneyPlan(user.FindInventory("CaelumJourneyPlan"));
-            int current = page == null ? 0 : page.GetInt();
-            wanted = (CaelumTimeSkipState.IsOpen(user) || (open != null && open.GetBool())) && !user.CreationWizardOpen
-                && (calendar == null || calendar.GetInt() == 0) && (journey == null || !journey.Open)
-                && !user.HasActiveConversation()
-                && !user.PalomoMerchantMenuOpen && !CaelumRestState.IsActive(user);
-            if (open != null && open.GetBool() && current == 3 && level.Time % 7 == 0)
-                CaelumCraftingBrowser.Get(user).Refresh(user);
-        }
-        let journal = CaelumJournalOverlay(EventHandler.Find("CaelumJournalOverlay"));
-        if (journal != null) { journal.IsUiProcessor = false; journal.RequireMouse = false; }
-        IsUiProcessor = wanted;
-        RequireMouse = wanted;
-    }
-
-
-    override bool UiProcess(UiEvent e)
-    {
-        let journal = CaelumJournalOverlay(EventHandler.Find("CaelumJournalOverlay"));
-        if(journal==null || menuactive!=0)return false;
+        IsUiProcessor=false; RequireMouse=false;
+        let journal=CaelumJournalOverlay(EventHandler.Find("CaelumJournalOverlay"));
+        if(journal!=null){journal.IsUiProcessor=false;journal.RequireMouse=false;}
         let user=consoleplayer>=0?CaelumPlayer(players[consoleplayer].mo):null;
-        if(user!=null && SkipOpen(user))return CaelumTimeSkipPanel.Mouse(journal,user,e);
-        return journal.MouseInput(e);
+        if(user!=null && user.CraftingMenuOpen && level.Time%7==0)CaelumCraftingBrowser.Get(user).Refresh(user);
     }
 }

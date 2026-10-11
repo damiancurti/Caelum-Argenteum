@@ -1,7 +1,7 @@
 # LANGUAGE index
 
 Generated from [../LANGUAGE](../LANGUAGE); shared bilingual text remains authoritative there.
-SHA-256: `cf6816a50cc4296d40367f5aa09c1a868e92b4e8e086b6f4bdd8c510ee5be6c6`. Locations include every definition; the last one per language wins.
+SHA-256: `48f21d51f33a277bf8331836e6b7539c99a5f20fd5bf3dba1fc6233336c4899f`. Locations include every definition; the last one per language wins.
 Run `python build_dialogue_index.py check` before using locations.
 
 Use `python build_dialogue_index.py find TERM` to locate keys, then
@@ -137,7 +137,7 @@ including shared UI/system keys and dynamically selected text.
 | CA_TRAPS | 4 | CA_TRAPS_RESET_DONE | CA_TRAPS_RESET_OCCUPIED |
 | CA_TREE | 47 | CA_TREE_CITY_JACARANDA | CA_TREE_TUNDRA_NIRE_YOUNG |
 | CA_TT | 30 | CA_TT_BUENAS | CA_TT_WITH_FLOR |
-| CA_UI | 6 | CA_UI_BACK | CA_UI_TIME_SKIP |
+| CA_UI | 49 | CA_UI_ABANDON | CA_UI_USE |
 | CA_UNARMED | 1 | CA_UNARMED_NAME | CA_UNARMED_NAME |
 | CA_USE | 10 | CA_USE_BED | CA_USE_TRAPS_RESET |
 | CA_VEIN | 11 | CA_VEIN_COAL | CA_VEIN_TOPAZ |

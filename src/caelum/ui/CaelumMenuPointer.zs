@@ -55,10 +55,17 @@ class CaelumMenuPointer : Object ui
             case UiEvent.Key_Up:return InputEvent.Key_UpArrow;
             case UiEvent.Key_Down:return InputEvent.Key_DownArrow;
             case UiEvent.Key_Return:return InputEvent.Key_Enter;
+            case UiEvent.Key_Home:return InputEvent.Key_Home;
+            case 8:return InputEvent.Key_Backspace;
             case UiEvent.Key_Tab:return InputEvent.Key_Tab;
             case UiEvent.Key_Escape:return InputEvent.Key_Escape;
             case 96:case 126:return InputEvent.Key_Grave;
             case 32:return InputEvent.Key_Space;
+        }
+        if(key>=32 && key<127)
+        {
+            String name=String.Format("%c",key);
+            for(int scan=1;scan<256;scan++)if(KeyBindings.NameKeys(scan,0)~==name)return scan;
         }
         return 0;
     }

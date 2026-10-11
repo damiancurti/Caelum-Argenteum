@@ -1209,6 +1209,5 @@ class CaelumHUDOverlay : EventHandler
         );
         CaelumNotifications.Draw(localPlayer, HUDFont);
         CaelumNotifications.DrawExtraction(localPlayer);
-        CaelumChestPreview.Draw();
     }
 }

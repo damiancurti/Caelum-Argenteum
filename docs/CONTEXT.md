@@ -1,13 +1,16 @@
 # CONTEXT.md — Caelum Argenteum
 
-Documentation version: **5.2.6** — 2026-10-11.
+Documentation version: **5.2.7** — 2026-10-11.
 
-**Current patch 5.2.6 / #184:** cursor/hover/click support in both card games,
-live crafting and time skip. Shared press/release guards; existing actions,
-serial validation and pause policies retained. Native/physical input evidence:
-assets/validation_526/RESULTS.md. CA184-01 awaits author acceptance.
-Next authorized work: #189, native-menu migration preserving artwork, including
-clickable NPC conversations without pause. Cards retain native pause.
+**Current patch 5.2.7 / #189:** interactive overlays use native menus, retaining
+art and actions. Live panels and NPC dialogue
+remain live; cards and Escape/settings remain paused. Rest: right-drag orbit,
+left-click controls. Creator and guarded NPC response clicks implemented.
+Evidence: assets/validation_527/RESULTS.md. CA184-01/CA189-01 passed on 2026-10-11,
+unqualified; PR190/191 merges and #184/#189 closure authorized. Author queue empty.
+
+**Previous patch 5.2.6 / #184:** guarded mouse controls in cards, crafting and
+time skip. Evidence: validation_526. CA184-01 passed author acceptance.
 
 **Previous patch 5.2.5 / #185:** per-NPC dialogue sources and main manifest in
 src/dialogues, with deterministic runtime assembly preserving every node/ID.
@@ -304,7 +307,7 @@ levels. Cross-review where possible; keep data outside logic and preserve histor
 
 The authoritative list is in `AGENTS.md` and `docs/PROJECT.md`.
 
-Work plans; Codex implements/tests; authors confirm acceptance. Keep evidence distinct.
+Keep agent evidence and author acceptance distinct.
 
 [pending_test.txt](../pending_test.txt) holds outstanding author tests across
 versions. Only author-confirmed passes move their ID, version/issue, result,

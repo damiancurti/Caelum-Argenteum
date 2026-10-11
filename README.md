@@ -6,14 +6,20 @@ An independent dark fantasy FPS-RPG inspired by nineteenth-century Argentina.
 Author and game designer: **Damian Curti**. Development target: **GZDoom 4.14.2**
 on Windows 11. The final game is intended to be independent of Doom assets.
 
-**Current release: 5.2.6.** Obtain and update the complete repository, validate
+**Current release: 5.2.7.** Obtain and update the complete repository, validate
 it, then rebuild with `run_dev.bat` as described below.
+
+5.2.7 moves all interactive overlay screens into native menus while preserving
+existing images and gameplay actions. NPC conversations keep the world running
+and support guarded clicks; cards retain pause. Rest uses right-button dragging
+for camera orbit and left clicks for controls. [Evidence](assets/validation_527/RESULTS.md).
+The author accepted CA184-01 and CA189-01 on 2026-10-11 without qualifications
+and authorized PR190/PR191 merges and #184/#189 closure. The author test queue is empty.
 
 5.2.6 adds mouse interaction to Truco/Trucazo, time skip and crafting,
 including visible controls, hover and guarded click release. Keyboard shortcuts
 and existing pause/time/gameplay rules remain. [Evidence](assets/validation_526/RESULTS.md);
-author acceptance CA184-01 is pending. The authorized next change is #189:
-native menu ownership with existing artwork and unpaused, clickable NPC dialogue.
+CA184-01 passed author acceptance. The #189 native-menu follow-up is implemented in 5.2.7.
 
 5.2.5 organizes conversations into per-NPC sources under
 [`src/dialogues/`](src/dialogues/INDEX.md), preserving all IDs and node order.
@@ -22,7 +28,7 @@ shared UI keys without reading the full catalogue. Run
 `python build_dialogue_index.py build` after editing either source; validation
 and packaging reject stale output. [Evidence](assets/validation_525/RESULTS.md).
 The author accepted #185 on 2026-10-11 and authorized PR187 merge/issue closure.
-That acceptance cleared the author queue; CA184-01 is now pending.
+That acceptance cleared the author queue; subsequent #184/#189 acceptance is recorded above.
 
 5.2.4 simplifies character creation and tutorial equipment: editable recommended
 stats, profession gifts, a finite gold exchange and three utility crafts. The

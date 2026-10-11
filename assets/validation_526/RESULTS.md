@@ -1,5 +1,9 @@
 ﻿# 5.2.6 / issue #184 — mouse interaction validation
 
+Author acceptance, 2026-10-11: CA184-01 passed without qualifications; the author
+authorized PR190 merge/#184 closure. Delivery-time pending statements below
+describe the original agent evidence, not the current author acceptance state.
+
 Implementation: native MouseEvent handling for Truco/Trucazo and a shared,
 transient press/release pointer for live crafting/time-skip panels. Controls
 reuse existing UI/network action handlers; no recipe, reward or time rules change.

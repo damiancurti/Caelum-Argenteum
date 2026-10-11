@@ -276,6 +276,8 @@ class CaelumPalomoConversationMenu : CaelumHistoryConversationMenu
 {
     override void Ticker()
     {
+        if(Menu.GetCurrentMenu()==self)menuactive=Menu.OnNoPause;
+        if(ConsoleState!=c_up)ReplyHeld=false;
         // ConversationMenu.Ticker sólo activa la pausa tras 20 tics. Omitir
         // esa acción conserva el modo nativo sin pausa incluso en snapshots
         // anteriores a la nueva opción MAPINFO. No altera los demás menús.

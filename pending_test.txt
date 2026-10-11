@@ -1,4 +1,0 @@
-CA184-01 | Origin: 5.2.6 / issue #184 | Author acceptance pending
-Prerequisites: build 5.2.6 in GZDoom 4.14.2; a fresh or current test character with a Tarot deck and workshop access/materials.
-Steps: use mouse and keyboard alternately in Truco and Trucazo (cards, calls/responses, rules, save/load, forfeit/cancel); in crafting (modes, filters, entry/detail scroll, tier/size/batch/efficiency, craft/repair/disassemble/cancel/back); and in time skip (fields, values, estimate, start/interrupt/back). Repeat at your normal resolution/UI settings in Spanish or English. Drag off a button, open/close and switch panels, then verify movement/aim/use/attack recover.
-Expected: aligned pointer/highlights, one intended action per click, unavailable actions cannot transact, no accidental opening click or world input, card games pause and crafting/time skip keep the world active. Existing rules and assets are retained. Report any failure or qualification.
