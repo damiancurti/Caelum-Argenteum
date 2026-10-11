@@ -26,6 +26,9 @@ case-insensitive parameter shadowing of the charged/secondary selection.
 Agent evidence, initial failures and final runs are in assets/validation_5212.
 Prior acceptance remains valid: PR198 merged as 6f8ad478; PR199 merged as
 dbf449cd; #192/#194 are closed. Their author checks are not reopened.
+Delivery: runtime/evidence commit a49531a4 pushed on `issue195-bull-balance`,
+linked PR200 open. 549 native assertions, static validation and official PK3
+compilation pass. Keep-awake released at 2026-10-11T22:44:08Z; power plan unchanged.
 
 ## 5.2.11 - Received collision energy and bilateral contact area (#194), 2026-10-11
 

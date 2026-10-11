@@ -7,7 +7,7 @@ moving-target tracking, normal collision mass and horizontal biological cushioni
 Residents own finite Pickaxe/staff/one bolas; Rulo/Ronnie use T1 War Axe/Sword
 with sequential charging. Bolas/ice precede damage; resident fire is
 excluded during the trial. Eight functional personalities.
-validation_5212; CA195-01 pending.
+validation_5212; PR200; CA195-01 pending.
 **5.2.11 / #194:** CA194-01 accepted 2026-10-11; PR199 merged, issue closed.
 Collision: 1 J/HP/body, independent defenses.
 **5.2.10 / #192 amendment:** CA192-02 accepted 2026-10-11; issue closed,

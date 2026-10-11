@@ -11,6 +11,7 @@ personalities share player combat rules. Current and previous-save tests are
 included in assets/validation_5212. Next: author gameplay check CA195-01,
 then acceptance/merge through the linked issue PR. No further balance values
 were invented. PR198/PR199 are merged and #192/#194 closed.
+Delivery: PR200, committed and pushed; #195 remains open for CA195-01 acceptance.
 
 ## Issue #194 - Collision energy and contact area (5.2.11)
 

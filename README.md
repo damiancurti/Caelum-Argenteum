@@ -15,6 +15,8 @@ own horizontal impacts without doubling collision mass. Mansion residents use
 finite owned tools, charged melee attacks and their approved personalities.
 [Native evidence](assets/validation_5212/RESULTS.md); author gameplay acceptance
 remains pending as CA195-01 in [pending_test.txt](pending_test.txt).
+Delivery: [PR200](https://github.com/damiancurti/Caelum-Argenteum/pull/200),
+branch `issue195-bull-balance`, committed and pushed.
 
 5.2.11 collision energy and the 5.2.10 ranged amendment are author-accepted.
 PR198/PR199 are merged; #192/#194 are closed. Their original evidence remains
