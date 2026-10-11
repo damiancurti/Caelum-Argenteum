@@ -36,3 +36,6 @@ Legacy: `-Baseline -Fixture compile -Script legacy.cfg`, then
 `-Fixture migration-runtime/compile -RuntimeAlias migration-runtime/baseline.pk3
 -LoadGame legacy-before-history.zds -Script flow.cfg`.
 Engine, IWAD, PK3 and native saves are development dependencies, not distributed.
+
+Final whitespace cleanup was followed by flow-final (21 passes) and a rebuilt
+package/static verification. Older retained runs differ only in final blank lines.

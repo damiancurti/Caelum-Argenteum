@@ -148,4 +148,3 @@ class CaelumHistoryConversationMenu : ConversationMenu
         SendConversationReply(mCurNode.ThisNodeNum,selected);Close();return true;
     }
 }
-
