@@ -25,11 +25,13 @@ Prepare from the repository in PowerShell:
 Launch with a fresh Label if repeating:
   .\assets\validation_5116\run_native.ps1 -Label author163-01 -Fixture inputs -Script preview.cfg -Interactive -Language es
 Steps:
-1. Inspect family-1 Boleadora, its inventory icon and the right-hand ready/spin
-   views. Hold secondary for less than one second, then longer; primary throws.
+1. Inspect family-1 Boleadora and its inventory icon. In the corrected ready
+   pose all three weights hang below the grip. Hold secondary: spin is 3 Hz,
+   with a stable hand. Try less than one second, then longer; primary throws.
 2. Miss once and retrieve the floor item; equip it through Inventory if needed.
    Aim a prepared throw at the passive
-   bull. Inspect visible ropes/balls, an unobstructed mouth and release after
+   bull. Walk around it: front cords remain visible while its body hides the
+   rear arcs. Inspect visible weights, an unobstructed mouth and release after
    five seconds. This fixture fixes its Strength to zero for reliable recovery.
 3. Save while preparing or while ropes are visible; reload and confirm coherent
    ownership, remaining restraint and recovery. Confirm the release/recovery

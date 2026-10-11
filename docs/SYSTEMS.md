@@ -12,13 +12,18 @@ accuracy, lucidity/elemental, crouch/running modifiers, velocity and native
 gravity. A throw costs the javelin's 6 base Air with shared load/thermal cost
 modifiers; it deals no direct damage and causes no per-use durability loss.
 Release, switching, a different item, incapacitation and travel cancel preparation.
+The author corrected the presentation: all three weights hang below the grip at
+rest; held secondary spins at 3 Hz. This frequency does not shorten the
+one-second accuracy preparation or change its cap.
 
 A living eligible player/combat actor is restrained for at most 175 simulation
 tics. Native invulnerability is respected; no blanket boss immunity is added.
 Movement, ordinary attacks and new Tarot activation are blocked. Existing
 physical controls remain independent. Native gravity continues; voluntary
 flight motion is stopped. Original rope/ball sprites follow arms and legs,
-scale with the body and leave the mouth free. Repeated hits recover the incoming
+scale with the body and leave the mouth free. Front fragments draw before the
+body; the body occludes rear arcs using cosmetic depth offsets that follow the
+local viewing direction. Repeated hits recover the incoming
 piece without extending the existing timer. Death/removal releases an intact
 piece. Misses and immune contacts drop the intact native pickup immediately,
 without a five-second delay, auto-return or replacement ammunition.
@@ -76,7 +81,9 @@ Type 22, catalogue 18 and recipe 133 append to existing IDs. Recipe-book revisio
 7 preserves learned recipes and initializes the bolas recipe locked. The same
 native item is transferred into the flight/binding actor, then recovered or
 destroyed; serialization retains preparation, timer, cut progress and identity.
-Released input after a load cancels the saved preparation normally.
+Released input after a load cancels the saved preparation normally. Binding
+visual revision 2 retains the two saved front actors and idempotently creates
+two missing rear actors on update, preserving the item, timer and cut progress.
 On forced player map departure, its restraint drops intact in the departing
 map and releases that player; a hub retains NPC restraints with paused timers.
 Keep the original save/package pair and save migration under a new filename

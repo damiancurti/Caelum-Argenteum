@@ -7,12 +7,63 @@ destruction; own demon breath uses actual paid contact. Author handling/art
 acceptance remains CA163-01. Permanent Rulo/Caella grants remain #164.
 This focused branch is stacked on issue-162-utility-staff (PR167, dc757efe).
 
-Static validation passes with zero errors (`static-validation.json`). The normal
-build succeeds with 6,307 files; every member is byte-identical to the final
-native package. The atlas remains unchanged and its registration generator
+Initial delivery validation passed with zero errors (`static-validation.json`).
+That normal build contained 6,307 files, all matching the initially delivered
+native package. The follow-up below supersedes those current-package fingerprints. The atlas remains unchanged and its registration generator
 produces identical bytes on two repeated runs (`build-verification.json`).
 
-## Native evidence
+## Author visual follow-up, 2026-10-10
+
+The author requested hanging weights at rest, 3 Hz spin and rear rope arcs hidden
+by the character. A new original hanging-ready sprite replaces only that pose;
+the hand is raised so the three weights remain visible below its grip. Spin uses
+three rotations per simulation second with a stationary hand. Native TEXTURES
+fragments and visual-only WorldOffset depths separate the front cords from the
+rear arcs. All physical positions, ownership and escape rules stay authoritative.
+Binding visual revision 2 preserves the saved front actors and idempotently adds
+missing rear actors. This is part of the same 5.1.16/#163 patch.
+
+Targeted follow-up runs: **79 passing native assertion executions**, no failures:
+
+| Run | New passes | Scope |
+| --- | ---: | --- |
+| visual-fix-depth04 | 13 | Actual psprite rotates -1,080 degrees in 35 tics, unchanged preparation cap, stable hand, four viewing directions, four-layer cleanup and one recoverable item |
+| visual-fix-checks | 40 | Item/recipe/throw/restraint/fire/cut/death/expiry lifecycle regression |
+| visual-fix-inputs | 10 | Actual secondary/primary input, cap/cancel, native miss/hit, pickup and expiry |
+| visual-fix-travel | 7 | Player departure drop, NPC hub pause/return, retained identity |
+| visual-fix-oldbound02 | 5 | Native revision-1 bound save gains exactly two rear actors, idempotent update, preserved identity/timer and one expiry drop |
+| visual-fix-oldcut02 | 4 | Native revision-1 mid-cut save preserves progress/timer, identity and ammunition; one completion |
+
+Raw logs, run fingerprints, current build/static reports and unchanged native
+captures are in [visual_followup](visual_followup). The original bound save
+contains revision 1, two rope references and 168 remaining tics, with no rear
+array. Its hash is retained; neither original save is modified or distributed.
+A native capture comparison hides the body/front/rear independently to measure
+rear-arc occlusion (`verify_visual_depth.py`, Pillow required). Read its numerical
+report alongside the four ordinary perspective views; these do not establish
+author acceptance or untested alternate renderer/view modes.
+
+The final normal build contains **6,308 files**, each byte-identical to the native
+package used by all six selected follow-up runs. Static validation has zero
+errors; registration repeated twice is byte-identical. Current fingerprints and
+occlusion measurements are in `visual_followup/verification.json`.
+
+Exploratory fixture errors are retained locally: an unqualified Actor.AngleToVector
+call failed compilation; two reload commands initially supplied a duplicated
+relative save path. Corrected runs above pass. An initial distant capture had too
+few overlapping bright pixels for the sampling gate; the final close-up captures
+supply a larger sample without changing production art or rendering. These are
+test setup findings, not passing assertions or unresolved gameplay failures.
+
+Reproduce the visual run after prepare.py with run_native.ps1 -Fixture visualfix
+-Script visualfix.cfg and a fresh -Label; use save basenames or absolute paths
+for -LoadGame. Full run_suite.ps1 also includes this visual fixture. The new
+[ready source](../source/art/bolas_5116/ready-hanging.png) and its
+[exact prompt/provenance](../source/art/bolas_5116/READY_PROVENANCE.json) are retained
+in the workspace. It was produced with the built-in imagegen tool; native
+registration preserves all generated RGBA bytes. CA163-01 remains pending.
+
+## Initial native evidence
 
 Windows 11, GZDoom 4.14.2, Vulkan, 1280x720, fixed RNG seed 163, unpaused in the
 background at 5% audio. No keep-awake request was acquired. Raw run metadata
@@ -46,9 +97,9 @@ legacy inventory dismantling shortcut. Both were checked with the affected
 native UI/crafting runs, plus repeated mechanics and migration checks.
 `build-verification.json` reconstructs that earlier package exactly by reversing
 only those two changes, documenting the evidence boundary without claiming that
-every run used the final bytes. Final native package:
+every run used the final bytes. Initially delivered native package:
 `a55086711c954f5af2a409fdc2c6c8d896af5f1c8ccffc9db77f46749136e202`.
-Normal development PK3:
+Initial normal development PK3:
 `bf56e70c2ab224a2fd5a8d85203edcb768e83b75307506d01053237ee73b65a3`.
 
 ## Findings resolved during validation

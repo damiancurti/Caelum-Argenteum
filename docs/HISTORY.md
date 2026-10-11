@@ -16,6 +16,14 @@ CA163-01 remains pending author acceptance; #164 permanent Rulo/Caella grants
 are not included. #162's right-leaning staff remains on PR167 underneath this
 focused branch. No existing pending author test is removed.
 
+Author visual feedback on 2026-10-10 requested hanging rest weights, 3 Hz spin
+and rear rope arcs drawn behind the restrained body. The follow-up adds an
+original hanging pose, retains the other atlas art and splits the restraints
+into front/back native layers with cosmetic depth. Binding revision 2 migrates
+existing saves without changing item ownership, timers or cutting progress.
+Follow-up native captures and test scope are appended to validation_5116/RESULTS.
+This is a correction within the same 5.1.16/#163 patch; CA163-01 stays pending.
+
 ## 5.1.15 - Bronze utility staff and wand names (#162, 2026-10-10)
 
 Author decisions: ice matches fire's geometry and power magnitude (4 m, 60 degrees,

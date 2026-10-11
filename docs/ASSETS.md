@@ -12,7 +12,15 @@ pixels unchanged and deterministically registers native TEXTURES for ready,
 spin, release, pickup/icon and arm/leg overlays. Recovery uses the existing
 shared hand layer with the released item absent. Native rotation spins around
 the fixed grip; restraint overlays scale uniformly to preserve round weights
-and remain below the mouth. Runtime: src/graphics/caelum/bolas; validation
+and remain below the mouth. The author's visual follow-up replaces only the
+ready view with ready-hanging.png (READY_PROVENANCE.json records its exact
+built-in imagegen edit prompt). All weights hang below the raised grip. Spin
+uses 3 Hz while the hand stays fixed. Native TEXTURES clips split each wrap
+at its lateral extrema into a lower/front fragment and upper/rear arc. Four
+cosmetic actors use opposite camera-facing WorldOffset depths, so the body
+occludes the back arcs from every ordinary viewing direction. Their physical
+origins and collision remain unchanged; release removes all four layers.
+The original atlas and its superseded ready cell are retained. Runtime: src/graphics/caelum/bolas; validation
 captures: assets/validation_5116. Visual acceptance remains CA163-01.
 
 ## 5.1.15 - Bronze utility staff (#162)

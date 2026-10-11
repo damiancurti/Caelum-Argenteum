@@ -9,7 +9,8 @@ accuracy preparation and visible five-second restraint. Its bronze/leather
 recipe, escape rules and native tests are documented in SYSTEMS and
 assets/validation_5116. Rulo's permanent grant and revised tutorial progression
 remain exclusively #164; this patch neither adds that gift nor changes the
-accepted trial/dialogue sequence. CA163-01 covers isolated handling/art only.
+accepted trial/dialogue sequence. CA163-01 covers isolated handling/art only,
+including the corrected hanging pose, 3 Hz spin and front/back rope occlusion.
 
 ## 5.1.15 - Utility tool integration boundary (#162 / #164)
 

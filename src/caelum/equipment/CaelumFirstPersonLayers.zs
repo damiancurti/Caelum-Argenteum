@@ -645,6 +645,7 @@ class CaelumFirstPersonLayers : Object play
             || kind==CaelumConstants.WEAPON_TYPE_UTILITY_STAFF;
         double size=kind==0?1.20:kind==7?1.18:kind==10?1.38:kind==11?1.32:kind==12?1.13:ranged?0.82:1.0;
         vector2 grip=Grip(kind);
+        if(kind==CaelumConstants.WEAPON_TYPE_BOLAS && phase==0)grip.Y-=CaelumBolasRules.READY_LIFT;
         grip+=(dx,dy);
         if(ranged)
         {
@@ -685,7 +686,7 @@ class CaelumFirstPersonLayers : Object play
         double weaponRotation=rotation+(kind==CaelumConstants.WEAPON_TYPE_PICKAXE
             ?-CaelumConstants.PICKAXE_REST_CLOCKWISE_DEGREES
             :rightLeaning?-28.0:kind==8?FLAIL_HANDLE_ANGLE:0.0);
-        if(kind==CaelumConstants.WEAPON_TYPE_BOLAS && phase==1)weaponRotation-=level.time*360.0/TICRATE;
+        if(kind==CaelumConstants.WEAPON_TYPE_BOLAS && phase==1)weaponRotation-=level.time*360.0*CaelumBolasRules.SPIN_HZ/TICRATE;
         vector2 weaponGrip=grip;
         if(rightLeaning)weaponGrip+=Turn((4,3),rotation);
         if(kind==8)Flail(user,tier,grip,rotation,chainTurn);

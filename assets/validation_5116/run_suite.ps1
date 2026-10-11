@@ -16,6 +16,7 @@ foreach ($fixture in @('checks','crafting','npcs','inputs')) {
 & $runner -Label "$Prefix-legacy-load" -Fixture legacy -Script legacy-reload.cfg -LoadGame ca163-legacy.zds
 & $runner -Label "$Prefix-legacy-again" -Fixture legacy -Script legacy-again.cfg -LoadGame ca163-migrated.zds
 & $runner -Label "$Prefix-visuals" -Fixture inputs -Script visuals.cfg
+& $runner -Label "$Prefix-visualfix" -Fixture visualfix -Script visualfix.cfg
 $root = (Resolve-Path (Join-Path $PSScriptRoot '..\..')).Path
 $logs = Get-ChildItem -LiteralPath (Join-Path $root 'build\issue163') -Filter "$Prefix-*.txt"
 $failures = $logs | Select-String -Pattern '^CA163 FAIL|Script error|VM execution aborted|Access violation'

@@ -1,7 +1,7 @@
 // #163: datos confirmados; la integridad es binaria y nunca se desgasta.
 class CaelumBolasRules : Object
 {
-    const REVISION=1;
+    const REVISION=2;
     const MASS_KG=1.018;
     const BRONZE_KG=0.800;
     const LENGTH_METERS=1.09;
@@ -15,6 +15,9 @@ class CaelumBolasRules : Object
     const WRAP_WIDTH_FACTOR=2.1;
     const WRAP_HEIGHT_LIMIT=0.63;
     const SPRITE_SIZE=128.0;
+    const SPIN_HZ=3.0;
+    const READY_LIFT=65.0;
+    const WRAP_DEPTH=0.25;
 
     static double Spread(int prepared)
     {
@@ -190,6 +193,7 @@ class CaelumBolasFlight : Actor
     CaelumEquipmentItem SourceItem;
     Actor Victim;
     Actor Ropes[2];
+    Actor BackRopes[2];
     int Phase,Remaining,Revision,ExpiryRolls;
     bool Cutting;
     double CutProgress;
@@ -234,6 +238,10 @@ class CaelumBolasFlight : Actor
     {
         if(Victim==null)return;
         SetOrigin(Victim.Pos,false);
+        // Sólo cambia el desplazamiento de dibujo, nunca posición ni colisión.
+        // La profundidad sigue la vista local también al rodear al personaje.
+        let camera=players[consoleplayer].camera;
+        vector2 depth=camera!=null ? AngleToVector(camera.Angle,CaelumBolasRules.WRAP_DEPTH) : (0,0);
         for(int i=0;i<2;i++)
         {
             vector3 point=Victim.Pos+(0,0,Victim.Height*(i==0 ? CaelumBolasRules.ARMS_HEIGHT : CaelumBolasRules.LEGS_HEIGHT));
@@ -242,7 +250,18 @@ class CaelumBolasFlight : Actor
             Ropes[i].master=self;Ropes[i].SetOrigin(point,false);Ropes[i].frame=i;
             double scale=Min(Victim.Radius*CaelumBolasRules.WRAP_WIDTH_FACTOR,Victim.Height*CaelumBolasRules.WRAP_HEIGHT_LIMIT)/CaelumBolasRules.SPRITE_SIZE;
             Ropes[i].Scale=(scale,scale);
+            Ropes[i].WorldOffset=Victim.WorldOffset-(depth.X,depth.Y,0);
+            // Las partidas de revisión 1 conservan sus capas delanteras;
+            // las dos posteriores ausentes se añaden una sola vez.
+            if(BackRopes[i]==null)BackRopes[i]=Spawn("CaelumBolasRopes",point,NO_REPLACE);
+            if(BackRopes[i]!=null)
+            {
+                BackRopes[i].master=self;BackRopes[i].SetOrigin(point,false);BackRopes[i].frame=i+2;
+                BackRopes[i].Scale=(scale,scale);
+                BackRopes[i].WorldOffset=Victim.WorldOffset+(depth.X,depth.Y,0);
+            }
         }
+        Revision=CaelumBolasRules.REVISION;
     }
 
     void Resolve(bool broken)
@@ -253,6 +272,7 @@ class CaelumBolasFlight : Actor
         if(user!=null && user.BolasBinding==self)user.BolasBinding=null;
         if(npc!=null && npc.BolasBinding==self)npc.BolasBinding=null;
         for(int i=0;i<2;i++)if(Ropes[i]!=null){Ropes[i].Destroy();Ropes[i]=null;}
+        for(int i=0;i<2;i++)if(BackRopes[i]!=null){BackRopes[i].Destroy();BackRopes[i]=null;}
         let item=SourceItem;SourceItem=null;
         if(item!=null)
         {

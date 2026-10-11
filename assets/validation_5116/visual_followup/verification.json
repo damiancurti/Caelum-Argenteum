@@ -1,0 +1,77 @@
+{
+  "release": "5.1.16",
+  "issue": 163,
+  "followup": "hanging pose, 3 Hz spin, front/back depth",
+  "native_passes": 79,
+  "runs": [
+    {
+      "label": "visual-fix-depth04",
+      "new_passes": 13,
+      "runtime_sha256": "fc2b3bb6242d3f8be42f4eac9f196cfc37b2695e008318497b2e5993940e4906",
+      "fixture_sha256": "1fa975259e4dd063719ff9b19f3e6f03bfd7d008536dcc7eab766a1c455ca28a"
+    },
+    {
+      "label": "visual-fix-checks",
+      "new_passes": 40,
+      "runtime_sha256": "fc2b3bb6242d3f8be42f4eac9f196cfc37b2695e008318497b2e5993940e4906",
+      "fixture_sha256": "f788c6d6ff02dfb78dfdd7e753d23fd569bdcaac6ebc8fd2ef517b6851715119"
+    },
+    {
+      "label": "visual-fix-inputs",
+      "new_passes": 10,
+      "runtime_sha256": "fc2b3bb6242d3f8be42f4eac9f196cfc37b2695e008318497b2e5993940e4906",
+      "fixture_sha256": "3b7085b05be80378f7724075f46813a86b28469b681a650ebbed079c6457bcb7"
+    },
+    {
+      "label": "visual-fix-travel",
+      "new_passes": 7,
+      "runtime_sha256": "fc2b3bb6242d3f8be42f4eac9f196cfc37b2695e008318497b2e5993940e4906",
+      "fixture_sha256": "a0c32f0cc222719684a7bb55e2ef6e124d778a6172be06d3e00267f74861d1e7"
+    },
+    {
+      "label": "visual-fix-oldbound02",
+      "new_passes": 5,
+      "runtime_sha256": "fc2b3bb6242d3f8be42f4eac9f196cfc37b2695e008318497b2e5993940e4906",
+      "fixture_sha256": "3b7085b05be80378f7724075f46813a86b28469b681a650ebbed079c6457bcb7"
+    },
+    {
+      "label": "visual-fix-oldcut02",
+      "new_passes": 4,
+      "runtime_sha256": "fc2b3bb6242d3f8be42f4eac9f196cfc37b2695e008318497b2e5993940e4906",
+      "fixture_sha256": "f39398245e3b81937c74350752700c304083f25c1ecd5512ec0c131f44112026"
+    }
+  ],
+  "production_sha256": "fc2b3bb6242d3f8be42f4eac9f196cfc37b2695e008318497b2e5993940e4906",
+  "normal_pk3_sha256": "39c7df559b5d4cd6f92bfa92a7d69365120624580fe71f224eef1bb1fdad9a8f",
+  "runtime_files": 6308,
+  "all_normal_members_match_native": true,
+  "two_generator_runs_identical": true,
+  "art_hashes": {
+    "atlas.png": "fb78f0ab7883e2fcb806fa5feaf035b09ecec762526ae7b4415fc07314e99b6e",
+    "ready-hanging.png": "eb224831a76dd79e64e278114090fed32d232b7deaea3aa61ca98652e37e7081",
+    "bolas.textures": "78e2ac1d00404bca28b2eae228b4143f04ad5ea1d1a371747faf2282b20bdfd6"
+  },
+  "occlusion": {
+    "roi": [
+      500,
+      200,
+      780,
+      640
+    ],
+    "rear_pixels": 1347,
+    "rear_body_overlap_pixels": 560,
+    "occluded_overlap_pixels": 560,
+    "occluded_fraction": 1.0,
+    "maximum_overlap_difference": 2,
+    "passed": true
+  },
+  "old_bound_save_sha256": "3ba80a1df70e85b3828469bd5315f9e09f7b8726874444957cc4218bb63d3d43",
+  "old_bound_save_state": {
+    "revision": 1,
+    "front_references": 2,
+    "rear_array_present": false,
+    "remaining_tics": 168
+  },
+  "old_cut_save_sha256": "167295e3be5e6a11a867611a3864321b93d8fea79ee08f89c1c92b890d0276f6",
+  "author_acceptance": "CA163-01 pending"
+}

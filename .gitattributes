@@ -127,3 +127,6 @@
 /assets/validation_5116/* -text whitespace=cr-at-eol
 /assets/validation_5116/*.txt whitespace=-blank-at-eol,-blank-at-eof,cr-at-eol
 /src/graphics/caelum/bolas/*.textures text eol=lf
+
+# Preserve raw native log whitespace in the #163 visual follow-up.
+assets/validation_5116/visual_followup/*.txt whitespace=-blank-at-eol,-blank-at-eof

@@ -14,7 +14,8 @@ Recoverable Boleadora / Bolas joins family 1. Hold secondary to improve accuracy
 for one second, then throw with primary; earlier throws are allowed. Ropes block
 movement and attacks for up to five seconds. Fire, a Reload cutting action or
 one Strength roll can destroy the piece. Original artwork and the approved
-bronze/leather recipe are integrated. Native/static evidence:
+bronze/leather recipe are integrated. The corrected ready pose hangs from the
+grip, spin runs at 3 Hz, and the body occludes the rear rope arcs. Native/static evidence:
 [validation_5116](assets/validation_5116/RESULTS.md). CA163-01 awaits author
 visual/handling acceptance. Rulo's permanent gift remains #164.
 

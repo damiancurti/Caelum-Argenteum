@@ -46,6 +46,9 @@ def main():
             'MAPINFO':f'cluster 463 {{ hub }}\nmap CA163 "Bolas validation" {{ cluster=463 }}\nmap CA163B "Bolas hub" {{ cluster=463 }}\nGameInfo {{ AddEventHandlers="CA163{name.title()}" }}\n'.encode()}
         if name=='inputs':
             members['MAPINFO']=members['MAPINFO'].replace(b'AddEventHandlers="CA163Inputs"',b'AddEventHandlers="CA163Inputs", "CA163LoadObserver"')
+        if name=='visualfix':
+            members['inputs.zs']=(HERE/'inputs.zs').read_bytes()
+            members['ZSCRIPT']=b'version "4.14"\n#include "inputs.zs"\n#include "checks.zs"\n'
         manifest[name]=package(OUT/(name+'.pk3'),members)
     # Current source overlays accepted package: unchanged assets stay byte-identical.
     if not (OUT/'baseline.pk3').exists():
@@ -74,6 +77,7 @@ def main():
         'prepared-reload':'-altattack; wait 5; ca163_stage 9; wait 10; -altattack; wait 5; quit',
         'attached-reload':'wait 5; ca163_stage 10; wait 200; quit',
         'preview':'wait 100; ca163_stage 7; -altattack; wait 10; screenshot bolas-author.png',
+        'visualfix':'unbindall; wait 100; screenshot hanging-ready.png; ca163_stage 20; +altattack; wait 45; screenshot fast-spin.png; -altattack; r_drawplayersprites 0; ca163_stage 21; wait 10; screenshot ropes-east.png; ca163_stage 22; wait 10; screenshot ropes-north.png; ca163_stage 23; wait 10; screenshot ropes-west.png; ca163_stage 24; wait 10; screenshot ropes-south.png; ca163_stage 25; wait 10; screenshot ropes-both.png; ca163_stage 26; wait 10; screenshot ropes-rear-body.png; ca163_stage 27; wait 10; screenshot ropes-body.png; ca163_stage 28; wait 10; screenshot ropes-rear-only.png; ca163_stage 29; wait 10; screenshot ropes-background.png; ca163_stage 30; wait 5; quit',
     }
     for name,commands in scripts.items():
         (OUT/(name+'.cfg')).write_text(commands+'\n',encoding='utf-8')

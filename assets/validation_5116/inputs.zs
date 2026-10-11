@@ -107,6 +107,14 @@ class CA163Inputs : EventHandler
             Check("save restores one attached native item and timer",TargetBody!=null && TargetBody.BolasBinding!=null
                 && TargetBody.BolasBinding.SourceItem==Tool && Tool.ItemId==BolasId && TargetBody.BolasBinding.Remaining<175);
             Check("save restores both restraint visuals",TargetBody.BolasBinding!=null && TargetBody.BolasBinding.Ropes[0]!=null && TargetBody.BolasBinding.Ropes[1]!=null);
+            let bind=TargetBody.BolasBinding;
+            Check("old bound save adds both rear layers at revision 2",bind!=null && bind.Revision==2 && bind.BackRopes[0]!=null && bind.BackRopes[1]!=null);
+            if(bind!=null)
+            {
+                let back=bind.BackRopes[0];bind.UpdateVisuals();bind.UpdateVisuals();
+                int count=0;let it=ThinkerIterator.Create("CaelumBolasRopes");while(it.Next()!=null)count++;
+                Check("visual migration is idempotent with exactly four layers",bind.BackRopes[0]==back && count==4);
+            }
         }
         if(Stage==10 && Age==190)
         {
