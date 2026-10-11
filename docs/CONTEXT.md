@@ -1,6 +1,8 @@
 # CONTEXT.md — Caelum Argenteum
 
-Documentation version: **5.1.16** — 2026-10-10.
+Documentation version: **5.1.17** — 2026-10-10.
+
+**5.1.17/#169:** botiquín/medikit labels (validation_5117).
 
 **5.1.16/#163:** recoverable bolas; one-second preparation, five-second restraint
 Hanging rest, 3 Hz spin, rear occlusion, extended hands, visible escape fire.

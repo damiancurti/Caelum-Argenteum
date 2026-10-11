@@ -1,6 +1,15 @@
 # Caelum Argenteum — Project, status and roadmap
 
-Documentation version: **5.1.16** — 2026-10-10.
+Documentation version: **5.1.17** — 2026-10-10.
+
+## 5.1.17 - Medikit names (#169)
+
+The author reported that existing health kits still displayed as life potions
+and selected Spanish botiquín. Shared English/Spanish labels now identify all
+three sizes and pickup text as medikit/botiquín. Native UI evidence is in
+assets/validation_5117; this localization-only patch preserves saved identities
+and all #135 consumable behavior. PR review is next; #162/#163 author checks
+remain outstanding in pending_test.txt.
 
 ## 5.1.16 - Recoverable bolas (#163)
 

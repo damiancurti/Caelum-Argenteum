@@ -1,6 +1,13 @@
 # TASKS.md — Active tasks
 
-Documentation version: **5.1.16** — 2026-10-10.
+Documentation version: **5.1.17** — 2026-10-10.
+
+## Issue #169 - Medikit names (5.1.17)
+
+Implemented the author's Spanish botiquín choice and English medikit names for
+all three sizes and pickup text. Functional changes are LANGUAGE labels; the
+diagnostic release markers follow 5.1.17. Item identities and #135 rules remain. Evidence: assets/validation_5117.
+Next: linked PR review. Existing CA162-01/CA163-01 author tests stay pending.
 
 ## Issue #163 - Recoverable bolas (5.1.16)
 

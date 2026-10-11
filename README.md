@@ -6,8 +6,13 @@ An independent dark fantasy FPS-RPG inspired by nineteenth-century Argentina.
 Author and game designer: **Damian Curti**. Development target: **GZDoom 4.14.2**
 on Windows 11. The final game is intended to be independent of Doom assets.
 
-**Current release: 5.1.16.** Obtain and update the complete repository, validate
+**Current release: 5.1.17.** Obtain and update the complete repository, validate
 it, then rebuild with `run_dev.bat` as described below.
+
+**5.1.17 / [#169](https://github.com/damiancurti/Caelum-Argenteum/issues/169):**
+Health kits now display as **medikit / botiquín**, including medium and large
+sizes, inventory details and pickup text. Saved items and healing rules remain
+unchanged. English/Spanish native evidence: [validation_5117](assets/validation_5117/RESULTS.md).
 
 **5.1.16 / [#163](https://github.com/damiancurti/Caelum-Argenteum/issues/163):**
 Recoverable Boleadora / Bolas joins family 1. Hold secondary to improve accuracy

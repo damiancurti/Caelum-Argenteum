@@ -1,0 +1,28 @@
+{
+  "native_sha256": "065b2dcacb610b748b2016e586732a4f51e8e1606139ea6121cac4d47250e3a3",
+  "normal_pk3_sha256": "cc78adcbe24dab981c882be99b986af1cce4f037dcaf35f646b07e64666a08db",
+  "members": 6309,
+  "all_member_bytes_equal": true,
+  "runs": [
+    {
+      "label": "medikit-es-03",
+      "observations": [
+        "CA169 OBSERVED kind=0 item=CaelumLifePotion count=1 name=botiquín",
+        "CA169 OBSERVED kind=11 item=CaelumLifePotionMedium count=1 name=botiquín mediano",
+        "CA169 OBSERVED kind=14 item=CaelumLifePotionLarge count=1 name=botiquín grande"
+      ],
+      "exit_code": 0,
+      "fixture_sha256": "9DD0A15263AC1DFDACA91EDAEC82631EAD8A8CA86731C04705D906177761187A"
+    },
+    {
+      "label": "medikit-enu-03",
+      "observations": [
+        "CA169 OBSERVED kind=0 item=CaelumLifePotion count=1 name=medikit",
+        "CA169 OBSERVED kind=11 item=CaelumLifePotionMedium count=1 name=medium medikit",
+        "CA169 OBSERVED kind=14 item=CaelumLifePotionLarge count=1 name=large medikit"
+      ],
+      "exit_code": 0,
+      "fixture_sha256": "9DD0A15263AC1DFDACA91EDAEC82631EAD8A8CA86731C04705D906177761187A"
+    }
+  ]
+}

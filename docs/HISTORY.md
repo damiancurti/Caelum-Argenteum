@@ -1,6 +1,17 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **5.1.16** — 2026-10-10.
+Documentation version: **5.1.17** — 2026-10-10.
+
+## 5.1.17 - Medikit names (#169), 2026-10-10
+
+The author reported that medikits still appeared as life potions and explicitly
+selected botiquín for Spanish. Changed only the shared labels for three sizes
+and the fallback pickup message in both languages. Existing item classes, keys,
+icons, saves and consumable mechanics remain unchanged. Native GZDoom pickup
+and inventory observations in both languages, static validation and package
+fingerprints are recorded in assets/validation_5117/RESULTS.md. This evidence
+is agent verification; it does not accept outstanding CA162-01/CA163-01 tests.
+The focused naming branch is stacked on #163/PR168.
 
 ## 5.1.16 - Recoverable bolas (#163), 2026-10-10
 

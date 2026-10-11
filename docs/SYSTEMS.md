@@ -1,6 +1,18 @@
 # Caelum Argenteum — Current systems and rules
 
-Documentation version: **5.1.16** — 2026-10-10.
+Documentation version: **5.1.17** — 2026-10-10.
+
+## Medikit terminology - 5.1.17 / #169
+
+Health consumables display as **medikit**, **medium medikit**, **large medikit**
+in English and **botiquín**, **botiquín mediano**, **botiquín grande** in Spanish,
+as selected by the author. The default name denotes the existing small size.
+Shared labels feed inventory details, trade and pickup notifications. The native
+fallback pickup string is also updated. Existing CaelumLifePotion identifiers,
+localization keys and saved inventory remain stable; #135 restoration, duration,
+weight, prices, supplies and loot rules are unchanged. Anima potions and energy
+drinks keep their names. Earlier historical references to health/life potions
+refer to these same items.
 
 ## Recoverable bolas - 5.1.16 / #163
 

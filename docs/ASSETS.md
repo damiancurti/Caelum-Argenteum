@@ -1,6 +1,14 @@
 # Caelum Argenteum — Audio and art
 
-Documentation version: **5.1.16** — 2026-10-10.
+Documentation version: **5.1.17** — 2026-10-10.
+
+## 5.1.17 - Medikit labels (#169)
+
+The existing small, silver-trimmed medium and silver/gold-trimmed large medikit
+art is unchanged. LANGUAGE now labels this health family medikit/botiquín,
+including size suffixes and pickup text; the author selected the Spanish term.
+No raster asset, provenance, native sprite registration or icon path changes.
+English/Spanish inventory and pickup captures: assets/validation_5117.
 
 ## 5.1.16 - Original bolas atlas (#163)
 
