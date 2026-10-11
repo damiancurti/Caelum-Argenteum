@@ -9,8 +9,9 @@ finite gold exchange, mandatory bag/Seal/5 L canteen crafts, boxed departure,
 one-for-one ammunition replacements and aggregate repair budget. The author
 confirmed five manufactured replacement bolas (no reparable wear exists), a
 30-to-100-slot Type3 Box formula, leather/rope recipes and fresh saves without
-old-save migration. Evidence: assets/validation_524/RESULTS.md. CA183-01 remains
-pending author acceptance; commit/push and linked PR are the delivery boundary.
+old-save migration. Evidence: assets/validation_524/RESULTS.md. CA183-01 passed
+author acceptance on 2026-10-11 without qualifications. PR186 merge and #183
+closure are authorized; the confirmed pending entry has been removed.
 
 ## Issue #185 - Indexed NPC dialogue and localization sources
 

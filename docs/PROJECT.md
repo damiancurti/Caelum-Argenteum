@@ -15,8 +15,8 @@ as explicitly corrected by the author. Existing assets and native transactions
 are reused. SYSTEMS is the design contract; assets/validation_524 records evidence.
 
 The author waived pre-release save migration for this test environment; begin a
-new game. Agent/native verification is separate from author acceptance, pending
-as CA183-01. The requested next change is #185: per-NPC sources in a dedicated
+new game. Agent/native verification is separate from author acceptance.
+CA183-01 passed on 2026-10-11 without qualifications; merge/closure authorized. The requested next change is #185: per-NPC sources in a dedicated
 src directory, a main index, and localization indexing. #148 remains separate.
 
 ## 5.2.3 - Allied Mandinga retaliation (#180)

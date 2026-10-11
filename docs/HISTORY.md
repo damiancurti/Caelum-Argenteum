@@ -4,6 +4,15 @@ Documentation version: **5.2.4** — 2026-10-11.
 
 ## 5.2.4 - Profession onboarding and MAP02 supplies (#183), 2026-10-11
 
+Author acceptance, 2026-10-11: **CA183-01**, origin 5.2.4 / #183, passed
+with no qualifications reported. The author confirmed all tests correct and
+authorized PR186 merge and #183 closure. The confirmed entry is removed from
+pending_test.txt; the queue is empty. Release 5.2.4 is unchanged. This acceptance
+update changes documentation only; delivery-time pending statements and native
+diagnostic records below retain their historical evidence boundary.
+Acceptance validation: regenerated DOCUMENT_INDEX, project validator with zero
+errors and clean git diff --check. Existing runtime evidence remains applicable.
+
 Author decisions during implementation: use fresh test saves instead of earlier
 save migration; bag and empty 5 L canteen recipes are 90% leather/10% rope by
 weight at the Workbench with existing time rules and tutorial 100% efficiency;

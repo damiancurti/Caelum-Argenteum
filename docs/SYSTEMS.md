@@ -104,7 +104,7 @@ Refuges include an armor workshop so light/magical T1 armor can actually be
 repaired. The native repair selector lists owned armor as well as weapons.
 
 Evidence and reproducible fixtures: assets/validation_524/RESULTS.md. Native and
-static checks are agent verification; CA183-01 remains pending author acceptance.
+static checks are agent verification; CA183-01 passed author acceptance on 2026-10-11 without qualifications.
 NPC/localization source indexing is the separate follow-up #185.
 
 ## Allied Mandinga retaliation - 5.2.3 / #180

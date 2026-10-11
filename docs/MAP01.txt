@@ -20,7 +20,7 @@ repairing or recreating them. SYSTEMS owns complete recipes, kit and Box formula
 The author authorized fresh test saves, with no migration from earlier releases.
 New-version partial reward and departure save/load still preserve actual state.
 Established practices, assisted combat/checkpoint, mansion provisions and portable
-rest remain. Evidence: assets/validation_524; CA183-01 awaits author acceptance.
+rest remain. Evidence: assets/validation_524; CA183-01 passed author acceptance on 2026-10-11 without qualifications.
 Dialogue source modularization/localization indexing follows separately in #185.
 
 ## 5.2.3 - Mandinga reaction rule (#180)

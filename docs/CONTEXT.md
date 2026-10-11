@@ -9,7 +9,7 @@ profession gifts; Palomo chooses only the Seal. Ronnie exchanges the sole finite
 20 + floor(10 × Type3 multiplier). Departure boxes actual gifts/utilities/deck and
 matching ammo. MAP02 has 360 arrows/240 bolts and an exact initial-kit repair
 budget plus five replacement bolas across 39 finite chests. Start fresh test
-games by author instruction. Evidence: validation_524; CA183-01 awaits acceptance.
+games by author instruction. Evidence: validation_524; CA183-01 passed on 2026-10-11, without qualifications; PR186 merge/#183 closure authorized.
 Next requested work: #185, per-NPC indexed dialogue sources under src and a
 localization index. Preserve #183 as its own branch/PR before implementing #185.
 

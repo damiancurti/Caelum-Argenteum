@@ -14,7 +14,7 @@ stats, profession gifts, a finite gold exchange and three utility crafts. The
 larger Box carries the actual starting kit into MAP02, whose finite supplies
 match its ammunition and repair needs. **Start a new test game**, as authorized
 by the author; pre-release saves are not migrated in this patch.
-[Evidence](assets/validation_524/RESULTS.md); CA183-01 awaits author acceptance.
+[Evidence](assets/validation_524/RESULTS.md); CA183-01 passed author acceptance on 2026-10-11; merge/closure authorized.
 The requested indexed NPC/localization sources follow separately in #185.
 
 Earlier release summaries below record their original accepted behavior; the
