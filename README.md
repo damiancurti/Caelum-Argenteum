@@ -13,11 +13,11 @@ it, then rebuild with `run_dev.bat` as described below.
 each body, area-weighted anatomy/armor and final Toughness once. Fixed gates,
 falls, pressure, weight and stone crushing ceilings use the same energy/work
 contract. Cannonballs retain normal armor absorption. [Evidence](assets/validation_5211/RESULTS.md).
-Author gameplay check CA194-01 remains in [pending_test.txt](pending_test.txt);
-#195 bull balance is separate. The accepted PR198 changes are included, while
-that PR still awaits merge into main.
-Delivery: [PR199](https://github.com/damiancurti/Caelum-Argenteum/pull/199),
-branch `issue194-collision-energy`, implementation commit `8810aec6` pushed.
+The author accepted CA194-01 on 2026-10-11 without qualifications; the
+[author test queue](pending_test.txt) is empty. #195 bull balance is separate.
+PR198 is merged into main. Accepted delivery:
+[PR199](https://github.com/damiancurti/Caelum-Argenteum/pull/199), targeting main;
+the author explicitly authorized merge and #194 closure.
 
 5.2.10 applies the reopened #192 ranged amendment: longbow armor bypass is
 20/30/40%, crossbow 40/50/60%; carbine 70/80/90% and shotgun 60/70/80% stay
@@ -25,7 +25,7 @@ unchanged. All four exclude offensive ideology against both armor and shields.
 Active identifiers, descriptions and retained resource paths use shotgun names.
 [Evidence](assets/validation_5210/RESULTS.md); CA192-02 passed author
 gameplay acceptance on 2026-10-11 without qualifications. Commit/push are complete and #192 is closed again as requested;
-[PR198](https://github.com/damiancurti/Caelum-Argenteum/pull/198) awaits review/merge.
+[PR198](https://github.com/damiancurti/Caelum-Argenteum/pull/198) merged into main on 2026-10-11.
 Use fresh test saves for the renamed selector, as authorized by the author.
 
 5.2.9 adds four personality choices and a twelve-projectile bell. Magical power

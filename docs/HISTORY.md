@@ -29,17 +29,22 @@ evidence, initial failures and corrected native runs are retained in
 assets/validation_5211/RESULTS.md. Current save/load preserves one shared contact
 and pending work; a real 5.2.10 save loads with its contact graph preserved,
 and legacy weight carry resets through EnergyRevision 1 without HP conversion.
-CA194-01 originates in this release and remains pending author acceptance.
-The prior explicit CA192-02 acceptance remains valid; PR198 is still open.
-Delivery: implementation commit `8810aec6` pushed to `issue194-collision-energy`;
-PR199 targets the PR198 branch. No #194 merge or author acceptance is claimed.
+Author acceptance, 2026-10-11: CA194-01 (origin 5.2.11 / #194) passed without
+qualifications. The author confirmed all tests passed and explicitly requested
+issue closure and merges. The confirmed entry was removed from pending_test.txt;
+the tracked file is empty. Prior CA192-02 acceptance remains valid; #195 is separate.
+PR198 merged into main as `6f8ad478` before retargeting PR199 to main.
+Accepted delivery: PR199; the author authorized its merge and #194 closure.
+This documentation-only acceptance update retains version 5.2.11 and the
+original static/native evidence; runtime is unchanged.
 
 ## 5.2.10 - Ranged penetration amendment and shotgun names (#192), 2026-10-11
 
 Author acceptance, 2026-10-11: CA192-02 (origin 5.2.10 / #192) passed without
 qualifications. The author confirmed all tests passed before requesting #194.
 The confirmed entry is removed from pending_test.txt; the tracked queue is empty.
-PR198 remains open; this acceptance does not itself merge the PR.
+PR198 subsequently merged into main on 2026-10-11 as `6f8ad478`, after the
+author explicitly requested the remaining merges and issue closures.
 
 After accepting 5.2.9, the author reopened #192 with longbow 20/30/40% and
 crossbow 40/50/60% armor-only bypass. Both join carbine and shotgun in excluding
@@ -64,8 +69,8 @@ run passes all 1,028 assertions, including actual arrow/bolt collisions.
 Final validation and bilingual/native selector checks are recorded there.
 At agent delivery CA192-02 was pending; the subsequent author acceptance is
 recorded above. Earlier CA192-01/CA188-01 acceptance retains its original scope. Commit 47fec499 was pushed and #192 closed again as requested on 2026-10-11.
-PR198 delivers this amendment and awaits review/merge; closing the issue does
-not accept CA192-02. Final native, generator, validator and indexed-byte checks
+PR198 delivers this amendment; its merge is recorded above, separately from
+the explicit CA192-02 acceptance. Final native, generator, validator and indexed-byte checks
 passed. The keep-awake request was released without changing the power plan.
 
 ## 5.2.9 - Personality, magical power and bell volley (#192), 2026-10-11

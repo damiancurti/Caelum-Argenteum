@@ -9,11 +9,10 @@ gate handling, one-time wear/Toughness and cannon armor-bypass removal. Continuo
 pressure uses accumulated work; static loads use 0.1 mm/s internal creep and
 MAP08's solid-stone ceiling block uses 507600 kg. Decisions are in SYSTEMS and
 the issue; validation evidence is assets/validation_5211/RESULTS.md.
-Outstanding author gameplay check: CA194-01 in pending_test.txt. Keep #194 open
-until acceptance; #195 is the separate bull-specific rebalance. PR198 is accepted
-but not merged; #194 is based on that branch. No unrelated roadmap work is claimed.
-Delivery: PR199, implementation commit `8810aec6` pushed. Merge PR198 first;
-CA194-01 author acceptance and #194 merge/closure remain outstanding.
+CA194-01 passed author acceptance on 2026-10-11 without qualifications; the
+author test queue is empty. #195 remains the separate bull-specific rebalance.
+PR198 is merged into main. Accepted delivery: PR199, targeting main, with
+merge and #194 closure explicitly authorized. No unrelated roadmap work is claimed.
 
 ## Issue #192 - Ranged amendment and shotgun naming (5.2.10)
 
@@ -21,7 +20,7 @@ Implemented the approved bow/crossbow penetration table, four-family ideology
 exclusion and author-requested removal of active former-weapon names. Native
 and static evidence: assets/validation_5210/RESULTS.md. CA192-02 passed author
 acceptance on 2026-10-11 without qualifications; the queue is now empty. Commit/push are complete and
-#192 is closed again as requested. PR198 awaits review/merge.
+#192 is closed again as requested. PR198 merged into main on 2026-10-11.
 
 ## Issue #192 - Personality and magical bell (5.2.9)
 

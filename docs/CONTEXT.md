@@ -7,9 +7,10 @@ area-weighted anatomy/armor, final #188 Toughness once. Anchored gates, body
 landings, scenery, cannon/ram contacts and accumulated pressure work share the
 contract. Cannon armor bypass removed. Static weight uses 0.1 mm/s internal
 creep; MAP08 solid-stone crusher mass 507600 kg. Evidence: validation_5211.
-CA194-01 pending author acceptance. #195 owns bull-specific balance.
+CA194-01 accepted 2026-10-11; queue empty. PR199 to main: merge/closure authorized.
+#195 owns bull balance.
 **5.2.10 / #192 amendment:** CA192-02 accepted 2026-10-11; issue closed,
-PR198 open. Bow 20/30/40%, crossbow 40/50/60%; four ranged families exclude
+PR198 merged. Bow 20/30/40%, crossbow 40/50/60%; four ranged families exclude
 ideology. Active names use shotgun; fresh test saves authorized. validation_5210.
 5.2.9 personality/power/bell12 and #188 Toughness accepted CA192-01/CA188-01;
 PR193/196/197 merged. Evidence validation_529/528. Separate roadmap: #148.

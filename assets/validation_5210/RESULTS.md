@@ -38,12 +38,13 @@ cannot load after the class rename. GZDoom resolves saved class names exactly;
 `replaces` does not provide a serialization alias. Keep old save/package copies
 for rollback. No compatibility migration is claimed for this naming cleanup.
 
-CA192-02 remains pending for author gameplay acceptance. The earlier accepted
-CA192-01 and CA188-01 remain recorded under their original releases; they do not
-accept this amendment. Commit/push/issue closure do not substitute for that check.
+The author accepted CA192-02 on 2026-10-11 without qualifications, as recorded
+in HISTORY. Earlier CA192-01 and CA188-01 retain their original release scopes;
+the acceptance is distinct from the isolated native checks above.
 
 Delivery: commit 47fec499, pushed branch issue192-ranged-penetration;
-[PR198](https://github.com/damiancurti/Caelum-Argenteum/pull/198) awaits merge.
+[PR198](https://github.com/damiancurti/Caelum-Argenteum/pull/198) merged into main
+on 2026-10-11 as `6f8ad478`, with explicit author authorization.
 Issue #192 was closed again on 2026-10-11 at the author's request.
 
 ## Reproduction

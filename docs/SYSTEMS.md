@@ -120,7 +120,8 @@ finite-mass reductions 935/2015/5720 HP. A frontal 500 m/s cannon strike therefo
 causes 482815/427985/370530 final HP, with no armor penetration or new multiplier.
 The area fixture 75% at x1 plus 25% at x2 yields x1.25, or 125 before defenses
 from 100 J. Numeric, real native-motion, pressure and save/load evidence is in
-`assets/validation_5211/RESULTS.md`; author gameplay acceptance is CA194-01.
+`assets/validation_5211/RESULTS.md`; the author accepted CA194-01 on 2026-10-11
+without qualifications. HISTORY records the confirmation and originating release.
 
 ## Personality, magical power and ranged penetration - 5.2.10 / #192
 

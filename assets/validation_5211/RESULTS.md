@@ -1,6 +1,7 @@
 # 5.2.11 / #194 collision energy and contact area
 
-Baseline: `e9af2707`, the accepted #192 amendment on still-open PR198.
+Baseline: `e9af2707`, the accepted #192 amendment (PR198 was open during testing
+and subsequently merged into main on 2026-10-11).
 Target: GZDoom 4.14.2 / Windows 11, Vulkan, 1280x720. Runs are isolated,
 unpaused in the background, at 5% audio, one engine at a time. Fixtures use
 production ZScript and actual native actors. No development IWAD, executable,
@@ -97,6 +98,8 @@ Contact area is a documented native-box face approximation, not a deformable
 mesh solver. Static-load 0.1 mm/s internal creep is the author-delegated simulation
 parameter, not a universal tissue constant. Existing invulnerability and faction
 eligibility remain. Multiplayer and large-army performance are not newly certified.
-CA194-01 in pending_test.txt is outstanding; prior author acceptance covers #192,
-not this patch. Keep-awake uses a temporary thread request and is released after
+The author accepted CA194-01 (origin 5.2.11 / #194) on 2026-10-11 without
+qualifications and requested merge/closure; HISTORY records the confirmation.
+The author test queue is empty. This acceptance does not extend to #195.
+Keep-awake uses a temporary thread request and is released after
 native testing, without a power-plan change; its record is retained in evidence/.

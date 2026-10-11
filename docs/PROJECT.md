@@ -11,11 +11,11 @@ scenery, cannonballs and rams share the energy contract; the ram self-damage
 exception remains. Cannon armor penetration is removed at the author's request.
 Sustained moving pressure, static load and stone crushing ceilings use work,
 including the approved immobile-load approximation. Native tests and limitations
-are recorded in assets/validation_5211/RESULTS.md. CA194-01 remains pending;
-agent checks do not constitute author acceptance. #195 bull balance is separate.
-The accepted #192 amendment is present in this branch; PR198 remains open.
-Delivered in PR199 on `issue194-collision-energy`; commit `8810aec6` is pushed.
-PR199 targets the PR198 branch and awaits CA194-01 acceptance before merge.
+are recorded in assets/validation_5211/RESULTS.md. The author accepted CA194-01
+on 2026-10-11 without qualifications; the author test queue is empty.
+#195 bull balance is separate. The accepted #192 amendment is merged into main
+through PR198. Accepted delivery: PR199 on `issue194-collision-energy`, now
+targeting main; the author explicitly authorized merge and #194 closure.
 
 ## 5.2.10 - Ranged penetration and shotgun naming (#192 amendment)
 
@@ -27,7 +27,7 @@ for the replaced weapon now identify the shotgun. Historical art bytes and
 release records retain their provenance. Fresh test saves are author-authorized.
 Evidence: assets/validation_5210/RESULTS.md. CA192-02 passed author acceptance on
 2026-10-11 without qualifications; HISTORY preserves the originating evidence. Commit/push are complete;
-#192 is closed again at the author's request. PR198 awaits review/merge.
+#192 is closed again at the author's request. PR198 merged into main on 2026-10-11.
 
 ## 5.2.9 - Four personality layers and twelve-projectile bell (#192)
 
