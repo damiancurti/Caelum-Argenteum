@@ -160,3 +160,7 @@
 # Keep the #192 ranged amendment evidence stable across checkouts.
 /assets/validation_5210/** text eol=lf
 /assets/validation_5210/captures/*.png -text
+
+# Preserve collision-energy fixtures and evidence across checkouts.
+/assets/validation_5211/** text eol=lf
+/assets/validation_5211/evidence/*.txt whitespace=-blank-at-eof,-blank-at-eol,cr-at-eol

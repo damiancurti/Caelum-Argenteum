@@ -1,6 +1,18 @@
 # TASKS.md — Active tasks
 
-Documentation version: **5.2.10** — 2026-10-11.
+Documentation version: **5.2.11** — 2026-10-11.
+
+## Issue #194 - Collision energy and contact area (5.2.11)
+
+Implemented reduced-mass SI energy, bilateral area-weighted defenses, anchored
+gate handling, one-time wear/Toughness and cannon armor-bypass removal. Continuous
+pressure uses accumulated work; static loads use 0.1 mm/s internal creep and
+MAP08's solid-stone ceiling block uses 507600 kg. Decisions are in SYSTEMS and
+the issue; validation evidence is assets/validation_5211/RESULTS.md.
+CA194-01 passed author acceptance on 2026-10-11 without qualifications; the
+author test queue is empty. #195 remains the separate bull-specific rebalance.
+PR198 is merged into main. Accepted delivery: PR199, targeting main, with
+merge and #194 closure explicitly authorized. No unrelated roadmap work is claimed.
 
 ## Issue #192 - Ranged amendment and shotgun naming (5.2.10)
 
@@ -8,7 +20,7 @@ Implemented the approved bow/crossbow penetration table, four-family ideology
 exclusion and author-requested removal of active former-weapon names. Native
 and static evidence: assets/validation_5210/RESULTS.md. CA192-02 passed author
 acceptance on 2026-10-11 without qualifications; the queue is now empty. Commit/push are complete and
-#192 is closed again as requested. PR198 awaits review/merge.
+#192 is closed again as requested. PR198 merged into main on 2026-10-11.
 
 ## Issue #192 - Personality and magical bell (5.2.9)
 

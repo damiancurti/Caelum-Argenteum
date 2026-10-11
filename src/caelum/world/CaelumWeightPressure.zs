@@ -1,11 +1,13 @@
-// Daño estático aprobado: Hmax × 0,10 × max(0, (masa encima + carga) / capacidad - 1).
-// No usa velocidad ni reemplaza al impacto único del aterrizaje.
+// #194: trabajo por fluencia bajo la fuerza que excede la capacidad de carga.
+// Mantiene daño en reposo; la compresión es interna y no desplaza al actor.
 class CaelumWeightPressure : Inventory
 {
     double DamageCarry;
     double SupportedMass;
     double LastDamagePerSecond;
     int ContactTics;
+    int EnergyRevision;
+    double LastWorkJoules, LastPostToughness;
 
     static bool Supports(Actor lower, Actor upper)
     {
@@ -52,11 +54,21 @@ class CaelumWeightPressure : Inventory
         return total;
     }
 
-    static double DamageRate(double maximumHealth, double above, double ownLoad, double capacity)
+    static double DamageRate(double above, double ownLoad, double capacity)
     {
-        if (above <= 0 || capacity <= 0) return 0;
-        return Max(0.0, maximumHealth) * 0.10
-            * Max(0.0, (above + Max(0.0, ownLoad)) / capacity - 1.0);
+        if (above<=0 || capacity<=0) return 0;
+        double excessMass=Max(0.0,above+Max(0.0,ownLoad)-capacity);
+        return excessMass*CaelumPhysicsUnits.EARTH_GRAVITY_MPS2
+            *CaelumPhysicsUnits.WEIGHT_CREEP_METERS_PER_SECOND;
+    }
+
+    void ApplyWork(Actor victim)
+    {
+        if (DamageCarry<=0) return;
+        LastWorkJoules=DamageCarry; DamageCarry=0;
+        LastPostToughness=CaelumToughnessRules.Apply(victim,LastWorkJoules);
+        int damage=Max(0,int(LastPostToughness+0.5));
+        if (damage>0) victim.DamageMobj(null,null,damage,'CaelumPressure',DMG_NO_ARMOR|DMG_THRUSTLESS);
     }
 
     static void Update(Actor victim)
@@ -70,10 +82,13 @@ class CaelumWeightPressure : Inventory
         if (user == null && npc == null) return;
         double above = MassAbove(victim);
         let pressure = CaelumWeightPressure(victim.FindInventory("CaelumWeightPressure"));
+        if (pressure!=null && pressure.EnergyRevision<1)
+        { pressure.DamageCarry=0; pressure.ContactTics=0; pressure.EnergyRevision=1; }
         if (above <= 0)
         {
             if (pressure != null)
             {
+                pressure.ApplyWork(victim);
                 pressure.SupportedMass = 0; pressure.LastDamagePerSecond = 0;
                 pressure.ContactTics = 0;
             }
@@ -86,16 +101,16 @@ class CaelumWeightPressure : Inventory
             : npc.CombatArmor != null ? npc.CombatArmor.GetTotalWeight() : 0;
         double capacity = user != null ? user.DerivedStats.CarryCapacity
             : Max(1, npc.Mass) * npc.CalculateActorType4Percent(npc.CombatStrength) / 100.0;
-        double maximumHealth = user != null ? user.GetImpactMaximumHealth() : npc.GetImpactMaximumHealth();
         pressure.SupportedMass = above;
-        pressure.LastDamagePerSecond = DamageRate(maximumHealth, above, ownLoad, capacity);
-        // El primer tic sólo registra el apoyo: daño estático desde el siguiente.
-        if (pressure.ContactTics++ == 0) return;
-        pressure.DamageCarry += pressure.LastDamagePerSecond / TICRATE;
-        int damage = int(Min(999999.0, pressure.DamageCarry));
-        if (damage <= 0) return;
-        pressure.DamageCarry -= damage;
-        victim.DamageMobj(null, null, damage, 'CaelumWeight', DMG_NO_ARMOR);
+        pressure.LastDamagePerSecond = DamageRate(above, ownLoad, capacity);
+        if (pressure.EnergyRevision<1)
+        { pressure.DamageCarry=0; pressure.ContactTics=0; pressure.EnergyRevision=1; }
+        // El primer tic registra el apoyo; no vuelve a contar la caída inicial.
+        if (pressure.ContactTics++==0) return;
+        pressure.DamageCarry+=pressure.LastDamagePerSecond/TICRATE;
+        if ((pressure.ContactTics-1)%CaelumConstants.IMPACT_CRUSH_INTERVAL_TICS==0)
+            pressure.ApplyWork(victim);
+
     }
 
     static void WorldTick()

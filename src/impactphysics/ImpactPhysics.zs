@@ -27,8 +27,6 @@ class ImpactResult : Object
     double TargetDeltaSpeed;
     double SourceEquivalentTics;
     double TargetEquivalentTics;
-    double SourceEnergyPercent;
-    double TargetEnergyPercent;
     double SourceContactMinimumHeightRatio;
     double SourceContactMaximumHeightRatio;
     double TargetContactMinimumHeightRatio;
@@ -45,8 +43,6 @@ class ImpactResult : Object
         TargetDeltaSpeed = 0.0;
         SourceEquivalentTics = 1.0e9;
         TargetEquivalentTics = 1.0e9;
-        SourceEnergyPercent = 0.0;
-        TargetEnergyPercent = 0.0;
         SourceContactMinimumHeightRatio = 0.0;
         SourceContactMaximumHeightRatio = 1.0;
         TargetContactMinimumHeightRatio = 0.0;
@@ -70,6 +66,8 @@ class ImpactContactState : Object
     int SustainedTics;
     double LastClosingSpeed;
     double LastTransmittedImpulse;
+    double PendingWorkJoules;
+    Object PendingGeometry;
     bool Active;
 
     void Initialize(Actor first, Actor second, double releaseDistance)
@@ -85,6 +83,7 @@ class ImpactContactState : Object
         SustainedTics = 0;
         LastClosingSpeed = 0.0;
         LastTransmittedImpulse = 0.0;
+        PendingWorkJoules = 0.0;
         Active = first != null && second != null;
     }
 
@@ -114,7 +113,8 @@ class ImpactContactState : Object
         LastUpdatedTick = currentTick;
 
         if (FirstActor == null || SecondActor == null
-            || FirstActor.health <= 0 || SecondActor.health <= 0)
+            || (FirstActor.health<=0 && (FirstActor.bShootable || FirstActor.bCorpse))
+            || (SecondActor.health<=0 && (SecondActor.bShootable || SecondActor.bCorpse)))
         {
             Active = false;
             return;
@@ -152,7 +152,8 @@ class ImpactContactState : Object
         int currentTick,
         double closingSpeed,
         double impulse,
-        int crushIntervalTics
+        int crushIntervalTics,
+        double workJoules=0
     )
     {
         if (LastSustainedTick == currentTick)
@@ -162,6 +163,7 @@ class ImpactContactState : Object
             return false;
         }
         LastSustainedTick = currentTick;
+        PendingWorkJoules += Max(0.0,workJoules);
         SustainedTics++;
         LastClosingSpeed = Max(0.0, closingSpeed);
         LastTransmittedImpulse = Max(0.0, impulse);
@@ -172,6 +174,13 @@ class ImpactContactState : Object
 
 class ImpactPhysics
 {
+    // Masas en kg, cierre en m/s. otherMass <= 0 representa el límite anclado.
+    static double ReceivedEnergySI(double selfMass, double otherMass, double closingSI)
+    {
+        if (selfMass<=0 || closingSI<=0) return 0;
+        double reducedMass=otherMass>0 ? selfMass/(1.0+selfMass/otherMass) : selfMass;
+        return 0.5*reducedMass*closingSI*closingSI;
+    }
     static double SanitizeMass(double mass)
     {
         return Max(0.0001, mass);
@@ -181,6 +190,9 @@ class ImpactPhysics
     {
         return Max(0.0001, height);
     }
+
+    static Vector3 Normalize(Vector3 value)
+    { double length=value.Length(); return length>0 ? value/length : (0,0,0); }
 
     static Vector3 NormalizeHorizontal(Vector3 value)
     {
@@ -203,22 +215,6 @@ class ImpactPhysics
         return referenceDistance / deltaSpeed;
     }
 
-    static double EnergyPercent(double equivalentTics)
-    {
-        double threshold = 35.0;
-        if (equivalentTics >= threshold) { return 0.0; }
-
-        double safeTics = Max(0.0001, equivalentTics);
-        double speedRatio = threshold / safeTics;
-        double energyRatio = speedRatio * speedRatio;
-        double referenceEnergy = threshold * threshold;
-        return Max(
-            0.0,
-            100.0 * (energyRatio - 1.0)
-                / (referenceEnergy - 1.0)
-        );
-    }
-
     static void ResolveBodies(
         ImpactBody sourceBody,
         ImpactBody targetBody,
@@ -230,8 +226,8 @@ class ImpactPhysics
         result.Reset();
         if (sourceBody == null || targetBody == null) { return; }
 
-        Vector3 normal = NormalizeHorizontal(collisionNormal);
-        if (Abs(normal.X) <= 0.0001 && Abs(normal.Y) <= 0.0001)
+        Vector3 normal = Normalize(collisionNormal);
+        if (normal.LengthSquared() <= 0.0)
         {
             return;
         }
@@ -241,7 +237,8 @@ class ImpactPhysics
         double relativeY =
             sourceBody.Velocity.Y - targetBody.Velocity.Y;
         double closingSpeed =
-            relativeX * normal.X + relativeY * normal.Y;
+            relativeX * normal.X + relativeY * normal.Y
+                + (sourceBody.Velocity.Z-targetBody.Velocity.Z)*normal.Z;
         if (closingSpeed <= 0.0) { return; }
 
         double sourceMass = SanitizeMass(sourceBody.Mass);
@@ -270,10 +267,6 @@ class ImpactPhysics
         result.TargetEquivalentTics = EquivalentTics(
             targetBody.Height, result.TargetDeltaSpeed
         );
-        result.SourceEnergyPercent =
-            EnergyPercent(result.SourceEquivalentTics);
-        result.TargetEnergyPercent =
-            EnergyPercent(result.TargetEquivalentTics);
 
         // Neutral geometric contact interval from vertical cylinder overlap.
         double sourceBottom = sourceBody.Position.Z;
@@ -301,6 +294,11 @@ class ImpactPhysics
                 0.0, 1.0
             );
         }
+        if (Abs(normal.Z)>Max(Abs(normal.X),Abs(normal.Y)))
+        {
+            result.SourceContactMinimumHeightRatio=result.SourceContactMaximumHeightRatio=normal.Z<0 ? 0 : 1;
+            result.TargetContactMinimumHeightRatio=result.TargetContactMaximumHeightRatio=normal.Z<0 ? 1 : 0;
+        }
     }
 
     static void ResolveStatic(
@@ -314,15 +312,15 @@ class ImpactPhysics
         result.StaticTarget = true;
         if (sourceBody == null) { return; }
 
-        Vector3 normal = NormalizeHorizontal(surfaceNormal);
-        if (Abs(normal.X) <= 0.0001 && Abs(normal.Y) <= 0.0001)
+        Vector3 normal = Normalize(surfaceNormal);
+        if (normal.LengthSquared() <= 0.0)
         {
             return;
         }
 
-        double closingSpeed = Abs(
+        double closingSpeed = Max(0.0,
             sourceBody.Velocity.X * normal.X
-                + sourceBody.Velocity.Y * normal.Y
+                + sourceBody.Velocity.Y * normal.Y + sourceBody.Velocity.Z * normal.Z
         );
         if (closingSpeed <= 0.0001) { return; }
 
@@ -336,9 +334,6 @@ class ImpactPhysics
             sourceBody.Height, closingSpeed
         );
         result.TargetEquivalentTics = 1.0e9;
-        result.SourceEnergyPercent =
-            EnergyPercent(result.SourceEquivalentTics);
-        result.TargetEnergyPercent = 0.0;
     }
 
     // Contacto vertical descendente. Mantiene intacta la API horizontal y
@@ -361,8 +356,6 @@ class ImpactPhysics
         result.TargetDeltaSpeed = result.Impulse/targetMass;
         result.SourceEquivalentTics = EquivalentTics(sourceBody.Height, result.SourceDeltaSpeed);
         result.TargetEquivalentTics = EquivalentTics(targetBody.Height, result.TargetDeltaSpeed);
-        result.SourceEnergyPercent = EnergyPercent(result.SourceEquivalentTics);
-        result.TargetEnergyPercent = EnergyPercent(result.TargetEquivalentTics);
         result.SourceContactMinimumHeightRatio = 0;
         result.SourceContactMaximumHeightRatio = 0;
         result.TargetContactMinimumHeightRatio = 1;

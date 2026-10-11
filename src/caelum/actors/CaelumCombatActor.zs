@@ -1776,13 +1776,7 @@ class CaelumCombatActor : Actor
         return Max(1.0, Height);
     }
 
-    double GetImpactToughnessMultiplier(double incomingPercent = 100.0)
-    {
-        double toughness=CaelumToughnessRules.Effective(self);
-        double damage=GetImpactMaximumHealth()*Max(0.0,incomingPercent)/100.0;
-        return CaelumToughnessRules.RetainedFraction(damage,
-            CaelumToughnessRules.AfterDefenses(damage,CaelumToughnessRules.NaturalMass(self),toughness));
-    }
+
 
     virtual int GetArmorRace() { return CaelumConstants.RACE_HUMAN; }
 
@@ -1843,68 +1837,31 @@ class CaelumCombatActor : Actor
         );
     }
 
-    double CalculateImpactDamagePercent(double equivalentTics)
+    transient CaelumImpactArea CurrentImpactArea;
+    double LastImpactReceivedJoules;
+    double LastImpactCushionedJoules;
+
+    CaelumImpactArea PrepareImpactArea(Actor sourceActor, double minimumHeight,
+        double maximumHeight, Vector3 normal=(0,0,0))
     {
-        return ImpactPhysics.EnergyPercent(equivalentTics);
+        if (AnatomyProfile==null)
+        {
+            AnatomyProfile=new("CaelumAnatomyProfile");
+            AnatomyProfile.InitializeHumanoid();
+        }
+        let area=new("CaelumImpactArea");
+        area.Build(self,sourceActor,AnatomyProfile,minimumHeight,maximumHeight,normal);
+        return area;
     }
 
-    double GetImpactRegionOverlap(
-        int regionIndex,
-        double minimumHeightRatio,
-        double maximumHeightRatio
-    )
+    double GetImpactRegionOverlap(int regionIndex, double minimumHeightRatio, double maximumHeightRatio)
     {
-        if (AnatomyProfile == null
-            || regionIndex < 0
-            || regionIndex >= AnatomyProfile.RegionCount)
-        {
-            return 0.0;
-        }
-
-        double minimumContact = Clamp(minimumHeightRatio, 0.0, 1.0);
-        double maximumContact = Clamp(maximumHeightRatio, 0.0, 1.0);
-        if (maximumContact < minimumContact)
-        {
-            double swap = minimumContact;
-            minimumContact = maximumContact;
-            maximumContact = swap;
-        }
-        if (maximumContact - minimumContact <= 0.0001)
-        {
-            int pointRegion = AnatomyProfile.FindRegion(minimumContact, 0.0);
-            return pointRegion == regionIndex ? 1.0 : 0.0;
-        }
-
-        double overlapMinimum = Max(
-            minimumContact,
-            AnatomyProfile.RegionMinimumHeight[regionIndex]
-        );
-        double overlapMaximum = Min(
-            maximumContact,
-            AnatomyProfile.RegionMaximumHeight[regionIndex]
-        );
-        return Max(0.0, overlapMaximum - overlapMinimum);
+        return CurrentImpactArea!=null && regionIndex>=0 && regionIndex<16
+            ? CurrentImpactArea.RegionArea[regionIndex] : 0;
     }
 
-    double GetImpactRegionTotalOverlap(
-        double minimumHeightRatio,
-        double maximumHeightRatio
-    )
-    {
-        if (AnatomyProfile == null) { return 0.0; }
-        double total = 0.0;
-        for (int regionIndex = 0;
-            regionIndex < AnatomyProfile.RegionCount;
-            regionIndex++)
-        {
-            total += GetImpactRegionOverlap(
-                regionIndex,
-                minimumHeightRatio,
-                maximumHeightRatio
-            );
-        }
-        return total;
-    }
+    double GetImpactRegionTotalOverlap(double minimumHeightRatio, double maximumHeightRatio)
+    { return CurrentImpactArea!=null ? CurrentImpactArea.TotalArea : 0; }
 
     void ApplyWeightedImpactLucidity(
         double minimumHeightRatio,
@@ -1973,17 +1930,23 @@ class CaelumCombatActor : Actor
         double closingSpeed,
         double impulse,
         double contactMinimumHeightRatio,
-        double contactMaximumHeightRatio
+        double contactMaximumHeightRatio,
+        bool stationarySceneryContact = false,
+        double receivedJoules = -1,
+        CaelumImpactArea preparedArea = null,
+        Vector3 contactNormal = (0,0,0),
+        double cushionedJoules = -1
     )
     {
         // Procedencia explícita: una roca del mecanismo es daño ambiental.
-        if (CaelumHazardRock(sourceActor) != null)
+        if (CaelumHazardRock(sourceActor) != null && impactKind != CaelumConstants.IMPACT_KIND_FLOOR)
             impactKind = CaelumConstants.IMPACT_KIND_ENVIRONMENT;
         LastImpactKind = impactKind;
         LastImpactRawDeltaSpeed = Max(0.0, deltaSpeed);
         LastImpactBiologicalAbsorptionSpeed = 0.0;
         LastImpactDeltaSpeed = LastImpactRawDeltaSpeed;
-        if (impactKind == CaelumConstants.IMPACT_KIND_CRUSH)
+        if (impactKind == CaelumConstants.IMPACT_KIND_CRUSH
+            || impactKind == CaelumConstants.IMPACT_KIND_FLOOR)
         {
             LastImpactBiologicalAbsorptionSpeed = Min(
                 LastImpactRawDeltaSpeed,
@@ -1994,11 +1957,17 @@ class CaelumCombatActor : Actor
                 LastImpactRawDeltaSpeed - LastImpactBiologicalAbsorptionSpeed
             );
         }
-        LastImpactEquivalentTics =
-            CalculateImpactEquivalentTics(LastImpactDeltaSpeed);
-        LastImpactDamagePercent =
-            CalculateImpactDamagePercent(LastImpactEquivalentTics
-                *(impactKind==CaelumConstants.IMPACT_KIND_FLOOR ? Sqrt(CaelumPhysicsUnits.GRAVITY_RATIO) : 1.0));
+        LastImpactEquivalentTics = CalculateImpactEquivalentTics(LastImpactDeltaSpeed);
+        LastImpactReceivedJoules = receivedJoules>=0 ? receivedJoules
+            : CaelumImpactEnergy.Received(selfEffectiveMass,otherEffectiveMass,closingSpeed);
+        double retainedSpeed = LastImpactRawDeltaSpeed>0 ? LastImpactDeltaSpeed/LastImpactRawDeltaSpeed : 1;
+        LastImpactCushionedJoules = cushionedJoules>=0 ? cushionedJoules
+            : LastImpactReceivedJoules*retainedSpeed*retainedSpeed;
+        // Porcentajes sólo de diagnóstico: nunca determinan el daño.
+        LastImpactDamagePercent = 100.0*LastImpactCushionedJoules/GetImpactMaximumHealth();
+        Actor defenseSource = CaelumImpactEnergy.DefenseInflictor(sourceActor);
+        CurrentImpactArea = preparedArea!=null ? preparedArea
+            : PrepareImpactArea(sourceActor,contactMinimumHeightRatio,contactMaximumHeightRatio,contactNormal);
         LastImpactEffectiveMass = selfEffectiveMass;
         LastImpactOtherEffectiveMass = otherEffectiveMass;
         LastImpactClosingSpeed = closingSpeed;
@@ -2009,7 +1978,8 @@ class CaelumCombatActor : Actor
         double impactToughness=CaelumToughnessRules.Effective(self);
         LastImpactToughnessPercent = 100.0*CaelumToughnessRules.Reduction(CaelumToughnessRules.NaturalMass(self),impactToughness)/GetImpactMaximumHealth();
         LastImpactArmorDefensePercent = 0.0;
-        LastImpactWeightedVulnerabilityMultiplier = 0.0;
+        LastImpactWeightedVulnerabilityMultiplier = CurrentImpactArea.TotalArea>0
+            ? CurrentImpactArea.NeutralArea/CurrentImpactArea.TotalArea : 0.0;
         LastImpactWeightedArmorDefensePercent = 0.0;
         LastImpactHeadContactWeight = 0.0;
         LastImpactLucidityLoss = 0.0;
@@ -2018,14 +1988,12 @@ class CaelumCombatActor : Actor
         LastImpactContactMaximumHeightRatio =
             Clamp(contactMaximumHeightRatio, 0.0, 1.0);
 
-        if (LastImpactDamagePercent <= 0.0 || health <= 0)
+        if (LastImpactCushionedJoules <= 0.0 || health <= 0)
         {
             return;
         }
 
-        double surfacedDamagePercent =
-            LastImpactDamagePercent
-                * Max(0.0, sourceSurfaceMultiplier);
+        double surfacedJoules=LastImpactCushionedJoules*Max(0.0,sourceSurfaceMultiplier);
         LastImpactPostToughnessPercent = 0.0;
 
         if (AnatomyProfile == null)
@@ -2038,7 +2006,9 @@ class CaelumCombatActor : Actor
             LastImpactContactMinimumHeightRatio,
             LastImpactContactMaximumHeightRatio
         );
-        double weightedFinalPercent = 0.0;
+        double innateDefense=Clamp(GetInnateArmorDefense()/100.0,0.0,1.0);
+        double wearBySlot[4];
+        double weightedFinalDamage = totalOverlap>0 ? surfacedJoules*CurrentImpactArea.NeutralArea/totalOverlap*(1-innateDefense) : 0.0;
         if (totalOverlap > 0.0)
         {
             for (int regionIndex = 0;
@@ -2063,28 +2033,28 @@ class CaelumCombatActor : Actor
                 );
                 double vulnerabilityMultiplier =
                     GetActorVulnerabilityMultiplier(effectiveGrade);
-                double defenseRatio = Clamp(GetArmorDefensePercent(slot,false,sourceActor) / 100.0, 0.0, 1.0);
+                double defenseRatio = Clamp(GetArmorDefensePercent(slot,false,defenseSource) / 100.0, 0.0, 1.0);
 
                 LastImpactWeightedVulnerabilityMultiplier +=
                     weight * vulnerabilityMultiplier;
                 LastImpactWeightedArmorDefensePercent +=
                     weight * defenseRatio * 100.0;
-                weightedFinalPercent +=
-                    surfacedDamagePercent
+                weightedFinalDamage +=
+                    surfacedJoules
                     * weight
                     * vulnerabilityMultiplier
                     * (1.0 - defenseRatio);
                 if(CombatArmor!=null && CombatArmor.Durability[slot]>0)
                 {
-                    double absorbed=GetImpactMaximumHealth()*surfacedDamagePercent/100.0
-                        *weight*vulnerabilityMultiplier*CaelumArmorRules.EquippedDefense(CombatArmor,slot,false,self,sourceActor)/100.0;
-                    CaelumToughnessRules.ImpactWear(CombatArmor,slot,absorbed);
+                    wearBySlot[slot]+=surfacedJoules*weight*vulnerabilityMultiplier
+                        *CaelumArmorRules.EquippedDefense(CombatArmor,slot,false,self,defenseSource)/100.0;
                 }
             }
         }
         else
         {
-            weightedFinalPercent = surfacedDamagePercent;
+            weightedFinalDamage = surfacedJoules*(1-innateDefense);
+            LastImpactWeightedArmorDefensePercent=100*innateDefense;
             LastImpactWeightedVulnerabilityMultiplier = 1.0;
         }
 
@@ -2093,12 +2063,11 @@ class CaelumCombatActor : Actor
         LastImpactBaseDamage = Max(
             0,
             int(
-                GetImpactMaximumHealth()
-                * surfacedDamagePercent / 100.0
+                surfacedJoules
                 + 0.5
             )
         );
-        double postArmor=GetImpactMaximumHealth()*weightedFinalPercent/100.0;
+        double postArmor=weightedFinalDamage;
         double postToughness=CaelumToughnessRules.AfterDefenses(
             postArmor,CaelumToughnessRules.NaturalMass(self),impactToughness);
         LastImpactToughnessMultiplier=CaelumToughnessRules.RetainedFraction(postArmor,postToughness);
@@ -2110,8 +2079,15 @@ class CaelumCombatActor : Actor
             ApplyWeightedImpactLucidity(
                 LastImpactContactMinimumHeightRatio,
                 LastImpactContactMaximumHeightRatio,
-                totalOverlap,sourceActor
+                totalOverlap,defenseSource
             );
+        }
+        // Desgaste posterior al cálculo completo y a la lucidez del mismo golpe.
+        bool armorPieceBroken=false;
+        for (int slot=0;slot<CaelumConstants.ARMOR_SLOT_COUNT;slot++)
+        {
+            int loss=CaelumToughnessRules.ImpactWear(CombatArmor,slot,wearBySlot[slot]);
+            if (loss>0 && CombatArmor.Durability[slot]<=0) armorPieceBroken=true;
         }
         if (LastImpactFinalDamage <= 0) { return; }
 
@@ -2121,7 +2097,7 @@ class CaelumCombatActor : Actor
             impactSource = self;
         }
         // El núcleo ya resolvió el impulso; el daño no añade empuje de Doom.
-        int impactFlags = DMG_NO_ARMOR;
+        int impactFlags = DMG_NO_ARMOR | DMG_THRUSTLESS;
         if (impactKind == CaelumConstants.IMPACT_KIND_ENVIRONMENT)
             impactFlags |= DMG_THRUSTLESS;
         DamageMobj(
@@ -2337,6 +2313,13 @@ class CaelumCombatActor : Actor
             );
             if (!contact.Active)
             {
+                Actor peer=contact.FirstActor==self ? contact.SecondActor : contact.FirstActor;
+                if (peer!=null && contact.PendingWorkJoules>0)
+                {
+                    Vector3 normal=ImpactPhysics.NormalizeHorizontal(peer.Pos-Pos);
+                    if (normal.LengthSquared()==0) normal=(1,0,0);
+                    ApplySustainedCrush(peer,normal.X,normal.Y,contact);
+                }
                 ImpactContacts.Delete(index);
                 ImpactDiagnosticContactsRemoved++;
             }
@@ -2395,11 +2378,13 @@ class CaelumCombatActor : Actor
         Vel.Y -= normalY * selfDeltaSpeed;
         other.Vel.X += normalX * otherDeltaSpeed;
         other.Vel.Y += normalY * otherDeltaSpeed;
+        CaelumImpactEnergy.AddWork(contact,CaelumImpactEnergy.Work(impulse,closingSpeed),impulse);
         bool applyCrush = contact.RegisterSustainedTransfer(
             level.time,
             closingSpeed,
             impulse,
-            CaelumConstants.IMPACT_CRUSH_INTERVAL_TICS
+            CaelumConstants.IMPACT_CRUSH_INTERVAL_TICS,
+            CaelumImpactEnergy.Work(impulse,closingSpeed)
         );
         if (applyCrush)
         {
@@ -2407,81 +2392,8 @@ class CaelumCombatActor : Actor
         }
     }
 
-    void ApplySustainedCrush(
-        Actor other,
-        double normalX,
-        double normalY,
-        ImpactContactState contact
-    )
-    {
-        if (other == null || contact == null
-            || contact.LastTransmittedImpulse <= 0.0001)
-        {
-            return;
-        }
-
-        ImpactBody sourceBody = BuildImpactPhysicsBody();
-        ImpactBody targetBody = BuildOtherImpactPhysicsBody(other);
-        ImpactResult crushResult = GetImpactResultScratch();
-        if (sourceBody == null || targetBody == null || crushResult == null)
-        {
-            return;
-        }
-
-        // Reconstruye la velocidad de cierre equivalente al impulso realmente
-        // transmitido durante el intervalo. ResolveBodies conserva geometria,
-        // masa efectiva y las mismas reglas universales de trauma.
-        double equivalentClosingSpeed = contact.LastTransmittedImpulse
-            * (1.0 / sourceBody.Mass + 1.0 / targetBody.Mass);
-        sourceBody.Velocity = (
-            normalX * equivalentClosingSpeed,
-            normalY * equivalentClosingSpeed,
-            0.0
-        );
-        targetBody.Velocity = (0.0, 0.0, 0.0);
-        ImpactPhysics.ResolveBodies(
-            sourceBody,
-            targetBody,
-            (normalX, normalY, 0.0),
-            crushResult
-        );
-        if (!crushResult.Valid) { return; }
-
-        CaelumPlayer otherPlayer = CaelumPlayer(other);
-        if (otherPlayer != null)
-        {
-            otherPlayer.ReceiveCaelumImpact(
-                crushResult.TargetDeltaSpeed,
-                CaelumConstants.IMPACT_KIND_CRUSH,
-                self,
-                CollisionDamageMultiplier,
-                targetBody.Mass,
-                sourceBody.Mass,
-                crushResult.ClosingSpeed,
-                crushResult.Impulse,
-                crushResult.TargetContactMinimumHeightRatio,
-                crushResult.TargetContactMaximumHeightRatio
-            );
-            return;
-        }
-
-        CaelumCombatActor otherActor = CaelumCombatActor(other);
-        if (otherActor != null)
-        {
-            otherActor.ReceiveCaelumImpact(
-                crushResult.TargetDeltaSpeed,
-                CaelumConstants.IMPACT_KIND_CRUSH,
-                self,
-                CollisionDamageMultiplier,
-                targetBody.Mass,
-                sourceBody.Mass,
-                crushResult.ClosingSpeed,
-                crushResult.Impulse,
-                crushResult.TargetContactMinimumHeightRatio,
-                crushResult.TargetContactMaximumHeightRatio
-            );
-        }
-    }
+    void ApplySustainedCrush(Actor other, double normalX, double normalY, ImpactContactState contact)
+    { CaelumImpactEnergy.ConsumeWork(contact); }
 
     ImpactBody BuildImpactPhysicsBody()
     {
@@ -2492,7 +2404,7 @@ class CaelumCombatActor : Actor
         ImpactBody body = ImpactSelfBodyScratch;
         if (body == null) { return null; }
         body.Mass = Max(1.0, GetCollisionEffectiveMass());
-        body.Height = GetImpactReferenceHeight();
+        body.Height = Max(0.0001,Height);
         body.Position = Pos;
         body.Velocity = Vel;
         body.Restitution = CaelumConstants.IMPACT_RESTITUTION;
@@ -2509,7 +2421,7 @@ class CaelumCombatActor : Actor
         ImpactBody body = ImpactOtherBodyScratch;
         if (body == null) { return null; }
         body.Mass = Max(1.0, GetOtherCollisionEffectiveMass(other));
-        body.Height = GetOtherImpactReferenceHeight(other);
+        body.Height = Max(0.0001,other.Height);
         body.Position = (0.0, 0.0, 0.0);
         body.Velocity = (0.0, 0.0, 0.0);
         if (other != null)
@@ -2536,7 +2448,7 @@ class CaelumCombatActor : Actor
     // convierten en un límite estático para la resolución cinemática.
     void ResolveRootedEnvironmentImpact(CaelumEnvironmentProp environment)
     {
-        if (environment == null || environment.health <= 0) { return; }
+        if (environment == null || !environment.bSolid) { return; }
 
         ImpactContactState contactState = GetImpactContactState(environment);
         if (contactState != null)
@@ -2614,17 +2526,25 @@ class CaelumCombatActor : Actor
             environment,
             environment.GetEnvironmentImpactMultiplier(),
             selfBody.Mass,
-            environment.GetEnvironmentMassKg(),
+            0.0,
             impact.ClosingSpeed,
             impact.Impulse,
             contactMinimum,
-            contactMaximum
+            contactMaximum, true, -1, null, impact.Normal
         );
+            CaelumImpactEnergy.Deliver(environment,self,0,CaelumConstants.IMPACT_KIND_ENVIRONMENT,
+            CollisionDamageMultiplier,environment.GetEnvironmentMassKg(),selfBody.Mass,
+            impact.ClosingSpeed,impact.Impulse,0,1,
+            CaelumImpactEnergy.Received(selfBody.Mass,0,impact.ClosingSpeed));
     }
 
     override void CollidedWith(Actor other, bool passive)
     {
         Super.CollidedWith(other, passive);
+
+        // Las caras que sólo se tocan verticalmente pertenecen al aterrizaje.
+        if (other!=null && (Pos.Z>=other.Pos.Z+other.Height-0.001
+            || other.Pos.Z>=Pos.Z+Height-0.001)) return;
 
         // El apoyo desde arriba tiene su propio contacto vertical, una sola vez.
         let hazard = CaelumHazardRock(other);
@@ -2632,14 +2552,11 @@ class CaelumCombatActor : Actor
 
         CaelumCombatActor otherCombatActor = CaelumCombatActor(other);
         CaelumEnvironmentProp environment = CaelumEnvironmentProp(other);
-        bool resolvePassiveRock = environment != null
-            && environment.IsEnvironmentMovable();
-        if ((passive && !resolvePassiveRock)
-            || DisableCaelumImpactContacts
+        if (DisableCaelumImpactContacts
             || (otherCombatActor != null
                 && otherCombatActor.DisableCaelumImpactContacts)
             || other == null || other == self
-            || health <= 0 || other.health <= 0
+            || health <= 0 || (other.health<=0 && (environment==null || other.bShootable))
             || (CaelumPlayer(other) == null
                 && CaelumCombatActor(other) == null
                 && CaelumTrainingDummy(other) == null
@@ -2720,28 +2637,8 @@ class CaelumCombatActor : Actor
         other.Vel.X += impact.Normal.X * impact.TargetDeltaSpeed;
         other.Vel.Y += impact.Normal.Y * impact.TargetDeltaSpeed;
 
-        ReceiveCaelumImpact(
-            impact.SourceDeltaSpeed,
-            CaelumConstants.IMPACT_KIND_ACTOR,
-            other,
-            otherBody.SurfaceMultiplier,
-            selfBody.Mass,
-            otherBody.Mass,
-            impact.ClosingSpeed,
-            impact.Impulse,
-            impact.SourceContactMinimumHeightRatio,
-            impact.SourceContactMaximumHeightRatio
-        );
-        DeliverImpactToOther(
-            other,
-            impact.TargetDeltaSpeed,
-            selfBody.Mass,
-            otherBody.Mass,
-            impact.ClosingSpeed,
-            impact.Impulse,
-            impact.TargetContactMinimumHeightRatio,
-            impact.TargetContactMaximumHeightRatio
-        );
+        CaelumImpactEnergy.Pair(self,other,selfBody,otherBody,impact,
+            CaelumConstants.IMPACT_KIND_ACTOR);
     }
 
     void RegisterStaticImpactFromVelocityLoss(
@@ -2811,21 +2708,17 @@ class CaelumCombatActor : Actor
             impact.ClosingSpeed,
             impact.Impulse,
             0.0,
-            1.0
+            1.0, false, -1, null, normal
         );
     }
 
     void RegisterWorldImpact(double deltaSpeed, int impactKind)
     {
+        if (impactKind==CaelumConstants.IMPACT_KIND_FLOOR
+            && CaelumImpactEnergy.BodyLanding(self,deltaSpeed)) return;
         double effectiveDeltaSpeed = Max(0.0, deltaSpeed);
         LastImpactRawDeltaSpeed = effectiveDeltaSpeed;
         LastImpactBiologicalAbsorptionSpeed = 0.0;
-
-        if (impactKind == CaelumConstants.IMPACT_KIND_FLOOR)
-        {
-            effectiveDeltaSpeed =
-                ApplyBiologicalLandingAbsorption(effectiveDeltaSpeed);
-        }
 
         ReceiveCaelumImpact(
             effectiveDeltaSpeed,
@@ -2865,14 +2758,14 @@ class CaelumCombatActor : Actor
         CaelumBolas.FireAttack(self,inflictor,mod);
         if (damage > 0 && ForcedSleepTics > 0)
         { ForcedSleepTics = 0; tics = Max(1, SleepSavedTics); }
-        if (mod == 'CaelumImpact' || mod == 'Crush' || mod == 'CaelumWeight'
+        if (mod == 'CaelumImpact' || mod == 'Crush' || mod == 'CaelumWeight' || mod == 'CaelumPressure'
             || CaelumToughnessRules.IsSustained(mod))
         {
-            // La misma unidad porcentual para jugadores y NPC. Los impactos
-            // cinemáticos ya están calculados y no se convierten otra vez.
+            // Los impactos y la presión ya están resueltos; el techo convierte
+            // trabajo a HP una sola vez, sin depender de la vida máxima.
             double preToughnessDamage=damage;
             if (mod == 'Crush' && inflictor == null && source == null)
-                preToughnessDamage = CaelumCrushingDamage.FromNativePercent(GetImpactMaximumHealth(), damage);
+                preToughnessDamage = damage>=CaelumCrushingDamage.NATIVE_TELEFRAG_THRESHOLD ? damage : CaelumCrushingDamage.NativeWork(self);
             if((mod=='Crush' && damage<CaelumCrushingDamage.NATIVE_TELEFRAG_THRESHOLD) || mod=='CaelumWeight')
                 damage=Max(0,int(CaelumToughnessRules.Apply(self,preToughnessDamage)+0.5));
             if(CaelumToughnessRules.IsSustained(mod))
@@ -3747,7 +3640,7 @@ class CaelumCombatActor : Actor
         }
         if (ElementalStatus != null) ElementalStatus.Tick(self);
 
-        bool groundedNow = Pos.Z <= FloorZ + 0.01;
+        bool groundedNow = bOnMobj || Pos.Z <= FloorZ + 0.01;
         if (!ImpactGroundTrackingInitialized)
         {
             ImpactWasGroundedLastTick = groundedNow;

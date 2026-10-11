@@ -1,6 +1,13 @@
 # Caelum Argenteum — Audio and art
 
-Documentation version: **5.2.10** — 2026-10-11.
+Documentation version: **5.2.11** — 2026-10-11.
+
+## 5.2.11 - Collision energy diagnostics (#194)
+
+No art, sound, map geometry, cannon mesh or attribution changes. Runtime
+diagnostics display received/cushioned joules and final HP. Native test sources
+and text evidence live in assets/validation_5211; generated test maps/packages,
+saves, the development IWAD and engine remain local build artifacts.
 
 ## 5.2.10 - Ranged descriptions and shotgun resource names (#192)
 

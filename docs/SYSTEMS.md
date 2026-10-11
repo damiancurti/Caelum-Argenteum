@@ -1,6 +1,127 @@
 # Caelum Argenteum — Current systems and rules
 
-Documentation version: **5.2.10** — 2026-10-11.
+Documentation version: **5.2.11** — 2026-10-11.
+
+## Collision energy and contact area - 5.2.11 / #194
+
+This contract supersedes the historical maximum-Health/EquivalentTics collision
+severity, percentage ceiling damage, resting-weight formula and cannon armor
+bypass described in earlier release sections. Momentum/restitution, collision
+detection and existing defense applicability remain separate from severity.
+The bull-specific rebalance belongs to #195; its existing charge mass is retained.
+
+Convert native MU/tic to m/s with 32 MU/m and 35 tics/s. For pre-contact normal
+closing speed `v = max(0, dot(v1-v2,n))` and collision masses in kg:
+
+    mu = m1*m2/(m1+m2)
+    E = 0.5*mu*v*v
+    rawDamageToEachEligibleBody = E joules = E HP
+
+Both bodies receive the SAME raw severity, not half each. This is the author's
+damage rule, not a claim of twice the physical energy dissipation. Swapping
+initiator or adding a common velocity offset leaves E unchanged. Tangential
+motion contributes no normal energy. Against fixed walls/floors, rooted scenery
+and anchored gates, use `mu = movingMass`. Gate material mass stays finite for
+structural Toughness. Restitution changes velocity response only. No extra x10,
+maximum-Health scaling or balance cap applies. Raw fractional values remain
+double precision through mitigation; final HP damage rounds once.
+
+Each receiver uses its own contact-area-weighted anatomy and regional armor:
+`sum(E_afterCushion * areaFraction * vulnerability * (1-armorFraction))`, followed
+by the #188 physical Toughness subtraction ONCE. Armor wear is computed from
+the same pre-wear regional defenses and committed after all regions. A shared
+piece covering several regions cannot break partway through the event and
+change the remaining regions' protection. Existing physical defense, innate
+defense, acrobatic buckler and lucidity rules retain their applicability.
+**Body contacts ignore offensive ideology. Cannonballs have no armor
+penetration**, per the author's final amendment: equipped armor absorbs normally.
+Their high energy and ordinary final Toughness mitigation remain unchanged.
+
+The deterministic geometry approximation is the receiver's dominant native
+collision-box face, clipped by the source's projected native bounds and actual
+height (including crouching). The finite polygon is transformed into the
+receiver's local forward/lateral/height coordinates and clipped to authored
+anatomical boxes. Physical polygon areas are measured in m², with authored
+region priority removing overlap before the next region. Humanoid lateral
+bands mirror; directional animals keep front/back orientation. Gate and ram
+proxies use the complete logical face, independent of which proxy fires first.
+Known floor/top contacts use horizontal faces; unknown/zero-area contacts use
+neutral vulnerability x1 and applicable innate defense, without a head critical.
+This is a box-face approximation, not a mesh/skin or deformable-body solver.
+
+Eligible biological cushioning reduces the recipient's assigned energy by
+`(retainedDeltaSpeed / rawDeltaSpeed)^2`. Landing subtracts the existing
+biological absorption speed once. Walking/running/crouching absorption remains
+limited to walls and previously stationary scenery; incoming cannonballs and
+rams receive no ordinary running/landing allowance. Existing active acrobatic
+defense stays separate. Collision mass includes existing load/charge modifiers;
+#188 biological Toughness continues to use natural body mass.
+
+Player/NPC contacts capture both masses and anatomical patches before damage
+to either body. Walls/scenery without health receive no HP damage; the living
+participant still does. Rams retain their explicit self-reaction HP exception;
+their target receives damage. Cannon disposal remains its spent-projectile
+lifecycle. Shared contact latches, gate strike serials and projectile spent
+state prevent duplicate passive/proxy/sweep callbacks. Save/load retains
+contacts and pending work; separation flushes outstanding work once.
+
+### Continuous pressure, static load and crushing ceilings
+
+Moving-body pressure accumulates `deltaE = 0.5 * impulseSI * closingSpeedSI`
+once per unique tic after the initial strike. Each sample captures recipient
+cushioning and contact-area distribution; energy-weighted regional fractions
+preserve earlier samples when contact changes. At the existing 35-tic interval
+(or separation), apply each receiver's accumulated energy, regional armor and
+final Toughness once. Resting contact alone adds no motion work. This is work
+from inelastic impulses, not replay of the initial strike each tic.
+
+The author also requires damage under an immobile supported load and delegated
+the internal compression parameter. Use slow virtual creep **0.1 mm/s** on
+`excessKg = max(0, supportedKg + ownLoadKg - carryingCapacityKg)`:
+`workPerSecond = excessKg * 9.81 * 0.0001` J. This explicit simulation
+approximation is not a universal empirical tissue constant; it causes no visible
+displacement. Preserve existing support/stack sharing, carrying-capacity and
+first-contact rules. Accumulate fractional work for 35 tics, or flush on release,
+then subtract Toughness once and round. As before, static weight and native
+ceiling pressure do not gain regional armor/shield coverage or Adrenaline.
+
+A crusher is a solid stone block spanning its footprint and original ceiling
+down to its final floor clearance, at existing density **2700 kg/m³**. Its force
+is mass times **9.81 m/s²**, without extra motor force. MAP08's four 64-MU panels
+form a 4 × 4 m footprint; 384 MU down to 8 MU gives 11.75 m thickness and
+**507600 kg**. The native motion speed and 8-MU clearance remain unchanged.
+At actual crushing callbacks, work is force times attempted descent since the
+last native pulse, even when GZDoom restores a blocked ceiling plane. First
+contact counts one tic, subsequent continuous pulses use elapsed tics; same-tic
+panel/callback repeats add zero. The old args[0] damage percentage is reserved
+and ignored. Unknown native crushers derive footprint/stroke from their native
+sector and ceiling thinker. Special native telefrag sentinels remain separate.
+
+Additive saved contact/work fields preserve active state. Weight EnergyRevision
+1 discards legacy percentage carry once; it cannot reinterpret it as joules.
+No actor class or state sequence is removed. Existing original save/package
+pairs remain the rollback baseline; native current-version save/load and a
+5.2.10-to-5.2.11 contact/weight migration are tested.
+
+### Reference values and evidence
+
+| Pre-defense contact | Raw joules / HP to each eligible body |
+| --- | ---: |
+| 200 kg vs 70 kg, 8 m/s relative normal | 1659.259259 |
+| 200 kg vs 70 kg, 16 m/s | 6637.037037 |
+| 200 kg vs 200 kg, 8 m/s | 3200 |
+| 70 kg vs 70 kg, 8 m/s | 1120 |
+| 200 kg vs anchored wall/gate, 8 m/s | 6400 |
+| 4.3 kg cannonball vs free 200 kg, 500 m/s | 526186.979931 |
+| Same cannonball vs anchored gate | 537500 |
+
+Common/reinforced/armored gates retain 10/20/30% structural absorption and
+finite-mass reductions 935/2015/5720 HP. A frontal 500 m/s cannon strike therefore
+causes 482815/427985/370530 final HP, with no armor penetration or new multiplier.
+The area fixture 75% at x1 plus 25% at x2 yields x1.25, or 125 before defenses
+from 100 J. Numeric, real native-motion, pressure and save/load evidence is in
+`assets/validation_5211/RESULTS.md`; the author accepted CA194-01 on 2026-10-11
+without qualifications. HISTORY records the confirmation and originating release.
 
 ## Personality, magical power and ranged penetration - 5.2.10 / #192
 
@@ -1046,7 +1167,7 @@ change. Ranged tiers still affect damage/critical chance, not spread category.
 | Crossbow (#192 amendment) | 40% / 50% / 60% |
 | Shotgun | 60% / 70% / 80% |
 | Carbine | 70% / 80% / 90% |
-| Cannon | 100% at every supported tier |
+| Cannon (#194) | 0%; normal armor absorption applies |
 
 Defense is innate racial defense plus equipped defense times the retained
 fraction. Toughness, armor reinforcement/vulnerability grades and shields
@@ -3316,7 +3437,7 @@ Explosions retain region sampling and per-region health rounding: each reached
 region applies its anatomy/critical first, then subtracts Toughness using the
 whole recipient maximum health. The diagnostic multiplier is the actual
 post/pre fraction for this hit (an aggregate for explosions), not a fixed stat.
-Kinematic impacts use `max(0, severityPercent*surface - R(effectiveToughness))`
+Historical pre-#188/#194 kinematic impacts used `max(0, severityPercent*surface - R(effectiveToughness))`
 after movement amortization, before weighted anatomy and final physical armor.
 The buckler/gauntlet acrobatic bonus doubles the effective attribute level before
 evaluating R: level 25 becomes level 50, giving 25.247525%, not twice R(25).
@@ -3504,6 +3625,8 @@ idempotent and never revokes owned cards. Keep the original pre-upgrade save
 for full rollback. WAD geometry and original actor state indexes are retained.
 
 ## 4.36.19 — Final siege impact balance (#21)
+
+Historical rule: superseded by the 5.2.11 / #194 energy contract above. Retained as provenance.
 
 Author-approved on 2026-09-27 after the numerical comparison: cannon muzzle
 speed is 500 m/s (457.142857143 MU/tic), inert projectile mass remains 4.3 kg,
@@ -3803,7 +3926,7 @@ sweeps hit that pool once, and one explosion uses its strongest blocker
 sample rather than summing samples. Gates have no humanoid anatomical weak
 points, armor layers, regeneration, loot or additional material multipliers.
 
-Physical siege impacts retain the separate canonical Impact Physics path:
+Historical pre-#194 physical siege impacts used the following path (superseded above):
 ResolveExternal uses moving-assembly mass, actual contact velocity in MU/tic
 and the contact normal. Damage is round(Hmax * max(0, E - D)/100), with neutral
 surface/contact factors. Type 4 is not applied again. The caller supplies a
@@ -4053,6 +4176,8 @@ equip stall is reported. Corrections #8/#9 are planned, not implemented here.
 
 ### Resting weight: approved and active formula
 
+Historical rule: superseded by the 5.2.11 / #194 energy contract above. Retained as provenance.
+
     exceso = max(0, (M_encima + M_carga) / C - 1)
     daño_por_segundo = H_max * 0.10 * exceso
 
@@ -4110,8 +4235,8 @@ Equipment: all four pieces of the four armor families, the 20 families of weapon
 essences for each of the four magical families), four shields, four necklaces and five
 seals, in T1/T2/T3. Size M, initial native durability. Each sector contains its tier.
 Supplies are in 24 pairs of five-unit stacks. Enemy profiles and equipment balance are
-unchanged. Rolling rocks use 32 MU/tic and existing physics; ceilings retain 10% of Hmax
-by native pulse and 8 MU/tic speed, each in its own sector.
+unchanged. Rolling rocks use 32 MU/tic. The historical 10%-Hmax ceiling
+severity is superseded by #194 work; native 8 MU/tic speed is retained.
 
 CaelumMazeChest retains five real Inventory instances. First Use opens; second removes
 by CallTryPickup. What does not fit remains in the chest. Its pointers, opening state
@@ -4143,6 +4268,8 @@ FP layers. It does not replace a human playthrough or validate Windows.
 ## History 4.36.0h — percentage ceiling, starting meal and weight proposal
 
 ### Native ceiling: implemented in source
+
+Historical rule: superseded by the 5.2.11 / #194 energy contract above. Retained as provenance.
 
 P_DoCrunch in GZDoom g4.14.2 calls damage with type Crush and null source/inflictor. It
 applies a pulse when (maptime & 3)==0, while crushing exists. CaelumPlayer and

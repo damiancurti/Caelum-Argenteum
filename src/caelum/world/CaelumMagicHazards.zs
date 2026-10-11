@@ -171,15 +171,15 @@ class CaelumCrusherTrap : CaelumPressureTrap
     Array<Sector> Panels;
     int StartedPanels;
     bool MovementFinished;
+    double CrushingMassKg;
 
-    // args[0]=% de vida máxima por pulso nativo en receptores Caelum;
-    // args[1]=MU/tic; args[2]=muestreo XY. El motor recibe args[0] sin escalar;
-    // cada receptor convierte una sola vez en DamageMobj, también al cargar.
+    // args[0] queda reservado; args[1]=MU/tic; args[2]=muestreo XY.
+    // La masa es el volumen completo entre techo inicial y final, en piedra.
     // 0 en args[2] mueve sólo el sector del actor; 32 selecciona los cuatro
     // paneles de 64 MU usados en MAP08. No toca sectores vecinos adicionales.
     bool Release()
     {
-        if (Spent || args[0] <= 0 || args[1] <= 0) return false;
+        if (Spent || args[1] <= 0) return false;
         Panels.Clear();
         for (int x = -1; x <= 1; x += 2)
             for (int y = -1; y <= 1; y += 2)
@@ -191,9 +191,18 @@ class CaelumCrusherTrap : CaelumPressureTrap
             }
         for (int i=0; i<Panels.Size(); i++)
             if (Panels[i].PlaneMoving(Sector.ceiling)) return false;
+        CrushingMassKg=0;
+        for (int i=0;i<Panels.Size();i++)
+        {
+            double travel=Panels[i].ceilingplane.ZatPoint(Pos.XY)
+                -Panels[i].floorplane.ZatPoint(Pos.XY)-CaelumPhysicsUnits.CRUSHER_CLEARANCE_MU;
+            CrushingMassKg+=CaelumCrushingDamage.SectorArea(Panels[i])
+                *CaelumPhysicsUnits.Meters(Max(0.0,travel))*CaelumPhysicsUnits.STONE_DENSITY_KG_M3;
+        }
         for (int i=0; i<Panels.Size(); i++)
             if (level.CreateCeiling(Panels[i], Ceiling.ceilCrushRaiseAndStay,
-                null, args[1], args[1], 8, args[0], 2, 0, Ceiling.crushDoom)) StartedPanels++;
+                null, args[1], args[1], CaelumPhysicsUnits.CRUSHER_CLEARANCE_MU,
+                1, 2, 0, Ceiling.crushDoom)) StartedPanels++;
         if (StartedPanels == 0) return false;
         Spent = true; ActivationCount++;
         A_StartSound("caelum/world/crusher", CHAN_BODY);

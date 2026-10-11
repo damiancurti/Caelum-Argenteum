@@ -6512,14 +6512,7 @@ class CaelumPlayer : DoomPlayer
         return Max(1.0, Height);
     }
 
-    double GetImpactToughnessMultiplier(double incomingPercent = 100.0)
-    {
-        double toughness=CaelumToughnessRules.Effective(self);
-        if(IsBucklerAcrobaticDefenseActive())toughness*=CaelumConstants.SHIELD_BUCKLER_IMPACT_TOUGHNESS_MULTIPLIER;
-        double damage=GetImpactMaximumHealth()*Max(0.0,incomingPercent)/100.0;
-        return CaelumToughnessRules.RetainedFraction(damage,
-            CaelumToughnessRules.AfterDefenses(damage,CaelumToughnessRules.NaturalMass(self),toughness));
-    }
+
 
     double GetArmorDefensePercent(int slot, bool magical = false,Actor inflictor=null,Actor source=null)
     {
@@ -6640,70 +6633,31 @@ class CaelumPlayer : DoomPlayer
         );
     }
 
-    double CalculateImpactDamagePercent(double equivalentTics)
+    transient CaelumImpactArea CurrentImpactArea;
+    double LastImpactReceivedJoules;
+    double LastImpactCushionedJoules;
+
+    CaelumImpactArea PrepareImpactArea(Actor sourceActor, double minimumHeight,
+        double maximumHeight, Vector3 normal=(0,0,0))
     {
-        return ImpactPhysics.EnergyPercent(equivalentTics);
+        if (AnatomyProfile==null)
+        {
+            AnatomyProfile=new("CaelumAnatomyProfile");
+            AnatomyProfile.InitializeHumanoid();
+        }
+        let area=new("CaelumImpactArea");
+        area.Build(self,sourceActor,AnatomyProfile,minimumHeight,maximumHeight,normal);
+        return area;
     }
 
-    double GetImpactRegionOverlap(
-        int regionIndex,
-        double minimumHeightRatio,
-        double maximumHeightRatio
-    )
+    double GetImpactRegionOverlap(int regionIndex, double minimumHeightRatio, double maximumHeightRatio)
     {
-        if (AnatomyProfile == null
-            || regionIndex < 0
-            || regionIndex >= AnatomyProfile.RegionCount)
-        {
-            return 0.0;
-        }
-
-        double minimumContact = Clamp(minimumHeightRatio, 0.0, 1.0);
-        double maximumContact = Clamp(maximumHeightRatio, 0.0, 1.0);
-        if (maximumContact < minimumContact)
-        {
-            double swap = minimumContact;
-            minimumContact = maximumContact;
-            maximumContact = swap;
-        }
-
-        // Point contact (floor, future point-like geometry).
-        if (maximumContact - minimumContact <= 0.0001)
-        {
-            int pointRegion = AnatomyProfile.FindRegion(minimumContact, 0.0);
-            return pointRegion == regionIndex ? 1.0 : 0.0;
-        }
-
-        double overlapMinimum = Max(
-            minimumContact,
-            AnatomyProfile.RegionMinimumHeight[regionIndex]
-        );
-        double overlapMaximum = Min(
-            maximumContact,
-            AnatomyProfile.RegionMaximumHeight[regionIndex]
-        );
-        return Max(0.0, overlapMaximum - overlapMinimum);
+        return CurrentImpactArea!=null && regionIndex>=0 && regionIndex<16
+            ? CurrentImpactArea.RegionArea[regionIndex] : 0;
     }
 
-    double GetImpactRegionTotalOverlap(
-        double minimumHeightRatio,
-        double maximumHeightRatio
-    )
-    {
-        if (AnatomyProfile == null) { return 0.0; }
-        double total = 0.0;
-        for (int regionIndex = 0;
-            regionIndex < AnatomyProfile.RegionCount;
-            regionIndex++)
-        {
-            total += GetImpactRegionOverlap(
-                regionIndex,
-                minimumHeightRatio,
-                maximumHeightRatio
-            );
-        }
-        return total;
-    }
+    double GetImpactRegionTotalOverlap(double minimumHeightRatio, double maximumHeightRatio)
+    { return CurrentImpactArea!=null ? CurrentImpactArea.TotalArea : 0; }
 
     void ApplyWeightedImpactLucidity(
         double minimumHeightRatio,
@@ -6780,12 +6734,16 @@ class CaelumPlayer : DoomPlayer
         double impulse,
         double contactMinimumHeightRatio,
         double contactMaximumHeightRatio,
-        bool stationarySceneryContact = false
+        bool stationarySceneryContact = false,
+        double receivedJoules = -1,
+        CaelumImpactArea preparedArea = null,
+        Vector3 contactNormal = (0,0,0),
+        double cushionedJoules = -1
     )
     {
         // El escenario y las rocas del mecanismo son daño ambiental, aunque
         // GZDoom los represente con actores: ni daño ni dolor dan adrenalina.
-        if (CaelumHazardRock(sourceActor) != null
+        if ((CaelumHazardRock(sourceActor) != null && impactKind != CaelumConstants.IMPACT_KIND_FLOOR)
             || (impactKind == CaelumConstants.IMPACT_KIND_ACTOR
                 && CaelumEnvironmentProp(sourceActor) != null))
             impactKind = CaelumConstants.IMPACT_KIND_ENVIRONMENT;
@@ -6793,7 +6751,8 @@ class CaelumPlayer : DoomPlayer
         LastImpactRawDeltaSpeed = Max(0.0, deltaSpeed);
         LastImpactBiologicalAbsorptionSpeed = 0.0;
         LastImpactDeltaSpeed = LastImpactRawDeltaSpeed;
-        if (impactKind == CaelumConstants.IMPACT_KIND_CRUSH)
+        if (impactKind == CaelumConstants.IMPACT_KIND_CRUSH
+            || impactKind == CaelumConstants.IMPACT_KIND_FLOOR)
         {
             LastImpactBiologicalAbsorptionSpeed = Min(
                 LastImpactRawDeltaSpeed,
@@ -6815,11 +6774,17 @@ class CaelumPlayer : DoomPlayer
                 LastImpactRawDeltaSpeed - LastImpactBiologicalAbsorptionSpeed
             );
         }
-        LastImpactEquivalentTics =
-            CalculateImpactEquivalentTics(LastImpactDeltaSpeed);
-        LastImpactDamagePercent =
-            CalculateImpactDamagePercent(LastImpactEquivalentTics
-                *(impactKind==CaelumConstants.IMPACT_KIND_FLOOR ? Sqrt(CaelumPhysicsUnits.GRAVITY_RATIO) : 1.0));
+        LastImpactEquivalentTics = CalculateImpactEquivalentTics(LastImpactDeltaSpeed);
+        LastImpactReceivedJoules = receivedJoules>=0 ? receivedJoules
+            : CaelumImpactEnergy.Received(selfEffectiveMass,otherEffectiveMass,closingSpeed);
+        double retainedSpeed = LastImpactRawDeltaSpeed>0 ? LastImpactDeltaSpeed/LastImpactRawDeltaSpeed : 1;
+        LastImpactCushionedJoules = cushionedJoules>=0 ? cushionedJoules
+            : LastImpactReceivedJoules*retainedSpeed*retainedSpeed;
+        // Porcentajes sólo de diagnóstico: nunca determinan el daño.
+        LastImpactDamagePercent = 100.0*LastImpactCushionedJoules/GetImpactMaximumHealth();
+        Actor defenseSource = CaelumImpactEnergy.DefenseInflictor(sourceActor);
+        CurrentImpactArea = preparedArea!=null ? preparedArea
+            : PrepareImpactArea(sourceActor,contactMinimumHeightRatio,contactMaximumHeightRatio,contactNormal);
         LastImpactEffectiveMass = selfEffectiveMass;
         LastImpactOtherEffectiveMass = otherEffectiveMass;
         LastImpactClosingSpeed = closingSpeed;
@@ -6842,7 +6807,8 @@ class CaelumPlayer : DoomPlayer
         }
         LastImpactToughnessPercent = 100.0*CaelumToughnessRules.Reduction(CaelumToughnessRules.NaturalMass(self),impactToughness)/GetImpactMaximumHealth();
         LastImpactArmorDefensePercent = 0.0;
-        LastImpactWeightedVulnerabilityMultiplier = 0.0;
+        LastImpactWeightedVulnerabilityMultiplier = CurrentImpactArea.TotalArea>0
+            ? CurrentImpactArea.NeutralArea/CurrentImpactArea.TotalArea : 0.0;
         LastImpactWeightedArmorDefensePercent = 0.0;
         LastImpactHeadContactWeight = 0.0;
         LastImpactLucidityLoss = 0.0;
@@ -6851,14 +6817,12 @@ class CaelumPlayer : DoomPlayer
         LastImpactContactMaximumHeightRatio =
             Clamp(contactMaximumHeightRatio, 0.0, 1.0);
 
-        if (LastImpactDamagePercent <= 0.0 || health <= 0)
+        if (LastImpactCushionedJoules <= 0.0 || health <= 0)
         {
             return;
         }
 
-        double surfaceMultiplier = Max(0.0, sourceSurfaceMultiplier);
-        double surfacedDamagePercent =
-            LastImpactDamagePercent * surfaceMultiplier;
+        double surfacedJoules=LastImpactCushionedJoules*Max(0.0,sourceSurfaceMultiplier);
         LastImpactPostToughnessPercent = 0.0;
 
         if (AnatomyProfile == null)
@@ -6871,8 +6835,9 @@ class CaelumPlayer : DoomPlayer
             LastImpactContactMinimumHeightRatio,
             LastImpactContactMaximumHeightRatio
         );
-        double weightedFinalPercent = 0.0;
-        bool armorPieceBroken=false;
+        double innateDefense=Clamp(CaelumArmorRules.InnateDefense(CharacterProfile!=null ? CharacterProfile.Race : CaelumConstants.RACE_HUMAN)/100.0,0.0,1.0);
+        double wearBySlot[4];
+        double weightedFinalDamage = totalOverlap>0 ? surfacedJoules*CurrentImpactArea.NeutralArea/totalOverlap*(1-innateDefense) : 0.0;
         if (totalOverlap > 0.0)
         {
             for (int regionIndex = 0;
@@ -6899,29 +6864,28 @@ class CaelumPlayer : DoomPlayer
                 );
                 double vulnerabilityMultiplier =
                     GetVulnerabilityMultiplier(effectiveGrade, false);
-                double defenseRatio = Clamp(GetArmorDefensePercent(slot,false,sourceActor) / 100.0, 0.0, 1.0);
+                double defenseRatio = Clamp(GetArmorDefensePercent(slot,false,defenseSource) / 100.0, 0.0, 1.0);
 
                 LastImpactWeightedVulnerabilityMultiplier +=
                     weight * vulnerabilityMultiplier;
                 LastImpactWeightedArmorDefensePercent +=
                     weight * defenseRatio * 100.0;
-                weightedFinalPercent +=
-                    surfacedDamagePercent
+                weightedFinalDamage +=
+                    surfacedJoules
                     * weight
                     * vulnerabilityMultiplier
                     * (1.0 - defenseRatio);
                 if(ArmorModel!=null && ArmorModel.Durability[slot]>0)
                 {
-                    double absorbed=GetImpactMaximumHealth()*surfacedDamagePercent/100.0
-                        *weight*vulnerabilityMultiplier*CaelumArmorRules.EquippedDefense(ArmorModel,slot,false,self,sourceActor)/100.0;
-                    int loss=CaelumToughnessRules.ImpactWear(ArmorModel,slot,absorbed,ArmorDurabilityDamageMultiplier);
-                    if(loss>0 && ArmorModel.Durability[slot]<=0)armorPieceBroken=true;
+                    wearBySlot[slot]+=surfacedJoules*weight*vulnerabilityMultiplier
+                        *CaelumArmorRules.EquippedDefense(ArmorModel,slot,false,self,defenseSource)/100.0;
                 }
             }
         }
         else
         {
-            weightedFinalPercent = surfacedDamagePercent;
+            weightedFinalDamage = surfacedJoules*(1-innateDefense);
+            LastImpactWeightedArmorDefensePercent=100*innateDefense;
             LastImpactWeightedVulnerabilityMultiplier = 1.0;
         }
 
@@ -6930,27 +6894,33 @@ class CaelumPlayer : DoomPlayer
         LastImpactBaseDamage = Max(
             0,
             int(
-                GetImpactMaximumHealth()
-                * surfacedDamagePercent / 100.0
+                surfacedJoules
                 + 0.5
             )
         );
-        double postArmor=GetImpactMaximumHealth()*weightedFinalPercent/100.0;
+        double postArmor=weightedFinalDamage;
         double postToughness=CaelumToughnessRules.AfterDefenses(
             postArmor,CaelumToughnessRules.NaturalMass(self),impactToughness);
         LastImpactToughnessMultiplier=CaelumToughnessRules.RetainedFraction(postArmor,postToughness);
         LastImpactPostToughnessPercent=100.0*postToughness/GetImpactMaximumHealth();
         LastImpactFinalDamage=Max(0,int(postToughness+0.5));
-        if(armorPieceBroken)ApplyCharacterProfile();
 
         if (LastImpactPostToughnessPercent > 0.0)
         {
             ApplyWeightedImpactLucidity(
                 LastImpactContactMinimumHeightRatio,
                 LastImpactContactMaximumHeightRatio,
-                totalOverlap,sourceActor
+                totalOverlap,defenseSource
             );
         }
+        // Desgaste posterior al cálculo completo y a la lucidez del mismo golpe.
+        bool armorPieceBroken=false;
+        for (int slot=0;slot<CaelumConstants.ARMOR_SLOT_COUNT;slot++)
+        {
+            int loss=CaelumToughnessRules.ImpactWear(ArmorModel,slot,wearBySlot[slot],ArmorDurabilityDamageMultiplier);
+            if (loss>0 && ArmorModel.Durability[slot]<=0) armorPieceBroken=true;
+        }
+        if (armorPieceBroken) ApplyCharacterProfile();
         if (LastImpactFinalDamage <= 0) { return; }
 
         Actor impactSource = sourceActor;
@@ -6959,7 +6929,7 @@ class CaelumPlayer : DoomPlayer
             impactSource = self;
         }
         // El núcleo ya resolvió el impulso; el daño no añade empuje de Doom.
-        int impactFlags = DMG_NO_ARMOR;
+        int impactFlags = DMG_NO_ARMOR | DMG_THRUSTLESS;
         if (impactKind == CaelumConstants.IMPACT_KIND_ENVIRONMENT)
             impactFlags |= DMG_THRUSTLESS;
         DamageMobj(
@@ -6978,7 +6948,7 @@ class CaelumPlayer : DoomPlayer
         CaelumEnvironmentProp environment = CaelumEnvironmentProp(other);
         return other != null
             && other != self
-            && other.health > 0
+            && (other.health>0 || (environment!=null && other.bSolid && !other.bShootable))
             && (combatActor == null
                 || !combatActor.DisableCaelumImpactContacts)
             && (CaelumPlayer(other) != null
@@ -7189,6 +7159,13 @@ class CaelumPlayer : DoomPlayer
             );
             if (!contact.Active)
             {
+                Actor peer=contact.FirstActor==self ? contact.SecondActor : contact.FirstActor;
+                if (peer!=null && contact.PendingWorkJoules>0)
+                {
+                    Vector3 normal=ImpactPhysics.NormalizeHorizontal(peer.Pos-Pos);
+                    if (normal.LengthSquared()==0) normal=(1,0,0);
+                    ApplySustainedCrush(peer,normal.X,normal.Y,contact);
+                }
                 ImpactContacts.Delete(index);
                 ImpactDiagnosticContactsRemoved++;
             }
@@ -7249,11 +7226,13 @@ class CaelumPlayer : DoomPlayer
         Vel.Y -= normalY * selfDeltaSpeed;
         other.Vel.X += normalX * otherDeltaSpeed;
         other.Vel.Y += normalY * otherDeltaSpeed;
+        CaelumImpactEnergy.AddWork(contact,CaelumImpactEnergy.Work(impulse,closingSpeed),impulse);
         bool applyCrush = contact.RegisterSustainedTransfer(
             level.time,
             closingSpeed,
             impulse,
-            CaelumConstants.IMPACT_CRUSH_INTERVAL_TICS
+            CaelumConstants.IMPACT_CRUSH_INTERVAL_TICS,
+            CaelumImpactEnergy.Work(impulse,closingSpeed)
         );
         if (applyCrush)
         {
@@ -7261,80 +7240,8 @@ class CaelumPlayer : DoomPlayer
         }
     }
 
-    void ApplySustainedCrush(
-        Actor other,
-        double normalX,
-        double normalY,
-        ImpactContactState contact
-    )
-    {
-        if (other == null || contact == null
-            || contact.LastTransmittedImpulse <= 0.0001)
-        {
-            return;
-        }
-
-        ImpactBody sourceBody = BuildImpactPhysicsBody();
-        ImpactBody targetBody = BuildOtherImpactPhysicsBody(other);
-        ImpactResult crushResult = GetImpactResultScratch();
-        if (sourceBody == null || targetBody == null || crushResult == null)
-        {
-            return;
-        }
-
-        // Convierte el impulso acumulado de presion a su velocidad de cierre
-        // equivalente, conservando masa, anatomia y la curva universal.
-        double equivalentClosingSpeed = contact.LastTransmittedImpulse
-            * (1.0 / sourceBody.Mass + 1.0 / targetBody.Mass);
-        sourceBody.Velocity = (
-            normalX * equivalentClosingSpeed,
-            normalY * equivalentClosingSpeed,
-            0.0
-        );
-        targetBody.Velocity = (0.0, 0.0, 0.0);
-        ImpactPhysics.ResolveBodies(
-            sourceBody,
-            targetBody,
-            (normalX, normalY, 0.0),
-            crushResult
-        );
-        if (!crushResult.Valid) { return; }
-
-        CaelumPlayer otherPlayer = CaelumPlayer(other);
-        if (otherPlayer != null)
-        {
-            otherPlayer.ReceiveCaelumImpact(
-                crushResult.TargetDeltaSpeed,
-                CaelumConstants.IMPACT_KIND_CRUSH,
-                self,
-                CollisionDamageMultiplier,
-                targetBody.Mass,
-                sourceBody.Mass,
-                crushResult.ClosingSpeed,
-                crushResult.Impulse,
-                crushResult.TargetContactMinimumHeightRatio,
-                crushResult.TargetContactMaximumHeightRatio
-            );
-            return;
-        }
-
-        CaelumCombatActor otherActor = CaelumCombatActor(other);
-        if (otherActor != null)
-        {
-            otherActor.ReceiveCaelumImpact(
-                crushResult.TargetDeltaSpeed,
-                CaelumConstants.IMPACT_KIND_CRUSH,
-                self,
-                CollisionDamageMultiplier,
-                targetBody.Mass,
-                sourceBody.Mass,
-                crushResult.ClosingSpeed,
-                crushResult.Impulse,
-                crushResult.TargetContactMinimumHeightRatio,
-                crushResult.TargetContactMaximumHeightRatio
-            );
-        }
-    }
+    void ApplySustainedCrush(Actor other, double normalX, double normalY, ImpactContactState contact)
+    { CaelumImpactEnergy.ConsumeWork(contact); }
 
     ImpactBody BuildImpactPhysicsBody()
     {
@@ -7345,7 +7252,7 @@ class CaelumPlayer : DoomPlayer
         ImpactBody body = ImpactSelfBodyScratch;
         if (body == null) { return null; }
         body.Mass = Max(1.0, GetCombatMass());
-        body.Height = GetImpactReferenceHeight();
+        body.Height = Max(0.0001,Height);
         body.Position = Pos;
         body.Velocity = Vel;
         body.Restitution = CaelumConstants.IMPACT_RESTITUTION;
@@ -7362,7 +7269,7 @@ class CaelumPlayer : DoomPlayer
         ImpactBody body = ImpactOtherBodyScratch;
         if (body == null) { return null; }
         body.Mass = Max(1.0, GetOtherCollisionEffectiveMass(other));
-        body.Height = GetOtherImpactReferenceHeight(other);
+        body.Height = Max(0.0001,other.Height);
         body.Position = (0.0, 0.0, 0.0);
         body.Velocity = (0.0, 0.0, 0.0);
         if (other != null)
@@ -7391,7 +7298,7 @@ class CaelumPlayer : DoomPlayer
     // el mismo contacto siga activo.
     void ResolveRootedEnvironmentImpact(CaelumEnvironmentProp environment)
     {
-        if (environment == null || environment.health <= 0) { return; }
+        if (environment == null || !environment.bSolid) { return; }
 
         ImpactContactState contactState = GetImpactContactState(environment);
         if (contactState != null)
@@ -7469,31 +7376,34 @@ class CaelumPlayer : DoomPlayer
             environment,
             environment.GetEnvironmentImpactMultiplier(),
             selfBody.Mass,
-            environment.GetEnvironmentMassKg(),
+            0.0,
             impact.ClosingSpeed,
             impact.Impulse,
             contactMinimum,
             contactMaximum,
-            true
+            true, -1, null, impact.Normal
         );
+            CaelumImpactEnergy.Deliver(environment,self,0,CaelumConstants.IMPACT_KIND_ENVIRONMENT,
+            CollisionDamageMultiplier,environment.GetEnvironmentMassKg(),selfBody.Mass,
+            impact.ClosingSpeed,impact.Impulse,0,1,
+            CaelumImpactEnergy.Received(selfBody.Mass,0,impact.ClosingSpeed));
     }
 
     override void CollidedWith(Actor other, bool passive)
     {
         Super.CollidedWith(other, passive);
 
+        // Las caras que sólo se tocan verticalmente pertenecen al aterrizaje.
+        if (other!=null && (Pos.Z>=other.Pos.Z+other.Height-0.001
+            || other.Pos.Z>=Pos.Z+Height-0.001)) return;
+
         // El apoyo desde arriba tiene su propio contacto vertical, una sola vez.
         let hazard = CaelumHazardRock(other);
         if (hazard != null && hazard.IsDescendingAbove(self)) return;
 
-        // CollidedWith se ejecuta en ambos actores. Normalmente sólo el lado
-        // activo resuelve; una roca ambiental no posee receptor biológico, así
-        // que el jugador acepta el callback pasivo cuando la roca lo alcanza.
+        // El enlace compartido deduplica ambos callbacks, incluido el pasivo.
         CaelumEnvironmentProp environment = CaelumEnvironmentProp(other);
-        bool resolvePassiveRock = environment != null
-            && environment.IsEnvironmentMovable();
-        if ((passive && !resolvePassiveRock)
-            || !IsCaelumCollisionBody(other) || health <= 0)
+        if (!IsCaelumCollisionBody(other) || health <= 0)
         {
             return;
         }
@@ -7576,29 +7486,8 @@ class CaelumPlayer : DoomPlayer
         other.Vel.X += impact.Normal.X * impact.TargetDeltaSpeed;
         other.Vel.Y += impact.Normal.Y * impact.TargetDeltaSpeed;
 
-        ReceiveCaelumImpact(
-            impact.SourceDeltaSpeed,
-            CaelumConstants.IMPACT_KIND_ACTOR,
-            other,
-            otherBody.SurfaceMultiplier,
-            selfBody.Mass,
-            otherBody.Mass,
-            impact.ClosingSpeed,
-            impact.Impulse,
-            impact.SourceContactMinimumHeightRatio,
-            impact.SourceContactMaximumHeightRatio,
-            stationarySceneryContact
-        );
-        DeliverImpactToOther(
-            other,
-            impact.TargetDeltaSpeed,
-            selfBody.Mass,
-            otherBody.Mass,
-            impact.ClosingSpeed,
-            impact.Impulse,
-            impact.TargetContactMinimumHeightRatio,
-            impact.TargetContactMaximumHeightRatio
-        );
+        CaelumImpactEnergy.Pair(self,other,selfBody,otherBody,impact,
+            CaelumConstants.IMPACT_KIND_ACTOR,stationarySceneryContact);
     }
 
     void RegisterStaticImpactFromVelocityLoss(
@@ -7671,7 +7560,7 @@ class CaelumPlayer : DoomPlayer
             impact.ClosingSpeed,
             impact.Impulse,
             0.0,
-            1.0
+            1.0, false, -1, null, normal
         );
     }
 
@@ -7680,15 +7569,11 @@ class CaelumPlayer : DoomPlayer
         int impactKind
     )
     {
+        if (impactKind==CaelumConstants.IMPACT_KIND_FLOOR
+            && CaelumImpactEnergy.BodyLanding(self,deltaSpeed)) return;
         double effectiveDeltaSpeed = Max(0.0, deltaSpeed);
         LastImpactRawDeltaSpeed = effectiveDeltaSpeed;
         LastImpactBiologicalAbsorptionSpeed = 0.0;
-
-        if (impactKind == CaelumConstants.IMPACT_KIND_FLOOR)
-        {
-            effectiveDeltaSpeed =
-                ApplyBiologicalLandingAbsorption(effectiveDeltaSpeed);
-        }
 
         ReceiveCaelumImpact(
             effectiveDeltaSpeed,
@@ -7751,15 +7636,14 @@ class CaelumPlayer : DoomPlayer
 
         // Ahogamiento y aplastamiento nativo actualizan vida, dolor e
         // interrupciones, sin iniciar combate ni otorgar adrenalina.
-        if (mod == 'Drowning' || mod == 'Crush' || mod == 'CaelumWeight'
+        if (mod == 'Drowning' || mod == 'Crush' || mod == 'CaelumWeight' || mod == 'CaelumPressure'
             || CaelumToughnessRules.IsSustained(mod))
         {
-            // El techo nativo expresa su pulso en porcentaje de vida máxima.
-            // Ahogamiento ya llega convertido; otras fuentes Crush conservan
-            // sus unidades. P_DoCrunch envía source e inflictor nulos.
+            // Techo: trabajo medido; ahogamiento/presión ya llegan resueltos.
+            // P_DoCrunch envía source e inflictor nulos.
             double preToughnessDamage=damage;
             if (mod == 'Crush' && inflictor == null && source == null)
-                preToughnessDamage = CaelumCrushingDamage.FromNativePercent(GetImpactMaximumHealth(), damage);
+                preToughnessDamage = damage>=CaelumCrushingDamage.NATIVE_TELEFRAG_THRESHOLD ? damage : CaelumCrushingDamage.NativeWork(self);
             if((mod=='Crush' && damage<CaelumCrushingDamage.NATIVE_TELEFRAG_THRESHOLD) || mod=='CaelumWeight')
                 damage=Max(0,int(CaelumToughnessRules.Apply(self,preToughnessDamage)+0.5));
             int healthBeforeDrowning = health;
@@ -7798,8 +7682,8 @@ class CaelumPlayer : DoomPlayer
             return drowningResult;
         }
 
-        // Impacto cinemático: no puede evadirse, bloquearse ni localizarse por
-        // armadura. Es trauma global basado en Δv y vida máxima.
+        // El receptor de impacto ya resolvió área, armadura y Dureza. Esta
+        // entrada sólo aplica HP, dolor e interrupciones, sin repetir defensas.
         if (mod == 'CaelumImpact')
         {
             int healthBeforeImpact = health;

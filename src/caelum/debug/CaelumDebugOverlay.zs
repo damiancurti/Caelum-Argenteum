@@ -2620,21 +2620,17 @@ class CaelumDebugOverlay : EventHandler
                 DTA_VIRTUALWIDTHF, 640.0, DTA_VIRTUALHEIGHTF, 360.0, DTA_KEEPRATIO, true);
 
             String impactLine = String.Format(
-                "%s: %s %d   RawDV %.3f TraumaDV %.3f Bio %.3f   %s %.2f   %s %.1f%%",
+                "%s: %s %d | Raw %.2f J Cushion %.2f J | DV %.3f Bio %.3f",
                 StringTable.Localize("CA_PHYSICS_IMPACT", false),
                 StringTable.Localize("CA_PHYSICS_KIND", false),
                 localPlayer.LastImpactKind,
+                localPlayer.LastImpactReceivedJoules,
+                localPlayer.LastImpactCushionedJoules,
                 localPlayer.LastImpactRawDeltaSpeed,
-                localPlayer.LastImpactDeltaSpeed,
-                localPlayer.LastImpactBiologicalAbsorptionSpeed,
-                StringTable.Localize("CA_PHYSICS_EQUIV_TICS", false),
-                localPlayer.LastImpactEquivalentTics,
-                StringTable.Localize("CA_PHYSICS_DAMAGE", false),
-                localPlayer.LastImpactDamagePercent
+                localPlayer.LastImpactBiologicalAbsorptionSpeed
             );
             String impactDefenseLine = String.Format(
-                "AfterTough %.2f%% Final %d | Vul x%.2f ArmorW %.1f%% HeadW %.1f%% Luc %.2f",
-                localPlayer.LastImpactPostToughnessPercent,
+                "Final %d HP | Vul x%.2f ArmorW %.1f%% HeadW %.1f%% Luc %.2f",
                 localPlayer.LastImpactFinalDamage,
                 localPlayer.LastImpactWeightedVulnerabilityMultiplier,
                 localPlayer.LastImpactWeightedArmorDefensePercent,

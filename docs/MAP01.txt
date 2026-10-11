@@ -1,6 +1,13 @@
 CAELUM ARGENTEUM — STORY AND MAP01
 
-Documentation version: **5.2.10** — 2026-10-11.
+Documentation version: **5.2.11** — 2026-10-11.
+
+## 5.2.11 - Shared collision energy (#194)
+
+MAP01 uses the shared 1 J = 1 raw HP collision contract documented in SYSTEMS.
+No story, dialogue, layout, gifts or tutorial balances are changed here. Bull
+charge mass and its pending biological cushioning rebalance belong to #195.
+CA194-01 checks the shared behavior without claiming acceptance of #195.
 
 ## 5.2.10 - Ranged equipment terminology (#192 amendment)
 

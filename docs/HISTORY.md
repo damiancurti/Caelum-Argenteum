@@ -1,13 +1,50 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **5.2.10** — 2026-10-11.
+Documentation version: **5.2.11** — 2026-10-11.
+
+## 5.2.11 - Received collision energy and bilateral contact area (#194), 2026-10-11
+
+Replaced maximum-Health percentage severity with the author's reduced-mass,
+relative-normal energy at 1 J = 1 raw HP for EACH eligible body. Native impulse
+resolution remains separate. Added physical contact-face area clipping with
+regional armor correlation, recipient cushioning and final #188 Toughness once;
+deferred shared-slot wear until the complete impact is resolved. Gates use the
+anchored energy limit and retain finite material mass for Toughness. Gate/ram
+logical faces remove collision-proxy order dependence. The final author amendment
+removes cannon armor penetration; the large energy damage remains intentional.
+The consolidated penetration table also records 0% cannon bypass; its obsolete
+100% entry was corrected during the requested gate/resident damage calculation.
+
+Author clarifications: body contacts ignore offensive ideology; moving pressure
+accumulates inelastic work for both bodies; static weight must hurt while still;
+the agent may choose the internal creep rate (documented 0.1 mm/s approximation).
+The ceiling is a solid stone block down to its final clearance, density 2700 kg/m³,
+with gravity-only force: 507600 kg for the MAP08 assembly. Native crushing and
+static weight retain their existing defense applicability. #195 owns bull balance.
+
+Independent review caught clipping at shared boundaries, shared-slot mid-event
+armor wear, crouch bounds, gate/ram proxy geometry and reassignment of prior
+pressure samples to the latest contact. These were corrected and tested. Agent
+evidence, initial failures and corrected native runs are retained in
+assets/validation_5211/RESULTS.md. Current save/load preserves one shared contact
+and pending work; a real 5.2.10 save loads with its contact graph preserved,
+and legacy weight carry resets through EnergyRevision 1 without HP conversion.
+Author acceptance, 2026-10-11: CA194-01 (origin 5.2.11 / #194) passed without
+qualifications. The author confirmed all tests passed and explicitly requested
+issue closure and merges. The confirmed entry was removed from pending_test.txt;
+the tracked file is empty. Prior CA192-02 acceptance remains valid; #195 is separate.
+PR198 merged into main as `6f8ad478` before retargeting PR199 to main.
+Accepted delivery: PR199; the author authorized its merge and #194 closure.
+This documentation-only acceptance update retains version 5.2.11 and the
+original static/native evidence; runtime is unchanged.
 
 ## 5.2.10 - Ranged penetration amendment and shotgun names (#192), 2026-10-11
 
 Author acceptance, 2026-10-11: CA192-02 (origin 5.2.10 / #192) passed without
 qualifications. The author confirmed all tests passed before requesting #194.
 The confirmed entry is removed from pending_test.txt; the tracked queue is empty.
-PR198 remains open; this acceptance does not itself merge the PR.
+PR198 subsequently merged into main on 2026-10-11 as `6f8ad478`, after the
+author explicitly requested the remaining merges and issue closures.
 
 After accepting 5.2.9, the author reopened #192 with longbow 20/30/40% and
 crossbow 40/50/60% armor-only bypass. Both join carbine and shotgun in excluding
@@ -32,8 +69,8 @@ run passes all 1,028 assertions, including actual arrow/bolt collisions.
 Final validation and bilingual/native selector checks are recorded there.
 At agent delivery CA192-02 was pending; the subsequent author acceptance is
 recorded above. Earlier CA192-01/CA188-01 acceptance retains its original scope. Commit 47fec499 was pushed and #192 closed again as requested on 2026-10-11.
-PR198 delivers this amendment and awaits review/merge; closing the issue does
-not accept CA192-02. Final native, generator, validator and indexed-byte checks
+PR198 delivers this amendment; its merge is recorded above, separately from
+the explicit CA192-02 acceptance. Final native, generator, validator and indexed-byte checks
 passed. The keep-awake request was released without changing the power plan.
 
 ## 5.2.9 - Personality, magical power and bell volley (#192), 2026-10-11
