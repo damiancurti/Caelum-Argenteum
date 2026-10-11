@@ -1,6 +1,15 @@
 # Caelum Argenteum — Project, status and roadmap
 
-Documentation version: **5.1.16** — 2026-10-10.
+Documentation version: **5.1.17** — 2026-10-10.
+
+## 5.1.17 - Medikit names (#169)
+
+The author reported that existing health kits still displayed as life potions
+and selected Spanish botiquín. Shared English/Spanish labels now identify all
+three sizes and pickup text as medikit/botiquín. Native UI evidence is in
+assets/validation_5117; this localization-only patch preserves saved identities
+and all #135 consumable behavior. Author accepted #169 and CA162-01/CA163-01
+on 2026-10-10 and authorized merges/closures; #164 is next.
 
 ## 5.1.16 - Recoverable bolas (#163)
 
@@ -13,8 +22,8 @@ visual correction adds hanging rest weights, 3 Hz spin and body-occluded rear
 rope arcs, including migration of previously bound saves. Follow-up feedback
 extends the bolas forearm and makes immediate paid demon escape visibly burn. Evidence and exact
 validation scope: assets/validation_5116/RESULTS.md. Author visual/handling
-acceptance remains CA163-01; Rulo's permanent grant belongs to #164. This focused
-branch is based on the unmerged #162 branch and its corrected right-leaning staff.
+acceptance CA163-01 passed on 2026-10-10; Rulo's permanent grant belongs to #164.
+The author authorized PR168 merge and #163 closure.
 
 ## 5.1.15 - Bronze utility staff and wand names (#162)
 
@@ -25,7 +34,7 @@ Varitas, retaining IDs and saves. Original bronze-tip poses, pickup/icon and
 native elemental effects are integrated. Isolated native checks cover mechanics,
 crafting/repair/dismantling, real controls, sustained heat/cooling, item lifecycle,
 hub travel and migration from 5.1.14. Evidence: assets/validation_5115/RESULTS.md.
-Author handling/art acceptance remains CA162-01. Caella's permanent gift and the
+Author handling/art check CA162-01 passed on 2026-10-10; merge/closure authorized. Caella's permanent gift and the
 corresponding full tutorial test belong to dependent issue #164; no completion
 of that progression is claimed here.
 

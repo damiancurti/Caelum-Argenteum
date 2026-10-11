@@ -1,11 +1,13 @@
 # CONTEXT.md — Caelum Argenteum
 
-Documentation version: **5.1.16** — 2026-10-10.
+Documentation version: **5.1.17** — 2026-10-10.
+
+**#162/#163/#169 accepted** 2026-10-10; merges/closures authorized.
 
 **5.1.16/#163:** recoverable bolas; one-second preparation, five-second restraint
 Hanging rest, 3 Hz spin, rear occlusion, extended hands, visible escape fire.
-validation_5116; CA163-01 pending.
-#162 staff correction/Wands: PR167, validation_5115; CA162-01 pending.
+validation_5116; CA163-01 passed.
+#162 staff/Wands: PR167, validation_5115; CA162-01 passed.
 Gifts remain #164.
 
 **5.1.14/#165 accepted** 2026-10-10 (CA165-01). Flash/travel repair; PR166

@@ -1,6 +1,13 @@
 CAELUM ARGENTEUM — STORY AND MAP01
 
-Documentation version: **5.1.16** — 2026-10-10.
+Documentation version: **5.1.17** — 2026-10-10.
+
+## 5.1.17 - Health-kit terminology (#169)
+
+The existing health items now display as medikit/botiquín with the appropriate
+medium/large suffix. This global label correction changes no campaign item,
+placement, dialogue progression or future #164 grant. Existing save identifiers
+remain valid; SYSTEMS records the author-selected terminology.
 
 ## 5.1.16 - Bolas tutorial boundary (#163 / #164)
 

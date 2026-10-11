@@ -1,6 +1,13 @@
 # TASKS.md — Active tasks
 
-Documentation version: **5.1.16** — 2026-10-10.
+Documentation version: **5.1.17** — 2026-10-10.
+
+## Issue #169 - Medikit names (5.1.17)
+
+Implemented the author's Spanish botiquín choice and English medikit names for
+all three sizes and pickup text. Functional changes are LANGUAGE labels; the
+diagnostic release markers follow 5.1.17. Item identities and #135 rules remain. Evidence: assets/validation_5117.
+Author accepted #169 and CA162-01/CA163-01 on 2026-10-10; merge/closure authorized. Next: #164.
 
 ## Issue #163 - Recoverable bolas (5.1.16)
 
@@ -12,9 +19,9 @@ ballistics, 60-to-6-degree linear preparation and 6 base Air; two-second base
 cut with shared physical speed and pain/sleep/stun interruption. The author
 requested a hanging ready pose, 3 Hz spin and rear rope arcs hidden by the body;
 these corrections and bound-save visual migration are implemented. Extended
-forearms and a finite flame for immediate paid demon escape address later feedback. Next: linked
-PR review and CA163-01 visual/handling acceptance; then #164 permanent grants.
-No author acceptance is inferred from engine assertions or a future PR merge.
+forearms and a finite flame for immediate paid demon escape address later feedback.
+CA163-01 passed author acceptance on 2026-10-10, with merge/closure authorized.
+Next: #164 permanent gifts, optional crafting and the assisted bull checkpoint.
 
 ## Issue #162 - Bronze utility staff (5.1.15)
 
@@ -22,9 +29,8 @@ Implemented family 1, one tier, original art, exact Pickaxe components and
 maximum durability, fire/ice streams, once-per-second contact wear and wand
 terminology. Recipe revision 6 preserves old knowledge and equipment identity.
 Static/native evidence and reproducible fixtures: assets/validation_5115.
-The requested right-leaning pose is corrected. CA162-01 remains for confirmation.
-Next: review PR167
-and then integrate Caella's permanent grant through #164 alongside #163; the
+The right-leaning pose and CA162-01 passed author acceptance on 2026-10-10.
+Merge/closure authorized. Next: integrate Caella's permanent grant through #164; the
 full tutorial/grant criterion is deliberately not marked passed in this patch.
 
 ## Issue #165 - Damage flash across map travel (5.1.14)

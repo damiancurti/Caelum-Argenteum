@@ -1,8 +1,27 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **5.1.16** — 2026-10-10.
+Documentation version: **5.1.17** — 2026-10-10.
+
+## 5.1.17 - Medikit names (#169), 2026-10-10
+
+Author acceptance, 2026-10-10: all tests reported correct, including #169 names.
+PR170 merge and #169 closure explicitly authorized. No qualifications reported.
+
+The author reported that medikits still appeared as life potions and explicitly
+selected botiquín for Spanish. Changed only the shared labels for three sizes
+and the fallback pickup message in both languages. Existing item classes, keys,
+icons, saves and consumable mechanics remain unchanged. Native GZDoom pickup
+and inventory observations in both languages, static validation and package
+fingerprints are recorded in assets/validation_5117/RESULTS.md. This evidence
+is agent verification; it does not accept outstanding CA162-01/CA163-01 tests.
+The focused naming branch is stacked on #163/PR168.
 
 ## 5.1.16 - Recoverable bolas (#163), 2026-10-10
+
+Author acceptance, 2026-10-10: **CA163-01**, origin 5.1.16 / #163, passed with
+no qualifications. The author confirmed all tests correct and authorized PR168
+merge/#163 closure. Removed only this confirmed check from pending_test.txt.
+Delivery-time pending statements below describe the earlier evidence boundary.
 
 The author approved bronze in place of proposed iron (800 g bronze/218 g leather
 at M), javelin-derived throwing rules with linear 60-to-6-degree preparation and
@@ -33,6 +52,11 @@ visual lifetime and three-aspect captures are in the handling follow-up evidence
 This design confirmation is not acceptance of the pending manual test.
 
 ## 5.1.15 - Bronze utility staff and wand names (#162, 2026-10-10)
+
+Author acceptance, 2026-10-10: **CA162-01**, origin 5.1.15 / #162, passed with
+no qualifications, including the corrected right-leaning pose. The author
+authorized PR167 merge/#162 closure. Removed only this confirmed check from
+pending_test.txt. Delivery-time pending statements below are historical.
 
 Author decisions: ice matches fire's geometry and power magnitude (4 m, 60 degrees,
 20 kW); maximum durability follows the Pickaxe (10,000 at M). Existing magic staffs
