@@ -1,11 +1,12 @@
 # CONTEXT.md — Caelum Argenteum
 
-Documentation version: **5.1.15** — 2026-10-10.
+Documentation version: **5.1.16** — 2026-10-10.
 
-**5.1.15/#162 implemented:** bronze fire/ice Utility staff / Bastón; Pickaxe
-recipe/durability, contact wear, right-leaning pose; Wands / Varitas retain IDs.
-Evidence: assets/validation_5115. CA162-01 pending. Caella/tutorial remains #164,
-dependent on #162/#163.
+**5.1.16/#163:** recoverable bolas; one-second preparation, five-second restraint
+Hanging rest, 3 Hz spin, rear occlusion, extended hands, visible escape fire.
+validation_5116; CA163-01 pending.
+#162 staff correction/Wands: PR167, validation_5115; CA162-01 pending.
+Gifts remain #164.
 
 **5.1.14/#165 accepted** 2026-10-10 (CA165-01). Flash/travel repair; PR166
 merged. 34 checks pass: validation_5114.
@@ -48,7 +49,7 @@ associations; its old-save waiver stays specific. HISTORY retains acceptance.
 ## The game's premise
 
 Caelum Argenteum: independent Argentine dark-fantasy FPS-RPG, nineteenth century,
-GZDoom 4.14.2/ZScript. The divided nation faces two invasions.
+GZDoom 4.14.2/ZScript.
 
 The first invasion is external: the Caelith, original inhabitants of the Moon,
 descend upon the Earth under the command of Queen Selene. The second is

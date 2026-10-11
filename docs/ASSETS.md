@@ -1,6 +1,34 @@
 # Caelum Argenteum — Audio and art
 
-Documentation version: **5.1.15** — 2026-10-10.
+Documentation version: **5.1.16** — 2026-10-10.
+
+## 5.1.16 - Original bolas atlas (#163)
+
+The built-in imagegen tool generated an original RGBA atlas of three
+leather-covered bronze weights and cowhide thongs. Source, exact prompt,
+provenance and measured clips: assets/source/art/bolas_5116. No museum image or
+Doom art was copied. assets/generators/register_bolas.py copies the original
+pixels unchanged and deterministically registers native TEXTURES for ready,
+spin, release, pickup/icon and arm/leg overlays. Recovery uses the existing
+dedicated extended hand layer with the released item absent. Native rotation spins around
+the fixed grip; restraint overlays scale uniformly to preserve round weights
+and remain below the mouth. The author's visual follow-up replaces only the
+ready view with ready-hanging.png (READY_PROVENANCE.json records its exact
+built-in imagegen edit prompt). All weights hang below the raised grip. Spin
+uses 3 Hz while the hand stays fixed. Native TEXTURES clips split each wrap
+at its lateral extrema into a lower/front fragment and upper/rear arc. Four
+cosmetic actors use opposite camera-facing WorldOffset depths, so the body
+occludes the back arcs from every ordinary viewing direction. Their physical
+origins and collision remain unchanged; release removes all four layers.
+A second author correction adds hand-extended.png, a built-in imagegen edit of
+the original upright glove/atlas. HAND_PROVENANCE.json preserves the exact prompt
+and references. Native registration uses an uninterrupted sleeve beyond the
+screen edge in ready, spin, throw and recovery, without replacing other weapons.
+Actual rope burning reuses the existing four-frame burn sprites, scale, opacity
+and distance-limited light for the existing 12-tic impact lifetime. This finite
+cosmetic actor survives cessation of the paid breath; it has no damage/status.
+The original atlas and its superseded ready cell are retained. Runtime: src/graphics/caelum/bolas; validation
+captures: assets/validation_5116. Visual acceptance remains CA163-01.
 
 ## 5.1.15 - Bronze utility staff (#162)
 

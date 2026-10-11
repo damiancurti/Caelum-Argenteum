@@ -122,3 +122,16 @@
 /assets/validation_5115/* -text whitespace=cr-at-eol
 /assets/validation_5115/*.txt whitespace=-blank-at-eol,-blank-at-eof,cr-at-eol
 /src/graphics/caelum/utility_staff/*.textures text eol=lf
+
+# Preserve #163 native evidence and fixture fingerprints across checkouts.
+/assets/validation_5116/* -text whitespace=cr-at-eol
+/assets/validation_5116/*.txt whitespace=-blank-at-eol,-blank-at-eof,cr-at-eol
+/src/graphics/caelum/bolas/*.textures text eol=lf
+
+# Preserve raw native log whitespace in the #163 visual follow-up.
+/assets/validation_5116/visual_followup/* -text whitespace=cr-at-eol
+/assets/validation_5116/visual_followup/*.txt whitespace=-blank-at-eol,-blank-at-eof,cr-at-eol
+# Keep the byte-exact native fixture, including its harmless final blank line.
+/assets/validation_5116/visualfix.zs whitespace=-blank-at-eof,cr-at-eol
+/assets/validation_5116/handling_followup/* -text whitespace=cr-at-eol
+/assets/validation_5116/handling_followup/*.txt whitespace=-blank-at-eol,-blank-at-eof,cr-at-eol

@@ -16,3 +16,34 @@ Expected: readable bronze tool and hands, distinct fire/ice, normal concurrent
 Anima regeneration, no double emission or stuck light, one persistent tool.
 Existing tiered magic weapons are named Varitas. Report visual/handling acceptance
 or specific defects. Close the engine normally when finished.
+
+CA163-01 | Origin: 5.1.16 / issue #163 | Author acceptance pending
+Prerequisites: current branch/package, GZDoom 4.14.2 and the local development
+IWAD. This isolated test does not include Rulo's future permanent grant (#164).
+Prepare from the repository in PowerShell:
+  python assets/validation_5116/prepare.py
+Launch with a fresh Label if repeating:
+  .\assets\validation_5116\run_native.ps1 -Label author163-01 -Fixture inputs -Script preview.cfg -Interactive -Language es
+Steps:
+1. Inspect family-1 Boleadora and its inventory icon. In the corrected ready
+   pose all three weights hang below the grip. Hold secondary: spin is 3 Hz,
+   with a stable hand. Try less than one second, then longer; primary throws.
+2. Miss once and retrieve the floor item; equip it through Inventory if needed.
+   Aim a prepared throw at the passive
+   bull. Walk around it: front cords remain visible while its body hides the
+   rear arcs. Inspect visible weights, an unobstructed mouth and release after
+   five seconds. This fixture fixes its Strength to zero for reliable recovery.
+3. Save while preparing or while ropes are visible; reload and confirm coherent
+   ownership, remaining restraint and recovery. Confirm the release/recovery
+   hand animation and the size of the original artwork in motion. No bolas pose
+   should expose a cropped wrist/forearm, including on a wide display.
+4. For player cutting, enter ca163_stage 8 in the console. The fixture supplies
+   an unequipped dagger. Try movement/attack, then press Reload to cut and escape.
+5. Close the first engine, then launch the paid-escape preview:
+   .\assets\validation_5116\run_native.ps1 -Label author163-fire-01 -Fixture handling -Script handling-preview.cfg -Interactive -Language es
+   Prepare and throw at the Mandinga: the piece burns immediately, with a clearly
+   visible brief flame. This preserves the confirmed instant escape rule.
+Expected: readable three-ball tool and body-fitting ropes, no stuck input,
+permanent stun, duplicate item or invisible recovery. Reload cuts without an
+ordinary reload/attack. Report visual/handling acceptance or specific defects.
+Close the engine normally when finished.

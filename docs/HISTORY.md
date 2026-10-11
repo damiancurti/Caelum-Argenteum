@@ -1,6 +1,36 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **5.1.15** — 2026-10-10.
+Documentation version: **5.1.16** — 2026-10-10.
+
+## 5.1.16 - Recoverable bolas (#163), 2026-10-10
+
+The author approved bronze in place of proposed iron (800 g bronze/218 g leather
+at M), javelin-derived throwing rules with linear 60-to-6-degree preparation and
+6 base Air, and a two-second base cut using shared physical speed with
+pain/sleep/stun cancellation. Implemented append-only tool/catalogue/recipe IDs,
+original sprites, exact native item recovery, five-second independent restraint,
+fire/cut destruction, one natural Strength roll and paid own-breath escape.
+Versioned recipe/sidearm migration preserves existing saves and learned recipes.
+Static/build and isolated GZDoom evidence: assets/validation_5116/RESULTS.md.
+CA163-01 remains pending author acceptance; #164 permanent Rulo/Caella grants
+are not included. #162's right-leaning staff remains on PR167 underneath this
+focused branch. No existing pending author test is removed.
+
+Author visual feedback on 2026-10-10 requested hanging rest weights, 3 Hz spin
+and rear rope arcs drawn behind the restrained body. The follow-up adds an
+original hanging pose, retains the other atlas art and splits the restraints
+into front/back native layers with cosmetic depth. Binding revision 2 migrates
+existing saves without changing item ownership, timers or cutting progress.
+Follow-up native captures and test scope are appended to validation_5116/RESULTS.
+This is a correction within the same 5.1.16/#163 patch; CA163-01 stays pending.
+
+The author subsequently reported cropped/floating hands and apparently immune
+Mandingas. An extended dedicated glove/forearm now covers every bolas pose. The
+author explicitly retained immediate paid fire escape and requested clear fire;
+a finite cosmetic burn animation survives the single-tic breath without adding
+damage, status, heat or cost. Focused native collision, insufficient-Anima,
+visual lifetime and three-aspect captures are in the handling follow-up evidence.
+This design confirmation is not acceptance of the pending manual test.
 
 ## 5.1.15 - Bronze utility staff and wand names (#162, 2026-10-10)
 

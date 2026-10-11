@@ -25,6 +25,8 @@ class CaelumCombatActor : Actor
     int CombatInsight;
     int CombatEffectiveDexterity;
     int CombatEffectiveInsight;
+    CaelumBolasFlight BolasBinding;
+    virtual CaelumWeaponModel GetPossessedSidearm(){return null;}
     int CombatStrength;
     int CombatConstitution;
     int CombatIntelligence;
@@ -904,7 +906,7 @@ class CaelumCombatActor : Actor
 
     bool WithinAttackRange(bool magical, double spawnHeight=-1)
     {
-        if(target==null || target.health<=0 || !target.bShootable || RecoveryPhase!=0)return false;
+        if(CaelumBolas.Restrained(self) || target==null || target.health<=0 || !target.bShootable || RecoveryPhase!=0)return false;
         if(!magical)return CheckMeleeRange();
         vector3 origin=Pos+(0,0,spawnHeight>=0 ? spawnHeight : Height*0.65);
         vector3 aim=target.Pos+(0,0,target.Height/2);
@@ -1262,7 +1264,7 @@ class CaelumCombatActor : Actor
             0.0,
             100.0
         );
-        if (CombatLucidityPhysicalStunRemaining > 0.0 || ForcedSleepTics > 0)
+        if (CaelumBolas.Restrained(self) || CombatLucidityPhysicalStunRemaining > 0.0 || ForcedSleepTics > 0)
         {
             LastCombatAttackAccuracyChancePercent = 0.0;
         }
@@ -2841,6 +2843,7 @@ class CaelumCombatActor : Actor
         double angle
     )
     {
+        CaelumBolas.FireAttack(self,inflictor,mod);
         if (damage > 0 && ForcedSleepTics > 0)
         { ForcedSleepTics = 0; tics = Max(1, SleepSavedTics); }
         if (mod == 'CaelumImpact' || mod == 'Crush' || mod == 'CaelumWeight')
@@ -3634,6 +3637,7 @@ class CaelumCombatActor : Actor
 
     void ThermalChase(statelabel melee='_a_chase_default',statelabel missile='_a_chase_default',int flags=0)
     {
+        if(CaelumBolas.Restrained(self))return;
         vector3 before=Pos;
         A_Chase(melee,missile,flags);
         if(Pos.Z<=FloorZ+0.01)CaelumThermalMotion.Path(self,before,Pos,false);
@@ -3641,6 +3645,7 @@ class CaelumCombatActor : Actor
 
     bool ThermalTryMove(vector2 destination)
     {
+        if(CaelumBolas.Restrained(self))return false;
         vector3 before=Pos;
         bool moved=TryMove(destination,0);
         if(moved && Pos.Z<=FloorZ+0.01)CaelumThermalMotion.Path(self,before,Pos,false);
@@ -3661,7 +3666,7 @@ class CaelumCombatActor : Actor
             LastCombatArmorDefenseExactPercent = LastCombatArmorDefensePercent;
             ArmorBalanceRevision = 1;
         }
-        if (SiegeCombatant != null && SiegeCombatant.Withdrawing && health > 0)
+        if (!CaelumBolas.Restrained(self) && SiegeCombatant != null && SiegeCombatant.Withdrawing && health > 0)
         {
             if (!InStateSequence(CurState,FindState("SiegeWithdrawal")))
                 SetStateLabel("SiegeWithdrawal");
@@ -3677,9 +3682,15 @@ class CaelumCombatActor : Actor
         let thermalMotion=ThermalState;
         vector2 thermalPropulsion=thermalMotion!=null ? thermalMotion.PropelledVelocity : (0,0);
         bool thermalGrounded=Pos.Z<=FloorZ+0.01;
+        bool bound=CaelumBolas.Restrained(self);
+        int bolasSavedTics=tics;State bolasSavedState=CurState;
+        bool bolasFreeze=bound && !CaelumBolas.Interrupted(self);
+        if(bound){Vel.X=0;Vel.Y=0;if(bNOGRAVITY)Vel.Z=0;}
+        if(bolasFreeze)tics=-1;
         bool sleeping = ForcedSleepTics > 0;
         if (sleeping) { tics = -1; Vel = (0,0,0); }
         Super.Tick();
+        if(bolasFreeze && CurState==bolasSavedState)tics=bolasSavedTics;
         if (sleeping)
         {
             CurrentCombatLucidity = CaelumSleepRules.Drain(CurrentCombatLucidity);

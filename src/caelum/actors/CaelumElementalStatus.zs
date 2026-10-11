@@ -142,6 +142,7 @@ class CaelumElementalStatus : Object
     play void DealStatusDamage(Actor owner, Actor source, int damage, int visualKind=-1)
     {
         if (owner == null || owner.health <= 0 || damage <= 0) { return; }
+        if(visualKind==0)CaelumBolas.FireContact(owner);
         let user=CaelumPlayer(owner);
         int previous=user!=null ? user.PendingDamageVFXKind : 0;
         if(user!=null)user.PendingDamageVFXKind=visualKind+1;

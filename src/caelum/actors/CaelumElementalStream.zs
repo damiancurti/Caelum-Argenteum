@@ -60,6 +60,7 @@ class CaelumElementalStream : Object play
                 CaelumConstants.ELEMENTAL_BASE_CONTROL_POWER_PERCENT*power);
             return;
         }
+        CaelumBolas.FireContact(body);
         int damage=Max(1,int(Damage(emitter)*CaelumConstants.ELEMENTAL_DOT_DAMAGE_RATIO*power+0.5));
         // El contacto sostenido conserva el reloj del pulso, incluso si el
         // efecto más fuerte pertenece a otra fuente.

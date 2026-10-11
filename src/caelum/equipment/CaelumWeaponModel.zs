@@ -43,7 +43,8 @@ class CaelumWeaponModel : Object
     static bool IsSingleTierType(int weaponType)
     {
         return weaponType == CaelumConstants.WEAPON_TYPE_PICKAXE
-            || weaponType == CaelumConstants.WEAPON_TYPE_UTILITY_STAFF;
+            || weaponType == CaelumConstants.WEAPON_TYPE_UTILITY_STAFF
+            || weaponType == CaelumConstants.WEAPON_TYPE_BOLAS;
     }
 
     static int ResolveTierFor(int weaponType, int tier)
@@ -62,6 +63,7 @@ class CaelumWeaponModel : Object
             case CaelumConstants.WEAPON_TYPE_HATCHET: return CaelumConstants.WEAPON_HATCHET_TIER_ONE_WEIGHT;
             case CaelumConstants.WEAPON_TYPE_MACHETE: return CaelumConstants.WEAPON_MACHETE_TIER_ONE_WEIGHT;
             case CaelumConstants.WEAPON_TYPE_JAVELIN: return CaelumConstants.WEAPON_JAVELIN_TIER_ONE_WEIGHT;
+            case CaelumConstants.WEAPON_TYPE_BOLAS: return CaelumBolasRules.MASS_KG;
             case CaelumConstants.WEAPON_TYPE_UTILITY_STAFF:
             case CaelumConstants.WEAPON_TYPE_PICKAXE:
             case CaelumConstants.WEAPON_TYPE_AXE: return CaelumConstants.WEAPON_AXE_TIER_ONE_WEIGHT;
@@ -162,6 +164,7 @@ class CaelumWeaponModel : Object
 
     int GetMaximumDurabilityFor(int weaponType, int tier, int equipmentSize)
     {
+        if (weaponType == CaelumConstants.WEAPON_TYPE_BOLAS) return 1; // Integridad binaria, sin desgaste.
         tier = ResolveTierFor(weaponType, tier);
         int tierMultiplier = 1;
         if (tier == 2) { tierMultiplier = 3; }

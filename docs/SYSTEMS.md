@@ -1,6 +1,100 @@
 # Caelum Argenteum — Current systems and rules
 
-Documentation version: **5.1.15** — 2026-10-10.
+Documentation version: **5.1.16** — 2026-10-10.
+
+## Recoverable bolas - 5.1.16 / #163
+
+**Boleadora / Bolas** is a single-tier family-1 utility tool. Hold secondary
+(AltFire) to spin; primary throws the actual equipped item. Throwing before one
+simulation second is allowed. The author approved linear base spread from 60
+to 6 degrees over 35 tics, capped thereafter, using the javelin's physical
+accuracy, lucidity/elemental, crouch/running modifiers, velocity and native
+gravity. A throw costs the javelin's 6 base Air with shared load/thermal cost
+modifiers; it deals no direct damage and causes no per-use durability loss.
+Release, switching, a different item, incapacitation and travel cancel preparation.
+The author corrected the presentation: all three weights hang below the grip at
+rest; held secondary spins at 3 Hz. This frequency does not shorten the
+one-second accuracy preparation or change its cap.
+
+A living eligible player/combat actor is restrained for at most 175 simulation
+tics. Native invulnerability is respected; no blanket boss immunity is added.
+Movement, ordinary attacks and new Tarot activation are blocked. Existing
+physical controls remain independent. Native gravity continues; voluntary
+flight motion is stopped. Original rope/ball sprites follow arms and legs,
+scale with the body and leave the mouth free. Front fragments draw before the
+body; the body occludes rear arcs using cosmetic depth offsets that follow the
+local viewing direction. Repeated hits recover the incoming
+piece without extending the existing timer. Death/removal releases an intact
+piece. Misses and immune contacts drop the intact native pickup immediately,
+without a five-second delay, auto-return or replacement ammunition.
+
+Only three successful resolutions destroy the item: real fire contact,
+completed cutting, or the single natural-expiry Strength roll. Fire projectiles,
+classified fire damage, burn pulses, utility flame and demon flame use shared
+contact classification without a Health-damage threshold. Light, ambient thermal
+energy and ice alone do not burn ropes. The natural roll uses Strength itself,
+clamped to 0..100: 0 never breaks, 50 has exactly 50% probability, and 100 or
+more always breaks. There is no early Strength roll. An intact expiry drops
+one recoverable item; destruction drops nothing and yields no salvage.
+
+Reload starts a dedicated cut when the player possesses a usable slashing
+weapon outside the Magic Box, even if another weapon is equipped. Capability
+comes from positive primary/secondary slashing damage, not a list of names;
+firearms and natural horns/claws do not qualify. The lightest qualifying
+possessed weapon supplies weight to the shared physical-duration formula,
+including Dexterity, gloves/carry capacity and thermal speed. The author's
+confirmed base is 2 seconds for both player and NPC. Pain, sleep, lightning or
+lucidity stun cancel progress; the bolas restriction itself does not. Players
+must press Reload again after interruption; eligible NPCs retry automatically.
+Cutting neither reloads nor consumes ammunition. Mandinga's existing machete
+profile is represented by a revision-1 sidearm model; the soldier's existing
+sword model remains authoritative even while holding a carbine. Bull and Zupay
+have no qualifying sidearm. Broken or removed weapons cannot grant the escape.
+
+A bound Mandinga or Zupay may direct its own fire breath onto the ropes because
+the mouth is free. Actual paid breath contact destroys the ropes immediately,
+bypassing self-hit filtering only for this escape. Existing #135 Anima cost,
+reductions, regeneration, insufficient-resource and unrelated interruption
+rules remain; no free escape, burn delay or cutting duration is added. The author
+reconfirmed immediate escape after reporting apparently immune Mandingas. Each
+actual rope burn now leaves a finite, body-following flame for the existing
+12-tic elemental impact animation, independent of continued emission. This
+visual adds no damage, burn status, heat or resource cost; repeated fire after
+resolution cannot spawn another flash.
+Resolution is guarded once, so fire, cut completion and expiry cannot duplicate
+items or repeat the Strength roll. Unrelated stuns survive release.
+
+The physical reference is Museo Regional de Magallanes **93.88.5**, a complete
+three-piece example measuring **109 cm and 1.018 kg**. Its account also documents
+metal fillings. MHNA2508 documents three raw-cowhide branches and wrapped balls.
+The author chose bronze rather than the proposed iron: **800 g bronze + 218 g
+cow leather at M and 100% efficiency**. This split is an author-approved design
+allocation, not a historical measurement. The supported catalogue supplies
+bronze ingot and leather; no stone resource/harvesting system is added. One
+material unit is 0.001 kg; existing size and efficiency rounding scale both
+components. The unified workbench recipe requires the forge, uses the normal
+simple physical-tool work calculation, and produces one intact item. Binary
+integrity value 1 is an inventory sentinel, not an extra wear/Health budget;
+repair/dismantle tasks are excluded because no salvage recipe is authorized.
+
+Sources:
+- https://www.museodemagallanes.gob.cl/galeria/arma-de-caza-de-los-aborigenes-de-la-patagonia
+- https://patrimonioargentino.cultura.gob.ar/index.php/Detail/objects/75674
+- https://buenosaires.gob.ar/gcaba_historico/noticias/rebolear-se-ha-dicho
+
+Type 22, catalogue 18 and recipe 133 append to existing IDs. Recipe-book revision
+7 preserves learned recipes and initializes the bolas recipe locked. The same
+native item is transferred into the flight/binding actor, then recovered or
+destroyed; serialization retains preparation, timer, cut progress and identity.
+Released input after a load cancels the saved preparation normally. Binding
+visual revision 2 retains the two saved front actors and idempotently creates
+two missing rear actors on update, preserving the item, timer and cut progress.
+On forced player map departure, its restraint drops intact in the departing
+map and releases that player; a hub retains NPC restraints with paused timers.
+Keep the original save/package pair and save migration under a new filename
+for reversible rollback. Native/static evidence is in assets/validation_5116.
+Rulo's permanent grant and tutorial changes remain #164; author visual/handling
+acceptance is CA163-01, distinct from isolated engine evidence.
 
 ## Utility staff and wand terminology - 5.1.15 / #162
 

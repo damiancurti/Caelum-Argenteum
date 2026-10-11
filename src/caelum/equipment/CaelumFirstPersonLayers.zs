@@ -410,6 +410,8 @@ class CaelumFirstPersonLayers : Object play
 
     static Vector2 Pivot(int index)
     {
+        if (index >= CaelumConstants.WEAPON_TYPE_BOLAS*9
+            && index < (CaelumConstants.WEAPON_TYPE_BOLAS+1)*9) return (216,160);
         if (index >= CaelumConstants.WEAPON_TYPE_UTILITY_STAFF*9
             && index < (CaelumConstants.WEAPON_TYPE_UTILITY_STAFF+1)*9) return (216,160);
         if (index >= CaelumConstants.WEAPON_TYPE_PICKAXE * 9
@@ -643,6 +645,7 @@ class CaelumFirstPersonLayers : Object play
             || kind==CaelumConstants.WEAPON_TYPE_UTILITY_STAFF;
         double size=kind==0?1.20:kind==7?1.18:kind==10?1.38:kind==11?1.32:kind==12?1.13:ranged?0.82:1.0;
         vector2 grip=Grip(kind);
+        if(kind==CaelumConstants.WEAPON_TYPE_BOLAS && phase==0)grip.Y-=CaelumBolasRules.READY_LIFT;
         grip+=(dx,dy);
         if(ranged)
         {
@@ -669,7 +672,9 @@ class CaelumFirstPersonLayers : Object play
             // El mango separado usa 48; no recrearlo cada tic para interpolar.
             user.A_ClearOverlays(49,49);
             if(kind!=7 && kind!=12)user.A_ClearOverlays(48,48);
-            Hand(user,52,0,grip,(0,0),1.0,rotation);
+            if(kind==CaelumConstants.WEAPON_TYPE_BOLAS)
+                Place(user,52,GetDefaultByType("CaelumBolasFrames").FindStateByString("Hand"),grip,(216,160),1.0,rotation);
+            else Hand(user,52,0,grip,(0,0),1.0,rotation);
             // La izquierda sostiene el tramo inferior, sin tapar la derecha.
             if(large)Hand(user,51,3,grip,(0,24),0.85,rotation);
             else user.A_ClearOverlays(51,51);
@@ -683,6 +688,7 @@ class CaelumFirstPersonLayers : Object play
         double weaponRotation=rotation+(kind==CaelumConstants.WEAPON_TYPE_PICKAXE
             ?-CaelumConstants.PICKAXE_REST_CLOCKWISE_DEGREES
             :rightLeaning?-28.0:kind==8?FLAIL_HANDLE_ANGLE:0.0);
+        if(kind==CaelumConstants.WEAPON_TYPE_BOLAS && phase==1)weaponRotation-=level.time*360.0*CaelumBolasRules.SPIN_HZ/TICRATE;
         vector2 weaponGrip=grip;
         if(rightLeaning)weaponGrip+=Turn((4,3),rotation);
         if(kind==8)Flail(user,tier,grip,rotation,chainTurn);

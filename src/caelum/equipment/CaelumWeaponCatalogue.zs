@@ -27,6 +27,7 @@ class CaelumWeaponCatalogue : Object
             case CaelumConstants.CATALOGUE_WEAPON_MACHETE: return "CA_WEAPON_CATALOGUE_MACHETE";
             case CaelumConstants.CATALOGUE_WEAPON_JAVELIN: return "CA_WEAPON_CATALOGUE_JAVELIN";
             case CaelumConstants.CATALOGUE_WEAPON_SWORD: return "CA_WEAPON_CATALOGUE_SWORD";
+            case CaelumConstants.CATALOGUE_WEAPON_BOLAS: return "CA_WEAPON_CATALOGUE_BOLAS";
             case CaelumConstants.CATALOGUE_WEAPON_UTILITY_STAFF: return "CA_WEAPON_CATALOGUE_UTILITY_STAFF";
             case CaelumConstants.CATALOGUE_WEAPON_PICKAXE: return "CA_WEAPON_CATALOGUE_PICKAXE";
             case CaelumConstants.CATALOGUE_WEAPON_AXE: return "CA_WEAPON_CATALOGUE_AXE";
@@ -47,7 +48,8 @@ class CaelumWeaponCatalogue : Object
     {
         int resolved = ResolveWeapon(weaponId);
         if (resolved == CaelumConstants.CATALOGUE_WEAPON_PICKAXE
-            || resolved == CaelumConstants.CATALOGUE_WEAPON_UTILITY_STAFF)
+            || resolved == CaelumConstants.CATALOGUE_WEAPON_UTILITY_STAFF
+            || resolved == CaelumConstants.CATALOGUE_WEAPON_BOLAS)
             return CaelumConstants.CATALOGUE_FAMILY_UTILITY;
         if (resolved <= CaelumConstants.CATALOGUE_WEAPON_JAVELIN)
         {
@@ -99,6 +101,7 @@ class CaelumWeaponCatalogue : Object
 
     static double GetPrimaryDamage(int weaponId)
     {
+        if (weaponId == CaelumConstants.CATALOGUE_WEAPON_BOLAS) return 0.0;
         if (weaponId == CaelumConstants.CATALOGUE_WEAPON_UTILITY_STAFF) return 0.0;
         switch (GetStatisticsWeapon(weaponId))
         {
@@ -123,6 +126,7 @@ class CaelumWeaponCatalogue : Object
 
     static double GetSecondaryDamage(int weaponId)
     {
+        if (weaponId == CaelumConstants.CATALOGUE_WEAPON_BOLAS) return 0.0;
         if (weaponId == CaelumConstants.CATALOGUE_WEAPON_UTILITY_STAFF) return 0.0;
         switch (GetStatisticsWeapon(weaponId))
         {
@@ -199,6 +203,7 @@ class CaelumWeaponCatalogue : Object
 
     static double GetMaximumSpread(int weaponId)
     {
+        if(weaponId==CaelumConstants.CATALOGUE_WEAPON_BOLAS)return GetMaximumSpread(CaelumConstants.CATALOGUE_WEAPON_JAVELIN);
         switch (GetStatisticsWeapon(weaponId))
         {
             case CaelumConstants.CATALOGUE_WEAPON_LONGBOW: return 20.0;
@@ -225,6 +230,7 @@ class CaelumWeaponCatalogue : Object
 
     static double GetCriticalChancePercent(int weaponId)
     {
+        if(weaponId==CaelumConstants.CATALOGUE_WEAPON_BOLAS)return 0.0;
         switch (GetStatisticsWeapon(weaponId))
         {
             case CaelumConstants.CATALOGUE_WEAPON_DAGGER: return 15.0;
@@ -245,6 +251,7 @@ class CaelumWeaponCatalogue : Object
 
     static double GetPrimaryAirCost(int weaponId)
     {
+        if (weaponId == CaelumConstants.CATALOGUE_WEAPON_BOLAS) return CaelumBolasRules.AIR_COST;
         if (weaponId == CaelumConstants.CATALOGUE_WEAPON_UTILITY_STAFF) return 0.0;
         switch (GetStatisticsWeapon(weaponId))
         {
@@ -270,6 +277,7 @@ class CaelumWeaponCatalogue : Object
 
     static double GetSecondaryAirCost(int weaponId)
     {
+        if (weaponId == CaelumConstants.CATALOGUE_WEAPON_BOLAS) return 0.0;
         if (weaponId == CaelumConstants.CATALOGUE_WEAPON_UTILITY_STAFF) return 0.0;
         switch (GetStatisticsWeapon(weaponId))
         {
@@ -292,6 +300,7 @@ class CaelumWeaponCatalogue : Object
 
     static int GetPrimaryDamageType(int weaponId)
     {
+        if (weaponId == CaelumConstants.CATALOGUE_WEAPON_BOLAS) return CaelumConstants.CATALOGUE_DAMAGE_NONE;
         switch (ResolveWeapon(weaponId))
         {
             case CaelumConstants.CATALOGUE_WEAPON_DAGGER:
@@ -311,6 +320,7 @@ class CaelumWeaponCatalogue : Object
 
     static int GetSecondaryDamageType(int weaponId)
     {
+        if (weaponId == CaelumConstants.CATALOGUE_WEAPON_BOLAS) return CaelumConstants.CATALOGUE_DAMAGE_NONE;
         if (weaponId == CaelumConstants.CATALOGUE_WEAPON_PICKAXE)
             return CaelumConstants.CATALOGUE_DAMAGE_PIERCING;
         switch (ResolveWeapon(weaponId))

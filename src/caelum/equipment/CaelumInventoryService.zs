@@ -5107,6 +5107,8 @@ class CaelumInventoryService : Object play
     static bool IsDurabilityTaskEquipment(CaelumPlayer user, CaelumEquipmentItem item)
     {
         return item != null && !item.IsLimboTemporary()
+            && !(item.EquipmentKind==CaelumConstants.EQUIPMENT_KIND_WEAPON
+                && item.ItemType==CaelumConstants.WEAPON_TYPE_BOLAS)
             && (item.EquipmentKind == CaelumConstants.EQUIPMENT_KIND_WEAPON
                 || item.EquipmentKind
                     == CaelumConstants.EQUIPMENT_KIND_ARMOR
@@ -5880,6 +5882,11 @@ class CaelumInventoryService : Object play
         if (weapon == null || weapon.IsLimboTemporary() || weapon.IsLimboFirstWeapon()
             || weapon.EquipmentKind != CaelumConstants.EQUIPMENT_KIND_WEAPON)
         {
+            return;
+        }
+        if (weapon.ItemType == CaelumConstants.WEAPON_TYPE_BOLAS)
+        {
+            user.LastEquipmentAction = CaelumConstants.EQUIPMENT_ACTION_FAILED_DISMANTLE_UNSUPPORTED;
             return;
         }
         if (weapon.Equipped)

@@ -452,6 +452,19 @@ class CaelumPalomo : CaelumInteractiveFolkloreActor
 
 class CaelumMandinga : CaelumFolkloreCombatActor
 {
+    CaelumWeaponModel PossessedMachete;
+    int SidearmRevision;
+    override CaelumWeaponModel GetPossessedSidearm()
+    {
+        // Materializa una sola vez el machete ya usado por su perfil ofensivo.
+        if(SidearmRevision<1)
+        {
+            SidearmRevision=1;PossessedMachete=new("CaelumWeaponModel");PossessedMachete.InitializeDefaults();
+            PossessedMachete.WeaponType=CaelumConstants.WEAPON_TYPE_MACHETE;
+            PossessedMachete.Durability=PossessedMachete.GetMaximumDurability();
+        }
+        return PossessedMachete;
+    }
     override int GetArmorRace() { return CaelumConstants.RACE_GOBLIN; }
     Default
     {
@@ -605,7 +618,7 @@ class CaelumZupayColossus : CaelumFolkloreCombatActor
         if (IsRetreatBoss() && health > 0 && CombatMaximumHealth > 0
             && double(health) / CombatMaximumHealth <= CaelumConstants.HEALTH_WOUNDED_THRESHOLD)
             SewerFleeing = true;
-        if (SewerFleeing && IsRetreatBoss() && health > 0)
+        if (!CaelumBolas.Restrained(self) && SewerFleeing && IsRetreatBoss() && health > 0)
         {
             Vector3 exitPos = EscapePosition();
             if (SewerEscapeTarget == null)

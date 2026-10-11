@@ -1,0 +1,24 @@
+{
+  "normal_pk3_sha256": "bf56e70c2ab224a2fd5a8d85203edcb768e83b75307506d01053237ee73b65a3",
+  "native_pk3_sha256": "a55086711c954f5af2a409fdc2c6c8d896af5f1c8ccffc9db77f46749136e202",
+  "files": 6307,
+  "every_runtime_member_matches": true,
+  "full_mechanics_package_sha256": "a2f649afbc9a5935df1fee150331585ba909c7be92a975793faeacd72de3aa3b",
+  "subsequent_changes": [
+    "caelum/hud/CaelumHUDOverlay.zs: add bolas icon fallback",
+    "caelum/equipment/CaelumInventoryService.zs: reject legacy bolas dismantling"
+  ],
+  "followup_validation": [
+    "delivered-visuals",
+    "delivered-inputs",
+    "delivered-crafting",
+    "delivered-checks",
+    "delivered-legacy",
+    "delivered-legacy-again"
+  ],
+  "art_generator_two_runs_identical": true,
+  "art_hashes": {
+    "src/graphics/caelum/bolas/atlas.png": "fb78f0ab7883e2fcb806fa5feaf035b09ecec762526ae7b4415fc07314e99b6e",
+    "src/graphics/caelum/bolas/bolas.textures": "e95a288a1ccb8a215715a3323efa5087ec8f7286423bbdf0dca7826e53a7a3c4"
+  }
+}

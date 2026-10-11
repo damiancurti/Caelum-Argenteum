@@ -1,0 +1,10 @@
+{
+  "issue": 163,
+  "release": "5.1.16",
+  "created": "2026-10-10",
+  "creator": "OpenAI image_gen built-in tool, directed by Codex for Damian Curti",
+  "external_images_used": false,
+  "source": "atlas.png",
+  "prompt": "Create a production game sprite atlas for an original dark fantasy FPS set in nineteenth-century Argentina. Transparent RGBA background, square canvas, EXACT 3 columns by 2 rows of equally sized cells, no lines or labels, large generous clear margins so no cell touches another. Painterly realistic game sprite style, warm dark brown raw cowhide thongs, three heavy spherical leather-covered bronze-core balls, cowhide lacing seams; same single bolas weapon in every applicable cell. NO hands, arms, people, text, backdrop, shadows on ground, or UI. TOP LEFT: close first-person ready pose, junction held at bottom center of its cell, three thongs with three leather balls hanging and splaying up/right; TOP MIDDLE: spin pose same item rotating clockwise at top right with taut radial thongs, crisp no motion blur, junction at bottom center; TOP RIGHT: released bolas spreading open in midair toward upper right with three balls and connecting thongs. BOTTOM LEFT: compact coiled bolas laid as an inventory/pickup sprite, all three leather balls visibly separate, cords coiled neatly, fully inside cell. BOTTOM MIDDLE: ONLY a horizontal oval loop of twisted leather rope seen slightly from above, transparent center, crossing cord in front, with one weighted leather ball hanging at each lower side, for overlay around an actor's forearms/torso, NO actor. BOTTOM RIGHT: ONLY a narrower horizontal oval loop of leather rope with crossed thongs in front and one leather ball hanging from center, transparent center, for overlay around actor's lower legs, NO actor. All six sprites on true transparent backgrounds, consistent overhead left lighting, readable silhouettes, rich leather texture, full object visible within each cell.",
+  "registration": "Native TEXTURES crops/offsets only; source RGBA bytes remain unchanged. Existing project hands are reused."
+}

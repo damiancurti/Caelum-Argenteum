@@ -4,6 +4,44 @@ Status: integrated engineering register (issue #22, patch 4.36.1b).
 Prepared: 2026-09-23. Inherits the project's release after integration.
 Inspected baseline: `1dc390576fa330d37ff543526fc7e69a397fc28f` (PR #7).
 
+## CA-KP-073 - Separate front and rear arcs around a billboard actor
+
+Status/evidence: ENGINE-VERIFIED, #163 / 5.1.16 visual follow-up, 2026-10-10.
+Baseline: 196a7953; GZDoom 4.14.2 Windows/Vulkan, ordinary perspective views.
+
+A complete rope-loop billboard placed at a victim's origin can draw its rear
+arc over the body. Texture transparency alone does not supply the missing depth.
+Clip the original art into front and rear fragments without changing its pixel
+coordinates, then place their cosmetic WorldOffset on opposite sides of the
+body's sprite plane along the local camera yaw. Keep physical origins, collision
+and gameplay authority independent of these view-dependent offsets. Preserve
+old front references and idempotently add missing rear references on load;
+remove both sets on every release path.
+
+Native API source: installed gzdoom.pk3, zscript/actors/actor.zs (WorldOffset);
+renderer source: ZDoom/gzdoom tag g4.14.2,
+src/rendering/hwrenderer/scene/hw_sprites.cpp, Process applies WorldOffset before
+calculating sprite depth. Evidence: assets/validation_5116/visual_followup,
+four cardinal views plus separate body/rear-only/combined native captures.
+This establishes ordinary-view occlusion, not author visual acceptance.
+
+## CA-KP-072 - Observe loaded input state before the first simulation tick
+
+Status/evidence: ENGINE-VERIFIED, #163 / 5.1.16, 2026-10-10.
+Runtime: GZDoom 4.14.2 Windows/Vulkan; native source baseline dc757efe plus #163.
+
+A preparation-reload fixture initially checked the live counter after several
+tics, although the engine had released its input. Zero was the correct runtime
+cancellation, not a serialization failure: the native save stored 35 tics.
+A regular saved EventHandler did not provide the required pre-tick reload
+observation. A StaticEventHandler.WorldLoaded observer with IsSaveGame confirmed
+35 immediately on load; the ordinary tick then correctly canceled on release.
+Use that static observer for load-time assertions, and test subsequent input
+handling separately. Do not preserve stale held input merely to satisfy a late
+snapshot assertion. Evidence: validation_5116/delivered-prepared-observed.txt
+and inputs.zs; the save/package/fixture fingerprints are recorded alongside it.
+Author handling acceptance remains separate (CA163-01).
+
 ## CA-KP-071 - Never carry map-local damage age into another map
 
 Status/evidence: CODE-VERIFIED / ENGINE-VERIFIED, #165 / 5.1.14, 2026-10-10.

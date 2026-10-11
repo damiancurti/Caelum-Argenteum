@@ -15,6 +15,7 @@ class CaelumHUDOverlay : EventHandler
     {
         switch (weaponType)
         {
+            case CaelumConstants.WEAPON_TYPE_BOLAS: return "CA_WEAPON_TYPE_BOLAS";
             case CaelumConstants.WEAPON_TYPE_SWORD: return "CA_WEAPON_TYPE_SWORD";
             case CaelumConstants.WEAPON_TYPE_STAFF: return "CA_WEAPON_TYPE_STAFF";
             case CaelumConstants.WEAPON_TYPE_CARBINE: return "CA_WEAPON_TYPE_CARBINE";
@@ -81,6 +82,7 @@ class CaelumHUDOverlay : EventHandler
     {
         switch (weaponType)
         {
+            case CaelumConstants.WEAPON_TYPE_BOLAS: return "CA_BOLAS_ICON";
             case CaelumConstants.WEAPON_TYPE_SWORD: return "graphics/caelum/icons/ca_sword.png";
             case CaelumConstants.WEAPON_TYPE_STAFF: return "graphics/caelum/icons/ca_staff.png";
             case CaelumConstants.WEAPON_TYPE_CARBINE: return "graphics/caelum/icons/ca_carbine.png";

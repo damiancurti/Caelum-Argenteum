@@ -1,6 +1,17 @@
 CAELUM ARGENTEUM — STORY AND MAP01
 
-Documentation version: **5.1.15** — 2026-10-10.
+Documentation version: **5.1.16** — 2026-10-10.
+
+## 5.1.16 - Bolas tutorial boundary (#163 / #164)
+
+Boleadora / Bolas is implemented as a recoverable family-1 tool with one-second
+accuracy preparation and visible five-second restraint. Its bronze/leather
+recipe, escape rules and native tests are documented in SYSTEMS and
+assets/validation_5116. Rulo's permanent grant and revised tutorial progression
+remain exclusively #164; this patch neither adds that gift nor changes the
+accepted trial/dialogue sequence. CA163-01 covers isolated handling/art only,
+including hanging rest, 3 Hz spin, front/back rope occlusion, continuous forearms
+and visible immediate paid demon escape. These corrections add no campaign grant.
 
 ## 5.1.15 - Utility tool integration boundary (#162 / #164)
 

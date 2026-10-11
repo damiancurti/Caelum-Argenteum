@@ -5,6 +5,8 @@
 // These inherited resources will be replaced by original assets later.
 class CaelumPlayer : DoomPlayer
 {
+    CaelumBolasFlight BolasBinding;
+    int BolasPreparedTics,BolasPreparedItem,BolasReleaseUntil;
     Actor UtilityStaffStream;
     int UtilityStaffRequestedMode;
     bool ThermalBluntDelivery;
@@ -2533,6 +2535,7 @@ class CaelumPlayer : DoomPlayer
                 return 'CaelumJavelinSelectorWeapon';
             case CaelumConstants.WEAPON_TYPE_SWORD:
                 return 'CaelumSwordSelectorWeapon';
+            case CaelumConstants.WEAPON_TYPE_BOLAS: return 'CaelumBolasSelectorWeapon';
             case CaelumConstants.WEAPON_TYPE_UTILITY_STAFF:
                 return 'CaelumUtilityStaffSelectorWeapon';
             case CaelumConstants.WEAPON_TYPE_PICKAXE:
@@ -2639,6 +2642,7 @@ class CaelumPlayer : DoomPlayer
         if (!CharacterCreationComplete) { return; }
         EnsurePhysicalWeaponSelector(CaelumConstants.WEAPON_TYPE_PICKAXE, "CaelumPickaxeSelectorWeapon");
         EnsurePhysicalWeaponSelector(CaelumConstants.WEAPON_TYPE_UTILITY_STAFF, "CaelumUtilityStaffSelectorWeapon");
+        EnsurePhysicalWeaponSelector(CaelumConstants.WEAPON_TYPE_BOLAS, "CaelumBolasSelectorWeapon");
         EnsurePhysicalWeaponSelector(
             CaelumConstants.WEAPON_TYPE_DAGGER,
             "CaelumDaggerSelectorWeapon"
@@ -4505,6 +4509,7 @@ class CaelumPlayer : DoomPlayer
             case CaelumConstants.WEAPON_TYPE_MACHETE: return "graphics/caelum/icons/ca_machete.png";
             case CaelumConstants.WEAPON_TYPE_JAVELIN: return "graphics/caelum/icons/ca_javelin.png";
             case CaelumConstants.WEAPON_TYPE_UTILITY_STAFF: return "CA_UTILITY_STAFF_ICON";
+            case CaelumConstants.WEAPON_TYPE_BOLAS: return "CA_BOLAS_ICON";
             case CaelumConstants.WEAPON_TYPE_PICKAXE: return "graphics/caelum/icons/ca_pickaxe.png";
             case CaelumConstants.WEAPON_TYPE_AXE: return "graphics/caelum/icons/ca_axe.png";
             case CaelumConstants.WEAPON_TYPE_FLAIL: return "graphics/caelum/icons/ca_flail.png";
@@ -7737,6 +7742,7 @@ class CaelumPlayer : DoomPlayer
 
     override int DamageMobj(Actor inflictor,Actor source,int damage,Name mod,int flags,double angle)
     {
+        CaelumBolas.FireAttack(self,inflictor,mod);
         int before=health;
         int result=ReceiveCaelumDamage(inflictor,source,damage,mod,flags,angle);
         CaelumDamageFeedback.Record(self,inflictor,mod,Max(0,Max(0,before)-Max(0,health)));
@@ -8922,6 +8928,7 @@ class CaelumPlayer : DoomPlayer
         RepairActiveShieldReference();
         Super.Tick();
         CaelumUtilityStaff.Update(self);
+        CaelumBolas.Update(self);
         CaelumRestState.Validate(self);
         UpdateCraftingTask();
         UpdatePalomoMerchantSession();
@@ -9529,6 +9536,8 @@ class CaelumPlayer : DoomPlayer
 
     void PerformEquippedWeaponPrimaryAttack()
     {
+        if(WeaponModel!=null && WeaponModel.WeaponType==CaelumConstants.WEAPON_TYPE_BOLAS)
+        {CaelumBolas.Throw(self);return;}
         if(WeaponModel!=null && WeaponModel.WeaponType==CaelumConstants.WEAPON_TYPE_UTILITY_STAFF)
         {CaelumUtilityStaff.Request(self,CaelumUtilityStaffRules.FIRE);return;}
         RefreshWeaponAttackClock();
@@ -9604,6 +9613,7 @@ class CaelumPlayer : DoomPlayer
     // independiente.
     void PerformEquippedWeaponSecondaryAttack()
     {
+        if(WeaponModel!=null && WeaponModel.WeaponType==CaelumConstants.WEAPON_TYPE_BOLAS)return;
         if(WeaponModel!=null && WeaponModel.WeaponType==CaelumConstants.WEAPON_TYPE_UTILITY_STAFF)
         {CaelumUtilityStaff.Request(self,CaelumUtilityStaffRules.ICE);return;}
         RefreshWeaponAttackClock();
@@ -10168,7 +10178,9 @@ class CaelumPlayer : DoomPlayer
 
     void RequestWeaponReloadOrCharge(int requestedWeaponType, bool isMagic)
     {
-        if(requestedWeaponType==CaelumConstants.WEAPON_TYPE_UTILITY_STAFF)return;
+        if(CaelumBolas.Restrained(self))return; // El flanco de Reload inicia el corte en Update.
+        if(requestedWeaponType==CaelumConstants.WEAPON_TYPE_UTILITY_STAFF
+            || requestedWeaponType==CaelumConstants.WEAPON_TYPE_BOLAS)return;
         if (PhysicalAttackPending) return;
         if (IsRangedWeaponType(requestedWeaponType))
         {
@@ -11497,7 +11509,7 @@ class CaelumPlayer : DoomPlayer
 
     bool IsPhysicallyImmobilized()
     {
-        return CombatChannelModeActive
+        return CaelumBolas.Restrained(self) || CombatChannelModeActive
             || ForcedSleepTics > 0
             || LucidityPhysicalStunRemaining > 0.0
             || PainImmobilizationRemaining > 0.0

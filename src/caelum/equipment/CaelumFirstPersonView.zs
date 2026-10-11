@@ -429,6 +429,8 @@ class CaelumFirstPersonView : Object play
 
     static State Pose(int weaponType, int tier, int phase)
     {
+        if (weaponType == CaelumConstants.WEAPON_TYPE_BOLAS)
+            return GetDefaultByType("CaelumBolasFrames").FindStateByString(phase==1 ? "Spin" : phase==2 ? "Release" : phase==3 ? "Recover" : "Ready");
         if (weaponType == CaelumConstants.WEAPON_TYPE_UTILITY_STAFF)
             return GetDefaultByType("CaelumUtilityStaffFrames").FindStateByString(
                 phase==1 ? "Fire" : phase==2 ? "Ice" : phase==3 ? "Equip" : "Ready");
@@ -502,15 +504,16 @@ class CaelumFirstPersonView : Object play
     void Update(Weapon selector, CaelumPlayer user, PSprite baseView)
     {
         if (user == null || user.player == null) return;
+        bool bolasRelease=user.BolasReleaseUntil>level.time && selector is "CaelumBolasSelectorWeapon";
         bool outgoing=Initialized && user.player.PendingWeapon!=null
             && user.player.PendingWeapon!=WP_NOCHANGE && user.player.PendingWeapon!=selector;
         if (selector != user.player.ReadyWeapon || user.health <= 0
             || user.player.playerstate != PST_LIVE || !user.CharacterCreationComplete
             || user.CreationWizardOpen || user.EquipmentMenuOpen || user.CraftingMenuOpen
-            || (!user.HUDHasActiveWeapon && !outgoing) || CaelumRestState.IsActive(user)
+            || (!user.HUDHasActiveWeapon && !outgoing && !bolasRelease) || CaelumRestState.IsActive(user)
             || user.ForcedSleepTics > 0)
         { Hide(user); return; }
-        int kind = outgoing ? WeaponType : user.HUDActiveWeaponType;
+        int kind = bolasRelease ? CaelumConstants.WEAPON_TYPE_BOLAS : outgoing ? WeaponType : user.HUDActiveWeaponType;
         if (kind < 0 || kind >= CaelumConstants.WEAPON_TYPE_COUNT)
         { Hide(user); return; }
         if (!Initialized || (!outgoing && (ItemId != user.HUDActiveWeaponItemId
@@ -550,6 +553,8 @@ class CaelumFirstPersonView : Object play
             phase = attack && !blocking ? AttackSide : 0;
         if (kind == CaelumConstants.WEAPON_TYPE_PICKAXE)
             phase = attack && !blocking && user.AttackAnimationSecondary ? 1 : 0;
+        if(kind==CaelumConstants.WEAPON_TYPE_BOLAS)
+            phase=bolasRelease ? (user.BolasReleaseUntil-level.time>CaelumAttackRules.BASE_TICS/2 ? 2 : 3) : user.BolasPreparedTics>0 ? 1 : 0;
         if (kind == CaelumConstants.WEAPON_TYPE_UTILITY_STAFF)
             phase = outgoing || baseView.y>WEAPONTOP+1 ? 3
                 : user.UtilityStaffStream!=null ? CaelumUtilityStaffStream(user.UtilityStaffStream).Mode : 0;
@@ -572,6 +577,8 @@ class CaelumFirstPersonView : Object play
         // Lienzo 320×200 y offset (160,32); el desplazamiento de Select/Deselect
         // acompaña al arma nativa y no introduce otra espera de jugabilidad.
         double dx=0, dy=0, rotation=0;
+        // El giro de la boleadora ocurre alrededor de la mano estable, en su capa.
+        if(kind==CaelumConstants.WEAPON_TYPE_BOLAS && phase==3)dy=40;
         if (attack && !blocking)
         {
             int step = Clamp(int(progress*8),0,7);

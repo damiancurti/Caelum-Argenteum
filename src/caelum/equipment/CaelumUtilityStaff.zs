@@ -204,7 +204,15 @@ class CaelumUtilityStaffEvents : StaticEventHandler
         // Se liquida el intervalo pagado en el mapa de origen, antes de
         // congelar el hub; nunca se traslada radiación pendiente al destino.
         for(int i=0;i<MAXPLAYERS;i++)if(playeringame[i])
-            CaelumUtilityStaff.EndEmission(CaelumPlayer(players[i].mo));
+            {
+                let user=CaelumPlayer(players[i].mo);
+                CaelumUtilityStaff.EndEmission(user);
+                if(user!=null)
+                {
+                    if(user.BolasBinding!=null)user.BolasBinding.Resolve(false);
+                    user.BolasPreparedTics=0;user.BolasPreparedItem=0;user.BolasReleaseUntil=0;
+                }
+            }
     }
 }
 

@@ -32,6 +32,9 @@ class CaelumCraftingRules : Object
     {
         int resolvedStation = ResolveStationType(stationType);
         if (resolvedStation == CaelumConstants.CRAFTING_STATION_WORKBENCH
+            && recipeIndex == CaelumConstants.CRAFTING_BOLAS_RECIPE)
+            return CaelumConstants.CATALOGUE_WEAPON_BOLAS;
+        if (resolvedStation == CaelumConstants.CRAFTING_STATION_WORKBENCH
             && recipeIndex == CaelumConstants.CRAFTING_UTILITY_STAFF_RECIPE)
             return CaelumConstants.CATALOGUE_WEAPON_UTILITY_STAFF;
         if ((resolvedStation == CaelumConstants.CRAFTING_STATION_WORKBENCH
@@ -119,6 +122,8 @@ class CaelumCraftingRules : Object
 
     static int GetWeaponPrimaryStation(int weaponId)
     {
+        if (weaponId == CaelumConstants.CATALOGUE_WEAPON_BOLAS)
+            return CaelumConstants.CRAFTING_STATION_FORGE;
         if (weaponId == CaelumConstants.CATALOGUE_WEAPON_UTILITY_STAFF)
             return GetWeaponPrimaryStation(CaelumConstants.CATALOGUE_WEAPON_PICKAXE);
         int resolved = CaelumWeaponCatalogue.ResolveWeapon(weaponId);
@@ -218,7 +223,8 @@ class CaelumCraftingRules : Object
     static bool IsSingleTierRecipe(int recipeIndex)
     {
         return recipeIndex == CaelumConstants.CRAFTING_PICKAXE_RECIPE
-            || recipeIndex == CaelumConstants.CRAFTING_UTILITY_STAFF_RECIPE;
+            || recipeIndex == CaelumConstants.CRAFTING_UTILITY_STAFF_RECIPE
+            || recipeIndex == CaelumConstants.CRAFTING_BOLAS_RECIPE;
     }
 
     static int GetUnifiedRecipeKind(int recipeIndex)
@@ -311,6 +317,8 @@ class CaelumCraftingRules : Object
     {
         if (weaponId == CaelumConstants.CATALOGUE_WEAPON_UTILITY_STAFF)
             return CaelumConstants.CRAFTING_UTILITY_STAFF_RECIPE;
+        if (weaponId == CaelumConstants.CATALOGUE_WEAPON_BOLAS)
+            return CaelumConstants.CRAFTING_BOLAS_RECIPE;
         if (weaponId == CaelumConstants.CATALOGUE_WEAPON_PICKAXE)
             return CaelumConstants.CRAFTING_PICKAXE_RECIPE;
         int resolvedWeapon = CaelumWeaponCatalogue.ResolveWeapon(weaponId);
@@ -1336,6 +1344,7 @@ class CaelumCraftingRules : Object
             case CaelumConstants.CATALOGUE_WEAPON_MACHETE: return CaelumConstants.WEAPON_TYPE_MACHETE;
             case CaelumConstants.CATALOGUE_WEAPON_JAVELIN: return CaelumConstants.WEAPON_TYPE_JAVELIN;
             case CaelumConstants.CATALOGUE_WEAPON_SWORD: return CaelumConstants.WEAPON_TYPE_SWORD;
+            case CaelumConstants.CATALOGUE_WEAPON_BOLAS: return CaelumConstants.WEAPON_TYPE_BOLAS;
             case CaelumConstants.CATALOGUE_WEAPON_UTILITY_STAFF: return CaelumConstants.WEAPON_TYPE_UTILITY_STAFF;
             case CaelumConstants.CATALOGUE_WEAPON_PICKAXE: return CaelumConstants.WEAPON_TYPE_PICKAXE;
             case CaelumConstants.CATALOGUE_WEAPON_AXE: return CaelumConstants.WEAPON_TYPE_AXE;
@@ -1361,6 +1370,7 @@ class CaelumCraftingRules : Object
             case CaelumConstants.WEAPON_TYPE_MACHETE: return CaelumConstants.CATALOGUE_WEAPON_MACHETE;
             case CaelumConstants.WEAPON_TYPE_JAVELIN: return CaelumConstants.CATALOGUE_WEAPON_JAVELIN;
             case CaelumConstants.WEAPON_TYPE_SWORD: return CaelumConstants.CATALOGUE_WEAPON_SWORD;
+            case CaelumConstants.WEAPON_TYPE_BOLAS: return CaelumConstants.CATALOGUE_WEAPON_BOLAS;
             case CaelumConstants.WEAPON_TYPE_UTILITY_STAFF: return CaelumConstants.CATALOGUE_WEAPON_UTILITY_STAFF;
             case CaelumConstants.WEAPON_TYPE_PICKAXE: return CaelumConstants.CATALOGUE_WEAPON_PICKAXE;
             case CaelumConstants.WEAPON_TYPE_AXE: return CaelumConstants.CATALOGUE_WEAPON_AXE;
@@ -1402,6 +1412,7 @@ class CaelumCraftingRules : Object
 
     static double GetPlayableTierOneWeight(int weaponId)
     {
+        if (weaponId == CaelumConstants.CATALOGUE_WEAPON_BOLAS) return CaelumBolasRules.MASS_KG;
         switch (CaelumWeaponCatalogue.GetStatisticsWeapon(weaponId))
         {
             case CaelumConstants.CATALOGUE_WEAPON_DAGGER: return CaelumConstants.WEAPON_DAGGER_TIER_ONE_WEIGHT;
@@ -1425,6 +1436,7 @@ class CaelumCraftingRules : Object
 
     static int GetPrimaryMaterial(int weaponId)
     {
+        if (weaponId == CaelumConstants.CATALOGUE_WEAPON_BOLAS) return CaelumConstants.MATERIAL_BRONZE_INGOT;
         switch (CaelumWeaponCatalogue.GetStatisticsWeapon(weaponId))
         {
             case CaelumConstants.CATALOGUE_WEAPON_DAGGER: return CaelumConstants.MATERIAL_SMALL_BLADE;
@@ -1448,6 +1460,7 @@ class CaelumCraftingRules : Object
 
     static int GetSecondaryMaterial(int weaponId)
     {
+        if (weaponId == CaelumConstants.CATALOGUE_WEAPON_BOLAS) return CaelumConstants.MATERIAL_LEATHER;
         switch (CaelumWeaponCatalogue.GetStatisticsWeapon(weaponId))
         {
             case CaelumConstants.CATALOGUE_WEAPON_DAGGER:
@@ -1491,6 +1504,7 @@ class CaelumCraftingRules : Object
 
     static double GetTierWeightRatio(int weaponId)
     {
+        if (weaponId == CaelumConstants.CATALOGUE_WEAPON_BOLAS) return CaelumBolasRules.BRONZE_KG/CaelumBolasRules.MASS_KG;
         int resolved = CaelumWeaponCatalogue.GetStatisticsWeapon(weaponId);
         if (resolved == CaelumConstants.CATALOGUE_WEAPON_JAVELIN
             || resolved == CaelumConstants.CATALOGUE_WEAPON_SPEAR

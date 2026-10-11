@@ -223,3 +223,4 @@ version "4.14"
 
 #include "caelum/actors/CaelumElementalStream.zs"
 #include "caelum/equipment/CaelumUtilityStaff.zs"
+#include "caelum/equipment/CaelumBolas.zs"
