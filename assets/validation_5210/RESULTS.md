@@ -42,6 +42,10 @@ CA192-02 remains pending for author gameplay acceptance. The earlier accepted
 CA192-01 and CA188-01 remain recorded under their original releases; they do not
 accept this amendment. Commit/push/issue closure do not substitute for that check.
 
+Delivery: commit 47fec499, pushed branch issue192-ranged-penetration;
+[PR198](https://github.com/damiancurti/Caelum-Argenteum/pull/198) awaits merge.
+Issue #192 was closed again on 2026-10-11 at the author's request.
+
 ## Reproduction
 
 1. `python assets/validation_5210/prepare.py` builds deterministic local packages.

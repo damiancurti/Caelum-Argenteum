@@ -5,7 +5,7 @@ Documentation version: **5.2.10** — 2026-10-11.
 **Current patch 5.2.10 / #192 amendment:** bow bypass 20/30/40%, crossbow
 40/50/60%; all four ranged families exclude offensive ideology. Active names
 use shotgun; fresh test saves authorized. Evidence: validation_5210. CA192-02
-pending; commit/push/reclosure requested, amendment PR awaits merge.
+pending; commit/push done, #192 closed again. PR198 awaits merge.
 5.2.9 personality/power/bell12 and #188 mass-based Toughness remain accepted:
 CA192-01/CA188-01 passed 2026-10-11; PR193/196/197 merged. Prior evidence:
 validation_529/528. Next separate roadmap: #148.

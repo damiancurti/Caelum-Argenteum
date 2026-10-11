@@ -14,8 +14,8 @@ it, then rebuild with `run_dev.bat` as described below.
 unchanged. All four exclude offensive ideology against both armor and shields.
 Active identifiers, descriptions and retained resource paths use shotgun names.
 [Evidence](assets/validation_5210/RESULTS.md); CA192-02 remains pending for author
-gameplay acceptance. The author requested commit, push and issue reclosure;
-the new linked PR is separate from the previously merged personality delivery.
+gameplay acceptance. Commit/push are complete and #192 is closed again as requested;
+[PR198](https://github.com/damiancurti/Caelum-Argenteum/pull/198) awaits review/merge.
 Use fresh test saves for the renamed selector, as authorized by the author.
 
 5.2.9 adds four personality choices and a twelve-projectile bell. Magical power

@@ -26,8 +26,10 @@ the same ranged matrix reproduces 332 failures; the initial changed-runtime
 run passes all 1,028 assertions, including actual arrow/bolt collisions.
 Final validation and bilingual/native selector checks are recorded there.
 CA192-02 remains pending. Earlier CA192-01/CA188-01 acceptance is not extended
-to new gameplay. The author requested commit, push and reclosure of #192;
-the amendment PR has not been merged.
+to new gameplay. Commit 47fec499 was pushed and #192 closed again as requested on 2026-10-11.
+PR198 delivers this amendment and awaits review/merge; closing the issue does
+not accept CA192-02. Final native, generator, validator and indexed-byte checks
+passed. The keep-awake request was released without changing the power plan.
 
 ## 5.2.9 - Personality, magical power and bell volley (#192), 2026-10-11
 
