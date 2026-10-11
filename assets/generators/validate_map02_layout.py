@@ -15,7 +15,7 @@ import struct
 
 ROOT = Path(__file__).resolve().parents[2]
 SOURCE = ROOT / "assets/map02_maze"
-REPORT = ROOT / "assets/validation_4376/LAYOUT.json"
+REPORT = ROOT / "assets/validation_524/layout-audit.json"
 
 
 def read_map(path):
@@ -54,7 +54,7 @@ def main():
         check(f"accepted actor count preserved {kind}", counts[kind] == old_counts[kind])
     check("45 traps preserve each accepted type", len(current["traps"]) == 45 and
           Counter(t["type"] for t in current["traps"]) == Counter(t["type"] for t in legacy["traps"]))
-    for cls, expected in {'CaelumArrowAmmo':240,'CaelumBoltAmmo':120,'CaelumCarbineAmmo':120,'CaelumFoodRation':96,'CaelumWaterRation':96}.items():
+    for cls, expected in {'CaelumArrowAmmo':360,'CaelumBoltAmmo':240,'CaelumCarbineAmmo':0,'CaelumShotgunAmmo':0,'CaelumFoodRation':96,'CaelumWaterRation':96}.items():
         check(f"death drop total {cls}",sum(d['amount'] for d in current['drops'] if d['cls']==cls)==expected)
     check('unique one-object carriers',len({d['tid'] for d in current['drops']})==len(current['drops']))
     check('no preplaced collectible supplies',all(counts[k]==0 for k in [30970,30971,30972,30982,30983,30984,30985,30986,30978,30979,18110,18111,18112]))
@@ -196,11 +196,11 @@ def main():
     for label in ("boss_center", "card", "extraction"):
         check(f"final {label} reachable with keys", bool(nodes_at(current[label]) & complete))
     for i, refuge in enumerate(current["refuges"]):
-        check(f"refuge {i} complete repair station types", {s["type"] for s in refuge["stations"]} == {18000, 18001, 18003, 18004})
+        check(f"refuge {i} complete repair station types", {s["type"] for s in refuge["stations"]} == {18000, 18001, 18002, 18003, 18004})
     check("three largest actors fit each dry walkway", (data["passage_width"] - data["channel_width"]) / 2 >= 6 * radius)
     result = dict(version=current["version"], evidence="static analysis", checks=len(checks),
                   failures=sum(not c["passed"] for c in checks),
-                  scope="Fresh revision-3 MAP02 only. Geometry clearance excludes dynamic actors; native movement, projectile and save migration tests remain separate.",
+                  scope="Legacy revision-3 pathfinder applied to current revision-4 geometry: does not model flooded returns/3D floors. Route failures are not valid traversal evidence; issue183 check.py separately verifies exact baseline geometry. Native movement and combat remain separate.",
                   collision=dict(radius=radius, height=height, maximum_step=16, valid_grid_cells=len(valid)),
                   stages=stages, results=checks,
                   hashes={str(p.relative_to(ROOT)).replace("\\", "/"): hashlib.sha256(p.read_bytes()).hexdigest()

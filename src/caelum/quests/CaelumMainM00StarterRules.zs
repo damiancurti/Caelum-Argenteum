@@ -210,6 +210,14 @@ class CaelumMainM00StarterMaterials : Object play
             CaelumCraftingRules.GetRequiredAmuletTierUnits(weight)));
     }
 
+    void AddUtility(int recipe)
+    {
+        Recipes[recipe] = true;
+        double weight = CaelumUtilityCrafting.Weight(recipe);
+        Expand(CaelumConstants.MATERIAL_LEATHER, ScaleUnits(CaelumCraftingRules.GetRoundedMaterialUnits(weight, CaelumOnboardingCatalogue.LEATHER_SHARE)));
+        Expand(CaelumConstants.MATERIAL_ROPE, ScaleUnits(CaelumCraftingRules.GetRoundedMaterialUnits(weight, CaelumOnboardingCatalogue.ROPE_SHARE)));
+    }
+
     void AddStarterAmmunition(int option)
     {
         if (option != 14 && option != 15) return;
@@ -257,29 +265,11 @@ class CaelumMainM00SupplyRules : Object play
 
     static void UpdateLimits(CaelumPlayer user)
     {
+        if (!IsLimited(user)) return;
         let r = user.GetPersistentCharacterState(false);
-        if (!IsLimited(user) || !HasPlan(r)) return;
-        let needs = new("CaelumMainM00StarterMaterials");
-        needs.Efficiency = 2;
-        if (r.MainM00StarterChosen) needs.Build(r.MainM00StarterOption, r.MainM00StarterSize, 2);
+        let needs = CaelumOnboarding.LessonMaterials(user);
         for (int i = 0; i < CaelumConstants.MATERIAL_TYPE_COUNT; i++)
-            r.MainM00StarterRequired[i] = needs.Units[i];
-        if (r.MainM00StarterChosen) needs.AddStarterAmmunition(r.MainM00StarterOption);
-        if (r.MainM00ArmorChosen) needs.AddArmor(r.MainM00ArmorType, r.MainM00ArmorSize);
-        if (r.MainM00ShieldChoice > 0) needs.AddShield(r.MainM00ShieldChoice - 1,
-            r.MainM00StarterChosen ? r.MainM00StarterSize
-            : CaelumEquipmentRules.GetDefaultSizeForCharacterTier(user.CharacterProfile.GetSizeTier()));
-        // Preservar lo gastado en los sellos ya preparados en 0ae, pero no
-        // mantener cupos sin usar para los otros cuatro elementos.
-        for (int element = 0; element < CaelumConstants.SEAL_TYPE_COUNT; element++)
-            if (!r.MainM00SealOwnedAtLearning[element]
-                && (r.MainM00SealChoice == element + 1 || r.MainM00SealsPrepared[element]))
-                needs.AddSeal(element);
-        if (r.MainM00AmuletChoice > 0 && !r.MainM00AmuletOwnedAtLearning)
-            needs.AddAmulet(r.MainM00AmuletChoice - 1);
-        for (int i = 0; i < CaelumConstants.MATERIAL_TYPE_COUNT; i++)
-            r.MainM00SupplyLimit[i] = needs.Units[i] + r.MainM00RepairSupply[i];
-        RefreshChest(user);
+            r.MainM00SupplyLimit[i] = needs.Units[i];
     }
 
     static void RefreshChest(CaelumPlayer user)
@@ -302,45 +292,24 @@ class CaelumMainM00SupplyRules : Object play
     {
         if (!IsLimited(user)) return;
         let r = user.GetPersistentCharacterState(false);
-        if (!HasPlan(r) || r.MainM00SupplyQuotaReady) return;
+        if (r.MainM00SupplyQuotaReady) return;
         r.MainM00SupplyQuotaReady = true;
         UpdateLimits(user);
-        // Migración: valorar existencias (incluidos componentes) al 100%.
-        // Los materiales reservados siguen en Inventory y se cuentan una vez.
-        let owned = new("CaelumMainM00StarterMaterials");
-        owned.Efficiency = 2;
-        for (Inventory cursor = user.Inv; cursor != null; cursor = cursor.Inv)
-        {
-            let item = CaelumSpecialInventoryItem(cursor);
-            if (item != null && item.GetSpecialCategory() == CaelumConstants.EQUIPMENT_KIND_MATERIAL
-                && item.GetSpecialTier() == 1) owned.Expand(item.GetSpecialType(), item.Amount);
-        }
-        if (r.MainM00StarterWeaponId > 0) owned.AddWeapon(r.MainM00StarterOption, r.MainM00StarterSize);
-        int ammoType = r.MainM00StarterOption == 15 ? CaelumConstants.AMMUNITION_BOLT : CaelumConstants.AMMUNITION_ARROW;
-        let ammunition = user.FindInventory(user.GetAmmunitionClassName(ammoType));
-        if (ammunition != null && ammunition.Amount > 0) owned.AddStarterAmmunition(r.MainM00StarterOption);
-        for (int i = 0; i < CaelumConstants.MATERIAL_TYPE_COUNT; i++)
-            r.MainM00SupplyIssued[i] = owned.Units[i];
-        RefreshChest(user);
-        if (!user.CraftingTaskActive)
-        { user.CraftingEfficiencyIndex = 2; user.ResetCraftingLayerChoices(); }
     }
 
     static int Remaining(CaelumPlayer user, int material)
     {
         if (!IsLimited(user)) return 2147483647;
-        Ensure(user);
         let r = user.GetPersistentCharacterState(false);
-        if (!HasPlan(r) || material < 0 || material >= CaelumConstants.MATERIAL_TYPE_COUNT) return 0;
-        return Max(0, r.MainM00SupplyLimit[material] - r.MainM00SupplyIssued[material]);
+        if (material != CaelumConstants.MATERIAL_RAW_GOLD || !CaelumMainM00RonnieTrial.IsStarted(user)) return 0;
+        return Max(0, int(CaelumOnboardingCatalogue.GOLD_KG / CaelumConstants.MATERIAL_UNIT_WEIGHT) - r.MainM00GoldMinedUnits);
     }
 
     static void Issue(CaelumPlayer user, int material, int amount)
     {
         if (!IsLimited(user) || amount <= 0) return;
-        let r = user.GetPersistentCharacterState(false);
-        r.MainM00SupplyIssued[material] += amount;
-        RefreshChest(user);
+        if (material == CaelumConstants.MATERIAL_RAW_GOLD)
+            user.GetPersistentCharacterState(false).MainM00GoldMinedUnits += amount;
     }
 
     static int CarryRoom(CaelumPlayer user)
@@ -354,19 +323,7 @@ class CaelumMainM00SupplyRules : Object play
 
     static void PrepareRepairSupply(CaelumPlayer user)
     {
-        let r = user.GetPersistentCharacterState(false);
-        if (!IsLimited(user) || r == null || !r.MainM00RepairLessonOffered || r.MainM00RepairLessonComplete) return;
-        let weapon = user.FindNativeEquipmentItemById(r.MainM00StarterWeaponId);
-        if (weapon == null) return;
-        int maximum = user.GetEquipmentTaskMaximumDurability(weapon);
-        if (maximum <= 0 || weapon.Durability >= maximum) return;
-        Ensure(user);
-        let needs = new("CaelumMainM00StarterMaterials"); needs.Efficiency = 2;
-        needs.AddWeapon(r.MainM00StarterOption, r.MainM00StarterSize,
-            double(maximum - weapon.Durability) / maximum);
-        for (int i = 0; i < CaelumConstants.MATERIAL_TYPE_COUNT; i++)
-            r.MainM00RepairSupply[i] = Max(r.MainM00RepairSupply[i], needs.Units[i]);
-        UpdateLimits(user);
+        return;
     }
 
     static bool ReturnSurplus(CaelumPlayer user)

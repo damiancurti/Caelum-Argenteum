@@ -320,6 +320,8 @@ class CaelumMainM00ConversationMenu : CaelumPalomoConversationMenu
             if (mCurNode.UserData ~== "rulo_trial_active")
                 text = StringTable.Localize("CA_M01_RULO_GIFT", false) .. "\n\n" .. text;
             if (mCurNode.UserData ~== "loadout_summary") text = user.MainM00LoadoutSummary;
+            if (mCurNode.UserData ~== "palomo_final" && user.MainM00GoldRewardSnapshot)
+                text = StringTable.Localize("CA_ONBOARD_PALOMO_SCAM", false) .. "\n\n" .. text;
             if (mCurNode.UserData ~== "palomo_necklace_status") text = user.MainM00NecklaceStatus;
             if (mCurNode.UserData ~== "caella_choose_amulet") text = user.MainM00AmuletLessonText;
             for (int type = 0; type < CaelumConstants.AMULET_TYPE_COUNT; type++)

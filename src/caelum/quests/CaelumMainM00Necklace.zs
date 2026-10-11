@@ -1,4 +1,4 @@
-// Palomo entrega una pieza T1 del catálogo; Caella conserva su enseñanza.
+// Caella entrega el collar T1 que favorece la primera clase y enseña su receta.
 class CaelumMainM00Necklace : Object play
 {
     const REVISION = 1;
@@ -35,7 +35,7 @@ class CaelumMainM00Necklace : Object play
         if (user == null || user.player == null || user.health <= 0 || !user.CharacterCreationComplete
             || user.CreationWizardOpen || user.DerivedStats == null || (user.player.cheats & CF_PREDICTING)) return false;
         let record = user.GetPersistentCharacterState(false);
-        if (record == null || record.MainM00AmuletChoice <= 0
+        if (record == null || !record.HasMainM00Flag(CaelumConstants.MAIN_M00_FLAG_CAELLA_STARTED) || record.MainM00AmuletChoice <= 0
             || record.MainM00AmuletChoice > CaelumConstants.AMULET_TYPE_COUNT) return false;
         if (record.MainM00NecklaceRevision >= REVISION) return true;
         int type = record.MainM00AmuletChoice - 1;
@@ -76,20 +76,7 @@ class CaelumMainM00Necklace : Object play
 
     static bool Choose(CaelumPlayer user, int type)
     {
-        if (!CaelumMainM00Loadout.CanChoose(user) || type < 0 || type >= CaelumConstants.AMULET_TYPE_COUNT) return false;
-        let record = user.GetPersistentCharacterState(false);
-        if (record.MainM00AmuletChoice > 0 && record.MainM00AmuletChoice != type + 1) return false;
-        record.MainM00AmuletChoice = type + 1;
-        EnsureGranted(user);
-        CaelumMainM00SupplyRules.Ensure(user);
-        CaelumMainM00SupplyRules.UpdateLimits(user);
-        // Confirmar fija la elección aunque falte espacio; el estado de entrega
-        // se confirma por separado y la página ofrece reintentar sin duplicar.
-        user.RefreshSocialJournalSnapshot();
-        CaelumMainM00SealCrafting.Sync(user);
-        Refresh(user);
-        user.PersistCharacterState();
-        return true;
+        return false;
     }
 
     static bool Teach(CaelumPlayer user)

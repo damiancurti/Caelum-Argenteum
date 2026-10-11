@@ -39,7 +39,16 @@ class CaelumSleepingBag : CaelumSpecialInventoryItem
         let rest = CaelumRestState.Get(user);
         if (rest != null && CaelumRestBag(rest.Furniture) != null
             && CaelumRestBag(rest.Furniture).Bag == self) CaelumRestState.Cancel(user);
-        return Super.CreateTossable(tossAmount);
+        let copy = Super.CreateTossable(tossAmount);
+        CaelumOnboarding.TransferUtilityIdentity(self, copy);
+        return copy;
+    }
+
+    override Inventory CreateCopy(Actor other)
+    {
+        let copy = Super.CreateCopy(other);
+        CaelumOnboarding.TransferUtilityIdentity(self, copy);
+        return copy;
     }
 
     static void PrepareTrial(CaelumPlayer user)

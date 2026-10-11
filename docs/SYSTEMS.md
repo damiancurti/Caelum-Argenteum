@@ -1,6 +1,111 @@
 # Caelum Argenteum — Current systems and rules
 
-Documentation version: **5.2.3** — 2026-10-11.
+Documentation version: **5.2.4** — 2026-10-11.
+
+## Onboarding and MAP02 initial supplies - 5.2.4 / #183
+
+The author's 2026-10-11 decisions supersede the earlier equipment choices,
+mandatory weapon craft, basement chest/mineral allowances, free exit bag,
+departure ammunition removal and generic MAP02 material catalogue. Start new
+test games: the author explicitly waived migration of pre-5.2.4 saves for this
+patch. New-version save/load and native hub persistence remain required.
+
+After race, the creator asks **What would you like to do?** / **¿Qué te gustaría
+hacer?**: Fight, Explore, Socialize, Use magic. **Select profession** / **Seleccionar
+profesión** then shows the resulting combination, including repeated classes.
+The existing +4 family/+30 attribute budgets are recommended automatically and
+remain editable. Each point alternates between the two components' dominant
+families, determined from actual class contributions. Saturation tries the paired
+family (Physical ↔ Technical, Social ↔ Mental), then the remaining pair; individual
+points prefer the least-allocated eligible attribute within that family. Existing
+caps remain. Structural choice changes recalculate recommendations; ordinary
+back/forward and closing/reopening preserve manual edits. Reducing a family
+returns any individual points that would exceed its new cap.
+
+| Profession | T1 weapon | Shield | Complete armor |
+| --- | --- | --- | --- |
+| Warrior | Greatsword | Tower | Heavy |
+| Mercenary | Sword | Teardrop | Medium |
+| Cleric | Flail | Teardrop | Medium |
+| Battle Mage | Giant gauntlets | Teardrop | Medium |
+| Explorer | Longbow | Buckler | Light |
+| Pilgrim | Fire bell | Buckler | Light |
+| Investigator | Crossbow | Magical | Magical |
+| Priest | Fire statuette | Buckler | Light |
+| Arcanist | Fire book | Magical | Magical |
+| Mage | Fire wand | Magical | Magical |
+
+All size-sensitive pieces use the actual initial character size. Argento gives
+the shield with the existing physical Tarot deck; Caella gives the necklace
+with the utility staff; Ronnie gives the profession weapon with the Pickaxe;
+Rulo gives all four armor pieces with the bolas. The necklace maximizes the
+actual T1 catalogue bonus to the **first** component's dominant family, so class
+order matters. Shared bonus data selects ruby/Physical, emerald/Technical,
+topaz/Social or sapphire/Mental. Existing exact item IDs and one-time grants
+prevent duplicate gifts or repair on replay. Capacity failures defer only an
+unclaimed item. Rulo's first preparation occurs once; reopening cannot repair it.
+
+Palomo offers only the five existing Seals, with bilingual ironic descriptions
+of their real attribute/channel effects. The mandatory crafts are the sleeping
+bag, selected Seal and large 5 L canteen. Ronnie teaches these recipes and their
+dependencies. Bag (2 kg) and empty canteen (0.1 kg) each require **90% leather and
+10% rope by empty mass** at a Workbench, using existing material/skill/time rules:
+1,800 g leather + 200 g rope; 90 g leather + 10 g rope. A standalone Workbench can
+open these recipes; missing component stations still block their processing.
+Use Ronnie's workshop for bag/canteen and Caella's jewelry network or the complete
+upstairs workshop for the Seal. Tutorial efficiency is 100% at every layer.
+Duplicate bag/canteen crafting is rejected before payment. Native drop/pickup
+copy hooks transfer the tracked crafted identity without replacing its contents.
+
+The basement has one finite 2 kg gold node at the former supply position and no
+supply chest or other mineral nodes. Ordinary Pickaxe extraction creates the
+real gold pickups; depletion removes this node permanently. Other-world mineral
+recovery is unchanged. Ronnie consumes the 2 kg once and issues only the raw
+recipe graph inputs for the three crafts. Partial collection leaves a saved
+remainder; replay/load cannot repay gold, restore ore or duplicate the reward.
+The MAP01 Bull drops no leather. Completing all three crafts unlocks the next
+lesson; a gifted weapon alone does not. Palomo remarks that exchanging 2 kg of
+gold for some rope and leather was a swindle. Mansion food/water and established
+social/magic/combat practices remain unchanged.
+
+The Box now uses **20 + floor(10 × Type3Multiplier(Intelligence))** slots and that
+same number as the content-weight divisor. Type3Multiplier(I) =
+**1 + 7 × (I² + 25I) / 12,500**: 30 slots at I=0, 100 at I=100. The Box itself
+still weighs 10 kg. The shared growth function remains authoritative.
+
+Departure requires the actual owned gifts and crafted utilities. It unequips
+and stores those same objects, including the physical deck, in the Box. It
+preserves IDs, wear, canteen water, captured Tarot, learned recipes and matching
+arrows/bolts (including remaining magazine state). Explorer/Investigator use
+the existing 24-round starter budget; grants are finite. There is no departure
+refill. Four armor pieces, weapon, shield, necklace, Seal, three tools, deck, bag
+and canteen occupy 14 slots, or 15 with an ammunition stack. Other expendable
+supplies/materials/coins retain the existing removal policy. Capacity is checked
+against attributes after unequipping so jewelry cannot overfill the Box.
+
+MAP02's 30 ammunition allocations retain their positions and numeric quantities:
+240 arrows + 120 bolts + 120 bullets + 120 cartridges become **360 arrows + 240
+bolts**, still **600 rounds**. One cartridge becomes one bolt, independent of its
+twelve pellets. This affects campaign supply allocations only; firearm recipes,
+merchants and soldiers keep their existing ammunition.
+
+The 39 MAP02 chests share a frozen initial-equipment budget, recorded when each
+actual gift is created: one full repair of each armor piece, three of the
+profession weapon, five of the Pickaxe and five of the utility staff, all at
+100% efficiency and actual initial size. **Author correction:** bolas have no
+repairable wear, so their allocation is materials for **five manufactured
+replacement bolas**, using the existing recipe; combat behavior is unchanged.
+The shared recipe functions provide ready components, avoiding extra recursive
+rounding. Divide each material's total by 39 and assign the remainder to the
+first chest indices. First successful collection freezes each chest's remainder;
+capacity, repeats, revisits and save/load cannot multiply its allocation. The
+historical 65-item catalogue is provenance, not the current chest budget.
+Refuges include an armor workshop so light/magical T1 armor can actually be
+repaired. The native repair selector lists owned armor as well as weapons.
+
+Evidence and reproducible fixtures: assets/validation_524/RESULTS.md. Native and
+static checks are agent verification; CA183-01 passed author acceptance on 2026-10-11 without qualifications.
+NPC/localization source indexing is the separate follow-up #185.
 
 ## Allied Mandinga retaliation - 5.2.3 / #180
 
@@ -5903,7 +6008,7 @@ lucidity, Dialogue skill and durations do not share a single curve today.
 | Charisma / Social | Its Type 2 modifies the duration/power of elemental payloads received by the player; not all effects/actors consume it. | Type 2 Persuasion on MAP01 social rolls. | The area does not use Charisma: current blast radii and Channel use the range of Eloquence. Channel also has fixed power/duration states. The set of debuffs is partial. |
 | Empathy / Social | BuffPowerPercent Type 2 is available and an illumination timer is prepared; there is no general system of buffs/healing that applies all the duration/power/area indicated. | Emotion Type 2 in the MAP01 dialogs. | Emotion works. The stored factor and timer are not enough to mark buffs, cures or playable lighting as complete. Support areas based on Empathy remain pending. |
 | Eloquence / Social | Casting speed and ability range Type 2 (not projectile muzzle velocity); this range also scales current radii. Anima cost divided by Type 2. | Dialogue skill Type 1, used by Ronnie; also intervenes in social discount of Palomo. | The ammunition reload uses Dexterity; the Channel Seal Cooldown is fixed to 60 s and does not use Eloquence. The table should specify which recharge is intended to reduce and add the cost of Anima already implemented. |
-| Intelligence / Mental | Magical Damage and Push Type 3. | Box capacity = 2 + entero(Type3(Intelligence)/50). | Academic tasks pending. Add the Box; "magic power" does not appear as the third separate universal effect of damage/push. |
+| Intelligence / Mental | Magical Damage and Push Type 3. | Box capacity = 20 + floor(10 × Type3Multiplier(Intelligence)); the same number divides content weight (#183). | Academic tasks pending. Add the Box; "magic power" does not appear as the third separate universal effect of damage/push. |
 | Patience / Mental | Maximum Anima Type 3; regeneration = maximum/base time multiplied by Type 2; interrupt resistance Type 1. It mitigates effects of being injured by Type 1 complement. | Type 1 complement mitigates low/critical sleep aggravation of Lucidity loss and stunning duration. | It does not mitigate general performance penalties by Hunger/Thirst/Sleep: that combination uses Adrenaline. The intended function is only partial. It does not control Sleep loss. |
 | Insight / Mental | Magical precision Type 3 and magical critical chance Type 1. | There is no player detection of hidden objects/sounds or dark attenuation linked to this attribute. | Magical senses and hidden detection are still pending. The debugging perception observer does not implement the senses of the player. |
 

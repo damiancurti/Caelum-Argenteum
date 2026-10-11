@@ -1,0 +1,66 @@
+{
+  "issue": 183,
+  "base": "d313c227",
+  "checks": [
+    {
+      "name": "Exact baseline vertex geometry retained",
+      "passed": true
+    },
+    {
+      "name": "Exact baseline sector geometry retained",
+      "passed": true
+    },
+    {
+      "name": "Exact baseline sidedef geometry retained",
+      "passed": true
+    },
+    {
+      "name": "Exact baseline linedef geometry retained",
+      "passed": true
+    },
+    {
+      "name": "Only four armor workshops added; no original map things removed",
+      "passed": true
+    },
+    {
+      "name": "Generated WAD things match manifest",
+      "passed": true
+    },
+    {
+      "name": "Refuge 0 supports every initial T1 armor family",
+      "passed": true
+    },
+    {
+      "name": "Refuge 1 supports every initial T1 armor family",
+      "passed": true
+    },
+    {
+      "name": "Refuge 2 supports every initial T1 armor family",
+      "passed": true
+    },
+    {
+      "name": "Refuge 3 supports every initial T1 armor family",
+      "passed": true
+    },
+    {
+      "name": "Every drop retains carrier/position/quantity except authorized ammo class replacement",
+      "passed": true
+    },
+    {
+      "name": "Exactly 600 assigned rounds: 360 arrows, 240 bolts",
+      "passed": true
+    },
+    {
+      "name": "Both generator reruns match existing output byte-for-byte",
+      "passed": true
+    }
+  ],
+  "hashes": {
+    "src\\maps\\MAP02.wad": "6337bc73ca32bb9db9936052ac341d34ace75b3c66858dfc4eaa0e6833ce55f1",
+    "src\\caelum\\world\\CaelumMazeLayout.zs": "99339d807c64cc2b9cea1eed669d9afc34efd6642c04f4490e02d51ee7b13dba",
+    "assets\\map02_maze\\MAP02_MANIFEST.json": "de6907f8d45c41d90cb07c14feee04c02ee08eec5eac9198e263e5d8b43ec58b",
+    "src\\caelum\\dialogue\\CaelumDialogueHistoryData.zs": "d2bdf69b2c42220b452983b266a5e4ff733c2954e7c16a7cd7ad36dd8b722b2d"
+  },
+  "failures": 0,
+  "evidence": "static differential audit; native fixtures verify inventory/crafting"
+}

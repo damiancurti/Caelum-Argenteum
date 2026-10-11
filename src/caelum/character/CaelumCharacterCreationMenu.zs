@@ -83,8 +83,12 @@ class CaelumCharacterCreationMenu : ListMenu
 
     void ResetAllocations()
     {
-        for (int i = 0; i < 4; i++) { LayerBonus[i] = 0; }
-        for (int i = 0; i < 12; i++) { AttributeBonus[i] = 0; }
+        let profile = new("CaelumCharacterProfile");
+        profile.Race = Race; profile.FirstClass = FirstClass; profile.SecondClass = SecondClass;
+        let allocation = new("CaelumCharacterAllocation");
+        allocation.Recommend(profile);
+        for (int i = 0; i < 4; i++) LayerBonus[i] = allocation.LayerBonus[i];
+        for (int i = 0; i < 12; i++) AttributeBonus[i] = allocation.AttributeBonus[i];
     }
 
     int Wrap(int value, int count)
@@ -176,6 +180,8 @@ class CaelumCharacterCreationMenu : ListMenu
             if (direction < 0 && LayerBonus[SelectedLayer] > 0)
             {
                 LayerBonus[SelectedLayer]--;
+                for (int a = SelectedLayer * 3; a < SelectedLayer * 3 + 3; a++)
+                    AttributeBonus[a] = Min(AttributeBonus[a], MaximumAttributeBonus(a));
             }
             else if (direction > 0 && RemainingLayerPoints() > 0
                 && FinalLayerValue(SelectedLayer)
@@ -215,6 +221,8 @@ class CaelumCharacterCreationMenu : ListMenu
         if (value == CaelumConstants.CLASS_PRIEST) return "CA_CLASS_PRIEST";
         return "CA_CLASS_MAGE";
     }
+
+    String ActivityKey(int value) { return String.Format("CA_CREATE_ACTIVITY_%d", value); }
 
     String ProfessionKey(int candidate)
     {
@@ -337,7 +345,7 @@ class CaelumCharacterCreationMenu : ListMenu
         switch (Page)
         {
             case 0: return StringTable.Localize(RaceKey(), false);
-            case 1: return StringTable.Localize(ClassKey(FirstClass), false);
+            case 1: return StringTable.Localize(ActivityKey(FirstClass), false);
             case 2: return StringTable.Localize(ProfessionKey(SecondClass), false);
             case 3: return StringTable.Localize(SexKey(), false);
             default: return StringTable.Localize(HeightKey(), false);
@@ -402,7 +410,7 @@ class CaelumCharacterCreationMenu : ListMenu
         int selected = Page == 0 ? Race : Page == 1 ? FirstClass : SecondClass;
         for (int i = 0; i < 4; i++)
         {
-            String key = Page == 0 ? RaceKey(i) : Page == 1 ? ClassKey(i) : ProfessionKey(i);
+            String key = Page == 0 ? RaceKey(i) : Page == 1 ? ActivityKey(i) : ProfessionKey(i);
             String value = (i == selected ? "> " : "  ") .. StringTable.Localize(key, false);
             Line(TextFont, i == selected ? Font.CR_GOLD : Font.CR_WHITE,
                 PanelLeft() + 16, 146 + i * 58, value, LeftWidth());

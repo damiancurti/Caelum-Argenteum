@@ -113,7 +113,7 @@ for z in range(4):
  enemy_nodes=[n for n in nodes if n!=start]
  ammo=[]
  for key,cls in [('arrow','CaelumArrowAmmo'),('bolt','CaelumBoltAmmo'),('bullet','CaelumCarbineAmmo'),('shotgun','CaelumShotgunAmmo')]:
-  ammo += [(cls,cfg['ammunition_bundle_units'])]*cfg[key+'_bundles_per_section'][z]
+  ammo += [(cfg.get('ammunition_replacements',{}).get(cls,cls),cfg['ammunition_bundle_units'])]*cfg[key+'_bundles_per_section'][z]
  progression=['CaelumMazeSluiceKey','CaelumMazeCryptKey','CaelumMazeSanctumKey','CaelumMazeNorthKey']
  cellkeys=['CaelumMazeSouthCellKey','CaelumMazeWestCellKey','CaelumMazeEastCellKey','CaelumMazeNorthCellKey']
  for ni,n in enumerate(enemy_nodes):
@@ -132,7 +132,7 @@ for z in range(4):
  corridor((sx,sy),(rx,sy),z+1,False);room(rx-320,sy-320,rx+320,sy+320,group=z+1)
  gate((sx-576,sy),'x',44720+z,0,'refuge',z)
  stations=[]
- for kind,dx,dy in [(18004,-64,-64),(18000,0,0),(18001,64,-64),(18003,0,-128)]:
+ for kind,dx,dy in cfg['refuge_station_offsets']:
   thing(kind,rx+dx,sy+dy,angle=90);stations.append(dict(type=kind,position=[rx+dx,sy+dy]))
  refuges.append(dict(zone=z,center=[rx,sy],stations=stations,resource_allowance='none; known recipes and existing finite salvage only'))
  ex,ey=coord(z,end);cellx=ex+1024
@@ -311,7 +311,7 @@ for i,item in enumerate(loot):
 zs += ['        }','    }']
 zs.append('}\n');(ROOT/'src/caelum/world/CaelumMazeLootCatalogue.zs').write_text('\n'.join(zs),encoding='utf-8')
 
-manifest=dict(version='4.37.7',layout_revision=cfg['revision'],catalogue_revision=1,size_policy='CHARACTER_DEFAULT',distribution='65 original T1 instances converted to basic recipe inputs; index=chest+slot*39. First successful withdrawal fixes shared recipient-size material budget.',seed=cfg['seed'],layout=cfg,return_grates=return_grates,lower_cells=lower_cells,upper_cells=[list(k)+list(v) for k,v in sorted(upper_cells.items())],zones=zones,rooms=rooms,locks=locks,gates=gates,conduits=conduits,refuges=refuges,prisoners=prisoners,rats=rats,drops=drops,time_advance_zones=time_advance_zones,extraction=extraction,boss_center=boss_center,card=card,travel=travel,loot=contents,traps=features,things=things,counts=dict(rooms=len(rooms),mandingas=96,rats=len(rats),zupays=1,chests=39,equipment=0,converted_equipment=len(contents),food_rations=96,water_rations=96,arrows=240,bolts=120,bullets=120,shotgun_cartridges=sum(cfg['shotgun_bundles_per_section'])*cfg['ammunition_bundle_units'],traps=len(features)),geometry=dict(sectors=len(sectors),lines=len(lines),vertices=len(vertices)),cells=[list(k)+list(v) for k,v in sorted(cells.items())])
+manifest=dict(version='5.2.4',layout_revision=cfg['revision'],catalogue_revision=1,size_policy='CHARACTER_DEFAULT',distribution='Initial owned profession equipment: one armor, three weapon and five Pickaxe/staff full repairs and five manufactured replacement bolas at 100 percent efficiency. Saved per-character component totals divided across 39 finite chests; historical catalogue retained as provenance.',seed=cfg['seed'],layout=cfg,return_grates=return_grates,lower_cells=lower_cells,upper_cells=[list(k)+list(v) for k,v in sorted(upper_cells.items())],zones=zones,rooms=rooms,locks=locks,gates=gates,conduits=conduits,refuges=refuges,prisoners=prisoners,rats=rats,drops=drops,time_advance_zones=time_advance_zones,extraction=extraction,boss_center=boss_center,card=card,travel=travel,loot=contents,traps=features,things=things,counts=dict(rooms=len(rooms),mandingas=96,rats=len(rats),zupays=1,chests=39,equipment=0,converted_equipment=len(contents),food_rations=96,water_rations=96,arrows=sum(d['amount'] for d in drops if d['cls']=='CaelumArrowAmmo'),bolts=sum(d['amount'] for d in drops if d['cls']=='CaelumBoltAmmo'),bullets=sum(d['amount'] for d in drops if d['cls']=='CaelumCarbineAmmo'),shotgun_cartridges=sum(d['amount'] for d in drops if d['cls']=='CaelumShotgunAmmo'),traps=len(features)),geometry=dict(sectors=len(sectors),lines=len(lines),vertices=len(vertices)),cells=[list(k)+list(v) for k,v in sorted(cells.items())])
 # Keep each collision cell on one line so geometry evidence remains reviewable.
 manifest_text=json.dumps({**manifest,**{k:'__'+k.upper()+'__' for k in ('cells','upper_cells','lower_cells')}},indent=2)
 for key in ('cells','upper_cells','lower_cells'):

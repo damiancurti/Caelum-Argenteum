@@ -1,5 +1,4 @@
-// Palomo registra el plan; Ronnie enseña y habilita los mismos cupos de oficio.
-// El plan obligatorio contiene sólo el arma; las demás elecciones son opcionales.
+// La profesión define los regalos; Palomo registra sólo el Sello obligatorio.
 class CaelumMainM00Loadout : Object play
 {
     const CONVERSATION = 43630;
@@ -44,77 +43,26 @@ class CaelumMainM00Loadout : Object play
 
     static bool IsComplete(CaelumPersistentCharacterState r)
     {
-        return r != null && r.MainM00StarterChosen;
+        return r != null && r.MainM00StarterChosen && r.MainM00SealChoice > 0;
     }
 
     static bool Choose(CaelumPlayer user, int kind, int option)
     {
-        if (!CanChoose(user)) return false;
+        if (kind != 2 || !CanChoose(user) || option < 0 || option >= CaelumConstants.SEAL_TYPE_COUNT) return false;
+        CaelumOnboarding.Initialize(user);
         let r = user.GetPersistentCharacterState(false);
-        int count = kind == 0 ? CaelumMainM00StarterRules.OPTION_COUNT
-            : kind == 1 ? 4 : kind == 2 ? CaelumConstants.SEAL_TYPE_COUNT
-            : kind == 3 ? CaelumConstants.SHIELD_TYPE_COUNT : 0;
-        if (option < 0 || option >= count) return false;
-        EnsureMigration(user);
-        if (kind == 0)
-        {
-            if (r.MainM00StarterChosen) return r.MainM00StarterOption == option;
-            r.MainM00StarterChosen = true;
-            r.MainM00StarterOption = option;
-            r.MainM00StarterSize = CaelumEquipmentRules.GetDefaultSizeForCharacterTier(user.CharacterProfile.GetSizeTier());
-        }
-        else if (kind == 1)
-        {
-            if (r.MainM00ArmorChosen) return r.MainM00ArmorType == option;
-            r.MainM00ArmorChosen = true; r.MainM00ArmorType = option;
-            r.MainM00ArmorSize = r.MainM00StarterChosen ? r.MainM00StarterSize
-                : CaelumEquipmentRules.GetDefaultSizeForCharacterTier(user.CharacterProfile.GetSizeTier());
-        }
-        else if (kind == 2)
-        {
-            if (r.MainM00SealChoice > 0) return r.MainM00SealChoice == option + 1;
-            r.MainM00SealChoice = option + 1;
-            for (Inventory cursor = user.Inv; cursor != null; cursor = cursor.Inv)
-            {
-                let item = CaelumEquipmentItem(cursor);
-                if (item == null || item.EquipmentKind != CaelumConstants.EQUIPMENT_KIND_SEAL
-                    || item.Tier != 1 || item.ItemType != option) continue;
-                r.MainM00SealsPrepared[option] = true;
-                if (!r.MainM00SealRecipesLearned) r.MainM00SealOwnedAtLearning[option] = true;
-            }
-        }
-        else
-        {
-            if (r.MainM00ShieldChoice > 0) return r.MainM00ShieldChoice == option + 1;
-            r.MainM00ShieldChoice = option + 1;
-        }
-        // Una partida con Ronnie ya iniciado puede completar una elección
-        // nueva sin repetir el inicio, reponer lo gastado ni alterar su tarea.
+        if (r.MainM00SealChoice > 0) return r.MainM00SealChoice == option + 1;
+        r.MainM00SealChoice = option + 1;
         if (CaelumMainM00RonnieTrial.IsStarted(user)) TeachPlan(user);
-        CaelumMainM00SupplyRules.Ensure(user);
         CaelumMainM00SupplyRules.UpdateLimits(user);
-        CaelumMainM00RonnieTrial.Sync(user);
-        Refresh(user);
-        user.PersistCharacterState();
-        return true;
+        CaelumMainM00RonnieTrial.Sync(user); Refresh(user);
+        user.PersistCharacterState(); return true;
     }
 
     static void TeachPlan(CaelumPlayer user)
     {
         if (!CaelumMainM00RonnieTrial.IsStarted(user)) return;
-        let r = user.GetPersistentCharacterState(false);
-        let needs = new("CaelumMainM00StarterMaterials");
-        if (!needs.Build(r.MainM00StarterOption, r.MainM00StarterSize, 2)) return;
-        if (r.MainM00ArmorChosen) needs.AddArmor(r.MainM00ArmorType, r.MainM00ArmorSize);
-        if (r.MainM00SealChoice > 0)
-        { needs.AddSeal(r.MainM00SealChoice - 1); r.MainM00SealRecipesLearned = true; }
-        if (r.MainM00ShieldChoice > 0) needs.AddShield(r.MainM00ShieldChoice - 1, r.MainM00StarterSize);
-        for (int recipe = 0; recipe < CaelumConstants.CRAFTING_NETWORK_PLAYABLE_RECIPE_COUNT; recipe++)
-            if (needs.Recipes[recipe]) r.LearnCraftingRecipe(recipe);
-        CaelumMainM00SupplyRules.Ensure(user);
-        CaelumMainM00SupplyRules.UpdateLimits(user);
-        CaelumMainM00RonnieTrial.TeachStarterAmmunition(user);
-        user.RefreshCraftingRecipeBookSummary();
+        CaelumOnboarding.Teach(user);
     }
 
     static bool IsChosenShieldRecipe(CaelumPlayer user)
@@ -138,6 +86,7 @@ class CaelumMainM00Loadout : Object play
     {
         if (user == null || user.WeaponModel == null || user.DerivedStats == null) return;
         EnsureMigration(user);
+        CaelumOnboarding.Initialize(user);
         let r = user.GetPersistentCharacterState(false);
         if (r == null) return;
         int size = r.MainM00StarterChosen ? r.MainM00StarterSize

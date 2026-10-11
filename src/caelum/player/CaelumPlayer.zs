@@ -292,6 +292,7 @@ class CaelumPlayer : DoomPlayer
     String MainM00LoadoutDescriptions[49];
     String MainM00LoadoutStats[49];
     String MainM00LoadoutSummary;
+    bool MainM00GoldRewardSnapshot, MainM00LessonsCompleteSnapshot;
     String MainM00NecklaceStatus;
     String MainM00AmuletLessonText;
     transient int MainM00NecklaceMenuRequest;
@@ -4072,7 +4073,8 @@ class CaelumPlayer : DoomPlayer
 
     bool IsDirectWeaponCraftingRecipe()
     {
-        return CraftingSelectedRecipeKind == CaelumConstants.CRAFTING_RECIPE_KIND_AMULET
+        return CraftingSelectedRecipeKind == CaelumConstants.CRAFTING_RECIPE_KIND_UTILITY
+            || CraftingSelectedRecipeKind == CaelumConstants.CRAFTING_RECIPE_KIND_AMULET
             || CraftingSelectedRecipeKind == CaelumConstants.CRAFTING_RECIPE_KIND_AMMUNITION
             || CraftingSelectedRecipeKind == CaelumConstants.CRAFTING_RECIPE_KIND_SEAL
             || CraftingSelectedRecipeKind == CaelumConstants.CRAFTING_RECIPE_KIND_ARMOR
@@ -4211,6 +4213,9 @@ class CaelumPlayer : DoomPlayer
     {
         RefreshCraftingPreview();
         if (!CanStartCraftingTask()) { return; }
+        if (CaelumUtilityCrafting.IsRecipe(CraftingSelectionRecipe)
+            && FindInventory(CaelumUtilityCrafting.ItemClass(CraftingSelectionRecipe)) != null)
+        { LastCraftingAction = CaelumConstants.CRAFTING_ACTION_FAILED_DUPLICATE; return; }
         if (!CraftingSelectedRecipeKnown)
         {
             LastCraftingAction =
@@ -4238,6 +4243,7 @@ class CaelumPlayer : DoomPlayer
 
         RefreshCarriedInventorySummary();
         if (taskKind == CaelumConstants.CRAFTING_TASK_ASSEMBLY
+            && CraftingSelectedRecipeKind != CaelumConstants.CRAFTING_RECIPE_KIND_UTILITY
             && CraftingSelectedRecipeKind != CaelumConstants.CRAFTING_RECIPE_KIND_AMMUNITION
             && !CaelumMainM00RonnieTrial.CanUsePersonalCraftingOutput(self)
             && MagicBoxUsedSlots + 1 > MagicBoxMaximumSlots)
@@ -4286,7 +4292,7 @@ class CaelumPlayer : DoomPlayer
         }
         else if (taskKind == CaelumConstants.CRAFTING_TASK_ASSEMBLY)
         {
-            CraftingTaskReservedBoxSlots = (CaelumCraftingRules.GetRecipeAmmunitionType(CraftingSelectionRecipe) >= 0 || CaelumMainM00RonnieTrial.CanUsePersonalCraftingOutput(self)) ? 0 : 1;
+            CraftingTaskReservedBoxSlots = (CaelumUtilityCrafting.IsRecipe(CraftingSelectionRecipe) || CaelumCraftingRules.GetRecipeAmmunitionType(CraftingSelectionRecipe) >= 0 || CaelumMainM00RonnieTrial.CanUsePersonalCraftingOutput(self)) ? 0 : 1;
             if (!CanCompletePreparedEquipmentOutput(CraftingFinalWeight))
             {
                 ClearCraftingTaskData();
@@ -4385,6 +4391,7 @@ class CaelumPlayer : DoomPlayer
                     CraftingKnownProcessingRecipeCount++;
                     break;
                 case CaelumConstants.CRAFTING_RECIPE_KIND_AMMUNITION:
+                case CaelumConstants.CRAFTING_RECIPE_KIND_UTILITY:
                     break;
                 case CaelumConstants.CRAFTING_RECIPE_KIND_COMPONENT:
                     CraftingKnownComponentRecipeCount++;
@@ -4514,6 +4521,9 @@ class CaelumPlayer : DoomPlayer
 
     String ResolveCraftingPreviewIconPath()
     {
+        if (CaelumUtilityCrafting.IsRecipe(CraftingSelectionRecipe))
+            return CraftingSelectionRecipe == CaelumConstants.CRAFTING_SLEEPING_BAG_RECIPE
+                ? "graphics/caelum/icons/ca_sleeping_bag.png" : "graphics/caelum/icons/water/canteen_large.png";
         if (CraftingSelectedRecipeKind == CaelumConstants.CRAFTING_RECIPE_KIND_AMMUNITION)
             return CraftingSelectionRecipe == CaelumConstants.CRAFTING_BOLT_RECIPE
                 ? "graphics/caelum/icons/ca_bolt_ammo.png" : "graphics/caelum/icons/ca_arrow_ammo.png";
@@ -4949,6 +4959,17 @@ class CaelumPlayer : DoomPlayer
                     CraftingOutputMaterialType
                 );
         }
+        else if (CraftingSelectedRecipeKind == CaelumConstants.CRAFTING_RECIPE_KIND_UTILITY)
+        {
+            CraftingSelectionTier = 1;
+            CraftingFinalWeight = CaelumUtilityCrafting.Weight(CraftingSelectionRecipe);
+            CraftingBasicMaterialType = CaelumConstants.MATERIAL_LEATHER;
+            CraftingTierMaterialType = CaelumConstants.MATERIAL_ROPE;
+            CraftingBasicRequired = CaelumCraftingRules.GetRoundedMaterialUnits(CraftingFinalWeight, CaelumOnboardingCatalogue.LEATHER_SHARE);
+            CraftingTierRequired = CaelumCraftingRules.GetRoundedMaterialUnits(CraftingFinalWeight, CaelumOnboardingCatalogue.ROPE_SHARE);
+            CraftingMissingStationType = CaelumCraftingRules.NetworkHasStation(CraftingNetworkCapabilities,
+                CaelumConstants.CRAFTING_STATION_WORKBENCH) ? CaelumConstants.CRAFTING_STATION_NONE : CaelumConstants.CRAFTING_STATION_WORKBENCH;
+        }
         else if (CraftingSelectedRecipeKind == CaelumConstants.CRAFTING_RECIPE_KIND_AMMUNITION)
         {
             // Flechas y virotes conservan sus masas nativas y comparten la
@@ -5108,48 +5129,12 @@ class CaelumPlayer : DoomPlayer
 
     void OpenCraftingNetwork(Actor sourceStation)
     {
-        bool hasPrimaryStation;
-
         if (!CaelumCraftingRules.NetworkHasStation(
             CraftingNetworkCapabilities,
             CaelumConstants.CRAFTING_STATION_WORKBENCH
         ))
         {
             A_Log("$CA_CRAFTING_NETWORK_MISSING_WORKBENCH");
-            CraftingMenuOpen = false;
-            ActiveCraftingStationActor = null;
-            return;
-        }
-
-        hasPrimaryStation =
-            CaelumCraftingRules.NetworkHasStation(
-                CraftingNetworkCapabilities,
-                CaelumConstants.CRAFTING_STATION_FORGE
-            )
-            || CaelumCraftingRules.NetworkHasStation(
-                CraftingNetworkCapabilities,
-                CaelumConstants.CRAFTING_STATION_BOW_WORKSHOP
-            )
-            || CaelumCraftingRules.NetworkHasStation(
-                CraftingNetworkCapabilities,
-                CaelumConstants.CRAFTING_STATION_ARMOR_WORKSHOP
-            )
-            || CaelumCraftingRules.NetworkHasStation(
-                CraftingNetworkCapabilities,
-                CaelumConstants.CRAFTING_STATION_ESSENCE_ALTAR
-            )
-            || CaelumCraftingRules.NetworkHasStation(
-                CraftingNetworkCapabilities,
-                CaelumConstants.CRAFTING_STATION_JEWELER_BENCH
-            )
-            || CaelumCraftingRules.NetworkHasStation(
-                CraftingNetworkCapabilities,
-                CaelumConstants.CRAFTING_STATION_SEWING_MACHINE
-            );
-
-        if (!hasPrimaryStation)
-        {
-            A_Log("$CA_CRAFTING_NETWORK_MISSING_PRIMARY");
             CraftingMenuOpen = false;
             ActiveCraftingStationActor = null;
             return;
@@ -5333,7 +5318,8 @@ class CaelumPlayer : DoomPlayer
     void CycleCraftingSize()
     {
         RefreshCraftingPreview();
-        if (CraftingSelectedRecipeKind == CaelumConstants.CRAFTING_RECIPE_KIND_AMULET
+        if (CraftingSelectedRecipeKind == CaelumConstants.CRAFTING_RECIPE_KIND_UTILITY
+            || CraftingSelectedRecipeKind == CaelumConstants.CRAFTING_RECIPE_KIND_AMULET
             || CraftingSelectedRecipeKind == CaelumConstants.CRAFTING_RECIPE_KIND_SEAL
             || CraftingSelectedRecipeKind == CaelumConstants.CRAFTING_RECIPE_KIND_AMMUNITION)
         {
@@ -11534,18 +11520,8 @@ class CaelumPlayer : DoomPlayer
             }
             else if (j.EquipmentKind == CaelumConstants.EQUIPMENT_KIND_AMULET)
             {
-                int main=CaelumConstants.AMULET_MAIN_FAMILY_BONUS_T1*mult;
-                int adj=CaelumConstants.AMULET_ADJACENT_FAMILY_BONUS_T1*mult;
-                int opp=CaelumConstants.AMULET_OPPOSITE_FAMILY_BONUS_T1*mult;
-                if (j.ItemType==CaelumConstants.AMULET_RUBY) {
-                    AddJewelryFamilyBonus(a,CaelumConstants.LAYER_PHYSICAL,main); AddJewelryFamilyBonus(a,CaelumConstants.LAYER_TECHNICAL,adj); AddJewelryFamilyBonus(a,CaelumConstants.LAYER_SOCIAL,adj); AddJewelryFamilyBonus(a,CaelumConstants.LAYER_MENTAL,opp);
-                } else if (j.ItemType==CaelumConstants.AMULET_SAPPHIRE) {
-                    AddJewelryFamilyBonus(a,CaelumConstants.LAYER_MENTAL,main); AddJewelryFamilyBonus(a,CaelumConstants.LAYER_TECHNICAL,adj); AddJewelryFamilyBonus(a,CaelumConstants.LAYER_SOCIAL,adj); AddJewelryFamilyBonus(a,CaelumConstants.LAYER_PHYSICAL,opp);
-                } else if (j.ItemType==CaelumConstants.AMULET_EMERALD) {
-                    AddJewelryFamilyBonus(a,CaelumConstants.LAYER_TECHNICAL,main); AddJewelryFamilyBonus(a,CaelumConstants.LAYER_PHYSICAL,adj); AddJewelryFamilyBonus(a,CaelumConstants.LAYER_MENTAL,adj); AddJewelryFamilyBonus(a,CaelumConstants.LAYER_SOCIAL,opp);
-                } else {
-                    AddJewelryFamilyBonus(a,CaelumConstants.LAYER_SOCIAL,main); AddJewelryFamilyBonus(a,CaelumConstants.LAYER_PHYSICAL,adj); AddJewelryFamilyBonus(a,CaelumConstants.LAYER_MENTAL,adj); AddJewelryFamilyBonus(a,CaelumConstants.LAYER_TECHNICAL,opp);
-                }
+                for (int family = 0; family < CaelumConstants.ATTRIBUTE_LAYER_COUNT; family++)
+                    AddJewelryFamilyBonus(a, family, CaelumEquipmentRules.AmuletFamilyBonus(j.ItemType, family, mult));
             }
         }
     }

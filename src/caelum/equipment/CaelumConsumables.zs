@@ -441,12 +441,14 @@ class CaelumWaterContainer : CaelumConsumableItem
     {
         let copy = CaelumWaterContainer(Super.CreateCopy(other));
         if (copy != null) { copy.WaterLiters = WaterLiters; copy.WasSubmerged = WasSubmerged; }
+        CaelumOnboarding.TransferUtilityIdentity(self, copy);
         return copy;
     }
     override Inventory CreateTossable(int amount)
     {
         let copy = CaelumWaterContainer(Super.CreateTossable(amount));
         if (copy != null) { copy.WaterLiters = WaterLiters; copy.WasSubmerged = WasSubmerged; copy.InMagicBox = InMagicBox; }
+        CaelumOnboarding.TransferUtilityIdentity(self, copy);
         return copy;
     }
     // La interfaz propia ejecuta Drink sin consumir la instancia Inventory.

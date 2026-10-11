@@ -82,7 +82,6 @@ class CaelumMainM00PalomoFinal : Object play
         if (record == null) return false;
         if (record.HasMainM00Flag(CaelumConstants.MAIN_M00_FLAG_MAGIC_BOX_GRANTED))
         {
-            CaelumMainM00Gifts.EnsureSleepingBag(user);
             user.SyncLiveMagicBoxOwnershipFromPersistentState();
             user.SyncPalomoDialogueTokens();
             return record.MagicBoxOwned && CaelumMagicBox.EnsureOwned(user) != null;
@@ -92,8 +91,6 @@ class CaelumMainM00PalomoFinal : Object play
         user.GrantMagicBoxFromPalomo(false);
         if (!user.MagicBoxOwned || CaelumMagicBox.EnsureOwned(user) == null
             || !record.RecordMainM00MagicBoxGranted()) return false;
-        if (!CaelumMainM00Gifts.EnsureSleepingBag(user))
-            CaelumNotifications.Notify(user, StringTable.Localize("CA_SLEEPING_BAG_CARRY", false));
         user.SyncPalomoDialogueTokens();
         user.RefreshSocialJournalSnapshot();
         user.RefreshCarriedInventorySummary();

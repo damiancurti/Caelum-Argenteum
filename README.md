@@ -6,8 +6,19 @@ An independent dark fantasy FPS-RPG inspired by nineteenth-century Argentina.
 Author and game designer: **Damian Curti**. Development target: **GZDoom 4.14.2**
 on Windows 11. The final game is intended to be independent of Doom assets.
 
-**Current release: 5.2.3.** Obtain and update the complete repository, validate
+**Current release: 5.2.4.** Obtain and update the complete repository, validate
 it, then rebuild with `run_dev.bat` as described below.
+
+5.2.4 simplifies character creation and tutorial equipment: editable recommended
+stats, profession gifts, a finite gold exchange and three utility crafts. The
+larger Box carries the actual starting kit into MAP02, whose finite supplies
+match its ammunition and repair needs. **Start a new test game**, as authorized
+by the author; pre-release saves are not migrated in this patch.
+[Evidence](assets/validation_524/RESULTS.md); CA183-01 passed author acceptance on 2026-10-11; merge/closure authorized.
+The requested indexed NPC/localization sources follow separately in #185.
+
+Earlier release summaries below record their original accepted behavior; the
+5.2.4 onboarding contract in SYSTEMS supersedes conflicting tutorial rules.
 
 5.2.3 prevents accidental allied Mandinga retaliation while preserving fire damage.
 Existing saved fights recover without replacing actors or healing them.
@@ -30,7 +41,7 @@ unconfirmed creator drafts for the session and reconciles native player setup.
 Normal controls now use native categories; diagnostic commands remain in the
 console. Existing saves migrate without changing progress or equipment.
 [Evidence](assets/validation_520/RESULTS.md); CA147-01 passed author acceptance
-on 2026-10-11; PR176 is merged and #147 closed. The author test queue is empty;
+on 2026-10-11; PR176 is merged and #147 closed. At that acceptance the author test queue was empty;
 the four confirmations are recorded under their originating releases in HISTORY.
 Appearance/preview expansion remains #148. PR171/PR174/PR175 are merged and
 issues #164/#172/#173 closed, with author acceptance recorded in HISTORY.

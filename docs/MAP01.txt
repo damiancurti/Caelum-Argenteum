@@ -1,6 +1,27 @@
 CAELUM ARGENTEUM — STORY AND MAP01
 
-Documentation version: **5.2.3** — 2026-10-11.
+Documentation version: **5.2.4** — 2026-10-11.
+
+## 5.2.4 - Profession gifts and three crafting lessons (#183)
+
+This is the current opening route; it supersedes conflicting weapon-choice,
+basement-chest and free-bag rules in the accepted historical entries below.
+The creator recommends editable stats and a fixed profession kit. Argento gives
+shield/deck, Caella necklace/staff, Ronnie weapon/Pickaxe, Rulo full armor/bolas.
+Palomo chooses only the Seal. Mine the single finite 2 kg gold node, exchange
+the gold with Ronnie, and craft a sleeping bag, the selected Seal and a 5 L
+canteen. Both leather utilities use 90% leather/10% rope of empty mass at the
+Workbench; the Seal uses the established jewelry network. All three are required.
+The Bull no longer drops leather in MAP01. Palomo's final remarks call the gold
+trade for rope/leather a swindle. Exact owned gifts and crafted items, matching
+arrows/bolts and Tarot deck travel inside the enlarged Box, without refilling,
+repairing or recreating them. SYSTEMS owns complete recipes, kit and Box formulas.
+
+The author authorized fresh test saves, with no migration from earlier releases.
+New-version partial reward and departure save/load still preserve actual state.
+Established practices, assisted combat/checkpoint, mansion provisions and portable
+rest remain. Evidence: assets/validation_524; CA183-01 passed author acceptance on 2026-10-11 without qualifications.
+Dialogue source modularization/localization indexing follows separately in #185.
 
 ## 5.2.3 - Mandinga reaction rule (#180)
 

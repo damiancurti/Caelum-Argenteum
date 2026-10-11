@@ -81,10 +81,11 @@ class CaelumPlayerPresentation : Object play
             if (persistentState.MainM00SealsPrepared[element] && persistentState.MainM00SealChoice == element + 1) user.MainM00SealsPreparedSnapshot++;
         user.MainM00ArmorTypeSnapshot = persistentState.MainM00ArmorChosen ? persistentState.MainM00ArmorType : -1;
         user.MainM00ArmorPiecesSnapshot = 0;
-        for (int slot = 0; slot < 4; slot++) if (persistentState.MainM00ArmorCrafted[slot]) user.MainM00ArmorPiecesSnapshot++;
+        for (int slot = 0; slot < 4; slot++) if (persistentState.MainM00ArmorIds[slot] > 0) user.MainM00ArmorPiecesSnapshot++;
         user.MainM00StarterOptionSnapshot = persistentState.MainM00StarterChosen ? persistentState.MainM00StarterOption : -1;
         user.MainM00StarterSizeSnapshot = persistentState.MainM00StarterSize;
         user.MainM00StarterWeaponSnapshot = persistentState.MainM00StarterWeaponId;
+        user.MainM00LessonsCompleteSnapshot = CaelumOnboarding.LessonsComplete(persistentState);
         user.MainM00RonnieFinishedSnapshot = persistentState.HasMainM00Flag(CaelumConstants.MAIN_M00_FLAG_RONNIE_COMPLETE);
         for (int i = 0; i < CaelumConstants.MATERIAL_TYPE_COUNT; i++)
             user.MainM00StarterRequiredSnapshot[i] = persistentState.MainM00StarterRequired[i];

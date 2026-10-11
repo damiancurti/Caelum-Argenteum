@@ -4,10 +4,25 @@ class CaelumEquipmentRules : Object
     // Política separada del talle: args de talle 0 sigue significando M;
     // EquipmentSize conserva sus índices históricos XS=0, S=1, M=2, L=3, XL=4.
     // LEGACY migra sólo fuentes sin dueño; FIXED_SIZE es la excepción explícita.
+    static int AmuletFamilyBonus(int type, int family, int tier)
+    {
+        int main = type == CaelumConstants.AMULET_RUBY ? CaelumConstants.LAYER_PHYSICAL
+            : type == CaelumConstants.AMULET_SAPPHIRE ? CaelumConstants.LAYER_MENTAL
+            : type == CaelumConstants.AMULET_EMERALD ? CaelumConstants.LAYER_TECHNICAL : CaelumConstants.LAYER_SOCIAL;
+        return Clamp(tier, 1, 3) * (family == main ? CaelumConstants.AMULET_MAIN_FAMILY_BONUS_T1
+            : family == (main ^ 3) ? CaelumConstants.AMULET_OPPOSITE_FAMILY_BONUS_T1
+            : CaelumConstants.AMULET_ADJACENT_FAMILY_BONUS_T1);
+    }
     const LEGACY_SIZE_POLICY = 0;
     const CHARACTER_DEFAULT = 1;
     const FIXED_SIZE = 2;
     const SIZE_POLICY_REVISION = 1;
+
+    static int MagicBoxSlots(double intelligence)
+    {
+        return CaelumConstants.MAGIC_BOX_BASE_SLOTS + int(
+            CaelumConstants.MAGIC_BOX_TYPE_THREE_MULTIPLIER * CaelumGrowthRules.Multiplier(intelligence, 3));
+    }
 
     static play int ResolveAcquisitionSize(CaelumPlayer user, int policy, int fixedSize)
     {

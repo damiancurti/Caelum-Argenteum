@@ -1,13 +1,24 @@
 # CONTEXT.md — Caelum Argenteum
 
-Documentation version: **5.2.3** — 2026-10-11.
+Documentation version: **5.2.4** — 2026-10-11.
+
+**Current patch 5.2.4 / #183:** simplified creator recommendations and fixed
+profession gifts; Palomo chooses only the Seal. Ronnie exchanges the sole finite
+2 kg gold deposit for bag/Seal/5 L canteen materials. Bag/canteen are 90% leather,
+10% rope by empty mass; MAP01 Bull drops no leather. Box slots/content divisor:
+20 + floor(10 × Type3 multiplier). Departure boxes actual gifts/utilities/deck and
+matching ammo. MAP02 has 360 arrows/240 bolts and an exact initial-kit repair
+budget plus five replacement bolas across 39 finite chests. Start fresh test
+games by author instruction. Evidence: validation_524; CA183-01 passed on 2026-10-11, without qualifications; PR186 merge/#183 closure authorized.
+Next requested work: #185, per-NPC indexed dialogue sources under src and a
+localization index. Preserve #183 as its own branch/PR before implementing #185.
 
 **Accepted on 2026-10-11:** CA147-01 (5.2.0/#147), CA177-01 (5.2.1/#177),
 CA178-01 (5.2.2/#178) and CA180-01 (5.2.3/#180), without qualifications.
 Identity/native controls, tutorial equipment/supplies/bag, faster time skip and
 allied Mandinga retaliation are accepted; evidence: validation_520/521/522/523.
 PR176/179/181 are merged; #147/#177/#178 closed. #180 delivery: PR182.
-The author authorized all four merges/closures. The author test queue is empty;
+The author authorized all four merges/closures. At that acceptance the author test queue was empty;
 HISTORY records each confirmation. Next roadmap: #148; #149/#150 stay separate.
 **#164/#172/#173 accepted/closed/merged:** PR171/174/175; baseline f7c4a0dd.
 
@@ -269,38 +280,13 @@ usage evidence remains preserved.
 
 Use DOCUMENT_INDEX for long documents; follow the engineering guides.
 
-## Critical premises (summary of the 20)
+## Critical premises
 
-1. Code, identifiers and maintained documentation in English; gameplay-code
-   explanatory comments remain Spanish. Modified tooling uses English throughout.
-2. Prefer stable native GZDoom 4.14.2 functions and a single authoritative
-   data source.
-3. Final product independent of Doom assets; preserve provenance.
-4. Do not invent balance, recipes, story, or pending decisions.
-5. Protect what is accepted and validate only what is affected.
-6. GitHub issue -> focused branch -> linked PR. ZIPs are optional exports.
-7. Consolidated documentation updated in every patch.
-8. Every patch updates status and results; use numeric MAJOR.MINOR.PATCH.
-   Implementation commits and later acceptance retain the same patch version.
-9. Preserve history and unique content; do not delete silently.
-10. Folders with clear responsibility; package only `src`.
-11. Every change must be traceable to an issue or task.
-12. No agent deletes files without explicit authorization.
-13. Generators must be deterministic (same input, same byte-for-byte output).
-14. One model per task: routine → economical model (DeepSeek); architecture,
-    narrative, or complex review → advanced model (ChatGPT Pro).
-15. Saves always migratable: explicit, tested, reversible migration with a
-    revision number and idempotent logic.
-16. Data outside logic: balance, recipes, coordinates, names, and texts live in
-    data or documents; ask rather than invent.
-17. One change, one reason: do not mix visual, balance, and code changes.
-18. Cross-verification between AIs: DeepSeek reviews ChatGPT's code, ChatGPT
-    reviews DeepSeek's design.
-19. Documentation is the contract: if code and docs differ, the docs prevail
-    until updated; report discrepancies, do not "fix" the code silently.
-20. Issues are the unit of work: every significant change comes from an issue
-    with scope and acceptance criteria; a PR without a linked issue is not
-    reviewed.
+Follow all 20 premises in AGENTS.md and PROJECT.md. Key requirements: English
+sources/docs, Spanish gameplay comments, native GZDoom APIs, deterministic
+generators, no invented design values or unapproved file deletion, issue-scoped
+branches/PRs, updated canonical docs, explicit save policy and separate evidence
+levels. Cross-review where possible; keep data outside logic and preserve history.
 
 The authoritative list is in `AGENTS.md` and `docs/PROJECT.md`.
 

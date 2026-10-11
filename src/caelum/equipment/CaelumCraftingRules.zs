@@ -222,13 +222,15 @@ class CaelumCraftingRules : Object
 
     static bool IsSingleTierRecipe(int recipeIndex)
     {
-        return recipeIndex == CaelumConstants.CRAFTING_PICKAXE_RECIPE
+        return CaelumUtilityCrafting.IsRecipe(recipeIndex)
+            || recipeIndex == CaelumConstants.CRAFTING_PICKAXE_RECIPE
             || recipeIndex == CaelumConstants.CRAFTING_UTILITY_STAFF_RECIPE
             || recipeIndex == CaelumConstants.CRAFTING_BOLAS_RECIPE;
     }
 
     static int GetUnifiedRecipeKind(int recipeIndex)
     {
+        if (CaelumUtilityCrafting.IsRecipe(recipeIndex)) return CaelumConstants.CRAFTING_RECIPE_KIND_UTILITY;
         if (IsSingleTierRecipe(recipeIndex))
             return CaelumConstants.CRAFTING_RECIPE_KIND_PHYSICAL_WEAPON;
         if (GetRecipeAmmunitionType(recipeIndex) >= 0)
@@ -306,6 +308,7 @@ class CaelumCraftingRules : Object
 
     static int GetUnifiedPhysicalRecipeIndex(int recipeIndex)
     {
+        if (CaelumUtilityCrafting.IsRecipe(recipeIndex)) return CaelumConstants.CRAFTING_RECIPE_KIND_UTILITY;
         if (IsSingleTierRecipe(recipeIndex)) return recipeIndex;
         return Clamp(
             recipeIndex, 0,

@@ -28,6 +28,8 @@ class CaelumCraftingBrowser : Object play
     static clearscope String RecipeName(int recipe, int tier = 1)
     {
         int kind = CaelumCraftingRules.GetUnifiedRecipeKind(recipe);
+        if (kind == CaelumConstants.CRAFTING_RECIPE_KIND_UTILITY)
+            return StringTable.Localize(CaelumUtilityCrafting.NameKey(recipe), false);
         if (kind == CaelumConstants.CRAFTING_RECIPE_KIND_AMMUNITION)
             return StringTable.Localize(recipe == CaelumConstants.CRAFTING_BOLT_RECIPE
                 ? "CA_CRAFTING_TEN_BOLTS" : "CA_CRAFTING_TEN_ARROWS", false);
@@ -54,8 +56,17 @@ class CaelumCraftingBrowser : Object play
     static clearscope bool Accessible(CaelumPlayer user, CaelumEquipmentItem item)
     {
         return item != null && item.Owner == user && item.Amount > 0 && item.ItemId > 0
-            && item.EquipmentKind == CaelumConstants.EQUIPMENT_KIND_WEAPON
+            && (item.EquipmentKind == CaelumConstants.EQUIPMENT_KIND_WEAPON
+                || item.EquipmentKind == CaelumConstants.EQUIPMENT_KIND_ARMOR)
             && (!item.InMagicBox || user.MagicBoxOwned);
+    }
+
+    static clearscope String EquipmentName(CaelumEquipmentItem item)
+    {
+        if (item.EquipmentKind == CaelumConstants.EQUIPMENT_KIND_ARMOR)
+            return CaelumDisplayNames.FormatArmorTypeName(item.ItemType, item.Tier) .. " · "
+                .. StringTable.Localize(CaelumDisplayNames.GetArmorSlotKey(item.ArmorSlot), false);
+        return CaelumDisplayNames.FormatWeaponName(item.ItemType, item.Tier);
     }
 
     void AddMaterial(int material, int tier, int units)
@@ -105,7 +116,7 @@ class CaelumCraftingBrowser : Object play
             else
             {
                 let item = user.FindNativeEquipmentItemById(next[i]);
-                Labels.Push(CaelumDisplayNames.FormatWeaponName(item.ItemType, item.Tier) .. String.Format(" #%d", item.ItemId));
+                Labels.Push(EquipmentName(item) .. String.Format(" #%d", item.ItemId));
             }
         }
         if (SelectedIndex < 0 && Entries.Size() > 0) { SelectedIndex = 0; changed = true; }
@@ -126,12 +137,15 @@ class CaelumCraftingBrowser : Object play
     {
         let item = user.FindNativeEquipmentItemById(SelectedWeaponId);
         if (!Accessible(user, item)) return;
-        Title = CaelumDisplayNames.FormatWeaponName(item.ItemType, item.Tier);
-        Icon = CaelumIconResolver.ResolveTierPath(CaelumIconResolver.GetWeaponBasePath(item.ItemType), item.Tier);
+        Title = EquipmentName(item);
+        Icon = CaelumIconResolver.ResolveTierPath(item.EquipmentKind == CaelumConstants.EQUIPMENT_KIND_ARMOR
+            ? CaelumIconResolver.GetArmorBasePath(item.ArmorSlot, item.ItemType)
+            : CaelumIconResolver.GetWeaponBasePath(item.ItemType), item.Tier);
         Durability = item.Durability; MaximumDurability = user.GetEquipmentTaskMaximumDurability(item);
         Tier = item.Tier; Size = item.EquipmentSize;
-        Essence = item.ItemType == CaelumConstants.WEAPON_TYPE_STAFF || item.ItemType == CaelumConstants.WEAPON_TYPE_BELL
-            || item.ItemType == CaelumConstants.WEAPON_TYPE_BOOK || item.ItemType == CaelumConstants.WEAPON_TYPE_STATUETTE ? item.EssenceType : -1;
+        Essence = item.EquipmentKind == CaelumConstants.EQUIPMENT_KIND_WEAPON
+            && (item.ItemType == CaelumConstants.WEAPON_TYPE_STAFF || item.ItemType == CaelumConstants.WEAPON_TYPE_BELL
+            || item.ItemType == CaelumConstants.WEAPON_TYPE_BOOK || item.ItemType == CaelumConstants.WEAPON_TYPE_STATUETTE) ? item.EssenceType : -1;
         Boxed = item.InMagicBox; Equipped = item.Equipped; Weight = item.UnitWeight;
         BlockReason = user.GetEquipmentTaskBlockReason(item, Mode == DISMANTLE);
         if (BlockReason != CaelumConstants.EQUIPMENT_ACTION_NONE) return;

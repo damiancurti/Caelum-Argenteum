@@ -295,5 +295,36 @@
     1,
     2,
     1
+  ],
+  "ammunition_replacements": {
+    "CaelumCarbineAmmo": "CaelumArrowAmmo",
+    "CaelumShotgunAmmo": "CaelumBoltAmmo"
+  },
+  "refuge_station_offsets": [
+    [
+      18004,
+      -64,
+      -64
+    ],
+    [
+      18000,
+      0,
+      0
+    ],
+    [
+      18001,
+      64,
+      -64
+    ],
+    [
+      18003,
+      0,
+      -128
+    ],
+    [
+      18002,
+      -128,
+      0
+    ]
   ]
 }

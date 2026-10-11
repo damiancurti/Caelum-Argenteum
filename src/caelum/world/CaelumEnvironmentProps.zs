@@ -12,6 +12,7 @@ class CaelumEnvironmentProp : CaelumMovableProp
 
     virtual bool IsEnvironmentMovable() { return false; }
     virtual bool IsNaturalResource() { return false; }
+    virtual bool IsFiniteResource() { return false; }
     virtual int GetResourceMaterialType() { return -1; }
     virtual int GetRequiredHarvestDamageType()
     {
@@ -160,6 +161,7 @@ class CaelumEnvironmentProp : CaelumMovableProp
         // Un único sonido posicional después de confirmar la extracción real.
         A_StartSound(GetResourceExtractionSound(), CHAN_BODY);
         CaelumNotifications.Extracted(extractor, GetResourceMaterialType());
+        if (IsFiniteResource() && ResourceRemainingUnits <= 0.000001) Destroy();
         return removed;
     }
 
@@ -178,7 +180,7 @@ class CaelumEnvironmentProp : CaelumMovableProp
 
     void SyncResourceClock()
     {
-        if (!IsNaturalResource()) return;
+        if (!IsNaturalResource() || IsFiniteResource()) return;
         let user = ResourceTraveler(); if (user == null) return;
         let clock = CaelumWorldClock.Get(user); if (clock == null) return;
         double now = double(clock.CompletedDays) * CaelumWorldClock.TicsPerDay() + clock.DayTics;
@@ -193,7 +195,7 @@ class CaelumEnvironmentProp : CaelumMovableProp
 
     void ScheduleResourceRecovery(CaelumPlayer user)
     {
-        if (user == null || !IsNaturalResource()) return;
+        if (user == null || !IsNaturalResource() || IsFiniteResource()) return;
         double now = CaelumScheduleState.Now(user);
         double capacity = GetResourceCapacityUnits();
         double rate = capacity * CaelumConstants.NATURAL_RESOURCE_RECOVERY_PER_GAME_DAY / CaelumWorldClock.TicsPerDay();

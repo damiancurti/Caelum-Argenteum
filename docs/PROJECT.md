@@ -1,6 +1,23 @@
 # Caelum Argenteum — Project, status and roadmap
 
-Documentation version: **5.2.3** — 2026-10-11.
+Documentation version: **5.2.4** — 2026-10-11.
+
+## 5.2.4 - Simplified onboarding and MAP02 supplies (#183)
+
+Implemented editable creator recommendations, fixed profession kits distributed
+through the four residents, Seal-only Palomo choice, a finite 2 kg gold exchange
+and three mandatory utility crafts. The shared Box capacity/content divisor is
+20 + floor(10 × Type3 multiplier). Actual gifts, crafted bag/canteen/Seal, matching
+ammunition and physical Tarot deck travel inside it with their state preserved.
+MAP02 retains 600 allocated rounds as 360 arrows/240 bolts. Its 39 chests share
+the initial kit's exact repair budget, with five manufactured replacement bolas
+as explicitly corrected by the author. Existing assets and native transactions
+are reused. SYSTEMS is the design contract; assets/validation_524 records evidence.
+
+The author waived pre-release save migration for this test environment; begin a
+new game. Agent/native verification is separate from author acceptance.
+CA183-01 passed on 2026-10-11 without qualifications; merge/closure authorized. The requested next change is #185: per-NPC sources in a dedicated
+src directory, a main index, and localization indexing. #148 remains separate.
 
 ## 5.2.3 - Allied Mandinga retaliation (#180)
 
