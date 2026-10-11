@@ -1,6 +1,14 @@
 # TASKS.md — Active tasks
 
-Documentation version: **5.2.9** — 2026-10-11.
+Documentation version: **5.2.10** — 2026-10-11.
+
+## Issue #192 - Ranged amendment and shotgun naming (5.2.10)
+
+Implemented the approved bow/crossbow penetration table, four-family ideology
+exclusion and author-requested removal of active former-weapon names. Native
+and static evidence: assets/validation_5210/RESULTS.md. CA192-02 passed author
+acceptance on 2026-10-11 without qualifications; the queue is now empty. Commit/push are complete and
+#192 is closed again as requested. PR198 awaits review/merge.
 
 ## Issue #192 - Personality and magical bell (5.2.9)
 
@@ -11,7 +19,7 @@ soldier shields preserve defense order and one-time wear. Evidence:
 assets/validation_529/RESULTS.md. CA192-01 and CA188-01 passed author acceptance
 on 2026-10-11 without qualifications. PR193 then PR196 merges and #188/#192
 closure are explicitly authorized. Confirmed tests are recorded in HISTORY;
-the author queue is empty. Next separate roadmap task: #148.
+the author queue was empty at that acceptance. Next separate roadmap task: #148.
 
 ## Issue #188 - Toughness (5.2.8)
 
@@ -281,7 +289,7 @@ Final tests and qualifications: assets/validation_517/ENERGY_RESULTS.md.
 
 Accepted on 2026-10-08: CA136-01 appearance/gameplay, CA136-02 thermal follow-up
 and carried CA143-01 all passed without reported qualifications. Issue #136
-closure and PR #146 integration are authorized; the author queue is empty.
+closure and PR #146 integration are authorized; the author queue was empty at that acceptance.
 A future hand appearance selector may reuse these layers; no new balance is implied.
 
 ## Issue #143 - Crouched aimed soldiers (5.1.6)

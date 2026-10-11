@@ -3,9 +3,11 @@ class CaelumArmorRules : Object
 {
     const PALOMO_DEFENSE = 77.0;
 
-    // #136: sólo atraviesa la pieza equipada, nunca la defensa racial ni Dureza.
+    // #136/#192: sólo atraviesa la pieza equipada, nunca escudos, defensa racial ni Dureza.
     static double WeaponBypass(int type,int tier)
     {
+        if(type==CaelumConstants.WEAPON_TYPE_LONGBOW)return 0.10+0.10*Clamp(tier,1,3);
+        if(type==CaelumConstants.WEAPON_TYPE_CROSSBOW)return 0.30+0.10*Clamp(tier,1,3);
         if(type==CaelumConstants.WEAPON_TYPE_CARBINE)return 0.60+0.10*Clamp(tier,1,3);
         if(type==CaelumConstants.WEAPON_TYPE_SHOTGUN)return 0.50+0.10*Clamp(tier,1,3);
         return 0;

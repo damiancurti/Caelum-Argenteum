@@ -1,6 +1,18 @@
 # Caelum Argenteum — Project, status and roadmap
 
-Documentation version: **5.2.9** — 2026-10-11.
+Documentation version: **5.2.10** — 2026-10-11.
+
+## 5.2.10 - Ranged penetration and shotgun naming (#192 amendment)
+
+Implemented the author's reopened scope: longbow 20/30/40% and crossbow
+40/50/60% equipped-armor bypass; all four ranged families exclude offensive
+ideology against armor and shields. Firearm values, defensive ideology,
+innate defense, Toughness and base damage/scaling are preserved. Active names
+for the replaced weapon now identify the shotgun. Historical art bytes and
+release records retain their provenance. Fresh test saves are author-authorized.
+Evidence: assets/validation_5210/RESULTS.md. CA192-02 passed author acceptance on
+2026-10-11 without qualifications; HISTORY preserves the originating evidence. Commit/push are complete;
+#192 is closed again at the author's request. PR198 awaits review/merge.
 
 ## 5.2.9 - Four personality layers and twelve-projectile bell (#192)
 
@@ -14,7 +26,7 @@ author-approved Normal/Normal/Normal/Center defaults.
 Evidence: assets/validation_529/RESULTS.md. The author accepted CA192-01 and
 CA188-01 on 2026-10-11 without qualifications and authorized PR193 followed by
 PR196 and #188/#192 closure. HISTORY records this acceptance separately from
-agent checks. The author queue is empty; the separate #148 roadmap remains.
+agent checks. At that acceptance the author queue was empty; the separate #148 roadmap remains.
 
 ## 5.2.8 - Mass-based Toughness and status resistance (#188)
 
@@ -1672,7 +1684,7 @@ beside the package, supports quoted paths/folders and resolves relative paths
 against that directory. Six isolated launcher-process checks pass. On 2026-10-01
 the author confirmed all tests passed after the correction and authorized
 PR #60 merge and #17 closure. CA-43628-EXPORT-01 is recorded as PASS in HISTORY;
-the author queue is empty. This explicitly accepts the exported-package route,
+the author queue was empty at that acceptance. This explicitly accepts the exported-package route,
 separately from the earlier component and isolated engine evidence.
 
 Evidence and exact accepted source commit: assets/validation_43628/RESULTS.json.

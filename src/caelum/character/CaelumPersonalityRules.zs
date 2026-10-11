@@ -59,7 +59,7 @@ class CaelumPersonalityRules : Object
         if(channel!=null)return channel.ChannelOwner;
         return inflictor;
     }
-    static clearscope bool ExcludedFirearm(Actor inflictor,Actor source=null)
+    static clearscope bool ExcludedRangedWeapon(Actor inflictor,Actor source=null)
     {
         int type=-1;
         let projectile=CaelumActorProjectile(inflictor);
@@ -69,11 +69,12 @@ class CaelumPersonalityRules : Object
             let user=CaelumPlayer(inflictor);
             if(user!=null && user.WeaponModel!=null && user.WeaponModel.Equipped)type=user.WeaponModel.WeaponType;
         }
-        return type==CaelumConstants.WEAPON_TYPE_CARBINE || type==CaelumConstants.WEAPON_TYPE_SHOTGUN;
+        return type==CaelumConstants.WEAPON_TYPE_LONGBOW || type==CaelumConstants.WEAPON_TYPE_CROSSBOW
+            || type==CaelumConstants.WEAPON_TYPE_CARBINE || type==CaelumConstants.WEAPON_TYPE_SHOTGUN;
     }
     static clearscope double AttackPenetration(Actor inflictor,Actor source=null)
     {
-        if(ExcludedFirearm(inflictor,source))return 0;
+        if(ExcludedRangedWeapon(inflictor,source))return 0;
         let projectile=CaelumActorProjectile(inflictor);
         if(projectile!=null && projectile.CaelumPersonalityRevision>=REVISION)return projectile.CaelumIdeologyPenetration;
         return Penetration(Profile(Attacker(inflictor,source)));

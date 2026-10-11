@@ -6321,7 +6321,7 @@ class CaelumInventoryService : Object play
         {
             if(user.WeaponModel!=null && user.WeaponModel.WeaponType==CaelumConstants.WEAPON_TYPE_SHOTGUN)
                 user.WeaponModel.Durability=CaelumShotgunRules.MigrateDurability(user.WeaponModel.Durability);
-            user.StandardBowMagazine=0;user.ShotgunLoadedMask=0;
+            user.ShotgunLoadedMask=0;
             if(user.RangedReloadWeaponType==CaelumConstants.WEAPON_TYPE_SHOTGUN)user.CancelRangedReload();
             user.ShotgunRevision=CaelumShotgunRules.REVISION;
         }

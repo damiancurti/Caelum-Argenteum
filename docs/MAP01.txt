@@ -1,6 +1,14 @@
 CAELUM ARGENTEUM — STORY AND MAP01
 
-Documentation version: **5.2.9** — 2026-10-11.
+Documentation version: **5.2.10** — 2026-10-11.
+
+## 5.2.10 - Ranged equipment terminology (#192 amendment)
+
+Longbow/crossbow tutorial and loadout descriptions state their T1/T2/T3
+equipped-armor bypass and ideology exclusion. Current names use shotgun for
+playable ID 14 / catalogue ID 12; the longbow remains ID 15 / catalogue ID 14.
+Shared mitigation changes also affect MAP01 combat. Story, gifts, recipes and
+geometry are unchanged. Author gameplay check: CA192-02.
 
 ## 5.2.9 - Personality selection before the tutorial (#192)
 
@@ -237,7 +245,7 @@ names, timings and encounter consequences remain unchanged.
 
 ## 5.1.7 - Shotgun tutorial and MAP02 supplies (#136)
 
-Palomo's existing shortbow choice (catalogue option 12) now grants the shotgun;
+Palomo's shotgun choice uses catalogue option 12;
 Ronnie uses its carbine-equivalent components and recipe dependencies. The
 longbow retains arrow teaching, and existing arrow recipe knowledge is preserved.
 No dialogue story, coordinates or other equipment choice is reauthored.

@@ -1,7 +1,7 @@
 # LANGUAGE index
 
 Generated from [../LANGUAGE](../LANGUAGE); shared bilingual text remains authoritative there.
-SHA-256: `55415d7e723a5e5f93cd4cb90ee2babeece386ccccf4dfdafdedd096bdf0f62e`. Locations include every definition; the last one per language wins.
+SHA-256: `09949e5e977ca2aaf309fa11fb9d85750affa742f7f11553257c245409c2aefb`. Locations include every definition; the last one per language wins.
 Run `python build_dialogue_index.py check` before using locations.
 
 Use `python build_dialogue_index.py find TERM` to locate keys, then
@@ -144,7 +144,7 @@ including shared UI/system keys and dynamically selected text.
 | CA_VEIN | 11 | CA_VEIN_COAL | CA_VEIN_TOPAZ |
 | CA_VULNERABILITY | 7 | CA_VULNERABILITY_ARMORED | CA_VULNERABILITY_WEAK |
 | CA_WATER | 10 | CA_WATER_ACCEPT | CA_WATER_RONNIE |
-| CA_WEAPON | 54 | CA_WEAPON_AIR_COST | CA_WEAPON_TYPE_WAR_AXE |
+| CA_WEAPON | 52 | CA_WEAPON_AIR_COST | CA_WEAPON_TYPE_WAR_AXE |
 | CA_WEATHER | 19 | CA_WEATHER_CALM | CA_WEATHER_WIND_VALUE |
 | CA_WEEK | 7 | CA_WEEK_0 | CA_WEEK_6 |
 | CA_WORLD | 21 | CA_WORLD_CLOCK_LIMBO | CA_WORLD_VISITED |
