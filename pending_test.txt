@@ -12,3 +12,21 @@ may remain visible; environmental overheating/cold remain separate.
 3. Save/load with an active effect and cross maps. Progress persists without
 repeated duration scaling. Confirm ordinary controls/combat remain usable.
 Expected: documented SYSTEMS #188 behavior; report any failure with save/build.
+
+CA192-01 | Origin 5.2.9 / issue #192 | Author gameplay acceptance pending
+Prerequisites: rebuild 5.2.9; preserve an untouched 5.2.8 save and package if
+checking migration. Use separate test saves; comparison fixtures are documented
+in assets/validation_529/RESULTS.md.
+1. Create a character in Spanish/English. Choose each personality layer with
+mouse and keyboard; go back from summary, leave/reopen the creator, then confirm.
+Expected: all four choices/descriptions and the summary agree and persist.
+2. Compare focused magical choices with three Normals: damage, push and heat
+scale by 3.375 and 1.953125 respectively, with other costs/ranges unchanged.
+Check adrenaline, both critical chances and evasion using the documented table.
+3. Try Liberal/Center/Conservative against armor and frontal shields, including
+a soldier. Carbine/shotgun keep only their own armor bypass. Fire ordinary and
+charged bell volleys: twelve separate hits, each reduced by its own defenses/R.
+4. Save/reload and travel. Load the preserved older save on this build: it gains
+Normal/Normal/Normal/Center once, without resource refill or repeated bonuses.
+Expected: SYSTEMS #192 behavior and usable ordinary controls/combat. Report any
+failure with the build, selected profile, equipment and save.

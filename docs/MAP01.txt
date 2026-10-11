@@ -1,6 +1,15 @@
 CAELUM ARGENTEUM — STORY AND MAP01
 
-Documentation version: **5.2.8** — 2026-10-11.
+Documentation version: **5.2.9** — 2026-10-11.
+
+## 5.2.9 - Personality selection before the tutorial (#192)
+
+Four personality choices follow allocation and appear in the final creator
+summary before the existing introduction/tutorial. The author specifies
+Normal/Normal/Normal/Center for existing saved characters. Shared magical
+power, ideology defenses and the twelve-projectile bell apply to tutorial
+combat. No narrative, dialogue, gift, recipe or MAP01 geometry is changed.
+See SYSTEMS for the canonical mechanics; CA192-01 awaits author acceptance.
 
 ## 5.2.8 - Shared combat resistance (#188)
 

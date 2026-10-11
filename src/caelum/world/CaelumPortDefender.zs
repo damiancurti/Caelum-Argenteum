@@ -220,7 +220,7 @@ class CaelumPortDefender : CaelumFolkloreCombatActor
 
     override Sound GetCombatPainSound(){return "caelum/player/pain_male";}
 
-    override int DamageMobj(Actor inflictor, Actor source, int damage, Name mod, int flags, double direction)
+    override double ResolveActorShieldDamage(Actor inflictor,Actor source,double damage,Name mod,int flags)
     {
         Actor attacker=source!=null ? source : inflictor;
         bool blocking=health>0 && !bInvulnerable && Shield!=null && Shield.Durability>0 && (Carbine==null || !Carbine.Held)
@@ -231,10 +231,12 @@ class CaelumPortDefender : CaelumFolkloreCombatActor
             && Abs(DeltaAngle(Angle,AngleTo(attacker)))<=Shield.GetCoverageDegrees()/2.0;
         if(blocking)
         {
-            int kind=mod=='CaelumMagicTest' ? CaelumConstants.SHIELD_DAMAGE_MAGICAL
-                : CaelumConstants.SHIELD_DAMAGE_PHYSICAL;
-            double absorbed=damage*Clamp(Shield.GetDefense(kind)/100.0,0,1);
-            damage=Max(0,int(damage-absorbed+0.5));
+            bool magic=CaelumArmorRules.IsMagical(inflictor,mod);
+            int kind=magic ? CaelumConstants.SHIELD_DAMAGE_MAGICAL : CaelumConstants.SHIELD_DAMAGE_PHYSICAL;
+            double absorption=Shield.GetDefense(kind)/100.0*CaelumPersonalityRules.Absorption(self,magic)
+                *(1-CaelumPersonalityRules.AttackPenetration(inflictor,source));
+            double absorbed=damage*Clamp(absorption,0,1);
+            damage=Max(0,damage-absorbed);
             double wear=absorbed;
             int loss=int(wear/CaelumConstants.ARMOR_ABSORBED_DAMAGE_PER_GUARANTEED_DURABILITY);
             double remainder=wear-loss*CaelumConstants.ARMOR_ABSORBED_DAMAGE_PER_GUARANTEED_DURABILITY;
@@ -244,7 +246,7 @@ class CaelumPortDefender : CaelumFolkloreCombatActor
             if(absorbed>0)AddActorCombatAdrenaline(CaelumConstants.ADRENALINE_GAIN_ON_SHIELD_BLOCK
                 *CaelumConstants.SHIELD_KITE_BLOCK_ADRENALINE_MULTIPLIER);
         }
-        return Super.DamageMobj(inflictor,source,damage,mod,flags,direction);
+        return damage;
     }
 
     action void A_PortSword()

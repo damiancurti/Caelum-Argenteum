@@ -1,6 +1,30 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **5.2.8** — 2026-10-11.
+Documentation version: **5.2.9** — 2026-10-11.
+
+## 5.2.9 - Personality, magical power and bell volley (#192), 2026-10-11
+
+Added four independent personality choices to both creators, their summary,
+draft restoration and revisioned authoritative profile. Author amendments:
+old characters become Normal/Normal/Normal/Center; magical factors apply to
+POWER, increasing damage, push and thermal energy while leaving costs,
+range, duration/control and Box separate. Ideology modifies equipped armor
+and shields, with carbine/shotgun excluded and innate defense/R unchanged.
+Bell count rises from seven to twelve with unchanged per-projectile values.
+
+Native testing exposed prepared projectile damage being reapplied by
+Super.DamageMobj after mitigation. The patch prepares each direct impact once,
+defers NPC anatomy until after its shield, and guards the native second call.
+It also moves soldier shielding into that shared order and retains fractional
+remainders. Cross-review caught weapon-dependent channel/javelin penetration,
+which is corrected with launch metadata and direct-inflictor firearm checks.
+
+Evidence and reproducible comparisons: assets/validation_529/RESULTS.md.
+Static review, engine assertions/collisions, bilingual creator screenshots and
+save migration/reload/rollback/travel are distinguished from author acceptance.
+CA192-01 remains pending together with CA188-01. The temporary keep-awake
+request is released after tests; no persistent power-plan change. No acceptance,
+merge or issue closure is inferred from the automated results.
 
 ## 5.2.8 - Mass-based Toughness and status resistance (#188)
 

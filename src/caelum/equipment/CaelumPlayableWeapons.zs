@@ -2741,11 +2741,9 @@ class CaelumCarbineProjectile : CaelumActorProjectile
         +NOEXTREMEDEATH
     }
 
-    override int DoSpecialDamage(Actor victim, int damage, Name damageType)
+    override void ApplyPreparedWeaponWear(Actor victim)
     {
-        int preparedDamage = GetCaelumPreparedDamage(
-            int(CaelumConstants.CARBINE_TIER_ONE_DAMAGE)
-        );
+        int preparedDamage=GetCaelumPreparedDamage(int(CaelumConstants.CARBINE_TIER_ONE_DAMAGE));
         CaelumPlayer weaponOwner = CaelumPlayer(Target);
         let soldier=CaelumPortDefender(Target);
         if(soldier!=null && soldier.Carbine!=null && CaelumWeaponWearPrepared
@@ -2760,6 +2758,15 @@ class CaelumCarbineProjectile : CaelumActorProjectile
                 CaelumWearWeaponSize, CaelumWearSourceItem, true
             );
         }
+    }
+
+    override int DoSpecialDamage(Actor victim, int damage, Name damageType)
+    {
+        if(CaelumDefenseReceiver==victim)return damage;
+        int preparedDamage = GetCaelumPreparedDamage(
+            int(CaelumConstants.CARBINE_TIER_ONE_DAMAGE)
+        );
+        ApplyPreparedWeaponWear(victim);
         CaelumCombatActor combatTarget = CaelumCombatActor(victim);
         if (combatTarget == null) { return preparedDamage; }
 
@@ -2769,6 +2776,8 @@ class CaelumCarbineProjectile : CaelumActorProjectile
         int vulnerabilityGrade =
             combatTarget.RegisterDirectionalAnatomyImpact(self, heightRatio);
         combatTarget.RegisterPendingCriticalHit(CaelumCriticalHit);
+        // El receptor aplica anatomia despues de su escudo y antes de armadura.
+        if(CaelumPreparingDefense)return preparedDamage;
         double multiplier = combatTarget.GetActorVulnerabilityMultiplier(
             vulnerabilityGrade
         );
@@ -2951,9 +2960,9 @@ class CaelumPlayerMagicProjectile : CaelumActorProjectile
         UpdateCaelumElementalWorldSprite();
     }
 
-    override int DoSpecialDamage(Actor victim, int damage, Name damageType)
+    override void ApplyPreparedWeaponWear(Actor victim)
     {
-        int preparedDamage = GetCaelumPreparedDamage(1);
+        int preparedDamage=GetCaelumPreparedDamage(1);
         CaelumPlayer weaponOwner = CaelumPlayer(Target);
         if (weaponOwner != null && CaelumWeaponWearPrepared
             && !(victim is "CaelumM00TrainingDummy"))
@@ -2965,6 +2974,13 @@ class CaelumPlayerMagicProjectile : CaelumActorProjectile
                 CaelumWearWeaponSize, CaelumWearSourceItem, true
             );
         }
+    }
+
+    override int DoSpecialDamage(Actor victim, int damage, Name damageType)
+    {
+        if(CaelumDefenseReceiver==victim)return damage;
+        int preparedDamage = GetCaelumPreparedDamage(1);
+        ApplyPreparedWeaponWear(victim);
         CaelumCombatActor combatTarget = CaelumCombatActor(victim);
         if (combatTarget == null) { return preparedDamage; }
         double heightRatio = victim.Height > 0.0
@@ -2973,6 +2989,8 @@ class CaelumPlayerMagicProjectile : CaelumActorProjectile
         int vulnerabilityGrade =
             combatTarget.RegisterDirectionalAnatomyImpact(self, heightRatio);
         combatTarget.RegisterPendingCriticalHit(CaelumCriticalHit);
+        // El receptor aplica anatomia despues de su escudo y antes de armadura.
+        if(CaelumPreparingDefense)return preparedDamage;
         double multiplier = combatTarget.GetActorVulnerabilityMultiplier(
             vulnerabilityGrade
         );
@@ -3175,6 +3193,7 @@ class CaelumExplosiveMagicProjectile : CaelumPlayerMagicProjectile
 
     override int DoSpecialDamage(Actor victim, int damage, Name damageType)
     {
+        if(CaelumDefenseReceiver==victim)return damage;
         return Max(1, int(
             Super.DoSpecialDamage(victim, damage, damageType)
                 * CaelumConstants.ESSENCE_EXPLOSIVE_DIRECT_DAMAGE_RATIO + 0.5

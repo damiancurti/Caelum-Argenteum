@@ -1,6 +1,16 @@
 # TASKS.md — Active tasks
 
-Documentation version: **5.2.8** — 2026-10-11.
+Documentation version: **5.2.9** — 2026-10-11.
+
+## Issue #192 - Personality and magical bell (5.2.9)
+
+Implemented four creation layers, author-approved magical POWER semantics,
+Normal/Center old-save migration, equipped armor/shield ideology rules and
+12 individually mitigated bell projectiles. Native impact preparation and
+soldier shields preserve defense order and one-time wear. Evidence:
+assets/validation_529/RESULTS.md. CA192-01 awaits author gameplay acceptance;
+CA188-01 remains pending. Deliver through a linked PR based on issue188-toughness
+(PR193), preserving one issue per patch. Next: author review/confirmation.
 
 ## Issue #188 - Toughness (5.2.8)
 

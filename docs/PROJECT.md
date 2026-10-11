@@ -1,6 +1,20 @@
 # Caelum Argenteum — Project, status and roadmap
 
-Documentation version: **5.2.8** — 2026-10-11.
+Documentation version: **5.2.9** — 2026-10-11.
+
+## 5.2.9 - Four personality layers and twelve-projectile bell (#192)
+
+Implemented native/legacy creator choices, authoritative revisioned persistence,
+shared magical power (damage, push, heat), chance/adrenaline modifiers and
+layer-specific armor/shield penetration/absorption. The bell has twelve
+individually mitigated projectiles. Native impact ordering now prevents a
+projectile's prepared damage from replacing its already-mitigated remainder;
+soldier shields participate in the same order. Existing saves receive the
+author-approved Normal/Normal/Normal/Center defaults.
+Evidence: assets/validation_529/RESULTS.md. Delivery is a focused branch/PR
+stacked on #188/PR193; CA192-01 and CA188-01 await author acceptance. Native
+checks and static review are not manual campaign acceptance. Next: review and
+author gameplay confirmation; the separate #148 roadmap remains unchanged.
 
 ## 5.2.8 - Mass-based Toughness and status resistance (#188)
 

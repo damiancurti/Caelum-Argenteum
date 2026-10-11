@@ -10,12 +10,13 @@ class CaelumArmorRules : Object
         if(type==CaelumConstants.WEAPON_TYPE_SHOTGUN)return 0.50+0.10*Clamp(tier,1,3);
         return 0;
     }
-    static double EquipmentRetention(Actor inflictor)
+    static double EquipmentRetention(Actor inflictor,Actor source=null)
     {
         if(inflictor is "CaelumCannonProjectile")return 0;
         let projectile=CaelumActorProjectile(inflictor);
-        if(projectile==null || !projectile.CaelumWeaponWearPrepared)return 1;
-        return 1-WeaponBypass(projectile.CaelumWearWeaponType,projectile.CaelumWearWeaponTier);
+        double existing=projectile!=null && projectile.CaelumWeaponWearPrepared
+            ? WeaponBypass(projectile.CaelumWearWeaponType,projectile.CaelumWearWeaponTier) : 0;
+        return 1-Clamp(existing+CaelumPersonalityRules.AttackPenetration(inflictor,source),0.0,1.0);
     }
 
     // Curva histórica del atributo, sin limitar el porcentaje a 100.
@@ -54,10 +55,16 @@ class CaelumArmorRules : Object
         }
     }
 
-    static double TotalDefense(double innateDefense, CaelumArmorModel armor, int slot, bool magical = false,Actor inflictor=null)
+    static double EquippedDefense(CaelumArmorModel armor,int slot,bool magical=false,
+        Actor receiver=null,Actor inflictor=null,Actor source=null)
     {
-        return Clamp(innateDefense
-            + (armor != null ? armor.GetDefense(slot, magical)*EquipmentRetention(inflictor) : 0.0), 0.0, 100.0);
+        return armor!=null ? Clamp(armor.GetDefense(slot,magical)
+            *CaelumPersonalityRules.Absorption(receiver,magical)*EquipmentRetention(inflictor,source),0.0,100.0) : 0;
+    }
+    static double TotalDefense(double innateDefense,CaelumArmorModel armor,int slot,bool magical=false,
+        Actor inflictor=null,Actor receiver=null,Actor source=null)
+    {
+        return Clamp(innateDefense+EquippedDefense(armor,slot,magical,receiver,inflictor,source),0.0,100.0);
     }
 
     static bool IsMagical(Actor inflictor, Name mod)

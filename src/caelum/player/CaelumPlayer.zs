@@ -6522,10 +6522,10 @@ class CaelumPlayer : DoomPlayer
             CaelumToughnessRules.AfterDefenses(damage,CaelumToughnessRules.NaturalMass(self),toughness));
     }
 
-    double GetArmorDefensePercent(int slot, bool magical = false,Actor inflictor=null)
+    double GetArmorDefensePercent(int slot, bool magical = false,Actor inflictor=null,Actor source=null)
     {
         int race = CharacterProfile != null ? CharacterProfile.Race : CaelumConstants.RACE_HUMAN;
-        return CaelumArmorRules.TotalDefense(CaelumArmorRules.InnateDefense(race, magical), ArmorModel, slot, magical,inflictor);
+        return CaelumArmorRules.TotalDefense(CaelumArmorRules.InnateDefense(race, magical), ArmorModel, slot, magical,inflictor,self,source);
     }
 
     double GetImpactArmorDefensePercent()
@@ -6914,8 +6914,7 @@ class CaelumPlayer : DoomPlayer
                 if(ArmorModel!=null && ArmorModel.Durability[slot]>0)
                 {
                     double absorbed=GetImpactMaximumHealth()*surfacedDamagePercent/100.0
-                        *weight*vulnerabilityMultiplier*ArmorModel.GetDefense(slot,false)/100.0
-                        *CaelumArmorRules.EquipmentRetention(sourceActor);
+                        *weight*vulnerabilityMultiplier*CaelumArmorRules.EquippedDefense(ArmorModel,slot,false,self,sourceActor)/100.0;
                     int loss=CaelumToughnessRules.ImpactWear(ArmorModel,slot,absorbed,ArmorDurabilityDamageMultiplier);
                     if(loss>0 && ArmorModel.Durability[slot]<=0)armorPieceBroken=true;
                 }
@@ -7724,7 +7723,10 @@ class CaelumPlayer : DoomPlayer
     {
         CaelumBolas.FireAttack(self,inflictor,mod);
         int before=health;
+        let shot=CaelumActorProjectile(inflictor);
+        Actor previousReceiver=shot!=null?shot.CaelumDefenseReceiver:null;
         int result=ReceiveCaelumDamage(inflictor,source,damage,mod,flags,angle);
+        if(shot!=null)shot.CaelumDefenseReceiver=previousReceiver;
         CaelumDamageFeedback.Record(self,inflictor,mod,Max(0,Max(0,before)-Max(0,health)));
         return result;
     }
@@ -7868,6 +7870,8 @@ class CaelumPlayer : DoomPlayer
             }
         }
 
+        damage=CaelumActorProjectile.PrepareDefense(self,inflictor,damage,mod,flags);
+        if(damage<=0)return 0;
         damage=CaelumThermalEffects.Incoming(self,inflictor,source,damage,mod);
 
         if (flags & DMG_EXPLOSION)
@@ -8086,7 +8090,7 @@ class CaelumPlayer : DoomPlayer
             double postAnatomyDamage = incomingDamage * vulnerabilityMultiplier;
 
             double preDefenseDamage = postAnatomyDamage;
-            double defenseRatio = Clamp(GetArmorDefensePercent(slot, magical,inflictor) / 100.0, 0.0, 1.0);
+            double defenseRatio = Clamp(GetArmorDefensePercent(slot, magical,inflictor,source) / 100.0, 0.0, 1.0);
             double absorbedDamage = preDefenseDamage * defenseRatio;
             double postDefenseDamage = Max(
                 0.0,
@@ -8112,7 +8116,7 @@ class CaelumPlayer : DoomPlayer
                 && ArmorModel.Durability[slot] > 0
                 && absorbedDamage > 0.0)
             {
-                double eligibleDamage = preDefenseDamage * ArmorModel.GetDefense(slot, magical) / 100.0*CaelumArmorRules.EquipmentRetention(inflictor)
+                double eligibleDamage = preDefenseDamage * CaelumArmorRules.EquippedDefense(ArmorModel,slot,magical,self,inflictor,source)/100.0
                     * Max(0.0, ArmorDurabilityDamageMultiplier);
                 int durabilityLoss = int(
                     eligibleDamage
@@ -8287,7 +8291,7 @@ class CaelumPlayer : DoomPlayer
             damageAfterShield,
             incomingActorCritical,
             LastIncomingArmorSlot,
-            CaelumArmorRules.IsMagical(inflictor, mod),inflictor
+            CaelumArmorRules.IsMagical(inflictor, mod),inflictor,source
         );
 
         double adrenalineRatioBeforeDamage = 0.0;
@@ -8474,7 +8478,9 @@ class CaelumPlayer : DoomPlayer
             ? CaelumConstants.SHIELD_DAMAGE_MAGICAL
             : CaelumConstants.SHIELD_DAMAGE_PHYSICAL;
         double defenseRatio = Clamp(
-            GetActiveBlockDefense(damageKind) / 100.0,
+            GetActiveBlockDefense(damageKind) / 100.0
+                * CaelumPersonalityRules.Absorption(self,damageKind==CaelumConstants.SHIELD_DAMAGE_MAGICAL)
+                * (1-CaelumPersonalityRules.AttackPenetration(inflictor,source)),
             0.0,
             1.0
         );
@@ -8552,7 +8558,7 @@ class CaelumPlayer : DoomPlayer
         double incomingDamage,
         bool criticalHit,
         int incomingSlot,
-        bool magical = false,Actor inflictor=null
+        bool magical = false,Actor inflictor=null,Actor source=null
     )
     {
         LastLocalizedLucidityLoss = 0.0;
@@ -8578,7 +8584,7 @@ class CaelumPlayer : DoomPlayer
         double postAnatomyDamage = incomingDamage * LastArmorVulnerabilityMultiplier;
         LastArmorPreDefenseDamage = postAnatomyDamage;
         double defenseRatio = Clamp(
-            GetArmorDefensePercent(slot, magical,inflictor) / 100.0,
+            GetArmorDefensePercent(slot, magical,inflictor,source) / 100.0,
             0.0,
             1.0
         );
@@ -8596,8 +8602,7 @@ class CaelumPlayer : DoomPlayer
 
         // El cuerpo absorbe su parte sin desgastar la pieza equipada.
         double eligibleDamage = LastArmorPreDefenseDamage
-            * (ArmorModel != null ? ArmorModel.GetDefense(slot, magical) / 100.0 : 0.0)
-            * CaelumArmorRules.EquipmentRetention(inflictor)
+            * CaelumArmorRules.EquippedDefense(ArmorModel,slot,magical,self,inflictor,source)/100.0
             * Max(0.0, ArmorDurabilityDamageMultiplier);
         LastArmorDurabilityLoss = int(
             eligibleDamage
@@ -9905,7 +9910,7 @@ class CaelumPlayer : DoomPlayer
         );
         double criticalChance = Clamp(
             (CaelumWeaponCatalogue.GetCriticalChancePercent(catalogueWeapon)
-                + criticalBonus) * CrouchCriticalChanceMultiplier,
+                + criticalBonus) * CrouchCriticalChanceMultiplier * CaelumPersonalityRules.Critical(self),
             0.0,
             100.0
         );
@@ -10415,7 +10420,7 @@ class CaelumPlayer : DoomPlayer
             * GetRangedTierCriticalMultiplier(WeaponModel.Tier);
         double criticalChance = Clamp(
             (rangedBaseCritical + criticalBonus)
-                * CrouchCriticalChanceMultiplier,
+                * CrouchCriticalChanceMultiplier * CaelumPersonalityRules.Critical(self),
             0.0,
             100.0
         );
@@ -10671,7 +10676,7 @@ class CaelumPlayer : DoomPlayer
             (WeaponModel.GetBaseCriticalChanceFor(activeMagicType)
                 + Max(0.0, DerivedStats.MagicalCriticalChance
                     - CaelumConstants.BASE_CRITICAL_CHANCE_PERCENT))
-                * CrouchCriticalChanceMultiplier,
+                * CrouchCriticalChanceMultiplier * CaelumPersonalityRules.Critical(self),
             0.0,
             100.0
         );
@@ -11943,7 +11948,7 @@ class CaelumPlayer : DoomPlayer
             (CaelumWeaponCatalogue.GetCriticalChancePercent(catalogueWeapon)
                 + Max(0.0, DerivedStats.PhysicalCriticalChance
                     - CaelumConstants.BASE_CRITICAL_CHANCE_PERCENT))
-                * LastMeleeCrouchCriticalMultiplier,
+                * LastMeleeCrouchCriticalMultiplier * CaelumPersonalityRules.Critical(self),
             0.0,
             100.0
         );
@@ -12118,7 +12123,7 @@ class CaelumPlayer : DoomPlayer
                 (CaelumWeaponCatalogue.GetCriticalChancePercent(catalogueWeapon)
                     + Max(0.0, DerivedStats.PhysicalCriticalChance
                         - CaelumConstants.BASE_CRITICAL_CHANCE_PERCENT))
-                    * LastMeleeCrouchCriticalMultiplier, 0.0, 100.0);
+                    * LastMeleeCrouchCriticalMultiplier * CaelumPersonalityRules.Critical(self), 0.0, 100.0);
             LastMeleeCriticalRollPercent = Random[CaelumPhysicalCritical](0, 999999) / 10000.0;
             LastMeleeCriticalHit = LastMeleeCriticalRollPercent < LastMeleeCriticalChancePercent;
             CaelumCombatActor combatTarget = CaelumCombatActor(candidate);
@@ -12916,6 +12921,13 @@ class CaelumPlayer : DoomPlayer
     // Change the choice represented by the current wizard page.
     void CycleCurrentCreationChoice()
     {
+        if(CreationWizardPage>=CaelumPersonalityRules.FIRST_PAGE && CreationWizardPage<=CaelumPersonalityRules.LAST_PAGE)
+        {
+            int layer=CreationWizardPage-CaelumPersonalityRules.FIRST_PAGE;
+            CharacterProfile.Personality[layer]=(CharacterProfile.Personality[layer]+1)%3;
+            CharacterProfile.PersonalityRevision=CaelumPersonalityRules.REVISION;
+            ApplyCharacterProfile();return;
+        }
         switch (CreationWizardPage)
         {
             case CaelumConstants.CREATION_PAGE_RACE:
@@ -13201,9 +13213,10 @@ class CaelumPlayer : DoomPlayer
             return;
         }
 
-        if (CreationWizardPage < CaelumConstants.CREATION_PAGE_SUMMARY)
+        if (CreationWizardPage != CaelumConstants.CREATION_PAGE_SUMMARY)
         {
-            CreationWizardPage++;
+            CreationWizardPage=CreationWizardPage==CaelumConstants.CREATION_PAGE_ATTRIBUTES ? CaelumPersonalityRules.FIRST_PAGE
+                : CreationWizardPage==CaelumPersonalityRules.LAST_PAGE ? CaelumConstants.CREATION_PAGE_SUMMARY : CreationWizardPage+1;
             return;
         }
 
@@ -13253,7 +13266,8 @@ class CaelumPlayer : DoomPlayer
         }
         else if (CreationWizardPage > CaelumConstants.CREATION_PAGE_RACE)
         {
-            CreationWizardPage--;
+            CreationWizardPage=CreationWizardPage==CaelumConstants.CREATION_PAGE_SUMMARY ? CaelumPersonalityRules.LAST_PAGE
+                : CreationWizardPage==CaelumPersonalityRules.FIRST_PAGE ? CaelumConstants.CREATION_PAGE_ATTRIBUTES : CreationWizardPage-1;
         }
         else
         {

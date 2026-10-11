@@ -139,7 +139,9 @@ class CaelumPlayerCharacter : Object play
                 user.ReadNewCharacterAttribute(attribute);
         }
 
-        if (!user.ValidateLoadedNewCharacterDraft())
+        bool personalityValid=CaelumPersonalityRules.Unpack(user.CharacterProfile,
+            user.ReadNewCharacterDraft("ca_newchar_personality",-1));
+        if (!personalityValid || !user.ValidateLoadedNewCharacterDraft())
         {
             user.ClearNewCharacterDraftReady();
             Console.Printf(
@@ -207,6 +209,7 @@ class CaelumPlayerCharacter : Object play
             && user.CharacterAllocation != null
             && user.DerivedStats != null)
         {
+            user.CharacterProfile.EnsurePersonality();
             // La revisión 4 incluye el coste del lanzamiento en curso antes
             // de pagarlo; conserva el tiempo, los recursos y el progreso.
             bool migrateGrowth=user.AttributeBalanceVersion<CaelumGrowthRules.PLAYER_BALANCE_VERSION;

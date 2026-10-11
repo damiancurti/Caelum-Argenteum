@@ -67,6 +67,12 @@ class CaelumElementalStream : Object play
             CaelumConstants.ELEMENTAL_BASE_DURATION_SECONDS*power,power,damage,emitter,body);
     }
 
+    static double ThermalPowerFactor(Actor source)
+    {
+        let stream=CaelumUtilityStaffStream(source);
+        return stream!=null ? CaelumPersonalityRules.MagicPower(CaelumPersonalityRules.Profile(stream.Emitter)) : 1;
+    }
+
     static double ReceivedWatts(Actor source,Vector3 direction,Actor body,CaelumThermalState thermal)
     {
         double watts=0;
@@ -76,7 +82,7 @@ class CaelumElementalStream : Object play
             vector3 point=source.Pos+direction*along;
             if(!Visible(source,point))continue;
             watts+=CaelumThermalFire.AbsorbedAt(body,thermal,source,point,
-                CaelumDemonBreathRules.Watts()/CaelumDemonBreathRules.SEGMENTS,
+                CaelumDemonBreathRules.Watts()*ThermalPowerFactor(source)/CaelumDemonBreathRules.SEGMENTS,
                 along*Tan(CaelumDemonBreathRules.CONE_DEGREES/2)/CaelumJourneyRules.MAP_UNITS_PER_METER);
         }
         return watts;
@@ -98,7 +104,7 @@ class CaelumElementalStream : Object play
             if(value<=0)continue;
             bodies.Push(body); watts.Push(value); sum+=value;
         }
-        double budget=CaelumDemonBreathRules.Watts()*CaelumThermalData.FIRE_RADIATIVE_FRACTION;
+        double budget=CaelumDemonBreathRules.Watts()*ThermalPowerFactor(source)*CaelumThermalData.FIRE_RADIATIVE_FRACTION;
         double scale=sum>budget ? budget/sum : 1;
         for(int i=0;i<bodies.Size();i++)
             CaelumThermalMagic.Continuous(bodies[i],watts[i]*scale*(ice ? -1 : 1),seconds);

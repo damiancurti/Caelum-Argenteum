@@ -6,14 +6,21 @@ An independent dark fantasy FPS-RPG inspired by nineteenth-century Argentina.
 Author and game designer: **Damian Curti**. Development target: **GZDoom 4.14.2**
 on Windows 11. The final game is intended to be independent of Doom assets.
 
-**Current release: 5.2.8.** Obtain and update the complete repository, validate
+**Current release: 5.2.9.** Obtain and update the complete repository, validate
 it, then rebuild with `run_dev.bat` as described below.
+
+5.2.9 adds four personality choices and a twelve-projectile bell. Magical power
+bonuses affect damage, push and heat; ideology modifies equipped armor/shields.
+Old saves receive Normal/Normal/Normal/Center as requested. Native projectile
+impacts retain their final mitigation and prepare damage/wear once.
+[Evidence and comparisons](assets/validation_529/RESULTS.md). CA192-01 and CA188-01
+await author gameplay acceptance; #192 is delivered separately on top of #188.
 
 5.2.8 applies mass-based Toughness after armor, at half strength for direct
 magic, and Type-1 burn/poison/disease resistance with immunity and above-100
 healing. Active states recalculate when Toughness changes; gates use structural
 mass. [Evidence](assets/validation_528/RESULTS.md). CA188-01 awaits author gameplay
-acceptance; #192 is the next separately requested patch.
+acceptance; #192 follows in 5.2.9 above.
 
 5.2.7 moves all interactive overlay screens into native menus while preserving
 existing images and gameplay actions. NPC conversations keep the world running

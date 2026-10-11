@@ -1,6 +1,15 @@
 # Caelum Argenteum — Audio and art
 
-Documentation version: **5.2.8** — 2026-10-11.
+Documentation version: **5.2.9** — 2026-10-11.
+
+## 5.2.9 - Personality descriptions and creator layout (#192)
+
+Existing native creator fonts, background and controls render four new bilingual
+choice pages and the expanded summary. Bell descriptions now state twelve
+projectiles. No new art/audio or third-party resource is introduced.
+Development-only fixtures, normalized logs, source hashes, comparisons and
+English/Spanish captures are in assets/validation_529. Engine, IWAD, generated
+packages and saves stay local and are excluded from the delivery.
 
 ## 5.2.8 - Toughness evidence and existing status visuals (#188)
 

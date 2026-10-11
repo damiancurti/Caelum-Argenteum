@@ -48,6 +48,7 @@ class CaelumShotgunPellet : CaelumCarbineProjectile
     // El daño cero de un presupuesto fraccionario no se convierte en un HP.
     override int DoSpecialDamage(Actor victim,int damage,Name damageType)
     {
+        if(CaelumDefenseReceiver==victim)return damage;
         if(CaelumAttackPrepared && CaelumPreparedDamage==0)return 0;
         return Super.DoSpecialDamage(victim,damage,damageType);
     }
