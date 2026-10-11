@@ -58,5 +58,19 @@
   ],
   "source_sha256": "fb78f0ab7883e2fcb806fa5feaf035b09ecec762526ae7b4415fc07314e99b6e",
   "method": "Built-in image_gen; original RGBA atlas; native TEXTURES crops, no raster edits.",
-  "construction": "Three leather-wrapped bronze weights and cowhide thongs. Mouth remains free."
+  "construction": "Three leather-wrapped bronze weights and cowhide thongs. Mouth remains free.",
+  "hanging_ready": {
+    "source": "ready-hanging.png",
+    "grip": [
+      628,
+      210
+    ],
+    "scale": 10,
+    "source_sha256": "eb224831a76dd79e64e278114090fed32d232b7deaea3aa61ca98652e37e7081"
+  },
+  "wrap_split_rows": [
+    220,
+    250
+  ],
+  "wrap_registration": "Front lower fragments and rear upper arcs retain atlas coordinates, on opposite sides of the victim sprite plane via visual-only WorldOffset."
 }

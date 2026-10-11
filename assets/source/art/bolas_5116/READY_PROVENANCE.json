@@ -1,0 +1,10 @@
+{
+  "issue": 163,
+  "release": "5.1.16",
+  "created": "2026-10-10",
+  "creator": "OpenAI image_gen built-in tool, directed by Codex for Damian Curti",
+  "source": "ready-hanging.png",
+  "reference": "atlas.png",
+  "prompt": "Edit target: the ready pose in the referenced original bolas sprite atlas; all other cells are style reference only. Produce ONE new standalone ready/rest sprite, not an atlas. Original nineteenth-century Argentine dark-fantasy bolas: exactly three dark brown leather-covered bronze spherical weights with visible stitched cowhide seams, connected to a small top grip loop/junction by three brown braided cowhide thongs. Physics is essential: the grip junction is at the TOP, ALL three weights hang BELOW it under gravity; the flexible cords descend almost vertically, slightly separated so the three weights are readable, at staggered lower heights. No upward or sideways floating weights, no rigid rods, no spinning or taut radial fan. Match precisely the reference's painterly realistic leather texture, palette, lighting and thickness. No hands, no person, no ground, no lettering, no shadow backdrop. Square 1024x1024 transparent RGBA canvas with full object visible: top grip near center x=512 y=100, descending thongs and weights contained between x=300..720 and y=130..930. Keep each weight about 140 px diameter; longest thong mostly straight vertical. Preserve real alpha background. Return only this hanging ready sprite.",
+  "registration": "Native TEXTURES scaling and grip placement only. Original RGBA bytes preserved. Superseded atlas ready cell remains retained."
+}
