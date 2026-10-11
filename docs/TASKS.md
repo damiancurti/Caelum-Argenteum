@@ -1,6 +1,6 @@
 # TASKS.md — Active tasks
 
-Documentation version: **5.2.4** — 2026-10-11.
+Documentation version: **5.2.5** — 2026-10-11.
 
 ## Issue #183 - Profession onboarding and MAP02 supplies (5.2.4)
 
@@ -12,13 +12,14 @@ confirmed five manufactured replacement bolas (no reparable wear exists), a
 old-save migration. Evidence: assets/validation_524/RESULTS.md. CA183-01 remains
 pending author acceptance; commit/push and linked PR are the delivery boundary.
 
-## Issue #185 - Indexed NPC dialogue and localization sources
+## Issue #185 - Indexed NPC dialogue and localization sources (5.2.5)
 
-Explicit author follow-up after #183: one authoritative file per NPC under a
-dedicated src directory, a main indexed entry point, and localization indexing
-for the large LANGUAGE catalogue. Preserve post-#183 gameplay/IDs/keys, use
-native includes if supported or deterministic validated assembly, and adapt
-history generation/build/validators. Separate branch, version and linked PR.
+Implemented after #183/PR186: 19 authoritative NPC/shared sources under
+src/dialogues, indexed by index.json; generated runtime retains all 53
+conversations/422 pages in the original order. LANGUAGE index covers all 2,369
+keys; bounded lookup and build/validation freshness gates are implemented.
+Static and bilingual native evidence: assets/validation_525/RESULTS.md.
+No gameplay acceptance is implied; keep CA183-01 pending.
 
 ## Issue #180 - Allied Mandinga retaliation (5.2.3)
 

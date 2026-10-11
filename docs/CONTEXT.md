@@ -1,8 +1,15 @@
 # CONTEXT.md — Caelum Argenteum
 
-Documentation version: **5.2.4** — 2026-10-11.
+Documentation version: **5.2.5** — 2026-10-11.
 
-**Current patch 5.2.4 / #183:** simplified creator recommendations and fixed
+**Current patch 5.2.5 / #185:** per-NPC dialogue sources and main manifest in
+src/dialogues, with deterministic runtime assembly preserving every node/ID.
+Start at src/dialogues/INDEX.md; src/localization/INDEX.md locates all LANGUAGE
+keys. `python build_dialogue_index.py build` regenerates after edits; check,
+project validation and packaging reject stale output. Evidence: validation_525.
+No gameplay change or new author acceptance; CA183-01 remains pending.
+
+**Previous patch 5.2.4 / #183 (PR186):** simplified creator recommendations and fixed
 profession gifts; Palomo chooses only the Seal. Ronnie exchanges the sole finite
 2 kg gold deposit for bag/Seal/5 L canteen materials. Bag/canteen are 90% leather,
 10% rope by empty mass; MAP01 Bull drops no leather. Box slots/content divisor:
@@ -10,8 +17,7 @@ profession gifts; Palomo chooses only the Seal. Ronnie exchanges the sole finite
 matching ammo. MAP02 has 360 arrows/240 bolts and an exact initial-kit repair
 budget plus five replacement bolas across 39 finite chests. Start fresh test
 games by author instruction. Evidence: validation_524; CA183-01 awaits acceptance.
-Next requested work: #185, per-NPC indexed dialogue sources under src and a
-localization index. Preserve #183 as its own branch/PR before implementing #185.
+
 
 **Accepted on 2026-10-11:** CA147-01 (5.2.0/#147), CA177-01 (5.2.1/#177),
 CA178-01 (5.2.2/#178) and CA180-01 (5.2.3/#180), without qualifications.

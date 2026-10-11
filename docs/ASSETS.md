@@ -1,6 +1,17 @@
 # Caelum Argenteum — Audio and art
 
-Documentation version: **5.2.4** — 2026-10-11.
+Documentation version: **5.2.5** — 2026-10-11.
+
+## 5.2.5 - Dialogue source provenance and evidence (#185)
+
+The complete pre-split CAPALOMO source is preserved at
+archive/dialogues/5.2.4-CAPALOMO.usdf, including its original line endings and
+comments. Authoritative NPC/shared files, their load manifest and generated
+runtime/index live under src/dialogues. LANGUAGE text is unchanged apart from
+LF normalization; src/localization indexes its source locations. The new paths
+have explicit LF attributes for reproducible hashes across checkouts. No art,
+audio, map geometry or distribution rights change. Native bilingual captures,
+logs, parser/freshness checks and baseline comparison are in assets/validation_525.
 
 ## 5.2.4 - Reused onboarding assets and MAP02 generation (#183)
 

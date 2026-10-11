@@ -1,6 +1,25 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **5.2.4** — 2026-10-11.
+Documentation version: **5.2.5** — 2026-10-11.
+
+## 5.2.5 - Indexed NPC dialogue and LANGUAGE sources (#185), 2026-10-11
+
+Requested during #183, implemented after its commit 0894d41d and PR186.
+Separated 53 conversations/422 pages into 19 NPC/shared sources under src;
+index.json preserves the original global order and generates the runtime.
+GZDoom 4.14.2 supports full-path dialogue loads and native includes, but direct
+per-NPC include grouping would reorder saved node offsets. Deterministic
+assembly retains those offsets; CAPALOMO remains an inactive compatibility alias.
+The original consolidated source is archived rather than deleted.
+
+The generated LANGUAGE index covers all 2,369 keys and English/default/Spanish
+locations, with read-only freshness validation and bounded lookup commands.
+Project packaging rejects stale runtime or locations; history generation checks
+its source references. Token/order comparison, deterministic generation, negative
+freshness cases and native bilingual conversations are recorded in
+assets/validation_525/RESULTS.md. No author gameplay acceptance is inferred and
+CA183-01 stays pending. The author withdrew the temporary initial-auto-equip
+request before #183 delivery; its existing equipment behavior remains.
 
 ## 5.2.4 - Profession onboarding and MAP02 supplies (#183), 2026-10-11
 

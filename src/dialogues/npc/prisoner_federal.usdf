@@ -1,0 +1,71 @@
+namespace = "GZDoom";
+
+conversation
+{
+    id = 43421;
+    class = "CaelumPalomoConversationMenu";
+
+    page
+    {
+        pagename = "prisoner_federal_cell";
+        name = "$CA_PRISONER_FEDERAL_NAME";
+        dialog = "$CA_PRISONER_DLG_FEDERAL_CELL";
+        goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+        ifitem { item = "CaelumPrisonerFreed1Token"; amount = 1; } link = "prisoner_federal_follow";
+        choice
+        {
+            text = "$CA_PRISONER_RELEASE_CHOICE";
+            giveitem = "CaelumPrisonerReleaseAction";
+            nextpage = "prisoner_federal_follow";
+            closedialog = false;
+        }
+    }
+
+    page
+    {
+        pagename = "prisoner_federal_follow";
+        name = "$CA_PRISONER_FEDERAL_NAME";
+        dialog = "$CA_PRISONER_DLG_FEDERAL_FOLLOW";
+        goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+    }
+}
+
+conversation
+{
+    id = 43425;
+    class = "CaelumPalomoConversationMenu";
+
+    page
+    {
+        pagename = "prisoner_federal_port";
+        name = "$CA_PRISONER_FEDERAL_NAME";
+        dialog = "$CA_PRISONER_DLG_FEDERAL_PORT";
+        goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+        ifitem { item = "CaelumPrisonerClaimed1Token"; amount = 1; } link = "prisoner_federal_claimed";
+        choice
+        {
+            text = "$CA_PRISONER_PORT_CLAIM_CHOICE";
+            giveitem = "CaelumPrisonerClaimAction";
+            nextpage = "prisoner_federal_outcome";
+            closedialog = false;
+        }
+    }
+
+    page
+    {
+        pagename = "prisoner_federal_outcome";
+        name = "$CA_PRISONER_FEDERAL_NAME";
+        dialog = "$CA_PRISONER_PORT_REWARD_FAIL";
+        goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+        ifitem { item = "CaelumPrisonerClaimed1Token"; amount = 1; } link = "prisoner_federal_claimed";
+    }
+
+    page
+    {
+        pagename = "prisoner_federal_claimed";
+        userstring = "prisoner_federal_claimed";
+        name = "$CA_PRISONER_FEDERAL_NAME";
+        dialog = "$CA_PRISONER_PORT_REWARD_GRANTED";
+        goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+    }
+}

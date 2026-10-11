@@ -1,0 +1,71 @@
+namespace = "GZDoom";
+
+conversation
+{
+    id = 43422;
+    class = "CaelumPalomoConversationMenu";
+
+    page
+    {
+        pagename = "prisoner_bestia_cell";
+        name = "$CA_PRISONER_BESTIA_NAME";
+        dialog = "$CA_PRISONER_DLG_BESTIA_CELL";
+        goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+        ifitem { item = "CaelumPrisonerFreed2Token"; amount = 1; } link = "prisoner_bestia_follow";
+        choice
+        {
+            text = "$CA_PRISONER_RELEASE_CHOICE";
+            giveitem = "CaelumPrisonerReleaseAction";
+            nextpage = "prisoner_bestia_follow";
+            closedialog = false;
+        }
+    }
+
+    page
+    {
+        pagename = "prisoner_bestia_follow";
+        name = "$CA_PRISONER_BESTIA_NAME";
+        dialog = "$CA_PRISONER_DLG_BESTIA_FOLLOW";
+        goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+    }
+}
+
+conversation
+{
+    id = 43426;
+    class = "CaelumPalomoConversationMenu";
+
+    page
+    {
+        pagename = "prisoner_bestia_port";
+        name = "$CA_PRISONER_BESTIA_NAME";
+        dialog = "$CA_PRISONER_DLG_BESTIA_PORT";
+        goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+        ifitem { item = "CaelumPrisonerClaimed2Token"; amount = 1; } link = "prisoner_bestia_claimed";
+        choice
+        {
+            text = "$CA_PRISONER_PORT_CLAIM_CHOICE";
+            giveitem = "CaelumPrisonerClaimAction";
+            nextpage = "prisoner_bestia_outcome";
+            closedialog = false;
+        }
+    }
+
+    page
+    {
+        pagename = "prisoner_bestia_outcome";
+        name = "$CA_PRISONER_BESTIA_NAME";
+        dialog = "$CA_PRISONER_PORT_REWARD_FAIL";
+        goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+        ifitem { item = "CaelumPrisonerClaimed2Token"; amount = 1; } link = "prisoner_bestia_claimed";
+    }
+
+    page
+    {
+        pagename = "prisoner_bestia_claimed";
+        userstring = "prisoner_bestia_claimed";
+        name = "$CA_PRISONER_BESTIA_NAME";
+        dialog = "$CA_PRISONER_PORT_REWARD_GRANTED";
+        goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+    }
+}

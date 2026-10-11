@@ -159,7 +159,7 @@ class CaelumMainM00Necklace : Object play
             || user.Distance2D(speaker) > CaelumConstants.PALOMO_MERCHANT_SESSION_DISTANCE
             || Abs(user.Pos.Z-speaker.Pos.Z) > 48 || !user.CheckSight(speaker)) return;
         Refresh(user); CaelumMainM00Loadout.Refresh(user);
-        // El subdiálogo está al final de CAPALOMO: no desplaza nodos guardados.
+        // index.json conserva este subdiálogo al final: no desplaza nodos guardados.
         // Abrir después del cierre nativo evita que éste cierre el menú nuevo.
         Level.ExecuteSpecial(CaelumConstants.GZDOOM_THING_SET_CONVERSATION_SPECIAL,
             speaker, null, false, 0, conversation);

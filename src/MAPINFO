@@ -29,10 +29,9 @@ GameInfo
     // demás EventHandlers observan el motor sin convertirse en actores del mapa.
     EventHandlers = "CaelumCharacterSettings", "CaelumMenuAudio", "CaelumUtilityStaffEvents", "CaelumStoryIntermission", "CaelumConversationResume", "CaelumDialogueHistory", "CaelumWorldClockTicker", "CaelumThermalWorld", "CaelumVehicleWorld", "CaelumMassAIScheduler", "CaelumMainM00QuestController", "CaelumHUDOverlay", "CaelumJournalOverlay", "CaelumJournalInput", "CaelumDebugOverlay", "CaelumChestPreview", "CaelumMazeGateEvents", "CaelumSiegeEvents", "CaelumTrucazoEvents", "CaelumTrucoEvents"
 
-    // USDF nativo cargado de forma aditiva en todos los mapas. Esto permite
-    // trasladar o recrear a Palomo durante futuras etapas de misión sin
-    // duplicar el árbol de conversación en cada DIALOGxx.
-    AddDialogues = "CAPALOMO"
+    // El índice de dialogues/ reúne fuentes por NPC y conserva el orden de nodos.
+    // El USDF generado se carga de forma aditiva en todos los mapas.
+    AddDialogues = "dialogues/runtime.usdf"
 }
 
 // Caelum administra su progresión dentro del personaje. Las cinco dificultades

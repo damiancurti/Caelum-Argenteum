@@ -1,6 +1,17 @@
 # Caelum Argenteum — Project, status and roadmap
 
-Documentation version: **5.2.4** — 2026-10-11.
+Documentation version: **5.2.5** — 2026-10-11.
+
+## 5.2.5 - Indexed NPC dialogue sources (#185)
+
+Delivered after #183/PR186 on a separate branch. Each named NPC/archetype now
+owns one source under src/dialogues/npc; non-NPC services live under shared.
+The main index.json selects sources and preserves all 53 conversations/422
+pages in their prior runtime order. Deterministic assembly avoids shifting
+native saved node offsets. LANGUAGE remains authoritative and unchanged;
+its generated index covers 2,369 keys, including shared UI. Build/validation
+reject stale artifacts. Evidence: assets/validation_525/RESULTS.md. CA183-01
+remains the outstanding gameplay acceptance check; this patch changes no rules.
 
 ## 5.2.4 - Simplified onboarding and MAP02 supplies (#183)
 

@@ -5,6 +5,7 @@ import argparse
 import json
 import re
 import struct
+from build_dialogue_index import validate as dialogue_problems
 
 from build_document_index import (
     INDEX_NAME as DOC_INDEX_NAME,
@@ -61,7 +62,7 @@ def index_problems(root):
     return problems
 
 def validate(root):
-    errors = []
+    errors = dialogue_problems(root)
     def check(condition, message):
         if not condition:
             errors.append(message)

@@ -1,11 +1,16 @@
 """Emit the reviewed informational-reply catalogue; preserve stable text keys."""
 import json
+import sys
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[2]
+sys.path.insert(0, str(ROOT))
+from build_dialogue_index import load_catalogue, language_index, validate_history
 
 
 def generate():
+    _, conversations = load_catalogue(ROOT / 'src')
+    validate_history(ROOT, conversations, language_index(ROOT / 'src/LANGUAGE'))
     data = json.loads((ROOT / 'assets/dialogue_history.json').read_text(encoding='utf-8'))
     rows = data['entries']
     code = '// Generado desde assets/dialogue_history.json; no editar a mano.\n'

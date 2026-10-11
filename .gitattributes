@@ -2,6 +2,15 @@
 /docs/*.md text eol=lf
 /docs/MAP01.txt text eol=lf
 
+# #185 dialogue/localization indexes hash source bytes across checkouts.
+/src/dialogues/** text eol=lf
+/src/localization/** text eol=lf
+/src/LANGUAGE text eol=lf
+/src/CAPALOMO text eol=lf
+/archive/dialogues/* -text whitespace=cr-at-eol
+/assets/validation_525/** text eol=lf
+/assets/validation_525/captures/*.png -text
+
 # Keep the #75 ledger and retained native evidence hashes stable on checkout.
 /assets/validation_4378/* text eol=lf
 

@@ -1,0 +1,468 @@
+namespace = "GZDoom";
+
+conversation
+{
+    id = 43313;
+    class = "CaelumMainM00ConversationMenu";
+    page
+    {
+        pagename = "caella_gate";
+        userstring = "caella_gate";
+        name = "$CA_CAELLA_NAME";
+        dialog = "$CA_DLG_M01_CAELLA_EARLY";
+        goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+        ifitem
+        {
+            item = "CaelumM00ArgentoStartedToken";
+            amount = 1;
+        }
+        link = "caella_offer";
+    }
+    page
+    {
+        pagename = "caella_offer";
+        userstring = "caella_offer";
+        name = "$CA_CAELLA_NAME";
+        dialog = "$CA_DLG_M01_CAELLA_RECRUIT";
+        goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+        ifitem
+        {
+            item = "CaelumM00CaellaConvincedToken";
+            amount = 1;
+        }
+        link = "caella_accepted";
+        choice
+        {
+            text = "$CA_DLG_M01_CAELLA_ASK_ATTEMPT";
+            nextpage = "caella_check_confirm";
+            closedialog = false;
+            exclude
+            {
+                item = "CaelumM00CaellaAttemptedToken";
+                amount = 1;
+            }
+        }
+        choice
+        {
+            text = "$CA_DLG_M01_CAELLA_REVISIT_FAILURE";
+            nextpage = "caella_result";
+            closedialog = false;
+            require
+            {
+                item = "CaelumM00CaellaAttemptedToken";
+                amount = 1;
+            }
+            exclude
+            {
+                item = "CaelumM00CaellaAdviceToken";
+                amount = 1;
+            }
+        }
+        choice
+        {
+            text = "$CA_DLG_M01_CAELLA_SAFETY";
+            nextpage = "caella_ack";
+            closedialog = false;
+            giveitem = "CaelumM00CaellaSafetyAction";
+            require
+            {
+                item = "CaelumM00CaellaAdviceToken";
+                amount = 1;
+            }
+        }
+    }
+    page
+    {
+        pagename = "caella_check_confirm";
+        userstring = "caella_check_confirm";
+        name = "$CA_CAELLA_NAME";
+        dialog = "$CA_DLG_M01_CAELLA_CHECK";
+        goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+        ifitem
+        {
+            item = "CaelumM00CaellaAttemptedToken";
+            amount = 1;
+        }
+        link = "caella_result";
+        choice
+        {
+            text = "$CA_DLG_M01_CAELLA_ROLL";
+            nextpage = "caella_result";
+            closedialog = false;
+            giveitem = "CaelumM00PersuadeCaellaAction";
+        }
+    }
+    page
+    {
+        pagename = "caella_result";
+        userstring = "caella_result";
+        name = "$CA_CAELLA_NAME";
+        dialog = "$CA_DLG_M01_CAELLA_FAILURE";
+        goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+        ifitem
+        {
+            item = "CaelumM00CaellaPersuadedToken";
+            amount = 1;
+        }
+        link = "caella_accepted";
+        choice
+        {
+            text = "$CA_DLG_M01_CAELLA_SAFETY_RETRY";
+            nextpage = "caella_ack";
+            closedialog = false;
+            giveitem = "CaelumM00CaellaSafetyAction";
+            require
+            {
+                item = "CaelumM00CaellaAdviceToken";
+                amount = 1;
+            }
+        }
+    }
+    page
+    {
+        pagename = "caella_ack";
+        userstring = "caella_ack";
+        name = "$CA_CAELLA_NAME";
+        dialog = "$CA_DLG_M01_CAELLA_STILL_WAITING";
+        goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+        ifitem
+        {
+            item = "CaelumM00CaellaConvincedToken";
+            amount = 1;
+        }
+        link = "caella_accepted";
+    }
+    page
+    {
+        pagename = "caella_accepted";
+        userstring = "caella_accepted";
+        name = "$CA_CAELLA_NAME";
+        dialog = "$CA_DLG_M01_CAELLA_ACCEPTED";
+        goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+        ifitem
+        {
+            item = "CaelumM00ArgentoCompleteToken";
+            amount = 1;
+        }
+        link = "caella_next";
+    }
+    page
+    {
+        pagename = "caella_next";
+        userstring = "caella_next";
+        name = "$CA_CAELLA_NAME";
+        dialog = "$CA_DLG_M01_CAELLA_NEXT_READY";
+        goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+        ifitem { item = "CaelumM00MagicStartedToken"; amount = 1; }
+        link = "caella_magic_status";
+        choice
+        {
+            text = "$CA_DLG_M01_MAGIC_ASK";
+            nextpage = "caella_magic_quote";
+        }
+    }
+    page
+    {
+        pagename = "caella_magic_quote";
+        userstring = "caella_magic_quote";
+        name = "$CA_CAELLA_NAME";
+        dialog = "$CA_DLG_M01_MAGIC_QUOTE";
+        goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+        choice
+        {
+            text = "$CA_DLG_M01_MAGIC_BEGIN";
+            giveitem = "CaelumM00StartMagicAction";
+            nextpage = "caella_magic_practice";
+        }
+    }
+    page
+    {
+        pagename = "caella_magic_status";
+        userstring = "caella_magic_status";
+        name = "$CA_CAELLA_NAME";
+        dialog = "$CA_DLG_M01_MAGIC_STATUS";
+        goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+        ifitem { item = "CaelumM00MagicCompleteToken"; amount = 1; }
+        link = "caella_magic_done";
+        choice
+        {
+            text = "$CA_DLG_M01_MAGIC_CONTINUE";
+            nextpage = "caella_magic_return_gate";
+        }
+        choice { text = "$CA_DLG_M01_WORKSHOPS_ASK"; nextpage = "caella_workshop"; }
+    }
+    page
+    {
+        pagename = "caella_magic_return_gate";
+        userstring = "caella_magic_return_gate";
+        name = "$CA_CAELLA_NAME";
+        dialog = "$CA_DLG_M01_MAGIC_STATUS";
+        goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+        ifitem { item = "CaelumM00MagicRunesReadyToken"; amount = 1; }
+        link = "caella_magic_return";
+        choice { text = "$CA_DLG_M01_MAGIC_CONTINUE"; nextpage = "caella_magic_practice"; }
+    }
+    page
+    {
+        pagename = "caella_magic_return";
+        userstring = "caella_magic_return";
+        name = "$CA_CAELLA_NAME";
+        dialog = "$CA_DLG_M01_MAGIC_RETURN_TEXT";
+        goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+        choice
+        {
+            text = "$CA_DLG_M01_MAGIC_RETURN_LOAN";
+            giveitem = "CaelumM00FinishMagicAction";
+            nextpage = "caella_magic_done";
+        }
+    }
+    page
+    {
+        pagename = "caella_magic_practice";
+        userstring = "caella_magic_practice";
+        name = "$CA_CAELLA_NAME";
+        dialog = "$CA_DLG_M01_MAGIC_PRACTICE";
+        goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+        ifitem { item = "CaelumM00MagicPracticeToken"; amount = 1; }
+        link = "caella_magic_riddle";
+        choice
+        {
+            text = "$CA_DLG_M01_MAGIC_CONTROLS";
+            nextpage = "caella_magic_controls";
+        }
+        choice
+        {
+            text = "$CA_DLG_M01_MAGIC_EQUIP";
+            giveitem = "CaelumM00PrepareMagicAction";
+            nextpage = "caella_magic_controls";
+        }
+    }
+    page
+    {
+        pagename = "caella_magic_controls";
+        userstring = "caella_magic_controls";
+        name = "$CA_CAELLA_NAME";
+        dialog = "$CA_DLG_M01_MAGIC_CONTROLS_TEXT";
+        goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+        choice
+        {
+            text = "$CA_DLG_M01_MAGIC_NEXT";
+            nextpage = "caella_magic_channel";
+        }
+    }
+    page
+    {
+        pagename = "caella_magic_channel";
+        userstring = "caella_magic_channel";
+        name = "$CA_CAELLA_NAME";
+        dialog = "$CA_DLG_M01_MAGIC_CHANNEL_TEXT";
+        goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+        choice
+        {
+            text = "$CA_DLG_M01_MAGIC_NEXT";
+            nextpage = "caella_magic_resources";
+        }
+    }
+    page
+    {
+        pagename = "caella_magic_resources";
+        userstring = "caella_magic_resources";
+        name = "$CA_CAELLA_NAME";
+        dialog = "$CA_DLG_M01_MAGIC_RESOURCES_TEXT";
+        goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+        choice
+        {
+            text = "$CA_DLG_M01_MAGIC_PRACTICE_NOW";
+            closedialog = true;
+        }
+    }
+    page
+    {
+        pagename = "caella_magic_riddle";
+        userstring = "caella_magic_riddle";
+        name = "$CA_CAELLA_NAME";
+        dialog = "$CA_DLG_M01_MAGIC_RIDDLE";
+        goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+        ifitem { item = "CaelumM00MagicHint1Token"; amount = 1; }
+        link = "caella_magic_hint1";
+        choice
+        {
+            text = "$CA_DLG_M01_MAGIC_WHERE";
+            nextpage = "caella_magic_location";
+        }
+        choice
+        {
+            text = "$CA_DLG_M01_MAGIC_EQUIP";
+            giveitem = "CaelumM00PrepareMagicAction";
+            nextpage = "caella_magic_location";
+        }
+    }
+    page
+    {
+        pagename = "caella_magic_hint1";
+        userstring = "caella_magic_hint1";
+        name = "$CA_CAELLA_NAME";
+        dialog = "$CA_DLG_M01_MAGIC_RIDDLE_HINT1";
+        goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+        ifitem { item = "CaelumM00MagicHint2Token"; amount = 1; }
+        link = "caella_magic_hint2";
+        choice
+        {
+            text = "$CA_DLG_M01_MAGIC_WHERE";
+            nextpage = "caella_magic_location";
+        }
+        choice
+        {
+            text = "$CA_DLG_M01_MAGIC_EQUIP";
+            giveitem = "CaelumM00PrepareMagicAction";
+            nextpage = "caella_magic_location";
+        }
+    }
+    page
+    {
+        pagename = "caella_magic_hint2";
+        userstring = "caella_magic_hint2";
+        name = "$CA_CAELLA_NAME";
+        dialog = "$CA_DLG_M01_MAGIC_RIDDLE_HINT2";
+        goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+        choice
+        {
+            text = "$CA_DLG_M01_MAGIC_WHERE";
+            nextpage = "caella_magic_location";
+        }
+        choice
+        {
+            text = "$CA_DLG_M01_MAGIC_EQUIP";
+            giveitem = "CaelumM00PrepareMagicAction";
+            nextpage = "caella_magic_location";
+        }
+    }
+    page
+    {
+        pagename = "caella_magic_location";
+        userstring = "caella_magic_location";
+        name = "$CA_CAELLA_NAME";
+        dialog = "$CA_DLG_M01_MAGIC_LOCATION";
+        goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+        choice
+        {
+            text = "$CA_DLG_M01_MAGIC_TRY";
+            closedialog = true;
+        }
+    }
+    page
+    {
+        pagename = "caella_magic_done";
+        userstring = "caella_magic_done";
+        name = "$CA_CAELLA_NAME";
+        dialog = "$CA_DLG_M01_MAGIC_DONE";
+        goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+        choice { text = "$CA_DLG_M01_WORKSHOPS_ASK"; nextpage = "caella_workshop"; }
+        choice { text = "$CA_M01_SEALS_ASK"; nextpage = "caella_seals_offer"; }
+    }
+    page
+    {
+        pagename = "caella_workshop";
+        userstring = "caella_workshop";
+        name = "$CA_CAELLA_NAME";
+        dialog = "$CA_DLG_M01_WORKSHOP_CAELLA";
+        goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+        choice { text = "$CA_DLG_M01_GARDEN_ASK"; nextpage = "caella_resources"; }
+        choice { text = "$CA_M01_SEALS_ASK"; nextpage = "caella_seals_offer";
+            require { item = "CaelumM00MagicCompleteToken"; amount = 1; } }
+    }
+    page
+    {
+        pagename = "caella_resources";
+        userstring = "caella_resources";
+        name = "$CA_CAELLA_NAME";
+        dialog = "$CA_M01_RONNIE_LOCATION";
+        goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+    }
+
+    page
+    {
+        pagename = "caella_seals_offer"; userstring = "caella_seals_offer";
+        name = "$CA_CAELLA_NAME"; dialog = "$CA_M01_SEALS_OFFER";
+        goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+        ifitem { item = "CaelumM00SealsLearnedToken"; amount = 1; } link = "caella_seals_ready";
+        choice { text = "$CA_M01_SEALS_LEARN"; nextpage = "caella_choose_seal"; }
+        choice { text = "$CA_M01_SEALS_LATER"; closedialog = true; }
+    }
+    page
+    {
+        pagename = "caella_seals_ready"; userstring = "caella_seals_ready";
+        name = "$CA_CAELLA_NAME"; dialog = "$CA_M01_SEALS_READY";
+        goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+        choice { text = "$CA_AF_AMULET_ASK"; nextpage = "caella_choose_amulet"; }
+        choice { text = "$CA_DLG_M01_GARDEN_ASK"; nextpage = "caella_seals_resources"; }
+        choice { text = "$CA_M01_SEALS_USE_ASK"; nextpage = "caella_seals_use"; }
+    }
+    page
+    {
+        pagename = "caella_seals_resources"; userstring = "caella_seals_resources";
+        name = "$CA_CAELLA_NAME"; dialog = "$CA_M01_SEALS_RESOURCES";
+        goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+        choice { text = "$CA_M01_SEALS_USE_ASK"; nextpage = "caella_seals_use"; }
+    }
+    page
+    {
+        pagename = "caella_seals_use"; userstring = "caella_seals_use";
+        name = "$CA_CAELLA_NAME"; dialog = "$CA_M01_SEALS_USE";
+        goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+    }
+    page { pagename = "caella_choose_seal"; userstring = "caella_choose_seal";
+        name = "$CA_CAELLA_NAME"; dialog = "$CA_LOADOUT_REFERRAL";
+        goodbye = "$CA_DLG_M01_SOCIAL_LEAVE"; }
+    page { pagename = "caella_confirm_seal_0"; userstring = "caella_confirm_seal_0";
+        name = "$CA_CAELLA_NAME"; dialog = "$CA_LOADOUT_REFERRAL"; goodbye = "$CA_DLG_M01_SOCIAL_LEAVE"; }
+    page { pagename = "caella_confirm_seal_1"; userstring = "caella_confirm_seal_1";
+        name = "$CA_CAELLA_NAME"; dialog = "$CA_LOADOUT_REFERRAL"; goodbye = "$CA_DLG_M01_SOCIAL_LEAVE"; }
+    page { pagename = "caella_confirm_seal_2"; userstring = "caella_confirm_seal_2";
+        name = "$CA_CAELLA_NAME"; dialog = "$CA_LOADOUT_REFERRAL"; goodbye = "$CA_DLG_M01_SOCIAL_LEAVE"; }
+    page { pagename = "caella_confirm_seal_3"; userstring = "caella_confirm_seal_3";
+        name = "$CA_CAELLA_NAME"; dialog = "$CA_LOADOUT_REFERRAL"; goodbye = "$CA_DLG_M01_SOCIAL_LEAVE"; }
+    page { pagename = "caella_confirm_seal_4"; userstring = "caella_confirm_seal_4";
+        name = "$CA_CAELLA_NAME"; dialog = "$CA_LOADOUT_REFERRAL"; goodbye = "$CA_DLG_M01_SOCIAL_LEAVE"; }
+    page { pagename = "caella_choose_amulet"; userstring = "caella_choose_amulet";
+        name = "$CA_CAELLA_NAME"; dialog = "$CA_CAELLA_NECKLACE_LESSON"; goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+        choice { text = "$CA_CAELLA_NECKLACE_TEACH"; giveitem = "CaelumM00LearnAmuletAction";
+            nextpage = "caella_choose_amulet"; closedialog = false;
+            require { item = "CaelumM00AmuletChosenToken"; amount = 1; }
+            exclude { item = "CaelumM00AmuletRecipeKnownToken"; amount = 1; } }
+        choice { text = "$CA_AF_BACK"; nextpage = "caella_seals_ready"; closedialog = false; }
+    }
+    page { pagename = "caella_confirm_amulet_0"; userstring = "caella_confirm_amulet_0";
+        name = "$CA_CAELLA_NAME"; dialog = "$CA_CAELLA_NECKLACE_LESSON"; goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+        choice { text = "$CA_CAELLA_NECKLACE_TEACH"; giveitem = "CaelumM00LearnAmuletAction";
+            nextpage = "caella_choose_amulet"; closedialog = false;
+            require { item = "CaelumM00AmuletChosenToken"; amount = 1; }
+            exclude { item = "CaelumM00AmuletRecipeKnownToken"; amount = 1; } }
+        choice { text = "$CA_AF_BACK"; nextpage = "caella_seals_ready"; closedialog = false; }
+    }
+    page { pagename = "caella_confirm_amulet_1"; userstring = "caella_confirm_amulet_1";
+        name = "$CA_CAELLA_NAME"; dialog = "$CA_CAELLA_NECKLACE_LESSON"; goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+        choice { text = "$CA_CAELLA_NECKLACE_TEACH"; giveitem = "CaelumM00LearnAmuletAction";
+            nextpage = "caella_choose_amulet"; closedialog = false;
+            require { item = "CaelumM00AmuletChosenToken"; amount = 1; }
+            exclude { item = "CaelumM00AmuletRecipeKnownToken"; amount = 1; } }
+        choice { text = "$CA_AF_BACK"; nextpage = "caella_seals_ready"; closedialog = false; }
+    }
+    page { pagename = "caella_confirm_amulet_2"; userstring = "caella_confirm_amulet_2";
+        name = "$CA_CAELLA_NAME"; dialog = "$CA_CAELLA_NECKLACE_LESSON"; goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+        choice { text = "$CA_CAELLA_NECKLACE_TEACH"; giveitem = "CaelumM00LearnAmuletAction";
+            nextpage = "caella_choose_amulet"; closedialog = false;
+            require { item = "CaelumM00AmuletChosenToken"; amount = 1; }
+            exclude { item = "CaelumM00AmuletRecipeKnownToken"; amount = 1; } }
+        choice { text = "$CA_AF_BACK"; nextpage = "caella_seals_ready"; closedialog = false; }
+    }
+    page { pagename = "caella_confirm_amulet_3"; userstring = "caella_confirm_amulet_3";
+        name = "$CA_CAELLA_NAME"; dialog = "$CA_CAELLA_NECKLACE_LESSON"; goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+        choice { text = "$CA_CAELLA_NECKLACE_TEACH"; giveitem = "CaelumM00LearnAmuletAction";
+            nextpage = "caella_choose_amulet"; closedialog = false;
+            require { item = "CaelumM00AmuletChosenToken"; amount = 1; }
+            exclude { item = "CaelumM00AmuletRecipeKnownToken"; amount = 1; } }
+        choice { text = "$CA_AF_BACK"; nextpage = "caella_seals_ready"; closedialog = false; }
+    }
+
+}

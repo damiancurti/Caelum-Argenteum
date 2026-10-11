@@ -1,0 +1,15 @@
+namespace = "GZDoom";
+
+// 4.33.0t: observación de la esencia y diálogo posterior a la captura.
+conversation
+{
+    id = 43318;
+    class = "CaelumFoolConversationMenu";
+    page
+    {
+        pagename = "fool_revealed"; userstring = "fool_revealed";
+        name = "$CA_TAROT_FOOL_NAME"; dialog = "$CA_M01_FOOL_REVEAL";
+        goodbye = "$CA_M01_FOOL_LATER";
+        choice { text = "$CA_M01_FOOL_CAPTURE"; giveitem = "CaelumM00CaptureFoolAction"; closedialog = true; }
+    }
+}
