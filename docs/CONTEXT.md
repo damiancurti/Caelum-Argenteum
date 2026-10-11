@@ -3,10 +3,10 @@
 Documentation version: **5.1.20** — 2026-10-10.
 
 **5.1.20/#173:** MAP06 interior doors and peaceful time skip; exact siege stop.
-Evidence: validation_5120; CA173-01 pending.
-**#172/PR174:** shared dialogue history/replay; CA172-01 pending, validation_5119.
+Evidence: validation_5120; CA173-01 accepted 2026-10-10; merge/closure authorized.
+**#172/PR174:** dialogue history/replay; CA172-01 accepted, merged/closed.
 **#164/PR171:** permanent gifts, optional crafts/Channel, assisted Bull checkpoint.
-CA164-01 pending; validation_5118. #162/#163/#169 accepted/closed/merged.
+CA164-01 accepted, merged/closed; validation_5118. Pending tests empty.
 
 **5.1.14/#165 accepted** 2026-10-10 (CA165-01). Flash/travel repair; PR166
 merged. 34 checks pass: validation_5114.

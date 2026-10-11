@@ -8,7 +8,8 @@ The author requested doors in existing inter-room openings, preserving the
 layout, and time skip throughout peaceful MAP06 until the scheduled siege.
 The 160 homes gain bedroom/bathroom hinged pairs with old-save migration.
 Time skip stops at the existing 15 November 1889, 13:00 siege boundary. Native
-checks and limitations: assets/validation_5120; CA173-01 remains author-pending.
+checks and limitations: assets/validation_5120. CA173-01 passed author acceptance
+on 2026-10-10; HISTORY records the confirmation.
 MAP01 progression is unchanged by this focused patch.
 
 5.1.19 - Shared NPC dialogue history (#172)
@@ -18,7 +19,8 @@ bottom revisits the same resident's archived answers. Actions and navigation
 to practices, gifts, crafting and quest turn-in remain available. Replay reads
 text only and never repeats an action. This shared rule also applies outside
 MAP01. SYSTEMS defines persistence and the reviewed information catalogue.
-Native evidence: assets/validation_5119; CA172-01 pending author acceptance.
+Native evidence: assets/validation_5119; CA172-01 passed author acceptance on
+2026-10-10, recorded in HISTORY.
 
 ## 5.1.18 - Permanent gifts, optional crafting and Bull checkpoint (#164)
 
@@ -52,8 +54,8 @@ being confiscated. Other approved departure supply cleanup remains unchanged.
 SYSTEMS defines the detailed contract. Earlier passages describing loan returns,
 five required magic checks, four compulsory loadout choices, Palomo's deck or
 automatic Bull retries are historical and superseded by this section.
-Evidence: assets/validation_5118. CA164-01 remains author acceptance, distinct
-from the agent's native tests.
+Evidence: assets/validation_5118. CA164-01 passed author acceptance on 2026-10-10,
+recorded in HISTORY separately from the agent's native tests.
 
 ## 5.1.17 - Health-kit terminology (#169)
 

@@ -29,7 +29,8 @@ interrupts simulated time per tic; native #173 tests verify stopping exactly at
 that boundary, rejecting restart and then deploying the ordinary full army.
 Siege balance, counts, date and accepted performance policy are unchanged.
 Post-siege and legacy locations retain their previous explicit safe zones.
-Agent static/native evidence: assets/validation_5120; CA173-01 author-pending.
+Agent static/native evidence: assets/validation_5120. CA173-01 passed author
+acceptance on 2026-10-10; the confirmation is recorded in HISTORY.
 
 ## 5.1.19 - Seen NPC information and replay (#172)
 
@@ -55,7 +56,7 @@ authoritative. All NPC subclasses inherit the shared menu, including guards,
 prisoners, Tarot encounters and reputation conversations. Action-only dialogues
 have nothing to hide; no replay link appears until that speaker has history.
 The 405 USDF page slots remain unchanged. Agent evidence: validation_5119;
-author acceptance CA172-01 remains pending.
+CA172-01 passed author acceptance on 2026-10-10, recorded in HISTORY.
 
 ## Permanent MAP01 gifts and assisted checkpoint - 5.1.18 / #164
 
@@ -115,8 +116,8 @@ without triggering a reset. The user loads a save manually to try again.
 Departure preserves all actual gifts and legacy loan instances alongside owned
 crafted equipment. The separately approved removal of ammunition, materials,
 coins, consumables and tutorial keys remains. A selection never creates its item.
-Native/static evidence is maintained in assets/validation_5118; author acceptance
-for this new patch remains CA164-01 in pending_test.txt.
+Native/static evidence is maintained in assets/validation_5118. CA164-01 passed
+author acceptance on 2026-10-10; the confirmation is recorded in HISTORY.
 
 ## Medikit terminology - 5.1.17 / #169
 

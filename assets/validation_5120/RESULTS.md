@@ -1,6 +1,7 @@
 # #173 — MAP06 doors and peaceful time skip (5.1.20)
 
-Agent verification on GZDoom 4.14.2, Windows 11. CA173-01 remains author-pending.
+Agent verification on GZDoom 4.14.2, Windows 11. CA173-01 was author-pending at
+delivery; explicit author acceptance on 2026-10-10 is recorded in docs/HISTORY.md.
 40 passing native assertion records; eight static checks pass and the ordinary
 project validator reports zero errors. Complete logs and per-run hashes accompany
 this report.
