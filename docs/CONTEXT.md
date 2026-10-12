@@ -5,7 +5,7 @@ Documentation version: **5.2.18** — 2026-10-12.
 **Current 5.2.18 / #209:** pose/head/furniture repairs, contextual rest F/G/T,
 sex-specific FP hands and original table canteen model. Supine sleep; Domingo
 references except rear punch. Evidence: validation_5218; sources: appearance_5218.
-CA209-01/02 pending author acceptance; commit/push requested, no merge yet.
+CA209-01/02 pending author acceptance; draft PR210 pushed, no merge yet.
 **5.2.17/#207 accepted:** MAP01 player minimum1 HP; PR208 merged, #207 closed.
 CA207-01 passed 2026-10-12; native evidence: validation_5217.
 **5.2.16/#204 accepted:** fullscreen Vulkan cursor with native VSync; CA204-01

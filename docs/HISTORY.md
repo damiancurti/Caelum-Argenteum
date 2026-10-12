@@ -27,7 +27,11 @@ Full evidence, hashes and limits: assets/validation_5218/RESULTS.md.
 
 CA209-01/CA209-02 originate in this release and remain pending author visual/
 interaction acceptance. No author acceptance, merge or closure is inferred
-from agent tests. The author requested commit and push.
+from agent tests. The author requested commit and push; delivered in draft
+PR210 with separate visual-resource and runtime-binding commits. The official
+package matches all 16,052 tested members; 6,140 regenerated outputs match
+byte for byte. Final rear-corpse capture passes 102 native assertions. Scoped
+and session-wide keep-awake requests were released after testing.
 
 ## 5.2.17 - MAP01 player remains alive at 1 HP (#207), 2026-10-12
 
