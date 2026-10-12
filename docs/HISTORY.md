@@ -23,6 +23,8 @@ Static checks, native fixture assertions and agent UI actions are distinguished
 from author acceptance. CA149-01 originates here and remains outstanding.
 Partial author confirmation, 2026-10-12: physical M opened and closed automap
 in isolated live-03. The remaining CA149-01 usability matrix stays pending.
+Delivery: e1046f48 pushed on issue149-controls-hints; draft PR202 links #149.
+The issue remains open pending CA149-01 acceptance and merge.
 Final native contract/official-package checks pass; 13,557 package members match.
 Keep-awake released 2026-10-12T03:50:32.8666020Z; power plan unchanged.
 
