@@ -4,6 +4,38 @@ Status: integrated engineering register (issue #22, patch 4.36.1b).
 Prepared: 2026-09-23. Inherits the project's release after integration.
 Inspected baseline: `1dc390576fa330d37ff543526fc7e69a397fc28f` (PR #7).
 
+## CA-KP-084 - Native crosshair and scale APIs have separate owners
+
+Status/evidence: CODE-VERIFIED / ENGINE-VERIFIED.
+First recorded / last checked: 2026-10-12 / 2026-10-12. Issue #150, 5.2.15.
+Baseline: b36ef830 plus #150 working changes; GZDoom 4.14.2 Windows/Vulkan.
+Scope: CaelumPresentation, CaelumStatusBar, native menu/pointer adapters.
+
+An empty BaseStatusBar.Draw override suppresses the native crosshair: the
+crosshair lives inside the base Draw, not a separate engine pass. Calling
+Super.Draw(HUD_Fullscreen,ticFraction) restores it without Doom status art.
+Retain the HUD_AltHud exclusion and Caelum context guards; viewactive=false
+identifies full automap (the doombase.zs comment is misleading; native am_map
+behavior is authoritative). crosshairscale=0 means original pixels, not hidden.
+Health colors use default actor health, with no exposed maximum-health hook.
+
+StatusBar.GetHUDScale exists; Screen.GetUIScale does not. Copy GetUIScale's
+integer formula once if needed and use Screen.GetTextScreenSize for messages.
+Its integer dimensions need rounding when recovering the pixel factor; direct
+division introduces fractional font stretch. Native hud_scalefactor=0 clamps
+to 0.36 and does not hide HUD. Respect old/new HUD scaling as separate modes.
+
+Screen.SetTransform operates after virtual-to-real projection and affects
+text, textures, lines and Dim. Compute both X/Y relative factors: the existing
+640x360 draw projection is not uniform at every aspect ratio. Invert that same
+matrix before mouse hit tests. Clear it before full-screen feedback/PSprites
+and after each menu Drawer. Clip rectangles are real pixels and do not inherit
+the matrix. Native Save/Load Size Clean uses CleanXfac/Yfac, not uiscale.
+
+Evidence/reproduction: assets/validation_5215/RESULTS.md; native small/large
+4:3, 16:9 and ultrawide panels, crosshair contexts, pointer dispatch and combat
+comparison. Author visual/comfort acceptance remains CA150-01 pending.
+
 ## CA-KP-083 - Native bindings, modal priority and automap use different paths
 
 Status/evidence: ENGINE-VERIFIED for reset, persistence, hint enumeration,
@@ -1293,6 +1325,13 @@ index zero and negative history IDs are valid semantic values; pair the native
 hit result with a FormatReplies revision instead of treating zero as no target.
 Evidence: assets/validation_527/RESULTS.md; physical Journal/calendar/NPC checks
 and native held-input/load, pause, orbit, creator and card/crafting regression.
+
+Extension (#150 / 5.2.15): undo CaelumPresentation's scale matrix before the
+projection inversion above. Drawing and mouse input must use both axes, and
+press/release is invalidated by resolution/scale changes. Common Journal
+buttons must be hit-tested before dispatching crafting's specialized pointer;
+new contextual shortcuts yield to remapped Journal/time actions. Native cases
+are retained in validation_5215; see CA-KP-084 for scale ownership.
 
 ## CA-KP-036 - Stamp newly constructed equipment durability revisions
 

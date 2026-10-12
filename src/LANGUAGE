@@ -5466,3 +5466,29 @@ CNTRLMNU_ATTACK = "Ataque principal";
 CNTRLMNU_ALTATTACK = "Ataque secundario / apuntar";
 CNTRLMNU_RELOAD = "Recargar / cargar ataque";
 CNTRLMNU_ZOOM = "Bloquear / barrido / apuntar";
+
+[enu default]
+CA_COMFORT_TITLE = "Readability and comfort";
+CA_COMFORT_SCALE_HELP = "Panels fit the screen; messages wrap.";
+CA_COMFORT_CROSSHAIR_HELP = "Health color overrides fixed color.";
+CA_COMFORT_CROSSHAIR_BASE = "Health color uses base life, not your maximum.";
+CA_COMFORT_ACTION_HELP = "Attack poses and aiming remain unchanged.";
+CA_COMFORT_FEEDBACK_HELP = "Damage, wounds and Lucidity keep their feedback.";
+CA_MESSAGES_TITLE = "Recent notices";
+CA_MESSAGES_LINK = "Notices";
+CA_MESSAGES_HELP = "Last 20 notices / wheel or arrows to scroll";
+CA_MESSAGES_EMPTY = "No notices for this character yet.";
+CA_MESSAGES_MORE = "More notices: {bind:ca_journal_toggle} > %s";
+
+[es]
+CA_COMFORT_TITLE = "Legibilidad y comodidad";
+CA_COMFORT_SCALE_HELP = "Los paneles caben en pantalla; los avisos se ajustan.";
+CA_COMFORT_CROSSHAIR_HELP = "El color por salud reemplaza al color fijo.";
+CA_COMFORT_CROSSHAIR_BASE = "Color por salud: usa vida base, no tu máximo.";
+CA_COMFORT_ACTION_HELP = "Las poses de ataque y la puntería se conservan.";
+CA_COMFORT_FEEDBACK_HELP = "Daño, heridas y Lucidez conservan sus señales.";
+CA_MESSAGES_TITLE = "Avisos recientes";
+CA_MESSAGES_LINK = "Avisos";
+CA_MESSAGES_HELP = "Últimos 20 avisos / rueda o flechas para desplazar";
+CA_MESSAGES_EMPTY = "Este personaje aún no tiene avisos.";
+CA_MESSAGES_MORE = "Más avisos: {bind:ca_journal_toggle} > %s";

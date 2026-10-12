@@ -1,6 +1,31 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **5.2.14** — 2026-10-12.
+Documentation version: **5.2.15** — 2026-10-12.
+
+## 5.2.15 - Native readability, crosshair and comfort (#150), 2026-10-12
+
+After accepting #149, the author requested its closure/merge and implementation,
+live tests, commit and push for #150. Acceptance commit 80cacfce was pushed;
+PR202 merged b36ef830 and #149 closed. No extra #149 version increment.
+
+The author chose complete recent HUD notices plus a scrollable last-20 list in
+the Journal when enlarged messages do not all fit. Implemented a saved bounded
+history with additive revision 1 initialization, preserving existing active
+notices and expiry. Shared native scale adapters now cover HUD/thermal, menus,
+creator/preview, cards and messages with matching transformed pointer input.
+Recovered native crosshair drawing from the previously empty status bar Draw;
+documented native health-color normalization against actor default health.
+Native bob already governs the modular PSprites; no attack/action mechanics or
+#137 feedback values were changed. A bilingual options group reuses those
+native preferences without new defaults or character-profile persistence.
+
+Focused evidence, failed fixture attempts and support limits are recorded in
+assets/validation_5215/RESULTS.md. Baseline/current/zero-bob/maximum-bob native
+combat traces match exactly: 474 state samples and seven projectiles per run.
+Different saved identities retain global presentation choices across load and
+restart. Engine checks do not establish author comfort acceptance; CA150-01
+originates in 5.2.15/#150 and remains outstanding. Delivery targets a linked PR;
+the issue remains open pending author acceptance and merge.
 
 ## 5.2.14 - Native controls and synchronized hints (#149), 2026-10-12
 

@@ -1,6 +1,16 @@
 # TASKS.md — Active tasks
 
-Documentation version: **5.2.14** — 2026-10-12.
+Documentation version: **5.2.15** — 2026-10-12.
+
+## Issue #150 - Readability and comfort (5.2.15)
+
+Implemented shared UI/HUD/message scaling, restored native crosshair, native
+comfort options and author-approved recent-notice overflow/history. Preserved
+identity ownership, native Save/Load, input remaps, combat and #137 feedback.
+Focused engine evidence: assets/validation_5215/RESULTS.md. Remaining: CA150-01
+author visual/comfort acceptance, then PR review/merge and issue closure.
+No engine fork, new effect-intensity default or combat/balance change is part
+of this delivery. Native health-color normalization is documented in SYSTEMS.
 
 ## Issue #149 - Controls and synchronized hints (5.2.14)
 
@@ -10,7 +20,7 @@ slot 2 dispatch retains exact equipment cycling through the existing network
 event. Save/config persistence and focused native checks are recorded in
 assets/validation_5214/RESULTS.md. CA149-01 passed on 2026-10-12 without qualifications;
 physical controller acceptance is conditional on available hardware. No new
-controller UI or double-binding hint introspection is claimed. Next: PR202 merge/issue closure, then #150 readability/comfort work.
+controller UI or double-binding hint introspection is claimed. PR202 merged b36ef830; #149 closed. #150 is the current delivery.
 PR201/#148 are merged/closed; its accepted tests remain accepted.
 
 ## Issue #148 - Native cosmetics and preview (5.2.13)

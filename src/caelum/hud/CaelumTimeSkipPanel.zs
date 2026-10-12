@@ -70,7 +70,7 @@ class CaelumTimeSkipPanel : Object
     }
     static ui void Draw(CaelumJournalOverlay view,CaelumPlayer user,CaelumTimeSkipState skip)
     {
-        Screen.Dim(0x05070A,0.92,0,0,Screen.GetWidth(),Screen.GetHeight());
+        CaelumPresentation.MenuBackground(0x05070A,0.92);
         view.DrawPanel(16,12,608,336);
         view.DrawCenteredText(view.TitleFont,Font.CR_GOLD,320,24,StringTable.Localize("CA_SKIP_TITLE",false));
         bool limbo=CaelumWorldCatalogue.IsLimboMap(level.MapName);

@@ -1015,6 +1015,7 @@ class CaelumHUDOverlay : EventHandler
         // El centro del marco HUD-01 es deliberadamente oscuro y casi opaco.
         // Dibujarlo primero permite que los rellenos tintados queden visibles
         // dentro de sus bordes metálicos en vez de quedar tapados por el arte.
+        CaelumPresentation.BeginHUD();
         DrawResourceSkin();
         DrawLucidityBar(localPlayer);
         DrawAdrenalineBar(localPlayer);
@@ -1028,37 +1029,30 @@ class CaelumHUDOverlay : EventHandler
         DrawSurvivalBar(localPlayer.CurrentThirst, localPlayer.ThirstState, 302, 0x3F9FD2);
         DrawSurvivalBar(localPlayer.CurrentSleep, localPlayer.SleepState, 326, 0x8074C8);
 
+        CaelumPresentation.End();
         DrawFirstPersonWeapon(localPlayer);
         DrawFirstPersonBlockShield(localPlayer);
 
         CaelumCompass.Draw(event, localPlayer, HUDFont);
+        CaelumPresentation.BeginHUD();
         DrawSealIndicator(localPlayer);
         DrawTarotIndicator(localPlayer);
-        let thermalOwner=CaelumPersistentCharacterState(localPlayer.FindInventory("CaelumPersistentCharacterState"));
-        let thermal=thermalOwner!=null ? thermalOwner.ThermalState : null;
-        if(thermal!=null && thermal.Severity>0)
+        CaelumPresentation.End();
+        double noticeBottom=12;
+        if(menuactive==Menu.Off)
         {
-            String warning=StringTable.Localize(CaelumThermalRules.StateKey(thermal.Exposure,thermal.Toughness),false);
-            Screen.DrawText(HUDFont,thermal.Exposure<0 ? Font.CR_CYAN : Font.CR_RED,
-                320-HUDFont.StringWidth(warning)*0.5,88,warning,
-                DTA_VIRTUALWIDTHF,640.0,DTA_VIRTUALHEIGHTF,360.0,DTA_KEEPRATIO,true,DTA_SHADOW,true);
+            if(localPlayer.HUDActiveWeaponNoticeRemaining>0)
+                noticeBottom=CaelumPresentation.CenterMessage(HUDFont,Font.CR_GOLD,activeWeaponLine,noticeBottom);
+            if(localPlayer.HUDAbilitySuccessRemaining>0)
+                noticeBottom=CaelumPresentation.CenterMessage(HUDFont,Font.CR_GREEN,
+                    StringTable.Localize("CA_ABILITY_USED_SUCCESSFULLY",false),noticeBottom);
+            let thermalOwner=CaelumPersistentCharacterState(localPlayer.FindInventory("CaelumPersistentCharacterState"));
+            let thermal=thermalOwner!=null?thermalOwner.ThermalState:null;
+            if(thermal!=null && thermal.Severity>0)
+                noticeBottom=CaelumPresentation.CenterMessage(HUDFont,thermal.Exposure<0?Font.CR_CYAN:Font.CR_RED,
+                    StringTable.Localize(CaelumThermalRules.StateKey(thermal.Exposure,thermal.Toughness),false),noticeBottom);
         }
-
-        if (localPlayer.HUDAbilitySuccessRemaining > 0.0)
-        {
-            String abilityMessage = StringTable.Localize(
-                "CA_ABILITY_USED_SUCCESSFULLY", false
-            );
-            double abilityX = 320.0
-                - HUDFont.StringWidth(abilityMessage) * 0.5;
-            Screen.DrawText(
-                HUDFont, Font.CR_GREEN, abilityX, 72.0, abilityMessage,
-                DTA_VIRTUALWIDTHF, 640.0,
-                DTA_VIRTUALHEIGHTF, 360.0,
-                DTA_KEEPRATIO, true,
-                DTA_SHADOW, true
-            );
-        }
+        CaelumPresentation.BeginHUD();
 
         if (localPlayer.HUDHasActiveWeapon
             && localPlayer.HUDActiveWeaponIsRanged)
@@ -1112,21 +1106,6 @@ class CaelumHUDOverlay : EventHandler
                 - HUDFont.StringWidth(chargeLine) * 0.5;
             Screen.DrawText(
                 HUDFont, chargeColor, chargeX, 326.0, chargeLine,
-                DTA_VIRTUALWIDTHF, 640.0,
-                DTA_VIRTUALHEIGHTF, 360.0,
-                DTA_KEEPRATIO, true,
-                DTA_SHADOW, true
-            );
-        }
-
-        // Al cambiar de familia, el texto aparece solo de forma breve.
-        // La identificación permanente ahora recae en el arma visible.
-        if (localPlayer.HUDActiveWeaponNoticeRemaining > 0.0)
-        {
-            double noticeX = 320.0
-                - HUDFont.StringWidth(activeWeaponLine) * 0.5;
-            Screen.DrawText(
-                HUDFont, Font.CR_GOLD, noticeX, 48.0, activeWeaponLine,
                 DTA_VIRTUALWIDTHF, 640.0,
                 DTA_VIRTUALHEIGHTF, 360.0,
                 DTA_KEEPRATIO, true,
@@ -1207,7 +1186,8 @@ class CaelumHUDOverlay : EventHandler
             DTA_KEEPRATIO, true,
             DTA_SHADOW, true
         );
-        CaelumNotifications.Draw(localPlayer, HUDFont);
+        CaelumPresentation.End();
+        CaelumNotifications.Draw(localPlayer,HUDFont,noticeBottom);
         CaelumNotifications.DrawExtraction(localPlayer);
     }
 }

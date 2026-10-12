@@ -81,17 +81,22 @@ class CaelumLiveMenu : ListMenu
         if(Subject==null || Wanted(Subject)!=Context)return;
         let debug=CaelumDebugOverlay(EventHandler.Find("CaelumDebugOverlay"));
         if(Context==CTX_CREATION || Context==CTX_EQUIPMENT)Screen.Dim(0x05070A,0.92,0,0,Screen.GetWidth(),Screen.GetHeight());
+        CaelumPresentation.BeginMenu();
         if(Context==CTX_CREATION)debug.DrawCreationWizard(Subject);
         else if(Context==CTX_EQUIPMENT)debug.DrawEquipmentMenu(Subject);
         else if(Context==CTX_CHEST)CaelumChestPreview.Draw();
         else Journal().DrawMenu();
         Controls.Layout(self,true);
+        CaelumPresentation.End();
     }
     bool Key(int type,int scan,int character,String keyString,bool physical=true)
     {
         if(Wanted(Subject)!=Context)return true;
         if(type==InputEvent.Type_KeyDown)ResetPointer();
         if(scan==InputEvent.Key_Grave)return false;
+        if(Context>=1 && Context<=7 && keyString~=="l"
+            && (!physical || (!CaelumInputHints.Matches(scan,"ca_journal_toggle") && !CaelumInputHints.Matches(scan,"ca_time_skip"))))
+        {if(type==InputEvent.Type_KeyDown)Menu.SetMenu("CaelumNotificationMenu");return true;}
         if(scan==InputEvent.Key_Escape || scan==InputEvent.Key_Pad_Start)
         {
             if(type==InputEvent.Type_KeyDown){ResetInput();menuactive=Menu.On;Menu.SetMenu("MainMenu");}
@@ -204,7 +209,8 @@ class CaelumLiveMenu : ListMenu
         if(Wanted(Subject)!=Context)return true;
         int eventType=type==MOUSE_Click?UIEvent.Type_LButtonDown:type==MOUSE_Release?UIEvent.Type_LButtonUp:UIEvent.Type_MouseMove;
         if(Context==CTX_SKIP)return CaelumTimeSkipPanel.PointerInput(Journal(),Subject,eventType,point);
-        if(Context==4 && !(point.Y>=36 && point.Y<101 && point.X>=26 && point.X<614))
+        if(Context==4 && !(point.Y>=36 && point.Y<101 && point.X>=26 && point.X<614)
+            && !CaelumMenuPointer.Inside(point,(508,15),(100,18)))
             return CaelumCraftingUI.Mouse(Journal(),Subject,eventType,point);
         Controls.Layout(self,false);Pointer.Move(point);
         if(type==MOUSE_Click)Pointer.Press(Revision());

@@ -11,6 +11,7 @@ class CaelumStatusBar : BaseStatusBar
 
     override void Draw(int state, double ticFraction)
     {
-        // Intencionalmente vacío: CaelumHUDOverlay dibuja la capa permanente.
+        // BaseStatusBar conserva la mira nativa, sin barras ni arte de Doom.
+        if(state!=HUD_AltHud && CaelumPresentation.CrosshairVisible())Super.Draw(HUD_Fullscreen,ticFraction);
     }
 }

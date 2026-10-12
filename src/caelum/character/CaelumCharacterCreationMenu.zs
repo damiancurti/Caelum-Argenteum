@@ -612,7 +612,8 @@ class CaelumCharacterCreationMenu : ListMenu
     }
     override bool MouseEvent(int type,int x,int y)
     {
-        PointerLayout(false);Pointer.Move((x*600.0/Screen.GetHeight(),y*600.0/Screen.GetHeight()));
+        Vector2 point=CaelumPresentation.UnscalePoint(x,y,CaelumPresentation.CreatorFactor());
+        PointerLayout(false);Pointer.Move(point*(600.0/Screen.GetHeight()));
         if(type==MOUSE_Click)Pointer.Press(Page);
         else if(type==MOUSE_Release)
         {
@@ -638,6 +639,7 @@ class CaelumCharacterCreationMenu : ListMenu
     override void Drawer()
     {
         screen.Dim(0, 0.90, 0, 0, screen.GetWidth(), screen.GetHeight());
+        CaelumPresentation.BeginCreator();
         bool contextual = ContextKey() != "";
         if (contextual)
         {
@@ -662,6 +664,7 @@ class CaelumCharacterCreationMenu : ListMenu
             : (Page >= CaelumConstants.CREATION_PAGE_LAYERS
                 ? "CA_CREATION_ALLOCATION_NAVIGATION_HELP" : "CA_CREATION_NAVIGATION_HELP");
         PointerLayout(true);
+        CaelumPresentation.End();
     }
 
     void SetDraft(Name name, int value)

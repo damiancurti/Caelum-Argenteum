@@ -1,7 +1,7 @@
 # LANGUAGE index
 
 Generated from [../LANGUAGE](../LANGUAGE); shared bilingual text remains authoritative there.
-SHA-256: `d3a29292fd63394e5a2e4588e679cf49ac6c3c7fb724635a405e402efc12cb20`. Locations include every definition; the last one per language wins.
+SHA-256: `b0b25741cd50be1c4967a08d8e377d53e3d8ba4470948d189bea1f23ea8c5493`. Locations include every definition; the last one per language wins.
 Run `python build_dialogue_index.py check` before using locations.
 
 Use `python build_dialogue_index.py find TERM` to locate keys, then
@@ -35,6 +35,7 @@ including shared UI/system keys and dynamically selected text.
 | CA_CITY | 7 | CA_CITY_SHOPKEEPER | CA_CITY_SHOP_5 |
 | CA_CLASS | 4 | CA_CLASS_EXPLORER | CA_CLASS_WARRIOR |
 | CA_CLIMATE | 12 | CA_CLIMATE_CANOPY | CA_CLIMATE_REGION_9 |
+| CA_COMFORT | 6 | CA_COMFORT_ACTION_HELP | CA_COMFORT_TITLE |
 | CA_COMPASS | 8 | CA_COMPASS_E | CA_COMPASS_W |
 | CA_CONSUMABLE | 11 | CA_CONSUMABLE_ANIMA_LARGE | CA_CONSUMABLE_WATER_RATION |
 | CA_CONTROL | 80 | CA_CONTROL_ABILITIES | CA_CONTROL_TOGGLE_ATTRIBUTE_PANEL |
@@ -94,6 +95,7 @@ including shared UI/system keys and dynamically selected text.
 | CA_MAZE | 26 | CA_MAZE_CARD_GUARD | CA_MAZE_ZUPAY_GUARD |
 | CA_MENU | 4 | CA_MENU_LOAD_CHARACTER | CA_MENU_SAVE_CHARACTER |
 | CA_MERCHANT | 3 | CA_MERCHANT_CASH | CA_MERCHANT_MODE_SELL |
+| CA_MESSAGES | 5 | CA_MESSAGES_EMPTY | CA_MESSAGES_TITLE |
 | CA_MONTH | 12 | CA_MONTH_01 | CA_MONTH_12 |
 | CA_ONBOARD | 3 | CA_ONBOARD_GOLD_REWARD | CA_ONBOARD_PALOMO_SCAM |
 | CA_PAIN | 2 | CA_PAIN_RESISTED | CA_PAIN_TRIGGERED |

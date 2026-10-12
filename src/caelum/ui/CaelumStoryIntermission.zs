@@ -110,6 +110,7 @@ class CaelumIntroductionMenu : ListMenu
     override void Drawer()
     {
         CaelumNarrativeArtwork.DrawBackground();
+        CaelumPresentation.BeginCreator();
         double width = PanelWidth();
         double left = (CaelumNarrativeArtwork.CanvasWidth() - width) / 2;
         CaelumNarrativeArtwork.Rect(left, 24, width, 552, 0x080D15, 0.80);
@@ -137,6 +138,7 @@ class CaelumIntroductionMenu : ListMenu
         String prompt = CaelumNarrativeArtwork.L(FullTextDrawn ? "CA_INTRO_BEGIN" : "CA_INTRO_REVEAL");
         CaelumNarrativeArtwork.Text(SmallTextFont, Font.CR_GOLD,
             left + (width - SmallTextFont.StringWidth(prompt)) / 2, 552, prompt);
+        CaelumPresentation.End();
     }
 
     void Advance()

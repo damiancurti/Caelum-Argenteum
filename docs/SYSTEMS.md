@@ -1,6 +1,62 @@
 # Caelum Argenteum — Current systems and rules
 
-Documentation version: **5.2.14** — 2026-10-12.
+Documentation version: **5.2.15** — 2026-10-12.
+
+## 5.2.15 - Readability, native crosshair and comfort (#150)
+
+Options > Readability and comfort groups existing native preferences; it writes
+no defaults on startup, new game or load. Presentation belongs to the user's
+global engine configuration, while identity/appearance belong to the saved
+character. Native Save/Load classes and their Clean scaling are unchanged.
+
+| Presentation | Native preference / integration |
+| --- | --- |
+| Journal, inventory, crafting, live panels | uiscale in the shared CaelumPresentation adapter; uniform pixels on the authored 640x360 frame, centered and capped to fit the viewport |
+| Creator, appearance preview, introduction, cards | uiscale applied to their authored 600-high layouts; fit cap keeps the complete controls reachable |
+| Resource bars, including thermal, indicators and compass | StatusBar.GetHUDScale; native hud_oldscale selects hud_scale/uiscale or hud_scalefactor; fit cap preserves the complete resource frame |
+| Notifications, extraction, interaction hints and central transient notices | Screen.GetTextScreenSize, including native con_scaletext or its UI-scale fallback; text wraps at the selected message size |
+| Crosshair | BaseStatusBar.Draw restores native crosshairon, crosshair, crosshairscale, crosshaircolor, crosshairhealth, crosshairforce and crosshairgrow |
+| Camera and weapon motion | Native movebob, stillbob, wbobspeed, wbobfire and r_quakeintensity; modular hands, weapons and shields retain bAddBob |
+
+UI scale is an integer pixel scale, with 0 choosing the engine's adaptive value.
+Complete custom panels stop growing when they reach the viewport: this is a
+layout fit constraint, not an engine inability to enlarge text. Message scaling
+is independent and long messages have a scrollable view. Old HUD scaling and
+the newer factor mode remain distinct; the native minimum factor is 0.36.
+The adapter transforms both drawing and mouse coordinates, and clears drawing
+transforms before first-person art and full-screen damage/Lucidity feedback.
+Existing art, colors, outlines, filters, actions and resource thresholds remain.
+
+Author decision, 2026-10-12: show the most recent complete notifications that
+fit on the HUD and retain the last 20 complete messages in Journal > Notices.
+That unpaused native view supports buttons, wheel, arrows and Page Up/Down.
+The contextual L shortcut yields to remapped Journal/time-skip actions; its
+hint disappears on conflict. The HUD link resolves the current Journal binding.
+Temporary notification duration/count remain unchanged. CaelumNotificationInbox
+history revision 1 is per-character, saved and bounded to 20 entries. Its
+idempotent additive initialization copies active notices from an older save;
+it does not alter their strings or remaining duration. Original saves remain
+valid rollback sources. History is newest-first in the view, oldest-first in
+storage, with no two-line truncation. Notifications are hidden behind menus.
+
+The crosshair stays hidden in full automap, menus/live panels, conversations,
+card games and native dead/chase/weapon-restricted contexts. Overlay automap
+keeps the native 3D behavior. Native crosshairscale=0 means original pixel size,
+not hidden; crosshairon=false disables it globally. crosshair=0 hides the normal
+reticle unless a weapon selects its own; current Caelum weapons do not. Native health color modes
+override fixed color and use the actor class's default health, not Caelum's
+derived maximum health. GZDoom 4.14.2 exposes no hook for that normalization;
+the options explain it. No gameplay health is changed to adjust reticle color.
+
+Native movement/idle bob and weapon bob are cosmetic. Attack swings, thrusts,
+charge/block poses, ADS, recoil, spread, costs, cooldowns and animation events
+remain unchanged. wbobfire controls walking bob during firing, not the actual
+attack animation. Rest retains the accepted right-drag orbit and inversion.
+No extra intensity setting or new default is introduced. Accepted #137 flash,
+wound and Lucidity feedback, thresholds and palette remain unchanged.
+
+Evidence: assets/validation_5215/RESULTS.md. Technical checks and author comfort
+acceptance are separate; CA150-01 remains in pending_test.txt.
 
 ## 5.2.14 - Native input ownership, groups and hints (#149)
 

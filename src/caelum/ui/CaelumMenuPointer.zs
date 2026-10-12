@@ -4,6 +4,7 @@ class CaelumMenuPointer : Object ui
     Vector2 Position;
     bool Positioned, Held;
     int Armed, ArmedRevision;
+    int PressWidth, PressHeight, PressScale;
     Array<int> Ids;
     Array<double> Lefts, Tops, Widths, Heights;
 
@@ -31,18 +32,21 @@ class CaelumMenuPointer : Object ui
     {
         if(Held)return;
         Held=true; Armed=Hit(); ArmedRevision=revision;
+        PressWidth=Screen.GetWidth();PressHeight=Screen.GetHeight();PressScale=CaelumPresentation.UIScale();
     }
     int Release(int revision)
     {
-        int result=Held && Armed!=0 && Armed==Hit() && ArmedRevision==revision?Armed:0;
+        int result=Held && Armed!=0 && Armed==Hit() && ArmedRevision==revision
+            && PressWidth==Screen.GetWidth() && PressHeight==Screen.GetHeight() && PressScale==CaelumPresentation.UIScale()?Armed:0;
         Held=false; Armed=0;
         return result;
     }
     static Vector2 JournalPoint(double x,double y)
     {
+        Vector2 point=CaelumPresentation.MenuPoint(x,y);
         Vector2 origin,size;
         [origin,size]=Screen.VirtualToRealCoords((0,0),(640,360),(640,360),false,false);
-        return ((x-origin.X)*640/size.X,(y-origin.Y)*360/size.Y);
+        return ((point.X-origin.X)*640/size.X,(point.Y-origin.Y)*360/size.Y);
     }
     static int KeyScan(int key)
     {

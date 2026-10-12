@@ -119,7 +119,7 @@ class CaelumScheduleCalendar : Object
     }
     static ui void Draw(CaelumJournalOverlay view, CaelumPlayer user)
     {
-        Screen.Dim(0x05070A, 0.94, 0, 0, Screen.GetWidth(), Screen.GetHeight());
+        CaelumPresentation.MenuBackground(0x05070A,0.94);
         view.DrawPanel(16, 12, 608, 336);
         view.DrawCenteredText(view.TitleFont, Font.CR_GOLD, 320, 22, StringTable.Localize("CA_AGENDA_TITLE", false));
         int day = SelectedDay(user), today = Today(user);

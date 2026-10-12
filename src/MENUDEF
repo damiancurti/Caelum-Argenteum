@@ -110,6 +110,41 @@ ListMenu "CaelumLiveMenu"
     Class "CaelumLiveMenu"
 }
 
+ListMenu "CaelumNotificationMenu"
+{
+    Class "CaelumNotificationMenu"
+}
+
+AddOptionMenu "OptionsMenu"
+{
+    Submenu "$CA_COMFORT_TITLE", "CaelumComfortOptions"
+}
+OptionMenu "CaelumComfortOptions"
+{
+    Title "$CA_COMFORT_TITLE"
+    Submenu "$HUDMNU_SCALEOPT", "ScalingOptions"
+    Submenu "$HUDMNU_MESSAGE", "MessageOptions"
+    StaticText "$CA_COMFORT_SCALE_HELP"
+    StaticText " "
+    Option "$HUDMNU_CROSSHAIRON", "crosshairon", "OnOff"
+    Option "$HUDMNU_CROSSHAIR", "crosshair", "Crosshairs"
+    Option "$HUDMNU_FORCECROSSHAIR", "crosshairforce", "OnOff"
+    Option "$HUDMNU_GROWCROSSHAIR", "crosshairgrow", "OnOff"
+    ColorPicker "$HUDMNU_CROSSHAIRCOLOR", "crosshaircolor"
+    Option "$HUDMNU_CROSSHAIRHEALTH", "crosshairhealth", "CrosshairHealthTypes"
+    Slider "$HUDMNU_CROSSHAIRSCALE", "crosshairscale", 0.0, 2.0, 0.05, 2
+    StaticText "$CA_COMFORT_CROSSHAIR_HELP"
+    StaticText "$CA_COMFORT_CROSSHAIR_BASE"
+    StaticText " "
+    Slider "$DSPLYMNU_MOVEBOB", "movebob", 0, 1.0, 0.05, 2
+    Slider "$DSPLYMNU_STILLBOB", "stillbob", 0, 1.0, 0.05, 2
+    Slider "$DSPLYMNU_BOBSPEED", "wbobspeed", 0, 2.0, 0.1
+    Slider "$DSPLYMNU_BOBFIRE", "wbobfire", 0, 1.0, 0.1
+    Slider "$DSPLYMNU_QUAKEINTENSITY", "r_quakeintensity", 0, 1.0, 0.05, 2
+    StaticText "$CA_COMFORT_ACTION_HELP"
+    StaticText "$CA_COMFORT_FEEDBACK_HELP"
+}
+
 // Las filas usan EnterKey/Bindings y el reset originales del motor.
 AddOptionMenu "CustomizeControls"
 {

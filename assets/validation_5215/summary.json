@@ -1,0 +1,129 @@
+{
+  "baseline": "b36ef830",
+  "runs": {
+    "compile-02": {
+      "assertions": 0,
+      "log_sha256": "2e3fe8efe1076c91bf94138c73bc4b7484f05870beaeea8d254021bcd3641c74"
+    },
+    "official-01": {
+      "assertions": 0,
+      "log_sha256": "b9cc7a25601834d049ab8b33ed6d8ca0ae77885b53d05a6c447ccdefa912b533"
+    },
+    "visual-169-01": {
+      "assertions": 23,
+      "log_sha256": "1bc38358e7f1967d98b801300750080319e3c8547e7e1e48b41320c88ca44f93"
+    },
+    "visual-43-02": {
+      "assertions": 23,
+      "log_sha256": "84edc2c62d36218ce8ffd88599551055839ea2863c873f35a07fb542df712c01"
+    },
+    "panels-43-01": {
+      "assertions": 9,
+      "log_sha256": "4f523d9e827e7cbcb06f512f7270b88c542a2f161ca68e3d620f4ed5e09633b8"
+    },
+    "visual-wide-04": {
+      "assertions": 23,
+      "log_sha256": "243565adbdecada0a58e1d9b38e8492338fc6d0ecb5a4273d3f7f0bb48f4f29c"
+    },
+    "extras-03": {
+      "assertions": 8,
+      "log_sha256": "e48b18629d6707b812baad9d145d75f180d6db1c343f56e0794ac264f5014484"
+    },
+    "crosshair-01": {
+      "assertions": 0,
+      "log_sha256": "710b87c9f5d729ec0e66da0fd8267c28ed2d56fc586dd122ee15290d53288f0e"
+    },
+    "combat-base-01": {
+      "assertions": 0,
+      "log_sha256": "abdff2833159c515e78d63ce3c0458370c41479bfcfbddb9d6a137df18514c16"
+    },
+    "combat-final-01": {
+      "assertions": 0,
+      "log_sha256": "eff6b3d0ff80d0ae4ca31822b2c12ad5d6925b38a403f8d7b79e0d8e744ab87a"
+    },
+    "combat-zero-01": {
+      "assertions": 0,
+      "log_sha256": "23a7086ab330538f79dd01c8f4cad3d158a837aee3ff1d67157fe79cba81be32"
+    },
+    "combat-high-01": {
+      "assertions": 0,
+      "log_sha256": "0aab546aafd79e587cdc721e940a0a545b42d4ee5826a3a48e2807fb45ac401f"
+    },
+    "persist-01": {
+      "assertions": 10,
+      "log_sha256": "52ec33bddee277de8343811f76e3feb71e6574bb95eaa8ac9a475615436888c2"
+    },
+    "restart-02": {
+      "assertions": 8,
+      "log_sha256": "d3308fd1ecfe850090c9a8b011863b098c36331b91d7b3f950658f051298183f"
+    },
+    "legacy-before-01": {
+      "assertions": 0,
+      "log_sha256": "5b41e2b1dcd10bba1adafc307edafcb70cc44aa8cc501a903e523b3da8799116"
+    },
+    "legacy-after-01": {
+      "assertions": 2,
+      "log_sha256": "93432e2f3a0f0f136e8033a90606127e0a6ee912428b58ac76599b9bef9fcc66"
+    }
+  },
+  "combat": {
+    "combat-base-01": "63dd66e2a439ec70e93bc4ec70e17d02b50693d1af084fc32822aeaa429bed6c",
+    "combat-final-01": "63dd66e2a439ec70e93bc4ec70e17d02b50693d1af084fc32822aeaa429bed6c",
+    "combat-zero-01": "63dd66e2a439ec70e93bc4ec70e17d02b50693d1af084fc32822aeaa429bed6c",
+    "combat-high-01": "63dd66e2a439ec70e93bc4ec70e17d02b50693d1af084fc32822aeaa429bed6c"
+  },
+  "dimensions": {
+    "hud-small.png": [
+      1280,
+      720
+    ],
+    "panels-43-01-crafting-large.png": [
+      960,
+      720
+    ],
+    "visual-wide-04-journal-large.png": [
+      1600,
+      675
+    ]
+  },
+  "damage_feedback_unchanged": true,
+  "official_package": {
+    "files": 13559,
+    "all_members_byte_identical": true,
+    "official_sha256": "b6cfe8b43b34dab371a69267450bed1dd9fd84912ee259ba652b0dc1eb8af756",
+    "tested_production_sha256": "3ba945da5b96c59ed9c7b20f55116a9ac98081eccad59897f7be2b93f77d371b"
+  },
+  "project_validation": {
+    "version": "5.2.15",
+    "documents": 11,
+    "audio_files": 107,
+    "station_models": 12,
+    "spanish_caella_keys": 25,
+    "premise_numbers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20
+    ],
+    "context_words": 2483,
+    "errors": []
+  },
+  "keep_awake_released": true,
+  "power_plan_unchanged": true
+}
