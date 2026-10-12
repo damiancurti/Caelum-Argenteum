@@ -55,7 +55,7 @@ remain governed by the existing native menu path. Gameplay slot commands use
 native dispatch before queuing a single existing equipment event, so aliases
 and double-bind actions are not swallowed by a global key interceptor.
 
-Evidence: assets/validation_5214/RESULTS.md; CA149-01 author acceptance pending.
+Evidence: assets/validation_5214/RESULTS.md; CA149-01 accepted by the author on 2026-10-12.
 
 ## Saved cosmetics and native preview - 5.2.13 / #148
 

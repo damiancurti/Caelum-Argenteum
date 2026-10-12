@@ -5,7 +5,7 @@ Documentation version: **5.2.14** — 2026-10-12.
 **Current 5.2.14 / #149:** native control groups and actual-binding hints.
 Approved defaults include M automap; custom/cleared controls survive startup/load.
 Preset/reset removes the map-only M mark conflict. Evidence validation_5214;
-CA149-01 awaits author usability acceptance. Input support boundaries: SYSTEMS.
+CA149-01 accepted 2026-10-12; PR202 merge authorized. Input support boundaries: SYSTEMS.
 
 **5.2.13 / #148 accepted:** CA148-01 passed 2026-10-12; PR201 merged b21e0632,
 issue closed. Modular appearance, preview/editor and equipped-glove hands;

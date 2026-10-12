@@ -19,9 +19,9 @@ applies the preset only when creating its first INI. M's native automap marking
 conflict is removed only by that preset/reset; marking remains remappable.
 Hints list all normal bindings, or a localized unbound label. Native double
 bindings remain preserved; GZDoom 4.14.2 does not expose them to ZScript hints.
-[Draft PR202](https://github.com/damiancurti/Caelum-Argenteum/pull/202),
-[evidence and limitations](assets/validation_5214/RESULTS.md); author usability
-acceptance remains in [pending_test.txt](pending_test.txt).
+[PR202](https://github.com/damiancurti/Caelum-Argenteum/pull/202),
+[evidence and limitations](assets/validation_5214/RESULTS.md); CA149-01 passed author acceptance on 2026-10-12. PR202 merge/closure authorized;
+no #149 author checks remain in [pending_test.txt](pending_test.txt).
 
 5.2.13/#148 is accepted: modular race/sex appearance, native character preview,
 editable faces/hair/tones/forms and equipped-glove-dependent first-person hands.

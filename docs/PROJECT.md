@@ -11,8 +11,7 @@ owned by GZDoom. Actual normal bindings resolve in bilingual UI text.
 Explicit native reset applies the seven approved Caelum defaults, including M
 for automap; first-launch setup uses the same catalogue. Startup/load preserves
 custom and cleared bindings. No powers, balance or exploration features added.
-Evidence: assets/validation_5214/RESULTS.md. CA149-01 awaits author usability
-acceptance. #148 is complete: PR201 merged b21e0632 and issue closed.
+Evidence: assets/validation_5214/RESULTS.md. CA149-01 passed author acceptance on 2026-10-12; PR202 merge authorized. #148 is complete: PR201 merged b21e0632 and issue closed.
 
 ## 5.2.13 - Native saved cosmetics and character preview (#148)
 

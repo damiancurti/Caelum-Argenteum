@@ -10,7 +10,7 @@ assets/generators/controls_catalog.json and generate_controls.py produce native
 DEFBINDS, explicit-reset KEYCONF aliases and the portable first-start preset.
 Existing native fonts, menus and controller key names provide presentation.
 assets/validation_5214 contains reproducible fixtures, retained engine evidence
-and limits. CA149-01 remains pending; CA148-01 visual acceptance passed on
+and limits. CA149-01 passed on 2026-10-12; CA148-01 visual acceptance passed on
 2026-10-12, with PR201 merged b21e0632 and #148 closed.
 
 ## 5.2.13 - Modular saved appearance and first-person hands (#148)

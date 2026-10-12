@@ -4,6 +4,12 @@ Documentation version: **5.2.14** — 2026-10-12.
 
 ## 5.2.14 - Native controls and synchronized hints (#149), 2026-10-12
 
+Author acceptance, 2026-10-12: CA149-01 (origin 5.2.14 / #149) passed
+without qualifications. The author confirmed all tests and requested issue
+closure and PR202 merge. The confirmed entry is removed from pending_test.txt;
+no #149 author checks remain. This supersedes the pending delivery status below.
+The agent did not independently test physical controller hardware.
+
 The author confirmed explicit control reset should restore GZDoom controls then
 Tab=Journal, M=automap, B=Seal, R=reload/charge, F=block/aim, T=Tarot and Y=time
 skip, preserving custom controls on ordinary startup/load. The author repeated
